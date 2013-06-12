@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/04/06 09:40:02 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/06/12 15:29:24 rpe Exp $
 bin/ansible
 bin/ansible-doc
 bin/ansible-playbook
@@ -77,6 +77,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/raw.py
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/raw.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/script.py
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/script.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/set_fact.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/set_fact.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/template.py
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/template.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection.py
@@ -148,13 +150,16 @@ lib/python${MODPY_VERSION}/site-packages/ansible/utils/template.pyc
 @man man/man1/ansible-pull.1
 @man man/man1/ansible.1
 @man man/man3/ansible.add_host.3
+@man man/man3/ansible.airbrake_deployment.3
 @man man/man3/ansible.apt.3
 @man man/man3/ansible.apt_key.3
 @man man/man3/ansible.apt_repository.3
 @man man/man3/ansible.assemble.3
 @man man/man3/ansible.async_status.3
 @man man/man3/ansible.authorized_key.3
+@man man/man3/ansible.bigip_pool.3
 @man man/man3/ansible.bzr.3
+@man man/man3/ansible.campfire.3
 @man man/man3/ansible.cloudformation.3
 @man man/man3/ansible.command.3
 @man man/man3/ansible.copy.3
@@ -163,53 +168,84 @@ lib/python${MODPY_VERSION}/site-packages/ansible/utils/template.pyc
 @man man/man3/ansible.django_manage.3
 @man man/man3/ansible.easy_install.3
 @man man/man3/ansible.ec2.3
+@man man/man3/ansible.ec2_elb.3
 @man man/man3/ansible.ec2_facts.3
 @man man/man3/ansible.ec2_vol.3
 @man man/man3/ansible.facter.3
 @man man/man3/ansible.fail.3
 @man man/man3/ansible.fetch.3
 @man man/man3/ansible.file.3
+@man man/man3/ansible.filesystem.3
 @man man/man3/ansible.fireball.3
+@man man/man3/ansible.flowdock.3
 @man man/man3/ansible.gem.3
 @man man/man3/ansible.get_url.3
 @man man/man3/ansible.git.3
+@man man/man3/ansible.glance_image.3
 @man man/man3/ansible.group.3
 @man man/man3/ansible.group_by.3
 @man man/man3/ansible.hg.3
+@man man/man3/ansible.hipchat.3
 @man man/man3/ansible.homebrew.3
 @man man/man3/ansible.ini_file.3
+@man man/man3/ansible.irc.3
+@man man/man3/ansible.jabber.3
+@man man/man3/ansible.keystone_user.3
 @man man/man3/ansible.lineinfile.3
 @man man/man3/ansible.lvg.3
 @man man/man3/ansible.lvol.3
 @man man/man3/ansible.macports.3
 @man man/man3/ansible.mail.3
 @man man/man3/ansible.mongodb_user.3
+@man man/man3/ansible.monit.3
 @man man/man3/ansible.mount.3
+@man man/man3/ansible.mqtt.3
 @man man/man3/ansible.mysql_db.3
 @man man/man3/ansible.mysql_user.3
 @man man/man3/ansible.nagios.3
 @man man/man3/ansible.netscaler.3
+@man man/man3/ansible.newrelic_deployment.3
+@man man/man3/ansible.nova_compute.3
+@man man/man3/ansible.nova_keypair.3
+@man man/man3/ansible.npm.3
 @man man/man3/ansible.ohai.3
 @man man/man3/ansible.openbsd_pkg.3
 @man man/man3/ansible.opkg.3
+@man man/man3/ansible.osx_say.3
 @man man/man3/ansible.pacman.3
+@man man/man3/ansible.pagerduty.3
 @man man/man3/ansible.pause.3
 @man man/man3/ansible.ping.3
+@man man/man3/ansible.pingdom.3
 @man man/man3/ansible.pip.3
 @man man/man3/ansible.pkgin.3
+@man man/man3/ansible.pkgng.3
 @man man/man3/ansible.postgresql_db.3
+@man man/man3/ansible.postgresql_privs.3
 @man man/man3/ansible.postgresql_user.3
+@man man/man3/ansible.quantum_floating_ip.3
+@man man/man3/ansible.quantum_floating_ip_associate.3
+@man man/man3/ansible.quantum_network.3
+@man man/man3/ansible.quantum_router.3
+@man man/man3/ansible.quantum_router_gateway.3
+@man man/man3/ansible.quantum_router_interface.3
+@man man/man3/ansible.quantum_subnet.3
 @man man/man3/ansible.rabbitmq_parameter.3
 @man man/man3/ansible.rabbitmq_plugin.3
 @man man/man3/ansible.rabbitmq_user.3
 @man man/man3/ansible.rabbitmq_vhost.3
 @man man/man3/ansible.raw.3
+@man man/man3/ansible.rax.3
+@man man/man3/ansible.redhat_subscription.3
 @man man/man3/ansible.rhn_channel.3
+@man man/man3/ansible.rhn_register.3
+@man man/man3/ansible.riak.3
 @man man/man3/ansible.s3.3
 @man man/man3/ansible.script.3
 @man man/man3/ansible.seboolean.3
 @man man/man3/ansible.selinux.3
 @man man/man3/ansible.service.3
+@man man/man3/ansible.set_fact.3
 @man man/man3/ansible.setup.3
 @man man/man3/ansible.shell.3
 @man man/man3/ansible.slurp.3
@@ -220,91 +256,141 @@ lib/python${MODPY_VERSION}/site-packages/ansible/utils/template.pyc
 @man man/man3/ansible.template.3
 @man man/man3/ansible.uri.3
 @man man/man3/ansible.user.3
-@man man/man3/ansible.vagrant.3
 @man man/man3/ansible.virt.3
 @man man/man3/ansible.wait_for.3
 @man man/man3/ansible.yum.3
 @man man/man3/ansible.zfs.3
+@man man/man3/ansible.zypper.3
 share/ansible/
-share/ansible/add_host
-share/ansible/apt
-share/ansible/apt_key
-share/ansible/apt_repository
-share/ansible/assemble
-share/ansible/async_status
-share/ansible/async_wrapper
-share/ansible/authorized_key
-share/ansible/bzr
-share/ansible/cloudformation
-share/ansible/command
-share/ansible/copy
-share/ansible/cron
-share/ansible/debug
-share/ansible/django_manage
-share/ansible/easy_install
-share/ansible/ec2
-share/ansible/ec2_facts
-share/ansible/ec2_vol
-share/ansible/facter
-share/ansible/fail
-share/ansible/fetch
-share/ansible/file
-share/ansible/fireball
-share/ansible/gem
-share/ansible/get_url
-share/ansible/git
-share/ansible/group
-share/ansible/group_by
-share/ansible/hg
-share/ansible/homebrew
-share/ansible/ini_file
-share/ansible/lineinfile
-share/ansible/lvg
-share/ansible/lvol
-share/ansible/macports
-share/ansible/mail
-share/ansible/mongodb_user
-share/ansible/mount
-share/ansible/mysql_db
-share/ansible/mysql_user
-share/ansible/nagios
-share/ansible/netscaler
-share/ansible/ohai
-share/ansible/openbsd_pkg
-share/ansible/opkg
-share/ansible/pacman
-share/ansible/pause
-share/ansible/ping
-share/ansible/pip
-share/ansible/pkgin
-share/ansible/postgresql_db
-share/ansible/postgresql_user
-share/ansible/rabbitmq_parameter
-share/ansible/rabbitmq_plugin
-share/ansible/rabbitmq_user
-share/ansible/rabbitmq_vhost
-share/ansible/raw
-share/ansible/rhn_channel
-share/ansible/s3
-share/ansible/script
-share/ansible/seboolean
-share/ansible/selinux
-share/ansible/service
-share/ansible/setup
-share/ansible/shell
-share/ansible/slurp
-share/ansible/subversion
-share/ansible/supervisorctl
-share/ansible/svr4pkg
-share/ansible/sysctl
-share/ansible/template
-share/ansible/uri
-share/ansible/user
-share/ansible/vagrant
-share/ansible/virt
-share/ansible/wait_for
-share/ansible/yum
-share/ansible/zfs
+share/ansible/cloud/
+share/ansible/cloud/cloudformation
+share/ansible/cloud/ec2
+share/ansible/cloud/ec2_elb
+share/ansible/cloud/ec2_facts
+share/ansible/cloud/ec2_vol
+share/ansible/cloud/glance_image
+share/ansible/cloud/keystone_user
+share/ansible/cloud/nova_compute
+share/ansible/cloud/nova_keypair
+share/ansible/cloud/quantum_floating_ip
+share/ansible/cloud/quantum_floating_ip_associate
+share/ansible/cloud/quantum_network
+share/ansible/cloud/quantum_router
+share/ansible/cloud/quantum_router_gateway
+share/ansible/cloud/quantum_router_interface
+share/ansible/cloud/quantum_subnet
+share/ansible/cloud/rax
+share/ansible/cloud/s3
+share/ansible/cloud/virt
+share/ansible/commands/
+share/ansible/commands/command
+share/ansible/commands/raw
+share/ansible/commands/script
+share/ansible/commands/shell
+share/ansible/database/
+share/ansible/database/mongodb_user
+share/ansible/database/mysql_db
+share/ansible/database/mysql_user
+share/ansible/database/postgresql_db
+share/ansible/database/postgresql_privs
+share/ansible/database/postgresql_user
+share/ansible/database/riak
+share/ansible/files/
+share/ansible/files/assemble
+share/ansible/files/copy
+share/ansible/files/fetch
+share/ansible/files/file
+share/ansible/files/ini_file
+share/ansible/files/lineinfile
+share/ansible/files/template
+share/ansible/internal/
+share/ansible/internal/async_status
+share/ansible/internal/async_wrapper
+share/ansible/inventory/
+share/ansible/inventory/add_host
+share/ansible/inventory/group_by
+share/ansible/messaging/
+share/ansible/messaging/rabbitmq_parameter
+share/ansible/messaging/rabbitmq_plugin
+share/ansible/messaging/rabbitmq_user
+share/ansible/messaging/rabbitmq_vhost
+share/ansible/monitoring/
+share/ansible/monitoring/airbrake_deployment
+share/ansible/monitoring/monit
+share/ansible/monitoring/nagios
+share/ansible/monitoring/newrelic_deployment
+share/ansible/monitoring/pagerduty
+share/ansible/monitoring/pingdom
+share/ansible/net_infrastructure/
+share/ansible/net_infrastructure/bigip_pool
+share/ansible/net_infrastructure/netscaler
+share/ansible/network/
+share/ansible/network/get_url
+share/ansible/network/slurp
+share/ansible/network/uri
+share/ansible/notification/
+share/ansible/notification/campfire
+share/ansible/notification/flowdock
+share/ansible/notification/hipchat
+share/ansible/notification/irc
+share/ansible/notification/jabber
+share/ansible/notification/mail
+share/ansible/notification/mqtt
+share/ansible/notification/osx_say
+share/ansible/packaging/
+share/ansible/packaging/apt
+share/ansible/packaging/apt_key
+share/ansible/packaging/apt_repository
+share/ansible/packaging/easy_install
+share/ansible/packaging/gem
+share/ansible/packaging/homebrew
+share/ansible/packaging/macports
+share/ansible/packaging/npm
+share/ansible/packaging/openbsd_pkg
+share/ansible/packaging/opkg
+share/ansible/packaging/pacman
+share/ansible/packaging/pip
+share/ansible/packaging/pkgin
+share/ansible/packaging/pkgng
+share/ansible/packaging/redhat_subscription
+share/ansible/packaging/rhn_channel
+share/ansible/packaging/rhn_register
+share/ansible/packaging/svr4pkg
+share/ansible/packaging/yum
+share/ansible/packaging/zypper
+share/ansible/source_control/
+share/ansible/source_control/bzr
+share/ansible/source_control/git
+share/ansible/source_control/hg
+share/ansible/source_control/subversion
+share/ansible/system/
+share/ansible/system/authorized_key
+share/ansible/system/cron
+share/ansible/system/facter
+share/ansible/system/filesystem
+share/ansible/system/group
+share/ansible/system/lvg
+share/ansible/system/lvol
+share/ansible/system/mount
+share/ansible/system/ohai
+share/ansible/system/ping
+share/ansible/system/seboolean
+share/ansible/system/selinux
+share/ansible/system/service
+share/ansible/system/setup
+share/ansible/system/sysctl
+share/ansible/system/user
+share/ansible/system/zfs
+share/ansible/utilities/
+share/ansible/utilities/debug
+share/ansible/utilities/fail
+share/ansible/utilities/fireball
+share/ansible/utilities/pause
+share/ansible/utilities/set_fact
+share/ansible/utilities/wait_for
+share/ansible/web_infrastructure/
+share/ansible/web_infrastructure/django_manage
+share/ansible/web_infrastructure/supervisorctl
 share/doc/ansible/
 share/doc/ansible/COPYING
 share/doc/ansible/README.md
@@ -315,52 +401,4 @@ share/examples/ansible/ansible.cfg
 share/examples/ansible/hosts
 @sample ${SYSCONFDIR}/ansible/hosts
 share/examples/ansible/playbooks/
-share/examples/ansible/playbooks/ansible_pull.yml
-share/examples/ansible/playbooks/batch_size_control.yml
-share/examples/ansible/playbooks/cloudformation.yaml
-share/examples/ansible/playbooks/complex_args.yml
-share/examples/ansible/playbooks/conditionals_part1.yml
-share/examples/ansible/playbooks/conditionals_part2.yml
-share/examples/ansible/playbooks/conditionals_part3.yml
-share/examples/ansible/playbooks/custom_filters.yml
-share/examples/ansible/playbooks/delegation.yml
-share/examples/ansible/playbooks/environment.yml
-share/examples/ansible/playbooks/eucalyptus-ec2.yml
-share/examples/ansible/playbooks/file_secontext.yml
-share/examples/ansible/playbooks/files/
-share/examples/ansible/playbooks/files/cloudformation-example.json
-share/examples/ansible/playbooks/filter_plugins/
-share/examples/ansible/playbooks/filter_plugins/custom_plugins.py
-share/examples/ansible/playbooks/get_url.yml
-share/examples/ansible/playbooks/group_by.yml
-share/examples/ansible/playbooks/group_commands.yml
-share/examples/ansible/playbooks/handlers/
-share/examples/ansible/playbooks/handlers/handlers.yml
-share/examples/ansible/playbooks/intermediate_example.yml
-share/examples/ansible/playbooks/intro_example.yml
-share/examples/ansible/playbooks/loop_nested.yml
-share/examples/ansible/playbooks/loop_plugins.yml
-share/examples/ansible/playbooks/loop_with_items.yml
-share/examples/ansible/playbooks/mysql.yml
-share/examples/ansible/playbooks/nested_playbooks.yml
-share/examples/ansible/playbooks/netscaler.yml
-share/examples/ansible/playbooks/postgresql.yml
-share/examples/ansible/playbooks/prompts.yml
-share/examples/ansible/playbooks/rabbitmq.yml
-share/examples/ansible/playbooks/register_logic.yml
-share/examples/ansible/playbooks/selective_file_sources.yml
-share/examples/ansible/playbooks/tags.yml
-share/examples/ansible/playbooks/tasks/
-share/examples/ansible/playbooks/tasks/base.yml
-share/examples/ansible/playbooks/templates/
-share/examples/ansible/playbooks/templates/custom-filters.j2
-share/examples/ansible/playbooks/templates/etc_cron.d_ansible-pull.j2
-share/examples/ansible/playbooks/templates/etc_logrotate.d_ansible-pull.j2
-share/examples/ansible/playbooks/templates/foo.j2
-share/examples/ansible/playbooks/templates/hostvars.j2
-share/examples/ansible/playbooks/user_commands.yml
-share/examples/ansible/playbooks/vars/
-share/examples/ansible/playbooks/vars/CentOS.yml
-share/examples/ansible/playbooks/vars/defaults.yml
-share/examples/ansible/playbooks/vars/external_vars.yml
-share/examples/ansible/playbooks/zfs.yml
+share/examples/ansible/playbooks/README.md
