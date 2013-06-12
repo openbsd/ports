@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/05/30 15:51:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2013/06/12 12:57:20 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -27,8 +27,10 @@ CONFIGURE_ARGS+=--disable-cplusplus \
 		--disable-absolute-shared-libs \
 		--docdir=${PREFIX}/share/doc/gambit-c/ \
 		--includedir=${PREFIX}/include/gambit-c/ \
-		--libdir=${PREFIX}/lib/gambit-c/ \
-		ac_cv_func_get_fpc_csr=no
+		--libdir=${PREFIX}/lib/gambit-c/
+
+# https://github.com/feeley/gambit/pull/29
+CONFIGURE_ARGS+=ac_cv_func_get_fpc_csr=no
 
 MAKE_FILE=	${WRKSRC}/makefile
 
