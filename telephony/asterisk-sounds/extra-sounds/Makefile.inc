@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2013/05/16 21:53:32 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2013/06/12 20:58:47 sthen Exp $
 
 MODULES +=	telephony/asterisk-sounds
 MODAS_NAME =	asterisk-extra-sounds
@@ -22,4 +22,4 @@ post-install:
 	    CREDITS-asterisk-extra-${MODAS_LANG}-${MODAS_VER} \
 	    LICENSE-asterisk-extra-${MODAS_LANG}-${MODAS_VER} \
 	    extra-sounds-${MODAS_LANG}.txt; \
-	do mv $$i $$i-${MODAS_CODEC}; done
+	do [ -f $$i ] && mv $$i $$i-${MODAS_CODEC}; done
