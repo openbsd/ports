@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure_in,v 1.5 2012/04/20 09:27:29 pascal Exp $
---- configure.in.orig	Mon Dec 26 18:03:31 2011
-+++ configure.in	Wed Apr 18 12:38:38 2012
-@@ -332,24 +332,6 @@ fi
- AC_SUBST(WDUMP)
+$OpenBSD: patch-configure_in,v 1.6 2013/06/13 08:47:46 benoit Exp $
+--- configure.in.orig	Fri Mar  1 18:40:18 2013
++++ configure.in	Sun Jun  9 11:42:21 2013
+@@ -331,24 +331,6 @@ fi
+ AC_SUBST(W3M)
  AC_SUBST(DB2HTML)
  
 -dnl If we use rpm, we need to check where %_topdir is
@@ -26,7 +26,7 @@ $OpenBSD: patch-configure_in,v 1.5 2012/04/20 09:27:29 pascal Exp $
  dnl Set doc status flag for conditional content inclusions
  DOC_STATUS=p-not-stable
  if  test $CODE_STATUS = stable; then
-@@ -958,7 +940,7 @@ if test $have_pcre = "yes"; then
+@@ -1034,7 +1016,7 @@ if test $have_pcre = "yes"; then
    echo "using libpcre"
    pcre_dyn=yes
    STATIC_PCRE_ONLY=#

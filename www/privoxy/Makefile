@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/11 11:44:48 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/06/13 08:47:46 benoit Exp $
 
 COMMENT=	web proxy with advanced filtering capabilities
 
-V=		3.0.19
+V=		3.0.21
 DISTNAME=	privoxy-${V}-stable
 PKGNAME=	privoxy-${V}
 CATEGORIES=	www
@@ -21,7 +21,6 @@ EXTRACT_SUFX=	-src.tar.gz
 
 NO_TEST=	Yes
 
-USE_GMAKE=	Yes
 MAKE_FILE=	GNUmakefile
 
 LIB_DEPENDS=	devel/pcre
