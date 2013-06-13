@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2013/06/12 06:20:20 robert Exp $
+# $OpenBSD: Makefile,v 1.141 2013/06/13 21:23:33 sthen Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
@@ -62,8 +62,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		sysutils/flock \
 		sysutils/pciutils \
 		x11/gnome/libgnome-keyring
-# required for parallel building
-BUILD_DEPENDS+= gmake->=3.82p2:devel/gmake
+BUILD_DEPENDS+=	devel/ninja
 LIB_DEPENDS=	devel/libexecinfo \
 		archivers/bzip2 \
 		devel/libusb1 \
@@ -76,17 +75,15 @@ LIB_DEPENDS=	devel/libexecinfo \
 
 .include <bsd.own.mk>
 
-# Set BUILDTYPE to Debug (or omit it) for a debug build
+# Set BUILDTYPE to Debug for a debug build
 BUILDTYPE=	Release
-MAKE_ENV=	BUILDTYPE=${BUILDTYPE} V=1
-
-USE_GMAKE=	Yes
 
 TEST_TARGET=	base_unittests
 
 CONFIGURE_STYLE=none # prevent python MODULE from overriding do-build
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+		GYP_GENERATORS=ninja
 
 ALL_TARGET=	chrome
 
@@ -141,10 +138,13 @@ pre-configure:
 
 # gyp_chromium generates all the Makefiles from gyp
 do-configure:
-	@cd ${WRKSRC} && \
-	env -i ${CONFIGURE_ENV} ${MODPY_BIN} build/gyp_chromium -fmake --ignore-environment \
-	${GYP_DEFS} \
-	"--depth=${WRKSRC}"
+	cd ${WRKSRC} && \
+	env -i ${CONFIGURE_ENV} ${MODPY_BIN} build/gyp_chromium \
+	${GYP_DEFS} "--depth=${WRKSRC}"
+
+do-build:
+	@cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
+		-j ${MAKE_JOBS} -C out/${BUILDTYPE} chrome
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/chrome
