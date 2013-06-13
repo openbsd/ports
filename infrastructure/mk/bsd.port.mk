@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1230 2013/06/11 10:59:24 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1231 2013/06/13 18:13:54 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1608,7 +1608,7 @@ _DO_LOCK = \
 _SIMPLE_LOCK = \
 	${_LOCK}; locked=true; \
 	trap 'if $$locked; then ${_UNLOCK}; locked=false; fi' 0; \
-	trap 'exit 1' 1 2 3 13 15
+	trap 'if $$locked; then ${_UNLOCK}; locked=false; fi; exit 1' 1 2 3 13 15
 
 .endif
 _SIMPLE_LOCK ?= :
