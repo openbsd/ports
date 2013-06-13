@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.58 2013/05/13 18:24:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2013/06/13 11:43:02 sthen Exp $
 
      SUBDIR =
      SUBDIR += amtterm
      SUBDIR += birda
      SUBDIR += bottlerocket
      SUBDIR += c3270
+     SUBDIR += chirp
      SUBDIR += colrdx
      SUBDIR += conserver
      SUBDIR += dfu-util
