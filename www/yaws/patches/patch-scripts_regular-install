@@ -1,7 +1,7 @@
-$OpenBSD: patch-scripts_regular-install,v 1.2 2012/10/30 20:29:21 jasper Exp $
---- scripts/regular-install.orig	Wed Oct 17 20:14:43 2012
-+++ scripts/regular-install	Tue Oct 30 21:20:53 2012
-@@ -10,7 +10,7 @@ set -e
+$OpenBSD: patch-scripts_regular-install,v 1.3 2013/06/13 11:31:44 sthen Exp $
+--- scripts/regular-install.orig	Wed Oct 17 19:14:43 2012
++++ scripts/regular-install	Thu Jun 13 08:18:24 2013
+@@ -10,20 +10,16 @@ set -e
  ./Install "${PREFIX}" "${ERL}" "${WERL}" "${ETCDIR}/" \
      "${VARDIR}/" "${ERLBINDIR}/" "${DESTDIR}" "${LIBDIR}"
  
@@ -10,13 +10,14 @@ $OpenBSD: patch-scripts_regular-install,v 1.2 2012/10/30 20:29:21 jasper Exp $
  if [ -f "$conffile" ]; then
      echo "Keeping old config file $conffile"
      cp yaws.conf "${conffile}.template"
-@@ -19,11 +19,10 @@ else
-     if [ -n "$DESTDIR" ]; then
-         [ -d "$DESTDIR" ] || mkdir "$DESTDIR"
-     fi
+ else
+     echo "Installing $conffile"
+-    if [ -n "$DESTDIR" ]; then
+-        [ -d "$DESTDIR" ] || mkdir "$DESTDIR"
+-    fi
 -    [ -d "${DESTDIR}${ETCDIR}" ] || mkdir "${DESTDIR}${ETCDIR}"
 -    [ -d "${DESTDIR}${ETCDIR}/yaws" ] || mkdir "${DESTDIR}${ETCDIR}/yaws"
-+    [ -d "${DESTDIR}${ETCDIR}/yaws" ] || mkdir "${DESTDIR}${PREFIX}/share/examples/yaws"
++    mkdir -p "${DESTDIR}${PREFIX}/share/examples/yaws"
      cp yaws.conf "$conffile"
  fi
 -cp ../ssl/yaws-cert.pem "${DESTDIR}${ETCDIR}/yaws"
