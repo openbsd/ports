@@ -1,0 +1,9 @@
+CHIRP is a free, open-source tool for programming amateur radios.
+It supports a large number of manufacturers and models, as well as
+provides a way to interface with multiple data sources and formats.
+
+CHIRP's focus is to support reading and writing the memory channels
+of as many radio models as possible. This provides the ability to
+exchange your programming information between dissimilar radios.
+It does not focus on supporting every single knob and setting that
+each radio supports.

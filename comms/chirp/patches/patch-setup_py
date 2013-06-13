@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2013/06/13 11:42:43 sthen Exp $
+--- setup.py.orig	Mon Apr 29 22:35:52 2013
++++ setup.py	Mon Apr 29 22:35:58 2013
+@@ -113,7 +113,7 @@ def default_build():
+                     ('share/chirp', xsd_files),
+                     ('share/doc/chirp', ['COPYING']),
+                     ('share/pixmaps', ['share/chirp.png']),
+-                    ('share/man/man1', ["share/chirpw.1"]),
++                    ('man/man1', ["share/chirpw.1"]),
+                     ('share/chirp/stock_configs', stock_configs),
+                     ] + locale_files)
+ 
