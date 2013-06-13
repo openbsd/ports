@@ -1,10 +1,10 @@
-$OpenBSD: patch-test_Makefile_in,v 1.8 2012/10/11 07:25:20 ajacoutot Exp $
+$OpenBSD: patch-test_Makefile_in,v 1.9 2013/06/13 13:08:53 ajacoutot Exp $
 
 XXX -lkvm push upstream (cf. patch-dbus_dbus-sysdeps-util-unix_c)
 
---- test/Makefile.in.orig	Thu Oct 11 09:02:53 2012
-+++ test/Makefile.in	Thu Oct 11 09:03:02 2012
-@@ -359,7 +359,7 @@ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+--- test/Makefile.in.orig	Wed Jun 12 15:02:41 2013
++++ test/Makefile.in	Thu Jun 13 15:03:02 2013
+@@ -376,7 +376,7 @@ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
  LAUNCHCTL = @LAUNCHCTL@
  LAUNCHD_AGENT_DIR = @LAUNCHD_AGENT_DIR@
  LD = @LD@
