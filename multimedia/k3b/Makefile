@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/21 08:46:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2013/06/14 08:15:28 jca Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		CD/DVD creator
 
 DISTNAME =		k3b-1.0.4
-REVISION=		16
+REVISION=		17
 CATEGORIES =		multimedia
 
 SHARED_LIBS =		k3b	0.0	# 3.0
@@ -51,6 +51,7 @@ LIB_DEPENDS =		audio/flac \
 			graphics/jpeg \
 			x11/kde/libs3
 
+USE_GMAKE =		Yes
 LIBTOOL_FLAGS +=	--tag=disable-static
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-qt-dir=${MODQT_QTDIR} \
