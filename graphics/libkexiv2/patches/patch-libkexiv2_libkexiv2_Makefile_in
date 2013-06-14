@@ -1,0 +1,13 @@
+$OpenBSD: patch-libkexiv2_libkexiv2_Makefile_in,v 1.1 2013/06/14 08:13:36 jca Exp $
+Don't fail when egrep doesn't find the desired string.
+--- libkexiv2/libkexiv2/Makefile.in.orig	Thu Jun 13 13:46:23 2013
++++ libkexiv2/libkexiv2/Makefile.in	Thu Jun 13 13:46:50 2013
+@@ -740,7 +740,7 @@ libkexiv2_la.all_cpp.cpp: $(srcdir)/Makefile.in $(srcd
+ 	echo "#define KDE_USE_FINAL 1" >> libkexiv2_la.all_cpp.final; \
+ 	for file in kexiv2.cpp kexiv2private.cpp ; do \
+ 	  echo "#include \"$$file\"" >> libkexiv2_la.all_cpp.files; \
+-	  test ! -f $(srcdir)/$$file || egrep '^#pragma +implementation' $(srcdir)/$$file >> libkexiv2_la.all_cpp.final; \
++	  test ! -f $(srcdir)/$$file || egrep '^#pragma +implementation' $(srcdir)/$$file >> libkexiv2_la.all_cpp.final || true; \
+ 	done; \
+ 	cat libkexiv2_la.all_cpp.final libkexiv2_la.all_cpp.files > libkexiv2_la.all_cpp.cpp; \
+ 	rm -f libkexiv2_la.all_cpp.final libkexiv2_la.all_cpp.files
