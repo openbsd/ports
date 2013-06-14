@@ -1,2 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/05/02 19:09:18 matthew Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/06/14 16:39:39 matthew Exp $
 @bin bin/ninja
+share/doc/ninja/
+share/doc/ninja/manual.asciidoc
+share/ninja/
+share/ninja/bash-completion
+share/ninja/ninja-mode.el
+share/ninja/ninja.vim
+share/ninja/ninja_syntax.py
+share/ninja/zsh-completion

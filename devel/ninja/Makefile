@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/21 16:06:52 matthew Exp $
+# $OpenBSD: Makefile,v 1.3 2013/06/14 16:39:39 matthew Exp $
 
 COMMENT =		small build system with a focus on speed
-V =			1.3.3
+V =			1.3.4
 DISTNAME =		ninja-${V}
 CATEGORIES =		devel
 HOMEPAGE =		http://martine.github.io/ninja/
@@ -33,5 +33,13 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/ninja ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ninja
+	${INSTALL_DATA} ${WRKSRC}/doc/manual.asciidoc ${PREFIX}/share/doc/ninja
+	${INSTALL_DATA_DIR} ${PREFIX}/share/ninja
+	${INSTALL_DATA} ${WRKSRC}/misc/bash-completion ${PREFIX}/share/ninja
+	${INSTALL_DATA} ${WRKSRC}/misc/ninja-mode.el ${PREFIX}/share/ninja
+	${INSTALL_DATA} ${WRKSRC}/misc/ninja.vim ${PREFIX}/share/ninja
+	${INSTALL_DATA} ${WRKSRC}/misc/ninja_syntax.py ${PREFIX}/share/ninja
+	${INSTALL_DATA} ${WRKSRC}/misc/zsh-completion ${PREFIX}/share/ninja
 
 .include <bsd.port.mk>
