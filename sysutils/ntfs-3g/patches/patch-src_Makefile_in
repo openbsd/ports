@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2013/06/14 13:49:50 pirofti Exp $
+--- src/Makefile.in.orig	Sun Jan 13 08:46:46 2013
++++ src/Makefile.in	Fri Jun 14 14:18:50 2013
+@@ -37,8 +37,7 @@ target_triplet = @target@
+ @ENABLE_NTFS_3G_TRUE@bin_PROGRAMS = ntfs-3g.probe$(EXEEXT) \
+ @ENABLE_NTFS_3G_TRUE@	ntfs-3g.usermap$(EXEEXT) \
+ @ENABLE_NTFS_3G_TRUE@	ntfs-3g.secaudit$(EXEEXT)
+-@ENABLE_NTFS_3G_TRUE@rootbin_PROGRAMS = ntfs-3g$(EXEEXT) \
+-@ENABLE_NTFS_3G_TRUE@	lowntfs-3g$(EXEEXT)
++@ENABLE_NTFS_3G_TRUE@rootbin_PROGRAMS = ntfs-3g$(EXEEXT)
+ subdir = src
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
+ 	$(srcdir)/ntfs-3g.8.in $(srcdir)/ntfs-3g.probe.8.in \
+@@ -395,7 +394,7 @@ install-rootbinPROGRAMS: $(rootbin_PROGRAMS)
+ 	  ; then \
+ 	    f=`echo "$$p1" | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`; \
+ 	   echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(rootbinPROGRAMS_INSTALL) '$$p' '$(DESTDIR)$(rootbindir)/$$f'"; \
+-	   $(INSTALL_PROGRAM_ENV) $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(rootbinPROGRAMS_INSTALL) "$$p" "$(DESTDIR)$(rootbindir)/$$f" || exit 1; \
++	   $(INSTALL_PROGRAM_ENV) $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(rootbinPROGRAMS_INSTALL) "$$p" "$(DESTDIR)$(bindir)/$$f" || exit 1; \
+ 	  else :; fi; \
+ 	done
+ 
+@@ -830,11 +829,10 @@ uninstall-man: uninstall-man8
+ @ENABLE_NTFS_3G_TRUE@drivers : $(FUSE_LIBS) ntfs-3g lowntfs-3g
+ 
+ @ENABLE_NTFS_3G_TRUE@@RUN_LDCONFIG_TRUE@install-exec-hook:
+-@ENABLE_NTFS_3G_TRUE@@RUN_LDCONFIG_TRUE@	$(LDCONFIG)
+ 
+ @ENABLE_MOUNT_HELPER_TRUE@@ENABLE_NTFS_3G_TRUE@install-exec-local:	install-rootbinPROGRAMS
+ @ENABLE_MOUNT_HELPER_TRUE@@ENABLE_NTFS_3G_TRUE@	$(MKDIR_P) "$(DESTDIR)/sbin"
+-@ENABLE_MOUNT_HELPER_TRUE@@ENABLE_NTFS_3G_TRUE@	$(LN_S) -f "$(rootbindir)/ntfs-3g" "$(DESTDIR)/sbin/mount.ntfs-3g"
++@ENABLE_MOUNT_HELPER_TRUE@@ENABLE_NTFS_3G_TRUE@	$(LN_S) -f "$(DESTDIR)/sbin/ntfs-3g" "$(DESTDIR)/sbin/mount.ntfs-3g"
+ @ENABLE_MOUNT_HELPER_TRUE@@ENABLE_NTFS_3G_TRUE@	$(LN_S) -f "$(rootbindir)/lowntfs-3g" "$(DESTDIR)/sbin/mount.lowntfs-3g"
+ 
+ @ENABLE_NTFS_3G_TRUE@install-data-local:	install-man8

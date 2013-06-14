@@ -1,0 +1,21 @@
+$OpenBSD: patch-ntfsprogs_ntfsclone_c,v 1.1.1.1 2013/06/14 13:49:50 pirofti Exp $
+--- ntfsprogs/ntfsclone.c.orig	Thu Jun 13 10:49:08 2013
++++ ntfsprogs/ntfsclone.c	Thu Jun 13 10:51:37 2013
+@@ -746,7 +746,7 @@ static void copy_cluster(int rescue, u64 rescue_lcn, u
+ #ifndef NO_STATFS
+ 		int err = errno;
+ 		perr_printf("Write failed");
+-		if (err == EIO && opt.stfs.f_type == 0x517b)
++		if (err == EIO && opt.stfs.f_fstypename == 0x517b)
+ 			Printf("Apparently you tried to clone to a remote "
+ 			       "Windows computer but they don't\nhave "
+ 			       "efficient sparse file handling by default. "
+@@ -2056,7 +2056,7 @@ static void set_filesize(s64 filesize)
+ 		Printf("WARNING: Couldn't get filesystem type: "
+ 		       "%s\n", strerror(errno));
+ 	else
+-		fs_type = opt.stfs.f_type;
++		fs_type = opt.stfs.f_fstypename;
+ 
+ 	if (fs_type == 0x52654973)
+ 		Printf("WARNING: You're using ReiserFS, it has very poor "

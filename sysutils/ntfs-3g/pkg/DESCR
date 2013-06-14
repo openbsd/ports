@@ -1,0 +1,5 @@
+NTFS-3G is a stable, full-featured, read-write NTFS driver for Linux,
+Android, Mac OS X, FreeBSD, NetBSD, OpenBSD, OpenSolaris, QNX, Haiku,
+and other operating systems. It provides safe handling of the
+Windows XP, Windows Server 2003, Windows 2000, Windows Vista,
+Windows Server 2008 and Windows 7 NTFS file systems.
