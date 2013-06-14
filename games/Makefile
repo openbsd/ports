@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.267 2013/06/07 03:42:38 bentley Exp $
+# $OpenBSD: Makefile,v 1.268 2013/06/14 16:03:24 robert Exp $
 
      SUBDIR =
      SUBDIR += abuse
@@ -96,6 +96,7 @@
      SUBDIR += gottcode
      SUBDIR += grhino
      SUBDIR += gtetrinet
+     SUBDIR += gti
      SUBDIR += gtkballs
      SUBDIR += hackdata
      SUBDIR += heroes
