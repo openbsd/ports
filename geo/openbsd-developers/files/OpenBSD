@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.103 2013/06/10 10:08:40 mpi Exp $
+# $OpenBSD: OpenBSD,v 1.104 2013/06/14 18:52:19 syl Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -57,6 +57,7 @@
 44.4325		26.103889	"pirofti"	# Paul Irofti
 45.095683	-93.4982	"jim"		# Jim Razmus II
 45.2002, 	5.7222		"ratchov"	# Alexandre Ratchov
+45.3333,	4.3167		"syl"		# Sylvestre Gallon
 45.43		12.13		"michele"	# Michele Marchetto
 45.4745		-73.6556	"msf"		# Mathieu Sauve-Frankel
 45.5		-122.5		"joshe"		# Joshua Elsasser
