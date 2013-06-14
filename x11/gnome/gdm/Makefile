@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.165 2013/06/01 13:45:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.166 2013/06/14 18:18:38 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
-GNOME_VERSION=		3.8.1.1
-REVISION=		6
+GNOME_VERSION=		3.8.3
 
 HOMEPAGE=		http://projects.gnome.org/gdm/
 
 SHARED_LIBS +=  gdm                       0.0 # 1.0
-SHARED_LIBS +=  gdmsimplegreeter          0.0 # 1.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,20 +17,21 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender accountsservice atk-1.0
 WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject canberra
-WANTLIB += canberra-gtk3 dbus-1 dbus-glib-1 expat ffi fontconfig
-WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz
-WANTLIB += ltdl m nspr4 nss3 nssutil3 ogg pam pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
-WANTLIB += png pthread pthread-stubs smime3 softokn3 sqlite3 ssl3
-WANTLIB += upower-glib util vorbis vorbisfile xcb xcb-render xcb-shm
-WANTLIB += z
+WANTLIB += canberra-gtk3 dbus-1 expat ffi fontconfig freetype
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz ltdl m ogg pam
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread pthread-stubs util vorbis vorbisfile xcb
+WANTLIB += xcb-render xcb-shm z
 
 MODULES=		devel/gettext \
 			x11/gnome \
 			devel/dconf
 
 BUILD_DEPENDS=		devel/check
+
+# XXX configure checks for it, but unused
+BUILD_DEPENDS +=	security/nss
 
 # cyclic dependency, see pkg/DESCR
 # bring _all_ runtime dependencies (including consolekit and zenity)
@@ -42,10 +41,8 @@ BUILD_DEPENDS=		devel/check
 RUN_DEPENDS +=		x11/gnome/orca
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
-			security/nss \
 			security/openpam \
-			sysutils/accountsservice \
-			sysutils/upower
+			sysutils/accountsservice
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
@@ -77,11 +74,11 @@ pre-configure:
 	perl -pi -e 's,root:root,root:wheel,g;' \
 		-e 's,root:gdm,root:676,g;' \
 		-e 's,gdm:gdm,676:676,g' ${WRKSRC}/data/Makefile.in
-	perl -pi -e 's,/usr/local,${LOCALBASE},g' \
+	perl -pi -e 's,/usr/local,${LOCALBASE},g;' \
+		-e 's,/bin/bash,/bin/ksh,g' \
 		${WRKSRC}/daemon/gdm-session-worker.c
 
 post-install:
-	rm ${PREFIX}/lib/gdm/simple-greeter/extensions/*.la
 	rm -rf ${WRKINST}/var/run/gdm
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gdm/{etc/pam.d,var/db}
 	${INSTALL_DATA} ${FILESDIR}/gdm-* \
