@@ -1,8 +1,9 @@
-# $OpenBSD: OpenBSD,v 1.104 2013/06/14 18:52:19 syl Exp $
+# $OpenBSD: OpenBSD,v 1.105 2013/06/15 04:07:28 brett Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
 
+-37.7374	145.0084	"brett"		# Brett Mahar
 -37.457132	144.580589	"djm"		# Damien Miller
 -34.709197	-58.395080	"gonzalo"	# Gonzalo L. Rodriguez
 -33.867		151.192		"dtucker"	# Darren Tucker
