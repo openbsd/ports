@@ -1,0 +1,121 @@
+$OpenBSD: patch-diskrescue_c,v 1.1 2013/06/15 08:19:33 sthen Exp $
+--- diskrescue.c.orig	Mon Sep 28 16:13:33 2009
++++ diskrescue.c	Sat Jun 15 09:19:05 2013
+@@ -44,15 +44,15 @@ static const char	*cvstag = "$diskrescue: diskrescue.c
+  */
+ 
+ struct dr_hdr {
+-	daddr64_t		disk_sz;
+-	daddr64_t		block_sz;
+-	char			output[PATH_MAX];
++	daddr_t		disk_sz;
++	daddr_t		block_sz;
++	char		output[PATH_MAX];
+ };
+ 
+ struct dr_entry {
+-	daddr64_t		offset;
+-	daddr64_t		size;
+-	char			digest[SHA1_DIGEST_LENGTH * 2 + 1];
++	daddr_t		offset;
++	daddr_t		size;
++	char		digest[SHA1_DIGEST_LENGTH * 2 + 1];
+ };
+ 
+ /*
+@@ -80,7 +80,7 @@ FILE			*resfd = stderr;
+ int			quiet = 0;
+ int			abort_on_error = 0;
+ volatile sig_atomic_t   running = 1;
+-daddr64_t		bs = DEV_BSIZE;
++daddr_t			bs = DEV_BSIZE;
+ char			*rawdev = NULL;
+ char			*outfile = NULL;
+ char			*infile = NULL;
+@@ -143,7 +143,7 @@ hdr_read(FILE *f, struct dr_hdr *h)
+ }
+ 
+ int
+-ent_write(FILE *f, daddr64_t offset, daddr64_t sz, char *inbuf)
++ent_write(FILE *f, daddr_t offset, daddr_t sz, char *inbuf)
+ {
+ 	u_int8_t		digest[SHA1_DIGEST_LENGTH];
+ 	char			digest_text[SHA1_DIGEST_LENGTH * 2 + 1];
+@@ -208,7 +208,7 @@ ent_read(FILE *f, FILE *outf, struct dr_entry *e)
+ }
+ 
+ int
+-rawsize(int fd, daddr64_t *size)
++rawsize(int fd, daddr_t *size)
+ {
+ #if defined(__OpenBSD__)
+ 	struct disklabel        dl;
+@@ -223,11 +223,11 @@ rawsize(int fd, daddr64_t *size)
+ #endif
+ }
+ 
+-daddr64_t
++daddr_t
+ getbs(char *val)
+ {
+-	daddr64_t		num, t;
+-	char			*expr;
++	daddr_t		num, t;
++	char		*expr;
+ 
+ 	num = strtoul(val, &expr, 0);
+ 	if (num == SIZE_T_MAX) /* Overflow. */
+@@ -283,7 +283,7 @@ erange:			errx(1, "illegal block size: %s", strerror(E
+ }
+ 
+ int
+-readoffset(daddr64_t offs, int fd, char *buf, daddr64_t bs)
++readoffset(daddr_t offs, int fd, char *buf, daddr_t bs)
+ {
+ 	int			rv;
+ 
+@@ -295,10 +295,10 @@ readoffset(daddr64_t offs, int fd, char *buf, daddr64_
+ }
+ 
+ int
+-recover(daddr64_t offs, int fd, char *buf, daddr64_t bs)
++recover(daddr_t offs, int fd, char *buf, daddr_t bs)
+ {
+-	int			rv = -1, sz;
+-	daddr64_t		blocks, b;
++	int		rv = -1, sz;
++	daddr_t		blocks, b;
+ 
+ 	blocks = bs / DEV_BSIZE;
+ 	if (bs % DEV_BSIZE)
+@@ -334,7 +334,7 @@ usage(void)
+ }
+ 
+ void
+-print_perc(daddr64_t size, daddr64_t offs, char *s, char *cr)
++print_perc(daddr_t size, daddr_t offs, char *s, char *cr)
+ {
+ 	double			p;
+ 
+@@ -353,8 +353,8 @@ recover_verify(int operation)
+ {
+ 	FILE			*ofd = NULL;
+ 	int			retval = 1;
+-	daddr64_t		size = 0;
+-	daddr64_t		offs, sz, start = 0;
++	daddr_t			size = 0;
++	daddr_t			offs, sz, start = 0;
+ 	int			rv, fd, exists = 0;
+ 	char			*inbuf, *mode = "w+";
+ 	struct stat		sb;
+@@ -539,8 +539,8 @@ restore(int operation)
+ {
+ 	FILE			*ofd = NULL, *ifd = NULL;
+ 	char			*buf = NULL;
+-	daddr64_t		size = 0;
+-	daddr64_t		offs, sz, start = 0;
++	daddr_t			size = 0;
++	daddr_t			offs, sz, start = 0;
+ 	int			rv = 1;
+ 	struct stat		sb;
+ 
