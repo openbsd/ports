@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/06/15 00:00:24 bcallah Exp $
+# $OpenBSD: Makefile,v 1.34 2013/06/15 23:52:05 bcallah Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -12,6 +12,8 @@ V =			149
 DISTNAME =		mame0${V}s
 PKGNAME-main =		sdlmame-0.${V}
 PKGNAME-tools =		sdlmame-tools-0.${V}
+REVISION-main =		0
+REVISION-tools =	0
 
 CATEGORIES =		emulators games
 
