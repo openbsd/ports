@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/06/09 10:38:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2013/06/15 11:44:17 sthen Exp $
 
 COMMENT=		dbus debugger
 
@@ -17,7 +17,7 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
-MODGNOME_TOOLS=		yelp
+MODGNOME_TOOLS=		gi yelp
 
 BUILD_DEPENDS=		x11/gtk+3
 
