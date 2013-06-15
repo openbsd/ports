@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_instances_map_cpp,v 1.1.1.1 2013/06/15 04:02:29 bcallah Exp $
+
+Write maps to ~/.choria instead of the default ${LOCALBASE}/share/choria/maps
+
+--- src/instances/map.cpp.orig	Sun May 26 16:12:32 2013
++++ src/instances/map.cpp	Sun May 26 16:14:07 2013
+@@ -236,7 +236,7 @@ int MapClass::SaveMap() {
+ 
+ 	// Open file
+ 	FileClass File;
+-	int Result = File.OpenForWrite(Filename.c_str());
++	int Result = File.OpenForWrite((stringc(getenv("HOME")) + stringc("/.choria/") + Filename).c_str());
+ 	if(!Result) {
+ 		printf("SaveMap: unable to open file for writing\n");
+ 		return 0;
