@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:35:57 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/06/15 08:09:25 sthen Exp $
 
 COMMENT=	Twitter script for irssi
 
-V=		2.5.1
-DISTNAME= 	twirssi-$V
+V=		2.6.0
+DISTNAME=	twirssi-$V
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.twirssi.com/
