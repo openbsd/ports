@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.166 2013/06/14 18:18:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.167 2013/06/15 11:53:41 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		3.8.3
+REVISION=		0
 
 HOMEPAGE=		http://projects.gnome.org/gdm/
 
@@ -30,9 +31,6 @@ MODULES=		devel/gettext \
 
 BUILD_DEPENDS=		devel/check
 
-# XXX configure checks for it, but unused
-BUILD_DEPENDS +=	security/nss
-
 # cyclic dependency, see pkg/DESCR
 # bring _all_ runtime dependencies (including consolekit and zenity)
 #RUN_DEPENDS +=		x11/gnome/session
@@ -50,6 +48,9 @@ MODGNOME_TOOLS= 	gi yelp
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include -DHAS_SA_LEN
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
+
+AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	autoconf
 
 CONFIGURE_ARGS=		--disable-static \
 			--mandir=${PREFIX}/man \
