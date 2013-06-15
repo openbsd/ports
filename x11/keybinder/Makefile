@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/05/31 15:35:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2013/06/15 03:08:31 bcallah Exp $
 
 COMMENT-main =		library for registering keyboard shortcuts
 COMMENT-python =	python bindings for keybinder
@@ -8,8 +8,8 @@ DISTNAME =		keybinder-0.3.0
 PKGNAME-main =		${DISTNAME}
 PKGNAME-python =	py-${DISTNAME}
 
-REVISION-main = 	0
-REVISION-python =	0
+REVISION-main = 	1
+REVISION-python =	1
 
 CATEGORIES =		x11 devel
 
@@ -21,7 +21,7 @@ MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 # GPLv2+ 
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		http://kaizer.se/publicfiles/keybinder/
+MASTER_SITES =		http://devio.us/~bcallah/source/
 
 MULTI_PACKAGES =	-main -python
 
