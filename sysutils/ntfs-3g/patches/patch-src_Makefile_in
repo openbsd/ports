@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2013/06/14 13:49:50 pirofti Exp $
---- src/Makefile.in.orig	Sun Jan 13 08:46:46 2013
-+++ src/Makefile.in	Fri Jun 14 14:18:50 2013
+$OpenBSD: patch-src_Makefile_in,v 1.2 2013/06/15 14:25:28 ajacoutot Exp $
+--- src/Makefile.in.orig	Sun Jan 13 07:46:46 2013
++++ src/Makefile.in	Sat Jun 15 16:23:19 2013
 @@ -37,8 +37,7 @@ target_triplet = @target@
  @ENABLE_NTFS_3G_TRUE@bin_PROGRAMS = ntfs-3g.probe$(EXEEXT) \
  @ENABLE_NTFS_3G_TRUE@	ntfs-3g.usermap$(EXEEXT) \
@@ -20,11 +20,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2013/06/14 13:49:50 pirofti Exp $
  	  else :; fi; \
  	done
  
-@@ -830,11 +829,10 @@ uninstall-man: uninstall-man8
- @ENABLE_NTFS_3G_TRUE@drivers : $(FUSE_LIBS) ntfs-3g lowntfs-3g
- 
- @ENABLE_NTFS_3G_TRUE@@RUN_LDCONFIG_TRUE@install-exec-hook:
--@ENABLE_NTFS_3G_TRUE@@RUN_LDCONFIG_TRUE@	$(LDCONFIG)
+@@ -834,7 +833,7 @@ uninstall-man: uninstall-man8
  
  @ENABLE_MOUNT_HELPER_TRUE@@ENABLE_NTFS_3G_TRUE@install-exec-local:	install-rootbinPROGRAMS
  @ENABLE_MOUNT_HELPER_TRUE@@ENABLE_NTFS_3G_TRUE@	$(MKDIR_P) "$(DESTDIR)/sbin"
