@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/06/15 16:47:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2013/06/15 21:40:16 sthen Exp $
 
 VMEM_WARNING =		Yes
 
@@ -9,6 +9,7 @@ COMMENT =		fast implementation of the Python language
 V =			2.0.2
 DISTNAME =		pypy-${V}-src
 PKGNAME =		pypy-${V}
+REVISION =		0
 BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-$V-0.tar.xz
 
 CATEGORIES =		lang
@@ -39,7 +40,6 @@ MODULES +=		devel/gettext lang/python gcc4
 MODPY_VERSION =		2.7
 MODGCC4_ARCHS =		*
 MODGCC4_LANGS =		c c++
-MODGCC4_VERSION =	4.8
 
 USE_GMAKE =		Yes
 BUILD_DEPENDS =		textproc/py-sphinx
