@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_post_deinterlace_plugins_Makefile_in,v 1.12 2012/11/29 20:18:21 brad Exp $
---- src/post/deinterlace/plugins/Makefile.in.orig	Sun Jan  1 16:22:06 2012
-+++ src/post/deinterlace/plugins/Makefile.in	Tue Jan  3 00:57:38 2012
-@@ -513,7 +513,7 @@ noinst_HEADERS = plugins.h greedyhmacros.h
+$OpenBSD: patch-src_post_deinterlace_plugins_Makefile_in,v 1.13 2013/06/15 22:58:23 brad Exp $
+--- src/post/deinterlace/plugins/Makefile.in.orig	Wed May 29 09:33:25 2013
++++ src/post/deinterlace/plugins/Makefile.in	Wed May 29 13:35:40 2013
+@@ -538,7 +538,7 @@ noinst_HEADERS = plugins.h greedyhmacros.h
  # doesn't run out of general registers trying to compile it.
  noinst_LTLIBRARIES = libdeinterlacepluginsO1.la libdeinterlaceplugins.la
  libdeinterlacepluginsO1_la_SOURCES = kdetv_greedyh.c $(debug_sources)

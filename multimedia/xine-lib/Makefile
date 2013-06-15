@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.102 2013/05/14 01:54:22 brad Exp $
+# $OpenBSD: Makefile,v 1.103 2013/06/15 22:58:23 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multimedia decoding library
 
-DISTNAME=	xine-lib-1.2.2
-REVISION=	2
+DISTNAME=	xine-lib-1.2.3
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	xine	30.0
+SHARED_LIBS=	xine	30.1
 
 HOMEPAGE=	http://www.xine-project.org/
 
@@ -22,11 +21,11 @@ PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB=	FLAC GL GLU ICE SDL SM X11 Xext Xinerama Xv XvMCW a52 avcodec \
 		avutil bluray c cdio dca dvdnav dvdread expat faad fontconfig \
-		freetype iso9660 m mad modplug mpcdec mng ogg postproc pthread \
-		pthread-stubs sndio speex theora usbhid vcdinfo vorbis wavpack \
-		xcb-shape xcb-shm xcb-xv xcb xml2 z
+		freetype iso9660 jpeg m mad modplug mpcdec mng ogg postproc \
+		pthread pthread-stubs sndio speex theora usbhid vcdinfo vorbis \
+		wavpack xcb-shape xcb-shm xcb-xv xcb xml2 z
 
-XINEAPI_REV=	2.2
+XINEAPI_REV=	2.3
 SUBST_VARS+=	XINEAPI_REV
 
 MODULES=	devel/gettext
@@ -43,12 +42,13 @@ LIB_DEPENDS=	audio/faad \
 		audio/speex \
 		audio/wavpack \
 		devel/sdl \
+		graphics/ffmpeg>=20111126 \
+		graphics/jpeg \
+		graphics/libmng \
+		graphics/vcdimager \
 		multimedia/libbluray \
 		multimedia/libdvdnav \
-		multimedia/libtheora \
-		graphics/ffmpeg>=20111126 \
-		graphics/libmng \
-		graphics/vcdimager
+		multimedia/libtheora
 
 MAKE_ENV=	V=1
 

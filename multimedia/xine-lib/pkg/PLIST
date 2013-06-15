@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2012/11/29 20:18:21 brad Exp $
+@comment $OpenBSD: PLIST,v 1.19 2013/06/15 22:58:24 brad Exp $
 @conflict xine-lib-arts-*
 @conflict xine-lib-esd-*
 @conflict xine-lib-jack-*
@@ -77,6 +77,7 @@ lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_dvaudio.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_faad.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_ff.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_gsm610.so
+lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_libjpeg.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_lpcm.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_mad.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_decode_mpc.so
@@ -126,6 +127,7 @@ lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_pvr.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_rtp.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_rtsp.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_stdin_fifo.so
+lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_test.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_v4l2.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_vcd.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_nsf.so
@@ -133,6 +135,7 @@ lib/xine/plugins/${XINEAPI_REV}/xineplug_sputext.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_vdr.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_none.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_opengl.so
+lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_opengl2.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_raw.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_sdl.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_vo_out_xcbshm.so
