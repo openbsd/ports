@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/06/15 11:52:36 bcallah Exp $
+# $OpenBSD: Makefile,v 1.26 2013/06/15 19:57:18 espie Exp $
 
 # XXX: Don't forget to update x11/py-qt4 when updating this port.
 
@@ -6,7 +6,7 @@ SHARED_ONLY=	Yes
 
 COMMENT=	automatically generate Python bindings for C and C++ libs
 
-DISTNAME=	sip-4.14.6
+DISTNAME=	sip-4.14.1
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
 
