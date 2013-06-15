@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.51 2013/05/08 08:38:37 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.52 2013/06/15 20:06:50 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -59,9 +59,6 @@ sub debug_dump
 	my $msg = $self->logname;
 	if ($self->{okay}) {
 		$msg .= "(okay)";
-	}
-	if ($self->{checked}) {
-		$msg .= "(checked)";
 	}
 }
 
@@ -125,12 +122,6 @@ sub filename
 {
 	my $self = shift;
 	return $self->distdir($self->{name});
-}
-
-sub checked_already
-{
-	my $self = shift;
-	return $self->{okay} || $self->{checked};
 }
 
 # this is the entry point from the Engine, this is run as soon as the path
@@ -209,7 +200,6 @@ sub checksize
 		print $fh "size does not match\n";
 		return 0;
 	}
-	$self->{checked} = 1;
 	return 1;
 }
 
@@ -341,6 +331,7 @@ sub cached_checksum
 			return 1;
 		}
 	}
+	print $fh "UNKNOWN (uncached)\n";
 	return 0;
 }
 
