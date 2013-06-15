@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/06/11 22:10:46 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2013/06/15 16:47:58 sthen Exp $
 
-# Oh boy. "5495684 maximum resident set size" on amd64
 VMEM_WARNING =		Yes
 
 ONLY_FOR_ARCHS =	amd64
@@ -10,6 +9,7 @@ COMMENT =		fast implementation of the Python language
 V =			2.0.2
 DISTNAME =		pypy-${V}-src
 PKGNAME =		pypy-${V}
+BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-$V-0.tar.xz
 
 CATEGORIES =		lang
 
@@ -23,24 +23,53 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB +=		bz2 c crypto curses expat ffi m pthread ssl util z
 
 MASTER_SITES =		https://bitbucket.org/pypy/pypy/downloads/
+MASTER_SITES0 =		http://spacehopper.org/mirrors/
 EXTRACT_SUFX =		.tar.bz2
 
+PSEUDO_FLAVORS =	no_bootstrap
+FLAVOR ?=
+
 DIST_SUBDIR =		pypy
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
+DISTFILES +=		${BOOTSTRAP-${MACHINE_ARCH}}:0
+# if adding archs, list *all* bootstraps in SUPDISTFILES
+SUPDISTFILES =		${BOOTSTRAP-amd64}:0
 
 MODULES +=		devel/gettext lang/python gcc4
 MODPY_VERSION =		2.7
 MODGCC4_ARCHS =		*
 MODGCC4_LANGS =		c c++
+MODGCC4_VERSION =	4.8
 
 USE_GMAKE =		Yes
 BUILD_DEPENDS =		textproc/py-sphinx
 
 WRKDIST =		${WRKDIR}/pypy-${V}-src
 
+post-extract:
+	@if [ `ulimit -d` -lt $$((4*1024*1024)) ]; then \
+	    echo amd64 build takes approx 4GB; datasize limit is too low; \
+	    exit 1; fi
+.if !${FLAVOR:Mno_bootstrap}
+	echo '#!/bin/sh' > ${WRKDIR}/bin/pypy
+	echo 'LD_LIBRARY_PATH=${WRKDIR}/bootstrap/system-libs exec ${WRKDIR}/bootstrap/bin/pypy "$$@"' >> ${WRKDIR}/bin/pypy
+	chmod +x ${WRKDIR}/bin/pypy
+.endif
+
 do-build:
+.if ${FLAVOR:Mno_bootstrap}
 	cd ${WRKSRC}/pypy/goal/ && ${SETENV} ${MAKE_ENV} \
-	  PYPY_USESSION_DIR=${WRKDIR}/usession PYPY_CTYPES_DIR=${WRKDIR}/ctypes \
+	  PYPY_USESSION_DIR=${WRKDIR}/usession \
+	  PYPY_CTYPES_DIR=${WRKDIR}/ctypes \
 	  ${MODPY_BIN} ../../rpython/bin/rpython --source --opt=jit
+.else
+	cd ${WRKSRC}/pypy/goal/ && ${SETENV} ${MAKE_ENV} \
+	  PYPY_GC_MAX_DELTA=300MB \
+	  PYPY_USESSION_DIR=${WRKDIR}/usession \
+	  PYPY_CTYPES_DIR=${WRKDIR}/ctypes \
+	  pypy --jit loop_longevity=300 \
+	  ../../rpython/bin/rpython --source --opt=jit
+.endif
 	cd ${WRKDIR}/usession/testing_1 && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM}
 
 do-install:
@@ -57,4 +86,20 @@ do-install:
 	chown -R ${SHAREOWN}:${SHAREGRP}  ${PREFIX}/pypy/lib-python/2.7
 	cd ${PREFIX}/bin && ln -s ../pypy/bin/pypy
 
+PYPY_PKG = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME}.tgz
+
 .include <bsd.port.mk>
+
+# The bootstrap-based build process uses less memory and is faster,
+# but if you need to build a new bootstrap because the existing one no
+# longer runs, use FLAVOR=no_bootstrap to do a cpython-based build.
+# Expect 5.3GB+ memory usage on amd64.
+bootstrap: ${PYPY_PKG}
+	mkdir -p ${WRKDIR}/prepare/bootstrap/system-libs
+	cd ${WRKDIR}/prepare/bootstrap && tar zxf ${PYPY_PKG}
+	rm -rf ${WRKDIR}/prepare/bootstrap/{+*,info,man}
+	for i in `ldd ${WRKDIR}/prepare/bootstrap/bin/pypy | grep 'lib/' | \
+	    awk '{ print $$7 }'` ; do \
+		cp $$i ${WRKDIR}/prepare/bootstrap/system-libs; done
+	cd ${WRKDIR}/prepare && tar cf - bootstrap | \
+	    xz > ${FULLDISTDIR}/${BOOTSTRAP-${MACHINE_ARCH}}
