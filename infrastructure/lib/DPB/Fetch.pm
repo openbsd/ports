@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.52 2013/06/15 20:06:50 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.53 2013/06/16 13:17:35 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -644,7 +644,7 @@ sub run
 {
 	my ($self, $core) = @_;
 	my $job = $core->job;
-	$self->redirect($job->{log});
+	$self->redirect_fh($job->{logfh}, $job->{log});
 	exit(!$job->{file}->checksum($job->{file}->tempfilename));
 }
 
@@ -665,6 +665,7 @@ sub finalize
 		return $job->bad_file($self->{fetcher}, $core);
 	}
 	rename($job->{file}->tempfilename, $job->{file}->filename);
+	print {$job->{logfh}} "Renamed to ", $job->{file}->filename, "\n";
 	$job->{file}->cache;
 	my $sz = $job->{file}->{sz};
 	if (defined $self->{fetcher}->{initial_sz}) {
@@ -813,10 +814,8 @@ sub new
 		logger => $logger,
 		log => $logger->make_distlogs($file),
 	}, $class;
-	if (open my $fh, '>>', $job->{log}) {
-		print $fh ">>> From ", $file->fullpkgpath, "\n";
-		close $fh;
-	}
+	open $job->{logfh}, '>>', $job->{log};
+	print {$job->{logfh}} ">>> From ", $file->fullpkgpath, "\n";
 	File::Path::mkpath(File::Basename::dirname($file->filename));
 	$job->{watched} = DPB::Watch->new($file->tempfilename,
 		$file->{sz}, undef, $job->{started});
