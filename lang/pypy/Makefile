@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/06/15 21:40:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2013/06/16 21:17:22 sthen Exp $
 
 VMEM_WARNING =		Yes
 
@@ -32,7 +32,9 @@ FLAVOR ?=
 
 DIST_SUBDIR =		pypy
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX}
+.if defined(BOOTSTRAP-${MACHINE_ARCH}) && !${FLAVOR:Mno_bootstrap}
 DISTFILES +=		${BOOTSTRAP-${MACHINE_ARCH}}:0
+.endif
 # if adding archs, list *all* bootstraps in SUPDISTFILES
 SUPDISTFILES =		${BOOTSTRAP-amd64}:0
 
