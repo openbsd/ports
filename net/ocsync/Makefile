@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.9 2013/05/14 21:40:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2013/06/16 15:08:04 ajacoutot Exp $
 
-SHARED_LIBS +=	ocsync                    0.0 # 0.2
 SHARED_ONLY=	Yes
 
 COMMENT=	bidirectional directories synchronizer (owncloud version)
 
 DISTNAME=	ocsync-0.70.7
-REVISION=	0
+REVISION=	1
 EXTRACT_SUFX=	.tar.bz2
+
+SHARED_LIBS +=	ocsync                    0.0 # 0.2
 
 CATEGORIES=	net
 
-HOMEPAGE=	http://www.csync.org/
+HOMEPAGE=	http://owncloud.org/sync-clients/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
