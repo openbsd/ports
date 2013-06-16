@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.10 2011/08/28 11:15:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/06/16 20:01:27 jca Exp $
+%%SHARED%%
 bin/awk
-@bin bin/dgawk
 @bin bin/gawk
 @bin bin/gawk-${V}
 bin/igawk
-@bin bin/pgawk
-@bin bin/pgawk-${V}
+include/gawkapi.h
 @info info/gawk.info
 @info info/gawkinet.info
 libexec/awk/
@@ -13,7 +12,17 @@ libexec/awk/
 @bin libexec/awk/pwcat
 @man man/man1/gawk.1
 @man man/man1/igawk.1
-@man man/man1/pgawk.1
+@mandir man/man3am/
+@man man/man3am/filefuncs.3am
+@man man/man3am/fnmatch.3am
+@man man/man3am/fork.3am
+@man man/man3am/ordchr.3am
+@man man/man3am/readdir.3am
+@man man/man3am/readfile.3am
+@man man/man3am/revoutput.3am
+@man man/man3am/revtwoway.3am
+@man man/man3am/rwarray.3am
+@man man/man3am/time.3am
 share/awk/
 share/awk/assert.awk
 share/awk/bits2str.awk
@@ -23,6 +32,7 @@ share/awk/ftrans.awk
 share/awk/getopt.awk
 share/awk/gettime.awk
 share/awk/group.awk
+share/awk/inplace.awk
 share/awk/join.awk
 share/awk/libintl.awk
 share/awk/noassign.awk
@@ -42,6 +52,10 @@ share/locale/fi/LC_MESSAGES/gawk.mo
 share/locale/fr/LC_MESSAGES/gawk.mo
 share/locale/it/LC_MESSAGES/gawk.mo
 share/locale/ja/LC_MESSAGES/gawk.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
+share/locale/ms/LC_MESSAGES/gawk.mo
 share/locale/nl/LC_MESSAGES/gawk.mo
 share/locale/pl/LC_MESSAGES/gawk.mo
 share/locale/sv/LC_MESSAGES/gawk.mo
+share/locale/vi/LC_MESSAGES/gawk.mo

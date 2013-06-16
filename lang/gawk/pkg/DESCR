@@ -1,1 +1,15 @@
-The GNU AWK utility, a pattern scanning and processing tool.
+GNU AWK is a pattern scanning and processing tool.  It conforms to the
+definition of the language in the POSIX 1003.1 Standard.  This version in
+turn is based on the description in The AWK Programming Language, by Aho,
+Kernighan, and Weinberger.  Gawk provides the additional features found in the
+current version of Brian Kernighan's awk(1) and a number of GNU-specific
+extensions.
+
+Among these extensions:
+- profiler
+- interactive debugger a la GDB
+- file inclusion, useful to share code between Gawk scripts
+- API for loadable extension modules
+- lint mode to warn about possible portability problems
+- bignums, for arbitrary precision arithmetic
+- socket networking

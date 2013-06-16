@@ -1,0 +1,14 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2013/06/16 20:01:27 jca Exp $
+lib/gawk/
+lib/gawk/filefuncs.so
+lib/gawk/fnmatch.so
+lib/gawk/fork.so
+lib/gawk/inplace.so
+lib/gawk/ordchr.so
+lib/gawk/readdir.so
+lib/gawk/readfile.so
+lib/gawk/revoutput.so
+lib/gawk/revtwoway.so
+lib/gawk/rwarray.so
+lib/gawk/testext.so
+lib/gawk/time.so
