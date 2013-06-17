@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.134 2013/06/04 15:32:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.135 2013/06/17 14:15:09 ajacoutot Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		3.8.3
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		net
 
@@ -25,15 +25,15 @@ WANTLIB += gee-0.8 geoclue gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls
 WANTLIB += goa-1.0 gobject-2.0 gpg-error graphite2 gstapp-1.0
 WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
-WANTLIB += harfbuzz hogweed icui18n javascriptcoregtk-3.0
-WANTLIB += jpeg json json-glib-1.0 ltdl m memphis-0.2 mission-control-plugins
-WANTLIB += nettle notify ogg orc-0.4 p11-kit pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += pulse pulse-mainloop-glib secret-1 sndfile soup-2.4
-WANTLIB += soup-gnome-2.4 sqlite3 stdc++ tasn1 telepathy-farstream
-WANTLIB += telepathy-glib telepathy-logger vorbis vorbisenc vorbisfile
-WANTLIB += webkitgtk-3.0 webp xcb xcb-render xcb-shm xml2 xslt
-WANTLIB += z zeitgeist-1.0
+WANTLIB += harfbuzz harfbuzz-icu hogweed icudata icui18n icuuc
+WANTLIB += javascriptcoregtk-3.0 jpeg json-c json-glib-1.0 ltdl
+WANTLIB += m memphis-0.2 mission-control-plugins nettle notify
+WANTLIB += ogg orc-0.4 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs pulse pulse-mainloop-glib
+WANTLIB += secret-1 sndfile soup-2.4 soup-gnome-2.4 sqlite3 stdc++
+WANTLIB += tasn1 telepathy-farstream telepathy-glib telepathy-logger
+WANTLIB += vorbis vorbisenc vorbisfile webkitgtk-3.0 webp xcb
+WANTLIB += xcb-render xcb-shm xml2 xslt z zeitgeist-1.0
 
 MODULES=		devel/dconf \
 			devel/gettext \
@@ -54,13 +54,13 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			net/telepathy/folks \
 			net/telepathy/telepathy-farstream \
 			net/telepathy/telepathy-logger \
+			net/telepathy/telepathy-mission-control \
 			textproc/enchant \
 			x11/gnome/gcr \
 			x11/gnome/online-accounts
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes \
-			net/telepathy/telepathy-mission-control \
 			net/telepathy/telepathy-gabble \
 			net/telepathy/telepathy-idle \
 			net/telepathy/telepathy-salut \
