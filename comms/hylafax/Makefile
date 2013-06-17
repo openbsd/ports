@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.68 2013/04/12 14:06:38 giovanni Exp $
+# $OpenBSD: Makefile,v 1.69 2013/06/17 13:51:59 giovanni Exp $
 
 COMMENT=		send/receive faxes and share modems
 DISTNAME=		hylafax-6.0.6
-REVISION=0
+REVISION=		1
 CATEGORIES=		comms
 
 HOMEPAGE=		http://www.HylaFAX.org/
@@ -58,5 +58,8 @@ NO_TEST=	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure
+
+post-install:
+	echo "FontMap: ${LOCALBASE}/share/ghostscript/fonts" >${PREFIX}/libdata/hylafax/etc/hyla.conf
 
 .include <bsd.port.mk>

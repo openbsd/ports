@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2012/07/19 15:05:30 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.20 2013/06/17 13:51:59 giovanni Exp $
 @conflict p5-SendPage-*
 @mode 4555
 @owner uucp
@@ -133,6 +133,7 @@ libdata/hylafax/etc/faxcover_example_sgi.ps
 libdata/hylafax/etc/faxmail.ps
 libdata/hylafax/etc/hfaxd.conf
 libdata/hylafax/etc/hosts.hfaxd
+libdata/hylafax/etc/hyla.conf
 libdata/hylafax/etc/lutRS18.pcf
 libdata/hylafax/etc/pagesizes
 libdata/hylafax/etc/templates/
