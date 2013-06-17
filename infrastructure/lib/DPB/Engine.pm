@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.79 2013/06/16 13:17:59 espie Exp $
+# $OpenBSD: Engine.pm,v 1.80 2013/06/17 10:47:44 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -195,7 +195,7 @@ sub done
 		}
 	}
 	delete $self->{doing}{$self->key_for_doing($v)};
-	$self->{engine}{locker}->recheck_errors($self->{engine});
+	$self->{engine}->recheck_errors;
 }
 
 sub end
