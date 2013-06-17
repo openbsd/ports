@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2012/08/06 13:20:48 dcoppa Exp $
---- src/Makefile.in.orig	Fri Jun 22 10:53:52 2012
-+++ src/Makefile.in	Mon Aug  6 13:45:53 2012
-@@ -416,7 +416,6 @@ EXTRA_DIST = Info.plist.src create_Info_plist.pl reade
+$OpenBSD: patch-src_Makefile_in,v 1.2 2013/06/17 14:53:17 dcoppa Exp $
+--- src/Makefile.in.orig	Wed Jun 12 14:09:20 2013
++++ src/Makefile.in	Mon Jun 17 15:59:25 2013
+@@ -470,7 +470,6 @@ EXTRA_DIST = Info.plist.src create_Info_plist.pl reade
  	towitoko/COPYING towitoko/README openct/LICENSE \
  	convert_version.pl 92_pcscd_ccid.rules
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2012/08/06 13:20:48 dcoppa Exp $
  DISTCLEANFILES = tokenparser.c Info.plist
  all: all-am
  
-@@ -1068,13 +1067,12 @@ install_ccid: libccid.la Info.plist
+@@ -1129,13 +1128,12 @@ install_ccid: libccid.la Info.plist
  	$(mkinstalldirs) $(DESTDIR)$(usbdropdir)/$(CCID_BUNDLE)/Contents/$(BUNDLE_HOST)/
  	cp Info.plist $(DESTDIR)$(usbdropdir)/$(CCID_BUNDLE)/Contents/
  	cp .libs/$(CCID_LIB) $(DESTDIR)$(usbdropdir)/$(CCID_BUNDLE)/Contents/$(BUNDLE_HOST)/$(CCID_LIB)
