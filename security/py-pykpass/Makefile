@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:41:28 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/06/17 19:33:23 ajacoutot Exp $
 
 COMMENT=		kerberos5 password verification python module
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION=	0.5
 DISTNAME=		pykpass-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		security
+REVISION=		0
 
 HOMEPAGE=		http://www.huque.com/software/pykpass/
 
@@ -14,12 +15,16 @@ MAINTAINER=		Jason Meltzer <meltzer@strangeresearch.com>
 # Python
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += asn1 com_err crypto heimbase hx509 krb5 pthread python2.7
+WANTLIB += roken ssl wind
+
 MASTER_SITES=		${HOMEPAGE}
 
-WANTLIB+=		com_err crypto krb5 ssl ${MODPY_WANTLIB}
 MODULES=		lang/python
 
 MODPY_SETUPTOOLS=	No
+
+MAKE_ENV=		LDFLAGS="$$(krb5-config --libs)"
 
 NO_TEST=		Yes
 
