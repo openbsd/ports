@@ -1,9 +1,17 @@
-$OpenBSD: patch-awesome_c,v 1.5 2013/05/22 15:05:50 dcoppa Exp $
+$OpenBSD: patch-awesome_c,v 1.6 2013/06/17 13:23:34 dcoppa Exp $
 
 Revert to the old xcb-util-0.3.6 API
 
---- awesome.c.orig	Mon May 20 13:31:32 2013
-+++ awesome.c	Mon May 20 13:31:52 2013
+commit 57bec371f70f121785cd062dca3b86f18fd685fd
+Author: kardan <kardan@riseup.net>
+Date:   Wed Jun 12 14:15:54 2013 +0200
+
+honor appended -c option for --check
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+--- awesome.c.orig	Mon Apr  1 13:44:46 2013
++++ awesome.c	Mon Jun 17 14:57:00 2013
 @@ -136,7 +136,7 @@ scan(xcb_query_tree_cookie_t tree_c)
  
          if(!attr_r || attr_r->override_redirect
@@ -13,3 +21,51 @@ Revert to the old xcb-util-0.3.6 API
          {
              geom_wins[i] = NULL;
              p_delete(&attr_r);
+@@ -288,6 +288,7 @@ main(int argc, char **argv)
+     ssize_t cmdlen = 1;
+     xdgHandle xdg;
+     bool no_argb = false;
++    bool run_test = false;
+     xcb_generic_event_t *event;
+     xcb_query_tree_cookie_t tree_c;
+     static struct option long_options[] =
+@@ -340,16 +341,8 @@ main(int argc, char **argv)
+             exit_help(EXIT_SUCCESS);
+             break;
+           case 'k':
+-            if(!luaA_parserc(&xdg, confpath, false))
+-            {
+-                fprintf(stderr, "✘ Configuration file syntax error.\n");
+-                return EXIT_FAILURE;
+-            }
+-            else
+-            {
+-                fprintf(stderr, "✔ Configuration file syntax OK.\n");
+-                return EXIT_SUCCESS;
+-            }
++            run_test = true;
++            break;
+           case 'c':
+             if(a_strlen(optarg))
+                 confpath = a_strdup(optarg);
+@@ -360,6 +353,20 @@ main(int argc, char **argv)
+             no_argb = true;
+             break;
+         }
++
++    if (run_test)
++    {
++        if(!luaA_parserc(&xdg, confpath, false))
++        {
++            fprintf(stderr, "✘ Configuration file syntax error.\n");
++            return EXIT_FAILURE;
++        }
++        else
++        {
++            fprintf(stderr, "✔ Configuration file syntax OK.\n");
++            return EXIT_SUCCESS;
++        }
++    }
+ 
+     /* register function for signals */
+     g_unix_signal_add(SIGINT, exit_on_signal, NULL);
