@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.14 2013/04/23 07:59:31 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.15 2013/06/17 11:52:29 dcoppa Exp $
 @conflict jakarta-tomcat-examples-*
 @pkgpath www/jakarta-tomcat/v7,-examples
 @owner _tomcat
@@ -239,6 +239,8 @@ webapps/docs/api/org/apache/catalina/filters/
 webapps/docs/api/org/apache/catalina/filters/AddDefaultCharsetFilter.ResponseWrapper.html
 webapps/docs/api/org/apache/catalina/filters/AddDefaultCharsetFilter.html
 webapps/docs/api/org/apache/catalina/filters/Constants.html
+webapps/docs/api/org/apache/catalina/filters/CorsFilter.CORSRequestType.html
+webapps/docs/api/org/apache/catalina/filters/CorsFilter.html
 webapps/docs/api/org/apache/catalina/filters/CsrfPreventionFilter.CsrfResponseWrapper.html
 webapps/docs/api/org/apache/catalina/filters/CsrfPreventionFilter.LruCache.html
 webapps/docs/api/org/apache/catalina/filters/CsrfPreventionFilter.html
@@ -1921,6 +1923,7 @@ webapps/docs/images/
 webapps/docs/images/add.gif
 webapps/docs/images/asf-logo.gif
 webapps/docs/images/code.gif
+webapps/docs/images/cors-flowchart.png
 webapps/docs/images/design.gif
 webapps/docs/images/docs.gif
 webapps/docs/images/fix.gif
