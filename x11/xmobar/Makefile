@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:46:19 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/06/17 10:07:40 dcoppa Exp $
 
 COMMENT =		minimalistic text based status bar
 
-DISTNAME =		xmobar-0.16
+DISTNAME =		xmobar-0.18
 CATEGORIES =		x11
 HOMEPAGE =		http://projects.haskell.org/xmobar
 
@@ -21,9 +21,9 @@ MODGHC_SETUP_CONF_ARGS = --flags="with_xft with_mpd with_mpris"
 
 BUILD_DEPENDS =		devel/hs-mtl \
 			devel/hs-parsec \
-			devel/hs-stm \
-			x11/hs-X11>=1.3.0 \
-			x11/hs-X11-xft>=0.2 \
+			devel/hs-stm>=2.3,<2.5 \
+			x11/hs-X11>=1.6.1 \
+			x11/hs-X11-xft>=0.2,<0.4 \
 			x11/hs-dbus>=0.10 \
 			audio/hs-libmpd>=0.8
 

@@ -1,6 +1,6 @@
-$OpenBSD: patch-samples_xmobar_config,v 1.3 2013/01/25 08:37:17 dcoppa Exp $
+$OpenBSD: patch-samples_xmobar_config,v 1.4 2013/06/17 10:07:40 dcoppa Exp $
 --- samples/xmobar.config.orig	Mon Dec  3 00:47:56 2012
-+++ samples/xmobar.config	Thu Jan 24 12:28:53 2013
++++ samples/xmobar.config	Wed Jun  5 15:49:58 2013
 @@ -4,18 +4,15 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
         , bgColor = "black"
         , fgColor = "grey"
@@ -16,7 +16,7 @@ $OpenBSD: patch-samples_xmobar_config,v 1.3 2013/01/25 08:37:17 dcoppa Exp $
 -                    , Run Swap [] 10
                      , Run Com "uname" ["-s","-r"] "" 36000
 -    		    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
-+                    , Run Battery ["-t","Batt: <left> <minleft>"] 10
++                    , Run Battery ["-t","AC: <status> Batt: <left> <minleft>"] 10
 +                    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
                      ]
         , sepChar = "%"

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:46:13 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/06/17 10:07:40 dcoppa Exp $
 
 # ghc: out of memory (requested 1048576 bytes)
 VMEM_WARNING =	Yes
 
 COMMENT =		third party xmonad extensions
 
-DISTNAME =		xmonad-contrib-0.11
+DISTNAME =		xmonad-contrib-0.11.1
 CATEGORIES =		x11
 HOMEPAGE =		http://www.xmonad.org/
 
@@ -21,8 +21,9 @@ BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/hs-mtl \
 			devel/hs-random \
 			shells/bash \
-			x11/hs-X11-xft \
-			x11/xmonad,-lib
+			x11/hs-X11>=1.6.1,<1.7 \
+			x11/hs-X11-xft>=0.2 \
+			x11/xmonad,-lib>=0.11,<0.12
 
 NO_TEST =		Yes
 
