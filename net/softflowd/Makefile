@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:35:56 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/06/17 13:25:31 sthen Exp $
 
 COMMENT=	flow-based network traffic analyser
 
-DISTNAME=	softflowd-0.9.8
-REVISION=	0
+DISTNAME=	softflowd-0.9.9
 CATEGORIES=	net
+
+HOMEPAGE=	http://code.google.com/p/softflowd/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://www2.mindrot.org/files/softflowd/
+MASTER_SITES=	http://softflowd.googlecode.com/files/
 
 WANTLIB=	c pcap
 
 CONFIGURE_STYLE= gnu
 
-USE_GROFF =	Yes
-NO_TEST= Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

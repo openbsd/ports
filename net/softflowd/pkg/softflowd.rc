@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: softflowd.rc,v 1.1 2013/06/17 13:25:31 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/softflowd"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1

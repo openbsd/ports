@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/04/03 02:22:31 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/06/17 13:25:31 sthen Exp $
 @man man/man8/softflowctl.8
 @man man/man8/softflowd.8
-sbin/softflowctl
-sbin/softflowd
+@bin sbin/softflowctl
+@bin sbin/softflowd
+share/doc/pkg-readmes/${FULLPKGNAME}
+@rcscript ${RCDIR}/softflowd
