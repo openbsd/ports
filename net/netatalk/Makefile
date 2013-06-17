@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.48 2013/03/21 08:46:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2013/06/17 19:30:53 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	AFP file and print services for IP networks
 
 DISTNAME=	netatalk-2.2.3
-REVISION=	3
+REVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netatalk/}
 EXTRACT_SUFX=	.tar.bz2
@@ -15,8 +15,8 @@ HOMEPAGE=	http://netatalk.sourceforge.net/
 # GPLv2+ and BSD or similar
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	asn1 c crypto db>=4 gcrypt gpg-error gssapi krb5 pthread \
-		rpcsvc wrap
+WANTLIB += asn1 c com_err crypto db gcrypt gpg-error gssapi heimbase
+WANTLIB += heimntlm hx509 krb5 pthread roken rpcsvc wind wrap
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	databases/db/v4 \
@@ -46,9 +46,6 @@ CONFIGURE_ARGS+= --disable-zeroconf
 .endif
 
 NO_TEST=	Yes
-
-post-extract:
-	@${INSTALL} -m 555 ${FILESDIR}/krb5-config ${WRKDIR}/bin
 
 post-build:
 	@cd ${WRKSRC}/config; make afpd.conf AppleVolumes.default

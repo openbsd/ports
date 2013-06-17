@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.205 2013/06/12 20:36:33 brad Exp $
+# $OpenBSD: Makefile,v 1.206 2013/06/17 19:30:43 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -14,10 +14,13 @@ V_DOVECOT=	2.1.16
 DISTNAME=	dovecot-${V_DOVECOT}
 PKGNAME=	dovecot-${V_DOVECOT}
 PKGNAME-server=	dovecot-${V_DOVECOT}
+REVISION-server=0
 PKGNAME-ldap=	dovecot-ldap-${V_DOVECOT}
+REVISION-ldap=	0
 PKGNAME-mysql=	dovecot-mysql-${V_DOVECOT}
-REVISION-mysql=	1
+REVISION-mysql=	2
 PKGNAME-postgresql= dovecot-postgresql-${V_DOVECOT}
+REVISION-postgresql=0
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}releases/${V_MAJOR}/
 
@@ -36,10 +39,12 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB-server=	asn1 bz2 c crypto gssapi krb5 sqlite3 ssl z \
+		com_err heimbase heimntlm hx509 pthread roken wind \
 		${MODLIBICONV_WANTLIB}
-WANTLIB-ldap=	asn1 com_err crypto gssapi krb5 lber ldap sasl2 ssl
+WANTLIB-ldap=	asn1 com_err crypto gssapi krb5 lber ldap sasl2 ssl \
+		com_err heimbase heimntlm hx509 pthread roken wind
 WANTLIB-mysql=	crypto m lib/mysql/mysqlclient>=10 ssl z
-WANTLIB-postgresql= com_err crypto pq>=4 ssl
+WANTLIB-postgresql= pq>=4
 
 MODULES=	converters/libiconv
 LIB_DEPENDS+=	archivers/bzip2
@@ -99,9 +104,6 @@ CONFIGURE_ARGS+=--with-mysql
 .if ${BUILD_PACKAGES:M-postgresql}
 CONFIGURE_ARGS+=--with-pgsql
 .endif
-
-post-extract:
-	@${INSTALL} -m 555 ${FILESDIR}/krb5-config ${WRKDIR}/bin
 
 pre-build:
 	@${SUBST_CMD} ${WRKSRC}/doc/example-config/conf.d/10-mail.conf

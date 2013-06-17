@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2013/06/09 15:26:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.105 2013/06/17 19:31:32 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.8.3
-REVISION=		1
+REVISION=		3
 
 CATEGORIES=		x11
 
@@ -23,15 +23,15 @@ WANTLIB += geoclue gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3
 WANTLIB += gnome-menu-3 goa-1.0 goa-backend-1.0 gobject-2.0 gpg-error
 WANTLIB += graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0
 WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
-WANTLIB += gthread-2.0 gtk-3 gtop-2.0 harfbuzz ibus-1.0
-WANTLIB += icui18n javascriptcoregtk-3.0 jpeg json-c
+WANTLIB += gthread-2.0 gtk-3 gtop-2.0 harfbuzz harfbuzz-icu ibus-1.0
+WANTLIB += icudata icui18n icuuc javascriptcoregtk-3.0 jpeg json-c
 WANTLIB += json-glib-1.0 kvm lcms2 ltdl m ogg orc-0.4 pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 polkit-gobject-1
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png polkit-gobject-1
 WANTLIB += pthread pthread-stubs pulse pulse-mainloop-glib rest-0.7
 WANTLIB += secret-1 smbclient sndfile soup-2.4 soup-gnome-2.4
 WANTLIB += sqlite3 stdc++ upower-glib vorbis vorbisenc vorbisfile
 WANTLIB += webkitgtk-3.0 webp xcb xcb-render xcb-shm xkbfile xml2
-WANTLIB += harfbuzz-icu icudata icuuc png xslt z
+WANTLIB += xslt z
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -104,9 +104,6 @@ BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/libtool \
 			x11/gnome/common
-
-post-extract:
-	${INSTALL} -m 555 ${FILESDIR}/krb5-config ${WRKDIR}/bin
 
 pre-configure:
 	@cd ${WRKSRC} && \

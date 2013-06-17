@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/06/12 19:17:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2013/06/17 19:30:44 ajacoutot Exp $
 
 COMMENT-main=		UW e-mail client
 COMMENT-c-client=	UW c-client mail access routines
@@ -29,11 +29,12 @@ EPOCH-c-client=		0
 EPOCH-imap=		0
 EPOCH-mailutil=		0
 
-REVISION=		0
-REVISION-main=		1
-REVISION-imap=		2
-REVISION-pilot=		7
-REVISION-pico=		1
+REVISION-main=		2
+REVISION-c-client=	1
+REVISION-imap=		3
+REVISION-mailutil=	1
+REVISION-pilot=		8
+REVISION-pico=		2
 
 CATEGORIES=		mail
 CATEGORIES-main=	mail news
@@ -50,11 +51,13 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=re-alpine/}
 
 MULTI_PACKAGES=		-main -c-client -imap -mailutil -pico -pilot
 
-WANTLIB=		asn1 c crypto gssapi krb5 ncurses ssl
-WANTLIB-main=		${WANTLIB} com_err crypto kafs pthread ssl
+WANTLIB += asn1 c crypto gssapi krb5 ncurses ssl
+WANTLIB += com_err heimbase heimntlm hx509 roken wind
+
+WANTLIB-main=		${WANTLIB} com_err crypto pthread ssl
 WANTLIB-c-client=	# empty
-WANTLIB-imap=		${WANTLIB} com_err crypto kafs ssl
-WANTLIB-mailutil=	${WANTLIB} com_err crypto kafs ssl
+WANTLIB-imap=		${WANTLIB} com_err crypto pthread ssl
+WANTLIB-mailutil=	${WANTLIB} com_err crypto pthread ssl
 WANTLIB-pico=		${WANTLIB} pthread
 WANTLIB-pilot=		${WANTLIB} pthread
 
@@ -62,21 +65,25 @@ MODULES=		devel/gettext
 BUILD_DEPENDS=		textproc/aspell/core
 RUN_DEPENDS-main=	${RUN_DEPENDS} textproc/aspell/core
 RUN_DEPENDS-pico=	${RUN_DEPENDS} textproc/aspell/core
-RUN_DEPENDS-c-client=	# empty
+RUN_DEPENDS-c-client=	#empty
 
 # Link error: c-client not found!
 USE_LIBTOOL=		gnu
 
 SHLIB=			libc-client.so.${LIBc-client_VERSION}
-MAKE_FLAGS=		EXTRACFLAGS="${CFLAGS}" SHLIB="${SHLIB}" SHLIBNAME=${SHLIB} CC="${CC}" EXTRAAUTHENTICATORS="gss"
+MAKE_FLAGS=		EXTRACFLAGS="${CFLAGS}" \
+			SHLIB="${SHLIB}" \
+			SHLIBNAME=${SHLIB} \
+			CC="${CC}" \
+			EXTRAAUTHENTICATORS="gss" \
+			GSSCFLAGS="-DHEIMDAL"
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include $$(krb5-config --cflags)" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
-			LIBS="-lgssapi -lkrb5 -lasn1 -lcrypto" \
+			LIBS="$$(krb5-config gssapi --libs)" \
 			ac_cv_search_regcomp=-lc
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--with-krb5-include-dir=/usr/include/kerberosV \
 			--with-system-pinerc=${SYSCONFDIR}/pine.conf \
 			--with-system-fixed-pinerc=${SYSCONFDIR}/pine.conf.fixed \
 			--with-system-mail-directory=/var/mail \

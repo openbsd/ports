@@ -1,7 +1,7 @@
-$OpenBSD: patch-libsasl2_pc_in,v 1.1 2013/05/30 00:28:07 ajacoutot Exp $
+$OpenBSD: patch-libsasl2_pc_in,v 1.2 2013/06/17 19:31:09 ajacoutot Exp $
 
-libdir will extend to:
-libdir = ${exec_prefix}/lib
+XXX push upstream:
+libdir will extend to: libdir = ${exec_prefix}/lib
 
 --- libsasl2.pc.in.orig	Fri Oct 12 16:05:48 2012
 +++ libsasl2.pc.in	Thu May 30 02:21:24 2013

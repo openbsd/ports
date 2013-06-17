@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/03/21 09:46:02 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/06/17 19:30:43 ajacoutot Exp $
 @pkgpath mail/cyrus-imapd,-main,kerberos
 @pkgpath mail/cyrus-imapd,-main
 @pkgpath mail/cyrus-imapd,-perl
@@ -57,8 +57,8 @@ include/cyrus/xstrlcpy.h
 lib/libcyrus.a
 lib/libcyrus_min.a
 @comment libdata/perl5/${MACHINE_ARCH}-openbsd/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.12.2/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.12.2/perllocal.pod
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.16.3/
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.16.3/perllocal.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/IMAP/

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:44:43 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2013/06/17 19:31:25 ajacoutot Exp $
 
 COMMENT=	Apache Kerberos authentication module
 
-REVISION=	8
+REVISION=	9
 DISTNAME=	mod_auth_kerb-5.3
 CATEGORIES=	www
 
@@ -13,7 +13,9 @@ MAINTAINER=	Jason Meltzer <jmeltzer@openbsd.org>
 
 # combination of 2- and 3-clause BSD, MIT, and export crypto warnings
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		ssl gssapi krb5 crypto
+
+WANTLIB += asn1 com_err crypto gssapi heimbase heimntlm hx509
+WANTLIB += krb5 pthread roken wind
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=modauthkerb/}
 
@@ -24,8 +26,6 @@ MODAPACHE_NAME=	auth_kerb
 MODAPACHE_LOCATION=	${WRKBUILD}/src
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	KRB5_CPPFLAGS="-I/usr/include/kerberosV" \
-		KRB5_LDFLAGS="-lkrb5 -lgssapi -lssl -lcrypto"
 
 post-build:
 	@${MODAPACHE_CREATE_ENABLE_SCRIPT}

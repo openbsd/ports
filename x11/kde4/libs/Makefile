@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2013/06/06 08:36:49 zhuk Exp $
+# $OpenBSD: Makefile,v 1.24 2013/06/17 19:31:32 ajacoutot Exp $
 
 COMMENT =	KDE core libraries
 DISTNAME =	kdelibs-${MODKDE4_VERSION}
 PKGSPEC =	kdelibs->=4
+REVISION =	0
 
 SHARED_LIBS =	kde3support          50.0      # .4.0
 SHARED_LIBS +=	kdecore              50.0      # .5.0
@@ -54,7 +55,7 @@ SHARED_LIBS +=	kdeinit4_kded4			50.0
 SHARED_LIBS +=	kdeinit4_kio_http_cache_cleaner	50.0
 SHARED_LIBS +=	kdeinit4_klauncher		50.0
 
-WANTLIB =  c com_err crypto krb5 m pthread ssl stdc++ util z
+WANTLIB =  c com_err crypto krb5 m pthread stdc++ util z
 WANTLIB += Half ICE Iex IlmImf IlmThread Imath SM X11 Xau Xcursor Xdmcp
 WANTLIB += Xext Xfixes Xft Xpm Xrender Xss Xtst
 WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDeclarative
@@ -65,6 +66,7 @@ WANTLIB += asn1 aspell attica bz2 dbusmenu-qt enchant exslt fam
 WANTLIB += gif gssapi intl jasper jpeg lzma pcre pcreposix
 WANTLIB += png polkit-qt-core-1 qca2 soprano sopranoclient
 WANTLIB += streamanalyzer streams xml2 xslt
+WANTLIB += heimbase heimntlm hx509 roken wind
 
 MODULES =	multimedia/phonon
 MODKDE4_USE =
@@ -99,12 +101,6 @@ LIB_DEPENDS =	archivers/bzip2 \
 		productivity/attica \
 		x11/dbusmenu-qt \
 		x11/polkit-qt4
-
-# we don't have krb5-config
-CONFIGURE_ARGS =	-DGSSAPI_LIBS:STRING="-lgssapi -lkrb5 -lasn1 -lcom_err -lssl -lcrypto" \
-			-DGSSAPI_INCS:STRING="/usr/include/kerberosV" \
-			-DGSSAPI_FLAVOR:STRING="HEIMDAL" \
-			-DGSSAPI_FOUND:BOOL=TRUE
 
 # and do not have this stuff at all
 CONFIGURE_ARGS +=	-DWITH_ACL:Bool=FALSE \

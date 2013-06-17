@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.184 2013/05/21 18:08:58 brad Exp $
+# $OpenBSD: Makefile,v 1.185 2013/06/17 19:30:53 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,6 +9,7 @@ DISTNAME=		samba-3.6.15
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 FULLPKGPATH-docs=	net/samba,-docs
+REVISION-main=		0
 
 SHARED_LIBS=		smbclient	3.0 \
 			smbsharemodes	1.0 \
@@ -111,7 +112,8 @@ CONFIGURE_ARGS+=	--with-krb5="${WRKDIR}/usr"
 #MODULES+=		lang/python
 #MODPY_RUNDEP=		No
 
-WANTLIB+=		com_err
+WANTLIB += asn1 crypto gssapi heimbase heimntlm hx509 krb5 roken
+WANTLIB += wind com_err
 .else
 CONFIGURE_ARGS+=	--without-ads
 .endif
@@ -147,10 +149,6 @@ post-patch:
 
 pre-configure:
 	@${SUBST_CMD} ${SAMBA_MANPAGES}/swat.8
-
-post-extract:
-	@cp ${FILESDIR}/krb5-config ${WRKDIR}/bin
-	@chmod a+x ${WRKDIR}/bin/krb5-config
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/samba/pdf

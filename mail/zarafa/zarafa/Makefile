@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2013/06/12 20:36:33 brad Exp $
+# $OpenBSD: Makefile,v 1.151 2013/06/17 19:30:44 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -45,8 +45,9 @@ WANTLIB += m pthread stdc++ z vmime execinfo icudata icui18n icuuc uuid
 WANTLIB += boost_filesystem-mt boost_system-mt
 
 WANTLIB-main += ${WANTLIB} ${MODPY_WANTLIB}
-WANTLIB-main += asn1 c com_err crypto gssapi ical icalss krb5 lber-2.4 ldap-2.4
+WANTLIB-main += asn1 c com_err crypto gssapi ical icalss krb5 lber-2.4
 WANTLIB-main += mysqlclient ncursesw sasl2 ssl util uuid xml2 kyotocabinet
+WANTLIB-main += heimbase heimntlm hx509 ldap_r-2.4 roken wind
 WANTLIB-main += clucene-core clucene-shared
 
 RUN_DEPENDS-main=${MODGETTEXT_RUN_DEPENDS} \
@@ -117,9 +118,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-clucene-include-prefix=${LOCALBASE}/include \
 		--with-python=${MODPY_BIN} \
 		--with-php-config=${MODPHP_PHP_CONFIG}
-
-# XXX in-tree heimdal does not provide krb5_free_unparsed_name()
-CONFIGURE_ARGS+= --with-krb5-config=/usr/bin/true
 
 # force build with clucene >= 2.x
 CONFIGURE_ENV +=ac_cv_lib_clucene__ZN6lucene5index11IndexReader4openEPKc=yes

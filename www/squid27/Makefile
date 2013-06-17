@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:44:49 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/06/17 19:31:25 ajacoutot Exp $
 
 COMMENT=	WWW and FTP proxy cache and accelerator
 
 DISTNAME=	squid-2.7.STABLE9
-REVISION=	22
+REVISION=	23
 CATEGORIES=	www
 MASTER_SITES=	${HOMEPAGE}/Versions/v2/2.7/
 DIST_SUBDIR=	squid
@@ -15,7 +15,8 @@ HOMEPAGE=	http://www.squid-cache.org/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	asn1 c com_err crypto krb5 gssapi m pthread ssl
+WANTLIB += asn1 c com_err crypto krb5 gssapi m pthread ssl roken
+WANTLIB += heimbase heimntlm hx509 wind
 
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/squid
 SUBST_VARS=	LOCALSTATEDIR

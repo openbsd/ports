@@ -1,25 +1,24 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/21 08:46:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2013/06/17 19:30:53 ajacoutot Exp $
 
 COMMENT=	powerful console ftp client with many features
 
 DISTNAME=	yafc-1.1
-REVISION=	0
 CATEGORIES=	net
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=yafc/}
+REVISION=	0
 
 HOMEPAGE=	http://yafc.sourceforge.net/
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c ncurses readline
+WANTLIB += asn1 c com_err crypto gssapi heimbase heimntlm hx509
+WANTLIB += krb5 ncurses pthread readline roken wind
 
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/support
-CONFIGURE_ARGS=	--with-readline --with-catgets --with-krb5=/usr/lib
-
-USE_GROFF =	Yes
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 DOCS=	NEWS README TODO
 

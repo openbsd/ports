@@ -1,15 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.4 2013/01/03 11:52:29 sthen Exp $
+$OpenBSD: patch-configure_in,v 1.5 2013/06/17 19:30:22 ajacoutot Exp $
 --- configure.in.orig	Wed Oct 10 13:18:49 2012
 +++ configure.in	Thu Jan  3 11:02:29 2013
-@@ -589,7 +589,7 @@ SLAPD_SQL_LIBS=
- SLAPD_SQL_INCLUDES=
- 
- KRB4_LIBS=
--KRB5_LIBS=
-+KRB5_LIBS="-lgssapi -lkrb5 -lasn1 -lcom_err"
- SASL_LIBS=
- TLS_LIBS=
- MODULES_LIBS=
 @@ -1916,6 +1916,7 @@ if test $ol_enable_wrappers != no ; then
  		save_LIBS="$LIBS"
  		LIBS="$LIBS -lwrap"

@@ -1,15 +1,7 @@
-$OpenBSD: patch-imap_src_osdep_unix_Makefile_gss,v 1.1.1.1 2012/09/27 15:09:53 ajacoutot Exp $
---- imap/src/osdep/unix/Makefile.gss.orig	Sat Oct  2 10:37:57 2010
-+++ imap/src/osdep/unix/Makefile.gss	Sun Sep 23 11:30:34 2012
-@@ -29,11 +29,12 @@
- GSSDIR=/usr/local
- GSSINCLUDE=$(GSSDIR)/include
- GSSLIB=$(GSSDIR)/lib
--GSSCFLAGS= -I$(GSSINCLUDE) -DGSS_C_NT_HOSTBASED_SERVICE=gss_nt_service_name -DKRB5_DEPRECATED=1
-+GSSCFLAGS= -I$(GSSINCLUDE) -DHEIMDAL
-+GSSLDFLAGS= -L$(GSSLIB) -lkafs -lgssapi -lkrb5 -lasn1 -lcom_err -lcrypto
- GSSOLDLDFLAGS= -L$(GSSLIB) -lgssapi_krb5 -lkrb5 -lcrypto -lcom_err
- GSSNEWLDFLAGS= -L$(GSSLIB) -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err
+$OpenBSD: patch-imap_src_osdep_unix_Makefile_gss,v 1.2 2013/06/17 19:30:44 ajacoutot Exp $
+--- imap/src/osdep/unix/Makefile.gss.orig	Tue Jun  4 19:27:11 2013
++++ imap/src/osdep/unix/Makefile.gss	Tue Jun  4 19:28:00 2013
+@@ -35,5 +35,5 @@ GSSNEWLDFLAGS= -L$(GSSLIB) -lgssapi_krb5 -lkrb5 -lk5cr
  
  gss:	# GSSAPI Kerberos V flags
  	echo $(GSSCFLAGS) >> OSCFLAGS

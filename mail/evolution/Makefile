@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.198 2013/06/09 10:00:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.199 2013/06/17 19:30:43 ajacoutot Exp $
 
 # XXX textproc/highlight
 
@@ -12,6 +12,9 @@ GNOME_VERSION=		3.8.3
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
+
+REVISION-main=		0
+REVISION-plugins=	0
 
 # NOTE: when R changes, increment EVO_VERSION accordingly and bump:
 # mail/evolution-ews
@@ -93,9 +96,8 @@ MODGNOME_LDFLAGS=	-L${X11BASE}/lib -Wl,-rpath,${TRUEPREFIX}/lib/evolution/${R}:$
 
 LIBTOOL_FLAGS=		--tag=disable-static
 YACC=			bison
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.9
-CONFIGURE_STYLE=	autoconf
+
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ENV=		BOGOFILTER=${LOCALBASE}/bin/bogofilter \
 			SPAMASSASSIN=${LOCALBASE}/bin/spamassassin \
@@ -104,8 +106,7 @@ CONFIGURE_ENV=		BOGOFILTER=${LOCALBASE}/bin/bogofilter \
 CONFIGURE_ARGS=		--disable-static \
 			--with-openldap="${LOCALBASE}" \
 			--with-sub-version="OpenBSD Ports" \
-			--with-krb5=/usr \
-			--with-krb5-includes=/usr/include/kerberosV
+			--with-krb5
 
 FAKE_FLAGS=		autostartdir=${PREFIX}/share/examples/evolution/xdg/autostart
 

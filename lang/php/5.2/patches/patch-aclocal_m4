@@ -1,6 +1,6 @@
-$OpenBSD: patch-aclocal_m4,v 1.5 2011/11/16 12:29:00 espie Exp $
+$OpenBSD: patch-aclocal_m4,v 1.6 2013/06/17 19:30:33 ajacoutot Exp $
 --- aclocal.m4.orig.port	Fri Jan  7 00:04:40 2011
-+++ aclocal.m4	Wed Nov 16 12:04:20 2011
++++ aclocal.m4	Sat Jun 15 17:03:59 2013
 @@ -194,7 +194,7 @@ dnl the path is interpreted relative to the top build-
  dnl
  dnl which array to append to?
@@ -40,20 +40,7 @@ $OpenBSD: patch-aclocal_m4,v 1.5 2011/11/16 12:29:00 espie Exp $
    dnl Some systems require that we link $2 to $1 when building
  ])
  
-@@ -2274,10 +2260,9 @@ AC_DEFUN([PHP_SETUP_KERBEROS],[
-     if test "$PHP_KERBEROS_DIR"; then
-       found_kerberos=yes
-       PHP_ADD_LIBPATH($PHP_KERBEROS_DIR/$PHP_LIBDIR, $1)
--      PHP_ADD_LIBRARY(gssapi_krb5, 1, $1)
-       PHP_ADD_LIBRARY(krb5, 1, $1)
--      PHP_ADD_LIBRARY(k5crypto, 1, $1)
--      PHP_ADD_LIBRARY(com_err,  1, $1)
-+      PHP_ADD_LIBRARY(crypto, 1, $1)
-+      PHP_ADD_LIBRARY(gssapi, 1, $1)
-       PHP_ADD_INCLUDE($PHP_KERBEROS_DIR/include)
-     fi
-   fi
-@@ -2325,7 +2310,7 @@ AC_DEFUN([PHP_SETUP_OPENSSL],[
+@@ -2325,7 +2311,7 @@ AC_DEFUN([PHP_SETUP_OPENSSL],[
        AC_MSG_ERROR([OpenSSL version 0.9.6 or greater required.])
      fi
  
@@ -62,7 +49,7 @@ $OpenBSD: patch-aclocal_m4,v 1.5 2011/11/16 12:29:00 espie Exp $
        PHP_EVAL_LIBLINE($OPENSSL_LIBS, $1)
        PHP_EVAL_INCLINE($OPENSSL_INCS)
      fi
-@@ -4319,7 +4304,7 @@ bsdi[[45]]*)
+@@ -4319,7 +4305,7 @@ bsdi[[45]]*)
    need_version=no
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext}$major $libname${shared_ext}'
    soname_spec='${libname}${release}${shared_ext}$major'
@@ -71,7 +58,7 @@ $OpenBSD: patch-aclocal_m4,v 1.5 2011/11/16 12:29:00 espie Exp $
    shlibpath_var=LD_LIBRARY_PATH
    sys_lib_search_path_spec="/shlib /usr/lib /usr/X11/lib /usr/contrib/lib /lib /usr/local/lib"
    sys_lib_dlsearch_path_spec="/shlib /usr/lib /usr/local/lib"
-@@ -4644,7 +4629,7 @@ openbsd*)
+@@ -4644,7 +4630,7 @@ openbsd*)
      *)                         need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'

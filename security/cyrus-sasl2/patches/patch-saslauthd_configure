@@ -1,45 +1,6 @@
-$OpenBSD: patch-saslauthd_configure,v 1.16 2012/11/22 16:01:38 ajacoutot Exp $
+$OpenBSD: patch-saslauthd_configure,v 1.17 2013/06/17 19:31:09 ajacoutot Exp $
 --- saslauthd/configure.orig	Tue Nov  6 20:21:44 2012
 +++ saslauthd/configure	Tue Nov 20 07:59:02 2012
-@@ -7757,6 +7757,9 @@ if test "$gssapi" != no; then
- ###_AIX
-       platform=__aix
-       ;;
-+    *-*-openbsd*)
-+      platform=__openbsd
-+      ;;
-     *)
-       { $as_echo "$as_me:$LINENO: WARNING: The system type is not recognized. If you believe that CyberSafe GSSAPI works on this platform, please update the configure script" >&5
- $as_echo "$as_me: WARNING: The system type is not recognized. If you believe that CyberSafe GSSAPI works on this platform, please update the configure script" >&2;}
-@@ -7771,7 +7774,7 @@ $as_echo "$as_me: error: CyberSafe was forced, cannot 
-   cmu_saved_CPPFLAGS=$CPPFLAGS
- 
-   if test -d ${gssapi}; then
--    CPPFLAGS="$CPPFLAGS -I$gssapi/include"
-+    CPPFLAGS="$CPPFLAGS -I$gssapi/include/kerberosV"
- # We want to keep -I in our CPPFLAGS, but only if we succeed
-     cmu_saved_CPPFLAGS=$CPPFLAGS
- ### I am not sure how useful is this (and whether this is required at all
-@@ -8320,7 +8323,7 @@ if test "${ac_cv_lib_gssapi_gss_unwrap+set}" = set; th
-   $as_echo_n "(cached) " >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lgssapi ${GSSAPIBASE_LIBS} -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} ${LIB_DES} -lcom_err ${LIB_SOCKET} $LIBS"
-+LIBS="-lgssapi ${GSSAPIBASE_LIBS} -lgssapi -lkrb5 -lasn1 -lcrypto ${LIB_CRYPT} ${LIB_DES} -lcom_err ${LIB_SOCKET} $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -8796,8 +8799,8 @@ fi
-     GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a ${K5SUPSTATIC}"
-   elif test "$gss_impl" = "heimdal"; then
-     CPPFLAGS="$CPPFLAGS -DKRB5_HEIMDAL"
--    GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} ${LIB_DES} -lcom_err"
--    GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libroken.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
-+    GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lcrypto ${LIB_CRYPT} ${LIB_DES} -lcom_err"
-+    GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libcrypto.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
-   elif test "$gss_impl" = "cybersafe03"; then
- # Version of CyberSafe with two libraries
-     CPPFLAGS="$CPPFLAGS -D$platform -I${gssapi}/appsec-sdk/include"
 @@ -11717,7 +11720,7 @@ fi
  
  

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2013/03/21 09:46:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.79 2013/06/17 19:30:43 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	Cyrus IMAP server
 
 V=		2.4.17
 DISTNAME=	cyrus-imapd-${V}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	mail
 
@@ -17,12 +17,12 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # CMU - see COPYRIGHT file in package
 PERMIT_PACKAGE_CDROM=	yes
 
+WANTLIB += asn1 c com_err crypto lib/db4/db>=4 gssapi heimbase heimntlm hx509
+WANTLIB += krb5 pcre pcreposix pthread roken sasl2 ssl wind z
+
 MASTER_SITES=	http://cyrusimap.org/releases/ \
 		ftp://ftp.cyrusimap.org/cyrus-imapd/ \
 		ftp://ftp.cyrusimap.org/cyrus-imapd/OLD-VERSIONS/
-
-WANTLIB += asn1 c com_err crypto gssapi krb5 pcre pcreposix pthread
-WANTLIB += sasl2 ssl z lib/db4/db>=4
 
 LIB_DEPENDS=	databases/db/v4 \
 		devel/pcre \
@@ -33,8 +33,9 @@ NO_TEST=	Yes
 PATCH_LIST=	patch-*
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I/usr/include/kerberosV" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include $$(krb5-config --cflags)" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		LIBS="$$(krb5-config --libs gssapi)"
 CONFIGURE_ARGS=	--with-service-path=${LOCALBASE}/libexec/cyrus-imapd \
 		--with-bdb \
 		--with-bdb-libdir=${LOCALBASE}/lib/db4 \
@@ -42,13 +43,7 @@ CONFIGURE_ARGS=	--with-service-path=${LOCALBASE}/libexec/cyrus-imapd \
 		--with-cyrus-group=_cyrus \
 		--with-cyrus-user=_cyrus \
 		--with-sasl=${LOCALBASE} \
-		--with-pidfile=/var/run/cyrus-master.pid \
-		--with-syslogfacility=LOCAL6 \
-		--with-openssl=/usr \
-		--with-lock=fcntl \
-		--with-com_err=/usr \
-		--with-gss_impl=heimdal \
-		--enable-gssapi=/usr \
+		--with-com_err \
 		--enable-idled \
 		--enable-murder \
 		--enable-nntp \
@@ -60,9 +55,6 @@ CONFIGURE_ARGS=	--with-service-path=${LOCALBASE}/libexec/cyrus-imapd \
 		--with-mysql=no \
 		--with-pgsql=no \
 		--with-sqlite=no
-
-# XXX our kerberosV is too old; use bundled compile_et and libcom_err
-CONFIGURE_ARGS += --with-com_err=yes
 
 FLAVORS=	drac
 FLAVOR?=

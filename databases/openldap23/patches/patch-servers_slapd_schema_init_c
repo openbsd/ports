@@ -1,13 +1,11 @@
-$OpenBSD: patch-servers_slapd_schema_init_c,v 1.2 2011/10/29 11:56:04 gsoares Exp $
+$OpenBSD: patch-servers_slapd_schema_init_c,v 1.3 2013/06/17 19:30:22 ajacoutot Exp $
 
 SECURITY FIX
-
 Resolves CVE-2010-0211, CVE-2010-0212 (ITS#6570), and SA46599
 from upstream
 
 Also cure a crash in IA5StringNormalize() by sync'ing it with the same 
 function from 2.4.23
-
 
 --- servers/slapd/schema_init.c.orig	Thu Oct 27 10:02:29 2011
 +++ servers/slapd/schema_init.c	Thu Oct 27 10:02:47 2011

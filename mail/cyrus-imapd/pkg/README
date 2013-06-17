@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2012/12/03 11:17:04 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2013/06/17 19:30:43 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -19,7 +19,3 @@ packages:
 
 cyrus-imapd uses the LOG_LOCAL6 syslog facility for logging. This
 package of cyrus-imapd uses idled for IMAP IDLE.
-
-Don't forget to edit /etc/services to include missing network services
-if needed.
-    e.g. sieve		2000/tcp

@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.6 2013/06/17 19:30:44 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.9 2013/06/17 19:30:22 ajacoutot Exp $
 
 XXX patch evo_krb5_support.m4 to use krb5-config(1) and push upstream
 
---- configure.orig	Fri Jun 14 11:39:09 2013
-+++ configure	Fri Jun 14 11:39:47 2013
-@@ -15422,7 +15422,7 @@ $as_echo_n "checking for Kerberos 5... " >&6; }
+--- configure.orig	Sat Jun  8 19:54:10 2013
++++ configure	Thu Jun 13 17:32:26 2013
+@@ -22114,7 +22114,7 @@ $as_echo_n "checking for Kerberos 5... " >&6; }
  		esac
  
  		mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"
@@ -13,7 +13,7 @@ XXX patch evo_krb5_support.m4 to use krb5-config(1) and push upstream
  		sunlibs="-lkrb5 -lgss"
  		if ${ac_cv_lib_kerberos5+:} false; then :
    $as_echo_n "(cached) " >&6
-@@ -15534,7 +15534,7 @@ $as_echo "#define HAVE_HEIMDAL_KRB5 1" >>confdefs.h
+@@ -22226,7 +22226,7 @@ $as_echo "#define HAVE_HEIMDAL_KRB5 1" >>confdefs.h
  					if test -z "$with_krb5_includes"; then
  						KRB5_CFLAGS="-I$with_krb5/include/heimdal"
  					else
