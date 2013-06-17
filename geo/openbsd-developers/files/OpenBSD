@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.106 2013/06/17 08:44:29 tobiasu Exp $
+# $OpenBSD: OpenBSD,v 1.107 2013/06/17 15:54:56 renato Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -7,6 +7,7 @@
 -37.457132	144.580589	"djm"		# Damien Miller
 -34.709197	-58.395080	"gonzalo"	# Gonzalo L. Rodriguez
 -33.867		151.192		"dtucker"	# Darren Tucker
+-30.035984	-51.220206	"renato"	# Renato Westphal
 -30.018701	-51.167282	"haesbaert"	# Christiano F. Haesbaert
 -27.28		153.02		"dlg"		# David Gwynne
 -22.88		-43.28		"pedro"		# Pedro Martelletto
