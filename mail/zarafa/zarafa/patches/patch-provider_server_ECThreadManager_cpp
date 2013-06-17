@@ -1,11 +1,7 @@
-$OpenBSD: patch-provider_server_ECThreadManager_cpp,v 1.3 2013/01/27 13:06:20 robert Exp $
---- provider/server/ECThreadManager.cpp.orig	Wed Dec  5 16:06:37 2012
-+++ provider/server/ECThreadManager.cpp	Mon Jan 21 20:15:05 2013
-@@ -161,10 +161,11 @@ void *ECWorkerThread::Work(void *lpParam)
- 	ECPriorityWorkerThread *lpPrio = dynamic_cast<ECPriorityWorkerThread*>(lpThis);
-     WORKITEM *lpWorkItem = NULL;
-     ECRESULT er = erSuccess;
-+    struct tms tstart;
+$OpenBSD: patch-provider_server_ECThreadManager_cpp,v 1.4 2013/06/17 20:54:06 ajacoutot Exp $
+--- provider/server/ECThreadManager.cpp.orig	Thu Feb 28 17:13:17 2013
++++ provider/server/ECThreadManager.cpp	Mon Jun 17 21:55:21 2013
+@@ -164,7 +164,7 @@ void *ECWorkerThread::Work(void *lpParam)
      bool fStop = false;
  	int err = 0;
  
@@ -14,7 +10,7 @@ $OpenBSD: patch-provider_server_ECThreadManager_cpp,v 1.3 2013/01/27 13:06:20 ro
      
      while(1) {
          // Get the next work item, don't wait for new items
-@@ -174,7 +175,7 @@ void *ECWorkerThread::Work(void *lpParam)
+@@ -174,7 +174,7 @@ void *ECWorkerThread::Work(void *lpParam)
              
              // We were requested to exit due to idle state
              if(fStop) {
@@ -23,13 +19,3 @@ $OpenBSD: patch-provider_server_ECThreadManager_cpp,v 1.3 2013/01/27 13:06:20 ro
                  break;
              }
                  
-@@ -203,7 +204,8 @@ void *ECWorkerThread::Work(void *lpParam)
-             ((SOAPINFO *)lpWorkItem->soap->user)->ulLastSessionId = 0;
-             // Pass information on start time of the request into soap->user, so that it can be applied to the correct
-             // session after XML parsing
--            clock_gettime(CLOCK_THREAD_CPUTIME_ID, &((SOAPINFO *)lpWorkItem->soap->user)->threadstart);
-+	    times(&tstart);
-+	    ((SOAPINFO *)lpWorkItem->soap->user)->threadstart.tv_sec = tstart.tms_utime / CLOCKS_PER_SEC;
-             ((SOAPINFO *)lpWorkItem->soap->user)->start = GetTimeOfDay();
-             ((SOAPINFO *)lpWorkItem->soap->user)->szFname = NULL;
- 
