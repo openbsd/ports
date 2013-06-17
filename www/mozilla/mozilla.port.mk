@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.53 2013/05/30 14:08:05 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.54 2013/06/17 19:29:05 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -69,7 +69,8 @@ MODMOZ_WANTLIB +=	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
 		gobject-2.0 gthread-2.0 gtk-x11-2.0 krb5 m \
 		nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pixman-1 plc4 plds4 pthread pthread-stubs \
-		smime3 sndio nssutil3 ssl3 stdc++ z
+		smime3 sndio nssutil3 ssl3 stdc++ z \
+		asn1 com_err heimbase hx509 roken wind
 
 # for all mozilla ports, build against systemwide sqlite3
 MODMOZ_WANTLIB +=	sqlite3>=22
