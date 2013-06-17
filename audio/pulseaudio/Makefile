@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.50 2013/06/04 15:32:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2013/06/17 14:47:57 ajacoutot Exp $
 
 # XXX
-# fix autospawn lock (patch-src_daemon_main_c)
 # util.c: implement pa_get_binary_name()
 # sndio: what to do with (channel) map
 # sndio: check sample format
 # sndio: support for recording
-# sndio: make module-detect properly detects the sndio module
 
 # hppa/mips64 don't have native atomic operations.
 # PA can use/detect libatomic_ops as a fallback
@@ -21,6 +19,7 @@ COMMENT=		cross-platform networked sound server
 VERSION=		4.0
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 SHARED_LIBS +=  pulse                2.1      # .16.2
 SHARED_LIBS +=  pulse-simple         0.0      # .0.4
@@ -79,7 +78,6 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--with-access-group=_pulse-access \
 			--with-database=gdbm \
 			--without-fftw \
-			--without-caps \
 			--disable-oss-output \
 			--disable-oss-wrapper \
 			--disable-adrian-aec \

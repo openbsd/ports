@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_daemon_main_c,v 1.10 2013/06/17 14:47:57 ajacoutot Exp $
+--- src/daemon/main.c.orig	Mon Jun 17 16:30:28 2013
++++ src/daemon/main.c	Mon Jun 17 16:30:48 2013
+@@ -989,10 +989,12 @@ int main(int argc, char *argv[]) {
+ 
+     pa_disable_sigpipe();
+ 
++#ifdef __linux__
+     if (pa_rtclock_hrtimer())
+         pa_log_info(_("Fresh high-resolution timers available! Bon appetit!"));
+     else
+         pa_log_info(_("Dude, your kernel stinks! The chef's recommendation today is Linux with high-resolution timers enabled!"));
++#endif
+ 
+     if (conf->lock_memory) {
+ #ifdef HAVE_SYS_MMAN_H
