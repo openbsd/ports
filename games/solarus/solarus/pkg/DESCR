@@ -1,0 +1,4 @@
+Solarus is an open-source Zelda-like 2D game engine licensed under the
+GPL. It is written in C++ and runs quests scripted in Lua.
+
+Features include joystick support.
