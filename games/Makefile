@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.269 2013/06/15 04:03:51 bcallah Exp $
+# $OpenBSD: Makefile,v 1.270 2013/06/17 02:55:02 bcallah Exp $
 
      SUBDIR =
      SUBDIR += abuse
@@ -183,6 +183,7 @@
      SUBDIR += slash-em
      SUBDIR += slash-em,no_x11
      SUBDIR += snipe2d
+     SUBDIR += solarus
      SUBDIR += spacehulk
      SUBDIR += spatial
      SUBDIR += speyes
