@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/06/17 02:49:38 bcallah Exp $
+bin/zsdx
+share/solarus/
+share/solarus/zsdx/
+share/solarus/zsdx/data.solarus
