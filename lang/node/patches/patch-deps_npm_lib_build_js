@@ -1,0 +1,34 @@
+$OpenBSD: patch-deps_npm_lib_build_js,v 1.1 2013/06/17 23:51:28 abieber Exp $
+--- deps/npm/lib/build.js.orig	Mon Jun 17 13:04:25 2013
++++ deps/npm/lib/build.js	Mon Jun 17 13:06:31 2013
+@@ -172,15 +172,21 @@ function linkBins (pkg, folder, parent, gtop, cb) {
+       if (er) return cb(er)
+       // bins should always be executable.
+       // XXX skip chmod on windows?
+-      fs.chmod(path.resolve(folder, pkg.bin[b]), npm.modes.exec, function (er) {
+-        if (er || !gtop) return cb(er)
+-        var dest = path.resolve(binRoot, b)
+-          , src = path.resolve(folder, pkg.bin[b])
+-          , out = npm.config.get("parseable")
+-                ? dest + "::" + src + ":BINFILE"
+-                : dest + " -> " + src
+-        console.log(out)
+-        cb()
++      fs.lstat(folder, function (er,stat) {
++        if (!stat.isSymbolicLink) {
++          fs.chmod(path.resolve(folder, pkg.bin[b]), npm.modes.exec, function (er) {
++            if (er || !gtop) return cb(er)
++            var dest = path.resolve(binRoot, b)
++              , src = path.resolve(folder, pkg.bin[b])
++              , out = npm.config.get("parseable")
++                    ? dest + "::" + src + ":BINFILE"
++                    : dest + " -> " + src
++            console.log(out)
++            cb()
++          })
++        } else {
++          cb()
++        }
+       })
+     })
+   }, cb)
