@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.174 2013/06/17 19:30:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.175 2013/06/17 20:08:21 ajacoutot Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -57,6 +57,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include $$(krb5-config --cflags)" \
 		LDFLAGS="-L${LOCALBASE}/lib $$(krb5-config --libs)"
 CONFIGURE_ARGS=	--disable-rpath --with-openssl=/usr \
 		--with-perl \
+		--with-pam=no \
 		--enable-integer-datetimes \
 		--includedir="${PREFIX}/include/postgresql" \
 		--datadir="${PREFIX}/share/postgresql" \
