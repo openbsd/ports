@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/01/04 07:55:47 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.4 2013/06/17 07:39:49 jasper Exp $
 @bin bin/augparse
 @bin bin/augtool
 @bin bin/fadot
@@ -8,8 +7,10 @@ include/fa.h
 @comment lib/charset.alias
 lib/libaugeas.a
 lib/libaugeas.la
+@lib lib/libaugeas.so.${LIBaugeas_VERSION}
 lib/libfa.a
 lib/libfa.la
+@lib lib/libfa.so.${LIBfa_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/augeas.pc
 @man man/man1/augparse.1
@@ -18,10 +19,13 @@ share/augeas/
 share/augeas/lenses/
 share/augeas/lenses/dist/
 share/augeas/lenses/dist/access.aug
+share/augeas/lenses/dist/activemq_conf.aug
+share/augeas/lenses/dist/activemq_xml.aug
 share/augeas/lenses/dist/aliases.aug
 share/augeas/lenses/dist/anacron.aug
 share/augeas/lenses/dist/approx.aug
 share/augeas/lenses/dist/apt_update_manager.aug
+share/augeas/lenses/dist/aptcacherngsecurity.aug
 share/augeas/lenses/dist/aptconf.aug
 share/augeas/lenses/dist/aptpreferences.aug
 share/augeas/lenses/dist/aptsources.aug
@@ -52,6 +56,7 @@ share/augeas/lenses/dist/device_map.aug
 share/augeas/lenses/dist/dhclient.aug
 share/augeas/lenses/dist/dhcpd.aug
 share/augeas/lenses/dist/dnsmasq.aug
+share/augeas/lenses/dist/dovecot.aug
 share/augeas/lenses/dist/dpkg.aug
 share/augeas/lenses/dist/dput.aug
 share/augeas/lenses/dist/erlang.aug
@@ -76,7 +81,12 @@ share/augeas/lenses/dist/inifile.aug
 share/augeas/lenses/dist/inittab.aug
 share/augeas/lenses/dist/inputrc.aug
 share/augeas/lenses/dist/interfaces.aug
+share/augeas/lenses/dist/iproute2.aug
 share/augeas/lenses/dist/iptables.aug
+share/augeas/lenses/dist/jaas.aug
+share/augeas/lenses/dist/jettyrealm.aug
+share/augeas/lenses/dist/jmxaccess.aug
+share/augeas/lenses/dist/jmxpassword.aug
 share/augeas/lenses/dist/json.aug
 share/augeas/lenses/dist/kdump.aug
 share/augeas/lenses/dist/keepalived.aug
@@ -89,6 +99,7 @@ share/augeas/lenses/dist/login_defs.aug
 share/augeas/lenses/dist/logrotate.aug
 share/augeas/lenses/dist/logwatch.aug
 share/augeas/lenses/dist/lokkit.aug
+share/augeas/lenses/dist/lvm.aug
 share/augeas/lenses/dist/mcollective.aug
 share/augeas/lenses/dist/mdadm_conf.aug
 share/augeas/lenses/dist/memcached.aug
@@ -96,6 +107,7 @@ share/augeas/lenses/dist/mke2fs.aug
 share/augeas/lenses/dist/modprobe.aug
 share/augeas/lenses/dist/modules.aug
 share/augeas/lenses/dist/modules_conf.aug
+share/augeas/lenses/dist/mongodbserver.aug
 share/augeas/lenses/dist/monit.aug
 share/augeas/lenses/dist/multipath.aug
 share/augeas/lenses/dist/mysql.aug
@@ -110,6 +122,9 @@ share/augeas/lenses/dist/nsswitch.aug
 share/augeas/lenses/dist/ntp.aug
 share/augeas/lenses/dist/ntpd.aug
 share/augeas/lenses/dist/odbc.aug
+share/augeas/lenses/dist/openshift_config.aug
+share/augeas/lenses/dist/openshift_http.aug
+share/augeas/lenses/dist/openshift_quickstarts.aug
 share/augeas/lenses/dist/openvpn.aug
 share/augeas/lenses/dist/pam.aug
 share/augeas/lenses/dist/pamconf.aug
@@ -149,11 +164,13 @@ share/augeas/lenses/dist/shellvars.aug
 share/augeas/lenses/dist/shellvars_list.aug
 share/augeas/lenses/dist/simplelines.aug
 share/augeas/lenses/dist/simplevars.aug
+share/augeas/lenses/dist/sip_conf.aug
 share/augeas/lenses/dist/slapd.aug
 share/augeas/lenses/dist/smbusers.aug
 share/augeas/lenses/dist/solaris_system.aug
 share/augeas/lenses/dist/soma.aug
 share/augeas/lenses/dist/spacevars.aug
+share/augeas/lenses/dist/splunk.aug
 share/augeas/lenses/dist/squid.aug
 share/augeas/lenses/dist/ssh.aug
 share/augeas/lenses/dist/sshd.aug
@@ -167,10 +184,13 @@ share/augeas/lenses/dist/syslog.aug
 share/augeas/lenses/dist/systemd.aug
 share/augeas/lenses/dist/tests/
 share/augeas/lenses/dist/tests/test_access.aug
+share/augeas/lenses/dist/tests/test_activemq_conf.aug
+share/augeas/lenses/dist/tests/test_activemq_xml.aug
 share/augeas/lenses/dist/tests/test_aliases.aug
 share/augeas/lenses/dist/tests/test_anacron.aug
 share/augeas/lenses/dist/tests/test_approx.aug
 share/augeas/lenses/dist/tests/test_apt_update_manager.aug
+share/augeas/lenses/dist/tests/test_aptcacherngsecurity.aug
 share/augeas/lenses/dist/tests/test_aptconf.aug
 share/augeas/lenses/dist/tests/test_aptpreferences.aug
 share/augeas/lenses/dist/tests/test_aptsource.aug
@@ -201,6 +221,7 @@ share/augeas/lenses/dist/tests/test_device_map.aug
 share/augeas/lenses/dist/tests/test_dhclient.aug
 share/augeas/lenses/dist/tests/test_dhcpd.aug
 share/augeas/lenses/dist/tests/test_dnsmasq.aug
+share/augeas/lenses/dist/tests/test_dovecot.aug
 share/augeas/lenses/dist/tests/test_dpkg.aug
 share/augeas/lenses/dist/tests/test_dput.aug
 share/augeas/lenses/dist/tests/test_erlang.aug
@@ -225,7 +246,12 @@ share/augeas/lenses/dist/tests/test_inifile.aug
 share/augeas/lenses/dist/tests/test_inittab.aug
 share/augeas/lenses/dist/tests/test_inputrc.aug
 share/augeas/lenses/dist/tests/test_interfaces.aug
+share/augeas/lenses/dist/tests/test_iproute2.aug
 share/augeas/lenses/dist/tests/test_iptables.aug
+share/augeas/lenses/dist/tests/test_jaas.aug
+share/augeas/lenses/dist/tests/test_jettyrealm.aug
+share/augeas/lenses/dist/tests/test_jmxaccess.aug
+share/augeas/lenses/dist/tests/test_jmxpassword.aug
 share/augeas/lenses/dist/tests/test_json.aug
 share/augeas/lenses/dist/tests/test_kdump.aug
 share/augeas/lenses/dist/tests/test_keepalived.aug
@@ -239,6 +265,7 @@ share/augeas/lenses/dist/tests/test_login_defs.aug
 share/augeas/lenses/dist/tests/test_logrotate.aug
 share/augeas/lenses/dist/tests/test_logwatch.aug
 share/augeas/lenses/dist/tests/test_lokkit.aug
+share/augeas/lenses/dist/tests/test_lvm.aug
 share/augeas/lenses/dist/tests/test_mcollective.aug
 share/augeas/lenses/dist/tests/test_mdadm_conf.aug
 share/augeas/lenses/dist/tests/test_memcached.aug
@@ -246,6 +273,7 @@ share/augeas/lenses/dist/tests/test_mke2fs.aug
 share/augeas/lenses/dist/tests/test_modprobe.aug
 share/augeas/lenses/dist/tests/test_modules.aug
 share/augeas/lenses/dist/tests/test_modules_conf.aug
+share/augeas/lenses/dist/tests/test_mongodbserver.aug
 share/augeas/lenses/dist/tests/test_monit.aug
 share/augeas/lenses/dist/tests/test_multipath.aug
 share/augeas/lenses/dist/tests/test_mysql.aug
@@ -260,6 +288,9 @@ share/augeas/lenses/dist/tests/test_nsswitch.aug
 share/augeas/lenses/dist/tests/test_ntp.aug
 share/augeas/lenses/dist/tests/test_ntpd.aug
 share/augeas/lenses/dist/tests/test_odbc.aug
+share/augeas/lenses/dist/tests/test_openshift_config.aug
+share/augeas/lenses/dist/tests/test_openshift_http.aug
+share/augeas/lenses/dist/tests/test_openshift_quickstarts.aug
 share/augeas/lenses/dist/tests/test_openvpn.aug
 share/augeas/lenses/dist/tests/test_pam.aug
 share/augeas/lenses/dist/tests/test_pamconf.aug
@@ -298,11 +329,13 @@ share/augeas/lenses/dist/tests/test_shellvars.aug
 share/augeas/lenses/dist/tests/test_shellvars_list.aug
 share/augeas/lenses/dist/tests/test_simplelines.aug
 share/augeas/lenses/dist/tests/test_simplevars.aug
+share/augeas/lenses/dist/tests/test_sip_conf.aug
 share/augeas/lenses/dist/tests/test_slapd.aug
 share/augeas/lenses/dist/tests/test_smbusers.aug
 share/augeas/lenses/dist/tests/test_solaris_system.aug
 share/augeas/lenses/dist/tests/test_soma.aug
 share/augeas/lenses/dist/tests/test_spacevars.aug
+share/augeas/lenses/dist/tests/test_splunk.aug
 share/augeas/lenses/dist/tests/test_squid.aug
 share/augeas/lenses/dist/tests/test_ssh.aug
 share/augeas/lenses/dist/tests/test_sshd.aug

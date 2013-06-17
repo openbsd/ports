@@ -1,11 +1,11 @@
-$OpenBSD: patch-lenses_sysctl_aug,v 1.1 2013/04/15 19:38:34 jasper Exp $
+$OpenBSD: patch-lenses_sysctl_aug,v 1.2 2013/06/17 07:39:49 jasper Exp $
 
 Simplevars.entry allows a space between the key and the value,
 sysctl(8) doesn't take that as a valid entry.
 
---- lenses/sysctl.aug.orig	Mon Apr 15 21:35:56 2013
-+++ lenses/sysctl.aug	Mon Apr 15 21:36:20 2013
-@@ -31,8 +31,12 @@ let filter = incl "/etc/sysctl.conf"
+--- lenses/sysctl.aug.orig	Fri Jan  4 01:04:02 2013
++++ lenses/sysctl.aug	Sat Jun 15 14:47:07 2013
+@@ -32,8 +32,12 @@ let filter = incl "/etc/sysctl.conf"
  (* View: comment *)
  let comment = Util.comment_generic /[ \t]*[#;][ \t]*/ "# "
  

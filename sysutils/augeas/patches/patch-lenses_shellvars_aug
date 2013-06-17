@@ -1,17 +1,10 @@
-$OpenBSD: patch-lenses_shellvars_aug,v 1.5 2013/01/02 20:18:48 jasper Exp $
+$OpenBSD: patch-lenses_shellvars_aug,v 1.6 2013/06/17 07:39:49 jasper Exp $
 
 - adduser.conf is not a shell script, so don't try to parse it as such.
 
-From 7b42b548ad93b1c64acb2bb5ba6d2b8eda8015c8 Mon Sep 17 00:00:00 2001
-From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
-Date: Sun, 30 Dec 2012 19:32:23 +0000
-Subject: Shellvars: parse /etc/rc.conf.local which is found on OpenBSD.
-
-Fixes ticket #320
-
---- lenses/shellvars.aug.orig	Mon Dec 17 22:39:45 2012
-+++ lenses/shellvars.aug	Wed Jan  2 21:14:21 2013
-@@ -205,7 +205,6 @@ module Shellvars =
+--- lenses/shellvars.aug.orig	Fri Jun 14 22:39:33 2013
++++ lenses/shellvars.aug	Sat Jun 15 14:47:07 2013
+@@ -204,7 +204,6 @@ module Shellvars =
                       . incl "/etc/cron-apt/config"
                       . incl "/etc/environment"
                       . incl "/etc/blkid.conf"
@@ -19,11 +12,3 @@ Fixes ticket #320
                       . incl "/etc/cowpoke.conf"
                       . incl "/etc/cvs-cron.conf"
                       . incl "/etc/cvs-pserver.conf"
-@@ -215,6 +214,7 @@ module Shellvars =
-                      . incl "/etc/os-release"
-                      . incl "/etc/popularity-contest.conf"
-                      . incl "/etc/rc.conf"
-+                     . incl "/etc/rc.conf.local"
-                      . incl "/etc/selinux/config"
-                      . incl "/etc/ucf.conf"
-                      . incl "/etc/locale.conf"

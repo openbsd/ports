@@ -1,12 +1,12 @@
-$OpenBSD: patch-man_augparse_1,v 1.1 2013/01/02 20:18:48 jasper Exp $
---- man/augparse.1.orig	Wed Jan  2 20:14:44 2013
-+++ man/augparse.1	Wed Jan  2 20:14:58 2013
+$OpenBSD: patch-man_augparse_1,v 1.2 2013/06/17 07:39:49 jasper Exp $
+--- man/augparse.1.orig	Wed Feb  6 21:08:51 2013
++++ man/augparse.1	Sat Jun 15 14:47:38 2013
 @@ -144,7 +144,7 @@ Execute an Augeas module, most commonly to evaluate th
  Add \s-1DIR\s0 to the module loadpath. Can be given multiple times. The
  directories set here are searched before any directories specified in the
  \&\s-1AUGEAS_LENS_LIB\s0 environment variable, and before the default directory
 -\&\fI/usr/share/augeas/lenses\fR.
 +\&\fI${PREFIX}/share/augeas/lenses\fR.
- .IP "\fB\-\-nostdinc\fR" 4
- .IX Item "--nostdinc"
- Do not search any of the default directories for modules. When this option
+ .IP "\fB\-t\fR, \fB\-\-trace\fR" 4
+ .IX Item "-t, --trace"
+ Print a trace of the modules that are being loaded.
