@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2013/05/31 20:59:51 stsp Exp $
+# $OpenBSD: Makefile,v 1.123 2013/06/17 19:28:36 ajacoutot Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -20,6 +20,8 @@ FULLPKGNAME-ap2=	ap2-subversion-${VERSION}
 FULLPKGPATH-ap2=	devel/subversion,-ap2
 FULLPKGNAME-gnome-keyring= gnome-keyring-subversion-${VERSION}
 FULLPKGPATH-gnome-keyring= devel/subversion,-gnome-keyring
+REVISION-main=		0
+REVISION-gnome-keyring=	0
 
 SO_VERSION=	1.3
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
@@ -71,7 +73,8 @@ LIB_DEPENDS-main = ${LIB_DEPENDS} \
 
 WANTLIB-main=	${WANTLIB} asn1 c crypto db gssapi krb5 ssl \
 		neon>=26 apr-1 aprutil-1 sasl2>=2 sqlite3 \
-		m proxy stdc++
+		m proxy stdc++ com_err heimbase heimntlm \
+		hx509 roken wind
 RUN_DEPENDS-main= ${MODGETTEXT_RUN_DEPENDS}
 
 TOOLS_HOOK_SCRIPTS=	commit-access-control.cfg.example \
@@ -124,8 +127,7 @@ WANTLIB-ruby +=	${_lib}>=${SO_VERSION}
 
 WANTLIB-gnome-keyring=	${WANTLIB} apr-1 aprutil-1 gcrypt gpg-error \
 		dbus-1>=7 glib-2.0 gnome-keyring>=6 pcre>=2 sqlite3 \
-		svn_subr-1>=${SO_VERSION} ffi gmodule-2.0 gobject-2.0 \
-		gthread-2.0
+		svn_subr-1>=${SO_VERSION} ffi gmodule-2.0 gobject-2.0
 LIB_DEPENDS-gnome-keyring= ${MAINSPEC} \
 		${MODGETTEXT_LIB_DEPENDS} \
 		x11/gnome/libgnome-keyring

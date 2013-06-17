@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2013/05/31 15:34:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2013/06/17 19:28:36 ajacoutot Exp $
 
 COMMENT-main=		bad elements for GStreamer
 COMMENT-neon=		neon element for GStreamer (plugins-bad)
@@ -12,9 +12,9 @@ PKGNAME-main=		gstreamer-plugins-bad-${V}
 PKGNAME-neon=		gstreamer-neon-${V}
 PKGNAME-mjpeg=		gstreamer-mjpeg-${V}
 
-REVISION-main=		13
+REVISION-main=		14
 REVISION-mjpeg=		5
-REVISION-neon=		4
+REVISION-neon=		5
 
 SHARED_LIBS +=  gstphotography-0.10       1.0 # 23.0
 SHARED_LIBS +=  gstsignalprocessor-0.10   1.0 # 23.0
@@ -32,7 +32,7 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 xml2
 WANTLIB += pthread z m pcre gstreamer-0.10 ffi
 
 WANTLIB-main += ${WANTLIB}
-WANTLIB-main += BPM GL SDL SoundTouch X11 Xext Xfixes Xrender
+WANTLIB-main += BPM SDL SoundTouch X11 Xext Xrender
 WANTLIB-main += ass bz2 cairo cdaudio croco-0.6 crypto
 WANTLIB-main += curl dca dvdnav dvdread enca expat fontconfig freetype
 WANTLIB-main += fribidi gdk_pixbuf-2.0 gio-2.0 gsm gstapp-0.10 gstaudio-0.10
@@ -43,11 +43,11 @@ WANTLIB-main += mpcdec opus orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-main += pixman-1 png pthread-stubs raptor2 rsvg-2 schroedinger-1.0
 WANTLIB-main += sndfile sndio spandsp ssl stdc++ tiff usbhid vpx xcb
 WANTLIB-main += xcb-render xcb-shm xslt harfbuzz
-WANTLIB-main += yajl
+WANTLIB-main += yajl FLAC dvdcss graphite2 ogg vorbis vorbisenc
 
 WANTLIB-neon += ${WANTLIB}
 WANTLIB-neon += asn1 crypto expat gssapi gstbase-0.10 krb5 neon proxy
-WANTLIB-neon += ssl
+WANTLIB-neon += ssl com_err heimbase heimntlm hx509 roken wind
 
 WANTLIB-mjpeg += ${WANTLIB}
 WANTLIB-mjpeg += gstbase-0.10 mjpegutils mpeg2encpp mplex2 stdc++

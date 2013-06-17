@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2013/05/31 15:34:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2013/06/17 19:28:36 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,9 +9,9 @@ COMMENT-spamassassin=	spamassassin plugin
 
 V=			3.8.1
 DISTNAME=		claws-mail-${V}
-REVISION-main=		3
-REVISION-bogofilter=	2
-REVISION-spamassassin=	2
+REVISION-main=		4
+REVISION-bogofilter=	3
+REVISION-spamassassin=	3
 PKGNAME-main=		${DISTNAME}
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
@@ -39,18 +39,18 @@ RUN_DEPENDS-bogofilter=	${BUILD_PKGPATH} \
 RUN_DEPENDS-spamassassin=${BUILD_PKGPATH} \
 			mail/p5-Mail-SpamAssassin
 
-WANTLIB=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
+WANTLIB=		X11 Xcomposite Xcursor Xdamage Xext Xfixes \
 			Xi Xinerama Xrandr Xrender atk-1.0 cairo crypto curl \
 			expat fontconfig freetype gio-2.0 glib-2.0 gthread-2.0 \
 			gmodule-2.0 gobject-2.0 idn m pango-1.0 pangocairo-1.0 \
 			pangoft2-1.0 pcre pixman-1 png pthread-stubs ssl \
-			xcb z gdk_pixbuf-2.0 pthread stdc++ \
+			xcb z gdk_pixbuf-2.0 pthread \
 			gdk-x11-2.0 gtk-x11-2.0 execinfo etpan>=13 sasl2 \
-			GL Xxf86vm drm xcb-render xcb-shm \
+			xcb-render xcb-shm \
 			ffi harfbuzz
 
 WANTLIB-main=		${WANTLIB} ICE SM X11-xcb c dbus-1 gmp hogweed nettle \
-			tasn1 xcb-aux assuan startup-notification-1 \
+			tasn1 xcb-aux assuan startup-notification-1 stdc++ \
 			enchant gnutls gpgme dbus-glib-1 gpg-error p11-kit
 
 WANTLIB-docs=
@@ -104,7 +104,12 @@ CONFIGURE_ARGS+=	--disable-compface
 .endif
 
 .if ${FLAVOR:Mldap}
-WANTLIB-main+=		asn1 com_err gssapi krb5 lber-2.4 ldap-2.4
+WANTLIB-main+=		roken wind krb5 lber-2.4 ldap-2.4
+WANTLIB-main+=		asn1 com_err graphite2 gssapi heimbase heimntlm hx509
+WANTLIB-bogofilter+=	${WANTLIB} asn1 com_err graphite2 gssapi heimbase heimntlm hx509
+WANTLIB-bogofilter+=	krb5 roken wind
+WANTLIB-spamassassin+=	${WANTLIB} asn1 com_err graphite2 gssapi heimbase heimntlm hx509
+WANTLIB-spamassassin+=	krb5 roken wind
 LIB_DEPENDS-main+=	databases/openldap
 .else
 CONFIGURE_ARGS+=	--disable-ldap

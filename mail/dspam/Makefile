@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2013/06/12 20:36:33 brad Exp $
+# $OpenBSD: Makefile,v 1.44 2013/06/17 19:28:36 ajacoutot Exp $
 
 COMMENT=	anti-spam filter
 
 VERSION=	3.8.0
 DISTNAME=	dspam-${VERSION}
-REVISION=	6
+REVISION=	7
 SHARED_LIBS=	dspam	8.0
 CATEGORIES=	mail
 
@@ -110,7 +110,8 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 LIB_DEPENDS+=		databases/openldap
 WANTLIB+=		crypto ssl sasl2 asn1 com_err gssapi krb5 \
-			ldap-2.4 lber-2.4
+			ldap-2.4 lber-2.4 heimbase heimntlm hx509 \
+			pthread roken wind
 .endif
 
 .if ${FLAVOR:Mpreferences}

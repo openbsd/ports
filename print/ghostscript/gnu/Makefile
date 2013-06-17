@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2013/06/04 18:41:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.98 2013/06/17 19:28:37 ajacoutot Exp $
 
 COMMENT=	GNU PostScript interpreter
 
@@ -6,7 +6,7 @@ VERSION=	9.06
 DISTNAME=	ghostscript-${VERSION}
 CATEGORIES=	print lang
 SHARED_LIBS=	gs	15.0
-REVISION=	1
+REVISION=	2
 
 MASTER_SITES=	http://downloads.ghostscript.com/public/
 
@@ -315,7 +315,7 @@ DEVICES+=	ijs
 
 # Cups
 LIB_DEPENDS+=	print/cups,-libs
-WANTLIB += asn1 crypto cups cupsimage gssapi krb5 ssl
+WANTLIB += cups cupsimage
 DEVICES+=	cups
 ALL_TARGET_CUPS=cups
 INSTALL_TARGET_CUPS=	install-cups

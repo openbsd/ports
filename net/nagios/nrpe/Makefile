@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/04/17 15:15:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2013/06/17 19:28:36 ajacoutot Exp $
 
 COMMENT=	Nagios Remote Plugin Executor
 
@@ -22,7 +22,6 @@ CONFIGURE_ARGS+= --enable-command-args \
 		--libexecdir=${LOCALBASE}/libexec/nagios \
 		--with-nrpe-user=_nrpe \
 		--with-nrpe-group=_nrpe \
-		--with-kerberos-inc=/usr/include/kerberosV/ \
 		ac_cv_lib_wrap_main=yes
 
 pre-configure:

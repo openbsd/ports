@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.1 2012/06/28 23:10:48 sthen Exp $
+$OpenBSD: patch-configure_in,v 1.2 2013/06/17 19:28:36 ajacoutot Exp $
 --- configure.in.orig	Wed Jun 27 18:32:47 2012
 +++ configure.in	Thu Jun 28 23:04:19 2012
 @@ -211,13 +211,13 @@ AC_ARG_WITH(pgsql,
@@ -29,16 +29,3 @@ $OpenBSD: patch-configure_in,v 1.1 2012/06/28 23:10:48 sthen Exp $
      elif test  "$ac_cv_header_libpq_fe_h" = "yes"; then
        PGLIBS="-L$PGSQL/lib -lpq -lcrypt"
        PGINCLUDE="-I$PGSQL/include"
-@@ -356,10 +356,10 @@ dnl Checks for Kerberos. Must come before openssl chec
- AC_CHECK_HEADERS(krb5.h,FOUNDINCLUDE=yes,FOUNDINCLUDE=no)
- if test "$FOUNDINCLUDE" = "no"; then
-   _SAVEDCPPFLAGS="$CPPFLAGS"
--  CPPFLAGS="$_SAVEDCPPFLAGS -I/usr/kerberos/include"
-+  CPPFLAGS="$_SAVEDCPPFLAGS -I/usr/include/kerberosV"
-   unset ac_cv_header_krb5_h
-   AC_CHECK_HEADERS(krb5.h,
--                   KRB5INCLUDE="-I/usr/kerberos/include"
-+                   KRB5INCLUDE="-I/usr/include/kerberosV"
-                    FOUNDINCLUDE=yes,
-                    FOUNDINCLUDE=no)
- fi

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2013/03/21 08:48:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2013/06/17 19:28:37 ajacoutot Exp $
 
 COMMENT=	apache HTTP server
 
 V=		2.2.23
 PKGNAME=	apache-httpd-${V}
 DISTNAME=	httpd-${V}
+REVISION=	0
 
 CATEGORIES=	www net
 
@@ -26,7 +27,8 @@ FLAVOR?=
 
 .if ${FLAVOR:Mldap}
 CONFIGURE_ARGS+=	--with-ldap --enable-ldap --enable-authnz-ldap
-WANTLIB+=		asn1 com_err gssapi krb5 sasl2 ldap lber
+WANTLIB+=		asn1 com_err gssapi krb5 sasl2
+WANTLIB+=		heimbase heimntlm hx509 lber-2.4 ldap-2.4 roken wind
 LIB_DEPENDS+=		databases/openldap
 LIB_DEPENDS+=		apr-util-*-ldap:devel/apr-util,ldap
 .else

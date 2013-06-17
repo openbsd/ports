@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.171 2013/06/16 18:02:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.172 2013/06/17 19:28:37 ajacoutot Exp $
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-guic=		gtk+ icon theme caching utility
@@ -8,6 +8,9 @@ GNOME_PROJECT=		gtk+
 
 PKGNAME-main=		gtk+2-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
+
+REVISION-main=		0
+REVISION-guic=		0
 
 CATEGORIES=		x11 devel
 
@@ -57,6 +60,7 @@ WANTLIB-main += Xi Xinerama Xrandr Xrender cairo expat dbus-1
 WANTLIB-main += fontconfig freetype pixman-1 pthread-stubs xcb
 WANTLIB-main += xcb-render xcb-shm asn1 crypto cups gssapi krb5 ssl
 WANTLIB-main += harfbuzz avahi-client avahi-common gthread-2.0
+WANTLIB-main += com_err heimbase heimntlm hx509 roken wind
 
 WANTLIB-guic += ${WANTLIB}
 WANTLIB-guic += c gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 pthread

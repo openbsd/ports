@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2013/06/04 18:41:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.79 2013/06/17 19:28:37 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -12,7 +12,7 @@ PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 
 REVISION-main=		0
-REVISION-cups=		0
+REVISION-cups=		1
 
 CATEGORIES=		x11 devel
 
@@ -70,6 +70,7 @@ LIB_DEPENDS-cups=	${LIB_DEPENDS} \
 WANTLIB-cups += ${WANTLIB}
 WANTLIB-cups += asn1 crypto cups gdk-3 gssapi gtk-3 krb5 ssl
 WANTLIB-cups += avahi-client avahi-common colordprivate
+WANTLIB-cups += com_err heimbase heimntlm hx509 roken wind
 
 MODGNOME_TOOLS=		gi
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include/freetype2

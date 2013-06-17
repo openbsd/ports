@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/06/12 20:36:33 brad Exp $
+# $OpenBSD: Makefile,v 1.24 2013/06/17 19:28:36 ajacoutot Exp $
 
 COMMENT-main=	fully featured POP3 and IMAP4 proxy server
 COMMENT-ldap=	LDAP backend for perdition mail proxy
@@ -6,7 +6,7 @@ COMMENT-mysql=  MySQL backend for perdition mail proxy
 COMMENT-pgsql=	PostgreSQL backend for perdition mail proxy
 
 DISTVER=	1.19-rc5
-REVISION=	1
+REVISION=	2
 DISTNAME=	perdition-${DISTVER}
 PKGNAME-main=	perdition-${DISTVER:S/-//}
 PKGNAME-ldap=	perdition-ldap-${DISTVER:S/-//}
@@ -34,6 +34,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${HOMEPAGE}download/${DISTVER}/
 
+MODULES=	devel/gettext
+
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE= gnu
@@ -58,18 +60,22 @@ MULTI_PACKAGES=		-main -mysql -pgsql -ldap
 
 .include <bsd.port.arch.mk>
 
-WANTLIB-main=		c crypto ssl util db>=4.2 vanessa_adt>=1.0 \
-			vanessa_logger>=1.0 vanessa_socket>=1.0 popt
+WANTLIB-main=		${MODGETTEXT_WANTLIB} \
+			c crypto ssl util lib/db4/db>=4 vanessa_adt>=1.0 \
+			vanessa_logger>=1.0 vanessa_socket>=1.0 popt idn
 LIB_DEPENDS-main=	databases/db/v4 \
 			vanessa_adt->=0.0.9:devel/vanessa/adt \
 			vanessa_logger->=0.0.10:devel/vanessa/logger \
 			vanessa_socket->=0.0.12:devel/vanessa/socket \
-			devel/popt
+			devel/popt \
+			devel/libidn
 
 LIB_DEPENDS-ldap=	security/cyrus-sasl2 \
-			openldap-client->=2,<3:databases/openldap
+			openldap-client->=2,<3:databases/openldap \
+			vanessa_logger->=0.0.10:devel/vanessa/logger
 WANTLIB-ldap=		asn1 com_err crypto gssapi krb5 ssl util sasl2 \
-			ldap>=2 lber>=2
+			heimbase heimntlm hx509 lber-2.4 ldap-2.4 pthread \
+			wind roken vanessa_logger
 
 .if !${BUILD_PACKAGES:M-ldap}
 CONFIGURE_ARGS+=	--disable-ldap
@@ -96,7 +102,8 @@ LIB_DEPENDS-pgsql=	databases/postgresql \
 			devel/vanessa/adt \
 			devel/vanessa/logger
 WANTLIB-pgsql=		crypto ssl util pq>=2 vanessa_adt>=1.0 \
-			vanessa_logger>=1.0
+			vanessa_logger>=1.0 asn1 com_err heimbase \
+			hx509 krb5 pthread roken wind
 
 .if !${BUILD_PACKAGES:M-pgsql}
 CONFIGURE_ARGS+=	--disable-pg

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2013/05/31 15:34:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2013/06/17 19:28:37 ajacoutot Exp $
 
 COMMENT =	labels and business card designer
 
 GNOME_PROJECT =	glabels
 GNOME_VERSION =	3.0.1
 
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	productivity graphics
 
@@ -30,7 +30,7 @@ WANTLIB += krb5 m nspr4 nss3 nssutil3 p11-kit pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
 WANTLIB += png pthread pthread-stubs qrencode rsvg-2 secret-1
 WANTLIB += smime3 softokn3 soup-2.4 sqlite3 ssl3 xcb xcb-render
-WANTLIB += xcb-shm xml2 z zint
+WANTLIB += xcb-shm xml2 z zint heimbase heimntlm hx509 roken wind
 
 MODULES =	devel/gettext \
 		x11/gnome \

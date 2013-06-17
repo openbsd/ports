@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.49 2013/06/12 20:36:34 brad Exp $
+# $OpenBSD: Makefile,v 1.50 2013/06/17 19:28:36 ajacoutot Exp $
 
 COMMENT=		jabber server
 DISTNAME=		jabberd-2.0s11
-REVISION= 		2
+REVISION= 		3
 EPOCH=			1
 CATEGORIES=		net
 HOMEPAGE=		http://jabberd2.org/
@@ -65,7 +65,7 @@ CONFIGURE_ARGS+=	--disable-db
 
 .if ${FLAVOR:Mldap}
 LIB_DEPENDS+=		databases/openldap>=2.3
-WANTLIB +=		ldap>=8 lber>=8
+WANTLIB +=		heimbase heimntlm hx509 lber-2.4 ldap-2.4 pthread roken wind
 CONFIGURE_ARGS+=	--enable-ldap
 WANTLIB+=		sasl2 asn1 com_err gssapi krb5
 .else

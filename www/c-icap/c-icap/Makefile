@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/16 09:59:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2013/06/17 19:28:37 ajacoutot Exp $
 
 MULTI_PACKAGES=	-main -db -ldap
 COMMENT-main=	ICAP server for use with web proxies
@@ -10,6 +10,8 @@ DISTNAME=	c_icap-$V
 PKGNAME-main=	c-icap-$V
 PKGNAME-db=	c-icap-db-$V
 PKGNAME-ldap=	c-icap-ldap-$V
+
+REVISION-ldap=	0
 
 SHARED_LIBS +=	icapapi                   0.0 # 2.5
 
@@ -35,6 +37,7 @@ LIB_DEPENDS-ldap= databases/openldap \
 		${BASE_PKGPATH}
 WANTLIB-ldap=	asn1 com_err crypto gssapi icapapi krb5 ssl
 WANTLIB-ldap+=	lber-2.4 ldap-2.4 pthread sasl2 z
+WANTLIB-ldap+=	heimbase heimntlm hx509 roken wind
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/c-icap/

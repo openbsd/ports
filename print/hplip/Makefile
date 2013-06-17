@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2013/05/21 16:46:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2013/06/17 19:28:37 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -16,6 +16,9 @@ PKGNAME-hpijs=	hpijs-${V}
 PKGNAME-hpcups=	hpcups-${V}
 PKGNAME-libs=	hplip-libs-${V}
 PKGNAME-gui=	hplip-gui-${V}
+
+REVISION-main=	0
+REVISION-hpcups=0
 
 SHARED_LIBS +=  hpmud		2.0 # .0.6
 SHARED_LIBS +=  hpip		2.0 # .0.1
@@ -45,6 +48,7 @@ cWANTLIB = crypto m pthread
 WANTLIB-main += ${WANTLIB} ${cWANTLIB}
 WANTLIB-main += asn1 c cups dbus-1 gssapi hpip hpmud jpeg krb5 netsnmp
 WANTLIB-main += sane ssl tiff usb-1.0 z usb avahi-client avahi-common
+WANTLIB-MAIN += com_err heimbase heimntlm hx509 roken wind
 
 BUILD_DEPENDS=	sysutils/polkit
 
@@ -76,6 +80,7 @@ RUN_DEPENDS-hpijs= print/foomatic-filters
 
 WANTLIB-hpcups += ${WANTLIB} ${cWANTLIB} z asn1 gssapi krb5 ssl
 WANTLIB-hpcups += c jpeg stdc++ hpip cups cupsimage dbus-1
+WANTLIB-hpcups += com_err heimbase heimntlm hx509 roken wind
 WANTLIB-hpcups += avahi-client avahi-common
 LIB_DEPENDS-hpcups= \
 		graphics/jpeg \

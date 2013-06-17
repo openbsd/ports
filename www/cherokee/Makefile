@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2013/06/12 20:36:34 brad Exp $
+# $OpenBSD: Makefile,v 1.43 2013/06/17 19:28:37 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -61,7 +61,8 @@ WANTLIB-geoip =		crypto GeoIP>=6
 RUN_DEPENDS-geoip =	${BASE_PKGPATH}
 
 LIB_DEPENDS-ldap =	databases/openldap
-WANTLIB-ldap =		asn1 com_err crypto gssapi krb5 lber-2.4 ldap-2.4 sasl2 ssl
+WANTLIB-ldap =		asn1 com_err crypto gssapi krb5 lber-2.4 ldap-2.4 sasl2 ssl \
+			heimbase heimntlm hx509 pthread roken wind
 RUN_DEPENDS-ldap =	${BASE_PKGPATH}
 
 LIB_DEPENDS-mysql =	databases/mysql
@@ -73,7 +74,7 @@ LIB_DEPENDS-streaming =	graphics/ffmpeg>=20121026 \
 WANTLIB-streaming += avcodec avformat avutil bz2 crypto m gsm
 WANTLIB-streaming += mp3lame ogg orc-0.4 pthread schroedinger-1.0
 WANTLIB-streaming += speex theoradec theoraenc vorbis vorbisenc vpx
-WANTLIB-streaming += x264 xvidcore z
+WANTLIB-streaming += x264 xvidcore z opus ssl
 RUN_DEPENDS-streaming = ${BASE_PKGPATH}
 
 USE_GROFF =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2013/03/19 13:07:14 nigel Exp $
+# $OpenBSD: Makefile,v 1.61 2013/06/17 19:28:37 ajacoutot Exp $
 
 COMMENT-main = 		K Desktop Environment, developer extensions
 COMMENT-svn = 		K Desktop Environment, svn extensions
@@ -9,7 +9,7 @@ DISTNAME =		kdesdk-${VERSION}
 PKGNAME-main =		${DISTNAME}
 REVISION-main =		12
 PKGNAME-svn =		kdesvn-${VERSION}
-REVISION-svn =		10
+REVISION-svn =		11
 
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	cvsservice           1.0      # .0.1
@@ -55,6 +55,7 @@ WANTLIB-svn +=	freetype gssapi krb5 magic neon proxy sasl2 sqlite3 ssl
 WANTLIB-svn +=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 svn_fs_base-1
 WANTLIB-svn +=	svn_fs_fs-1 svn_fs_util-1 svn_ra-1 svn_ra_local-1
 WANTLIB-svn +=	svn_ra_neon-1 svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1
+WANTLIB-svn +=	com_err heimbase heimntlm hx509 roken wind
 
 post-patch:
 	find "${WRKSRC}"/scripts -type f | while read F; do \

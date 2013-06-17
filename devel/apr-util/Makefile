@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2013/03/21 08:45:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2013/06/17 19:28:36 ajacoutot Exp $
 
 COMMENT=	companion library to APR
 
@@ -19,11 +19,10 @@ FLAVOR?=
 # Apache License 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += pthread
+WANTLIB += lib/db4/db>=4 expat pthread
 
 MASTER_SITES=	${MASTER_SITE_APACHE:=apr/}
 
-WANTLIB=	expat lib/db4/db>=4
 LIB_DEPENDS=	databases/db/v4,no_java,no_tcl
 
 MODULES=	converters/libiconv
@@ -48,6 +47,7 @@ CONFIGURE_ARGS+=	--with-ldap-include=${LOCALBASE}/include \
 			--with-ldap
 LIB_DEPENDS+=		databases/openldap
 WANTLIB+=		asn1 com_err crypto gssapi krb5 sasl2 ssl lber-2.4 ldap-2.4
+WANTLIB+=		heimbase heimntlm hx509 roken wind
 .else
 CONFIGURE_ARGS+=	--with-ldap=no
 .endif

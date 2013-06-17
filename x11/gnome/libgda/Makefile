@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2013/06/12 20:36:34 brad Exp $
+# $OpenBSD: Makefile,v 1.78 2013/06/17 19:28:37 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -24,6 +24,8 @@ PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
 REVISION-main=		1
 REVISION-mysql=		1
 REVISION-ui=		1
+REVISION-ldap=		0
+REVISION-pgsql=		0
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -149,7 +151,8 @@ CONFIGURE_ARGS+=	--without-postgres
 .else
 RUN_DEPENDS-pgsql=	${MODGETTEXT_RUN_DEPENDS}
 MULTI_PACKAGES+=	-pgsql
-WANTLIB-pgsql=		${WANTLIB} gda-${GDA_MAJOR} pq com_err crypto ssl
+WANTLIB-pgsql=		${WANTLIB} gda-${GDA_MAJOR} pq com_err crypto ssl \
+			asn1 heimbase hx509 krb5 roken wind
 LIB_DEPENDS-pgsql=	${LIB_DEPENDS} \
 			x11/gnome/libgda \
 			databases/postgresql
@@ -160,7 +163,8 @@ CONFIGURE_ARGS+=	--with-postgres="${LOCALBASE}"
 RUN_DEPENDS-ldap=	${MODGETTEXT_RUN_DEPENDS}
 MULTI_PACKAGES+=	-ldap
 WANTLIB-ldap=		${WANTLIB} crypto gda-${GDA_MAJOR} gssapi krb5 lber-2.4 \
-			ldap-2.4 sasl2 ssl asn1 com_err
+			ldap-2.4 sasl2 ssl asn1 com_err heimbase heimntlm hx509 \
+			roken wind
 LIB_DEPENDS-ldap=	${LIB_DEPENDS} \
 			x11/gnome/libgda \
 			databases/openldap

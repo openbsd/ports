@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.1 2012/03/29 12:43:21 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.2 2013/06/17 19:28:36 ajacoutot Exp $
 --- configure.orig	Thu Mar 29 13:55:14 2012
 +++ configure	Thu Mar 29 13:55:38 2012
 @@ -6609,7 +6609,7 @@ done
@@ -6,7 +6,7 @@ $OpenBSD: patch-configure,v 1.1 2012/03/29 12:43:21 ajacoutot Exp $
  if test "${with_kerberos_prefix+set}" = set; then
    withval=$with_kerberos_prefix;
 -	     LIBS="-L$with_kerberos_prefix/lib -lkrb5 -ldes425 $LIBS"
-+	     LIBS="-L$with_kerberos_prefix/lib -lkrb5 $LIBS"
++	     LIBS="-L$with_kerberos_prefix/lib `krb5-config --libs` $LIBS"
  
  cat >>confdefs.h <<\_ACEOF
  #define HAVE_KERBEROS 1
