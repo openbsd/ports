@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.105 2013/06/15 04:07:28 brett Exp $
+# $OpenBSD: OpenBSD,v 1.106 2013/06/17 08:44:29 tobiasu Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -100,6 +100,7 @@
 50.85		4.364		"steven"	# Steven Mestdagh
 51.0333		-114.0500	"pvalchev"	# Peter Valchev
 51.05		3.60		"wvdputte"	# Wim Vandeputte
+51.31885	9.56641		"tobiasu"	# Tobias Ulmer
 51.395466	-0.759525	"nigel"		# Nigel Taylor
 51.46		-0.13		"fgsch"		# Federico G. Schwindt
 51.8365		5.00271		"jasper"	# Jasper Lievisse Adriaanse
