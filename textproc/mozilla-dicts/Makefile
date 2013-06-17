@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:42:42 espie Exp $
-
-# keep in sync with www/mozilla/mozilla.port.mk 
-ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
+# $OpenBSD: Makefile,v 1.17 2013/06/17 09:26:41 ajacoutot Exp $
 
 PKG_ARCH=	*
 
