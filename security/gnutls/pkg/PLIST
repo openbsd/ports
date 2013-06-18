@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2013/06/09 09:36:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2013/06/18 13:22:39 ajacoutot Exp $
 @bin bin/certtool
 @bin bin/crywrap
 @bin bin/danetool
@@ -65,6 +65,8 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_alert_get_strname.3
 @man man/man3/gnutls_alert_send.3
 @man man/man3/gnutls_alert_send_appropriate.3
+@man man/man3/gnutls_alpn_get_selected_protocol.3
+@man man/man3/gnutls_alpn_set_protocols.3
 @man man/man3/gnutls_anon_allocate_client_credentials.3
 @man man/man3/gnutls_anon_allocate_server_credentials.3
 @man man/man3/gnutls_anon_free_client_credentials.3
@@ -142,6 +144,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_cipher_get.3
 @man man/man3/gnutls_cipher_get_block_size.3
 @man man/man3/gnutls_cipher_get_id.3
+@man man/man3/gnutls_cipher_get_iv_size.3
 @man man/man3/gnutls_cipher_get_key_size.3
 @man man/man3/gnutls_cipher_get_name.3
 @man man/man3/gnutls_cipher_init.3
@@ -236,6 +239,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_hmac_get_len.3
 @man man/man3/gnutls_hmac_init.3
 @man man/man3/gnutls_hmac_output.3
+@man man/man3/gnutls_hmac_set_nonce.3
 @man man/man3/gnutls_init.3
 @man man/man3/gnutls_key_generate.3
 @man man/man3/gnutls_kx_get.3
@@ -248,6 +252,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_mac_get_id.3
 @man man/man3/gnutls_mac_get_key_size.3
 @man man/man3/gnutls_mac_get_name.3
+@man man/man3/gnutls_mac_get_nonce_size.3
 @man man/man3/gnutls_mac_list.3
 @man man/man3/gnutls_mac_set_priority.3
 @man man/man3/gnutls_ocsp_req_add_cert.3
@@ -585,6 +590,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_session_is_resumed.3
 @man man/man3/gnutls_session_resumption_requested.3
 @man man/man3/gnutls_session_set_data.3
+@man man/man3/gnutls_session_set_id.3
 @man man/man3/gnutls_session_set_premaster.3
 @man man/man3/gnutls_session_set_ptr.3
 @man man/man3/gnutls_session_ticket_enable_client.3

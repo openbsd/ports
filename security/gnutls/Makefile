@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.79 2013/06/14 11:59:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.80 2013/06/18 13:22:39 ajacoutot Exp $
 
 COMMENT=	GNU Transport Layer Security library
 
-V=		3.1.12
+V=		3.2.1
 DISTNAME=	gnutls-${V}
-REVISION=	0
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	security
 
-SHARED_LIBS +=  gnutls               39.6     # 47.1
+SHARED_LIBS +=  gnutls               39.7     # 50.0
 SHARED_LIBS +=  gnutlsxx             29.1     # 29.0
 SHARED_LIBS +=  gnutls-xssl          0.0      # 0.0
 SHARED_LIBS +=  gnutls-openssl       27.2     # 27.2
@@ -43,7 +42,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
 		--disable-guile \
 		--disable-valgrind-tests \
-		--disable-hardware-acceleration \
 		--with-packager="OpenBSD Ports"
 
 # add dependency on net/unbound; see post-install as well

@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_gnutls_cipher_c,v 1.1 2013/06/14 11:59:09 jasper Exp $
+$OpenBSD: patch-lib_gnutls_cipher_c,v 1.2 2013/06/18 13:22:39 ajacoutot Exp $
 
 Security fix for CVE-2013-2116,
 GnuTLS TLS Record Decoding Denial of Service Vulnerability
@@ -6,9 +6,9 @@ GnuTLS TLS Record Decoding Denial of Service Vulnerability
 Patch from upstream:
 http://article.gmane.org/gmane.comp.encryption.gpg.gnutls.devel/6754
 
---- lib/gnutls_cipher.c.orig	Fri Jun 14 13:39:48 2013
-+++ lib/gnutls_cipher.c	Fri Jun 14 13:46:12 2013
-@@ -736,6 +736,8 @@ ciphertext_to_compressed (gnutls_session_t session,
+--- lib/gnutls_cipher.c.orig	Sat May 25 13:06:37 2013
++++ lib/gnutls_cipher.c	Tue Jun 18 14:50:50 2013
+@@ -762,6 +762,8 @@ ciphertext_to_compressed (gnutls_session_t session,
          return gnutls_assert_val(ret);
  
        pad = ciphertext->data[ciphertext->size - 1];   /* pad */
