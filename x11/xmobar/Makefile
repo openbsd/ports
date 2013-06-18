@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/06/17 10:07:40 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.22 2013/06/18 20:58:53 sthen Exp $
 
 COMMENT =		minimalistic text based status bar
 
@@ -21,6 +21,7 @@ MODGHC_SETUP_CONF_ARGS = --flags="with_xft with_mpd with_mpris"
 
 BUILD_DEPENDS =		devel/hs-mtl \
 			devel/hs-parsec \
+			devel/hs-regex-compat \
 			devel/hs-stm>=2.3,<2.5 \
 			x11/hs-X11>=1.6.1 \
 			x11/hs-X11-xft>=0.2,<0.4 \
