@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.54 2013/05/20 07:16:25 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.55 2013/06/18 13:17:45 dcoppa Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	console client for pandora
 
 DISTNAME =	pianobar-2013.05.19
+REVISION =	0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio
 
@@ -34,7 +35,8 @@ CFLAGS +=	-DNDEBUG
 
 MAKE_FLAGS =	DYNLINK=1 \
 		CC=${CC} \
-		LIBGCRYPT_CFLAGS="-I${LOCALBASE}/include" \
+		LIBGCRYPT_CFLAGS="-DGCRYPT_NO_DEPRECATED \
+				  -I${LOCALBASE}/include" \
 		LIBpiano_VERSION="${LIBpiano_VERSION}"
 
 FAKE_FLAGS =	PREFIX="${PREFIX}" \
