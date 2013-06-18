@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.199 2013/06/17 19:30:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.200 2013/06/18 13:16:51 ajacoutot Exp $
 
 # XXX textproc/highlight
 
@@ -89,7 +89,9 @@ RUN_DEPENDS-main +=	textproc/highlight
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
-MODGNOME_CPPFLAGS=	-I${X11BASE}/include -DBOGOFILTER_BINARY="\\\"${LOCALBASE}/bin/bogofilter\\\""
+MODGNOME_CPPFLAGS=	-I${X11BASE}/include \
+			$$(krb5-config --cflags) \
+			-DBOGOFILTER_BINARY="\\\"${LOCALBASE}/bin/bogofilter\\\""
 # without --as-needed, evolution takes 20 minutes (yes, 20!) to start
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib -Wl,-rpath,${TRUEPREFIX}/lib/evolution/${R}:${TRUEPREFIX}/lib \
 				-Wl,--as-needed

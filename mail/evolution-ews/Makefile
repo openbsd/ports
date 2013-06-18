@@ -1,26 +1,26 @@
-# $OpenBSD: Makefile,v 1.26 2013/06/17 19:30:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2013/06/18 13:16:51 ajacoutot Exp $
 
-SHARED_ONLY=	Yes
+SHARED_ONLY=		Yes
 
-COMMENT=	evolution connector for MS Exchange via EWS
+COMMENT=		evolution connector for MS Exchange via EWS
 
-GNOME_PROJECT=	evolution-ews
-GNOME_VERSION=	3.8.3
-REVISION=	2
+GNOME_PROJECT=		evolution-ews
+GNOME_VERSION=		3.8.3
+REVISION=		2
 
-CATEGORIES=	mail
+CATEGORIES=		mail
 
 SHARED_LIBS +=  eews-1.2             1.0      # unknown
 SHARED_LIBS +=  ewsutils             1.0      # unknown
 SHARED_LIBS +=  lzx                  1.0      # unknown
 
-EVO_VERSION=	3.8
-SUBST_VARS=	EVO_VERSION
+EVO_VERSION=		3.8
+SUBST_VARS=		EVO_VERSION
 
-HOMEPAGE=	http://projects.gnome.org/evolution/
+HOMEPAGE=		http://projects.gnome.org/evolution/
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
-		Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
+			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -46,21 +46,22 @@ WANTLIB += vorbisfile webkitgtk-3.0 webp xcb xcb-render xcb-shm
 WANTLIB += harfbuzz-icu icudata icuuc png xkbfile xml2 xslt z
 WANTLIB += heimbase heimntlm hx509 roken wind
 
-MODULES=	devel/gettext \
-		x11/gnome
+MODULES=		devel/gettext \
+			x11/gnome
 
 # XXX should be a LIB_DEPENDS+WANTLIB but check-lib-depends(1) does not
 # work with unversioned solibs (LOCALBASE/lib/evolution/*/*.so).
 BUILD_DEPENDS +=	mail/evolution,-main
 RUN_DEPENDS +=		mail/evolution,-main
 
-LIBTOOL_FLAGS=	--tag=disable-static
+LIBTOOL_FLAGS=		--tag=disable-static
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--disable-static \
-		--with-krb5
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		--disable-static \
+			--with-krb5
 
-MODGNOME_LDFLAGS=-Wl,-rpath,${TRUEPREFIX}/lib/evolution-data-server-${EVO_VERSION}
+MODGNOME_CPPFLAGS=	$$(krb5-config --cflags)
+MODGNOME_LDFLAGS=	-Wl,-rpath,${TRUEPREFIX}/lib/evolution-data-server-${EVO_VERSION}
 
 post-install:
 	rm ${PREFIX}/lib/evolution-data-server/*/*.la

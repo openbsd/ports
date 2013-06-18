@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.147 2013/06/17 19:30:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.148 2013/06/18 13:16:52 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -59,7 +59,7 @@ LIB_DEPENDS= 		databases/db/v4 \
 
 MODPY_RUNDEP=		No
 MODGNOME_TOOLS= 	gi vala
-MODGNOME_CPPFLAGS=	-I${LOCALBASE}/include/db4
+MODGNOME_CPPFLAGS=	-I${LOCALBASE}/include/db4 $$(krb5-config --cflags)
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS=		--with-krb5 \
