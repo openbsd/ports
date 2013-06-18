@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2013/05/31 15:35:07 ajacoutot Exp $
-
-# XXX Kerberos support is disabled because our Heimdal is too old
+# $OpenBSD: Makefile,v 1.35 2013/06/18 07:08:09 ajacoutot Exp $
 
 COMMENT=	interfaces for interacting with online accounts
 
 GNOME_PROJECT=	gnome-online-accounts
 GNOME_VERSION=	3.8.2
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  goa-1.0              2.0      # .0.0
 SHARED_LIBS +=  goa-backend-1.0      2.0      # .0.0
@@ -30,6 +28,7 @@ WANTLIB += rest-0.7 soup-2.4 soup-gnome-2.4 sqlite3 stdc++ webkitgtk-3.0
 WANTLIB += xcb xcb-render xcb-shm xml2 xslt z graphite2
 WANTLIB += dbus-glib-1 geoclue gstaudio-1.0 gstfft-1.0
 WANTLIB += atk-bridge-2.0 atspi harfbuzz secret-1 gsttag-1.0 webp
+WANTLIB += harfbuzz-icu icudata icuuc
 
 MODULES=		devel/gettext \
 			x11/gnome
