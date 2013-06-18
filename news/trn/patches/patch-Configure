@@ -1,13 +1,22 @@
-$OpenBSD: patch-Configure,v 1.2 2001/05/06 01:31:39 naddy Exp $
---- Configure.orig	Sun May  6 00:31:24 2001
-+++ Configure	Sun May  6 00:31:30 2001
-@@ -1672,6 +1672,9 @@ EOM
- 		netbsd*) osname=netbsd
- 			osvers="$3"
+$OpenBSD: patch-Configure,v 1.3 2013/06/18 21:12:26 sthen Exp $
+--- Configure.orig	Thu Sep  2 07:12:26 2010
++++ Configure	Tue Jun 18 22:11:35 2013
+@@ -527,7 +527,7 @@ locincpth="$locincpth /opt/gnu/include /usr/GNU/includ
+ inclwanted=''
+ 
+ : List of libraries we want.
+-libswanted='malloc resolv socket net hdb bbn str nls nsl intl x ucb'
++libswanted='malloc resolv socket net bbn str nls nsl intl x ucb'
+ : Do not use vfork unless overridden by a hint file.
+ usevfork=false
+ 
+@@ -1670,6 +1670,9 @@ EOM
+ 		MiNT) osname=mint
  			;;
-+		openbsd*) osname=openbsd
+ 		netbsd*) osname=netbsd
 +			osvers="$3"
 +			;;
++		openbsd*) osname=openbsd
+ 			osvers="$3"
+ 			;;
  		news-os) osvers="$3"
- 			case "$3" in
- 			4*) osname=newsos4 ;;
