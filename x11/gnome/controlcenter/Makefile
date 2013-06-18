@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2013/06/17 19:31:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.106 2013/06/18 07:11:27 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.8.3
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		x11
 
@@ -31,7 +31,8 @@ WANTLIB += pthread pthread-stubs pulse pulse-mainloop-glib rest-0.7
 WANTLIB += secret-1 smbclient sndfile soup-2.4 soup-gnome-2.4
 WANTLIB += sqlite3 stdc++ upower-glib vorbis vorbisenc vorbisfile
 WANTLIB += webkitgtk-3.0 webp xcb xcb-render xcb-shm xkbfile xml2
-WANTLIB += xslt z
+WANTLIB += asn1 com_err crack crypto heimbase hx509 krb5 pwquality
+WANTLIB += roken wind xslt z
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -42,6 +43,7 @@ LIB_DEPENDS=		audio/pulseaudio \
 			graphics/colord-gtk \
 			net/samba \
 			print/cups,-libs \
+			security/libpwquality \
 			sysutils/accountsservice \
 			sysutils/upower \
 			x11/gnome/desktop \
@@ -59,15 +61,11 @@ RUN_DEPENDS=		x11/gnome/settings-daemon \
 # man pages
 BUILD_DEPENDS += textproc/docbook-xsl
 
-# polkit(8) almost always needs to know the "active" session
-RUN_DEPENDS +=	sysutils/consolekit
-
-# XXX when the user account panel is re-enabled
-BUILD_DEPENDS +=	security/libpwquality
-#LIB_DEPENDS +=		security/libpwquality
-
 # NOTE that a11y dependencies (e.g. mousetweaks, caribou...) are not
 # enforced on purpose.
+
+# polkit(8) almost always needs to know the "active" session
+RUN_DEPENDS +=	sysutils/consolekit
 
 # needed for gnome-color-panel
 RUN_DEPENDS+=		x11/gnome/color-manager
@@ -79,7 +77,7 @@ RUN_DEPENDS+=		x11/gnome/power-manager
 RUN_DEPENDS+=		print/cups-pk-helper
 
 # needed for gnome-region-panel; optionnal and would create a cyclic dep:
-# gnome-session -> gnome-control-center -> gnome-session
+# gnome-session -> gnome-shell -> gnome-control-center -> gnome-session
 #RUN_DEPENDS+=		x11/gnome/session
 
 MODGNOME_TOOLS= 	yelp
@@ -94,20 +92,5 @@ MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gnome-control-center
-
-AUTOCONF_VERSION=	2.68
-AUTOMAKE_VERSION=	1.11
-AUTOTOOLS_ENV +=	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-			AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
-MAKE_ENV +=		${AUTOTOOLS_ENV}
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool \
-			x11/gnome/common
-
-pre-configure:
-	@cd ${WRKSRC} && \
-		${AUTOTOOLS_ENV} \
-		autoreconf -i
 
 .include <bsd.port.mk>
