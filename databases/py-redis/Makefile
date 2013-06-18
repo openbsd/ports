@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2013/05/20 06:52:52 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.22 2013/06/18 11:47:06 dcoppa Exp $
 
 COMMENT =		Python interface to Redis
 
-MODPY_EGG_VERSION =	2.7.5
+MODPY_EGG_VERSION =	2.7.6
 DISTNAME =		redis-py-${MODPY_EGG_VERSION}
 PKGNAME =		py-redis-${MODPY_EGG_VERSION}
 CATEGORIES =		databases
@@ -21,12 +21,7 @@ MODPY_SETUPTOOLS =	Yes
 
 MODPY_BADEGGS =		redis
 
-TEST_DEPENDS =		databases/redis
-
-# Be sure you have a redis server running on localhost
-TEST_IS_INTERACTIVE =	Yes
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} ./run_tests
+# XXX: test suite requires newer devel/py-test and devel/py-py
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
