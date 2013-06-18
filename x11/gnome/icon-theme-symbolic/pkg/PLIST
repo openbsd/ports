@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2013/05/14 11:49:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2013/06/18 14:58:25 ajacoutot Exp $
 share/icons/gnome/scalable/
 share/icons/gnome/scalable/actions/
 share/icons/gnome/scalable/actions/action-unavailable-symbolic.svg
@@ -158,6 +158,7 @@ share/icons/gnome/scalable/devices/audio-card-symbolic.svg
 share/icons/gnome/scalable/devices/audio-headphones-symbolic.svg
 share/icons/gnome/scalable/devices/audio-headset-symbolic.svg
 share/icons/gnome/scalable/devices/audio-input-microphone-symbolic.svg
+share/icons/gnome/scalable/devices/audio-speakers-symbolic.svg
 share/icons/gnome/scalable/devices/camera-photo-symbolic.svg
 share/icons/gnome/scalable/devices/camera-web-symbolic.svg
 share/icons/gnome/scalable/devices/colorimeter-colorhug-symbolic.svg
@@ -258,6 +259,7 @@ share/icons/gnome/scalable/places/user-bookmarks-symbolic.svg
 share/icons/gnome/scalable/places/user-home-symbolic.svg
 share/icons/gnome/scalable/places/user-trash-symbolic.svg
 share/icons/gnome/scalable/status/
+share/icons/gnome/scalable/status/airplane-mode-symbolic.svg
 share/icons/gnome/scalable/status/alarm-symbolic.svg
 share/icons/gnome/scalable/status/appointment-missed-symbolic.svg
 share/icons/gnome/scalable/status/appointment-soon-symbolic.svg
@@ -297,6 +299,7 @@ share/icons/gnome/scalable/status/mail-attachment-symbolic.svg
 share/icons/gnome/scalable/status/mail-read-symbolic.svg
 share/icons/gnome/scalable/status/mail-replied-symbolic.svg
 share/icons/gnome/scalable/status/mail-unread-symbolic.svg
+share/icons/gnome/scalable/status/media-playlist-consecutive-symbolic.svg
 share/icons/gnome/scalable/status/media-playlist-repeat-song-symbolic.svg
 share/icons/gnome/scalable/status/media-playlist-repeat-symbolic.svg
 share/icons/gnome/scalable/status/media-playlist-shuffle-symbolic.svg
