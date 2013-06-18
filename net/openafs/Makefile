@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2013/06/17 19:29:40 ajacoutot Exp $
-
-BROKEN=			temporarily broken during the Heimdal update
+# $OpenBSD: Makefile,v 1.49 2013/06/18 11:22:23 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=		i386
 
