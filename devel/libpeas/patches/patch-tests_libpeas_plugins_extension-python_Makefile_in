@@ -1,10 +1,10 @@
-$OpenBSD: patch-tests_libpeas_plugins_extension-python_Makefile_in,v 1.1 2013/03/28 19:33:06 jasper Exp $
+$OpenBSD: patch-tests_libpeas_plugins_extension-python_Makefile_in,v 1.2 2013/06/18 11:48:56 jasper Exp $
 
 sed(1) doesn't support -i, so use perl(1) instead.
 
---- tests/libpeas/plugins/extension-python/Makefile.in.orig	Thu Mar 28 13:12:24 2013
-+++ tests/libpeas/plugins/extension-python/Makefile.in	Thu Mar 28 13:13:04 2013
-@@ -550,14 +550,14 @@ extension-py.%:
+--- tests/libpeas/plugins/extension-python/Makefile.in.orig	Tue Jun 18 12:38:00 2013
++++ tests/libpeas/plugins/extension-python/Makefile.in	Tue Jun 18 13:46:50 2013
+@@ -543,14 +543,14 @@ extension-py.%:
  
  extension-python.gschema.xml extension-python3.gschema.xml: extension-py.gschema.xml
  	$(AM_V_GEN) cp $< $@ && \
