@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:46:13 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2013/06/18 09:27:37 dcoppa Exp $
 
 COMMENT =	OCaml interface to GTK+2
 
 V =		2.16.0
-REVISION=	2
+REVISION=	3
 DISTNAME =	lablgtk-$V
 PKGNAME =	lablgtk2-$V
 CATEGORIES =	x11 devel
@@ -14,13 +14,12 @@ MASTER_SITES =	https://forge.ocamlcore.org/frs/download.php/979/
 # LGPL
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
-		Xinerama Xrandr Xrender atk-1.0 cairo expat \
-		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
-		gio-2.0 glade-2.0 glib-2.0 gobject-2.0 \
-		gtk-x11-2.0 gtksourceview-2.0 m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pixman-1 png \
-		pthread-stubs rsvg-2 xcb xcb-render xcb-shm xml2 z
+WANTLIB =	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
+		Xinerama Xrandr Xrender atk-1.0 cairo fontconfig \
+		freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
+		glade-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 \
+		gtksourceview-2.0 m pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 rsvg-2 xml2 z
 
 BUILD_DEPENDS =	sysutils/findlib
 

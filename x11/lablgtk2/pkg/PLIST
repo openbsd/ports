@@ -1,10 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/10/09 09:22:24 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/06/18 09:27:37 dcoppa Exp $
 %%SHARED%%
 %%native%%
-@comment lib/ocaml/stublibs/dlllablglade2.so.owner
-@comment lib/ocaml/stublibs/dlllablgtk2.so.owner
-@comment lib/ocaml/stublibs/dlllablgtksourceview2.so.owner
-@comment lib/ocaml/stublibs/dlllablrsvg.so.owner
 bin/gdk_pixbuf_mlsource
 bin/lablgladecc2
 bin/lablgtk2
@@ -280,5 +276,9 @@ lib/ocaml/lablgtk2/xml_lexer.mli
 lib/ocaml/site-lib/
 lib/ocaml/site-lib/lablgtk2/
 lib/ocaml/site-lib/lablgtk2/META
+@comment lib/ocaml/stublibs/dlllablglade2.so.owner
+@comment lib/ocaml/stublibs/dlllablgtk2.so.owner
+@comment lib/ocaml/stublibs/dlllablgtksourceview2.so.owner
+@comment lib/ocaml/stublibs/dlllablrsvg.so.owner
 share/doc/lablgtk2/
 share/doc/lablgtk2/README
