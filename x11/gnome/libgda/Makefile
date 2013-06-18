@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2013/06/17 19:28:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2013/06/18 16:47:56 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -55,6 +55,9 @@ MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 
 SUBST_VARS=		GDA_MAJOR
+
+# /libgda-5.1.2_writes_to_HOME/.cache/g-ir-scanner
+PORTHOME=		${WRKDIST}
 
 # no no_ldap PSEUDO_FLAVOR because we need the headers in -main
 # since some are referenced by other headers
