@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/04/26 16:09:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2013/06/18 14:29:03 sthen Exp $
 
      SUBDIR =
      SUBDIR += asterisk
@@ -20,5 +20,6 @@
      SUBDIR += siproxd
      SUBDIR += sofia-sip
      SUBDIR += spandsp
+     SUBDIR += stuntman
 
 .include <bsd.port.subdir.mk>
