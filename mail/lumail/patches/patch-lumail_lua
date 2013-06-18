@@ -1,15 +1,32 @@
-$OpenBSD: patch-lumail_lua,v 1.1.1.1 2013/05/31 15:20:22 jturner Exp $
---- lumail.lua.orig	Fri May 31 05:10:57 2013
-+++ lumail.lua	Fri May 31 09:40:00 2013
-@@ -54,6 +54,11 @@ sent_mail( maildir_prefix() .. "/sent-mail" );
- default_email = "Steve Kemp <steve@steve.org.uk>";
- from( default_email );
+$OpenBSD: patch-lumail_lua,v 1.2 2013/06/18 22:23:55 jturner Exp $
+--- lumail.lua.orig	Thu Jun  6 00:05:56 2013
++++ lumail.lua	Thu Jun  6 20:23:15 2013
+@@ -66,13 +66,20 @@ from( default_email );
  
-+--
+ 
+ --
 +-- Set the path to the binary that will actually deliver
 +-- outgoing email.
 +--
 +sendmail_path( "/usr/sbin/sendmail -t" );
++
++
++--
+ -- Specify the editor to use for composing/replying to email messages.
+ --
+ -- If this isn't set lumail will default to using the value of the
+ -- environmental variable "EDITOR", and if that is unset it will use
+ -- "vim".
+ --
+-editor( "/usr/bin/vim" )
++editor( "/usr/bin/vi" )
+ 
  
  --
- -- Show all folders by default
+@@ -616,4 +623,4 @@ function mark_machines_read()
+          mark_all_read();
+       end
+    end
+-end
+\ No newline at end of file
++end

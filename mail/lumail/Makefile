@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/05/31 19:08:15 jturner Exp $
+# $OpenBSD: Makefile,v 1.4 2013/06/18 22:23:55 jturner Exp $
 
 COMMENT =		console-based e-mail client with Lua scripting support
 
-DISTNAME =		lumail-0.07
+DISTNAME =		lumail-0.08
 CATEGORIES =		mail
 
 MAINTAINER =		James Turner <james@calminferno.net>
@@ -33,7 +33,7 @@ post-extract:
 	@rm -f ${WRKSRC}/.depend
 
 do-test:
-	@cd ${WRKSRC}/tests && ${MAKE} test
+	@cd ${WRKSRC}/tests && env -i ${MAKE_ENV} ${MAKE_PROGRAM} test
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lumail ${PREFIX}/bin
