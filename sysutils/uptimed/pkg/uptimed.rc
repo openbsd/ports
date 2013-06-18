@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# $OpenBSD: uptimed.rc,v 1.1.1.1 2013/06/18 05:47:19 rfreeman Exp $
+
+daemon="${TRUEPREFIX}/sbin/uptimed"
+daemon_flags="-p /var/run/uptimed/uptimed.pid"
+daemon_user="_uptimed"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_pre() {
+	install -d -o _uptimed /var/run/uptimed
+}
+
+rc_cmd $1

@@ -1,0 +1,14 @@
+$OpenBSD: patch-libuptimed_urec_h,v 1.1.1.1 2013/06/18 05:47:19 rfreeman Exp $
+--- libuptimed/urec.h.orig	Sun Jun 16 17:00:29 2013
++++ libuptimed/urec.h	Sun Jun 16 17:00:51 2013
+@@ -54,8 +54,8 @@ extern void snprintf(char *, ...);
+ 
+ #include "misc.h"
+ 
+-#define FILE_BOOTID "/var/spool/uptimed/bootid"
+-#define FILE_RECORDS "/var/spool/uptimed/records"
++#define FILE_BOOTID "/var/db/uptimed/bootid"
++#define FILE_RECORDS "/var/db/uptimed/records"
+ 
+ typedef struct urec {
+ 	time_t utime; /* uptime */

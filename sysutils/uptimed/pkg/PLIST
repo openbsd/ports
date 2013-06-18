@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/06/18 05:47:19 rfreeman Exp $
+@extraunexec rm -f /var/db/uptimed/*
+@newgroup _uptimed:717
+@newuser _uptimed:717:717:daemon:Uptimed Account:/var/db/transmission:/sbin/nologin
+@bin bin/uprecords
+lib/libuptimed.a
+lib/libuptimed.la
+@lib lib/libuptimed.so.${LIBuptimed_VERSION}
+@man man/man1/uprecords.1
+@man man/man8/uptimed.8
+@bin sbin/uptimed
+@owner _uptimed
+@sample /var/db/uptimed/
+@owner
+@rcscript ${RCDIR}/uptimed
