@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_external_LibRaw_src_libraw_cxx_cpp,v 1.1 2013/06/18 18:45:49 sthen Exp $
+
+https://github.com/darktable-org/darktable/commit/796937043871aadbd0c0dc61bc90ea674ec1bc18
+
+--- src/external/LibRaw/src/libraw_cxx.cpp.orig	Tue Jun 18 19:21:00 2013
++++ src/external/LibRaw/src/libraw_cxx.cpp	Tue Jun 18 19:22:02 2013
+@@ -796,8 +796,8 @@ int LibRaw::unpack(void)
+                 S.iheight= S.height;
+                 IO.shrink = 0;
+                 // allocate image as temporary buffer, size 
+-                imgdata.rawdata.raw_alloc = calloc(S.iwidth*S.iheight,sizeof(*imgdata.image));
+-                imgdata.image = (ushort (*)[4]) imgdata.rawdata.raw_alloc;
++                imgdata.rawdata.raw_alloc = 0;
++                imgdata.image = (ushort (*)[4]) calloc(S.iwidth*S.iheight,sizeof(*imgdata.image)); 
+             }
+ 
+ 
+@@ -807,8 +807,8 @@ int LibRaw::unpack(void)
+         // recover saved
+         if( decoder_info.decoder_flags & LIBRAW_DECODER_LEGACY)
+             {
+-                imgdata.image = 0; 
+-                imgdata.rawdata.color_image = (ushort (*)[4]) imgdata.rawdata.raw_alloc;
++              imgdata.rawdata.raw_alloc = imgdata.rawdata.color_image = imgdata.image;
++              imgdata.image = 0;  
+             }
+ 
+         // calculate channel maximum
