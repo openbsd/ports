@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/06/17 19:28:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2013/06/18 14:18:47 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -12,14 +12,13 @@ DISTNAME=		pdns-${V}
 PKGNAME=		powerdns-${V}
 PKGNAME-main=		powerdns-${V}
 PKGNAME-mysql=		powerdns-mysql-${V}
-REVISION-mysql=		1
 PKGNAME-pgsql=		powerdns-pgsql-${V}
 PKGNAME-ldap=		powerdns-ldap-${V}
 CATEGORIES=		net
 HOMEPAGE=		http://www.powerdns.com/
 
 REVISION-main=		1
-REVISION-mysql=		0
+REVISION-mysql=		2
 REVISION-pgsql=		0
 REVISION-ldap=		0
 
