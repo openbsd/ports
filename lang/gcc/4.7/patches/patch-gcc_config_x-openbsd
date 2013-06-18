@@ -1,8 +1,0 @@
-$OpenBSD: patch-gcc_config_x-openbsd,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
---- gcc/config/x-openbsd.orig	Sun Nov 20 02:06:19 2011
-+++ gcc/config/x-openbsd	Sun Nov 20 02:07:24 2011
-@@ -0,0 +1,4 @@
-+host-openbsd.o : $(srcdir)/config/host-openbsd.c $(CONFIG_H) $(SYSTEM_H) \
-+  coretypes.h hosthooks.h hosthooks-def.h $(HOOKS_H)
-+	$(COMPILER) -c $(ALL_COMPILERFLAGS) $(ALL_CPPFLAGS) $(INCLUDES) \
-+		$(srcdir)/config/host-openbsd.c

@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-java,v 1.1.1.1 2012/04/23 15:56:42 pascal Exp $
-lib/gcj-${V}-13/libjvm.so
-@lib lib/libgcj-tools.so.${LIBgcj-tools_VERSION}
-@lib lib/libgcj.so.${LIBgcj_VERSION}
-@lib lib/libgij.so.${LIBgij_VERSION}

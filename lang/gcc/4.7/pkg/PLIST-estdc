@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST-estdc,v 1.2 2012/07/01 18:56:45 pascal Exp $
-@option no-default-conflict
-@conflict libstdc++->=4.7,<4.8
-%%SHARED%%

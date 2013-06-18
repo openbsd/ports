@@ -1,5 +1,0 @@
-Test on !amd64 and !i386
-plists generated manually; double-check once update-plist is fixed
--go now needs *context()
-alpha.c/ieee patch?
-java is fucked (segfault in ecj1)

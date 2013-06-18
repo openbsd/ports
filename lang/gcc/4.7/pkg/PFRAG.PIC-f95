@@ -1,9 +1,0 @@
-@comment $OpenBSD: PFRAG.PIC-f95,v 1.1.1.1 2012/04/23 15:56:42 pascal Exp $
-lib/fpic/libgfortran.a
-lib/fpic/libgfortran.la
-@comment @lib lib/fpic/libgfortran.so.${LIBgfortran_VERSION}
-lib/fpic/libgfortran.spec
-lib/gcc/${CONFIG}/${V}/fpic/libcaf_single.a
-lib/gcc/${CONFIG}/${V}/fpic/libcaf_single.la
-lib/gcc/${CONFIG}/${V}/fpic/libgfortranbegin.a
-lib/gcc/${CONFIG}/${V}/fpic/libgfortranbegin.la
