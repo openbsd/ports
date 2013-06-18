@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_configure_in,v 1.18 2012/08/18 23:47:27 avsm Exp $
+$OpenBSD: patch-config_configure_in,v 1.19 2013/06/18 09:35:13 dcoppa Exp $
 --- config/configure.in.orig	Sun Aug  5 17:49:02 2012
-+++ config/configure.in	Tue Aug  7 07:59:48 2012
++++ config/configure.in	Tue Jun 18 09:50:42 2013
 @@ -974,7 +974,7 @@ if test "$GD" != "no"; then
        PNG_LDFLAGS=`$PNGLIBCONFIG --ldflags`
        LDFLAGS="$LDFLAGS $PNG_LDFLAGS"
@@ -19,7 +19,7 @@ $OpenBSD: patch-config_configure_in,v 1.18 2012/08/18 23:47:27 avsm Exp $
          AC_DEFINE(HAVE_GD_PNG, 1, [Define to 1 if you have png support in libgd.])
        else
          AC_MSG_RESULT(no)
-@@ -1453,7 +1454,7 @@ else
+@@ -1453,7 +1453,7 @@ else
    MORE_TARGETS="$MORE_TARGETS $GUIS"
    AC_MSG_CHECKING(GToolbox.popup_menu args)
    GTOOLBOX="$OCAMLLIB/$LABLGTK_NAME/gToolbox.mli"
@@ -28,13 +28,25 @@ $OpenBSD: patch-config_configure_in,v 1.18 2012/08/18 23:47:27 avsm Exp $
    if test "$GTOOLBOX_ARGS" = "new"; then
      GTOOLBOX_POPUPMENU=' ~button: button ~time: time '
      AC_MSG_RESULT(new)
-@@ -1753,7 +1756,8 @@ if test "x$CXX" != "x"; then
+@@ -1723,6 +1723,8 @@ else
+   echo "        disabled"
+ fi
+ 
++echo ""
++printf " - GUI build        "
+ if test "$LABLGTK_CONFIG" = "yes"; then
+   echo ""
+   printf "\n - GUI support       "
+@@ -1753,10 +1755,10 @@ if test "x$CXX" != "x"; then
    echo " - $CXX version       $CXX_VERSION"
  fi
  echo ""
 -echo "\nNow execute '$GNU_MAKE' to start compiling. Good luck!"
-+echo ""
 +echo "Now execute '$GNU_MAKE' to start compiling. Good luck!"
  
  echo ""
- echo "To compile a static code execute:     $GNU_MAKE mlnet$COMPILE_TARGET.static"
+-echo "To compile a static code execute:     $GNU_MAKE mlnet$COMPILE_TARGET.static"
++echo "To compile a static core execute:     $GNU_MAKE mlnet$COMPILE_TARGET.static"
+ echo "To produce a release tarball execute: $GNU_MAKE release.mlnet.static"
+ echo "To clean the build directory execute: $GNU_MAKE maintainerclean"
+ if test "$DONKEY_SUI" = "yes"; then
