@@ -1,0 +1,3 @@
+STUNTMAN is an open source, high performance STUN server, implementation
+of the STUN protocol as specified in RFCs 5389, 5769, and 5780. It also
+includes backwards compatibility for RFC 3489.

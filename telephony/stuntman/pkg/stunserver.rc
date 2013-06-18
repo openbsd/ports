@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD: stunserver.rc,v 1.1.1.1 2013/06/18 14:28:37 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/stunserver"
+daemon_user="_stuntman"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+rc_bg=YES
+
+rc_cmd $1

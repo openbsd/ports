@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/06/18 14:28:37 sthen Exp $
+@newgroup _stuntman:718
+@newuser _stuntman:718:718:daemon:STUN server:/nonexistent:/sbin/nologin
+@man man/man1/stunclient.1
+@man man/man1/stunserver.1
+@bin sbin/stunclient
+@bin sbin/stunserver
+share/doc/pkg-readmes/${FULLPKGNAME}
+@rcscript ${RCDIR}/stunserver

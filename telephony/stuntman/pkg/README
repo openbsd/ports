@@ -1,0 +1,15 @@
+$OpenBSD: README,v 1.1.1.1 2013/06/18 14:28:37 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+To arrange for the standalone STUN server to run automatically
+on reboot, add "stunserver" to "pkg_scripts" in /etc/rc.conf.local, e.g.:
+
+pkg_scripts="${pkg_scripts} stunserver"
+
+NOTE: This script runs stunserver(1) with default options.
+
+If you want to add or change default options for stunserver(1) you can add
+line stunserver_flags="..." into /etc/rc.conf.local(8).
