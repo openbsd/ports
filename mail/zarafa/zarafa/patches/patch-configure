@@ -1,27 +1,12 @@
-$OpenBSD: patch-configure,v 1.26 2013/03/31 13:01:19 robert Exp $
+$OpenBSD: patch-configure,v 1.27 2013/06/18 11:58:17 ajacoutot Exp $
 
 Our crypt(3) is in libc.
 
+Use uuid from sysutils/e2fsprogs instead of devel/uuid
+(ECKrbAuth.cpp:61 et/com_err.h).
+
 --- configure.orig	Thu Feb 28 16:13:46 2013
-+++ configure	Sun Mar 31 14:29:43 2013
-@@ -17302,7 +17302,7 @@ if test "${ac_cv_lib_intl_strftime+set}" = set; then :
-   $as_echo_n "(cached) " >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lintl  $LIBS"
-+LIBS="-lintl -liconv $LIBS"
- cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
- 
-@@ -17335,7 +17335,7 @@ $as_echo "$ac_cv_lib_intl_strftime" >&6; }
- if test "x$ac_cv_lib_intl_strftime" = x""yes; then :
-   $as_echo "#define HAVE_STRFTIME 1" >>confdefs.h
- 
--LIBS="-lintl $LIBS"
-+LIBS="-lintl -liconv $LIBS"
- fi
- 
- fi
++++ configure	Tue Jun 18 13:09:00 2013
 @@ -18780,74 +18780,12 @@ rm -f core conftest.err conftest.$ac_objext \
  
  LIBS=$LIBS_system
@@ -106,12 +91,51 @@ Our crypt(3) is in libc.
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -19365,7 +19303,7 @@ if test "${ac_cv_lib_intl_gettext+set}" = set; then :
+@@ -19154,13 +19092,13 @@ if test "x$ac_cv_func_uuid_create" = x""yes; then :
+ _ACEOF
+  UUID_LIBS=""
+ else
+-    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for uuid_create in -luuid" >&5
+-$as_echo_n "checking for uuid_create in -luuid... " >&6; }
++    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for uuid_create in -le2fs-uuid" >&5
++$as_echo_n "checking for uuid_create in -le2fs-uuid... " >&6; }
+ if test "${ac_cv_lib_uuid_uuid_create+set}" = set; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
--LIBS="-lintl  $LIBS"
-+LIBS="-lintl -liconv $LIBS"
+-LIBS="-luuid  $LIBS"
++LIBS="-le2fs-uuid  $LIBS"
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
+ 
+@@ -19191,17 +19129,17 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_uuid_uuid_create" >&5
+ $as_echo "$ac_cv_lib_uuid_uuid_create" >&6; }
+ if test "x$ac_cv_lib_uuid_uuid_create" = x""yes; then :
+-  UUID_LIBS="-luuid"
++  UUID_LIBS="-le2fs-uuid"
+     $as_echo "#define HAVE_UUID_CREATE 1" >>confdefs.h
+ 
+ else
+-      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for uuid_generate in -luuid" >&5
+-$as_echo_n "checking for uuid_generate in -luuid... " >&6; }
++      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for uuid_generate in -le2fs-uuid" >&5
++$as_echo_n "checking for uuid_generate in -le2fs-uuid... " >&6; }
+ if test "${ac_cv_lib_uuid_uuid_generate+set}" = set; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-luuid  $LIBS"
++LIBS="-le2fs-uuid  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -19232,7 +19170,7 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_uuid_uuid_generate" >&5
+ $as_echo "$ac_cv_lib_uuid_uuid_generate" >&6; }
+ if test "x$ac_cv_lib_uuid_uuid_generate" = x""yes; then :
+-  UUID_LIBS="-luuid"
++  UUID_LIBS="-le2fs-uuid"
+ else
+         as_fn_error $? "required library libuuid missing or unusable" "$LINENO" 5
  

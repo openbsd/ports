@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.152 2013/06/17 20:54:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.153 2013/06/18 11:58:17 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
 
 PKGNAME=	zarafa-${V}
 PKGNAME-main=	zarafa-${V}
-REVISION-main=	3
 PKGNAME-web=	zarafa-webaccess-${V}
+
+REVISION-main=	4
+REVISION-web=	0
 
 CATEGORIES=	mail www productivity
 
@@ -41,12 +43,12 @@ BUILD_DEPENDS=	devel/swig \
 BUILD_DEPENDS += net/curl
 
 WANTLIB += ${MODGETTEXT_WANTLIB}
-WANTLIB += m pthread stdc++ z vmime execinfo icudata icui18n icuuc uuid
-WANTLIB += boost_filesystem-mt boost_system-mt
+WANTLIB += m pthread stdc++ z vmime execinfo icudata icui18n icuuc
+WANTLIB += boost_filesystem-mt boost_system-mt e2fs-uuid
 
 WANTLIB-main += ${WANTLIB} ${MODPY_WANTLIB}
 WANTLIB-main += asn1 c com_err crypto gssapi ical icalss krb5 lber-2.4
-WANTLIB-main += mysqlclient ncursesw sasl2 ssl util uuid xml2 kyotocabinet
+WANTLIB-main += mysqlclient ncursesw sasl2 ssl util xml2 kyotocabinet
 WANTLIB-main += heimbase heimntlm hx509 ldap_r-2.4 roken wind
 WANTLIB-main += clucene-core clucene-shared
 
@@ -60,7 +62,7 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		devel/boost \
 		devel/libexecinfo \
 		devel/libvmime>=0.9.2p1 \
-		devel/uuid \
+		sysutils/e2fsprogs \
 		textproc/clucene>=2.3.3.4 \
 		textproc/icu4c \
 		textproc/libical \
