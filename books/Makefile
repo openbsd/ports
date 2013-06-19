@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/12/15 22:26:59 fgsch Exp $
+# $OpenBSD: Makefile,v 1.20 2013/06/19 08:53:38 sthen Exp $
 
      SUBDIR =
      SUBDIR += AsteriskGuide
@@ -9,6 +9,7 @@
      SUBDIR += clisp-hyperspec
      SUBDIR += cvs-guide
      SUBDIR += diveintopython
+     SUBDIR += diveintopython3
      SUBDIR += docbook-guide
      SUBDIR += grokking-the-gimp
      SUBDIR += haskell-report
