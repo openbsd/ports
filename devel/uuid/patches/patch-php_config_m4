@@ -1,0 +1,12 @@
+$OpenBSD: patch-php_config_m4,v 1.1 2013/06/19 14:34:51 sthen Exp $
+--- php/config.m4.orig	Tue Jun 18 15:05:53 2013
++++ php/config.m4	Tue Jun 18 15:06:08 2013
+@@ -34,7 +34,7 @@ if test "$PHP_UUID" != "no"; then
+     PHP_NEW_EXTENSION(uuid, uuid.c, $ext_shared)
+     AC_DEFINE(HAVE_UUID, 1, [Have OSSP uuid library])
+     PHP_ADD_LIBPATH([..], )
+-    PHP_ADD_LIBRARY([uuid],, UUID_SHARED_LIBADD)
++    PHP_ADD_LIBRARY([ossp-uuid],, UUID_SHARED_LIBADD)
+     PHP_ADD_INCLUDE([..])
+     PHP_SUBST(UUID_SHARED_LIBADD)
+ 

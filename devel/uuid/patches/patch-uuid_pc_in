@@ -1,0 +1,11 @@
+$OpenBSD: patch-uuid_pc_in,v 1.1 2013/06/19 14:34:52 sthen Exp $
+--- uuid.pc.in.orig	Tue Jun 18 14:56:09 2013
++++ uuid.pc.in	Tue Jun 18 14:56:17 2013
+@@ -37,6 +37,6 @@ Description: Universally Unique Identifier (UUID) Libr
+ Version: @UUID_VERSION_RAW@
+ URL: http://www.ossp.org/pkg/lib/uuid/
+ Cflags: -I${includedir}
+-Libs: -L${libdir} -luuid
++Libs: -L${libdir} -lossp-uuid
+ Libs.private: @LIBS@
+ 

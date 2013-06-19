@@ -1,0 +1,33 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2013/06/19 14:34:51 sthen Exp $
+--- Makefile.in.orig	Sat Mar  8 18:31:40 2008
++++ Makefile.in	Tue Jun 18 17:56:26 2013
+@@ -62,13 +62,13 @@ PERL        = @PERL@
+ PHP         = @PHP@
+ PG_CONFIG   = @PG_CONFIG@
+ 
+-LIB_NAME    = libuuid.la
++LIB_NAME    = libossp-uuid.la
+ LIB_OBJS    = uuid.lo uuid_md5.lo uuid_sha1.lo uuid_prng.lo uuid_mac.lo uuid_time.lo uuid_ui64.lo uuid_ui128.lo uuid_str.lo
+ 
+-DCE_NAME    = libuuid_dce.la
++DCE_NAME    = libossp-uuid_dce.la
+ DCE_OBJS    = uuid_dce.lo $(LIB_OBJS)
+ 
+-CXX_NAME    = libuuid++.la
++CXX_NAME    = libossp-uuid++.la
+ CXX_OBJS    = uuid++.lo $(LIB_OBJS)
+ 
+ PRG_NAME    = uuid
+@@ -241,10 +241,10 @@ install:
+ 	    echo "$(SHTOOL) install -c -m 644 $(S)/uuid++.hh $(DESTDIR)$(includedir)/"; \
+ 	    $(SHTOOL) install -c -m 644 $(S)/uuid++.hh $(DESTDIR)$(includedir)/; \
+ 	fi
+-	$(SHTOOL) install -c -m 644 $(S)/uuid.3 $(DESTDIR)$(mandir)/man3/
++	$(SHTOOL) install -c -m 644 $(S)/uuid.3 $(DESTDIR)$(mandir)/man3/ossp-uuid.3
+ 	-@if [ ".$(WITH_CXX)" = .yes ]; then \
+ 	    echo "$(SHTOOL) install -c -m 644 $(S)/uuid++.3 $(DESTDIR)$(mandir)/man3/"; \
+-	    $(SHTOOL) install -c -m 644 $(S)/uuid++.3 $(DESTDIR)$(mandir)/man3/; \
++	    $(SHTOOL) install -c -m 644 $(S)/uuid++.3 $(DESTDIR)$(mandir)/man3/ossp-uuid++.3; \
+ 	fi
+ 	@$(LIBTOOL) --mode=install $(SHTOOL) install -c -m 644 $(LIB_NAME) $(DESTDIR)$(libdir)/
+ 	-@if [ ".$(WITH_DCE)" = .yes ]; then \
