@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/06/19 15:55:03 shadchin Exp $
+include/xmp.h
+@lib lib/libxmp.so.${LIBxmp_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/libxmp.pc

@@ -1,0 +1,6 @@
+libxmp is a module player library which supports many mainstream and
+obscure module formats, including Protracker MOD, Scream Tracker III S3M,
+and Impulse Tracker IT. Possible applications for libxmp include
+standalone module players, module player plugins for other players,
+module information extractors, background music replayers for games and
+other applications, module-to-mp3 converters, etc.

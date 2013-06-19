@@ -1,0 +1,30 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2013/06/19 15:55:03 shadchin Exp $
+--- Makefile.in.orig	Sun May 19 22:37:10 2013
++++ Makefile.in	Mon May 20 12:20:46 2013
+@@ -33,7 +33,7 @@ DDIRS		= docs include src loaders prowiz depackers win
+ V		= 0
+ LIB		= libxmp.a
+ SOLIB		= libxmp.so
+-SHLIB		= $(SOLIB).$(VERSION)
++SHLIB		= $(SOLIB).$(LIBxmp_VERSION)
+ SONAME		= $(SOLIB).$(VERSION_MAJOR)
+ DLL		= libxmp.dll
+ DYLIB		= libxmp.$(VERSION).dylib
+@@ -93,7 +93,7 @@ lib/$(LIB): $(OBJS)
+ 
+ lib/$(SHLIB): $(LOBJS)
+ 	@mkdir -p lib
+-	@CMD='$(CC) -shared -Wl,-soname,$(SONAME) $(LD_VERSCRIPT) -o $@ $(LOBJS) $(LIBS)'; \
++	@CMD='$(CC) -shared $(LD_VERSCRIPT) -o $@ $(LOBJS) $(LIBS)'; \
+ 	if [ "$(V)" -gt 0 ]; then echo $$CMD; else echo LD $@ ; fi; \
+ 	eval $$CMD
+ 	ln -sf $(SHLIB) lib/$(SONAME)
+@@ -144,8 +144,6 @@ install: all
+ 	@if [ -f lib/$(SHLIB) ]; then \
+ 		echo "Installing $(SHLIB)..."; \
+ 		$(INSTALL) -m644 lib/$(SHLIB) $(DESTDIR)$(LIBDIR); \
+-		ln -sf $(SHLIB) $(DESTDIR)$(LIBDIR)/$(SONAME); \
+-		ln -sf $(SONAME) $(DESTDIR)$(LIBDIR)/$(SOLIB); \
+ 	fi
+ 	@echo "Installing xmp.h..."
+ 	@$(INSTALL) -m644 include/xmp.h $(DESTDIR)$(INCLUDEDIR)
