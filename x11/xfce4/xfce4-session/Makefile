@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.64 2013/05/31 19:20:14 landry Exp $
+# $OpenBSD: Makefile,v 1.65 2013/06/19 21:43:49 landry Exp $
 
 COMMENT=	Xfce4 session manager
 
 XFCE_PROJECT=	xfce4-session
+REVISION =	0
 
 SHARED_LIBS +=	xfsm-4.6	1.0 # .0.0
 
@@ -16,6 +17,7 @@ MODXFCE_PURGE_LA =	lib/xfce4/session/splash-engines
 
 CONFIGURE_ENV=  ac_cv_header_sys_user_h=yes
 CONFIGURE_ARGS=	--disable-linker-opts \
+		--disable-systemd \
 		--with-xsession-prefix=${PREFIX}
 #CONFIGURE_ARGS+= --enable-session-screenshots
 #XXX session-screenshots broken?
