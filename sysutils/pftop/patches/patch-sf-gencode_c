@@ -1,6 +1,15 @@
-$OpenBSD: patch-sf-gencode_c,v 1.1 2008/06/13 00:38:12 canacar Exp $
---- sf-gencode.c.orig	Tue Nov  6 23:34:18 2007
-+++ sf-gencode.c	Wed Jun 11 19:50:10 2008
+$OpenBSD: patch-sf-gencode_c,v 1.2 2013/06/19 03:46:55 lteo Exp $
+--- sf-gencode.c.orig	Wed Nov  7 01:34:18 2007
++++ sf-gencode.c	Thu Jun 13 14:28:14 2013
+@@ -44,7 +44,7 @@
+ 
+ #define INET6
+ 
+-#include <pcap-int.h>
++#include <pcap.h>
+ #include <pcap-namedb.h>
+ #include "sf-gencode.h"
+ 
 @@ -474,9 +474,107 @@ gen_proto(int proto)
  			(bpf_int32)proto));
  }

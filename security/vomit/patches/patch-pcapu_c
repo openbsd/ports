@@ -1,7 +1,17 @@
-$OpenBSD: patch-pcapu_c,v 1.2 2010/05/22 15:17:13 espie Exp $
---- pcapu.c.orig	Wed Dec 12 19:31:10 2001
-+++ pcapu.c	Sat May 22 17:16:46 2010
-@@ -78,7 +78,7 @@ pcap_cb(int fd, short event, void *arg)
+$OpenBSD: patch-pcapu_c,v 1.3 2013/06/19 03:43:46 lteo Exp $
+--- pcapu.c.orig	Wed Dec 12 13:31:10 2001
++++ pcapu.c	Sun Mar 31 14:58:54 2013
+@@ -19,9 +19,6 @@
+ #include <string.h>
+ #include <err.h>
+ #include <pcap.h>
+-#ifdef BSD
+-#include <pcap-int.h>
+-#endif
+ #include <event.h>
+ 
+ #include "pcapu.h"
+@@ -78,7 +75,7 @@ pcap_cb(int fd, short event, void *arg)
  
  	if ((pkt = (u_char *) pcap_next(pd, &pkthdr)) == NULL) {
  		if (filemode) {
@@ -10,7 +20,7 @@ $OpenBSD: patch-pcapu_c,v 1.2 2010/05/22 15:17:13 espie Exp $
  			return;
  		}
  
-@@ -89,7 +89,7 @@ pcap_cb(int fd, short event, void *arg)
+@@ -89,7 +86,7 @@ pcap_cb(int fd, short event, void *arg)
  	voip_sniff((u_char *)pd, &pkthdr, pkt);
  
   out:
@@ -19,7 +29,14 @@ $OpenBSD: patch-pcapu_c,v 1.2 2010/05/22 15:17:13 espie Exp $
  }
  
  pcap_t *
-@@ -139,9 +139,9 @@ pcap_init(char *intf, char *file, char *filter, int sn
+@@ -133,15 +130,15 @@ pcap_init(char *intf, char *file, char *filter, int sn
+ 		return (NULL);
+ 	}
+ #ifdef BSD
+-	if (file == NULL && bpf_immediate(pd->fd, 1) < 0) {
++	if (file == NULL && bpf_immediate(pcap_fileno(pd), 1) < 0) {
+ 		perror("ioctl");
+ 		return (NULL);
  	}
  #endif
  

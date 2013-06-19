@@ -1,0 +1,15 @@
+$OpenBSD: patch-sf-scanner_l,v 1.1 2013/06/19 03:46:55 lteo Exp $
+
+pcap-int.h no longer exists in /usr/include
+
+--- sf-scanner.l.orig	Wed Nov  7 01:34:18 2007
++++ sf-scanner.l	Thu Jun 13 15:22:37 2013
+@@ -36,7 +36,7 @@ static const char rcsid[] =
+ #include <unistd.h>
+ #include <vis.h>
+ 
+-#include "pcap-int.h"
++#include "pcap.h"
+ #include "sf-gencode.h"
+ 
+ #include <netdb.h> 

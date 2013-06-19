@@ -1,0 +1,15 @@
+$OpenBSD: patch-sf-gencode_h,v 1.1 2013/06/19 03:46:55 lteo Exp $
+
+pcap-int.h no longer exists in /usr/include
+
+--- sf-gencode.h.orig	Wed Nov  7 01:34:18 2007
++++ sf-gencode.h	Thu Jun 13 14:27:36 2013
+@@ -28,7 +28,7 @@
+ #ifndef _SF_GENCODE_H_
+ #define _SF_GENCODE_H_
+ 
+-#include "pcap-int.h"
++#include "pcap.h"
+ 
+ /* Address qualifiers. */
+ #define Q_HOST		1

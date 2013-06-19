@@ -1,7 +1,17 @@
-$OpenBSD: patch-vomit_c,v 1.2 2010/04/21 22:31:19 alek Exp $
---- vomit.c.orig	Wed Dec 12 20:41:51 2001
-+++ vomit.c	Wed Apr 21 23:49:31 2010
-@@ -60,6 +60,7 @@
+$OpenBSD: patch-vomit_c,v 1.3 2013/06/19 03:43:46 lteo Exp $
+--- vomit.c.orig	Wed Dec 12 14:41:51 2001
++++ vomit.c	Sun Mar 31 14:51:00 2013
+@@ -42,9 +42,6 @@
+ #include <netdb.h>
+ #include <pcap.h>
+ #include <pcap.h>
+-#ifdef BSD
+-#include <pcap-int.h>
+-#endif
+ #include <event.h>
+ 
+ #include "config.h"
+@@ -60,6 +57,7 @@
  int debug;
  int pcap_off;
  pcap_t *pcap_pd;
@@ -9,7 +19,7 @@ $OpenBSD: patch-vomit_c,v 1.2 2010/04/21 22:31:19 alek Exp $
  
  int
  cleanup(void)
-@@ -69,11 +70,9 @@ cleanup(void)
+@@ -69,11 +67,9 @@ cleanup(void)
  }
  
  void
@@ -23,7 +33,7 @@ $OpenBSD: patch-vomit_c,v 1.2 2010/04/21 22:31:19 alek Exp $
  }
  
  void
-@@ -92,7 +91,6 @@ main(int argc, char **argv)
+@@ -92,7 +88,6 @@ main(int argc, char **argv)
  {
  	extern char *optarg;
  	extern int optind;
@@ -31,7 +41,7 @@ $OpenBSD: patch-vomit_c,v 1.2 2010/04/21 22:31:19 alek Exp $
  	int ch;
  	char *name = argv[0];
  	char *fromfile = NULL;
-@@ -127,12 +125,13 @@ main(int argc, char **argv)
+@@ -127,12 +122,13 @@ main(int argc, char **argv)
  
  	if ((pcap_off = pcap_dloff(pcap_pd)) < 0)
  		errx(1, "couldn't determine link layer offset");

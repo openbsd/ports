@@ -1,0 +1,25 @@
+$OpenBSD: patch-pcaputil_c,v 1.1 2013/06/19 03:40:23 lteo Exp $
+
+pcap-int.h no longer exists in /usr/include
+
+--- pcaputil.c.orig	Tue Nov 14 10:51:08 2000
++++ pcaputil.c	Sun Mar 31 15:04:54 2013
+@@ -14,9 +14,6 @@
+ #include <string.h>
+ #include <err.h>
+ #include <pcap.h>
+-#ifdef BSD
+-#include <pcap-int.h>
+-#endif
+ #include "pcaputil.h"
+ 
+ #ifdef BSD
+@@ -84,7 +81,7 @@ pcap_init(char *intf, char *filter, int snaplen)
+ 		return (NULL);
+ 	}
+ #ifdef BSD
+-	if (bpf_immediate(pd->fd, 1) < 0) {
++	if (bpf_immediate(pcap_fileno(pd), 1) < 0) {
+ 		perror("ioctl");
+ 		return (NULL);
+ 	}

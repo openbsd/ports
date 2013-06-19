@@ -1,0 +1,15 @@
+$OpenBSD: patch-sf-grammer_y,v 1.1 2013/06/19 03:46:55 lteo Exp $
+
+pcap-int.h no longer exists in /usr/include
+
+--- sf-grammer.y.orig	Wed Nov  7 01:34:18 2007
++++ sf-grammer.y	Thu Jun 13 15:21:48 2013
+@@ -41,7 +41,7 @@ static const char rcsid[] =
+ #include <stdio.h>
+ #include <string.h>
+ 
+-#include "pcap-int.h"
++#include "pcap.h"
+ 
+ #include "sf-gencode.h"
+ #include <pcap-namedb.h>
