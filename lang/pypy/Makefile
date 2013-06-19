@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/06/16 21:17:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2013/06/19 13:04:23 sthen Exp $
 
 VMEM_WARNING =		Yes
 
@@ -50,7 +50,7 @@ WRKDIST =		${WRKDIR}/pypy-${V}-src
 
 post-extract:
 	@if [ `ulimit -d` -lt $$((4*1024*1024)) ]; then \
-	    echo amd64 build takes approx 4GB; datasize limit is too low; \
+	    echo datasize limit is too low - amd64 build takes approx 4GB; \
 	    exit 1; fi
 .if !${FLAVOR:Mno_bootstrap}
 	echo '#!/bin/sh' > ${WRKDIR}/bin/pypy
