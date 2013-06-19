@@ -1,3 +1,3 @@
-Before running i3status, you'll need to create a configuration file.
+Before running i3status, a configuration file needs to be created.
 Copy the provided ${PREFIX}/share/examples/i3status/i3status.conf
 to ~/.i3status.conf and modify as necessary.
