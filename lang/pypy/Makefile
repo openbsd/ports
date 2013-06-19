@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/06/19 13:04:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2013/06/19 13:07:38 sthen Exp $
 
 VMEM_WARNING =		Yes
 
@@ -9,7 +9,7 @@ COMMENT =		fast implementation of the Python language
 V =			2.0.2
 DISTNAME =		pypy-${V}-src
 PKGNAME =		pypy-${V}
-REVISION =		0
+REVISION =		1
 BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-$V-0.tar.xz
 
 CATEGORIES =		lang
@@ -81,10 +81,13 @@ do-install:
 	cp -rp ${WRKSRC}/include/* ${PREFIX}/pypy/include
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/pypy/include
 	${INSTALL_DATA_DIR} ${PREFIX}/pypy/lib_pypy
-	cp -rp ${WRKSRC}/lib_pypy/* ${PREFIX}/pypy/lib_pypy
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/pypy/lib_pypy
 	${INSTALL_DATA_DIR} ${PREFIX}/pypy/lib-python/2.7
+	cp -rp ${WRKSRC}/lib_pypy/* ${PREFIX}/pypy/lib_pypy
 	cp -rp ${WRKSRC}/lib-python/2.7/* ${PREFIX}/pypy/lib-python/2.7
+	${PREFIX}/pypy/bin/pypy -m compileall ${PREFIX}/pypy/lib_pypy
+	find ${PREFIX}/pypy/lib-python/2.7 -name "*.py" | grep -v test \
+	  | xargs ${PREFIX}/pypy/bin/pypy -m compileall
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/pypy/lib_pypy
 	chown -R ${SHAREOWN}:${SHAREGRP}  ${PREFIX}/pypy/lib-python/2.7
 	cd ${PREFIX}/bin && ln -s ../pypy/bin/pypy
 
