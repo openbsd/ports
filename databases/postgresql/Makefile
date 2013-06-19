@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.175 2013/06/17 20:08:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.176 2013/06/19 14:35:02 sthen Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -14,7 +14,7 @@ PKGNAME-contrib=postgresql-contrib-${VERSION}
 
 REVISION-main=	0
 REVISION-server=0
-REVISION-contrib=0
+REVISION-contrib=1
 
 CATEGORIES=	databases
 SHARED_LIBS=	ecpg		7.4 \
@@ -96,7 +96,7 @@ RUN_DEPENDS-contrib= databases/postgresql,-server=${VERSION}
 LIB_DEPENDS-contrib= databases/postgresql=${VERSION} \
 		     ${LIB_DEPENDS-main} \
 		     devel/uuid
-WANTLIB-contrib = 	${WANTLIB-main} pq>=4 uuid
+WANTLIB-contrib=	${WANTLIB-main} pq>=4 ossp-uuid
 
 WANTLIB-docs=
 PKG_ARCH-docs=	*
