@@ -1,4 +1,6 @@
-$OpenBSD: patch-configure,v 1.14 2013/05/31 20:07:33 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.15 2013/06/19 13:24:18 ajacoutot Exp $
+
+https://bugs.webkit.org/show_bug.cgi?id=117796
 
 - Chunk 1, 2 & 6 : https://bugs.webkit.org/show_bug.cgi?id=109932
 Only webkit2 requires c++11 features atm, so let's relax the check until we have webkit2
@@ -9,11 +11,9 @@ glib commit 136e705e8383ff8848e425ac01278102d7badc52
 - Chunk 7 : Don't force the use of -O2, the ports infrastructure
 takes care of that
 
-http://trac.webkit.org/changeset/150963
-
---- configure.orig	Mon May 13 11:43:56 2013
-+++ configure	Fri May 31 16:38:55 2013
-@@ -4721,7 +4721,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+--- configure.orig	Tue Jun 11 12:47:07 2013
++++ configure	Tue Jun 18 15:42:59 2013
+@@ -4729,7 +4729,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
@@ -22,7 +22,7 @@ http://trac.webkit.org/changeset/150963
      && !(defined(__clang__) && __clang_major__ >= 3 && __clang_minor__ >= 0)
  #error Unsupported compiler
  #endif
-@@ -4758,7 +4758,7 @@ ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
+@@ -4766,7 +4766,7 @@ ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
@@ -31,7 +31,7 @@ http://trac.webkit.org/changeset/150963
      && !(defined(__clang__) && __clang_major__ >= 3 && __clang_minor__ >= 0)
  #error Unsupported compiler
  #endif
-@@ -17495,26 +17495,14 @@ gsettings__enum_file = $(addsuffix .enums.xml,$(gsetti
+@@ -17503,26 +17503,14 @@ gsettings__enum_file = $(addsuffix .enums.xml,$(gsetti
  
  all-am: $(gsettings_SCHEMAS:.xml=.valid)
  uninstall-am: uninstall-gsettings-schemas
@@ -61,107 +61,68 @@ http://trac.webkit.org/changeset/150963
  	test -n "$(GSETTINGS_DISABLE_SCHEMAS_COMPILE)$(DESTDIR)" || $(GLIB_COMPILE_SCHEMAS) $(gsettingsschemadir)
  
  uninstall-gsettings-schemas:
-@@ -19261,12 +19249,12 @@ if test -n "$FREETYPE_CFLAGS"; then
-     pkg_cv_FREETYPE_CFLAGS="$FREETYPE_CFLAGS"
+@@ -19456,12 +19444,12 @@ if test -n "$HARFBUZZ_ICU_CFLAGS"; then
+     pkg_cv_HARFBUZZ_ICU_CFLAGS="$HARFBUZZ_ICU_CFLAGS"
   elif test -n "$PKG_CONFIG"; then
      if test -n "$PKG_CONFIG" && \
--    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7\""; } >&5
--  ($PKG_CONFIG --exists --print-errors "fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7") 2>&5
-+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7 harfbuzz-icu >= 0.9.7\""; } >&5
-+  ($PKG_CONFIG --exists --print-errors "fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7 harfbuzz-icu >= 0.9.7") 2>&5
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"harfbuzz-icu >= \$0.9.7\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "harfbuzz-icu >= $0.9.7") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"harfbuzz-icu >= \0.9.7\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "harfbuzz-icu >= 0.9.7") 2>&5
    ac_status=$?
    $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
    test $ac_status = 0; }; then
--  pkg_cv_FREETYPE_CFLAGS=`$PKG_CONFIG --cflags "fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7" 2>/dev/null`
-+  pkg_cv_FREETYPE_CFLAGS=`$PKG_CONFIG --cflags "fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7 harfbuzz-icu >= 0.9.7" 2>/dev/null`
+-  pkg_cv_HARFBUZZ_ICU_CFLAGS=`$PKG_CONFIG --cflags "harfbuzz-icu >= $0.9.7" 2>/dev/null`
++  pkg_cv_HARFBUZZ_ICU_CFLAGS=`$PKG_CONFIG --cflags "harfbuzz-icu >= 0.9.7" 2>/dev/null`
  		      test "x$?" != "x0" && pkg_failed=yes
  else
    pkg_failed=yes
-@@ -19278,12 +19266,12 @@ if test -n "$FREETYPE_LIBS"; then
-     pkg_cv_FREETYPE_LIBS="$FREETYPE_LIBS"
+@@ -19473,12 +19461,12 @@ if test -n "$HARFBUZZ_ICU_LIBS"; then
+     pkg_cv_HARFBUZZ_ICU_LIBS="$HARFBUZZ_ICU_LIBS"
   elif test -n "$PKG_CONFIG"; then
      if test -n "$PKG_CONFIG" && \
--    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7\""; } >&5
--  ($PKG_CONFIG --exists --print-errors "fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7") 2>&5
-+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7 harfbuzz-icu >= 0.9.7\""; } >&5
-+  ($PKG_CONFIG --exists --print-errors "fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7 harfbuzz-icu >= 0.9.7") 2>&5
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"harfbuzz-icu >= \$0.9.7\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "harfbuzz-icu >= $0.9.7") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"harfbuzz-icu >= \0.9.7\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "harfbuzz-icu >= 0.9.7") 2>&5
    ac_status=$?
    $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
    test $ac_status = 0; }; then
--  pkg_cv_FREETYPE_LIBS=`$PKG_CONFIG --libs "fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7" 2>/dev/null`
-+  pkg_cv_FREETYPE_LIBS=`$PKG_CONFIG --libs "fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7 harfbuzz-icu >= 0.9.7" 2>/dev/null`
+-  pkg_cv_HARFBUZZ_ICU_LIBS=`$PKG_CONFIG --libs "harfbuzz-icu >= $0.9.7" 2>/dev/null`
++  pkg_cv_HARFBUZZ_ICU_LIBS=`$PKG_CONFIG --libs "harfbuzz-icu >= 0.9.7" 2>/dev/null`
  		      test "x$?" != "x0" && pkg_failed=yes
  else
    pkg_failed=yes
-@@ -19304,14 +19292,14 @@ else
+@@ -19499,14 +19487,14 @@ else
          _pkg_short_errors_supported=no
  fi
          if test $_pkg_short_errors_supported = yes; then
--	        FREETYPE_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7" 2>&1`
-+	        FREETYPE_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7 harfbuzz-icu >= 0.9.7" 2>&1`
+-	        HARFBUZZ_ICU_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "harfbuzz-icu >= $0.9.7" 2>&1`
++	        HARFBUZZ_ICU_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "harfbuzz-icu >= 0.9.7" 2>&1`
          else
--	        FREETYPE_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7" 2>&1`
-+	        FREETYPE_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7 harfbuzz-icu >= 0.9.7" 2>&1`
+-	        HARFBUZZ_ICU_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "harfbuzz-icu >= $0.9.7" 2>&1`
++	        HARFBUZZ_ICU_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "harfbuzz-icu >= 0.9.7" 2>&1`
          fi
  	# Put the nasty error message in config.log where it belongs
- 	echo "$FREETYPE_PKG_ERRORS" >&5
+ 	echo "$HARFBUZZ_ICU_PKG_ERRORS" >&5
  
--	as_fn_error $? "Package requirements (fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7) were not met:
-+	as_fn_error $? "Package requirements (fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7 harfbuzz-icu >= 0.9.7) were not met:
+-	as_fn_error $? "Package requirements (harfbuzz-icu >= $0.9.7) were not met:
++	as_fn_error $? "Package requirements (harfbuzz-icu >= 0.9.7) were not met:
  
- $FREETYPE_PKG_ERRORS
+ $HARFBUZZ_ICU_PKG_ERRORS
  
-@@ -19353,12 +19341,12 @@ if test -n "$FREETYPE_CFLAGS"; then
-     pkg_cv_FREETYPE_CFLAGS="$FREETYPE_CFLAGS"
-  elif test -n "$PKG_CONFIG"; then
-     if test -n "$PKG_CONFIG" && \
--    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"cairo-ft fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7\""; } >&5
--  ($PKG_CONFIG --exists --print-errors "cairo-ft fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7") 2>&5
-+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"cairo-ft fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7 harfbuzz-icu >= 0.9.7\""; } >&5
-+  ($PKG_CONFIG --exists --print-errors "cairo-ft fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7 harfbuzz-icu >= 0.9.7") 2>&5
-   ac_status=$?
-   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-   test $ac_status = 0; }; then
--  pkg_cv_FREETYPE_CFLAGS=`$PKG_CONFIG --cflags "cairo-ft fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7" 2>/dev/null`
-+  pkg_cv_FREETYPE_CFLAGS=`$PKG_CONFIG --cflags "cairo-ft fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7 harfbuzz-icu >= 0.9.7" 2>/dev/null`
- 		      test "x$?" != "x0" && pkg_failed=yes
- else
-   pkg_failed=yes
-@@ -19370,12 +19358,12 @@ if test -n "$FREETYPE_LIBS"; then
-     pkg_cv_FREETYPE_LIBS="$FREETYPE_LIBS"
-  elif test -n "$PKG_CONFIG"; then
-     if test -n "$PKG_CONFIG" && \
--    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"cairo-ft fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7\""; } >&5
--  ($PKG_CONFIG --exists --print-errors "cairo-ft fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7") 2>&5
-+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"cairo-ft fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7 harfbuzz-icu >= 0.9.7\""; } >&5
-+  ($PKG_CONFIG --exists --print-errors "cairo-ft fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7 harfbuzz-icu >= 0.9.7") 2>&5
-   ac_status=$?
-   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-   test $ac_status = 0; }; then
--  pkg_cv_FREETYPE_LIBS=`$PKG_CONFIG --libs "cairo-ft fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7" 2>/dev/null`
-+  pkg_cv_FREETYPE_LIBS=`$PKG_CONFIG --libs "cairo-ft fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7 harfbuzz-icu >= 0.9.7" 2>/dev/null`
- 		      test "x$?" != "x0" && pkg_failed=yes
- else
-   pkg_failed=yes
-@@ -19396,14 +19384,14 @@ else
-         _pkg_short_errors_supported=no
+@@ -19538,8 +19526,8 @@ else
+ $as_echo "yes" >&6; }
+ 
  fi
-         if test $_pkg_short_errors_supported = yes; then
--	        FREETYPE_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "cairo-ft fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7" 2>&1`
-+	        FREETYPE_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "cairo-ft fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7 harfbuzz-icu >= 0.9.7" 2>&1`
-         else
--	        FREETYPE_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "cairo-ft fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7" 2>&1`
-+	        FREETYPE_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "cairo-ft fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7 harfbuzz-icu >= 0.9.7" 2>&1`
-         fi
- 	# Put the nasty error message in config.log where it belongs
- 	echo "$FREETYPE_PKG_ERRORS" >&5
+-    FREETYPE_CFLAGS+=" $HARFBUZZ_ICU_CFLAGS"
+-    FREETYPE_LIBS+=" $HARFBUZZ_ICU_LIBS"
++    FREETYPE_CFLAGS="$FREETYPE_CFLAGS $HARFBUZZ_ICU_CFLAGS"
++    FREETYPE_LIBS="$FREETYPE_LIBS $HARFBUZZ_ICU_LIBS"
+ fi
  
--	as_fn_error $? "Package requirements (cairo-ft fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7) were not met:
-+	as_fn_error $? "Package requirements (cairo-ft fontconfig >= 2.5 freetype2 >= 9.0 harfbuzz >= 0.9.7 harfbuzz-icu >= 0.9.7) were not met:
  
- $FREETYPE_PKG_ERRORS
- 
-@@ -20236,18 +20224,18 @@ fi
+@@ -20341,18 +20329,18 @@ fi
  
  if test "$with_acceleration_backend" = "opengl"; then
      if test "$enable_gles2" = "yes"; then
@@ -185,7 +146,7 @@ http://trac.webkit.org/changeset/150963
      fi
  
      # Check whether dlopen() is in the core libc like on FreeBSD, or in a separate
-@@ -20300,8 +20288,8 @@ fi
+@@ -20405,8 +20393,8 @@ fi
  
  
  
@@ -196,7 +157,7 @@ http://trac.webkit.org/changeset/150963
  fi
  
  
-@@ -21055,7 +21043,7 @@ fi
+@@ -21160,7 +21148,7 @@ fi
  # Use C99 as the language standard for C code.
  CFLAGS="$CFLAGS -std=c99"
  # Do not warn about C++11 incompatibilities.
@@ -205,7 +166,7 @@ http://trac.webkit.org/changeset/150963
  
  # Clang requires suppression of unused arguments warning.
  if test "$CC" = "clang"; then
-@@ -21083,8 +21071,8 @@ fi
+@@ -21188,8 +21176,8 @@ fi
  
  # Add the appropriate 'O' level for optimized builds.
  if test "$enable_optimizations" = "yes"; then
