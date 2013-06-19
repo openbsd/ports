@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/06/19 22:37:38 jturner Exp $
+bin/tsc
+lib/node_modules/typescript/
+lib/node_modules/typescript/.npmignore
+lib/node_modules/typescript/CopyrightNotice.txt
+lib/node_modules/typescript/LICENSE.txt
+lib/node_modules/typescript/README.txt
+lib/node_modules/typescript/ThirdPartyNoticeText.txt
+lib/node_modules/typescript/bin/
+lib/node_modules/typescript/bin/lib.d.ts
+lib/node_modules/typescript/bin/tsc
+lib/node_modules/typescript/bin/tsc.js
+lib/node_modules/typescript/bin/typescript.js
+lib/node_modules/typescript/package.json

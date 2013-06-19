@@ -1,0 +1,5 @@
+TypeScript is a language for application-scale JavaScript development.
+It is a typed superset of JavaScript that compiles to clean, simple
+JavaScript code which runs on any browser, in Node.js, or in any other
+ES3-compatible environment. TypeScript offers classes, modules, and
+interfaces to help you build robust components.
