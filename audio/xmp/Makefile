@@ -1,14 +1,8 @@
-# $OpenBSD: Makefile,v 1.52 2013/04/23 13:10:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.53 2013/06/19 15:59:12 shadchin Exp $
 
-SHARED_ONLY=		Yes
+COMMENT=		extended module player
 
-COMMENT-main=		extended module player
-COMMENT-xmms=		extended module player plugin for XMMS
-
-DISTNAME=		xmp-3.5.0
-PKGNAME-main=		${DISTNAME}
-REVISION-main=		1
-PKGNAME-xmms=		xmms-${DISTNAME}
+DISTNAME=		xmp-4.0.6
 CATEGORIES=		audio
 
 HOMEPAGE=		http://xmp.sourceforge.net/
@@ -18,37 +12,29 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xmp/}
 
-MULTI_PACKAGES=		-main -xmms
-
-MODULES=		devel/gettext
+WANTLIB += c sndio xmp
 
 USE_GMAKE=		Yes
 USE_GROFF=		Yes
 
 NO_TEST=		Yes
 
-LIB_DEPENDS-main=	# empty
-RUN_DEPENDS-main=	# empty
-WANTLIB-main=		c m sndio
-
-LIB_DEPENDS-xmms=	audio/xmms
-WANTLIB-xmms=		X11 Xext Xi gdk glib gmodule gtk m xmms ${MODGETTEXT_WANTLIB}
+LIB_DEPENDS=		audio/libxmp
 
 CONFIGURE_STYLE=	gnu
-MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/scripts
+MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/build-aux
 CONFIGURE_ARGS+=	--disable-alsa \
-			--disable-arts \
-			--disable-audacious-plugin \
-			--disable-esd \
 			--disable-oss \
-			--disable-pulseaudio \
-			--enable-xmms-plugin
+			--disable-pulseaudio
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+# disable sun audio detection
+CONFIGURE_ENV+=		ac_cv_header_sys_audioio_h=no
 
 MAKE_FLAGS+=		V=1
 
 FAKE_FLAGS=		DESTDIR=${WRKINST} \
-			SYSCONFDIR=${PREFIX}/share/examples/xmp
+			SYSCONFDIR=${PREFIX}/share/examples
 
 .include <bsd.port.mk>

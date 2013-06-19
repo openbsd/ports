@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2013/04/01 17:16:32 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/06/19 15:59:14 shadchin Exp $
 @conflict xmp-bmp-*
 @pkgpath audio/xmp,-bmp
+@pkgpath audio/xmp,-main
+@pkgpath audio/xmp,-xmms
 @pkgpath audio/xmp,no_xmms
-@pkgpath audio/xmp
 @bin bin/xmp
 @man man/man1/xmp.1
 share/examples/xmp/
