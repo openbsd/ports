@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2013/06/12 14:02:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2013/06/19 07:36:03 jasper Exp $
 
-VERSION=	3.2.1
-REVISION=	2
+VERSION=	3.2.2
 
 RUN_DEPENDS+=	devel/ruby-rgen,${MODRUBY_FLAVOR}
 

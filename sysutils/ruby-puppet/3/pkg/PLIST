@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/06/12 14:02:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/06/19 07:36:03 jasper Exp $
 @pkgpath sysutils/ruby-puppet
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
@@ -958,6 +958,51 @@ ${MODRUBY_SITEDIR}/puppet/util/windows/security.rb
 ${MODRUBY_SITEDIR}/puppet/util/windows/sid.rb
 ${MODRUBY_SITEDIR}/puppet/util/windows/user.rb
 ${MODRUBY_SITEDIR}/puppet/util/zaml.rb
+${MODRUBY_SITEDIR}/puppet/vendor/
+${MODRUBY_SITEDIR}/puppet/vendor.rb
+${MODRUBY_SITEDIR}/puppet/vendor/load_safe_yaml.rb
+${MODRUBY_SITEDIR}/puppet/vendor/require_vendored.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/lib/
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/lib/safe_yaml/
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/lib/safe_yaml.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/lib/safe_yaml/deep.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/lib/safe_yaml/parse/
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/lib/safe_yaml/parse/date.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/lib/safe_yaml/parse/hexadecimal.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/lib/safe_yaml/parse/sexagesimal.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/lib/safe_yaml/psych_handler.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/lib/safe_yaml/psych_resolver.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/lib/safe_yaml/resolver.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/lib/safe_yaml/safe_to_ruby_visitor.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/lib/safe_yaml/syck_hack.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/lib/safe_yaml/syck_node_monkeypatch.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/lib/safe_yaml/syck_resolver.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/lib/safe_yaml/transform/
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/lib/safe_yaml/transform.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/lib/safe_yaml/transform/to_boolean.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/lib/safe_yaml/transform/to_date.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/lib/safe_yaml/transform/to_float.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/lib/safe_yaml/transform/to_integer.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/lib/safe_yaml/transform/to_nil.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/lib/safe_yaml/transform/to_symbol.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/lib/safe_yaml/transform/transformation_map.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/lib/safe_yaml/version.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/spec/
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/spec/psych_resolver_spec.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/spec/resolver_specs.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/spec/safe_yaml_spec.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/spec/spec_helper.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/spec/support/
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/spec/support/exploitable_back_door.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/spec/syck_resolver_spec.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/spec/transform/
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/spec/transform/base64_spec.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/spec/transform/to_date_spec.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/spec/transform/to_float_spec.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/spec/transform/to_integer_spec.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml/spec/transform/to_symbol_spec.rb
+${MODRUBY_SITEDIR}/puppet/vendor/safe_yaml_patches.rb
 ${MODRUBY_SITEDIR}/puppet/version.rb
 ${MODRUBY_SITEDIR}/semver.rb
 @man man/man5/puppet.conf.5
