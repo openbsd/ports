@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2013/06/04 07:57:13 fgsch Exp $
+# $OpenBSD: Makefile,v 1.19 2013/06/20 13:58:53 landry Exp $
 
 COMMENT =	system to automate the compile/test cycle
 
-MODPY_EGG_VERSION =	0.8.6p1
+MODPY_EGG_VERSION =	0.8.7p1
 DISTNAME =	buildbot-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/p1/pl1/}
-REVISION =	0
 
 CATEGORIES =	devel
 
