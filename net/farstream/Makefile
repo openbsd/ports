@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/06/20 14:39:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2013/06/20 15:26:47 jasper Exp $
 
 COMMENT=		audio/video communications framework
 
@@ -27,6 +27,7 @@ WANTLIB += soup-2.4 xml2 z sqlite3
 BUILD_DEPENDS=		devel/gobject-introspection
 LIB_DEPENDS=		multimedia/gstreamer1/plugins-base \
 			net/libnice>=0.1.3
+TEST_DEPENDS=		multimedia/gstreamer1/plugins-bad>=1.0.7p0
 
 USE_GMAKE=		Yes
 
