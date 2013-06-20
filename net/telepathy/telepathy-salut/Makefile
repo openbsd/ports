@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2013/06/20 18:19:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2013/06/20 18:26:26 jasper Exp $
 
 COMMENT=		flexible communications framework, local-link component
 
@@ -28,6 +28,8 @@ LIB_DEPENDS=		net/avahi \
 TEST_DEPENDS=		textproc/py-xmldiff
 
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/lib/ext/wocky
+
+MODPY_ADJ_FILES=	tests/twisted/avahimock.py
 
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-Werror \
