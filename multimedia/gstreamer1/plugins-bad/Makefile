@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2013/04/27 14:49:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2013/06/20 15:23:54 jasper Exp $
 
 COMMENT=		bad elements for GStreamer
 
 V=			1.0.7
 DISTNAME=		gst-plugins-bad-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-bad-${V}
+REVISION=		0
 
 SHARED_LIBS +=  gstbasecamerabinsrc-1.0   0.0 # 6.0
 SHARED_LIBS +=  gstbasevideo-1.0          0.0 # 6.0
@@ -65,7 +66,6 @@ CONFIGURE_ARGS=		--disable-cdaudio \
 			--disable-resindvd \
 			--disable-rtmp \
 			--disable-sndfile \
-			--disable-shm \
 			--disable-spandsp \
 			--disable-spc \
 			--disable-swfdec \

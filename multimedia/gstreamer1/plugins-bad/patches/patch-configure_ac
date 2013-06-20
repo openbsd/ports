@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure_ac,v 1.1 2013/06/20 15:23:54 jasper Exp $
+--- configure.ac.orig	Fri Apr 26 13:09:28 2013
++++ configure.ac	Thu Jun 20 17:10:14 2013
+@@ -869,6 +869,9 @@ AG_GST_CHECK_FEATURE(SHM, [POSIX shared memory source 
+             AC_DEFINE(HAVE_OSX,[1],[Apple Mac OS X operating system detected])
+             HAVE_SHM=yes
+             ;;
++	*-*-openbsd*)
++	    HAVE_SHM=yes
++	    ;;
+         *)
+             AC_CHECK_LIB([rt], [shm_open],
+                 AC_CHECK_DECL([MSG_NOSIGNAL], HAVE_SHM=yes, HAVE_SHM=no, [
