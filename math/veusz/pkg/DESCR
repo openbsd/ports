@@ -1,0 +1,10 @@
+Veusz is a GUI scientific plotting and graphing package. It is designed
+to produce publication-ready Postscript or PDF output. SVG, TIFF, and
+bitmap export formats are also supported. Data can be read from text,
+CSV, or FITS files, and data can be manipulated or examined from within
+the application.
+
+In Veusz, plots are created by building up plotting widgets with a
+consistent object-based interface. The program also provides a command
+line and scripting interface (based on Python) to its plotting
+facilities. It can also act as a Python plotting module.
