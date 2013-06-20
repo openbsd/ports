@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2013/05/31 15:34:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2013/06/20 19:02:18 jasper Exp $
 
 COMMENT=		free replacements of Intel UPnP tools
 
 GNOME_PROJECT=		gupnp-tools
-GNOME_VERSION=		0.8.6
-REVISION=		2
+GNOME_VERSION=		0.8.6.1
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -23,8 +22,5 @@ LIB_DEPENDS=		net/gupnp/av \
 			sysutils/e2fsprogs>=1.41.4p5 \
 			x11/gtk+3
 RUN_DEPENDS=		devel/desktop-file-utils
-
-AUTOCONF_VERSION=	2.69
-CONFIGURE_STYLE=	autoconf
 
 .include <bsd.port.mk>
