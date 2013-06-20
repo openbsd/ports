@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1138 2013/06/10 14:47:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.1139 2013/06/20 08:23:37 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -444,7 +444,6 @@
      SUBDIR += nasm
      SUBDIR += netbeans
      SUBDIR += ninja
-     SUBDIR += newt
      SUBDIR += node-async
      SUBDIR += node-bindings
      SUBDIR += node-buffer-writer
@@ -1136,7 +1135,6 @@
      SUBDIR += py-monthdelta
      SUBDIR += py-mox
      SUBDIR += py-mxDateTime
-     SUBDIR += py-newt-syrup
      SUBDIR += py-nose
      SUBDIR += py-notify
      SUBDIR += py-openbsd
