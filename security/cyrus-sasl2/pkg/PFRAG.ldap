@@ -1,6 +1,7 @@
-@comment $OpenBSD: PFRAG.ldap,v 1.5 2012/11/22 16:01:38 ajacoutot Exp $
+@comment $OpenBSD: PFRAG.ldap,v 1.6 2013/06/20 09:48:28 ajacoutot Exp $
 %%SHARED%%
 share/doc/cyrus-sasl/LDAP_SASLAUTHD
 share/examples/cyrus-sasl/saslauthd.conf
 @mode 640
 @sample ${SYSCONFDIR}/saslauthd.conf
+@mode
