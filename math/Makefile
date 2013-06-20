@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2013/04/11 14:06:40 zhuk Exp $
+# $OpenBSD: Makefile,v 1.114 2013/06/20 14:57:21 bcallah Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -107,6 +107,7 @@
      SUBDIR += udunits
      SUBDIR += ufconfig
      SUBDIR += umfpack
+     SUBDIR += veusz
      SUBDIR += wcalc
      SUBDIR += wmcalc
      SUBDIR += wxMaxima
