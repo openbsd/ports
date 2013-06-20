@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/06/20 06:54:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2013/06/20 08:26:13 ajacoutot Exp $
 
 COMMENT-main=	fully featured POP3 and IMAP4 proxy server
 COMMENT-ldap=	LDAP backend for perdition mail proxy
@@ -6,7 +6,7 @@ COMMENT-mysql=  MySQL backend for perdition mail proxy
 COMMENT-pgsql=	PostgreSQL backend for perdition mail proxy
 
 DISTVER=	1.19-rc5
-REVISION=	3
+REVISION=	4
 REVISION-mysql=	5
 DISTNAME=	perdition-${DISTVER}
 PKGNAME-main=	perdition-${DISTVER:S/-//}
@@ -74,7 +74,7 @@ LIB_DEPENDS-ldap=	security/cyrus-sasl2 \
 			openldap-client->=2,<3:databases/openldap \
 			vanessa_logger->=0.0.10:devel/vanessa/logger
 WANTLIB-ldap=		asn1 com_err crypto gssapi krb5 ssl util sasl2 \
-			heimbase lber-2.4 ldap-2.4 pthread \
+			heimbase lber-2.4 ldap-2.4 \
 			wind roken vanessa_logger
 
 .if !${BUILD_PACKAGES:M-ldap}
@@ -103,7 +103,7 @@ LIB_DEPENDS-pgsql=	databases/postgresql \
 			devel/vanessa/logger
 WANTLIB-pgsql=		crypto ssl util pq>=2 vanessa_adt>=1.0 \
 			vanessa_logger>=1.0 asn1 com_err heimbase \
-			krb5 pthread roken wind
+			krb5 roken wind
 
 .if !${BUILD_PACKAGES:M-pgsql}
 CONFIGURE_ARGS+=	--disable-pg

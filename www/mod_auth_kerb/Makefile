@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2013/06/20 06:54:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2013/06/20 08:26:14 ajacoutot Exp $
 
 COMMENT=	Apache Kerberos authentication module
 
-REVISION=	10
+REVISION=	11
 DISTNAME=	mod_auth_kerb-5.3
 CATEGORIES=	www
 
@@ -15,7 +15,7 @@ MAINTAINER=	Jason Meltzer <jmeltzer@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += asn1 com_err crypto gssapi heimbase
-WANTLIB += krb5 pthread roken wind
+WANTLIB += krb5 roken wind
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=modauthkerb/}
 

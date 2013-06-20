@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2013/06/20 06:54:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2013/06/20 08:26:13 ajacoutot Exp $
 
 COMMENT=	pop password changing daemon using KerberosV
 
 DISTNAME=	kpoppassd-0.5
-REVISION =	6
+REVISION =	7
 
 CATEGORIES=	mail
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://kpoppassd.sourceforge.net/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += asn1 c com_err crypto heimbase krb5 pthread roken
+WANTLIB += asn1 c com_err crypto heimbase krb5 roken
 WANTLIB += wind
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kpoppassd/}

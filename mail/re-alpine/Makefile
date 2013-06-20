@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/06/20 06:54:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2013/06/20 08:26:13 ajacoutot Exp $
 
 COMMENT-main=		UW e-mail client
 COMMENT-c-client=	UW c-client mail access routines
@@ -31,8 +31,8 @@ EPOCH-mailutil=		0
 
 REVISION-main=		3
 REVISION-c-client=	2
-REVISION-imap=		4
-REVISION-mailutil=	2
+REVISION-imap=		5
+REVISION-mailutil=	3
 REVISION-pilot=		9
 REVISION-pico=		3
 
@@ -56,8 +56,8 @@ WANTLIB += com_err heimbase roken wind
 
 WANTLIB-main=		${WANTLIB} com_err crypto pthread ssl
 WANTLIB-c-client=	# empty
-WANTLIB-imap=		${WANTLIB} com_err crypto pthread ssl
-WANTLIB-mailutil=	${WANTLIB} com_err crypto pthread ssl
+WANTLIB-imap=		${WANTLIB} com_err crypto ssl
+WANTLIB-mailutil=	${WANTLIB} com_err crypto ssl
 WANTLIB-pico=		${WANTLIB} pthread
 WANTLIB-pilot=		${WANTLIB} pthread
 

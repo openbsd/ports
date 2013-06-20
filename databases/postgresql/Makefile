@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.177 2013/06/20 06:54:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.178 2013/06/20 08:26:13 ajacoutot Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -12,9 +12,9 @@ PKGNAME-server=	postgresql-server-${VERSION}
 PKGNAME-docs=	postgresql-docs-${VERSION}
 PKGNAME-contrib=postgresql-contrib-${VERSION}
 
-REVISION-main=	1
-REVISION-server=1
-REVISION-contrib=2
+REVISION-main=	2
+REVISION-server=2
+REVISION-contrib=3
 
 CATEGORIES=	databases
 SHARED_LIBS=	ecpg		7.4 \
@@ -30,7 +30,7 @@ MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c com_err crypto m readline ssl termcap z asn1 \
-			heimbase krb5 pthread roken wind
+			heimbase krb5 roken wind
 
 MASTER_SITES=	http://ftp.postgresql.org/pub/source/v${VERSION}/ \
 	http://ftp5.es.postgresql.org/mirror/postgresql/source/v${VERSION}/ \

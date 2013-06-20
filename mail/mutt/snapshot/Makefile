@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.76 2013/06/20 06:54:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2013/06/20 08:26:13 ajacoutot Exp $
 
 COMMENT=	tty-based e-mail client, development version
 
 DISTNAME=	mutt-1.5.21
 EPOCH=		0
-REVISION=	3
+REVISION=	4
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mutt/} \
 		${MASTER_SITES_MUTT:=devel/}
 

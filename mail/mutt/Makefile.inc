@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.43 2013/06/20 06:54:38 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.44 2013/06/20 08:26:13 ajacoutot Exp $
 
 CATEGORIES=	mail
 
@@ -22,7 +22,7 @@ MODULES=	devel/gettext
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB+=	c crypto gssapi krb5 ssl asn1 com_err heimbase
-WANTLIB+=	pthread roken wind
+WANTLIB+=	roken wind
 
 FLAVORS+=	slang mixmaster compressed
 FLAVOR?=
