@@ -1,7 +1,6 @@
-$OpenBSD: patch-tests_twisted_Makefile_in,v 1.1 2013/01/21 18:45:37 jasper Exp $
+$OpenBSD: patch-tests_twisted_Makefile_in,v 1.2 2013/06/20 18:40:01 jasper Exp $
 
-Why should a different python be used for tests than what we tested
-for in configure?
+https://bugs.freedesktop.org/show_bug.cgi?id=65979
 
 --- tests/twisted/Makefile.in.orig	Mon Jan 21 19:43:50 2013
 +++ tests/twisted/Makefile.in	Mon Jan 21 19:43:59 2013
