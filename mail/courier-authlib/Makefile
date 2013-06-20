@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2013/06/17 19:28:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2013/06/20 06:54:36 ajacoutot Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -7,10 +7,10 @@ COMMENT-pgsql=		pgsql authentication module for courier-authLib
 COMMENT-userdb=		userdb authentication module for courier-authLib
 
 DISTNAME=			courier-authlib-0.65.0
-REVISION-main=		0
-REVISION-mysql=		1
-REVISION-ldap=		0
-REVISION-pgsql=		0
+REVISION-main=		1
+REVISION-mysql=		2
+REVISION-ldap=		1
+REVISION-pgsql=		1
 PKGNAME-main=		${DISTNAME}
 PKGNAME-ldap=		${DISTNAME:S/lib-/lib-ldap-/}
 PKGNAME-mysql=		${DISTNAME:S/lib-/lib-mysql-/}
@@ -82,9 +82,9 @@ WANTLIB-main=		c ltdl sqlite3
 
 LIB_DEPENDS-main=	devel/libtool,-ltdl
 
-WANTLIB-ldap=		crypto ssl asn1 com_err gssapi krb5 heimntlm \
+WANTLIB-ldap=		crypto ssl asn1 com_err gssapi krb5 \
 			courierauthcommon courierauth ldap-2.4 lber-2.4 sasl2 \
-			asn1 heimbase hx509 krb5 pthread roken wind
+			asn1 heimbase krb5 pthread roken wind
 LIB_DEPENDS-ldap=	${BUILD_PKGPATH} \
 			databases/openldap \
 			security/cyrus-sasl2
@@ -94,7 +94,7 @@ LIB_DEPENDS-mysql=	${BUILD_PKGPATH} \
 			databases/mysql
 
 WANTLIB-pgsql=		m courierauthcommon courierauth pq com_err crypto ssl \
-			asn1 heimbase hx509 krb5 pthread roken wind
+			asn1 heimbase krb5 pthread roken wind
 LIB_DEPENDS-pgsql=	${BUILD_PKGPATH} \
 			databases/postgresql
 

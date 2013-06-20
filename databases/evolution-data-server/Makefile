@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2013/06/18 13:16:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.149 2013/06/20 06:54:36 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		3.8.3
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		databases productivity
 
@@ -39,7 +39,7 @@ WANTLIB += m nspr4 nss3 nssutil3 oauth p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += sasl2 secret-1 smime3 softokn3 soup-2.4 soup-gnome-2.4
 WANTLIB += sqlite3 ssl ssl3 xcb xcb-render xcb-shm xml2 z
-WANTLIB += heimbase heimntlm hx509 roken wind
+WANTLIB += heimbase roken wind
 
 MODULES=		devel/gettext \
 			devel/dconf \

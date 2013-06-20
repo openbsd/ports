@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2013/06/18 16:47:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2013/06/20 06:54:37 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -21,11 +21,11 @@ PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
 
-REVISION-main=		1
-REVISION-mysql=		1
-REVISION-ui=		1
-REVISION-ldap=		0
-REVISION-pgsql=		0
+REVISION-main=		2
+REVISION-mysql=		2
+REVISION-ui=		2
+REVISION-ldap=		1
+REVISION-pgsql=		1
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -155,7 +155,7 @@ CONFIGURE_ARGS+=	--without-postgres
 RUN_DEPENDS-pgsql=	${MODGETTEXT_RUN_DEPENDS}
 MULTI_PACKAGES+=	-pgsql
 WANTLIB-pgsql=		${WANTLIB} gda-${GDA_MAJOR} pq com_err crypto ssl \
-			asn1 heimbase hx509 krb5 roken wind
+			asn1 heimbase krb5 roken wind
 LIB_DEPENDS-pgsql=	${LIB_DEPENDS} \
 			x11/gnome/libgda \
 			databases/postgresql
@@ -166,7 +166,7 @@ CONFIGURE_ARGS+=	--with-postgres="${LOCALBASE}"
 RUN_DEPENDS-ldap=	${MODGETTEXT_RUN_DEPENDS}
 MULTI_PACKAGES+=	-ldap
 WANTLIB-ldap=		${WANTLIB} crypto gda-${GDA_MAJOR} gssapi krb5 lber-2.4 \
-			ldap-2.4 sasl2 ssl asn1 com_err heimbase heimntlm hx509 \
+			ldap-2.4 sasl2 ssl asn1 com_err heimbase \
 			roken wind
 LIB_DEPENDS-ldap=	${LIB_DEPENDS} \
 			x11/gnome/libgda \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2013/06/17 19:28:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2013/06/20 06:54:37 ajacoutot Exp $
 
 COMMENT=		people aggregation library
 
@@ -7,7 +7,7 @@ GNOME_VERSION=		0.9.2
 # MODULE_VERSION in config.h
 API_V=			39
 
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  folks-telepathy           5.0 # 39.0
 SHARED_LIBS +=  folks                     5.2 # 39.0
@@ -29,7 +29,7 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gpg-error gssapi gthread-2.0
 WANTLIB += krb5 m ncurses nspr4 nss3 nssutil3 p11-kit pcre plc4
 WANTLIB += plds4 pthread readline secret-1 smime3 socialweb-client
 WANTLIB += softokn3 soup-2.4 sqlite3 ssl3 telepathy-glib xml2
-WANTLIB += heimbase heimntlm hx509 roken wind z zeitgeist-1.0
+WANTLIB += heimbase roken wind z zeitgeist-1.0
 
 LIB_DEPENDS=	databases/evolution-data-server>=3.8.1 \
 		devel/libgee \

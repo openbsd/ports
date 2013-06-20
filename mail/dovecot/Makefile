@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.206 2013/06/17 19:30:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.207 2013/06/20 06:54:36 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -14,13 +14,13 @@ V_DOVECOT=	2.1.16
 DISTNAME=	dovecot-${V_DOVECOT}
 PKGNAME=	dovecot-${V_DOVECOT}
 PKGNAME-server=	dovecot-${V_DOVECOT}
-REVISION-server=0
+REVISION-server=1
 PKGNAME-ldap=	dovecot-ldap-${V_DOVECOT}
-REVISION-ldap=	0
+REVISION-ldap=	1
 PKGNAME-mysql=	dovecot-mysql-${V_DOVECOT}
-REVISION-mysql=	2
+REVISION-mysql=	3
 PKGNAME-postgresql= dovecot-postgresql-${V_DOVECOT}
-REVISION-postgresql=0
+REVISION-postgresql=1
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}releases/${V_MAJOR}/
 
@@ -39,10 +39,10 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB-server=	asn1 bz2 c crypto gssapi krb5 sqlite3 ssl z \
-		com_err heimbase heimntlm hx509 pthread roken wind \
+		com_err heimbase pthread roken wind \
 		${MODLIBICONV_WANTLIB}
 WANTLIB-ldap=	asn1 com_err crypto gssapi krb5 lber ldap sasl2 ssl \
-		com_err heimbase heimntlm hx509 pthread roken wind
+		com_err heimbase pthread roken wind
 WANTLIB-mysql=	crypto m lib/mysql/mysqlclient>=10 ssl z
 WANTLIB-postgresql= pq>=4
 

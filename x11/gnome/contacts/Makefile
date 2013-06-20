@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2013/06/17 19:28:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2013/06/20 06:54:37 ajacoutot Exp $
 
 COMMENT=		contacts manager for GNOME
 
 GNOME_PROJECT=		gnome-contacts
 GNOME_VERSION=		3.8.2
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		productivity
 
@@ -25,7 +25,7 @@ WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += plc4 plds4 png pthread pthread-stubs secret-1 smime3
 WANTLIB += softokn3 soup-2.4 sqlite3 ssl3 telepathy-glib xcb xcb-render
 WANTLIB += xcb-shm xkbfile xml2 z zeitgeist-1.0
-WANTLIB += heimbase heimntlm hx509 roken wind
+WANTLIB += heimbase roken wind
 
 MODULES=		devel/gettext \
 			x11/gnome \

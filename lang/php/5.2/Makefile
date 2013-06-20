@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2013/06/18 14:22:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2013/06/20 06:54:38 ajacoutot Exp $
 
 # XXX use the bundled libtool because it needs some specific options we
 # don't have.
@@ -10,10 +10,10 @@ SUHOSIN_PHPV=	5.2.16
 SUHOSIN_P_V=	0.9.7
 
 REVISION=		14
-REVISION-main=		15
+REVISION-main=		16
 REVISION-fastcgi=	15
 REVISION-fpm=		15
-REVISION-imap=		15
+REVISION-imap=		16
 REVISION-mysql=		16
 REVISION-mysqli=	16
 REVISION-pdo_mysql=	16

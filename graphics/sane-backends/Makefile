@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.59 2013/06/17 19:28:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2013/06/20 06:54:36 ajacoutot Exp $
 
 COMMENT=	API for accessing scanners, backends
 
 DISTNAME=	sane-backends-1.0.23
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS=	sane 2.0 # .1.0
 CATEGORIES=	graphics
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += asn1 c crypto cups gssapi jpeg krb5 m pthread ssl tiff
 WANTLIB += usb usb-1.0 z avahi-client avahi-common dbus-1
-WANTLIB += com_err heimbase heimntlm hx509 roken wind
+WANTLIB += com_err heimbase roken wind
 
 # XXX
 # README.txt: Due to limitations in alioth's file upload software, the

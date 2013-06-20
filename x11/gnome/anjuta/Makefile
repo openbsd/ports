@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2013/06/17 19:28:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.97 2013/06/20 06:54:37 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		3.8.4
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -35,7 +35,7 @@ WANTLIB += svn_diff-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1
 WANTLIB += svn_ra-1 svn_ra_local-1 svn_ra_neon-1 svn_ra_svn-1
 WANTLIB += svn_repos-1 svn_subr-1 svn_wc-1 util vte2_90 webkitgtk-3.0
 WANTLIB += webp xcb xcb-render xcb-shm xml2 xslt z vala-0.20 wind
-WANTLIB += com_err harfbuzz-icu heimbase heimntlm hx509 roken
+WANTLIB += com_err harfbuzz-icu heimbase roken
 WANTLIB += ${MODPY_WANTLIB}
 
 MODULES=		devel/dconf \

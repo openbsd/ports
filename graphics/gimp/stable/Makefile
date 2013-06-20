@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.91 2013/06/17 19:28:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.92 2013/06/20 06:54:36 ajacoutot Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 SHARED_ONLY=	Yes
 
 DISTNAME=	gimp-2.8.4
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS+=	gimp-2.0	272.0	# 800.0
 SHARED_LIBS+=	gimpbase-2.0	272.0	# 800.0
@@ -62,7 +62,7 @@ WANTLIB=	ICE SM X11 Xcomposite Xcursor Xdamage \
 		m mng ncurses openjpeg pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pcre pixman-1 png poppler poppler-glib pthread pthread-stubs \
 		rsvg-2 ssl tiff wmf-0.2 wmflite-0.2 xcb xcb-render \
-		xcb-shm xml2 z com_err graphite2 heimbase heimntlm hx509 \
+		xcb-shm xml2 z com_err graphite2 heimbase \
 		roken wind
 
 MODULES=	devel/gettext \

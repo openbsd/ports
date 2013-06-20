@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2013/06/17 19:30:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2013/06/20 06:54:37 ajacoutot Exp $
 
 COMMENT=		HTTP and WebDAV client library, with C interface
 
 DISTNAME=		neon-0.29.6
-REVISION=		3
+REVISION=		4
 SHARED_LIBS=		neon    28.0 # 29.6
 CATEGORIES=     	net www devel
 
@@ -12,8 +12,8 @@ HOMEPAGE=		http://www.webdav.org/neon/
 # LGPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += asn1 com_err crypto expat gssapi heimbase heimntlm
-WANTLIB += hx509 krb5 m proxy pthread roken ssl stdc++ wind z
+WANTLIB += asn1 com_err crypto expat gssapi heimbase
+WANTLIB += krb5 m proxy pthread roken ssl stdc++ wind z
 
 MASTER_SITES=		${HOMEPAGE}
 

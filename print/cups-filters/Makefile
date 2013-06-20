@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2013/06/17 19:28:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2013/06/20 06:54:37 ajacoutot Exp $
 
 # XXX remove @exec-update when we branch 5.4-current
 
 COMMENT=	OpenPrinting CUPS filters
 
 DISTNAME=	cups-filters-1.0.34
-REVISION=	1
+REVISION=	2
 CATEGORIES=	print
 
 SHARED_LIBS +=  cupsfilters               0.0 # 1.0
@@ -22,7 +22,7 @@ WANTLIB += asn1 avahi-client avahi-common avahi-glib c crypto
 WANTLIB += cups cupsimage dbus-1 expat fontconfig freetype glib-2.0
 WANTLIB += gssapi ijs jpeg krb5 lcms2 m openjpeg pcre
 WANTLIB += png poppler pthread qpdf ssl stdc++ tiff z pthread-stubs
-WANTLIB += com_err heimbase heimntlm hx509 roken wind
+WANTLIB += com_err heimbase roken wind
 
 MASTER_SITES=	http://www.openprinting.org/download/cups-filters/
 

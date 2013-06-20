@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2013/06/17 19:28:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2013/06/20 06:54:37 ajacoutot Exp $
 
 COMMENT-main=	nagios base plugins
 COMMENT-fping=	fping plugin
@@ -16,12 +16,12 @@ PKGNAME-main=	nagios-plugins-$V
 PKGNAME-fping=	nagios-plugins-fping-$V
 PKGNAME-game=	nagios-plugins-game-$V
 PKGNAME-ldap=	nagios-plugins-ldap-$V
-REVISION-ldap=	0
+REVISION-ldap=	1
 PKGNAME-mysql=	nagios-plugins-mysql-$V
-REVISION-mysql=	1
+REVISION-mysql=	2
 PKGNAME-ntp=	nagios-plugins-ntp-$V
 PKGNAME-pgsql=	nagios-plugins-pgsql-$V
-REVISION-pgsql=	0
+REVISION-pgsql=	1
 PKGNAME-samba=	nagios-plugins-samba-$V
 PKGNAME-snmp=	nagios-plugins-snmp-$V
 CATEGORIES=	net
@@ -92,7 +92,7 @@ RUN_DEPENDS-game=	games/qstat
 
 WANTLIB-ldap+=		${WANTLIB} asn1 com_err crypto gssapi krb5
 WANTLIB-ldap+=		lber-2.4 ldap-2.4 sasl2 ssl
-WANTLIB-ldap+=		heimbase heimntlm hx509 roken wind
+WANTLIB-ldap+=		heimbase roken wind
 LIB_DEPENDS-ldap=	databases/openldap \
 			${LIB_DEPENDS}
 
@@ -104,7 +104,7 @@ WANTLIB-ntp=		${WANTLIB} m
 RUN_DEPENDS-ntp=	net/ntp
 
 WANTLIB-pgsql+=		${WANTLIB} com_err crypto pq ssl
-WANTLIB-pgsql+=		asn1 krb5 heimbase hx509 roken wind
+WANTLIB-pgsql+=		asn1 krb5 heimbase roken wind
 LIB_DEPENDS-pgsql=	databases/postgresql \
 			${LIB_DEPENDS}
 

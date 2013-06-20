@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2013/06/17 19:30:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2013/06/20 06:54:37 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 SHARED_LIBS +=  freeradius-radius    4.1      # .0.0
@@ -15,15 +15,15 @@ DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
 
 PKGNAME-main=	freeradius-$V
-REVISION-main=	1
+REVISION-main=	2
 PKGNAME-iodbc=	freeradius-iodbc-$V
-REVISION-iodbc=	2
+REVISION-iodbc=	3
 PKGNAME-mysql=	freeradius-mysql-$V
-REVISION-mysql=	2
+REVISION-mysql=	3
 PKGNAME-pgsql=	freeradius-pgsql-$V
-REVISION-pgsql=	0
+REVISION-pgsql=	1
 PKGNAME-ldap=	freeradius-ldap-$V
-REVISION-ldap=	0
+REVISION-ldap=	1
 
 CATEGORIES=	net security
 
@@ -104,7 +104,7 @@ LIB_DEPENDS-ldap=	databases/openldap \
 			${BASE_PKGPATH}
 WANTLIB-ldap=		crypto ssl sasl2 asn1 com_err gssapi krb5 \
 			lber>=8 ldap_r>=8 freeradius-radius>=1 pthread \
-			heimbase heimntlm hx509 roken wind
+			heimbase roken wind
 RUN_DEPENDS-ldap=	#empty
 .endif
 

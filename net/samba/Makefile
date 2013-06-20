@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.185 2013/06/17 19:30:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.186 2013/06/20 06:54:37 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ DISTNAME=		samba-3.6.15
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 FULLPKGPATH-docs=	net/samba,-docs
-REVISION-main=		0
+REVISION-main=		1
 
 SHARED_LIBS=		smbclient	3.0 \
 			smbsharemodes	1.0 \
@@ -112,7 +112,7 @@ CONFIGURE_ARGS+=	--with-krb5="${WRKDIR}/usr"
 #MODULES+=		lang/python
 #MODPY_RUNDEP=		No
 
-WANTLIB += asn1 crypto gssapi heimbase heimntlm hx509 krb5 roken
+WANTLIB += asn1 crypto gssapi heimbase krb5 roken
 WANTLIB += wind com_err
 .else
 CONFIGURE_ARGS+=	--without-ads

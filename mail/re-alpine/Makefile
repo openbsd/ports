@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/06/17 19:30:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2013/06/20 06:54:36 ajacoutot Exp $
 
 COMMENT-main=		UW e-mail client
 COMMENT-c-client=	UW c-client mail access routines
@@ -29,12 +29,12 @@ EPOCH-c-client=		0
 EPOCH-imap=		0
 EPOCH-mailutil=		0
 
-REVISION-main=		2
-REVISION-c-client=	1
-REVISION-imap=		3
-REVISION-mailutil=	1
-REVISION-pilot=		8
-REVISION-pico=		2
+REVISION-main=		3
+REVISION-c-client=	2
+REVISION-imap=		4
+REVISION-mailutil=	2
+REVISION-pilot=		9
+REVISION-pico=		3
 
 CATEGORIES=		mail
 CATEGORIES-main=	mail news
@@ -52,7 +52,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=re-alpine/}
 MULTI_PACKAGES=		-main -c-client -imap -mailutil -pico -pilot
 
 WANTLIB += asn1 c crypto gssapi krb5 ncurses ssl
-WANTLIB += com_err heimbase heimntlm hx509 roken wind
+WANTLIB += com_err heimbase roken wind
 
 WANTLIB-main=		${WANTLIB} com_err crypto pthread ssl
 WANTLIB-c-client=	# empty

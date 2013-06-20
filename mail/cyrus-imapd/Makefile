@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2013/06/17 19:30:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2013/06/20 06:54:36 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	Cyrus IMAP server
 
 V=		2.4.17
 DISTNAME=	cyrus-imapd-${V}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	mail
 
@@ -17,7 +17,7 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # CMU - see COPYRIGHT file in package
 PERMIT_PACKAGE_CDROM=	yes
 
-WANTLIB += asn1 c com_err crypto lib/db4/db>=4 gssapi heimbase heimntlm hx509
+WANTLIB += asn1 c com_err crypto lib/db4/db>=4 gssapi heimbase
 WANTLIB += krb5 pcre pcreposix pthread roken sasl2 ssl wind z
 
 MASTER_SITES=	http://cyrusimap.org/releases/ \

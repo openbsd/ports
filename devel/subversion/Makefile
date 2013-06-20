@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2013/06/17 19:28:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.124 2013/06/20 06:54:36 ajacoutot Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -20,8 +20,8 @@ FULLPKGNAME-ap2=	ap2-subversion-${VERSION}
 FULLPKGPATH-ap2=	devel/subversion,-ap2
 FULLPKGNAME-gnome-keyring= gnome-keyring-subversion-${VERSION}
 FULLPKGPATH-gnome-keyring= devel/subversion,-gnome-keyring
-REVISION-main=		0
-REVISION-gnome-keyring=	0
+REVISION-main=		1
+REVISION-gnome-keyring=	1
 
 SO_VERSION=	1.3
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
@@ -73,8 +73,8 @@ LIB_DEPENDS-main = ${LIB_DEPENDS} \
 
 WANTLIB-main=	${WANTLIB} asn1 c crypto db gssapi krb5 ssl \
 		neon>=26 apr-1 aprutil-1 sasl2>=2 sqlite3 \
-		m proxy stdc++ com_err heimbase heimntlm \
-		hx509 roken wind
+		m proxy stdc++ com_err heimbase \
+		roken wind
 RUN_DEPENDS-main= ${MODGETTEXT_RUN_DEPENDS}
 
 TOOLS_HOOK_SCRIPTS=	commit-access-control.cfg.example \

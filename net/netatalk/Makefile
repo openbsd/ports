@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.49 2013/06/17 19:30:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2013/06/20 06:54:37 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	AFP file and print services for IP networks
 
 DISTNAME=	netatalk-2.2.3
-REVISION=	4
+REVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netatalk/}
 EXTRACT_SUFX=	.tar.bz2
@@ -16,7 +16,7 @@ HOMEPAGE=	http://netatalk.sourceforge.net/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += asn1 c com_err crypto db gcrypt gpg-error gssapi heimbase
-WANTLIB += heimntlm hx509 krb5 pthread roken rpcsvc wind wrap
+WANTLIB += krb5 pthread roken rpcsvc wind wrap
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	databases/db/v4 \

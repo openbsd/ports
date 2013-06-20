@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.138 2013/06/17 19:30:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.139 2013/06/20 06:54:36 ajacoutot Exp $
 
 COMMENT=	mail retrieval utility for POP2, POP3, KPOP, IMAP and more
 
 DISTNAME=	fetchmail-6.3.24
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=fetchmail/}
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://www.fetchmail.info/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += asn1 c com_err crypto heimbase hx509 krb5 pthread roken
+WANTLIB += asn1 c com_err crypto heimbase krb5 pthread roken
 WANTLIB += ssl wind
 
 MODULES=		devel/gettext \

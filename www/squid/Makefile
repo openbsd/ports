@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.157 2013/06/17 19:31:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.158 2013/06/20 06:54:37 ajacoutot Exp $
 
 MULTI_PACKAGES=	-main -ntlm
 
@@ -10,7 +10,6 @@ COMMENT-ldap=	LDAP authentication/ACL support for Squid
 COMMENT-ntlm=	NTLM authentication/ACL support for Squid
 
 V=		3.3.5
-REVISION-main=	0
 
 DISTNAME=	squid-$V
 EXTRACT_SUFX=	.tar.bz2
@@ -19,8 +18,9 @@ PKGNAME-ldap=	squid-ldap-$V
 PKGNAME-ntlm=	squid-ntlm-$V
 CATEGORIES=	www
 
-REVISION-main=	1
-REVISION-ldap=	0
+REVISION-main=	2
+REVISION-ldap=	1
+REVISION-ntlm=	1
 
 # bzr repository at https://code.launchpad.net/squid
 MASTER_SITES=	${HOMEPAGE}Versions/v${V:R:R}/${V:R}/
@@ -35,7 +35,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c m pthread stdc++
 
 WANTLIB-main=	${WANTLIB} asn1 crypto db execinfo gssapi krb5 ssl \
-		com_err heimbase heimntlm hx509 roken wind
+		com_err heimbase roken wind
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		databases/db/v4 \
@@ -122,7 +122,7 @@ RUN_DEPENDS-ldap= ${BASE_PKGPATH}
 LIB_DEPENDS-ldap= ${LIB_DEPENDS} databases/openldap
 WANTLIB-ldap +=	${WANTLIB} asn1 com_err crypto gssapi krb5
 WANTLIB-ldap +=	lber-2.4 ldap-2.4 sasl2 ssl wind
-WANTLIB-ldap +=	com_err heimbase heimntlm hx509 roken
+WANTLIB-ldap +=	com_err heimbase roken
 .endif
 
 RUN_DEPENDS-ntlm= net/samba,ads ${BASE_PKGPATH}

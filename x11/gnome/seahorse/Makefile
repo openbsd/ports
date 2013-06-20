@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.84 2013/06/17 19:28:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.85 2013/06/20 06:54:37 ajacoutot Exp $
 
 COMMENT=		GNOME encryption interface
 
 GNOME_PROJECT=		seahorse
 GNOME_VERSION=		3.8.2
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		security
 
@@ -24,7 +24,7 @@ WANTLIB += harfbuzz krb5 lber-2.4 ldap-2.4
 WANTLIB += m p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs sasl2 secret-1 soup-2.4
 WANTLIB += sqlite3 ssl stdc++ xcb xcb-render xcb-shm xml2 z
-WANTLIB += heimbase heimntlm hx509 roken wind
+WANTLIB += heimbase roken wind
 
 LIB_DEPENDS=		databases/openldap \
 			x11/gnome/gcr \

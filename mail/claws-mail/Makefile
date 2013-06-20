@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2013/06/17 19:28:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2013/06/20 06:54:36 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,9 +9,9 @@ COMMENT-spamassassin=	spamassassin plugin
 
 V=			3.8.1
 DISTNAME=		claws-mail-${V}
-REVISION-main=		4
-REVISION-bogofilter=	3
-REVISION-spamassassin=	3
+REVISION-main=		5
+REVISION-bogofilter=	4
+REVISION-spamassassin=	4
 PKGNAME-main=		${DISTNAME}
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
@@ -105,10 +105,10 @@ CONFIGURE_ARGS+=	--disable-compface
 
 .if ${FLAVOR:Mldap}
 WANTLIB-main+=		roken wind krb5 lber-2.4 ldap-2.4
-WANTLIB-main+=		asn1 com_err graphite2 gssapi heimbase heimntlm hx509
-WANTLIB-bogofilter+=	${WANTLIB} asn1 com_err graphite2 gssapi heimbase heimntlm hx509
+WANTLIB-main+=		asn1 com_err graphite2 gssapi heimbase
+WANTLIB-bogofilter+=	${WANTLIB} asn1 com_err graphite2 gssapi heimbase
 WANTLIB-bogofilter+=	krb5 roken wind
-WANTLIB-spamassassin+=	${WANTLIB} asn1 com_err graphite2 gssapi heimbase heimntlm hx509
+WANTLIB-spamassassin+=	${WANTLIB} asn1 com_err graphite2 gssapi heimbase
 WANTLIB-spamassassin+=	krb5 roken wind
 LIB_DEPENDS-main+=	databases/openldap
 .else

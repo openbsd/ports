@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2013/06/17 19:28:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2013/06/20 06:54:37 ajacoutot Exp $
 
 # if ekiga ever moves to gstreamer, detect_sndiosink_devices() will need
 # to be implemented in:
@@ -10,7 +10,7 @@ COMMENT=	SIP and H.323 compatible conferencing application
 
 GNOME_PROJECT=	ekiga
 GNOME_VERSION=	4.0.1
-REVISION=	3
+REVISION=	4
 
 # pkg/PLIST
 SUBST_VARS +=	GNOME_VERSION
@@ -35,7 +35,7 @@ WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 plc4 plds4 png pt pthread pthread-stubs sasl2
 WANTLIB += secret-1 smime3 sndio softokn3 soup-2.4 speexdsp sqlite3
 WANTLIB += ssl ssl3 stdc++ usbhid xcb xcb-render xcb-shm xml2
-WANTLIB += heimbase heimntlm hx509 roken wind
+WANTLIB += heimbase roken wind
 WANTLIB += z
 
 MODULES=	devel/gettext \

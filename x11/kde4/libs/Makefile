@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2013/06/17 19:31:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2013/06/20 06:54:38 ajacoutot Exp $
 
 COMMENT =	KDE core libraries
 DISTNAME =	kdelibs-${MODKDE4_VERSION}
 PKGSPEC =	kdelibs->=4
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	kde3support          50.0      # .4.0
 SHARED_LIBS +=	kdecore              50.0      # .5.0
@@ -66,7 +66,7 @@ WANTLIB += asn1 aspell attica bz2 dbusmenu-qt enchant exslt fam
 WANTLIB += gif gssapi intl jasper jpeg lzma pcre pcreposix
 WANTLIB += png polkit-qt-core-1 qca2 soprano sopranoclient
 WANTLIB += streamanalyzer streams xml2 xslt
-WANTLIB += heimbase heimntlm hx509 roken wind
+WANTLIB += heimbase roken wind
 
 MODULES =	multimedia/phonon
 MODKDE4_USE =

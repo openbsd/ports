@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.43 2013/06/17 19:30:33 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.44 2013/06/20 06:54:38 ajacoutot Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -160,7 +160,7 @@ CONFIGURE_ARGS+=	--with-imap=shared,${LOCALBASE} \
 			--with-imap-ssl --with-kerberos
 LIB_DEPENDS-imap=	mail/re-alpine,-c-client
 WANTLIB-imap=		c pthread crypto gssapi krb5 ssl c-client>=5 \
-			asn1 com_err heimbase heimntlm hx509 roken wind
+			asn1 com_err heimbase roken wind
 
 # ldap
 MULTI_PACKAGES+=	-ldap
@@ -306,7 +306,7 @@ PHPXS_SUBST+= -e 's,${i},${${i}},'
 MODULES=		converters/libiconv devel/gettext
 
 WANTLIB-main=		c crypto ssl z pthread gssapi krb5 xml2>=8 \
-			m asn1 com_err heimbase heimntlm hx509 roken \
+			m asn1 com_err heimbase roken \
 			wind ${MODGETTEXT_WANTLIB}
 WANTLIB-fastcgi=	${WANTLIB-main}
 LIB_DEPENDS-main=	textproc/libxml
