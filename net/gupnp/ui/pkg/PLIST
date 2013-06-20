@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/05 17:01:18 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2013/06/20 19:01:52 jasper Exp $
 include/gupnp-ui-1.0/
 include/gupnp-ui-1.0/libgupnp-ui/
 include/gupnp-ui-1.0/libgupnp-ui/gupnp-ui-device-store.h
@@ -7,6 +6,7 @@ include/gupnp-ui-1.0/libgupnp-ui/gupnp-ui-device-view.h
 include/gupnp-ui-1.0/libgupnp-ui/gupnp-ui.h
 lib/libgupnp-ui-1.0.a
 lib/libgupnp-ui-1.0.la
+@lib lib/libgupnp-ui-1.0.so.${LIBgupnp-ui-1.0_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/gupnp-ui-1.0.pc
 share/gtk-doc/

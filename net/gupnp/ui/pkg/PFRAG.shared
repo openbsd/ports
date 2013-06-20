@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/07/05 17:01:18 jasper Exp $
-@lib lib/libgupnp-ui-1.0.so.${LIBgupnp-ui-1.0_VERSION}
