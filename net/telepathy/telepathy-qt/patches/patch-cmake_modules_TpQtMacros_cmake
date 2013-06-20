@@ -1,6 +1,7 @@
-$OpenBSD: patch-cmake_modules_TpQtMacros_cmake,v 1.1 2013/06/20 09:26:16 dcoppa Exp $
+$OpenBSD: patch-cmake_modules_TpQtMacros_cmake,v 1.2 2013/06/20 18:55:14 jasper Exp $
 
 Unbreak building with Ninja generator.
+https://bugs.freedesktop.org/show_bug.cgi?id=65981
 
 --- cmake/modules/TpQtMacros.cmake.orig	Thu Jun 20 06:54:18 2013
 +++ cmake/modules/TpQtMacros.cmake	Thu Jun 20 08:04:54 2013
