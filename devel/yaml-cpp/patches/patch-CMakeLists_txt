@@ -1,7 +1,7 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2011/05/11 16:55:30 ajacoutot Exp $
---- CMakeLists.txt.orig	Wed May 11 18:40:31 2011
-+++ CMakeLists.txt	Wed May 11 18:41:06 2011
-@@ -122,8 +122,8 @@ if(CMAKE_COMPILER_IS_GNUCXX)
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2013/06/20 07:05:40 espie Exp $
+--- CMakeLists.txt.orig	Sat Jan 21 09:52:48 2012
++++ CMakeLists.txt	Thu Jun 20 08:48:38 2013
+@@ -124,8 +124,8 @@ if(CMAKE_COMPILER_IS_GNUCXX)
  		set(CMAKE_BUILD_TYPE Release)
  	endif()
  	#
@@ -12,3 +12,17 @@ $OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2011/05/11 16:55:30 ajacoutot Exp $
  	set(CMAKE_CXX_FLAGS_DEBUG "-g")
  	set(CMAKE_CXX_FLAGS_MINSIZEREL "-Os")
  	#
+@@ -139,11 +139,11 @@ if(CMAKE_COMPILER_IS_GNUCXX)
+ 	#
+ 	set(CMAKE_CXX_FLAGS "-Wall ${GCC_EXTRA_OPTIONS} -pedantic -Wno-long-long ${CMAKE_CXX_FLAGS}")
+ 	#
+-	add_custom_target(debuggable $(MAKE) clean
++	add_custom_target(debuggable ${MAKE} clean
+ 		COMMAND ${CMAKE_COMMAND} -DCMAKE_BUILD_TYPE=Debug ${CMAKE_SOURCE_DIR}
+ 		COMMENT "Adjusting settings for debug compilation"
+ 		VERBATIM)
+-	add_custom_target(releasable $(MAKE) clean
++	add_custom_target(releasable ${MAKE} clean
+ 		COMMAND ${CMAKE_COMMAND} -DCMAKE_BUILD_TYPE=Release ${CMAKE_SOURCE_DIR}
+ 		COMMENT "Adjusting settings for release compilation"
+ 		VERBATIM)
