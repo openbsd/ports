@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.159 2013/06/21 01:54:55 lteo Exp $
+# $OpenBSD: Makefile,v 1.160 2013/06/21 21:37:56 sthen Exp $
 
 MULTI_PACKAGES=	-main -ntlm
 
@@ -18,7 +18,7 @@ PKGNAME-ldap=	squid-ldap-$V
 PKGNAME-ntlm=	squid-ntlm-$V
 CATEGORIES=	www
 
-REVISION-main=	3
+REVISION-main=	4
 REVISION-ldap=	1
 REVISION-ntlm=	1
 

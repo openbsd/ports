@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.4 2013/06/21 01:54:55 lteo Exp $
+$OpenBSD: README-main,v 1.5 2013/06/21 21:37:56 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -47,10 +47,11 @@ sysctl kern.maxfiles. In some circumstances you may also need to raise
 this; if this is required, pay particular attention to testing and
 monitoring your system.
 
-Transparent Proxying with PF
-============================
-To configure a transparent proxy, bind to a specific address in
-${SYSCONFDIR}/squid.conf, for example:
+Interception Proxying with PF
+=============================
+To configure an interception (a.k.a. "transparent") proxy, Squid should
+be configured in ${SYSCONFDIR}/squid.conf to bind to a specific address,
+for example:
 
 http_port 127.0.0.1:3127 intercept
 
@@ -58,9 +59,11 @@ On the machine running Squid, add a firewall rule similar to this:
 
 pass in quick log inet proto tcp to port 80 divert-to 127.0.0.1 port 3127
 
-If Squid is running on a machine which doesn't normally handle the
-traffic (e.g. if you have a firewall and would like to divert packets
-to Squid on another machine) you will also need a rule like this:
+If the machine running Squid is already acting as a router/firewall
+for your client machines, there is no other special configuration.
+However if Squid is running on a separate machine, the router must be
+configured to pass HTTP traffic to Squid. You can use a rule like this
+on the router:
 
 pass in quick from 10.77.3.5
 pass in quick inet proto tcp to port 80 route-to (vr2 10.77.3.5)
@@ -72,5 +75,6 @@ If the proxy server is running on the same subnet as the clients, the
 return traffic from the proxy will go directly back to them without
 ever hitting the firewall, which means the states will never get updated
 and may fill-up your pflog(4) with blocked attempts. To circumvent this
-the "no state" option needs to be specified for the route-to rule, e.g.
+the "no state" option needs to be specified for the route-to rule:
+
 pass in quick inet proto tcp to port 80 route-to (vr2 10.77.3.5) no state
