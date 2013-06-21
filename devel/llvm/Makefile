@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2013/05/02 15:41:57 sebastia Exp $
+# $OpenBSD: Makefile,v 1.63 2013/06/21 22:09:12 brad Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -7,14 +7,13 @@ ONLY_FOR_ARCHS = ${LLVM_ARCHS}
 
 COMMENT =	modular, fast C/C++/ObjC compiler, static analyzer and tools
 
-LLVM_V =	3.2
+LLVM_V =	3.3
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME =	llvm-${LLVM_V}
-REVISION =	3
 CATEGORIES =	devel
 MASTER_SITES =	http://llvm.org/releases/${LLVM_V}/
 
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX} clang-${LLVM_V}.src${EXTRACT_SUFX}
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX} cfe-${LLVM_V}.src${EXTRACT_SUFX}
 
 SHARED_LIBS =	clang		0.0 # 3.2
 
@@ -24,7 +23,7 @@ HOMEPAGE =	http://www.llvm.org/
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	c m pthread stdc++
+WANTLIB =	c m pthread stdc++ z
 
 WRKDIST =	${WRKDIR}/llvm-${LLVM_V}.src
 
@@ -54,10 +53,10 @@ CONFIGURE_ARGS +=	-DCMAKE_EXE_LINKER_FLAGS=-Wl,--relax
 .endif
 
 CLANG_INCLUDE_PATH =	lib/clang/${LLVM_V}/include
-SUBST_VARS +=		CLANG_INCLUDE_PATH
+SUBST_VARS +=		CLANG_INCLUDE_PATH LLVM_V
 
 post-extract:
-	@mv ${WRKDIR}/clang-${LLVM_V}.src ${WRKDIST}/tools/clang
+	@mv ${WRKDIR}/cfe-${LLVM_V}.src ${WRKDIST}/tools/clang
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/tools/clang/tools/scan-build/scan-build

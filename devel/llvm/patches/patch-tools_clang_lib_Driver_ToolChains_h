@@ -1,14 +1,15 @@
-$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_h,v 1.4 2012/12/23 20:49:29 brad Exp $
---- tools/clang/lib/Driver/ToolChains.h.orig	Wed Nov 21 09:33:40 2012
-+++ tools/clang/lib/Driver/ToolChains.h	Mon Dec 10 21:27:25 2012
-@@ -437,6 +437,10 @@ class LLVM_LIBRARY_VISIBILITY OpenBSD : public Generic
+$OpenBSD: patch-tools_clang_lib_Driver_ToolChains_h,v 1.5 2013/06/21 22:09:12 brad Exp $
+--- tools/clang/lib/Driver/ToolChains.h.orig	Mon Apr 29 21:21:43 2013
++++ tools/clang/lib/Driver/ToolChains.h	Tue Jun  4 23:59:36 2013
+@@ -427,6 +427,11 @@ class LLVM_LIBRARY_VISIBILITY OpenBSD : public Generic
  
-   virtual Tool &SelectTool(const Compilation &C, const JobAction &JA,
-                            const ActionList &Inputs) const;
+   virtual bool IsMathErrnoDefault() const { return false; }
+   virtual bool IsObjCNonFragileABIDefault() const { return true; }
++  virtual bool isPIEDefault() const { return true; }
++
 +  virtual unsigned GetDefaultStackProtectorLevel(bool KernelOrKext) const {
-+    // Default to -fstack-protector on OpenBSD
 +    return 1;
 +  }
- };
  
- class LLVM_LIBRARY_VISIBILITY Bitrig : public Generic_ELF {
+ protected:
+   virtual Tool *buildAssembler() const;

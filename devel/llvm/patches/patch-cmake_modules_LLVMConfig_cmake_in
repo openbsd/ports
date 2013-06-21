@@ -1,11 +1,11 @@
-$OpenBSD: patch-cmake_modules_LLVMConfig_cmake_in,v 1.1 2013/05/02 15:41:57 sebastia Exp $
+$OpenBSD: patch-cmake_modules_LLVMConfig_cmake_in,v 1.2 2013/06/21 22:09:12 brad Exp $
 
 make it find include file in /usr/local/share/llvm/cmake
 bug reported: http://www.llvm.org/bugs/show_bug.cgi?id=15899
 
---- cmake/modules/LLVMConfig.cmake.in.orig	Sat Jul  7 05:12:28 2012
-+++ cmake/modules/LLVMConfig.cmake.in	Thu May  2 07:38:57 2013
-@@ -36,6 +36,8 @@ set(LLVM_INCLUDE_DIRS ${LLVM_INSTALL_PREFIX}/include)
+--- cmake/modules/LLVMConfig.cmake.in.orig	Tue Apr 23 04:28:39 2013
++++ cmake/modules/LLVMConfig.cmake.in	Wed May  8 06:14:30 2013
+@@ -39,6 +39,8 @@ set(LLVM_INCLUDE_DIRS ${LLVM_INSTALL_PREFIX}/include)
  set(LLVM_LIBRARY_DIRS ${LLVM_INSTALL_PREFIX}/lib)
  set(LLVM_DEFINITIONS "-D__STDC_LIMIT_MACROS" "-D__STDC_CONSTANT_MACROS")
  

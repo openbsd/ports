@@ -1,0 +1,24 @@
+$OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.9 2013/06/21 22:09:12 brad Exp $
+--- tools/clang/lib/Basic/Targets.cpp.orig	Wed May 15 17:07:09 2013
++++ tools/clang/lib/Basic/Targets.cpp	Sun Jun  9 18:39:31 2013
+@@ -870,16 +870,19 @@ const Builtin::Info PPCTargetInfo::BuiltinInfo[] = {
+ void PPCTargetInfo::getTargetDefines(const LangOptions &Opts,
+                                      MacroBuilder &Builder) const {
+   // Target identification.
+-  Builder.defineMacro("__ppc__");
++  Builder.defineMacro("__PPC__");
+   Builder.defineMacro("_ARCH_PPC");
+   Builder.defineMacro("__powerpc__");
+   Builder.defineMacro("__POWERPC__");
+   if (PointerWidth == 64) {
++    Builder.defineMacro("__PPC64__");
+     Builder.defineMacro("_ARCH_PPC64");
+     Builder.defineMacro("__powerpc64__");
+     Builder.defineMacro("__ppc64__");
+   } else {
++    Builder.defineMacro("__powerpc");
+     Builder.defineMacro("__ppc__");
++    Builder.defineMacro("__PPC");
+   }
+ 
+   // Target properties.

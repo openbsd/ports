@@ -1,0 +1,11 @@
+$OpenBSD: patch-tools_clang_include_clang_Driver_Options_td,v 1.1 2013/06/21 22:09:12 brad Exp $
+--- tools/clang/include/clang/Driver/Options.td.orig	Tue Jun  4 23:41:19 2013
++++ tools/clang/include/clang/Driver/Options.td	Tue Jun  4 23:41:50 2013
+@@ -1004,6 +1004,7 @@ def nodefaultlibs : Flag<["-"], "nodefaultlibs">;
+ def nofixprebinding : Flag<["-"], "nofixprebinding">;
+ def nolibc : Flag<["-"], "nolibc">;
+ def nomultidefs : Flag<["-"], "nomultidefs">;
++def nopie : Flag<["-"], "nopie">;
+ def noprebind : Flag<["-"], "noprebind">;
+ def noseglinkedit : Flag<["-"], "noseglinkedit">;
+ def nostartfiles : Flag<["-"], "nostartfiles">;

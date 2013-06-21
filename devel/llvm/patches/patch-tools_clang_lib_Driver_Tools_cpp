@@ -1,10 +1,7 @@
-$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.15 2013/01/08 10:14:13 brad Exp $
-
-Silence some warnings and allow passing down some feature flags to the linker. r171329
-
---- tools/clang/lib/Driver/Tools.cpp.orig	Wed Nov 21 02:56:23 2012
-+++ tools/clang/lib/Driver/Tools.cpp	Mon Jan  7 22:48:10 2013
-@@ -5100,6 +5100,36 @@ void openbsd::Assemble::ConstructJob(Compilation &C, c
+$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.16 2013/06/21 22:09:12 brad Exp $
+--- tools/clang/lib/Driver/Tools.cpp.orig	Thu May 30 14:01:30 2013
++++ tools/clang/lib/Driver/Tools.cpp	Tue Jun  4 23:43:06 2013
+@@ -5071,6 +5071,36 @@ void openbsd::Assemble::ConstructJob(Compilation &C, c
                                       const char *LinkingOutput) const {
    ArgStringList CmdArgs;
  
@@ -41,37 +38,25 @@ Silence some warnings and allow passing down some feature flags to the linker. r
    Args.AddAllArgValues(CmdArgs, options::OPT_Wa_COMMA,
                         options::OPT_Xassembler);
  
-@@ -5125,6 +5155,22 @@ void openbsd::Link::ConstructJob(Compilation &C, const
-   const Driver &D = getToolChain().getDriver();
-   ArgStringList CmdArgs;
+@@ -5104,6 +5134,11 @@ void openbsd::Link::ConstructJob(Compilation &C, const
+   // handled somewhere else.
+   Args.ClaimAllArgs(options::OPT_w);
  
-+  // Silence warning for "clang -g foo.o -o foo"
-+  Args.ClaimAllArgs(options::OPT_g_Group);
-+  // and "clang -emit-llvm foo.o -o foo"
-+  Args.ClaimAllArgs(options::OPT_emit_llvm);
-+  // and for "clang -w foo.o -o foo". Other warning options are already
-+  // handled somewhere else.
-+  Args.ClaimAllArgs(options::OPT_w);
-+
 +  if (getToolChain().getArch() == llvm::Triple::mips64)
 +    CmdArgs.push_back("-EB");
 +  else if (getToolChain().getArch() == llvm::Triple::mips64el)
 +    CmdArgs.push_back("-EL");
 +
-+  // XXX
-+  CmdArgs.push_back("-nopie");
-+
    if ((!Args.hasArg(options::OPT_nostdlib)) &&
        (!Args.hasArg(options::OPT_shared))) {
      CmdArgs.push_back("-e");
-@@ -5179,6 +5225,10 @@ void openbsd::Link::ConstructJob(Compilation &C, const
-   Args.AddAllArgs(CmdArgs, options::OPT_L);
-   Args.AddAllArgs(CmdArgs, options::OPT_T_Group);
-   Args.AddAllArgs(CmdArgs, options::OPT_e);
-+  Args.AddAllArgs(CmdArgs, options::OPT_s);
-+  Args.AddAllArgs(CmdArgs, options::OPT_t);
-+  Args.AddAllArgs(CmdArgs, options::OPT_Z_Flag);
-+  Args.AddAllArgs(CmdArgs, options::OPT_r);
+@@ -5124,6 +5159,9 @@ void openbsd::Link::ConstructJob(Compilation &C, const
+       CmdArgs.push_back("/usr/libexec/ld.so");
+     }
+   }
++
++  if (Args.hasArg(options::OPT_nopie))
++    CmdArgs.push_back("-nopie");
  
-   AddLinkerInputs(getToolChain(), Inputs, Args, CmdArgs);
- 
+   if (Output.isFilename()) {
+     CmdArgs.push_back("-o");
