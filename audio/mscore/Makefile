@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/04/22 14:42:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2013/06/21 15:13:46 sthen Exp $
 
 COMMENT =	WYSIWYG music notation software (MuseScore)
 DISTNAME =	mscore-1.3
@@ -22,8 +22,8 @@ WANTLIB += QtScriptTools QtSvg QtWebKit QtXml QtXmlPatterns
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mscore/}
 
-# We get an internal compiler error: Segmentation Fault with
-# in-base gcc, so use gcc 4.6
+# ICE building moc_qtsingleapplication.cxx with base gcc 4.2.1 on amd64.
+# possible problems with ppc. unsure about other arch.
 MODULES +=		gcc4
 MODGCC4_ARCHS +=	*
 MODGCC4_LANGS +=	c++
