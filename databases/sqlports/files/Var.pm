@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.19 2013/03/31 09:43:13 espie Exp $
+# $OpenBSD: Var.pm,v 1.20 2013/06/21 10:48:38 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -127,6 +127,10 @@ sub add
 package ArchKeyVar;
 our @ISA = qw(KeyVar);
 sub keyword_table() { 'Arch' }
+
+package PrefixKeyVar;
+our @ISA = qw(KeyVar);
+sub keyword_table() { 'Prefix' }
 
 package OptKeyVar;
 our @ISA = qw(KeyVar);

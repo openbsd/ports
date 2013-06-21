@@ -34,6 +34,7 @@ holds all the information retrieved through various variables, e.g.,:
     PKGNAME 
     PKGSPEC
     PKG_ARCH 
+    PREFIX
     PSEUDO_FLAVOR
     PSEUDO_FLAVORS 
     TEST_IS_INTERACTIVE 
