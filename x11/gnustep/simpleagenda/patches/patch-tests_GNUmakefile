@@ -1,0 +1,15 @@
+$OpenBSD: patch-tests_GNUmakefile,v 1.5 2013/06/21 22:39:28 sthen Exp $
+--- tests/GNUmakefile.orig	Fri Jun 21 05:19:09 2013
++++ tests/GNUmakefile	Fri Jun 21 05:19:26 2013
+@@ -23,11 +23,7 @@ SimpleAgendaTests_OBJC_FILES = \
+ 
+ SimpleAgendaTests_TOOL_LIBS = -lObjcUnit -lical -lgnustep-gui
+ #ifeq(have_libuuid,yes)
+-ifeq ($(findstring openbsd, $(GNUSTEP_TARGET_OS)), openbsd)
+-SimpleAgendaTests_TOOL_LIBS += -le2fs-uuid
+-else
+ SimpleAgendaTests_TOOL_LIBS += -luuid
+-endif
+ #endif
+ 
+ ADDITIONAL_OBJCFLAGS = -Wno-import -Wall

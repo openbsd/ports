@@ -1,0 +1,15 @@
+$OpenBSD: patch-GNUmakefile_preamble,v 1.5 2013/06/21 22:39:28 sthen Exp $
+--- GNUmakefile.preamble.orig	Fri Jun 21 05:19:31 2013
++++ GNUmakefile.preamble	Fri Jun 21 05:19:36 2013
+@@ -14,11 +14,7 @@ ADDITIONAL_CFLAGS += 
+ # Additional flags to pass to the linker
+ ADDITIONAL_TOOL_LIBS += -lical
+ ifeq ($(LIBUUID),yes)
+-ifeq ($(findstring openbsd, $(GNUSTEP_TARGET_OS)), openbsd)
+-ADDITIONAL_TOOL_LIBS += -le2fs-uuid
+-else
+ ADDITIONAL_TOOL_LIBS += -luuid
+-endif
+ endif
+ ifeq ($(ADDRESSES),yes)
+ ADDITIONAL_TOOL_LIBS += -lAddresses
