@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.154 2013/06/20 06:54:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.155 2013/06/21 22:42:13 sthen Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -7,7 +7,7 @@ PKGNAME=	zarafa-${V}
 PKGNAME-main=	zarafa-${V}
 PKGNAME-web=	zarafa-webaccess-${V}
 
-REVISION-main=	5
+REVISION-main=	6
 REVISION-web=	1
 
 CATEGORIES=	mail www productivity
@@ -44,7 +44,7 @@ BUILD_DEPENDS += net/curl
 
 WANTLIB += ${MODGETTEXT_WANTLIB}
 WANTLIB += m pthread stdc++ z vmime execinfo icudata icui18n icuuc
-WANTLIB += boost_filesystem-mt boost_system-mt e2fs-uuid
+WANTLIB += boost_filesystem-mt boost_system-mt uuid
 
 WANTLIB-main += ${WANTLIB} ${MODPY_WANTLIB}
 WANTLIB-main += asn1 c com_err crypto gssapi ical icalss krb5 lber-2.4
@@ -62,7 +62,7 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		devel/boost \
 		devel/libexecinfo \
 		devel/libvmime>=0.9.2p1 \
-		sysutils/e2fsprogs \
+		sysutils/e2fsprogs>=1.42.7 \
 		textproc/clucene>=2.3.3.4 \
 		textproc/icu4c \
 		textproc/libical \
