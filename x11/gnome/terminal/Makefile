@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2013/06/11 06:41:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.104 2013/06/21 22:38:34 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,13 +6,14 @@ COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
 GNOME_VERSION=	3.8.3
+REVISION=	0
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 dconf e2fs-uuid
+WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 dconf uuid
 WANTLIB += expat ffi fontconfig freetype gconf-2 gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-3 harfbuzz m ncurses
@@ -29,7 +30,7 @@ RUN_DEPENDS=	devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=	devel/gconf2 \
 		devel/vte3>=0.34.6 \
-		sysutils/e2fsprogs
+		sysutils/e2fsprogs>=1.42.7
 
 # configure checks for desktop-file-validate(1)
 BUILD_DEPENDS +=devel/desktop-file-utils

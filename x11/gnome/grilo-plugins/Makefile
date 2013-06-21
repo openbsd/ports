@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/05/29 14:50:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2013/06/21 22:38:34 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	plugins for Grilo
 
 GNOME_PROJECT=	grilo-plugins
 GNOME_VERSION=	0.2.8
+REVISION=	0
 API=		0.2
 
 TRACKER_VERSION=0.16
@@ -18,7 +19,7 @@ HOMEPAGE=	http://live.gnome.org/Grilo
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += archive bz2 crypto curl e2fs-uuid expat ffi gck-1 gcr-base-3
+WANTLIB += archive bz2 crypto curl uuid expat ffi gck-1 gcr-base-3
 WANTLIB += gcrypt gdata gio-2.0 glib-2.0 gmime-2.6 gmodule-2.0
 WANTLIB += goa-1.0 gobject-2.0 gpg-error grilo-0.2 grlnet-0.2
 WANTLIB += gssdp-1.0 gthread-2.0 gupnp-1.0 gupnp-av-1.0 icui18n

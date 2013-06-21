@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:41:33 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/06/21 22:38:34 sthen Exp $
 
 COMMENT =	data recovery software
 
 VERSION =	6.13
+REVISION =	0
 DISTNAME =	testdisk-${VERSION}
 CATEGORIES =	sysutils
 
@@ -23,11 +24,10 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-LIB_DEPENDS =		sysutils/e2fsprogs \
+LIB_DEPENDS =		sysutils/e2fsprogs>=1.42.7 \
 			graphics/jpeg
 
-WANTLIB =		c crypto e2fs-uuid ext2fs ext2fs_com_err \
-			jpeg ncursesw z
+WANTLIB =		c crypto uuid ext2fs jpeg ncursesw z
 
 post-install:
 			${INSTALL_DATA} ${WRKSRC}/doc/online.html ${PREFIX}/share/doc/${DISTNAME}/html

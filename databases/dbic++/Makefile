@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/06/12 20:36:33 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2013/06/21 22:37:02 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		C++ database API
 
 DISTNAME=		deepfryed-dbicpp-v0.6.0
 PKGNAME=		dbic++-0.6.0
-REVISION=		4
+REVISION=		5
 CATEGORIES=		databases
 HOMEPAGE=		https://github.com/deepfryed/dbicpp
 
@@ -17,10 +17,10 @@ SHARED_LIBS +=  dbdsqlite3                1.0 # 1.0
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-# port-lib-depends-check says that e2fs-uuid and pcrecpp are
+# port-lib-depends-check says that uuid and pcrecpp are
 # Extra, but they are used in a .a file that doesn't have a
 # .so shared library equivalent.
-WANTLIB =		e2fs-uuid m mysqlclient pcrecpp pq stdc++ sqlite3
+WANTLIB =		uuid m mysqlclient pcrecpp pq stdc++ sqlite3
 
 MASTER_SITES=		http://distfiles.bsdfrog.org/
 
@@ -29,7 +29,7 @@ MODULES =		devel/cmake
 LIB_DEPENDS=		databases/mysql \
 			databases/postgresql \
 			devel/pcre \
-			sysutils/e2fsprogs
+			sysutils/e2fsprogs>=1.42.7
 
 CONFIGURE_ARGS+=	-DCMAKE_MYSQL_VERSION=${LIBdbdmysql_VERSION} \
 			-DCMAKE_PG_VERSION=${LIBdbdpg_VERSION} \

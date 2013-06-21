@@ -1,33 +1,6 @@
-$OpenBSD: patch-configure,v 1.4 2013/01/30 17:19:27 benoit Exp $
+$OpenBSD: patch-configure,v 1.5 2013/06/21 22:38:34 sthen Exp $
 --- configure.orig	Tue Nov 15 08:02:37 2011
 +++ configure	Sat Jan 19 12:47:45 2013
-@@ -6919,7 +6919,7 @@
-   $as_echo_n "(cached) " >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lext2fs  $LIBS"
-+LIBS="-lext2fs -lext2fs_com_err $LIBS"
- cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
- 
-@@ -6971,7 +6971,7 @@
-   $as_echo_n "(cached) " >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lcom_err  $LIBS"
-+LIBS="-lext2fs_com_err  $LIBS"
- cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
- 
-@@ -7007,7 +7007,7 @@
- $as_echo "#define HAVE_LIBCOMM_ERR 1" >>confdefs.h
- 
-       if test "${com_err_lib_a}" = ""; then
--        LIBS="$LIBS -lcom_err"
-+        LIBS="$LIBS -lext2fs_com_err"
-       else
-         LIBS="$LIBS ${com_err_lib_a}"
-       fi
 @@ -7370,7 +7370,7 @@
  #fi
  
@@ -37,21 +10,3 @@ $OpenBSD: patch-configure,v 1.4 2013/01/30 17:19:27 benoit Exp $
  do :
    as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
  ac_fn_c_check_header_mongrel "$LINENO" "$ac_header" "$as_ac_Header" "$ac_includes_default"
-@@ -7424,7 +7424,7 @@
-   return 0;
- }
- _ACEOF
--for ac_lib in '' uuid; do
-+for ac_lib in '' e2fs-uuid; do
-   if test -z "$ac_lib"; then
-     ac_res="none required"
-   else
-@@ -7487,7 +7487,7 @@
-   return 0;
- }
- _ACEOF
--for ac_lib in '' uuid; do
-+for ac_lib in '' e2fs-uuid; do
-   if test -z "$ac_lib"; then
-     ac_res="none required"
-   else

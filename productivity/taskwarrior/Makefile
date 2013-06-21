@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2013/04/14 18:12:36 abieber Exp $
+# $OpenBSD: Makefile,v 1.11 2013/06/21 22:38:12 sthen Exp $
 
 COMMENT =	command line todo list manager
 
 VERSION =	2.2.0
 DISTNAME =	task-${VERSION}
 PKGNAME =	taskwarrior-${VERSION}
+REVISION =	0
 CATEGORIES =	productivity
 
 HOMEPAGE =	http://www.taskwarrior.org/
@@ -20,9 +21,9 @@ MODULES =		devel/cmake \
 			lang/lua
 MODLUA_SA =		Yes
 
-WANTLIB =		c e2fs-uuid m stdc++
+WANTLIB =		c uuid m stdc++
  
-LIB_DEPENDS =	sysutils/e2fsprogs
+LIB_DEPENDS =	sysutils/e2fsprogs>=1.42.7
 
 CONFIGURE_STYLE =	cmake
 

@@ -1,4 +1,4 @@
-$OpenBSD: patch-ext_swift_db_mysql_extconf_rb,v 1.1.1.1 2013/05/25 22:17:53 jeremy Exp $
+$OpenBSD: patch-ext_swift_db_mysql_extconf_rb,v 1.2 2013/06/21 22:37:02 sthen Exp $
 --- ext/swift/db/mysql/extconf.rb.orig	Wed Dec 31 16:00:00 1969
 +++ ext/swift/db/mysql/extconf.rb	Tue Dec  4 11:07:26 2012
 @@ -6,23 +6,12 @@ $CFLAGS = '-std=c99 -Os'
@@ -27,12 +27,3 @@ $OpenBSD: patch-ext_swift_db_mysql_extconf_rb,v 1.1.1.1 2013/05/25 22:17:53 jere
  )
  
  uuid_inc,  uuid_lib  = dir_config('uuid',  '/usr/include/uuid', '/usr/lib')
-@@ -31,7 +20,7 @@ mysql_inc, mysql_lib = dir_config('mysql')
- find_header 'uuid.h',  *inc_paths.dup.unshift(uuid_inc).compact
- find_header 'mysql.h', *inc_paths.dup.unshift(mysql_inc).compact
- 
--find_library 'uuid',        'main', *lib_paths.dup.unshift(uuid_lib).compact
-+find_library 'e2fs-uuid',        'main', *lib_paths.dup.unshift(uuid_lib).compact
- find_library 'mysqlclient', 'main', *lib_paths.dup.unshift(mysql_lib).compact
- 
- create_makefile('swift_db_mysql_ext')

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/04/13 13:36:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2013/06/21 22:38:12 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,7 +7,7 @@ COMMENT =	GLib ICE implementation
 DISTNAME =	libnice-0.1.4
 SHARED_LIBS +=  nice                 2.1      # 11.0
 
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	net
 
@@ -18,7 +18,7 @@ MAINTAINER =	Tom Murphy <openbsd@pertho.net>
 # LGPLv2.1/MPLv1.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c e2fs-uuid ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += c uuid ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gssdp-1.0 gstbase-1.0 gstreamer-1.0 gthread-2.0 gupnp-1.0
 WANTLIB += gupnp-igd-1.0 m pcre pthread soup-2.4 sqlite3 xml2
 WANTLIB += z

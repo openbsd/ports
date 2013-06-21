@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.38 2013/06/20 18:26:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2013/06/21 22:38:12 sthen Exp $
 
 COMMENT=		flexible communications framework, local-link component
 
 DISTNAME=		telepathy-salut-0.8.1
+REVISION=		0
 
 MASTER_SITES=		${MASTER_SITES_TP:=telepathy-salut/}
 
 WANTLIB += avahi-client avahi-common avahi-glib avahi-gobject
-WANTLIB += c dbus-1 dbus-glib-1 e2fs-uuid ffi gio-2.0 glib-2.0
+WANTLIB += c dbus-1 dbus-glib-1 uuid ffi gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gmp gnutls gobject-2.0 gthread-2.0 hogweed
 WANTLIB += m nettle p11-kit pcre pthread soup-2.4 sqlite3 tasn1
 WANTLIB += telepathy-glib xml2 z
@@ -24,7 +25,7 @@ BUILD_DEPENDS +=	devel/py-twisted/words \
 LIB_DEPENDS=		net/avahi \
 			devel/libsoup \
 			net/telepathy/telepathy-glib \
-			sysutils/e2fsprogs
+			sysutils/e2fsprogs>=1.42.7
 TEST_DEPENDS=		textproc/py-xmldiff
 
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/lib/ext/wocky

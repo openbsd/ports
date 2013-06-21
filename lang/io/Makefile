@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/06/12 20:36:33 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2013/06/21 22:37:02 sthen Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS =i386 amd64
@@ -7,7 +7,7 @@ COMMENT =	embeddable prototype-based language
 
 DISTNAME =	stevedekorte-io-2011.09.12-106-g02f9800
 PKGNAME =	io-20110905
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	lang
 
@@ -25,7 +25,7 @@ MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xext Xrender atk-1.0 c cairo clutter-1.0 curses e2fs-uuid
+WANTLIB += X11 Xext Xrender atk-1.0 c cairo clutter-1.0 curses uuid
 WANTLIB += edit event_core event_extra expat fontconfig freetype
 WANTLIB += glib-2.0 gmp gobject-2.0 jpeg lzo2 m memcached
 WANTLIB += mysqlclient ogg pango-1.0 pcre pcreposix pixman-1 png
@@ -51,7 +51,7 @@ LIB_DEPENDS =	archivers/lzo2 \
 		graphics/tiff \
 		lang/python/2.7 \
 		multimedia/libtheora \
-		sysutils/e2fsprogs \
+		sysutils/e2fsprogs>=1.42.7 \
 		textproc/libxml,no_python
 
 MODULES =	devel/cmake \

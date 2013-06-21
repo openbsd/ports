@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/06/14 16:16:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2013/06/21 22:38:34 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	document manager for GNOME
 
 GNOME_PROJECT=	gnome-documents
 GNOME_VERSION=	3.8.3.1
+REVISION=	0
 
 HOMEPAGE=	https://live.gnome.org/GnomeDocuments
 
@@ -18,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xt atk-1.0 atk-bridge-2.0
 WANTLIB += atspi c cairo cairo-gobject crypto curl dbus-1 dbus-glib-1
-WANTLIB += e2fs-uuid enchant evdocument3 evview3 expat ffi fontconfig
+WANTLIB += uuid enchant evdocument3 evview3 expat ffi fontconfig
 WANTLIB += freetype gailutil-3 gck-1 gcr-base-3 gcrypt gdata gdk-3
 WANTLIB += gdk_pixbuf-2.0 geoclue gio-2.0 girepository-1.0 gjs
 WANTLIB += glib-2.0 gmodule-2.0 gnome-desktop-3 goa-1.0 gobject-2.0

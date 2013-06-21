@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2013/05/31 15:35:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2013/06/21 22:38:34 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		desktop note-taking application written in C++
 
 GNOME_PROJECT=		gnote
 GNOME_VERSION=		3.8.1
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=	gnote-3.8                 0.0 # 0.0
 SHARED_LIBS +=	gnote                     0.0 # 0.0
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atkmm-1.6
-WANTLIB += atspi c cairo cairo-gobject cairomm-1.0 dbus-1 e2fs-uuid
+WANTLIB += atspi c cairo cairo-gobject cairomm-1.0 dbus-1 uuid
 WANTLIB += expat ffi fontconfig freetype gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
 WANTLIB += gobject-2.0 gpg-error graphite2 gthread-2.0 gtk-3 gtkmm-3.0
@@ -34,7 +34,7 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 BUILD_DEPENDS=		devel/boost>=1.42.0p6
-LIB_DEPENDS=		sysutils/e2fsprogs>=1.41.4p5 \
+LIB_DEPENDS=		sysutils/e2fsprogs>=1.42.7 \
 			textproc/libxslt \
 			x11/gnome/libsecret>=0.10 \
 			x11/gtk3mm

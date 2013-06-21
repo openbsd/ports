@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2013/06/01 12:55:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2013/06/21 22:38:34 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	personal search and metasearch
 
 DISTNAME=	pinot-1.03
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS +=  xapianbackend             0.0 # 1.0
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atkmm-1.6
 WANTLIB += atspi c cairo cairo-gobject cairomm-1.0 crypto curl
-WANTLIB += dbus-1 dbus-glib-1 e2fs-uuid exiv2 expat ffi fontconfig
+WANTLIB += dbus-1 dbus-glib-1 uuid exiv2 expat ffi fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0 giomm-2.4
 WANTLIB += glib-2.0 glibmm-2.4 gmime-2.6 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gthread-2.0 gtk-3 gtkmm-3.0 harfbuzz idn
