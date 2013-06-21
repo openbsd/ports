@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.1 2013/06/21 09:05:18 espie Exp $
+# $OpenBSD: Config.pm,v 1.2 2013/06/21 23:13:37 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -31,10 +31,10 @@ sub parse_command_line
 			$state->{arch} = shift;
 		},
 		L => sub {
-			$state->{logdir} = shift;
+			$state->{flogdir} = shift;
 		},
 		l => sub {
-			$state->{lockdir} = shift;
+			$state->{flockdir} = shift;
 		},
 		r => sub {
 			$state->{random} = 1;
@@ -65,8 +65,8 @@ sub parse_command_line
     "[-p parallel] [-P plist] [-h hosts] [-L logdir] [-l lockdir] [-b log]",
     "[-M threshold] [-X plist] [path ...]");
     	$state->{fullrepo} = join("/", $state->{repo}, $state->arch, "all");
-	$state->{logdir} //= $ENV{LOGDIR} // '%p/logs/%a';
-	$state->{lockdir} //= "%L/locks";
+	$state->{logdir} = $state->{flogdir} // $ENV{LOGDIR} // '%p/logs/%a';
+	$state->{lockdir} //= $state->{flockdir} // "%L/locks";
 	if (defined $state->{opt}{F}) {
 		if (defined $state->{opt}{j} || defined $state->{opt}{f}) {
 			$state->usage("Can't use -F with -f or -j");
@@ -76,7 +76,6 @@ sub parse_command_line
 		$state->{opt}{j} = 1;
 		$state->{opt}{e} = 1;
 	}
-	$state->{opt}{f} //= 2;
 	if (defined $state->opt('j')) {
 		if ($state->localarch ne $state->arch) {
 			$state->usage(
@@ -86,6 +85,55 @@ sub parse_command_line
 			$state->usage("-j takes a numerical argument");
 		}
 	}
+	if (defined $state->{config_files}) {
+		for my $f (@{$state->{config_files}}) {
+			$f = $state->expand_path($f);
+		}
+	}
+
+	$state->{logdir} = $state->expand_path($state->{logdir});
+	$state->{size_log} = "%f/build-stats/%a-size";
+
+	# keep cmdline subst values
+	my %cmdline = %{$state->{subst}};
+	$class->parse_config_files($state);
+	# ... as those must override the config files contents
+	while (my ($k, $v) = each %cmdline) {
+		$state->{subst}->{$k} = $v;
+	}
+
+	if ($state->define_present("STARTUP")) {
+		$state->{startup_script} = $state->{subst}->value("STARTUP");
+	}
+	if ($state->define_present('LOGDIR')) {
+		$state->{logdir} = $state->subst->value('LOGDIR');
+	}
+	if ($state->define_present('WANTSIZE')) {
+		$state->{wantsize} = $state->{subst}->value('WANTSIZE');
+	}
+	if ($state->define_present('FETCH_JOBS') && !defined $state->{opt}{f}) {
+		$state->{opt}{f} = $state->{subst}->value('FETCH_JOBS');
+	}
+	if ($state->define_present('LOCKDIR')) {
+		$state->{lockdir} = $state->{subst}->value('LOCKDIR');
+	}
+	if ($state->define_present('TESTS')) {
+		$state->{tests} = $state->{subst}->value('tests');
+	}
+	if ($state->{flogdir}) {
+		$state->{logdir} = $state->{flogdir};
+	}
+	if ($state->{flockdir}) {
+		$state->{logdir} = $state->{flockdir};
+	}
+	if ($state->{opt}{t}) {
+		$state->{tests} = 1;
+	}
+	if ($state->{opt}{s}) {
+		$state->{wantsize} = 1;
+	}
+
+	$state->{opt}{f} //= 2;
 	if ($state->opt('f') !~ m/^\d+$/) {
 		$state->usage("-f takes a numerical argument");
 	}
@@ -103,27 +151,21 @@ sub parse_command_line
 		$state->{random} = 1;
 	}
 
-	if ($state->opt('t')) {
-		$state->{tests} = 1;
-	}
+	# redo this in case config files changed it
 	$state->{logdir} = $state->expand_path($state->{logdir});
+
+	$state->{size_log} = $state->expand_path($state->{size_log});
 	$state->{lockdir} = $state->expand_path($state->{lockdir});
 	if (!$state->{subst}->value("NO_BUILD_STATS")) {
 		push @{$state->{build_files}}, "%f/build-stats/%a";
 	}
-#	if (!$state->{xpaths}) {
-#		$state->{xpaths} = ["%p/infrastructure/db/precious"];
-#	}
-	for my $cat (qw(build_files config_files paths ipaths cpaths xpaths)) {
+	$state->{permanent_log} = $state->{build_files}[-1];
+	for my $cat (qw(build_files paths ipaths cpaths xpaths)) {
 		next unless defined $state->{$cat};
 		for my $f (@{$state->{$cat}}) {
 			$f = $state->expand_path($f);
 		}
 	}
-	$state->{size_log} = "%f/build-stats/%a-size";
-
-	$state->{permanent_log} = $state->{build_files}[-1];
-	$state->{size_log} = $state->expand_path($state->{size_log});
 	$state->{display_timeout} =
 	    $state->{subst}->value('DISPLAY_TIMEOUT') // 10;
 	$state->{build_once} = $state->{all};
@@ -135,7 +177,6 @@ sub parse_command_line
 	} else {
 		$state->{mirror} = $state->{fetch_only};
 	}
-	$class->parse_config_files($state);
 }
 
 sub command_line_overrides
@@ -226,12 +267,9 @@ sub parse_hosts_file
 		chomp;
 		s/\s*\#.*$//;
 		next if m/^$/;
-		if (m/^STARTUP=\s*(.*)\s*$/) {
-			$state->{startup_script} = $1;
+		if (m/^([A-Z_]+)\=\s*(.*)\s*$/) {
+			$state->{subst}->add($1, $2);
 			next;
-		}
-		if (m/^LOGSIZE=\s*1\s*$/) {
-			$state->{opt}{s} = 1;
 		}
 		# copy default properties
 		my $prop = DPB::HostProperties->new($default);
@@ -251,9 +289,6 @@ sub parse_hosts_file
 		$prop->add_overrides($override);
 		$state->heuristics->calibrate(DPB::Core::Init->new($host,
 		    $prop));
-	}
-	if ($state->define_present("STARTUP")) {
-		$state->{startup_script} = $state->{subst}->value("STARTUP");
 	}
 }
 

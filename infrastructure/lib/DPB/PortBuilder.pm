@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.45 2013/05/18 17:24:46 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.46 2013/06/21 23:13:37 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -36,7 +36,7 @@ sub new
 	    clean => $state->opt('c'),
 	    dontclean => $state->{dontclean},
 	    fetch => $state->opt('f'),
-	    size => $state->opt('s'),
+	    wantsize => $state->{wantsize},
 	    fullrepo => $state->fullrepo,
 	    heuristics => $state->heuristics}, $class;
 	if ($state->opt('u') || $state->opt('U')) {
@@ -52,9 +52,10 @@ sub new
 sub want_size
 {
 	my ($self, $v) = @_;
-	if (!$self->{size}) {
+	if (!$self->{wantsize}) {
 		return 0;
 	}
+	# do we already have this stats ? don't run it every time
 	if ($self->{heuristics}->match_pkgname($v)) {
 		return rand(10) < 1;
 	} else {
@@ -108,7 +109,7 @@ sub init
 	$self->{global} = $self->logger->open("build");
 	$self->{lockperf} = 
 	    DPB::Util->make_hot($self->logger->open("awaiting-locks"));
-	if ($self->{size}) {
+	if ($self->{wantsize}) {
 		$self->{logsize} = 
 		    DPB::Util->make_hot($self->logger->open("size"));
 	}
