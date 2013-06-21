@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2013/05/24 18:31:48 jeremy Exp $
+# $OpenBSD: Makefile,v 1.13 2013/06/21 08:52:05 espie Exp $
 
 # Currently node itself is only for amd64 and i386, but
 # the coroutine library this uses only works on amd64
 # and i386, so even if other arches are supported by node
 # later, this extension will only support these arches.
 ONLY_FOR_ARCHS= amd64 i386
+BROKEN =	requires root privileges during building
 
 COMMENT =	fiber/coroutine support for Node.js
 
