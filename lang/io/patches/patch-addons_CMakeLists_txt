@@ -1,0 +1,14 @@
+$OpenBSD: patch-addons_CMakeLists_txt,v 1.1 2013/06/21 11:20:20 dcoppa Exp $
+
+Unbreak with Ninja
+
+--- addons/CMakeLists.txt.orig	Fri Jun 21 10:49:27 2013
++++ addons/CMakeLists.txt	Fri Jun 21 10:49:58 2013
+@@ -34,6 +34,7 @@ macro(generate_ioinit NAME)
+ 	add_custom_command(
+ 		OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/source/Io${NAME}Init.c
+ 		COMMAND ${PROJECT_BINARY_DIR}/_build/binaries/io_static ${CMAKE_SOURCE_DIR}/addons/generate.io ${CMAKE_SOURCE_DIR}/addons ${NAME}
++		DEPENDS io_static
+ 	)
+ 
+ 	# Clean up our mess.
