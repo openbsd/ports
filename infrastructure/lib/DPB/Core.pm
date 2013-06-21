@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.36 2013/04/22 20:56:53 espie Exp $
+# $OpenBSD: Core.pm,v 1.37 2013/06/21 09:05:18 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -25,31 +25,11 @@ my $hosts = {};
 sub new
 {
 	my ($class, $name, $prop) = @_;
-	$prop //= {};
-	$prop->{sf} //= 1;
-	$prop->{umask} //= sprintf("0%o", umask);
-	if (defined $prop->{stuck}) {
-		$prop->{stuck_timeout} = $prop->{stuck} * $prop->{sf};
-	}
-	if (defined $prop->{mem}) {
-		$prop->{memory} = $prop->{mem};
-	}
-	if (defined $prop->{memory}) {
-		my $_ = $prop->{memory};
-		if (s/K$//) {
-		} elsif (s/M$//) {
-			$_ *= 1024;
-		} elsif (s/G$//) {
-			$_ *= 1024 * 1024;
-		}
-		$prop->{memory} = $_;
-	}
-	$prop->{small} //= 120;
-	$prop->{small_timeout} = $prop->{small} * $prop->{sf};
 #	if ($class->name_is_localhost($name)) {
 #		delete $prop->{wait_timeout};
 #	}
-	$hosts->{$name} //= bless {host => $name, prop => $prop }, $class;
+	$hosts->{$name} //= bless {host => $name, 
+		prop => DPB::HostProperties->finalize($prop) }, $class;
 }
 
 sub name
@@ -420,127 +400,6 @@ sub start_clock
 	DPB::Core::Clock->start($tm);
 }
 
-package DPB::Task::Ncpu;
-our @ISA = qw(DPB::Task::Pipe);
-sub run
-{
-	my ($self, $core) = @_;
-	$core->shell->exec(OpenBSD::Paths->sysctl, '-n', 'hw.ncpu');
-}
-
-sub finalize
-{
-	my ($self, $core) = @_;
-	my $fh = $self->{fh};
-	if ($core->{status} == 0) {
-		my $line = <$fh>;
-		chomp $line;
-		if ($line =~ m/^\d+$/) {
-			$core->prop->{jobs} = $line;
-		}
-	}
-	close($fh);
-	$core->prop->{jobs} //= 1;
-	return 1;
-}
-
-package DPB::Job::Init;
-our @ISA = qw(DPB::Job);
-use DPB::Signature;
-
-sub new
-{
-	my ($class, $logger) = @_;
-	my $o = $class->SUPER::new('init');
-	$o->{logger} = $logger;
-	DPB::Signature->add_tasks($o);
-	return $o;
-}
-
-# if everything is okay, we mark our jobs as ready
-sub finalize
-{
-	my ($self, $core) = @_;
-	$self->{signature}->print_out($core, $self->{logger});
-	if ($self->{signature}->matches($core, $self->{logger})) {
-		for my $i (1 .. $core->prop->{jobs}) {
-			ref($core)->new($core->hostname, $core->prop)->mark_ready;
-		}
-		return 1;
-	} else {
-		return 0;
-    	}
-}
-
-# this is a weird one !
-package DPB::Core::Factory;
-our @ISA = qw(DPB::Core::WithJobs);
-my $init = {};
-
-sub new
-{
-	my ($class, $host, $prop) = @_;
-	if (DPB::Host->name_is_localhost($host)) {
-		return $init->{localhost} //= DPB::Core::Local->new_noreg($host, $prop);
-	} else {
-		require DPB::Core::Distant;
-		return $init->{$host} //= DPB::Core::Distant->new_noreg($host, $prop);
-	}
-}
-
-
-sub init_cores
-{
-	my ($self, $state) = @_;
-
-	my $logger = $state->logger;
-	my $startup = $state->{startup_script};
-	my $stale = $state->stalelocks;
-	DPB::Core->set_logdir($logger->{logdir});
-	for my $core (values %$init) {
-		my $job = DPB::Job::Init->new($logger);
-		if (!defined $core->prop->{jobs}) {
-			$job->add_tasks(DPB::Task::Ncpu->new);
-		}
-		if (defined $startup) {
-			my @args = split(/\s+/, $startup);
-			unshift(@args, OpenBSD::Paths->sudo, "-E");
-			$job->add_tasks(DPB::Task::Fork->new(
-			    sub {
-				my $shell = shift;
-				DPB::Task->redirect($logger->logfile("init.".
-				    $core->hostname));
-				$shell
-				    ->chdir($state->ports)
-				    ->env(PORTSDIR => $state->ports,
-				    	MAKE => $state->make)
-				    ->exec(@args);
-			    }
-			));
-		}
-		if (defined $stale->{$core->hostname}) {
-			my $subdirlist=join(' ', @{$stale->{$core->hostname}});
-			$job->add_tasks(DPB::Task::Fork->new(
-			    sub {
-				my $shell = shift;
-				DPB::Task->redirect($logger->logfile("init.".
-				$core->hostname));
-				$shell
-				    ->chdir($state->ports)
-				    ->env(SUBDIR => $subdirlist)
-				    ->exec($state->make, 'unlock');
-			    }
-			));
-		}
-		$core->start_job($job);
-	}
-	if ($state->opt('f')) {
-		for (1 .. $state->opt('f')) {
-			DPB::Core::Fetcher->new('localhost', {})->mark_ready;
-		}
-	}
-}
-
 package DPB::Core;
 our @ISA = qw(DPB::Core::WithJobs);
 
@@ -775,7 +634,6 @@ sub all_sf
 sub new
 {
 	my ($class, $host, $prop) = @_;
-	$prop->{sf} //= 1;
 	my $o = $class->SUPER::new($host, $prop);
 	push(@all_cores, $o);
 	return $o;
@@ -785,62 +643,6 @@ sub new_noreg
 {
 	my ($class, $host, $prop) = @_;
 	$class->SUPER::new($host, $prop);
-}
-
-my $has_sf = 0;
-
-sub has_sf
-{
-	return $has_sf;
-}
-
-sub parse_hosts_file
-{
-	my ($class, $filename, $state, $default, $override) = @_;
-	open my $fh, '<', $filename or
-		$state->fatal("Can't read host files #1: #2", $filename, $!);
-	my $_;
-	my $sf;
-	my $cores = {};
-	while (<$fh>) {
-		chomp;
-		s/\s*\#.*$//;
-		next if m/^$/;
-		if (m/^STARTUP=\s*(.*)\s*$/) {
-			$state->{startup_script} = $1;
-			next;
-		}
-		if (m/^LOGSIZE=\s*1\s*$/) {
-			$state->{opt}{s} = 1;
-		}
-		# copy default properties
-		my $prop = { %$default };
-		my ($host, @properties) = split(/\s+/, $_);
-		for my $_ (@properties) {
-			if (m/^(.*?)=(.*)$/) {
-				$prop->{$1} = $2;
-			}
-		}
-		if (defined $prop->{arch} && $prop->{arch} ne $state->arch) {
-			next;
-		}
-		if ($host eq 'DEFAULT') {
-			$default = { %$prop };
-			next;
-		}
-		while (my ($k, $v) = each %$override) {
-			$prop->{$k} = $v;
-		}
-		$sf //= $prop->{sf};
-		if (defined $prop->{sf} && $prop->{sf} != $sf) {
-			$has_sf = 1;
-		}
-		$state->heuristics->calibrate(DPB::Core::Factory->new($host,
-		    $prop));
-	}
-	if ($state->define_present("STARTUP")) {
-		$state->{startup_script} = $state->{subst}->value("STARTUP");
-	}
 }
 
 sub start_pipe

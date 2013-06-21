@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.20 2013/05/29 09:37:17 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.21 2013/06/21 09:05:18 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -223,7 +223,7 @@ sub compare_weights
 sub new_queue
 {
 	my $self = shift;
-	if (DPB::Core->has_sf) {
+	if (DPB::HostProperties->has_sf) {
 		return DPB::Heuristics::Queue::Part->new($self);
 	} else {
 		return DPB::Heuristics::Queue->new($self);

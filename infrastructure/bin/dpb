@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.91 2013/06/04 03:20:36 espie Exp $
+# $OpenBSD: dpb,v 1.92 2013/06/21 09:05:18 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -108,6 +108,7 @@ use DPB::Heuristics;
 use DPB::PkgPath;
 use DPB::Logger;
 use DPB::Affinity;
+use DPB::Config;
 use File::Path;
 use File::Basename;
 
@@ -212,194 +213,20 @@ sub interpret_paths
 sub handle_options
 {
 	my $state = shift;
-	$state->{dontclean} = {};
-	$state->{opt} = {
-		A => sub {
-			$state->{arch} = shift;
-		},
-		L => sub {
-			$state->{logdir} = shift;
-		},
-		l => sub {
-			$state->{lockdir} = shift;
-		},
-		r => sub {
-			$state->{random} = 1;
-			$state->heuristics->random;
-		},
-		P => sub {
-			push(@{$state->{paths}}, shift);
-		},
-		I => sub {
-			push(@{$state->{ipaths}}, shift);
-		},
-		C => sub {
-			push(@{$state->{cpaths}}, shift);
-		},
-		X => sub {
-			push(@{$state->{xpaths}}, shift);
-		},
-		b => sub {
-			push(@{$state->{build_files}}, shift);
-		},
-	};
-
-	$state->SUPER::handle_options('acemqrRstuUvh:S:xX:A:C:f:F:I:j:J:M:p:P:b:l:L:',
-    "[-acemrRsuUvx] [-A arch] [-C plist] [-f N] [-F N] [-I plist] [-J p] [-j N]",
-    "[-p parallel] [-P plist] [-h hosts] [-L logdir] [-l lockdir] [-b log]",
-    "[-M threshold] [-X plist] [path ...]");
-    	$state->{fullrepo} = join("/", $state->{repo}, $state->arch, "all");
-	$state->{logdir} //= $ENV{LOGDIR} // '%p/logs/%a';
-	$state->{lockdir} //= "%L/locks";
-	if (defined $state->{opt}{F}) {
-		if (defined $state->{opt}{j} || defined $state->{opt}{f}) {
-			$state->usage("Can't use -F with -f or -j");
-		}
-		$state->{fetch_only} = 1;
-		$state->{opt}{f} = $state->{opt}{F};
-		$state->{opt}{j} = 1;
-		$state->{opt}{e} = 1;
-	}
-	$state->{opt}{f} //= 2;
-	if (defined $state->opt('j')) {
-		if ($state->localarch ne $state->arch) {
-			$state->usage(
-		    "Can't use -j if -A arch is not local architecture");
-		}
-		if ($state->opt('j') !~ m/^\d+$/) {
-			$state->usage("-j takes a numerical argument");
-		}
-	}
-	if ($state->opt('f') !~ m/^\d+$/) {
-		$state->usage("-f takes a numerical argument");
-	}
-	if ($state->opt('f')) {
-		$state->{want_fetchinfo} = 1;
-	}
-	if (!$state->{subst}->empty('HISTORY_ONLY')) {
-		$state->{want_fetchinfo} = 1;
-		$state->{opt}{f} = 0;
-		$state->{opt}{j} = 1;
-		$state->{opt}{e} = 1;
-		$state->{all} = 1;
-		$state->{scan_only} = 1;
-		# XXX not really random, but no need to use dependencies
-		$state->{random} = 1;
-	}
-
-	if ($state->opt('t')) {
-		$state->{tests} = 1;
-	}
-	$state->{logdir} = $state->expand_path($state->{logdir});
-	$state->{lockdir} = $state->expand_path($state->{lockdir});
-	if ($state->opt('h')) {
-		$state->{config} = $state->expand_path($state->opt('h'));
-	}
-	if (!$state->{subst}->value("NO_BUILD_STATS")) {
-		push @{$state->{build_files}}, "%f/build-stats/%a";
-	}
-#	if (!$state->{xpaths}) {
-#		$state->{xpaths} = ["%p/infrastructure/db/precious"];
-#	}
-	for my $cat (qw(build_files paths ipaths cpaths xpaths)) {
-		next unless defined $state->{$cat};
-		for my $f (@{$state->{$cat}}) {
-			$f = $state->expand_path($f);
-		}
-	}
-	$state->{size_log} = "%f/build-stats/%a-size";
-
-	$state->{permanent_log} = $state->{build_files}[-1];
-	$state->{size_log} = $state->expand_path($state->{size_log});
+	DPB::Config->parse_command_line($state);
 	$state->parse_size_file;
 
 	$state->{logger} = DPB::Logger->new($state->logdir, $state->opt('c'));
 	DPB::Limiter->setup($state->logger);
 	$state->heuristics->set_logger($state->logger);
-	$state->{display_timeout} =
-	    $state->{subst}->value('DISPLAY_TIMEOUT') // 10;
-	$state->{build_once} = $state->{all};
-	if ($state->defines("DONT_BUILD_ONCE")) {
-		$state->{build_once} = 0;
-	}
+	
 	$state->{concurrent} = $state->{logger}->open("concurrent");
-	$state->parse_config_files;
 }
 
-sub parse_config_files
+sub SUPER_handle_options
 {
-	my $state = shift;
-
-	my $override_prop = {};
-
-	if ($state->opt('j')) {
-		$override_prop->{jobs} = $state->opt('j');
-	}
-	if ($state->opt('p')) {
-		$override_prop->{parallel} = $state->opt('p');
-	}
-	if ($state->define_present('STUCK_TIMEOUT')) {
-		$override_prop->{stuck} = 
-		    $state->{subst}->value('STUCK_TIMEOUT');
-	}
-	if ($state->define_present('FETCH_TIMEOUT')) {
-		$override_prop->{fetch_timeout} = 
-		    $state->{subst}->value('FETCH_TIMEOUT');
-	}
-	if ($state->define_present('SMALL_TIME')) {
-		$override_prop->{small} = 
-		    $state->{subst}->value('SMALL_TIME');
-	}
-	if ($state->define_present('CONNECTION_TIMEOUT')) {
-		$override_prop->{timeout} = 
-		    $state->{subst}->value('CONNECTION_TIMEOUT');
-	}
-	if ($state->define_present('WAIT_TIMEOUT')) {
-		$override_prop->{wait_timeout} = 
-		    $state->{subst}->value('WAIT_TIMEOUT');
-	}
-	if ($state->opt('J')) {
-		$override_prop->{junk} = $state->opt('J');
-	}
-	if ($state->defines("ALWAYS_CLEAN")) {
-		$override_prop->{always_clean} = 1;
-	}
-	if ($state->opt('M')) {
-		$override_prop->{mem} = $state->opt('M');
-	}
-
-	if ($state->define_present('SYSLOG')) {
-		require Sys::Syslog;
-		Sys::Syslog::openlog('dpb', "nofatal");
-		$override_prop->{syslog} = 1;
-	}
-	my $default_prop = {
-		junk => 150, 
-		parallel => '/2',
-		wait_timeout => 600,
-		small => 120,
-	};
-
-	if ($state->{config}) {
-		DPB::Core->parse_hosts_file($state->{config}, $state, 
-		    $default_prop, $override_prop);
-	}
-	$state->{default_prop} = $default_prop;
-	$state->{override_prop} = $override_prop;
-}
-
-sub start_cores
-{
-	my $state = shift;
-	if (!$state->{config}) {
-		my $prop = { %{$state->{default_prop}} };
-		while (my ($k, $v) = each %{$state->{override_prop}}) {
-			$prop->{$k} = $v;
-		}
-
-		DPB::Core::Factory->new('localhost', $prop);
-	}
-	DPB::Core::Factory->init_cores($state);
+	my ($state, @p) = @_;
+	$state->SUPER::handle_options(@p);
 }
 
 sub logger
@@ -611,6 +438,7 @@ package main;
 
 use DPB::PkgPath;
 use DPB::Core;
+use DPB::Core::Init;
 use DPB::Vars;
 use DPB::PortInfo;
 use DPB::Engine;
@@ -635,7 +463,7 @@ my $subdirlist = {};
 my $state = DPB::State->new('dpb');
 $state->handle_options;
 $state->{locker} = DPB::Locks->new($state, $state->{lockdir});
-$state->start_cores;
+DPB::Core::Init->init_cores($state);
 
 $state->{all} = 1;
 
