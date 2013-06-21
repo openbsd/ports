@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2013/06/06 12:47:06 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.83 2013/06/21 11:12:51 dcoppa Exp $
 
 VMEM_WARNING =	Yes
 DPB_PROPERTIES =parallel
@@ -11,7 +11,7 @@ CFLAGS +=	-O1 -fno-stack-protector
 HOMEPAGE =	http://www.cmake.org/
 CATEGORIES =	devel
 COMMENT =	portable build system
-DISTNAME =	cmake-2.8.11
+DISTNAME =	cmake-2.8.11.1
 MASTER_SITES =	${HOMEPAGE}files/v2.8/
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
