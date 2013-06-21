@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1232 2013/06/15 19:45:11 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1233 2013/06/21 10:45:12 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -141,7 +141,7 @@ _ALL_VARIABLES += HOMEPAGE DISTNAME \
 _ALL_VARIABLES_PER_ARCH += BROKEN
 # and stuff needing to be MULTI_PACKAGE'd
 _ALL_VARIABLES_INDEXED += COMMENT PKGNAME \
-	ONLY_FOR_ARCHS NOT_FOR_ARCHS PKGSPEC \
+	ONLY_FOR_ARCHS NOT_FOR_ARCHS PKGSPEC PREFIX \
 	PERMIT_PACKAGE_FTP PERMIT_PACKAGE_CDROM WANTLIB CATEGORIES DESCR \
 	EPOCH REVISION STATIC_PLIST
 _DPB_MULTI = ${MULTI_PACKAGES}
