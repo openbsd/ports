@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.80 2013/06/04 08:59:50 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.81 2013/06/21 10:10:58 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: June 4 2013 $
+.Dd $Mdocdate: June 21 2013 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -206,6 +206,20 @@ Only run
 .Nm
 to figure out old distfiles and update
 .Pa ${FULLDISTDIR}/history .
+.It Ar MIRROR
+Applicable to fetch modes.
+If 0, will only fetch normal
+.Ev DISTFILES
+.Po
+default for
+.Nm Fl f 
+.Pc .
+If 1, will also fetch extra
+.Ev SUPDISTFILES 
+.Po
+default for
+.Nm Fl F
+.Pc .
 .It Ar NO_CURSOR
 Make the terminal cursor invisible if possible.
 Avoids flickering on slow graphics cards.
