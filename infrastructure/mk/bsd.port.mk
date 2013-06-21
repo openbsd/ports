@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1234 2013/06/21 12:27:32 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1235 2013/06/21 12:28:54 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -156,6 +156,7 @@ REFETCH ?= false
 PORTSDIR ?= /usr/ports
 LOCALBASE ?= /usr/local
 X11BASE ?= /usr/X11R6
+VARBASE ?= /var
 DISTDIR ?= ${PORTSDIR}/distfiles
 BULK_COOKIES_DIR ?= ${PORTSDIR}/bulk/${MACHINE_ARCH}
 UPDATE_COOKIES_DIR ?= ${PORTSDIR}/update/${MACHINE_ARCH}
@@ -352,7 +353,7 @@ BASESYSCONFDIR ?= /etc
 SYSCONFDIR ?= ${BASESYSCONFDIR}
 
 # User choice, consider read-only from a given port
-BASELOCALSTATEDIR ?= /var
+BASELOCALSTATEDIR ?= ${VARBASE}
 # Defaut localstatedir for gnu ports
 LOCALSTATEDIR ?= ${BASELOCALSTATEDIR}
 
