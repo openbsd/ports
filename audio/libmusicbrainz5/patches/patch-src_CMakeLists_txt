@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1 2013/06/21 12:04:22 dcoppa Exp $
+
+Useless, and breaks Ninja builds
+
+--- src/CMakeLists.txt.orig	Fri Jun 21 10:22:31 2013
++++ src/CMakeLists.txt	Fri Jun 21 10:22:43 2013
+@@ -14,7 +14,7 @@ ADD_CUSTOM_COMMAND(
+ 	OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/mb5_c.cc ${CMAKE_CURRENT_BINARY_DIR}/mb5_c.h ${CMAKE_CURRENT_BINARY_DIR}/../include/musicbrainz5/mb5_c.h
+ 	COMMAND make-c-interface ${CMAKE_CURRENT_SOURCE_DIR} cinterface.xml ${CMAKE_CURRENT_BINARY_DIR} mb5_c.cc mb5_c.h
+ 	COMMAND ${CMAKE_COMMAND} -E copy_if_different 	${CMAKE_CURRENT_BINARY_DIR}/mb5_c.h ${CMAKE_CURRENT_BINARY_DIR}/../include/musicbrainz5
+-	DEPENDS make-c-interface cinterface.xml *.inc
++	DEPENDS make-c-interface cinterface.xml
+ )
+ 
+ ADD_CUSTOM_TARGET(src_gen DEPENDS mb5_c.h)

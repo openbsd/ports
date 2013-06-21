@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/09/29 12:11:10 ajacoutot Exp $
-@lib lib/libmusicbrainz5.so.${LIBmusicbrainz5_VERSION}

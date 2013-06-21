@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/29 12:11:10 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2013/06/21 12:04:22 dcoppa Exp $
 include/musicbrainz5/
 include/musicbrainz5/Alias.h
 include/musicbrainz5/AliasList.h
@@ -69,5 +68,6 @@ include/musicbrainz5/WorkList.h
 include/musicbrainz5/defines.h
 include/musicbrainz5/mb5_c.h
 include/musicbrainz5/xmlParser.h
+@lib lib/libmusicbrainz5.so.${LIBmusicbrainz5_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/libmusicbrainz5.pc

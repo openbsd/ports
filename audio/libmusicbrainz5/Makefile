@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/10 22:55:03 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/06/21 12:04:21 dcoppa Exp $
 
 COMMENT=		library for audio metadata lookup (v5)
 
 V=			5.0.1
 DISTNAME=		libmusicbrainz-${V}
 PKGNAME=		libmusicbrainz5-${V}
+REVISION=		0
 
 SHARED_LIBS +=  musicbrainz5              0.0 # 0.0
 
