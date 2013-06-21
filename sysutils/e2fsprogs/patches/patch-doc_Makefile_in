@@ -1,40 +1,24 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.2 2009/03/15 19:59:31 landry Exp $
---- doc/Makefile.in.orig	Mon May 26 01:52:27 2008
-+++ doc/Makefile.in	Sun Feb 22 12:08:54 2009
-@@ -16,29 +16,23 @@ DVIPS=dvips -o "$@"
- INFO=@MAKEINFO@
- HTML=texi2html
+$OpenBSD: patch-doc_Makefile_in,v 1.3 2013/06/21 22:35:51 sthen Exp $
+--- doc/Makefile.in.orig	Tue Jan  8 16:00:07 2013
++++ doc/Makefile.in	Wed Jun 19 14:25:06 2013
+@@ -17,9 +17,9 @@ INFO=@MAKEINFO@
+ HTML=texi2html -split_chapter
+ PS2PDF=ps2pdf
  
 -all:: libext2fs.info libext2fs.dvi
 +all:: libext2fs.info
  
 -install-doc-libs: libext2fs.info libext2fs.dvi
--	@$(RM) -rf $(DESTDIR)$(infodir)/libext2fs.info*
--	@echo "	MKINSTALLDIRS $(infodir)"
--	@$(MKINSTALLDIRS) $(DESTDIR)$(infodir)
--	-@for i in libext2fs.info* ; do \
--		echo "	INSTALL_DATA $(infodir)/$$i" ; \
 +install-doc-libs: libext2fs.info
-+	$(RM) -rf $(DESTDIR)$(infodir)/libext2fs.info*
-+	$(MKINSTALLDIRS) $(DESTDIR)$(infodir)
-+	for i in libext2fs.info* ; do \
+ 	$(Q) $(RM) -rf $(DESTDIR)$(infodir)/libext2fs.info*
+ 	$(E) "	MKINSTALLDIRS $(infodir)"
+ 	$(Q) $(MKINSTALLDIRS) $(DESTDIR)$(infodir)
+@@ -27,8 +27,6 @@ install-doc-libs: libext2fs.info libext2fs.dvi
+ 		echo "	INSTALL_DATA $(infodir)/$$i" ; \
  		$(INSTALL_DATA) $$i $(DESTDIR)$(infodir)/$$i ; \
  	done
--	@echo "	GZIP $(infodir)/libext2fs.info*"
--	-@gzip -9 $(DESTDIR)$(infodir)/libext2fs.info*
+-	$(E) "	GZIP $(infodir)/libext2fs.info*"
+-	-$(Q) gzip -9 $(DESTDIR)$(infodir)/libext2fs.info*
  
  uninstall-doc-libs:
  	$(RM) -rf $(DESTDIR)$(infodir)/libext2fs.info*
- 
- libext2fs.info: $(srcdir)/libext2fs.texinfo
--	@echo "	MAKEINFO $@"
--	-@$(INFO) $(srcdir)/libext2fs.texinfo
-+	$(INFO) $(srcdir)/libext2fs.texinfo
- 
- libext2fs.dvi: $(srcdir)/libext2fs.texinfo
--	@echo "	TEXI2DVI $@"
--	-@$(DVI) $(srcdir)/libext2fs.texinfo
-+	$(DVI) $(srcdir)/libext2fs.texinfo
- 
- .PHONY: distclean
- distclean:: clean

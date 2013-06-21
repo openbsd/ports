@@ -1,9 +1,0 @@
-$OpenBSD: patch-lib_uuid_uuid_pc_in,v 1.2 2010/04/03 11:53:58 kili Exp $
---- lib/uuid/uuid.pc.in.orig	Tue Oct  7 16:22:39 2008
-+++ lib/uuid/uuid.pc.in	Fri Apr  2 22:50:48 2010
-@@ -8,4 +8,4 @@ Description: Universally unique id library
- Version: @E2FSPROGS_VERSION@
- Requires: 
- Cflags: -I${includedir}/uuid
--Libs: -L${libdir} -luuid
-+Libs: -L${libdir} -le2fs-uuid

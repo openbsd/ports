@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.10 2011/07/31 14:48:19 kili Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/06/21 22:35:51 sthen Exp $
 @conflict e2fs-uuid-*
 @conflict uuid-*
-@conflict ossp-uuid-<1.6.2p1
+@conflict ossp-uuid-<1.6.2p2
 @pkgpath sysutils/e2fsprogs,-main
 @pkgpath sysutils/e2fsprogs,-uuid
 @bin bin/chattr
-@comment bin/compile_et
 @bin bin/lsattr
 bin/mk_cmds
 @bin bin/uuidgen
@@ -14,8 +13,6 @@ include/blkid/blkid.h
 include/blkid/blkid_types.h
 include/e2p/
 include/e2p/e2p.h
-include/et/
-include/et/com_err.h
 include/ext2fs/
 include/ext2fs/bitops.h
 include/ext2fs/ext2_err.h
@@ -25,36 +22,41 @@ include/ext2fs/ext2_io.h
 include/ext2fs/ext2_types.h
 include/ext2fs/ext2fs.h
 include/ext2fs/ext3_extents.h
+include/ext2fs/qcow2.h
 include/ext2fs/tdb.h
+include/quota/
+include/quota/mkquota.h
 include/ss/
 include/ss/ss.h
 include/ss/ss_err.h
 include/uuid/
 include/uuid/uuid.h
-%%SHARED%%
 @info info/libext2fs.info
 @bin lib/e2initrd_helper
 lib/libblkid.a
-lib/libe2fs-uuid.a
+@lib lib/libblkid.so.${LIBblkid_VERSION}
 lib/libe2p.a
+@lib lib/libe2p.so.${LIBe2p_VERSION}
 lib/libext2fs.a
-lib/libext2fs_com_err.a
+@lib lib/libext2fs.so.${LIBext2fs_VERSION}
+lib/libquota.a
 lib/libss.a
+@lib lib/libss.so.${LIBss_VERSION}
+lib/libuuid.a
+@lib lib/libuuid.so.${LIBuuid_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/blkid.pc
-lib/pkgconfig/com_err.pc
 lib/pkgconfig/e2p.pc
 lib/pkgconfig/ext2fs.pc
+lib/pkgconfig/quota.pc
 lib/pkgconfig/ss.pc
 lib/pkgconfig/uuid.pc
 @man man/man1/chattr.1
-@comment man/man1/compile_et.1
 @man man/man1/lsattr.1
 @man man/man1/mk_cmds.1
 @man man/man1/uuidgen.1
-@man man/man3/com_err.3
-@man man/man3/e2fs-uuid.3
 @man man/man3/libblkid.3
+@man man/man3/uuid.3
 @man man/man3/uuid_clear.3
 @man man/man3/uuid_compare.3
 @man man/man3/uuid_copy.3
@@ -71,6 +73,7 @@ lib/pkgconfig/uuid.pc
 @man man/man8/blkid.8
 @man man/man8/debugfs.8
 @man man/man8/dumpe2fs.8
+@man man/man8/e2freefrag.8
 @man man/man8/e2fsck.8
 @man man/man8/e2image.8
 @man man/man8/e2label.8
@@ -96,6 +99,7 @@ lib/pkgconfig/uuid.pc
 @bin sbin/blkid
 @bin sbin/debugfs
 @bin sbin/dumpe2fs
+@bin sbin/e2freefrag
 @bin sbin/e2fsck
 @bin sbin/e2image
 @bin sbin/e2label
@@ -135,6 +139,7 @@ share/locale/pl/LC_MESSAGES/e2fsprogs.mo
 share/locale/sv/LC_MESSAGES/e2fsprogs.mo
 share/locale/tr/LC_MESSAGES/e2fsprogs.mo
 share/locale/vi/LC_MESSAGES/e2fsprogs.mo
+share/locale/zh_CN/LC_MESSAGES/e2fsprogs.mo
 share/ss/
 share/ss/ct_c.awk
 share/ss/ct_c.sed
