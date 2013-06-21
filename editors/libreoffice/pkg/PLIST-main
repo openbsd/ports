@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.28 2013/05/31 14:50:24 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.29 2013/06/21 06:07:58 robert Exp $
 @conflict openoffice-*
 @pkgpath editors/openoffice3,-main
 %%SHARED%%
@@ -2245,26 +2245,8 @@ lib/libreoffice/share/extensions/presentation-minimizer/bitmaps/minimizepresi_80
 lib/libreoffice/share/extensions/presentation-minimizer/bitmaps/opt_16.png
 lib/libreoffice/share/extensions/presentation-minimizer/bitmaps/opt_26.png
 lib/libreoffice/share/extensions/presentation-minimizer/components.rdb
-lib/libreoffice/share/extensions/presentation-minimizer/description-ar.txt
-lib/libreoffice/share/extensions/presentation-minimizer/description-bg.txt
-lib/libreoffice/share/extensions/presentation-minimizer/description-ca.txt
-lib/libreoffice/share/extensions/presentation-minimizer/description-de.txt
 lib/libreoffice/share/extensions/presentation-minimizer/description-en-US.txt
-lib/libreoffice/share/extensions/presentation-minimizer/description-es.txt
-lib/libreoffice/share/extensions/presentation-minimizer/description-fa.txt
-lib/libreoffice/share/extensions/presentation-minimizer/description-fi.txt
-lib/libreoffice/share/extensions/presentation-minimizer/description-fr.txt
-lib/libreoffice/share/extensions/presentation-minimizer/description-hu.txt
-lib/libreoffice/share/extensions/presentation-minimizer/description-it.txt
-lib/libreoffice/share/extensions/presentation-minimizer/description-lt.txt
-lib/libreoffice/share/extensions/presentation-minimizer/description-lv.txt
-lib/libreoffice/share/extensions/presentation-minimizer/description-nl.txt
-lib/libreoffice/share/extensions/presentation-minimizer/description-pl.txt
-lib/libreoffice/share/extensions/presentation-minimizer/description-pt-BR.txt
 lib/libreoffice/share/extensions/presentation-minimizer/description-qtz.txt
-lib/libreoffice/share/extensions/presentation-minimizer/description-ru.txt
-lib/libreoffice/share/extensions/presentation-minimizer/description-sl.txt
-lib/libreoffice/share/extensions/presentation-minimizer/description-sv.txt
 lib/libreoffice/share/extensions/presentation-minimizer/description.xml
 lib/libreoffice/share/extensions/presentation-minimizer/registration/
 lib/libreoffice/share/extensions/presentation-minimizer/registration/LICENSE

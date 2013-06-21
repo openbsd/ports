@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-ru,v 1.11 2013/05/31 14:50:23 robert Exp $
+@comment $OpenBSD: PLIST-i18n-ru,v 1.12 2013/06/21 06:07:58 robert Exp $
 @conflict openoffice-i18n-fi-*
 @pkgpath editors/openoffice3,-i18n-fi
 !%%no_java%%
@@ -179,6 +179,7 @@ lib/libreoffice/share/config/soffice.cfg/svt/ui/res/ru/placeedit
 lib/libreoffice/share/config/soffice.cfg/svt/ui/res/ru/restartdialog
 lib/libreoffice/share/config/soffice.cfg/svx/ui/res/ru/compressgraphicdialog
 lib/libreoffice/share/config/soffice.cfg/vcl/ui/res/ru/printdialog
+lib/libreoffice/share/extensions/presentation-minimizer/description-ru.txt
 lib/libreoffice/share/registry/Langpack-ru.xcd
 lib/libreoffice/share/registry/res/fcfg_langpack_ru.xcd
 lib/libreoffice/share/registry/res/registry_ru.xcd

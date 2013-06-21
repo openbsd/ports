@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2013/06/07 09:07:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.90 2013/06/21 06:07:58 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -7,7 +7,7 @@ COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
 BV=		4.0
-VERSION=	4.0.3.3
+VERSION=	4.0.4.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -83,16 +83,16 @@ DISTFILES+=	${EDISTFILES} \
 		dc3d21a3921931096d6e80f6701f6763-libexttextcat-3.4.0.tar.bz2:0 \
 		d8bd5eed178db6e2b18eeed243f85aa8-flute-1.1.6.zip:0 \
 		e7a384790b13c29113e22e596ade9687-LinLibertineG-20120116.zip:0 \
-		e7f84e3199dfee9122949448cab3823f-libwpd-0.9.6.tar.bz2:0 \
+		972afb8fdf02d9e7517e258b7fa7f0eb-libwpd-0.9.8.tar.bz2:0 \
 		ea570af93c284aa9e5621cd563f54f4d-bsh-2.0b1-src.tar.gz:0 \
 		ea91f2fb4212a21d708aced277e6e85a-vigra1.4.0.tar.gz:0 \
 		eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:0 \
 		fa9aa839145cdf860bf596532bb8af97-cppunit-1.13.1.tar.gz:0 \
 		f872f4ac066433d8ff92f5e316b36ff9-dejavu-fonts-ttf-2.33.zip:0 \
 		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:0 \
-		libcdr-0.0.12.tar.bz2:0 \
-		libmspub-0.0.5.tar.bz2:0 \
-		libvisio-0.0.26.tar.bz2:0
+		libcdr-0.0.14.tar.bz2:0 \
+		libmspub-0.0.6.tar.bz2:0 \
+		libvisio-0.0.28.tar.bz2:0
 
 DIST_SUBDIR=	libreoffice
 
@@ -285,6 +285,7 @@ CONFIGURE_ARGS+=\
 		--with-vendor="The OpenBSD project" \
 		--without-junit \
 		--without-krb5 \
+		--without-gssapi \
 		--without-system-apache-commons \
 		--without-system-beanshell \
 		--without-system-cppunit \

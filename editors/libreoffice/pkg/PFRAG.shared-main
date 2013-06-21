@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.9 2013/05/31 14:50:20 robert Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.10 2013/06/21 06:07:58 robert Exp $
 lib/libreoffice/program/PresenterScreen.uno.so
 lib/libreoffice/program/basprov.uno.so
 lib/libreoffice/program/cairocanvas.uno.so
@@ -15,7 +15,6 @@ lib/libreoffice/program/fsstorage.uno.so
 lib/libreoffice/program/hatchwindowfactory.uno.so
 lib/libreoffice/program/i18npool.uno.so
 lib/libreoffice/program/i18nsearch.uno.so
-lib/libreoffice/program/kdebe1.uno.so
 lib/libreoffice/program/ldapbe2.uno.so
 lib/libreoffice/program/libabplo.so
 lib/libreoffice/program/libacclo.so
@@ -193,7 +192,6 @@ lib/libreoffice/program/libvbahelperlo.so
 lib/libreoffice/program/libvcllo.so
 lib/libreoffice/program/libvclplug_genlo.so
 lib/libreoffice/program/libvclplug_gtklo.so
-lib/libreoffice/program/libvclplug_kdelo.so
 lib/libreoffice/program/libvclplug_svplo.so
 lib/libreoffice/program/libwpftdrawlo.so
 lib/libreoffice/program/libwpftwriterlo.so
