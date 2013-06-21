@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.46 2013/06/10 14:59:12 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.47 2013/06/21 10:05:32 giovanni Exp $
 @group daemon
 phpMyAdmin/
 phpMyAdmin/ChangeLog
@@ -579,7 +579,6 @@ phpMyAdmin/libraries/schema/Export_Relation_Schema.class.php
 phpMyAdmin/libraries/schema/Pdf_Relation_Schema.class.php
 phpMyAdmin/libraries/schema/Svg_Relation_Schema.class.php
 phpMyAdmin/libraries/schema/User_Schema.class.php
-phpMyAdmin/libraries/schema/Visio_Relation_Schema.class.php
 phpMyAdmin/libraries/select_lang.lib.php
 phpMyAdmin/libraries/select_server.lib.php
 phpMyAdmin/libraries/server_common.inc.php
