@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1233 2013/06/21 10:45:12 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1234 2013/06/21 12:27:32 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1501,7 +1501,7 @@ MODSIMPLE_configure = \
 
 VMEM_WARNING ?= No
 
-_FAKE_SETUP = TRUEPREFIX=${PREFIX} PREFIX=${WRKINST}${PREFIX} \
+FAKE_SETUP = TRUEPREFIX=${PREFIX} PREFIX=${WRKINST}${PREFIX} \
 	${DESTDIRNAME}=${WRKINST}
 
 _CLEANDEPENDS ?= Yes
@@ -2704,26 +2704,26 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 .  endif
 .endfor
 .if target(pre-fake)
-	@${_SUDOMAKESYS} pre-fake ${_FAKE_SETUP}
+	@${_SUDOMAKESYS} pre-fake ${FAKE_SETUP}
 .endif
 	@${SUDO} ${_MAKE_COOKIE} ${_INSTALL_PRE_COOKIE}
 .if target(pre-install)
-	@${_SUDOMAKESYS} pre-install ${_FAKE_SETUP}
+	@${_SUDOMAKESYS} pre-install ${FAKE_SETUP}
 .endif
 .if target(do-install)
-	@${_SUDOMAKESYS} do-install ${_FAKE_SETUP}
+	@${_SUDOMAKESYS} do-install ${FAKE_SETUP}
 .else
 # What FAKE normally does:
 	@cd ${WRKBUILD} && exec ${SUDO} ${_SYSTRACE_CMD} \
-		${SETENV} ${MAKE_ENV} ${_FAKE_SETUP} \
+		${SETENV} ${MAKE_ENV} ${FAKE_SETUP} \
 		${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
 # End of FAKE.
 .endif
 .if target(post-install)
-	@${_SUDOMAKESYS} post-install ${_FAKE_SETUP}
+	@${_SUDOMAKESYS} post-install ${FAKE_SETUP}
 .endif
 .if target(_hook-post-install)
-	@${_SUDOMAKESYS} _hook-post-install ${_FAKE_SETUP}
+	@${_SUDOMAKESYS} _hook-post-install ${FAKE_SETUP}
 .endif
 .if ${MULTI_PACKAGES} == "-"
 	@if test -e ${PKGDIR}/README; then \
