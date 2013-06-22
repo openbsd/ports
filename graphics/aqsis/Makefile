@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:10:51 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/06/22 14:53:09 dcoppa Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -8,6 +8,7 @@ COMMENT=	photorealistic 3D rendering solution
 
 V=		1.8.2
 DISTNAME=	aqsis-${V}
+REVISION=	0
 CATEGORIES=	graphics
 
 SO_VERSION=	1.0 # 1.6
@@ -27,7 +28,7 @@ WANTLIB += GL Half Iex IlmImf IlmThread Imath boost_filesystem-mt
 WANTLIB += boost_iostreams-mt boost_program_options-mt boost_regex-mt
 WANTLIB += boost_system-mt boost_thread-mt boost_wave-mt c
 WANTLIB += lib/qt4/QtCore lib/qt4/QtGui lib/qt4/QtOpenGL
-WANTLIB += m pthread stdc++ tiff tiffxx z
+WANTLIB += m png pthread stdc++ tiff tiffxx z
 
 MODULES=	devel/cmake
 
@@ -54,11 +55,6 @@ CONFIGURE_ARGS=	-DAQSIS_BOOST_FILESYSTEM_LIBRARY_NAME=boost_filesystem-mt \
 		-DAQSIS_BOOST_WAVE_LIBRARY_NAME=boost_wave-mt \
 		-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DSYSCONFDIR="${SYSCONFDIR}"
-
-pre-build:
-.for i in build.make link.txt relink.txt
-	find ${WRKBUILD} -name ${i} -exec perl -pi -e 's,-ldl,,g' {} \;
-.endfor
 
 pre-configure:
 	perl -pi -e 's,!!LIBaqsis_core_VERSION_R!!,${LIBaqsis_core_VERSION:R},;' \
