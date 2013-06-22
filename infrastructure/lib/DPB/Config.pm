@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.2 2013/06/21 23:13:37 espie Exp $
+# $OpenBSD: Config.pm,v 1.3 2013/06/22 09:16:36 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -124,7 +124,7 @@ sub parse_command_line
 		$state->{logdir} = $state->{flogdir};
 	}
 	if ($state->{flockdir}) {
-		$state->{logdir} = $state->{flockdir};
+		$state->{lockdir} = $state->{flockdir};
 	}
 	if ($state->{opt}{t}) {
 		$state->{tests} = 1;
