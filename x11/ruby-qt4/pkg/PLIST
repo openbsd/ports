@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/15 16:27:44 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/06/22 14:51:21 dcoppa Exp $
 bin/rbqt4api
 @bin bin/rbrcc
 @bin bin/rbuic4
@@ -38,38 +38,22 @@ include/smokegen/options.h
 include/smokegen/type.h
 include/smokegen/type_compiler.h
 include/smokeqt4.h
-lib/libcppparser.so
-@comment lib/libqtruby4shared.so.2
+@lib lib/libcppparser.so.${LIBcppparser_VERSION}
 @lib lib/libqtruby4shared.so.${LIBqtruby4shared_VERSION}
-@comment lib/libsmokebase.so.3
 @lib lib/libsmokebase.so.${LIBsmokebase_VERSION}
-@comment lib/libsmokeqtcore.so.3
 @lib lib/libsmokeqtcore.so.${LIBsmokeqtcore_VERSION}
-@comment lib/libsmokeqtdbus.so.3
 @lib lib/libsmokeqtdbus.so.${LIBsmokeqtdbus_VERSION}
-@comment lib/libsmokeqtgui.so.3
 @lib lib/libsmokeqtgui.so.${LIBsmokeqtgui_VERSION}
-@comment lib/libsmokeqtmultimedia.so.3
 @lib lib/libsmokeqtmultimedia.so.${LIBsmokeqtmultimedia_VERSION}
-@comment lib/libsmokeqtnetwork.so.3
 @lib lib/libsmokeqtnetwork.so.${LIBsmokeqtnetwork_VERSION}
-@comment lib/libsmokeqtopengl.so.3
 @lib lib/libsmokeqtopengl.so.${LIBsmokeqtopengl_VERSION}
-@comment lib/libsmokeqtscript.so.3
 @lib lib/libsmokeqtscript.so.${LIBsmokeqtscript_VERSION}
-@comment lib/libsmokeqtsql.so.3
 @lib lib/libsmokeqtsql.so.${LIBsmokeqtsql_VERSION}
-@comment lib/libsmokeqtsvg.so.3
 @lib lib/libsmokeqtsvg.so.${LIBsmokeqtsvg_VERSION}
-@comment lib/libsmokeqttest.so.3
 @lib lib/libsmokeqttest.so.${LIBsmokeqttest_VERSION}
-@comment lib/libsmokeqtuitools.so.3
 @lib lib/libsmokeqtuitools.so.${LIBsmokeqtuitools_VERSION}
-@comment lib/libsmokeqtwebkit.so.3
 @lib lib/libsmokeqtwebkit.so.${LIBsmokeqtwebkit_VERSION}
-@comment lib/libsmokeqtxml.so.3
 @lib lib/libsmokeqtxml.so.${LIBsmokeqtxml_VERSION}
-@comment lib/libsmokeqtxmlpatterns.so.3
 @lib lib/libsmokeqtxmlpatterns.so.${LIBsmokeqtxmlpatterns_VERSION}
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/Qt/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/Qt/active_item_model.rb

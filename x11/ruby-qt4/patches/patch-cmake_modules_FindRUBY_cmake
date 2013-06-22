@@ -1,4 +1,7 @@
-$OpenBSD: patch-cmake_modules_FindRUBY_cmake,v 1.1.1.1 2011/11/15 16:27:44 jeremy Exp $
+$OpenBSD: patch-cmake_modules_FindRUBY_cmake,v 1.2 2013/06/22 14:51:21 dcoppa Exp $
+
+Fix ruby Config/RbConfig deprecation warnings
+
 --- cmake/modules/FindRUBY.cmake.orig	Wed Jul 28 18:34:28 2010
 +++ cmake/modules/FindRUBY.cmake	Mon Nov 14 15:49:10 2011
 @@ -25,25 +25,25 @@ endif (RUBY_LIBRARY AND RUBY_INCLUDE_PATH)		
@@ -39,7 +42,7 @@ $OpenBSD: patch-cmake_modules_FindRUBY_cmake,v 1.1.1.1 2011/11/15 16:27:44 jerem
  	FIND_PATH(RUBY_INCLUDE_PATH 
    		NAMES ruby.h
 -  		PATHS ${RUBY_ARCH_DIR} /usr/include/ruby-${RUBY_VERSION}
-+  		PATHS ${RUBY_ARCH_DIR} /usr/local/include/ruby-${RUBY_VERSION}
++  		PATHS ${RUBY_ARCH_DIR} ${LOCALBASE}/include/ruby-${RUBY_VERSION}
    	)
  
  	FIND_LIBRARY(RUBY_LIBRARY
