@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST-bn-BD,v 1.1 2010/11/12 21:41:35 martynas Exp $
-share/mozilla-dicts/
-share/mozilla-dicts/bn-BD.aff
-share/mozilla-dicts/bn-BD.dic
