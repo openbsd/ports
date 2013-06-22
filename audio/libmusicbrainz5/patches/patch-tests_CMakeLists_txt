@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_CMakeLists_txt,v 1.1 2013/06/22 13:43:46 dcoppa Exp $
+
+Unbreak SEPARATE_BUILD
+
+--- tests/CMakeLists.txt.orig	Fri Jun 21 16:24:01 2013
++++ tests/CMakeLists.txt	Fri Jun 21 16:24:22 2013
+@@ -1,4 +1,4 @@
+-INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/../include)
++INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/../include ${CMAKE_CURRENT_BINARY_DIR}/../include)
+ LINK_LIBRARIES(musicbrainz5 ${NEON_LIBRARIES})
+ ADD_EXECUTABLE(mbtest mbtest.cc)
+ ADD_EXECUTABLE(ctest ctest.c)

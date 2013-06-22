@@ -1,15 +1,44 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.1 2013/06/21 12:04:22 dcoppa Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.2 2013/06/22 13:43:46 dcoppa Exp $
 
-Useless, and breaks Ninja builds
+Unbreak SEPARATE_BUILD
+Unbreak with Ninja
 
---- src/CMakeLists.txt.orig	Fri Jun 21 10:22:31 2013
-+++ src/CMakeLists.txt	Fri Jun 21 10:22:43 2013
-@@ -14,7 +14,7 @@ ADD_CUSTOM_COMMAND(
+--- src/CMakeLists.txt.orig	Wed May 16 21:48:34 2012
++++ src/CMakeLists.txt	Sat Jun 22 15:10:16 2013
+@@ -1,5 +1,5 @@
+ SET(CMAKE_INCLUDE_CURRENT_DIR ON)
+-INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/.. ${CMAKE_CURRENT_SOURCE_DIR}/../include ${NEON_INCLUDE_DIR})
++INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/.. ${CMAKE_CURRENT_SOURCE_DIR}/../include ${CMAKE_CURRENT_BINARY_DIR}/../include ${NEON_INCLUDE_DIR})
+ 
+ SET(_sources Alias.cc Annotation.cc Artist.cc ArtistCredit.cc Attribute.cc CDStub.cc Collection.cc
+ 	Disc.cc Entity.cc FreeDBDisc.cc HTTPFetch.cc ISRC.cc Label.cc LabelInfo.cc Lifespan.cc List.cc
+@@ -8,13 +8,28 @@ SET(_sources Alias.cc Annotation.cc Artist.cc ArtistCr
+ 	TextRepresentation.cc Track.cc UserRating.cc UserTag.cc Work.cc xmlParser.cpp
+ 	RelationListList.cc ISWCList.cc ISWC.cc SecondaryType.cc SecondaryTypeList.cc IPI.cc)
+ 
++FILE(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/include/musicbrainz5")
++
++FILE(GLOB inc_src_files RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}/*.inc")
++
++foreach(inc_file ${inc_src_files})
++	ADD_CUSTOM_COMMAND(
++		OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/${inc_file}
++		COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_CURRENT_SOURCE_DIR}/${inc_file} ${CMAKE_CURRENT_BINARY_DIR}/${inc_file}
++		DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/${inc_file}
++	)
++	list(APPEND inc_binary_files ${CMAKE_CURRENT_BINARY_DIR}/${inc_file})
++endforeach()
++
++ADD_CUSTOM_TARGET(Copy_inc_Files DEPENDS ${inc_binary_files})
++
+ ADD_EXECUTABLE(make-c-interface make-c-interface.cc xmlParser.cpp)
+ 
+ ADD_CUSTOM_COMMAND(
  	OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/mb5_c.cc ${CMAKE_CURRENT_BINARY_DIR}/mb5_c.h ${CMAKE_CURRENT_BINARY_DIR}/../include/musicbrainz5/mb5_c.h
  	COMMAND make-c-interface ${CMAKE_CURRENT_SOURCE_DIR} cinterface.xml ${CMAKE_CURRENT_BINARY_DIR} mb5_c.cc mb5_c.h
  	COMMAND ${CMAKE_COMMAND} -E copy_if_different 	${CMAKE_CURRENT_BINARY_DIR}/mb5_c.h ${CMAKE_CURRENT_BINARY_DIR}/../include/musicbrainz5
 -	DEPENDS make-c-interface cinterface.xml *.inc
-+	DEPENDS make-c-interface cinterface.xml
++	DEPENDS Copy_inc_Files make-c-interface cinterface.xml
  )
  
  ADD_CUSTOM_TARGET(src_gen DEPENDS mb5_c.h)

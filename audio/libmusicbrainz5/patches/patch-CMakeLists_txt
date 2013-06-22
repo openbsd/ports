@@ -1,0 +1,15 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2013/06/22 13:43:46 dcoppa Exp $
+
+Unbreak SEPARATE_BUILD
+
+--- CMakeLists.txt.orig	Fri Jun 21 16:40:13 2013
++++ CMakeLists.txt	Fri Jun 21 16:40:57 2013
+@@ -32,7 +32,7 @@ CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.cm
+ CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/config.h.cmake ${CMAKE_CURRENT_SOURCE_DIR}/config.h)
+ 
+ FILE(GLOB headers ${CMAKE_CURRENT_SOURCE_DIR}/include/musicbrainz5/*.h)
+-INSTALL(FILES ${headers} include/musicbrainz5/mb5_c.h DESTINATION ${INCLUDE_INSTALL_DIR}/musicbrainz5)
++INSTALL(FILES ${headers} ${CMAKE_BINARY_DIR}/include/musicbrainz5/mb5_c.h DESTINATION ${INCLUDE_INSTALL_DIR}/musicbrainz5)
+ INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/libmusicbrainz5.pc DESTINATION ${LIB_INSTALL_DIR}/pkgconfig)
+ 
+ ADD_SUBDIRECTORY(src)

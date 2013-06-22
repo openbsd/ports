@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/06/21 12:04:21 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.4 2013/06/22 13:43:46 dcoppa Exp $
 
 COMMENT=		library for audio metadata lookup (v5)
 
@@ -23,7 +23,6 @@ MASTER_SITES=		https://github.com/downloads/metabrainz/libmusicbrainz/
 MODULES=		devel/cmake
 
 NO_TEST=		Yes
-SEPARATE_BUILD=		No
 
 LIB_DEPENDS=		net/neon
 
