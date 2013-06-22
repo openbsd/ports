@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2013/06/21 15:13:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2013/06/22 03:33:39 bcallah Exp $
 
 COMMENT =	WYSIWYG music notation software (MuseScore)
 DISTNAME =	mscore-1.3
-REVISION =	1
+REVISION =	2
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio x11
 SUBST_VARS +=	DISTNAME
@@ -16,11 +16,14 @@ HOMEPAGE =	http://musescore.org/
 # GPLv2
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB += c m portaudio pthread sndfile sndio z
-WANTLIB += QtCore QtDesigner QtGui QtNetwork QtScript
-WANTLIB += QtScriptTools QtSvg QtWebKit QtXml QtXmlPatterns
+WANTLIB += c m portaudio pthread sndfile z
+WANTLIB += lib/qt4/QtDesigner lib/qt4/QtGui lib/qt4/QtNetwork
+WANTLIB += lib/qt4/QtScript lib/qt4/QtScriptTools lib/qt4/QtSvg
+WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml lib/qt4/QtXmlPatterns
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mscore/}
+
+MODULES =	x11/qt4
 
 # ICE building moc_qtsingleapplication.cxx with base gcc 4.2.1 on amd64.
 # possible problems with ppc. unsure about other arch.
@@ -30,8 +33,7 @@ MODGCC4_LANGS +=	c++
 
 BUILD_DEPENDS =	devel/cmake
 
-LIB_DEPENDS =	x11/qt4 \
-		audio/portaudio-svn \
+LIB_DEPENDS =	audio/portaudio-svn \
 		audio/libsndfile>=1.0.25p0
 
 RUN_DEPENDS =	devel/desktop-file-utils
