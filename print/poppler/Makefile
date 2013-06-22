@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.75 2013/06/04 18:41:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.76 2013/06/22 20:16:46 kili Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
 COMMENT-qt4=	qt4 interface to PDF rendering library
 COMMENT-utils=	PDF conversion tools and utilities
 
-V=		0.22.2
+V=		0.22.5
 DISTNAME=	poppler-$V
 CATEGORIES=	print
 PKGNAME-main=	poppler-$V
@@ -14,7 +14,7 @@ PKGNAME-qt=	poppler-qt-$V
 PKGNAME-qt4=	poppler-qt4-$V
 OLDSHIT = poppler-0.16.7
 
-SHARED_LIBS +=	poppler              17.0     # 35.0
+SHARED_LIBS +=	poppler              18.0     # 37.0
 SHARED_LIBS +=	poppler-glib         12.0     # 14.0
 SHARED_LIBS +=	poppler-qt           11.0     # 3.0
 SHARED_LIBS +=	poppler-qt4          12.0     # 6.0
@@ -73,23 +73,20 @@ LIB_DEPENDS-qt=	${MODQT3_LIB_DEPENDS} \
 LIB_DEPENDS-qt4=${MODQT4_LIB_DEPENDS} \
 		print/poppler
 
-LIB_DEPENDS-utils=${MODGETTEXT_LIB_DEPENDS} \
-		print/poppler
+LIB_DEPENDS-utils= print/poppler
 
-WANTLIB-main=	${cWANTLIB} Xext ffi \
-		gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
-		pixman-1 openjpeg \
-		X11 Xau Xdmcp Xrender cairo pcre png \
-		pthread-stubs xcb xcb-render lcms2 \
-		xcb-shm ${MODGETTEXT_WANTLIB}
-WANTLIB-qt=	${cWANTLIB} lcms2 openjpeg poppler png ${MODQT3_WANTLIB}
-WANTLIB-qt4=	${cWANTLIB} ${MODQT4_WANTLIB} ICE QtGui QtXml SM X11 Xext Xi \
-                Xinerama Xrender lcms2 openjpeg png poppler QtCore QtGui QtXml
-WANTLIB-utils=	X11 Xau Xdmcp Xext Xrender \
-		c cairo expat ffi fontconfig freetype glib-2.0 \
-		gobject-2.0 gthread-2.0 jpeg lcms2 m pcre pixman-1 png \
-		pthread pthread-stubs stdc++ tiff xcb xcb-render xcb-shm \
-		openjpeg poppler z ${cWANTLIB} ${MODGETTEXT_WANTLIB}
+WANTLIB-main=	${cWANTLIB} Xext ffi gio-2.0 glib-2.0 gmodule-2.0 \
+		gobject-2.0 pixman-1 openjpeg X11 Xrender cairo pcre \
+		png pthread-stubs xcb xcb-render lcms2 xcb-shm \
+		${MODGETTEXT_WANTLIB}
+WANTLIB-qt=	${cWANTLIB} lcms2 openjpeg poppler png pthread-stubs \
+		${MODQT3_WANTLIB}
+WANTLIB-qt4=	${cWANTLIB} ${MODQT4_WANTLIB} ICE QtGui QtXml SM X11 \
+		Xext Xi Xinerama Xrender lcms2 openjpeg png poppler \
+		pthread-stubs QtCore QtGui QtXml
+WANTLIB-utils=	X11 Xext Xrender c cairo fontconfig lcms2 m pixman-1 \
+		png pthread-stubs xcb xcb-render xcb-shm openjpeg \
+		poppler z ${cWANTLIB}
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.69
