@@ -1,0 +1,18 @@
+$OpenBSD: patch-doc_tpp_1,v 1.1 2013/06/23 16:37:53 jasper Exp $
+
+Security fix for CVE-2013-2208 tpp: Possibility of arbitrary code execution
+when processing untrusted TPP template.
+
+https://bugzilla.redhat.com/show_bug.cgi?id=976684
+
+--- doc/tpp.1.orig	Mon Apr 23 11:12:21 2007
++++ doc/tpp.1	Sun Jun 23 18:31:38 2013
+@@ -20,6 +20,8 @@ LaTeX conversion and more.
+ .TP
+ -l output.tex input.tpp converts tpp slides into tex 
+ .TP
++-x allow usage of "--exec"
++.TP
+ -v/--version display version number
+ 
+ .SH KEYS

@@ -1,6 +1,12 @@
-$OpenBSD: patch-tpp_rb,v 1.1 2012/10/09 10:20:05 jeremy Exp $
---- tpp.rb.orig	Mon Oct  8 23:56:58 2012
-+++ tpp.rb	Mon Oct  8 23:57:13 2012
+$OpenBSD: patch-tpp_rb,v 1.2 2013/06/23 16:37:53 jasper Exp $
+
+Security fix for CVE-2013-2208 tpp: Possibility of arbitrary code execution
+when processing untrusted TPP template.
+
+https://bugzilla.redhat.com/show_bug.cgi?id=976684
+
+--- tpp.rb.orig	Mon Apr 23 11:12:21 2007
++++ tpp.rb	Sun Jun 23 18:32:26 2013
 @@ -7,6 +7,7 @@ version_number = "1.3.1"
  # ncurses-ruby module fails.
  def load_ncurses
@@ -9,3 +15,45 @@ $OpenBSD: patch-tpp_rb,v 1.1 2012/10/09 10:20:05 jeremy Exp $
      require "ncurses"
      include Ncurses
    rescue LoadError
+@@ -725,9 +726,13 @@ class NcursesVisualizer < TppVisualizer
+   end
+ 
+   def do_exec(cmdline)
+-    rc = Kernel.system(cmdline)
+-    if not rc then
+-      # @todo: add error message
++    if $execok then
++      rc = Kernel.system(cmdline)
++      if not rc then
++        # @todo: add error message
++      end
++    else
++      @screen.addstr("--exec disabled by default for security reasons. Use option -x to enable it.")
+     end
+   end
+ 
+@@ -1683,6 +1688,7 @@ def usage
+   $stderr.puts "\t -t <type>\tset filetype <type> as output format"
+   $stderr.puts "\t -o <file>\twrite output to file <file>"
+   $stderr.puts "\t -s <seconds>\twait <seconds> seconds between slides (with -t autoplay)"
++  $stderr.puts "\t -x\t\tallow parsing of --exec in input files"
+   $stderr.puts "\t --version\tprint the version"
+   $stderr.puts "\t --help\t\tprint this help"
+   $stderr.puts "\n\t currently available types: ncurses (default), autoplay, latex, txt"
+@@ -1699,6 +1705,7 @@ input = nil
+ output = nil
+ type = "ncurses"
+ time = 1
++$execok = nil
+ 
+ skip_next = false
+ 
+@@ -1720,6 +1727,8 @@ ARGV.each_index do |i|
+     elsif ARGV[i] == "-s" then
+       time = ARGV[i+1].to_i
+       skip_next = true
++    elsif ARGV[i] == "-x" then
++      $execok = 1
+     elsif input == nil then
+       input = ARGV[i]
+     end
