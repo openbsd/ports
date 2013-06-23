@@ -1,0 +1,19 @@
+$OpenBSD: patch-mpcdec_CMakeLists_txt,v 1.1 2013/06/23 14:30:52 dcoppa Exp $
+--- mpcdec/CMakeLists.txt.orig	Sat Aug 21 17:55:01 2010
++++ mpcdec/CMakeLists.txt	Sun Jun 23 16:07:24 2013
+@@ -17,11 +17,14 @@ target_link_libraries(mpcdec_cmd m)
+ endif(NOT MSVC)
+ 
+ target_link_libraries(mpcdec_cmd wavformat_static)
++add_dependencies(mpcdec_cmd wavformat_static)
+ 
+ if(SHARED)
+-  target_link_libraries(mpcdec_cmd mpcdec)
++  target_link_libraries(mpcdec_cmd mpcdec_shared)
++  add_dependencies(mpcdec_cmd mpcdec_shared)
+ else(SHARED)
+   target_link_libraries(mpcdec_cmd mpcdec_static)
++  add_dependencies(mpcdec_cmd mpcdec_static)
+ endif(SHARED)
+ 
+ SET_TARGET_PROPERTIES(mpcdec_cmd PROPERTIES OUTPUT_NAME "mpcdec")

@@ -1,7 +1,7 @@
-$OpenBSD: patch-mpcgain_CMakeLists_txt,v 1.1.1.1 2012/05/24 18:25:56 shadchin Exp $
---- mpcgain/CMakeLists.txt.orig	Fri Dec  2 02:10:28 2011
-+++ mpcgain/CMakeLists.txt	Fri Dec  2 02:11:07 2011
-@@ -1,23 +1,8 @@
+$OpenBSD: patch-mpcgain_CMakeLists_txt,v 1.2 2013/06/23 14:30:52 dcoppa Exp $
+--- mpcgain/CMakeLists.txt.orig	Sat Aug 21 17:55:01 2010
++++ mpcgain/CMakeLists.txt	Sun Jun 23 15:01:31 2013
+@@ -1,28 +1,15 @@
 -FIND_PATH(REPLAY_GAIN_INCLUDE_DIR replaygain/gain_analysis.h
 -	/usr/include
 -	/usr/local/include
@@ -20,9 +20,17 @@ $OpenBSD: patch-mpcgain_CMakeLists_txt,v 1.1.1.1 2012/05/24 18:25:56 shadchin Ex
  link_directories(${libmpc_BINARY_DIR}/libmpcdec)
  
 -add_executable(mpcgain mpcgain.c)
--
--target_link_libraries(mpcgain ${REPLAY_GAIN_LIBRARY})
 +add_executable(mpcgain mpcgain.c gain_analysis.c)
  
+-target_link_libraries(mpcgain ${REPLAY_GAIN_LIBRARY})
+-
  if(SHARED)
-   target_link_libraries(mpcgain mpcdec)
+-  target_link_libraries(mpcgain mpcdec)
++  target_link_libraries(mpcgain mpcdec_shared)
++  add_dependencies(mpcgain mpcdec_shared)
+ else(SHARED)
+   target_link_libraries(mpcgain mpcdec_static)
++  add_dependencies(mpcgain mpcdec_static)
+ endif(SHARED)
+ 
+ if(NOT MSVC)

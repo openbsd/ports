@@ -1,12 +1,24 @@
-$OpenBSD: patch-mpcenc_CMakeLists_txt,v 1.1.1.1 2012/05/24 18:25:56 shadchin Exp $
---- mpcenc/CMakeLists.txt.orig	Fri Jun 18 18:43:29 2010
-+++ mpcenc/CMakeLists.txt	Fri Jun 18 18:43:37 2010
-@@ -22,8 +22,4 @@ if(NOT MSVC)
+$OpenBSD: patch-mpcenc_CMakeLists_txt,v 1.2 2013/06/23 14:30:52 dcoppa Exp $
+--- mpcenc/CMakeLists.txt.orig	Tue Jul 13 11:30:09 2010
++++ mpcenc/CMakeLists.txt	Sun Jun 23 15:33:36 2013
+@@ -11,8 +11,8 @@ link_directories(${libmpc_BINARY_DIR}/libmpcenc)
+ 
+ add_executable(mpcenc keyboard.c mpcenc.c pipeopen.c stderr.c ${libmpc_SOURCE_DIR}/common/tags.c wave_in.c winmsg.c)
+ 
+-target_link_libraries(mpcenc mpcpsy_static)
+-target_link_libraries(mpcenc mpcenc_static)
++target_link_libraries(mpcenc mpcpsy_static mpcenc_static)
++add_dependencies(mpcenc mpcpsy_static mpcenc_static)
+ 
+ if(WIN32)
+ target_link_libraries(mpcenc winmm)
+@@ -21,9 +21,5 @@ endif(WIN32)
+ if(NOT MSVC)
  target_link_libraries(mpcenc m)
  endif(NOT MSVC)
- 
+-
 -if(CMAKE_SYSTEM_NAME STREQUAL OpenBSD)
 -target_link_libraries(mpcenc ossaudio)
 -endif(CMAKE_SYSTEM_NAME STREQUAL OpenBSD)
--
+ 
  install(TARGETS mpcenc RUNTIME DESTINATION bin)

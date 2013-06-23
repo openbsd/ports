@@ -1,12 +1,30 @@
-$OpenBSD: patch-mpc2sv8_CMakeLists_txt,v 1.1.1.1 2012/05/24 18:25:56 shadchin Exp $
---- mpc2sv8/CMakeLists.txt.orig	Fri Jun 18 18:45:01 2010
-+++ mpc2sv8/CMakeLists.txt	Fri Jun 18 18:45:10 2010
-@@ -28,8 +28,4 @@ if(NOT MSVC)
+$OpenBSD: patch-mpc2sv8_CMakeLists_txt,v 1.2 2013/06/23 14:30:51 dcoppa Exp $
+--- mpc2sv8/CMakeLists.txt.orig	Sat Aug 21 17:55:01 2010
++++ mpc2sv8/CMakeLists.txt	Sun Jun 23 15:32:42 2013
+@@ -13,12 +13,15 @@ endif(MSVC)
+ add_executable(mpc2sv8 mpc2sv8.c)
+ 
+ if(SHARED)
+-  target_link_libraries(mpc2sv8 mpcdec)
++  target_link_libraries(mpc2sv8 mpcdec_shared)
++  add_dependencies(mpc2sv8 mpcdec_shared)
+ else(SHARED)
+   target_link_libraries(mpc2sv8 mpcdec_static)
++  add_dependencies(mpc2sv8 mpcdec_static)
+ endif(SHARED)
+ 
+ target_link_libraries(mpc2sv8 mpcenc_static)
++add_dependencies(mpc2sv8 mpcenc_static)
+ 
+ if(WIN32)
+ target_link_libraries(mpc2sv8 winmm)
+@@ -27,9 +30,5 @@ endif(WIN32)
+ if(NOT MSVC)
  target_link_libraries(mpc2sv8 m)
  endif(NOT MSVC)
- 
+-
 -if(CMAKE_SYSTEM_NAME STREQUAL OpenBSD)
 -target_link_libraries(mpc2sv8 ossaudio)
 -endif(CMAKE_SYSTEM_NAME STREQUAL OpenBSD)
--
+ 
  install(TARGETS mpc2sv8 RUNTIME DESTINATION bin)
