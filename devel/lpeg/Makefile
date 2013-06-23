@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 10:50:11 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/06/23 17:24:11 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	parsing expression grammars library for lua
 DISTNAME=	lpeg-0.10.2
-REVISION=	1
+PKGNAME=	lua-${DISTNAME}
+REVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.inf.puc-rio.br/~roberto/lpeg/
 

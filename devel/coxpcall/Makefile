@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:02 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/06/23 17:24:11 jasper Exp $
 
 PKG_ARCH =	*
 
 COMMENT =	encapsulate protected Lua calls with a coroutine based loop
 
 DISTNAME =	coxpcall-1.13.0
-REVISION=	2
+PKGNAME =	lua-${DISTNAME}
+REVISION=	3
 CATEGORIES =	devel
 HOMEPAGE =	http://coxpcall.luaforge.net/
 
