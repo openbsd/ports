@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/06/23 09:55:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/06/23 10:04:47 ajacoutot Exp $
 
 COMMENT=	encryption backend
 
@@ -29,7 +29,6 @@ LIB_DEPENDS=	security/libmcrypt \
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--without-x
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>
