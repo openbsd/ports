@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2013/03/08 10:45:27 jasper Exp $
+$OpenBSD: README,v 1.2 2013/06/23 09:20:45 jung Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -15,8 +15,11 @@ You should point this to the DocumentRoot of your web-server:
 You can ensure you have a working install by accessing:
 http://<hostname>/baikal/
 
+You may want to adjust the rights of the ${INSTDIR}Specific/
+folder to ensure write access for the installer.
+
 Alternatively you can setup a virtual host using the configuration
-provided in ${INSTDIR}/Specific/virtualhosts/
+provided in ${INSTDIR}Specific/virtualhosts/
 
 Baikal administration
 =====================

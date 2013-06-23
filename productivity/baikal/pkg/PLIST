@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/08 10:45:27 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/06/23 09:20:45 jung Exp $
 @group www
 baikal/
 baikal/Core/
@@ -695,14 +695,12 @@ baikal/Core/Resources/Web/TwitterBootstrap
 baikal/INSTALL.md
 baikal/LICENSE.txt
 baikal/README.md
-@mode 0664
 baikal/Specific/
 baikal/Specific/.htaccess
 @extra baikal/Specific/ENABLE_INSTALL
 baikal/Specific/db/
 @comment no checksum
 baikal/Specific/db/db.sqlite
-@mode
 baikal/Specific/virtualhosts/
 baikal/Specific/virtualhosts/baikal.apache2
 baikal/Specific/virtualhosts/baikal.nginx
