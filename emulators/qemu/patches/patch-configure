@@ -1,7 +1,39 @@
-$OpenBSD: patch-configure,v 1.33 2013/06/03 22:34:24 brad Exp $
---- configure.orig	Mon May 20 11:34:39 2013
-+++ configure	Fri May 24 18:10:09 2013
-@@ -3390,8 +3390,6 @@ fi
+$OpenBSD: patch-configure,v 1.34 2013/06/23 21:27:55 brad Exp $
+--- configure.orig	Fri Jun 21 16:18:42 2013
++++ configure	Fri Jun 21 16:18:37 2013
+@@ -2518,9 +2518,31 @@ fi
+ 
+ ##########################################
+ # fdt probe
++# fdt support is mandatory for at least some target architectures,
++# so insist on it if we're building those system emulators.
++fdt_required=no
++for target in $target_list; do
++  case $target in
++    arm*-softmmu|ppc*-softmmu|microblaze*-softmmu)
++      fdt_required=yes
++    ;;
++  esac
++done
++
++if test "$fdt_required" = "yes"; then
++  if test "$fdt" = "no"; then
++    error_exit "fdt disabled but some requested targets require it." \
++      "You can turn off fdt only if you also disable all the system emulation" \
++      "targets which need it (by specifying a cut down --target-list)."
++  fi
++  fdt=yes
++fi
++
+ if test "$fdt" != "no" ; then
+   fdt_libs="-lfdt"
++  # explicitly check for libfdt_env.h as it is missing in some stable installs
+   cat > $TMPC << EOF
++#include <libfdt_env.h>
+ int main(void) { return 0; }
+ EOF
+   if compile_prog "" "$fdt_libs" ; then
+@@ -3390,8 +3412,6 @@ fi
  if test "$gcov" = "yes" ; then
    CFLAGS="-fprofile-arcs -ftest-coverage -g $CFLAGS"
    LDFLAGS="-fprofile-arcs -ftest-coverage $LDFLAGS"
