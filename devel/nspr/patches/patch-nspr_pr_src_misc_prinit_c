@@ -1,6 +1,6 @@
-$OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prinit_c,v 1.9 2012/09/17 20:00:09 landry Exp $
---- mozilla/nsprpub/pr/src/misc/prinit.c.orig	Tue Mar  6 14:14:20 2012
-+++ mozilla/nsprpub/pr/src/misc/prinit.c	Sun Sep  2 00:30:57 2012
+$OpenBSD: patch-nspr_pr_src_misc_prinit_c,v 1.1 2013/06/23 18:36:50 landry Exp $
+--- nspr/pr/src/misc/prinit.c.orig	Tue May 28 23:39:29 2013
++++ nspr/pr/src/misc/prinit.c	Wed Jun 12 21:26:27 2013
 @@ -384,8 +384,6 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup()
          _PR_CleanupDtoa();
          _PR_CleanupCallOnce();

@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_nsprpub_configure_in,v 1.17 2013/05/16 19:55:32 landry Exp $
---- mozilla/nsprpub/configure.in.orig	Thu Mar 14 18:34:31 2013
-+++ mozilla/nsprpub/configure.in	Thu Apr 11 18:02:23 2013
-@@ -2137,9 +2137,11 @@ tools are selected during the Xcode/Developer Tools in
+$OpenBSD: patch-nspr_configure_in,v 1.1 2013/06/23 18:36:50 landry Exp $
+--- nspr/configure.in.orig	Tue May 28 23:39:29 2013
++++ nspr/configure.in	Wed Jun 12 21:26:28 2013
+@@ -2136,9 +2136,11 @@ tools are selected during the Xcode/Developer Tools in
      AC_DEFINE(OPENBSD)
      AC_DEFINE(HAVE_BSD_FLOCK)
      AC_DEFINE(HAVE_SOCKLEN_T)

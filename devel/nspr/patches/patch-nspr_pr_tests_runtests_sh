@@ -1,6 +1,6 @@
-$OpenBSD: patch-mozilla_nsprpub_pr_tests_runtests_sh,v 1.4 2012/11/12 20:39:09 landry Exp $
---- mozilla/nsprpub/pr/tests/runtests.sh.orig	Fri Sep 28 07:25:00 2012
-+++ mozilla/nsprpub/pr/tests/runtests.sh	Thu Nov  8 21:01:54 2012
+$OpenBSD: patch-nspr_pr_tests_runtests_sh,v 1.1 2013/06/23 18:36:50 landry Exp $
+--- nspr/pr/tests/runtests.sh.orig	Tue May 28 23:39:29 2013
++++ nspr/pr/tests/runtests.sh	Wed Jun 12 21:26:28 2013
 @@ -58,11 +58,10 @@ fi
  # Tests not run (but should)
  #

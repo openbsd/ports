@@ -1,6 +1,6 @@
-$OpenBSD: patch-mozilla_nsprpub_pr_include_md__openbsd_cfg,v 1.8 2012/09/17 20:00:09 landry Exp $
---- mozilla/nsprpub/pr/include/md/_openbsd.cfg.orig	Tue Mar  6 14:13:52 2012
-+++ mozilla/nsprpub/pr/include/md/_openbsd.cfg	Sun Sep  2 00:30:56 2012
+$OpenBSD: patch-nspr_pr_include_md__openbsd_cfg,v 1.1 2013/06/23 18:36:50 landry Exp $
+--- nspr/pr/include/md/_openbsd.cfg.orig	Tue May 28 23:39:29 2013
++++ nspr/pr/include/md/_openbsd.cfg	Wed Jun 12 21:26:27 2013
 @@ -161,7 +161,7 @@
  #define PR_BYTES_PER_WORD_LOG2  3
  #define PR_BYTES_PER_DWORD_LOG2 3

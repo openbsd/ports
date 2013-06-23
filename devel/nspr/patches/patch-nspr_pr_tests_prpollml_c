@@ -1,6 +1,6 @@
-$OpenBSD: patch-mozilla_nsprpub_pr_tests_prpollml_c,v 1.3 2012/09/17 20:00:09 landry Exp $
---- mozilla/nsprpub/pr/tests/prpollml.c.orig	Tue Mar  6 14:14:30 2012
-+++ mozilla/nsprpub/pr/tests/prpollml.c	Sun Sep  2 00:30:57 2012
+$OpenBSD: patch-nspr_pr_tests_prpollml_c,v 1.1 2013/06/23 18:36:50 landry Exp $
+--- nspr/pr/tests/prpollml.c.orig	Tue May 28 23:39:29 2013
++++ nspr/pr/tests/prpollml.c	Wed Jun 12 21:26:28 2013
 @@ -15,14 +15,10 @@
  #include <stdlib.h>
  #include <string.h>

@@ -1,0 +1,13 @@
+$OpenBSD: patch-nspr_pr_tests_nameshm1_c,v 1.1 2013/06/23 18:36:50 landry Exp $
+--- nspr/pr/tests/nameshm1.c.orig	Tue May 28 23:39:29 2013
++++ nspr/pr/tests/nameshm1.c	Wed Jun 12 21:26:28 2013
+@@ -566,7 +566,9 @@ int main(int argc, char **argv)
+         ReadOnlyTest();
+         if ( failed_already != 0 )
+             goto Finished;
++#if !defined(__OpenBSD__)
+         ClientServerTest();
++#endif
+     }
+ 
+ Finished:
