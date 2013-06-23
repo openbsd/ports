@@ -1,12 +1,12 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2009/10/15 14:39:50 phessler Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2013/06/23 17:51:31 dcoppa Exp $
 --- CMakeLists.txt.orig	Wed Jul 22 07:54:28 2009
-+++ CMakeLists.txt	Fri Oct  9 18:27:30 2009
++++ CMakeLists.txt	Sun Jun 23 19:16:54 2013
 @@ -21,7 +21,7 @@ MESSAGE("Open Sonic version ${GAME_VERSION}")
  
  # configuring...
  SET(DEFS "")
 -SET(CFLAGS "")
-+SET(CFLAGS "`allegro-config --cflags`")
++SET(CFLAGS "$ENV{OPENSNC_ALLEGRO_CFLAGS}")
  
  IF(UNIX)
    SET(ALLEGRO_UNIX_LIBS "$ENV{OPENSNC_ALLEGRO_LIBS}")
