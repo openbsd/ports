@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.80 2013/06/17 10:47:44 espie Exp $
+# $OpenBSD: Engine.pm,v 1.81 2013/06/23 09:04:39 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -695,6 +695,15 @@ sub adjust_built
 	for my $v (values %{$self->{built}}) {
 		if ($self->adjust($v, 'RDEPENDS') == 0) {
 			delete $self->{built}{$v};
+			# okay, thanks to equiv, some other path was marked
+			# as stub, and obviously we lost our deps
+			if ($v->{info}->is_stub) {
+				$self->log_no_ts('!', $v, 
+				    " equivalent to an ignored path");
+				# just drop it, it's already ignored as
+				# an equivalent path
+				next;
+			}
 			$self->{installable}{$v} = $v;
 			if ($v->{wantinstall}) {
 				$self->{buildable}->will_install($v);
@@ -726,6 +735,16 @@ sub adjust_tobuild
 				$v->{has} = 2;
 			}
 		} else {
+			# okay, thanks to equiv, some other path was marked
+			# as stub, and obviously we lost our deps
+			if ($v->{info}->is_stub) {
+				$self->log_no_ts('!', $v, 
+				    " equivalent to an ignored path");
+				# just drop it, it's already ignored as
+				# an equivalent path
+				delete $self->{tobuild}{$v};
+				next;
+			}
 			my $has = $has->{$v} + 
 			    $self->adjust_extra($v, 'EXTRA', 'BEXTRA');
 
