@@ -1,9 +1,9 @@
-$OpenBSD: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_txt,v 1.10 2012/11/12 20:43:09 landry Exp $
+$OpenBSD: patch-nss_lib_ckfw_builtins_certdata_txt,v 1.1 2013/06/23 18:40:01 landry Exp $
 add CACert CA
 https://bugzilla.mozilla.org/show_bug.cgi?id=215243
---- mozilla/security/nss/lib/ckfw/builtins/certdata.txt.orig	Thu Oct 18 18:26:52 2012
-+++ mozilla/security/nss/lib/ckfw/builtins/certdata.txt	Thu Nov  8 21:18:24 2012
-@@ -14249,6 +14249,352 @@ CKA_TRUST_CODE_SIGNING CK_TRUST CKT_NSS_MUST_VERIFY_TR
+--- nss/lib/ckfw/builtins/certdata.txt.orig	Tue May 28 23:43:24 2013
++++ nss/lib/ckfw/builtins/certdata.txt	Wed Jun 12 22:02:56 2013
+@@ -14150,6 +14150,352 @@ CKA_TRUST_CODE_SIGNING CK_TRUST CKT_NSS_MUST_VERIFY_TR
  CKA_TRUST_STEP_UP_APPROVED CK_BBOOL CK_FALSE
  
  #

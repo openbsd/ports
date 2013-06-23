@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2013/03/21 12:49:42 landry Exp $
+# $OpenBSD: Makefile,v 1.37 2013/06/23 18:40:01 landry Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		libraries to support development of security-enabled apps
 
-VERSION=		3.14.3
+VERSION=		3.15
 DISTNAME =		nss-${VERSION}
 
 SO_VERSION=		33.2
@@ -21,10 +21,9 @@ MAINTAINER=		Martynas Venckus <martynas@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 #for regular releases
-MASTER_SITES=		http://ftp.eu.mozilla.org/pub/mozilla.org/security/nss/releases/${DISTNAME:U:C/[-.]/_/g}_RTM/src/ \
-			http://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/${DISTNAME:U:C/[-.]/_/g}_RTM/src/
+MASTER_SITES=		http://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/${DISTNAME:U:C/[-.]/_/g}_RTM/src/
 
-LIB_DEPENDS=		devel/nspr>=4.9.4
+LIB_DEPENDS=		devel/nspr>=4.10
 WANTLIB += c pthread z nspr4 plc4 plds4 sqlite3>=22
 
 MAKE_ENV=		BUILD_OPT=1 \
@@ -38,8 +37,8 @@ MAKE_ENV=		BUILD_OPT=1 \
 
 USE_GMAKE=		Yes
 
-WRKSRC=			${WRKDIST}/mozilla/security/nss
-NSSDIST=		${WRKDIST}/mozilla/dist
+WRKSRC=			${WRKDIST}/nss
+NSSDIST=		${WRKDIST}/dist
 NSSOBJ=			${NSSDIST}/OpenBSD`uname -r`${OBJ64}_OPT.OBJ
 
 ALL_TARGET=		nss_build_all

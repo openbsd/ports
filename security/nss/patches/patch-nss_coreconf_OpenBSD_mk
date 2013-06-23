@@ -1,6 +1,6 @@
-$OpenBSD: patch-mozilla_security_coreconf_OpenBSD_mk,v 1.6 2012/11/12 20:43:09 landry Exp $
---- mozilla/security/coreconf/OpenBSD.mk.orig	Thu May  3 11:42:53 2012
-+++ mozilla/security/coreconf/OpenBSD.mk	Thu Nov  8 21:18:21 2012
+$OpenBSD: patch-nss_coreconf_OpenBSD_mk,v 1.1 2013/06/23 18:40:01 landry Exp $
+--- nss/coreconf/OpenBSD.mk.orig	Tue May 28 23:43:24 2013
++++ nss/coreconf/OpenBSD.mk	Wed Jun 12 22:01:11 2013
 @@ -24,7 +24,7 @@ OS_LIBS			+= -pthread
  DSO_LDOPTS		+= -pthread
  endif
