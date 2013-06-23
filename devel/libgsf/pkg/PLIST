@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2013/03/03 17:40:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2013/06/23 17:03:27 ajacoutot Exp $
 @conflict libgsf-gnome-*
 @pkgpath devel/libgsf
 @pkgpath devel/libgsf,no_gnome
@@ -150,6 +150,9 @@ share/locale/sv/LC_MESSAGES/libgsf.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/libgsf.mo
+share/locale/tg/
+share/locale/tg/LC_MESSAGES/
+share/locale/tg/LC_MESSAGES/libgsf.mo
 share/locale/tr/LC_MESSAGES/libgsf.mo
 share/locale/uk/LC_MESSAGES/libgsf.mo
 share/locale/zh_CN/LC_MESSAGES/libgsf.mo
