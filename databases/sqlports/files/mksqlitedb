@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.41 2013/01/06 21:20:58 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.42 2013/06/23 08:58:07 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -218,7 +218,6 @@ for my $v (PkgPath->seen) {
 $inserter->commit_to_db;
 
 while (my ($k, $v) = each %$Info::unknown) {
-	next if $k eq 'CHECKSUM_FILE';
 	print STDERR "Unknown variable $k in ", $v->fullpkgpath, "\n";
 }
 

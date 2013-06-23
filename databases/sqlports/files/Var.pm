@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.20 2013/06/21 10:48:38 espie Exp $
+# $OpenBSD: Var.pm,v 1.21 2013/06/23 08:58:07 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -111,6 +111,17 @@ sub normal_insert
 	my $self = shift;
 	my $ins = shift;
     	$ins->insert($self->table, $ins->ref, @_);
+}
+
+# for variables we want to know about, but not register in the db
+package IgnoredVar;
+our @ISA = qw(AnyVar);
+sub add
+{
+}
+
+sub prepare_tables
+{
 }
 
 package KeyVar;
@@ -626,16 +637,5 @@ sub keyword_table() { 'Keywords2' }
 package AutoVersionVar;
 our @ISA = qw(OptKeyVar);
 sub keyword_table() { 'AutoVersion' }
-
-package IgnoredVar;
-our @ISA = qw(AnyVar);
-
-sub add
-{
-}
-
-sub prepare_tables
-{
-}
 
 1;

@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.9 2013/06/21 10:48:38 espie Exp $
+# $OpenBSD: Info.pm,v 1.10 2013/06/23 08:58:07 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -41,8 +41,6 @@ our $vars = {
     DISTNAME => 'AnyVar',
     DIST_SUBDIR => 'DefinedVar',
     EPOCH => 'AnyVar',
-    FETCH_MANUALLY => 'IgnoredVar',
-    FLAVOR => 'IgnoredVar',
     FLAVORS => 'FlavorsVar',
     FULLPKGNAME => 'AnyVar',
     HOMEPAGE => 'AnyVar',
@@ -61,7 +59,6 @@ our $vars = {
     MASTER_SITES7 => 'MasterSitesVar',
     MASTER_SITES8 => 'MasterSitesVar',
     MASTER_SITES9=> 'MasterSitesVar',
-    MISSING_FILES => 'IgnoredVar',
     MODULES => 'ModulesVar',
     MULTI_PACKAGES => 'MultiVar',
     NO_BUILD => 'YesNoVar',
@@ -94,6 +91,13 @@ our $vars = {
     USE_LIBTOOL => 'YesNoGnuVar',
     VMEM_WARNING => 'YesNoVar',
     WANTLIB => 'WantlibVar',
+    # XXX those variables are part of the dump for dpb, but really should
+    # not end up in sqlports. But make sure we know about them.
+    BUILD_PACKAGES => 'IgnoredVar',
+    CHECKSUM_FILE => 'IgnoredVar',
+    FETCH_MANUALLY => 'IgnoredVar',
+    FLAVOR => 'IgnoredVar',
+    MISSING_FILES => 'IgnoredVar',
 };
 
 our $unknown = {};
