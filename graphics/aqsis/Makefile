@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/06/22 14:53:09 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.24 2013/06/23 11:30:33 dcoppa Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -55,11 +55,6 @@ CONFIGURE_ARGS=	-DAQSIS_BOOST_FILESYSTEM_LIBRARY_NAME=boost_filesystem-mt \
 		-DAQSIS_BOOST_WAVE_LIBRARY_NAME=boost_wave-mt \
 		-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DSYSCONFDIR="${SYSCONFDIR}"
-
-pre-configure:
-	perl -pi -e 's,!!LIBaqsis_core_VERSION_R!!,${LIBaqsis_core_VERSION:R},;' \
-		-e 's,!!LIBaqsis_core_VERSION_E!!,${LIBaqsis_core_VERSION:E},' \
-		${WRKSRC}/CMakeLists.txt
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/aqsis

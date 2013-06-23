@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.3 2013/06/22 14:53:09 dcoppa Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.4 2013/06/23 11:30:33 dcoppa Exp $
 --- CMakeLists.txt.orig	Fri Aug 24 14:26:49 2012
 +++ CMakeLists.txt	Fri Jun 21 15:36:05 2013
 @@ -40,7 +40,7 @@ option(AQSIS_ENABLE_THREADING "Enable multi-threading 
@@ -10,17 +10,6 @@ $OpenBSD: patch-CMakeLists_txt,v 1.3 2013/06/22 14:53:09 dcoppa Exp $
  mark_as_advanced(AQSIS_USE_RPATH)
  
  if(WIN32)
-@@ -196,8 +196,8 @@ endif()
- # These are needed by version.h, as well as the packaging stuff.  Note that
- # some packaging variables are set in the platform-specific config files, and
- # these version variables are potentially used there.
--set(VERSION_MAJOR 1)
--set(VERSION_MINOR 8)
-+set(VERSION_MAJOR !!LIBaqsis_core_VERSION_R!!)
-+set(VERSION_MINOR !!LIBaqsis_core_VERSION_E!!)
- set(VERSION_BUILD 2)
- set(SCM_REVISION 0) # "?"
- 
 @@ -350,7 +350,6 @@ set(PROCEDURALPATH "${PROCEDURALPATH}" CACHE STRING "A
  set(RESOURCEPATH "${RESOURCEPATH}" CACHE STRING "Aqsis resource searchpath")
  set(aqsisrc_name ${PROJECT_BINARY_DIR}/aqsisrc)
