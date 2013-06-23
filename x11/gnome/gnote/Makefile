@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2013/06/21 22:38:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2013/06/23 11:41:14 landry Exp $
 
 SHARED_ONLY=		Yes
 
@@ -33,7 +33,8 @@ MODULES=		devel/dconf \
 			devel/gettext \
 			x11/gnome
 
-BUILD_DEPENDS=		devel/boost>=1.42.0p6
+BUILD_DEPENDS=		devel/boost>=1.42.0p6 \
+			devel/desktop-file-utils
 LIB_DEPENDS=		sysutils/e2fsprogs>=1.42.7 \
 			textproc/libxslt \
 			x11/gnome/libsecret>=0.10 \
