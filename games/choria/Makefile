@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/06/15 04:02:29 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2013/06/23 22:38:57 bcallah Exp $
 
 BROKEN-mips64el =	Bus error on startup, no core file left
 
-V =		0.4.0
+V =		0.4.1
 COMMENT =	2D MMORPG focused on grinding
 DISTNAME =	choria-${V}-src
 PKGNAME =	choria-${V}
