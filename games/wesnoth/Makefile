@@ -1,5 +1,8 @@
-# $OpenBSD: Makefile,v 1.53 2013/06/12 18:53:24 kirby Exp $
+# $OpenBSD: Makefile,v 1.54 2013/06/23 18:03:28 jasper Exp $
 
+BROKEN-mips64 =		missing atomic ops
+BROKEN-mips64el =	missing atomic ops
+BROKEN-hppa =		missing atomic ops
 COMMENT=	fantasy turn-based strategy game
 
 DISTNAME=	wesnoth-1.10.6
