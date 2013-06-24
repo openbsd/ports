@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/06/24 08:47:12 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.9 2013/06/24 09:12:25 espie Exp $
 
 COMMENT =		accessing and converting various ebook file formats
 V =			0.2.1
@@ -29,7 +29,7 @@ MAKE_ENV=		DOXYGEN_ENCODE_PATH_STRIP=${WRKSRC}
 DOCSDIR =		${PREFIX}/share/doc/ebook-tools
 
 post-build:
-	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} doc
+	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${BUILD_COMMAND} doc
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCSDIR}
@@ -38,3 +38,8 @@ post-install:
 	@find ${DOCSDIR} -type f -print0 | xargs -0t chmod ${DOCMODE}
 
 .include <bsd.port.mk>
+.if ${USE_NINJA:L} == "yes"
+BUILD_COMMAND = ${NINJA} ${NINJA_FLAGS}
+.else
+BUILD_COMMAND = ${MAKE_PROGRAM} ${MAKE_FLAGS}
+.endif
