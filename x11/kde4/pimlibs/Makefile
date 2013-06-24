@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2013/06/06 08:36:49 zhuk Exp $
+# $OpenBSD: Makefile,v 1.17 2013/06/24 19:41:05 zhuk Exp $
 
 COMMENT =	libraries for KDE PIM services
 DISTNAME =	kdepimlibs-${MODKDE4_VERSION}
+REVISION =	0
 
 DPB_PROPERTIES =	parallel
 
@@ -47,7 +48,7 @@ WANTLIB += lib/qt4/QtSvg lib/qt4/QtTest lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kcmutils ${KDE4LIB}/kdeui ${KDE4LIB}/kemoticons
 WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kparts ${KDE4LIB}/nepomuk
 WANTLIB += ${KDE4LIB}/nepomukcore ${KDE4LIB}/nepomukutils ${KDE4LIB}/solid
-WANTLIB += akonadiprotocolinternals assuan e2fs-uuid gpg-error gpgme
+WANTLIB += akonadiprotocolinternals assuan uuid gpg-error gpgme
 WANTLIB += gpgme-pthread ical icalss lber ldap prison qjson sasl2 soprano
 
 MODULES =	devel/gettext multimedia/phonon
@@ -69,7 +70,7 @@ LIB_DEPENDS =	${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION} \
 		productivity/akonadi>=${MIN_AKONADI_VERSION} \
 		security/cyrus-sasl2 \
 		security/gpgme>=0.4.5 \
-		sysutils/e2fsprogs \
+		sysutils/e2fsprogs>=1.42.7 \
 		textproc/libical
 
 .include <bsd.port.mk>
