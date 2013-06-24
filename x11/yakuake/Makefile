@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:46:19 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/06/24 15:53:39 zhuk Exp $
 
 COMMENT=	yet another kuake KDE terminal emulator
 
 DISTNAME=	yakuake-2.8.1
-REVISION=	7
+REVISION=	8
 CATEGORIES=	x11 x11/kde
 
 EXTRACT_SUFX=	.tar.bz2
@@ -15,9 +15,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=yakuake/}
 
-WANTLIB=	ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2 c expat fam \
-		fontconfig freetype idn m png pthread stdc++ util z xcb \
-		kdecore kdefx kdesu kdeui kio kwalletclient DCOP
+WANTLIB =  ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2 c expat fam
+WANTLIB += fontconfig freetype idn m png pthread stdc++ util xcb z
+WANTLIB += ${KDE}/DCOP ${KDE}/kdecore ${KDE}/kdefx ${KDE}/kdesu
+WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kwalletclient
 
 MODULES=	devel/gettext \
 		x11/kde

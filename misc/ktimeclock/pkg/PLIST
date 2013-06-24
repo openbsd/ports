@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 17:54:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/06/24 15:53:38 zhuk Exp $
 bin/ktimeclock
 share/applnk/
 share/applnk/Utilities/
@@ -26,16 +26,8 @@ share/doc/HTML/en/ktimeclock/configure-reports.png
 share/doc/HTML/en/ktimeclock/index.cache.bz2
 share/doc/HTML/en/ktimeclock/index.docbook
 share/doc/HTML/en/ktimeclock/window.png
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/ktimeclock.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/ktimeclock.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/ktimeclock.png
 share/icons/locolor/
 share/icons/locolor/16x16/
@@ -44,3 +36,7 @@ share/icons/locolor/16x16/apps/ktimeclock.png
 share/icons/locolor/32x32/
 share/icons/locolor/32x32/apps/
 share/icons/locolor/32x32/apps/ktimeclock.png
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/locolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/locolor

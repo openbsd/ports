@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/21 08:48:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2013/06/24 15:53:39 zhuk Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	concentric segmented-rings disk usage visualisation
 
 DISTNAME=	filelight-1.0
-REVISION =	7
+REVISION =	8
 CATEGORIES=	sysutils x11/kde
 
 EXTRACT_SUFX=	.tar.bz2
@@ -17,16 +17,19 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	http://www.methylblue.com/filelight/packages/
 
-WANTLIB +=	DCOP GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi
-WANTLIB +=	Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 c drm
-WANTLIB +=	expat fam fontconfig freetype idn jpeg kdecore>=7 kdefx
-WANTLIB +=	kdesu kdeui kio kparts kwalletclient lcms m mng png
-WANTLIB +=	pthread pthread-stubs stdc++ util xcb z
+WANTLIB =  GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi
+WANTLIB += Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 c drm
+WANTLIB += expat fam fontconfig freetype idn jpeg lcms m mng png
+WANTLIB += pthread pthread-stubs stdc++ util xcb z
+WANTLIB += ${KDE}/DCOP ${KDE}/kdecore>=7 ${KDE}/kdefx ${KDE}/kdesu
+WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kparts ${KDE}/kwalletclient
 
 MODULES=	x11/kde \
 		devel/gettext
 
-RUN_DEPENDS=	devel/desktop-file-utils
+RUN_DEPENDS=	devel/desktop-file-utils \
+		x11/gtk+2,-guic
+
 LIB_DEPENDS=	x11/kde/libs3
 
 PORTHOME=	${WRKDIR}

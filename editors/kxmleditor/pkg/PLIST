@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/10/06 15:17:39 naddy Exp $
-bin/kxmleditor
+@comment $OpenBSD: PLIST,v 1.10 2013/06/24 15:53:38 zhuk Exp $
+@bin bin/kxmleditor
 lib/libkxmleditorpart.la
+@lib lib/libkxmleditorpart.so.${LIBkxmleditorpart_VERSION}
 share/applnk/
 share/applnk/Applications/
 share/applnk/Applications/kxmleditor.desktop
@@ -109,11 +110,7 @@ share/doc/HTML/en/kxmleditor/setuptreeview.png
 share/doc/HTML/en/kxmleditor/specprocinstrdlg.png
 share/doc/HTML/en/kxmleditor/texteditor.png
 share/doc/HTML/en/kxmleditor/xml.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/kxmleditor.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/kxmleditor.png
 share/icons/locolor/
 share/icons/locolor/16x16/
@@ -126,4 +123,7 @@ share/locale/de/LC_MESSAGES/kxmleditor.mo
 share/locale/fr/LC_MESSAGES/kxmleditor.mo
 share/locale/pl/LC_MESSAGES/kxmleditor.mo
 share/services/kxmleditorpart.desktop
-%%SHARED%%
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/locolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/locolor
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

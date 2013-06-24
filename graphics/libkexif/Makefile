@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/21 08:45:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2013/06/24 15:53:38 zhuk Exp $
 
 COMMENT =		kde interface to exif
 CATEGORIES =		graphics devel x11 x11/kde
 DISTNAME =		libkexif-0.2.5
-REVISION =		4
+REVISION =		5
 SHARED_LIBS =		kexif	2.2
 EXTRACT_SUFX =		.tar.bz2
 HOMEPAGE =		http://extragear.kde.org/apps/kipi/
@@ -11,15 +11,15 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=kipi/}
 
 SHARED_ONLY =	Yes
 
-LIB_DEPENDS +=	x11/kde/libs3 \
+LIB_DEPENDS =	x11/kde/libs3 \
 		graphics/libexif
 
-WANTLIB =	ICE Xrender SM Xext X11 util m z \
-		jpeg png art_lgpl_2 idn \
-		xcb lib/qt3/qt-mt>=3.33 \
-		kdecore>=6 DCOP kdeui kdefx exif
-WANTLIB += GL Xcursor Xdamage Xfixes Xft Xi Xinerama Xmu Xrandr
-WANTLIB += Xt Xxf86vm drm expat fontconfig freetype lcms mng stdc++
+WANTLIB =  GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama
+WANTLIB += Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 drm exif expat
+WANTLIB += fontconfig freetype idn jpeg lcms m mng png stdc++ util
+WANTLIB += xcb z 
+WANTLIB += lib/qt3/qt-mt>=3.33
+WANTLIB += ${KDE}/DCOP ${KDE}/kdecore>=6 ${KDE}/kdeui ${KDE}/kdefx
 
 MODULES =	devel/gettext \
 		x11/kde

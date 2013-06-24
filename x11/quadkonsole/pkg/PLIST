@@ -1,10 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/06/16 04:39:47 kevlo Exp $
-bin/quadkonsole
+@comment $OpenBSD: PLIST,v 1.2 2013/06/24 15:53:39 zhuk Exp $
+@bin bin/quadkonsole
 share/applnk/
 share/applnk/Utilities/
 share/applnk/Utilities/quadkonsole.desktop
-share/doc/HTML/
-share/doc/HTML/en/
 share/doc/HTML/en/quadkonsole/
 share/doc/HTML/en/quadkonsole/common
 share/doc/HTML/en/quadkonsole/index.cache.bz2

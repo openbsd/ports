@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/09/14 23:43:56 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/06/24 15:53:38 zhuk Exp $
 bin/kdbg
 share/applnk/
 share/applnk/Development/
@@ -168,3 +168,7 @@ share/locale/tr/LC_MESSAGES/kdbg.mo
 share/locale/zh_CN.GB2312/
 share/locale/zh_CN.GB2312/LC_MESSAGES/
 share/locale/zh_CN.GB2312/LC_MESSAGES/kdbg.mo
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/locolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/locolor

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/21 08:46:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2013/06/24 15:53:38 zhuk Exp $
 
 CATEGORIES=	math x11/kde
 COMMENT=	data viewing/plotting tool
 
 DISTNAME=	kst-1.2.1
-REVISION=	6
+REVISION=	7
 SHARED_ONLY=	Yes
 SHARED_LIBS=	kst		4.0 \
 		kstapp		4.0 \
@@ -39,13 +39,14 @@ LIB_DEPENDS =	x11/kde/libs3 \
 		math/netcdf \
 		math/cfitsio
 
-WANTLIB =	c m util stdc++ pthread z X11 ICE Xrender SM Xext \
-		png jpeg art_lgpl_2 idn pcre pcreposix \
-		ncurses readline qui \
-		xcb kdecore>=6 kwalletclient DCOP \
-		kutils kparts kdeui kdesu kmdi kio kdefx kdeprint khtml kjs \
-		gsl>=7 gslcblas netcdf netcdf_c++ cfitsio \
-		GL Xcursor Xdamage Xfixes Xft Xi Xinerama Xmu Xrandr \
-		Xt Xxf86vm drm expat fontconfig freetype lcms mng
+WANTLIB =  GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama
+WANTLIB += Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 c cfitsio drm
+WANTLIB += expat fontconfig freetype gsl>=7 gslcblas idn jpeg lcms m
+WANTLIB += mng ncurses netcdf netcdf_c++ pcre pcreposix png pthread
+WANTLIB += readline stdc++ util xcb z
+WANTLIB += lib/qt3/qui
+WANTLIB += ${KDE}/DCOP ${KDE}/kdecore>=6 ${KDE}/kdefx ${KDE}/kdeprint
+WANTLIB += ${KDE}/kdesu ${KDE}/kdeui ${KDE}/khtml ${KDE}/kio ${KDE}/kjs
+WANTLIB += ${KDE}/kmdi ${KDE}/kparts ${KDE}/kutils ${KDE}/kwalletclient
 
 .include <bsd.port.mk>

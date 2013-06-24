@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2013/03/11 11:10:52 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2013/06/24 15:53:38 zhuk Exp $
 
 COMMENT =		digital image kde application
 CATEGORIES =		graphics x11 x11/kde
 V =			0.9.6
 DISTNAME =		digikam-$V
-REVISION =		7
+REVISION =		8
 SHARED_LIBS +=		digikam              3.0      # .0.0
 HOMEPAGE =		http://www.digikam.org/
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=digikam/}
@@ -12,8 +12,10 @@ DISTFILES =		${DISTNAME}.tar.bz2
 
 SHARED_ONLY =		Yes
 
-RUN_DEPENDS =	devel/desktop-file-utils
-LIB_DEPENDS +=	x11/kde/libs3 \
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+2,-guic
+
+LIB_DEPENDS =	x11/kde/libs3 \
 		graphics/libgphoto2>=2.5 \
 		graphics/libkipi \
 		graphics/tiff \
@@ -21,16 +23,17 @@ LIB_DEPENDS +=	x11/kde/libs3 \
 		graphics/libkdcraw \
 		graphics/lcms
 
-WANTLIB =	util m c ICE Xrender SM pthread z stdc++ expat \
-		Xext X11 jpeg png art_lgpl_2 exif idn \
-		exiv2 jasper pcre pcreposix ltdl \
-		xcb lib/qt3/qt-mt>=3.33 kdecore>=6 \
-		kwalletclient DCOP kparts kdeui kdesu kio kdefx \
-		kdeprint kutils kabc vcard kresources khtml kjs \
-		gphoto2 gphoto2_port kipi tiff kexiv2>=1 kdcraw \
-		lcms
-WANTLIB += GL Xcursor Xdamage Xfixes Xft Xi Xinerama Xmu Xrandr
-WANTLIB += Xt Xxf86vm drm fontconfig freetype mng fam
+WANTLIB =  GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama
+WANTLIB += Xmu Xrandr Xt Xxf86vm Xrender art_lgpl_2 c drm fam
+WANTLIB += fontconfig freetype exif expat exiv2 gphoto2 gphoto2_port
+WANTLIB += idn jasper jpeg lcms ltdl m mng pcre pcreposix png pthread
+WANTLIB += stdc++ tiff util xcb z
+WANTLIB += lib/qt3/qt-mt>=3.33
+WANTLIB += ${KDE}/DCOP ${KDE}/kdecore>=6 ${KDE}/kparts ${KDE}/kdeui
+WANTLIB += ${KDE}/kdesu ${KDE}/kio ${KDE}/kdefx ${KDE}/kdcraw
+WANTLIB += ${KDE}/kdeprint ${KDE}/kexiv2>=1 ${KDE}/kipi ${KDE}/kutils
+WANTLIB += ${KDE}/kabc ${KDE}/kresources ${KDE}/khtml ${KDE}/kjs
+WANTLIB += ${KDE}/kwalletclient ${KDE}/vcard
 
 MODULES =	devel/gettext \
 		x11/kde

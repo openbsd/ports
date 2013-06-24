@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/01/23 21:28:21 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/06/24 15:53:38 zhuk Exp $
 @conflict digikamimageplugins-*
 @bin bin/digikam
 @bin bin/digikamthemedesigner
@@ -855,3 +855,5 @@ share/services/digikamthumbnail.protocol
 share/servicetypes/digikamimageplugin.desktop
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

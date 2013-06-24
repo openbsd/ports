@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/21 08:48:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2013/06/24 15:53:39 zhuk Exp $
 
 COMMENT=	terminal application that embeds Konsole for KDE
 
 DISTNAME=	quadkonsole-2.0
-REVISION=	8
+REVISION=	9
 CATEGORIES=	x11 x11/kde
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
@@ -11,10 +11,11 @@ MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 # GPL
 PERMIT_PACKAGE_CDROM=  Yes
 
-WANTLIB +=	DCOP ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2 c
-WANTLIB +=	expat fam fontconfig freetype idn kdecore kdefx kdesu kdeui
-WANTLIB +=	kio kparts kwalletclient m png pthread pthread-stubs
-WANTLIB +=	stdc++ util xcb z
+WANTLIB =  ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2 c
+WANTLIB += expat fam fontconfig freetype idn m png pthread
+WANTLIB += pthread-stubs stdc++ util xcb z
+WANTLIB += ${KDE}/DCOP ${KDE}/kdecore ${KDE}/kdefx ${KDE}/kdesu
+WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kparts ${KDE}/kwalletclient
 
 MASTER_SITES=	http://nomis80.org/quadkonsole/
 

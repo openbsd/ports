@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2013/03/21 08:46:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2013/06/24 15:53:38 zhuk Exp $
 
 COMMENT-main=	multilingual input method library
 COMMENT-gtk=	uim for GTK
@@ -20,7 +20,7 @@ PKGNAME-kde=	uim-kde-$V
 REVISION-main=	8
 REVISION-gtk=	10
 REVISION-qt=	5
-REVISION-kde=	5
+REVISION-kde=	6
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -78,7 +78,8 @@ LIB_DEPENDS-kde	=	inputmethods/uim \
 			${MODLIBICONV_LIB_DEPENDS} \
 			${MODGETTEXT_LIB_DEPENDS} \
 			x11/kde/libs3
-WANTLIB-kde =	${Wqt} idn util art_lgpl_2 kdecore>=7 DCOP kdefx kdeui \
+WANTLIB-kde =	${Wqt} idn util art_lgpl_2 lib/kde3/DCOP \
+		lib/kde3/kdecore>=7 lib/kde3/kdefx lib/kde3/kdeui
 
 
 LIB_DEPENDS-gtk =	${LIB_DEPENDS-main} ${uim_LIB_DEPENDS} \

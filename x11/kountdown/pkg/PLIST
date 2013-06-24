@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 19:26:30 espie Exp $
-bin/kountdown
+@comment $OpenBSD: PLIST,v 1.3 2013/06/24 15:53:39 zhuk Exp $
+@bin bin/kountdown
 share/applnk/
 share/applnk/System/
 share/applnk/System/ScreenSavers/

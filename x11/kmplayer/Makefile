@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/21 08:33:52 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2013/06/24 15:53:39 zhuk Exp $
 
 COMMENT=	front-end/embeddable KPart for MPlayer
 CATEGORIES=	x11 x11/kde
 DISTNAME=	kmplayer-0.6.4
 EXTRACT_SUFX=	.tar.bz2
 
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS=	kparts_kmplayer  0.0 \
 		kdeinit_kmplayer 0.0
@@ -32,14 +32,16 @@ MAKE_FLAGS+=		${MODKDE_MAKE_FLAGS}
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=Yes
-WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 artsflow artsflow_idl \
-		audiofile c \
-		kmedia2_idl kwalletclient m mad mcop ogg \
-		png pthread qtmcop soundserver_idl stdc++ util vorbis \
-		vorbisenc vorbisfile z kdecore DCOP kdefx kdesu kdeui kio \
-		kmediaplayer kparts artskde
-WANTLIB += Xfixes Xt expat fam fontconfig freetype glib-2.0 gmodule-2.0
-WANTLIB += gthread-2.0 idn pcre sndio xcb
+
+WANTLIB =  ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2 audiofile c
+WANTLIB += expat fam fontconfig freetype glib-2.0 gmodule-2.0
+WANTLIB += gthread-2.0 idn m mad mcop ogg pcre png pthread sndio
+WANTLIB += stdc++ util vorbis vorbisenc vorbisfile xcb z 
+WANTLIB += ${KDE}/DCOP ${KDE}/artsflow ${KDE}/artsflow_idl
+WANTLIB += ${KDE}/artskde ${KDE}/kdecore ${KDE}/kdefx ${KDE}/kdesu
+WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kmedia2_idl
+WANTLIB += ${KDE}/kmediaplayer ${KDE}/kparts ${KDE}/kwalletclient
+WANTLIB += ${KDE}/qtmcop ${KDE}/soundserver_idl
 
 LIB_DEPENDS=x11/kde/libs3
 

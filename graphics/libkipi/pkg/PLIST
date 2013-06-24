@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/01/23 21:30:18 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/06/24 15:53:38 zhuk Exp $
 include/kde/libkipi/
 include/kde/libkipi/batchprogressdialog.h
 include/kde/libkipi/imagecollection.h
@@ -75,3 +75,5 @@ share/locale/tr/LC_MESSAGES/libkipi.mo
 share/locale/uk/LC_MESSAGES/libkipi.mo
 share/locale/zh_CN/LC_MESSAGES/libkipi.mo
 share/servicetypes/kipiplugin.desktop
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

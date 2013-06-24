@@ -1,24 +1,26 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/21 08:45:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2013/06/24 15:53:38 zhuk Exp $
 
 COMMENT =		kde image plugins api
 CATEGORIES =		graphics devel x11 x11/kde
 V =			0.1.6
 DISTNAME =		libkipi-$V
-REVISION =		4
+REVISION =		5
 SHARED_LIBS +=	kipi                 1.4      # .2.0
 EXTRACT_SUFX =		.tar.bz2
 HOMEPAGE =		http://extragear.kde.org/apps/kipi/
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=kipi/}
 
 SHARED_ONLY =		Yes
-LIB_DEPENDS +=		x11/kde/libs3
 
-WANTLIB =		ICE Xrender SM Xext X11 util m z \
-			jpeg png art_lgpl_2 idn \
-			stdc++ xcb lib/qt3/qt-mt>=3.33 \
-			kdecore>=6 kwalletclient DCOP kio kdeui kdefx kdesu
-WANTLIB += GL Xcursor Xdamage Xfixes Xft Xi Xinerama Xmu Xrandr
-WANTLIB += Xt Xxf86vm drm expat fontconfig freetype lcms mng
+RUN_DEPENDS =		x11/gtk+2,-guic
+LIB_DEPENDS =		x11/kde/libs3
+
+WANTLIB =  GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama
+WANTLIB += Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 drm expat
+WANTLIB += fontconfig freetype idn jpeg lcms lib/qt3/qt-mt>=3.33 m mng
+WANTLIB += png stdc++ util xcb z 
+WANTLIB += ${KDE}/DCOP ${KDE}/kdecore>=6 ${KDE}/kdefx ${KDE}/kdesu
+WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kwalletclient
 
 MODULES =	x11/kde devel/gettext
 

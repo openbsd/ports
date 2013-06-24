@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/03/21 08:45:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2013/06/24 15:53:38 zhuk Exp $
 
 COMMENT-main =		kde image plugins
 COMMENT-cal =		kde image calendar plugin
@@ -6,8 +6,8 @@ CATEGORIES =		graphics x11 x11/kde
 DISTNAME =		kipi-plugins-0.1.6
 PKGNAME-main =		${DISTNAME}
 PKGNAME-cal =		kipi-kcal-plugin-0.1.6
-REVISION-main =		3
-REVISION-cal =		2
+REVISION-main =		4
+REVISION-cal =		3
 HOMEPAGE =		http://extragear.kde.org/apps/kipi/
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=kipi/}
 EXTRACT_SUFX =		.tar.bz2
@@ -36,20 +36,22 @@ RUN_DEPENDS =	graphics/ImageMagick
 MODULES =	devel/gettext \
 		x11/kde
 
-WANTLIB =	ICE SM X11 Xext Xrender art_lgpl_2 \
-		idn jpeg m png stdc++ \
-		util xcb z kdecore>=6 DCOP kdefx kdeprint kdesu kdeui kio \
-		kparts kwalletclient kipi lib/qt3/qt-mt>=3.33 \
-		Xcursor Xdamage Xfixes Xft Xi Xinerama Xmu GL \
-		mng freetype fontconfig drm Xt Xxf86vm \
-		Xrandr expat lcms
+WANTLIB =  GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama
+WANTLIB += Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 drm expat
+WANTLIB += fontconfig freetype idn jpeg lcms m mng png stdc++ util xcb
+WANTLIB += z 
+WANTLIB += lib/qt3/qt-mt>=3.33
+WANTLIB += ${KDE}/DCOP ${KDE}/kdecore>=6 ${KDE}/kdefx ${KDE}/kdeprint
+WANTLIB += ${KDE}/kdesu ${KDE}/kdeui ${KDE}/kio ${KDE}/kipi ${KDE}/kparts
+WANTLIB += ${KDE}/kwalletclient
 
-WANTLIB-main =	${WANTLIB} ltdl \
-		pcre pcreposix tiff exif \
-		exslt xslt xml2 gpg-error gcrypt exiv2 \
-		khtml kjs kutils gphoto2 gphoto2_port kexiv2 kdcraw
+WANTLIB-main =  ${WANTLIB} exif exiv2 exslt gcrypt gpg-error gphoto2
+WANTLIB-main += gphoto2_port ltdl pcre pcreposix tiff xml2 xslt 
+WANTLIB-main += ${KDE}/kdcraw ${KDE}/kexiv2 ${KDE}/khtml ${KDE}/kjs
+WANTLIB-main += ${KDE}/kutils
 
-WANTLIB-cal =	${WANTLIB} kabc kresources vcard kcal kmime ktnef kipiplugins
+WANTLIB-cal =  ${WANTLIB} ${KDE}/kabc ${KDE}/kcal ${KDE}/kipiplugins
+WANTLIB-cal += ${KDE}/kmime ${KDE}/kresources ${KDE}/ktnef ${KDE}/vcard
 
 USE_GROFF =		Yes
 LIBTOOL_FLAGS =		--tag=disable-static

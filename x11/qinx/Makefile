@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/21 08:48:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2013/06/24 15:53:39 zhuk Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	QNX Photon inspired theme for KDE
 
 DISTNAME=	qinx-1.4
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	x11 x11/kde
 MASTER_SITES=	http://www.usermode.org/code/
@@ -16,9 +16,11 @@ HOMEPAGE=	http://www.usermode.org/code.html
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB =	DCOP ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2 expat
-WANTLIB +=	fontconfig freetype idn kdecorations kdecore kdefx
-WANTLIB +=	kdeui m png pthread pthread-stubs stdc++ util xcb z
+WANTLIB =  ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2 expat
+WANTLIB += fontconfig freetype idn m png pthread pthread-stubs stdc++
+WANTLIB += util xcb z
+WANTLIB += ${KDE}/DCOP ${KDE}/kdecorations ${KDE}/kdecore ${KDE}/kdefx
+WANTLIB += ${KDE}/kdeui
 
 LIB_DEPENDS=	graphics/libart \
 		x11/kde/libs3 \

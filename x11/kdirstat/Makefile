@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/21 08:48:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2013/06/24 15:53:39 zhuk Exp $
 
 COMMENT=	graphical disk usage utility for KDE
 
 DISTNAME=	kdirstat-2.4.0
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	x11
 
@@ -14,15 +14,17 @@ MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 # GPL
 PERMIT_PACKAGE_CDROM=  Yes
 
-WANTLIB +=	DCOP GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft
-WANTLIB +=	Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 c drm
-WANTLIB +=	expat fam fontconfig freetype idn jpeg kdecore kdefx kdesu
-WANTLIB +=	kdeui kio kwalletclient lcms m mng png pthread pthread-stubs
-WANTLIB +=	stdc++ util xcb z
+WANTLIB =  GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft
+WANTLIB += Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 c drm
+WANTLIB += expat fam fontconfig freetype idn jpeg lcms m mng png
+WANTLIB += pthread pthread-stubs stdc++ util xcb z
+WANTLIB += ${KDE}/DCOP ${KDE}/kdecore ${KDE}/kdefx ${KDE}/kdesu
+WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kwalletclient
 
 MASTER_SITES=	${HOMEPAGE}/download/
 EXTRACT_SUFX=	.tar.bz2
 
+RUN_DEPENDS=	x11/gtk+2,-guic
 LIB_DEPENDS=	x11/kde/libs3
 
 MODULES=	devel/gettext \

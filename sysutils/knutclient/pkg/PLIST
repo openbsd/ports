@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:39:32 espie Exp $
-bin/knutclient
+@comment $OpenBSD: PLIST,v 1.4 2013/06/24 15:53:39 zhuk Exp $
+@bin bin/knutclient
 share/applnk/
 share/applnk/Applications/
 share/applnk/Applications/knutclient.desktop
-share/apps/
 share/apps/knutclient/
 share/apps/knutclient/knutclientui.rc
-share/doc/HTML/
 share/doc/HTML/cs/
 share/doc/HTML/cs/knutclient/
 share/doc/HTML/cs/knutclient/asetting-cs.png
@@ -19,7 +17,6 @@ share/doc/HTML/cs/knutclient/msetting-cs.png
 share/doc/HTML/cs/knutclient/new-cs.png
 share/doc/HTML/cs/knutclient/psetting-cs.png
 share/doc/HTML/cs/knutclient/usetting-cs.png
-share/doc/HTML/en/
 share/doc/HTML/en/knutclient/
 share/doc/HTML/en/knutclient/asetting-en.png
 share/doc/HTML/en/knutclient/common
@@ -31,16 +28,8 @@ share/doc/HTML/en/knutclient/msetting-en.png
 share/doc/HTML/en/knutclient/new-en.png
 share/doc/HTML/en/knutclient/psetting-en.png
 share/doc/HTML/en/knutclient/usetting-en.png
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/knutclient.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/knutclient.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/knutclient.png
 share/icons/locolor/
 share/icons/locolor/16x16/
@@ -49,16 +38,11 @@ share/icons/locolor/16x16/apps/knutclient.png
 share/icons/locolor/32x32/
 share/icons/locolor/32x32/apps/
 share/icons/locolor/32x32/apps/knutclient.png
-share/locale/
-share/locale/cs/
-share/locale/cs/LC_MESSAGES/
 share/locale/cs/LC_MESSAGES/knutclient.mo
-share/locale/de/
-share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/knutclient.mo
-share/locale/fr/
-share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/knutclient.mo
-share/locale/it/
-share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/knutclient.mo
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/locolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/locolor

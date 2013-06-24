@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2013/06/04 18:41:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2013/06/24 15:53:39 zhuk Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	twin panel file manager for KDE
 
 DISTNAME=	krusader-1.80.0
-REVISION=	8
+REVISION=	9
 
 CATEGORIES=	x11 x11/kde
 
@@ -16,12 +16,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=krusader/}
 
-WANTLIB =	DCOP GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft
-WANTLIB +=	Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 c drm
-WANTLIB +=	expat fam fontconfig freetype idn jpeg kdecore kdefx
-WANTLIB +=	kdeprint kdesu kdeui khtml kio kjs kjsembed konq kparts
-WANTLIB +=	kutils kwalletclient lcms m mng pcre pcreposix png pthread
-WANTLIB +=	pthread-stubs qui-mt stdc++ util xcb z
+WANTLIB =  GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft
+WANTLIB += Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 c drm
+WANTLIB += expat fam fontconfig freetype idn jpeg lcms m mng pcre
+WANTLIB += pcreposix png pthread pthread-stubs qui-mt stdc++ util xcb z
+WANTLIB += ${KDE}/DCOP ${KDE}/kdecore ${KDE}/kdefx ${KDE}/kdeprint
+WANTLIB += ${KDE}/kdesu ${KDE}/kdeui ${KDE}/khtml ${KDE}/kio
+WANTLIB += ${KDE}/kjs ${KDE}/kjsembed ${KDE}/konq ${KDE}/kparts
+WANTLIB += ${KDE}/kutils ${KDE}/kwalletclient
 
 PORTHOME=	${WRKDIR}
 

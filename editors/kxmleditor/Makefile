@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2013/03/21 08:45:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2013/06/24 15:53:38 zhuk Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	XML editor for KDE
 
 DISTNAME=	kxmleditor-1.1.3
-REVISION=	8
+REVISION=	9
 CATEGORIES=	editors x11 x11/kde
 
 SHARED_LIBS=	kxmleditorpart	2.0
@@ -17,14 +17,17 @@ MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 # GPL
 PERMIT_PACKAGE_CDROM=  Yes
 
-WANTLIB +=	DCOP GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi
+WANTLIB =	GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi
 WANTLIB +=	Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 c drm
-WANTLIB +=	expat fam fontconfig freetype idn jpeg kdecore kdefx
-WANTLIB +=	kdeprint kdesu kdeui kio kparts kwalletclient lcms m mng
-WANTLIB +=	png pthread pthread-stubs stdc++ util xcb z
+WANTLIB +=	expat fam fontconfig freetype idn jpeg lcms m mng png
+WANTLIB +=	pthread pthread-stubs stdc++ util xcb z
+WANTLIB +=	${KDE}/DCOP ${KDE}/kdecore ${KDE}/kdefx ${KDE}/kdeprint
+WANTLIB +=	${KDE}/kdesu ${KDE}/kdeui ${KDE}/kio ${KDE}/kparts
+WANTLIB +=	${KDE}/kwalletclient
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kxmleditor/}
 
+RUN_DEPENDS=	x11/gtk+2,-guic
 LIB_DEPENDS=	x11/kde/libs3
 
 MODULES=	x11/kde devel/gettext

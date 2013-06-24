@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2013/06/04 18:41:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2013/06/24 15:53:38 zhuk Exp $
 
 COMMENT =		guitar tab editor
 
 DISTNAME =		kguitar-0.5.1
-REVISION=		3
+REVISION=		4
 
 CATEGORIES =		multimedia kde
 
@@ -14,10 +14,12 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 # GPLv2+; for MusicXML copyright see licenseMusicXML.html
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += DCOP ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2 c
-WANTLIB += expat fontconfig freetype idn jpeg kdecore kdefx kdeprint
-WANTLIB += kdesu kdeui kio kparts kwalletclient m png pthread
-WANTLIB += stdc++ util xcb z
+WANTLIB =  ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2 c expat
+WANTLIB += fontconfig freetype idn jpeg m png pthread stdc++ util
+WANTLIB += xcb z
+WANTLIB += ${KDE}/DCOP ${KDE}/kdecore ${KDE}/kdefx ${KDE}/kdeprint
+WANTLIB += ${KDE}/kdesu ${KDE}/kdeui ${KDE}/kio ${KDE}/kparts
+WANTLIB += ${KDE}/kwalletclient
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=kguitar/}
 EXTRACT_SUFX =		.tar.bz2

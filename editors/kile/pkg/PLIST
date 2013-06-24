@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/12/22 15:08:35 ajacoutot Exp $
-bin/kile
+@comment $OpenBSD: PLIST,v 1.7 2013/06/24 15:53:38 zhuk Exp $
+@bin bin/kile
 share/applications/kde/kile.desktop
 share/apps/katepart/syntax/bibtex-kile.xml
 share/apps/katepart/syntax/latex-kile.xml
@@ -1562,8 +1562,6 @@ share/locale/mt/
 share/locale/mt/LC_MESSAGES/
 share/locale/mt/LC_MESSAGES/kile.mo
 share/locale/nb/LC_MESSAGES/kile.mo
-share/locale/nds/
-share/locale/nds/LC_MESSAGES/
 share/locale/nds/LC_MESSAGES/kile.mo
 share/locale/nl/LC_MESSAGES/kile.mo
 share/locale/nn/LC_MESSAGES/kile.mo
@@ -1576,6 +1574,8 @@ share/locale/ru/LC_MESSAGES/kile.mo
 share/locale/rw/LC_MESSAGES/kile.mo
 share/locale/sk/LC_MESSAGES/kile.mo
 share/locale/sr/LC_MESSAGES/kile.mo
+share/locale/sr@Latn/
+share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/kile.mo
 share/locale/sv/LC_MESSAGES/kile.mo
 share/locale/ta/LC_MESSAGES/kile.mo
@@ -1586,3 +1586,5 @@ share/locale/zh_CN/LC_MESSAGES/kile.mo
 share/mimelnk/text/x-kilepr.desktop
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

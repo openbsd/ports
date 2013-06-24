@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:10:53 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/06/24 15:53:38 zhuk Exp $
 
 COMMENT =	grab raw data from digital cameras
 
 DISTNAME =	libkdcraw-0.1.9
-REVISION =	3
+REVISION =	4
 CATEGORIES =	graphics devel
 
 HOMEPAGE =	http://www.kipi-plugins.org/drupal/
@@ -28,14 +28,15 @@ USE_GMAKE =		Yes
 
 LIB_DEPENDS +=		graphics/lcms \
 			x11/kde/libs3
-RUN_DEPENDS =		graphics/dcraw
+RUN_DEPENDS =		graphics/dcraw \
+			x11/gtk+2,-guic
 
-WANTLIB += ICE SM X11 Xext Xrender jpeg m png
-WANTLIB += util z art_lgpl_2 idn
-WANTLIB += stdc++ xcb lcms
-WANTLIB += DCOP kdecore kdefx kdesu kdeui kio kwalletclient
-WANTLIB += GL Xcursor Xdamage Xfixes Xft Xi Xinerama Xmu Xrandr
-WANTLIB += Xt Xxf86vm drm expat fontconfig freetype mng
+WANTLIB =  GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama
+WANTLIB += Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 drm expat
+WANTLIB += fontconfig freetype idn jpeg lcms m mng png stdc++ util xcb
+WANTLIB += z 
+WANTLIB += ${KDE}/DCOP ${KDE}/kdecore ${KDE}/kdefx ${KDE}/kdesu
+WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kwalletclient
 
 # GPL
 PERMIT_PACKAGE_CDROM = Yes
