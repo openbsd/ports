@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/05 09:18:29 ajacoutot Exp $
-bin/gringotts
+@comment $OpenBSD: PLIST,v 1.2 2013/06/24 06:14:21 ajacoutot Exp $
+@mode 4555
+@bin bin/gringotts
+@mode
 share/doc/gringotts/
 share/doc/gringotts/FAQ
 share/doc/gringotts/README
