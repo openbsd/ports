@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.81 2013/06/21 10:10:58 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.82 2013/06/24 20:30:56 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: June 21 2013 $
+.Dd $Mdocdate: June 24 2013 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -195,6 +195,8 @@ provided they didn't end in error.
 This is usually the right thing to do after a crash, or after killing dpb
 abruptly.
 Sometimes, one may want manual control over which locks to remove.
+.It Ar FETCH_JOBS
+Alternate way to specify the number of fetch jobs.
 .It Ar FETCH_TIMEOUT
 Timeout (in seconds) after which fetches that don't show
 any progress will be killed.
@@ -206,16 +208,20 @@ Only run
 .Nm
 to figure out old distfiles and update
 .Pa ${FULLDISTDIR}/history .
+.It Ar LOGDIR
+Alternate way to specify the logging directory.
+.It Ar LOCKDIR
+Alternate way to specify the locking directory.
 .It Ar MIRROR
 Applicable to fetch modes.
 If 0, will only fetch normal
 .Ev DISTFILES
 .Po
 default for
-.Nm Fl f 
+.Nm Fl f
 .Pc .
 If 1, will also fetch extra
-.Ev SUPDISTFILES 
+.Ev SUPDISTFILES
 .Po
 default for
 .Nm Fl F
@@ -253,6 +259,9 @@ Timeout (in seconds) to wait before giving up on NFS packages showing up.
 Set to 0 to disable.
 Defaults to 10 minutes.
 .\" Disabled on localhost.
+.It Ar WANTSIZE
+Alternate way to specify
+.Fl s .
 .El
 .It Fl e
 The listing job is extra and won't be given back to the pool when it's
@@ -285,17 +294,16 @@ One host per line, plus properties, such as:
 espie@aeryn jobs=4 arch=i386
 .Ed
 .Pp
-The special line
+Lines starting with a known variable name such as
 .Bd -literal -offset indent
 STARTUP=path
 .Ed
-.Pp
-will define a script which will be run at start-up on each build machine.
-This script must exist locally.
-This script will always be run under ${PORTSDIR}, with environment
-variables MAKE and PORTSDIR set.
-It can be a list, e.g.,
-STARTUP=/bin/sh /some/path
+or
+.Bd -literal -offset indent
+FETCH_JOBS=5
+.Ed
+can also be set inside a configuration file, to reduce the number of
+options you must pass on the command line.
 .Pp
 The special hostname
 .Ar DEFAULT
@@ -957,7 +965,7 @@ affinity mismatch, but job will start on the wrong host anyways, as the queue
 contains no other buildable path.
 .El
 .Pp
-Please not that the engine is no longer run after each package build event
+Please note that the engine is no longer run after each package build event
 because of performance considerations, so the
 .Sq Q
 and
