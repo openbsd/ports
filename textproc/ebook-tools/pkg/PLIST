@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/12/16 11:40:07 sthen Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2013/06/24 08:47:12 dcoppa Exp $
 @bin bin/einfo
 bin/lit2epub
 include/epub.h
 include/epub_shared.h
 include/epub_version.h
+@lib lib/libepub.so.${LIBepub_VERSION}
 share/doc/ebook-tools/
 share/doc/ebook-tools/html/
 share/doc/ebook-tools/html/EBOOK-TOOLS.TAGFILE

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:42:41 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/06/24 08:47:12 dcoppa Exp $
 
-V =			0.2.1
-REVISION =		1
 COMMENT =		accessing and converting various ebook file formats
+V =			0.2.1
 DISTNAME =		ebook-tools-${V}
+REVISION =		2
 
 SHARED_LIBS +=		epub		0.0	# 0.2
 
@@ -22,7 +22,6 @@ BUILD_DEPENDS =		devel/doxygen \
 LIB_DEPENDS =		textproc/libxml \
 			archivers/libzip \
 
-SEPARATE_BUILD =	Yes
 NO_TEST =		Yes
 
 MAKE_ENV=		DOXYGEN_ENCODE_PATH_STRIP=${WRKSRC}
@@ -30,7 +29,7 @@ MAKE_ENV=		DOXYGEN_ENCODE_PATH_STRIP=${WRKSRC}
 DOCSDIR =		${PREFIX}/share/doc/ebook-tools
 
 post-build:
-	cd ${WRKBUILD} && ${MAKE_ENV} make doc
+	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} doc
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCSDIR}
