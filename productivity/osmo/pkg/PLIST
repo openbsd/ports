@@ -1,31 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/06/15 08:32:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/06/24 06:15:32 ajacoutot Exp $
 @bin bin/osmo
 @man man/man1/osmo.1
 share/applications/osmo.desktop
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/osmo.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/osmo.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/osmo.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/osmo.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/osmo.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/osmo.svg
+share/locale/bg/LC_MESSAGES/osmo.mo
 share/locale/ca/LC_MESSAGES/osmo.mo
 share/locale/cs/LC_MESSAGES/osmo.mo
+share/locale/da/LC_MESSAGES/osmo.mo
 share/locale/de/LC_MESSAGES/osmo.mo
 share/locale/el/LC_MESSAGES/osmo.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
+share/locale/en_GB/LC_MESSAGES/osmo.mo
 share/locale/es/LC_MESSAGES/osmo.mo
 share/locale/fi/LC_MESSAGES/osmo.mo
 share/locale/fr/LC_MESSAGES/osmo.mo
