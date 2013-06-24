@@ -1,14 +1,24 @@
-$OpenBSD: patch-src_contact_h,v 1.3 2013/06/20 18:19:45 jasper Exp $
+$OpenBSD: patch-src_contact_h,v 1.4 2013/06/24 12:58:20 jasper Exp $
 
 https://bugs.freedesktop.org/show_bug.cgi?id=65977
 
---- src/contact.h.orig	Wed Apr  4 19:54:31 2012
-+++ src/contact.h	Wed Apr  4 19:55:29 2012
-@@ -40,6 +40,7 @@
- /* Winsock makes some inappropriately-namespaced definitions */
- #undef interface
- #else
-+#include <sys/socket.h>
- #include <netinet/in.h>
+--- src/contact.h.orig	Mon Nov 12 15:13:18 2012
++++ src/contact.h	Mon Jun 24 14:53:15 2013
+@@ -32,16 +32,7 @@
+ #include "olpc-activity.h"
  #endif
+ 
+-#ifdef G_OS_WIN32
+-#include <winsock2.h>
+-#include <ws2tcpip.h>
+-#include <windows.h>
+-
+-/* Winsock makes some inappropriately-namespaced definitions */
+-#undef interface
+-#else
+-#include <netinet/in.h>
+-#endif
++#include <gibber/gibber-sockets.h>
+ 
+ #include <wocky/wocky.h>
  
