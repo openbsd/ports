@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/06/24 09:12:25 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/06/24 16:10:58 espie Exp $
 
 COMMENT =		accessing and converting various ebook file formats
 V =			0.2.1
@@ -38,6 +38,7 @@ post-install:
 	@find ${DOCSDIR} -type f -print0 | xargs -0t chmod ${DOCMODE}
 
 .include <bsd.port.mk>
+USE_NINJA ? = No
 .if ${USE_NINJA:L} == "yes"
 BUILD_COMMAND = ${NINJA} ${NINJA_FLAGS}
 .else
