@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2013/03/21 08:46:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2013/06/24 19:35:18 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -46,6 +46,9 @@ myRUN_DEPENDS =	print/ghostscript/gnu-fonts
 MODULES +=	devel/cmake
 
 CONFIGURE_STYLE =	cmake
+
+# Until such time as the cmake ninja generator supports fortran
+USE_NINJA =		No
 
 CONFIGURE_ARGS =	-D ENABLE_java=OFF \
 			-D ENABLE_f77=ON \
