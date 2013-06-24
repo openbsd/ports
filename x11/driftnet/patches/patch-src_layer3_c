@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_layer3_c,v 1.1 2013/06/24 16:48:43 sebastia Exp $
+
+import right headers
+
+--- src/layer3.c.orig	Fri Jun 21 09:12:25 2013
++++ src/layer3.c	Fri Jun 21 09:22:48 2013
+@@ -3,8 +3,12 @@
+ #include <string.h>
+ #include <assert.h>
+ 
++#include <sys/types.h>
++#include <netinet/in_systm.h>
++#include <netinet/in.h>
+ #include <netinet/ip.h>
+ #include <netinet/ip6.h>
++#include <sys/socket.h>
+ 
+ #include "log.h"
+ #include "layer3.h"

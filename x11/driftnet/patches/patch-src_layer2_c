@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_layer2_c,v 1.1 2013/06/24 16:48:43 sebastia Exp $
+
+include the right headers, and define a struct ethhdr
+like its available on Linux
+
+--- src/layer2.c.orig	Fri Jun 21 08:58:51 2013
++++ src/layer2.c	Fri Jun 21 09:12:06 2013
+@@ -3,7 +3,10 @@
+ #include <string.h>
+ #include <assert.h>
+ 
+-#include <netinet/ether.h>
++//#include <netinet/ether.h>
++#include <sys/types.h>
++#include <netinet/in_systm.h>
++#include <netinet/in.h>
+ #include <netinet/ip.h>
+ #include <netinet/ip6.h>
+ 
+@@ -11,6 +14,15 @@
+ 
+ #include "log.h"
+ #include "layer2.h"
++
++#define ETH_P_IP        0x0800
++#define ETH_P_IPV6      0x86DD
++#define ETH_ALEN        6
++struct ethhdr {
++        unsigned char   h_dest[ETH_ALEN];
++        unsigned char   h_source[ETH_ALEN];
++        u_int16_t       h_proto;
++} __attribute__((packed));
+ 
+ int handle_link_layer(datalink_info_t *info, const u_char *pkt, uint8_t *nextproto,
+ 			int *offsetnext)

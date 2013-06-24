@@ -1,0 +1,18 @@
+$OpenBSD: patch-configure_ac,v 1.1 2013/06/24 16:48:43 sebastia Exp $
+
+allow passing CFLAGS correctly
+
+--- configure.ac.orig	Sun Jun 23 09:25:31 2013
++++ configure.ac	Sun Jun 23 09:25:53 2013
+@@ -24,11 +24,6 @@ AC_ARG_ENABLE([debug],
+     ,
+     [enable_debug=yes])
+ 
+-if test "x$enable_debug" = xyes; then
+-    CFLAGS="-O2 -g -DDEBUG"
+-else
+-	CFLAGS="-O2 -DNDEBUG"
+-fi
+ #AM_CONDITIONAL(ENABLE_DEBUG, test "$enable_debug" = "yes")
+ 
+ #

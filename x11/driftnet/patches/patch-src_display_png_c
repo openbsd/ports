@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_display_png_c,v 1.1 2013/06/24 16:48:43 sebastia Exp $
+
+png_set_gray_1_2_4_to_8 doesn't seem to exist in newer
+png anymore
+
+--- src/display/png.c.orig	Fri Jun 21 09:29:56 2013
++++ src/display/png.c	Fri Jun 21 09:30:09 2013
+@@ -132,9 +132,9 @@ int png_load_img(img I) {
+     /* Convert greyscale images to 8-bit RGB */
+     if (color_type == PNG_COLOR_TYPE_GRAY ||
+         color_type == PNG_COLOR_TYPE_GRAY_ALPHA) {
+-        if (bit_depth < 8) {
++        /* if (bit_depth < 8) {
+             png_set_gray_1_2_4_to_8(png_ptr);
+-        }
++        } */
+         png_set_gray_to_rgb(png_ptr);
+     }
+ 
