@@ -1,0 +1,13 @@
+$OpenBSD: patch-config_lib,v 1.3 2013/06/25 22:41:41 bentley Exp $
+Don't build with -O1. The reason they add it is irrevelant to OpenBSD anyway.
+--- config.lib.orig	Fri May 31 14:57:18 2013
++++ config.lib	Sun Jun 23 15:47:00 2013
+@@ -1462,7 +1462,7 @@ make_cflags_and_ldflags() {
+ 			CFLAGS="$CFLAGS -D_FORTIFY_SOURCE=2"
+ 
+ 			# Just add -O1 to the tools needed for building.
+-			CFLAGS_BUILD="$CFLAGS_BUILD -D_FORTIFY_SOURCE=2 -O1"
++			CFLAGS_BUILD="$CFLAGS_BUILD -D_FORTIFY_SOURCE=2"
+ 		fi
+ 	fi
+ 

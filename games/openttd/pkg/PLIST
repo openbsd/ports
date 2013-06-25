@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2013/04/20 02:52:31 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.17 2013/06/25 22:41:41 bentley Exp $
 @bin bin/openttd
 @man man/man6/openttd.6
 share/applications/openttd.desktop
@@ -122,8 +122,10 @@ share/openttd/lang/english_AU.lng
 share/openttd/lang/english_US.lng
 share/openttd/lang/esperanto.lng
 share/openttd/lang/estonian.lng
+share/openttd/lang/faroese.lng
 share/openttd/lang/finnish.lng
 share/openttd/lang/french.lng
+share/openttd/lang/gaelic.lng
 share/openttd/lang/galician.lng
 share/openttd/lang/german.lng
 share/openttd/lang/greek.lng
@@ -158,6 +160,16 @@ share/openttd/lang/ukrainian.lng
 share/openttd/lang/vietnamese.lng
 share/openttd/lang/welsh.lng
 share/openttd/media/
+share/openttd/media/baseset/
+share/openttd/media/baseset/no_music.obm
+share/openttd/media/baseset/no_sound.obs
+share/openttd/media/baseset/orig_dos.obg
+share/openttd/media/baseset/orig_dos.obs
+share/openttd/media/baseset/orig_dos_de.obg
+share/openttd/media/baseset/orig_win.obg
+share/openttd/media/baseset/orig_win.obm
+share/openttd/media/baseset/orig_win.obs
+share/openttd/media/baseset/translations.awk
 share/openttd/media/extra_grf/
 share/openttd/media/extra_grf/2ccmap.nfo
 share/openttd/media/extra_grf/airport_preview.nfo
