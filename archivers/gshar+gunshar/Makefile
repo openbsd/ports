@@ -1,25 +1,28 @@
-# $OpenBSD: Makefile,v 1.29 2013/03/10 22:28:04 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2013/06/25 06:14:57 rpe Exp $
 
 COMMENT=	packing and unpacking of shell archives
 
-DISTNAME=	sharutils-4.2.1
+DISTNAME=	sharutils-4.13.1
 
 CATEGORIES=	archivers
+
+HOMEPAGE=	http://www.gnu.org/software/sharutils/
+
 MASTER_SITES=	${MASTER_SITE_GNU:=sharutils/}
 
-# GPL
+# GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-REVISION =	0
-WANTLIB=		c
+WANTLIB += c
 
-CONFIGURE_STYLE= gnu dest
-CONFIGURE_ARGS+= --program-prefix="g" --disable-uucode --disable-nls
+MODULES=	devel/gettext
 
-post-patch:
-	@touch ${WRKSRC}/po/sharutils.pot
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS+= --program-prefix="g" \
+		 --disable-nls \
+		 --disable-uucode
 
-# Regression tests apply to uudecode, which we don't build
+# Regression tests pass without --disable-uuencode
 NO_TEST=Yes
 
 .include <bsd.port.mk>
