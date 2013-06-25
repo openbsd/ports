@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.25 2013/03/11 11:55:22 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.26 2013/06/25 09:05:19 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -255,6 +255,7 @@ my %adder = (
 	MASTER_SITES7 => 'AddOrderedList',
 	MASTER_SITES8 => 'AddOrderedList',
 	MASTER_SITES9 => 'AddOrderedList',
+	MULTI_PACkAGES => 'AddList',
 	PERMIT_DISTFILES_FTP => 'AddNegative',
 	PERMIT_DISTFILES_CDROM => 'AddNegative',
 # not yet used, provision for regression tests
@@ -303,12 +304,19 @@ sub dump
 
 my $string = "ignored already";
 my $s2 = "stub_name";
+my $stub_name = bless(\$s2, "AddInfoShow");
 my $stub_info = bless { IGNORE => bless(\$string, "AddIgnore"),
-		FULLPKGNAME => bless(\$s2, "AddInfoShow")}, __PACKAGE__;
+		FULLPKGNAME => $stub_name}, __PACKAGE__;
 
 sub stub
 {
 	return $stub_info;
+}
+
+sub stub_name
+{
+	my $self = shift;
+	$self->{FULLPKGNAME} = $stub_name;
 }
 
 sub is_stub

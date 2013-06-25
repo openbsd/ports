@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.39 2013/04/22 11:14:17 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.40 2013/06/25 09:05:19 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -181,6 +181,8 @@ sub merge_depends
 	my $global3 = bless {}, "AddDepends";
 	my $global4 = bless {}, "AddDepends";
 	my $multi;
+	my $extra;
+	my $path;
 	for my $v (values %$h) {
 		my $info = $v->{info};
 		if (defined $info->{DIST} && !defined $info->{DISTIGNORE}) {
@@ -192,6 +194,10 @@ sub merge_depends
 		# share !
 		if (defined $info->{BUILD_PACKAGES}) {
 			$multi = $info->{BUILD_PACKAGES};
+		}
+		# and this one is special
+		if (defined $info->{MULTI_PACKAGES}) {
+			$extra = $info->{MULTI_PACKAGES};
 		}
 		# XXX don't grab dependencies for IGNOREd stuff
 		next if defined $info->{IGNORE};
@@ -224,7 +230,7 @@ sub merge_depends
 			
 		for my $k (qw(LIB_DEPENDS BUILD_DEPENDS RUN_DEPENDS 
 		    SUBPACKAGE FLAVOR EXTRA PERMIT_DISTFILES_FTP 
-		    PERMIT_DISTFILES_CDROM)) {
+		    MULTI_PACKAGES PERMIT_DISTFILES_CDROM)) {
 			delete $info->{$k};
 		}
 	}
@@ -245,6 +251,24 @@ sub merge_depends
 	if (defined $multi) {
 		for my $v (values %$h) {
 			$v->{info}{BUILD_PACKAGES} = $multi;
+			$path = $v; # one for later
+		}
+	}
+	# in case BUILD_PACKAGES "erases" some multi, we need to
+	# stub out the correspond paths, so that dependent ports
+	# will vanish
+	if (defined $extra) {
+		for my $m (keys %$extra) {
+			# okay those are present
+
+			next if exists $multi->{$m};
+			# make a dummy path that will get ignored
+			my $stem = $path->pkgpath_and_flavors;
+			my $w = DPB::PkgPath->new("$stem,$m");
+			my $info = DPB::PortInfo->new($w);
+			$info->add('IGNORE', "vanishes from BUILD_PACKAGES");
+			$info->stub_name;
+			$h->{$w} = $w;
 		}
 	}
 }
@@ -272,6 +296,7 @@ sub build_path_list
 
 sub break
 {
+
 	my ($self, $why) = @_;
 	if (defined $self->{broken}) {
 		$self->{broken} .= " $why";
