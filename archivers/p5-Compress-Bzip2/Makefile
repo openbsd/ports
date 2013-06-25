@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/10 22:28:04 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/06/25 06:21:58 rpe Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	interface to bzip2 compression library
 
-DISTNAME=	Compress-Bzip2-2.09
-REVISION=	2
+DISTNAME=	Compress-Bzip2-2.16
 CATEGORIES=	archivers
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
