@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1236 2013/06/25 08:46:55 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1237 2013/06/25 19:47:49 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -125,6 +125,7 @@ _ALL_VARIABLES += DISTFILES PATCHFILES SUPDISTFILES DIST_SUBDIR MASTER_SITES \
 	MASTER_SITES5 MASTER_SITES6 MASTER_SITES7 MASTER_SITES8 MASTER_SITES9 \
 	CHECKSUM_FILE FETCH_MANUALLY MISSING_FILES \
 	PERMIT_DISTFILES_FTP
+# XXX don't let extra subpackage disappear for fetch, as this could be mirror
 _DPB_MULTI = ${MULTI_PACKAGES}
 .endif
 .if ${DPB:L:Mtest} || ${DPB:L:Mall}
