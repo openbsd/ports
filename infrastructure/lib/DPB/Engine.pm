@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.81 2013/06/23 09:04:39 espie Exp $
+# $OpenBSD: Engine.pm,v 1.82 2013/06/25 07:49:52 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -624,6 +624,8 @@ sub stub_out
 	my ($self, $v) = @_;
 	my $i = $v->{info};
 	for my $w ($v->build_path_list) {
+		# don't fill in equiv lists if they don't matter.
+		next if !defined $w->{info};
 		if ($w->{info} eq $i) {
 			$w->{info} = DPB::PortInfo->stub;
 		}
