@@ -1,0 +1,3 @@
+luasoldout is a simple Lua binding to libsoldout, a lightweight C
+library that can parse Markdown. It supports converting to html or
+xhtml. luasoldout also supports the discount and natext extensions.
