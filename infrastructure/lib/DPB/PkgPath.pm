@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.40 2013/06/25 09:05:19 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.41 2013/06/25 20:21:52 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -184,6 +184,7 @@ sub merge_depends
 	my $extra;
 	my $path;
 	for my $v (values %$h) {
+		$path //= $v; # one for later
 		my $info = $v->{info};
 		if (defined $info->{DIST} && !defined $info->{DISTIGNORE}) {
 			for my $f (values %{$info->{DIST}}) {
@@ -251,7 +252,6 @@ sub merge_depends
 	if (defined $multi) {
 		for my $v (values %$h) {
 			$v->{info}{BUILD_PACKAGES} = $multi;
-			$path = $v; # one for later
 		}
 	}
 	# in case BUILD_PACKAGES "erases" some multi, we need to
@@ -265,9 +265,15 @@ sub merge_depends
 			# make a dummy path that will get ignored
 			my $stem = $path->pkgpath_and_flavors;
 			my $w = DPB::PkgPath->new("$stem,$m");
-			my $info = DPB::PortInfo->new($w);
-			$info->add('IGNORE', "vanishes from BUILD_PACKAGES");
-			$info->stub_name;
+			if (!defined $w->{info}) {
+				$w->{info} = DPB::PortInfo->new($w);
+				$w->{info}->stub_name;
+			}
+			delete $w->{info}->{IGNORE};
+			if (!defined $w->{info}->{IGNORE}) {
+				$w->{info}->add('IGNORE', 
+				    "vanishes from BUILD_PACKAGES");
+			}
 			$h->{$w} = $w;
 		}
 	}
