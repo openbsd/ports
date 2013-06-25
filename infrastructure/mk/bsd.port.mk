@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1237 2013/06/25 19:47:49 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1238 2013/06/25 20:21:03 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -117,7 +117,6 @@ _ALL_VARIABLES = BUILD_DEPENDS IS_INTERACTIVE \
 _ALL_VARIABLES_INDEXED = FULLPKGNAME RUN_DEPENDS LIB_DEPENDS IGNORE 
 _ALL_VARIABLES_PER_ARCH =
 
-_DPB_MULTI = ${BUILD_PACKAGES}
 
 .if ${DPB:L:Mfetch} || ${DPB:L:Mall}
 _ALL_VARIABLES += DISTFILES PATCHFILES SUPDISTFILES DIST_SUBDIR MASTER_SITES \
@@ -125,8 +124,6 @@ _ALL_VARIABLES += DISTFILES PATCHFILES SUPDISTFILES DIST_SUBDIR MASTER_SITES \
 	MASTER_SITES5 MASTER_SITES6 MASTER_SITES7 MASTER_SITES8 MASTER_SITES9 \
 	CHECKSUM_FILE FETCH_MANUALLY MISSING_FILES \
 	PERMIT_DISTFILES_FTP
-# XXX don't let extra subpackage disappear for fetch, as this could be mirror
-_DPB_MULTI = ${MULTI_PACKAGES}
 .endif
 .if ${DPB:L:Mtest} || ${DPB:L:Mall}
 _ALL_VARIABLES += NO_TEST TEST_IS_INTERACTIVE TEST_DEPENDS
@@ -146,7 +143,6 @@ _ALL_VARIABLES_INDEXED += COMMENT PKGNAME \
 	ONLY_FOR_ARCHS NOT_FOR_ARCHS PKGSPEC PREFIX \
 	PERMIT_PACKAGE_FTP PERMIT_PACKAGE_CDROM WANTLIB CATEGORIES DESCR \
 	EPOCH REVISION STATIC_PLIST
-_DPB_MULTI = ${MULTI_PACKAGES}
 .endif
 # special purpose user settings
 PATCH_CHECK_ONLY ?= No
@@ -1770,7 +1766,7 @@ _register_plist${_s} = ${_register_plist}
 ### end of variable setup. Only targets now
 ###
 dump-vars:
-.if ${_DPB_MULTI} == "-"
+.if ${MULTI_PACKAGES} == "-"
 .  for _v in ${_ALL_VARIABLES} ${_ALL_VARIABLES_INDEXED}
 .   if defined(${_v}-)
 .     if !empty(${_v}-)
@@ -1788,7 +1784,7 @@ dump-vars:
 .    endfor
 .  endfor
 .else
-.  for _S in ${_DPB_MULTI}
+.  for _S in ${MULTI_PACKAGES}
 .    for _v in ${_ALL_VARIABLES}
 .     if defined(${_v}) && !empty(${_v})
 	@echo ${FULLPKGPATH${_S}}.${_v}=${${_v}:Q}
