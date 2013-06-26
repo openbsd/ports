@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.59 2013/03/11 11:35:58 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2013/06/26 18:43:08 naddy Exp $
 
 COMMENT =	retrieve files from the web via HTTP, HTTPS and FTP
 
 DISTNAME =	wget-1.14
+REVISION =	0
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.gnu.org/software/wget/
@@ -19,9 +20,11 @@ MASTER_SITES =		${MASTER_SITE_GNU:=wget/}
 MODULES =		devel/gettext
 
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	--with-ssl=openssl
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS +=	--with-ssl=openssl
+# do not pick up libuuid from sysutils/e2fsprogs
+CONFIGURE_ENV +=	ac_cv_header_uuid_uuid_h=no
 
 pre-build:
 	@${SUBST_CMD} ${WRKSRC}/doc/wget.texi ${WRKSRC}/doc/sample.wgetrc
