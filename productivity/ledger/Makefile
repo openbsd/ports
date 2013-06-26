@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/21 08:48:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2013/06/26 11:39:00 sthen Exp $
 
 COMMENT=	command line double-entry accounting ledger
 
 DISTNAME=	ledger-2.6.3
-REVISION=	1
+REVISION=	2
 CATEGORIES=	productivity
 
 HOMEPAGE=	http://www.ledger-cli.org/
@@ -27,7 +27,8 @@ SEPARATE_BUILD=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		EMACS=no
 CONFIGURE_ARGS=	--disable-xml \
 		--disable-ofx
 
