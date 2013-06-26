@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2013/06/22 13:19:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.138 2013/06/26 19:31:57 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -17,7 +17,7 @@ ENIG_V =		1.5.1
 PKGNAME-enigmail =	enigmail-seamonkey-${ENIG_V}
 EPOCH-lightning =	0
 EPOCH-enigmail =	0
-REVISION-main =		2
+REVISION-main =		3
 REVISION-lightning =	0
 REVISION-enigmail =	3
 
