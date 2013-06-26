@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.55 2013/06/20 06:54:38 ajacoutot Exp $
+# $OpenBSD: mozilla.port.mk,v 1.56 2013/06/26 19:18:48 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -64,16 +64,20 @@ MODMOZ_WANTLIB += jpeg
 .endif
 
 MODMOZ_WANTLIB +=	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
-		Xinerama Xrandr Xrender Xt atk-1.0 c cairo crypto expat \
+		Xinerama Xrandr Xrender Xt atk-1.0 c cairo \
 		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
-		gobject-2.0 gthread-2.0 gtk-x11-2.0 krb5 m \
+		gobject-2.0 gthread-2.0 gtk-x11-2.0 m \
 		nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pixman-1 plc4 plds4 pthread pthread-stubs \
-		smime3 sndio nssutil3 ssl3 stdc++ z \
-		asn1 com_err heimbase roken wind
+		smime3 sndio nssutil3 ssl3 stdc++ z
+
+# gecko doesnt link anymore with krb5 since 22 (bug 648730)
+.if ${MOZILLA_PROJECT} != "firefox"
+MOZMOZ_WANTLIB +=	crypto krb5 asn1 com_err heimbase roken wind
+.endif
 
 # for all mozilla ports, build against systemwide sqlite3
-MODMOZ_WANTLIB +=	sqlite3>=22
+MODMOZ_WANTLIB +=	sqlite3>=23
 CONFIGURE_ARGS +=	--enable-system-sqlite
 CONFIGURE_ENV +=	ac_cv_sqlite_secure_delete=yes
 
@@ -180,10 +184,13 @@ CONFIGURE_ENV +=${MAKE_ENV} \
 MODGNU_CONFIG_GUESS_DIRS +=	${WRKSRC}/${_MOZDIR}/build/autoconf \
 				${WRKSRC}/${_MOZDIR}/js/src/build/autoconf
 
+# sydneyaudio was removed in gecko 22
+.if ${MOZILLA_PROJECT} != "firefox"
 post-extract:
 # syndeyaudio sndio file comes from ffx FILESDIR
 	cp -f ${PORTSDIR}/www/mozilla-firefox/files/sydney_audio_sndio.c \
 		${WRKSRC}/${_MOZDIR}/media/libsydneyaudio/src/
+.endif
 
 # files to run SUBST_CMD on
 MOZILLA_SUBST_FILES +=	${_MOZDIR}/xpcom/io/nsAppFileLocationProvider.cpp \
