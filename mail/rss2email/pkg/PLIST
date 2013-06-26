@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/06/26 16:23:10 sthen Exp $
+bin/r2e
+lib/python${MODPY_VERSION}/site-packages/rss2email.py
+lib/python${MODPY_VERSION}/site-packages/rss2email.pyc
+share/doc/rss2email/
+share/doc/rss2email/readme.html
+share/examples/rss2email/
+share/examples/rss2email/config.py.example
