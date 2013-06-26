@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2013/06/20 06:54:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.126 2013/06/26 19:09:13 sthen Exp $
 
 COMMENT-main =		open-source LDAP software (client)
 COMMENT-server =	open-source LDAP software (server)
@@ -8,7 +8,7 @@ PKGNAME-main =		${DISTNAME:S/-/-client-/}
 PKGNAME-server =	${DISTNAME:S/-/-server-/}
 
 REVISION-main =		1
-REVISION-server =	1
+REVISION-server =	2
 
 # overwrite -main pkgname/path to strip FLAVOR, aci only affects the server
 FULLPKGNAME-main =	${DISTNAME:S/-/-client-/}
@@ -95,11 +95,12 @@ TEST_TARGET =	test
 
 MULTI_PACKAGES =	-main -server
 
-LIB_DEPENDS +=		security/cyrus-sasl2
+LIB_DEPENDS +=		security/cyrus-sasl2 
 WANTLIB +=		pthread sasl2
 CPPFLAGS +=		-I${LOCALBASE}/include/sasl
 
 LIB_DEPENDS-server =	${LIB_DEPENDS-main} \
+			sysutils/e2fsprogs \
 			textproc/icu4c \
 			databases/db/v4,no_java,no_tcl
 
@@ -107,7 +108,7 @@ CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include/sasl -I${LOCALBASE}/include/db
 			LDFLAGS="-L${LOCALBASE}/lib/db4 -L${LOCALBASE}/lib"
 
 RUN_DEPENDS-server =	databases/openldap,-main
-WANTLIB-server +=	${WANTLIB} perl util wrap m icudata icuuc
+WANTLIB-server +=	${WANTLIB} perl util wrap m icudata icuuc uuid
 WANTLIB-server +=	stdc++ lib/db4/db>=4
 
 pre-build:
