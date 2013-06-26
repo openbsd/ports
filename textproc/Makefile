@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.387 2013/06/25 22:58:13 jturner Exp $
+# $OpenBSD: Makefile,v 1.388 2013/06/26 06:35:35 jasper Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -97,6 +97,7 @@
      SUBDIR += lq-sp
      SUBDIR += luaexpat
      SUBDIR += luasoldout
+     SUBDIR += luasoldout,lua52
      SUBDIR += makefaq
      SUBDIR += markdown
      SUBDIR += meld
