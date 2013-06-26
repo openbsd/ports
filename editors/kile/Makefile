@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/06/24 15:53:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.24 2013/06/26 08:55:38 sthen Exp $
 
 COMMENT=	integrated LaTeX environment for KDE
 DISTNAME=	kile-2.0
@@ -21,7 +21,7 @@ WANTLIB +=	pthread pthread-stubs stdc++ util xcb z
 WANTLIB +=	${KDE}/DCOP ${KDE}/kabc ${KDE}/katepartinterfaces
 WANTLIB +=	${KDE}/kdecore ${KDE}/kdefx ${KDE}/kdeprint ${KDE}/kdesu
 WANTLIB +=	${KDE}/kdeui ${KDE}/khtml ${KDE}/kio ${KDE}/kjs
-WANTLIB +=	${KDE}/kparts ${KDE}/kresources${KDE}/kspell ${KDE}/ktexteditor
+WANTLIB +=	${KDE}/kparts ${KDE}/kresources ${KDE}/kspell ${KDE}/ktexteditor
 WANTLIB +=	${KDE}/kutils ${KDE}/kwalletclient ${KDE}/vcard
 
 RUN_DEPENDS=	x11/kde/graphics3 \
