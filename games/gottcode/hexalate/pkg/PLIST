@@ -1,7 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/04 09:29:38 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/06/26 18:53:35 landry Exp $
 @bin bin/hexalate
 share/applications/hexalate.desktop
+share/hexalate/
+share/hexalate/translations/
+share/hexalate/translations/hexalate_ca.qm
+share/hexalate/translations/hexalate_cs.qm
+share/hexalate/translations/hexalate_de.qm
+share/hexalate/translations/hexalate_en.qm
+share/hexalate/translations/hexalate_es.qm
+share/hexalate/translations/hexalate_et.qm
+share/hexalate/translations/hexalate_fr.qm
+share/hexalate/translations/hexalate_ro.qm
+share/hexalate/translations/hexalate_ru.qm
+share/hexalate/translations/hexalate_tr.qm
+share/icons/hicolor/128x128/apps/hexalate.png
+share/icons/hicolor/16x16/apps/hexalate.png
+share/icons/hicolor/22x22/apps/hexalate.png
+share/icons/hicolor/24x24/apps/hexalate.png
+share/icons/hicolor/256x256/apps/hexalate.png
+share/icons/hicolor/32x32/apps/hexalate.png
 share/icons/hicolor/48x48/apps/hexalate.png
+share/icons/hicolor/64x64/apps/hexalate.png
+share/pixmaps/
+share/pixmaps/hexalate.xpm
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
