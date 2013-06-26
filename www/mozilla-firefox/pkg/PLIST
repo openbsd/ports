@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.50 2013/05/30 14:17:32 landry Exp $
+@comment $OpenBSD: PLIST,v 1.51 2013/06/26 19:29:16 landry Exp $
 @conflict firefox3-*
 @conflict firefox35-*
 @conflict mozilla-firebird-*
@@ -53,7 +53,6 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/dictionaries/en-US.dic
 @bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/${MOZILLA_PROJECT}
 @bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/${MOZILLA_PROJECT}-bin
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libmozalloc.so.${LIBmozalloc_VERSION}
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libxpcom.so.${LIBxpcom_VERSION}
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libxul.so.${LIBxul_VERSION}
 @bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/mozilla-xremote-client
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/omni.ja
