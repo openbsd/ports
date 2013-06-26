@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.295 2013/05/31 15:21:51 jturner Exp $
+# $OpenBSD: Makefile,v 1.296 2013/06/26 16:23:31 sthen Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -188,6 +188,7 @@
      SUBDIR += re-alpine
      SUBDIR += relaydb
      SUBDIR += roundcubemail
+     SUBDIR += rss2email
      SUBDIR += ruby-mail
      SUBDIR += ruby-mailfactory
      SUBDIR += ruby-mime
