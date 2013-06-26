@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.62 2013/05/15 09:46:28 sebastia Exp $
+# $OpenBSD: Makefile,v 1.63 2013/06/26 04:56:43 dcoppa Exp $
 
 COMMENT=	sophisticated scripter based on Tcl/Tk
 
 VERSION =	5.45
 DISTNAME=	expect${VERSION}
 PKGNAME =	expect-${VERSION}
+REVISION =	0
 SHARED_LIBS=	expect545 0.0
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=expect/}
