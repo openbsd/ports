@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/04 09:29:39 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/06/26 18:53:16 landry Exp $
 @bin bin/simsu
 share/applications/simsu.desktop
 share/icons/hicolor/128x128/apps/simsu.png
@@ -11,7 +11,7 @@ share/icons/hicolor/48x48/apps/simsu.png
 share/icons/hicolor/64x64/apps/simsu.png
 share/icons/hicolor/scalable/apps/simsu.svg
 share/pixmaps/
-share/pixmaps/simsu_32.xpm
+share/pixmaps/simsu.xpm
 share/simsu/
 share/simsu/translations/
 share/simsu/translations/simsu_ca.qm
@@ -21,6 +21,9 @@ share/simsu/translations/simsu_en.qm
 share/simsu/translations/simsu_es.qm
 share/simsu/translations/simsu_es_CL.qm
 share/simsu/translations/simsu_fr.qm
+share/simsu/translations/simsu_he.qm
+share/simsu/translations/simsu_hu.qm
+share/simsu/translations/simsu_ro.qm
 share/simsu/translations/simsu_ru.qm
 share/simsu/translations/simsu_uk.qm
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
