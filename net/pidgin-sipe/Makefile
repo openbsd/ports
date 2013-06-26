@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/21 08:46:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2013/06/26 21:52:56 sthen Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		SIPE plugin for Pidgin
 
 DISTNAME =		pidgin-sipe-1.14.1
+REVISION =		0
 
 CATEGORIES =		net
 
@@ -19,6 +20,7 @@ WANTLIB += dbus-1 dbus-glib-1 ffi gio-2.0 glib-2.0 gmime-2.6 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 idn m nspr4 nss3 nssutil3 pcre
 WANTLIB += plc4 plds4 purple smime3 softokn3 sqlite3 ssl3 util
 WANTLIB += xml2 z pthread
+WANTLIB += asn1 com_err crypto gssapi heimbase krb5 roken wind
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=sipe/}
 
