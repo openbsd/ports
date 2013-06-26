@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2013/03/11 10:50:01 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2013/06/26 16:24:00 espie Exp $
 
 COMMENT=	GNU parser generator
 
@@ -21,3 +21,9 @@ CONFIGURE_ARGS=	--disable-yacc
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
 
 .include <bsd.port.mk>
+# work around horrible bug in a.out toolchain, having a variable called "accept"
+# won't work, as it's named the same as a libc AND libpthread symbol with
+# weak properties
+.if !${PROPERTIES:L:Melf}
+CFLAGS += -Daccept=ceci_nest_pas_une_pipe
+.endif
