@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2013/05/30 15:43:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.65 2013/06/26 16:17:25 sthen Exp $
 
     SUBDIR =
     SUBDIR += base64
@@ -54,6 +54,7 @@
     SUBDIR += pflogx
     SUBDIR += ppmtoTbmp
     SUBDIR += py-cjkcodecs
+    SUBDIR += py-html2text
     SUBDIR += py-iconvcodec
     SUBDIR += qprint
     SUBDIR += recode
