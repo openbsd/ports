@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/06/26 18:58:38 landry Exp $
+@bin bin/connectagram
+share/applications/connectagram.desktop
+share/connectagram/
+share/connectagram/data/
+share/connectagram/data/en/
+share/connectagram/data/en/words
+share/connectagram/data/fr/
+share/connectagram/data/fr/words
+share/connectagram/translations/
+share/connectagram/translations/connectagram_cs.qm
+share/connectagram/translations/connectagram_de.qm
+share/connectagram/translations/connectagram_el.qm
+share/connectagram/translations/connectagram_en.qm
+share/connectagram/translations/connectagram_fr.qm
+share/connectagram/translations/connectagram_ro.qm
+share/connectagram/translations/connectagram_ru.qm
+share/connectagram/translations/connectagram_tr.qm
+share/icons/hicolor/128x128/apps/connectagram.png
+share/icons/hicolor/16x16/apps/connectagram.png
+share/icons/hicolor/22x22/apps/connectagram.png
+share/icons/hicolor/24x24/apps/connectagram.png
+share/icons/hicolor/256x256/apps/connectagram.png
+share/icons/hicolor/32x32/apps/connectagram.png
+share/icons/hicolor/48x48/apps/connectagram.png
+share/icons/hicolor/64x64/apps/connectagram.png
+@unexec-delete %D/bin/update-desktop-database
+share/icons/hicolor/scalable/apps/connectagram.svg
+share/pixmaps/
+share/pixmaps/connectagram.xpm
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
