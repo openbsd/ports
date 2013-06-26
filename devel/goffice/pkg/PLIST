@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2013/04/27 11:31:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2013/06/26 06:51:55 ajacoutot Exp $
 include/libgoffice-${API_VERSION}/
 include/libgoffice-${API_VERSION}/goffice/
 include/libgoffice-${API_VERSION}/goffice/app/
@@ -132,6 +132,7 @@ include/libgoffice-${API_VERSION}/goffice/math/go-cspline.h
 include/libgoffice-${API_VERSION}/goffice/math/go-distribution.h
 include/libgoffice-${API_VERSION}/goffice/math/go-fft.h
 include/libgoffice-${API_VERSION}/goffice/math/go-math.h
+include/libgoffice-${API_VERSION}/goffice/math/go-matrix.h
 include/libgoffice-${API_VERSION}/goffice/math/go-matrix3x3.h
 include/libgoffice-${API_VERSION}/goffice/math/go-quad.h
 include/libgoffice-${API_VERSION}/goffice/math/go-rangefunc.h
