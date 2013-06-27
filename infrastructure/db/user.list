@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.210 2013/06/18 11:33:27 sthen Exp $
+$OpenBSD: user.list,v 1.211 2013/06/27 12:29:24 jasper Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -227,3 +227,4 @@ id  user		group		port options
 716 _c-icap		_c-icap		www/c-icap/c-icap
 717 _uptimed		_uptimed	sysutils/uptimed
 718 _stuntman		_stuntman	telephony/stuntman
+719 _puppetdb		_puppetdb	databases/puppetdb
