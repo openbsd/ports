@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/06/24 15:53:38 zhuk Exp $
-bin/taxipilot
+@comment $OpenBSD: PLIST,v 1.5 2013/06/27 11:59:02 zhuk Exp $
+@bin bin/taxipilot
 share/applnk/
 share/applnk/Games/
 share/applnk/Games/taxipilot.desktop
