@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/05/24 13:43:41 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/06/27 13:47:03 abieber Exp $
 @pkgpath www/node
 @bin bin/node
 bin/node-gyp
@@ -314,6 +314,28 @@ lib/node_modules/nopt/examples/my-program.js
 lib/node_modules/nopt/lib/
 lib/node_modules/nopt/lib/nopt.js
 lib/node_modules/nopt/package.json
+lib/node_modules/normalize-package-data/
+lib/node_modules/normalize-package-data/.npmignore
+lib/node_modules/normalize-package-data/.travis.yml
+lib/node_modules/normalize-package-data/AUTHORS
+lib/node_modules/normalize-package-data/LICENSE
+lib/node_modules/normalize-package-data/README.md
+lib/node_modules/normalize-package-data/lib/
+lib/node_modules/normalize-package-data/lib/extract_description.js
+lib/node_modules/normalize-package-data/lib/fixer.js
+lib/node_modules/normalize-package-data/lib/is_valid.js
+lib/node_modules/normalize-package-data/lib/normalize.js
+lib/node_modules/normalize-package-data/lib/typos.json
+lib/node_modules/normalize-package-data/node_modules/
+lib/node_modules/normalize-package-data/node_modules/github-url-from-git/
+lib/node_modules/normalize-package-data/node_modules/github-url-from-git/.npmignore
+lib/node_modules/normalize-package-data/node_modules/github-url-from-git/History.md
+lib/node_modules/normalize-package-data/node_modules/github-url-from-git/Makefile
+lib/node_modules/normalize-package-data/node_modules/github-url-from-git/Readme.md
+lib/node_modules/normalize-package-data/node_modules/github-url-from-git/index.js
+lib/node_modules/normalize-package-data/node_modules/github-url-from-git/package.json
+lib/node_modules/normalize-package-data/node_modules/github-url-from-git/test.js
+lib/node_modules/normalize-package-data/package.json
 lib/node_modules/npm/
 lib/node_modules/npm-registry-client/
 lib/node_modules/npm-registry-client/.npmignore
@@ -340,6 +362,7 @@ lib/node_modules/npm-registry-client/node_modules/couch-login/package.json
 lib/node_modules/npm-registry-client/package.json
 lib/node_modules/npm-user-validate/
 lib/node_modules/npm-user-validate/.npmignore
+lib/node_modules/npm-user-validate/.travis.yml
 lib/node_modules/npm-user-validate/LICENSE
 lib/node_modules/npm-user-validate/README.md
 lib/node_modules/npm-user-validate/npm-user-validate.js
@@ -634,6 +657,7 @@ lib/node_modules/npm/lib/utils/link.js
 lib/node_modules/npm/lib/utils/tar.js
 lib/node_modules/npm/lib/version.js
 lib/node_modules/npm/lib/view.js
+lib/node_modules/npm/lib/visnup.js
 lib/node_modules/npm/lib/whoami.js
 lib/node_modules/npm/lib/xmas.js
 @mandir lib/node_modules/npm/man/
@@ -775,6 +799,7 @@ lib/node_modules/npm/node_modules/minimatch
 lib/node_modules/npm/node_modules/mkdirp
 lib/node_modules/npm/node_modules/node-gyp
 lib/node_modules/npm/node_modules/nopt
+lib/node_modules/npm/node_modules/normalize-package-data
 lib/node_modules/npm/node_modules/npm-registry-client
 lib/node_modules/npm/node_modules/npm-user-validate
 lib/node_modules/npm/node_modules/npmconf
@@ -930,6 +955,7 @@ lib/node_modules/request/node_modules/form-data/node_modules/
 lib/node_modules/request/node_modules/form-data/node_modules/async/
 lib/node_modules/request/node_modules/form-data/node_modules/async/LICENSE
 lib/node_modules/request/node_modules/form-data/node_modules/async/README.md
+lib/node_modules/request/node_modules/form-data/node_modules/async/component.json
 lib/node_modules/request/node_modules/form-data/node_modules/async/lib/
 lib/node_modules/request/node_modules/form-data/node_modules/async/lib/async.js
 lib/node_modules/request/node_modules/form-data/node_modules/async/package.json
@@ -983,6 +1009,20 @@ lib/node_modules/request/node_modules/hawk/node_modules/boom/images/boom.png
 lib/node_modules/request/node_modules/hawk/node_modules/boom/index.js
 lib/node_modules/request/node_modules/hawk/node_modules/boom/lib/
 lib/node_modules/request/node_modules/hawk/node_modules/boom/lib/index.js
+lib/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/
+lib/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/
+lib/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/.npmignore
+lib/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/.travis.yml
+lib/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/LICENSE
+lib/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/Makefile
+lib/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/README.md
+lib/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/images/
+lib/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/images/hoek.png
+lib/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/index.js
+lib/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/lib/
+lib/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/lib/escape.js
+lib/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/lib/index.js
+lib/node_modules/request/node_modules/hawk/node_modules/boom/node_modules/hoek/package.json
 lib/node_modules/request/node_modules/hawk/node_modules/boom/package.json
 lib/node_modules/request/node_modules/hawk/node_modules/cryptiles/
 lib/node_modules/request/node_modules/hawk/node_modules/cryptiles/.npmignore
@@ -1019,6 +1059,20 @@ lib/node_modules/request/node_modules/hawk/node_modules/sntp/examples/time.js
 lib/node_modules/request/node_modules/hawk/node_modules/sntp/index.js
 lib/node_modules/request/node_modules/hawk/node_modules/sntp/lib/
 lib/node_modules/request/node_modules/hawk/node_modules/sntp/lib/index.js
+lib/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/
+lib/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/
+lib/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/.npmignore
+lib/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/.travis.yml
+lib/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/LICENSE
+lib/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/Makefile
+lib/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/README.md
+lib/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/images/
+lib/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/images/hoek.png
+lib/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/index.js
+lib/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/lib/
+lib/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/lib/escape.js
+lib/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/lib/index.js
+lib/node_modules/request/node_modules/hawk/node_modules/sntp/node_modules/hoek/package.json
 lib/node_modules/request/node_modules/hawk/node_modules/sntp/package.json
 lib/node_modules/request/node_modules/hawk/package.json
 lib/node_modules/request/node_modules/http-signature/
