@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/06/24 15:53:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.34 2013/06/27 11:31:51 zhuk Exp $
 
 COMMENT-main =		kde image plugins
 COMMENT-cal =		kde image calendar plugin
@@ -42,15 +42,15 @@ WANTLIB += fontconfig freetype idn jpeg lcms m mng png stdc++ util xcb
 WANTLIB += z 
 WANTLIB += lib/qt3/qt-mt>=3.33
 WANTLIB += ${KDE}/DCOP ${KDE}/kdecore>=6 ${KDE}/kdefx ${KDE}/kdeprint
-WANTLIB += ${KDE}/kdesu ${KDE}/kdeui ${KDE}/kio ${KDE}/kipi ${KDE}/kparts
+WANTLIB += ${KDE}/kdesu ${KDE}/kdeui ${KDE}/kio kipi ${KDE}/kparts
 WANTLIB += ${KDE}/kwalletclient
 
 WANTLIB-main =  ${WANTLIB} exif exiv2 exslt gcrypt gpg-error gphoto2
 WANTLIB-main += gphoto2_port ltdl pcre pcreposix tiff xml2 xslt 
-WANTLIB-main += ${KDE}/kdcraw ${KDE}/kexiv2 ${KDE}/khtml ${KDE}/kjs
+WANTLIB-main += kdcraw kexiv2 ${KDE}/khtml ${KDE}/kjs
 WANTLIB-main += ${KDE}/kutils
 
-WANTLIB-cal =  ${WANTLIB} ${KDE}/kabc ${KDE}/kcal ${KDE}/kipiplugins
+WANTLIB-cal =  ${WANTLIB} ${KDE}/kabc ${KDE}/kcal kipiplugins
 WANTLIB-cal += ${KDE}/kmime ${KDE}/kresources ${KDE}/ktnef ${KDE}/vcard
 
 USE_GROFF =		Yes

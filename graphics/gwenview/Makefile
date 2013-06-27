@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2013/06/24 15:53:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.55 2013/06/27 11:31:51 zhuk Exp $
 
 COMMENT=	image viewer for KDE
 
@@ -21,7 +21,7 @@ WANTLIB += stdc++ util xcb z
 WANTLIB += ${KDE}/kdecore>=6 ${KDE}/DCOP ${KDE}/kdefx ${KDE}/kdeprint
 WANTLIB += ${KDE}/kdesu ${KDE}/kparts ${KDE}/kdeui ${KDE}/kio
 WANTLIB += ${KDE}/kmediaplayer ${KDE}/kutils ${KDE}/kwalletclient
-WANTLIB += ${KDE}/kipi
+WANTLIB += kipi
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+2,-guic
