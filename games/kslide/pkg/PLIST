@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/06/24 15:53:38 zhuk Exp $
-bin/kslide
+@comment $OpenBSD: PLIST,v 1.4 2013/06/27 11:53:00 zhuk Exp $
+@bin bin/kslide
 share/applnk/
 share/applnk/Games/
 share/applnk/Games/kslide.desktop
@@ -32,18 +32,9 @@ share/doc/HTML/en/
 share/doc/HTML/en/kslide/
 share/doc/HTML/en/kslide/index.html
 share/doc/HTML/en/kslide/kde_logo.gif
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/actions/
 share/icons/hicolor/16x16/actions/solve.png
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/kslide.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/kslide.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/kslide.png
 share/icons/locolor/
 share/icons/locolor/16x16/
