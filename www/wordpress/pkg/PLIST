@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2013/01/28 21:14:09 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.23 2013/06/27 15:04:04 kirby Exp $
 @pkgpath www/wordpress-mu
 wordpress/
 wordpress/index.php
@@ -842,7 +842,6 @@ wordpress/wp-includes/js/swfupload/plugins/swfupload.cookies.js
 wordpress/wp-includes/js/swfupload/plugins/swfupload.queue.js
 wordpress/wp-includes/js/swfupload/plugins/swfupload.speed.js
 wordpress/wp-includes/js/swfupload/plugins/swfupload.swfobject.js
-wordpress/wp-includes/js/swfupload/swfupload-all.js
 wordpress/wp-includes/js/swfupload/swfupload.js
 wordpress/wp-includes/js/swfupload/swfupload.swf
 wordpress/wp-includes/js/thickbox/
