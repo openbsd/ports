@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/04/23 09:22:46 giovanni Exp $
+# $OpenBSD: Makefile,v 1.3 2013/06/27 02:50:17 william Exp $
 
 COMMENT =	Postfix policy server
 
 DISTNAME =	postfwd-1.35
+REVISION =	0
 CATEGORIES =	mail
 
 HOMEPAGE =	http://www.postfwd.org/
@@ -29,7 +30,12 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/postfwd.cf.sample ${PREFIX}/share/examples/postfwd/postfwd.cf.sample
 	${INSTALL_DATA} ${WRKSRC}/plugins/* ${PREFIX}/share/examples/postfwd/plugins/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/postfwd/
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/postfwd-client.pl ${PREFIX}/bin/postfwd-client.pl
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/rblcheck.pl ${PREFIX}/bin/rblcheck.pl
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/hapolicy/hapolicy ${PREFIX}/sbin/hapolicy
 	${INSTALL_DATA} ${WRKSRC}/doc/postfwd2* ${PREFIX}/share/doc/postfwd/
+	${INSTALL_DATA} ${WRKSRC}/tools/hapolicy/hapolicy.* ${PREFIX}/share/doc/postfwd/
+	${INSTALL_DATA} ${WRKSRC}/tools/request.sample ${PREFIX}/share/doc/postfwd/request.sample
 	${INSTALL_MAN} ${WRKSRC}/man/man8/postfwd2.8 ${PREFIX}/man/man8/postfwd2.8
 
 .include <bsd.port.mk>
