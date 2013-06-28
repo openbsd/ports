@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2010/11/08 23:24:41 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/06/28 16:16:07 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.rdoc
@@ -38,6 +38,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/net/ssh/loggable.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/net/ssh/packet.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/net/ssh/prompt.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/net/ssh/proxy/
+${GEM_LIB}/gems/${DISTNAME}/lib/net/ssh/proxy/command.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/net/ssh/proxy/errors.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/net/ssh/proxy/http.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/net/ssh/proxy/socks4.rb
@@ -86,7 +87,9 @@ ${GEM_LIB}/gems/${DISTNAME}/net-ssh.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/setup.rb
 ${GEM_LIB}/gems/${DISTNAME}/support/
 ${GEM_LIB}/gems/${DISTNAME}/support/arcfour_check.rb
+${GEM_LIB}/gems/${DISTNAME}/support/ssh_tunnel_bug.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test/README.txt
 ${GEM_LIB}/gems/${DISTNAME}/test/authentication/
 ${GEM_LIB}/gems/${DISTNAME}/test/authentication/methods/
 ${GEM_LIB}/gems/${DISTNAME}/test/authentication/methods/common.rb
@@ -102,11 +105,16 @@ ${GEM_LIB}/gems/${DISTNAME}/test/common.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/configs/
 ${GEM_LIB}/gems/${DISTNAME}/test/configs/eqsign
 ${GEM_LIB}/gems/${DISTNAME}/test/configs/exact_match
+${GEM_LIB}/gems/${DISTNAME}/test/configs/host_plus
 ${GEM_LIB}/gems/${DISTNAME}/test/configs/multihost
+${GEM_LIB}/gems/${DISTNAME}/test/configs/nohost
+${GEM_LIB}/gems/${DISTNAME}/test/configs/numeric_host
 ${GEM_LIB}/gems/${DISTNAME}/test/configs/wild_cards
 ${GEM_LIB}/gems/${DISTNAME}/test/connection/
 ${GEM_LIB}/gems/${DISTNAME}/test/connection/test_channel.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/connection/test_session.rb
+${GEM_LIB}/gems/${DISTNAME}/test/manual/
+${GEM_LIB}/gems/${DISTNAME}/test/manual/test_forward.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_all.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_buffer.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_buffered_io.rb
