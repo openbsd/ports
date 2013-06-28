@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2013/06/28 06:11:38 stu Exp $
 
 COMMENT =		Tool Command Language
 
-DISTNAME =		tcl8.4.19
-PKGNAME =		tcl-8.4.19
-REVISION =		1
-SHARED_LIBS =		tcl84 1.1
+DISTNAME =		tcl8.4.20
+PKGNAME =		tcl-8.4.20
+SHARED_LIBS =		tcl84 2.0
 CATEGORIES =		lang lang/tcl
 HOMEPAGE =		http://www.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -33,9 +32,10 @@ CONFIGURE_STYLE =	autoconf no-autoheader old
 
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--includedir="${PREFIX}/include/tcl8.4" \
-			--mandir="${PREFIX}/man/tcl8.4" \
+			--mandir="${PREFIX}/lib/tcl/tcl8.4/man" \
 			--sysconfdir="${SYSCONFDIR}" \
-			--enable-man-symlinks
+			--enable-man-symlinks \
+			--disable-rpath
 
 CONFIGURE_ENV +=	SHLIB_VERSION="${LIBtcl84_VERSION}" \
 			EXTRA_INSTALL="install-private-headers"
@@ -62,7 +62,7 @@ pre-test:
 	@mkdir -p ${TESTHOME}
 
 post-install:
-	${INSTALL_DATA} ${WRKDIST}/license.terms ${PREFIX}/man/tcl8.4
+	${INSTALL_DATA} ${WRKDIST}/license.terms ${PREFIX}/lib/tcl/tcl8.4/man
 .if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
 	ln -s libtcl84.a ${PREFIX}/lib/libtcl84_pic.a
 	ln -s libtclstub84.a ${PREFIX}/lib/libtclstub84_pic.a

@@ -1,7 +1,7 @@
-$OpenBSD: patch-library_init_tcl,v 1.1 2011/01/05 16:19:48 stu Exp $
---- library/init.tcl.orig	Sun Oct  3 09:43:48 2010
-+++ library/init.tcl	Sun Oct  3 09:44:27 2010
-@@ -55,11 +55,14 @@ namespace eval tcl {
+$OpenBSD: patch-library_init_tcl,v 1.2 2013/06/28 06:11:39 stu Exp $
+--- library/init.tcl.orig	Mon Nov 19 11:27:16 2012
++++ library/init.tcl	Sat May 25 17:33:57 2013
+@@ -52,11 +52,14 @@ namespace eval tcl {
  	    }
  	}
      }

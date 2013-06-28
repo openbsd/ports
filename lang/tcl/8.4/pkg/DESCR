@@ -11,10 +11,10 @@ Tcl/Tk resources:
   Book: Practical Programming in Tcl and Tk, 4th Edition
         ISBN: 0-13-038560-3
 
-"Routine maintenance of Tcl/Tk 8.4 has now come to an end.  We intend
-Tcl/Tk 8.4.19 to be the final 8.4.* releases.  The current stable
-releases of Tcl/Tk are 8.5.2, and development has begun on Tcl/Tk 8.6.
-It is possible that a bug fix of great enough importance or severity
-might prompt a release of 8.4.20, but there is no plan for that at the
-moment.  Even that level of support will fade away quickly."
-- Tcl/Tk 8.4.19 Release Announcement April 18, 2008
+"The Tcl Core Team is pleased to announce the 8.4.20 releases of the Tcl
+dynamic language and the Tk toolkit.  This is the twentieth and *FINAL*
+patch release of Tcl/Tk 8.4.  With this release, support for Tcl/Tk 8.4
+comes to an end.  The current release sequence for Tcl and Tk is 8.6.*.
+All Tcl/Tk users are encouraged to migrate to that release sequence for
+future work."
+- Tcl/Tk 8.4.20 Release Announcement June 1, 2013

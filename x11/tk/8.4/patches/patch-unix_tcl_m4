@@ -1,7 +1,7 @@
-$OpenBSD: patch-unix_tcl_m4,v 1.1 2009/01/16 00:02:32 sthen Exp $
---- unix/tcl.m4.orig	Thu Apr 17 11:14:08 2008
-+++ unix/tcl.m4	Sun Sep 28 15:46:02 2008
-@@ -1501,21 +1501,15 @@ dnl AC_CHECK_TOOL(AR, ar)
+$OpenBSD: patch-unix_tcl_m4,v 1.2 2013/06/28 06:12:14 stu Exp $
+--- unix/tcl.m4.orig	Tue May 28 11:05:36 2013
++++ unix/tcl.m4	Wed May 29 07:32:44 2013
+@@ -1499,13 +1499,7 @@ dnl AC_CHECK_TOOL(AR, ar)
  		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
  		;;
  	    *)
@@ -14,22 +14,22 @@ $OpenBSD: patch-unix_tcl_m4,v 1.1 2009/01/16 00:02:32 sthen Exp $
 -	        esac
 +		SHLIB_CFLAGS="-fPIC"
  		SHLIB_LD="${CC} -shared ${SHLIB_CFLAGS}"
- 		SHLIB_LD_LIBS='${LIBS}'
  		SHLIB_SUFFIX=".so"
  		DL_OBJS="tclLoadDl.o"
- 		DL_LIBS=""
--		CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
-+		CC_SEARCH_FLAGS=''
+@@ -1514,7 +1508,7 @@ dnl AC_CHECK_TOOL(AR, ar)
+ 		    CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
+ 		fi
  		LD_SEARCH_FLAGS=${CC_SEARCH_FLAGS}
 -		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.0'
 +		SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.${SHLIB_VERSION}'
  		AC_CACHE_CHECK([for ELF], tcl_cv_ld_elf, [
  		    AC_EGREP_CPP(yes, [
  #ifdef __ELF__
-@@ -1530,6 +1524,8 @@ dnl AC_CHECK_TOOL(AR, ar)
+@@ -1528,7 +1522,8 @@ dnl AC_CHECK_TOOL(AR, ar)
+ 	        fi
  		;;
  	    esac
- 
+-
 +	    CFLAGS_WARNING="-Wall"
 +	    CFLAGS_OPTIMIZE="-O2"
  	    # OpenBSD doesn't do version numbers with dots.

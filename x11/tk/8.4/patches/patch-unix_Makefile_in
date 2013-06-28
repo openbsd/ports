@@ -1,7 +1,7 @@
-$OpenBSD: patch-unix_Makefile_in,v 1.2 2011/01/05 16:21:06 stu Exp $
---- unix/Makefile.in.orig	Sun Oct  3 15:35:27 2010
-+++ unix/Makefile.in	Sun Oct  3 15:46:05 2010
-@@ -502,6 +502,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
+$OpenBSD: patch-unix_Makefile_in,v 1.3 2013/06/28 06:12:14 stu Exp $
+--- unix/Makefile.in.orig	Tue May 28 11:05:36 2013
++++ unix/Makefile.in	Wed May 29 11:50:22 2013
+@@ -528,6 +528,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f $@
  	@MAKE_STUB_LIB@
  
@@ -12,18 +12,13 @@ $OpenBSD: patch-unix_Makefile_in,v 1.2 2011/01/05 16:21:06 stu Exp $
  # Build Aqua resource files
  ${TK_RSRC_FILE}: $(AQUA_RESOURCES)
  	rm -f $@
-@@ -616,18 +620,14 @@ install-strip:
- # possible (e.g. if installing as root).
- 
- install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $(TK_BUILD_EXP_FILE) wish
--	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) $(PKG_INSTALL_DIR); \
-+	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) $(PKG_INSTALL_DIR) $(SCRIPT_INSTALL_DIR); \
+@@ -648,14 +652,10 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $
  	    do \
- 		if [ ! -d $$i ] ; then \
+ 	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
--		mkdir -p $$i; \
--		chmod 755 $$i; \
-+		${INSTALL_DATA_DIR} $$i; \
+-		mkdir -p "$$i"; \
+-		chmod 755 "$$i"; \
++		${INSTALL_DATA_DIR} "$$i"; \
  		else true; \
  		fi; \
  	    done;
@@ -32,33 +27,22 @@ $OpenBSD: patch-unix_Makefile_in,v 1.2 2011/01/05 16:21:06 stu Exp $
 -	    fi
  	@if test "x$(TK_SHARED_BUILD)" = "x1"; then \
  	    echo "Creating package index $(PKG_INDEX)"; \
- 	    rm -f $(PKG_INDEX); \
-@@ -640,7 +640,6 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $
+ 	    rm -f "$(PKG_INDEX)"; \
+@@ -676,7 +676,6 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $
  	    fi
- 	@echo "Installing $(LIB_FILE) to $(LIB_INSTALL_DIR)/"
+ 	@echo "Installing $(LIB_FILE) to $(DLL_INSTALL_DIR)/"
  	@@INSTALL_LIB@
--	@chmod 555 $(LIB_INSTALL_DIR)/$(LIB_FILE)
- 	@if test "$(TK_BUILD_EXP_FILE)" != ""; then \
- 	    echo "Installing $(TK_EXP_FILE) to $(LIB_INSTALL_DIR)/"; \
- 	    $(INSTALL_DATA) $(TK_BUILD_EXP_FILE) \
-@@ -648,8 +647,8 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $
- 	    fi
- 	@echo "Installing wish as $(BIN_INSTALL_DIR)/wish$(VERSION)"
- 	@$(INSTALL_PROGRAM) wish $(BIN_INSTALL_DIR)/wish$(VERSION)
--	@echo "Installing tkConfig.sh to $(LIB_INSTALL_DIR)/"
--	@$(INSTALL_DATA) tkConfig.sh $(LIB_INSTALL_DIR)/tkConfig.sh
-+	@echo "Installing tkConfig.sh to $(SCRIPT_INSTALL_DIR)/"
-+	@$(INSTALL_DATA) tkConfig.sh $(SCRIPT_INSTALL_DIR)/tkConfig.sh
- 	@if test "$(STUB_LIB_FILE)" != "" ; then \
- 	    echo "Installing $(STUB_LIB_FILE) to $(LIB_INSTALL_DIR)/"; \
- 	    @INSTALL_STUB_LIB@ ; \
-@@ -665,14 +664,10 @@ install-libraries: libraries
+-	@chmod 555 "$(DLL_INSTALL_DIR)/$(LIB_FILE)"
+ 	@if test -f "tk${MAJOR_VERSION}${MINOR_VERSION}.dll"; then \
+ 	    $(INSTALL_LIBRARY) "${TOP_DIR}/win/tk${MAJOR_VERSION}${MINOR_VERSION}.dll" "$(DLL_INSTALL_DIR)";\
+ 	    chmod 555 "$(DLL_INSTALL_DIR)/tk${MAJOR_VERSION}${MINOR_VERSION}.dll";\
+@@ -705,14 +704,10 @@ install-libraries: libraries
  	    do \
- 		if [ ! -d $$i ] ; then \
+ 	    if [ -n "$$i" -a ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
--		mkdir -p $$i; \
--		chmod 755 $$i; \
-+		${INSTALL_DATA_DIR} $$i; \
+-		mkdir -p "$$i"; \
+-		chmod 755 "$$i"; \
++		${INSTALL_DATA_DIR} "$$i"; \
  		else true; \
  		fi; \
  	    done;
@@ -66,81 +50,84 @@ $OpenBSD: patch-unix_Makefile_in,v 1.2 2011/01/05 16:21:06 stu Exp $
 -	    chmod +x $(SRC_DIR)/install-sh; \
 -	    fi
  	@echo "Installing header files";
- 	@for i in $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkDecls.h \
- 		$(GENERIC_DIR)/tkPlatDecls.h $(@TK_WINDOWINGSYSTEM@_HDRS) ; \
-@@ -711,8 +706,7 @@ install-demos:
+ 	@for i in $(PUBLIC_HDRS); \
  	    do \
- 	    if [ ! -d $$i ] ; then \
+@@ -750,8 +745,7 @@ install-demos:
+ 	    do \
+ 	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
--		mkdir -p $$i; \
--		chmod 755 $$i; \
-+		${INSTALL_DATA_DIR} $$i; \
+-		mkdir -p "$$i"; \
+-		chmod 755 "$$i"; \
++		${INSTALL_DATA_DIR} "$$i"; \
  		else true; \
  		fi; \
  	    done;
-@@ -722,11 +716,12 @@ install-demos:
+@@ -761,6 +755,7 @@ install-demos:
  	    if [ -f $$i ] ; then \
  		sed -e '3 s|exec wish|exec wish$(VERSION)|' \
- 			$$i > $(SCRIPT_INSTALL_DIR)/demos/`basename $$i`; \
-+		chmod 444 $(SCRIPT_INSTALL_DIR)/demos/`basename $$i`; \
+ 			$$i > "$(DEMO_INSTALL_DIR)"/`basename $$i`; \
++		chmod 444 "$(DEMO_INSTALL_DIR)"/`basename $$i`; \
  	    fi; \
  	    done;
  	@for i in $(DEMOPROGS); \
- 	    do \
--	    chmod 755 $(SCRIPT_INSTALL_DIR)/demos/$$i; \
-+	    chmod 555 $(SCRIPT_INSTALL_DIR)/demos/$$i; \
+@@ -768,7 +763,7 @@ install-demos:
+ 	    if test $$i = "square"; then \
+ 	    rm -f  "$(DEMO_INSTALL_DIR)/$$i"; \
+ 	    else \
+-	    chmod 755 "$(DEMO_INSTALL_DIR)/$$i"; \
++	    chmod 555 "$(DEMO_INSTALL_DIR)/$$i"; \
+ 	    fi; \
  	    done;
- 	@echo "Installing demo images";
- 	@for i in $(TOP_DIR)/library/demos/images/*; \
-@@ -737,31 +732,27 @@ install-demos:
+ 	@echo "Installing demo images to $(DEMO_INSTALL_DIR)/images/";
+@@ -780,31 +775,27 @@ install-demos:
  	    done;
  
  install-doc:
 -	@if test ! -x $(UNIX_DIR)/installManPage; then \
 -	    chmod +x $(UNIX_DIR)/installManPage; \
 -	    fi
- 	@for i in $(MAN_INSTALL_DIR) $(MAN1_INSTALL_DIR) $(MAN3_INSTALL_DIR) $(MANN_INSTALL_DIR) ; \
+ 	@for i in "$(MAN_INSTALL_DIR)" "$(MAN1_INSTALL_DIR)" "$(MAN3_INSTALL_DIR)" "$(MANN_INSTALL_DIR)" ; \
  	    do \
- 	    if [ ! -d $$i ] ; then \
+ 	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
--		mkdir -p $$i; \
--		chmod 755 $$i; \
-+		${INSTALL_DATA_DIR} $$i; \
+-		mkdir -p "$$i"; \
+-		chmod 755 "$$i"; \
++		${INSTALL_DATA_DIR} "$$i"; \
  		else true; \
  		fi; \
  	    done;
  	@echo "Installing and cross-linking top-level (.1) docs";
  	@for i in $(TOP_DIR)/doc/*.1; do \
--	    $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i $(MAN1_INSTALL_DIR); \
-+	    $(SHELL) $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i $(MAN1_INSTALL_DIR); \
+-	    $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i "$(MAN1_INSTALL_DIR)"; \
++	    $(SHELL) $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i "$(MAN1_INSTALL_DIR)"; \
  	done
  
  	@echo "Installing and cross-linking C API (.3) docs";
  	@for i in $(TOP_DIR)/doc/*.3; do \
--	    $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i $(MAN3_INSTALL_DIR); \
-+	    $(SHELL) $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i $(MAN3_INSTALL_DIR); \
+-	    $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i "$(MAN3_INSTALL_DIR)"; \
++	    $(SHELL) $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i "$(MAN3_INSTALL_DIR)"; \
  	done
  
  	@echo "Installing and cross-linking command (.n) docs";
  	@for i in $(TOP_DIR)/doc/*.n; do \
--	    $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i $(MANN_INSTALL_DIR); \
-+	    $(SHELL) $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i $(MANN_INSTALL_DIR); \
+-	    $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i "$(MANN_INSTALL_DIR)"; \
++	    $(SHELL) $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i "$(MANN_INSTALL_DIR)"; \
  	done
  
  # Optional target to install private headers
-@@ -770,14 +761,10 @@ install-private-headers: libraries
+@@ -813,14 +804,10 @@ install-private-headers: libraries
  	    do \
- 	    if [ ! -d $$i ] ; then \
+ 	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
--		mkdir -p $$i; \
--		chmod 755 $$i; \
-+		${INSTALL_DATA_DIR} $$i; \
+-		mkdir -p "$$i"; \
+-		chmod 755 "$$i"; \
++		${INSTALL_DATA_DIR} "$$i"; \
  		else true; \
  		fi; \
  	    done;
 -	@if test ! -x $(SRC_DIR)/install-sh; then \
 -	    chmod +x $(SRC_DIR)/install-sh; \
 -	    fi
- 	@echo "Installing private header files";
- 	@for i in $(GENERIC_DIR)/tkInt.h $(GENERIC_DIR)/tkIntDecls.h \
- 		$(GENERIC_DIR)/tkIntPlatDecls.h \
+ 	@echo "Installing private header files to $(PRIVATE_INCLUDE_INSTALL_DIR)/";
+ 	@for i in $(PRIVATE_HDRS); \
+ 	    do \
