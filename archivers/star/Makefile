@@ -1,24 +1,24 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/10 22:28:05 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2013/06/28 15:19:40 rpe Exp $
 
 COMMENT=	unique standard tape archiver
 
-DISTNAME=	star-1.5.1
-REVISION=	0
+DISTNAME=	star-1.5.2
 CATEGORIES=	archivers sysutils
-HOMEPAGE=	http://cdrecord.berlios.de/old/private/star.html
+HOMEPAGE=	http://cdrecord.berlios.de/private/star.html
 
 # CDDL
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	ftp://ftp.berlios.de/pub/star/ \
-		http://spacehopper.org/mirrors/berlios/star/
+MASTER_SITES=	${MASTER_SITE_BERLIOS:=pub/star/} \
+		ftp://ftp.berlios.de/pub/star/
 
 FLAVORS=	static
 FLAVOR?=
 
 USE_GMAKE=	Yes
 USE_GROFF=	Yes
-MAKE_FLAGS=	CCOM="${CC}" COPTOPT="${CFLAGS}" \
+MAKE_FLAGS=	CC="${CC}" CC++="${CXX}" \
+		CC_COM="${CC}" CC++_COM="${CXX}" COPTOPT="${CFLAGS}" \
 		CPPOPTX="-DDEFTAPE=\\\"/dev/rst0\\\" \
 			 -DSYSCONFDIR=\\\"$(SYSCONFDIR)\\\"" \
 		GMAKE_NOWARN=1
@@ -28,9 +28,6 @@ MAKE_ENV+=	LDOPTX=-static
 .else
 WANTLIB=	c
 .endif
-
-post-extract:
-	@rm -f ${WRKSRC}/lib/libschily-mapvers.orig
 
 post-patch:
 	perl -pi -e 's,/etc/default/,${SYSCONFDIR}/default/,g' \
