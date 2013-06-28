@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1140 2013/06/23 17:24:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.1141 2013/06/28 08:41:28 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1231,6 +1231,7 @@
      SUBDIR += ruby-daemons
      SUBDIR += ruby-debug
      SUBDIR += ruby-debug-base
+     SUBDIR += ruby-deep_merge
      SUBDIR += ruby-diff-lcs
      SUBDIR += ruby-echoe
      SUBDIR += ruby-extlib
