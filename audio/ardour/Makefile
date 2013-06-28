@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/04/08 16:36:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2013/06/28 13:09:02 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 SHARED_ONLY =		Yes
@@ -8,22 +8,22 @@ COMMENT =		digital audio workstation
 DISTNAME =		ardour-2.8.14
 CATEGORIES =		audio
 HOMEPAGE =		http://ardour.org
-REVISION =		4
+REVISION =		5
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB = X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
-	Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 \
-	atkmm-1.6 aubio boost_system-mt c cairo cairomm-1.0 curl \
-	execinfo fftw3 fftw3f fontconfig freetype gailutil \
-	gdk-x11-2.0 gdk_pixbuf-2.0 gdkmm-2.4 gio-2.0 giomm-2.4 \
-	glib-2.0 glibmm-2.4 gmodule-2.0 gnomecanvas-2 gnomecanvasmm-2.6 \
-	gobject-2.0 gthread-2.0 gtk-x11-2.0 gtkmm-2.4 harfbuzz jack \
-	lo lrdf m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4 \
-	pcre pixman-1 png pthread pthread-stubs samplerate \
-	sigc-2.0 sndfile sndio stdc++ xcb xcb-render xcb-shm \
-	xml2 xslt z
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 atkmm-1.6
+WANTLIB += aubio boost_system-mt c cairo cairomm-1.0 curl execinfo
+WANTLIB += fftw3 fftw3f fontconfig freetype gailutil gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gdkmm-2.4 gio-2.0 giomm-2.4 glib-2.0
+WANTLIB += glibmm-2.4 gmodule-2.0 gnomecanvas-2 gnomecanvasmm-2.6
+WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 gtkmm-2.4 harfbuzz
+WANTLIB += jack lo lrdf m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pangomm-1.4 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += samplerate sigc-2.0 sndfile sndio stdc++ xcb xcb-render
+WANTLIB += xcb-shm xml2 xslt z
 
 # Use mirrors as official site has click-through donation-request download.
 MASTER_SITES =		http://stsp.name/openbsd/distfiles/ \
