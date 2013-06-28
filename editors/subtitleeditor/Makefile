@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/04/08 15:12:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2013/06/28 12:01:51 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -8,7 +8,7 @@ COMMENT=	GTK+2 subtitles editor
 
 V=		0.40.0
 DISTNAME=	subtitleeditor-${V}
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	graphics editors
 
@@ -19,18 +19,18 @@ HOMEPAGE=	http://home.gna.org/subtitleeditor/
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 atkmm-1.6
-WANTLIB += c cairo cairomm-1.0 drm enchant expat ffi fontconfig
-WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gdkmm-2.4 gio-2.0
-WANTLIB += giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0
-WANTLIB += gstaudio-0.10 gstbase-0.10 gstcdda-0.10 gstcontroller-0.10
-WANTLIB += gstdataprotocol-0.10 gstinterfaces-0.10 gstnet-0.10
-WANTLIB += gstnetbuffer-0.10 gstpbutils-0.10 gstreamer-0.10 gstreamermm-0.10
-WANTLIB += gstrtp-0.10 gsttag-0.10 gstvideo-0.10 gthread-2.0 gtk-x11-2.0
-WANTLIB += gtkmm-2.4 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
-WANTLIB += pcre pixman-1 png pthread pthread-stubs sigc-2.0 stdc++
-WANTLIB += xcb xcb-render xcb-shm xml++-2.6 xml2 z orc-0.4
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 atkmm-1.6 c cairo cairomm-1.0
+WANTLIB += enchant expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gdkmm-2.4 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
+WANTLIB += gobject-2.0 graphite2 gstaudio-0.10 gstbase-0.10 gstcdda-0.10
+WANTLIB += gstcontroller-0.10 gstdataprotocol-0.10 gstinterfaces-0.10
+WANTLIB += gstnet-0.10 gstnetbuffer-0.10 gstpbutils-0.10 gstreamer-0.10
+WANTLIB += gstreamermm-0.10 gstrtp-0.10 gsttag-0.10 gstvideo-0.10
+WANTLIB += gthread-2.0 gtk-x11-2.0 gtkmm-2.4 harfbuzz m orc-0.4
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre
+WANTLIB += pixman-1 png pthread pthread-stubs sigc-2.0 stdc++
+WANTLIB += xcb xcb-render xcb-shm xml++-2.6 xml2 z
 
 MASTER_SITES=	http://download.gna.org/subtitleeditor/${V:R}/
 
