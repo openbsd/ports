@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.805 2013/05/30 16:17:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.806 2013/06/28 21:08:35 zhuk Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -40,6 +40,7 @@
      SUBDIR += btpd
      SUBDIR += bwm-ng
      SUBDIR += cadaver
+     SUBDIR += cagibi
      SUBDIR += castget
      SUBDIR += centerim
      SUBDIR += cftp
