@@ -1,6 +1,4 @@
 SHA256 (inkscape-0.48.2.tar.gz) = PwHnTRI+kSjwj0gBSLJHn7r8/5MLa2uMl09tZ0q2ZBo=
 SHA256 (inkscape-glib-2.32.patch) = 8e08TvJFESD3Y7pgtEFGqGBEvdAi/VJNmgZuzdx1UgQ=
-SHA256 (inkscape-gtkmm-2.24.3.patch) = wtMc/wobvi1PbDz4SeRaxp+xQgpFq25tKwOhAd76FwQ=
 SIZE (inkscape-0.48.2.tar.gz) = 26277797
 SIZE (inkscape-glib-2.32.patch) = 62797
-SIZE (inkscape-gtkmm-2.24.3.patch) = 5710

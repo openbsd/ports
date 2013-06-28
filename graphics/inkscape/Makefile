@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.33 2013/06/04 18:41:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2013/06/28 12:02:30 ajacoutot Exp $
 
 COMMENT=	SVG vector drawing application
 
 DISTNAME=	inkscape-0.48.2
-REVISION=	6
+REVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=inkscape/}
 
 # error: #error "Only <glib.h> can be included directly."
 # (patch from Fedora)
-# Fix build with gtk2mm>=2.24.3
-PATCHFILES=	inkscape-glib-2.32.patch:0 \
-		inkscape-gtkmm-2.24.3.patch:0
+PATCHFILES=	inkscape-glib-2.32.patch:0
 PATCH_DIST_STRIP=-p1
 MASTER_SITES0=	http://distfiles.bsdfrog.org/
 
@@ -35,7 +33,6 @@ MODULES=	devel/gettext \
 BUILD_DEPENDS=	devel/boost
 LIB_DEPENDS=	devel/boehm-gc \
 		devel/gsl \
-		devel/pangomm \
 		devel/popt \
 		graphics/ImageMagick \
 		graphics/lcms \
@@ -44,8 +41,7 @@ LIB_DEPENDS=	devel/boehm-gc \
 		textproc/aspell/core \
 		textproc/gtkspell \
 		textproc/libxslt \
-		x11/gtk2mm \
-		x11/gtk+2
+		x11/gtk2mm>=2.24.4
 RUN_DEPENDS=	devel/desktop-file-utils \
 		textproc/py-lxml
 
