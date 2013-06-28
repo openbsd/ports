@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/06/28 09:30:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2013/06/28 09:40:10 jasper Exp $
 
 COMMENT-main=	fast, scalable, and reliable data warehouse for Puppet
 COMMENT-plugin= PuppetDB terminus plugin
@@ -7,7 +7,7 @@ V=		1.3.2
 DISTNAME=	puppetdb-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-plugin= puppetdb-terminus-$V
-REVISION-main=	0
+REVISION-main=	1
 CATEGORIES=	databases
 
 HOMEPAGE=	http://docs.puppetlabs.com/puppetdb/latest/
@@ -38,8 +38,7 @@ NO_TEST=	Yes
 SCRIPTS=	export foreground import ssl-setup
 
 do-configure:
-	${SUBST_CMD} ${WRKSRC}/Rakefile ${WRKSRC}/tasks/install.rake \
-		${WRKSRC}/ext/files/puppetdb.default
+	${SUBST_CMD} ${WRKSRC}/Rakefile ${WRKSRC}/tasks/install.rake
 .for s in ${SCRIPTS}
 	${SUBST_CMD} ${WRKSRC}/ext/files/puppetdb-$s
 .endfor
@@ -52,8 +51,6 @@ do-install:
 .for c in config.ini database.ini jetty.ini repl.ini
 	cat ${WRKSRC}/ext/files/$c >> ${PREFIX}/share/examples/puppetdb/puppetdb.conf
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/ext/files/puppetdb.default \
-		${PREFIX}/share/examples/puppetdb/
 	${INSTALL_DATA} ${WRKSRC}/ext/files/log4j.properties \
 		${PREFIX}/share/examples/puppetdb/
 	${INSTALL_DATA} ${WRKSRC}/puppetdb.jar ${PREFIX}/share/puppetdb/
