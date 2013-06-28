@@ -1,6 +1,8 @@
-$OpenBSD: patch-gtkglext_gtkmm_gl_widget_cc,v 1.1.1.1 2012/05/28 09:13:23 bentley Exp $
+$OpenBSD: patch-gtkglext_gtkmm_gl_widget_cc,v 1.2 2013/06/28 10:03:46 ajacoutot Exp $
+
 avoid "error: 'GdkSpanFunc' has not been declared" by including
 gtk/gtkglwidget.h before widget.h.
+
 --- gtkglext/gtkmm/gl/widget.cc.orig	Sun May 13 23:49:14 2012
 +++ gtkglext/gtkmm/gl/widget.cc	Sun May 13 23:49:20 2012
 @@ -17,9 +17,9 @@
