@@ -1,8 +1,14 @@
-$OpenBSD: patch-ext_files_puppetdb-ssl-setup,v 1.1.1.1 2013/06/28 09:13:09 jasper Exp $
+$OpenBSD: patch-ext_files_puppetdb-ssl-setup,v 1.2 2013/06/28 09:30:44 jasper Exp $
 
-- Use a more portable construct, since head -c isn't implemented on OpenBSD.
-- Adjust the mktemp(1) template to include six 'X's to prevent an "Invalid
-  argument" error on OpenBSD.
+From ecbfba28ca0db2cf80a63a0b34fcbf5ed08f90c7 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Thu, 27 Jun 2013 18:24:38 +0200
+Subject: [PATCH] Two small portability fixes (for OpenBSD)
+
+- head -c is not supported on OpenBSD (and perhaps others), so use
+  cut(1) instead of a non-standard option.
+- mktemp(1) on OpenBSD requires six characters in the template for
+  added security.
 
 --- ext/files/puppetdb-ssl-setup.orig	Mon Jun  3 19:12:39 2013
 +++ ext/files/puppetdb-ssl-setup	Thu Jun 27 16:06:44 2013

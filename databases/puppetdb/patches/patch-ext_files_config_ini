@@ -1,13 +1,8 @@
-$OpenBSD: patch-ext_files_config_ini,v 1.1.1.1 2013/06/28 09:13:09 jasper Exp $
+$OpenBSD: patch-ext_files_config_ini,v 1.2 2013/06/28 09:30:44 jasper Exp $
 --- ext/files/config.ini.orig	Mon Jun  3 19:13:08 2013
-+++ ext/files/config.ini	Fri Jun 28 10:27:03 2013
-@@ -1,9 +1,12 @@
- # See README.md for more thorough explanations of each section and
- # option.
++++ ext/files/config.ini	Fri Jun 28 11:17:09 2013
+@@ -3,7 +3,7 @@
  
-+[jetty]
-+port = 8080
-+
  [global]
  # Store mq/db data in a custom directory
 -vardir = /var/lib/puppetdb
