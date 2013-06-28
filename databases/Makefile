@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.249 2013/06/12 20:36:33 brad Exp $
+# $OpenBSD: Makefile,v 1.250 2013/06/28 09:14:02 jasper Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -156,6 +156,7 @@
      SUBDIR += postgresql-pllua
      SUBDIR += postgresql-plv8
      SUBDIR += postgresql_autodoc
+     SUBDIR += puppetdb
      SUBDIR += py-axiom
      SUBDIR += py-carbon
      SUBDIR += py-cdb
