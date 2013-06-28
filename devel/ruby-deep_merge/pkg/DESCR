@@ -1,0 +1,5 @@
+Deep Merge is a simple set of utility functions for Hash. It permits you
+to merge elements inside a hash together recursively. The manner by
+which it does this is somewhat arbitrary (since there is no defining
+standard for this) but it should end up being pretty intuitive and do
+what you expect.

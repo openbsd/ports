@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/06/28 08:40:26 jasper Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
+${GEM_LIB}/gems/${DISTNAME}/README
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/VERSION
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/deep_merge/
+${GEM_LIB}/gems/${DISTNAME}/lib/deep_merge.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/deep_merge/core.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/deep_merge/deep_merge_hash.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/deep_merge/rails_compat.rb
+${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test/test_deep_merge.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
