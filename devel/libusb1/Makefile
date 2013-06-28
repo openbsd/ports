@@ -1,6 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2013/04/22 08:37:20 mpi Exp $
+# $OpenBSD: Makefile,v 1.21 2013/06/28 12:11:50 espie Exp $
 
 COMMENT =		library for USB device access from userspace
+
+# -std=gnu99 doesn't work there
+NOT_FOR_ARCHS =		${GCC2_ARCHS}
 
 VERSION =		1.0.9
 DISTNAME =		libusb-${VERSION}
