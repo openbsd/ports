@@ -1,7 +1,7 @@
-$OpenBSD: patch-library_tm_tcl,v 1.1 2011/01/05 16:13:53 stu Exp $
---- library/tm.tcl.orig	Mon Nov 10 12:57:10 2008
-+++ library/tm.tcl	Fri Oct  1 03:31:35 2010
-@@ -321,10 +321,10 @@ proc ::tcl::tm::Defaults {} {
+$OpenBSD: patch-library_tm_tcl,v 1.2 2013/06/28 06:12:39 stu Exp $
+--- library/tm.tcl.orig	Thu Mar 21 08:59:20 2013
++++ library/tm.tcl	Tue Apr  9 21:51:00 2013
+@@ -319,10 +319,10 @@ proc ::tcl::tm::Defaults {} {
  
      # Note that we're using [::list], not [list] because [list] means
      # something other than [::list] in this namespace.

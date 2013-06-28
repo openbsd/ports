@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2013/06/28 06:12:39 stu Exp $
 
 COMMENT =		Tool Command Language
 
-DISTNAME =		tcl8.5.13
-PKGNAME =		tcl-8.5.13
-SHARED_LIBS =		tcl85 1.3
+DISTNAME =		tcl8.5.14
+PKGNAME =		tcl-8.5.14
+SHARED_LIBS =		tcl85 1.4
 CATEGORIES =		lang lang/tcl
 HOMEPAGE =		http://www.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -67,6 +67,9 @@ SUBST_VARS +=		_README_DIR
 TESTHOME =		${WRKDIR}/testhome
 # Use TESTFLAGS to control the Tcl tests
 TESTFLAGS =
+
+# XXX Until Tcl bug 2911139 is fixed; bug is in test, not in Tcl.
+TESTFLAGS += -skip http-4.14
 
 pre-test:
 	mkdir -p ${TESTHOME}
