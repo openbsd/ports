@@ -1,0 +1,28 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2013/06/28 09:13:09 jasper Exp $
+@newgroup _puppetdb:719
+@newuser _puppetdb:719:719:daemon:PuppetDB user:/nonexistent:/sbin/nologin
+@extraunexec rm -rf /var/log/puppetdb/*
+sbin/puppetdb-export
+sbin/puppetdb-foreground
+sbin/puppetdb-import
+sbin/puppetdb-ssl-setup
+share/examples/puppetdb/
+@sample ${SYSCONFDIR}/puppetdb/
+@sample ${SYSCONFDIR}/puppetdb/conf.d/
+share/examples/puppetdb/puppetdb.conf
+@sample ${SYSCONFDIR}/puppetdb/conf.d/puppetdb.conf
+share/examples/puppetdb/log4j.properties
+@sample ${SYSCONFDIR}/puppetdb/log4j.properties
+share/examples/puppetdb/puppetdb.default
+@sample ${SYSCONFDIR}/puppetdb/conf.d/puppetdb
+share/puppetdb/
+share/puppetdb/db
+share/puppetdb/mq
+share/puppetdb/puppetdb.jar
+share/puppetdb/state
+@sample /var/db/puppetdb/
+@sample /var/db/puppetdb/db/
+@sample /var/db/puppetdb/mq/
+@sample /var/db/puppetdb/state/
+@sample /var/log/puppetdb/
+@rcscript ${RCDIR}/puppetdb

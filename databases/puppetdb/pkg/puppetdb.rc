@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD: puppetdb.rc,v 1.1.1.1 2013/06/28 09:13:09 jasper Exp $
+
+daemon=$(${LOCALBASE}/bin/javaPathHelper -c puppetdb)
+daemon_flags="-jar ${PREFIX}/share/puppetdb/puppetdb.jar services -c ${SYSCONFDIR}/puppetdb/conf.d/puppetdb.conf"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

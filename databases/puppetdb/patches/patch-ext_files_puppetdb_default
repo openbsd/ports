@@ -1,0 +1,20 @@
+$OpenBSD: patch-ext_files_puppetdb_default,v 1.1.1.1 2013/06/28 09:13:09 jasper Exp $
+--- ext/files/puppetdb.default.orig	Thu Jun 27 15:13:22 2013
++++ ext/files/puppetdb.default	Thu Jun 27 15:13:25 2013
+@@ -3,12 +3,12 @@
+ ###########################################
+ 
+ # Location of your Java binary (version 6 or higher)
+-JAVA_BIN="/usr/bin/java"
++JAVA_BIN==$(${LOCALBASE}/bin/javaPathHelper -c puppetdb)
+ 
+ # Modify this if you'd like to change the memory allocation, enable JMX, etc
+ JAVA_ARGS="-Xmx192m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/log/puppetdb/puppetdb-oom.hprof "
+ 
+ # These normally shouldn't need to be edited if using OS packages
+-USER="puppetdb"
+-INSTALL_DIR="/usr/share/puppetdb"
+-CONFIG="/etc/puppetdb/conf.d"
++USER="_puppetdb"
++INSTALL_DIR="${PREFIX}/share/puppetdb"
++CONFIG="${SYSCONFDIR}/puppetdb/conf.d"

@@ -1,0 +1,50 @@
+$OpenBSD: patch-Rakefile,v 1.1.1.1 2013/06/28 09:13:09 jasper Exp $
+
+- Remove unsupported ln(1) option: -T.
+- Change various configuration variables to what they would be like when
+  PuppetDB has been _installed_, as these variables are used in other scripts.
+  The installer has been modified in tasks/install.rake
+- Set OpenBSD's Ruby site dir.
+
+--- Rakefile.orig	Mon Jun  3 19:12:39 2013
++++ Rakefile	Fri Jun 28 10:26:46 2013
+@@ -10,7 +10,7 @@ RAKE_ROOT = File.dirname(__FILE__)
+ Dir[ File.join(RAKE_ROOT, 'ext', 'packaging', 'tasks', '*.rake') ].sort.each { |t| load t }
+ 
+ def ln_sfT(src, dest)
+-  sh "ln -sfT #{src} #{dest}"
++  sh "ln -sf #{src} #{dest}"
+ end
+ 
+ def cp_pr(src, dest, options={})
+@@ -51,15 +51,15 @@ if @pe
+     @pe_version = ENV['PE_VER'] || '3.0'
+     @java_bin = "/opt/puppet/bin/java"
+ else
+-    @install_dir = "/usr/share/puppetdb"
+-    @etc_dir = "/etc/puppetdb"
+-    @config_dir = "/etc/puppetdb/conf.d"
++    @install_dir = "share/puppetdb"
++    @etc_dir = "${SYSCONFDIR}/puppetdb"
++    @config_dir = "${SYSCONFDIR}/puppetdb/conf.d"
+     @initscriptname = "/etc/init.d/puppetdb"
+     @log_dir = "/var/log/puppetdb"
+-    @lib_dir = "/var/lib/puppetdb"
+-    @link = "/usr/share/puppetdb"
++    @lib_dir = "/var/db/puppetdb"
++    @link = "share/puppetdb"
+     @name = "puppetdb"
+-    @sbin_dir = "/usr/sbin"
++    @sbin_dir = "sbin"
+ end
+ 
+ # We only need the ruby major, minor versions
+@@ -82,6 +82,8 @@ case @osfamily
+     @plibdir = @pe ? PE_SITELIBDIR : ( @ruby_version == '1.8' ? '/usr/lib/ruby/site_ruby/1.8' : '/usr/share/ruby/vendor_ruby' )
+   when /suse/
+     @plibdir = @pe ? PE_SITELIBDIR : nil
++  when /openbsd/
++    @plibdir = @pe ? PE_SITELIBDIR : '${MODRUBY_SITEDIR}'
+ end
+ 
+ @heap_dump_path = "#{@log_dir}/puppetdb-oom.hprof"

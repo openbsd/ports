@@ -1,0 +1,36 @@
+$OpenBSD: patch-ext_files_puppetdb-ssl-setup,v 1.1.1.1 2013/06/28 09:13:09 jasper Exp $
+
+- Use a more portable construct, since head -c isn't implemented on OpenBSD.
+- Adjust the mktemp(1) template to include six 'X's to prevent an "Invalid
+  argument" error on OpenBSD.
+
+--- ext/files/puppetdb-ssl-setup.orig	Mon Jun  3 19:12:39 2013
++++ ext/files/puppetdb-ssl-setup	Thu Jun 27 16:06:44 2013
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!${LOCALBASE}/bin/bash
+ 
+ # This function wraps sed:
+ # * Makes sure its atomic by writing to a temp file and moving it _after_
+@@ -81,8 +81,8 @@ else
+       puppetdb_confdir="/etc/puppetlabs/puppetdb"
+       user=pe-puppetdb
+     else
+-      puppetdb_confdir="/etc/puppetdb"
+-      user=puppetdb
++      puppetdb_confdir="${SYSCONFDIR}/puppetdb"
++      user=_puppetdb
+     fi
+ fi
+ 
+@@ -104,8 +104,8 @@ pw_file=${puppetdb_confdir}/ssl/puppetdb_keystore_pw.t
+ if [ -f $pw_file ]; then
+   password=`cat $pw_file`
+ else
+-  password=`export LC_ALL=C; dd if=/dev/urandom count=20 2> /dev/null | tr -cd '[:alnum:]' | head -c 25`
+-  tmpdir=`mktemp -t -d tmp.puppetdbXXXXX`
++  password=`export LC_ALL=C; dd if=/dev/urandom count=20 2> /dev/null | tr -cd '[:alnum:]' | cut -c 1-25`
++  tmpdir=`mktemp -t -d tmp.puppetdbXXXXXX`
+   rm -rf $tmpdir
+   mkdir -p $tmpdir
+   cp $myca $tmpdir/ca.pem
