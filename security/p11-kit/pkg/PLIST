@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/05/07 06:39:00 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.9 2013/06/28 12:36:31 espie Exp $
 @bin bin/p11-kit
 include/p11-kit-1/
 include/p11-kit-1/p11-kit/
@@ -10,6 +9,7 @@ include/p11-kit-1/p11-kit/pkcs11.h
 include/p11-kit-1/p11-kit/uri.h
 lib/libp11-kit.a
 lib/libp11-kit.la
+lib/pkcs11/p11-kit-trust.so
 @lib lib/libp11-kit.so.${LIBp11-kit_VERSION}
 lib/p11-kit/
 lib/p11-kit/p11-kit-extract-trust
