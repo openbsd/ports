@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2013/06/04 18:41:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2013/06/28 12:27:56 espie Exp $
 
 COMMENT=	image processing and analysis library
 
 DISTNAME=	leptonica-1.68
+REVISION =	0
 
 SHARED_LIBS +=  lept                 0.0      # 2.0
 
@@ -21,6 +22,9 @@ LIB_DEPENDS=	graphics/libwebp \
 		graphics/libungif \
 		graphics/tiff
 
+# for non-shared archs...
+LIB_DEPENDS +=	graphics/jpeg \
+		graphics/png
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
