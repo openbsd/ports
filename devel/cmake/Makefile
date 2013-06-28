@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2013/06/25 07:16:46 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.85 2013/06/28 14:58:23 dcoppa Exp $
 
 VMEM_WARNING =	Yes
 DPB_PROPERTIES =parallel
@@ -22,6 +22,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		archive c curl curses expat form m \
 			stdc++ z
+
+BUILD_DEPENDS =		devel/ninja
 
 LIB_DEPENDS =		archivers/libarchive \
 			net/curl
@@ -57,9 +59,19 @@ pre-configure:
 		${WRKSRC}/Modules/FindSDL.cmake \
 		${WRKSRC}/Modules/FindTCL.cmake
 
-post-install:
+do-build:
+	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ninja -v -j \
+		${MAKE_JOBS} ${ALL_TARGET}
+
+do-install:
+	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
+		${FAKE_SETUP} ninja -v -j ${MAKE_JOBS} ${FAKE_TARGET}
 	rm ${WRKINST}/${LOCALBASE}/share/cmake/Modules/*.{beforesubst,orig}
 	rm ${WRKINST}/${LOCALBASE}/share/cmake/Modules/Compiler/*.orig
 	rm ${WRKINST}/${LOCALBASE}/share/cmake/Modules/Platform/*.orig
+
+do-test:
+	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ninja -v -j \
+		${MAKE_JOBS} ${TEST_FLAGS} ${TEST_TARGET}
 
 .include <bsd.port.mk>
