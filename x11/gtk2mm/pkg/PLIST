@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/04/05 16:45:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/06/28 09:51:01 ajacoutot Exp $
 @conflict gtk2mm-docs-*
 @pkgpath x11/gtk2mm,-main
 @pkgpath x11/gtk2mm,-docs
@@ -464,11 +464,11 @@ share/doc/gtkmm-2.4/reference/html/aboutdialog1.png
 share/doc/gtkmm-2.4/reference/html/annotated.html
 share/doc/gtkmm-2.4/reference/html/arrow1.png
 share/doc/gtkmm-2.4/reference/html/bc_s.png
-share/doc/gtkmm-2.4/reference/html/bdwn.png
 share/doc/gtkmm-2.4/reference/html/button2.png
 share/doc/gtkmm-2.4/reference/html/calendar1.png
 share/doc/gtkmm-2.4/reference/html/checkbutton1.png
-share/doc/gtkmm-2.4/reference/html/classGValue.html
+share/doc/gtkmm-2.4/reference/html/classAtk_1_1Implementor.html
+share/doc/gtkmm-2.4/reference/html/classAtk_1_1Implementor__inherit__graph.png
 share/doc/gtkmm-2.4/reference/html/classGdk_1_1Bitmap-members.html
 share/doc/gtkmm-2.4/reference/html/classGdk_1_1Bitmap.html
 share/doc/gtkmm-2.4/reference/html/classGdk_1_1Bitmap__coll__graph.png
@@ -557,6 +557,10 @@ share/doc/gtkmm-2.4/reference/html/classGdk_1_1Window-members.html
 share/doc/gtkmm-2.4/reference/html/classGdk_1_1Window.html
 share/doc/gtkmm-2.4/reference/html/classGdk_1_1Window__coll__graph.png
 share/doc/gtkmm-2.4/reference/html/classGdk_1_1Window__inherit__graph.png
+share/doc/gtkmm-2.4/reference/html/classGlib_1_1Value_3_01Glib_1_1RefPtr_3_01Gtk_1_1RecentInfo_01_4_01_4-members.html
+share/doc/gtkmm-2.4/reference/html/classGlib_1_1Value_3_01Glib_1_1RefPtr_3_01Gtk_1_1RecentInfo_01_4_01_4.html
+share/doc/gtkmm-2.4/reference/html/classGlib_1_1Value_3_01Glib_1_1RefPtr_3_01Gtk_1_1RecentInfo_01_4_01_4__coll__graph.png
+share/doc/gtkmm-2.4/reference/html/classGlib_1_1Value_3_01Glib_1_1RefPtr_3_01Gtk_1_1RecentInfo_01_4_01_4__inherit__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1AboutDialog-members.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1AboutDialog.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1AboutDialog__coll__graph.png
@@ -725,6 +729,7 @@ share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboBoxEntryText.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboBoxEntryText_1_1TextModelColumns-members.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboBoxEntryText_1_1TextModelColumns.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboBoxEntryText_1_1TextModelColumns__coll__graph.png
+share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboBoxEntryText_1_1TextModelColumns__inherit__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboBoxEntryText__coll__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboBoxEntryText__inherit__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboBoxEntry__coll__graph.png
@@ -745,7 +750,10 @@ share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboDropDownItem-members.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboDropDownItem.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboDropDownItem__coll__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboDropDownItem__inherit__graph.png
+share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboDropDown__Helpers_1_1ComboDropDownList-members.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboDropDown__Helpers_1_1ComboDropDownList.html
+share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboDropDown__Helpers_1_1ComboDropDownList__coll__graph.png
+share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboDropDown__Helpers_1_1ComboDropDownList__inherit__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboDropDown__coll__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboDropDown__inherit__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1Combo__coll__graph.png
@@ -1367,6 +1375,7 @@ share/doc/gtkmm-2.4/reference/html/classGtk_1_1TreeModelColumnBase.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1TreeModelColumnBase__inherit__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1TreeModelColumnRecord-members.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1TreeModelColumnRecord.html
+share/doc/gtkmm-2.4/reference/html/classGtk_1_1TreeModelColumnRecord__coll__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1TreeModelColumnRecord__inherit__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1TreeModelColumn__coll__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1TreeModelColumn__inherit__graph.png
@@ -1406,6 +1415,7 @@ share/doc/gtkmm-2.4/reference/html/classGtk_1_1TreeStore__coll__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1TreeStore__inherit__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1TreeValueProxy-members.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1TreeValueProxy.html
+share/doc/gtkmm-2.4/reference/html/classGtk_1_1TreeValueProxy__coll__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1TreeView-members.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1TreeView.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1TreeViewColumn-members.html
@@ -1473,8 +1483,6 @@ share/doc/gtkmm-2.4/reference/html/colorselectiondialog1.png
 share/doc/gtkmm-2.4/reference/html/combobox1.png
 share/doc/gtkmm-2.4/reference/html/comboboxentry1.png
 share/doc/gtkmm-2.4/reference/html/deprecated.html
-share/doc/gtkmm-2.4/reference/html/dir_4cca10c204509ca3086b747fab94faa6.html
-share/doc/gtkmm-2.4/reference/html/dir_cdc0cb133378d4d23d07a2a9cfb94776.html
 share/doc/gtkmm-2.4/reference/html/doxygen.css
 share/doc/gtkmm-2.4/reference/html/doxygen.png
 share/doc/gtkmm-2.4/reference/html/entry1.png
@@ -1483,22 +1491,6 @@ share/doc/gtkmm-2.4/reference/html/filechooserdialog1.png
 share/doc/gtkmm-2.4/reference/html/fontbutton1.png
 share/doc/gtkmm-2.4/reference/html/fontselectiondialog1.png
 share/doc/gtkmm-2.4/reference/html/frame1.png
-share/doc/gtkmm-2.4/reference/html/ftv2blank.png
-share/doc/gtkmm-2.4/reference/html/ftv2cl.png
-share/doc/gtkmm-2.4/reference/html/ftv2doc.png
-share/doc/gtkmm-2.4/reference/html/ftv2folderclosed.png
-share/doc/gtkmm-2.4/reference/html/ftv2folderopen.png
-share/doc/gtkmm-2.4/reference/html/ftv2lastnode.png
-share/doc/gtkmm-2.4/reference/html/ftv2link.png
-share/doc/gtkmm-2.4/reference/html/ftv2mlastnode.png
-share/doc/gtkmm-2.4/reference/html/ftv2mnode.png
-share/doc/gtkmm-2.4/reference/html/ftv2mo.png
-share/doc/gtkmm-2.4/reference/html/ftv2node.png
-share/doc/gtkmm-2.4/reference/html/ftv2ns.png
-share/doc/gtkmm-2.4/reference/html/ftv2plastnode.png
-share/doc/gtkmm-2.4/reference/html/ftv2pnode.png
-share/doc/gtkmm-2.4/reference/html/ftv2splitbar.png
-share/doc/gtkmm-2.4/reference/html/ftv2vertline.png
 share/doc/gtkmm-2.4/reference/html/functions.html
 share/doc/gtkmm-2.4/reference/html/functions_0x62.html
 share/doc/gtkmm-2.4/reference/html/functions_0x63.html
@@ -1601,6 +1593,7 @@ share/doc/gtkmm-2.4/reference/html/gtk-find-and-replace.png
 share/doc/gtkmm-2.4/reference/html/gtk-find.png
 share/doc/gtkmm-2.4/reference/html/gtk-floppy.png
 share/doc/gtkmm-2.4/reference/html/gtk-fullscreen.png
+share/doc/gtkmm-2.4/reference/html/gtk-go-back-ltr.png
 share/doc/gtkmm-2.4/reference/html/gtk-go-down.png
 share/doc/gtkmm-2.4/reference/html/gtk-go-forward-ltr.png
 share/doc/gtkmm-2.4/reference/html/gtk-go-up.png
@@ -1611,10 +1604,12 @@ share/doc/gtkmm-2.4/reference/html/gtk-goto-top.png
 share/doc/gtkmm-2.4/reference/html/gtk-harddisk.png
 share/doc/gtkmm-2.4/reference/html/gtk-help.png
 share/doc/gtkmm-2.4/reference/html/gtk-home.png
+share/doc/gtkmm-2.4/reference/html/gtk-indent-ltr.png
 share/doc/gtkmm-2.4/reference/html/gtk-indent-rtl.png
 share/doc/gtkmm-2.4/reference/html/gtk-index.png
 share/doc/gtkmm-2.4/reference/html/gtk-info.png
 share/doc/gtkmm-2.4/reference/html/gtk-italic.png
+share/doc/gtkmm-2.4/reference/html/gtk-jump-to-ltr.png
 share/doc/gtkmm-2.4/reference/html/gtk-jump-to-rtl.png
 share/doc/gtkmm-2.4/reference/html/gtk-justify-center.png
 share/doc/gtkmm-2.4/reference/html/gtk-justify-fill.png
@@ -1650,6 +1645,7 @@ share/doc/gtkmm-2.4/reference/html/gtk-print-warning.png
 share/doc/gtkmm-2.4/reference/html/gtk-print.png
 share/doc/gtkmm-2.4/reference/html/gtk-properties.png
 share/doc/gtkmm-2.4/reference/html/gtk-quit.png
+share/doc/gtkmm-2.4/reference/html/gtk-redo-ltr.png
 share/doc/gtkmm-2.4/reference/html/gtk-redo-rtl.png
 share/doc/gtkmm-2.4/reference/html/gtk-refresh.png
 share/doc/gtkmm-2.4/reference/html/gtk-remove.png
@@ -1664,9 +1660,12 @@ share/doc/gtkmm-2.4/reference/html/gtk-sort-descending.png
 share/doc/gtkmm-2.4/reference/html/gtk-spell-check.png
 share/doc/gtkmm-2.4/reference/html/gtk-stop.png
 share/doc/gtkmm-2.4/reference/html/gtk-strikethrough.png
+share/doc/gtkmm-2.4/reference/html/gtk-undelete-ltr.png
 share/doc/gtkmm-2.4/reference/html/gtk-undelete-rtl.png
 share/doc/gtkmm-2.4/reference/html/gtk-underline.png
+share/doc/gtkmm-2.4/reference/html/gtk-undo-ltr.png
 share/doc/gtkmm-2.4/reference/html/gtk-undo-rtl.png
+share/doc/gtkmm-2.4/reference/html/gtk-unindent-ltr.png
 share/doc/gtkmm-2.4/reference/html/gtk-unindent-rtl.png
 share/doc/gtkmm-2.4/reference/html/gtk-yes.png
 share/doc/gtkmm-2.4/reference/html/gtk-zoom-100.png
@@ -1726,7 +1725,6 @@ share/doc/gtkmm-2.4/reference/html/inherit_graph_47.png
 share/doc/gtkmm-2.4/reference/html/inherit_graph_48.png
 share/doc/gtkmm-2.4/reference/html/inherit_graph_49.png
 share/doc/gtkmm-2.4/reference/html/inherit_graph_5.png
-share/doc/gtkmm-2.4/reference/html/inherit_graph_50.png
 share/doc/gtkmm-2.4/reference/html/inherit_graph_6.png
 share/doc/gtkmm-2.4/reference/html/inherit_graph_7.png
 share/doc/gtkmm-2.4/reference/html/inherit_graph_8.png
@@ -1811,10 +1809,7 @@ share/doc/gtkmm-2.4/reference/html/namespacemembers_func_0x75.html
 share/doc/gtkmm-2.4/reference/html/namespacemembers_type.html
 share/doc/gtkmm-2.4/reference/html/namespacemembers_vars.html
 share/doc/gtkmm-2.4/reference/html/namespaces.html
-share/doc/gtkmm-2.4/reference/html/namespacestd.html
-share/doc/gtkmm-2.4/reference/html/namespacestd_1_1locale.html
 share/doc/gtkmm-2.4/reference/html/nav_f.png
-share/doc/gtkmm-2.4/reference/html/nav_g.png
 share/doc/gtkmm-2.4/reference/html/nav_h.png
 share/doc/gtkmm-2.4/reference/html/notebook1.png
 share/doc/gtkmm-2.4/reference/html/open.png
@@ -1850,8 +1845,6 @@ share/doc/gtkmm-2.4/reference/html/structGtk_1_1Notebook__Helpers_1_1TabElem-mem
 share/doc/gtkmm-2.4/reference/html/structGtk_1_1Notebook__Helpers_1_1TabElem.html
 share/doc/gtkmm-2.4/reference/html/structGtk_1_1Notebook__Helpers_1_1TabElem__coll__graph.png
 share/doc/gtkmm-2.4/reference/html/structGtk_1_1Notebook__Helpers_1_1TabElem__inherit__graph.png
-share/doc/gtkmm-2.4/reference/html/sync_off.png
-share/doc/gtkmm-2.4/reference/html/sync_on.png
 share/doc/gtkmm-2.4/reference/html/tab_a.png
 share/doc/gtkmm-2.4/reference/html/tab_b.png
 share/doc/gtkmm-2.4/reference/html/tab_h.png
