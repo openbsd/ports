@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.63 2013/06/21 22:09:12 brad Exp $
+# $OpenBSD: Makefile,v 1.64 2013/06/28 11:14:38 naddy Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
 
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
+DPB_PROPERTIES = parallel
 
 COMMENT =	modular, fast C/C++/ObjC compiler, static analyzer and tools
 
