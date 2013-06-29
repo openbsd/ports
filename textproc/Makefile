@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.388 2013/06/26 06:35:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.389 2013/06/29 09:33:08 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -128,6 +128,7 @@
      SUBDIR += p5-Catalyst-View-XSLT
      SUBDIR += p5-Email-Find
      SUBDIR += p5-Encode-Detect
+     SUBDIR += p5-Encode-Locale
      SUBDIR += p5-Font-AFM
      SUBDIR += p5-Font-TTF
      SUBDIR += p5-HTML-Summary

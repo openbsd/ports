@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1141 2013/06/28 08:41:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.1142 2013/06/29 09:33:08 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -268,6 +268,7 @@
      SUBDIR += hs-semigroups
      SUBDIR += hs-sendfile
      SUBDIR += hs-shellish
+     SUBDIR += hs-simple-sendfile
      SUBDIR += hs-split
      SUBDIR += hs-stm
      SUBDIR += hs-strict
@@ -307,6 +308,7 @@
      SUBDIR += jakarta-servletapi
      SUBDIR += jam
      SUBDIR += jdk
+     SUBDIR += jenkins
      SUBDIR += json-c
      SUBDIR += json-glib
      SUBDIR += kdbg

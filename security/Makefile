@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.315 2013/06/07 13:33:24 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.316 2013/06/29 09:33:08 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -184,6 +184,7 @@
      SUBDIR += p5-IO-Socket-SSL
      SUBDIR += p5-MD5
      SUBDIR += p5-Module-Signature
+     SUBDIR += p5-Mozilla-CA
      SUBDIR += p5-Net-SSLGlue
      SUBDIR += p5-Net_SSLeay
      SUBDIR += p5-PGP-Sign

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.295 2013/05/30 15:59:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.296 2013/06/29 09:33:08 sthen Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -211,6 +211,7 @@
      SUBDIR += tree
      SUBDIR += upower
      SUBDIR += upsd
+     SUBDIR += uptimed
      SUBDIR += usbutil
      SUBDIR += usbutils
      SUBDIR += vifm
