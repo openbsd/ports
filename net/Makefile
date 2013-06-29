@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.806 2013/06/28 21:08:35 zhuk Exp $
+# $OpenBSD: Makefile,v 1.807 2013/06/29 15:56:10 jeremy Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -504,8 +504,9 @@
      SUBDIR += ruby-agcaldav
      SUBDIR += ruby-amqp
      SUBDIR += ruby-bunny
-     SUBDIR += ruby-eventmachine
      SUBDIR += ruby-eventmachine,ruby18
+     SUBDIR += ruby-eventmachine,ruby19
+     SUBDIR += ruby-eventmachine,ruby20
      SUBDIR += ruby-macaddr
      SUBDIR += ruby-macaddr,ruby18
      SUBDIR += ruby-minion
@@ -518,7 +519,7 @@
      SUBDIR += ruby-net-ssh-gateway
      SUBDIR += ruby-nmap-parser
      SUBDIR += ruby-pcap
-     SUBDIR += ruby-pcaprub-msf
+     SUBDIR += ruby-pcaprub-msf,ruby19
      SUBDIR += ruby-snmp
      SUBDIR += ruby-stomp
      SUBDIR += ruby-xmpp4r
