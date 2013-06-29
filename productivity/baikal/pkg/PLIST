@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/06/23 09:20:45 jung Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/06/29 10:21:22 sthen Exp $
+@ask-update baikal-<0.2.4p1 Due to a bug in older versions of this package, backup baikal/Specific/db/db.sqlite before updating and restore it afterwards.
 @group www
 baikal/
 baikal/Core/
@@ -699,8 +700,8 @@ baikal/Specific/
 baikal/Specific/.htaccess
 @extra baikal/Specific/ENABLE_INSTALL
 baikal/Specific/db/
-@comment no checksum
-baikal/Specific/db/db.sqlite
+baikal/Specific/db/db.sqlite.dist
+@sample baikal/Specific/db/db.sqlite
 baikal/Specific/virtualhosts/
 baikal/Specific/virtualhosts/baikal.apache2
 baikal/Specific/virtualhosts/baikal.nginx

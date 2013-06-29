@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2013/06/23 09:20:45 jung Exp $
+# $OpenBSD: Makefile,v 1.4 2013/06/29 10:21:22 sthen Exp $
 
 COMMENT=	lightweight CalDAV and CardDAV server
 
 DISTNAME=	baikal-regular-0.2.4
 PKGNAME=	${DISTNAME:S/-regular//}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	productivity www
 
 HOMEPAGE=	http://baikal-server.com/
@@ -32,5 +32,6 @@ SUBST_VARS=	INSTDIR
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
 	cd ${WRKSRC} && tar cf - . | (cd ${INSTDIR}; tar xf -)
+	mv ${INSTDIR}/Specific/db/db.sqlite{,.dist}
 
 .include <bsd.port.mk>
