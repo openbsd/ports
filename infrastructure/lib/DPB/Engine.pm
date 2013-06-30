@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.82 2013/06/25 07:49:52 espie Exp $
+# $OpenBSD: Engine.pm,v 1.83 2013/06/30 16:45:16 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -216,6 +216,9 @@ sub end
 			unshift(@{$self->{engine}{errors}}, $v);
 			$v->{host} = $core->host;
 			$self->log('E', $v);
+			if ($core->prop->{always_clean}) {
+				$self->end_build($v);
+			}
 		}
 	}
 	$self->done($v);
