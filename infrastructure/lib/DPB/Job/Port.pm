@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.105 2013/06/04 03:20:36 espie Exp $
+# $OpenBSD: Port.pm,v 1.106 2013/06/30 16:35:43 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -181,7 +181,7 @@ sub finalize
 		return 1;
 	}
 	if ($core->prop->{always_clean}) {
-		$core->job->insert_tasks(DPB::Task::Port::BaseClean->new(
+		$core->job->replace_tasks(DPB::Task::Port::BaseClean->new(
 			'clean'));
 		return 1;
 	}
