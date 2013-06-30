@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.612 2013/06/29 15:56:10 jeremy Exp $
+# $OpenBSD: Makefile,v 1.613 2013/06/30 20:13:19 jasper Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -448,7 +448,9 @@
      SUBDIR += ruby-capybara
      SUBDIR += ruby-capybara-webkit,ruby19
      SUBDIR += ruby-capybara-webkit,ruby20
-     SUBDIR += ruby-fcgi
+     SUBDIR += ruby-fcgi,ruby18
+     SUBDIR += ruby-fcgi,ruby19
+     SUBDIR += ruby-fcgi,ruby20
      SUBDIR += ruby-httpclient
      SUBDIR += ruby-jekyll
      SUBDIR += ruby-mechanize
