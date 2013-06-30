@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/03/21 08:48:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2013/06/30 19:44:20 espie Exp $
 
 COMMENT=	spell checker designed to eventually replace Ispell
 
@@ -40,7 +40,7 @@ post-build:
 	cd ${WRKDIR}/${DIST_EN} && \
 		cp ${WRKSRC}/data/* . && \
 		LD_LIBRARY_PATH=${WRKBUILD}/.libs ./configure --vars \
-			ASPELL=${WRKBUILD}/.libs/aspell \
+			ASPELL=${WRKBUILD}/aspell \
 			ASPELL_FLAGS="--local-data-dir=${WRKDIR}/${DIST_EN}" \
 			PREZIP=${WRKBUILD}/prezip-bin && \
 		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
