@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2013/03/21 08:48:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2013/06/30 15:50:16 espie Exp $
 
 COMMENT-main=		XSLT C Library for GNOME
 COMMENT-python= 	Python bindings for libxslt
@@ -9,6 +9,7 @@ PKGNAME-main=		libxslt-${VERSION}
 PKGNAME-python= 	py-libxslt-${VERSION}
 SHARED_LIBS=		exslt	9.8 \
 			xslt	3.8
+REVISION-main =		0
 
 CATEGORIES=		textproc
 
@@ -34,6 +35,8 @@ WANTLIB-main=		${WANTLIB} c xml2>=9 gcrypt>=12
 LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
 			textproc/libxml>=2.6.27 \
 			security/libgcrypt
+# non shared archs won't inherit it from libgcrypt
+LIB_DEPENDS-main +=	security/libgpg-error
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
