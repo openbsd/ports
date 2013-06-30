@@ -1,0 +1,254 @@
+$OpenBSD: patch-src_ncui_cpp,v 1.1 2013/06/30 03:17:43 william Exp $
+
+Revision: 8ce6ee3cad09: print errors in more convenient way
+
+
+--- src/ncui.cpp.orig	Fri Nov  4 16:10:30 2011
++++ src/ncui.cpp	Wed Jun 26 21:30:44 2013
+@@ -413,35 +413,33 @@ void ncui::Print() {
+ 
+    pOpts->CopyFrom(pGlobalOpts);
+    // FormatConnections can set helphintmsg so it should run before header formatting
+-   if (error.empty()) {
+-      if (pGlobalOpts->Hosts.size() != 0) {
+-         string hosts = "Filtering by: " + Utils::JoinVector(pGlobalOpts->Hosts, ", ");
+-         int coef = CompactLongLine(hosts);
+-         int x = COLS/2 - hosts.size()/2;
+-         if (coef > 1) x = 0;
+-         mvaddstr(offset-2, x, hosts.c_str());
+-         offset += coef;
+-      }
+-      if (pGlobalOpts->Users.size() != 0) {
+-         string users = "Filtering by users: " + Utils::JoinVector(pGlobalOpts->Users, ", ");
+-         int coef = CompactLongLine(users);
+-         int x = COLS/2 - users.size()/2;
+-         if (coef > 1) x = 0;
+-         mvaddstr(offset-2, x, users.c_str());
+-         offset += coef;
+-      }
+-      if (!pGlobalOpts->do_refresh) {
+-         string msg = "Statistics refreshing disabled";
+-         mvaddstr(offset-2, COLS/2 - msg.size()/2, msg.c_str());
+-         offset++;
+-      }
++   if (pGlobalOpts->Hosts.size() != 0) {
++      string hosts = "Filtering by: " + Utils::JoinVector(pGlobalOpts->Hosts, ", ");
++      int coef = CompactLongLine(hosts);
++      int x = COLS/2 - hosts.size()/2;
++      if (coef > 1) x = 0;
++      mvaddstr(offset-2, x, hosts.c_str());
++      offset += coef;
++   }
++   if (pGlobalOpts->Users.size() != 0) {
++      string users = "Filtering by users: " + Utils::JoinVector(pGlobalOpts->Users, ", ");
++      int coef = CompactLongLine(users);
++      int x = COLS/2 - users.size()/2;
++      if (coef > 1) x = 0;
++      mvaddstr(offset-2, x, users.c_str());
++      offset += coef;
++   }
++   if (!pGlobalOpts->do_refresh) {
++      string msg = "Statistics refreshing disabled";
++      mvaddstr(offset-2, COLS/2 - msg.size()/2, msg.c_str());
++      offset++;
++   }
+ 
+-      vector<SQUID_Connection> sqconns_filtered = FilterConns(sqconns);
++   vector<SQUID_Connection> sqconns_filtered = FilterConns(sqconns);
+ 
+-      if (pGlobalOpts->compactsameurls)
+-         sqstat::CompactSameUrls(sqconns_filtered);
+-      to_print = FormatConnections(sqconns_filtered, offset);
+-   }
++   if (pGlobalOpts->compactsameurls)
++      sqstat::CompactSameUrls(sqconns_filtered);
++   to_print = FormatConnections(sqconns_filtered, offset);
+ 
+    // HEADER: print help hint
+    if (pGlobalOpts->showhelphint) {
+@@ -451,8 +449,9 @@ void ncui::Print() {
+       mvchgat(0, 0, helpstr.str().size(), A_REVERSE, 0, NULL);
+    // or print any error
+    } else if (!error.empty()) {
+-      mvaddstr(0, 0, error.c_str());
+-      return;
++      error = Utils::replace(error, "\n", " ");
++      mvaddstr(0, COLS/2 - error.size()/2, error.c_str());
++      mvchgat(0, COLS/2 - error.size()/2, error.size(), A_REVERSE, 0, NULL);
+    // or print some info
+    } else {
+       header_r << "Connected to " << pGlobalOpts->host << ":" << pGlobalOpts->port;
+@@ -463,85 +462,84 @@ void ncui::Print() {
+ 
+    mvhline(offset - 2, 0, 0, COLS);
+ 
+-   if (error.empty()) {
+-      unsigned int max_y = LINES - 1; // screen height
++   unsigned int max_y = LINES - 1; // screen height
+ 
+-      // Connections list
+-      if (!pGlobalOpts->showhelp) {
+-         if (to_print.size() > 0) {
+-            // some magic to determine visible part of connections according to selected line
+-            if (((to_print[selected_index].y) < (y_coef + offset)) && (increment < 0)) {
+-               start = selected_index;
+-               y_coef = to_print[selected_index].y - offset;
+-            } else if ((((to_print[selected_index].y + to_print[selected_index].coef) >  (max_y + y_coef - 2)) && (increment>0)) ||
+-                       (start > to_print.size())) {
+-               if (to_print[selected_index].y + to_print[selected_index].coef + 2 > max_y) {
+-                  y_coef = to_print[selected_index].y + to_print[selected_index].coef - max_y + 2;
+-               }
+-               else {
+-                  y_coef = 0;
+-               }
+-               for (start=0; start < selected_index; start++) {
+-                  if (to_print[start].new_line) continue;
+-                  if (to_print[start].y > y_coef+offset-1) break;
+-               }
++   // Connections list
++   if (!pGlobalOpts->showhelp) {
++      if (to_print.size() > 0) {
++         // some magic to determine visible part of connections according to selected line
++         if (((to_print[selected_index].y) < (y_coef + offset)) && (increment < 0)) {
++            start = selected_index;
++            y_coef = to_print[selected_index].y - offset;
++         } else if ((((to_print[selected_index].y + to_print[selected_index].coef) >  (max_y + y_coef - 2)) && (increment>0)) ||
++                    (start > to_print.size())) {
++            if (to_print[selected_index].y + to_print[selected_index].coef + 2 > max_y) {
++               y_coef = to_print[selected_index].y + to_print[selected_index].coef - max_y + 2;
+             }
++            else {
++               y_coef = 0;
++            }
++            for (start=0; start < selected_index; start++) {
++               if (to_print[start].new_line) continue;
++               if (to_print[start].y > y_coef+offset-1) break;
++            }
++         }
+ 
+-            unsigned int y;
+-            for (vector<formattedline_t>::iterator it = to_print.begin()+start; it != to_print.end(); ++it) {
+-               formattedline_t fline = *it;
+-               if (fline.new_line) {
+-                  continue;
+-               }
++         unsigned int y;
++         for (vector<formattedline_t>::iterator it = to_print.begin()+start; it != to_print.end(); ++it) {
++            formattedline_t fline = *it;
++            if (fline.new_line) {
++               continue;
++            }
+ 
+-               y = fline.y - y_coef;
++            y = fline.y - y_coef;
+ 
+-               if ((y + fline.coef - 1) > (max_y - 2)) break;
++            if ((y + fline.coef - 1) > (max_y - 2)) break;
+ 
+-               mvaddstr(y, 0, fline.str.c_str());
++            mvaddstr(y, 0, fline.str.c_str());
+ 
+-               if (fline.highlighted) {
+-                  //AddWatch("id", fline.id);
+-                  //AddWatch("peer", fline.sconn.peer);
+-                  std::string::size_type found;
+-                  string temps;
+-                  for (unsigned int st = 0; st < fline.coef; st++) {
+-                     temps = fline.str.substr(st*COLS, st*COLS + COLS);
+-                     found = temps.find_first_not_of(" ");
+-                     mvchgat(y+st, found, temps.size()-found, A_REVERSE, 0, NULL);
+-                  }
+-                  /*AddWatch("found", Utils::itos(found));
+-                  AddWatch("size", Utils::itos(fline.str.size()));
+-                  AddWatch("h_coef", Utils::itos(fline.coef));*/
+-                  selected_t = fline;
++            if (fline.highlighted) {
++               //AddWatch("id", fline.id);
++               //AddWatch("peer", fline.sconn.peer);
++               std::string::size_type found;
++               string temps;
++               for (unsigned int st = 0; st < fline.coef; st++) {
++                  temps = fline.str.substr(st*COLS, st*COLS + COLS);
++                  found = temps.find_first_not_of(" ");
++                  mvchgat(y+st, found, temps.size()-found, A_REVERSE, 0, NULL);
+                }
++               /*AddWatch("found", Utils::itos(found));
++               AddWatch("size", Utils::itos(fline.str.size()));
++               AddWatch("h_coef", Utils::itos(fline.coef));*/
++               selected_t = fline;
+             }
+-            /*AddWatch("incr", Utils::itos(increment));
+-            AddWatch("max_y", Utils::itos(max_y));
+-            AddWatch("y_coef", Utils::itos(y_coef));
+-            AddWatch("start", Utils::itos(start));
+-            AddWatch("selec_idx", Utils::itos(selected_index));
+-            AddWatch("h_y", Utils::itos(to_print[selected_index].y));
+-            AddWatch("to_p[start].y", Utils::itos(to_print[start].y));*/
+          }
+-      } else {
+-         mvaddstr(offset, 0, helpmsg().c_str());
++         /*AddWatch("incr", Utils::itos(increment));
++         AddWatch("max_y", Utils::itos(max_y));
++         AddWatch("y_coef", Utils::itos(y_coef));
++         AddWatch("start", Utils::itos(start));
++         AddWatch("selec_idx", Utils::itos(selected_index));
++         AddWatch("h_y", Utils::itos(to_print[selected_index].y));
++         AddWatch("to_p[start].y", Utils::itos(to_print[start].y));*/
+       }
++   } else {
++      mvaddstr(offset, 0, helpmsg().c_str());
++   }
+ 
+-      // FOOTER
+-      string speed = sqstat::SpeedsFormat(pGlobalOpts->speed_mode, av_speed, curr_speed);
+-      speed[0] = toupper(speed[0]);
+-      status << speed << "\t\t";
+-      status << "Active hosts: " << sqconns.size() << "\t\t";
+-      status << "Active connections: " << act_conn << "\t\t";
++   // FOOTER
++   string speed = sqstat::SpeedsFormat(pGlobalOpts->speed_mode, av_speed, curr_speed);
++   speed[0] = toupper(speed[0]);
++   status << speed << "\t\t";
++   status << "Active hosts: " << sqconns.size() << "\t\t";
++   status << "Active connections: " << act_conn << "\t\t";
+ 
+-      mvhline(max_y-1, 0, 0, COLS);
++   mvhline(max_y-1, 0, 0, COLS);
+ 
+-      if (debug.empty())
+-         mvaddstr(max_y, 0, status.str().c_str());
+-      else
+-         mvaddstr(max_y, COLS - 1 - debug.size(), debug.c_str());
+-   }
++   if (debug.empty())
++      mvaddstr(max_y, 0, status.str().c_str());
++   else
++      mvaddstr(max_y, COLS - 1 - debug.size(), debug.c_str());
++
+    move(LINES - 1, COLS - 1);
+    refresh();
+ }
+@@ -605,6 +603,7 @@ void ncui::Loop() {
+             catch (string &s) {
+                ShowHelpHint(s);
+             }
++            sqconns.clear();
+             pGlobalOpts->freeze = false;
+             break;
+          case 'H':
+@@ -707,6 +706,7 @@ void ncui::Loop() {
+             catch (string &s) {
+                ShowHelpHint(s);
+             }
++            sqconns.clear();
+             pGlobalOpts->freeze = false;
+             break;
+          case '/':
+@@ -732,6 +732,7 @@ void ncui::Loop() {
+             catch(string &s) {
+                ShowHelpHint(s);
+             }
++            sqconns.clear();
+             pGlobalOpts->freeze = false;
+             break;
+          case 'r':

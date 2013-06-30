@@ -1,0 +1,98 @@
+$OpenBSD: patch-src_sqstat_cpp,v 1.1 2013/06/30 03:17:43 william Exp $
+
+Revision: 8ce6ee3cad09: print errors in more convenient way
+Revision: 502a2c7e81bf: renamed (Gb, Mb, Kb) -> (GB, MB, KB) as bytes
+Revision: f04cf1d965bc: sqstat: reworked parsing peer info to properly handle ipv6 addresses
+Revision: 9cafb9feb080: sqstat: added support for squid 3.2 HTTP/1.1 responses (thanks to cccarlos...@gmail.com)
+Revision: dc33d36f6c17: fixed to work with squid3.3.5
+
+
+--- src/sqstat.cpp.orig	Fri Nov  4 16:10:30 2011
++++ src/sqstat.cpp	Wed Jun 26 21:30:44 2013
+@@ -195,7 +195,7 @@ string sqstat::SpeedsFormat(Options::SPEED_MODE mode, 
+             break;
+          }
+       case Options::SPEED_AVERAGE:
+-         result << "average speed: " + av_speed_pair.first + av_speed_pair.second;
++         result << "average speed: " + av_speed_pair.first + " " + av_speed_pair.second;
+          break;
+    };
+    return result.str();
+@@ -253,9 +253,9 @@ Uri_Stats sqstat::FindUriStatsById(vector<SQUID_Connec
+ void sqstat::FormatChanged(string line) {
+    std::stringstream result;
+    result << "Warning!!! Please send bug report.";
+-   result << " active_requests format changed - \'" << line << "\'." << endl;
+-   result << squid_version << endl;
+-   result << PACKAGE_NAME << "-" << VERSION;
++   result << " active_requests format changed - \'" << line << "\'.";
++   result << " " << squid_version << ".";
++   result << " " << PACKAGE_NAME << "-" << VERSION;
+    throw sqstatException(result.str(), FORMAT_CHANGED);
+ }
+ 
+@@ -311,9 +311,9 @@ vector<SQUID_Connection> sqstat::GetInfo(Options* pOpt
+       while ((con >> temp_str) != 0) {
+          if (connections.size()==0) {
+             if (n==0) {
+-               if (temp_str != "HTTP/1.0 200 OK") {
++               if (temp_str != "HTTP/1.0 200 OK" && temp_str != "HTTP/1.1 200 OK") {
+                   std::stringstream error;
+-                  error << "Access to squid statistic denied: " << temp_str << endl << endl;
++                  error << "Access to squid statistic denied: " << temp_str;
+                   /*string ip;
+                   try {
+                      ip = get_ip();
+@@ -321,10 +321,10 @@ vector<SQUID_Connection> sqstat::GetInfo(Options* pOpt
+                   catch (string) {
+                      ip = "<your_host_ip>";
+                   }*/
+-                  error << "You must enable access to squid statistic in squid.conf by adding strings like:" << endl << endl;
++                  /*error << "You must enable access to squid statistic in squid.conf by adding strings like:" << endl << endl;
+                   error << "\tacl adminhost src <admin_host_ip_here>/255.255.255.255" << endl;
+                   error << "\thttp_access allow manager adminhost" << endl;
+-                  error << "\thttp_access deny manager";
++                  error << "\thttp_access deny manager";*/
+                   throw sqstatException(error.str(), ACCESS_DENIED);
+                } else {
+                   n=1;
+@@ -353,23 +353,25 @@ vector<SQUID_Connection> sqstat::GetInfo(Options* pOpt
+                newStats.etime = 0;
+                newStats.delay_pool = -1;
+             } else { FormatChanged(temp_str); }
+-         } else if (temp_str.substr(0,6) == "peer: ") {
+-            result = Utils::SplitString(temp_str, ":");
+-            if (result.size() == 3) {
+-               string peer = result[1].substr(1);
+-               Conn_it = std::find_if( connections.begin(), connections.end(), std::bind2nd( std::ptr_fun(ConnByPeer) , peer) );
+-               // if it is new peer, create new SQUID_Connection
+-               if (Conn_it == connections.end()) {
+-                  SQUID_Connection connection;
+-                  connection.peer = peer;
++         } else if ((temp_str.substr(0,6) == "peer: ") or (temp_str.substr(0,8) == "remote: ")) {
++            result = Utils::SplitString(temp_str, " ");
++            if (result.size() == 2) {
++               std::pair <string, string> peer = Utils::SplitIPPort(result[1]);
++               if (!peer.first.empty()) {
++                  Conn_it = std::find_if( connections.begin(), connections.end(), std::bind2nd( std::ptr_fun(ConnByPeer) , peer.first) );
++                  // if it is new peer, create new SQUID_Connection
++                  if (Conn_it == connections.end()) {
++                     SQUID_Connection connection;
++                     connection.peer = peer.first;
+ #ifdef WITH_RESOLVER
+-                  connection.hostname = DoResolve(pOpts, peer);
++                     connection.hostname = DoResolve(pOpts, peer.first);
+ #endif
+-                  connections.push_back(connection);
+-                  Conn_it = connections.end() - 1;
++                     connections.push_back(connection);
++                     Conn_it = connections.end() - 1;
++                  }
++                  Conn_it->stats.push_back(newStats);
++                  Stat_it = Conn_it->stats.end() - 1;
+                }
+-               Conn_it->stats.push_back(newStats);
+-               Stat_it = Conn_it->stats.end() - 1;
+             } else { FormatChanged(temp_str); }
+          } else if (temp_str.substr(0,4) == "uri ") {
+             result = Utils::SplitString(temp_str, " ");

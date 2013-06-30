@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:44:49 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/06/30 03:17:43 william Exp $
 
 COMMENT=		top-like monitor for Squid
 
 DISTNAME=		sqtop-2011-11-01
 PKGNAME=		sqtop-2011.11.01
+REVISION=		0
 CATEGORIES=		www
 
-MAINTAINER=		Gonzalo L. R. <gonzalo@x61.com.ar>
+MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
 
 HOMEPAGE=		http://code.google.com/p/sqtop/
 EXTRACT_SUFX=		.tar.bz2

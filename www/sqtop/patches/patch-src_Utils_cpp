@@ -1,0 +1,82 @@
+$OpenBSD: patch-src_Utils_cpp,v 1.1 2013/06/30 03:17:43 william Exp $
+
+Revision: 8ce6ee3cad09: print errors in more convenient way
+Revision: 502a2c7e81bf: renamed (Gb, Mb, Kb) -> (GB, MB, KB) as bytes
+Revision: f04cf1d965bc: sqstat: reworked parsing peer info to properly handle ipv6 addresses
+Revision: 50c930f74dc7: Utils: bugfix - replaced size_t with std::string::size_type for find_last_of result
+
+
+--- src/Utils.cpp.orig	Fri Nov  4 16:10:30 2011
++++ src/Utils.cpp	Wed Jun 26 21:30:44 2013
+@@ -35,6 +35,16 @@ vector<string> Utils::SplitString(string str, string d
+    return result;
+ }
+ 
++std::pair <string, string> Utils::SplitIPPort(string ipport) {
++   std::pair <string, string> result;
++   std::string::size_type found = ipport.find_last_of(":");
++   if (found != string::npos) {
++      result.first = ipport.substr(0, found);
++      result.second = ipport.substr(found+1);
++   }
++   return result;
++}
++
+ string Utils::JoinVector(vector<string> inv, string delim) {
+    string result = "";
+    for (vector<string>::iterator it = inv.begin(); it != inv.end(); ++it)
+@@ -105,12 +115,12 @@ string Utils::ConvertSize(long long esize) {
+     long long mb = esize/1024/1024 - gb*1024;
+     long long kb = (esize/1024) % 1024;
+     if (gb != 0) {
+-        result += itos(gb) + "Gb ";
++        result += itos(gb) + "GB ";
+     }
+     if (mb != 0) {
+-        result += itos(mb) + "Mb ";
++        result += itos(mb) + "MB ";
+     }
+-    result += itos(kb) + "Kb";
++    result += itos(kb) + "KB";
+     return result;
+ }
+ 
+@@ -120,17 +130,17 @@ std::pair <string, string> Utils::ConvertSpeedPair(lon
+    //long kb = speed/1024;
+    if (mb != 0) {
+        result.first = ftos(speed/1024.0/1024.0, 2);
+-       result.second = "Mb/s";
++       result.second = "MB/s";
+    } else {
+        result.first = ftos(speed/1024.0, 1);
+-       result.second = "Kb/s";
++       result.second = "KB/s";
+    }
+    return result;
+ }
+ 
+ string Utils::ConvertSpeed(long long speed) {
+    std::pair <string, string> result = Utils::ConvertSpeedPair(speed);
+-   return result.first+result.second;
++   return result.first+" "+result.second;
+ }
+ 
+ bool Utils::VectorFindSubstr(vector<string>& v, string& str) {
+@@ -192,6 +202,17 @@ bool Utils::UserMemberOf(vector<string>& v, vector<str
+             return true;
+      }
+      return false;
++}
++
++string Utils::replace(string text, string s, string d)
++{
++  for(std::string::size_type index=0; index=text.find(s, index), index!=std::string::npos;)
++  {
++    text.erase(index, s.length());
++    text.insert(index, d);
++    index+=d.length();
++  }
++  return text;
+ }
+ 
+ // vim: ai ts=3 sts=3 et sw=3 expandtab

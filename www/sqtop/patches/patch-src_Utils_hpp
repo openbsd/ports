@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_Utils_hpp,v 1.1 2013/06/30 03:17:43 william Exp $
+
+Revision: 8ce6ee3cad09: print errors in more convenient way
+Revision: f04cf1d965bc: sqstat: reworked parsing peer info to properly handle ipv6 addresses
+
+
+--- src/Utils.hpp.orig	Fri Nov  4 16:10:30 2011
++++ src/Utils.hpp	Wed Jun 26 21:30:44 2013
+@@ -11,6 +11,7 @@
+ 
+ namespace Utils {
+    extern std::vector<std::string> SplitString(std::string str, std::string delim);
++   extern std::pair <std::string, std::string> SplitIPPort(std::string ipport);
+    extern std::string JoinVector(std::vector<std::string> inv, std::string delim);
+    extern std::string itos(long long num);
+    extern long int stol(std::string s);
+@@ -26,6 +27,7 @@ namespace Utils {
+    extern bool IPMemberOf(std::vector<std::string>& v, std::string& ip_in);
+    extern void ToLower(std::string& rData);
+    extern bool UserMemberOf(std::vector<std::string>& v, std::vector<std::string>& users);
++   extern std::string replace(std::string text, std::string s, std::string d);
+ };
+ 
+ #endif /* __UTILS_H */
