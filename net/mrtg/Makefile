@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2013/03/11 11:35:49 espie Exp $
+# $OpenBSD: Makefile,v 1.83 2013/06/30 21:38:04 espie Exp $
 
 COMMENT=	multi-router traffic grapher
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=	c jpeg m png z gd>=18
 
 MASTER_SITES=	${HOMEPAGE}pub/ \
-		${HOMEPAGE}pub/old
+		${HOMEPAGE}pub/old/
 
 RUN_DEPENDS=	net/p5-IO-Socket-INET6 \
 		net/p5-Net-SNMP \
