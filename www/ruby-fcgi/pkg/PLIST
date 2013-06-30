@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/11/08 23:24:43 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/06/30 20:12:49 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/ChangeLog
-${GEM_LIB}/gems/${DISTNAME}/README
+${GEM_LIB}/gems/${DISTNAME}/LICENSE
+${GEM_LIB}/gems/${DISTNAME}/README.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/README.signals
+${GEM_LIB}/gems/${DISTNAME}/VERSION
 ${GEM_LIB}/gems/${DISTNAME}/ext/
 ${GEM_LIB}/gems/${DISTNAME}/ext/fcgi/
 ${GEM_LIB}/gems/${DISTNAME}/ext/fcgi/MANIFEST
@@ -13,7 +14,11 @@ ${GEM_LIB}/gems/${DISTNAME}/ext/fcgi/fcgi.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/fcgi/fcgi.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/fcgi/fcgi.so
 ${GEM_LIB}/gems/${DISTNAME}/ext/fcgi/mkmf.log
+${GEM_LIB}/gems/${DISTNAME}/fcgi.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/fcgi.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/fcgi.so
+${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test/helper.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_fcgi.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
