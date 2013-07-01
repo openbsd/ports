@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.106 2013/06/30 16:35:43 espie Exp $
+# $OpenBSD: Port.pm,v 1.107 2013/07/01 12:35:35 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -180,6 +180,7 @@ sub finalize
 	if ($core->{status} == 0) {
 		return 1;
 	}
+	$core->job->{failed} = 1;
 	if ($core->prop->{always_clean}) {
 		$core->job->replace_tasks(DPB::Task::Port::BaseClean->new(
 			'clean'));
@@ -189,7 +190,7 @@ sub finalize
 }
 
 package DPB::Task::Port::Signature;
-our @ISA =qw(DPB::Task::Port);
+our @ISA =qw(DPB::Task::BasePort);
 
 sub notime { 1 }
 
@@ -423,6 +424,7 @@ sub finalize
 	$job->{pos} = tell($job->{logfh});
 
 	$self->SUPER::finalize($core);
+	delete $job->{failed};
 	return 1;
 }
 
