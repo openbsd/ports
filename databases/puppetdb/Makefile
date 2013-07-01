@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/06/28 09:40:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2013/07/01 13:49:00 jasper Exp $
 
 COMMENT-main=	fast, scalable, and reliable data warehouse for Puppet
 COMMENT-plugin= PuppetDB terminus plugin
@@ -7,7 +7,7 @@ V=		1.3.2
 DISTNAME=	puppetdb-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-plugin= puppetdb-terminus-$V
-REVISION-main=	1
+REVISION-main=	2
 CATEGORIES=	databases
 
 HOMEPAGE=	http://docs.puppetlabs.com/puppetdb/latest/
@@ -38,7 +38,9 @@ NO_TEST=	Yes
 SCRIPTS=	export foreground import ssl-setup
 
 do-configure:
-	${SUBST_CMD} ${WRKSRC}/Rakefile ${WRKSRC}/tasks/install.rake
+	${SUBST_CMD} ${WRKSRC}/Rakefile \
+			${WRKSRC}/tasks/install.rake \
+			${WRKSRC}/ext/files/config.ini
 .for s in ${SCRIPTS}
 	${SUBST_CMD} ${WRKSRC}/ext/files/puppetdb-$s
 .endfor

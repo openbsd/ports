@@ -1,12 +1,15 @@
-$OpenBSD: patch-ext_files_config_ini,v 1.2 2013/06/28 09:30:44 jasper Exp $
+$OpenBSD: patch-ext_files_config_ini,v 1.3 2013/07/01 13:49:00 jasper Exp $
 --- ext/files/config.ini.orig	Mon Jun  3 19:13:08 2013
-+++ ext/files/config.ini	Fri Jun 28 11:17:09 2013
-@@ -3,7 +3,7 @@
++++ ext/files/config.ini	Mon Jul  1 15:43:59 2013
+@@ -3,9 +3,9 @@
  
  [global]
  # Store mq/db data in a custom directory
 -vardir = /var/lib/puppetdb
 +vardir = /var/db/puppetdb
  # Use an external log4j config file
- logging-config = /etc/puppetdb/log4j.properties
+-logging-config = /etc/puppetdb/log4j.properties
++logging-config = ${SYSCONFDIR}/puppetdb/log4j.properties
  
+ # Maximum number of results that a resource query may return
+ resource-query-limit = 20000
