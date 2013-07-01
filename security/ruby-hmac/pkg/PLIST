@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/07/01 16:46:45 jasper Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/History.txt
+${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
+${GEM_LIB}/gems/${DISTNAME}/README.txt
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/hmac-md5.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hmac-rmd160.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hmac-sha1.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hmac-sha2.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hmac.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/ruby_hmac.rb
+${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test/test_hmac.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
