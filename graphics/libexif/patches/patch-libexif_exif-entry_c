@@ -1,0 +1,18 @@
+$OpenBSD: patch-libexif_exif-entry_c,v 1.1 2013/07/01 17:44:20 espie Exp $
+--- libexif/exif-entry.c.orig	Mon Jul  1 19:38:16 2013
++++ libexif/exif-entry.c	Mon Jul  1 19:38:52 2013
+@@ -1375,12 +1375,13 @@ exif_entry_get_value (ExifEntry *e, char *val, unsigne
+ 	case EXIF_TAG_XP_KEYWORDS:
+ 	case EXIF_TAG_XP_SUBJECT:
+ 	{
++		unsigned short *utf16;
+ 		/* Sanity check the size to prevent overflow */
+ 		if (e->size+sizeof(unsigned short) < e->size) break;
+ 
+ 		/* The tag may not be U+0000-terminated , so make a local
+ 		   U+0000-terminated copy before converting it */
+-		unsigned short *utf16 = exif_mem_alloc (e->priv->mem, e->size+sizeof(unsigned short));
++		utf16 = exif_mem_alloc (e->priv->mem, e->size+sizeof(unsigned short));
+ 		if (!utf16) break;
+ 		memcpy(utf16, e->data, e->size);
+ 		utf16[e->size/sizeof(unsigned short)] = 0;
