@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2013/04/02 17:26:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2013/07/01 10:39:17 sthen Exp $
 
 COMMENT=	printed circuit board layout tool
 DISTNAME=	pcb-20110918
 CATEGORIES=	cad
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	http://pcb.gpleda.org/
-
-MAINTAINER=	Andreas Bihlmaier <andreas.bihlmaier@gmx.de>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -43,7 +41,6 @@ MODULES=	devel/gettext \
 		x11/tk
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-doc \
 		--with-gui=gtk \

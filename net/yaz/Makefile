@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/21 08:46:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2013/07/01 10:39:18 sthen Exp $
 
 COMMENT=		Z39.50/SR client and API library
 DISTNAME=		yaz-3.0.49
 CATEGORIES=		net
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS+=		yaz		1.1	# 3.0
 SHARED_LIBS+=		yaz_icu		1.2	# 3.0
@@ -11,12 +11,10 @@ SHARED_LIBS+=		yaz_server	1.1	# 3.0
 
 HOMEPAGE=		http://www.indexdata.dk/yaz/
 
-MAINTAINER=		Andreas Bihlmaier <andreas.bihlmaier@gmx.de>
-
 # Revised BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-USE_GROFF =		Yes
+USE_GROFF=		Yes
 
 MODULES=		devel/gettext
 

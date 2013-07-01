@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/21 08:33:52 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2013/07/01 10:39:17 sthen Exp $
 
 COMMENT =		open source MPI-2 implementation
 BROKEN-hppa =		error: Could not determine global symbol label prefix
@@ -6,7 +6,7 @@ BROKEN-powerpc =	checking if Fortran 77 compiler works... no
 
 V=			1.4.1
 DISTNAME =		openmpi-$V
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS =		mca_common_sm 1.0 \
 			mpi 0.1 \
@@ -19,7 +19,6 @@ CATEGORIES =		devel
 
 HOMEPAGE =		http://www.open-mpi.org/
 
-MAINTAINER =		Andreas Bihlmaier <andreas.bihlmaier@gmx.de>
 MODULES =		fortran
 MODFORTRAN_COMPILER =	gfortran
 BUILD_DEPENDS +=	${MODFORTRAN_BUILD_DEPENDS}

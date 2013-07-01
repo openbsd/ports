@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/10 23:04:44 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/07/01 10:39:17 sthen Exp $
 
 COMMENT=		Gnu Circuit Analysis Package
 
 DISTNAME=		gnucap-0.35
-REVISION=		0
+REVISION=		1
 CATEGORIES=		cad
 
 HOMEPAGE=		http://www.gnucap.org/
-
-MAINTAINER=		Andreas Bihlmaier <andreas.bihlmaier@gmx.de>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
