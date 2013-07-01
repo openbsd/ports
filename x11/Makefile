@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.517 2013/06/15 11:47:30 bcallah Exp $
+# $OpenBSD: Makefile,v 1.518 2013/07/01 05:10:47 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -137,12 +137,14 @@
      SUBDIR += krusader
      SUBDIR += lablgtk2
      SUBDIR += libdnd
+     SUBDIR += libfm
      SUBDIR += libgdiplus
      SUBDIR += libsexy
      SUBDIR += libxdg-basedir
      SUBDIR += lsw
      SUBDIR += lupe
      SUBDIR += lxrandr
+     SUBDIR += menu-cache
      SUBDIR += mlterm
      SUBDIR += mono-gtk2
      SUBDIR += mouseclock
