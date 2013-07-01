@@ -1,7 +1,16 @@
-$OpenBSD: patch-src_config_parser_c,v 1.1 2013/05/16 18:42:30 dcoppa Exp $
+$OpenBSD: patch-src_config_parser_c,v 1.2 2013/07/01 13:42:25 dcoppa Exp $
+
+commit e8759691b8fdac7f964626c357dd6512a698ea2f
+Author: Michael Stapelberg <michael@stapelberg.de>
+Date:   Sat Jun 29 23:46:53 2013 +0200
+
+Bugfix: call i3-nagbar correctly for configfiles without the font directive
+
+fixes #1030
+
 --- src/config_parser.c.orig	Mon Mar 18 22:43:36 2013
-+++ src/config_parser.c	Mon May 13 08:32:19 2013
-@@ -1055,8 +1055,8 @@ void parse_file(const char *f) {
++++ src/config_parser.c	Mon Jul  1 15:28:43 2013
+@@ -1055,12 +1055,12 @@ void parse_file(const char *f) {
  
          char *editaction,
               *pageraction;
@@ -12,3 +21,8 @@ $OpenBSD: patch-src_config_parser_c,v 1.1 2013/05/16 18:42:30 dcoppa Exp $
          char *argv[] = {
              NULL, /* will be replaced by the executable path */
              "-f",
+-            config.font.pattern,
++            (config.font.pattern ? config.font.pattern : "fixed"),
+             "-t",
+             (context->has_errors ? "error" : "warning"),
+             "-m",

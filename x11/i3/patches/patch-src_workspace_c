@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_workspace_c,v 1.11 2013/07/01 13:42:25 dcoppa Exp $
+
+commit 625d5bdba6318377baa716ad5ea5a0b2f85b1c0e
+Author: Eika Enge <eika-enge@outlook.com>
+Date:   Sun May 26 18:24:55 2013 +0700
+
+Bugfix: Ignore spaces in front of default workspace name
+
+--- src/workspace.c.orig	Mon Jul  1 15:27:18 2013
++++ src/workspace.c	Mon Jul  1 15:27:55 2013
+@@ -128,6 +128,8 @@ Con *create_workspace_on_output(Output *output, Con *c
+             continue;
+         DLOG("relevant command = %s\n", bind->command);
+         char *target = bind->command + strlen("workspace ");
++        while((*target == ' ' || *target == '\t') && target != '\0')
++            target++;
+         /* We check if this is the workspace
+          * next/prev/next_on_output/prev_on_output/back_and_forth/number command.
+          * Beware: The workspace names "next", "prev", "next_on_output",

@@ -1,6 +1,12 @@
-$OpenBSD: patch-libi3_ipc_recv_message_c,v 1.1 2013/06/25 06:07:46 tobiasu Exp $
+$OpenBSD: patch-libi3_ipc_recv_message_c,v 1.2 2013/07/01 13:42:25 dcoppa Exp $
 
-Alignment is overrated.
+commit cecadbfdfe01b770e8a7832e94e0ca58073a03f9
+Author: Michael Stapelberg <michael@stapelberg.de>
+Date:   Sat Jun 29 19:28:13 2013 +0200
+
+Bugfix: fix bus error on OpenBSD/sparc64 (Thanks tobiasu)
+
+fixes #1034
 
 --- libi3/ipc_recv_message.c.orig	Mon Jun 24 21:38:29 2013
 +++ libi3/ipc_recv_message.c	Mon Jun 24 21:41:22 2013
