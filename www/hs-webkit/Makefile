@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:44:42 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/07/01 21:35:50 kili Exp $
 
 COMMENT =		WebKit bindings for Haskell
 DISTNAME =		webkit-0.12.4
-REVISION =		1
+REVISION =		2
 CATEGORIES =		www
 
-MAINTAINER =		Jona Joachim <jaj@hcl-club.lu>
+MAINTAINER =		Jona Joachim <jona@joachim.cc>
 
 # LGPL-2.1
 PERMIT_PACKAGE_CDROM =	Yes
