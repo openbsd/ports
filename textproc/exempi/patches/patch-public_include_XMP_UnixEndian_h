@@ -1,0 +1,12 @@
+$OpenBSD: patch-public_include_XMP_UnixEndian_h,v 1.1 2013/07/01 08:44:41 ajacoutot Exp $
+--- public/include/XMP_UnixEndian.h.orig	Mon Jul  1 10:09:29 2013
++++ public/include/XMP_UnixEndian.h	Mon Jul  1 10:09:47 2013
+@@ -19,7 +19,7 @@
+ #    define kBigEndianHost 1
+ #  endif
+ # else
+-#  include <endian.h>
++#  include <machine/endian.h>
+ #  if BYTE_ORDER == BIG_ENDIAN
+ #   define kBigEndianHost 1
+ #  elif BYTE_ORDER == LITTLE_ENDIAN
