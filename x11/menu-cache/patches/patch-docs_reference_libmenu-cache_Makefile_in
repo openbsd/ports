@@ -1,0 +1,12 @@
+$OpenBSD: patch-docs_reference_libmenu-cache_Makefile_in,v 1.1.1.1 2013/07/01 05:08:06 ajacoutot Exp $
+--- docs/reference/libmenu-cache/Makefile.in.orig	Sun Jun 30 09:34:04 2013
++++ docs/reference/libmenu-cache/Makefile.in	Sun Jun 30 09:34:12 2013
+@@ -735,8 +735,6 @@ dist-hook: dist-check-gtkdoc dist-hook-local
+ .PHONY : dist-hook-local docs
+ #TESTS = $(GTKDOC_CHECK)
+ 
+--include $(top_srcdir)/git.mk
+-
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

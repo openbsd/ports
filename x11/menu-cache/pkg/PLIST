@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/07/01 05:08:06 ajacoutot Exp $
+include/menu-cache/
+include/menu-cache/menu-cache.h
+lib/libmenu-cache.a
+lib/libmenu-cache.la
+@lib lib/libmenu-cache.so.${LIBmenu-cache_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/libmenu-cache.pc
+@bin libexec/menu-cache-gen
+@bin libexec/menu-cached
