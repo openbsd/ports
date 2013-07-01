@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2013/03/03 17:44:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2013/07/01 05:05:57 ajacoutot Exp $
 @pkgpath mail/gmime
 @pkgpath mail/gmime24
 @pkgpath mail/gmime24,-main
@@ -57,11 +57,15 @@ include/gmime-2.6/gmime/gmime-utils.h
 include/gmime-2.6/gmime/gmime-version.h
 include/gmime-2.6/gmime/gmime.h
 include/gmime-2.6/gmime/internet-address.h
+lib/girepository-1.0/
+lib/girepository-1.0/GMime-2.6.typelib
 lib/libgmime-2.6.a
 lib/libgmime-2.6.la
 @lib lib/libgmime-2.6.so.${LIBgmime-2.6_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/gmime-2.6.pc
+share/gir-1.0/
+share/gir-1.0/GMime-2.6.gir
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/gmime-2.6/
@@ -150,3 +154,7 @@ share/gtk-doc/html/gmime-2.6/left.png
 share/gtk-doc/html/gmime-2.6/right.png
 share/gtk-doc/html/gmime-2.6/style.css
 share/gtk-doc/html/gmime-2.6/up.png
+share/vala/
+share/vala/vapi/
+share/vala/vapi/gmime-2.6.deps
+share/vala/vapi/gmime-2.6.vapi

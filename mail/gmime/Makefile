@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2013/03/11 11:23:51 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2013/07/01 05:05:57 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -6,7 +6,7 @@ COMMENT-main=	MIME messages creation and parsing library
 COMMENT-mono=	mono bindings for gmime
 
 GNOME_PROJECT=	gmime
-GNOME_VERSION=	2.6.15
+GNOME_VERSION=	2.6.16
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-mono=	gmime-sharp-${GNOME_VERSION}
@@ -29,6 +29,8 @@ MULTI_PACKAGES=	-main -mono
 MODULES +=	devel/gettext \
 		x11/gnome
 
+MODGNOME_TOOLS=	gi vala
+
 # needed to build the tests
 BUILD_DEPENDS += security/libgpg-error
 
@@ -36,7 +38,6 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		devel/glib2
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	DOLT_BASH="/bin/ksh"
 
 ### mono subpackage
 PSEUDO_FLAVORS=	no_mono
