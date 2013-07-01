@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.807 2013/06/29 15:56:10 jeremy Exp $
+# $OpenBSD: Makefile,v 1.808 2013/07/01 16:52:05 jasper Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -518,8 +518,6 @@
      SUBDIR += ruby-net-ssh
      SUBDIR += ruby-net-ssh-gateway
      SUBDIR += ruby-nmap-parser
-     SUBDIR += ruby-pcap
-     SUBDIR += ruby-pcaprub-msf,ruby19
      SUBDIR += ruby-snmp
      SUBDIR += ruby-stomp
      SUBDIR += ruby-xmpp4r

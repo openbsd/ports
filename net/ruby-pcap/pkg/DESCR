@@ -1,5 +1,0 @@
-Ruby interface to LBL Packet Capture library.
-This library also includes classes to access packet header fields.
-
-It is much easier to code in Ruby/Pcap than to code in C and use
-libpcap directly.

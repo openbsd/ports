@@ -1,7 +1,0 @@
-This goal of this project is to provide a consistent interface to LBL's
-libpcap packet capture library. This project was created because the
-currently available ruby-pcap library is poorly designed and has been
-unmaintained since 2000. This does not provide packet processing
-functionality, it simply provides the interface for capturing packets.
-
-This version has been forked by the Metasploit project.
