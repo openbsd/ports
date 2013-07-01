@@ -1,0 +1,99 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/07/01 05:09:35 ajacoutot Exp $
+@bin bin/libfm-pref-apps
+include/libfm
+include/libfm-1.0/
+include/libfm-1.0/fm-actions.h
+include/libfm-1.0/fm-app-chooser-combo-box.h
+include/libfm-1.0/fm-app-chooser-dlg.h
+include/libfm-1.0/fm-app-info.h
+include/libfm-1.0/fm-app-menu-view.h
+include/libfm-1.0/fm-archiver.h
+include/libfm-1.0/fm-bookmarks.h
+include/libfm-1.0/fm-cell-renderer-pixbuf.h
+include/libfm-1.0/fm-cell-renderer-text.h
+include/libfm-1.0/fm-clipboard.h
+include/libfm-1.0/fm-config.h
+include/libfm-1.0/fm-deep-count-job.h
+include/libfm-1.0/fm-dir-list-job.h
+include/libfm-1.0/fm-dir-tree-model.h
+include/libfm-1.0/fm-dir-tree-view.h
+include/libfm-1.0/fm-dnd-auto-scroll.h
+include/libfm-1.0/fm-dnd-dest.h
+include/libfm-1.0/fm-dnd-src.h
+include/libfm-1.0/fm-dummy-monitor.h
+include/libfm-1.0/fm-file-info-job.h
+include/libfm-1.0/fm-file-info.h
+include/libfm-1.0/fm-file-launcher.h
+include/libfm-1.0/fm-file-menu.h
+include/libfm-1.0/fm-file-ops-job-change-attr.h
+include/libfm-1.0/fm-file-ops-job-delete.h
+include/libfm-1.0/fm-file-ops-job-xfer.h
+include/libfm-1.0/fm-file-ops-job.h
+include/libfm-1.0/fm-file-properties.h
+include/libfm-1.0/fm-file.h
+include/libfm-1.0/fm-folder-model.h
+include/libfm-1.0/fm-folder-view.h
+include/libfm-1.0/fm-folder.h
+include/libfm-1.0/fm-gtk-file-launcher.h
+include/libfm-1.0/fm-gtk-marshal.h
+include/libfm-1.0/fm-gtk-utils.h
+include/libfm-1.0/fm-gtk.h
+include/libfm-1.0/fm-icon-pixbuf.h
+include/libfm-1.0/fm-icon.h
+include/libfm-1.0/fm-job.h
+include/libfm-1.0/fm-list.h
+include/libfm-1.0/fm-marshal.h
+include/libfm-1.0/fm-mime-type.h
+include/libfm-1.0/fm-monitor.h
+include/libfm-1.0/fm-nav-history.h
+include/libfm-1.0/fm-path-bar.h
+include/libfm-1.0/fm-path-entry.h
+include/libfm-1.0/fm-path.h
+include/libfm-1.0/fm-places-model.h
+include/libfm-1.0/fm-places-view.h
+include/libfm-1.0/fm-progress-dlg.h
+include/libfm-1.0/fm-side-pane.h
+include/libfm-1.0/fm-simple-job.h
+include/libfm-1.0/fm-sortable.h
+include/libfm-1.0/fm-standard-view.h
+include/libfm-1.0/fm-tab-label.h
+include/libfm-1.0/fm-thumbnail.h
+include/libfm-1.0/fm-thumbnailer.h
+include/libfm-1.0/fm-utils.h
+include/libfm-1.0/fm.h
+lib/libfm-gtk.a
+lib/libfm-gtk.la
+@lib lib/libfm-gtk.so.${LIBfm-gtk_VERSION}
+lib/libfm.a
+lib/libfm.la
+@lib lib/libfm.so.${LIBfm_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/libfm-gtk.pc
+lib/pkgconfig/libfm-gtk3.pc
+lib/pkgconfig/libfm.pc
+@man man/man1/libfm-pref-apps.1
+share/applications/libfm-pref-apps.desktop
+share/examples/libfm/
+share/examples/libfm/xdg/
+@sample ${SYSCONFDIR}/xdg/
+share/examples/libfm/xdg/libfm/
+@sample ${SYSCONFDIR}/xdg/libfm/
+share/examples/libfm/xdg/libfm/libfm.conf
+@sample ${SYSCONFDIR}/xdg/libfm/libfm.conf
+share/examples/libfm/xdg/libfm/pref-apps.conf
+@sample ${SYSCONFDIR}/xdg/libfm/pref-apps.conf
+share/libfm/
+share/libfm/archivers.list
+share/libfm/ui/
+share/libfm/ui/app-chooser.ui
+share/libfm/ui/ask-rename.ui
+share/libfm/ui/exec-file.ui
+share/libfm/ui/file-prop.ui
+share/libfm/ui/filesearch.ui
+share/libfm/ui/preferred-apps.ui
+share/libfm/ui/progress.ui
+share/mime/packages/libfm.xml
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
