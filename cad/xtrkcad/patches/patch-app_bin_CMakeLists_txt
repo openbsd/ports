@@ -1,0 +1,14 @@
+$OpenBSD: patch-app_bin_CMakeLists_txt,v 1.3 2013/07/01 17:00:40 dcoppa Exp $
+--- app/bin/CMakeLists.txt.orig	Fri Sep 16 04:32:31 2011
++++ app/bin/CMakeLists.txt	Sun Jun 30 15:00:57 2013
+@@ -154,6 +154,10 @@ ADD_EXECUTABLE(mkturnout
+ 	ctodesgn.c
+ 	utility.c
+ 	)
++
++# This ensures that messages.h has been generated before we build mkturnout
++ADD_DEPENDENCIES(mkturnout Help)
++
+ SET_TARGET_PROPERTIES(mkturnout PROPERTIES COMPILE_FLAGS -DMKTURNOUT)
+ IF(NOT WIN32)
+ 	TARGET_LINK_LIBRARIES(mkturnout m)

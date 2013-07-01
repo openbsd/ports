@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/06/29 10:37:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2013/07/01 17:00:40 dcoppa Exp $
 
 COMMENT=	CAD program for designing model railroad layouts
 
@@ -10,9 +10,6 @@ CATEGORIES=	cad
 HOMEPAGE=	http://www.xtrkcad.org/
 
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
-
-# intermittent failures
-USE_NINJA=	No
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
