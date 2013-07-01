@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2013/05/31 15:34:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2013/07/01 20:49:59 naddy Exp $
 
 COMMENT=	French and Italian conjugation system
 
-DISTNAME=	verbiste-0.1.37
+DISTNAME=	verbiste-0.1.38
 SHARED_LIBS=	verbiste-0.1	5.0	# .0.0
 CATEGORIES=	education
 HOMEPAGE=	http://sarrazip.com/dev/verbiste.html
-REVISION=	0
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
