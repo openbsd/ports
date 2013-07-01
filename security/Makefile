@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.318 2013/07/01 16:47:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.319 2013/07/01 16:51:02 jasper Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -109,7 +109,6 @@
      SUBDIR += luasec,lua52
      SUBDIR += lxnb
      SUBDIR += mcrypt
-     SUBDIR += metasploit
      SUBDIR += mhash
      SUBDIR += nbaudit
      SUBDIR += nessus

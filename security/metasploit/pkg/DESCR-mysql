@@ -1,8 +1,0 @@
-Metasploit provides useful information and tools for penetration
-testers, security researchers, and IDS signature developers. This
-project was created to provide information on exploit techniques and to
-create a functional knowledgebase for exploit developers and security
-professionals. The tools and information on this site are provided for
-legal security research and testing purposes only.
-
-This sub package provides the database backend for MySQL.
