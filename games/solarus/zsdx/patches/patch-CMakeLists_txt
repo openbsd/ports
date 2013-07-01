@@ -1,0 +1,12 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2013/07/01 04:44:42 bcallah Exp $
+--- CMakeLists.txt.orig	Sun Jun 23 17:46:22 2013
++++ CMakeLists.txt	Sun Jun 23 17:46:38 2013
+@@ -47,7 +47,7 @@ add_custom_target(${quest_name}_data
+ add_custom_command(
+   OUTPUT ${quest_name}
+   COMMAND echo '\#!/bin/sh' > ${quest_name}
+-  COMMAND echo 'solarus ${CMAKE_INSTALL_PREFIX}/share/solarus/${quest_name} $*' >> ${quest_name}
++  COMMAND echo 'solarus ${CMAKE_INSTALL_PREFIX}/share/solarus/${quest_name}' >> ${quest_name}
+ )
+ add_custom_target(${quest_name}_command
+   ALL

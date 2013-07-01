@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/06/17 02:49:38 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2013/07/01 04:44:42 bcallah Exp $
 
 COMMENT =	fan made Zelda game for Solarus engine
-DISTNAME =	zsdx-1.5.3
+DISTNAME =	zsdx-1.6.2
 
 HOMEPAGE =	http://www.solarus-games.org/games/zelda-mystery-of-solarus-dx/
 
@@ -9,19 +9,12 @@ HOMEPAGE =	http://www.solarus-games.org/games/zelda-mystery-of-solarus-dx/
 PERMIT_PACKAGE_CDROM =	contains copyrighted artwork
 PERMIT_PACKAGE_FTP =	Yes
 
-MASTER_SITES =	http://devio.us/~bcallah/source/
+MASTER_SITES =	http://www.zelda-solarus.com/downloads/zsdx/
+
+MODULES =	devel/cmake
+
+BUILD_DEPENDS =	archivers/zip
 
 RUN_DEPENDS =	games/solarus/solarus
-
-NO_BUILD =	Yes
-PKG_ARCH =	*
-
-post-patch:
-	${SUBST_CMD} ${WRKSRC}/zsdx
-
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/zsdx ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/share/solarus/zsdx
-	${INSTALL_DATA} ${WRKSRC}/data.solarus ${PREFIX}/share/solarus/zsdx
 
 .include <bsd.port.mk>
