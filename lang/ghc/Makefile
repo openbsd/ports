@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2013/06/04 22:02:33 kili Exp $
+# $OpenBSD: Makefile,v 1.98 2013/07/01 21:42:51 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -177,7 +177,6 @@ BOOTSTRAP_DATE =	20120917
 # Create a bootstrapper. This compiles a stripped-down version of
 # ghc and creates a `bindist', i.e. a tarball with binaries that
 # can be used for bootstrapping.
-# Note: this needs autoconf-2.61 as an additional dependency.
 bootstrap: patch
 	@if [ ! -x ${LOCALBASE}/bin/autoconf-2.61 ]; then \
 		echo Please install autoconf-2.61.; \
