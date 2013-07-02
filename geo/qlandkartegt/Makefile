@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:07:43 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/07/02 04:30:20 sebastia Exp $
 
 VMEM_WARNING =	yes
 COMMENT =	garmin gps map management tool
 
-DISTNAME =	qlandkartegt-1.5.0
+DISTNAME =	qlandkartegt-1.7.0
 CATEGORIES =	geo x11
 
 HOMEPAGE =	http://www.qlandkarte.org/
@@ -27,8 +27,5 @@ LIB_DEPENDS +=	devel/proj \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		geo/garmindev \
 		geo/gpsbabel
-
-post-extract:
-	rm ${WRKSRC}/src/CMegaMenu.cpp.orig
 
 .include <bsd.port.mk>
