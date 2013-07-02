@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/06/06 08:36:49 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2013/07/02 19:47:21 zhuk Exp $
 
 COMMENT =	KDE PIM runtime support
 DISTNAME =	kdepim-runtime-${MODKDE4_VERSION}
+REVISION =	0
 
 DPB_PROPERTIES =	parallel
 
@@ -21,8 +22,8 @@ WANTLIB += ${KDE4LIB}/akonadi-kde ${KDE4LIB}/akonadi-kmime
 WANTLIB += ${KDE4LIB}/akonadi-notes ${KDE4LIB}/kabc ${KDE4LIB}/kalarmcal
 WANTLIB += ${KDE4LIB}/kcal ${KDE4LIB}/kcalcore ${KDE4LIB}/kcalutils
 WANTLIB += ${KDE4LIB}/kcmutils ${KDE4LIB}/kdewebkit ${KDE4LIB}/kdeui
-WANTLIB += ${KDE4LIB}/kgapi ${KDE4LIB}/kidletime ${KDE4LIB}/kimap
-WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kmbox ${KDE4LIB}/kmime
+WANTLIB += ${KDE4LIB}/kgapi ${KDE4LIB}/kgapi2 ${KDE4LIB}/kidletime
+WANTLIB += ${KDE4LIB}/kimap ${KDE4LIB}/kio ${KDE4LIB}/kmbox ${KDE4LIB}/kmime
 WANTLIB += ${KDE4LIB}/knewstuff3 ${KDE4LIB}/knotifyconfig ${KDE4LIB}/kparts
 WANTLIB += ${KDE4LIB}/kpimidentities ${KDE4LIB}/kpimtextedit
 WANTLIB += ${KDE4LIB}/kpimutils ${KDE4LIB}/kresources ${KDE4LIB}/krosscore
@@ -41,7 +42,7 @@ LIB_DEPENDS =	databases/soprano \
 		databases/strigi \
 		devel/qjson \
 		productivity/akonadi>=${MIN_AKONADI_VERSION} \
-		productivity/libkgapi>=0.4.0 \
+		productivity/libkgapi>=2.0.1 \
 		${MODKDE4_DEP_DIR}/pimlibs>=${MODKDE4_VERSION}
 
 # Long dependency chain, not ported yet.
