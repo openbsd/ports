@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2013/06/24 19:41:05 zhuk Exp $
+# $OpenBSD: Makefile,v 1.18 2013/07/02 17:50:04 zhuk Exp $
 
 COMMENT =	libraries for KDE PIM services
 DISTNAME =	kdepimlibs-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 DPB_PROPERTIES =	parallel
 
@@ -72,5 +72,8 @@ LIB_DEPENDS =	${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION} \
 		security/gpgme>=0.4.5 \
 		sysutils/e2fsprogs>=1.42.7 \
 		textproc/libical
+
+post-extract:
+	cp ${FILESDIR}/*.cmake ${WRKDIST}/cmake/modules
 
 .include <bsd.port.mk>

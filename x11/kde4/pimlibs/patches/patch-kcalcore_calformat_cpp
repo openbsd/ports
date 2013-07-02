@@ -1,0 +1,21 @@
+$OpenBSD: patch-kcalcore_calformat_cpp,v 1.1 2013/07/02 17:50:04 zhuk Exp $
+--- kcalcore/calformat.cpp.orig	Tue Jul  2 19:27:57 2013
++++ kcalcore/calformat.cpp	Tue Jul  2 19:28:11 2013
+@@ -33,7 +33,7 @@
+ #include "calformat.h"
+ #include "exceptions.h"
+ 
+-#if defined(HAVE_UUID_UUID_H)
++#if UUID_FOUND
+ #include <uuid/uuid.h>
+ #else
+ #include <KRandom>
+@@ -120,7 +120,7 @@ void CalFormat::setLoadedProductId( const QString &id 
+ 
+ QString CalFormat::createUniqueId()
+ {
+-#if defined(HAVE_UUID_UUID_H)
++#if UUID_FOUND
+   uuid_t uuid;
+   char suuid[64];
+ 

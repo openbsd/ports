@@ -1,0 +1,57 @@
+$OpenBSD: patch-kcalcore_icaltimezones_cpp,v 1.1 2013/07/02 17:50:04 zhuk Exp $
+--- kcalcore/icaltimezones.cpp.orig	Tue Jul  2 19:27:27 2013
++++ kcalcore/icaltimezones.cpp	Tue Jul  2 19:29:47 2013
+@@ -39,7 +39,7 @@ extern "C" {
+   #include <icaltimezone.h>
+ }
+ 
+-#if defined(HAVE_UUID_UUID_H)
++#if UUID_FOUND
+ #include <uuid/uuid.h>
+ #endif
+ 
+@@ -845,7 +845,7 @@ class ICalTimeZoneSourcePrivate
+                                         int &prevOffset, KTimeZone::Phase & );
+     static QByteArray icalTzidPrefix;
+ 
+-#if defined(HAVE_UUID_UUID_H)
++#if UUID_FOUND
+     static void parseTransitions( const MSSystemTime &date, const KTimeZone::Phase &phase,
+                                   int prevOffset, QList<KTimeZone::Transition> &transitions );
+ #endif
+@@ -1036,7 +1036,7 @@ ICalTimeZone ICalTimeZoneSource::parse( icalcomponent 
+   return ICalTimeZone( this, name, data );
+ }
+ 
+-#if defined(HAVE_UUID_UUID_H)
++#if UUID_FOUND
+ ICalTimeZone ICalTimeZoneSource::parse( MSTimeZone *tz, ICalTimeZones &zones )
+ {
+   const ICalTimeZone zone = parse( tz );
+@@ -1104,7 +1104,7 @@ ICalTimeZone ICalTimeZoneSource::parse( MSTimeZone *tz
+ 
+   return ICalTimeZone( this, name, idata );
+ }
+-#endif // HAVE_UUID_UUID_H
++#endif // UUID_FOUND
+ 
+ ICalTimeZone ICalTimeZoneSource::parse( const QString &name, const QStringList &tzList,
+                                         ICalTimeZones &zones )
+@@ -1167,7 +1167,7 @@ ICalTimeZone ICalTimeZoneSource::parse( const QString 
+   return ICalTimeZone( this, name, idata );
+ }
+ 
+-#if defined(HAVE_UUID_UUID_H)
++#if UUID_FOUND
+ //@cond PRIVATE
+ void ICalTimeZoneSourcePrivate::parseTransitions( const MSSystemTime &date,
+                                                   const KTimeZone::Phase &phase, int prevOffset,
+@@ -1221,7 +1221,7 @@ void ICalTimeZoneSourcePrivate::parseTransitions( cons
+   }
+ }
+ //@endcond
+-#endif // HAVE_UUID_UUID_H
++#endif // UUID_FOUND
+ 
+ ICalTimeZone ICalTimeZoneSource::parse( icaltimezone *tz )
+ {

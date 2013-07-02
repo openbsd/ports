@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/05/14 09:16:29 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/07/02 17:50:04 zhuk Exp $
 @bin bin/akonadi_benchmarker
 @bin bin/akonaditest
 include/kde4/KDE/Akonadi/
@@ -1188,6 +1188,7 @@ share/apps/cmake/modules/FindLdap.cmake
 share/apps/cmake/modules/FindLibical.cmake
 share/apps/cmake/modules/FindQGpgme.cmake
 share/apps/cmake/modules/FindQtOAuth.cmake
+share/apps/cmake/modules/FindUUID.cmake
 share/apps/cmake/modules/KDEPimLibsDependencies.cmake
 share/apps/kabc/
 share/apps/kabc/countrytransl.map
