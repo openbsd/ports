@@ -1,4 +1,4 @@
-$OpenBSD: patch-Rakefile,v 1.1.1.1 2013/06/28 09:13:09 jasper Exp $
+$OpenBSD: patch-Rakefile,v 1.2 2013/07/02 14:43:04 jasper Exp $
 
 - Remove unsupported ln(1) option: -T.
 - Change various configuration variables to what they would be like when
@@ -7,17 +7,21 @@ $OpenBSD: patch-Rakefile,v 1.1.1.1 2013/06/28 09:13:09 jasper Exp $
 - Set OpenBSD's Ruby site dir.
 
 --- Rakefile.orig	Mon Jun  3 19:12:39 2013
-+++ Rakefile	Fri Jun 28 10:26:46 2013
-@@ -10,7 +10,7 @@ RAKE_ROOT = File.dirname(__FILE__)
++++ Rakefile	Tue Jul  2 16:41:54 2013
+@@ -9,8 +9,10 @@ RAKE_ROOT = File.dirname(__FILE__)
+ # Load tasks and variables for packaging automation
  Dir[ File.join(RAKE_ROOT, 'ext', 'packaging', 'tasks', '*.rake') ].sort.each { |t| load t }
  
- def ln_sfT(src, dest)
+-def ln_sfT(src, dest)
 -  sh "ln -sfT #{src} #{dest}"
-+  sh "ln -sf #{src} #{dest}"
++def ln_sf(src, dest)
++  if !File.exist?(dest)
++    sh "ln -sf #{src} #{dest}"
++  end
  end
  
  def cp_pr(src, dest, options={})
-@@ -51,15 +51,15 @@ if @pe
+@@ -51,15 +53,15 @@ if @pe
      @pe_version = ENV['PE_VER'] || '3.0'
      @java_bin = "/opt/puppet/bin/java"
  else
@@ -39,7 +43,7 @@ $OpenBSD: patch-Rakefile,v 1.1.1.1 2013/06/28 09:13:09 jasper Exp $
  end
  
  # We only need the ruby major, minor versions
-@@ -82,6 +82,8 @@ case @osfamily
+@@ -82,6 +84,8 @@ case @osfamily
      @plibdir = @pe ? PE_SITELIBDIR : ( @ruby_version == '1.8' ? '/usr/lib/ruby/site_ruby/1.8' : '/usr/share/ruby/vendor_ruby' )
    when /suse/
      @plibdir = @pe ? PE_SITELIBDIR : nil
