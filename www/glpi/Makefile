@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/07/02 17:09:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2013/07/02 18:13:26 jasper Exp $
 
 COMMENT=		asset management software
 
@@ -24,7 +24,7 @@ PREFIX=			/var/www
 INSTDIR=		${PREFIX}/glpi
 SUBST_VARS=		INSTDIR
 
-WRKSRC=			${WRKDIR}/glpi/
+WRKDIST=		${WRKDIR}/glpi/
 
 do-install:
 	cp -pR ${WRKSRC} ${INSTDIR}
