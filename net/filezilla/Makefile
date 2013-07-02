@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2013/05/31 15:29:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2013/07/02 07:26:56 giovanni Exp $
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 
-V=		3.7.0.2
+V=		3.7.1
 PKGNAME=	filezilla-$V
 DISTNAME=	FileZilla_$V_src
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	0
 
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
@@ -18,7 +17,7 @@ HOMEPAGE=	http://www.filezilla-project.org/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m pthread stdc++ tasn1 z gmp hogweed nettle
+WANTLIB += c m pthread stdc++ tasn1 z hogweed nettle
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
@@ -34,7 +33,7 @@ WANTLIB += usbhid wx_gtk2_html
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	devel/libidn \
-				devel/harfbuzz \
+		devel/harfbuzz \
 		security/gnutls \
 		x11/dbus \
 		x11/wxWidgets>=2.8.6
