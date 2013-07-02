@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/06/14 16:39:39 matthew Exp $
+# $OpenBSD: Makefile,v 1.4 2013/07/02 06:37:24 jasper Exp $
 
 COMMENT =		small build system with a focus on speed
 V =			1.3.4
 DISTNAME =		ninja-${V}
+REVISION =		0
 CATEGORIES =		devel
 HOMEPAGE =		http://martine.github.io/ninja/
 MAINTAINER =		Matthew Dempsky <matthew@dempsky.org>

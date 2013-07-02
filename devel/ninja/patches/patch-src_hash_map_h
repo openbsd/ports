@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_hash_map_h,v 1.1 2013/07/02 06:37:24 jasper Exp $
+
+Work-around unaligned accesses on strict arches such as sparc64/mips64(el).
+
+--- src/hash_map.h.orig	Mon Jul  1 22:42:26 2013
++++ src/hash_map.h	Mon Jul  1 22:42:54 2013
+@@ -26,7 +26,8 @@ unsigned int MurmurHash2(const void* key, size_t len) 
+   unsigned int h = seed ^ len;
+   const unsigned char * data = (const unsigned char *)key;
+   while (len >= 4) {
+-    unsigned int k = *(unsigned int *)data;
++    unsigned int k;
++    memcpy(&k, data, sizeof k);
+     k *= m;
+     k ^= k >> r;
+     k *= m;
