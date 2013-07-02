@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/14 12:04:55 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/07/02 19:41:47 zhuk Exp $
 
 CATEGORIES =	productivity
 COMMENT =	link Akonadi to Google services
-V =		0.4.0
+V =		2.0.1
 DISTNAME =	libkgapi-$V
-REVISION =	0
 
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/libkgapi/$V/src/}
 
-SHARED_LIBS =   kgapi                     0.0 # 0.4
+SHARED_LIBS =   kgapi			1.0
+SHARED_LIBS +=	kgapi2			0.0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB =  c m pthread stdc++
+WANTLIB =  m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtWebKit lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kabc ${KDE4LIB}/kcalcore ${KDE4LIB}/kdeui
