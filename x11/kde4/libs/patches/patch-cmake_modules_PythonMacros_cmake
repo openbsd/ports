@@ -1,0 +1,37 @@
+$OpenBSD: patch-cmake_modules_PythonMacros_cmake,v 1.1 2013/07/02 19:00:32 zhuk Exp $
+Unbreak build of PyKDE and its dependencies with Ninja.
+KDE review: https://git.reviewboard.kde.org/r/111371/
+--- cmake/modules/PythonMacros.cmake.orig	Tue May 28 22:33:13 2013
++++ cmake/modules/PythonMacros.cmake	Tue Jul  2 22:45:21 2013
+@@ -20,8 +20,6 @@ macro(PYTHON_INSTALL SOURCE_FILE DESTINATION_DIR)
+ 
+   find_file(_python_compile_py PythonCompile.py PATHS ${CMAKE_MODULE_PATH})
+ 
+-  add_custom_target(compile_python_files ALL)
+-
+   # Install the source file.
+   install(FILES ${SOURCE_FILE} DESTINATION ${DESTINATION_DIR})
+ 
+@@ -54,17 +52,20 @@ macro(PYTHON_INSTALL SOURCE_FILE DESTINATION_DIR)
+     # Setting because it will be displayed later, in compile_python_files
+     set(_message "Byte-compiling ${_bin_py} to ${_bin_pyc}")
+ 
++    string(REPLACE "/" "_" _rule_name "${_basepath}/${_bin_pyc}")
++    add_custom_target("${_rule_name}" ALL)
++
+     get_filename_component(_abs_bin_py ${_bin_py} ABSOLUTE)
+     if(_abs_bin_py STREQUAL _absfilename)    # Don't copy the file onto itself.
+       add_custom_command(
+-        TARGET compile_python_files
++        TARGET "${_rule_name}"
+         COMMAND "${CMAKE_COMMAND}" -E echo "${_message}"
+         COMMAND "${PYTHON_EXECUTABLE}" "${_python_compile_py}" "${_bin_py}"
+         DEPENDS "${_absfilename}"
+       )
+     else()
+       add_custom_command(
+-        TARGET compile_python_files
++        TARGET "${_rule_name}"
+         COMMAND "${CMAKE_COMMAND}" -E echo "${_message}"
+         COMMAND "${CMAKE_COMMAND}" -E copy "${_absfilename}" "${_bin_py}"
+         COMMAND "${PYTHON_EXECUTABLE}" "${_python_compile_py}" "${_bin_py}"
