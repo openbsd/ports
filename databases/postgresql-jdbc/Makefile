@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 02:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/07/02 10:36:35 espie Exp $
 
 COMMENT-main=		JDBC Driver for PostgreSQL
 COMMENT-docs=		API docs for PostgreSQL JDBC Driver
@@ -27,7 +27,7 @@ MODULES=		java
 MODJAVA_VER?=		1.6+
 MODJAVA_JRERUN=		yes
 MODJAVA_BUILD=		ant
-MODJAVA_BUILD_TARGET=	all publicapi
+MODJAVA_BUILD_TARGET_NAME =	all publicapi
 
 TEST_DEPENDS=	databases/postgresql \
 			java/junit

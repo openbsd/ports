@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/17 19:35:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2013/07/02 10:36:35 espie Exp $
 
 COMMENT =		Lisp-1 dialect for the Java Virtual Machine
 
@@ -21,7 +21,7 @@ MASTER_SITES =		http://repo1.maven.org/maven2/org/clojure/clojure/$V/
 MODULES =		java
 MODJAVA_VER =		1.6+
 MODJAVA_BUILD = 	ant
-MODJAVA_BUILD_TARGET =	jar
+MODJAVA_BUILD_TARGET_NAME =	jar
 MODJAVA_JRERUN = 	Yes
 
 RUN_DEPENDS =		java/javaPathHelper \

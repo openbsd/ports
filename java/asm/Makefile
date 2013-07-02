@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:12:34 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/07/02 10:36:35 espie Exp $
 
 COMMENT=	Java bytecode manipulation framework
 
@@ -16,7 +16,7 @@ MASTER_SITES=	http://download.forge.objectweb.org/asm/
 MODULES=	java
 MODJAVA_VER=	1.6+
 MODJAVA_BUILD=	ant
-MODJAVA_BUILD_TARGET=dist
+MODJAVA_BUILD_TARGET_NAME = dist
 
 JARS=		asm asm-analysis asm-commons asm-tree asm-util asm-xml
 

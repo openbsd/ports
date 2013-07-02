@@ -1,4 +1,4 @@
-# $OpenBSD: java.port.mk,v 1.31 2013/02/03 15:03:03 jasper Exp $
+# $OpenBSD: java.port.mk,v 1.32 2013/07/02 10:36:35 espie Exp $
 
 # Set MODJAVA_VER to x.y or x.y+ based on the version
 # of the jdk needed for the port. x.y  means any x.y jdk.
@@ -89,21 +89,24 @@ CATEGORIES+=	java
 
 # Allow ports to that use devel/apache-ant to set MODJAVA_BUILD=ant
 # In case a non-standard build target, build file or build directory are
-# needed, set MODJAVA_BUILD_TARGET, MODJAVA_BUILD_FILE or MODJAVA_BUILD_DIR
+# needed, set MODJAVA_BUILD_TARGET_NAME, MODJAVA_BUILD_FILE or MODJAVA_BUILD_DIR
 # respectively.
 .if defined(MODJAVA_BUILD) && ${MODJAVA_BUILD:L} == "ant"
     BUILD_DEPENDS += devel/apache-ant
     MAKE_ENV += JAVA_HOME=${JAVA_HOME}
-    MODJAVA_BUILD_TARGET ?=
+    MODJAVA_BUILD_TARGET_NAME ?=
     MODJAVA_BUILD_FILE ?= build.xml
     MODJAVA_BUILD_DIR ?= ${WRKSRC}
     MODJAVA_BUILD_ARGS ?=
-.   if !target(do-build)
-do-build:
+
+MODJAVA_BUILD_TARGET = \
 	cd ${MODJAVA_BUILD_DIR} && \
 		${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ant \
-		-buildfile ${MODJAVA_BUILD_FILE} ${MODJAVA_BUILD_TARGET} \
+		-buildfile ${MODJAVA_BUILD_FILE} ${MODJAVA_BUILD_TARGET_NAME} \
 		${MODJAVA_BUILD_ARGS}
+.   if !target(do-build)
+do-build:
+	${MODJAVA_BUILD_TARGET}
 .   endif
 .endif
 

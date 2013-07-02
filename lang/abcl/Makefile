@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/05/13 09:25:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/07/02 10:36:35 espie Exp $
 
 COMMENT =		Common Lisp dialect for the Java Virtual Machine
 
@@ -19,7 +19,7 @@ MASTER_SITES =		${HOMEPAGE}/releases/$V/
 MODULES =		java
 MODJAVA_VER =		1.6+
 MODJAVA_BUILD = 	ant
-MODJAVA_BUILD_TARGET =	abcl.jar
+MODJAVA_BUILD_TARGET_NAME =	abcl.jar
 MODJAVA_JRERUN = 	Yes
 
 RUN_DEPENDS =		java/javaPathHelper \
