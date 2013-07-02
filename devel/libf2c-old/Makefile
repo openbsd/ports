@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 10:50:09 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/07/02 08:21:43 espie Exp $
 
 V =		2.95.3
 CONFIG = 	${MACHINE_ARCH}-unknown-openbsd${OSREV}
 SUBST_VARS += 	CONFIG V
 PKGNAME =	libf2c-$V
-REVISION =	7
+REVISION =	8
 DISTFILES = 	libf2c-openbsd-$V.tgz
 MASTER_SITES =	http://spacehopper.org/mirrors/
 
@@ -51,7 +51,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/gcc-lib/${CONFIG}/$V
 .for i in libfrtbegin.a libfrtbegin_pic.a libfrtbegin_p.a libg2c.a \
 	libg2c_p.a libg2c_pic.a libg2c.so.*
-	if test -e ${TRUEPREFIX}/lib/$i; then \
+	if test -e ${DESTDIR}${TRUEPREFIX}/lib/$i; then \
 	  ln -sf ${TRUEPREFIX}/lib/$i ${PREFIX}/lib/gcc-lib/${CONFIG}/$V; \
 	fi
 .endfor
