@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2013/07/02 08:09:43 espie Exp $
+# $OpenBSD: Makefile,v 1.88 2013/07/02 16:20:25 espie Exp $
 
 COMMENT=	GNU privacy guard - a free PGP replacement
 
@@ -26,7 +26,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 WANTLIB=	c z readline termcap ssl crypto idn bz2>=10 curl>=3
 
 # XXX give it a chance on vax
-LIB_DEPENDS += devel/idn
+LIB_DEPENDS += devel/libidn
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
