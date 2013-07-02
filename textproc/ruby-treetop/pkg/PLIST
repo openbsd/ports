@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/12/08 22:53:01 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/07/02 20:42:03 jasper Exp $
 ${GEM_BIN}/tt${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -90,7 +90,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/treetop/runtime/interval_skip_list/interval_skip
 ${GEM_LIB}/gems/${DISTNAME}/lib/treetop/runtime/interval_skip_list/node.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/treetop/runtime/syntax_node.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/treetop/runtime/terminal_parse_failure.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/treetop/runtime/terminal_parse_failure_debug.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/treetop/runtime/terminal_syntax_node.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/treetop/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/
@@ -104,6 +103,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/compiler/failure_propagation_functional_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/compiler/grammar_compiler_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/compiler/grammar_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/compiler/multibyte_chars_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/compiler/namespace_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/compiler/nonterminal_symbol_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/compiler/not_predicate_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/compiler/occurrence_range_spec.rb
@@ -137,7 +137,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/runtime/compiled_parser_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/runtime/interval_skip_list/
 ${GEM_LIB}/gems/${DISTNAME}/spec/runtime/interval_skip_list/delete_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/runtime/interval_skip_list/expire_range_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/runtime/interval_skip_list/insert_and_delete_node.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/runtime/interval_skip_list/insert_and_delete_node_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/runtime/interval_skip_list/insert_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/runtime/interval_skip_list/interval_skip_list_spec.graffle
 ${GEM_LIB}/gems/${DISTNAME}/spec/runtime/interval_skip_list/interval_skip_list_spec.rb
