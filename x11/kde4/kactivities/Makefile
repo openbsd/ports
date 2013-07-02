@@ -1,14 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2013/06/06 08:36:47 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2013/07/02 20:07:49 zhuk Exp $
 
 COMMENT =	KDE Activity rooms management
 DISTNAME =	kactivities-${MODKDE4_VERSION}
 
 SHARED_LIBS =	kactivities		50.0 # 6.0
 SHARED_LIBS +=	kactivities-models	50.0
-
-Extra:  ICE.9 QtOpenGL.7 QtScript.2 QtSql.8 SM.8 X11.15 Xext.12
-Extra:  c.68 kcmutils.50 kdeclarative.50 plasma.50
-
 
 WANTLIB =  m pthread
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui lib/qt4/QtNetwork
