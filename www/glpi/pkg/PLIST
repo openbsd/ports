@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/12/12 09:56:35 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/07/02 17:09:29 jasper Exp $
 glpi/
 glpi/.htaccess
 glpi/CHANGELOG.txt
@@ -334,6 +334,7 @@ glpi/front/printertype.php
 glpi/front/problem.form.php
 glpi/front/problem.php
 glpi/front/problem_ticket.form.php
+glpi/front/problem_user.form.php
 glpi/front/problemtask.form.php
 glpi/front/profile.form.php
 glpi/front/profile.php
