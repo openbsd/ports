@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:29 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/07/02 19:02:39 zhuk Exp $
 
 COMMENT =	KDE 4 bindings for Python
 DISTNAME =	pykde4-${MODKDE4_VERSION}
 PKGNAME =	py-kde-${MODKDE4_VERSION}
+REVISION =	0
 
 MODULES =	lang/python
 
@@ -38,7 +39,8 @@ RUN_DEPENDS =	${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION} \
 		misc/shared-desktop-ontologies \
 		x11/py-qt4>=4.9.5
 
-LIB_DEPENDS = 	databases/soprano>=${MIN_SOPRANO_VERSION}
+LIB_DEPENDS = 	${MODKDE4_DEP_DIR}/libs>=4.10.4p2 \
+		databases/soprano>=${MIN_SOPRANO_VERSION}
 
 # One who said that Polkit-Qt-1 is a drop-in replacement
 # for Polkit-Qt, is probably the one who said that
