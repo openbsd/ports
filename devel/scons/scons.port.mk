@@ -1,4 +1,4 @@
-# $OpenBSD: scons.port.mk,v 1.5 2011/07/05 15:17:26 sthen Exp $
+# $OpenBSD: scons.port.mk,v 1.6 2013/07/02 08:36:16 espie Exp $
 
 BUILD_DEPENDS+=	devel/scons
 
@@ -18,15 +18,21 @@ MODSCONS_FLAGS?=
 ALL_TARGET?=
 NO_CCACHE?=Yes
 
+MODSCONS_BUILD_TARGET = \
+	${SETENV} ${MAKE_ENV} ${MODSCONS_BIN} -C ${WRKSRC} \
+		${MODSCONS_ENV} ${MODSCONS_FLAGS} ${ALL_TARGET}
+
+MODSCONS_INSTALL_TARGET = \
+	${SETENV} ${MAKE_ENV} ${MODSCONS_BIN} -C ${WRKSRC} \
+		${MODSCONS_ENV} ${MODSCONS_FLAGS} ${INSTALL_TARGET} \
+		DESTDIR=${WRKINST}
+
 .if !target(do-build)
 do-build:
-	@${SETENV} ${MAKE_ENV} ${MODSCONS_BIN} -C ${WRKSRC} \
-		${MODSCONS_ENV} ${MODSCONS_FLAGS} ${ALL_TARGET}
+	@${MODSCONS_BUILD_TARGET}
 .endif
 
 .if !target(do-install)
 do-install:
-	@${SETENV} ${MAKE_ENV} ${MODSCONS_BIN} -C ${WRKSRC} \
-		${MODSCONS_ENV} ${MODSCONS_FLAGS} ${INSTALL_TARGET} \
-		DESTDIR=${WRKINST}
+	@${MODSCONS_INSTALL_TARGET}
 .endif

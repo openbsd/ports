@@ -1,4 +1,4 @@
-# $OpenBSD: ghc.port.mk,v 1.28 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: ghc.port.mk,v 1.29 2013/07/02 08:36:16 espie Exp $
 # Module for Glasgow Haskell Compiler
 
 # Not yet ported to other architectures
@@ -83,37 +83,49 @@ MODCABAL_configure = \
 
 CONFIGURE_STYLE +=		CABAL
 
+MODGHC_BUILD_TARGET = \
+	cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} \
+		${MODGHC_SETUP_PROG} build -v
+.  if ${MODGHC_BUILD:L:Mhaddock}
+MODGHC_BUILD_TARGET += \
+	;cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} \
+		${MODGHC_SETUP_PROG} haddock
+.  endif
+.  if ${MODGHC_BUILD:L:Mregister}
+MODGHC_BUILD_TARGET += \
+	;cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} \
+		${MODGHC_SETUP_PROG} register --gen-script \
+			--pkgpath="${PKGPATH}"; \
+	cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} \
+		${MODGHC_SETUP_PROG} unregister --gen-script
+.  endif
+
+MODGHC_INSTALL_TARGET = \
+	cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} \
+		${MODGHC_SETUP_PROG} copy --destdir=${DESTDIR}
+.  if ${MODGHC_BUILD:L:Mregister}
+MODGHC_INSTALL_TARGET += \
+	;${INSTALL_SCRIPT} ${WRKBUILD}/register.sh ${PREFIX}/lib/ghc/${DISTNAME} \
+	;${INSTALL_SCRIPT} ${WRKBUILD}/unregister.sh ${PREFIX}/lib/ghc/${DISTNAME}
+.  endif
+
+MODGHC_TEST_TARGET = \
+	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
+		${MODGHC_SETUP_PROG} test
+
 .  if !target(do-build)
 do-build:
-	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		${MODGHC_SETUP_PROG} build -v
-.   if ${MODGHC_BUILD:L:Mhaddock}
-	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		${MODGHC_SETUP_PROG} haddock
-.   endif
-.   if ${MODGHC_BUILD:L:Mregister}
-	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		${MODGHC_SETUP_PROG} register --gen-script \
-			--pkgpath="${PKGPATH}"
-	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		${MODGHC_SETUP_PROG} unregister --gen-script
-.   endif
+	@${MODGHC_BUILD_TARGET}
 .  endif
 
 .  if !target(do-install)
 do-install:
-	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		${MODGHC_SETUP_PROG} copy --destdir=${DESTDIR}
-.   if ${MODGHC_BUILD:L:Mregister}
-	@${INSTALL_SCRIPT} ${WRKBUILD}/register.sh ${PREFIX}/lib/ghc/${DISTNAME}
-	@${INSTALL_SCRIPT} ${WRKBUILD}/unregister.sh ${PREFIX}/lib/ghc/${DISTNAME}
-.   endif
+	@${MODGHC_INSTALL_TARGET}
 .  endif
 
 .  if !target(do-test)
 do-test:
-	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		${MODGHC_SETUP_PROG} test
+	@${MODGHC_TEST_TARGET}
 .  endif
 . endif
 .endif

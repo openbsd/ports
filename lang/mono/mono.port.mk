@@ -1,4 +1,4 @@
-# $OpenBSD: mono.port.mk,v 1.21 2012/03/09 10:59:11 espie Exp $
+# $OpenBSD: mono.port.mk,v 1.22 2013/07/02 08:36:16 espie Exp $
 
 # XXX list in infrastructure/mk/arch-defines.mk
 # XXX arm powerpc (no support for sigcontext)
@@ -29,18 +29,18 @@ NANT_FLAGS?=
 
 BUILD_DEPENDS+= devel/nant
 
-MODMONO_BUILD_TARGET=	@cd ${WRKSRC} && ${MAKE_FLAGS} ${NANT} ${NANT_FLAGS}
-MODMONO_INSTALL_TARGET=	@cd ${WRKSRC} && ${MAKE_FLAGS} ${NANT} ${NANT_FLAGS} \
+MODMONO_BUILD_TARGET=	cd ${WRKSRC} && ${MAKE_FLAGS} ${NANT} ${NANT_FLAGS}
+MODMONO_INSTALL_TARGET=	cd ${WRKSRC} && ${MAKE_FLAGS} ${NANT} ${NANT_FLAGS} \
 	-D:prefix="${PREFIX}" install
 
 .  if !target(do-build)
 do-build:
-	${MODMONO_BUILD_TARGET}
+	@${MODMONO_BUILD_TARGET}
 .  endif
 
 .  if !target(do-install)
 do-install:
-	${MODMONO_INSTALL_TARGET}
+	@${MODMONO_INSTALL_TARGET}
 .  endif
 
 .endif
