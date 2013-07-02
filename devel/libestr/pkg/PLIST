@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/01/16 15:17:58 dhill Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2013/07/02 06:27:40 benoit Exp $
 include/libestr.h
 lib/libestr.a
 lib/libestr.la
+@lib lib/libestr.so.${LIBestr_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/libestr.pc

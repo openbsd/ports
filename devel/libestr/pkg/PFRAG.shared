@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/01/16 15:17:58 dhill Exp $
-@lib lib/libestr.so.${LIBestr_VERSION}
