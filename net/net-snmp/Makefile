@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2013/06/28 22:33:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.74 2013/07/03 04:15:42 espie Exp $
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-perl=	SNMP modules for Perl
@@ -13,6 +13,8 @@ MULTI_PACKAGES=	-main -perl -tkmib
 PKGNAME-main=	net-snmp-$V
 PKGNAME-perl=	p5-SNMP-$V
 PKGNAME-tkmib=	net-snmp-tkmib-$V
+NOT_FOR_ARCHS-perl = ${NO_SHARED_ARCHS}
+NOT_FOR_ARCHS-tkmib = ${NO_SHARED_ARCHS}
 
 LIBV=		13.0
 .for i in netsnmp netsnmpagent netsnmphelpers netsnmpmibs netsnmptrapd
