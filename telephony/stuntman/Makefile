@@ -1,6 +1,7 @@
 # $OpenBSD:
 
 COMMENT =	STUN server implementing RFCs 5389, 5769, and 5780
+NOT_FOR_ARCHS = hppa sparc64 # atomic ops
 
 VERSION =	1.2.3
 DISTNAME =	stunserver-${VERSION}
