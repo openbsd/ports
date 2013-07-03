@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/06/20 15:23:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2013/07/03 19:52:00 ajacoutot Exp $
 
 COMMENT=		bad elements for GStreamer
 
@@ -82,6 +82,9 @@ CONFIGURE_ARGS=		--disable-cdaudio \
 # sndio(7) support has been patched into plugins-base:
 # we do not want to depends on plugins-bad for audio
 CONFIGURE_ARGS +=	--disable-sndio
+
+# this add some build dependencies (e.g. gtk+2, gtk+3) for no real use
+CONFIGURE_ARGS +=	--disable-examples
 
 pre-configure:
 	perl -pi -e 's,/dev/dvd,/dev/rcd0c,g' \
