@@ -1,0 +1,14 @@
+$OpenBSD: patch-Rakefile,v 1.1 2013/07/03 09:42:52 jasper Exp $
+
+Don't use isolate when testing.
+
+--- Rakefile.orig	Wed Jul  3 11:38:31 2013
++++ Rakefile	Wed Jul  3 11:38:49 2013
+@@ -9,7 +9,6 @@ Hoe.add_include_dirs("lib",
+                      "../../sexp_processor/dev/lib")
+ 
+ Hoe.plugin :seattlerb
+-Hoe.plugin :isolate
+ 
+ Hoe.spec 'ruby2ruby' do
+   developer 'Ryan Davis', 'ryand-ruby@zenspider.com'
