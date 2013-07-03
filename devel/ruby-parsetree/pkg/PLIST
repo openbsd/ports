@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/11/09 00:17:38 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/07/03 06:54:27 jasper Exp $
 ${GEM_BIN}/parse_tree_abc${GEM_BIN_SUFFIX}
 ${GEM_BIN}/parse_tree_audit${GEM_BIN_SUFFIX}
 ${GEM_BIN}/parse_tree_deps${GEM_BIN_SUFFIX}
@@ -6,6 +6,7 @@ ${GEM_BIN}/parse_tree_show${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.autotest
+${GEM_LIB}/gems/${DISTNAME}/.gemtest
 ${GEM_LIB}/gems/${DISTNAME}/History.txt
 ${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.txt
@@ -23,7 +24,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/parse_tree.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/parse_tree_extensions.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/unified_ruby.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/
-${GEM_LIB}/gems/${DISTNAME}/test/pt_testcase.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/something.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_parse_tree.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_parse_tree_extensions.rb
