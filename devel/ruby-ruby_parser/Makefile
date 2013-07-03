@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 10:50:30 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/07/03 06:55:08 jasper Exp $
 
 COMMENT =	Ruby parser written in pure Ruby
 
-DISTNAME =	ruby_parser-2.0.4
-REVISION =	5
+DISTNAME =	ruby_parser-2.3.1
 CATEGORIES =	devel
 
 # MIT
@@ -14,10 +13,10 @@ MODULES =	lang/ruby
 CONFIGURE_STYLE = ruby gem
 
 BUILD_DEPENDS = ${RUN_DEPENDS}
-RUN_DEPENDS =	devel/ruby-sexp_processor,${MODRUBY_FLAVOR}>=3.0.1
+RUN_DEPENDS =	devel/ruby-sexp_processor,${MODRUBY_FLAVOR}>=3.0,<4.0
 
 TEST_DEPENDS = devel/ruby-hoe,${MODRUBY_FLAVOR} \
-		  devel/ruby-minitest,${MODRUBY_FLAVOR}
+		devel/ruby-minitest,${MODRUBY_FLAVOR}
 
 MODRUBY_TEST = rake
 
