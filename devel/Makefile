@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1144 2013/07/01 06:49:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.1145 2013/07/03 06:52:50 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1287,6 +1287,7 @@
      SUBDIR += ruby-ref
      SUBDIR += ruby-rgen
      SUBDIR += ruby-rgen,ruby18
+     SUBDIR += ruby-rr
      SUBDIR += ruby-rspec
      SUBDIR += ruby-ruby2ruby
      SUBDIR += ruby-ruby_parser
