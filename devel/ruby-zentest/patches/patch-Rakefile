@@ -1,0 +1,16 @@
+$OpenBSD: patch-Rakefile,v 1.1 2013/07/03 06:56:01 jasper Exp $
+
+Revert https://github.com/seattlerb/zentest/commit/99c4a39041c3431eae3ad838b7e663933b2d0c2e
+which throws: Illformed requirement ["< 2.1, >= 1.8"]
+
+--- Rakefile.orig	Sun Jun 30 20:15:59 2013
++++ Rakefile	Sun Jun 30 20:16:21 2013
+@@ -13,7 +13,7 @@ Hoe.spec "ZenTest" do
+   developer 'Ryan Davis', 'ryand-ruby@zenspider.com'
+   developer 'Eric Hodel', 'drbrain@segment7.net'
+ 
+-  require_rubygems_version [">= 1.8", "< 2.1"]
++  require_rubygems_version "~> 1.8"
+ end
+ 
+ desc "run autotest on itself"

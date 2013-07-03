@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 10:50:30 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/07/03 06:56:01 jasper Exp $
 
 COMMENT =	ensures test coverage and accelerates TDD
 
-DISTNAME =	ZenTest-4.1.4
+DISTNAME =	ZenTest-4.9.2
 PKGNAME =	${DISTNAME:L}
-REVISION =	7
 CATEGORIES =	devel
 
 # MIT

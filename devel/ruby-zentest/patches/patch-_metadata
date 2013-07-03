@@ -1,0 +1,21 @@
+$OpenBSD: patch-_metadata,v 1.1 2013/07/03 06:56:01 jasper Exp $
+
+Revert https://github.com/seattlerb/zentest/commit/99c4a39041c3431eae3ad838b7e663933b2d0c2e
+which throws: Illformed requirement ["< 2.1, >= 1.8"]
+
+--- .metadata.orig	Sun Jun 30 20:18:26 2013
++++ .metadata	Sun Jun 30 20:19:33 2013
+@@ -192,13 +192,6 @@ required_rubygems_version: !ruby/object:Gem::Requireme
+       - 1
+       - 8
+       version: "1.8"
+-  - - <
+-    - !ruby/object:Gem::Version 
+-      hash: 1
+-      segments: 
+-      - 2
+-      - 1
+-      version: "2.1"
+ requirements: []
+ 
+ rubyforge_project: zentest
