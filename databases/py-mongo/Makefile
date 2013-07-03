@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/05/06 16:18:33 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2013/07/03 20:07:26 landry Exp $
 
 COMMENT =	Python driver for mongodb
 
 MODPY_EGG_VERSION = 2.5
 DISTNAME =	pymongo-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/py//}
+REVISION =	0
 
 CATEGORIES =	databases devel
 
@@ -36,5 +37,13 @@ post-install:
 	cd ${WRKSRC}/doc/_build/${MODPY_EGG_VERSION} && \
 	    pax -rw * ${PREFIX}/share/doc/${MODPY_PY_PREFIX}mongo
 	rm -rf ${PREFIX}/share/doc/${MODPY_PY_PREFIX}mongo/_sources
+
+.include <bsd.port.arch.mk>
+
+.if ${PROPERTIES:Mle}
+PKG_ARGS +=	-Dno_be=1
+.else
+PKG_ARGS +=	-Dno_be=0
+.endif
 
 .include <bsd.port.mk>
