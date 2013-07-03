@@ -27,7 +27,7 @@ find_path(UUID_INCLUDE_DIR uuid/uuid.h)
 find_library(UUID_LIBRARY NAMES uuid)
 
 if (UUID_INCLUDE_DIR AND UUID_LIBRARY)
-  # First, check if we already have backtrace(), e.g., in libc
+  # Make sure we found the right library
   check_library_exists(${UUID_LIBRARY} uuid_generate_random "" UUID_CORRECT_ONE)
 endif (UUID_INCLUDE_DIR AND UUID_LIBRARY)
 
