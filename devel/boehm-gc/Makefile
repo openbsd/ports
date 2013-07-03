@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2013/06/01 21:05:28 kurt Exp $
+# $OpenBSD: Makefile,v 1.51 2013/07/03 19:51:38 kurt Exp $
 
 COMMENT-main=	garbage collection and memory leak detection for C and C++
 COMMENT-atomic=	access to hardware provided atomic memory operations
@@ -38,6 +38,7 @@ AUTOCONF_VERSION= 2.68
 CONFIGURE_STYLE= autoconf no-autoheader
 
 CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
+		--with-libatomic-ops=no \
 		--enable-cplusplus \
 		--enable-threads=pthreads
 
