@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2013/05/17 20:11:43 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2013/07/03 20:09:54 landry Exp $
 
 BROKEN-sparc64	=	segfaults during build
+BROKEN-hppa =		miniruby abort trap when generating rdoc
 
 COMMENT-main =		object oriented script language with threads
 COMMENT-gdbm =		gdbm interface for ruby
