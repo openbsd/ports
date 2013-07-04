@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_lib_server_CClientProxy1_4_cpp,v 1.1 2013/05/12 16:09:04 bcallah Exp $
+$OpenBSD: patch-src_lib_server_CClientProxy1_4_cpp,v 1.2 2013/07/04 14:49:27 landry Exp $
 
-On loongson/sparc64:
+On loongson/sparc64/hppa:
 Same issue as CIpcServerProxy.cpp
 
 --- src/lib/server/CClientProxy1_4.cpp.orig	Sat May 11 12:46:51 2013
@@ -9,7 +9,7 @@ Same issue as CIpcServerProxy.cpp
  	CString data(reinterpret_cast<const char*>(iv), CRYPTO_IV_SIZE);
  
  	LOG((CLOG_DEBUG2 "send crypto iv change to \"%s\"", getName().c_str()));
-+#if defined(__mips64__) || defined(__sparc64__)
++#if defined(__mips64__) || defined(__sparc64__) || defined(__hppa__)
 +	CProtocolUtil::writef(static_cast<void*>(getStream()), static_cast<const char*>(kMsgDCryptoIv), &data);
 +#else
  	CProtocolUtil::writef(getStream(), kMsgDCryptoIv, &data);
