@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.107 2013/07/01 12:35:35 espie Exp $
+# $OpenBSD: Port.pm,v 1.108 2013/07/04 17:45:34 jasper Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -408,6 +408,9 @@ sub run
 	if ($job->{builder}{forceupdate}) {
 		push(@cmd,  "-Dinstalled");
 	}
+	if ($job->{builder}{state}{localbase} ne '/usr/local') {
+		push(@cmd, "-L", $job->{builder}{state}{localbase});
+	}
 	print join(' ', @cmd, (sort keys %$dep)), "\n";
 	my $path = $job->{builder}{fullrepo}.'/';
 	$core->shell->env(PKG_PATH => $path)
@@ -595,6 +598,9 @@ sub run
 	}
 	if ($job->{builder}->{forceupdate}) {
 		push(@cmd,  "-Dinstalled");
+	}
+	if ($job->{builder}{state}{localbase} ne '/usr/local') {
+		push(@cmd, "-L", $job->{builder}{state}{localbase});
 	}
 	print join(' ', @cmd, $v->fullpkgname, "\n");
 	my $path = $job->{builder}->{fullrepo}.'/';
