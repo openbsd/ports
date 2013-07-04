@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.32 2013/06/03 22:36:00 brad Exp $
+@comment $OpenBSD: PLIST-main,v 1.33 2013/07/04 08:11:09 zhuk Exp $
 @pkgpath x11/vlc
 %%amd64%%
 %%i386%%
@@ -426,14 +426,12 @@ share/icons/hicolor/32x32/apps/vlc.png
 share/icons/hicolor/32x32/apps/vlc.xpm
 share/icons/hicolor/48x48/apps/vlc-xmas.png
 share/icons/hicolor/48x48/apps/vlc.png
-share/kde4/
-share/kde4/apps/
-share/kde4/apps/solid/
-share/kde4/apps/solid/actions/
-share/kde4/apps/solid/actions/vlc-openbd.desktop
-share/kde4/apps/solid/actions/vlc-opencda.desktop
-share/kde4/apps/solid/actions/vlc-opendvd.desktop
-share/kde4/apps/solid/actions/vlc-openvcd.desktop
+share/apps/solid/
+share/apps/solid/actions/
+share/apps/solid/actions/vlc-openbd.desktop
+share/apps/solid/actions/vlc-opencda.desktop
+share/apps/solid/actions/vlc-opendvd.desktop
+share/apps/solid/actions/vlc-openvcd.desktop
 share/locale/ach/
 share/locale/ach/LC_MESSAGES/
 share/locale/ach/LC_MESSAGES/vlc.mo

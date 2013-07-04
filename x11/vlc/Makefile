@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.173 2013/06/04 18:42:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.174 2013/07/04 08:11:08 zhuk Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,6 +12,8 @@ PKGNAME-jack=	vlc-jack-${V}
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
+
+REVISION-main=	0
 
 SHARED_LIBS=	vlc	2.0 \
 		vlccore	2.0
@@ -142,7 +144,8 @@ CONFIGURE_ARGS+=--disable-a52 \
 		--enable-real \
 		--enable-realrtsp \
 		--without-contrib \
-		--without-tuning
+		--without-tuning \
+		--with-kde-solid=${LOCALBASE}/share/apps/solid/actions
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -L${LOCALBASE}/live/liveMedia \
 		    -L${LOCALBASE}/live/groupsock -L${LOCALBASE}/live/BasicUsageEnvironment \
