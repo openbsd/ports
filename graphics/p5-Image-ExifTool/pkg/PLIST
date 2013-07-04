@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2012/10/24 13:49:55 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.20 2013/07/04 10:34:17 sthen Exp $
 bin/exiftool
 ${P5SITE}/File/
 ${P5SITE}/File/RandomAccess.pm
@@ -58,10 +58,12 @@ ${P5SITE}/Image/ExifTool/Charset/Vietnam.pm
 ${P5SITE}/Image/ExifTool/DICOM.pm
 ${P5SITE}/Image/ExifTool/DNG.pm
 ${P5SITE}/Image/ExifTool/DV.pm
+${P5SITE}/Image/ExifTool/DarwinCore.pm
 ${P5SITE}/Image/ExifTool/DjVu.pm
 ${P5SITE}/Image/ExifTool/EXE.pm
 ${P5SITE}/Image/ExifTool/Exif.pm
 ${P5SITE}/Image/ExifTool/FLAC.pm
+${P5SITE}/Image/ExifTool/FLIR.pm
 ${P5SITE}/Image/ExifTool/Fixup.pm
 ${P5SITE}/Image/ExifTool/Flash.pm
 ${P5SITE}/Image/ExifTool/FlashPix.pm
@@ -135,12 +137,14 @@ ${P5SITE}/Image/ExifTool/OpenEXR.pm
 ${P5SITE}/Image/ExifTool/PDF.pm
 ${P5SITE}/Image/ExifTool/PGF.pm
 ${P5SITE}/Image/ExifTool/PICT.pm
+${P5SITE}/Image/ExifTool/PLIST.pm
 ${P5SITE}/Image/ExifTool/PNG.pm
 ${P5SITE}/Image/ExifTool/PPM.pm
 ${P5SITE}/Image/ExifTool/PSP.pm
 ${P5SITE}/Image/ExifTool/Panasonic.pm
 ${P5SITE}/Image/ExifTool/PanasonicRaw.pm
 ${P5SITE}/Image/ExifTool/Pentax.pm
+${P5SITE}/Image/ExifTool/PhaseOne.pm
 ${P5SITE}/Image/ExifTool/PhotoCD.pm
 ${P5SITE}/Image/ExifTool/PhotoMechanic.pm
 ${P5SITE}/Image/ExifTool/Photoshop.pm
@@ -209,10 +213,12 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::DICOM.3p
 @man man/man3p/Image::ExifTool::DNG.3p
 @man man/man3p/Image::ExifTool::DV.3p
+@man man/man3p/Image::ExifTool::DarwinCore.3p
 @man man/man3p/Image::ExifTool::DjVu.3p
 @man man/man3p/Image::ExifTool::EXE.3p
 @man man/man3p/Image::ExifTool::Exif.3p
 @man man/man3p/Image::ExifTool::FLAC.3p
+@man man/man3p/Image::ExifTool::FLIR.3p
 @man man/man3p/Image::ExifTool::Fixup.3p
 @man man/man3p/Image::ExifTool::Flash.3p
 @man man/man3p/Image::ExifTool::FlashPix.3p
@@ -285,12 +291,14 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::PDF.3p
 @man man/man3p/Image::ExifTool::PGF.3p
 @man man/man3p/Image::ExifTool::PICT.3p
+@man man/man3p/Image::ExifTool::PLIST.3p
 @man man/man3p/Image::ExifTool::PNG.3p
 @man man/man3p/Image::ExifTool::PPM.3p
 @man man/man3p/Image::ExifTool::PSP.3p
 @man man/man3p/Image::ExifTool::Panasonic.3p
 @man man/man3p/Image::ExifTool::PanasonicRaw.3p
 @man man/man3p/Image::ExifTool::Pentax.3p
+@man man/man3p/Image::ExifTool::PhaseOne.3p
 @man man/man3p/Image::ExifTool::PhotoCD.3p
 @man man/man3p/Image::ExifTool::PhotoMechanic.3p
 @man man/man3p/Image::ExifTool::Photoshop.3p
