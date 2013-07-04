@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/07/04 06:45:15 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2013/07/04 09:07:23 ajacoutot Exp $
 
 COMMENT =		implementation of XMP
 DISTNAME =		exempi-2.2.1
@@ -13,6 +13,8 @@ HOMEPAGE =		http://libopenraw.freedesktop.org/wiki/Exempi
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c expat m pthread stdc++ z
+
+# configure checks for libiconv but it's unused
 BUILD_DEPENDS =		converters/libiconv
 
 MASTER_SITES =		http://libopenraw.freedesktop.org/download/
