@@ -1,0 +1,18 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2013/07/04 00:46:45 zhuk Exp $
+Revert partially upstream commit 66c339d4216cc834014c38617c664647cf34d4b8.
+KDE BUG 321877: https://bugs.kde.org/show_bug.cgi?id=321877
+--- CMakeLists.txt.orig	Fri Jun 28 21:16:25 2013
++++ CMakeLists.txt	Wed Jul  3 03:11:49 2013
+@@ -36,11 +36,7 @@ macro_log_feature(Qwt5_Qt4_FOUND "Qwt5 for Qt4" "Qwt5 
+ add_definitions(-DDEBUG)
+ 
+ include (FindPerlMore)
+-string(LENGTH "${PERL_INSTALL_PREFIX}" PERL_INSTALL_PREFIX_LEN)
+-math(EXPR PERL_INSTALL_PREFIX_LEN "${PERL_INSTALL_PREFIX_LEN}+1")
+-string(SUBSTRING ${PERL_SITE_ARCH_DIR} ${PERL_INSTALL_PREFIX_LEN} -1 CUSTOM_PERL_SITE_ARCH_DIR)
+-file(TO_NATIVE_PATH "${CMAKE_INSTALL_PREFIX}/${CUSTOM_PERL_SITE_ARCH_DIR}" CUSTOM_PERL_SITE_ARCH_DIR)
+-set(CUSTOM_PERL_SITE_ARCH_DIR ${CUSTOM_PERL_SITE_ARCH_DIR} CACHE DIR "Custom installation directory for perl binary extension")
++set(CUSTOM_PERL_SITE_ARCH_DIR ${PERL_SITE_ARCH_DIR} CACHE DIR "Custom installation directory for perl binary extension")
+ 
+ # the RPATH to be used when installing, but only if it's not a system directory
+ GET_FILENAME_COMPONENT(SMOKE_LIB_DIR ${SMOKE_BASE_LIBRARY} PATH)

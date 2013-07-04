@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 11:56:30 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:44:48 zhuk Exp $
+@conflict kdegames-<4
 @bin bin/kblackbox
 share/applications/kde4/kblackbox.desktop
 share/apps/kblackbox/

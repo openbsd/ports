@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-is,v 1.3 2013/06/06 17:26:45 rpointel Exp $
+@comment $OpenBSD: PLIST-is,v 1.4 2013/07/04 00:46:11 zhuk Exp $
 share/locale/is/LC_MESSAGES/adblock.mo
 share/locale/is/LC_MESSAGES/akregator.mo
 share/locale/is/LC_MESSAGES/akregator_konqplugin.mo
@@ -163,7 +163,6 @@ share/locale/is/LC_MESSAGES/kfile_kig.mo
 share/locale/is/LC_MESSAGES/kfile_pnm.mo
 share/locale/is/LC_MESSAGES/kfile_raw.mo
 share/locale/is/LC_MESSAGES/kfile_rgb.mo
-share/locale/is/LC_MESSAGES/kfile_rpm.mo
 share/locale/is/LC_MESSAGES/kfile_tiff.mo
 share/locale/is/LC_MESSAGES/kfile_xps.mo
 share/locale/is/LC_MESSAGES/kfileaudiopreview4.mo

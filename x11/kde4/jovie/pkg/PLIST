@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 11:38:19 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:44:39 zhuk Exp $
+@conflict kdeaccessibility-<4
 @bin bin/jovie
 lib/kde4/jovie_stringreplacerplugin.so
 lib/kde4/jovie_talkerchooserplugin.so

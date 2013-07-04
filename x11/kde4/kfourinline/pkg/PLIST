@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 12:01:14 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:44:59 zhuk Exp $
+@conflict kdegames-<4
 @bin bin/kfourinline
 @bin bin/kfourinlineproc
 share/applications/kde4/kfourinline.desktop

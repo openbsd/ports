@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 12:16:58 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:45:29 zhuk Exp $
+@conflict kdegraphics-<4
 @bin bin/kolourpaint
 @lib ${KDE4LIB}/libkolourpaint_lgpl.so.${LIBkolourpaint_lgpl_VERSION}
 @lib lib/libkolourpaint_lgpl.so.${LIBkolourpaint_lgpl_VERSION}

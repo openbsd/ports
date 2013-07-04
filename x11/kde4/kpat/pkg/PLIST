@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 12:18:53 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:45:33 zhuk Exp $
+@conflict kdegames-<4
 @bin bin/kpat
 @lib ${KDE4LIB}/libkcardgame.so.${LIBkcardgame_VERSION}
 @lib lib/libkcardgame.so.${LIBkcardgame_VERSION}

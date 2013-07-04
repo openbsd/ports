@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 19:08:46 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/07/04 00:47:11 zhuk Exp $
 
 COMMENT =	KDE collection of wallpapers
-DISTNAME =	kde-wallpapers-${MODKDE4_VERSION}
+DISTNAME =	kde-wallpapers-4.10.4
 
 MODKDE4_RESOURCES =	Yes
 

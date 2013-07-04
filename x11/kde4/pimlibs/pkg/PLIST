@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/07/02 17:50:04 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/07/04 00:46:54 zhuk Exp $
+@conflict kdelibs-<4
+@conflict kdepim-<4
 @bin bin/akonadi_benchmarker
 @bin bin/akonaditest
 include/kde4/KDE/Akonadi/

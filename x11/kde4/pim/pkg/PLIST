@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/06/06 08:36:49 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/07/04 00:46:49 zhuk Exp $
+@conflict kdeutils-<4
 @bin bin/akonadi_archivemail_agent
 @bin bin/akonadi_mailfilter_agent
 @bin bin/akonadiconsole

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 12:00:46 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:44:58 zhuk Exp $
+@conflict kdeutils-<4
 @bin bin/kfloppy
 share/applications/kde4/KFloppy.desktop
 share/doc/HTML/en/kfloppy/

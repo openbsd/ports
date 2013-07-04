@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 11:53:55 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:44:47 zhuk Exp $
+@conflict kdegames-<4
 @bin bin/katomic
 share/applications/kde4/katomic.desktop
 share/apps/katomic/

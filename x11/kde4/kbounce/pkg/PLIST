@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 11:57:17 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:44:50 zhuk Exp $
+@conflict kdegames-<4
 @bin bin/kbounce
 share/applications/kde4/kbounce.desktop
 share/apps/kbounce/

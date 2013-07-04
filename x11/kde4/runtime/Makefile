@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/06/06 08:36:49 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2013/07/04 00:47:01 zhuk Exp $
 
 COMMENT =	KDE core run-time components
 DISTNAME =	kde-runtime-${MODKDE4_VERSION}
@@ -8,11 +8,11 @@ DPB_PROPERTIES =	parallel
 SHARED_LIBS =	kwalletbackend 		50.0
 SHARED_LIBS +=	molletnetwork 		50.0
 #SHARED_LIBS +=	nepomukdatamanagement	0.0
-SHARED_LIBS +=	kdeinit4_kcmshell4	50.0
-SHARED_LIBS +=	kdeinit4_kglobalaccel	50.0
-SHARED_LIBS +=	kdeinit4_khelpcenter	50.0
-SHARED_LIBS +=	kdeinit4_kuiserver 	50.0
-SHARED_LIBS +=	kdeinit4_kwalletd 	50.0
+SHARED_LIBS +=	kdeinit4_kcmshell4	51.0
+SHARED_LIBS +=	kdeinit4_kglobalaccel	51.0
+SHARED_LIBS +=	kdeinit4_khelpcenter	51.0
+SHARED_LIBS +=	kdeinit4_kuiserver 	51.0
+SHARED_LIBS +=	kdeinit4_kwalletd 	51.0
 
 WANTLIB =  c m pthread stdc++ util
 WANTLIB += Half ICE Iex IlmImf IlmThread Imath SM X11 Xcursor Xext

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/30 20:01:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/07/04 00:46:44 zhuk Exp $
 
 COMMENT =	Qt4 bindings for Perl
 DISTNAME =	perlqt-${MODKDE4_VERSION}
 PKGNAME =	p5-qt-${MODKDE4_VERSION}
-REVISION =	0
 
 WANTLIB =  c m perl stdc++ util
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtXml

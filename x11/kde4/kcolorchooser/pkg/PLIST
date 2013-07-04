@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/25 16:59:05 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:44:55 zhuk Exp $
+@conflict kdegraphics-<4
 @bin bin/kcolorchooser
 share/applications/kde4/kcolorchooser.desktop
 share/icons/hicolor/16x16/apps/kcolorchooser.png

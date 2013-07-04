@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-wa,v 1.1.1.1 2013/04/24 18:23:59 zhuk Exp $
+@comment $OpenBSD: PLIST-wa,v 1.2 2013/07/04 00:46:21 zhuk Exp $
 share/apps/
 share/apps/ktuberling/
 share/apps/ktuberling/sounds/
@@ -197,7 +197,6 @@ share/locale/wa/LC_MESSAGES/kfile.mo
 share/locale/wa/LC_MESSAGES/kfile_pnm.mo
 share/locale/wa/LC_MESSAGES/kfile_raw.mo
 share/locale/wa/LC_MESSAGES/kfile_rgb.mo
-share/locale/wa/LC_MESSAGES/kfile_rpm.mo
 share/locale/wa/LC_MESSAGES/kfileaudiopreview4.mo
 share/locale/wa/LC_MESSAGES/kfindpart.mo
 share/locale/wa/LC_MESSAGES/kfloppy.mo

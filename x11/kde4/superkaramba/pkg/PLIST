@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 19:06:51 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:47:08 zhuk Exp $
+@conflict kdeutils-<4
 @bin bin/superkaramba
 @lib ${KDE4LIB}/libsuperkaramba.so.${LIBsuperkaramba_VERSION}
 lib/kde4/plasma_package_superkaramba.so

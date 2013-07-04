@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-fr,v 1.3 2013/06/06 17:26:45 rpointel Exp $
+@comment $OpenBSD: PLIST-fr,v 1.4 2013/07/04 00:46:08 zhuk Exp $
 share/apps/
 share/apps/autocorrect/
 share/apps/autocorrect/fr.xml
@@ -2014,7 +2014,6 @@ share/locale/fr/LC_MESSAGES/kfile_mail.mo
 share/locale/fr/LC_MESSAGES/kfile_pnm.mo
 share/locale/fr/LC_MESSAGES/kfile_raw.mo
 share/locale/fr/LC_MESSAGES/kfile_rgb.mo
-share/locale/fr/LC_MESSAGES/kfile_rpm.mo
 share/locale/fr/LC_MESSAGES/kfile_tiff.mo
 share/locale/fr/LC_MESSAGES/kfile_xps.mo
 share/locale/fr/LC_MESSAGES/kfileaudiopreview4.mo

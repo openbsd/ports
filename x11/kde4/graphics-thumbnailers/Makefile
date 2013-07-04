@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 11:36:37 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/07/04 00:44:36 zhuk Exp $
 
 COMMENT =	KDE thumbnail creation plugins
 DISTNAME =	kdegraphics-thumbnailers-${MODKDE4_VERSION}
 
-WANTLIB =  c m pthread stdc++
+WANTLIB =  m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kdcraw ${KDE4LIB}/kdeui ${KDE4LIB}/kexiv2

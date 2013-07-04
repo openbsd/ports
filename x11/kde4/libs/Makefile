@@ -1,59 +1,60 @@
-# $OpenBSD: Makefile,v 1.26 2013/07/02 19:00:32 zhuk Exp $
+# $OpenBSD: Makefile,v 1.27 2013/07/04 00:46:30 zhuk Exp $
 
 COMMENT =	KDE core libraries
 DISTNAME =	kdelibs-${MODKDE4_VERSION}
 PKGSPEC =	kdelibs->=4
-REVISION =	2
 
-SHARED_LIBS =	kde3support          50.0      # .4.0
-SHARED_LIBS +=	kdecore              50.0      # .5.0
-SHARED_LIBS +=	kdefakes             50.0      # .5.0
-SHARED_LIBS +=	kdesu                50.0      # .5.0
-SHARED_LIBS +=	kdeui                50.0      # .5.0
-SHARED_LIBS +=	kdnssd               50.0      # .2.0
-SHARED_LIBS +=	khtml                50.0      # .5.0
-SHARED_LIBS +=	kimproxy             50.0      # .4.0
-SHARED_LIBS +=	kio                  50.0      # .5.0
-SHARED_LIBS +=	kjs                  50.0      # .2.0
-SHARED_LIBS +=	kjsembed             50.0      # .4.0
-SHARED_LIBS +=	kmediaplayer         50.0      # .4.0
-SHARED_LIBS +=	knotifyconfig        50.0      # .4.0
-SHARED_LIBS +=	kntlm                50.0      # .1.0
-SHARED_LIBS +=	kparts               50.0      # .4.0
-SHARED_LIBS +=	krosscore            50.0      # .4.0
-SHARED_LIBS +=	ktexteditor          50.0      # .4.0
-SHARED_LIBS +=	kunittest            50.0      # .4.0
-SHARED_LIBS +=	kutils               50.0      # .2.0
-SHARED_LIBS +=	solid                50.0      # .4.0
-SHARED_LIBS +=	threadweaver         50.0      # .4.0
-SHARED_LIBS +=	kfile                50.0      # .4.0
-SHARED_LIBS +=	knewstuff2           50.0      # .4.0
-SHARED_LIBS +=	krossui              50.0      # .4.0
-SHARED_LIBS +=  kpty                 50.0      # .4.0
+DPB_PROPERTIES =	parallel
 
-SHARED_LIBS +=  kjsapi 			50.0
-SHARED_LIBS +=	kdewebkit		50.0
-SHARED_LIBS +=	knewstuff3		50.0
-SHARED_LIBS +=	kunitconversion		50.0
-SHARED_LIBS +=	plasma			50.0
+SHARED_LIBS =	kde3support          50.1      # .4.0
+SHARED_LIBS +=	kdecore              50.1      # .5.0
+SHARED_LIBS +=	kdefakes             50.1      # .5.0
+SHARED_LIBS +=	kdesu                50.1      # .5.0
+SHARED_LIBS +=	kdeui                50.1      # .5.0
+SHARED_LIBS +=	kdnssd               50.1      # .2.0
+SHARED_LIBS +=	khtml                50.1      # .5.0
+SHARED_LIBS +=	kimproxy             50.1      # .4.0
+SHARED_LIBS +=	kio                  50.1      # .5.0
+SHARED_LIBS +=	kjs                  50.1      # .2.0
+SHARED_LIBS +=	kjsembed             50.1      # .4.0
+SHARED_LIBS +=	kmediaplayer         50.1      # .4.0
+SHARED_LIBS +=	knotifyconfig        50.1      # .4.0
+SHARED_LIBS +=	kntlm                50.1      # .1.0
+SHARED_LIBS +=	kparts               50.1      # .4.0
+SHARED_LIBS +=	krosscore            50.1      # .4.0
+SHARED_LIBS +=	ktexteditor          50.1      # .4.0
+SHARED_LIBS +=	kunittest            50.1      # .4.0
+SHARED_LIBS +=	kutils               50.1      # .2.0
+SHARED_LIBS +=	solid                50.1      # .4.0
+SHARED_LIBS +=	threadweaver         50.1      # .4.0
+SHARED_LIBS +=	kfile                50.1      # .4.0
+SHARED_LIBS +=	knewstuff2           50.1      # .4.0
+SHARED_LIBS +=	krossui              50.1      # .4.0
+SHARED_LIBS +=  kpty                 50.1      # .4.0
 
-SHARED_LIBS +=  kcmutils		50.0 # 4.7
-SHARED_LIBS +=  kdeclarative		50.0 # 5.7
-SHARED_LIBS +=  kemoticons		50.0 # 4.7
-SHARED_LIBS +=  kidletime		50.0 # 4.7
-SHARED_LIBS +=  kprintutils		50.0 # 4.7
+SHARED_LIBS +=  kjsapi 			50.1
+SHARED_LIBS +=	kdewebkit		50.1
+SHARED_LIBS +=	knewstuff3		50.1
+SHARED_LIBS +=	kunitconversion		50.1
+SHARED_LIBS +=	plasma			50.1
 
-SHARED_LIBS +=  nepomuk			50.0 # 4.9
-SHARED_LIBS +=  nepomukquery		50.0 # 4.9
-SHARED_LIBS +=  nepomukutils		50.0 # 4.9
+SHARED_LIBS +=  kcmutils		50.1 # 4.7
+SHARED_LIBS +=  kdeclarative		50.1 # 5.7
+SHARED_LIBS +=  kemoticons		50.1 # 4.7
+SHARED_LIBS +=  kidletime		50.1 # 4.7
+SHARED_LIBS +=  kprintutils		50.1 # 4.7
+
+SHARED_LIBS +=  nepomuk			50.1 # 4.9
+SHARED_LIBS +=  nepomukquery		50.1 # 4.9
+SHARED_LIBS +=  nepomukutils		50.1 # 4.9
 
 # Each lib is used by corresponding binary in libexec/,
 # so technically those are not plugins.
-SHARED_LIBS +=	kdeinit4_kbuildsycoca4		50.0
-SHARED_LIBS +=	kdeinit4_kconf_update		50.0
-SHARED_LIBS +=	kdeinit4_kded4			50.0
-SHARED_LIBS +=	kdeinit4_kio_http_cache_cleaner	50.0
-SHARED_LIBS +=	kdeinit4_klauncher		50.0
+SHARED_LIBS +=	kdeinit4_kbuildsycoca4		50.1
+SHARED_LIBS +=	kdeinit4_kconf_update		50.1
+SHARED_LIBS +=	kdeinit4_kded4			50.1
+SHARED_LIBS +=	kdeinit4_kio_http_cache_cleaner	50.1
+SHARED_LIBS +=	kdeinit4_klauncher		50.1
 
 WANTLIB =  c com_err crypto krb5 m pthread stdc++ util z
 WANTLIB += Half ICE Iex IlmImf IlmThread Imath SM X11 Xau Xcursor Xdmcp

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-fi,v 1.2 2013/05/14 09:16:27 zhuk Exp $
+@comment $OpenBSD: PLIST-fi,v 1.3 2013/07/04 00:46:07 zhuk Exp $
 share/apps/
 share/apps/khangman/
 share/apps/khangman/fi.txt
@@ -278,7 +278,6 @@ share/locale/fi/LC_MESSAGES/kfile_mail.mo
 share/locale/fi/LC_MESSAGES/kfile_pnm.mo
 share/locale/fi/LC_MESSAGES/kfile_raw.mo
 share/locale/fi/LC_MESSAGES/kfile_rgb.mo
-share/locale/fi/LC_MESSAGES/kfile_rpm.mo
 share/locale/fi/LC_MESSAGES/kfile_tiff.mo
 share/locale/fi/LC_MESSAGES/kfile_xps.mo
 share/locale/fi/LC_MESSAGES/kfileaudiopreview4.mo

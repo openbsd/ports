@@ -1,0 +1,16 @@
+$OpenBSD: patch-includes_tests_CMakeLists_txt,v 1.1 2013/07/04 00:46:53 zhuk Exp $
+Unbreak building tests.
+--- includes/tests/CMakeLists.txt.orig	Sun Jun 30 19:22:34 2013
++++ includes/tests/CMakeLists.txt	Sun Jun 30 19:22:38 2013
+@@ -21,8 +21,10 @@ macro(add_includes _dir)
+ endmacro(add_includes)
+ 
+ include_directories(
+-  # HACK: akonadi/calendar has a generated header. We need to go up 3 directories level
++  # HACK: akonadi/calendar and kcalutils have generated headers. So we
++  # need to go up 3/2 directories level.
+   ${CMAKE_BINARY_DIR}/akonadi/calendar/tests
++  ${CMAKE_BINARY_DIR}/kcalutils/tests
+   ${CMAKE_SOURCE_DIR}/kabc
+   ${CMAKE_BINARY_DIR}/kabc
+   ${CMAKE_SOURCE_DIR}/kcalutils

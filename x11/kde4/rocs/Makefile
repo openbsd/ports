@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2013/06/06 22:56:44 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2013/07/04 00:46:58 zhuk Exp $
 
 COMMENT =	graph theory IDE for KDE
 DISTNAME =	rocs-${MODKDE4_VERSION}
-REVISION =	0
 
 # XXX Crashes sometimes.
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/04/24 19:50:40 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/07/04 00:46:42 zhuk Exp $
 share/icons/oxygen/
 share/icons/oxygen/128x128/
 share/icons/oxygen/128x128/actions/
@@ -1068,7 +1068,7 @@ share/icons/oxygen/16x16/actions/object-rotate-left.png
 share/icons/oxygen/16x16/actions/object-rotate-right.png
 share/icons/oxygen/16x16/actions/object-ungroup.png
 share/icons/oxygen/16x16/actions/office-chart-area-focus-peak-node.png
-share/icons/oxygen/16x16/actions/office-chart-area-precentage.png
+share/icons/oxygen/16x16/actions/office-chart-area-percentage.png
 share/icons/oxygen/16x16/actions/office-chart-area-stacked.png
 share/icons/oxygen/16x16/actions/office-chart-area.png
 share/icons/oxygen/16x16/actions/office-chart-bar-percentage.png

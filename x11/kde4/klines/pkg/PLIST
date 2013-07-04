@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 12:09:50 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:45:15 zhuk Exp $
+@conflict kdegames-<4
 @bin bin/klines
 share/applications/kde4/klines.desktop
 share/apps/klines/

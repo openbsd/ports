@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:29 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/07/04 00:46:59 zhuk Exp $
 
 BROKEN-hppa =	relocation error
 CATEGORIES =	devel lang/ruby x11/kde4
@@ -9,7 +9,7 @@ HOMEPAGE =	http://techbase.kde.org/Development/Languages/Ruby
 
 SHARED_LIBS =	qtruby4shared		50.0 # 2.0
 
-WANTLIB =  c m stdc++
+WANTLIB =  c m stdc++ ${MODRUBY_WANTLIB}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtWebKit
 WANTLIB += lib/qt4/QtXml lib/qt4/phonon
@@ -26,11 +26,11 @@ WANTLIB += qscintilla2
 MODULES =	lang/ruby
 MODKDE4_USE =
 
-# ruby 1.8 requires LD_PRELOAD hacks for pthreads
+# ruby 1.8 not supported as it requires LD_PRELOAD hacks for pthreads
+FLAVORS =		ruby19
+FLAVOR =		ruby19
+MODRUBY_HANDLE_FLAVORS = Yes    
 MODRUBY_ADJ_FILES =	*.rb rbqtapi
-MODRUBY_HANDLE_FLAVORS =Yes
-FLAVORS =		ruby18 ruby19
-FLAVOR ?=		ruby18
 
 CONFIGURE_ARGS =	-DRUBY_EXECUTABLE=${RUBY}
 

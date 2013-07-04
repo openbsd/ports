@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 12:20:42 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/07/04 00:45:35 zhuk Exp $
 
 COMMENT-main =	KDE bindings for running interpreters
 COMMENT-java =	KDE Java bindings
@@ -17,7 +17,7 @@ WANTLIB =  m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtScript lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/krosscore
 
-WANTLIB-main =  ${WANTLIB} ${MODPY_WANTLIB}
+WANTLIB-main =  ${WANTLIB} ${MODPY_WANTLIB} ${MODRUBY_WANTLIB}
 WANTLIB-main += lib/qt4/QtGui
 WANTLIB-main += ${KDE4LIB}/kpty
 
@@ -27,10 +27,9 @@ MODKDE4_USE =		libs
 # Unported
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_FALCON:Bool=Yes
 
-# XXX Ruby 1.9 support is broken, and FindRuby doesn't find 1.8
+# TODO: Ruby 2.0 should be acceptable choice probably, too
 MODULES =		lang/python lang/ruby
-MODRUBY_REV =		1.8
-#CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Ruby:Bool=Yes
+MODRUBY_REV =		1.9
 CONFIGURE_ARGS +=	-DRUBY_EXECUTABLE=${RUBY}
 
 .if ${FLAVOR:Mno_java}

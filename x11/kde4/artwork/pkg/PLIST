@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/04/24 19:32:57 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/07/04 00:44:25 zhuk Exp $
+@conflict kdeaccessibility-<4
+@conflict kdebase-<4
 @bin bin/kbanner.kss
 @bin bin/kblob.kss
 @bin bin/kclock.kss

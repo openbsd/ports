@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/25 16:58:24 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:44:53 zhuk Exp $
+@conflict kdeutils-<4
 @bin bin/kcalc
 lib/libkdeinit4_kcalc.so
 share/applications/kde4/kcalc.desktop

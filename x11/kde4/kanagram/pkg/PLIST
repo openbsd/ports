@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 11:49:43 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:44:44 zhuk Exp $
+@conflict kdeedu-<4
 @bin bin/kanagram
 include/kanagram/
 include/kanagram/kanagram_engine_export.h

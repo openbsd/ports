@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 12:17:18 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:45:30 zhuk Exp $
+@conflict kdegames-<4
 @bin bin/konquest
 share/applications/kde4/konquest.desktop
 share/apps/konquest/

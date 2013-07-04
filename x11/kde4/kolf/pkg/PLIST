@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 12:16:10 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:45:27 zhuk Exp $
+@conflict kdegames-<4
 @bin bin/kolf
 @lib ${KDE4LIB}/libkolfprivate.so.${LIBkolfprivate_VERSION}
 @lib lib/libkolfprivate.so.${LIBkolfprivate_VERSION}

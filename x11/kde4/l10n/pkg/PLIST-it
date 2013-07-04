@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-it,v 1.2 2013/05/14 09:16:27 zhuk Exp $
+@comment $OpenBSD: PLIST-it,v 1.3 2013/07/04 00:46:11 zhuk Exp $
 share/apps/
 share/apps/autocorrect/
 share/apps/autocorrect/it_IT.xml
@@ -1663,7 +1663,6 @@ share/locale/it/LC_MESSAGES/kfile_mail.mo
 share/locale/it/LC_MESSAGES/kfile_pnm.mo
 share/locale/it/LC_MESSAGES/kfile_raw.mo
 share/locale/it/LC_MESSAGES/kfile_rgb.mo
-share/locale/it/LC_MESSAGES/kfile_rpm.mo
 share/locale/it/LC_MESSAGES/kfile_tiff.mo
 share/locale/it/LC_MESSAGES/kfile_xps.mo
 share/locale/it/LC_MESSAGES/kfileaudiopreview4.mo

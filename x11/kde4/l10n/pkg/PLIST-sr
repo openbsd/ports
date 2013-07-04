@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-sr,v 1.3 2013/06/06 17:26:45 rpointel Exp $
+@comment $OpenBSD: PLIST-sr,v 1.4 2013/07/04 00:46:18 zhuk Exp $
 man/sr@latin/
 man/sr@latin/man1/
 @man man/sr@latin/man1/ark.1
@@ -1402,7 +1402,16 @@ share/locale/sr/LC_MESSAGES/kdmgreet.mo
 share/locale/sr/LC_MESSAGES/kdontchangethehostname.mo
 share/locale/sr/LC_MESSAGES/keditbookmarks.mo
 share/locale/sr/LC_MESSAGES/kfile.mo
+share/locale/sr/LC_MESSAGES/kfile_dds.mo
+share/locale/sr/LC_MESSAGES/kfile_drgeo.mo
+share/locale/sr/LC_MESSAGES/kfile_exr.mo
+share/locale/sr/LC_MESSAGES/kfile_kig.mo
 share/locale/sr/LC_MESSAGES/kfile_mail.mo
+share/locale/sr/LC_MESSAGES/kfile_pnm.mo
+share/locale/sr/LC_MESSAGES/kfile_raw.mo
+share/locale/sr/LC_MESSAGES/kfile_rgb.mo
+share/locale/sr/LC_MESSAGES/kfile_tiff.mo
+share/locale/sr/LC_MESSAGES/kfile_xps.mo
 share/locale/sr/LC_MESSAGES/kfileaudiopreview4.mo
 share/locale/sr/LC_MESSAGES/kfileshare.mo
 share/locale/sr/LC_MESSAGES/kfindpart.mo
@@ -2070,7 +2079,16 @@ share/locale/sr@ijekavian/LC_MESSAGES/kdmgreet.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kdontchangethehostname.mo
 share/locale/sr@ijekavian/LC_MESSAGES/keditbookmarks.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kfile.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kfile_dds.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kfile_drgeo.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kfile_exr.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kfile_kig.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kfile_mail.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kfile_pnm.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kfile_raw.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kfile_rgb.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kfile_tiff.mo
+share/locale/sr@ijekavian/LC_MESSAGES/kfile_xps.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kfileaudiopreview4.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kfileshare.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kfindpart.mo
@@ -2738,7 +2756,16 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/kdmgreet.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kdontchangethehostname.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/keditbookmarks.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kfile.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kfile_dds.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kfile_drgeo.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kfile_exr.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kfile_kig.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kfile_mail.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kfile_pnm.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kfile_raw.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kfile_rgb.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kfile_tiff.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/kfile_xps.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kfileaudiopreview4.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kfileshare.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kfindpart.mo
@@ -3404,7 +3431,16 @@ share/locale/sr@latin/LC_MESSAGES/kdmgreet.mo
 share/locale/sr@latin/LC_MESSAGES/kdontchangethehostname.mo
 share/locale/sr@latin/LC_MESSAGES/keditbookmarks.mo
 share/locale/sr@latin/LC_MESSAGES/kfile.mo
+share/locale/sr@latin/LC_MESSAGES/kfile_dds.mo
+share/locale/sr@latin/LC_MESSAGES/kfile_drgeo.mo
+share/locale/sr@latin/LC_MESSAGES/kfile_exr.mo
+share/locale/sr@latin/LC_MESSAGES/kfile_kig.mo
 share/locale/sr@latin/LC_MESSAGES/kfile_mail.mo
+share/locale/sr@latin/LC_MESSAGES/kfile_pnm.mo
+share/locale/sr@latin/LC_MESSAGES/kfile_raw.mo
+share/locale/sr@latin/LC_MESSAGES/kfile_rgb.mo
+share/locale/sr@latin/LC_MESSAGES/kfile_tiff.mo
+share/locale/sr@latin/LC_MESSAGES/kfile_xps.mo
 share/locale/sr@latin/LC_MESSAGES/kfileaudiopreview4.mo
 share/locale/sr@latin/LC_MESSAGES/kfileshare.mo
 share/locale/sr@latin/LC_MESSAGES/kfindpart.mo

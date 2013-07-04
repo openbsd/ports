@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 20:45:30 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:47:00 zhuk Exp $
 @conflict kdebindings-<4
+@pkgpath x11/ruby-qt4
 bin/rbqtapi
 @bin bin/rbrcc
 @bin bin/rbuic4

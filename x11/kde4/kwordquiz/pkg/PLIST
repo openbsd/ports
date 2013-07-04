@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 18:21:42 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:45:59 zhuk Exp $
+@conflict kdeedu-<4
 @bin bin/kwordquiz
 share/applications/kde4/kwordquiz.desktop
 share/apps/kwordquiz/

@@ -1,0 +1,8 @@
+$OpenBSD: patch-kget_doc_CMakeLists_txt,v 1.1 2013/07/04 00:46:40 zhuk Exp $
+Install KGet documentation in the right directory.
+--- kget/doc/CMakeLists.txt.orig	Wed Jul  3 16:36:49 2013
++++ kget/doc/CMakeLists.txt	Wed Jul  3 16:41:02 2013
+@@ -1,2 +1,2 @@
+ ########### install files ###############
+-kde4_create_handbook(index.docbook INSTALL_DESTINATION ${HTML_INSTALL_DIR}/en)
++kde4_create_handbook(index.docbook INSTALL_DESTINATION ${HTML_INSTALL_DIR}/en SUBDIR kget)

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 12:10:11 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:45:17 zhuk Exp $
+@conflict kdeaccessibility-<4
 @bin bin/kmag
 @man man/man1/kmag.1
 share/applications/kde4/kmag.desktop

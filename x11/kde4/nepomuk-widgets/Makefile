@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/06/06 08:36:49 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2013/07/04 00:46:37 zhuk Exp $
 
 COMMENT =	Nepomuk-based KDE Plasma widgets
 DISTNAME =	nepomuk-widgets-${MODKDE4_VERSION}
 
-SHARED_LIBS =	nepomukwidgets		50.0
+SHARED_LIBS =	nepomukwidgets		51.0
 
 WANTLIB =  m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg

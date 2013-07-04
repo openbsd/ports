@@ -1,0 +1,12 @@
+$OpenBSD: patch-kget_CMakeLists_txt,v 1.1 2013/07/04 00:46:39 zhuk Exp $
+Don't forget to install KGet documentation.
+--- kget/CMakeLists.txt.orig	Wed Jul  3 16:31:49 2013
++++ kget/CMakeLists.txt	Wed Jul  3 16:32:06 2013
+@@ -94,6 +94,7 @@ endif(QGPGME_FOUND)
+ 
+ add_subdirectory(conf)
+ add_subdirectory(core)
++add_subdirectory(doc)
+ add_subdirectory(ui)
+ add_subdirectory(transfer-plugins)
+ add_subdirectory(extensions)

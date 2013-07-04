@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 12:08:56 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:45:14 zhuk Exp $
+@conflict kdeedu-<4
 @bin bin/klettres
 share/applications/kde4/klettres.desktop
 share/apps/klettres/

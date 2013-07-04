@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 19:17:42 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:47:14 zhuk Exp $
+@conflict kdelibs-<4
+@conflict kdebase-<4
 @newgroup _kdesud:583
 @unexec-delete rm -f %D/share/icons/Oxygen_Black/icon-theme.cache
 @unexec-delete rm -f %D/share/icons/Oxygen_Blue/icon-theme.cache

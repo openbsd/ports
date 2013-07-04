@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2013/04/24 18:23:39 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2013/07/04 00:46:00 zhuk Exp $
 
 IGNORE_SILENT =		Yes
 COMMENT =		K Desktop Environment, language localization pack
@@ -19,12 +19,14 @@ RUN_DEPENDS =	x11/gtk+2,-guic
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/${MODKDE4_VERSION}/src/kde-l10n/}
 
 KDE_LANG_STR =	${KDE_L10N_LANG} language
-SUBST_VARS =	KDE_LANG_STR
+KDE3_I18N_PKG =	kde-i18n-${KDE_L10N_LANG}
+SUBST_VARS =	KDE_LANG_STR KDE3_I18N_PKG
 
 PKGDIR =	${.CURDIR}/../pkg
 DESCR =		${PKGDIR}/DESCR
 PLIST =		${PKGDIR}/PLIST-${KDE_L10N_LANG}
 CHECKSUM_FILE =	${.CURDIR}/../distinfo
+PKG_ARGS =	-f ${PKGDIR}/PFRAG.conflict
 
 MODULES =	devel/gettext
 NO_TEST =	Yes

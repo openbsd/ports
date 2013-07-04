@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:28 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/07/04 00:46:36 zhuk Exp $
 
 COMMENT =	KDE Nepomuk core libraries
 DISTNAME =	nepomuk-core-${MODKDE4_VERSION}
 
-SHARED_LIBS =	nepomukcore		50.0 # 4.9
+DPB_PROPERTIES =	parallel
+
+SHARED_LIBS =	nepomukcore		51.0 # 4.9
 #SHARED_LIBS +=	nepomuksync		0.0 # 4.9
-SHARED_LIBS +=	nepomukcommon		50.0 # 4.10
-SHARED_LIBS +=	kdeinit4_nepomukserver	50.0 # 4.10
-SHARED_LIBS +=	nepomukextractor	50.0
+SHARED_LIBS +=	nepomukcommon		51.0 # 4.10
+SHARED_LIBS +=	kdeinit4_nepomukserver	51.0 # 4.10
+SHARED_LIBS +=	nepomukextractor	51.0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg

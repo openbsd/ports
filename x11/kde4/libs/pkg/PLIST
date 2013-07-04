@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2013/05/19 11:21:54 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.12 2013/07/04 00:46:32 zhuk Exp $
 @option no-default-conflict
 @conflict kdelibs->=4
 @conflict kdebase-<4
@@ -1250,6 +1250,7 @@ include/kde4/kdatetime.h
 include/kde4/kdatetimeedit.h
 include/kde4/kdatetimewidget.h
 include/kde4/kdatewidget.h
+include/kde4/kdbusconnectionpool.h
 include/kde4/kdbusservicestarter.h
 include/kde4/kde3support_export.h
 include/kde4/kde_file.h

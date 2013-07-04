@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 18:19:19 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:45:50 zhuk Exp $
+@conflict kdeutils-<4
 @bin bin/ktimer
 share/applications/kde4/ktimer.desktop
 share/doc/HTML/en/ktimer/

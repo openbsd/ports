@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 12:31:32 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:45:45 zhuk Exp $
+@conflict kdegraphics-<4
 @bin bin/kbackgroundsnapshot
 @bin bin/ksnapshot
 share/applications/kde4/ksnapshot.desktop

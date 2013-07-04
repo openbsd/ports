@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:28 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/07/04 00:46:24 zhuk Exp $
 
 COMMENT =	KDE RAW picture decoding C++ library
 DISTNAME =	libkdcraw-${MODKDE4_VERSION}
@@ -15,8 +15,6 @@ WANTLIB += raw_r
 MODKDE4_USE =	libs
 
 LIB_DEPENDS = 	graphics/libraw
-
-CONFIGURE_ARGS =	-DWITH_OpenMP:Bool=FALSE
 
 post-extract:
 	cp ${FILESDIR}/*.cmake ${WRKSRC}/cmake/modules/

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 12:17:46 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:45:31 zhuk Exp $
+@conflict kdebase-<4
 @bin bin/konsole
 bin/konsoleprofile
 lib/kde4/libkonsolepart.so

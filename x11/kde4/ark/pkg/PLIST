@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 11:22:31 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:44:23 zhuk Exp $
+@conflict kdeutils-<4
 @bin bin/ark
 lib/kde4/arkpart.so
 lib/kde4/kerfuffle_cli7z.so
