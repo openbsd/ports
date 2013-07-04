@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2013/01/05 21:43:15 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/07/04 12:44:30 benoit Exp $
 @bin bin/stella
 share/doc/stella/
 share/doc/stella/debugger.html
@@ -8,6 +8,8 @@ share/doc/stella/graphics/chucky_cheese.png
 share/doc/stella/graphics/circuit.png
 share/doc/stella/graphics/commandmenu.png
 share/doc/stella/graphics/console.png
+share/doc/stella/graphics/debugger_bankcomplex.png
+share/doc/stella/graphics/debugger_banksimple.png
 share/doc/stella/graphics/debugger_bpstatus.png
 share/doc/stella/graphics/debugger_cpuregs.png
 share/doc/stella/graphics/debugger_dataops.png
@@ -31,6 +33,7 @@ share/doc/stella/graphics/jr_pacman.png
 share/doc/stella/graphics/launcher.png
 share/doc/stella/graphics/launcher_filter.png
 share/doc/stella/graphics/launcher_options_files.png
+share/doc/stella/graphics/launcher_options_snapshots.png
 share/doc/stella/graphics/launcher_override.png
 share/doc/stella/graphics/logs.png
 share/doc/stella/graphics/options.png
