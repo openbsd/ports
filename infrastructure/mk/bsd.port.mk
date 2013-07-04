@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1238 2013/06/25 20:21:03 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1239 2013/07/04 08:04:04 jasper Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -393,6 +393,9 @@ BUILD_DEPENDS += devel/ccache
 
 ALL_FAKE_FLAGS=	${MAKE_FLAGS:N-j[0-9]*} ${DESTDIRNAME}=${WRKINST} ${FAKE_FLAGS}
 
+.if ${LOCALBASE:L} != "/usr/local"
+_PKG_ADD += -L ${LOCALBASE}
+.endif
 
 PARALLEL_BUILD ?= Yes
 PARALLEL_INSTALL ?= ${PARALLEL_BUILD}
