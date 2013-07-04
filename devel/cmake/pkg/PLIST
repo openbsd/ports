@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2013/06/06 12:47:06 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.25 2013/07/04 16:34:06 dcoppa Exp $
 @bin bin/ccmake
 @bin bin/cmake
 @bin bin/cpack
@@ -115,6 +115,7 @@ share/cmake/Modules/CMakeTestWatcomVersion.c
 share/cmake/Modules/CMakeUnixFindMake.cmake
 share/cmake/Modules/CMakeVS10FindMake.cmake
 share/cmake/Modules/CMakeVS11FindMake.cmake
+share/cmake/Modules/CMakeVS12FindMake.cmake
 share/cmake/Modules/CMakeVS6BackwardCompatibility.cmake
 share/cmake/Modules/CMakeVS6FindMake.cmake
 share/cmake/Modules/CMakeVS71FindMake.cmake
