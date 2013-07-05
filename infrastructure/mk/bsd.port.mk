@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1239 2013/07/04 08:04:04 jasper Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1240 2013/07/05 21:48:01 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -723,7 +723,7 @@ BZIP2 ?= bzip2
 
 
 # copy selected info from bsd.own.mk
-MAKE_ENV += ELF_TOOLCHAIN=${ELF_TOOLCHAIN} COMPILER_VERSION=${COMPILER_VERSION} \
+MAKE_ENV += ELF_TOOLCHAIN=Yes COMPILER_VERSION=${COMPILER_VERSION} \
 	PICFLAG="${PICFLAG}" ASPICFLAG=${ASPICFLAG} \
 	BINGRP=bin BINOWN=root BINMODE=555 NONBINMODE=444 DIRMODE=755 \
 	INSTALL_COPY=-c INSTALL_STRIP=${INSTALL_STRIP} \
@@ -1753,9 +1753,6 @@ _check_lib_depends =:
 
 _CHECK_LIB_DEPENDS = PORTSDIR=${PORTSDIR} ${_PERLSCRIPT}/check-lib-depends
 _CHECK_LIB_DEPENDS += -d ${_PKG_REPO} -B ${WRKINST}
-.  if ${ELF_TOOLCHAIN:L} == "no"
-_CHECK_LIB_DEPENDS += -o
-.  endif
 
 .for _s in ${MULTI_PACKAGES}
 .  if ${STATIC_PLIST${_s}:L} == "no"

@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.15 2013/03/25 17:41:46 jasper Exp $
+# $OpenBSD: arch-defines.mk,v 1.16 2013/07/05 21:48:01 espie Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -40,6 +40,4 @@ PROPERTIES += ${PROP:L}
 .    endif
 .  endfor
 .endfor
-.if ${ELF_TOOLCHAIN:L} == "yes"
 PROPERTIES += elf
-.endif
