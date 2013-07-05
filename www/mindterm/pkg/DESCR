@@ -1,7 +1,0 @@
-MindTerm is an implementation of a secure shell client in pure Java
-supporting both the SSH1 and the SSH2 protocols.  MindTerm runs as a
-standalone application as well as an Applet.  As an applet, MindTerm has
-been tested with Netscape Communicator and Microsoft Internet Explorer
-browsers.  As an application, MindTerm requires that a Java runtime
-environment (JRE) be installed and should work with any 1.1.x runtime on
-most platforms.
