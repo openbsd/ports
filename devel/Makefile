@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1146 2013/07/05 08:34:36 bluhm Exp $
+# $OpenBSD: Makefile,v 1.1147 2013/07/05 13:04:48 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1232,8 +1232,6 @@
      SUBDIR += ruby-cucumber
      SUBDIR += ruby-daemon_controller
      SUBDIR += ruby-daemons
-     SUBDIR += ruby-debug
-     SUBDIR += ruby-debug-base
      SUBDIR += ruby-deep_merge
      SUBDIR += ruby-diff-lcs
      SUBDIR += ruby-echoe
@@ -1262,7 +1260,6 @@
      SUBDIR += ruby-kgio,ruby18
      SUBDIR += ruby-kgio,ruby19
      SUBDIR += ruby-kgio,ruby20
-     SUBDIR += ruby-linecache
      SUBDIR += ruby-locale
      SUBDIR += ruby-metaclass
      SUBDIR += ruby-minitest
