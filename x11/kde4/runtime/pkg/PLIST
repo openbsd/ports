@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/05/14 09:16:29 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/07/05 14:37:22 zhuk Exp $
 @conflict kdebase-<4
 @conflict kdesamba-<4
 @group wheel
@@ -22,7 +22,7 @@ bin/kde4
 @bin bin/kquitapp
 @bin bin/kreadconfig
 @bin bin/kstart
-@bin bin/ksvgtopng
+@bin bin/ksvgtopng4
 @bin bin/ktraderclient
 @bin bin/ktrash
 @bin bin/kuiserver

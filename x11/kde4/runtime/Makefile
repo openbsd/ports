@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2013/07/04 00:47:01 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2013/07/05 14:37:22 zhuk Exp $
 
 COMMENT =	KDE core run-time components
 DISTNAME =	kde-runtime-${MODKDE4_VERSION}
+REVISION =	0
 
 DPB_PROPERTIES =	parallel
 
