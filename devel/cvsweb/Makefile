@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2013/06/02 19:09:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.48 2013/07/05 07:23:33 jasper Exp $
 
 COMMENT=	CGI script to browse CVS repository trees
 
@@ -17,7 +17,7 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
 
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 CONFDIR=	${PREFIX}/conf
 
 CONFFILES=	cvsweb.conf cvsweb.conf-freebsd cvsweb.conf-netbsd \

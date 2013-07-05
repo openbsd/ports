@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/11 11:07:42 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2013/07/05 07:23:33 jasper Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl
 SHARED_ONLY=	Yes
@@ -83,7 +83,7 @@ MAKE_ENV=	CFLAGS+=-fPIC
 UTILS=	shp2img legend shptree shptreevis shptreetst scalebar \
 	sortshp tile4ms msencrypt
 
-PREFIX-main=	/var/www
+PREFIX-main=	${VARBASE}/www
 
 SUBST_VARS+=	PREFIX-main
 

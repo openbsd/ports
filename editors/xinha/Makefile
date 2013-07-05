@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:02:50 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/07/05 07:23:33 jasper Exp $
 
 COMMENT=	online HTML editor
 
@@ -21,7 +21,7 @@ NO_TEST=	Yes
 
 PKG_ARCH=	*
 
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=	${PREFIX}/xinha
 
 do-install:

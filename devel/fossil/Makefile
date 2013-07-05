@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2013/06/22 17:59:27 jturner Exp $
+# $OpenBSD: Makefile,v 1.39 2013/07/05 07:23:33 jasper Exp $
 
 COMMENT =		simple distributed software configuration management
 
@@ -30,7 +30,7 @@ CONFLICT_MARKER =	fossil-*-!static
 
 .if ${FLAVOR} == "static"
 CONFIGURE_ARGS +=	--static --with-openssl=none
-PREFIX =		/var/www
+PREFIX =		${VARBASE}/www
 CONFLICT_MARKER =	fossil-*-static
 .endif
 

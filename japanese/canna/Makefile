@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2013/03/11 11:12:33 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2013/07/05 07:23:33 jasper Exp $
 
 COMMENT-main= 	canna (kana-kanji converter) libraries
 COMMENT-dict=	canna (kana-kanji converter) dictionaries
@@ -39,19 +39,19 @@ PERMIT_PACKAGE_CDROM=	No Fee
 
 MULTI_PACKAGES=-main -dict -server
 
-PREFIX-dict=		/var/dict
+PREFIX-dict=		${VARBASE}/dict
 LIB_DEPENDS-server=	japanese/canna
 WANTLIB-server=	c canna
 
 SUBST_VARS=	DICT_DIR
 CONFIGURE_STYLE=imake
-CANNAOWNER=    daemon
-CANNAGROUP=    daemon
-DICT_DIR=	/var/dict/canna
-DIFF_ARGS=-U 2
+CANNAOWNER=	daemon
+CANNAGROUP=	daemon
+DICT_DIR=	${VARBASE}/dict/canna
+DIFF_ARGS=	-U 2
 
 MAKE_ENV+=      CANNAOWNER=${CANNAOWNER} CANNAGROUP=${CANNAGROUP} \
-		DICT_DIR=${DICT_DIR} CANNA_SPOOL=/var/spool/canna
+		DICT_DIR=${DICT_DIR} CANNA_SPOOL=${VARBASE}/spool/canna
 
 MAKE_FLAGS=	LIBRKC_VERSION=$(LIBRKC_VERSION) \
 		LIBRKC16_VERSION=$(LIBRKC16_VERSION) \
