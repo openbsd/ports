@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/21 08:45:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/07/05 21:43:06 espie Exp $
 
 COMMENT =		c++ protocol buffers
+NOT_FOR_ARCHS =		${GCC2_ARCHS}
 
 DISTNAME =		protobuf-2.4.1
 
