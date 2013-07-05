@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/05/05 19:24:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2013/07/05 09:34:35 jasper Exp $
 
 COMMENT =	web frontend for git repositories
 
@@ -24,7 +24,7 @@ USE_GMAKE =	yes
 MODULES =	converters/libiconv
 WANTLIB +=	c crypto pthread z
 
-PREFIX =	/var/www
+PREFIX =	${VARBASE}/www
 MAKE_FLAGS +=	V=1 NEEDS_LIBICONV=1 LDFLAGS+='-static -L${LOCALBASE}/lib'
 
 post-extract:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:44:50 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/07/05 09:34:36 jasper Exp $
 
 COMMENT=		web frontend to symon
 DISTNAME=		syweb-0.64
@@ -16,7 +16,7 @@ MASTER_SITES=		${HOMEPAGE}/philes/
 NO_TEST=		Yes
 NO_BUILD=		Yes
 
-PREFIX=			/var/www
+PREFIX=		${VARBASE}/www
 
 MODULES=		lang/php
 RUN_DEPENDS=		net/rrdtool

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/05/05 19:24:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2013/07/05 09:34:35 jasper Exp $
 
 COMMENT=	monitoring and reporting tool for bacula(8)
 
@@ -22,7 +22,7 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
 
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=	${PREFIX}/bacula-web
 TINSTDIR=	${TRUEPREFIX}/bacula-web
 SUBST_VARS=	INSTDIR TINSTDIR

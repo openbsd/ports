@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2013/06/06 21:13:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2013/07/05 09:34:35 jasper Exp $
 
 COMMENT=	easy and universal access to shared and/or personnal files
 
@@ -31,7 +31,7 @@ PKG_ARCH=	*
 
 WRKDIST=	${WRKDIR}/owncloud
 
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=	${PREFIX}/owncloud
 TINSTDIR=	${TRUEPREFIX}/owncloud
 SUBST_VARS=	INSTDIR TINSTDIR MODPHP_BIN

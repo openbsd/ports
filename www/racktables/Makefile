@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/04/17 14:25:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2013/07/05 09:34:36 jasper Exp $
 
 COMMENT=	web-based rack/IP management
 
@@ -26,7 +26,7 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
 
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 
 FAKE_FLAGS=     DESTDIR=${WRKINST} prefix=${PREFIX} \
 		datadir=/var/www \

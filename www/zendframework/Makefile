@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:44:50 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/07/05 09:34:36 jasper Exp $
 
 COMMENT=		framework for developing PHP web applications
 
@@ -24,7 +24,7 @@ PKG_ARCH=		*
 
 WRKDIST=		${WRKDIR}/ZendFramework-${V}
 
-PREFIX=			/var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=		${PREFIX}/zendframework
 SUBST_VARS=		INSTDIR
 

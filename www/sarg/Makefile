@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/06/23 19:23:29 rpe Exp $
+# $OpenBSD: Makefile,v 1.20 2013/07/05 09:34:36 jasper Exp $
 
 COMMENT=		Squid Analysis Report Generator
 
@@ -25,7 +25,7 @@ LIB_DEPENDS=		devel/pcre \
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--sysconfdir=${SYSCONFDIR}/sarg \
-			--enable-sargphp=/var/www/htdocs/sarg-php \
+			--enable-sargphp=${VARBASE}/www/htdocs/sarg-php \
 			--enable-fontdir=${SYSCONFDIR}/sarg/fonts \
 			--enable-imagedir=${SYSCONFDIR}/sarg/images
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \

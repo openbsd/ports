@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:44:41 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/07/05 09:34:35 jasper Exp $
 
 COMMENT=		easy to use and powerfull CMS
 
@@ -19,7 +19,7 @@ NO_TEST=		Yes
 PKG_ARCH=		*
 EXTRACT_ONLY=
 
-PREFIX= 		/var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=		${PREFIX}/cms/
 SUBST_VARS=		INSTDIR
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/16 11:52:34 rpe Exp $
+# $OpenBSD: Makefile,v 1.7 2013/07/05 09:34:35 jasper Exp $
 
 COMMENT=		free real-time logfile analyzer
 
@@ -23,7 +23,7 @@ NO_TEST=		Yes
 
 PKG_ARCH=		*
 
-PREFIX=			/var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=		${PREFIX}/awstats
 
 ACCESSLOG=		LogFile="${PREFIX}/logs/access_log"

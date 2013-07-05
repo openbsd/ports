@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/28 23:40:56 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2013/07/05 09:34:35 jasper Exp $
 
 COMMENT-main=	wrapper to run CGI applications via FastCGI
 COMMENT-static=	static-linked fcgi-cgi wrapper for chroot use
@@ -36,7 +36,7 @@ LIB_DEPENDS=	devel/libev \
 MODULES=	devel/gettext
 
 CONFIGURE_STYLE= gnu
-PREFIX-static=	/var/www/${TRUEPREFIX}
+PREFIX-static=	${VARBASE}/www/${TRUEPREFIX}
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

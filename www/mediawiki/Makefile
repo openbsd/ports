@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2013/05/04 08:45:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2013/07/05 09:34:35 jasper Exp $
 
 COMMENT =	web-based collaborative editing environment
 
@@ -19,7 +19,7 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
 
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=	${PREFIX}/mediawiki
 SUBST_VARS=	INSTDIR
 

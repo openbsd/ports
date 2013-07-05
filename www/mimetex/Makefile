@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:44:43 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/07/05 09:34:35 jasper Exp $
 
 COMMENT=		parse LaTeX math expressions into gif images
 
@@ -16,7 +16,7 @@ MASTER_SITES=		http://meta-planets.net/~openbsd/
 
 NO_TEST=     	Yes
 
-PREFIX=			/var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=		${PREFIX}/cgi-bin
 
 do-build:

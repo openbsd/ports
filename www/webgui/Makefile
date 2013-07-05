@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:44:50 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/07/05 09:34:36 jasper Exp $
 
 COMMENT=	fully featured mod_perl content management system
 
@@ -59,7 +59,7 @@ RUN_DEPENDS=	archivers/p5-Archive-Zip \
 NO_BUILD=	Yes
 NO_TEST=	Yes
 
-PREFIX=         /var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=        ${PREFIX}/WebGUI
 SUBST_VARS=     INSTDIR
 

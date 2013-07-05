@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/06/06 13:57:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2013/07/05 09:34:36 jasper Exp $
 
 COMMENT=		open source micro messaging platform
 
@@ -37,7 +37,7 @@ NO_BUILD=		Yes
 NO_TEST=		Yes
 PKG_ARCH=		*
 
-PREFIX=                 /var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=                ${PREFIX}/statusnet
 SUBST_VARS=             INSTDIR
 

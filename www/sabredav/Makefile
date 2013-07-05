@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:44:49 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/07/05 09:34:36 jasper Exp $
 
 COMMENT =	php5 WebDAV server
 DISTNAME =	Sabre_DAV-1.0.0
@@ -19,7 +19,7 @@ MASTER_SITES =		http://sabredav.googlecode.com/files/
 NO_TEST =		Yes
 NO_BUILD =		Yes
 
-PREFIX =	/var/www
+PREFIX =	${VARBASE}/www
 INSTDIR =	${PREFIX}/sabredav
 SUBST_VARS =	INSTDIR
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:44:50 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/07/05 09:34:36 jasper Exp $
 
 COMMENT-main =	yahoo ui library toolkit
 COMMENT-docs =	yahoo ui library examples
@@ -28,7 +28,7 @@ NO_TEST =	Yes
 
 PKG_ARCH =	*
 
-PREFIX =	/var/www
+PREFIX =	${VARBASE}/www
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/htdocs/yui

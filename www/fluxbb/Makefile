@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:44:42 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/07/05 09:34:35 jasper Exp $
 
 COMMENT =	fast, light, user-friendly web forum
 
@@ -21,7 +21,7 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
 
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=	${PREFIX}/fluxbb
 SUBST_VARS=	INSTDIR
 

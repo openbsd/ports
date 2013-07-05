@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:44:47 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/07/05 09:34:35 jasper Exp $
 
 COMMENT=		Markdown implementation for PHP
 
@@ -22,7 +22,7 @@ PKG_ARCH=       	*
 # Although this library is not PEAR, installing it into
 # ${PREFIX}/pear/lib will make sure it's picked up by PHP
 # without the need to adjust the include path in php.ini
-PREFIX=                 /var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=                ${PREFIX}/pear/lib/
 SUBST_VARS=             INSTDIR
 

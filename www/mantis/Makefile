@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/17 07:21:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2013/07/05 09:37:26 jasper Exp $
 
 COMMENT=	web based bug tracking
 
@@ -20,8 +20,8 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
 
-PREFIX=		/var/www
-INSTDIR=	/var/www/mantis
+PREFIX=		${VARBASE}/www
+INSTDIR=	${VARBASE}/www/mantis
 SUBST_VARS=	INSTDIR
 
 RUN_DEPENDS=	mail/femail,-chroot \

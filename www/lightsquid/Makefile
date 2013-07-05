@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:44:42 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/07/05 09:34:35 jasper Exp $
 
 COMMENT =		light and fast log analyzer for squid proxy
 
@@ -20,7 +20,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=lightsquid/}
 NO_BUILD =		Yes
 RUN_DEPENDS = 		graphics/p5-GD
 
-PREFIX = 		/var/www
+PREFIX =	${VARBASE}/www
 INSTDIR =		${PREFIX}/htdocs/lightsquid
 SUBST_VARS = 		INSTDIR
 

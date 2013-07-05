@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2013/03/11 11:44:40 espie Exp $
+# $OpenBSD: Makefile,v 1.55 2013/07/05 09:37:26 jasper Exp $
 
 COMMENT=	extremely fast program for analysing WWW logfiles
 
@@ -33,7 +33,7 @@ MODULES=	converters/libiconv
 ANALOGDIR=	${PREFIX}/share/analog
 CONFIGFILE=	${SYSCONFDIR}/analog.cfg
 DOCDIR=		${PREFIX}/share/doc/analog
-HTTPDIR=	/var/www
+HTTPDIR=	${VARBASE}/www
 IMAGEDIR=	/analog-images
 
 CFLAGS+=	-I${LOCALBASE}/include \

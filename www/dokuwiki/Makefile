@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/06/09 13:42:02 rpe Exp $
+# $OpenBSD: Makefile,v 1.11 2013/07/05 09:34:35 jasper Exp $
 
 COMMENT =	standards compliant, simple to use Wiki
 
@@ -22,7 +22,7 @@ PKG_ARCH =	*
 
 MODULES=	lang/php
 
-PREFIX =	/var/www
+PREFIX =	${VARBASE}/www
 INSTDIR =	${PREFIX}/dokuwiki
 TINSTDIR =	${TRUEPREFIX}/dokuwiki
 SUBST_VARS =	INSTDIR TINSTDIR

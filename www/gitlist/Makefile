@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/06/22 06:39:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2013/07/05 09:34:35 jasper Exp $
 
 COMMENT=		elegant and modern git repository browser
 
@@ -20,7 +20,7 @@ NO_BUILD=		Yes
 NO_TEST=		Yes
 PKG_ARCH=		*
 
-PREFIX=			/var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=		${PREFIX}/gitlist/
 TINSTDIR=		${TRUEPREFIX}/gitlist/
 SUBST_VARS=		INSTDIR TINSTDIR

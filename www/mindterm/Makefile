@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:44:43 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/07/05 09:37:26 jasper Exp $
 
 COMMENT=	web-based java SSH client
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	may not sell
 PERMIT_PACKAGE_FTP=	may not distribute as part of a commercial product
 PERMIT_DISTFILES_FTP=	Yes
 
-PREFIX?=	/var/www/htdocs
+PREFIX?=	${VARBASE}/www/htdocs
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

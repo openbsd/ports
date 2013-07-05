@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/05/26 09:30:55 kirby Exp $
+# $OpenBSD: Makefile,v 1.15 2013/07/05 09:34:35 jasper Exp $
 
 COMMENT=	web-based iCal file parser
 
@@ -22,7 +22,7 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
 
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=	${PREFIX}/phpicalendar
 SUBST_VARS=	INSTDIR
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:44:48 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/07/05 09:34:35 jasper Exp $
 
 COMMENT=	tool to handle the administration of PostgreSQL over the web
 
@@ -20,7 +20,7 @@ PKG_ARCH=	*
 
 MODULES=	lang/php
 
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=	${PREFIX}/phpPgAdmin
 SUBST_VARS=	INSTDIR
 

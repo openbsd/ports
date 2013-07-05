@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/21 08:48:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2013/07/05 09:37:26 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,7 +24,7 @@ BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS} \
 			devel/re2c>=0.13.4 \
 			devel/gindent
 
-WEBROOT=		/var/www
+WEBROOT=		${VARBASE}/www
 SUBST_VARS=		WEBROOT
 
 LIBTOOL_FLAGS=		--tag=disable-static

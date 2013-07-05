@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2013/03/11 11:44:48 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2013/07/05 09:34:35 jasper Exp $
 
 COMMENT=	web-based LDAP browser to manage LDAP servers
 
@@ -18,7 +18,7 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
 
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=	${PREFIX}/phpldapadmin
 SUBST_VARS=	INSTDIR
 

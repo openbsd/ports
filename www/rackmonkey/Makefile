@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/05/24 14:10:01 zhuk Exp $
+# $OpenBSD: Makefile,v 1.13 2013/07/05 09:34:36 jasper Exp $
 
 COMMENT=	web-based tool for managing racks of equipment
 
@@ -29,7 +29,7 @@ RUN_DEPENDS=	p5-DBD-SQLite-*|p5-DBD-Pg-*|p5-DBD-mysql-*:databases/p5-DBD-SQLite 
 		www/p5-HTML-Parser
 
 NO_TEST=	Yes
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 PKG_ARCH=	*
 
 do-configure:

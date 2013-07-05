@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:44:43 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/07/05 09:34:35 jasper Exp $
 
 COMMENT=	lightweight and easy to use web calendar
 
@@ -25,7 +25,7 @@ PKG_ARCH=	*
 
 WRKDIST=	${WRKDIR}/calendar
 
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=	${PREFIX}/cgi-bin
 
 do-install:

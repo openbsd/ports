@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.156 2013/06/26 17:28:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.157 2013/07/05 09:34:35 jasper Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -87,7 +87,7 @@ MODPY_ADJ_FILES=tools/python-scripts/optimize-imap.py \
 		ECtools/zarafa-utils/zarafa-mailbox-permissions \
 		ECtools/zarafa-utils/zarafa-set-oof
 
-WEBROOT=	/var/www
+WEBROOT=	${VARBASE}/www
 
 PREFIX-web=	${WEBROOT}
 INSTDIR=	${PREFIX-web}/zarafa-webaccess

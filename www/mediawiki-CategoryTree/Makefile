@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:44:43 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/07/05 09:34:35 jasper Exp $
 
 COMMENT =	dynamic view of the wiki's category structure as a tree
 
@@ -20,7 +20,7 @@ NO_BUILD =	Yes
 NO_TEST =	Yes
 PKG_ARCH =	*
 
-PREFIX =	/var/www
+PREFIX =	${VARBASE}/www
 EXTENSIONSDIR =	${PREFIX}/mediawiki/extensions
 
 RUN_DEPENDS =	www/mediawiki>=1.15.1

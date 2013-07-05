@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/11 11:44:47 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2013/07/05 09:37:26 jasper Exp $
 
 COMMENT=	Alternative PHP Cache
 
@@ -23,7 +23,7 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--disable-apc-mmap
 .endif
 
-WEBROOT=	/var/www
+WEBROOT=	${VARBASE}/www
 SUBST_VARS=	WEBROOT
 
 post-configure:

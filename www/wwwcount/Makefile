@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/11 11:44:50 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2013/07/05 09:37:26 jasper Exp $
 
 COMMENT=	access counter, clock and date for WWW pages
 
@@ -23,7 +23,7 @@ WANTLIB=		c
 CONFIGURE_STYLE=gnu
 USE_GROFF =	Yes
 
-WWWDIR=		/var/www
+WWWDIR=		${VARBASE}/www
 
 pre-configure:
 	@sed -e "s,@PREFIX@,${PREFIX},g" -e "s,@WWWDIR@,${WWWDIR},g" \

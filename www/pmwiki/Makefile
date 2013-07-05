@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:44:48 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/07/05 09:34:35 jasper Exp $
 
 COMMENT=	wiki-based system for collaborative creation of websites
 
@@ -19,7 +19,7 @@ NO_TEST=	Yes
 PKG_ARCH=	*
 EXTRACT_ONLY=
 
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=	${PREFIX}/pmwiki
 SUBST_VARS=	INSTDIR
 

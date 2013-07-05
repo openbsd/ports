@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:44:50 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/07/05 09:34:36 jasper Exp $
 
 COMMENT=	customer relationship management (CRM) software
 
@@ -20,7 +20,7 @@ NO_TEST=	Yes
 PKG_ARCH=	*
 WRKDIST=	${WRKDIR}/vtigercrm
 
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=	${PREFIX}/vtigercrm
 SUBST_VARS=	INSTDIR
 

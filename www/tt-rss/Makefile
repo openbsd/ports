@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/06/04 19:59:37 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2013/07/05 09:34:36 jasper Exp $
 
 COMMENT=		webbased rss reader with standalone look and feel
 
@@ -18,7 +18,7 @@ NO_BUILD=		Yes
 NO_TEST=		Yes
 PKG_ARCH=		*
 
-PREFIX=			/var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=		${PREFIX}/tt-rss
 SUBST_VARS=		INSTDIR MODPHP_BIN
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/20 10:38:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2013/07/05 09:34:35 jasper Exp $
 
 COMMENT=	building material for websites
 
@@ -19,7 +19,7 @@ NO_TEST=	Yes
 PKG_ARCH=	*
 EXTRACT_ONLY=
 
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=	${PREFIX}/concrete5
 SUBST_VARS=	INSTDIR
 

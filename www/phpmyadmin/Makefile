@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2013/07/03 08:00:11 giovanni Exp $
+# $OpenBSD: Makefile,v 1.88 2013/07/05 09:34:35 jasper Exp $
 
 COMMENT=	tool to handle the administration of MySQL over the web
 
@@ -20,7 +20,7 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
 
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=	${PREFIX}/phpMyAdmin
 SUBST_VARS=	INSTDIR V
 

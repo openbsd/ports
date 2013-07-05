@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:44:41 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/07/05 09:34:35 jasper Exp $
 
 COMMENT =	professional PHP application framework
 
@@ -23,7 +23,7 @@ NO_BUILD =	Yes
 NO_TEST =	Yes
 PKG_ARCH =	*
 
-PREFIX =	/var/www
+PREFIX =	${VARBASE}/www
 INSTDIR =	${PREFIX}/ezpublish
 SUBST_VARS =	INSTDIR
 

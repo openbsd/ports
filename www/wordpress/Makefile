@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2013/06/27 15:04:04 kirby Exp $
+# $OpenBSD: Makefile,v 1.47 2013/07/05 09:34:36 jasper Exp $
 
 COMMENT =	standard compliant weblog
 
@@ -21,7 +21,7 @@ NO_BUILD =	Yes
 NO_TEST =	Yes
 PKG_ARCH =	*
 
-PREFIX =	/var/www
+PREFIX =	${VARBASE}/www
 INSTDIR =	${PREFIX}/wordpress
 WRKDIST =	${WRKDIR}/wordpress
 

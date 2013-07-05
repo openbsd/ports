@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:44:50 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/07/05 09:34:36 jasper Exp $
 
 COMMENT=	web-based collaboration platform
 
@@ -22,7 +22,7 @@ RUN_DEPENDS=	www/p5-CGI-Session
 
 WRKDIST=	${WRKDIR}
 
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 WWWDOCDIR=	${PREFIX}/htdocs/twiki
 WWWCGIDIR=	${PREFIX}/cgi-bin/twiki
 SUBST_VARS=	WWWDOCDIR WWWCGIDIR

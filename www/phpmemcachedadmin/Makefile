@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:44:48 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/07/05 09:34:35 jasper Exp $
 
 COMMENT=	memcached server admin in PHP
 
@@ -23,7 +23,7 @@ NO_TEST=		Yes
 
 PKG_ARCH=		*
 WRKDIST=		${WRKDIR}
-PREFIX=			/var/www
+PREFIX=		${VARBASE}/www
 
 post-extract:
 	cd ${WRKSRC} && mkdir phpMemcachedAdmin && \

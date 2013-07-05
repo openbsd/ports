@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/04/04 16:28:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2013/07/05 09:34:36 jasper Exp $
 
 COMMENT=	innovative open source CMS and framework
 
@@ -29,7 +29,7 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
 
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=	${PREFIX}/silverstripe/
 SUBST_VARS+=	INSTDIR
 

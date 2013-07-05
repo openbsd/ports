@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:44:41 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/07/05 09:34:35 jasper Exp $
 
 COMMENT =	Andrew's web libraries for PHP
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		http://debian.mcmillan.net.nz/packages/awl/
 
-PREFIX =	/var/www
+PREFIX =	${VARBASE}/www
 INSTDIR =	${PREFIX}/awl
 SUBST_VARS =	INSTDIR
 NO_BUILD =	Yes

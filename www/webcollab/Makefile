@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:44:50 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/07/05 09:34:36 jasper Exp $
 
 COMMENT=	collaborative web-based system for project management
 
@@ -24,7 +24,7 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
 
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=	${PREFIX}/webcollab
 SUBST_VARS=	INSTDIR
 

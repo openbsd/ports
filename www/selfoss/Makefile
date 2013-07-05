@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/11 10:54:36 rpe Exp $
+# $OpenBSD: Makefile,v 1.3 2013/07/05 09:34:36 jasper Exp $
 
 COMMENT=		rss reader, live stream, mashup, aggregation webapp
 
@@ -23,7 +23,7 @@ NO_BUILD=		Yes
 NO_TEST=		Yes
 PKG_ARCH=		*
 
-PREFIX=			/var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=		${PREFIX}/selfoss
 TINSTDIR=		${TRUEPREFIX}/selfoss
 SUBST_VARS=		INSTDIR MODPHP_VERSION TINSTDIR

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:44:47 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/07/05 09:34:35 jasper Exp $
 
 COMMENT-main=	base classes for common PHP tasks
 COMMENT-utils=	utilities for managing pear extensions
@@ -25,7 +25,7 @@ BUILD_DEPENDS=		${_MODPHP_BUILD_DEPENDS}
 RUN_DEPENDS-main=	www/pear,-utils
 
 # Most of pear have to live in /var/www where apache is chroot'ed to.
-PREFIX-main=	/var/www
+PREFIX-main=	${VARBASE}/www
 PREFIX-utils=	/usr/local
 
 NO_BUILD=	Yes

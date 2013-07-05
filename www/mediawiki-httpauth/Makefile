@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:44:43 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/07/05 09:34:35 jasper Exp $
 
 COMMENT =	MediaWiki extension for http based authentication
 
@@ -19,7 +19,7 @@ NO_BUILD =	Yes
 NO_TEST =	Yes
 PKG_ARCH =	*
 
-PREFIX =	/var/www
+PREFIX =	${VARBASE}/www
 EXTENSIONSDIR =	${PREFIX}/mediawiki/extensions
 
 RUN_DEPENDS =	www/mediawiki>=1.13.2

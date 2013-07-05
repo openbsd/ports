@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/14 09:04:23 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.17 2013/07/05 09:34:35 jasper Exp $
 
 COMMENT =		PHP client library for the Redis key-value database
 
@@ -22,7 +22,7 @@ NO_BUILD =		Yes
 NO_TEST =		Yes
 PKG_ARCH =		*
 
-PREFIX =		/var/www
+PREFIX =	${VARBASE}/www
 INSTDIR =		${PREFIX}/pear/lib/
 SUBST_VARS =		INSTDIR
 
