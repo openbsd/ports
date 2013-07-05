@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/21 08:45:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2013/07/05 06:20:58 espie Exp $
 
 COMMENT=		library for tracking application startup
 
 DISTNAME=		startup-notification-0.12
 CATEGORIES=		devel x11
+NOT_FOR_ARCHS =		${GCC2_ARCHS}
 
 REVISION=		0
 
