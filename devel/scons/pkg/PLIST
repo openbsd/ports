@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/05/31 09:06:48 ckuethe Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/07/05 20:09:59 bentley Exp $
 bin/scons
 bin/scons-${VERSION}
 bin/scons-time
@@ -123,6 +123,8 @@ lib/scons-${VERSION}/SCons/Tool/CVS.py
 lib/scons-${VERSION}/SCons/Tool/CVS.pyc
 lib/scons-${VERSION}/SCons/Tool/FortranCommon.py
 lib/scons-${VERSION}/SCons/Tool/FortranCommon.pyc
+lib/scons-${VERSION}/SCons/Tool/GettextCommon.py
+lib/scons-${VERSION}/SCons/Tool/GettextCommon.pyc
 lib/scons-${VERSION}/SCons/Tool/JavaCommon.py
 lib/scons-${VERSION}/SCons/Tool/JavaCommon.pyc
 lib/scons-${VERSION}/SCons/Tool/MSCommon/
@@ -184,6 +186,8 @@ lib/scons-${VERSION}/SCons/Tool/dvipdf.py
 lib/scons-${VERSION}/SCons/Tool/dvipdf.pyc
 lib/scons-${VERSION}/SCons/Tool/dvips.py
 lib/scons-${VERSION}/SCons/Tool/dvips.pyc
+lib/scons-${VERSION}/SCons/Tool/f03.py
+lib/scons-${VERSION}/SCons/Tool/f03.pyc
 lib/scons-${VERSION}/SCons/Tool/f77.py
 lib/scons-${VERSION}/SCons/Tool/f77.pyc
 lib/scons-${VERSION}/SCons/Tool/f90.py
@@ -202,6 +206,8 @@ lib/scons-${VERSION}/SCons/Tool/gas.py
 lib/scons-${VERSION}/SCons/Tool/gas.pyc
 lib/scons-${VERSION}/SCons/Tool/gcc.py
 lib/scons-${VERSION}/SCons/Tool/gcc.pyc
+lib/scons-${VERSION}/SCons/Tool/gettext.py
+lib/scons-${VERSION}/SCons/Tool/gettext.pyc
 lib/scons-${VERSION}/SCons/Tool/gfortran.py
 lib/scons-${VERSION}/SCons/Tool/gfortran.pyc
 lib/scons-${VERSION}/SCons/Tool/gnulink.py
@@ -254,6 +260,12 @@ lib/scons-${VERSION}/SCons/Tool/midl.py
 lib/scons-${VERSION}/SCons/Tool/midl.pyc
 lib/scons-${VERSION}/SCons/Tool/mingw.py
 lib/scons-${VERSION}/SCons/Tool/mingw.pyc
+lib/scons-${VERSION}/SCons/Tool/msgfmt.py
+lib/scons-${VERSION}/SCons/Tool/msgfmt.pyc
+lib/scons-${VERSION}/SCons/Tool/msginit.py
+lib/scons-${VERSION}/SCons/Tool/msginit.pyc
+lib/scons-${VERSION}/SCons/Tool/msgmerge.py
+lib/scons-${VERSION}/SCons/Tool/msgmerge.pyc
 lib/scons-${VERSION}/SCons/Tool/mslib.py
 lib/scons-${VERSION}/SCons/Tool/mslib.pyc
 lib/scons-${VERSION}/SCons/Tool/mslink.py
@@ -305,6 +317,8 @@ lib/scons-${VERSION}/SCons/Tool/rpcgen.py
 lib/scons-${VERSION}/SCons/Tool/rpcgen.pyc
 lib/scons-${VERSION}/SCons/Tool/rpm.py
 lib/scons-${VERSION}/SCons/Tool/rpm.pyc
+lib/scons-${VERSION}/SCons/Tool/rpmutils.py
+lib/scons-${VERSION}/SCons/Tool/rpmutils.pyc
 lib/scons-${VERSION}/SCons/Tool/sgiar.py
 lib/scons-${VERSION}/SCons/Tool/sgiar.pyc
 lib/scons-${VERSION}/SCons/Tool/sgic++.py
@@ -339,6 +353,8 @@ lib/scons-${VERSION}/SCons/Tool/tlib.py
 lib/scons-${VERSION}/SCons/Tool/tlib.pyc
 lib/scons-${VERSION}/SCons/Tool/wix.py
 lib/scons-${VERSION}/SCons/Tool/wix.pyc
+lib/scons-${VERSION}/SCons/Tool/xgettext.py
+lib/scons-${VERSION}/SCons/Tool/xgettext.pyc
 lib/scons-${VERSION}/SCons/Tool/yacc.py
 lib/scons-${VERSION}/SCons/Tool/yacc.pyc
 lib/scons-${VERSION}/SCons/Tool/zip.py

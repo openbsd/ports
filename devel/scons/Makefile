@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 10:50:30 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/07/05 20:09:59 bentley Exp $
 
 COMMENT=	Python-based build system
 
-VERSION=	2.0.1
+VERSION =	2.3.0
 DISTNAME=	scons-${VERSION}
 CATEGORIES=	devel
-REVISION =	2
 
 HOMEPAGE=	http://www.scons.org/
 
@@ -21,9 +20,7 @@ NO_TEST=	Yes
 
 SUBST_VARS+=	VERSION
 
-post-extract:
-	@perl -pi -e 's,^#!.*python$$,#!${MODPY_BIN},' \
-		${WRKSRC}/script/scons{,ign,-time}
+MODPY_ADJ_FILES +=	script/scons script/sconsign script/scons-time
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/scons{,ign,-time}.1 ${PREFIX}/man/man1
