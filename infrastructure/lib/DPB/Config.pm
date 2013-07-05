@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.4 2013/06/23 13:19:33 espie Exp $
+# $OpenBSD: Config.pm,v 1.5 2013/07/05 13:49:50 pirofti Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -61,9 +61,9 @@ sub parse_command_line
 	};
 
 	$state->SUPER_handle_options('acemqrRstuUvh:S:xX:A:C:f:F:I:j:J:M:p:P:b:l:L:',
-    "[-acemrRsuUvx] [-A arch] [-C plist] [-f N] [-F N] [-I plist] [-J p] [-j N]",
-    "[-p parallel] [-P plist] [-h hosts] [-L logdir] [-l lockdir] [-b log]",
-    "[-M threshold] [-X plist] [path ...]");
+    "[-acemqrRsuUvx] [-A arch] [-C plist] [-f m] [-F m] [-I pathlist] [-J p]",
+    "[-j n] [-p parallel] [-P pathlist] [-h hosts] [-L logdir] [-l lockdir]",
+    "[-b log] [-M threshold] [-X pathlist] [pathlist ...]");
     	$state->{fullrepo} = join("/", $state->{repo}, $state->arch, "all");
 	$state->{logdir} = $state->{flogdir} // $ENV{LOGDIR} // '%p/logs/%a';
 	$state->{lockdir} //= $state->{flockdir} // "%L/locks";

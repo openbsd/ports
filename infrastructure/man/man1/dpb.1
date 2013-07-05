@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.82 2013/06/24 20:30:56 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.83 2013/07/05 13:49:50 pirofti Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: June 24 2013 $
+.Dd $Mdocdate: July 5 2013 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -23,7 +23,7 @@
 .Sh SYNOPSIS
 .Nm dpb
 .Bk -words
-.Op Fl acemqrRsuUx
+.Op Fl acemqrRsuUvx
 .Op Fl A Ar arch
 .Op Fl b Ar logfile
 .Op Fl C Ar pathlist
@@ -38,6 +38,7 @@
 .Op Fl l Ar lockdir
 .Op Fl M Ar threshold
 .Op Fl P Ar pathlist
+.Op Fl p Ar parallel
 .Op Fl S Ar logfile
 .Op Fl X Ar pathlist
 .Op Ar pathlist ...
