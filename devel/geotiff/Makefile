@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/21 08:45:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2013/07/05 06:12:53 espie Exp $
 
 COMMENT=	GIS TIFF interchange library
 
@@ -17,7 +17,7 @@ MASTER_SITES=		ftp://ftp.remotesensing.org/geotiff/libgeotiff/ \
 			http://download.osgeo.org/geotiff/libgeotiff/
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV +=	CFLAGS="-I${LOCALBASE}/include -fPIC" \
+CONFIGURE_ENV +=	CFLAGS="-I${LOCALBASE}/include -fPIC $(COPTS)" \
 			LDFLAGS=-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS=		--with-jpeg=${LOCALBASE} \
