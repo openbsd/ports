@@ -1,13 +1,15 @@
-$OpenBSD: patch-kde-dev-scripts_svn2log_sh,v 1.1.1.1 2013/04/24 19:04:15 zhuk Exp $
---- kde-dev-scripts/svn2log.sh.orig	Sun Apr  7 13:27:40 2013
-+++ kde-dev-scripts/svn2log.sh	Wed Apr 10 16:56:43 2013
+$OpenBSD: patch-kde-dev-scripts_svn2log_sh,v 1.2 2013/07/05 14:32:50 zhuk Exp $
+Cleanup development scripts, making them more portable and secure.
+Upstream review 110858: http://git.reviewboard.kde.org/r/110858/
+--- kde-dev-scripts/svn2log.sh.orig	Fri Jun 28 22:03:13 2013
++++ kde-dev-scripts/svn2log.sh	Fri Jul  5 18:14:32 2013
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
  #
  # Shell script for creating a ChangeLog file from SVN
  #
-@@ -11,12 +11,12 @@ if test -z "$PARAM"; then
+@@ -11,12 +11,13 @@ if test -z "$PARAM"; then
      PARAM=".";
  fi;
  
@@ -19,6 +21,7 @@ $OpenBSD: patch-kde-dev-scripts_svn2log_sh,v 1.1.1.1 2013/04/24 19:04:15 zhuk Ex
  
  echo "Creating changelog...";
 -svn log -v --xml $1 | python $CURRENT/svn2log.py --users=/tmp/accounts.$PPID --users-charset=UTF8
-+svn log -v --xml $1 | ${MODPY_BIN} $CURRENT/svn2log.py --users=/tmp/accounts.$PPID --users-charset=UTF8
++PYTHON=${PYTHON:-python}
++svn log -v --xml $1 | ${PYTHON} $CURRENT/svn2log.py --users=/tmp/accounts.$PPID --users-charset=UTF8
  
  rm /tmp/accounts.$PPID

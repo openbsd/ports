@@ -1,6 +1,14 @@
-$OpenBSD: patch-kde-dev-scripts_package_crystalsvg,v 1.1.1.1 2013/04/24 19:04:15 zhuk Exp $
---- kde-dev-scripts/package_crystalsvg.orig	Sun Apr  7 13:27:40 2013
-+++ kde-dev-scripts/package_crystalsvg	Sun Apr  7 14:19:44 2013
+$OpenBSD: patch-kde-dev-scripts_package_crystalsvg,v 1.2 2013/07/05 14:32:50 zhuk Exp $
+Cleanup development scripts, making them more portable and secure.
+Upstream review 110858: http://git.reviewboard.kde.org/r/110858/
+--- kde-dev-scripts/package_crystalsvg.orig	Fri Jun 28 22:03:13 2013
++++ kde-dev-scripts/package_crystalsvg	Fri Jul  5 18:14:32 2013
+@@ -1,4 +1,4 @@
+-#! /usr/bin/env bash
++#!/bin/sh
+ echo -n "Starting up..."
+ #
+ # Copyright (C) 2004 Frans Englich <frans.englich@telia.com>
 @@ -66,8 +66,8 @@ if [ ! -r $LICENSE ]; then
  	exit 1;
  fi
@@ -12,32 +20,43 @@ $OpenBSD: patch-kde-dev-scripts_package_crystalsvg,v 1.1.1.1 2013/04/24 19:04:15
  mkdir "$PKGDIR"
  
  echo "done" # Startup
-@@ -96,7 +96,7 @@ echo "$SVGFILES" | sed -e s,"$SEARCH_DIR",,g | sort >>
+@@ -77,7 +77,7 @@ FILES="$PKGDIR/FILES"
+ echo -n "Searching for the SVG files..."
+ SVGFILES=$(find "$SEARCH_DIR" -name "cr*.svg*" -type f)
+ if [ $? -ne 0 ]; then
+-	echo "There was an error when searching for the files. Exiting."
++	echo "There was an error when searching for the files. Exiting." >&2
+ 	exit 1;
+ fi
+ echo "done" # Search
+@@ -95,8 +95,8 @@ echo "$SVGFILES" | sed -e s,"$SEARCH_DIR",,g | sort >>
+ 
  cp "$LICENSE" "$PKGDIR/LICENSE"
  
- # Copy the SVG files
+-# Copy the SVG files
 -echo "$SVGFILES" | xargs cp --target-directory "$PKGDIR"
-+echo "$SVGFILES" | xargs -J % cp -- % "$PKGDIR"
++# Copy the SVG files, portable way
++for F in $SVGFILES; do cp -- "$F" "$PKGDIR"; done
  
  # Fill the README file
  README="$PKGDIR/README"
-@@ -156,12 +156,12 @@ echo "done" # Generating
+@@ -156,14 +156,8 @@ echo "done" # Generating
  # Package it
  echo -n "Packaging the files..."
  
 -nice -n$NICE tar --create --label 'Contains the SVG files used in KDE, extracted from the sources' \
 -	--directory "$TMPDIR" --bzip2 --file "$PKGPATH/$PKGNAME".tar.bz2 "$PKGNAME" 2> /dev/null
-+nice -n$NICE gtar --create --label 'Contains the SVG files used in KDE, extracted from the sources' \
-+	--directory "$TDIR" --bzip2 --file "$PKGPATH/$PKGNAME".tar.bz2 "$PKGNAME" 2> /dev/null
++nice -n$NICE tar -cjf "$PKGPATH/$PKGNAME".tar.bz2" -C "$TDIR" "$PKGNAME" 2>/dev/null
  
- 
- 
+-
+-
 -#nice -n$NICE tar --create --label 'Contains the SVG files used in KDE, extracted from the sources' \
-+#nice -n$NICE gtar --create --label 'Contains the SVG files used in KDE, extracted from the sources' \
- 	#--bzip2 --file "$PKGPATH"/$(eval echo "$PKGNAME").tar.bz2 --files-from "$FILESTMP" \
- 	#$LICENSE $README 2> /dev/null
+-	#--bzip2 --file "$PKGPATH"/$(eval echo "$PKGNAME").tar.bz2 --files-from "$FILESTMP" \
+-	#$LICENSE $README 2> /dev/null
  if [ $? -ne 0 ]; then
-@@ -173,7 +173,7 @@ echo "done" # Packaging
+ 	echo "There was an error while packaging the files. Exiting."
+ 	exit 1;
+@@ -173,7 +167,7 @@ echo "done" # Packaging
  
  
  # Clean up

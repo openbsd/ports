@@ -1,6 +1,8 @@
-$OpenBSD: patch-kde-dev-scripts_qt4_convert-killtimers_pl,v 1.1.1.1 2013/04/24 19:04:15 zhuk Exp $
---- kde-dev-scripts/qt4/convert-killtimers.pl.orig	Sun Apr  7 13:27:40 2013
-+++ kde-dev-scripts/qt4/convert-killtimers.pl	Sun Apr  7 14:39:01 2013
+$OpenBSD: patch-kde-dev-scripts_qt4_convert-killtimers_pl,v 1.2 2013/07/05 14:32:50 zhuk Exp $
+Cleanup development scripts, making them more portable and secure.
+Upstream review 110858: http://git.reviewboard.kde.org/r/110858/
+--- kde-dev-scripts/qt4/convert-killtimers.pl.orig	Fri Jun 28 22:03:13 2013
++++ kde-dev-scripts/qt4/convert-killtimers.pl	Fri Jul  5 18:14:32 2013
 @@ -6,7 +6,7 @@
  use File::Basename;
  use lib dirname( $0 );

@@ -1,6 +1,8 @@
-$OpenBSD: patch-kde-dev-scripts_qt4_convert-qgridlayout_pl,v 1.1.1.1 2013/04/24 19:04:15 zhuk Exp $
---- kde-dev-scripts/qt4/convert-qgridlayout.pl.orig	Sun Apr  7 13:27:40 2013
-+++ kde-dev-scripts/qt4/convert-qgridlayout.pl	Sun Apr  7 15:05:51 2013
+$OpenBSD: patch-kde-dev-scripts_qt4_convert-qgridlayout_pl,v 1.2 2013/07/05 14:32:50 zhuk Exp $
+Cleanup development scripts, making them more portable and secure.
+Upstream review 110858: http://git.reviewboard.kde.org/r/110858/
+--- kde-dev-scripts/qt4/convert-qgridlayout.pl.orig	Fri Jun 28 22:03:13 2013
++++ kde-dev-scripts/qt4/convert-qgridlayout.pl	Fri Jul  5 18:14:32 2013
 @@ -19,15 +19,16 @@ use lib dirname( $0 );
  use functionUtilkde;
  use strict;
