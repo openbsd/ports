@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/07/04 00:47:03 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/07/05 14:30:45 zhuk Exp $
 @conflict kdesvn-*
 bin/adddebug
 bin/build-progress.sh
@@ -40,7 +40,7 @@ bin/kdedoc
 bin/kdekillall
 bin/kdelnk2desktop.py
 bin/kdemangen.pl
-@bin bin/kio_svn_helper
+@bin bin/kio_svn_helper4
 @bin bin/kompare
 @bin bin/kpartloader
 bin/krazy-licensecheck
