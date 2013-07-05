@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2013/07/05 06:34:46 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/07/05 21:32:21 brad Exp $
+
+NOT_FOR_ARCHS=	${GCC2_ARCHS}
 
 COMMENT=	free H.264/MPEG-4 AVC encoder
 
@@ -8,7 +10,6 @@ PKGNAME=	x264-${V}
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/
 EXTRACT_SUFX=	.tar.bz2
-NOT_FOR_ARCHS =	${GCC2_ARCHS}
 
 SHARED_LIBS=	x264	11.0
 
