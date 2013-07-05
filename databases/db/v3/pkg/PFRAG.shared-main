@@ -1,5 +1,7 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.1 2006/11/25 22:54:27 steven Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.2 2013/07/05 12:03:52 espie Exp $
 @lib lib/db/libdb.so.${LIBdb_VERSION}
+lib/db/libdb.la
 @lib lib/db/libdb_cxx.so.${LIBdb_cxx_VERSION}
+lib/db/libdb_cxx.la
 @lib lib/libdb.so.${LIBdb_VERSION}
 @lib lib/libdb_cxx.so.${LIBdb_cxx_VERSION}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/25 22:54:28 steven Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2013/07/05 12:03:52 espie Exp $
 @option no-default-conflict
 @conflict db->=3,<4
 @pkgpath databases/db/v3,no_tcl
@@ -19,12 +19,12 @@ include/db/db.h
 include/db/db_185.h
 include/db/db_cxx.h
 lib/db/
+@comment XXX can't lose the frag, .la only built when shared
+%%SHARED%%
 lib/db/libdb.a
-lib/db/libdb.la
 @comment lib/db/libdb.so
 @comment lib/db/libdb.so.3
 lib/db/libdb_cxx.a
-lib/db/libdb_cxx.la
 @comment lib/db/libdb_cxx.so
 @comment lib/db/libdb_cxx.so.3
 share/doc/db/
@@ -707,4 +707,3 @@ share/examples/db/ex_lock.c
 share/examples/db/ex_mpool.c
 share/examples/db/ex_thread.c
 share/examples/db/ex_tpcb.c
-%%SHARED%%
