@@ -1,7 +1,8 @@
-$OpenBSD: patch-cmake_modules_PythonMacros_cmake,v 1.2 2013/07/04 00:46:31 zhuk Exp $
-Unbreak build with Ninja.
---- cmake/modules/PythonMacros.cmake.orig	Fri Jun 28 18:54:56 2013
-+++ cmake/modules/PythonMacros.cmake	Fri Jun 28 18:58:54 2013
+$OpenBSD: patch-cmake_modules_PythonMacros_cmake,v 1.3 2013/07/05 21:50:52 zhuk Exp $
+Unbreak build of Python-based KDE apps (with Ninja).
+Upstream review: https://git.reviewboard.kde.org/r/111371/
+--- cmake/modules/PythonMacros.cmake.orig	Fri Jun 28 21:03:40 2013
++++ cmake/modules/PythonMacros.cmake	Sat Jul  6 01:38:22 2013
 @@ -20,8 +20,6 @@ macro(PYTHON_INSTALL SOURCE_FILE DESTINATION_DIR)
  
    find_file(_python_compile_py PythonCompile.py PATHS ${CMAKE_MODULE_PATH})
@@ -11,17 +12,19 @@ Unbreak build with Ninja.
    # Install the source file.
    install(FILES ${SOURCE_FILE} DESTINATION ${DESTINATION_DIR})
  
-@@ -53,18 +51,19 @@ macro(PYTHON_INSTALL SOURCE_FILE DESTINATION_DIR)
- 
+@@ -54,17 +52,21 @@ macro(PYTHON_INSTALL SOURCE_FILE DESTINATION_DIR)
      # Setting because it will be displayed later, in compile_python_files
      set(_message "Byte-compiling ${_bin_py} to ${_bin_pyc}")
-+    add_custom_target(${_bin_pyc} ALL)
  
++    string(REPLACE "/" "_" _rule_name "${_basepath}/${_bin_pyc}")
++    add_custom_target("${_rule_name}" ALL)
++    message("TARGET: ${_rule_name}:  ${_bin_py} => ${_bin_pyc}")
++
      get_filename_component(_abs_bin_py ${_bin_py} ABSOLUTE)
      if(_abs_bin_py STREQUAL _absfilename)    # Don't copy the file onto itself.
        add_custom_command(
 -        TARGET compile_python_files
-+        TARGET "${_bin_pyc}"
++        TARGET "${_rule_name}"
          COMMAND "${CMAKE_COMMAND}" -E echo "${_message}"
          COMMAND "${PYTHON_EXECUTABLE}" "${_python_compile_py}" "${_bin_py}"
          DEPENDS "${_absfilename}"
@@ -29,7 +32,7 @@ Unbreak build with Ninja.
      else()
        add_custom_command(
 -        TARGET compile_python_files
-+        TARGET "${_bin_pyc}"
++        TARGET "${_rule_name}"
          COMMAND "${CMAKE_COMMAND}" -E echo "${_message}"
          COMMAND "${CMAKE_COMMAND}" -E copy "${_absfilename}" "${_bin_py}"
          COMMAND "${PYTHON_EXECUTABLE}" "${_python_compile_py}" "${_bin_py}"

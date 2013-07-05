@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2013/07/04 00:46:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.28 2013/07/05 21:50:52 zhuk Exp $
 
 COMMENT =	KDE core libraries
 DISTNAME =	kdelibs-${MODKDE4_VERSION}
 PKGSPEC =	kdelibs->=4
+REVISION =	0
 
 DPB_PROPERTIES =	parallel
 
