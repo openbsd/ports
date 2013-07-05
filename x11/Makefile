@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.518 2013/07/01 05:10:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.519 2013/07/05 14:55:41 zhuk Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -128,6 +128,7 @@
      SUBDIR += iwidgets
      SUBDIR += jwm
      SUBDIR += kde
+     SUBDIR += kde4
      SUBDIR += kdirstat
      SUBDIR += keybinder
      SUBDIR += keynav
@@ -222,7 +223,6 @@
      SUBDIR += roxterm
      SUBDIR += ruby-dbus
      SUBDIR += ruby-profligacy
-     SUBDIR += ruby-qt4
      SUBDIR += rxvt
      SUBDIR += rxvt-unicode
      SUBDIR += sakura
