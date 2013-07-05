@@ -1,0 +1,2 @@
+This module collects ip validation routines to make input validation,
+and untainting easier and more readable.
