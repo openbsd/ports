@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/06/12 20:36:34 brad Exp $
+# $OpenBSD: Makefile,v 1.8 2013/07/05 07:44:59 jasper Exp $
 
 COMMENT =			network discovery tool
 
@@ -36,7 +36,7 @@ RUN_DEPENDS =			databases/mysql,-server \
 NO_BUILD =			Yes
 PKG_ARCH =			*
 
-PREFIX =			/var/www
+PREFIX =			${VARBASE}/www
 INSTDIR =			${PREFIX}/nedi
 
 post-extract:

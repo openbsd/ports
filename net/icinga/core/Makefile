@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2013/07/03 09:30:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2013/07/05 07:44:59 jasper Exp $
 
 V =			1.9.2
 
@@ -14,7 +14,7 @@ PKGNAME-ido =		icinga-idoutils-$V
 WANTLIB =		c crypto m pthread ssl
 
 MULTI_PACKAGES =	-main -cgi -ido
-PREFIX-cgi =		/var/www
+PREFIX-cgi =		${VARBASE}/www
 SUBST_VARS +=		PREFIX-cgi BASESYSCONFDIR
 
 RUN_DEPENDS =		${BASE_PKGPATH},-main

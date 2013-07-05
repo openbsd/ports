@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/06/29 10:21:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2013/07/05 07:44:59 jasper Exp $
 
 COMMENT=	lightweight CalDAV and CardDAV server
 
@@ -25,7 +25,7 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
 
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=	${PREFIX}/baikal/
 SUBST_VARS=	INSTDIR
 

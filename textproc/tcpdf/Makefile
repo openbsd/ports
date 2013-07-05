@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/11 11:42:47 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/07/05 07:45:00 jasper Exp $
 
 COMMENT=	PHP class for generating PDF documents
 DISTNAME=	tcpdf_5_9_068
@@ -21,7 +21,7 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 
 WRKDIST=	${WRKDIR}/tcpdf
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=	${PREFIX}/tcpdf
 
 do-install:

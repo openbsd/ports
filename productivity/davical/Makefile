@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/05/05 19:24:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2013/07/05 07:45:00 jasper Exp $
 
 COMMENT =	CalDAV/CardDav calendar/contacts server
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =	http://debian.mcmillan.net.nz/packages/davical/
 
 MODULES =	lang/php
-PREFIX =	/var/www
+PREFIX =	${VARBASE}/www
 INSTDIR =	${PREFIX}/davical
 TINSTDIR =	${TRUEPREFIX}/davical
 

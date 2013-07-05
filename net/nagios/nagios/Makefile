@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2013/06/01 14:18:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2013/07/05 07:44:59 jasper Exp $
 
 COMMENT-main=	host and service monitor
 COMMENT-web=	cgis and webpages for nagios
@@ -51,7 +51,7 @@ FLAVORS=	chroot
 FLAVOR?=
 
 .if ${FLAVOR:Mchroot}
-CHROOT=		/var/www
+CHROOT=		${VARBASE}/www
 PATCH_LIST=	patch-* chroot-*
 .else
 CHROOT=
@@ -59,7 +59,7 @@ CHROOT=
 
 WANTLIB=	c m
 
-PREFIX-web=	/var/www
+PREFIX-web=	${VARBASE}/www
 # overwrite RUN_DEPENDS in order to only depend on the base package
 .if ${FLAVOR:Mchroot}
 WANTLIB-web=

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/04/22 14:05:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2013/07/05 07:44:59 jasper Exp $
 
 COMMENT=	graphical network traffic map
 
@@ -26,7 +26,7 @@ NO_TEST=	Yes
 PKG_ARCH=	*
 WRKDIST=	${WRKDIR}/weathermap
 
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=	${PREFIX}/weathermap
 SUBST_VARS=	INSTDIR
 

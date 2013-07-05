@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2013/06/12 20:36:34 brad Exp $
+# $OpenBSD: Makefile,v 1.88 2013/07/05 07:44:59 jasper Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -66,7 +66,7 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -lexecinfo" \
 			ac_cv_search___res_query=no
 
-PREFIX-web =		/var/www
+PREFIX-web =		${VARBASE}/www
 LIB_DEPENDS-web =
 RUN_DEPENDS-web =	${MODPHP_RUN_DEPENDS} \
 			lang/php/${MODPHP_VERSION},-gd

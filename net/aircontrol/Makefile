@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:35:45 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2013/07/05 07:44:59 jasper Exp $
 
 COMMENT =	management tool for Ubiquiti wireless devices
 
@@ -21,7 +21,7 @@ MODJAVA_JRERUN = Yes
 
 RUN_DEPENDS =	java/javaPathHelper
 
-PREFIX =	/var/aircontrol
+PREFIX =	${VARBASE}/aircontrol
 
 NO_BUILD =	Yes
 NO_TEST =	Yes

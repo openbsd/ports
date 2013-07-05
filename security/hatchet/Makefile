@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:41:25 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/07/05 07:45:00 jasper Exp $
 
 COMMENT=	PF firewall log analysis
 
@@ -17,7 +17,7 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
 
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=	${PREFIX}/hatchet
 SUBST_VARS=	INSTDIR
 
