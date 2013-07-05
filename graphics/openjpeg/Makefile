@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2013/06/28 12:05:18 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/07/05 06:12:45 brad Exp $
 
 COMMENT=		open-source JPEG 2000 codec library
 
 DISTNAME=		openjpeg-1.5.0
-REVISION=		4
+REVISION=		5
 
 SHARED_LIBS +=	openjpeg             5.0      # 6.0
 
@@ -24,10 +24,7 @@ CONFIGURE_STYLE=	gnu
 SEPARATE_BUILD=		Yes
 
 LIB_DEPENDS=		graphics/lcms2 \
-			graphics/png
-
-# LIB_DEPENDS do not propagate on non shared architectures
-LIB_DEPENDS +=		graphics/jpeg \
+			graphics/png \
 			graphics/tiff
 
 pre-patch:
