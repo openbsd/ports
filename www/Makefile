@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.613 2013/06/30 20:13:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.614 2013/07/05 09:59:10 jasper Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -118,7 +118,6 @@
      SUBDIR += midori
      SUBDIR += midori,gtk3
      SUBDIR += mimetex
-     SUBDIR += mindterm
      SUBDIR += minitube
      SUBDIR += mod_auth_bsd
      SUBDIR += mod_auth_kerb
