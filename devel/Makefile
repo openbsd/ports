@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1145 2013/07/03 06:52:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.1146 2013/07/05 08:34:36 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -627,6 +627,7 @@
      SUBDIR += p5-Data-UUID
      SUBDIR += p5-Data-VString
      SUBDIR += p5-Data-Validate
+     SUBDIR += p5-Data-Validate-IP
      SUBDIR += p5-Data-Validate-Struct
      SUBDIR += p5-Data-Visitor
      SUBDIR += p5-Date-Calc
