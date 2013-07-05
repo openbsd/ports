@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2013/06/16 20:40:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2013/07/05 07:38:47 jasper Exp $
 
 COMMENT=	imap4 webmail client
 
@@ -19,7 +19,7 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
 
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=	${PREFIX}/roundcubemail
 TINSTDIR=	${TRUEPREFIX}/roundcubemail
 SUBST_VARS=	INSTDIR TINSTDIR

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/05/25 08:55:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2013/07/05 07:38:47 jasper Exp $
 
 COMMENT=	roundcube plugin: authenticate via Yubikey HTTPS API
 
@@ -19,7 +19,7 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
 
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 WRKDIST=	${WRKDIR}/roundcube-yubikey-plugin-${CID}
 TINSTDIR=	${TRUEPREFIX}/roundcubemail/plugins/yubikey_authentication
 INSTDIR=	${WRKINST}${TINSTDIR}

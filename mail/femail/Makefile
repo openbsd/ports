@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:23:51 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/07/05 07:38:47 jasper Exp $
 
 COMMENT-main=	simple SMTP client
 COMMENT-chroot=	simple SMTP client for chrooted web servers
@@ -25,7 +25,7 @@ NO_TEST=	Yes
 
 MULTI_PACKAGES=	-main -chroot
 
-PREFIX-chroot=	/var/www
+PREFIX-chroot=	${VARBASE}/www
 WANTLIB-main=	c
 
 RUN_DEPENDS-chroot= ${BASE_PKGPATH},-main

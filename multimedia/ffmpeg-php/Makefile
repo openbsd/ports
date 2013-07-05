@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/21 08:46:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2013/07/05 07:38:47 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 AUTOCONF_VERSION=2.62
 AUTOMAKE_VERSION=1.9
 FAKE_FLAGS=	INSTALL_ROOT=${WRKINST}
-PREFIX=	/var/www
+PREFIX= 	${VARBASE}/www
 NO_TEST=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 

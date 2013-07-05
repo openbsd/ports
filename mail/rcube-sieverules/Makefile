@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/04/16 13:37:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2013/07/05 07:38:47 jasper Exp $
 
 COMMENT=	roundcube plugin: sieve rules (managesieve)
 
@@ -18,7 +18,7 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
 
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 WRKDIST=	${WRKDIR}/sieverules
 INSTDIR=	${PREFIX}/roundcubemail/plugins
 TINSTDIR=	${TRUEPREFIX}/roundcubemail/plugins

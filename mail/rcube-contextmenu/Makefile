@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/04/16 13:37:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2013/07/05 07:38:47 jasper Exp $
 
 COMMENT=	roundcube plugin: context-sensitive menus
 
@@ -18,7 +18,7 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
 
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 WRKDIST=	${WRKDIR}/contextmenu
 INSTDIR=	${PREFIX}/roundcubemail/plugins
 TINSTDIR=	${TRUEPREFIX}/roundcubemail/plugins

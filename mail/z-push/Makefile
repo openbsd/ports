@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/11 11:23:54 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2013/07/05 07:38:47 jasper Exp $
 
 COMMENT=	ActiveSync protocol implementation
 
@@ -21,7 +21,7 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
 
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=	${PREFIX}/z-push
 TINSTDIR=	${TRUEPREFIX}/z-push
 SUBST_VARS=	INSTDIR TINSTDIR

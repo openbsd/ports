@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/03/11 11:23:52 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2013/07/05 07:38:47 jasper Exp $
 
 COMMENT=	highly configurable webmail client
 
@@ -29,7 +29,7 @@ PKG_ARCH=	*
 
 WRKDIST=	${WRKDIR}
 
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 CONFDIR=	${PREFIX}/conf
 SUBST_VARS=	CONFDIR
 

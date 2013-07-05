@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:23:54 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/07/05 07:38:47 jasper Exp $
 
 COMMENT=	next generation web interface for Zarafa
 
@@ -28,7 +28,7 @@ NO_TEST=	Yes
 PKG_ARCH=	*
 
 WRKDIST=	${WRKDIR}
-PREFIX=		/var/www
+PREFIX=		${VARBASE}/www
 INSTDIR=	${PREFIX}/zarafa-webapp
 TINSTDIR=	${TRUEPREFIX}/zarafa-webapp
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2013/03/21 08:46:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2013/07/05 07:38:47 jasper Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
@@ -61,7 +61,7 @@ WANTLIB-main=		m ncurses c pthread stdc++ usb-1.0 util ${MODPY_WANTLIB}
 # it just sits there and looks pretty.
 PKG_ARCH-php=		*
 RUN_DEPENDS-php=	lang/php/${MODPHP_VERSION},-gd
-PREFIX-php=		/var/www/
+PREFIX-php=		${VARBASE}/www/
 
 PYTHON_SCRIPTS=		gpsprof gps/gps.py gpsfake gpscat xgps gpsspeed
 

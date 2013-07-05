@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:23:51 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/07/05 07:38:47 jasper Exp $
 
 COMMENT-main=	accept email on behalf of real sendmail
 COMMENT-chroot=	static mini_sendmail for chrooted apache
@@ -23,7 +23,7 @@ MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 MULTI_PACKAGES=	-main -chroot
 
-PREFIX-chroot=	/var/www
+PREFIX-chroot=	${VARBASE}/www
 WANTLIB-main=	c
 
 do-install:
