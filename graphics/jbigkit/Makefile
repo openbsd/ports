@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2013/04/13 08:53:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2013/07/05 06:27:04 espie Exp $
 
 COMMENT =		lossless image compression library, with lightweight version
 
@@ -31,7 +31,8 @@ do-install:
 		${INSTALL_MAN} jbgtopbm.1 pbmtojbg.1 ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/libjbig/jbig{,_ar,85}.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/libjbig/libjbig{,85}.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/libjbig/libjbig{,85}.so.${LIBjbig_VERSION} ${PREFIX}/lib
+	test -e ${WRKSRC}/libjbig/libjbig.so.${LIBjbig_VERSION} && \
+		${INSTALL_DATA} ${WRKSRC}/libjbig/libjbig{,85}.so.${LIBjbig_VERSION} ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/libjbig/jbig{,85}.txt ${PREFIX}/share/doc/jbigkit
 
 .include <bsd.port.mk>
