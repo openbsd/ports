@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/11 09:56:20 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/07/05 00:31:59 bluhm Exp $
 ${P5ARCH}/
 ${P5ARCH}/File/
 ${P5ARCH}/File/LibMagic.pm
@@ -7,5 +7,4 @@ ${P5ARCH}/auto/File/
 ${P5ARCH}/auto/File/LibMagic/
 ${P5ARCH}/auto/File/LibMagic/LibMagic.bs
 ${P5ARCH}/auto/File/LibMagic/LibMagic.so
-${P5ARCH}/auto/File/LibMagic/autosplit.ix
 @man man/man3p/File::LibMagic.3p
