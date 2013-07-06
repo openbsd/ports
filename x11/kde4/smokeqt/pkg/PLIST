@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/07/04 01:39:21 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/07/06 09:46:29 zhuk Exp $
 @conflict ruby19-qt4-<4
+@pkgpath x11/ruby-qt4,ruby19
 include/smoke/
 include/smoke/phonon_smoke.h
 include/smoke/qimageblitz_smoke.h
