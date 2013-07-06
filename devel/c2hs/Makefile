@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 10:50:02 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2013/07/06 20:54:15 kili Exp $
 
 COMMENT=		interface generator for Haskell to C bindings
 
@@ -39,7 +39,7 @@ post-install:
 
 # Note: tests are still broken (not maintained by upstream?)
 # Note 2: and (at least) the tests don't work with ghc-7 (because ghc
-# now defaults to Haskell-1010).
+# now defaults to Haskell-2010).
 do-test:
 	@cd ${WRKDIST}/tests/system && ${MAKE_PROGRAM}
 
