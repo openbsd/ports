@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_build_log_cc,v 1.1 2013/07/06 09:14:12 landry Exp $
+
+Work-around unaligned accesses on strict arches such as hppa
+
+--- src/build_log.cc.orig	Sat Jul  6 03:03:31 2013
++++ src/build_log.cc	Sat Jul  6 03:08:13 2013
+@@ -57,7 +57,8 @@ uint64_t MurmurHash64A(const void* key, size_t len) {
+   const uint64_t * data = (const uint64_t *)key;
+   const uint64_t * end = data + (len/8);
+   while (data != end) {
+-    uint64_t k = *data++;
++    uint64_t k;
++    memcpy(&k, data++, sizeof k);
+     k *= m;
+     k ^= k >> r;
+     k *= m;
