@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2013/07/06 15:55:27 naddy Exp $
 # losely based on the FreeBSD port
 
 .for m in alpha powerpc vax sparc sparc64
@@ -11,7 +11,7 @@ CATEGORIES=	lang
 
 V=5e5
 DISTNAME=	scm-$V
-REVISION=	0
+REVISION=	1
 EXTRACT_SUFX=	.zip
 
 HOMEPAGE=	http://people.csail.mit.edu/jaffer/SCM
