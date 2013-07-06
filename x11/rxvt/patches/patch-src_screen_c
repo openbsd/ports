@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_screen_c,v 1.1 2006/01/24 19:14:18 steven Exp $
+$OpenBSD: patch-src_screen_c,v 1.2 2013/07/06 15:55:46 ian Exp $
 
 There is an underflow condition in rxvt_selection_adjust_kanji triggered
 when one drags the mouse holding left button along the left side of the
@@ -6,8 +6,10 @@ window (c1 == 0). The added check prevents reading memory before the
 allocated buffer. This seems to also be semantically correct as there is
 no need to extend selection when there is nothing selected on the line.
 
---- src/screen.c.orig	Sat Dec 10 18:58:35 2005
-+++ src/screen.c	Sat Dec 10 19:05:48 2005
+Also, bring in FreeBSD patch ports/98590 64-bit crash inside rxvt_selection_send()
+
+--- src/screen.c.orig	Sat Jul  6 10:27:22 2013
++++ src/screen.c	Sat Jul  6 10:28:03 2013
 @@ -3211,9 +3211,9 @@ rxvt_selection_adjust_kanji(rxvt_t *r)
  	    && IS_MULTI1(r->screen.rend[r1][c1 - 1]))
  	    r->selection.beg.col--;
@@ -20,3 +22,63 @@ no need to extend selection when there is nothing selected on the line.
  	if (IS_MULTI1(r->screen.rend[r1][c1 - 1])
  	    && IS_MULTI2(r->screen.rend[r1][c1]))
  	    r->selection.end.col++;
+@@ -3520,6 +3520,7 @@ rxvt_selection_send(rxvt_t *r, const XSelectionRequest
+     Atom32          target_list[3];
+ #endif
+     Atom            target;
++    Atom            property;
+     XTextProperty   ct;
+     XICCEncodingStyle style;
+     char           *cl[2], dummy[1];
+@@ -3532,6 +3533,15 @@ rxvt_selection_send(rxvt_t *r, const XSelectionRequest
+     ev.target = rq->target;
+     ev.time = rq->time;
+ 
++	/* ICCCM: 2.2. Responsibilities of the Selection Owner   
++	 * SelectionRequest:
++	 * If the specified property is None , the requestor
++	 * an obsolete client. Owners are encouraged
++	 * to support these clients by using the specified
++	 * target atom as the property name to be used for
++	 * the reply.
++	 */
++	property = (rq->property == 0) ? rq->target : rq->property;
+     if (rq->target == r->h->xa[XA_TARGETS]) {
+ 	target_list[0] = (Atom32) r->h->xa[XA_TARGETS];
+ 	target_list[1] = (Atom32) XA_STRING;
+@@ -3539,7 +3549,7 @@ rxvt_selection_send(rxvt_t *r, const XSelectionRequest
+ #ifdef USE_XIM
+ 	target_list[3] = (Atom32) r->h->xa[XA_COMPOUND_TEXT];
+ #endif
+-	XChangeProperty(r->Xdisplay, rq->requestor, rq->property, XA_ATOM,
++	XChangeProperty(r->Xdisplay, rq->requestor, property, XA_ATOM,
+ 			(8 * sizeof(target_list[0])), PropModeReplace,
+ 			(unsigned char *)target_list,
+ 			(sizeof(target_list) / sizeof(target_list[0])));
+@@ -3547,10 +3557,10 @@ rxvt_selection_send(rxvt_t *r, const XSelectionRequest
+     } else if (rq->target == r->h->xa[XA_MULTIPLE]) {
+ 	/* TODO: Handle MULTIPLE */
+     } else if (rq->target == r->h->xa[XA_TIMESTAMP] && r->selection.text) {
+-	XChangeProperty(r->Xdisplay, rq->requestor, rq->property, XA_INTEGER,
+-			(8 * sizeof(Time)), PropModeReplace,
++	XChangeProperty(r->Xdisplay, rq->requestor, property, XA_INTEGER,
++			32, PropModeReplace,
+ 			(unsigned char *)&r->h->selection_time, 1);
+-	ev.property = rq->property;
++	ev.property = property;
+     } else if (rq->target == XA_STRING
+ 	       || rq->target == r->h->xa[XA_COMPOUND_TEXT]
+ 	       || rq->target == r->h->xa[XA_TEXT]) {
+@@ -3588,10 +3598,10 @@ rxvt_selection_send(rxvt_t *r, const XSelectionRequest
+ 	    ct.value = (unsigned char *)cl[0];
+ 	    ct.nitems = selectlen;
+ 	}
+-	XChangeProperty(r->Xdisplay, rq->requestor, rq->property,
++	XChangeProperty(r->Xdisplay, rq->requestor, property,
+ 			target, 8, PropModeReplace,
+ 			ct.value, (int)ct.nitems);
+-	ev.property = rq->property;
++	ev.property = property;
+ #ifdef USE_XIM
+ 	if (freect)
+ 	    XFree(ct.value);
