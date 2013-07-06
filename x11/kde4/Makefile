@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/07/04 01:23:52 zhuk Exp $
+# $OpenBSD: Makefile,v 1.31 2013/07/06 09:56:37 zhuk Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, qimageblitz
@@ -75,7 +75,7 @@ SUBDIR =
 SUBDIR += oxygen-icons
 
 # libraries
-SUBDIR += libs
+#SUBDIR += libs
 #SUBDIR += pimlibs
 
 # extra base
