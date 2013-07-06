@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/02/02 11:18:09 stu Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/07/06 11:07:19 stu Exp $
 @option no-default-conflict
 @conflict tk->=8.6,<8.7
 %%SHARED%%
@@ -462,7 +462,6 @@ lib/tcl/tk8.6/obsolete.tcl
 lib/tcl/tk8.6/optMenu.tcl
 lib/tcl/tk8.6/palette.tcl
 lib/tcl/tk8.6/panedwindow.tcl
-lib/tcl/tk8.6/pkgIndex.tcl
 lib/tcl/tk8.6/safetk.tcl
 lib/tcl/tk8.6/scale.tcl
 lib/tcl/tk8.6/scrlbar.tcl

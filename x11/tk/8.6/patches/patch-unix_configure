@@ -1,0 +1,21 @@
+$OpenBSD: patch-unix_configure,v 1.1 2013/07/06 11:07:19 stu Exp $
+--- unix/configure.orig	Fri Jul  5 18:48:54 2013
++++ unix/configure	Fri Jul  5 18:49:08 2013
+@@ -5640,7 +5640,7 @@ fi
+ 	OpenBSD-*)
+ 	    arch=`arch -s`
+ 	    case "$arch" in
+-	    m88k|vax)
++	    vax)
+ 		# Equivalent using configure option --disable-load
+ 		# Step 4 will set the necessary variables
+ 		DL_OBJS=""
+@@ -5662,7 +5662,7 @@ fi
+ 		;;
+ 	    esac
+ 	    case "$arch" in
+-	    m88k|vax)
++	    vax)
+ 		CFLAGS_OPTIMIZE="-O1"
+ 		;;
+ 	    sh)
