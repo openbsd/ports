@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/07/06 11:05:30 stu Exp $
 
 COMMENT =		Tool Command Language
 
 DISTNAME =		tcl8.6.0
 PKGNAME =		tcl-8.6.0
-REVISION =		0
+REVISION =		1
 SHARED_LIBS =		tcl86 0.0
 CATEGORIES =		lang lang/tcl
 HOMEPAGE =		http://www.tcl.tk/
@@ -48,12 +48,13 @@ ALL_TARGET =		binaries libtcl86.a
 CONFIGURE_ARGS +=	EXTRA_INSTALL_BINARIES='@echo "Installing libtcl86.a to $$(LIB_INSTALL_DIR)/" \
 			&& $$(INSTALL_DATA) libtcl86.a $$(LIB_INSTALL_DIR)/libtcl86.a \
 			&& (cd $$(LIB_INSTALL_DIR) ; $$(RANLIB) libtcl86.a)'
+CONFIGURE_ARGS +=	tcl_cv_ld_elf=yes
 .else
 ALL_TARGET =		binaries
 .endif
 
 WRKSRC =		${WRKDIST}/unix
-TEST_TARGET =	test-tcl
+TEST_TARGET =		test-tcl
 SUBST_VARS +=		_README_DIR
 
 TESTHOME =		${WRKDIR}/testhome
