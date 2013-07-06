@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2013/03/11 11:12:33 espie Exp $
+# $OpenBSD: Makefile,v 1.68 2013/07/06 10:46:29 espie Exp $
 
 COMMENT-main = 		Japanese input method
 COMMENT-dict =		dictionaries for Japanese Wnn
@@ -119,7 +119,7 @@ do-configure:
 
 # Xfree4 believes it can build html documentation, fat chance...
 #MAKE_FLAGS=IMAKE='imake -DBuildHtmlManPages=0 -DPorts' WNNOWNER_INDIRECT=_wnn
-MAKE_FLAGS =	IMAKE='imake -DPorts' WNNOWNER_INDIRECT=_wnn COPTS="${COPTS}"  CONFIGSRC=${LOCALBASE}/lib/X11/config
+MAKE_FLAGS =	IMAKE='imake -DPorts' WNNOWNER_INDIRECT=_wnn COPTS="${COPTS}"  CONFIGSRC=${LOCALBASE}/lib/X11/config 
 FAKE_FLAGS =	WNNOWNER_INDIRECT=bin
 
 MAKE_ENV =	IMAKEINCLUDE=-I${WRKSRC}/config
@@ -152,3 +152,7 @@ post-install:
 	chmod u-s ${PREFIX}/bin/*server
 
 .include <bsd.port.mk>
+
+.if ${PROPERTIES:Mno_shared}
+MAKE_FLAGS += XONLYLIB='-lX11 -lxcb -lXau -lXdmcp'
+.endif
