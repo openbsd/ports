@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2013/06/28 06:12:39 stu Exp $
+@comment $OpenBSD: PLIST,v 1.13 2013/07/06 11:04:19 stu Exp $
 @option no-default-conflict
 @conflict tcl->=8.5,<8.6
 %%SHARED%%
@@ -15,6 +15,7 @@ include/tcl8.5/tclTomMath.h
 include/tcl8.5/tclTomMathDecls.h
 include/tcl8.5/tclUnixPort.h
 lib/libtcl85.a
+@lib lib/libtcl85.so.${LIBtcl85_VERSION}
 lib/libtclstub85.a
 lib/tcl/
 lib/tcl/modules/

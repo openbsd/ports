@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2013/06/28 06:12:14 stu Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/07/06 11:06:17 stu Exp $
 @option no-default-conflict
 @conflict tk->=8.4,<8.5
 @bin bin/wish8.4
@@ -13,6 +13,7 @@ include/tk8.4/tkPort.h
 include/tk8.4/tkUnixInt.h
 include/tk8.4/tkUnixPort.h
 lib/libtk84.a
+@lib lib/libtk84.so.${LIBtk84_VERSION}
 lib/libtkstub84.a
 %%SHARED%%
 lib/tcl/

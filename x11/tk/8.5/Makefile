@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2013/06/28 06:13:04 stu Exp $
+# $OpenBSD: Makefile,v 1.32 2013/07/06 11:06:36 stu Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
 DISTNAME =		tk8.5.14
 PKGNAME =		tk-8.5.14
+REVISION =		0
 SHARED_LIBS =		tk85 0.11
 CATEGORIES =		x11 x11/tk
 HOMEPAGE =		http://www.tcl.tk/
@@ -66,11 +67,12 @@ ALL_TARGET =		all libtk85.a
 CONFIGURE_ARGS +=	EXTRA_INSTALL_BINARIES='@echo "Installing libtk85.a to $$(LIB_INSTALL_DIR)/" \
 			&& $$(INSTALL_DATA) libtk85.a $$(LIB_INSTALL_DIR)/libtk85.a \
 			&& (cd $$(LIB_INSTALL_DIR) ; $$(RANLIB) libtk85.a)'
+CONFIGURE_ARGS +=	tcl_cv_ld_elf=yes
 .endif
 
-TEST_IS_INTERACTIVE = X11
+TEST_IS_INTERACTIVE =	X11
 WRKSRC =		${WRKDIST}/unix
-TEST_TARGET =	test
+TEST_TARGET =		test
 
 TESTHOME =		${WRKDIR}/testhome
 # Use TESTFLAGS to control the Tk tests

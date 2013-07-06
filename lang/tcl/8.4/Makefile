@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2013/06/28 06:11:38 stu Exp $
+# $OpenBSD: Makefile,v 1.30 2013/07/06 11:03:44 stu Exp $
 
 COMMENT =		Tool Command Language
 
 DISTNAME =		tcl8.4.20
 PKGNAME =		tcl-8.4.20
+REVISION =		0
 SHARED_LIBS =		tcl84 2.0
 CATEGORIES =		lang lang/tcl
 HOMEPAGE =		http://www.tcl.tk/
@@ -42,11 +43,14 @@ CONFIGURE_ENV +=	SHLIB_VERSION="${LIBtcl84_VERSION}" \
 
 AUTOCONF_VERSION =	2.13
 
-.if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
+.include <bsd.port.arch.mk>
+
+.if ${NO_SHARED_LIBS:L} == "no"
 ALL_TARGET =		all libtcl84.a
 CONFIGURE_ENV +=	EXTRA_INSTALL_BINARIES='@echo "Installing libtcl84.a to $$(LIB_INSTALL_DIR)/" \
 			&& $$(INSTALL_DATA) libtcl84.a $$(LIB_INSTALL_DIR)/libtcl84.a \
 			&& (cd $$(LIB_INSTALL_DIR) ; $$(RANLIB) libtcl84.a)'
+CONFIGURE_ENV +=	tcl_cv_ld_elf=yes
 .endif
 
 .if ${MACHINE_ARCH} == "sh"
@@ -54,7 +58,7 @@ CFLAGS +=		-O0
 .endif
 
 WRKSRC =		${WRKDIST}/unix
-TEST_TARGET =	test
+TEST_TARGET =		test
 
 TESTHOME =		${WRKDIR}/testhome
 
@@ -63,7 +67,7 @@ pre-test:
 
 post-install:
 	${INSTALL_DATA} ${WRKDIST}/license.terms ${PREFIX}/lib/tcl/tcl8.4/man
-.if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
+.if ${NO_SHARED_LIBS:L} == "no"
 	ln -s libtcl84.a ${PREFIX}/lib/libtcl84_pic.a
 	ln -s libtclstub84.a ${PREFIX}/lib/libtclstub84_pic.a
 .endif
