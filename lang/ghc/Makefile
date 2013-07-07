@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2013/07/01 21:42:51 kili Exp $
+# $OpenBSD: Makefile,v 1.99 2013/07/07 13:35:27 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -30,7 +30,11 @@ MODULES =		lang/ghc lang/python converters/libiconv
 
 PSEUDO_FLAVORS =	no_doc
 FLAVOR ?=
-MULTI_PACKAGES =	-main -doc
+MULTI_PACKAGES =	-main
+
+.if !${FLAVOR:Mno_doc}
+MULTI_PACKAGES +=	-doc
+.endif
 
 # BSD w/o advertising clause + LGPLv3 (from libgmp).
 # Distfile is bundled with other stuff like libffi, mingw
