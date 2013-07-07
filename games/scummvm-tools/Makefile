@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:07:40 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/07/07 02:47:55 jsg Exp $
 
 COMMENT=	collection of various tools for scummvm
-DISTNAME=	scummvm-tools-1.4.0
+DISTNAME=	scummvm-tools-1.6.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 
