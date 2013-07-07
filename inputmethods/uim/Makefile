@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2013/06/24 15:53:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.42 2013/07/07 09:53:02 ajacoutot Exp $
 
 COMMENT-main=	multilingual input method library
 COMMENT-gtk=	uim for GTK
@@ -18,7 +18,7 @@ PKGNAME-qt=	uim-qt-$V
 PKGNAME-kde=	uim-kde-$V
 
 REVISION-main=	8
-REVISION-gtk=	10
+REVISION-gtk=	11
 REVISION-qt=	5
 REVISION-kde=	6
 
