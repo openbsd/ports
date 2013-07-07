@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2013/05/07 07:59:25 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.16 2013/07/07 08:58:11 ajacoutot Exp $
 @bin bin/ibus
 @bin bin/ibus-daemon
 bin/ibus-setup
@@ -220,8 +220,8 @@ share/vala/vapi/ibus-1.0.vapi
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/gtk-query-immodules-2.0 > ${SYSCONFDIR}/gtk-2.0/gtk.immodules
 @unexec-delete %D/bin/gtk-query-immodules-2.0 > ${SYSCONFDIR}/gtk-2.0/gtk.immodules
-@exec %D/bin/gtk-query-immodules-3.0 > %D/lib/gtk-3.0/3.0.0/immodules.cache
-@unexec-delete %D/bin/gtk-query-immodules-3.0 > %D/lib/gtk-3.0/3.0.0/immodules.cache
+@exec %D/bin/gtk-query-immodules-3.0 --update-cache
+@unexec-delete %D/bin/gtk-query-immodules-3.0 --update-cache
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
