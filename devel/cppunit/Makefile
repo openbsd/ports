@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/21 08:45:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/07/07 09:12:30 espie Exp $
 
 COMMENT=	c++ unit testing framework
 DISTNAME=	cppunit-1.12.1
 SHARED_LIBS +=	cppunit              3.0      # .1.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cppunit/}
+
+# no namespace -> construct CPPUNIT_NS::foo turns into ::foo, doesn't 
+# make sense in the middle of a class.
+NOT_FOR_ARCHS =	${GCC2_ARCHES}
 
 HOMEPAGE=	http://cppunit.sourceforge.net/
 
