@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.33 2013/07/07 09:45:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.34 2013/07/07 09:58:29 ajacoutot Exp $
 @conflict gail-*
 @conflict gtk+2-cups-*
 @conflict gtk+2-docs-*
@@ -325,7 +325,9 @@ share/aclocal/gtk-2.0.m4
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/gtk+2/
 share/examples/gtk+2/gtk-2.0/
+@sample ${SYSCONFDIR}/gtk-2.0/
 share/examples/gtk+2/gtk-2.0/im-multipress.conf
+@sample ${SYSCONFDIR}/gtk-2.0/im-multipress.conf
 share/gir-1.0/
 share/gir-1.0/Gdk-2.0.gir
 share/gir-1.0/GdkX11-2.0.gir
@@ -1356,5 +1358,4 @@ share/themes/Emacs/gtk-2.0-key/gtkrc
 share/themes/Raleigh/
 share/themes/Raleigh/gtk-2.0/
 share/themes/Raleigh/gtk-2.0/gtkrc
-@sample ${SYSCONFDIR}/gtk-2.0/
 @exec %D/bin/gtk-query-immodules-2.0 --update-cache
