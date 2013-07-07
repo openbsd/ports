@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2013/04/14 16:27:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.42 2013/07/07 18:53:06 jasper Exp $
 @conflict nautilus-open-terminal-*
 @pkgpath x11/gnome/nautilus-open-terminal
 @bin bin/gnome-terminal
@@ -173,6 +173,39 @@ share/help/gl/gnome-terminal/txt-copy-paste.page
 share/help/gl/gnome-terminal/txt-links.page
 share/help/gl/gnome-terminal/txt-search.page
 share/help/gl/gnome-terminal/txt-select-text.page
+share/help/pt_BR/
+share/help/pt_BR/gnome-terminal/
+share/help/pt_BR/gnome-terminal/adv-keyboard-shortcuts.page
+share/help/pt_BR/gnome-terminal/app-colors.page
+share/help/pt_BR/gnome-terminal/app-cursor.page
+share/help/pt_BR/gnome-terminal/app-fonts.page
+share/help/pt_BR/gnome-terminal/app-fullscreen.page
+share/help/pt_BR/gnome-terminal/app-terminal-sizes.page
+share/help/pt_BR/gnome-terminal/app-zoom.page
+share/help/pt_BR/gnome-terminal/figures/
+share/help/pt_BR/gnome-terminal/figures/gnome-terminal-icon.png
+share/help/pt_BR/gnome-terminal/figures/gnome-terminal.png
+share/help/pt_BR/gnome-terminal/gs-execute-commands.page
+share/help/pt_BR/gnome-terminal/gs-tabs.page
+share/help/pt_BR/gnome-terminal/index.page
+share/help/pt_BR/gnome-terminal/introduction.page
+share/help/pt_BR/gnome-terminal/legal.xml
+share/help/pt_BR/gnome-terminal/overview.page
+share/help/pt_BR/gnome-terminal/pref-bell.page
+share/help/pt_BR/gnome-terminal/pref-custom-command.page
+share/help/pt_BR/gnome-terminal/pref-custom-exit.page
+share/help/pt_BR/gnome-terminal/pref-encoding.page
+share/help/pt_BR/gnome-terminal/pref-keyboard-access.page
+share/help/pt_BR/gnome-terminal/pref-menubar.page
+share/help/pt_BR/gnome-terminal/pref-profiles.page
+share/help/pt_BR/gnome-terminal/pref-scrolling.page
+share/help/pt_BR/gnome-terminal/pref-title.page
+share/help/pt_BR/gnome-terminal/pref.page
+share/help/pt_BR/gnome-terminal/profile.page
+share/help/pt_BR/gnome-terminal/txt-copy-paste.page
+share/help/pt_BR/gnome-terminal/txt-links.page
+share/help/pt_BR/gnome-terminal/txt-search.page
+share/help/pt_BR/gnome-terminal/txt-select-text.page
 share/locale/am/LC_MESSAGES/gnome-terminal.mo
 share/locale/an/LC_MESSAGES/gnome-terminal.mo
 share/locale/ar/LC_MESSAGES/gnome-terminal.mo
