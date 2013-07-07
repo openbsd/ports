@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.31 2013/05/24 13:16:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.32 2013/07/07 09:38:07 ajacoutot Exp $
 @conflict gail-*
 @conflict gtk+2-cups-*
 @conflict gtk+2-docs-*
@@ -1356,4 +1356,4 @@ share/themes/Raleigh/
 share/themes/Raleigh/gtk-2.0/
 share/themes/Raleigh/gtk-2.0/gtkrc
 @sample ${SYSCONFDIR}/gtk-2.0/
-@exec %D/bin/gtk-query-immodules-2.0 > ${SYSCONFDIR}/gtk-2.0/gtk.immodules
+@exec %D/bin/gtk-query-immodules-2.0 --update-cache
