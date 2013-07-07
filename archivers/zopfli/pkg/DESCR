@@ -1,0 +1,5 @@
+Zopfli is a compression algorithm programmed in C to perform very good,
+but slow, deflate or zlib compression.
+
+This program can only compress, not decompress. Existing zlib or deflate
+libraries can decompress the data.

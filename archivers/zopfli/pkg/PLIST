@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/07/07 17:57:44 bentley Exp $
+@bin bin/zopfli

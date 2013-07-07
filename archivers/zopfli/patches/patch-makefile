@@ -1,0 +1,10 @@
+$OpenBSD: patch-makefile,v 1.1.1.1 2013/07/07 17:57:44 bentley Exp $
+--- makefile.orig	Tue May 14 01:04:47 2013
++++ makefile	Tue May 14 01:05:05 2013
+@@ -1,5 +1,5 @@
+ make:
+-	gcc src/zopfli/*.c -O2 -W -Wall -Wextra -ansi -pedantic -lm -o zopfli
++	${CC} ${CFLAGS} src/zopfli/*.c -W -Wall -Wextra -ansi -pedantic -lm -o zopfli
+ 
+ debug:
+ 	gcc src/zopfli/*.c -g3 -lm -o zopfli
