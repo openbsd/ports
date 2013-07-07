@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2013/07/07 13:35:27 kili Exp $
+# $OpenBSD: Makefile,v 1.100 2013/07/07 20:15:34 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -81,7 +81,7 @@ USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-iconv-includes=${LOCALBASE}/include \
 			--with-iconv-libraries=${LOCALBASE}/lib
-CONFIGURE_ENV =		CONF_CC_OPTS_STAGE0="-fno-pie -nopie" \
+CONFIGURE_ENV +=	CONF_CC_OPTS_STAGE0="-fno-pie -nopie" \
 			CONF_CC_OPTS_STAGE1="-fno-pie -nopie" \
 			CONF_CC_OPTS_STAGE2="-fno-pie -nopie" \
 			CONF_GCC_LINKER_OPTS_STAGE0="-fno-pie -nopie" \
@@ -176,7 +176,7 @@ do-test:
 # It doesn't matter wether this is the actual date of the bootstrapper
 # build. It's just used to get different distfiles whenever new
 # bootstrappers have to be built.
-BOOTSTRAP_DATE =	20120917
+BOOTSTRAP_DATE =	20130707
 
 # Create a bootstrapper. This compiles a stripped-down version of
 # ghc and creates a `bindist', i.e. a tarball with binaries that
