@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.32 2013/07/07 09:38:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.33 2013/07/07 09:45:15 ajacoutot Exp $
 @conflict gail-*
 @conflict gtk+2-cups-*
 @conflict gtk+2-docs-*
@@ -6,6 +6,7 @@
 @pkgpath x11/gtk+2,-cups
 @pkgpath x11/gtk+2,-docs
 @unexec-delete rm -f ${SYSCONFDIR}/gtk-2.0/gtk.immodules
+@unexec-delete rm -f %D/lib/gtk-2.0/2.10.0/immodules.cache
 bin/gtk-builder-convert
 @bin bin/gtk-demo
 @bin bin/gtk-query-immodules-2.0
