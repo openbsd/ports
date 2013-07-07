@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/05/02 07:36:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2013/07/07 21:25:30 naddy Exp $
 
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
 BROKEN-powerpc = Segmentation fault during build
@@ -14,7 +14,7 @@ PKGNAME-main =	gfortran-$V
 PKGNAME-lib =	libgfortran-$V
 SHARED_LIBS =	gfortran	2.0
 
-REVISION = 7
+REVISION = 8
 
 CATEGORIES =	lang math
 

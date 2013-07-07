@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.51 2013/05/31 15:34:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2013/07/07 21:25:32 naddy Exp $
 
 COMMENT =		the enlightened window manager
 
 VERSION = 		0.17.2.1
 DISTNAME =		enlightenment-${VERSION}
-REVISION =		0
+REVISION =		1
 
 EPOCH =			1
 

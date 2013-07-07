@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/07/07 21:25:29 naddy Exp $
 
 ONLY_FOR_ARCHS =	${GCC2_ARCHS}
 
 V =			2.95.3
 PKGNAME =		g77-$V
-REVISION =		6
+REVISION =		7
 DISTFILES = 		g77-openbsd-2.95.3.tgz \
 			libiberty-includes-openbsd.tgz
 
