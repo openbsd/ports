@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2013/06/03 20:07:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.74 2013/07/08 14:03:30 zhuk Exp $
 
 COMMENT = 		K Desktop Environment, utilities
 CATEGORIES =		x11 x11/kde
@@ -38,6 +38,5 @@ WANTLIB +=	pthread pthread-stubs stdc++ util xcb xmms z ${MODPY_WANTLIB}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
-	@${post_install_libs}
 
 .include <bsd.port.mk>

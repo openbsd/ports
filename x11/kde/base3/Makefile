@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2013/06/20 06:54:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.118 2013/07/08 14:03:29 zhuk Exp $
 
 COMMENT-main = 		K Desktop Environment, basic applications
 COMMENT-samba =		K Desktop Environment, samba support
@@ -83,7 +83,6 @@ SUBST_VARS = EXTRA_CONFIG SAMPLECONFDIR
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/kdesurc ${PREFIX}/share/config
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
-	@${post_install_libs}
 
 FAKE_FLAGS =	sysconfdir=${SAMPLECONFDIR}
 

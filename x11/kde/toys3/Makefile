@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2013/03/19 13:07:14 nigel Exp $
+# $OpenBSD: Makefile,v 1.57 2013/07/08 14:03:30 zhuk Exp $
 
 COMMENT = 		some useless KDE applications
 CATEGORIES =		x11 x11/kde games
@@ -25,5 +25,5 @@ WANTLIB +=	pthread pthread-stubs stdc++ util xcb z
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
-	@${post_install_libs}
+
 .include <bsd.port.mk>

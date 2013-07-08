@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2013/01/23 21:10:37 zhuk Exp $
+# $OpenBSD: Makefile,v 1.67 2013/07/08 14:03:29 zhuk Exp $
 
 COMMENT =		K Desktop Environment, games
 
@@ -33,6 +33,5 @@ WANTLIB += avahi-client avahi-common dbus-1 dns_sd
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
-	@${post_install_libs}
 
 .include <bsd.port.mk>

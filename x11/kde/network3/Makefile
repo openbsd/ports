@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2013/01/23 21:10:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.74 2013/07/08 14:03:30 zhuk Exp $
 
 COMMENT = 		K Desktop Environment, network applications
 CATEGORIES =		x11 x11/kde
@@ -42,5 +42,5 @@ post-configure:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
-	@${post_install_libs}
+
 .include <bsd.port.mk>

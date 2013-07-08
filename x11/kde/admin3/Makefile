@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2013/03/19 13:07:14 nigel Exp $
+# $OpenBSD: Makefile,v 1.42 2013/07/08 14:03:29 zhuk Exp $
 
 COMMENT = 		K Desktop Environment, admin tools
 CATEGORIES =		x11 x11/kde
@@ -24,6 +24,5 @@ WANTLIB +=	stdc++ util vcard xcb z
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
-	@${post_install_libs}
 
 .include <bsd.port.mk>

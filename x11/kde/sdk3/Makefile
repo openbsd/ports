@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2013/06/20 06:54:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2013/07/08 14:03:30 zhuk Exp $
 
 COMMENT-main = 		K Desktop Environment, developer extensions
 COMMENT-svn = 		K Desktop Environment, svn extensions
@@ -74,6 +74,5 @@ post-patch:
 post-install:
 	cd ${PREFIX}/bin && mv cvscheck kcvscheck
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
-	${post_install_libs}
 
 .include <bsd.port.mk>

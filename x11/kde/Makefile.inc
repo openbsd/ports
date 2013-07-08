@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.42 2013/03/11 11:46:13 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.43 2013/07/08 14:03:29 zhuk Exp $
 DIST_SUBDIR ?=	kde
 HOMEPAGE ?=	http://www.kde.org
 
@@ -40,14 +40,4 @@ PERMIT_DISTFILES_FTP ?=		Yes
 PERMIT_PACKAGE_CDROM ?=		Yes
 PERMIT_PACKAGE_FTP ?=		Yes
 
-# let's do a sweet little dance for kde4's libs
-post_install_libs = mkdir -p ${PREFIX}/lib/kde3; cd ${PREFIX}/lib/kde3
-.for l v in ${SHARED_LIBS}
-post_install_libs += ;test -e ../lib$l.so.$v && ln -sf ../lib$l.so.$v lib$l.so.$v
-.endfor
-.if !target(post-install)
-post-install:
-. if defined(SHARED_LIBS) && !empty(SHARED_LIBS)
-	@${post_install_libs}
-. endif
-.endif
+MODKDE_LIB_LINKS =		Yes

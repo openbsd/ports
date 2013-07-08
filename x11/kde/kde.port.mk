@@ -1,4 +1,4 @@
-# $OpenBSD: kde.port.mk,v 1.39 2013/03/21 08:48:56 ajacoutot Exp $
+# $OpenBSD: kde.port.mk,v 1.40 2013/07/08 14:03:29 zhuk Exp $
 
 SHARED_ONLY ?=	Yes
 
@@ -38,7 +38,7 @@ MODKDE_MAKE_FLAGS +=		LIBRESOLV=
 
 MODKDE_post-patch =	find ${WRKDIST} -name Makefile.am -exec touch {}.in \;
 
-KDE=lib/kde3
+KDE =		lib/kde3
 SUBST_VARS +=	KDE
 
 SUP_PATCH_LIST ?=
@@ -77,4 +77,16 @@ PATCH_LIST =	${PORTSDIR}/x11/kde/patches-3.5.7/patch-* patch-* ${SUP_PATCH_LIST}
 AUTOCONF ?=	/bin/sh ${WRKDIST}/admin/cvs.sh configure
 WANTLIB +=	lib/qt3/qt-mt>=3.33
 LIBTOOL_FLAGS =	--tag=disable-static
+.endif
+
+# Create soft links for shared libraries in ${PREFIX}/lib to ${KDE}.
+# Used to avoid clashing with KDE4+.
+MODKDE_LIB_LINKS ?=    No
+
+.if ${MODKDE_LIB_LINKS:L} != "no" && defined(SHARED_LIBS) && !empty(SHARED_LIBS)
+MODKDE_post-install = mkdir -p ${PREFIX}/${KDE}; cd ${PREFIX}/${KDE}
+. for l v in ${SHARED_LIBS}
+MODKDE_post-install += ; test -e ../lib$l.so.$v && \
+	ln -sf ../lib$l.so.$v lib$l.so.$v
+. endfor
 .endif

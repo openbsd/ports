@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2013/03/19 13:07:14 nigel Exp $
+# $OpenBSD: Makefile,v 1.43 2013/07/08 14:03:30 zhuk Exp $
 
 COMMENT = 		web development tool
 CATEGORIES =		x11 x11/kde
@@ -43,6 +43,5 @@ CONFIGURE_ENV=		TAR=tar
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
-	@${post_install_libs}
 
 .include <bsd.port.mk>

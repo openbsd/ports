@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2013/06/12 20:36:34 brad Exp $
+# $OpenBSD: Makefile,v 1.85 2013/07/08 14:03:30 zhuk Exp $
 
 COMMENT=		office suite for KDE
 
@@ -123,6 +123,5 @@ CONFIGURE_ENV +=	ac_cv_header_paper_h=no \
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
-	@${post_install_libs}
 
 .include <bsd.port.mk>

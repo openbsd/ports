@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2013/03/19 13:07:14 nigel Exp $
+# $OpenBSD: Makefile,v 1.50 2013/07/08 14:03:29 zhuk Exp $
 
 COMMENT = 		X11 toolkit, accessibility aids
 CATEGORIES =		x11 x11/kde
@@ -33,6 +33,5 @@ WANTLIB +=	vorbis vorbisenc vorbisfile xcb z
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
-	@${post_install_libs}
 
 .include <bsd.port.mk>

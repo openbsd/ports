@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2013/01/23 21:10:37 zhuk Exp $
+# $OpenBSD: Makefile,v 1.109 2013/07/08 14:03:30 zhuk Exp $
 
 COMMENT-main =		K Desktop Environment, graphic applications
 COMMENT-kamera =	KDE interface to digital cameras
@@ -102,6 +102,5 @@ CONFIGURE_ENV +=	ac_cv_header_paper_h=no
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
-	@${post_install_libs}
 
 .include <bsd.port.mk>
