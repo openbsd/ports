@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1242 2013/07/08 18:27:30 landry Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1243 2013/07/08 18:37:18 landry Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1376,7 +1376,7 @@ _resolve_lib += -noshared
 PKG_CREATE_NO_CHECKS ?= No
 .if ${PKG_CREATE_NO_CHECKS:L} == "yes"
 _pkg_wantlib_args = fake-wantlib-args
-.elif ${PKG_CREATE_CHECKS:L} == "warn"
+.elif ${PKG_CREATE_NO_CHECKS:L} == "warn"
 _pkg_wantlib_args = wantlib-args
 _check_msg = Warning
 # ignore diff error
