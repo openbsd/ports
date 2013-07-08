@@ -1,0 +1,8 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2013/07/08 22:10:57 bentley Exp $
+lib/tiled/plugins/libdroidcraft.so
+lib/tiled/plugins/libflare.so
+lib/tiled/plugins/libjson.so
+lib/tiled/plugins/liblua.so
+lib/tiled/plugins/libreplicaisland.so
+lib/tiled/plugins/libtengine.so
+lib/tiled/plugins/libtmw.so

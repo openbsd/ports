@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/07/08 22:10:57 bentley Exp $
+%%SHARED%%
+@bin bin/tiled
+@bin bin/tmxrasterizer
+@bin bin/tmxviewer
+@lib lib/libtiled.so.${LIBtiled_VERSION}
+lib/tiled/
+lib/tiled/plugins/
+@man man/man1/tiled.1
+@man man/man1/tmxrasterizer.1
+@man man/man1/tmxviewer.1
+share/applications/tiled.desktop
+share/tiled/
+share/tiled/images/
+share/tiled/images/tiled-icon-32.png
+share/tiled/translations/
+share/tiled/translations/tiled_cs.qm
+share/tiled/translations/tiled_de.qm
+share/tiled/translations/tiled_en.qm
+share/tiled/translations/tiled_es.qm
+share/tiled/translations/tiled_fr.qm
+share/tiled/translations/tiled_he.qm
+share/tiled/translations/tiled_it.qm
+share/tiled/translations/tiled_ja.qm
+share/tiled/translations/tiled_lv.qm
+share/tiled/translations/tiled_nl.qm
+share/tiled/translations/tiled_pt.qm
+share/tiled/translations/tiled_pt_BR.qm
+share/tiled/translations/tiled_ru.qm
+share/tiled/translations/tiled_zh.qm
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

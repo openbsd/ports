@@ -1,0 +1,9 @@
+$OpenBSD: patch-tiled_pro,v 1.1.1.1 2013/07/08 22:10:57 bentley Exp $
+--- tiled.pro.orig	Sun Jul  7 19:18:43 2013
++++ tiled.pro	Sun Jul  7 19:18:46 2013
+@@ -10,4 +10,4 @@ contains(QT_VERSION, ^4\\.[0-5]\\..*) {
+ TEMPLATE  = subdirs
+ CONFIG   += ordered
+ 
+-SUBDIRS = src translations
++SUBDIRS = src translations tests
