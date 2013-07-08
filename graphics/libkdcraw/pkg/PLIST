@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/06/24 15:53:38 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/07/08 21:56:45 zhuk Exp $
 include/kde/libkdcraw/
 include/kde/libkdcraw/dcrawinfocontainer.h
 include/kde/libkdcraw/dcrawsettingswidget.h
@@ -9,6 +9,7 @@ include/kde/libkdcraw/rawfiles.h
 include/kde/libkdcraw/rcombobox.h
 include/kde/libkdcraw/rnuminput.h
 include/kde/libkdcraw/version.h
+@lib ${KDE}/libkdcraw.so.${LIBkdcraw_VERSION}
 lib/libkdcraw.la
 @lib lib/libkdcraw.so.${LIBkdcraw_VERSION}
 lib/pkgconfig/libkdcraw.pc
@@ -26,8 +27,6 @@ share/locale/is/LC_MESSAGES/libkdcraw.mo
 share/locale/it/LC_MESSAGES/libkdcraw.mo
 share/locale/ja/LC_MESSAGES/libkdcraw.mo
 share/locale/ms/LC_MESSAGES/libkdcraw.mo
-share/locale/nds/
-share/locale/nds/LC_MESSAGES/
 share/locale/nds/LC_MESSAGES/libkdcraw.mo
 share/locale/nl/LC_MESSAGES/libkdcraw.mo
 share/locale/pa/LC_MESSAGES/libkdcraw.mo

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2013/06/24 15:53:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.15 2013/07/08 21:56:45 zhuk Exp $
 
 COMMENT =	grab raw data from digital cameras
 
 DISTNAME =	libkdcraw-0.1.9
-REVISION =	4
+REVISION =	5
 CATEGORIES =	graphics devel
 
 HOMEPAGE =	http://www.kipi-plugins.org/drupal/
@@ -40,5 +40,7 @@ WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kwalletclient
 
 # GPL
 PERMIT_PACKAGE_CDROM = Yes
+
+MODKDE_LIB_LINKS =	Yes
 
 .include <bsd.port.mk>

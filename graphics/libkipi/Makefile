@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2013/06/24 15:53:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.26 2013/07/08 21:56:45 zhuk Exp $
 
 COMMENT =		kde image plugins api
 CATEGORIES =		graphics devel x11 x11/kde
 V =			0.1.6
 DISTNAME =		libkipi-$V
-REVISION =		5
+REVISION =		6
 SHARED_LIBS +=	kipi                 1.4      # .2.0
 EXTRACT_SUFX =		.tar.bz2
 HOMEPAGE =		http://extragear.kde.org/apps/kipi/
@@ -40,5 +40,7 @@ SUBST_VARS +=		V
 
 # GPL
 PERMIT_PACKAGE_CDROM =		Yes
+
+MODKDE_LIB_LINKS =	Yes
 
 .include <bsd.port.mk>

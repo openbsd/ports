@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2013/06/24 15:53:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.17 2013/07/08 21:56:45 zhuk Exp $
 
 COMMENT =	kde wrapper around exiv2
 CATEGORIES =	graphics
 DISTNAME =	libkexiv2-0.1.9
-REVISION =	4
+REVISION =	5
 HOMEPAGE =	http://www.kipi-plugins.org/
 EXTRACT_SUFX =	.tar.bz2
 
@@ -33,5 +33,7 @@ WANTLIB += ${KDE}/DCOP ${KDE}/kdecore ${KDE}/kdefx
 
 LIB_DEPENDS =	graphics/exiv2>=0.22 \
 		x11/kde/libs3
+
+MODKDE_LIB_LINKS =	Yes
 
 .include <bsd.port.mk>
