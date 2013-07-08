@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1240 2013/07/05 21:48:01 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1241 2013/07/08 12:45:56 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1375,9 +1375,13 @@ _resolve_lib += -noshared
 
 PKG_CREATE_NO_CHECKS ?= No
 .if ${PKG_CREATE_NO_CHECKS:L} == "yes"
-_pkg_wantlib_args = fake-wantlib-args
+_check_msg = Warning
+# ignore diff error
+_check_error = || true
 .else
-_pkg_wantlib_args = wantlib-args
+_check_msg = Error
+# let diff error out
+_check_error = 
 .endif
 wantlib_args ?= port-wantlib-args
 lib_depends_args ?= lib-depends-args
@@ -1851,7 +1855,7 @@ ${_PACKAGE_COOKIE${_S}}:
 	@${ECHO_MSG} "Create ${_PACKAGE_COOKIE${_S}}"
 	@cd ${.CURDIR} && \
 	tmp=${_TMP_REPO}${_PKGFILE${_S}} pkgname=${_PKGFILE${_S}} permit_ftp=${PERMIT_PACKAGE_FTP${_S}:L:Q} permit_cdrom=${PERMIT_PACKAGE_CDROM${_S}:L:Q} && \
-	if deps=`SUBPACKAGE=${_S} wantlib_args=${_pkg_wantlib_args} \
+	if deps=`SUBPACKAGE=${_S} wantlib_args=wantlib-args \
 			${MAKE} print-package-args` && \
 		${SUDO} ${_PKG_CREATE} -DPORTSDIR="${PORTSDIR}" \
 			$$deps ${PKG_ARGS${_S}} $$tmp && \
@@ -3094,15 +3098,13 @@ wantlib-args:
 	if cd ${.CURDIR} && \
 	${MAKE} port-wantlib-args >$$a && \
 	${MAKE} fake-wantlib-args >$$b; then \
-		if cmp -s $$a $$b; \
+		if ! cmp -s $$a $$b; \
 		then \
-			cat $$a; \
-		else \
-			echo 1>&2 "Error: Libraries in packing-lists in the ports tree"; \
+			echo 1>&2 "${_check_msg}: Libraries in packing-lists in the ports tree"; \
 			echo 1>&2 "       and libraries from installed packages don't match"; \
-			diff 1>&2 -u $$a $$b; \
-			exit 1; \
+			diff 1>&2 -u $$a $$b ${_check_error}; \
 		fi; \
+		cat $$b; \
 	else \
 		exit 1; \
 	fi
