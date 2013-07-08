@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/07/06 08:30:28 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/07/08 04:17:01 brad Exp $
 
 COMMENT=	portable OTR messaging library and toolkit
 
@@ -21,10 +21,8 @@ WANTLIB += c gcrypt gpg-error
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	security/libgcrypt
-
-# non-shared does not inherit LIB_DEPENDS
-LIB_DEPENDS +=	security/libgpg-error
+LIB_DEPENDS=	security/libgcrypt \
+		security/libgpg-error
 
 USE_GROFF =		Yes
 
