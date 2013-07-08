@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2013/06/27 11:31:51 zhuk Exp $
+# $OpenBSD: Makefile,v 1.41 2013/07/08 21:57:53 zhuk Exp $
 
 COMMENT =		digital image kde application
 CATEGORIES =		graphics x11 x11/kde
 V =			0.9.6
 DISTNAME =		digikam-$V
-REVISION =		8
+REVISION =		9
 SHARED_LIBS +=		digikam              3.0      # .0.0
 HOMEPAGE =		http://www.digikam.org/
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=digikam/}
@@ -30,8 +30,8 @@ WANTLIB += idn jasper jpeg lcms ltdl m mng pcre pcreposix png pthread
 WANTLIB += stdc++ tiff util xcb z
 WANTLIB += lib/qt3/qt-mt>=3.33
 WANTLIB += ${KDE}/DCOP ${KDE}/kdecore>=6 ${KDE}/kparts ${KDE}/kdeui
-WANTLIB += ${KDE}/kdesu ${KDE}/kio ${KDE}/kdefx kdcraw
-WANTLIB += ${KDE}/kdeprint kexiv2>=1 kipi ${KDE}/kutils
+WANTLIB += ${KDE}/kdesu ${KDE}/kio ${KDE}/kdefx ${KDE}/kdcraw
+WANTLIB += ${KDE}/kdeprint ${KDE}/kexiv2>=1 ${KDE}/kipi ${KDE}/kutils
 WANTLIB += ${KDE}/kabc ${KDE}/kresources ${KDE}/khtml ${KDE}/kjs
 WANTLIB += ${KDE}/kwalletclient ${KDE}/vcard
 

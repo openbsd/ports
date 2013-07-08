@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.55 2013/06/27 11:31:51 zhuk Exp $
+# $OpenBSD: Makefile,v 1.56 2013/07/08 21:57:53 zhuk Exp $
 
 COMMENT=	image viewer for KDE
 
 DISTNAME=	gwenview-1.4.2
-REVISION =	11
+REVISION =	12
 SHARED_LIBS +=	gwenviewcore         5.0      # .1.0
 CATEGORIES=	graphics x11 x11/kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gwenview/}
@@ -21,7 +21,7 @@ WANTLIB += stdc++ util xcb z
 WANTLIB += ${KDE}/kdecore>=6 ${KDE}/DCOP ${KDE}/kdefx ${KDE}/kdeprint
 WANTLIB += ${KDE}/kdesu ${KDE}/kparts ${KDE}/kdeui ${KDE}/kio
 WANTLIB += ${KDE}/kmediaplayer ${KDE}/kutils ${KDE}/kwalletclient
-WANTLIB += kipi
+WANTLIB += ${KDE}/kipi
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+2,-guic
