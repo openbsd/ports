@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2013/06/29 09:08:28 rpe Exp $
+# $OpenBSD: Makefile,v 1.7 2013/07/08 09:53:47 rpe Exp $
 
 COMMENT =		ssh based config management framework
 
-MODPY_EGG_VERSION =	1.2
-REVISION =		0
+MODPY_EGG_VERSION =	1.2.1
 DISTNAME =		ansible-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils
@@ -31,6 +30,9 @@ EXDIR =			${PREFIX}/share/examples/ansible
 MANDIR =		${PREFIX}/man
 PLUGINDIR =		${PREFIX}/share/ansible_plugins
 
+post-extract:
+	@rm ${WRKSRC}/library/cloud/s3~* ${WRKSRC}/docs/man/man3/ansible.s3~*
+	
 pre-configure:
 	@perl -pi -e "s,/usr/share,${TRUEPREFIX}/share,g;" \
 		  -e "s,/usr/share/ansible_plugins,${PLUGINDIR},g" \
