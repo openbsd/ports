@@ -1,0 +1,11 @@
+SpaceZero is a Real Time Strategy 2D space combat game with very minimal
+hardware requirements. The objective is to conquer the universe,
+defeating all other players.
+
+You can play single player against computer players, up to 7 computer
+players. Multiplayer is currently limited to only two players playing
+over a network.
+
+All ships can be controlled by the computer (automatic mode) or by the
+player (manual mode). You can easily change the control mode of your
+ships, controlling all of them independently.
