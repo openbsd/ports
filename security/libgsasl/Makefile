@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/07/08 04:29:09 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2013/07/08 10:31:01 espie Exp $
 
 COMMENT=	GNU implementation of the SASL framework
 
@@ -18,8 +18,10 @@ MODULES=	devel/gettext
 
 WANTLIB+=	gcrypt gpg-error idn
 LIB_DEPENDS=	devel/libidn \
-		security/libgcrypt \
-		security/libgpg-error
+		security/libgcrypt
+
+# non-shared does not inherit LIB_DEPENDS
+LIB_DEPENDS +=	security/libgpg-error
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
