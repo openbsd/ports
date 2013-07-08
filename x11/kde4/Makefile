@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/07/06 09:56:37 zhuk Exp $
+# $OpenBSD: Makefile,v 1.32 2013/07/08 13:43:26 zhuk Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, qimageblitz
@@ -201,7 +201,7 @@ SUBDIR += qyoto
 
 # former kdegraphics
 #SUBDIR += graphics-mobipocket
-SUBDIR += graphics-strigi-analyzer
+#SUBDIR += graphics-strigi-analyzer
 #SUBDIR += graphics-thumbnailers
 #SUBDIR += gwenview
 #SUBDIR += kamera
