@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/04/17 14:25:51 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/07/08 13:42:41 sthen Exp $
 @extra /var/www/racktables/inc/secret.php
 @extraunexec rm -rf /var/www/racktables/plugins/*
 htdocs/racktables/
@@ -46,6 +46,8 @@ racktables/wwwroot/inc/pre-init.php
 racktables/wwwroot/inc/remote.php
 racktables/wwwroot/inc/slb-interface.php
 racktables/wwwroot/inc/slb.php
+racktables/wwwroot/inc/slb2-interface.php
+racktables/wwwroot/inc/slbv2.php
 racktables/wwwroot/inc/snmp.php
 racktables/wwwroot/inc/solutions.php
 racktables/wwwroot/inc/triggers.php
@@ -109,6 +111,7 @@ racktables/wwwroot/js/live_validation.js
 racktables/wwwroot/js/net-usage.js
 racktables/wwwroot/js/portinfo.js
 racktables/wwwroot/js/racktables.js
+racktables/wwwroot/js/slb_editor.js
 racktables/wwwroot/js/tag-cb.js
 racktables/wwwroot/js/vst_editor.js
 racktables/wwwroot/pix/
@@ -121,6 +124,7 @@ racktables/wwwroot/pix/bg_selection.gif
 racktables/wwwroot/pix/bracket-16x16.png
 racktables/wwwroot/pix/bracket-32x32.png
 racktables/wwwroot/pix/checkbox_yes.png
+racktables/wwwroot/pix/checked.png
 racktables/wwwroot/pix/configuration.png
 racktables/wwwroot/pix/crystal-actions-unlock-32x32.png
 racktables/wwwroot/pix/crystal-edit-user-32x32.png
@@ -221,4 +225,5 @@ racktables/wwwroot/pix/tango-user-trash-32x32-gray.png
 racktables/wwwroot/pix/tango-user-trash-32x32.png
 racktables/wwwroot/pix/tango-view-fullscreen-22x22.png
 racktables/wwwroot/pix/tango-view-refresh-32x32.png
+racktables/wwwroot/pix/unchecked.png
 racktables/wwwroot/pix/virtualresources.png

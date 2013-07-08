@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/07/05 09:34:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2013/07/08 13:42:41 sthen Exp $
 
 COMMENT=	web-based rack/IP management
 
-DISTNAME=	RackTables-0.20.4
+DISTNAME=	RackTables-0.20.5
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	www
 
@@ -19,7 +19,8 @@ MODULES=	lang/php
 RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-gd \
 		lang/php/${MODPHP_VERSION},-mysql \
 		lang/php/${MODPHP_VERSION},-pdo_mysql \
-		lang/php/${MODPHP_VERSION},-snmp
+		lang/php/${MODPHP_VERSION},-snmp \
+		net/p5-Net-Telnet
 
 USE_GMAKE=	Yes
 NO_BUILD=	Yes
