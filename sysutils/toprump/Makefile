@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/23 13:44:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2013/07/09 12:23:55 sthen Exp $
 
 COMMENT=	modified OpenBSD top command
 
 DISTNAME=	toprump-0.14.8
-REVISION=	1
+REVISION=	2
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://cyodesigns.com/toprump/
