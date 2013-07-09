@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_config_file_c,v 1.1 2013/07/09 10:09:44 jasper Exp $
+
+Fix a segmentation fault on git_clone
+https://github.com/libgit2/libgit2/pull/1692
+
+--- src/config_file.c.orig	Tue Jun 25 00:14:45 2013
++++ src/config_file.c	Tue Jul  9 12:06:01 2013
+@@ -1395,7 +1395,7 @@ static int parse_multiline_variable(diskfile_backend *
+ 	 * standard, this character **has** to be last one in the buf, with
+ 	 * no whitespace after it */
+ 	assert(is_multiline_var(value->ptr));
+-	git_buf_truncate(value, git_buf_len(value) - 1);
++	git_buf_shorten(value, 1);
+ 
+ 	proc_line = fixup_line(line, in_quotes);
+ 	if (proc_line == NULL) {

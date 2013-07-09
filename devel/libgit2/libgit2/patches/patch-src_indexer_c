@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_indexer_c,v 1.1 2013/07/09 10:09:44 jasper Exp $
+
+Fix a segmentation fault on git_clone
+https://github.com/libgit2/libgit2/pull/1692
+
+--- src/indexer.c.orig	Tue Jun 25 00:14:45 2013
++++ src/indexer.c	Tue Jul  9 12:06:01 2013
+@@ -602,7 +602,7 @@ int git_indexer_stream_finalize(git_indexer_stream *id
+ 	git_vector_sort(&idx->objects);
+ 
+ 	git_buf_sets(&filename, idx->pack->pack_name);
+-	git_buf_truncate(&filename, filename.size - strlen("pack"));
++	git_buf_shorten(&filename, strlen("pack"));
+ 	git_buf_puts(&filename, "idx");
+ 	if (git_buf_oom(&filename))
+ 		return -1;
