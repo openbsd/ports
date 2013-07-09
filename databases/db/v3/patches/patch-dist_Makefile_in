@@ -1,6 +1,6 @@
-$OpenBSD: patch-dist_Makefile_in,v 1.6 2010/10/28 10:33:16 steven Exp $
+$OpenBSD: patch-dist_Makefile_in,v 1.7 2013/07/09 17:06:14 espie Exp $
 --- dist/Makefile.in.orig	Tue Jul 18 17:37:57 2000
-+++ dist/Makefile.in	Thu Oct 28 12:30:14 2010
++++ dist/Makefile.in	Tue Jul  9 19:05:04 2013
 @@ -26,7 +26,9 @@ LIBTSO_LIBS=	@LIBTSO_LIBS@
  LIBXSO_LIBS=	@LIBXSO_LIBS@
  
@@ -114,7 +114,13 @@ $OpenBSD: patch-dist_Makefile_in,v 1.6 2010/10/28 10:33:16 steven Exp $
  	@cd $(includedir) && $(chmod) $(fmode) db.h db_185.h db_cxx.h
  
  install_static: install_setup
-@@ -411,69 +414,72 @@ install_static: install_setup
+@@ -406,74 +409,75 @@ install_static: install_setup
+ 	@test -d $(libdir) || \
+ 	    ($(mkdir) -p $(libdir) && $(chmod) $(dmode) $(libdir))
+ 	@cd $(libdir) && $(rm) -f $(libdb)
+-	@$(cp) -p $(libdb) $(libdir)
+-	@cd $(libdir) && $(chmod) $(fmode) $(libdb)
++	@${BSD_INSTALL_PROGRAM} $(libdb) $(libdir)
  
  install_static_cxx: install_setup
  	@echo "Installing DB C++ static library: $(libdir) ..."
@@ -125,8 +131,7 @@ $OpenBSD: patch-dist_Makefile_in,v 1.6 2010/10/28 10:33:16 steven Exp $
 -	@$(cp) -p $(libcxx) $(libdir)
 -	@cd $(libdir) && $(chmod) $(fmode) $(libcxx)
 +	cd $(libdir) && $(rm) -f $(libcxx)
-+	$(cp) -p $(libcxx) $(libdir)
-+	cd $(libdir) && $(chmod) $(fmode) $(libcxx)
++	@${BSD_INSTALL_PROGRAM} $(libcxx) $(libdir)
  
  install_dynamic: install_setup
  	@echo "Installing DB library: $(libdir) ..."
