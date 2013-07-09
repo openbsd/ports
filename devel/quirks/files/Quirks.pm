@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.92 2013/07/09 07:03:54 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.93 2013/07/09 08:56:26 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -143,7 +143,6 @@ my $stem_extensions = {
 	'openh323' => 'h323plus',
 	'pwlib' => 'ptlib',
 	'e2fs-uuid' => 'e2fsprogs',
-	'puppet' => 'ruby-puppet',
 	'xmame+xmess' => ['sdlmame', 'sdlmess'],
 	'xmame' => 'sdlmame',
 	'xmess' => 'sdlmess',
