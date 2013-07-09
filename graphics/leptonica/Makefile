@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/06/28 12:27:56 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/07/09 20:01:38 espie Exp $
 
 COMMENT=	image processing and analysis library
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c gif jpeg m png tiff webp z
 
 MASTER_SITES=	${HOMEPAGE}/source/
+LIBM_CHECK =	powf expf
 
 LIB_DEPENDS=	graphics/libwebp \
 		graphics/libungif \

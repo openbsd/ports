@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2013/03/21 08:45:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2013/07/09 20:01:38 espie Exp $
 
 COMMENT=	lame ain't an MP3 encoder
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_CDROM=	MP3 patent, http://mp3licensing.com/royalty/
 PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB += c m ncurses
+LIBM_CHECK = powf log10f
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lame/}
 

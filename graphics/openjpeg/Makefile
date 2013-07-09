@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/07/05 06:12:45 brad Exp $
+# $OpenBSD: Makefile,v 1.16 2013/07/09 20:01:38 espie Exp $
 
 COMMENT=		open-source JPEG 2000 codec library
 
@@ -17,6 +17,7 @@ MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c jpeg lcms2 m png tiff z
+LIBM_CHECK = lrintf
 
 MASTER_SITES=		http://openjpeg.googlecode.com/files/
 
