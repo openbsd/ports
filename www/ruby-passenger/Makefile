@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/05/07 23:20:11 jeremy Exp $
+# $OpenBSD: Makefile,v 1.30 2013/07/09 12:23:40 jasper Exp $
 
 COMMENT-main =		Nginx module for deploying ruby applications
 COMMENT-standalone =	ruby web application server
@@ -6,7 +6,7 @@ COMMENT-standalone =	ruby web application server
 PASS_VERSION =		3.0.11
 NGINX_VERSION =		1.2.3
 DISTNAME =		passenger-${PASS_VERSION}
-REVISION =		5
+REVISION =		6
 FULLPKGNAME-main =	${MODRUBY_PKG_PREFIX}-${DISTNAME}
 FULLPKGNAME-standalone = ${MODRUBY_PKG_PREFIX}-passenger-standalone-${PASS_VERSION}.${NGINX_VERSION}
 FULLPKGPATH-main =	${BASE_PKGPATH},-main
@@ -25,16 +25,17 @@ PERMIT_PACKAGE_CDROM = Yes
 MULTI_PACKAGES =	-main -standalone
 
 
-MODULES =		lang/ruby converters/libiconv
+MODULES =		devel/gettext \
+			lang/ruby
 
 SHARED_ONLY-main =	Yes
 SHARED_ONLY-standalone =	Yes
 
 CONFIGURE_STYLE =	gem ext
 
-WANTLIB-main =	c crypto curl ev iconv idn intl m pthread  ssl stdc++ z \
-		${MODRUBY_WANTLIB} 
-WANTLIB-standalone =	c crypto curl ev iconv idn intl m pthread ssl stdc++ z
+WANTLIB-main =	c crypto curl ev idn m pthread  ssl stdc++ z \
+		${MODRUBY_WANTLIB}
+WANTLIB-standalone =	c crypto curl ev idn m pthread ssl stdc++ z
 
 # Make devel/gmake a BUILD_DEPEND instead of USE_GMAKE, as the port
 # also uses BSD make.
@@ -51,7 +52,7 @@ LIB_DEPENDS-standalone =devel/libev \
 			devel/libidn \
 			net/curl
 
-BUILD_ENV +=            CC=${CC} CXX=${CXX} 
+BUILD_ENV +=            CC=${CC} CXX=${CXX}
 
 PASS_DIR =		${GEM_BASE_LIB}/gems/${DISTNAME}
 
