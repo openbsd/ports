@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2013/07/07 08:58:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2013/07/09 10:15:09 dcoppa Exp $
 
 SHARED_ONLY=		Yes
 
@@ -12,7 +12,7 @@ PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 
 REVISION-main=		3
-REVISION-cups=		3
+REVISION-cups=		4
 
 CATEGORIES=		x11 devel
 
@@ -69,7 +69,7 @@ LIB_DEPENDS-cups=	${LIB_DEPENDS} \
 
 WANTLIB-cups += ${WANTLIB}
 WANTLIB-cups += asn1 crypto cups gdk-3 gssapi gtk-3 krb5 ssl
-WANTLIB-cups += avahi-client avahi-common colordprivate
+WANTLIB-cups += avahi-client avahi-common
 WANTLIB-cups += com_err heimbase roken wind
 
 MODGNOME_TOOLS=		gi
@@ -87,7 +87,7 @@ CONFIGURE_STYLE=	gnu
     ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sparc64" || \
     ${MACHINE_ARCH} == "mips64el" || ${MACHINE_ARCH} == "mips64"
 LIB_DEPENDS-cups +=	graphics/colord
-WANTLIB-cups +=	colord lcms2
+WANTLIB-cups +=	colordprivate colord lcms2
 .else
 CONFIGURE_ARGS +=	--disable-colord
 .endif
