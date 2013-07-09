@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.54 2013/06/03 07:55:02 rpointel Exp $
+# $OpenBSD: Makefile,v 1.55 2013/07/09 10:00:00 rpointel Exp $
 
 COMMENT =		fast, lightweight source control management
 
-MODPY_EGG_VERSION =	2.6.2
+MODPY_EGG_VERSION =	2.6.3
 DISTNAME =		mercurial-${MODPY_EGG_VERSION}
 CATEGORIES =     	devel
 
