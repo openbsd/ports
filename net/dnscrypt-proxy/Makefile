@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:35:46 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/07/09 13:43:06 jasper Exp $
 
 COMMENT-main=		secure communications between a DNS client and resolver
 COMMENT-plugins=	example plugins for dnscrypt-proxy
@@ -31,7 +31,7 @@ commonLIB_DEPENDS=	devel/libexecinfo
 LIB_DEPENDS-main=	${commonLIB_DEPENDS} devel/libtool,-ltdl
 LIB_DEPENDS-plugins=	${commonLIB_DEPENDS} net/ldns/libldns
 
-BUILD_DEPENDS-plugins=	devel/libtool
+BUILD_DEPENDS=		devel/libtool
 
 CONFIGURE_STYLE=	gnu
 
