@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/04/22 06:22:22 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/07/09 10:03:47 jasper Exp $
 include/git2/
 include/git2.h
 include/git2/attr.h
@@ -28,7 +28,6 @@ include/git2/oid.h
 include/git2/pack.h
 include/git2/push.h
 include/git2/refdb.h
-include/git2/refdb_backend.h
 include/git2/reflog.h
 include/git2/refs.h
 include/git2/refspec.h
@@ -43,6 +42,14 @@ include/git2/status.h
 include/git2/stdint.h
 include/git2/strarray.h
 include/git2/submodule.h
+include/git2/sys/
+include/git2/sys/commit.h
+include/git2/sys/config.h
+include/git2/sys/index.h
+include/git2/sys/odb_backend.h
+include/git2/sys/refdb_backend.h
+include/git2/sys/refs.h
+include/git2/sys/repository.h
 include/git2/tag.h
 include/git2/threads.h
 include/git2/trace.h

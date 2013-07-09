@@ -1,11 +1,11 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.5 2013/04/22 06:22:21 jasper Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.6 2013/07/09 10:03:47 jasper Exp $
 
 Don't clobber CFLAGS.
 -Wextra is not available with gcc < 4.
 
---- CMakeLists.txt.orig	Sun Apr 21 23:44:50 2013
-+++ CMakeLists.txt	Sun Apr 21 23:44:54 2013
-@@ -211,7 +211,7 @@ IF (MSVC)
+--- CMakeLists.txt.orig	Tue Jun 25 00:14:45 2013
++++ CMakeLists.txt	Tue Jul  9 11:47:58 2013
+@@ -233,7 +233,7 @@ IF (MSVC)
     # Precompiled headers
  
  ELSE ()

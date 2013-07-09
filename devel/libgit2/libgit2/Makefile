@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.8 2013/04/22 06:33:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2013/07/09 10:03:47 jasper Exp $
 
 COMMENT=		the Git library, take 2
 
-V=			0.18.0
+V=			0.19.0
 PROJECT=		libgit2
-SHARED_LIBS +=  git2                      3.0 # 0.18
+SHARED_LIBS +=  git2                      4.0 # 0.19
 
 MODULES=		devel/cmake \
 			lang/python
 
 MODPY_RUNDEP=		No
 
-WANTLIB+= crypto ssl z
+LIB_DEPENDS=		security/libssh2
+
+WANTLIB+= crypto ssl ssh2 z
 
 .include <bsd.port.mk>
