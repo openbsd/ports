@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/06/20 14:16:03 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2013/07/09 10:41:36 pascal Exp $
 
 BROKEN-mips64 =		missing atomic ops
 BROKEN-mips64el =	missing atomic ops
@@ -13,6 +13,7 @@ V =			1.8.1
 DISTNAME =		ogre_src_v${V:S/./-/g}
 PKGNAME-main =		ogre-${V}
 PKGNAME-samples =	ogre-samples-${V}
+REVISION-main =		0
 
 MULTI_PACKAGES =	-main -samples
 
@@ -44,8 +45,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ogre/}
 EXTRACT_SUFX =		.tar.bz2
 
 CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE:STRING=Release \
-			-DOGRE_INSTALL_SAMPLES=1 \
-			-DOGRE_CONFIG_ALLOCATOR=1
+			-DOGRE_INSTALL_SAMPLES=1
 
 VMEM_WARNING =		Yes
 
