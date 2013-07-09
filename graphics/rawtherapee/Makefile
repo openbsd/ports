@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2013/05/16 09:16:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2013/07/09 09:25:58 sthen Exp $
+
+USE_NINJA = No
+# rtengine/procparams.cc:28:30: error: ../rtgui/version.h: No such file or directory
 
 COMMENT =		RAW image processing application
 
