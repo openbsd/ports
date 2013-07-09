@@ -1,6 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/04/10 10:26:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/07/09 21:06:37 ajacoutot Exp $
 bin/xdg-user-dir
 @bin bin/xdg-user-dirs-update
+@man man/man1/xdg-user-dir.1
+@man man/man1/xdg-user-dirs-update.1
+@man man/man5/user-dirs.conf.5
+@man man/man5/user-dirs.defaults.5
+@man man/man5/user-dirs.dirs.5
 share/examples/xdg-user-dirs/
 share/examples/xdg-user-dirs/xdg/
 @sample ${SYSCONFDIR}/xdg/
@@ -64,7 +69,11 @@ share/locale/he/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/hi/
 share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/hr/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/hu/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/ia/
+share/locale/ia/LC_MESSAGES/
+share/locale/ia/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/id/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/is/
 share/locale/is/LC_MESSAGES/
@@ -81,6 +90,9 @@ share/locale/ko/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/ku/
 share/locale/ku/LC_MESSAGES/
 share/locale/ku/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/ky/
+share/locale/ky/LC_MESSAGES/
+share/locale/ky/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/xdg-user-dirs.mo
@@ -88,6 +100,9 @@ share/locale/lv/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/mk/
 share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/ml/
+share/locale/ml/LC_MESSAGES/
+share/locale/ml/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/mr/
 share/locale/mr/LC_MESSAGES/
 share/locale/mr/LC_MESSAGES/xdg-user-dirs.mo
@@ -100,8 +115,6 @@ share/locale/nn/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/or/
 share/locale/or/LC_MESSAGES/
 share/locale/or/LC_MESSAGES/xdg-user-dirs.mo
-share/locale/pa/
-share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/pl/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/ps/
