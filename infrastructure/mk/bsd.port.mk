@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1243 2013/07/08 18:37:18 landry Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1244 2013/07/09 19:48:56 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1495,6 +1495,11 @@ _DEP${_DEP}_COOKIES += ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,g
 .  endfor
 .endfor
 
+LIBM_CHECK ?=
+.if ${MACHINE_ARCH} == "vax" && !empty(LIBM_CHECK)
+_DEPBUILDLIB_COOKIES += ${WRKDIR}/.libm-check
+.endif
+
 # Normal user-mode targets are PHONY targets, e.g., don't create the
 # corresponding file. However, there is nothing phony about the cookie.
 
@@ -2091,6 +2096,14 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 	@${_MAKE_COOKIE} $@
 .  endif
 .endfor
+
+${WRKDIR}/.libm-check:
+	@nm /usr/lib/libm.a >${WRKDIR}/.libm-list
+.for f in ${LIBM_CHECK}
+	@${ECHO_MSG} "===> checking for $f in libm"
+	@fgrep -wq $f ${WRKDIR}/.libm-list
+.endfor
+	@touch $@
 
 show-prepare-results: prepare
 	@sort -u ${_DEPBUILD_COOKIES} ${_DEPBUILDLIB_COOKIES} /dev/null
