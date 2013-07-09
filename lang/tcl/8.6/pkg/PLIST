@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/02/02 11:15:02 stu Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/07/09 16:14:20 stu Exp $
 @option no-default-conflict
 @conflict tcl->=8.6,<8.7
 %%SHARED%%
@@ -849,19 +849,19 @@ lib/tcl/tcl8.6/man/catn/
 @man lib/tcl/tcl8.6/man/catn/namespace.0
 @man lib/tcl/tcl8.6/man/catn/next.0
 @man lib/tcl/tcl8.6/man/catn/nextto.0
-@man lib/tcl/tcl8.6/man/catn/oo_class.0
-@man lib/tcl/tcl8.6/man/catn/oo_copy.0
-@man lib/tcl/tcl8.6/man/catn/oo_define.0
-@man lib/tcl/tcl8.6/man/catn/oo_objdefine.0
-@man lib/tcl/tcl8.6/man/catn/oo_object.0
+@man lib/tcl/tcl8.6/man/catn/oo::class.0
+@man lib/tcl/tcl8.6/man/catn/oo::copy.0
+@man lib/tcl/tcl8.6/man/catn/oo::define.0
+@man lib/tcl/tcl8.6/man/catn/oo::objdefine.0
+@man lib/tcl/tcl8.6/man/catn/oo::object.0
 @man lib/tcl/tcl8.6/man/catn/open.0
 @man lib/tcl/tcl8.6/man/catn/package.0
 @man lib/tcl/tcl8.6/man/catn/parray.0
 @man lib/tcl/tcl8.6/man/catn/pid.0
-@man lib/tcl/tcl8.6/man/catn/pkg_create.0
+@man lib/tcl/tcl8.6/man/catn/pkg::create.0
 @man lib/tcl/tcl8.6/man/catn/pkg_mkIndex.0
 @man lib/tcl/tcl8.6/man/catn/platform.0
-@man lib/tcl/tcl8.6/man/catn/platform_shell.0
+@man lib/tcl/tcl8.6/man/catn/platform::shell.0
 @man lib/tcl/tcl8.6/man/catn/proc.0
 @man lib/tcl/tcl8.6/man/catn/puts.0
 @man lib/tcl/tcl8.6/man/catn/pwd.0
@@ -885,6 +885,7 @@ lib/tcl/tcl8.6/man/catn/
 @man lib/tcl/tcl8.6/man/catn/subst.0
 @man lib/tcl/tcl8.6/man/catn/switch.0
 @man lib/tcl/tcl8.6/man/catn/tailcall.0
+@man lib/tcl/tcl8.6/man/catn/tcl::prefix.0
 @man lib/tcl/tcl8.6/man/catn/tcl_endOfWord.0
 @man lib/tcl/tcl8.6/man/catn/tcl_findLibrary.0
 @man lib/tcl/tcl8.6/man/catn/tcl_interactive.0
@@ -894,7 +895,6 @@ lib/tcl/tcl8.6/man/catn/
 @man lib/tcl/tcl8.6/man/catn/tcl_pkgPath.0
 @man lib/tcl/tcl8.6/man/catn/tcl_platform.0
 @man lib/tcl/tcl8.6/man/catn/tcl_precision.0
-@man lib/tcl/tcl8.6/man/catn/tcl_prefix.0
 @man lib/tcl/tcl8.6/man/catn/tcl_rcFileName.0
 @man lib/tcl/tcl8.6/man/catn/tcl_startOfNextWord.0
 @man lib/tcl/tcl8.6/man/catn/tcl_startOfPreviousWord.0

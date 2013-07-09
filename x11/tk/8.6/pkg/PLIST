@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/07/06 11:07:19 stu Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/07/09 16:15:01 stu Exp $
 @option no-default-conflict
 @conflict tk->=8.6,<8.7
 %%SHARED%%
@@ -369,14 +369,14 @@ lib/tcl/tk8.6/man/catn/
 @man lib/tcl/tk8.6/man/catn/message.0
 @man lib/tcl/tk8.6/man/catn/option.0
 @man lib/tcl/tk8.6/man/catn/options.0
+@man lib/tcl/tk8.6/man/catn/pack-old.0
 @man lib/tcl/tk8.6/man/catn/pack.0
-@man lib/tcl/tk8.6/man/catn/pack_old.0
 @man lib/tcl/tk8.6/man/catn/panedwindow.0
 @man lib/tcl/tk8.6/man/catn/photo.0
 @man lib/tcl/tk8.6/man/catn/place.0
 @man lib/tcl/tk8.6/man/catn/radiobutton.0
 @man lib/tcl/tk8.6/man/catn/raise.0
-@man lib/tcl/tk8.6/man/catn/safe_loadTk.0
+@man lib/tcl/tk8.6/man/catn/safe::loadTk.0
 @man lib/tcl/tk8.6/man/catn/scale.0
 @man lib/tcl/tk8.6/man/catn/scrollbar.0
 @man lib/tcl/tk8.6/man/catn/selection.0
@@ -384,6 +384,7 @@ lib/tcl/tk8.6/man/catn/
 @man lib/tcl/tk8.6/man/catn/spinbox.0
 @man lib/tcl/tk8.6/man/catn/text.0
 @man lib/tcl/tk8.6/man/catn/tk.0
+@man lib/tcl/tk8.6/man/catn/tk::mac.0
 @man lib/tcl/tk8.6/man/catn/tk_bindForTraversal.0
 @man lib/tcl/tk8.6/man/catn/tk_bisque.0
 @man lib/tcl/tk8.6/man/catn/tk_chooseColor.0
@@ -395,7 +396,6 @@ lib/tcl/tk8.6/man/catn/
 @man lib/tcl/tk8.6/man/catn/tk_getOpenFile.0
 @man lib/tcl/tk8.6/man/catn/tk_getSaveFile.0
 @man lib/tcl/tk8.6/man/catn/tk_library.0
-@man lib/tcl/tk8.6/man/catn/tk_mac.0
 @man lib/tcl/tk8.6/man/catn/tk_menuBar.0
 @man lib/tcl/tk8.6/man/catn/tk_menuSetFocus.0
 @man lib/tcl/tk8.6/man/catn/tk_messageBox.0
@@ -411,29 +411,29 @@ lib/tcl/tk8.6/man/catn/
 @man lib/tcl/tk8.6/man/catn/tkerror.0
 @man lib/tcl/tk8.6/man/catn/tkwait.0
 @man lib/tcl/tk8.6/man/catn/toplevel.0
-@man lib/tcl/tk8.6/man/catn/ttk_button.0
-@man lib/tcl/tk8.6/man/catn/ttk_checkbutton.0
-@man lib/tcl/tk8.6/man/catn/ttk_combobox.0
-@man lib/tcl/tk8.6/man/catn/ttk_entry.0
-@man lib/tcl/tk8.6/man/catn/ttk_frame.0
+@man lib/tcl/tk8.6/man/catn/ttk::button.0
+@man lib/tcl/tk8.6/man/catn/ttk::checkbutton.0
+@man lib/tcl/tk8.6/man/catn/ttk::combobox.0
+@man lib/tcl/tk8.6/man/catn/ttk::entry.0
+@man lib/tcl/tk8.6/man/catn/ttk::frame.0
+@man lib/tcl/tk8.6/man/catn/ttk::intro.0
+@man lib/tcl/tk8.6/man/catn/ttk::label.0
+@man lib/tcl/tk8.6/man/catn/ttk::labelframe.0
+@man lib/tcl/tk8.6/man/catn/ttk::menubutton.0
+@man lib/tcl/tk8.6/man/catn/ttk::notebook.0
+@man lib/tcl/tk8.6/man/catn/ttk::panedwindow.0
+@man lib/tcl/tk8.6/man/catn/ttk::progressbar.0
+@man lib/tcl/tk8.6/man/catn/ttk::radiobutton.0
+@man lib/tcl/tk8.6/man/catn/ttk::scale.0
+@man lib/tcl/tk8.6/man/catn/ttk::scrollbar.0
+@man lib/tcl/tk8.6/man/catn/ttk::separator.0
+@man lib/tcl/tk8.6/man/catn/ttk::sizegrip.0
+@man lib/tcl/tk8.6/man/catn/ttk::spinbox.0
+@man lib/tcl/tk8.6/man/catn/ttk::style.0
+@man lib/tcl/tk8.6/man/catn/ttk::treeview.0
+@man lib/tcl/tk8.6/man/catn/ttk::widget.0
 @man lib/tcl/tk8.6/man/catn/ttk_image.0
-@man lib/tcl/tk8.6/man/catn/ttk_intro.0
-@man lib/tcl/tk8.6/man/catn/ttk_label.0
-@man lib/tcl/tk8.6/man/catn/ttk_labelframe.0
-@man lib/tcl/tk8.6/man/catn/ttk_menubutton.0
-@man lib/tcl/tk8.6/man/catn/ttk_notebook.0
-@man lib/tcl/tk8.6/man/catn/ttk_panedwindow.0
-@man lib/tcl/tk8.6/man/catn/ttk_progressbar.0
-@man lib/tcl/tk8.6/man/catn/ttk_radiobutton.0
-@man lib/tcl/tk8.6/man/catn/ttk_scale.0
-@man lib/tcl/tk8.6/man/catn/ttk_scrollbar.0
-@man lib/tcl/tk8.6/man/catn/ttk_separator.0
-@man lib/tcl/tk8.6/man/catn/ttk_sizegrip.0
-@man lib/tcl/tk8.6/man/catn/ttk_spinbox.0
-@man lib/tcl/tk8.6/man/catn/ttk_style.0
-@man lib/tcl/tk8.6/man/catn/ttk_treeview.0
 @man lib/tcl/tk8.6/man/catn/ttk_vsapi.0
-@man lib/tcl/tk8.6/man/catn/ttk_widget.0
 @man lib/tcl/tk8.6/man/catn/winfo.0
 @man lib/tcl/tk8.6/man/catn/wm.0
 lib/tcl/tk8.6/man/license.terms

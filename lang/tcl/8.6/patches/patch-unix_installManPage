@@ -1,6 +1,19 @@
-$OpenBSD: patch-unix_installManPage,v 1.1.1.1 2013/02/02 11:15:01 stu Exp $
---- unix/installManPage.orig	Wed Feb 15 18:02:37 2012
-+++ unix/installManPage	Wed Feb 15 19:32:56 2012
+$OpenBSD: patch-unix_installManPage,v 1.2 2013/07/09 16:14:20 stu Exp $
+
+Don't misrename manpages. Tcl bug 3604346.
+Cat'd pages look better.
+
+--- unix/installManPage.orig	Wed Dec 19 10:40:38 2012
++++ unix/installManPage	Tue Jul  9 11:49:35 2013
+@@ -71,7 +71,7 @@ Names=`sed -n '
+ 	s/ \\\-.*//
+ #                               Convert all non-space non-alphanum sequences
+ #                               to single underscores.
+-	s/[^ A-Za-z0-9][^ A-Za-z0-9]*/_/g
++#	s/[^ A-Za-z0-9][^ A-Za-z0-9]*/_/g
+ #                               print the result and exit
+ 	p;q
+     }' $ManPage`
 @@ -94,6 +94,9 @@ esac
  
  SrcDir=`dirname $ManPage`
