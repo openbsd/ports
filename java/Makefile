@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/08/18 07:25:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2013/07/10 14:41:26 jasper Exp $
 
      SUBDIR =
      SUBDIR += asm
@@ -8,5 +8,6 @@
      SUBDIR += jlint
      SUBDIR += jna
      SUBDIR += junit
+     SUBDIR += tanukiwrapper
 
 .include <bsd.port.subdir.mk>
