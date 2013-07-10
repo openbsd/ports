@@ -1,7 +1,15 @@
-$OpenBSD: patch-rtgui_CMakeLists_txt,v 1.1.1.1 2013/01/27 14:56:43 kirby Exp $
---- rtgui/CMakeLists.txt.orig	Mon Jul 16 01:26:34 2012
-+++ rtgui/CMakeLists.txt	Mon Jul 16 01:27:13 2012
-@@ -52,7 +52,7 @@ add_executable (rth ${EXTRA_SRC} ${BASESOURCEFILES})
+$OpenBSD: patch-rtgui_CMakeLists_txt,v 1.2 2013/07/10 15:10:28 dcoppa Exp $
+
+Fix dependencies to please Ninja.
+
+--- rtgui/CMakeLists.txt.orig	Sun Jun  3 17:56:20 2012
++++ rtgui/CMakeLists.txt	Wed Jul 10 16:50:37 2013
+@@ -48,11 +48,12 @@ endif (WIN32)
+ configure_file (${CMAKE_CURRENT_SOURCE_DIR}/config.h.in ${CMAKE_CURRENT_SOURCE_DIR}/config.h)
+ 
+ add_executable (rth ${EXTRA_SRC} ${BASESOURCEFILES})
++add_dependencies (rth AboutFile)
+ 
  set_target_properties (rth PROPERTIES COMPILE_FLAGS "${CMAKE_CXX_FLAGS}" OUTPUT_NAME rawtherapee)
  #target_link_libraries (rth rtengine ${JPEG_LIBRARIES} ${PNG_LIBRARIES} ${ZLIB_LIBRARIES} ${TIFF_LIBRARIES} ${EXTRA_LIB} ${GOBJECT_LIBRARIES} ${GTHREAD_LIBRARIES}
  #   ${GLIB2_LIBRARIES} ${GLIBMM_LIBRARIES} ${GTK_LIBRARIES} ${GTKMM_LIBRARIES} ${GIO_LIBRARIES} ${GIOMM_LIBRARIES} ${LCMS_LIBRARIES} ${IPTCDATA_LIBRARIES})
