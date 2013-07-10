@@ -1,12 +1,17 @@
-$OpenBSD: patch-youtube_dl_FileDownloader_py,v 1.7 2013/06/03 23:11:52 pirofti Exp $
---- youtube_dl/FileDownloader.py.orig	Thu May 23 14:30:03 2013
-+++ youtube_dl/FileDownloader.py	Tue Jun  4 02:09:22 2013
-@@ -762,7 +762,7 @@ class FileDownloader(object):
+$OpenBSD: patch-youtube_dl_FileDownloader_py,v 1.8 2013/07/10 10:57:23 pirofti Exp $
+--- youtube_dl/FileDownloader.py.orig	Wed Jun 26 19:03:14 2013
++++ youtube_dl/FileDownloader.py	Sun Jul  7 12:44:23 2013
+@@ -247,12 +247,11 @@ class FileDownloader(object):
+         except (OSError, IOError):
+             self.report_error(u'RTMP download detected but "rtmpdump" could not be run')
+             return False
+-        verbosity_option = '--verbose' if self.params.get('verbose', False) else '--quiet'
+ 
          # Download using rtmpdump. rtmpdump returns exit code 2 when
          # the connection was interrumpted and resuming appears to be
          # possible. This is part of rtmpdump's normal usage, AFAIK.
--        basic_args = ['rtmpdump', '-q', '-r', url, '-o', tmpfilename]
+-        basic_args = ['rtmpdump', verbosity_option, '-r', url, '-o', tmpfilename]
 +        basic_args = ['rtmpdump', '-r', url, '-o', tmpfilename]
-         if self.params.get('verbose', False): basic_args[1] = '-v'
          if player_url is not None:
-             basic_args += ['-W', player_url]
+             basic_args += ['--swfVfy', player_url]
+         if page_url is not None:
