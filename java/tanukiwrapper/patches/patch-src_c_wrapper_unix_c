@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_c_wrapper_unix_c,v 1.1.1.1 2013/07/10 14:40:29 jasper Exp $
+
+Wrap SI_ASYNCIO like is being done for other signals.
+
+--- src/c/wrapper_unix.c.orig	Tue Jul  2 14:15:14 2013
++++ src/c/wrapper_unix.c	Tue Jul  2 14:17:17 2013
+@@ -408,8 +408,10 @@ const TCHAR* getSignalCodeDesc(int code) {
+         return TEXT("mesq state changed");
+ #endif
+ 
++#ifdef SI_ASYNCIO
+     case SI_ASYNCIO:
+         return TEXT("AIO completed");
++#endif
+ 
+ #ifdef SI_SIGIO
+     case SI_SIGIO:

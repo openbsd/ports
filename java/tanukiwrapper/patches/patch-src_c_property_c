@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_c_property_c,v 1.1.1.1 2013/07/10 14:40:29 jasper Exp $
+--- src/c/property.c.orig	Tue Jul  2 14:23:25 2013
++++ src/c/property.c	Tue Jul  2 14:24:15 2013
+@@ -453,7 +453,7 @@ int getEncodingByName(char* encodingMB, int *encoding)
+ int getEncodingByName(char* encodingMB, char** encoding) {
+ #endif
+     if (strIgnoreCaseCmp(encodingMB, "Shift_JIS") == 0) {
+-#if defined(FREEBSD) || defined (AIX) || defined(MACOSX)
++#if defined(FREEBSD) || defined (AIX) || defined(MACOSX) || defined(OPENBSD)
+         *encoding = "SJIS";
+ #elif defined(WIN32)
+         *encoding = 932;
