@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/07/01 02:15:10 brad Exp $
+# $OpenBSD: Makefile,v 1.28 2013/07/10 07:32:57 espie Exp $
 
 COMMENT=	Multiple-image Network Graphics (MNG) reference library
 
@@ -19,8 +19,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	jpeg lcms m z
 
-LIB_DEPENDS=	graphics/jpeg \
-		graphics/lcms
+LIB_DEPENDS=	graphics/lcms
+
+# non shared arches...
+LIB_DEPENDS +=	graphics/jpeg
 
 FAKE_FLAGS=	PREFIX="${PREFIX}"
 
