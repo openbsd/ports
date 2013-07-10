@@ -1,5 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2012/10/01 21:16:01 edd Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.10 2013/07/10 09:10:44 edd Exp $
 @lib lib/libpl.so.${LIBpl_VERSION}
+@lib lib/swipl-${V}/lib/${FULLARCH}/libpl.so.${LIBpl_VERSION}
 lib/swipl-${V}/lib/${FULLARCH}/cgi.so
 lib/swipl-${V}/lib/${FULLARCH}/crypt.so
 lib/swipl-${V}/lib/${FULLARCH}/double_metaphone.so
@@ -7,7 +8,6 @@ lib/swipl-${V}/lib/${FULLARCH}/files.so
 lib/swipl-${V}/lib/${FULLARCH}/http_stream.so
 lib/swipl-${V}/lib/${FULLARCH}/isub.so
 lib/swipl-${V}/lib/${FULLARCH}/json.so
-@lib lib/swipl-${V}/lib/${FULLARCH}/libpl.so.${LIBpl_VERSION}
 lib/swipl-${V}/lib/${FULLARCH}/libswipl.so
 lib/swipl-${V}/lib/${FULLARCH}/memfile.so
 lib/swipl-${V}/lib/${FULLARCH}/mime.so

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2013/07/07 21:25:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.50 2013/07/10 09:10:44 edd Exp $
 
 BROKEN-mips64 = 	undefined reference to `__sync_fetch_and_add_8'
 BROKEN-hppa =		undefined reference to `__sync_fetch_and_add_4'
@@ -6,10 +6,9 @@ BROKEN-sparc64 =	infinite loop or aborts during build
 
 COMMENT =		Prolog for the real world
 
-V =			6.2.2
+V =			6.2.6
 DISTNAME =		pl-$V
 PKGNAME =		swi-prolog-$V
-REVISION =		2
 CATEGORIES =		lang
 
 SHARED_LIBS =		pl	4.0
@@ -54,7 +53,7 @@ LIB_DEPENDS =		devel/gmp \
 			graphics/jpeg
 
 WANTLIB += ICE SM X11 Xext Xft Xinerama Xpm Xt c crypto execinfo
-WANTLIB += expat fontconfig freetype gmp jpeg m ncursesw pthread
+WANTLIB += fontconfig gmp jpeg m ncursesw pthread
 WANTLIB += readline ssl z
 
 FULLARCH =		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
@@ -63,12 +62,14 @@ SUBST_VARS +=		V BOOT FULLARCH
 post-install:
 	cd ${PREFIX}/lib && \
 		ln -sf swipl-$V/lib/${FULLARCH}/libpl.so.${LIBpl_VERSION}
+	mv ${PREFIX}/lib/swipl-${V}/doc ${PREFIX}/share/doc/swipl
 
 # Swipl multithreading flaky at best on OpenBSD.
 # We are not sure if this is our threading implementation or their code.
 # The following tests fail (hang). We remove them to allow the rest
 # of the tests to execute atleast.
 # When updating, uncomment these to see if they still fail.
+# Still failing 20130623 :(
 pre-test:
 	rm -f ${WRKBUILD}/src/Tests/thread/test_signal.pl
 	rm -f ${WRKBUILD}/src/Tests/core/test_resource_error.pl
