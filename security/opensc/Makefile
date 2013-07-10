@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/07/10 13:42:39 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.22 2013/07/10 14:15:51 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
@@ -38,8 +38,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/PCSC"
 
 FAKE_FLAGS=	mandir="${PREFIX}/man/" \
 		sysconfdir="${PREFIX}/share/examples/opensc/"
-
-NO_TEST=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig
