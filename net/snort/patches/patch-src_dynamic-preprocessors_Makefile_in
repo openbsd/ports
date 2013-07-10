@@ -1,35 +1,23 @@
-$OpenBSD: patch-src_dynamic-preprocessors_Makefile_in,v 1.10 2013/05/31 20:26:01 lteo Exp $
---- src/dynamic-preprocessors/Makefile.in.orig	Mon Apr 15 15:57:47 2013
-+++ src/dynamic-preprocessors/Makefile.in	Wed Apr 24 14:51:57 2013
-@@ -1024,8 +1024,8 @@ maintainer-clean-generic:
- 	@echo "This command is intended for maintainers to use"
- 	@echo "it deletes files that may require special tools to rebuild."
- 	-test -z "$(BUILT_SOURCES)" || rm -f $(BUILT_SOURCES)
--@HAVE_DYNAMIC_PLUGINS_FALSE@uninstall-local:
--@HAVE_DYNAMIC_PLUGINS_FALSE@install-data-local:
-+uninstall-local:
-+install-data-local:
- clean: clean-recursive
- 
- clean-am: clean-generic clean-libtool clean-local \
-@@ -1335,20 +1335,7 @@ include/file_lib.h: $(top_srcdir)/src/file-process/lib
- clean-local:
+$OpenBSD: patch-src_dynamic-preprocessors_Makefile_in,v 1.11 2013/07/10 02:10:22 lteo Exp $
+--- src/dynamic-preprocessors/Makefile.in.orig	Tue Jun  4 23:21:39 2013
++++ src/dynamic-preprocessors/Makefile.in	Mon Jul  1 23:06:13 2013
+@@ -1333,19 +1333,8 @@ clean-local:
  	rm -rf include build
  
--@HAVE_DYNAMIC_PLUGINS_TRUE@install-data-local:
--@HAVE_DYNAMIC_PLUGINS_TRUE@	@for f in $(exported_files); do \
--@HAVE_DYNAMIC_PLUGINS_TRUE@		truefile=`echo $$f | sed -e "s/.*\///"`; \
--@HAVE_DYNAMIC_PLUGINS_TRUE@		$(mkinstalldirs) $(DESTDIR)$(srcinstdir); \
--@HAVE_DYNAMIC_PLUGINS_TRUE@		if test -f $(srcdir)/$$f; then p=$(srcdir)/$$f; else p=$$f; fi; \
--@HAVE_DYNAMIC_PLUGINS_TRUE@		$(INSTALL_DATA) $$p $(DESTDIR)$(srcinstdir)/$$truefile; \
--@HAVE_DYNAMIC_PLUGINS_TRUE@	done
+ install-data-local:
+-	@for f in $(exported_files); do \
+-		truefile=`echo $$f | sed -e "s/.*\///"`; \
+-		$(mkinstalldirs) $(DESTDIR)$(srcinstdir); \
+-		if test -f $(srcdir)/$$f; then p=$(srcdir)/$$f; else p=$$f; fi; \
+-		$(INSTALL_DATA) $$p $(DESTDIR)$(srcinstdir)/$$truefile; \
+-	done
  
--@HAVE_DYNAMIC_PLUGINS_TRUE@uninstall-local:
--@HAVE_DYNAMIC_PLUGINS_TRUE@	@for f in $(exported_files); do \
--@HAVE_DYNAMIC_PLUGINS_TRUE@		truefile=`echo $$f | sed -e "s/.*\///"`; \
--@HAVE_DYNAMIC_PLUGINS_TRUE@		$(mkinstalldirs) $(DESTDIR)$(srcinstdir); \
--@HAVE_DYNAMIC_PLUGINS_TRUE@		rm -f $(DESTDIR)$(srcinstdir)/$$truefile; \
--@HAVE_DYNAMIC_PLUGINS_TRUE@	done
+ uninstall-local:
+-	@for f in $(exported_files); do \
+-		truefile=`echo $$f | sed -e "s/.*\///"`; \
+-		$(mkinstalldirs) $(DESTDIR)$(srcinstdir); \
+-		rm -f $(DESTDIR)$(srcinstdir)/$$truefile; \
+-	done
  
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.

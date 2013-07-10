@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_decode_h,v 1.3 2013/01/16 04:52:53 lteo Exp $
---- src/decode.h.orig	Fri Sep 21 02:09:13 2012
-+++ src/decode.h	Tue Oct  9 22:18:48 2012
-@@ -806,9 +806,9 @@ typedef struct _SLLHdr {
+$OpenBSD: patch-src_decode_h,v 1.4 2013/07/10 02:10:22 lteo Exp $
+--- src/decode.h.orig	Tue Jun  4 23:19:52 2013
++++ src/decode.h	Tue Jul  2 20:52:28 2013
+@@ -812,9 +812,9 @@ typedef struct _SLLHdr {
   * Pflog1_Hdr:  CVS = 1.3,  DLT_OLD_PFLOG = 17,  Length = 28
   * Pflog2_Hdr:  CVS = 1.8,  DLT_PFLOG     = 117, Length = 48
   * Pflog3_Hdr:  CVS = 1.12, DLT_PFLOG     = 117, Length = 64
-- * Pflog3_Hdr:  CVS = 1.172, DLT_PFLOG     = 117, Length = 100 
-+ * Pflog4_Hdr:  CVS = 1.16, DLT_PFLOG     = 117, Length = 100 
+- * Pflog3_Hdr:  CVS = 1.172, DLT_PFLOG     = 117, Length = 100
++ * Pflog4_Hdr:  CVS = 1.16, DLT_PFLOG     = 117, Length = 100
   *
 - * Since they have the same DLT, Pflog{2,3}Hdr are distinguished
 + * Since they have the same DLT, Pflog{2,3,4}Hdr are distinguished

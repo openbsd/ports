@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_util_h,v 1.4 2012/09/26 02:11:05 lteo Exp $
---- src/util.h.orig	Sat Mar 17 22:51:54 2012
-+++ src/util.h	Sat May 26 15:10:21 2012
-@@ -44,6 +44,7 @@
+$OpenBSD: patch-src_util_h,v 1.5 2013/07/10 02:10:22 lteo Exp $
+--- src/util.h.orig	Tue Jun  4 23:19:52 2013
++++ src/util.h	Mon Jul  1 23:00:43 2013
+@@ -49,6 +49,7 @@
  #include "sflsq.h"
  #include "sfutil/sf_ipvar.h"
  #include "ipv6_port.h"
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_util_h,v 1.4 2012/09/26 02:11:05 lteo Exp $
  
  /* Macros *********************************************************************/
  
-@@ -177,7 +178,7 @@ typedef struct _IntervalStats
+@@ -183,7 +184,7 @@ void StoreSnortInfoStrings(void);
  int DisplayBanner(void);
  void GetTime(char *);
  int gmt2local(time_t);

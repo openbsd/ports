@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2013/01/16 04:52:53 lteo Exp $
+@comment $OpenBSD: PLIST,v 1.24 2013/07/10 02:10:22 lteo Exp $
 @pkgpath net/snort[,flexresp][,mysql][,prelude][,postgresql]
 @newgroup _snort:557
 @newuser _snort:557:_snort:daemon:Snort Account:/nonexistent:/sbin/nologin
@@ -82,7 +82,6 @@ share/doc/snort/README.decoder_preproc_rules
 share/doc/snort/README.dnp3
 share/doc/snort/README.dns
 share/doc/snort/README.event_queue
-share/doc/snort/README.file
 share/doc/snort/README.filters
 share/doc/snort/README.flowbits
 share/doc/snort/README.frag3
