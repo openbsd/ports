@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/06/17 14:59:24 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.20 2013/07/10 13:47:30 dcoppa Exp $
 
 COMMENT=	resource manager for PC/SC
 
@@ -39,6 +39,12 @@ CONFIGURE_ARGS=	--disable-libudev \
 
 CONFIGURE_ENV=	ac_cv_lib_lex='none needed'
 
-NO_TEST=	Yes
+TEST_DEPENDS=	security/ccid
+
+# The pcscd server needs to be up and running
+TEST_IS_INTERACTIVE= Yes
+
+do-test:
+	${WRKBUILD}/src/testpcsc
 
 .include <bsd.port.mk>
