@@ -1,21 +1,6 @@
-@comment $OpenBSD: PLIST-lightning,v 1.14 2013/01/11 23:17:32 landry Exp $
+@comment $OpenBSD: PLIST-lightning,v 1.15 2013/07/11 16:23:40 landry Exp $
 @conflict lightning-seamonkey-<=1.0b1
 @pkgpath productivity/sunbird,-seamonkey
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/calendar-timezones@mozilla.org/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/calendar-timezones@mozilla.org/chrome/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/calendar-timezones@mozilla.org/chrome.manifest
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/calendar-timezones@mozilla.org/chrome/calendar-timezones/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/calendar-timezones@mozilla.org/chrome/calendar-timezones-en-US/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/calendar-timezones@mozilla.org/chrome/calendar-timezones-en-US/locale/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/calendar-timezones@mozilla.org/chrome/calendar-timezones-en-US/locale/en-US/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/calendar-timezones@mozilla.org/chrome/calendar-timezones-en-US/locale/en-US/timezones.properties
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/calendar-timezones@mozilla.org/chrome/calendar-timezones/skin/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/calendar-timezones@mozilla.org/chrome/calendar-timezones/skin/addon-icon32.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/calendar-timezones@mozilla.org/defaults/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/calendar-timezones@mozilla.org/defaults/preferences/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/calendar-timezones@mozilla.org/defaults/preferences/preferences.js
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/calendar-timezones@mozilla.org/install.rdf
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/calendar-timezones@mozilla.org/timezones.sqlite
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/chrome/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/chrome.manifest
@@ -261,7 +246,6 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a4
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/skin/calendar/datetimepickers/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/skin/calendar/datetimepickers/datetimepickers.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/skin/calendar/day-box-item-image.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/skin/calendar/daypicker-background.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/skin/calendar/event-grip${MODPY_PY_PREFIX}bottom.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/skin/calendar/event-grip${MODPY_PY_PREFIX}left.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/skin/calendar/event-grip${MODPY_PY_PREFIX}right.png
