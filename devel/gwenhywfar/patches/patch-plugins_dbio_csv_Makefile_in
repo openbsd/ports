@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_dbio_csv_Makefile_in,v 1.1.1.1 2013/07/11 18:57:39 phessler Exp $
+--- plugins/dbio/csv/Makefile.in.orig	Thu Jun 20 13:19:24 2013
++++ plugins/dbio/csv/Makefile.in	Thu Jun 20 13:19:32 2013
+@@ -366,7 +366,7 @@ dbioplugin_DATA = csv.xml
+ csv_la_SOURCES = csv.c
+ csv_la_LIBADD = $(top_builddir)/src/libgwenhywfar.la
+ csv_la_LDFLAGS = -no-undefined $(STRIPALL) \
+-    -module -version-info 0:1:0
++    -module -avoid-version
+ 
+ all: all-am
+ 

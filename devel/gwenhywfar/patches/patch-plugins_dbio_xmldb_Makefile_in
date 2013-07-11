@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_dbio_xmldb_Makefile_in,v 1.1.1.1 2013/07/11 18:57:39 phessler Exp $
+--- plugins/dbio/xmldb/Makefile.in.orig	Thu Jun 20 13:19:04 2013
++++ plugins/dbio/xmldb/Makefile.in	Thu Jun 20 13:19:17 2013
+@@ -366,7 +366,7 @@ dbioplugin_DATA = xmldb.xml
+ xmldb_la_SOURCES = xmldb.c
+ xmldb_la_LIBADD = $(top_builddir)/src/libgwenhywfar.la
+ xmldb_la_LDFLAGS = -no-undefined $(STRIPALL) \
+-    -module -version-info 0:1:0
++    -module -avoid-version
+ 
+ all: all-am
+ 
