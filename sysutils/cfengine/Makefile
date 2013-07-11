@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.42 2013/06/12 20:36:34 brad Exp $
+# $OpenBSD: Makefile,v 1.43 2013/07/11 07:50:25 sthen Exp $
 
 COMMENT =	GNU system administration tool for networks
 
 DISTNAME =	cfengine-3.4.4
+F =		${DISTNAME}${EXTRACT_SUFX}
+DISTFILES =	$F{download?file=$F}
+
 REVISION =	1
 SHARED_LIBS +=  promises	0.0 # 1.0
 CATEGORIES =	sysutils
@@ -13,7 +16,7 @@ MAINTAINER =	Martijn Rijkeboer <martijn@bunix.org>
 # GPLv3 only
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${HOMEPAGE}source-code/download?file=${DISTFILES}&dummy=/
+MASTER_SITES =	http://cfengine.com/source-code/
 
 CFENGINE_BASE =		/var/cfengine
 CFENGINE_EXAMPLES =	${PREFIX}/share/examples/cfengine
