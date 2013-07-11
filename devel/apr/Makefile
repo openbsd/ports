@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/21 08:45:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2013/07/11 08:36:28 espie Exp $
 
 COMMENT=	Apache Portable Runtime
 
@@ -22,6 +22,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE:=apr/}
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		${CONFIGURE_SHARED:S/-shared/-dso/} \
 		--includedir=${LOCALBASE}/include/apr-1/ \
 		--with-installbuilddir=${LOCALBASE}/lib/apr-1/ \
 		--enable-other-child \
