@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/07/11 21:02:23 matthieu Exp $
+@bin bin/jq
+@man man/man1/jq.1
+share/doc/jq/
+share/doc/jq/AUTHORS
+share/doc/jq/COPYING
+share/doc/jq/README
+share/doc/jq/README.md
