@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.309 2013/06/29 15:56:10 jeremy Exp $
+# $OpenBSD: Makefile,v 1.310 2013/07/11 18:16:43 bcallah Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -209,6 +209,7 @@
      SUBDIR += shorten
      SUBDIR += sidplay
      SUBDIR += snack
+     SUBDIR += solfege
      SUBDIR += sonata
      SUBDIR += sound-theme-freedesktop
      SUBDIR += soundtouch
