@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.54 2013/04/24 09:16:22 zhuk Exp $
+# $OpenBSD: Makefile,v 1.55 2013/07/11 19:00:19 phessler Exp $
 
      SUBDIR =
      SUBDIR += akonadi
+     SUBDIR += aqbanking
      SUBDIR += attica
      SUBDIR += baikal
      SUBDIR += bruce
