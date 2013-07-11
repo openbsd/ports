@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.56 2013/06/26 19:18:48 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.57 2013/07/11 16:24:10 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -185,7 +185,7 @@ MODGNU_CONFIG_GUESS_DIRS +=	${WRKSRC}/${_MOZDIR}/build/autoconf \
 				${WRKSRC}/${_MOZDIR}/js/src/build/autoconf
 
 # sydneyaudio was removed in gecko 22
-.if ${MOZILLA_PROJECT} != "firefox"
+.if ${MOZILLA_PROJECT} != "firefox" && ${MOZILLA_PROJECT} != "seamonkey"
 post-extract:
 # syndeyaudio sndio file comes from ffx FILESDIR
 	cp -f ${PORTSDIR}/www/mozilla-firefox/files/sydney_audio_sndio.c \
