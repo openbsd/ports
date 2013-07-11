@@ -1,0 +1,23 @@
+GNU Solfege is an ear training program written to help you train
+intervals, chords, scales, and rhythms. The program is intended to help
+music students with their ear training.
+
+Some of the existing exercises:
+
+* Recognize melodic and harmonic intervals
+* Compare interval sizes
+* Sing the intervals the computer asks for
+* Identify chords
+* Sing chords
+* Sing tone from chords: root, third, fifth, etc.
+* Scales
+* Dictation
+* Rhythm dictation
+* Remembering rhythmic patterns
+* Theory: name intervals and scales
+* Cadences
+
+If this is not enough for you, Solfege is written to make it easy to
+extend or modify the existing exercises, or write completely new ones.
+
+Intonation studies are currently unavailable.

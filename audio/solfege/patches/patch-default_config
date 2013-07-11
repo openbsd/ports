@@ -1,0 +1,50 @@
+$OpenBSD: patch-default_config,v 1.1.1.1 2013/07/11 18:16:06 bcallah Exp $
+--- default.config.orig	Wed Mar 27 10:14:56 2013
++++ default.config	Wed Mar 27 10:19:04 2013
+@@ -51,11 +51,11 @@ frontpage=exercises/standard/learningtree.txt
+ rcfileversion=18
+ random_function=random_by_random
+ randomness=1.1
+-midi_to_wav_cmd=timidity
++midi_to_wav_cmd=${LOCALBASE}/bin/timidity
+ midi_to_wav_cmd_options=-Ow %(in)s -o %(out)s
+-wav_to_mp3_cmd=lame
++wav_to_mp3_cmd=${LOCALBASE}/bin/lame
+ wav_to_mp3_cmd_options=%(in)s %(out)s
+-wav_to_ogg_cmd=oggenc
++wav_to_ogg_cmd=${LOCALBASE}/bin/oggenc
+ wav_to_ogg_cmd_options=%(in)s
+ win32_ignore_drives=('A:\\', 'B:\\')
+ set_patch_delay=100
+@@ -66,23 +66,23 @@ history_forward_ak=<alt>Right
+ history_reload_ak=<ctrl>r
+ 
+ [programs]
+-latex=latex
+-lilypond-book=lilypond-book
++latex=${LOCALBASE}/bin/latex
++lilypond-book=${LOCALBASE}/bin/lilypond-book
+ csound=csound
+ mma=mma
+-text-editor=gedit
++text-editor=${LOCALBASE}/bin/gedit
+ 
+ [sound]
+ type=external-midiplayer
+ device_file=/dev/sequencer2
+ synth_number=2
+-wav_player=/usr/bin/aplay
+-wav_player_options=
+-midi_player=/usr/bin/timidity
++wav_player=/usr/bin/aucat
++wav_player_options=-m play -i %s
++midi_player=${LOCALBASE}/bin/timidity
+ midi_player_options=-idqq %s
+-mp3_player=/usr/bin/mpg123
++mp3_player=${LOCALBASE}/bin/mpg123
+ mp3_player_options=
+-ogg_player=/usr/bin/ogg123
++ogg_player=${LOCALBASE}/bin/ogg123
+ ogg_player_options=
+ 
+ [config]

@@ -1,0 +1,15 @@
+$OpenBSD: patch-run-solfege_py_in,v 1.1.1.1 2013/07/11 18:16:06 bcallah Exp $
+--- run-solfege.py.in.orig	Tue Jul  2 09:59:41 2013
++++ run-solfege.py.in	Tue Jul  2 10:00:33 2013
+@@ -47,10 +47,7 @@ from solfege import filesystem
+ # solfege.py is not necessary here because this file is only used on
+ # linux.
+ 
+-if prefix == "/usr":
+-    sysconf = "/etc/solfege"
+-else:
+-    sysconf = os.path.join(prefix, "etc", "solfege")
++sysconf = "${SYSCONFDIR}/solfege"
+ 
+ from solfege import presetup
+ presetup.presetup(os.path.join(prefix, "share", "solfege", "default.config"),

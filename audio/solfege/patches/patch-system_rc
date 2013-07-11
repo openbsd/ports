@@ -1,0 +1,26 @@
+$OpenBSD: patch-system_rc,v 1.1.1.1 2013/07/11 18:16:06 bcallah Exp $
+--- system.rc.orig	Tue Jul  2 10:01:23 2013
++++ system.rc	Tue Jul  2 10:06:19 2013
+@@ -1,8 +1,15 @@
+-# For Solfege versions X.Y.Z, this file get installed as
+-# /etc/solfegeX.Y
+-#
+-# Sys admin can override app defaults set in the file
+-#   /usr/share/solfege/X.Y.Z/default.config
+-# (in debian packages the file is named
+-#   /usr/share/solfege/default.config
++# Default settings from ${TRUEPREFIX}/share/solfege/default.config can be
++# overridden in this file. ~/.solfegerc is created based on these settings at
++# first startup.
+ 
++# To use Fluidsynth rather than Timidity, uncomment the following and
++# supply a Soundfont file (the example is available in the 
++# generaluser-gs-soundfont package):
++
++#[app]
++#midi_to_wav_cmd=${LOCALBASE}/bin/fluidsynth
++#midi_to_wav_cmd_options=-i %(in)s -F %(out)s ${LOCALBASE}/share/generaluser-gs/GeneralUser_GS.sf2
++
++#[sound]
++#midi_player=${LOCALBASE}/bin/fluidsynth
++#midi_player_options=-i ${LOCALBASE}/share/generaluser-gs/GeneralUser_GS.sf2 %s
