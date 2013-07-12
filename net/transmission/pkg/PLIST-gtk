@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-gtk,v 1.8 2012/09/30 19:53:10 naddy Exp $
+@comment $OpenBSD: PLIST-gtk,v 1.9 2013/07/12 17:03:59 naddy Exp $
 @pkgpath net/transmission,-gui
 @bin bin/transmission-gtk
 @man man/man1/transmission-gtk.1
@@ -163,8 +163,6 @@ share/locale/nn/LC_MESSAGES/transmission-gtk.mo
 share/locale/oc/
 share/locale/oc/LC_MESSAGES/
 share/locale/oc/LC_MESSAGES/transmission-gtk.mo
-share/locale/pa/
-share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/transmission-gtk.mo
 share/locale/pl/LC_MESSAGES/transmission-gtk.mo
 share/locale/pt/LC_MESSAGES/transmission-gtk.mo
