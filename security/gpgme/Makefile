@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/21 08:48:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2013/07/12 00:49:23 jca Exp $
 
 COMMENT=		GnuPG Made Easy
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += assuan gpg-error
 
-MASTER_SITES=		ftp://ftp.gnupg.org/gcrypt/gpgme/
+MASTER_SITES=		${MASTER_SITES_GNUPG:=gpgme/}
 EXTRACT_SUFX=		.tar.bz2
 
 CONFIGURE_STYLE=	gnu

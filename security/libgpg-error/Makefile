@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/23 13:38:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2013/07/12 00:49:23 jca Exp $
 
 COMMENT=	error codes for GnuPG related software
 
@@ -14,10 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c
 
-MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/libgpg-error/ \
-		ftp://gd.tuwien.ac.at/privacy/gnupg/libgpg-error/ \
-		http://sunsite.dk/pub/security/gcrypt/libgpg-error/ \
-		http://ftp.linux.it/pub/mirrors/gnupg/libgpg-error/
+MASTER_SITES=	${MASTER_SITES_GNUPG:=libgpg-error/}
 
 MODULES=	devel/gettext
 

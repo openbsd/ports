@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.182 2013/04/06 19:57:48 rpe Exp $
+# $OpenBSD: network.conf.template,v 1.183 2013/07/12 00:49:23 jca Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -261,3 +261,9 @@ MASTER_SITE_DEBIAN += \
 	http://ftp.nl.debian.org/debian/pool/ \
 	http://ftp.uk.debian.org/debian/pool/ \
 	http://ftp.us.debian.org/debian/pool/
+
+MASTER_SITES_GNUPG += \
+	http://mirrors.dotsrc.org/gcrypt/ \
+	http://ftp.linux.it/pub/mirrors/gnupg/ \
+	ftp://ftp.gnupg.org/gcrypt/ \
+	ftp://ftp.ring.gr.jp/pub/net/gnupg/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:41:27 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/07/12 00:49:23 jca Exp $
 
 # pinentry builds against it's own stripped version of libassuan
 # I will see with upstream how to change this behavior
@@ -15,7 +15,7 @@ REVISION-gtk2 = 0
 PKGNAME-main = 	${DISTNAME}
 PKGNAME-gtk2 = 	pinentry-gtk2-${VERSION}
 
-MASTER_SITES = 	ftp://ftp.gnupg.org/gcrypt/pinentry/
+MASTER_SITES = 	${MASTER_SITES_GNUPG:=pinentry/}
 
 HOMEPAGE = 	http://www.gnupg.org/related_software/pinentry/index.en.html
 

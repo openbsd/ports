@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/23 13:44:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2013/07/12 00:49:23 jca Exp $
 
 COMMENT=	IPC library used by GnuPG and gpgme
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += gpg-error
 
-MASTER_SITES=	ftp://ftp.gnupg.org/gcrypt/libassuan/
+MASTER_SITES=	${MASTER_SITES_GNUPG:=libassuan/}
 
 MODULES=	devel/gettext \
 		textproc/intltool

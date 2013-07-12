@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:12 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/07/12 00:49:23 jca Exp $
 
 COMMENT=	new GNU Portable Threads Library
 
@@ -19,7 +19,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB=		pthread
 
-MASTER_SITES=		ftp://ftp.gnupg.org/gcrypt/npth/
+MASTER_SITES=		${MASTER_SITES_GNUPG:=npth/}
 
 CONFIGURE_STYLE=	gnu
 
