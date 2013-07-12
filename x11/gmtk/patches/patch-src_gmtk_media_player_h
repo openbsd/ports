@@ -1,10 +1,14 @@
-$OpenBSD: patch-src_gmtk_media_player_h,v 1.5 2013/05/24 08:29:54 dcoppa Exp $
+$OpenBSD: patch-src_gmtk_media_player_h,v 1.6 2013/07/12 09:58:56 dcoppa Exp $
 
 Use case-insensitive parsing of metadata attributes
 (upstream svn revision r212)
 
+If the user gives some mplayer video output driver (vo) options in
+the "Video Output" preferences they should be passed along on the
+mplayer command line (upstream svn revision r222)
+
 --- src/gmtk_media_player.h.orig	Tue Feb 19 18:02:13 2013
-+++ src/gmtk_media_player.h	Thu May 23 14:18:48 2013
++++ src/gmtk_media_player.h	Thu Jul 11 17:03:07 2013
 @@ -182,7 +182,8 @@ typedef enum {
      ATTRIBUTE_PROFILE,
      ATTRIBUTE_PREFERRED_AUDIO_LANGUAGE,
@@ -23,7 +27,7 @@ Use case-insensitive parsing of metadata attributes
      gboolean enable_divx;
      gboolean disable_xvmc;
      gboolean retry_on_full_cache;
-@@ -398,6 +400,12 @@ struct _GmtkMediaPlayer {
+@@ -398,6 +400,13 @@ struct _GmtkMediaPlayer {
  
      gboolean disposed;
      GMutex *player_lock;
@@ -32,6 +36,7 @@ Use case-insensitive parsing of metadata attributes
 +    GRegex *title_regex;
 +    GRegex *artist_regex;
 +    GRegex *album_regex;
++    GRegex *deintN_regex;
 +
  };
  

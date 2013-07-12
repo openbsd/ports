@@ -1,4 +1,8 @@
-$OpenBSD: patch-src_gmtk_media_player_c,v 1.12 2013/06/05 08:10:57 dcoppa Exp $
+$OpenBSD: patch-src_gmtk_media_player_c,v 1.13 2013/07/12 09:58:56 dcoppa Exp $
+
+If the user gives some mplayer video output driver (vo) options in
+the "Video Output" preferences they should be passed along on the
+mplayer command line (upstream svn revision r222)
 
 Use case-insensitive parsing of metadata attributes
 (upstream svn revision r212)
@@ -13,8 +17,40 @@ Fix issue #682: item names in "Items to Play" replaced with CPUID
 string (upstream svn revision r220)
 
 --- src/gmtk_media_player.c.orig	Tue Feb 19 18:02:13 2013
-+++ src/gmtk_media_player.c	Wed Jun  5 09:52:48 2013
-@@ -477,6 +477,12 @@ static void gmtk_media_player_init(GmtkMediaPlayer * p
++++ src/gmtk_media_player.c	Fri Jul 12 11:31:22 2013
+@@ -75,6 +75,22 @@ static void alignment_realized(GtkWidget * widget, gpo
+ 
+ }
+ 
++static gboolean vodesc_looks_like_vo(gchar const*const desc, gchar const*const vo) {
++   if(g_strcmp0(desc, vo) == 0) {
++      return TRUE;
++   }
++   if(!g_str_has_prefix(desc, vo)) {
++      return FALSE;
++   }
++   /* we know that they are not equal but desc starts with vo, i.e. desc is longer than vo */
++   /* now to check that desc looks like vo: */
++   const size_t vol = strlen(vo);
++   if(desc[vol] == ':') {
++      return TRUE;
++   }
++   return FALSE;
++}
++
+ static void socket_realized(GtkWidget * widget, gpointer data)
+ {
+     GmtkMediaPlayer *player = GMTK_MEDIA_PLAYER(data);
+@@ -83,7 +99,7 @@ static void socket_realized(GtkWidget * widget, gpoint
+     player->socket_id = GPOINTER_TO_INT(gtk_socket_get_id(GTK_SOCKET(widget)));
+     style = gtk_widget_get_style(widget);
+     if (player->vo != NULL) {
+-        if (!(g_ascii_strncasecmp(player->vo, "vdpau", strlen("vdpau")) == 0)) {
++        if (!vodesc_looks_like_vo(player->vo, "vdpau")) {
+             gtk_widget_modify_bg(widget, GTK_STATE_NORMAL, &(style->black));
+             gtk_widget_modify_bg(widget, GTK_STATE_ACTIVE, &(style->black));
+             gtk_widget_modify_bg(widget, GTK_STATE_SELECTED, &(style->black));
+@@ -477,6 +493,13 @@ static void gmtk_media_player_init(GmtkMediaPlayer * p
      player->album = NULL;
      player->disposed = FALSE;
      player->player_lock = g_mutex_new();
@@ -23,11 +59,12 @@ string (upstream svn revision r220)
 +    player->title_regex = g_regex_new(".*title\\s*:\\s*(.*)\n", G_REGEX_CASELESS, 0, NULL);
 +    player->artist_regex = g_regex_new(".*artist\\s*:\\s*(.*)\n", G_REGEX_CASELESS, 0, NULL);
 +    player->album_regex = g_regex_new(".*album\\s*:\\s*(.*)\n", G_REGEX_CASELESS, 0, NULL);
++    player->deintN_regex = g_regex_new("(.*)(:deint=[0-9]+)\\b(.*)", G_REGEX_CASELESS, 0, NULL);
 +
      gmtk_media_player_log_state(player, "after init");
  }
  
-@@ -741,7 +747,7 @@ static gboolean player_key_press_event_callback(GtkWid
+@@ -741,7 +764,7 @@ static gboolean player_key_press_event_callback(GtkWid
          case GDK_d:
              write_to_mplayer(player, "frame_drop\n");
              cmd =
@@ -36,7 +73,7 @@ string (upstream svn revision r220)
                                  g_dgettext(GETTEXT_PACKAGE, "Frame Dropping"));
              write_to_mplayer(player, cmd);
              g_free(cmd);
-@@ -755,7 +761,7 @@ static gboolean player_key_press_event_callback(GtkWid
+@@ -755,7 +778,7 @@ static gboolean player_key_press_event_callback(GtkWid
          case GDK_D:
              write_to_mplayer(player, "step_property deinterlace\n");
              cmd =
@@ -45,7 +82,7 @@ string (upstream svn revision r220)
                                  g_dgettext(GETTEXT_PACKAGE, "Deinterlace"));
              write_to_mplayer(player, cmd);
              g_free(cmd);
-@@ -1119,7 +1125,7 @@ void gmtk_media_player_send_command(GmtkMediaPlayer * 
+@@ -1119,7 +1142,7 @@ void gmtk_media_player_send_command(GmtkMediaPlayer * 
          case COMMAND_SWITCH_FRAME_DROP:
              write_to_mplayer(player, "frame_drop\n");
              cmd =
@@ -54,7 +91,7 @@ string (upstream svn revision r220)
                                  g_dgettext(GETTEXT_PACKAGE, "Frame Dropping"));
              write_to_mplayer(player, cmd);
              g_free(cmd);
-@@ -1147,11 +1153,12 @@ void gmtk_media_player_set_attribute_boolean(GmtkMedia
+@@ -1147,11 +1170,12 @@ void gmtk_media_player_set_attribute_boolean(GmtkMedia
              cmd = NULL;
              if (value) {
                  cmd =
@@ -69,7 +106,7 @@ string (upstream svn revision r220)
              }
              write_to_mplayer(player, cmd);
              g_free(cmd);
-@@ -1775,6 +1782,14 @@ const gchar *gmtk_media_player_get_attribute_string(Gm
+@@ -1775,6 +1799,14 @@ const gchar *gmtk_media_player_get_attribute_string(Gm
          }
          break;
  
@@ -84,7 +121,134 @@ string (upstream svn revision r220)
      case ATTRIBUTE_PROFILE:
          value = player->profile;
          break;
-@@ -3042,6 +3057,7 @@ gboolean thread_reader_error(GIOChannel * source, GIOC
+@@ -2208,8 +2240,50 @@ static const gchar *playback_error_to_string(const Gmt
+ 
+ }
+ 
++/* if it contains a deint=N leave as is, otherwise add deint=2
++   returns newly-allocated string, passing ownership to caller */
++static gchar* vdpau_compute_vo_with_deint(GmtkMediaPlayer * player, gchar const*const vodesc) {
++   gchar* ret;
++   if(g_regex_match(player->deintN_regex, vodesc, 0, NULL)) { 
++      ret = g_strdup(vodesc);
++   } else {
++      ret = g_strdup_printf("%s:deint=2", vodesc);
++   }
++   return ret;
++}
+ 
++/* if it contains a deint=N  remove that, otherwise leave as is
++   returns newly-allocated string, passing ownership to caller */
++static gchar* vdpau_compute_vo_without_deint(GmtkMediaPlayer * player, gchar const*const vodesc) {
++   GMatchInfo *match_info = NULL;
++   gchar *ret;
++   if(g_regex_match(player->deintN_regex, vodesc, 0, &match_info)) { 
++      gchar *before = g_match_info_fetch(match_info, 1);
++      gchar *after  = g_match_info_fetch(match_info, 3);
++      ret = g_strdup_printf("%s%s", before, after);
++      g_free(before);
++      g_free(after);
++   } else {
++      ret = g_strdup(vodesc);
++   }
++   g_match_info_free(match_info);
++   return ret;
++}
+ 
++/* replace the vo part with "gl_nosw"
++   returns newly-allocated string, passing ownership to caller */
++static gchar* vodesc_replace_gl_with_gl_nosw(GmtkMediaPlayer * player, gchar const*const vodesc) {
++   /* find the first colon : and replace the part before that with gl_nosw */
++   char *colonptr = strchr(vodesc, ':');
++   gchar *ret;
++   if(colonptr == NULL) {
++      ret = g_strdup("gl_nosw");
++   } else {
++      ret = g_strdup_printf("gl_nosw%s", colonptr);
++   }
++   return ret;   
++}
++
+ gpointer launch_mplayer(gpointer data)
+ {
+     GmtkMediaPlayer *player = GMTK_MEDIA_PLAYER(data);
+@@ -2321,12 +2395,18 @@ gpointer launch_mplayer(gpointer data)
+         if (player->vo != NULL) {
+             argv[argn++] = g_strdup_printf("-vo");
+ 
+-            if (g_ascii_strncasecmp(player->vo, "vdpau", strlen("vdpau")) == 0) {
++            if (vodesc_looks_like_vo(player->vo, "vdpau")) {
+ 
+                 if (player->deinterlace) {
+-                    argv[argn++] = g_strdup_printf("vdpau:deint=2,%s,gl,x11", player->vo);
++                    /* if it contains a deint=N leave as is, otherwise add deint=2 */
++                    gchar* vo_with_deint = vdpau_compute_vo_with_deint(player, player->vo);
++                    argv[argn++] = g_strdup_printf("%s,gl,x11,", player->vo);
++                    g_free(vo_with_deint);
+                 } else {
+-                    argv[argn++] = g_strdup_printf("%s,gl,x11", player->vo);
++                    /* if it contains a deint=N remove that, otherwise leave as is */
++                    gchar* vo_without_deint = vdpau_compute_vo_without_deint(player, player->vo);
++                    argv[argn++] = g_strdup_printf("%s,gl,x11,", player->vo);
++                    g_free(vo_without_deint);
+                 }
+ 
+                 // told by uau that vdpau without hardware decoding is often what you want
+@@ -2339,12 +2419,12 @@ gpointer launch_mplayer(gpointer data)
+                     }
+                 }
+ 
+-            } else if (g_ascii_strncasecmp(player->vo, "vaapi", strlen("vaapi")) == 0) {
++            } else if (vodesc_looks_like_vo(player->vo, "vaapi")) {
+                 argv[argn++] = g_strdup_printf("%s,", player->vo);
+                 argv[argn++] = g_strdup_printf("-va");
+                 argv[argn++] = g_strdup_printf("vaapi");
+ 
+-            } else if (g_ascii_strncasecmp(player->vo, "xvmc", strlen("xvmc")) == 0) {
++            } else if (vodesc_looks_like_vo(player->vo, "xvmc")) {
+ 
+                 if (player->disable_xvmc) {
+                     argv[argn++] = g_strdup_printf("xv,");
+@@ -2354,13 +2434,15 @@ gpointer launch_mplayer(gpointer data)
+ 
+             } else {
+ 
+-                if (g_ascii_strncasecmp(player->vo, "gl", strlen("gl")) == 0 && player->enable_hardware_codecs) {
+-                    argv[argn++] = g_strdup_printf("gl_nosw");
+-                } else if (g_ascii_strncasecmp(player->vo, "gl2", strlen("gl2")) == 0 && player->enable_hardware_codecs) {
+-                    argv[argn++] = g_strdup_printf("gl_nosw");
++                if (vodesc_looks_like_vo(player->vo, "gl") && player->enable_hardware_codecs) {
++                    gchar *vodesc = vodesc_replace_gl_with_gl_nosw(player, player->vo);
++                    argv[argn++]  = vodesc;
++                } else if (vodesc_looks_like_vo(player->vo, "gl2") && player->enable_hardware_codecs) {
++                    gchar *vodesc = vodesc_replace_gl_with_gl_nosw(player, player->vo);
++                    argv[argn++]  = vodesc;
+                 } else {
+                     argv[argn++] = g_strdup_printf("%s", player->vo);
+-                    if (g_ascii_strncasecmp(player->vo, "x11", strlen("x11")) == 0) {
++                    if (vodesc_looks_like_vo(player->vo, "x11")) {
+                         argv[argn++] = g_strdup_printf("-zoom");
+                     }
+                 }
+@@ -3010,7 +3092,7 @@ gboolean thread_reader_error(GIOChannel * source, GIOC
+         }
+ 
+         if (strstr(mplayer_output->str, "Failed creating VDPAU decoder") != NULL) {
+-            if (player->enable_divx && (g_ascii_strncasecmp(player->vo, "vdpau", strlen("vdpau")) == 0))
++            if (player->enable_divx && vodesc_looks_like_vo(player->vo, "vdpau"))
+                 player->playback_error = ERROR_RETRY_WITHOUT_DIVX_VDPAU;
+         }
+ 
+@@ -3020,7 +3102,7 @@ gboolean thread_reader_error(GIOChannel * source, GIOC
+         }
+ 
+         if (strstr(mplayer_output->str, "The selected video_out device is incompatible with this codec") != NULL) {
+-            if (!player->disable_xvmc && (g_ascii_strncasecmp(player->vo, "xvmc", strlen("xvmc")) == 0))
++            if (!player->disable_xvmc && vodesc_looks_like_vo(player->vo, "xvmc"))
+                 player->playback_error = ERROR_RETRY_WITHOUT_XVMC;
+         }
+ 
+@@ -3042,6 +3124,7 @@ gboolean thread_reader_error(GIOChannel * source, GIOC
  
          if (strstr(mplayer_output->str, "Failed to open") != NULL) {
              if (strstr(mplayer_output->str, "LIRC") == NULL &&
@@ -92,7 +256,7 @@ string (upstream svn revision r220)
                  strstr(mplayer_output->str, "/dev/rtc") == NULL &&
                  strstr(mplayer_output->str, "VDPAU") == NULL && strstr(mplayer_output->str, "registry file") == NULL) {
                  if (strstr(mplayer_output->str, "<") == NULL && strstr(mplayer_output->str, ">") == NULL
-@@ -3161,6 +3177,8 @@ gboolean thread_reader(GIOChannel * source, GIOConditi
+@@ -3161,6 +3244,8 @@ gboolean thread_reader(GIOChannel * source, GIOConditi
      GmtkMediaPlayerAudioTrack *audio_track = NULL;
      GList *iter;
      GtkWidget *dialog;
@@ -101,7 +265,7 @@ string (upstream svn revision r220)
  
      if (player == NULL) {
          gm_log(player->debug, G_LOG_LEVEL_MESSAGE, "player is NULL");
-@@ -3635,94 +3653,120 @@ gboolean thread_reader(GIOChannel * source, GIOConditi
+@@ -3635,94 +3720,120 @@ gboolean thread_reader(GIOChannel * source, GIOConditi
              gtk_widget_destroy(dialog);
          }
  
