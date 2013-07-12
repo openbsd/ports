@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/07/12 10:26:44 sthen Exp $
+@newgroup _lldpd:720
+@newuser _lldpd:720:_lldpd:daemon:lldpd user:/nonexistent:/sbin/nologin
+include/lldp-const.h
+include/lldpctl.h
+lib/liblldpctl.a
+lib/liblldpctl.la
+@lib lib/liblldpctl.so.${LIBlldpctl_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/lldpctl.pc
+@man man/man8/lldpcli.8
+@man man/man8/lldpctl.8
+@man man/man8/lldpd.8
+@bin sbin/lldpcli
+sbin/lldpctl
+@bin sbin/lldpd
+share/doc/lldpd/
+share/doc/lldpd/CONTRIBUTE.md
+share/doc/lldpd/ChangeLog
+share/doc/lldpd/NEWS
+share/doc/lldpd/README.md
+@rcscript ${RCDIR}/lldpd
