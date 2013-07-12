@@ -1,7 +1,7 @@
-$OpenBSD: patch-Changelog,v 1.7 2013/07/03 09:30:46 sthen Exp $
---- Changelog.orig	Sun Jun 30 15:16:49 2013
-+++ Changelog	Tue Jul  2 09:59:53 2013
-@@ -7,11 +7,9 @@ Thanks to all contributers, testers and developers. Pl
+$OpenBSD: patch-Changelog,v 1.8 2013/07/12 16:07:08 sthen Exp $
+--- Changelog.orig	Sun Jul  7 16:50:50 2013
++++ Changelog	Fri Jul 12 17:04:37 2013
+@@ -7,9 +7,7 @@ Thanks to all contributers, testers and developers. Pl
  UPGRADE NOTES
  
  * for idoutils database upgrades, check the following for upgrade sql scripts
@@ -12,6 +12,4 @@ $OpenBSD: patch-Changelog,v 1.7 2013/07/03 09:30:46 sthen Exp $
 -	- idoutils: ${source}/module/idoutils/config/updates
 -* package locations may differ!
 +	- ${TRUEPREFIX}/share/examples/icinga/updates/
- 
- 1.9.2 - 30/06/2013
  
