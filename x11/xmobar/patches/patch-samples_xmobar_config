@@ -1,12 +1,14 @@
-$OpenBSD: patch-samples_xmobar_config,v 1.4 2013/06/17 10:07:40 dcoppa Exp $
---- samples/xmobar.config.orig	Mon Dec  3 00:47:56 2012
-+++ samples/xmobar.config	Wed Jun  5 15:49:58 2013
-@@ -4,18 +4,15 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
+$OpenBSD: patch-samples_xmobar_config,v 1.5 2013/07/12 13:48:39 dcoppa Exp $
+--- samples/xmobar.config.orig	Wed Jun  5 00:37:16 2013
++++ samples/xmobar.config	Fri Jul 12 10:43:19 2013
+@@ -4,18 +4,17 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
         , bgColor = "black"
         , fgColor = "grey"
         , position = Top
++       , allDesktops = True
 +       , hideOnStart = False
         , lowerOnStart = True
++       , overrideRedirect = True
         , persistent = False
         , commands = [ Run Weather "EGPF" ["-t","<station>: <tempC>C","-L","18","-H","25","--normal","green","--high","red","--low","lightblue"] 36000
 -                    , Run Network "eth0" ["-L","0","-H","32","--normal","green","--high","red"] 10
@@ -14,10 +16,9 @@ $OpenBSD: patch-samples_xmobar_config,v 1.4 2013/06/17 10:07:40 dcoppa Exp $
 -                    , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
 -                    , Run Memory ["-t","Mem: <usedratio>%"] 10
 -                    , Run Swap [] 10
-                     , Run Com "uname" ["-s","-r"] "" 36000
--    		    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
 +                    , Run Battery ["-t","AC: <status> Batt: <left> <minleft>"] 10
-+                    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
+                     , Run Com "uname" ["-s","-r"] "" 36000
+     		    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
                      ]
         , sepChar = "%"
         , alignSep = "}{"

@@ -1,7 +1,7 @@
-$OpenBSD: patch-xmobar_cabal,v 1.7 2013/01/25 08:37:17 dcoppa Exp $
---- xmobar.cabal.orig	Mon Dec  3 00:47:56 2012
-+++ xmobar.cabal	Thu Jan 24 12:13:50 2013
-@@ -88,10 +88,11 @@ executable xmobar
+$OpenBSD: patch-xmobar_cabal,v 1.8 2013/07/12 13:48:39 dcoppa Exp $
+--- xmobar.cabal.orig	Wed Jun  5 00:37:16 2013
++++ xmobar.cabal	Fri Jul 12 14:19:31 2013
+@@ -88,16 +88,19 @@ executable xmobar
        Plugins.Monitors.Swap, Plugins.Monitors.Thermal,
        Plugins.Monitors.ThermalZone, Plugins.Monitors.Top,
        Plugins.Monitors.Uptime, Plugins.Monitors.Weather,
@@ -14,3 +14,12 @@ $OpenBSD: patch-xmobar_cabal,v 1.7 2013/01/25 08:37:17 dcoppa Exp $
      extra-libraries: Xrandr
  
      build-depends:
+       base == 4.*,
+       containers,
+-      regex-compat,
++      array,
++      regex-base,
++      regex-pcre-builtin,
+       process,
+       old-locale,
+       bytestring,
