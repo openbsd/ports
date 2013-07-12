@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_devmgr4_py,v 1.8 2013/05/13 08:34:09 ajacoutot Exp $
---- ui/devmgr4.py.orig	Mon Apr  8 11:54:38 2013
-+++ ui/devmgr4.py	Mon May 13 10:23:18 2013
-@@ -2809,7 +2809,7 @@ class DevMgr4(DevMgr4_base):
+$OpenBSD: patch-ui_devmgr4_py,v 1.9 2013/07/12 08:07:05 ajacoutot Exp $
+--- ui/devmgr4.py.orig	Fri Jun 21 08:54:22 2013
++++ ui/devmgr4.py	Fri Jul 12 09:43:56 2013
+@@ -2821,7 +2821,7 @@ class DevMgr4(DevMgr4_base):
          if utils.which('hp-setup'):
              cmd = 'hp-setup -u'
          else:

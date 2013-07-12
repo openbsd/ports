@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hpijs,v 1.26 2013/05/21 16:46:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST-hpijs,v 1.27 2013/07/12 08:07:05 ajacoutot Exp $
 @conflict hplip-libs-<=3.9.8
 @conflict hpcups-<=3.2.11
 @pkgpath print/hpijs
@@ -176,6 +176,7 @@ share/foomatic/db/source/PPD/HP/hp-designjet_t1120ps_24in-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_t1120ps_44in-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_t1200_postscript-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_t1300_postscript-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-designjet_t1500-postscript.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_t2300_postscript-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_t7100ps-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_t7100ps_monochrome-ps.ppd.gz
@@ -183,6 +184,7 @@ share/foomatic/db/source/PPD/HP/hp-designjet_t770_postscript-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_t770ps_24in-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_t790ps_24in-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_t790ps_44in-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-designjet_t920-postscript.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_z5200_postscript-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_z6100ps_42in_photo-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_z6100ps_60in_photo-ps.ppd.gz
@@ -363,6 +365,7 @@ share/foomatic/db/source/PPD/HP/hp-dj450-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-envy_100_d410_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-envy_110_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-envy_120_series-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-envy_4500_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_1000-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_1005_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_100_color_mfp_m175-ps.ppd.gz

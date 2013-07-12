@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2013/06/20 06:54:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.82 2013/07/12 08:07:05 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT-hpcups=	HP native CUPS driver
 COMMENT-libs=	HPLIP backend libraries
 COMMENT-gui=	HPLIP graphical tools
 
-V=		3.13.5
+V=		3.13.6
 DISTNAME=	hplip-${V}
 
 PKGNAME-main=	${DISTNAME}
@@ -16,9 +16,6 @@ PKGNAME-hpijs=	hpijs-${V}
 PKGNAME-hpcups=	hpcups-${V}
 PKGNAME-libs=	hplip-libs-${V}
 PKGNAME-gui=	hplip-gui-${V}
-
-REVISION-main=	1
-REVISION-hpcups=1
 
 SHARED_LIBS +=  hpmud		2.0 # .0.6
 SHARED_LIBS +=  hpip		2.0 # .0.1
@@ -48,7 +45,7 @@ cWANTLIB = crypto m pthread
 WANTLIB-main += ${WANTLIB} ${cWANTLIB}
 WANTLIB-main += asn1 c cups dbus-1 gssapi hpip hpmud jpeg krb5 netsnmp
 WANTLIB-main += sane ssl tiff usb-1.0 z usb avahi-client avahi-common
-WANTLIB-MAIN += com_err heimbase roken wind
+WANTLIB-main += com_err heimbase roken wind
 
 BUILD_DEPENDS=	sysutils/polkit
 

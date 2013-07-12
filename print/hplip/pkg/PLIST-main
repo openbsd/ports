@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.22 2013/05/11 11:15:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.23 2013/07/12 08:07:05 ajacoutot Exp $
 @conflict hplip-docs-*
 @conflict hplip-gui-<3.11.3p0
 @extraunexec rm -rf /var/log/hp/tmp/*
@@ -25,7 +25,9 @@ lib/python${MODPY_VERSION}/site-packages/pcardext.so
 lib/python${MODPY_VERSION}/site-packages/scanext.so
 lib/sane/libsane-hpaio.so
 @bin libexec/cups/backend/hp
+@mode 0700
 libexec/cups/backend/hpfax
+@mode
 libexec/cups/filter/hpcac
 libexec/cups/filter/pstotiff
 share/dbus-1/system-services/com.hp.hplip.service
@@ -247,6 +249,7 @@ share/hplip/firmware.py
 share/hplip/firmware.pyc
 share/hplip/hpdio.py
 share/hplip/hpdio.pyc
+share/hplip/hplip_clean.sh
 share/hplip/hpssd.py
 share/hplip/hpssd.pyc
 share/hplip/info.py

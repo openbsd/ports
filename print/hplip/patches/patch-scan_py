@@ -1,7 +1,7 @@
-$OpenBSD: patch-scan_py,v 1.9 2013/05/13 08:34:09 ajacoutot Exp $
---- scan.py.orig	Mon Apr  8 11:58:45 2013
-+++ scan.py	Mon May 13 10:23:46 2013
-@@ -1096,7 +1096,7 @@ try:
+$OpenBSD: patch-scan_py,v 1.10 2013/07/12 08:07:05 ajacoutot Exp $
+--- scan.py.orig	Fri Jun 21 08:57:55 2013
++++ scan.py	Fri Jul 12 09:43:56 2013
+@@ -1118,7 +1118,7 @@ try:
              elif d == 'print':
                  hp_print = utils.which("hp-print", True)
                  if not hp_print:

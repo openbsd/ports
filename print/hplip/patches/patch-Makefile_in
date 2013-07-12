@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.23 2013/05/21 16:46:43 ajacoutot Exp $
---- Makefile.in.orig	Fri May 10 12:10:21 2013
-+++ Makefile.in	Tue May 21 18:39:17 2013
-@@ -4322,16 +4322,16 @@ cups_drv = prnt/drv/hpcups.drv
+$OpenBSD: patch-Makefile_in,v 1.24 2013/07/12 08:07:05 ajacoutot Exp $
+--- Makefile.in.orig	Fri Jun 21 08:58:43 2013
++++ Makefile.in	Fri Jul 12 09:48:23 2013
+@@ -4328,16 +4328,16 @@ cups_drv = prnt/drv/hpcups.drv
  @HPLIP_BUILD_TRUE@@SCAN_BUILD_TRUE@        scan/sane/soaphti.h scan/sane/soapi.h scan/sane/xml.c scan/sane/xml.h scan/sane/ledm.h scan/sane/ledmi.h scan/sane/ledm.c \
  @HPLIP_BUILD_TRUE@@SCAN_BUILD_TRUE@        scan/sane/bb_ledm.c scan/sane/http.h scan/sane/http.c scan/sane/sclpml.c scan/sane/sclpml.h common/utils.c common/utils.h
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-Makefile_in,v 1.23 2013/05/21 16:46:43 ajacoutot Exp $
 -@HPLIP_BUILD_TRUE@@SCAN_BUILD_TRUE@libsane_hpaio_la_LIBADD = libhpip.la libhpmud.la $(DBUS_LIBS) -lcups -ldl
 +@HPLIP_BUILD_TRUE@@SCAN_BUILD_TRUE@libsane_hpaio_la_LIBADD = libhpip.la libhpmud.la $(DBUS_LIBS) -lcups
  #libsane_hpaio_la_CFLAGS = -DWITH_NONAMESPACES -DSOAP_DEBUG
- @HPLIP_BUILD_TRUE@@SCAN_BUILD_TRUE@libsane_hpaio_la_CFLAGS = $(DBUS_CFLAGS) -D_IPP_PRIVATE_STRUCTURES=1
+ @HPLIP_BUILD_TRUE@@SCAN_BUILD_TRUE@libsane_hpaio_la_CFLAGS = $(DBUS_CFLAGS)
  
  # hpmud library
  @HPLIP_BUILD_TRUE@MUDNAME = hpmud
@@ -21,7 +21,7 @@ $OpenBSD: patch-Makefile_in,v 1.23 2013/05/21 16:46:43 ajacoutot Exp $
  @HPLIP_BUILD_TRUE@@LIBUSB01_BUILD_TRUE@libhpmud_la_CFLAGS = -DMUDNAME=\"$(MUDNAME)\" -DCONFDIR=\"$(hplip_confdir)\"
  @HPLIP_BUILD_TRUE@@LIBUSB01_BUILD_FALSE@libhpmud_la_SOURCES = io/hpmud/hpmud.c io/hpmud/mlc.c io/hpmud/model.c io/hpmud/pml.c \
  @HPLIP_BUILD_TRUE@@LIBUSB01_BUILD_FALSE@	  io/hpmud/hpmud.h io/hpmud/hpmudi.h io/hpmud/list.h io/hpmud/mlc.h io/hpmud/pml.h io/hpmud/dot4.c \
-@@ -4344,7 +4344,7 @@ cups_drv = prnt/drv/hpcups.drv
+@@ -4350,7 +4350,7 @@ cups_drv = prnt/drv/hpcups.drv
  @HPLIP_BUILD_TRUE@@LIBUSB01_BUILD_TRUE@	  common/utils.c common/utils.h
  
  @HPLIP_BUILD_TRUE@libhpmud_la_LDFLAGS = -version-info 0:6:0 -lpthread \
@@ -30,7 +30,7 @@ $OpenBSD: patch-Makefile_in,v 1.23 2013/05/21 16:46:43 ajacoutot Exp $
  @HPLIP_BUILD_TRUE@	$(am__append_4)
  @HPLIP_BUILD_TRUE@libhpip_la_LDFLAGS = -version-info 0:1:0
  @HPLIP_BUILD_TRUE@libhpip_la_LIBADD = -lm
-@@ -4357,7 +4357,7 @@ cups_drv = prnt/drv/hpcups.drv
+@@ -4363,7 +4363,7 @@ cups_drv = prnt/drv/hpcups.drv
  # hp-mkuri.
  @HPLIP_BUILD_TRUE@hp_mkuridir = $(bindir)
  @HPLIP_BUILD_TRUE@hp_mkuri_SOURCES = io/hpmud/hp-mkuri.c
@@ -39,7 +39,7 @@ $OpenBSD: patch-Makefile_in,v 1.23 2013/05/21 16:46:43 ajacoutot Exp $
  @HPLIP_BUILD_TRUE@hp_mkuri_CFLAGS = -DCONFDIR=\"$(hplip_confdir)\"
  
  #hpmud rules data dir
-@@ -4384,7 +4384,7 @@ cups_drv = prnt/drv/hpcups.drv
+@@ -4386,7 +4386,7 @@ cups_drv = prnt/drv/hpcups.drv
  @HPLIP_BUILD_TRUE@pstotiff_SCRIPTS = fax/filters/pstotiff
  
  # hplip.state
@@ -48,7 +48,7 @@ $OpenBSD: patch-Makefile_in,v 1.23 2013/05/21 16:46:43 ajacoutot Exp $
  @HPLIP_BUILD_TRUE@dist_hplip_state_DATA = 
  
  # Log Files
-@@ -4512,7 +4512,7 @@ cups_drv = prnt/drv/hpcups.drv
+@@ -4515,7 +4515,7 @@ cups_drv = prnt/drv/hpcups.drv
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hpmudext_la_LDFLAGS = -module -avoid-version
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hpmudext_la_SOURCES = io/mudext/hpmudext.c
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hpmudext_la_LIBADD = libhpmud.la
@@ -57,7 +57,7 @@ $OpenBSD: patch-Makefile_in,v 1.23 2013/05/21 16:46:43 ajacoutot Exp $
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@LIBUSB01_BUILD_TRUE@hpmudext_la_CFLAGS = -I$(PYTHONINCLUDEDIR)
  
  # ui (qt3)
-@@ -4564,7 +4564,7 @@ cups_drv = prnt/drv/hpcups.drv
+@@ -4567,7 +4567,7 @@ cups_drv = prnt/drv/hpcups.drv
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hppgsz_SOURCES = prnt/hpijs/PrinterProperties.cpp prnt/hpijs/PrinterProperties.h prnt/hpijs/bug.h
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hppgsz_CXXFLAGS = $(libapdk_la_CXXFLAGS)
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hppgsz_CFLAGS = $(libapdk_la_CFLAGS)
@@ -66,7 +66,7 @@ $OpenBSD: patch-Makefile_in,v 1.23 2013/05/21 16:46:43 ajacoutot Exp $
  
  # hplip.desktop
  @FULL_BUILD_TRUE@@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@hplip_desktopdir = $(icondir)
-@@ -4637,8 +4637,8 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+@@ -4640,8 +4640,8 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
  
  @HPIJS_INSTALL_TRUE@hpijs_CXXFLAGS = $(libapdk_la_CXXFLAGS)
  @HPIJS_INSTALL_TRUE@hpijs_CFLAGS = $(libapdk_la_CFLAGS)
@@ -77,7 +77,7 @@ $OpenBSD: patch-Makefile_in,v 1.23 2013/05/21 16:46:43 ajacoutot Exp $
  
  # hpcups
  #if NEW_HPCUPS
-@@ -4678,7 +4678,7 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+@@ -4681,7 +4681,7 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
  @HPCUPS_INSTALL_TRUE@	common/utils.c common/utils.h
  
  @HPCUPS_INSTALL_TRUE@hpcups_CXXFLAGS = $(APDK_ENDIAN_FLAG) $(DBUS_CFLAGS)
@@ -86,7 +86,7 @@ $OpenBSD: patch-Makefile_in,v 1.23 2013/05/21 16:46:43 ajacoutot Exp $
  #else
  #hpcupsdir = $(cupsfilterdir)
  #hpcups_PROGRAMS = hpcups
-@@ -4686,15 +4686,15 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+@@ -4689,15 +4689,15 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
  #hpcups_CXXFLAGS = $(libapdk_la_CXXFLAGS)
  #hpcups_CFLAGS = $(libapdk_la_CFLAGS)
  #if HPCUPS_ONLY_BUILD
@@ -105,22 +105,22 @@ $OpenBSD: patch-Makefile_in,v 1.23 2013/05/21 16:46:43 ajacoutot Exp $
  
  # PPDs
  ppddir = $(hpppddir)
-@@ -8753,11 +8753,11 @@ install-data-am: install-cupsdrv2DATA install-cupsdrvD
+@@ -8748,11 +8748,11 @@ install-data-am: install-cupsdrv2DATA install-cupsdrvD
  	install-dist_cacSCRIPTS install-dist_cmdSCRIPTS \
- 	install-dist_copierDATA install-dist_cronDATA \
- 	install-dist_faxDATA install-dist_fax_filtersDATA \
--	install-dist_finSCRIPTS install-dist_halpreDATA \
-+	install-dist_finSCRIPTS \
- 	install-dist_homeDATA install-dist_hpcupsfaxppdDATA \
- 	install-dist_hpfaxSCRIPTS install-dist_hpijsfaxppdDATA \
--	install-dist_hplipSCRIPTS install-dist_hplip_LogDATA \
--	install-dist_hplip_stateDATA install-dist_hplip_tmpDATA \
-+	install-dist_hplipSCRIPTS \
+ 	install-dist_copierDATA install-dist_faxDATA \
+ 	install-dist_fax_filtersDATA install-dist_finSCRIPTS \
+-	install-dist_halpreDATA install-dist_homeDATA \
++	install-dist_homeDATA \
+ 	install-dist_hpcupsfaxppdDATA install-dist_hpfaxSCRIPTS \
+ 	install-dist_hpijsfaxppdDATA install-dist_hplipSCRIPTS \
+-	install-dist_hplip_LogDATA install-dist_hplip_stateDATA \
+-	install-dist_hplip_tmpDATA install-dist_images_128x128DATA \
 +	install-dist_hplip_stateDATA \
- 	install-dist_images_128x128DATA install-dist_images_16x16DATA \
- 	install-dist_images_24x24DATA install-dist_images_256x256DATA \
- 	install-dist_images_32x32DATA install-dist_images_64x64DATA \
-@@ -8770,7 +8770,7 @@ install-data-am: install-cupsdrv2DATA install-cupsdrvD
++	install-dist_images_128x128DATA \
+ 	install-dist_images_16x16DATA install-dist_images_24x24DATA \
+ 	install-dist_images_256x256DATA install-dist_images_32x32DATA \
+ 	install-dist_images_64x64DATA install-dist_images_devicesDATA \
+@@ -8764,7 +8764,7 @@ install-data-am: install-cupsdrv2DATA install-cupsdrvD
  	install-dist_policykit_dbus_shareDATA \
  	install-dist_policykit_policyDATA install-dist_postscriptDATA \
  	install-dist_ppdDATA install-dist_prntDATA \
@@ -129,8 +129,8 @@ $OpenBSD: patch-Makefile_in,v 1.23 2013/05/21 16:46:43 ajacoutot Exp $
  	install-dist_rulessystemDATA install-dist_scanDATA \
  	install-dist_ui4DATA install-dist_uiDATA \
  	install-dist_unrelDATA install-dist_www0DATA \
-@@ -9000,17 +9000,6 @@ install-dist_cronDATA:$(dist_cron_DATA)
- 	done
+@@ -8980,17 +8980,6 @@ install-dist_hplip_tmpDATA:
+ @HPLIP_BUILD_TRUE@	chmod 0775 $(DESTDIR)$(hplip_tmpdir)
  
  install-data-hook:
 -#	   If scanner build, add hpaio entry to sane dll.conf.
