@@ -1,10 +1,10 @@
-$OpenBSD: patch-backend_usb-libusb_c,v 1.6 2013/04/03 15:19:01 ajacoutot Exp $
+$OpenBSD: patch-backend_usb-libusb_c,v 1.7 2013/07/12 07:19:38 ajacoutot Exp $
 
 http://www.cups.org/str.php?L4088
 
---- backend/usb-libusb.c.orig	Thu Mar 14 15:31:07 2013
-+++ backend/usb-libusb.c	Wed Apr  3 17:12:52 2013
-@@ -1397,9 +1397,14 @@ open_device(usb_printer_t *printer,	/* I - Printer */
+--- backend/usb-libusb.c.orig	Fri Jun  7 03:12:52 2013
++++ backend/usb-libusb.c	Fri Jul 12 07:35:41 2013
+@@ -1422,9 +1422,14 @@ open_device(usb_printer_t *printer,	/* I - Printer */
    else
    {
      printer->usblp_attached = 0;

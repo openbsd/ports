@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2013/03/19 08:49:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2013/07/12 07:19:38 ajacoutot Exp $
 @conflict LPRng-*
 @pkgpath print/cups
 @pkgpath print/cups,ldap
@@ -768,7 +768,6 @@ share/doc/cups/images/cups-icon.png
 share/doc/cups/images/cups-postscript-chain.png
 share/doc/cups/images/cups-raster-chain.png
 share/doc/cups/images/cups.png
-share/doc/cups/images/generic.png
 share/doc/cups/images/left.gif
 share/doc/cups/images/raster-organization.png
 share/doc/cups/images/raster.png
