@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.15 2013/06/17 11:52:29 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.16 2013/07/12 07:25:26 dcoppa Exp $
 @conflict jakarta-tomcat-examples-*
 @pkgpath www/jakarta-tomcat/v7,-examples
 @owner _tomcat
@@ -203,6 +203,7 @@ webapps/docs/api/org/apache/catalina/core/package-frame.html
 webapps/docs/api/org/apache/catalina/core/package-summary.html
 webapps/docs/api/org/apache/catalina/core/package-tree.html
 webapps/docs/api/org/apache/catalina/deploy/
+webapps/docs/api/org/apache/catalina/deploy/ApplicationListener.html
 webapps/docs/api/org/apache/catalina/deploy/ApplicationParameter.html
 webapps/docs/api/org/apache/catalina/deploy/Constants.html
 webapps/docs/api/org/apache/catalina/deploy/ContextEjb.html
@@ -403,6 +404,7 @@ webapps/docs/api/org/apache/catalina/mbeans/ContextResourceMBean.html
 webapps/docs/api/org/apache/catalina/mbeans/GlobalResourcesLifecycleListener.html
 webapps/docs/api/org/apache/catalina/mbeans/GroupMBean.html
 webapps/docs/api/org/apache/catalina/mbeans/JmxRemoteLifecycleListener.RmiClientLocalhostSocketFactory.html
+webapps/docs/api/org/apache/catalina/mbeans/JmxRemoteLifecycleListener.RmiServerBindSocketFactory.html
 webapps/docs/api/org/apache/catalina/mbeans/JmxRemoteLifecycleListener.html
 webapps/docs/api/org/apache/catalina/mbeans/MBeanDumper.html
 webapps/docs/api/org/apache/catalina/mbeans/MBeanFactory.html
@@ -765,6 +767,7 @@ webapps/docs/api/org/apache/catalina/valves/AccessLogValve.DateAndTimeElement.ht
 webapps/docs/api/org/apache/catalina/valves/AccessLogValve.DateFormatCache.Cache.html
 webapps/docs/api/org/apache/catalina/valves/AccessLogValve.DateFormatCache.html
 webapps/docs/api/org/apache/catalina/valves/AccessLogValve.ElapsedTimeElement.html
+webapps/docs/api/org/apache/catalina/valves/AccessLogValve.FirstByteTimeElement.html
 webapps/docs/api/org/apache/catalina/valves/AccessLogValve.HeaderElement.html
 webapps/docs/api/org/apache/catalina/valves/AccessLogValve.HostElement.html
 webapps/docs/api/org/apache/catalina/valves/AccessLogValve.HttpStatusCodeElement.html
