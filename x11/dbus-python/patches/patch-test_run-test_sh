@@ -1,15 +1,15 @@
-$OpenBSD: patch-test_run-test_sh,v 1.1 2010/09/06 16:20:26 fgsch Exp $
---- test/run-test.sh.orig	Mon Sep  6 12:03:32 2010
-+++ test/run-test.sh	Mon Sep  6 12:03:42 2010
+$OpenBSD: patch-test_run-test_sh,v 1.2 2013/07/12 06:15:29 ajacoutot Exp $
+--- test/run-test.sh.orig	Wed May  8 09:37:31 2013
++++ test/run-test.sh	Fri Jul 12 08:14:04 2013
 @@ -1,4 +1,4 @@
 -#! /bin/bash
 +#! /bin/sh
  
  # Copyright (C) 2006 Red Hat Inc. <http://www.redhat.com/>
  # Copyright (C) 2006-2007 Collabora Ltd. <http://www.collabora.co.uk/>
-@@ -26,7 +26,7 @@
- export DBUS_FATAL_WARNINGS=1
- ulimit -c unlimited
+@@ -28,7 +28,7 @@ ulimit -c unlimited
+ 
+ skipped=
  
 -function die() 
 +function die

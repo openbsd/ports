@@ -1,11 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/07/05 07:21:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/07/12 06:15:29 ajacoutot Exp $
 include/dbus-1.0/dbus/dbus-python.h
 lib/pkgconfig/dbus-python.pc
-@comment lib/python${MODPY_VERSION}/site-packages/_dbus_bindings.a
-@comment lib/python${MODPY_VERSION}/site-packages/_dbus_bindings.la
 lib/python${MODPY_VERSION}/site-packages/_dbus_bindings.so
-@comment lib/python${MODPY_VERSION}/site-packages/_dbus_glib_bindings.a
-@comment lib/python${MODPY_VERSION}/site-packages/_dbus_glib_bindings.la
 lib/python${MODPY_VERSION}/site-packages/_dbus_glib_bindings.so
 lib/python${MODPY_VERSION}/site-packages/dbus/
 lib/python${MODPY_VERSION}/site-packages/dbus/__init__.py
