@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/04/26 14:14:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2013/07/12 12:53:36 sthen Exp $
 
 COMMENT=		rake tasks and spec_helper for Puppet modules spec tests
 DISTNAME=		puppetlabs_spec_helper-0.4.1
-REVISION=		0
+REVISION=		1
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
