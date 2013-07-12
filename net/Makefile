@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.808 2013/07/01 16:52:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.809 2013/07/12 10:27:08 sthen Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -200,6 +200,7 @@
      SUBDIR += libtorrent
      SUBDIR += libupnp
      SUBDIR += livemedia
+     SUBDIR += lldpd
      SUBDIR += loudmouth
      SUBDIR += luasocket
      SUBDIR += luasocket,lua52
