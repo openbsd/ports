@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.20 2013/02/03 21:45:52 espie Exp $
+# $OpenBSD: Locks.pm,v 1.21 2013/07/12 08:07:19 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -195,6 +195,7 @@ sub find_dependencies
 		my $nojunk = 0;
 		my $host;
 		my $path;
+		my $cleaned;
 		my @d;
 		while (<$f>) {
 			if (m/^locked=(.*)/) {
@@ -205,8 +206,11 @@ sub find_dependencies
 				@d = split(/\s/, $1);
 			} elsif (m/^nojunk$/) {
 				$nojunk = 1;
+			} elsif (m/^cleaned$/) {
+				$cleaned = 1;
 			}
 		}
+		next if $cleaned;
 		if (defined $host && $host eq $hostname) {
 			if ($nojunk) {
 				print "Can't run junk because of lock on $path\n";

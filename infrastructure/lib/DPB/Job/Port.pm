@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.108 2013/07/04 17:45:34 jasper Exp $
+# $OpenBSD: Port.pm,v 1.109 2013/07/12 08:07:19 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -180,7 +180,7 @@ sub finalize
 	if ($core->{status} == 0) {
 		return 1;
 	}
-	$core->job->{failed} = 1;
+	$core->job->{failed} = $core->{status};
 	if ($core->prop->{always_clean}) {
 		$core->job->replace_tasks(DPB::Task::Port::BaseClean->new(
 			'clean'));
@@ -427,7 +427,6 @@ sub finalize
 	$job->{pos} = tell($job->{logfh});
 
 	$self->SUPER::finalize($core);
-	delete $job->{failed};
 	return 1;
 }
 
@@ -648,6 +647,7 @@ sub finalize
 	if ($self->requeue($core)) {
 		return 1;
 	}
+	print {$core->job->{lock}} "cleaned\n";
 	$self->SUPER::finalize($core);
 	return 1;
 }
