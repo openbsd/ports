@@ -1,7 +1,7 @@
-$OpenBSD: patch-libusb_core_c,v 1.1.1.1 2011/11/13 13:49:50 ajacoutot Exp $
---- libusb/core.c.orig	Sat Nov 12 18:44:27 2011
-+++ libusb/core.c	Sat Nov 12 18:44:35 2011
-@@ -29,6 +29,10 @@
+$OpenBSD: patch-libusb_core_c,v 1.2 2013/07/12 08:14:24 mpi Exp $
+--- libusb/core.c.orig	Sun May  5 18:43:46 2013
++++ libusb/core.c	Fri Jul 12 09:53:08 2013
+@@ -30,6 +30,10 @@
  #include "usb.h"
  #include "usbi.h"
  

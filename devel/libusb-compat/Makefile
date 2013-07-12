@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/21 08:45:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2013/07/12 08:14:24 mpi Exp $
 
 COMMENT=	libusb-0.1 compatibility layer for libusb1
 
-DISTNAME=	libusb-compat-0.1.4
-REVISION=	0
+DISTNAME=	libusb-compat-0.1.5
 EXTRACT_SUFX=	.tar.bz2
 
 SHARED_LIBS +=  usb                  10.0      # 8.4
