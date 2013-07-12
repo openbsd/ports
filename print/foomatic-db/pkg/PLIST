@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2013/06/05 14:04:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2013/07/12 08:10:12 ajacoutot Exp $
 share/foomatic/db/
 share/foomatic/db/oldprinterids
 share/foomatic/db/source/
@@ -4743,11 +4743,18 @@ share/foomatic/db/source/printer/Epson-XP-200_Series.xml
 share/foomatic/db/source/printer/Epson-XP-201_204_208_Series.xml
 share/foomatic/db/source/printer/Epson-XP-202_203_206_Series.xml
 share/foomatic/db/source/printer/Epson-XP-205_207_Series.xml
+share/foomatic/db/source/printer/Epson-XP-211_214_216_Series.xml
+share/foomatic/db/source/printer/Epson-XP-212_213_Series.xml
+share/foomatic/db/source/printer/Epson-XP-215_217_Series.xml
 share/foomatic/db/source/printer/Epson-XP-300_Series.xml
 share/foomatic/db/source/printer/Epson-XP-302_303_305_306_Series.xml
 share/foomatic/db/source/printer/Epson-XP-30_33_Series.xml
+share/foomatic/db/source/printer/Epson-XP-310_Series.xml
+share/foomatic/db/source/printer/Epson-XP-312_313_315_Series.xml
 share/foomatic/db/source/printer/Epson-XP-400_Series.xml
 share/foomatic/db/source/printer/Epson-XP-402_403_405_406_Series.xml
+share/foomatic/db/source/printer/Epson-XP-410_Series.xml
+share/foomatic/db/source/printer/Epson-XP-412_413_415_Series.xml
 share/foomatic/db/source/printer/Epson-XP-600_Series.xml
 share/foomatic/db/source/printer/Epson-XP-700_Series.xml
 share/foomatic/db/source/printer/Epson-XP-750_Series.xml
