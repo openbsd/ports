@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2012/10/18 08:12:17 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.22 2013/07/12 13:21:25 stsp Exp $
 @newgroup _apache2:576
 @newuser _apache2:576:576:daemon:Apache HTTP Server:/var/empty:/sbin/nologin
 include/apache2/
@@ -475,6 +475,7 @@ share/doc/apache2/mod/mod_authz_groupfile.html.ja.utf8
 share/doc/apache2/mod/mod_authz_groupfile.html.ko.euc-kr
 share/doc/apache2/mod/mod_authz_host.html
 share/doc/apache2/mod/mod_authz_host.html.en
+share/doc/apache2/mod/mod_authz_host.html.fr
 share/doc/apache2/mod/mod_authz_host.html.ja.utf8
 share/doc/apache2/mod/mod_authz_host.html.ko.euc-kr
 share/doc/apache2/mod/mod_authz_owner.html
