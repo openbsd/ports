@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/06/03 22:47:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2013/07/13 08:33:03 espie Exp $
 
 COMMENT-main=		programming language with generators, X11 and more
 COMMENT-main-no_x11=	programming language with generators
@@ -47,13 +47,18 @@ CONFIGURE_TARGET=	X-Configure
 WANTLIB-main+=		X11 Xpm pthread-stubs xcb
 .endif
 
+.include <bsd.port.arch.mk>
+
 do-configure:
 	cd ${WRKSRC} && ${MAKE} ${CONFIGURE_TARGET} name=bsd
+.if ${PROPERTIES:Mno_shared}
+	echo "#undef LoadFunc" >>${WRKSRC}/src/h/define.h
+.endif
 
 post-build:
-	if [ x${NO_SHARED_LIBS:L} != "yes" ]; then \
-	    cd ${WRKSRC}/ipl/cfuncs && ${MAKE} ICONT=${WRKBUILD}/bin/icont; \
-	fi
+.if !${PROPERTIES:Mno_shared}
+	cd ${WRKSRC}/ipl/cfuncs && ${MAKE} ICONT=${WRKBUILD}/bin/icont
+.endif
 
 # We put a wrapper around icont for finding the library files when
 # they're installed
@@ -77,11 +82,11 @@ do-install:
 	${INSTALL_DATA} ${WRKBUILD}/bin/rt.a ${WRKINST}${LIBDIR}
 	${INSTALL_DATA} ${WRKBUILD}/bin/rt.db ${WRKINST}${LIBDIR}
 	${INSTALL_DATA} ${WRKBUILD}/bin/dlrgint.o ${WRKINST}${LIBDIR}
-	if [ x${NO_SHARED_LIBS:L} != "yes" ]; then \
-	    ${INSTALL_DATA_DIR} ${PREFIX}/share/ipl/ucode; \
-	    ${INSTALL_DATA} ${WRKBUILD}/ipl/cfuncs/cfunc.u?  ${PREFIX}/share/ipl/ucode; \
-	    ${INSTALL_DATA} ${WRKBUILD}/ipl/cfuncs/libcfunc.so ${PREFIX}/lib; \
-	fi
+.if !${PROPERTIES:Mno_shared}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/ipl/ucode
+	${INSTALL_DATA} ${WRKBUILD}/ipl/cfuncs/cfunc.u?  ${PREFIX}/share/ipl/ucode
+	${INSTALL_DATA} ${WRKBUILD}/ipl/cfuncs/libcfunc.so ${PREFIX}/lib
+.endif
 
 TEST_FLAGS=	HOME=/
 
