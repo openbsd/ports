@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/07/12 10:26:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2013/07/13 11:54:36 sthen Exp $
 
 COMMENT=	LLDP (802.1ab)/CDP/EDP/SONMP/FDP daemon and SNMP subagent
 
@@ -29,8 +29,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-privsep-chroot=/var/run/lldpd
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
 			LDFLAGS="${LDFLAGS}"
-# don't pick up libbind
-CONFIGURE_ENV+=		ac_cv_search___res_init="none required"
 
 .if ${FLAVOR:Msnmp}
 CONFIGURE_ARGS+=	--with-snmp
