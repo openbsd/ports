@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1149 2013/07/13 16:14:57 bcallah Exp $
+# $OpenBSD: Makefile,v 1.1150 2013/07/13 18:26:41 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -243,7 +243,6 @@
      SUBDIR += hs-monad-control
      SUBDIR += hs-monad-par
      SUBDIR += hs-monad-par-extras
-     SUBDIR += hs-monads-fd
      SUBDIR += hs-monads-tf
      SUBDIR += hs-mtl
      SUBDIR += hs-murmur-hash
