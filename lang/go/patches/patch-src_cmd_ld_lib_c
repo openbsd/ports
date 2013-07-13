@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_cmd_ld_lib_c,v 1.1 2013/05/15 12:10:15 jsing Exp $
---- src/cmd/ld/lib.c.orig	Tue Apr  9 21:41:19 2013
-+++ src/cmd/ld/lib.c	Tue Apr  9 21:41:49 2013
-@@ -645,6 +645,8 @@ hostlink(void)
+$OpenBSD: patch-src_cmd_ld_lib_c,v 1.2 2013/07/13 15:46:43 jsing Exp $
+--- src/cmd/ld/lib.c.orig	Thu Jun 13 13:08:11 2013
++++ src/cmd/ld/lib.c	Fri Jul 12 02:00:00 2013
+@@ -670,6 +670,8 @@ hostlink(void)
  		argv[argc++] = "-gdwarf-2"; 
  	if(HEADTYPE == Hdarwin)
  		argv[argc++] = "-Wl,-no_pie,-pagezero_size,4000000";

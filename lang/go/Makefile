@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2013/05/15 12:10:15 jsing Exp $
+# $OpenBSD: Makefile,v 1.11 2013/07/13 15:46:43 jsing Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		Go programming language
 
-VERSION =		1.1
+VERSION =		1.1.1
 EXTRACT_SUFX =		.src.tar.gz
 DISTNAME = 		go${VERSION}
 PKGNAME = 		go-${VERSION}
@@ -17,7 +17,7 @@ MAINTAINER = 		Joel Sing <jsing@openbsd.org>
 # software: BSD, documentation: CC-BY-3.0
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c m
+WANTLIB =		c m pthread
 
 MASTER_SITES =		http://go.googlecode.com/files/
 
