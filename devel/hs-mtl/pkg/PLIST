@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/01/20 18:02:53 kili Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/07/13 18:25:17 kili Exp $
+@conflict hs-monads-fd-*
+@pkgpath devel/hs-monads-fd
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Control/
 lib/ghc/${DISTNAME}/Control/Monad/

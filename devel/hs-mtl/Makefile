@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:07 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/07/13 18:25:17 kili Exp $
 
 COMMENT =		monad classes using functional dependencies
 
 DISTNAME =		mtl-2.1.2
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
