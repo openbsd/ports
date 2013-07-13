@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2013/05/31 15:34:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2013/07/13 06:49:12 ajacoutot Exp $
 
 COMMENT=		base elements for GStreamer
 
-V=			1.0.7
+V=			1.0.8
 DISTNAME=		gst-plugins-base-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-base-${V}
-REVISION=		0
 
 SHARED_LIBS +=  gstapp-1.0                0.0 # 6.0
 SHARED_LIBS +=  gstaudio-1.0              0.0 # 6.0
