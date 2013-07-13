@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/06/20 15:23:54 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/07/13 06:49:51 ajacoutot Exp $
 include/gstreamer-${VERSION}/gst/basecamerabinsrc/
 include/gstreamer-${VERSION}/gst/basecamerabinsrc/gstbasecamerasrc.h
 include/gstreamer-${VERSION}/gst/basecamerabinsrc/gstcamerabin-enum.h
@@ -53,6 +53,7 @@ lib/gstreamer-${VERSION}/libgstpcapparse.so
 lib/gstreamer-${VERSION}/libgstpnm.so
 lib/gstreamer-${VERSION}/libgstrawparse.so
 lib/gstreamer-${VERSION}/libgstremovesilence.so
+lib/gstreamer-${VERSION}/libgstrfbsrc.so
 lib/gstreamer-${VERSION}/libgstrtpmux.so
 lib/gstreamer-${VERSION}/libgstrtpvp8.so
 lib/gstreamer-${VERSION}/libgstscaletempoplugin.so
