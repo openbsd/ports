@@ -1,11 +1,11 @@
-$OpenBSD: patch-tmac_doc-common,v 1.4 2013/03/30 23:10:05 schwarze Exp $
+$OpenBSD: patch-tmac_doc-common,v 1.5 2013/07/13 07:39:00 schwarze Exp $
 chunk 1: Keep traditional OpenBSD page headers (local change).
 chunk 2: default value for the .Os macro (local change).
 chunk 3: More OpenBSD release versions (to be submitted upstream).
 chunk 4: Handle .Dd Mdocdate (local change).
 chunk 5: Do not use an ugly double dash in the NAME line (local change).
 --- tmac/doc-common.orig	Thu Feb  7 13:06:08 2013
-+++ tmac/doc-common	Mon Mar  4 08:48:33 2013
++++ tmac/doc-common	Mon Jul  8 07:09:20 2013
 @@ -231,17 +231,17 @@
  .
  .\" an alternative, more detailed scheme for naming the manual sections
@@ -42,17 +42,18 @@ chunk 5: Do not use an ugly double dash in the NAME line (local change).
  .
  .
  .\" NS doc-operating-system global string
-@@ -517,6 +517,9 @@
+@@ -517,6 +517,10 @@
  .ds doc-operating-system-OpenBSD-4.8  4.8
  .ds doc-operating-system-OpenBSD-4.9  4.9
  .ds doc-operating-system-OpenBSD-5.0  5.0
 +.ds doc-operating-system-OpenBSD-5.1  5.1
 +.ds doc-operating-system-OpenBSD-5.2  5.2
 +.ds doc-operating-system-OpenBSD-5.3  5.3
++.ds doc-operating-system-OpenBSD-5.4  5.4
  .
  .ds doc-operating-system-FreeBSD-1.0     1.0
  .ds doc-operating-system-FreeBSD-1.1     1.1
-@@ -732,7 +735,9 @@
+@@ -732,7 +736,9 @@
  .  ds doc-command-name
  .
  .  ie \n[.$] \{\
@@ -63,7 +64,7 @@ chunk 5: Do not use an ugly double dash in the NAME line (local change).
  .      ds doc-date-string \$1\~\$2 \$3
  .    el \{\
  .      ds doc-date-string "\*[doc-date-\n[mo]]
-@@ -906,7 +911,7 @@
+@@ -906,7 +912,7 @@
  .\" NS width register `Nd' set above
  .
  .de Nd
