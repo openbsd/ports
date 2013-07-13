@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2013/04/06 19:32:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2013/07/13 11:53:57 sthen Exp $
 
 COMMENT=	SPF library
 
 DISTNAME=	libspf2-1.2.9
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=	spf2                 3.0      # 3.0
 
@@ -17,7 +17,7 @@ MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		bind c pthread
+WANTLIB=		lib/libbind/bind c pthread
 MODULES=		devel/gettext
 
 # requires res_close() or res_ninit()
@@ -27,7 +27,7 @@ CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS=		--bindir=${PREFIX}/libexec/libspf2
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libbind" \
-			LDFLAGS="-L${LOCALBASE}/lib -lbind"
+			LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/libbind -R${LOCALBASE}/lib/libbind -lbind"
 
 # broken test cases
 NO_TEST=		yes
