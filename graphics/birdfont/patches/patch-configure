@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2013/07/13 16:16:36 bcallah Exp $
+--- configure.orig	Fri Jul  5 18:29:19 2013
++++ configure	Fri Jul  5 18:29:47 2013
+@@ -83,7 +83,7 @@ parser.add_option("-c", "--cc", dest="cc", help="C com
+ (options, args) = parser.parse_args()
+ 
+ if not options.prefix:
+-	options.prefix = "/usr"
++	options.prefix = "${DESTDIR}${PREFIX}"
+ if not options.dest:
+ 	options.dest = ""
+ if not options.cc:

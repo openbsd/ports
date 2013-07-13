@@ -1,0 +1,110 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/07/13 16:16:36 bcallah Exp $
+@bin bin/birdfont
+@bin bin/birdfont-export
+@lib lib/libbirdfont.so.${LIBbirdfont_VERSION}
+@man man/man1/birdfont-export.1
+@man man/man1/birdfont.1
+share/applications/birdfont.desktop
+share/birdfont/
+share/birdfont/icons/
+share/birdfont/icons/active_edit_point.png
+share/birdfont/icons/active_edit_point_cubic.png
+share/birdfont/icons/active_edit_point_handle.png
+share/birdfont/icons/active_selected_edit_point.png
+share/birdfont/icons/active_selected_edit_point_cubic.png
+share/birdfont/icons/add_background_image.png
+share/birdfont/icons/add_new_grid.png
+share/birdfont/icons/available_characters.png
+share/birdfont/icons/background_help_lines.png
+share/birdfont/icons/cancel_save.png
+share/birdfont/icons/close_paths.png
+share/birdfont/icons/corner.png
+share/birdfont/icons/cubic_points.png
+share/birdfont/icons/custom_character_set.png
+share/birdfont/icons/cut.png
+share/birdfont/icons/cut_background.png
+share/birdfont/icons/delete_menu_item.png
+share/birdfont/icons/delete_selected_glyph.png
+share/birdfont/icons/double_points.png
+share/birdfont/icons/edit_point.png
+share/birdfont/icons/edit_point_cubic.png
+share/birdfont/icons/edit_point_handle.png
+share/birdfont/icons/export.png
+share/birdfont/icons/full_glyph.png
+share/birdfont/icons/help_lines.png
+share/birdfont/icons/info_icon.png
+share/birdfont/icons/insert_background.png
+share/birdfont/icons/insert_point_on_path.png
+share/birdfont/icons/move.png
+share/birdfont/icons/move_background.png
+share/birdfont/icons/move_layer.png
+share/birdfont/icons/move_point.png
+share/birdfont/icons/new_file.png
+share/birdfont/icons/new_grid.png
+share/birdfont/icons/new_point.png
+share/birdfont/icons/new_point_on_path.png
+share/birdfont/icons/next.png
+share/birdfont/icons/next_tab.png
+share/birdfont/icons/no_icon.png
+share/birdfont/icons/pen_tool.png
+share/birdfont/icons/prev.png
+share/birdfont/icons/previous_tab.png
+share/birdfont/icons/quadratic_points.png
+share/birdfont/icons/resize_handle.png
+share/birdfont/icons/reverse_path.png
+share/birdfont/icons/selected_edit_point.png
+share/birdfont/icons/selected_edit_point_cubic.png
+share/birdfont/icons/show_background.png
+share/birdfont/icons/show_xheight_helplines.png
+share/birdfont/icons/slow_test.png
+share/birdfont/icons/spin_button.png
+share/birdfont/icons/tab1_left.png
+share/birdfont/icons/tab1_right.png
+share/birdfont/icons/tab2_left.png
+share/birdfont/icons/tab2_right.png
+share/birdfont/icons/tab3_left.png
+share/birdfont/icons/tab3_right.png
+share/birdfont/icons/tabbar_background.png
+share/birdfont/icons/test_case.png
+share/birdfont/icons/test_icon.png
+share/birdfont/icons/tie_is_active.png
+share/birdfont/icons/tie_point.png
+share/birdfont/icons/tool_button_deselected.png
+share/birdfont/icons/tool_button_deselected_active.png
+share/birdfont/icons/tool_button_selected.png
+share/birdfont/icons/tool_button_selected_active.png
+share/birdfont/icons/toolbox_background.png
+share/birdfont/icons/union_paths.png
+share/birdfont/icons/utf_8.png
+share/birdfont/icons/version.png
+share/birdfont/icons/view_result.png
+share/birdfont/icons/window_icon.png
+share/birdfont/icons/zoom_1_1.png
+share/birdfont/icons/zoom_background_image.png
+share/birdfont/icons/zoom_boundries.png
+share/birdfont/icons/zoom_in.png
+share/birdfont/icons/zoom_out.png
+share/birdfont/icons/zoom_tool.png
+share/birdfont/layout/
+share/birdfont/layout/birdfont.rc
+share/birdfont/layout/delete_backup.png
+share/birdfont/layout/index.html
+share/birdfont/layout/style.css
+share/birdfont/layout/supplement.js
+share/icons/hicolor/48x48/apps/birdfont.png
+share/locale/de/LC_MESSAGES/birdfont.mo
+share/locale/fa/LC_MESSAGES/birdfont.mo
+share/locale/it/LC_MESSAGES/birdfont.mo
+share/locale/ja/LC_MESSAGES/birdfont.mo
+share/locale/nl/LC_MESSAGES/birdfont.mo
+share/locale/oc/LC_MESSAGES/birdfont.mo
+share/locale/pt/LC_MESSAGES/birdfont.mo
+share/locale/pt_BR/LC_MESSAGES/birdfont.mo
+share/locale/ru/LC_MESSAGES/birdfont.mo
+share/locale/sv/LC_MESSAGES/birdfont.mo
+share/locale/tr/LC_MESSAGES/birdfont.mo
+share/locale/zh_CN/LC_MESSAGES/birdfont.mo
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

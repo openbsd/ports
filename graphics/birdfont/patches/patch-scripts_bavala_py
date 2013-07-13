@@ -1,0 +1,12 @@
+$OpenBSD: patch-scripts_bavala_py,v 1.1.1.1 2013/07/13 16:16:36 bcallah Exp $
+--- scripts/bavala.py.orig	Fri Jul  5 18:30:02 2013
++++ scripts/bavala.py	Fri Jul  5 18:30:31 2013
+@@ -82,7 +82,7 @@ class Vala(object):
+         if library:
+             self.header = join(build, library) + '.h'
+             self.vapi = join(build, library) + '.vapi'
+-            self.so = join(build, src) + '.so'
++            self.so = join(build, src) + '.so' + '.${LIBbirdfont_VERSION}'
+ 
+     def gen_c(self, opts):
+         """translate code from vala to C and create .vapi"""
