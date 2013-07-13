@@ -1,0 +1,6 @@
+doit comes from the idea of bringing the power of build-tools to execute
+any kind of task. A task describes some computation to be done
+(actions), and contains some extra meta-data. doit uses the task's
+meta-data to cache task results, correct execution order, and execute in
+parallel. doit is self-documented, provides inotify integration, allows
+for custom output, and is extensible.
