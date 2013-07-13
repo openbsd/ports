@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2013/05/02 20:29:05 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2013/07/13 13:08:05 espie Exp $
 
 COMMENT=		JSON implementation in C
+NOT_FOR_ARCHS =		${GCC2_ARCHS}
 
 DISTNAME =		json-c-0.11
 CATEGORIES=		devel
