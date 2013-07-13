@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.77 2013/06/01 19:45:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2013/07/13 06:55:17 espie Exp $
 
 COMMENT=	General Toolkit for X11 GUI
 
 DISTNAME=	gtk+-1.2.10
-REVISION=	11
+REVISION=	12
 
 SHARED_LIBS=	gdk 3.0 \
 		gtk 3.0
@@ -22,6 +22,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xext Xi glib gmodule m xcb
 
+
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --with-xinput="xfree"
@@ -29,5 +30,8 @@ CONFIGURE_ARGS+= --disable-glibtest
 CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
 		LDFLAGS="-L${DEPBASE}/lib" \
 		glib_config_args=--prefix=${DEPBASE}
+
+# for non shared arches
+CONFIGURE_ENV += X_EXTRA_LIBS=-lxcb
 
 .include <bsd.port.mk>
