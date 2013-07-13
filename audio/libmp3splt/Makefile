@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/21 08:45:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2013/07/13 17:29:36 espie Exp $
 
 COMMENT=	library to split mp3/ogg files without decoding
 
 DISTNAME=	libmp3splt-0.5.4
 
 SHARED_LIBS +=  mp3splt 	0.0   # .0.5
+REVISION =	0
 
 CATEGORIES=	audio
 
@@ -23,6 +24,9 @@ LIB_DEPENDS=	audio/libmad \
 		devel/libtool,-ltdl \
 		audio/libvorbis \
 		audio/libid3tag
+
+# required for static linking
+LIB_DEPENDS +=	audio/libogg
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
