@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.348 2013/06/29 15:56:10 jeremy Exp $
+# $OpenBSD: Makefile,v 1.349 2013/07/13 16:17:11 bcallah Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -15,6 +15,7 @@
      SUBDIR += autopano-sift-c
      SUBDIR += babl
      SUBDIR += barcode
+     SUBDIR += birdfont
      SUBDIR += blender
      SUBDIR += cadubi
      SUBDIR += cairo
