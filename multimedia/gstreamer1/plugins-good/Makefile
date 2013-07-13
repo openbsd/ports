@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/06/04 15:32:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2013/07/13 06:49:30 ajacoutot Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # x11/xfce4/xfce4-mixer
@@ -6,14 +6,12 @@
 COMMENT-main=		good elements for GStreamer
 COMMENT-pulse=		pulseaudio(1) element for GStreamer
 
-V=			1.0.7
+V=			1.0.8
 DISTNAME=		gst-plugins-good-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-good-${V}
 
 PKGNAME-main=		${PKGNAME}
 PKGNAME-pulse=		${GST_PKGNAME_PREFIX}-plugins-pulse-${V}
-
-REVISION-pulse=		0
 
 WANTLIB += ffi glib-2.0 gmodule-2.0 gobject-2.0 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
@@ -28,8 +26,8 @@ WANTLIB-main += speex sqlite3 stdc++ tag theora vorbis vpx wavpack xcb-shm
 WANTLIB-main += Xrender cairo cairo-gobject expat fontconfig freetype pixman-1
 
 WANTLIB-pulse += ${WANTLIB}
-WANTLIB-pulse += execinfo gdbm json pulse sndfile X11-xcb Xi Xtst
-WANTLIB-pulse += FLAC ogg vorbis vorbisenc
+WANTLIB-pulse += execinfo gdbm pulse sndfile X11-xcb Xi Xtst
+WANTLIB-pulse += FLAC ogg vorbis vorbisenc dbus-1 json-c
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-good/}
 
