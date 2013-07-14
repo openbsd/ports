@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2013/05/07 06:53:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.90 2013/07/14 20:20:25 miod Exp $
 
 COMMENT=	get files from FTP, Gopher, HTTP or HTTPS servers
 
@@ -40,5 +40,11 @@ post-install:
 
 # Note:
 # use ulimit -p 256 for test
+
+# curl_fnmatch.c triggers an ICE in output_operand() when compiled -fPIC unless
+# -fno-gcse is used.
+.if ${MACHINE_ARCH} == "m68k"
+CFLAGS+=	-fno-gcse
+.endif
 
 .include <bsd.port.mk>
