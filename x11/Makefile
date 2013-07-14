@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.519 2013/07/05 14:55:41 zhuk Exp $
+# $OpenBSD: Makefile,v 1.520 2013/07/14 00:37:50 pascal Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -45,6 +45,7 @@
      SUBDIR += e16keyedit
      SUBDIR += e17
      SUBDIR += echinus
+     SUBDIR += ede
      SUBDIR += emelfm2
      SUBDIR += emiclock
      SUBDIR += enlightenment
