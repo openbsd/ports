@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:44:49 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2013/07/14 17:28:39 bcallah Exp $
 
 COMMENT=	RSS Aggregator Without Delusions Of Grandeur
 
-MODPY_EGG_VERSION=	2.12
+MODPY_EGG_VERSION=	2.15
 DISTNAME=	rawdog-${MODPY_EGG_VERSION}
-REVISION=	2
 CATEGORIES=	www news
 
 HOMEPAGE=	http://offog.org/code/rawdog.html
+
+MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2, LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes

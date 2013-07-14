@@ -1,23 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/01/03 21:27:25 kili Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/07/14 17:28:40 bcallah Exp $
 bin/rawdog
 lib/python${MODPY_VERSION}/site-packages/rawdog-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/rawdoglib/
 lib/python${MODPY_VERSION}/site-packages/rawdoglib/__init__.py
 lib/python${MODPY_VERSION}/site-packages/rawdoglib/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/rawdoglib/feedfinder.py
-lib/python${MODPY_VERSION}/site-packages/rawdoglib/feedfinder.pyc
 lib/python${MODPY_VERSION}/site-packages/rawdoglib/feedparser.py
 lib/python${MODPY_VERSION}/site-packages/rawdoglib/feedparser.pyc
+lib/python${MODPY_VERSION}/site-packages/rawdoglib/feedscanner.py
+lib/python${MODPY_VERSION}/site-packages/rawdoglib/feedscanner.pyc
 lib/python${MODPY_VERSION}/site-packages/rawdoglib/persister.py
 lib/python${MODPY_VERSION}/site-packages/rawdoglib/persister.pyc
 lib/python${MODPY_VERSION}/site-packages/rawdoglib/plugins.py
 lib/python${MODPY_VERSION}/site-packages/rawdoglib/plugins.pyc
 lib/python${MODPY_VERSION}/site-packages/rawdoglib/rawdog.py
 lib/python${MODPY_VERSION}/site-packages/rawdoglib/rawdog.pyc
-lib/python${MODPY_VERSION}/site-packages/rawdoglib/timeoutsocket.py
-lib/python${MODPY_VERSION}/site-packages/rawdoglib/timeoutsocket.pyc
-lib/python${MODPY_VERSION}/site-packages/rawdoglib/upgrade_1_2.py
-lib/python${MODPY_VERSION}/site-packages/rawdoglib/upgrade_1_2.pyc
 @man man/man1/rawdog.1
 share/doc/rawdog/
 share/doc/rawdog/README

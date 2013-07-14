@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.2 2009/08/11 23:40:05 sthen Exp $
---- setup.py.orig	Fri Feb  6 17:41:52 2009
-+++ setup.py	Wed Aug 12 00:28:09 2009
-@@ -10,5 +10,5 @@ setup(name = "rawdog",
+$OpenBSD: patch-setup_py,v 1.3 2013/07/14 17:28:40 bcallah Exp $
+--- setup.py.orig	Sat Jul 13 12:24:47 2013
++++ setup.py	Sat Jul 13 20:52:14 2013
+@@ -15,5 +15,5 @@ setup(name = "rawdog",
  	url = "http://offog.org/code/rawdog.html",
  	license = "GNU GPL v2 or later",
  	scripts = ['rawdog'],
