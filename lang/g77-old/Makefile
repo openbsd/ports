@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2013/07/07 21:25:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2013/07/14 18:00:17 miod Exp $
 
 ONLY_FOR_ARCHS =	${GCC2_ARCHS}
 
 V =			2.95.3
 PKGNAME =		g77-$V
-REVISION =		7
+REVISION =		8
 DISTFILES = 		g77-openbsd-2.95.3.tgz \
 			libiberty-includes-openbsd.tgz
 
@@ -81,6 +81,9 @@ PKG_ARGS += -DPIC=0
 
 post-extract:
 	cd ${WRKDIST}/gcc; rm assert.h; ln -sf /usr/include/assert.h
+post-patch:
+	@cp ${FILESDIR}/gcc_config_vax_openbsdelf.h \
+	    ${WRKSRC}/gcc/config/vax/openbsdelf.h
 post-install:
 	ln -sf ${SYSDIR}/libgcc.a ${LIBDIR}/libgcc.a
 	if [ -d ${LIBDIR}/fpic ]; then \

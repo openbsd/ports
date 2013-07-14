@@ -1,0 +1,15 @@
+$OpenBSD: patch-gcc_config_gcc,v 1.1 2013/07/14 18:00:19 miod Exp $
+--- gcc/config.gcc.orig	Tue Nov 16 11:23:43 2004
++++ gcc/config.gcc	Sun Jul 14 12:04:19 2013
+@@ -2762,10 +2762,10 @@ vax-*-netbsd*)
+ use_collect2=yes
+ 	;;
+ vax-*-openbsd*)
++	tm_file="vax/openbsdelf.h"
+ 	tm_file="${tm_file} exec-stack.h"
+ 	tmake_file="${tmake_file} vax/t-openbsd"
+ 	float_format=vax
+-	use_collect2=yes
+ 	;;
+ vax-*-ultrix*)			# vaxen running ultrix
+ 	tm_file="${tm_file} vax/ultrix.h"
