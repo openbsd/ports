@@ -1,0 +1,19 @@
+$OpenBSD: patch-ede-keyboard-conf_ede-keyboard-conf_cpp,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
+--- ede-keyboard-conf/ede-keyboard-conf.cpp.orig	Wed Jul 10 13:33:12 2013
++++ ede-keyboard-conf/ede-keyboard-conf.cpp	Wed Jul 10 13:36:12 2013
+@@ -70,6 +70,7 @@ static const char *x11_dirs[] = {
+ 	"/usr/local/share/X11/",
+ 	"/usr/X11R6/lib/X11/",
+ 	"/usr/X11R6/lib64/X11/",
++	"${X11BASE}/share/X11/",
+ 	"/usr/local/X11R6/lib/X11/",
+ 	"/usr/local/X11R6/lib64/X11/",
+ 	"/usr/lib/X11/",
+@@ -84,6 +85,7 @@ static const char *x11_dirs[] = {
+ static const char *x11_rules[] = {
+ 	"xkb/rules/xorg",
+ 	"xkb/rules/xfree86",
++	"xkb/rules/base",
+ 	0
+ }; 
+ 

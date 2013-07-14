@@ -1,0 +1,138 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
+--- configure.orig	Fri May 18 14:52:16 2012
++++ configure	Fri May 25 18:33:02 2012
+@@ -5087,12 +5087,7 @@ $as_echo "$COMPOSITE_CFLAGS" >&6; }
+             { $as_echo "$as_me:${as_lineno-$LINENO}: checking COMPOSITE_LIBS" >&5
+ $as_echo_n "checking COMPOSITE_LIBS... " >&6; }
+             ## don't use --libs since that can do evil things like add -Wl,--export-dynamic
+-            if test "$SHELL" = "/bin/ksh"; then
+-                ## ksh does not do escaping properly
+-                COMPOSITE_LIBS="`$PKG_CONFIG --libs-only-L "xcomposite, xdamage, xext"` `$PKG_CONFIG --libs-only-l "xcomposite, xdamage, xext"`"
+-            else
+-                COMPOSITE_LIBS="`$PKG_CONFIG --libs-only-L \"xcomposite, xdamage, xext\"` `$PKG_CONFIG --libs-only-l \"xcomposite, xdamage, xext\"`"
+-            fi
++            COMPOSITE_LIBS="`$PKG_CONFIG --libs-only-L 'xcomposite, xdamage, xext'` `$PKG_CONFIG --libs-only-l 'xcomposite, xdamage, xext'`"
+ 
+             COMPOSITE_VERSION=`$PKG_CONFIG --modversion "xcomposite, xdamage, xext"`
+             { $as_echo "$as_me:${as_lineno-$LINENO}: result: $COMPOSITE_LIBS" >&5
+@@ -5324,12 +5319,7 @@ $as_echo "$LIBSTARTUP_NOTIFICATION_CFLAGS" >&6; }
+             { $as_echo "$as_me:${as_lineno-$LINENO}: checking LIBSTARTUP_NOTIFICATION_LIBS" >&5
+ $as_echo_n "checking LIBSTARTUP_NOTIFICATION_LIBS... " >&6; }
+             ## don't use --libs since that can do evil things like add -Wl,--export-dynamic
+-            if test "$SHELL" = "/bin/ksh"; then
+-                ## ksh does not do escaping properly
+-                LIBSTARTUP_NOTIFICATION_LIBS="`$PKG_CONFIG --libs-only-L "libstartup-notification-1.0"` `$PKG_CONFIG --libs-only-l "libstartup-notification-1.0"`"
+-            else
+-                LIBSTARTUP_NOTIFICATION_LIBS="`$PKG_CONFIG --libs-only-L \"libstartup-notification-1.0\"` `$PKG_CONFIG --libs-only-l \"libstartup-notification-1.0\"`"
+-            fi
++            LIBSTARTUP_NOTIFICATION_LIBS="`$PKG_CONFIG --libs-only-L 'libstartup-notification-1.0'` `$PKG_CONFIG --libs-only-l 'libstartup-notification-1.0'`"
+ 
+             LIBSTARTUP_NOTIFICATION_VERSION=`$PKG_CONFIG --modversion "libstartup-notification-1.0"`
+             { $as_echo "$as_me:${as_lineno-$LINENO}: result: $LIBSTARTUP_NOTIFICATION_LIBS" >&5
+@@ -5449,12 +5439,7 @@ $as_echo "$EDELIB_CFLAGS" >&6; }
+             { $as_echo "$as_me:${as_lineno-$LINENO}: checking EDELIB_LIBS" >&5
+ $as_echo_n "checking EDELIB_LIBS... " >&6; }
+             ## don't use --libs since that can do evil things like add -Wl,--export-dynamic
+-            if test "$SHELL" = "/bin/ksh"; then
+-                ## ksh does not do escaping properly
+-                EDELIB_LIBS="`$PKG_CONFIG --libs-only-L "edelib"` `$PKG_CONFIG --libs-only-l "edelib"`"
+-            else
+-                EDELIB_LIBS="`$PKG_CONFIG --libs-only-L \"edelib\"` `$PKG_CONFIG --libs-only-l \"edelib\"`"
+-            fi
++            EDELIB_LIBS="`$PKG_CONFIG --libs-only-L 'edelib'` `$PKG_CONFIG --libs-only-l 'edelib'`"
+ 
+             EDELIB_VERSION=`$PKG_CONFIG --modversion "edelib"`
+             { $as_echo "$as_me:${as_lineno-$LINENO}: result: $EDELIB_LIBS" >&5
+@@ -5563,12 +5548,7 @@ $as_echo "$EDELIB_GUI_CFLAGS" >&6; }
+             { $as_echo "$as_me:${as_lineno-$LINENO}: checking EDELIB_GUI_LIBS" >&5
+ $as_echo_n "checking EDELIB_GUI_LIBS... " >&6; }
+             ## don't use --libs since that can do evil things like add -Wl,--export-dynamic
+-            if test "$SHELL" = "/bin/ksh"; then
+-                ## ksh does not do escaping properly
+-                EDELIB_GUI_LIBS="`$PKG_CONFIG --libs-only-L "edelib-gui"` `$PKG_CONFIG --libs-only-l "edelib-gui"`"
+-            else
+-                EDELIB_GUI_LIBS="`$PKG_CONFIG --libs-only-L \"edelib-gui\"` `$PKG_CONFIG --libs-only-l \"edelib-gui\"`"
+-            fi
++            EDELIB_GUI_LIBS="`$PKG_CONFIG --libs-only-L 'edelib-gui'` `$PKG_CONFIG --libs-only-l 'edelib-gui'`"
+ 
+             EDELIB_GUI_VERSION=`$PKG_CONFIG --modversion "edelib-gui"`
+             { $as_echo "$as_me:${as_lineno-$LINENO}: result: $EDELIB_GUI_LIBS" >&5
+@@ -5677,12 +5657,7 @@ $as_echo "$EDELIB_GUI_NO_IMAGES_CFLAGS" >&6; }
+             { $as_echo "$as_me:${as_lineno-$LINENO}: checking EDELIB_GUI_NO_IMAGES_LIBS" >&5
+ $as_echo_n "checking EDELIB_GUI_NO_IMAGES_LIBS... " >&6; }
+             ## don't use --libs since that can do evil things like add -Wl,--export-dynamic
+-            if test "$SHELL" = "/bin/ksh"; then
+-                ## ksh does not do escaping properly
+-                EDELIB_GUI_NO_IMAGES_LIBS="`$PKG_CONFIG --libs-only-L "edelib-gui-no-images"` `$PKG_CONFIG --libs-only-l "edelib-gui-no-images"`"
+-            else
+-                EDELIB_GUI_NO_IMAGES_LIBS="`$PKG_CONFIG --libs-only-L \"edelib-gui-no-images\"` `$PKG_CONFIG --libs-only-l \"edelib-gui-no-images\"`"
+-            fi
++            EDELIB_GUI_NO_IMAGES_LIBS="`$PKG_CONFIG --libs-only-L 'edelib-gui-no-images'` `$PKG_CONFIG --libs-only-l 'edelib-gui-no-images'`"
+ 
+             EDELIB_GUI_NO_IMAGES_VERSION=`$PKG_CONFIG --modversion "edelib-gui-no-images"`
+             { $as_echo "$as_me:${as_lineno-$LINENO}: result: $EDELIB_GUI_NO_IMAGES_LIBS" >&5
+@@ -5791,12 +5766,7 @@ $as_echo "$EDELIB_DBUS_CFLAGS" >&6; }
+             { $as_echo "$as_me:${as_lineno-$LINENO}: checking EDELIB_DBUS_LIBS" >&5
+ $as_echo_n "checking EDELIB_DBUS_LIBS... " >&6; }
+             ## don't use --libs since that can do evil things like add -Wl,--export-dynamic
+-            if test "$SHELL" = "/bin/ksh"; then
+-                ## ksh does not do escaping properly
+-                EDELIB_DBUS_LIBS="`$PKG_CONFIG --libs-only-L "edelib-dbus"` `$PKG_CONFIG --libs-only-l "edelib-dbus"`"
+-            else
+-                EDELIB_DBUS_LIBS="`$PKG_CONFIG --libs-only-L \"edelib-dbus\"` `$PKG_CONFIG --libs-only-l \"edelib-dbus\"`"
+-            fi
++            EDELIB_DBUS_LIBS="`$PKG_CONFIG --libs-only-L 'edelib-dbus'` `$PKG_CONFIG --libs-only-l 'edelib-dbus'`"
+ 
+             EDELIB_DBUS_VERSION=`$PKG_CONFIG --modversion "edelib-dbus"`
+             { $as_echo "$as_me:${as_lineno-$LINENO}: result: $EDELIB_DBUS_LIBS" >&5
+@@ -6764,8 +6734,6 @@ else
+ 		LIBICONV="-L$iconv_path/lib -liconv"
+ 		INCICONV="-I$iconv_path/include"
+ 
+-$as_echo "#define ICONV_CONST 1" >>confdefs.h
+-
+ 	fi
+ fi
+ 
+@@ -6904,12 +6872,7 @@ $as_echo "$xft_CFLAGS" >&6; }
+             { $as_echo "$as_me:${as_lineno-$LINENO}: checking xft_LIBS" >&5
+ $as_echo_n "checking xft_LIBS... " >&6; }
+             ## don't use --libs since that can do evil things like add -Wl,--export-dynamic
+-            if test "$SHELL" = "/bin/ksh"; then
+-                ## ksh does not do escaping properly
+-                xft_LIBS="`$PKG_CONFIG --libs-only-L "xft >= 2.0.0"` `$PKG_CONFIG --libs-only-l "xft >= 2.0.0"`"
+-            else
+-                xft_LIBS="`$PKG_CONFIG --libs-only-L \"xft >= 2.0.0\"` `$PKG_CONFIG --libs-only-l \"xft >= 2.0.0\"`"
+-            fi
++            xft_LIBS="`$PKG_CONFIG --libs-only-L 'xft >= 2.0.0'` `$PKG_CONFIG --libs-only-l 'xft >= 2.0.0'`"
+ 
+             xft_VERSION=`$PKG_CONFIG --modversion "xft >= 2.0.0"`
+             { $as_echo "$as_me:${as_lineno-$LINENO}: result: $xft_LIBS" >&5
+@@ -7035,12 +6998,7 @@ $as_echo "$xrandr_CFLAGS" >&6; }
+             { $as_echo "$as_me:${as_lineno-$LINENO}: checking xrandr_LIBS" >&5
+ $as_echo_n "checking xrandr_LIBS... " >&6; }
+             ## don't use --libs since that can do evil things like add -Wl,--export-dynamic
+-            if test "$SHELL" = "/bin/ksh"; then
+-                ## ksh does not do escaping properly
+-                xrandr_LIBS="`$PKG_CONFIG --libs-only-L "xrandr >= 1.2.0"` `$PKG_CONFIG --libs-only-l "xrandr >= 1.2.0"`"
+-            else
+-                xrandr_LIBS="`$PKG_CONFIG --libs-only-L \"xrandr >= 1.2.0\"` `$PKG_CONFIG --libs-only-l \"xrandr >= 1.2.0\"`"
+-            fi
++            xrandr_LIBS="`$PKG_CONFIG --libs-only-L 'xrandr >= 1.2.0'` `$PKG_CONFIG --libs-only-l 'xrandr >= 1.2.0'`"
+ 
+             xrandr_VERSION=`$PKG_CONFIG --modversion "xrandr >= 1.2.0"`
+             { $as_echo "$as_me:${as_lineno-$LINENO}: result: $xrandr_LIBS" >&5
+@@ -7642,12 +7600,7 @@ $as_echo "$libpng_CFLAGS" >&6; }
+             { $as_echo "$as_me:${as_lineno-$LINENO}: checking libpng_LIBS" >&5
+ $as_echo_n "checking libpng_LIBS... " >&6; }
+             ## don't use --libs since that can do evil things like add -Wl,--export-dynamic
+-            if test "$SHELL" = "/bin/ksh"; then
+-                ## ksh does not do escaping properly
+-                libpng_LIBS="`$PKG_CONFIG --libs-only-L "libpng >= 1.0.0"` `$PKG_CONFIG --libs-only-l "libpng >= 1.0.0"`"
+-            else
+-                libpng_LIBS="`$PKG_CONFIG --libs-only-L \"libpng >= 1.0.0\"` `$PKG_CONFIG --libs-only-l \"libpng >= 1.0.0\"`"
+-            fi
++            libpng_LIBS="`$PKG_CONFIG --libs-only-L 'libpng >= 1.0.0'` `$PKG_CONFIG --libs-only-l 'libpng >= 1.0.0'`"
+ 
+             libpng_VERSION=`$PKG_CONFIG --modversion "libpng >= 1.0.0"`
+             { $as_echo "$as_me:${as_lineno-$LINENO}: result: $libpng_LIBS" >&5

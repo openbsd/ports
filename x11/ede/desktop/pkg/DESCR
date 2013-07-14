@@ -1,0 +1,15 @@
+EDE (Equinox Desktop Environment) is simple and fast desktop
+environment with familiar look and feel. EDE uses FLTK toolkit for
+GUI presentation and UNIX philosophy for its design.
+
+With UNIX philosophy, EDE splits each component in separate executable
+entity to do one job and do it good. This makes EDE very easy to
+alter for user needs and requirements.
+
+EDE is light and fast. It uses C++ carefully yielding fast startup,
+low memory usage and great portability. Also, we care not only about
+how fast EDE runs, but how much time is needed to compile it.
+
+These facts makes EDE a perfect desktop environment for older
+computers and embedded devices. But, you can use it on your everyday
+hardware too.

@@ -1,0 +1,5 @@
+edelib is small and portable C++ library for EDE (Equinox Desktop
+Environment).
+
+Aims are to provide enough background for easier EDE components
+construction and development.

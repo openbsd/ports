@@ -1,0 +1,15 @@
+$OpenBSD: patch-pekwm_Jamfile,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
+--- pekwm/Jamfile.orig	Sat Jul 13 17:53:13 2013
++++ pekwm/Jamfile	Sat Jul 13 17:53:28 2013
+@@ -63,7 +63,7 @@ SOURCE = ActionHandler.cc
+          Workspaces.cc ;
+          
+ 
+-Program pekwm : $(SOURCE) ;
+-ObjectC++Flags $(SOURCE) : $(GLOBALFLAGS) $(PEKWM_CXXFLAGS) -DDATADIR=\\\"$(datadir)\\\" -DSYSCONFDIR=\\\"$(PEKWM_CONFIG_DIR)\\\" -DVERSION=\\\"0.1.13\\\"  ;
+-LinkAgainst pekwm : $(PEKWM_LIBS) $(STDLIB) ;
+-InstallEdeProgram pekwm ;
++# Program pekwm : $(SOURCE) ;
++# ObjectC++Flags $(SOURCE) : $(GLOBALFLAGS) $(PEKWM_CXXFLAGS) -DDATADIR=\\\"$(datadir)\\\" -DSYSCONFDIR=\\\"$(PEKWM_CONFIG_DIR)\\\" -DVERSION=\\\"0.1.13\\\"  ;
++# LinkAgainst pekwm : $(PEKWM_LIBS) $(STDLIB) ;
++# InstallEdeProgram pekwm ;

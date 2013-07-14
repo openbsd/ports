@@ -1,0 +1,44 @@
+$OpenBSD: patch-evoke_EvokeService_cpp,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
+
+Don't provide shutdown and restart options.  They do not work without HAL.
+
+--- evoke/EvokeService.cpp.orig	Fri May 18 14:51:51 2012
++++ evoke/EvokeService.cpp	Sat Jul 13 13:29:49 2013
+@@ -58,9 +58,12 @@ EDELIB_NS_USING(FILE_TEST_IS_REGULAR)
+ #endif
+ 
+ /* stolen from xfce's xfsm-shutdown-helper */
+-#if defined(__DragonFly__) || defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
++#if defined(__DragonFly__) || defined(__FreeBSD__) || defined(__NetBSD__)
+ # define POWEROFF_CMD  "/sbin/shutdown -p now"
+ # define REBOOT_CMD    "/sbin/shutdown -r now"
++#elif defined(__OpenBSD__)
++# define POWEROFF_CMD  "/sbin/shutdown -hp now"
++# define REBOOT_CMD    "/sbin/shutdown -r now"
+ #elif defined(sun) || defined(__sun)
+ # define POWEROFF_CMD  "/usr/sbin/shutdown -i 5 -g 0 -y"
+ # define REBOOT_CMD    "/usr/sbin/shutdown -i 6 -g 0 -y"
+@@ -100,7 +103,9 @@ static void send_dbus_ede_quit(void) {
+ 
+ static bool do_shutdown_or_restart(bool restart) {
+ 	const char *action;
++	int r;
+ 
++#ifndef __OpenBSD__
+ 	EdbusConnection c;
+ 	if(!c.connect(EDBUS_SYSTEM)) {
+ 		alert(_("Unable to connect to HAL daemon. Make sure both D-BUS and HAL daemons are running"));
+@@ -131,11 +136,12 @@ static bool do_shutdown_or_restart(bool restart) {
+ 	if((*it).to_bool() == true)
+ 		return true;
+ 
+-	int r = ask(_("You are not allowed to execute this command. Please consult ConsoleKit documentation on how to allow privileged actions. "
++	r = ask(_("You are not allowed to execute this command. Please consult ConsoleKit documentation on how to allow privileged actions. "
+ 				  "Would you like to try to execute system commands?"));
+ 
+ 	/* try to do things manually */
+ 	if(!r) return false;
++#endif
+ 	const char *cmd = _("restart");
+ 
+ 	if(restart) {

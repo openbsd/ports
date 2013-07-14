@@ -1,0 +1,15 @@
+$OpenBSD: patch-data_desktop-links_Jamfile,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
+--- data/desktop-links/Jamfile.orig	Fri May 25 18:54:00 2012
++++ data/desktop-links/Jamfile	Fri May 25 18:54:08 2012
+@@ -10,11 +10,6 @@
+ 
+ SubDir TOP data desktop-links ;
+ 
+-actions quietly existing InstallIfEmpty
+-{
+-	./$(>)/install-in-desktop-dir.sh
+-}
+-
+ # use 'all' pseudotarget not 'install' because 'install' will be often run as superuser, installing 
+ # data in superuser directory, not user directory
+ InstallIfEmpty all : $(SUBDIR) ;

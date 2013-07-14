@@ -1,0 +1,9 @@
+$OpenBSD: patch-data_pekwm_scripts_Jamfile,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
+--- data/pekwm/scripts/Jamfile.orig	Sat Jul 13 17:58:34 2013
++++ data/pekwm/scripts/Jamfile	Sat Jul 13 17:58:38 2013
+@@ -10,4 +10,4 @@
+ 
+ SubDir TOP data pekwm scripts ;
+ 
+-InstallProgram "$(PEKWM_DATA_DIR)/scripts" : pekwm_themeset.sh pekwm_ws_menu.sh ;
++# InstallProgram "$(PEKWM_DATA_DIR)/scripts" : pekwm_themeset.sh pekwm_ws_menu.sh ;

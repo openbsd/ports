@@ -1,0 +1,34 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
+--- configure.orig	Fri May 18 14:51:11 2012
++++ configure	Fri May 25 17:42:08 2012
+@@ -2189,7 +2189,7 @@ ac_config_headers="$ac_config_headers edelib/_conf.h:e
+ EDELIB_MAJOR_VERSION=2
+ EDELIB_MINOR_VERSION=0
+ EDELIB_PATCH_VERSION=0
+-EDELIB_API_VERSION=$PACKAGE_VERSION
++EDELIB_API_VERSION=$API_VER
+ 
+ user_cflags="$CFLAGS"
+ user_cxxflags="$CXXFLAGS"
+@@ -4249,7 +4249,6 @@ int
+ main ()
+ {
+ 
+-		extern int daylight;
+ 		int d = daylight;
+ 
+   ;
+@@ -5670,12 +5669,7 @@ $as_echo "$DBUS_CFLAGS" >&6; }
+             { $as_echo "$as_me:${as_lineno-$LINENO}: checking DBUS_LIBS" >&5
+ $as_echo_n "checking DBUS_LIBS... " >&6; }
+             ## don't use --libs since that can do evil things like add -Wl,--export-dynamic
+-            if test "$SHELL" = "/bin/ksh"; then
+-                ## ksh does not do escaping properly
+-                DBUS_LIBS="`$PKG_CONFIG --libs-only-L "dbus-1 >= 1.0"` `$PKG_CONFIG --libs-only-l "dbus-1 >= 1.0"`"
+-            else
+-                DBUS_LIBS="`$PKG_CONFIG --libs-only-L \"dbus-1 >= 1.0\"` `$PKG_CONFIG --libs-only-l \"dbus-1 >= 1.0\"`"
+-            fi
++            DBUS_LIBS="`$PKG_CONFIG --libs-only-L 'dbus-1 >= 1.0'` `$PKG_CONFIG --libs-only-l 'dbus-1 >= 1.0'`"
+ 
+             DBUS_VERSION=`$PKG_CONFIG --modversion "dbus-1 >= 1.0"`
+             { $as_echo "$as_me:${as_lineno-$LINENO}: result: $DBUS_LIBS" >&5

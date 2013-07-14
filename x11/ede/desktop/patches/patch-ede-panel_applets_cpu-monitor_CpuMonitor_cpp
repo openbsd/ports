@@ -1,0 +1,42 @@
+$OpenBSD: patch-ede-panel_applets_cpu-monitor_CpuMonitor_cpp,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
+--- ede-panel/applets/cpu-monitor/CpuMonitor.cpp.orig	Fri May 18 14:51:27 2012
++++ ede-panel/applets/cpu-monitor/CpuMonitor.cpp	Wed Jul 10 17:49:45 2013
+@@ -30,7 +30,7 @@
+ # include <kstat.h>
+ #endif
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ # include <sys/param.h>
+ # include <sys/sysctl.h>
+ # if __FreeBSD_version < 500101
+@@ -44,7 +44,7 @@
+ #include "Applet.h"
+ #include "CpuMonitor.h"
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ 
+ /* The part ripped from top... */
+ /*
+@@ -477,15 +477,18 @@ void CPUMonitor::get_cpu_info() {
+ 
+ #endif /* have_kstat_h */
+ 
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ 	size_t len = sizeof(cp_time);
++	int mib[2];
+ 
+ 	cpu[samples()-1][IWM_USER] = 0;
+ 	cpu[samples()-1][IWM_NICE] = 0;
+ 	cpu[samples()-1][IWM_SYS] = 0;
+ 	cpu[samples()-1][IWM_IDLE] = 0;
+ 
+-	if (sysctlbyname("kern.cp_time", &cp_time, &len, NULL, 0) == -1)
++	mib[0] = CTL_KERN;
++	mib[1] = KERN_CPTIME;
++	if (sysctl(mib, 2, &cp_time, &len, NULL, 0) == -1)
+ 		return; /* FIXME : need err handler? */
+ 
+ 	percentages(CPUSTATES, cpu_states, cp_time, cp_old, cp_diff);

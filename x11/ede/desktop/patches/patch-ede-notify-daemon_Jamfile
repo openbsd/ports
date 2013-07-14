@@ -1,0 +1,12 @@
+$OpenBSD: patch-ede-notify-daemon_Jamfile,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
+--- ede-notify-daemon/Jamfile.orig	Fri May 25 18:48:27 2012
++++ ede-notify-daemon/Jamfile	Fri May 25 18:48:40 2012
+@@ -13,7 +13,7 @@ SubDir TOP ede-notify-daemon ;
+ SOURCE = ede-notify-daemon.cpp NotifyWindow.cpp ;
+ 
+ EdeProgram ede-notify-daemon : $(SOURCE) ;
+-LinkAgainst ede-notify-daemon : $(EDELIB_DBUS_LIB) ;
++LinkAgainst ede-notify-daemon : $(EDELIB_DBUS_LIB) $(PTHREAD_LIBS) ;
+ 
+ TranslationStrings  locale : $(SOURCE) ;
+ 
