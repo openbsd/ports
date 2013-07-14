@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2013/05/01 10:11:54 miod Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2013/07/14 15:29:34 miod Exp $
 --- Makefile.in.orig	Thu Dec 31 12:41:43 2009
-+++ Makefile.in	Wed Apr 24 15:50:15 2013
++++ Makefile.in	Sat Jul 13 12:53:37 2013
 @@ -47,6 +47,7 @@ target_triplet = @target@
  @IA64_TRUE@am__append_9 = src/ia64/ffi.c src/ia64/unix.S
  @M32R_TRUE@am__append_10 = src/m32r/sysv.S src/m32r/ffi.c
@@ -13,7 +13,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2013/05/01 10:11:54 miod Exp $
  @LIBFFI_CRIS_TRUE@am__append_18 = src/cris/sysv.S src/cris/ffi.c
  @FRV_TRUE@am__append_19 = src/frv/eabi.S src/frv/ffi.c
  @S390_TRUE@am__append_20 = src/s390/sysv.S src/s390/ffi.c
-+@VAX_TRUE@am__append_99 = src/vax/ffi.c src/vax/aoutbsd.S
++@VAX_TRUE@am__append_99 = src/vax/ffi.c src/vax/elfbsd.S
  @X86_64_TRUE@am__append_21 = src/x86/ffi64.c src/x86/unix64.S src/x86/ffi.c src/x86/sysv.S
  @SH_TRUE@am__append_22 = src/sh/sysv.S src/sh/ffi.c
  @SH64_TRUE@am__append_23 = src/sh64/sysv.S src/sh64/ffi.c
@@ -29,7 +29,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2013/05/01 10:11:54 miod Exp $
  @LIBFFI_CRIS_TRUE@am__objects_18 = src/cris/sysv.lo src/cris/ffi.lo
  @FRV_TRUE@am__objects_19 = src/frv/eabi.lo src/frv/ffi.lo
  @S390_TRUE@am__objects_20 = src/s390/sysv.lo src/s390/ffi.lo
-+@VAX_TRUE@am__objects_99 = src/vax/ffi.lo src/vax/aoutbsd.lo
++@VAX_TRUE@am__objects_99 = src/vax/ffi.lo src/vax/elfbsd.lo
  @X86_64_TRUE@am__objects_21 = src/x86/ffi64.lo src/x86/unix64.lo \
  @X86_64_TRUE@	src/x86/ffi.lo src/x86/sysv.lo
  @SH_TRUE@am__objects_22 = src/sh/sysv.lo src/sh/ffi.lo
@@ -64,7 +64,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2013/05/01 10:11:54 miod Exp $
  	src/sh64/ffi.c src/sh64/sysv.S src/sh64/ffitarget.h \
  	src/sparc/v8.S src/sparc/v9.S src/sparc/ffitarget.h \
  	src/sparc/ffi.c src/x86/darwin64.S \
-+	src/vax/ffi.c src/vax/aoutbsd.S src/vax/ffitarget.h \
++	src/vax/ffi.c src/vax/elfbsd.S src/vax/ffitarget.h \
  	src/x86/ffi.c src/x86/sysv.S src/x86/win32.S src/x86/win64.S \
  	src/x86/darwin.S src/x86/freebsd.S \
  	src/x86/ffi64.c src/x86/unix64.S src/x86/ffitarget.h \
@@ -107,7 +107,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2013/05/01 10:11:54 miod Exp $
 +	@: > src/vax/$(DEPDIR)/$(am__dirstamp)
 +src/vax/ffi.lo: src/vax/$(am__dirstamp) \
 +	src/vax/$(DEPDIR)/$(am__dirstamp)
-+src/vax/aoutbsd.lo: src/vax/$(am__dirstamp) \
++src/vax/elfbsd.lo: src/vax/$(am__dirstamp) \
 +	src/vax/$(DEPDIR)/$(am__dirstamp)
  src/x86/unix64.lo: src/x86/$(am__dirstamp) \
  	src/x86/$(DEPDIR)/$(am__dirstamp)
@@ -129,8 +129,8 @@ $OpenBSD: patch-Makefile_in,v 1.1 2013/05/01 10:11:54 miod Exp $
  	-rm -f src/types.lo
 +	-rm -f src/vax/ffi.$(OBJEXT)
 +	-rm -f src/vax/ffi.lo
-+	-rm -f src/vax/aoutbsd.$(OBJEXT)
-+	-rm -f src/vax/aoutbsd.lo
++	-rm -f src/vax/elfbsd.$(OBJEXT)
++	-rm -f src/vax/elfbsd.lo
  	-rm -f src/x86/darwin.$(OBJEXT)
  	-rm -f src/x86/darwin.lo
  	-rm -f src/x86/darwin64.$(OBJEXT)
@@ -148,7 +148,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2013/05/01 10:11:54 miod Exp $
  @AMDEP_TRUE@@am__include@ @am__quote@src/sparc/$(DEPDIR)/v8.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@src/sparc/$(DEPDIR)/v9.Plo@am__quote@
 +@AMDEP_TRUE@@am__include@ @am__quote@src/vax/$(DEPDIR)/ffi.Plo@am__quote@
-+@AMDEP_TRUE@@am__include@ @am__quote@src/vax/$(DEPDIR)/aoutbsd.Plo@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@src/vax/$(DEPDIR)/elfbsd.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@src/x86/$(DEPDIR)/darwin.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@src/x86/$(DEPDIR)/darwin64.Plo@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@src/x86/$(DEPDIR)/ffi.Plo@am__quote@

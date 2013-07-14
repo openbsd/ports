@@ -26,11 +26,6 @@
  *
  * This file attempts to provide all the FFI entry points which can reliably
  * be implemented in C.
- *
- * Support is currently limited to a.out BSD systems using the non-reentrant
- * PCC structure return convention.
- *
- * Closure support is not implemented yet.
  */
 
 #include <ffi.h>
@@ -39,15 +34,17 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-#define CIF_FLAGS_INT		1
-#define CIF_FLAGS_DINT		2
+#define CIF_FLAGS_CHAR		1	/* for struct only */
+#define CIF_FLAGS_SHORT		2	/* for struct only */
+#define CIF_FLAGS_INT		4
+#define CIF_FLAGS_DINT		8
 
 /*
  * Foreign Function Interface API
  */
 
-void *ffi_call_aoutbsd (extended_cif *, unsigned, unsigned, void *,
-			void (*) ());
+void ffi_call_elfbsd (extended_cif *, unsigned, unsigned, void *,
+		       void (*) ());
 void *ffi_prep_args (extended_cif *ecif, void *stack);
 
 void *
@@ -57,8 +54,15 @@ ffi_prep_args (extended_cif *ecif, void *stack)
   void **p_argv;
   char *argp;
   ffi_type **p_arg;
+  void *struct_value_ptr;
 
   argp = stack;
+
+  if (ecif->cif->rtype->type == FFI_TYPE_STRUCT
+      && !ecif->cif->flags)
+    struct_value_ptr = ecif->rvalue;
+  else
+    struct_value_ptr = NULL;
 
   p_argv = ecif->avalue;
 
@@ -111,7 +115,7 @@ ffi_prep_args (extended_cif *ecif, void *stack)
       argp += z;
     }
 
-  return NULL;
+  return struct_value_ptr;
 }
 
 ffi_status
@@ -125,7 +129,23 @@ ffi_prep_cif_machdep (ffi_cif *cif)
       break;
 
     case FFI_TYPE_STRUCT:
-      cif->flags = 0;	/* structs are always passed on the stack */
+      if (cif->rtype->elements[0]->type == FFI_TYPE_STRUCT &&
+	  cif->rtype->elements[1])
+	{
+	  cif->flags = 0;
+	  break;
+	}
+
+      if (cif->rtype->size == sizeof (char))
+	cif->flags = CIF_FLAGS_CHAR;
+      else if (cif->rtype->size == sizeof (short))
+	cif->flags = CIF_FLAGS_SHORT;
+      else if (cif->rtype->size == sizeof (int))
+	cif->flags = CIF_FLAGS_INT;
+      else if (cif->rtype->size == 2 * sizeof (int))
+	cif->flags = CIF_FLAGS_DINT;
+      else
+	cif->flags = 0;
       break;
 
     default:
@@ -143,19 +163,24 @@ void
 ffi_call (ffi_cif *cif, void (*fn) (), void *rvalue, void **avalue)
 {
   extended_cif ecif;
-  void *r0;
 
   ecif.cif = cif;
   ecif.avalue = avalue;
-  ecif.rvalue = rvalue;
+
+  /* If the return value is a struct and we don't have a return value
+     address then we need to make one.  */
+
+  if (rvalue == NULL
+      && cif->rtype->type == FFI_TYPE_STRUCT
+      && cif->flags == 0)
+    ecif.rvalue = alloca (cif->rtype->size);
+  else
+    ecif.rvalue = rvalue;
 
   switch (cif->abi)
     {
-    case FFI_AOUTBSD:
-      r0 = ffi_call_aoutbsd (&ecif, cif->bytes, cif->flags, rvalue, fn);
-      /* copy the struct return value if asked for */
-      if (cif->rtype->type == FFI_TYPE_STRUCT && rvalue != NULL)
-	memcpy(rvalue, r0, cif->rtype->size);
+    case FFI_ELFBSD:
+      ffi_call_elfbsd (&ecif, cif->bytes, cif->flags, ecif.rvalue, fn);
       break;
 
     default:
@@ -168,12 +193,12 @@ ffi_call (ffi_cif *cif, void (*fn) (), void *rvalue, void **avalue)
  * Closure API
  */
 
-void ffi_closure_aoutbsd (void);
-void ffi_closure_struct_aoutbsd (void);
-unsigned int ffi_closure_aoutbsd_inner (ffi_closure *, void *, char *);
+void ffi_closure_elfbsd (void);
+void ffi_closure_struct_elfbsd (void);
+unsigned int ffi_closure_elfbsd_inner (ffi_closure *, void *, char *);
 
 static void
-ffi_prep_closure_aoutbsd (ffi_cif *cif, void **avalue, char *stackp)
+ffi_prep_closure_elfbsd (ffi_cif *cif, void **avalue, char *stackp)
 {
   unsigned int i;
   void **p_argv;
@@ -198,7 +223,7 @@ ffi_prep_closure_aoutbsd (ffi_cif *cif, void **avalue, char *stackp)
 }
 
 unsigned int
-ffi_closure_aoutbsd_inner (ffi_closure *closure, void *resp, char *stack)
+ffi_closure_elfbsd_inner (ffi_closure *closure, void *resp, char *stack)
 {
   ffi_cif *cif;
   void **arg_area;
@@ -206,7 +231,7 @@ ffi_closure_aoutbsd_inner (ffi_closure *closure, void *resp, char *stack)
   cif = closure->cif;
   arg_area = (void **) alloca (cif->nargs * sizeof (void *));
 
-  ffi_prep_closure_aoutbsd (cif, arg_area, stack);
+  ffi_prep_closure_elfbsd (cif, arg_area, stack);
 
   (closure->fun) (cif, resp, arg_area, closure->user_data);
 
@@ -220,10 +245,8 @@ ffi_prep_closure_loc (ffi_closure *closure, ffi_cif *cif,
 {
   char *tramp = (char *) codeloc;
   void *fn;
-  void *rvalue;
-  unsigned int offset;
 
-  FFI_ASSERT (cif->abi == FFI_AOUTBSD);
+  FFI_ASSERT (cif->abi == FFI_ELFBSD);
 
   /* entry mask */
   *(unsigned short *)(tramp + 0) = 0x0000;
@@ -233,40 +256,17 @@ ffi_prep_closure_loc (ffi_closure *closure, ffi_cif *cif,
   *(unsigned int *)(tramp + 4) = (unsigned int) closure;
   tramp[8] = 0x50;
 
-  if (cif->rtype->type == FFI_TYPE_STRUCT)
-    {
-      fn = &ffi_closure_struct_aoutbsd;
-
-      /*
-       * PCC struct return method uses a temporary struct image in bss, and
-       * has the function return its address in r0.
-       * Since we can't pick this memory on the stack, we need to allocate
-       * memory here.  Unfortunately, there is no simple way to deallocate
-       * this extra memory when the ffi_closure is freed...
-       */
-      rvalue = malloc (cif->rtype->size);
-      if (!rvalue)
-	return FFI_BAD_ABI; /* here's a nickel kid, get yourself a better ABI */
-
-      /* movl #rvalue, r1 */
-      tramp[9] = 0xd0;
-      tramp[10] = 0x8f;
-      *(unsigned int *)(tramp + 11) = (unsigned int) rvalue;
-      tramp[15] = 0x51;
-
-      offset = 16;
-    }
+  if (cif->rtype->type == FFI_TYPE_STRUCT
+      && !cif->flags)
+    fn = &ffi_closure_struct_elfbsd;
   else
-    {
-      fn = &ffi_closure_aoutbsd;
-      offset = 9;
-    }
+    fn = &ffi_closure_elfbsd;
 
   /* jmpl #fn */
-  tramp[offset] = 0x17;
-  tramp[offset + 1] = 0xef;
-  *(unsigned int *)(tramp + offset + 2) = (unsigned int)fn + 2 -
-					  (unsigned int)tramp - offset - 6;
+  tramp[9] = 0x17;
+  tramp[10] = 0xef;
+  *(unsigned int *)(tramp + 11) = (unsigned int)fn + 2 -
+				  (unsigned int)tramp - 9 - 6;
 
   closure->cif = cif;
   closure->user_data = user_data;

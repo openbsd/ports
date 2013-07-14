@@ -34,8 +34,8 @@ typedef signed long ffi_sarg;
 
 typedef enum ffi_abi {
   FFI_FIRST_ABI = 0,
-  FFI_AOUTBSD,	/* with pcc struct return sematics */
-  FFI_DEFAULT_ABI = FFI_AOUTBSD,
+  FFI_ELFBSD,
+  FFI_DEFAULT_ABI = FFI_ELFBSD,
   FFI_LAST_ABI = FFI_DEFAULT_ABI + 1
 } ffi_abi;
 #endif
@@ -43,7 +43,7 @@ typedef enum ffi_abi {
 /* ---- Definitions for closures ----------------------------------------- */
 
 #define FFI_CLOSURES 1
-#define FFI_TRAMPOLINE_SIZE 22
+#define FFI_TRAMPOLINE_SIZE 15
 #define FFI_NATIVE_RAW_API 0
 
 #endif

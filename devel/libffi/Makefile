@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2013/05/01 10:11:54 miod Exp $
+# $OpenBSD: Makefile,v 1.22 2013/07/14 15:29:32 miod Exp $
 
 COMMENT=		Foreign Function Interface
 
 DISTNAME=		libffi-3.0.9
-REVISION=		3
+REVISION=		4
 SHARED_LIBS +=  ffi                  0.0      # .5.9
 CATEGORIES=		devel
 
@@ -31,6 +31,6 @@ post-patch:
 	@mkdir ${WRKSRC}/src/vax
 	@cp ${FILESDIR}/vax_ffi.c ${WRKSRC}/src/vax/ffi.c
 	@cp ${FILESDIR}/vax_ffitarget.h ${WRKSRC}/src/vax/ffitarget.h
-	@cp ${FILESDIR}/vax_aoutbsd.S ${WRKSRC}/src/vax/aoutbsd.S
+	@cp ${FILESDIR}/vax_elfbsd.S ${WRKSRC}/src/vax/elfbsd.S
 
 .include <bsd.port.mk>
