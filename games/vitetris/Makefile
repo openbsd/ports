@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2013/07/14 07:12:22 rfreeman Exp $
+# $OpenBSD: Makefile,v 1.6 2013/07/14 08:05:34 ajacoutot Exp $
 
 COMMENT =	terminal-based tetris clone in vein of nintendo tetris
 DISTNAME =	vitetris-0.57
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	http://victornils.net/tetris/
 
