@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/07/14 00:36:33 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/07/14 08:15:31 ajacoutot Exp $
 @bin bin/ede-about
 @bin bin/ede-autostart
 @bin bin/ede-bell-conf
@@ -1527,6 +1527,8 @@ share/xsessions/
 share/xsessions/ede.desktop
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/edeneu
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/edeneu
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/kbflags

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/07/14 00:36:31 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2013/07/14 08:15:31 ajacoutot Exp $
 
 COMMENT =		Equinox desktop environment
 
 DISTNAME =		ede-${V}
+REVISION =		0
 
 WANTLIB += X11 Xau Xdmcp Xext Xft Xinerama Xpm c crypto
 WANTLIB += curl dbus-1 edelib edelib_dbus edelib_gui fltk fltk_images
@@ -17,6 +18,7 @@ LIB_DEPENDS =		devel/startup-notification \
 			net/curl \
 			x11/ede/lib
 RUN_DEPENDS =		devel/desktop-file-utils \
+			misc/shared-mime-info \
 			x11/gtk+2,-guic \
 			x11/pekwm
 
