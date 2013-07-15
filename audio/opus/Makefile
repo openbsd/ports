@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/21 08:45:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2013/07/15 19:47:38 naddy Exp $
 
 COMMENT=	IETF audio codec
 
-DISTNAME=	opus-1.0.2
-SHARED_LIBS=	opus		0.1	# 3.0
+DISTNAME=	opus-1.0.3
+SHARED_LIBS=	opus		0.2	# 4.0
 CATEGORIES=	audio
 
 HOMEPAGE=	http://opus-codec.org/
@@ -20,7 +20,8 @@ WANTLIB=	m
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--disable-maintainer-mode
 CONFIGURE_ARGS+=--disable-doc	# requires doxygen
 
 .if ${MACHINE_ARCH} == "arm"
