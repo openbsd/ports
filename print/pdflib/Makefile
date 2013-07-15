@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2013/06/04 18:41:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2013/07/15 09:31:03 espie Exp $
 
 COMMENT=		C library to produce PDF files
 
 DISTNAME=		pdflib-4.0.3
-REVISION = 		2
+REVISION = 		3
 CATEGORIES=     	print
 SHARED_LIBS=		pdf	2.3
 
@@ -19,6 +19,8 @@ WANTLIB=		m z jpeg png>=2 tiff>=35
 LIB_DEPENDS=		graphics/png \
 			graphics/tiff
 
+# XXX !shared archs don't inherit libraries
+LIB_DEPENDS +=		graphics/jpeg
 
 FAKE=			lib
 CONFIGURE_STYLE=	autoconf dest
