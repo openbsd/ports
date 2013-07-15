@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2013/04/28 16:34:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2013/07/15 06:58:28 jasper Exp $
 
 COMMENT=        build tool for java applications
 
-DISTNAME=	apache-ant-1.8.4
+DISTNAME=	apache-ant-1.9.1
 CATEGORIES=	devel
 
 HOMEPAGE=	http://ant.apache.org/
@@ -29,16 +29,16 @@ ANTDOCS=	${PREFIX}/share/doc/java/ant
 TXT=		LICENSE NOTICE README WHATSNEW
 
 do-install:
-	@${INSTALL_DATA_DIR} ${ANTHOME}/bin
+	${INSTALL_DATA_DIR} ${ANTHOME}/bin
 .for i in ant antRun runant.pl
-	@${INSTALL_SCRIPT} ${WRKDIST}/bin/$i ${ANTHOME}/bin
-	@ln -s ${TRUEPREFIX}/ant/bin/$i ${PREFIX}/bin/$i
+	${INSTALL_SCRIPT} ${WRKDIST}/bin/$i ${ANTHOME}/bin
+	ln -s ${TRUEPREFIX}/ant/bin/$i ${PREFIX}/bin/$i
 .endfor
-	@${INSTALL_DATA_DIR} ${ANTDOCS}
-	@cp -Rp ${WRKDIST}/manual/* ${ANTDOCS}
-	@chown -R ${SHAREOWN}:${SHAREGRP} ${ANTDOCS}
-	@cd ${WRKDIST} && ${INSTALL_DATA} ${TXT} ${ANTDOCS}
-	@${INSTALL_DATA_DIR} ${ANTHOME}/lib
-	@cd ${WRKDIST}/lib && ${INSTALL_DATA} *.jar ${ANTHOME}/lib
+	${INSTALL_DATA_DIR} ${ANTDOCS}
+	cp -Rp ${WRKDIST}/manual/* ${ANTDOCS}
+	chown -R ${SHAREOWN}:${SHAREGRP} ${ANTDOCS}
+	cd ${WRKDIST} && ${INSTALL_DATA} ${TXT} ${ANTDOCS}
+	${INSTALL_DATA_DIR} ${ANTHOME}/lib
+	cd ${WRKDIST}/lib && ${INSTALL_DATA} *.jar ${ANTHOME}/lib
 
 .include <bsd.port.mk>

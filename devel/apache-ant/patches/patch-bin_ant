@@ -1,7 +1,7 @@
-$OpenBSD: patch-bin_ant,v 1.7 2013/03/02 12:33:01 jasper Exp $
---- bin/ant.orig	Tue May 22 06:24:46 2012
-+++ bin/ant	Tue Feb 12 23:23:31 2013
-@@ -131,27 +131,9 @@ fi
+$OpenBSD: patch-bin_ant,v 1.8 2013/07/15 06:58:29 jasper Exp $
+--- bin/ant.orig	Thu May 16 04:35:45 2013
++++ bin/ant	Wed Jul 10 15:34:48 2013
+@@ -135,27 +135,9 @@ fi
  # set ANT_LIB location
  ANT_LIB="${ANT_HOME}/lib"
  
