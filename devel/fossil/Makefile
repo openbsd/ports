@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2013/07/05 07:23:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2013/07/15 04:34:44 espie Exp $
 
 COMMENT =		simple distributed software configuration management
 
@@ -6,6 +6,7 @@ DISTNAME =		fossil-src-20130618210923
 PKGNAME =		fossil-1.26
 EPOCH =			0
 CATEGORIES =		devel www
+NOT_FOR_ARCHS =		${GCC2_ARCHS}
 
 MAINTAINER =		James Turner <james@calminferno.net>
 
