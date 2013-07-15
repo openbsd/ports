@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/07/14 08:15:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2013/07/15 12:05:26 pascal Exp $
 
 COMMENT =		Equinox desktop environment
 
@@ -11,6 +11,7 @@ WANTLIB += fontconfig idn jpeg m png pthread ssl startup-notification-1
 WANTLIB += stdc++ xkbfile z
 
 MODULES =		lang/python
+BUILD_DEPENDS =		devel/jam
 LIB_DEPENDS =		devel/startup-notification \
 			graphics/jpeg \
 			graphics/png \
