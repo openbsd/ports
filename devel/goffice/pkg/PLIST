@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2013/06/26 06:51:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2013/07/15 07:14:34 ajacoutot Exp $
 include/libgoffice-${API_VERSION}/
 include/libgoffice-${API_VERSION}/goffice/
 include/libgoffice-${API_VERSION}/goffice/app/
@@ -284,6 +284,7 @@ share/gtk-doc/html/goffice-${API_VERSION}/GogAxisLine.html
 share/gtk-doc/html/goffice-${API_VERSION}/GogAxisMap.html
 share/gtk-doc/html/goffice-${API_VERSION}/GogChart.html
 share/gtk-doc/html/goffice-${API_VERSION}/GogChartMap.html
+share/gtk-doc/html/goffice-${API_VERSION}/GogColorScale.html
 share/gtk-doc/html/goffice-${API_VERSION}/GogDataEditor.html
 share/gtk-doc/html/goffice-${API_VERSION}/GogDataset.html
 share/gtk-doc/html/goffice-${API_VERSION}/GogErrorBar.html
