@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/07/13 16:13:09 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2013/07/15 15:08:00 bcallah Exp $
 
 COMMENT =	Python 2 and 3 compatibility library
 MODPY_EGG_VERSION =	1.3.0
@@ -17,6 +17,10 @@ MASTER_SITES =	https://pypi.python.org/packages/source/s/six/
 
 MODULES =	lang/python
 
-NO_TEST =	Yes
+TEST_DEPENDS =	devel/py-py \
+		devel/py-test
+
+do-test:
+	${MODPY_BIN} ${WRKSRC}/test_six.py
 
 .include <bsd.port.mk>
