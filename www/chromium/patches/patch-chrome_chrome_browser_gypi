@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.20 2013/05/30 18:42:18 robert Exp $
---- chrome/chrome_browser.gypi.orig.port	Thu May 30 00:15:01 2013
-+++ chrome/chrome_browser.gypi	Thu May 30 16:41:33 2013
-@@ -1741,7 +1741,6 @@
+$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.21 2013/07/15 14:59:30 robert Exp $
+--- chrome/chrome_browser.gypi.orig.port	Wed Jun 12 09:29:53 2013
++++ chrome/chrome_browser.gypi	Sat Jul 13 23:45:46 2013
+@@ -1827,7 +1827,6 @@
          'browser/speech/tts_controller.h',
          'browser/speech/tts_extension_loader_chromeos.cc',
          'browser/speech/tts_extension_loader_chromeos.h',
@@ -9,15 +9,42 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.20 2013/05/30 18:42:18 robert Exp
          'browser/speech/tts_mac.mm',
          'browser/speech/tts_platform.cc',
          'browser/speech/tts_platform.h',
-@@ -2526,7 +2525,6 @@
-             'browser/policy/cloud/user_policy_signin_service.h',
+@@ -1886,8 +1885,6 @@
+         'browser/storage_monitor/media_storage_util.h',
+         'browser/storage_monitor/media_transfer_protocol_device_observer_linux.cc',
+         'browser/storage_monitor/media_transfer_protocol_device_observer_linux.h',
+-        'browser/storage_monitor/mtab_watcher_linux.cc',
+-        'browser/storage_monitor/mtab_watcher_linux.h',
+         'browser/storage_monitor/portable_device_watcher_win.cc',
+         'browser/storage_monitor/portable_device_watcher_win.h',
+         'browser/storage_monitor/removable_device_constants.cc',
+@@ -1897,8 +1894,6 @@
+         'browser/storage_monitor/storage_info.h',
+         'browser/storage_monitor/storage_monitor_chromeos.cc',
+         'browser/storage_monitor/storage_monitor_chromeos.h',
+-        'browser/storage_monitor/storage_monitor_linux.cc',
+-        'browser/storage_monitor/storage_monitor_linux.h',
+         'browser/storage_monitor/storage_monitor_mac.h',
+         'browser/storage_monitor/storage_monitor_mac.mm',
+         'browser/storage_monitor/storage_monitor_win.cc',
+@@ -1906,8 +1901,6 @@
+         'browser/storage_monitor/storage_monitor.cc',
+         'browser/storage_monitor/storage_monitor.h',
+         # TODO(thestig) Refactor StorageMonitor so these are test-only.
+-        'browser/storage_monitor/test_media_transfer_protocol_manager_linux.cc',
+-        'browser/storage_monitor/test_media_transfer_protocol_manager_linux.h',
+         'browser/storage_monitor/transient_device_ids.cc',
+         'browser/storage_monitor/transient_device_ids.h',
+         'browser/storage_monitor/udev_util_linux.cc',
+@@ -2520,7 +2513,6 @@
              'browser/policy/cloud/user_policy_signin_service_factory.cc',
              'browser/policy/cloud/user_policy_signin_service_factory.h',
+             'browser/signin/signin_manager.cc',
 -            'browser/speech/tts_linux.cc',
+             'browser/storage_monitor/mtab_watcher_linux.cc',
+             'browser/storage_monitor/mtab_watcher_linux.h',
              'browser/storage_monitor/storage_monitor_linux.cc',
-             'browser/storage_monitor/storage_monitor_linux.h',
-             'browser/ui/webui/help/version_updater_basic.cc',
-@@ -2780,6 +2778,21 @@
+@@ -2801,6 +2793,21 @@
              ['exclude', '^browser/sync/glue/extension_'],
              ['exclude', '^browser/sync/glue/theme_'],
              ['exclude', '^browser/usb/'],

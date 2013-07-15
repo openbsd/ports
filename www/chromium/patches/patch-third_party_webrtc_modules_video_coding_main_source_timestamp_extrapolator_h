@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_webrtc_modules_video_coding_main_source_timestamp_extrapolator_h,v 1.1 2013/07/15 14:59:30 robert Exp $
+--- third_party/webrtc/modules/video_coding/main/source/timestamp_extrapolator.h.orig.port	Sun Jul 14 01:27:32 2013
++++ third_party/webrtc/modules/video_coding/main/source/timestamp_extrapolator.h	Sun Jul 14 01:27:38 2013
+@@ -14,6 +14,8 @@
+ #include "typedefs.h"
+ #include "rw_lock_wrapper.h"
+ 
++#undef _P
++
+ namespace webrtc
+ {
+ 

@@ -1,0 +1,32 @@
+$OpenBSD: patch-third_party_webrtc_modules_video_capture_video_capture_gypi,v 1.1 2013/07/15 14:59:30 robert Exp $
+--- third_party/webrtc/modules/video_capture/video_capture.gypi.orig.port	Sun Jul 14 01:01:21 2013
++++ third_party/webrtc/modules/video_capture/video_capture.gypi	Sun Jul 14 01:03:33 2013
+@@ -41,7 +41,7 @@
+           ],
+         }, {  # include_internal_video_capture == 1
+           'conditions': [
+-            ['OS=="linux"', {
++            ['OS=="linux" or OS=="openbsd"', {
+               'include_dirs': [
+                 'linux',
+               ],
+@@ -142,7 +142,7 @@
+             'test/video_capture_main_mac.mm',
+           ],
+           'conditions': [
+-            ['OS=="mac" or OS=="linux"', {
++            ['OS=="mac" or OS=="linux" or OS=="openbsd"', {
+               'cflags': [
+                 '-Wno-write-strings',
+               ],
+@@ -150,9 +150,8 @@
+                 '-lpthread -lm',
+               ],
+             }],
+-            ['OS=="linux"', {
++            ['OS=="linux" or OS=="openbsd"', {
+               'libraries': [
+-                '-lrt',
+                 '-lXext',
+                 '-lX11',
+               ],

@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.143 2013/06/21 21:59:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.144 2013/07/15 14:59:30 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			27.0.1453.110
+V=			28.0.1500.45
 DISTNAME=		chromium-${V}
-REVISION=		0
 
 CATEGORIES=		www
 
@@ -54,8 +53,7 @@ RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
 		x11/gnome/libgnome-keyring \
 		x11/gtk+2,-guic
-BUILD_DEPENDS=	archivers/bzip2 \
-		audio/pulseaudio \
+BUILD_DEPENDS=	audio/pulseaudio \
 		devel/gperf \
 		devel/bison \
 		devel/flex \
@@ -65,8 +63,8 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		sysutils/pciutils \
 		x11/gnome/libgnome-keyring
 BUILD_DEPENDS+=	devel/ninja
-LIB_DEPENDS=	devel/libexecinfo \
-		archivers/bzip2 \
+LIB_DEPENDS=	archivers/bzip2 \
+		devel/libexecinfo \
 		devel/libusb1 \
 		security/nss \
 		devel/gconf2 \
@@ -102,11 +100,12 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Duse_system_sqlite=0 \
 		-Duse_system_yasm=1 \
 		-Duse_system_zlib=0 \
+		-Duse_system_ssl=0 \
 		-Ddisable_nacl=1 \
 		-Dlinux_breakpad=0 \
 		-Dlinux_use_tcmalloc=0 \
 		-Dlinux_strip_binary=1 \
-		-Denable_webrtc=0 \
+		-Denable_webrtc=1 \
 		-Denable_one_click_signin=1 \
 		-Duse_kerberos=0 \
 		-Duse_sndio=1 \
@@ -126,7 +125,8 @@ GYP_DEFS+=	-Dffmpeg_branding=Chrome \
 .endif
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/webkit/plugins/npapi/plugin_list_posix.cc
+	${SUBST_CMD} ${WRKSRC}/webkit/plugins/npapi/plugin_list_posix.cc \
+		${WRKSRC}/build/linux/unbundle/replace_gyp_files.py
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 .for _arch in x64 ia32
 	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/libavutil \
@@ -141,12 +141,13 @@ pre-configure:
 # gyp_chromium generates all the Makefiles from gyp
 do-configure:
 	cd ${WRKSRC} && \
-	env -i ${CONFIGURE_ENV} ${MODPY_BIN} build/gyp_chromium \
-	${GYP_DEFS} "--depth=${WRKSRC}"
+		build/linux/unbundle/replace_gyp_files.py ${GYP_DEFS} && \
+		env -i ${CONFIGURE_ENV} ${MODPY_BIN} build/gyp_chromium \
+		${GYP_DEFS} "--depth=${WRKSRC}"
 
 do-build:
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
-		-j ${MAKE_JOBS} -C out/${BUILDTYPE} chrome
+		-j ${MAKE_JOBS} -C out/${BUILDTYPE} ${ALL_TARGET}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/chrome
@@ -165,9 +166,10 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/chrome/resources
 	@cp -Rp ${BUILDDIR}/resources/* ${PREFIX}/chrome/resources
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/chrome/resources
-.for f in libffmpegsumo.so mksnapshot protoc
+.for f in libffmpegsumo.so protoc
 	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/chrome
 .endfor
+	${INSTALL_DATA} ${BUILDDIR}/mksnapshot.* ${PREFIX}/chrome/mksnapshot
 .for s in 22 24 48 64 128 256
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/${s}x${s}/apps
 	${INSTALL_DATA} ${WRKSRC}/chrome/app/theme/chromium/product_logo_${s}.png \

@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_libjingle_libjingle_gyp,v 1.5 2013/07/15 14:59:30 robert Exp $
+--- third_party/libjingle/libjingle.gyp.orig.port	Sun Jul 14 10:52:13 2013
++++ third_party/libjingle/libjingle.gyp	Sun Jul 14 10:51:58 2013
+@@ -531,7 +531,7 @@
+             '<(libjingle_source)/talk/base/unixfilesystem.h',
+           ],
+         }],
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="openbsd"', {
+           'sources': [
+             '<(libjingle_source)/talk/base/latebindingsymboltable.cc',
+             '<(libjingle_source)/talk/base/latebindingsymboltable.h',

@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.10 2013/05/30 18:42:18 robert Exp $
---- content/browser/child_process_launcher.cc.orig.port	Fri May 17 22:44:18 2013
-+++ content/browser/child_process_launcher.cc	Thu May 30 00:10:49 2013
+$OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.11 2013/07/15 14:59:30 robert Exp $
+--- content/browser/child_process_launcher.cc.orig.port	Wed Jun 12 09:28:05 2013
++++ content/browser/child_process_launcher.cc	Sun Jul 14 00:51:30 2013
 @@ -55,7 +55,7 @@ class ChildProcessLauncher::Context
          termination_status_(base::TERMINATION_STATUS_NORMAL_TERMINATION),
          exit_code_(RESULT_CODE_NORMAL_EXIT),
@@ -19,6 +19,15 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.10 2013/05/30 18:4
      GetContentClient()->browser()->
          GetAdditionalMappedFilesForChildProcess(*cmd_line, child_process_id,
                                                  &files_to_register);
+@@ -250,7 +250,7 @@ class ChildProcessLauncher::Context
+                 base::GlobalDescriptors::kBaseDescriptor));
+       }
+ 
+-#if !defined(OS_MACOSX)
++#if !defined(OS_MACOSX) && !defined(OS_BSD)
+       if (process_type == switches::kRendererProcess) {
+         const int sandbox_fd =
+             RenderSandboxHostLinux::GetInstance()->GetRendererSocket();
 @@ -304,7 +304,7 @@ class ChildProcessLauncher::Context
        base::Bind(
            &Context::Notify,

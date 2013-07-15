@@ -1,7 +1,7 @@
-$OpenBSD: patch-skia_skia_gyp,v 1.10 2013/05/30 18:42:18 robert Exp $
---- skia/skia.gyp.orig.port	Fri May 17 22:44:24 2013
-+++ skia/skia.gyp	Thu May 30 00:10:49 2013
-@@ -652,7 +652,7 @@
+$OpenBSD: patch-skia_skia_gyp,v 1.11 2013/07/15 14:59:30 robert Exp $
+--- skia/skia.gyp.orig.port	Wed Jun 12 09:28:14 2013
++++ skia/skia.gyp	Sun Jul  7 15:54:58 2013
+@@ -655,7 +655,7 @@
              'SK_BUILD_FOR_ANDROID_NDK',
            ],
          }],
@@ -10,7 +10,7 @@ $OpenBSD: patch-skia_skia_gyp,v 1.10 2013/05/30 18:42:18 robert Exp $
            'sources': [
              '../third_party/skia/src/opts/SkBitmapProcState_opts_SSE2.cpp',
              '../third_party/skia/src/opts/SkBlitRect_opts_SSE2.cpp',
-@@ -733,7 +733,7 @@
+@@ -732,7 +732,7 @@
              '../third_party/skia/src/opts/opts_check_arm.cpp',
            ],
          }],

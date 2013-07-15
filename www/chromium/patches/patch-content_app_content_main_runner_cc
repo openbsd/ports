@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_app_content_main_runner_cc,v 1.8 2013/05/30 18:42:18 robert Exp $
---- content/app/content_main_runner.cc.orig.port	Fri May 17 22:44:16 2013
-+++ content/app/content_main_runner.cc	Thu May 30 00:10:49 2013
-@@ -79,7 +79,7 @@
+$OpenBSD: patch-content_app_content_main_runner_cc,v 1.9 2013/07/15 14:59:30 robert Exp $
+--- content/app/content_main_runner.cc.orig.port	Sun Jul  7 15:56:28 2013
++++ content/app/content_main_runner.cc	Sun Jul  7 15:58:00 2013
+@@ -78,10 +78,10 @@
  #include "base/posix/global_descriptors.h"
  #include "content/public/common/content_descriptors.h"
  
@@ -9,26 +9,12 @@ $OpenBSD: patch-content_app_content_main_runner_cc,v 1.8 2013/05/30 18:42:18 rob
 +#if !defined(OS_MACOSX) && !defined(OS_BSD)
  #include "content/public/common/zygote_fork_delegate_linux.h"
  #endif
+-#if !defined(OS_MACOSX) && !defined(OS_ANDROID)
++#if !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
+ #include "content/zygote/zygote_main.h"
+ #endif
  
-@@ -101,7 +101,7 @@ extern int PpapiBrokerMain(const MainFunctionParams&);
- extern int RendererMain(const content::MainFunctionParams&);
- extern int UtilityMain(const MainFunctionParams&);
- extern int WorkerMain(const MainFunctionParams&);
--#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
-+#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
- extern int ZygoteMain(const MainFunctionParams&,
-                       ZygoteForkDelegate* forkdelegate);
- #endif
-@@ -239,7 +239,7 @@ void CommonSubprocessInit(const std::string& process_t
-   MSG msg;
-   PeekMessage(&msg, NULL, 0, 0, PM_REMOVE);
- #endif
--#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
-+#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
-   // Various things break when you're using a locale where the decimal
-   // separator isn't a period.  See e.g. bugs 22782 and 39964.  For
-   // all processes except the browser process (where we call system
-@@ -347,7 +347,7 @@ struct MainFunction {
+@@ -323,7 +323,7 @@ struct MainFunction {
    int (*function)(const MainFunctionParams&);
  };
  
@@ -37,7 +23,7 @@ $OpenBSD: patch-content_app_content_main_runner_cc,v 1.8 2013/05/30 18:42:18 rob
  // On platforms that use the zygote, we have a special subset of
  // subprocesses that are launched via the zygote.  This function
  // fills in some process-launching bits around ZygoteMain().
-@@ -456,7 +456,7 @@ int RunNamedProcessTypeMain(
+@@ -432,7 +432,7 @@ int RunNamedProcessTypeMain(
      }
    }
  
@@ -46,12 +32,3 @@ $OpenBSD: patch-content_app_content_main_runner_cc,v 1.8 2013/05/30 18:42:18 rob
    // Zygote startup is special -- see RunZygote comments above
    // for why we don't use ZygoteMain directly.
    if (process_type == switches::kZygoteProcess)
-@@ -584,7 +584,7 @@ class ContentMainRunnerImpl : public ContentMainRunner
-                kPrimaryIPCChannel + base::GlobalDescriptors::kBaseDescriptor);
- #endif  // !OS_ANDROID && !OS_IOS
- 
--#if defined(OS_LINUX) || defined(OS_OPENBSD)
-+#if defined(OS_LINUX)
-     g_fds->Set(kCrashDumpSignal,
-                kCrashDumpSignal + base::GlobalDescriptors::kBaseDescriptor);
- #endif

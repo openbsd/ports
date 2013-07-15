@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_renderer_printing_print_web_view_helper_h,v 1.1 2013/07/15 14:59:30 robert Exp $
+--- chrome/renderer/printing/print_web_view_helper.h.orig.port	Sat Jul 13 22:22:36 2013
++++ chrome/renderer/printing/print_web_view_helper.h	Sat Jul 13 22:22:44 2013
+@@ -213,7 +213,7 @@ class PrintWebViewHelper
+   void FinishFramePrinting();
+ 
+   // Prints the page listed in |params|.
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+   void PrintPageInternal(const PrintMsg_PrintPage_Params& params,
+                          const gfx::Size& canvas_size,
+                          WebKit::WebFrame* frame,

@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_webrtc_modules_audio_device_audio_device_gypi,v 1.1 2013/07/15 14:59:30 robert Exp $
+--- third_party/webrtc/modules/audio_device/audio_device.gypi.orig.port	Sun Jul 14 01:01:21 2013
++++ third_party/webrtc/modules/audio_device/audio_device.gypi	Sun Jul 14 01:03:43 2013
+@@ -45,7 +45,7 @@
+         'dummy/audio_device_utility_dummy.h',
+       ],
+       'conditions': [
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="openbsd"', {
+           'include_dirs': [
+             'linux',
+           ],

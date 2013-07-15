@@ -1,0 +1,38 @@
+$OpenBSD: patch-third_party_libjingle_source_talk_base_cpumonitor_cc,v 1.1 2013/07/15 14:59:30 robert Exp $
+--- third_party/libjingle/source/talk/base/cpumonitor.cc.orig.port	Wed Jun 12 09:30:45 2013
++++ third_party/libjingle/source/talk/base/cpumonitor.cc	Sat Jul 13 18:04:54 2013
+@@ -52,7 +52,7 @@
+ #include <mach/task.h>
+ #endif  // defined(IOS) || defined(OSX)
+ 
+-#if defined(LINUX) || defined(ANDROID)
++#if defined(LINUX) || defined(ANDROID) || defined(OS_BSD)
+ #include <sys/resource.h>
+ #include <errno.h>
+ #include <stdio.h>
+@@ -281,12 +281,16 @@ float CpuSampler::GetSystemLoad() {
+   const uint64 cpu_times = nice + system + user;
+   const uint64 total_times = cpu_times + idle;
+ #endif  // defined(LINUX) || defined(ANDROID)
++#if defined(OPENBSD)
++  return 0;
++#else
+   system_.prev_load_time_ = timenow;
+   system_.prev_load_ = UpdateCpuLoad(total_times,
+                                      cpu_times * cpus_,
+                                      &system_.prev_total_times_,
+                                      &system_.prev_cpu_times_);
+   return system_.prev_load_;
++#endif
+ }
+ 
+ float CpuSampler::GetProcessLoad() {
+@@ -348,7 +352,7 @@ float CpuSampler::GetProcessLoad() {
+       TimeValueTToInt64(task_term_info.system_time));
+ #endif  // defined(IOS) || defined(OSX)
+ 
+-#if defined(LINUX) || defined(ANDROID)
++#if defined(LINUX) || defined(ANDROID) || defined(OS_BSD)
+   rusage usage;
+   if (getrusage(RUSAGE_SELF, &usage) < 0) {
+     LOG_ERR(LS_ERROR) << "getrusage failed";

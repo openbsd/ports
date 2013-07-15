@@ -1,0 +1,33 @@
+$OpenBSD: patch-third_party_webrtc_system_wrappers_source_cpu_info_cc,v 1.1 2013/07/15 14:59:30 robert Exp $
+--- third_party/webrtc/system_wrappers/source/cpu_info.cc.orig.port	Sun Jul 14 01:20:57 2013
++++ third_party/webrtc/system_wrappers/source/cpu_info.cc	Sun Jul 14 01:34:41 2013
+@@ -12,7 +12,8 @@
+ 
+ #if defined(_WIN32)
+ #include <Windows.h>
+-#elif defined(WEBRTC_MAC)
++#elif defined(WEBRTC_MAC) || defined(__OpenBSD__)
++#include <sys/param.h>
+ #include <sys/sysctl.h>
+ #include <sys/types.h>
+ #elif defined(WEBRTC_ANDROID)
+@@ -37,13 +38,17 @@ uint32_t CpuInfo::DetectNumberOfCores() {
+     WEBRTC_TRACE(kTraceStateInfo, kTraceUtility, -1,
+                  "Available number of cores:%d", number_of_cores_);
+ 
+-#elif defined(WEBRTC_LINUX) && !defined(WEBRTC_ANDROID)
++#elif defined(WEBRTC_LINUX) && !defined(WEBRTC_ANDROID) && !defined(__OpenBSD__)
+     number_of_cores_ = get_nprocs();
+     WEBRTC_TRACE(kTraceStateInfo, kTraceUtility, -1,
+                  "Available number of cores:%d", number_of_cores_);
+ 
+-#elif defined(WEBRTC_MAC)
++#elif defined(WEBRTC_MAC) || defined(__OpenBSD__)
++#if defined(__OpenBSD__)
++    int name[] = {CTL_HW, HW_NCPU};
++#else
+     int name[] = {CTL_HW, HW_AVAILCPU};
++#endif
+     int ncpu;
+     size_t size = sizeof(ncpu);
+     if (0 == sysctl(name, 2, &ncpu, &size, NULL, 0)) {

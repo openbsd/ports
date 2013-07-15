@@ -1,0 +1,48 @@
+$OpenBSD: patch-third_party_WebKit_Source_core_core_gyp_core_gyp,v 1.1 2013/07/15 14:59:30 robert Exp $
+--- third_party/WebKit/Source/core/core.gyp/core.gyp.orig.port	Sun Jul 14 00:15:05 2013
++++ third_party/WebKit/Source/core/core.gyp/core.gyp	Sun Jul 14 00:18:14 2013
+@@ -608,7 +608,7 @@
+             ['exclude', 'platform/chromium/ScrollbarThemeChromiumDefault.h'],
+           ],
+         }],
+-        ['OS=="linux" or OS=="android"', {
++        ['OS=="linux" or OS=="android" or OS=="openbsd"', {
+           'sources/': [
+             # Cherry-pick files excluded by the broader regular expressions above.
+             ['include', 'platform/graphics/harfbuzz/FontHarfBuzz\\.cpp$'],
+@@ -629,7 +629,7 @@
+             ['exclude', 'Harfbuzz[^/]+\\.(cpp|h)$'],
+           ],
+         }],
+-        ['OS!="linux"', {
++        ['OS!="linux" and OS!="openbsd"', {
+           'sources/': [
+             ['exclude', 'Linux\\.cpp$'],
+           ],
+@@ -740,7 +740,7 @@
+             ['exclude', 'platform/graphics/FontPlatformData\\.cpp$'],
+           ],
+         }],
+-        ['OS != "linux" and OS != "mac"', {
++        ['OS != "linux" and OS != "mac" and OS != "openbsd"', {
+           'sources/': [
+             ['exclude', 'VDMX[^/]+\\.(cpp|h)$'],
+           ],
+@@ -900,7 +900,7 @@
+           # Due to a bug in gcc 4.6 in android NDK, we get warnings about uninitialized variable.
+           'cflags': ['-Wno-uninitialized'],
+         }],
+-        ['OS != "linux"', {
++        ['OS != "linux" and OS != "openbsd"', {
+           'sources/': [
+             ['exclude', 'Linux\\.cpp$'],
+           ],
+@@ -945,7 +945,7 @@
+         ['OS=="win" and buildtype=="Official"', {
+           'msvs_shard': 19,
+         }],
+-        ['OS != "linux"', {
++        ['OS != "linux" and OS != "openbsd"', {
+           'sources/': [
+             ['exclude', 'Linux\\.cpp$'],
+           ],

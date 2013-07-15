@@ -1,0 +1,32 @@
+$OpenBSD: patch-third_party_webrtc_modules_video_render_video_render_gypi,v 1.1 2013/07/15 14:59:30 robert Exp $
+--- third_party/webrtc/modules/video_render/video_render.gypi.orig.port	Sun Jul 14 01:01:21 2013
++++ third_party/webrtc/modules/video_render/video_render.gypi	Sun Jul 14 01:03:49 2013
+@@ -88,7 +88,7 @@
+             'android/video_render_opengles20.cc',
+           ],
+         }],
+-        ['OS!="linux" or include_internal_video_render==0', {
++        ['(OS!="linux" and OS!="openbsd") or include_internal_video_render==0', {
+           'sources!': [
+             'linux/video_render_linux_impl.h',
+             'linux/video_x11_channel.h',
+@@ -175,7 +175,7 @@
+             'test/testAPI/testAPI_mac.mm',
+           ],
+           'conditions': [
+-            ['OS=="mac" or OS=="linux"', {
++            ['OS=="mac" or OS=="linux" or OS=="openbsd"', {
+               'cflags': [
+                 '-Wno-write-strings',
+               ],
+@@ -183,9 +183,8 @@
+                 '-lpthread -lm',
+               ],
+             }],
+-            ['OS=="linux"', {
++            ['OS=="linux" or OS=="openbsd"', {
+               'libraries': [
+-                '-lrt',
+                 '-lXext',
+                 '-lX11',
+               ],

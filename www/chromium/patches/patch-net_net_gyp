@@ -1,12 +1,12 @@
-$OpenBSD: patch-net_net_gyp,v 1.15 2013/05/30 18:42:18 robert Exp $
---- net/net.gyp.orig.port	Fri May 17 22:44:23 2013
-+++ net/net.gyp	Thu May 30 00:10:49 2013
+$OpenBSD: patch-net_net_gyp,v 1.16 2013/07/15 14:59:30 robert Exp $
+--- net/net.gyp.orig.port	Sun Jul  7 15:59:22 2013
++++ net/net.gyp	Sun Jul  7 15:59:27 2013
 @@ -81,8 +81,6 @@
          'base/address_family.h',
          'base/address_list.cc',
          'base/address_list.h',
 -        'base/address_tracker_linux.cc',
 -        'base/address_tracker_linux.h',
-         'base/asn1_util.cc',
-         'base/asn1_util.h',
          'base/auth.cc',
+         'base/auth.h',
+         'base/backoff_entry.cc',

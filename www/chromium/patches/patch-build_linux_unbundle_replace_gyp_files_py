@@ -1,0 +1,9 @@
+$OpenBSD: patch-build_linux_unbundle_replace_gyp_files_py,v 1.1 2013/07/15 14:59:30 robert Exp $
+--- build/linux/unbundle/replace_gyp_files.py.orig.port	Sat Jul 13 17:03:02 2013
++++ build/linux/unbundle/replace_gyp_files.py	Sun Jul 14 10:52:16 2013
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2.7
+ # Copyright 2013 The Chromium Authors. All rights reserved.
+ # Use of this source code is governed by a BSD-style license that can be
+ # found in the LICENSE file.

@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_libjingle_source_talk_base_systeminfo_cc,v 1.1 2013/07/15 14:59:30 robert Exp $
+--- third_party/libjingle/source/talk/base/systeminfo.cc.orig.port	Wed Jun 12 09:30:45 2013
++++ third_party/libjingle/source/talk/base/systeminfo.cc	Sun Jul 14 10:53:48 2013
+@@ -48,7 +48,7 @@
+ #include "talk/base/win32.h"
+ #elif defined(OSX)
+ #include "talk/base/macconversion.h"
+-#elif defined(LINUX) || defined(ANDROID)
++#elif defined(LINUX) || defined(ANDROID) || defined(OPENBSD)
+ #include "talk/base/linux.h"
+ #endif
+ #include "talk/base/common.h"

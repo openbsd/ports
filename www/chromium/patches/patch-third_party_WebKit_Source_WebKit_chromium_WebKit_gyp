@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_WebKit_gyp,v 1.5 2013/07/15 14:59:30 robert Exp $
+--- third_party/WebKit/Source/WebKit/chromium/WebKit.gyp.orig.port	Sat Jul 13 23:56:52 2013
++++ third_party/WebKit/Source/WebKit/chromium/WebKit.gyp	Sun Jul 14 00:13:38 2013
+@@ -646,7 +646,7 @@
+                       },
+                     },
+                 }],
+-                ['OS == "linux"', {
++                ['OS == "linux" or OS == "openbsd"', {
+                     'dependencies': [
+                         '<(DEPTH)/build/linux/system.gyp:fontconfig',
+                     ],

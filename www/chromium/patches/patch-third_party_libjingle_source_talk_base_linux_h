@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_libjingle_source_talk_base_linux_h,v 1.1 2013/07/15 14:59:30 robert Exp $
+--- third_party/libjingle/source/talk/base/linux.h.orig.port	Sun Jul 14 10:51:25 2013
++++ third_party/libjingle/source/talk/base/linux.h	Sun Jul 14 10:53:59 2013
+@@ -28,7 +28,7 @@
+ #ifndef TALK_BASE_LINUX_H_
+ #define TALK_BASE_LINUX_H_
+ 
+-#if defined(LINUX) || defined(ANDROID)
++#if defined(LINUX) || defined(ANDROID) || defined(OPENBSD)
+ #include <string>
+ #include <map>
+ #include <vector>

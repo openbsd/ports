@@ -1,26 +1,15 @@
-$OpenBSD: patch-base_sys_info_openbsd_cc,v 1.5 2013/04/03 08:19:10 robert Exp $
---- base/sys_info_openbsd.cc.orig.port	Fri Mar 22 02:13:44 2013
-+++ base/sys_info_openbsd.cc	Tue Apr  2 21:05:17 2013
-@@ -1,4 +1,4 @@
--// Copyright (c) 2011 The Chromium Authors. All rights reserved.
-+// Copyright (c) 2012 The Chromium Authors. All rights reserved.
- // Use of this source code is governed by a BSD-style license that can be
- // found in the LICENSE file.
- 
-@@ -43,6 +43,16 @@ size_t SysInfo::MaxSharedMemorySize() {
-     return 0;
-   }
-   return limit;
-+}
-+
-+// static
-+std::string SysInfo::CPUModelName() {
-+  int mib[] = { CTL_HW, HW_MODEL };
-+  char name[256];
-+  size_t len = arraysize(name);
-+  if (sysctl(mib, arraysize(mib), &name, &len, NULL, 0) == 0)
-+    return name;
-+  return std::string();
+$OpenBSD: patch-base_sys_info_openbsd_cc,v 1.6 2013/07/15 14:59:30 robert Exp $
+--- base/sys_info_openbsd.cc.orig.port	Wed Jun 12 09:28:39 2013
++++ base/sys_info_openbsd.cc	Sun Jul 14 10:59:41 2013
+@@ -44,11 +44,6 @@ int64 SysInfo::AmountOfPhysicalMemory() {
  }
  
- }  // namespace base
+ // static
+-int64 SysInfo::AmountOfAvailablePhysicalMemory() {
+-  return AmountOfMemory(_SC_AVPHYS_PAGES);
+-}
+-
+-// static
+ size_t SysInfo::MaxSharedMemorySize() {
+   int mib[] = { CTL_KERN, KERN_SHMINFO, KERN_SHMINFO_SHMMAX };
+   size_t limit;

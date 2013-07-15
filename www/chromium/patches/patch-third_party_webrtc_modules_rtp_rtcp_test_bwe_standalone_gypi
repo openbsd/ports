@@ -1,0 +1,21 @@
+$OpenBSD: patch-third_party_webrtc_modules_rtp_rtcp_test_bwe_standalone_gypi,v 1.1 2013/07/15 14:59:30 robert Exp $
+--- third_party/webrtc/modules/rtp_rtcp/test/bwe_standalone.gypi.orig.port	Sun Jul 14 01:01:21 2013
++++ third_party/webrtc/modules/rtp_rtcp/test/bwe_standalone.gypi	Sun Jul 14 01:03:13 2013
+@@ -29,7 +29,7 @@
+         'BWEStandAlone/TestSenderReceiver.h',
+       ], # source
+       'conditions': [
+-          ['OS=="linux"', {
++          ['OS=="linux" or OS=="openbsd"', {
+               'cflags': [
+                   '-fexceptions', # enable exceptions
+                   ],
+@@ -80,7 +80,7 @@
+           'MATLAB',
+           ],
+       'conditions': [
+-          ['OS=="linux"', {
++          ['OS=="linux" or OS=="openbsd"', {
+               'cflags': [
+                   '-fexceptions', # enable exceptions
+                   ],

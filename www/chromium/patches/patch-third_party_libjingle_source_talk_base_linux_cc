@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_libjingle_source_talk_base_linux_cc,v 1.1 2013/07/15 14:59:30 robert Exp $
+--- third_party/libjingle/source/talk/base/linux.cc.orig.port	Sun Jul 14 10:57:31 2013
++++ third_party/libjingle/source/talk/base/linux.cc	Sun Jul 14 10:57:59 2013
+@@ -25,7 +25,7 @@
+  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  */
+ 
+-#if defined(LINUX) || defined(ANDROID)
++#if defined(LINUX) || defined(ANDROID) || defined(OPENBSD)
+ #include "talk/base/linux.h"
+ 
+ #include <ctype.h>
