@@ -1,6 +1,15 @@
-$OpenBSD: patch-SConstruct,v 1.3 2013/07/06 11:19:48 landry Exp $
+$OpenBSD: patch-SConstruct,v 1.4 2013/07/15 17:09:16 landry Exp $
 --- SConstruct.orig	Tue Jun  4 03:35:26 2013
-+++ SConstruct	Sun Jun 23 22:58:43 2013
++++ SConstruct	Sat Jul 13 14:30:01 2013
+@@ -273,7 +273,7 @@ opts.AddVariables(
+     ('CUSTOM_LDFLAGS', 'Custom linker flags, e.g. -L<lib dir> if you have libraries in a nonstandard directory <lib dir>', ''),
+     EnumVariable('LINKING', "Set library format for libmapnik",'shared', ['shared','static']),
+     EnumVariable('RUNTIME_LINK', "Set preference for linking dependencies",'shared', ['shared','static']),
+-    EnumVariable('OPTIMIZATION','Set compiler optimization level','3', ['0','1','2','3','4','s']),
++    EnumVariable('OPTIMIZATION','Set compiler optimization level','2', ['0','1','2','3','4','s']),
+     # Note: setting DEBUG=True will override any custom OPTIMIZATION level
+     BoolVariable('DEBUG', 'Compile a debug version of Mapnik', 'False'),
+     BoolVariable('DEBUG_UNDEFINED', 'Compile a version of Mapnik using clang/llvm undefined behavior asserts', 'False'),
 @@ -1122,6 +1122,11 @@ if not preconfigured:
          thread_suffix = ''
          env.Append(LIBS = 'pthread')
