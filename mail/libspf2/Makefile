@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2013/07/13 11:53:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2013/07/15 21:47:50 jca Exp $
 
 COMMENT=	SPF library
 
 DISTNAME=	libspf2-1.2.9
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=	spf2                 3.0      # 3.0
 
@@ -26,7 +26,7 @@ LIB_DEPENDS=		net/libbind
 CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS=		--bindir=${PREFIX}/libexec/libspf2
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libbind" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/bind" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/libbind -R${LOCALBASE}/lib/libbind -lbind"
 
 # broken test cases
