@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_m68k_sysv_S,v 1.1 2013/05/01 10:11:54 miod Exp $
+$OpenBSD: patch-src_m68k_sysv_S,v 1.2 2013/07/15 19:01:56 miod Exp $
 
 Match the calling convention used by NetBSD and OpenBSD on m68k/ELF, which
 differs from Linux/ELF: structs are always passed on the stack, functions
@@ -8,7 +8,7 @@ Add an OpenBSD-specific function to flush the instruction cache after
 building closure trampolines.
 
 --- src/m68k/sysv.S.orig	Tue Dec 29 15:22:26 2009
-+++ src/m68k/sysv.S	Wed Apr 24 15:23:09 2013
++++ src/m68k/sysv.S	Mon Jul 15 18:54:57 2013
 @@ -68,12 +68,21 @@ ffi_call_SYSV:
  #endif
  	addq.l	#8,%sp	
@@ -87,7 +87,23 @@ building closure trampolines.
  	CFI_ENDPROC()
  
  	.size	ffi_closure_SYSV,.-ffi_closure_SYSV
-@@ -228,6 +262,20 @@ ffi_closure_struct_SYSV:
+@@ -217,8 +251,13 @@ ffi_closure_struct_SYSV:
+ 	CFI_DEF_CFA(14,8)
+ 	move.l	%sp,-12(%fp)
+ 	pea	8(%fp)
+-	move.l	%a1,-(%sp)
+-	move.l	%a0,-(%sp)
++#if defined(__NetBSD__) || defined(__OpenBSD__)
++	move.l	%a0,-(%sp)	/* struct return address */
++	move.l	%a1,-(%sp)	/* closure */
++#else
++	move.l	%a1,-(%sp)	/* struct return address */
++	move.l	%a0,-(%sp)	/* closure */
++#endif
+ #if !defined __PIC__
+ 	jsr	ffi_closure_SYSV_inner
+ #else
+@@ -228,6 +267,20 @@ ffi_closure_struct_SYSV:
  	rts
  	CFI_ENDPROC()
  	.size	ffi_closure_struct_SYSV,.-ffi_closure_struct_SYSV

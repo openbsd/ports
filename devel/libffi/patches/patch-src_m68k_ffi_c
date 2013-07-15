@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_m68k_ffi_c,v 1.1 2013/05/01 10:11:54 miod Exp $
+$OpenBSD: patch-src_m68k_ffi_c,v 1.2 2013/07/15 19:01:56 miod Exp $
 
 Match the calling convention used by NetBSD and OpenBSD on m68k/ELF, which
 differs from Linux/ELF: structs are always passed on the stack, functions
@@ -8,7 +8,7 @@ Add an OpenBSD-specific function to flush the instruction cache after
 building closure trampolines.
 
 --- src/m68k/ffi.c.orig	Tue Dec 29 15:22:26 2009
-+++ src/m68k/ffi.c	Wed Apr 24 15:23:09 2013
++++ src/m68k/ffi.c	Mon Jul 15 18:53:57 2013
 @@ -9,8 +9,12 @@
  
  #include <stdlib.h>
@@ -80,9 +80,27 @@ building closure trampolines.
      ecif.rvalue = alloca (cif->rtype->size);
    else
      ecif.rvalue = rvalue;
-@@ -266,8 +291,12 @@ ffi_prep_closure_loc (ffi_closure* closure,
+@@ -257,17 +282,26 @@ ffi_prep_closure_loc (ffi_closure* closure,
+ {
+   FFI_ASSERT (cif->abi == FFI_SYSV);
+ 
+-  *(unsigned short *)closure->tramp = 0x207c;
+   *(void **)(closure->tramp + 2) = codeloc;
+-  *(unsigned short *)(closure->tramp + 6) = 0x4ef9;
++  *(unsigned short *)(closure->tramp + 6) = 0x4ef9; /* jmp ffi_closure_... */
+   if (cif->rtype->type == FFI_TYPE_STRUCT
+       && !cif->flags)
+-    *(void **)(closure->tramp + 8) = ffi_closure_struct_SYSV;
++    {
++      *(unsigned short *)closure->tramp = 0x227c; /* moval #codeloc, %a1 */
++      *(void **)(closure->tramp + 8) = ffi_closure_struct_SYSV;
++    }
    else
-     *(void **)(closure->tramp + 8) = ffi_closure_SYSV;
+-    *(void **)(closure->tramp + 8) = ffi_closure_SYSV;
++    {
++      *(unsigned short *)closure->tramp = 0x207c; /* moval #codeloc, %a0 */
++      *(void **)(closure->tramp + 8) = ffi_closure_SYSV;
++    }
  
 +#ifdef __OpenBSD__
 +  ffi_sync_icache(codeloc, FFI_TRAMPOLINE_SIZE);

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2013/07/14 15:29:32 miod Exp $
+# $OpenBSD: Makefile,v 1.23 2013/07/15 19:01:56 miod Exp $
 
 COMMENT=		Foreign Function Interface
 
 DISTNAME=		libffi-3.0.9
-REVISION=		4
+REVISION=		5
 SHARED_LIBS +=  ffi                  0.0      # .5.9
 CATEGORIES=		devel
 
