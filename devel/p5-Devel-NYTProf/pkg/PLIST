@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/01/07 00:11:21 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/07/15 01:06:04 bluhm Exp $
+bin/flamegraph.pl
+bin/nytprofcalls
 bin/nytprofcg
 bin/nytprofcsv
 bin/nytprofhtml
@@ -46,6 +48,7 @@ ${P5ARCH}/auto/Devel/
 ${P5ARCH}/auto/Devel/NYTProf/
 ${P5ARCH}/auto/Devel/NYTProf/NYTProf.bs
 ${P5ARCH}/auto/Devel/NYTProf/NYTProf.so
+@man man/man1/nytprofcalls.1
 @man man/man1/nytprofcg.1
 @man man/man1/nytprofcsv.1
 @man man/man1/nytprofhtml.1
