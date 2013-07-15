@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/21 08:48:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2013/07/15 20:47:01 espie Exp $
 
 COMMENT=		Open Crypto Development Kit
 
@@ -7,7 +7,7 @@ DISTNAME=		opencdk-${VERSION}
 CATEGORIES=		security
 SHARED_LIBS=		opencdk	9.0	# .10.5
 
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://www.gnutls.org/
 
@@ -25,6 +25,9 @@ EXTRACT_SUFX=	.tar.bz2
 MODULES=	devel/gettext
 
 LIB_DEPENDS=	security/libgcrypt
+
+# for !shared...
+LIB_DEPENDS +=	security/libgpg-error
 
 
 CONFIGURE_STYLE=gnu
