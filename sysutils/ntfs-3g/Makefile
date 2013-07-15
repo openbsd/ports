@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/06/15 14:25:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2013/07/15 08:05:50 jca Exp $
 
 COMMENT =	FUSE NTFS driver with read/write support
 
@@ -7,7 +7,7 @@ DISTNAME =	ntfs-3g_ntfsprogs-${V}
 PKGNAME =	ntfs_3g-${V}
 SHARED_LIBS +=	ntfs-3g		0.0	# .84
 CATEGORIES =	sysutils
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://www.tuxera.com/
 
@@ -16,7 +16,7 @@ MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c e2fs-uuid fuse
+WANTLIB += c uuid fuse
 
 MASTER_SITES =	${HOMEPAGE}/opensource/
 EXTRACT_SUFX =	.tgz
@@ -29,10 +29,6 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--disable-mtab \
 			--disable-ldconfig
-
-# uuid_generate(): properly pick up uuid from e2fsprogs instead of ossp-uuid
-pre-configure:
-	perl -pi -e "s,-luuid,-le2fs-uuid,g" ${WRKSRC}/configure \
 
 post-install:
 	rmdir ${WRKINST}/lib
