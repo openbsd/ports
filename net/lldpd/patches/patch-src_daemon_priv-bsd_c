@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_daemon_priv-bsd_c,v 1.1 2013/07/15 19:12:07 jasper Exp $
+
+From bec75f842fa401558a72d62bfbee04bc726407d6 Mon Sep 17 00:00:00 2001
+From: Vincent Bernat <bernat@luffy.cx>
+Date: Mon, 15 Jul 2013 20:56:00 +0200
+Subject: [PATCH] event: replace `evutil_make_socket_nonblocking()` by an
+ idempotent version
+
+https://github.com/vincentbernat/lldpd/commit/bec75f842fa401558a72d62bfbee04bc726407d6
+
+--- src/daemon/priv-bsd.c.orig	Wed Jul  3 22:36:43 2013
++++ src/daemon/priv-bsd.c	Mon Jul 15 21:07:28 2013
+@@ -125,7 +125,9 @@ asroot_iface_init_os(int ifindex, char *name, int *fd)
+ #endif
+ 
+ #ifdef BIOCLOCK
+-	/* Lock interface */
++	/* Lock interface, but first make it non blocking since we cannot do
++	 * this later */
++	levent_make_socket_nonblocking(*fd);
+ 	if (ioctl(*fd, BIOCLOCK, (caddr_t)&enable) < 0) {
+ 		rc = errno;
+ 		log_info("privsep", "unable to lock BPF interface %s",

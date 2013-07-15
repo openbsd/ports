@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_daemon_lldpd_h,v 1.1 2013/07/15 19:12:07 jasper Exp $
+
+From bec75f842fa401558a72d62bfbee04bc726407d6 Mon Sep 17 00:00:00 2001
+From: Vincent Bernat <bernat@luffy.cx>
+Date: Mon, 15 Jul 2013 20:56:00 +0200
+Subject: [PATCH] event: replace `evutil_make_socket_nonblocking()` by an
+ idempotent version
+
+https://github.com/vincentbernat/lldpd/commit/bec75f842fa401558a72d62bfbee04bc726407d6
+
+--- src/daemon/lldpd.h.orig	Thu Jul 11 23:13:26 2013
++++ src/daemon/lldpd.h	Mon Jul 15 21:07:28 2013
+@@ -150,6 +150,7 @@ void	 levent_update_now(struct lldpd *);
+ int	 levent_iface_subscribe(struct lldpd *, int);
+ void	 levent_schedule_pdu(struct lldpd_hardware *);
+ void	 levent_schedule_cleanup(struct lldpd *);
++int	 levent_make_socket_nonblocking(int);
+ 
+ /* lldp.c */
+ int	 lldp_send(PROTO_SEND_SIG);
