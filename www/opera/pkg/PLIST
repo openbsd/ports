@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2013/04/04 12:57:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.42 2013/07/16 06:47:16 ajacoutot Exp $
 bin/opera
 lib/opera/
 lib/opera/gstreamer/
@@ -6,7 +6,6 @@ lib/opera/gstreamer/plugins/
 lib/opera/gstreamer/plugins/libgstoperamatroska.so
 lib/opera/gstreamer/plugins/libgstoperavp8.so
 lib/opera/liboperagtk2.so
-lib/opera/liboperagtk3.so
 lib/opera/liboperakde4.so
 lib/opera/opera
 lib/opera/opera_autoupdatechecker
