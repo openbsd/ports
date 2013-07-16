@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.45 2013/05/24 18:58:40 edd Exp $
+# $OpenBSD: Makefile,v 1.46 2013/07/16 18:44:39 schwarze Exp $
 
 COMMENT=	extract, list & test files in a ZIP archive
 
 VERSION=	6.0
 DISTNAME=	unzip${VERSION:S/.//}
 PKGNAME=	unzip-${VERSION}
-REVISION =	1
+REVISION =	2
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=infozip/} \
 		http://mirror.switch.ch/ftp/mirror/infozip/src/ \
@@ -20,7 +20,6 @@ WANTLIB=		c
 MAKE_FLAGS=	CC="${CC}" LD="${CC}" CF='-I. $$(LOC)' \
 		LOC="${CFLAGS} -DUSE_UNSHRINK -DNO_LCHMOD -DNO_LCHOWN"
 FAKE_FLAGS=	prefix="${WRKINST}${PREFIX}"
-USE_GROFF =	Yes
 
 MAKE_FILE=	unix/Makefile
 
