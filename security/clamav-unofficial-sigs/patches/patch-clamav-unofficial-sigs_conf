@@ -1,6 +1,6 @@
-$OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.4 2013/04/22 11:32:29 sthen Exp $
+$OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.5 2013/07/16 15:57:38 sthen Exp $
 --- clamav-unofficial-sigs.conf.orig	Sun Jun  6 17:43:07 2010
-+++ clamav-unofficial-sigs.conf	Mon Apr 22 12:10:25 2013
++++ clamav-unofficial-sigs.conf	Tue Jul 16 16:57:14 2013
 @@ -31,18 +31,18 @@
  # and optionally socat.  It's been reported that on Sun systems, the GNU utilities
  # should be used rather than the default Sun OS versions of these utilities.
@@ -24,7 +24,7 @@ $OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.4 2013/04/22 11:32:29 sthen Exp 
  
  # Set path to clamd.pid file (see clamd.conf for path location).
  clamd_pid="/var/run/clamd.pid"
-@@ -122,21 +122,22 @@ ss_dbs="
+@@ -122,21 +122,20 @@ ss_dbs="
     sanesecurity.ftm
     scam.ndb
     spamimg.hdb
@@ -48,12 +48,10 @@ $OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.4 2013/04/22 11:32:29 sthen Exp 
 +# bofhland_cracked_URL.ndb      : LOW false-positive rating
 +# bofhland_malware_URL.ndb      : LOW false-positive rating
 +# bofhland_phishing_URL.ndb     : LOW false-positive rating
-+# doppelstern.ndb               : MEDIUM false-positive raing
-+# doppelstern.hdb               : LOW false-positive rating
  # jurlbla.ndb                   : MEDIUM false-positive rating
  # lott.ndb                      : MEDIUM false-positive rating
  # spam.ldb                      : MEDIUM false-positive rating
-@@ -154,6 +155,17 @@ ss_dbs="
+@@ -154,6 +153,17 @@ ss_dbs="
  #
  # ONE CONTAINS THE COMPLETE URL PATH (MEDIUM RISK), AND THE OTHER
  # CONTAINS ONLY THE URL, WITHOUT THE FULL PATH (HIGH RISK).
@@ -71,7 +69,7 @@ $OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.4 2013/04/22 11:32:29 sthen Exp 
  
  # ========================
  # SecuriteInfo Database(s)
-@@ -183,11 +195,11 @@ si_update_hours="4"   # Default is 4 hours (6 update c
+@@ -183,11 +193,11 @@ si_update_hours="4"   # Default is 4 hours (6 update c
  # =========================
  # Add or remove database file names between quote marks as needed.  To
  # disable any of the MalwarePatrol database file downloads, remove the
@@ -88,7 +86,7 @@ $OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.4 2013/04/22 11:32:29 sthen Exp 
  
  # Since the MalwarePatrol database file is dynamically created,
  # there is no way to test for changes prior to downloading.  For this
-@@ -219,7 +231,7 @@ mbl_update_hours="6"   # Default is 6 hours (4 downloa
+@@ -219,7 +229,7 @@ mbl_update_hours="6"   # Default is 6 hours (4 downloa
  # Set working directory paths (edit to meet your own needs). If these
  # directories do not exist, the script will attempt to create them.
  # Top level working directory path:

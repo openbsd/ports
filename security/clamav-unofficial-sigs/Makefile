@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2013/04/22 11:32:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2013/07/16 15:57:38 sthen Exp $
 
 COMMENT =	fetch and update unofficial signatures for ClamAV
 
 DISTNAME =	clamav-unofficial-sigs-3.7.1
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	security mail
 
