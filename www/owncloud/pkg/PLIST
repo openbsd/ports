@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2013/07/10 13:37:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2013/07/16 10:11:46 ajacoutot Exp $
 @extra owncloud/config/config.php
 owncloud/
 owncloud/.htaccess.dist
@@ -3971,6 +3971,10 @@ owncloud/core/css/styles.css
 owncloud/core/doc/
 owncloud/core/doc/admin/
 owncloud/core/doc/admin/_images/
+owncloud/core/doc/admin/_images/custom_mount_config_gui-1.png
+owncloud/core/doc/admin/_images/custom_mount_config_gui-2.png
+owncloud/core/doc/admin/_images/custom_mount_config_gui-3.png
+owncloud/core/doc/admin/_images/custom_mount_config_gui-4.png
 owncloud/core/doc/admin/_images/ldap-advanced-settings-connection-settings-oc5.png
 owncloud/core/doc/admin/_images/ldap-advanced-settings-directory-settings-oc5.png
 owncloud/core/doc/admin/_images/ldap-advanced-settings-oc5.png
@@ -3998,6 +4002,7 @@ owncloud/core/doc/admin/_sources/configuration/configuration_logging.txt
 owncloud/core/doc/admin/_sources/configuration/configuration_mail.txt
 owncloud/core/doc/admin/_sources/configuration/configuration_reverseproxy.txt
 owncloud/core/doc/admin/_sources/configuration/custom_mount_config.txt
+owncloud/core/doc/admin/_sources/configuration/custom_mount_config_gui.txt
 owncloud/core/doc/admin/_sources/configuration/custom_user_backend.txt
 owncloud/core/doc/admin/_sources/configuration/index.txt
 owncloud/core/doc/admin/_sources/configuration/xsendfile.txt
@@ -4054,6 +4059,7 @@ owncloud/core/doc/admin/configuration/configuration_logging.html
 owncloud/core/doc/admin/configuration/configuration_mail.html
 owncloud/core/doc/admin/configuration/configuration_reverseproxy.html
 owncloud/core/doc/admin/configuration/custom_mount_config.html
+owncloud/core/doc/admin/configuration/custom_mount_config_gui.html
 owncloud/core/doc/admin/configuration/custom_user_backend.html
 owncloud/core/doc/admin/configuration/index.html
 owncloud/core/doc/admin/configuration/xsendfile.html
