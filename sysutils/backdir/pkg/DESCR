@@ -1,5 +1,0 @@
-Backdir is a simple tool that backs up every normal, non-executable file
-in the current directory to a subdirectory named "backups", creating the
-directory if it doesn't already exist. It uses the file's last modified
-date and time as part of the filename. If a file hasn't been changed
-since the last time backdir was ran the file will be skipped.

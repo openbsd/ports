@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/05/13 23:10:20 jturner Exp $
-@bin bin/bd
-@man man/man1/bd.1
