@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/06 08:18:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/07/16 06:39:42 ajacoutot Exp $
 lib/nautilus/extensions-3.0/libnautilus-share-extension.so
 @bin libexec/gnome-user-share
 share/GConf/gsettings/gnome-user-share.convert
@@ -7,8 +7,12 @@ share/examples/gnome-user-share/xdg/
 @sample ${SYSCONFDIR}/xdg/
 share/examples/gnome-user-share/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/
-share/examples/gnome-user-share/xdg/autostart/gnome-user-share.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/gnome-user-share.desktop
+share/examples/gnome-user-share/xdg/autostart/gnome-user-share-obexftp.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/gnome-user-share-obexftp.desktop
+share/examples/gnome-user-share/xdg/autostart/gnome-user-share-obexpush.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/gnome-user-share-obexpush.desktop
+share/examples/gnome-user-share/xdg/autostart/gnome-user-share-webdav.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/gnome-user-share-webdav.desktop
 share/glib-2.0/schemas/org.gnome.desktop.file-sharing.gschema.xml
 share/gnome-user-share/
 share/gnome-user-share/dav_groupfile

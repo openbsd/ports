@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_user_share_c,v 1.6 2013/05/07 10:48:24 ajacoutot Exp $
+$OpenBSD: patch-src_user_share_c,v 1.7 2013/07/16 06:39:42 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=601890
 
---- src/user_share.c.orig	Thu Feb 21 09:18:06 2013
-+++ src/user_share.c	Tue May  7 12:34:38 2013
+--- src/user_share.c.orig	Mon Jul 15 15:59:28 2013
++++ src/user_share.c	Tue Jul 16 08:21:22 2013
 @@ -27,7 +27,6 @@
  #include <gtk/gtk.h>
  #include <glib/gi18n.h>
@@ -12,24 +12,20 @@ https://bugzilla.gnome.org/show_bug.cgi?id=601890
  #include <gio/gio.h>
  #include <X11/Xlib.h>
  
-@@ -35,11 +34,16 @@
+@@ -35,8 +34,12 @@
  #include "user_share-private.h"
  #include "user_share-common.h"
  #include "http.h"
 +
 +#ifdef HAVE_BLUETOOTH
 +#include <bluetooth-client.h>
-+
  #include "obexftp.h"
  #include "obexpush.h"
- 
- #include <dbus/dbus.h>
- #include <dbus/dbus-glib.h>
 +#endif /* HAVE_BLUETOOTH */
  
  #include <stdarg.h>
  #include <string.h>
-@@ -56,6 +60,8 @@
+@@ -53,6 +56,8 @@
  static GSettings *settings = NULL;
  
  static guint disabled_timeout_tag = 0;
@@ -38,7 +34,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=601890
  static GDBusProxy *session_proxy = NULL;
  static gboolean has_console = TRUE;
  
-@@ -185,6 +191,7 @@ bluez_init (void)
+@@ -182,6 +187,7 @@ bluez_init (void)
  	g_signal_connect (G_OBJECT (client), "notify::default-adapter-powered",
  			  G_CALLBACK (default_adapter_changed), NULL);
  }
@@ -46,7 +42,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=601890
  
  static void
  migrate_old_configuration (void)
-@@ -216,9 +223,13 @@ disabled_timeout_callback (void)
+@@ -213,9 +219,13 @@ disabled_timeout_callback (void)
  {
  	http_down ();
  
@@ -60,7 +56,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=601890
  	return FALSE;
  }
  
-@@ -246,6 +257,7 @@ file_sharing_enabled_changed (void)
+@@ -243,6 +253,7 @@ file_sharing_enabled_changed (void)
  	}
  }
  
@@ -68,7 +64,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=601890
  static void
  file_sharing_bluetooth_allow_write_changed (void)
  {
-@@ -312,6 +324,7 @@ file_sharing_bluetooth_obexpush_notify_changed (void)
+@@ -309,6 +320,7 @@ file_sharing_bluetooth_obexpush_notify_changed (void)
  {
  	obexpush_set_notify (g_settings_get_boolean (settings, FILE_SHARING_BLUETOOTH_OBEXPUSH_NOTIFY));
  }
@@ -76,7 +72,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=601890
  
  static void
  setttings_changed (GSettings *settings,
-@@ -324,6 +337,7 @@ setttings_changed (GSettings *settings,
+@@ -321,6 +333,7 @@ setttings_changed (GSettings *settings,
  	else if (g_strcmp0 (FILE_SHARING_REQUIRE_PASSWORD, path) == 0)
  		require_password_changed ();
  
@@ -84,7 +80,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=601890
  	else if (g_strcmp0 (FILE_SHARING_BLUETOOTH_ENABLED, path) == 0)
  		file_sharing_bluetooth_enabled_changed ();
  
-@@ -341,14 +355,17 @@ setttings_changed (GSettings *settings,
+@@ -338,14 +351,17 @@ setttings_changed (GSettings *settings,
  
  	else if (g_strcmp0 (FILE_SHARING_BLUETOOTH_OBEXPUSH_NOTIFY, path) == 0)
  		file_sharing_bluetooth_obexpush_notify_changed ();
@@ -102,7 +98,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=601890
  	_exit (2);
  }
  
-@@ -356,7 +373,9 @@ static int
+@@ -353,7 +369,9 @@ static int
  x_io_error_handler (Display *xdisplay)
  {
  	http_down ();
@@ -112,7 +108,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=601890
  	_exit (2);
  }
  
-@@ -411,10 +430,14 @@ main (int argc, char **argv)
+@@ -408,10 +426,14 @@ main (int argc, char **argv)
  
  	migrate_old_configuration ();
  
@@ -127,7 +123,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=601890
  		return 1;
  
  	x_fd = ConnectionNumber (xdisplay);
-@@ -422,22 +445,28 @@ main (int argc, char **argv)
+@@ -419,22 +441,28 @@ main (int argc, char **argv)
  
  	if (http_init () == FALSE)
  		return 1;
