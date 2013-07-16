@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2011/12/08 22:41:48 sthen Exp $
+$OpenBSD: README,v 1.6 2013/07/16 02:48:05 stu Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -66,16 +66,16 @@ ${TRUEPREFIX}/lib/tk8.5/demos
 now in
 ${TRUEPREFIX}/share/examples/tk8.5
 
-Bundled Modules
----------------
+Bundled Tcl Modules
+-------------------
 *.tm
 normally in
 ${TRUEPREFIX}/lib/tcl8/...
 now in
 ${TRUEPREFIX}/lib/tcl/tcl8.5/modules/...
 
-Module Paths
-------------
+Tcl Module Paths
+----------------
 normally
 ${TRUEPREFIX}/lib/tcl8/...
 now
@@ -130,7 +130,7 @@ Examine and install as ${SYSCONFDIR}/man.conf if it appeases you.
 +_whatdb		/usr/local/lib/tcl/tk8.5/man/whatis.db
  
  # Subdirectories for paths ending in '/', IN SEARCH ORDER.
- _subdir		cat1 man1 cat8 man8 cat6 man6 cat2 man2 cat3 man3 cat5 man5 cat7 man7 cat4 man4 cat9 man9 cat3p man3p cat3f man3f catn mann
+ _subdir		{cat,man}1 {cat,man}8 {cat,man}6 {cat,man}2 {cat,man}3 {cat,man}5 {cat,man}7 {cat,man}4 {cat,man}9 {cat,man}3p {cat,man}3f {cat,man}n
 @@ -31,17 +33,19 @@
  # directory with all of the subdirectories listed for the keyword _subdir.
  
