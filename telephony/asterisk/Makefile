@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.183 2013/06/20 08:26:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.184 2013/07/16 13:03:19 sthen Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-VER=			11.4.0
-REVISION-main=		2
-REVISION-calendar=	4
+VER=			11.5.0
 DISTNAME=		asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}
 
@@ -25,7 +23,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB-main +=	c crypto curl execinfo gsm idn iksemel
 WANTLIB-main += m ogg pthread spandsp sqlite3 ssl stdc++ termcap
-WANTLIB-main += tiff vorbis vorbisenc vorbisfile xml2 z
+WANTLIB-main += tiff vorbis vorbisenc vorbisfile xml2 z uuid
 WANTLIB-main += avcodec avformat avutil opencore-amrnb swscale
 WANTLIB-main += ${MODGETTEXT_WANTLIB}
 
@@ -34,9 +32,9 @@ SHARED_LIBS=		asteriskssl 0.0		# 1
 MODULES=		devel/gettext
 
 MULTI_PACKAGES=		-main -calendar -http_post -ldap -odbc \
-			-pgsql -snmp -speex
+			-pgsql -snmp -speex -tds
 PSEUDO_FLAVORS=		no_calendar no_http_post no_ldap no_odbc \
-			no_pgsql no_snmp no_speex
+			no_pgsql no_snmp no_speex no_tds
 
 LIB_DEPENDS-main=	audio/gsm \
 			audio/libogg \
@@ -46,6 +44,7 @@ LIB_DEPENDS-main=	audio/gsm \
 			graphics/ffmpeg \
 			graphics/tiff \
 			net/curl \
+			sysutils/e2fsprogs \
 			telephony/spandsp \
 			textproc/iksemel \
 			textproc/libxml \
@@ -111,8 +110,7 @@ CONFIGURE_ARGS+=	--with-jack=no \
 			--with-lua=no \
 			--with-portaudio=no \
 			--with-radius=no \
-			--with-resample=no \
-			--with-tds=no
+			--with-resample=no
 
 # Some build options (including a useful malloc debug) are available
 # via menuselect. They may be enabled by running 'make configure', cd
@@ -164,6 +162,16 @@ LIB_DEPENDS-ldap=	databases/openldap,-main
 WANTLIB-ldap=		ldap
 .if !${BUILD_PACKAGES:M-ldap}
 CONFIGURE_ARGS+=	--with-ldap=no
+.endif
+
+# freetds
+COMMENT-tds=		LDAP support for Asterisk
+LIB_DEPENDS-tds=	databases/freetds
+WANTLIB-tds=		sybdb
+.if !${BUILD_PACKAGES:M-tds}
+CONFIGURE_ARGS+=	--with-tds=no
+.else
+CONFIGURE_ARGS+=	--with-tds=${LOCALBASE}
 .endif
 
 # mysql				need to handle building addons/ first XXX

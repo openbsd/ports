@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-tds,v 1.1 2013/07/16 13:03:19 sthen Exp $
+lib/asterisk/modules/cdr_tds.so
+lib/asterisk/modules/cel_tds.so
+share/examples/asterisk/default/cdr_tds.conf
+@sample ${SYSCONFDIR}/asterisk/cdr_tds.conf
+share/examples/asterisk/default/cel_tds.conf
+@sample ${SYSCONFDIR}/asterisk/cel_tds.conf

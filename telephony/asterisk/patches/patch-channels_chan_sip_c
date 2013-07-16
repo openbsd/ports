@@ -1,10 +1,11 @@
-$OpenBSD: patch-channels_chan_sip_c,v 1.9 2013/05/17 22:57:50 sthen Exp $
+$OpenBSD: patch-channels_chan_sip_c,v 1.10 2013/07/16 13:03:19 sthen Exp $
 
 https://issues.asterisk.org/jira/secure/attachment/46850/fax-deadlock-v2.patch-11.3.0
+and add a bit more randomness for digest auth
 
---- channels/chan_sip.c.orig	Wed Mar 27 19:51:29 2013
-+++ channels/chan_sip.c	Tue Apr  9 15:46:38 2013
-@@ -8402,8 +8402,6 @@ static struct ast_frame *sip_read(struct ast_channel *
+--- channels/chan_sip.c.orig	Mon May 13 22:05:38 2013
++++ channels/chan_sip.c	Tue Jun 11 14:20:09 2013
+@@ -8436,8 +8436,6 @@ static struct ast_frame *sip_read(struct ast_channel *
  			ast_channel_unlock(ast);
  			if (ast_exists_extension(ast, target_context, "fax", 1,
  				S_COR(ast_channel_caller(ast)->id.number.valid, ast_channel_caller(ast)->id.number.str, NULL))) {
@@ -13,7 +14,7 @@ https://issues.asterisk.org/jira/secure/attachment/46850/fax-deadlock-v2.patch-1
  				ast_verb(2, "Redirecting '%s' to fax extension due to CNG detection\n", ast_channel_name(ast));
  				pbx_builtin_setvar_helper(ast, "FAXEXTEN", ast_channel_exten(ast));
  				if (ast_async_goto(ast, target_context, "fax", 1)) {
-@@ -8412,10 +8410,10 @@ static struct ast_frame *sip_read(struct ast_channel *
+@@ -8446,10 +8444,10 @@ static struct ast_frame *sip_read(struct ast_channel *
  				ast_frfree(fr);
  				fr = &ast_null_frame;
  			} else {
@@ -26,7 +27,7 @@ https://issues.asterisk.org/jira/secure/attachment/46850/fax-deadlock-v2.patch-1
  		}
  	}
  
-@@ -10655,6 +10653,7 @@ static int process_sdp(struct sip_pvt *p, struct sip_r
+@@ -10689,6 +10687,7 @@ static int process_sdp(struct sip_pvt *p, struct sip_r
  						ast_channel_unlock(p->owner);
  						if (ast_exists_extension(p->owner, target_context, "fax", 1,
  							S_COR(ast_channel_caller(p->owner)->id.number.valid, ast_channel_caller(p->owner)->id.number.str, NULL))) {
@@ -34,3 +35,12 @@ https://issues.asterisk.org/jira/secure/attachment/46850/fax-deadlock-v2.patch-1
  							ast_verb(2, "Redirecting '%s' to fax extension due to peer T.38 re-INVITE\n", ast_channel_name(p->owner));
  							pbx_builtin_setvar_helper(p->owner, "FAXEXTEN", ast_channel_exten(p->owner));
  							if (ast_async_goto(p->owner, target_context, "fax", 1)) {
+@@ -16243,7 +16242,7 @@ static void build_route(struct sip_pvt *p, struct sip_
+ static void build_nonce(struct sip_pvt *p, int forceupdate)
+ {
+ 	if (p->stalenonce || forceupdate || ast_strlen_zero(p->nonce)) {
+-		ast_string_field_build(p, nonce, "%08lx", ast_random());	/* Create nonce for challenge */
++		ast_string_field_build(p, nonce, "%08lx%08lx%08lx%08lx%08lx", ast_random(), ast_random(), ast_random(), ast_random(), ast_random());	/* Create nonce for challenge */
+ 		p->stalenonce = 0;
+ 	}
+ }
