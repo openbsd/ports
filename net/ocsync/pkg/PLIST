@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/05/14 21:40:14 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/07/16 10:18:04 ajacoutot Exp $
 @bin bin/ocsync
 include/ocsync/
 include/ocsync/csync.h
+include/ocsync/csync_version.h
 include/ocsync/csync_vio.h
 include/ocsync/csync_vio_file_stat.h
 include/ocsync/csync_vio_handle.h
 include/ocsync/csync_vio_method.h
 include/ocsync/csync_vio_module.h
+lib/libhttpbflib.a
 @lib lib/libocsync.so.${LIBocsync_VERSION}
 lib/ocsync-0/
 lib/ocsync-0/ocsync_owncloud.so

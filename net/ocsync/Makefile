@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2013/06/16 15:08:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2013/07/16 10:18:04 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	bidirectional directories synchronizer (owncloud version)
 
-DISTNAME=	ocsync-0.70.7
-REVISION=	1
+DISTNAME=	ocsync-0.80.0
 EXTRACT_SUFX=	.tar.bz2
 
 SHARED_LIBS +=	ocsync                    0.0 # 0.2
@@ -19,7 +18,7 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c iniparser neon pthread smbclient sqlite3 ssh
+WANTLIB += c iniparser m neon pthread smbclient sqlite3 ssh stdc++
 
 MASTER_SITES=	http://download.owncloud.com/download/
 
