@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2013/05/13 06:34:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2013/07/17 17:37:21 jasper Exp $
 
 COMMENT=		simple, blog aware, static site generator
 
-DISTNAME=		jekyll-1.0.2
+DISTNAME=		jekyll-1.1.0
 CATEGORIES=		www
 
 HOMEPAGE=		http://jekyllrb.com/
@@ -25,6 +25,7 @@ RUN_DEPENDS=		devel/ruby-colorator,${MODRUBY_FLAVOR} \
 			textproc/ruby-kramdown,${MODRUBY_FLAVOR}>=1.0.2 \
 			textproc/ruby-liquid,${MODRUBY_FLAVOR}>=2.4.1 \
 			textproc/ruby-maruku,${MODRUBY_FLAVOR} \
-			textproc/ruby-pygments.rb,${MODRUBY_FLAVOR}>=0.5.0v0
+			textproc/ruby-pygments.rb,${MODRUBY_FLAVOR}>=0.5.0v0 \
+			textproc/ruby-redcarpet,${MODRUBY_FLAVOR}>=2.2.2
 
 .include <bsd.port.mk>
