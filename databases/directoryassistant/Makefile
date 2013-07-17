@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 02:52:04 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/07/17 03:27:01 bentley Exp $
 
 COMMENT=	small application for managing a LDAP address book
 
 DISTNAME=	directoryassistant-2.0
-REVISION=	8
+REVISION=	9
 CATEGORIES=	databases
 
 HOMEPAGE=	http://olivier.sessink.nl/directoryassistant/
 
-MAINTAINER=	Joerg Zinke <mail@umaxx.net>
+MAINTAINER =	Joerg Jung <jung@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

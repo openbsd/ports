@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:41:25 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/07/17 03:27:01 bentley Exp $
 
 COMMENT=	application for managing passwords
 
 MODPY_EGG_VERSION=	0.4.0
 DISTNAME=	kedpm-${MODPY_EGG_VERSION}
-REVISION=	7
+REVISION =	8
 CATEGORIES=	security
 
 HOMEPAGE=	http://kedpm.sourceforge.net/
 
-MAINTAINER=	Joerg Zinke <mail@umaxx.net>
+MAINTAINER =	Joerg Jung <jung@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
