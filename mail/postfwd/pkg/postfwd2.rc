@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# $OpenBSD: postfwd2.rc,v 1.2 2013/07/17 07:36:06 giovanni Exp $
+# $OpenBSD: postfwd2.rc,v 1.3 2013/07/17 07:52:43 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/postfwd2"
-daemon_flags="-u _postfwd -g _postfwd --pidfile=/var/run/postfwd2.pid -f /etc/postfix/postfwd2.cf"
+daemon_flags="-u _postfwd -g _postfwd --pidfile=/var/run/postfwd2.pid -f ${SYSCONFDIR}/postfix/postfwd2.cf"
 
 . /etc/rc.d/rc.subr
 
