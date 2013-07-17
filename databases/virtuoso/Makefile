@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2013/06/26 21:56:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2013/07/17 07:25:59 ajacoutot Exp $
+
+BROKEN-macppc =	make: don't know how to make all
 
 COMMENT =	object-relational SQL database
 DISTNAME =	virtuoso-opensource-6.1.6
