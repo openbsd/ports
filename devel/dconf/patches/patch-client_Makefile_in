@@ -1,16 +1,16 @@
-$OpenBSD: patch-client_Makefile_in,v 1.11 2013/03/29 07:31:01 ajacoutot Exp $
---- client/Makefile.in.orig	Mon Mar 25 22:45:11 2013
-+++ client/Makefile.in	Fri Mar 29 08:06:12 2013
-@@ -55,7 +55,7 @@ DIST_COMMON = $(dconfclientinclude_HEADERS) $(dconfinc
- 	$(srcdir)/Makefile.am $(srcdir)/Makefile.in \
- 	$(srcdir)/dconf.pc.in $(top_srcdir)/Makefile.gtester \
- 	$(top_srcdir)/aux/depcomp
+$OpenBSD: patch-client_Makefile_in,v 1.12 2013/07/17 05:54:36 ajacoutot Exp $
+--- client/Makefile.in.orig	Tue Jul 16 18:43:48 2013
++++ client/Makefile.in	Wed Jul 17 07:29:25 2013
+@@ -83,7 +83,7 @@ DIST_COMMON = $(top_srcdir)/Makefile.gtester $(srcdir)
+ 	$(srcdir)/Makefile.am $(srcdir)/dconf.pc.in \
+ 	$(top_srcdir)/aux/depcomp $(dconfclientinclude_HEADERS) \
+ 	$(dconfinclude_HEADERS)
 -shlib_PROGRAMS = libdconf.so.1.0.0$(EXEEXT)
 +shlib_PROGRAMS = libdconf.so.${LIBdconf_VERSION}$(EXEEXT)
  subdir = client
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- am__aclocal_m4_deps = $(top_srcdir)/configure.ac
-@@ -316,7 +316,7 @@ top_srcdir = @top_srcdir@
+ am__aclocal_m4_deps = $(top_srcdir)/m4/gtk-doc.m4 \
+@@ -362,7 +362,7 @@ top_srcdir = @top_srcdir@
  # initialize variables for unconditional += appending
  TEST_PROGS = 
  shlibdir = $(libdir)
@@ -19,7 +19,7 @@ $OpenBSD: patch-client_Makefile_in,v 1.11 2013/03/29 07:31:01 ajacoutot Exp $
  noinst_LIBRARIES = libdconf-client.a
  dconfinclude_HEADERS = dconf.h
  dconfclientinclude_HEADERS = dconf-client.h
-@@ -334,7 +334,7 @@ libdconf_so_1_0_0_LDADD = \
+@@ -380,7 +380,7 @@ libdconf_so_1_0_0_LDADD = \
  	../shm/libdconf-shm-shared.a			\
  	$(gio_LIBS)
  
@@ -28,10 +28,10 @@ $OpenBSD: patch-client_Makefile_in,v 1.11 2013/03/29 07:31:01 ajacoutot Exp $
  libdconf_so_1_0_0_SOURCES = $(libdconf_client_a_SOURCES)
  EXTRA_DIST = dconf.vapi dconf.deps
  vapi_DATA = dconf.vapi dconf.deps
-@@ -426,8 +426,8 @@ uninstall-shlibPROGRAMS:
- 
+@@ -476,8 +476,8 @@ uninstall-shlibPROGRAMS:
  clean-shlibPROGRAMS:
  	-test -z "$(shlib_PROGRAMS)" || rm -f $(shlib_PROGRAMS)
+ 
 -libdconf.so.1.0.0$(EXEEXT): $(libdconf_so_1_0_0_OBJECTS) $(libdconf_so_1_0_0_DEPENDENCIES) $(EXTRA_libdconf_so_1_0_0_DEPENDENCIES) 
 -	@rm -f libdconf.so.1.0.0$(EXEEXT)
 +libdconf.so.${LIBdconf_VERSION}$(EXEEXT): $(libdconf_so_1_0_0_OBJECTS) $(libdconf_so_1_0_0_DEPENDENCIES) $(EXTRA_libdconf_so_1_0_0_DEPENDENCIES) 
@@ -39,7 +39,7 @@ $OpenBSD: patch-client_Makefile_in,v 1.11 2013/03/29 07:31:01 ajacoutot Exp $
  	$(AM_V_CCLD)$(libdconf_so_1_0_0_LINK) $(libdconf_so_1_0_0_OBJECTS) $(libdconf_so_1_0_0_LDADD) $(LIBS)
  
  mostlyclean-compile:
-@@ -861,13 +861,6 @@ test-report perf-report full-report:	${TEST_PROGS}
+@@ -898,13 +898,6 @@ test-report perf-report full-report:	${TEST_PROGS}
  
  # run tests in cwd as part of make check
  check-local: test-nonrecursive

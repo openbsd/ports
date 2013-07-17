@@ -1,10 +1,10 @@
-$OpenBSD: patch-tests_Makefile_in,v 1.3 2013/03/30 18:15:22 ajacoutot Exp $
+$OpenBSD: patch-tests_Makefile_in,v 1.4 2013/07/17 05:54:36 ajacoutot Exp $
 
 XXX fix and push upstream
 
---- tests/Makefile.in.orig	Mon Mar 25 22:45:12 2013
-+++ tests/Makefile.in	Fri Mar 29 08:06:00 2013
-@@ -359,8 +359,7 @@ changeset_SOURCES = changeset.c
+--- tests/Makefile.in.orig	Tue Jul 16 18:43:49 2013
++++ tests/Makefile.in	Wed Jul 17 07:26:31 2013
+@@ -405,8 +405,7 @@ changeset_SOURCES = changeset.c
  shm_CFLAGS = $(glib_CFLAGS)
  shm_LDADD = \
  	../shm/libdconf-shm.a			\
@@ -14,7 +14,7 @@ XXX fix and push upstream
  
  shm_SOURCES = \
  	shm.c					\
-@@ -405,7 +404,7 @@ engine_LDADD = \
+@@ -451,7 +450,7 @@ engine_LDADD = \
  	../common/libdconf-common.a		\
  	libdconf-mock.a				\
  	$(glib_LIBS)				\

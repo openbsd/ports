@@ -1,16 +1,16 @@
-$OpenBSD: patch-dbus-1_Makefile_in,v 1.10 2013/03/30 18:15:22 ajacoutot Exp $
---- dbus-1/Makefile.in.orig	Mon Mar 25 22:45:12 2013
-+++ dbus-1/Makefile.in	Fri Mar 29 08:06:39 2013
-@@ -54,7 +54,7 @@ POST_UNINSTALL = :
- DIST_COMMON = $(dconf_dbus_1include_HEADERS) $(srcdir)/Makefile.am \
- 	$(srcdir)/Makefile.in $(srcdir)/dconf-dbus-1.pc.in \
- 	$(top_srcdir)/Makefile.gtester $(top_srcdir)/aux/depcomp
+$OpenBSD: patch-dbus-1_Makefile_in,v 1.11 2013/07/17 05:54:36 ajacoutot Exp $
+--- dbus-1/Makefile.in.orig	Tue Jul 16 18:43:49 2013
++++ dbus-1/Makefile.in	Wed Jul 17 07:28:20 2013
+@@ -82,7 +82,7 @@ POST_UNINSTALL = :
+ DIST_COMMON = $(top_srcdir)/Makefile.gtester $(srcdir)/Makefile.in \
+ 	$(srcdir)/Makefile.am $(srcdir)/dconf-dbus-1.pc.in \
+ 	$(top_srcdir)/aux/depcomp $(dconf_dbus_1include_HEADERS)
 -shlib_PROGRAMS = libdconf-dbus-1.so.0.0.0$(EXEEXT)
 +shlib_PROGRAMS = libdconf-dbus-1.so.${LIBdconf-dbus-1_VERSION}$(EXEEXT)
  subdir = dbus-1
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- am__aclocal_m4_deps = $(top_srcdir)/configure.ac
-@@ -348,9 +348,9 @@ libdconf_dbus_1_so_0_0_0_LDADD = \
+ am__aclocal_m4_deps = $(top_srcdir)/m4/gtk-doc.m4 \
+@@ -394,9 +394,9 @@ libdconf_dbus_1_so_0_0_0_LDADD = \
  	 $(dbus_LIBS)					\
  	$(glib_LIBS)
  
@@ -22,10 +22,10 @@ $OpenBSD: patch-dbus-1_Makefile_in,v 1.10 2013/03/30 18:15:22 ajacoutot Exp $
  CLEANFILES = libdconf-dbus-1.so.0 libdconf-dbus-1.so
  all: all-am
  
-@@ -440,8 +440,8 @@ uninstall-shlibPROGRAMS:
- 
+@@ -491,8 +491,8 @@ uninstall-shlibPROGRAMS:
  clean-shlibPROGRAMS:
  	-test -z "$(shlib_PROGRAMS)" || rm -f $(shlib_PROGRAMS)
+ 
 -libdconf-dbus-1.so.0.0.0$(EXEEXT): $(libdconf_dbus_1_so_0_0_0_OBJECTS) $(libdconf_dbus_1_so_0_0_0_DEPENDENCIES) $(EXTRA_libdconf_dbus_1_so_0_0_0_DEPENDENCIES) 
 -	@rm -f libdconf-dbus-1.so.0.0.0$(EXEEXT)
 +libdconf-dbus-1.so.${LIBdconf-dbus-1_VERSION}$(EXEEXT): $(libdconf_dbus_1_so_0_0_0_OBJECTS) $(libdconf_dbus_1_so_0_0_0_DEPENDENCIES) $(EXTRA_libdconf_dbus_1_so_0_0_0_DEPENDENCIES) 
@@ -33,7 +33,7 @@ $OpenBSD: patch-dbus-1_Makefile_in,v 1.10 2013/03/30 18:15:22 ajacoutot Exp $
  	$(AM_V_CCLD)$(libdconf_dbus_1_so_0_0_0_LINK) $(libdconf_dbus_1_so_0_0_0_OBJECTS) $(libdconf_dbus_1_so_0_0_0_LDADD) $(LIBS)
  
  mostlyclean-compile:
-@@ -843,13 +843,6 @@ test-report perf-report full-report:	${TEST_PROGS}
+@@ -881,13 +881,6 @@ test-report perf-report full-report:	${TEST_PROGS}
  
  # run tests in cwd as part of make check
  check-local: test-nonrecursive

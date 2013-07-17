@@ -1,7 +1,7 @@
-$OpenBSD: patch-bin_Makefile_in,v 1.9 2013/03/29 07:31:00 ajacoutot Exp $
---- bin/Makefile.in.orig	Mon Mar 25 22:45:11 2013
-+++ bin/Makefile.in	Fri Mar 29 08:06:00 2013
-@@ -69,7 +69,7 @@ am_dconf_OBJECTS = dconf-gvdb-builder.$(OBJEXT) \
+$OpenBSD: patch-bin_Makefile_in,v 1.10 2013/07/17 05:54:36 ajacoutot Exp $
+--- bin/Makefile.in.orig	Tue Jul 16 18:43:48 2013
++++ bin/Makefile.in	Wed Jul 17 07:26:31 2013
+@@ -98,7 +98,7 @@ am_dconf_OBJECTS = dconf-gvdb-builder.$(OBJEXT) \
  	dconf-dconf.$(OBJEXT)
  dconf_OBJECTS = $(am_dconf_OBJECTS)
  am__DEPENDENCIES_1 =
@@ -10,7 +10,7 @@ $OpenBSD: patch-bin_Makefile_in,v 1.9 2013/03/29 07:31:00 ajacoutot Exp $
  dconf_LINK = $(CCLD) $(dconf_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
  	$(LDFLAGS) -o $@
  AM_V_P = $(am__v_P_@AM_V@)
-@@ -305,7 +305,7 @@ dconf_CFLAGS = \
+@@ -351,7 +351,7 @@ dconf_CFLAGS = \
  	-w
  
  dconf_LDADD = \
