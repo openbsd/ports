@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_puppet_defaults_rb,v 1.2 2013/06/10 14:46:34 jasper Exp $
---- lib/puppet/defaults.rb.orig	Wed May 22 19:29:46 2013
-+++ lib/puppet/defaults.rb	Mon Jun 10 14:04:56 2013
-@@ -734,11 +734,11 @@ EOT
+$OpenBSD: patch-lib_puppet_defaults_rb,v 1.3 2013/07/17 14:18:38 jasper Exp $
+--- lib/puppet/defaults.rb.orig	Fri Jul 12 02:15:45 2013
++++ lib/puppet/defaults.rb	Wed Jul 17 16:11:07 2013
+@@ -737,11 +737,11 @@ EOT
  
    define_settings(:master,
      :user => {
@@ -15,7 +15,7 @@ $OpenBSD: patch-lib_puppet_defaults_rb,v 1.2 2013/06/10 14:46:34 jasper Exp $
        :desc       => "The group puppet master should run as.",
      },
      :manifestdir => {
-@@ -811,7 +811,7 @@ EOT
+@@ -814,7 +814,7 @@ EOT
        :desc       => "Whether the master should function as a certificate authority.",
      },
      :modulepath => {
