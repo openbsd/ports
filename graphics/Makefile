@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.349 2013/07/13 16:17:11 bcallah Exp $
+# $OpenBSD: Makefile,v 1.350 2013/07/17 16:54:52 bcallah Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -33,6 +33,7 @@
      SUBDIR += darktable
      SUBDIR += dcmtk
      SUBDIR += dcraw
+     SUBDIR += delaboratory
      SUBDIR += dia
      SUBDIR += digikam
      SUBDIR += digikam-doc
