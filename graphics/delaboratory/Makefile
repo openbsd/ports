@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/07/17 16:54:10 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2013/07/17 17:08:38 bcallah Exp $
 
 COMMENT =	color correction utility for digital images
 DISTNAME =	delaboratory-0.8
 CATEGORIES =	graphics x11
+REVISION =	0
 
 HOMEPAGE =	https://code.google.com/p/delaboratory/
 
@@ -21,6 +22,8 @@ MODULES =	converters/libiconv
 
 LIB_DEPENDS =	textproc/libxml \
 		x11/wxWidgets,-main
+
+RUN_DEPENDS =	graphics/dcraw
 
 USE_GMAKE =	Yes
 MAKE_FLAGS =	CXX="${CXX}" OPTFLAGS="${CXXFLAGS}"
