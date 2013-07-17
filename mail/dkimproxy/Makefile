@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/07/17 03:09:18 william Exp $
+# $OpenBSD: Makefile,v 1.2 2013/07/17 05:57:49 ajacoutot Exp $
 
 COMMENT =		SMTP proxy to verify or add DKIM signatures
 
 DISTNAME =		dkimproxy-1.4.1
+REVISION =		0
 
 CATEGORIES =		mail
 
