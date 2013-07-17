@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.2 2013/05/17 20:11:43 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.3 2013/07/17 15:52:56 jeremy Exp $
 share/ri/
 share/ri/${RUBYLIBREV}/
 share/ri/${RUBYLIBREV}/system/
@@ -3836,6 +3836,7 @@ share/ri/${RUBYLIBREV}/system/Gem/TestCase/StaticSet/new-c.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/StaticSet/prefetch-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/add_to_fetcher-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/all_spec_names-i.ri
+share/ri/${RUBYLIBREV}/system/Gem/TestCase/assert_contains_make_command-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/assert_path_exists-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/build_rake_in-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/cdesc-TestCase.ri
@@ -3856,6 +3857,7 @@ share/ri/${RUBYLIBREV}/system/Gem/TestCase/mu_pp-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/new_default_spec-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/new_spec-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/nmake_found%3f-i.ri
+share/ri/${RUBYLIBREV}/system/Gem/TestCase/parse_make_command_line-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/process_based_port-c.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/process_based_port-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/quick_gem-i.ri
@@ -3865,6 +3867,7 @@ share/ri/${RUBYLIBREV}/system/Gem/TestCase/read_cache-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/refute_path_exists-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/req-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/rubybin-c.ri
+share/ri/${RUBYLIBREV}/system/Gem/TestCase/scan_make_command_lines-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/setup-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/spec-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/teardown-i.ri
@@ -3964,8 +3967,10 @@ share/ri/${RUBYLIBREV}/system/Gem/configuration%3d-c.ri
 share/ri/${RUBYLIBREV}/system/Gem/configuration-c.ri
 share/ri/${RUBYLIBREV}/system/Gem/datadir-c.ri
 share/ri/${RUBYLIBREV}/system/Gem/default_bindir-c.ri
+share/ri/${RUBYLIBREV}/system/Gem/default_cert_path-c.ri
 share/ri/${RUBYLIBREV}/system/Gem/default_dir-c.ri
 share/ri/${RUBYLIBREV}/system/Gem/default_exec_format-c.ri
+share/ri/${RUBYLIBREV}/system/Gem/default_key_path-c.ri
 share/ri/${RUBYLIBREV}/system/Gem/default_path-c.ri
 share/ri/${RUBYLIBREV}/system/Gem/default_rubygems_dirs-c.ri
 share/ri/${RUBYLIBREV}/system/Gem/default_sources-c.ri
@@ -7936,10 +7941,6 @@ share/ri/${RUBYLIBREV}/system/Psych/Coder/seq-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Coder/style-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Coder/tag-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Coder/type-i.ri
-share/ri/${RUBYLIBREV}/system/Psych/EngineManager/
-share/ri/${RUBYLIBREV}/system/Psych/EngineManager/cdesc-EngineManager.ri
-share/ri/${RUBYLIBREV}/system/Psych/EngineManager/yamler%3d-i.ri
-share/ri/${RUBYLIBREV}/system/Psych/EngineManager/yamler-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Error/
 share/ri/${RUBYLIBREV}/system/Psych/Error/cdesc-Error.ri
 share/ri/${RUBYLIBREV}/system/Psych/Exception/
