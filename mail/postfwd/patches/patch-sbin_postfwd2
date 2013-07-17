@@ -1,0 +1,11 @@
+$OpenBSD: patch-sbin_postfwd2,v 1.1 2013/07/17 07:36:06 giovanni Exp $
+--- sbin/postfwd2.orig	Tue Jul 16 09:50:25 2013
++++ sbin/postfwd2	Tue Jul 16 09:51:58 2013
+@@ -3167,6 +3167,7 @@ map { $postfwd_settings{$_}{check} = ($postfwd_setting
+ # terminate at -k or --kill
+ if (defined $options{'term'}) {
+ 	kill "TERM", get_master_pid();
++        unlink $postfwd_settings{master}{pid_file} if (-T $postfwd_settings{master}{pid_file});
+ 	exit (0);
+ # reload at --reload
+ } elsif (defined $options{'hup'}) {

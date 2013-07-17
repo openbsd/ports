@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/06/27 02:50:17 william Exp $
+# $OpenBSD: Makefile,v 1.4 2013/07/17 07:36:06 giovanni Exp $
 
 COMMENT =	Postfix policy server
 
 DISTNAME =	postfwd-1.35
-REVISION =	0
+REVISION =	1
 CATEGORIES =	mail
 
 HOMEPAGE =	http://www.postfwd.org/
