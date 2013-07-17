@@ -1,0 +1,41 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/07/17 21:57:24 edd Exp $
+%%native%%
+bin/utop
+bin/utop-full
+lib/ocaml/utop/
+lib/ocaml/utop/META
+lib/ocaml/utop/uTop.cmi
+lib/ocaml/utop/uTop.mli
+lib/ocaml/utop/uTop_camlp4.cmi
+lib/ocaml/utop/uTop_camlp4.mli
+lib/ocaml/utop/uTop_main.cmi
+lib/ocaml/utop/uTop_main.mli
+lib/ocaml/utop/utop-camlp4.cma
+lib/ocaml/utop/utop.cma
+@man man/man1/utop-full.1.gz
+@man man/man1/utop.1.gz
+@man man/man5/utoprc.5.gz
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/utop/
+share/doc/utop/CHANGES.md
+share/doc/utop/LICENSE
+share/doc/utop/README.md
+share/doc/utop/api/
+share/doc/utop/api/UTop.html
+share/doc/utop/api/UTop_main.html
+share/doc/utop/api/index.html
+share/doc/utop/api/index_attributes.html
+share/doc/utop/api/index_class_types.html
+share/doc/utop/api/index_classes.html
+share/doc/utop/api/index_exceptions.html
+share/doc/utop/api/index_methods.html
+share/doc/utop/api/index_module_types.html
+share/doc/utop/api/index_modules.html
+share/doc/utop/api/index_types.html
+share/doc/utop/api/index_values.html
+share/doc/utop/api/style.css
+share/doc/utop/api/type_UTop.html
+share/doc/utop/api/type_UTop_main.html
+share/doc/utop/utoprc-dark
+share/doc/utop/utoprc-light
+share/emacs/site-lisp/utop.el

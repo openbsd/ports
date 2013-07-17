@@ -1,0 +1,15 @@
+@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2013/07/17 21:57:24 edd Exp $
+%%dynlink%%
+lib/ocaml/utop/uTop.cmx
+lib/ocaml/utop/uTop_camlp4.cmx
+lib/ocaml/utop/uTop_complete.cmx
+lib/ocaml/utop/uTop_lexer.cmx
+lib/ocaml/utop/uTop_main.cmx
+lib/ocaml/utop/uTop_private.cmx
+lib/ocaml/utop/uTop_styles.cmx
+lib/ocaml/utop/uTop_token.cmx
+lib/ocaml/utop/uTop_version.cmx
+lib/ocaml/utop/utop-camlp4.a
+lib/ocaml/utop/utop-camlp4.cmxa
+lib/ocaml/utop/utop.a
+lib/ocaml/utop/utop.cmxa
