@@ -1,0 +1,4 @@
+DKIMproxy is an SMTP-proxy that implements the DKIM and DomainKeys
+standards, to sign and verify email messages using digital signatures
+and DNS records. It can be used to add DKIM support to nearly any
+existing SMTP mail server.

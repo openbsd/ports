@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# $OpenBSD: dkimproxy_in.rc,v 1.1.1.1 2013/07/17 03:09:18 william Exp $
+
+daemon="${TRUEPREFIX}/bin/dkimproxy.in --daemonize"
+daemon_flags="--conf_file=${SYSCONFDIR}/dkimproxy_in.conf --user=_dkimproxy --group=_dkimproxy"
+
+. /etc/rc.d/rc.subr
+
+pexp="/usr/bin/perl.*$daemon $daemon_flags"
+
+rc_reload=NO
+
+rc_cmd $1

@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/07/17 03:09:18 william Exp $
+@newgroup _dkimproxy:721
+@newuser _dkimproxy:721:721:daemon:dkimproxy user:/nonexistent:/sbin/nologin
+bin/dkim_responder.pl
+bin/dkimproxy.in
+bin/dkimproxy.out
+${P5SITE}/LookupMap.pm
+${P5SITE}/MSDW/
+${P5SITE}/MSDW/SMTP/
+${P5SITE}/MSDW/SMTP/Client.pm
+${P5SITE}/MSDW/SMTP/Server.pm
+${P5SITE}/MySmtpProxyServer.pm
+${P5SITE}/MySmtpServer.pm
+@man man/man8/dkimproxy_in.8
+@man man/man8/dkimproxy_out.8
+share/doc/dkimproxy/
+share/doc/dkimproxy/AUTHORS
+share/doc/dkimproxy/COPYING
+share/doc/dkimproxy/ChangeLog
+share/doc/dkimproxy/INSTALL
+share/doc/dkimproxy/NEWS
+share/doc/dkimproxy/README
+share/doc/dkimproxy/TODO
+share/doc/dkimproxy/smtpprox.ChangeLog
+share/doc/dkimproxy/smtpprox.README
+share/doc/dkimproxy/smtpprox.TODO
+share/examples/dkimproxy/
+share/examples/dkimproxy/dkimproxy_in.conf.example
+@sample ${SYSCONFDIR}/dkimproxy_in.conf
+share/examples/dkimproxy/dkimproxy_out.conf.example
+@sample ${SYSCONFDIR}/dkimproxy_out.conf
+@rcscript ${RCDIR}/dkimproxy_in
+@rcscript ${RCDIR}/dkimproxy_out
