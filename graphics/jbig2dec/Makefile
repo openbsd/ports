@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/06/04 18:41:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2013/07/17 16:42:12 bcallah Exp $
 
 SHARED_LIBS +=	jbig2dec             0.0      # 0.0
 
@@ -15,7 +15,7 @@ HOMEPAGE =	http://jbig2dec.sourceforge.net/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		http://ghostscript.com/~giles/jbig2/jbig2dec/
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=jbig2dec/}
 MASTER_SITES0 =		http://jbig2dec.sourceforge.net/ubc/
 
 WANTLIB +=		c m z png
