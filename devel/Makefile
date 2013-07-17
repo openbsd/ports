@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1150 2013/07/13 18:26:41 kili Exp $
+# $OpenBSD: Makefile,v 1.1151 2013/07/17 21:58:38 edd Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1362,6 +1362,7 @@
      SUBDIR += udis86
      SUBDIR += uisp
      SUBDIR += uthash
+     SUBDIR += utop
      SUBDIR += uuid
      SUBDIR += vanessa
      SUBDIR += varconf
