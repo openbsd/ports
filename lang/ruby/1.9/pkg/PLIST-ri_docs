@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.8 2013/05/17 20:08:35 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.9 2013/07/17 15:51:11 jeremy Exp $
 @option no-default-conflict
 @conflict ruby-ri_docs->=1.9,<1.10
 share/ri/${RUBYLIBREV}/system/ACL/
@@ -13097,8 +13097,6 @@ share/ri/${RUBYLIBREV}/system/Struct/to_json-i.ri
 share/ri/${RUBYLIBREV}/system/Struct/to_s-i.ri
 share/ri/${RUBYLIBREV}/system/Struct/values-i.ri
 share/ri/${RUBYLIBREV}/system/Struct/values_at-i.ri
-share/ri/${RUBYLIBREV}/system/Syck/
-share/ri/${RUBYLIBREV}/system/Syck/cdesc-Syck.ri
 share/ri/${RUBYLIBREV}/system/Symbol/
 share/ri/${RUBYLIBREV}/system/Symbol/%3c%3d%3e-i.ri
 share/ri/${RUBYLIBREV}/system/Symbol/%3d%3d%3d-i.ri

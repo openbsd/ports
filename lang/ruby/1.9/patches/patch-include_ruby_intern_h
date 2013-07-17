@@ -1,0 +1,14 @@
+$OpenBSD: patch-include_ruby_intern_h,v 1.1 2013/07/17 15:51:10 jeremy Exp $
+
+Don't break ABI in a patch level release, from ruby svn r41875.
+
+--- include/ruby/intern.h.orig	Sun Jul 14 19:25:14 2013
++++ include/ruby/intern.h	Sun Jul 14 19:25:28 2013
+@@ -350,6 +350,7 @@ VALUE rb_require_safe(VALUE, int);
+ void rb_obj_call_init(VALUE, int, VALUE*);
+ VALUE rb_class_new_instance(int, VALUE*, VALUE);
+ VALUE rb_block_proc(void);
++VALUE rb_f_lambda(void);
+ VALUE rb_block_lambda(void);
+ VALUE rb_proc_new(VALUE (*)(ANYARGS/* VALUE yieldarg[, VALUE procarg] */), VALUE);
+ VALUE rb_obj_is_proc(VALUE);
