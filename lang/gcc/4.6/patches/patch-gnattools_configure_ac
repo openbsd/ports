@@ -1,0 +1,15 @@
+$OpenBSD: patch-gnattools_configure_ac,v 1.1 2013/07/18 16:54:09 tobiasu Exp $
+--- gnattools/configure.ac.orig	Tue Jun 18 11:25:56 2013
++++ gnattools/configure.ac	Tue Jun 18 13:03:43 2013
+@@ -103,6 +103,11 @@ case "${target}" in
+     mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb \
+     indepsw.adb<indepsw-gnu.adb"
+     ;;
++  *-openbsd*)
++    TOOLS_TARGET_PAIRS="\
++    mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb \
++    indepsw.adb<indepsw-gnu.adb"
++    ;;
+   mips-sgi-irix*)
+     TOOLS_TARGET_PAIRS="mlib-tgt-specific.adb<mlib-tgt-specific-irix.adb"
+     ;;
