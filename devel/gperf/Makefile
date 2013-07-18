@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/11 10:50:04 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/07/18 06:04:27 espie Exp $
 
 COMMENT =	perfect hash functions, to help write parsers
 
@@ -21,10 +21,6 @@ post-extract:
 
 # Don't use SEPARATE_BUILD, the doc doesn't like it
 CONFIGURE_STYLE =	gnu
-# fix build on vax, otherwise compilation ends with ICE
-.if ${MACHINE_ARCH} == "vax"
-CFLAGS:= ${CFLAGS:N-O*}
-.endif
 # and it also insists upon installing under $(prefix)/doc...
 MAKE_FLAGS =	docdir='${TRUEPREFIX}/share/doc/gperf'
 
