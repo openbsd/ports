@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.208 2013/06/20 08:26:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.209 2013/07/18 20:07:10 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,16 +9,13 @@ COMMENT-postgresql= PostgreSQL authentication / dictionary support for Dovecot
 
 # Bump dovecot-pigeonhole every time you update to a new Dovecot version.
 V_MAJOR=	2.1
-V_DOVECOT=	2.1.16
+V_DOVECOT=	2.1.17
 
 DISTNAME=	dovecot-${V_DOVECOT}
 PKGNAME=	dovecot-${V_DOVECOT}
 PKGNAME-server=	dovecot-${V_DOVECOT}
-REVISION-server=2
 PKGNAME-ldap=	dovecot-ldap-${V_DOVECOT}
-REVISION-ldap=	2
 PKGNAME-mysql=	dovecot-mysql-${V_DOVECOT}
-REVISION-mysql=	3
 PKGNAME-postgresql= dovecot-postgresql-${V_DOVECOT}
 REVISION-postgresql=1
 CATEGORIES=	mail
@@ -38,11 +35,10 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # LGPLv2.1 and MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB-server=	asn1 bz2 c crypto gssapi krb5 sqlite3 ssl z \
-		com_err heimbase roken wind \
-		${MODLIBICONV_WANTLIB}
-WANTLIB-ldap=	asn1 com_err crypto gssapi krb5 lber ldap sasl2 ssl \
-		com_err heimbase roken wind
+WANTLIB-server=	asn1 bz2 c com_err crypto gssapi heimbase krb5 \
+		roken sqlite3 ssl wind z ${MODLIBICONV_WANTLIB}
+WANTLIB-ldap=	asn1 com_err crypto gssapi heimbase krb5 lber \
+		ldap roken sasl2 ssl wind
 WANTLIB-mysql=	crypto m lib/mysql/mysqlclient>=10 ssl z
 WANTLIB-postgresql= pq>=4
 
