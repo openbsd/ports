@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.100 2013/07/07 20:15:34 kili Exp $
+# $OpenBSD: Makefile,v 1.101 2013/07/18 21:43:23 kili Exp $
+
+BROKEN =		a lot of hs-ports need updates, too
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -11,7 +13,6 @@ COMMENT-doc =		documentation for GHC
 
 DISTNAME =		ghc-${MODGHC_VER}
 PKGNAME-main =		ghc-${MODGHC_VER}
-REVISION-main =		4
 PKGNAME-doc =		ghc-doc-${MODGHC_VER}
 CATEGORIES =		lang devel
 HOMEPAGE =		http://www.haskell.org/ghc/
@@ -19,22 +20,13 @@ HOMEPAGE =		http://www.haskell.org/ghc/
 # Version of the precompiled binaries
 BIN_VER =		7.4.2.20120917
 
-# xhtml replacement version (for meta/haskell-platform)
-XHTML_VER =		3000.2.1
-
-SUBST_VARS +=		XHTML_VER
-
 # Pull in lang/ghc to get MODGHC_VER and ONLY_FOR_ARCHS, which is maintained
 # in ghc.port.mk. lang/python needed for regression tests.
 MODULES =		lang/ghc lang/python converters/libiconv
 
 PSEUDO_FLAVORS =	no_doc
 FLAVOR ?=
-MULTI_PACKAGES =	-main
-
-.if !${FLAVOR:Mno_doc}
-MULTI_PACKAGES +=	-doc
-.endif
+MULTI_PACKAGES =	-main -doc
 
 # BSD w/o advertising clause + LGPLv3 (from libgmp).
 # Distfile is bundled with other stuff like libffi, mingw
@@ -56,7 +48,6 @@ WANTLIB-doc =
 MASTER_SITES =		${HOMEPAGE}dist/${MODGHC_VER}/ \
 			${HOMEPAGE}dist/stable/dist/
 MASTER_SITES0 =		http://openbsd.dead-parrot.de/distfiles/
-MASTER_SITES1 =		http://hackage.haskell.org/packages/archive/xhtml/${XHTML_VER}/
 
 DIST_SUBDIR =		ghc
 
@@ -67,7 +58,6 @@ BINDISTFILE =		${BINDISTFILE-${MACHINE_ARCH}}
 
 DISTFILES =		ghc-${MODGHC_VER}-src.tar.bz2 \
 			ghc-${MODGHC_VER}-testsuite.tar.bz2 \
-			xhtml-${XHTML_VER}.tar.gz:1 \
 			${BINDISTFILE}
 
 .for m in amd64 i386
@@ -132,22 +122,19 @@ post-patch:
 	./configure --prefix=${WRKDIR} && \
 	${MAKE_PROGRAM} install
 	rm -rf ${WRKDIR}/ghc-${BIN_VER}
-# - Replace libraries/xhtml.
-	cp ${WRKSRC}/libraries/xhtml/ghc.mk ${WRKDIR}/xhtml-${XHTML_VER} 
-	cp ${WRKSRC}/libraries/xhtml/GNUmakefile ${WRKDIR}/xhtml-${XHTML_VER} 
-	mv ${WRKSRC}/libraries/xhtml{,-ghcdist}
-	mv ${WRKDIR}/xhtml-${XHTML_VER} ${WRKSRC}/libraries/xhtml
+# - Force the bootstrapper to use -nopie
+#   (maybe removed when switching to a newer bootstrapper)
 	perl -pi -e 's/(\S+ \S+)/\1 -optl -nopie/ if /^exec /' \
 		${WRKDIR}/bin/ghc
 
 post-install:
 	cd ${PREFIX}/lib/ghc && \
-	GHC_PKG="./ghc-pkg --global-conf ./package.conf.d" && \
+	GHC_PKG="./ghc-pkg --no-user-package-db --global-package-db ./package.conf.d" && \
 	${INSTALL_SCRIPT} /dev/null register.sh && \
 	exec > register.sh && \
 	echo '#!/bin/sh' && \
 	echo 'exec > /dev/null 2>&1' && \
-	echo 'p="$${0%/*}/ghc-pkg --global-conf $${0%/*}/package.conf.d"' && \
+	echo 'p="$${0%/*}/ghc-pkg --no-user-package-db --global-package-db $${0%/*}/package.conf.d"' && \
 	for p in $$($$GHC_PKG list --simple); do \
 		echo \$$p register --force - \<\< \'EOF\' && \
 		$$GHC_PKG describe $$p | sed '/^pkgpath:$$/s@$$@ ${PKGPATH}@' && \
@@ -157,7 +144,7 @@ post-install:
 	exec > unregister.sh && \
 	echo '#!/bin/sh' && \
 	echo 'exec > /dev/null 2>&1' && \
-	echo 'p="$${0%/*}/ghc-pkg --global-conf $${0%/*}/package.conf.d"' && \
+	echo 'p="$${0%/*}/ghc-pkg --no-user-package-db --global-package-db $${0%/*}/package.conf.d"' && \
 	for p in $$($$GHC_PKG list --simple); do \
 		echo \$$p unregister --force $$p; \
 	done && \
@@ -176,7 +163,7 @@ do-test:
 # It doesn't matter wether this is the actual date of the bootstrapper
 # build. It's just used to get different distfiles whenever new
 # bootstrappers have to be built.
-BOOTSTRAP_DATE =	20130707
+BOOTSTRAP_DATE =	20120907
 
 # Create a bootstrapper. This compiles a stripped-down version of
 # ghc and creates a `bindist', i.e. a tarball with binaries that

@@ -1,12 +1,12 @@
-$OpenBSD: patch-utils_ghc-pkg_Main_hs,v 1.1 2012/11/05 20:20:07 kili Exp $
+$OpenBSD: patch-utils_ghc-pkg_Main_hs,v 1.2 2013/07/18 21:43:24 kili Exp $
 
 Horrible hack to get rid of the annoying warnings when running
 pkg_add -u. This means that you do NOT get any such warning when
 running ghc-pkg unregister ... -v0 --force.
 
---- utils/ghc-pkg/Main.hs.orig	Wed Jun  6 19:10:25 2012
-+++ utils/ghc-pkg/Main.hs	Sun Nov  4 20:45:43 2012
-@@ -915,7 +915,7 @@ modifyPackage fn pkgid verbosity my_flags force = do
+--- utils/ghc-pkg/Main.hs.orig	Thu Apr 18 23:22:47 2013
++++ utils/ghc-pkg/Main.hs	Sun Jul  7 16:00:36 2013
+@@ -929,7 +929,7 @@ modifyPackage fn pkgid verbosity my_flags force = do
        new_broken = map sourcePackageId (brokenPackages (allPackagesInStack new_stack))
        newly_broken = filter (`notElem` map sourcePackageId old_broken) new_broken
    --

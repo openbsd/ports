@@ -1,4 +1,4 @@
-$OpenBSD: patch-ghc_mk,v 1.7 2012/09/02 19:53:46 kili Exp $
+$OpenBSD: patch-ghc_mk,v 1.8 2013/07/18 21:43:23 kili Exp $
 
 Include utf8-string and xhtml for now, because of dependencies.
 Including *any* of those INTREE_ONLY_PACKAGES in the ghc packages
@@ -9,18 +9,18 @@ needed.
 Fix the bindist-list (for building the bootstrapper); without this,
 gtar creates an archive which our tar can't extract.
 
---- ghc.mk.orig	Wed Feb  1 19:10:32 2012
-+++ ghc.mk	Sat Jun  9 20:44:38 2012
+--- ghc.mk.orig	Thu Apr 18 23:22:46 2013
++++ ghc.mk	Sun Jul  7 16:03:47 2013
 @@ -310,7 +310,7 @@ endif
  # They do not say "this package will be built"; see $(PACKAGES_xx) for that
  
  # Packages that are built but not installed
--PKGS_THAT_ARE_INTREE_ONLY := haskeline mtl terminfo utf8-string xhtml
-+PKGS_THAT_ARE_INTREE_ONLY := haskeline mtl terminfo
+-PKGS_THAT_ARE_INTREE_ONLY := haskeline transformers terminfo utf8-string xhtml
++PKGS_THAT_ARE_INTREE_ONLY := haskeline transformers terminfo
  
  PKGS_THAT_ARE_DPH := \
      dph/dph-base \
-@@ -973,6 +973,8 @@ unix-binary-dist-prep:
+@@ -1007,6 +1007,8 @@ unix-binary-dist-prep:
  	echo "GHC_CABAL_INPLACE  = utils/ghc-cabal/dist-install/build/tmp/ghc-cabal" >> $(BIN_DIST_MK)
  	cd $(BIN_DIST_PREP_DIR) && autoreconf
  	$(call removeFiles,$(BIN_DIST_PREP_TAR))

@@ -1,10 +1,10 @@
-$OpenBSD: patch-rts_Linker_c,v 1.6 2012/10/11 07:51:10 dcoppa Exp $
+$OpenBSD: patch-rts_Linker_c,v 1.7 2013/07/18 21:43:24 kili Exp $
 
 Workaround error: unknown symbol '__guard_local'
 
---- rts/Linker.c.orig	Tue Oct  9 21:15:55 2012
-+++ rts/Linker.c	Tue Oct  9 21:29:11 2012
-@@ -563,6 +563,14 @@ typedef struct _RtsSymbolVal {
+--- rts/Linker.c.orig	Thu Apr 18 23:22:46 2013
++++ rts/Linker.c	Sun Jul  7 16:00:36 2013
+@@ -822,6 +822,14 @@ typedef struct _RtsSymbolVal {
  #define RTS_DARWIN_ONLY_SYMBOLS
  #endif
  
@@ -19,7 +19,7 @@ Workaround error: unknown symbol '__guard_local'
  #ifndef SMP
  # define MAIN_CAP_SYM SymI_HasProto(MainCapability)
  #else
-@@ -1084,6 +1092,7 @@ RTS_POSIX_ONLY_SYMBOLS
+@@ -1352,6 +1360,7 @@ RTS_POSIX_ONLY_SYMBOLS
  RTS_MINGW_ONLY_SYMBOLS
  RTS_CYGWIN_ONLY_SYMBOLS
  RTS_DARWIN_ONLY_SYMBOLS
@@ -27,7 +27,7 @@ Workaround error: unknown symbol '__guard_local'
  RTS_LIBGCC_SYMBOLS
  RTS_LIBFFI_SYMBOLS
  #undef SymI_NeedsProto
-@@ -1119,6 +1128,7 @@ static RtsSymbolVal rtsSyms[] = {
+@@ -1387,6 +1396,7 @@ static RtsSymbolVal rtsSyms[] = {
        RTS_MINGW_ONLY_SYMBOLS
        RTS_CYGWIN_ONLY_SYMBOLS
        RTS_DARWIN_ONLY_SYMBOLS

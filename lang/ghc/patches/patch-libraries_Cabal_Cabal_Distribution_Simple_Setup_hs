@@ -1,7 +1,7 @@
-$OpenBSD: patch-libraries_Cabal_Cabal_Distribution_Simple_Setup_hs,v 1.1 2012/09/02 19:53:46 kili Exp $
---- libraries/Cabal/Cabal/Distribution/Simple/Setup.hs.orig	Wed Feb  1 19:10:49 2012
-+++ libraries/Cabal/Cabal/Distribution/Simple/Setup.hs	Sat Jun  9 21:36:25 2012
-@@ -839,6 +839,7 @@ data RegisterFlags = RegisterFlags {
+$OpenBSD: patch-libraries_Cabal_Cabal_Distribution_Simple_Setup_hs,v 1.2 2013/07/18 21:43:24 kili Exp $
+--- libraries/Cabal/Cabal/Distribution/Simple/Setup.hs.orig	Thu Apr 18 23:32:04 2013
++++ libraries/Cabal/Cabal/Distribution/Simple/Setup.hs	Sun Jul  7 16:00:36 2013
+@@ -850,6 +850,7 @@ data RegisterFlags = RegisterFlags {
      regGenPkgConf  :: Flag (Maybe FilePath),
      regInPlace     :: Flag Bool,
      regDistPref    :: Flag FilePath,
@@ -9,7 +9,7 @@ $OpenBSD: patch-libraries_Cabal_Cabal_Distribution_Simple_Setup_hs,v 1.1 2012/09
      regVerbosity   :: Flag Verbosity
    }
    deriving Show
-@@ -850,6 +851,7 @@ defaultRegisterFlags = RegisterFlags {
+@@ -861,6 +862,7 @@ defaultRegisterFlags = RegisterFlags {
      regGenPkgConf  = NoFlag,
      regInPlace     = Flag False,
      regDistPref    = Flag defaultDistPref,
@@ -17,7 +17,7 @@ $OpenBSD: patch-libraries_Cabal_Cabal_Distribution_Simple_Setup_hs,v 1.1 2012/09
      regVerbosity   = Flag normal
    }
  
-@@ -886,6 +888,11 @@ registerCommand = makeCommand name shortDesc longDesc 
+@@ -897,6 +899,11 @@ registerCommand = makeCommand name shortDesc longDesc 
           "instead of registering, generate a package registration file"
           regGenPkgConf (\v flags -> flags { regGenPkgConf  = v })
           (optArg' "PKG" Flag flagToList)
@@ -29,7 +29,7 @@ $OpenBSD: patch-libraries_Cabal_Cabal_Distribution_Simple_Setup_hs,v 1.1 2012/09
        ]
  
  unregisterCommand :: CommandUI RegisterFlags
-@@ -923,6 +930,7 @@ instance Monoid RegisterFlags where
+@@ -934,6 +941,7 @@ instance Monoid RegisterFlags where
      regGenPkgConf  = mempty,
      regInPlace     = mempty,
      regDistPref    = mempty,
@@ -37,7 +37,7 @@ $OpenBSD: patch-libraries_Cabal_Cabal_Distribution_Simple_Setup_hs,v 1.1 2012/09
      regVerbosity   = mempty
    }
    mappend a b = RegisterFlags {
-@@ -931,6 +939,7 @@ instance Monoid RegisterFlags where
+@@ -942,6 +950,7 @@ instance Monoid RegisterFlags where
      regGenPkgConf  = combine regGenPkgConf,
      regInPlace     = combine regInPlace,
      regDistPref    = combine regDistPref,

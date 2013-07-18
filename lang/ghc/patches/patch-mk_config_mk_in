@@ -1,24 +1,24 @@
-$OpenBSD: patch-mk_config_mk_in,v 1.8 2012/09/02 19:53:46 kili Exp $
+$OpenBSD: patch-mk_config_mk_in,v 1.9 2013/07/18 21:43:24 kili Exp $
 
 Don't build shared libs for now.
 
 Let hsc2hs add link options when linking with cc.
 
---- mk/config.mk.in.orig	Wed Jun  6 19:10:25 2012
-+++ mk/config.mk.in	Sun Sep  2 18:28:12 2012
+--- mk/config.mk.in.orig	Thu Apr 18 23:22:46 2013
++++ mk/config.mk.in	Sun Jul  7 16:00:36 2013
 @@ -117,7 +117,6 @@ GhcProfiled=NO
  SharedLibsPlatformList =                        \
      i386-unknown-linux   x86_64-unknown-linux   \
      i386-unknown-freebsd x86_64-unknown-freebsd \
 -    i386-unknown-openbsd x86_64-unknown-openbsd \
      i386-unknown-netbsd  x86_64-unknown-netbsd  \
-     i386-unknown-mingw32                        \
+     i386-unknown-mingw32 x86_64-unknown-mingw32 \
      i386-apple-darwin    x86_64-apple-darwin    powerpc-apple-darwin
-@@ -599,6 +598,7 @@ ifneq "$(Windows)" "YES"
+@@ -619,6 +618,7 @@ ifneq "$(Windows)" "YES"
  SRC_HSC2HS_OPTS += --cross-safe
  endif
  SRC_HSC2HS_OPTS += $(addprefix --cflag=,$(filter-out -O,$(SRC_CC_OPTS) $(CONF_CC_OPTS_STAGE0)))
 +SRC_HSC2HS_OPTS += $(addprefix --lflag=,$(CONF_GCC_LINKER_OPTS_STAGE0))
  SRC_HSC2HS_OPTS += $(foreach d,$(GMP_INCLUDE_DIRS),-I$(d))
- 
- #-----------------------------------------------------------------------------
+ ifeq "$(CrossCompiling)" "YES"
+ SRC_HSC2HS_OPTS += --cross-compile
