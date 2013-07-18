@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/01/04 20:46:58 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/07/18 15:13:03 benoit Exp $
 @conflict linkchecker->=7.1,<7.1p1
 lib/python${MODPY_VERSION}/site-packages/dns/
 lib/python${MODPY_VERSION}/site-packages/dns/__init__.py
@@ -15,6 +15,8 @@ lib/python${MODPY_VERSION}/site-packages/dns/exception.py
 lib/python${MODPY_VERSION}/site-packages/dns/exception.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/flags.py
 lib/python${MODPY_VERSION}/site-packages/dns/flags.pyc
+lib/python${MODPY_VERSION}/site-packages/dns/grange.py
+lib/python${MODPY_VERSION}/site-packages/dns/grange.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/hash.py
 lib/python${MODPY_VERSION}/site-packages/dns/hash.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/inet.py
@@ -95,6 +97,8 @@ lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/SPF.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/SPF.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/SSHFP.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/SSHFP.pyc
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/TLSA.py
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/TLSA.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/TXT.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/TXT.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/X25.py
