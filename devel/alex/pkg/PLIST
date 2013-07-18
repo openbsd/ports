@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/12/02 20:29:39 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/07/18 21:58:00 kili Exp $
 @bin bin/alex
 share/${DISTNAME}/
 share/${DISTNAME}/AlexTemplate
 share/${DISTNAME}/AlexTemplate-debug
 share/${DISTNAME}/AlexTemplate-ghc
 share/${DISTNAME}/AlexTemplate-ghc-debug
+share/${DISTNAME}/AlexTemplate-ghc-nopred
 share/${DISTNAME}/AlexWrapper-basic
 share/${DISTNAME}/AlexWrapper-basic-bytestring
 share/${DISTNAME}/AlexWrapper-gscan
