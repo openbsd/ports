@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2013/06/20 06:54:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2013/07/18 07:58:12 sthen Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
@@ -6,7 +6,7 @@ COMMENT-snmp=		driver for monitoring UPS via SNMP
 COMMENT-xml=		driver for monitoring UPS via XML/HTTP
 
 DISTNAME=		nut-2.6.5
-REVISION-main=		2
+REVISION-main=		3
 REVISION-cgi=		1
 REVISION-xml=		1
 
@@ -39,6 +39,10 @@ MASTER_SITES=		${HOMEPAGE}source/2.6/
 MODULES=		devel/gettext \
 			lang/python
 MODPY_RUNDEP=		No
+# if avahi is present at build time, avahi support is built in nut-scanner,
+# but it's dlopen()'d at runtime, so support is optional, so we don't list a
+# hard run dependency for this (to reduce deps in the common case).
+BUILD_DEPENDS+=		net/avahi
 BUILD_DEPENDS+=		textproc/asciidoc>=8.6.8 \
 			textproc/docbook-xsl
 
