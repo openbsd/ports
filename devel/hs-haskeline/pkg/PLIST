@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/01/20 18:01:51 kili Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/07/18 22:22:34 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/System/
@@ -11,10 +11,11 @@ lib/ghc/${DISTNAME}/System/Console/Haskeline/Backend.hi
 lib/ghc/${DISTNAME}/System/Console/Haskeline/Backend.p_hi
 lib/ghc/${DISTNAME}/System/Console/Haskeline/Backend/DumbTerm.hi
 lib/ghc/${DISTNAME}/System/Console/Haskeline/Backend/DumbTerm.p_hi
-lib/ghc/${DISTNAME}/System/Console/Haskeline/Backend/IConv.hi
-lib/ghc/${DISTNAME}/System/Console/Haskeline/Backend/IConv.p_hi
+lib/ghc/${DISTNAME}/System/Console/Haskeline/Backend/Posix/
 lib/ghc/${DISTNAME}/System/Console/Haskeline/Backend/Posix.hi
 lib/ghc/${DISTNAME}/System/Console/Haskeline/Backend/Posix.p_hi
+lib/ghc/${DISTNAME}/System/Console/Haskeline/Backend/Posix/Encoder.hi
+lib/ghc/${DISTNAME}/System/Console/Haskeline/Backend/Posix/Encoder.p_hi
 lib/ghc/${DISTNAME}/System/Console/Haskeline/Backend/Terminfo.hi
 lib/ghc/${DISTNAME}/System/Console/Haskeline/Backend/Terminfo.p_hi
 lib/ghc/${DISTNAME}/System/Console/Haskeline/Backend/WCWidth.hi
@@ -36,8 +37,6 @@ lib/ghc/${DISTNAME}/System/Console/Haskeline/Directory.hi
 lib/ghc/${DISTNAME}/System/Console/Haskeline/Directory.p_hi
 lib/ghc/${DISTNAME}/System/Console/Haskeline/Emacs.hi
 lib/ghc/${DISTNAME}/System/Console/Haskeline/Emacs.p_hi
-lib/ghc/${DISTNAME}/System/Console/Haskeline/Encoding.hi
-lib/ghc/${DISTNAME}/System/Console/Haskeline/Encoding.p_hi
 lib/ghc/${DISTNAME}/System/Console/Haskeline/History.hi
 lib/ghc/${DISTNAME}/System/Console/Haskeline/History.p_hi
 lib/ghc/${DISTNAME}/System/Console/Haskeline/IO.hi
@@ -54,14 +53,14 @@ lib/ghc/${DISTNAME}/System/Console/Haskeline/Monads.hi
 lib/ghc/${DISTNAME}/System/Console/Haskeline/Monads.p_hi
 lib/ghc/${DISTNAME}/System/Console/Haskeline/Prefs.hi
 lib/ghc/${DISTNAME}/System/Console/Haskeline/Prefs.p_hi
+lib/ghc/${DISTNAME}/System/Console/Haskeline/Recover.hi
+lib/ghc/${DISTNAME}/System/Console/Haskeline/Recover.p_hi
 lib/ghc/${DISTNAME}/System/Console/Haskeline/RunCommand.hi
 lib/ghc/${DISTNAME}/System/Console/Haskeline/RunCommand.p_hi
 lib/ghc/${DISTNAME}/System/Console/Haskeline/Term.hi
 lib/ghc/${DISTNAME}/System/Console/Haskeline/Term.p_hi
 lib/ghc/${DISTNAME}/System/Console/Haskeline/Vi.hi
 lib/ghc/${DISTNAME}/System/Console/Haskeline/Vi.p_hi
-lib/ghc/${DISTNAME}/include/
-lib/ghc/${DISTNAME}/include/h_iconv.h
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
@@ -69,7 +68,6 @@ share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/System-Console-Haskeline-Completion.html
-share/doc/hs-${DISTNAME}/html/System-Console-Haskeline-Encoding.html
 share/doc/hs-${DISTNAME}/html/System-Console-Haskeline-History.html
 share/doc/hs-${DISTNAME}/html/System-Console-Haskeline-IO.html
 share/doc/hs-${DISTNAME}/html/System-Console-Haskeline-MonadException.html
@@ -82,7 +80,6 @@ share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/mini_System-Console-Haskeline-Completion.html
-share/doc/hs-${DISTNAME}/html/mini_System-Console-Haskeline-Encoding.html
 share/doc/hs-${DISTNAME}/html/mini_System-Console-Haskeline-History.html
 share/doc/hs-${DISTNAME}/html/mini_System-Console-Haskeline-IO.html
 share/doc/hs-${DISTNAME}/html/mini_System-Console-Haskeline-MonadException.html
