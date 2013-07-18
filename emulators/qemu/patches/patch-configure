@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.34 2013/06/23 21:27:55 brad Exp $
---- configure.orig	Fri Jun 21 16:18:42 2013
-+++ configure	Fri Jun 21 16:18:37 2013
-@@ -2518,9 +2518,31 @@ fi
+$OpenBSD: patch-configure,v 1.35 2013/07/18 20:20:18 brad Exp $
+--- configure.orig	Wed Jun 26 17:47:29 2013
++++ configure	Fri Jun 28 00:47:20 2013
+@@ -2517,9 +2517,31 @@ fi
  
  ##########################################
  # fdt probe
@@ -33,7 +33,7 @@ $OpenBSD: patch-configure,v 1.34 2013/06/23 21:27:55 brad Exp $
  int main(void) { return 0; }
  EOF
    if compile_prog "" "$fdt_libs" ; then
-@@ -3390,8 +3412,6 @@ fi
+@@ -3389,8 +3411,6 @@ fi
  if test "$gcov" = "yes" ; then
    CFLAGS="-fprofile-arcs -ftest-coverage -g $CFLAGS"
    LDFLAGS="-fprofile-arcs -ftest-coverage $LDFLAGS"

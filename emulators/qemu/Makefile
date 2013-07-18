@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.107 2013/06/23 21:27:55 brad Exp $
+# $OpenBSD: Makefile,v 1.108 2013/07/18 20:20:18 brad Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64
 
 COMMENT=	multi system emulator
 
-DISTNAME=	qemu-1.5.0
-REVISION=	0
+DISTNAME=	qemu-1.5.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 EXTRACT_SUFX=	.tar.bz2
@@ -63,7 +62,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--host-cc="${CC}" \
 		--extra-cflags="${EXTRA_CFLAGS}" \
 		--extra-ldflags="${EXTRA_LDFLAGS}" \
-		--audio-drv-list=sdl \
 		--disable-bsd-user \
 		--disable-libiscsi \
 		--disable-libusb \
