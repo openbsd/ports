@@ -1,5 +1,2 @@
-MD5 (ghc/cabal-install-0.14.0.tar.gz) = Y4UUvRpXktdYZkgYUhSK5Q==
-RMD160 (ghc/cabal-install-0.14.0.tar.gz) = oOHg8NGJq7uYTZaPhlAoBjICd2k=
-SHA1 (ghc/cabal-install-0.14.0.tar.gz) = YUpoPsFajZt36NkmxpBujQDj1AE=
-SHA256 (ghc/cabal-install-0.14.0.tar.gz) = 9PK1Amn/WdZ7Xz2C1Q93Bra60RFylafIHzK75yrdW9g=
-SIZE (ghc/cabal-install-0.14.0.tar.gz) = 193187
+SHA256 (ghc/cabal-install-1.16.0.2.tar.gz) = Zt+syfM+Zo5WkEByytuKNr2dZSK6VGTGo2pd5+ZcVpg=
+SIZE (ghc/cabal-install-1.16.0.2.tar.gz) = 201232
