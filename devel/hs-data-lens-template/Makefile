@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:07 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/07/18 22:24:08 kili Exp $
 
 COMMENT =		utilities for Data.Lens
 
-DISTNAME =		data-lens-template-2.1.5
-REVISION =		1
+DISTNAME =		data-lens-template-2.1.7
 CATEGORIES =		devel
 
 # BSD3
