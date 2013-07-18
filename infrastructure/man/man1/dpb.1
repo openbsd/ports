@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.83 2013/07/05 13:49:50 pirofti Exp $
+.\"	$OpenBSD: dpb.1,v 1.84 2013/07/18 05:40:31 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: July 5 2013 $
+.Dd $Mdocdate: July 18 2013 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -255,11 +255,6 @@ call
 on every task start/end while creating packages.
 This does produce lots of messages, it is intended to route the logging
 on another machine, while tracking down panics and other hangs.
-.It Ar WAIT_TIMEOUT
-Timeout (in seconds) to wait before giving up on NFS packages showing up.
-Set to 0 to disable.
-Defaults to 10 minutes.
-.\" Disabled on localhost.
 .It Ar WANTSIZE
 Alternate way to specify
 .Fl s .
@@ -650,6 +645,9 @@ Details in
 list of packages that cannot currently be built because of locks.
 .It E=
 list of packages in error, that cannot currently be built.
+.It H=
+list of packages that haven't shown up yet, usually due to nfs, but
+watch out for revision bumps.
 .El
 .Pp
 If those two lists are empty, they won't even show up.
@@ -942,6 +940,8 @@ pkgpath built / distfile found.
 error in build or fetch.
 .It F
 distfile queued for download.
+.It H
+package still not found due to nfs on this run.
 .It I
 pkgpath can be installed.
 .It J
