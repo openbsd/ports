@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.46 2013/06/21 23:13:37 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.47 2013/07/18 05:36:54 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -206,7 +206,7 @@ sub build
 	    	close($fh); 
 		$self->end_lock($lock, $core, $job); 
 		$self->report($v, $job, $core); 
-		&$final_sub;
+		&$final_sub($job->{failed});
 	    });
 	$core->start_job($job, $v);
 	if ($job->{parallel}) {

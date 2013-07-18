@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.83 2013/06/30 16:45:16 espie Exp $
+# $OpenBSD: Engine.pm,v 1.84 2013/07/18 05:36:54 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -19,6 +19,131 @@ use strict;
 use warnings;
 
 use DPB::Limiter;
+package DPB::ErrorList::Base;
+
+sub new
+{
+	my $class = shift;
+	bless [], $class;
+}
+
+sub recheck
+{
+	my ($list, $engine) = @_;
+	return if @$list == 0;
+	my $locker = $engine->{locker};
+
+	my @keep = ();
+	while (my $v = shift @$list) {
+		if ($list->unlock_early($v, $engine)) {
+			$locker->unlock($v);
+			next;
+		}
+		if ($locker->locked($v)) {
+			push(@keep, $v);
+		} else {
+			$list->reprepare($v, $engine);
+		}
+	}
+	push(@$list, @keep) if @keep != 0;
+}
+
+sub stringize
+{
+	my $list = shift;
+	my @l = ();
+	for my $e (@$list) {
+		my $s = $e->logname;
+		if (defined $e->{host} && !$e->{host}->is_localhost) {
+			$s .= "(".$e->{host}->name.")";
+		}
+		if (defined $e->{info} && $e->{info}->has_property('nojunk')) {
+			$s .= '!';
+		}
+		push(@l, $s);
+	}
+	return join(' ', @l);
+}
+
+sub reprepare
+{
+	my ($class, $v, $engine) = @_;
+	$v->requeue($engine);
+}
+
+package DPB::ErrorList;
+our @ISA = (qw(DPB::ErrorList::Base));
+
+sub unlock_early
+{
+	my ($list, $v, $engine) = @_;
+	if ($v->unlock_conditions($engine)) {
+		$v->requeue($engine);
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
+sub reprepare
+{
+	my ($list, $v, $engine) = @_;
+	$engine->rescan($v);
+}
+
+package DPB::LockList;
+our @ISA = (qw(DPB::ErrorList::Base));
+sub unlock_early
+{
+	&DPB::ErrorList::unlock_early;
+}
+
+sub stringize
+{
+	my $list = shift;
+	my @l = ();
+	my $done = {};
+	for my $e (@$list) {
+		my $s = $e->lockname;
+		if (!defined $done->{$s}) {
+			push(@l, $s);
+			$done->{$s} = 1;
+		}
+	}
+	return join(' ', @l);
+}
+
+package DPB::NFSList;
+our @ISA = (qw(DPB::ErrorList::Base));
+
+sub reprepare
+{
+	&DPB::ErrorList::reprepare;
+}
+
+sub unlock_early
+{
+	my ($list, $v, $engine) = @_;
+	my $okay = 1;
+	my $h = $engine->{nfs}{$v};
+	while (my ($k, $w) = each %$h) {
+		if ($engine->{builder}->check($w)) {
+			$engine->mark_as_done($w);
+			delete $h->{$w};
+		} else {
+			$okay = 0;
+			# infamous
+			$engine->log('H', $v);
+		}
+	}
+	if ($okay) {
+		delete $engine->{nfs}{$v};
+	}
+	return $okay;
+}
+
+
+
 package DPB::SubEngine;
 sub new
 {
@@ -48,6 +173,12 @@ sub remove
 sub is_done_quick
 {
 	my $self = shift;
+	return $self->is_done(@_);
+}
+
+sub is_done_or_enqueue
+{
+	my $self =shift;
 	return $self->is_done(@_);
 }
 
@@ -111,6 +242,7 @@ sub start
 {
 	my $self = shift;
 	my $core = $self->get_core;
+
 	if (@{$self->{engine}{requeued}} > 0) {
 		$self->{engine}->rebuild_info($core);
 		return;
@@ -200,19 +332,17 @@ sub done
 
 sub end
 {
-	my ($self, $core, $v) = @_;
+	my ($self, $core, $v, $fail) = @_;
 	my $e = $core->mark_ready;
-	if ($self->is_done($v)) {
-		$self->{engine}{locker}->unlock($v);
-		$self->end_build($v);
-		$core->success;
-	} else {
+	if ($fail) {
 		$core->failure;
 		if (!$e || $core->{status} == 65280) {
 			$self->add($v);
 			$self->{engine}{locker}->unlock($v);
 			$self->log('N', $v);
 		} else {
+			# XXX in case some packages got built
+			$self->is_done($v);
 			unshift(@{$self->{engine}{errors}}, $v);
 			$v->{host} = $core->host;
 			$self->log('E', $v);
@@ -220,6 +350,14 @@ sub end
 				$self->end_build($v);
 			}
 		}
+	} else {
+		if ($self->is_done_or_enqueue($v)) {
+			$self->{engine}{locker}->unlock($v);
+		} else {
+			push(@{$self->{nfslist}}, $v);
+		}
+		$self->end_build($v);
+		$core->success;
 	}
 	$self->done($v);
 	$self->{engine}->flush;
@@ -244,6 +382,7 @@ sub new
 	my $o = $class->SUPER::new($engine);
 	$o->{builder} = $builder;
 	$o->{toinstall} = [];
+	$o->{nfs} = {};
 	return $o;
 }
 
@@ -295,6 +434,21 @@ sub mark_as_done
 	$self->remove($v);
 }
 
+sub is_done_or_enqueue
+{
+	my ($self, $v) = @_;
+	my $okay = 1;
+	for my $w ($v->build_path_list) {
+		if ($self->{builder}->check($w)) {
+			$self->mark_as_done($w);
+		} else {
+			$self->{nfs}{$v}{$w} = $w;
+			$okay = 0;
+		}
+	}
+	return $okay;
+}
+
 sub is_done
 {
 	my ($self, $v) = @_;
@@ -342,7 +496,11 @@ sub start_build
 	my ($self, $v, $core, $lock) = @_;
 	$self->log('J', $v, " ".$core->hostname);
 	$self->{engine}{affinity}->start($v, $core);
-	$self->{builder}->build($v, $core, $lock, sub {$self->end($core, $v)});
+	$self->{builder}->build($v, $core, $lock, 
+	    sub {
+	    	my $fail = shift;
+	    	$self->end($core, $v, $fail);
+	    });
 }
 
 sub end_build
@@ -405,7 +563,9 @@ sub start_build
 	my ($self, $v, $core, $lock) = @_;
 	$self->log('J', $v);
 	DPB::Fetch->fetch($self->{engine}{logger}, $v, $core,
-	    sub { $self->end($core, $v)});
+	    sub { 
+	    	$self->end($core, $v, $core->{status});
+	    });
 }
 
 sub end_build
@@ -429,8 +589,9 @@ sub new
 	    locker => $state->locker,
 	    logger => $state->logger,
 	    affinity => $state->{affinity},
-	    errors => [],
-	    locks => [],
+	    errors => DPB::ErrorList->new,
+	    locks => DPB::LockList->new,
+	    nfslist => DPB::NFSList->new,
 	    ts => time(),
 	    requeued => [],
 	    ignored => []}, $class;
@@ -447,11 +608,9 @@ sub new
 sub recheck_errors
 {
 	my $self = shift;
-	if (@{$self->{errors}} != 0 || @{$self->{locks}} != 0) {
-		$self->{locker}->recheck_errors($self);
-		return 1;
-	}
-	return 0;
+	$self->{errors}->recheck($self);
+	$self->{locks}->recheck($self);
+	$self->{nfslist}->recheck($self);
 }
 
 sub log_no_ts
@@ -486,38 +645,6 @@ sub count
 	} else {
 		return "?";
     	}
-}
-
-sub errors_string
-{
-	my ($self, $name) = @_;
-	my @l = ();
-	for my $e (@{$self->{$name}}) {
-		my $s = $e->logname;
-		if (defined $e->{host} && !$e->{host}->is_localhost) {
-			$s .= "(".$e->{host}->name.")";
-		}
-		if (defined $e->{info} && $e->{info}->has_property('nojunk')) {
-			$s .= '!';
-		}
-		push(@l, $s);
-	}
-	return join(' ', @l);
-}
-
-sub lock_errors_string
-{
-	my ($self, $name) = @_;
-	my @l = ();
-	my $done = {};
-	for my $e (@{$self->{$name}}) {
-		my $s = $e->lockname;
-		if (!defined $done->{$s}) {
-			push(@l, $s);
-			$done->{$s} = 1;
-		}
-	}
-	return join(' ', @l);
 }
 
 sub fetchcount
@@ -565,8 +692,9 @@ sub report
 	return join(" ",
 	    $self->statline,
 	    "!=".$self->count("ignored"))."\n".
-	    $self->may_add("L=", $self->lock_errors_string("locks")).
-	    $self->may_add("E=", $self->errors_string("errors"));
+	    $self->may_add("L=", $self->{locks}->stringize).
+	    $self->may_add("E=", $self->{errors}->stringize). 
+	    $self->may_add("H=", $self->{nfslist}->stringize);
 }
 
 sub stats

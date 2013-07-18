@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.21 2013/07/12 08:07:19 espie Exp $
+# $OpenBSD: Locks.pm,v 1.22 2013/07/18 05:36:54 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -154,32 +154,6 @@ sub locked
 {
 	my ($self, $v) = @_;
 	return -e $self->lockname($v);
-}
-
-sub recheck_errors
-{
-	my ($self, $engine) = (@_);
-
-	for my $name (qw(errors locks)) {
-		my $e = $engine->{$name};
-		$engine->{$name} = [];
-		while (my $v = shift @$e) {
-			if ($v->unlock_conditions($engine)) {
-				$self->unlock($v);
-				$v->requeue($engine);
-				next;
-			}
-			if ($self->locked($v)) {
-				push(@{$engine->{$name}}, $v);
-			} else {
-				if ($name eq 'errors') {
-					$engine->rescan($v);
-				} else {
-					$v->requeue($engine);
-				}
-			}
-		}
-	}
 }
 
 sub find_dependencies

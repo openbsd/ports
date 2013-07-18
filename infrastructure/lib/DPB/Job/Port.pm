@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.109 2013/07/12 08:07:19 espie Exp $
+# $OpenBSD: Port.pm,v 1.110 2013/07/18 05:36:55 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -114,56 +114,6 @@ sub run
 }
 
 sub notime { 0 }
-
-# this code is only necessary thanks to NFS's brain-damage...
-sub make_sure_we_have_packages
-{
-	my ($self, $core) = @_;
-	my $job = $core->job;
-	my $check = 1;
-	# check ALL BUILD_PACKAGES
-	for my $w ($job->{v}->build_path_list) {
-		if (!defined $w->{info}) {
-			print {$job->{logfh}} ">>> ", $w->fullpkgpath,
-			 " may be missing\n", 
-			 ">>> but it has no associated info so we don't care\n";
-			next;
-		}
-		if ($w->{info}->is_stub) {
-			print {$job->{logfh}} ">>> ", $w->fullpkgpath,
-			 " may be missing\n", 
-			 ">>> but it can't be installed, so we don't care\n";
-			next;
-		}
-		if (!$w->has_fullpkgname) {
-			print {$job->{logfh}} ">>> ", $w->fullpkgpath,
-			 " may be missing\n", 
-			 ">>> but it has no fullpkgname, so we don't care\n";
-			next;
-		}
-		my $f = $job->{builder}->pkgfile($w);
-		if (-f $f) {
-			$job->{builder}->register_package($w);
-		} else {
-			$check = 0;
-			print {$job->{logfh}} ">>> Missing $f\n";
-		}
-	}
-	return if $check;
-	if (!defined $job->{waiting}) {
-		$job->{waiting} = 0;
-	}
-	if ($core->prop->{wait_timeout}) {
-		if ($job->{waiting}*10 > $core->prop->{wait_timeout}) {
-			print {$job->{logfh}} ">>> giving up\n";
-		} else {
-			print {$job->{logfh}} ">>> waiting 10 seconds\n";
-			$job->insert_tasks(
-			    DPB::Task::Port::VerifyPackages->new(
-				'waiting-for-nfs '.$job->{waiting}++));
-		}
-	}
-}
 
 package DPB::Task::Port;
 our @ISA = qw(DPB::Task::BasePort);
@@ -675,9 +625,7 @@ our @ISA = qw(DPB::Task::Port::BaseClean);
 sub finalize
 {
 	my ($self, $core) = @_;
-	if (!$self->requeue($core)) {
-		$self->make_sure_we_have_packages($core);
-	}
+	$self->requeue($core);
 	$self->SUPER::finalize($core);
 }
 
@@ -689,7 +637,6 @@ sub finalize
 	if ($core->{status} != 0) {
 		return 0;
 	}
-	$self->make_sure_we_have_packages($core);
 }
 
 sub run
