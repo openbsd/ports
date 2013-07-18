@@ -1,0 +1,15 @@
+$OpenBSD: patch-gnattools_configure,v 1.1 2013/07/18 17:04:09 tobiasu Exp $
+--- gnattools/configure.orig	Mon Jun 17 17:25:02 2013
++++ gnattools/configure	Mon Jun 17 17:22:53 2013
+@@ -2063,6 +2063,11 @@ case "${target}" in
+     mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb \
+     indepsw.adb<indepsw-gnu.adb"
+     ;;
++  *-openbsd*)
++    TOOLS_TARGET_PAIRS="\
++    mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb \
++    indepsw.adb<indepsw-gnu.adb"
++    ;;
+   hppa*-hp-hpux10*) # Unlike hpux11
+     ;;
+   hppa*-hp-hpux11*)
