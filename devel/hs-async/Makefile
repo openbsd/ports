@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:06 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/07/18 21:54:54 kili Exp $
 
 COMMENT =		asynchronous IO operations
 
-DISTNAME =		async-2.0.1.3
-REVISION =		0
+DISTNAME =		async-2.0.1.4
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
