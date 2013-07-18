@@ -1,7 +1,7 @@
-$OpenBSD: patch-gtk2hs-buildtools_cabal,v 1.1.1.1 2010/06/16 13:57:39 kili Exp $
---- gtk2hs-buildtools.cabal.orig	Tue May 25 10:22:42 2010
-+++ gtk2hs-buildtools.cabal	Thu Jun 10 21:18:22 2010
-@@ -107,7 +107,7 @@ Executable gtk2hsC2hs
+$OpenBSD: patch-gtk2hs-buildtools_cabal,v 1.2 2013/07/18 22:08:48 kili Exp $
+--- gtk2hs-buildtools.cabal.orig	Mon Nov 12 00:26:45 2012
++++ gtk2hs-buildtools.cabal	Tue Jul  9 21:10:55 2013
+@@ -109,7 +109,7 @@ Executable gtk2hsC2hs
                          c2hs/base/syms
                          c2hs/base/syntax
          c-sources:      c2hs/toplevel/c2hs_config.c

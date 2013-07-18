@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 10:50:06 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/07/18 22:08:48 kili Exp $
 
 COMMENT =		tools to build Gtk2Hs
 
-DISTNAME =		gtk2hs-buildtools-0.12.3.1
-REVISION =		0
+DISTNAME =		gtk2hs-buildtools-0.12.4
 CATEGORIES =		devel
 
 HOMEPAGE =		http://www.haskell.org/gtk2hs/
