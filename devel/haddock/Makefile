@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2013/03/11 10:50:06 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2013/07/18 21:44:12 kili Exp $
 
 COMMENT-main =	documentation-generation tool for Haskell libraries
 COMMENT-lib =	haddock library
 
-DISTNAME =	haddock-2.11.0
+DISTNAME =	haddock-2.13.2
 PKGNAME-main =	${DISTNAME}
 PKGNAME-lib =	hs-${DISTNAME}
-REVISION-main =	0
-REVISION-lib =	1
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.haskell.org/haddock/
@@ -20,10 +18,12 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =		cabal hackage register
 
-# Currently, we use the version bundled with the ghc sources, because
-# the latest official haddock version (2.10.0) doesn't work with
-# ghc-7.4. There's hope that this situation will be fixed upstream
-# before ghc-7.6 will be released.
+# We still use the version bundled with the ghc sources, even if it's
+# the same as the one from hackage, because it contains the alex- and
+# happy-generated sources. And we cannot generate them ourselves,
+# because alex and happy themselves depend on some Haskell packages
+# (devel/hs-QuickCheck resp. devel/hs-mtl) which obviously need haddock
+# to be built.
 DISTFILES =
 BUILD_DEPENDS +=	lang/ghc:patch
 
@@ -57,7 +57,7 @@ post-build:
 	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
 		${MODGHC_SETUP_PROG} \
 		--with-haddock=${WRKBUILD}/dist/build/haddock/haddock \
-		haddock --haddock-option=-l${WRKBUILD}
+		haddock --haddock-option=-l${WRKBUILD}/resources
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc

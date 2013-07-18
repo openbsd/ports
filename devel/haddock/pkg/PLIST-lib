@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST-lib,v 1.7 2013/01/20 17:59:15 kili Exp $
+@comment $OpenBSD: PLIST-lib,v 1.8 2013/07/18 21:44:13 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Documentation/
 lib/ghc/${DISTNAME}/Documentation/Haddock.hi
 lib/ghc/${DISTNAME}/Documentation/Haddock.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Haddock/
+lib/ghc/${DISTNAME}/Haddock.hi
+lib/ghc/${DISTNAME}/Haddock.p_hi
 lib/ghc/${DISTNAME}/Haddock/Backends/
 lib/ghc/${DISTNAME}/Haddock/Backends/HaddockDB.hi
 lib/ghc/${DISTNAME}/Haddock/Backends/HaddockDB.p_hi
@@ -64,8 +66,6 @@ lib/ghc/${DISTNAME}/Haddock/Utils.hi
 lib/ghc/${DISTNAME}/Haddock/Utils.p_hi
 lib/ghc/${DISTNAME}/Haddock/Version.hi
 lib/ghc/${DISTNAME}/Haddock/Version.p_hi
-lib/ghc/${DISTNAME}/Main.hi
-lib/ghc/${DISTNAME}/Main.p_hi
 lib/ghc/${DISTNAME}/Paths_haddock.hi
 lib/ghc/${DISTNAME}/Paths_haddock.p_hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
@@ -75,6 +75,7 @@ share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/Documentation-Haddock.html
+share/doc/hs-${DISTNAME}/html/doc-index-A.html
 share/doc/hs-${DISTNAME}/html/doc-index-All.html
 share/doc/hs-${DISTNAME}/html/doc-index-C.html
 share/doc/hs-${DISTNAME}/html/doc-index-D.html
@@ -89,6 +90,7 @@ share/doc/hs-${DISTNAME}/html/doc-index-O.html
 share/doc/hs-${DISTNAME}/html/doc-index-P.html
 share/doc/hs-${DISTNAME}/html/doc-index-R.html
 share/doc/hs-${DISTNAME}/html/doc-index-U.html
+share/doc/hs-${DISTNAME}/html/doc-index-W.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
