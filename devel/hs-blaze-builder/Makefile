@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 10:50:06 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/07/18 22:07:18 kili Exp $
 
 COMMENT=		efficient construction of bytestrings
 
-DISTNAME=		blaze-builder-0.2.1.4
-REVISION =		2
+DISTNAME=		blaze-builder-0.3.1.1
 CATEGORIES=		devel
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -15,7 +14,7 @@ MODULES=		lang/ghc
 
 MODGHC_BUILD =          cabal hackage haddock register
 
-RUN_DEPENDS =		STEM->=0.10,<0.12:devel/hs-text
+RUN_DEPENDS =		devel/hs-text>=0.10,<0.13
 BUILD_DEPENDS = 	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/01/20 18:00:16 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/07/18 22:07:18 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Blaze/
 lib/ghc/${DISTNAME}/Blaze/ByteString/
@@ -52,6 +52,22 @@ share/doc/hs-${DISTNAME}/html/Blaze-ByteString-Builder-Internal.html
 share/doc/hs-${DISTNAME}/html/Blaze-ByteString-Builder-Word.html
 share/doc/hs-${DISTNAME}/html/Blaze-ByteString-Builder.html
 share/doc/hs-${DISTNAME}/html/blaze-builder.haddock
+share/doc/hs-${DISTNAME}/html/doc-index-A.html
+share/doc/hs-${DISTNAME}/html/doc-index-All.html
+share/doc/hs-${DISTNAME}/html/doc-index-B.html
+share/doc/hs-${DISTNAME}/html/doc-index-C.html
+share/doc/hs-${DISTNAME}/html/doc-index-D.html
+share/doc/hs-${DISTNAME}/html/doc-index-E.html
+share/doc/hs-${DISTNAME}/html/doc-index-F.html
+share/doc/hs-${DISTNAME}/html/doc-index-G.html
+share/doc/hs-${DISTNAME}/html/doc-index-I.html
+share/doc/hs-${DISTNAME}/html/doc-index-N.html
+share/doc/hs-${DISTNAME}/html/doc-index-P.html
+share/doc/hs-${DISTNAME}/html/doc-index-R.html
+share/doc/hs-${DISTNAME}/html/doc-index-S.html
+share/doc/hs-${DISTNAME}/html/doc-index-T.html
+share/doc/hs-${DISTNAME}/html/doc-index-U.html
+share/doc/hs-${DISTNAME}/html/doc-index-W.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
