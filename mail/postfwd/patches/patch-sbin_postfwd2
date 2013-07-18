@@ -1,11 +1,12 @@
-$OpenBSD: patch-sbin_postfwd2,v 1.1 2013/07/17 07:36:06 giovanni Exp $
---- sbin/postfwd2.orig	Tue Jul 16 09:50:25 2013
-+++ sbin/postfwd2	Tue Jul 16 09:51:58 2013
-@@ -3167,6 +3167,7 @@ map { $postfwd_settings{$_}{check} = ($postfwd_setting
- # terminate at -k or --kill
- if (defined $options{'term'}) {
- 	kill "TERM", get_master_pid();
-+        unlink $postfwd_settings{master}{pid_file} if (-T $postfwd_settings{master}{pid_file});
- 	exit (0);
- # reload at --reload
- } elsif (defined $options{'hup'}) {
+$OpenBSD: patch-sbin_postfwd2,v 1.2 2013/07/18 08:48:01 giovanni Exp $
+--- sbin/postfwd2.orig	Thu Apr 18 22:31:27 2013
++++ sbin/postfwd2	Wed Jul 17 14:37:37 2013
+@@ -61,7 +61,7 @@ our %postfwd_settings = (
+ 		umask		 => "0177",
+ 	},
+ 	master => {
+-		pid_file         => "/var/tmp/$NAME-master.pid",
++		pid_file         => "/var/run/$NAME-master.pid",
+ 		watchdog	 => 60,
+ 		failures	 => 7,
+ 		respawn		 => 4,
