@@ -1,12 +1,12 @@
-$OpenBSD: patch-Network_Socket_hsc,v 1.3 2012/12/02 20:27:19 kili Exp $
+$OpenBSD: patch-Network_Socket_hsc,v 1.4 2013/07/18 21:48:49 kili Exp $
 
 ucred is sockpeercred on OpenBSD
 
 don't throw an error when attempting to setsockopt IPV6_V6ONLY
 
---- Network/Socket.hsc.orig	Thu Aug 16 18:06:46 2012
-+++ Network/Socket.hsc	Wed Nov 21 22:08:08 2012
-@@ -80,7 +80,7 @@ module Network.Socket
+--- Network/Socket.hsc.orig	Fri Feb 22 01:03:06 2013
++++ Network/Socket.hsc	Mon Jul  8 15:32:32 2013
+@@ -82,7 +82,7 @@ module Network.Socket
      , getPeerName
      , getSocketName
  
@@ -15,7 +15,7 @@ don't throw an error when attempting to setsockopt IPV6_V6ONLY
      -- get the credentials of our domain socket peer.
      , getPeerCred
  #endif
-@@ -424,9 +424,10 @@ socket family stype protocol = do
+@@ -327,9 +327,10 @@ socket family stype protocol = do
      socket_status <- newMVar NotConnected
      let sock = MkSocket fd family stype protocol socket_status
  #if HAVE_DECL_IPV6_V6ONLY
@@ -26,9 +26,9 @@ don't throw an error when attempting to setsockopt IPV6_V6ONLY
 +    -- so trying to change it might throw an error. It's also not
 +    -- supported on OpenBSD.
      when (family == AF_INET6) $
-             catch (setSocketOption sock IPv6Only 0) $ const $ return ()
+             E.catch (setSocketOption sock IPv6Only 0) $ (\(_ :: E.IOException) -> return ())
  # else
-@@ -1057,22 +1058,22 @@ getSocketOption (MkSocket s _ _ _ _) so = do
+@@ -983,22 +984,22 @@ getSocketOption (MkSocket s _ _ _ _) so = do
         fromIntegral `liftM` peek ptr_v
  
  
@@ -42,10 +42,10 @@ don't throw an error when attempting to setsockopt IPV6_V6ONLY
    let fd = fdSocket sock
 -  let sz = (fromIntegral (#const sizeof(struct ucred)))
 +  let sz = (fromIntegral (#const sizeof(struct sockpeercred)))
-   with sz $ \ ptr_cr -> 
+   with sz $ \ ptr_cr ->
     alloca       $ \ ptr_sz -> do
       poke ptr_sz sz
-      throwErrnoIfMinus1 "getPeerCred" $
+      throwSocketErrorIfMinus1Retry "getPeerCred" $
         c_getsockopt fd (#const SOL_SOCKET) (#const SO_PEERCRED) ptr_cr ptr_sz
 -     pid <- (#peek struct ucred, pid) ptr_cr
 -     uid <- (#peek struct ucred, uid) ptr_cr

@@ -1,7 +1,7 @@
-$OpenBSD: patch-Network_Socket_ByteString_IOVec_hsc,v 1.1 2012/09/02 20:13:08 kili Exp $
---- Network/Socket/ByteString/IOVec.hsc.orig	Tue Apr 24 05:19:39 2012
-+++ Network/Socket/ByteString/IOVec.hsc	Wed Jul 11 15:44:54 2012
-@@ -7,6 +7,7 @@ import Foreign.C.Types (CChar, CInt, CSize)
+$OpenBSD: patch-Network_Socket_ByteString_IOVec_hsc,v 1.2 2013/07/18 21:48:49 kili Exp $
+--- Network/Socket/ByteString/IOVec.hsc.orig	Fri Feb 22 01:03:06 2013
++++ Network/Socket/ByteString/IOVec.hsc	Mon Jul  8 15:27:10 2013
+@@ -9,6 +9,7 @@ import Foreign.C.Types (CChar, CInt, CSize)
  import Foreign.Ptr (Ptr)
  import Foreign.Storable (Storable(..))
  

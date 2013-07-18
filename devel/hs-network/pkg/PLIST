@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/01/20 18:02:53 kili Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/07/18 21:48:49 kili Exp $
 @conflict hs-network-bytestring-*
 @pkgpath net/hs-network-bytestring
 lib/ghc/${DISTNAME}/
@@ -24,6 +24,8 @@ lib/ghc/${DISTNAME}/Network/Socket/ByteString/MsgHdr.hi
 lib/ghc/${DISTNAME}/Network/Socket/ByteString/MsgHdr.p_hi
 lib/ghc/${DISTNAME}/Network/Socket/Internal.hi
 lib/ghc/${DISTNAME}/Network/Socket/Internal.p_hi
+lib/ghc/${DISTNAME}/Network/Socket/Types.hi
+lib/ghc/${DISTNAME}/Network/Socket/Types.p_hi
 lib/ghc/${DISTNAME}/Network/URI.hi
 lib/ghc/${DISTNAME}/Network/URI.p_hi
 lib/ghc/${DISTNAME}/include/
