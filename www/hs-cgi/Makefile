@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:44:42 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/07/18 21:54:21 kili Exp $
 
 COMMENT =		CGI library for Haskell
 
-DISTNAME =		cgi-3001.1.7.4
-REVISION =		4
+DISTNAME =		cgi-3001.1.7.5
 CATEGORIES =		www devel
 HOMEPAGE =		http://andersk.mit.edu/haskell/cgi/
 
@@ -17,7 +16,7 @@ MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		devel/hs-mtl \
+RUN_DEPENDS =		devel/hs-mtl>=1.0 \
 			devel/hs-network>=2.0 \
 			devel/hs-parsec>=2.0
 
