@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:07 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/07/18 22:19:24 kili Exp $
 
 COMMENT =		mtl compatible GhcT monad-transformer
 
-DISTNAME =		ghc-mtl-1.0.1.1
-REVISION =		1
+DISTNAME =		ghc-mtl-1.0.1.2
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
