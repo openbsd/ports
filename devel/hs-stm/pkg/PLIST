@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/01/20 18:03:29 kili Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/07/18 21:51:39 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Control/
 lib/ghc/${DISTNAME}/Control/Concurrent/
@@ -15,6 +15,8 @@ lib/ghc/${DISTNAME}/Control/Concurrent/STM/TMVar.hi
 lib/ghc/${DISTNAME}/Control/Concurrent/STM/TMVar.p_hi
 lib/ghc/${DISTNAME}/Control/Concurrent/STM/TQueue.hi
 lib/ghc/${DISTNAME}/Control/Concurrent/STM/TQueue.p_hi
+lib/ghc/${DISTNAME}/Control/Concurrent/STM/TSem.hi
+lib/ghc/${DISTNAME}/Control/Concurrent/STM/TSem.p_hi
 lib/ghc/${DISTNAME}/Control/Concurrent/STM/TVar.hi
 lib/ghc/${DISTNAME}/Control/Concurrent/STM/TVar.p_hi
 lib/ghc/${DISTNAME}/Control/Monad/
@@ -35,6 +37,7 @@ share/doc/hs-${DISTNAME}/html/Control-Concurrent-STM-TBQueue.html
 share/doc/hs-${DISTNAME}/html/Control-Concurrent-STM-TChan.html
 share/doc/hs-${DISTNAME}/html/Control-Concurrent-STM-TMVar.html
 share/doc/hs-${DISTNAME}/html/Control-Concurrent-STM-TQueue.html
+share/doc/hs-${DISTNAME}/html/Control-Concurrent-STM-TSem.html
 share/doc/hs-${DISTNAME}/html/Control-Concurrent-STM-TVar.html
 share/doc/hs-${DISTNAME}/html/Control-Concurrent-STM.html
 share/doc/hs-${DISTNAME}/html/Control-Monad-STM.html
@@ -49,6 +52,7 @@ share/doc/hs-${DISTNAME}/html/mini_Control-Concurrent-STM-TBQueue.html
 share/doc/hs-${DISTNAME}/html/mini_Control-Concurrent-STM-TChan.html
 share/doc/hs-${DISTNAME}/html/mini_Control-Concurrent-STM-TMVar.html
 share/doc/hs-${DISTNAME}/html/mini_Control-Concurrent-STM-TQueue.html
+share/doc/hs-${DISTNAME}/html/mini_Control-Concurrent-STM-TSem.html
 share/doc/hs-${DISTNAME}/html/mini_Control-Concurrent-STM-TVar.html
 share/doc/hs-${DISTNAME}/html/mini_Control-Concurrent-STM.html
 share/doc/hs-${DISTNAME}/html/mini_Control-Monad-STM.html
