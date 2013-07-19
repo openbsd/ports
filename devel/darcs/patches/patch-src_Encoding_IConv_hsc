@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_Encoding_IConv_hsc,v 1.1 2013/07/19 07:09:00 kili Exp $
+
+Fix build with ghc-7.6.
+
+--- src/Encoding/IConv.hsc.orig	Wed Feb  6 07:07:21 2013
++++ src/Encoding/IConv.hsc	Sun Jul 14 13:05:37 2013
+@@ -37,7 +37,7 @@ import Foreign
+     , with, maybeWith
+     , ForeignPtr, withForeignPtr, newForeignPtr
+     , FunPtr
+-    , Int32, Word8
++    , Int32, Int64, Word8
+     )
+ import Control.Exception ( bracket )
+ import Data.ByteString ( ByteString, useAsCStringLen, append )
