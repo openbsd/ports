@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/11/26 09:52:13 jasper Exp $
-bin/json2lua.lua
-bin/lua2json.lua
+@comment $OpenBSD: PLIST,v 1.2 2013/07/19 12:02:48 jasper Exp $
+bin/json2lua.lua${MODLUA_VERSION}
+bin/lua2json.lua${MODLUA_VERSION}
 lib/lua/${MODLUA_VERSION}/cjson.so
 share/lua/${MODLUA_VERSION}/cjson/
 share/lua/${MODLUA_VERSION}/cjson/util.lua
