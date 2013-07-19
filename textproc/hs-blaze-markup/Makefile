@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:42:41 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/07/19 06:50:43 kili Exp $
 
 COMMENT=		fast markup combinator library
 
-DISTNAME=		blaze-markup-0.5.1.0
-REVISION=		2
+DISTNAME=		blaze-markup-0.5.1.5
 CATEGORIES=		textproc
 
 # BSD3
