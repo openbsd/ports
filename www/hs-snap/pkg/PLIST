@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/01/20 18:06:55 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/07/19 07:00:37 kili Exp $
 @bin bin/snap
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Control/
@@ -42,8 +42,17 @@ lib/ghc/${DISTNAME}/Snap/Snaplet/Auth/Types.hi
 lib/ghc/${DISTNAME}/Snap/Snaplet/Auth/Types.p_hi
 lib/ghc/${DISTNAME}/Snap/Snaplet/Config.hi
 lib/ghc/${DISTNAME}/Snap/Snaplet/Config.p_hi
+lib/ghc/${DISTNAME}/Snap/Snaplet/Heist/
 lib/ghc/${DISTNAME}/Snap/Snaplet/Heist.hi
 lib/ghc/${DISTNAME}/Snap/Snaplet/Heist.p_hi
+lib/ghc/${DISTNAME}/Snap/Snaplet/Heist/Compiled.hi
+lib/ghc/${DISTNAME}/Snap/Snaplet/Heist/Compiled.p_hi
+lib/ghc/${DISTNAME}/Snap/Snaplet/Heist/Generic.hi
+lib/ghc/${DISTNAME}/Snap/Snaplet/Heist/Generic.p_hi
+lib/ghc/${DISTNAME}/Snap/Snaplet/Heist/Internal.hi
+lib/ghc/${DISTNAME}/Snap/Snaplet/Heist/Internal.p_hi
+lib/ghc/${DISTNAME}/Snap/Snaplet/Heist/Interpreted.hi
+lib/ghc/${DISTNAME}/Snap/Snaplet/Heist/Interpreted.p_hi
 lib/ghc/${DISTNAME}/Snap/Snaplet/HeistNoClass.hi
 lib/ghc/${DISTNAME}/Snap/Snaplet/HeistNoClass.p_hi
 lib/ghc/${DISTNAME}/Snap/Snaplet/Internal/
@@ -69,6 +78,8 @@ lib/ghc/${DISTNAME}/Snap/Snaplet/Session/SecureCookie.hi
 lib/ghc/${DISTNAME}/Snap/Snaplet/Session/SecureCookie.p_hi
 lib/ghc/${DISTNAME}/Snap/Snaplet/Session/SessionManager.hi
 lib/ghc/${DISTNAME}/Snap/Snaplet/Session/SessionManager.p_hi
+lib/ghc/${DISTNAME}/Snap/Snaplet/Test.hi
+lib/ghc/${DISTNAME}/Snap/Snaplet/Test.p_hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
@@ -78,12 +89,19 @@ share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/Snap-Snaplet-Auth-Backends-JsonFile.html
 share/doc/hs-${DISTNAME}/html/Snap-Snaplet-Auth.html
 share/doc/hs-${DISTNAME}/html/Snap-Snaplet-Config.html
+share/doc/hs-${DISTNAME}/html/Snap-Snaplet-Heist-Compiled.html
+share/doc/hs-${DISTNAME}/html/Snap-Snaplet-Heist-Generic.html
+share/doc/hs-${DISTNAME}/html/Snap-Snaplet-Heist-Interpreted.html
 share/doc/hs-${DISTNAME}/html/Snap-Snaplet-Heist.html
+share/doc/hs-${DISTNAME}/html/Snap-Snaplet-HeistNoClass.html
 share/doc/hs-${DISTNAME}/html/Snap-Snaplet-Session-Backends-CookieSession.html
 share/doc/hs-${DISTNAME}/html/Snap-Snaplet-Session-Common.html
+share/doc/hs-${DISTNAME}/html/Snap-Snaplet-Session-SessionManager.html
 share/doc/hs-${DISTNAME}/html/Snap-Snaplet-Session.html
+share/doc/hs-${DISTNAME}/html/Snap-Snaplet-Test.html
 share/doc/hs-${DISTNAME}/html/Snap-Snaplet.html
 share/doc/hs-${DISTNAME}/html/Snap.html
+share/doc/hs-${DISTNAME}/html/doc-index-35.html
 share/doc/hs-${DISTNAME}/html/doc-index-42.html
 share/doc/hs-${DISTNAME}/html/doc-index-60.html
 share/doc/hs-${DISTNAME}/html/doc-index-61.html
@@ -122,10 +140,16 @@ share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Snaplet-Auth-Backends-JsonFile.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Snaplet-Auth.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Snaplet-Config.html
+share/doc/hs-${DISTNAME}/html/mini_Snap-Snaplet-Heist-Compiled.html
+share/doc/hs-${DISTNAME}/html/mini_Snap-Snaplet-Heist-Generic.html
+share/doc/hs-${DISTNAME}/html/mini_Snap-Snaplet-Heist-Interpreted.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Snaplet-Heist.html
+share/doc/hs-${DISTNAME}/html/mini_Snap-Snaplet-HeistNoClass.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Snaplet-Session-Backends-CookieSession.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Snaplet-Session-Common.html
+share/doc/hs-${DISTNAME}/html/mini_Snap-Snaplet-Session-SessionManager.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Snaplet-Session.html
+share/doc/hs-${DISTNAME}/html/mini_Snap-Snaplet-Test.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Snaplet.html
 share/doc/hs-${DISTNAME}/html/mini_Snap.html
 share/doc/hs-${DISTNAME}/html/minus.gif

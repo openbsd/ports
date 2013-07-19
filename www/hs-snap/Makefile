@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2013/05/04 21:17:17 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2013/07/19 07:00:37 kili Exp $
 
 COMMENT =		Snap project starter and glue code library
 
-DISTNAME =		snap-0.9.2.2
-REVISION =		3
+DISTNAME =		snap-0.12.0
 CATEGORIES =		www
 HOMEPAGE =		http://snapframework.com/
 
@@ -26,28 +25,31 @@ WANTLIB +=		c m pthread util z
 RUN_DEPENDS +=		devel/hs-MonadCatchIO-transformers>=0.2,<0.4 \
 			devel/hs-aeson>=0.6,<0.7 \
 			devel/hs-cereal>=0.3,<0.4 \
+			devel/hs-comonad>=1.1,<3.1 \
 			devel/hs-configurator>=0.1,<0.3 \
-			devel/hs-data-lens>=2.0.1,<2.11 \
-			devel/hs-data-lens-template>=2.1,<2.2 \
-			devel/hs-directory-tree>=0.10,<0.12 \
+			devel/hs-directory-tree>=0.11,<0.12 \
+			devel/hs-dlist>=0.5,<0.6 \
+			devel/hs-errors>=1.4,<1.5 \
 			devel/hs-hashable>=1.1,<1.2 \
-			devel/hs-logict>=0.4.2,<0.6 \
+			devel/hs-lens>=3.7.6,<3.10 \
+			devel/hs-logict>=0.4.2,<0.7 \
 			devel/hs-mtl>2.0,<2.2 \
+			devel/hs-regex-posix>=0.95,<1 \
 			devel/hs-stm>=2.2,<2.5 \
-			devel/hs-syb>=0.1,<0.4 \
+			devel/hs-syb>=0.1,<0.5 \
 			devel/hs-text>=0.11,<0.12 \
 			devel/hs-transformers>=0.2,<0.4 \
 			devel/hs-unordered-containers>=0.1.4,<0.3 \
 			devel/hs-vector>=0.7.1,<0.11 \
 			devel/hs-vector-algorithms>=0.4,<0.6 \
 			security/hs-mwc-random>=0.8,<0.13 \
-			security/hs-pwstore-fast>=2.3,<2.4 \
+			security/hs-pwstore-fast>=2.2,<2.4 \
 			textproc/hs-attoparsec>=0.10,<0.11 \
-			textproc/hs-heist>=0.7,<0.9 \
+			textproc/hs-heist>=0.12,<0.13 \
 			textproc/hs-xmlhtml>=0.1,<0.3 \
-			www/hs-clientsession>=0.8,<0.9 \
-			www/hs-snap-core>=0.9.2,<0.10 \
-			www/hs-snap-server>=0.9.2,<0.10
+			www/hs-clientsession>=0.8,<0.10 \
+			www/hs-snap-core>=0.9,<0.11 \
+			www/hs-snap-server>=0.9,<0.11
 
 # Those are NOT mentioned in snap.cabal, but they are required by
 # default snap projects created with "snap init", so it's probably a
