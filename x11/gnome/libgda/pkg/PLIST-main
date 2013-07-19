@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.30 2013/03/28 20:03:29 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.31 2013/07/19 11:59:53 jasper Exp $
 @conflict libgda-db4-*
 @conflict libgda-ldap-<4.2.8p0v0
 @conflict libgda-ui-<5.1.1
@@ -500,7 +500,6 @@ share/libgda-${GDA_MAJOR}/php/gda-setup.php
 share/libgda-${GDA_MAJOR}/php/gda-tester.php
 share/libgda-${GDA_MAJOR}/php/gda-utils.php
 share/libgda-${GDA_MAJOR}/php/gda-worker.php
-share/libgda-${GDA_MAJOR}/server_operation.glade
 share/libgda-${GDA_MAJOR}/sqlcipher_specs_add_column.xml
 share/libgda-${GDA_MAJOR}/sqlcipher_specs_auth.xml
 share/libgda-${GDA_MAJOR}/sqlcipher_specs_create_db.xml
