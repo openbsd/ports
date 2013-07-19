@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:06 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/07/19 06:51:54 kili Exp $
 
 COMMENT =		fast rendering of common datatypes
 
-DISTNAME =		blaze-textual-0.2.0.6
-REVISION =		1
+DISTNAME =		blaze-textual-0.2.0.8
 CATEGORIES =		devel
 
 # BSD3
