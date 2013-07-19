@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 10:50:07 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/07/19 07:05:01 kili Exp $
 
 COMMENT =		Haskell API search engine
 
-DISTNAME =		hoogle-4.2.11
-REVISION =		3
+DISTNAME =		hoogle-4.2.16
 CATEGORIES =		devel
 HOMEPAGE =		http://www.haskell.org/hoogle/
 
@@ -19,23 +18,20 @@ MODGHC_BUILD =		cabal hackage haddock register
 WANTLIB =		c m pthread util
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		devel/hs-case-insensitive>=0.2,<0.5 \
-			devel/hs-cmdargs>=0.7,<0.10 \
-			devel/hs-conduit>=0.2,<0.5 \
-			devel/hs-safe \
-			devel/hs-binary \
+RUN_DEPENDS =		devel/hs-blaze-builder>=0.2 \
+			devel/hs-case-insensitive>=0.2 \
+			devel/hs-cmdargs>=0.7 \
+			devel/hs-conduit>=0.2 \
 			devel/hs-parsec>=2.1 \
 			devel/hs-random \
-			devel/hs-transformers>=0.2,<0.4 \
-			devel/hs-uniplate>=1.6,<1.7 \
+			devel/hs-safe \
+			devel/hs-transformers>=0.2 \
+			devel/hs-uniplate>=1.6 \
 			lang/hs-haskell-src-exts>=1.12,<1.14 \
-			devel/hs-blaze-builder>=0.2,<0.4 \
-			devel/hs-enumerator>=0.4,<0.5 \
-			textproc/hs-tagsoup>=0.11,<0.13 \
-			www/hs-http-types>=0.6,<0.7 \
-			www/hs-wai>=1.1,<1.3 \
-			www/hs-warp>=1.1,<1.3 \
-			net/wget
+			textproc/hs-tagsoup>=0.11 \
+			www/hs-http-types>=0.7 \
+			www/hs-wai>=1.1 \
+			www/hs-warp>=1.1
 
 HOOGLEDB =		/var/db/hoogle
 SUBST_VARS =		HOOGLEDB

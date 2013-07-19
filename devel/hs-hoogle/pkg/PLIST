@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/01/20 18:01:51 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/07/19 07:05:01 kili Exp $
 @newgroup _hoogle:689
 @newuser _hoogle:689:_hoogle:daemon:Hoogle account:/nonexistent:/sbin/nologin
 @bin bin/hoogle
@@ -137,8 +137,8 @@ share/hs-${DISTNAME}/resources/favicon64.png
 share/hs-${DISTNAME}/resources/hoogle.css
 share/hs-${DISTNAME}/resources/hoogle.js
 share/hs-${DISTNAME}/resources/hoogle.png
-share/hs-${DISTNAME}/resources/jquery-1.4.2.js
-share/hs-${DISTNAME}/resources/jquery.cookie.js
+share/hs-${DISTNAME}/resources/jquery-cookie.js
+share/hs-${DISTNAME}/resources/jquery.js
 share/hs-${DISTNAME}/resources/less_blue.png
 share/hs-${DISTNAME}/resources/less_gray.png
 share/hs-${DISTNAME}/resources/less_small.png
