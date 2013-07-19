@@ -1,5 +1,2 @@
-MD5 (ghc/comonad-transformers-2.1.2.tar.gz) = Cbr5y7QaHTHmxdwXR6Tccw==
-RMD160 (ghc/comonad-transformers-2.1.2.tar.gz) = W8DPp0dU552uGnPripbW53e2Kyg=
-SHA1 (ghc/comonad-transformers-2.1.2.tar.gz) = IgnwIka3pIZxVYo0rkpbpspOE4E=
-SHA256 (ghc/comonad-transformers-2.1.2.tar.gz) = Om5WhJC6qCESNuKkOYXqKk6VJ6dawuTQDS93bF3UF3o=
-SIZE (ghc/comonad-transformers-2.1.2.tar.gz) = 6235
+SHA256 (ghc/comonad-transformers-3.0.3.tar.gz) = xjwD07cI2b9vscCpi7u0nImoZW/nwOPS1uiDRLXqIeA=
+SIZE (ghc/comonad-transformers-3.0.3.tar.gz) = 8482
