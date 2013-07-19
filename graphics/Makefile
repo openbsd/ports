@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.350 2013/07/17 16:54:52 bcallah Exp $
+# $OpenBSD: Makefile,v 1.351 2013/07/19 07:16:38 kili Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -88,8 +88,10 @@
      SUBDIR += gtkimageview
      SUBDIR += gwenview
      SUBDIR += gwenview-i18n
+     SUBDIR += hs-GLURaw
      SUBDIR += hs-GLUT
      SUBDIR += hs-OpenGL
+     SUBDIR += hs-OpenGLRaw
      SUBDIR += hs-cairo
      SUBDIR += hugin
      SUBDIR += ilmbase
