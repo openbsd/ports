@@ -1,25 +1,25 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:31 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/07/19 15:18:09 stu Exp $
 
-COMMENT =		Tk Standard Library
+COMMENT =	Tk Standard Library
 
-DISTNAME =		tklib-0.5
-REVISION =		1
-CATEGORIES=		devel x11/tk
-HOMEPAGE =		http://sourceforge.net/projects/tcllib/
-MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
+DISTNAME =	tklib-0.5
+REVISION =	1
+CATEGORIES =	devel x11/tk
+HOMEPAGE =	http://sourceforge.net/projects/tcllib/
+MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD style
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcllib/}
-MODULES =		x11/tk
-BUILD_DEPENDS =		devel/tcllib
-RUN_DEPENDS =		devel/tcllib ${MODTK_RUN_DEPENDS}
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=tcllib/}
+MODULES =	x11/tk
+BUILD_DEPENDS =	devel/tcllib
+RUN_DEPENDS =	devel/tcllib ${MODTK_RUN_DEPENDS}
 TEST_DEPENDS =	devel/tcllib ${MODTK_BUILD_DEPENDS}
-TEST_IS_INTERACTIVE =X11
-USE_GROFF =		Yes
-NO_BUILD =		Yes
-PKG_ARCH =		*
+USE_GROFF =	Yes
+TEST_IS_INTERACTIVE =	X11
+NO_BUILD =	Yes
+PKG_ARCH =	*
 
 SCRIPTS_TCLSH = \
 	canvas/city.tcl \
