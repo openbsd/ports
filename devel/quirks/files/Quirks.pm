@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.93 2013/07/09 08:56:26 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.94 2013/07/19 07:11:34 kili Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -315,7 +315,8 @@ my $stem_extensions = {
 	'coxpcall' => 'lua-coxpcall',
 	'lpeg' => 'lua-lpeg',
 	'ruby-facter' => 'facter',
-	'ruby-puppet' => 'puppet'
+	'ruby-puppet' => 'puppet',
+	'hs-monads-fd' => 'hs-mtl'
 };
 
 # ->is_base_system($handle, $state):
