@@ -1,5 +1,2 @@
-MD5 (ghc/conduit-0.4.2.tar.gz) = uBSR2z8TlyafEyVhpnpvWA==
-RMD160 (ghc/conduit-0.4.2.tar.gz) = NcscwAm/hsyKmUEHdQrmDcRXL4I=
-SHA1 (ghc/conduit-0.4.2.tar.gz) = 0H/XPWPG6/RfjsCCFSWiN6D7jk8=
-SHA256 (ghc/conduit-0.4.2.tar.gz) = 4HPM+ThHNF3YF33nqstDoCuzMYFr4d/SCKv7hx5AGu0=
-SIZE (ghc/conduit-0.4.2.tar.gz) = 25409
+SHA256 (ghc/conduit-1.0.7.1.tar.gz) = XsYIowUOGNWmo+9ThBGbIEPKlaPp5pASpE9DbgObAMk=
+SIZE (ghc/conduit-1.0.7.1.tar.gz) = 32228
