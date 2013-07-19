@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.26 2013/06/25 07:28:54 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.27 2013/07/19 07:03:42 kili Exp $
+
+BROKEN =		fails to build with ghc-7.6
 
 COMMENT =		command line podcast aggregator
 
