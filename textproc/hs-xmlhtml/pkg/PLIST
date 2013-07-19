@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/01/20 18:06:28 kili Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/07/19 06:55:34 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Text/
@@ -35,6 +35,7 @@ share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/Text-Blaze-Renderer-XmlHtml.html
 share/doc/hs-${DISTNAME}/html/Text-XmlHtml-Cursor.html
+share/doc/hs-${DISTNAME}/html/Text-XmlHtml-HTML-Meta.html
 share/doc/hs-${DISTNAME}/html/Text-XmlHtml.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
@@ -44,6 +45,7 @@ share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/mini_Text-Blaze-Renderer-XmlHtml.html
 share/doc/hs-${DISTNAME}/html/mini_Text-XmlHtml-Cursor.html
+share/doc/hs-${DISTNAME}/html/mini_Text-XmlHtml-HTML-Meta.html
 share/doc/hs-${DISTNAME}/html/mini_Text-XmlHtml.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
