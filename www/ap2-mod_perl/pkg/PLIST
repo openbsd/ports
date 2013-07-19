@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/03/22 21:49:43 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/07/19 18:01:53 jasper Exp $
 bin/mp2bug
 include/apache2/mod_perl.h
 include/apache2/modperl_apache_compat.h
@@ -80,7 +80,6 @@ ${P5ARCH}/APR/UUID.pm
 ${P5ARCH}/APR/Util.pm
 ${P5ARCH}/APR/XSLoader.pm
 ${P5ARCH}/Apache/
-${P5ARCH}/Apache/Reload.pm
 ${P5ARCH}/Apache/SizeLimit/
 ${P5ARCH}/Apache/SizeLimit.pm
 ${P5ARCH}/Apache/SizeLimit/Core.pm
@@ -368,7 +367,6 @@ ${P5ARCH}/mod_perl2.pm
 @man man/man3p/Apache2::Util.3p
 @man man/man3p/Apache2::compat.3p
 @man man/man3p/Apache2::porting.3p
-@man man/man3p/Apache::Reload.3p
 @man man/man3p/Apache::SizeLimit.3p
 @man man/man3p/Apache::SizeLimit::Core.3p
 @man man/man3p/Bundle::Apache2.3p

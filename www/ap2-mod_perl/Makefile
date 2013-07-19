@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/22 21:49:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2013/07/19 18:01:53 jasper Exp $
 
 COMMENT=	module that embeds a Perl interpreter into Apache2
 
 DISTNAME=	mod_perl-2.0.7
 PKGNAME=	ap2-${DISTNAME}
+REVISION=	0
 CATEGORIES=	www net
 
 WANTLIB=	c m perl util db expat apr-1 aprutil-1
@@ -29,6 +30,6 @@ PORTHOME=		${WRKDIR}
 
 # avoid conflicts
 post-extract:
-	@rm -rf ${WRKSRC}/Apache-Test
+	rm -r ${WRKSRC}/Apache-Test ${WRKSRC}/Apache-Reload/lib/Apache
 
 .include <bsd.port.mk>
