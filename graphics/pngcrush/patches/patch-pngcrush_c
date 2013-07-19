@@ -1,7 +1,7 @@
-$OpenBSD: patch-pngcrush_c,v 1.1 2013/07/15 04:27:40 espie Exp $
---- pngcrush.c.orig	Mon Jul 15 06:24:01 2013
-+++ pngcrush.c	Mon Jul 15 06:25:20 2013
-@@ -6133,6 +6133,7 @@ int main(int argc, char *argv[])
+$OpenBSD: patch-pngcrush_c,v 1.2 2013/07/19 08:39:10 benoit Exp $
+--- pngcrush.c.orig	Wed Jul 17 04:08:58 2013
++++ pngcrush.c	Fri Jul 19 10:04:51 2013
+@@ -6162,6 +6162,7 @@ int main(int argc, char *argv[])
                           * a png_uint_32, by limiting the width and height used
                           * to 15 bits.
                           */
@@ -9,7 +9,7 @@ $OpenBSD: patch-pngcrush_c,v 1.1 2013/07/15 04:27:40 espie Exp $
                          png_uint_32 rowbytes;
                          png_uint_32 h = height;
  
-@@ -6188,6 +6189,7 @@ int main(int argc, char *argv[])
+@@ -6217,6 +6218,7 @@ int main(int argc, char *argv[])
                          else
                             max_bytes = 0x3fffffffU;
  
