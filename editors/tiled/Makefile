@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/07/08 22:10:57 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2013/07/19 03:31:14 bentley Exp $
 
 COMMENT =		tile map editor
 
@@ -38,5 +38,8 @@ do-test:
 	cd ${WRKSRC}/tests && \
 		./staggeredrenderer/staggeredrenderer && \
 		./mapreader/mapreader
+
+# XXX qmake picks up Cocoa/Cocoa.h even though it's apparently unused
+DPB_PROPERTIES =	nojunk
 
 .include <bsd.port.mk>
