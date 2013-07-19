@@ -1,0 +1,15 @@
+$OpenBSD: patch-test-framework-quickcheck2_cabal,v 1.1 2013/07/19 07:02:08 kili Exp $
+
+Works with newer QuickCheck.
+
+--- test-framework-quickcheck2.cabal.orig	Sat Jul 13 20:55:50 2013
++++ test-framework-quickcheck2.cabal	Sat Jul 13 20:56:06 2013
+@@ -22,7 +22,7 @@ Flag Base3
+ Library
+         Exposed-Modules:        Test.Framework.Providers.QuickCheck2
+ 
+-        Build-Depends:          test-framework >= 0.6, QuickCheck >= 2.4 && < 2.6, extensible-exceptions >= 0.1.1 && < 0.2.0
++        Build-Depends:          test-framework >= 0.6, QuickCheck >= 2.4, extensible-exceptions >= 0.1.1 && < 0.2.0
+         if flag(base3)
+                 Build-Depends:          base >= 3 && < 4, random >= 1
+         else
