@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:07 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/07/19 06:50:17 kili Exp $
 
 COMMENT =		Runtime Haskell interpreter (GHC API wrapper)
 
-DISTNAME =		hint-0.3.3.4
-REVISION =		1
+DISTNAME =		hint-0.3.3.6
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -14,8 +13,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/ghc
 
 RUN_DEPENDS +=		devel/hs-MonadCatchIO-mtl>=0.3 \
-			devel/hs-ghc-paths \
+			devel/hs-extensible-exceptions \
 			devel/hs-ghc-mtl>=1.0.1.0,<1.1.0.0 \
+			devel/hs-ghc-paths \
 			devel/hs-mtl \
 			devel/hs-random \
 			lang/hs-haskell-src
