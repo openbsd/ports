@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/12/24 21:45:29 jakemsr Exp $
-@bin bin/say
+@comment $OpenBSD: PLIST,v 1.5 2013/07/19 11:57:54 jasper Exp $
+@bin bin/rsay

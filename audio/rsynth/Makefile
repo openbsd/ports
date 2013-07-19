@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2013/03/10 22:55:05 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2013/07/19 11:57:54 jasper Exp $
 
 COMMENT=	speech synthesizer
 DISTNAME=	rsynth-2.0
-REVISION=	1
+REVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	ftp://svr-ftp.eng.cam.ac.uk/pub/comp.speech/synthesis/
 
@@ -24,5 +24,8 @@ SEPARATE_BUILD=	Yes
 
 pre-configure:
 	@cp ${FILESDIR}/openbsdplay.c ${WRKSRC}/config/openbsdplay.c
+
+post-install:
+	mv ${PREFIX}/bin/say ${PREFIX}/bin/rsay
 
 .include <bsd.port.mk>
