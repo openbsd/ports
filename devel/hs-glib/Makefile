@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 10:50:07 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/07/19 06:49:05 kili Exp $
 
 COMMENT =		Haskell bindings to glib
 
-DISTNAME =		glib-0.12.3.1
-REVISION =		1
+DISTNAME =		glib-0.12.4
 CATEGORIES =		devel
 
 HOMEPAGE =		http://www.haskell.org/gtk2hs/
@@ -18,6 +17,6 @@ MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register
 
 BUILD_DEPENDS =		devel/glib2 \
-			devel/gtk2hs-buildtools
+			devel/gtk2hs-buildtools>=0.12.4
 
 .include <bsd.port.mk>
