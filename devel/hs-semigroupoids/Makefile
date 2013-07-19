@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:08 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/07/19 06:57:05 kili Exp $
 
 COMMENT =		Haskell 98 semigroupoids
 
-DISTNAME =		semigroupoids-1.3.4
-REVISION =		1
+DISTNAME =		semigroupoids-3.0.3
 CATEGORIES =		devel
 
 # BSD3
@@ -13,9 +12,9 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-RUN_DEPENDS =		devel/hs-comonad>=1.1.1.5,<1.2 \
-			devel/hs-contravariant>=0.2.0.1,<0.3 \
-			devel/hs-semigroups>=0.8.3.1,<0.9 \
+RUN_DEPENDS =		devel/hs-comonad>=3,<4 \
+			devel/hs-contravariant>=0.2.0.1,<1 \
+			devel/hs-semigroups>=0.8.3.1,<1 \
 			devel/hs-transformers>=0.2,<0.4
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
