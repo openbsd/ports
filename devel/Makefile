@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1151 2013/07/17 21:58:38 edd Exp $
+# $OpenBSD: Makefile,v 1.1152 2013/07/19 07:15:04 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -176,6 +176,7 @@
      SUBDIR += hs-MissingH
      SUBDIR += hs-MonadCatchIO-mtl
      SUBDIR += hs-MonadCatchIO-transformers
+     SUBDIR += hs-MonadRandom
      SUBDIR += hs-OneTuple
      SUBDIR += hs-PSQueue
      SUBDIR += hs-QuickAnnotate
@@ -191,7 +192,6 @@
      SUBDIR += hs-base16-bytestring
      SUBDIR += hs-base64-bytestring
      SUBDIR += hs-bimap
-     SUBDIR += hs-binary
      SUBDIR += hs-blaze-builder
      SUBDIR += hs-blaze-builder-conduit
      SUBDIR += hs-blaze-builder-enumerator
@@ -203,6 +203,7 @@
      SUBDIR += hs-cmdlib
      SUBDIR += hs-comonad
      SUBDIR += hs-comonad-transformers
+     SUBDIR += hs-comonads-fd
      SUBDIR += hs-concurrent-extra
      SUBDIR += hs-conduit
      SUBDIR += hs-configurator
@@ -219,6 +220,9 @@
      SUBDIR += hs-distributive
      SUBDIR += hs-dlist
      SUBDIR += hs-enumerator
+     SUBDIR += hs-either
+     SUBDIR += hs-errors
+     SUBDIR += hs-extensible-exceptions
      SUBDIR += hs-failure
      SUBDIR += hs-fgl
      SUBDIR += hs-ghc-mtl
@@ -237,15 +241,18 @@
      SUBDIR += hs-iteratee
      SUBDIR += hs-language-c
      SUBDIR += hs-largeword
+     SUBDIR += hs-lens
      SUBDIR += hs-lifted-base
      SUBDIR += hs-logict
      SUBDIR += hs-mmap
+     SUBDIR += hs-mmorph
      SUBDIR += hs-monad-control
      SUBDIR += hs-monad-par
      SUBDIR += hs-monad-par-extras
      SUBDIR += hs-monads-tf
      SUBDIR += hs-mtl
      SUBDIR += hs-murmur-hash
+     SUBDIR += hs-nats
      SUBDIR += hs-network
      SUBDIR += hs-network-conduit
      SUBDIR += hs-newtype
