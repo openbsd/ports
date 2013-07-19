@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/01/20 18:03:29 kili Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/07/19 06:59:38 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/List/
@@ -7,12 +7,6 @@ lib/ghc/${DISTNAME}/Data/List/NonEmpty.p_hi
 lib/ghc/${DISTNAME}/Data/Semigroup.hi
 lib/ghc/${DISTNAME}/Data/Semigroup.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
-lib/ghc/${DISTNAME}/Numeric/
-lib/ghc/${DISTNAME}/Numeric/Natural/
-lib/ghc/${DISTNAME}/Numeric/Natural.hi
-lib/ghc/${DISTNAME}/Numeric/Natural.p_hi
-lib/ghc/${DISTNAME}/Numeric/Natural/Internal.hi
-lib/ghc/${DISTNAME}/Numeric/Natural/Internal.p_hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
 lib/ghc/${DISTNAME}/register.sh
@@ -21,8 +15,6 @@ share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/Data-List-NonEmpty.html
 share/doc/hs-${DISTNAME}/html/Data-Semigroup.html
-share/doc/hs-${DISTNAME}/html/Numeric-Natural-Internal.html
-share/doc/hs-${DISTNAME}/html/Numeric-Natural.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
@@ -31,8 +23,6 @@ share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/mini_Data-List-NonEmpty.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Semigroup.html
-share/doc/hs-${DISTNAME}/html/mini_Numeric-Natural-Internal.html
-share/doc/hs-${DISTNAME}/html/mini_Numeric-Natural.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
