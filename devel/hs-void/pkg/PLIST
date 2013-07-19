@@ -1,8 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/01/20 18:04:22 kili Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/07/19 07:00:06 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
+lib/ghc/${DISTNAME}/Data/Void/
 lib/ghc/${DISTNAME}/Data/Void.hi
 lib/ghc/${DISTNAME}/Data/Void.p_hi
+lib/ghc/${DISTNAME}/Data/Void/Unsafe.hi
+lib/ghc/${DISTNAME}/Data/Void/Unsafe.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
@@ -10,6 +13,7 @@ lib/ghc/${DISTNAME}/register.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
+share/doc/hs-${DISTNAME}/html/Data-Void-Unsafe.html
 share/doc/hs-${DISTNAME}/html/Data-Void.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
@@ -17,6 +21,7 @@ share/doc/hs-${DISTNAME}/html/haddock-util.js
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
+share/doc/hs-${DISTNAME}/html/mini_Data-Void-Unsafe.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Void.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
