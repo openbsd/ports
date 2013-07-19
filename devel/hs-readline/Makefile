@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 10:50:08 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/07/19 06:47:30 kili Exp $
 
 COMMENT =		interface to the GNU readline library
 
-DISTNAME =		readline-1.0.1.0
-REVISION =		9
+DISTNAME =		readline-1.0.3.0
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
