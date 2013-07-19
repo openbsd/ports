@@ -1,12 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/01/20 18:00:42 kili Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/07/19 06:56:43 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Control/
 lib/ghc/${DISTNAME}/Control/Comonad.hi
 lib/ghc/${DISTNAME}/Control/Comonad.p_hi
-lib/ghc/${DISTNAME}/Data/
-lib/ghc/${DISTNAME}/Data/Functor/
-lib/ghc/${DISTNAME}/Data/Functor/Extend.hi
-lib/ghc/${DISTNAME}/Data/Functor/Extend.p_hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
@@ -15,7 +11,6 @@ share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/Control-Comonad.html
-share/doc/hs-${DISTNAME}/html/Data-Functor-Extend.html
 share/doc/hs-${DISTNAME}/html/comonad.haddock
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
@@ -24,7 +19,6 @@ share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/mini_Control-Comonad.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Functor-Extend.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
