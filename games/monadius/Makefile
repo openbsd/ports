@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:07:39 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/07/19 07:03:04 kili Exp $
 
 COMMENT =		Gradius clone
 
-DISTNAME =		Monadius-0.93
+DISTNAME =		Monadius-0.99
 PKGNAME =		${DISTNAME:L}
-REVISION =		6
 CATEGORIES =		games
 HOMEPAGE =		http://www.geocities.jp/takascience/haskell/monadius_en.html
 
@@ -17,8 +16,8 @@ MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =		cabal hackage nort
 
 LIB_DEPENDS =		graphics/freeglut
-BUILD_DEPENDS =		graphics/hs-GLUT \
-			graphics/hs-OpenGL>=2.0
+BUILD_DEPENDS =		graphics/hs-GLUT>=2.4 \
+			graphics/hs-OpenGL>=2.8
 
 
 post-install:
