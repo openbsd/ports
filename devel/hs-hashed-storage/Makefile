@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 10:50:07 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/07/19 07:04:30 kili Exp $
 
 COMMENT =		hashed file storage support code for Haskell
 
-DISTNAME =		hashed-storage-0.5.9
-REVISION =		1
+DISTNAME =		hashed-storage-0.5.10
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -15,11 +14,11 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-RUN_DEPENDS =		devel/hs-binary \
+RUN_DEPENDS =		archivers/hs-zlib \
 			devel/hs-dataenc \
-			hs-mmap->=0.5,<0.6:devel/hs-mmap \
-			devel/hs-mtl \
-			archivers/hs-zlib
+			devel/hs-extensible-exceptions \
+			devel/hs-mmap>=0.5,<0.6 \
+			devel/hs-mtl
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
 NO_TEST =		Yes
