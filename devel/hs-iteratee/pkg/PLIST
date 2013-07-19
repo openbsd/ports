@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/01/20 18:02:11 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/07/19 06:51:37 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Iteratee/
@@ -34,6 +34,8 @@ lib/ghc/${DISTNAME}/Data/Iteratee/Iteratee.hi
 lib/ghc/${DISTNAME}/Data/Iteratee/Iteratee.p_hi
 lib/ghc/${DISTNAME}/Data/Iteratee/ListLike.hi
 lib/ghc/${DISTNAME}/Data/Iteratee/ListLike.p_hi
+lib/ghc/${DISTNAME}/Data/Iteratee/PTerm.hi
+lib/ghc/${DISTNAME}/Data/Iteratee/PTerm.p_hi
 lib/ghc/${DISTNAME}/Data/Iteratee/Parallel.hi
 lib/ghc/${DISTNAME}/Data/Iteratee/Parallel.p_hi
 lib/ghc/${DISTNAME}/Data/NullPoint.hi
@@ -60,6 +62,7 @@ share/doc/hs-${DISTNAME}/html/Data-Iteratee-IO-Posix.html
 share/doc/hs-${DISTNAME}/html/Data-Iteratee-IO.html
 share/doc/hs-${DISTNAME}/html/Data-Iteratee-Iteratee.html
 share/doc/hs-${DISTNAME}/html/Data-Iteratee-ListLike.html
+share/doc/hs-${DISTNAME}/html/Data-Iteratee-PTerm.html
 share/doc/hs-${DISTNAME}/html/Data-Iteratee-Parallel.html
 share/doc/hs-${DISTNAME}/html/Data-Iteratee.html
 share/doc/hs-${DISTNAME}/html/Data-NullPoint.html
@@ -108,6 +111,7 @@ share/doc/hs-${DISTNAME}/html/mini_Data-Iteratee-IO-Posix.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Iteratee-IO.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Iteratee-Iteratee.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Iteratee-ListLike.html
+share/doc/hs-${DISTNAME}/html/mini_Data-Iteratee-PTerm.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Iteratee-Parallel.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Iteratee.html
 share/doc/hs-${DISTNAME}/html/mini_Data-NullPoint.html
