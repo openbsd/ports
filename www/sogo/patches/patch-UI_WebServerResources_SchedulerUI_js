@@ -1,0 +1,25 @@
+$OpenBSD: patch-UI_WebServerResources_SchedulerUI_js,v 1.1 2013/07/20 17:39:18 sebastia Exp $
+
+fix XSS reported in bugs:          
+http://www.sogo.nu/bugs/view.php?id=2368
+http://www.sogo.nu/bugs/view.php?id=2369
+
+--- UI/WebServerResources/SchedulerUI.js.orig	Thu Jun 27 17:50:25 2013
++++ UI/WebServerResources/SchedulerUI.js	Fri Jul 19 11:17:47 2013
+@@ -748,14 +748,14 @@ function onViewEventCallback(http) {
+             para = $(paras[1]);
+             if (data["calendar"].length) {
+  		// Remove owner email from calendar's name
+-                para.down("SPAN", 1).update(data["calendar"].replace(/ \<.*\>/, ""));
++                para.down("SPAN", 1).update(data["calendar"].escapeHTML());
+                 para.show();
+             } else
+                 para.hide();
+ 
+             para = $(paras[2]);
+             if (data["location"].length) {
+-                para.down("SPAN", 1).update(data["location"]);
++                para.down("SPAN", 1).update(data["location"].escapeHTML());
+                 para.show();
+             } else
+                 para.hide();

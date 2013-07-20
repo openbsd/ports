@@ -1,0 +1,24 @@
+$OpenBSD: patch-SoObjects_Appointments_SOGoAptMailNotification_m,v 1.1 2013/07/20 17:39:17 sebastia Exp $
+
+fix XSS reported in bugs:
+http://www.sogo.nu/bugs/view.php?id=2368
+http://www.sogo.nu/bugs/view.php?id=2369
+
+--- SoObjects/Appointments/SOGoAptMailNotification.m.orig	Thu Jun 27 17:50:25 2013
++++ SoObjects/Appointments/SOGoAptMailNotification.m	Fri Jul 19 11:17:47 2013
+@@ -140,9 +140,14 @@
+   return newEndDate;
+ }
+ 
++- (NSString *) location
++{
++  return [[apt location] stringByEscapingHTMLString];
++}
++
+ - (NSString *) summary
+ {
+-  return [apt summary];
++  return [[apt summary] stringByEscapingHTMLString];
+ }
+ 
+ - (void) setOrganizerName: (NSString *) theString
