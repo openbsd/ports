@@ -1,0 +1,18 @@
+$OpenBSD: patch-dbus_dbus-string_h,v 1.1 2013/07/20 13:10:29 ajacoutot Exp $
+
+From 32e5cab56a6707cf897f918999720ff7e455255e Mon Sep 17 00:00:00 2001
+From: Chengwei Yang <chengwei.yang@intel.com>
+Date: Sat, 29 Jun 2013 03:56:20 +0000
+Subject: Fix: a non ascii byte will trigger BadAddress error
+
+--- dbus/dbus-string.h.orig	Wed Jun  6 12:45:55 2012
++++ dbus/dbus-string.h	Sat Jul 20 14:22:16 2013
+@@ -259,7 +259,7 @@ void          _dbus_string_delete_first_word     (DBus
+ void          _dbus_string_delete_leading_blanks (DBusString        *str);
+ void          _dbus_string_chop_white            (DBusString        *str); 
+ dbus_bool_t   _dbus_string_append_byte_as_hex    (DBusString        *str,
+-                                                  int                byte);
++                                                  unsigned char      byte);
+ dbus_bool_t   _dbus_string_hex_encode            (const DBusString  *source,
+                                                   int                start,
+                                                   DBusString        *dest,
