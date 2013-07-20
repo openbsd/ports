@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2013/06/08 11:16:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2013/07/20 12:33:12 ajacoutot Exp $
 include/gnome-settings-daemon-3.0/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/gnome-settings-plugin.h
@@ -38,6 +38,7 @@ lib/gnome-settings-daemon-3.0/xrandr.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/xsettings.gnome-settings-plugin
 lib/pkgconfig/gnome-settings-daemon.pc
 @bin libexec/gnome-settings-daemon
+libexec/gnome-settings-daemon-localeexec
 @bin libexec/gsd-locate-pointer
 @bin libexec/gsd-printer
 @bin libexec/gsd-test-a11y-keyboard
