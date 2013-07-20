@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2013/07/13 16:30:36 espie Exp $
+# $OpenBSD: Makefile,v 1.68 2013/07/20 20:15:56 espie Exp $
 
 COMMENT=	GNU gettext
 
@@ -39,6 +39,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--without-git \
 		--without-bzip2 \
 		--without-xz
+
+CONFIGURE_ENV +=	gl_cv_have_weak=yes
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
 
