@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.84 2013/07/18 05:36:54 espie Exp $
+# $OpenBSD: Engine.pm,v 1.85 2013/07/21 16:24:32 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -127,7 +127,7 @@ sub unlock_early
 	my $okay = 1;
 	my $h = $engine->{nfs}{$v};
 	while (my ($k, $w) = each %$h) {
-		if ($engine->{builder}->check($w)) {
+		if ($engine->{builder}->end_check($w)) {
 			$engine->mark_as_done($w);
 			delete $h->{$w};
 		} else {
@@ -439,7 +439,7 @@ sub is_done_or_enqueue
 	my ($self, $v) = @_;
 	my $okay = 1;
 	for my $w ($v->build_path_list) {
-		if ($self->{builder}->check($w)) {
+		if ($self->{builder}->end_check($w)) {
 			$self->mark_as_done($w);
 		} else {
 			$self->{nfs}{$v}{$w} = $w;

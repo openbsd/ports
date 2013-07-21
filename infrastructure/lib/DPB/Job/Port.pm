@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.110 2013/07/18 05:36:55 espie Exp $
+# $OpenBSD: Port.pm,v 1.111 2013/07/21 16:24:32 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -164,12 +164,7 @@ sub finalize
 		    $core);
 	} else {
 		$job->{signature_only} = 1;
-		for my $w ($job->{v}->build_path_list) {
-			my $f = $job->{builder}->pkgfile($w);
-			if (-f $f) {
-				$job->{builder}->register_package($w);
-			}
-		}
+		$job->{builder}->register_updates($job->{v});
 	}
 	return 1;
 }
