@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.36 2013/03/11 11:23:56 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2013/07/21 18:26:29 miod Exp $
 
 COMMENT=		fast array and numeric programming library for Python
+BROKEN-m88k=		lacks cpu information
 
 MODPY_EGG_VERSION=	1.6.0
 DISTNAME=		numpy-${MODPY_EGG_VERSION}
