@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2013/07/19 07:09:00 kili Exp $
+# $OpenBSD: Makefile,v 1.53 2013/07/21 13:44:40 kili Exp $
 
 COMMENT =		advanced revision control system written in Haskell
 
@@ -36,7 +36,8 @@ BUILD_DEPENDS =		archivers/hs-zlib>=0.5.1.0,<0.6.0.0 \
 
 # Used for building the test suite (which is done during normal
 # build time, not during regress time).
-BUILD_DEPENDS +=	devel/hs-QuickCheck>=2.3 \
+BUILD_DEPENDS +=	devel/hs-FindBin>=0.0,<0.1 \
+			devel/hs-QuickCheck>=2.3 \
 			devel/hs-HUnit>=1.0 \
 			devel/hs-cmdlib>=0.2.1,<0.4 \
 			devel/hs-shellish>=0.1.3,<0.2 \
