@@ -1,0 +1,53 @@
+$OpenBSD: patch-mpn_vax_lshift_s,v 1.1 2013/07/22 16:54:56 espie Exp $
+--- mpn/vax/lshift.s.orig	Sun May  8 03:49:29 2011
++++ mpn/vax/lshift.s	Mon Jul 22 02:58:58 2013
+@@ -28,29 +28,29 @@
+ 
+ .text
+ 	.align 1
+-.globl ___gmpn_lshift
+-___gmpn_lshift:
++.globl __gmpn_lshift
++__gmpn_lshift:
+ 	.word	0x1c0
+-	movl	4(ap),r7
+-	movl	8(ap),r6
+-	movl	12(ap),r1
+-	movl	16(ap),r8
++	movl	4(%ap),%r7
++	movl	8(%ap),%r6
++	movl	12(%ap),%r1
++	movl	16(%ap),%r8
+ 
+-	moval	(r6)[r1],r6
+-	moval	(r7)[r1],r7
+-	clrl	r3
+-	movl	-(r6),r2
+-	ashq	r8,r2,r4
+-	movl	r5,r0
+-	movl	r2,r3
+-	decl	r1
++	moval	(%r6)[%r1],%r6
++	moval	(%r7)[%r1],%r7
++	clrl	%r3
++	movl	-(%r6),%r2
++	ashq	%r8,%r2,%r4
++	movl	%r5,%r0
++	movl	%r2,%r3
++	decl	%r1
+ 	jeql	Lend
+ 
+-Loop:	movl	-(r6),r2
+-	ashq	r8,r2,r4
+-	movl	r5,-(r7)
+-	movl	r2,r3
+-	sobgtr	r1,Loop
++Loop:	movl	-(%r6),%r2
++	ashq	%r8,%r2,%r4
++	movl	%r5,-(%r7)
++	movl	%r2,%r3
++	sobgtr	%r1,Loop
+ 
+-Lend:	movl	r4,-4(r7)
++Lend:	movl	%r4,-4(%r7)
+ 	ret
