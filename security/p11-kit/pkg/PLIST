@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/06/28 12:36:31 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/08/06 19:07:00 ajacoutot Exp $
 @bin bin/p11-kit
 include/p11-kit-1/
 include/p11-kit-1/p11-kit/
@@ -9,12 +9,11 @@ include/p11-kit-1/p11-kit/pkcs11.h
 include/p11-kit-1/p11-kit/uri.h
 lib/libp11-kit.a
 lib/libp11-kit.la
-lib/pkcs11/p11-kit-trust.so
 @lib lib/libp11-kit.so.${LIBp11-kit_VERSION}
 lib/p11-kit/
 lib/p11-kit/p11-kit-extract-trust
 lib/pkcs11/
-lib/pkgconfig/
+lib/pkcs11/p11-kit-trust.so
 lib/pkgconfig/p11-kit-1.pc
 share/examples/p11-kit/
 share/examples/p11-kit/pkcs11/
@@ -39,6 +38,7 @@ share/gtk-doc/html/p11-kit/home.png
 share/gtk-doc/html/p11-kit/index.html
 share/gtk-doc/html/p11-kit/index.sgml
 share/gtk-doc/html/p11-kit/left.png
+share/gtk-doc/html/p11-kit/p11-kit-Deprecated.html
 share/gtk-doc/html/p11-kit/p11-kit-Future.html
 share/gtk-doc/html/p11-kit/p11-kit-Modules.html
 share/gtk-doc/html/p11-kit/p11-kit-PIN-Callbacks.html
@@ -49,8 +49,7 @@ share/gtk-doc/html/p11-kit/p11-kit.html
 share/gtk-doc/html/p11-kit/pkcs11.conf.html
 share/gtk-doc/html/p11-kit/reference.html
 share/gtk-doc/html/p11-kit/right.png
-share/gtk-doc/html/p11-kit/sharing-initialize.html
-share/gtk-doc/html/p11-kit/sharing-module.html
+share/gtk-doc/html/p11-kit/sharing-managed.html
 share/gtk-doc/html/p11-kit/sharing.html
 share/gtk-doc/html/p11-kit/style.css
 share/gtk-doc/html/p11-kit/tools.html
