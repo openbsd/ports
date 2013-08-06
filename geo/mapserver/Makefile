@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/07/05 07:23:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2013/08/06 19:47:17 landry Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl
 SHARED_ONLY=	Yes
@@ -8,14 +8,13 @@ COMMENT-utils=	mapserver utilities
 COMMENT-php=	PHP Mapscript extension
 COMMENT-perl=	Perl Mapscript binding
 
-V =		6.0.2
-REVISION-perl=	0
-REVISION-php=	1
+V =		6.2.1
 DISTNAME=	mapserver-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-utils=	mapserver-utils-${V}
 PKGNAME-php=	php-mapscript-${V}
 PKGNAME-perl=	p5-mapscript-${V}
+SHARED_LIBS +=	mapserver 0.0# 0.0
 
 CATEGORIES=	geo www
 
@@ -30,8 +29,6 @@ MASTER_SITES=	http://download.osgeo.org/mapserver/
 MODULES=	devel/gettext lang/php
 MODPHP_RUNDEP=	No
 
-BUILD_DEPENDS=	graphics/agg
-
 LIB_DEPENDS=	devel/proj \
 		graphics/cairo \
 		geo/gdal \
@@ -42,26 +39,30 @@ LIB_DEPENDS=	devel/proj \
 RUN_DEPENDS-php=	${MODPHP_RUN_DEPENDS}
 
 WANTLIB += crypto curl expat freetype idn jpeg m png pq ssl xml2 z proj
-WANTLIB += gdal geos_c gd stdc++ fcgi
-WANTLIB += GL X11
-WANTLIB += cairo Xrender fontconfig glib-2.0 gobject-2.0 gthread-2.0
-WANTLIB += pixman-1 pthread-stubs xcb xcb-render xcb-shm
+WANTLIB += gdal geos_c stdc++ cairo fontconfig gd tiff spatialite
+WANTLIB += pixman-1 pthread-stubs xcb xcb-render xcb-shm sqlite3
+WANTLIB += X11 Xext Xrender freexl geos geotiff gif jasper pcre
 
-WANTLIB-main=	${WANTLIB} pthread c gif
-WANTLIB-utils=	${WANTLIB} pthread c gif
-WANTLIB-php=	${WANTLIB} c pthread
-WANTLIB-perl=	${WANTLIB} c gif
+LIB_DEPENDS-utils = STEM->=${V}:${BUILD_PKGPATH},-main
+LIB_DEPENDS-php = STEM->=${V}:${BUILD_PKGPATH},-main
+LIB_DEPENDS-perl = STEM->=${V}:${BUILD_PKGPATH},-main
+WANTLIB-main=	${WANTLIB} fcgi pthread c gif
+WANTLIB-main += asn1 com_err heimbase krb5 roken wind
+WANTLIB-utils=	${WANTLIB} mapserver pthread c gif
+WANTLIB-php=	${WANTLIB} mapserver pthread
+WANTLIB-perl=	mapserver
 
 USE_GMAKE=	yes
+USE_LIBTOOL =	yes
+LIBTOOL_FLAGS =	--tag=disable-static
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-proj=${LOCALBASE} \
 		--with-png=${LOCALBASE} \
-		--with-agg=${LOCALBASE} \
 		--with-fastcgi=${LOCALBASE} \
-		--without-pdf \
 		--with-freetype=${X11BASE}/bin \
 		--with-gdal=${LOCALBASE}/bin/gdal-config \
-		--with-php=${LOCALBASE}/share/php-${MODPHP_VERSION}/include \
+		--with-gd=${LOCALBASE}/bin/gdlib-config \
+		--with-php=${LOCALBASE}/bin/php-config-${MODPHP_VERSION} \
 		--with-postgis=${LOCALBASE}/bin/pg_config \
 		--with-geos=${LOCALBASE}/bin/geos-config \
 		--with-ogr=${LOCALBASE}/bin/gdal-config \
@@ -90,26 +91,19 @@ SUBST_VARS+=	PREFIX-main
 post-build:
 	cd ${WRKSRC}/mapscript/perl && perl Makefile.PL && ${MAKE}
 
-do-install:
+post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}/${PREFIX-main}/cgi-bin
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/php-${MODPHP_VERSION}/modules
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/php-${MODPHP_VERSION}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mapserver/php
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mapserver/perl
 
-	${INSTALL_PROGRAM} ${WRKSRC}/mapserv ${WRKINST}/${PREFIX-main}/cgi-bin
-	${INSTALL_DATA} ${WRKSRC}/mapscript/php/php_mapscript.so \
-		${PREFIX}/lib/php-${MODPHP_VERSION}/modules/mapscript.so
-	echo "; Enable Mapscript extension module\nextension=mapscript.so" \
+	${INSTALL_PROGRAM} ${PREFIX}/bin/mapserv ${WRKINST}/${PREFIX-main}/cgi-bin
+
+	echo "; Enable Mapscript extension module\nextension=php_mapscript.so" \
 		> ${PREFIX}/share/examples/php-${MODPHP_VERSION}/mapscript.ini
-.for i in ${UTILS}
-	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin/
-.endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/mapserver-config ${PREFIX}/bin/
-	${INSTALL_DATA}	${WRKSRC}/mapscript/php/examples/* \
-		${PREFIX}/share/examples/mapserver/php
+
 	${INSTALL_DATA}	${WRKSRC}/mapscript/perl/examples/* \
 		${PREFIX}/share/examples/mapserver/perl
+
 	cd ${WRKSRC}/mapscript/perl && ${MAKE} install
 
 .include <bsd.port.mk>

@@ -1,12 +1,21 @@
-$OpenBSD: patch-mapscript_php_Makefile_in,v 1.1 2011/06/22 20:16:43 landry Exp $
---- mapscript/php/Makefile.in.orig	Wed Jun 22 21:27:37 2011
-+++ mapscript/php/Makefile.in	Wed Jun 22 21:27:48 2011
-@@ -86,7 +86,7 @@ PHPPROJ_OBJS = php_mapscript_util.o php_proj.o $(PHP_R
+$OpenBSD: patch-mapscript_php_Makefile_in,v 1.2 2013/08/06 19:47:18 landry Exp $
+--- mapscript/php/Makefile.in.orig	Sat Apr 20 06:08:49 2013
++++ mapscript/php/Makefile.in	Sat Jul 20 10:10:32 2013
+@@ -86,7 +86,7 @@ MS_STATIC = @ALL_STATIC_LIB@
+ MS_LIBS =   $(RUNPATHS) @MS_LIB@ @ALL_LIB@ @XTRALIBS@ $(MS_STATIC)
+ PHP_EXT_DIR=`$(PHPCONFIG) --extension-dir`
+ 
+-LT_LDFLAGS=-rpath $(PHP_EXT_DIR) -module
++LT_LDFLAGS=-rpath $(PHP_EXT_DIR) -module -avoid-version
+ OBJ_SUFFIX=lo
+ LINK=$(LTLD) $(LD) $(LT_LDFLAGS)
+ MS_LIBS =   ../../libmapserver.la
+@@ -116,7 +116,7 @@ PHPPROJ_OBJS = php_mapscript_util.$(OBJ_SUFFIX) php_pr
  
  
- php_mapscript.so: $(PHPMS_OBJS) ../../libmapserver.a
--	$(LD) -o $@ $(PHPMS_OBJS) $(MS_LIBS)
-+	$(LD) -fPIC -o $@ $(PHPMS_OBJS) $(MS_LIBS)
+ php_mapscript.la: $(PHPMS_OBJS) ../../libmapserver.la
+-	$(LINK) -release $(MS_VERSION) -o $@ $(PHPMS_OBJS) $(MS_LIBS)
++	$(LINK) -o $@ $(PHPMS_OBJS) $(MS_LIBS)
  
- php_proj.so:  $(PHPPROJ_OBJS)
- 	$(LD) -o $@ $(PHPPROJ_OBJS) $(MS_LIBS)
+ php_proj.la:  $(PHPPROJ_OBJS) ../libmapserver.la
+ 	$(LINK) -release $(MS_VERSION) -o $@ $(PHPPROJ_OBJS) $(MS_LIBS)

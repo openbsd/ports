@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-utils,v 1.2 2011/06/22 20:16:43 landry Exp $
+@comment $OpenBSD: PLIST-utils,v 1.3 2013/08/06 19:47:19 landry Exp $
 @bin bin/legend
 bin/mapserver-config
 @bin bin/msencrypt
@@ -22,9 +22,3 @@ share/examples/mapserver/perl/shp_in_shp.pl
 share/examples/mapserver/perl/shpinfo.pl
 share/examples/mapserver/perl/thin.pl
 share/examples/mapserver/perl/wxs.pl
-share/examples/mapserver/php/
-share/examples/mapserver/php/phpinfo_mapscript.phtml
-share/examples/mapserver/php/test_draw_legend_icon.phtml
-share/examples/mapserver/php/test_draw_map.phtml
-share/examples/mapserver/php/test_layer_mask.phtml
-share/examples/mapserver/php/test_writeshape.phtml
