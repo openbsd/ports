@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2013/05/31 15:34:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2013/08/06 18:09:41 jasper Exp $
 
 COMMENT=		API for handling SSDP resource discovery and announcement
 
 GNOME_PROJECT=		gssdp
-GNOME_VERSION=		0.14.3
-REVISION=		0
+GNOME_VERSION=		0.14.4
 
 SHARED_LIBS +=  gssdp-1.0            2.0      # 3.0
 CATEGORIES=		net devel
