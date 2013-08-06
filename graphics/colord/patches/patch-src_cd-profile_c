@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_cd-profile_c,v 1.8 2013/05/30 18:17:18 ajacoutot Exp $
+$OpenBSD: patch-src_cd-profile_c,v 1.9 2013/08/06 19:10:05 ajacoutot Exp $
 
 /var/lib -> /var/db
 
---- src/cd-profile.c.orig	Wed Apr 24 22:18:05 2013
-+++ src/cd-profile.c	Thu May 30 20:08:06 2013
+--- src/cd-profile.c.orig	Sun Jul  7 15:46:36 2013
++++ src/cd-profile.c	Tue Jul 23 16:35:19 2013
 @@ -401,7 +401,7 @@ cd_profile_install_system_wide (CdProfile *profile, GE
  		goto out;
  	}
@@ -22,7 +22,7 @@ $OpenBSD: patch-src_cd-profile_c,v 1.8 2013/05/30 18:17:18 ajacoutot Exp $
  	if (g_str_has_prefix (priv->filename,
  			      DATADIR "/color")) {
  		ret = FALSE;
-@@ -1072,7 +1072,7 @@ cd_profile_set_filename (CdProfile *profile,
+@@ -1073,7 +1073,7 @@ cd_profile_set_filename (CdProfile *profile,
  	}
  
  	/* find out if we have a GResource copy */

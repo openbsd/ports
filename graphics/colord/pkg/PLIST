@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2013/06/01 18:35:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2013/08/06 19:10:05 ajacoutot Exp $
 @conflict shared-color-profiles-*
 @conflict shared-color-profiles-extra-*
 @pkgpath graphics/colord
@@ -29,6 +29,7 @@ include/colord-1/colord/cd-device-sync.h
 include/colord-1/colord/cd-device.h
 include/colord-1/colord/cd-dom.h
 include/colord-1/colord/cd-enum.h
+include/colord-1/colord/cd-icc-store.h
 include/colord-1/colord/cd-icc.h
 include/colord-1/colord/cd-interp-akima.h
 include/colord-1/colord/cd-interp-linear.h
