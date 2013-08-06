@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.28 2013/06/20 06:54:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2013/08/06 19:12:00 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		evolution connector for MS Exchange via EWS
 
 GNOME_PROJECT=		evolution-ews
-GNOME_VERSION=		3.8.3
-REVISION=		3
+GNOME_VERSION=		3.8.4
 
 CATEGORIES=		mail
 
 SHARED_LIBS +=  eews-1.2             1.0      # unknown
 SHARED_LIBS +=  ewsutils             1.0      # unknown
-SHARED_LIBS +=  lzx                  1.0      # unknown
 
 EVO_VERSION=		3.8
 SUBST_VARS=		EVO_VERSION
@@ -36,15 +34,14 @@ WANTLIB += geoclue gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3
 WANTLIB += gobject-2.0 gpg-error graphite2 gssapi gstapp-1.0 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstfft-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 gtkhtml-4.0
-WANTLIB += gtkhtml-editor-4.0 harfbuzz ical icalss icalvcal
-WANTLIB += icui18n javascriptcoregtk-3.0 jpeg krb5
-WANTLIB += ltdl m nspr4 nss3 nssutil3 ogg orc-0.4 p11-kit pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
-WANTLIB += pthread pthread-stubs secret-1 smime3 softokn3
-WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 ssl3 stdc++ vorbis
-WANTLIB += vorbisfile webkitgtk-3.0 webp xcb xcb-render xcb-shm
-WANTLIB += harfbuzz-icu icudata icuuc png xkbfile xml2 xslt z
-WANTLIB += heimbase roken wind
+WANTLIB += gtkhtml-editor-4.0 harfbuzz harfbuzz-icu heimbase ical
+WANTLIB += icalss icalvcal icudata icui18n icuuc javascriptcoregtk-3.0
+WANTLIB += jpeg krb5 ltdl m mspack nspr4 nss3 nssutil3 ogg orc-0.4
+WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs roken
+WANTLIB += secret-1 smime3 softokn3 soup-2.4 soup-gnome-2.4 sqlite3
+WANTLIB += ssl3 stdc++ vorbis vorbisfile webkitgtk-3.0 webp wind
+WANTLIB += xcb xcb-render xcb-shm xkbfile xml2 xslt z
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -53,6 +50,8 @@ MODULES=		devel/gettext \
 # work with unversioned solibs (LOCALBASE/lib/evolution/*/*.so).
 BUILD_DEPENDS +=	mail/evolution,-main
 RUN_DEPENDS +=		mail/evolution,-main
+
+LIB_DEPENDS=		archivers/libmspack>=0.4alphav0
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
