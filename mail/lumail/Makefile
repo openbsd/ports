@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2013/07/17 23:20:46 jturner Exp $
+# $OpenBSD: Makefile,v 1.9 2013/08/06 23:20:37 jturner Exp $
 
 COMMENT =		console-based e-mail client with Lua scripting support
 
-DISTNAME =		lumail-0.14
+DISTNAME =		lumail-0.16
 CATEGORIES =		mail
 
 MAINTAINER =		James Turner <james@calminferno.net>
@@ -13,7 +13,7 @@ MASTER_SITES =		http://lumail.org/download/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		c curses ${MODLUA_WANTLIB} m mimetic pcre pcrecpp
+WANTLIB +=		c ${MODLUA_WANTLIB} m mimetic ncursesw pcre pcrecpp
 
 MODULES =		gcc4 lang/lua
 
@@ -25,17 +25,14 @@ LIB_DEPENDS +=		${MODLUA_LIB_DEPENDS} \
 			devel/pcre
 
 USE_GMAKE =		Yes
+ALL_TARGET =		lumail
 MAKE_ENV =		CXX="${CXX}" \
 			CPPFLAGS="-std=gnu++0x -I${LOCALBASE}/include \
 				`pkg-config --cflags ${MODLUA_DEP}`" \
 			LDLIBS="`pkg-config --libs ${MODLUA_DEP}` \
-				-lcurses -lmimetic -lpcrecpp -lpcre"
+				-lmimetic -lncursesw -lpcrecpp -lpcre"
 
-post-extract:
-	@rm -f ${WRKSRC}/.depend
-
-do-test:
-	@cd ${WRKSRC}/tests && env -i ${MAKE_ENV} ${MAKE_PROGRAM} test
+NO_TEST =		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lumail ${PREFIX}/bin
