@@ -1,0 +1,3 @@
+MessagePack is a fast, compact binary serialization format, suitable for
+similar data to JSON. This package provides CPython bindings for reading
+and writing MessagePack data.
