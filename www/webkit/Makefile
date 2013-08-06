@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.90 2013/06/19 13:24:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.91 2013/08/06 19:11:30 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
 COMMENT =	open source web browser engine for Gtk+
 
-V =		2.0.3
+V =		2.0.4
 DISTNAME =	webkitgtk-${V}
 PKGNAME =	webkit-${V}
 EPOCH =		0
@@ -129,8 +129,8 @@ WEBKIT_API_VERSION =	1.0
 GTK_API_VERSION =	2.0
 .endif
 CONFIGURE_ARGS += --with-gtk=${GTK_API_VERSION}
-SHARED_LIBS += javascriptcoregtk-${WEBKIT_API_VERSION}	3.0 #.13.9
-SHARED_LIBS += webkitgtk-${WEBKIT_API_VERSION}		5.0 #.13.9
+SHARED_LIBS += javascriptcoregtk-${WEBKIT_API_VERSION}	3.0 # 13.16
+SHARED_LIBS += webkitgtk-${WEBKIT_API_VERSION}		5.0 # 18.9
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Source/WebCore/plugins/PluginDatabase.cpp ${WRKSRC}/configure

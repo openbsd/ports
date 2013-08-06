@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.15 2013/06/19 13:24:18 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.16 2013/08/06 19:11:30 ajacoutot Exp $
 
 https://bugs.webkit.org/show_bug.cgi?id=117796
 
@@ -11,8 +11,8 @@ glib commit 136e705e8383ff8848e425ac01278102d7badc52
 - Chunk 7 : Don't force the use of -O2, the ports infrastructure
 takes care of that
 
---- configure.orig	Tue Jun 11 12:47:07 2013
-+++ configure	Tue Jun 18 15:42:59 2013
+--- configure.orig	Fri Jul 19 14:11:39 2013
++++ configure	Sat Jul 20 18:29:22 2013
 @@ -4729,7 +4729,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
@@ -110,52 +110,6 @@ takes care of that
 +	as_fn_error $? "Package requirements (harfbuzz-icu >= 0.9.7) were not met:
  
  $HARFBUZZ_ICU_PKG_ERRORS
- 
-@@ -19538,8 +19526,8 @@ else
- $as_echo "yes" >&6; }
- 
- fi
--    FREETYPE_CFLAGS+=" $HARFBUZZ_ICU_CFLAGS"
--    FREETYPE_LIBS+=" $HARFBUZZ_ICU_LIBS"
-+    FREETYPE_CFLAGS="$FREETYPE_CFLAGS $HARFBUZZ_ICU_CFLAGS"
-+    FREETYPE_LIBS="$FREETYPE_LIBS $HARFBUZZ_ICU_LIBS"
- fi
- 
- 
-@@ -20341,18 +20329,18 @@ fi
- 
- if test "$with_acceleration_backend" = "opengl"; then
-     if test "$enable_gles2" = "yes"; then
--        acceleration_backend_description+= "(gles2"
-+        acceleration_backend_description= "(gles2"
-         OPENGL_LIBS="-lGLESv2"
-     else
--        acceleration_backend_description+="(gl"
-+        acceleration_backend_description="(gl"
-         OPENGL_LIBS="-lGL"
-     fi
-     if test "$enable_egl" = "yes"; then
--        acceleration_backend_description+=", egl"
--        OPENGL_LIBS+=" -lEGL"
-+        acceleration_backend_description="$acceleration_backend_description, egl"
-+        OPENGL_LIBS="$OPENGL_LIBS -lEGL"
-     fi
-     if test "$enable_glx" = "yes"; then
--        acceleration_backend_description+=", glx"
-+        acceleration_backend_description="$acceleration_backend_description, glx"
-     fi
- 
-     # Check whether dlopen() is in the core libc like on FreeBSD, or in a separate
-@@ -20405,8 +20393,8 @@ fi
- 
- 
- 
--    OPENGL_LIBS+=" $DLOPEN_LIBS"
--    acceleration_backend_description+=")"
-+    OPENGL_LIBS="$OPENGL_LIBS $DLOPEN_LIBS"
-+    acceleration_backend_description="$acceleration_backend_description)"
- fi
- 
  
 @@ -21160,7 +21148,7 @@ fi
  # Use C99 as the language standard for C code.
