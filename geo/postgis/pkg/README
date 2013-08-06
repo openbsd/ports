@@ -1,3 +1,9 @@
+$OpenBSD: README,v 1.2 2013/08/06 21:22:18 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
 Postgis requires pthreads in order to work. OpenBSD does not allow
 shared objects that link to pthreads to be opened via dlopen if the
 executable program does not link to pthreads. So to use postgis, you
@@ -6,8 +12,8 @@ The easiest way to do this is adding the following login class
 to login.conf:
 
 postgresql:\
-        :setenv=LD_PRELOAD=libpthread.so:\
-        :tc=daemon:
+	:setenv=LD_PRELOAD=libpthread.so:\
+	:tc=daemon:
 
 the PostgreSQL rc.d(8) script will take care of launching the daemon
 with that login class.
