@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/11/24 08:54:34 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/08/06 21:19:14 landry Exp $
 @bin bin/pgsql2shp
 @bin bin/raster2pgsql
 @bin bin/shp2pgsql
 include/liblwgeom.h
-lib/postgresql/liblwgeom-2.0.1.so
+lib/postgresql/liblwgeom-${V}.so
 @comment lib/postgresql/liblwgeom.a
 @comment lib/postgresql/liblwgeom.la
 lib/postgresql/liblwgeom.so
@@ -11,6 +11,7 @@ lib/postgresql/postgis-2.0.so
 lib/postgresql/rtpostgis-2.0.so
 @man man/man1/pgsql2shp.1
 @man man/man1/shp2pgsql.1
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/postgresql/
 share/doc/postgresql/postgis/
 share/doc/postgresql/postgis/README.postgis
@@ -174,6 +175,7 @@ share/doc/postgresql/postgis/style.css
 share/postgresql/contrib/
 share/postgresql/contrib/postgis-2.0/
 share/postgresql/contrib/postgis-2.0/legacy.sql
+share/postgresql/contrib/postgis-2.0/legacy_gist.sql
 share/postgresql/contrib/postgis-2.0/legacy_minimal.sql
 share/postgresql/contrib/postgis-2.0/postgis.sql
 share/postgresql/contrib/postgis-2.0/postgis_comments.sql
@@ -191,35 +193,39 @@ share/postgresql/contrib/postgis-2.0/uninstall_legacy.sql
 share/postgresql/contrib/postgis-2.0/uninstall_postgis.sql
 share/postgresql/contrib/postgis-2.0/uninstall_rtpostgis.sql
 share/postgresql/contrib/postgis-2.0/uninstall_topology.sql
-share/postgresql/extension/postgis--2.0.0--2.0.1.sql
-share/postgresql/extension/postgis--2.0.0alpha1--2.0.1.sql
-share/postgresql/extension/postgis--2.0.0alpha2--2.0.1.sql
-share/postgresql/extension/postgis--2.0.0alpha3--2.0.1.sql
-share/postgresql/extension/postgis--2.0.0alpha4--2.0.1.sql
-share/postgresql/extension/postgis--2.0.0alpha5--2.0.1.sql
-share/postgresql/extension/postgis--2.0.0alpha6--2.0.1.sql
-share/postgresql/extension/postgis--2.0.0beta1--2.0.1.sql
-share/postgresql/extension/postgis--2.0.0beta2--2.0.1.sql
-share/postgresql/extension/postgis--2.0.0beta3--2.0.1.sql
-share/postgresql/extension/postgis--2.0.0beta4--2.0.1.sql
-share/postgresql/extension/postgis--2.0.0rc1--2.0.1.sql
-share/postgresql/extension/postgis--2.0.0rc2--2.0.1.sql
-share/postgresql/extension/postgis--2.0.1.sql
-share/postgresql/extension/postgis--unpackaged--2.0.1.sql
+share/postgresql/extension/postgis--2.0.0--${V}.sql
+share/postgresql/extension/postgis--2.0.0alpha1--${V}.sql
+share/postgresql/extension/postgis--2.0.0alpha2--${V}.sql
+share/postgresql/extension/postgis--2.0.0alpha3--${V}.sql
+share/postgresql/extension/postgis--2.0.0alpha4--${V}.sql
+share/postgresql/extension/postgis--2.0.0alpha5--${V}.sql
+share/postgresql/extension/postgis--2.0.0alpha6--${V}.sql
+share/postgresql/extension/postgis--2.0.0beta1--${V}.sql
+share/postgresql/extension/postgis--2.0.0beta2--${V}.sql
+share/postgresql/extension/postgis--2.0.0beta3--${V}.sql
+share/postgresql/extension/postgis--2.0.0beta4--${V}.sql
+share/postgresql/extension/postgis--2.0.0rc1--${V}.sql
+share/postgresql/extension/postgis--2.0.0rc2--${V}.sql
+share/postgresql/extension/postgis--2.0.1--${V}.sql
+share/postgresql/extension/postgis--2.0.2--${V}.sql
+share/postgresql/extension/postgis--${V}.sql
+share/postgresql/extension/postgis--unpackaged--${V}.sql
 share/postgresql/extension/postgis.control
-share/postgresql/extension/postgis_topology--2.0.0--2.0.1.sql
-share/postgresql/extension/postgis_topology--2.0.0alpha1--2.0.1.sql
-share/postgresql/extension/postgis_topology--2.0.0alpha2--2.0.1.sql
-share/postgresql/extension/postgis_topology--2.0.0alpha3--2.0.1.sql
-share/postgresql/extension/postgis_topology--2.0.0alpha4--2.0.1.sql
-share/postgresql/extension/postgis_topology--2.0.0alpha5--2.0.1.sql
-share/postgresql/extension/postgis_topology--2.0.0alpha6--2.0.1.sql
-share/postgresql/extension/postgis_topology--2.0.0beta1--2.0.1.sql
-share/postgresql/extension/postgis_topology--2.0.0beta2--2.0.1.sql
-share/postgresql/extension/postgis_topology--2.0.0beta3--2.0.1.sql
-share/postgresql/extension/postgis_topology--2.0.0beta4--2.0.1.sql
-share/postgresql/extension/postgis_topology--2.0.0rc1--2.0.1.sql
-share/postgresql/extension/postgis_topology--2.0.0rc2--2.0.1.sql
-share/postgresql/extension/postgis_topology--2.0.1.sql
-share/postgresql/extension/postgis_topology--unpackaged--2.0.1.sql
+share/postgresql/extension/postgis_topology--2.0.0--${V}.sql
+share/postgresql/extension/postgis_topology--2.0.0alpha1--${V}.sql
+share/postgresql/extension/postgis_topology--2.0.0alpha2--${V}.sql
+share/postgresql/extension/postgis_topology--2.0.0alpha3--${V}.sql
+share/postgresql/extension/postgis_topology--2.0.0alpha4--${V}.sql
+share/postgresql/extension/postgis_topology--2.0.0alpha5--${V}.sql
+share/postgresql/extension/postgis_topology--2.0.0alpha6--${V}.sql
+share/postgresql/extension/postgis_topology--2.0.0beta1--${V}.sql
+share/postgresql/extension/postgis_topology--2.0.0beta2--${V}.sql
+share/postgresql/extension/postgis_topology--2.0.0beta3--${V}.sql
+share/postgresql/extension/postgis_topology--2.0.0beta4--${V}.sql
+share/postgresql/extension/postgis_topology--2.0.0rc1--${V}.sql
+share/postgresql/extension/postgis_topology--2.0.0rc2--${V}.sql
+share/postgresql/extension/postgis_topology--2.0.1--${V}.sql
+share/postgresql/extension/postgis_topology--2.0.2--${V}.sql
+share/postgresql/extension/postgis_topology--${V}.sql
+share/postgresql/extension/postgis_topology--unpackaged--${V}.sql
 share/postgresql/extension/postgis_topology.control
