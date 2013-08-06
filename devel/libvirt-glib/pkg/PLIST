@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/03/20 10:20:39 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/08/06 18:10:45 jasper Exp $
 include/libvirt-gconfig-1.0/
 include/libvirt-gconfig-1.0/libvirt-gconfig/
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-capabilities-cpu-feature.h
@@ -27,6 +27,8 @@ include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-cpu.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-device.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-disk.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-filesys.h
+include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-graphics-desktop.h
+include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-graphics-rdp.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-graphics-sdl.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-graphics-spice.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-graphics-vnc.h
@@ -47,6 +49,7 @@ include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-smartcard-hos
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-smartcard-host.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-smartcard-passthrough.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-smartcard.h
+include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-snapshot-disk.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-snapshot.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-sound.h
 include/libvirt-gconfig-1.0/libvirt-gconfig/libvirt-gconfig-domain-timer-pit.h
@@ -121,7 +124,6 @@ share/gtk-doc/html/Libvirt-gconfig/
 share/gtk-doc/html/Libvirt-gconfig/GVirConfigCapabilities.html
 share/gtk-doc/html/Libvirt-gconfig/GVirConfigDomain.html
 share/gtk-doc/html/Libvirt-gconfig/GVirConfigDomainSnapshot.html
-share/gtk-doc/html/Libvirt-gconfig/GVirConfigInterface.html
 share/gtk-doc/html/Libvirt-gconfig/GVirConfigNetwork.html
 share/gtk-doc/html/Libvirt-gconfig/GVirConfigNetworkFilter.html
 share/gtk-doc/html/Libvirt-gconfig/GVirConfigNodeDevice.html
@@ -129,6 +131,7 @@ share/gtk-doc/html/Libvirt-gconfig/GVirConfigObject.html
 share/gtk-doc/html/Libvirt-gconfig/GVirConfigSecret.html
 share/gtk-doc/html/Libvirt-gconfig/GVirConfigStoragePool.html
 share/gtk-doc/html/Libvirt-gconfig/GVirConfigStorageVol.html
+share/gtk-doc/html/Libvirt-gconfig/Libvirt-gconfig-GVirConfig.html
 share/gtk-doc/html/Libvirt-gconfig/Libvirt-gconfig.devhelp2
 share/gtk-doc/html/Libvirt-gconfig/annotation-glossary.html
 share/gtk-doc/html/Libvirt-gconfig/api-index-full.html
@@ -161,7 +164,6 @@ share/gtk-doc/html/Libvirt-gobject/
 share/gtk-doc/html/Libvirt-gobject/GVirConnection.html
 share/gtk-doc/html/Libvirt-gobject/GVirDomain.html
 share/gtk-doc/html/Libvirt-gobject/GVirDomainSnapshot.html
-share/gtk-doc/html/Libvirt-gobject/GVirInterface.html
 share/gtk-doc/html/Libvirt-gobject/GVirManager.html
 share/gtk-doc/html/Libvirt-gobject/GVirNetwork.html
 share/gtk-doc/html/Libvirt-gobject/GVirNetworkFilter.html
@@ -170,6 +172,7 @@ share/gtk-doc/html/Libvirt-gobject/GVirSecret.html
 share/gtk-doc/html/Libvirt-gobject/GVirStoragePool.html
 share/gtk-doc/html/Libvirt-gobject/GVirStorageVol.html
 share/gtk-doc/html/Libvirt-gobject/GVirStream.html
+share/gtk-doc/html/Libvirt-gobject/Libvirt-gobject-GVir.html
 share/gtk-doc/html/Libvirt-gobject/Libvirt-gobject.devhelp2
 share/gtk-doc/html/Libvirt-gobject/annotation-glossary.html
 share/gtk-doc/html/Libvirt-gobject/api-index-full.html
