@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/22 06:48:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/08/06 18:07:56 jasper Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		secure hosting of Git repositories
 
-VERSION=		3.5.1
+VERSION=		3.5.2
 DISTNAME=		gitolite-${VERSION}
 CATEGORIES=		sysutils devel
 
