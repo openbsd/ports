@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2013/06/28 11:14:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.65 2013/08/06 23:33:44 jsg Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -9,6 +9,7 @@ DPB_PROPERTIES = parallel
 COMMENT =	modular, fast C/C++/ObjC compiler, static analyzer and tools
 
 LLVM_V =	3.3
+REVISION =	0
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME =	llvm-${LLVM_V}
 CATEGORIES =	devel
@@ -46,7 +47,8 @@ SEPARATE_BUILD =	Yes
 CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
 			-DLLVM_REQUIRES_RTTI:Bool=True \
 			-DCMAKE_BUILD_TYPE:String=Release \
-			-DCMAKE_DISABLE_FIND_PACKAGE_LibXml2:Bool=True
+			-DCMAKE_DISABLE_FIND_PACKAGE_LibXml2:Bool=True \
+			-DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD:String=R600
 
 # Workaround relocation overflow
 .if ${MACHINE_ARCH} == "powerpc"

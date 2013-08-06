@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2013/06/21 22:09:12 brad Exp $
+@comment $OpenBSD: PLIST,v 1.19 2013/08/06 23:33:44 jsg Exp $
 @bin bin/bugpoint
 bin/c++-analyzer
 bin/ccc-analyzer
@@ -1156,6 +1156,10 @@ lib/libLLVMPowerPCAsmPrinter.a
 lib/libLLVMPowerPCCodeGen.a
 lib/libLLVMPowerPCDesc.a
 lib/libLLVMPowerPCInfo.a
+lib/libLLVMR600AsmPrinter.a
+lib/libLLVMR600CodeGen.a
+lib/libLLVMR600Desc.a
+lib/libLLVMR600Info.a
 lib/libLLVMRuntimeDyld.a
 lib/libLLVMScalarOpts.a
 lib/libLLVMSelectionDAG.a
