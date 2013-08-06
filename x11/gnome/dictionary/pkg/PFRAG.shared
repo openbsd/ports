@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/03/28 15:35:26 ajacoutot Exp $
-@lib lib/libgdict-1.0.so.${LIBgdict-1.0_VERSION}
