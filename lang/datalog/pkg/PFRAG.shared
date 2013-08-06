@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2012/05/11 21:36:48 jasper Exp $
-@lib lib/libdatalog.so.${LIBdatalog_VERSION}
