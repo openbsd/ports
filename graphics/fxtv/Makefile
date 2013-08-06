@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.45 2013/03/11 11:10:52 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2013/08/06 18:43:15 naddy Exp $
 
 # we use "macppc" and not "powerpc" on purpose here ; i.e. bktr(4) needed
 ONLY_FOR_ARCHS=	i386 macppc amd64
 
 COMMENT=	capture utility for Brooktree-based cards
 DISTNAME=	fxtv-1.03
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	graphics
-HOMEPAGE=	http://people.freebsd.org/~rhh/fxtv/
+HOMEPAGE=	https://people.freebsd.org/~rhh/fxtv/
 EXTRACT_SUFX=	.tgz
 
 MASTER_SITES=	${HOMEPAGE} \
