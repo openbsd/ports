@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/04/23 07:40:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/08/06 18:14:11 jasper Exp $
 ${GEM_BIN}/autospec${GEM_BIN_SUFFIX}
 ${GEM_BIN}/rspec${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -26,13 +26,16 @@ ${GEM_LIB}/gems/${DISTNAME}/features/command_line/line_number_option.feature
 ${GEM_LIB}/gems/${DISTNAME}/features/command_line/order.feature
 ${GEM_LIB}/gems/${DISTNAME}/features/command_line/pattern_option.feature
 ${GEM_LIB}/gems/${DISTNAME}/features/command_line/rake_task.feature
+${GEM_LIB}/gems/${DISTNAME}/features/command_line/require_option.feature
 ${GEM_LIB}/gems/${DISTNAME}/features/command_line/ruby.feature
 ${GEM_LIB}/gems/${DISTNAME}/features/command_line/tag.feature
+${GEM_LIB}/gems/${DISTNAME}/features/command_line/warnings_option.feature
 ${GEM_LIB}/gems/${DISTNAME}/features/configuration/
 ${GEM_LIB}/gems/${DISTNAME}/features/configuration/alias_example_to.feature
 ${GEM_LIB}/gems/${DISTNAME}/features/configuration/backtrace_clean_patterns.feature
 ${GEM_LIB}/gems/${DISTNAME}/features/configuration/custom_settings.feature
 ${GEM_LIB}/gems/${DISTNAME}/features/configuration/default_path.feature
+${GEM_LIB}/gems/${DISTNAME}/features/configuration/deprecation_stream.feature
 ${GEM_LIB}/gems/${DISTNAME}/features/configuration/fail_fast.feature
 ${GEM_LIB}/gems/${DISTNAME}/features/configuration/failure_exit_code.feature
 ${GEM_LIB}/gems/${DISTNAME}/features/configuration/order_and_seed.feature
@@ -53,7 +56,6 @@ ${GEM_LIB}/gems/${DISTNAME}/features/filtering/
 ${GEM_LIB}/gems/${DISTNAME}/features/filtering/exclusion_filters.feature
 ${GEM_LIB}/gems/${DISTNAME}/features/filtering/if_and_unless.feature
 ${GEM_LIB}/gems/${DISTNAME}/features/filtering/inclusion_filters.feature
-${GEM_LIB}/gems/${DISTNAME}/features/filtering/run_all_when_everything_filtered.feature
 ${GEM_LIB}/gems/${DISTNAME}/features/formatters/
 ${GEM_LIB}/gems/${DISTNAME}/features/formatters/configurable_colors.feature
 ${GEM_LIB}/gems/${DISTNAME}/features/formatters/custom_formatter.feature
@@ -90,6 +92,7 @@ ${GEM_LIB}/gems/${DISTNAME}/features/subject/implicit_receiver.feature
 ${GEM_LIB}/gems/${DISTNAME}/features/subject/implicit_subject.feature
 ${GEM_LIB}/gems/${DISTNAME}/features/support/
 ${GEM_LIB}/gems/${DISTNAME}/features/support/env.rb
+${GEM_LIB}/gems/${DISTNAME}/features/support/rubinius.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/autotest/
 ${GEM_LIB}/gems/${DISTNAME}/lib/autotest/discover.rb
@@ -98,6 +101,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/autorun.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/backtrace_cleaner.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/backward_compatibility.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/command_line.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/configuration.rb
@@ -118,6 +122,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/base_formatter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/base_text_formatter.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/deprecation_formatter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/documentation_formatter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/helpers.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/html_formatter.rb
@@ -127,7 +132,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/progress_formatter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/snippet_extractor.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/formatters/text_mate_formatter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/hooks.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/load_path.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/memoized_helpers.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/metadata.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/metadata_hash_builder.rb
@@ -145,7 +149,9 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/reporter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/ruby_project.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/runner.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/shared_context.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/shared_example_group/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/shared_example_group.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/shared_example_group/collection.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rspec/core/world.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/
@@ -157,10 +163,12 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/command_line/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command_line/order_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/
+${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/backtrace_cleaner_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/command_line_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/command_line_spec_output.txt
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/configuration_options_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/configuration_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/deprecation_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/deprecations_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/drb_command_line_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/drb_options_spec.rb
@@ -171,6 +179,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/filter_manager_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/formatters/
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/formatters/base_formatter_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/formatters/base_text_formatter_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/formatters/deprecation_formatter_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/formatters/documentation_formatter_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/formatters/helpers_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/formatters/html_formatted-1.8.7-jruby.html
@@ -215,6 +224,8 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/rspec_matchers_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/ruby_project_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/runner_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/shared_context_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/shared_example_group/
+${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/shared_example_group/collection_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/shared_example_group_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/world_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core_spec.rb
@@ -222,9 +233,11 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/config_options_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/helper_methods.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/support/isolate_load_path_mutation.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/isolated_directory.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/isolated_home_directory.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/matchers.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/support/sandboxed_mock_space.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/shared_example_groups.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/spec_files.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
