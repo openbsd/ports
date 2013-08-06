@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_utils_py,v 1.10 2013/07/12 08:07:05 ajacoutot Exp $
---- base/utils.py.orig	Fri Jun 21 08:57:55 2013
-+++ base/utils.py	Fri Jul 12 09:43:56 2013
-@@ -570,7 +570,7 @@ class UserSettings(object): # Note: Deprecated after 2
+$OpenBSD: patch-base_utils_py,v 1.11 2013/08/06 19:13:37 ajacoutot Exp $
+--- base/utils.py.orig	Tue Jul 23 07:18:29 2013
++++ base/utils.py	Fri Jul 26 16:07:33 2013
+@@ -575,7 +575,7 @@ class UserSettings(object): # Note: Deprecated after 2
          if len(path):
              self.cmd_pcard = 'hp-unload -d %DEVICE_URI%'
          else:
@@ -10,7 +10,7 @@ $OpenBSD: patch-base_utils_py,v 1.10 2013/07/12 08:07:05 ajacoutot Exp $
  
          # Copy
          path = which('hp-makecopies')
-@@ -578,7 +578,7 @@ class UserSettings(object): # Note: Deprecated after 2
+@@ -583,7 +583,7 @@ class UserSettings(object): # Note: Deprecated after 2
          if len(path):
              self.cmd_copy = 'hp-makecopies -d %DEVICE_URI%'
          else:
@@ -19,7 +19,7 @@ $OpenBSD: patch-base_utils_py,v 1.10 2013/07/12 08:07:05 ajacoutot Exp $
  
          # Fax
          path = which('hp-sendfax')
-@@ -586,7 +586,7 @@ class UserSettings(object): # Note: Deprecated after 2
+@@ -591,7 +591,7 @@ class UserSettings(object): # Note: Deprecated after 2
          if len(path):
              self.cmd_fax = 'hp-sendfax -d %FAX_URI%'
          else:
@@ -28,7 +28,7 @@ $OpenBSD: patch-base_utils_py,v 1.10 2013/07/12 08:07:05 ajacoutot Exp $
  
          # Fax Address Book
          path = which('hp-fab')
-@@ -594,7 +594,7 @@ class UserSettings(object): # Note: Deprecated after 2
+@@ -599,7 +599,7 @@ class UserSettings(object): # Note: Deprecated after 2
          if len(path):
              self.cmd_fab = 'hp-fab'
          else:
@@ -37,7 +37,7 @@ $OpenBSD: patch-base_utils_py,v 1.10 2013/07/12 08:07:05 ajacoutot Exp $
  
      def load(self):
          self.loadDefaults()
-@@ -926,10 +926,9 @@ def all(S,f=lambda x:x):
+@@ -931,10 +931,9 @@ def all(S,f=lambda x:x):
          if not f(x): return False
      return True
  
@@ -50,7 +50,7 @@ $OpenBSD: patch-base_utils_py,v 1.10 2013/07/12 08:07:05 ajacoutot Exp $
  def find_browser():
      if platform_avail and platform.system() == 'Darwin':
          return "open"
-@@ -2066,7 +2065,7 @@ def check_user_groups(required_grps_str, avl_grps):
+@@ -2071,7 +2070,7 @@ def check_user_groups(required_grps_str, avl_grps):
          grps =re.sub(r'\s', '', str(grps))
          exp_grp_list = grps.split(',')
      else:

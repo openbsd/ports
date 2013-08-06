@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hpijs,v 1.27 2013/07/12 08:07:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST-hpijs,v 1.28 2013/08/06 19:13:37 ajacoutot Exp $
 @conflict hplip-libs-<=3.9.8
 @conflict hpcups-<=3.2.11
 @pkgpath print/hpijs
@@ -191,6 +191,7 @@ share/foomatic/db/source/PPD/HP/hp-designjet_z6100ps_60in_photo-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_z6200_42in_photo-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_z6200_60in_photo-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_1000_j110_series-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-deskjet_1010_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_1050_j410_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_1100-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_1120-hpijs.ppd.gz
@@ -366,6 +367,7 @@ share/foomatic/db/source/PPD/HP/hp-envy_100_d410_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-envy_110_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-envy_120_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-envy_4500_series-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-envy_5530_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_1000-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_1005_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_100_color_mfp_m175-ps.ppd.gz
@@ -735,6 +737,7 @@ share/foomatic/db/source/PPD/HP/hp-officejet_7200_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_7300_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_7400_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_7500_e910-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-officejet_7610_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_9100_series-hpijs-pcl3.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_d_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_g55-hpijs.ppd.gz

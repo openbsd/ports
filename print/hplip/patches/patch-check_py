@@ -1,6 +1,6 @@
-$OpenBSD: patch-check_py,v 1.12 2013/05/13 08:34:09 ajacoutot Exp $
---- check.py.orig	Mon Apr  8 11:58:46 2013
-+++ check.py	Mon May 13 10:23:18 2013
+$OpenBSD: patch-check_py,v 1.13 2013/08/06 19:13:37 ajacoutot Exp $
+--- check.py.orig	Tue Jul 23 07:18:29 2013
++++ check.py	Fri Jul 26 16:08:03 2013
 @@ -142,9 +142,9 @@ def get_comment(package, Inst_status, installed_ver):
                  comment = "Python Programming is not supported if version is lessthan 2.2" 
      elif package == 'hpaio':
@@ -68,11 +68,11 @@ $OpenBSD: patch-check_py,v 1.12 2013/05/13 08:34:09 ajacoutot Exp $
                  log.info("Plugins are not installed. Could not access file: %s" % e.strerror)
              else:
 @@ -538,7 +538,7 @@ class DependenciesCheck(CoreInstall):
-                     #log.info("Installed in HPLIP?: %s" % x)
-                     log.info("Device URI: %s" % device_uri)
+                         #log.info("Installed in HPLIP?: %s" % x)
+                         log.info("Device URI: %s" % device_uri)
  
--                    ppd = os.path.join('/etc/cups/ppd', printer_name + '.ppd')
-+                    ppd = os.path.join('${SYSCONFDIR}/cups/ppd', printer_name + '.ppd')
+-                        ppd = os.path.join('/etc/cups/ppd', printer_name + '.ppd')
++                        ppd = os.path.join('${SYSCONFDIR}/cups/ppd', printer_name + '.ppd')
  
-                     if os.path.exists(ppd):
-                         log.info("PPD: %s" % ppd)
+                         if os.path.exists(ppd):
+                             log.info("PPD: %s" % ppd)
