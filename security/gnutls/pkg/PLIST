@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2013/06/18 13:22:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2013/08/06 19:06:37 ajacoutot Exp $
 @bin bin/certtool
 @bin bin/crywrap
 @bin bin/danetool
@@ -109,6 +109,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_certificate_set_retrieve_function.3
 @man man/man3/gnutls_certificate_set_retrieve_function2.3
 @man man/man3/gnutls_certificate_set_rsa_export_params.3
+@man man/man3/gnutls_certificate_set_trust_list.3
 @man man/man3/gnutls_certificate_set_verify_flags.3
 @man man/man3/gnutls_certificate_set_verify_function.3
 @man man/man3/gnutls_certificate_set_verify_limits.3
@@ -147,6 +148,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_cipher_get_iv_size.3
 @man man/man3/gnutls_cipher_get_key_size.3
 @man man/man3/gnutls_cipher_get_name.3
+@man man/man3/gnutls_cipher_get_tag_size.3
 @man man/man3/gnutls_cipher_init.3
 @man man/man3/gnutls_cipher_list.3
 @man man/man3/gnutls_cipher_set_iv.3
@@ -186,6 +188,9 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_dh_params_import_raw.3
 @man man/man3/gnutls_dh_params_init.3
 @man man/man3/gnutls_dh_set_prime_bits.3
+@man man/man3/gnutls_digest_get_id.3
+@man man/man3/gnutls_digest_get_name.3
+@man man/man3/gnutls_digest_list.3
 @man man/man3/gnutls_dtls_cookie_send.3
 @man man/man3/gnutls_dtls_cookie_verify.3
 @man man/man3/gnutls_dtls_get_data_mtu.3
@@ -201,6 +206,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_ecc_curve_list.3
 @man man/man3/gnutls_error_is_fatal.3
 @man man/man3/gnutls_error_to_alert.3
+@man man/man3/gnutls_est_record_overhead_size.3
 @man man/man3/gnutls_fingerprint.3
 @man man/man3/gnutls_global_deinit.3
 @man man/man3/gnutls_global_init.3
@@ -211,8 +217,10 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_global_set_mutex.3
 @man man/man3/gnutls_global_set_time_function.3
 @man man/man3/gnutls_handshake.3
+@man man/man3/gnutls_handshake_description_get_name.3
 @man man/man3/gnutls_handshake_get_last_in.3
 @man man/man3/gnutls_handshake_get_last_out.3
+@man man/man3/gnutls_handshake_set_hook_function.3
 @man man/man3/gnutls_handshake_set_max_packet_length.3
 @man man/man3/gnutls_handshake_set_post_client_hello_function.3
 @man man/man3/gnutls_handshake_set_private_extensions.3
@@ -455,11 +463,14 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_prf.3
 @man man/man3/gnutls_prf_raw.3
 @man man/man3/gnutls_priority_certificate_type_list.3
+@man man/man3/gnutls_priority_cipher_list.3
 @man man/man3/gnutls_priority_compression_list.3
 @man man/man3/gnutls_priority_deinit.3
 @man man/man3/gnutls_priority_ecc_curve_list.3
 @man man/man3/gnutls_priority_get_cipher_suite_index.3
 @man man/man3/gnutls_priority_init.3
+@man man/man3/gnutls_priority_kx_list.3
+@man man/man3/gnutls_priority_mac_list.3
 @man man/man3/gnutls_priority_protocol_list.3
 @man man/man3/gnutls_priority_set.3
 @man man/man3/gnutls_priority_set_direct.3
@@ -551,6 +562,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_record_get_direction.3
 @man man/man3/gnutls_record_get_discarded.3
 @man man/man3/gnutls_record_get_max_size.3
+@man man/man3/gnutls_record_overhead_size.3
 @man man/man3/gnutls_record_recv.3
 @man man/man3/gnutls_record_recv_seq.3
 @man man/man3/gnutls_record_send.3
