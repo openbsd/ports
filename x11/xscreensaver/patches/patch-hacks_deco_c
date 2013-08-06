@@ -1,7 +1,7 @@
-$OpenBSD: patch-hacks_deco_c,v 1.5 2007/12/16 14:09:26 jasper Exp $
---- hacks/deco.c.orig	Thu Aug 30 08:38:57 2007
-+++ hacks/deco.c	Sun Dec 16 13:48:11 2007
-@@ -298,7 +298,6 @@ deco_free (Display *dpy, Window window, void *closure)
+$OpenBSD: patch-hacks_deco_c,v 1.6 2013/08/06 19:12:32 ajacoutot Exp $
+--- hacks/deco.c.orig	Fri Jul  5 20:59:12 2013
++++ hacks/deco.c	Tue Jul 23 10:36:16 2013
+@@ -300,7 +300,6 @@ deco_free (Display *dpy, Window window, void *closure)
    free (st);
  }
  

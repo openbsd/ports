@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2013/06/01 19:57:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.31 2013/08/06 19:12:32 ajacoutot Exp $
 @conflict xscreensaver-data-*
 @conflict xscreensaver-gle-*
 @conflict xscreensaver-<5.07p3-no_gle
@@ -105,6 +105,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/halftone
 @bin libexec/xscreensaver/halo
 @bin libexec/xscreensaver/helix
+@bin libexec/xscreensaver/hexadrop
 @bin libexec/xscreensaver/hilbert
 @bin libexec/xscreensaver/hopalong
 @bin libexec/xscreensaver/hypertorus
@@ -119,6 +120,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/juggler3d
 @bin libexec/xscreensaver/julia
 @bin libexec/xscreensaver/kaleidescope
+@bin libexec/xscreensaver/kaleidocycle
 @bin libexec/xscreensaver/klein
 @bin libexec/xscreensaver/kumppa
 @bin libexec/xscreensaver/lament
@@ -163,6 +165,7 @@ libexec/xscreensaver/ljlatest
 @bin libexec/xscreensaver/pulsar
 @bin libexec/xscreensaver/pyro
 @bin libexec/xscreensaver/qix
+@bin libexec/xscreensaver/quasicrystal
 @bin libexec/xscreensaver/queens
 @bin libexec/xscreensaver/rd-bomb
 @bin libexec/xscreensaver/ripples
@@ -201,6 +204,7 @@ libexec/xscreensaver/ljlatest
 @bin libexec/xscreensaver/tronbit
 @bin libexec/xscreensaver/truchet
 @bin libexec/xscreensaver/twang
+@bin libexec/xscreensaver/unknownpleasures
 @bin libexec/xscreensaver/vermiculate
 libexec/xscreensaver/vidwhacker
 @bin libexec/xscreensaver/voronoi
@@ -313,6 +317,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/halftone.6
 @man man/man6/halo.6
 @man man/man6/helix.6
+@man man/man6/hexadrop.6
 @man man/man6/hilbert.6
 @man man/man6/hopalong.6
 @man man/man6/hypertorus.6
@@ -327,6 +332,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/juggler3d.6
 @man man/man6/julia.6
 @man man/man6/kaleidescope.6
+@man man/man6/kaleidocycle.6
 @man man/man6/klein.6
 @man man/man6/kumppa.6
 @man man/man6/lament.6
@@ -369,6 +375,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/pulsar.6
 @man man/man6/pyro.6
 @man man/man6/qix.6
+@man man/man6/quasicrystal.6
 @man man/man6/queens.6
 @man man/man6/rd-bomb.6
 @man man/man6/ripples.6
@@ -407,6 +414,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/tronbit.6
 @man man/man6/truchet.6
 @man man/man6/twang.6
+@man man/man6/unknownpleasures.6
 @man man/man6/vermiculate.6
 @man man/man6/vidwhacker.6
 @man man/man6/voronoi.6
@@ -520,6 +528,7 @@ share/applications/screensavers/greynetic.desktop
 share/applications/screensavers/halftone.desktop
 share/applications/screensavers/halo.desktop
 share/applications/screensavers/helix.desktop
+share/applications/screensavers/hexadrop.desktop
 share/applications/screensavers/hilbert.desktop
 share/applications/screensavers/hopalong.desktop
 share/applications/screensavers/hyperball.desktop
@@ -537,6 +546,7 @@ share/applications/screensavers/juggle.desktop
 share/applications/screensavers/juggler3d.desktop
 share/applications/screensavers/julia.desktop
 share/applications/screensavers/kaleidescope.desktop
+share/applications/screensavers/kaleidocycle.desktop
 share/applications/screensavers/klein.desktop
 share/applications/screensavers/kumppa.desktop
 share/applications/screensavers/lament.desktop
@@ -586,6 +596,7 @@ share/applications/screensavers/providence.desktop
 share/applications/screensavers/pulsar.desktop
 share/applications/screensavers/pyro.desktop
 share/applications/screensavers/qix.desktop
+share/applications/screensavers/quasicrystal.desktop
 share/applications/screensavers/queens.desktop
 share/applications/screensavers/rd-bomb.desktop
 share/applications/screensavers/rdbomb.desktop
@@ -629,6 +640,7 @@ share/applications/screensavers/triangle.desktop
 share/applications/screensavers/tronbit.desktop
 share/applications/screensavers/truchet.desktop
 share/applications/screensavers/twang.desktop
+share/applications/screensavers/unknownpleasures.desktop
 share/applications/screensavers/vermiculate.desktop
 share/applications/screensavers/vidwhacker.desktop
 share/applications/screensavers/vines.desktop
@@ -767,6 +779,7 @@ share/xscreensaver/config/greynetic.xml
 share/xscreensaver/config/halftone.xml
 share/xscreensaver/config/halo.xml
 share/xscreensaver/config/helix.xml
+share/xscreensaver/config/hexadrop.xml
 share/xscreensaver/config/hilbert.xml
 share/xscreensaver/config/hopalong.xml
 share/xscreensaver/config/hypertorus.xml
@@ -781,6 +794,7 @@ share/xscreensaver/config/jigsaw.xml
 share/xscreensaver/config/juggler3d.xml
 share/xscreensaver/config/julia.xml
 share/xscreensaver/config/kaleidescope.xml
+share/xscreensaver/config/kaleidocycle.xml
 share/xscreensaver/config/klein.xml
 share/xscreensaver/config/kumppa.xml
 share/xscreensaver/config/lament.xml
@@ -824,6 +838,7 @@ share/xscreensaver/config/providence.xml
 share/xscreensaver/config/pulsar.xml
 share/xscreensaver/config/pyro.xml
 share/xscreensaver/config/qix.xml
+share/xscreensaver/config/quasicrystal.xml
 share/xscreensaver/config/queens.xml
 share/xscreensaver/config/rd-bomb.xml
 share/xscreensaver/config/ripples.xml
@@ -862,6 +877,7 @@ share/xscreensaver/config/triangle.xml
 share/xscreensaver/config/tronbit.xml
 share/xscreensaver/config/truchet.xml
 share/xscreensaver/config/twang.xml
+share/xscreensaver/config/unknownpleasures.xml
 share/xscreensaver/config/vermiculate.xml
 share/xscreensaver/config/vidwhacker.xml
 share/xscreensaver/config/voronoi.xml
