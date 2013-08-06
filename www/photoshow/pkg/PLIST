@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/01/24 09:28:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/08/06 19:12:15 ajacoutot Exp $
 @extraunexec rm -rf %D/photoshow/generated/*
 @extraunexec rm -rf %D/photoshow/photos/*
 photoshow/
@@ -19,9 +19,11 @@ photoshow/inc/jquery.js
 photoshow/inc/jquery.scrollTo.js
 photoshow/inc/loc/
 photoshow/inc/loc/default.ini
+photoshow/inc/loc/deutsch.ini
 photoshow/inc/loc/espanol.ini
 photoshow/inc/loc/francais.ini
 photoshow/inc/loc/greek.ini
+photoshow/inc/loc/russian.ini
 photoshow/inc/me.jpg
 photoshow/inc/mousewheel.js
 photoshow/inc/pbar-ani.gif
@@ -30,7 +32,38 @@ photoshow/index.php
 photoshow/photoshow.conf.dist
 @sample /var/www/conf/modules.sample/photoshow.conf
 photoshow/src/
+photoshow/src/XRL/
+photoshow/src/XRL/src/
+photoshow/src/XRL/src/Autoload.php
+photoshow/src/XRL/src/Callable.php
+photoshow/src/XRL/src/CallableFactory.php
+photoshow/src/XRL/src/CallableFactoryInterface.php
+photoshow/src/XRL/src/CallableInterface.php
+photoshow/src/XRL/src/Client.php
+photoshow/src/XRL/src/CompactEncoderFactory.php
+photoshow/src/XRL/src/Decoder.php
+photoshow/src/XRL/src/DecoderFactoryInterface.php
+photoshow/src/XRL/src/DecoderInterface.php
+photoshow/src/XRL/src/Encoder.php
+photoshow/src/XRL/src/EncoderFactoryInterface.php
+photoshow/src/XRL/src/EncoderInterface.php
+photoshow/src/XRL/src/Exception.php
+photoshow/src/XRL/src/FactoryRegistry.php
+photoshow/src/XRL/src/Node.php
+photoshow/src/XRL/src/NonValidatingDecoderFactory.php
+photoshow/src/XRL/src/PrettyEncoderFactory.php
+photoshow/src/XRL/src/Request.php
+photoshow/src/XRL/src/RequestFactory.php
+photoshow/src/XRL/src/RequestFactoryInterface.php
+photoshow/src/XRL/src/RequestInterface.php
+photoshow/src/XRL/src/Response.php
+photoshow/src/XRL/src/ResponseFactory.php
+photoshow/src/XRL/src/ResponseFactoryInterface.php
+photoshow/src/XRL/src/ResponseInterface.php
+photoshow/src/XRL/src/Server.php
+photoshow/src/XRL/src/ValidatingDecoderFactory.php
 photoshow/src/classes/
+photoshow/src/classes/API.php
 photoshow/src/classes/Account.php
 photoshow/src/classes/Admin.php
 photoshow/src/classes/AdminAbout.php
@@ -47,6 +80,7 @@ photoshow/src/classes/BoardHeader.php
 photoshow/src/classes/BoardItem.php
 photoshow/src/classes/BoardLine.php
 photoshow/src/classes/BoardPanel.php
+photoshow/src/classes/Cleaning.php
 photoshow/src/classes/Comment.php
 photoshow/src/classes/Comments.php
 photoshow/src/classes/CurrentUser.php
@@ -54,6 +88,7 @@ photoshow/src/classes/Exif.php
 photoshow/src/classes/File.php
 photoshow/src/classes/FileException.php
 photoshow/src/classes/Group.php
+photoshow/src/classes/GuestToken.php
 photoshow/src/classes/HTMLObject.php
 photoshow/src/classes/Image.php
 photoshow/src/classes/ImageBar.php
@@ -72,12 +107,14 @@ photoshow/src/classes/Page.php
 photoshow/src/classes/Provider.php
 photoshow/src/classes/RegisterPage.php
 photoshow/src/classes/Settings.php
+photoshow/src/classes/Video.php
 photoshow/src/js/
 photoshow/src/js/admin.js
 photoshow/src/js/image_panel.js
 photoshow/src/js/keyboard.js
 photoshow/src/js/menu.js
 photoshow/src/js/panel.js
+photoshow/src/js/select.js
 photoshow/src/js/slideshow.js
 photoshow/src/phpthumb/
 photoshow/src/phpthumb/GdThumb.inc.php
@@ -86,12 +123,21 @@ photoshow/src/phpthumb/ThumbBase.inc.php
 photoshow/src/phpthumb/ThumbLib.inc.php
 photoshow/src/phpthumb/thumb_plugins/
 photoshow/src/phpthumb/thumb_plugins/gd_reflection.inc.php
+photoshow/src/scripts/
+photoshow/src/scripts/clean.php
 photoshow/src/stylesheets/
 photoshow/src/stylesheets/admin.css
 photoshow/src/stylesheets/forms.css
 photoshow/src/stylesheets/main.css
 photoshow/src/stylesheets/page.css
 photoshow/src/stylesheets/panels.css
+photoshow/src/tests/
+photoshow/src/tests/CurrentUserTest.php
+photoshow/src/tests/GuestTokenTest.php
+photoshow/src/tests/SettingsTest.php
+photoshow/src/tests/TestUnit.php
+photoshow/src/tests/phpunit.xml
+photoshow/src/tests/test_config.php
 @mode 0700
 @owner www
 @sample photoshow/generated/
