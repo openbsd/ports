@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2013/03/30 08:26:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2013/08/06 19:41:06 ajacoutot Exp $
 include/libgdata/
 include/libgdata/gdata/
 include/libgdata/gdata/app/
@@ -233,15 +233,19 @@ share/gtk-doc/html/gdata/ix14.html
 share/gtk-doc/html/gdata/ix15.html
 share/gtk-doc/html/gdata/ix16.html
 share/gtk-doc/html/gdata/ix17.html
+share/gtk-doc/html/gdata/ix18.html
+share/gtk-doc/html/gdata/left-insensitive.png
 share/gtk-doc/html/gdata/left.png
 share/gtk-doc/html/gdata/pt01.html
 share/gtk-doc/html/gdata/pt02.html
 share/gtk-doc/html/gdata/pt03.html
 share/gtk-doc/html/gdata/pt04.html
 share/gtk-doc/html/gdata/pt05.html
+share/gtk-doc/html/gdata/right-insensitive.png
 share/gtk-doc/html/gdata/right.png
 share/gtk-doc/html/gdata/structure.png
 share/gtk-doc/html/gdata/style.css
+share/gtk-doc/html/gdata/up-insensitive.png
 share/gtk-doc/html/gdata/up.png
 share/locale/ar/LC_MESSAGES/gdata.mo
 share/locale/as/LC_MESSAGES/gdata.mo
@@ -291,6 +295,7 @@ share/locale/sr@latin/LC_MESSAGES/gdata.mo
 share/locale/sv/LC_MESSAGES/gdata.mo
 share/locale/ta/LC_MESSAGES/gdata.mo
 share/locale/te/LC_MESSAGES/gdata.mo
+share/locale/tg/LC_MESSAGES/gdata.mo
 share/locale/th/LC_MESSAGES/gdata.mo
 share/locale/tr/LC_MESSAGES/gdata.mo
 share/locale/ug/LC_MESSAGES/gdata.mo
