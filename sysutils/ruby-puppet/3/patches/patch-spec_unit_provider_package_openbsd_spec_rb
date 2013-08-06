@@ -1,18 +1,17 @@
-$OpenBSD: patch-spec_unit_provider_package_openbsd_spec_rb,v 1.1 2013/08/06 18:17:36 jasper Exp $
+$OpenBSD: patch-spec_unit_provider_package_openbsd_spec_rb,v 1.2 2013/08/06 18:21:27 jasper Exp $
 
 From a5b8b96f703d932b90ce7461b18076bb32ee85b3 Mon Sep 17 00:00:00 2001
 From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
 Date: Tue, 23 Jul 2013 16:55:55 +0200
 Subject: Enhance OpenBSD pkg.conf handling
 
-This moves the pkg.conf parsing into it's own method which allows for better
-re-use. While here, support for parsing '+=' lines has been added. This allows
-for appending to PKG_PATH, instead of merely setting it with '='.
+From ee14796e05bb05a6829644827e510b2b8e8076d4 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Thu, 1 Aug 2013 17:32:46 +0200
+Subject: (22023) Implement :purgeable feature for OpenBSD package provider
 
-(#21930) Enchance OpenBSD pkg.conf handling
-
---- spec/unit/provider/package/openbsd_spec.rb.orig	Fri Jul 12 02:15:45 2013
-+++ spec/unit/provider/package/openbsd_spec.rb	Mon Jul 29 21:35:35 2013
+--- spec/unit/provider/package/openbsd_spec.rb.orig	Tue Aug  6 20:19:42 2013
++++ spec/unit/provider/package/openbsd_spec.rb	Tue Aug  6 20:19:17 2013
 @@ -184,7 +184,29 @@ describe provider_class do
        provider.install
      end
@@ -44,3 +43,19 @@ for appending to PKG_PATH, instead of merely setting it with '='.
        it "should reject '#{line}'" do
          expect_read_from_pkgconf([line])
          expect {
+@@ -224,6 +246,15 @@ describe provider_class do
+       provider.resource[:name] = 'zsh'
+       provider.expects(:pkginfo).with('zsh').returns('')
+       provider.query.should be_nil
++    end
++  end
++  
++  context "#uninstall" do
++    describe 'when uninstalling' do
++      it 'should use erase to purge' do
++        provider.expects(:pkgdelete).with('-c', '-q', 'bash')
++        provider.purge
++      end
+     end
+   end
+ end
