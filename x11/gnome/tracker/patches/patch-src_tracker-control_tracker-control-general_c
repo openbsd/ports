@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_tracker-control_tracker-control-general_c,v 1.8 2013/04/10 14:30:43 ajacoutot Exp $
+$OpenBSD: patch-src_tracker-control_tracker-control-general_c,v 1.9 2013/08/06 19:06:13 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=697719
 
---- src/tracker-control/tracker-control-general.c.orig	Sun Mar 17 12:35:11 2013
-+++ src/tracker-control/tracker-control-general.c	Wed Apr 10 16:17:26 2013
+--- src/tracker-control/tracker-control-general.c.orig	Wed Jul 31 23:40:48 2013
++++ src/tracker-control/tracker-control-general.c	Thu Aug  1 08:56:12 2013
 @@ -21,6 +21,15 @@
  
  #include <errno.h>
@@ -20,7 +20,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=697719
  #include <glib.h>
  #include <glib/gi18n.h>
  
-@@ -645,6 +654,7 @@ tracker_control_general_run (void)
+@@ -653,6 +662,7 @@ tracker_control_general_run (void)
  	if (kill_option != TERM_NONE ||
  	    terminate_option != TERM_NONE ||
  	    list_processes) {
@@ -28,8 +28,8 @@ https://bugzilla.gnome.org/show_bug.cgi?id=697719
  		guint32 own_pid;
  		guint32 own_uid;
  		gchar *own_pid_str;
-@@ -695,7 +705,30 @@ tracker_control_general_run (void)
- 			strv = g_strsplit (contents, "^@", 2);
+@@ -713,7 +723,30 @@ tracker_control_general_run (void)
+ #endif
  			if (strv && strv[0]) {
  				gchar *basename;
 +#else /* __OpenBSD__ */
@@ -59,7 +59,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=697719
  				basename = g_path_get_basename (strv[0]);
  
  				if ((g_str_has_prefix (basename, "tracker") == TRUE ||
-@@ -704,7 +737,11 @@ tracker_control_general_run (void)
+@@ -722,7 +755,11 @@ tracker_control_general_run (void)
  				    g_str_has_suffix (basename, "-status-icon") == FALSE) {
  					pid_t pid;
  
@@ -71,7 +71,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=697719
  					str = g_strdup_printf (_("Found process ID %d for '%s'"), pid, basename);
  					g_print ("%s\n", str);
  					g_free (str);
-@@ -757,6 +794,7 @@ tracker_control_general_run (void)
+@@ -775,6 +812,7 @@ tracker_control_general_run (void)
  				g_free (basename);
  			}
  
@@ -79,7 +79,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=697719
  			g_strfreev (strv);
  			g_free (contents);
  			g_free (filename);
-@@ -764,6 +802,7 @@ tracker_control_general_run (void)
+@@ -782,6 +820,7 @@ tracker_control_general_run (void)
  
  		g_slist_foreach (pids, (GFunc) g_free, NULL);
  		g_slist_free (pids);

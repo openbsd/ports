@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.147 2013/06/21 22:38:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.148 2013/08/06 19:06:13 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		powerful desktop search tool and indexer
 
 GNOME_PROJECT=		tracker
-GNOME_VERSION=		0.16.1
-REVISION=		2
+GNOME_VERSION=		0.16.2
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
@@ -37,17 +36,17 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender archive atk-1.0 atk-bridge-2.0
 WANTLIB += atspi bz2 c cairo cairo-gobject crypto cue curl dbus-1
-WANTLIB += dbus-glib-1 uuid enca exempi exif expat ffi fontconfig
-WANTLIB += freetype gcrypt gdk-3 gdk_pixbuf-2.0 gif gio-2.0 glib-2.0
-WANTLIB += gmime-2.6 gmodule-2.0 gobject-2.0 gpg-error
-WANTLIB += graphite2 gsf-1 gstaudio-1.0 gstbase-1.0 gstpbutils-1.0
-WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
-WANTLIB += harfbuzz icui18n idn jpeg kvm lcms2
-WANTLIB += lua5.1 lzma m nautilus-extension openjpeg orc-0.4 pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png poppler
-WANTLIB += poppler-glib pthread pthread-stubs quvi secret-1 soup-2.4
-WANTLIB += soup-gnome-2.4 sqlite3 ssl stdc++ tag tag_c tiff totem-plparser
-WANTLIB += upower-glib xcb xcb-render xcb-shm xml2 z
+WANTLIB += dbus-glib-1 enca exempi exif expat ffi fontconfig freetype
+WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gmime-2.6
+WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 gsf-1 gstaudio-1.0
+WANTLIB += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
+WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz icudata icui18n
+WANTLIB += icuuc idn jpeg kvm lcms2 lua5.1 lzma m nautilus-extension
+WANTLIB += openjpeg orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png poppler poppler-glib pthread pthread-stubs
+WANTLIB += quvi secret-1 soup-2.4 soup-gnome-2.4 sqlite3 ssl stdc++
+WANTLIB += tag tag_c tiff totem-plparser upower-glib uuid xcb
+WANTLIB += xcb-render xcb-shm xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome \

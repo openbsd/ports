@@ -1,6 +1,6 @@
-$OpenBSD: patch-tests_libtracker-miner_Makefile_in,v 1.4 2013/03/29 16:28:27 ajacoutot Exp $
---- tests/libtracker-miner/Makefile.in.orig	Mon Mar 18 17:37:38 2013
-+++ tests/libtracker-miner/Makefile.in	Fri Mar 29 16:39:44 2013
+$OpenBSD: patch-tests_libtracker-miner_Makefile_in,v 1.5 2013/08/06 19:06:13 ajacoutot Exp $
+--- tests/libtracker-miner/Makefile.in.orig	Thu Aug  1 00:18:32 2013
++++ tests/libtracker-miner/Makefile.in	Thu Aug  1 08:56:12 2013
 @@ -125,7 +125,6 @@ am_tracker_crawler_test_OBJECTS = tracker-crawler-test
  tracker_crawler_test_OBJECTS = $(am_tracker_crawler_test_OBJECTS)
  tracker_crawler_test_LDADD = $(LDADD)
@@ -73,7 +73,7 @@ $OpenBSD: patch-tests_libtracker-miner_Makefile_in,v 1.4 2013/03/29 16:28:27 aja
  	$(top_builddir)/src/libtracker-sparql-backend/libtracker-sparql-@TRACKER_API_VERSION@.la \
  	$(top_builddir)/src/libtracker-common/libtracker-common.la \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
-@@ -647,7 +638,6 @@ AM_CPPFLAGS = \
+@@ -659,7 +650,6 @@ AM_CPPFLAGS = \
  
  LDADD = \
  	$(top_builddir)/src/libtracker-miner/libtracker-miner-@TRACKER_API_VERSION@.la \
