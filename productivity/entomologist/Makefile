@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:37:54 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/08/06 19:01:58 landry Exp $
 
 COMMENT =	bug tracker client
-DISTNAME =	entomologist-0.6
-REVISION=	4
+DISTNAME =	entomologist-1.1
 CATEGORIES =	productivity
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=entomologist/}
@@ -21,7 +20,7 @@ WANTLIB +=	ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
 MAKE_FLAGS =	CXX=${CXX} \
 		QMAKE_CXXFLAGS="${CXXFLAGS} -g"
 FAKE_FLAGS =	INSTALL_ROOT=${DESTDIR}
-CONFIGURE_ARGS =	PREFIX=${PREFIX}
+CONFIGURE_ARGS =	PREFIX=${PREFIX} LOCALE_PREFIX=${TRUEPREFIX}
 NO_TEST =	Yes
 
 pre-configure:
