@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/08/06 18:11:40 jasper Exp $
 
 COMMENT=	Python as a hardware description and verification language
 
-MODPY_EGG_VERSION=0.7
+MODPY_EGG_VERSION=0.8
 DISTNAME=	myhdl-${MODPY_EGG_VERSION}
 CATEGORIES=	lang
 

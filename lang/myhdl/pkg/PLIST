@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/09/16 13:46:13 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/08/06 18:11:40 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/myhdl/
 lib/python${MODPY_VERSION}/site-packages/myhdl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/myhdl/_Cosimulation.py
@@ -17,6 +17,8 @@ lib/python${MODPY_VERSION}/site-packages/myhdl/_always.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/_always.pyc
 lib/python${MODPY_VERSION}/site-packages/myhdl/_always_comb.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/_always_comb.pyc
+lib/python${MODPY_VERSION}/site-packages/myhdl/_always_seq.py
+lib/python${MODPY_VERSION}/site-packages/myhdl/_always_seq.pyc
 lib/python${MODPY_VERSION}/site-packages/myhdl/_bin.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/_bin.pyc
 lib/python${MODPY_VERSION}/site-packages/myhdl/_cell_deref.py
@@ -37,6 +39,8 @@ lib/python${MODPY_VERSION}/site-packages/myhdl/_join.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/_join.pyc
 lib/python${MODPY_VERSION}/site-packages/myhdl/_misc.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/_misc.pyc
+lib/python${MODPY_VERSION}/site-packages/myhdl/_modbv.py
+lib/python${MODPY_VERSION}/site-packages/myhdl/_modbv.pyc
 lib/python${MODPY_VERSION}/site-packages/myhdl/_simulator.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/_simulator.pyc
 lib/python${MODPY_VERSION}/site-packages/myhdl/_traceSignals.py
@@ -86,6 +90,7 @@ share/examples/myhdl/cookbook/dff/dff.py
 share/examples/myhdl/cookbook/dff/dff.v
 share/examples/myhdl/cookbook/dff/dff.vhd
 share/examples/myhdl/cookbook/dff/pck_myhdl_07dev.vhd
+share/examples/myhdl/cookbook/dff/pck_myhdl_08dev.vhd
 share/examples/myhdl/cookbook/dff/tb_dff.v
 share/examples/myhdl/cookbook/dffa/
 share/examples/myhdl/cookbook/dffa/dffa.py
@@ -97,6 +102,7 @@ share/examples/myhdl/cookbook/johnson/jc2_alt.py
 share/examples/myhdl/cookbook/johnson/jc2_alt.v
 share/examples/myhdl/cookbook/johnson/jc2_alt.vhd
 share/examples/myhdl/cookbook/johnson/pck_myhdl_07dev.vhd
+share/examples/myhdl/cookbook/johnson/pck_myhdl_08dev.vhd
 share/examples/myhdl/cookbook/johnson/tb_jc2.v
 share/examples/myhdl/cookbook/johnson/tb_jc2_alt.v
 share/examples/myhdl/cookbook/johnson/test_jc2.py
@@ -152,6 +158,7 @@ share/examples/myhdl/manual/inc_comb.vhd
 share/examples/myhdl/manual/mux.py
 share/examples/myhdl/manual/mux2.py
 share/examples/myhdl/manual/pck_myhdl_07.vhd
+share/examples/myhdl/manual/pck_myhdl_08.vhd
 share/examples/myhdl/manual/queue.py
 share/examples/myhdl/manual/ram.py
 share/examples/myhdl/manual/ram.vhd
@@ -177,3 +184,9 @@ share/examples/myhdl/rs232/rs232_rx.py
 share/examples/myhdl/rs232/rs232_tx.py
 share/examples/myhdl/rs232/rs232_util.py
 share/examples/myhdl/rs232/test_rs232.py
+share/examples/myhdl/uart_tx/
+share/examples/myhdl/uart_tx/tb_uart_tx.v
+share/examples/myhdl/uart_tx/tb_uart_tx_2.v
+share/examples/myhdl/uart_tx/uart_tx.py
+share/examples/myhdl/uart_tx/uart_tx.v
+share/examples/myhdl/uart_tx/uart_tx_2.v
