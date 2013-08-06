@@ -1,31 +1,31 @@
-$OpenBSD: patch-guiserver_newlisp-edit_lsp,v 1.3 2013/05/29 15:46:05 jasper Exp $
---- guiserver/newlisp-edit.lsp.orig	Wed May 22 02:06:51 2013
-+++ guiserver/newlisp-edit.lsp	Fri May 24 17:59:50 2013
+$OpenBSD: patch-guiserver_newlisp-edit_lsp,v 1.4 2013/08/06 18:12:00 jasper Exp $
+--- guiserver/newlisp-edit.lsp.orig	Mon Jul 29 21:15:47 2013
++++ guiserver/newlisp-edit.lsp	Mon Jul 29 21:17:48 2013
 @@ -1,4 +1,4 @@
 -#!/usr/bin/newlisp
 +#!${PREFIX}/bin/newlisp
  
  ; newlisp-edit.lsp - multiple tab LISP editor and support for running code from the editor
  ; needs 9.9.2 version minimum to run
-@@ -156,7 +156,7 @@
+@@ -157,7 +157,7 @@
  			(write-file file (base64-dec text)))
  		(if (= ostype "Win32")
  			(catch (exec (string {newlisp.exe "} currentScriptFile {" } file " > " (string file "out"))) 'result)
 -			(catch (exec (string "/usr/bin/newlisp " currentScriptFile " " file)) 'result)
-+			(catch (exec (string "${PREFIX}/bin/newlisp " currentScriptFile " " file)) 'result)
++			(catch (exec (string "${TRUEPREFIX}/bin/newlisp " currentScriptFile " " file)) 'result)
  		)
  		(if (list? result)
  			(begin
-@@ -224,7 +224,7 @@
+@@ -225,7 +225,7 @@
  		(gs:run-shell 'OutputArea 
- 			(string newlispDir "/newlisp.exe " currentExtension " -C -w \"" $HOME "\""))
+ 			(string newlispDir "/newlisp.exe") (string currentExtension " -C -w \"" $HOME "\""))
  		(gs:run-shell 'OutputArea 
--			(string "/usr/bin/newlisp " currentExtension " -C -w " $HOME))
-+			(string "${PREFIX}/bin/newlisp " currentExtension " -C -w " $HOME))
+-			(string "/usr/bin/newlisp") (string currentExtension " -C -w " $HOME))
++			(string "${PREFIX}/bin/newlisp") (string currentExtension " -C -w " $HOME))
  	)
  )
  
-@@ -1447,11 +1447,7 @@
+@@ -1448,11 +1448,7 @@
  		; all other UNIX
  		(true 
  			(set 'files '(
@@ -34,7 +34,7 @@ $OpenBSD: patch-guiserver_newlisp-edit_lsp,v 1.3 2013/05/29 15:46:05 jasper Exp 
 -					"/usr/bin/mozilla"
 -					"/usr/bin/firefox"
 -					"/usr/bin/konqueror"
-+					"${PREFIX}/bin/xdg-open"
++				        "${LOCALBASE}/bin/xdg-open"
  				))
  			(set 'prog (find true (map file? files)))
  			(if prog

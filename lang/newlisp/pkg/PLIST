@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/05/29 15:46:05 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/08/06 18:12:00 jasper Exp $
 bin/newlisp
 @bin bin/newlisp-${V}
 bin/newlisp-edit
@@ -76,6 +76,5 @@ share/newlisp-${V}/newLISP128.png
 share/newlisp-${V}/util/
 share/newlisp-${V}/util/httpd-conf.lsp
 share/newlisp-${V}/util/link.lsp
-share/newlisp-${V}/util/nanorc
 share/newlisp-${V}/util/newlisp.vim
 share/newlisp-${V}/util/syntax.cgi
