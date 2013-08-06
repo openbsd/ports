@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/01/28 17:12:06 stsp Exp $
+# $OpenBSD: Makefile,v 1.4 2013/08/06 23:44:55 jsg Exp $
 
      SUBDIR =
      SUBDIR += acx
@@ -10,6 +10,7 @@
      SUBDIR += malo
      SUBDIR += otus
      SUBDIR += pgt
+     SUBDIR += radeondrm
      SUBDIR += rsu
      SUBDIR += uath
      SUBDIR += ueagle
