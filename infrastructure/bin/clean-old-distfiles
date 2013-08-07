@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: clean-old-distfiles,v 1.5 2012/12/23 13:27:08 espie Exp $
+# $OpenBSD: clean-old-distfiles,v 1.6 2013/08/07 09:21:09 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -80,7 +80,8 @@ sub remove_file
 			if ($ck->stringize eq $sha) {
 				really_remove($file);
 			} else {
-				say STDERR "SHA256 mismatch on $file";
+				say STDERR "SHA256 mismatch on $file: ", 
+				    $ck->stringize, " vs $sha";
 			}
 	    	}
     	}
