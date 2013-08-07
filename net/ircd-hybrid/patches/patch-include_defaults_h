@@ -1,6 +1,6 @@
-$OpenBSD: patch-include_defaults_h,v 1.5 2013/01/29 23:50:04 brad Exp $
---- include/defaults.h.orig	Mon Jan 28 14:39:30 2013
-+++ include/defaults.h	Tue Jan 29 18:30:03 2013
+$OpenBSD: patch-include_defaults_h,v 1.6 2013/08/07 23:41:08 brad Exp $
+--- include/defaults.h.orig	Thu May 23 16:00:07 2013
++++ include/defaults.h	Thu May 30 18:58:14 2013
 @@ -47,6 +47,11 @@
   * AUTOMODPATH = directory for autoloaded modules
   */
@@ -13,9 +13,9 @@ $OpenBSD: patch-include_defaults_h,v 1.5 2013/01/29 23:50:04 brad Exp $
  /* dirs */
  #define DPATH       PREFIX                                                     
  #define SBINPATH    PREFIX "/sbin/"
-@@ -56,9 +61,9 @@
- #define HPATH		    DATADIR "/" PACKAGE "/help/opers"
- #define UHPATH		  DATADIR "/" PACKAGE "/help/users"
+@@ -55,9 +60,9 @@
+ #define MODPATH		  LIBDIR "/" PACKAGE "/modules/"
+ #define HPATH		    DATADIR "/" PACKAGE "/help"
  #define AUTOMODPATH	MODPATH "/autoload/"
 -#define ETCPATH     SYSCONFDIR
 -#define	LOGPATH		  LOCALSTATEDIR "/log"

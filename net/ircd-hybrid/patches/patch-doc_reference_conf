@@ -1,0 +1,50 @@
+$OpenBSD: patch-doc_reference_conf,v 1.1 2013/08/07 23:41:08 brad Exp $
+--- doc/reference.conf.orig	Fri Aug  2 15:02:49 2013
++++ doc/reference.conf	Tue Aug  6 00:41:09 2013
+@@ -111,7 +111,7 @@ serverinfo {
+ 	 *	chmod 0600 rsa.key
+ 	 *	chmod 0644 rsa.pub
+ 	 */
+-#	rsa_private_key_file = "/usr/local/ircd/etc/rsa.key";
++#	rsa_private_key_file = "${SYSCONFDIR}/ircd-hybrid/rsa.key";
+ 
+ 	/*
+ 	 * ssl_certificate_file: the path to the file containing our
+@@ -133,7 +133,7 @@ serverinfo {
+ 	 *	Common Name: irc.someirc.net
+ 	 *	E-mail: you@domain.com
+ 	 */
+-#	ssl_certificate_file = "/usr/local/ircd/etc/cert.pem";
++#	ssl_certificate_file = "${SYSCONFDIR}/ircd-hybrid/cert.pem";
+ 
+ 	/*
+ 	 * ssl_dh_param_file:
+@@ -150,7 +150,7 @@ serverinfo {
+ 	 * regarding specific OpenSSL dhparam command-line options
+ 	 * can be found in the OpenSSL manual.
+ 	 */
+-#	ssl_dh_param_file = "/usr/local/ircd/etc/dhparam.pem";
++#	ssl_dh_param_file = "${SYSCONFDIR}/ircd-hybrid/dhparam.pem";
+ 
+ 	/*
+ 	 * ssl_cipher_list:
+@@ -456,7 +456,7 @@ operator {
+ 	 * A password should not be defined when this is used; see 
+ 	 * doc/challenge.txt for more information.
+ 	 */
+-#	rsa_public_key_file = "/usr/local/ircd/etc/oper.pub";
++#	rsa_public_key_file = "${SYSCONFDIR}/ircd-hybrid/oper.pub";
+ 
+ 	/*
+ 	 * ssl_certificate_fingerprint: enhances security by additionally checking
+@@ -1236,8 +1236,8 @@ modules {
+ 	 * path: other paths to search for modules specified below
+ 	 * and in "/module load".
+ 	 */
+-	path = "/usr/local/ircd/lib/ircd-hybrid/modules";
+-	path = "/usr/local/ircd/lib/ircd-hybrid/modules/autoload";
++	path = "${TRUEPREFIX}/lib/ircd-hybrid/modules";
++	path = "${TRUEPREFIX}/lib/ircd-hybrid/modules/autoload";
+ 
+ 	/* module: the name of a module to load on startup/rehash. */
+ #	module = "some_module.la";
