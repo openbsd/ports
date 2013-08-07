@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/04/04 16:03:56 brad Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/08/07 11:50:27 espie Exp $
 @conflict lzma-*
 @pkgpath archivers/lzma
 bin/lzcat
@@ -89,8 +89,3 @@ share/doc/xz/faq.txt
 share/doc/xz/history.txt
 share/doc/xz/lzma-file-format.txt
 share/doc/xz/xz-file-format.txt
-share/locale/cs/LC_MESSAGES/xz.mo
-share/locale/de/LC_MESSAGES/xz.mo
-share/locale/fr/LC_MESSAGES/xz.mo
-share/locale/it/LC_MESSAGES/xz.mo
-share/locale/pl/LC_MESSAGES/xz.mo
