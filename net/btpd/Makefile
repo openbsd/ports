@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:35:45 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/08/07 21:57:59 naddy Exp $
 
 COMMENT=		BitTorrent Protocol Daemon
 
@@ -9,7 +9,7 @@ MAINTAINER=		Nicholas Marriott <nicm@openbsd.org>
 
 HOMEPAGE=		http://wiki.github.com/btpd/btpd/
 
-MASTER_SITES=		http://github.com/downloads/btpd/btpd/
+MASTER_SITES=		https://github.com/downloads/btpd/btpd/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

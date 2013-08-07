@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2013/07/19 07:02:37 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2013/08/07 21:58:09 naddy Exp $
 
 COMMENT =		web server for WAI applications
 
 DISTNAME =		warp-1.3.9
+REVISION =		0
 CATEGORIES =		devel www
-HOMEPAGE =		http://github.com/snoyberg/warp
+HOMEPAGE =		https://github.com/snoyberg/warp
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 

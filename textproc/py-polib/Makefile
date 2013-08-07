@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:42:46 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/08/07 21:58:04 naddy Exp $
 
 COMMENT=	Python library to manipulate gettext files
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://pypi.python.org/pypi/polib
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://bitbucket.org/izi/polib/downloads/
+MASTER_SITES=	https://bitbucket.org/izi/polib/downloads/
 
 MODULES =	lang/python
 

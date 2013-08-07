@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:35:55 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/08/07 21:57:59 naddy Exp $
 
 COMMENT =		Python bindings for ZeroMQ
 
 MODPY_EGG_VERSION =	13.0.0
 DISTNAME =		pyzmq-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
+REVISION =		0
 
 CATEGORIES =		net devel
 
-HOMEPAGE =		http://github.com/zeromq/pyzmq/
+HOMEPAGE =		https://github.com/zeromq/pyzmq/
 
 # LGPLv3
 PERMIT_PACKAGE_CDROM =	Yes

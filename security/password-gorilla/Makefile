@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:41:27 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/08/07 21:58:00 naddy Exp $
 
 COMMENT =	cross-platform password manager
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://wiki.github.com/zdia/gorilla/
 # GPLv2
 PERMIT_PACKAGE_CDROM =  Yes
 
-MASTER_SITES = http://github.com/zdia/gorilla/tarball/v${V}/ \
+MASTER_SITES = https://github.com/zdia/gorilla/tarball/v${V}/ \
 		http://spacehopper.org/mirrors/
 
 USE_X11 =	Yes

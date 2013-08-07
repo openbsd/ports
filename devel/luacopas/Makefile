@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/06/26 16:49:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2013/08/07 21:57:46 naddy Exp $
 
 PKG_ARCH =      *
 
@@ -7,7 +7,7 @@ DISTNAME=	copas-1.1.6
 PKGNAME=	lua${DISTNAME}
 REVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	http://github.com/downloads/keplerproject/copas/
+MASTER_SITES=	https://github.com/downloads/keplerproject/copas/
 
 HOMEPAGE=	http://www.keplerproject.org/copas/
 

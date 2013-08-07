@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/21 08:48:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/08/07 21:58:10 naddy Exp $
 
 COMMENT=	validate, correct and pretty-print HTML
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c
 
-MASTER_SITES=	http://github.com/downloads/petdance/tidyp/
+MASTER_SITES=	https://github.com/downloads/petdance/tidyp/
 
 CONFIGURE_STYLE=gnu
 

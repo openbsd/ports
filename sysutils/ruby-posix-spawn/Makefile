@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:41:32 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/08/07 21:58:02 naddy Exp $
 
 COMMENT=	fast process spawning
 
 DISTNAME=	posix-spawn-0.3.6
+REVISION=	0
 
 CATEGORIES=	sysutils
 
-HOMEPAGE=	http://github.com/rtomayko/posix-spawn
+HOMEPAGE=	https://github.com/rtomayko/posix-spawn
 
 # MIT / LGPL
 PERMIT_PACKAGE_CDROM=	Yes

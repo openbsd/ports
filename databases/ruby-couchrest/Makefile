@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 02:52:08 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/08/07 21:57:43 naddy Exp $
 
 COMMENT =	lean and RESTful interface to CouchDB
 
 DISTNAME =	couchrest-0.33
-REVISION =	5
+REVISION =	6
 CATEGORIES =	databases
 
-HOMEPAGE =	http://github.com/jchris/couchrest/
+HOMEPAGE =	https://github.com/jchris/couchrest/
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM = Yes

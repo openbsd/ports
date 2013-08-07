@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/10 22:55:03 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/08/07 21:57:42 naddy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,9 +6,10 @@ COMMENT =	Qt-based C++ library for the Last.fm webservices
 V =		1.0.6
 DISTNAME =	$V
 PKGNAME =	liblastfm-$V
+REVISION =	0
 CATEGORIES =	audio devel net
 
-HOMEPAGE =	http://github.com/lastfm/liblastfm
+HOMEPAGE =	https://github.com/lastfm/liblastfm
 MAINTAINER =	Vadim Zhukov <persgray@gmail.com>
 
 SHARED_LIBS =	lastfm			0.0

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 10:50:29 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/08/07 21:57:49 naddy Exp $
 
 COMMENT =	tasks for documentation, extension compiling, testing
 
 DISTNAME =	echoe-3.2
-REVISION =	6
+REVISION =	7
 CATEGORIES =	devel
 
-HOMEPAGE =	http://github.com/fauna
+HOMEPAGE =	https://github.com/fauna
 
 # AFL v3.0
 PERMIT_PACKAGE_CDROM = Yes

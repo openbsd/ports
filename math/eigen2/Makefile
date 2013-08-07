@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:23:54 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/08/07 21:57:58 naddy Exp $
 
 PKG_ARCH =	*
 COMMENT =	lightweight C++ template library for linear algebra
 CATEGORIES =	math devel
 HOMEPAGE =	http://eigen.tuxfamily.org/
 MASTER_SITES =	http://spacehopper.org/mirrors/eigen/
-#MASTER_SITES =	http://bitbucket.org/eigen/eigen/get/
+#MASTER_SITES =	https://bitbucket.org/eigen/eigen/get/
 DIST_SUBDIR =	eigen
 VERSION =	2.0.14
 DISTNAME =	${VERSION}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/06/02 14:02:59 pascal Exp $
+# $OpenBSD: Makefile,v 1.12 2013/08/07 21:57:57 naddy Exp $
 
 SHARED_ONLY =		Yes
 
@@ -27,7 +27,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += c gmp icudata icuuc m ncurses parrot pthread
 WANTLIB += readline stdc++ util ffi
 
-MASTER_SITES =		http://github.com/perl6/nqp/archive/
+MASTER_SITES =		https://github.com/perl6/nqp/archive/
 
 LIB_DEPENDS =		lang/parrot>=${PARROT_VERSION}
 

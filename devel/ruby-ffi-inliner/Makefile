@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:29 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/08/07 21:57:50 naddy Exp $
 
 COMMENT =	embed C code in your ruby script
 
 DISTNAME =	ffi-inliner-0.2.4
 CATEGORIES =	devel
-REVISION =	1
+REVISION =	2
 
-HOMEPAGE =	http://github.com/remogatto/ffi-inliner
+HOMEPAGE =	https://github.com/remogatto/ffi-inliner
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

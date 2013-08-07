@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2013/07/03 20:07:26 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2013/08/07 21:57:42 naddy Exp $
 
 COMMENT =	Python driver for mongodb
 
 MODPY_EGG_VERSION = 2.5
 DISTNAME =	pymongo-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/py//}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	databases devel
 
-HOMEPAGE =	http://github.com/mongodb/mongo-python-driver/
+HOMEPAGE =	https://github.com/mongodb/mongo-python-driver/
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes

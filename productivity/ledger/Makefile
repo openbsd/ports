@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/06/26 11:39:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2013/08/07 21:58:00 naddy Exp $
 
 COMMENT=	command line double-entry accounting ledger
 
@@ -15,7 +15,7 @@ SHARED_LIBS=	amounts	0.0
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://github.com/downloads/jwiegley/ledger/
+MASTER_SITES=	https://github.com/downloads/jwiegley/ledger/
 
 WANTLIB=	c gmp>=4 m pcre stdc++
 

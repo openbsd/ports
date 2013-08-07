@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 10:50:11 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/08/07 21:57:47 naddy Exp $
 
 COMMENT =	multiple states library for the lua language
 SHARED_ONLY =	Yes
@@ -13,7 +13,7 @@ HOMEPAGE =	http://www.keplerproject.org/rings/
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	http://github.com/downloads/keplerproject/rings/
+MASTER_SITES =	https://github.com/downloads/keplerproject/rings/
 
 MODULES =	lang/lua
 

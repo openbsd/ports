@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2013/05/13 06:33:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2013/08/07 21:58:07 naddy Exp $
 
 COMMENT=	syntax highlighter based on pygments
 
 DISTNAME=	pygments.rb-0.5.0
+REVISION=	0
 EPOCH=		0
 
 CATEGORIES=	textproc
 
-HOMEPAGE=	http://github.com/tmm1/pygments.rb
+HOMEPAGE=	https://github.com/tmm1/pygments.rb
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

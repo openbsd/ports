@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/07/09 10:00:36 rpointel Exp $
+# $OpenBSD: Makefile,v 1.11 2013/08/07 21:57:54 naddy Exp $
 
 COMMENT =		series of applications for Mercurial
 
@@ -14,7 +14,7 @@ MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		http://bitbucket.org/tortoisehg/targz/downloads/
+MASTER_SITES =		https://bitbucket.org/tortoisehg/targz/downloads/
 
 MODULES =		lang/python
 BUILD_DEPENDS =		x11/py-qt4 \

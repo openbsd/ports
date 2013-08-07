@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/21 08:45:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2013/08/07 21:57:55 naddy Exp $
 
 COMMENT=		2D games framework for use with Lua
 
@@ -15,7 +15,7 @@ CATEGORIES=		games lang/lua
 # docs: freebsd license
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://bitbucket.org/rude/love/downloads/
+MASTER_SITES=		https://bitbucket.org/rude/love/downloads/
 
 MODULES=		converters/libiconv \
 			lang/lua
