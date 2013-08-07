@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:35:55 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/08/07 21:32:24 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	python interface to flow-tools file format
 MODPY_EGG_VERSION=0.3.4
 DISTNAME=	pyflowtools-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:S/pyflow/py-flow/g}
-REVISION=	3
+REVISION=	4
 CATEGORIES=	net
 
 # GPL
@@ -15,8 +15,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB+=	z ft
 
-HOMEPAGE=	http://code.google.com/p/pyflowtools/
-MASTER_SITES=	http://pyflowtools.googlecode.com/files/
+HOMEPAGE=	https://code.google.com/p/pyflowtools/
+MASTER_SITES=	https://pyflowtools.googlecode.com/files/
 
 LIB_DEPENDS=	net/flow-tools
 MODULES=	lang/python

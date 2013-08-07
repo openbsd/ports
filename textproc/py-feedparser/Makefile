@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:42:46 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/08/07 21:32:42 naddy Exp $
 
 COMMENT=	RSS and Atom feeds parser written in Python
 
@@ -15,7 +15,7 @@ MAINTAINER=	Romain Gaillegue <romain@biscotte.net>
 # BSD-2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://feedparser.googlecode.com/files/
+MASTER_SITES=	https://feedparser.googlecode.com/files/
 
 MODULES=	lang/python
 

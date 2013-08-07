@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:07:43 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/08/07 21:31:56 naddy Exp $
 
 COMMENT =		Pyrex generated python interface to PROJ.4 library
 
 MODPY_EGG_VERSION =	1.9.3
 DISTNAME =		pyproj-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
+REVISION =		0
 
 CATEGORIES =		geo
 
-HOMEPAGE =		http://code.google.com/p/pyproj/
+HOMEPAGE =		https://code.google.com/p/pyproj/
 
 MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
@@ -17,7 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ${MODPY_WANTLIB} pthread
 
-MASTER_SITES =		http://pyproj.googlecode.com/files/
+MASTER_SITES =		https://pyproj.googlecode.com/files/
 
 MODULES =		lang/python
 

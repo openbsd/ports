@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:07:39 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/08/07 21:31:53 naddy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -30,7 +30,7 @@ WANTLIB +=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		pangocairo-1.0>=1600.0 pangoft2-1.0>=1600.0 png>=3 smpeg \
 		GL Xxf86vm drm gthread-2.0 xcb-render xcb-shm
 
-MASTER_SITES =	http://garglk.googlecode.com/files/
+MASTER_SITES =	https://garglk.googlecode.com/files/
 EXTRACT_SUFX =	.zip
 
 MODULES =	devel/gettext

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/21 08:46:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/08/07 21:32:07 naddy Exp $
 
 # .libs/libmecab.so.0.0: undefined reference to `__sync_val_compare_and_swap_4'
 # .libs/libmecab.so.0.0: undefined reference to `__sync_add_and_fetch_4'
@@ -9,8 +9,8 @@ COMMENT-main =	japanese morphological analyzer engine
 COMMENT-ipadic = IPA japanese dictionary for mecab
 
 DISTNAME =	mecab-0.994
-REVISION-main =	0
-REVISION-ipadic = 0
+REVISION-main =	1
+REVISION-ipadic = 1
 PKGNAME-main =	${DISTNAME}
 PKGNAME-ipadic = mecab-ipadic-2.7.0
 
@@ -18,7 +18,7 @@ SHARED_LIBS =	mecab	0.0 # 2.0
 
 CATEGORIES =	japanese
 
-HOMEPAGE =	http://code.google.com/p/mecab/
+HOMEPAGE =	https://code.google.com/p/mecab/
 
 # BSD + IPADIC
 PERMIT_PACKAGE_CDROM =	Yes
@@ -28,7 +28,7 @@ MULTI_PACKAGES = -main -ipadic
 WANTLIB-main =	c m pthread stdc++ ${MODLIBICONV_WANTLIB}
 WANTLIB-ipadic =
 
-MASTER_SITES =	http://mecab.googlecode.com/files/
+MASTER_SITES =	https://mecab.googlecode.com/files/
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		${PKGNAME-ipadic}-${IPADIC_VER}.tar.gz

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:03 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/08/07 21:31:32 naddy Exp $
 
 COMMENT =		graphical frontend to the objdump disassembler
 
 MODPY_EGG_VERSION = 	9
 DISTNAME =		dissy-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
-HOMEPAGE =		http://code.google.com/p/dissy/
-REVISION =		1
+HOMEPAGE =		https://code.google.com/p/dissy/
+REVISION =		2
 
 MAINTAINER =		Jonathan Armani <armani@openbsd.org>
 
@@ -14,7 +14,7 @@ MAINTAINER =		Jonathan Armani <armani@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 
-MASTER_SITES =	http://dissy.googlecode.com/files/
+MASTER_SITES =	https://dissy.googlecode.com/files/
 
 MODULES =	lang/python
 RUN_DEPENDS =	x11/py-gtk2

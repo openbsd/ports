@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/21 08:45:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2013/08/07 21:32:03 naddy Exp $
 
 COMMENT-main=	OCR Engine developed at HP Labs
 
@@ -7,13 +7,14 @@ DISTNAME=	tesseract-${V}
 CATEGORIES=	graphics textproc
 
 PKGNAME-main=	${DISTNAME}
+REVISION-main=	0
 
 SHARED_LIBS +=  tesseract            3.1      # 3.1
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		eng.traineddata.gz
 			
-HOMEPAGE=	http://tesseract-ocr.googlecode.com/
+HOMEPAGE=	https://tesseract-ocr.googlecode.com/
 
 # Apache License 2.0
 PERMIT_PACKAGE_CDROM=	Yes
@@ -35,7 +36,7 @@ COMMENT-${l}=	${l} language data for Tesseract
 DISTFILES+=	${l}.traineddata.gz
 PKGNAME-${l}=	tesseract-${l}-${LANG_V}
 MULTI_PACKAGES+=-${l}
-REVISION-${l}=	3
+REVISION-${l}=	4
 RUN_DEPENDS-${l}=	${BASE_PKGPATH}>=${MAJOR_V}
 PKG_ARCH-${l}=	*
 .endfor

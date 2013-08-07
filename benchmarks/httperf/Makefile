@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/21 08:45:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2013/08/07 21:31:19 naddy Exp $
 
 COMMENT =		web server performance testing tool
 
@@ -12,7 +12,7 @@ MAINTAINER =		Scott Vokes <vokes.s@gmail.com>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		http://httperf.googlecode.com/files/
+MASTER_SITES =		https://httperf.googlecode.com/files/
 
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu

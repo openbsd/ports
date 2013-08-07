@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/10 22:55:06 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/08/07 21:31:18 naddy Exp $
 
 COMMENT =		minimalistic Mumble server
 
 DISTNAME =		umurmur-0.2.10
-REVISION =		0
+REVISION =		1
 CATEGORIES =		audio
 
-HOMEPAGE =		http://umurmur.googlecode.com/
+HOMEPAGE =		https://umurmur.googlecode.com/
 
 MASTER_SITES =		${HOMEPAGE}/files/
 

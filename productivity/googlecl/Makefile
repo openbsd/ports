@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:37:55 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/08/07 21:32:32 naddy Exp $
 
 COMMENT=	command-line interface to Google services
 
 MODPY_EGG_VERSION= 0.9.13
 DISTNAME=	googlecl-${MODPY_EGG_VERSION}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	productivity devel www
 
-HOMEPAGE=	http://code.google.com/p/googlecl/
+HOMEPAGE=	https://code.google.com/p/googlecl/
 
 MODULES=	lang/python
 PKG_ARCH=	*
@@ -16,7 +16,7 @@ PKG_ARCH=	*
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://googlecl.googlecode.com/files/
+MASTER_SITES=	https://googlecl.googlecode.com/files/
 
 MODPY_SETUPTOOLS= Yes
 USE_GROFF =	Yes

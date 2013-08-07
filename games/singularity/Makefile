@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/05/12 07:29:04 rpe Exp $
+# $OpenBSD: Makefile,v 1.13 2013/08/07 21:31:55 naddy Exp $
 
 COMMENT=	simulation of a true AI
 
@@ -20,7 +20,7 @@ HOMEPAGE=	http://emhsoft.com/singularity/
 # music under CC Attribution-ShareAlike 3.0 Unported
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://endgame-singularity.googlecode.com/files/
+MASTER_SITES=	https://endgame-singularity.googlecode.com/files/
 
 WRKDIST=	${WRKDIR}/singularity-${V}
 NO_TEST=	Yes

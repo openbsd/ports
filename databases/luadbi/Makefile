@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/06/12 20:36:33 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2013/08/07 21:31:22 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,12 +10,14 @@ V=		0.5
 DISTNAME=	luadbi.$V
 PKGNAME-main=	luadbi-$V
 PKGNAME-mysql=	luadbi-mysql-$V
-REVISION-mysql=	1
 PKGNAME-pgsql=	luadbi-pgsql-$V
+REVISION-main=	0
+REVISION-mysql=	2
+REVISION-pqsql=	0
 
 CATEGORIES=	databases
 
-HOMEPAGE=	http://luadbi.googlecode.com/
+HOMEPAGE=	https://luadbi.googlecode.com/
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

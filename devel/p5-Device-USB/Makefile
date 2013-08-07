@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 10:50:16 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/08/07 21:31:38 naddy Exp $
 
 COMMENT=		perl wrapper around libusb
 
 DISTNAME=		Device-USB-0.31
-REVISION=		3
+REVISION=		4
 CATEGORIES=		devel
 SHARED_ONLY=		Yes
 
 MODULES=		cpan
 
-HOMEPAGE=		http://code.google.com/p/perl-device-usb/
+HOMEPAGE=		https://code.google.com/p/perl-device-usb/
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

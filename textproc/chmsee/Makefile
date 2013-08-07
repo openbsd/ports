@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:42:41 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/08/07 21:32:40 naddy Exp $
 
 COMMENT =	html help viewer
 
 DISTNAME =	chmsee-1.2.0
-REVISION=	6
+REVISION=	7
 
 CATEGORIES =	textproc x11
 
-HOMEPAGE =	http://code.google.com/p/chmsee/
+HOMEPAGE =	https://code.google.com/p/chmsee/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	http://chmsee.googlecode.com/files/
+MASTER_SITES =	https://chmsee.googlecode.com/files/
 
 WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo chm expat fontconfig

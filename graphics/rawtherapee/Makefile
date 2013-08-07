@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/07/10 15:10:27 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.6 2013/08/07 21:32:02 naddy Exp $
 
 COMMENT =		RAW image processing application
 
@@ -23,7 +23,7 @@ WANTLIB += iptcdata jpeg lcms2 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pangomm-1.4 pixman-1 png pthread pthread-stubs
 WANTLIB += sigc-2.0 stdc++ tiff xcb xcb-render xcb-shm z
 
-MASTER_SITES =		http://rawtherapee.googlecode.com/files/
+MASTER_SITES =		https://rawtherapee.googlecode.com/files/
 EXTRACT_SUFX = 		.tar.xz
 
 MODULES =		devel/cmake \

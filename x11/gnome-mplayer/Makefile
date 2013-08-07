@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2013/07/12 09:20:04 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.78 2013/08/07 21:33:02 naddy Exp $
 
 COMMENT =		GTK+/GNOME frontend for MPlayer
 
@@ -12,7 +12,7 @@ MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
 HOMEPAGE =		http://kdekorte.googlepages.com/gnomemplayer/
 
-MASTER_SITES =		http://gnome-mplayer.googlecode.com/files/
+MASTER_SITES =		https://gnome-mplayer.googlecode.com/files/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

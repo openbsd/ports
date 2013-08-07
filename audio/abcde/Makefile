@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/10 22:55:01 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/08/07 21:31:12 naddy Exp $
 
 COMMENT=	command-line utility to rip and encode audio cds
 
 DISTNAME=	abcde-2.5.4
+REVISION=	0
 CATEGORIES=	audio
 
-HOMEPAGE=	http://code.google.com/p/abcde/
+HOMEPAGE=	https://code.google.com/p/abcde/
 
 # Artistic or GPLv2, but "Copyright for this work is to expire
 # January 1, 2010, after which it shall be public domain."
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://abcde.googlecode.com/files/
+MASTER_SITES=	https://abcde.googlecode.com/files/
 MASTER_SITES0=	http://lly.org/~rcw/id3/ \
 		http://lly.org/~rcw/id3/old/
 

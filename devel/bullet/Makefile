@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/05/19 14:27:53 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2013/08/07 21:31:30 naddy Exp $
 
 SHARED_ONLY =		Yes
 
@@ -22,7 +22,7 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 # zlib
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		http://bullet.googlecode.com/files/
+MASTER_SITES =		https://bullet.googlecode.com/files/
 EXTRACT_SUFX =		.tgz
 
 WANTLIB += m stdc++

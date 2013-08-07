@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:26 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/08/07 21:31:45 naddy Exp $
 
 COMMENT =		text progressbar library for python
 
 MODPY_EGG_VERSION =	2.3
 DISTNAME =		progressbar-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 
-HOMEPAGE =		http://code.google.com/p/python-progressbar/
-MASTER_SITES =		http://python-progressbar.googlecode.com/files/
+HOMEPAGE =		https://code.google.com/p/python-progressbar/
+MASTER_SITES =		https://python-progressbar.googlecode.com/files/
 
 MAINTAINER = 		Remi Pointel <rpointel@openbsd.org>
 

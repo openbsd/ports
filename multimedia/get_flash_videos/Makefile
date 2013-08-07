@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:35:43 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/08/07 21:32:13 naddy Exp $
 
 COMMENT=		download flash video files from various sites
 
 DISTNAME=		App-get_flash_videos-1.24.20121020
 PKGNAME=		get_flash_videos-1.24.20121020
+REVISION=		0
 #DISTNAME=		monsieurvideo-get-flash-videos-v1.24_02-292-gc52cdf6
 #PKGNAME=		get_flash_videos-1.24.20121012
 #WRKDIST=		${WRKDIR}/monsieurvideo-get-flash-videos-c52cdf6
 CATEGORIES=		multimedia
 
-HOMEPAGE=		http://get-flash-videos.googlecode.com/
+HOMEPAGE=		https://get-flash-videos.googlecode.com/
 
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 

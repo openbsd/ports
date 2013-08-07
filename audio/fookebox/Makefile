@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/10 22:55:02 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/08/07 21:31:14 naddy Exp $
 
 COMMENT=		jukebox frontend to mpd
 
 MODPY_EGG_VERSION=	0.6.1
 DISTNAME=		fookebox-${MODPY_EGG_VERSION}
-REVISION=		1
+REVISION=		2
 CATEGORIES=		audio www
 
-HOMEPAGE=		http://fookebox.googlecode.com/
+HOMEPAGE=		https://fookebox.googlecode.com/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes

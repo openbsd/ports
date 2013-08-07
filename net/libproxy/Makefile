@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2013/06/09 09:40:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2013/08/07 21:32:18 naddy Exp $
 
 # sync with ONLY_FOR_ARCHS in devel/spidermonkey
 ONLY_FOR_ARCHS-mozilla=	alpha amd64 i386 hppa mips64el mips64 powerpc sparc64
@@ -16,15 +16,15 @@ PKGNAME-main=		libproxy-${VERSION}
 PKGNAME-mozilla=	libproxy-mozilla-${VERSION}
 PKGNAME-webkit=		libproxy-webkit-${VERSION}
 
-REVISION-main=		1
-REVISION-mozilla=	0
-REVISION-webkit=	0
+REVISION-main=		2
+REVISION-mozilla=	1
+REVISION-webkit=	1
 
 CATEGORIES=		net
 
 SHARED_LIBS +=  proxy          1.1 # 0.0
 
-HOMEPAGE=		http://libproxy.googlecode.com/
+HOMEPAGE=		https://libproxy.googlecode.com/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes

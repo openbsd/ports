@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/08/07 21:32:09 naddy Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -8,6 +8,7 @@ V8_VERSION=	3.12.19
 V8_ARCH= ${PKG_ARCH:S/amd64/x64/:S/i386/ia32/}
 V8_RELEASE= release
 
+REVISION=0
 EPOCH=0
 
 DISTNAME=	v8-${V8_VERSION}
@@ -17,7 +18,7 @@ CATEGORIES=	lang
 
 SHARED_LIBS=    v8            0.0
 
-HOMEPAGE=	http://code.google.com/p/v8/
+HOMEPAGE=	https://code.google.com/p/v8/
 
 MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
 

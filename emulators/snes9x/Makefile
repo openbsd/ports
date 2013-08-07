@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/11 11:06:04 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2013/08/07 21:31:51 naddy Exp $
 
 COMMENT =	emulates the Super Nintendo Entertainment System
 
@@ -22,7 +22,7 @@ WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		xcb xcb-render xcb-render-util z gdk_pixbuf-2.0 \
 		glade-2.0 SDL png xml2 gtk-x11-2.0 gdk-x11-2.0
 
-MASTER_SITES =	http://sites.google.com/site/bearoso/snes9x/
+MASTER_SITES =	https://sites.google.com/site/bearoso/snes9x/
 EXTRACT_SUFX =	.tar.bz2
 
 RUN_DEPENDS =	devel/desktop-file-utils \

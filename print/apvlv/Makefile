@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:37:53 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/08/07 21:32:31 naddy Exp $
 
 COMMENT=	lightweight PDF document viewer with vi bindings
 
 DISTNAME=	apvlv-0.0.9.6
-REVISION=	5
+REVISION=	6
 CATEGORIES=	print
-HOMEPAGE=	http://code.google.com/p/apvlv/
+HOMEPAGE=	https://code.google.com/p/apvlv/
 
-MASTER_SITES=	http://apvlv.googlecode.com/files/
+MASTER_SITES=	https://apvlv.googlecode.com/files/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes

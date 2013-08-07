@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.39 2013/07/07 09:53:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2013/08/07 21:32:04 naddy Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	intelligent input bus framework
 
 DISTNAME =	ibus-1.5.2
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	ibus-1.0	3.0
 
 CATEGORIES =	inputmethods chinese japanese korean
 
-HOMEPAGE =	http://code.google.com/p/ibus/
+HOMEPAGE =	https://code.google.com/p/ibus/
 
 MAINTAINER =	Federico G. Schwindt <fgsch@openbsd.org>
 
@@ -27,7 +27,7 @@ WANTLIB =	ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread \
 		pthread-stubs xcb xcb-render xcb-shm z
 
-MASTER_SITES =	http://ibus.googlecode.com/files/
+MASTER_SITES =	https://ibus.googlecode.com/files/
 
 MODULES =	devel/dconf \
 		devel/gettext \

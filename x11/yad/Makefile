@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2013/05/05 19:07:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2013/08/07 21:33:10 naddy Exp $
 
 COMMENT=		display graphical dialogs from shell scripts or command line
 
 DISTNAME=		yad-0.20.3
+REVISION=		0
 CATEGORIES=		x11
 
-HOMEPAGE=		http://yad.googlecode.com/
+HOMEPAGE=		https://yad.googlecode.com/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes

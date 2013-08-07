@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/21 08:45:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2013/08/07 21:31:35 naddy Exp $
 
 COMMENT=	C++ GUI library designed for games
 
@@ -16,7 +16,7 @@ SHARED_LIBS +=	guichan		0.1	# .1.0
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://guichan.googlecode.com/files/
+MASTER_SITES=	https://guichan.googlecode.com/files/
 
 WANTLIB += m stdc++
 

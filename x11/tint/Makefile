@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/08/07 21:33:07 naddy Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
@@ -7,10 +7,10 @@ COMMENT=	lightweight freedesktop-compliant panel/taskbar/clock
 DISTNAME=	tint2-0.11
 EXTRACT_SUFX=	.tar.bz2
 PKGNAME=	tint-0.11
-REVISION=	5
+REVISION=	6
 CATEGORIES=	x11
 
-HOMEPAGE=	http://code.google.com/p/tint2/
+HOMEPAGE=	https://code.google.com/p/tint2/
 
 MAINTAINER=	Edd Barrett <edd@openbsd.org>
 
@@ -25,7 +25,7 @@ WANTLIB=	Imlib2>=2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		pangoft2-1.0 pixman-1 png pthread pthread-stubs xcb \
 		xcb-render z GL Xxf86vm drm xcb-shm
 
-MASTER_SITES=	http://tint2.googlecode.com/files/
+MASTER_SITES=	https://tint2.googlecode.com/files/
 
 LIB_DEPENDS=	graphics/imlib2 \
 		devel/pango \

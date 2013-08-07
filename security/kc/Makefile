@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/21 09:48:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2013/08/07 21:32:34 naddy Exp $
 
 COMMENT =	console based password storing application
 
 DISTNAME =	kc-2.3.0
+REVISION =	0
 CATEGORIES =    security
 
-HOMEPAGE =	http://code.google.com/p/keychain
-MASTER_SITES =	http://keychain.googlecode.com/files/
+HOMEPAGE =	https://code.google.com/p/keychain
+MASTER_SITES =	https://keychain.googlecode.com/files/
 
 MAINTAINER =	LEVAI Daniel <leva@ecentrum.hu>
 

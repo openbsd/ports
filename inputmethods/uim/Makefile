@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2013/07/07 09:53:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2013/08/07 21:32:05 naddy Exp $
 
 COMMENT-main=	multilingual input method library
 COMMENT-gtk=	uim for GTK
@@ -10,17 +10,17 @@ CATEGORIES=	inputmethods japanese chinese
 
 V=		1.5.3
 DISTNAME=	uim-$V
-MASTER_SITES=	http://uim.googlecode.com/files/
-HOMEPAGE=	http://code.google.com/p/uim/
+MASTER_SITES=	https://uim.googlecode.com/files/
+HOMEPAGE=	https://code.google.com/p/uim/
 PKGNAME-main=	uim-$V
 PKGNAME-gtk=	uim-gtk-$V
 PKGNAME-qt=	uim-qt-$V
 PKGNAME-kde=	uim-kde-$V
 
-REVISION-main=	8
-REVISION-gtk=	11
-REVISION-qt=	5
-REVISION-kde=	6
+REVISION-main=	9
+REVISION-gtk=	12
+REVISION-qt=	6
+REVISION-kde=	7
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

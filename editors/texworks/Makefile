@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/21 08:59:29 fgsch Exp $
+# $OpenBSD: Makefile,v 1.22 2013/08/07 21:31:51 naddy Exp $
 
 COMMENT-main =		easy to use LaTeX and ConTeXt editor
 COMMENT-python =	Python scripting for TeXworks
@@ -45,7 +45,7 @@ WANTLIB-python += fontconfig freetype m stdc++
 
 MULTI_PACKAGES =	-main -lua -python
 
-MASTER_SITES =		http://texworks.googlecode.com/files/
+MASTER_SITES =		https://texworks.googlecode.com/files/
 
 LIB_DEPENDS-main =	qt4->=4.8.2:${MODQT4_LIB_DEPENDS} \
 			textproc/hunspell \

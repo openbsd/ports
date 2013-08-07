@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.14 2013/06/04 07:57:13 fgsch Exp $
+# $OpenBSD: Makefile,v 1.15 2013/08/07 21:31:23 naddy Exp $
 
 COMMENT =	Python library for working with CouchDB
 
 MODPY_EGG_VERSION = 0.9
 DISTNAME =	CouchDB-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	databases devel
 
-HOMEPAGE =	http://code.google.com/p/couchdb-python/
+HOMEPAGE =	https://code.google.com/p/couchdb-python/
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

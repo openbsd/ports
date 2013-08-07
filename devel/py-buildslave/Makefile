@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/06/20 14:07:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2013/08/07 21:31:41 naddy Exp $
 
 COMMENT=	buildslave implementation for the buildot system
 
@@ -15,7 +15,7 @@ MAINTAINER=	Piotr Sikora <piotr.sikora@frickle.com>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES =	http://buildbot.googlecode.com/files/
+MASTER_SITES =	https://buildbot.googlecode.com/files/
 
 MODULES=	lang/python
 

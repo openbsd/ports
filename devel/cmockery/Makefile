@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/21 08:45:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2013/08/07 21:31:30 naddy Exp $
 
 COMMENT =		library to simplify writing unit tests for C applications
 
 DISTNAME =		cmockery-0.1.2
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		cmockery                  0.0 # 0.0
 
 CATEGORIES =		devel
 
-HOMEPAGE =		http://cmockery.googlecode.com/
+HOMEPAGE =		https://cmockery.googlecode.com/
 
 # Apache v2
 PERMIT_PACKAGE_CDROM =	Yes

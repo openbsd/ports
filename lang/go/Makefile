@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/07/13 15:46:43 jsing Exp $
+# $OpenBSD: Makefile,v 1.12 2013/08/07 21:32:08 naddy Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		c m pthread
 
-MASTER_SITES =		http://go.googlecode.com/files/
+MASTER_SITES =		https://go.googlecode.com/files/
 
 BUILD_DEPENDS =		shells/bash
 

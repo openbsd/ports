@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 02:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/08/07 21:31:24 naddy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,12 +6,12 @@ COMMENT =	ODBC bindings for Python
 
 MODPY_EGG_VERSION=2.1.8
 DISTNAME =	pyodbc-${MODPY_EGG_VERSION}
-REVISION =	2
+REVISION =	3
 PKGNAME =	${DISTNAME:S/py/py-/}
 
 CATEGORIES =	databases
 
-HOMEPAGE =	http://pyodbc.googlecode.com/
+HOMEPAGE =	https://pyodbc.googlecode.com/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.44 2013/06/21 22:38:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2013/08/07 21:33:05 naddy Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	personal search and metasearch
 
 DISTNAME=	pinot-1.03
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS +=  xapianbackend             0.0 # 1.0
 
 CATEGORIES=	x11 misc
 
-HOMEPAGE=	http://code.google.com/p/pinot-search/
+HOMEPAGE=	https://code.google.com/p/pinot-search/
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -28,7 +28,7 @@ WANTLIB += pcre pixman-1 png pthread pthread-stubs sigc-2.0 sqlite3
 WANTLIB += ssl stdc++ tag textcat xapian xcb xcb-render xcb-shm
 WANTLIB += xml++-2.6 xml2 z
 
-MASTER_SITES=	http://pinot-search.googlecode.com/files/
+MASTER_SITES=	https://pinot-search.googlecode.com/files/
 
 MODULES=	devel/gettext
 

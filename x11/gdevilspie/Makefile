@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/08/07 21:32:59 naddy Exp $
 
 PKG_ARCH=		*
 
@@ -6,17 +6,17 @@ COMMENT=		gui to configure devilspie rules
 
 MODPY_EGG_VERSION=	0.5
 DISTNAME=		gdevilspie-${MODPY_EGG_VERSION}
-REVISION=		5
+REVISION=		6
 EPOCH=			0
 
 CATEGORIES=		x11 sysutils
 
-HOMEPAGE=		http://code.google.com/p/gdevilspie/
+HOMEPAGE=		https://code.google.com/p/gdevilspie/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://gdevilspie.googlecode.com/files/
+MASTER_SITES=		https://gdevilspie.googlecode.com/files/
 EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		lang/python

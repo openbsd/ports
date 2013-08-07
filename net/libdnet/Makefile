@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2013/05/10 11:40:02 mpi Exp $
+# $OpenBSD: Makefile,v 1.38 2013/08/07 21:32:17 naddy Exp $
 
 COMMENT-main=	portable low-level networking library
 COMMENT-python= python interface to libdnet
@@ -7,19 +7,19 @@ MODPY_EGG_VERSION= 1.12
 DISTNAME=	libdnet-${MODPY_EGG_VERSION}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-python= py-${DISTNAME}
-REVISION=	7
+REVISION=	8
 
 SHARED_LIBS=	dnet	1.0
 
 CATEGORIES=	net
-HOMEPAGE=	http://code.google.com/p/libdnet/
+HOMEPAGE=	https://code.google.com/p/libdnet/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c
 
-MASTER_SITES=		http://libdnet.googlecode.com/files/
+MASTER_SITES=		https://libdnet.googlecode.com/files/
 EXTRACT_SUFX=		.tgz
 
 PSEUDO_FLAVORS=		no_python

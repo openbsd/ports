@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:06 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/08/07 21:31:36 naddy Exp $
 
 COMMENT= generate SCons/Makefiles from platform-independent input
 
 DISTNAME=	gyp-r1282
 PKGNAME= ${DISTNAME:S/r/0./g}
+REVISION=	0
 
 CATEGORIES=	devel
 
-HOMEPAGE=	http://code.google.com/p/gyp/
+HOMEPAGE=	https://code.google.com/p/gyp/
 
 MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
 

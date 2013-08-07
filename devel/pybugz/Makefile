@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:27 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/08/07 21:31:45 naddy Exp $
 
 COMMENT =		Commandline client for Bugzilla bug tracking systems
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://www.liquidx.net/pybugz/
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		http://pybugz.googlecode.com/files/
+MASTER_SITES =		https://pybugz.googlecode.com/files/
 
 MODULES =		lang/python
 

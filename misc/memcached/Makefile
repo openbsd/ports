@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/04/25 21:33:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2013/08/07 21:32:11 naddy Exp $
 
 COMMENT=	distributed memory object caching system
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c event pthread
 
-MASTER_SITES=		http://memcached.googlecode.com/files/
+MASTER_SITES=		https://memcached.googlecode.com/files/
 MASTER_SITES0=		${HOMEPAGE}/dist/
 
 CONFIGURE_STYLE=	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:42:47 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/08/07 21:32:45 naddy Exp $
 
 COMMENT=	utility to turn simply formatted text into markup
 
@@ -13,7 +13,7 @@ MAINTAINER=	Matthias Kilian <kili@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://txt2tags.googlecode.com/files/
+MASTER_SITES=	https://txt2tags.googlecode.com/files/
 EXTRACT_SUFX=	.tgz
 
 MODULES=	lang/python

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:46:17 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/08/07 21:33:09 naddy Exp $
 
 COMMENT=	fake keyboard and mouse input
 
@@ -16,7 +16,7 @@ HOMEPAGE=	http://www.semicomplete.com/projects/xdotool/
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://semicomplete.googlecode.com/files/
+MASTER_SITES=	https://semicomplete.googlecode.com/files/
 
 USE_GMAKE=	Yes
 

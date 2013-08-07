@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/21 08:45:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2013/08/07 21:31:40 naddy Exp $
 
 COMMENT =		c protocol buffers
 
 DISTNAME =		protobuf-c-0.15
+REVISION =		0
 
 SHARED_LIBS =		protobuf-c 0.0	# 0.0
 
 CATEGORIES =		devel
 
-HOMEPAGE =		http://protobuf-c.googlecode.com/
+HOMEPAGE =		https://protobuf-c.googlecode.com/
 
 MASTER_SITES =		${HOMEPAGE}/files/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 02:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/08/07 21:31:26 naddy Exp $
 
 COMMENT =	SQLite3 adapter for Python
 
@@ -6,14 +6,14 @@ MODPY_EGG_VERSION =	2.6.0
 
 DISTNAME =	pysqlite-${MODPY_EGG_VERSION}
 PKGNAME =	py-sqlite2-${MODPY_EGG_VERSION}
-REVISION =	3
+REVISION =	4
 CATEGORIES =	databases devel
 
 MAINTAINER =	Eric Faurot <eric@openbsd.org>
 
-HOMEPAGE =	http://code.google.com/p/pysqlite/
+HOMEPAGE =	https://code.google.com/p/pysqlite/
 
-MASTER_SITES =	http://pysqlite.googlecode.com/files/
+MASTER_SITES =	https://pysqlite.googlecode.com/files/
 
 # BSD-like
 PERMIT_PACKAGE_CDROM =	Yes

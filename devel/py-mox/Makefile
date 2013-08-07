@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:26 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/08/07 21:31:43 naddy Exp $
 
 COMMENT =	Mox is a mock object framework for Python
 
 MODPY_EGG_VERSION = 0.5.3
 DISTNAME =	mox-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 CATEGORIES =	devel
 
-HOMEPAGE =	http://code.google.com/p/pymox/
-MASTER_SITES =	http://pymox.googlecode.com/files/
+HOMEPAGE =	https://code.google.com/p/pymox/
+MASTER_SITES =	https://pymox.googlecode.com/files/
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes

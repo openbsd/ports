@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/28 23:21:02 jturner Exp $
+# $OpenBSD: Makefile,v 1.5 2013/08/07 21:31:38 naddy Exp $
 
 COMMENT=		extended standard library for OCaml
 
 DISTNAME=		extlib-1.5.3
-REVISION=		1
+REVISION=		2
 PKGNAME=		ocaml-${DISTNAME}
 CATEGORIES=		devel
 
-HOMEPAGE=		http://ocaml-extlib.googlecode.com/
+HOMEPAGE=		https://ocaml-extlib.googlecode.com/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=   Yes

@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:32 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/08/07 21:31:50 naddy Exp $
 
 COMMENT =		YAML parser and emitter in C++
 DISTNAME =		yaml-cpp-0.3.0
+REVISION =		0
 
 SHARED_LIBS =		yaml-cpp	1.0 # 0.3
 
 CATEGORIES =		devel
 
-HOMEPAGE =		http://code.google.com/p/yaml-cpp/
+HOMEPAGE =		https://code.google.com/p/yaml-cpp/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += m stdc++
 
-MASTER_SITES =		http://yaml-cpp.googlecode.com/files/
+MASTER_SITES =		https://yaml-cpp.googlecode.com/files/
 
 MODULES =		devel/cmake
 

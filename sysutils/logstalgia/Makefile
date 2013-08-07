@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:41:31 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/08/07 21:32:37 naddy Exp $
 
 COMMENT =	website access log visualization
 
 DISTNAME =	logstalgia-1.0.3
+REVISION =	0
 CATEGORIES =	sysutils graphics
-HOMEPAGE =	http://code.google.com/p/logstalgia/
+HOMEPAGE =	https://code.google.com/p/logstalgia/
 
 MAINTAINER =	Gonzalo L. R. <gonzalo@x61.com.ar>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	http://logstalgia.googlecode.com/files/
+MASTER_SITES =	https://logstalgia.googlecode.com/files/
 
 WANTLIB += ftgl GL GLU SDL SDL_image c jpeg m pcre png pthread stdc++
 

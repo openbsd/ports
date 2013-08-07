@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:07:39 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/08/07 21:31:53 naddy Exp $
 
 COMMENT =	brick shooter reflexion game
 
 V=		1.5.3
 DISTNAME=	JBrickShooter_v${V}
 PKGNAME=	jbrickshooter-${V}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	games
 
 EXTRACT_SUFX=	.zip
 
-HOMEPAGE=	http://code.google.com/p/jbrickshooter/
+HOMEPAGE=	https://code.google.com/p/jbrickshooter/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://jbrickshooter.googlecode.com/files/
+MASTER_SITES=	https://jbrickshooter.googlecode.com/files/
 
 MODULES=	java
 # hardcode version because we can't get JAVA_HOME as NO_BUILD is set

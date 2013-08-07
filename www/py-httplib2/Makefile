@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:44:48 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/08/07 21:32:53 naddy Exp $
 
 COMMENT =		Python HTTP client library
 
 MODPY_EGG_VERSION =	0.7.7
-REVISION = 		0
+REVISION = 		1
 DISTNAME =		httplib2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		www net
 
-HOMEPAGE =		http://code.google.com/p/httplib2/
+HOMEPAGE =		https://code.google.com/p/httplib2/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		http://httplib2.googlecode.com/files/
+MASTER_SITES =		https://httplib2.googlecode.com/files/
 
 MODULES =		lang/python
 

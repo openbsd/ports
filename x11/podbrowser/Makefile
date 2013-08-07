@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2013/04/02 16:16:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2013/08/07 21:33:06 naddy Exp $
 
 COMMENT =	graphical documentation browser for Perl
 
 DISTNAME =	podbrowser-0.12
-REVISION=	7
+REVISION=	8
 
 CATEGORIES =	devel x11
 
-HOMEPAGE =	http://podbrowser.googlecode.com/
+HOMEPAGE =	https://podbrowser.googlecode.com/
 MASTER_SITES =	http://jodrell.net/files/unsupported/podbrowser/
 
 # GPLv2

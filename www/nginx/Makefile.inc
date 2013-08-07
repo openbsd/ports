@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.9 2013/05/25 23:00:49 jeremy Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2013/08/07 21:32:51 naddy Exp $
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
@@ -7,7 +7,7 @@ CATEGORIES=	www
 
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES0=	http://dropbox.eait.uq.edu.au/uqdgwynn/distfiles/
-MASTER_SITES1 =	http://naxsi.googlecode.com/files/
+MASTER_SITES1 =	https://naxsi.googlecode.com/files/
 
 HOMEPAGE=	http://nginx.org/
 

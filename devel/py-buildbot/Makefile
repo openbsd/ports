@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/06/20 14:07:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2013/08/07 21:31:40 naddy Exp $
 
 COMMENT =	system to automate the compile/test cycle
 
@@ -15,7 +15,7 @@ MAINTAINER =	Piotr Sikora <piotr.sikora@frickle.com>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	http://buildbot.googlecode.com/files/
+MASTER_SITES =	https://buildbot.googlecode.com/files/
 
 MODULES =	lang/python
 

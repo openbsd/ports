@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/27 10:57:40 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2013/08/07 21:31:13 naddy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -11,7 +11,7 @@ CATEGORIES =	audio x11
 HOMEPAGE =	http://clementine-player.org/
 
 MAINTAINER =	Vadim Zhukov <persgray@gmail.com>
-MASTER_SITES =	http://clementine-player.googlecode.com/files/
+MASTER_SITES =	https://clementine-player.googlecode.com/files/
 
 # GPLv2/LGPLv2/GFDL
 PERMIT_PACKAGE_CDROM =		Yes

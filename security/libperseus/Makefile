@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/21 08:48:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2013/08/07 21:32:34 naddy Exp $
 
 COMMENT = 	library to secure any kind of communication streams
 
 DISTNAME = 	libperseus-1.0.2
+REVISION =	0
 CATEGORIES = 	security
 
 SHARED_LIBS = 	perseus 0.0	
 
 MASTER_SITES = 	${HOMEPAGE}/files/
 
-HOMEPAGE = 	http://libperseus.googlecode.com/
+HOMEPAGE = 	https://libperseus.googlecode.com/
 
 MAINTAINER = 	Pierre-Emmanuel Andre <pea@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2013/07/02 06:03:35 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.56 2013/08/07 21:31:28 naddy Exp $
 
 COMMENT =		persistent key-value database
 DISTNAME =		redis-2.6.14
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += 		c ${MODLUA_WANTLIB} m pthread
 
-MASTER_SITES =		http://redis.googlecode.com/files/
+MASTER_SITES =		https://redis.googlecode.com/files/
 
 MODULES =		lang/lua \
 			lang/tcl

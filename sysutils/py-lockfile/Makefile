@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:41:32 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/08/07 21:32:39 naddy Exp $
 
 COMMENT=		platform-independent file locking for Python
 
 MODPY_EGG_VERSION=	0.9.1
 DISTNAME=		lockfile-${MODPY_EGG_VERSION}
-REVISION=		1
+REVISION=		2
 PKGNAME=		py-${DISTNAME}
 
 CATEGORIES=		sysutils
 
-HOMEPAGE=		http://code.google.com/p/pylockfile/
+HOMEPAGE=		https://code.google.com/p/pylockfile/
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://pylockfile.googlecode.com/files/
+MASTER_SITES=		https://pylockfile.googlecode.com/files/
 
 MODULES=		lang/python
 TEST_DEPENDS=	${FULLPKGPATH}

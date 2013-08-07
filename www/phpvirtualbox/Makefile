@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/07/05 09:34:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2013/08/07 21:32:52 naddy Exp $
 
 COMMENT=	web-based VirtualBox front-end
 
@@ -6,16 +6,16 @@ V=		4.2-4
 DISTNAME=	phpvirtualbox-${V}
 PKGNAME=	phpvirtualbox-${V:S/-/./}
 EXTRACT_SUFX=	.zip
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www sysutils
 
-HOMEPAGE=	http://code.google.com/p/phpvirtualbox/
+HOMEPAGE=	https://code.google.com/p/phpvirtualbox/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://phpvirtualbox.googlecode.com/files/
+MASTER_SITES=	https://phpvirtualbox.googlecode.com/files/
 
 MODULES=	lang/php
 RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-soap

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:42:46 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/08/07 21:32:41 naddy Exp $
 
 COMMENT =	python package to parse and build CSS
 
@@ -7,7 +7,7 @@ CATEGORIES =	textproc
 MODPY_EGG_VERSION =	0.9.7
 DISTNAME =	cssutils-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-MASTER_SITES =	http://cssutils.googlecode.com/files/
+MASTER_SITES =	https://cssutils.googlecode.com/files/
 REVISION=	1
 
 EXTRACT_SUFX =	.zip

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:35:55 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/08/07 21:32:22 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,9 +7,9 @@ COMMENT=		python interface to adns
 V=			1.2.1
 DISTNAME=		adns-python-$V
 PKGNAME=		py-adns-$V
-REVISION=		3
+REVISION=		4
 
-HOMEPAGE=		http://adns-python.googlecode.com/
+HOMEPAGE=		https://adns-python.googlecode.com/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

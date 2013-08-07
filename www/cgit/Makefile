@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/07/15 07:00:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2013/08/07 21:32:46 naddy Exp $
 
 COMMENT =	web frontend for git repositories
 
@@ -9,7 +9,7 @@ DISTFILES =	${DISTNAME}.tar.gz:0 \
 		git-1.8.3.2.tar.gz:1
 
 MASTER_SITES0 =		http://git.zx2c4.com/cgit/snapshot/
-MASTER_SITES1 =		http://git-core.googlecode.com/files/
+MASTER_SITES1 =		https://git-core.googlecode.com/files/
 HOMEPAGE =		http://git.zx2c4.com/cgit/about/
 
 # GPLv2

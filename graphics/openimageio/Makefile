@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/05/18 22:00:52 pascal Exp $
+# $OpenBSD: Makefile,v 1.7 2013/08/07 21:31:58 naddy Exp $
 
 SHARED_ONLY =		Yes
 
@@ -9,12 +9,13 @@ BROKEN-mips64 =		missing atomic ops
 V =			1.1.10
 DISTNAME =		Release-${V}
 PKGNAME =		openimageio-${V}
+REVISION =		0
 
 SHARED_LIBS +=		OpenImageIO	1.0 # 1.0
 
 CATEGORIES =		graphics devel
 
-HOMEPAGE =		http://sites.google.com/site/openimageio/
+HOMEPAGE =		https://sites.google.com/site/openimageio/
 
 MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 

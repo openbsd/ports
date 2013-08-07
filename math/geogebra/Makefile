@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:23:54 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/08/07 21:32:10 naddy Exp $
 
 COMMENT=	educational mathematical software
 
@@ -16,7 +16,7 @@ HOMEPAGE=	http://www.geogebra.org
 # See: http://www.geogebra.org/download/license.txt
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://geogebra.googlecode.com/files/
+MASTER_SITES=		https://geogebra.googlecode.com/files/
 
 MODULES=		java
 MODJAVA_VER=		1.7+

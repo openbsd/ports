@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/05/14 14:31:30 edd Exp $
+# $OpenBSD: Makefile,v 1.10 2013/08/07 21:31:29 naddy Exp $
 
 COMMENT=	open-source electronics prototyping platform
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.arduino.cc/
 # frontend application: GPLv2 (not shipped yet)
 PERMIT_PACKAGE_CDROM=   Yes
 
-MASTER_SITES=	http://arduino.googlecode.com/files/
+MASTER_SITES=	https://arduino.googlecode.com/files/
 
 RUN_DEPENDS=	devel/avr/binutils \
 		devel/avr/gcc \

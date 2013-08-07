@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/21 08:46:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2013/08/07 21:32:14 naddy Exp $
 
 COMMENT=	portable ASS/SSA subtitle renderer
 
 DISTNAME=	libass-0.10.1
+REVISION=	0
 CATEGORIES=	multimedia devel
-MASTER_SITES=	http://libass.googlecode.com/files/
+MASTER_SITES=	https://libass.googlecode.com/files/
 
 SHARED_LIBS=	ass 0.2
 
-HOMEPAGE=	http://code.google.com/p/libass/
+HOMEPAGE=	https://code.google.com/p/libass/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 

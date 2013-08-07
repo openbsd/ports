@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2013/05/24 08:32:27 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.37 2013/08/07 21:32:49 naddy Exp $
 
 COMMENT =		gnome-mplayer browser media plugin
 V =			1.0.8
@@ -9,7 +9,7 @@ MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
 HOMEPAGE =		http://kdekorte.googlepages.com/gecko-mediaplayer/
 
-MASTER_SITES =		http://gecko-mediaplayer.googlecode.com/files/
+MASTER_SITES =		https://gecko-mediaplayer.googlecode.com/files/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

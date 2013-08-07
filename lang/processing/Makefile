@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/08/07 21:32:10 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -19,7 +19,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # Core libraries: LGPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://processing.googlecode.com/files/
+MASTER_SITES=		https://processing.googlecode.com/files/
 EXTRACT_SUFX=		.tgz
 
 RUN_DEPENDS=		devel/desktop-file-utils

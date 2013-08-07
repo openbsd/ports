@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/05/17 18:53:24 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.21 2013/08/07 21:32:27 naddy Exp $
 
 COMMENT=		mouse and keyboard sharing utility
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		ICE SM X11 Xext Xi Xinerama Xrandr Xtst \
 			c cryptopp m pthread stdc++
 
-MASTER_SITES=		http://synergy.googlecode.com/files/
+MASTER_SITES=		https://synergy.googlecode.com/files/
 
 BUILD_DEPENDS=		archivers/gtar
 

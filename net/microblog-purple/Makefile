@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:35:49 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/08/07 21:32:19 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,10 +7,10 @@ COMMENT=	Twitter, Identica, and Status.net plugin for libpurple
 VERSION=	0.3.0
 DISTNAME=	mbpurple-${VERSION}
 PKGNAME=	microblog-purple-${VERSION}
-REVISION=	3
+REVISION=	4
 CATEGORIES=	net
 
-HOMEPAGE=	http://microblog-purple.googlecode.com/
+HOMEPAGE=	https://microblog-purple.googlecode.com/
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPLv3

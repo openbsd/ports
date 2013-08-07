@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 23:01:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2013/08/07 21:32:02 naddy Exp $
 
 COMMENT=	multimedia framework for Python
 
 MODPY_EGG_VERSION= 1.5
 DISTNAME=	PyGraphics-${MODPY_EGG_VERSION}
 PKGNAME=	py-graphics-${MODPY_EGG_VERSION}
-REVISION=	5
+REVISION=	6
 EPOCH=		0
 
 CATEGORIES=	graphics
 
-HOMEPAGE=	http://code.google.com/p/pygraphics/
+HOMEPAGE=	https://code.google.com/p/pygraphics/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://pygraphics.googlecode.com/files/
+MASTER_SITES=	https://pygraphics.googlecode.com/files/
 
 MODULES=	lang/python
 
