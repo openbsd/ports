@@ -1,0 +1,11 @@
+$OpenBSD: patch-ext_gd_gdcache_h,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+--- ext/gd/gdcache.h.orig.port	Wed Sep 26 16:44:16 2007
++++ ext/gd/gdcache.h	Sat Jun 18 12:14:48 2011
+@@ -41,6 +41,7 @@
+ /*********************************************************/
+ 
+ #if (!defined(_OSD_POSIX) && !defined(__FreeBSD__)) && HAVE_MALLOC_H
++#elif !defined(__OpenBSD__)
+ #include <malloc.h>
+ #else
+ #include <stdlib.h> /* BS2000/OSD defines malloc() & friends in stdlib.h */

@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-pspell,v 1.1.1.1 2013/08/07 16:46:56 robert Exp $
+@option no-default-conflict
+@conflict php-pspell->=5.3,<5.4
+@conflict php5-pspell->=5.2
+lib/php-${PV}/modules/pspell.so
+share/examples/php-${PV}/pspell.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/pspell.ini

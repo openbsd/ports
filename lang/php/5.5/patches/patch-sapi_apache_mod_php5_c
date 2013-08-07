@@ -1,0 +1,23 @@
+$OpenBSD: patch-sapi_apache_mod_php5_c,v 1.1.1.1 2013/08/07 16:46:56 robert Exp $
+--- sapi/apache/mod_php5.c.orig.port	Wed Jul  3 08:10:53 2013
++++ sapi/apache/mod_php5.c	Sat Jul 27 18:39:50 2013
+@@ -952,12 +952,19 @@ static void php_child_exit_handler(server_rec *s, pool
+  */
+ static void php_init_handler(server_rec *s, pool *p)
+ {
++	char *ini;
++
+ 	register_cleanup(p, NULL, (void (*)(void *))apache_php_module_shutdown_wrapper, (void (*)(void *))php_module_shutdown_for_exec);
+ 	if (!apache_php_initialized) {
+ 		apache_php_initialized = 1;
+ #ifdef ZTS
+ 		tsrm_startup(1, 1, 0, NULL);
+ #endif
++
++	        if ((ini = getenv("PHP_INI_PATH"))) {
++			apache_sapi_module.php_ini_path_override = ini;
++		}
++
+ 		sapi_startup(&apache_sapi_module);
+ 		php_apache_startup(&apache_sapi_module);
+ 	}

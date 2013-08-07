@@ -1,0 +1,12 @@
+$OpenBSD: patch-sapi_fpm_php-fpm_conf_in,v 1.1.1.1 2013/08/07 16:46:56 robert Exp $
+--- sapi/fpm/php-fpm.conf.in.orig.port	Wed Jul  3 08:10:53 2013
++++ sapi/fpm/php-fpm.conf.in	Sat Jul 27 18:39:50 2013
+@@ -461,7 +461,7 @@ pm.max_spare_servers = 3
+ ;       possible. However, all PHP paths will be relative to the chroot
+ ;       (error_log, sessions.save_path, ...).
+ ; Default Value: not set
+-;chroot = 
++chroot = /var/www
+  
+ ; Chdir to this directory at the start.
+ ; Note: relative path can be used.

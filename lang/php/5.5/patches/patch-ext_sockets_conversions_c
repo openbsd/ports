@@ -1,0 +1,13 @@
+$OpenBSD: patch-ext_sockets_conversions_c,v 1.1.1.1 2013/08/07 16:46:56 robert Exp $
+--- ext/sockets/conversions.c.orig.port	Sun Jul 28 11:33:13 2013
++++ ext/sockets/conversions.c	Sun Jul 28 11:34:16 2013
+@@ -16,6 +16,9 @@
+ # include <sys/un.h>
+ # include <sys/ioctl.h>
+ # include <net/if.h>
++# if defined(__OpenBSD__)
++#   include <sys/uio.h>
++# endif
+ #else
+ # include <win32/php_stdint.h>
+ #endif

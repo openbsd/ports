@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-shmop,v 1.1.1.1 2013/08/07 16:46:56 robert Exp $
+@option no-default-conflict
+@conflict php-shmop->=5.3,<5.4
+@conflict php5-shmop->=5.2
+lib/php-${PV}/modules/shmop.so
+share/examples/php-${PV}/shmop.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/shmop.ini

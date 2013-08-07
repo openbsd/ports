@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-tidy,v 1.1.1.1 2013/08/07 16:46:56 robert Exp $
+@option no-default-conflict
+@conflict php-tidy->=5.3,<5.4
+@conflict php5-tidy->=5.2
+lib/php-${PV}/modules/tidy.so
+share/examples/php-${PV}/tidy.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/tidy.ini

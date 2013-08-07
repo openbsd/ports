@@ -1,0 +1,14 @@
+$OpenBSD: patch-ext_spl_php_spl_h,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+--- ext/spl/php_spl.h.orig.port	Sun Jan  3 09:23:27 2010
++++ ext/spl/php_spl.h	Sat Jun 18 12:14:51 2011
+@@ -67,8 +67,8 @@ ZEND_BEGIN_MODULE_GLOBALS(spl)
+ 	HashTable *  autoload_functions;
+ 	int          autoload_running;
+ 	int          autoload_extensions_len;
+-	intptr_t     hash_mask_handle;
+-	intptr_t     hash_mask_handlers;
++	zend_intptr_t     hash_mask_handle;
++	zend_intptr_t     hash_mask_handlers;
+ 	int          hash_mask_init;
+ ZEND_END_MODULE_GLOBALS(spl)
+ 

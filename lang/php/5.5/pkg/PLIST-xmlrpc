@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-xmlrpc,v 1.1.1.1 2013/08/07 16:46:56 robert Exp $
+@option no-default-conflict
+@conflict php-xmlrpc->=5.3,<5.4
+@conflict php5-xmlrpc->=5.2
+lib/php-${PV}/modules/xmlrpc.so
+share/examples/php-${PV}/xmlrpc.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/xmlrpc.ini

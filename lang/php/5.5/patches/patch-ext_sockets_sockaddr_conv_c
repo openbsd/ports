@@ -1,0 +1,15 @@
+$OpenBSD: patch-ext_sockets_sockaddr_conv_c,v 1.1.1.1 2013/08/07 16:46:56 robert Exp $
+--- ext/sockets/sockaddr_conv.c.orig.port	Sun Jul 28 11:34:19 2013
++++ ext/sockets/sockaddr_conv.c	Sun Jul 28 11:35:29 2013
+@@ -9,6 +9,11 @@
+ #include <arpa/inet.h>
+ #endif
+ 
++#if defined(__OpenBSD__)
++#define AI_ADDRCONFIG 0
++#define AI_V4MAPPED 0
++#endif
++
+ #if HAVE_IPV6
+ /* Sets addr by hostname, or by ip in string form (AF_INET6) */
+ int php_set_inet6_addr(struct sockaddr_in6 *sin6, char *string, php_socket *php_sock TSRMLS_DC) /* {{{ */

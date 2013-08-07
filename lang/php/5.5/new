@@ -1,0 +1,514 @@
+@bin bin/php-${PV}
+@bin bin/php-fastcgi-${PV}
+@bin sbin/php-fpm-${PV}
+@comment $OpenBSD: new,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+@comment $OpenBSD: new,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+@comment $OpenBSD: new,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+@comment $OpenBSD: new,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+@comment $OpenBSD: new,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+@comment $OpenBSD: new,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+@comment $OpenBSD: new,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+@comment $OpenBSD: new,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+@comment $OpenBSD: new,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+@comment $OpenBSD: new,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+@comment $OpenBSD: new,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+@comment $OpenBSD: new,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+@comment $OpenBSD: new,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+@comment $OpenBSD: new,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+@comment $OpenBSD: new,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+@comment $OpenBSD: new,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+@comment $OpenBSD: new,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+@comment $OpenBSD: new,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+@comment $OpenBSD: new,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+@comment $OpenBSD: new,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+@comment $OpenBSD: new,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+@comment $OpenBSD: new,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+@comment $OpenBSD: new,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+@comment $OpenBSD: new,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+@comment $OpenBSD: new,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+@comment $OpenBSD: new,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+@comment $OpenBSD: new,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+@comment $OpenBSD: new,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+@comment $OpenBSD: new,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+@comment etc/master.passwd
+@comment etc/spwd.db
+@conflict pecl-pcntl-*
+@conflict pecl-zip-*
+@conflict php->=5.4,<5.5
+@conflict php-bz2->=5.3,<5.4
+@conflict php-curl->=5.3,<5.4
+@conflict php-dba->=5.3,<5.4
+@conflict php-fastcgi->=5.3,<5.4
+@conflict php-fpm->=5.3,<5.4
+@conflict php-gd->=5.3,<5.4
+@conflict php-gmp->=5.3,<5.4
+@conflict php-imap->=5.3,<5.4
+@conflict php-ldap->=5.3,<5.4
+@conflict php-mcrypt->=5.3,<5.4
+@conflict php-mssql->=5.3,<5.4
+@conflict php-mysql->=5.3,<5.4
+@conflict php-mysqli->=5.3,<5.4
+@conflict php-odbc->=5.3,<5.4
+@conflict php-pcntl->=5.3,<5.4
+@conflict php-pdo_dblib->=5.3,<5.4
+@conflict php-pdo_mysql->=5.3,<5.4
+@conflict php-pdo_pgsql->=5.3,<5.4
+@conflict php-pdo_sqlite->=5.4,<5.5
+@conflict php-pgsql->=5.3,<5.4
+@conflict php-pspell->=5.3,<5.4
+@conflict php-shmop->=5.3,<5.4
+@conflict php-snmp->=5.3,<5.4
+@conflict php-soap->=5.3,<5.4
+@conflict php-sqlite->=5.3,<5.4
+@conflict php-tidy->=5.3,<5.4
+@conflict php-xmlrpc->=5.3,<5.4
+@conflict php-xsl->=5.3,<5.4
+@conflict php-zip->=5.3,<5.4
+@conflict php5-bz2->=5.2
+@conflict php5-core->=5.2
+@conflict php5-core-fastcgi->=5.2
+@conflict php5-curl->=5.2
+@conflict php5-dba->=5.2
+@conflict php5-gd->=5.2
+@conflict php5-gmp->=5.2
+@conflict php5-imap->=5.2
+@conflict php5-ldap->=5.2
+@conflict php5-mcrypt->=5.2
+@conflict php5-mssql->=5.2
+@conflict php5-mysql->=5.2
+@conflict php5-mysqli->=5.2
+@conflict php5-odbc->=5.2
+@conflict php5-pcntl->=5.2
+@conflict php5-pdo_dblib->=5.2
+@conflict php5-pdo_mysql->=5.2
+@conflict php5-pdo_pgsql->=5.2
+@conflict php5-pdo_sqlite->=5.2
+@conflict php5-pgsql->=5.2
+@conflict php5-pspell->=5.2
+@conflict php5-shmop->=5.2
+@conflict php5-snmp->=5.2
+@conflict php5-soap->=5.2
+@conflict php5-sqlite->=5.2
+@conflict php5-tidy->=5.2
+@conflict php5-xmlrpc->=5.2
+@conflict php5-xsl->=5.2
+@exec install -d ${SYSCONFDIR}/php-${PV}.sample/
+@exec install -d ${SYSCONFDIR}/php-${PV}/
+@extraunexec rm -fr ${SYSCONFDIR}/php-${PV}/
+@group www
+@man man/man1/${FULLPKGNAME\-main}
+@man man/man1/php-config-${PV}.1
+@man man/man1/phpize-${PV}.1
+@man man/man8/php-fpm-${PV}.8
+@mode 1700
+@option no-default-conflict
+@owner www
+@pkgpath archivers/pecl-zip
+@pkgpath lang/php/5.4
+@pkgpath lang/php/5.4,-pdo_sqlite
+@pkgpath www/pecl-pcntl
+@sample ${SYSCONFDIR}/php-${PV}.sample/sqlite.ini
+@sample /var/www/tmp/
+@unexec-delete rm -fr ${SYSCONFDIR}/php-${PV}.sample/
+bin/php-config-${PV}
+bin/phpize-${PV}
+lib/php-${PV}/
+lib/php-${PV}/libphp5.so
+lib/php-${PV}/modules/
+lib/php-${PV}/modules/bz2.so
+lib/php-${PV}/modules/curl.so
+lib/php-${PV}/modules/dba.so
+lib/php-${PV}/modules/gd.so
+lib/php-${PV}/modules/gmp.so
+lib/php-${PV}/modules/imap.so
+lib/php-${PV}/modules/ldap.so
+lib/php-${PV}/modules/mcrypt.so
+lib/php-${PV}/modules/mssql.so
+lib/php-${PV}/modules/mysql.so
+lib/php-${PV}/modules/mysqli.so
+lib/php-${PV}/modules/odbc.so
+lib/php-${PV}/modules/pcntl.so
+lib/php-${PV}/modules/pdo_dblib.so
+lib/php-${PV}/modules/pdo_mysql.so
+lib/php-${PV}/modules/pdo_pgsql.so
+lib/php-${PV}/modules/pgsql.so
+lib/php-${PV}/modules/pspell.so
+lib/php-${PV}/modules/shmop.so
+lib/php-${PV}/modules/snmp.so
+lib/php-${PV}/modules/soap.so
+lib/php-${PV}/modules/sqlite.so
+lib/php-${PV}/modules/tidy.so
+lib/php-${PV}/modules/xmlrpc.so
+lib/php-${PV}/modules/xsl.so
+lib/php-${PV}/modules/zip.so
+share/examples/php-${PV}/
+share/examples/php-${PV}/bz2.ini
+share/examples/php-${PV}/curl.ini
+share/examples/php-${PV}/dba.ini
+share/examples/php-${PV}/gd.ini
+share/examples/php-${PV}/gmp.ini
+share/examples/php-${PV}/imap.ini
+share/examples/php-${PV}/ldap.ini
+share/examples/php-${PV}/mcrypt.ini
+share/examples/php-${PV}/mssql.ini
+share/examples/php-${PV}/mysql.ini
+share/examples/php-${PV}/mysqli.ini
+share/examples/php-${PV}/odbc.ini
+share/examples/php-${PV}/pcntl.ini
+share/examples/php-${PV}/pdo_dblib.ini
+share/examples/php-${PV}/pdo_mysql.ini
+share/examples/php-${PV}/pdo_pgsql.ini
+share/examples/php-${PV}/pgsql.ini
+share/examples/php-${PV}/php-fpm.conf
+share/examples/php-${PV}/php.conf
+share/examples/php-${PV}/php.ini-development
+share/examples/php-${PV}/php.ini-production
+share/examples/php-${PV}/pspell.ini
+share/examples/php-${PV}/shmop.ini
+share/examples/php-${PV}/snmp.ini
+share/examples/php-${PV}/soap.ini
+share/examples/php-${PV}/sqlite.ini
+share/examples/php-${PV}/tidy.ini
+share/examples/php-${PV}/xmlrpc.ini
+share/examples/php-${PV}/xsl.ini
+share/examples/php-${PV}/zip.ini
+share/php-${PV}/
+share/php-${PV}/build/
+share/php-${PV}/build/acinclude.m4
+share/php-${PV}/build/config.guess
+share/php-${PV}/build/config.sub
+share/php-${PV}/build/libtool.m4
+share/php-${PV}/build/ltmain.sh
+share/php-${PV}/build/Makefile.global
+share/php-${PV}/build/mkdep.awk
+share/php-${PV}/build/phpize.m4
+share/php-${PV}/build/run-tests.php
+share/php-${PV}/build/scan_makefile_in.awk
+share/php-${PV}/build/shtool
+share/php-${PV}/include/
+share/php-${PV}/include/ext/
+share/php-${PV}/include/ext/date/
+share/php-${PV}/include/ext/date/lib/
+share/php-${PV}/include/ext/date/lib/timelib.h
+share/php-${PV}/include/ext/date/lib/timelib_config.h
+share/php-${PV}/include/ext/date/lib/timelib_structs.h
+share/php-${PV}/include/ext/date/php_date.h
+share/php-${PV}/include/ext/dom/
+share/php-${PV}/include/ext/dom/xml_common.h
+share/php-${PV}/include/ext/ereg/
+share/php-${PV}/include/ext/ereg/php_ereg.h
+share/php-${PV}/include/ext/ereg/php_regex.h
+share/php-${PV}/include/ext/ereg/regex/
+share/php-${PV}/include/ext/ereg/regex/cclass.h
+share/php-${PV}/include/ext/ereg/regex/cname.h
+share/php-${PV}/include/ext/ereg/regex/regex.h
+share/php-${PV}/include/ext/ereg/regex/regex2.h
+share/php-${PV}/include/ext/ereg/regex/utils.h
+share/php-${PV}/include/ext/filter/
+share/php-${PV}/include/ext/filter/php_filter.h
+share/php-${PV}/include/ext/gd/
+share/php-${PV}/include/ext/gd/gdcache.h
+share/php-${PV}/include/ext/gd/gd_compat.h
+share/php-${PV}/include/ext/gd/libgd/
+share/php-${PV}/include/ext/gd/libgd/gd.h
+share/php-${PV}/include/ext/gd/libgd/gdcache.h
+share/php-${PV}/include/ext/gd/libgd/gdfontg.h
+share/php-${PV}/include/ext/gd/libgd/gdfontl.h
+share/php-${PV}/include/ext/gd/libgd/gdfontmb.h
+share/php-${PV}/include/ext/gd/libgd/gdfonts.h
+share/php-${PV}/include/ext/gd/libgd/gdfontt.h
+share/php-${PV}/include/ext/gd/libgd/gdhelpers.h
+share/php-${PV}/include/ext/gd/libgd/gd_intern.h
+share/php-${PV}/include/ext/gd/libgd/gd_io.h
+share/php-${PV}/include/ext/gd/libgd/jisx0208.h
+share/php-${PV}/include/ext/gd/libgd/wbmp.h
+share/php-${PV}/include/ext/gd/libgd/webpimg.h
+share/php-${PV}/include/ext/gd/php_gd.h
+share/php-${PV}/include/ext/hash/
+share/php-${PV}/include/ext/hash/php_hash.h
+share/php-${PV}/include/ext/hash/php_hash_adler32.h
+share/php-${PV}/include/ext/hash/php_hash_crc32.h
+share/php-${PV}/include/ext/hash/php_hash_fnv.h
+share/php-${PV}/include/ext/hash/php_hash_gost.h
+share/php-${PV}/include/ext/hash/php_hash_haval.h
+share/php-${PV}/include/ext/hash/php_hash_joaat.h
+share/php-${PV}/include/ext/hash/php_hash_md.h
+share/php-${PV}/include/ext/hash/php_hash_ripemd.h
+share/php-${PV}/include/ext/hash/php_hash_sha.h
+share/php-${PV}/include/ext/hash/php_hash_snefru.h
+share/php-${PV}/include/ext/hash/php_hash_tiger.h
+share/php-${PV}/include/ext/hash/php_hash_types.h
+share/php-${PV}/include/ext/hash/php_hash_whirlpool.h
+share/php-${PV}/include/ext/iconv/
+share/php-${PV}/include/ext/iconv/php_have_bsd_iconv.h
+share/php-${PV}/include/ext/iconv/php_have_glibc_iconv.h
+share/php-${PV}/include/ext/iconv/php_have_ibm_iconv.h
+share/php-${PV}/include/ext/iconv/php_have_iconv.h
+share/php-${PV}/include/ext/iconv/php_have_libiconv.h
+share/php-${PV}/include/ext/iconv/php_iconv.h
+share/php-${PV}/include/ext/iconv/php_iconv_aliased_libiconv.h
+share/php-${PV}/include/ext/iconv/php_iconv_supports_errno.h
+share/php-${PV}/include/ext/iconv/php_php_iconv_h_path.h
+share/php-${PV}/include/ext/iconv/php_php_iconv_impl.h
+share/php-${PV}/include/ext/json/
+share/php-${PV}/include/ext/json/php_json.h
+share/php-${PV}/include/ext/libxml/
+share/php-${PV}/include/ext/libxml/php_libxml.h
+share/php-${PV}/include/ext/mbstring/
+share/php-${PV}/include/ext/mbstring/libmbfl/
+share/php-${PV}/include/ext/mbstring/libmbfl/config.h
+share/php-${PV}/include/ext/mbstring/libmbfl/mbfl/
+share/php-${PV}/include/ext/mbstring/libmbfl/mbfl/eaw_table.h
+share/php-${PV}/include/ext/mbstring/libmbfl/mbfl/mbfilter.h
+share/php-${PV}/include/ext/mbstring/libmbfl/mbfl/mbfilter_8bit.h
+share/php-${PV}/include/ext/mbstring/libmbfl/mbfl/mbfilter_pass.h
+share/php-${PV}/include/ext/mbstring/libmbfl/mbfl/mbfilter_wchar.h
+share/php-${PV}/include/ext/mbstring/libmbfl/mbfl/mbfl_allocators.h
+share/php-${PV}/include/ext/mbstring/libmbfl/mbfl/mbfl_consts.h
+share/php-${PV}/include/ext/mbstring/libmbfl/mbfl/mbfl_convert.h
+share/php-${PV}/include/ext/mbstring/libmbfl/mbfl/mbfl_defs.h
+share/php-${PV}/include/ext/mbstring/libmbfl/mbfl/mbfl_encoding.h
+share/php-${PV}/include/ext/mbstring/libmbfl/mbfl/mbfl_filter_output.h
+share/php-${PV}/include/ext/mbstring/libmbfl/mbfl/mbfl_ident.h
+share/php-${PV}/include/ext/mbstring/libmbfl/mbfl/mbfl_language.h
+share/php-${PV}/include/ext/mbstring/libmbfl/mbfl/mbfl_memory_device.h
+share/php-${PV}/include/ext/mbstring/libmbfl/mbfl/mbfl_string.h
+share/php-${PV}/include/ext/mbstring/mbstring.h
+share/php-${PV}/include/ext/mbstring/oniguruma/
+share/php-${PV}/include/ext/mbstring/oniguruma/oniguruma.h
+share/php-${PV}/include/ext/mbstring/php_mbregex.h
+share/php-${PV}/include/ext/mbstring/php_onig_compat.h
+share/php-${PV}/include/ext/mysqli/
+share/php-${PV}/include/ext/mysqli/mysqli_libmysql.h
+share/php-${PV}/include/ext/mysqli/php_mysqli_structs.h
+share/php-${PV}/include/ext/mysqlnd/
+share/php-${PV}/include/ext/mysqlnd/config-win.h
+share/php-${PV}/include/ext/mysqlnd/mysqlnd.h
+share/php-${PV}/include/ext/mysqlnd/mysqlnd_alloc.h
+share/php-${PV}/include/ext/mysqlnd/mysqlnd_block_alloc.h
+share/php-${PV}/include/ext/mysqlnd/mysqlnd_charset.h
+share/php-${PV}/include/ext/mysqlnd/mysqlnd_debug.h
+share/php-${PV}/include/ext/mysqlnd/mysqlnd_enum_n_def.h
+share/php-${PV}/include/ext/mysqlnd/mysqlnd_ext_plugin.h
+share/php-${PV}/include/ext/mysqlnd/mysqlnd_libmysql_compat.h
+share/php-${PV}/include/ext/mysqlnd/mysqlnd_net.h
+share/php-${PV}/include/ext/mysqlnd/mysqlnd_portability.h
+share/php-${PV}/include/ext/mysqlnd/mysqlnd_priv.h
+share/php-${PV}/include/ext/mysqlnd/mysqlnd_result.h
+share/php-${PV}/include/ext/mysqlnd/mysqlnd_result_meta.h
+share/php-${PV}/include/ext/mysqlnd/mysqlnd_reverse_api.h
+share/php-${PV}/include/ext/mysqlnd/mysqlnd_statistics.h
+share/php-${PV}/include/ext/mysqlnd/mysqlnd_structs.h
+share/php-${PV}/include/ext/mysqlnd/mysqlnd_wireprotocol.h
+share/php-${PV}/include/ext/mysqlnd/php_mysqlnd.h
+share/php-${PV}/include/ext/mysqlnd/php_mysqlnd_config.h
+share/php-${PV}/include/ext/pcre/
+share/php-${PV}/include/ext/pcre/pcrelib/
+share/php-${PV}/include/ext/pcre/pcrelib/config.h
+share/php-${PV}/include/ext/pcre/pcrelib/pcre.h
+share/php-${PV}/include/ext/pcre/pcrelib/pcreposix.h
+share/php-${PV}/include/ext/pcre/pcrelib/pcre_internal.h
+share/php-${PV}/include/ext/pcre/pcrelib/ucp.h
+share/php-${PV}/include/ext/pcre/php_pcre.h
+share/php-${PV}/include/ext/pdo/
+share/php-${PV}/include/ext/pdo/php_pdo.h
+share/php-${PV}/include/ext/pdo/php_pdo_driver.h
+share/php-${PV}/include/ext/session/
+share/php-${PV}/include/ext/session/mod_files.h
+share/php-${PV}/include/ext/session/mod_user.h
+share/php-${PV}/include/ext/session/php_session.h
+share/php-${PV}/include/ext/sockets/
+share/php-${PV}/include/ext/sockets/php_sockets.h
+share/php-${PV}/include/ext/spl/
+share/php-${PV}/include/ext/spl/php_spl.h
+share/php-${PV}/include/ext/spl/spl_array.h
+share/php-${PV}/include/ext/spl/spl_directory.h
+share/php-${PV}/include/ext/spl/spl_dllist.h
+share/php-${PV}/include/ext/spl/spl_engine.h
+share/php-${PV}/include/ext/spl/spl_exceptions.h
+share/php-${PV}/include/ext/spl/spl_fixedarray.h
+share/php-${PV}/include/ext/spl/spl_functions.h
+share/php-${PV}/include/ext/spl/spl_heap.h
+share/php-${PV}/include/ext/spl/spl_iterators.h
+share/php-${PV}/include/ext/spl/spl_observer.h
+share/php-${PV}/include/ext/sqlite3/
+share/php-${PV}/include/ext/sqlite3/libsqlite/
+share/php-${PV}/include/ext/sqlite3/libsqlite/sqlite3.h
+share/php-${PV}/include/ext/standard/
+share/php-${PV}/include/ext/standard/base64.h
+share/php-${PV}/include/ext/standard/basic_functions.h
+share/php-${PV}/include/ext/standard/crc32.h
+share/php-${PV}/include/ext/standard/credits.h
+share/php-${PV}/include/ext/standard/credits_ext.h
+share/php-${PV}/include/ext/standard/credits_sapi.h
+share/php-${PV}/include/ext/standard/crypt_blowfish.h
+share/php-${PV}/include/ext/standard/crypt_freesec.h
+share/php-${PV}/include/ext/standard/css.h
+share/php-${PV}/include/ext/standard/cyr_convert.h
+share/php-${PV}/include/ext/standard/datetime.h
+share/php-${PV}/include/ext/standard/dl.h
+share/php-${PV}/include/ext/standard/exec.h
+share/php-${PV}/include/ext/standard/file.h
+share/php-${PV}/include/ext/standard/flock_compat.h
+share/php-${PV}/include/ext/standard/fsock.h
+share/php-${PV}/include/ext/standard/head.h
+share/php-${PV}/include/ext/standard/html.h
+share/php-${PV}/include/ext/standard/html_tables.h
+share/php-${PV}/include/ext/standard/info.h
+share/php-${PV}/include/ext/standard/md5.h
+share/php-${PV}/include/ext/standard/microtime.h
+share/php-${PV}/include/ext/standard/pack.h
+share/php-${PV}/include/ext/standard/pageinfo.h
+share/php-${PV}/include/ext/standard/php_array.h
+share/php-${PV}/include/ext/standard/php_assert.h
+share/php-${PV}/include/ext/standard/php_browscap.h
+share/php-${PV}/include/ext/standard/php_crypt.h
+share/php-${PV}/include/ext/standard/php_crypt_r.h
+share/php-${PV}/include/ext/standard/php_dir.h
+share/php-${PV}/include/ext/standard/php_dns.h
+share/php-${PV}/include/ext/standard/php_ext_syslog.h
+share/php-${PV}/include/ext/standard/php_filestat.h
+share/php-${PV}/include/ext/standard/php_fopen_wrappers.h
+share/php-${PV}/include/ext/standard/php_ftok.h
+share/php-${PV}/include/ext/standard/php_http.h
+share/php-${PV}/include/ext/standard/php_image.h
+share/php-${PV}/include/ext/standard/php_incomplete_class.h
+share/php-${PV}/include/ext/standard/php_iptc.h
+share/php-${PV}/include/ext/standard/php_lcg.h
+share/php-${PV}/include/ext/standard/php_link.h
+share/php-${PV}/include/ext/standard/php_mail.h
+share/php-${PV}/include/ext/standard/php_math.h
+share/php-${PV}/include/ext/standard/php_metaphone.h
+share/php-${PV}/include/ext/standard/php_password.h
+share/php-${PV}/include/ext/standard/php_rand.h
+share/php-${PV}/include/ext/standard/php_smart_str.h
+share/php-${PV}/include/ext/standard/php_smart_str_public.h
+share/php-${PV}/include/ext/standard/php_standard.h
+share/php-${PV}/include/ext/standard/php_string.h
+share/php-${PV}/include/ext/standard/php_type.h
+share/php-${PV}/include/ext/standard/php_uuencode.h
+share/php-${PV}/include/ext/standard/php_var.h
+share/php-${PV}/include/ext/standard/php_versioning.h
+share/php-${PV}/include/ext/standard/proc_open.h
+share/php-${PV}/include/ext/standard/quot_print.h
+share/php-${PV}/include/ext/standard/scanf.h
+share/php-${PV}/include/ext/standard/sha1.h
+share/php-${PV}/include/ext/standard/streamsfuncs.h
+share/php-${PV}/include/ext/standard/uniqid.h
+share/php-${PV}/include/ext/standard/url.h
+share/php-${PV}/include/ext/standard/url_scanner_ex.h
+share/php-${PV}/include/ext/standard/winver.h
+share/php-${PV}/include/ext/xml/
+share/php-${PV}/include/ext/xml/expat_compat.h
+share/php-${PV}/include/ext/xml/php_xml.h
+share/php-${PV}/include/include/
+share/php-${PV}/include/main/
+share/php-${PV}/include/main/build-defs.h
+share/php-${PV}/include/main/fopen_wrappers.h
+share/php-${PV}/include/main/php.h
+share/php-${PV}/include/main/php_compat.h
+share/php-${PV}/include/main/php_config.h
+share/php-${PV}/include/main/php_content_types.h
+share/php-${PV}/include/main/php_getopt.h
+share/php-${PV}/include/main/php_globals.h
+share/php-${PV}/include/main/php_ini.h
+share/php-${PV}/include/main/php_main.h
+share/php-${PV}/include/main/php_memory_streams.h
+share/php-${PV}/include/main/php_network.h
+share/php-${PV}/include/main/php_open_temporary_file.h
+share/php-${PV}/include/main/php_output.h
+share/php-${PV}/include/main/php_reentrancy.h
+share/php-${PV}/include/main/php_scandir.h
+share/php-${PV}/include/main/php_streams.h
+share/php-${PV}/include/main/php_syslog.h
+share/php-${PV}/include/main/php_ticks.h
+share/php-${PV}/include/main/php_variables.h
+share/php-${PV}/include/main/php_version.h
+share/php-${PV}/include/main/rfc1867.h
+share/php-${PV}/include/main/SAPI.h
+share/php-${PV}/include/main/snprintf.h
+share/php-${PV}/include/main/spprintf.h
+share/php-${PV}/include/main/streams/
+share/php-${PV}/include/main/streams/php_streams_int.h
+share/php-${PV}/include/main/streams/php_stream_context.h
+share/php-${PV}/include/main/streams/php_stream_filter_api.h
+share/php-${PV}/include/main/streams/php_stream_glob_wrapper.h
+share/php-${PV}/include/main/streams/php_stream_mmap.h
+share/php-${PV}/include/main/streams/php_stream_plain_wrapper.h
+share/php-${PV}/include/main/streams/php_stream_transport.h
+share/php-${PV}/include/main/streams/php_stream_userspace.h
+share/php-${PV}/include/main/win32_internal_function_disabled.h
+share/php-${PV}/include/main/win95nt.h
+share/php-${PV}/include/sapi/
+share/php-${PV}/include/sapi/cli/
+share/php-${PV}/include/sapi/cli/cli.h
+share/php-${PV}/include/TSRM/
+share/php-${PV}/include/TSRM/readdir.h
+share/php-${PV}/include/TSRM/TSRM.h
+share/php-${PV}/include/TSRM/tsrm_config.h
+share/php-${PV}/include/TSRM/tsrm_config.w32.h
+share/php-${PV}/include/TSRM/tsrm_config_common.h
+share/php-${PV}/include/TSRM/tsrm_nw.h
+share/php-${PV}/include/TSRM/tsrm_strtok_r.h
+share/php-${PV}/include/TSRM/tsrm_virtual_cwd.h
+share/php-${PV}/include/TSRM/tsrm_win32.h
+share/php-${PV}/include/Zend/
+share/php-${PV}/include/Zend/zend.h
+share/php-${PV}/include/Zend/zend_alloc.h
+share/php-${PV}/include/Zend/zend_API.h
+share/php-${PV}/include/Zend/zend_build.h
+share/php-${PV}/include/Zend/zend_builtin_functions.h
+share/php-${PV}/include/Zend/zend_closures.h
+share/php-${PV}/include/Zend/zend_compile.h
+share/php-${PV}/include/Zend/zend_config.h
+share/php-${PV}/include/Zend/zend_config.nw.h
+share/php-${PV}/include/Zend/zend_config.w32.h
+share/php-${PV}/include/Zend/zend_constants.h
+share/php-${PV}/include/Zend/zend_dtrace.h
+share/php-${PV}/include/Zend/zend_dynamic_array.h
+share/php-${PV}/include/Zend/zend_errors.h
+share/php-${PV}/include/Zend/zend_exceptions.h
+share/php-${PV}/include/Zend/zend_execute.h
+share/php-${PV}/include/Zend/zend_extensions.h
+share/php-${PV}/include/Zend/zend_float.h
+share/php-${PV}/include/Zend/zend_gc.h
+share/php-${PV}/include/Zend/zend_generators.h
+share/php-${PV}/include/Zend/zend_globals.h
+share/php-${PV}/include/Zend/zend_globals_macros.h
+share/php-${PV}/include/Zend/zend_hash.h
+share/php-${PV}/include/Zend/zend_highlight.h
+share/php-${PV}/include/Zend/zend_indent.h
+share/php-${PV}/include/Zend/zend_ini.h
+share/php-${PV}/include/Zend/zend_ini_parser.h
+share/php-${PV}/include/Zend/zend_ini_scanner.h
+share/php-${PV}/include/Zend/zend_ini_scanner_defs.h
+share/php-${PV}/include/Zend/zend_interfaces.h
+share/php-${PV}/include/Zend/zend_istdiostream.h
+share/php-${PV}/include/Zend/zend_iterators.h
+share/php-${PV}/include/Zend/zend_language_parser.h
+share/php-${PV}/include/Zend/zend_language_scanner.h
+share/php-${PV}/include/Zend/zend_language_scanner_defs.h
+share/php-${PV}/include/Zend/zend_list.h
+share/php-${PV}/include/Zend/zend_llist.h
+share/php-${PV}/include/Zend/zend_modules.h
+share/php-${PV}/include/Zend/zend_multibyte.h
+share/php-${PV}/include/Zend/zend_multiply.h
+share/php-${PV}/include/Zend/zend_objects.h
+share/php-${PV}/include/Zend/zend_objects_API.h
+share/php-${PV}/include/Zend/zend_object_handlers.h
+share/php-${PV}/include/Zend/zend_operators.h
+share/php-${PV}/include/Zend/zend_ptr_stack.h
+share/php-${PV}/include/Zend/zend_qsort.h
+share/php-${PV}/include/Zend/zend_signal.h
+share/php-${PV}/include/Zend/zend_stack.h
+share/php-${PV}/include/Zend/zend_static_allocator.h
+share/php-${PV}/include/Zend/zend_stream.h
+share/php-${PV}/include/Zend/zend_string.h
+share/php-${PV}/include/Zend/zend_strtod.h
+share/php-${PV}/include/Zend/zend_ts_hash.h
+share/php-${PV}/include/Zend/zend_types.h
+share/php-${PV}/include/Zend/zend_variables.h
+share/php-${PV}/include/Zend/zend_vm.h
+share/php-${PV}/include/Zend/zend_vm_def.h
+share/php-${PV}/include/Zend/zend_vm_execute.h
+share/php-${PV}/include/Zend/zend_vm_opcodes.h
