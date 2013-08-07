@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_osd_sdl_sdl_mak,v 1.6 2013/06/14 23:59:03 bcallah Exp $
---- src/osd/sdl/sdl.mak.orig	Tue Jun 11 09:48:51 2013
-+++ src/osd/sdl/sdl.mak	Tue Jun 11 09:48:51 2013
-@@ -707,9 +707,9 @@ LIBS += `pkg-config --libs gtk+-2.0` `pkg-config --lib
+$OpenBSD: patch-src_osd_sdl_sdl_mak,v 1.7 2013/08/07 03:42:06 bcallah Exp $
+--- src/osd/sdl/sdl.mak.orig	Tue Jul 23 22:32:52 2013
++++ src/osd/sdl/sdl.mak	Tue Jul 23 22:32:52 2013
+@@ -712,9 +712,9 @@ LIBS += `pkg-config --libs gtk+-2.0` `pkg-config --lib
  endif
  
  # some systems still put important things in a different prefix

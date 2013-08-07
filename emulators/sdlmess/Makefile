@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/06/15 23:54:52 bcallah Exp $
+# $OpenBSD: Makefile,v 1.29 2013/08/07 03:42:06 bcallah Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -7,8 +7,7 @@ COMMENT =		emulates game consoles and old home computers
 
 V =			149
 DISTNAME =		mame0${V}s
-PKGNAME =		sdlmess-0.${V}
-REVISION =		0
+PKGNAME =		sdlmess-0.${V}pl1
 
 CATEGORIES =		emulators games
 
@@ -37,7 +36,8 @@ DIST_SUBDIR =		mame
 
 # PATCHFILES doesn't work for .zip
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			history${V}.zip:1
+			0${V}u1_diff.zip:0 \
+			history${V}a.zip:1
 
 MODULES =		devel/gettext \
 			lang/python
@@ -68,9 +68,9 @@ post-extract:
 	@${UNZIP} -oq ${WRKDIR}/mame.zip -d ${WRKSRC}
 
 pre-patch:
-#.for v in 1
-#	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/0${V}u${v}.diff
-#.endfor
+.for v in 1
+	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/0${V}u${v}.diff
+.endfor
 	@perl -pi -e 's|\r\n|\n|g' ${WRKDIST}/makefile \
 	    ${WRKDIST}/src/emu/fileio.h \
 	    ${WRKDIST}/src/emu/machine/netlist.h \
