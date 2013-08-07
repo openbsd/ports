@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.2 2012/11/26 16:03:31 sthen Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.3 2013/08/07 08:02:48 jsg Exp $
 Properly link/find libintl/iconv
---- src/CMakeLists.txt.orig	Tue Sep  4 23:31:06 2012
-+++ src/CMakeLists.txt	Sat Nov 24 14:29:37 2012
-@@ -14,6 +14,8 @@ set(USE_GETTEXT 0)
+--- src/CMakeLists.txt.orig	Fri Jun  7 03:14:26 2013
++++ src/CMakeLists.txt	Sun Jul 21 00:57:20 2013
+@@ -30,6 +30,8 @@ set(USE_GETTEXT 0)
  
  if(ENABLE_GETTEXT)
  	find_package(GettextLib)
@@ -11,7 +11,21 @@ Properly link/find libintl/iconv
  else()
  	MARK_AS_ADVANCED(GETTEXT_ICONV_DLL GETTEXT_INCLUDE_DIR GETTEXT_LIBRARY GETTEXT_MSGFMT)
  endif()
-@@ -296,7 +298,8 @@ if(BUILD_CLIENT)
+@@ -161,7 +163,12 @@ else()
+ 		endif(APPLE)
+ 	endif(BUILD_CLIENT)
+ 	find_package(ZLIB REQUIRED)
+-	set(PLATFORM_LIBS -lpthread -lrt ${CMAKE_DL_LIBS})
++	check_library_exists(rt clock_gettime "" HAVE_LIBRT)
++	if (HAVE_LIBRT)
++		set(PLATFORM_LIBS -lpthread -lrt ${CMAKE_DL_LIBS})
++	else()
++		set(PLATFORM_LIBS -lpthread ${CMAKE_DL_LIBS})
++	endif()
+ 	#set(CLIENT_PLATFORM_LIBS -lXxf86vm)
+ 	# This way Xxf86vm is found on OpenBSD too
+ 	find_library(XXF86VM_LIBRARY Xxf86vm)
+@@ -388,7 +395,8 @@ if(BUILD_CLIENT)
  		${BZIP2_LIBRARIES}
  		${PNG_LIBRARIES}
  		${X11_LIBRARIES}
@@ -21,7 +35,7 @@ Properly link/find libintl/iconv
  		${SOUND_LIBRARIES}
  		${JTHREAD_LIBRARY}
  		${SQLITE3_LIBRARY}
-@@ -311,6 +314,8 @@ if(BUILD_SERVER)
+@@ -418,10 +426,11 @@ if(BUILD_SERVER)
  	target_link_libraries(
  		${PROJECT_NAME}server
  		${ZLIB_LIBRARIES}
@@ -29,4 +43,17 @@ Properly link/find libintl/iconv
 +		${LIBINTL_LIBRARIES}
  		${JTHREAD_LIBRARY}
  		${SQLITE3_LIBRARY}
+ 		${JSON_LIBRARY}
+-		${GETTEXT_LIBRARY}
  		${LUA_LIBRARY}
+ 		${PLATFORM_LIBS}
+ 	)
+@@ -486,7 +495,7 @@ else()
+ 		set(ARCH i386)
+ 	endif()
+ 
+-	set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG ${RELEASE_WARNING_FLAGS} ${WARNING_FLAGS} ${OTHER_FLAGS} -O3 -ffast-math -Wall -fomit-frame-pointer -pipe -funroll-loops")
++	set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG ${RELEASE_WARNING_FLAGS} ${WARNING_FLAGS} ${OTHER_FLAGS}")
+ 	set(CMAKE_CXX_FLAGS_DEBUG "-g -O1 -Wall ${WARNING_FLAGS} ${OTHER_FLAGS}")
+ 
+ 	if(USE_GPROF)
