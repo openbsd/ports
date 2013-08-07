@@ -1,4 +1,4 @@
-$OpenBSD: patch-makefile,v 1.5 2013/06/15 00:00:24 bcallah Exp $
+$OpenBSD: patch-makefile,v 1.6 2013/08/07 03:40:25 bcallah Exp $
 --- makefile.orig	Tue Jun 11 09:47:45 2013
 +++ makefile	Tue Jun 11 09:47:46 2013
 @@ -214,10 +214,10 @@ endif
@@ -27,7 +27,7 @@ $OpenBSD: patch-makefile,v 1.5 2013/06/15 00:00:24 bcallah Exp $
  endif
  
  # fullname is prefix+name+suffix+suffix64+suffixdebug
--FULLNAME = $(PREFIX)$(PREFIXSDL)$(NAME)$(SUFFIX)$(SUFFIX64)$(SUFFIXDEBUG)$(SUFFIXPROFILE)
+-FULLNAME ?= $(PREFIX)$(PREFIXSDL)$(NAME)$(SUFFIX)$(SUFFIX64)$(SUFFIXDEBUG)$(SUFFIXPROFILE)
 +FULLNAME = $(PREFIXSDL)$(NAME)$(SUFFIX)$(SUFFIXDEBUG)$(SUFFIXPROFILE)
  
  # add an EXE suffix to get the final emulator name

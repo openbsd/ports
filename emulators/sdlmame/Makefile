@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2013/06/15 23:52:05 bcallah Exp $
+# $OpenBSD: Makefile,v 1.35 2013/08/07 03:40:24 bcallah Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -10,10 +10,8 @@ COMMENT-tools =		tools to manipulate MAME/MESS roms and disk images
 
 V =			149
 DISTNAME =		mame0${V}s
-PKGNAME-main =		sdlmame-0.${V}
-PKGNAME-tools =		sdlmame-tools-0.${V}
-REVISION-main =		0
-REVISION-tools =	0
+PKGNAME-main =		sdlmame-0.${V}pl1
+PKGNAME-tools =		sdlmame-tools-0.${V}pl1
 
 CATEGORIES =		emulators games
 
@@ -42,7 +40,8 @@ DIST_SUBDIR =		mame
 
 # PATCHFILES doesn't work for .zip
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			history${V}.zip:1
+			0${V}u1_diff.zip:0 \
+			history${V}a.zip:1
 
 MODULES =		devel/gettext \
 			lang/python
@@ -73,9 +72,9 @@ post-extract:
 	@${UNZIP} -oq ${WRKDIR}/mame.zip -d ${WRKSRC}
 
 pre-patch:
-#.for v in 1
-#	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/0${V}u${v}.diff
-#.endfor
+.for v in 1
+	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/0${V}u${v}.diff
+.endfor
 	@perl -pi -e 's|\r\n|\n|g' ${WRKDIST}/makefile \
 	    ${WRKDIST}/src/emu/fileio.h \
 	    ${WRKDIST}/src/emu/machine/netlist.h \
