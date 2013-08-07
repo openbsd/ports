@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2013/07/07 21:25:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.69 2013/08/07 15:37:10 naddy Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -36,13 +36,8 @@ MODGNU_EMACS_YOURE_WEIRD = Oh yes
 
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS=		${GCCARCH} --with-pop --with-system-malloc
-LDFLAGS=		-Z -L${LOCALBASE}/lib
-
-.include <bsd.port.arch.mk>
-.if ! ${PROPERTIES:Mgcc2}
-LDFLAGS +=		-nopie
+LDFLAGS=		-Z -L${LOCALBASE}/lib -nopie
 CFLAGS +=		-fno-pie
-.endif
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS}"

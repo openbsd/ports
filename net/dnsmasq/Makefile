@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/04/20 02:38:33 brad Exp $
-
-NOT_FOR_ARCHS=	${GCC2_ARCHS}
+# $OpenBSD: Makefile,v 1.32 2013/08/07 15:37:11 naddy Exp $
 
 COMMENT=	lightweight caching DNS forwarder, DHCP and TFTP server
 

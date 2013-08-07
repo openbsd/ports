@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/07/05 21:32:21 brad Exp $
-
-NOT_FOR_ARCHS=	${GCC2_ARCHS}
+# $OpenBSD: Makefile,v 1.25 2013/08/07 15:37:11 naddy Exp $
 
 COMMENT=	free H.264/MPEG-4 AVC encoder
 

@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2013/07/04 12:17:57 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/08/07 15:37:10 naddy Exp $
 
 COMMENT=	ILM base libraries
-NOT_FOR_ARCHS =	${GCC2_ARCHS}
 
 DISTNAME=	ilmbase-1.0.1
 REVISION =	2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.217 2013/06/14 13:13:37 giovanni Exp $
+# $OpenBSD: Makefile,v 1.218 2013/08/07 15:37:08 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -56,14 +56,9 @@ CONFIGURE_ARGS+= --with-big-tables \
 		 --with-ssl=/usr \
 		 --with-unix-socket-path="${SOCKET_DIR}/mysql.sock" \
 		 --without-docs \
-		 --without-readline
-
-.include <bsd.port.arch.mk>
-
-.if ${PROPERTIES:Mgcc[34]}
-CONFIGURE_ARGS+= --with-client-ldflags=-lsupc++ \
+		 --without-readline \
+		 --with-client-ldflags=-lsupc++ \
 		 --with-mysqld-ldflags=-lsupc++
-.endif
 
 . if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+= --enable-assembler

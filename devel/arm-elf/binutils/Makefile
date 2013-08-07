@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2013/07/15 04:37:40 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/08/07 15:37:08 naddy Exp $
 
 COMMENT=	binutils for arm-elf cross-development
 
 V=		2.20
 REVISION=	0
 DISTNAME=	binutils-${V}
-NOT_FOR_ARCHS =	${GCC2_ARCHS}
 
 HOMEPAGE=	http://www.gnu.org/software/binutils/
 

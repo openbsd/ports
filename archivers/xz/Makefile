@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/08/07 11:50:26 espie Exp $
-
-NOT_FOR_ARCHS=	${GCC2_ARCHS}
+# $OpenBSD: Makefile,v 1.21 2013/08/07 15:37:07 naddy Exp $
 
 COMMENT=	LZMA compression and decompression tools
 

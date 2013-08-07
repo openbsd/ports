@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/06/20 06:54:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2013/08/07 15:37:11 naddy Exp $
 
 COMMENT=	WWW and FTP proxy cache and accelerator
 
@@ -23,13 +23,6 @@ SUBST_VARS=	LOCALSTATEDIR
 
 FLAVORS=	ldap ntlm snmp
 FLAVOR?=
-
-.include <bsd.port.arch.mk>
-
-# optimization workaround for gcc 2.95
-.if ${PROPERTIES:Mgcc2}
-PATCH_LIST=     patch-* gcc-*
-.endif
 
 AUTH=		basic digest negotiate
 BASIC_AUTH=	NCSA YP
