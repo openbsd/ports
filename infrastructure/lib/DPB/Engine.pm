@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.85 2013/07/21 16:24:32 espie Exp $
+# $OpenBSD: Engine.pm,v 1.86 2013/08/07 06:56:42 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -125,10 +125,11 @@ sub unlock_early
 {
 	my ($list, $v, $engine) = @_;
 	my $okay = 1;
-	my $h = $engine->{nfs}{$v};
+	my $sub = $engine->{buildable};
+	my $h = $sub->{nfs}{$v};
 	while (my ($k, $w) = each %$h) {
-		if ($engine->{builder}->end_check($w)) {
-			$engine->mark_as_done($w);
+		if ($sub->{builder}->end_check($w)) {
+			$sub->mark_as_done($w);
 			delete $h->{$w};
 		} else {
 			$okay = 0;
@@ -137,7 +138,7 @@ sub unlock_early
 		}
 	}
 	if ($okay) {
-		delete $engine->{nfs}{$v};
+		delete $sub->{nfs}{$v};
 	}
 	return $okay;
 }
@@ -354,7 +355,7 @@ sub end
 		if ($self->is_done_or_enqueue($v)) {
 			$self->{engine}{locker}->unlock($v);
 		} else {
-			push(@{$self->{nfslist}}, $v);
+			push(@{$self->{engine}{nfslist}}, $v);
 		}
 		$self->end_build($v);
 		$core->success;
