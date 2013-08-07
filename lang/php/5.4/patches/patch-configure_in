@@ -1,0 +1,32 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2013/08/07 16:35:46 robert Exp $
+--- configure.in.orig.port	Sat Jul 27 18:41:49 2013
++++ configure.in	Sat Jul 27 18:43:26 2013
+@@ -1025,16 +1025,16 @@ case $php_sapi_module in
+     enable_static=no
+     case $with_pic in
+       yes)
+-        standard_libtool_flag='-prefer-pic'
++        standard_libtool_flag=''
+         ;;
+       no)
+-        standard_libtool_flag='-prefer-non-pic'
++        standard_libtool_flag=''
+         ;;
+     esac
+     EXTRA_LDFLAGS="$EXTRA_LDFLAGS -avoid-version -module"
+     ;;
+   *[)]
+-    standard_libtool_flag='-prefer-non-pic -static'
++    standard_libtool_flag=''
+     if test -z "$PHP_MODULES" && test -z "$PHP_ZEND_EX"; then
+       enable_shared=no
+     fi
+@@ -1225,7 +1225,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfdir`
+ EXPANDED_DATADIR=$datadir
+ EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
+ EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CONFIG_FILE_SCAN_DIR"`
+-INCLUDE_PATH=.:$EXPANDED_PEAR_INSTALLDIR
++INCLUDE_PATH=.:$libdir
+ 
+ exec_prefix=$old_exec_prefix
+ libdir=$old_libdir

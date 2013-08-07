@@ -1,0 +1,18 @@
+$OpenBSD: patch-scripts_phpize_in,v 1.1.1.1 2013/08/07 16:35:46 robert Exp $
+--- scripts/phpize.in.orig.port	Sat Jul 27 18:47:01 2013
++++ scripts/phpize.in	Sat Jul 27 18:47:19 2013
+@@ -1,11 +1,11 @@
+ #!/bin/sh
+ 
+ # Variable declaration
+-prefix='@prefix@'
++prefix=@PEAR_INSTALLDIR@
+ datarootdir='@datarootdir@'
+ exec_prefix="`eval echo @exec_prefix@`"
+-phpdir="`eval echo @libdir@`/build"
+-includedir="`eval echo @includedir@`/php"
++phpdir="$prefix/build"
++includedir="$prefix/include"
+ builddir="`pwd`"
+ SED="@SED@"
+ 

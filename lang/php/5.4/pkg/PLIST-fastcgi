@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-fastcgi,v 1.1.1.1 2013/08/07 16:35:46 robert Exp $
+@option no-default-conflict
+@conflict php-fastcgi->=5.3,<5.4
+@bin bin/php-fastcgi-${PV}

@@ -1,0 +1,31 @@
+$OpenBSD: patch-scripts_php-config_in,v 1.1.1.1 2013/08/07 16:35:46 robert Exp $
+--- scripts/php-config.in.orig.port	Sat Jul 27 18:46:17 2013
++++ scripts/php-config.in	Sat Jul 27 18:46:53 2013
+@@ -1,12 +1,12 @@
+ #! /bin/sh
+ 
+ SED="@SED@"
+-prefix="@prefix@"
++prefix=OPENBSD_PEAR_ROOT
+ datarootdir="@datarootdir@"
+ exec_prefix="@exec_prefix@"
+ version="@PHP_VERSION@"
+ vernum="@PHP_VERSION_ID@"
+-include_dir="@includedir@/php"
++include_dir="@PEAR_INSTALLDIR@/include"
+ includes="-I$include_dir -I$include_dir/main -I$include_dir/TSRM -I$include_dir/Zend -I$include_dir/ext -I$include_dir/ext/date/lib"
+ ldflags="@PHP_LDFLAGS@"
+ libs="@EXTRA_LIBS@"
+@@ -24,10 +24,11 @@ php_sapis="@PHP_INSTALLED_SAPIS@"
+ for sapi in $php_sapis; do
+   case $sapi in
+   cli)
+-    php_cli_binary="@bindir@/${program_prefix}php${program_suffix}${exe_extension}"
++    php_cli_binary="OPENBSD_PREFIX/bin/php${program_suffix}"
+     ;;
+   cgi)
+     php_cgi_binary="@bindir@/${program_prefix}php-cgi${program_suffix}${exe_extension}"
++    php_cgi_binary="OPENBSD_PREFIX/bin/php-cgi${program_suffix}"
+     ;;
+   esac
+ done

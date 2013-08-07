@@ -1,0 +1,12 @@
+$OpenBSD: patch-ext_gd_libgd_gdcache_h,v 1.1.1.1 2013/08/07 16:35:45 robert Exp $
+--- ext/gd/libgd/gdcache.h.orig.port	Wed Sep 26 16:44:16 2007
++++ ext/gd/libgd/gdcache.h	Sat Jun 18 12:14:49 2011
+@@ -41,7 +41,7 @@
+ /*********************************************************/
+ 
+ #include <stdlib.h>
+-#ifdef HAVE_MALLOC_H
++#if (!defined(__OpenBSD__)) && HAVE_MALLOC_H
+  #include <malloc.h>
+ #endif
+ #ifndef NULL
