@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.4 2013/05/16 20:46:27 rpe Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2013/08/07 07:47:28 kirby Exp $
 
 # data package is useless without ufoai itself, which can only be
-# built on shared lib arches.
-# Saves a useless 895MB package on !shared arch.
-SHARED_ONLY = 	Yes
+# built on some arches.
+# Saves a useless 895MB package on other arches.
+ONLY_FOR_ARCHS=	amd64 i386 powerpc
 
 CATEGORIES = 	games
 
