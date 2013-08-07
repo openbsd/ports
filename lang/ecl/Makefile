@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2013/06/11 10:31:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2013/08/07 09:14:38 sthen Exp $
 
 COMMENT =	embeddable common-lisp
 CATEGORIES =	lang
 
 BROKEN-sparc =	infinite loop while building
+BROKEN-arm =	infinite loop while building
 
 V =		13.5.1
 DISTNAME =	ecl-$V
