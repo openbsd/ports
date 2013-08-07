@@ -1,0 +1,12 @@
+$OpenBSD: patch-spec_fixtures_unit_provider_package_openbsd_pkginfo_flavors_list,v 1.1 2013/08/07 07:19:30 jasper Exp $
+
+From 19b0e78df7e010f0af111fda083fd7f87499f952 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Wed, 31 Jul 2013 12:20:15 +0200
+Subject: (22004) Fix regex for retrieving flavor.
+
+--- spec/fixtures/unit/provider/package/openbsd/pkginfo_flavors.list.orig	Wed Aug  7 09:16:19 2013
++++ spec/fixtures/unit/provider/package/openbsd/pkginfo_flavors.list	Wed Aug  7 09:16:19 2013
+@@ -0,0 +1,2 @@
++bash-3.1.17-static  GNU Bourne Again Shell
++vim-7.0.42-no_x11   vi clone, many additional features

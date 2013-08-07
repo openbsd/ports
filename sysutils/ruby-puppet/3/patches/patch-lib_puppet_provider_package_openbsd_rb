@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.2 2013/08/06 18:21:27 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.3 2013/08/07 07:19:30 jasper Exp $
 
 From a5b8b96f703d932b90ce7461b18076bb32ee85b3 Mon Sep 17 00:00:00 2001
 From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
@@ -10,8 +10,22 @@ From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
 Date: Thu, 1 Aug 2013 17:32:46 +0200
 Subject: (22023) Implement :purgeable feature for OpenBSD package provider
 
---- lib/puppet/provider/package/openbsd.rb.orig	Tue Aug  6 20:19:30 2013
-+++ lib/puppet/provider/package/openbsd.rb	Tue Aug  6 20:19:17 2013
+From 19b0e78df7e010f0af111fda083fd7f87499f952 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Wed, 31 Jul 2013 12:20:15 +0200
+Subject: (22004) Fix regex for retrieving flavor.
+
+--- lib/puppet/provider/package/openbsd.rb.orig	Wed Aug  7 09:16:36 2013
++++ lib/puppet/provider/package/openbsd.rb	Wed Aug  7 09:16:19 2013
+@@ -17,7 +17,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+     begin
+       execpipe(listcmd) do |process|
+         # our regex for matching pkg_info output
+-        regex = /^(.*)-(\d[^-]*)[-]?(\D*)(.*)$/
++        regex = /^(.*)-(\d[^-]*)[-]?(\w*)(.*)$/
+         fields = [:name, :ensure, :flavor ]
+         hash = {}
+ 
 @@ -52,15 +52,18 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
      [command(:pkginfo), "-a"]
    end

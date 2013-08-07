@@ -1,4 +1,4 @@
-$OpenBSD: patch-spec_unit_provider_package_openbsd_spec_rb,v 1.2 2013/08/06 18:21:27 jasper Exp $
+$OpenBSD: patch-spec_unit_provider_package_openbsd_spec_rb,v 1.3 2013/08/07 07:19:30 jasper Exp $
 
 From a5b8b96f703d932b90ce7461b18076bb32ee85b3 Mon Sep 17 00:00:00 2001
 From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
@@ -10,9 +10,31 @@ From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
 Date: Thu, 1 Aug 2013 17:32:46 +0200
 Subject: (22023) Implement :purgeable feature for OpenBSD package provider
 
---- spec/unit/provider/package/openbsd_spec.rb.orig	Tue Aug  6 20:19:42 2013
-+++ spec/unit/provider/package/openbsd_spec.rb	Tue Aug  6 20:19:17 2013
-@@ -184,7 +184,29 @@ describe provider_class do
+From 19b0e78df7e010f0af111fda083fd7f87499f952 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Wed, 31 Jul 2013 12:20:15 +0200
+Subject: (22004) Fix regex for retrieving flavor.
+
+--- spec/unit/provider/package/openbsd_spec.rb.orig	Wed Aug  7 09:16:45 2013
++++ spec/unit/provider/package/openbsd_spec.rb	Wed Aug  7 09:16:19 2013
+@@ -62,6 +62,16 @@ describe provider_class do
+       provider_class.instances.map(&:name).sort.should ==
+         %w{bash bzip2 expat gettext libiconv lzo openvpn python vim wget}.sort
+     end
++
++    it "should return all flavors if set" do
++      fixture = File.read(my_fixture('pkginfo_flavors.list'))
++      provider_class.expects(:execpipe).with(%w{/bin/pkg_info -a}).yields(fixture)
++      instances = provider_class.instances.map {|p| {:name => p.get(:name),
++        :ensure => p.get(:ensure), :flavor => p.get(:flavor)}}
++      instances.size.should == 2
++      instances[0].should == {:name => 'bash', :ensure => '3.1.17',  :flavor => 'static'}
++      instances[1].should == {:name => 'vim',  :ensure => '7.0.42', :flavor => 'no_x11'}
++    end
+   end
+ 
+   context "#install" do
+@@ -184,7 +194,29 @@ describe provider_class do
        provider.install
      end
  
@@ -43,7 +65,7 @@ Subject: (22023) Implement :purgeable feature for OpenBSD package provider
        it "should reject '#{line}'" do
          expect_read_from_pkgconf([line])
          expect {
-@@ -224,6 +246,15 @@ describe provider_class do
+@@ -224,6 +256,15 @@ describe provider_class do
        provider.resource[:name] = 'zsh'
        provider.expects(:pkginfo).with('zsh').returns('')
        provider.query.should be_nil
