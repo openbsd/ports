@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/06/15 08:32:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/08/07 10:37:44 kirby Exp $
 @bin bin/viking
 share/applications/viking.desktop
 share/gnome/
@@ -6,8 +6,27 @@ share/gnome/help/
 share/gnome/help/viking/
 share/gnome/help/viking/C/
 share/gnome/help/viking/C/figures/
+share/gnome/help/viking/C/figures/Viking-OSM-CycleMap-ManyTracks.jpg
+share/gnome/help/viking/C/figures/addtr_18.png
+share/gnome/help/viking/C/figures/addwp_18.png
+share/gnome/help/viking/C/figures/demdl_18.png
+share/gnome/help/viking/C/figures/edtr_18.png
+share/gnome/help/viking/C/figures/edwp_18.png
+share/gnome/help/viking/C/figures/geomove_18.png
+share/gnome/help/viking/C/figures/geozoom_18.png
+share/gnome/help/viking/C/figures/map_tile_info_dialog.png
+share/gnome/help/viking/C/figures/mapdl_18.png
+share/gnome/help/viking/C/figures/mover_22.png
 share/gnome/help/viking/C/figures/properties_degree.png
 share/gnome/help/viking/C/figures/properties_units.png
+share/gnome/help/viking/C/figures/route_finder_18.png
+share/gnome/help/viking/C/figures/ruler_18.png
+share/gnome/help/viking/C/figures/select_18.png
+share/gnome/help/viking/C/figures/showpic_18.png
+share/gnome/help/viking/C/figures/trw_statusbar.png
+share/gnome/help/viking/C/figures/vik_new_route_18.png
+share/gnome/help/viking/C/figures/zoom_18.png
+share/gnome/help/viking/C/figures/zoom_status_popup.png
 share/gnome/help/viking/C/legal.xml
 share/gnome/help/viking/C/viking.xml
 share/icons/hicolor/48x48/apps/viking.png
@@ -17,6 +36,7 @@ share/locale/de/LC_MESSAGES/viking.mo
 share/locale/el/LC_MESSAGES/viking.mo
 share/locale/en_GB/LC_MESSAGES/viking.mo
 share/locale/es/LC_MESSAGES/viking.mo
+share/locale/fi/LC_MESSAGES/viking.mo
 share/locale/fr/LC_MESSAGES/viking.mo
 share/locale/he/LC_MESSAGES/viking.mo
 share/locale/hu/LC_MESSAGES/viking.mo
@@ -41,6 +61,10 @@ share/locale/zh_TW/LC_MESSAGES/viking.mo
 share/omf/
 share/omf/viking/
 share/omf/viking/viking-C.omf
+share/viking/
+share/viking/external_tools.xml
+share/viking/goto_tools.xml
+share/viking/maps.xml
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
