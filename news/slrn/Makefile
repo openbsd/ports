@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.50 2013/03/11 11:35:59 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2013/08/07 15:22:27 bcallah Exp $
 
 COMMENT=		SLang-based newsreader
 
-# p1 is part of upstream version XXX
-DISTNAME=		slrn-0.9.9p1
-PKGNAME=		${DISTNAME:S/p/pl/}
-REVISION=		0
+DISTNAME=		slrn-1.0.1
 CATEGORIES=		news
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=slrn/}
 HOMEPAGE=		http://www.slrn.org/
+
+MAINTAINER=		Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,7 +17,7 @@ WANTLIB=		c crypto m ssl termcap slang
 
 MAKE_ARGS+=		LDFLAGS="${LDFLAGS}"
 
-USE_GROFF =		Yes
+USE_GROFF=		Yes
 NO_TEST=		Yes
 LIB_DEPENDS=		devel/libslang
 MODULES=		devel/gettext

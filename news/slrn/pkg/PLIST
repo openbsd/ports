@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2009/10/13 21:49:02 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.16 2013/08/07 15:22:28 bcallah Exp $
 @bin bin/slrn
 @bin bin/slrnpull
 @man man/man1/slrn.1
@@ -50,6 +50,8 @@ share/slrn/slang/color.sl
 share/slrn/slang/gsort.sl
 share/slrn/slang/ispell.sl
 share/slrn/slang/latin2.sl
+share/slrn/slang/mailcap.sl
+share/slrn/slang/mime.sl
 share/slrn/slang/multipart.sl
 share/slrn/slang/nn.sl
 share/slrn/slang/posthook.sl
