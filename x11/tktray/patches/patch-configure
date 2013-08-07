@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.3 2011/01/05 17:47:49 sebastia Exp $
+$OpenBSD: patch-configure,v 1.4 2013/08/07 19:17:07 naddy Exp $
 
-remove parameters that gcc2 doesn't know of, and do not overwrite CFLAGS_OPTIMIZE
+Do not overwrite CFLAGS_OPTIMIZE.
 
---- configure.orig	Thu Jul 15 11:04:48 2010
-+++ configure	Wed Dec  8 22:50:09 2010
-@@ -6401,12 +6401,12 @@ fi
+--- configure.orig	Thu Jul 15 17:04:48 2010
++++ configure	Wed Aug  7 20:16:04 2013
+@@ -6401,11 +6401,11 @@ fi
      ECHO_VERSION='`echo ${PACKAGE_VERSION}`'
      TCL_LIB_VERSIONS_OK=ok
      CFLAGS_DEBUG=-g
@@ -14,12 +14,10 @@ remove parameters that gcc2 doesn't know of, and do not overwrite CFLAGS_OPTIMIZ
  
  	# TEA specific:
 -	CFLAGS_OPTIMIZE=-O2
--	CFLAGS_WARNING="-W -Wall -Wno-unused-parameter -Wno-missing-field-initializers -ansi -pedantic"
 +	CFLAGS_OPTIMIZE=""
-+	CFLAGS_WARNING="-W -Wall -ansi -pedantic"
+ 	CFLAGS_WARNING="-W -Wall -Wno-unused-parameter -Wno-missing-field-initializers -ansi -pedantic"
  
  else
-   CFLAGS_WARNING=""
 @@ -7517,7 +7517,6 @@ fi
  		# OpenBSD builds and links with -pthread, never -lpthread.
  		LIBS=`echo $LIBS | sed s/-lpthread//`

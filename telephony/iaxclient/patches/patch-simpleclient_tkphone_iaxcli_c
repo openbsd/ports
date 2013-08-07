@@ -1,8 +1,7 @@
-$OpenBSD: patch-simpleclient_tkphone_iaxcli_c,v 1.1 2010/06/18 17:32:21 sebastia Exp $
+$OpenBSD: patch-simpleclient_tkphone_iaxcli_c,v 1.2 2013/08/07 19:16:57 naddy Exp $
 Just use the 1, otherwise we would have "too many arguments to function `iaxc_initialize'"
-and some variable initialization reshuffling to be able to build with gcc-2.95
 --- simpleclient/tkphone/iaxcli.c.orig	Mon Apr  7 18:05:28 2008
-+++ simpleclient/tkphone/iaxcli.c	Wed Jun 16 14:36:19 2010
++++ simpleclient/tkphone/iaxcli.c	Wed Aug  7 20:30:01 2013
 @@ -413,7 +413,7 @@ int main(int argc, char **argv) {
  #endif
  
@@ -11,23 +10,4 @@ and some variable initialization reshuffling to be able to build with gcc-2.95
 +    if (iaxc_initialize(1)) {
  	fatal_error("cannot initialize iaxclient!");
      }
- 
-@@ -478,6 +478,8 @@ int main(int argc, char **argv) {
- 	   }
- 	   break;
- 	case 'R': {	/* ring [o(ff)|<ms>] [<vol %>] */
-+            struct iaxc_sound sound; /* sound to play */
-+	    int repeat;
- 	    if (token && *token == 'o')  {
- 	       if (sound_id != -1) {
- 	           iaxc_stop_sound(sound_id);
-@@ -491,8 +493,7 @@ int main(int argc, char **argv) {
- 	    value = token ? atoi(token) : 0;	/* duration in ms */
- 	    arg = strtok(NULL, DELIM);	/* volume in % */
- 
--            struct iaxc_sound sound; /* sound to play */
--	    int repeat = -1;	/* -1 => forever (or 'til ring off) */
-+	    repeat = -1;	/* -1 => forever (or 'til ring off) */
- 
- 	    gen_ring_samples(arg ? atoi(arg) : 90);
  
