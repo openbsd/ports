@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST-shmop,v 1.4 2012/01/29 14:53:21 espie Exp $
-@option no-default-conflict
-@conflict php-shmop->=5.2,<5.3
-@conflict php5-shmop->=5.2
-@pkgpath www/php5/extensions,-shmop
-lib/php-${PV}/modules/shmop.so
-share/examples/php-${PV}/shmop.ini
-@sample ${SYSCONFDIR}/php-${PV}.sample/shmop.ini

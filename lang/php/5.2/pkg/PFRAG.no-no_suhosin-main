@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.no-no_suhosin-main,v 1.1.1.1 2010/06/27 20:28:44 robert Exp $
-share/php-${PV}/include/main/suhosin_globals.h
-share/php-${PV}/include/main/suhosin_logo.h
-share/php-${PV}/include/main/suhosin_patch.h

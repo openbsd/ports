@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST-dba,v 1.4 2012/01/29 14:53:21 espie Exp $
-@option no-default-conflict
-@conflict php-dba->=5.2,<5.3
-@conflict php5-dba->=5.2
-@pkgpath www/php5/extensions,-dba
-lib/php-${PV}/modules/dba.so
-share/examples/php-${PV}/dba.ini
-@sample ${SYSCONFDIR}/php-${PV}.sample/dba.ini

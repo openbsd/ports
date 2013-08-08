@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST-sqlite,v 1.4 2012/01/29 14:53:21 espie Exp $
-@option no-default-conflict
-@conflict php-sqlite->=5.2,<5.3
-@conflict php5-sqlite->=5.2
-@pkgpath www/php5/extensions,-sqlite
-lib/php-${PV}/modules/sqlite.so
-share/examples/php-${PV}/sqlite.ini
-@sample ${SYSCONFDIR}/php-${PV}.sample/sqlite.ini

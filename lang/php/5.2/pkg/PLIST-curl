@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST-curl,v 1.5 2012/01/29 14:53:21 espie Exp $
-@option no-default-conflict
-@conflict php-curl->=5.2,<5.3
-@conflict php5-curl->=5.2
-@pkgpath www/php5/extensions,-curl
-lib/php-${PV}/modules/curl.so
-share/examples/php-${PV}/curl.ini
-@sample ${SYSCONFDIR}/php-${PV}.sample/curl.ini

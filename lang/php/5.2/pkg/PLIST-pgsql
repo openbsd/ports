@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST-pgsql,v 1.4 2012/01/29 14:53:21 espie Exp $
-@option no-default-conflict
-@conflict php-pgsql->=5.2,<5.3
-@conflict php5-pgsql->=5.2
-@pkgpath www/php5/extensions,-pgsql
-lib/php-${PV}/modules/pgsql.so
-share/examples/php-${PV}/pgsql.ini
-@sample ${SYSCONFDIR}/php-${PV}.sample/pgsql.ini

@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST-mcrypt,v 1.4 2012/01/29 14:53:21 espie Exp $
-@option no-default-conflict
-@conflict php-mcrypt->=5.2,<5.3
-@conflict php5-mcrypt->=5.2
-@pkgpath www/php5/extensions,-mcrypt
-lib/php-${PV}/modules/mcrypt.so
-share/examples/php-${PV}/mcrypt.ini
-@sample ${SYSCONFDIR}/php-${PV}.sample/mcrypt.ini

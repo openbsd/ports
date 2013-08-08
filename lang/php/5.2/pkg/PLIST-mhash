@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST-mhash,v 1.4 2012/05/07 14:41:56 ajacoutot Exp $
-@option no-default-conflict
-@conflict php-mhash->=5.2,<5.3
-@conflict php5-mhash->=5.2
-@pkgpath www/php5/extensions,-mhash
-lib/php-${PV}/modules/mhash.so
-share/examples/php-${PV}/mhash.ini
-@sample ${SYSCONFDIR}/php-${PV}.sample/mhash.ini

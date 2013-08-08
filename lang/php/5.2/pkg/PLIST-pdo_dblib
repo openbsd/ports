@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST-pdo_dblib,v 1.4 2012/01/29 14:53:21 espie Exp $
-@option no-default-conflict
-@conflict php-pdo_dblib->=5.2,<5.3
-@conflict php5-pdo_dblib->=5.2
-@pkgpath www/php5/extensions,-pdo_dblib
-lib/php-${PV}/modules/pdo_dblib.so
-share/examples/php-${PV}/pdo_dblib.ini
-@sample ${SYSCONFDIR}/php-${PV}.sample/pdo_dblib.ini

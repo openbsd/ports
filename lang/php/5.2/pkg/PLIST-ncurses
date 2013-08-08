@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST-ncurses,v 1.4 2012/05/07 14:41:56 ajacoutot Exp $
-@option no-default-conflict
-@conflict php-ncurses->=5.2,<5.3
-@conflict php5-ncurses->=5.2
-@pkgpath www/php5/extensions,-ncurses
-lib/php-${PV}/modules/ncurses.so
-share/examples/php-${PV}/ncurses.ini
-@sample ${SYSCONFDIR}/php-${PV}.sample/ncurses.ini

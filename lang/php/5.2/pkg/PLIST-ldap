@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST-ldap,v 1.4 2012/01/29 14:53:21 espie Exp $
-@option no-default-conflict
-@conflict php-ldap->=5.2,<5.3
-@conflict php5-ldap->=5.2
-@pkgpath www/php5/extensions,-ldap
-lib/php-${PV}/modules/ldap.so
-share/examples/php-${PV}/ldap.ini
-@sample ${SYSCONFDIR}/php-${PV}.sample/ldap.ini
