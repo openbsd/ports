@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-pcntl,v 1.2 2013/08/08 16:25:32 robert Exp $
+@comment $OpenBSD: PLIST-pcntl,v 1.3 2013/08/08 19:11:57 robert Exp $
 @option no-default-conflict
-@conflict php-pcntl->=5.3,<5.4
+@conflict php-pcntl->=5.4,<5.5
 @conflict php5-pcntl->=5.2
 @conflict pecl-pcntl-*
 @pkgpath lang/php/5.2,-pcntl

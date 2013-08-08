@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-gmp,v 1.2 2013/08/08 16:25:30 robert Exp $
+@comment $OpenBSD: PLIST-gmp,v 1.3 2013/08/08 19:11:57 robert Exp $
 @option no-default-conflict
-@conflict php-gmp->=5.3,<5.4
+@conflict php-gmp->=5.4,<5.5
 @conflict php5-gmp->=5.2
 @pkgpath lang/php/5.2,-gmp
 lib/php-${PV}/modules/gmp.so

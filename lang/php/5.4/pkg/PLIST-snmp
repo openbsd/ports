@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-snmp,v 1.2 2013/08/08 16:25:33 robert Exp $
+@comment $OpenBSD: PLIST-snmp,v 1.3 2013/08/08 19:11:57 robert Exp $
 @option no-default-conflict
-@conflict php-snmp->=5.3,<5.4
+@conflict php-snmp->=5.4,<5.5
 @conflict php5-snmp->=5.2
 @pkgpath lang/php/5.2,-snmp
 lib/php-${PV}/modules/snmp.so
