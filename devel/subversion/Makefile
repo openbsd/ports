@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2013/06/20 06:54:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.125 2013/08/08 17:55:35 stsp Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -7,7 +7,7 @@ COMMENT-ruby=		ruby interface to subversion
 COMMENT-ap2=		apache2 subversion modules
 COMMENT-gnome-keyring=	GNOME keyring support for subversion
 
-VERSION=		1.7.10
+VERSION=		1.7.11
 DISTNAME=		subversion-${VERSION}
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-perl=	p5-SVN-${VERSION}
@@ -20,8 +20,6 @@ FULLPKGNAME-ap2=	ap2-subversion-${VERSION}
 FULLPKGPATH-ap2=	devel/subversion,-ap2
 FULLPKGNAME-gnome-keyring= gnome-keyring-subversion-${VERSION}
 FULLPKGPATH-gnome-keyring= devel/subversion,-gnome-keyring
-REVISION-main=		1
-REVISION-gnome-keyring=	1
 
 SO_VERSION=	1.3
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
@@ -106,8 +104,9 @@ LIB_DEPENDS-perl=	${MODGETTEXT_LIB_DEPENDS} ${MAINSPEC}
 WANTLIB-perl +=	${_lib}>=${SO_VERSION}
 .endfor
 
-WANTLIB-python=		${WANTLIB} apr-1 aprutil-1 asn1 crypto gssapi db \
-			krb5 neon proxy sasl2 sqlite3 ssl ${MODPY_WANTLIB}
+WANTLIB-python=		${WANTLIB} apr-1 aprutil-1 asn1 com_err crypto \
+			heimbase gssapi db krb5 m neon proxy roken sasl2 \
+			sqlite3 ssl util wind ${MODPY_WANTLIB}
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
 LIB_DEPENDS-python=	${MODPY_LIB_DEPENDS} ${MODGETTEXT_LIB_DEPENDS} \
 			${MAINSPEC}
@@ -116,8 +115,9 @@ WANTLIB-python +=	${_lib}>=${SO_VERSION}
 .endfor
 
 MODRUBY_REV=		1.8
-WANTLIB-ruby=		${WANTLIB} apr-1 aprutil-1 asn1 crypto gssapi db \
-			krb5 m neon proxy sasl2 sqlite3 ssl ${MODRUBY_WANTLIB}
+WANTLIB-ruby=		${WANTLIB} apr-1 aprutil-1 asn1 com_err crypto gssapi \
+			heimbase db krb5 m neon proxy roken sasl2 sqlite3 ssl \
+			wind ${MODRUBY_WANTLIB}
 RUN_DEPENDS-ruby=	${MODRUBY_RUN_DEPENDS}
 LIB_DEPENDS-ruby=	${MODRUBY_LIB_DEPENDS} \
 			${MODGETTEXT_LIB_DEPENDS} ${MAINSPEC}
