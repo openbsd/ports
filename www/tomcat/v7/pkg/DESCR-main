@@ -1,5 +1,5 @@
-Tomcat 7 is a Servlet/JSP container that implements the Servlet 2.5
-and JavaServer Pages 2.1 specifications from the Java Community 
+Tomcat 7 is a Servlet/JSP container that implements the Servlet 3.0
+and JavaServer Pages 2.2 specifications from the Java Community 
 Process. Tomcat includes many additional features that make it a 
 useful platform for developing and deploying web applications and
 web services.  Tomcat can be run as a standalone web server with 
