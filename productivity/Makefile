@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2013/07/11 19:00:19 phessler Exp $
+# $OpenBSD: Makefile,v 1.56 2013/08/08 12:26:48 henning Exp $
 
      SUBDIR =
      SUBDIR += akonadi
@@ -23,6 +23,7 @@
      SUBDIR += libqzeitgeist
      SUBDIR += libzeitgeist
      SUBDIR += osmo
+     SUBDIR += p5-Business-Tax-VAT-Validation
      SUBDIR += palm2ical
      SUBDIR += projectlibre
      SUBDIR += qhacc
