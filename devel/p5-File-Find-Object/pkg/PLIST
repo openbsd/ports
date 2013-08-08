@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/08/08 20:13:12 bluhm Exp $
+${P5SITE}/File/
+${P5SITE}/File/Find/
+${P5SITE}/File/Find/Object/
+${P5SITE}/File/Find/Object.pm
+${P5SITE}/File/Find/Object/Base.pm
+${P5SITE}/File/Find/Object/PathComp.pm
+${P5SITE}/File/Find/Object/Result.pm
+@man man/man3p/File::Find::Object.3p
+@man man/man3p/File::Find::Object::Base.3p
+@man man/man3p/File::Find::Object::PathComp.3p
+@man man/man3p/File::Find::Object::Result.3p
