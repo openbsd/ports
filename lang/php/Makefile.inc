@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.44 2013/06/20 06:54:38 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.45 2013/08/08 14:25:43 robert Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -47,13 +47,16 @@ CHROOT_DIR?=		/var/www
 MODULES_SUBDIR=		lib/php-${PV}/modules
 MODULES_DIR=		${LOCALBASE}/${MODULES_SUBDIR}
 
-FLAVORS=		ap2 no_suhosin
+FLAVORS=		ap2
+.if ${PV} != "5.4" && ${PV} != "5.5"
+FLAVORS+=		no_suhosin
+.endif
 FLAVOR?=
 
 USE_GROFF=		Yes
 PATCHORIG=		.orig.port
 CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.13
+AUTOCONF_VERSION?=	2.13
 CONFIGURE_ENV=          CFLAGS="${CFLAGS} -I${LOCALBASE}/include -pthread" \
                         LDFLAGS="-L${LOCALBASE}/lib -pthread" \
 			EXTENSION_DIR=${MODULES_DIR} lt_cv_path_SED=/usr/bin/sed
@@ -246,13 +249,6 @@ CONFIGURE_ARGS+=	--with-snmp=shared,${LOCALBASE} --enable-ucd-snmp-hack
 LIB_DEPENDS-snmp=	net/net-snmp
 WANTLIB-snmp=		c crypto m netsnmp>=6.2 pthread
 
-# sqlite
-MULTI_PACKAGES+=	-sqlite
-COMMENT-sqlite=		sqlite database access extensions for php5
-CONFIGURE_ARGS+=	--with-sqlite=shared,${LOCALBASE} --enable-sqlite-utf8
-LIB_DEPENDS-sqlite=	databases/sqlite
-WANTLIB-sqlite=		sqlite>=8 c pthread
-
 # pdo-dblib
 MULTI_PACKAGES+=	-pdo_dblib
 COMMENT-pdo_dblib=	PDO DB-LIB support for php5
@@ -314,10 +310,11 @@ RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
 			mail/femail,-chroot
 LIB_DEPENDS-fastcgi=	${LIB_DEPENDS-main}
 
-.if ${FLAVOR:Mno_suhosin}
+.if ${PV} != "5.4" && ${PV} != "5.5"
+.  if ${FLAVOR:Mno_suhosin}
 SUPDISTFILES=		suhosin-${SUHOSIN_V}.tgz:0 \
 			suhosin-patch-${SUHOSIN_PHPV}-${SUHOSIN_P_V}.patch.gz:0
-.else
+.  else
 DISTFILES+=		suhosin-${SUHOSIN_V}.tgz:0
 PATCHFILES=		suhosin-patch-${SUHOSIN_PHPV}-${SUHOSIN_P_V}.patch.gz:0
 PATCH_DIST_STRIP=	-p1
@@ -325,11 +322,13 @@ CONFIGURE_ARGS+=	--enable-suhosin
 
 pre-patch:
 	@mv ${WRKDIR}/suhosin-${SUHOSIN_V} ${WRKSRC}/ext/suhosin
+.  endif
 .endif
 
 pre-fake:
 	${INSTALL_DATA_DIR} ${PREFIX}/${APACHE_MODULE_SUBDIR}/modules
-INSTALL_TARGET= install-headers install-build install-programs
+
+INSTALL_TARGET=	install-headers install-build install-programs
 DESTDIRNAME=	INSTALL_ROOT
 
 pre-configure:
@@ -372,10 +371,14 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/php-${PV}
 	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/cli/php ${PREFIX}/bin/php-${PV}
 	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/cgi/php-cgi ${PREFIX}/bin/php-fastcgi-${PV}
-.if ${V:M5.3*}
+
+.if ${V:M5.3*} || ${V:M5.4*} || ${V:M5.5*}
+	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/fpm/php-fpm ${PREFIX}/sbin/php-fpm-${PV}
+	${INSTALL_MAN} ${WRKBUILD}/sapi/fpm/php-fpm.8 ${PREFIX}/man/man8/php-fpm-${PV}.8
 	${INSTALL_DATA} ${WRKBUILD}/sapi/fpm/php-fpm.conf \
 		${PREFIX}/share/examples/php-${PV}/php-fpm.conf
 .endif
+
 	${INSTALL_DATA} ${.CURDIR}/../files/php.conf \
 		${PREFIX}/share/examples/php-${PV}/php.conf
 	@perl -pi -e "s,!!PREFIX!!,${TRUEPREFIX},g;s,!!PV!!,${PV},g" \
