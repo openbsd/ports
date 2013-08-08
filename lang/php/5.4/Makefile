@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/08/08 18:28:58 robert Exp $
+# $OpenBSD: Makefile,v 1.4 2013/08/08 18:50:37 robert Exp $
 
 BROKEN-hppa =	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -35,13 +35,6 @@ COMMENT-pcntl=		PCNTL extensions for php5
 CONFIGURE_ARGS+=	--enable-pcntl=shared
 LIB_DEPENDS-pcntl=
 WANTLIB-pcntl=		pthread
-
-# sqlite3
-MULTI_PACKAGES+=	-sqlite3
-COMMENT-sqlite3=	sqlite3 database access extensions for php5
-CONFIGURE_ARGS+=	--with-sqlite3=shared
-LIB_DEPENDS-sqlite3=
-WANTLIB-sqlite3=	pthread
 
 # sybase-ct
 MULTI_PACKAGES+=	-sybase_ct
