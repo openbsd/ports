@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/08/08 20:13:12 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2013/08/08 20:40:58 bluhm Exp $
 
 COMMENT =		object oriented File::Find replacement
 
-DISTNAME =		File-Find-Object-v0.2.7
-PKGNAME =		p5-File-Find-Object-0.2.7
+VERSION =		0.2.7
+DISTNAME =		File-Find-Object-v${VERSION}
+PKGNAME =		p5-File-Find-Object-${VERSION}
 
 CATEGORIES =		devel
 
