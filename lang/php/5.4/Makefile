@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/08/07 16:35:45 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2013/08/08 16:25:29 robert Exp $
 
 BROKEN-hppa =	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -34,6 +34,13 @@ MULTI_PACKAGES+=	-pcntl
 COMMENT-pcntl=		PCNTL extensions for php5
 CONFIGURE_ARGS+=	--enable-pcntl=shared
 LIB_DEPENDS-pcntl=
-WANTLIB-pcntl=		c pthread
+WANTLIB-pcntl=		pthread
+
+# sqlite3
+MULTI_PACKAGES+=	-sqlite3
+COMMENT-sqlite3=	sqlite3 database access extensions for php5
+CONFIGURE_ARGS+=	--with-sqlite3=shared
+LIB_DEPENDS-sqlite3=
+WANTLIB-sqlite3=	pthread
 
 .include <bsd.port.mk>

@@ -1,0 +1,12 @@
+$OpenBSD: patch-ext_imap_config_m4,v 1.1 2013/08/08 16:25:29 robert Exp $
+--- ext/imap/config.m4.orig.port	Thu Aug  8 16:50:57 2013
++++ ext/imap/config.m4	Thu Aug  8 16:51:34 2013
+@@ -180,7 +180,7 @@ if test "$PHP_IMAP" != "no"; then  
+     ],[])
+     CPPFLAGS=$old_CPPFLAGS
+ 
+-    PHP_CHECK_LIBRARY(pam, pam_start, 
++    PHP_CHECK_LIBRARY(pam, DISABLEDpam_start, 
+     [
+       PHP_ADD_LIBRARY(pam,, IMAP_SHARED_LIBADD)
+       AC_DEFINE(HAVE_LIBPAM,1,[ ])

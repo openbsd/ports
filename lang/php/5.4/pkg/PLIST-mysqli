@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-mysqli,v 1.1.1.1 2013/08/07 16:35:46 robert Exp $
+@comment $OpenBSD: PLIST-mysqli,v 1.2 2013/08/08 16:25:31 robert Exp $
 @option no-default-conflict
 @conflict php-mysqli->=5.3,<5.4
 @conflict php5-mysqli->=5.2
+@pkgpath lang/php/5.2,-mysqli
 lib/php-${PV}/modules/mysqli.so
 share/examples/php-${PV}/mysqli.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/mysqli.ini

@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-pdo_pgsql,v 1.1.1.1 2013/08/07 16:35:47 robert Exp $
+@comment $OpenBSD: PLIST-pdo_pgsql,v 1.2 2013/08/08 16:25:32 robert Exp $
 @option no-default-conflict
 @conflict php-pdo_pgsql->=5.3,<5.4
 @conflict php5-pdo_pgsql->=5.2
+@pkgpath lang/php/5.2,-pdo_pgsql
 lib/php-${PV}/modules/pdo_pgsql.so
 share/examples/php-${PV}/pdo_pgsql.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/pdo_pgsql.ini

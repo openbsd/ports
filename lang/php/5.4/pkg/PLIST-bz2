@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-bz2,v 1.1.1.1 2013/08/07 16:35:46 robert Exp $
+@comment $OpenBSD: PLIST-bz2,v 1.2 2013/08/08 16:25:30 robert Exp $
 @option no-default-conflict
 @conflict php-bz2->=5.3,<5.4
 @conflict php5-bz2->=5.2
+@pkgpath lang/php/5.2,-bz2
 lib/php-${PV}/modules/bz2.so
 share/examples/php-${PV}/bz2.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/bz2.ini
