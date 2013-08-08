@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2013/07/05 09:34:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2013/08/08 15:48:24 dcoppa Exp $
 
 COMMENT =		PHP client library for the Redis key-value database
 
-DISTNAME =		Predis-0.8.3
+DISTNAME =		Predis-0.8.4
 PKGNAME =		${DISTNAME:S/^P/php-p/}
 CATEGORIES =		www databases
 
