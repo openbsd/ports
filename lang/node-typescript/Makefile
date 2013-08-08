@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/07/07 20:23:15 jturner Exp $
+# $OpenBSD: Makefile,v 1.3 2013/08/08 22:44:30 jturner Exp $
 
 COMMENT =		typed superset of JavaScript
 
-NPM_VERSION =		0.9.0-1
+NPM_VERSION =		0.9.1
 NPM_NAME =		typescript
-PKGNAME =		node-typescript-0.9.0.1
 CATEGORIES =		lang
 
 MAINTAINER =		James Turner <james@calminferno.net>
@@ -24,6 +23,7 @@ NO_TEST =		Yes
 do-install:
 	mkdir ${PREFIX}/lib/node_modules; \
 	mv ${WRKDIR}/node_modules/${NPM_NAME} ${PREFIX}/lib/node_modules; \
+	rm ${PREFIX}/lib/node_modules/${NPM_NAME}/.gitignore~; \
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/node_modules; \
 	chmod 755 ${PREFIX}/lib/node_modules/${NPM_NAME}/bin/tsc
 	ln -s ${TRUEPREFIX}/lib/node_modules/${NPM_NAME}/bin/tsc ${PREFIX}/bin/tsc
