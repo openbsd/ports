@@ -1,16 +1,7 @@
-$OpenBSD: patch-browser_app_profile_firefox_js,v 1.22 2013/06/26 19:29:14 landry Exp $
---- browser/app/profile/firefox.js.orig	Wed Jun 19 22:27:27 2013
-+++ browser/app/profile/firefox.js	Thu Jun 20 13:07:17 2013
-@@ -606,7 +606,7 @@ pref("accessibility.typeaheadfind.flashBar", 1);
- pref("pfs.datasource.url", "https://pfs.mozilla.org/plugins/PluginFinderService.php?mimetype=%PLUGIN_MIMETYPE%&appID=%APP_ID%&appVersion=%APP_VERSION%&clientOS=%CLIENT_OS%&chromeLocale=%CHROME_LOCALE%&appRelease=%APP_RELEASE%");
- 
- // by default we show an infobar message when pages require plugins the user has not installed, or are outdated
--pref("plugins.hide_infobar_for_missing_plugin", false);
-+pref("plugins.hide_infobar_for_missing_plugin", true);
- pref("plugins.hide_infobar_for_outdated_plugin", false);
- 
- pref("plugins.update.url", "https://www.mozilla.org/%LOCALE%/plugincheck/");
-@@ -729,8 +729,8 @@ pref("gecko.handlerService.schemes.ircs.3.uriTemplate"
+$OpenBSD: patch-browser_app_profile_firefox_js,v 1.23 2013/08/08 06:57:12 landry Exp $
+--- browser/app/profile/firefox.js.orig	Tue Jun 25 22:01:59 2013
++++ browser/app/profile/firefox.js	Wed Jul  3 23:33:26 2013
+@@ -731,8 +731,8 @@ pref("gecko.handlerService.schemes.ircs.3.uriTemplate"
  pref("gecko.handlerService.allowRegisterFromDifferentHost", false);
  
  #ifdef MOZ_SAFE_BROWSING

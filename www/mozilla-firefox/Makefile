@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.234 2013/06/26 19:29:13 landry Exp $
+# $OpenBSD: Makefile,v 1.235 2013/08/08 06:57:11 landry Exp $
 
 COMMENT =	Mozilla web browser
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
@@ -6,13 +6,13 @@ BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 # Don't forget to bump www/firefox-i18n after updates.
 # Don't forget to update devel/xulrunner/2.0 if patches changes.
 
-MOZILLA_VERSION =	22.0
+MOZILLA_VERSION =	23.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
 #MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/
-SO_VERSION =	41.0
+SO_VERSION =	42.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	browsercomps mozalloc mozgnome xul
@@ -41,8 +41,8 @@ NO_TEST =	Yes
 CONFIGURE_STYLE =	autoconf no-autoheader
 WANTLIB +=	kvm
 
-# to be able to link when building with clang on i386
-.if ${MACHINE_ARCH} == "i386"
+# to be able to link when building with clang on i386 or gcc on ppc
+.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
 CONFIGURE_ARGS +=	--disable-debug-symbols
 .endif
 
