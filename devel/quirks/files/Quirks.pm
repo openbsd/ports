@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.94 2013/07/19 07:11:34 kili Exp $
+# $OpenBSD: Quirks.pm,v 1.95 2013/08/08 18:55:04 robert Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -61,7 +61,7 @@ my $base_exceptions = {
 	'pkgconfig' => "/usr/bin/pkg-config",
 	'expat' => "/usr/lib/libexpat.a",
 	'cwm' => "/usr/X11R6/bin/cwm",
-	'mergemaster' => "/usr/sbin/sysmerge", 
+	'mergemaster' => "/usr/sbin/sysmerge",
 # 4.5 stuff
 	'p5-version' => "$p5/version.pm",
 	'p5-Archive-Tar' => "$p5/Archive/Tar.pm",
@@ -316,7 +316,12 @@ my $stem_extensions = {
 	'lpeg' => 'lua-lpeg',
 	'ruby-facter' => 'facter',
 	'ruby-puppet' => 'puppet',
-	'hs-monads-fd' => 'hs-mtl'
+	'hs-monads-fd' => 'hs-mtl',
+# 5.5
+	'php-dbase' => 'php',
+	'php-mhash' => 'php',
+	'php-ncurses' => 'php',
+	'php-sqlite' => 'php',
 };
 
 # ->is_base_system($handle, $state):
@@ -336,7 +341,7 @@ sub is_base_system
 	my $test = $base_exceptions->{$stem};
 	if (defined $test) {
 		if (-e $test) {
-			$state->say("Removing ", $handle->pkgname, 
+			$state->say("Removing ", $handle->pkgname,
 			    " (part of base system now)");
 			return 1;
 		} else {
