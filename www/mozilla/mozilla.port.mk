@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.57 2013/07/11 16:24:10 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.58 2013/08/08 06:58:31 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -36,8 +36,8 @@ MODMOZ_LIB_DEPENDS =	x11/gtk+2
 .if ${MOZILLA_PROJECT} == "firefox" || \
 	${MOZILLA_PROJECT} == "thunderbird" || \
 	${MOZILLA_PROJECT} == "seamonkey"
-MODMOZ_LIB_DEPENDS +=	devel/nspr>=4.9.6 \
-			security/nss>=3.14.3
+MODMOZ_LIB_DEPENDS +=	devel/nspr>=4.10 \
+			security/nss>=3.15
 # needed during install
 MODMOZ_BUILD_DEPENDS +=	archivers/unzip
 
