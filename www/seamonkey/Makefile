@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.140 2013/07/14 11:03:13 landry Exp $
+# $OpenBSD: Makefile,v 1.141 2013/08/08 07:02:37 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 COMMENT-enigmail =	Mozilla Seamonkey GnuPG extension
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 
-MOZILLA_VERSION=	2.19
+MOZILLA_VERSION=	2.20
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
 
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-2.4beta1
+PKGNAME-lightning =	lightning-seamonkey-2.5beta1
 ENIG_V =		1.5.2
 PKGNAME-enigmail =	enigmail-seamonkey-${ENIG_V}
+REVISION-enigmail =	0
 EPOCH-lightning =	0
 EPOCH-enigmail =	0
 
@@ -25,7 +26,7 @@ DISTFILES +=	${MOZILLA_PROJECT}-${MOZILLA_VERSION}.source.tar.bz2 \
 		enigmail-${ENIG_V}.tar.gz:0
 EXTRACT_CASES =	enigmail-*.tar.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | tar -C comm-${MOZILLA_BRANCH}/mailnews/extensions/ -xf -;;
 
-SO_VERSION =	31.0
+SO_VERSION =	32.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
@@ -58,14 +59,14 @@ WANTLIB-lightning =	lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/xul \
 			lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/mozalloc \
 			c m stdc++ nspr4 plc4 plds4 pthread
 
-RUN_DEPENDS-enigmail =	security/gnupg
+RUN_DEPENDS-enigmail =	security/gnupg STEM->=${MOZILLA_VER}:${BUILD_PKGPATH},-main
 LIB_DEPENDS-enigmail =
 WANTLIB-enigmail =
 # build lightning xpi
 CONFIGURE_ARGS +=	--enable-calendar
 
-# to be able to link when building with clang on i386
-.if ${MACHINE_ARCH} == "i386"
+# to be able to link when building with clang on i386 or gcc on powerpc
+.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
 CONFIGURE_ARGS +=	--disable-debug-symbols
 .endif
 

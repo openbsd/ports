@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-lightning,v 1.15 2013/07/11 16:23:40 landry Exp $
+@comment $OpenBSD: PLIST-lightning,v 1.16 2013/08/08 07:02:39 landry Exp $
 @conflict lightning-seamonkey-<=1.0b1
 @pkgpath productivity/sunbird,-seamonkey
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/
@@ -46,13 +46,17 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a4
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calCachedCalendar.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calCalendarManager.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calCalendarSearchService.js
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calDateTime.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calDateTimeFormatter.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calDavRequestHandlers.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calDeletedItems.js
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calDuration.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calEvent.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calFilter.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calFreeBusyService.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calHtmlExport.js
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calICSService-worker.js
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calICSService.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calIcsImportExport.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calIcsParser.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calIcsSerializer.js
@@ -61,11 +65,14 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a4
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calListFormatter.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calMonthGridPrinter.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calOutlookCSVImportExport.js
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calPeriod.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calProtocolHandler.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calRecurrenceDate.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calRecurrenceInfo.js
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calRecurrenceRule.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calRelation.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calStartupService.js
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calTimezone.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calTodo.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calTransactionManager.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/calendar-js/calUtils.js
@@ -316,12 +323,15 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a4
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/lightning/skin/lightning/mode-switch-icons.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/lightning/skin/lightning/suite-accountCentral.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/calBackendLoader.js
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/calBackendLoader.manifest
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/calCompositeCalendar.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/calCompositeCalendar.manifest
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/calDavCalendar.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/calDavCalendar.manifest
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/calDefaultACLManager.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/calDefaultACLManager.manifest
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/calICALJSComponents.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/calICSCalendar.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/calICSCalendar.manifest
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/calImportExportModule.js
@@ -342,10 +352,13 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a4
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/calWcapCalendarModule.manifest
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/calbase.xpt
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/calbaseinternal.xpt
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/caldatetime_icaljs.xpt
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/caldatetime_libical.xpt
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/caldav.xpt
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/components.manifest
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/icaljs.manifest
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/interfaces.manifest
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/libcalbasecomps.so.${LIBcalbasecomps_VERSION}
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/libical.manifest
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/lightningTextCalendarConverter.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/lightningTextCalendarConverter.manifest
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/wcap.xpt
@@ -367,4 +380,5 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a4
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/modules/calStorageUpgrade.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/modules/calUtils.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/modules/calXMLUtils.jsm
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/modules/ical.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/timezones.sqlite
