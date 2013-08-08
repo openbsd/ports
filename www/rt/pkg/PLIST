@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/06/09 21:51:58 robert Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/08/08 19:37:05 robert Exp $
 bin/rt
 bin/rt-crontool
 bin/rt-mailgate
@@ -1684,6 +1684,7 @@ share/rt3/html/Search/Elements/NewListActions
 share/rt3/html/Search/Elements/PickBasics
 share/rt3/html/Search/Elements/PickCFs
 share/rt3/html/Search/Elements/PickCriteria
+share/rt3/html/Search/Elements/PickTicketCFs
 share/rt3/html/Search/Elements/ResultsRSSView
 share/rt3/html/Search/Elements/SearchPrivacy
 share/rt3/html/Search/Elements/SearchesForObject
