@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/08/06 23:42:16 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/08/08 11:24:32 jsg Exp $
 firmware/radeon-aruba_me
 firmware/radeon-aruba_pfp
 firmware/radeon-aruba_rlc
@@ -49,6 +49,7 @@ firmware/radeon-kabini_mec
 firmware/radeon-kabini_pfp
 firmware/radeon-kabini_rlc
 firmware/radeon-kabini_sdma
+firmware/radeon-license
 firmware/radeon-oland_ce
 firmware/radeon-oland_mc
 firmware/radeon-oland_me
