@@ -1,0 +1,8 @@
+cgo is a UNIX/Linux terminal based gopher client. It relies on external
+programs to display media the client cannot itself display (such as
+images, music, or HTML pages).
+
+cgo defaults to using Firefox to display HTML pages, mplayer for music
+and video, and display (from the ImageMagick package) for images. These
+preferences are hardcoded into the source file; to use different
+programs, you must edit the source file yourself.
