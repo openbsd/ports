@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1152 2013/07/19 07:15:04 kili Exp $
+# $OpenBSD: Makefile,v 1.1153 2013/08/08 20:49:11 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -711,6 +711,8 @@
      SUBDIR += p5-File-CreationTime
      SUBDIR += p5-File-DesktopEntry
      SUBDIR += p5-File-DirCompare
+     SUBDIR += p5-File-Find-Object
+     SUBDIR += p5-File-Find-Object-Rule
      SUBDIR += p5-File-Find-Rule
      SUBDIR += p5-File-Find-Rule-Filesys-Virtual
      SUBDIR += p5-File-Find-Rule-Perl
@@ -1009,6 +1011,7 @@
      SUBDIR += p5-Test-Taint
      SUBDIR += p5-Test-TempDir
      SUBDIR += p5-Test-Tester
+     SUBDIR += p5-Test-TrailingSpace
      SUBDIR += p5-Test-Trap
      SUBDIR += p5-Test-URI
      SUBDIR += p5-Test-Unit
