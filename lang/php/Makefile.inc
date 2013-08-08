@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.46 2013/08/08 18:53:36 robert Exp $
+# $OpenBSD: Makefile.inc,v 1.47 2013/08/08 18:59:26 robert Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -352,10 +352,12 @@ PKGNAME-${i}=		php-${i}-${V}
 # don't build separate plugins for -ap2
 FULLPKGNAME-${i}=	php-${i}-${V}${FLAVOR_EXT:S/-ap2//}
 FULLPKGPATH-${i}=	${PKGPATH},-${i}${FLAVOR_EXT:S/-ap2//:S/-/,/g}
-.if ${V:M5.2*}
-PKGSPEC-${i}=		php-${i}->=5.2,<5.3
-.else if ${V:M5.3*}
+.if ${V:M5.3*}
 PKGSPEC-${i}=		php-${i}->=5.3,<5.4
+.else if ${V:M5.4*}
+PKGSPEC-${i}=		php-${i}->=5.4,<5.5
+.else if ${V:M5.5*}
+PKGSPEC-${i}=		php-${i}->=5.5,<5.6
 .endif
 RUN_DEPENDS-${i}+=	php-${V}:lang/php/${PV}
 .endfor
