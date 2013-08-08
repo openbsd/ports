@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/08/08 12:24:22 henning Exp $
+${P5SITE}/Business/
+${P5SITE}/Business/Tax/
+${P5SITE}/Business/Tax/VAT/
+${P5SITE}/Business/Tax/VAT/Validation.pm
+@man man/man3p/Business::Tax::VAT::Validation.3p

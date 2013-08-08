@@ -1,0 +1,3 @@
+This class provides an easy api to check european VAT numbers' syntax, and
+if they has been registered by the competent authorities.
+It asks the EU database (VIES) for this, using its SOAP interface methods.
