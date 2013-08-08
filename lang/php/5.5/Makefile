@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2013/08/08 19:11:43 robert Exp $
 
 BROKEN-hppa =	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -34,6 +34,13 @@ MULTI_PACKAGES+=	-pcntl
 COMMENT-pcntl=		PCNTL extensions for php5
 CONFIGURE_ARGS+=	--enable-pcntl=shared
 LIB_DEPENDS-pcntl=
-WANTLIB-pcntl=		c pthread
+WANTLIB-pcntl=		pthread
+
+# sybase-ct
+MULTI_PACKAGES+=	-sybase_ct
+COMMENT-sybase_ct=	sybase database access extensions for php5
+CONFIGURE_ARGS+=	--with-sybase-ct=shared,${LOCALBASE}
+LIB_DEPENDS-sybase_ct=	databases/freetds
+WANTLIB-sybase_ct=	ct pthread
 
 .include <bsd.port.mk>

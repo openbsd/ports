@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-mssql,v 1.1.1.1 2013/08/07 16:46:56 robert Exp $
+@comment $OpenBSD: PLIST-mssql,v 1.2 2013/08/08 19:11:43 robert Exp $
 @option no-default-conflict
-@conflict php-mssql->=5.3,<5.4
+@conflict php-mssql->=5.5,<5.6
 @conflict php5-mssql->=5.2
 lib/php-${PV}/modules/mssql.so
 share/examples/php-${PV}/mssql.ini
