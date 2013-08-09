@@ -1,0 +1,27 @@
+$OpenBSD: patch-py-rcsparse_c,v 1.1 2013/08/09 05:41:50 dcoppa Exp $
+
+Py_ssize_t != int
+
+On a sparc64 host, git-cvs died of a bus error due to a mismatch
+in the string length argument passed to PyString_AsStringAndLength.
+
+--- py-rcsparse.c.orig	Thu Aug  6 22:21:50 2009
++++ py-rcsparse.c	Mon Aug  5 10:59:33 2013
+@@ -53,7 +53,7 @@ pyrcsrevtree_find_internal(struct pyrcsrevtree *self, 
+ {
+ 	struct rcsrev rev;
+ 	struct rcstoken tok;
+-	int l;
++	Py_ssize_t l;
+ 
+ 	if (!PyString_CheckExact(key))
+ 		return -1;
+@@ -322,7 +322,7 @@ pyrcstokmap_find_internal(struct pyrcstokmap *self, Py
+ {
+ 	struct rcstokpair pair;
+ 	struct rcstoken tok;
+-	int l;
++	Py_ssize_t l;
+ 
+ 	if (!PyString_CheckExact(key))
+ 		return -1;
