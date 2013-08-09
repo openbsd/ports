@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/08/07 21:31:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2013/08/09 11:10:15 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,7 +13,7 @@ PKGNAME-mysql=	luadbi-mysql-$V
 PKGNAME-pgsql=	luadbi-pgsql-$V
 REVISION-main=	0
 REVISION-mysql=	2
-REVISION-pqsql=	0
+REVISION-pgsql=	0
 
 CATEGORIES=	databases
 
