@@ -1,0 +1,13 @@
+$OpenBSD: README,v 1.1 2013/08/09 14:32:51 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+For proper functionality, multicast(4) needs to be enabled. To do so,
+add the following line to rc.conf.local(8):
+    multicast_host=YES
+
+Before starting mdnsd(8), "mdnsd_flags" needs to be modified in
+rc.conf.local(8) to listen on the correct interface (default is "em0").
+For example: mdnsd_flags="fxp0"

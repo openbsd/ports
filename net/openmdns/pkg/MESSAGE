@@ -1,3 +1,0 @@
-For proper functionality, multicast(4) needs to be enabled. To do so,
-add the following line to /etc/rc.conf.local:
-    multicast_host=YES
