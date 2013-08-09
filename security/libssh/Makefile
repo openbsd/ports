@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/08/09 19:14:50 rpointel Exp $
+# $OpenBSD: Makefile,v 1.9 2013/08/09 19:26:56 rpointel Exp $
 
 COMMENT =		C library implementing server and client side
 # XXX if updating, check the number in the MASTER_SITES path
@@ -17,7 +17,7 @@ MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 # LGPL v2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += crypto ssl z
+WANTLIB += crypto pthread ssl z
 
 MODULES =		devel/cmake
 
