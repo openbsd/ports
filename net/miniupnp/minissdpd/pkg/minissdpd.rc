@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# $OpenBSD: minissdpd.rc,v 1.1.1.1 2012/01/13 09:22:23 ajacoutot Exp $
+# $OpenBSD: minissdpd.rc,v 1.2 2013/08/09 14:31:54 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/minissdpd"
-daemon_flags="-i em0"
+daemon_flags="-i 127.0.0.1"
 
 . /etc/rc.d/rc.subr
 
