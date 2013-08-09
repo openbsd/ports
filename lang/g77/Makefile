@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/07/07 21:25:29 naddy Exp $
-
-NOT_FOR_ARCHS =		${GCC2_ARCHS}
+# $OpenBSD: Makefile,v 1.24 2013/08/09 11:02:28 naddy Exp $
 
 V =			3.3.6
 PKGNAME =		g77-$V
@@ -27,7 +25,7 @@ MASTER_SITES =		http://spacehopper.org/mirrors/
 PERMIT_PACKAGE_CDROM = 	Yes
 
 RUN_DEPENDS =		devel/libf2c
-TEST_DEPENDS =	devel/dejagnu \
+TEST_DEPENDS =		devel/dejagnu \
 			devel/libf2c
 
 WRKDIST =		${WRKDIR}/g77
