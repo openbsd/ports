@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.7 2010/05/19 15:18:35 espie Exp $
+$OpenBSD: patch-configure,v 1.8 2013/08/09 18:45:32 ajacoutot Exp $
 --- configure.orig	Sat Nov 27 09:46:40 2004
 +++ configure	Wed May 19 17:08:39 2010
 @@ -20225,15 +20225,17 @@ cat >>confdefs.h <<_ACEOF
@@ -67,32 +67,6 @@ $OpenBSD: patch-configure,v 1.7 2010/05/19 15:18:35 espie Exp $
  if test x$have_python_config = xyes && test x$have_python_include = xyes ; then
      have_python=yes
      echo "$as_me:$LINENO: result: yes" >&5
-@@ -22044,13 +22028,13 @@ if test $ac_cv_lib_pthreads_pthread_create = yes; then
- 
- else
- 
--		echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
--echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6
-+		echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
-+echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6
- if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lpthread  $LIBS"
-+LIBS="-pthread  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -22110,7 +22094,7 @@ echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthre
- echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6
- if test $ac_cv_lib_pthread_pthread_create = yes; then
- 
--		    PT="-lpthread"
-+		    PT="-pthread"
- 
- else
- 
 @@ -27610,7 +27594,7 @@ if test "${ac_cv_lib_intl_tolower+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
