@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/08/07 21:32:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2013/08/09 17:39:44 ajacoutot Exp $
 
 COMMENT-main=	OCR Engine developed at HP Labs
 
@@ -7,7 +7,7 @@ DISTNAME=	tesseract-${V}
 CATEGORIES=	graphics textproc
 
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	0
+REVISION-main=	1
 
 SHARED_LIBS +=  tesseract            3.1      # 3.1
 
@@ -66,7 +66,6 @@ pre-configure:
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		./autogen.sh ${CONFIGURE_ARGS}
-	perl -pi -e 's,-lpthread,-pthread,g' ${WRKSRC}/configure
 
 post-install:
 	cp ${WRKDIR}/*.traineddata ${PREFIX}/share/tessdata/
