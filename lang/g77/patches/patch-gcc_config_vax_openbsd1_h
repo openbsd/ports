@@ -1,0 +1,9 @@
+$OpenBSD: patch-gcc_config_vax_openbsd1_h,v 1.1 2013/08/09 08:52:03 miod Exp $
+--- gcc/config/vax/openbsd1.h.orig	Sat Nov 29 12:35:32 2003
++++ gcc/config/vax/openbsd1.h	Thu Aug  8 21:59:22 2013
+@@ -19,5 +19,4 @@ the Free Software Foundation, 59 Temple Place - Suite 
+ Boston, MA 02111-1307, USA.  */
+ 
+ /* Set up definitions before picking up the common openbsd.h file.  */
+-#define OBSD_OLD_GAS 
+ #define OBSD_NO_DYNAMIC_LIBRARIES

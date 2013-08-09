@@ -1,0 +1,20 @@
+$OpenBSD: patch-gcc_config_gcc,v 1.4 2013/08/09 08:52:03 miod Exp $
+--- gcc/config.gcc.orig	Sun Feb 24 15:51:55 2013
++++ gcc/config.gcc	Thu Aug  8 21:57:37 2013
+@@ -2780,10 +2780,13 @@ vax-*-netbsd*)
+ 	use_collect2=yes
+ 	;;
+ vax-*-openbsd*)
+-	tmake_file="t-libc-ok t-openbsd"
+-	tm_file="vax/vax.h vax/openbsd1.h openbsd.h ${tm_file}"
++	tm_file="openbsd-libpthread.h vax/vax.h dbxelf.h elfos.h vax/openbsd1.h openbsd.h vax/elf.h vax/openbsdelf.h"
+ #	tm_file="${tm_file} exec-stack.h"
+-	use_collect2=yes
++	tmake_file="t-libc-ok t-openbsd"
++	if test x$enable_threads = xyes; then
++		tmake_file="${tmake_file} t-openbsd-thread"
++	fi
++	float_format=vax
+ 	;;
+ vax-*-ultrix*)			# VAXen running ultrix
+ 	tm_file="${tm_file} vax/ultrix.h"
