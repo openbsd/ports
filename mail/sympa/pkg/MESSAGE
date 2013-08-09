@@ -1,3 +1,0 @@
-If you upgrade from sympa 6.0.1 to 6.1.3 or later, configuration files
-sympa.conf and wwsympa.conf moved from ${SYSCONFDIR} to /var/sympa${SYSCONFDIR}.
-You'll have to merge your configuration changes in the new location.
