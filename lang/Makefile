@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.153 2013/06/19 22:39:01 jturner Exp $
+# $OpenBSD: Makefile,v 1.154 2013/08/09 10:59:31 naddy Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -25,7 +25,6 @@
      SUBDIR += gambit
      SUBDIR += gawk
      SUBDIR += g77
-     SUBDIR += g77-old
      SUBDIR += gcc
      SUBDIR += gforth
      SUBDIR += gfortran
