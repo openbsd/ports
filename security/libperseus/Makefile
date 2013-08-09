@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/08/07 21:32:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2013/08/09 11:23:25 naddy Exp $
 
 COMMENT = 	library to secure any kind of communication streams
 
@@ -31,7 +31,7 @@ do-test:
 
 do-install:
 	${INSTALL_DATA} ${WRKBUILD}/perseus.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKBUILD}/${FULLPKGNAME}.so ${PREFIX}/lib/libperseus.so.${LIBperseus_VERSION}
+	${INSTALL_DATA} ${WRKBUILD}/${DISTNAME}.so ${PREFIX}/lib/libperseus.so.${LIBperseus_VERSION}
 	${INSTALL_PROGRAM} ${WRKBUILD}/perseus_test ${PREFIX}/bin
 
 .include <bsd.port.mk>
