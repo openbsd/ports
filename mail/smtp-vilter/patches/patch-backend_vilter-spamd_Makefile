@@ -1,0 +1,12 @@
+$OpenBSD: patch-backend_vilter-spamd_Makefile,v 1.1 2013/08/09 18:06:52 ian Exp $
+--- backend/vilter-spamd/Makefile.orig	Sat May  4 07:11:57 2013
++++ backend/vilter-spamd/Makefile	Fri Aug  9 12:19:29 2013
+@@ -22,7 +22,7 @@ LIBDIR=		/usr/pkg/lib/smtp-vilter
+ CFLAGS+=	-I/usr/src/gnu/usr.sbin/sendmail/include
+ .endif
+ 
+-LDADD+=		-nostdlib
++LDADD+=		-nodefaultlibs
+ 
+ beforeinstall:
+ 	-mkdir -p ${DESTDIR}${LIBDIR}
