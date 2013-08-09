@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2013/06/24 15:53:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.19 2013/08/09 23:12:20 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	twin panel file manager for KDE
 
 DISTNAME=	krusader-1.80.0
-REVISION=	9
+REVISION=	10
 
 CATEGORIES=	x11 x11/kde
 
@@ -49,9 +49,5 @@ CONFIGURE_ARGS=	${MODQT_CONFIGURE_ARGS} \
 		--with-extra-libs="${LOCALBASE}/lib" \
 		--with-extra-includes="${LOCALBASE}/include" \
 		--without-acl
-
-pre-configure:
-	@perl -pi -e 's,-O2,,g;' -e 's,-lpthread,-pthread,g' \
-		${WRKSRC}/configure
 
 .include <bsd.port.mk>

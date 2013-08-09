@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/21 08:48:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2013/08/09 23:12:20 ajacoutot Exp $
 
 COMMENT=	audio visualization plugin for the X-Window System
 
 DISTNAME=	extace-1.9.9
-REVISION=	7
+REVISION=	8
 CATEGORIES=	x11 audio
 
 HOMEPAGE=	http://extace.sourceforge.net/
