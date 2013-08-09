@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/07/18 17:38:47 rpointel Exp $
-@lib lib/libssh.so.${LIBssh_VERSION}
-@lib lib/libssh_threads.so.${LIBssh_threads_VERSION}
