@@ -1,17 +1,15 @@
-$OpenBSD: patch-configure,v 1.5 2011/12/15 17:59:21 fgsch Exp $
---- configure.orig	Fri Feb 22 13:51:22 2008
-+++ configure	Wed Dec 14 23:30:00 2011
-@@ -6,8 +6,8 @@ my $prefix      = "/usr/local";
+$OpenBSD: patch-configure,v 1.6 2013/08/09 19:04:49 ajacoutot Exp $
+--- configure.orig	Fri Feb 22 16:51:22 2008
++++ configure	Fri Aug  9 20:48:04 2013
+@@ -6,7 +6,7 @@ my $prefix      = "/usr/local";
  my $package     = "eboard";
  my $version     = "1.1.1";
  my $cxx         = "g++";
 -my @cxxflags    = ("-O6");
--my @ldflags     = ("-lpthread");
 +my @cxxflags    = ();
-+my @ldflags     = ("-pthread");
+ my @ldflags     = ("-lpthread");
  my @libs        = ();
  my $configh     = "config.h";
- my $configmake  = "config.make";
 @@ -236,7 +236,7 @@ sub append_flags {
      my $x = shift @_;
      my @y;

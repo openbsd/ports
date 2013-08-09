@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/21 08:48:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2013/08/09 19:06:41 ajacoutot Exp $
 
 COMMENT-main=	IAX client library
 COMMENT-tcl=	IAX client library, tcl bindings
@@ -6,11 +6,11 @@ COMMENT-iaxcomm=IAX softphone
 
 DISTNAME=	iaxclient-2.1beta3
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	10
+REVISION-main=	11
 PKGNAME-tcl=	${DISTNAME:S/iaxclient/iaxclient-tcl/}
-REVISION-tcl=	13
+REVISION-tcl=	14
 PKGNAME-iaxcomm= iaxcomm-1.1.0
-REVISION-iaxcomm= 14
+REVISION-iaxcomm= 15
 
 CATEGORIES=	telephony
 SHARED_LIBS=	tcliaxclient02 0.0 \

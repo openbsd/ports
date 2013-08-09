@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/03/21 08:45:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2013/08/09 19:04:49 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ DISTNAME=	bzflag-2.4.2
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bzflag/}
 EXTRACT_SUFX=	.tar.bz2
+REVISION=	0
 
 HOMEPAGE=	http://www.bzflag.org/
 

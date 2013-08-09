@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:07:41 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/08/09 19:04:49 ajacoutot Exp $
 
 COMMENT =	tuxkart is a simple Go-Kart racing game.
 
 DISTNAME =	tuxkart-0.4.0
-REVISION =	1
+REVISION =	2
 CATEGORIES =	games
 
 HOMEPAGE =	http://tuxkart.sourceforge.net/

@@ -1,4 +1,4 @@
-$OpenBSD: patch-contrib_tcl_configure,v 1.1 2010/06/18 17:32:21 sebastia Exp $
+$OpenBSD: patch-contrib_tcl_configure,v 1.2 2013/08/09 19:06:41 ajacoutot Exp $
 --- contrib/tcl/configure.orig	Mon Apr  7 18:05:36 2008
 +++ contrib/tcl/configure	Sun Dec  6 20:59:31 2009
 @@ -6685,7 +6685,7 @@ else
@@ -6,7 +6,7 @@ $OpenBSD: patch-contrib_tcl_configure,v 1.1 2010/06/18 17:32:21 sebastia Exp $
      else
  
 -    vars="-lpthread -lasound"
-+    vars="-pthread"
++    vars="-lpthread"
      for i in $vars; do
  	if test "${TEA_PLATFORM}" = "windows" -a "$GCC" = "yes" ; then
  	    # Convert foo.lib to -lfoo for GCC.  No-op if not *.lib

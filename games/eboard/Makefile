@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.46 2013/03/11 11:07:38 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2013/08/09 19:04:49 ajacoutot Exp $
 
 COMMENT=	gtk+2 chess board interface
 
 DISTNAME=	eboard-1.1.1
 CATEGORIES=	games x11
+REVISION=	0
 
 HOMEPAGE=	http://www.bergo.eng.br/eboard/
 
