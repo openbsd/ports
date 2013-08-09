@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.47 2013/06/21 10:05:32 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.48 2013/08/09 13:00:48 giovanni Exp $
 @group daemon
 phpMyAdmin/
 phpMyAdmin/ChangeLog
@@ -29,6 +29,7 @@ phpMyAdmin/doc/
 phpMyAdmin/doc/Makefile
 phpMyAdmin/doc/_ext/
 phpMyAdmin/doc/_ext/configext.py
+@comment phpMyAdmin/doc/_ext/configext.pyc
 phpMyAdmin/doc/conf.py
 phpMyAdmin/doc/config.rst
 phpMyAdmin/doc/copyright.rst
@@ -157,7 +158,7 @@ phpMyAdmin/js/codemirror/mode/mysql/
 phpMyAdmin/js/codemirror/mode/mysql/mysql.js
 phpMyAdmin/js/common.js
 phpMyAdmin/js/config.js
-phpMyAdmin/js/date.js
+phpMyAdmin/js/cross_framing_protection.js
 phpMyAdmin/js/db_operations.js
 phpMyAdmin/js/db_search.js
 phpMyAdmin/js/db_structure.js
@@ -183,8 +184,8 @@ phpMyAdmin/js/jqplot/plugins/jqplot.highlighter.js
 phpMyAdmin/js/jqplot/plugins/jqplot.pieRenderer.js
 phpMyAdmin/js/jqplot/plugins/jqplot.pointLabels.js
 phpMyAdmin/js/jquery/
-phpMyAdmin/js/jquery/jquery-1.8.3.js
-phpMyAdmin/js/jquery/jquery-ui-1.9.2.custom.js
+phpMyAdmin/js/jquery/jquery-1.8.3.min.js
+phpMyAdmin/js/jquery/jquery-ui-1.9.2.custom.min.js
 phpMyAdmin/js/jquery/jquery-ui-timepicker-addon.js
 phpMyAdmin/js/jquery/jquery.ba-hashchange-1.3.js
 phpMyAdmin/js/jquery/jquery.cookie.js
@@ -297,7 +298,6 @@ phpMyAdmin/js/tbl_select.js
 phpMyAdmin/js/tbl_structure.js
 phpMyAdmin/js/tbl_zoom_plot_jqplot.js
 phpMyAdmin/libraries/
-phpMyAdmin/libraries/.htaccess
 phpMyAdmin/libraries/Advisor.class.php
 phpMyAdmin/libraries/Config.class.php
 phpMyAdmin/libraries/DBQbe.class.php
@@ -636,6 +636,9 @@ phpMyAdmin/locale/ar/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/bg/
 phpMyAdmin/locale/bg/LC_MESSAGES/
 phpMyAdmin/locale/bg/LC_MESSAGES/phpmyadmin.mo
+phpMyAdmin/locale/bn/
+phpMyAdmin/locale/bn/LC_MESSAGES/
+phpMyAdmin/locale/bn/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/ca/
 phpMyAdmin/locale/ca/LC_MESSAGES/
 phpMyAdmin/locale/ca/LC_MESSAGES/phpmyadmin.mo
@@ -787,7 +790,6 @@ phpMyAdmin/setup/
 phpMyAdmin/setup/ajax.js
 phpMyAdmin/setup/config.php
 phpMyAdmin/setup/frames/
-phpMyAdmin/setup/frames/.htaccess
 phpMyAdmin/setup/frames/config.inc.php
 phpMyAdmin/setup/frames/form.inc.php
 phpMyAdmin/setup/frames/index.inc.php
@@ -795,7 +797,6 @@ phpMyAdmin/setup/frames/menu.inc.php
 phpMyAdmin/setup/frames/servers.inc.php
 phpMyAdmin/setup/index.php
 phpMyAdmin/setup/lib/
-phpMyAdmin/setup/lib/.htaccess
 phpMyAdmin/setup/lib/ConfigGenerator.class.php
 phpMyAdmin/setup/lib/common.inc.php
 phpMyAdmin/setup/lib/form_processing.lib.php
