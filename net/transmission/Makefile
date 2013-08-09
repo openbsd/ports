@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.88 2013/07/12 17:03:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.89 2013/08/09 19:13:08 naddy Exp $
 
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
 COMMENT-qt=	BitTorrent client with Qt interface
 
-VER=		2.80
+VER=		2.81
 DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
