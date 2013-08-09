@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2011/05/11 06:22:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2013/08/09 16:46:23 ajacoutot Exp $
 @extraunexec rm -rf /var/spool/fax/*
 @bin bin/autopvf
 @bin bin/basictopvf
@@ -83,6 +83,7 @@ share/doc/mgetty+sendfax/voice/Readme.pvftools
 share/doc/mgetty+sendfax/voice/Readme.voice_shell
 share/doc/mgetty+sendfax/voice/compression_settings
 share/doc/mgetty+sendfax/voice/device_settings
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/mgetty+sendfax/
 @sample ${SYSCONFDIR}/mgetty+sendfax/
 share/examples/mgetty+sendfax/dialin.config

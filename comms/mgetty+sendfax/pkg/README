@@ -1,3 +1,9 @@
+$OpenBSD: README,v 1.1 2013/08/09 16:46:23 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
 If you're installing for the first time or want to change your
 configuration, you may want to run the following script as root:
 ${PREFIX}/lib/mgetty+sendfax/setup
