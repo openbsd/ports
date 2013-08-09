@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:37:53 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/08/09 23:17:56 landry Exp $
 
 COMMENT=	shell (clone of plan9 shell)
 
 DISTNAME=	rc-1.6
-REVISION=	0
+REVISION=	1
 CATEGORIES=	plan9 shells
 MASTER_SITES=	http://www.star.le.ac.uk/~tjg/rc/release/ \
 		ftp://ftp.sys.toronto.edu/pub/rc/
