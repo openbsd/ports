@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2013/07/05 09:34:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2013/08/09 23:55:54 rpe Exp $
 
 COMMENT=		free real-time logfile analyzer
 
-DISTNAME=		awstats-7.1.1
+DISTNAME=		awstats-7.2
 
 CATEGORIES=		www
 
@@ -10,7 +10,7 @@ HOMEPAGE=	 	http://awstats.sourceforge.net/
 
 MAINTAINER=		Robert Peichaer <rpe@openbsd.org>
 
-# GPLv2
+# GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=awstats/}
