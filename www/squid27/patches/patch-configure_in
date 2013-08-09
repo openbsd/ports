@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2013/01/02 10:12:02 sthen Exp $
---- configure.in.orig	Tue Mar 16 20:10:12 2010
-+++ configure.in	Fri Aug 17 00:44:48 2012
+$OpenBSD: patch-configure_in,v 1.2 2013/08/09 14:40:44 naddy Exp $
+--- configure.in.orig	Wed Mar 17 01:10:12 2010
++++ configure.in	Fri Aug  9 16:38:38 2013
 @@ -17,11 +17,6 @@ AM_MAINTAINER_MODE
  PRESET_CFLAGS="$CFLAGS"
  PRESET_LDFLAGS="$LDFLAGS"
@@ -13,26 +13,7 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2013/01/02 10:12:02 sthen Exp $
  dnl Check for GNU cc
  AC_PROG_CC
  AM_PROG_CC_C_O
-@@ -2350,18 +2345,6 @@ dnl during compile.
- 		;;
- esac
- 
--# Remove optimization for GCC 2.95.[123]
--# gcc -O[2] on *BSD and Linux (x86) causes pointers to magically become NULL
--if test "$GCC" = "yes"; then
--	GCCVER=`$CC -v 2>&1 | awk '$2 ==  "version" {print $3}'`
--	case "$GCCVER" in
--	[2.95.[123]])
--		echo "Removing -O for gcc on $host with GCC $GCCVER"
--		CFLAGS="`echo $CFLAGS | sed -e 's/-O[[0-9]]*//'`"
--		;;
--	esac
--fi
--
- # Recommended by Balint Nagy Endre <bne@CareNet.hu>
- case "$host" in
- 	*-univel-sysv4.2MP)
-@@ -2906,12 +2889,14 @@ AC_ARG_WITH(maxfd,
+@@ -2906,12 +2901,14 @@ AC_ARG_WITH(maxfd,
      ;;
    esac
  ])
