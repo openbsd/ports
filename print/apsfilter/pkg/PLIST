@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/05/11 07:45:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/08/09 16:53:45 ajacoutot Exp $
 @unexec rm -f ${SYSCONFDIR}/apsfilter/basedir
 bin/aps2file
 bin/apsfilter-bug
@@ -340,5 +340,6 @@ share/doc/apsfilter/README.TeX
 share/doc/apsfilter/apsfilter4.png
 share/doc/apsfilter/handbook.html
 share/doc/apsfilter/paper
+share/doc/pkg-readmes/${FULLPKGNAME}
 @sample ${SYSCONFDIR}/apsfilter/
 @exec ln -sh ${PREFIX}/share/apsfilter ${SYSCONFDIR}/apsfilter/basedir

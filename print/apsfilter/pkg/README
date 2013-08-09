@@ -1,3 +1,9 @@
+$OpenBSD: README,v 1.1 2013/08/09 16:53:45 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
 To configure the apsfilter package, you have to run
 
    ${SYSCONFDIR}/apsfilter/basedir/SETUP

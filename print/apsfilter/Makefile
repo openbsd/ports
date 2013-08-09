@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:37:53 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/08/09 16:53:45 ajacoutot Exp $
 
 COMMENT=		filter to print a wide range of file formats
 
 DISTNAME=		apsfilter-7.2.8
-REVISION=		4
+REVISION=		5
 CATEGORIES=		print
 
 HOMEPAGE=		http://www.apsfilter.org/
@@ -18,7 +18,6 @@ CONFIGURE_ARGS+=	--prefix='${PREFIX}' \
 			--sysconfdir='${SYSCONFDIR}' \
 			--with-shell=/bin/sh \
 			--with-awk=/usr/bin/awk
-USE_GROFF=		Yes
 
 RUN_DEPENDS=		print/a2ps
 
