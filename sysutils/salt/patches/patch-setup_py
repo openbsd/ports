@@ -1,0 +1,21 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2013/08/10 13:39:27 landry Exp $
+--- setup.py.orig	Tue Jul  2 00:32:54 2013
++++ setup.py	Sun Jul 14 10:28:30 2013
+@@ -219,7 +219,7 @@ setup_kwargs = {'name': NAME,
+                              'salt.utils',
+                              ],
+                 'package_data': {'salt.modules': ['rh_ip/*.jinja']},
+-                'data_files': [('share/man/man1',
++                'data_files': [('man/man1',
+                                 ['doc/man/salt-master.1',
+                                  'doc/man/salt-key.1',
+                                  'doc/man/salt.1',
+@@ -229,7 +229,7 @@ setup_kwargs = {'name': NAME,
+                                  'doc/man/salt-run.1',
+                                  'doc/man/salt-minion.1',
+                                  ]),
+-                               ('share/man/man7', ['doc/man/salt.7']),
++                               ('man/man7', ['doc/man/salt.7']),
+                                ],
+                 # Required for esky builds
+                 'install_requires': requirements,

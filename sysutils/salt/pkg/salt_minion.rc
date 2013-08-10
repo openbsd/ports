@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# $OpenBSD: salt_minion.rc,v 1.1.1.1 2013/08/10 13:39:27 landry Exp $
+
+daemon="${TRUEPREFIX}/bin/salt-minion"
+daemon_flags="-d --pid-file /var/run/salt/minion.pid"
+
+. /etc/rc.d/rc.subr
+
+rc_pre() {
+	install -o _salt-master -d /var/run/salt/
+}
+
+pexp="${MODPY_BIN} ${daemon}${daemon_flags:+ ${daemon_flags}}"
+rc_reload=NO
+
+rc_cmd $1

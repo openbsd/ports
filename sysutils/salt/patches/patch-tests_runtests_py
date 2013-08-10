@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_runtests_py,v 1.1.1.1 2013/08/10 13:39:27 landry Exp $
+--- tests/runtests.py.orig	Sat Aug 10 14:46:06 2013
++++ tests/runtests.py	Sat Aug 10 14:46:53 2013
+@@ -48,7 +48,7 @@ except ImportError:
+     code_coverage = None
+ 
+ 
+-REQUIRED_OPEN_FILES = 3072
++REQUIRED_OPEN_FILES = 512
+ 
+ TEST_RESULTS = []
+ 

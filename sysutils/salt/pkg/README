@@ -1,0 +1,53 @@
+$OpenBSD: README,v 1.1.1.1 2013/08/10 13:39:27 landry Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Configuring the salt master
+===========================
+
+You need to specify the user the salt master will run as, and the
+interface/hostname it will bind to.
+(see https://github.com/saltstack/salt/issues/5649)
+
+# cat ${SYSCONFDIR}/salt/master
+interface: my.public.ip.or.fqdn
+user: _salt-master
+
+Configuring the salt minion(s)
+==============================
+
+You only need to specify the hostname of the salt master to bind to.
+
+# cat ${SYSCONFIDR}/salt/minion
+master: the.salt.master.ip.or.fqdn
+
+Exchanging keys
+===============
+Once salt-master and salt-minion are started on all sides, you need to
+tell the master to accept the minion's keys. You can list the pending
+keys on the master with:
+
+$ sudo -u _salt-master salt-key -L
+
+And accept all pending keys with:
+
+$ sudo -u _salt-master salt-key -A
+
+Running tests
+=============
+
+On the master, you can check that everything is running fine with:
+
+$ sudo -u _salt-master salt '*' test.ping
+$ sudo -u _salt-master salt-run cache.grains
+
+Security concerns
+=================
+
+Note that to be able to configure things on remote hosts, the minion
+runs as root. If this doesn't suit you, you can make it use another
+unpriviledged users and use sudo to run priviledged commands.
+
+Refer to http://docs.saltstack.com/contents.html for more information.

@@ -1,0 +1,10 @@
+$OpenBSD: patch-tests_integration_files_conf_master,v 1.1.1.1 2013/08/10 13:39:27 landry Exp $
+https://github.com/saltstack/salt/issues/5649
+--- tests/integration/files/conf/master.orig	Sat Aug 10 15:14:50 2013
++++ tests/integration/files/conf/master	Sat Aug 10 15:14:56 2013
+@@ -1,4 +1,5 @@
+ publish_port: 64505
++interface: 127.0.0.1
+ ret_port: 64506
+ worker_threads: 10
+ root_dir: /tmp/salttest
