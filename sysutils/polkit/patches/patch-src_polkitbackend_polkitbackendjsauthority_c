@@ -1,20 +1,19 @@
-$OpenBSD: patch-src_polkitbackend_polkitbackendjsauthority_c,v 1.4 2013/05/30 18:22:05 ajacoutot Exp $
+$OpenBSD: patch-src_polkitbackend_polkitbackendjsauthority_c,v 1.5 2013/08/10 12:43:51 ajacoutot Exp $
 --- src/polkitbackend/polkitbackendjsauthority.c.orig	Mon May  6 20:28:21 2013
-+++ src/polkitbackend/polkitbackendjsauthority.c	Thu May 30 20:09:52 2013
-@@ -24,7 +24,12 @@
++++ src/polkitbackend/polkitbackendjsauthority.c	Sat Aug 10 11:35:53 2013
+@@ -24,7 +24,11 @@
  #include <errno.h>
  #include <pwd.h>
  #include <grp.h>
 +#if defined __OpenBSD__
 +#include <netgroup.h>
-+#include <sys/wait.h> /* WIFEXITED */
 +#else
  #include <netdb.h>
 +#endif
  #include <string.h>
  #include <glib/gstdio.h>
  #include <locale.h>
-@@ -1286,7 +1291,7 @@ get_signal_name (gint signal_number)
+@@ -1286,7 +1290,7 @@ get_signal_name (gint signal_number)
      _HANDLE_SIG (SIGTTIN);
      _HANDLE_SIG (SIGTTOU);
      _HANDLE_SIG (SIGBUS);
