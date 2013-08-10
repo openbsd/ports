@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/05/11 10:54:36 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/08/10 08:22:45 rpe Exp $
 @extraunexec rm -rf %D/selfoss/data/*/*
 selfoss/
 @comment selfoss/.gitignore
@@ -127,6 +127,7 @@ selfoss/libs/f3/audit.php
 selfoss/libs/f3/auth.php
 selfoss/libs/f3/base.php
 selfoss/libs/f3/basket.php
+selfoss/libs/f3/bcrypt.php
 selfoss/libs/f3/changelog.txt
 selfoss/libs/f3/code.css
 selfoss/libs/f3/db/
@@ -170,6 +171,8 @@ selfoss/libs/twitteroauth/twitteroauth.php
 selfoss/public/
 @mode
 @group
+selfoss/public/all.css
+selfoss/public/all.js
 selfoss/public/apple-touch-icon.png
 selfoss/public/css/
 selfoss/public/css/fonts.css
@@ -209,12 +212,15 @@ selfoss/public/images/ajax-loader.gif
 selfoss/public/images/arrow-down.png
 selfoss/public/images/bg.gif
 selfoss/public/images/close.png
+selfoss/public/images/delicious.png
 selfoss/public/images/entry-bg.png
 selfoss/public/images/facebook.png
 selfoss/public/images/googleplus.png
 selfoss/public/images/logo.png
 selfoss/public/images/mCSB_buttons.png
 selfoss/public/images/mail.png
+selfoss/public/images/nav-collapsed.png
+selfoss/public/images/nav-expanded.png
 selfoss/public/images/nav-login.png
 selfoss/public/images/nav-logout.png
 selfoss/public/images/nav-mobile-bg.png
@@ -224,6 +230,7 @@ selfoss/public/images/nav-sources.png
 selfoss/public/images/open.png
 selfoss/public/images/pocket.png
 selfoss/public/images/read.png
+selfoss/public/images/readability.png
 selfoss/public/images/remove-small.png
 selfoss/public/images/remove.png
 selfoss/public/images/search.png
@@ -253,6 +260,8 @@ selfoss/public/lang/cn.ini
 selfoss/public/lang/cs.ini
 selfoss/public/lang/de.ini
 selfoss/public/lang/en.ini
+selfoss/public/lang/es.ini
+selfoss/public/lang/fi.ini
 selfoss/public/lang/fr.ini
 selfoss/public/lang/hu.ini
 selfoss/public/lang/it.ini
@@ -260,10 +269,13 @@ selfoss/public/lang/ja.ini
 selfoss/public/lang/lv.ini
 selfoss/public/lang/nl.ini
 selfoss/public/lang/no.ini
+selfoss/public/lang/pl.ini
+selfoss/public/lang/rm.ini
 selfoss/public/lang/ru.ini
 selfoss/public/lang/se.ini
 selfoss/public/lang/tr.ini
 selfoss/public/lang/tw.ini
+selfoss/run.php
 selfoss/selfoss.conf.dist
 @sample /var/www/conf/modules.sample/selfoss.conf
 selfoss/spouts/
@@ -273,6 +285,8 @@ selfoss/spouts/deviantart/user.php
 selfoss/spouts/deviantart/usersfavs.php
 selfoss/spouts/facebook/
 selfoss/spouts/facebook/page.php
+selfoss/spouts/reddit/
+selfoss/spouts/reddit/reddit2.php
 selfoss/spouts/rss/
 selfoss/spouts/rss/feed.php
 selfoss/spouts/rss/golem.php
@@ -280,6 +294,7 @@ selfoss/spouts/rss/heise.php
 selfoss/spouts/rss/images.php
 selfoss/spouts/rss/instapaper.php
 selfoss/spouts/rss/mmospy.php
+selfoss/spouts/rss/prolinux.php
 selfoss/spouts/rss/readability.php
 selfoss/spouts/spout.php
 selfoss/spouts/tumblr/
