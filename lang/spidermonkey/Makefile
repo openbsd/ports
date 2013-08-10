@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/08/10 12:42:23 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,7 +12,7 @@ DISTNAME =		firefox-${FFX_VERSION}.source
 PKGNAME =	${MOZILLA_PROJECT}-${MOZILLA_VERSION}
 PKGSPEC =	spidermonkey->=1.9v0,<1.10v0
 EPOCH =		0
-REVISION =	0
+REVISION =	1
 
 SO_VERSION =	0.0
 SHARED_LIBS =	mozjs ${SO_VERSION}
