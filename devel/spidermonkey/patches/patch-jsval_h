@@ -1,21 +1,12 @@
-$OpenBSD: patch-jsval_h,v 1.1.1.1 2012/04/07 13:48:18 landry Exp $
-http://hg.mozilla.org/tracemonkey/rev/68203913d04c
---- jsval.h.orig	Thu Mar 31 21:08:36 2011
-+++ jsval.h	Wed Apr  4 16:32:50 2012
-@@ -347,6 +347,7 @@ typedef union jsval_layout
-             int32          i32;
-             uint32         u32;
+$OpenBSD: patch-jsval_h,v 1.2 2013/08/10 12:41:40 landry Exp $
+https://hg.mozilla.org/mozilla-central/rev/82fab5c8a6d5
+--- jsval.h.orig	Sat Aug 10 03:06:05 2013
++++ jsval.h	Sat Aug 10 03:06:18 2013
+@@ -304,7 +304,6 @@ typedef union jsval_layout
+             int32_t        i32;
+             uint32_t       u32;
              JSWhyMagic     why;
-+            jsuword        word;
+-            jsuword        word;
          } payload;
      } s;
      double asDouble;
-@@ -815,7 +816,7 @@ extern "C++"
- #else /* defined(JS_USE_JSVAL_JSID_STRUCT_TYPES) */
- 
- /* Use different primitive types so overloading works. */
--typedef JSVAL_ALIGNMENT uint64 jsval;
-+typedef JSVAL_ALIGNMENT uint64_t jsval;
- typedef ptrdiff_t              jsid;
- 
- /* Internal helper macros */
