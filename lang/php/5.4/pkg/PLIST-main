@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2013/08/08 18:50:37 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2013/08/10 15:05:54 robert Exp $
 @option no-default-conflict
 @conflict php->=5.4,<5.5
 @conflict php5-core->=5.2
@@ -13,6 +13,7 @@
 @pkgpath lang/php/5.2,-sqlite
 @pkgpath lang/php/5.4
 @pkgpath lang/php/5.4,-pdo_sqlite
+@pkgpath sysutils/pecl-fileinfo
 @exec install -d ${SYSCONFDIR}/php-${PV}/
 @exec install -d ${SYSCONFDIR}/php-${PV}.sample/
 @mode 1700
