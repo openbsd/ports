@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2013/08/07 21:32:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2013/08/10 14:27:53 landry Exp $
 
 COMMENT =	php5 WebDAV server
-DISTNAME =	Sabre_DAV-1.0.0
-REVISION =	5
-PKGNAME =	${DISTNAME:L:S/_//}
+DISTNAME =	SabreDAV-1.8.6
+PKGNAME =	${DISTNAME:L}
 PKG_ARCH =	*
-EXTRACT_SUFX =	.tgz
+EXTRACT_SUFX =	.zip
 CATEGORIES =	www
 
 HOMEPAGE =	https://code.google.com/p/sabredav/
@@ -21,6 +20,7 @@ NO_BUILD =		Yes
 
 PREFIX =	${VARBASE}/www
 INSTDIR =	${PREFIX}/sabredav
+WRKDIST =	${WRKDIR}/SabreDAV
 SUBST_VARS =	INSTDIR
 
 MODULES =	lang/php
