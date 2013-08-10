@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/08/10 16:07:02 landry Exp $
+@bin bin/repmgr
+@bin bin/repmgrd
+share/doc/repmgr/
+share/doc/repmgr/README.rst
+share/examples/repmgr/
+share/examples/repmgr/repmgr.conf
+@sample ${SYSCONFDIR}/rempgr.conf
+share/postgresql/
+share/postgresql/contrib/
+share/postgresql/contrib/repmgr.sql
+share/postgresql/contrib/uninstall_repmgr.sql

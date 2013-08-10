@@ -1,0 +1,7 @@
+repmgr allows you to monitor and manage your replicated PostgreSQL
+databases as a single cluster.  repmgr includes two components:
+
+* repmgr: command program that performs tasks and then exits
+
+* repmgrd: management and monitoring daemon that watches the cluster
+  and can automate remote actions.
