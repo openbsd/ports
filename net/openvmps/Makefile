@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2013/04/25 15:31:29 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.8 2013/08/10 18:06:08 ajacoutot Exp $
 
 COMMENT=	free implementation of Cisco VMPS
 
-V=		1.4.04
+V=		1.4.05
 DISTNAME=	vmpsd-${V}
 PKGNAME=	openvmps-${V}
 CATEGORIES=	net
@@ -20,11 +20,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=vmps/}
 
 CONFIGURE_STYLE=gnu
 
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/vmpsd.1
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openvmps
-	${INSTALL_DATA} ${WRKSRC}/vlan.db ${PREFIX}/share/examples/openvmps
+FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/openvmps
 
 .include <bsd.port.mk>
