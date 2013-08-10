@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_lib_Language_pm,v 1.1.1.1 2010/03/27 11:47:13 landry Exp $
+$OpenBSD: patch-src_lib_Language_pm,v 1.2 2013/08/10 10:11:40 landry Exp $
 Don't use setlocale(), poor support.
---- src/lib/Language.pm.orig	Sat Nov 14 16:50:28 2009
-+++ src/lib/Language.pm	Sat Nov 14 16:51:51 2009
-@@ -161,28 +161,6 @@ sub SetLang {
+--- src/lib/Language.pm.orig	Fri Jul 27 15:13:44 2012
++++ src/lib/Language.pm	Tue Aug  6 22:54:50 2013
+@@ -162,28 +162,6 @@ sub SetLang {
  	$lang = &Locale2Lang($locale);
      }
     

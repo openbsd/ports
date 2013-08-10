@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/05/11 12:57:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/08/10 10:11:41 landry Exp $
 @newgroup _sympa:648
 @newuser _sympa:648:648:daemon:Sympa Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/sympa/*
@@ -155,10 +155,8 @@ share/locale/de/LC_MESSAGES/sympa.mo
 share/locale/de/LC_MESSAGES/web_help.mo
 share/locale/el/LC_MESSAGES/sympa.mo
 share/locale/el/LC_MESSAGES/web_help.mo
-share/locale/en_US/
-share/locale/en_US/LC_MESSAGES/
-share/locale/en_US/LC_MESSAGES/sympa.mo
-share/locale/en_US/LC_MESSAGES/web_help.mo
+share/locale/en/LC_MESSAGES/sympa.mo
+share/locale/en/LC_MESSAGES/web_help.mo
 share/locale/es/LC_MESSAGES/sympa.mo
 share/locale/es/LC_MESSAGES/web_help.mo
 share/locale/et/LC_MESSAGES/sympa.mo
@@ -169,6 +167,7 @@ share/locale/fi/LC_MESSAGES/sympa.mo
 share/locale/fi/LC_MESSAGES/web_help.mo
 share/locale/fr/LC_MESSAGES/sympa.mo
 share/locale/fr/LC_MESSAGES/web_help.mo
+share/locale/gl/LC_MESSAGES/sympa.mo
 share/locale/hu/LC_MESSAGES/sympa.mo
 share/locale/hu/LC_MESSAGES/web_help.mo
 share/locale/id/LC_MESSAGES/sympa.mo
@@ -220,6 +219,9 @@ share/sympa/charset.conf
 share/sympa/crawlers_detection.conf
 share/sympa/create_list.conf
 share/sympa/create_list_templates/
+share/sympa/create_list_templates/confidential/
+share/sympa/create_list_templates/confidential/comment.tt2
+share/sympa/create_list_templates/confidential/config.tt2
 share/sympa/create_list_templates/discussion_list/
 share/sympa/create_list_templates/discussion_list/comment.tt2
 share/sympa/create_list_templates/discussion_list/config.tt2
@@ -353,6 +355,7 @@ share/sympa/scenari/add.closed
 share/sympa/scenari/add.default
 share/sympa/scenari/add.owner
 share/sympa/scenari/add.owner_notify
+share/sympa/scenari/automatic_list_creation.family_owner
 share/sympa/scenari/automatic_list_creation.listmaster
 share/sympa/scenari/automatic_list_creation.public
 share/sympa/scenari/create_list.intranet
@@ -394,6 +397,7 @@ share/sympa/scenari/review.owner
 share/sympa/scenari/review.private
 share/sympa/scenari/review.public
 share/sympa/scenari/send.closed
+share/sympa/scenari/send.confidential
 share/sympa/scenari/send.default
 share/sympa/scenari/send.editorkey
 share/sympa/scenari/send.editorkeyonly
@@ -459,6 +463,9 @@ share/sympa/web_tt2/arcsearch.tt2
 share/sympa/web_tt2/arcsearch_form.tt2
 share/sympa/web_tt2/authorization_reject.tt2
 share/sympa/web_tt2/auto_signoff.tt2
+share/sympa/web_tt2/automatic_lists.tt2
+share/sympa/web_tt2/automatic_lists_management_request.tt2
+share/sympa/web_tt2/automatic_lists_request.tt2
 share/sympa/web_tt2/blacklist.tt2
 share/sympa/web_tt2/button_footer.tt2
 share/sympa/web_tt2/button_header.tt2
@@ -488,6 +495,8 @@ share/sympa/web_tt2/edit_template.tt2
 share/sympa/web_tt2/editfile.tt2
 share/sympa/web_tt2/editsubscriber.tt2
 share/sympa/web_tt2/error.tt2
+share/sympa/web_tt2/family_signoff.tt2
+share/sympa/web_tt2/family_signoff_request.tt2
 share/sympa/web_tt2/footer.tt2
 share/sympa/web_tt2/get_closed_lists.tt2
 share/sympa/web_tt2/get_inactive_lists.tt2
@@ -505,6 +514,7 @@ share/sympa/web_tt2/help_listconfig.tt2
 share/sympa/web_tt2/help_mail_commands.tt2
 share/sympa/web_tt2/help_sendmsg.tt2
 share/sympa/web_tt2/help_shared.tt2
+share/sympa/web_tt2/help_suspend.tt2
 share/sympa/web_tt2/help_user.tt2
 share/sympa/web_tt2/help_user_options.tt2
 share/sympa/web_tt2/home.tt2
