@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/08/10 13:40:37 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2013/08/10 14:01:45 landry Exp $
 
 COMMENT =	simple wrapper for python argparse module
 
@@ -15,5 +15,6 @@ MASTER_SITES =	${MASTER_SITE_PYPI:=a/argh/}
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes
+RUN_DEPENDS =	devel/py-argcomplete
 
 .include <bsd.port.mk>
