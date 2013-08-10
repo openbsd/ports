@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.297 2013/06/29 15:56:10 jeremy Exp $
+# $OpenBSD: Makefile,v 1.298 2013/08/10 13:44:47 landry Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -180,6 +180,7 @@
      SUBDIR += ruby-vlad
      SUBDIR += runit
      SUBDIR += safecat
+     SUBDIR += salt
      SUBDIR += sdd
      SUBDIR += sec
      SUBDIR += setquota
