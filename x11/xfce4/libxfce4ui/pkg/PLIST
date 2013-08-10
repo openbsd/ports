@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/01/02 17:12:21 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/08/10 10:42:38 landry Exp $
 @conflict libxfcegui4-<4.7.0
 @conflict xfce-utils-*
 @bin bin/xfce4-about
@@ -19,7 +19,6 @@ include/xfce4/libxfce4ui-1/libxfce4ui/xfce-gtk-extensions.h
 include/xfce4/libxfce4ui-1/libxfce4ui/xfce-sm-client.h
 include/xfce4/libxfce4ui-1/libxfce4ui/xfce-spawn.h
 include/xfce4/libxfce4ui-1/libxfce4ui/xfce-titled-dialog.h
-lib/glade3/modules/libxfce4uiglade.so
 lib/libxfce4kbd-private-2.la
 @lib lib/libxfce4kbd-private-2.so.${LIBxfce4kbd-private-2_VERSION}
 lib/libxfce4ui-1.la
@@ -34,10 +33,6 @@ share/examples/xfconf/
 @sample ${SYSCONFDIR}/xdg/xfce4/xfconf/xfce-perchannel-xml/
 share/examples/xfconf/xfce4-keyboard-shortcuts.xml
 @sample ${SYSCONFDIR}/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
-share/glade3/catalogs/libxfce4ui.xml
-share/glade3/catalogs/libxfce4ui.xml.in
-share/glade3/pixmaps/hicolor/16x16/actions/widget-libxfce4ui-xfce-titled-dialog.png
-share/glade3/pixmaps/hicolor/22x22/actions/widget-libxfce4ui-xfce-titled-dialog.png
 share/gtk-doc/html/libxfce4ui/
 share/gtk-doc/html/libxfce4ui/XfceSMClient.html
 share/gtk-doc/html/libxfce4ui/home.png
