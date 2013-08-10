@@ -1,0 +1,45 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/08/10 13:42:45 landry Exp $
+bin/barman
+lib/python${MODPY_VERSION}/site-packages/barman/
+lib/python${MODPY_VERSION}/site-packages/barman-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/barman-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/barman-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/barman-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/barman-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/barman-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/barman/__init__.py
+lib/python${MODPY_VERSION}/site-packages/barman/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/barman/backup.py
+lib/python${MODPY_VERSION}/site-packages/barman/backup.pyc
+lib/python${MODPY_VERSION}/site-packages/barman/cli.py
+lib/python${MODPY_VERSION}/site-packages/barman/cli.pyc
+lib/python${MODPY_VERSION}/site-packages/barman/command_wrappers.py
+lib/python${MODPY_VERSION}/site-packages/barman/command_wrappers.pyc
+lib/python${MODPY_VERSION}/site-packages/barman/compression.py
+lib/python${MODPY_VERSION}/site-packages/barman/compression.pyc
+lib/python${MODPY_VERSION}/site-packages/barman/config.py
+lib/python${MODPY_VERSION}/site-packages/barman/config.pyc
+lib/python${MODPY_VERSION}/site-packages/barman/lockfile.py
+lib/python${MODPY_VERSION}/site-packages/barman/lockfile.pyc
+lib/python${MODPY_VERSION}/site-packages/barman/retention_policies.py
+lib/python${MODPY_VERSION}/site-packages/barman/retention_policies.pyc
+lib/python${MODPY_VERSION}/site-packages/barman/server.py
+lib/python${MODPY_VERSION}/site-packages/barman/server.pyc
+lib/python${MODPY_VERSION}/site-packages/barman/test/
+lib/python${MODPY_VERSION}/site-packages/barman/test/__init__.py
+lib/python${MODPY_VERSION}/site-packages/barman/test/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/barman/test/test_config.py
+lib/python${MODPY_VERSION}/site-packages/barman/test/test_config.pyc
+lib/python${MODPY_VERSION}/site-packages/barman/test/test_xlog.py
+lib/python${MODPY_VERSION}/site-packages/barman/test/test_xlog.pyc
+lib/python${MODPY_VERSION}/site-packages/barman/version.py
+lib/python${MODPY_VERSION}/site-packages/barman/version.pyc
+lib/python${MODPY_VERSION}/site-packages/barman/xlog.py
+lib/python${MODPY_VERSION}/site-packages/barman/xlog.pyc
+@man man/man1/barman.1
+@man man/man5/barman.5
+share/doc/barman/
+share/doc/barman/README
+share/examples/barman/
+share/examples/barman/barman.conf
+@sample ${SYSCONFDIR}/barman.conf
