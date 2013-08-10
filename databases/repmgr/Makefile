@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/08/10 16:07:02 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2013/08/10 21:55:49 landry Exp $
 
 COMMENT =	HA and replication cluster management for PostgreSQL
 
@@ -13,6 +13,8 @@ MASTER_SITES =	${HOMEPAGE}download/
 USE_GMAKE =	Yes
 MAKE_FLAGS =	USE_PGXS=1
 
+# for getopt_long.h
+BUILD_DEPENDS =	databases/postgresql,-server
 LIB_DEPENDS =	databases/postgresql
 RUN_DEPENDS =	net/rsync
 NO_TEST =	Yes
