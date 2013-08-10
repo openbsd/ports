@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.14 2013/05/19 10:47:48 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.15 2013/08/10 18:46:11 ajacoutot Exp $
 
 MODPY_EGG_VERSION ?=	2.8.0
 
@@ -14,7 +14,7 @@ MAINTAINER ?=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 DIST_SUBDIR=		tryton
-MASTER_SITES=		http://downloads2.tryton.org/${MODPY_EGG_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
+MASTER_SITES=		http://downloads.tryton.org/${MODPY_EGG_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
 
 MODULES +=		lang/python
 
