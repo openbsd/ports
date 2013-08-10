@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2013/08/07 21:32:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2013/08/10 12:46:22 ajacoutot Exp $
 
 # sync with ONLY_FOR_ARCHS in devel/spidermonkey
 ONLY_FOR_ARCHS-mozilla=	alpha amd64 i386 hppa mips64el mips64 powerpc sparc64
@@ -16,9 +16,9 @@ PKGNAME-main=		libproxy-${VERSION}
 PKGNAME-mozilla=	libproxy-mozilla-${VERSION}
 PKGNAME-webkit=		libproxy-webkit-${VERSION}
 
-REVISION-main=		2
-REVISION-mozilla=	1
-REVISION-webkit=	1
+REVISION-main=		3
+REVISION-mozilla=	2
+REVISION-webkit=	2
 
 CATEGORIES=		net
 
@@ -54,18 +54,18 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 
 RUN_DEPENDS-mozilla=	# empty
 LIB_DEPENDS-mozilla=	${BUILD_PKGPATH}>=${VERSION} \
-			devel/spidermonkey
+			devel/spidermonkey>=17.0,<18.0
 
 RUN_DEPENDS-webkit=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-webkit=	STEM->=${VERSION}:${BUILD_PKGPATH}, \
 			www/webkit,gtk3
 
-cWANTLIB += m pthread stdc++
+cWANTLIB += m stdc++
 
 WANTLIB-main += ${cWANTLIB} ${MODGETTEXT_WANTLIB}
-WANTLIB-main += c gio-2.0 glib-2.0 gobject-2.0 perl
+WANTLIB-main += c gio-2.0 glib-2.0 gobject-2.0 perl pthread
 
-WANTLIB-mozilla += ${cWANTLIB} mozjs185 nspr4 plc4 plds4 proxy
+WANTLIB-mozilla += ${cWANTLIB} mozjs-17.0 proxy
 
 WANTLIB-webkit += ${cWANTLIB} ${MODGETTEXT_WANTLIB}
 WANTLIB-webkit += glib-2.0 javascriptcoregtk-3.0 proxy
