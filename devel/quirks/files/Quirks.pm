@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.95 2013/08/08 18:55:04 robert Exp $
+# $OpenBSD: Quirks.pm,v 1.96 2013/08/10 15:05:05 robert Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -322,6 +322,7 @@ my $stem_extensions = {
 	'php-mhash' => 'php',
 	'php-ncurses' => 'php',
 	'php-sqlite' => 'php',
+	'pecl-fileinfo' => 'php',
 };
 
 # ->is_base_system($handle, $state):
