@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/07/08 22:32:29 robert Exp $
-lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
-share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
-@sample ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/${MODULE_NAME}.ini
