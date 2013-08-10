@@ -1,0 +1,43 @@
+$OpenBSD: patch-src_thttpd_c,v 1.1.1.1 2013/08/10 02:48:26 brad Exp $
+
+Make sure that the logfile is created or reopened as read/write
+by thttpd user only. CVE-2013-0348
+
+--- src/thttpd.c.orig	Thu Mar 14 04:08:35 2013
++++ src/thttpd.c	Thu Mar 14 04:10:23 2013
+@@ -326,6 +326,7 @@ static void
+ re_open_logfile( void )
+     {
+     FILE* logfp;
++    int retchmod;
+ 
+     if ( no_log || hs == (httpd_server*) 0 )
+ 	return;
+@@ -335,7 +336,8 @@ re_open_logfile( void )
+ 	{
+ 	syslog( LOG_NOTICE, "re-opening logfile" );
+ 	logfp = fopen( logfile, "a" );
+-	if ( logfp == (FILE*) 0 )
++	retchmod = chmod( logfile, S_IRUSR|S_IWUSR );
++	if ( logfp == (FILE*) 0 || retchmod != 0 )
+ 	    {
+ 	    syslog( LOG_CRIT, "re-opening %.80s - %m", logfile );
+ 	    return;
+@@ -355,6 +357,7 @@ main( int argc, char** argv )
+     gid_t gid = 32767;
+     char cwd[MAXPATHLEN+1];
+     FILE* logfp;
++    int retchmod;
+     int num_ready;
+     int cnum;
+     connecttab* c;
+@@ -424,7 +427,8 @@ main( int argc, char** argv )
+ 	else
+ 	    {
+ 	    logfp = fopen( logfile, "a" );
+-	    if ( logfp == (FILE*) 0 )
++	    retchmod = chmod( logfile, S_IRUSR|S_IWUSR );
++	    if ( logfp == (FILE*) 0 || retchmod != 0 )
+ 		{
+ 		syslog( LOG_CRIT, "%.80s - %m", logfile );
+ 		perror( logfile );
