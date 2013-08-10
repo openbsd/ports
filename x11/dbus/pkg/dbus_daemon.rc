@@ -1,15 +1,12 @@
 #!/bin/sh
 #
-# $OpenBSD: dbus_daemon.rc,v 1.11 2013/01/01 14:36:11 ajacoutot Exp $
+# $OpenBSD: dbus_daemon.rc,v 1.12 2013/08/10 15:47:06 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/dbus-daemon --system"
 
 . /etc/rc.d/rc.subr
 
 rc_pre() {
-	# XXX remove after OPENBSD_5_4 is branched
-	[ -f /var/db/dbus/machine-id -a ! -h /var/db/dbus/machine-id ] && \
-		mv /var/db/dbus/machine-id ${SYSCONFDIR}/machine-id
 	[ ! -h /var/db/dbus/machine-id ] && \
 		ln -sf ${SYSCONFDIR}/machine-id /var/db/dbus/machine-id
 	rm -f /var/run/dbus/pid
