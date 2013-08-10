@@ -1,0 +1,18 @@
+$OpenBSD: patch-loaders_gjs_peas-extension-gjs_c,v 1.1 2013/08/10 23:06:28 ajacoutot Exp $
+
+From 8c54d0ee9c929d9141f74a0c047fed2e28347aa3 Mon Sep 17 00:00:00 2001
+From: Garrett Regier <garrettregier@gmail.com>
+Date: Sat, 27 Apr 2013 11:36:13 +0000
+Subject: Fix Gjs plugin loader
+
+--- loaders/gjs/peas-extension-gjs.c.orig	Tue Jun 18 12:31:41 2013
++++ loaders/gjs/peas-extension-gjs.c	Sun Aug 11 00:56:48 2013
+@@ -362,7 +362,7 @@ peas_extension_gjs_call (PeasExtensionWrapper *exten,
+ 
+           if (!JS_GetElement (gexten->js_context, JSVAL_TO_OBJECT (js_retval),
+                               nth_out_arg++, &js_value) ||
+-              js_value == JSVAL_VOID)
++              JSVAL_IS_VOID (js_value))
+             {
+               g_warning ("Error failed to get out argument %i", nth_out_arg);
+               return FALSE;
