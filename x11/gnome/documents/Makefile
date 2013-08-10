@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/06/21 22:38:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2013/08/10 12:48:33 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	document manager for GNOME
 
 GNOME_PROJECT=	gnome-documents
 GNOME_VERSION=	3.8.3.1
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://live.gnome.org/GnomeDocuments
 
@@ -27,7 +27,7 @@ WANTLIB += gpg-error graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstfft-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
 WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz icui18n
 WANTLIB += idn javascriptcoregtk-3.0 jpeg json-glib-1.0
-WANTLIB += kvm m mozjs185 ncursesw nspr4 nss3 oauth orc-0.4 p11-kit
+WANTLIB += kvm m mozjs-17.0 ncursesw nspr4 nss3 oauth orc-0.4 p11-kit
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += plc4 plds4 png pthread pthread-stubs readline rest-0.7
 WANTLIB += secret-1 smime3 softokn3 soup-2.4 soup-gnome-2.4 sqlite3

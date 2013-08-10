@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.57 2013/08/06 18:09:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.58 2013/08/10 12:48:33 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.8.4
+REVISION=		0
 
 HOMEPAGE=		http://live.gnome.org/GnomeShell
 
@@ -21,7 +22,7 @@ WANTLIB += girepository-1.0 gjs glib-2.0 gmodule-2.0 gnome-menu-3
 WANTLIB += gobject-2.0 gpg-error graphite2 gssapi gstbase-1.0
 WANTLIB += gstreamer-1.0 gthread-2.0 gtk-3 harfbuzz heimbase
 WANTLIB += ical icalss icalvcal json-c json-glib-1.0 krb5
-WANTLIB += ltdl m mozjs185 mutter ncurses ncursesw nspr4 nss3
+WANTLIB += ltdl m mozjs-17.0 mutter ncurses ncursesw nspr4 nss3
 WANTLIB += nssutil3 ogg p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png polkit-agent-1 polkit-gobject-1
 WANTLIB += pthread pthread-stubs pulse pulse-mainloop-glib readline
