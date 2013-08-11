@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/03/23 15:19:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/08/11 13:52:36 ajacoutot Exp $
 %%SHARED%%
 @bin bin/shotwell
 @bin bin/shotwell-video-thumbnailer
@@ -83,8 +83,11 @@ share/gnome/help/shotwell/C/view-sidebar.page
 share/icons/hicolor/16x16/apps/shotwell.svg
 share/icons/hicolor/24x24/apps/shotwell.svg
 share/icons/hicolor/scalable/apps/shotwell.svg
+share/locale/af/LC_MESSAGES/shotwell.mo
 share/locale/ar/LC_MESSAGES/shotwell-extras.mo
 share/locale/ar/LC_MESSAGES/shotwell.mo
+share/locale/as/LC_MESSAGES/shotwell-extras.mo
+share/locale/as/LC_MESSAGES/shotwell.mo
 share/locale/ast/LC_MESSAGES/shotwell-extras.mo
 share/locale/ast/LC_MESSAGES/shotwell.mo
 share/locale/bg/LC_MESSAGES/shotwell-extras.mo
@@ -116,8 +119,10 @@ share/locale/fr/LC_MESSAGES/shotwell-extras.mo
 share/locale/fr/LC_MESSAGES/shotwell.mo
 share/locale/gl/LC_MESSAGES/shotwell-extras.mo
 share/locale/gl/LC_MESSAGES/shotwell.mo
+share/locale/gu/LC_MESSAGES/shotwell.mo
 share/locale/he/LC_MESSAGES/shotwell-extras.mo
 share/locale/he/LC_MESSAGES/shotwell.mo
+share/locale/hi/LC_MESSAGES/shotwell-extras.mo
 share/locale/hi/LC_MESSAGES/shotwell.mo
 share/locale/hr/LC_MESSAGES/shotwell-extras.mo
 share/locale/hr/LC_MESSAGES/shotwell.mo
@@ -135,6 +140,8 @@ share/locale/ja/LC_MESSAGES/shotwell.mo
 share/locale/kk/LC_MESSAGES/shotwell-extras.mo
 share/locale/kk/LC_MESSAGES/shotwell.mo
 share/locale/km/LC_MESSAGES/shotwell.mo
+share/locale/kn/LC_MESSAGES/shotwell-extras.mo
+share/locale/kn/LC_MESSAGES/shotwell.mo
 share/locale/ko/LC_MESSAGES/shotwell-extras.mo
 share/locale/ko/LC_MESSAGES/shotwell.mo
 share/locale/lt/LC_MESSAGES/shotwell-extras.mo
@@ -143,6 +150,10 @@ share/locale/lv/LC_MESSAGES/shotwell-extras.mo
 share/locale/lv/LC_MESSAGES/shotwell.mo
 share/locale/mk/LC_MESSAGES/shotwell-extras.mo
 share/locale/mk/LC_MESSAGES/shotwell.mo
+share/locale/ml/LC_MESSAGES/shotwell-extras.mo
+share/locale/ml/LC_MESSAGES/shotwell.mo
+share/locale/mr/LC_MESSAGES/shotwell-extras.mo
+share/locale/mr/LC_MESSAGES/shotwell.mo
 share/locale/nb/LC_MESSAGES/shotwell-extras.mo
 share/locale/nb/LC_MESSAGES/shotwell.mo
 share/locale/nl/LC_MESSAGES/shotwell-extras.mo
@@ -171,14 +182,8 @@ share/locale/sv/LC_MESSAGES/shotwell-extras.mo
 share/locale/sv/LC_MESSAGES/shotwell.mo
 share/locale/ta/LC_MESSAGES/shotwell-extras.mo
 share/locale/ta/LC_MESSAGES/shotwell.mo
-share/locale/ta_IN/
-share/locale/ta_IN/LC_MESSAGES/
-share/locale/ta_IN/LC_MESSAGES/shotwell.mo
 share/locale/te/LC_MESSAGES/shotwell-extras.mo
 share/locale/te/LC_MESSAGES/shotwell.mo
-share/locale/te_IN/
-share/locale/te_IN/LC_MESSAGES/
-share/locale/te_IN/LC_MESSAGES/shotwell.mo
 share/locale/th/LC_MESSAGES/shotwell-extras.mo
 share/locale/th/LC_MESSAGES/shotwell.mo
 share/locale/tr/LC_MESSAGES/shotwell-extras.mo

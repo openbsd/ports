@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.31 2013/04/13 10:14:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2013/08/11 13:52:35 ajacoutot Exp $
 
 # needs to allocate 512M
 VMEM_WARNING =	Yes
 
 COMMENT =	digital photo organizer
 
-V =		0.14.0
+V =		0.14.1
 DISTNAME =	shotwell-${V}
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	graphics
 MASTER_SITES =	http://yorba.org/download/shotwell/${V:C/^([0-9]+\.[0-9]+).*/\1/}/
 HOMEPAGE =	http://yorba.org/shotwell/
-REVISION =	2
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
