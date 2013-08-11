@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.79 2013/07/08 14:03:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.80 2013/08/11 12:54:22 zhuk Exp $
 
 COMMENT = 		KDE personal information applications
-COMMENT-kpilot =	KDE interface to sync with Palm Pilot
 CATEGORIES =		x11 x11/kde productivity
 VERSION =		3.5.10
 DISTNAME =		kdepim-${VERSION}
+REVISION =		15
+
 MODKDE_VERSION =	3.5.8
+
 SHARED_LIBS +=	index                1.0      # .0.0
 SHARED_LIBS +=	kgantt               1.0      # .0.2
 SHARED_LIBS +=	kode                 2.0      # .1.0
@@ -59,11 +61,6 @@ SHARED_LIBS +=	kontact              2.0      # .1.0
 
 MODULES =	x11/kde devel/gettext
 
-LIB_DEPENDS +=	x11/kde/libs3
-
-REVISION =	15
-REVISION-kpilot =	3
-
 WANTLIB += DCOP GL GLU ICE SM X11 Xcursor Xdamage Xext Xfixes
 WANTLIB += Xft Xi Xinerama Xmu Xpm Xrandr Xrender Xss Xt Xxf86vm
 WANTLIB += art_lgpl_2 artsflow artsflow_idl artskde assuan audiofile
@@ -76,19 +73,15 @@ WANTLIB += mcop mng ogg pcre pcreposix pisock png pthread qtmcop
 WANTLIB += qui sasl2 sndio soundserver_idl stdc++ usb usb-1.0
 WANTLIB += util vcard vorbis vorbisenc vorbisfile xcb z
 
-RUN_DEPENDS +=	x11/kde/base3 \
-		devel/desktop-file-utils \
-		x11/gtk+2,-guic
-LIB_DEPENDS +=	security/gpgme>=0.4.5 \
+LIB_DEPENDS =	x11/kde/libs3 \
+		security/gpgme>=0.4.5 \
 		security/cyrus-sasl2 \
 		comms/pilot-link \
 		comms/gnokii
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
-
-#MULTI_PACKAGES=-kpilot
-FULLPKGNAME-kpilot = kpilot-${VERSION}
+RUN_DEPENDS =	x11/kde/base3 \
+		devel/desktop-file-utils \
+		x11/gtk+2,-guic
 
 CONFIGURE_ENV += CPPFLAGS="-pthread" \
 		LDFLAGS="-pthread"
@@ -101,6 +94,10 @@ CONFIGURE_ENV += ac_cv_header_boost_format_hpp=no
 CONFIGURE_ARGS += --disable-newdistrlists
 
 SEPARATE_BUILD = flavored
-.include <bsd.port.mk>
 
 CONFIGURE_ARGS += --disable-final
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
+
+.include <bsd.port.mk>
