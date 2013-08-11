@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.310 2013/07/11 18:16:43 bcallah Exp $
+# $OpenBSD: Makefile,v 1.311 2013/08/11 15:00:39 landry Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -51,6 +51,7 @@
      SUBDIR += freealut
      SUBDIR += generaluser-gs-soundfont
      SUBDIR += gimmix
+     SUBDIR += glyr
      SUBDIR += gogglesmm
      SUBDIR += gmpc
      SUBDIR += gmpc-plugins
