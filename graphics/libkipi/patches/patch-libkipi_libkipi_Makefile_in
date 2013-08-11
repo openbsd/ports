@@ -1,0 +1,13 @@
+$OpenBSD: patch-libkipi_libkipi_Makefile_in,v 1.3 2013/08/11 17:57:42 zhuk Exp $
+Don't fail when egrep doesn't find the desired string.
+--- libkipi/libkipi/Makefile.in.orig	Sun Aug 11 21:25:02 2013
++++ libkipi/libkipi/Makefile.in	Sun Aug 11 21:25:12 2013
+@@ -805,7 +805,7 @@ libkipi_la.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir
+ 	echo "#define KDE_USE_FINAL 1" >> libkipi_la.all_cpp.final; \
+ 	for file in interface.cpp plugin.cpp pluginloader.cpp KDStream.cpp imageinfo.cpp imagecollection.cpp imageinfoshared.cpp imagecollectionshared.cpp imagedialog.cpp uploadwidget.cpp batchprogressdialog.cpp imagecollectionselector.cpp ; do \
+ 	  echo "#include \"$$file\"" >> libkipi_la.all_cpp.files; \
+-	  test ! -f $(srcdir)/$$file || egrep '^#pragma +implementation' $(srcdir)/$$file >> libkipi_la.all_cpp.final; \
++	  test ! -f $(srcdir)/$$file || egrep '^#pragma +implementation' $(srcdir)/$$file >> libkipi_la.all_cpp.final || true; \
+ 	done; \
+ 	cat libkipi_la.all_cpp.final libkipi_la.all_cpp.files > libkipi_la.all_cpp.cpp; \
+ 	rm -f libkipi_la.all_cpp.final libkipi_la.all_cpp.files
