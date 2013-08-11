@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2013/08/11 09:54:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2013/08/11 09:54:36 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -148,7 +148,6 @@ pre-configure:
 		${WRKSRC}/doc/uninstalling.html \
 		${WRKSRC}/fax/coverpages.py \
 		${WRKSRC}/fax/filters/pstotiff \
-		${WRKSRC}/base/pkit.py \
 		${WRKSRC}/installer/dcheck.py \
 		${WRKSRC}/installer/pluginhandler.py \
 		${WRKSRC}/base/magic.py \
