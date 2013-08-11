@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/21 08:48:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2013/08/11 21:21:17 landry Exp $
 
 COMMENT =	simple archive manager
 CATEGORIES =	x11 archivers
-REVISION=	10
+REVISION=	11
 DISTNAME =	xarchiver-0.5.2
 
-MAINTAINER =	Landry Breuil <gaston@gcu.info>
+MAINTAINER =	Landry Breuil <landry@openbsd.org>
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=xarchiver/}
 EXTRACT_SUFX =	.tar.bz2
 HOMEPAGE =	http://xarchiver.sourceforge.net

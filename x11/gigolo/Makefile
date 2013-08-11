@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/08/11 21:21:17 landry Exp $
 
 COMMENT =	GVfs mountpoint manager
 
 XFCE_VERSION =	0.4.1
 XFCE_GOODIE =	gigolo
-REVISION=	3
+REVISION=	4
 
 CATEGORIES =	x11
 
-MAINTAINER =	Landry Breuil <gaston@gcu.info>
+MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 HOMEPAGE =	http://www.uvena.de/gigolo/
 

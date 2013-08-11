@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/10 22:55:04 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/08/11 21:21:17 landry Exp $
 
 COMMENT=		submit tracks to last.fm/audioscrobbler
 
 DISTNAME=		Audio-Scrobbler-0.01
-REVISION=		1
+REVISION=		2
 CATEGORIES=		audio
 
-MAINTAINER=		Landry Breuil <gaston@gcu.info>
+MAINTAINER=		Landry Breuil <landry@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

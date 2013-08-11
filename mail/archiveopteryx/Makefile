@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2013/05/09 01:50:12 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2013/08/11 21:21:16 landry Exp $
 
 COMMENT =		mail server storing messages in a database
 
 DISTNAME =		archiveopteryx-3.1.3
-REVISION =		8
+REVISION =		9
 CATEGORIES =		mail databases
 
 HOMEPAGE =		http://www.archiveopteryx.org/
-MAINTAINER =		Landry Breuil <gaston@gcu.info>
+MAINTAINER =		Landry Breuil <landry@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

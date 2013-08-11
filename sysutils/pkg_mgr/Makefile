@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2013/05/14 14:24:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2013/08/11 21:21:17 landry Exp $
 
 COMMENT=	user-friendly package browser and manager
 
 DISTNAME=	pkg_mgr-0.2.1
-REVISION=	1
+REVISION=	2
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://rhaalovely.net/pkg_mgr.html
-MAINTAINER=	Landry Breuil <gaston@gcu.info>
+MAINTAINER=	Landry Breuil <landry@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
