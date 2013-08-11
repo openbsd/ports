@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/13 11:27:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2013/08/11 21:27:20 landry Exp $
 
 COMMENT =	tile caching frontend for WMS/TMS services
 
-MODPY_EGG_VERSION =	2.10
+MODPY_EGG_VERSION =	2.11
 DISTNAME =	tilecache-${MODPY_EGG_VERSION}
-REVISION =	4
 
 CATEGORIES =	geo graphics
 
 HOMEPAGE =	http://tilecache.org/
-MAINTAINER =	Landry Breuil <gaston@gcu.info>
+MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

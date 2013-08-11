@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/06 18:44:45 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/08/11 21:27:20 landry Exp $
 bin/tilecache_clean.py
 bin/tilecache_http_server.py
 bin/tilecache_install_config.py
@@ -8,6 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/TileCache-${MODPY_EGG_VERSION}-py${MODP
 lib/python${MODPY_VERSION}/site-packages/TileCache-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/TileCache-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/TileCache-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/TileCache-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/TileCache-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/TileCache-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/TileCache/Cache.py
@@ -19,6 +20,8 @@ lib/python${MODPY_VERSION}/site-packages/TileCache/Caches/Disk.py
 lib/python${MODPY_VERSION}/site-packages/TileCache/Caches/Disk.pyc
 lib/python${MODPY_VERSION}/site-packages/TileCache/Caches/GoogleDisk.py
 lib/python${MODPY_VERSION}/site-packages/TileCache/Caches/GoogleDisk.pyc
+lib/python${MODPY_VERSION}/site-packages/TileCache/Caches/MBTiles.py
+lib/python${MODPY_VERSION}/site-packages/TileCache/Caches/MBTiles.pyc
 lib/python${MODPY_VERSION}/site-packages/TileCache/Caches/Memcached.py
 lib/python${MODPY_VERSION}/site-packages/TileCache/Caches/Memcached.pyc
 lib/python${MODPY_VERSION}/site-packages/TileCache/Caches/S3.py
