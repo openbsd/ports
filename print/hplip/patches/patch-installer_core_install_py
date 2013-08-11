@@ -1,4 +1,4 @@
-$OpenBSD: patch-installer_core_install_py,v 1.15 2013/07/12 08:07:05 ajacoutot Exp $
+$OpenBSD: patch-installer_core_install_py,v 1.16 2013/08/11 09:54:17 ajacoutot Exp $
 --- installer/core_install.py.orig	Fri Jun 21 08:54:15 2013
 +++ installer/core_install.py	Fri Jul 12 09:43:56 2013
 @@ -174,7 +174,7 @@ class CoreInstall(object):
@@ -99,15 +99,6 @@ $OpenBSD: patch-installer_core_install_py,v 1.15 2013/07/12 08:07:05 ajacoutot E
  
  
      def check_policykit(self):
-@@ -987,7 +985,7 @@ class CoreInstall(object):
-             return True
-         elif check_file('50-localauthority.conf', "/etc/polkit-1/localauthority.conf.d") and check_file('org.freedesktop.PolicyKit1.service', "/usr/share/dbus-1/system-services"):
-             return True
--        elif check_file('org.freedesktop.PolicyKit1.conf','/etc/dbus-1/system.d'):
-+        elif check_file('org.freedesktop.PolicyKit1.conf','${SYSCONFDIR}/dbus-1/system.d'):
-             return True
-         else:
-             return False
 @@ -1571,7 +1569,7 @@ class CoreInstall(object):
      def pre_build(self,distro_ver=None):
          cmds = []

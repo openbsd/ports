@@ -1,8 +1,14 @@
-@comment $OpenBSD: PLIST-main,v 1.23 2013/07/12 08:07:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.24 2013/08/11 09:54:18 ajacoutot Exp $
 @conflict hplip-docs-*
 @conflict hplip-gui-<3.11.3p0
 @extraunexec rm -rf /var/log/hp/tmp/*
 @extraunexec rm -f /var/log/hp/* 2>/dev/null || true
+@extraunexec rm -rf /usr/local/share/hplip/data/firmware
+@extraunexec rm -rf /usr/local/share/hplip/data/plugins
+@extraunexec rm -rf /usr/local/share/hplip/fax/plugins
+@extraunexec rm -rf /usr/local/share/hplip/prnt/plugins
+@extraunexec rm -rf /usr/local/share/hplip/scan/plugins
+@extraunexec rm -f /usr/local/share/hplip/plugin.spec
 bin/hp-check
 bin/hp-clean
 bin/hp-config_usb_printer
@@ -30,7 +36,6 @@ libexec/cups/backend/hpfax
 @mode
 libexec/cups/filter/hpcac
 libexec/cups/filter/pstotiff
-share/dbus-1/system-services/com.hp.hplip.service
 share/doc/hplip/
 share/doc/hplip/COPYING
 share/doc/hplip/README_LIBJPG
@@ -79,10 +84,6 @@ share/examples/hplip/db/
 @sample /var/db/hp/
 share/examples/hplip/db/hplip.state
 @sample /var/db/hp/hplip.state
-share/examples/hplip/dbus-1/
-share/examples/hplip/dbus-1/system.d/
-share/examples/hplip/dbus-1/system.d/com.hp.hplip.conf
-@sample ${SYSCONFDIR}/dbus-1/system.d/com.hp.hplip.conf
 share/examples/hplip/hp/
 @sample ${SYSCONFDIR}/hp/
 share/examples/hplip/hp/hplip.conf
@@ -331,7 +332,6 @@ share/hplip/upgrade.py
 share/hplip/upgrade.pyc
 share/hplip/wificonfig.py
 share/hplip/wificonfig.pyc
-share/polkit-1/actions/com.hp.hplip.policy
 @mode 0774
 @group _cups
 @sample /var/log/hp/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2013/08/09 17:44:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.85 2013/08/11 09:54:17 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,14 +17,14 @@ PKGNAME-hpcups=	hpcups-${V}
 PKGNAME-libs=	hplip-libs-${V}
 PKGNAME-gui=	hplip-gui-${V}
 
-REVISION-main=	0
-REVISION-hpijs=	0
-REVISION-hpcups=0
-REVISION-libs=	0
-REVISION-gui=	0
+REVISION-main=	1
+REVISION-hpijs=	1
+REVISION-hpcups=1
+REVISION-libs=	1
+REVISION-gui=	1
 
-SHARED_LIBS +=  hpmud		2.0 # .0.6
-SHARED_LIBS +=  hpip		2.0 # .0.1
+SHARED_LIBS +=  hpmud		2.0 # 0.6
+SHARED_LIBS +=  hpip		2.0 # 0.1
 
 SUBST_VARS=	V
 
@@ -53,8 +53,6 @@ WANTLIB-main += asn1 c cups dbus-1 gssapi hpip hpmud jpeg krb5 netsnmp
 WANTLIB-main += sane ssl tiff usb-1.0 z usb avahi-client avahi-common
 WANTLIB-main += com_err heimbase roken wind
 
-BUILD_DEPENDS=	sysutils/polkit
-
 LIB_DEPENDS-main=${LIB_DEPENDS} \
 		graphics/sane-backends \
 		print/cups,-libs \
@@ -65,11 +63,7 @@ RUN_DEPENDS-main=${MODPY_RUN_DEPENDS} \
 		x11/dbus-python \
 		devel/py-notify \
 		graphics/py-Imaging \
-		print/hplip,-hpcups \
-		sysutils/polkit
-
-# polkit(8) almost always needs to know the "active" session
-RUN_DEPENDS-main +=	sysutils/consolekit
+		print/hplip,-hpcups
 
 # package is only useful if cups is installed
 RUN_DEPENDS-main +=	print/cups
@@ -110,43 +104,28 @@ FAKE_FLAGS=	hplip_confdir=${PREFIX}/share/examples/hplip/hp \
 		hplip_statedir=${PREFIX}/share/examples/hplip/db \
 		mimedir=${PREFIX}/share/examples/hplip/cups \
 		policykit_dbus_etcdir=${PREFIX}/share/examples/hplip/dbus-1/system.d \
-		policykit_dbus_sharedir=${PREFIX}/share/dbus-1/system-services
+		policykit_dbus_sharedir=${PREFIX}/share/dbus-1/system-services \
+		hplip_systraydir=${PREFIX}/share/examples/hplip/xdg/autostart
 
 CONFIGURE_STYLE=gnu
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static \
 		--with-hpppddir=${PREFIX}/share/foomatic/db/source/PPD/HP \
 		--with-cupsbackenddir=${PREFIX}/libexec/cups/backend \
 		--with-cupsfilterdir=${PREFIX}/libexec/cups/filter \
 		--with-icondir=${PREFIX}/share/applications \
-		--with-systraydir=${PREFIX}/share/examples/hplip/xdg/autostart \
-		--with-drvdir=${PREFIX}/share/cups/drv/hp \
 		--with-docdir=${PREFIX}/share/doc/hplip \
-		--disable-dependency-tracking \
-		--disable-pp-build \
-		--disable-qt3 \
-		--enable-qt4 \
-		--enable-doc-build \
 		--enable-hpijs-install \
-		--enable-hpcups-install \
-		--enable-gui-build \
-		--enable-network-build \
-		--enable-scan-build \
-		--enable-fax-build \
-		--enable-dbus-build \
-		--enable-policykit \
-		--enable-foomatic-rip-hplip-install \
 		--enable-foomatic-ppd-install \
 		--enable-foomatic-drv-install
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
 pre-configure:
 	# We don't patch because it changes at every release
 	perl -pi -e "s,^PACKAGE_NAME=.*,PACKAGE_NAME='HP Linux (& Unix) Imaging and Printing',;" \
 		-e "s,^PACKAGE_STRING=.*,PACKAGE_STRING='HP Linux (& Unix) Imaging and Printing ${V}'," \
 		${WRKSRC}/configure
-	perl -pi -e 's,/usr/share/polkit-1,${LOCALBASE}/share/polkit-1,g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name \*.py | \
 		xargs perl -pi -e 's,(/usr/bin/python|/usr/bin/env python),${MODPY_BIN},g'
 	@perl -pi -e 's,/usr/bin/python,${MODPY_BIN},g' \
@@ -154,7 +133,6 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/prnt/cups.py \
 		${WRKSRC}/prnt/hpcups/HPCupsFilter.cpp \
 		${WRKSRC}/prnt/hpijs/hpcupsfax.cpp \
-		${WRKSRC}/prnt/hpijs/foomatic-rip-hplip \
 		${WRKSRC}/prnt/hpijs/hpijs.cpp \
 		${WRKSRC}/prnt/hpijs/globals.cpp \
 		${WRKSRC}/doc/troubleshooting.html \
@@ -171,7 +149,6 @@ pre-configure:
 		${WRKSRC}/fax/coverpages.py \
 		${WRKSRC}/fax/filters/pstotiff \
 		${WRKSRC}/base/pkit.py \
-		${WRKSRC}/prnt/hpijs/foomatic-rip-hplip \
 		${WRKSRC}/installer/dcheck.py \
 		${WRKSRC}/installer/pluginhandler.py \
 		${WRKSRC}/base/magic.py \
@@ -187,6 +164,7 @@ post-install:
 		${PREFIX}/share/examples/hplip/db/hplip.state
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/share/hplip
+	rm -r ${WRKINST}/usr/lib
 	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/*.la
 	rm ${PREFIX}/lib/sane/*.la
 

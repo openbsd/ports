@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST-hpijs,v 1.28 2013/08/06 19:13:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST-hpijs,v 1.29 2013/08/11 09:54:18 ajacoutot Exp $
 @conflict hplip-libs-<=3.9.8
 @conflict hpcups-<=3.2.11
 @pkgpath print/hpijs
 @bin bin/hpijs
-libexec/cups/filter/foomatic-rip-hplip
 @bin libexec/cups/filter/hplipjs
 share/cups/drv/hp/hpijs.drv
 share/foomatic/
