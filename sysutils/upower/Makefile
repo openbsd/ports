@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.29 2013/04/29 13:34:51 giovanni Exp $
+# $OpenBSD: Makefile,v 1.30 2013/08/11 14:11:38 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =${APM_ARCHS}
 
 COMMENT =	userland power management interface
 
-DISTNAME =	upower-0.9.20
+DISTNAME =	upower-0.9.21
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	sysutils
 SHARED_LIBS +=  upower-glib               0.0 # 1.2
-REVISION =	2
 
 HOMEPAGE =	http://upower.freedesktop.org/
 MASTER_SITES =	${HOMEPAGE}/releases/
@@ -24,7 +23,6 @@ WANTLIB += pthread
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
-			--disable-systemd \
 			--enable-introspection \
 			--enable-man-pages \
 			--with-historydir=/var/db/upower \
