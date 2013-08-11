@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-icons,v 1.1 2013/08/11 12:52:47 zhuk Exp $
+share/icons/hicolor/128x128/apps/kdcraw.png
+share/icons/hicolor/32x32/apps/kdcraw.png
+share/icons/hicolor/48x48/apps/kdcraw.png
+share/icons/hicolor/64x64/apps/kdcraw.png
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

@@ -1,0 +1,13 @@
+$OpenBSD: patch-libkdcraw_libkdcraw_Makefile_in,v 1.1 2013/08/11 12:52:46 zhuk Exp $
+GNU Make doesn't fail here, while theoretically should. But our make does.
+--- libkdcraw/libkdcraw/Makefile.in.orig	Thu Aug  8 16:34:42 2013
++++ libkdcraw/libkdcraw/Makefile.in	Thu Aug  8 16:34:57 2013
+@@ -784,7 +784,7 @@ libkdcraw_la.all_cpp.cpp: $(srcdir)/Makefile.in $(srcd
+ 	echo "#define KDE_USE_FINAL 1" >> libkdcraw_la.all_cpp.final; \
+ 	for file in kdcraw.cpp kdcrawprivate.cpp dcrawsettingswidget.cpp rnuminput.cpp rcombobox.cpp ; do \
+ 	  echo "#include \"$$file\"" >> libkdcraw_la.all_cpp.files; \
+-	  test ! -f $(srcdir)/$$file || egrep '^#pragma +implementation' $(srcdir)/$$file >> libkdcraw_la.all_cpp.final; \
++	  test ! -f $(srcdir)/$$file || egrep '^#pragma +implementation' $(srcdir)/$$file >> libkdcraw_la.all_cpp.final || true; \
+ 	done; \
+ 	cat libkdcraw_la.all_cpp.final libkdcraw_la.all_cpp.files > libkdcraw_la.all_cpp.cpp; \
+ 	rm -f libkdcraw_la.all_cpp.final libkdcraw_la.all_cpp.files

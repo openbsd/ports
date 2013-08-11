@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/07/08 21:56:45 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2013/08/11 12:52:47 zhuk Exp $
+@pkgpath graphics/libkdcraw
 include/kde/libkdcraw/
 include/kde/libkdcraw/dcrawinfocontainer.h
 include/kde/libkdcraw/dcrawsettingswidget.h
@@ -13,10 +14,6 @@ include/kde/libkdcraw/version.h
 lib/libkdcraw.la
 @lib lib/libkdcraw.so.${LIBkdcraw_VERSION}
 lib/pkgconfig/libkdcraw.pc
-share/icons/hicolor/128x128/apps/kdcraw.png
-share/icons/hicolor/32x32/apps/kdcraw.png
-share/icons/hicolor/48x48/apps/kdcraw.png
-share/icons/hicolor/64x64/apps/kdcraw.png
 share/locale/ca/LC_MESSAGES/libkdcraw.mo
 share/locale/da/LC_MESSAGES/libkdcraw.mo
 share/locale/de/LC_MESSAGES/libkdcraw.mo
@@ -40,5 +37,3 @@ share/locale/sr@Latn/LC_MESSAGES/libkdcraw.mo
 share/locale/sv/LC_MESSAGES/libkdcraw.mo
 share/locale/th/LC_MESSAGES/libkdcraw.mo
 share/locale/uk/LC_MESSAGES/libkdcraw.mo
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
