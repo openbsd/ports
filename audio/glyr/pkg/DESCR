@@ -1,0 +1,4 @@
+Glyr is a search engine for music-related metadata. It comes both in a
+commandline interface tool and as a C library, both with an easy to use
+interface. The sort of metadata glyr is searching (and downloading) is
+usually the data you see in your musicplayer.

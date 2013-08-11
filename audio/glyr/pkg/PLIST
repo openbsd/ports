@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/08/11 14:59:54 landry Exp $
+@bin bin/glyrc
+include/glyr/
+include/glyr/cache.h
+include/glyr/config.h
+include/glyr/glyr.h
+include/glyr/misc.h
+include/glyr/testing.h
+include/glyr/types.h
+@lib lib/libglyr.so.${LIBglyr_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/libglyr.pc

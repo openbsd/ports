@@ -1,0 +1,11 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2013/08/11 14:59:54 landry Exp $
+--- CMakeLists.txt.orig	Sun Aug 11 16:26:38 2013
++++ CMakeLists.txt	Sun Aug 11 16:34:57 2013
+@@ -83,6 +83,7 @@ FIND_PACKAGE(CURL REQUIRED)
+ PKG_CHECK_MODULES(GLIBPKG glib-2.0>=2.10 gthread-2.0 REQUIRED)
+ PKG_CHECK_MODULES(SQLITE3 sqlite3 REQUIRED)
+ INCLUDE_DIRECTORIES(${GLIBPKG_INCLUDE_DIRS})
++LINK_DIRECTORIES(${GLIBPKG_LIBRARY_DIRS})
+ 
+ # --------------------------
+ # set directories
