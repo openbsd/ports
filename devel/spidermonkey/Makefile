@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2013/08/10 12:41:39 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2013/08/11 09:09:03 landry Exp $
 
 SHARED_ONLY=	Yes
-# based on ffx 17 engine, broken at runtime on sparc64
-# jsapi-tests crashes in js::MarkRangeConservatively() on hppa
-# some tests crash on mips64 
+# based on ffx 17 engine
+# jsapi-tests crashes in js::MarkRangeConservatively() on hppa (SIGSEGV in js/src/jsgc.cpp:1142)
+# jsapi-tests crashes in js::Bindings::switchToScriptStorage() on alpha (SIGBUS in jsutil.h:235)
+# jsapi-tests crashes in js::Bindings::switchToScriptStorage() on sparc64 & mips64 (SIGBUS in jsutil.h:33)
 # but let's keep them to build more packages
 # XXX: sync with devel/gconf2, net/libproxy and x11/gtk+3
 ONLY_FOR_ARCHS =	alpha amd64 i386 hppa mips64el mips64 powerpc sparc64
