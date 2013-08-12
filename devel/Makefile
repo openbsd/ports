@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1157 2013/08/10 14:01:44 landry Exp $
+# $OpenBSD: Makefile,v 1.1158 2013/08/12 12:01:14 pascal Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -854,6 +854,7 @@
      SUBDIR += p5-Number-Compare-Date
      SUBDIR += p5-OLE-Storage_Lite
      SUBDIR += p5-Object-Declare
+     SUBDIR += p5-Object-Event
      SUBDIR += p5-Object-Pluggable
      SUBDIR += p5-Object-Realize
      SUBDIR += p5-Object-Signature
