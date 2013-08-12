@@ -1,6 +1,8 @@
-$OpenBSD: patch-Modules_FindJava_cmake,v 1.11 2013/06/06 12:47:06 dcoppa Exp $
---- Modules/FindJava.cmake.orig	Tue Nov 27 14:26:32 2012
-+++ Modules/FindJava.cmake	Wed Dec  5 10:19:25 2012
+$OpenBSD: patch-Modules_FindJava_cmake,v 1.12 2013/08/12 16:09:50 zhuk Exp $
+Note: we always build with Java 1.6 even when 1.6+ requested; "+" is meaningful
+for run-time only.
+--- Modules/FindJava.cmake.orig	Fri Jun  7 19:21:34 2013
++++ Modules/FindJava.cmake	Sat Jul 27 21:48:06 2013
 @@ -56,6 +56,8 @@
  # (To distribute this file outside of CMake, substitute the full
  #  License text for the above reference.)
@@ -10,7 +12,7 @@ $OpenBSD: patch-Modules_FindJava_cmake,v 1.11 2013/06/06 12:47:06 dcoppa Exp $
  # The HINTS option should only be used for values computed from the system.
  set(_JAVA_HINTS
    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\2.0;JavaHome]/bin"
-@@ -70,19 +72,32 @@ set(_JAVA_HINTS
+@@ -70,19 +72,27 @@ set(_JAVA_HINTS
    )
  # Hard-coded guesses should still go in PATHS. This ensures that the user
  # environment can always override hard guesses.
@@ -28,17 +30,12 @@ $OpenBSD: patch-Modules_FindJava_cmake,v 1.11 2013/06/06 12:47:06 dcoppa Exp $
 -  /usr/local/jdk-1.6.0/bin
 -  )
 +if(MODJAVA_VER)
-+  if(MODJAVA_VER MATCHES "^1\\.6$")
++  if(MODJAVA_VER MATCHES "^1\\.6\\+?$")
 +    set(_JAVA_PATHS ${LOCALBASE}/jdk-1.6.0/bin)
-+  elseif(MODJAVA_VER MATCHES "^1\\.6\\+$")
-+    set(_JAVA_PATHS
-+      ${LOCALBASE}/jdk-1.7.0/bin
-+      ${LOCALBASE}/jdk-1.6.0/bin
-+      )
-+  else(MODJAVA_VER MATCHES "^1\\.6$")
++  else()
 +    set(_JAVA_PATHS ${LOCALBASE}/jdk-1.7.0/bin)
-+  endif(MODJAVA_VER MATCHES "^1\\.6$")
-+else(MODJAVA_VER)
++  endif()
++else()
 +  set(_JAVA_PATHS
 +    /usr/lib/java/bin
 +    /usr/share/java/bin
@@ -52,7 +49,7 @@ $OpenBSD: patch-Modules_FindJava_cmake,v 1.11 2013/06/06 12:47:06 dcoppa Exp $
 +    ${LOCALBASE}/jdk-1.7.0/bin
 +    ${LOCALBASE}/jdk-1.6.0/bin
 +    )
-+endif(MODJAVA_VER)
++endif()
  find_program(Java_JAVA_EXECUTABLE
    NAMES java
    HINTS ${_JAVA_HINTS}
