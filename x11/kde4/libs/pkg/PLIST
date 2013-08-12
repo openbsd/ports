@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.12 2013/07/04 00:46:32 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.13 2013/08/12 01:29:03 zhuk Exp $
 @option no-default-conflict
 @conflict kdelibs->=4
 @conflict kdebase-<4
 @conflict kdebindings-<4
-bin/checkXML
+bin/checkXML4
 @bin bin/kbuildsycoca4
-@bin bin/kconfig_compiler
 @bin bin/kcookiejar4
 @bin bin/kde4-config
 @bin bin/kded4
@@ -15,13 +14,13 @@ bin/checkXML
 @bin bin/kfilemetadatareader
 @bin bin/kjs
 @bin bin/kjscmd
-@bin bin/kmailservice
+@bin bin/kmailservice4
 @bin bin/kross
 @bin bin/kshell4
-@bin bin/ktelnetservice
+@bin bin/ktelnetservice4
 @bin bin/kunittestmodrunner
 @bin bin/kwrapper4
-@bin bin/makekdewidgets
+@bin bin/makekdewidgets4
 @bin bin/meinproc4
 @bin bin/meinproc4_simple
 @bin bin/nepomuk-rcgen
@@ -2148,6 +2147,7 @@ libexec/fileshareset
 @owner
 @bin libexec/kauth-policy-gen
 @bin libexec/kconf_update
+@bin libexec/kconfig_compiler
 @bin libexec/kdesu_stub
 @bin libexec/kio_http_cache_cleaner
 @bin libexec/kioslave

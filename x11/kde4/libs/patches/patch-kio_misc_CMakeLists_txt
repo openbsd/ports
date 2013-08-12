@@ -1,0 +1,20 @@
+$OpenBSD: patch-kio_misc_CMakeLists_txt,v 1.1 2013/08/12 01:29:03 zhuk Exp $
+De-conflict with KDE3.
+--- kio/misc/CMakeLists.txt.orig	Mon Aug 12 03:26:37 2013
++++ kio/misc/CMakeLists.txt	Mon Aug 12 03:28:29 2013
+@@ -15,6 +15,7 @@ set(kmailservice_SRCS kmailservice.cpp )
+ 
+ 
+ kde4_add_executable(kmailservice NOGUI ${kmailservice_SRCS})
++set_target_properties(kmailservice PROPERTIES OUTPUT_NAME kmailservice4)
+ 
+ target_link_libraries(kmailservice  ${KDE4_KDEUI_LIBS})
+ 
+@@ -27,6 +28,7 @@ set(ktelnetservice_SRCS ktelnetservice.cpp )
+ 
+ 
+ kde4_add_executable(ktelnetservice NOGUI ${ktelnetservice_SRCS})
++set_target_properties(ktelnetservice PROPERTIES OUTPUT_NAME ktelnetservice4)
+ 
+ target_link_libraries(ktelnetservice  ${KDE4_KDEUI_LIBS} )
+ 

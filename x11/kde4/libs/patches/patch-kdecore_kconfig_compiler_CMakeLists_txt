@@ -1,0 +1,13 @@
+$OpenBSD: patch-kdecore_kconfig_compiler_CMakeLists_txt,v 1.1 2013/08/12 01:29:03 zhuk Exp $
+Deconflict with KDE3.
+--- kdecore/kconfig_compiler/CMakeLists.txt.orig	Fri Jun 28 21:03:40 2013
++++ kdecore/kconfig_compiler/CMakeLists.txt	Mon Aug 12 03:35:12 2013
+@@ -17,7 +17,7 @@
+ 
+    # "export" this target too so we can use the LOCATION property of the imported target in
+    # FindKDE4Internal.cmake to get the full path to the installed executable instead of using FIND_PROGRAM(), Alex
+-   install(TARGETS kconfig_compiler EXPORT kdelibsToolsTargets ${INSTALL_TARGETS_DEFAULT_ARGS} )
++   install(TARGETS kconfig_compiler EXPORT kdelibsToolsTargets RUNTIME DESTINATION "${KDE4_LIBEXEC_INSTALL_DIR}" )
+ 
+ 
+ #    # export this binary for cross-compilation

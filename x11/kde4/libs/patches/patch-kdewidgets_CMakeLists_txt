@@ -1,0 +1,12 @@
+$OpenBSD: patch-kdewidgets_CMakeLists_txt,v 1.1 2013/08/12 01:29:03 zhuk Exp $
+Deconflict with KDE3.
+--- kdewidgets/CMakeLists.txt.orig	Sat Jul 27 11:56:06 2013
++++ kdewidgets/CMakeLists.txt	Sat Jul 27 11:56:31 2013
+@@ -15,6 +15,7 @@ set(makekdewidgets_SRCS makekdewidgets.cpp )
+ 
+ 
+ kde4_add_executable(makekdewidgets NOGUI ${makekdewidgets_SRCS})
++set_target_properties(makekdewidgets PROPERTIES OUTPUT_NAME makekdewidgets4)
+ 
+ target_link_libraries(makekdewidgets  ${KDE4_KDECORE_LIBS} )
+ 
