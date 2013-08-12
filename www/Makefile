@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.615 2013/07/19 07:17:12 kili Exp $
+# $OpenBSD: Makefile,v 1.616 2013/08/12 20:25:39 brad Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -497,12 +497,12 @@
      SUBDIR += squidguard
      SUBDIR += squidguard,ldap
      SUBDIR += statusnet
+     SUBDIR += sthttpd
      SUBDIR += surf
      SUBDIR += surfraw
      SUBDIR += swfdec-plugin
      SUBDIR += swiggle
      SUBDIR += syweb
-     SUBDIR += thttpd
      SUBDIR += tidyp
      SUBDIR += tinyproxy
      SUBDIR += tntnet
