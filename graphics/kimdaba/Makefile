@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2013/07/08 21:57:53 zhuk Exp $
+# $OpenBSD: Makefile,v 1.29 2013/08/12 06:53:57 zhuk Exp $
 
 COMMENT=		kde image database
 CATEGORIES=		graphics x11 x11/kde
 DISTNAME=		kphotoalbum-3.0
-REVISION =		10
+REVISION =		11
 EXTRACT_SUFX=		.tar.bz2
 HOMEPAGE=		http://www.kphotoalbum.org/
 MASTER_SITES=		${HOMEPAGE}data/download/

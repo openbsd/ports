@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2013/07/08 21:57:53 zhuk Exp $
+# $OpenBSD: Makefile,v 1.36 2013/08/12 06:53:57 zhuk Exp $
 
 COMMENT-main =		kde image plugins
 COMMENT-cal =		kde image calendar plugin
@@ -6,7 +6,7 @@ CATEGORIES =		graphics x11 x11/kde
 DISTNAME =		kipi-plugins-0.1.6
 PKGNAME-main =		${DISTNAME}
 PKGNAME-cal =		kipi-kcal-plugin-0.1.6
-REVISION-main =		5
+REVISION-main =		6
 REVISION-cal =		4
 HOMEPAGE =		http://extragear.kde.org/apps/kipi/
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=kipi/}
