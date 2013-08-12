@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2013/06/12 20:36:34 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2013/08/12 20:01:49 jeremy Exp $
 
 COMMENT =		filter, redirector and access controller for Squid
 
 DISTNAME =		squidGuard-1.4
-REVISION =		6
+REVISION =		7
 CATEGORIES =		www
 
 HOMEPAGE =		http://www.squidguard.org/
