@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.271 2013/07/08 13:53:20 bcallah Exp $
+# $OpenBSD: Makefile,v 1.272 2013/08/12 16:44:24 pascal Exp $
 
      SUBDIR =
      SUBDIR += abuse
@@ -195,6 +195,7 @@
      SUBDIR += sudognu
      SUBDIR += sudoku
      SUBDIR += sudoku-solver
+     SUBDIR += supertux
      SUBDIR += supertuxkart
      SUBDIR += taxipilot
      SUBDIR += teeworlds
