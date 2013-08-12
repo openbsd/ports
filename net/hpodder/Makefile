@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2013/07/19 07:03:42 kili Exp $
-
-BROKEN =		fails to build with ghc-7.6
+# $OpenBSD: Makefile,v 1.28 2013/08/12 08:03:18 dcoppa Exp $
 
 COMMENT =		command line podcast aggregator
 
 DISTNAME =		hpodder-1.1.6
-REVISION =		5
+REVISION =		6
 CATEGORIES =		net
 HOMEPAGE =		http://wiki.github.com/jgoerzen/hpodder/
 
