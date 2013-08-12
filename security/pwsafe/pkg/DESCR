@@ -1,1 +1,9 @@
-pwsafe is a commandline tool compatible with Counterpane's Passwordsafe.
+pwsafe is a commandline password database utility compatible with
+Counterpane's Passwordsafe 1.9.x and 2.0.
+
+It can automatically copy passwords to the X clipboard (without
+printing on-screen) and wipes it immediately when it's been pasted
+into another program.
+
+Flavors:
+	no_x11  - build without X11 support.
