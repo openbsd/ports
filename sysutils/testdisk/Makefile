@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2013/06/21 22:38:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2013/08/12 15:05:27 landry Exp $
 
 COMMENT =	data recovery software
 
-VERSION =	6.13
-REVISION =	0
+VERSION =	6.14
 DISTNAME =	testdisk-${VERSION}
 CATEGORIES =	sysutils
 
@@ -11,7 +10,7 @@ HOMEPAGE =	http://www.cgsecurity.org/
 MASTER_SITES =	${HOMEPAGE}
 EXTRACT_SUFX =	.tar.bz2
 
-MAINTAINER =	Landry Breuil <gaston@gcu.info>
+MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -27,9 +26,9 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 LIB_DEPENDS =		sysutils/e2fsprogs>=1.42.7 \
 			graphics/jpeg
 
-WANTLIB =		c crypto uuid ext2fs jpeg ncursesw z
+WANTLIB =		c com_err uuid ext2fs jpeg ncursesw z
 
 post-install:
-			${INSTALL_DATA} ${WRKSRC}/doc/online.html ${PREFIX}/share/doc/${DISTNAME}/html
+			${INSTALL_DATA} ${WRKSRC}/documentation.html ${PREFIX}/share/doc/${DISTNAME}/
 
 .include <bsd.port.mk>
