@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/08/12 11:59:11 pascal Exp $
+${P5SITE}/AnyEvent/
+${P5SITE}/AnyEvent/IRC/
+${P5SITE}/AnyEvent/IRC.pm
+${P5SITE}/AnyEvent/IRC/Client.pm
+${P5SITE}/AnyEvent/IRC/Connection.pm
+${P5SITE}/AnyEvent/IRC/Util.pm
+@man man/man3p/AnyEvent::IRC.3p
+@man man/man3p/AnyEvent::IRC::Client.3p
+@man man/man3p/AnyEvent::IRC::Connection.3p
+@man man/man3p/AnyEvent::IRC::Util.3p

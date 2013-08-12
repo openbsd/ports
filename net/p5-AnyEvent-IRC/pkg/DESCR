@@ -1,0 +1,10 @@
+The AnyEvent::IRC module consists of AnyEvent::IRC::Connection,
+AnyEvent::IRC::Client and AnyEvent::IRC::Util.  AnyEvent::IRC is
+just a module that holds this overview over the other modules.
+
+AnyEvent::IRC can be viewed as toolbox for handling IRC connections
+and communications.
+
+AnyEvent::IRC::Client is a more highlevel IRC connection that already
+processes some messages for you and will generated some events that
+are maybe useful to you.
