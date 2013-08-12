@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/08/12 12:00:06 pascal Exp $
+${P5SITE}/Net/Twitter/
+${P5SITE}/Net/Twitter/Lite/
+${P5SITE}/Net/Twitter/Lite.pm
+${P5SITE}/Net/Twitter/Lite.pod
+${P5SITE}/Net/Twitter/Lite/API/
+${P5SITE}/Net/Twitter/Lite/API/V1.pm
+${P5SITE}/Net/Twitter/Lite/API/V1_1.pm
+${P5SITE}/Net/Twitter/Lite/Error.pm
+${P5SITE}/Net/Twitter/Lite/WithAPIv1_1.pm
+${P5SITE}/Net/Twitter/Lite/WithAPIv1_1.pod
+@man man/man3p/Net::Twitter::Lite.3p
+@man man/man3p/Net::Twitter::Lite::API::V1.3p
+@man man/man3p/Net::Twitter::Lite::API::V1_1.3p
+@man man/man3p/Net::Twitter::Lite::Error.3p
+@man man/man3p/Net::Twitter::Lite::WithAPIv1_1.3p

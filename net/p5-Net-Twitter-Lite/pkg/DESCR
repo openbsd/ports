@@ -1,0 +1,5 @@
+This module provides a perl interface to the Twitter API v1.
+
+It uses the same API definitions as Net::Twitter, but without the
+extra bells and whistles and without the additional dependencies.
+Same great taste, less filling.
