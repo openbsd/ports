@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2013/07/05 09:34:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2013/08/12 04:11:21 robert Exp $
 
 COMMENT=		asset management software
 
 DISTNAME=		glpi-0.83.91
+REVISION=		0
 CATEGORIES=		www productivity
 
 HOMEPAGE=		http://www.glpi-project.org/

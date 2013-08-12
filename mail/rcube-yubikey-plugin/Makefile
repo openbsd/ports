@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/07/05 07:38:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2013/08/12 04:11:20 robert Exp $
 
 COMMENT=	roundcube plugin: authenticate via Yubikey HTTPS API
 
@@ -7,6 +7,7 @@ DISTNAME=	rcube-yubikey-plugin-0.20130430
 DISTFILES=	${DISTNAME}.tar.gz{${CID}.tar.gz}
 CATEGORIES=	mail www
 HOMEPAGE=	https://github.com/northox/roundcube-yubikey-plugin\#readme
+REVISION=	0
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 

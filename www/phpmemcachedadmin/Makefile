@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2013/08/07 21:32:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2013/08/12 04:11:22 robert Exp $
 
 COMMENT=	memcached server admin in PHP
 
 V=		1.2.1
 DISTNAME=	phpMemcachedAdmin-$V-r233
 PKGNAME=	phpmemcachedadmin-$V
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www databases
 

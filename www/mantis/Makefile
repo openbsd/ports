@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2013/07/05 09:37:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2013/08/12 04:11:21 robert Exp $
 
 COMMENT=	web based bug tracking
 
 V=		1.2.11
 DISTNAME=	mantisbt-$V
 PKGNAME=	mantis-$V
-REVISION=	1
+REVISION=	2
 CATEGORIES=	www
 HOMEPAGE=	http://www.mantisbt.org/
 

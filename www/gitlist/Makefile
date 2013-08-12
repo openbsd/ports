@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2013/07/05 09:34:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2013/08/12 04:11:21 robert Exp $
 
 COMMENT=		elegant and modern git repository browser
 
 DISTNAME=		gitlist-0.4.0
+REVISION=		0
 CATEGORIES=		www
 
 HOMEPAGE=		http://gitlist.org/

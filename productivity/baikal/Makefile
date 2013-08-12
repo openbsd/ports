@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2013/07/05 07:44:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2013/08/12 04:11:20 robert Exp $
 
 COMMENT=	lightweight CalDAV and CardDAV server
 
 DISTNAME=	baikal-regular-0.2.4
 PKGNAME=	${DISTNAME:S/-regular//}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	productivity www
 
 HOMEPAGE=	http://baikal-server.com/

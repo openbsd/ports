@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/07/05 09:34:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2013/08/12 04:11:21 robert Exp $
 
 COMMENT =	standards compliant, simple to use Wiki
 
@@ -7,6 +7,7 @@ DISTNAME = 	dokuwiki-${VERSION}
 PKGNAME = 	dokuwiki-${VERSION:S/-/./g}
 CATEGORIES =	www
 HOMEPAGE =	http://www.dokuwiki.org/dokuwiki
+REVISION =	0
 
 MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 

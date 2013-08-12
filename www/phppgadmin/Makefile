@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2013/07/05 09:34:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2013/08/12 04:11:22 robert Exp $
 
 COMMENT=	tool to handle the administration of PostgreSQL over the web
 
 DISTNAME=	phpPgAdmin-5.0.4
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www databases
 HOMEPAGE=	http://phppgadmin.sourceforge.net/
 

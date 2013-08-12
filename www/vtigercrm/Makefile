@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2013/08/10 14:02:03 robert Exp $
+# $OpenBSD: Makefile,v 1.17 2013/08/12 04:11:22 robert Exp $
 
 COMMENT=	customer relationship management (CRM) software
 
 DISTNAME=	vtigercrm-5.4.0
 CATEGORIES=	www
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://www.vtiger.com/crmproducts/vtiger-crm-open-source
 

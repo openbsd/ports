@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2013/07/05 09:34:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2013/08/12 04:11:22 robert Exp $
 
 COMMENT=	customer relationship management (CRM) software
 
 V=		1.1.31
+REVISION=	0
 DISTNAME=	zurmo-stable-${V}.658d8cfa5c16
 PKGNAME=	zurmo-${V}
 

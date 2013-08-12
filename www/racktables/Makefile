@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/07/08 13:42:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2013/08/12 04:11:22 robert Exp $
 
 COMMENT=	web-based rack/IP management
 
 DISTNAME=	RackTables-0.20.5
+REVISION=	0
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	www
 

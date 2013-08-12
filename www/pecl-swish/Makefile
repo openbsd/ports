@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:44:47 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/08/12 04:11:21 robert Exp $
 
 COMMENT =	PHP interface to swish-e
 
 DISTNAME =	swish-0.4.0
-REVISION =	3
+REVISION =	4
 
 # PHP
 PERMIT_PACKAGE_CDROM =		Yes

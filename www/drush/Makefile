@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:44:41 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/08/12 04:11:21 robert Exp $
 
 COMMENT =	command line access to most of drupal
 CATEGORIES = 	www www/drupal6 devel
@@ -12,6 +12,7 @@ PKGNAME =	drush-5.1
 DISTFILES =	${DISTNAME}.tar.gz Console_Table-1.1.3.tgz:0
 MODULES =	lang/php
 MODPHP_BUILDDEP ?=	No
+REVISION =	0
 
 PERMIT_PACKAGE_CDROM = Yes
 

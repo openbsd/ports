@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2013/07/05 09:34:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2013/08/12 04:11:21 robert Exp $
 
 COMMENT=	web-based document management system
 
 V=		3.5.1
 DISTNAME=	ktdms-${V}
-REVISION=	7
+REVISION=	8
 DISTFILES=	ktdms-src-oss-${V}.tgz
 
 CATEGORIES=	www

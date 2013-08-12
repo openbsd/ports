@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2012/03/19 15:44:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2013/08/12 04:11:21 robert Exp $
 
 COMMENT=	modular framework for web-based applications
 
 # LGPLv2
 DISTNAME=	horde-3.3.13
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${HORDE_SITES:=horde/}
 HOMEPAGE=	http://www.horde.org/
