@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/08/11 18:41:15 zhuk Exp $
-@conflict ImageMagick-*
+@comment $OpenBSD: PLIST,v 1.3 2013/08/12 10:03:00 sthen Exp $
 %%SHARED%%
 @bin bin/anytooff
 @bin bin/anytoucd
@@ -192,7 +191,7 @@ libexec/geomview/drawbdy
 libexec/geomview/gvclock
 @bin libexec/geomview/gvx
 @bin libexec/geomview/nose
-@man man/man1/animate.1
+@man man/man1/geomview-animate.1
 @man man/man1/anytooff.1
 @man man/man1/anytoucd.1
 @man man/man1/bdy.1
