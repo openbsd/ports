@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2013/08/12 06:53:57 zhuk Exp $
+# $OpenBSD: Makefile,v 1.37 2013/08/12 13:49:08 zhuk Exp $
 
 COMMENT-main =		kde image plugins
 COMMENT-cal =		kde image calendar plugin
@@ -6,8 +6,8 @@ CATEGORIES =		graphics x11 x11/kde
 DISTNAME =		kipi-plugins-0.1.6
 PKGNAME-main =		${DISTNAME}
 PKGNAME-cal =		kipi-kcal-plugin-0.1.6
-REVISION-main =		6
-REVISION-cal =		4
+REVISION-main =		7
+REVISION-cal =		5
 HOMEPAGE =		http://extragear.kde.org/apps/kipi/
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=kipi/}
 EXTRACT_SUFX =		.tar.bz2
@@ -22,14 +22,13 @@ LIB_DEPENDS =	x11/kde/libs3 \
 		graphics/libkipi
 
 LIB_DEPENDS-main =${LIB_DEPENDS} \
-		x11/kde/libs3 \
 		graphics/libgphoto2>=2.5 \
 		graphics/libkexiv2>=0.1.5 \
 		graphics/libkdcraw
 
 LIB_DEPENDS-cal =${LIB_DEPENDS} \
 		x11/kde/pim3 \
-		graphics/kipi-plugins,-main
+		${BUILD_PKGPATH}
 
 RUN_DEPENDS =	graphics/ImageMagick
 
