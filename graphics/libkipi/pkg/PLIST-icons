@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-icons,v 1.1 2013/08/11 17:57:42 zhuk Exp $
+@comment $OpenBSD: PLIST-icons,v 1.2 2013/08/12 06:52:56 zhuk Exp $
+@conflict libkipi-<0.1.6p7
 share/apps/kipi/
 share/apps/kipi/data/
 share/apps/kipi/data/kipi-plugins_logo.png

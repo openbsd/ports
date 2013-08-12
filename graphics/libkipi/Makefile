@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/08/11 17:57:42 zhuk Exp $
+# $OpenBSD: Makefile,v 1.28 2013/08/12 06:52:56 zhuk Exp $
 
 COMMENT-main =		KDE image plugins API
 COMMENT-icons =		libkipi icons
@@ -8,6 +8,7 @@ DISTNAME =		libkipi-$V
 PKGNAME-main =		${PKGNAME}
 PKGNAME-icons =		libkipi-icons-$V
 REVISION-main =		7
+REVISION-icons =	0
 
 SHARED_LIBS +=	kipi                 1.4      # .2.0
 
