@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_menu_h,v 1.1.1.1 2013/08/12 16:43:38 pascal Exp $
+--- src/menu.h.orig	Sat Jul 20 00:20:47 2013
++++ src/menu.h	Sat Jul 20 00:20:53 2013
+@@ -207,7 +207,7 @@ class Menu (public)
+ 
+   bool isToggled(int id);
+ 
+-  void Menu::get_controlfield_key_into_input(MenuItem *item);
++  void get_controlfield_key_into_input(MenuItem *item);
+ 
+   void draw   ();
+   void draw_item(int index, int menu_width, int menu_height);
