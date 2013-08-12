@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/06/12 20:36:34 brad Exp $
+# $OpenBSD: Makefile,v 1.11 2013/08/12 06:32:20 robert Exp $
 
 MULTI_PACKAGES=		-main -mysql -pgsql
 
@@ -6,11 +6,10 @@ COMMENT-main=		high-level interface for RDF
 COMMENT-mysql=		MySQL driver for redland
 COMMENT-pgsql=		PostgreSQL driver for redland
 
-V=			1.0.15
+V=			1.0.16
 DISTNAME=		redland-$V
 PKGNAME-main=		redland-$V
 PKGNAME-mysql=		redland-mysql-$V
-REVISION-mysql=		1
 PKGNAME-pgsql=		redland-pgsql-$V
 CATEGORIES=		textproc
 

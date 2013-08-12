@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2012/11/12 13:34:04 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2013/08/12 06:32:20 robert Exp $
 @pkgpath textproc/redland
 @bin bin/rdfproc
 bin/redland-config
@@ -31,6 +31,7 @@ lib/pkgconfig/
 lib/pkgconfig/redland.pc
 lib/redland/
 lib/redland/librdf_storage_sqlite.so
+lib/redland/librdf_storage_virtuoso.so
 @man man/man1/rdfproc.1
 @man man/man1/redland-config.1
 @comment @man man/man1/redland-db-upgrade.1
@@ -48,6 +49,8 @@ share/gtk-doc/html/redland/objects.html
 share/gtk-doc/html/redland/redland-changes-1-0-12-to-1-0-13.html
 share/gtk-doc/html/redland/redland-changes-1-0-13-to-1-0-14.html
 share/gtk-doc/html/redland/redland-changes-1-0-14-to-1-0-15.html
+share/gtk-doc/html/redland/redland-changes-1-0-15-to-1-0-16.html
+share/gtk-doc/html/redland/redland-changes-1-0-16-to-1-0-16.html
 share/gtk-doc/html/redland/redland-changes.html
 share/gtk-doc/html/redland/redland-concepts.html
 share/gtk-doc/html/redland/redland-digest.html
