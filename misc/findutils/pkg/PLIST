@@ -1,17 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/01/12 08:46:49 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/08/13 11:46:16 sthen Exp $
 @bin bin/gfind
 @bin bin/glocate
 @bin bin/goldfind
 bin/gupdatedb
 @bin bin/gxargs
-@info info/find-maint.info
-@info info/find.info
+info/find-maint.info
+info/find.info
+info/find.info-1
+info/find.info-2
 @comment lib/charset.alias
 @bin libexec/gbigram
 @bin libexec/gcode
 @bin libexec/gfrcode
 @man man/man1/gfind.1
 @man man/man1/glocate.1
+@man man/man1/goldfind.1
 @man man/man1/gupdatedb.1
 @man man/man1/gxargs.1
 @man man/man5/glocatedb.5

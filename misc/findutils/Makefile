@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:23:57 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/08/13 11:46:15 sthen Exp $
 
 COMMENT=		finds and then operates on files
 
-DISTNAME=		findutils-4.4.2
+# XXX alpha-test version for now; switch back to stable when there's
+# a version which works with 64-bit time_t/ino_t.
+DISTNAME=		findutils-4.5.11
 CATEGORIES=		misc
-REVISION=		0
 
 HOMEPAGE=		http://www.gnu.org/software/findutils/
 
@@ -13,7 +14,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c m
 
-MASTER_SITES=		${MASTER_SITE_GNU:=findutils/}
+#MASTER_SITES=		${MASTER_SITE_GNU:=findutils/}
+MASTER_SITES=		http://alpha.gnu.org/gnu/findutils/
 
 MODULES=		devel/gettext
 
