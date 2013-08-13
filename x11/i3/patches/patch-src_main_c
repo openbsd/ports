@@ -1,13 +1,13 @@
-$OpenBSD: patch-src_main_c,v 1.9 2013/06/02 11:24:06 dcoppa Exp $
---- src/main.c.orig	Mon Mar 18 22:43:36 2013
-+++ src/main.c	Thu May 23 13:09:14 2013
-@@ -290,8 +290,7 @@ int main(int argc, char *argv[]) {
+$OpenBSD: patch-src_main_c,v 1.10 2013/08/13 10:01:57 dcoppa Exp $
+--- src/main.c.orig	Wed Aug  7 20:50:24 2013
++++ src/main.c	Mon Aug 12 15:27:40 2013
+@@ -294,8 +294,7 @@ int main(int argc, char *argv[]) {
       * (file) logging. */
      init_logging();
  
--    /* On non-release builds, disable SHM logging by default. */
--    shmlog_size = (is_debug_build() ? 25 * 1024 * 1024 : 0);
-+    shmlog_size = (25 * 1024 * 1024);
+-    /* On release builds, disable SHM logging by default. */
+-    shmlog_size = (is_debug_build() ? default_shmlog_size : 0);
++    shmlog_size = default_shmlog_size;
  
      start_argv = argv;
  

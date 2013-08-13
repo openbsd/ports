@@ -1,15 +1,14 @@
-$OpenBSD: patch-src_commands_c,v 1.7 2013/05/17 10:21:42 dcoppa Exp $
+$OpenBSD: patch-src_commands_c,v 1.8 2013/08/13 10:01:56 dcoppa Exp $
 
-commit a93e1e5c59573887f9cc49c1c40bf28b92e567b2
-Author: oblique <psyberbits@gmail.com>
-Date:   Mon Apr 15 21:30:22 2013 +0300
+commit 69d7adcf499aa716586e4b920dfd60e10f9233b0
+Author: Franck Michea <franck.michea@gmail.com>
+Date:   Mon Jul 29 22:45:27 2013 +0200
 
-Ensure that resize will take place even if pixel is smaller than
-size increments.
+Add missing return after error reporting.
 
---- src/commands.c.orig	Mon Mar 18 22:43:36 2013
-+++ src/commands.c	Fri May 17 11:46:30 2013
-@@ -174,7 +174,7 @@ void cmd_MIGRATION_start_nagbar(void) {
+--- src/commands.c.orig	Wed Aug  7 20:50:24 2013
++++ src/commands.c	Mon Aug 12 16:00:47 2013
+@@ -175,7 +175,7 @@ void cmd_MIGRATION_start_nagbar(void) {
      /* child */
      if (migration_pid == 0) {
          char *pageraction;
@@ -18,27 +17,11 @@ size increments.
          char *argv[] = {
              NULL, /* will be replaced by the executable path */
              "-t",
-@@ -569,6 +569,23 @@ void cmd_move_con_to_workspace_number(I3_CMD, char *wh
- static void cmd_resize_floating(I3_CMD, char *way, char *direction, Con *floating_con, int px) {
-     LOG("floating resize\n");
-     Rect old_rect = floating_con->rect;
-+    Con *focused_con = con_descend_focused(floating_con);
-+
-+    /* ensure that resize will take place even if pixel increment is smaller than
-+     * height increment or width increment.
-+     * fixes #1011 */
-+    if (strcmp(direction, "up") == 0 || strcmp(direction, "down") == 0 ||
-+        strcmp(direction, "height") == 0) {
-+        if (px < 0)
-+            px = (-px < focused_con->height_increment) ? -focused_con->height_increment : px;
-+        else
-+            px = (px < focused_con->height_increment) ? focused_con->height_increment : px;
-+    } else if (strcmp(direction, "left") == 0 || strcmp(direction, "right") == 0) {
-+        if (px < 0)
-+            px = (-px < focused_con->width_increment) ? -focused_con->width_increment : px;
-+        else
-+            px = (px < focused_con->width_increment) ? focused_con->width_increment : px;
-+    }
+@@ -1796,6 +1796,7 @@ void cmd_move_window_to_center(I3_CMD, char *method) {
+         ystr("error");
+         ystr("Cannot change position. The window/container is not floating.");
+         y(map_close);
++        return;
+     }
  
-     if (strcmp(direction, "up") == 0) {
-         floating_con->rect.height += px;
+     if (strcmp(method, "absolute") == 0) {

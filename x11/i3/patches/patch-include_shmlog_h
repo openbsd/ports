@@ -1,9 +1,9 @@
-$OpenBSD: patch-include_shmlog_h,v 1.1 2013/06/02 11:24:06 dcoppa Exp $
+$OpenBSD: patch-include_shmlog_h,v 1.2 2013/08/13 10:01:55 dcoppa Exp $
 
 OpenBSD lacks pthread_condattr_setpshared()
 
---- include/shmlog.h.orig	Sun Jun  2 11:09:38 2013
-+++ include/shmlog.h	Sun Jun  2 11:11:22 2013
+--- include/shmlog.h.orig	Wed Aug  7 20:50:24 2013
++++ include/shmlog.h	Mon Aug 12 15:19:02 2013
 @@ -12,7 +12,9 @@
  #define I3_I3_SHMLOG_H
  
@@ -12,9 +12,9 @@ OpenBSD lacks pthread_condattr_setpshared()
  #include <pthread.h>
 +#endif
  
- /*
-  * Header of the shmlog file. Used by i3/src/log.c and i3/i3-dump-log/main.c.
-@@ -35,10 +37,12 @@ typedef struct i3_shmlog_header {
+ /* Default shmlog size if not set by user. */
+ extern const int default_shmlog_size;
+@@ -38,10 +40,12 @@ typedef struct i3_shmlog_header {
       * and don’t matter — clients use an equality check (==). */
      uint32_t wrap_count;
  

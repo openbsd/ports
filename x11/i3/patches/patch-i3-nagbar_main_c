@@ -1,28 +1,12 @@
-$OpenBSD: patch-i3-nagbar_main_c,v 1.2 2013/07/01 13:42:25 dcoppa Exp $
-
-commit 4765427f219c306f0872f124d0b1e2398bf8e39f
-Author: Michael Stapelberg <michael@stapelberg.de>
-Date:   Fri Jun 28 00:14:09 2013 +0200
-
-Bugfix: -m requires an argument (crashes if none specified)
-
---- i3-nagbar/main.c.orig	Mon Mar 18 22:43:36 2013
-+++ i3-nagbar/main.c	Mon Jul  1 15:25:07 2013
-@@ -165,7 +165,7 @@ static void handle_button_release(xcb_connection_t *co
-     fclose(script);
+$OpenBSD: patch-i3-nagbar_main_c,v 1.3 2013/08/13 10:01:54 dcoppa Exp $
+--- i3-nagbar/main.c.orig	Wed Aug  7 20:50:24 2013
++++ i3-nagbar/main.c	Mon Aug 12 15:58:31 2013
+@@ -169,7 +169,7 @@ static void handle_button_release(xcb_connection_t *co
+     symlink(get_exe_path(argv0), link_path);
  
      char *terminal_cmd;
--    sasprintf(&terminal_cmd, "i3-sensible-terminal -e %s", argv0);
-+    sasprintf(&terminal_cmd, "${X11BASE}/bin/xterm -e %s", argv0);
+-    sasprintf(&terminal_cmd, "i3-sensible-terminal -e %s", link_path);
++    sasprintf(&terminal_cmd, "${X11BASE}/bin/xterm -e %s", link_path);
      printf("argv0 = %s\n", argv0);
      printf("terminal_cmd = %s\n", terminal_cmd);
  
-@@ -307,7 +307,7 @@ int main(int argc, char *argv[]) {
-         {"font", required_argument, 0, 'f'},
-         {"button", required_argument, 0, 'b'},
-         {"help", no_argument, 0, 'h'},
--        {"message", no_argument, 0, 'm'},
-+        {"message", required_argument, 0, 'm'},
-         {"type", required_argument, 0, 't'},
-         {0, 0, 0, 0}
-     };
