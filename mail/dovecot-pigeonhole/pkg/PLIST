@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/06/08 22:05:03 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/08/13 00:31:02 brad Exp $
 @conflict dovecot-sieve-<=0.1.18p0v0
 @pkgpath mail/dovecot,-sieve
 @pkgpath mail/dovecot,-sieve,bdb
@@ -58,11 +58,14 @@ include/dovecot/sieve/sieve-stringlist.h
 include/dovecot/sieve/sieve-types.h
 include/dovecot/sieve/sieve-validator.h
 include/dovecot/sieve/sieve.h
+lib/dovecot/doveadm/lib10_doveadm_sieve_plugin.so
 lib/dovecot/lib90_sieve_plugin.so
 @lib lib/dovecot/libdovecot-sieve.so.${LIBdovecot-sieve_VERSION}
 lib/dovecot/settings/
 lib/dovecot/settings/libmanagesieve_login_settings.so
 lib/dovecot/settings/libmanagesieve_settings.so
+lib/dovecot/sieve/
+lib/dovecot/sieve/lib90_sieve_extprograms_plugin.so
 @bin libexec/dovecot/managesieve
 @bin libexec/dovecot/managesieve-login
 @man man/man1/sieve-dump.1
@@ -75,6 +78,8 @@ share/doc/dovecot/example-config/
 share/doc/dovecot/example-config/conf.d/
 share/doc/dovecot/example-config/conf.d/20-managesieve.conf
 @sample ${SYSCONFDIR}/dovecot/conf.d/20-managesieve.conf
+share/doc/dovecot/example-config/conf.d/90-sieve-extprograms.conf
+@sample ${SYSCONFDIR}/dovecot/conf.d/90-sieve-extprograms.conf
 share/doc/dovecot/example-config/conf.d/90-sieve.conf
 @sample ${SYSCONFDIR}/dovecot/conf.d/90-sieve.conf
 share/doc/dovecot/sieve/
