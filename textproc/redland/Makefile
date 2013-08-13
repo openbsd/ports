@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/08/12 06:32:20 robert Exp $
+# $OpenBSD: Makefile,v 1.12 2013/08/13 17:21:53 robert Exp $
 
 MULTI_PACKAGES=		-main -mysql -pgsql
 
@@ -12,6 +12,7 @@ PKGNAME-main=		redland-$V
 PKGNAME-mysql=		redland-mysql-$V
 PKGNAME-pgsql=		redland-pgsql-$V
 CATEGORIES=		textproc
+REVISION=		0
 
 SHARED_LIBS +=	rdf                  1.0      # 0.0
 
@@ -38,7 +39,7 @@ CONFIGURE_ARGS=	--with-raptor=system \
 		--with-datadirect=no \
 		--with-unixodbc=no \
 		--with-threestore=no \
-		--with-virtuoso=yes \
+		--with-virtuoso=no \
 		--with-iodbc=no \
 		--with-mysql=yes \
 		--with-postgresql=yes \
@@ -60,7 +61,6 @@ WANTLIB-mysql=		${WANTLIB} crypto mysqlclient rdf
 
 LIB_DEPENDS-pgsql=	${BASE_PKGPATH},-main \
 			databases/postgresql
-WANTLIB-pgsql=		${WANTLIB} com_err pq rdf
 
 post-install:
 	rm ${PREFIX}/lib/redland/librdf_storage_*.{la,a}
