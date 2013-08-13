@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_Makefile_in,v 1.2 2013/06/17 14:53:17 dcoppa Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.3 2013/08/13 09:46:54 dcoppa Exp $
 --- src/Makefile.in.orig	Wed Jun 12 14:09:20 2013
 +++ src/Makefile.in	Mon Jun 17 15:59:25 2013
 @@ -470,7 +470,6 @@ EXTRA_DIST = Info.plist.src create_Info_plist.pl reade
@@ -18,8 +18,8 @@ $OpenBSD: patch-src_Makefile_in,v 1.2 2013/06/17 14:53:17 dcoppa Exp $
  install_ccidtwin: libccidtwin.la
  	$(mkinstalldirs) $(DESTDIR)$(ccidtwindir)
  	cp .libs/$(CCIDTWIN_LIB) $(DESTDIR)$(ccidtwindir)/$(CCIDTWIN_LIB)
--	$(mkinstalldirs) $(DESTDIR)/$(sysconfdir)/reader.conf.d ; \
--		perl -ne "s|TARGET|$(ccidtwindir)/$(CCIDTWIN_LIB)| ; print" $(srcdir)/reader.conf.in > $(DESTDIR)/$(sysconfdir)/reader.conf.d/libccidtwin
+-	$(mkinstalldirs) $(DESTDIR)/$(serialconfdir) ; \
+-		perl -ne "s|TARGET|$(ccidtwindir)/$(CCIDTWIN_LIB)| ; print" $(srcdir)/reader.conf.in > $(DESTDIR)/$(serialconfdir)/libccidtwin
 +	$(mkinstalldirs) $(DESTDIR)$(datadir)/examples/ccid ; \
 +		perl -ne "s|TARGET|$(ccidtwindir)/$(CCIDTWIN_LIB)| ; print" $(srcdir)/reader.conf.in > $(DESTDIR)$(datadir)/examples/ccid/libccidtwin
  
