@@ -1,10 +1,10 @@
-$OpenBSD: patch-doc_example-config_conf_d_10-auth_conf,v 1.1 2011/05/23 22:54:38 sthen Exp $
---- doc/example-config/conf.d/10-auth.conf.orig	Tue Mar 22 15:12:29 2011
-+++ doc/example-config/conf.d/10-auth.conf	Tue Mar 22 15:12:35 2011
-@@ -6,7 +6,7 @@
- # SSL/TLS is used (LOGINDISABLED capability). Note that if the remote IP
+$OpenBSD: patch-doc_example-config_conf_d_10-auth_conf,v 1.2 2013/08/13 00:29:58 brad Exp $
+--- doc/example-config/conf.d/10-auth.conf.orig	Tue Aug 14 02:18:46 2012
++++ doc/example-config/conf.d/10-auth.conf	Tue Apr 23 02:07:47 2013
+@@ -7,7 +7,7 @@
  # matches the local IP (ie. you're connecting from the same computer), the
  # connection is considered secure and plaintext authentication is allowed.
+ # See also ssl=required setting.
 -#disable_plaintext_auth = yes
 +disable_plaintext_auth = yes
  

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.209 2013/07/18 20:07:10 brad Exp $
+# $OpenBSD: Makefile,v 1.210 2013/08/13 00:29:58 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,8 +8,8 @@ COMMENT-mysql=	MySQL authentication / dictionary support for Dovecot
 COMMENT-postgresql= PostgreSQL authentication / dictionary support for Dovecot
 
 # Bump dovecot-pigeonhole every time you update to a new Dovecot version.
-V_MAJOR=	2.1
-V_DOVECOT=	2.1.17
+V_MAJOR=	2.2
+V_DOVECOT=	2.2.5
 
 DISTNAME=	dovecot-${V_DOVECOT}
 PKGNAME=	dovecot-${V_DOVECOT}
@@ -17,16 +17,15 @@ PKGNAME-server=	dovecot-${V_DOVECOT}
 PKGNAME-ldap=	dovecot-ldap-${V_DOVECOT}
 PKGNAME-mysql=	dovecot-mysql-${V_DOVECOT}
 PKGNAME-postgresql= dovecot-postgresql-${V_DOVECOT}
-REVISION-postgresql=1
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}releases/${V_MAJOR}/
 
-SHARED_LIBS=	dovecot-lda	1.0 \
-		dovecot-login	1.0 \
-		dovecot-sql	1.0 \
-		dovecot-ssl	0.0 \
-		dovecot-storage	1.0 \
-		dovecot		1.0
+SHARED_LIBS=	dovecot-compression 0.0 \
+		dovecot-lda	2.0 \
+		dovecot-login	2.0 \
+		dovecot-sql	2.0 \
+		dovecot-storage	2.0 \
+		dovecot		2.0
 
 HOMEPAGE=	http://www.dovecot.org/
 
@@ -51,8 +50,6 @@ RUN_DEPENDS-mysql= ${BASE_PKGPATH}=${V_DOVECOT}
 LIB_DEPENDS-postgresql= databases/postgresql
 RUN_DEPENDS-postgresql= ${BASE_PKGPATH}=${V_DOVECOT}
 
-# Fails to find static library while linking as used for the Kerberos workaround
-USE_LIBTOOL=	gnu
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-gssapi \
 		--with-rundir=/var/dovecot \

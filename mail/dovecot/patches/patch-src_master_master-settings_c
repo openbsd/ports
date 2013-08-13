@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_master_master-settings_c,v 1.15 2012/06/08 22:04:10 sthen Exp $
+$OpenBSD: patch-src_master_master-settings_c,v 1.16 2013/08/13 00:29:58 brad Exp $
 
 changed settings are also present in src/config/all-settings.c; this file
 is rebuilt as part of the Dovecot build.
 
---- src/master/master-settings.c.orig	Mon Apr 23 08:35:06 2012
-+++ src/master/master-settings.c	Sat May 12 22:47:31 2012
-@@ -217,8 +217,8 @@ static const struct master_settings master_default_set
+--- src/master/master-settings.c.orig	Mon Mar 18 16:20:35 2013
++++ src/master/master-settings.c	Tue Apr 23 02:03:41 2013
+@@ -219,8 +219,8 @@ static const struct master_settings master_default_set
  	.protocols = "imap pop3 lmtp",
  	.listen = "*, ::",
  	.ssl = "yes:no:required",

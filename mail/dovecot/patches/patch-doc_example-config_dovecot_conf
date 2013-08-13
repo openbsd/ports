@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_example-config_dovecot_conf,v 1.3 2012/06/08 22:04:10 sthen Exp $
---- doc/example-config/dovecot.conf.orig	Thu Mar 15 10:12:46 2012
-+++ doc/example-config/dovecot.conf	Sat May 12 22:47:31 2012
-@@ -26,7 +26,7 @@
+$OpenBSD: patch-doc_example-config_dovecot_conf,v 1.4 2013/08/13 00:29:58 brad Exp $
+--- doc/example-config/dovecot.conf.orig	Mon Jan  7 02:50:26 2013
++++ doc/example-config/dovecot.conf	Tue Apr 23 02:03:41 2013
+@@ -30,7 +30,7 @@
  #listen = *, ::
  
  # Base directory where to store runtime data.
