@@ -1,4 +1,4 @@
-# $OpenBSD: README,v 1.6 2013/06/02 19:09:09 naddy Exp $
+# $OpenBSD: README,v 1.7 2013/08/13 16:47:27 naddy Exp $
 # 
 # +-----------------------------------------------------------------------
 # | Running ${FULLPKGNAME} on OpenBSD
@@ -15,7 +15,7 @@
 # First, create the basic directory structure:
 
 cd /var/www
-mkdir tmp usr
+mkdir -p tmp usr
 chown www:www tmp	# needs to be writeable for the www user
 
 cd /var/www/usr
@@ -44,7 +44,8 @@ cp -p /usr/bin/{co,cvs,diff,perl,rcsdiff,rlog,uname} .
 # lurking around (for example, from an upgrade):
 
 cd /var/www/usr/lib
-cp -p /usr/lib/lib{c,crypto,gssapi,krb5,m,perl,pthread,util,z}.so* .
+cp -p /usr/lib/lib{c,crypto,m,perl,pthread,util,z}.so* .
+cp -p /usr/lib/lib{asn1,com_err,gssapi,heimbase,krb5,roken,wind}.so* .
 
 # Now, the run-time link-editor:
 
