@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/05/22 10:52:26 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/08/13 11:31:50 dcoppa Exp $
 share/doc/${FULLPKGNAME}/
 share/doc/${FULLPKGNAME}/01-introduction.md
 share/doc/${FULLPKGNAME}/02-arrays.md
@@ -19,6 +19,7 @@ share/lua/${MODLUA_VERSION}/pl/Set.lua
 share/lua/${MODLUA_VERSION}/pl/app.lua
 share/lua/${MODLUA_VERSION}/pl/array2d.lua
 share/lua/${MODLUA_VERSION}/pl/class.lua
+share/lua/${MODLUA_VERSION}/pl/compat.lua
 share/lua/${MODLUA_VERSION}/pl/comprehension.lua
 share/lua/${MODLUA_VERSION}/pl/config.lua
 share/lua/${MODLUA_VERSION}/pl/data.lua
@@ -34,8 +35,6 @@ share/lua/${MODLUA_VERSION}/pl/luabalanced.lua
 share/lua/${MODLUA_VERSION}/pl/operator.lua
 share/lua/${MODLUA_VERSION}/pl/path.lua
 share/lua/${MODLUA_VERSION}/pl/permute.lua
-share/lua/${MODLUA_VERSION}/pl/platf/
-share/lua/${MODLUA_VERSION}/pl/platf/luajava.lua
 share/lua/${MODLUA_VERSION}/pl/pretty.lua
 share/lua/${MODLUA_VERSION}/pl/seq.lua
 share/lua/${MODLUA_VERSION}/pl/sip.lua
