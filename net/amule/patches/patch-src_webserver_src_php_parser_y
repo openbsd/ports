@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_webserver_src_php_parser_y,v 1.1 2013/08/13 12:46:15 dcoppa Exp $
+
+Add missing semicolon
+(upstream git commit 7c67f345702595e6ba9bd29b12734451decb24d8)
+
+--- src/webserver/src/php_parser.y.orig	Tue Aug 13 16:03:00 2013
++++ src/webserver/src/php_parser.y	Tue Aug 13 16:03:22 2013
+@@ -242,7 +242,7 @@ static_var : VARIABLE				{ $1->var_node->flags |= PHP_
+ 
+ function_decl_statement:
+ 		FUNCTION IDENT {
+-				switch_push_scope_table(make_scope_table())
++				switch_push_scope_table(make_scope_table());
+ 			} '(' parameter_list ')' '{' top_statement_list '}' {
+ 				$$ = make_func_decl_syn_node($2, $5);
+ 				$$->func_decl->scope = g_current_scope;
