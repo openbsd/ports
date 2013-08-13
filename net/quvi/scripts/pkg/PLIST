@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/07/08 22:12:23 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/08/13 19:47:09 bentley Exp $
 lib/pkgconfig/libquvi-scripts.pc
 @man man/man7/libquvi-scripts.7
 share/libquvi-scripts/
@@ -18,10 +18,8 @@ share/libquvi-scripts/lua/website/audioboo.lua
 share/libquvi-scripts/lua/website/bbc.lua
 share/libquvi-scripts/lua/website/beeg.lua
 share/libquvi-scripts/lua/website/bikeradar.lua
-share/libquvi-scripts/lua/website/break.lua
 share/libquvi-scripts/lua/website/canalplus.lua
 share/libquvi-scripts/lua/website/cbsnews.lua
-share/libquvi-scripts/lua/website/charlierose.lua
 share/libquvi-scripts/lua/website/clipfish.lua
 share/libquvi-scripts/lua/website/dailymotion.lua
 share/libquvi-scripts/lua/website/deviantclip.lua
