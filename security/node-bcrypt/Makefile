@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2013/05/24 18:31:48 jeremy Exp $
+# $OpenBSD: Makefile,v 1.13 2013/08/13 21:20:24 abieber Exp $
 
 COMMENT =	bcrypt hashing library for Node.js
 
 NPM_VERSION =	0.7.5
 NPM_NAME =	bcrypt
 CATEGORIES =	security
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://github.com/ncb000gt/node.bcrypt.js
 
