@@ -1,4 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2013/07/08 10:29:37 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/08/14 14:17:28 pascal Exp $
+
+# WARNING: When trying to update this port to 4.x.x, please be
+# aware that the following ports need adjustments for the new
+# OTRv4 API:
+# net/climm
+# net/bitlbee,otr
+# net/mcabber (diff ready)
 
 COMMENT=	portable OTR messaging library and toolkit
 
