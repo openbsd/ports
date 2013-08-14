@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.102 2013/07/19 07:12:55 kili Exp $
+# $OpenBSD: Makefile,v 1.103 2013/08/14 20:20:33 kili Exp $
+
+BROKEN =		needs new bootstrapping binaries
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
