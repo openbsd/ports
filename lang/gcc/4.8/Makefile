@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/07/18 17:04:06 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.11 2013/08/14 12:26:01 sthen Exp $
 
 ONLY_FOR_ARCHS = alpha amd64 i386 powerpc sparc64
 
@@ -6,12 +6,12 @@ V = 4.8.1
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 
-ADASTRAP_LIBC-i386 = 68.4
-ADASTRAP_LIBM-i386 = 8.0
-ADASTRAP-i386 = adastrap-i386-$V-1.tar.xz
-ADASTRAP_LIBC-amd64 = 68.3
-ADASTRAP_LIBM-amd64 = 8.0
-ADASTRAP-amd64 = adastrap-amd64-$V-1.tar.xz
+ADASTRAP_LIBC-i386 = 70.0
+ADASTRAP_LIBM-i386 = 9.0
+ADASTRAP-i386 = adastrap-i386-$V-2.tar.xz
+ADASTRAP_LIBC-amd64 = 70.0
+ADASTRAP_LIBM-amd64 = 9.0
+ADASTRAP-amd64 = adastrap-amd64-$V-2.tar.xz
 ADASTRAP_LIBC-sparc64 = 68.3
 ADASTRAP_LIBM-sparc64 = 8.0
 ADASTRAP-sparc64 = adastrap-sparc64-$V-1.tar.xz
@@ -82,7 +82,8 @@ TEST_DEPENDS = 	devel/dejagnu \
 		devel/autogen
 
 MASTER_SITES =	${MASTER_SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
-MASTER_SITES0 =	http://distfiles.tmux.org/adastrap/ \
+MASTER_SITES0 =	http://spacehopper.org/mirrors/ \
+		http://distfiles.tmux.org/adastrap/ \
 		http://distfiles.bsdfrog.org/
 MASTER_SITES1 =	ftp://sources.redhat.com/pub/java/
 
