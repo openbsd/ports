@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2013/08/12 04:11:21 robert Exp $
+# $OpenBSD: Makefile,v 1.13 2013/08/14 11:46:59 sthen Exp $
 
 COMMENT=	PHP upload progress meter
 
-DISTNAME=	uploadprogress-1.0.1
-REVISION=	7
+DISTNAME=	uploadprogress-1.0.3.1
 
 # PHP
 PERMIT_PACKAGE_CDROM=	Yes
