@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/07/09 12:23:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2013/08/14 03:08:09 lteo Exp $
 
 COMMENT-main =		Nginx module for deploying ruby applications
 COMMENT-standalone =	ruby web application server
@@ -6,7 +6,7 @@ COMMENT-standalone =	ruby web application server
 PASS_VERSION =		3.0.11
 NGINX_VERSION =		1.2.3
 DISTNAME =		passenger-${PASS_VERSION}
-REVISION =		6
+REVISION =		7
 FULLPKGNAME-main =	${MODRUBY_PKG_PREFIX}-${DISTNAME}
 FULLPKGNAME-standalone = ${MODRUBY_PKG_PREFIX}-passenger-standalone-${PASS_VERSION}.${NGINX_VERSION}
 FULLPKGPATH-main =	${BASE_PKGPATH},-main
@@ -94,7 +94,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/nginx
 	${INSTALL_DATA} ${FILESDIR}/nginx-passenger.conf.sample ${PREFIX}/share/nginx/nginx-passenger${GEM_MAN_SUFFIX}.conf.sample
 	${SUBST_CMD} -DRUBY=${RUBY} \
-		-DPASSENGER_ROOT=${TRUEPREFIX}/lib/phusion_passenger${GEM_MAN_SUFFIX} \
+		-DPASSENGER_ROOT=${TRUEPREFIX}/lib/phusion-passenger${GEM_MAN_SUFFIX} \
 		${PREFIX}/share/nginx/nginx-passenger${GEM_MAN_SUFFIX}.conf.sample
 	rm ${PREFIX}/share/nginx/nginx-passenger${GEM_MAN_SUFFIX}.conf.sample.*
 	ln -s ${TRUEPREFIX}/${GEM_LIB}/gems/passenger-${PASS_VERSION} ${PREFIX}/lib/phusion-passenger${GEM_MAN_SUFFIX}
