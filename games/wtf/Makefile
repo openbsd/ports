@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:07:41 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/08/14 08:24:01 bcallah Exp $
 
 COMMENT=	translate common internet acronyms
 
-DISTNAME=	wtf-20071004
-REVISION=	0
+DISTNAME=	wtf-20130810
 CATEGORIES=	games
+
+MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
 
 # Public Domain
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://www.mu.org/~mux/wtf/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bsdwtf/}
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

@@ -1,12 +1,12 @@
-$OpenBSD: patch-wtf,v 1.1 2011/09/20 11:08:52 sthen Exp $
---- wtf.orig	Tue Sep 20 12:04:02 2011
-+++ wtf	Tue Sep 20 12:04:29 2011
-@@ -65,7 +65,7 @@ while [ $# -gt 0 ] ; do
+$OpenBSD: patch-wtf,v 1.2 2013/08/14 08:24:02 bcallah Exp $
+--- wtf.orig	Tue Aug 13 23:39:37 2013
++++ wtf	Tue Aug 13 23:40:25 2013
+@@ -71,7 +71,7 @@ for i; do
  
  	# Try pkg_info(1) next
- 	ans=`pkg_info -qc $1 2> /dev/null`
--	if [ $? -eq 0 ] ; then
+ 	ans="$(pkg_info -qc "$i" 2> /dev/null)"
+-	if [ $? -eq 0 ]; then
 +	if [ $? -eq 0 ] && [ x"${ans}" != x ] ; then
- 		echo "$1: $ans"
- 		shift ; continue
+ 		echo "$i: $ans"
+ 		continue
  	fi
