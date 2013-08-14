@@ -92,7 +92,7 @@
 	native-ftruncate: permit
 	native-futimes: permit
 	native-futimens: permit
-	native-getdirentries: permit
+	native-getdents: permit
 	native-getegid: permit
 	native-geteuid: permit
 	native-getfsstat: permit
