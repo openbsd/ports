@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2013/08/12 04:11:20 robert Exp $
+# $OpenBSD: Makefile,v 1.14 2013/08/14 11:43:03 sthen Exp $
 
 COMMENT=	PHP support for rar archives
 
-DISTNAME=	rar-2.0.0
+DISTNAME=	rar-3.0.1
 CATEGORIES=	archivers
-REVISION=	8
 
 # PHP
 PERMIT_PACKAGE_CDROM=	Yes
