@@ -1,10 +1,20 @@
-$OpenBSD: patch-configure_ac,v 1.7 2013/05/25 12:33:05 sthen Exp $
---- configure.ac.orig	Mon May 20 12:50:55 2013
-+++ configure.ac	Sat May 25 12:08:28 2013
-@@ -3166,6 +3166,14 @@ if test "x$squid_host_os" = "xmingw" ; then
+$OpenBSD: patch-configure_ac,v 1.8 2013/08/15 11:10:16 sthen Exp $
+--- configure.ac.orig	Sat Jul 13 15:26:28 2013
++++ configure.ac	Thu Aug 15 12:28:48 2013
+@@ -392,7 +392,7 @@ dnl
+ dnl Check for atomic operations support in the compiler
+ dnl
+ AC_MSG_CHECKING([for atomic operations support])
+-AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
++AC_LINK_IFELSE([AC_LANG_PROGRAM([[
+     int n = 0;
+ ]],[[
+     __sync_add_and_fetch(&n, 10); // n becomes 10
+@@ -3170,6 +3170,14 @@ dnl Override statfs() detect on MinGW because it is em
+ if test "x$squid_host_os" = "xmingw" ; then
    ac_cv_func_statfs='yes'
  fi
- 
++
 +dnl Some systems (mostly BSDs) require -lexecinfo for backtrace_symbols_fd()
 +AC_CHECK_LIB(execinfo,backtrace_symbols_fd,[BACKTRACE_LIB="-lexecinfo"])
 +oLIBS=$LIBS
@@ -12,7 +22,6 @@ $OpenBSD: patch-configure_ac,v 1.7 2013/05/25 12:33:05 sthen Exp $
 +AC_CHECK_FUNCS(backtrace_symbols_fd)
 +LIBS=$oLIBS
 +AC_SUBST(BACKTRACE_LIB)
-+
+ 
  dnl Check for library functions
  AC_CHECK_FUNCS(\
- 	backtrace_symbols_fd \
