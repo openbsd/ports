@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/06/19 07:36:03 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/08/15 21:31:07 jasper Exp $
 @pkgpath sysutils/ruby-puppet
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
@@ -165,6 +165,9 @@ ${MODRUBY_SITEDIR}/puppet/file_serving/mount/modules.rb
 ${MODRUBY_SITEDIR}/puppet/file_serving/mount/plugins.rb
 ${MODRUBY_SITEDIR}/puppet/file_serving/terminus_helper.rb
 ${MODRUBY_SITEDIR}/puppet/file_serving/terminus_selector.rb
+${MODRUBY_SITEDIR}/puppet/file_system/
+${MODRUBY_SITEDIR}/puppet/file_system.rb
+${MODRUBY_SITEDIR}/puppet/file_system/path_pattern.rb
 ${MODRUBY_SITEDIR}/puppet/forge/
 ${MODRUBY_SITEDIR}/puppet/forge.rb
 ${MODRUBY_SITEDIR}/puppet/forge/cache.rb
