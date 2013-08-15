@@ -1,16 +1,16 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2013/06/22 20:16:46 kili Exp $
---- Makefile.in.orig	Sun Jun 16 18:24:09 2013
-+++ Makefile.in	Mon Jun 17 20:42:57 2013
-@@ -370,6 +370,8 @@ POPPLER_QT4_CXXFLAGS = @POPPLER_QT4_CXXFLAGS@
+$OpenBSD: patch-Makefile_in,v 1.7 2013/08/15 18:40:20 kili Exp $
+--- Makefile.in.orig	Mon Jul 29 19:13:28 2013
++++ Makefile.in	Sat Aug  3 22:06:57 2013
+@@ -376,6 +376,8 @@ POPPLER_QT4_CXXFLAGS = @POPPLER_QT4_CXXFLAGS@
  POPPLER_QT4_LIBS = @POPPLER_QT4_LIBS@
  POPPLER_QT4_TEST_CFLAGS = @POPPLER_QT4_TEST_CFLAGS@
  POPPLER_QT4_TEST_LIBS = @POPPLER_QT4_TEST_LIBS@
 +POPPLER_QT_CXXFLAGS = @POPPLER_QT_CXXFLAGS@
 +POPPLER_QT_LIBS = @POPPLER_QT_LIBS@
- POPPLER_VERSION = @POPPLER_VERSION@
- PTHREAD_CC = @PTHREAD_CC@
- PTHREAD_CFLAGS = @PTHREAD_CFLAGS@
-@@ -426,6 +428,8 @@ infodir = @infodir@
+ POPPLER_QT5_CFLAGS = @POPPLER_QT5_CFLAGS@
+ POPPLER_QT5_CXXFLAGS = @POPPLER_QT5_CXXFLAGS@
+ POPPLER_QT5_LIBS = @POPPLER_QT5_LIBS@
+@@ -438,6 +440,8 @@ infodir = @infodir@
  install_sh = @install_sh@
  libdir = @libdir@
  libexecdir = @libexecdir@
@@ -19,31 +19,33 @@ $OpenBSD: patch-Makefile_in,v 1.6 2013/06/22 20:16:46 kili Exp $
  localedir = @localedir@
  localstatedir = @localstatedir@
  mandir = @mandir@
-@@ -451,12 +455,14 @@ DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc --with-te
+@@ -463,6 +467,8 @@ DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc --with-te
  @BUILD_CAIRO_OUTPUT_TRUE@cairo_pc_file = poppler-cairo.pc
  @BUILD_POPPLER_GLIB_TRUE@glib_subdir = glib
  @BUILD_POPPLER_GLIB_TRUE@glib_pc_file = poppler-glib.pc
 +@BUILD_POPPLER_QT_TRUE@qt_subdir = qt
 +@BUILD_POPPLER_QT_TRUE@qt_pc_file = poppler-qt.pc
+ @BUILD_POPPLER_QT5_TRUE@qt5_subdir = qt5
+ @BUILD_POPPLER_QT5_TRUE@qt5_pc_file = poppler-qt5.pc
  @BUILD_POPPLER_QT4_TRUE@qt4_subdir = qt4
- @BUILD_POPPLER_QT4_TRUE@qt4_pc_file = poppler-qt4.pc
+@@ -470,7 +476,7 @@ DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc --with-te
  @BUILD_POPPLER_CPP_TRUE@cpp_subdir = cpp
  @BUILD_POPPLER_CPP_TRUE@cpp_pc_file = poppler-cpp.pc
  @BUILD_UTILS_TRUE@utils_subdir = utils
--SUBDIRS = goo fofi $(splash_subdir) poppler $(utils_subdir) $(glib_subdir) test $(qt4_subdir) $(cpp_subdir)
-+SUBDIRS = goo fofi $(splash_subdir) poppler $(utils_subdir) $(glib_subdir) $(qt_subdir) test $(qt4_subdir) $(cpp_subdir)
+-SUBDIRS = goo fofi $(splash_subdir) poppler $(utils_subdir) $(glib_subdir) test $(qt4_subdir) $(qt5_subdir) $(cpp_subdir)
++SUBDIRS = goo fofi $(splash_subdir) poppler $(utils_subdir) $(glib_subdir) $(qt_subdir) test $(qt4_subdir) $(qt5_subdir) $(cpp_subdir)
  
  # Add CMake buildsystem files here so they get added on make dist
  EXTRA_DIST = README-XPDF poppler.pc.in poppler-uninstalled.pc.in \
-@@ -495,6 +501,7 @@ pkgconfig_DATA = \
+@@ -515,6 +521,7 @@ pkgconfig_DATA = \
  	$(cairo_pc_file)			\
  	$(splash_pc_file)			\
  	$(glib_pc_file)				\
 +	$(qt_pc_file)                           \
  	$(qt4_pc_file)				\
+ 	$(qt5_pc_file)				\
  	$(cpp_pc_file)
- 
-@@ -566,6 +573,10 @@ poppler-splash-uninstalled.pc: $(top_builddir)/config.
+@@ -587,6 +594,10 @@ poppler-splash-uninstalled.pc: $(top_builddir)/config.
  poppler-glib.pc: $(top_builddir)/config.status $(srcdir)/poppler-glib.pc.in
  	cd $(top_builddir) && $(SHELL) ./config.status $@
  poppler-glib-uninstalled.pc: $(top_builddir)/config.status $(srcdir)/poppler-glib-uninstalled.pc.in
