@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2013/07/09 13:43:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2013/08/15 11:02:23 sthen Exp $
 
 COMMENT-main=		secure communications between a DNS client and resolver
 COMMENT-plugins=	example plugins for dnscrypt-proxy
 
 V=			1.2.0
+REVISION=		0
 
 DISTNAME=		dnscrypt-proxy-${V}
 CATEGORIES=		net
@@ -36,6 +37,9 @@ BUILD_DEPENDS=		devel/libtool
 CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS+=	--enable-plugins --enable-plugins-root
+# Don't force PIE, it's broken on at least arm. OpenBSD enables it
+# by default on arch where it works anyway.
+CONFIGURE_ARGS+=	--enable-pie=no
 
 DOCS=			README-PLUGINS.markdown \
 			README.markdown \
