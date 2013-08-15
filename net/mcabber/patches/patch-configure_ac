@@ -1,0 +1,45 @@
+$OpenBSD: patch-configure_ac,v 1.1 2013/08/15 16:34:50 stsp Exp $
+http://www.isbear.org.ua/hg/isbear/mcabber-patches/file/tip/use-otr-v4.diff
+--- configure.ac.orig	Sun Dec  2 14:27:30 2012
++++ configure.ac	Wed Aug 14 18:56:07 2013
+@@ -184,16 +184,26 @@ fi
+ 
+ # Check for otr
+ AC_ARG_ENABLE(otr,
+-              AC_HELP_STRING([--enable-otr],
+-                             [enable OTR (Off-the-Record) messaging support]),
+-              enable_otr=$enableval, otr="")
++    AC_HELP_STRING([--enable-otr],
++                   [enable OTR (Off-the-Record) messaging support]),
++    enable_otr=$enableval,
++    otr="")
+ if test "x$enable_otr" = "xyes"; then
+-  # Look for libgcrypt and libotr
+-  AM_PATH_LIBGCRYPT(1.2.2, [
+-          AM_PATH_LIBOTR(3.1.0, ,
+-                         AC_MSG_ERROR(libotr 3.1.0 or newer is required.))
+-      ], AC_MSG_ERROR(libgcrypt 1.2.2 or newer is required.)
+-  )
++    # Look for libgcrypt and libotr
++    AM_PATH_LIBGCRYPT(1.2.2, [
++        AM_PATH_LIBOTR(4.0.0, [
++            AC_DEFINE([HAVE_LIBOTR], 1, [Define if you use libotr])
++        ], [
++            AM_PATH_LIBOTR(3.1.0, [
++                AC_DEFINE([HAVE_LIBOTR], 1, [Define if you use libotr])
++                AC_DEFINE([HAVE_LIBOTR3], 1, [Define if you use libotr v3])
++            ], [
++                AC_MSG_ERROR(libotr 3.1.0 or newer is required.)
++            ])
++        ])
++    ], [
++        AC_MSG_ERROR(libgcrypt 1.2.2 or newer is required.)
++    ])
+ fi
+ 
+ # Check for Enchant stuff
+@@ -290,3 +300,4 @@ AC_CONFIG_FILES([mcabber/Makefile
+                  mcabber.pc
+                  Makefile])
+ AC_OUTPUT
++dnl vim: set expandtab cindent cinoptions=>2\:2(0 sw=2 ts=2:  For Vim users...

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2013/05/30 12:01:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2013/08/15 16:34:49 stsp Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		console jabber client
 DISTNAME=		mcabber-0.10.2
+REVISION=		0
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.lilotux.net/~mikael/mcabber/
@@ -32,7 +33,8 @@ RUN_DEPENDS=		devel/desktop-file-utils
 USE_GROFF =		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 
-CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS= 	--enable-gpgme \
 			--disable-aspell \
 			--disable-enchant \

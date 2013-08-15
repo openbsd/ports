@@ -1,0 +1,14 @@
+$OpenBSD: patch-mcabber_otr_h,v 1.1 2013/08/15 16:34:50 stsp Exp $
+http://www.isbear.org.ua/hg/isbear/mcabber-patches/file/tip/use-otr-v4.diff
+--- mcabber/otr.h.orig	Sun Dec  2 14:27:32 2012
++++ mcabber/otr.h	Wed Aug 14 18:56:07 2013
+@@ -5,6 +5,9 @@
+ 
+ #ifdef HAVE_LIBOTR
+ 
++#ifndef HAVE_LIBOTR3
++# include <libotr/instag.h>
++#endif
+ #include <libotr/proto.h>
+ #include <libotr/message.h>
+ #include <libotr/privkey.h>
