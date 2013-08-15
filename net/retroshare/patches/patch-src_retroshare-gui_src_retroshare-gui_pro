@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_retroshare-gui_src_retroshare-gui_pro,v 1.1.1.1 2013/08/15 21:55:20 stsp Exp $
+--- src/retroshare-gui/src/retroshare-gui.pro.orig	Fri Mar 22 18:28:23 2013
++++ src/retroshare-gui/src/retroshare-gui.pro	Mon Aug 12 23:54:53 2013
+@@ -216,6 +216,30 @@ freebsd-* {
+ 
+ }
+ 
++##################################### OpenBSD ######################################
++
++openbsd-* {
++	INCLUDEPATH *= ${LOCALBASE}/include
++
++	PRE_TARGETDEPS *= ../../libretroshare/src/lib/libretroshare.a
++	PRE_TARGETDEPS *= ../../openpgpsdk/src/lib/libops.a
++
++	LIBS *= ../../libretroshare/src/lib/libretroshare.a
++	LIBS *= ../../openpgpsdk/src/lib/libops.a -lbz2
++	LIBS *= -lssl -lcrypto
++	LIBS *= -lgpgme
++	LIBS *= -lupnp
++	LIBS *= -lgnome-keyring
++	PRE_TARGETDEPS *= ../../libretroshare/src/lib/libretroshare.a
++
++        gxs {
++                LIBS += ../../supportlibs/pegmarkdown/lib/libpegmarkdown.a
++                LIBS += -lsqlite3
++        }
++
++	LIBS *= -rdynamic
++}
++
+ ############################## Common stuff ######################################
+ 
+ # On Linux systems that alredy have libssl and libcrypto it is advisable

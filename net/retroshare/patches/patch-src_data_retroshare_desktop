@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_data_retroshare_desktop,v 1.1.1.1 2013/08/15 21:55:20 stsp Exp $
+--- src/data/retroshare.desktop.orig	Mon Aug 12 21:23:38 2013
++++ src/data/retroshare.desktop	Mon Aug 12 21:23:54 2013
+@@ -3,9 +3,8 @@ Encoding=UTF-8
+ Version=1.0
+ Name=RetroShare
+ Comment=Securely share files with your friends
+-Exec=/usr/bin/RetroShare
+-Icon=/usr/share/pixmaps/retroshare.xpm
++Exec=RetroShare
++Icon=retroshare
+ Terminal=false
+ Type=Application
+ Categories=Application;Network;
+-

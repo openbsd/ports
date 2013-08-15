@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/08/15 21:55:20 stsp Exp $
+@bin bin/RetroShare
+@bin bin/retroshare-nogui
+lib/retroshare/
+lib/retroshare/extensions/
+lib/retroshare/extensions/libFeedReader.so
+lib/retroshare/extensions/libLinksCloud.so
+lib/retroshare/extensions/libVOIP.so
+share/applications/retroshare.desktop
+share/icons/hicolor/24x24/apps/retroshare.png
+share/icons/hicolor/48x48/apps/retroshare.png
+share/icons/hicolor/64x64/apps/retroshare.png
+share/pixmaps/
+share/pixmaps/retroshare.xpm
+share/retroshare/
+share/retroshare/bdboot.txt
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

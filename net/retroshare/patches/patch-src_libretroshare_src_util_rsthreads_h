@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_libretroshare_src_util_rsthreads_h,v 1.1.1.1 2013/08/15 21:55:20 stsp Exp $
+--- src/libretroshare/src/util/rsthreads.h.orig	Fri Mar 22 18:28:57 2013
++++ src/libretroshare/src/util/rsthreads.h	Mon Aug 12 23:04:14 2013
+@@ -42,10 +42,15 @@ class RsMutex
+ 
+ 	RsMutex(const std::string& name)
+ 	{
++		pthread_mutexattr_t attr;
++
+ 		/* remove unused parameter warnings */
+ 		(void) name;
+ 
+-		pthread_mutex_init(&realMutex, NULL);
++		pthread_mutexattr_init(&attr);
++		pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);
++		pthread_mutex_init(&realMutex, &attr);
++		pthread_mutexattr_destroy(&attr);
+ #ifdef RSTHREAD_SELF_LOCKING_GUARD
+ 		_thread_id = 0 ;
+ #endif

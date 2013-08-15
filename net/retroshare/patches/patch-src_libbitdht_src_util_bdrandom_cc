@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_libbitdht_src_util_bdrandom_cc,v 1.1.1.1 2013/08/15 21:55:20 stsp Exp $
+--- src/libbitdht/src/util/bdrandom.cc.orig	Mon Aug 12 18:55:29 2013
++++ src/libbitdht/src/util/bdrandom.cc	Mon Aug 12 18:55:47 2013
+@@ -15,6 +15,8 @@ static bool auto_seed = bdRandom::seed( (time(NULL) + 
+   #elif defined(__FreeBSD__)
+     // since this is completely insecure anyway, just kludge for now
+     static bool auto_seed = bdRandom::seed(time(NULL));
++  #elif defined(__OpenBSD__)
++    static bool auto_seed = bdRandom::seed(arc4random());
+   #else
+     static bool auto_seed = bdRandom::seed( (time(NULL) + pthread_self()*0x1293fe + (getpid()^0x113ef76b))^0x18e34a12 ) ;
+   #endif

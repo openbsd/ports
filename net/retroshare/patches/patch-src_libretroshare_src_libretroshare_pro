@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_libretroshare_src_libretroshare_pro,v 1.1.1.1 2013/08/15 21:55:20 stsp Exp $
+--- src/libretroshare/src/libretroshare.pro.orig	Fri Mar 22 18:29:00 2013
++++ src/libretroshare/src/libretroshare.pro	Mon Aug 12 23:54:53 2013
+@@ -283,6 +283,22 @@ freebsd-* {
+ 
+ 	# linux/bsd can use either - libupnp is more complete and packaged.
+ 	#CONFIG += upnp_miniupnpc 
++	CONFIG += upnp_libupnp
++
++	DESTDIR = lib
++}
++
++################################# OpenBSD ##########################################
++
++openbsd-* {
++	INCLUDEPATH *= ${LOCALBASE}/include
++	INCLUDEPATH += $$system(pkg-config --cflags glib-2.0 | sed -e "s/-I//g")
++
++	OPENPGPSDK_DIR = ../../openpgpsdk/src
++	INCLUDEPATH *= $${OPENPGPSDK_DIR} ../openpgpsdk
++
++	QMAKE_CXXFLAGS *= -Dfseeko64=fseeko -Dftello64=ftello -Dstat64=stat -Dstatvfs64=statvfs -Dfopen64=fopen
++
+ 	CONFIG += upnp_libupnp
+ 
+ 	DESTDIR = lib

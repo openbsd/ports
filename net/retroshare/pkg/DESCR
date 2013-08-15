@@ -1,0 +1,23 @@
+RetroShare is an Open Source, cross-platform, Friend-2-Friend, and
+secure decentralised communication platform. It lets you securely chat
+and share files with your friends and family, using a web-of-trust to
+authenticate peers and OpenSSL to encrypt all communication.  RetroShare
+provides filesharing, chat, messages, forums and channels.
+
+Features:
+    Serverless, completely decentralised
+    Multiple simultaneous downloads / uploads
+    Search Friends
+    Messages
+    Forums
+    Channels
+    Voice over IP
+    Instant messaging
+    Groupchat
+    GnuPG Authentication
+    OpenSSL Encryption
+    adding downloads via website links
+    Plugins support
+    UPnP / NAT-PMP port forwarding support
+    Graphical User Interface written with Qt4 toolkit
+    System tray integration

@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_plugins_FeedReader_FeedReader_pro,v 1.1.1.1 2013/08/15 21:55:20 stsp Exp $
+--- src/plugins/FeedReader/FeedReader.pro.orig	Fri Mar 22 18:28:25 2013
++++ src/plugins/FeedReader/FeedReader.pro	Mon Aug 12 23:54:53 2013
+@@ -90,3 +90,12 @@ win32 {
+ 
+ 	LIBS += -lcurl -lxml2 -lxslt -lws2_32 -lwldap32
+ }
++
++openbsd-* {
++	LIBXML2_DIR = ${LOCALBASE}/include/libxml2
++
++	INCLUDEPATH += $${LIBXML2_DIR}
++
++	LIBS += -lcurl -lxml2 -lxslt
++}
++
