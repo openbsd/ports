@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.141 2013/08/08 07:02:37 landry Exp $
+# $OpenBSD: Makefile,v 1.142 2013/08/15 10:42:51 sthen Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 COMMENT-enigmail =	Mozilla Seamonkey GnuPG extension
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 
-MOZILLA_VERSION=	2.20
+MOZILLA_VERSION =	2.20
+REVISION =		0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite

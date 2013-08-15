@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.235 2013/08/08 06:57:11 landry Exp $
+# $OpenBSD: Makefile,v 1.236 2013/08/15 10:42:51 sthen Exp $
 
 COMMENT =	Mozilla web browser
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
@@ -7,6 +7,7 @@ BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 # Don't forget to update devel/xulrunner/2.0 if patches changes.
 
 MOZILLA_VERSION =	23.0
+REVISION =		0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
