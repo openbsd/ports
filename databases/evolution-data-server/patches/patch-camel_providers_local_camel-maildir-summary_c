@@ -1,0 +1,15 @@
+$OpenBSD: patch-camel_providers_local_camel-maildir-summary_c,v 1.13 2013/08/15 16:07:27 ajacoutot Exp $
+
+XXX remove when we have a 64-bit time_t
+
+--- camel/providers/local/camel-maildir-summary.c.orig	Sun Mar 17 13:46:02 2013
++++ camel/providers/local/camel-maildir-summary.c	Fri Mar 29 13:32:31 2013
+@@ -419,7 +419,7 @@ static gchar *maildir_summary_next_uid_string (CamelFo
+ 				g_free (uid);
+ 				g_usleep (2 * G_USEC_PER_SEC);
+ 			}
+-			uid = g_strdup_printf ("%ld.%d_%u.%s", time (NULL), getpid (), nextuid, mds->priv->hostname);
++			uid = g_strdup_printf ("%ld.%d_%u.%s", (long)time (NULL), getpid (), nextuid, mds->priv->hostname);
+ 			name = g_strdup_printf ("%s/tmp/%s", cls->folder_path, uid);
+ 			retry++;
+ 		} while (g_stat (name, &st) == 0 && retry < 3);

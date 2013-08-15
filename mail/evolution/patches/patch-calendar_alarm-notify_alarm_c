@@ -1,0 +1,42 @@
+$OpenBSD: patch-calendar_alarm-notify_alarm_c,v 1.6 2013/08/15 16:07:27 ajacoutot Exp $
+
+XXX remove when we have a 64-bit time_t
+
+--- calendar/alarm-notify/alarm.c.orig	Sun Nov 11 01:13:47 2012
++++ calendar/alarm-notify/alarm.c	Sun Nov 11 19:14:54 2012
+@@ -76,7 +76,7 @@ pop_alarm (void)
+ static gboolean
+ alarm_ready_cb (gpointer data)
+ {
+-	time_t now;
++	long now;
+ 
+ 	if (!alarms) {
+ 		g_warning ("Alarm triggered, but no alarm present\n");
+@@ -97,7 +97,7 @@ alarm_ready_cb (gpointer data)
+ 		if (ar->trigger > now)
+ 			break;
+ 
+-		debug (("Process alarm with trigger %lu", ar->trigger));
++		debug (("Process alarm with trigger %lu", (long)ar->trigger));
+ 		notify_id = ar;
+ 
+ 		ar_copy = *ar;
+@@ -131,7 +131,7 @@ setup_timeout (void)
+ {
+ 	const AlarmRecord *ar;
+ 	guint diff;
+-	time_t now;
++	long now;
+ 
+ 	if (!alarms) {
+ 		g_warning ("No alarm to setup\n");
+@@ -154,7 +154,7 @@ setup_timeout (void)
+ 	/* Add the time out */
+ 	debug (
+ 		("Setting timeout for %d.%2d (from now) %lu %lu",
+-		diff / 60, diff % 60, ar->trigger, now));
++		diff / 60, diff % 60, (long)ar->trigger, now));
+ 	debug ((" %s", ctime (&ar->trigger)));
+ 	debug ((" %s", ctime (&now)));
+ 	timeout_id = g_timeout_add_seconds (diff, alarm_ready_cb, NULL);
