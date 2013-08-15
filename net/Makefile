@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.812 2013/08/12 12:02:20 pascal Exp $
+# $OpenBSD: Makefile,v 1.813 2013/08/15 21:55:47 stsp Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -499,6 +499,7 @@
      SUBDIR += radiusd-cistron
      SUBDIR += radiusd-lucent
      SUBDIR += rbldnsd
+     SUBDIR += retroshare
      SUBDIR += rrdtool
      SUBDIR += rsnapshot
      SUBDIR += rsync
