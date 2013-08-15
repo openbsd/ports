@@ -1,7 +1,9 @@
-# $OpenBSD: sparc,v 1.26 2013/08/15 15:09:18 naddy Exp $
-# This is the master list of subdirs used to choose sparc packages.
+# $OpenBSD: hppa,v 1.1 2013/08/15 15:09:18 naddy Exp $
+# This is the master list of subdirs used to choose hppa packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
 net/rsync
 archivers/bzip2
 archivers/unzip
+archivers/xz
+security/gnupg
