@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:35:45 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/08/15 16:34:24 stsp Exp $
 
 COMMENT =		simple, command-line multi messenger
 
 DISTNAME =		climm-0.7.1
+REVISION = 		0
 
 CATEGORIES =		net
 
@@ -20,14 +21,15 @@ EXTRACT_SUFX =		.tgz
 
 MODULES =		devel/gettext \
 			lang/tcl
-LIB_DEPENDS =		security/libotr \
+LIB_DEPENDS =		security/libotr>=4.0.0 \
 			security/gnutls \
 			textproc/iksemel \
 			${MODTCL_LIB_DEPENDS}
 
 USE_GMAKE =		Yes
 
-CONFIGURE_STYLE =	gnu
+AUTOCONF_VERSION = 	2.65
+CONFIGURE_STYLE =	autoconf
 CONFIGURE_ARGS +=	--enable-ssl=gnutls
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
