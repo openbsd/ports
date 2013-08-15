@@ -1,0 +1,22 @@
+$OpenBSD: patch-sdext_source_pdfimport_xpdfwrapper_pdfioutdev_gpl_cxx,v 1.1 2013/08/15 18:33:29 kili Exp $
+
+Fix build with poppler-0.24.
+
+From http://ftp.osuosl.org/pub/blfs/svn/l/libreoffice-4.1.0.4-system_poppler-1.patch
+(found by ajacoutot@)
+
+--- sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx.orig.port	Tue Jun 11 11:33:38 2013
++++ sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx	Tue Aug 13 19:06:05 2013
+@@ -481,7 +481,11 @@ PDFOutDev::PDFOutDev( PDFDoc* pDoc ) :
+ {
+ }
+ 
+-void PDFOutDev::startPage(int /*pageNum*/, GfxState* state)
++void PDFOutDev::startPage(int /*pageNum*/, GfxState* state
++#if POPPLER_CHECK_VERSION(0, 23, 0)
++                          , XRef* /*xref*/
++#endif
++)
+ {
+     assert(state);
+     printf("startPage %f %f\n",
