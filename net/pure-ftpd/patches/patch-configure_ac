@@ -1,0 +1,28 @@
+$OpenBSD: patch-configure_ac,v 1.4 2013/08/15 09:47:28 sthen Exp $
+
+We do PIE by default on arch where it works; don't force it to avoid
+problems on arch where it's broken e.g. arm.
+
+--- configure.ac.orig	Thu Aug 15 11:00:58 2013
++++ configure.ac	Thu Aug 15 11:01:09 2013
+@@ -21,12 +21,6 @@ AM_PROG_CC_C_O
+ AC_USE_SYSTEM_EXTENSIONS
+ AC_SEARCH_LIBS([strerror],[cposix])
+ 
+-AX_CHECK_COMPILE_FLAG([-fPIE], [
+-  AX_CHECK_LINK_FLAG([-fPIE],
+-    [CFLAGS="$CFLAGS -fPIE"]
+-  )
+-])
+-
+ AX_CHECK_COMPILE_FLAG([-fcatch-undefined-c99-behavior], [CFLAGS="$CFLAGS -fcatch-undefined-c99-behavior"])
+ AX_CHECK_COMPILE_FLAG([-fno-strict-aliasing], [CFLAGS="$CFLAGS -fno-strict-aliasing"])
+ AX_CHECK_COMPILE_FLAG([-fno-strict-overflow], [CFLAGS="$CFLAGS -fno-strict-overflow"])
+@@ -80,7 +74,6 @@ AX_CHECK_COMPILE_FLAG([-Wstrict-prototypes], [CWFLAGS=
+ AX_CHECK_COMPILE_FLAG([-Wswitch-enum], [CWFLAGS="$CWFLAGS -Wswitch-enum"])
+ AX_CHECK_COMPILE_FLAG([-Wvariable-decl], [CWFLAGS="$CWFLAGS -Wvariable-decl"])
+ 
+-AX_CHECK_LINK_FLAG([-pie], [LDFLAGS="$LDFLAGS -pie"])
+ AX_CHECK_LINK_FLAG([-z relro], [LDFLAGS="$LDFLAGS -z relro"])
+ AX_CHECK_LINK_FLAG([-z now], [LDFLAGS="$LDFLAGS -z now"])
+ 
