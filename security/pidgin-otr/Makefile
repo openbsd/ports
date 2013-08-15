@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/21 08:48:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2013/08/15 16:33:31 stsp Exp $
 
 COMMENT =	allows deniable private conversations using Pidgin
 
-DISTNAME =	pidgin-otr-3.2.1
+DISTNAME =	pidgin-otr-4.0.0
 CATEGORIES =	security net
 EPOCH =		0
 
@@ -16,12 +16,13 @@ PERMIT_PACKAGE_CDROM =	Yes
 RUN_DEPENDS =	net/pidgin>=2.0.0
 BUILD_DEPENDS =	${RUN_DEPENDS} \
 		devel/libtool
-LIB_DEPENDS =	security/libotr>=3.2.0
+LIB_DEPENDS =	security/libotr>=4.0.0
 
 MODULES =	devel/gettext \
 		textproc/intltool
-WANTLIB =	gpg-error gcrypt otr>=3.2
+WANTLIB =	c gpg-error gcrypt otr>=4.0 pthread
 
+USE_LIBTOOL = 	gnu
 LIBTOOL_FLAGS += --tag=disable-static
 
 SHARED_ONLY =	Yes
@@ -30,7 +31,7 @@ CONFIGURE_STYLE = gnu
 CONFIGURE_ENV =	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib "
 
-AUTOCONF_VERSION = 2.60
+AUTOCONF_VERSION = 2.65
 AUTOMAKE_VERSION = 1.9
 BUILD_DEPENDS += ${MODGNU_AUTOCONF_DEPENDS} \
 		 ${MODGNU_AUTOMAKE_DEPENDS}
