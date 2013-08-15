@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_rtgutil_c,v 1.1.1.1 2008/07/19 13:52:22 sthen Exp $
+$OpenBSD: patch-src_rtgutil_c,v 1.2 2013/08/15 14:58:45 naddy Exp $
 --- src/rtgutil.c.orig	Thu Sep 25 16:56:04 2003
 +++ src/rtgutil.c	Mon Jul  7 13:42:39 2008
 @@ -34,6 +34,7 @@ int read_rtg_config(char *file, config_t * set)
@@ -35,42 +35,3 @@ $OpenBSD: patch-src_rtgutil_c,v 1.1.1.1 2008/07/19 13:52:22 sthen Exp $
     return;
  }
  
-@@ -157,29 +160,27 @@ void sleepy(float sleep_time)
- 
- /* Timestamp */
- void timestamp(char *str) {
--   struct timeval now;
-+   time_t clock;
-    struct tm *t;
- 
--   gettimeofday(&now, NULL);
--   t = localtime(&now.tv_sec);
-+   clock = time(NULL);
-+   t = localtime(&clock);
-    printf("[%02d/%02d %02d:%02d:%02d %s]\n", t->tm_mon + 1, 
-       t->tm_mday, t->tm_hour, t->tm_min, t->tm_sec, str);
-    return;
- }
- 
--
- char *file_timestamp() {
--	static char str[BUFSIZE];
--   struct timeval now;
-+   static char str[BUFSIZE];
-+   time_t clock;
-    struct tm *t;
- 
--   gettimeofday(&now, NULL);
--   t = localtime(&now.tv_sec);
--   snprintf(str, sizeof(str), "%02d%02d_%02d:%02d:%02d", t->tm_mon + 1, 
-+   clock = time(NULL);
-+   t = localtime(&clock);
-+   snprintf(str, sizeof(str), "%02d%02d_%02d:%02d:%02d", t->tm_mon + 1,
-       t->tm_mday, t->tm_hour, t->tm_min, t->tm_sec);
--	return(str);
-+   return(str);
- }
--
- 
- int checkPID(char *pidfile) {
- 	FILE *pidptr = NULL;

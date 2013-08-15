@@ -1,6 +1,6 @@
-$OpenBSD: patch-c4_c,v 1.3 2010/08/07 20:06:14 naddy Exp $
---- c4.c.orig	Sat Aug  7 21:36:09 2010
-+++ c4.c	Sat Aug  7 21:37:10 2010
+$OpenBSD: patch-c4_c,v 1.4 2013/08/15 14:58:45 naddy Exp $
+--- c4.c.orig	Thu Aug 15 16:02:21 2013
++++ c4.c	Thu Aug 15 16:02:21 2013
 @@ -14,7 +14,10 @@
   */
  
@@ -40,20 +40,7 @@ $OpenBSD: patch-c4_c,v 1.3 2010/08/07 20:06:14 naddy Exp $
          fprintf(stderr, "Could not read input line\n");
          goodbye();
      }
-@@ -687,9 +689,11 @@ date()
-     struct timeval v;
-     struct timezone z;
-     char *nl;
-+    time_t sec;
- 
-     gettimeofday(&v, &z);
--    sprintf(time,"%s", ctime(&v.tv_sec));
-+    sec = v.tv_sec;
-+    sprintf(time,"%s", ctime(&sec));
- 
-     if ((nl = index(time, '\n')) == NULL){
-         fprintf(stderr,"date: ctime returned non-newline terminated string.\n");
-@@ -813,34 +817,5 @@ debug_off()
+@@ -813,34 +815,5 @@ debug_off()
      save = d;
      d = NULL;
      accept_move(turn);
