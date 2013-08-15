@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/07/18 13:21:22 dhill Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/08/15 16:33:22 stsp Exp $
 %%SHARED%%
 @bin bin/otr_mackey
 @bin bin/otr_modify
@@ -10,7 +10,9 @@ include/libotr/
 include/libotr/auth.h
 include/libotr/b64.h
 include/libotr/context.h
+include/libotr/context_priv.h
 include/libotr/dh.h
+include/libotr/instag.h
 include/libotr/mem.h
 include/libotr/message.h
 include/libotr/privkey-t.h

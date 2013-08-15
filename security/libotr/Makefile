@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/08/14 14:17:28 pascal Exp $
+# $OpenBSD: Makefile,v 1.23 2013/08/15 16:33:22 stsp Exp $
 
 # WARNING: When trying to update this port to 4.x.x, please be
 # aware that the following ports need adjustments for the new
@@ -9,11 +9,10 @@
 
 COMMENT=	portable OTR messaging library and toolkit
 
-DISTNAME=	libotr-3.2.1
+DISTNAME=	libotr-4.0.0
 CATEGORIES=	security
-REVISION =	0
 
-SHARED_LIBS +=  otr                  3.2      # 4.0
+SHARED_LIBS +=  otr                  4.0      # 5.0
 
 HOMEPAGE=	http://www.cypherpunks.ca/otr/
 
@@ -34,8 +33,15 @@ LIB_DEPENDS=	security/libgcrypt
 LIB_DEPENDS +=	security/libgpg-error
 
 USE_GROFF =		Yes
+USE_LIBTOOL = 		gnu
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
+AUTOCONF_VERSION = 	2.65
+AUTOMAKE_VERSION = 	1.11
+CONFIGURE_STYLE=	autoconf automake
+# PIE is taken care of on a per-arch basis on OpenBSD, and stack
+# protection is enabled anyway.
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--disable-gcc-hardening \
+			--disable-linker-hardening
 
 .include <bsd.port.mk>
