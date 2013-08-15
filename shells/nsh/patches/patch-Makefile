@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2012/09/17 13:51:51 phessler Exp $
---- Makefile.orig	Sat Sep 15 09:57:50 2012
-+++ Makefile	Sat Sep 15 09:58:14 2012
-@@ -4,7 +4,8 @@ PROG= nsh
+$OpenBSD: patch-Makefile,v 1.2 2013/08/15 14:45:34 sthen Exp $
+--- Makefile.orig	Sun Feb 10 18:36:49 2013
++++ Makefile	Thu Aug 15 15:44:35 2013
+@@ -3,7 +3,8 @@ PROG= nsh
  
  # For use with flashrd:
  #CFLAGS=-O -DDHCPLEASES=\"/flash/dhcpd.leases\" -Wmissing-prototypes -Wformat -Wall -Wpointer-arith -Wbad-function-cast #-W
@@ -9,5 +9,5 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2012/09/17 13:51:51 phessler Exp $
 +CFLAGS?=-O
 +CFLAGS+=-Wmissing-prototypes -Wformat -Wall -Wpointer-arith -Wbad-function-cast #-W
  
- SRCS=arp.c compile.c main.c genget.c commands.c stats.c routesys.c
+ SRCS=arp.c compile.c main.c genget.c commands.c stats.c kroute.c
  SRCS+=ctl.c show.c if.c version.c route.c conf.c complete.c ieee80211.c
