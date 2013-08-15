@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.51 2013/04/27 15:44:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2013/08/15 16:34:00 stsp Exp $
 
 COMMENT=		IRC proxy to connect to AIM, ICQ, Jabber, MSN and Yahoo
 
 DISTNAME=		bitlbee-3.2
 CATEGORIES=		net
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		http://bitlbee.org/
 
@@ -50,7 +50,7 @@ WANTLIB +=		purple
 .endif
 .if ${FLAVOR:Motr}
 CONFIGURE_ARGS +=	--otr=1
-LIB_DEPENDS +=		security/libotr security/libgcrypt
+LIB_DEPENDS +=		security/libotr>=4.0.0 security/libgcrypt
 WANTLIB +=		gcrypt otr
 .endif
 
