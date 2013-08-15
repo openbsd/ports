@@ -1,7 +1,7 @@
-$OpenBSD: patch-unix_tfconfig,v 1.1 2000/09/20 22:42:12 avsm Exp $
---- unix/tfconfig.orig	Fri Apr  4 11:51:58 1997
-+++ unix/tfconfig	Mon Jun 16 18:00:45 1997
-@@ -211,17 +211,17 @@
+$OpenBSD: patch-unix_tfconfig,v 1.2 2013/08/15 14:54:07 naddy Exp $
+--- unix/tfconfig.orig	Sun Aug 11 22:53:07 2013
++++ unix/tfconfig	Sun Aug 11 22:55:49 2013
+@@ -223,17 +223,17 @@ fi
  echo
  
  echo 'To change these locations type "n" now and edit the unix/Config file.'
@@ -29,4 +29,23 @@ $OpenBSD: patch-unix_tfconfig,v 1.1 2000/09/20 22:42:12 avsm Exp $
 +# done
  echo; echo
  
- echo "#define LIBDIR     \"${LIBDIR}\"" >&4
+ rm -f ../src/Makefile ${AOUT}
+@@ -561,6 +561,8 @@ int main() {
+     raise(0);
+     setlocale(0, "C");
+     sigaction(0, NULL, NULL);
++    arc4random();
++    arc4random_uniform(0);
+     srand(0);
+     srandom(0);
+     strcasecmp(NULL, NULL);
+@@ -613,7 +615,8 @@ fi
+ for sym in \
+     bcopy bsearch bzero connect fileno getcwd gethostbyname getpwnam \
+     gettimeofday getwd h_errno hstrerror index kill memcpy memset raise \
+-    setlocale sigaction srand srandom strcasecmp strchr strcmpi strcspn \
++    setlocale sigaction arc4random arc4random_uniform srand srandom \
++    strcasecmp strchr strcmpi strcspn \
+     strerror strftime stricmp strstr strtod strtol tzset waitpid
+ do
+     if egrep "(^|[^a-z_])_?_?${sym}([^a-z]|\$)" symtest.out >/dev/null; then

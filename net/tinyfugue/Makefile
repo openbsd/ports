@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/11 11:35:57 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2013/08/15 14:54:07 naddy Exp $
 
 COMMENT=	programmable MUD client, with macro support and more
 
 PKGNAME=	tinyfugue-4.0s1
-REVISION=	3
+REVISION=	4
 DISTNAME=	tf-40s1
 CATEGORIES=	net games
 
@@ -27,23 +27,27 @@ MAKE_ENV=	TFVER="${DISTNAME:S/^tf-//}" \
 
 MAKE_FILE=	${WRKSRC}/unix/Makefile
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
-SYMLINKS=	kb-bash.tf,bind-bash.tf kb-emacs.tf,bind-emacs.tf \
-		complete.tf,completion.tf factoral.tf,factorial.tf \
-		filexfer.tf,file-xfer.tf local-eg.tf,local.tf.sample \
-		psh.tf,pref-shell.tf spc-page.tf,space_page.tf \
-		spedwalk.tf,speedwalk.tf stack-q.tf,stack_queue.tf \
-		world-q.tf,worldqueue.tf
+SYMLINKS=	kb-bash.tf bind-bash.tf \
+		kb-emacs.tf bind-emacs.tf \
+		complete.tf completion.tf \
+		factoral.tf factorial.tf \
+		filexfer.tf file-xfer.tf \
+		local-eg.tf local.tf.sample \
+		psh.tf pref-shell.tf \
+		spc-page.tf space_page.tf \
+		spedwalk.tf speedwalk.tf \
+		stack-q.tf stack_queue.tf \
+		world-q.tf worldqueue.tf
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/tinyfugue
 	${INSTALL_PROGRAM} ${WRKBUILD}/src/tf ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/src/tf.1.nroffman ${PREFIX}/man/man1/tf.1
 	${INSTALL_DATA} ${WRKSRC}/tf-lib/* ${PREFIX}/share/tinyfugue
-.for i in ${SYMLINKS}
-	ln -s ${i:C/,.*//} ${PREFIX}/share/tinyfugue/${i:C/.*,//}
+.for source target in ${SYMLINKS}
+	ln -s ${source} ${PREFIX}/share/tinyfugue/${target}
 .endfor
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/09/15 18:17:46 espie Exp $
-bin/tf
+@comment $OpenBSD: PLIST,v 1.9 2013/08/15 14:54:07 naddy Exp $
+@bin bin/tf
 @man man/man1/tf.1
 share/tinyfugue/
 share/tinyfugue/README

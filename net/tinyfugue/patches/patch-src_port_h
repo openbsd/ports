@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_port_h,v 1.1 2013/08/15 14:54:07 naddy Exp $
+--- src/port.h.orig	Sun Aug 11 22:56:24 2013
++++ src/port.h	Sun Aug 11 23:00:53 2013
+@@ -246,7 +246,11 @@ extern char *sys_errlist[];
+  * not agree with RAND_MAX.  We must not link with -lucb.
+  */
+ 
+-#ifdef HAVE_srandom
++#if defined(HAVE_arc4random) && defined(HAVE_arc4random_uniform)
++# define RAND()         arc4random()
++# define SRAND(seed)    /* empty */
++# define RRAND(lo,hi)   (arc4random_uniform((hi)-(lo)) + (lo))
++#elif defined(HAVE_srandom)
+ # include <math.h>
+ # define RAND()         (int)random()
+ # define SRAND(seed)    srandom(seed)
+@@ -262,7 +266,7 @@ extern char *sys_errlist[];
+ #   define RRAND(lo,hi)  (RAND() % ((hi)-(lo)+1) + (lo))
+ #  endif
+ # else
+-   error "Don't have srand() or srandom()."
++#  error "Don't have srand() or srandom()."
+ # endif
+ #endif
+ 
