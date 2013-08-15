@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_screen_cc,v 1.1 2013/08/06 23:20:37 jturner Exp $
---- src/screen.cc.orig	Sun Aug  4 18:12:46 2013
-+++ src/screen.cc	Sun Aug  4 18:12:50 2013
-@@ -25,7 +25,7 @@
+$OpenBSD: patch-src_screen_cc,v 1.2 2013/08/15 15:05:27 jturner Exp $
+--- src/screen.cc.orig	Wed Aug 14 04:47:58 2013
++++ src/screen.cc	Wed Aug 14 20:36:51 2013
+@@ -24,7 +24,7 @@
  #include <cctype>
  #include <sys/ioctl.h>
  #include <dirent.h>
 -#include <cursesw.h>
 +#include <curses.h>
  
+ #include "debug.h"
  #include "file.h"
- #include "input.h"
