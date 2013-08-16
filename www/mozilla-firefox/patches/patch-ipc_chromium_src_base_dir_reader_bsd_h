@@ -1,22 +1,7 @@
-$OpenBSD: patch-ipc_chromium_src_base_dir_reader_bsd_h,v 1.2 2013/08/15 12:28:04 sthen Exp $
+$OpenBSD: patch-ipc_chromium_src_base_dir_reader_bsd_h,v 1.3 2013/08/16 10:25:31 sthen Exp $
 --- ipc/chromium/src/base/dir_reader_bsd.h.orig	Tue Jul 30 12:40:58 2013
 +++ ipc/chromium/src/base/dir_reader_bsd.h	Wed Aug 14 15:46:21 2013
-@@ -14,6 +14,14 @@
- #include <stdint.h>
- #include <unistd.h>
- 
-+#ifdef __cplusplus
-+extern "C" {
-+#endif
-+    int getdents(int, void *, unsigned long);
-+#ifdef __cplusplus
-+}
-+#endif
-+
- #include "base/logging.h"
- #include "base/eintr_wrapper.h"
- 
-@@ -59,19 +67,11 @@ class DirReaderBSD {
+@@ -59,19 +59,11 @@ class DirReaderBSD {
      if (offset_ != size_)
        return true;
  
@@ -36,7 +21,7 @@ $OpenBSD: patch-ipc_chromium_src_base_dir_reader_bsd_h,v 1.2 2013/08/15 12:28:04
        return false;
      }
      size_ = r;
-@@ -99,9 +99,6 @@ class DirReaderBSD {
+@@ -99,9 +91,6 @@ class DirReaderBSD {
   private:
    const int fd_;
    char buf_[512];
