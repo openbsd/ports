@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/06/19 13:07:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2013/08/16 22:04:41 sthen Exp $
 
 VMEM_WARNING =		Yes
 
@@ -10,7 +10,7 @@ V =			2.0.2
 DISTNAME =		pypy-${V}-src
 PKGNAME =		pypy-${V}
 REVISION =		1
-BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-$V-0.tar.xz
+BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-$V-1.tar.xz
 
 CATEGORIES =		lang
 
