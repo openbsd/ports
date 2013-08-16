@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_storage_sqlite3_sqlite3_storage_h,v 1.1 2013/08/16 16:13:44 naddy Exp $
+--- src/storage/sqlite3/sqlite3_storage.h.orig	Thu Mar 25 15:58:06 2010
++++ src/storage/sqlite3/sqlite3_storage.h	Fri Aug 16 18:06:02 2013
+@@ -158,6 +158,7 @@ class Sqlite3Storage : private SQLStorage (private)
+     virtual inline zmm::String quote(unsigned int val) { return zmm::String::from(val); }
+     virtual inline zmm::String quote(long val) { return zmm::String::from(val); }
+     virtual inline zmm::String quote(unsigned long val) { return zmm::String::from(val); }
++    virtual inline zmm::String quote(long long val) { return zmm::String::from(val); }
+     virtual inline zmm::String quote(bool val) { return zmm::String(val ? '1' : '0'); }
+     virtual inline zmm::String quote(char val) { return quote(zmm::String(val)); }
+     virtual zmm::Ref<SQLResult> select(const char *query, int length);

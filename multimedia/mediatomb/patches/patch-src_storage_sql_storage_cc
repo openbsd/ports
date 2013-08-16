@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_storage_sql_storage_cc,v 1.1 2013/08/16 16:13:44 naddy Exp $
+--- src/storage/sql_storage.cc.orig	Thu Mar 25 16:28:10 2010
++++ src/storage/sql_storage.cc	Fri Aug 16 18:08:26 2013
+@@ -2133,7 +2133,7 @@ void SQLStorage::autoscanUpdateLM(Ref<AutoscanDirector
+             throw _Exception(_("autoscanUpdateLM called with adir with illegal objectID and location"));
+     }
+     */
+-    log_debug("id: %d; last_modified: %d\n", adir->getStorageID(), adir->getPreviousLMT());
++    log_debug("id: %d; last_modified: %lld\n", adir->getStorageID(), (long long)adir->getPreviousLMT());
+     Ref<StringBuffer> q(new StringBuffer());
+     *q << "UPDATE " << TQ(AUTOSCAN_TABLE)
+         << " SET " << TQ("last_modified") << '=' << quote(adir->getPreviousLMT())
