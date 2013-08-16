@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2013/08/13 12:46:15 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.42 2013/08/16 10:54:21 sthen Exp $
 
 COMMENT-main =	another eDonkey P2P file sharing client
 COMMENT-web =	webserver interface to amuled
@@ -32,7 +32,9 @@ LIB_DEPENDS =
 WANTLIB =
 RUN_DEPENDS =
 
-BUILD_DEPENDS =		devel/flex \
+# bison needed if .y files are patched
+BUILD_DEPENDS =		devel/bison \
+			devel/flex \
 			devel/gettext
 
 commonLIB_DEPENDS =	x11/wxWidgets>=2.8.12 \
