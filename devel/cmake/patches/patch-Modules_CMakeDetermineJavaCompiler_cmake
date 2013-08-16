@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_CMakeDetermineJavaCompiler_cmake,v 1.7 2013/06/06 12:47:06 dcoppa Exp $
---- Modules/CMakeDetermineJavaCompiler.cmake.orig	Tue Nov 27 14:26:32 2012
-+++ Modules/CMakeDetermineJavaCompiler.cmake	Wed Dec  5 10:15:58 2012
+$OpenBSD: patch-Modules_CMakeDetermineJavaCompiler_cmake,v 1.8 2013/08/16 10:37:22 dcoppa Exp $
+--- Modules/CMakeDetermineJavaCompiler.cmake.orig	Tue Jul  2 15:41:39 2013
++++ Modules/CMakeDetermineJavaCompiler.cmake	Fri Aug 16 11:53:55 2013
 @@ -16,6 +16,8 @@
  # NOTE, a generator may set CMAKE_Java_COMPILER before
  # loading this file to force a compiler.
@@ -10,7 +10,7 @@ $OpenBSD: patch-Modules_CMakeDetermineJavaCompiler_cmake,v 1.7 2013/06/06 12:47:
  if(NOT CMAKE_Java_COMPILER)
    # prefer the environment variable CC
    if($ENV{JAVA_COMPILER} MATCHES ".+")
-@@ -42,30 +44,43 @@ if(NOT CMAKE_Java_COMPILER)
+@@ -42,30 +44,38 @@ if(NOT CMAKE_Java_COMPILER)
      endif()
    endif()
  
@@ -39,16 +39,11 @@ $OpenBSD: patch-Modules_CMakeDetermineJavaCompiler_cmake,v 1.7 2013/06/06 12:47:
 -    /usr/local/jdk-1.6.0/bin
 -    )
 +  if(MODJAVA_VER)
-+    if(MODJAVA_VER MATCHES "^1\\.6$")
++    if(MODJAVA_VER MATCHES "^1\\.6\\+?$")
 +      set(Java_BIN_PATH ${LOCALBASE}/jdk-1.6.0/bin)
-+    elseif(MODJAVA_VER MATCHES "^1\\.6\\+$")
-+      set(Java_BIN_PATH
-+        ${LOCALBASE}/jdk-1.7.0/bin
-+        ${LOCALBASE}/jdk-1.6.0/bin
-+        )
-+    else(MODJAVA_VER MATCHES "^1\\.6$")
++    else()
 +      set(Java_BIN_PATH ${LOCALBASE}/jdk-1.7.0/bin)
-+    endif(MODJAVA_VER MATCHES "^1\\.6$")
++    endif()
 +  else(MODJAVA_VER)
 +    set(Java_BIN_PATH
 +      "[HKEY_LOCAL_MACHINE\\SOFTWARE\\JavaSoft\\Java Development Kit\\2.0;JavaHome]/bin"
