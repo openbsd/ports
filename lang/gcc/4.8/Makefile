@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/08/14 12:26:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2013/08/16 07:37:18 tobiasu Exp $
 
 ONLY_FOR_ARCHS = alpha amd64 i386 powerpc sparc64
 
@@ -12,9 +12,9 @@ ADASTRAP-i386 = adastrap-i386-$V-2.tar.xz
 ADASTRAP_LIBC-amd64 = 70.0
 ADASTRAP_LIBM-amd64 = 9.0
 ADASTRAP-amd64 = adastrap-amd64-$V-2.tar.xz
-ADASTRAP_LIBC-sparc64 = 68.3
-ADASTRAP_LIBM-sparc64 = 8.0
-ADASTRAP-sparc64 = adastrap-sparc64-$V-1.tar.xz
+ADASTRAP_LIBC-sparc64 = 70.0
+ADASTRAP_LIBM-sparc64 = 9.0
+ADASTRAP-sparc64 = adastrap-sparc64-$V-2.tar.xz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}
 PKGNAME-c++ =   g++-${FULL_PKGVERSION}
