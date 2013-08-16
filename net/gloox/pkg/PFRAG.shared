@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/07/28 14:20:50 sebastia Exp $
-@lib lib/libgloox.so.${LIBgloox_VERSION}

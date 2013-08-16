@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/28 14:20:50 sebastia Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2013/08/16 10:05:00 sthen Exp $
 bin/gloox-config
 include/gloox/
 include/gloox/adhoc.h
@@ -8,6 +7,7 @@ include/gloox/adhochandler.h
 include/gloox/amp.h
 include/gloox/annotations.h
 include/gloox/annotationshandler.h
+include/gloox/atomicrefcount.h
 include/gloox/attention.h
 include/gloox/base64.h
 include/gloox/bookmarkhandler.h
@@ -64,6 +64,10 @@ include/gloox/iqhandler.h
 include/gloox/jid.h
 include/gloox/lastactivity.h
 include/gloox/lastactivityhandler.h
+include/gloox/linklocal.h
+include/gloox/linklocalclient.h
+include/gloox/linklocalhandler.h
+include/gloox/linklocalmanager.h
 include/gloox/loghandler.h
 include/gloox/logsink.h
 include/gloox/macros.h
@@ -136,5 +140,6 @@ include/gloox/vcardupdate.h
 include/gloox/xhtmlim.h
 lib/libgloox.a
 lib/libgloox.la
+@lib lib/libgloox.so.${LIBgloox_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/gloox.pc

@@ -1,10 +1,10 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2010/07/28 14:20:50 sebastia Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2013/08/16 10:05:00 sthen Exp $
 
 do not hardocde the make
 
---- Makefile.in.orig	Mon Jul 26 16:17:22 2010
-+++ Makefile.in	Mon Jul 26 16:17:53 2010
-@@ -821,15 +821,15 @@ apidox:
+--- Makefile.in.orig	Sun Jul 21 20:18:16 2013
++++ Makefile.in	Fri Aug 16 11:04:50 2013
+@@ -875,15 +875,15 @@ apidox:
  check: test
  
  test:
