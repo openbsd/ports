@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_spectrum_util_cpp,v 1.1 2013/08/16 10:06:14 sthen Exp $
+--- src/spectrum_util.cpp.orig	Thu Aug 15 15:18:16 2013
++++ src/spectrum_util.cpp	Thu Aug 15 15:25:25 2013
+@@ -146,10 +146,16 @@ void process_mem_usage(double& vm_usage, double& resid
+ 	int pagesize,cnt;
+ 
+ 	size = sizeof(pagesize);
+-	sysctlbyname("hw.pagesize", &pagesize, &size, NULL, 0);
++	mib[0] = CTL_HW;
++	mib[1] = HW_PAGESIZE;
++	if (sysctl((int*)mib, 2, &pagesize, &size, NULL, 0) == -1) {
++		vm_usage = 0;
++		resident_set = 0;
++		return;
++	}
+ 
+-	resident_set = (double) (proc.ki_rssize * pagesize / 1024);
+-	vm_usage = (double) proc.ki_size;
++	resident_set = (double) (proc.p_vm_rssize * pagesize / 1024);
++	vm_usage = (double) proc.p_vm_tsize + proc.p_vm_dsize + proc.p_vm_ssize;
+ }
+ #else /* BSD */
+ void process_mem_usage(double& vm_usage, double& resident_set) {

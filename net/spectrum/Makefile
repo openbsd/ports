@@ -1,28 +1,28 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/19 23:15:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2013/08/16 10:06:13 sthen Exp $
 
 COMMENT =	XMPP transport/gateway
 
-DISTNAME =	spectrum-1.4.7
-REVISION =	3
+DISTNAME =	spectrum-1.4.8
 CATEGORIES =	net
 
 HOMEPAGE =	http://spectrum.im/
-MASTER_SITES =	${HOMEPAGE}/attachments/download/37/
+MASTER_SITES =	https://github.com/downloads/hanzz/libtransport/
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c m pthread stdc++ gloox purple glib-2.0 gthread-2.0 event
-WANTLIB += PocoData PocoFoundation PocoMySQL PocoODBC PocoSQLite Magick++
+WANTLIB += c m pthread stdc++ gloox purple glib-2.0 gthread-2.0 ev
+WANTLIB += PocoData PocoFoundation PocoDataMySQL PocoDataODBC PocoDataSQLite
+WANTLIB += Magick++
 
 MODULES =	lang/python devel/cmake
 
-LIB_DEPENDS =	net/py-xmpppy \
+LIB_DEPENDS =	devel/libev \
+		graphics/ImageMagick \
 		net/gloox \
 		net/pidgin,-libpurple \
-		net/poco \
-		graphics/ImageMagick
+		net/poco
 RUN_DEPENDS =	net/py-xmpppy
 
 SPVARDIR =	/var/spectrum

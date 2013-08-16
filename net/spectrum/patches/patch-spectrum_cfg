@@ -1,9 +1,9 @@
-$OpenBSD: patch-spectrum_cfg,v 1.2 2011/01/10 18:34:31 sebastia Exp $
+$OpenBSD: patch-spectrum_cfg,v 1.3 2013/08/16 10:06:14 sthen Exp $
 
 Fix paths in var for OpenBSD usage
 
---- spectrum.cfg.orig	Tue Dec 28 17:58:40 2010
-+++ spectrum.cfg	Thu Jan  6 17:12:20 2011
+--- spectrum.cfg.orig	Sat Jun 11 14:17:44 2011
++++ spectrum.cfg	Thu Aug 15 15:16:05 2013
 @@ -30,7 +30,7 @@ password=secret
  # component port
  port=5347
@@ -31,7 +31,7 @@ Fix paths in var for OpenBSD usage
  
  # require_tls to connect legacy network
  #require_tls=false
-@@ -154,11 +154,11 @@ type=sqlite
+@@ -160,11 +160,11 @@ type=sqlite
  #password=password
  # sqlite: set path to database file here
  # mysql: set to name of database
