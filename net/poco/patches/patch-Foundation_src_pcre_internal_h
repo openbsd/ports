@@ -1,9 +1,6 @@
-$OpenBSD: patch-Foundation_src_pcre_internal_h,v 1.1 2013/03/19 23:13:50 sthen Exp $
-
-http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/dev-libs/poco/files/poco-1.4.4-patch-for-libpcre-8.32.patch
-
---- Foundation/src/pcre_internal.h.orig	Thu Dec 16 05:43:25 2010
-+++ Foundation/src/pcre_internal.h	Tue Mar 19 22:19:37 2013
+$OpenBSD: patch-Foundation_src_pcre_internal_h,v 1.2 2013/08/16 10:05:55 sthen Exp $
+--- Foundation/src/pcre_internal.h.orig	Tue Mar 19 21:09:11 2013
++++ Foundation/src/pcre_internal.h	Tue Mar 19 21:36:16 2013
 @@ -1109,6 +1109,17 @@ typedef struct {
  } ucp_type_table;
  

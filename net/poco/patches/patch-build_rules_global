@@ -1,9 +1,9 @@
-$OpenBSD: patch-build_rules_global,v 1.2 2013/03/19 22:17:07 sthen Exp $
+$OpenBSD: patch-build_rules_global,v 1.3 2013/08/16 10:05:55 sthen Exp $
 
 we do not want to build the debug libraries
 
---- build/rules/global.orig	Thu Dec 16 05:43:24 2010
-+++ build/rules/global	Tue Mar 19 22:16:26 2013
+--- build/rules/global.orig	Wed Mar  6 19:45:52 2013
++++ build/rules/global	Tue Mar 19 17:12:36 2013
 @@ -200,13 +200,13 @@ LINKMODE = BOTH
  endif
  

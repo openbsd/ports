@@ -1,11 +1,11 @@
-$OpenBSD: patch-Foundation_src_Environment_UNIX_cpp,v 1.3 2013/03/19 23:13:50 sthen Exp $
+$OpenBSD: patch-Foundation_src_Environment_UNIX_cpp,v 1.4 2013/08/16 10:05:55 sthen Exp $
 
 prefer sysconf; we don't have sysctlbyname.
 https://github.com/pocoproject/poco/issues/130
 
---- Foundation/src/Environment_UNIX.cpp.orig	Thu Dec 16 05:43:25 2010
-+++ Foundation/src/Environment_UNIX.cpp	Tue Mar 19 22:19:21 2013
-@@ -128,7 +128,11 @@ std::string EnvironmentImpl::nodeNameImpl()
+--- Foundation/src/Environment_UNIX.cpp.orig	Wed Mar  6 19:45:52 2013
++++ Foundation/src/Environment_UNIX.cpp	Tue Mar 19 17:14:38 2013
+@@ -133,7 +133,11 @@ std::string EnvironmentImpl::nodeNameImpl()
  
  unsigned EnvironmentImpl::processorCountImpl()
  {
@@ -18,7 +18,7 @@ https://github.com/pocoproject/poco/issues/130
  	unsigned count;
  	std::size_t size = sizeof(count);
  	if (sysctlbyname("hw.ncpu", &count, &size, 0, 0))
-@@ -137,10 +141,6 @@ unsigned EnvironmentImpl::processorCountImpl()
+@@ -142,10 +146,6 @@ unsigned EnvironmentImpl::processorCountImpl()
  		return count;
  #elif POCO_OS == POCO_OS_HPUX
  	return pthread_num_processors_np();
