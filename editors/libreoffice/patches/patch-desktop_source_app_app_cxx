@@ -1,7 +1,16 @@
-$OpenBSD: patch-desktop_source_app_app_cxx,v 1.3 2013/06/21 06:07:58 robert Exp $
---- desktop/source/app/app.cxx.orig.port	Fri Jun 21 00:00:29 2013
-+++ desktop/source/app/app.cxx	Thu Jun 20 23:58:35 2013
-@@ -631,7 +631,7 @@ void Desktop::DeInit()
+$OpenBSD: patch-desktop_source_app_app_cxx,v 1.4 2013/08/17 10:19:15 pascal Exp $
+--- desktop/source/app/app.cxx.orig.port	Tue Jun 11 11:33:38 2013
++++ desktop/source/app/app.cxx	Thu Jul 18 10:49:52 2013
+@@ -104,6 +104,8 @@
+ #include <sys/wait.h>
+ #endif
+ 
++#include <unistd.h>
++
+ #ifdef WNT
+ #ifdef _MSC_VER
+ #pragma warning(push, 1) /* disable warnings within system headers */
+@@ -631,7 +633,7 @@ void Desktop::DeInit()
          // clear lockfile
          m_xLockfile.reset();
  

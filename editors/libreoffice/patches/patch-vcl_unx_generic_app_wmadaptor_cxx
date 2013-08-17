@@ -1,0 +1,11 @@
+$OpenBSD: patch-vcl_unx_generic_app_wmadaptor_cxx,v 1.1 2013/08/17 10:19:15 pascal Exp $
+--- vcl/unx/generic/app/wmadaptor.cxx.orig.port	Sat Jul 20 16:44:59 2013
++++ vcl/unx/generic/app/wmadaptor.cxx	Sat Jul 20 16:45:21 2013
+@@ -21,6 +21,7 @@
+ #include <string.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <unistd.h>
+ 
+ #include "sal/alloca.h"
+ #include "rtl/locale.h"
