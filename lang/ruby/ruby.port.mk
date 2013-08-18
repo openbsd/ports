@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.65 2013/06/12 11:03:07 sthen Exp $
+# $OpenBSD: ruby.port.mk,v 1.66 2013/08/18 21:05:20 zhuk Exp $
 
 # ruby module
 
@@ -24,7 +24,10 @@ MODRUBY_HANDLE_FLAVORS ?= No
 # If ruby.pork.mk should handle FLAVORs, define a separate FLAVOR
 # for each ruby interpreter
 .    if !defined(FLAVORS)
-FLAVORS?=		ruby18 ruby19 ruby20 rbx jruby
+FLAVORS=		ruby18 ruby19 ruby20 rbx
+.      if !${CONFIGURE_STYLE:L:Mext} && !${CONFIGURE_STYLE:L:Mextconf}
+FLAVORS+=		jruby
+.      endif
 .    endif
 
 # Instead of adding flavors to the end of the package name, we use
