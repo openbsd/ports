@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2013/08/07 03:33:00 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/08/18 05:19:30 bcallah Exp $
 @conflict tmw-*
 @conflict tmw-music-*
 @pkgpath games/tmw
@@ -82,6 +82,7 @@ share/manaplus/data/graphics/gui/dropdown.xml
 share/manaplus/data/graphics/gui/dropdown_background.xml
 share/manaplus/data/graphics/gui/dropdown_pressed.xml
 share/manaplus/data/graphics/gui/emote_selection.xml
+share/manaplus/data/graphics/gui/emotetabs.xml
 share/manaplus/data/graphics/gui/equipment.xml
 share/manaplus/data/graphics/gui/equipment_background.xml
 share/manaplus/data/graphics/gui/equipment_playerbox.xml
@@ -97,6 +98,7 @@ share/manaplus/data/graphics/gui/label.xml
 share/manaplus/data/graphics/gui/listbox.xml
 share/manaplus/data/graphics/gui/ministatus.xml
 share/manaplus/data/graphics/gui/mouse.png
+share/manaplus/data/graphics/gui/npc.xml
 share/manaplus/data/graphics/gui/ok.xml
 share/manaplus/data/graphics/gui/outfits.xml
 share/manaplus/data/graphics/gui/playerbox.xml
@@ -227,6 +229,7 @@ share/manaplus/data/themes/
 share/manaplus/data/themes/blacknblack/
 share/manaplus/data/themes/blacknblack/bubble.png
 share/manaplus/data/themes/blacknblack/colors.xml
+share/manaplus/data/themes/blacknblack/emotetabs.xml
 share/manaplus/data/themes/blacknblack/info.xml
 share/manaplus/data/themes/blacknblack/mouse.png
 share/manaplus/data/themes/blacknblack/window.png
@@ -245,6 +248,7 @@ share/manaplus/data/themes/enchilado/colors.xml
 share/manaplus/data/themes/enchilado/equipment.xml
 share/manaplus/data/themes/enchilado/info.xml
 share/manaplus/data/themes/enchilado/inventory.xml
+share/manaplus/data/themes/enchilado/npc.xml
 share/manaplus/data/themes/enchilado/ok.xml
 share/manaplus/data/themes/enchilado/outfits.xml
 share/manaplus/data/themes/enchilado/popup.xml
@@ -281,6 +285,7 @@ share/manaplus/data/themes/jewelry/dropdown_background.xml
 share/manaplus/data/themes/jewelry/dropdown_pressed.xml
 share/manaplus/data/themes/jewelry/drops.xml
 share/manaplus/data/themes/jewelry/emotes.xml
+share/manaplus/data/themes/jewelry/emotetabs.xml
 share/manaplus/data/themes/jewelry/equipment.xml
 share/manaplus/data/themes/jewelry/equipment_background.xml
 share/manaplus/data/themes/jewelry/equipmentbox.png
@@ -351,6 +356,7 @@ share/manaplus/data/themes/jewelry/windowmenu.xml
 share/manaplus/data/themes/jewelry/world.xml
 share/manaplus/data/themes/mana/
 share/manaplus/data/themes/mana/colors.xml
+share/manaplus/data/themes/mana/emotetabs.xml
 share/manaplus/data/themes/mana/info.xml
 share/manaplus/data/themes/mana/mouse.png
 share/manaplus/data/themes/mana/npc.xml
@@ -363,6 +369,7 @@ share/manaplus/data/themes/pink/colors.xml
 share/manaplus/data/themes/pink/equipment.xml
 share/manaplus/data/themes/pink/info.xml
 share/manaplus/data/themes/pink/inventory.xml
+share/manaplus/data/themes/pink/npc.xml
 share/manaplus/data/themes/pink/ok.xml
 share/manaplus/data/themes/pink/outfits.xml
 share/manaplus/data/themes/pink/popup.xml
@@ -404,6 +411,7 @@ share/manaplus/data/themes/wood/info.xml
 share/manaplus/data/themes/wood/inventory.xml
 share/manaplus/data/themes/wood/item_shortcut_bgr.png
 share/manaplus/data/themes/wood/mouse.png
+share/manaplus/data/themes/wood/npc.xml
 share/manaplus/data/themes/wood/ok.xml
 share/manaplus/data/themes/wood/outfits.xml
 share/manaplus/data/themes/wood/popup.xml
