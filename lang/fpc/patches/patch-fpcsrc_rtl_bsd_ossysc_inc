@@ -1,15 +1,16 @@
-$OpenBSD: patch-fpcsrc_rtl_bsd_ossysc_inc,v 1.1.1.1 2013/03/08 11:34:18 pascal Exp $
+$OpenBSD: patch-fpcsrc_rtl_bsd_ossysc_inc,v 1.2 2013/08/18 09:21:59 pascal Exp $
 
-Correct last parameter to getdirentries(2)
-http://svn.freepascal.org/cgi-bin/viewvc.cgi?view=revision&revision=23223
+Correct return value for getdents(2).
 
---- fpcsrc/rtl/bsd/ossysc.inc.orig	Thu Jul 26 20:34:03 2012
-+++ fpcsrc/rtl/bsd/ossysc.inc	Thu Jul 26 20:34:16 2012
-@@ -223,7 +223,7 @@ with blockmode have this higher?}
+--- fpcsrc/rtl/bsd/ossysc.inc.orig	Sun Jun  3 00:35:30 2012
++++ fpcsrc/rtl/bsd/ossysc.inc	Sat Aug 17 10:52:03 2013
+@@ -222,8 +222,8 @@ with blockmode have this higher?}
+ 
  function readbuffer:longint;
  
- var retval :longint;
+-var retval :longint;
 -    basep : clong;
++var retval : cint;
 +    basep : off_t;
  begin
  {$ifdef USE_GETDIRENTRIES_SYSCALL}

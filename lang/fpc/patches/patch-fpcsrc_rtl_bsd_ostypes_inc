@@ -1,0 +1,73 @@
+$OpenBSD: patch-fpcsrc_rtl_bsd_ostypes_inc,v 1.1 2013/08/18 09:21:59 pascal Exp $
+
+Adjust for struct changes.
+
+--- fpcsrc/rtl/bsd/ostypes.inc.orig	Sun Apr 22 22:13:48 2012
++++ fpcsrc/rtl/bsd/ostypes.inc	Sat Aug 17 11:13:38 2013
+@@ -63,6 +63,9 @@ TYPE
+ 
+   { file characteristics services }
+    stat    = record { the types are real}
++{$ifdef openbsd}
++        st_mode       : mode_t;            // inode protection mode
++{$endif}
+         st_dev        : dev_t;             // inode's device
+ {$ifdef darwinarm}
+         st_mode       : mode_t;            // inode protection mode
+@@ -75,16 +78,15 @@ TYPE
+         st_ino        : ino_t;             // inode's number
+ {$else not netbsd}
+         st_ino        : ino_t;             // inode's number
++{$ifndef openbsd}
+         st_mode       : mode_t;            // inode protection mode
++{$endif}
+ {$endif not netbsd}
+         st_nlink      : nlink_t;           // number of hard links
+ {$endif}
+         st_uid        : uid_t;             // user ID of the file's owner
+         st_gid        : gid_t;             // group ID of the file's group
+         st_rdev       : dev_t;             // device type
+-{$ifdef openbsd}
+-        st_padd0      : cint;
+-{$endif}
+         st_atime      : time_t;            // time of last access
+         st_atimensec  : clong;             // nsec of last access
+         st_mtime      : time_t;            // time of last data modification
+@@ -121,10 +123,16 @@ TYPE
+   { directory services }
+ {$ifndef darwinarm}
+    dirent  = record
+-        d_fileno      : cuint32;                        // file number of entry
++        d_fileno      : ino_t;                        // file number of entry
++{$ifdef openbsd}
++	d_off         : off_t;
++{$endif}
+         d_reclen      : cuint16;                        // length of this record
+         d_type        : cuint8;                         // file type, see below
+         d_namlen      : cuint8;                         // length of string in d_name
++{$ifdef openbsd}
++	d_padding     : array[1..4] of cuint8;
++{$endif}
+         d_name        : array[0..(255 + 1)-1] of char;  // name must be no longer than this
+    end;
+ {$else not darwinarm}
+@@ -149,6 +157,11 @@ TYPE
+         dd_size   : clong;        // amount of data returned by getdirentries
+         dd_buf    : pchar;        // data buffer
+         dd_len    : cint;         // size of data buffer
++{$ifdef openbsd}
++	dd_curpos : off_t;
++	dd_lock   : pointer;
++	dd_rewind : clong;
++{$else}
+ {$ifdef netbsdpowerpc}
+         dd_pad1   : cint;
+         dd_seek   : cint64;        // magic cookie returned by getdirentries
+@@ -161,6 +174,7 @@ TYPE
+         __dd_lock : pthread_mutex_t; // for thread locking
+         __dd_td : pointer;        // telldir position recording
+ {$endif}
++{$endif not openbsd}
+    end;
+    TDir    = dir;
+    pDir    = ^dir;
