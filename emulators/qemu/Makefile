@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.108 2013/07/18 20:20:18 brad Exp $
+# $OpenBSD: Makefile,v 1.109 2013/08/19 05:28:20 brad Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64
 
 COMMENT=	multi system emulator
 
 DISTNAME=	qemu-1.5.1
+REVISION=	0
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 EXTRACT_SUFX=	.tar.bz2
@@ -47,7 +48,7 @@ EXTRA_LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 # until the system headers are fixed properly.
 EXTRA_CFLAGS+=	-Wno-redundant-decls
 
-EXTRA_CFLAGS+=	-DTIME_MAX=INT_MAX
+EXTRA_CFLAGS+=	-DTIME_MAX=LLONG_MAX
 
 VMEM_WARNING=	Yes
 
