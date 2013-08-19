@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/08/06 18:10:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2013/08/19 19:13:16 jasper Exp $
 
 COMMENT=		libvirt wrapper suited for GObject-based applications
 
@@ -19,7 +19,8 @@ MASTER_SITES=		ftp://libvirt.org/libvirt/glib/
 PERMIT_PACKAGE_CDROM=   Yes
 
 MODULES=		devel/gettext \
-			lang/python
+			lang/python \
+			textproc/intltool
 
 WANTLIB += avahi-client avahi-common crypto curl dbus-1 ffi gcrypt
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnutls gobject-2.0
