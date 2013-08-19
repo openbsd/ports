@@ -1,10 +1,33 @@
-$OpenBSD: patch-src_Plugins_Monitors_Weather_hs,v 1.1 2012/01/12 21:42:07 dcoppa Exp $
+$OpenBSD: patch-src_Plugins_Monitors_Weather_hs,v 1.2 2013/08/19 12:02:07 dcoppa Exp $
+
+commit fd17a73ec470807adf1b21b6e328642f1a912aee
+Author: Sergei Trofimovich <slyfox@gentoo.org>
+Date:   Sun Aug 11 19:18:44 2013 +0300
+
+Plugins.Monitors.Weather: fix parsing of unknown station name
+
 
 Use lynx(1) from base instead of curl
 
---- src/Plugins/Monitors/Weather.hs.orig	Thu Jan 12 11:26:16 2012
-+++ src/Plugins/Monitors/Weather.hs	Thu Jan 12 11:27:20 2012
-@@ -114,7 +114,7 @@ defUrl = "http://weather.noaa.gov/pub/data/observation
+--- src/Plugins/Monitors/Weather.hs.orig	Wed Jun  5 00:37:16 2013
++++ src/Plugins/Monitors/Weather.hs	Mon Aug 19 13:43:26 2013
+@@ -91,9 +91,12 @@ pPressure = do manyTill anyChar $ char '('
+ 
+ parseData :: Parser [WeatherInfo]
+ parseData =
+-    do st <- getAllBut ","
+-       space
+-       ss <- getAllBut "("
++    do (st, ss) <- try (string "Station name not available" >> return ("??", "??")) <|>
++                   (do st <- getAllBut ","
++                       space
++                       ss <- getAllBut "("
++                       return (st, ss)
++                   )
+        skipRestOfLine >> getAllBut "/"
+        (y,m,d,h) <- pTime
+        w <- getAfterString "Wind: "
+@@ -114,7 +117,7 @@ defUrl = "http://weather.noaa.gov/pub/data/observation
  
  getData :: String -> IO String
  getData url=
