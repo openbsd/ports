@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.36 2013/04/08 17:06:56 brad Exp $
---- configure.orig	Tue Mar 12 22:35:42 2013
-+++ configure	Wed Mar 13 01:50:12 2013
+$OpenBSD: patch-configure,v 1.37 2013/08/19 14:38:29 brad Exp $
+--- configure.orig	Thu May 30 18:54:00 2013
++++ configure	Wed Jun 12 16:02:21 2013
 @@ -1438,7 +1438,6 @@ HAVE_LIST="
      machine_ioctl_bt848_h
      machine_ioctl_meteor_h
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure,v 1.36 2013/04/08 17:06:56 brad Exp $
      MapViewOfFile
      memalign
      mkstemp
-@@ -3229,7 +3228,7 @@ case $target_os in
+@@ -3232,7 +3231,7 @@ case $target_os in
      openbsd|bitrig)
          disable symver
          SHFLAGS='-shared'
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.36 2013/04/08 17:06:56 brad Exp $
          SLIB_INSTALL_LINKS=
          oss_indev_extralibs="-lossaudio"
          oss_outdev_extralibs="-lossaudio"
-@@ -3516,7 +3515,7 @@ die_license_disabled version3 libvo_amrwbenc
+@@ -3519,7 +3518,7 @@ die_license_disabled version3 libvo_amrwbenc
  
  enabled version3 && { enabled gpl && enable gplv3 || enable lgplv3; }
  
@@ -27,7 +27,7 @@ $OpenBSD: patch-configure,v 1.36 2013/04/08 17:06:56 brad Exp $
  
  enable_pic() {
      enable pic
-@@ -4080,7 +4079,6 @@ enabled extra_warnings && check_cflags -Winline
+@@ -4079,7 +4078,6 @@ enabled extra_warnings && check_cflags -Winline
  # add some linker flags
  check_ldflags -Wl,--warn-common
  check_ldflags -Wl,-rpath-link=libpostproc:libswresample:libswscale:libavfilter:libavdevice:libavformat:libavcodec:libavutil:libavresample
@@ -35,7 +35,7 @@ $OpenBSD: patch-configure,v 1.36 2013/04/08 17:06:56 brad Exp $
  
  enabled xmm_clobber_test &&
      check_ldflags -Wl,--wrap,avcodec_open2              \
-@@ -4547,6 +4545,7 @@ pkgconfig_generate(){
+@@ -4546,6 +4544,7 @@ pkgconfig_generate(){
      version=$3
      libs=$4
      requires=$5
@@ -43,7 +43,7 @@ $OpenBSD: patch-configure,v 1.36 2013/04/08 17:06:56 brad Exp $
      enabled ${name#lib} || return 0
      mkdir -p $name
      cat <<EOF > $name/$name${build_suffix}.pc
-@@ -4561,7 +4560,7 @@ Version: $version
+@@ -4560,7 +4559,7 @@ Version: $version
  Requires: $(enabled shared || echo $requires)
  Requires.private: $(enabled shared && echo $requires)
  Conflicts:
@@ -52,7 +52,7 @@ $OpenBSD: patch-configure,v 1.36 2013/04/08 17:06:56 brad Exp $
  Libs.private: $(enabled shared && echo $libs)
  Cflags: -I\${includedir}
  EOF
-@@ -4597,15 +4596,15 @@ libavfilter_pc_deps=${libavfilter_pc_deps%, }
+@@ -4596,15 +4595,15 @@ libavfilter_pc_deps=${libavfilter_pc_deps%, }
  libavdevice_pc_deps="libavformat${build_suffix} = $LIBAVFORMAT_VERSION"
  enabled lavfi_indev && prepend libavdevice_pc_deps "libavfilter${build_suffix} = $LIBAVFILTER_VERSION,"
  
