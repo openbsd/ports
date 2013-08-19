@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.33 2013/07/04 08:11:09 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.34 2013/08/19 10:00:15 brad Exp $
 @pkgpath x11/vlc
 %%amd64%%
 %%i386%%
@@ -401,6 +401,13 @@ lib/vlc/plugins/visualization/libvisual_plugin.so
 @man man/man1/vlc-wrapper.1
 @man man/man1/vlc.1
 share/applications/vlc.desktop
+share/apps/
+share/apps/solid/
+share/apps/solid/actions/
+share/apps/solid/actions/vlc-openbd.desktop
+share/apps/solid/actions/vlc-opencda.desktop
+share/apps/solid/actions/vlc-opendvd.desktop
+share/apps/solid/actions/vlc-openvcd.desktop
 share/doc/vlc/
 share/doc/vlc/bugreport-howto.txt
 share/doc/vlc/fortunes.txt
@@ -426,12 +433,6 @@ share/icons/hicolor/32x32/apps/vlc.png
 share/icons/hicolor/32x32/apps/vlc.xpm
 share/icons/hicolor/48x48/apps/vlc-xmas.png
 share/icons/hicolor/48x48/apps/vlc.png
-share/apps/solid/
-share/apps/solid/actions/
-share/apps/solid/actions/vlc-openbd.desktop
-share/apps/solid/actions/vlc-opencda.desktop
-share/apps/solid/actions/vlc-opendvd.desktop
-share/apps/solid/actions/vlc-openvcd.desktop
 share/locale/ach/
 share/locale/ach/LC_MESSAGES/
 share/locale/ach/LC_MESSAGES/vlc.mo
@@ -494,6 +495,7 @@ share/locale/km/LC_MESSAGES/vlc.mo
 share/locale/kmr/
 share/locale/kmr/LC_MESSAGES/
 share/locale/kmr/LC_MESSAGES/vlc.mo
+share/locale/kn/LC_MESSAGES/vlc.mo
 share/locale/ko/LC_MESSAGES/vlc.mo
 share/locale/ky/LC_MESSAGES/vlc.mo
 share/locale/lg/LC_MESSAGES/vlc.mo
