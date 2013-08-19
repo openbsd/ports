@@ -1,0 +1,13 @@
+$OpenBSD: patch-timsort_h,v 1.3 2013/08/19 16:00:10 miod Exp $
+--- timsort.h.orig	Tue Sep 11 05:56:52 2012
++++ timsort.h	Mon Aug 19 15:55:13 2013
+@@ -40,7 +40,8 @@ typedef unsigned __int64 uint64_t;
+ int compute_minrun(uint64_t);
+ 
+ #ifndef CLZ
+-#ifdef __GNUC__
++#if defined(__GNUC__) && \
++    (__GNUC__ > 3 || (__GNUC__ == 3 && __GNUC_MINOR__ >= 4))
+ #define CLZ __builtin_clzll
+ #else
+ 
