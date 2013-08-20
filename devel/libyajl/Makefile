@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2013/08/07 21:57:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2013/08/20 10:44:34 dcoppa Exp $
 
 COMMENT =	small JSON library written in ANSI C
 
 V =		2.0.4
 PKGNAME =	libyajl-${V}
 DISTNAME =	lloyd-yajl-${V}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 

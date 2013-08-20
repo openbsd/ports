@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/07/16 08:09:13 dcoppa Exp $
-@lib lib/libyajl.so.${LIByajl_VERSION}
