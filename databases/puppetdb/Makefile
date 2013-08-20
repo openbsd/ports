@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/07/11 18:39:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2013/08/20 06:58:26 jasper Exp $
 
 COMMENT-main=	fast, scalable, and reliable data warehouse for Puppet
 COMMENT-plugin= PuppetDB terminus plugin
@@ -7,8 +7,8 @@ V=		1.3.2
 DISTNAME=	puppetdb-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-plugin= puppetdb-terminus-$V
-REVISION-main=	3
-REVISION-plugin= 0
+REVISION-main=	4
+REVISION-plugin=0
 CATEGORIES=	databases
 
 HOMEPAGE=	http://docs.puppetlabs.com/puppetdb/latest/
@@ -30,6 +30,7 @@ MULTI_PACKAGES= -main -plugin
 RUN_DEPENDS-plugin=sysutils/ruby-puppet/3
 
 RUN_DEPENDS-main=${BASE_PKGPATH},-plugin \
+		${MODJAVA_RUN_DEPENDS} \
 		java/javaPathHelper \
 		shells/bash
 
