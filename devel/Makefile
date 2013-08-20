@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1158 2013/08/12 12:01:14 pascal Exp $
+# $OpenBSD: Makefile,v 1.1159 2013/08/20 08:12:36 pascal Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -381,7 +381,6 @@
      SUBDIR += libslang
      SUBDIR += libsoup
      SUBDIR += libspectrum
-     SUBDIR += libstdc++-man
      SUBDIR += libtalloc
      SUBDIR += libtool
      SUBDIR += libunicode
