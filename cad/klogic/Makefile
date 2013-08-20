@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2013/06/24 15:53:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.28 2013/08/20 07:22:33 zhuk Exp $
 
 SHARED_ONLY=	Yes
 COMMENT= 	logic circuit simulator for KDE
 
 DISTNAME=	klogic-1.6
-REVISION=	7
+REVISION=	8
 CATEGORIES=	cad education x11 x11/kde
 
 MASTER_SITES=	http://distfiles.nl/
@@ -35,5 +35,11 @@ MODGNU_CONFIG_GUESS_DIRS= ${MODKDE_CONFIG_GUESS_DIRS}
 CONFIGURE_ARGS=	${MODKDE_CONFIGURE_ARGS}
 CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV}
 AUTOCONF_VERSION=	2.57
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
+	mv ${PREFIX}/share/icons/klogic/*.xpm ${PREFIX}/share/pixmaps/
+	rmdir ${PREFIX}/share/icons/klogic
+	rmdir ${PREFIX}/share/icons
 
 .include <bsd.port.mk>

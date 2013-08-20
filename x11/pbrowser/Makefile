@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:46:14 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2013/08/20 07:22:33 zhuk Exp $
 
 COMMENT=		graphical ports system frontend
 
 DISTNAME=	 	pb-browser-0.4
-REVISION=		9
+REVISION=		10
 CATEGORIES=		x11 sysutils
 
 MAINTAINER=		Igor Boehm <igor@bytelabs.org>
@@ -25,14 +25,14 @@ EXTRACT_SUFX=		.tgz
 MODULES=		devel/gettext
 LIB_DEPENDS=	        x11/gtk+2
 
-CFLAGS+=		-DIMAGEDIR=\"${PREFIX}/share/icons/pbrowser/\"
+CFLAGS+=		-DIMAGEDIR=\"${PREFIX}/share/pbrowser/icons/\"
 
 USE_GROFF =		Yes
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/pbrowser
-	${INSTALL_PROGRAM} ${WRKSRC}/src/pbrowser ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/pixmaps/* ${PREFIX}/share/icons/pbrowser
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pbrowser/icons
+	${INSTALL_PROGRAM} ${WRKBUILD}/src/pbrowser ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/pixmaps/* ${PREFIX}/share/pbrowser/icons
 	${INSTALL_MAN} ${WRKSRC}/src/pbrowser.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

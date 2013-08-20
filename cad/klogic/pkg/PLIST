@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:18:51 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/08/20 07:22:33 zhuk Exp $
 bin/klogic
 share/apps/
 share/apps/klogic/
@@ -108,10 +108,6 @@ share/doc/HTML/en/klogic/
 share/doc/HTML/en/klogic/common
 share/doc/HTML/en/klogic/index.cache.bz2
 share/doc/HTML/en/klogic/index.docbook
-share/icons/
-share/icons/klogic/
-share/icons/klogic/klogic.xpm
-share/icons/klogic/klogicf.xpm
 share/locale/
 share/locale/de/
 share/locale/de/LC_MESSAGES/
@@ -128,3 +124,6 @@ share/locale/it/LC_MESSAGES/klogic.mo
 share/locale/sv/
 share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/klogic.mo
+share/pixmaps/
+share/pixmaps/klogic.xpm
+share/pixmaps/klogicf.xpm
