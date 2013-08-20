@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/09 17:08:14 sthen Exp $
-@pkgpath /root/ueaglefw
-@pkgpath sysutils/ueagle-firmware
-@ask-update ueagle-firmware-<1.0 Make sure you have a matching kernel
-firmware/ueagle-dsp
-firmware/ueagleI
-firmware/ueagleII
-firmware/ueagleIII

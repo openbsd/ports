@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/08/06 23:44:55 jsg Exp $
+# $OpenBSD: Makefile,v 1.5 2013/08/20 09:19:29 mpi Exp $
 
      SUBDIR =
      SUBDIR += acx
@@ -13,7 +13,6 @@
      SUBDIR += radeondrm
      SUBDIR += rsu
      SUBDIR += uath
-     SUBDIR += ueagle
      SUBDIR += ulpt
      SUBDIR += upgt
      SUBDIR += urtwn
