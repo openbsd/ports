@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2013/06/20 06:54:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2013/08/20 22:30:36 zhuk Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,9 +9,10 @@ COMMENT-spamassassin=	spamassassin plugin
 
 V=			3.8.1
 DISTNAME=		claws-mail-${V}
-REVISION-main=		5
-REVISION-bogofilter=	4
-REVISION-spamassassin=	4
+REVISION-main=		6
+REVISION-bogofilter=	5
+REVISION-clamav=	0
+REVISION-spamassassin=	5
 PKGNAME-main=		${DISTNAME}
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
@@ -97,6 +98,7 @@ CONFIGURE_ARGS+=	--disable-jpilot
 
 .if ${FLAVOR:Mcompface}
 PERMIT_PACKAGE_CDROM=	No Fee
+PERMIT_PACKAGE_FTP=	Yes
 LIB_DEPENDS-main+=	mail/faces
 WANTLIB-main +=		compface>=1
 .else

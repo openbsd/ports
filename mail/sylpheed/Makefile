@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.101 2013/03/21 08:46:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.102 2013/08/20 22:30:37 zhuk Exp $
 
 COMMENT =		lightweight and user-friendly e-mail client
 
 DISTNAME =		sylpheed-3.2.0
+REVISION =		0
 
 SHARED_LIBS += 	 	sylph-0                   2.1 # 2.1
 SHARED_LIBS += 		sylpheed-plugin-0         2.1 # 2.1
@@ -49,7 +50,8 @@ FLAVOR?=
 LIB_DEPENDS+=		mail/faces
 WANTLIB+=		compface
 CONFIGURE_ARGS +=	--enable-compface
-PERMIT_PACKAGE_CDROM =  No fee
+PERMIT_PACKAGE_CDROM =	No fee
+PERMIT_PACKAGE_FTP =	Yes
 .else
 CONFIGURE_ARGS+=	--disable-compface
 .endif
