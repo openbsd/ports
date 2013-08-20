@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_gnm-so-path_c,v 1.2 2013/03/10 12:17:57 ajacoutot Exp $
---- src/gnm-so-path.c.orig	Sat Mar  2 22:21:08 2013
-+++ src/gnm-so-path.c	Sun Mar 10 11:18:15 2013
-@@ -31,6 +31,10 @@
+$OpenBSD: patch-src_gnm-so-path_c,v 1.3 2013/08/20 07:31:16 ajacoutot Exp $
+--- src/gnm-so-path.c.orig	Sat Jul 20 03:21:49 2013
++++ src/gnm-so-path.c	Tue Aug 20 09:03:19 2013
+@@ -32,6 +32,10 @@
  #include <gsf/gsf-impl-utils.h>
  #include <glib/gi18n-lib.h>
  
