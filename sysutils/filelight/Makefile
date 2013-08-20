@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2013/06/24 15:53:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.17 2013/08/20 22:05:59 zhuk Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	concentric segmented-rings disk usage visualisation
 
 DISTNAME=	filelight-1.0
-REVISION =	8
+REVISION =	9
 CATEGORIES=	sysutils x11/kde
 
 EXTRACT_SUFX=	.tar.bz2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2013/07/17 05:54:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2013/08/20 22:05:49 zhuk Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,6 +10,8 @@ GNOME_VERSION=		0.16.1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-editor=		dconf-editor-${GNOME_VERSION}
+
+REVISION-editor=	0
 
 SHARED_LIBS +=		dconf        1.0 # 1.0.0
 SHARED_LIBS +=		dconf-dbus-1 1.0 # 1.0.0
@@ -43,6 +45,7 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 
 BUILD_DEPENDS=		lang/vala
 
@@ -53,8 +56,7 @@ RUN_DEPENDS-main=	# empty
 LIB_DEPENDS-main=	devel/glib2 \
 			x11/dbus
 
-RUN_DEPENDS-editor=	${RUN_DEPENDS} \
-			devel/desktop-file-utils
+RUN_DEPENDS-editor=	${RUN_DEPENDS}
 LIB_DEPENDS-editor=	${MODGETTEXT_LIB_DEPENDS} \
 			${BASE_PKGPATH},-main=${GNOME_VERSION} \
 			x11/gtk+3

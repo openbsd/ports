@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:10:52 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/08/20 22:05:54 zhuk Exp $
 
 COMMENT =		fractal image generator
 
 DISTNAME =		gnofract4d-${MODPY_EGG_VERSION}
 MODPY_EGG_VERSION =	3.14
+REVISION =		0
 
 CATEGORIES =		graphics
 
@@ -18,7 +19,9 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gnofract4d/}
 
 BUILD_DEPENDS =		graphics/png
 MODULES =		lang/python
-RUN_DEPENDS =		x11/py-gtk2
+RUN_DEPENDS =		devel/desktop-file-utils \
+			misc/shared-mime-info \
+			x11/py-gtk2
 
 NO_TEST =		Yes
 

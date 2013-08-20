@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2011/04/10 18:01:13 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/08/20 22:05:50 zhuk Exp $
 @pkgpath devel/ddd,lesstif
 @bin bin/ddd
 @info info/ddd-themes.info
@@ -47,3 +47,5 @@ share/doc/ddd/ddd-themes.pdf
 share/doc/ddd/ddd.pdf
 share/doc/ddd/html/
 share/doc/ddd/html/ddd.html
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

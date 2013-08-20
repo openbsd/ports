@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/05/31 15:34:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2013/08/20 22:06:00 zhuk Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	music management and playback application for GNOME
 
 GNOME_VERSION=	2.6.1
 GNOME_PROJECT=	banshee
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	audio multimedia
 
@@ -46,7 +46,8 @@ COMMON_DEPENDS=	devel/mono-notify \
 BUILD_DEPENDS=	${COMMON_DEPENDS} \
 		devel/libmtp
 
-RUN_DEPENDS=	${COMMON_DEPENDS}
+RUN_DEPENDS=	${COMMON_DEPENDS} \
+		misc/shared-mime-info
 
 RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-good #libgstgconfelements
 RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-bad #bpmdetect (soundtouch)

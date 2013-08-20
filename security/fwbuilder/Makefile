@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/11 11:41:24 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2013/08/20 22:05:59 zhuk Exp $
 
 # Consumes more than 512MB on at least i386 when building qrc_MainRes.o
 VMEM_WARNING =	Yes
@@ -6,6 +6,7 @@ VMEM_WARNING =	Yes
 COMMENT =	firewall GUI
 DISTNAME =	fwbuilder-5.1.0.3599
 CATEGORIES =	net security
+REVISION =	0
 
 HOMEPAGE =	http://www.fwbuilder.org/
 
@@ -25,6 +26,9 @@ CONFIGURE_STYLE =	gnu
 BUILD_DEPENDS +=${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
 		devel/cppunit
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+2,-guic
+
 COPTS =		${DEBUG}
 
 CONFIGURE_ARGS +=	--with-docdir=${TRUEPREFIX}/share/doc/fwbuilder \

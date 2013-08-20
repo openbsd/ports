@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2013/04/24 08:34:45 zhuk Exp $
+# $OpenBSD: Makefile,v 1.11 2013/08/20 22:05:49 zhuk Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	RDF framework
 CATEGORIES =	databases devel textproc sysutils
 HOMEPAGE =	http://soprano.sourceforge.net/
 DISTNAME =	soprano-2.9.0
+REVISION =	0
 
 SHARED_LIBS =	soprano                   2.0
 SHARED_LIBS +=	sopranoclient             2.0
@@ -21,8 +22,6 @@ MODULES =	x11/kde4
 MODKDE4_USE =
 
 BUILD_DEPENDS =	devel/doxygen
-
-RUN_DEPENDS =	devel/desktop-file-utils
 
 LIB_DEPENDS = 	textproc/clucene \
 	    	databases/iodbc \

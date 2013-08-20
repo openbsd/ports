@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.48 2013/05/31 15:34:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2013/08/20 22:05:56 zhuk Exp $
 
 COMMENT=	GTK-based scientific calculator
 
 DISTNAME=	galculator-2.1.2
 CATEGORIES=	math
 HOMEPAGE=	http://galculator.sourceforge.net/
-REVISION=	0
+REVISION=	1
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -27,7 +27,8 @@ WANTLIB=	ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
 MODULES=	devel/gettext \
 		textproc/intltool
 
-RUN_DEPENDS=	devel/desktop-file-utils
+RUN_DEPENDS=	devel/desktop-file-utils \
+		x11/gtk+2,-guic
 LIB_DEPENDS=	x11/gtk+3
 
 SEPARATE_BUILD=	Yes

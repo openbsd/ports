@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/06/26 18:58:38 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/08/20 22:05:53 zhuk Exp $
 @bin bin/connectagram
 share/applications/connectagram.desktop
 share/connectagram/
@@ -24,7 +24,6 @@ share/icons/hicolor/256x256/apps/connectagram.png
 share/icons/hicolor/32x32/apps/connectagram.png
 share/icons/hicolor/48x48/apps/connectagram.png
 share/icons/hicolor/64x64/apps/connectagram.png
-@unexec-delete %D/bin/update-desktop-database
 share/icons/hicolor/scalable/apps/connectagram.svg
 share/pixmaps/
 share/pixmaps/connectagram.xpm

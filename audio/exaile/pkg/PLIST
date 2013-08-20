@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2013/04/03 06:49:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2013/08/20 22:05:47 zhuk Exp $
 bin/exaile
 lib/python${MODPY_VERSION}/site-packages/exaile/
 lib/python${MODPY_VERSION}/site-packages/exaile/exaile.py
@@ -1116,8 +1116,6 @@ share/exaile/data/ui/widgets/volume_control.ui
 share/exaile/xdg/
 share/exaile/xdg/exaile/
 share/exaile/xdg/exaile/settings.ini
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
 share/locale/ar/LC_MESSAGES/exaile.mo
 share/locale/ast/LC_MESSAGES/exaile.mo
 share/locale/be/LC_MESSAGES/exaile.mo

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.45 2013/03/10 22:55:02 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2013/08/20 22:05:47 zhuk Exp $
 
 COMMENT=	GTK+2 program to synchronize an Apple iPod
 DISTNAME=	gtkpod-1.0.0
-REVISION =	1
+REVISION =	2
 CATEGORIES=	audio x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtkpod/}
 
@@ -24,7 +24,8 @@ USE_GMAKE=	Yes
 
 #libmp4v2 is dlopen()'ed at runtime
 RUN_DEPENDS=	devel/desktop-file-utils \
-		multimedia/libmp4v2
+		multimedia/libmp4v2 \
+		x11/gtk+2,-guic
 
 LIB_DEPENDS=	audio/libid3tag \
 		audio/libgpod \

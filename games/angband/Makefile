@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/11 11:07:37 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/08/20 22:05:52 zhuk Exp $
 # Original from: Robert Ruehlmann
 
 COMMENT=		rogue-like game with X11 support
@@ -9,6 +9,7 @@ V_DLDIR =		${V:C/\.[0-9]$//}
 DISTNAME=		angband-v${V}
 PKGNAME=		angband-${V}
 CATEGORIES=     	games
+REVISION=		0
 
 HOMEPAGE=		http://rephial.org
 
@@ -36,6 +37,8 @@ USE_GMAKE =		Yes
 FLAVORS=		no_x11 sdl
 FLAVOR?=
 
+RUN_DEPENDS =		devel/desktop-file-utils
+
 .if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+=	--without-x
 .else
@@ -50,7 +53,6 @@ PKG_ARGS +=		-Dsdl=1
 LIB_DEPENDS +=		devel/sdl-mixer \
 			devel/sdl-image \
 			devel/sdl-ttf
-RUN_DEPENDS +=		devel/desktop-file-utils
 WANTLIB +=		SDL SDL_image SDL_mixer SDL_ttf pthread	
 .else
 CONFIGURE_ARGS +=	--disable-sdl-mixer	# defaults to ON

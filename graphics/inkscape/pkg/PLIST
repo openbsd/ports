@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/04/07 10:37:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/08/20 22:05:55 zhuk Exp $
 @bin bin/inkscape
 @bin bin/inkview
 man/fr/
@@ -921,3 +921,5 @@ share/locale/zh_CN/LC_MESSAGES/inkscape.mo
 share/locale/zh_TW/LC_MESSAGES/inkscape.mo
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

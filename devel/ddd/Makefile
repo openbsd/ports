@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.63 2013/03/21 08:45:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2013/08/20 22:05:49 zhuk Exp $
 
 COMMENT=	Data Display Debugger, graphical front-end for GDB, etc
 
 DISTNAME=	ddd-3.3.12
-REVISION=	4
+REVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=ddd/}
 
@@ -18,6 +18,7 @@ WANTLIB=	ICE SM X11 Xaw Xau Xdmcp Xext Xmu Xpm Xt c m z stdc++ \
 
 MODULES=	converters/libiconv
 
+RUN_DEPENDS=	devel/desktop-file-utils
 LIB_DEPENDS=	x11/openmotif
 
 TEST_IS_INTERACTIVE=x11

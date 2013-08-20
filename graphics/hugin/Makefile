@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2013/05/14 22:55:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2013/08/20 22:05:55 zhuk Exp $
 
 BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 
@@ -9,7 +9,7 @@ COMMENT =		panorama image stitcher
 
 DISTNAME =		hugin-2011.4.0
 EXTRACT_SUFX =		.tar.bz2
-REVISION =		2
+REVISION =		3
 
 # not needed for releases, but makes RCs/betas easier to work with
 PKGNAME =		${DISTNAME:S/_//:L}
@@ -48,7 +48,10 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=hugin/}
 RUN_DEPENDS =		devel/desktop-file-utils \
 			graphics/enblend-enfuse \
 			graphics/p5-Image-ExifTool \
+			misc/shared-mime-info \
+			x11/gtk+2,-guic \
 			devel/gmake # yes, really a RUN_DEPENDS
+
 LIB_DEPENDS =		devel/boost \
 			graphics/exiv2>=0.12 \
 			graphics/glew \

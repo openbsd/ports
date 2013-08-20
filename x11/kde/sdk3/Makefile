@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2013/07/08 14:03:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.64 2013/08/20 22:06:00 zhuk Exp $
 
 COMMENT-main = 		K Desktop Environment, developer extensions
 COMMENT-svn = 		K Desktop Environment, svn extensions
@@ -7,9 +7,9 @@ VERSION =		3.5.10
 DISTNAME =		kdesdk-${VERSION}
 
 PKGNAME-main =		${DISTNAME}
-REVISION-main =		13
+REVISION-main =		14
 PKGNAME-svn =		kdesvn-${VERSION}
-REVISION-svn =		12
+REVISION-svn =		13
 
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	cvsservice           1.0      # .0.1

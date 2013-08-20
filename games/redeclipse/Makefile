@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/29 01:50:53 jsg Exp $
+# $OpenBSD: Makefile,v 1.2 2013/08/20 22:05:53 zhuk Exp $
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -14,7 +14,8 @@ MULTI_PACKAGES=	-main -data
 
 N=		redeclipse
 V=		1.4
-REVISION=	1
+REVISION-main=	2
+REVISION-data=	2
 PKGNAME=	${N}-${V}
 PKGNAME-main=	${N}-${V}
 PKGNAME-data=	${N}-data-${V}

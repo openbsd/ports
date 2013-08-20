@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2013/07/02 07:13:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.88 2013/08/20 22:06:00 zhuk Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	archive manager utility for GNOME
 
 GNOME_PROJECT=	file-roller
 GNOME_VERSION=	3.8.3
+REVISION=	0
 
 CATEGORIES=	archivers
 
@@ -43,6 +44,7 @@ LIB_DEPENDS=	archivers/libarchive \
 
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 
 post-install:
 	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.{a,la}

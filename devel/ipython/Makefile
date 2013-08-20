@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2013/06/06 08:49:55 edd Exp $
+# $OpenBSD: Makefile,v 1.22 2013/08/20 22:05:50 zhuk Exp $
 
 COMMENT=		enhanced interactive Python shell
 
 MODPY_EGG_VERSION=	0.13.2
 DISTNAME=		ipython-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
+REVISION=		0
 
 HOMEPAGE=		http://ipython.org/
 
@@ -16,9 +17,10 @@ MODULES=		lang/python
 # sympy is also optional.
 # There are a bunch of other event loops which are used in rare cases.
 # These can be soft dependencies too.
-RUN_DEPENDS =		textproc/py-pygments \
-			graphics/py-matplotlib>=1.2.0 \
+RUN_DEPENDS =		devel/desktop-file-utils \
 			net/py-zmq \
+			graphics/py-matplotlib>=1.2.0 \
+			textproc/py-pygments \
 			www/py-tornado
 TEST_DEPENDS =		devel/py-nose
 BUILD_DEPENDS =		textproc/py-sphinx \

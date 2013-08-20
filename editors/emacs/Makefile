@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2013/06/04 18:41:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2013/08/20 22:05:51 zhuk Exp $
 
 BROKEN-hppa =		Invalid function: "DEAD"
 
@@ -6,6 +6,7 @@ COMMENT=		GNU editor: extensible, customizable, self-documenting
 
 VERSION=		24.3
 DISTNAME=		emacs-${VERSION}
+REVISION=		0
 
 CATEGORIES=		editors
 
@@ -42,6 +43,7 @@ MAKE_ENV=		INSTALL_EMACS="${INSTALL_SCRIPT}" \
 SUBST_VARS=		GCCARCH VERSION
 
 MODULES=		devel/gettext
+RUN_DEPENDS=		devel/desktop-file-utils x11/gtk+2,-guic
 LIB_DEPENDS=		devel/libexecinfo security/gnutls textproc/libxml
 
 .if ${FLAVOR} == "no_x11"

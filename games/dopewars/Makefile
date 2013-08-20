@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.58 2013/03/21 08:45:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2013/08/20 22:05:52 zhuk Exp $
 
 COMMENT=	game where you deal drugs on the streets of NY
 
 DISTNAME=	dopewars-1.5.12
-REVISION=	9
+REVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dopewars/}
 
@@ -17,7 +17,6 @@ WANTLIB += c glib-2.0 ncurses
 MODULES+=	devel/gettext
 
 LIB_DEPENDS+=   devel/glib2
-RUN_DEPENDS+=   devel/desktop-file-utils
 
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/games
 

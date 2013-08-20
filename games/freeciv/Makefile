@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2013/05/31 15:34:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.96 2013/08/20 22:05:52 zhuk Exp $
 
 COMMENT-main=	Civilization clone for X11; multiplayer; game server
 COMMENT-client=	Freeciv client
@@ -12,7 +12,7 @@ PKGNAME-share=	freeciv-share-${VERSION}
 CATEGORIES=	games
 HOMEPAGE=	http://www.freeciv.org/
 
-REVISION-main=	0
+REVISION-main=	1
 REVISION-client=0
 
 # GPLv2+
@@ -67,7 +67,9 @@ RUN_DEPENDS-client= devel/desktop-file-utils \
 		    freeciv-share-${VERSION}:${BUILD_PKGPATH},-share \
 		    x11/gtk+2,-guic
 
-RUN_DEPENDS-main=   freeciv-share-${VERSION}:${BUILD_PKGPATH},-share
+RUN_DEPENDS-main=   freeciv-share-${VERSION}:${BUILD_PKGPATH},-share \
+		    devel/desktop-file-utils \
+		    x11/gtk+2,-guic
 
 USE_GMAKE=	Yes
 USE_LIBTOOL =	No

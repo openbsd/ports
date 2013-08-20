@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/08/07 21:32:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2013/08/20 22:05:56 zhuk Exp $
 
 COMMENT =		RAW image processing application
 
 DISTNAME =		rawtherapee-4.0.9
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		graphics
 
@@ -28,7 +28,8 @@ EXTRACT_SUFX = 		.tar.xz
 
 MODULES =		devel/cmake \
 			devel/gettext
-RUN_DEPENDS =		devel/desktop-file-utils
+RUN_DEPENDS =		devel/desktop-file-utils \
+			x11/gtk+2,-guic
 
 LIB_DEPENDS =		devel/libsigc++-2 \
 			graphics/libiptcdata \

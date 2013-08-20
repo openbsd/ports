@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/08/07 21:32:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2013/08/20 22:05:56 zhuk Exp $
 
 COMMENT =	japanese input engine for ibus
 
@@ -27,7 +27,9 @@ MODULES =	devel/gettext \
 
 BUILD_DEPENDS =	devel/gobject-introspection \
 		inputmethods/ibus>=1.5.0
-RUN_DEPENDS =	inputmethods/ibus>=1.5.0
+RUN_DEPENDS =	devel/desktop-file-utils \
+		inputmethods/ibus>=1.5.0 \
+		x11/gtk+2,-guic
 LIB_DEPENDS =	inputmethods/anthy
 
 USE_GMAKE =	Yes
