@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-libs,v 1.5 2013/08/21 13:20:13 ajacoutot Exp $
-@conflict hplip-3.13.7p4
+@comment $OpenBSD: PLIST-libs,v 1.6 2013/08/21 13:43:12 ajacoutot Exp $
+@conflict hplip-<3.13.7p4
 @extraunexec rm -rf /var/log/hp/tmp/*
 @extraunexec rm -f /var/log/hp/* 2>/dev/null || true
 @newgroup _cups:541
