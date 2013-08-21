@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.91 2013/08/21 14:15:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.92 2013/08/21 14:51:40 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT-main=		HP Unix imaging and printing
+COMMENT-main=		HP Linux Imaging and Printing
 COMMENT-hpaio=		HP sane(7) scanner backend
 COMMENT-hpijs=		HP ghostscript driver (spooler independent)
 COMMENT-hpcups=		HP native CUPS driver
-COMMENT-libs=		HPLIP backend libraries
+COMMENT-common=		HPLIP applications common files
 COMMENT-gui=		HPLIP graphical tools
 
 V=			3.13.7
@@ -17,15 +17,15 @@ PKGNAME-main=		${DISTNAME}
 PKGNAME-hpaio=		hpaio-${V}
 PKGNAME-hpijs=		hpijs-${V}
 PKGNAME-hpcups=		hpcups-${V}
-PKGNAME-libs=		hplip-libs-${V}
+PKGNAME-common=		hplip-common-${V}
 PKGNAME-gui=		hplip-gui-${V}
 
-REVISION-main=		6
-REVISION-hpijs=		2
-REVISION-hpcups=	3
-REVISION-libs=		4
-REVISION-gui=		2
-REVISION-hpaio=		0
+REVISION-main=		7
+REVISION-hpijs=		3
+REVISION-hpcups=	4
+REVISION-common=	6
+REVISION-gui=		3
+REVISION-hpaio=		1
 
 SHARED_LIBS +=  hpmud		2.0 # 0.6
 SHARED_LIBS +=  hpip		2.0 # 0.1
@@ -41,7 +41,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hplip/}
 
-MULTI_PACKAGES= 	-main -hpaio -hpijs -hpcups -libs -gui
+MULTI_PACKAGES= 	-main -hpaio -hpijs -hpcups -common -gui
 
 MODULES=		devel/gettext \
 			lang/python
@@ -58,7 +58,7 @@ WANTLIB-main += wind z
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			print/cups,-libs \
-			print/hplip,-libs
+			print/hplip,-common
 
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS} \
 			${MODGETTEXT_RUN_DEPENDS} \
@@ -77,7 +77,7 @@ WANTLIB-hpaio += asn1 avahi-client avahi-common com_err cups dbus-1
 WANTLIB-hpaio += gssapi heimbase hpip hpmud jpeg krb5 netsnmp roken
 WANTLIB-hpaio += sane ssl tiff usb usb-1.0 wind z
 
-LIB_DEPENDS-hpaio=	print/hplip,-libs \
+LIB_DEPENDS-hpaio=	print/hplip,-common \
 			graphics/sane-backends
 
 RUN_DEPENDS-hpaio=	${MODGETTEXT_RUN_DEPENDS}
@@ -86,7 +86,7 @@ RUN_DEPENDS-hpaio=	${MODGETTEXT_RUN_DEPENDS}
 WANTLIB-hpijs += ${cWANTLIB} hpip usb-1.0
 WANTLIB-hpijs += c jpeg netsnmp stdc++ dbus-1 hpmud
 
-LIB_DEPENDS-hpijs=	print/hplip,-libs \
+LIB_DEPENDS-hpijs=	print/hplip,-common \
 			graphics/jpeg \
 			x11/dbus
 
@@ -99,19 +99,19 @@ WANTLIB-hpcups += com_err heimbase roken wind
 WANTLIB-hpcups += avahi-client avahi-common
 
 LIB_DEPENDS-hpcups=	graphics/jpeg \
-			print/hplip,-libs \
+			print/hplip,-common \
 			print/cups,-libs \
 			x11/dbus
 
 RUN_DEPENDS-hpcups=	${MODGETTEXT_RUN_DEPENDS}
 
-### -libs
-WANTLIB-libs +=	${cWANTLIB} netsnmp usb-1.0
+### -common
+WANTLIB-common += ${cWANTLIB} netsnmp usb-1.0
 
-LIB_DEPENDS-libs= 	net/net-snmp \
+LIB_DEPENDS-common= 	net/net-snmp \
 			devel/libusb1
 
-RUN_DEPENDS-libs=	#empty
+RUN_DEPENDS-common=	#empty
 
 ### -gui
 WANTLIB-gui +=		#empty

@@ -1,10 +1,10 @@
-$OpenBSD: README-libs,v 1.1 2013/08/21 14:15:26 ajacoutot Exp $
+$OpenBSD: README-common,v 1.1 2013/08/21 14:51:41 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-This is a common README for all HLIP packages.
+This is a common README for all HPLIP packages.
 
 Communication with local printers is done via CUPS over libusb, make
 sure you read the "USB" section of the documentation that comes with the
@@ -55,8 +55,8 @@ Installing a scanner automatically using the HP tools
 -----------------------------------------------------
 (req. hplip+hpaio)
 
-First, install the printing part of you all-in-one device printer using
-the HP tools as documented above.
+First, install the printing part of you all-in-one printer using the HP
+tools as documented above.
 
 Once configured in CUPS with an hp:// URI, then it should work out of
 the box using hp-scan and/or sane(7)-compatible applications.
@@ -69,7 +69,7 @@ Installing a scanner manually
 (req. hpaio)
 
 To manually add a scanner without using the native HP tools from the
-hplip package you must know the device URI of the scqnner. This URI is
+hplip package you must know the device URI of the scanner. This URI is
 created using the 'hp-makeuri' utility from the hplip package, but once
 known, hplip is not needed and can be pkg_delete(1)d.
 

@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-libs,v 1.7 2013/08/21 14:15:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST-common,v 1.1 2013/08/21 14:51:41 ajacoutot Exp $
+@pkgpath print/hplip,-libs
+@conflict hplip-libs-*
 @conflict hplip-<3.13.7p4
 @extraunexec rm -rf /var/log/hp/tmp/*
 @extraunexec rm -f /var/log/hp/* 2>/dev/null || true
