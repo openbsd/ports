@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.2 2013/08/21 19:49:32 zhuk Exp $
+# $OpenBSD: portcheck,v 1.3 2013/08/21 21:02:16 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -935,7 +935,7 @@ check_files_dir() {
 }
 
 # Checks made:
-#   * Each patch contains $OpenBSD: portcheck,v 1.2 2013/08/21 19:49:32 zhuk Exp $ RCS tag.
+#   * Each patch contains OpenBSD RCS tag.
 #   * Directory is not empty and consists only of plain files starting
 #     with 'patch-' and not ending with '.orig'.
 check_patches_dir() {
@@ -968,10 +968,11 @@ check_patches_dir() {
 # Checks made:
 #   * Directory is not empty and consist only of plain files with fixed names.
 #   * PFRAG, PLIST, README, SECURITY and .rc files contain appropriate
-#     $OpenBSD: portcheck,v 1.2 2013/08/21 19:49:32 zhuk Exp $ RCS tags; other files should NOT contain $OpenBSD: portcheck,v 1.2 2013/08/21 19:49:32 zhuk Exp $ RCS tag.
+#     OpenBSD RCS tags; other files should NOT contain OpenBSD RCS tag.
 #   * PFRAG.shared should be merged in PLIST if it contains @lib items only.
 #   * No trailing whitespace for DESCR, MESSAGE, README, SECURITY, UNMESSAGE
 #     and .rc files (PLIST and PFRAG are better checked with "make package").
+#   * See also check_plist_file().
 check_pkg_dir() {
 	$debugging && echo "CALLED: check_pkg_dir($*)" >&2
 
@@ -984,18 +985,13 @@ check_pkg_dir() {
 		[[ -f $F ]] ||
 			err "$F is not a file"
 		check_trailing_whitespace "$F"
-		fgrep -q '$OpenBSD: portcheck,v 1.2 2013/08/21 19:49:32 zhuk Exp $' "$F" &&
+		egrep -q '\$OpenBSD.*\$' "$F" &&
 			err "$F should not contain \$OpenBSD\$ tag"
 		;;
 
 	PFRAG.shared?(-*))
 		empty=false
-		[[ -f $F ]] ||
-			err "$F is not a file"
-		head -n 1 -- "$F" |
-			egrep -q '^@comment \$OpenBSD[[:space:]]*(:.*)?\$$' ||
-			err "$F does not have \$OpenBSD\$ RCS tag at the top"
-
+		check_plist_file "$F"
 		awk <"$F" '/^(@comment )?@lib /' | {
 			local no_a_for_so=false plist=${F##*/} shlibs_found=false
 			plist=PLIST${plist##PFRAG.+([!-])}
@@ -1013,11 +1009,7 @@ check_pkg_dir() {
 
 	PFRAG.*|PLIST?(-*))
 		empty=false
-		[[ -f $F ]] ||
-			err "$F is not a file"
-		head -n 1 -- "$F" |
-			egrep -q '^@comment \$OpenBSD[[:space:]]*(:.*)?\$$' ||
-			err "$F does not have \$OpenBSD\$ RCS tag at the top"
+		check_plist_file "$F"
 		;;
 
 	README?(-*)|SECURITY?(-*))
@@ -1025,7 +1017,7 @@ check_pkg_dir() {
 			err "$F is not a file"
 		check_trailing_whitespace "$F"
 		head -n 1 -- "$F" |
-			egrep -q '^(#[[:space:]]*)?\$OpenBSD[[:space:]]*(:.*)?\$$' ||
+			egrep -q '^(#[[:space:]]*)?\$OpenBSD(:.*)?\$$' ||
 			err "$F does not have \$OpenBSD\$ RCS tag at the top"
 		;;
 
@@ -1034,7 +1026,7 @@ check_pkg_dir() {
 			err "$F is not a file"
 		check_trailing_whitespace "$F"
 		head -n 5 -- "$F" |
-			egrep -q '^#[[:space:]]*\$OpenBSD[[:space:]]*(:.*)?\$$' ||
+			egrep -q '^#[[:space:]]*\$OpenBSD(:.*)?\$$' ||
 			err "$F does not have \$OpenBSD\$ RCS tag at the top"
 		;;
 
@@ -1042,7 +1034,7 @@ check_pkg_dir() {
 		[[ -f $F ]] ||
 			err "$F is not a file"
 		check_trailing_whitespace "$F"
-		fgrep -q '$OpenBSD: portcheck,v 1.2 2013/08/21 19:49:32 zhuk Exp $' "$F" &&
+		egrep -q '\$OpenBSD.*\$' "$F" &&
 			err "$F should not contain \$OpenBSD\$ tag"
 		;;
 
@@ -1055,7 +1047,21 @@ check_pkg_dir() {
 }
 
 # Checks made:
-#   * Contains $OpenBSD: portcheck,v 1.2 2013/08/21 19:49:32 zhuk Exp $ tag at the top line.
+#   * There is an OpenBSD RCS tag at the top.
+#   * No items with ${FULLPKGNAME} are allowed, except readme.
+check_plist_file() {
+	[[ -f $1 ]] ||
+		err "$1 is not a file"
+	head -n 1 -- "$1" |
+		egrep -q '^@comment \$OpenBSD.*\$$' ||
+		err "$1 does not have \$OpenBSD\$ RCS tag at the top"
+	egrep -v '^share/doc/pkg-readmes/\${FULLPKGNAME}$' "$1" |
+		fgrep '${FULLPKGNAME}' >&2 &&
+		err "$1 contains item(-s) with \${FULLPKGNAME} in it, see above"
+}
+
+# Checks made:
+#   * Contains OpenBSD RCS tag at the top line.
 #   * No REVISION marks present in given file (unless in update mode).
 #   * No trailing whitespace.
 check_makefile() {
@@ -1063,7 +1069,7 @@ check_makefile() {
 
 	check_trailing_whitespace "$1"
 	head -n 1 -- "$1" |
-		egrep -q '^#[[:space:]]*\$OpenBSD[[:space:]]*(:.*)?\$' ||
+		egrep -q '^#[[:space:]]*\$OpenBSD.*\$' ||
 		err "$F does not have \$OpenBSD\$ RCS tag at the top"
 
 	$existing_port && return 0
