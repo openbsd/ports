@@ -1,9 +1,25 @@
-$OpenBSD: patch-objects_client_c,v 1.1 2013/05/22 15:05:50 dcoppa Exp $
+$OpenBSD: patch-objects_client_c,v 1.2 2013/08/21 04:58:49 dcoppa Exp $
 
 Revert to the old xcb-util-0.3.6 API
 
---- objects/client.c.orig	Mon May 20 13:35:44 2013
-+++ objects/client.c	Mon May 20 13:37:04 2013
+
+commit a0e45e878e450d890a0ab541d48d8dd6c1ede943
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Thu Aug 1 11:48:03 2013 +0200
+
+client: Ignore "fake" string property changes
+
+I noticed high CPU usage while using asunder. The reason was that asunder
+re-sets its window name every 0.1 seconds (and awesome's drawing code is way too
+slow).
+
+A semi-fix for this is to ignore string property changes if the old and new
+value for the property are equal.
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+--- objects/client.c.orig	Mon Apr  1 13:44:46 2013
++++ objects/client.c	Tue Aug 20 20:48:06 2013
 @@ -46,7 +46,7 @@ static void
  client_wipe(client_t *c)
  {
@@ -40,7 +56,19 @@ Revert to the old xcb-util-0.3.6 API
  
          luaA_object_emit_signal(L, cidx, "property::urgent", 0);
      }
-@@ -561,7 +561,7 @@ HANDLE_GEOM(height)
+@@ -113,6 +113,11 @@ DO_CLIENT_SET_PROPERTY(skip_taskbar)
+     client_set_##prop(lua_State *L, int cidx, char *value) \
+     { \
+         client_t *c = luaA_checkudata(L, cidx, &client_class); \
++        if (A_STREQ(c->prop, value)) \
++        { \
++            p_delete(&value); \
++            return; \
++        } \
+         p_delete(&c->prop); \
+         c->prop = value; \
+         luaA_object_emit_signal(L, cidx, "property::" #signal, 0); \
+@@ -561,7 +566,7 @@ HANDLE_GEOM(height)
       *
       * At this stage it's just safer to keep it in normal state and avoid confusion.
       */
@@ -49,7 +77,7 @@ Revert to the old xcb-util-0.3.6 API
  
      if(!startup)
      {
-@@ -633,26 +633,26 @@ client_apply_size_hints(client_t *c, area_t geometry)
+@@ -633,26 +638,26 @@ client_apply_size_hints(client_t *c, area_t geometry)
      /* Size hints are applied to the window without any decoration */
      client_remove_titlebar_geometry(c, &geometry);
  
@@ -80,7 +108,7 @@ Revert to the old xcb-util-0.3.6 API
      {
          /* min size is substituted with base size if not specified */
          minw = c->size_hints.base_width;
-@@ -660,7 +660,7 @@ client_apply_size_hints(client_t *c, area_t geometry)
+@@ -660,7 +665,7 @@ client_apply_size_hints(client_t *c, area_t geometry)
      }
  
      /* Handle the size aspect ratio */
@@ -89,7 +117,7 @@ Revert to the old xcb-util-0.3.6 API
              && c->size_hints.min_aspect_den > 0
              && c->size_hints.max_aspect_den > 0
              && geometry.height > real_baseh
-@@ -701,7 +701,7 @@ client_apply_size_hints(client_t *c, area_t geometry)
+@@ -701,7 +706,7 @@ client_apply_size_hints(client_t *c, area_t geometry)
      geometry.height = MAX(geometry.height, minh);
  
      /* Handle the maximum size */
@@ -98,7 +126,7 @@ Revert to the old xcb-util-0.3.6 API
      {
          if(c->size_hints.max_width)
              geometry.width = MIN(geometry.width, c->size_hints.max_width);
-@@ -710,7 +710,7 @@ client_apply_size_hints(client_t *c, area_t geometry)
+@@ -710,7 +715,7 @@ client_apply_size_hints(client_t *c, area_t geometry)
      }
  
      /* Handle the size increment */
@@ -107,7 +135,7 @@ Revert to the old xcb-util-0.3.6 API
         && c->size_hints.width_inc && c->size_hints.height_inc)
      {
          uint16_t t1 = geometry.width, t2 = geometry.height;
-@@ -892,9 +892,9 @@ client_set_minimized(lua_State *L, int cidx, bool s)
+@@ -892,9 +897,9 @@ client_set_minimized(lua_State *L, int cidx, bool s)
          c->minimized = s;
          banning_need_update();
          if(s)
@@ -119,7 +147,7 @@ Revert to the old xcb-util-0.3.6 API
          if(strut_has_value(&c->strut))
              screen_emit_signal(globalconf.L, c->screen, "property::workarea", 0);
          luaA_object_emit_signal(L, cidx, "property::minimized", 0);
-@@ -1197,7 +1197,7 @@ client_unmanage(client_t *c, bool window_valid)
+@@ -1197,7 +1202,7 @@ client_unmanage(client_t *c, bool window_valid)
  
          /* Do this last to avoid races with clients. According to ICCCM, clients
           * arent allowed to re-use the window until after this. */
@@ -128,7 +156,7 @@ Revert to the old xcb-util-0.3.6 API
      }
  
      /* set client as invalid */
-@@ -1861,9 +1861,9 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1861,9 +1866,9 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
  
      lua_createtable(L, 0, 1);
  
@@ -140,7 +168,7 @@ Revert to the old xcb-util-0.3.6 API
          u_or_p = "program_position";
  
      if(u_or_p)
-@@ -1877,9 +1877,9 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1877,9 +1882,9 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
          u_or_p = NULL;
      }
  
@@ -152,7 +180,7 @@ Revert to the old xcb-util-0.3.6 API
          u_or_p = "program_size";
  
      if(u_or_p)
-@@ -1892,7 +1892,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1892,7 +1897,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
          lua_setfield(L, -2, u_or_p);
      }
  
@@ -161,7 +189,7 @@ Revert to the old xcb-util-0.3.6 API
      {
          lua_pushnumber(L, c->size_hints.min_width);
          lua_setfield(L, -2, "min_width");
-@@ -1900,7 +1900,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1900,7 +1905,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
          lua_setfield(L, -2, "min_height");
      }
  
@@ -170,7 +198,7 @@ Revert to the old xcb-util-0.3.6 API
      {
          lua_pushnumber(L, c->size_hints.max_width);
          lua_setfield(L, -2, "max_width");
-@@ -1908,7 +1908,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1908,7 +1913,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
          lua_setfield(L, -2, "max_height");
      }
  
@@ -179,7 +207,7 @@ Revert to the old xcb-util-0.3.6 API
      {
          lua_pushnumber(L, c->size_hints.width_inc);
          lua_setfield(L, -2, "width_inc");
-@@ -1916,7 +1916,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1916,7 +1921,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
          lua_setfield(L, -2, "height_inc");
      }
  
@@ -188,7 +216,7 @@ Revert to the old xcb-util-0.3.6 API
      {
          lua_pushnumber(L, c->size_hints.min_aspect_num);
          lua_setfield(L, -2, "min_aspect_num");
-@@ -1928,7 +1928,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1928,7 +1933,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
          lua_setfield(L, -2, "max_aspect_den");
      }
  
@@ -197,7 +225,7 @@ Revert to the old xcb-util-0.3.6 API
      {
          lua_pushnumber(L, c->size_hints.base_width);
          lua_setfield(L, -2, "base_width");
-@@ -1936,7 +1936,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1936,7 +1941,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
          lua_setfield(L, -2, "base_height");
      }
  
