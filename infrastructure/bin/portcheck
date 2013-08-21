@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.3 2013/08/21 21:02:16 zhuk Exp $
+# $OpenBSD: portcheck,v 1.4 2013/08/21 21:08:43 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -445,7 +445,7 @@ check_port_dir() {
 	# Now gather and check some info via "make show=...".
 	# We request all info at once for speed.
 
-	local dist_subdir distfiles flavor flavors master_sites modules
+	local dist_subdir distfiles flavor flavors master_sites
 	local multi_packages pseudo_flavors shared_libs
 	local show_items="DIST_SUBDIR DISTFILES FLAVOR FLAVORS FULLPKGNAME"
 	local show_items="$show_items MASTER_SITES MULTI_PACKAGES"
