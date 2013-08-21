@@ -1,12 +1,12 @@
-$OpenBSD: README-main,v 1.4 2013/08/21 13:20:13 ajacoutot Exp $
+$OpenBSD: README-main,v 1.5 2013/08/21 13:36:11 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
 Communication with the printer is done via CUPS over libusb, make sure
-you read the "USB" section of the pkg-readmes documentation that comes
-with the cups package.
+you read the "USB" section of the documentation that comes with the cups
+package (cf. ${LOCALBASE}/share/doc/pkg-readmes/cups-*).
 
 To add a CUPS printer, run the following command as root:
 (hp-setup needs both the CUPS and DBus daemons running)

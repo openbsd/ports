@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.5 2013/05/17 13:47:45 ajacoutot Exp $
+$OpenBSD: README-main,v 1.6 2013/08/21 13:36:10 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -11,8 +11,9 @@ point your browser to:
 
 By default, CUPS only supports a handful amount of printers. There is a
 good chance your printer is supported by the Foomatic framework in which
-case the pkg-readmes documentation from the "foomatic-db-engine" package
-will tell you how to add more drivers to the system.
+case the documentation from the foomatic-db-engine package will tell you
+how to add more drivers to the system
+(cf. ${LOCALBASE}/share/doc/pkg-readmes/foomatic-db-engine-*).
 Note that when using the CUPS cli tools or web interface, it is not
 necessary to use foomatic-ppdfile(1) directly, CUPS will automatically
 generate the required PPD file if the corresponding Foomatic DB is

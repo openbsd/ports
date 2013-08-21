@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.6 2013/01/28 07:26:33 ajacoutot Exp $
+$OpenBSD: README,v 1.7 2013/08/21 13:36:10 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -28,8 +28,9 @@ rp|samsung|Samsung-ML-2850D:\
 	:sh:
 (where 1.2.3.4 is the printer IP address and 515 the spooler port)
 
-Refer to the pkg-readmes documentation that comes with the
-foomatic-db-engine package to learn how to generate PPD files.
+Refer to the documentation that comes with the foomatic-db-engine
+package to learn how to generate PPD files
+(cf. ${LOCALBASE}/share/doc/pkg-readmes/foomatic-db-engine-*).
 
 Alternatively, foomatic-configure(1) from the foomatic-db-engine package
 can be used to automatically setup print queues and create PPD files.
