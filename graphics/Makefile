@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.351 2013/07/19 07:16:38 kili Exp $
+# $OpenBSD: Makefile,v 1.352 2013/08/21 10:36:25 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -232,6 +232,7 @@
      SUBDIR += sane-backends
      SUBDIR += sane-backends,snmp
      SUBDIR += sane-frontends
+     SUBDIR += sane-frontends,gimp
      SUBDIR += scratch
      SUBDIR += scrot
      SUBDIR += shared-color-targets
@@ -265,6 +266,7 @@
      SUBDIR += xoris
      SUBDIR += xpaint
      SUBDIR += xsane
+     SUBDIR += xsane,gimp
      SUBDIR += xv
      SUBDIR += xzgv
      SUBDIR += zbar
