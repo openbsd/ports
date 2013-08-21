@@ -1,9 +1,9 @@
-$OpenBSD: patch-etc_snort_conf,v 1.9 2013/04/23 02:04:13 lteo Exp $
+$OpenBSD: patch-etc_snort_conf,v 1.10 2013/08/21 02:28:43 lteo Exp $
 
 reputation preprocessor disabled, still experimental
 
---- etc/snort.conf.orig	Thu Mar 21 14:09:05 2013
-+++ etc/snort.conf	Thu Apr  4 22:31:37 2013
+--- etc/snort.conf.orig	Tue Jul 23 14:37:33 2013
++++ etc/snort.conf	Mon Aug  5 14:38:56 2013
 @@ -101,17 +101,17 @@ ipvar AIM_SERVERS [64.12.24.0/23,64.12.28.0/23,64.12.1
  # Path to your rules files (this can be a relative path)
  # Note for Windows users:  You are advised to make this an absolute path,
@@ -65,7 +65,7 @@ reputation preprocessor disabled, still experimental
  include $RULE_PATH/app-detect.rules
  include $RULE_PATH/attack-responses.rules
  include $RULE_PATH/backdoor.rules
-@@ -648,6 +650,9 @@ include $RULE_PATH/web-iis.rules
+@@ -659,6 +661,9 @@ include $RULE_PATH/web-iis.rules
  include $RULE_PATH/web-misc.rules
  include $RULE_PATH/web-php.rules
  include $RULE_PATH/x11.rules

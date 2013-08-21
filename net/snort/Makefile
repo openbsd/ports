@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.80 2013/07/10 02:10:22 lteo Exp $
+# $OpenBSD: Makefile,v 1.81 2013/08/21 02:28:42 lteo Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		highly flexible sniffer/NIDS
 
-VERSION =		2.9.5.0
-DISTNAME =		snort-2.9.5
+VERSION =		2.9.5.3
+DISTNAME =		snort-${VERSION}
 
 CATEGORIES =		net security
 
@@ -25,7 +25,8 @@ USE_GROFF =		Yes
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--disable-static-daq
+			--disable-static-daq \
+			--enable-non-ether-decoders
 
 LIB_DEPENDS =		devel/pcre \
 			net/libdnet \

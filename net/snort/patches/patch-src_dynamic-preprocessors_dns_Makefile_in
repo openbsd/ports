@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_dynamic-preprocessors_dns_Makefile_in,v 1.9 2013/05/31 20:26:01 lteo Exp $
---- src/dynamic-preprocessors/dns/Makefile.in.orig	Mon Apr 15 15:57:47 2013
-+++ src/dynamic-preprocessors/dns/Makefile.in	Wed Apr 24 14:51:57 2013
+$OpenBSD: patch-src_dynamic-preprocessors_dns_Makefile_in,v 1.10 2013/08/21 02:28:43 lteo Exp $
+--- src/dynamic-preprocessors/dns/Makefile.in.orig	Tue Jul 23 14:35:45 2013
++++ src/dynamic-preprocessors/dns/Makefile.in	Mon Aug  5 14:37:49 2013
 @@ -257,7 +257,7 @@ top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = foreign no-dependencies
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_dynamic-preprocessors_dns_Makefile_in,v 1.9 2013/05/31 20:26
  @SO_WITH_STATIC_LIB_TRUE@libsf_dns_preproc_la_LIBADD = ../libsf_dynamic_preproc.la
  @SO_WITH_STATIC_LIB_FALSE@nodist_libsf_dns_preproc_la_SOURCES = \
  @SO_WITH_STATIC_LIB_FALSE@../include/sf_dynamic_preproc_lib.c \
-@@ -450,7 +450,7 @@ distdir: $(DISTFILES)
+@@ -466,7 +466,7 @@ distdir: $(DISTFILES)
  	done
  check-am: all-am
  check: check-am
