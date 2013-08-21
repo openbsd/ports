@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2013/06/16 20:40:19 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.33 2013/08/21 21:45:43 sthen Exp $
 @extraunexec rm -rf %D/roundcubemail/logs/*
 roundcubemail/
 roundcubemail/.htaccess.dist
@@ -279,53 +279,6 @@ roundcubemail/plugins/emoticons/emoticons.php
 roundcubemail/plugins/emoticons/package.xml
 roundcubemail/plugins/emoticons/tests/
 roundcubemail/plugins/emoticons/tests/Emoticons.php
-roundcubemail/plugins/enigma/
-roundcubemail/plugins/enigma/README
-roundcubemail/plugins/enigma/config.inc.php.dist
-@sample roundcubemail/plugins/enigma/config.inc.php
-roundcubemail/plugins/enigma/enigma.js
-roundcubemail/plugins/enigma/enigma.php
-roundcubemail/plugins/enigma/home/
-roundcubemail/plugins/enigma/home/.htaccess
-roundcubemail/plugins/enigma/lib/
-roundcubemail/plugins/enigma/lib/Crypt/
-roundcubemail/plugins/enigma/lib/Crypt/GPG/
-roundcubemail/plugins/enigma/lib/Crypt/GPG.php
-roundcubemail/plugins/enigma/lib/Crypt/GPG/DecryptStatusHandler.php
-roundcubemail/plugins/enigma/lib/Crypt/GPG/Engine.php
-roundcubemail/plugins/enigma/lib/Crypt/GPG/Exceptions.php
-roundcubemail/plugins/enigma/lib/Crypt/GPG/Key.php
-roundcubemail/plugins/enigma/lib/Crypt/GPG/Signature.php
-roundcubemail/plugins/enigma/lib/Crypt/GPG/SubKey.php
-roundcubemail/plugins/enigma/lib/Crypt/GPG/UserId.php
-roundcubemail/plugins/enigma/lib/Crypt/GPG/VerifyStatusHandler.php
-roundcubemail/plugins/enigma/lib/enigma_driver.php
-roundcubemail/plugins/enigma/lib/enigma_driver_gnupg.php
-roundcubemail/plugins/enigma/lib/enigma_engine.php
-roundcubemail/plugins/enigma/lib/enigma_error.php
-roundcubemail/plugins/enigma/lib/enigma_key.php
-roundcubemail/plugins/enigma/lib/enigma_signature.php
-roundcubemail/plugins/enigma/lib/enigma_subkey.php
-roundcubemail/plugins/enigma/lib/enigma_ui.php
-roundcubemail/plugins/enigma/lib/enigma_userid.php
-roundcubemail/plugins/enigma/localization/
-roundcubemail/plugins/enigma/localization/en_US.inc
-roundcubemail/plugins/enigma/localization/ja_JP.inc
-roundcubemail/plugins/enigma/localization/ru_RU.inc
-roundcubemail/plugins/enigma/skins/
-roundcubemail/plugins/enigma/skins/classic/
-roundcubemail/plugins/enigma/skins/classic/enigma.css
-roundcubemail/plugins/enigma/skins/classic/enigma.png
-roundcubemail/plugins/enigma/skins/classic/enigma_error.png
-roundcubemail/plugins/enigma/skins/classic/key.png
-roundcubemail/plugins/enigma/skins/classic/key_add.png
-roundcubemail/plugins/enigma/skins/classic/keys_toolbar.png
-roundcubemail/plugins/enigma/skins/classic/templates/
-roundcubemail/plugins/enigma/skins/classic/templates/keyimport.html
-roundcubemail/plugins/enigma/skins/classic/templates/keyinfo.html
-roundcubemail/plugins/enigma/skins/classic/templates/keys.html
-roundcubemail/plugins/enigma/tests/
-roundcubemail/plugins/enigma/tests/Enigma.php
 roundcubemail/plugins/example_addressbook/
 roundcubemail/plugins/example_addressbook/example_addressbook.php
 roundcubemail/plugins/example_addressbook/example_addressbook_backend.php
