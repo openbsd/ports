@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.92 2013/08/21 14:51:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.93 2013/08/21 14:58:36 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT-main=		HP Linux Imaging and Printing
-COMMENT-hpaio=		HP sane(7) scanner backend
-COMMENT-hpijs=		HP ghostscript driver (spooler independent)
-COMMENT-hpcups=		HP native CUPS driver
 COMMENT-common=		HPLIP applications common files
+COMMENT-hpaio=		HP sane(7) scanner backend
+COMMENT-hpcups=		HP native CUPS driver
+COMMENT-hpijs=		HP ghostscript driver (spooler independent)
 COMMENT-gui=		HPLIP graphical tools
 
 V=			3.13.7
@@ -14,18 +14,18 @@ DISTNAME=		hplip-${V}
 SUBST_VARS=		V
 
 PKGNAME-main=		${DISTNAME}
-PKGNAME-hpaio=		hpaio-${V}
-PKGNAME-hpijs=		hpijs-${V}
-PKGNAME-hpcups=		hpcups-${V}
 PKGNAME-common=		hplip-common-${V}
+PKGNAME-hpaio=		hpaio-${V}
+PKGNAME-hpcups=		hpcups-${V}
+PKGNAME-hpijs=		hpijs-${V}
 PKGNAME-gui=		hplip-gui-${V}
 
 REVISION-main=		7
-REVISION-hpijs=		3
-REVISION-hpcups=	4
 REVISION-common=	6
-REVISION-gui=		3
 REVISION-hpaio=		1
+REVISION-hpcups=	4
+REVISION-hpijs=		3
+REVISION-gui=		3
 
 SHARED_LIBS +=  hpmud		2.0 # 0.6
 SHARED_LIBS +=  hpip		2.0 # 0.1
@@ -41,7 +41,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=hplip/}
 
-MULTI_PACKAGES= 	-main -hpaio -hpijs -hpcups -common -gui
+MULTI_PACKAGES= 	-main -common -hpaio -hpcups -hpijs -gui
 
 MODULES=		devel/gettext \
 			lang/python
@@ -71,7 +71,15 @@ RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS} \
 # package is only useful if cups is installed
 RUN_DEPENDS-main +=	print/cups
 
-### -hpio
+### -common
+WANTLIB-common += ${cWANTLIB} netsnmp usb-1.0
+
+LIB_DEPENDS-common= 	net/net-snmp \
+			devel/libusb1
+
+RUN_DEPENDS-common=	#empty
+
+### -hpaio
 WANTLIB-hpaio += ${WANTLIB} ${cWANTLIB}
 WANTLIB-hpaio += asn1 avahi-client avahi-common com_err cups dbus-1
 WANTLIB-hpaio += gssapi heimbase hpip hpmud jpeg krb5 netsnmp roken
@@ -81,16 +89,6 @@ LIB_DEPENDS-hpaio=	print/hplip,-common \
 			graphics/sane-backends
 
 RUN_DEPENDS-hpaio=	${MODGETTEXT_RUN_DEPENDS}
-
-### -hpijs
-WANTLIB-hpijs += ${cWANTLIB} hpip usb-1.0
-WANTLIB-hpijs += c jpeg netsnmp stdc++ dbus-1 hpmud
-
-LIB_DEPENDS-hpijs=	print/hplip,-common \
-			graphics/jpeg \
-			x11/dbus
-
-RUN_DEPENDS-hpijs= print/foomatic-filters #print/ghostscript/gnu
 
 ### -hpcups
 WANTLIB-hpcups += ${WANTLIB} ${cWANTLIB} z asn1 gssapi krb5 ssl
@@ -105,13 +103,15 @@ LIB_DEPENDS-hpcups=	graphics/jpeg \
 
 RUN_DEPENDS-hpcups=	${MODGETTEXT_RUN_DEPENDS}
 
-### -common
-WANTLIB-common += ${cWANTLIB} netsnmp usb-1.0
+### -hpijs
+WANTLIB-hpijs += ${cWANTLIB} hpip usb-1.0
+WANTLIB-hpijs += c jpeg netsnmp stdc++ dbus-1 hpmud
 
-LIB_DEPENDS-common= 	net/net-snmp \
-			devel/libusb1
+LIB_DEPENDS-hpijs=	print/hplip,-common \
+			graphics/jpeg \
+			x11/dbus
 
-RUN_DEPENDS-common=	#empty
+RUN_DEPENDS-hpijs= print/foomatic-filters #print/ghostscript/gnu
 
 ### -gui
 WANTLIB-gui +=		#empty
