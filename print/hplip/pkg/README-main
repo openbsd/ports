@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.3 2013/08/11 09:54:18 ajacoutot Exp $
+$OpenBSD: README-main,v 1.4 2013/08/21 13:20:13 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -8,11 +8,9 @@ Communication with the printer is done via CUPS over libusb, make sure
 you read the "USB" section of the pkg-readmes documentation that comes
 with the cups package.
 
-Scanning
-========
-To make the hpaio backend available to SANE, simply add "hpaio" to
-the sane-backends configuration file. As root:
-    echo "hpaio" >> ${SYSCONFDIR}/sane.d/dll.conf
+To add a CUPS printer, run the following command as root:
+(hp-setup needs both the CUPS and DBus daemons running)
+    hp-setup -i
 
 Plugin installation
 ===================

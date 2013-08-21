@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.24 2013/08/11 09:54:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.25 2013/08/21 13:20:13 ajacoutot Exp $
 @conflict hplip-docs-*
-@conflict hplip-gui-<3.11.3p0
-@extraunexec rm -rf /var/log/hp/tmp/*
-@extraunexec rm -f /var/log/hp/* 2>/dev/null || true
+@conflict hplip-gui-<3.13.7p2
 @extraunexec rm -rf /usr/local/share/hplip/data/firmware
 @extraunexec rm -rf /usr/local/share/hplip/data/plugins
 @extraunexec rm -rf /usr/local/share/hplip/fax/plugins
@@ -21,6 +19,7 @@ bin/hp-pkservice
 bin/hp-probe
 bin/hp-query
 bin/hp-scan
+bin/hp-setup
 bin/hp-timedate
 bin/hp-uninstall
 bin/hp-unload
@@ -28,8 +27,6 @@ bin/hp-upgrade
 lib/python${MODPY_VERSION}/site-packages/cupsext.so
 lib/python${MODPY_VERSION}/site-packages/hpmudext.so
 lib/python${MODPY_VERSION}/site-packages/pcardext.so
-lib/python${MODPY_VERSION}/site-packages/scanext.so
-lib/sane/libsane-hpaio.so
 @bin libexec/cups/backend/hp
 @mode 0700
 libexec/cups/backend/hpfax
@@ -74,21 +71,6 @@ share/doc/hplip/troubleshooting.html
 share/doc/hplip/uninstalling.html
 share/doc/hplip/upgrading.html
 share/doc/pkg-readmes/${FULLPKGNAME}
-share/examples/hplip/
-share/examples/hplip/cups/
-share/examples/hplip/cups/pstotiff.convs
-@sample ${SYSCONFDIR}/cups/pstotiff.convs
-share/examples/hplip/cups/pstotiff.types
-@sample ${SYSCONFDIR}/cups/pstotiff.types
-share/examples/hplip/db/
-@sample /var/db/hp/
-share/examples/hplip/db/hplip.state
-@sample /var/db/hp/hplip.state
-share/examples/hplip/hp/
-@sample ${SYSCONFDIR}/hp/
-share/examples/hplip/hp/hplip.conf
-@sample ${SYSCONFDIR}/hp/hplip.conf
-share/hplip/
 share/hplip/__init__.py
 share/hplip/__init__.pyc
 share/hplip/align.py
@@ -188,8 +170,6 @@ share/hplip/data/localization/hplip_it.qm
 share/hplip/data/localization/hplip_pt.qm
 share/hplip/data/localization/hplip_ru.qm
 share/hplip/data/localization/hplip_zh.qm
-share/hplip/data/models/
-share/hplip/data/models/models.dat
 share/hplip/data/pcl/
 share/hplip/data/pcl/align1_8xx.pcl.gz
 share/hplip/data/pcl/align1_9xx.pcl.gz
@@ -332,8 +312,3 @@ share/hplip/upgrade.py
 share/hplip/upgrade.pyc
 share/hplip/wificonfig.py
 share/hplip/wificonfig.pyc
-@mode 0774
-@group _cups
-@sample /var/log/hp/
-@mode 1774
-@sample /var/log/hp/tmp/

@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.25 2013/08/06 19:13:37 ajacoutot Exp $
+$OpenBSD: patch-Makefile_in,v 1.26 2013/08/21 13:20:12 ajacoutot Exp $
 --- Makefile.in.orig	Tue Jul 23 07:19:19 2013
 +++ Makefile.in	Fri Jul 26 16:07:33 2013
 @@ -4340,16 +4340,16 @@ cups_drv = prnt/drv/hpcups.drv
@@ -39,15 +39,6 @@ $OpenBSD: patch-Makefile_in,v 1.25 2013/08/06 19:13:37 ajacoutot Exp $
  @HPLIP_BUILD_TRUE@hp_mkuri_CFLAGS = -DCONFDIR=\"$(hplip_confdir)\"
  
  #hpmud rules data dir
-@@ -4398,7 +4398,7 @@ cups_drv = prnt/drv/hpcups.drv
- @HPLIP_BUILD_TRUE@pstotiff_SCRIPTS = fax/filters/pstotiff
- 
- # hplip.state
--@HPLIP_BUILD_TRUE@hplip_statedir = /var/lib/hp
-+@HPLIP_BUILD_TRUE@hplip_statedir = /var/db/hp
- @HPLIP_BUILD_TRUE@dist_hplip_state_DATA = 
- 
- # Log Files
 @@ -4527,7 +4527,7 @@ cups_drv = prnt/drv/hpcups.drv
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hpmudext_la_LDFLAGS = -module -avoid-version
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hpmudext_la_SOURCES = io/mudext/hpmudext.c

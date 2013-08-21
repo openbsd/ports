@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-gui,v 1.10 2013/03/08 06:51:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST-gui,v 1.11 2013/08/21 13:20:13 ajacoutot Exp $
 @conflict hplip-<3.11.3p0
 bin/hp-align
 bin/hp-colorcal
@@ -16,7 +16,6 @@ bin/hp-pqdiag
 bin/hp-print
 bin/hp-printsettings
 bin/hp-sendfax
-bin/hp-setup
 bin/hp-systray
 bin/hp-testpage
 bin/hp-toolbox

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.86 2013/08/11 09:54:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2013/08/21 13:20:12 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	HP Unix imaging and printing
-COMMENT-hpijs=	HP Inkjet ghostscript driver (spooler independent)
+COMMENT-hpaio=	HP sane(7) scanner backend
+COMMENT-hpijs=	HP ghostscript driver (spooler independent)
 COMMENT-hpcups=	HP native CUPS driver
 COMMENT-libs=	HPLIP backend libraries
 COMMENT-gui=	HPLIP graphical tools
@@ -12,16 +13,17 @@ V=		3.13.7
 DISTNAME=	hplip-${V}
 
 PKGNAME-main=	${DISTNAME}
+PKGNAME-hpaio=	hpaio-${V}
 PKGNAME-hpijs=	hpijs-${V}
 PKGNAME-hpcups=	hpcups-${V}
 PKGNAME-libs=	hplip-libs-${V}
 PKGNAME-gui=	hplip-gui-${V}
 
-REVISION-main=	1
-REVISION-hpijs=	1
-REVISION-hpcups=1
-REVISION-libs=	1
-REVISION-gui=	1
+REVISION-main=	4
+REVISION-hpijs=	2
+REVISION-hpcups=2
+REVISION-libs=	2
+REVISION-gui=	2
 
 SHARED_LIBS +=  hpmud		2.0 # 0.6
 SHARED_LIBS +=  hpip		2.0 # 0.1
@@ -39,7 +41,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=hplip/}
 
-MULTI_PACKAGES=	-main -hpijs -hpcups -libs -gui
+MULTI_PACKAGES=	-main -hpaio -hpijs -hpcups -libs -gui
 
 MODULES=	devel/gettext \
 		lang/python
@@ -49,31 +51,38 @@ MODPY_RUNDEP=	No
 cWANTLIB = crypto m pthread
 
 WANTLIB-main += ${WANTLIB} ${cWANTLIB}
-WANTLIB-main += asn1 c cups dbus-1 gssapi hpip hpmud jpeg krb5 netsnmp
-WANTLIB-main += sane ssl tiff usb-1.0 z usb avahi-client avahi-common
-WANTLIB-main += com_err heimbase roken wind
+WANTLIB-main += asn1 avahi-client avahi-common c com_err cups dbus-1
+WANTLIB-main += gssapi heimbase hpmud krb5 netsnmp roken ssl usb-1.0
+WANTLIB-main += wind z
 
 LIB_DEPENDS-main=${LIB_DEPENDS} \
-		graphics/sane-backends \
 		print/cups,-libs \
 		print/hplip,-libs
 RUN_DEPENDS-main=${MODPY_RUN_DEPENDS} \
 		${MODGETTEXT_RUN_DEPENDS} \
 		print/py-reportlab/reportlab \
 		x11/dbus-python \
-		devel/py-notify \
 		graphics/py-Imaging \
-		print/hplip,-hpcups
+		print/hplip,-hpcups \
+		print/hplip,-hpaio
 
 # package is only useful if cups is installed
 RUN_DEPENDS-main +=	print/cups
+
+WANTLIB-hpaio += ${WANTLIB} ${cWANTLIB}
+WANTLIB-hpaio += asn1 avahi-client avahi-common com_err cups dbus-1
+WANTLIB-hpaio += gssapi heimbase hpip hpmud jpeg krb5 netsnmp roken
+WANTLIB-hpaio += sane ssl tiff usb usb-1.0 wind z
+LIB_DEPENDS-hpaio= print/hplip,-libs \
+		graphics/sane-backends
+RUN_DEPENDS-hpaio= ${MODGETTEXT_RUN_DEPENDS}
 
 WANTLIB-hpijs += ${cWANTLIB} hpip usb-1.0
 WANTLIB-hpijs += c jpeg netsnmp stdc++ dbus-1 hpmud
 LIB_DEPENDS-hpijs= print/hplip,-libs \
 		graphics/jpeg \
 		x11/dbus
-RUN_DEPENDS-hpijs= print/foomatic-filters
+RUN_DEPENDS-hpijs= print/foomatic-filters #print/ghostscript/gnu
 
 WANTLIB-hpcups += ${WANTLIB} ${cWANTLIB} z asn1 gssapi krb5 ssl
 WANTLIB-hpcups += c jpeg stdc++ hpip cups cupsimage dbus-1
@@ -89,15 +98,16 @@ RUN_DEPENDS-hpcups=${MODGETTEXT_RUN_DEPENDS}
 WANTLIB-libs +=	${cWANTLIB} netsnmp usb-1.0
 LIB_DEPENDS-libs= net/net-snmp \
 		devel/libusb1
-RUN_DEPENDS-libs= # empty
+RUN_DEPENDS-libs= #empty
 
-WANTLIB-gui +=	# empty
+WANTLIB-gui +=	#empty
 RUN_DEPENDS-gui= x11/py-qt4 \
 		print/hplip,-main \
 		devel/xdg-utils \
 		devel/desktop-file-utils \
-		sysutils/usbutils
-LIB_DEPENDS-gui= # empty
+		sysutils/usbutils \
+		devel/py-notify
+LIB_DEPENDS-gui= #empty
 
 LIBTOOL_FLAGS=	--tag=disable-static
 FAKE_FLAGS=	hplip_confdir=${PREFIX}/share/examples/hplip/hp \
@@ -122,14 +132,18 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-foomatic-drv-install
 
 pre-configure:
-	# We don't patch because it changes at every release
-	perl -pi -e "s,^PACKAGE_NAME=.*,PACKAGE_NAME='HP Linux (& Unix) Imaging and Printing',;" \
-		-e "s,^PACKAGE_STRING=.*,PACKAGE_STRING='HP Linux (& Unix) Imaging and Printing ${V}'," \
-		${WRKSRC}/configure
-	@find ${WRKSRC} -name \*.py | \
+	find ${WRKSRC} -name \*.py | \
 		xargs perl -pi -e 's,(/usr/bin/python|/usr/bin/env python),${MODPY_BIN},g'
-	@perl -pi -e 's,/usr/bin/python,${MODPY_BIN},g' \
+	perl -pi -e 's,/usr/bin/python,${MODPY_BIN},g' \
 		${WRKSRC}/fax/filters/pstotiff
+	perl -pi -e 's,/var/lib,/var/db,g' \
+		${WRKSRC}/Makefile.in \
+		${WRKSRC}/base/g.py \
+		${WRKSRC}/check.py \
+		${WRKSRC}/common/utils.h \
+		${WRKSRC}/common/utils.c \
+		${WRKSRC}/installer/core_install.py \
+		${WRKSRC}/installer/pluginhandler.py
 	${SUBST_CMD} ${WRKSRC}/prnt/cups.py \
 		${WRKSRC}/prnt/hpcups/HPCupsFilter.cpp \
 		${WRKSRC}/prnt/hpijs/hpcupsfax.cpp \

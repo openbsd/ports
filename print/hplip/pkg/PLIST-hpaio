@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-hpaio,v 1.1 2013/08/21 13:20:13 ajacoutot Exp $: PLIST-main,v 1.24 2013/08/11 09:54:18 ajacoutot Exp $
+@conflict hplip-<3.13.7p2
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
+lib/python${MODPY_VERSION}/site-packages/scanext.so
+lib/sane/libsane-hpaio.so
+share/doc/pkg-readmes/${FULLPKGNAME}

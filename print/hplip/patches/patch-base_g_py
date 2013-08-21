@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_g_py,v 1.7 2013/03/17 13:04:30 ajacoutot Exp $
---- base/g.py.orig	Fri Mar  8 08:15:32 2013
-+++ base/g.py	Sun Mar 17 13:52:08 2013
-@@ -145,16 +145,16 @@ class ConfigBase(object):
+$OpenBSD: patch-base_g_py,v 1.8 2013/08/21 13:20:12 ajacoutot Exp $
+--- base/g.py.orig	Tue Jul 23 07:18:29 2013
++++ base/g.py	Wed Aug 21 12:20:37 2013
+@@ -145,7 +145,7 @@ class ConfigBase(object):
  
  class SysConfig(ConfigBase):
      def __init__(self):
@@ -10,16 +10,12 @@ $OpenBSD: patch-base_g_py,v 1.7 2013/03/17 13:04:30 ajacoutot Exp $
  
  
  class State(ConfigBase):
-     def __init__(self):
--        if not os.path.exists('/var/lib/hp/') and os.geteuid() == 0:
--            os.makedirs('/var/lib/hp/')
--            cmd = 'chmod 755 /var/lib/hp/'
-+        if not os.path.exists('/var/db/hp/') and os.geteuid() == 0:
-+            os.makedirs('/var/db/hp/')
-+            cmd = 'chmod 755 /var/db/hp/'
+@@ -154,7 +154,7 @@ class State(ConfigBase):
+             os.makedirs('/var/lib/hp/')
+             cmd = 'chmod 755 /var/lib/hp/'
              os_utils.execute(cmd)
 -        ConfigBase.__init__(self, '/var/lib/hp/hplip.state')
-+        ConfigBase.__init__(self, '/var/db/hp/hplip.state')
++        ConfigBase.__init__(self, '/var/lib/hplip.state')
  
  
  class UserConfig(ConfigBase):

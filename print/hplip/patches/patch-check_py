@@ -1,4 +1,4 @@
-$OpenBSD: patch-check_py,v 1.13 2013/08/06 19:13:37 ajacoutot Exp $
+$OpenBSD: patch-check_py,v 1.14 2013/08/21 13:20:12 ajacoutot Exp $
 --- check.py.orig	Tue Jul 23 07:18:29 2013
 +++ check.py	Fri Jul 26 16:08:03 2013
 @@ -142,9 +142,9 @@ def get_comment(package, Inst_status, installed_ver):
@@ -55,18 +55,6 @@ $OpenBSD: patch-check_py,v 1.13 2013/08/06 19:13:37 ajacoutot Exp $
              except (IOError, OSError), e:
                  log.error("Could not access file: %s. Check HPLIP installation." % e.strerror)
                  self.num_errors += 1
-@@ -338,9 +338,9 @@ class DependenciesCheck(CoreInstall):
-                 log.info(output)
- 
-             log.info()
--            log.info(log.bold("Current contents of '/var/lib/hp/hplip.state' file:"))
-+            log.info(log.bold("Current contents of '/var/db/hp/hplip.state' file:"))
-             try:
--                output = file(os.path.expanduser('/var/lib/hp/hplip.state'), 'r').read()
-+                output = file(os.path.expanduser('/var/db/hp/hplip.state'), 'r').read()
-             except (IOError, OSError), e:
-                 log.info("Plugins are not installed. Could not access file: %s" % e.strerror)
-             else:
 @@ -538,7 +538,7 @@ class DependenciesCheck(CoreInstall):
                          #log.info("Installed in HPLIP?: %s" % x)
                          log.info("Device URI: %s" % device_uri)

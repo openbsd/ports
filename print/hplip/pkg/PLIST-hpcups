@@ -1,10 +1,15 @@
-@comment $OpenBSD: PLIST-hpcups,v 1.6 2013/01/04 18:21:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST-hpcups,v 1.7 2013/08/21 13:20:13 ajacoutot Exp $
 @conflict hpijs-<=3.2.11
 @bin libexec/cups/filter/hpcups
 @bin libexec/cups/filter/hpcupsfax
 libexec/cups/filter/hpps
 share/cups/drv/hp/hpcups.drv
 share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/hplip/cups/
+share/examples/hplip/cups/pstotiff.convs
+@sample ${SYSCONFDIR}/cups/pstotiff.convs
+share/examples/hplip/cups/pstotiff.types
+@sample ${SYSCONFDIR}/cups/pstotiff.types
 share/foomatic/
 share/foomatic/db/
 share/foomatic/db/source/
