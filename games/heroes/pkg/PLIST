@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 00:46:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/08/21 09:13:33 zhuk Exp $
+@pkgpath games/heroes,ggi
+@pkgpath games/heroes,sdl
 bin/heroes
 bin/heroeslvl
 @info info/heroes.info
