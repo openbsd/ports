@@ -1,28 +1,12 @@
-$OpenBSD: patch-os-daq-modules_daq_ipfw_c,v 1.1 2013/07/17 18:18:05 lteo Exp $
+$OpenBSD: patch-os-daq-modules_daq_ipfw_c,v 1.2 2013/08/21 02:21:15 lteo Exp $
 
-This patch fixes two issues in the IPFW DAQ module that is used by
-Snort in inline mode (both fixes have been sent upstream):
+This patch removes DAQ_CAPA_UNPRIV_START from the list of capabilities so that
+Snort can run as an unprivileged user in inline mode.  Sent upstream:
+http://marc.info/?l=snort-devel&m=136254358118711&w=2
 
-1. Fixes a bug where ipfw_daq_inject() ignores the buf and len
-   arguments that are passed to it, causing packet injections to fail
-   http://marc.info/?l=snort-devel&m=136185602610571&w=2
-
-2. Removes DAQ_CAPA_UNPRIV_START from the list of capabilities so that
-   Snort can run as an unprivileged user in inline mode
-   http://marc.info/?l=snort-devel&m=136254358118711&w=2
-
---- os-daq-modules/daq_ipfw.c.orig	Thu Sep  6 11:17:26 2012
-+++ os-daq-modules/daq_ipfw.c	Fri May 31 17:26:38 2013
-@@ -256,7 +256,7 @@ static int ipfw_daq_inject (
-     int reverse)
- {
-     IpfwImpl* impl = (IpfwImpl*)handle;
--    int status = ipfw_daq_forward(impl, hdr, impl->buf, hdr->pktlen, 0);
-+    int status = ipfw_daq_forward(impl, hdr, buf, len, 0);
- 
-     if ( status == DAQ_SUCCESS )
-         impl->stats.packets_injected++;
-@@ -397,7 +397,7 @@ static int ipfw_daq_get_snaplen (void* handle)
+--- os-daq-modules/daq_ipfw.c.orig	Mon Jul  1 12:44:59 2013
++++ os-daq-modules/daq_ipfw.c	Mon Aug  5 14:33:20 2013
+@@ -401,7 +401,7 @@ static int ipfw_daq_get_snaplen (void* handle)
  static uint32_t ipfw_daq_get_capabilities (void* handle)
  {
      return DAQ_CAPA_BLOCK | DAQ_CAPA_REPLACE | DAQ_CAPA_INJECT | DAQ_CAPA_INJECT_RAW

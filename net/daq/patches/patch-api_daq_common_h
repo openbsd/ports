@@ -1,6 +1,6 @@
-$OpenBSD: patch-api_daq_common_h,v 1.1.1.1 2012/09/26 01:40:32 lteo Exp $
---- api/daq_common.h.orig	Wed Jan  4 06:54:49 2012
-+++ api/daq_common.h	Sat Aug 11 14:55:42 2012
+$OpenBSD: patch-api_daq_common_h,v 1.2 2013/08/21 02:21:15 lteo Exp $
+--- api/daq_common.h.orig	Mon Jul  1 12:44:59 2013
++++ api/daq_common.h	Mon Aug  5 14:33:20 2013
 @@ -25,6 +25,10 @@
  #include <unistd.h>
  #ifndef WIN32
@@ -12,7 +12,7 @@ $OpenBSD: patch-api_daq_common_h,v 1.1.1.1 2012/09/26 01:40:32 lteo Exp $
  #else
  /* for struct timeavl */
  #include <winsock2.h>
-@@ -89,7 +93,11 @@
+@@ -92,7 +96,11 @@
  #define DAQ_PKTHDR_FLOOD    -2  /* Egress is flooding */
  typedef struct _daq_pkthdr
  {
