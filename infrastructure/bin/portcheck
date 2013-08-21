@@ -1,0 +1,1082 @@
+#!/bin/ksh
+#
+# $OpenBSD: portcheck,v 1.1 2013/08/21 17:00:24 zhuk Exp $
+# Copyright (c) 2013 Vadim Zhukov
+# 
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+set -e
+set +X
+
+usage() {
+	echo "usage: ${0##*/} [-CdPU] [-p portsdir] [-x glob]" >&2
+	echo "       ${0##*/} [-AdP] [-p portsdir] [-x glob] [subdir ...]" >&2
+	exit 1
+}
+
+
+############################################################
+# Parsing command line options
+#
+
+existing_port=false
+ignore_cvs=false
+plist_checks=true
+portsdir=
+rootrun=false
+unset ignore_list
+debugging=false
+
+while getopts "ACdPp:Ux:" OPT; do
+	case $OPT in
+	A)
+		$rootrun || set -A ignore_list -- "${ignore_list[@]}" \
+			.cvsignore \
+			INDEX \
+			README \
+			bulk \
+			distfiles \
+			infrastructure \
+			logs \
+			lost+found \
+			mystuff \
+			openbsd-wip \
+			packages \
+			plist \
+			pobj \
+			update
+		rootrun=true
+		existing_port=true
+		ignore_cvs=true
+		;;
+
+	C)
+		ignore_cvs=true
+		;;
+
+	d)
+		debugging=true
+		;;
+
+	P)
+		plist_checks=false
+		;;
+
+	p)
+		if [[ ${PWD##"$OPTARG"} == "$PWD" ]]; then
+			cat >&2 <<EOE
+${0##*/}: current directory does not seem to be under the
+specified root directory: $OPTARG.
+EOE
+			exit 3
+		fi
+		portsdir=$OPTARG
+		;;
+
+	U)
+		existing_port=true
+		;;
+
+	x)
+		set -A ignore_list -- "${ignore_list[@]}" "$OPTARG"
+		;;
+
+	*)
+		usage
+		;;
+	esac
+done
+
+shift $(($OPTIND - 1))
+(($# > 0)) && ! $rootrun && usage
+(($# == 0)) && set -- .
+
+############################################################
+# Detect path to root of directory tree of current port(-s) and put it
+# in $portsdir, unless it was set by user above. As a last resort, we
+# use some heuristics based on the commonly used names.
+#
+# We also have a $pkgpath variable, that represents subdirectory under
+# root ports directory where the port(-s) will be imported. In case we
+# use heuristics for determining $portsdir, we'll set up $pkgpath, too,
+# since we would get this info anyway.
+#
+# In make_args we write PORTSDIR_PATH override, that allows us to run
+# even in ports directory that is not on the PORTSDIR_PATH. This is
+# useful, for example, when you check your port on cvs.openbsd.org,
+# where you cannot just override mk.conf.
+#
+
+pkgpath=
+
+if [[ -z $portsdir ]]; then
+	# heuristics mode ON
+	pkgpath=${PWD##*/ports/*(mystuff/|openbsd-wip/)}
+	portsdir=${PWD%"/$pkgpath"}
+	[[ -n $portsdir ]] &&
+		echo "ports root directory detected: $portsdir" >&2
+fi
+
+if [[ -z $portsdir ]]; then
+	cat >&2 <<EOE
+${0##*/}: could not detect root ports directory. Please provide
+one with -p option.
+EOE
+	exit 2
+fi
+
+# This way we can run all checks even on cvs.openbsd.org
+set -A make_args -- MASTER_SITE_OPENBSD= \
+	PORTSDIR_PATH="$portsdir:$(cd /usr/ports && make -V PORTSDIR_PATH || true)"
+
+$rootrun && cd -- "$portsdir"
+
+############################################################
+# Check and fail routines
+#
+
+error=false
+
+err() {
+	local prefix=
+	while (($# > 0)); do
+		printf "$prefix%s" "$1" >&2
+		prefix=" "
+		shift
+	done
+	echo >&2
+	error=true
+}
+
+err_duplicated() {
+	err "both $2 and some of its parents has $1"
+}
+
+err_core_found() {
+	err "file or directory \"$1\" found, CVS will ignore it"
+}
+
+err_coredump_found() {
+	err "core dump file found: $1"
+}
+
+is_vcs_item() {
+	[[ -d "$1" && ${1##*/} == @(CVS|.fslckout|.git|.hg|.svn) ]]
+}
+
+ignoring() {
+	local iglob
+	for iglob in "${ignore_list[@]}"; do
+		[[ $1 == $iglob ]] && return 0
+	done
+	return 1
+}
+
+check_trailing_whitespace() {
+	local check_what=$1; shift
+	local real_path
+	(($# > 0)) && real_path=$1
+	[[ -z $real_path ]] && real_path=$check_what
+	egrep -q '[[:space:]]+$' "$check_what" &&
+		err "trailing whitespace in $real_path"
+}
+
+handle_extra_file() {
+	ignoring "$1" || return 0
+
+	# avoid warning, e.g., about ".*"
+	test -e "$1" || return 0
+
+	if is_vcs_item "$1"; then
+		if ! $ignore_cvs || [[ ${1##*/} != CVS ]]; then
+			err "VCS item detected: $1"
+		fi
+	elif [[ ${1##*/} == core ]]; then
+		$rootrun || err_core_found "${1%/*}"
+	elif [[ -f $1 && $1 == *.core ]]; then
+		err_coredump_found "$1"
+	elif [[ -d $1 ]]; then
+		err "extra directory: $1"
+	else
+		err "extra file: $1"
+	fi
+}
+
+# Print out a ref to the particular subport/subpackage, if needed.
+# Port FLAVORs could also be handled, if provided.
+# Usage: portref directory [subpackage [flavor all_flavors]]
+portref() {
+	local dir=$1; shift
+	local subpkg flavor all_flavors
+	if (($# > 0)); then
+		subpkg=$1
+		shift
+	fi
+	if (($# > 0)); then
+		flavor=$1
+		all_flavors=$2
+		shift 2
+	fi
+
+	local ref=
+	if [[ $dir != . ]]; then
+		ref="${dir#./}"
+		[[ -n $subpkg && $subpkg != "-" ]] && ref="$ref,$subpkg"
+	else
+		[[ $subpkg != "-" ]] && ref="$subpkg"
+	fi
+
+	if [[ -n $all_flavors ]]; then
+		[[ -n $ref ]] && ref="$ref, "
+		if [[ -z $flavor ]]; then
+			ref="${ref}default FLAVOR"
+		else
+			ref="${ref}FLAVOR \"$flavor\""
+		fi
+	fi
+
+	[[ -n $ref ]] && echo "in $ref: "
+}
+
+# Checks made:
+#   * Whitelist filter of what could be in this directory.
+check_port_hier() {
+	$debugging && echo "CALLED: check_port_hier($*)" >&2
+
+	local dir=$1; shift
+	for opt; do
+		# looks unsafe but we do not pass anything except
+		# "foo=true" and "foo=false" here
+		eval "$opt"
+		shift
+	done
+
+	local distinfo_lives_upper=${distinfo_lives_upper:-false}
+	local pkg_lives_upper=${pkg_lives_upper:-false}
+	local plist_lives_upper=${plist_lives_upper:-false}
+
+	local distinfo_exists=false
+	[[ -f $dir/distinfo ]] && distinfo_exists=true
+	$distinfo_exists && $distinfo_lives_upper &&
+		err_duplicated distinfo "$dir"
+
+	local pkg_exists=false
+	[[ -d $dir/pkg ]] && pkg_exists=true
+
+	local plist_exists=false
+	ls $dir/pkg/PLIST* >/dev/null 2>&1 && plist_exists=true
+	$plist_lives_upper && $plist_exists &&
+		err_duplicated "packing list(-s)" "$dir"
+
+	$distinfo_lives_upper && distinfo_exists=true
+	$pkg_lives_upper && pkg_exists=true
+	$plist_lives_upper && plist_exists=true
+
+	local recursive_args
+	set -A recursive_args -- \
+		distinfo_lives_upper=$distinfo_exists \
+		pkg_lives_upper=$pkg_exists \
+		plist_lives_upper=$plist_exists
+
+	local F
+	for F in "$dir"/* "$dir"/.*; do
+		F=${F#./}
+		ignoring "$F" && continue
+
+		if is_vcs_item "$F"; then
+			if ! $ignore_cvs || [[ ${F##*/} != CVS ]]; then
+				err "VCS item detected: $F"
+			fi
+		elif [[ -d $F ]]; then
+			case "${F##*/}" in
+			files|patches|pkg)
+				check_${F##*/}_dir "$F"
+				;;
+
+			patches?(-*))
+				check_patches_dir "$F"
+				;;
+
+			*)
+				if ! $rootrun && [[ ${F##*/} == core ]]; then
+					err_core_found "$F"
+				fi
+
+				if ! [[ -f $F/Makefile ]]; then
+					# Avoid extra spam
+					err "not a port directory: $F"
+				else
+					local pkgpath_set=false
+					[[ -n $pkgpath ]] && pkgpath_set=true
+					check_port_dir "$F" "${recursive_args[@]}"
+					$pkgpath_set || pkgpath=${pkgpath%/*}
+				fi
+				;;
+			esac
+		else
+			case "${F##*/}" in
+			Makefile?(.inc)|*.port.mk)
+				check_makefile "$F"
+				;;
+
+			distinfo)
+				;;
+
+			*)
+				handle_extra_file "$F"
+				;;
+			esac
+		fi
+	done
+	egrep -q '^ *SUBDIR[[:space:]]*\+?=' Makefile ||
+		err missing subdir Makefile
+}
+
+# Checks made:
+#   * Whitelist filter of what could be in this directory.
+check_port_dir() {
+	$debugging && echo "CALLED: check_port_dir($*)" >&2
+
+	local dir=$1; shift
+	for opt; do
+		# looks unsafe but we do not pass anything except
+		# "foo=true" and "foo=false" here
+		eval "$opt"
+		shift
+	done
+
+	local distinfo_lives_upper=${distinfo_lives_upper:-false}
+	local pkg_lives_upper=${pkg_lives_upper:-false}
+	local plist_lives_upper=${plist_lives_upper:-false}
+ 
+	check_perms_in_dir "$dir"
+
+	if [[ -f $dir/Makefile.inc ]] ||
+	      egrep -sq '^ *SUBDIR[[:space:]]*\+?=' "$dir"/Makefile; then
+		check_port_hier "${dir#./}" "$@"
+		return
+	fi
+
+	local F
+	local distinfo_exists=false
+	local mk_exists=false
+	local pkg_exists=false
+	local plist_exists=false
+	local portmk_exists=true
+	local non_portmk=0
+
+	for F in "$dir"/* "$dir"/.*; do
+		F=${F#./}
+		ignoring "$F" && continue
+		case ${F##*/} in
+		Makefile)
+			test -f "$F" || err "$F is not a file"
+			check_makefile "$F"
+			mk_exists=true
+			((non_portmk++)) || true
+			;;
+
+		distinfo)
+			$distinfo_lives_upper && err_duplicated distinfo "$dir"
+			distinfo_exists=true
+			test -f "$F" || err "$F is not a file"
+			((non_portmk++)) || true
+			;;
+
+		*.port.mk)
+			test -f "$F" || err "$F is not a file"
+			check_makefile "$F"
+			portmk_exists=true
+			;;
+
+		systrace.filter)
+			test -f "$F" || err "$F is not a file"
+			((non_portmk++)) || true
+			;;
+
+		files|patches)
+			if [[ -d $F ]]; then
+				check_${F##*/}_dir "$F"
+			else
+				err "$F" is not a directory
+			fi
+			((non_portmk++)) || true
+			;;
+
+		pkg)
+			if [[ -d $F ]]; then
+				check_pkg_dir "$F"
+				pkg_exists=true
+				ls "$F"/PLIST* >/dev/null 2>&1 &&
+					plist_exists=true
+				$plist_lives_upper && $plist_exists &&
+					err_duplicated "packing list(-s)" "$dir"
+			else
+				err "$F" is not a directory
+			fi
+			((non_portmk++)) || true
+			;;
+
+		*)
+			handle_extra_file "$F"
+			;;
+		esac
+	done
+
+	# examples: lang/clang, www/mozilla
+	$portmk_exists && ((non_portmk == 0)) && return
+
+	$mk_exists || err no Makefile in "$dir"
+	$pkg_lives_upper && pkg_exists=true
+	$pkg_exists || err "no pkg/ in $dir"
+	$distinfo_lives_upper && distinfo_exists=true
+	$distinfo_exists || $existing_port || err "no distinfo in $dir"
+
+	# Now gather and check some info via "make show=...".
+	# We request all info at once for speed.
+
+	local dist_subdir distfiles flavor flavors master_sites modules
+	local multi_packages pseudo_flavors shared_libs
+	local show_items="DIST_SUBDIR DISTFILES FLAVOR FLAVORS FULLPKGNAME"
+	local show_items="$show_items MASTER_SITES MULTI_PACKAGES"
+	local show_items="$show_items PSEUDO_FLAVORS SHARED_LIBS"
+
+        # Do not try to use co-processes, there is some bug related
+        # to redirection of error stream seen on big number of
+        # nested ports (100 or so). And we need to redirect stderr to
+        # avoid noise when accessing dead co-processes accidentially.
+
+	(cd -- "$dir"; make "${make_args[@]}" show="$show_items") | {
+		read dist_subdir
+		read distfiles
+		read flavor
+		read flavors
+		read fullpkgname
+		read master_sites
+		read multi_packages
+		read pseudo_flavors
+		read shared_libs
+
+		set -A check_flavors --
+		[[ -z $flavor ]] && set -A check_flavors -- ""
+
+		local f pf
+		for f in $flavors; do
+			for pf in $pseudo_flavors; do
+				[[ $f == "$pf" ]] && continue 2
+			done
+			[[ $f == debug ]] && continue     # XXX
+			set -A check_flavors -- "${check_flavors[@]}" $f
+		done
+
+		check_distfiles "$dir" "$dist_subdir" $distfiles
+		check_master_sites "$dir" $master_sites
+		$existing_port || check_shlibs "$dir" $shared_libs
+		for _s in $multi_packages; do
+			sub_checks "$dir" "$_s" \
+			    "$fullpkgname" "${check_flavors[@]}"
+		done
+
+		! $error
+	} || error=true
+
+	if [ -z $pkgpath ] && ! $rootrun; then
+		pkgpath=$(cd -- "$dir"; make "${make_args[@]}" show=PKGPATH 2>/dev/null) ||
+			pkgpath=
+	fi
+}
+
+# Checks made:
+#   * Every library in SHARED_LIBS has 0.0 version.
+check_shlibs() {
+	$debugging && echo "CALLED: check_shlibs($*)" >&2
+
+	local dir=$1; shift
+	local lib
+	local libver
+	local portref=$(portref "$dir")
+
+	while (($# > 1)); do
+		lib=$1
+		libver=$2
+		if [[ $libver != 0.0 ]]; then
+			err "${portref}the $lib shared library has" \
+			    "version $libver instead of 0.0"
+		fi
+		shift 2
+	done
+}
+
+# Checks made:
+#   * Distfiles with useless names go into DIST_SUBDIR or have {url} suffix.
+check_distfiles() {
+	$debugging && echo "CALLED: check_distfiles($*)" >&2
+
+	local dir=$1; shift
+	local dist_subdir=$1; shift
+	local portref=$(portref "$dir")
+
+	# do not care about absent distfiles, this is fine for meta ports
+	while (($# > 1)); do
+		# try to catch "version-only" names, but not anything more
+		if [[ $1 == ?(v)?(.)+([0-9])?(.+([0-9]))*(.+([a-z])) &&
+		      -z $dist_subdir && $1 != *\{*\} ]]; then
+			err "${portref}badly named distfile $1 without" \
+			    "DIST_SUBDIR or {url} postfix"
+		fi
+		shift
+	done
+}
+
+# Checks made:
+#   * No unreliable (without fixed distfiles) hosting listed in MASTER_SITES.
+check_master_sites() {
+	$debugging && echo "CALLED: check_master_sites($*)" >&2
+
+	local dir=$1; shift
+	local portref=$(portref "$dir")
+	local name
+
+	while (($# > 1)); do
+		case "$1" in
+		http?(s)://bitbucket.com/*)	name=BitBucket;;
+		http?(s)://gitorious.com/*)	name=Gitorious;;
+		*)				name=;;
+		esac
+		[[ -n $name ]] && err "$portref$name does not hold real" \
+			"releases, please host the distfiles somewhere" \
+			"somewhere else or ask someone to do this for you"
+		shift
+	done
+}
+
+# Run checks that are FLAVOR/SUBPACKAGE-dependent.
+sub_checks() {
+	$debugging && echo "CALLED: sub_checks($*)" >&2
+
+	local dir=$1; shift
+	local subpkg=$1; shift
+	local fullpkgname=$1; shift
+	local flavor
+	for flavor in "$@"; do
+		# avoid extra noise
+		[[ ${flavor#no_} != ${flavor} &&
+		   ${subpkg#-} == ${flavor#no_} ]] &&
+		   continue
+
+		(
+			cd -- "$dir"
+			portref=$(portref "$dir" "$subpkg" "$flavor" "$*")
+			export SUBPACKAGE="$subpkg" FLAVOR="$flavor"
+
+			make "${make_args[@]}" show="MODULES WANTLIB$subpkg" | {
+				local modules wantlib
+				read modules
+				read wantlib
+				check_wantlib "$portref" "$modules" $wantlib
+			} || error=true
+
+			if $plist_checks; then
+				make "${make_args[@]}" print-plist-with-depends |
+				    check_plist "$portref" "$fullpkgname" ||
+				    error=true
+			fi
+
+			! $error
+		) || error=true
+	done
+}
+
+# Checks made:
+#   * If package installs system-wide icons, it should have the
+#     x11/gtk+2,-guic dependency and @exec/@unexec-delete with
+#     %D/bin/gtk-update-icon-cache -q -t %D/share/icons/$theme
+#     for each icon theme used in package.
+#
+#   * If package adds a MIME type handler, it should have the
+#     devel/desktop-file-utils dependency and @exec/@unexec-delete with
+#     %D/bin/update-desktop-database . Unfortunately, it's hard to tell
+#     if there is a MIME type handler in .desktop file, so we just
+#     trigger if any .desktop files are added to
+#     ${PREFIX}/share/applications/ .
+#
+#   * If package adds a MIME types package, it should have the
+#     misc/shared-mime-info dependency and @exec/@unexec-delete with
+#     %D/bin/update-mime-database %D/share/mime
+#
+#   * If package installs .mo files under ${PREFIX}/share/locale/, then
+#     run-time dependency on devel/gettext should exists.
+check_plist() {
+	$debugging && echo "CALLED: check_plist($*)" >&2
+
+	local portref=$1; shift
+	local fullpkgname=$1; shift
+
+	local guic_dep=false
+	local guic_dep_needed=false
+	local guic_exec_cnt=0
+	local guic_unexec_cnt=0
+
+	local mime_dep=false
+	local mime_dep_needed=false
+	local mime_exec_cnt=0
+	local mime_unexec_cnt=0
+
+	local mimepkg_dep=false
+	local mimepkg_dep_needed=false
+	local mimepkg_exec_cnt=0
+	local mimepkg_unexec_cnt=0
+
+	local icon_themes exec_themes unexec_themes
+
+	local gettext_dep=false
+	local translation_found=false
+
+	local app l theme varname
+
+	while read l; do
+		case "$l" in
+		share/icons/*/@(+([0-9])x+([0-9])|scalable)/*)
+			# We match directories by purpose, this helps to catch
+			# update-plist fuckups, when directories go into one
+			# package and actual icons go in another.
+			guic_dep_needed=true
+			theme=${l#share/icons/}
+			theme=${theme%%/*}
+			# wrap with the '/' characters to avoid erroneous matching
+			echo "$icon_themes" | fgrep -q "/$theme/" ||
+				icon_themes="$icon_themes /$theme/"
+			;;
+		share/icons/*+(/*)?)
+			app=${l#share/icons/}
+			app=${app%%/*}
+			err "${portref}installs icon ${l##*/} in ${l%/*}, it" \
+			    "should go in share/$app/icons/ or like instead"
+			;;
+		"@depend x11/gtk+2,-guic"*)
+			guic_dep=true
+			;;
+		"@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/"*)
+			theme=${l##*/}
+			varname=$(echo "$theme" | sed -e 's/[^a-zA-Z_]/_/g')
+			((guic_exec_cnt++)) || true
+			eval "((guic_exec_cnt_$varname++)) || true"
+			echo "$exec_icon_themes" | fgrep -q "/$theme/" ||
+				exec_icon_themes="$exec_icon_themes /$theme/"
+			;;
+		"@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/"*)
+			theme=${l##*/}
+			varname=$(echo "$theme" | sed -e 's/[^a-zA-Z_]/_/g')
+			((guic_unexec_cnt++)) || true
+			eval "((guic_unexec_cnt_$varname++)) || true"
+			echo "$unexec_icon_themes" | fgrep -q "/$theme/" ||
+				unexec_icon_themes="$unexec_icon_themes /$theme/"
+			;;
+		"@unexec-delete rm -f "%D/share/icons/*/icon-theme.cache)
+			# as an alternative, port could zap the theme entirely
+			theme=${l#*/icons/}
+			theme=${theme%/icon-theme.cache}
+			varname=$(echo "$theme" | sed -e 's/[^a-zA-Z_]/_/g')
+			((guic_unexec_cnt++)) || true
+			eval "((guic_unexec_cnt_$varname++)) || true"
+			echo "$unexec_icon_themes" | fgrep -q "/$theme/" ||
+				unexec_icon_themes="$unexec_icon_themes /$theme/"
+			;;
+		@?(un)exec?(-delete|-update)" %D/bin/gtk-update-icon-cache"*)
+			err "${portref}incorrect gtk-update-icon-cache" \
+			    "invocation: ${l#@* }"
+			;;
+
+		share/applications/*(*/)*.desktop)
+			mime_dep_needed=true
+			;;
+		"@depend devel/desktop-file-utils"*)
+			mime_dep=true
+			;;
+		"@exec %D/bin/update-desktop-database")
+			((mime_exec_cnt++)) || true
+			;;
+		"@unexec-delete %D/bin/update-desktop-database")
+			((mime_unexec_cnt++)) || true
+			;;
+		@?(un)exec?(-delete|-update)" %D/bin/update-desktop-database"*)
+			err "${portref}incorrect update-desktop-database" \
+			    "invocation: ${l#@* }"
+			;;
+
+		share/mime/packages/*.xml)
+			mimepkg_dep_needed=true
+			;;
+		"@depend misc/shared-mime-info"*)
+			mimepkg_dep=true
+			;;
+		"@exec %D/bin/update-mime-database %D/share/mime")
+			((mimepkg_exec_cnt++)) || true
+			;;
+		"@unexec-delete %D/bin/update-mime-database %D/share/mime")
+			((mimepkg_unexec_cnt++)) || true
+			;;
+		@?(un)exec?(-delete|-update)" %D/bin/update-mime-database"*)
+			err "${portref}incorrect update-mime-database" \
+			    "invocation: ${l#@* }"
+			;;
+
+		"@depend devel/gettext"*)
+			gettext_dep=true
+			;;
+		share/locale/*/*/*.mo)
+			translation_found=true
+			;;
+		esac
+	done
+
+	# gtk-update-icon-cache
+	$guic_dep_needed && ! $guic_dep &&
+	    [[ $fullpkgname != gtk-update-icon-cache-* ]] &&
+		err "${portref}missing RDEP on x11/gtk+2,-guic"
+	local cnt
+	for theme in $icon_themes; do
+		theme=${theme#/}
+		theme=${theme%/}
+
+		varname=$(echo "$theme" | sed -e 's/[^a-zA-Z_]/_/g')
+
+		((guic_exec_cnt--)) || true
+		((guic_unexec_cnt--)) || true
+		eval "((guic_exec_cnt_$varname--)) || true"
+		eval "((guic_unexec_cnt_$varname--)) || true"
+
+		eval "cnt=\$guic_exec_cnt_$varname"
+		if (($cnt > 0)); then
+			err "${portref}extra @exec of gtk-update-icon-cache" \
+			    "for icon theme $theme"
+			((guic_exec_cnt--)) || true
+		elif (($cnt < 0)); then 
+			err "${portref}missing @exec of gtk-update-icon-cache" \
+			    "for icon theme $theme"
+		fi
+
+		eval "cnt=\$guic_unexec_cnt_$varname"
+		if (($cnt > 0)); then
+			err "${portref}extra @unexec-delete of gtk-update-icon-cache" \
+			    "for icon theme $theme"
+			((guic_unexec_cnt--)) || true
+		elif (($cnt < 0)); then 
+			err "${portref}missing @unexec-delete of gtk-update-icon-cache" \
+			    "for icon theme $theme"
+		fi
+	done
+
+	for theme in $exec_icon_themes; do
+		theme=${theme#/}
+		theme=${theme%/}
+		echo "$icon_themes" | fgrep -q "/$theme/" ||
+			err "doing @exec of gtk-update-icon-cache" \
+			    "for absent icon theme $theme"
+	done
+
+	for theme in $unexec_icon_themes; do
+		theme=${theme#/}
+		theme=${theme%/}
+		echo "$icon_themes" | fgrep -q "/$theme/" ||
+			err "doing @unexec-delete of gtk-update-icon-cache" \
+			    "for absent icon theme $theme"
+	done
+
+	((guic_exec_cnt > 0)) &&
+		err "${portref}extra @exec of gtk-update-icon-cache"
+	((guic_unexec_cnt > 0)) &&
+		err "${portref}extra @unexec-delete of gtk-update-icon-cache"
+
+	# desktop-file-utils (simplier than previous, isn't it?)
+	$mime_dep_needed && ! $mime_dep &&
+	    [[ $fullpkgname != desktop-file-utils-* ]] &&
+		err "${portref}missing RDEP on devel/desktop-file-utils"
+	if $mime_dep_needed; then
+		((mime_exec_cnt--)) || true
+		((mime_unexec_cnt--)) || true
+	fi
+	if ((mime_exec_cnt > 0)) &&
+	    [[ $fullpkgname != desktop-file-utils-* ]]; then
+		err "${portref}extra @exec of update-desktop-database"
+	elif ((mime_exec_cnt < 0)); then
+		err "${portref}missing @exec of update-desktop-database"
+	fi
+	if ((mime_unexec_cnt > 0)); then
+		err "${portref}extra @unexec-delete of update-desktop-database"
+	elif ((mime_unexec_cnt < 0)); then
+		err "${portref}missing @unexec-delete of update-desktop-database"
+	fi
+
+	# update-mime-database (same as previous)
+	$mimepkg_dep_needed && ! $mimepkg_dep &&
+	    [[ $fullpkgname != shared-mime-info-* ]] &&
+		err "${portref}missing RDEP on misc/shared-mime-info"
+	if $mimepkg_dep_needed; then
+		((mimepkg_exec_cnt--)) || true
+		((mimepkg_unexec_cnt--)) || true
+	fi
+	if ((mimepkg_exec_cnt > 0)) &&
+	    [[ $fullpkgname != shared-mime-info-* ]]; then
+		err "${portref}extra @exec of update-mime-database"
+	elif ((mimepkg_exec_cnt < 0)); then
+		err "${portref}missing @exec of update-mime-database"
+	fi
+	if ((mimepkg_unexec_cnt > 0)); then
+		err "${portref}extra @unexec-delete of update-mime-database"
+	elif ((mimepkg_unexec_cnt < 0)); then
+		err "${portref}missing @unexec-delete of update-mime-database"
+	fi
+
+	# gettext
+	$translation_found && ! $gettext_dep &&
+		err "${portref}translation file(-s) found without" \
+		    "devel/gettext dependency"
+
+	! $error
+}
+
+# Checks made:
+#   * devel/gettext and converters/libiconv MODULES are not forgotten.
+check_wantlib() {
+	local portref="$1"; shift
+	local modules="$1"; shift
+
+	local iconv_wantlib=false
+	local intl_wantlib=false
+	local gettext_module=false
+	local iconv_module=false
+	local v
+
+	for v in $modules; do case $v in
+		devel/gettext)		gettext_module=true;;
+		converters/libiconv)	iconv_module=true;;
+	esac; done
+
+	for v; do case $v in
+		iconv?(?(">")=+([0-9])))	iconv_wantlib=true;;
+		intl?(?(">")=+([0-9])))		intl_wantlib=true;;
+	esac; done
+
+	if $intl_wantlib && ! $gettext_module; then
+		err "${portref}missing devel/gettext in MODULES"
+	elif $iconv_wantlib && ! $gettext_module && ! $iconv_module; then
+		err "${portref}missing converters/libiconv in MODULES"
+	fi
+
+	! $error
+}
+
+# Checks made:
+#   * Directory is not empty
+#   * No '*.core' files present
+check_files_dir() {
+	$debugging && echo "CALLED: check_files_dir($*)" >&2
+
+	find -f "$1" -- -type f | {
+		local empty=true
+		while read F; do
+			ignoring "$F" && continue
+			empty=false
+			[[ "$F" == *.core ]] && err_coredump_found "$F"
+		done
+		$empty && "there are no files, please remove the $1 directory"
+		! $error
+	} || error=true
+}
+
+# Checks made:
+#   * Each patch contains $OpenBSD: portcheck,v 1.1 2013/08/21 17:00:24 zhuk Exp $ RCS tag.
+#   * Directory is not empty and consists only of plain files starting
+#     with 'patch-' and not ending with '.orig'.
+check_patches_dir() {
+	$debugging && echo "CALLED: check_patches_dir($*)" >&2
+
+	local empty=true
+	local F
+
+	for F in "$1"/* "$1"/.*; do case "${F##*/}" in
+	patch-*.orig)
+		handle_extra_file "$F"
+		;;
+
+	patch-*)
+		empty=false
+		test -f "$F" ||
+			err "$F is not a file"
+		$rootrun || head -n 1 -- "$F" | egrep -q '^\$OpenBSD.*\$$' ||
+			err "$F does not have \$OpenBSD\$ RCS tag at the top"
+		;;
+
+	*)
+		handle_extra_file "$F"
+		;;
+	esac; done
+
+	$empty && err "there are no patches, please remove the $1 directory instead"
+}
+
+# Checks made:
+#   * Directory is not empty and consist only of plain files with fixed names.
+#   * PFRAG, PLIST, README, SECURITY and .rc files contain appropriate
+#     $OpenBSD: portcheck,v 1.1 2013/08/21 17:00:24 zhuk Exp $ RCS tags; other files should NOT contain $OpenBSD: portcheck,v 1.1 2013/08/21 17:00:24 zhuk Exp $ RCS tag.
+#   * PFRAG.shared should be merged in PLIST if it contains @lib items only.
+#   * No trailing whitespace for DESCR, MESSAGE, README, SECURITY, UNMESSAGE
+#     and .rc files (PLIST and PFRAG are better checked with "make package").
+check_pkg_dir() {
+	$debugging && echo "CALLED: check_pkg_dir($*)" >&2
+
+	local empty=true
+	local F
+
+	for F in "$1"/* "$1"/.*; do case "${F##*/}" in
+	DESCR?(-*))
+		empty=false
+		[[ -f $F ]] ||
+			err "$F is not a file"
+		check_trailing_whitespace "$F"
+		fgrep -q '$OpenBSD: portcheck,v 1.1 2013/08/21 17:00:24 zhuk Exp $' "$F" &&
+			err "$F should not contain \$OpenBSD\$ tag"
+		;;
+
+	PFRAG.shared?(-*))
+		empty=false
+		[[ -f $F ]] ||
+			err "$F is not a file"
+		head -n 1 -- "$F" |
+			egrep -q '^@comment \$OpenBSD[[:space:]]*(:.*)?\$$' ||
+			err "$F does not have \$OpenBSD\$ RCS tag at the top"
+
+		awk <"$F" '/^(@comment )?@lib /' | {
+			local no_a_for_so=false plist=${F##*/} shlibs_found=false
+			plist=PLIST${plist##PFRAG.+([!-])}
+			while read l; do
+				shlibs_found=true
+				l=${l##"@comment "}
+				l=${l##"@lib "}
+				l=${l%%.so.*}.a
+				fgrep -q -- "$l" "${F%/*}/$plist" || no_a_for_so=true
+			done
+			$shlibs_found && ! $no_a_for_so &&
+				err "$F should be merged in $plist"
+		}
+		;;
+
+	PFRAG.*|PLIST?(-*))
+		empty=false
+		[[ -f $F ]] ||
+			err "$F is not a file"
+		head -n 1 -- "$F" |
+			egrep -q '^@comment \$OpenBSD[[:space:]]*(:.*)?\$$' ||
+			err "$F does not have \$OpenBSD\$ RCS tag at the top"
+		;;
+
+	README?(-*)|SECURITY?(-*))
+		[[ -f $F ]] ||
+			err "$F is not a file"
+		check_trailing_whitespace "$F"
+		head -n 1 -- "$F" |
+			egrep -q '^(#[[:space:]]*)?\$OpenBSD[[:space:]]*(:.*)?\$$' ||
+			err "$F does not have \$OpenBSD\$ RCS tag at the top"
+		;;
+
+	*.rc)
+		[[ -f $F ]] ||
+			err "$F is not a file"
+		check_trailing_whitespace "$F"
+		head -n 5 -- "$F" |
+			egrep -q '^#[[:space:]]*\$OpenBSD[[:space:]]*(:.*)?\$$' ||
+			err "$F does not have \$OpenBSD\$ RCS tag at the top"
+		;;
+
+	MESSAGE?(-*)|UNMESSAGE?(-*))
+		[[ -f $F ]] ||
+			err "$F is not a file"
+		check_trailing_whitespace "$F"
+		fgrep -q '$OpenBSD: portcheck,v 1.1 2013/08/21 17:00:24 zhuk Exp $' "$F" &&
+			err "$F should not contain \$OpenBSD\$ tag"
+		;;
+
+	*)
+		handle_extra_file "$F"
+		;;
+	esac; done
+
+	$empty && err "$1 directory does not contain either DESCR, PFRAG or PLIST files"
+}
+
+# Checks made:
+#   * Contains $OpenBSD: portcheck,v 1.1 2013/08/21 17:00:24 zhuk Exp $ tag at the top line.
+#   * No REVISION marks present in given file (unless in update mode).
+#   * No trailing whitespace.
+check_makefile() {
+	$debugging && echo "CALLED: check_makefile($*)" >&2
+
+	check_trailing_whitespace "$1"
+	head -n 1 -- "$1" |
+		egrep -q '^#[[:space:]]*\$OpenBSD[[:space:]]*(:.*)?\$' ||
+		err "$F does not have \$OpenBSD\$ RCS tag at the top"
+
+	$existing_port && return 0
+	grep -q '^ *REVISION' "$1" 2>/dev/null &&
+		err "REVISION(-s) found in $1"
+}
+
+# Checks made:
+#   * None of executable bits (111) are set on plain files.
+check_perms_in_dir() {
+	$debugging && echo "CALLED: check_perms_in_dir($*)" >&2
+
+	find -f "$1" -- -maxdepth 1 -type f \
+	    \( -perm -100 -or -perm -010 -or -perm 001 \) | {
+		while read F; do
+			F=${F#./}
+			ignoring "$F" && continue
+			err "executable file: ${F#./}"
+		done
+		! $error
+	} || error=true
+}
+
+
+############################################################
+# Run checks. Also calculate and show pkgpath variable,
+# unless we're checking the ports tree root dir.
+#
+
+for D; do
+	if [[ $D == /* ]]; then
+		err "absolute path $D ignored"
+		continue
+	fi
+	if [[ $D == *(*/)..*(/*) ]]; then
+		err "too many .. in $D, skipping"
+		continue
+	fi
+	check_port_dir "$D"
+done
+
+if ! $rootrun; then
+	[[ -z $pkgpath ]] && pkgpath=${PWD##"$portsdir/"}
+
+	if [[ $pkgpath == "$PWD" ]]; then
+		cat >&2 <<EOE
+${0##*/}: could not determine PKGPATH. Please help me with the -p option.
+EOE
+		exit 2
+	fi
+
+	echo "$pkgpath"
+fi
+
+! $error
