@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2013/08/12 01:29:03 zhuk Exp $
+# $OpenBSD: Makefile,v 1.30 2013/08/21 17:06:24 zhuk Exp $
 
 COMMENT =	KDE core libraries
 DISTNAME =	kdelibs-${MODKDE4_VERSION}
 PKGSPEC =	kdelibs->=4
-REVISION =	1
+REVISION =	2
 
 DPB_PROPERTIES =	parallel
 
@@ -65,12 +65,12 @@ WANTLIB += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtOpenGL
 WANTLIB += lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml
 WANTLIB += asn1 aspell attica bz2 dbusmenu-qt enchant exslt fam
-WANTLIB += gif gssapi intl jasper jpeg lzma pcre pcreposix
+WANTLIB += gif gssapi jasper jpeg lzma pcre pcreposix
 WANTLIB += png polkit-qt-core-1 qca2 soprano sopranoclient
 WANTLIB += streamanalyzer streams xml2 xslt
 WANTLIB += heimbase roken wind
 
-MODULES =	multimedia/phonon
+MODULES =	devel/gettext multimedia/phonon
 MODKDE4_USE =
 
 BUILD_DEPENDS =	misc/shared-desktop-ontologies>=0.10 \
