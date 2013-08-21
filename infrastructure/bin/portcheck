@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.1 2013/08/21 17:00:24 zhuk Exp $
+# $OpenBSD: portcheck,v 1.2 2013/08/21 19:49:32 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -856,16 +856,55 @@ check_wantlib() {
 	local intl_wantlib=false
 	local gettext_module=false
 	local iconv_module=false
+	local qt3_module=false
+	local qt4_module=false
+	local kde3_module=false
+	local kde4_module=false
 	local v
 
 	for v in $modules; do case $v in
 		devel/gettext)		gettext_module=true;;
 		converters/libiconv)	iconv_module=true;;
+		x11/qt3)		qt3_module=true;;
+		x11/qt4)		qt4_module=true;;
+		x11/kde)		kde3_module=true;;
+		x11/kde4)		kde4_module=true;;
 	esac; done
 
 	for v; do case $v in
-		iconv?(?(">")=+([0-9])))	iconv_wantlib=true;;
-		intl?(?(">")=+([0-9])))		intl_wantlib=true;;
+		iconv?(?(">")=+([0-9])))
+			iconv_wantlib=true
+			;;
+
+		intl?(?(">")=+([0-9])))
+			intl_wantlib=true
+			;;
+
+		Qt*)
+			if $qt4_module; then
+				err "$portref$v instead of lib/qt4/$v" \
+				    "in WANTLIB"
+			elif $qt3_module; then 
+				err "$portref$v instead of lib/qt3/$v" \
+				    "in WANTLIB"
+			else
+				err "$portref$v WANTLIB without x11/qt[34]" \
+				    "in MODULES"
+			fi
+			;;
+
+		kdecore*)
+			if $kde4_module; then
+				err "$portref$v instead of \${KDE4LIB}/$v" \
+				    "in WANTLIB"
+			elif $kde3_module; then 
+				err "$portref$v instead of \${KDE}/$v" \
+				    "in WANTLIB"
+			else
+				err "$portref$v WANTLIB without x11/kde*" \
+				    "in MODULES"
+			fi
+			;;
 	esac; done
 
 	if $intl_wantlib && ! $gettext_module; then
@@ -896,7 +935,7 @@ check_files_dir() {
 }
 
 # Checks made:
-#   * Each patch contains $OpenBSD: portcheck,v 1.1 2013/08/21 17:00:24 zhuk Exp $ RCS tag.
+#   * Each patch contains $OpenBSD: portcheck,v 1.2 2013/08/21 19:49:32 zhuk Exp $ RCS tag.
 #   * Directory is not empty and consists only of plain files starting
 #     with 'patch-' and not ending with '.orig'.
 check_patches_dir() {
@@ -929,7 +968,7 @@ check_patches_dir() {
 # Checks made:
 #   * Directory is not empty and consist only of plain files with fixed names.
 #   * PFRAG, PLIST, README, SECURITY and .rc files contain appropriate
-#     $OpenBSD: portcheck,v 1.1 2013/08/21 17:00:24 zhuk Exp $ RCS tags; other files should NOT contain $OpenBSD: portcheck,v 1.1 2013/08/21 17:00:24 zhuk Exp $ RCS tag.
+#     $OpenBSD: portcheck,v 1.2 2013/08/21 19:49:32 zhuk Exp $ RCS tags; other files should NOT contain $OpenBSD: portcheck,v 1.2 2013/08/21 19:49:32 zhuk Exp $ RCS tag.
 #   * PFRAG.shared should be merged in PLIST if it contains @lib items only.
 #   * No trailing whitespace for DESCR, MESSAGE, README, SECURITY, UNMESSAGE
 #     and .rc files (PLIST and PFRAG are better checked with "make package").
@@ -945,7 +984,7 @@ check_pkg_dir() {
 		[[ -f $F ]] ||
 			err "$F is not a file"
 		check_trailing_whitespace "$F"
-		fgrep -q '$OpenBSD: portcheck,v 1.1 2013/08/21 17:00:24 zhuk Exp $' "$F" &&
+		fgrep -q '$OpenBSD: portcheck,v 1.2 2013/08/21 19:49:32 zhuk Exp $' "$F" &&
 			err "$F should not contain \$OpenBSD\$ tag"
 		;;
 
@@ -1003,7 +1042,7 @@ check_pkg_dir() {
 		[[ -f $F ]] ||
 			err "$F is not a file"
 		check_trailing_whitespace "$F"
-		fgrep -q '$OpenBSD: portcheck,v 1.1 2013/08/21 17:00:24 zhuk Exp $' "$F" &&
+		fgrep -q '$OpenBSD: portcheck,v 1.2 2013/08/21 19:49:32 zhuk Exp $' "$F" &&
 			err "$F should not contain \$OpenBSD\$ tag"
 		;;
 
@@ -1016,7 +1055,7 @@ check_pkg_dir() {
 }
 
 # Checks made:
-#   * Contains $OpenBSD: portcheck,v 1.1 2013/08/21 17:00:24 zhuk Exp $ tag at the top line.
+#   * Contains $OpenBSD: portcheck,v 1.2 2013/08/21 19:49:32 zhuk Exp $ tag at the top line.
 #   * No REVISION marks present in given file (unless in update mode).
 #   * No trailing whitespace.
 check_makefile() {
