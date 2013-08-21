@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.214 2013/08/21 12:36:15 ajacoutot Exp $
+$OpenBSD: user.list,v 1.215 2013/08/21 21:54:45 landry Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -230,3 +230,4 @@ id  user		group		port options
 719 _puppetdb		_puppetdb	databases/puppetdb
 720 _lldpd		_lldpd		net/lldpd
 721 _dkimproxy		_dkimproxy	mail/dkimproxy
+722 _salt-master	_salt		sysutils/salt
