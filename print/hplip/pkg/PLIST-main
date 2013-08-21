@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.25 2013/08/21 13:20:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.26 2013/08/21 14:15:26 ajacoutot Exp $
 @conflict hplip-docs-*
 @conflict hplip-gui-<3.13.7p2
 @extraunexec rm -rf /usr/local/share/hplip/data/firmware
@@ -70,7 +70,6 @@ share/doc/hplip/systray.html
 share/doc/hplip/troubleshooting.html
 share/doc/hplip/uninstalling.html
 share/doc/hplip/upgrading.html
-share/doc/pkg-readmes/${FULLPKGNAME}
 share/hplip/__init__.py
 share/hplip/__init__.pyc
 share/hplip/align.py

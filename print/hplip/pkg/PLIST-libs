@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-libs,v 1.6 2013/08/21 13:43:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST-libs,v 1.7 2013/08/21 14:15:26 ajacoutot Exp $
 @conflict hplip-<3.13.7p4
 @extraunexec rm -rf /var/log/hp/tmp/*
 @extraunexec rm -f /var/log/hp/* 2>/dev/null || true
@@ -9,6 +9,7 @@ lib/libhpmud.la
 @lib lib/libhpmud.so.${LIBhpmud_VERSION}
 share/cups/drv/
 share/cups/drv/hp/
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/hplip/
 share/examples/hplip/db/
 @sample /var/db/hp/

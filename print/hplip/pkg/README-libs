@@ -1,0 +1,99 @@
+$OpenBSD: README-libs,v 1.1 2013/08/21 14:15:26 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+This is a common README for all HLIP packages.
+
+Communication with local printers is done via CUPS over libusb, make
+sure you read the "USB" section of the documentation that comes with the
+cups package (cf. ${LOCALBASE}/share/doc/pkg-readmes/cups-*).
+
+Printing
+========
+
+Installing a printer automatically using the HP tools
+-----------------------------------------------------
+(req. hplip, opt. hplip-gui)
+
+To add a CUPS printer, run the following command as root
+(prerequisite: the DBus and CUPS daemons must be running):
+    hp-setup -i
+
+Alternatively, if you have hplip-gui installed, you can use the
+graphical interface by just running the following as root:
+    hp-setup
+
+Installing a printer manually
+-----------------------------
+(req. hpcups, opt. hpijs)
+
+To manually add a CUPS printer without using the native HP tools from
+the hplip package you must know the device URI of the printer. This URI
+is created using the 'hp-makeuri' utility from the hplip package, but
+once known, hplip is not needed and can be pkg_delete(1)d.
+
+e.g. for a network printer:
+    hp-makeuri 192.168.10.100
+    <...>
+    CUPS URI: hp:/net/Officejet_7500_E910?ip=192.168.10.100
+
+Then add an 'HP Printer (HPLIP)' entry in CUPS with the corresponding
+URI (using the CUPS web interface or lpadmin(8)).
+
+Alternatively, the printer can be configured to use the foomatic print
+framework using the hpijs package.
+
+Scanning
+========
+The first thing to do is to make the hpaio backend available to SANE:
+simply add "hpaio" to the sane-backends configuration file. As root:
+    echo "hpaio" >> ${SYSCONFDIR}/sane.d/dll.conf
+
+Installing a scanner automatically using the HP tools
+-----------------------------------------------------
+(req. hplip+hpaio)
+
+First, install the printing part of you all-in-one device printer using
+the HP tools as documented above.
+
+Once configured in CUPS with an hp:// URI, then it should work out of
+the box using hp-scan and/or sane(7)-compatible applications.
+e.g.
+    scanimage -L                       
+    device `hpaio:/net/Officejet_7500_E910?zc=oj-7500a' is a Hewlett-Packard Officejet_7500_E910 all-in-one
+
+Installing a scanner manually
+-----------------------------
+(req. hpaio)
+
+To manually add a scanner without using the native HP tools from the
+hplip package you must know the device URI of the scqnner. This URI is
+created using the 'hp-makeuri' utility from the hplip package, but once
+known, hplip is not needed and can be pkg_delete(1)d.
+
+e.g. for a network scanner:
+    hp-makeuri 192.168.10.100
+    <...>
+    SANE URI: hpaio:/net/Officejet_7500_E910?ip=192.168.10.100
+    <...>
+
+Then pass this URI to your sane(7)-compatible application.
+e.g.
+    xsane hpaio:/net/Officejet_7500_E910?ip=192.168.10.100
+
+Note that in this mode, not all applications will be able to detect your
+scanner; if that's an issue, install your scanner using the HP tools as
+documented above.
+
+Plugin installation
+===================
+Some devices will not work properly without a corresponding proprietary
+binary plugin. HPLIP plugins automated installation is not available on
+OpenBSD but it can be installed manually by running the following as
+root:
+    cd /tmp
+    ftp http://www.openprinting.org/download/printdriver/auxfiles/HP/plugins/hplip-${V}-plugin.run
+    /bin/sh ./hplip-${V}-plugin.run --keep 2>/dev/null
+    ${MODPY_BIN} ./plugin_install.py -i
