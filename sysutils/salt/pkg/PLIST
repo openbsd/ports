@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/08/10 13:39:27 landry Exp $
-@newgroup _salt:721
-@newuser _salt-master:721:721:daemon:Salt-Master Daemon:/nonexistent:/sbin/nologin
+@comment $OpenBSD: PLIST,v 1.2 2013/08/21 21:55:15 landry Exp $
+@newgroup _salt:722
+@newuser _salt-master:722:722:daemon:Salt-Master Daemon:/nonexistent:/sbin/nologin
 @owner _salt-master
 @group _salt
 @sample /var/cache/salt/

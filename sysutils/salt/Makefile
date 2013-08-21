@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/08/10 13:39:26 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2013/08/21 21:55:15 landry Exp $
 
 COMMENT =	remote execution and configuration management system
 
 MODPY_EGG_VERSION =	0.16.3
 DISTNAME =	salt-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	sysutils net devel
 
