@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.5 2013/08/21 21:53:29 zhuk Exp $
+# $OpenBSD: portcheck,v 1.6 2013/08/21 23:46:00 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -883,29 +883,31 @@ check_wantlib() {
 			intl_wantlib=true
 			;;
 
-		Qt*)
-			if $qt4_module; then
-				err "$portref$v instead of lib/qt4/$v" \
-				    "in WANTLIB"
-			elif $qt3_module; then 
-				err "$portref$v instead of lib/qt3/$v" \
-				    "in WANTLIB"
-			else
-				err "$portref$v WANTLIB without x11/qt[34]" \
-				    "in MODULES"
-			fi
+		Qt+([A-Za-z0-9])?(?('>')=+([0-9])))
+			err "$portref$v instead of lib/qt4/$v" \
+			    "in WANTLIB"
 			;;
 
-		kdecore*)
+		qt-mt?(?('>')=+([0-9])))
+			err "$portref$v instead of lib/qt3/$v" \
+			    "in WANTLIB"
+			;;
+
+		DCOP?(?('>')=+([0-9])))
+			err "$portref$v instead of \${KDE}/$v" \
+			    "in WANTLIB (check other libs, too!)"
+			;;
+
+		kdecore?(?('>')=+([0-9])))
 			if $kde4_module; then
 				err "$portref$v instead of \${KDE4LIB}/$v" \
-				    "in WANTLIB"
+				    "in WANTLIB (check other libs, too!)"
 			elif $kde3_module; then 
 				err "$portref$v instead of \${KDE}/$v" \
-				    "in WANTLIB"
+				    "in WANTLIB (check other libs, too!)"
 			else
 				err "$portref$v WANTLIB without x11/kde*" \
-				    "in MODULES"
+				    "in MODULES (check other libs, too!)"
 			fi
 			;;
 	esac; done
