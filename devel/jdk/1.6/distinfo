@@ -4,13 +4,13 @@ SHA256 (jdk/jdk6-jaf-b20.zip) = eMe1ydYnHojuRqut0BimHx6WRfiTbMjfFhfl9PUHQBI=
 SHA256 (jdk/jdk6-jaxws2_1_6-2011_06_13.zip) = IpBAVE55H0SQbo57b2+vUDxzCl2FQnUTXzklSQ1cO+M=
 SHA256 (jdk/openjdk-6-src-b27-26_oct_2012.tar.gz) = BEw4d7FZQP8E+KqBczfyh4oAzIlnSFRVfxoC8VsYAqA=
 SHA256 (jdk/openjdk-6u32-patch-set-20130113.zip) = Vz6NNneua+6oXPxULBDIp3Mm20KS5l+JQsAVbTaKAqE=
-SHA256 (jdk/openjdk6-bootjdk-amd64-20130414.tar.gz) = 76XcnDdaX/CCcNWXrzNwPNFRA6TdlJAgH2E+OySIfJ0=
-SHA256 (jdk/openjdk6-bootjdk-i386-20130414.tar.gz) = mKQfTZm5GXHAtxGj8ANhmz7Rjdl02oguylhiRZVxHpE=
+SHA256 (jdk/openjdk6-bootjdk-amd64-20130822.tar.gz) = izqlux8hRo5txoMFN9M30ICVwFivGpTlD7sEg9GqkdM=
+SHA256 (jdk/openjdk6-bootjdk-i386-20130822.tar.gz) = TmOq6PAuIE9ATyWZRDUpJKBgjD49Dk3r6yEZKQriNYo=
 SIZE (jdk/apache-ant-1.8.4-bin.tar.gz) = 5425171
 SIZE (jdk/jaxp144_04.zip) = 5976385
 SIZE (jdk/jdk6-jaf-b20.zip) = 71243
 SIZE (jdk/jdk6-jaxws2_1_6-2011_06_13.zip) = 5512710
 SIZE (jdk/openjdk-6-src-b27-26_oct_2012.tar.gz) = 45789350
 SIZE (jdk/openjdk-6u32-patch-set-20130113.zip) = 155544
-SIZE (jdk/openjdk6-bootjdk-amd64-20130414.tar.gz) = 64578055
-SIZE (jdk/openjdk6-bootjdk-i386-20130414.tar.gz) = 66074916
+SIZE (jdk/openjdk6-bootjdk-amd64-20130822.tar.gz) = 64600139
+SIZE (jdk/openjdk6-bootjdk-i386-20130822.tar.gz) = 66090198
