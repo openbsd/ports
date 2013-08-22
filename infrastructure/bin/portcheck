@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.15 2013/08/22 13:20:17 zhuk Exp $
+# $OpenBSD: portcheck,v 1.16 2013/08/22 13:23:54 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -705,6 +705,7 @@ check_plist() {
 		share/icons/*)
 			app=${l#share/icons/}
 			app=${app%%/*}
+			app=${app%%.*}
 			err "${portref}installs icon ${l##*/} in ${l%/*}, it" \
 			    "should go in share/$app/icons/ or like instead"
 			;;
