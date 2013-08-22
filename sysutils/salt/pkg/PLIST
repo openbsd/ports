@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/08/22 07:28:05 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/08/22 18:14:49 kirby Exp $
 @newgroup _salt:722
 @newuser _salt-master:722:722:daemon:Salt-Master Daemon:/nonexistent:/sbin/nologin
 @owner _salt-master
 @group _salt
 @sample /var/cache/salt/
 @sample /var/log/salt/
-@sample ${SYSCONFDIR}/salt/
 @owner
 @group
 bin/salt
@@ -758,5 +757,13 @@ lib/python${MODPY_VERSION}/site-packages/salt/wheel/pillar_roots.pyc
 @man man/man1/salt.1
 @man man/man7/salt.7
 share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/salt/
+@sample ${SYSCONFDIR}/salt/
+share/examples/salt/master.sample
+@sample ${SYSCONFDIR}/salt/master
+share/examples/salt/minion.sample
+@sample ${SYSCONFDIR}/salt/minion
+@sample ${SYSCONFDIR}/salt/master.d/
+@sample ${SYSCONFDIR}/salt/minion.d/
 @rcscript ${RCDIR}/salt_master
 @rcscript ${RCDIR}/salt_minion

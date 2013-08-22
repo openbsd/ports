@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2013/08/21 21:55:15 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2013/08/22 18:14:46 kirby Exp $
 
 COMMENT =	remote execution and configuration management system
 
 MODPY_EGG_VERSION =	0.16.3
 DISTNAME =	salt-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	sysutils net devel
 
@@ -25,6 +25,13 @@ RUN_DEPENDS =	net/py-zmq \
 
 do-test:
 	@${MODPY_TEST_TARGET}
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/salt/
+	${INSTALL_DATA} ${WRKSRC}/conf/master \
+		${PREFIX}/share/examples/salt/master.sample
+	${INSTALL_DATA} ${WRKSRC}/conf/minion \
+		${PREFIX}/share/examples/salt/minion.sample
 
 # devel/py-gitpython for fileserver backend ?
 
