@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.21 2013/08/22 17:44:22 zhuk Exp $
+# $OpenBSD: portcheck,v 1.22 2013/08/22 20:33:16 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -199,10 +199,6 @@ has_subdirs_only() {
 	}
 }
 
-is_vcs_item() {
-	[[ -d "$1" && ${1##*/} == @(CVS|.fslckout|.git|.hg|.svn) ]]
-}
-
 ignoring() {
 	local iglob
 	for iglob in "${ignore_list[@]}"; do
@@ -211,13 +207,8 @@ ignoring() {
 	return 1
 }
 
-check_trailing_whitespace() {
-	local check_what=$1; shift
-	local real_path
-	(($# > 0)) && real_path=$1
-	[[ -z $real_path ]] && real_path=$check_what
-	egrep -q '[[:space:]]+$' "$check_what" &&
-		err "trailing whitespace in $real_path"
+is_vcs_item() {
+	[[ -d "$1" && ${1##*/} == @(CVS|.fslckout|.git|.hg|.svn) ]]
 }
 
 handle_extra_file() {
@@ -241,6 +232,13 @@ handle_extra_file() {
 	fi
 }
 
+# Make a path to .py[co] file looks like as if it's in the same dir
+# as the corresponding .py file, and has same basename. E.g.:
+#   lib/python3.3/__pycache__/Foo/cpython-33.Bar.pyc
+# became:
+#   lib/python2.7/Foo/Bar.pyc
+# which corresponds to:
+#   lib/python2.7/Foo/Bar.py
 normalize_pyco() {
 	local pyco=$1
 	[[ $pyco == *.cpython-+([0-9]).py[co] ]] &&
@@ -436,14 +434,14 @@ check_port_dir() {
 			test -f "$F" || err "$F is not a file"
 			check_makefile "$F"
 			mk_exists=true
-			((non_portmk++)) || true
+			((++non_portmk))
 			;;
 
 		distinfo)
 			$distinfo_lives_upper && err_duplicated distinfo "$dir"
 			distinfo_exists=true
 			test -f "$F" || err "$F is not a file"
-			((non_portmk++)) || true
+			((++non_portmk))
 			;;
 
 		*.port.mk)
@@ -454,7 +452,7 @@ check_port_dir() {
 
 		systrace.filter)
 			test -f "$F" || err "$F is not a file"
-			((non_portmk++)) || true
+			((++non_portmk))
 			;;
 
 		files|patches)
@@ -463,7 +461,7 @@ check_port_dir() {
 			else
 				err "$F" is not a directory
 			fi
-			((non_portmk++)) || true
+			((++non_portmk))
 			;;
 
 		pkg)
@@ -478,7 +476,7 @@ check_port_dir() {
 			else
 				err "$F" is not a directory
 			fi
-			((non_portmk++)) || true
+			((++non_portmk))
 			;;
 
 		*)
@@ -547,6 +545,12 @@ check_port_dir() {
 
 	pkgpath=${pkpath:-"$pkg_path_this"}
 	last_subst_cmd="$subst_cmd"
+}
+
+# Checks made: obvious
+check_trailing_whitespace() {
+	egrep -q '[[:space:]]+$' "$1" &&
+		err "trailing whitespace in $1"
 }
 
 # Checks made:
@@ -701,13 +705,17 @@ check_plist() {
 	local mimepkg_exec_cnt=0
 	local mimepkg_unexec_cnt=0
 
+	# Lists of icon themes discovered through reading
+	# @file, @exec and @unexec lines, accordingly.
 	local icon_themes exec_themes unexec_themes
 
 	local gettext_dep=false
 	local translation_found=false
 
+	# Lists of .py, .pyc and .pyo items found, accordingly
 	local py_files pyc_files pyo_files
 
+	# Temporary ones
 	local app l theme varname py
 
 	while read -pr l; do
@@ -745,16 +753,16 @@ check_plist() {
 		"@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/"*)
 			theme=${l##*/}
 			varname=$(echo "$theme" | sed -e 's/[^a-zA-Z_]/_/g')
-			((guic_exec_cnt++)) || true
-			eval "((guic_exec_cnt_$varname++)) || true"
+			((++guic_exec_cnt))
+			eval "((++guic_exec_cnt_$varname))"
 			echo "$exec_icon_themes" | fgrep -q "/$theme/" ||
 				exec_icon_themes="$exec_icon_themes /$theme/"
 			;;
 		"@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/"*)
 			theme=${l##*/}
 			varname=$(echo "$theme" | sed -e 's/[^a-zA-Z_]/_/g')
-			((guic_unexec_cnt++)) || true
-			eval "((guic_unexec_cnt_$varname++)) || true"
+			((++guic_unexec_cnt))
+			eval "((++guic_unexec_cnt_$varname))"
 			echo "$unexec_icon_themes" | fgrep -q "/$theme/" ||
 				unexec_icon_themes="$unexec_icon_themes /$theme/"
 			;;
@@ -763,8 +771,8 @@ check_plist() {
 			theme=${l#*/icons/}
 			theme=${theme%/icon-theme.cache}
 			varname=$(echo "$theme" | sed -e 's/[^a-zA-Z_]/_/g')
-			((guic_unexec_cnt++)) || true
-			eval "((guic_unexec_cnt_$varname++)) || true"
+			((++guic_unexec_cnt))
+			eval "((++guic_unexec_cnt_$varname))"
 			echo "$unexec_icon_themes" | fgrep -q "/$theme/" ||
 				unexec_icon_themes="$unexec_icon_themes /$theme/"
 			;;
@@ -780,10 +788,10 @@ check_plist() {
 			mime_dep=true
 			;;
 		"@exec %D/bin/update-desktop-database")
-			((mime_exec_cnt++)) || true
+			((++mime_exec_cnt))
 			;;
 		"@unexec-delete %D/bin/update-desktop-database")
-			((mime_unexec_cnt++)) || true
+			((++mime_unexec_cnt))
 			;;
 		@?(un)exec?(-delete|-update)" %D/bin/update-desktop-database"*)
 			err "${portref}incorrect update-desktop-database" \
@@ -797,10 +805,10 @@ check_plist() {
 			mimepkg_dep=true
 			;;
 		"@exec %D/bin/update-mime-database %D/share/mime")
-			((mimepkg_exec_cnt++)) || true
+			((++mimepkg_exec_cnt))
 			;;
 		"@unexec-delete %D/bin/update-mime-database %D/share/mime")
-			((mimepkg_unexec_cnt++)) || true
+			((++mimepkg_unexec_cnt))
 			;;
 		@?(un)exec?(-delete|-update)" %D/bin/update-mime-database"*)
 			err "${portref}incorrect update-mime-database" \
