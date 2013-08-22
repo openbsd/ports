@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.37 2013/05/17 20:14:49 jeremy Exp $
+# $OpenBSD: Makefile,v 1.38 2013/08/22 21:35:57 sthen Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	pure-Java implementation of the Ruby language
 
 V =		1.7.4
+REVISION =	0
 DISTNAME =	jruby-src-${V}
 PKGNAME =	jruby-${V}
 CATEGORIES =	lang lang/ruby
 DISTFILES =	${DISTNAME}.tar.gz \
-		jnr-jffi-1.2.2-0-g4c196bb.tar.gz:0
+		jnr-jffi-1.2.2-0-g4c196bb.tar.gz:0 \
+		jnr-posix.20130822.tar.gz:1
 
 HOMEPAGE =	http://www.jruby.org/
 
@@ -20,6 +22,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =	http://jruby.org.s3.amazonaws.com/downloads/${V}/
 MASTER_SITES0 =	http://www.distfiles.nl/
+MASTER_SITES1 =	http://spacehopper.org/mirrors/
 
 MODULES =	java
 MODJAVA_VER =	1.7+
@@ -49,6 +52,7 @@ SUBST_VARS =	JRUBY_HOME JFFI_ARCH FFI_ARCH RAKE_V JRUBY_LAUNCHER_V
 
 post-extract:
 	mv ${WRKDIR}/jnr-jffi* ${JFFI_HOME}
+	mv ${WRKDIR}/jnr-posix.jar ${WRKSRC}/build_lib/
 	# Unpack the jruby-launcher gem, since it needs to be patched
 	cp ${WRKSRC}/build_lib/jruby-launcher-${JRUBY_LAUNCHER_V}-java{,-orig}.gem
 	cd ${WRKSRC} && mkdir jruby-launcher && tar xf \
