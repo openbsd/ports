@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2013/08/07 21:31:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2013/08/22 20:06:49 sthen Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	cross-platform interactive fiction player
 
-DISTNAME =	gargoyle-2010.1-sources
-PKGNAME =	gargoyle-2010.1
-REVISION =	1
+DISTNAME =	gargoyle-2011.1-sources
+PKGNAME =	gargoyle-2011.1
 EPOCH =		0
 
 CATEGORIES =	games x11
@@ -21,14 +20,12 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM =	noncommercial only for some parts
 PERMIT_PACKAGE_FTP =	Yes
 
-WANTLIB +=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
-		Xi Xinerama Xrandr Xrender c cairo expat fontconfig \
-		freetype m pixman-1 pthread pthread-stubs xcb stdc++ \
-		vorbisfile z gdk_pixbuf-2.0 SDL>=2.0 SDL_sound SDL_mixer \
-		atk-1.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0 \
-		gdk-x11-2.0 jpeg>=62 pango-1.0>=1600.0 \
-		pangocairo-1.0>=1600.0 pangoft2-1.0>=1600.0 png>=3 smpeg \
-		GL Xxf86vm drm gthread-2.0 xcb-render xcb-shm
+WANTLIB += SDL SDL_mixer SDL_sound X11 Xcomposite Xcursor Xdamage
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo
+WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 jpeg m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 png pthread smpeg stdc++
+WANTLIB += vorbisfile z
 
 MASTER_SITES =	https://garglk.googlecode.com/files/
 EXTRACT_SUFX =	.zip
@@ -40,7 +37,6 @@ LIB_DEPENDS =	devel/sdl-sound \
 		x11/gtk+2 \
 		graphics/jpeg
 
-
 NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}
@@ -50,6 +46,10 @@ JAMDEBUG =	-d x	# display command-lines
 JAMDEBUG +=	-q	# die quickly on build failure
 MAKE_ENV +=		CC=${CC} CXX=${CXX}
 DESTDIRNAME =		DESTPREFIX
+
+# dos line-endings in file needing patch
+post-extract:
+	@cd ${WRKSRC} && perl -i -pe 's/\r$$//' garglk/launchgtk.c tads/Jamfile garglk/Jamfile garglk/glk.h
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/garglk/launchgtk.c

@@ -1,0 +1,18 @@
+$OpenBSD: patch-garglk_Jamfile,v 1.1 2013/08/22 20:06:49 sthen Exp $
+
+XXX Disable sound for now; fails ("error: modified chunk-pointer" in realloc
+or free when initing SDL_mixer in garglk/sndsdl.c:gli_initialize_sound).
+
+--- garglk/Jamfile.orig	Thu Aug 22 20:12:58 2013
++++ garglk/Jamfile	Thu Aug 22 20:13:22 2013
+@@ -49,9 +49,7 @@ GARGSRCS = 
+ if $(OS) = IPLINUX { ObjectCcFlags draw.c : -D__EFL_1BPP__ ; }
+ else if $(GUILIB) = EFL { ObjectCcFlags draw.c : -D__EFL_4BPP__ ; }
+ 
+-if $(USESDL) = yes { GARGSRCS += sndsdl.c ; }
+-else if $(USEFMOD) = yes { GARGSRCS += sndfmod.c ; }
+-else { GARGSRCS += sndnull.c ; }
++GARGSRCS += sndnull.c ;
+ 
+ if $(OS) = MINGW { GARGSRCS += syswin.c fontwin.c icons.rc ; }
+ else if $(OS) = MACOSX { GARGSRCS += sysmac.m fontmac.m ; }

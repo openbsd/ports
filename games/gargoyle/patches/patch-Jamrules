@@ -1,18 +1,7 @@
-$OpenBSD: patch-Jamrules,v 1.5 2010/10/23 09:15:16 jasper Exp $
---- Jamrules.orig	Mon Sep 27 15:05:16 2010
-+++ Jamrules	Thu Oct 21 23:12:05 2010
-@@ -6,8 +6,8 @@ BUILD ?= RELEASE ;
- USESDL = yes ;
- BUNDLEFONTS = yes ;
- 
--CC      = gcc ;
--C++     = g++ ;
-+CC      ?= gcc ;
-+C++     ?= g++ ;
- 
- if $(CROSS)
- {
-@@ -89,6 +89,23 @@ switch $(OS)
+$OpenBSD: patch-Jamrules,v 1.6 2013/08/22 20:06:49 sthen Exp $
+--- Jamrules.orig	Wed Jul 13 09:22:30 2011
++++ Jamrules	Thu Mar  7 12:14:11 2013
+@@ -135,6 +135,23 @@ switch $(OS)
          else      { SHRLINKLIBS += $(GARGLKLIBS) ; }
  
  
@@ -21,7 +10,7 @@ $OpenBSD: patch-Jamrules,v 1.5 2010/10/23 09:15:16 jasper Exp $
 +        SUFDLL  = .so.$(LIBgarglk_VERSION) ;
 +        PKGCONFIG = "pkg-config freetype2 gtk+-2.0 gdk-x11-2.0 gobject-2.0" ;
 +        #PKGCONFIG = "pkg-config freetype2 gtk+" ;
-+        SHELLHEADER = "#!/bin/sh" ;		
++        SHELLHEADER = "#!/bin/sh" ;
 +        GARGLKCCFLAGS = "`$(PKGCONFIG) --cflags`" -fPIC ;
 +        SHRLINKLIBS = "`$(PKGCONFIG) --libs`" -ljpeg -lpng -lz ;
 +        LINKLIBS = -L$(PREFIX)/lib -L$(X11BASE)/lib -lz ;
@@ -36,12 +25,12 @@ $OpenBSD: patch-Jamrules,v 1.5 2010/10/23 09:15:16 jasper Exp $
      case MACOSX :
          Echo "OS is MACOSX (cocoa)" ;
          SUFDLL = .dylib ;
-@@ -121,7 +138,7 @@ switch $(BUILD)
+@@ -167,7 +184,7 @@ switch $(BUILD)
  
      case RELEASE :
          Echo "BUILD is RELEASE" ;
--        OPTIM = -O2 ;
+-        OPTIM = -O2 $(CFLAGS) ;
 +        OPTIM = $(CFLAGS) ;
+         LINKFLAGS = $(LDFLAGS) ;
+         SHRLINKFLAGS = $(LDFLAGS) ;
  
-     case TURBO :
-         Echo "BUILD is TURBO" ;

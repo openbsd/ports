@@ -1,0 +1,16 @@
+$OpenBSD: patch-garglk_glk_h,v 1.1 2013/08/22 20:06:50 sthen Exp $
+
+XXX Disable sound for now; fails ("error: modified chunk-pointer" in realloc
+or free when initing SDL_mixer in garglk/sndsdl.c:gli_initialize_sound).
+
+--- garglk/glk.h.orig	Thu Aug 22 20:15:02 2013
++++ garglk/glk.h	Thu Aug 22 20:15:16 2013
+@@ -53,7 +53,7 @@ typedef int32_t glsi32;
+ #define GLK_MODULE_UNICODE_NORM
+ #define GLK_MODULE_IMAGE
+ #define GLK_MODULE_SOUND
+-#define GLK_MODULE_SOUND2
++#undef GLK_MODULE_SOUND2
+ #define GLK_MODULE_HYPERLINKS
+ #define GLK_MODULE_DATETIME
+ 

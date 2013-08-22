@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/10/23 09:15:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/08/22 20:06:50 sthen Exp $
 bin/gargoyle
 lib/libgarglk.so
 libexec/gargoyle/
@@ -6,6 +6,7 @@ libexec/gargoyle/
 @bin libexec/gargoyle/agility
 @bin libexec/gargoyle/alan2
 @bin libexec/gargoyle/alan3
+@bin libexec/gargoyle/bocfel
 @bin libexec/gargoyle/frotz
 @bin libexec/gargoyle/gargoyle
 @bin libexec/gargoyle/geas
@@ -18,8 +19,10 @@ libexec/gargoyle/libgarglk.so
 @bin libexec/gargoyle/magnetic
 @bin libexec/gargoyle/nitfol
 @bin libexec/gargoyle/scare
+@bin libexec/gargoyle/scott
 @bin libexec/gargoyle/tadsr
 share/doc/gargoyle/
+share/doc/gargoyle/Artistic License 2.0.txt
 share/doc/gargoyle/GNU General Public License.txt
 share/doc/gargoyle/HUGO License.txt
 share/doc/gargoyle/LUXI License.txt

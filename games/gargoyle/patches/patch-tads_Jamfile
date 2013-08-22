@@ -1,28 +1,12 @@
-$OpenBSD: patch-tads_Jamfile,v 1.3 2010/10/23 09:15:16 jasper Exp $
---- tads/Jamfile.orig	Mon Sep 13 16:53:08 2010
-+++ tads/Jamfile	Mon Oct 18 00:09:08 2010
-@@ -32,6 +32,15 @@ if $(OS) = MACOSX
-     LINKFLAGS = -headerpad_max_install_names $(MAINARCH) $(ALTARCH) ;
- }
+$OpenBSD: patch-tads_Jamfile,v 1.4 2013/08/22 20:06:50 sthen Exp $
+--- tads/Jamfile.orig	Wed Jul 13 09:22:18 2011
++++ tads/Jamfile	Thu Mar  7 12:16:26 2013
+@@ -21,7 +21,7 @@ SubDirCcFlags
  
-+if $(OS) = OPENBSD
-+{
-+    SubDirCcFlags
-+        -DOS_USHORT_DEFINED
-+        -DOS_UINT_DEFINED
-+        -DOS_ULONG_DEFINED
-+        ;
-+}
-+
- SUBDIRC++FLAGS = $(SUBDIRCCFLAGS) ;
+ # HTMLMODE ?= yes ;
  
- SEARCH_SOURCE =
-@@ -81,7 +90,7 @@ Main tadsr :
- 
- LinkLibraries tadsr : libtads2 libtads3 ;
- 
--LINK on tadsr$(SUFEXE) = $(C++) ;
-+LINK on tadsr$(SUFEXE) = $(C++) -lstdc++ ;
- 
- APPS += tadsr ;
- 
+-if $(OS) = LINUX || $(OS) = SOLARIS
++if $(OS) = LINUX || $(OS) = SOLARIS || $(OS) = OPENBSD
+ {
+     SubDirCcFlags
+         -DOS_USHORT_DEFINED
