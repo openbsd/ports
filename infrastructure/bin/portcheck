@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.8 2013/08/22 00:56:00 zhuk Exp $
+# $OpenBSD: portcheck,v 1.9 2013/08/22 01:01:11 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -649,7 +649,7 @@ check_plist() {
 
 	while read l; do
 		case "$l" in
-		share/icons/*/*/*|share/icons/*/index.theme)
+		share/icons/*/*/*|share/icons/*/@(index.theme|iconrc?(-png)))
 			# Themes have at least two levels in depth.
 			#
 			# We match directories by purpose, this helps to catch
