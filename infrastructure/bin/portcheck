@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.11 2013/08/22 10:41:20 zhuk Exp $
+# $OpenBSD: portcheck,v 1.12 2013/08/22 10:43:15 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1091,7 +1091,7 @@ check_pkg_dir() {
 		;;
 	esac; done
 
-	$empty && err "$1 directory does not contain either DESCR, PFRAG or PLIST files"
+	$empty && err "$dir directory does not contain either DESCR, PFRAG or PLIST files"
 }
 
 # Checks made:
