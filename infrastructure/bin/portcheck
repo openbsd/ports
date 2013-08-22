@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.13 2013/08/22 11:31:43 zhuk Exp $
+# $OpenBSD: portcheck,v 1.14 2013/08/22 12:53:49 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -275,17 +275,17 @@ last_subst_cmd=
 check_port_hier() {
 	$debugging && echo "CALLED: check_port_hier($*)" >&2
 
+	local distinfo_lives_upper pkg_lives_upper plist_lives_upper
 	local dir=$1; shift
 	for opt; do
 		# looks unsafe but we do not pass anything except
 		# "foo=true" and "foo=false" here
 		eval "$opt"
-		shift
 	done
 
-	local distinfo_lives_upper=${distinfo_lives_upper:-false}
-	local pkg_lives_upper=${pkg_lives_upper:-false}
-	local plist_lives_upper=${plist_lives_upper:-false}
+	distinfo_lives_upper=${distinfo_lives_upper:-false}
+	pkg_lives_upper=${pkg_lives_upper:-false}
+	plist_lives_upper=${plist_lives_upper:-false}
 
 	local distinfo_exists=false
 	[[ -f $dir/distinfo ]] && distinfo_exists=true
@@ -380,16 +380,16 @@ check_port_dir() {
 	$debugging && echo "CALLED: check_port_dir($*)" >&2
 
 	local dir=$1; shift
+	local distinfo_lives_upper pkg_lives_upper plist_lives_upper
 	for opt; do
 		# looks unsafe but we do not pass anything except
 		# "foo=true" and "foo=false" here
 		eval "$opt"
-		shift
 	done
 
-	local distinfo_lives_upper=${distinfo_lives_upper:-false}
-	local pkg_lives_upper=${pkg_lives_upper:-false}
-	local plist_lives_upper=${plist_lives_upper:-false}
+	distinfo_lives_upper=${distinfo_lives_upper:-false}
+	pkg_lives_upper=${pkg_lives_upper:-false}
+	plist_lives_upper=${plist_lives_upper:-false}
  
 	check_perms_in_dir "$dir"
 
@@ -484,19 +484,25 @@ check_port_dir() {
 	local show_items="$show_items MASTER_SITES MULTI_PACKAGES PKGPATH"
 	local show_items="$show_items PSEUDO_FLAVORS SHARED_LIBS SUBST_CMD"
 
+	local read_failed=false
 	(cd -- "$dir"; make "${make_args[@]}" show="$show_items" || true) </dev/null |&
-	read -pr dist_subdir
-	read -pr distfiles
-	read -pr flavor
-	read -pr flavors
-	read -pr fullpkgname
-	read -pr master_sites
-	read -pr multi_packages
-	read -pr pkg_path_this
-	read -pr pseudo_flavors
-	read -pr shared_libs
-	read -pr subst_cmd
-	exec 3<&p; exec 3<&-
+	read_ok=false
+	read -pr dist_subdir &&
+	read -pr distfiles &&
+	read -pr flavor &&
+	read -pr flavors &&
+	read -pr fullpkgname &&
+	read -pr master_sites &&
+	read -pr multi_packages &&
+	read -pr pkg_path_this &&
+	read -pr pseudo_flavors &&
+	read -pr shared_libs &&
+	read -pr subst_cmd &&
+	read_ok=true
+	if $read_ok; then
+		exec 3<&p
+		exec 3<&-
+	fi
 
 	local check_flavors
 	[[ -z $flavor ]] && set -A check_flavors -- ""
