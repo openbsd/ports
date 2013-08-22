@@ -1,4 +1,4 @@
-$OpenBSD: patch-Source_CMakeLists_txt,v 1.3 2013/06/25 07:16:46 dcoppa Exp $
+$OpenBSD: patch-Source_CMakeLists_txt,v 1.4 2013/08/22 09:53:20 dcoppa Exp $
 
 commit 480e924daedee520d18c8a9c0b9823fef205b57a
 Author: David Coppa <dcoppa@openbsd.org>
@@ -13,18 +13,22 @@ OpenBSD provides ELF ABI declarations in
 
 Teach the platform check and cmELF implementation to use these.
 
---- Source/CMakeLists.txt.orig	Wed May 15 19:38:13 2013
-+++ Source/CMakeLists.txt	Fri Jun 21 09:15:02 2013
-@@ -11,7 +11,11 @@
+XXX: broken on arm
+
+--- Source/CMakeLists.txt.orig	Tue Jul  2 15:41:40 2013
++++ Source/CMakeLists.txt	Tue Aug 20 11:22:32 2013
+@@ -11,8 +11,12 @@
  #=============================================================================
  include(CheckIncludeFile)
  # Check if we can build support for ELF parsing.
 -CHECK_INCLUDE_FILE("elf.h" HAVE_ELF_H)
+-if(HAVE_ELF_H)
 +if(CMAKE_CXX_PLATFORM_ID MATCHES "OpenBSD")
 +  CHECK_INCLUDE_FILES("stdint.h;elf_abi.h" HAVE_ELF_H)
 +else()
 +  CHECK_INCLUDE_FILE("elf.h" HAVE_ELF_H)
 +endif()
- if(HAVE_ELF_H)
++if(HAVE_ELF_H AND NOT CMAKE_SYSTEM_PROCESSOR MATCHES "^arm")
    set(CMAKE_USE_ELF_PARSER 1)
  else()
+   set(CMAKE_USE_ELF_PARSER)

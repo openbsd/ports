@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2013/08/20 14:22:58 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.90 2013/08/22 09:53:20 dcoppa Exp $
 
 VMEM_WARNING =	Yes
 DPB_PROPERTIES =parallel
@@ -12,7 +12,7 @@ HOMEPAGE =	http://www.cmake.org/
 CATEGORIES =	devel
 COMMENT =	portable build system
 DISTNAME =	cmake-2.8.11.2
-REVISION =	1
+REVISION =	2
 MASTER_SITES =	${HOMEPAGE}files/v2.8/
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
@@ -23,7 +23,10 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =		archive c curl curses expat form m \
 			stdc++ z
 
+# XXX: CMake's built-in ELF parser is broken on arm
+.if ${MACHINE_ARCH} != "arm"
 BUILD_DEPENDS =		devel/ninja
+.endif
 
 LIB_DEPENDS =		archivers/libarchive \
 			net/curl
@@ -59,6 +62,8 @@ pre-configure:
 		${WRKSRC}/Modules/FindSDL.cmake \
 		${WRKSRC}/Modules/FindTCL.cmake
 
+# XXX: CMake's built-in ELF parser is broken on arm
+.if ${MACHINE_ARCH} != "arm"
 do-build:
 	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ninja -v -j \
 		${MAKE_JOBS} ${ALL_TARGET}
@@ -70,6 +75,7 @@ do-install:
 do-test:
 	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ninja -v -j \
 		${MAKE_JOBS} ${TEST_FLAGS} ${TEST_TARGET}
+.endif
 
 post-install:
 	rm ${WRKINST}/${LOCALBASE}/share/cmake/Modules/*.{beforesubst,orig}
