@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.10 2013/08/22 09:44:17 zhuk Exp $
+# $OpenBSD: portcheck,v 1.11 2013/08/22 10:41:20 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -266,6 +266,10 @@ portref() {
 	[[ -n $ref ]] && echo "in $ref: "
 }
 
+# Contains last SUBST_CMD. Filled by check_port_dir(), used
+# by check_port_hier() to lazily call the check_pkg_dir().
+last_subst_cmd=
+
 # Checks made:
 #   * Whitelist filter of what could be in this directory.
 check_port_hier() {
@@ -288,8 +292,11 @@ check_port_hier() {
 	$distinfo_exists && $distinfo_lives_upper &&
 		err_duplicated distinfo "$dir"
 
-	local pkg_exists=false
-	[[ -d $dir/pkg ]] && pkg_exists=true
+	local pkg_exists=false tell_pkg_exists=$pkg_lives_upper
+	if [[ -d $dir/pkg ]]; then
+		pkg_exists=true
+		tell_pkg_exists=true
+	fi
 
 	local plist_exists=false
 	ls $dir/pkg/PLIST* >/dev/null 2>&1 && plist_exists=true
@@ -297,13 +304,12 @@ check_port_hier() {
 		err_duplicated "packing list(-s)" "$dir"
 
 	$distinfo_lives_upper && distinfo_exists=true
-	$pkg_lives_upper && pkg_exists=true
 	$plist_lives_upper && plist_exists=true
 
 	local recursive_args
 	set -A recursive_args -- \
 		distinfo_lives_upper=$distinfo_exists \
-		pkg_lives_upper=$pkg_exists \
+		pkg_lives_upper=$tell_pkg_exists \
 		plist_lives_upper=$plist_exists
 
 	local F
@@ -317,8 +323,13 @@ check_port_hier() {
 			fi
 		elif [[ -d $F ]]; then
 			case "${F##*/}" in
-			files|patches|pkg)
+			files|patches)
 				check_${F##*/}_dir "$F"
+				;;
+
+			pkg)
+				# Do nothing, pkg_exists is already set,
+				# and we need to read SUBST_CMD first.
 				;;
 
 			patches?(-*))
@@ -356,6 +367,9 @@ check_port_hier() {
 			esac
 		fi
 	done
+
+	$pkg_exists && check_pkg_dir "$F" "$last_subst_cmd"
+
 	egrep -q '^ *SUBDIR[[:space:]]*\+?=' Makefile ||
 		err missing subdir Makefile
 }
@@ -465,57 +479,48 @@ check_port_dir() {
 	# We request all info at once for speed.
 
 	local dist_subdir distfiles flavor flavors master_sites
-	local multi_packages pseudo_flavors shared_libs subst_cmd
+	local multi_packages this_pkg_path pseudo_flavors shared_libs subst_cmd
 	local show_items="DIST_SUBDIR DISTFILES FLAVOR FLAVORS FULLPKGNAME"
-	local show_items="$show_items MASTER_SITES MULTI_PACKAGES"
+	local show_items="$show_items MASTER_SITES MULTI_PACKAGES PKGPATH"
 	local show_items="$show_items PSEUDO_FLAVORS SHARED_LIBS SUBST_CMD"
 
-        # Do not try to use co-processes, there is some bug related
-        # to redirection of error stream seen on big number of
-        # nested ports (100 or so). And we need to redirect stderr to
-        # avoid noise when accessing dead co-processes accidentially.
+	(cd -- "$dir"; make "${make_args[@]}" show="$show_items" || true) </dev/null |&
+	read -pr dist_subdir
+	read -pr distfiles
+	read -pr flavor
+	read -pr flavors
+	read -pr fullpkgname
+	read -pr master_sites
+	read -pr multi_packages
+	read -pr pkg_path_this
+	read -pr pseudo_flavors
+	read -pr shared_libs
+	read -pr subst_cmd
+	exec 3<&p; exec 3<&-
 
-	(cd -- "$dir"; make "${make_args[@]}" show="$show_items") | {
-		read -r dist_subdir
-		read -r distfiles
-		read -r flavor
-		read -r flavors
-		read -r fullpkgname
-		read -r master_sites
-		read -r multi_packages
-		read -r pseudo_flavors
-		read -r shared_libs
-		read -r subst_cmd
+	local check_flavors
+	[[ -z $flavor ]] && set -A check_flavors -- ""
 
-		local check_flavors
-		[[ -z $flavor ]] && set -A check_flavors -- ""
-
-		local f pf
-		for f in $flavors; do
-			for pf in $pseudo_flavors; do
-				[[ $f == "$pf" ]] && continue 2
-			done
-			[[ $f == debug ]] && continue     # XXX
-			set -A check_flavors -- "${check_flavors[@]}" $f
+	local f pf
+	for f in $flavors; do
+		for pf in $pseudo_flavors; do
+			[[ $f == "$pf" ]] && continue 2
 		done
+		[[ $f == debug ]] && continue     # XXX
+		set -A check_flavors -- "${check_flavors[@]}" $f
+	done
 
-		check_distfiles "$dir" "$dist_subdir" $distfiles
-		check_master_sites "$dir" $master_sites
-		$pkg_exists && check_pkg_dir "$dir"/pkg "$subst_cmd"
-		$existing_port || check_shlibs "$dir" $shared_libs
+	check_distfiles "$dir" "$dist_subdir" $distfiles
+	check_master_sites "$dir" $master_sites
+	$pkg_exists && check_pkg_dir "$dir"/pkg "$subst_cmd"
+	$existing_port || check_shlibs "$dir" $shared_libs
 
-		for _s in $multi_packages; do
-			sub_checks "$dir" "$_s" \
-			    "$fullpkgname" "${check_flavors[@]}"
-		done
+	for _s in $multi_packages; do
+		sub_checks "$dir" "$_s" "$fullpkgname" "${check_flavors[@]}"
+	done
 
-		! $error
-	} || error=true
-
-	if [ -z $pkgpath ] && ! $rootrun; then
-		pkgpath=$(cd -- "$dir"; make "${make_args[@]}" show=PKGPATH 2>/dev/null) ||
-			pkgpath=
-	fi
+	pkgpath=${pkpath:-"$pkg_path_this"}
+	last_subst_cmd="$subst_cmd"
 }
 
 # Checks made:
@@ -609,9 +614,9 @@ sub_checks() {
 			} || error=true
 
 			if $plist_checks; then
-				make "${make_args[@]}" print-plist-with-depends |
-				    check_plist "$portref" "$fullpkgname" ||
-				    error=true
+				(make "${make_args[@]}" print-plist-with-depends ||
+				    true) </dev/null |&
+				check_plist "$portref" "$fullpkgname"
 			fi
 
 			! $error
@@ -666,7 +671,7 @@ check_plist() {
 
 	local app l theme varname
 
-	while read l; do
+	while read -pr l; do
 		case "$l" in
 		share/icons/*/*/*|share/icons/*/@(index.theme|iconrc?(-png)))
 			# Themes have at least two levels in depth.
@@ -1043,7 +1048,8 @@ check_pkg_dir() {
 			done
 			$shlibs_found && ! $no_a_for_so &&
 				err "$F should be merged in $plist"
-		}
+			! $error
+		} || error=true
 		;;
 
 	PFRAG.*|PLIST?(-*))
@@ -1143,15 +1149,14 @@ check_makefile() {
 check_perms_in_dir() {
 	$debugging && echo "CALLED: check_perms_in_dir($*)" >&2
 
-	find -f "$1" -- -maxdepth 1 -type f \
-	    \( -perm -100 -or -perm -010 -or -perm 001 \) | {
-		while read F; do
-			F=${F#./}
-			ignoring "$F" && continue
-			err "executable file: ${F#./}"
-		done
-		! $error
-	} || error=true
+	(find -f "$1" -- -maxdepth 1 -type f \
+	    \( -perm -100 -or -perm -010 -or -perm 001 \) \
+	    </dev/null || true) |&
+	while read -pr F; do
+		F=${F#./}
+		ignoring "$F" && continue
+		err "executable file: ${F#./}"
+	done
 }
 
 
