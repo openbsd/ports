@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2013/08/22 08:03:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2013/08/22 09:15:35 ajacoutot Exp $
 
 COMMENT=	OpenPrinting CUPS filters
 
 DISTNAME=	cups-filters-1.0.36
 CATEGORIES=	print
+REVISION=	0
 
 SHARED_LIBS +=  cupsfilters               0.0 # 1.0
 SHARED_LIBS +=  fontembed                 0.0 # 1.0
@@ -62,7 +63,8 @@ BUILD_DEPENDS +=	print/poppler,-utils
 RUN_DEPENDS +=		print/poppler,-utils #print/ghostscript/gnu
 
 pre-configure:
-	perl -pi -e 's,/usr/share/cups,${LOCALBASE}/share/cups,g' \
+	perl -pi -e 's,/usr/share/cups,${LOCALBASE}/share/cups,g;' \
+		-e 's,/usr/bin,${LOCALBASE}/bin,g' \
 		${WRKSRC}/filter/{gstoraster.c,gstopxl}
 
 post-install:
