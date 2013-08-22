@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.14 2013/08/22 12:53:49 zhuk Exp $
+# $OpenBSD: portcheck,v 1.15 2013/08/22 13:20:17 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1142,6 +1142,7 @@ check_subst_vars() {
 # Checks made:
 #   * Contains OpenBSD RCS tag at the top line.
 #   * No REVISION marks present in given file (unless in update mode).
+#   * BUILD_DEPENDS and MODULES are not defined in VAR-subpkg manner.
 #   * No trailing whitespace.
 check_makefile() {
 	$debugging && echo "CALLED: check_makefile($*)" >&2
@@ -1151,9 +1152,16 @@ check_makefile() {
 		egrep -q '^#[[:space:]]*\$OpenBSD.*\$' ||
 		err "$F does not have \$OpenBSD\$ RCS tag at the top"
 
-	$existing_port && return 0
-	grep -q '^ *REVISION' "$1" 2>/dev/null &&
-		err "REVISION(-s) found in $1"
+	local l lnum=0
+	while read -r l; do ((++lnum)); case $l in
+	*(" ")REVISION*)
+		$existing_port ||
+			err "REVISION mark found at $1:$lnum"
+		;;
+	*(" ")@(BUILD_DEPENDS|MODULES)-*)
+		err "${l%%-*} is not a subpackageble variable, see $1:$lnum"
+		;;
+	esac; done <"$1"
 }
 
 # Checks made:
