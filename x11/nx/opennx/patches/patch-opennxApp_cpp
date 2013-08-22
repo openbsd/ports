@@ -1,7 +1,9 @@
-$OpenBSD: patch-opennxApp_cpp,v 1.5 2012/11/15 10:12:54 jasper Exp $
+$OpenBSD: patch-opennxApp_cpp,v 1.6 2013/08/22 17:27:51 naddy Exp $
+
+wxConfigBase does not support long long.
 
 --- opennxApp.cpp.orig	Mon Jul 30 20:04:59 2012
-+++ opennxApp.cpp	Thu Nov 15 10:37:38 2012
++++ opennxApp.cpp	Sat Aug 17 00:44:22 2013
 @@ -575,7 +575,7 @@ opennxApp::preInit()
          tmp = findExecutable(wxT("cupsd"));
          if (tmp.IsEmpty()) {
@@ -11,3 +13,15 @@ $OpenBSD: patch-opennxApp_cpp,v 1.5 2012/11/15 10:12:54 jasper Exp $
                  NULL
              };
              int i;
+@@ -754,9 +754,9 @@ void opennxApp::checkNxSmartCardSupport()
+ #endif
+     if (!fn.FileExists())
+         return;
+-    time_t last_mtime;
++    long last_mtime;
+     long last_size;
+-    time_t mtime = fn.GetModificationTime().GetTicks();
++    long mtime = (long)fn.GetModificationTime().GetTicks();
+     long size = fn.GetSize().ToULong();
+     wxConfigBase::Get()->Read(wxT("Config/NxSshStamp"), &last_mtime, 0);
+     wxConfigBase::Get()->Read(wxT("Config/NxSshSize"), &last_size, 0);
