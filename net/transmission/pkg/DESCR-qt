@@ -1,4 +1,4 @@
-Transmission is a BitTorrent client that features encryption, a web 
+Transmission is a BitTorrent client that features encryption, a web
 interface, peer exchange, magnet links, DHT, UPnP and NAT-PMP port
 forwarding, webseed support, watch directories, tracker editing,
 global and per-torrent speed limits, and more.

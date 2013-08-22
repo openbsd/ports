@@ -1,6 +1,6 @@
-$OpenBSD: patch-qt_qtr_pro,v 1.4 2012/04/07 10:55:04 naddy Exp $
---- qt/qtr.pro.orig	Thu Mar 29 17:30:57 2012
-+++ qt/qtr.pro	Thu Mar 29 17:31:22 2012
+$OpenBSD: patch-qt_qtr_pro,v 1.5 2013/08/22 17:34:33 naddy Exp $
+--- qt/qtr.pro.orig	Fri Aug  9 04:45:47 2013
++++ qt/qtr.pro	Thu Aug 22 16:37:03 2013
 @@ -8,7 +8,7 @@ target.path = /bin
  INSTALLS += target
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-qt_qtr_pro,v 1.4 2012/04/07 10:55:04 naddy Exp $
 +man.path = /man/man1/
  man.files = transmission-qt.1
  
- CONFIG += qt qdbus thread debug link_pkgconfig
+ CONFIG += qt thread debug link_pkgconfig
 @@ -26,7 +26,7 @@ LIBS += $${LIBUTP_LIBS}
  LIBS += $${TRANSMISSION_TOP}/third-party/dht/libdht.a
  LIBS += $${LIBUPNP_LIBS}

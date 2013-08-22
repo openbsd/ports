@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.89 2013/08/09 19:13:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.90 2013/08/22 17:34:32 naddy Exp $
 
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
 COMMENT-qt=	BitTorrent client with Qt interface
 
-VER=		2.81
+VER=		2.82
 DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
@@ -27,40 +27,45 @@ ONLY_FOR_ARCHS-qt=${GCC4_ARCHS}
 PSEUDO_FLAVORS=	no_gtk no_qt
 FLAVOR?=
 
-# Reminder:
-# MODULES adds to WANTLIB and LIB_DEPENDS
-# WANTLIB-main and LIB_DEPENDS-main default to WANTLIB and LIB_DEPENDS
+.include <bsd.port.arch.mk>
 
-WANTLIB=	c crypto curl event_core event_extra idn m miniupnpc \
-		natpmp pthread ssl z
-WANTLIB-gtk=	${WANTLIB} ICE SM X11 Xcomposite Xcursor Xdamage \
+WANTLIB-common=	c crypto curl event_core event_extra m miniupnpc \
+		natpmp pthread ssl z ${MODGETTEXT_WANTLIB}
+WANTLIB-main=	${WANTLIB-common} idn
+WANTLIB-gtk=	${WANTLIB-common} ICE SM X11 Xcomposite Xcursor Xdamage \
 		Xext Xfixes Xi Xinerama Xrandr Xrender \
 		atk-1.0 atk-bridge-2.0 atspi cairo cairo-gobject \
 		dbus-1 expat ffi fontconfig freetype \
 		gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 graphite2 gthread-2.0 gtk-3 \
-		harfbuzz pango-1.0 pangoft2-1.0 \
+		harfbuzz idn pango-1.0 pangoft2-1.0 \
 		pangocairo-1.0 pixman-1 png pcre pthread-stubs xcb \
 		xcb-render xcb-shm
-WANTLIB-qt=	${WANTLIB} ICE SM QtCore QtDBus QtGui QtNetwork QtXml \
-		X11 Xext Xi Xinerama Xrender \
-		expat fontconfig freetype stdc++
+WANTLIB-qt=	${WANTLIB-common} ${MODQT_WANTLIB} \
+		lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtXml \
+		ICE SM X11 Xext Xi Xinerama Xrender \
+		fontconfig freetype stdc++
 
 MODULES=	devel/gettext textproc/intltool
+.if ${BUILD_PACKAGES:M-qt}
+MODULES+=	x11/qt4
+.endif
 
-LIB_DEPENDS=	devel/libevent2 \
+LIB_DEPENDS-common=${MODGETTEXT_LIB_DEPENDS} \
+		devel/libevent2 \
 		net/curl \
 		net/miniupnp/libnatpmp \
 		net/miniupnp/miniupnpc
-LIB_DEPENDS-gtk=${LIB_DEPENDS} \
+LIB_DEPENDS-main=${LIB_DEPENDS-common}
+LIB_DEPENDS-gtk=${LIB_DEPENDS-common} \
 		x11/gtk+3
-LIB_DEPENDS-qt=	${LIB_DEPENDS} \
-		x11/qt4
+LIB_DEPENDS-qt=	${LIB_DEPENDS-common} \
+		${MODQT_LIB_DEPENDS}
 
-RUN_DEPENDS-gtk=${PKGNAME-main}:net/transmission,-main \
+RUN_DEPENDS-gtk=${PKGNAME-main}:${BUILD_PKGPATH} \
 		devel/desktop-file-utils \
 		x11/gtk+2,-guic
-RUN_DEPENDS-qt=	${PKGNAME-main}:net/transmission,-main \
+RUN_DEPENDS-qt=	${PKGNAME-main}:${BUILD_PKGPATH} \
 		devel/desktop-file-utils
 
 USE_GMAKE=	Yes
@@ -78,8 +83,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/third-party -I${LOCALBASE}/include" \
 
 QMAKE_ARGS=	QMAKE_CXX="${CXX}" \
 		QMAKE_CXXFLAGS="${CXXFLAGS}"
-
-.include <bsd.port.arch.mk>
 
 .if !${BUILD_PACKAGES:M-gtk}
 CONFIGURE_ARGS+=--without-gtk
