@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.19 2013/08/22 14:08:12 zhuk Exp $
+# $OpenBSD: portcheck,v 1.20 2013/08/22 16:43:04 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -228,6 +228,15 @@ handle_extra_file() {
 	else
 		err "extra file: $1"
 	fi
+}
+
+normalize_pyco() {
+	local pyco=$1
+	[[ $pyco == *.cpython-+([0-9]).py[co] ]] &&
+		pyco=${pyco%.cpython-+([0-9]).py[co]}.${pyco##*.}
+	[[ $pyco == */__pycache__/* ]] &&
+		pyco=${pyco%/__pycache__/*}/${pyco##*/__pycache__/}
+	printf "%s" "$pyco"
 }
 
 # Print out a ref to the particular subport/subpackage, if needed.
@@ -649,6 +658,11 @@ sub_checks() {
 #
 #   * If package installs .mo files under ${PREFIX}/share/locale/, then
 #     run-time dependency on devel/gettext should exists.
+#
+#   * Each .py should have corresponding .pyc files, to avoid
+#     generation of the latter at run-time.
+#
+#   * Each .pyc and .pyo should have corresponding .py file.
 check_plist() {
 	$debugging && echo "CALLED: check_plist($*)" >&2
 
@@ -681,10 +695,15 @@ check_plist() {
 	local gettext_dep=false
 	local translation_found=false
 
-	local app l theme varname
+	local py_files pyc_files pyo_files
+
+	local app l theme varname py
 
 	while read -pr l; do
 		case "$l" in
+		"@comment "*)
+			# ignore
+			;;
 		share/icons/*/*/*|share/icons/*/@(index.theme|iconrc?(-png)))
 			# Themes have at least two levels in depth.
 			#
@@ -782,6 +801,20 @@ check_plist() {
 			;;
 		share/locale/*/*/*.mo)
 			translation_found=true
+			;;
+
+		# XXX KSH arrays are limited to 10239 items
+		share/@(doc|examples)+(/*).py|?(s)bin/*.py)
+			# ignore
+			;;
+		*.py)
+			py_files[${#py_files[@]}]=$l
+			;;
+		*.pyc)
+			pyc_files[${#pyc_files[@]}]=$(normalize_pyco "$l")
+			;;
+		*.pyo)
+			pyo_files[${#pyo_files[@]}]=$(normalize_pyco "$l")
 			;;
 		esac
 	done
@@ -890,7 +923,51 @@ check_plist() {
 		err "${portref}translation file(-s) found without" \
 		    "devel/gettext dependency"
 
-	! $error
+	# Python modules
+	set -sA py_files -- "${py_files[@]}"
+	set -sA pyc_files -- "${pyc_files[@]}"
+	set -sA pyo_files -- "${pyo_files[@]}"
+	local ic=0 io=0
+	for py in "${py_files[@]}"; do
+		while [[ $ic -lt ${#pyc_files[@]} ]]; do
+			[[ ${pyc_files[$ic]} < "$py"c ]] || break
+			err "${portref}compiled Python module without" \
+			    "source, expected: ${pyc_files[$ic]%c}"
+			((++ic))
+		done
+		if [[ $ic -lt ${#pyc_files[@]} &&
+		      ${pyc_files[$ic]} == "$py"c ]]; then
+			((++ic))
+		else
+			err "${portref}Python module without" \
+			    "compiled version: $py"
+		fi
+
+		while [[ $io -lt ${#pyo_files[@]} ]]; do
+			[[ ${pyo_files[$io]} < "$py"o ]] || break
+			err "${portref}optimized Python module without" \
+			    "source, expected: ${pyo_files[$io]%o}"
+			((++io))
+		done
+		if [[ $io -lt ${#pyo_files[@]} &&
+		      ${pyo_files[$io]} == "$py"o ]]; then
+			((++io))
+		# XXX too much noise
+		#else
+		#	err "${portref}Python module without" \
+		#	    "optimized version: $py"
+		fi
+	done
+	while (($ic < ${#pyc_files[@]})); do
+		err "${portref}compiled Python module without source," \
+		    "expected: ${pyc_files[$ic]%c}"
+		((++ic))
+	done
+	while (($io < ${#pyo_files[@]})); do
+		err "${portref}optimized Python module without source," \
+		    "expected: ${pyo_files[$io]%o}"
+		((++io))
+	done
 }
 
 # Checks made:
