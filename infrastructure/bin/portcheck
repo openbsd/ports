@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.18 2013/08/22 13:56:16 zhuk Exp $
+# $OpenBSD: portcheck,v 1.19 2013/08/22 14:08:12 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1137,7 +1137,9 @@ check_subst_vars() {
 	local F=$1; shift
 	local subst_cmd=$1; shift
 
-	eval "$subst_cmd" <"$F" | egrep '\$\{[A-Z]+\}' >&2 &&
+	# Add variables sometimes referenced in port docs.
+	eval "$subst_cmd" -DPATH=test -DWRKSRC=test <"$F" |
+	    egrep '\$\{[A-Z]+\}' >&2 &&
 		err "looks like misspelled variables in $F, see above"
 }
 
