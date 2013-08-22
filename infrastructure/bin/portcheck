@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.24 2013/08/22 20:56:14 zhuk Exp $
+# $OpenBSD: portcheck,v 1.25 2013/08/22 21:06:00 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1022,12 +1022,12 @@ check_wantlib() {
 			intl_wantlib=true
 			;;
 
-		Qt+([A-Za-z0-9])?(?('>')=+([0-9])))
+		@(Qt+([A-Za-z0-9])|phonon)?(?('>')=+([0-9])))
 			err "$portref$v instead of lib/qt4/$v" \
 			    "in WANTLIB"
 			;;
 
-		qt-mt?(?('>')=+([0-9])))
+		@(qt-mt|qui|qui-mt)?(?('>')=+([0-9])))
 			err "$portref$v instead of lib/qt3/$v" \
 			    "in WANTLIB"
 			;;
