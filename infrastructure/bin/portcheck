@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.7 2013/08/22 00:30:17 zhuk Exp $
+# $OpenBSD: portcheck,v 1.8 2013/08/22 00:56:00 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -649,7 +649,9 @@ check_plist() {
 
 	while read l; do
 		case "$l" in
-		share/icons/*/@(+([0-9])x+([0-9])|scalable)/*)
+		share/icons/*/*/*|share/icons/*/index.theme)
+			# Themes have at least two levels in depth.
+			#
 			# We match directories by purpose, this helps to catch
 			# update-plist fuckups, when directories go into one
 			# package and actual icons go in another.
@@ -660,7 +662,11 @@ check_plist() {
 			echo "$icon_themes" | fgrep -q "/$theme/" ||
 				icon_themes="$icon_themes /$theme/"
 			;;
-		share/icons/*+(/*)?)
+		share/icons/*(*/))
+			# Do not match intermediate directories to avoid false
+			# positives.
+			;;
+		share/icons/*)
 			app=${l#share/icons/}
 			app=${app%%/*}
 			err "${portref}installs icon ${l##*/} in ${l%/*}, it" \
