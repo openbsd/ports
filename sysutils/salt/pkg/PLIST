@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/08/21 21:55:15 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/08/22 07:28:05 landry Exp $
 @newgroup _salt:722
 @newuser _salt-master:722:722:daemon:Salt-Master Daemon:/nonexistent:/sbin/nologin
 @owner _salt-master
@@ -17,7 +17,7 @@ bin/salt-minion
 bin/salt-run
 bin/salt-syndic
 lib/python${MODPY_VERSION}/site-packages/salt/
-lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/salt-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/salt/__init__.py
 lib/python${MODPY_VERSION}/site-packages/salt/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/salt/_compat.py
