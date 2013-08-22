@@ -1,0 +1,8 @@
+$OpenBSD: patch-gcc_config_arm_t-openbsd,v 1.1 2013/08/22 10:07:04 pascal Exp $
+--- gcc/config/arm/t-openbsd.orig	Wed Aug 21 22:34:01 2013
++++ gcc/config/arm/t-openbsd	Wed Aug 21 22:33:55 2013
+@@ -0,0 +1,4 @@
++CFLAGS+=        -Dinhibit_libc -fno-inline
++LIB1ASMSRC =    arm/lib1funcs.asm
++LIB1ASMFUNCS =  _dvmd_tls _bb_init_func
++LIB2FUNCS_EXTRA = $(srcdir)/config/floatunsidf.c $(srcdir)/config/floatunsisf.c
