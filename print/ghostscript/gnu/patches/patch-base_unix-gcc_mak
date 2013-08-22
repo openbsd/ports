@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_unix-gcc_mak,v 1.8 2013/08/22 08:02:22 ajacoutot Exp $
+$OpenBSD: patch-base_unix-gcc_mak,v 1.9 2013/08/22 09:14:32 ajacoutot Exp $
 --- base/unix-gcc.mak.orig	Wed Aug  8 10:01:36 2012
-+++ base/unix-gcc.mak	Wed Aug 21 14:25:09 2013
++++ base/unix-gcc.mak	Fri Aug 17 15:12:56 2012
 @@ -32,6 +32,7 @@ PSLIBDIR=./lib
  PSRESDIR=./Resource
  PSGENDIR=./$(BUILDDIRPREFIX)obj
@@ -69,7 +69,7 @@ $OpenBSD: patch-base_unix-gcc_mak,v 1.8 2013/08/22 08:02:22 ajacoutot Exp $
  #DEVICE_DEVS1=
  #DEVICE_DEVS2=
  #DEVICE_DEVS3=
-@@ -398,36 +405,17 @@ DEVICE_DEVS=$(DISPLAY_DEV) $(DD)x11.dev $(DD)x11alpha.
+@@ -398,36 +405,18 @@ DEVICE_DEVS=$(DISPLAY_DEV) $(DD)x11.dev $(DD)x11alpha.
  #DEVICE_DEVS19=
  #DEVICE_DEVS20=
  
@@ -108,10 +108,11 @@ $OpenBSD: patch-base_unix-gcc_mak,v 1.8 2013/08/22 08:02:22 ajacoutot Exp $
 + 
 +# Copied from Makefile.in -- still needed?
 +CCAUX_=$(CCAUX) $(CFLAGS)
++CUPS_CC=$(CC)
  
  # ---------------------------- End of options --------------------------- #
  
-@@ -476,8 +464,9 @@ include $(GLSRCDIR)/zlib.mak
+@@ -476,8 +465,9 @@ include $(GLSRCDIR)/zlib.mak
  include $(GLSRCDIR)/png.mak
  include $(GLSRCDIR)/tiff.mak
  include $(GLSRCDIR)/jbig2.mak
@@ -122,11 +123,12 @@ $OpenBSD: patch-base_unix-gcc_mak,v 1.8 2013/08/22 08:02:22 ajacoutot Exp $
  include $(GLSRCDIR)/ijs.mak
  include $(GLSRCDIR)/devs.mak
  include $(GLSRCDIR)/contrib.mak
-@@ -486,6 +475,7 @@ include $(GLSRCDIR)/unixlink.mak
+@@ -486,6 +476,8 @@ include $(GLSRCDIR)/unixlink.mak
  include $(GLSRCDIR)/unix-dll.mak
  include $(GLSRCDIR)/unix-end.mak
  include $(GLSRCDIR)/unixinst.mak
 +include contrib/contrib.mak
++include cups/cups.mak
  
  # This has to come last so it won't be taken as the default target.
  $(AK):

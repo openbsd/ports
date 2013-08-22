@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2013/08/22 08:02:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.100 2013/08/22 09:14:32 ajacoutot Exp $
 
 COMMENT=	GNU PostScript interpreter
 
@@ -6,7 +6,7 @@ VERSION=	9.06
 DISTNAME=	ghostscript-${VERSION}
 CATEGORIES=	print lang
 SHARED_LIBS=	gs	15.0
-REVISION=	3
+REVISION=	4
 
 MASTER_SITES=	http://downloads.ghostscript.com/public/
 
@@ -87,7 +87,7 @@ USE_GMAKE=	Yes
 
 # Hack to let ALL_TARGET etc. depend on the value of NO_SHARED_LIBS,
 # which is available only after the inclusion of bsd.port.mk.
-ALL_TARGET_NON_SHARED-No = 	so all
+ALL_TARGET_NON_SHARED-No = 	so all ${ALL_TARGET_CUPS}
 ALL_TARGET_NON_SHARED-Yes = 	all
 INSTALL_TARGET_NON_SHARED-No =	install install-so
 INSTALL_TARGET_NON_SHARED-Yes =	install
@@ -295,6 +295,22 @@ DEVICES+=	bit bitcmyk bitrgb bitrgbtags ccr \
 
 # Aditional devices not mentioned in configure.ac:
 DEVICES+=	ijs
+
+# Cups
+LIB_DEPENDS+=	print/cups,-libs
+WANTLIB += cups cupsimage
+DEVICES+=	cups
+ALL_TARGET_CUPS=cups
+CUPSLIBS+=	$$(cups-config --image --libs)
+EXTRALIBS+=	${CUPSLIBS}
+SOC_LIBS+=	${CUPSLIBS}
+MAKE_FLAGS+=	CUPSCFLAGS="$$(cups-config --cflags)" \
+		CUPSSERVERBIN="$$(cups-config --serverbin)" \
+		CUPSSERVERROOT="$$(cups-config --serverroot)" \
+		CUPSDATA="$$(cups-config --datadir)" \
+		CUPSPDFTORASTER=1 \
+		CUPS_FONTPATH="${LOCALBASE}/share/cups/fonts" \
+		CUPS_DATA="${LOCALBASE}/share/cups"
 
 .include <bsd.port.mk>
 
