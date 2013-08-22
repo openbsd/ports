@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.27 2013/08/22 22:37:17 zhuk Exp $
+# $OpenBSD: portcheck,v 1.28 2013/08/22 22:38:32 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -993,6 +993,8 @@ check_plist() {
 
 # Checks made:
 #   * devel/gettext and converters/libiconv MODULES are not forgotten.
+#   * lib/qt[34]/, lib/kde/ and lib/kde4/ prefixes not missing where
+#     applicable.
 check_wantlib() {
 	local portref="$1"; shift
 	local modules="$1"; shift
@@ -1066,6 +1068,7 @@ check_wantlib() {
 # Checks made:
 #   * Directory is not empty
 #   * No '*.core' files present
+#   * No 'core' files present (until updating)
 check_files_dir() {
 	$debugging && echo "CALLED: check_files_dir($*)" >&2
 
