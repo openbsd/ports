@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_core_install_py,v 1.16 2013/08/11 09:54:17 ajacoutot Exp $
---- installer/core_install.py.orig	Fri Jun 21 08:54:15 2013
-+++ installer/core_install.py	Fri Jul 12 09:43:56 2013
+$OpenBSD: patch-installer_core_install_py,v 1.17 2013/08/22 10:49:25 ajacoutot Exp $
+--- installer/core_install.py.orig	Wed Aug  7 08:00:10 2013
++++ installer/core_install.py	Thu Aug 22 12:29:24 2013
 @@ -174,7 +174,7 @@ class CoreInstall(object):
          self.endian = utils.LITTLE_ENDIAN
          self.distro, self.distro_name, self.distro_version = DISTRO_UNKNOWN, '', DISTRO_VER_UNKNOWN
@@ -10,7 +10,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.16 2013/08/11 09:54:17 ajacoutot E
          self.hplip_present = False
          self.have_dependencies = {}
          self.native_cups = True
-@@ -748,7 +748,7 @@ class CoreInstall(object):
+@@ -749,7 +749,7 @@ class CoreInstall(object):
  
  
      def check_make(self):
@@ -19,7 +19,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.16 2013/08/11 09:54:17 ajacoutot E
  
  
      def check_libusb(self):
-@@ -757,14 +757,14 @@ class CoreInstall(object):
+@@ -758,14 +758,14 @@ class CoreInstall(object):
              if not check_lib('libusb'):
                  return False
              if self.distro_name != "rhel":
@@ -36,7 +36,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.16 2013/08/11 09:54:17 ajacoutot E
              else:
                  return True
  
-@@ -774,11 +774,10 @@ class CoreInstall(object):
+@@ -775,11 +775,10 @@ class CoreInstall(object):
  
  
      def check_libcrypto(self):
@@ -50,7 +50,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.16 2013/08/11 09:54:17 ajacoutot E
  
  
      def check_libnetsnmp(self):
-@@ -830,7 +829,7 @@ class CoreInstall(object):
+@@ -831,7 +830,7 @@ class CoreInstall(object):
  
  
      def check_sane_devel(self):
@@ -59,7 +59,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.16 2013/08/11 09:54:17 ajacoutot E
  
  
      def check_xsane(self):
-@@ -931,9 +930,8 @@ class CoreInstall(object):
+@@ -932,9 +931,8 @@ class CoreInstall(object):
  
  
      def check_dbus(self):
@@ -71,7 +71,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.16 2013/08/11 09:54:17 ajacoutot E
  
  
      def check_cups_devel(self):
-@@ -951,12 +949,12 @@ class CoreInstall(object):
+@@ -952,12 +950,12 @@ class CoreInstall(object):
  
  
      def check_cups_image(self):
@@ -86,7 +86,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.16 2013/08/11 09:54:17 ajacoutot E
  
  
      def check_libtool(self):
-@@ -976,9 +974,9 @@ class CoreInstall(object):
+@@ -977,9 +975,9 @@ class CoreInstall(object):
      def check_cupsddk(self):
          log.debug("Checking for cups-ddk...")
          # TODO: Compute these paths some way or another...
@@ -99,7 +99,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.16 2013/08/11 09:54:17 ajacoutot E
  
  
      def check_policykit(self):
-@@ -1571,7 +1569,7 @@ class CoreInstall(object):
+@@ -1578,7 +1576,7 @@ class CoreInstall(object):
      def pre_build(self,distro_ver=None):
          cmds = []
          if self.get_distro_ver_data('fix_ppd_symlink', False,distro_ver):

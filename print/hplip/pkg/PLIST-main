@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.26 2013/08/21 14:15:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.27 2013/08/22 10:49:25 ajacoutot Exp $
 @conflict hplip-docs-*
 @conflict hplip-gui-<3.13.7p2
 @extraunexec rm -rf /usr/local/share/hplip/data/firmware
@@ -79,6 +79,8 @@ share/hplip/base/LedmWifi.py
 share/hplip/base/LedmWifi.pyc
 share/hplip/base/__init__.py
 share/hplip/base/__init__.pyc
+share/hplip/base/avahi.py
+share/hplip/base/avahi.pyc
 share/hplip/base/codes.py
 share/hplip/base/codes.pyc
 share/hplip/base/device.py
@@ -152,7 +154,6 @@ share/hplip/copier/__init__.py
 share/hplip/copier/__init__.pyc
 share/hplip/copier/copier.py
 share/hplip/copier/copier.pyc
-share/hplip/data/
 share/hplip/data/ldl/
 share/hplip/data/ldl/cb2pcal.ldl.gz
 share/hplip/data/ldl/cb2pcal_done.ldl.gz

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hpijs,v 1.29 2013/08/11 09:54:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST-hpijs,v 1.30 2013/08/22 10:49:25 ajacoutot Exp $
 @conflict hplip-libs-<=3.9.8
 @conflict hpcups-<=3.2.11
 @pkgpath print/hpijs
@@ -198,6 +198,7 @@ share/foomatic/db/source/PPD/HP/hp-deskjet_1125-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_1200c-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_1220c-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_1280-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-deskjet_1510_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_1600c-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_1600cm-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_1600cn-hpijs.ppd.gz
@@ -206,6 +207,7 @@ share/foomatic/db/source/PPD/HP/hp-deskjet_2020_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_2050_j510_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_2510_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_2520_series-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-deskjet_2540_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_3000_j310_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_3050_j610_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_3050a_j611_series-hpijs.ppd.gz
@@ -218,6 +220,7 @@ share/foomatic/db/source/PPD/HP/hp-deskjet_3450-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_3500-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_3510_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_3520_series-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-deskjet_3540_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_3550-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_3600-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_3650-hpijs.ppd.gz

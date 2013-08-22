@@ -1,6 +1,6 @@
-$OpenBSD: patch-check_py,v 1.14 2013/08/21 13:20:12 ajacoutot Exp $
---- check.py.orig	Tue Jul 23 07:18:29 2013
-+++ check.py	Fri Jul 26 16:08:03 2013
+$OpenBSD: patch-check_py,v 1.15 2013/08/22 10:49:25 ajacoutot Exp $
+--- check.py.orig	Wed Aug  7 08:04:02 2013
++++ check.py	Thu Aug 22 12:29:24 2013
 @@ -142,9 +142,9 @@ def get_comment(package, Inst_status, installed_ver):
                  comment = "Python Programming is not supported if version is lessthan 2.2" 
      elif package == 'hpaio':
@@ -13,7 +13,7 @@ $OpenBSD: patch-check_py,v 1.14 2013/08/21 13:20:12 ajacoutot Exp $
      elif package == 'cupsext' or package == 'pcardext' or package == 'hpmudext':
          if Inst_status != 'OK':
              comment = "'Not Found or Failed to load, Please reinstall HPLIP'"
-@@ -217,7 +217,7 @@ class DependenciesCheck(CoreInstall):
+@@ -218,7 +218,7 @@ class DependenciesCheck(CoreInstall):
              'pyqt4':            (True,  ['gui_qt4'], "Python-Qt4", self.check_pyqt4,'4.0','FUNC#get_pyQt4_version'), # PyQt 4.x )
              'pyqt4-dbus' :      (True,  ['gui_qt4'], "PyQt4-DBUS", self.check_pyqt4_dbus,'4.0','FUNC#get_pyQt4_version'), 
              'pyqt':            (True,  ['gui_qt'], "Python-Qt", self.check_pyqt,'2.3','FUNC#get_pyQt_version'), 
@@ -22,7 +22,7 @@ $OpenBSD: patch-check_py,v 1.14 2013/08/21 13:20:12 ajacoutot Exp $
              'python-notify' :   (False, ['gui_qt4'], "Desktop-notifications", self.check_pynotify,'-','python-notify --version'), # Optional for libnotify style popups from hp-systray
              'python-xml'  :     (True,  ['base'], "Python-XML-Lib", self.check_python_xml,'-','FUNC#get_python_xml_version'),
              'pil':              (False, ['scan'], "Python-Image-Lib", self.check_pil,'-','FUNC#get_pil_version'), #required for commandline scanning with hp-scan
-@@ -228,7 +228,7 @@ class DependenciesCheck(CoreInstall):
+@@ -229,7 +229,7 @@ class DependenciesCheck(CoreInstall):
              COMPILEDEP:
              { 'gcc' :             (True,  ['base'], 'gcc-Compiler', self.check_gcc, '-','gcc --version'),
              'libtool':          (True,  ['base'], "Build-tools", self.check_libtool,'-','libtool --version'),
@@ -31,7 +31,7 @@ $OpenBSD: patch-check_py,v 1.14 2013/08/21 13:20:12 ajacoutot Exp $
              },
              PYEXT: 
               { 'cupsext' :         (True,  ['base'], 'CUPS-Extension', self.check_cupsext,'-','FUNC#get_HPLIP_version'),
-@@ -310,9 +310,9 @@ class DependenciesCheck(CoreInstall):
+@@ -311,9 +311,9 @@ class DependenciesCheck(CoreInstall):
                       %(self.distro_name, self.distro_version, self.distro_name, supported_distro_vrs)))
            
          tui.header("SYSTEM INFO")
@@ -43,7 +43,7 @@ $OpenBSD: patch-check_py,v 1.14 2013/08/21 13:20:12 ajacoutot Exp $
          log.info(" Kernel: %s Host: %s Proc: %s Distribution: %s %s"\
               %(Kernel_info,Host_info,Proc_info,self.distro_name, self.distro_version))
          log.info(" Bitness: %s bit\n"%utils.getBitness())
-@@ -328,9 +328,9 @@ class DependenciesCheck(CoreInstall):
+@@ -329,9 +329,9 @@ class DependenciesCheck(CoreInstall):
                  log.warn("HPLIP-Installation: Auto installation is not supported for %s distro  %s version " %(self.distro_name, self.distro_version))
  
              log.info()
@@ -55,7 +55,7 @@ $OpenBSD: patch-check_py,v 1.14 2013/08/21 13:20:12 ajacoutot Exp $
              except (IOError, OSError), e:
                  log.error("Could not access file: %s. Check HPLIP installation." % e.strerror)
                  self.num_errors += 1
-@@ -538,7 +538,7 @@ class DependenciesCheck(CoreInstall):
+@@ -539,7 +539,7 @@ class DependenciesCheck(CoreInstall):
                          #log.info("Installed in HPLIP?: %s" % x)
                          log.info("Device URI: %s" % device_uri)
  
