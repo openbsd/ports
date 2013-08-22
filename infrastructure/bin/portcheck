@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.20 2013/08/22 16:43:04 zhuk Exp $
+# $OpenBSD: portcheck,v 1.21 2013/08/22 17:44:22 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -42,8 +42,16 @@ while getopts "ACdPp:Ux:" OPT; do
 	A)
 		$rootrun || set -A ignore_list -- "${ignore_list[@]}" \
 			.cvsignore \
+			.fslckout \
+			.git \
+			.gitignore \
+			.hg \
+			.hgignore \
+			.svn \
+			FINISHED \
 			INDEX \
 			README \
+			README.md \
 			bulk \
 			distfiles \
 			infrastructure \
@@ -73,13 +81,6 @@ while getopts "ACdPp:Ux:" OPT; do
 		;;
 
 	p)
-		if [[ ${PWD##"$OPTARG"} == "$PWD" ]]; then
-			cat >&2 <<EOE
-${0##*/}: current directory does not seem to be under the
-specified root directory: $OPTARG.
-EOE
-			exit 3
-		fi
 		portsdir=$OPTARG
 		;;
 
@@ -96,6 +97,14 @@ EOE
 		;;
 	esac
 done
+
+if ! $rootrun && [[ -n $portsdir && ${PWD##"$portsdir"} == "$PWD" ]]; then
+	cat >&2 <<EOE
+${0##*/}: current directory does not seem to be under the
+specified root directory: $portsdir.
+EOE
+	exit 3
+fi
 
 shift $(($OPTIND - 1))
 (($# > 0)) && ! $rootrun && usage
@@ -123,8 +132,6 @@ if [[ -z $portsdir ]]; then
 	# heuristics mode ON
 	pkgpath=${PWD##*/ports/*(mystuff/|openbsd-wip/)}
 	portsdir=${PWD%"/$pkgpath"}
-	[[ -n $portsdir ]] &&
-		echo "ports root directory detected: $portsdir" >&2
 fi
 
 if [[ -z $portsdir ]]; then
@@ -139,7 +146,10 @@ fi
 set -A make_args -- MASTER_SITE_OPENBSD= \
 	PORTSDIR_PATH="$portsdir:$(cd /usr/ports && make -V PORTSDIR_PATH || true)"
 
-$rootrun && cd -- "$portsdir"
+if $rootrun; then
+	cd -- "$portsdir"
+	echo "scanning ports under the $portsdir" >&2
+fi
 
 ############################################################
 # Check and fail routines
@@ -178,6 +188,7 @@ has_subdirs_only() {
 		local has_files=false has_dirs=false
 		while read F; do
 			$ignore_cvs && [[ $F == CVS ]] && continue
+			ignoring "$dir/$F" && continue
 			if [[ -d $dir/$F ]]; then
 				has_dirs=true
 			else
@@ -195,7 +206,7 @@ is_vcs_item() {
 ignoring() {
 	local iglob
 	for iglob in "${ignore_list[@]}"; do
-		[[ $1 == $iglob ]] && return 0
+		[[ ${1#./} == $iglob ]] && return 0
 	done
 	return 1
 }
