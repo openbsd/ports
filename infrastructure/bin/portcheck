@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.23 2013/08/22 20:43:10 zhuk Exp $
+# $OpenBSD: portcheck,v 1.24 2013/08/22 20:56:14 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -496,7 +496,7 @@ check_port_dir() {
 	# We request all info at once for speed.
 
 	local dist_subdir distfiles flavor flavors master_sites
-	local multi_packages this_pkg_path pseudo_flavors shared_libs subst_cmd
+	local multi_packages pkgpath_this pseudo_flavors shared_libs subst_cmd
 	local show_items="DIST_SUBDIR DISTFILES FLAVOR FLAVORS FULLPKGNAME"
 	local show_items="$show_items MASTER_SITES MULTI_PACKAGES PKGPATH"
 	local show_items="$show_items PSEUDO_FLAVORS SHARED_LIBS SUBST_CMD"
@@ -511,7 +511,7 @@ check_port_dir() {
 	read -pr fullpkgname &&
 	read -pr master_sites &&
 	read -pr multi_packages &&
-	read -pr pkg_path_this &&
+	read -pr pkgpath_this &&
 	read -pr pseudo_flavors &&
 	read -pr shared_libs &&
 	read -pr subst_cmd &&
@@ -542,7 +542,7 @@ check_port_dir() {
 		sub_checks "$dir" "$_s" "$fullpkgname" "${check_flavors[@]}"
 	done
 
-	pkgpath=${pkpath:-"$pkg_path_this"}
+	pkgpath=${pkgpath:-"$pkgpath_this"}
 	last_subst_cmd="$subst_cmd"
 }
 
