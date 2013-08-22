@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.25 2013/08/22 21:06:00 zhuk Exp $
+# $OpenBSD: portcheck,v 1.26 2013/08/22 21:16:04 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1274,6 +1274,7 @@ check_perms_in_dir() {
 	(find -f "$1" -- -maxdepth 1 -type f \
 	    \( -perm -100 -or -perm -010 -or -perm 001 \) \
 	    </dev/null || true) |&
+	local F
 	while read -pr F; do
 		F=${F#./}
 		ignoring "$F" && continue
