@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.9 2013/08/22 01:01:11 zhuk Exp $
+# $OpenBSD: portcheck,v 1.10 2013/08/22 09:44:17 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -170,6 +170,24 @@ err_coredump_found() {
 	err "core dump file found: $1"
 }
 
+has_subdirs_only() {
+	$debugging && echo "CALLED: has_subdirs_only($*)" >&2
+
+	local dir=$1; shift
+	ls -A "$dir" | {
+		local has_files=false has_dirs=false
+		while read F; do
+			$ignore_cvs && [[ $F == CVS ]] && continue
+			if [[ -d $dir/$F ]]; then
+				has_dirs=true
+			else
+				has_files=true
+			fi
+		done
+		$has_dirs && ! $has_files
+	}
+}
+
 is_vcs_item() {
 	[[ -d "$1" && ${1##*/} == @(CVS|.fslckout|.git|.hg|.svn) ]]
 }
@@ -312,7 +330,7 @@ check_port_hier() {
 					err_core_found "$F"
 				fi
 
-				if ! [[ -f $F/Makefile ]]; then
+				if ! [[ -f $F/Makefile ]] && ! has_subdirs_only "$F"; then
 					# Avoid extra spam
 					err "not a port directory: $F"
 				else
@@ -362,7 +380,8 @@ check_port_dir() {
 	check_perms_in_dir "$dir"
 
 	if [[ -f $dir/Makefile.inc ]] ||
-	      egrep -sq '^ *SUBDIR[[:space:]]*\+?=' "$dir"/Makefile; then
+	   egrep -sq '^ *SUBDIR[[:space:]]*\+?=' "$dir"/Makefile ||
+	   has_subdirs_only "$dir"; then
 		check_port_hier "${dir#./}" "$@"
 		return
 	fi
@@ -468,7 +487,7 @@ check_port_dir() {
 		read -r shared_libs
 		read -r subst_cmd
 
-		set -A check_flavors --
+		local check_flavors
 		[[ -z $flavor ]] && set -A check_flavors -- ""
 
 		local f pf
@@ -790,7 +809,7 @@ check_plist() {
 		theme=${theme#/}
 		theme=${theme%/}
 		echo "$icon_themes" | fgrep -q "/$theme/" ||
-			err "doing @exec of gtk-update-icon-cache" \
+			err "${portref}doing @exec of gtk-update-icon-cache" \
 			    "for absent icon theme $theme"
 	done
 
@@ -798,7 +817,7 @@ check_plist() {
 		theme=${theme#/}
 		theme=${theme%/}
 		echo "$icon_themes" | fgrep -q "/$theme/" ||
-			err "doing @unexec-delete of gtk-update-icon-cache" \
+			err "${portref}doing @unexec-delete of gtk-update-icon-cache" \
 			    "for absent icon theme $theme"
 	done
 
@@ -988,7 +1007,12 @@ check_pkg_dir() {
 	$debugging && echo "CALLED: check_pkg_dir($*)" >&2
 
 	local dir=$1; shift
-	local subst_cmd=$1; shift
+	local subst_cmd
+	if (($# > 0)); then
+		# XXX should find the way to always obtain SUBST_CMD
+		subst_cmd=$1
+		shift
+	fi
 	local empty=true
 	local F
 
@@ -998,14 +1022,14 @@ check_pkg_dir() {
 		[[ -f $F ]] ||
 			err "$F is not a file"
 		check_trailing_whitespace "$F"
-		check_subst_vars "$F" "$subst_cmd"
+		[[ -n $subst_cmd ]] && check_subst_vars "$F" "$subst_cmd"
 		egrep -q '\$OpenBSD.*\$' "$F" &&
 			err "$F should not contain \$OpenBSD\$ tag"
 		;;
 
 	PFRAG.shared?(-*))
 		empty=false
-		check_subst_vars "$F" "$subst_cmd"
+		[[ -n $subst_cmd ]] && check_subst_vars "$F" "$subst_cmd"
 		check_plist_file "$F"
 		awk <"$F" '/^(@comment )?@lib /' | {
 			local no_a_for_so=false plist=${F##*/} shlibs_found=false
@@ -1024,14 +1048,14 @@ check_pkg_dir() {
 
 	PFRAG.*|PLIST?(-*))
 		empty=false
-		check_subst_vars "$F" "$subst_cmd"
+		[[ -n $subst_cmd ]] && check_subst_vars "$F" "$subst_cmd"
 		check_plist_file "$F"
 		;;
 
 	README?(-*)|SECURITY?(-*))
 		[[ -f $F ]] ||
 			err "$F is not a file"
-		check_subst_vars "$F" "$subst_cmd"
+		[[ -n $subst_cmd ]] && check_subst_vars "$F" "$subst_cmd"
 		check_trailing_whitespace "$F"
 		head -n 1 -- "$F" |
 			egrep -q '^(#[[:space:]]*)?\$OpenBSD(:.*)?\$$' ||
@@ -1050,7 +1074,7 @@ check_pkg_dir() {
 	MESSAGE?(-*)|UNMESSAGE?(-*))
 		[[ -f $F ]] ||
 			err "$F is not a file"
-		check_subst_vars "$F" "$subst_cmd"
+		[[ -n $subst_cmd ]] && check_subst_vars "$F" "$subst_cmd"
 		check_trailing_whitespace "$F"
 		egrep -q '\$OpenBSD.*\$' "$F" &&
 			err "$F should not contain \$OpenBSD\$ tag"
@@ -1068,6 +1092,8 @@ check_pkg_dir() {
 #   * There is an OpenBSD RCS tag at the top.
 #   * No items with ${FULLPKGNAME} are allowed, except readme.
 check_plist_file() {
+	$debugging && echo "CALLED: check_plist_file($*)" >&2
+
 	[[ -f $1 ]] ||
 		err "$1 is not a file"
 	head -n 1 -- "$1" |
@@ -1078,7 +1104,7 @@ check_plist_file() {
 	# following trick:
 	#    @cwd ${LOCALBASE}/share/doc/pkg-readmes
 	#    ${FULLPKGNAME}
-	egrep -v '^share/doc/pkg-readmes/\${FULLPKGNAME}$' "$1" |
+	egrep -v '^(share/doc/pkg-readmes/\$\{FULLPKGNAME\}|@comment .*)$' "$1" |
 		egrep '.\$\{FULLPKGNAME\}|\$\{FULLPKGNAME\}.' >&2 &&
 		err "$1 contains item(-s) with \${FULLPKGNAME} in it, see above"
 }
@@ -1086,6 +1112,8 @@ check_plist_file() {
 # Checks made:
 #   * Every variable referenced by ${[A-Z]+} should be in ${SUBST_VARS}.
 check_subst_vars() {
+	$debugging && echo "CALLED: check_subst_vars($*)" >&2
+
 	local F=$1; shift
 	local subst_cmd=$1; shift
 
