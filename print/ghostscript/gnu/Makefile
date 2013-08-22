@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2013/06/17 19:28:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.99 2013/08/22 08:02:22 ajacoutot Exp $
 
 COMMENT=	GNU PostScript interpreter
 
@@ -6,7 +6,7 @@ VERSION=	9.06
 DISTNAME=	ghostscript-${VERSION}
 CATEGORIES=	print lang
 SHARED_LIBS=	gs	15.0
-REVISION=	2
+REVISION=	3
 
 MASTER_SITES=	http://downloads.ghostscript.com/public/
 
@@ -87,9 +87,9 @@ USE_GMAKE=	Yes
 
 # Hack to let ALL_TARGET etc. depend on the value of NO_SHARED_LIBS,
 # which is available only after the inclusion of bsd.port.mk.
-ALL_TARGET_NON_SHARED-No = 	so all ${ALL_TARGET_CUPS}
+ALL_TARGET_NON_SHARED-No = 	so all
 ALL_TARGET_NON_SHARED-Yes = 	all
-INSTALL_TARGET_NON_SHARED-No =	install install-so ${INSTALL_TARGET_CUPS}
+INSTALL_TARGET_NON_SHARED-No =	install install-so
 INSTALL_TARGET_NON_SHARED-Yes =	install
 
 SOC_LIBS =			-liconv -pthread
@@ -144,16 +144,6 @@ FT_BRIDGE=	0
 
 NO_TEST=	Yes
 
-# Simulate ./configure.
-post-configure:
-	sed -e 's!@prefix@!${PREFIX}!' \
-	    -e 's!@exec_prefix@!${PREFIX}!' \
-	    -e 's!@bindir@!${PREFIX}/bin!' \
-	    -e '/GS_LIB/s!/usr!${PREFIX}!' \
-	    -e 's!@SED_EXTENDED_REGEX_OPT@!-nEe!' \
-	    -e 's!@GS@!gs!' \
-	    ${WRKSRC}/cups/gstopxl.in > ${WRKSRC}/cups/gstopxl
-
 # Avoid surprises in update-patches.
 # Use the old-style (non-autoconf) build.
 post-extract:
@@ -196,13 +186,6 @@ post-install:
 		ln -sf ps2pdf.1 ps2pdf13.1 && \
 		ln -sf ps2pdf.1 ps2pdf14.1 && \
 		ln -sf ps2ps.1 eps2eps.1
-	${INSTALL_SCRIPT_DIR} ${PREFIX}/libexec/cups/filter
-	${INSTALL_SCRIPT} ${WRKSRC}/cups/gstopxl ${PREFIX}/libexec/cups/filter
-	cd ${PREFIX}/libexec/cups/filter && ln -s gstopxl pstopxl
-	cd ${PREFIX}/libexec/cups/filter && ln -s gstoraster pstoraster
-	${INSTALL_DATA_DIR} ${PREFIX}/share/cups/model
-	${INSTALL_DATA} ${WRKSRC}/cups/*.ppd ${PREFIX}/share/cups/model
-	mv ${DESTDIR}/${SYSCONFDIR}/cups/ ${PREFIX}/share/ghostscript/${VERSION}/examples/
 
 # Device list based on configure.ac:
 # X_DEVS (skipping x11_ and x11alt_, since those are dependencies of
@@ -312,23 +295,6 @@ DEVICES+=	bit bitcmyk bitrgb bitrgbtags ccr \
 
 # Aditional devices not mentioned in configure.ac:
 DEVICES+=	ijs
-
-# Cups
-LIB_DEPENDS+=	print/cups,-libs
-WANTLIB += cups cupsimage
-DEVICES+=	cups
-ALL_TARGET_CUPS=cups
-INSTALL_TARGET_CUPS=	install-cups
-CUPSLIBS+=	$$(cups-config --image --libs)
-EXTRALIBS+=	${CUPSLIBS}
-SOC_LIBS+=	${CUPSLIBS}
-MAKE_FLAGS+=	CUPSCFLAGS="$$(cups-config --cflags)" \
-		CUPSSERVERBIN="$$(cups-config --serverbin)" \
-		CUPSSERVERROOT="$$(cups-config --serverroot)" \
-		CUPSDATA="$$(cups-config --datadir)" \
-		CUPSPDFTORASTER=1 \
-		CUPS_FONTPATH="${LOCALBASE}/share/cups/fonts" \
-		CUPS_DATA="${LOCALBASE}/share/cups"
 
 .include <bsd.port.mk>
 
