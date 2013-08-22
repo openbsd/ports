@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.17 2013/08/22 13:29:07 zhuk Exp $
+# $OpenBSD: portcheck,v 1.18 2013/08/22 13:56:16 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -886,6 +886,7 @@ check_plist() {
 
 	# gettext
 	$translation_found && ! $gettext_dep && ! $is_static &&
+		[[ $fullpkgname != gettext-* ]] &&
 		err "${portref}translation file(-s) found without" \
 		    "devel/gettext dependency"
 
