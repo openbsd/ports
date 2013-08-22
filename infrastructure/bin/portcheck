@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.6 2013/08/21 23:46:00 zhuk Exp $
+# $OpenBSD: portcheck,v 1.7 2013/08/22 00:30:17 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1067,8 +1067,13 @@ check_plist_file() {
 	head -n 1 -- "$1" |
 		egrep -q '^@comment \$OpenBSD.*\$$' ||
 		err "$1 does not have \$OpenBSD\$ RCS tag at the top"
+
+	# Do not match just '${FULLPKGNAME}' because many ports use the
+	# following trick:
+	#    @cwd ${LOCALBASE}/share/doc/pkg-readmes
+	#    ${FULLPKGNAME}
 	egrep -v '^share/doc/pkg-readmes/\${FULLPKGNAME}$' "$1" |
-		fgrep '${FULLPKGNAME}' >&2 &&
+		egrep '.\$\{FULLPKGNAME\}|\$\{FULLPKGNAME\}.' >&2 &&
 		err "$1 contains item(-s) with \${FULLPKGNAME} in it, see above"
 }
 
