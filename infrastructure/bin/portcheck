@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.28 2013/08/22 22:38:32 zhuk Exp $
+# $OpenBSD: portcheck,v 1.29 2013/08/22 23:30:23 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -360,7 +360,9 @@ check_port_hier() {
 				;;
 
 			*)
-				if ! [[ -f $F/Makefile ]] && ! has_subdirs_only "$F"; then
+				if ! ([[ -f $F/Makefile ]] ||
+                                      ls $F/*.port.mk >/dev/null) &&
+				   ! has_subdirs_only "$F"; then
 					# Avoid extra spam
 					err "not a port directory: $F"
 				else
