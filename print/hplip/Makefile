@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2013/08/21 14:58:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.94 2013/08/22 10:26:26 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -25,7 +25,7 @@ REVISION-common=	6
 REVISION-hpaio=		1
 REVISION-hpcups=	4
 REVISION-hpijs=		3
-REVISION-gui=		3
+REVISION-gui=		4
 
 SHARED_LIBS +=  hpmud		2.0 # 0.6
 SHARED_LIBS +=  hpip		2.0 # 0.1
@@ -122,6 +122,10 @@ RUN_DEPENDS-gui=	x11/py-qt4 \
 			devel/desktop-file-utils \
 			sysutils/usbutils \
 			devel/py-notify
+
+# hp-toolbox, Actions, Scan
+RUN_DEPENDS-gui +=	graphics/xsane
+
 LIB_DEPENDS-gui=	#empty
 
 LIBTOOL_FLAGS=		--tag=disable-static
