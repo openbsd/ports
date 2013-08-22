@@ -1,11 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2013/08/15 18:41:21 kili Exp $
-
-# XXX remove @exec-update when we branch 5.4-current
+# $OpenBSD: Makefile,v 1.23 2013/08/22 08:03:59 ajacoutot Exp $
 
 COMMENT=	OpenPrinting CUPS filters
 
-DISTNAME=	cups-filters-1.0.35
-REVISION=	0
+DISTNAME=	cups-filters-1.0.36
 CATEGORIES=	print
 
 SHARED_LIBS +=  cupsfilters               0.0 # 1.0
@@ -39,14 +36,11 @@ LIB_DEPENDS=	print/cups,-libs \
 		print/poppler \
 		print/qpdf
 
-# make it easier for users: bring in foomatic-filters, ghostscript
-# (with gstoraster) and allow the regeneration of PPD files from
-# share/foomatic/db/source/*/*.xml
+# make it easier for users: bring in foomatic-filters, ghostscript and
+# allow the regeneration of PPD files from share/foomatic/db/source/*/*.xml
 RUN_DEPENDS +=	print/foomatic-db-engine
 
 USE_GMAKE=	Yes
-
-MAKE_FLAGS=	DLOPEN_LIBS=""
 
 FAKE_FLAGS=	pkgfontconfigdir=${PREFIX}/share/examples/cups-filters \
 		pkgcupsserverrootdir=${PREFIX}/share/examples/cups-filters/cups
@@ -65,9 +59,15 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 # prefer pdftops over gs -- see README under ${WRKSRC}
 CONFIGURE_ARGS +=	--with-pdftops=pdftops
 BUILD_DEPENDS +=	print/poppler,-utils
-RUN_DEPENDS +=		print/poppler,-utils # print/ghostscript/gnu
+RUN_DEPENDS +=		print/poppler,-utils #print/ghostscript/gnu
+
+pre-configure:
+	perl -pi -e 's,/usr/share/cups,${LOCALBASE}/share/cups,g' \
+		${WRKSRC}/filter/{gstoraster.c,gstopxl}
 
 post-install:
 	rm -rf ${WRKINST}/rc?.d
+	cd ${PREFIX}/libexec/cups/filter && ln -s gstopxl pstopxl
+	cd ${PREFIX}/libexec/cups/filter && ln -s gstoraster pstoraster
 
 .include <bsd.port.mk>

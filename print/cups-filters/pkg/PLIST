@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/07/12 07:30:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/08/22 08:03:59 ajacoutot Exp $
 @conflict cups-<1.6.0
-@exec-update [ -h ${SYSCONFDIR}/fonts/conf.d/99-pdftoopvp.conf ] && rm -f ${SYSCONFDIR}/fonts/conf.d/99-pdftoopvp.conf || true
+@conflict ghostscript-<9.06p3
 @bin bin/ttfread
 include/cupsfilters/
 include/cupsfilters/driver.h
 include/cupsfilters/image.h
+include/cupsfilters/raster.h
 include/fontembed/
 include/fontembed/bitset.h
 include/fontembed/embed.h
@@ -19,11 +20,15 @@ lib/libfontembed.la
 @lib lib/libfontembed.so.${LIBfontembed_VERSION}
 lib/pkgconfig/libcupsfilters.pc
 lib/pkgconfig/libfontembed.pc
+libexec/cups/
 @bin libexec/cups/backend/parallel
 @bin libexec/cups/backend/serial
+libexec/cups/filter/
 @bin libexec/cups/filter/bannertopdf
 @bin libexec/cups/filter/commandtoescpx
 @bin libexec/cups/filter/commandtopclx
+libexec/cups/filter/gstopxl
+@bin libexec/cups/filter/gstoraster
 @bin libexec/cups/filter/imagetopdf
 libexec/cups/filter/imagetops
 @bin libexec/cups/filter/imagetoraster
@@ -33,13 +38,18 @@ libexec/cups/filter/imagetops
 @bin libexec/cups/filter/pdftops
 @bin libexec/cups/filter/pdftoraster
 libexec/cups/filter/pstopdf
+libexec/cups/filter/pstopxl
+libexec/cups/filter/pstoraster
 @bin libexec/cups/filter/rastertoescpx
 @bin libexec/cups/filter/rastertopclx
 libexec/cups/filter/textonly
 @bin libexec/cups/filter/texttopdf
 libexec/cups/filter/texttops
 @bin libexec/cups/filter/urftopdf
+@man man/man5/cups-browsed.conf.5
+@man man/man8/cups-browsed.8
 @bin sbin/cups-browsed
+share/cups/
 share/cups/banners/
 share/cups/banners/classified
 share/cups/banners/confidential
@@ -61,6 +71,7 @@ share/cups/mime/
 share/cups/mime/cupsfilters.convs
 share/cups/mime/cupsfilters.types
 share/cups/ppdc/
+share/cups/ppdc/escp.h
 share/cups/ppdc/pcl.h
 share/doc/cups-filters/
 share/doc/cups-filters/AUTHORS
@@ -81,5 +92,7 @@ share/ppd/cupsfilters/
 share/ppd/cupsfilters/Generic-PDF_Printer-PDF.ppd
 share/ppd/cupsfilters/HP-Color_LaserJet_CM3530_MFP-PDF.ppd
 share/ppd/cupsfilters/HP-PhotoSmart_Pro_B8300-hpijs-pdftoijs.ppd
+share/ppd/cupsfilters/pxlcolor.ppd
+share/ppd/cupsfilters/pxlmono.ppd
 share/ppd/cupsfilters/textonly.ppd
 @rcscript ${RCDIR}/cups_browsed
