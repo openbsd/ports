@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.22 2013/08/22 20:33:16 zhuk Exp $
+# $OpenBSD: portcheck,v 1.23 2013/08/22 20:43:10 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -222,7 +222,7 @@ handle_extra_file() {
 			err "VCS item detected: $1"
 		fi
 	elif [[ ${1##*/} == core ]]; then
-		$rootrun || err_core_found "${1%/*}"
+		$existing_port || err_core_found "${1%/*}"
 	elif [[ -f $1 && $1 == *.core ]]; then
 		err_coredump_found "$1"
 	elif [[ -d $1 ]]; then
@@ -335,6 +335,9 @@ check_port_hier() {
 		F=${F#./}
 		ignoring "$F" && continue
 
+		[[ ${F##*/} == core ]] && ! $existing_port &&
+			err_core_found "$F"
+
 		if is_vcs_item "$F"; then
 			if ! $ignore_cvs || [[ ${F##*/} != CVS ]]; then
 				err "VCS item detected: $F"
@@ -355,10 +358,6 @@ check_port_hier() {
 				;;
 
 			*)
-				if ! $rootrun && [[ ${F##*/} == core ]]; then
-					err_core_found "$F"
-				fi
-
 				if ! [[ -f $F/Makefile ]] && ! has_subdirs_only "$F"; then
 					# Avoid extra spam
 					err "not a port directory: $F"
@@ -1072,7 +1071,10 @@ check_files_dir() {
 		while read F; do
 			ignoring "$F" && continue
 			empty=false
-			[[ "$F" == *.core ]] && err_coredump_found "$F"
+			[[ $F == *.core ]] &&
+				err_coredump_found "$F"
+			[[ ${F##*/} == core ]] && ! $existing_port &&
+				err_core_found "$F"
 		done
 		$empty && "there are no files, please remove the $1 directory"
 		! $error
