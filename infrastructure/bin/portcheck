@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.16 2013/08/22 13:23:54 zhuk Exp $
+# $OpenBSD: portcheck,v 1.17 2013/08/22 13:29:07 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -368,7 +368,7 @@ check_port_hier() {
 		fi
 	done
 
-	$pkg_exists && check_pkg_dir "$F" "$last_subst_cmd"
+	$pkg_exists && check_pkg_dir "$dir"/pkg "$last_subst_cmd"
 
 	egrep -q '^ *SUBDIR[[:space:]]*\+?=' Makefile ||
 		err missing subdir Makefile
