@@ -1,4 +1,4 @@
-$OpenBSD: README-common,v 1.1 2013/08/21 14:51:41 ajacoutot Exp $
+$OpenBSD: README-common,v 1.2 2013/08/22 15:11:52 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,6 +9,9 @@ This is a common README for all HPLIP packages.
 Communication with local printers is done via CUPS over libusb, make
 sure you read the "USB" section of the documentation that comes with the
 cups package (cf. ${LOCALBASE}/share/doc/pkg-readmes/cups-*).
+
+If you care about device information (e.g. ink status), you should use
+the HP tools to install and communicate with it (see below).
 
 Printing
 ========
@@ -42,8 +45,13 @@ e.g. for a network printer:
 Then add an 'HP Printer (HPLIP)' entry in CUPS with the corresponding
 URI (using the CUPS web interface or lpadmin(8)).
 
+Network printers can also be used through JetDirect and/or LPR, in which
+case it is not necessary to create a URI; the spooler can be configured
+to use a direct connection.
+e.g. with CUPS, socket://192.168.255.14:9100
+
 Alternatively, the printer can be configured to use the foomatic print
-framework using the hpijs package.
+framework using the hpijs package (useful with lpd(8)).
 
 Scanning
 ========
