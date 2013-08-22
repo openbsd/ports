@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.26 2013/08/22 21:16:04 zhuk Exp $
+# $OpenBSD: portcheck,v 1.27 2013/08/22 22:37:17 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -17,6 +17,7 @@
 
 set -e
 set +X
+set -u
 
 usage() {
 	echo "usage: ${0##*/} [-CdPU] [-p portsdir] [-x glob]" >&2
@@ -34,35 +35,36 @@ ignore_cvs=false
 plist_checks=true
 portsdir=
 rootrun=false
-unset ignore_list
 debugging=false
+
+ignore_list=; unset ignorelist[0]
 
 while getopts "ACdPp:Ux:" OPT; do
 	case $OPT in
 	A)
-		$rootrun || set -A ignore_list -- "${ignore_list[@]}" \
-			.cvsignore \
-			.fslckout \
-			.git \
-			.gitignore \
-			.hg \
-			.hgignore \
-			.svn \
-			FINISHED \
-			INDEX \
-			README \
-			README.md \
-			bulk \
-			distfiles \
-			infrastructure \
-			logs \
-			lost+found \
-			mystuff \
-			openbsd-wip \
-			packages \
-			plist \
-			pobj \
-			update
+		if ! $rootrun; then
+			ignore_list[${#ignore_list[@]}]=.cvsignore
+			ignore_list[${#ignore_list[@]}]=.fslckout
+			ignore_list[${#ignore_list[@]}]=.git
+			ignore_list[${#ignore_list[@]}]=.gitignore
+			ignore_list[${#ignore_list[@]}]=.hg
+			ignore_list[${#ignore_list[@]}]=.hgignore
+			ignore_list[${#ignore_list[@]}]=.svn
+			ignore_list[${#ignore_list[@]}]=.FINISHED
+			ignore_list[${#ignore_list[@]}]=.INDEX
+			ignore_list[${#ignore_list[@]}]=.README
+			ignore_list[${#ignore_list[@]}]=.README.md
+			ignore_list[${#ignore_list[@]}]=.bulk
+			ignore_list[${#ignore_list[@]}]=.distfiles
+			ignore_list[${#ignore_list[@]}]=.infrastructure
+			ignore_list[${#ignore_list[@]}]=.lost+found
+			ignore_list[${#ignore_list[@]}]=.mystuff
+			ignore_list[${#ignore_list[@]}]=.openbsd-wip
+			ignore_list[${#ignore_list[@]}]=.packages
+			ignore_list[${#ignore_list[@]}]=.plist
+			ignore_list[${#ignore_list[@]}]=.pobj
+			ignore_list[${#ignore_list[@]}]=.update
+		fi
 		rootrun=true
 		existing_port=true
 		ignore_cvs=true
@@ -253,7 +255,7 @@ normalize_pyco() {
 # Usage: portref directory [subpackage [flavor all_flavors]]
 portref() {
 	local dir=$1; shift
-	local subpkg flavor all_flavors
+	local subpkg= flavor all_flavors=
 	if (($# > 0)); then
 		subpkg=$1
 		shift
@@ -413,7 +415,7 @@ check_port_dir() {
 	if [[ -f $dir/Makefile.inc ]] ||
 	   egrep -sq '^ *SUBDIR[[:space:]]*\+?=' "$dir"/Makefile ||
 	   has_subdirs_only "$dir"; then
-		check_port_hier "${dir#./}" "$@"
+		check_port_hier "${dir#./}" "${@:-}"
 		return
 	fi
 
@@ -521,8 +523,8 @@ check_port_dir() {
 		exec 3<&-
 	fi
 
-	local check_flavors
-	[[ -z $flavor ]] && set -A check_flavors -- ""
+	local check_flavors=
+	[[ -n $flavor ]] && unset check_flavors[0]
 
 	local f pf
 	for f in $flavors; do
@@ -530,7 +532,7 @@ check_port_dir() {
 			[[ $f == "$pf" ]] && continue 2
 		done
 		[[ $f == debug ]] && continue     # XXX
-		set -A check_flavors -- "${check_flavors[@]}" $f
+		check_flavors[${#check_flavors[@]}]=$f
 	done
 
 	check_distfiles "$dir" "$dist_subdir" $distfiles
@@ -706,13 +708,14 @@ check_plist() {
 
 	# Lists of icon themes discovered through reading
 	# @file, @exec and @unexec lines, accordingly.
-	local icon_themes exec_themes unexec_themes
+	local icon_themes= exec_icon_themes= unexec_icon_themes=
 
 	local gettext_dep=false
 	local translation_found=false
 
 	# Lists of .py, .pyc and .pyo items found, accordingly
-	local py_files pyc_files pyo_files
+	local py_files=   pyc_files=   pyo_files=
+	unset py_files[0] pyc_files[0] pyo_files[0]
 
 	# Temporary ones
 	local app l theme varname py
@@ -942,11 +945,11 @@ check_plist() {
 		    "devel/gettext dependency"
 
 	# Python modules
-	set -sA py_files -- "${py_files[@]}"
-	set -sA pyc_files -- "${pyc_files[@]}"
-	set -sA pyo_files -- "${pyo_files[@]}"
+	((${#py_files[@]} > 0))  && set -sA py_files  -- "${py_files[@]}"
+	((${#pyc_files[@]} > 0)) && set -sA pyc_files -- "${pyc_files[@]}"
+	((${#pyo_files[@]} > 0)) && set -sA pyo_files -- "${pyo_files[@]}"
 	local ic=0 io=0
-	for py in "${py_files[@]}"; do
+	if ((${#py_files[@]} > 0)); then for py in "${py_files[@]}"; do
 		while [[ $ic -lt ${#pyc_files[@]} ]]; do
 			[[ ${pyc_files[$ic]} < "$py"c ]] || break
 			err "${portref}compiled Python module without" \
@@ -975,7 +978,7 @@ check_plist() {
 		#	err "${portref}Python module without" \
 		#	    "optimized version: $py"
 		fi
-	done
+	done; fi
 	while (($ic < ${#pyc_files[@]})); do
 		err "${portref}compiled Python module without source," \
 		    "expected: ${pyc_files[$ic]%c}"
