@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2013/08/20 22:05:56 zhuk Exp $
+# $OpenBSD: Makefile,v 1.15 2013/08/22 09:43:33 sthen Exp $
 
 COMMENT =	japanese input engine for ibus
 
 DISTNAME =	ibus-anthy-1.5.0
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	anthygobject-1.0	0.0 # 5.500
 
