@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.12 2013/08/22 10:43:15 zhuk Exp $
+# $OpenBSD: portcheck,v 1.13 2013/08/22 11:31:43 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -616,7 +616,7 @@ sub_checks() {
 			if $plist_checks; then
 				(make "${make_args[@]}" print-plist-with-depends ||
 				    true) </dev/null |&
-				check_plist "$portref" "$fullpkgname"
+				check_plist "$portref" "$fullpkgname" "$flavor"
 			fi
 
 			! $error
@@ -648,6 +648,12 @@ check_plist() {
 
 	local portref=$1; shift
 	local fullpkgname=$1; shift
+	local flavor_list=$1; shift
+
+	local flavor is_static=false
+	for flavor in $flavor_list; do
+		[[ $flavor == static ]] && is_static=true
+	done
 
 	local guic_dep=false
 	local guic_dep_needed=false
@@ -872,7 +878,7 @@ check_plist() {
 	fi
 
 	# gettext
-	$translation_found && ! $gettext_dep &&
+	$translation_found && ! $gettext_dep && ! $is_static &&
 		err "${portref}translation file(-s) found without" \
 		    "devel/gettext dependency"
 
