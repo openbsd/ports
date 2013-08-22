@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_moveres_c,v 1.1 2013/08/22 23:03:21 sthen Exp $
+
+Bugfix: java menu problem after resize, maximize
+From: Ambrus Szabo <donamo@donamo.hu>
+Date: Tue, 5 Apr 2011 12:36:11 +0200
+http://repo.or.cz/w/wmaker-crm.git/commit/7490b14bf0573283cd11eea3b1b6392c6f38e2dd
+
+--- src/moveres.c.orig	Wed Jul 17 23:21:12 2013
++++ src/moveres.c	Wed Jul 17 23:23:43 2013
+@@ -2190,6 +2190,7 @@ wMouseResizeWindow(WWindow *wwin, XEvent *ev)
+                     wwin->flags.user_changed_height = 1;
+
+                 wWindowConfigure(wwin, fx, fy, fw, fh - vert_border);
++                wWindowSynthConfigureNotify(wwin);
+             }
+ #ifdef DEBUG
+             puts("End resize window");

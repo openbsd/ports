@@ -1,28 +1,28 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/21 22:07:07 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2013/08/22 23:03:21 sthen Exp $
 @pkgpath x11/windowmaker
 GNUstep/
 GNUstep/Applications/
 GNUstep/Applications/WPrefs.app
-bin/WPrefs
-bin/convertfonts
+@bin bin/WPrefs
+@bin bin/convertfonts
 bin/get-wings-flags
 bin/get-wraster-flags
 bin/get-wutil-flags
-bin/geticonset
-bin/getstyle
-bin/seticons
-bin/setstyle
-bin/wdread
-bin/wdwrite
+@bin bin/geticonset
+@bin bin/getstyle
+@bin bin/seticons
+@bin bin/setstyle
+@bin bin/wdread
+@bin bin/wdwrite
 bin/wkdemenu.pl
 bin/wm-oldmenu2new
-bin/wmagnify
-bin/wmaker
+@bin bin/wmagnify
+@bin bin/wmaker
 bin/wmaker.inst
-bin/wmsetbg
-bin/wmsetup
-bin/wxcopy
-bin/wxpaste
+@bin bin/wmsetbg
+@bin bin/wmsetup
+@bin bin/wxcopy
+@bin bin/wxpaste
 include/WINGs/
 include/WINGs/WINGs.h
 include/WINGs/WINGsP.h
@@ -38,6 +38,7 @@ lib/libWMaker.a
 lib/libWUtil.a
 lib/libwraster.a
 lib/libwraster.la
+@lib lib/libwraster.so.${LIBwraster_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/WINGs.pc
 lib/pkgconfig/wmlib.pc
@@ -263,7 +264,6 @@ share/WindowMaker/menu
 share/WindowMaker/plmenu
 share/WindowMaker/wmmacros
 share/WindowMaker/xtree.dat
-%%SHARED%%
 share/examples/WindowMaker/
 @sample ${SYSCONFDIR}/WindowMaker/
 share/examples/WindowMaker/WMGLOBAL

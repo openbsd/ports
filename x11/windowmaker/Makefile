@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2013/06/04 18:42:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.89 2013/08/22 23:03:20 sthen Exp $
 
 COMMENT-main=		window manager that emulates NEXTSTEP(tm)
 COMMENT-lang=		language subpackage for Window Maker
@@ -6,23 +6,27 @@ COMMENT-lang=		language subpackage for Window Maker
 V=			0.92.0
 DISTNAME=		WindowMaker-${V}
 PKGNAME-main=		${DISTNAME:L}
-REVISION-main=		13
-FULLPKGNAME-lang=       windowmaker-lang-${V}
+REVISION-main=		14
+FULLPKGNAME-lang=	windowmaker-lang-${V}
 REVISION-lang=		3
-SHARED_LIBS=		wraster 5.0
+
+SHARED_LIBS +=	wraster              5.0      # 4.0
+
 CATEGORIES=		x11 x11/windowmaker
 
 HOMEPAGE=		http://www.windowmaker.info/
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB += X11 Xext Xft Xinerama Xpm Xrender c expat fontconfig
+WANTLIB += freetype jpeg m png pthread-stubs tiff ungif xcb z
 
 MASTER_SITES=		${MASTER_SITE_WINDOWMAKER:=source/release/}
 EXTRACT_SUFX=		.tar.bz2
 
 NO_TEST=		Yes
 SEPARATE_BUILD=		Yes
-USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-static \
@@ -33,15 +37,12 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib" \
 			LINGUAS='be bg bs ca cs da de el es et fi fr gl hr hu it ja ko ms nl no pl pt ro ru sk sv tr zh_CN zh_TW'
 
-MULTI_PACKAGES=         -main -lang
+MULTI_PACKAGES=		-main -lang
 
 MODULES=		devel/gettext
 LIB_DEPENDS=		graphics/tiff \
 			graphics/png \
 			graphics/libungif
-WANTLIB=		X11 Xau Xdmcp Xext Xft Xinerama Xpm Xrender c expat \
-	 		fontconfig freetype m z pthread-stubs xcb jpeg \
-			tiff png ungif
 
 RUN_DEPENDS-lang=	x11/windowmaker>=0.90.0
 LIB_DEPENDS-lang=
