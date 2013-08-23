@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2013/06/20 08:26:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2013/08/23 07:58:38 zhuk Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -11,6 +11,7 @@ REVISION-main=		1
 REVISION-mysql=		2
 REVISION-ldap=		2
 REVISION-pgsql=		2
+REVISION-userdb=	0
 PKGNAME-main=		${DISTNAME}
 PKGNAME-ldap=		${DISTNAME:S/lib-/lib-ldap-/}
 PKGNAME-mysql=		${DISTNAME:S/lib-/lib-mysql-/}
@@ -70,9 +71,12 @@ CONFIGURE_ARGS+=	--enable-static \
 			--cache-file=${WRKDIR}/courier-authlib.cache
 
 RUN_DEPENDS-main=	lang/expect
-BUILD_DEPENDS=		${RUN_DEPENDS-main}
+BUILD_DEPENDS=		lang/expect
 
 DOCS=			COPYING COPYING.GPL INSTALL NEWS README
+
+MODULES=		devel/gettext \
+			textproc/intltool
 
 MULTI_PACKAGES=		-main -ldap -mysql -pgsql -userdb
 PSEUDO_FLAVORS=		no_ldap no_mysql no_pgsql no_userdb
@@ -98,9 +102,9 @@ WANTLIB-pgsql=		m courierauthcommon courierauth pq com_err crypto ssl \
 LIB_DEPENDS-pgsql=	${BUILD_PKGPATH} \
 			databases/postgresql
 
-WANTLIB-userdb=		c courierauthcommon courierauth gdbm>=3 iconv intl
-MODULES-userdb=		textproc/intltool
+WANTLIB-userdb=		c courierauthcommon courierauth gdbm>=3 ${MODGETTEXT_WANTLIB}
 LIB_DEPENDS-userdb=	${BUILD_PKGPATH} \
+			${MODGETTEXT_LIB_DEPENDS} \
 			databases/gdbm
 
 .include <bsd.port.arch.mk>
