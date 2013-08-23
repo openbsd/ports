@@ -1,0 +1,17 @@
+$OpenBSD: patch-hcachever_sh_in,v 1.1 2013/08/23 16:40:30 sthen Exp $
+
+Header cache files are sanity-checked so that changes in data types ought to
+invalidate the cache, however this doesn't use base types for everything i.e.
+it uses "time_t" not the underlying type. Patch to add some extra text to
+the hash which ensures that old cache files are invalidated.
+
+--- hcachever.sh.in.orig	Fri Aug 23 17:31:05 2013
++++ hcachever.sh.in	Fri Aug 23 17:31:19 2013
+@@ -62,6 +62,7 @@ DEST="$1"
+ TMPD="$DEST.tmp"
+ 
+ TEXT="$BASEVERSION"
++TEXT="$TEXT /* 64-bit time_t */"
+ 
+ echo "/* base version: $BASEVERSION" > $TMPD
+ while read line
