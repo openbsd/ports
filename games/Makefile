@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.272 2013/08/12 16:44:24 pascal Exp $
+# $OpenBSD: Makefile,v 1.273 2013/08/23 11:17:19 pascal Exp $
 
      SUBDIR =
      SUBDIR += abuse
@@ -187,6 +187,7 @@
      SUBDIR += spacehulk
      SUBDIR += spacezero
      SUBDIR += spatial
+     SUBDIR += speeddreams
      SUBDIR += speyes
      SUBDIR += spider
      SUBDIR += starlanes
