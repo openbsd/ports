@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.31 2013/08/23 01:26:18 zhuk Exp $
+# $OpenBSD: portcheck,v 1.32 2013/08/23 07:45:07 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -526,6 +526,9 @@ check_port_dir() {
 	if $read_ok; then
 		exec 3<&p
 		exec 3<&-
+	else
+		error=true
+		return
 	fi
 
 	pseudo_flavor=$(echo "$pseudo_flavor" | sed -e 's/,/ /g')
