@@ -1,6 +1,6 @@
-$OpenBSD: patch-colorls_1,v 1.13 2011/11/12 12:31:21 naddy Exp $
---- colorls.1.orig	Sat Nov 12 13:14:57 2011
-+++ colorls.1	Sat Nov 12 13:16:21 2011
+$OpenBSD: patch-colorls_1,v 1.14 2013/08/23 16:57:23 naddy Exp $
+--- colorls.1.orig	Fri Aug 23 17:46:24 2013
++++ colorls.1	Fri Aug 23 17:49:36 2013
 @@ -37,11 +37,11 @@
  .Dt COLORLS 1
  .Os
@@ -177,7 +177,12 @@ $OpenBSD: patch-colorls_1,v 1.13 2011/11/12 12:31:21 naddy Exp $
  .It Ev TZ
  The time zone to use when displaying dates.
  See
-@@ -449,24 +582,25 @@ for more information.
+@@ -445,40 +578,41 @@ See
+ for more information.
+ .El
+ .Sh EXIT STATUS
+-.Ex -std ls
++.Ex -std colorls
  .Sh EXAMPLES
  List the contents of the current working directory in long format:
  .Pp
@@ -206,15 +211,21 @@ $OpenBSD: patch-colorls_1,v 1.13 2011/11/12 12:31:21 naddy Exp $
  .Xr symlink 7 ,
  .Xr sticky 8
  .Sh STANDARDS
-@@ -477,7 +611,7 @@ utility is compliant with the
+ The
+-.Nm
++.Xr ls 1
+ utility is compliant with the
+ .St -p1003.1-2008
  specification.
  .Pp
  The flags
 -.Op Fl hT
+-are extensions to that specification.
 +.Op Fl GhT
- are extensions to that specification.
++and colorls itself are extensions to that specification.
  .Pp
  Historically, the
+ .Fl g
 @@ -498,6 +632,6 @@ flags differs between this implementation and
  .St -p1003.1-2008 .
  .Sh HISTORY
