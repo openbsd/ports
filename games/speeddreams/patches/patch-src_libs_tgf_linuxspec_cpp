@@ -1,0 +1,49 @@
+$OpenBSD: patch-src_libs_tgf_linuxspec_cpp,v 1.1.1.1 2013/08/23 11:16:26 pascal Exp $
+--- src/libs/tgf/linuxspec.cpp.orig	Tue Jul 30 00:23:09 2013
++++ src/libs/tgf/linuxspec.cpp	Tue Jul 30 00:31:06 2013
+@@ -630,9 +630,9 @@ unsigned linuxGetNumberOfCPUs()
+ 	{
+ 	
+ // MacOS X, FreeBSD, OpenBSD, NetBSD, etc ...
+-#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
++#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__NetBSD__)
+ 
+-		nt mib[4];
++		int mib[4];
+ 		size_t len; 
+ 
+ 		// Set the mib for hw.ncpu
+@@ -640,7 +640,7 @@ unsigned linuxGetNumberOfCPUs()
+ 		// Get the number of CPUs from the system
+ 		// 1) Try HW_AVAILCPU first.
+ 		mib[0] = CTL_HW;
+-		mib[1] = HW_AVAILCPU;  // alternatively, try HW_NCPU;
++		mib[1] = HW_AVAILCPU;
+ 		sysctl(mib, 2, &nCPUs, &len, NULL, 0);
+ 
+ 		if (nCPUs < 1) 
+@@ -651,7 +651,7 @@ unsigned linuxGetNumberOfCPUs()
+ 		}
+ 
+ // Linux, Solaris, AIX
+-#elif defined(linux) || defined(__linux__)
++#elif defined(linux) || defined(__linux__) || defined(__OpenBSD__)
+ 
+ 		nCPUs = (unsigned)sysconf(_SC_NPROCESSORS_ONLN);
+ 
+@@ -690,6 +690,7 @@ unsigned linuxGetNumberOfCPUs()
+ * Remarks
+ *    
+ */
++#if !(defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__))
+ std::string cpuSet2String(const cpu_set_t* pCPUSet)
+ {
+ 	std::ostringstream ossCPUSet;
+@@ -703,6 +704,7 @@ std::string cpuSet2String(const cpu_set_t* pCPUSet)
+ 	
+ 	return ossCPUSet.str();
+ }
++#endif
+ 
+ bool
+ linuxSetThreadAffinity(int nCPUId)

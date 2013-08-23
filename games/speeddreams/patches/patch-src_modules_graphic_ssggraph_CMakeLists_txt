@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_modules_graphic_ssggraph_CMakeLists_txt,v 1.1.1.1 2013/08/23 11:16:27 pascal Exp $
+--- src/modules/graphic/ssggraph/CMakeLists.txt.orig	Fri Aug 23 03:52:59 2013
++++ src/modules/graphic/ssggraph/CMakeLists.txt	Fri Aug 23 03:52:37 2013
+@@ -45,6 +45,7 @@ ADD_LIBRARY(ssggraph SHARED ${SSGGRAPH_SOURCES})
+ 
+ IF(UNIX)
+     SET_TARGET_PROPERTIES(ssggraph PROPERTIES PREFIX "")
++    INCLUDE_DIRECTORIES(${X11_INCLUDE_DIR})
+ ENDIF(UNIX)
+ 
+ ADD_PLIB_LIBRARY(ssggraph ul sg sl ssg ssgaux)

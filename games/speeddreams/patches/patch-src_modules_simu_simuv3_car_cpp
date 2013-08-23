@@ -1,0 +1,53 @@
+$OpenBSD: patch-src_modules_simu_simuv3_car_cpp,v 1.1.1.1 2013/08/23 11:16:26 pascal Exp $
+--- src/modules/simu/simuv3/car.cpp.orig	Tue Jul 30 00:51:48 2013
++++ src/modules/simu/simuv3/car.cpp	Tue Jul 30 00:53:05 2013
+@@ -365,9 +365,9 @@ SimCarUpdateSpeed(tCar *car)
+         car->carElt->_fuelInstant = (tdble)((1.0-alpha)*car->carElt->_fuelInstant + alpha*fi);
+     }
+ 
+-    if (isnan(car->DynGCg.acc.x)
+-        || isnan(car->DynGCg.acc.y)
+-        || isnan(car->DynGCg.acc.z)) {
++    if (std::isnan(car->DynGCg.acc.x)
++        || std::isnan(car->DynGCg.acc.y)
++        || std::isnan(car->DynGCg.acc.z)) {
+         car->DynGCg.acc.x = car->DynGCg.acc.y =car->DynGCg.acc.z =
+             car->DynGC.acc.x = car->DynGC.acc.y =car->DynGC.acc.z = 0.0;;
+         car->DynGCg.acc.z = -9.81f;
+@@ -398,9 +398,9 @@ SimCarUpdateSpeed(tCar *car)
+     car->DynGC.vel.y = updated.y;
+     car->DynGC.vel.z = updated.z;
+ 
+-    if (isnan(car->rot_acc[0])
+-        || isnan(car->rot_acc[1])
+-        || isnan(car->rot_acc[2])) {
++    if (std::isnan(car->rot_acc[0])
++        || std::isnan(car->rot_acc[1])
++        || std::isnan(car->rot_acc[2])) {
+         car->rot_acc[0] = car->rot_acc[1] = car->rot_acc[2] = 0.0;
+     }
+    
+@@ -478,10 +478,10 @@ SimCarUpdatePos(tCar *car)
+     vx = car->DynGCg.vel.x;
+     vy = car->DynGCg.vel.y;
+     vz = car->DynGCg.vel.z;
+-    if (isnan(vx) || isnan(vy) || isnan(vz)
+-        || isnan(car->rot_mom[0])
+-        || isnan(car->rot_mom[1])
+-        || isnan(car->rot_mom[2])
++    if (std::isnan(vx) || std::isnan(vy) || std::isnan(vz)
++        || std::isnan(car->rot_mom[0])
++        || std::isnan(car->rot_mom[1])
++        || std::isnan(car->rot_mom[2])
+         ) {
+         car->DynGCg.vel.x = car->DynGCg.vel.y= car->DynGCg.vel.z = 
+             car->DynGC.vel.x = car->DynGC.vel.y= car->DynGC.vel.z = 
+@@ -801,7 +801,7 @@ void SimCarAddAngularVelocity (tCar* car)
+     sgVec3 new_position;
+     int i;
+     for (/*int*/ i=0; i<4; i++) {
+-        if (isnan(car->rot_mom[i])) {
++        if (std::isnan(car->rot_mom[i])) {
+             car->rot_mom[i] = 0.0;
+         }
+     }

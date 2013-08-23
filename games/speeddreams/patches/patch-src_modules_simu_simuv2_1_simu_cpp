@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_modules_simu_simuv2_1_simu_cpp,v 1.1.1.1 2013/08/23 11:16:26 pascal Exp $
+--- src/modules/simu/simuv2.1/simu.cpp.orig	Tue Jul 30 00:54:58 2013
++++ src/modules/simu/simuv2.1/simu.cpp	Tue Jul 30 00:55:26 2013
+@@ -57,11 +57,11 @@ ctrlCheck(tCar *car)
+ 
+     /* sanity check */
+ #ifndef WIN32
+-    if (isnan(car->ctrl->accelCmd) || isinf(car->ctrl->accelCmd)) car->ctrl->accelCmd = 0;
+-    if (isnan(car->ctrl->brakeCmd) || isinf(car->ctrl->brakeCmd)) car->ctrl->brakeCmd = 0;
+-    if (isnan(car->ctrl->clutchCmd) || isinf(car->ctrl->clutchCmd)) car->ctrl->clutchCmd = 0;
+-    if (isnan(car->ctrl->steer) || isinf(car->ctrl->steer)) car->ctrl->steer = 0;
+-    if (isnan(car->ctrl->gear) || isinf(car->ctrl->gear)) car->ctrl->gear = 0;
++    if (std::isnan(car->ctrl->accelCmd) || std::isinf(car->ctrl->accelCmd)) car->ctrl->accelCmd = 0;
++    if (std::isnan(car->ctrl->brakeCmd) || std::isinf(car->ctrl->brakeCmd)) car->ctrl->brakeCmd = 0;
++    if (std::isnan(car->ctrl->clutchCmd) || std::isinf(car->ctrl->clutchCmd)) car->ctrl->clutchCmd = 0;
++    if (std::isnan(car->ctrl->steer) || std::isinf(car->ctrl->steer)) car->ctrl->steer = 0;
++    if (std::isnan(car->ctrl->gear) || std::isinf(car->ctrl->gear)) car->ctrl->gear = 0;
+ #else
+     if (isnan(car->ctrl->accelCmd)) car->ctrl->accelCmd = 0;
+     if (isnan(car->ctrl->brakeCmd)) car->ctrl->brakeCmd = 0;

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tools_xmlversion_CMakeLists_txt,v 1.1.1.1 2013/08/23 11:16:27 pascal Exp $
+--- src/tools/xmlversion/CMakeLists.txt.orig	Tue Jul 30 00:33:16 2013
++++ src/tools/xmlversion/CMakeLists.txt	Tue Jul 30 00:33:43 2013
+@@ -21,7 +21,7 @@ ELSE(CMAKE_SKIP_RPATH OR CMAKE_SKIP_BUILD_RPATH)
+ ENDIF(CMAKE_SKIP_RPATH OR CMAKE_SKIP_BUILD_RPATH)
+ 
+ IF(UNIX)
+-  TARGET_LINK_LIBRARIES(xmlversion dl)
++  TARGET_LINK_LIBRARIES(xmlversion)
+ ENDIF(UNIX)
+ 
+ GET_TARGET_PROPERTY(XMLVERSION_BUILDLOC xmlversion LOCATION)

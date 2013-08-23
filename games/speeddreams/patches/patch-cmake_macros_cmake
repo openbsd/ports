@@ -1,0 +1,31 @@
+$OpenBSD: patch-cmake_macros_cmake,v 1.1.1.1 2013/08/23 11:16:26 pascal Exp $
+--- cmake/macros.cmake.orig	Sun Feb 26 14:01:00 2012
++++ cmake/macros.cmake	Tue Jul 30 01:14:07 2013
+@@ -82,22 +82,18 @@ MARK_AS_ADVANCED(SD_TOOLS_EXECPREFIX)
+ 
+ # Determine the default value of the data, bin and lib (and man) folders.
+ IF(IN_SOURCETREE)
+-  IF(CMAKE_SIZEOF_VOID_P MATCHES 4)
+-    SET(_DEFLIBDIR "lib")
+-  ELSE()
+-    SET(_DEFLIBDIR "lib64")
+-  ENDIF()
++  SET(_DEFLIBDIR "lib")
+   IF(WIN32)
+     SET(SD_BINDIR bin CACHE PATH "Place where the executables should go")
+     SET(SD_DATADIR data CACHE PATH "Place where all the static data files should go")
+     SET(SD_LIBDIR ${_DEFLIBDIR} CACHE PATH "Place where the libraries should go")
+     SET(SD_INCLUDEDIR include CACHE PATH "Place where the include files should go")
+   ELSE(WIN32) #UNIX
+-    SET(SD_BINDIR games CACHE PATH "Place where the executables should go")
+-    SET(SD_DATADIR share/games/speed-dreams-2 CACHE PATH "Place where all the static data files should go")
+-    SET(SD_LIBDIR ${_DEFLIBDIR}/games/speed-dreams-2 CACHE PATH "Place where the libraries should go")
++    SET(SD_BINDIR bin CACHE PATH "Place where the executables should go")
++    SET(SD_DATADIR share/speed-dreams-2 CACHE PATH "Place where all the static data files should go")
++    SET(SD_LIBDIR ${_DEFLIBDIR}/speed-dreams-2 CACHE PATH "Place where the libraries should go")
+     SET(SD_INCLUDEDIR include/speed-dreams-2 CACHE PATH "Place where the include files should go")
+-    SET(SD_MANDIR share/man CACHE PATH "Place where the manual pages should go")
++    SET(SD_MANDIR man CACHE PATH "Place where the manual pages should go")
+   ENDIF(WIN32)
+   MARK_AS_ADVANCED(SD_BINDIR)
+   MARK_AS_ADVANCED(SD_DATADIR)

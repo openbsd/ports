@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_libs_learning_policy_cpp,v 1.1.1.1 2013/08/23 11:16:26 pascal Exp $
+--- src/libs/learning/policy.cpp.orig	Tue Jul 30 00:16:58 2013
++++ src/libs/learning/policy.cpp	Tue Jul 30 00:22:04 2013
+@@ -436,7 +436,7 @@ int DiscretePolicy::SelectAction (int s, real r, int f
+ 					// if P[][] remains unchanged between updates.
+ 					// -- removed because it doesn't work! --
+ 					//P[i][j] += 0.01*delta * e[i][j] * (1.-P[i][j]);
+-					if ((fabs (Q[i][j])>1000.0)||(isnan(Q[i][j]))) {
++					if ((fabs (Q[i][j])>1000.0)||(std::isnan(Q[i][j]))) {
+ 						printf ("u: %d %d %f %f\n", i,j,Q[i][j], ad * e[i][j]);
+ 					}
+ 					
+@@ -522,7 +522,7 @@ void DiscretePolicy::loadFile (char* f)
+ 		if( readSize < (int unsigned)n_actions )
+ 			fprintf(stderr, "Error when reading file");
+ 		for (j=0; j<n_actions; j++) {
+-			if ((fabs (Q[i][j])>100.0)||(isnan(Q[i][j]))) {
++			if ((fabs (Q[i][j])>100.0)||(std::isnan(Q[i][j]))) {
+ 				printf ("l: %d %d %f\n", i,j,Q[i][j]);
+ 				Q[i][j] = 0.0;
+ 			}
+@@ -585,7 +585,7 @@ void DiscretePolicy::saveFile (char* f) {
+ 		if( writeSize < (int unsigned)n_actions)
+ 			fprintf( stderr, "Failed to write all data to file %s\n", f);
+ 		for (int j=0; j<n_actions; j++) {
+-			if ((fabs (Q[i][j])>100.0)||(isnan(Q[i][j]))) {
++			if ((fabs (Q[i][j])>100.0)||(std::isnan(Q[i][j]))) {
+ 				printf ("s: %d %d %f\n", i,j,Q[i][j]);
+ 			}
+ 		}
