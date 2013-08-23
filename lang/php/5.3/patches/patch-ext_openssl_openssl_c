@@ -1,8 +1,9 @@
 Security fix for CVE-2013-4073
 
 http://git.php.net/?p=php-src.git;a=commit;h=2874696a5a8d46639d261571f915c493cd875897
+http://git.php.net/?p=php-src.git;a=commit;h=b7f033bd5de844e7cf0f1f7c2b884d582d4aa847
 
-$OpenBSD: patch-ext_openssl_openssl_c,v 1.1 2013/08/23 06:32:44 robert Exp $
+$OpenBSD: patch-ext_openssl_openssl_c,v 1.2 2013/08/23 10:06:45 sthen Exp $
 --- ext/openssl/openssl.c.orig.port	Wed Jul 10 19:43:08 2013
 +++ ext/openssl/openssl.c	Thu Aug 22 22:37:08 2013
 @@ -1326,6 +1326,74 @@ PHP_FUNCTION(openssl_x509_check_private_key)
@@ -80,7 +81,7 @@ $OpenBSD: patch-ext_openssl_openssl_c,v 1.1 2013/08/23 06:32:44 robert Exp $
  /* {{{ proto array openssl_x509_parse(mixed x509 [, bool shortnames=true])
     Returns an array of the fields/values of the CERT */
  PHP_FUNCTION(openssl_x509_parse)
-@@ -1422,15 +1490,29 @@ PHP_FUNCTION(openssl_x509_parse)
+@@ -1422,15 +1490,30 @@ PHP_FUNCTION(openssl_x509_parse)
  
  
  	for (i = 0; i < X509_get_ext_count(cert); i++) {
@@ -98,6 +99,7 @@ $OpenBSD: patch-ext_openssl_openssl_c,v 1.1 2013/08/23 06:32:44 robert Exp $
 -		if (X509V3_EXT_print(bio_out, extension, 0, 0)) {
 +		if (nid == NID_subject_alt_name) {
 +			if (openssl_x509v3_subjectAltName(bio_out, extension) == 0) {
++				BIO_get_mem_ptr(bio_out, &bio_buf);
 +				add_assoc_stringl(subitem, extname, bio_buf->data, bio_buf->length, 1);
 +			} else {
 +				zval_dtor(return_value);
