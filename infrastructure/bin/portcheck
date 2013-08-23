@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.30 2013/08/23 00:43:20 zhuk Exp $
+# $OpenBSD: portcheck,v 1.31 2013/08/23 01:26:18 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -500,10 +500,12 @@ check_port_dir() {
 	# We request all info at once for speed.
 
 	local dist_subdir distfiles flavor flavors master_sites
-	local multi_packages pkgpath_this pseudo_flavors shared_libs subst_cmd
+	local multi_packages pkgpath_this pseudo_flavor pseudo_flavors
+	local shared_libs subst_cmd
 	local show_items="DIST_SUBDIR DISTFILES FLAVOR FLAVORS FULLPKGNAME"
 	local show_items="$show_items MASTER_SITES MULTI_PACKAGES PKGPATH"
-	local show_items="$show_items PSEUDO_FLAVORS SHARED_LIBS SUBST_CMD"
+	local show_items="$show_items PSEUDO_FLAVOR PSEUDO_FLAVORS"
+	local show_items="$show_items SHARED_LIBS SUBST_CMD"
 
 	local read_failed=false
 	(cd -- "$dir"; make "${make_args[@]}" show="$show_items" || true) </dev/null |&
@@ -516,6 +518,7 @@ check_port_dir() {
 	read -pr master_sites &&
 	read -pr multi_packages &&
 	read -pr pkgpath_this &&
+	read -pr pseudo_flavor &&
 	read -pr pseudo_flavors &&
 	read -pr shared_libs &&
 	read -pr subst_cmd &&
@@ -525,10 +528,14 @@ check_port_dir() {
 		exec 3<&-
 	fi
 
-	local check_flavors=
-	[[ -n $flavor ]] && unset check_flavors[0]
+	pseudo_flavor=$(echo "$pseudo_flavor" | sed -e 's/,/ /g')
+	pseudo_flavor=${pseudo_flavor##" "}
 
-	local f pf
+	local f pf found
+
+	local check_flavors=
+	[[ $flavor != "$pseudo_flavor" ]] && unset check_flavors[0]
+
 	for f in $flavors; do
 		for pf in $pseudo_flavors; do
 			[[ $f == "$pf" ]] && continue 2
