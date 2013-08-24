@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2013/07/20 17:39:17 sebastia Exp $
+# $OpenBSD: Makefile,v 1.32 2013/08/24 11:16:04 sebastia Exp $
 
 COMMENT = 	web based groupware server
 
-VERSION =	2.0.5
-REVISION =	0
-DISTNAME =	SOGo-${VERSION}a
-PKGNAME =	sogo-${VERSION}.0
+VERSION =	2.0.7
+DISTNAME =	SOGo-${VERSION}
+PKGNAME =	sogo-${VERSION}
 
 SHARED_LIBS +=	GDLContentStore 2.0
 SHARED_LIBS +=	NGCards		2.0
@@ -36,7 +35,8 @@ RUN_DEPENDS +=		sope-postgres-*|sope-mysql-*:www/sope,-postgres \
 			archivers/zip
 
 CONFIGURE_STYLE =	simple dest
-CONFIGURE_ARGS +=	--gsmake=`gnustep-config --variable=GNUSTEP_MAKEFILES`
+CONFIGURE_ARGS +=	--gsmake=`gnustep-config --variable=GNUSTEP_MAKEFILES` \
+			--with-ssl=gnutls
 MAKE_FLAGS +=		libGDLContentStore_INTERFACE_VERSION=${LIBGDLContentStore_VERSION} \
 			libNGCards_INTERFACE_VERSION=${LIBNGCards_VERSION} \
 			libOGoContentStore_INTERFACE_VERSION=${LIBOGoContentStore_VERSION} \
