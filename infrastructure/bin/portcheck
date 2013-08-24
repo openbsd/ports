@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.34 2013/08/24 15:44:59 zhuk Exp $
+# $OpenBSD: portcheck,v 1.35 2013/08/24 16:15:56 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -756,7 +756,7 @@ check_plist() {
 		"@comment "*)
 			# ignore
 			;;
-		share/icons/*/*/*|share/icons/*/@(index.theme|iconrc?(-png)))
+		share/icons/*/*/*|share/icons/*/@(index.theme|iconrc?(-png)|default.kde4))
 			# Themes have at least two levels in depth.
 			#
 			# We match directories by purpose, this helps to catch
@@ -856,7 +856,7 @@ check_plist() {
 			;;
 
 		# XXX KSH arrays are limited to 10239 items
-		share/@(doc|examples)+(/*).py|?(s)bin/*.py)
+		share/@(doc|*(*/)examples)+(/*).py|?(s)bin/*.py)
 			# ignore
 			;;
 		*.py)
