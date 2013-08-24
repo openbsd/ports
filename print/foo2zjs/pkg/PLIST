@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2013/08/10 18:20:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2013/08/24 09:17:09 ajacoutot Exp $
 @conflict foomatic-db-<4.0.20091207p1
 @conflict foo2zjs-cup-*
 @pkgpath print/foo2zjs,-cups
@@ -46,6 +46,8 @@ bin/printer-profile
 @bin bin/slxdecode
 @bin bin/xqxdecode
 @bin bin/zjsdecode
+libexec/cups/
+libexec/cups/filter/
 libexec/cups/filter/command2foo2lava-pjl
 @man man/man1/arm2hpdl.1
 @man man/man1/foo2hbpl2-wrapper.1
