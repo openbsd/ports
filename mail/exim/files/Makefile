@@ -248,11 +248,19 @@ SUPPORT_MBX=yes
 
 #------------------------------------------------------------------------------
 # See below for dynamic lookup modules.
-# LOOKUP_MODULE_DIR=/usr/lib/exim/lookups/
+#
 # If not using package management but using this anyway, then think about how
 # you perform upgrades and revert them. You should consider the benefit of
 # embedding the Exim version number into LOOKUP_MODULE_DIR, so that you can
 # maintain two concurrent sets of modules.
+# 
+# *BEWARE*: ability to modify the files in LOOKUP_MODULE_DIR is equivalent to
+# the ability to modify the Exim binary, which is often setuid root!  The Exim
+# developers only intend this functionality be used by OS software packagers
+# and we suggest that such packagings' integrity checks should be paranoid
+# about the permissions of the directory and the files within.
+
+# LOOKUP_MODULE_DIR=/usr/lib/exim/lookups/
 
 # To build a module dynamically, you'll need to define CFLAGS_DYNAMIC for
 # your platform.  Eg:
@@ -279,6 +287,10 @@ SUPPORT_MBX=yes
 # the dynamic library and not the exim binary will be linked against the
 # library.
 # NOTE: LDAP cannot be built as a module!
+#
+# If your system has pkg-config then the _INCLUDE/_LIBS setting can be
+# handled for you automatically by also defining the _PC variable to reference
+# the name of the pkg-config package, if such is available.
 
 LOOKUP_DBM=yes
 LOOKUP_LSEARCH=yes
@@ -295,6 +307,7 @@ LOOKUP_NIS=yes
 LOOKUP_PASSWD=yes
 # LOOKUP_PGSQL=yes
 # LOOKUP_SQLITE=yes
+# LOOKUP_SQLITE_PC=sqlite3
 # LOOKUP_WHOSON=yes
 
 # These two settings are obsolete; all three lookups are compiled when
@@ -329,9 +342,12 @@ LOOKUP_PASSWD=yes
 # In either case you must specify the library link info here.  If the
 # PCRE header files are not in the standard search path you must also
 # modify the INCLUDE path (above)
-# The default setting of PCRE_LIBS should work on the vast majority of
-# systems
+#
+# Use PCRE_CONFIG to query the pcre-config command (first found in $PATH)
+# to find the include files and libraries, else use PCRE_LIBS and set INCLUDE
+# too if needed.
 
+PCRE_CONFIG=yes
 PCRE_LIBS=-lpcre
 
 
@@ -342,6 +358,8 @@ PCRE_LIBS=-lpcre
 # don't need to set LOOKUP_INCLUDE if the relevant directories are already
 # specified in INCLUDE. The settings below are just examples; -lpq is for
 # PostgreSQL, -lgds is for Interbase, -lsqlite3 is for SQLite.
+#
+# You do not need to use this for any lookup information added via pkg-config.
 
 # LOOKUP_INCLUDE=-I /usr/local/ldap/include -I /usr/local/mysql/include -I /usr/local/pgsql/include
 # LOOKUP_LIBS=-L/usr/local/lib -lldap -llber -lmysqlclient -lpq -lgds -lsqlite3
@@ -398,6 +416,11 @@ WITH_OLD_DEMIME=yes
 # experimental-spec.txt. "Experimental" means that the way these features are
 # implemented may still change. Backward compatibility is not guaranteed.
 
+# Uncomment the following line to add support for talking to dccifd.  This
+# defaults the socket path to /usr/local/dcc/var/dccifd.
+
+# EXPERIMENTAL_DCC=yes
+
 # Uncomment the following lines to add SPF support. You need to have libspf2
 # installed on your system (www.libspf2.org). Depending on where it is installed
 # you may have to edit the CFLAGS and LDFLAGS lines.
@@ -423,6 +446,11 @@ WITH_OLD_DEMIME=yes
 # EXPERIMENTAL_BRIGHTMAIL=yes
 # CFLAGS  += -I/opt/brightmail/bsdk-6.0/include
 # LDFLAGS += -lxml2_single -lbmiclient_single -L/opt/brightmail/bsdk-6.0/lib
+
+# Uncomment the following line to add OCSP stapling support in TLS, if Exim
+# was built using OpenSSL.
+
+# EXPERIMENTAL_OCSP=yes
 
 
 
@@ -553,6 +581,10 @@ FIXED_NEVER_USERS=root
 AUTH_CRAM_MD5=yes
 # AUTH_CYRUS_SASL=yes
 AUTH_DOVECOT=yes
+# AUTH_GSASL=yes
+# AUTH_GSASL_PC=libgsasl
+# AUTH_HEIMDAL_GSSAPI=yes
+# AUTH_HEIMDAL_GSSAPI_PC=heimdal-gssapi
 AUTH_PLAINTEXT=yes
 AUTH_SPA=yes
 
@@ -560,9 +592,13 @@ AUTH_SPA=yes
 #------------------------------------------------------------------------------
 # If you specified AUTH_CYRUS_SASL above, you should ensure that you have the
 # Cyrus SASL library installed before trying to build Exim, and you probably
-# want to uncomment the following line:
+# want to uncomment the first line below.
+# Similarly for GNU SASL, unless pkg-config is used via AUTH_GSASL_PC.
+# Ditto for AUTH_HEIMDAL_GSSAPI(_PC).
 
 # AUTH_LIBS=-lsasl2
+# AUTH_LIBS=-lgsasl
+# AUTH_LIBS=-lgssapi -lheimntlm -lkrb5 -lhx509 -lcom_err -lhcrypto -lasn1 -lwind -lroken -lcrypt
 
 
 #------------------------------------------------------------------------------
@@ -655,11 +691,14 @@ HAVE_ICONV=yes
 # This setting is required for any TLS support (either OpenSSL or GnuTLS)
 SUPPORT_TLS=yes
 
-# Uncomment this setting if you are using OpenSSL
+# Uncomment one of these settings if you are using OpenSSL; pkg-config vs not
+# USE_OPENSSL_PC=openssl
 TLS_LIBS=-lssl -lcrypto
 
-# Uncomment these settings if you are using GnuTLS
+# Uncomment the first and either the second or the third of these if you
+# are using GnuTLS.  If you have pkg-config, then the second, else the third.
 # USE_GNUTLS=yes
+# USE_GNUTLS_PC=gnutls
 # TLS_LIBS=-lgnutls -ltasn1 -lgcrypt
 
 # If you are running Exim as a server, note that just building it with TLS
@@ -669,6 +708,11 @@ TLS_LIBS=-lssl -lcrypto
 # to specify the hosts to which Exim advertises TLS support. On the other hand,
 # if you are running Exim only as a client, building it with TLS support
 # is all you need to do.
+
+# If you are using pkg-config then you should not need to worry where the
+# libraries and headers are installed, as the pkg-config .pc specification
+# should include all -L/-I information necessary.  If not using pkg-config
+# then you might need to specify the locations too.
 
 # Additional libraries and include files are required for both OpenSSL and
 # GnuTLS. The TLS_LIBS settings above assume that the libraries are installed
@@ -948,6 +992,10 @@ SYSTEM_ALIASES_FILE=/etc/mail/aliases
 # dynamic loading library is not otherwise included.
 
 
+#------------------------------------------------------------------------------
+# Uncomment this setting to include IPv6 support.
+
+# HAVE_IPV6=yes
 
 ###############################################################################
 #              THINGS YOU ALMOST NEVER NEED TO MENTION                        #
@@ -1162,6 +1210,12 @@ TMPDIR="/tmp"
 # PERL_CCOPTS=
 # PERL_LIBS=
 
+
+#------------------------------------------------------------------------------
+# If you wish to disable valgrind in the binary, define NVALGRIND=1.
+# This should not be needed.
+
+# NVALGRIND=1
 
 #------------------------------------------------------------------------------
 # Identifying the daemon: When an Exim daemon starts up, it writes its pid

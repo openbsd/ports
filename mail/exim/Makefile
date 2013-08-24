@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.93 2013/06/12 20:36:33 brad Exp $
+# $OpenBSD: Makefile,v 1.94 2013/08/24 09:22:25 sthen Exp $
 
 CATEGORIES =		mail
 COMMENT-main =		flexible mail transfer agent
 COMMENT-eximon =	X11 monitor tool for Exim MTA
-VERSION =		4.77
-REVISION =		4
+VERSION =		4.80.1
 DISTNAME =		exim-${VERSION}
 PKGNAME-main =		exim-${VERSION}
 FULLPKGNAME-eximon =	exim-eximon-${VERSION}
@@ -15,8 +14,6 @@ MASTER_SITES =		http://ftp.exim.org/pub/exim/exim4/ \
 			http://mirror.switch.ch/ftp/mirror/exim/exim/exim4/
 
 HOMEPAGE =		http://www.exim.org/
-
-MAINTAINER =		Felix Kronlage <fkr@openbsd.org>
 
 # GPLv2+, with OpenSSL exemption
 PERMIT_PACKAGE_CDROM =   Yes

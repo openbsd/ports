@@ -1,7 +1,8 @@
---- OS/Makefile-Default.orig	Fri Feb 10 15:33:26 2006
-+++ OS/Makefile-Default	Wed Jan 30 23:03:20 2008
-@@ -73,7 +73,7 @@ PERL_COMMAND=/usr/bin/perl 
-
+$OpenBSD: patch-OS_Makefile-Default,v 1.8 2013/08/24 09:22:26 sthen Exp $
+--- OS/Makefile-Default.orig	Thu Oct 25 04:37:38 2012
++++ OS/Makefile-Default	Thu Aug 22 18:09:11 2013
+@@ -71,7 +71,7 @@ PERL_COMMAND=/usr/bin/perl
+ 
  # CC contains the name of the C compiler to be used.
  
 -CC=gcc
@@ -9,12 +10,12 @@
  
  
  # CFLAGS contains flags to be passed to the compiler. Nothing is defaulted
-@@ -86,7 +86,7 @@ CC=gcc
+@@ -84,7 +84,7 @@ CC=gcc
  # here; instead each OS-dependent Makefile contains a default setting if one
  # is needed.
-
+ 
 -# LFLAGS=
 +LFLAGS=-L$(LOCALBASE)/lib
-
-
+ 
+ 
  # PCRE_LIBS contains the library to be linked for PCRE
