@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 11:24:28 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/08/24 17:33:36 zhuk Exp $
 include/kde4/audiocdencoder.h
 lib/kde4/kcm_audiocd.so
 lib/kde4/kio_audiocd.so
@@ -21,5 +21,3 @@ share/doc/HTML/en/kioslave/audiocd/index.cache.bz2
 share/doc/HTML/en/kioslave/audiocd/index.docbook
 share/kde4/services/audiocd.desktop
 share/kde4/services/audiocd.protocol
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database

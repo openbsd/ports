@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2013/07/04 00:47:13 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2013/08/24 17:33:53 zhuk Exp $
 
 COMMENT =	KDE workspace
 DISTNAME =	kde-workspace-${MODKDE4_VERSION}
+REVISION =	0
 
 # TODO:
 # Port ksysguard to OpenBSD (sensors framework, lsof(1) call replace and others).
-# 
+#
 # Use something else instead of pciutils.
-# 
+#
 # -- Performing Test HAVE_SETLOGIN
 # systrace: deny user: pers, prog: /usr/ports/pobj/kde-workspace-4.7.1/build-i386/CMakeFiles/CMakeTmp/cmTryCompileExec, pid: 19037(0)[20572], policy: /usr/bin/
 # env, filters: 233, syscall: native-setlogin(50), args: 4
@@ -86,8 +87,9 @@ BUILD_DEPENDS =	misc/shared-desktop-ontologies \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-desktop-ontologies \
 		sysutils/lsof \
-		${MODKDE4_DEP_DIR}/py-kde>=${MODKDE4_DEP_VERSION} \
-		x11/polkit-qt4
+		x11/gtk+2,-guic \
+		x11/polkit-qt4 \
+		${MODKDE4_DEP_DIR}/py-kde>=${MODKDE4_DEP_VERSION}
 
 LIB_DEPENDS =	audio/xmms \
 		databases/soprano \

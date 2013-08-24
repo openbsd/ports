@@ -1,6 +1,6 @@
-This package includes libraries that are central to the development and 
-execution of a KDE program, as well as internationalization files for these 
-libraries, misc HTML documentation, theme modules, and regression tests. 
+This package includes libraries that are central to the development and
+execution of a KDE program, as well as internationalization files for these
+libraries, misc HTML documentation, theme modules, and regression tests.
 Here is an alphabetical list:
 
 * dnssd
@@ -25,7 +25,7 @@ Here is an alphabetical list:
     Auto-Updater for config files.
 
 * kde3support
-    This contains libraries that were part of KDE3, but have been replaced 
+    This contains libraries that were part of KDE3, but have been replaced
     for KDE4
 
 * kdecore
@@ -63,7 +63,7 @@ Here is an alphabetical list:
     image formats.
 
 * kinit
-    Process launcher (kdeinit), used for fast KDE startup and to launch 
+    Process launcher (kdeinit), used for fast KDE startup and to launch
     kioslaves.
 
 * kio

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/07/04 00:44:25 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/08/24 17:33:36 zhuk Exp $
 @conflict kdeaccessibility-<4
 @conflict kdebase-<4
 @bin bin/kbanner.kss
@@ -6900,8 +6900,6 @@ share/wallpapers/Yellow_Flowers/contents/images/2048x1536.jpg
 share/wallpapers/Yellow_Flowers/contents/images/2560x1600.jpg
 share/wallpapers/Yellow_Flowers/contents/screenshot.png
 share/wallpapers/Yellow_Flowers/metadata.desktop
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/mono
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/mono
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/nuvola

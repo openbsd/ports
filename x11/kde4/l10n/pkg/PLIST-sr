@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-sr,v 1.4 2013/07/04 00:46:18 zhuk Exp $
+@comment $OpenBSD: PLIST-sr,v 1.5 2013/08/24 17:33:47 zhuk Exp $
 man/sr@latin/
 man/sr@latin/man1/
 @man man/sr@latin/man1/ark.1
@@ -3885,3 +3885,7 @@ share/locale/sr@latin/LC_SCRIPTS/kdelibs4/trapnakron.pmapc
 share/locale/sr@latin/LC_SCRIPTS/kfontinst/
 share/locale/sr@latin/LC_SCRIPTS/kfontinst/kfontinst.js
 share/locale/sr@latin/entry.desktop
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/07/04 00:46:40 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2013/08/24 17:33:51 zhuk Exp $
 
 COMMENT =	KDE document viewer
 DISTNAME =	okular-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	okularcore		50.0	# 1.7
 
@@ -16,6 +17,9 @@ WANTLIB += chm djvulibre epub freetype jpeg poppler-qt4 qca2 qimageblitz
 WANTLIB += soprano solid spectre threadweaver tiff
 
 MODULES =	multimedia/phonon
+
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+2,-guic
 
 LIB_DEPENDS = 	devel/chmlib \
 		graphics/djvulibre \

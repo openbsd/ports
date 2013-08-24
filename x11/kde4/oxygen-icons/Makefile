@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/04/24 19:50:40 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2013/08/24 17:33:51 zhuk Exp $
 
 COMMENT =	KDE 4 default icon theme
 DISTNAME =	oxygen-icons-${MODKDE4_VERSION}
+REVISION =	0
 
 MODKDE4_RESOURCES =	Yes
 MODKDE4_USE =

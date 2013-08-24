@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:44:54 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/08/24 17:33:41 zhuk Exp $
 @conflict kdeutils-<4
 @bin bin/kcharselect
 share/applications/kde4/KCharSelect.desktop
@@ -8,3 +8,5 @@ share/doc/HTML/en/kcharselect/common
 share/doc/HTML/en/kcharselect/index.cache.bz2
 share/doc/HTML/en/kcharselect/index.docbook
 share/doc/HTML/en/kcharselect/kcharselect.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

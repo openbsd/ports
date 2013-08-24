@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:25 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/08/24 17:33:37 zhuk Exp $
 
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${MODKDE4_VERSION}
+REVISION =	0
 
 # Bogus message about "backend /usr/local/bin/latex" at startup when no
 # backend is choosen on the command line.
@@ -20,6 +21,9 @@ WANTLIB += lib/R/lib/R lib/R/lib/Rblas lib/R/lib/Rlapack
 WANTLIB += cln gfortran glib-2.0 qalculate soprano spectre xml2
 
 MODULES =	devel/gettext
+
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+2,-guic
 
 LIB_DEPENDS = 	databases/soprano \
 		lang/gfortran,-lib \

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2013/08/21 17:06:24 zhuk Exp $
+# $OpenBSD: Makefile,v 1.31 2013/08/24 17:33:49 zhuk Exp $
 
 COMMENT =	KDE core libraries
 DISTNAME =	kdelibs-${MODKDE4_VERSION}
 PKGSPEC =	kdelibs->=4
-REVISION =	2
+REVISION =	3
 
 DPB_PROPERTIES =	parallel
 
@@ -83,9 +83,10 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-desktop-ontologies \
 		net/cagibi \
 		sysutils/gamin \
-		${MODKDE4_DEP_DIR}/oxygen-icons>=${MODKDE4_DEP_VERSION} \
 		x11/dbus \
-		x11/grantlee
+		x11/grantlee \
+		x11/gtk+2,-guic \
+		${MODKDE4_DEP_DIR}/oxygen-icons>=${MODKDE4_DEP_VERSION}
 
 LIB_DEPENDS =	archivers/bzip2 \
 		archivers/xz \

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2013/05/14 09:16:28 zhuk Exp $
+# $OpenBSD: Makefile,v 1.14 2013/08/24 17:33:50 zhuk Exp $
 
 COMMENT =	KDE network applications collection
 DISTNAME =	kdenetwork-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kgetcore		50.0 # 4.0
 SHARED_LIBS +=	kopete			50.0 # 4.0
@@ -43,7 +44,9 @@ MODULES =	devel/gettext multimedia/phonon
 
 MODKDE4_USE =	pim workspace
 
-RUN_DEPENDS =	security/qca-ossl
+RUN_DEPENDS =	devel/desktop-file-utils \
+		security/qca-ossl \
+		x11/gtk+2,-guic
 
 LIB_DEPENDS =	audio/xmms \
 		graphics/qimageblitz \

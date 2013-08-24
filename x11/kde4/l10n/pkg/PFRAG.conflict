@@ -1,1 +1,2 @@
+@comment $OpenBSD: PFRAG.conflict,v 1.2 2013/08/24 17:33:46 zhuk Exp $
 @conflict ${KDE3_I18N_PKG}-*

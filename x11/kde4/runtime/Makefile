@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/07/05 14:37:22 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2013/08/24 17:33:53 zhuk Exp $
 
 COMMENT =	KDE core run-time components
 DISTNAME =	kde-runtime-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 DPB_PROPERTIES =	parallel
 
@@ -21,7 +21,7 @@ WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kactivities ${KDE4LIB}/kcmutils ${KDE4LIB}/kdeclarative
-WANTLIB += ${KDE4LIB}/kdesu ${KDE4LIB}/kdeui ${KDE4LIB}/kdewebkit 
+WANTLIB += ${KDE4LIB}/kdesu ${KDE4LIB}/kdeui ${KDE4LIB}/kdewebkit
 WANTLIB += ${KDE4LIB}/kdnssd ${KDE4LIB}/kemoticons ${KDE4LIB}/kfile
 WANTLIB += ${KDE4LIB}/khtml ${KDE4LIB}/kio ${KDE4LIB}/kjs
 WANTLIB += ${KDE4LIB}/kmediaplayer ${KDE4LIB}/knewstuff3
@@ -41,7 +41,9 @@ BUILD_DEPENDS =	archivers/bzip2 \
 
 RUN_DEPENDS =	archivers/bzip2 \
 		archivers/xz \
-		devel/desktop-file-utils
+		devel/desktop-file-utils \
+		misc/shared-mime-info \
+		x11/gtk+2,-guic
 
 LIB_DEPENDS =	audio/libcanberra \
 		audio/pulseaudio \

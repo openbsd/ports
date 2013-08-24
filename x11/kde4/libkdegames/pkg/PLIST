@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 18:26:05 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/08/24 17:33:48 zhuk Exp $
 @conflict kdegames-<4.10
 include/kde4/KDE/KExtHighscore
 include/kde4/KDE/KGameClock
@@ -153,5 +153,3 @@ share/apps/carddecks/svg-xskat-german/COPYRIGHT
 share/apps/carddecks/svg-xskat-german/german.svgz
 share/apps/carddecks/svg-xskat-german/index.desktop
 share/apps/kconf_update/kgthemeprovider-migration.upd
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database

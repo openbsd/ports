@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:26 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/08/24 17:33:38 zhuk Exp $
 
 COMMENT =	KDE image viewer
 DISTNAME =	gwenview-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	gwenviewlib               50.0 # 4.7
 
@@ -19,7 +20,8 @@ MODULES =	multimedia/phonon
 BUILD_DEPENDS =	misc/shared-desktop-ontologies
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		misc/shared-desktop-ontologies
+		misc/shared-desktop-ontologies \
+		x11/gtk+2,-guic
 
 LIB_DEPENDS = 	graphics/exiv2 \
 		graphics/jpeg \

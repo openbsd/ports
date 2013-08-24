@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:45:00 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/08/24 17:33:42 zhuk Exp $
 @conflict kdegraphics-<4
 @bin bin/xf86gammacfg
 lib/kde4/kcm_kgamma.so
@@ -16,5 +16,3 @@ share/doc/HTML/en/kcontrol/kgamma/common
 share/doc/HTML/en/kcontrol/kgamma/index.cache.bz2
 share/doc/HTML/en/kcontrol/kgamma/index.docbook
 share/kde4/services/kgamma.desktop
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database

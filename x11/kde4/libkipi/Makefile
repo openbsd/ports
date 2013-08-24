@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:28 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/08/24 17:33:48 zhuk Exp $
 
 COMMENT =	KDE image plugins infrastructure
 DISTNAME =	libkipi-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kipi		50.0
 
@@ -13,6 +14,8 @@ WANTLIB += ${KDE4LIB}/kparts ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
 WANTLIB += soprano
 
 MODKDE4_USE =	libs
+
+RUN_DEPENDS =	x11/gtk+2,-guic
 
 post-patch:
 	cd ${WRKSRC}; \

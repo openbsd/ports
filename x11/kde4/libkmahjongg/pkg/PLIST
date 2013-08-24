@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 18:28:34 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/08/24 17:33:49 zhuk Exp $
 @conflict kdegames-<4.10
 include/kde4/kmahjonggbackground.h
 include/kde4/kmahjonggconfigdialog.h
@@ -42,5 +42,3 @@ share/apps/kmahjongglib/tilesets/jade.svgz
 share/apps/kmahjongglib/tilesets/traditional.copyright
 share/apps/kmahjongglib/tilesets/traditional.desktop
 share/apps/kmahjongglib/tilesets/traditional.svgz
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database

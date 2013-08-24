@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/07/04 00:46:42 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/08/24 17:33:51 zhuk Exp $
 share/icons/oxygen/
 share/icons/oxygen/128x128/
 share/icons/oxygen/128x128/actions/
@@ -6936,5 +6936,4 @@ share/icons/oxygen/8x8/emblems/vcs-removed.png
 share/icons/oxygen/8x8/emblems/vcs-update-required.png
 share/icons/oxygen/index.theme
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
 @unexec-delete rm -f %D/share/icons/oxygen/icon-theme.cache

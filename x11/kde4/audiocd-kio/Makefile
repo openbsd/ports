@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/06/06 08:36:47 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2013/08/24 17:33:36 zhuk Exp $
 
 COMMENT =	KDE KIOslave for accessing audio CDs
 DISTNAME =	audiocd-kio-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	audiocdplugins		50.0
 

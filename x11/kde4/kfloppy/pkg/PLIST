@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:44:58 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/08/24 17:33:42 zhuk Exp $
 @conflict kdeutils-<4
 @bin bin/kfloppy
 share/applications/kde4/KFloppy.desktop
@@ -12,5 +12,7 @@ share/icons/hicolor/22x22/apps/kfloppy.png
 share/icons/hicolor/32x32/apps/kfloppy.png
 share/icons/hicolor/48x48/apps/kfloppy.png
 share/icons/hicolor/64x64/apps/kfloppy.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

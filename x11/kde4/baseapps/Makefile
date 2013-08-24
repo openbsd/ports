@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/07/04 00:44:28 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2013/08/24 17:33:36 zhuk Exp $
 
 COMMENT =	KDE base applications
 DISTNAME =	kde-baseapps-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	konq			50.1	# 6.0
 SHARED_LIBS +=	konqsidebarplugin	50.1	# 4.0
@@ -26,7 +27,9 @@ MODULES =	multimedia/phonon
 
 # KJS is broken, so allow KDE browsers to work out of the box
 # using QtWebKit.
-RUN_DEPENDS =	www/kwebkitpart
+RUN_DEPENDS =	devel/desktop-file-utils \
+		www/kwebkitpart \
+		x11/gtk+2,-guic
 
 LIB_DEPENDS =	devel/glib2 \
 		${MODKDE4_DEP_DIR}/kactivities \

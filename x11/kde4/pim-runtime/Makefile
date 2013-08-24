@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/07/04 00:46:50 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2013/08/24 17:33:52 zhuk Exp $
 
 COMMENT =	KDE PIM runtime support
 DISTNAME =	kdepim-runtime-${MODKDE4_VERSION}
+REVISION =	0
 
 DPB_PROPERTIES =	parallel
 
@@ -36,6 +37,10 @@ MODULES =	multimedia/phonon
 
 BUILD_DEPENDS =	devel/boost \
 		textproc/raptor
+
+RUN_DEPENDS =	devel/desktop-file-utils \
+		misc/shared-mime-info \
+		x11/gtk+2,-guic
 
 LIB_DEPENDS =	databases/soprano \
 		databases/strigi \

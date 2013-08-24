@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2013/07/04 00:45:32 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2013/08/24 17:33:44 zhuk Exp $
 
 COMMENT =	KDE bindings for Ruby
 DISTNAME =	korundum-${MODKDE4_VERSION}
+REVISION =	0
 
 WANTLIB =  c m pthread stdc++ ${MODRUBY_WANTLIB}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
@@ -34,7 +35,9 @@ MODRUBY_REV =		1.9
 MODRUBY_ADJ_FILES =	*.rb
 CONFIGURE_ARGS =	-DRUBY_EXECUTABLE=${RUBY}
 
-RUN_DEPENDS =	${MODKDE4_DEP_DIR}/kross-interpreters>=${MODKDE4_DEP_VERSION}
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+2,-guic \
+		${MODKDE4_DEP_DIR}/kross-interpreters>=${MODKDE4_DEP_VERSION}
 
 LIB_DEPENDS = 	${MODKDE4_DEP_DIR}/kate>=${MODKDE4_DEP_VERSION} \
 		${MODKDE4_DEP_DIR}/ruby-qt,${MODRUBY_FLAVOR}=${MODKDE4_VERSION} \

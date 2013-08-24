@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/07/04 00:46:54 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/08/24 17:33:52 zhuk Exp $
 @conflict kdelibs-<4
 @conflict kdepim-<4
 @bin bin/akonadi_benchmarker
@@ -1390,8 +1390,6 @@ share/kde4/servicetypes/kontactplugin.desktop
 share/kde4/servicetypes/kresources_manager.desktop
 share/kde4/servicetypes/kresources_plugin.desktop
 share/mime/packages/kdepimlibs-mime.xml
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
 share/mime/packages/x-vnd.akonadi.socialfeeditem.xml

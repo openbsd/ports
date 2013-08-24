@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:25 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/08/24 17:33:35 zhuk Exp $
 
 COMMENT =	KDE file archiver
 DISTNAME =	ark-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kerfuffle	50.0 # 4.7
 
@@ -17,6 +18,9 @@ MODULES =	multimedia/phonon
 
 BUILD_DEPENDS =	archivers/bzip2 \
 		archivers/xz
+
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+2,-guic
 
 LIB_DEPENDS =	archivers/libarchive \
 		${MODKDE4_DEP_DIR}/baseapps

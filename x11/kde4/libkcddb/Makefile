@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/06/06 08:36:48 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2013/08/24 17:33:47 zhuk Exp $
 
 COMMENT =	KDE CDDB library
 DISTNAME =	libkcddb-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kcddb		50.0
 

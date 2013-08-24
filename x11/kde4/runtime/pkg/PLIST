@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/07/05 14:37:22 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/08/24 17:33:53 zhuk Exp $
 @conflict kdebase-<4
 @conflict kdesamba-<4
 @group wheel
@@ -2191,7 +2191,5 @@ share/sounds/KDE-Window-Shade-Up.ogg
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

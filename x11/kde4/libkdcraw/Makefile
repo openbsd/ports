@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/07/04 00:46:24 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2013/08/24 17:33:47 zhuk Exp $
 
 COMMENT =	KDE RAW picture decoding C++ library
 DISTNAME =	libkdcraw-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kdcraw			50.0	# 20.0
 
@@ -13,6 +14,8 @@ WANTLIB += ${KDE4LIB}/threadweaver
 WANTLIB += raw_r
 
 MODKDE4_USE =	libs
+
+RUN_DEPENDS =	x11/gtk+2,-guic
 
 LIB_DEPENDS = 	graphics/libraw
 

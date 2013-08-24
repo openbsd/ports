@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 18:36:33 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/08/24 17:33:51 zhuk Exp $
 
 COMMENT =	vocabulary trainer for KDE
 DISTNAME =	parley-${MODKDE4_VERSION}
+REVISION =	0
 
 # XXX Sometimes crashes, possibly due KHotNewStuff bugs.
 
@@ -22,7 +23,9 @@ LIB_DEPENDS = 	textproc/libxml \
 		textproc/libxslt \
 		${MODKDE4_DEP_DIR}/libkdeedu>=${MODKDE4_DEP_VERSION}
 
-RUN_DEPENDS =	${MODKDE4_DEP_DIR}/kross-interpreters>=${MODKDE4_DEP_VERSION}
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+2,-guic \
+		${MODKDE4_DEP_DIR}/kross-interpreters>=${MODKDE4_DEP_VERSION}
 
 KROSS_SCRIPTS = plugins/test.py \
 		plugins/leo-dict.py \

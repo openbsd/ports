@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/06/06 08:36:47 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/08/24 17:33:39 zhuk Exp $
 
 COMMENT =	music collection manager and player for KDE
 DISTNAME =	juk-${MODKDE4_VERSION}
+REVISION =	0
 
 CATEGORIES =	audio
 
@@ -14,6 +15,9 @@ WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
 WANTLIB += soprano tag
 
 MODULES =	multimedia/phonon
+
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+2,-guic
 
 LIB_DEPENDS =	audio/taglib
 

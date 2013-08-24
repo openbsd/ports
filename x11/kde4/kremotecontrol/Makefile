@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:27 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/08/24 17:33:44 zhuk Exp $
 
 COMMENT =	KDE frontend for remote controls
 DISTNAME =	kremotecontrol-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	libkremotecontrol	50.0 # 1.0
 
@@ -13,6 +14,8 @@ WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/plasma
 
 BUILD_DEPENDS =	${MODKDE4_DEP_DIR}/workspace>=${MODKDE4_DEP_VERSION}
 
-RUN_DEPENDS =	${MODKDE4_DEP_DIR}/workspace>=${MODKDE4_DEP_VERSION}
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+2,-guic \
+		${MODKDE4_DEP_DIR}/workspace>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>
