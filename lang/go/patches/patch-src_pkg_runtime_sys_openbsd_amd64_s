@@ -1,0 +1,67 @@
+$OpenBSD: patch-src_pkg_runtime_sys_openbsd_amd64_s,v 1.5 2013/08/25 11:57:27 jsing Exp $
+--- src/pkg/runtime/sys_openbsd_amd64.s.orig	Sun Aug 18 14:12:42 2013
++++ src/pkg/runtime/sys_openbsd_amd64.s	Sun Aug 18 14:42:17 2013
+@@ -61,7 +61,7 @@ TEXT runtime·thrsleep(SB),7,$0
+ 	MOVQ	24(SP), DX		// arg 3 - tp
+ 	MOVQ	32(SP), R10		// arg 4 - lock
+ 	MOVQ	40(SP), R8		// arg 5 - abort
+-	MOVL	$300, AX		// sys___thrsleep
++	MOVL	$94, AX			// sys___thrsleep
+ 	SYSCALL
+ 	RET
+ 
+@@ -129,7 +129,7 @@ TEXT runtime·usleep(SB),7,$16
+ 
+ 	MOVQ	SP, DI			// arg 1 - rqtp
+ 	MOVQ	$0, SI			// arg 2 - rmtp
+-	MOVL	$240, AX		// sys_nanosleep
++	MOVL	$91, AX			// sys_nanosleep
+ 	SYSCALL
+ 	RET
+ 
+@@ -137,7 +137,7 @@ TEXT runtime·raise(SB),7,$16
+ 	MOVL	$299, AX		// sys_getthrid
+ 	SYSCALL
+ 	MOVQ	AX, DI			// arg 1 - pid
+-	MOVL	sig+0(FP), SI			// arg 2 - signum
++	MOVL	sig+0(FP), SI		// arg 2 - signum
+ 	MOVL	$37, AX			// sys_kill
+ 	SYSCALL
+ 	RET
+@@ -146,7 +146,7 @@ TEXT runtime·setitimer(SB),7,$-8
+ 	MOVL	8(SP), DI		// arg 1 - which
+ 	MOVQ	16(SP), SI		// arg 2 - itv
+ 	MOVQ	24(SP), DX		// arg 3 - oitv
+-	MOVL	$83, AX			// sys_setitimer
++	MOVL	$69, AX			// sys_setitimer
+ 	SYSCALL
+ 	RET
+ 
+@@ -154,9 +154,9 @@ TEXT runtime·setitimer(SB),7,$-8
+ TEXT time·now(SB), 7, $32
+ 	MOVQ	$0, DI			// arg 1 - clock_id
+ 	LEAQ	8(SP), SI		// arg 2 - tp
+-	MOVL	$232, AX		// sys_clock_gettime
++	MOVL	$87, AX			// sys_clock_gettime
+ 	SYSCALL
+-	MOVL	8(SP), AX		// sec
++	MOVQ	8(SP), AX		// sec
+ 	MOVQ	16(SP), DX		// nsec
+ 
+ 	// sec is in AX, nsec in DX
+@@ -164,12 +164,12 @@ TEXT time·now(SB), 7, $32
+ 	MOVL	DX, nsec+8(FP)
+ 	RET
+ 
+-TEXT runtime·nanotime(SB),7,$32
++TEXT runtime·nanotime(SB),7,$24
+ 	MOVQ	$0, DI			// arg 1 - clock_id
+ 	LEAQ	8(SP), SI		// arg 2 - tp
+-	MOVL	$232, AX		// sys_clock_gettime
++	MOVL	$87, AX			// sys_clock_gettime
+ 	SYSCALL
+-	MOVL	8(SP), AX		// sec
++	MOVQ	8(SP), AX		// sec
+ 	MOVQ	16(SP), DX		// nsec
+ 
+ 	// sec is in AX, nsec in DX
