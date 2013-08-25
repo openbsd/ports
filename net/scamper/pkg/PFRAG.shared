@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/06/19 10:19:43 sthen Exp $
-@lib lib/libscamperfile.so.${LIBscamperfile_VERSION}

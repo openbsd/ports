@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/21 08:46:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2013/08/25 19:54:49 sthen Exp $
 
 SHARED_LIBS +=  scamperfile               0.0 # 0.0
 
 COMMENT =	parallel internet measurement utility
 
-V =		20111202b
+V =		20130824
 DISTNAME =	scamper-cvs-$V
 PKGNAME =	scamper-0.0.$V
 
 CATEGORIES =	net benchmarks
 
-HOMEPAGE =	http://www.wand.net.nz/scamper/
+HOMEPAGE =	http://www.caida.org/tools/measurement/scamper/
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM =	 Yes
 
 WANTLIB += c m
 
-MASTER_SITES = ${HOMEPAGE}
+MASTER_SITES =	http://www.caida.org/tools/measurement/scamper/code/
 
 USE_GROFF =		Yes
 SEPARATE_BUILD =	Yes

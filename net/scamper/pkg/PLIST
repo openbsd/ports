@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/06/23 20:20:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/08/25 19:54:49 sthen Exp $
 @newgroup _scamper:677
 @newuser _scamper:677:_scamper:daemon:Scamper Account:/nonexistent:/sbin/nologin
-%%SHARED%%
 @bin bin/sc_ally
 @bin bin/sc_analysis_dump
 @bin bin/sc_attach
+@bin bin/sc_ipiddump
+@bin bin/sc_speedtrap
 @bin bin/sc_tracediff
+@bin bin/sc_warts2json
 @bin bin/sc_warts2pcap
 @bin bin/sc_warts2text
 @bin bin/sc_wartscat
@@ -26,10 +28,14 @@ include/scamper_trace.h
 include/scamper_tracelb.h
 lib/libscamperfile.a
 lib/libscamperfile.la
+@lib lib/libscamperfile.so.${LIBscamperfile_VERSION}
 @man man/man1/sc_ally.1
 @man man/man1/sc_analysis_dump.1
 @man man/man1/sc_attach.1
+@man man/man1/sc_ipiddump.1
+@man man/man1/sc_speedtrap.1
 @man man/man1/sc_tracediff.1
+@man man/man1/sc_warts2json.1
 @man man/man1/sc_warts2pcap.1
 @man man/man1/sc_warts2text.1
 @man man/man1/sc_wartscat.1
