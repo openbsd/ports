@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2013/08/15 15:05:27 jturner Exp $
+# $OpenBSD: Makefile,v 1.12 2013/08/25 02:06:26 jturner Exp $
 
 COMMENT =		console-based e-mail client with Lua scripting support
 
-DISTNAME =		lumail-0.18
+DISTNAME =		lumail-0.20
 CATEGORIES =		mail
 
 MAINTAINER =		James Turner <james@calminferno.net>
@@ -13,8 +13,9 @@ MASTER_SITES =		http://lumail.org/download/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		c gio-2.0 glib-2.0 gmime-2.6 gobject-2.0
+WANTLIB +=		c gio-2.0 glib-2.0 glibmm-2.4 gmime-2.6 gobject-2.0
 WANTLIB +=		${MODLUA_WANTLIB} m ncursesw pcre pcrecpp pthread
+WANTLIB +=		sigc-2.0
 
 MODULES =		devel/gettext gcc4 lang/lua
 
@@ -22,6 +23,7 @@ MODGCC4_ARCHS =		*
 MODGCC4_LANGS =		c++
 
 LIB_DEPENDS +=		${MODLUA_LIB_DEPENDS} \
+			devel/glib2mm \
 			mail/gmime \
 			devel/pcre
 

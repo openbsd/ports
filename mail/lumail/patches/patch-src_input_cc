@@ -1,12 +1,10 @@
-$OpenBSD: patch-src_input_cc,v 1.1 2013/08/06 23:20:37 jturner Exp $
---- src/input.cc.orig	Sun Aug  4 18:13:07 2013
-+++ src/input.cc	Sun Aug  4 18:13:13 2013
-@@ -18,7 +18,7 @@
- 
- 
- #include <cstdlib>
--#include <cursesw.h>
-+#include <curses.h>
- #include "input.h"
- 
- 
+$OpenBSD: patch-src_input_cc,v 1.2 2013/08/25 02:06:27 jturner Exp $
+--- src/input.cc.orig	Sat Aug 24 09:28:27 2013
++++ src/input.cc	Sat Aug 24 21:56:06 2013
+@@ -94,5 +94,5 @@ int CInput::get_wchar(gunichar *wch)
+     /**
+      * Otherwise defer to ncurses.
+      */
+-    return( get_wch(wch) );
++    return( get_wch((wint_t *)wch) );
+ }
