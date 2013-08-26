@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2013/03/21 08:45:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2013/08/26 13:16:20 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,7 +13,8 @@ CATEGORIES=	graphics devel
 PKGNAME-main=	gegl-${V}
 PKGNAME-plugins=gegl-plugins-${V}
 
-REVISION-main=	0
+REVISION-main=	1
+REVISION-plugins=	0
 
 SHARED_LIBS +=  gegl-${API_VERSION}		0.0 # 199.1
 
@@ -31,7 +32,7 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/${V:R}/ \
 MULTI_PACKAGES=	-main -plugins
 
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 m pcre z execinfo ffi stdc++
+WANTLIB += gthread-2.0 m pcre z execinfo ffi
 
 MODULES=	devel/gettext \
 		textproc/intltool
@@ -43,12 +44,13 @@ USE_GMAKE=	Yes
 SUBST_VARS=	API_VERSION
 
 WANTLIB-main +=	${WANTLIB}
-WANTLIB-main += X11 Xau Xdmcp Xrender c cairo croco-0.6 expat fontconfig
+WANTLIB-main += X11 Xrender c cairo croco-0.6 expat fontconfig
 WANTLIB-main += freetype gdk_pixbuf-2.0 jpeg pango-1.0
 WANTLIB-main += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread
 WANTLIB-main += pthread-stubs xcb xml2 xcb-render rsvg-2 babl-0.1
-WANTLIB-main += GL Xdamage Xext Xfixes Xxf86vm drm jasper xcb-shm
+WANTLIB-main += Xext jasper xcb-shm graphite2 harfbuzz
 
+BUILD_DEPENDS=	graphics/exiv2
 LIB_DEPENDS=	devel/libexecinfo
 
 LIB_DEPENDS-main= 	${LIB_DEPENDS} \
@@ -60,6 +62,7 @@ WANTLIB-plugins += gsm mp3lame ogg orc-0.4 IlmImf avutil bz2
 WANTLIB-plugins += schroedinger-1.0 speex theoradec theoraenc
 WANTLIB-plugins += vorbis vorbisenc x264 avcodec avformat vpx
 WANTLIB-plugins += Half Iex IlmThread Imath xvidcore
+WANTLIB-plugins += crypto opus pthread stdc++ ssl
 
 RUN_DEPENDS-plugins= 	${BUILD_PKGPATH},-main
 LIB_DEPENDS-plugins= 	${LIB_DEPENDS} \
