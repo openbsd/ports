@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.88 2013/08/20 22:06:00 zhuk Exp $
+# $OpenBSD: Makefile,v 1.89 2013/08/26 08:50:32 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	archive manager utility for GNOME
 
 GNOME_PROJECT=	file-roller
-GNOME_VERSION=	3.8.3
-REVISION=	0
+GNOME_VERSION=	3.8.4
 
 CATEGORIES=	archivers
 
