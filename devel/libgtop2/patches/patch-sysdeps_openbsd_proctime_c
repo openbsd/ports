@@ -1,9 +1,7 @@
-$OpenBSD: patch-sysdeps_openbsd_proctime_c,v 1.5 2013/06/08 13:05:13 espie Exp $
+$OpenBSD: patch-sysdeps_openbsd_proctime_c,v 1.6 2013/08/26 08:43:16 ajacoutot Exp $
 
-From b11aa1517e203e36a8901f03ea57c50a25dfbfc7 Mon Sep 17 00:00:00 2001
-From: Antoine Jacoutot <ajacoutot@gnome.org>
-Date: Sun, 22 Jan 2012 11:47:49 +0000
-Subject: OpenBSD: kinfo_proc2 -> kinfo_proc
+XXX push upstream:
+Some fields have moved in struct proc from timeval to timespec.
 
 --- sysdeps/openbsd/proctime.c.orig	Sun Jul 24 21:13:56 2011
 +++ sysdeps/openbsd/proctime.c	Sat Jun  8 15:00:41 2013
@@ -28,21 +26,3 @@ Subject: OpenBSD: kinfo_proc2 -> kinfo_proc
  
  	if (totusec < 0) {
  		/* XXX no %qd in kernel.  Truncate. */
-@@ -117,7 +117,7 @@ void
- glibtop_get_proc_time_p (glibtop *server, glibtop_proc_time *buf,
- 			 pid_t pid)
- {
--	struct kinfo_proc2 *pinfo;
-+	struct kinfo_proc *pinfo;
- 	int count;
- 
- 	glibtop_init_p (server, (1L << GLIBTOP_SYSDEPS_PROC_TIME), 0);
-@@ -129,7 +129,7 @@ glibtop_get_proc_time_p (glibtop *server, glibtop_proc
- 
- 
- 	/* Get the process information */
--	pinfo = kvm_getproc2 (server->machine.kd, KERN_PROC_PID, pid,
-+	pinfo = kvm_getprocs (server->machine.kd, KERN_PROC_PID, pid,
- 			      sizeof (*pinfo), &count);
- 	if ((pinfo == NULL) || (count != 1)) {
- 		glibtop_warn_io_r (server, "kvm_getprocs (%d)", pid);
