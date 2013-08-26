@@ -1,0 +1,16 @@
+$OpenBSD: patch-doc_barman_conf,v 1.1 2013/08/26 09:37:52 landry Exp $
+--- doc/barman.conf.orig	Tue Aug 20 16:34:28 2013
++++ doc/barman.conf	Tue Aug 20 16:35:30 2013
+@@ -5,10 +5,10 @@
+ 
+ [barman]
+ ; Main directory
+-barman_home = /var/lib/barman
++barman_home = /var/db/barman
+ 
+ ; System user
+-barman_user = barman
++barman_user = _barman
+ 
+ ; Log location
+ log_file = /var/log/barman/barman.log

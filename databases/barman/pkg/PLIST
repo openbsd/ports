@@ -1,4 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/08/10 13:42:45 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/08/26 09:37:52 landry Exp $
+@newgroup _barman:723
+@newuser _barman:723:723:daemon:Barman User:/nonexistent:/sbin/nologin
+@extraunexec rm -rf /var/db/barman/*
+@extraunexec rm -rf /var/log/barman/*
+@owner _barman
+@group _barman
+@mode 0750
+@sample /var/db/barman/
+@sample /var/log/barman/
+@mode
+@owner
+@group
 bin/barman
 lib/python${MODPY_VERSION}/site-packages/barman/
 lib/python${MODPY_VERSION}/site-packages/barman-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -40,6 +52,13 @@ lib/python${MODPY_VERSION}/site-packages/barman/xlog.pyc
 @man man/man5/barman.5
 share/doc/barman/
 share/doc/barman/README
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/barman/
 share/examples/barman/barman.conf
+@owner root
+@group _barman
+@mode 0640
 @sample ${SYSCONFDIR}/barman.conf
+@mode
+@owner
+@group

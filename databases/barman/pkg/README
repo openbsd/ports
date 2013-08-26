@@ -1,0 +1,24 @@
+$OpenBSD: README,v 1.1 2013/08/26 09:37:52 landry Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Config
+======
+
+Configure the main section in ${SYSCONFDIR}/barman.conf for the
+database(s) you want barman to backup.
+
+Cron Job
+========
+
+put the following in _barman's crontab
+
+#crontab -u _barman -l
+0	*	*	*	*	${TRUEPREFIX}/bin/barman cron
+54	0	*	*	*	${TRUEPREFIX}/bin/barman backup all
+
+The first job performs maintenance tasks, such as moving incoming WAL
+files to the appropriate directory.
+The second job performs the actual backup.
