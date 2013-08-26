@@ -1,4 +1,4 @@
-$OpenBSD: README-common,v 1.2 2013/08/22 15:11:52 ajacoutot Exp $
+$OpenBSD: README-common,v 1.3 2013/08/26 14:55:45 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -38,8 +38,7 @@ is created using the 'hp-makeuri' utility from the hplip package, but
 once known, hplip is not needed and can be pkg_delete(1)d.
 
 e.g. for a network printer:
-    hp-makeuri 192.168.10.100
-    <...>
+    hp-makeuri -c 192.168.10.100
     CUPS URI: hp:/net/Officejet_7500_E910?ip=192.168.10.100
 
 Then add an 'HP Printer (HPLIP)' entry in CUPS with the corresponding
@@ -82,10 +81,8 @@ created using the 'hp-makeuri' utility from the hplip package, but once
 known, hplip is not needed and can be pkg_delete(1)d.
 
 e.g. for a network scanner:
-    hp-makeuri 192.168.10.100
-    <...>
+    hp-makeuri -s 192.168.10.100
     SANE URI: hpaio:/net/Officejet_7500_E910?ip=192.168.10.100
-    <...>
 
 Then pass this URI to your sane(7)-compatible application.
 e.g.
