@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/04/04 14:38:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/08/26 16:15:47 ajacoutot Exp $
 @bin bin/secret-tool
 include/libsecret-1/
 include/libsecret-1/libsecret/
@@ -87,18 +87,35 @@ share/gtk-doc/html/libsecret-1/vala-lookup-example.html
 share/gtk-doc/html/libsecret-1/vala-remove-example.html
 share/gtk-doc/html/libsecret-1/vala-store-example.html
 share/locale/cs/LC_MESSAGES/libsecret.mo
+share/locale/da/LC_MESSAGES/libsecret.mo
+share/locale/de/LC_MESSAGES/libsecret.mo
 share/locale/es/LC_MESSAGES/libsecret.mo
+share/locale/fr/LC_MESSAGES/libsecret.mo
+share/locale/fur/
+share/locale/fur/LC_MESSAGES/
+share/locale/fur/LC_MESSAGES/libsecret.mo
 share/locale/gl/LC_MESSAGES/libsecret.mo
+share/locale/he/LC_MESSAGES/libsecret.mo
+share/locale/hu/LC_MESSAGES/libsecret.mo
+share/locale/id/LC_MESSAGES/libsecret.mo
 share/locale/it/LC_MESSAGES/libsecret.mo
 share/locale/ja/LC_MESSAGES/libsecret.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
+share/locale/lt/LC_MESSAGES/libsecret.mo
+share/locale/nb/LC_MESSAGES/libsecret.mo
+share/locale/pa/LC_MESSAGES/libsecret.mo
 share/locale/pl/LC_MESSAGES/libsecret.mo
 share/locale/pt_BR/LC_MESSAGES/libsecret.mo
 share/locale/ru/LC_MESSAGES/libsecret.mo
+share/locale/sk/LC_MESSAGES/libsecret.mo
 share/locale/sl/LC_MESSAGES/libsecret.mo
 share/locale/sr/LC_MESSAGES/libsecret.mo
 share/locale/sr@latin/
 share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/libsecret.mo
+share/locale/zh_HK/LC_MESSAGES/libsecret.mo
+share/locale/zh_TW/LC_MESSAGES/libsecret.mo
 share/vala/
 share/vala/vapi/
 share/vala/vapi/libsecret-1.deps
