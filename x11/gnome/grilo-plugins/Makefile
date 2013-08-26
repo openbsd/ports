@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2013/06/21 22:38:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2013/08/26 09:12:51 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	plugins for Grilo
 
 GNOME_PROJECT=	grilo-plugins
-GNOME_VERSION=	0.2.8
-REVISION=	0
+GNOME_VERSION=	0.2.9
 API=		0.2
 
 TRACKER_VERSION=0.16
