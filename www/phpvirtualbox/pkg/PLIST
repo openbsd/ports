@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/02/03 11:01:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/08/26 12:17:11 ajacoutot Exp $
 @unexec-delete rm -f /var/www/conf/modules/phpvirtualbox.conf
 phpvirtualbox/
 phpvirtualbox/CHANGELOG.txt
@@ -13,10 +13,8 @@ phpvirtualbox/config.php-example
 @group
 phpvirtualbox/css/
 phpvirtualbox/css/jquery-ui.css
-phpvirtualbox/css/jquery.contextMenu.css
-phpvirtualbox/css/jqueryFileTree.css
+phpvirtualbox/css/jquery.projectPlugins.css
 phpvirtualbox/css/layout.css
-phpvirtualbox/css/mediumselect.css
 phpvirtualbox/css/tipped.css
 phpvirtualbox/images/
 phpvirtualbox/images/30white.png
@@ -247,6 +245,7 @@ phpvirtualbox/images/vbox/os_ubuntu.png
 phpvirtualbox/images/vbox/os_ubuntu_64.png
 phpvirtualbox/images/vbox/os_virtualbox.png
 phpvirtualbox/images/vbox/os_win2k.png
+phpvirtualbox/images/vbox/os_win2k12_64.png
 phpvirtualbox/images/vbox/os_win2k3.png
 phpvirtualbox/images/vbox/os_win2k3_64.png
 phpvirtualbox/images/vbox/os_win2k8.png
@@ -402,6 +401,7 @@ phpvirtualbox/images/vbox/vm_settings_disabled_32px.png
 phpvirtualbox/images/vbox/vm_start_32px.png
 phpvirtualbox/images/vbox/vm_start_disabled_32px.png
 phpvirtualbox/images/vbox/vmw_clone_bg.png
+phpvirtualbox/images/vbox/vmw_first_run_bg.png
 phpvirtualbox/images/vbox/vmw_new_harddisk_bg.png
 phpvirtualbox/images/vbox/vmw_new_welcome_bg.png
 phpvirtualbox/images/vbox/vmw_ovf_export_bg.png
@@ -420,16 +420,12 @@ phpvirtualbox/js/chooser.js
 phpvirtualbox/js/datamediator.js
 phpvirtualbox/js/dialogs.js
 phpvirtualbox/js/eventlistener.js
-phpvirtualbox/js/jquery-1.8.2-min.js
-phpvirtualbox/js/jquery-ui-1.8.23-min.js
-phpvirtualbox/js/jquery.contextMenu.js
+phpvirtualbox/js/jquery-1.10.2-min.js
+phpvirtualbox/js/jquery-ui-1.10.3-min.js
 phpvirtualbox/js/jquery.jec-1.3.1.js
-phpvirtualbox/js/jquery.mediumselect.js
+phpvirtualbox/js/jquery.projectPlugins.js
 phpvirtualbox/js/jquery.scrollTo-min.js
-phpvirtualbox/js/jquery.textFill.js
 phpvirtualbox/js/jquery.tipped-2.1b.min.js
-phpvirtualbox/js/jquery.vbtree.js
-phpvirtualbox/js/jqueryFileTree.js
 phpvirtualbox/js/language.php
 phpvirtualbox/js/phptest.php
 phpvirtualbox/js/phpvirtualbox.js
@@ -480,6 +476,7 @@ phpvirtualbox/lib/vboxweb-4.2.wsdl
 phpvirtualbox/lib/vboxwebService-4.2.wsdl
 phpvirtualbox/panes/
 phpvirtualbox/panes/about.html
+phpvirtualbox/panes/chooser.html
 phpvirtualbox/panes/guestNetAdapters.html
 phpvirtualbox/panes/login.html
 phpvirtualbox/panes/settingsAudio.html
@@ -501,10 +498,9 @@ phpvirtualbox/panes/tabVMConsole.html
 phpvirtualbox/panes/tabVMDetails.html
 phpvirtualbox/panes/tabVMSnapshots.html
 phpvirtualbox/panes/tabs.html
+phpvirtualbox/panes/toolbar.html
 phpvirtualbox/panes/topmenu.html
 phpvirtualbox/panes/userEdit.html
-phpvirtualbox/panes/vmlist.html
-phpvirtualbox/panes/vmlistToolbar.html
 phpvirtualbox/panes/vmlogs.html
 phpvirtualbox/panes/vmm.html
 phpvirtualbox/panes/vmmISCSI.html
