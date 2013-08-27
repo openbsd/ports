@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.35 2013/08/24 16:15:56 zhuk Exp $
+# $OpenBSD: portcheck,v 1.36 2013/08/27 07:52:15 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1105,8 +1105,12 @@ check_files_dir() {
 
 	find -f "$1" -- -type f | {
 		local empty=true
+		local mode
 		while read F; do
 			ignoring "$F" && continue
+			mode=$(stat -f %p "$F" || true)
+			(( (0$mode & 0111) != 0 )) &&
+				err "executable file: $F"
 			empty=false
 			[[ $F == *.core ]] &&
 				err_coredump_found "$F"
@@ -1127,6 +1131,8 @@ check_patches_dir() {
 
 	local empty=true
 	local F
+
+	check_perms_in_dir "$1"
 
 	for F in "$1"/* "$1"/.*; do case "${F##*/}" in
 	patch-*.orig)
@@ -1169,6 +1175,8 @@ check_pkg_dir() {
 	fi
 	local empty=true
 	local F
+
+	check_perms_in_dir "$dir"
 
 	for F in "$dir"/* "$dir"/.*; do case "${F##*/}" in
 	DESCR?(-*))
