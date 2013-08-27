@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2013/01/25 09:09:22 bentley Exp $
+# $OpenBSD: Makefile,v 1.71 2013/08/27 05:14:09 bentley Exp $
 
     SUBDIR =
     SUBDIR += BasiliskII
@@ -21,8 +21,6 @@
     SUBDIR += gns3
     SUBDIR += gnusim8085
     SUBDIR += gxemul
-    SUBDIR += ines
-    SUBDIR += mastergear
     SUBDIR += mednafen
     SUBDIR += mupen64plus
     SUBDIR += nestopia
@@ -39,7 +37,6 @@
     SUBDIR += stella
     SUBDIR += uae
     SUBDIR += vbam
-    SUBDIR += vgb
     SUBDIR += x48
     SUBDIR += xcopilot
     SUBDIR += xhomer
