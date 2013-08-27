@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/08/27 21:53:10 bcallah Exp $
 
-ONLY_FOR_ARCHS =	amd64 i386 mips64el powerpc sparc sparc64
+ONLY_FOR_ARCHS =	amd64 i386 mips64 mips64el powerpc sparc sparc64
 
 COMMENT =		ANS Standard Forth interpreter and compiler
 
 DISTNAME =		gforth-0.6.2
-REVISION =		3
+REVISION =		4
 CATEGORIES =		lang
 
-HOMEPAGE =		http://www.jwdt.com/~paysan/gforth.html
+HOMEPAGE =		http://bernd-paysan.de/gforth.html
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
