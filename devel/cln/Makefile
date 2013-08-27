@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/21 08:45:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2013/08/27 09:19:25 pirofti Exp $
 
 NOT_FOR_ARCHS =	arm mips64 mips64el sparc64 hppa
 
 COMMENT =	library for efficient computations
 
-DISTNAME =	cln-1.3.2
-SHARED_LIBS +=  cln                  1.0      # .5.2
-REVISION =	0
+DISTNAME =	cln-1.3.3
+SHARED_LIBS +=  cln                  2.0      # .6.3
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.ginac.de/CLN/
