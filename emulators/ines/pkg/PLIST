@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:42:04 espie Exp $
-bin/ines
-share/doc/ines/
-share/doc/ines/iNES.html
-share/ines/
-share/ines/CART.NES

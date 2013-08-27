@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:42:04 espie Exp $
-bin/mastergear
-share/doc/mastergear/
-share/doc/mastergear/MG.html
-share/mastergear/
-share/mastergear/CART.ROM
