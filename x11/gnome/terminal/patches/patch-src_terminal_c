@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_terminal_c,v 1.5 2013/04/15 18:57:55 jasper Exp $
+$OpenBSD: patch-src_terminal_c,v 1.6 2013/08/27 16:53:10 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=705902
+
 --- src/terminal.c.orig	Mon Apr 15 15:51:46 2013
 +++ src/terminal.c	Mon Apr 15 20:55:57 2013
 @@ -230,7 +230,11 @@ main (int argc, char **argv)
