@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.42 2013/06/23 08:58:07 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.43 2013/08/27 07:51:03 zhuk Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -62,7 +62,7 @@ sub create_missing_vars
 {
 	my $o = shift;
 	for my $name (qw(SHARED_LIBS TARGETS)) {
-		if (!defined $o->{info}{$name}) {
+		if (!defined $o->{info}->{vars}{$name}) {
 			$o->{info}->create($name, '', undef, $o);
 		}
 	}
