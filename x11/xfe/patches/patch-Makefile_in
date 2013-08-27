@@ -1,12 +1,14 @@
-$OpenBSD: patch-Makefile_in,v 1.10 2013/05/09 00:44:06 bcallah Exp $
---- Makefile.in.orig	Sat May  4 17:25:03 2013
-+++ Makefile.in	Sat May  4 17:26:50 2013
-@@ -462,15 +462,14 @@ uninstall-iconDATA:
- 	cd "$(DESTDIR)$(icondir)" && rm -f $$files
+$OpenBSD: patch-Makefile_in,v 1.11 2013/08/27 01:57:25 bcallah Exp $
+--- Makefile.in.orig	Sat Aug 24 16:40:21 2013
++++ Makefile.in	Sat Aug 24 16:42:24 2013
+@@ -507,17 +507,13 @@ uninstall-iconDATA:
  install-rcDATA: $(rc_DATA)
  	@$(NORMAL_INSTALL)
--	test -z "$(rcdir)" || $(MKDIR_P) "$(DESTDIR)$(rcdir)"
  	@list='$(rc_DATA)'; test -n "$(rcdir)" || list=; \
+-	if test -n "$$list"; then \
+-	  echo " $(MKDIR_P) '$(DESTDIR)$(rcdir)'"; \
+-	  $(MKDIR_P) "$(DESTDIR)$(rcdir)" || exit 1; \
+-	fi; \
  	for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
  	  echo "$$d$$p"; \

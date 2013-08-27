@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/05/09 00:44:06 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/08/27 01:57:26 bcallah Exp $
 @bin bin/xfe
 @bin bin/xfi
 @bin bin/xfp
@@ -26,6 +26,9 @@ share/locale/es/LC_MESSAGES/xfe.mo
 share/locale/es_AR/
 share/locale/es_AR/LC_MESSAGES/
 share/locale/es_AR/LC_MESSAGES/xfe.mo
+share/locale/es_CO/
+share/locale/es_CO/LC_MESSAGES/
+share/locale/es_CO/LC_MESSAGES/xfe.mo
 share/locale/fr/LC_MESSAGES/xfe.mo
 share/locale/hu/LC_MESSAGES/xfe.mo
 share/locale/it/LC_MESSAGES/xfe.mo
@@ -155,6 +158,7 @@ share/xfe/icons/blue-theme/fonts.png
 share/xfe/icons/blue-theme/gif_16x16.png
 share/xfe/icons/blue-theme/gif_32x32.png
 share/xfe/icons/blue-theme/gotobig.png
+share/xfe/icons/blue-theme/gotodir.png
 share/xfe/icons/blue-theme/gotoline.png
 share/xfe/icons/blue-theme/graybutton.png
 share/xfe/icons/blue-theme/greenbutton.png
@@ -464,6 +468,7 @@ share/xfe/icons/brown-theme/fonts.png
 share/xfe/icons/brown-theme/gif_16x16.png
 share/xfe/icons/brown-theme/gif_32x32.png
 share/xfe/icons/brown-theme/gotobig.png
+share/xfe/icons/brown-theme/gotodir.png
 share/xfe/icons/brown-theme/gotoline.png
 share/xfe/icons/brown-theme/graybutton.png
 share/xfe/icons/brown-theme/greenbutton.png
@@ -773,6 +778,7 @@ share/xfe/icons/gnome-theme/fonts.png
 share/xfe/icons/gnome-theme/gif_16x16.png
 share/xfe/icons/gnome-theme/gif_32x32.png
 share/xfe/icons/gnome-theme/gotobig.png
+share/xfe/icons/gnome-theme/gotodir.png
 share/xfe/icons/gnome-theme/gotoline.png
 share/xfe/icons/gnome-theme/graybutton.png
 share/xfe/icons/gnome-theme/greenbutton.png
@@ -1082,6 +1088,7 @@ share/xfe/icons/gnomeblue-theme/fonts.png
 share/xfe/icons/gnomeblue-theme/gif_16x16.png
 share/xfe/icons/gnomeblue-theme/gif_32x32.png
 share/xfe/icons/gnomeblue-theme/gotobig.png
+share/xfe/icons/gnomeblue-theme/gotodir.png
 share/xfe/icons/gnomeblue-theme/gotoline.png
 share/xfe/icons/gnomeblue-theme/graybutton.png
 share/xfe/icons/gnomeblue-theme/greenbutton.png
@@ -1391,6 +1398,7 @@ share/xfe/icons/kde-theme/fonts.png
 share/xfe/icons/kde-theme/gif_16x16.png
 share/xfe/icons/kde-theme/gif_32x32.png
 share/xfe/icons/kde-theme/gotobig.png
+share/xfe/icons/kde-theme/gotodir.png
 share/xfe/icons/kde-theme/gotoline.png
 share/xfe/icons/kde-theme/graybutton.png
 share/xfe/icons/kde-theme/greenbutton.png
@@ -1700,6 +1708,7 @@ share/xfe/icons/tango-theme/fonts.png
 share/xfe/icons/tango-theme/gif_16x16.png
 share/xfe/icons/tango-theme/gif_32x32.png
 share/xfe/icons/tango-theme/gotobig.png
+share/xfe/icons/tango-theme/gotodir.png
 share/xfe/icons/tango-theme/gotoline.png
 share/xfe/icons/tango-theme/graybutton.png
 share/xfe/icons/tango-theme/greenbutton.png
@@ -2009,6 +2018,7 @@ share/xfe/icons/windows-theme/fonts.png
 share/xfe/icons/windows-theme/gif_16x16.png
 share/xfe/icons/windows-theme/gif_32x32.png
 share/xfe/icons/windows-theme/gotobig.png
+share/xfe/icons/windows-theme/gotodir.png
 share/xfe/icons/windows-theme/gotoline.png
 share/xfe/icons/windows-theme/graybutton.png
 share/xfe/icons/windows-theme/greenbutton.png
@@ -2318,6 +2328,7 @@ share/xfe/icons/xfce-theme/fonts.png
 share/xfe/icons/xfce-theme/gif_16x16.png
 share/xfe/icons/xfce-theme/gif_32x32.png
 share/xfe/icons/xfce-theme/gotobig.png
+share/xfe/icons/xfce-theme/gotodir.png
 share/xfe/icons/xfce-theme/gotoline.png
 share/xfe/icons/xfce-theme/graybutton.png
 share/xfe/icons/xfce-theme/greenbutton.png
@@ -2627,6 +2638,7 @@ share/xfe/icons/xfe-theme/fonts.png
 share/xfe/icons/xfe-theme/gif_16x16.png
 share/xfe/icons/xfe-theme/gif_32x32.png
 share/xfe/icons/xfe-theme/gotobig.png
+share/xfe/icons/xfe-theme/gotodir.png
 share/xfe/icons/xfe-theme/gotoline.png
 share/xfe/icons/xfe-theme/graybutton.png
 share/xfe/icons/xfe-theme/greenbutton.png

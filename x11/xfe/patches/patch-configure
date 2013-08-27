@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.8 2013/05/09 00:44:06 bcallah Exp $
---- configure.orig	Sat May  4 17:27:41 2013
-+++ configure	Sat May  4 17:30:56 2013
-@@ -5637,7 +5637,7 @@ elif test $ac_cv_prog_cxx_g = yes; then
+$OpenBSD: patch-configure,v 1.9 2013/08/27 01:57:25 bcallah Exp $
+--- configure.orig	Mon Aug 19 04:59:59 2013
++++ configure	Sat Aug 24 16:44:01 2013
+@@ -5677,7 +5677,7 @@ elif test $ac_cv_prog_cxx_g = yes; then
    fi
  else
    if test "$GXX" = yes; then
