@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.186 2013/08/28 17:27:47 rpe Exp $
+# $OpenBSD: network.conf.template,v 1.187 2013/08/28 20:43:11 rpe Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -243,8 +243,6 @@ MASTER_SITE_NPM += \
 MASTER_SITE_ISC +=	\
 	http://ftp.isc.org/isc/ \
 	http://www.mirrorservice.org/sites/ftp.isc.org/isc/ \
-	http://ftp.sunet.se/pub/network/isc/ \
-	http://ftp.funet.fi/pub/mirrors/ftp.isc.org/isc/ \
 	http://ftp.iij.ad.jp/pub/network/isc/ \
 	ftp://ftp.isc.org/isc/ \
 	ftp://ftp.arcane-networks.net/pub/mirrors/ftp.isc.org/isc/ \
