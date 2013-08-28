@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2013/08/06 20:09:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2013/08/28 20:55:22 rpe Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
 V=		9.9.3-P2
-RV=		9.9.3
+REVISION=	0
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
 
@@ -30,9 +30,9 @@ FLAVORS=	ratelimit
 FLAVOR?=
 
 .if ${FLAVOR:Mratelimit}
-PATCHFILES+=	rl-${RV}.patch:0
+PATCHFILES+=	rl-${V}.patch:0
 .else
-SUPDISTFILES+=	rl-${RV}.patch:0
+SUPDISTFILES+=	rl-${V}.patch:0
 .endif
 
 MODULES=	converters/libiconv \
