@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.37 2013/06/21 09:05:18 espie Exp $
+# $OpenBSD: Core.pm,v 1.38 2013/08/28 11:55:06 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -525,7 +525,9 @@ sub avail
 	my $self = shift;
 	for my $h (keys %stopped) {
 		if (!-e "$logdir/stop-$h") {
-			$self->mark_available($self);
+			for my $c (@{$stopped{$h}}) {
+				$self->mark_available($c);
+			}
 			delete $stopped{$h};
 		}
 	}
