@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/12/05 00:45:05 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/08/28 20:09:42 abieber Exp $
 bin/fibers.node
 lib/node_modules/fibers/
 lib/node_modules/fibers/.npmignore
@@ -8,6 +8,7 @@ lib/node_modules/fibers/bin/
 lib/node_modules/fibers/bin/.npmignore
 @bin lib/node_modules/fibers/bin/fibers.node
 lib/node_modules/fibers/binding.gyp
+@comment lib/node_modules/fibers/binding.gyp.beforesubst
 lib/node_modules/fibers/build/
 lib/node_modules/fibers/build.js
 lib/node_modules/fibers/build/Makefile
@@ -38,6 +39,7 @@ lib/node_modules/fibers/build/fibers.target.mk
 lib/node_modules/fibers/fibers.js
 lib/node_modules/fibers/future.js
 lib/node_modules/fibers/package.json
+lib/node_modules/fibers/quick-test.js
 lib/node_modules/fibers/src/
 lib/node_modules/fibers/src/coroutine.cc
 lib/node_modules/fibers/src/coroutine.h
@@ -58,10 +60,12 @@ lib/node_modules/fibers/test/exec.js
 lib/node_modules/fibers/test/exit.js
 lib/node_modules/fibers/test/fibonacci.js
 lib/node_modules/fibers/test/finish-multiple.js
+lib/node_modules/fibers/test/future-exception.js
 lib/node_modules/fibers/test/future.js
 lib/node_modules/fibers/test/illegal-yield.js
 lib/node_modules/fibers/test/pool.js
 lib/node_modules/fibers/test/process-title.js
 lib/node_modules/fibers/test/stack-overflow.js
+lib/node_modules/fibers/test/stack-overflow2.js
 lib/node_modules/fibers/test/started.js
 lib/node_modules/fibers/test/unwind.js

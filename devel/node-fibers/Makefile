@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 2013/06/21 08:52:05 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/08/28 20:09:42 abieber Exp $
 
 # Currently node itself is only for amd64 and i386, but
 # the coroutine library this uses only works on amd64
 # and i386, so even if other arches are supported by node
 # later, this extension will only support these arches.
 ONLY_FOR_ARCHS= amd64 i386
-BROKEN =	requires root privileges during building
 
 COMMENT =	fiber/coroutine support for Node.js
 
-NPM_VERSION =	0.6.8
+NPM_VERSION =	1.0.1
 NPM_NAME =	fibers
-REVISION =	3
 CATEGORIES =	devel
 
 HOMEPAGE =	https://github.com/laverdet/node-fibers
@@ -31,7 +29,10 @@ TEST_DEPENDS =	${BUILD_PKGPATH}
 
 pre-configure:
 	${SUBST_CMD} ${WRKDIST}/binding.gyp
+	@rm -rf ${WRKSRC}/bin/{darwin-*,linux-*,win32-*}
 
+# Failing tests/stack-overflow2.js is known issue, see
+# https://github.com/laverdet/node-fibers/issues/108
 do-test:
 	cd ${WRKDIST} && node test.js
 
