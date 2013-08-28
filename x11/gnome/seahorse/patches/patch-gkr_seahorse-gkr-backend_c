@@ -1,0 +1,24 @@
+$OpenBSD: patch-gkr_seahorse-gkr-backend_c,v 1.1 2013/08/28 07:59:46 ajacoutot Exp $
+
+Fix build with libsecret >=0.16
+
+--- gkr/seahorse-gkr-backend.c.orig	Wed Aug 28 09:23:31 2013
++++ gkr/seahorse-gkr-backend.c	Wed Aug 28 09:23:48 2013
+@@ -162,7 +162,7 @@ on_service_new (GObject *source,
+ 	SeahorseGkrBackend *self = SEAHORSE_GKR_BACKEND (user_data);
+ 	GError *error = NULL;
+ 
+-	self->service = secret_service_new_finish (result, &error);
++	self->service = secret_service_open_finish (result, &error);
+ 	if (error == NULL) {
+ 		g_signal_connect (self->service, "notify::collections", G_CALLBACK (on_notify_collections), self);
+ 		refresh_collection (self);
+@@ -185,7 +185,7 @@ seahorse_gkr_backend_constructed (GObject *obj)
+ 
+ 	G_OBJECT_CLASS (seahorse_gkr_backend_parent_class)->constructed (obj);
+ 
+-	secret_service_new (my_secret_service_get_type (), NULL, SECRET_SERVICE_OPEN_SESSION,
++	secret_service_open (my_secret_service_get_type (), NULL, SECRET_SERVICE_OPEN_SESSION,
+ 	                    NULL, on_service_new, g_object_ref (self));
+ }
+ 
