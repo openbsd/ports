@@ -1,0 +1,32 @@
+--- src/multiplayer.cpp.orig	Tue Mar 12 23:25:45 2013
++++ src/multiplayer.cpp	Tue Aug 27 20:05:43 2013
+@@ -131,7 +131,8 @@ void setup_networked_game(const std::string& server)
+ 	udp_socket.reset(new udp::socket(io_service));
+     udp_socket->open(udp::v4());
+ 
+-	boost::array<char, 4> udp_msg;
++	// on some archs, char is unsigned by default
++	boost::array<signed char, 4> udp_msg;
+ 	memcpy(&udp_msg[0], &id, 4);
+ 
+ //	udp_socket->send_to(boost::asio::buffer(udp_msg), receiver_endpoint);
+@@ -152,7 +153,8 @@ void setup_networked_game(const std::string& server)
+ 
+ namespace {
+ void send_confirm_packet(int nplayer, std::vector<char>& msg, bool has_confirm) {
+-	boost::array<char, 4096> udp_msg;
++	// on some archs, char is unsigned by default
++	boost::array<signed char, 4096> udp_msg;
+ 	msg.resize(6);
+ 	msg[0] = has_confirm ? 'a' : 'A';
+ 	memcpy(&msg[1], &id, 4);
+@@ -288,7 +290,8 @@ void sync_start_time(const level& lvl, boost::function
+ 		}
+ 
+ 		while(udp_packet_waiting()) {
+-			boost::array<char, 4096> udp_msg;
++			// on some archs, char is unsigned by default
++			boost::array<signed char, 4096> udp_msg;
+ 			udp::endpoint endpoint;
+ 			size_t len = udp_socket->receive_from(boost::asio::buffer(udp_msg), endpoint);
+ 			if(len == 6 && ::toupper(udp_msg[0]) == 'A') {

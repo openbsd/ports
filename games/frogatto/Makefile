@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/17 18:35:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/08/28 18:56:37 martin Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
 COMMENT=	2D adventure platformer game
 
-# repackaged source from github minux the MacOS* dirs
+# repackaged source from github minus the MacOS* dirs
 DISTNAME=	frogatto-1.3.20130317
+REVISION=	0
 MASTER_SITES=	http://distfiles.bsdfrog.org/
 EXTRACT_SUFX=	.tar.bz2
 
