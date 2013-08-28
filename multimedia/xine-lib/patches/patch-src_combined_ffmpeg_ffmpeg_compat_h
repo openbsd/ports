@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_combined_ffmpeg_ffmpeg_compat_h,v 1.3 2013/08/28 15:30:35 brad Exp $
+--- src/combined/ffmpeg/ffmpeg_compat.h.orig	Mon Aug 19 21:56:36 2013
++++ src/combined/ffmpeg/ffmpeg_compat.h	Mon Aug 19 21:56:49 2013
+@@ -146,4 +146,8 @@
+ #  define AVCODEC_MAX_AUDIO_FRAME_SIZE 192000
+ #endif
+ 
++#if LIBAVCODEC_VERSION_INT < ((52<<16)|(66<<8))
++#  define avcodec_get_edge_width() (16)
++#endif
++
+ #endif /* XINE_AVCODEC_COMPAT_H */
