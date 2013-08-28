@@ -1,9 +1,9 @@
-$OpenBSD: patch-libgnome-desktop_gnome-languages_c,v 1.1 2013/05/30 17:12:35 ajacoutot Exp $
+$OpenBSD: patch-libgnome-desktop_gnome-languages_c,v 1.2 2013/08/28 09:33:30 stsp Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=698383
 
---- libgnome-desktop/gnome-languages.c.orig	Thu May 30 18:46:45 2013
-+++ libgnome-desktop/gnome-languages.c	Thu May 30 18:47:24 2013
+--- libgnome-desktop/gnome-languages.c.orig	Sun Mar 17 02:49:53 2013
++++ libgnome-desktop/gnome-languages.c	Tue Aug 27 23:51:10 2013
 @@ -310,11 +310,7 @@ language_name_is_valid (const char *language_name)
  {
          char     *old_locale;
@@ -47,11 +47,64 @@ https://bugzilla.gnome.org/show_bug.cgi?id=698383
  
          if (!utf8_only) {
                  g_free (locale->id);
-@@ -684,11 +676,9 @@ collect_locales (void)
+@@ -631,6 +623,40 @@ collect_locales_from_directory (void)
+         return found_locales;
+ }
+ 
++static gboolean
++collect_locales_from_localebin (void)
++{
++        gboolean found_locales = FALSE;
++        FILE *p;
++        char *buf, *lbuf;
++        size_t len;
++
++        p = popen("locale -a", "r");
++
++        lbuf = NULL;
++        while ((buf = fgetln(p, &len))) {
++                if (buf[len - 1] == '\n') {
++                        buf[len - 1] = '\0';
++                        if (add_locale (buf, TRUE))
++                                found_locales = TRUE;
++                } else {
++                        /* EOF without EOL, copy and add the NUL */
++                        lbuf = malloc(len + 1);
++                        if (lbuf == NULL)
++                                break;
++                        memcpy(lbuf, buf, len);
++                        lbuf[len] = '\0';
++                        if (add_locale (lbuf, TRUE))
++                                found_locales = TRUE;
++                        free(lbuf);
++                }
++        }
++
++        pclose(p);
++
++        return found_locales;
++}
++
+ static void
+ count_languages_and_territories (void)
+ {
+@@ -669,6 +695,7 @@ collect_locales (void)
+ {
+         gboolean found_archive_locales = FALSE;
+         gboolean found_dir_locales = FALSE;
++        gboolean found_localebin_locales = FALSE;
+         GError *error = NULL;
+ 
+         if (gnome_available_locales_map == NULL) {
+@@ -683,12 +710,12 @@ collect_locales (void)
+ 
          found_dir_locales = collect_locales_from_directory ();
  
-         if (!(found_archive_locales || found_dir_locales)) {
+-        if (!(found_archive_locales || found_dir_locales)) {
 -#ifndef WITH_INCOMPLETE_LOCALES
++        found_localebin_locales = collect_locales_from_localebin ();
++
++        if (!(found_archive_locales || found_dir_locales || found_localebin_locales)) {
                  g_warning ("Could not read list of available locales from libc, "
                             "guessing possible locales from available translations, "
                             "but list may be incomplete!");

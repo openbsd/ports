@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2013/06/09 15:26:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.108 2013/08/28 09:33:30 stsp Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,7 +8,7 @@ GNOME_PROJECT=		gnome-desktop
 # sync with meta/gnome "V" variable
 GNOME_VERSION=		3.8.3
 
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  gnome-desktop-3      2.0      # 4.0
 
