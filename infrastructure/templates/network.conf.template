@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.185 2013/08/09 20:20:29 naddy Exp $
+# $OpenBSD: network.conf.template,v 1.186 2013/08/28 17:27:47 rpe Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -80,7 +80,6 @@ MASTER_SITE_GCC+=	\
 	http://gcc.cybermirror.org/ \
 	ftp://ftp.ntua.gr/pub/gnu/gcc/ \
 	http://robotlab.itk.ppke.hu/gcc/ \
-	ftp://ftp.dti.ad.jp/pub/lang/gcc/ \
 	http://gcc.fyxm.net/ \
 	http://www.mirrorservice.org/sites/sourceware.org/pub/gcc/ \
 	http://gcc-uk.internet.bs/
@@ -179,8 +178,7 @@ MASTER_SITE_SAVANNAH+=	\
 
 MASTER_SITE_AFTERSTEP+=	\
 	ftp://ftp.afterstep.org/ \
-	http://ftp.kddilabs.jp/X11/AfterStep/ \
-	ftp://ftp.dti.ad.jp/pub/X/AfterStep/
+	http://ftp.kddilabs.jp/X11/AfterStep/
 
 MASTER_SITE_WINDOWMAKER+=	\
 	http://www.windowmaker.info/pub/
@@ -222,7 +220,6 @@ MASTER_SITE_MYSQL+= \
 	http://ftp.fi.muni.cz/pub/mysql/ \
 	http://mirrors.ntua.gr/MySQL/ \
 	http://ftp.ntua.gr/pub/databases/mysql/ \
-	http://mysql.sote.hu/ \
 	http://mysql.mirrors.pair.com/ \
 	http://linorg.usp.br/mysql/ \
 	http://download.softagency.net/MySQL/ \
@@ -233,8 +230,8 @@ MASTER_SITE_PYPI +=	\
 	http://b.pypi.python.org/packages/source/ \
 	http://c.pypi.python.org/packages/source/ \
 	http://d.pypi.python.org/packages/source/ \
-	http://e.pypi.python.org/packages/source/ \
 	http://f.pypi.python.org/packages/source/ \
+	http://g.pypi.python.org/packages/source/ \
 	http://pypi.python.org/packages/source/
 
 MASTER_SITE_RUBYGEMS += \
