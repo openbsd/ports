@@ -1,6 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.7 2013/08/28 07:46:09 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.8 2013/08/28 10:02:53 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=706958
+From 996edb0c46356d8a326f886b91a77a6af9a2de3e Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <antoine@mtier.org>
+Date: Wed, 28 Aug 2013 07:35:27 +0000
+Subject: fix atomic ops detection
 
 --- configure.ac.orig	Thu Aug 15 10:52:31 2013
 +++ configure.ac	Thu Aug 15 10:53:46 2013
