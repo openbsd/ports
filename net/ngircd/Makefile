@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:35:50 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/08/28 11:53:16 fgsch Exp $
 
 COMMENT =	lightweight irc server
 
-DISTNAME =	ngircd-20.2
+DISTNAME =	ngircd-20.3
 
 CATEGORIES =	net
 
