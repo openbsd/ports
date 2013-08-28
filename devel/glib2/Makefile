@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.209 2013/08/23 07:55:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.210 2013/08/28 07:46:09 ajacoutot Exp $
 
 COMMENT=		general-purpose utility library
 
@@ -41,10 +41,14 @@ TEST_IS_INTERACTIVE=	x11
 TEST_DEPENDS=		devel/desktop-file-utils \
 			x11/dbus
 
-CONFIGURE_STYLE=	gnu
+#CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-static \
 			--with-pcre=system \
-			--disable-fam --disable-maintainer-mode
+			--disable-fam
+
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.69
+CONFIGURE_ARGS +=	--disable-maintainer-mode
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mgcc3}
