@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2013/05/26 09:30:55 kirby Exp $
+# $OpenBSD: Makefile,v 1.13 2013/08/29 19:59:42 sthen Exp $
 
 COMMENT =		random assortment of WSGI servers, middleware
 
 MODPY_EGG_VERSION =	1.0.2
 DISTNAME =		flup-${MODPY_EGG_VERSION}
 PKGNAME =		py-flup-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		www
 
-HOMEPAGE =		${MASTER_SITE_PYPI:=y/flup/}
+HOMEPAGE =		http://trac.saddi.com/flup
 
 MAINTAINER =		Martynas Venckus <martynas@openbsd.org>
 
