@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.45 2013/05/31 15:35:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2013/08/29 07:13:15 ajacoutot Exp $
+
+# XXX the "postr" plugin needs postr which hasn't been ported yet
 
 COMMENT=		plugins for EOG
 
@@ -42,10 +44,6 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			x11/gnome/eog>=${GNOME_VERSION}
-
-# XXX the "postr" plugin needs postr which hasn't been ported yet
-CONFIGURE_ARGS+=	--enable-python \
-			--with-plugins=all
 
 post-install:
 	rm ${PREFIX}/lib/eog/plugins/*.{a,la}
