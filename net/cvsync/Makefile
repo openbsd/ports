@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2013/03/11 11:35:46 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2013/08/29 14:28:13 naddy Exp $
 
-COMMENT=	portable CVS repository synchronization utility
+COMMENT=	CVS repository synchronization utility
 
 DISTNAME=	cvsync-0.24.19
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
 HOMEPAGE=	http://www.cvsync.org/
 
@@ -12,7 +12,7 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c pthread z
+WANTLIB=	c pthread z
 
 MASTER_SITES=	http://www.cvsync.org/dist/ \
 		ftp://ftp.allbsd.org/pub/cvsync/
@@ -28,6 +28,6 @@ EXAMPLESDIR=	${PREFIX}/share/examples/cvsync
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/samples/* ${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/*.conf ${EXAMPLESDIR}
 
 .include <bsd.port.mk>

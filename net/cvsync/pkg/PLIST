@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/04/10 19:52:44 phessler Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/08/29 14:28:14 naddy Exp $
 @newgroup _cvsyncd:697
 @newuser _cvsyncd:697:_cvsyncd:daemon:cvsync service:/nonexistent:/sbin/nologin
-bin/cvscan
-bin/cvsup2cvsync
-bin/cvsync
-bin/cvsync2cvsup
-bin/cvsyncd
-bin/rcscan
-bin/rcscmp
+@bin bin/cvscan
+@bin bin/cvsup2cvsync
+@bin bin/cvsync
+@bin bin/cvsync2cvsup
+@bin bin/cvsyncd
+@bin bin/rcscan
+@bin bin/rcscmp
 @man man/man1/cvscan.1
 @man man/man1/cvsup2cvsync.1
 @man man/man1/cvsync.1
@@ -18,8 +18,6 @@ bin/rcscmp
 share/examples/cvsync/
 share/examples/cvsync/cvsync.conf
 @sample ${SYSCONFDIR}/cvsync.conf
-share/examples/cvsync/cvsyncd-FreeBSD.conf
-share/examples/cvsync/cvsyncd-NetBSD.conf
-share/examples/cvsync/cvsyncd-OpenBSD.conf
+share/examples/cvsync/cvsyncd.conf
 @sample ${SYSCONFDIR}/cvsyncd.conf
 @rcscript ${RCDIR}/cvsyncd
