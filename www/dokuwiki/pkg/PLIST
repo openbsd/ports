@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/06/09 13:42:02 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/08/29 16:30:10 pea Exp $
 dokuwiki/
 dokuwiki/.htaccess.dist
 @sample dokuwiki/.htaccess
@@ -2876,6 +2876,11 @@ dokuwiki/lib/plugins/authplain/
 dokuwiki/lib/plugins/authplain/auth.php
 dokuwiki/lib/plugins/authplain/plugin.info.txt
 dokuwiki/lib/plugins/config/
+dokuwiki/lib/plugins/config/_test/
+dokuwiki/lib/plugins/config/_test/configuration.test.php
+dokuwiki/lib/plugins/config/_test/data/
+dokuwiki/lib/plugins/config/_test/data/config.php
+dokuwiki/lib/plugins/config/_test/data/metadata.php
 dokuwiki/lib/plugins/config/admin.php
 dokuwiki/lib/plugins/config/images/
 dokuwiki/lib/plugins/config/images/danger.png
@@ -3588,6 +3593,9 @@ dokuwiki/lib/plugins/safefnrecode/action.php
 dokuwiki/lib/plugins/safefnrecode/plugin.info.txt
 dokuwiki/lib/plugins/syntax.php
 dokuwiki/lib/plugins/testing/
+dokuwiki/lib/plugins/testing/_test/
+dokuwiki/lib/plugins/testing/_test/dummy_plugin_integration_test.test.php
+dokuwiki/lib/plugins/testing/_test/dummy_plugin_test.test.php
 dokuwiki/lib/plugins/testing/action.php
 dokuwiki/lib/plugins/testing/plugin.info.txt
 dokuwiki/lib/plugins/usermanager/
