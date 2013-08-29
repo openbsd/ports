@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_engine_Makefile_in,v 1.1 2012/11/16 16:53:53 giovanni Exp $
---- src/engine/Makefile.in.orig	Sat Nov 10 20:48:31 2012
-+++ src/engine/Makefile.in	Mon Nov 12 12:45:21 2012
-@@ -58,7 +58,7 @@ CONFIG_CLEAN_VPATH_FILES =
+$OpenBSD: patch-src_engine_Makefile_in,v 1.2 2013/08/29 07:55:22 giovanni Exp $
+--- src/engine/Makefile.in.orig	Wed Aug  7 21:17:13 2013
++++ src/engine/Makefile.in	Tue Aug 27 17:02:57 2013
+@@ -75,7 +75,7 @@ CONFIG_CLEAN_VPATH_FILES =
  LIBRARIES = $(noinst_LIBRARIES)
  ARFLAGS = cru
  libengine_a_AR = $(AR) $(ARFLAGS)

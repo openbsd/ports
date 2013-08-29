@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2013/08/20 22:05:57 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.13 2013/08/29 07:55:23 giovanni Exp $
 @bin bin/filezilla
 @bin bin/fzputtygen
 @bin bin/fzsftp
@@ -523,19 +523,9 @@ share/filezilla/resources/tango/theme.xml
 share/filezilla/resources/theme.xml
 share/filezilla/resources/toolbar.xrc
 share/filezilla/resources/up.png
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/filezilla.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/filezilla.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/filezilla.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/filezilla.svg
 share/locale/an/
 share/locale/an/LC_MESSAGES/
