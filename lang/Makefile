@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.154 2013/08/09 10:59:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.155 2013/08/30 21:41:32 bcallah Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -86,6 +86,7 @@
      SUBDIR += scheme48
      SUBDIR += scm
      SUBDIR += scm,no_x11
+     SUBDIR += seed7
      SUBDIR += smlnj
      SUBDIR += spidermonkey
      SUBDIR += squeak
