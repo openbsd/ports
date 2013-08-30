@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/08/30 21:41:09 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2013/08/30 22:56:49 ajacoutot Exp $
 
 # Fails for me on macppc, sgi, and sparc64.
 NOT_FOR_ARCHS =	${BE_ARCHS}
@@ -9,6 +9,7 @@ DISTNAME =	seed7_05_${V}
 PKGNAME =	seed7-${V}
 EXTRACT_SUFX =	.tgz
 CATEGORIES =	lang
+REVISION =	0
 
 HOMEPAGE =	http://seed7.sourceforge.net/
 
@@ -24,8 +25,8 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=seed7/}
 
 USE_GMAKE =	Yes
 MAKE_FLAGS =	CC="${CC}" LDFLAGS="-Wl,--gc-sections -L${X11BASE}/lib"
-MAKE_ENV +=	S7_LIB_DIR=${LOCALBASE}/lib/seed7/bin \
-		SEED7_LIBRARY=${LOCALBASE}/lib/seed7/lib
+MAKE_ENV +=	S7_LIB_DIR=${TRUEPREFIX}/lib/seed7/bin \
+		SEED7_LIBRARY=${TRUEPREFIX}/lib/seed7/lib
 MAKE_FILE =	makefile
 ALL_TARGET =	depend s7 s7c
 
@@ -36,7 +37,7 @@ WRKSRC =	${WRKDIST}/src
 
 post-patch:
 	perl -pi -e "s,-O2,${CFLAGS},g" ${WRKSRC}/makefile
-	perl -pi -e "s,/usr,${LOCALBASE},g" ${WRKDIST}/doc/s7{,c}.1
+	perl -pi -e "s,/usr,${TRUEPREFIX},g" ${WRKDIST}/doc/s7{,c}.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/bin/s7{,c} ${PREFIX}/bin
