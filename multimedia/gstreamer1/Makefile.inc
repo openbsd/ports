@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.8 2013/06/04 18:41:53 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2013/08/30 07:45:47 ajacoutot Exp $
 
 # Most frequent usage of the GStreamer packages:
 # core		base library
@@ -17,6 +17,10 @@
 
 SHARED_ONLY=		Yes
 
+V ?=			1.0.10
+VERSION=		${V:C/^([0-9]+\.[0-9]+).*/\1/}
+SUBST_VARS +=		VERSION
+
 CATEGORIES ?=		multimedia devel
 
 HOMEPAGE ?=		http://gstreamer.freedesktop.org/
@@ -29,9 +33,6 @@ GST_PKGNAME_PREFIX=	gstreamer1
 PERMIT_PACKAGE_CDROM ?=	Yes
 PERMIT_PACKAGE_FTP ?=	Yes
 PERMIT_DISTFILES_FTP ?=	Yes
-
-VERSION=		1.0
-SUBST_VARS +=		VERSION
 
 DIST_SUBDIR=		gstreamer
 MASTER_SITE_GST=	http://gstreamer.freedesktop.org/src/
