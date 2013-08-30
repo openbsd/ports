@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/07/13 06:49:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2013/08/30 07:46:55 ajacoutot Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # x11/xfce4/xfce4-mixer
@@ -6,7 +6,6 @@
 COMMENT-main=		good elements for GStreamer
 COMMENT-pulse=		pulseaudio(1) element for GStreamer
 
-V=			1.0.8
 DISTNAME=		gst-plugins-good-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-good-${V}
 
