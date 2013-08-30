@@ -1,0 +1,6 @@
+Seed7 is a high level, extensible, general purpose programming language.
+Included is a Seed7 interpreter as well as a Seed7 compiler, which
+translates Seed7 programs to C programs which are subsequently compiled
+to machine code.
+
+Also includes many example programs.

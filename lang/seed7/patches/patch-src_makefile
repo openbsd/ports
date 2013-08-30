@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_makefile,v 1.1.1.1 2013/08/30 21:41:09 bcallah Exp $
+--- src/makefile.orig	Thu Aug  8 13:18:09 2013
++++ src/makefile	Thu Aug  8 13:18:39 2013
+@@ -128,7 +128,7 @@ s7c: ../bin/s7c ../prg/s7c
+ 	ln -s ../bin/s7 ../prg
+ 
+ ../bin/s7c: ../prg/s7c
+-	cp -a ../prg/s7c ../bin
++	cp ../prg/s7c ../bin
+ 
+ ../prg/s7c: ../prg/s7c.sd7 $(ALL_S7_LIBS)
+ 	../bin/s7 -l ../lib ../prg/s7c -l ../lib -b ../bin -O2 ../prg/s7c
