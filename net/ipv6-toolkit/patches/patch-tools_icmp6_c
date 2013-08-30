@@ -1,0 +1,31 @@
+$OpenBSD: patch-tools_icmp6_c,v 1.1.1.1 2013/08/30 23:41:15 bluhm Exp $
+--- tools/icmp6.c.orig	Fri Aug 16 08:00:40 2013
++++ tools/icmp6.c	Wed Aug 28 01:22:04 2013
+@@ -30,6 +30,10 @@
+  * Please send any bug reports to Fernando Gont <fgont@si6networks.com>
+  */
+ 
++#include <sys/types.h>
++#include <sys/param.h>
++#include <sys/socket.h>
++
+ #include <errno.h>
+ #include <stdlib.h>
+ #include <stdio.h>
+@@ -39,8 +43,6 @@
+ #include <signal.h>
+ #include <string.h>
+ #include <pcap.h>
+-#include <sys/types.h>
+-#include <sys/param.h>
+ #include <setjmp.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+@@ -54,7 +56,6 @@
+ #elif defined (__FreeBSD__) || defined(__NetBSD__) || defined (__OpenBSD__) || defined(__APPLE__)
+ 	#include <net/if_dl.h>
+ #endif
+-#include <sys/socket.h>
+ #include "icmp6.h"
+ #include "ipv6toolkit.h"
+ #include <netinet/tcp.h>
