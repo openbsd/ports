@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2013/04/02 15:50:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2013/08/30 19:10:34 sthen Exp $
 
 COMMENT =	SSL/SSH multiplexer
 
-VERSION =	1.14
-REVISION =	0
+VERSION =	1.15
 DISTNAME =	sslh-${VERSION}
 CATEGORIES =	security net
 
