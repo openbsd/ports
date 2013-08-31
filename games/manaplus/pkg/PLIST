@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2013/08/18 05:19:30 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.12 2013/08/31 23:25:53 bcallah Exp $
 @conflict tmw-*
 @conflict tmw-music-*
 @pkgpath games/tmw
@@ -127,11 +127,17 @@ share/manaplus/data/graphics/gui/tab_highlighted.xml
 share/manaplus/data/graphics/gui/tab_selected.xml
 share/manaplus/data/graphics/gui/tab_unused.xml
 share/manaplus/data/graphics/gui/target-cursor-in-range-l.png
+share/manaplus/data/graphics/gui/target-cursor-in-range-l.xml
 share/manaplus/data/graphics/gui/target-cursor-in-range-m.png
+share/manaplus/data/graphics/gui/target-cursor-in-range-m.xml
 share/manaplus/data/graphics/gui/target-cursor-in-range-s.png
+share/manaplus/data/graphics/gui/target-cursor-in-range-s.xml
 share/manaplus/data/graphics/gui/target-cursor-normal-l.png
+share/manaplus/data/graphics/gui/target-cursor-normal-l.xml
 share/manaplus/data/graphics/gui/target-cursor-normal-m.png
+share/manaplus/data/graphics/gui/target-cursor-normal-m.xml
 share/manaplus/data/graphics/gui/target-cursor-normal-s.png
+share/manaplus/data/graphics/gui/target-cursor-normal-s.xml
 share/manaplus/data/graphics/gui/textfield.xml
 share/manaplus/data/graphics/gui/textpreview.xml
 share/manaplus/data/graphics/gui/unknown-item.png
