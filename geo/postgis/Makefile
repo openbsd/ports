@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2013/08/06 21:22:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2013/08/31 09:04:30 landry Exp $
 
 SHARED_ONLY=	Yes
 
-V =	2.0.3
+V =	2.1.0
 COMMENT=	geographic objects support for PostgreSQL
 DISTNAME=	postgis-${V}
 CATEGORIES=	geo databases
-REVISION=	0
 
 HOMEPAGE=	http://www.postgis.org/
 
@@ -19,7 +18,7 @@ MASTER_SITES=	http://download.osgeo.org/postgis/source/
 
 WANTLIB=	c geos_c m pq>=5.3 proj xml2 z
 WANTLIB +=	com_err crypto curl expat gdal geos geotiff gif idn
-WANTLIB +=	jasper jpeg json png pthread ssl stdc++ tiff
+WANTLIB +=	jasper jpeg json-c png pthread ssl stdc++ tiff
 WANTLIB +=	asn1 freexl heimbase krb5 pcre roken spatialite sqlite3 wind
 
 MODULES =	devel/gettext
@@ -50,13 +49,11 @@ post-install:
 	$(INSTALL_DATA) ${WRKSRC}/doc/html/images/* ${DOCDIR}/images/
 
 # the garden regress suite needs postgis installed
-# no the regular test suite
-# some tests are known to fail, hence the || to stop the db
 do-test:
 	regdir=$$(mktemp -t -d postgis-regress.XXXXXX) && \
 	LC_CTYPE=C initdb -D $${regdir} && \
 	LD_PRELOAD=libpthread.so pg_ctl -D $${regdir} -o '-p 12341' -l $${regdir}/log start && \
-	cd ${WRKSRC}/regress && PGPORT=12341 ${MAKE_PROGRAM} check || \
+	cd ${WRKSRC}/regress && PGPORT=12341 ${MAKE_PROGRAM} check && \
 	pg_ctl -D $${regdir} -o '-p 12341'  stop -m fast
 
 .include <bsd.port.mk>
