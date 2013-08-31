@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.813 2013/08/15 21:55:47 stsp Exp $
+# $OpenBSD: Makefile,v 1.814 2013/08/31 00:10:20 bluhm Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -154,6 +154,7 @@
      SUBDIR += ipfreely
      SUBDIR += iplog
      SUBDIR += ipsvd
+     SUBDIR += ipv6-toolkit
      SUBDIR += ipv6calc
      SUBDIR += irc
      SUBDIR += ircII
