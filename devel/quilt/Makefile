@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/06/04 07:59:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2013/08/31 17:22:16 kirby Exp $
 
-COMMENT=		quilt
+COMMENT=		manage large numbers of patches
 
 DISTNAME=		quilt-0.60
-REVISION=		0
+REVISION=		1
 CATEGORIES=		devel
 
 HOMEPAGE=		http://savannah.nongnu.org/projects/quilt/
