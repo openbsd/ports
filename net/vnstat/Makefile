@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:35:58 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/08/31 17:29:59 ajacoutot Exp $
 
 COMMENT =	network traffic monitor
 
 DISTNAME =	vnstat-1.11
-REVISION =	3
+REVISION =	4
 CATEGORIES =	net sysutils
 
 HOMEPAGE =	http://humdi.net/vnstat/
@@ -27,6 +27,9 @@ INSTALL_TARGET = bsdinstall
 
 MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+post-configure:
+	perl -pi -e 's,/var/lib,/var/db,g' ${WRKSRC}/man/*.1
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/vnstat.cgi ${PREFIX}/share/examples/vnstat/
