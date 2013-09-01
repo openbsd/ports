@@ -1,18 +1,24 @@
-$OpenBSD: patch-src_Toolbar_cc,v 1.1 2013/08/16 19:37:45 naddy Exp $
+$OpenBSD: patch-src_Toolbar_cc,v 1.2 2013/09/01 12:49:12 sthen Exp $
 
-Fix build failure when time_t is long long.
+64bit time_t fix.
 
---- src/Toolbar.cc.orig	Tue Apr 12 09:38:00 2005
-+++ src/Toolbar.cc	Fri Aug 16 21:33:33 2013
-@@ -43,8 +43,10 @@
- long nextTimeout(int resolution)
+--- src/Toolbar.cc.orig	Tue Apr 12 00:38:00 2005
++++ src/Toolbar.cc	Sat Aug 17 22:47:24 2013
+@@ -40,12 +40,14 @@
+ #include <assert.h>
+ 
+ 
+-long nextTimeout(int resolution)
++time_t nextTimeout(int resolution)
  {
    timeval now;
-+  int secs;
    gettimeofday(&now, 0);
 -  return (std::max(1000l, ((((resolution - (now.tv_sec % resolution)) * 1000l))
-+  secs = now.tv_sec % resolution;
-+  return (std::max(1000l, ((((resolution - secs) * 1000l))
-                            - (now.tv_usec / 1000l))));
+-                           - (now.tv_usec / 1000l))));
++  time_t	t;
++  t = (resolution - (now.tv_sec % resolution)) * 1000l;
++  t -= now.tv_usec / 1000l;
++  return std::max(t, (time_t)1000);
  }
+ 
  

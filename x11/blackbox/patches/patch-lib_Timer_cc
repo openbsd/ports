@@ -1,0 +1,25 @@
+$OpenBSD: patch-lib_Timer_cc,v 1.1 2013/09/01 12:49:11 sthen Exp $
+
+64bit time_t fix.
+
+--- lib/Timer.cc.orig	Fri Mar 18 01:07:09 2005
++++ lib/Timer.cc	Sat Aug 17 22:43:13 2013
+@@ -28,8 +28,7 @@
+ 
+ 
+ bt::timeval::timeval(const ::timeval &t)
+-  : tv_sec(t.tv_sec), tv_usec(t.tv_usec)
+-{ }
++{ tv_sec = t.tv_sec; tv_usec = t.tv_usec; }
+ 
+ 
+ bool bt::timeval::operator<(const timeval &tv)
+@@ -105,7 +104,7 @@ void bt::Timer::adjustStartTime(const timeval &offset)
+ { _start += offset; }
+ 
+ 
+-void bt::Timer::setTimeout(long t) {
++void bt::Timer::setTimeout(time_t t) {
+   _timeout.tv_sec = t / 1000;
+   _timeout.tv_usec = t % 1000;
+   _timeout.tv_usec *= 1000;

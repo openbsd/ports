@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_blackbox_cc,v 1.3 2013/09/01 12:49:13 sthen Exp $
+
+Fix for warning: deprecated conversion from string constant to 'char*'
+
+--- src/blackbox.cc.orig	Tue Oct 18 04:33:25 2005
++++ src/blackbox.cc	Fri Aug 30 14:17:31 2013
+@@ -75,7 +75,7 @@ void Blackbox::reload_rc(void) {
+ 
+ 
+ void Blackbox::init_icccm(void) {
+-  char* atoms[7] = {
++  const char* atoms[7] = {
+     "WM_COLORMAP_WINDOWS",
+     "WM_PROTOCOLS",
+     "WM_STATE",
+@@ -85,7 +85,7 @@ void Blackbox::init_icccm(void) {
+     "_MOTIF_WM_HINTS"
+   };
+   Atom atoms_return[7];
+-  XInternAtoms(XDisplay(), atoms, 7, false, atoms_return);
++  XInternAtoms(XDisplay(), (char **)atoms, 7, false, atoms_return);
+   xa_wm_colormap_windows = atoms_return[0];
+   xa_wm_protocols = atoms_return[1];
+   xa_wm_state = atoms_return[2];

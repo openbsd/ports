@@ -1,0 +1,36 @@
+$OpenBSD: patch-lib_Timer_hh,v 1.1 2013/09/01 12:49:11 sthen Exp $
+
+64bit time_t fix.
+
+--- lib/Timer.hh.orig	Fri Mar 18 01:07:09 2005
++++ lib/Timer.hh	Sat Aug 17 22:43:03 2013
+@@ -37,16 +37,12 @@ struct timeval;
+ namespace bt {
+ 
+   // use a wrapper class to avoid the header as well
+-  struct timeval {
+-    long tv_sec;
+-    long tv_usec;
++  struct timeval : public ::timeval {
+ 
+     inline timeval(void)
+-      : tv_sec(0l), tv_usec(0l)
+-    { }
+-    inline timeval(long s, long u)
+-      : tv_sec(s), tv_usec(u)
+-    { }
++    { tv_sec = 0; tv_usec = 0; }
++    inline timeval(time_t s, long u)
++    { tv_sec = s; tv_usec = u; }
+ 
+     bool operator<(const timeval &);
+     timeval operator+(const timeval &);
+@@ -106,7 +102,7 @@ namespace bt {
+     inline void recurring(bool b)
+     { recur = b; }
+ 
+-    void setTimeout(long t);
++    void setTimeout(time_t t);
+     void setTimeout(const timeval &t);
+ 
+     void start(void);  // manager acquires timer

@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_Resource_hh,v 1.1 2013/09/01 12:49:10 sthen Exp $
+
+64bit time_t fix.
+
+--- lib/Resource.hh.orig	Mon Jan  3 01:42:52 2005
++++ lib/Resource.hh	Sat Aug 17 22:25:59 2013
+@@ -78,6 +78,7 @@ namespace bt {
+     void write(const char* resource, unsigned int value);
+     void write(const char* resource, long value);
+     void write(const char* resource, unsigned long value);
++    void write(const char* resource, unsigned long long value);
+     void write(const char* resource, bool value);
+     void write(const char* resource, double value);
+ 

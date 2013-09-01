@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_ScreenResource_cc,v 1.1 2013/09/01 12:49:12 sthen Exp $
+
+Fix for warning: deprecated conversion from string constant to 'char*'
+
+--- src/ScreenResource.cc.orig	Tue Apr 12 22:54:08 2005
++++ src/ScreenResource.cc	Fri Aug 30 14:12:43 2013
+@@ -61,7 +61,7 @@ static const unsigned char close_bits[] =
+ 
+ void ScreenResource::save(bt::Resource& res, BScreen* screen) {
+   char rc_string[128];
+-  char *placement = (char *) 0;
++  const char *placement = NULL;
+   unsigned int number = screen->screenNumber();
+ 
+   switch (_slitOptions.placement) {
