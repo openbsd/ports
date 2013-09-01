@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/04/25 16:40:11 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/09/01 13:04:10 sebastia Exp $
 bin/Calculator
 bin/CurrencyConverter
 bin/Finger
@@ -30,6 +30,37 @@ lib/GNUstep/ApplicationSupport/GSTest/GSHbox-test.bundle/
 lib/GNUstep/ApplicationSupport/GSTest/GSHbox-test.bundle/Resources/
 lib/GNUstep/ApplicationSupport/GSTest/GSHbox-test.bundle/Resources/Info-gnustep.plist
 lib/GNUstep/ApplicationSupport/GSTest/GSHbox-test.bundle/stamp.make
+lib/GNUstep/ApplicationSupport/GSTest/Image-test.bundle/
+@bin lib/GNUstep/ApplicationSupport/GSTest/Image-test.bundle/Image-test
+lib/GNUstep/ApplicationSupport/GSTest/Image-test.bundle/Resources/
+lib/GNUstep/ApplicationSupport/GSTest/Image-test.bundle/Resources/1.png
+lib/GNUstep/ApplicationSupport/GSTest/Image-test.bundle/Resources/138x92dpi.tiff
+lib/GNUstep/ApplicationSupport/GSTest/Image-test.bundle/Resources/2.png
+lib/GNUstep/ApplicationSupport/GSTest/Image-test.bundle/Resources/3.png
+lib/GNUstep/ApplicationSupport/GSTest/Image-test.bundle/Resources/4.png
+lib/GNUstep/ApplicationSupport/GSTest/Image-test.bundle/Resources/5.png
+lib/GNUstep/ApplicationSupport/GSTest/Image-test.bundle/Resources/6.png
+lib/GNUstep/ApplicationSupport/GSTest/Image-test.bundle/Resources/7.png
+lib/GNUstep/ApplicationSupport/GSTest/Image-test.bundle/Resources/8.png
+lib/GNUstep/ApplicationSupport/GSTest/Image-test.bundle/Resources/9.png
+lib/GNUstep/ApplicationSupport/GSTest/Image-test.bundle/Resources/92x92dpi.tiff
+lib/GNUstep/ApplicationSupport/GSTest/Image-test.bundle/Resources/Info-gnustep.plist
+lib/GNUstep/ApplicationSupport/GSTest/Image-test.bundle/Resources/fourcorners.png
+lib/GNUstep/ApplicationSupport/GSTest/Image-test.bundle/Resources/gs.png
+lib/GNUstep/ApplicationSupport/GSTest/Image-test.bundle/Resources/pdfexample.pdf
+lib/GNUstep/ApplicationSupport/GSTest/Image-test.bundle/Resources/plasma.png
+lib/GNUstep/ApplicationSupport/GSTest/Image-test.bundle/Resources/svgexample.svg
+lib/GNUstep/ApplicationSupport/GSTest/Image-test.bundle/Resources/testTIFFIconWithAllImages72DPI.tiff
+lib/GNUstep/ApplicationSupport/GSTest/Image-test.bundle/stamp.make
+lib/GNUstep/ApplicationSupport/GSTest/ImageSelection-test.bundle/
+@bin lib/GNUstep/ApplicationSupport/GSTest/ImageSelection-test.bundle/ImageSelection-test
+lib/GNUstep/ApplicationSupport/GSTest/ImageSelection-test.bundle/Resources/
+lib/GNUstep/ApplicationSupport/GSTest/ImageSelection-test.bundle/Resources/Info-gnustep.plist
+lib/GNUstep/ApplicationSupport/GSTest/ImageSelection-test.bundle/Resources/test72DPIAnd288DPI.tiff
+lib/GNUstep/ApplicationSupport/GSTest/ImageSelection-test.bundle/Resources/testICNSIcon.icns
+lib/GNUstep/ApplicationSupport/GSTest/ImageSelection-test.bundle/Resources/testTIFFIconWithAllImages72DPI.tiff
+lib/GNUstep/ApplicationSupport/GSTest/ImageSelection-test.bundle/Resources/testTIFFIconWithAllImages72DPIDescendingSize.tiff
+lib/GNUstep/ApplicationSupport/GSTest/ImageSelection-test.bundle/stamp.make
 lib/GNUstep/ApplicationSupport/GSTest/KeyboardInput-test.bundle/
 @bin lib/GNUstep/ApplicationSupport/GSTest/KeyboardInput-test.bundle/KeyboardInput-test
 lib/GNUstep/ApplicationSupport/GSTest/KeyboardInput-test.bundle/Resources/
@@ -75,6 +106,11 @@ lib/GNUstep/ApplicationSupport/GSTest/NSOutlineView-test.bundle/
 lib/GNUstep/ApplicationSupport/GSTest/NSOutlineView-test.bundle/Resources/
 lib/GNUstep/ApplicationSupport/GSTest/NSOutlineView-test.bundle/Resources/Info-gnustep.plist
 lib/GNUstep/ApplicationSupport/GSTest/NSOutlineView-test.bundle/stamp.make
+lib/GNUstep/ApplicationSupport/GSTest/NSProgressIndicator-test.bundle/
+@bin lib/GNUstep/ApplicationSupport/GSTest/NSProgressIndicator-test.bundle/NSProgressIndicator-test
+lib/GNUstep/ApplicationSupport/GSTest/NSProgressIndicator-test.bundle/Resources/
+lib/GNUstep/ApplicationSupport/GSTest/NSProgressIndicator-test.bundle/Resources/Info-gnustep.plist
+lib/GNUstep/ApplicationSupport/GSTest/NSProgressIndicator-test.bundle/stamp.make
 lib/GNUstep/ApplicationSupport/GSTest/NSSavePanel-test.bundle/
 @bin lib/GNUstep/ApplicationSupport/GSTest/NSSavePanel-test.bundle/NSSavePanel-test
 lib/GNUstep/ApplicationSupport/GSTest/NSSavePanel-test.bundle/Resources/
@@ -115,16 +151,38 @@ lib/GNUstep/ApplicationSupport/GSTest/NSViewAnimation-test.bundle/
 lib/GNUstep/ApplicationSupport/GSTest/NSViewAnimation-test.bundle/Resources/
 lib/GNUstep/ApplicationSupport/GSTest/NSViewAnimation-test.bundle/Resources/Info-gnustep.plist
 lib/GNUstep/ApplicationSupport/GSTest/NSViewAnimation-test.bundle/stamp.make
+lib/GNUstep/ApplicationSupport/GSTest/NSWindow-test.bundle/
+@bin lib/GNUstep/ApplicationSupport/GSTest/NSWindow-test.bundle/NSWindow-test
+lib/GNUstep/ApplicationSupport/GSTest/NSWindow-test.bundle/Resources/
+lib/GNUstep/ApplicationSupport/GSTest/NSWindow-test.bundle/Resources/Info-gnustep.plist
+lib/GNUstep/ApplicationSupport/GSTest/NSWindow-test.bundle/stamp.make
 lib/GNUstep/ApplicationSupport/GSTest/NSWindowStyleMask-test.bundle/
 @bin lib/GNUstep/ApplicationSupport/GSTest/NSWindowStyleMask-test.bundle/NSWindowStyleMask-test
 lib/GNUstep/ApplicationSupport/GSTest/NSWindowStyleMask-test.bundle/Resources/
 lib/GNUstep/ApplicationSupport/GSTest/NSWindowStyleMask-test.bundle/Resources/Info-gnustep.plist
 lib/GNUstep/ApplicationSupport/GSTest/NSWindowStyleMask-test.bundle/stamp.make
+lib/GNUstep/ApplicationSupport/GSTest/PixelExactDrawing-test.bundle/
+@bin lib/GNUstep/ApplicationSupport/GSTest/PixelExactDrawing-test.bundle/PixelExactDrawing-test
+lib/GNUstep/ApplicationSupport/GSTest/PixelExactDrawing-test.bundle/Resources/
+lib/GNUstep/ApplicationSupport/GSTest/PixelExactDrawing-test.bundle/Resources/Info-gnustep.plist
+lib/GNUstep/ApplicationSupport/GSTest/PixelExactDrawing-test.bundle/Resources/pixelExact1.tiff
+lib/GNUstep/ApplicationSupport/GSTest/PixelExactDrawing-test.bundle/Resources/pixelExact2.tiff
+lib/GNUstep/ApplicationSupport/GSTest/PixelExactDrawing-test.bundle/stamp.make
 lib/GNUstep/ApplicationSupport/GSTest/StringDrawing-test.bundle/
 lib/GNUstep/ApplicationSupport/GSTest/StringDrawing-test.bundle/Resources/
 lib/GNUstep/ApplicationSupport/GSTest/StringDrawing-test.bundle/Resources/Info-gnustep.plist
 @bin lib/GNUstep/ApplicationSupport/GSTest/StringDrawing-test.bundle/StringDrawing-test
 lib/GNUstep/ApplicationSupport/GSTest/StringDrawing-test.bundle/stamp.make
+lib/GNUstep/ApplicationSupport/GSTest/TextSystem-test.bundle/
+lib/GNUstep/ApplicationSupport/GSTest/TextSystem-test.bundle/Resources/
+lib/GNUstep/ApplicationSupport/GSTest/TextSystem-test.bundle/Resources/Info-gnustep.plist
+@bin lib/GNUstep/ApplicationSupport/GSTest/TextSystem-test.bundle/TextSystem-test
+lib/GNUstep/ApplicationSupport/GSTest/TextSystem-test.bundle/stamp.make
+lib/GNUstep/ApplicationSupport/GSTest/Transparency-test.bundle/
+lib/GNUstep/ApplicationSupport/GSTest/Transparency-test.bundle/Resources/
+lib/GNUstep/ApplicationSupport/GSTest/Transparency-test.bundle/Resources/Info-gnustep.plist
+@bin lib/GNUstep/ApplicationSupport/GSTest/Transparency-test.bundle/Transparency-test
+lib/GNUstep/ApplicationSupport/GSTest/Transparency-test.bundle/stamp.make
 lib/GNUstep/Services/example.service/
 lib/GNUstep/Services/example.service/Resources/
 lib/GNUstep/Services/example.service/Resources/Info-gnustep.plist

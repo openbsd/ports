@@ -1,12 +1,12 @@
-$OpenBSD: patch-gui_MyGL_AppController_m,v 1.5 2013/08/07 19:17:01 naddy Exp $
---- gui/MyGL/AppController.m.orig	Thu Apr 15 01:01:19 2010
-+++ gui/MyGL/AppController.m	Wed Aug  7 20:35:43 2013
-@@ -410,7 +410,7 @@ static void Normalize (Vector *v)
+$OpenBSD: patch-gui_MyGL_AppController_m,v 1.6 2013/09/01 13:04:09 sebastia Exp $
+--- gui/MyGL/AppController.m.orig	Thu May 19 09:45:25 2011
++++ gui/MyGL/AppController.m	Sun Sep  1 14:40:57 2013
+@@ -413,7 +413,7 @@ static void Normalize (Vector *v)
  
- 	h = [MySAX new];
- 	p = [GSXMLParser parserWithSAXHandler:h
--					   withContentsOfFile:@"girl.dae"];
-+					   withContentsOfFile:@"!!PREFIX!!/libexec/GNUstep/MyGL.app/Resources/girl.dae"];
- 	if ([p parse])
- 	{
- 		[meshArray addObject:[h currentMesh]];
+   h = [MySAX new];
+   p = [GSXMLParser parserWithSAXHandler:h
+-             withContentsOfFile:@"girl.dae"];
++	     withContentsOfFile:@"${LOCALBASE}/libexec/GNUstep/MyGL.app/Resources/girl.dae"];
+   if ([p parse])
+   {
+     [meshArray addObject:[h currentMesh]];

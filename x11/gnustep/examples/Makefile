@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2013/04/25 16:40:11 sebastia Exp $
+# $OpenBSD: Makefile,v 1.21 2013/09/01 13:04:09 sebastia Exp $
 
 COMMENT=	GNUstep example applications
 
-DISTNAME=	gnustep-examples-1.3.0
-REVISION =	8
+DISTNAME=	gnustep-examples-1.4.0
 
 CATEGORIES=	misc
 
@@ -11,14 +10,12 @@ HOMEPAGE=	http://www.gnustep.org/experience/examples.html
 
 WANTLIB=	GL GLU c m pthread
 
-MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
+MASTER_SITES=	${MASTER_SITE_GNUSTEP:=usr-apps/}
 
 MODULES=	x11/gnustep
 
 pre-configure:
-	@perl -pi -e 's,!!X11BASE!!,${X11BASE},g' \
-		${WRKSRC}/gui/MyGL/GNUmakefile
-	@perl -pi -e 's,!!PREFIX!!,${PREFIX},g' \
-		${WRKSRC}/gui/MyGL/AppController.m
+	${SUBST_CMD} ${WRKSRC}/gui/MyGL/GNUmakefile \
+			${WRKSRC}/gui/MyGL/AppController.m
 
 .include <bsd.port.mk>

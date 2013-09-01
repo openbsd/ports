@@ -1,4 +1,4 @@
-$OpenBSD: patch-gui_MyGL_GNUmakefile,v 1.4 2012/07/08 14:15:11 sebastia Exp $
+$OpenBSD: patch-gui_MyGL_GNUmakefile,v 1.5 2013/09/01 13:04:09 sebastia Exp $
 --- gui/MyGL/GNUmakefile.orig	Sat Mar 13 02:20:22 2010
 +++ gui/MyGL/GNUmakefile	Mon Jul  2 19:26:06 2012
 @@ -7,13 +7,14 @@ MyGL_MAIN_MODEL_FILE=MyGL.gorm
@@ -13,8 +13,8 @@ $OpenBSD: patch-gui_MyGL_GNUmakefile,v 1.4 2012/07/08 14:15:11 sebastia Exp $
  ADDITIONAL_TOOL_LIBS += -lopengl32 -lglu32 -lm
  else
 -ADDITIONAL_TOOL_LIBS += -lGL -lGLU -lm
-+ADDITIONAL_TOOL_LIBS += -L!!X11BASE!!/lib -lGL -lGLU -lm
-+ADDITIONAL_INCLUDE_DIRS += -I!!X11BASE!!/include
++ADDITIONAL_TOOL_LIBS += -L${X11BASE}/lib -lGL -lGLU -lm
++ADDITIONAL_INCLUDE_DIRS += -I${X11BASE}/include
  endif
  
  include $(GNUSTEP_MAKEFILES)/application.make
