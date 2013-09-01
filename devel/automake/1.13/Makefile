@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:01 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/09/01 16:59:10 brad Exp $
 
 VERSION=	1.13
-DISTNAME=	automake-${VERSION}.1
+DISTNAME=	automake-${VERSION}.4
 PKGSPEC=	automake->=${VERSION},<1.14
 EXTRACT_SUFX=	.tar.xz
 
