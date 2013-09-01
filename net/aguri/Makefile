@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:35:45 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/09/01 17:16:46 rpe Exp $
 COMMENT=		aggregation-based network traffic profiler
 
 DISTNAME=		aguri-0.7
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c pcap
 
-MASTER_SITES=		ftp://ftp.csl.sony.co.jp/pub/kjc/
+MASTER_SITES=		http://ftp.sunet.se/pub/network/monitoring/kjc/
 
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}"
 USE_GROFF =		Yes
