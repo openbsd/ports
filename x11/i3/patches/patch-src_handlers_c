@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_handlers_c,v 1.13 2013/08/13 10:01:57 dcoppa Exp $
+$OpenBSD: patch-src_handlers_c,v 1.14 2013/09/02 06:15:34 dcoppa Exp $
 
 commit 0b168ee499e6065969ddd3359f95dfdf7e14350c
 Author: Kacper Kowalik (Xarthisius) <xarthisius@gentoo.org>
@@ -6,8 +6,14 @@ Date:   Thu Aug 8 20:48:21 2013 +0200
 
 Include float.h for DBL_EPSILON
 
---- src/handlers.c.orig	Mon Aug 12 15:42:17 2013
-+++ src/handlers.c	Mon Aug 12 15:42:38 2013
+commit 93463bc3932e820bc86383fc4de1a07c82356967
+Author: Michael Stapelberg <michael@stapelberg.de>
+Date:   Fri Aug 30 19:59:57 2013 +0200
+
+Bugfix: update root geometry on output changes for "fullscreen global"
+
+--- src/handlers.c.orig	Wed Aug  7 20:50:24 2013
++++ src/handlers.c	Mon Sep  2 07:46:48 2013
 @@ -13,6 +13,7 @@
  #include "all.h"
  
@@ -16,3 +22,23 @@ Include float.h for DBL_EPSILON
  #include <sys/time.h>
  #include <xcb/randr.h>
  #include <X11/XKBlib.h>
+@@ -421,6 +422,19 @@ int handle_configure_event(void *prophs, xcb_connectio
+  */
+ static void handle_screen_change(xcb_generic_event_t *e) {
+     DLOG("RandR screen change\n");
++
++    /* The geometry of the root window is used for "fullscreen global" and
++     * changes when new outputs are added. */
++    xcb_get_geometry_cookie_t cookie = xcb_get_geometry(conn, root);
++    xcb_get_geometry_reply_t *reply = xcb_get_geometry_reply(conn, cookie, NULL);
++    if (reply == NULL) {
++        ELOG("Could not get geometry of the root window, exiting\n");
++        exit(1);
++    }
++    DLOG("root geometry reply: (%d, %d) %d x %d\n", reply->x, reply->y, reply->width, reply->height);
++
++    croot->rect.width = reply->width;
++    croot->rect.height = reply->height;
+ 
+     randr_query_outputs();
+ 

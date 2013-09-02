@@ -1,0 +1,79 @@
+$OpenBSD: patch-src_render_c,v 1.5 2013/09/02 06:15:34 dcoppa Exp $
+
+commit 103ab83131d30614ea9337e752548a834773bfc6
+Author: Michael Stapelberg <michael@stapelberg.de>
+Date:   Tue Aug 27 20:21:11 2013 +0200
+
+Revert "raise fullscreen windows on top of all other X11 windows"
+
+This reverts commit 0659a0d98ca98fcd134c277c6a61ca3c9a04544e.
+
+It was a fix for dzen2 setups, but broke several other use cases.
+Because dzen2 is not really important since most people use i3bar
+nowadays, let's revert this.
+
+--- src/render.c.orig	Wed Aug  7 20:50:24 2013
++++ src/render.c	Mon Sep  2 07:42:58 2013
+@@ -70,7 +70,7 @@ static void render_l_output(Con *con) {
+     Con *fullscreen = con_get_fullscreen_con(ws, CF_OUTPUT);
+     if (fullscreen) {
+         fullscreen->rect = con->rect;
+-        x_raise_con(fullscreen, true);
++        x_raise_con(fullscreen);
+         render_con(fullscreen, true);
+         return;
+     }
+@@ -110,7 +110,7 @@ static void render_l_output(Con *con) {
+ 
+         DLOG("child at (%d, %d) with (%d x %d)\n",
+                 child->rect.x, child->rect.y, child->rect.width, child->rect.height);
+-        x_raise_con(child, false);
++        x_raise_con(child);
+         render_con(child, false);
+     }
+ }
+@@ -208,7 +208,7 @@ void render_con(Con *con, bool render_fullscreen) {
+     }
+     if (fullscreen) {
+         fullscreen->rect = rect;
+-        x_raise_con(fullscreen, false);
++        x_raise_con(fullscreen);
+         render_con(fullscreen, true);
+         return;
+     }
+@@ -299,7 +299,7 @@ void render_con(Con *con, bool render_fullscreen) {
+                 }
+                 DLOG("floating child at (%d,%d) with %d x %d\n",
+                      child->rect.x, child->rect.y, child->rect.width, child->rect.height);
+-                x_raise_con(child, false);
++                x_raise_con(child);
+                 render_con(child, false);
+             }
+         }
+@@ -408,7 +408,7 @@ void render_con(Con *con, bool render_fullscreen) {
+ 
+         DLOG("child at (%d, %d) with (%d x %d)\n",
+                 child->rect.x, child->rect.y, child->rect.width, child->rect.height);
+-        x_raise_con(child, false);
++        x_raise_con(child);
+         render_con(child, false);
+         i++;
+     }
+@@ -416,7 +416,7 @@ void render_con(Con *con, bool render_fullscreen) {
+     /* in a stacking or tabbed container, we ensure the focused client is raised */
+     if (con->layout == L_STACKED || con->layout == L_TABBED) {
+         TAILQ_FOREACH_REVERSE(child, &(con->focus_head), focus_head, focused)
+-            x_raise_con(child, false);
++            x_raise_con(child);
+         if ((child = TAILQ_FIRST(&(con->focus_head)))) {
+             /* By rendering the stacked container again, we handle the case
+              * that we have a non-leaf-container inside the stack. In that
+@@ -430,7 +430,7 @@ void render_con(Con *con, bool render_fullscreen) {
+              * top of every stack window. That way, when a new window is opened in
+              * the stack, the old window will not obscure part of the decoration
+              * (it’s unmapped afterwards). */
+-            x_raise_con(con, false);
++            x_raise_con(con);
+     }
+     }
+ }
