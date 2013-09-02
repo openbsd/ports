@@ -1,22 +1,33 @@
-$OpenBSD: patch-libgnome-desktop_gnome-languages_c,v 1.3 2013/08/28 09:45:12 ajacoutot Exp $
+$OpenBSD: patch-libgnome-desktop_gnome-languages_c,v 1.4 2013/09/02 16:04:20 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=698383
 
 --- libgnome-desktop/gnome-languages.c.orig	Sun Mar 17 02:49:53 2013
-+++ libgnome-desktop/gnome-languages.c	Wed Aug 28 10:48:56 2013
-@@ -310,11 +310,7 @@ language_name_is_valid (const char *language_name)
++++ libgnome-desktop/gnome-languages.c	Mon Sep  2 17:48:15 2013
+@@ -44,10 +44,7 @@
+ #ifndef __LC_LAST
+ #define __LC_LAST       13
+ #endif
+-#include "locarchive.h"
+ 
+-#define ARCHIVE_FILE LIBLOCALEDIR "/locale-archive"
+-#define SYSTEM_ARCHIVE_FILE "/usr/lib/locale/locale-archive"
+ #define ISO_CODES_DATADIR ISO_CODES_PREFIX "/share/xml/iso-codes"
+ #define ISO_CODES_LOCALESDIR ISO_CODES_PREFIX "/share/locale"
+ 
+@@ -310,11 +307,7 @@ language_name_is_valid (const char *language_name)
  {
          char     *old_locale;
          gboolean  is_valid;
 -#ifdef WITH_INCOMPLETE_LOCALES
-         int lc_type_id = LC_CTYPE;
+-        int lc_type_id = LC_CTYPE;
 -#else
--        int lc_type_id = LC_MESSAGES;
+         int lc_type_id = LC_MESSAGES;
 -#endif
  
          old_locale = g_strdup (setlocale (lc_type_id, NULL));
          is_valid = setlocale (lc_type_id, language_name) != NULL;
-@@ -445,22 +441,11 @@ add_locale (const char *language_name,
+@@ -445,22 +438,11 @@ add_locale (const char *language_name,
          g_free (name);
          name = NULL;
  
@@ -39,7 +50,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=698383
          if (!gnome_language_has_translations (locale->name) &&
              !gnome_language_has_translations (locale->id) &&
              !gnome_language_has_translations (locale->language_code) &&
-@@ -469,7 +454,6 @@ add_locale (const char *language_name,
+@@ -469,7 +451,6 @@ add_locale (const char *language_name,
                  gnome_locale_free (locale);
                  return FALSE;
          }
@@ -47,7 +58,99 @@ https://bugzilla.gnome.org/show_bug.cgi?id=698383
  
          if (!utf8_only) {
                  g_free (locale->id);
-@@ -631,6 +615,40 @@ collect_locales_from_directory (void)
+@@ -495,91 +476,6 @@ struct nameent
+         uint32_t locrec_offset;
+ };
+ 
+-static gboolean
+-mapped_file_new_allow_noent (const char   *path,
+-                             GMappedFile **out_mfile,
+-                             GError      **error)
+-{
+-        gboolean ret = FALSE;
+-        GError *tmp_error = NULL;
+-        GMappedFile *mfile = NULL;
+-
+-        mfile = g_mapped_file_new (path, FALSE, &tmp_error);
+-        if (mfile == NULL) {
+-                if (!g_error_matches (tmp_error, G_FILE_ERROR, G_FILE_ERROR_NOENT)) {
+-                        g_propagate_error (error, tmp_error);
+-                        goto out;
+-                }
+-                g_clear_error (&tmp_error);
+-        }
+-
+-        ret = TRUE;
+- out:
+-        *out_mfile = mfile;
+-        return ret;
+-}
+-
+-static gboolean
+-collect_locales_from_archive (gboolean  *out_found_locales,
+-                              GError   **error)
+-{
+-        gboolean            ret = FALSE;
+-        GMappedFile        *mapped;
+-        char               *addr;
+-        struct locarhead   *head;
+-        struct namehashent *namehashtab;
+-        struct nameent     *names = NULL;
+-        uint32_t            used;
+-        uint32_t            cnt;
+-        gsize               len;
+-        gboolean            locales_collected = FALSE;
+-
+-        if (!mapped_file_new_allow_noent (ARCHIVE_FILE, &mapped, error))
+-                goto out;
+-        if (!mapped) {
+-                if (!mapped_file_new_allow_noent (SYSTEM_ARCHIVE_FILE, &mapped, error))
+-                        goto out;
+-        }
+-        if (!mapped) {
+-                goto out_success;
+-        }
+-
+-        addr = g_mapped_file_get_contents (mapped);
+-        len = g_mapped_file_get_length (mapped);
+-
+-        head = (struct locarhead *) addr;
+-        if (head->namehash_offset + head->namehash_size > len
+-            || head->string_offset + head->string_size > len
+-            || head->locrectab_offset + head->locrectab_size > len
+-            || head->sumhash_offset + head->sumhash_size > len) {
+-                goto out;
+-        }
+-
+-        namehashtab = (struct namehashent *) (addr + head->namehash_offset);
+-
+-        names = (struct nameent *) g_new0 (struct nameent, head->namehash_used);
+-        for (cnt = used = 0; cnt < head->namehash_size; ++cnt) {
+-                if (namehashtab[cnt].locrec_offset != 0) {
+-                        names[used].name = addr + namehashtab[cnt].name_offset;
+-                        names[used++].locrec_offset = namehashtab[cnt].locrec_offset;
+-                }
+-        }
+-
+-        for (cnt = 0; cnt < used; ++cnt) {
+-                if (add_locale (names[cnt].name, TRUE))
+-                        locales_collected = TRUE;
+-        }
+-
+-
+- out_success:
+-        ret = TRUE;
+-        *out_found_locales = locales_collected;
+- out:
+-        g_free (names);
+-        g_clear_pointer (&mapped, g_mapped_file_unref);
+-        return ret;
+-}
+-
+ static int
+ select_dirs (const struct dirent *dirent)
+ {
+@@ -631,6 +527,37 @@ collect_locales_from_directory (void)
          return found_locales;
  }
  
@@ -55,32 +158,29 @@ https://bugzilla.gnome.org/show_bug.cgi?id=698383
 +collect_locales_from_localebin (void)
 +{
 +        gboolean found_locales = FALSE;
-+        FILE *p;
-+        char *buf, *lbuf;
-+        size_t len;
++        gchar    *argv[] = { "locale", "-a", NULL };
++        gchar    *output;
++        gchar    **lines, **linep;
 +
-+        p = popen("locale -a", "r");
++        if (g_spawn_sync (NULL, argv, NULL,
++                          G_SPAWN_SEARCH_PATH|G_SPAWN_STDERR_TO_DEV_NULL,
++                          NULL, NULL, &output, NULL, NULL, NULL) == FALSE)
++                return FALSE;
 +
-+        lbuf = NULL;
-+        while ((buf = fgetln(p, &len))) {
-+                if (buf[len - 1] == '\n') {
-+                        buf[len - 1] = '\0';
-+                        if (add_locale (buf, TRUE))
++        g_return_val_if_fail (output != NULL, FALSE);
++
++        lines = g_strsplit (output, "\n", 0);
++        if (lines) {
++                linep = lines;
++                while (*linep) {
++                        if (*linep[0] && add_locale (*linep, TRUE))
 +                                found_locales = TRUE;
-+                } else {
-+                        /* EOF without EOL, copy and add the NUL */
-+                        lbuf = malloc(len + 1);
-+                        if (lbuf == NULL)
-+                                break;
-+                        memcpy(lbuf, buf, len);
-+                        lbuf[len] = '\0';
-+                        if (add_locale (lbuf, TRUE))
-+                                found_locales = TRUE;
-+                        free(lbuf);
++                        linep++;
 +                }
++                g_strfreev(lines);
 +        }
 +
-+        pclose(p);
++        g_free(output);
 +
 +        return found_locales;
 +}
@@ -88,23 +188,31 @@ https://bugzilla.gnome.org/show_bug.cgi?id=698383
  static void
  count_languages_and_territories (void)
  {
-@@ -669,6 +687,7 @@ collect_locales (void)
+@@ -667,28 +594,21 @@ count_languages_and_territories (void)
+ static void
+ collect_locales (void)
  {
-         gboolean found_archive_locales = FALSE;
-         gboolean found_dir_locales = FALSE;
+-        gboolean found_archive_locales = FALSE;
 +        gboolean found_localebin_locales = FALSE;
-         GError *error = NULL;
+         gboolean found_dir_locales = FALSE;
+-        GError *error = NULL;
  
          if (gnome_available_locales_map == NULL) {
-@@ -683,12 +702,12 @@ collect_locales (void)
+                 gnome_available_locales_map = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, (GDestroyNotify) gnome_locale_free);
+         }
  
++        found_localebin_locales = collect_locales_from_localebin ();
+ 
+-        if (!collect_locales_from_archive (&found_archive_locales, &error)) {
+-                g_warning ("Failed to load locales from archive: %s", error->message);
+-                g_clear_error (&error);
+-        }
+-
          found_dir_locales = collect_locales_from_directory ();
  
 -        if (!(found_archive_locales || found_dir_locales)) {
 -#ifndef WITH_INCOMPLETE_LOCALES
-+        found_localebin_locales = collect_locales_from_localebin ();
-+
-+        if (!(found_archive_locales || found_dir_locales || found_localebin_locales)) {
++        if (!(found_localebin_locales || found_dir_locales)) {
                  g_warning ("Could not read list of available locales from libc, "
                             "guessing possible locales from available translations, "
                             "but list may be incomplete!");
