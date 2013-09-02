@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.210 2013/08/13 00:29:58 brad Exp $
+# $OpenBSD: Makefile,v 1.211 2013/09/02 16:02:00 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,6 +19,8 @@ PKGNAME-mysql=	dovecot-mysql-${V_DOVECOT}
 PKGNAME-postgresql= dovecot-postgresql-${V_DOVECOT}
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}releases/${V_MAJOR}/
+
+REVISION-server=	0
 
 SHARED_LIBS=	dovecot-compression 0.0 \
 		dovecot-lda	2.0 \
