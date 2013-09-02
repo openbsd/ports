@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_ui_c,v 1.13 2013/09/02 11:58:40 dcoppa Exp $
+
+Increase buffer size to fix display of song lists with more than
+999 items (upstream git commit bacc60b7a8e7854ca14b5a5f65429500831f20cb)
+
+--- src/ui.c.orig	Sun May 19 12:58:18 2013
++++ src/ui.c	Mon Sep  2 11:28:16 2013
+@@ -665,7 +665,7 @@ inline void BarUiPrintSong (const BarSettings_t *setti
+ size_t BarUiListSongs (const BarSettings_t *settings,
+ 		const PianoSong_t *song, const char *filter) {
+ 	size_t i = 0;
+-	char digits[4];
++	char digits[8];
+ 
+ 	while (song != NULL) {
+ 		if (filter == NULL ||
