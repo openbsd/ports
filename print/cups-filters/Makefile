@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2013/08/22 09:15:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2013/09/03 10:40:56 ajacoutot Exp $
 
 COMMENT=	OpenPrinting CUPS filters
 
-DISTNAME=	cups-filters-1.0.36
+DISTNAME=	cups-filters-1.0.37
 CATEGORIES=	print
-REVISION=	0
 
 SHARED_LIBS +=  cupsfilters               0.0 # 1.0
 SHARED_LIBS +=  fontembed                 0.0 # 1.0
