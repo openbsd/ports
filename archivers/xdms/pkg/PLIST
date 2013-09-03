@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/09/03 16:16:09 edd Exp $
+@bin bin/xdms
+@man man/man1/xdms.1
+share/doc/xdms/
+share/doc/xdms/COPYING
+share/doc/xdms/ChangeLog.txt
+share/doc/xdms/xdms.txt
