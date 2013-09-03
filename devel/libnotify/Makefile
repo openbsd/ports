@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.29 2013/04/16 13:17:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2013/09/03 05:09:19 ajacoutot Exp $
 
 COMMENT=		send desktop notifications to a notification daemon
 
-GNOME_VERSION=		0.7.5
+GNOME_VERSION=		0.7.6
 GNOME_PROJECT=		libnotify
-REVISION=		2
 
 CATEGORIES=		devel
 
-SHARED_LIBS +=	notify             4.0      # .4.0
+SHARED_LIBS +=  notify               4.0      # 4.0
 
 HOMEPAGE=		http://www.galago-project.org/
 
@@ -16,7 +15,7 @@ HOMEPAGE=		http://www.galago-project.org/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c ffi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 m pcre png pthread z
+WANTLIB += m pcre png pthread z
 
 MODULES=		devel/gettext \
 			x11/gnome

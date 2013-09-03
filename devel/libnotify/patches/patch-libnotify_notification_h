@@ -1,5 +1,7 @@
-$OpenBSD: patch-libnotify_notification_h,v 1.1 2012/01/28 09:33:09 landry Exp $
-comma at end of list isn't valid in c++, and c++ code might use libnotify
+$OpenBSD: patch-libnotify_notification_h,v 1.2 2013/09/03 05:09:19 ajacoutot Exp $
+
+Comma at end of list isn't valid c++, and c++ code might use libnotify.
+
 --- libnotify/notification.h.orig	Sat Jan 28 09:55:27 2012
 +++ libnotify/notification.h	Sat Jan 28 09:56:25 2012
 @@ -84,7 +84,7 @@ typedef enum
