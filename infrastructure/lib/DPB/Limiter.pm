@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Limiter.pm,v 1.3 2013/01/04 12:45:44 espie Exp $
+# $OpenBSD: Limiter.pm,v 1.4 2013/09/03 09:34:23 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -22,8 +22,9 @@ use warnings;
 # this is a mixin-class.
 
 package DPB::Limiter;
-use Time::HiRes;
+use Time::HiRes qw(time);
 use DPB::Util;
+use DPB::Clock;
 
 my $temp;
 sub setup
@@ -37,7 +38,9 @@ sub limit
 {
 	my ($self, $forced, $factor, $tag, $cond, $code) = @_;
 	$self->{ts} = time();
+	$self->{start} = 0;	# so we can register ourselves
 	$self->{next_check} //= $self->{ts};
+	DPB::Clock->register($self);
 	print $temp "$$\@$self->{ts}: $tag";
 	if (!($forced && $self->{unchecked}) &&
 	    $self->{ts} < $self->{next_check} && $cond) {
@@ -48,24 +51,36 @@ sub limit
 
 	delete $self->{unchecked};
 	# actual computation
-	my $start = Time::HiRes::time();
+	$self->{start} = time();
 	&$code;
-	my $end = Time::HiRes::time();
+	$self->{end} = time();
 	# adjust values for next time
-	my $check_interval = $factor * ($end - $start);
+	my $check_interval = $factor * ($self->{end} - $self->{start});
 	my $offset = $self->{ts} - $self->{next_check};
 	$offset /= 2;
 	$self->{next_check} = $self->{ts} + $check_interval;
 	if ($offset > 0) {
 	    $self->{next_check} -= $offset;
 	}
-	if ($self->{next_check} < $end) {
-		$self->{next_check} = $end;
+	if ($self->{next_check} < $self->{end}) {
+		$self->{next_check} = $self->{end};
 	}
 	print $temp 
 	    sprintf("%s %.2f %.2f\n", $forced ? '!' : '+', 
 	    $self->{next_check}, $check_interval);
 	return 1;
+}
+
+sub stopped_clock
+{
+	my ($self, $gap, $stopped) = @_;
+	$self->{start} += $gap;
+	if ($self->{ts} >= $stopped) {
+		$self->{ts} += $gap;
+	}
+	if ($self->{next_check} >= $stopped) {
+		$self->{next_check} += $gap;
+	}
 }
 
 1

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Clock.pm,v 1.3 2012/03/02 19:33:43 espie Exp $
+# $OpenBSD: Clock.pm,v 1.4 2013/09/03 09:34:24 espie Exp $
 #
 # Copyright (c) 2011 Marc Espie <espie@openbsd.org>
 #
@@ -27,6 +27,7 @@ package DPB::Clock;
 # users will register/unregister, they must have a
 # stopped_clock($gap) method to adjust.
 my $items = {};
+
 sub register
 {
 	my ($class, $o) = @_;
@@ -51,7 +52,7 @@ sub restart
 	my $gap = time() - $stopped_clock;
 
 	for my $o (values %$items) {
-		$o->stopped_clock($gap);
+		$o->stopped_clock($gap, $stopped_clock);
 	}
 }
 
