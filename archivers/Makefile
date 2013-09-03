@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2013/07/07 17:58:59 bentley Exp $
+# $OpenBSD: Makefile,v 1.61 2013/09/03 16:17:06 edd Exp $
 
      SUBDIR =
      SUBDIR += arc
@@ -54,6 +54,7 @@
      SUBDIR += unrar
      SUBDIR += unshield
      SUBDIR += unzip
+     SUBDIR += xdms
      SUBDIR += xz
      SUBDIR += zip
      SUBDIR += zipios
