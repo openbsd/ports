@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.48 2013/07/21 16:24:32 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.49 2013/09/03 08:53:49 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -196,7 +196,7 @@ sub build
 	my $log = $self->logger->make_logs($v);
 	my $special = $self->{heuristics}->special_parameters($core, $v);
 
-	open my $fh, ">>", $log;
+	open my $fh, ">>", $log or die "can't open $log: $!";
 	if ($special) {
 		print $lock "mfs\n";
 		print $fh ">>> Building in memory under ";
@@ -227,7 +227,7 @@ sub install
 {
 	my ($self, $v, $core) = @_;
 	my $log = $self->logger->make_logs($v);
-	open my $fh, ">>", $log;
+	open my $fh, ">>", $log or die "can't open $log: $!";
 	print $fh ">>> Installing under ";
 	$v->quick_dump($fh);
 	my $job = DPB::Job::Port::Install->new($log, $fh, $v, $self,
