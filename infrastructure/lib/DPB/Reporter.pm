@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.15 2013/01/11 13:22:25 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.16 2013/09/03 09:44:08 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -197,6 +197,7 @@ sub new
 	my $state = shift;
 	$singleton //= bless {msg => '',
 	    producers => $class->filter_can(\@_, 'report'),
+	    timeout => $state->{display_timeout} // 10,
 	    continued => 0}, $class;
 	my $oldfh = select(STDOUT);
 	$| = 1;
@@ -229,6 +230,12 @@ sub new
 	# no cursor, to avoid flickering
 	$singleton->set_cursor;
 	return $singleton;
+}
+
+sub timeout
+{
+	my $self = shift;
+	return $self->{timeout};
 }
 
 sub write_clear

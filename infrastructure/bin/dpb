@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.93 2013/07/04 17:45:34 jasper Exp $
+# $OpenBSD: dpb,v 1.94 2013/09/03 09:44:05 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -651,7 +651,7 @@ if ($state->{scan_only}) {
 	}
 } else {
 	# and let's wait for all jobs now.
-	DPB::Core->start_clock($state->{display_timeout});
+	DPB::Core->start_clock($reporter);
 	main_loop();
 }
 

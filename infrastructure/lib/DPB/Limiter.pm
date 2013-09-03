@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Limiter.pm,v 1.4 2013/09/03 09:34:23 espie Exp $
+# $OpenBSD: Limiter.pm,v 1.5 2013/09/03 09:44:06 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -68,7 +68,7 @@ sub limit
 	print $temp 
 	    sprintf("%s %.2f %.2f\n", $forced ? '!' : '+', 
 	    $self->{next_check}, $check_interval);
-	return 1;
+	return $check_interval;
 }
 
 sub stopped_clock
