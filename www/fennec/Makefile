@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.36 2013/06/26 19:31:57 landry Exp $
+# $OpenBSD: Makefile,v 1.37 2013/09/04 18:59:28 landry Exp $
 
 COMMENT =	Mozilla mobile web browser
+ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
 MOZILLA_VERSION =	10.0.5esr
 MOZILLA_BRANCH =	esr10
