@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/06/12 20:36:33 brad Exp $
+# $OpenBSD: Makefile,v 1.5 2013/09/04 19:20:28 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	5.5.31
+VERSION=	5.5.32
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
@@ -14,10 +14,6 @@ PKGNAME-tests= 	mariadb-tests-${VERSION}
 CATEGORIES=	databases
 MASTER_SITES=	http://ftp.osuosl.org/pub/mariadb/${DISTNAME}/kvm-tarbake-jaunty-x86/ \
 		http://ftp.heanet.ie/mirrors/mariadb/${DISTNAME}/kvm-tarbake-jaunty-x86/
-
-REVISION-main=	0
-REVISION-server= 0
-REVISION-tests=	0
 
 LIB_VERSION=	24
 SHARED_LIBS=	mysqlclient_r	${LIB_VERSION}.0 \
@@ -51,6 +47,7 @@ LIB_DEPENDS-tests=	${BASE_PKGPATH}>=5.5,<5.6
 VMEM_WARNING=	Yes
 
 USE_GROFF=	Yes
+USE_NINJA=	No
 
 CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DINSTALL_DOCDIR="share/doc/mysql" \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.3 2013/05/30 12:39:18 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.4 2013/09/04 19:20:29 brad Exp $
 @conflict mysql-server-*
 @conflict mytop-*
 @pkgpath databases/mysql,-server
@@ -33,6 +33,7 @@ bin/mytop
 @bin bin/replace
 @bin bin/resolve_stack_dump
 @bin bin/resolveip
+lib/mysql/plugin/
 lib/mysql/plugin/adt_null.so
 lib/mysql/plugin/auth_0x0100.so
 lib/mysql/plugin/auth_socket.so
@@ -58,6 +59,7 @@ lib/mysql/plugin/qa_auth_server.so
 lib/mysql/plugin/query_cache_info.so
 lib/mysql/plugin/semisync_master.so
 lib/mysql/plugin/semisync_slave.so
+lib/mysql/plugin/sphinx.so
 lib/mysql/plugin/sql_errlog.so
 @bin libexec/mysqld
 @man man/man1/innochecksum.1
@@ -71,6 +73,7 @@ lib/mysql/plugin/sql_errlog.so
 @man man/man1/mysql_fix_extensions.1
 @man man/man1/mysql_fix_privilege_tables.1
 @man man/man1/mysql_install_db.1
+@man man/man1/mysql_plugin.1
 @man man/man1/mysql_secure_installation.1
 @man man/man1/mysql_setpermission.1
 @man man/man1/mysql_tzinfo_to_sql.1
@@ -113,6 +116,8 @@ share/examples/mysql/mysql-log-rotate
 share/examples/mysql/mysql.server
 share/examples/mysql/mysqld_multi.server
 share/examples/mysql/ndb-config-2-node.ini
+share/examples/mysql/solaris/
+share/examples/mysql/solaris/postinstall-solaris
 share/mysql/
 share/mysql/charsets/
 share/mysql/charsets/Index.xml

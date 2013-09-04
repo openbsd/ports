@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2013/05/30 12:39:18 brad Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2013/09/04 19:20:28 brad Exp $
 @conflict mysql-client-*
 @pkgpath databases/mysql,-main
 bin/msql2mysql
@@ -301,7 +301,6 @@ lib/mysql/libmysqlclient.a
 lib/mysql/libmysqlclient_r.a
 @lib lib/mysql/libmysqlclient_r.so.${LIBmysqlclient_r_VERSION}
 lib/mysql/libmysqlservices.a
-lib/mysql/plugin/
 @man man/man1/msql2mysql.1
 @man man/man1/mysql.1
 @man man/man1/mysql_config.1
