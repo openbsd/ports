@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.38 2013/07/17 15:51:09 jeremy Exp $
+# $OpenBSD: Makefile,v 1.39 2013/09/04 18:15:19 landry Exp $
 
 BROKEN-sparc64 =	doesnt reliably build, and depending ports randomly fail to build
+BROKEN-alpha =		miniruby abort trap when generating rdoc
 
 COMMENT-main =		object oriented script language with threads
 COMMENT-gdbm =		gdbm interface for ruby
