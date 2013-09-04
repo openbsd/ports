@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.36 2013/06/12 20:36:33 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.37 2013/09/04 19:17:00 brad Exp $
 @conflict mariadb-server-*
 @pkgpath databases/mariadb,-server
 @newgroup _mysql:502
@@ -35,6 +35,7 @@ lib/mysql/libmyisammrg.a
 lib/mysql/libmystrings.a
 lib/mysql/libmysys.a
 lib/mysql/libvio.a
+lib/mysql/plugin/
 @comment lib/mysql/plugin/ha_example.a
 @comment lib/mysql/plugin/ha_example.la
 lib/mysql/plugin/ha_example.so.0.0

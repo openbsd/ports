@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2013/06/12 20:36:33 brad Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2013/09/04 19:17:00 brad Exp $
 @conflict mysql-server-<=5.0.83
 @conflict mariadb-client-*
 @pkgpath databases/mysql
@@ -61,7 +61,6 @@ lib/mysql/libmysqlclient.la
 lib/mysql/libmysqlclient_r.a
 lib/mysql/libmysqlclient_r.la
 @lib lib/mysql/libmysqlclient_r.so.${LIBmysqlclient_r_VERSION}
-lib/mysql/plugin/
 @man man/man1/mysql.1
 @man man/man1/mysql_config.1
 @man man/man1/mysql_tzinfo_to_sql.1

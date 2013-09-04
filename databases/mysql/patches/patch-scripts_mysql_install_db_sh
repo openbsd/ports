@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.13 2012/03/26 08:05:01 giovanni Exp $
---- scripts/mysql_install_db.sh.orig	Fri Mar  2 15:39:19 2012
-+++ scripts/mysql_install_db.sh	Fri Mar 23 12:34:21 2012
+$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.14 2013/09/04 19:16:59 brad Exp $
+--- scripts/mysql_install_db.sh.orig	Thu Jul 11 09:39:36 2013
++++ scripts/mysql_install_db.sh	Tue Sep  3 20:12:07 2013
 @@ -27,7 +27,8 @@ srcdir=""
  args=""
  defaults=""
@@ -40,21 +40,15 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.13 2012/03/26 08:05:01 giovanni 
    echo
    echo "PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER !"
    echo "To do so, start the server, then issue the following commands:"
-@@ -460,17 +459,6 @@ then
-   echo "strongly recommended for production servers."
-   echo
-   echo "See the manual for more instructions."
--
--  if test "$in_rpm" -eq 0
--  then
--    echo
--    echo "You can start the MySQL daemon with:"
+@@ -465,10 +464,7 @@ then
+   then
+     echo
+     echo "You can start the MySQL daemon with:"
 -    echo "cd $basedir ; $bindir/mysqld_safe &"
 -    echo
 -    echo "You can test the MySQL daemon with mysql-test-run.pl"
 -    echo "cd $basedir/mysql-test ; perl mysql-test-run.pl"
--  fi
--
-   echo
-   echo "Please report any problems with the $scriptdir/mysqlbug script!"
++    echo "/etc/rc.d/mysqld start"
+   fi
+ 
    echo
