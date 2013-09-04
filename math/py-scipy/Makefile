@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:23:56 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/09/04 18:40:21 landry Exp $
 
 BROKEN-sparc64 =	ICE in scipy/optimize/minpack/qrsolv.f:189
 BROKEN-hppa =		ICE in scipy/special/specfun/specfun.f:5151
+BROKEN-alpha =		ICE in scipy/optimize/minpack/lmstr.f:462
 
 COMMENT=		maths, science and engineering modules for Python
 
