@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_bindings_message_cc,v 1.1 2013/08/25 02:06:26 jturner Exp $
---- src/bindings_message.cc.orig	Sat Aug 24 09:28:27 2013
-+++ src/bindings_message.cc	Sat Aug 24 21:36:31 2013
-@@ -19,13 +19,14 @@
+$OpenBSD: patch-src_bindings_message_cc,v 1.2 2013/09/04 01:18:31 jturner Exp $
+--- src/bindings_message.cc.orig	Tue Sep  3 14:41:56 2013
++++ src/bindings_message.cc	Tue Sep  3 21:08:56 2013
+@@ -19,7 +19,7 @@
  
  
  #include <algorithm>
@@ -10,10 +10,3 @@ $OpenBSD: patch-src_bindings_message_cc,v 1.1 2013/08/25 02:06:26 jturner Exp $
  #include <fstream>
  #include <iostream>
  #include <string.h>
- 
- 
- #include "bindings.h"
-+#include "debug.h"
- #include "file.h"
- #include "global.h"
- #include "lang.h"
