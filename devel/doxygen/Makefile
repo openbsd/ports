@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/11 10:50:03 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2013/09/04 18:17:54 landry Exp $
 
 # Memory hog, stuck for days on the same file during build.
 # XXX check with different optimizer level? see doc/install.doc
 NOT_FOR_ARCHS=	sh
+BROKEN-alpha=	.got subsegment exceeds 64K
 
 COMMENT-main=	source code documentation generator tool
 COMMENT-gui=	GUI front-end for doxygen

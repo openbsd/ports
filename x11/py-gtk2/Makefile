@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.55 2013/03/11 11:46:15 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2013/09/04 18:17:54 landry Exp $
 
 SHARED_ONLY=	Yes
+BROKEN-alpha=	.got subsegment exceeds 64K
 
 COMMENT=	GTK+2 Python bindings
 

@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.128 2013/06/20 06:54:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.129 2013/09/04 18:17:54 landry Exp $
+
+BROKEN-alpha =		.got subsegment exceeds 64K
 
 COMMENT-main =		K Desktop Environment, libraries
 COMMENT-cups =		K Desktop Environment, cups support
