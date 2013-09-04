@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2013/08/30 22:58:25 bluhm Exp $
+# $OpenBSD: Makefile,v 1.6 2013/09/04 23:42:19 bluhm Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		perl wrapper for libmagic
 
-DISTNAME =		File-LibMagic-0.99
+DISTNAME =		File-LibMagic-1.00
 
 CATEGORIES =		misc
 
