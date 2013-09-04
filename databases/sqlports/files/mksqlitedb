@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.43 2013/08/27 07:51:03 zhuk Exp $
+# $OpenBSD: mksqlitedb,v 1.44 2013/09/04 15:35:02 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -32,6 +32,8 @@ use DBI;
 use PkgPath;
 use Info;
 
+package TreeWalker;
+
 $SIG{__WARN__} = sub {
 	require Carp;
 
@@ -50,49 +52,44 @@ $SIG{__DIE__} = sub {
 	die &Carp::longmess;
 };
 
-our ($opt_v, $opt_q, $opt_p);
-
 sub subdirlist
 {
-	my $list = shift;
+	my ($self, $list) = @_;
 	return join(' ', sort keys %$list);
 }
 
-sub create_missing_vars
+sub dump_dirs
 {
-	my $o = shift;
-	for my $name (qw(SHARED_LIBS TARGETS)) {
-		if (!defined $o->{info}->{vars}{$name}) {
-			$o->{info}->create($name, '', undef, $o);
+	my ($self, $subdirs) = @_;
+	my ($pid, $fd);
+	unless (defined($pid = open($fd, "-|"))) {
+		die "can't fork : $!";
+	}
+	if ($pid) {
+		$self->parse_dump($fd, $subdirs);
+		close $fd || die $!;
+	} else {
+		if (defined $subdirs) {
+			$ENV{'SUBDIR'} = $self->subdirlist($subdirs);
 		}
+		$ENV{'NO_IGNORE'} = 'Yes';
+		delete $ENV{'SUBPACKAGE'};
+		delete $ENV{'FLAVOR'};
+		exec {'make'} ("make", "dump-vars");
+		die $!;
 	}
 }
 
 sub parse_dump
 {
-	my ($inserter, $fd, $subdirs) = @_;
+	my ($self, $fd, $subdirs) = @_;
 	my $h = {};
 	my $seen = {};
 	my $subdir;
 	my $reset = sub {
-		$h = PkgPath->handle_equivalences($inserter, $h, $subdirs);
+		$h = PkgPath->handle_equivalences($self, $h, $subdirs);
 		for my $pkgpath (values %$h) {
-			create_missing_vars($pkgpath);
-			my $key = $pkgpath->fullpkgpath;
-			if ($pkgpath->{info}{done}) {
-				print "--- $key (already done)\n";
-				next;
-			}
-			print "+++ $key\n";
-			$inserter->set_newkey($key);
-			for my $var ($pkgpath->{info}->variables) {
-				$inserter->add_var($var);
-			}
-			$pkgpath->{info}->reclaim;
-			$pkgpath->{info}{done} = 1;
-			$pkgpath->{info}{canonical} = $pkgpath;
-			$pkgpath->{done} = 1;
-			$inserter->finish_port;
+			$self->handle_path($pkgpath);
 		}
 		$h = {};
 	};
@@ -117,9 +114,8 @@ sub parse_dump
 			}
 			my $o = PkgPath->compose($pkgpath, $subdir);
 			$h->{$o} = $o;
+			$self->handle_value($o, $var, $value, $arch);
 			# Note we did it !
-			$o->{info} //= Info->new($o);
-			$o->{info}->create($var, $value, $arch, $o);
 		} elsif (m/^\>\>\s*Broken dependency:\s*(.*?)\s*non existent/) {
 			my $dir = PkgPath->new($1);
 			$dir->break("broken dependency");
@@ -128,33 +124,110 @@ sub parse_dump
 		}
 	}
 	&$reset;
-	$inserter->commit_to_db;
 }
 
-sub dump_dirs
+sub handle_value
 {
-	my ($inserter, $subdirs) = @_;
-	my ($pid, $fd);
-	unless (defined($pid = open($fd, "-|"))) {
-		die "can't fork : $!";
-	}
-	if ($pid) {
-		parse_dump($inserter, $fd, $subdirs);
-		close $fd || die $!;
-	} else {
-		if (defined $subdirs) {
-			$ENV{'SUBDIR'} = subdirlist($subdirs);
+}
+
+sub handle_path
+{
+}
+
+sub dump_all_dirs
+{
+	my $self = shift;
+	$self->dump_dirs(undef);
+
+	my $i = 1;
+	while (1) {
+		my $subdirlist = {};
+		for my $v (PkgPath->seen) {
+			if (defined $v->{info}) {
+				delete $v->{tried};
+				if (defined $v->{want}) {
+					delete $v->{want};
+					if (!defined $v->{done}) {
+						$v->{needalias} = 1;
+					}
+				}
+				next;
+			}
+			if (defined $v->{tried}) {
+			} elsif ($v->{want}) {
+				$v->add_to_subdirlist($subdirlist);
+				$v->{tried} = 1;
+			}
 		}
-		if ($opt_p) {
-			$ENV{'REPORT_PROBLEM_LOGFILE'}= $opt_p;
-		}
-		$ENV{'NO_IGNORE'} = 'Yes';
-		delete $ENV{'SUBPACKAGE'};
-		delete $ENV{'FLAVOR'};
-		exec {'make'} ("make", "dump-vars");
-		die $!;
+		last if (keys %$subdirlist) == 0;
+		$i++;
+		print "pass #$i\n";
+		$self->dump_dirs($subdirlist);
 	}
 }
+
+package MyTreeWalker;
+our @ISA = (qw(TreeWalker));
+
+sub new
+{
+	my ($class, $inserter) = @_;
+	bless { inserter => $inserter }, $class;
+}
+
+sub inserter
+{
+	return shift->{inserter};
+}
+
+sub handle_value
+{
+	my ($self, $o, $var, $value, $arch) = @_;
+	$o->{info} //= Info->new($o);
+	$o->{info}->create($var, $value, $arch, $o);
+}
+
+sub parse_dump
+{
+	my ($self, $fd, $subdirs) = @_;
+	$self->SUPER::parse_dump($fd, $subdirs);
+	$self->inserter->commit_to_db;
+}
+
+sub create_missing_vars
+{
+	my ($self, $o) = @_;
+	for my $name (qw(SHARED_LIBS TARGETS)) {
+		if (!defined $o->{info}->{vars}{$name}) {
+			$o->{info}->create($name, '', undef, $o);
+		}
+	}
+}
+
+sub handle_path
+{
+	my ($self, $pkgpath) = @_;
+	$self->create_missing_vars($pkgpath);
+	my $key = $pkgpath->fullpkgpath;
+	if ($pkgpath->{info}{done}) {
+		print "--- $key (already done)\n";
+		return;
+	}
+	print "+++ $key\n";
+	$self->inserter->set_newkey($key);
+	for my $var ($pkgpath->{info}->variables) {
+		$self->inserter->add_var($var);
+	}
+	$pkgpath->{info}->reclaim;
+	$pkgpath->{info}{done} = 1;
+	$pkgpath->{info}{canonical} = $pkgpath;
+	$pkgpath->{done} = 1;
+	$self->inserter->finish_port;
+}
+
+package main;
+
+our ($opt_v, $opt_q, $opt_p);
 
 getopts('vq:p:');
 my $dbname;
@@ -175,33 +248,12 @@ $inserter->add($normal, CompactInserter->new($db2, 1000, $opt_v));
 
 $inserter->create_tables($Info::vars);
 
-dump_dirs($inserter, undef);
-
-my $i = 1;
-while (1) {
-	my $subdirlist = {};
-	for my $v (PkgPath->seen) {
-		if (defined $v->{info}) {
-			delete $v->{tried};
-			if (defined $v->{want}) {
-				delete $v->{want};
-				if (!defined $v->{done}) {
-					$v->{needalias} = 1;
-				}
-			}
-			next;
-		}
-		if (defined $v->{tried}) {
-		} elsif ($v->{want}) {
-			$v->add_to_subdirlist($subdirlist);
-			$v->{tried} = 1;
-		}
-	}
-	last if (keys %$subdirlist) == 0;
-	$i++;
-	print "pass #$i\n";
-	dump_dirs($inserter, $subdirlist);
+if ($opt_p) {
+	$ENV{'REPORT_PROBLEM_LOGFILE'}= $opt_p;
 }
+
+my $walker = MyTreeWalker->new($inserter);
+$walker->dump_all_dirs;
 
 print "Aliases\n";
 for my $v (PkgPath->seen) {
@@ -209,13 +261,13 @@ for my $v (PkgPath->seen) {
 	my $alias = $v->{info}{canonical};
 	if (defined $alias) {
 		print $v->fullpkgpath, "->", $alias->fullpkgpath, "\n";
-		$inserter->add_path($v->fullpkgpath, $alias->fullpkgpath);
+		$walker->inserter->add_path($v->fullpkgpath, $alias->fullpkgpath);
 	} else {
 		print "!!! Can't figure out alias for ", $v->fullpkgpath, "\n";
 	}
 }
 
-$inserter->commit_to_db;
+$walker->inserter->commit_to_db;
 
 while (my ($k, $v) = each %$Info::unknown) {
 	print STDERR "Unknown variable $k in ", $v->fullpkgpath, "\n";
@@ -223,7 +275,7 @@ while (my ($k, $v) = each %$Info::unknown) {
 
 if (defined $opt_q) {
 	open(my $log, ">", $opt_q) or die $!;
-	$inserter->write_log($log);
+	$walker->inserter->write_log($log);
 } else {
-	$inserter->write_log(\*STDERR);
+	$walker->inserter->write_log(\*STDERR);
 }
