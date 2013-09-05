@@ -1,6 +1,6 @@
-$OpenBSD: patch-ffmpeg_movie_c,v 1.3 2012/05/01 06:19:12 ajacoutot Exp $
---- ffmpeg_movie.c.orig	Mon Oct 13 18:46:53 2008
-+++ ffmpeg_movie.c	Mon Apr 30 02:56:13 2012
+$OpenBSD: patch-ffmpeg_movie_c,v 1.4 2013/09/05 12:01:31 sthen Exp $
+--- ffmpeg_movie.c.orig	Mon Oct 13 23:46:53 2008
++++ ffmpeg_movie.c	Thu Sep  5 13:00:52 2013
 @@ -36,6 +36,8 @@
  
  #include <avcodec.h>
@@ -86,6 +86,33 @@ $OpenBSD: patch-ffmpeg_movie_c,v 1.3 2012/05/01 06:19:12 ajacoutot Exp $
  {
      int persistent = 0, hashkey_length = 0;
      char *filename = NULL, *fullpath = NULL, *hashkey = NULL;
+@@ -308,7 +315,7 @@ FFMPEG_PHP_METHOD(ffmpeg_movie, __construct)
+     } 
+ 
+     if (persistent) {
+-        list_entry *le;
++        zend_rsrc_list_entry *le;
+         /* resolve the fully-qualified path name to use as the hash key */
+         fullpath = expand_filepath(filename, NULL TSRMLS_CC);
+ 
+@@ -343,7 +350,7 @@ FFMPEG_PHP_METHOD(ffmpeg_movie, __construct)
+             }
+             
+         } else { /* no existing persistant movie, create one */
+-            list_entry new_le;
++            zend_rsrc_list_entry new_le;
+             ffmovie_ctx = _php_alloc_ffmovie_ctx(1);
+ 
+             if (_php_open_movie_file(ffmovie_ctx, filename)) {
+@@ -357,7 +364,7 @@ FFMPEG_PHP_METHOD(ffmpeg_movie, __construct)
+             new_le.ptr = ffmovie_ctx;
+ 
+             if (FAILURE == zend_hash_update(&EG(persistent_list), hashkey, 
+-                        hashkey_length+1, (void *)&new_le, sizeof(list_entry),
++                        hashkey_length+1, (void *)&new_le,sizeof(zend_rsrc_list_entry),
+                         NULL)) {
+                 php_error_docref(NULL TSRMLS_CC, E_WARNING, 
+                         "Failed to register persistent resource");
 @@ -414,7 +421,7 @@ static void _php_free_ffmpeg_movie(zend_rsrc_list_entr
          }
      }

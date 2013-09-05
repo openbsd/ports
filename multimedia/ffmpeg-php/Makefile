@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2013/08/12 04:11:20 robert Exp $
+# $OpenBSD: Makefile,v 1.23 2013/09/05 12:01:31 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	PHP support for FFmpeg
 
 DISTNAME=	ffmpeg-php-0.6.0
-REVISION=	14
+REVISION=	15
 EXTRACT_SUFX=	.tbz2
 CATEGORIES=	multimedia www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ffmpeg-php/}
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 AUTOCONF_VERSION=2.62
 AUTOMAKE_VERSION=1.9
 FAKE_FLAGS=	INSTALL_ROOT=${WRKINST}
-PREFIX= 	${VARBASE}/www
+PREFIX=		${VARBASE}/www
 NO_TEST=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
