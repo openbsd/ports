@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2013/09/05 08:34:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2013/09/05 19:05:42 nigel Exp $
 lib/python${MODPY_VERSION}/site-packages/pytz/
 lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -437,7 +437,7 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Etc/GMT-12
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Etc/GMT-13
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Etc/GMT-14
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Etc/GMT-2
-lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Etc/GMT${MODPY_BIN_SUFFIX}
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Etc/GMT-3
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Etc/GMT-4
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Etc/GMT-5
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Etc/GMT-6
