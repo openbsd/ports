@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_rdp_cpp,v 1.1 2013/09/05 03:26:32 bentley Exp $
+--- src/rdp.cpp.orig	Sun Jul  7 20:08:53 2013
++++ src/rdp.cpp	Sun Jul  7 20:09:31 2013
+@@ -67,9 +67,7 @@ int wrong_tile = -1;
+ 
+ int drawFlag = 1;	// draw flag for rendering callback
+ 
+-#if defined(__GNUC__)
+-  #define bswap32(x) __builtin_bswap32(x)
+-#elif defined(_MSC_VER) && (defined(_M_IX86) || defined(_M_X64))
++#if defined(_MSC_VER) && (defined(_M_IX86) || defined(_M_X64))
+   #include <stdlib.h>
+   #define bswap32(x) _byteswap_ulong(x)
+ #else

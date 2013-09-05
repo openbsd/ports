@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_Main_cpp,v 1.1 2013/09/05 03:26:32 bentley Exp $
+--- src/Main.cpp.orig	Sun Jul  7 20:07:53 2013
++++ src/Main.cpp	Sun Jul  7 20:08:12 2013
+@@ -54,6 +54,8 @@
+ #include <sys/time.h>
+ #endif
+ 
++#include <sys/endian.h>
++
+ #include "osal_dynamiclib.h"
+ 
+ #define G64_VERSION "Mupen64Plus"
+@@ -634,11 +636,7 @@ void guLoadTextures ()
+   for (i=0; i<0x200; i++)
+   {
+     // cur = ~*(data++), byteswapped
+-#if !defined(__GNUC__)
+-     cur = _byteswap_ulong(~*(data++));
+-#else
+-     cur = __builtin_bswap32(~*(data++));
+-#endif
++     cur = swap32(~*(data++));
+ 
+     for (b=0x80000000; b!=0; b>>=1)
+     {

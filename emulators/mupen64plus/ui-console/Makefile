@@ -1,20 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:06:04 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/09/05 03:26:31 bentley Exp $
 
 COMMENT =		n64 emulator command-line ui plugin
-
-REVISION =		1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB = 		c pthread
+WANTLIB = 		SDL c pthread
+LIB_DEPENDS =		devel/sdl
 
 MUPEN64PLUS_MOD = 	ui-console
 
 MAKE_FLAGS +=		MANDIR=${PREFIX}/man \
 			PIE=1
-
-post-install:
-	gunzip ${PREFIX}/man/man6/mupen64plus.6.gz
 
 .include <bsd.port.mk>
