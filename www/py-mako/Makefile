@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:44:48 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/09/05 08:23:35 ajacoutot Exp $
 
 COMMENT =	super-fast templating language
 
-MODPY_EGG_VERSION = 0.5.0
+MODPY_EGG_VERSION = 0.9.0
 DISTNAME =	Mako-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
 
@@ -17,16 +17,23 @@ MASTER_SITES =	${HOMEPAGE}/downloads/
 
 MODULES =	lang/python
 
-RUN_DEPENDS =	textproc/py-MarkupSafe>=0.9.2 \
-		www/py-beaker>=1.1
-TEST_DEPENDS = devel/py-nose>=0.11 \
-		  devel/py-babel \
-		  ${RUN_DEPENDS}
+FLAVORS=	python3
+FLAVOR?=
+
+RUN_DEPENDS =	textproc/py-MarkupSafe${MODPY_FLAVOR} \
+		www/py-beaker${MODPY_FLAVOR}
+
+# XXX devel/py-babel needs a python3 FLAVOR
+TEST_DEPENDS =	devel/py-nose${MODPY_FLAVOR} \
+		devel/py-babel \
+		${RUN_DEPENDS}
 
 MODPY_SETUPTOOLS = Yes
 
+.if ${FLAVOR:Mpython3}
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-mako
-	cd ${WRKSRC}/doc && pax -rw *.html _static ${PREFIX}/share/doc/py-mako
+	mv ${PREFIX}/bin/mako-render \
+		${PREFIX}/bin/mako-render${MODPY_BIN_SUFFIX}
+.endif
 
 .include <bsd.port.mk>
