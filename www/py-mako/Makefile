@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/09/05 08:23:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2013/09/05 08:37:48 ajacoutot Exp $
 
 COMMENT =	super-fast templating language
 
@@ -23,9 +23,8 @@ FLAVOR?=
 RUN_DEPENDS =	textproc/py-MarkupSafe${MODPY_FLAVOR} \
 		www/py-beaker${MODPY_FLAVOR}
 
-# XXX devel/py-babel needs a python3 FLAVOR
 TEST_DEPENDS =	devel/py-nose${MODPY_FLAVOR} \
-		devel/py-babel \
+		devel/py-babel${MODPY_FLAVOR} \
 		${RUN_DEPENDS}
 
 MODPY_SETUPTOOLS = Yes
