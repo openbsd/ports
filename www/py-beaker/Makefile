@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/09/05 08:20:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2013/09/05 08:39:59 ajacoutot Exp $
 
 COMMENT =	session and caching library with wsgi middleware
 
@@ -23,11 +23,11 @@ FLAVOR?=
 
 RUN_DEPENDS =	security/py-crypto${MODPY_FLAVOR} 
 
-# XXX adapt for python3 FLAVOR
+# XXX some TDEP are nissing a python3 FLAVOR
 TEST_DEPENDS = databases/py-sqlalchemy \
 		  devel/py-coverage \
 		  devel/py-mock \
-		  devel/py-nose \
+		  devel/py-nose${MODPY_FLAVOR} \
 		  misc/py-memcached \
 		  www/py-webtest \
 		  ${RUN_DEPENDS}
