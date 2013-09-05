@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2013/07/01 10:39:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2013/09/05 06:21:53 landry Exp $
 
 COMMENT=	Small Device C Compiler
 BROKEN-sparc64=	illegal operands building SDCCval.c
+BROKEN-alpha=	sdcc segfaults when building the device library
 
 DISTNAME=	sdcc-src-2.8.0
 PKGNAME=	${DISTNAME:S/-src//}
