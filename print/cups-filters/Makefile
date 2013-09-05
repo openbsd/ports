@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.25 2013/09/03 10:40:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2013/09/05 06:18:56 landry Exp $
 
 COMMENT=	OpenPrinting CUPS filters
+BROKEN-alpha=	ICE in cupsfilters/image-jpeg.c:316
 
 DISTNAME=	cups-filters-1.0.37
 CATEGORIES=	print
