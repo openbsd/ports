@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.27 2013/05/16 09:09:30 rpointel Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2013/09/05 11:20:19 edd Exp $
+@pkgpath devel/mercurial
 bin/hg
 lib/python${MODPY_VERSION}/site-packages/hgext/
 lib/python${MODPY_VERSION}/site-packages/hgext/__init__.py
@@ -60,8 +61,6 @@ lib/python${MODPY_VERSION}/site-packages/hgext/graphlog.py
 lib/python${MODPY_VERSION}/site-packages/hgext/graphlog.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/hgcia.py
 lib/python${MODPY_VERSION}/site-packages/hgext/hgcia.pyc
-lib/python${MODPY_VERSION}/site-packages/hgext/hgk.py
-lib/python${MODPY_VERSION}/site-packages/hgext/hgk.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/highlight/
 lib/python${MODPY_VERSION}/site-packages/hgext/highlight/__init__.py
 lib/python${MODPY_VERSION}/site-packages/hgext/highlight/__init__.pyc
@@ -575,7 +574,6 @@ share/mercurial/convert-repo
 share/mercurial/dumprevlog
 share/mercurial/hg-ssh
 share/mercurial/hgeditor
-share/mercurial/hgk
 share/mercurial/hgsh/
 share/mercurial/hgsh/Makefile
 share/mercurial/hgsh/hgsh.c
