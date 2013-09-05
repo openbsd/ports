@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/01/07 17:06:33 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2013/09/05 03:33:52 bentley Exp $
 
 SUBDIR =
 SUBDIR += audio-sdl
@@ -9,6 +9,7 @@ SUBDIR += rsp-z64
 SUBDIR += ui-console
 SUBDIR += video-arachnoid
 SUBDIR += video-glide64
+SUBDIR += video-glide64mk2
 SUBDIR += video-rice
 SUBDIR += video-z64
 
