@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1160 2013/09/05 08:11:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1161 2013/09/05 08:36:32 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1112,6 +1112,7 @@
      SUBDIR += py-asn1
      SUBDIR += py-async
      SUBDIR += py-babel
+     SUBDIR += py-babel,python3
      SUBDIR += py-blinker
      SUBDIR += py-buildbot
      SUBDIR += py-buildslave
@@ -1198,6 +1199,7 @@
      SUBDIR += py-turbokid
      SUBDIR += py-twisted
      SUBDIR += py-tz
+     SUBDIR += py-tz,python3
      SUBDIR += py-unit
      SUBDIR += py-unit,no_x11
      SUBDIR += py-unittest2
