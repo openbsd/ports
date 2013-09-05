@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.123 2013/05/31 15:34:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.124 2013/09/05 08:25:26 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
-GNOME_VERSION=		2.99.1
-REVISION=		4
+GNOME_VERSION=		3.0
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # 7.0
 
@@ -29,7 +28,7 @@ WANTLIB += glib-2.0 gmime-2.6 gmodule-2.0 gobject-2.0 gpg-error
 WANTLIB += gpod graphite2 grilo-0.2 gstapp-1.0 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstcontroller-1.0 gstfft-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
-WANTLIB += icui18n idn javascriptcoregtk-3.0
+WANTLIB += harfbuzz-icu icudata icui18n icuuc idn javascriptcoregtk-3.0
 WANTLIB += jpeg json-glib-1.0 lua5.1 lzma m notify orc-0.4 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0
 WANTLIB += pixman-1 plist png pthread pthread-stubs quvi secret-1
@@ -42,8 +41,8 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
-BUILD_DEPENDS=		devel/py-gobject3
-RUN_DEPENDS=		devel/py-gobject3
+BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
+RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
 
 # needed for the tests
 BUILD_DEPENDS +=	devel/check
@@ -53,12 +52,12 @@ LIB_DEPENDS=		audio/libgpod \
 			devel/json-glib \
 			devel/libnotify \
 			devel/libpeas \
-			www/webkit,gtk3>=2.0.0 \
+			www/webkit,gtk3 \
 			x11/gnome/grilo \
 			x11/gnome/totem-pl-parser
 
 # context plugin
-RUN_DEPENDS +=		www/py-mako
+RUN_DEPENDS +=		www/py-mako${MODPY_FLAVOR}
 
 # grilo plugin
 RUN_DEPENDS +=		x11/gnome/grilo-plugins
@@ -73,6 +72,7 @@ MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS= 	gi vala yelp
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
