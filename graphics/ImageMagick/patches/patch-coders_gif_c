@@ -1,0 +1,23 @@
+$OpenBSD: patch-coders_gif_c,v 1.3 2013/09/05 12:15:56 naddy Exp $
+
+CVE-2013-4298: Memory corruption while processing GIF comments
+http://trac.imagemagick.org/changeset/8770/ImageMagick/trunk/coders/gif.c
+
+--- coders/gif.c.orig	Fri Jun  1 18:36:24 2012
++++ coders/gif.c	Wed Sep  4 18:09:45 2013
+@@ -1098,14 +1098,8 @@ static Image *ReadGIFImage(const ImageInfo *image_info
+               if (count == 0)
+                 break;
+               header[count]='\0';
+-              comments=(char *) ResizeQuantumMemory(comments,length+count,
+-                sizeof(*comments));
+-              if (comments == (char *) NULL)
+-                ThrowReaderException(ResourceLimitError,
+-                  "MemoryAllocationFailed");
+-              (void) CopyMagickMemory(comments+length,header,(size_t) count);
++              (void) ConcatenateString(&comments,(const char *) header);
+             }
+-            comments[length+count]='\0';
+             (void) SetImageProperty(image,"comment",comments);
+             comments=DestroyString(comments);
+             break;

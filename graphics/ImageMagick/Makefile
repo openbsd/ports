@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.130 2013/08/12 10:03:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.131 2013/09/05 12:15:55 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		image processing tools
 
 VER=			6.7.7
 DASHVER=		7
-REVISION=		4
+REVISION=		5
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
 
@@ -28,10 +28,10 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=imagemagick/} \
 # http://www.imagemagick.org/script/license.php
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB =		c bz2>=10 djvulibre fftw3 jasper>=1 jbig>=1.2 jpeg \
-			lcms2 lzma ltdl m perl png>=4 pthread stdc++ \
-			tiff>=36 z ICE SM X11 Xext Xt expat fontconfig \
-			freetype wmflite-0.2 wmf-0.2 xcb xml2>=9
+WANTLIB =		ICE SM X11 Xext Xt c bz2 djvulibre expat fftw3 \
+			fontconfig freetype jasper jbig jpeg lcms2 lzma \
+			ltdl m perl png pthread pthread-stubs stdc++ \
+			tiff wmflite-0.2 wmf-0.2 xcb xml2 z
 
 MODULES =		converters/libiconv
 
