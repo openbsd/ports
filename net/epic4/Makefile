@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.71 2013/03/11 11:35:46 espie Exp $
+# $OpenBSD: Makefile,v 1.72 2013/09/05 18:26:35 brad Exp $
 
 COMMENT=	(E)nhanced (P)rogrammable (I)RC-II (C)lient
 
-VERSION=	2.10
+VERSION=	2.10.2
 HELP_DATE=	20050315
 DISTNAME=	epic4-${VERSION}
-REVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/
 DISTFILES=	epic4-${VERSION}.tar.bz2 epic4-help-${HELP_DATE}.tar.gz
 
 HOMEPAGE=	http://www.epicsol.org/
+
+MAINTAINER=	Adam Jeanguenat <avj@6v6.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -32,7 +33,6 @@ WANTLIB+=       perl util
 
 INSTALL_TARGET=	install installhelp
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 SUBST_VARS=	VERSION
