@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:44:48 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/09/05 08:20:35 ajacoutot Exp $
 
 COMMENT =	session and caching library with wsgi middleware
 
 MODPY_EGG_VERSION = 1.6.2
 DISTNAME =	Beaker-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	www devel
 
@@ -18,7 +18,12 @@ MASTER_SITES =	${MASTER_SITE_PYPI:=B/Beaker/}
 
 MODULES =	lang/python
 
-RUN_DEPENDS =	security/py-crypto
+FLAVORS=	python3
+FLAVOR?=
+
+RUN_DEPENDS =	security/py-crypto${MODPY_FLAVOR} 
+
+# XXX adapt for python3 FLAVOR
 TEST_DEPENDS = databases/py-sqlalchemy \
 		  devel/py-coverage \
 		  devel/py-mock \
