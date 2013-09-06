@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.25 2013/08/06 19:07:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2013/09/06 16:27:21 ajacoutot Exp $
 
 COMMENT=	library for loading and enumurating of PKCS\#11 modules
 SHARED_ONLY =	Yes
 
-DISTNAME=	p11-kit-0.18.5
+DISTNAME=	p11-kit-0.20.0
 
 CATEGORIES=	security
 
-SHARED_LIBS +=  p11-kit              0.1      # 0.0
+SHARED_LIBS +=  p11-kit              1.0      # 0.0
 
 HOMEPAGE=	http://p11-glue.freedesktop.org/
 
@@ -16,13 +16,14 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c pthread tasn1
+WANTLIB += c ffi pthread tasn1
 
 MASTER_SITES=	${HOMEPAGE}releases/
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	security/libtasn1
+LIB_DEPENDS=	devel/libffi \
+		security/libtasn1
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
