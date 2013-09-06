@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/11/06 10:24:20 landry Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/09/06 18:26:50 bcallah Exp $
 bin/mnemosyne
 bin/mnemosyne-webserver
 lib/python${MODPY_VERSION}/site-packages/Mnemosyne-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -99,6 +99,8 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/file_formats/mne
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/file_formats/mnemosyne2_cards.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/file_formats/science_log_parser.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/file_formats/science_log_parser.pyc
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/file_formats/smconv_XML.py
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/file_formats/smconv_XML.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/file_formats/supermemo_7_txt.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/file_formats/supermemo_7_txt.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/libmnemosyne/file_formats/tsv.py
@@ -275,6 +277,8 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/configuration_dlg.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/configuration_dlg.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/configuration_wdgt_card_appearance.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/configuration_wdgt_card_appearance.pyc
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/configuration_wdgt_cramming.py
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/configuration_wdgt_cramming.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/configuration_wdgt_main.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/configuration_wdgt_main.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/configuration_wdgt_sync_server.py
@@ -305,6 +309,10 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/mnemosyne_rc.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/mnemosyne_rc.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/mplayer_audio.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/mplayer_audio.pyc
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/mplayer_video.py
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/mplayer_video.pyc
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/prefill_tag_behaviour_plugin.py
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/prefill_tag_behaviour_plugin.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/preview_cards_dlg.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/preview_cards_dlg.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/pyqt_render_chain.py
@@ -361,6 +369,8 @@ lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/ui_configuration_dlg.
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/ui_configuration_dlg.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/ui_configuration_wdgt_card_appearance.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/ui_configuration_wdgt_card_appearance.pyc
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/ui_configuration_wdgt_cramming.py
+lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/ui_configuration_wdgt_cramming.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/ui_configuration_wdgt_main.py
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/ui_configuration_wdgt_main.pyc
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/pyqt_ui/ui_configuration_wdgt_sync_server.py
@@ -458,6 +468,7 @@ share/locale/eo/LC_MESSAGES/mnemosyne.mo
 share/locale/es/LC_MESSAGES/mnemosyne.mo
 share/locale/fa/LC_MESSAGES/mnemosyne.mo
 share/locale/fr/LC_MESSAGES/mnemosyne.mo
+share/locale/gl/LC_MESSAGES/mnemosyne.mo
 share/locale/he/LC_MESSAGES/mnemosyne.mo
 share/locale/hr/LC_MESSAGES/mnemosyne.mo
 share/locale/hu/LC_MESSAGES/mnemosyne.mo
