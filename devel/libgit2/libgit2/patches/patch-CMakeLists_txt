@@ -1,7 +1,6 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.6 2013/07/09 10:03:47 jasper Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.7 2013/09/06 07:52:41 ajacoutot Exp $
 
 Don't clobber CFLAGS.
--Wextra is not available with gcc < 4.
 
 --- CMakeLists.txt.orig	Tue Jun 25 00:14:45 2013
 +++ CMakeLists.txt	Tue Jul  9 11:47:58 2013
@@ -10,7 +9,7 @@ Don't clobber CFLAGS.
  
  ELSE ()
 -	SET(CMAKE_C_FLAGS "-D_GNU_SOURCE -Wall -Wextra -Wno-missing-field-initializers -Wstrict-aliasing=2 -Wstrict-prototypes ${CMAKE_C_FLAGS}")
-+	SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -D_GNU_SOURCE -Wall -Wno-missing-field-initializers -Wstrict-aliasing=2 -Wstrict-prototypes ${CMAKE_C_FLAGS}")
++	SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -D_GNU_SOURCE -Wall -Wextra -Wno-missing-field-initializers -Wstrict-aliasing=2 -Wstrict-prototypes ${CMAKE_C_FLAGS}")
  
  	IF (WIN32 AND NOT CYGWIN)
  		SET(CMAKE_C_FLAGS_DEBUG "-D_DEBUG")
