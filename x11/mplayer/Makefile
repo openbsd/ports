@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.223 2013/08/19 14:40:21 brad Exp $
+# $OpenBSD: Makefile,v 1.224 2013/09/06 23:14:39 brad Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,9 +7,8 @@ ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
 COMMENT =		movie player supporting many formats
 
-V =			20130214
+V =			20130819
 FFMPEG_V =		20130718
-REVISION =		5
 
 SUBST_VARS += 		PREFIX CONFDIR
 

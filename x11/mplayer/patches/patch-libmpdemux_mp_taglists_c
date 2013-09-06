@@ -1,0 +1,16 @@
+$OpenBSD: patch-libmpdemux_mp_taglists_c,v 1.5 2013/09/06 23:14:40 brad Exp $
+
+Deal with older FFmpeg.
+
+--- libmpdemux/mp_taglists.c.orig	Tue Aug 20 03:11:43 2013
++++ libmpdemux/mp_taglists.c	Tue Aug 20 03:12:27 2013
+@@ -29,8 +29,8 @@
+ static const struct AVCodecTag mp_wav_tags[] = {
+     { AV_CODEC_ID_ADPCM_4XM,         MKTAG('4', 'X', 'M', 'A') },
+     { AV_CODEC_ID_ADPCM_ADX,         MKTAG('S', 'a', 'd', 'x') },
+-#if LIBAVUTIL_VERSION_MICRO >= 100
+     { AV_CODEC_ID_ADPCM_AFC,         MKTAG('A', 'F', 'C', ' ') },
++#if 0
+     { AV_CODEC_ID_ADPCM_DTK,         MKTAG('D', 'T', 'K', ' ') },
+ #endif
+     { AV_CODEC_ID_ADPCM_IMA_APC,     MKTAG('A', 'P', 'C', 'A') },

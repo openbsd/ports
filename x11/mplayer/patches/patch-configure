@@ -1,23 +1,48 @@
-$OpenBSD: patch-configure,v 1.70 2013/05/05 21:11:32 brad Exp $
---- configure.orig	Thu Feb 14 14:46:19 2013
-+++ configure	Sun May  5 00:59:13 2013
-@@ -35,34 +35,37 @@
- #
- #############################################################################
+$OpenBSD: patch-configure,v 1.71 2013/09/06 23:14:40 brad Exp $
+--- configure.orig	Mon Aug 19 10:49:15 2013
++++ configure	Tue Aug 20 02:49:06 2013
+@@ -523,6 +523,7 @@ Audio output:
+   --disable-nas          disable NAS audio output [autodetect]
+   --disable-sgiaudio     disable SGI audio output [autodetect]
+   --disable-sunaudio     disable Sun audio output [autodetect]
++  --disable-sndio        disable OpenBSD sndio audio output [autodetect]
+   --disable-kai          disable KAI audio output [autodetect]
+   --disable-dart         disable DART audio output [autodetect]
+   --disable-win32waveout disable Windows waveout audio output [autodetect]
+@@ -756,6 +757,7 @@ _xf86keysym=auto
+ _mlib=no #broken, thus disabled
+ _sgiaudio=auto
+ _sunaudio=auto
++_sndio=auto
+ _alsa=auto
+ _fastmemcpy=yes
+ hardcoded_tables=no
+@@ -1193,6 +1195,8 @@ for ac_option do
+   --disable-mlib)       _mlib=no        ;;
+   --enable-sunaudio)    _sunaudio=yes   ;;
+   --disable-sunaudio)   _sunaudio=no    ;;
++  --enable-sndio)	_sndio=yes	;;
++  --disable-sndio)	_sndio=no	;;
+   --enable-sgiaudio)    _sgiaudio=yes   ;;
+   --disable-sgiaudio)   _sgiaudio=no    ;;
+   --enable-alsa)        _alsa=yes       ;;
+@@ -1491,36 +1495,36 @@ echo configuration: $configuration > "$TMPLOG"
+ echo >> "$TMPLOG"
  
+ 
+-# local FFmpeg checkout handling
 -if test -e ffmpeg/.svn ; then
 -    echo "You have an outdated FFmpeg SVN checkout in ffmpeg/, please (re)move or replace it"
 -    exit 1
 -fi
-+# OpenBSD
-+# Don't do anything funky with Git or SVN, we will provide mplayer with FFmpeg
-+#
++## local FFmpeg checkout handling
 +#if test -e ffmpeg/.svn ; then
 +#    echo "You have an outdated FFmpeg SVN checkout in ffmpeg/, please (re)move or replace it"
 +#    exit 1
 +#fi
 +#
 +#if test -e ffmpeg/mp_auto_pull ; then
++#    echo "Updating FFmpeg, (re)move ffmpeg/mp_auto_pull to disable"
 +#    (cd ffmpeg && git checkout master)
 +#    if ! (cd ffmpeg && git pull --rebase --ff-only) ; then
 +#        echo "git pull failed, (re)move ffmpeg/mp_auto_pull to disable pulling"
@@ -41,6 +66,7 @@ $OpenBSD: patch-configure,v 1.70 2013/05/05 21:11:32 brad Exp $
 +#fi
  
 -if test -e ffmpeg/mp_auto_pull ; then
+-    echo "Updating FFmpeg, (re)move ffmpeg/mp_auto_pull to disable"
 -    (cd ffmpeg && git checkout master)
 -    if ! (cd ffmpeg && git pull --rebase --ff-only) ; then
 -        echo "git pull failed, (re)move ffmpeg/mp_auto_pull to disable pulling"
@@ -63,35 +89,10 @@ $OpenBSD: patch-configure,v 1.70 2013/05/05 21:11:32 brad Exp $
 -    touch ffmpeg/mp_auto_pull
 -fi
 -
- # Prevent locale nonsense from breaking basic text processing utilities
- export LC_ALL=C
- 
-@@ -542,6 +545,7 @@ Audio output:
-   --disable-nas          disable NAS audio output [autodetect]
-   --disable-sgiaudio     disable SGI audio output [autodetect]
-   --disable-sunaudio     disable Sun audio output [autodetect]
-+  --disable-sndio        disable OpenBSD sndio audio output [autodetect]
-   --disable-kai          disable KAI audio output [autodetect]
-   --disable-dart         disable DART audio output [autodetect]
-   --disable-win32waveout disable Windows waveout audio output [autodetect]
-@@ -795,6 +799,7 @@ _xf86keysym=auto
- _mlib=no #broken, thus disabled
- _sgiaudio=auto
- _sunaudio=auto
-+_sndio=auto
- _alsa=auto
- _fastmemcpy=yes
- hardcoded_tables=no
-@@ -1222,6 +1227,8 @@ for ac_option do
-   --disable-mlib)       _mlib=no        ;;
-   --enable-sunaudio)    _sunaudio=yes   ;;
-   --disable-sunaudio)   _sunaudio=no    ;;
-+  --enable-sndio)	_sndio=yes	;;
-+  --disable-sndio)	_sndio=no	;;
-   --enable-sgiaudio)    _sgiaudio=yes   ;;
-   --disable-sgiaudio)   _sgiaudio=no    ;;
-   --enable-alsa)        _alsa=yes       ;;
-@@ -1635,7 +1642,7 @@ if test -z "$_target" ; then
+ list_subparts() {
+   pattern="s/^[^#]*${1}.*([^ ,]*, *\([^ ,)]*\).*/\1_${2}/p"
+   sed -n "$pattern" ffmpeg/libav${3} | toupper
+@@ -1696,7 +1700,7 @@ if test -z "$_target" ; then
        sh3|sh4|sh4a) host_arch=sh ;;
        s390) host_arch=s390 ;;
        s390x) host_arch=s390x ;;
@@ -100,7 +101,7 @@ $OpenBSD: patch-configure,v 1.70 2013/05/05 21:11:32 brad Exp $
        vax) host_arch=vax ;;
        xtensa*) host_arch=xtensa ;;
        *) host_arch=UNKNOWN ;;
-@@ -2288,7 +2295,7 @@ case "$host_arch" in
+@@ -2349,7 +2353,7 @@ case "$host_arch" in
      arch='sparc'
      iproc='sparc'
      if test "$host_arch" = "sparc64" ; then
@@ -109,7 +110,7 @@ $OpenBSD: patch-configure,v 1.70 2013/05/05 21:11:32 brad Exp $
        proc='ultrasparc'
        def_fast_64bit='#define HAVE_FAST_64BIT 1'
      elif sunos ; then
-@@ -2611,7 +2618,7 @@ cat > $TMPC << EOF
+@@ -2672,7 +2676,7 @@ cat > $TMPC << EOF
  int ff_extern;
  EOF
  cc_check -c || die "Symbol mangling check failed."
@@ -118,7 +119,7 @@ $OpenBSD: patch-configure,v 1.70 2013/05/05 21:11:32 brad Exp $
  extern_prefix=${sym%%ff_extern*}
  def_extern_asm="#define EXTERN_ASM $extern_prefix"
  def_extern_prefix="#define EXTERN_PREFIX \"$extern_prefix\""
-@@ -5767,6 +5774,22 @@ fi
+@@ -5776,6 +5780,22 @@ fi
  echores "$_sunaudio"
  
  
@@ -141,23 +142,7 @@ $OpenBSD: patch-configure,v 1.70 2013/05/05 21:11:32 brad Exp $
  def_mlib='#define CONFIG_MLIB 0'
  if sunos; then
  echocheck "Sun mediaLib"
-@@ -5883,7 +5906,15 @@ else
-   default_dvd_device="/dev/dvd"
- fi
- 
-+if win32 || os2 || dragonfly || freebsd || openbsd || sunos || amigaos ; then
-+  default_bluray_device=$default_cdrom_device
-+elif darwin ; then
-+  default_bluray_device="/dev/rdiskN"
-+else
-+  default_bluray_device="/dev/dvd"
-+fi
- 
-+
- echocheck "VCD support"
- if test "$_vcd" = auto; then
-   _vcd=no
-@@ -6033,7 +6064,7 @@ echocheck "cdparanoia"
+@@ -6087,7 +6107,7 @@ echocheck "cdparanoia"
  if test "$_cdparanoia" = auto ; then
      _cdparanoia=no
      for inc_tmp in "" "-I/usr/include/cdda" "-I/usr/local/include/cdda" ; do
@@ -166,7 +151,7 @@ $OpenBSD: patch-configure,v 1.70 2013/05/05 21:11:32 brad Exp $
          _cdparanoia=yes && extra_cflags="$extra_cflags $inc_tmp" && break
      done
  fi
-@@ -7978,6 +8009,7 @@ extra_ldflags="$extra_ldflags -lm"
+@@ -8033,6 +8053,7 @@ extra_ldflags="$extra_ldflags -lm"
  # XML documentation tests
  echocheck "XML catalogs"
  for try_catalog in \
@@ -174,7 +159,7 @@ $OpenBSD: patch-configure,v 1.70 2013/05/05 21:11:32 brad Exp $
    /etc/sgml/catalog \
    /usr/share/xml/docbook/*/catalog.xml \
    /opt/local/share/xml/docbook-xml/*/catalog.xml \
-@@ -8005,6 +8037,7 @@ fi
+@@ -8060,6 +8081,7 @@ fi
  
  echocheck "XML chunked stylesheet"
  for try_chunk_xsl in \
@@ -182,7 +167,7 @@ $OpenBSD: patch-configure,v 1.70 2013/05/05 21:11:32 brad Exp $
    /usr/share/xml/docbook/*/html/chunk.xsl \
    /usr/share/sgml/docbook/stylesheet/xsl/nwalsh/html/chunk.xsl \
    /usr/share/sgml/docbook/yelp/docbook/html/chunk.xsl \
-@@ -8030,6 +8063,7 @@ fi
+@@ -8085,6 +8107,7 @@ fi
  
  echocheck "XML monolithic stylesheet"
  for try_docbook_xsl in \
@@ -190,7 +175,7 @@ $OpenBSD: patch-configure,v 1.70 2013/05/05 21:11:32 brad Exp $
    /usr/share/xml/docbook/*/html/docbook.xsl \
    /usr/share/sgml/docbook/stylesheet/xsl/nwalsh/html/docbook.xsl \
    /usr/share/sgml/docbook/yelp/docbook/html/docbook.xsl \
-@@ -8083,6 +8117,7 @@ EOF
+@@ -8138,6 +8161,7 @@ EOF
  echocheck "XML DTD"
  #FIXME: This should prefer higher version numbers, not the other way around ..
  for try_dtd in \
@@ -198,7 +183,7 @@ $OpenBSD: patch-configure,v 1.70 2013/05/05 21:11:32 brad Exp $
    /usr/share/xml/docbook/*/dtd/4*/docbookx.dtd \
    /usr/share/xml/docbook/*/docbookx.dtd \
    /usr/share/sgml/docbook/*/docbookx.dtd \
-@@ -8354,6 +8389,7 @@ SPEEX = $_speex
+@@ -8413,6 +8437,7 @@ SPEEX = $_speex
  STREAM_CACHE = $_stream_cache
  SGIAUDIO = $_sgiaudio
  SUNAUDIO = $_sunaudio
@@ -206,15 +191,7 @@ $OpenBSD: patch-configure,v 1.70 2013/05/05 21:11:32 brad Exp $
  SVGA = $_svga
  TDFXFB = $_tdfxfb
  TDFXVID = $_tdfxvid
-@@ -8687,6 +8723,7 @@ $(ff_config_enable "$cpuexts_all" "$cpuexts" "#" "HAVE
- /* Blu-ray/DVD/VCD/CD */
- #define DEFAULT_CDROM_DEVICE "$default_cdrom_device"
- #define DEFAULT_DVD_DEVICE   "$default_dvd_device"
-+#define DEFAULT_BLURAY_DEVICE   "$default_bluray_device"
- $def_bluray
- $def_bsdi_dvd
- $def_cddb
-@@ -8773,6 +8810,7 @@ $def_ossaudio_devmixer
+@@ -8846,6 +8871,7 @@ $def_ossaudio_devmixer
  $def_pulse
  $def_sgiaudio
  $def_sunaudio

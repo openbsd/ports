@@ -1,7 +1,7 @@
-$OpenBSD: patch-stream_tvi_bsdbt848_c,v 1.4 2010/11/08 21:25:44 edd Exp $
---- stream/tvi_bsdbt848.c.orig	Mon Sep 13 19:09:29 2010
-+++ stream/tvi_bsdbt848.c	Sun Oct 24 10:40:01 2010
-@@ -54,9 +54,10 @@
+$OpenBSD: patch-stream_tvi_bsdbt848_c,v 1.5 2013/09/06 23:14:40 brad Exp $
+--- stream/tvi_bsdbt848.c.orig	Mon Aug 19 10:49:11 2013
++++ stream/tvi_bsdbt848.c	Tue Aug 20 02:51:59 2013
+@@ -51,9 +51,10 @@
  #include <signal.h>
  #include <string.h>
  #include <errno.h>
@@ -13,7 +13,7 @@ $OpenBSD: patch-stream_tvi_bsdbt848_c,v 1.4 2010/11/08 21:25:44 edd Exp $
  #include <sys/audioio.h>
  #endif
  
-@@ -68,6 +69,9 @@
+@@ -65,6 +66,9 @@
  #include IOCTL_BT848_H_NAME
  #endif
  
@@ -23,7 +23,7 @@ $OpenBSD: patch-stream_tvi_bsdbt848_c,v 1.4 2010/11/08 21:25:44 edd Exp $
  #ifdef HAVE_SYS_SOUNDCARD_H
  #include <sys/soundcard.h>
  #else
-@@ -77,6 +81,7 @@
+@@ -74,6 +78,7 @@
  #include <machine/soundcard.h>
  #endif
  #endif
@@ -31,7 +31,7 @@ $OpenBSD: patch-stream_tvi_bsdbt848_c,v 1.4 2010/11/08 21:25:44 edd Exp $
  
  #include "libaf/af_format.h"
  #include "libmpcodecs/img_format.h"
-@@ -106,7 +111,13 @@ typedef struct priv {
+@@ -103,7 +108,13 @@ typedef struct priv {
  /* Audio */
      char *dspdev;
      int dspready;
@@ -45,7 +45,7 @@ $OpenBSD: patch-stream_tvi_bsdbt848_c,v 1.4 2010/11/08 21:25:44 edd Exp $
      int dspsamplesize;
      int dspstereo;
      int dspspeed;
-@@ -114,6 +125,9 @@ typedef struct priv {
+@@ -111,6 +122,9 @@ typedef struct priv {
      int dspframesize;
      int dsprate;
      long long dspbytesread;
@@ -55,7 +55,7 @@ $OpenBSD: patch-stream_tvi_bsdbt848_c,v 1.4 2010/11/08 21:25:44 edd Exp $
  
  /* Video */
      char *btdev;
-@@ -163,6 +177,15 @@ static priv_t *G_private=NULL;
+@@ -160,6 +174,15 @@ static priv_t *G_private=NULL;
  
  static int getinput(int innumber);
  
@@ -71,7 +71,7 @@ $OpenBSD: patch-stream_tvi_bsdbt848_c,v 1.4 2010/11/08 21:25:44 edd Exp $
  static void processframe(int signal)
  {
  struct timeval curtime;
-@@ -223,7 +246,9 @@ static tvi_handle_t *tvi_init_bsdbt848(tv_param_t* tv_
+@@ -220,7 +243,9 @@ static tvi_handle_t *tvi_init_bsdbt848(tv_param_t* tv_
  
      /* set audio device name */
      if (!tv_param->adevice)
@@ -82,7 +82,7 @@ $OpenBSD: patch-stream_tvi_bsdbt848_c,v 1.4 2010/11/08 21:25:44 edd Exp $
          priv->dspdev = strdup("/dev/sound");
  #else
          priv->dspdev = strdup("/dev/dsp");
-@@ -332,12 +357,39 @@ static int control(priv_t *priv, int cmd, void *arg)
+@@ -329,12 +354,39 @@ static int control(priv_t *priv, int cmd, void *arg)
          {
          int dspspeed = *(int *)arg;
  
@@ -123,7 +123,7 @@ $OpenBSD: patch-stream_tvi_bsdbt848_c,v 1.4 2010/11/08 21:25:44 edd Exp $
          priv->dspspeed = dspspeed;
  
          priv->dspframesize = priv->dspspeed*priv->dspsamplesize/8/
-@@ -646,12 +698,76 @@ priv->dspready = TRUE;
+@@ -643,12 +695,76 @@ priv->dspready = 1;
  priv->dspsamplesize = 16;
  priv->dspstereo = 1;
  priv->dspspeed = 44100;
@@ -200,8 +200,8 @@ $OpenBSD: patch-stream_tvi_bsdbt848_c,v 1.4 2010/11/08 21:25:44 edd Exp $
  if((priv->dspfd = open (priv->dspdev, O_RDONLY, 0)) < 0)
      {
      mp_msg(MSGT_TV, MSGL_ERR, MSGTR_TV_Bt848ErrorOpeningDspDev, strerror(errno));
-@@ -677,6 +793,8 @@ if((priv->dspready == TRUE) &&
-     priv->dspready = FALSE;
+@@ -674,6 +790,8 @@ if(priv->dspready &&
+     priv->dspready = 0;
      }
  
 +#endif
@@ -209,7 +209,7 @@ $OpenBSD: patch-stream_tvi_bsdbt848_c,v 1.4 2010/11/08 21:25:44 edd Exp $
  return 1;
  }
  
-@@ -701,7 +819,9 @@ if(ioctl(priv->btfd, METEORSSIGNAL, &marg) < 0)
+@@ -697,7 +815,9 @@ if(ioctl(priv->btfd, METEORSSIGNAL, &marg) < 0)
      return 0;
      }
  
@@ -219,7 +219,7 @@ $OpenBSD: patch-stream_tvi_bsdbt848_c,v 1.4 2010/11/08 21:25:44 edd Exp $
  
  gettimeofday(&curtime, NULL);
  
-@@ -740,10 +860,15 @@ if(ioctl(priv->btfd, METEORCAPTUR, &marg) < 0 )
+@@ -736,10 +856,15 @@ if(ioctl(priv->btfd, METEORCAPTUR, &marg) < 0 )
      return 0;
      }
  
@@ -236,8 +236,8 @@ $OpenBSD: patch-stream_tvi_bsdbt848_c,v 1.4 2010/11/08 21:25:44 edd Exp $
 +close(priv->btfd);
  priv->btfd = -1;
  
- priv->dspready = priv->videoready = FALSE;
-@@ -823,13 +948,21 @@ gettimeofday(&curtime, NULL);
+ priv->dspready = priv->videoready = 0;
+@@ -819,13 +944,21 @@ gettimeofday(&curtime, NULL);
  
  /* Get exactly one frame of audio, which forces video sync to audio.. */
  
@@ -260,7 +260,7 @@ $OpenBSD: patch-stream_tvi_bsdbt848_c,v 1.4 2010/11/08 21:25:44 edd Exp $
          {
          mp_msg(MSGT_TV, MSGL_ERR, MSGTR_TV_Bt848ErrorReadingAudio, strerror(errno));
          return 0;
-@@ -862,13 +995,19 @@ return priv->dspbytesread * 1.0 / priv->dsprate;
+@@ -858,13 +991,19 @@ return priv->dspbytesread * 1.0 / priv->dsprate;
  static int get_audio_framesize(priv_t *priv)
  {
  int bytesavail;
@@ -269,7 +269,7 @@ $OpenBSD: patch-stream_tvi_bsdbt848_c,v 1.4 2010/11/08 21:25:44 edd Exp $
  struct audio_info auinf;
  #endif
  
- if(priv->dspready == FALSE) return 0;
+ if(!priv->dspready) return 0;
  
 -#ifdef CONFIG_SUN_AUDIO
 +#if defined(CONFIG_SNDIO_AUDIO)

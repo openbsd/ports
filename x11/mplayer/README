@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2013/01/21 16:23:05 brad Exp $
+$OpenBSD: README,v 1.6 2013/09/06 23:14:40 brad Exp $
 
 Porting notes for MPlayer
 =========================
@@ -27,7 +27,7 @@ codec libraries for the same codec.
 There is an exception to this rule, which is where an external library
 provides an encoder and decoder, and there is a decoder for the given
 codec in FFmpeg, but no encoder; in such a case, go ahead and link the
-external library so that users can encode with mencoder.
+external library so that users can encode with Mencoder.
 
 Be aware that some hardware lacks a floating point unit (ARM for
 example).  On these architectures, you should select integer decoders
@@ -35,7 +35,7 @@ where possible. Eg. Tremor instead of Vorbis.
 
 External FAAC linkage (and graphics/ffmpeg's external FAAC linkage)
 was disabled due to conflicting licenses. Only the FFmpeg's
-internal "ffaac" encoder remains for use with encoding AAC in mencoder.
+internal "ffaac" encoder remains for use with encoding AAC in Mencoder.
 https://bugs.launchpad.net/ubuntu/+source/faac/+bug/374900
 
 Rolling a Distfile
@@ -54,5 +54,5 @@ Testing Mencoder
 See here to know what you can contain it what:
 http://en.wikipedia.org/wiki/Comparison_of_container_formats
 
-Make a h264/mp4 (although lavc containers are somewhat broken in mencoder):
+Make a H.264 / MP4 (although lavc containers are somewhat broken in Mencoder):
 mencoder -ovc x264 -of lavf -lavfopts format=mp4 -nosound -o out.mp4 <infile>
