@@ -1,17 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/09/21 03:58:08 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/09/06 03:06:45 bentley Exp $
 @bin bin/desmume
 @bin bin/desmume-cli
-@bin bin/desmume-glade
 @man man/man1/desmume-cli.1
-@man man/man1/desmume-glade.1
 @man man/man1/desmume.1
-share/applications/desmume-glade.desktop
 share/applications/desmume.desktop
-share/desmume/
-share/desmume/glade/
-share/desmume/glade/DeSmuME.xpm
-share/desmume/glade/DeSmuMe.glade
-share/desmume/glade/DeSmuMe_Dtools.glade
 share/pixmaps/
 share/pixmaps/DeSmuME.xpm
 @exec %D/bin/update-desktop-database
