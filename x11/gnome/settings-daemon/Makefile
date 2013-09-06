@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.113 2013/07/20 12:33:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.114 2013/09/06 14:15:05 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	GNOME settings daemon
 
 GNOME_PROJECT=	gnome-settings-daemon
-GNOME_VERSION=	3.8.4
+GNOME_VERSION=	3.8.5
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -14,15 +14,15 @@ WANTLIB += FLAC ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst asn1 atk-1.0
 WANTLIB += atk-bridge-2.0 atspi avahi-client avahi-common c cairo
 WANTLIB += cairo-gobject canberra canberra-gtk3 colord colordprivate
-WANTLIB += crypto cups dbus-1 dbus-glib-1 execinfo expat ffi fontconfig
-WANTLIB += freetype gdbm gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gnome-desktop-3 gobject-2.0 graphite2 gssapi
-WANTLIB += gthread-2.0 gtk-3 harfbuzz ibus-1.0 z
+WANTLIB += com_err crypto cups dbus-1 dbus-glib-1 execinfo expat
+WANTLIB += ffi fontconfig freetype gdbm gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gnome-desktop-3 gobject-2.0 graphite2
+WANTLIB += gssapi gthread-2.0 gtk-3 harfbuzz heimbase ibus-1.0
 WANTLIB += json-c krb5 lcms2 ltdl m notify ogg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += pulse pulse-mainloop-glib sndfile ssl upower-glib vorbis
-WANTLIB += vorbisenc vorbisfile xcb xcb-render xcb-shm xkbfile
-WANTLIB += com_err heimbase roken wind
+WANTLIB += pulse pulse-mainloop-glib roken sndfile ssl upower-glib
+WANTLIB += vorbis vorbisenc vorbisfile wind xcb xcb-render xcb-shm
+WANTLIB += xkbfile z
 
 MODULES=	devel/gettext \
 		x11/gnome
