@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2013/06/26 17:44:03 krw Exp $
+# $OpenBSD: Makefile,v 1.19 2013/09/06 22:16:24 sthen Exp $
 
 # not yet ported to other arches
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
+BROKEN-i386=		build fails post-64-bit time_t
+# ^^ logs: http://rhaalovely.net/build-failures/i386/20130901/lang/sbcl.log
 
 COMMENT=		compiler and runtime system for ANSI Common Lisp
 
