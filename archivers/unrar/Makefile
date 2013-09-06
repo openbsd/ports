@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2013/03/10 22:28:05 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2013/09/06 13:28:15 naddy Exp $
 
 COMMENT=	extract, list, and test RAR archives
 
@@ -6,26 +6,28 @@ COMMENT=	extract, list, and test RAR archives
 # Check version.hpp or the banner printed when running unrar
 # for the version to use in PKGNAME.  In particular, RARVER_BETA
 # is *not* a third digit, but increments before finally being set
-# to 0 for a non-beta release, e.g., "4.00 beta 6" was succeeded
-# by "4.00".
+# to 0 for a non-beta release, e.g., "5.00 beta 8" was succeeded
+# by "5.00".
 
-PKGNAME=	unrar-4.20
+PKGNAME=	unrar-5.00
 EPOCH=		1
-DISTNAME=	unrarsrc-4.2.4
+DISTNAME=	unrarsrc-5.0.11
 CATEGORIES=	archivers
 
 HOMEPAGE=	http://www.rarlab.com/
 
+MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
+
 # nonstandard
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c crypto m stdc++
+WANTLIB=	c crypto m pthread stdc++
 
 MASTER_SITES=	${HOMEPAGE}rar/
 
 WRKDIST=	${WRKDIR}/unrar
 
-MAKE_FILE=	makefile.unix
+MAKE_FILE=	makefile
 MAKE_FLAGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" STRIP=:
 
 do-install:

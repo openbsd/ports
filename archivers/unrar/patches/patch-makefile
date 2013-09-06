@@ -1,0 +1,25 @@
+$OpenBSD: patch-makefile,v 1.1 2013/09/06 13:28:15 naddy Exp $
+--- makefile.orig	Mon Apr 29 16:27:05 2013
++++ makefile	Thu Aug 29 22:53:51 2013
+@@ -5,10 +5,11 @@
+ CXX=g++
+ CXXFLAGS=-O2
+ LIBFLAGS=-fPIC
+-DEFINES=-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -DRAR_SMP
++DEFINES=-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -DRAR_SMP -DOPENSSL_AES
+ STRIP=strip
+ LDFLAGS=-pthread
+ DESTDIR=/usr
++LIBS=-lcrypto
+ 
+ # Linux using LCC
+ #CXX=lcc
+@@ -105,6 +106,8 @@ OBJECTS=rar.o strlist.o strfn.o pathfn.o smallfn.o glo
+ 	resource.o match.o timefn.o rdwrfn.o consio.o options.o errhnd.o rarvm.o secpassword.o \
+ 	rijndael.o getbits.o sha1.o sha256.o blake2s.o hash.o extinfo.o extract.o volume.o \
+   list.o find.o unpack.o headers.o threadpool.o rs16.o cmddata.o
++
++.SUFFIXES: .cpp
+ 
+ .cpp.o:
+ 	$(COMPILE) -D$(WHAT) -c $<

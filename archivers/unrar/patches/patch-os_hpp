@@ -1,30 +1,37 @@
-$OpenBSD: patch-os_hpp,v 1.9 2012/11/26 17:17:41 naddy Exp $
---- os.hpp.orig	Sat Jun  9 15:21:04 2012
-+++ os.hpp	Sun Nov 25 23:31:08 2012
-@@ -169,6 +169,10 @@
+$OpenBSD: patch-os_hpp,v 1.10 2013/09/06 13:28:16 naddy Exp $
+--- os.hpp.orig	Thu Aug 22 15:10:37 2013
++++ os.hpp	Thu Sep  5 18:34:55 2013
+@@ -133,6 +133,7 @@
+   #include <sys/statvfs.h>
+ #endif
+ #if defined(__FreeBSD__) || defined (__NetBSD__) || defined (__OpenBSD__) || defined(__APPLE__)
++#include <machine/endian.h>
+ #endif
+ #include <pwd.h>
+ #include <grp.h>
+@@ -151,6 +152,10 @@
  #include <utime.h>
  #include <locale.h>
  
-+#ifdef OPENSSL
++#ifdef OPENSSL_AES
 +#include <openssl/evp.h>
 +#endif
 +
  #ifdef  S_IFLNK
  #define SAVE_LINKS
  #endif
-@@ -240,12 +244,12 @@
+@@ -233,12 +238,12 @@
    #endif
  #endif
  
--#if !defined(BIG_ENDIAN) && !defined(_WIN_CE) && defined(_WIN_ALL)
-+#if defined(ALLOW_NOT_ALIGNED_INT)
+-#if !defined(BIG_ENDIAN) && defined(_WIN_ALL)
++#if !defined(BIG_ENDIAN) && defined(_WIN_ALL) && !defined(__STRICT_ALIGNMENT)
  // Allow not aligned integer access, increases speed in some operations.
--#define ALLOW_NOT_ALIGNED_INT
-+#undef ALLOW_NOT_ALIGNED_INT
+ #define ALLOW_NOT_ALIGNED_INT
  #endif
  
 -#if defined(__sparc) || defined(sparc) || defined(__sparcv9)
 +#ifndef STRICT_ALIGNMENT_REQUIRED
  // Prohibit not aligned access to data structures in text compression
- // algorithm, increases memory requirements
+ // algorithm, increases memory requirements.
  #define STRICT_ALIGNMENT_REQUIRED
