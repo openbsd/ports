@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.46 2013/08/13 09:01:12 pirofti Exp $
+# $OpenBSD: Makefile,v 1.47 2013/09/06 07:47:16 pirofti Exp $
 
 COMMENT =	command-line program to download videos from YouTube.com
 
-MODPY_EGG_VERSION = 2013.08.09
+MODPY_EGG_VERSION = 2013.09.05
 
 DISTNAME =	youtube-dl-${MODPY_EGG_VERSION}
 CATEGORIES =	www
