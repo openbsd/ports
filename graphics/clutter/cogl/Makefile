@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/05/31 15:34:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2013/09/06 15:28:30 ajacoutot Exp $
 
 COMMENT=		modern 3D graphics API
 
@@ -21,7 +21,9 @@ MODGNOME_TOOLS=		gi
 LIB_DEPENDS=		devel/pango \
 			graphics/gdk-pixbuf2
 
-CONFIGURE_ARGS=		--with-gl-libname=libGL.so
+CONFIGURE_ARGS=		--with-gl-libname=libGL.so \
+			--with-gles1-libname=libGLESv1_CM \
+			--with-gles2-libname=libGLESv2
 
 TEST_DEPENDS=		shells/bash
 TEST_IS_INTERACTIVE=	x11
