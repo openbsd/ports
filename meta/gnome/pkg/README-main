@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.20 2013/09/03 05:32:27 ajacoutot Exp $
+$OpenBSD: README-main,v 1.21 2013/09/06 14:58:19 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -27,7 +27,7 @@ In case the machine has multiple video cards, it may be necessary to do
 the same with /dev/drm{1,2,3}.
 
 Another solution would be to create a new group (e.g. "video"), change
-the group ownership of /dev/drm0 accordingly and put the users and
+the group ownership of /dev/drmX accordingly and put the users and
 "_gdm" into that group.
 
 Starting GNOME
@@ -66,7 +66,7 @@ _after_ "dbus_daemon".
 
 Cheat sheet
 ===========
-# echo 'chmod 0666 /dev/drm0' >> /etc/rc.local
+# echo 'chmod 0666 /dev/drm*' >> /etc/rc.local
 # echo 'multicast_host=YES' >> /etc/rc.conf.local
 # echo 'pkg_scripts="${pkg_scripts} dbus_daemon avahi_daemon gdm"' >> /etc/rc.conf.local
 # reboot
