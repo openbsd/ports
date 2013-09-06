@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2013/07/12 00:49:23 jca Exp $
+# $OpenBSD: Makefile,v 1.18 2013/09/06 16:25:06 ajacoutot Exp $
 
 COMMENT=	error codes for GnuPG related software
 
-DISTNAME=	libgpg-error-1.11
+DISTNAME=	libgpg-error-1.12
 CATEGORIES=	security devel
 
 SHARED_LIBS +=  gpg-error            3.2      # 9.0
