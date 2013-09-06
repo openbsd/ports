@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.87 2013/08/28 12:00:39 espie Exp $
+# $OpenBSD: Engine.pm,v 1.88 2013/09/06 17:11:01 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -625,7 +625,7 @@ sub log_no_ts
 sub log
 {
 	my $self = shift;
-	$self->{ts} = time();
+	$self->{ts} = CORE::time();
 	$self->log_no_ts(@_);
 }
 
