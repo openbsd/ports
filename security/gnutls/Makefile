@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.81 2013/08/06 19:06:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.82 2013/09/06 16:27:51 ajacoutot Exp $
 
 COMMENT=	GNU Transport Layer Security library
 
-V=		3.2.3
+V=		3.2.4
 DISTNAME=	gnutls-${V}
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	security
 
-SHARED_LIBS +=  gnutls               39.8     # 52.0
+SHARED_LIBS +=  gnutls               40.0     # 53.0
 SHARED_LIBS +=  gnutlsxx             29.1     # 29.0
 SHARED_LIBS +=  gnutls-xssl          0.0      # 0.0
 SHARED_LIBS +=  gnutls-openssl       27.2     # 27.2
@@ -20,14 +20,14 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1+ - GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c gmp hogweed idn m nettle p11-kit pthread stdc++ tasn1
+WANTLIB += c ffi gmp hogweed m nettle p11-kit pthread stdc++ tasn1
 WANTLIB += z
 
 MASTER_SITES=	ftp://ftp.gnutls.org/gcrypt/gnutls/v${V:R}/
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	devel/libidn \
+LIB_DEPENDS=	devel/libffi \
 		security/libtasn1 \
 		security/libnettle \
 		security/p11-kit

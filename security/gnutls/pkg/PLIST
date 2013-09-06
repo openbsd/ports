@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.28 2013/08/06 19:06:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.29 2013/09/06 16:27:52 ajacoutot Exp $
 @bin bin/certtool
-@bin bin/crywrap
 @bin bin/danetool
 @bin bin/gnutls-cli
 @bin bin/gnutls-cli-debug

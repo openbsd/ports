@@ -1,0 +1,418 @@
+$OpenBSD: patch-src_certtool-common_c,v 1.1 2013/09/06 16:27:51 ajacoutot Exp $
+
+From 1df1b0f7b28c733bf01e5d1faa2f8ccdb3db1665 Mon Sep 17 00:00:00 2001
+From: Nikos Mavrogiannopoulos <nmav@gnutls.org>
+Date: Mon, 2 Sep 2013 13:47:18 +0300
+Subject: [PATCH] Avoid using gnulib's error()
+
+--- src/certtool-common.c.orig	Wed Apr 24 10:34:02 2013
++++ src/certtool-common.c	Fri Sep  6 17:25:49 2013
+@@ -37,7 +37,6 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
+-#include <error.h>
+ #include <common.h>
+ #include "certtool-common.h"
+ #include "certtool-args.h"
+@@ -86,7 +85,10 @@ load_secret_key (int mand, common_info_st * info)
+   if (info->secret_key == NULL)
+     {
+       if (mand)
+-        error (EXIT_FAILURE, 0, "missing --secret-key");
++        {
++          fprintf (stderr, "missing --secret-key");
++          exit(1);
++        }
+       else
+         return NULL;
+     }
+@@ -96,7 +98,10 @@ load_secret_key (int mand, common_info_st * info)
+ 
+   ret = gnutls_hex_decode (&hex_key, raw_key, &raw_key_size);
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "hex_decode: %s", gnutls_strerror (ret));
++    {
++      fprintf (stderr, "hex_decode: %s", gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   key.data = (void*)raw_key;
+   key.size = raw_key_size;
+@@ -135,7 +140,10 @@ const char* pass;
+ 
+   ret = gnutls_privkey_init (&key);
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "privkey_init: %s", gnutls_strerror (ret));
++    {
++      fprintf (stderr, "privkey_init: %s", gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   ret = gnutls_privkey_import_x509_raw (key, dat, info->incert_format, NULL, 0);
+   if (ret == GNUTLS_E_DECRYPTION_FAILED)
+@@ -146,14 +154,18 @@ const char* pass;
+ 
+   if (ret == GNUTLS_E_BASE64_UNEXPECTED_HEADER_ERROR)
+     {
+-      error (EXIT_FAILURE, 0,
++      fprintf (stderr,
+              "import error: could not find a valid PEM header; "
+              "check if your key is PKCS #12 encoded");
++      exit(1);
+     }
+ 
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "importing --load-privkey: %s: %s",
++    {
++      fprintf (stderr, "importing --load-privkey: %s: %s",
+            info->privkey, gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   return key;
+ }
+@@ -165,12 +177,18 @@ gnutls_privkey_t key;
+ 
+   ret = gnutls_privkey_init (&key);
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "privkey_init: %s", gnutls_strerror (ret));
++    {
++      fprintf (stderr, "privkey_init: %s", gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   ret = gnutls_privkey_import_url(key, url, 0);
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "importing key: %s: %s",
++    {
++      fprintf (stderr, "importing key: %s: %s",
+            url, gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   return key;
+ }
+@@ -214,7 +232,10 @@ load_private_key (int mand, common_info_st * info)
+     return NULL;
+ 
+   if (info->privkey == NULL)
+-    error (EXIT_FAILURE, 0, "missing --load-privkey");
++    {
++      fprintf (stderr, "missing --load-privkey");
++      exit(1);
++    }
+ 
+   if (gnutls_url_is_supported(info->privkey) != 0)
+     return _load_url_privkey(info->privkey);
+@@ -223,7 +244,10 @@ load_private_key (int mand, common_info_st * info)
+   dat.size = size;
+ 
+   if (!dat.data)
+-    error (EXIT_FAILURE, errno, "reading --load-privkey: %s", info->privkey);
++    {
++      fprintf (stderr, "reading --load-privkey: %s", info->privkey);
++      exit(1);
++    }
+ 
+   key = _load_privkey(&dat, info);
+ 
+@@ -249,17 +273,26 @@ load_x509_private_key (int mand, common_info_st * info
+     return NULL;
+ 
+   if (info->privkey == NULL)
+-    error (EXIT_FAILURE, 0, "missing --load-privkey");
++    {
++      fprintf (stderr, "missing --load-privkey");
++      exit(1);
++    }
+ 
+   ret = gnutls_x509_privkey_init (&key);
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "privkey_init: %s", gnutls_strerror (ret));
++    {
++      fprintf( stderr, "privkey_init: %s", gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   dat.data = (void*)read_binary_file (info->privkey, &size);
+   dat.size = size;
+ 
+   if (!dat.data)
+-    error (EXIT_FAILURE, errno, "reading --load-privkey: %s", info->privkey);
++    {
++      fprintf (stderr, "reading --load-privkey: %s", info->privkey);
++      exit(1);
++    }
+ 
+   if (info->pkcs8)
+     {
+@@ -282,14 +315,18 @@ load_x509_private_key (int mand, common_info_st * info
+ 
+   if (ret == GNUTLS_E_BASE64_UNEXPECTED_HEADER_ERROR)
+     {
+-      error (EXIT_FAILURE, 0,
++      fprintf (stderr,
+              "import error: could not find a valid PEM header; "
+-             "check if your key is PKCS #12 encoded");
++             "check if your key is PEM encoded");
++      exit(1);
+     }
+ 
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "importing --load-privkey: %s: %s",
++    {
++      fprintf( stderr, "importing --load-privkey: %s: %s",
+            info->privkey, gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   return key;
+ }
+@@ -332,14 +369,20 @@ load_cert_list (int mand, size_t * crt_size, common_in
+   if (info->cert == NULL)
+     {
+       if (mand)
+-        error (EXIT_FAILURE, 0, "missing --load-certificate");
++        {
++          fprintf (stderr, "missing --load-certificate");
++          exit(1);
++        }
+       else
+         return NULL;
+     }
+ 
+   fd = fopen (info->cert, "r");
+   if (fd == NULL)
+-    error (EXIT_FAILURE, errno, "%s", info->cert);
++    {
++      fprintf (stderr, "%s", info->cert);
++      exit(1);
++    }
+ 
+   size = fread (buffer, 1, sizeof (buffer) - 1, fd);
+   buffer[size] = 0;
+@@ -353,7 +396,10 @@ load_cert_list (int mand, size_t * crt_size, common_in
+     {
+       ret = gnutls_x509_crt_init (&crt[i]);
+       if (ret < 0)
+-        error (EXIT_FAILURE, 0, "crt_init: %s", gnutls_strerror (ret));
++        {
++          fprintf(stderr, "crt_init: %s", gnutls_strerror (ret));
++          exit(1);
++        }
+ 
+       dat.data = (void*)ptr;
+       dat.size = ptr_size;
+@@ -362,7 +408,10 @@ load_cert_list (int mand, size_t * crt_size, common_in
+       if (ret < 0 && *crt_size > 0)
+         break;
+       if (ret < 0)
+-        error (EXIT_FAILURE, 0, "crt_import: %s", gnutls_strerror (ret));
++        {
++          fprintf(stderr, "crt_import: %s", gnutls_strerror (ret));
++          exit(1);
++        }
+ 
+       ptr = strstr (ptr, "---END");
+       if (ptr == NULL)
+@@ -399,26 +448,35 @@ load_request (common_info_st * info)
+ 
+   ret = gnutls_x509_crq_init (&crq);
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "crq_init: %s", gnutls_strerror (ret));
++    {
++      fprintf(stderr, "crq_init: %s", gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   dat.data = (void*)read_binary_file (info->request, &size);
+   dat.size = size;
+ 
+   if (!dat.data)
+-    error (EXIT_FAILURE, errno, "reading --load-request: %s", info->request);
++    {
++      fprintf (stderr, "reading --load-request: %s", info->request);
++      exit(1);
++    }
+ 
+   ret = gnutls_x509_crq_import (crq, &dat, info->incert_format);
+   if (ret == GNUTLS_E_BASE64_UNEXPECTED_HEADER_ERROR)
+     {
+-      error (EXIT_FAILURE, 0,
++      fprintf(stderr, 
+              "import error: could not find a valid PEM header");
++      exit(1);
+     }
+ 
+   free (dat.data);
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "importing --load-request: %s: %s",
+-           info->request, gnutls_strerror (ret));
+-
++    {
++      fprintf(stderr, "importing --load-request: %s: %s",
++             info->request, gnutls_strerror (ret));
++      exit(1);
++    }
+   return crq;
+ }
+ 
+@@ -432,7 +490,10 @@ load_ca_private_key (common_info_st * info)
+   size_t size;
+ 
+   if (info->ca_privkey == NULL)
+-    error (EXIT_FAILURE, 0, "missing --load-ca-privkey");
++    {
++      fprintf(stderr, "missing --load-ca-privkey");
++      exit(1);
++    }
+ 
+   if (gnutls_url_is_supported(info->ca_privkey) != 0)
+     return _load_url_privkey(info->ca_privkey);
+@@ -441,8 +502,11 @@ load_ca_private_key (common_info_st * info)
+   dat.size = size;
+ 
+   if (!dat.data)
+-    error (EXIT_FAILURE, errno, "reading --load-ca-privkey: %s",
++    {
++      fprintf (stderr, "reading --load-ca-privkey: %s",
+            info->ca_privkey);
++      exit(1);
++    }
+ 
+   key = _load_privkey(&dat, info);
+ 
+@@ -462,24 +526,36 @@ load_ca_cert (common_info_st * info)
+   size_t size;
+ 
+   if (info->ca == NULL)
+-    error (EXIT_FAILURE, 0, "missing --load-ca-certificate");
++    {
++      fprintf(stderr, "missing --load-ca-certificate");
++      exit(1);
++    }
+ 
+   ret = gnutls_x509_crt_init (&crt);
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "crt_init: %s", gnutls_strerror (ret));
++    {
++      fprintf(stderr, "crt_init: %s", gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   dat.data = (void*)read_binary_file (info->ca, &size);
+   dat.size = size;
+ 
+   if (!dat.data)
+-    error (EXIT_FAILURE, errno, "reading --load-ca-certificate: %s",
++    {
++      fprintf( stderr, "reading --load-ca-certificate: %s",
+            info->ca);
++      exit(1);
++    }
+ 
+   ret = gnutls_x509_crt_import (crt, &dat, info->incert_format);
+   free (dat.data);
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "importing --load-ca-certificate: %s: %s",
+-           info->ca, gnutls_strerror (ret));
++    {
++      fprintf(stderr, "importing --load-ca-certificate: %s: %s",
++             info->ca, gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   return crt;
+ }
+@@ -499,20 +575,29 @@ load_pubkey (int mand, common_info_st * info)
+     return NULL;
+ 
+   if (info->pubkey == NULL)
+-    error (EXIT_FAILURE, 0, "missing --load-pubkey");
++    {
++      fprintf(stderr, "missing --load-pubkey");
++      exit(1);
++    }
+ 
+   if (gnutls_url_is_supported(info->pubkey) != 0)
+     return _load_url_pubkey(info->pubkey);
+ 
+   ret = gnutls_pubkey_init (&key);
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "privkey_init: %s", gnutls_strerror (ret));
++    {
++      fprintf(stderr, "privkey_init: %s", gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   dat.data = (void*)read_binary_file (info->pubkey, &size);
+   dat.size = size;
+ 
+   if (!dat.data)
+-    error (EXIT_FAILURE, errno, "reading --load-pubkey: %s", info->pubkey);
++    {
++      fprintf( stderr, "reading --load-pubkey: %s", info->pubkey);
++      exit(1);
++    }
+ 
+   ret = gnutls_pubkey_import (key, &dat, info->incert_format);
+ 
+@@ -520,14 +605,18 @@ load_pubkey (int mand, common_info_st * info)
+ 
+   if (ret == GNUTLS_E_BASE64_UNEXPECTED_HEADER_ERROR)
+     {
+-      error (EXIT_FAILURE, 0,
++      fprintf(stderr, 
+              "import error: could not find a valid PEM header; "
+              "check if your key has the PUBLIC KEY header");
++      exit(1);
+     }
+ 
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "importing --load-pubkey: %s: %s",
++    {
++      fprintf(stderr, "importing --load-pubkey: %s: %s",
+            info->pubkey, gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   return key;
+ }
+@@ -539,8 +628,11 @@ int ret;
+ 
+   ret = gnutls_pubkey_init(&pubkey);
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "gnutls_pubkey_init: %s",
++    {
++      fprintf(stderr, "gnutls_pubkey_init: %s",
+            gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   if (!privkey || (ret = gnutls_pubkey_import_privkey(pubkey, privkey, 0, 0)) < 0)
+     { /* could not get (e.g. on PKCS #11 */
+@@ -747,7 +839,10 @@ size_t size;
+ 
+   ret = gnutls_pubkey_print(pubkey, format, &data);
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "pubkey_print error: %s", gnutls_strerror (ret));
++    {
++      fprintf(stderr, "pubkey_print error: %s", gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   fprintf (outfile, "%s\n", data.data);
+   gnutls_free (data.data);
+@@ -755,7 +850,10 @@ size_t size;
+   size = buffer_size;
+   ret = gnutls_pubkey_export (pubkey, GNUTLS_X509_FMT_PEM, buffer, &size);
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "export error: %s", gnutls_strerror (ret));
++    {
++      fprintf(stderr, "export error: %s", gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   fprintf (outfile, "\n%s\n", buffer);
+ }

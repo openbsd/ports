@@ -1,0 +1,379 @@
+$OpenBSD: patch-src_ocsptool_c,v 1.1 2013/09/06 16:27:51 ajacoutot Exp $
+
+From 1df1b0f7b28c733bf01e5d1faa2f8ccdb3db1665 Mon Sep 17 00:00:00 2001
+From: Nikos Mavrogiannopoulos <nmav@gnutls.org>
+Date: Mon, 2 Sep 2013 13:47:18 +0300
+Subject: [PATCH] Avoid using gnulib's error()
+
+--- src/ocsptool.c.orig	Sat Aug 10 11:30:18 2013
++++ src/ocsptool.c	Fri Sep  6 17:25:49 2013
+@@ -31,7 +31,6 @@
+ #include <gnutls/crypto.h>
+ 
+ /* Gnulib portability files. */
+-#include <error.h>
+ #include <read-file.h>
+ #include <socket.h>
+ 
+@@ -59,24 +58,36 @@ request_info (void)
+ 
+   ret = gnutls_ocsp_req_init (&req);
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "ocsp_req_init: %s", gnutls_strerror (ret));
++    {
++      fprintf (stderr, "ocsp_req_init: %s", gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   if (HAVE_OPT(LOAD_REQUEST))
+     dat.data = (void*)read_binary_file (OPT_ARG(LOAD_REQUEST), &size);
+   else
+     dat.data = (void*)fread_file (infile, &size);
+   if (dat.data == NULL)
+-    error (EXIT_FAILURE, errno, "reading request");
++    {
++      fprintf (stderr, "reading request");
++      exit(1);
++    }
+   dat.size = size;
+ 
+   ret = gnutls_ocsp_req_import (req, &dat);
+   free (dat.data);
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "importing request: %s", gnutls_strerror (ret));
++    {
++      fprintf (stderr, "importing request: %s", gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   ret = gnutls_ocsp_req_print (req, GNUTLS_OCSP_PRINT_FULL, &dat);
+   if (ret != 0)
+-    error (EXIT_FAILURE, 0, "ocsp_req_print: %s", gnutls_strerror (ret));
++    {
++      fprintf (stderr, "ocsp_req_print: %s", gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   printf ("%.*s", dat.size, dat.data);
+   gnutls_free (dat.data);
+@@ -93,18 +104,27 @@ _response_info (const gnutls_datum_t* data)
+ 
+   ret = gnutls_ocsp_resp_init (&resp);
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "ocsp_resp_init: %s", gnutls_strerror (ret));
++    {
++      fprintf (stderr, "ocsp_resp_init: %s", gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   ret = gnutls_ocsp_resp_import (resp, data);
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "importing response: %s", gnutls_strerror (ret));
++    {
++      fprintf (stderr, "importing response: %s", gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   if (ENABLED_OPT(VERBOSE))
+     ret = gnutls_ocsp_resp_print (resp, GNUTLS_OCSP_PRINT_FULL, &buf);
+   else
+     ret = gnutls_ocsp_resp_print (resp, GNUTLS_OCSP_PRINT_COMPACT, &buf);
+   if (ret != 0)
+-    error (EXIT_FAILURE, 0, "ocsp_resp_print: %s", gnutls_strerror (ret));
++    {
++      fprintf (stderr, "ocsp_resp_print: %s", gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   printf ("%.*s", buf.size, buf.data);
+   gnutls_free (buf.data);
+@@ -123,7 +143,10 @@ response_info (void)
+   else
+     dat.data = (void*)fread_file (infile, &size);
+   if (dat.data == NULL)
+-    error (EXIT_FAILURE, errno, "reading response");
++    {
++      fprintf (stderr, "reading response");
++      exit(1);
++    }
+   dat.size = size;
+ 
+   _response_info(&dat);
+@@ -139,23 +162,35 @@ load_issuer (void)
+   size_t size;
+ 
+   if (!HAVE_OPT(LOAD_ISSUER))
+-    error (EXIT_FAILURE, 0, "missing --load-issuer");
++    {
++      fprintf( stderr, "missing --load-issuer");
++      exit(1);
++    }
+ 
+   ret = gnutls_x509_crt_init (&crt);
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "crt_init: %s", gnutls_strerror (ret));
++    {
++      fprintf (stderr, "crt_init: %s", gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   dat.data = (void*)read_binary_file (OPT_ARG(LOAD_ISSUER), &size);
+   dat.size = size;
+ 
+   if (!dat.data)
+-    error (EXIT_FAILURE, errno, "reading --load-issuer: %s", OPT_ARG(LOAD_ISSUER));
++    {
++      fprintf (stderr, "reading --load-issuer: %s", OPT_ARG(LOAD_ISSUER));
++      exit(1);
++    }
+ 
+   ret = gnutls_x509_crt_import (crt, &dat, encoding);
+   free (dat.data);
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "importing --load-issuer: %s: %s",
++    {
++      fprintf (stderr, "importing --load-issuer: %s: %s",
+            OPT_ARG(LOAD_ISSUER), gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   return crt;
+ }
+@@ -169,23 +204,35 @@ load_cert (void)
+   size_t size;
+ 
+   if (!HAVE_OPT(LOAD_CERT))
+-    error (EXIT_FAILURE, 0, "missing --load-cert");
++    {
++      fprintf (stderr, "missing --load-cert");
++      exit(1);
++    }
+ 
+   ret = gnutls_x509_crt_init (&crt);
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "crt_init: %s", gnutls_strerror (ret));
++    {
++      fprintf (stderr, "crt_init: %s", gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   dat.data = (void*)read_binary_file (OPT_ARG(LOAD_CERT), &size);
+   dat.size = size;
+ 
+   if (!dat.data)
+-    error (EXIT_FAILURE, errno, "reading --load-cert: %s", OPT_ARG(LOAD_CERT));
++    {
++      fprintf (stderr, "reading --load-cert: %s", OPT_ARG(LOAD_CERT));
++      exit(1);
++    }
+ 
+   ret = gnutls_x509_crt_import (crt, &dat, encoding);
+   free (dat.data);
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "importing --load-cert: %s: %s",
++    {
++      fprintf (stderr, "importing --load-cert: %s: %s",
+            OPT_ARG(LOAD_CERT), gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   return crt;
+ }
+@@ -218,29 +265,44 @@ _verify_response (gnutls_datum_t *data)
+ 
+   ret = gnutls_ocsp_resp_init (&resp);
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "ocsp_resp_init: %s", gnutls_strerror (ret));
++    {
++      fprintf (stderr, "ocsp_resp_init: %s", gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   ret = gnutls_ocsp_resp_import (resp, data);
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "importing response: %s", gnutls_strerror (ret));
++    {
++      fprintf (stderr, "importing response: %s", gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   if (HAVE_OPT(LOAD_TRUST))
+     {
+       dat.data = (void*)read_binary_file (OPT_ARG(LOAD_TRUST), &size);
+       if (dat.data == NULL)
+-	error (EXIT_FAILURE, errno, "reading --load-trust: %s", OPT_ARG(LOAD_TRUST));
++        {
++	  fprintf (stderr, "reading --load-trust: %s", OPT_ARG(LOAD_TRUST));
++	  exit(1);
++	}
+       dat.size = size;
+ 
+       ret = gnutls_x509_trust_list_init (&list, 0);
+       if (ret < 0)
+-	error (EXIT_FAILURE, 0, "gnutls_x509_trust_list_init: %s",
++        {
++	  fprintf (stderr, "gnutls_x509_trust_list_init: %s",
+ 	       gnutls_strerror (ret));
++	  exit(1);
++	}
+ 
+       ret = gnutls_x509_crt_list_import2 (&x509_ca_list, &x509_ncas, &dat,
+ 					  GNUTLS_X509_FMT_PEM, 0);
+       if (ret < 0 || x509_ncas < 1)
+-	error (EXIT_FAILURE, 0, "error parsing CAs: %s",
++        {
++	  fprintf (stderr, "error parsing CAs: %s",
+ 	       gnutls_strerror (ret));
++	  exit(1);
++	}
+ 
+       if (HAVE_OPT(VERBOSE))
+ 	{
+@@ -253,8 +315,11 @@ _verify_response (gnutls_datum_t *data)
+ 	      ret = gnutls_x509_crt_print (x509_ca_list[i],
+ 					   GNUTLS_CRT_PRINT_ONELINE, &out);
+ 	      if (ret < 0)
+-		error (EXIT_FAILURE, 0, "gnutls_x509_crt_print: %s",
++	        {
++		  fprintf (stderr, "gnutls_x509_crt_print: %s",
+ 		       gnutls_strerror (ret));
++		  exit(1);
++		}
+ 
+ 	      printf ("%d: %.*s\n", i, out.size, out.data);
+ 	      gnutls_free (out.data);
+@@ -264,33 +329,48 @@ _verify_response (gnutls_datum_t *data)
+ 
+       ret = gnutls_x509_trust_list_add_cas (list, x509_ca_list, x509_ncas, 0);
+       if (ret < 0)
+-	error (EXIT_FAILURE, 0, "gnutls_x509_trust_add_cas: %s",
++        {
++	  fprintf (stderr, "gnutls_x509_trust_add_cas: %s",
+ 	       gnutls_strerror (ret));
++	  exit(1);
++	}
+ 
+       if (HAVE_OPT(VERBOSE))
+ 	fprintf (stdout, "Loaded %d trust anchors\n", x509_ncas);
+ 
+       ret = gnutls_ocsp_resp_verify (resp, list, &verify, 0);
+       if (ret < 0)
+-	error (EXIT_FAILURE, 0, "gnutls_ocsp_resp_verify: %s",
++        {
++	  fprintf (stderr, "gnutls_ocsp_resp_verify: %s",
+ 	       gnutls_strerror (ret));
++	  exit(1);
++	}
+     }
+   else if (HAVE_OPT(LOAD_SIGNER))
+     {
+       ret = gnutls_x509_crt_init (&signer);
+       if (ret < 0)
+-	error (EXIT_FAILURE, 0, "crt_init: %s", gnutls_strerror (ret));
++        {
++	  fprintf (stderr, "crt_init: %s", gnutls_strerror (ret));
++	  exit(1);
++	}
+ 
+       dat.data = (void*)read_binary_file (OPT_ARG(LOAD_SIGNER), &size);
+       if (dat.data == NULL)
+-	error (EXIT_FAILURE, errno, "reading --load-signer: %s", OPT_ARG(LOAD_SIGNER));
++        {
++	  fprintf (stderr, "reading --load-signer: %s", OPT_ARG(LOAD_SIGNER));
++	  exit(1);
++	}
+       dat.size = size;
+ 
+       ret = gnutls_x509_crt_import (signer, &dat, encoding);
+       free (dat.data);
+       if (ret < 0)
+-	error (EXIT_FAILURE, 0, "importing --load-signer: %s: %s",
++        {
++	  fprintf (stderr, "importing --load-signer: %s: %s",
+ 	       OPT_ARG(LOAD_SIGNER), gnutls_strerror (ret));
++	  exit(1);
++	}
+ 
+       if (HAVE_OPT(VERBOSE))
+ 	{
+@@ -298,8 +378,11 @@ _verify_response (gnutls_datum_t *data)
+ 
+ 	  ret = gnutls_x509_crt_print (signer, GNUTLS_CRT_PRINT_ONELINE, &out);
+ 	  if (ret < 0)
+-	    error (EXIT_FAILURE, 0, "gnutls_x509_crt_print: %s",
++	    {
++	      fprintf (stderr, "gnutls_x509_crt_print: %s",
+ 		   gnutls_strerror (ret));
++              exit(1);
++            }
+ 
+ 	  printf ("Signer: %.*s\n", out.size, out.data);
+ 	  gnutls_free (out.data);
+@@ -308,11 +391,17 @@ _verify_response (gnutls_datum_t *data)
+ 
+       ret = gnutls_ocsp_resp_verify_direct (resp, signer, &verify, 0);
+       if (ret < 0)
+-	error (EXIT_FAILURE, 0, "gnutls_ocsp_resp_verify_direct: %s",
++        {
++	  fprintf (stderr, "gnutls_ocsp_resp_verify_direct: %s",
+ 	       gnutls_strerror (ret));
++	  exit(1);
++	}
+     }
+   else
+-    error (EXIT_FAILURE, 0, "missing --load-trust or --load-signer");
++    {
++      fprintf (stderr, "missing --load-trust or --load-signer");
++      exit(1);
++    }
+ 
+   printf ("Verifying OCSP Response: ");
+   print_ocsp_verify_res (verify);
+@@ -334,7 +423,10 @@ verify_response (void)
+   else
+     dat.data = (void*)fread_file (infile, &size);
+   if (dat.data == NULL)
+-    error (EXIT_FAILURE, errno, "reading response");
++    {
++      fprintf (stderr, "reading response");
++      exit(1);
++    }
+   dat.size = size;
+   
+   _verify_response(&dat);
+@@ -381,7 +473,10 @@ main (int argc, char **argv)
+   int ret;
+ 
+   if ((ret = gnutls_global_init ()) < 0)
+-    error (EXIT_FAILURE, 0, "global_init: %s", gnutls_strerror (ret));
++    {
++      fprintf( stderr, "global_init: %s", gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   optionProcess( &ocsptoolOptions, argc, argv);
+ 
+@@ -392,7 +487,10 @@ main (int argc, char **argv)
+     {
+       outfile = fopen (OPT_ARG(OUTFILE), "wb");
+       if (outfile == NULL)
+-        error (EXIT_FAILURE, errno, "%s", OPT_ARG(OUTFILE));
++        {
++          fprintf( stderr, "%s", OPT_ARG(OUTFILE));
++          exit(1);
++        }
+     }
+   else
+     outfile = stdout;
+@@ -401,7 +499,10 @@ main (int argc, char **argv)
+     {
+       infile = fopen (OPT_ARG(INFILE), "rb");
+       if (infile == NULL)
+-        error (EXIT_FAILURE, errno, "%s", OPT_ARG(INFILE));
++        {
++          fprintf( stderr, "%s", OPT_ARG(INFILE));
++          exit(1);
++        }
+     }
+   else
+     infile = stdin;

@@ -1,0 +1,236 @@
+$OpenBSD: patch-src_danetool_c,v 1.1 2013/09/06 16:27:51 ajacoutot Exp $
+
+From 1df1b0f7b28c733bf01e5d1faa2f8ccdb3db1665 Mon Sep 17 00:00:00 2001
+From: Nikos Mavrogiannopoulos <nmav@gnutls.org>
+Date: Mon, 2 Sep 2013 13:47:18 +0300
+Subject: [PATCH] Avoid using gnulib's error()
+
+--- src/danetool.c.orig	Sat Aug 10 11:30:18 2013
++++ src/danetool.c	Fri Sep  6 17:25:49 2013
+@@ -42,7 +42,6 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
+-#include <error.h>
+ 
+ /* Gnulib portability files. */
+ #include <read-file.h>
+@@ -95,7 +94,10 @@ cmd_parser (int argc, char **argv)
+     {
+       outfile = safe_open_rw (OPT_ARG(OUTFILE), privkey_op);
+       if (outfile == NULL)
+-        error (EXIT_FAILURE, errno, "%s", OPT_ARG(OUTFILE));
++        {
++          fprintf (stderr, "%s", OPT_ARG(OUTFILE));
++          exit(1);
++        }
+     }
+   else
+     outfile = stdout;
+@@ -122,7 +124,10 @@ cmd_parser (int argc, char **argv)
+       else if (strcasecmp (OPT_ARG(HASH), "rmd160") == 0)
+         default_dig = GNUTLS_DIG_RMD160;
+       else
+-        error (EXIT_FAILURE, 0, "invalid hash: %s", OPT_ARG(HASH));
++        {
++          fprintf (stderr, "invalid hash: %s", OPT_ARG(HASH));
++          exit(1);
++        }
+     }
+ 
+   gnutls_global_set_log_function (tls_log_func);
+@@ -134,7 +139,10 @@ cmd_parser (int argc, char **argv)
+     }
+ 
+   if ((ret = gnutls_global_init ()) < 0)
+-    error (EXIT_FAILURE, 0, "global_init: %s", gnutls_strerror (ret));
++    {
++      fprintf (stderr, "global_init: %s", gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+ #ifdef ENABLE_PKCS11
+   pkcs11_common();
+@@ -207,31 +215,46 @@ unsigned vflags = DANE_VFLAG_FAIL_IF_NOT_CHECKED;
+   printf("Querying %s (%s:%d)...\n", host, proto, port);
+   ret = dane_state_init(&s, flags);
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "dane_state_init: %s", dane_strerror (ret));
++    {
++      fprintf (stderr, "dane_state_init: %s", dane_strerror (ret));
++      exit(1);
++    }
+ 
+   if (HAVE_OPT(DLV))
+     {
+       ret = dane_state_set_dlv_file(s, OPT_ARG(DLV));
+       if (ret < 0)
+-        error (EXIT_FAILURE, 0, "dane_state_set_dlv_file: %s", dane_strerror (ret));
++        {
++          fprintf (stderr, "dane_state_set_dlv_file: %s", dane_strerror (ret));
++          exit(1);
++        }
+     }
+   
+   ret = dane_query_tlsa(s, &q, host, proto, port);
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "dane_query_tlsa: %s", dane_strerror (ret));
++    {
++      fprintf (stderr, "dane_query_tlsa: %s", dane_strerror (ret));
++      exit(1);
++    }
+   
+   entries = dane_query_entries(q);
+   for (i=0;i<entries;i++)
+     {
+       ret = dane_query_data(q, i, &usage, &type, &match, &data);
+       if (ret < 0)
+-        error (EXIT_FAILURE, 0, "dane_query_data: %s", dane_strerror (ret));
++        {
++          fprintf (stderr, "dane_query_data: %s", dane_strerror (ret));
++          exit(1);
++        }
+       
+       
+       size = buffer_size;
+       ret = gnutls_hex_encode(&data, (void*)buffer, &size);
+       if (ret < 0)
+-        error (EXIT_FAILURE, 0, "gnutls_hex_encode: %s", dane_strerror (ret));
++        {
++          fprintf (stderr, "gnutls_hex_encode: %s", dane_strerror (ret));
++          exit(1);
++        }
+ 
+       if (entries > 1) printf("\nEntry %d:\n", i+1);
+ 
+@@ -249,11 +272,17 @@ unsigned vflags = DANE_VFLAG_FAIL_IF_NOT_CHECKED;
+           
+           ret = gnutls_load_file(cinfo->cert, &file);
+           if (ret < 0)
+-            error (EXIT_FAILURE, 0, "gnutls_load_file: %s", gnutls_strerror (ret));
++            {
++              fprintf (stderr, "gnutls_load_file: %s", gnutls_strerror (ret));
++              exit(1);
++            }
+         
+           ret = gnutls_x509_crt_list_import2( &clist, &clist_size, &file, cinfo->incert_format, 0);
+           if (ret < 0)
+-            error (EXIT_FAILURE, 0, "gnutls_x509_crt_list_import2: %s", gnutls_strerror (ret));
++            {
++              fprintf (stderr, "gnutls_x509_crt_list_import2: %s", gnutls_strerror (ret));
++              exit(1);
++            }
+ 
+           if (clist_size > 0)
+             {
+@@ -265,17 +294,26 @@ unsigned vflags = DANE_VFLAG_FAIL_IF_NOT_CHECKED;
+                 {
+                   ret = gnutls_x509_crt_export2( clist[i], GNUTLS_X509_FMT_DER, &certs[i]);
+                   if (ret < 0)
+-                    error (EXIT_FAILURE, 0, "gnutls_x509_crt_export2: %s", gnutls_strerror (ret));
++                    {
++                      fprintf (stderr, "gnutls_x509_crt_export2: %s", gnutls_strerror (ret));
++                      exit(1);
++                    }
+                 }
+ 
+               ret = dane_verify_crt( s, certs, clist_size, GNUTLS_CRT_X509, 
+                                      host, proto, port, 0, vflags, &status);
+               if (ret < 0)
+-                error (EXIT_FAILURE, 0, "dane_verify_crt: %s", dane_strerror (ret));
++                {
++                  fprintf (stderr, "dane_verify_crt: %s", dane_strerror (ret));
++                  exit(1);
++                }
+                 
+               ret = dane_verification_status_print(status, &out, 0);
+               if (ret < 0)
+-                error (EXIT_FAILURE, 0, "dane_verification_status_print: %s", dane_strerror (ret));
++                {
++                  fprintf( stderr, "dane_verification_status_print: %s", dane_strerror (ret));
++                  exit(1);
++                }
+               
+               printf("\nVerification: %s\n", out.data);
+               gnutls_free(out.data);
+@@ -331,7 +369,10 @@ static void dane_info(const char* host, const char* pr
+       size = buffer_size;
+       ret = gnutls_x509_crt_export (crt, GNUTLS_X509_FMT_DER, buffer, &size);
+       if (ret < 0)
+-        error (EXIT_FAILURE, 0, "export error: %s", gnutls_strerror (ret));
++        {
++          fprintf( stderr, "export error: %s", gnutls_strerror (ret));
++          exit(1);
++        }
+ 
+       gnutls_x509_crt_deinit (crt);
+     }
+@@ -341,7 +382,10 @@ static void dane_info(const char* host, const char* pr
+ 
+       ret = gnutls_pubkey_init (&pubkey);
+       if (ret < 0)
+-        error (EXIT_FAILURE, 0, "pubkey_init: %s", gnutls_strerror (ret));
++        {
++          fprintf (stderr, "pubkey_init: %s", gnutls_strerror (ret));
++          exit(1);
++        }
+ 
+       if (crt != NULL)
+         {
+@@ -349,16 +393,18 @@ static void dane_info(const char* host, const char* pr
+           ret = gnutls_pubkey_import_x509 (pubkey, crt, 0);
+           if (ret < 0)
+             {
+-              error (EXIT_FAILURE, 0, "pubkey_import_x509: %s",
++              fprintf (stderr, "pubkey_import_x509: %s",
+                      gnutls_strerror (ret));
++              exit(1);
+             }
+ 
+           size = buffer_size;
+           ret = gnutls_pubkey_export (pubkey, GNUTLS_X509_FMT_DER, buffer, &size);
+           if (ret < 0)
+             {
+-              error (EXIT_FAILURE, 0, "pubkey_export: %s",
++              fprintf( stderr, "pubkey_export: %s",
+                      gnutls_strerror (ret));
++              exit(1);
+             }
+           
+           gnutls_x509_crt_deinit(crt);
+@@ -370,7 +416,10 @@ static void dane_info(const char* host, const char* pr
+           size = buffer_size;
+           ret = gnutls_pubkey_export (pubkey, GNUTLS_X509_FMT_DER, buffer, &size);
+           if (ret < 0)
+-            error (EXIT_FAILURE, 0, "export error: %s", gnutls_strerror (ret));
++            {
++              fprintf (stderr, "export error: %s", gnutls_strerror (ret));
++              exit(1);
++            }
+         }
+ 
+       gnutls_pubkey_deinit (pubkey);
+@@ -384,7 +433,10 @@ static void dane_info(const char* host, const char* pr
+   
+   ret = gnutls_hash_fast(default_dig, buffer, size, digest);
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "hash error: %s", gnutls_strerror (ret));
++    {
++      fprintf( stderr, "hash error: %s", gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   if (default_dig == GNUTLS_DIG_SHA256)
+     type = 1;
+@@ -408,7 +460,10 @@ static void dane_info(const char* host, const char* pr
+   size = buffer_size;
+   ret = gnutls_hex_encode(&t, (void*)buffer, &size);
+   if (ret < 0)
+-    error (EXIT_FAILURE, 0, "hex encode error: %s", gnutls_strerror (ret));
++    {
++      fprintf (stderr, "hex encode error: %s", gnutls_strerror (ret));
++      exit(1);
++    }
+ 
+   fprintf(outfile, "_%u._%s.%s. IN TLSA ( %.2x %.2x %.2x %s )\n", port, proto, host, usage, selector, type, buffer);
+ 
