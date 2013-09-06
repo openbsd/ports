@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2013/05/31 15:35:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2013/09/06 16:28:48 ajacoutot Exp $
 
 COMMENT=	graphics viewer for KVM guest displays
 
 DISTNAME=	virt-viewer-0.5.6
 CATEGORIES=	x11
-REVISION=	0
+REVISION=	1
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
@@ -30,6 +30,7 @@ WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs sasl2 spice-client-glib-2.0
 WANTLIB += spice-client-gtk-3.0 spice-controller ssh2 ssl tasn1
 WANTLIB += util virt xcb xcb-render xcb-shm xml2 z graphite2
+WANTLIB += asn1 com_err gssapi heimbase krb5 roken wind
 
 LIB_DEPENDS=	sysutils/libvirt \
 		x11/gtk-vnc \

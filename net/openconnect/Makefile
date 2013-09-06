@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/06/01 21:46:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2013/09/06 16:28:48 ajacoutot Exp $
 
 COMMENT=	client for Cisco AnyConnect SSL VPN
 
@@ -7,6 +7,7 @@ DIST_SUBDIR=	openconnect
 VPNC_SCRIPT=	vpnc-script
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${VPNC_SCRIPT}:0
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+REVISION=	0
 
 SHARED_LIBS +=  openconnect               1.1 # 2.2
 
@@ -20,7 +21,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c gmp gnutls hogweed m nettle oath p11-kit proxy pthread
-WANTLIB += stdc++ tasn1 xml2 z
+WANTLIB += stdc++ tasn1 xml2 z ffi
 
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/
 MASTER_SITES0=	http://git.infradead.org/users/dwmw2/vpnc-scripts.git/blob_plain/0e042c5ab78bd5dbeeb82b8570160c081fa8c3ff:/
