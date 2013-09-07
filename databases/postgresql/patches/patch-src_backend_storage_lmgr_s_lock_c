@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_backend_storage_lmgr_s_lock_c,v 1.1 2013/09/07 20:20:54 miod Exp $
+--- src/backend/storage/lmgr/s_lock.c.orig	Mon Apr  1 18:20:36 2013
++++ src/backend/storage/lmgr/s_lock.c	Sat Sep  7 20:09:51 2013
+@@ -222,7 +222,7 @@ static void
+ tas_dummy()
+ {
+ 	__asm__		__volatile__(
+-#if defined(__NetBSD__) && defined(__ELF__)
++#if (defined(__NetBSD__) || defined(__OpenBSD__)) && defined(__ELF__)
+ /* no underscore for label and % for registers */
+ 										 "\
+ .global		tas 				\n\
