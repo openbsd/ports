@@ -1,0 +1,4 @@
+Livestreamer is a Command Line Interface that pipes video streams from
+various services into a video player, such as VLC. The main purpose of
+Livestreamer is to allow the user to avoid buggy and CPU heavy flash
+plugins but still be able to enjoy various streamed content.
