@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/08/24 09:23:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2013/09/07 13:49:42 sthen Exp $
 
 BROKEN-hppa =	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -10,7 +10,7 @@ AUTOCONF_VERSION=	2.59
 
 PV=		5.4
 V=		${PV}.19
-REVISION-main=	0
+REVISION-main=	1
 
 INI_TEMPLATES=	development production
 
