@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/09/07 19:50:56 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2013/09/07 22:13:39 bcallah Exp $
 
 MODPY_EGG_VERSION =	1.5.2
 COMMENT =	pipe video streams into a video player
@@ -19,13 +19,10 @@ MASTER_SITES =	https://github.com/chrippa/livestreamer/archive/
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes
+MODPY_BADEGGS =	src/livestreamer
 
 RUN_DEPENDS =	net/rtmpdump \
 		security/py-crypto \
 		www/py-requests
-
-# Needed for 'make clean' to work for non-root user.
-post-install:
-	chmod g+w ${WRKSRC}/src/livestreamer.egg-info
 
 .include <bsd.port.mk>
