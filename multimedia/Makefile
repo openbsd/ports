@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2013/04/24 09:16:23 zhuk Exp $
+# $OpenBSD: Makefile,v 1.70 2013/09/07 19:51:19 bcallah Exp $
 
      SUBDIR =
      SUBDIR += atomicparsley
@@ -34,6 +34,7 @@
      SUBDIR += libtheora
      SUBDIR += libvpx
      SUBDIR += lives
+     SUBDIR += livestreamer
      SUBDIR += lsdvd
      SUBDIR += mediatomb
      SUBDIR += ming
