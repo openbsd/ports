@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:23:58 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/09/07 06:54:29 bcallah Exp $
 
 COMMENT=		simple slang-based menu program
 
-DISTNAME=		pdmenu_1.2.98
-PKGNAME=		${DISTNAME:S/_/-/}
-REVISION=		0
+VERSION=		1.3.2
+DISTNAME=		pdmenu_${VERSION}
+PKGNAME=		pdmenu-${VERSION}
 CATEGORIES=     	misc
 
 HOMEPAGE=		http://kitenet.net/programs/pdmenu/
