@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.618 2013/09/05 08:24:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.619 2013/09/07 13:49:04 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -366,7 +366,6 @@
      SUBDIR += pecl-chroot
      SUBDIR += pecl-geoip
      SUBDIR += pecl-memcache
-     SUBDIR += pecl-phar
      SUBDIR += pecl-proctitle
      SUBDIR += pecl-ssh2
      SUBDIR += pecl-swish
