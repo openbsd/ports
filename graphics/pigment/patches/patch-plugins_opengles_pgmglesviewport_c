@@ -1,0 +1,27 @@
+$OpenBSD: patch-plugins_opengles_pgmglesviewport_c,v 1.1 2013/09/08 13:08:16 landry Exp $
+https://code.fluendo.com/pigment/trac/changeset/1472
+--- plugins/opengles/pgmglesviewport.c.orig	Sun Sep  8 15:03:29 2013
++++ plugins/opengles/pgmglesviewport.c	Sun Sep  8 15:03:59 2013
+@@ -1418,22 +1418,6 @@ pgm_gles_viewport_flush_update_queue (PgmGlesViewport 
+ void
+ pgm_gles_viewport_update_drawable_projection (PgmGlesViewport *glesviewport)
+ {
+-  g_mutex_lock (glesviewport->layer_lock);
+-
+-  /* Adapt position and size of all the drawables */
+-  g_list_foreach (glesviewport->near_layer,
+-                  (GFunc) pgm_gles_drawable_update_projection, NULL);
+-  g_list_foreach (glesviewport->middle_layer,
+-                  (GFunc) pgm_gles_drawable_update_projection, NULL);
+-  g_list_foreach (glesviewport->far_layer,
+-                  (GFunc) pgm_gles_drawable_update_projection, NULL);
+-
+-  g_mutex_unlock (glesviewport->layer_lock);
+-}
+-
+-void
+-pgm_gles_viewport_update_drawable_projection (PgmGlesViewport *glesviewport)
+-{
+   GList *near_layer, *middle_layer, *far_layer;
+ 
+   /* Get copies of the layers */

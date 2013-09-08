@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/21 08:45:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2013/09/08 13:08:15 landry Exp $
 
 COMMENT =	3D scene graph library for rich UI
 
@@ -7,7 +7,7 @@ CATEGORIES =	graphics
 DISTNAME =	pigment-0.3.17
 MASTER_SITES =	http://elisa.fluendo.com/static/download/pigment/
 
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS +=	pigment-0.3 0.0 \
 		pigment-gtk-0.3 0.0 \
