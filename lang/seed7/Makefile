@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2013/08/30 22:56:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2013/09/08 19:50:46 bcallah Exp $
 
 # Fails for me on macppc, sgi, and sparc64.
 NOT_FOR_ARCHS =	${BE_ARCHS}
 
-V =		20130820
+V =		20130908
 COMMENT =	high-level, extensible programming language
 DISTNAME =	seed7_05_${V}
 PKGNAME =	seed7-${V}
 EXTRACT_SUFX =	.tgz
 CATEGORIES =	lang
-REVISION =	0
 
 HOMEPAGE =	http://seed7.sourceforge.net/
 
