@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/04/25 16:10:53 sebastia Exp $
+# $OpenBSD: Makefile,v 1.34 2013/09/08 16:28:00 sebastia Exp $
 
 # WARNING: this port does NOT use the x11/gnustep MODULE
 
@@ -6,7 +6,7 @@ PKG_ARCH=	*
 
 COMMENT=	GNUstep makefile package
 
-DISTNAME =	gnustep-make-2.6.4
+DISTNAME =	gnustep-make-2.6.5
 CATEGORIES=	devel x11/gnustep
 
 HOMEPAGE=	http://www.gnustep.org/
@@ -25,8 +25,7 @@ CONFIGURE_ENV=	ac_cv_prog_LATEX2HTML="" \
 		INSTALL="install -c" \
 		INSTALL_PROGRAM="install -c -m 555" \
 		INSTALL_DATA="install -c -m 444" \
-		CPPFLAGS='-I${LOCALBASE}/include/gnustep' \
-		LDFLAGS='-L${LOCALBASE}/lib'
+		CPPFLAGS='-I${LOCALBASE}/include/gnustep'
 CONFIGURE_ARGS=	--with-layout=openbsd \
 		--prefix=${PREFIX} \
 		--with-config-file=${SYSCONFDIR}/GNUstep.conf \
