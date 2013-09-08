@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.17 2013/09/06 15:58:09 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.18 2013/09/08 19:30:12 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -107,13 +107,24 @@ sub new
 	if ($dotty) {
 		$class->ttyclass->new($state, @_);
 	} else {
-		$singleton //= bless {msg => '', tty => $dotty,
-		    producers => $class->filter_can(\@_, 'important'),
-		    timeout => $state->{display_timeout} // 10,
-		    continued => 0}, $class;
+		$class->make_singleton($state, @_);
 	}
 }
 
+sub make_singleton
+{
+	my $class = shift;
+	my $state = shift;
+	$singleton //= bless {msg => '',
+	    producers => $class->filter_can(\@_, $class->filter),
+	    timeout => $state->{display_timeout} // 10,
+	    continued => 0}, $class;
+}
+
+sub filter
+{
+	'important';
+}
 sub timeout
 {
 	my $self = shift;
@@ -198,14 +209,16 @@ sub set_sig_handlers
 		$self->reset_cursor; });
 }
 
+sub filter
+{
+	'report';
+}
+
 sub new
 {
 	my $class = shift;
 	my $state = shift;
-	$singleton //= bless {msg => '',
-	    producers => $class->filter_can(\@_, 'report'),
-	    timeout => $state->{display_timeout} // 10,
-	    continued => 0}, $class;
+	$class->make_singleton($state, @_);
 	my $oldfh = select(STDOUT);
 	$| = 1;
 	# XXX go back to totally non-buffered raw shit
