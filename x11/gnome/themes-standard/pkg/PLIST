@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2013/08/06 19:10:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2013/09/08 07:03:04 ajacoutot Exp $
 @conflict gnome-themes-<2.32.1p3
 @unexec-delete rm -f %D/share/icons/Adwaita/icon-theme.cache
 @unexec-delete rm -f %D/share/icons/HighContrast/icon-theme.cache
@@ -241,7 +241,6 @@ share/icons/HighContrast/16x16/apps/gnome-freecell.png
 share/icons/HighContrast/16x16/apps/gnome-mines.png
 share/icons/HighContrast/16x16/apps/gnome-nettool.png
 share/icons/HighContrast/16x16/apps/gnome-power-manager.png
-share/icons/HighContrast/16x16/apps/gnome-session-properties.png
 share/icons/HighContrast/16x16/apps/gnome-tweak-tool.png
 share/icons/HighContrast/16x16/apps/goa-panel.png
 share/icons/HighContrast/16x16/apps/gtranslator.png
@@ -282,6 +281,7 @@ share/icons/HighContrast/16x16/apps/preferences-system-time.png
 share/icons/HighContrast/16x16/apps/rhythmbox.png
 share/icons/HighContrast/16x16/apps/scribus.png
 share/icons/HighContrast/16x16/apps/seahorse.png
+share/icons/HighContrast/16x16/apps/session-properties.png
 share/icons/HighContrast/16x16/apps/shotwell.png
 share/icons/HighContrast/16x16/apps/sound-juicer.png
 share/icons/HighContrast/16x16/apps/sparkleshare.png
@@ -673,7 +673,6 @@ share/icons/HighContrast/22x22/apps/gnome-freecell.png
 share/icons/HighContrast/22x22/apps/gnome-mines.png
 share/icons/HighContrast/22x22/apps/gnome-nettool.png
 share/icons/HighContrast/22x22/apps/gnome-power-manager.png
-share/icons/HighContrast/22x22/apps/gnome-session-properties.png
 share/icons/HighContrast/22x22/apps/gnome-tweak-tool.png
 share/icons/HighContrast/22x22/apps/goa-panel.png
 share/icons/HighContrast/22x22/apps/gtranslator.png
@@ -714,6 +713,7 @@ share/icons/HighContrast/22x22/apps/preferences-system-time.png
 share/icons/HighContrast/22x22/apps/rhythmbox.png
 share/icons/HighContrast/22x22/apps/scribus.png
 share/icons/HighContrast/22x22/apps/seahorse.png
+share/icons/HighContrast/22x22/apps/session-properties.png
 share/icons/HighContrast/22x22/apps/shotwell.png
 share/icons/HighContrast/22x22/apps/sound-juicer.png
 share/icons/HighContrast/22x22/apps/sparkleshare.png
@@ -1105,7 +1105,6 @@ share/icons/HighContrast/24x24/apps/gnome-freecell.png
 share/icons/HighContrast/24x24/apps/gnome-mines.png
 share/icons/HighContrast/24x24/apps/gnome-nettool.png
 share/icons/HighContrast/24x24/apps/gnome-power-manager.png
-share/icons/HighContrast/24x24/apps/gnome-session-properties.png
 share/icons/HighContrast/24x24/apps/gnome-tweak-tool.png
 share/icons/HighContrast/24x24/apps/goa-panel.png
 share/icons/HighContrast/24x24/apps/gtranslator.png
@@ -1146,6 +1145,7 @@ share/icons/HighContrast/24x24/apps/preferences-system-time.png
 share/icons/HighContrast/24x24/apps/rhythmbox.png
 share/icons/HighContrast/24x24/apps/scribus.png
 share/icons/HighContrast/24x24/apps/seahorse.png
+share/icons/HighContrast/24x24/apps/session-properties.png
 share/icons/HighContrast/24x24/apps/shotwell.png
 share/icons/HighContrast/24x24/apps/sound-juicer.png
 share/icons/HighContrast/24x24/apps/sparkleshare.png
@@ -1536,7 +1536,6 @@ share/icons/HighContrast/256x256/apps/gnome-freecell.png
 share/icons/HighContrast/256x256/apps/gnome-mines.png
 share/icons/HighContrast/256x256/apps/gnome-nettool.png
 share/icons/HighContrast/256x256/apps/gnome-power-manager.png
-share/icons/HighContrast/256x256/apps/gnome-session-properties.png
 share/icons/HighContrast/256x256/apps/gnome-tweak-tool.png
 share/icons/HighContrast/256x256/apps/goa-panel.png
 share/icons/HighContrast/256x256/apps/gtranslator.png
@@ -1577,6 +1576,7 @@ share/icons/HighContrast/256x256/apps/preferences-system-time.png
 share/icons/HighContrast/256x256/apps/rhythmbox.png
 share/icons/HighContrast/256x256/apps/scribus.png
 share/icons/HighContrast/256x256/apps/seahorse.png
+share/icons/HighContrast/256x256/apps/session-properties.png
 share/icons/HighContrast/256x256/apps/shotwell.png
 share/icons/HighContrast/256x256/apps/sound-juicer.png
 share/icons/HighContrast/256x256/apps/sparkleshare.png
@@ -1968,7 +1968,6 @@ share/icons/HighContrast/32x32/apps/gnome-freecell.png
 share/icons/HighContrast/32x32/apps/gnome-mines.png
 share/icons/HighContrast/32x32/apps/gnome-nettool.png
 share/icons/HighContrast/32x32/apps/gnome-power-manager.png
-share/icons/HighContrast/32x32/apps/gnome-session-properties.png
 share/icons/HighContrast/32x32/apps/gnome-tweak-tool.png
 share/icons/HighContrast/32x32/apps/goa-panel.png
 share/icons/HighContrast/32x32/apps/gtranslator.png
@@ -2009,6 +2008,7 @@ share/icons/HighContrast/32x32/apps/preferences-system-time.png
 share/icons/HighContrast/32x32/apps/rhythmbox.png
 share/icons/HighContrast/32x32/apps/scribus.png
 share/icons/HighContrast/32x32/apps/seahorse.png
+share/icons/HighContrast/32x32/apps/session-properties.png
 share/icons/HighContrast/32x32/apps/shotwell.png
 share/icons/HighContrast/32x32/apps/sound-juicer.png
 share/icons/HighContrast/32x32/apps/sparkleshare.png
@@ -2404,7 +2404,6 @@ share/icons/HighContrast/48x48/apps/gnome-freecell.png
 share/icons/HighContrast/48x48/apps/gnome-mines.png
 share/icons/HighContrast/48x48/apps/gnome-nettool.png
 share/icons/HighContrast/48x48/apps/gnome-power-manager.png
-share/icons/HighContrast/48x48/apps/gnome-session-properties.png
 share/icons/HighContrast/48x48/apps/gnome-tweak-tool.png
 share/icons/HighContrast/48x48/apps/goa-panel.png
 share/icons/HighContrast/48x48/apps/gtranslator.png
@@ -2445,6 +2444,7 @@ share/icons/HighContrast/48x48/apps/preferences-system-time.png
 share/icons/HighContrast/48x48/apps/rhythmbox.png
 share/icons/HighContrast/48x48/apps/scribus.png
 share/icons/HighContrast/48x48/apps/seahorse.png
+share/icons/HighContrast/48x48/apps/session-properties.png
 share/icons/HighContrast/48x48/apps/shotwell.png
 share/icons/HighContrast/48x48/apps/sound-juicer.png
 share/icons/HighContrast/48x48/apps/sparkleshare.png
