@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.111 2013/07/21 16:24:32 espie Exp $
+# $OpenBSD: Port.pm,v 1.112 2013/09/08 11:10:59 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -100,12 +100,9 @@ sub run
 	}
 
 	unshift(@args, @l);
-	if ($self->{sudo}) {
-		unshift(@args, OpenBSD::Paths->sudo, "-E");
-	}
-
 	$core->shell
 	    ->chdir($ports)
+	    ->sudo($self->{sudo})
 	    ->env(SUBDIR => $fullpkgpath, 
 		PHASE => $t, 
 		WRAPPER_OUTPUT => $builder->{rsslog})
@@ -358,8 +355,8 @@ sub run
 	}
 	print join(' ', @cmd, (sort keys %$dep)), "\n";
 	my $path = $job->{builder}{fullrepo}.'/';
-	$core->shell->env(PKG_PATH => $path)
-	    ->exec(OpenBSD::Paths->sudo, @cmd, (sort keys %$dep));
+	$core->shell->env(PKG_PATH => $path)->sudo
+	    ->exec(@cmd, (sort keys %$dep));
 	exit(1);
 }
 
@@ -466,7 +463,7 @@ sub run
 		$self->add_dontjunk($job, $h);
 		my @cmd = ('/usr/sbin/pkg_delete', '-aIX', sort keys %$h);
 		print join(' ', @cmd, "\n");
-		$core->shell->exec(OpenBSD::Paths->sudo, @cmd);
+		$core->shell->sudo->exec(@cmd);
 		exit(1);
 	} else {
 		exit(2);
@@ -549,8 +546,8 @@ sub run
 	print join(' ', @cmd, $v->fullpkgname, "\n");
 	my $path = $job->{builder}->{fullrepo}.'/';
 	$ENV{PKG_PATH} = $path;
-	$core->shell->env(PKG_PATH => $path)
-	    ->exec(OpenBSD::Paths->sudo, @cmd, $v->fullpkgname);
+	$core->shell->env(PKG_PATH => $path)->sudo
+	    ->exec(@cmd, $v->fullpkgname);
 	exit(1);
 }
 

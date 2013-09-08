@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.1 2013/06/21 09:05:18 espie Exp $
+# $OpenBSD: Init.pm,v 1.2 2013/09/08 11:10:59 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -104,7 +104,6 @@ sub init_cores
 		}
 		if (defined $startup) {
 			my @args = split(/\s+/, $startup);
-			unshift(@args, OpenBSD::Paths->sudo, "-E");
 			$job->add_tasks(DPB::Task::Fork->new(
 			    sub {
 				my $shell = shift;
@@ -112,6 +111,7 @@ sub init_cores
 				    $core->hostname));
 				$shell
 				    ->chdir($state->ports)
+				    ->sudo
 				    ->env(PORTSDIR => $state->ports,
 				    	MAKE => $state->make)
 				    ->exec(@args);

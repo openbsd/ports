@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.39 2013/09/03 09:44:06 espie Exp $
+# $OpenBSD: Core.pm,v 1.40 2013/09/08 11:10:58 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -713,7 +713,7 @@ package DPB::Shell::Abstract;
 sub new
 {
 	my ($class, $host) = @_;
-	bless {}, $class;
+	bless {sudo => 0}, $class;
 }
 
 sub chdir
@@ -729,6 +729,17 @@ sub env
 	while (my ($k, $v) = each %h) {
 		$self->{env}{$k} = $v;
 	}
+	return $self;
+}
+
+sub sudo
+{
+	my ($self, $val) = @_;
+	# XXX calling sudo without parms is equivalent to saying "1"
+	if (@_ == 1) {
+		$val = 1;
+	}
+	$self->{sudo} = $val;
 	return $self;
 }
 
@@ -754,6 +765,9 @@ sub env
 sub exec
 {
 	my ($self, @argv) = @_;
+	if ($self->{sudo}) {
+		unshift(@argv, OpenBSD::Paths->sudo, "-E");
+	}
 	exec {$argv[0]} @argv;
 }
 

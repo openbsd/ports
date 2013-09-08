@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.8 2013/01/04 21:19:18 espie Exp $
+# $OpenBSD: Distant.pm,v 1.9 2013/09/08 11:10:59 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -79,6 +79,9 @@ sub exec
 			$v //= '';
 			unshift @argv, "$k=\'$v\'";
 		}
+	}
+	if ($self->{sudo}) {
+		unshift(@argv, OpenBSD::Paths->sudo, "-E");
 	}
 	my $cmd = join(' ', @argv);
 	if ($self->{dir}) {
