@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.109 2013/08/19 05:28:20 brad Exp $
+# $OpenBSD: Makefile,v 1.110 2013/09/08 14:15:00 brad Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64
 
 COMMENT=	multi system emulator
 
-DISTNAME=	qemu-1.5.1
-REVISION=	0
+DISTNAME=	qemu-1.6.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 EXTRACT_SUFX=	.tar.bz2
@@ -84,9 +83,6 @@ CONFIGURE_ARGS+=--disable-debug-info
 .endif
 
 TEST_TARGET=	check
-
-post-extract:
-	@rm ${WRKSRC}/include/libfdt_env.h
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup \
