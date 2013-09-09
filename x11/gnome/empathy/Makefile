@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.135 2013/06/17 14:15:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.136 2013/09/09 14:48:55 ajacoutot Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
-GNOME_VERSION=		3.8.3
-REVISION=		2
+GNOME_VERSION=		3.8.4
+SUBST_VARS=		GNOME_VERSION
 
 CATEGORIES=		net
 
@@ -13,27 +13,27 @@ HOMEPAGE=		http://live.gnome.org/Empathy
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += FLAC GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
-WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xtst
-WANTLIB += atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
+WANTLIB += EGL FLAC GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor
+WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB += Xt Xtst atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
 WANTLIB += canberra canberra-gtk3 champlain-0.12 champlain-gtk-0.12
 WANTLIB += clutter-1.0 clutter-gst-2.0 clutter-gtk-1.0 cogl cogl-pango
 WANTLIB += dbus-1 dbus-glib-1 enchant execinfo expat farstream-0.2
 WANTLIB += ffi folks folks-telepathy fontconfig freetype gailutil-3
 WANTLIB += gck-1 gcr-3 gcr-base-3 gcrypt gdbm gdk-3 gdk_pixbuf-2.0
-WANTLIB += gee-0.8 geoclue gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls
-WANTLIB += goa-1.0 gobject-2.0 gpg-error graphite2 gstapp-1.0
-WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
-WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
-WANTLIB += harfbuzz harfbuzz-icu hogweed icudata icui18n icuuc
-WANTLIB += javascriptcoregtk-3.0 jpeg json-c json-glib-1.0 ltdl
-WANTLIB += m memphis-0.2 mission-control-plugins nettle notify
-WANTLIB += ogg orc-0.4 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs pulse pulse-mainloop-glib
-WANTLIB += secret-1 sndfile soup-2.4 soup-gnome-2.4 sqlite3 stdc++
-WANTLIB += tasn1 telepathy-farstream telepathy-glib telepathy-logger
-WANTLIB += vorbis vorbisenc vorbisfile webkitgtk-3.0 webp xcb
-WANTLIB += xcb-render xcb-shm xml2 xslt z zeitgeist-1.0
+WANTLIB += gee-0.8 geoclue gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls goa-1.0
+WANTLIB += gobject-2.0 gpg-error graphite2 gstapp-1.0 gstaudio-1.0
+WANTLIB += gstbase-1.0 gstfft-1.0 gstpbutils-1.0 gstreamer-1.0
+WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
+WANTLIB += harfbuzz-icu hogweed icudata icui18n icuuc javascriptcoregtk-3.0
+WANTLIB += jpeg json-c json-glib-1.0 ltdl m memphis-0.2 mission-control-plugins
+WANTLIB += nettle notify ogg orc-0.4 p11-kit pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += pulse pulse-mainloop-glib secret-1 sndfile soup-2.4
+WANTLIB += soup-gnome-2.4 sqlite3 stdc++ tasn1 telepathy-farstream
+WANTLIB += telepathy-glib telepathy-logger vorbis vorbisenc vorbisfile
+WANTLIB += webkitgtk-3.0 webp xcb xcb-render xcb-shm xml2 xslt
+WANTLIB += z zeitgeist-1.0
 
 MODULES=		devel/dconf \
 			devel/gettext \
@@ -46,15 +46,16 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
-			audio/pulseaudio>=2.1 \
+			audio/pulseaudio \
 			devel/libnotify \
 			geo/geoclue \
-			geo/libchamplain>=0.12.2 \
+			geo/libchamplain \
 			graphics/clutter/clutter-gst \
 			net/telepathy/folks \
 			net/telepathy/telepathy-farstream \
 			net/telepathy/telepathy-logger \
 			net/telepathy/telepathy-mission-control \
+			security/gnutls \
 			textproc/enchant \
 			x11/gnome/gcr \
 			x11/gnome/online-accounts
