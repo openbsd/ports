@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.17 2013/06/01 20:30:41 stsp Exp $
+$OpenBSD: README,v 1.18 2013/09/09 10:18:22 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -55,7 +55,7 @@ If "backgroundjobs" is configured to "Cron" (as opposed to "AJAX" or
 "Webcron") in the Admin menu, a cron(8) job must be added to the root's
 crontab(5):
 
-*/5	*	*	*	*	${MODPHP_BIN} ${INSTDIR}/cron.php
+*/15	*	*	*	*	${MODPHP_BIN} -f ${INSTDIR}/cron.php
 
 LDAP User Backend
 -----------------
