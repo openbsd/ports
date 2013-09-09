@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.9 2013/09/08 11:10:59 espie Exp $
+# $OpenBSD: Distant.pm,v 1.10 2013/09/09 14:59:53 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -37,6 +37,13 @@ sub ssh
 sub new
 {
 	my ($class, $host) = @_;
+	if ($host->{prop}->{chroot}) {
+		if (!defined $host->{prop}->{chroot_user}) {
+			my $user = `whoami`;
+			chomp($user);
+			$host->{prop}->{chroot_user} = $user;
+		}
+	}
 	bless {
 	    master => DPB::Ssh::Master->find($host->name, 
 	    	$host->{prop}->{timeout})
@@ -63,6 +70,11 @@ sub hostname
 	shift->{master}->hostname;
 }
 
+sub prop
+{
+	shift->{master}->prop;
+}
+
 sub _run
 {
 	my ($self, $cmd) = @_;
@@ -74,21 +86,32 @@ sub _run
 sub exec
 {
 	my ($self, @argv) = @_;
+	my $chroot = $self->prop->{chroot};
 	if ($self->{env}) {
 		while (my ($k, $v) = each %{$self->{env}}) {
 			$v //= '';
 			unshift @argv, "$k=\'$v\'";
 		}
 	}
-	if ($self->{sudo}) {
+	if ($self->{sudo} && !$chroot) {
 		unshift(@argv, OpenBSD::Paths->sudo, "-E");
 	}
 	my $cmd = join(' ', @argv);
 	if ($self->{dir}) {
 		$cmd = "cd $self->{dir} && $cmd";
 	}
-	my $umask = $self->{master}{host}{prop}{umask};
-	$self->_run("umask $umask && $cmd");
+	my $umask = $self->prop->{umask};
+	$cmd = "umask $umask && $cmd";
+	if ($chroot) {
+		my @cmd2 = (OpenBSD::Paths->sudo, "-E", "chroot");
+		if (!$self->{sudo}) {
+			push(@cmd2, "-u", $self->prop->{chroot_user});
+		}
+		my $cmd2 = join(' ', @cmd2, $chroot);
+		$self->_run("$cmd2 sh -c \"$cmd\"");
+	} else {
+		$self->_run($cmd);
+	}
 }
 
 package DPB::Task::SshMaster;
