@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_camera_CameraTable_vala,v 1.4 2013/01/13 15:42:10 ajacoutot Exp $
+$OpenBSD: patch-src_camera_CameraTable_vala,v 1.5 2013/09/09 14:19:33 ajacoutot Exp $
+
+remove gudev requirement
+
 --- src/camera/CameraTable.vala.orig	Wed Sep 19 21:08:59 2012
 +++ src/camera/CameraTable.vala	Mon Sep 24 21:30:15 2012
 @@ -26,7 +26,6 @@ public class CameraTable {

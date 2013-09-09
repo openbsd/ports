@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/08/11 13:52:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2013/09/09 14:19:33 ajacoutot Exp $
 
 # needs to allocate 512M
 VMEM_WARNING =	Yes
@@ -30,11 +30,9 @@ MODULES =	devel/dconf \
 		devel/gettext \
 		x11/gnome
 
-MODGNOME_TOOLS = 	yelp
+MODGNOME_TOOLS = 	vala yelp
 MODGNOME_DESKTOP_FILE =	Yes
 MODGNOME_ICON_CACHE =	Yes
-
-BUILD_DEPENDS =	lang/vala
 
 LIB_DEPENDS =	devel/json-glib \
 		devel/libgee06 \
