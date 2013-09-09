@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/04 14:15:23 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2013/09/09 15:43:25 landry Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	game of life simulator
 
-PKGNAME =	golly-2.4
+PKGNAME =	golly-2.5
 DISTNAME =	${PKGNAME}-src
+WRKSRC =	${WRKDIST}/gui-wx/configure
 CATEGORIES =	games math
 MAINTAINER =	Donovan Watteau <tsoomi@gmail.com>
 
@@ -22,10 +23,8 @@ RUN_DEPENDS =		devel/desktop-file-utils
 
 # Note: perl and python are loaded with wxDynamicLibrary.Load(), and
 # python needs libutil to prevent undefined openpty and forkpty symbols.
-WANTLIB += c m perl pthread stdc++ wx_base wx_base_net wx_base_odbc
-WANTLIB += wx_base_xml wx_gtk2_adv wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid
-WANTLIB += wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc z
-WANTLIB += ${MODPY_WANTLIB} util
+WANTLIB += c m perl pthread stdc++ util wx_base wx_base_net wx_gtk2_adv
+WANTLIB += wx_gtk2_core wx_gtk2_html z ${MODPY_WANTLIB}
 
 CONFIGURE_STYLE =		gnu
 CONFIGURE_ARGS =		--enable-unicode
@@ -38,8 +37,8 @@ NO_TEST =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/appicon.xpm \
-		${PREFIX}/share/pixmaps/golly.xpm 
+	${INSTALL_DATA} ${WRKSRC}/../icons/appicon.xpm \
+		${PREFIX}/share/pixmaps/golly.xpm
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${FILESDIR}/golly.desktop \
 		${PREFIX}/share/applications

@@ -1,0 +1,50 @@
+$OpenBSD: patch-gui-wx_wxpython_cpp,v 1.1 2013/09/09 15:43:25 landry Exp $
+--- gui-wx/wxpython.cpp.orig	Wed Jun 12 21:23:56 2013
++++ gui-wx/wxpython.cpp	Sun Aug 25 11:15:51 2013
+@@ -258,6 +258,8 @@ static void GetPythonExceptions()
+     Py_XDECREF(exmod);
+ }
+ 
++// handle for libutil
++static wxDllType libutildll = NULL;
+ // handle for Python lib
+ static wxDllType pythondll = NULL;
+ 
+@@ -267,15 +269,37 @@ static void FreePythonLib()
+         wxDynamicLibrary::Unload(pythondll);
+         pythondll = NULL;
+     }
++    
++    if ( libutildll ) {
++        wxDynamicLibrary::Unload(libutildll);
++        libutildll = NULL;
++    }
+ }
+ 
+ static bool LoadPythonLib()
+ {
++    // load libutil
++    wxDynamicLibrary dynlibUtil;
+     // load the Python library
+     wxDynamicLibrary dynlib;
+     
+     // don't log errors in here
+     wxLogNull noLog;
++    
++    // Load libutil first, needed for openpty() and forkpty() symbols
++    if ( !dynlibUtil.Load(wxT("libutil.so"), wxDL_NOW | wxDL_VERBATIM | wxDL_GLOBAL) ) {
++        return false;
++    }
++    
++    if ( dynlibUtil.IsLoaded() ) {
++        libutildll = dynlibUtil.Detach();
++    }
++    
++    if ( libutildll == NULL ) {
++        // should never happen
++        Warning(_("Oh dear, libutil is not loaded!"));
++        return false;
++    }
+     
+     // wxDL_GLOBAL corresponds to RTLD_GLOBAL on Linux (ignored on Windows) and
+     // is needed to avoid an ImportError when importing some modules (eg. time)
