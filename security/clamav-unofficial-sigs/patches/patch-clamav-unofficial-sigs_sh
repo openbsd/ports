@@ -1,7 +1,7 @@
-$OpenBSD: patch-clamav-unofficial-sigs_sh,v 1.1.1.1 2011/03/26 12:26:44 sthen Exp $
---- clamav-unofficial-sigs.sh.orig	Sun Mar 20 22:39:06 2011
-+++ clamav-unofficial-sigs.sh	Sun Mar 20 22:41:12 2011
-@@ -26,6 +26,8 @@ output_ver="
+$OpenBSD: patch-clamav-unofficial-sigs_sh,v 1.2 2013/09/09 22:09:58 sthen Exp $
+--- clamav-unofficial-sigs.sh.orig	Tue Aug 27 17:08:25 2013
++++ clamav-unofficial-sigs.sh	Mon Sep  9 22:38:43 2013
+@@ -23,6 +23,8 @@ output_ver="
     `basename $0` $version
  "
  

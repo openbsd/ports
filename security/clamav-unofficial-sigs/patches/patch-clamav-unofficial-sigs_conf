@@ -1,7 +1,7 @@
-$OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.5 2013/07/16 15:57:38 sthen Exp $
---- clamav-unofficial-sigs.conf.orig	Sun Jun  6 17:43:07 2010
-+++ clamav-unofficial-sigs.conf	Tue Jul 16 16:57:14 2013
-@@ -31,18 +31,18 @@
+$OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.6 2013/09/09 22:09:58 sthen Exp $
+--- clamav-unofficial-sigs.conf.orig	Tue Aug 27 17:08:25 2013
++++ clamav-unofficial-sigs.conf	Mon Sep  9 22:42:20 2013
+@@ -28,14 +28,14 @@
  # and optionally socat.  It's been reported that on Sun systems, the GNU utilities
  # should be used rather than the default Sun OS versions of these utilities.
  
@@ -17,6 +17,10 @@ $OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.5 2013/07/16 15:57:38 sthen Exp 
 +clam_user="_clamav"
 +clam_group="_clamav"
  
+ # If you do not want the script to change the file mode of all signature
+ # database files in the ClamAV working directory to 0644 (-rw-r--r--):
+@@ -50,7 +50,7 @@ setmode="yes"
+ 
  # Set path to ClamAV database files location.  If unsure, check
  # your clamd.conf file for the "DatabaseDirectory" path setting.
 -clam_dbs="/var/lib/clamav"
@@ -24,52 +28,7 @@ $OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.5 2013/07/16 15:57:38 sthen Exp 
  
  # Set path to clamd.pid file (see clamd.conf for path location).
  clamd_pid="/var/run/clamd.pid"
-@@ -122,21 +122,20 @@ ss_dbs="
-    sanesecurity.ftm
-    scam.ndb
-    spamimg.hdb
-+   winnow_bad_cw.hdb
-    winnow_malware.hdb
-    winnow_malware_links.ndb
- "
- 
--# Additional Sanesecruity distributed database that can be used and
-+# Additional Sanesecurity distributed database that can be used and
- # their associated potential fales-positive ratings:
- #
--# USE 'ONLY' ONE OF THE FOLLOWING TWO SIGNATURE DATABASES:
--#
--# INetMsg-SpamDomains-2w.ndb    : MEDIUM false-positive rating
--# INetMsg-SpamDomains-2m.ndb    : MEDIUM false-positive rating
--#
- # ONE DATABASE CONTAINS THE LAST TWO WEEKS OF COLLECTED SPAM DOMAINS (2w), AND
- # THE OTHER DATABASE CONTAINS THE LAST TWO MONTHS OF COLLECTED SPAM DOMAINS (2m).
- #
-+# bofhland_cracked_URL.ndb      : LOW false-positive rating
-+# bofhland_malware_URL.ndb      : LOW false-positive rating
-+# bofhland_phishing_URL.ndb     : LOW false-positive rating
- # jurlbla.ndb                   : MEDIUM false-positive rating
- # lott.ndb                      : MEDIUM false-positive rating
- # spam.ldb                      : MEDIUM false-positive rating
-@@ -154,6 +153,17 @@ ss_dbs="
- #
- # ONE CONTAINS THE COMPLETE URL PATH (MEDIUM RISK), AND THE OTHER
- # CONTAINS ONLY THE URL, WITHOUT THE FULL PATH (HIGH RISK).
-+#
-+# Foxhole databases block certain filenames *inside* compressed files (zip, 7z,
-+# rar). "Dangerous file types" are: pif scr exe com bat cmd vbs lnk cpl vbs.
-+# See http://sanesecurity.com/foxhole-databases/ for more information.
-+#
-+# foxhole_generic.cdb           : MEDIUM false-positive rating
-+#                                 (double extensions with dangerous file types)
-+# foxhole_filename.cdb          : MEDIUM false-positive rating
-+#                                 (certain commonly known malware filenames)
-+# foxhole_all.cdb               : HIGH false-positive rating
-+#                                 (all dangerous file types within archives)
- 
- # ========================
- # SecuriteInfo Database(s)
-@@ -183,11 +193,11 @@ si_update_hours="4"   # Default is 4 hours (6 update c
+@@ -179,11 +179,11 @@ si_update_hours="4"   # Default is 4 hours (6 update c
  # =========================
  # Add or remove database file names between quote marks as needed.  To
  # disable any of the MalwarePatrol database file downloads, remove the
@@ -86,7 +45,7 @@ $OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.5 2013/07/16 15:57:38 sthen Exp 
  
  # Since the MalwarePatrol database file is dynamically created,
  # there is no way to test for changes prior to downloading.  For this
-@@ -219,7 +229,7 @@ mbl_update_hours="6"   # Default is 6 hours (4 downloa
+@@ -227,7 +227,7 @@ curl_max_time="90"
  # Set working directory paths (edit to meet your own needs). If these
  # directories do not exist, the script will attempt to create them.
  # Top level working directory path:
