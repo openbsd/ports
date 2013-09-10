@@ -1,2 +1,4 @@
-In-circuit programming (ISP) tool for the NXP (Philips) LPC1300 /
-LPC1700 / LPC2000 series ARM7 / M0 / M3 microcontrollers.
+In-circuit programming (ISP) tool for the NXP (Philips) LPC800 /
+LPC1100 / LPC1300 / LPC1700 / LPC1800 / LPC2000 / LPC4300 series
+ARM7 / Cortex-M0 / Cortex-M0+ / Cortex-M3 / Cortex-M4
+microcontrollers.
