@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:02:50 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/09/10 13:26:46 ajacoutot Exp $
 
 # XXX: Upstream doesn't keep old files; if updating please mirror or ask sthen@
 
 COMMENT =	Python binding for the Scintilla source code editor
 
 VERSION =	2.5.1
-REVISION =	0
+REVISION =	1
 DISTNAME =	QScintilla-gpl-${VERSION}
 PKGNAME =	py-qscintilla-${VERSION}
 CATEGORIES =	editors x11 devel

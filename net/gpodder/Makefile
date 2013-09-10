@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2013/08/20 22:05:57 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2013/09/10 13:26:48 ajacoutot Exp $
 
 COMMENT=		media aggregator and podcast client
 
 MODPY_EGG_VERSION=	3.1.0
 DISTNAME=		gpodder-${MODPY_EGG_VERSION}
-REVISION=		1
+REVISION=		2
 CATEGORIES=		net www
 
 HOMEPAGE=		http://gpodder.org/

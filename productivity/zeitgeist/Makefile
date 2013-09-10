@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2013/04/02 15:54:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2013/09/10 13:26:51 ajacoutot Exp $
 
 COMMENT =		event logging framework
 
 V =			0.9.5
 DISTNAME =		zeitgeist-${V}
 EPOCH =			0
+REVISION =		0
 
 CATEGORIES =		productivity
 

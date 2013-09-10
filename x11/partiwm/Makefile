@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2013/08/07 21:33:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2013/09/10 13:26:52 ajacoutot Exp $
 
 COMMENT=	tiling window manager
 
 DISTNAME=	parti-all-0.0.6
 PKGNAME=	${DISTNAME:S/-all//}
-REVISION=	4
+REVISION=	5
 CATEGORIES=	x11
 
 HOMEPAGE=	https://partiwm.googlecode.com/

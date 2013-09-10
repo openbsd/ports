@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2013/03/21 08:46:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.118 2013/09/10 13:26:49 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,6 +18,8 @@ FULLPKGPATH$i= ${PKGPATH},$i${FLAVOR_EXT:S/-gtkspell//:S/-/,/g}
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 EXTRACT_SUFX=	.tar.bz2
+
+REVISION-main=	0
 
 SHARED_LIBS=	jabber		0.0 \
 		oscar		0.0 \
