@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1161 2013/09/05 08:36:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1162 2013/09/10 11:49:58 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1149,6 +1149,7 @@
      SUBDIR += py-html5lib
      SUBDIR += py-iniparse
      SUBDIR += py-isodate
+     SUBDIR += py-isodate,python3
      SUBDIR += py-jsonrpclib
      SUBDIR += py-kid
      SUBDIR += py-liblarch
