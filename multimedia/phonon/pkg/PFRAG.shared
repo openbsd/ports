@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/06/18 12:53:38 espie Exp $
-lib/kde4/plugins/phonon_backend/phonon_gstreamer.so
-lib/kde4/plugins/phonon_backend/phonon_xine.so
-@lib lib/libphonon.so.${LIBphonon_VERSION}
-@lib lib/libphononexperimental.so.${LIBphononexperimental_VERSION}
