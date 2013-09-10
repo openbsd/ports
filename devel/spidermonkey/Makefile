@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/08/11 09:09:03 landry Exp $
+# $OpenBSD: Makefile,v 1.18 2013/09/10 06:18:41 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 # based on ffx 17 engine
@@ -15,6 +15,7 @@ MOZILLA_VERSION =	17.0
 DISTNAME =		mozjs17.0.0
 PKGNAME =		spidermonkey-${MOZILLA_VERSION}
 PKGSPEC =		spidermonkey->=17.0,<18.0
+REVISION =		0
 
 SO_VERSION =	0.0
 SHARED_LIBS =	mozjs-17.0 ${SO_VERSION}
