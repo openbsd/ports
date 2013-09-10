@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST-common,v 1.1 2013/09/10 13:25:43 ajacoutot Exp $
+@conflict dbus-python-*
+include/dbus-1.0/dbus/dbus-python.h
+lib/pkgconfig/dbus-python.pc
+share/doc/dbus-python/
+share/doc/dbus-python/API_CHANGES.txt
+share/doc/dbus-python/HACKING.txt
+share/doc/dbus-python/NEWS
+share/doc/dbus-python/PY3PORT.txt
+share/doc/dbus-python/README
+share/doc/dbus-python/tutorial.txt

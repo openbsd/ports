@@ -1,8 +1,16 @@
-# $OpenBSD: Makefile,v 1.26 2013/07/12 06:15:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2013/09/10 13:25:41 ajacoutot Exp $
 
-COMMENT =	dbus bindings for Python
+COMMENT-main =	dbus bindings for Python
+COMMENT-common =common files for py-dbus
 
-DISTNAME =	dbus-python-1.2.0
+V =		1.2.0
+DISTNAME =	dbus-python-${V}
+
+PKGNAME-main =		py-dbus-${V}
+FULLPKGNAME-common =	py-dbus-common-${V}
+FULLPKGPATH-common =	x11/dbus-python,-common
+
+REVISION-main =	1
 
 CATEGORIES =	x11
 
@@ -13,22 +21,42 @@ MAINTAINER =	Antoine Jacoutot <ajacoutot@openbsd.org>
 # ISC-like
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += dbus-1 dbus-glib-1 ffi gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 pcre pthread z
+WANTLIB-main += ${WANTLIB}
+WANTLIB-main += dbus-1 dbus-glib-1 ffi gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB-main += gobject-2.0 pcre pthread z
+
+WANTLIB-common += #empty
 
 MASTER_SITES =	${HOMEPAGE}releases/dbus-python/
+
+MULTI_PACKAGES =	-main -common
 
 MODULES =	lang/python \
 		devel/gettext
 
-LIB_DEPENDS =	x11/dbus-glib
+FLAVORS =	python3
+FLAVOR ?=
 
+.if ${FLAVOR:Mpython3}
+FULLPKGNAME-main=${PKGNAME-main:S/^py-/py3-/}
+FULLPKGPATH-main=x11/dbus-pythom,-main${MODPY_FLAVOR}
+.endif
+
+LIB_DEPENDS-main =	${LIB_DEPENDS} \
+			x11/dbus-glib
+
+RUN_DEPENDS-main =	${RUN_DEPENDS} \
+			x11/dbus-python,-common
+
+LIB_DEPENDS-common =	#empty
+RUN_DEPENDS-common =	#empty
 
 CONFIGURE_STYLE = gnu
 CONFIGURE_ARGS = ${CONFIGURE_SHARED} \
 		 --disable-html-docs
 
 TEST_FLAGS =	LDFLAGS="-L${LOCALBASE}/lib"
+TEST_DEPENDS =	devel/py-gobject3${MODPY_FLAVOR}
 
 post-install:
 	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/*.{a,la}
