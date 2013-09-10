@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.392 2013/09/04 17:04:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.393 2013/09/10 11:59:48 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -304,6 +304,7 @@
      SUBDIR += py-prettytable
      SUBDIR += py-pygments
      SUBDIR += py-rdflib
+     SUBDIR += py-rdflib,python3
      SUBDIR += py-rtf
      SUBDIR += py-sphinx
      SUBDIR += py-vatnumber
