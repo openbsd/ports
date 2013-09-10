@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:42:46 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/09/10 11:59:16 ajacoutot Exp $
 
 PKG_ARCH =	*
 
@@ -7,6 +7,7 @@ COMMENT=	library to manipulate RDF data
 MODPY_EGG_VERSION=	3.2.2
 DISTNAME =		rdflib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES=	textproc
 
@@ -19,22 +20,19 @@ MASTER_SITES=		https://github.com/downloads/RDFLib/rdflib/
 
 MODULES =		lang/python
 
+FLAVORS =		python3
+FLAVOR ?=
+
 MODPY_SETUPTOOLS = 	Yes
 
-RUN_DEPENDS =		devel/py-isodate
+RUN_DEPENDS =		devel/py-isodate${MODPY_FLAVOR}
 
 MODPY_ADJ_FILES =	rdflib/plugins/parsers/ntriples.py \
 			run_tests.py \
 			setup.py \
 			rdflib/plugins/parsers/notation3.py
 
-EXAMPLES_DIR =		${PREFIX}/share/examples/py-rdflib/
-
 # Stupid infrastructure needs absolute imports
 NO_TEST =		Yes
-
-post-install:
-	${INSTALL_DATA_DIR} ${EXAMPLES_DIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.py ${EXAMPLES_DIR}
 
 .include <bsd.port.mk>
