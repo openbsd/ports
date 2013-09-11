@@ -1,4 +1,4 @@
-$OpenBSD: patch-calendar_alarm-notify_alarm_c,v 1.8 2013/09/11 07:21:05 ajacoutot Exp $
+$OpenBSD: patch-calendar_alarm-notify_alarm_c,v 1.9 2013/09/11 13:46:44 ajacoutot Exp $
 
 From 44a2cb9886223df8ee497f5ecd19123f7a3ca5ea Mon Sep 17 00:00:00 2001
 From: Antoine Jacoutot <antoine@mtier.org>
@@ -12,7 +12,7 @@ Subject: calendar: do not assume time_t is long
  			break;
  
 -		debug (("Process alarm with trigger %lu", ar->trigger));
-+		debug (("Process alarm with trigger %" G_GINT64_FORMAT, (gint64)ar->trigger));
++		debug (("Process alarm with trigger %" G_GINT64_FORMAT, (gint64) ar->trigger));
  		notify_id = ar;
  
  		ar_copy = *ar;
@@ -23,7 +23,7 @@ Subject: calendar: do not assume time_t is long
 -		("Setting timeout for %d.%2d (from now) %lu %lu",
 -		diff / 60, diff % 60, ar->trigger, now));
 +		("Setting timeout for %d.%2d (from now) %", G_GINT64_FORMAT, "%", G_GINT64_FORMAT,
-+		diff / 60, diff % 60, (gint64)ar->trigger, (gint64)now));
++		diff / 60, diff % 60, (gint64) ar->trigger, (gint64) now));
  	debug ((" %s", ctime (&ar->trigger)));
  	debug ((" %s", ctime (&now)));
  	timeout_id = g_timeout_add_seconds (diff, alarm_ready_cb, NULL);
