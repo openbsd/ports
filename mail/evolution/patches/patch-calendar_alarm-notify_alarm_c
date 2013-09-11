@@ -1,15 +1,18 @@
-$OpenBSD: patch-calendar_alarm-notify_alarm_c,v 1.7 2013/09/10 07:20:53 ajacoutot Exp $
+$OpenBSD: patch-calendar_alarm-notify_alarm_c,v 1.8 2013/09/11 07:21:05 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=707829
+From 44a2cb9886223df8ee497f5ecd19123f7a3ca5ea Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <antoine@mtier.org>
+Date: Wed, 11 Sep 2013 07:17:14 +0000
+Subject: calendar: do not assume time_t is long
 
 --- calendar/alarm-notify/alarm.c.orig	Tue Jul 23 14:52:26 2013
-+++ calendar/alarm-notify/alarm.c	Sat Aug 31 14:31:05 2013
++++ calendar/alarm-notify/alarm.c	Wed Sep 11 08:57:30 2013
 @@ -97,7 +97,7 @@ alarm_ready_cb (gpointer data)
  		if (ar->trigger > now)
  			break;
  
 -		debug (("Process alarm with trigger %lu", ar->trigger));
-+		debug (("Process alarm with trigger %lld", (long long)ar->trigger));
++		debug (("Process alarm with trigger %" G_GINT64_FORMAT, (gint64)ar->trigger));
  		notify_id = ar;
  
  		ar_copy = *ar;
@@ -19,8 +22,8 @@ https://bugzilla.gnome.org/show_bug.cgi?id=707829
  	debug (
 -		("Setting timeout for %d.%2d (from now) %lu %lu",
 -		diff / 60, diff % 60, ar->trigger, now));
-+		("Setting timeout for %d.%2d (from now) %lld %lld",
-+		diff / 60, diff % 60, (long long)ar->trigger, (long long)now));
++		("Setting timeout for %d.%2d (from now) %", G_GINT64_FORMAT, "%", G_GINT64_FORMAT,
++		diff / 60, diff % 60, (gint64)ar->trigger, (gint64)now));
  	debug ((" %s", ctime (&ar->trigger)));
  	debug ((" %s", ctime (&now)));
  	timeout_id = g_timeout_add_seconds (diff, alarm_ready_cb, NULL);
