@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:10:52 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/09/11 18:13:20 brad Exp $
 
 COMMENT=	GL Extension Wrangler library
 
-DISTNAME=	glew-1.9.0
+DISTNAME=	glew-1.10.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=glew/}
 EXTRACT_SUFX=	.tgz
 
-SHARED_LIBS=	GLEW	5.0 \
-		GLEWmx	1.0
+SHARED_LIBS=	GLEW	6.0 \
+		GLEWmx	2.0
 
 HOMEPAGE=	http://glew.sourceforge.net/
 
@@ -22,7 +22,7 @@ WANTLIB=	GL GLU X11 Xext Xi Xmu c m
 MAKE_ENV=	LIBGLEW_VERSION=${LIBGLEW_VERSION} \
 		LIBGLEWMX_VERSION=${LIBGLEWmx_VERSION} \
 		GLEW_DEST=${PREFIX}
-MAKE_FLAGS=	LD=${CC}
+MAKE_FLAGS=	LD=${CC} STRIP=
 
 USE_GMAKE=	Yes
 

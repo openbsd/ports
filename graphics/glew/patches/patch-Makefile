@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.5 2012/08/27 12:40:19 ajacoutot Exp $
---- Makefile.orig	Tue Jul 17 23:46:33 2012
-+++ Makefile	Fri Aug  3 04:37:01 2012
-@@ -72,7 +72,7 @@ else
+$OpenBSD: patch-Makefile,v 1.6 2013/09/11 18:13:23 brad Exp $
+--- Makefile.orig	Mon Jul 22 10:11:22 2013
++++ Makefile	Thu Aug 22 01:39:39 2013
+@@ -71,7 +71,7 @@ else
  OPT = $(POPT)
  endif
  INCLUDE = -Iinclude
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile,v 1.5 2012/08/27 12:40:19 ajacoutot Exp $
  
  all debug: glew.lib glew.lib.mx glew.bin
  
-@@ -101,19 +101,9 @@ lib:
+@@ -100,19 +100,9 @@ lib:
  
  lib/$(LIB.STATIC): $(LIB.OBJS)
  	$(AR) cr $@ $^
@@ -30,7 +30,7 @@ $OpenBSD: patch-Makefile,v 1.5 2012/08/27 12:40:19 ajacoutot Exp $
  
  tmp/$(SYSTEM)/default/static/glew.o: src/glew.c include/GL/glew.h include/GL/wglew.h include/GL/glxew.h
  	@mkdir -p $(dir $@)
-@@ -143,13 +133,6 @@ lib/$(LIB.STATIC.MX): $(LIB.OBJS.MX)
+@@ -146,13 +136,6 @@ lib/$(LIB.STATIC.MX): $(LIB.OBJS.MX)
  
  lib/$(LIB.SHARED.MX): $(LIB.SOBJS.MX)
  	$(LD) $(LDFLAGS.SO.MX) -o $@ $^ $(LIB.LDFLAGS) $(LIB.LIBS)
@@ -44,7 +44,7 @@ $OpenBSD: patch-Makefile,v 1.5 2012/08/27 12:40:19 ajacoutot Exp $
  
  tmp/$(SYSTEM)/mx/static/glew.o: src/glew.c include/GL/glew.h include/GL/wglew.h include/GL/glxew.h
  	@mkdir -p $(dir $@)
-@@ -226,17 +209,11 @@ ifeq ($(filter-out mingw% cygwin,$(SYSTEM)),)
+@@ -239,17 +222,11 @@ ifeq ($(filter-out mingw% cygwin,$(SYSTEM)),)
  else
  	$(INSTALL) -m 0644 lib/$(LIB.SHARED) $(LIBDIR)/
  endif
@@ -62,7 +62,7 @@ $OpenBSD: patch-Makefile,v 1.5 2012/08/27 12:40:19 ajacoutot Exp $
  	$(INSTALL) -m 0644 lib/$(LIB.STATIC) $(LIBDIR)/
  
  install.lib.mx: glew.lib.mx
-@@ -248,15 +225,9 @@ ifeq ($(filter-out mingw% cygwin,$(SYSTEM)),)
+@@ -261,15 +238,9 @@ ifeq ($(filter-out mingw% cygwin,$(SYSTEM)),)
  else
  	$(INSTALL) -m 0644 lib/$(LIB.SHARED.MX) $(LIBDIR)/
  endif
