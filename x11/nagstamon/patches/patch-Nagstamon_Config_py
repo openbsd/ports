@@ -1,6 +1,6 @@
---- Nagstamon/Config.py.orig	Mon Feb 20 08:57:28 2012
-+++ Nagstamon/Config.py	Fri Apr 13 17:30:52 2012
-@@ -584,15 +584,15 @@ class Config(object):
+--- Nagstamon/Config.py.orig	Wed Sep 11 08:53:31 2013
++++ Nagstamon/Config.py	Wed Sep 11 12:13:34 2013
+@@ -603,15 +603,15 @@ class Config(object):
          else:
              # the Linux settings
              defaultactions = { "RDP": Action(name="RDP", description="Connect via RDP.",\

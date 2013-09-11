@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/04/13 15:40:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/09/11 10:21:37 ajacoutot Exp $
 bin/nagstamon
 bin/nagstamon.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/
@@ -29,6 +29,8 @@ lib/python${MODPY_VERSION}/site-packages/Nagstamon/Server/Ninja.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Server/Ninja.pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Server/Opsview.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Server/Opsview.pyc
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/Server/Thruk.py
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/Server/Thruk.pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Server/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/Server/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/__init__.py
@@ -46,6 +48,8 @@ lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/history.svg
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/hostdown.wav
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/hosts.png
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/hosts.svg
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/menu.png
+lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/menu.svg
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/nagios.png
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/nagios.svg
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/resources/nagstamon.1

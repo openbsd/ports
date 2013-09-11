@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2013/07/08 09:10:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2013/09/11 10:21:36 ajacoutot Exp $
 
 COMMENT=	nagios status monitor for the Desktop
 
-MODPY_EGG_VERSION= 0.9.9
-DISTNAME=	nagstamon_${MODPY_EGG_VERSION}
-PKGNAME=	${DISTNAME:S/_/-/}
-REVISION=	2
+MODPY_EGG_VERSION= 0.9.11
+DISTNAME=	Nagstamon-${MODPY_EGG_VERSION}
+PKGNAME=	${DISTNAME:L}
 
 CATEGORIES=	x11 net
 
@@ -27,8 +26,6 @@ RUN_DEPENDS=	textproc/py-lxml \
 		audio/sox
 
 NO_TEST=	Yes
-
-WRKDIST = ${WRKDIR}/Nagstamon
 
 MODPY_ADJ_FILES=nagstamon.py \
 		Nagstamon/Server/Multisite.py
