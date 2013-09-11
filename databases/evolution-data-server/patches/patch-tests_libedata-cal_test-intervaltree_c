@@ -1,15 +1,15 @@
-$OpenBSD: patch-tests_libedata-cal_test-intervaltree_c,v 1.6 2013/08/15 16:07:27 ajacoutot Exp $
+$OpenBSD: patch-tests_libedata-cal_test-intervaltree_c,v 1.7 2013/09/11 09:24:57 ajacoutot Exp $
 
-XXX remove when we have a 64-bit time_t
+https://bugzilla.gnome.org/show_bug.cgi?id=707900
 
---- tests/libedata-cal/test-intervaltree.c.orig	Sun Sep 16 17:42:04 2012
-+++ tests/libedata-cal/test-intervaltree.c	Thu Sep 27 20:30:27 2012
+--- tests/libedata-cal/test-intervaltree.c.orig	Tue Jul 23 13:57:36 2013
++++ tests/libedata-cal/test-intervaltree.c	Wed Sep 11 10:19:10 2013
 @@ -166,7 +166,7 @@ create_test_component (time_t start,
  	e_cal_component_set_dtend (comp, &dtend);
  	*/
  
 -	summary.value = g_strdup_printf ("%ld - %ld", start, end);
-+	summary.value = g_strdup_printf ("%ld - %ld", (long)start, (long)end);
++	summary.value = g_strdup_printf ("%" G_GINT64_FORMAT "- %" G_GINT64_FORMAT, (gint64)start, (gint64)end);
  	summary.altrep = NULL;
  
  	e_cal_component_set_summary (comp, &summary);

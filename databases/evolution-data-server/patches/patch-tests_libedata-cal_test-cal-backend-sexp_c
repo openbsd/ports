@@ -1,6 +1,6 @@
-$OpenBSD: patch-tests_libedata-cal_test-cal-backend-sexp_c,v 1.5 2013/08/15 16:07:27 ajacoutot Exp $
+$OpenBSD: patch-tests_libedata-cal_test-cal-backend-sexp_c,v 1.6 2013/09/11 09:24:57 ajacoutot Exp $
 
-XXX remove when we have a 64-bit time_t
+https://bugzilla.gnome.org/show_bug.cgi?id=707900
 
 --- tests/libedata-cal/test-cal-backend-sexp.c.orig	Mon Sep 19 07:03:01 2011
 +++ tests/libedata-cal/test-cal-backend-sexp.c	Thu Dec 29 09:09:34 2011
@@ -9,7 +9,7 @@ XXX remove when we have a 64-bit time_t
  
  	if (generator) {
 -		printf ("%s: %ld - %ld\n", query, start, end);
-+		printf ("%s: %ld - %ld\n", query, (long)start, (long)end);
++		printf ("%s: %" G_GINT64_FORMAT "- %" G_GINT64_FORMAT "\n", query, (long)start, (long)end);
  	} else {
  		printf ("%s: no time prunning possible\n", query);
  	}

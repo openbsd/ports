@@ -1,15 +1,15 @@
-$OpenBSD: patch-camel_camel-lock_c,v 1.9 2013/08/15 16:07:27 ajacoutot Exp $
+$OpenBSD: patch-camel_camel-lock_c,v 1.10 2013/09/11 09:24:56 ajacoutot Exp $
 
-XXX remove when we have a 64-bit time_t
+https://bugzilla.gnome.org/show_bug.cgi?id=707900
 
---- camel/camel-lock.c.orig	Fri Sep 28 07:55:00 2012
-+++ camel/camel-lock.c	Fri Sep 28 07:55:10 2012
+--- camel/camel-lock.c.orig	Tue Jul 23 13:57:54 2013
++++ camel/camel-lock.c	Wed Sep 11 10:14:21 2013
 @@ -128,7 +128,7 @@ camel_lock_dot (const gchar *path,
  		/* check for stale lock, kill it */
  		if (g_stat (lock, &st) == 0) {
  			time_t now = time (NULL);
 -			(printf ("There is an existing lock %ld seconds old\n", now - st.st_ctime));
-+			(printf ("There is an existing lock %ld seconds old\n", (long)now - st.st_ctime));
++			(printf ("There is an existing lock %" G_GINT64_FORMAT "seconds old\n", (gint64)now - (gint64)st.st_ctime));
  			if (st.st_ctime < now - CAMEL_LOCK_DOT_STALE) {
  				d (printf ("Removing it now\n"));
  				unlink (lock);
