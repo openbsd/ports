@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/06/24 10:08:43 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.7 2013/09/11 18:05:35 brad Exp $
 include/ares.h
 include/ares_build.h
 include/ares_dns.h
@@ -7,9 +6,11 @@ include/ares_rules.h
 include/ares_version.h
 lib/libcares.a
 lib/libcares.la
+@lib lib/libcares.so.${LIBcares_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/libcares.pc
 @man man/man3/ares_cancel.3
+@man man/man3/ares_create_query.3
 @man man/man3/ares_destroy.3
 @man man/man3/ares_destroy_options.3
 @man man/man3/ares_dup.3
@@ -25,6 +26,8 @@ lib/pkgconfig/libcares.pc
 @man man/man3/ares_gethostbyname_file.3
 @man man/man3/ares_getnameinfo.3
 @man man/man3/ares_getsock.3
+@man man/man3/ares_inet_ntop.3
+@man man/man3/ares_inet_pton.3
 @man man/man3/ares_init.3
 @man man/man3/ares_init_options.3
 @man man/man3/ares_library_cleanup.3

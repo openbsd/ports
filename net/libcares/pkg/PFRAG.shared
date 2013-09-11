@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2008/04/23 09:57:04 ajacoutot Exp $
-@lib lib/libcares.so.${LIBcares_VERSION}
