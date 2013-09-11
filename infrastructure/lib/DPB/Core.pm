@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.40 2013/09/08 11:10:58 espie Exp $
+# $OpenBSD: Core.pm,v 1.41 2013/09/11 10:44:14 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -121,7 +121,7 @@ sub is_alive
 
 sub shellclass
 {
-	"DPB::Shell::Abstract"
+	"DPB::Shell::Abstract";
 }
 
 sub shell
@@ -134,7 +134,7 @@ sub new
 {
 	my ($class, $host, $prop) = @_;
 	my $c = bless {host => DPB::Host->new($host, $prop)}, $class;
-	$c->{shell} = $class->shellclass->new($c->host);
+	$c->{shell} = $c->shellclass->new($c->host);
 	$allhosts{$c->hostname} = 1;
 	return $c;
 }
@@ -679,7 +679,12 @@ sub is_local
 
 sub shellclass
 {
-	"DPB::Shell::Local"
+	my $self = shift;
+	if ($self->prop->{chroot}) {
+		return "DPB::Shell::Local::Chroot";
+	} else {
+		return "DPB::Shell::Local";
+	}
 }
 
 package DPB::Core::Fetcher;
@@ -713,7 +718,13 @@ package DPB::Shell::Abstract;
 sub new
 {
 	my ($class, $host) = @_;
-	bless {sudo => 0}, $class;
+	bless {sudo => 0, prop => $host->{prop}}, $class;
+}
+
+sub prop
+{
+	my $self = shift;
+	return $self->{prop};
 }
 
 sub chdir
@@ -769,6 +780,52 @@ sub exec
 		unshift(@argv, OpenBSD::Paths->sudo, "-E");
 	}
 	exec {$argv[0]} @argv;
+}
+
+package DPB::Shell::Chroot;
+our @ISA = qw(DPB::Shell::Abstract);
+sub exec
+{
+	my ($self, @argv) = @_;
+	my $chroot = $self->prop->{chroot};
+	if ($self->{env}) {
+		while (my ($k, $v) = each %{$self->{env}}) {
+			$v //= '';
+			unshift @argv, "$k=\'$v\'";
+		}
+	}
+	if ($self->{sudo} && !$chroot) {
+		unshift(@argv, OpenBSD::Paths->sudo, "-E");
+	}
+	my $cmd = join(' ', @argv);
+	if ($self->{dir}) {
+		$cmd = "cd $self->{dir} && $cmd";
+	}
+	my $umask = $self->prop->{umask};
+	$cmd = "umask $umask && $cmd";
+	if ($chroot) {
+		my @cmd2 = (OpenBSD::Paths->sudo, "-E", "chroot");
+		if (!$self->{sudo}) {
+			push(@cmd2, "-u", $self->prop->{chroot_user});
+		}
+		$self->_run(@cmd2, $chroot, "sh", "-c", $self->quote($cmd));
+	} else {
+		$self->_run($cmd);
+	}
+}
+
+package DPB::Shell::Local::Chroot;
+our @ISA = qw(DPB::Shell::Chroot);
+sub _run
+{
+	my ($self, @argv) = @_;
+	exec {$argv[0]} @argv;
+}
+
+sub quote
+{
+	my ($self, $cmd) = @_;
+	return $cmd;
 }
 
 1;

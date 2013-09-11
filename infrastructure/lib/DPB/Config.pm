@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.5 2013/07/05 13:49:50 pirofti Exp $
+# $OpenBSD: Config.pm,v 1.6 2013/09/11 10:44:13 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -60,10 +60,11 @@ sub parse_command_line
 		},
 	};
 
-	$state->SUPER_handle_options('acemqrRstuUvh:S:xX:A:C:f:F:I:j:J:M:p:P:b:l:L:',
-    "[-acemqrRsuUvx] [-A arch] [-C plist] [-f m] [-F m] [-I pathlist] [-J p]",
-    "[-j n] [-p parallel] [-P pathlist] [-h hosts] [-L logdir] [-l lockdir]",
-    "[-b log] [-M threshold] [-X pathlist] [pathlist ...]");
+	$state->SUPER_handle_options('acemqrRstuUvh:S:xX:A:B:C:f:F:I:j:J:M:p:P:b:l:L:',
+    "[-acemqrRsuUvx] [-A arch] [-B chroot] [-C plist] [-f m] [-F m]",
+    "[-I pathlist] [-J p] [-j n] [-p parallel] [-P pathlist] [-h hosts]",
+    "[-L logdir] [-l lockdir] [-b log] [-M threshold] [-X pathlist]",
+    "[pathlist ...]");
     	$state->{fullrepo} = join("/", $state->{repo}, $state->arch, "all");
 	$state->{logdir} = $state->{flogdir} // $ENV{LOGDIR} // '%p/logs/%a';
 	$state->{lockdir} //= $state->{flockdir} // "%L/locks";
@@ -190,6 +191,9 @@ sub command_line_overrides
 	}
 	if ($state->opt('p')) {
 		$override_prop->{parallel} = $state->opt('p');
+	}
+	if ($state->opt('B')) {
+		$override_prop->{chroot} = $state->opt('B');
 	}
 	if ($state->define_present('STUCK_TIMEOUT')) {
 		$override_prop->{stuck} = 
@@ -321,6 +325,7 @@ sub has_sf
 	return $has_sf;
 }
 
+my $default_user;
 sub finalize
 {
 	my ($class, $prop) = @_;
@@ -331,6 +336,15 @@ sub finalize
 	}
 	if (defined $prop->{mem}) {
 		$prop->{memory} = $prop->{mem};
+	}
+	if (defined $prop->{chroot}) {
+		if (!defined $prop->{chroot_user}) {
+			if (!defined $default_user) {
+				$default_user = `whoami`;
+				chomp($default_user);
+			}
+		}
+		$prop->{chroot_user} = $default_user;
 	}
 	if (defined $prop->{memory}) {
 		my $_ = $prop->{memory};
