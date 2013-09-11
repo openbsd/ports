@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/09/10 16:57:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2013/09/11 14:38:44 nigel Exp $
 
 COMMENT-main =		dbus bindings for Python
 COMMENT-common =	common files for py-dbus
@@ -39,7 +39,7 @@ FLAVOR ?=
 
 .if ${FLAVOR:Mpython3}
 FULLPKGNAME-main=	${PKGNAME-main:S/^py-/py3-/}
-FULLPKGPATH-main=	x11/dbus-pythom,-main${MODPY_FLAVOR}
+FULLPKGPATH-main=	x11/dbus-python,-main${MODPY_FLAVOR}
 .endif
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
