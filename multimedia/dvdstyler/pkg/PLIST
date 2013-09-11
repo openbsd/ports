@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/03/13 08:42:43 brad Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/09/11 18:15:12 brad Exp $
 @bin bin/dvdstyler
 @man man/man1/dvdstyler.1
 share/applications/dvdstyler.desktop
@@ -80,7 +80,9 @@ share/dvdstyler/buttons/deprecated/text-underlined.xml
 share/dvdstyler/buttons/deprecated/text-v2.xml
 share/dvdstyler/buttons/deprecated/text.xml
 share/dvdstyler/buttons/ellipse-v2.xml
+share/dvdstyler/buttons/ellipse45.xml
 share/dvdstyler/buttons/frame-v2.xml
+share/dvdstyler/buttons/frame45.xml
 share/dvdstyler/buttons/hand-left.xml
 share/dvdstyler/buttons/hand-right.xml
 share/dvdstyler/buttons/home-v2.xml
@@ -118,13 +120,17 @@ share/dvdstyler/docs/help_zh_CN.zip
 share/dvdstyler/docs/help_zh_TW.zip
 share/dvdstyler/objects/
 share/dvdstyler/objects/deprecated/
+share/dvdstyler/objects/deprecated/ellipse-v2.xml
 share/dvdstyler/objects/deprecated/ellipse.xml
+share/dvdstyler/objects/deprecated/frame-v2.xml
 share/dvdstyler/objects/deprecated/frame.xml
 share/dvdstyler/objects/deprecated/rectangle.xml
 share/dvdstyler/objects/deprecated/text-shadow.xml
 share/dvdstyler/objects/deprecated/text.xml
-share/dvdstyler/objects/ellipse-v2.xml
-share/dvdstyler/objects/frame-v2.xml
+share/dvdstyler/objects/ellipse-v3.xml
+share/dvdstyler/objects/ellipse45.xml
+share/dvdstyler/objects/frame-v3.xml
+share/dvdstyler/objects/frame45.xml
 share/dvdstyler/objects/image.xml
 share/dvdstyler/objects/rectangle-v2.xml
 share/dvdstyler/objects/text-v2.xml
@@ -175,6 +181,9 @@ share/locale/da/LC_MESSAGES/dvdstyler.mo
 share/locale/de/LC_MESSAGES/dvdstyler.mo
 share/locale/el/LC_MESSAGES/dvdstyler.mo
 share/locale/es/LC_MESSAGES/dvdstyler.mo
+share/locale/es_ar/
+share/locale/es_ar/LC_MESSAGES/
+share/locale/es_ar/LC_MESSAGES/dvdstyler.mo
 share/locale/eu/LC_MESSAGES/dvdstyler.mo
 share/locale/fi/LC_MESSAGES/dvdstyler.mo
 share/locale/fr/LC_MESSAGES/dvdstyler.mo
