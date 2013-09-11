@@ -1,6 +1,9 @@
-$OpenBSD: patch-camel_providers_pop3_camel-pop3-folder_c,v 1.10 2013/09/11 09:24:57 ajacoutot Exp $
+$OpenBSD: patch-camel_providers_pop3_camel-pop3-folder_c,v 1.11 2013/09/11 14:02:54 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=707900
+From fa37efaf26d366a3d0d5256283455a28025ddbde Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <antoine@mtier.org>
+Date: Wed, 11 Sep 2013 13:57:57 +0000
+Subject: do not assume time_t is long
 
 --- camel/providers/pop3/camel-pop3-folder.c.orig	Sun Aug 11 00:00:52 2013
 +++ camel/providers/pop3/camel-pop3-folder.c	Wed Sep 11 09:59:39 2013
@@ -11,7 +14,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=707900
 -				"%s(%d): message_time= [%ld]\n",
 -				__FILE__, __LINE__, message_time));
 +				"%s(%d): message_time= [%" G_GINT64_FORMAT "]\n",
-+				__FILE__, __LINE__, (gint64)message_time));
++				__FILE__, __LINE__, (gint64) message_time));
  			d (printf (
  				"%s(%d): day_lag=[%d] \t days_to_delete=[%d]\n",
  				__FILE__, __LINE__, day_lag, days_to_delete));

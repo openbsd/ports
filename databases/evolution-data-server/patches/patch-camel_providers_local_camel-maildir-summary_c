@@ -1,6 +1,9 @@
-$OpenBSD: patch-camel_providers_local_camel-maildir-summary_c,v 1.14 2013/09/11 09:24:57 ajacoutot Exp $
+$OpenBSD: patch-camel_providers_local_camel-maildir-summary_c,v 1.15 2013/09/11 14:02:54 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=707900
+From fa37efaf26d366a3d0d5256283455a28025ddbde Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <antoine@mtier.org>
+Date: Wed, 11 Sep 2013 13:57:57 +0000
+Subject: do not assume time_t is long
 
 --- camel/providers/local/camel-maildir-summary.c.orig	Sun Mar 17 13:46:02 2013
 +++ camel/providers/local/camel-maildir-summary.c	Fri Mar 29 13:32:31 2013
@@ -9,7 +12,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=707900
  				g_usleep (2 * G_USEC_PER_SEC);
  			}
 -			uid = g_strdup_printf ("%ld.%d_%u.%s", time (NULL), getpid (), nextuid, mds->priv->hostname);
-+			uid = g_strdup_printf ("%" G_GINT64_FORMAT ".%d_%u.%s", (gint64)time (NULL), getpid (), nextuid, mds->priv->hostname);
++			uid = g_strdup_printf ("%" G_GINT64_FORMAT ".%d_%u.%s", (gint64) time (NULL), getpid (), nextuid, mds->priv->hostname);
  			name = g_strdup_printf ("%s/tmp/%s", cls->folder_path, uid);
  			retry++;
  		} while (g_stat (name, &st) == 0 && retry < 3);

@@ -1,6 +1,9 @@
-$OpenBSD: patch-camel_camel-search-sql-sexp_c,v 1.11 2013/09/11 09:24:57 ajacoutot Exp $
+$OpenBSD: patch-camel_camel-search-sql-sexp_c,v 1.12 2013/09/11 14:02:54 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=707900
+From fa37efaf26d366a3d0d5256283455a28025ddbde Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <antoine@mtier.org>
+Date: Wed, 11 Sep 2013 13:57:57 +0000
+Subject: do not assume time_t is long
 
 --- camel/camel-search-sql-sexp.c.orig	Sun Sep 16 17:05:39 2012
 +++ camel/camel-search-sql-sexp.c	Thu Oct 18 14:40:10 2012
@@ -9,7 +12,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=707900
  			g_string_append_printf (str, "%d", r1->value.number);
  		else if (r1->type == CAMEL_SEXP_RES_TIME)
 -			g_string_append_printf (str, "%ld", r1->value.time);
-+			g_string_append_printf (str, "%" G_GINT64_FORMAT, (gint64)r1->value.time);
++			g_string_append_printf (str, "%" G_GINT64_FORMAT, (gint64) r1->value.time);
  		else if (r1->type == CAMEL_SEXP_RES_STRING)
  			g_string_append_printf (str, "%s", r1->value.string);
  
@@ -18,7 +21,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=707900
  				g_string_append_printf (str, "%d", r2->value.boolean);
  			else if (r2->type == CAMEL_SEXP_RES_TIME)
 -				g_string_append_printf (str, "%ld", r2->value.time);
-+				g_string_append_printf (str, "%" G_GINT64_FORMAT, (gint64)r2->value.time);
++				g_string_append_printf (str, "%" G_GINT64_FORMAT, (gint64) r2->value.time);
  			else if (r2->type == CAMEL_SEXP_RES_STRING) {
  				gchar *tmp = g_strdup_printf ("%c%s%c", ut ? '%':' ', r2->value.string, ut ? '%':' ');
  				gchar *safe = get_db_safe_string (tmp);
@@ -27,7 +30,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=707900
  			g_string_append_printf (str, "%d", r1->value.number);
  		else if (r1->type == CAMEL_SEXP_RES_TIME)
 -			g_string_append_printf (str, "%ld", r1->value.time);
-+			g_string_append_printf (str, "%" G_GINT64_FORMAT, (gint64)r1->value.time);
++			g_string_append_printf (str, "%" G_GINT64_FORMAT, (gint64) r1->value.time);
  		else if (r1->type == CAMEL_SEXP_RES_STRING)
  			g_string_append_printf (str, "%s", r1->value.string);
  
@@ -36,7 +39,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=707900
  			g_string_append_printf (str, "%d", r2->value.boolean);
  		else if (r2->type == CAMEL_SEXP_RES_TIME)
 -			g_string_append_printf (str, "%ld", r2->value.time);
-+			g_string_append_printf (str, "%" G_GINT64_FORMAT, (gint64)r2->value.time);
++			g_string_append_printf (str, "%" G_GINT64_FORMAT, (gint64) r2->value.time);
  		else if (r2->type == CAMEL_SEXP_RES_STRING)
  			g_string_append_printf (str, "%s", r2->value.string);
  		camel_sexp_result_free (f, r1);
@@ -45,7 +48,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=707900
  			g_string_append_printf (str, "%d", r1->value.number);
  		else if (r1->type == CAMEL_SEXP_RES_TIME)
 -			g_string_append_printf (str, "%ld", r1->value.time);
-+			g_string_append_printf (str, "%" G_GINT64_FORMAT, (gint64)r1->value.time);
++			g_string_append_printf (str, "%" G_GINT64_FORMAT, (gint64) r1->value.time);
  		else if (r1->type == CAMEL_SEXP_RES_STRING)
  			g_string_append_printf (str, "%s", r1->value.string);
  
@@ -54,7 +57,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=707900
  			g_string_append_printf (str, "%d", r2->value.boolean);
  		else if (r2->type == CAMEL_SEXP_RES_TIME)
 -			g_string_append_printf (str, "%ld", r2->value.time);
-+			g_string_append_printf (str, "%" G_GINT64_FORMAT, (gint64)r2->value.time);
++			g_string_append_printf (str, "%" G_GINT64_FORMAT, (gint64) r2->value.time);
  		else if (r2->type == CAMEL_SEXP_RES_STRING)
  			g_string_append_printf (str, "%s", r2->value.string);
  		camel_sexp_result_free (f, r1);
