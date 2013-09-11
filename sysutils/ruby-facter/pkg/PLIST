@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2013/04/26 14:13:12 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.12 2013/09/11 20:01:32 jasper Exp $
 bin/facter
 ${MODRUBY_SITEDIR}/facter/
 ${MODRUBY_SITEDIR}/facter.rb
@@ -77,7 +77,9 @@ ${MODRUBY_SITEDIR}/facter/util/directory_loader.rb
 ${MODRUBY_SITEDIR}/facter/util/ec2.rb
 ${MODRUBY_SITEDIR}/facter/util/fact.rb
 ${MODRUBY_SITEDIR}/facter/util/file_read.rb
+${MODRUBY_SITEDIR}/facter/util/ip/
 ${MODRUBY_SITEDIR}/facter/util/ip.rb
+${MODRUBY_SITEDIR}/facter/util/ip/windows.rb
 ${MODRUBY_SITEDIR}/facter/util/loader.rb
 ${MODRUBY_SITEDIR}/facter/util/macaddress.rb
 ${MODRUBY_SITEDIR}/facter/util/macosx.rb
@@ -110,6 +112,6 @@ ${MODRUBY_SITEDIR}/facter/zonename.rb
 ${MODRUBY_SITEDIR}/facter/zones.rb
 ${MODRUBY_SITEDIR}/facter/zpool_version.rb
 @man man/man8/facter.8
+@sample ${SYSCONFDIR}/facter/facts.d/
 ${MODRUBY_RELEXAMPLEDIR}-facter/
 ${MODRUBY_RELEXAMPLEDIR}-facter/facter.conf
-@sample ${SYSCONFDIR}/facter/facts.d/
