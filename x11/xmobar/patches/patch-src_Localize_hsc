@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_Localize_hsc,v 1.1 2013/09/12 17:25:43 dcoppa Exp $
+
+commit 1d20b99ec742ce08a8083a01ccb15adb763815e1
+Author: Jose Antonio Ortega Ruiz <jao@gnu.org>
+Date:   Thu Aug 29 17:55:50 2013 +0200
+
+Fix for decoding problem in datetime plugin
+
+--- src/Localize.hsc.orig	Wed Jun  5 00:37:16 2013
++++ src/Localize.hsc	Thu Sep 12 19:19:35 2013
+@@ -46,7 +46,7 @@ getLangInfo item = do
+   itemStr <- nl_langinfo item
+ #ifdef UTF8
+   str <- peekCString itemStr
+-  return $ decodeString str
++  return $ if (isUTF8Encoded str) then decodeString str else str
+ #else
+   peekCString itemStr
+ #endif
