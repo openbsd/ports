@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.58 2013/06/20 06:54:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2013/09/12 06:52:23 ajacoutot Exp $
 
 COMMENT=		people aggregation library
 
 GNOME_PROJECT=		folks
-GNOME_VERSION=		0.9.2
+GNOME_VERSION=		0.9.3
 # MODULE_VERSION in config.h
 API_V=			39
-
-REVISION=		1
 
 SHARED_LIBS +=  folks-telepathy           5.0 # 39.0
 SHARED_LIBS +=  folks                     5.2 # 39.0
@@ -24,28 +22,36 @@ MODULES=		devel/dconf \
 
 WANTLIB += asn1 c camel-1.2 com_err crypto db dbus-1 dbus-glib-1
 WANTLIB += ebackend-1.2 ebook-1.2 ebook-contacts-1.2 edata-book-1.2
-WANTLIB += edataserver-1.2 ffi gck-1 gcr-base-3 gcrypt gee-0.8 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gpg-error gssapi gthread-2.0
-WANTLIB += krb5 m ncurses nspr4 nss3 nssutil3 p11-kit pcre plc4
-WANTLIB += plds4 pthread readline secret-1 smime3 socialweb-client
-WANTLIB += softokn3 soup-2.4 sqlite3 ssl3 telepathy-glib xml2
-WANTLIB += heimbase roken wind z zeitgeist-1.0
+WANTLIB += edataserver-1.2 ffi gck-1 gcr-base-3 gcrypt gee-0.8
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
+WANTLIB += gssapi gthread-2.0 heimbase krb5 m ncurses nspr4 nss3
+WANTLIB += nssutil3 p11-kit pcre plc4 plds4 pthread readline roken
+WANTLIB += secret-1 smime3 socialweb-client softokn3 soup-2.4
+WANTLIB += sqlite3 ssl3 telepathy-glib wind xml2 z zeitgeist-2.0
 
-LIB_DEPENDS=	databases/evolution-data-server>=3.8.1 \
+LIB_DEPENDS=	databases/evolution-data-server \
 		devel/libgee \
-		net/telepathy/telepathy-glib>=0.20.1 \
+		net/telepathy/telepathy-glib \
 		net/libsocialweb \
-		productivity/libzeitgeist
+		productivity/zeitgeist>=0.9.14v0
+
+# needed at runtime by the telepathy backend (AccountManager)
 RUN_DEPENDS=	net/telepathy/telepathy-mission-control
 
 TEST_DEPENDS=	${FULLPKGNAME}:${BASE_PKGPATH}
 
 MODGNOME_TOOLS= 	gi vala
 
-CONFIGURE_ARGS+=	--enable-import-tool \
-			--enable-inspect-tool
 # libofono isn't ported yet
-CONFIGURE_ARGS= 	--disable-ofono-backend
+CONFIGURE_ARGS += 	--disable-ofono-backend
+
+# https://git.gnome.org/browse/folks/commit/Makefile.am?id=8ebe13c457660de380521874a006425083151741
+CONFIGURE_ARGS += --disable-fatal-warnings
+
+# XXX our pkg-config(1) does not behave properly
+# g-ir-scanner <...> --include=Folks-0.6
+# Package folks was not found in the pkg-config search path
+MAKE_ENV=	PKG_CONFIG_PATH=${WRKBUILD}/folks
 
 post-install:
 	rm ${PREFIX}/lib/folks/${API_V}/backends/*/*.{a,la}

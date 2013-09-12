@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2013/06/10 09:37:28 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.17 2013/09/12 06:52:23 ajacoutot Exp $
 @conflict folks-meta-tracker-*
 @pkgpath net/telepathy/folks,-main
 @pkgpath net/telepathy/folks,-tracker
@@ -21,6 +21,10 @@ lib/folks/${API_V}/backends/libsocialweb/libsocialweb.so
 lib/folks/${API_V}/backends/telepathy/
 lib/folks/${API_V}/backends/telepathy/telepathy.so
 lib/girepository-1.0/Folks-0.6.typelib
+lib/girepository-1.0/FolksEds-0.6.typelib
+lib/girepository-1.0/FolksLibsocialweb-0.6.typelib
+lib/girepository-1.0/FolksTelepathy-0.6.typelib
+lib/girepository-1.0/TpLowlevel-0.6.typelib
 lib/libfolks-eds.a
 lib/libfolks-eds.la
 @lib lib/libfolks-eds.so.${LIBfolks-eds_VERSION}
@@ -39,6 +43,10 @@ lib/pkgconfig/folks-telepathy.pc
 lib/pkgconfig/folks.pc
 share/GConf/gsettings/folks.convert
 share/gir-1.0/Folks-0.6.gir
+share/gir-1.0/FolksEds-0.6.gir
+share/gir-1.0/FolksLibsocialweb-0.6.gir
+share/gir-1.0/FolksTelepathy-0.6.gir
+share/gir-1.0/TpLowlevel-0.6.gir
 share/glib-2.0/schemas/org.freedesktop.folks.gschema.xml
 share/locale/ar/LC_MESSAGES/folks.mo
 share/locale/as/LC_MESSAGES/folks.mo
