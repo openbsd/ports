@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/06/26 11:22:25 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/09/12 22:26:04 sthen Exp $
 @bin bin/darktable
 @bin bin/darktable-cli
 @bin bin/darktable-cltest
@@ -123,6 +123,8 @@ lib/darktable/views/liblighttable.so
 lib/darktable/views/libmap.so
 lib/libdarktable.so
 @man man/man1/darktable.1
+share/appdata/
+share/appdata/darktable.appdata.xml
 share/applications/darktable.desktop
 share/darktable/
 share/darktable/darktable.gtkrc
@@ -254,6 +256,7 @@ share/locale/pt_BR/LC_MESSAGES/darktable.mo
 share/locale/pt_PT/
 share/locale/pt_PT/LC_MESSAGES/
 share/locale/pt_PT/LC_MESSAGES/darktable.mo
+share/locale/ru/LC_MESSAGES/darktable.mo
 share/locale/sq/LC_MESSAGES/darktable.mo
 share/locale/sv/LC_MESSAGES/darktable.mo
 share/locale/uk/LC_MESSAGES/darktable.mo

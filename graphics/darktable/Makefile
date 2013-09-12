@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2013/06/29 11:27:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2013/09/12 22:26:03 sthen Exp $
 
 # requires SSE
 ONLY_FOR_ARCHS=	i386 amd64
@@ -10,8 +10,7 @@ CFLAGS += -march=i586 -fomit-frame-pointer
 .endif
 
 COMMENT=	virtual lighttable and darkroom for photographers
-DISTNAME=	darktable-1.2.2
-REVISION=	0
+DISTNAME=	darktable-1.2.3
 EXTRACT_SUFX=	.tar.xz
 
 SHARED_ONLY=	Yes
@@ -68,12 +67,8 @@ CONFIGURE_STYLE= cmake
 CONFIGURE_ARGS=	-DCMAKE_BUILD_TYPE=Release \
 		-DBINARY_PACKAGE_BUILD=1
 
-FLAVORS=	debug
-FLAVOR?=
-
-.if ${FLAVOR:Mdebug}
+# enable workaround for mutex problems
 CFLAGS+=	-D_DEBUG
-.endif
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_common_utility_c,v 1.1 2013/09/12 22:26:04 sthen Exp $
+--- src/common/utility.c.orig	Thu Sep 12 22:41:53 2013
++++ src/common/utility.c	Thu Sep 12 22:41:33 2013
+@@ -17,7 +17,7 @@
+ */
+ 
+ /* getpwnam_r availibility check */
+-#if defined __APPLE__ || defined _POSIX_C_SOURCE >= 1 || defined _XOPEN_SOURCE || defined _BSD_SOURCE || defined _SVID_SOURCE || defined _POSIX_SOURCE
++#if defined __APPLE__ || defined _POSIX_C_SOURCE >= 1 || defined _XOPEN_SOURCE || defined _BSD_SOURCE || defined _SVID_SOURCE || defined _POSIX_SOURCE || defined __OpenBSD__
+ #include <pwd.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
