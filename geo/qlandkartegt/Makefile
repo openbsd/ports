@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.12 2013/07/02 04:30:20 sebastia Exp $
+# $OpenBSD: Makefile,v 1.13 2013/09/12 16:30:59 sebastia Exp $
 
 VMEM_WARNING =	yes
 COMMENT =	garmin gps map management tool
 
-DISTNAME =	qlandkartegt-1.7.0
+DISTNAME =	qlandkartegt-1.7.3
 CATEGORIES =	geo x11
 
 HOMEPAGE =	http://www.qlandkarte.org/
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=qlandkartegt/}
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
-# GPLv2
+# GPLv3
 PERMIT_PACKAGE_CDROM =		Yes
 
 MODULES =	devel/cmake x11/qt4

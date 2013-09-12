@@ -1,0 +1,15 @@
+$OpenBSD: patch-config_h_cmake,v 1.1 2013/09/12 16:30:59 sebastia Exp $
+
+use arc4random
+
+--- config.h.cmake.orig	Thu Sep 12 08:36:49 2013
++++ config.h.cmake	Thu Sep 12 08:37:05 2013
+@@ -19,6 +19,8 @@
+ 
+ #cmakedefine HAVE_BIGENDIAN 1
+ 
++#cmakedefine HAVE_ARC4RANDOM 1
++
+ /* build with native file dialogs */
+ #define FILE_DIALOG_FLAGS ${FILEDIALOGFLAGS}
+ 
