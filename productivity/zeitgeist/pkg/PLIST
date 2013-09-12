@@ -1,5 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/03/28 21:37:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/09/12 06:49:54 ajacoutot Exp $
+@conflict libzeitgeist-*
+@pkgpath productivity/libzeitgeist
 @bin bin/zeitgeist-daemon
+@bin bin/zeitgeist-datahub
+include/zeitgeist-2.0/
+include/zeitgeist-2.0/zeitgeist-datamodel.h
+include/zeitgeist-2.0/zeitgeist.h
+lib/girepository-1.0/Zeitgeist-2.0.typelib
+lib/libzeitgeist-2.0.a
+lib/libzeitgeist-2.0.la
+@lib lib/libzeitgeist-2.0.so.${LIBzeitgeist-2.0_VERSION}
+lib/pkgconfig/zeitgeist-2.0.pc
 lib/python${MODPY_VERSION}/site-packages/zeitgeist/
 lib/python${MODPY_VERSION}/site-packages/zeitgeist/__init__.py
 lib/python${MODPY_VERSION}/site-packages/zeitgeist/__init__.pyc
@@ -17,10 +28,23 @@ lib/python${MODPY_VERSION}/site-packages/zeitgeist/mimetypes.py
 lib/python${MODPY_VERSION}/site-packages/zeitgeist/mimetypes.pyc
 lib/python${MODPY_VERSION}/site-packages/zeitgeist/mimetypes.pyo
 @man man/man1/zeitgeist-daemon.1
+@man man/man1/zeitgeist-datahub.1
+share/bash-completion/completions/zeitgeist-daemon
 share/dbus-1/services/org.gnome.zeitgeist.service
 share/doc/zeitgeist/
 share/doc/zeitgeist/AUTHORS
 share/doc/zeitgeist/NEWS
+share/examples/zeitgeist/
+share/examples/zeitgeist/xdg/
+@sample ${SYSCONFDIR}/xdg/
+share/examples/zeitgeist/xdg/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/
+share/examples/zeitgeist/xdg/autostart/zeitgeist-datahub.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/zeitgeist-datahub.desktop
+share/gir-1.0/Zeitgeist-2.0.gir
+share/vala/vapi/zeitgeist-2.0.deps
+share/vala/vapi/zeitgeist-2.0.vapi
+share/vala/vapi/zeitgeist-datamodel-2.0.vapi
 share/zeitgeist/
 share/zeitgeist/ontology/
 share/zeitgeist/ontology/nao.trig

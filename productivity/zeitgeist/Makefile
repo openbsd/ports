@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2013/09/10 13:26:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2013/09/12 06:49:53 ajacoutot Exp $
 
 COMMENT =		event logging framework
 
-V =			0.9.5
+V =			0.9.14
 DISTNAME =		zeitgeist-${V}
 EPOCH =			0
-REVISION =		0
+
+SHARED_LIBS +=	zeitgeist-2.0             0.0 # 0.0
 
 CATEGORIES =		productivity
 
@@ -13,38 +14,42 @@ HOMEPAGE =		http://zeitgeist-project.com/
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
-# LGPLv2.1
+# GPLv2 - LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
+WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 expat ffi
+WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
+WANTLIB += harfbuzz json-glib-1.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs sqlite3 telepathy-glib
+WANTLIB += xcb xcb-render xcb-shm z
+
 MASTER_SITES =		http://edge.launchpad.net/zeitgeist/${V:R}/${V}/+download/
-EXTRACT_SUFX =		.tar.bz2
+EXTRACT_SUFX =		.tar.xz
 
 MODULES =		devel/gettext \
 			lang/python \
 			x11/gnome
 
-BUILD_DEPENDS =		lang/vala \
-			textproc/p5-XML-Parser \
-			textproc/py-rdflib \
-			textproc/raptor \
-			x11/dbus
+MODGNOME_TOOLS =	gi vala
 
-RUN_DEPENDS =		devel/py-gobject \
-			devel/py-xdg \
-			x11/dbus-python
+BUILD_DEPENDS =		textproc/py-rdflib \
+			textproc/raptor
 
-WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += pcre pthread sqlite3 z
+RUN_DEPENDS =		x11/dbus-python
 
-LIB_DEPENDS =		devel/glib2
+TEST_DEPENDS =		devel/py-gobject3
 
-FAKE_FLAGS +=		zeitgeistdocdir="${PREFIX}/share/doc/zeitgeist/"
+LIB_DEPENDS =		devel/json-glib \
+			net/telepathy/telepathy-glib \
+			x11/gtk+3
+
+MAKE_FLAGS=		LIBZEITGEIST_LT_VERSION=${LIBzeitgeist-2.0_VERSION:R}:${LIBzeitgeist-2.0_VERSION:E}
+FAKE_FLAGS=		zeitgeistdocdir="${PREFIX}/share/doc/zeitgeist/" \
+			sysconfdir="${PREFIX}/share/examples/zeitgeist/"
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
-# XXX: FTS++ fails to build in controller.cpp; needs fixing.
-CONFIGURE_ARGS +=	--disable-fts
-# XXX: Requires dee-icu which has not been ported yet
-CONFIGURE_ARGS +=	--without-dee-icu
 
 .include <bsd.port.mk>
