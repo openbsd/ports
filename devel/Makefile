@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1162 2013/09/10 11:49:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1163 2013/09/12 07:00:17 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -85,6 +85,7 @@
      SUBDIR += dbus-sharp-glib
      SUBDIR += dconf
      SUBDIR += ddd
+     SUBDIR += dee
      SUBDIR += dejagnu
      SUBDIR += desktop-file-utils
      SUBDIR += dfu-programmer
