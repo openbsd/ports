@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2013/06/25 07:41:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.36 2013/09/12 06:55:23 ajacoutot Exp $
 @bin bin/gedit
 bin/gnome-text-editor
 include/gedit${MODPY_BIN_SUFFIX}.0/
@@ -66,6 +66,7 @@ lib/gedit/plugins/libmodelines.so
 lib/gedit/plugins/libsort.so
 lib/gedit/plugins/libspell.so
 lib/gedit/plugins/libtime.so
+lib/gedit/plugins/libzeitgeistplugin.so
 lib/gedit/plugins/modelines.plugin
 lib/gedit/plugins/pythonconsole/
 lib/gedit/plugins/pythonconsole.plugin
@@ -148,6 +149,7 @@ lib/gedit/plugins/snippets/windowactivatable.pyo
 lib/gedit/plugins/sort.plugin
 lib/gedit/plugins/spell.plugin
 lib/gedit/plugins/time.plugin
+lib/gedit/plugins/zeitgeist.plugin
 lib/pkgconfig/gedit.pc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gedit.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gedit.pyc
