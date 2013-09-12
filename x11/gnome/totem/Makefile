@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2013/09/10 13:26:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.107 2013/09/12 06:54:21 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		official media player for GNOME
 
 GNOME_PROJECT=		totem
 GNOME_VERSION=		3.8.2
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  totem                     0.0 # 0.0
 
@@ -31,7 +31,7 @@ WANTLIB += nautilus-extension orc-0.4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 png
 WANTLIB += pthread pthread-stubs quvi soup-2.4 soup-gnome-2.4
 WANTLIB += sqlite3 ssl totem-plparser xcb xcb-render xcb-shm xml2
-WANTLIB += z zeitgeist-1.0
+WANTLIB += z zeitgeist-2.0
 
 MODULES=		devel/dconf \
 			devel/gettext \
@@ -57,7 +57,7 @@ LIB_DEPENDS=		x11/gnome/totem-pl-parser \
 			devel/libpeas \
 			graphics/clutter/clutter-gst \
 			graphics/clutter/clutter-gtk \
-			productivity/libzeitgeist \
+			productivity/zeitgeist>=0.9.14v0 \
 			x11/gnome/grilo \
 			x11/gnome/nautilus
 

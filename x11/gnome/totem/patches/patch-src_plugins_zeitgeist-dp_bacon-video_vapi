@@ -1,0 +1,48 @@
+$OpenBSD: patch-src_plugins_zeitgeist-dp_bacon-video_vapi,v 1.1 2013/09/12 06:54:22 ajacoutot Exp $
+
+From f3e2132a165d855310280569d7da7ae3a50b573c Mon Sep 17 00:00:00 2001
+From: Michal Hruby <michal.mhr@gmail.com>
+Date: Sat, 29 Jan 2011 00:24:05 +0000
+Subject: Added zeitgeist dataprovider plugin
+
+From 14794778a5131e0a1f82ad949a55f51a3d8861c1 Mon Sep 17 00:00:00 2001
+From: Bastien Nocera <hadess@hadess.net>
+Date: Wed, 27 Jun 2012 17:08:58 +0000
+Subject: zeitgeist-dp: Update video widget vapi file
+
+--- src/plugins/zeitgeist-dp/bacon-video.vapi.orig	Tue Sep 10 16:47:56 2013
++++ src/plugins/zeitgeist-dp/bacon-video.vapi	Tue Sep 10 16:47:37 2013
+@@ -0,0 +1,33 @@
++[CCode (cprefix = "Bacon", lower_case_cprefix = "bacon_")]
++
++namespace Bacon {
++	[CCode (cheader_filename = "bacon-video-widget.h")]
++	public class VideoWidget : Gtk.Widget {
++    [CCode (has_construct_function = false)]
++		public VideoWidget () throws GLib.Error;
++
++    public void get_metadata (MetadataType type, out GLib.Value val);
++	}
++  [CCode (cprefix = "BVW_INFO_", cheader_filename = "bacon-video-widget.h")]
++  public enum MetadataType {
++    TITLE,
++    ARTIST,
++    YEAR,
++    COMMENT,
++    ALBUM,
++    DURATION,
++    TRACK_NUMBER,
++    COVER,
++    HAS_VIDEO,
++    DIMENSION_X,
++    DIMENSION_Y,
++    VIDEO_BITRATE,
++    VIDEO_CODEC,
++    FPS,
++    HAS_AUDIO,
++    AUDIO_BITRATE,
++    AUDIO_CODEC,
++    AUDIO_SAMPLE_RATE,
++    AUDIO_CHANNELS
++  }
++}

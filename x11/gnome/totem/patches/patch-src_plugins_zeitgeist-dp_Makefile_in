@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_plugins_zeitgeist-dp_Makefile_in,v 1.1 2013/09/12 06:54:22 ajacoutot Exp $
+
+From 1130296a0dcd74649c0979aab31043410801d51f Mon Sep 17 00:00:00 2001
+From: Manish Sinha <manishsinha@ubuntu.com>
+Date: Wed, 03 Jul 2013 04:24:55 +0000
+Subject: Fixes #703502 by porting zeitgeist-dp plugin to zeitgeist-2.0
+
+--- src/plugins/zeitgeist-dp/Makefile.in.orig	Tue Sep 10 16:41:13 2013
++++ src/plugins/zeitgeist-dp/Makefile.in	Tue Sep 10 16:41:20 2013
+@@ -468,7 +468,7 @@ plugin_in_files = zeitgeist-dp.plugin.in
+ AM_VALAFLAGS = \
+ 	--girdir=$(top_builddir)/src	\
+ 	--pkg Totem-1.0 --pkg Peas-1.0 --pkg gtk+-3.0 \
+-	--pkg zeitgeist-1.0 \
++	--pkg zeitgeist-2.0 \
+ 	bacon-video.vapi
+ 
+ libtotem_zeitgeist_dp_plugin_la_SOURCES = totem-zeitgeist-dp-plugin.vala
