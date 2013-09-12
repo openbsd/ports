@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.76 2010/02/01 17:00:13 espie Exp $
+# $OpenBSD: Makefile,v 1.77 2013/09/12 17:18:50 okan Exp $
 
      SUBDIR =
      SUBDIR += stable
      SUBDIR += liquid-rescale
-#     SUBDIR += snapshot
 
 .include <bsd.port.subdir.mk>
