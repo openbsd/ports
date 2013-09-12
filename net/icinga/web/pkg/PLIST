@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2013/05/07 15:34:47 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.14 2013/09/12 22:31:28 sthen Exp $
 @conflict icinga-api-*
 @pkgpath net/icinga/core,-api
 app/
@@ -1005,6 +1005,7 @@ app/modules/Cronks/lib/js/Cronk/grid/ColumnModel.js
 app/modules/Cronks/lib/js/Cronk/grid/CommandHandler.js
 app/modules/Cronks/lib/js/Cronk/grid/GridView.js
 app/modules/Cronks/lib/js/Cronk/grid/MetaGridPanel.js
+app/modules/Cronks/lib/js/Cronk/grid/ObjectSelectionModel.js
 app/modules/Cronks/lib/js/Cronk/grid/OptimisticPagingToolbar.js
 app/modules/Cronks/lib/js/Cronk/grid/columns/
 app/modules/Cronks/lib/js/Cronk/grid/columns/ComponentFrame.js
@@ -1592,6 +1593,7 @@ etc/schema/updates/mysql/mysql_v1-7-2_to_v1-8-0.sql
 etc/schema/updates/mysql/mysql_v1-8-0_to_v-1-8-1.sql
 etc/schema/updates/mysql/mysql_v1-8-1_to_v1-8-3.sql
 etc/schema/updates/mysql/mysql_v1-8-3_to_v1-9.sql
+etc/schema/updates/mysql/mysql_v1-9-0_to_1-9-1.sql
 etc/schema/updates/oracle/
 etc/schema/updates/oracle/oracle_v1-0-3_to_v1-2.sql
 etc/schema/updates/oracle/oracle_v1-2_to_1-3.sql
@@ -1605,6 +1607,7 @@ etc/schema/updates/oracle/oracle_v1-7-1_to_v1-7-2.sql
 etc/schema/updates/oracle/oracle_v1-7-2_to_v1-8-0.sql
 etc/schema/updates/oracle/oracle_v1-8-0_to_v1-8-3.sql
 etc/schema/updates/oracle/oracle_v1-8-3_to_v1-9.sql
+etc/schema/updates/oracle/oracle_v1-9-0_to_v1-9-1.sql
 etc/schema/updates/pgsql/
 etc/schema/updates/pgsql/pgsql_v1-0-3_to_v1-2.sql
 etc/schema/updates/pgsql/pgsql_v1-2_to_v1-3.sql
@@ -1619,6 +1622,7 @@ etc/schema/updates/pgsql/pgsql_v1-7-2_to_v1-8-0.sql
 etc/schema/updates/pgsql/pgsql_v1-8-0_to_v-1-8-1.sql
 etc/schema/updates/pgsql/pgsql_v1-8-1_to_v1-8-3.sql
 etc/schema/updates/pgsql/pgsql_v1-8-3_to_v1-9.sql
+etc/schema/updates/pgsql/pgsql_v1-9-0_to_v1-9-1.sql
 lib/
 lib/agavi/
 lib/agavi/src/
