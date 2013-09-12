@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2013/09/05 08:25:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.125 2013/09/12 09:12:13 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		3.0
+REVISION=		0
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # 7.0
 
