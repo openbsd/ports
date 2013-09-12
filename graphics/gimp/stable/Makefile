@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.92 2013/06/20 06:54:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.93 2013/09/12 17:19:51 okan Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 SHARED_ONLY=	Yes
 
 DISTNAME=	gimp-2.8.4
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS+=	gimp-2.0	272.0	# 800.0
 SHARED_LIBS+=	gimpbase-2.0	272.0	# 800.0

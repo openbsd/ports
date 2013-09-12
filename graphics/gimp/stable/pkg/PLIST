@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2012/09/27 00:17:51 brad Exp $
+@comment $OpenBSD: PLIST,v 1.34 2013/09/12 17:19:51 okan Exp $
 @pkgpath ${BASE_PKGPATH},altivec
 bin/gimp
 @bin bin/gimp-2.8
@@ -497,6 +497,7 @@ share/aclocal/gimp-2.0.m4
 share/applications/gimp.desktop
 share/examples/gimp/
 share/examples/gimp/2.0/
+@sample ${SYSCONFDIR}/gimp/
 @sample ${SYSCONFDIR}/gimp/2.0/
 share/examples/gimp/2.0/controllerrc
 @sample ${SYSCONFDIR}/gimp/2.0/controllerrc
