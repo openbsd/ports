@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2013/06/18 11:48:14 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.20 2013/09/12 07:10:57 ajacoutot Exp $
 lib/gedit/plugins/bookmarks.plugin
 lib/gedit/plugins/bracketcompletion.plugin
 lib/gedit/plugins/bracketcompletion.py
@@ -85,6 +85,17 @@ lib/gedit/plugins/commander/utils.pyo
 lib/gedit/plugins/commander/windowactivatable.py
 lib/gedit/plugins/commander/windowactivatable.pyc
 lib/gedit/plugins/commander/windowactivatable.pyo
+lib/gedit/plugins/dashboard/
+lib/gedit/plugins/dashboard.plugin
+lib/gedit/plugins/dashboard/__init__.py
+lib/gedit/plugins/dashboard/__init__.pyc
+lib/gedit/plugins/dashboard/__init__.pyo
+lib/gedit/plugins/dashboard/dashboard.py
+lib/gedit/plugins/dashboard/dashboard.pyc
+lib/gedit/plugins/dashboard/dashboard.pyo
+lib/gedit/plugins/dashboard/utils.py
+lib/gedit/plugins/dashboard/utils.pyc
+lib/gedit/plugins/dashboard/utils.pyo
 lib/gedit/plugins/drawspaces.plugin
 lib/gedit/plugins/gpdefs.py
 lib/gedit/plugins/gpdefs.pyc
@@ -111,6 +122,17 @@ lib/gedit/plugins/smartspaces.plugin
 lib/gedit/plugins/smartspaces.py
 lib/gedit/plugins/smartspaces.pyc
 lib/gedit/plugins/smartspaces.pyo
+lib/gedit/plugins/synctex/
+lib/gedit/plugins/synctex.plugin
+lib/gedit/plugins/synctex/__init__.py
+lib/gedit/plugins/synctex/__init__.pyc
+lib/gedit/plugins/synctex/__init__.pyo
+lib/gedit/plugins/synctex/evince_dbus.py
+lib/gedit/plugins/synctex/evince_dbus.pyc
+lib/gedit/plugins/synctex/evince_dbus.pyo
+lib/gedit/plugins/synctex/synctex.py
+lib/gedit/plugins/synctex/synctex.pyc
+lib/gedit/plugins/synctex/synctex.pyo
 lib/gedit/plugins/textsize/
 lib/gedit/plugins/textsize.plugin
 lib/gedit/plugins/textsize/__init__.py

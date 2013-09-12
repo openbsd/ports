@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.65 2013/06/18 11:48:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.66 2013/09/12 07:10:57 ajacoutot Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
 GNOME_VERSION=		3.8.3
+REVISION=		0
 
 CATEGORIES=		editors
 
@@ -40,16 +41,18 @@ LIB_DEPENDS=		devel/libpeas \
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/py-gobject3${MODPY_FLAVOR} \
 			devel/vte3 \
+			x11/dbus-python${MODPY_FLAVOR} \
 			x11/gnome/gedit \
 			x11/gnome/gucharmap
 
+# dashboard plugin
+RUN_DEPENDS +=		productivity/zeitgeist
+
 LIBTOOL_FLAGS=		--tag=disable-static
 
-CONFIGURE_ARGS+=	--disable-static
+CONFIGURE_ARGS=		--disable-static
 
 post-install:
 	rm ${PREFIX}/lib/gedit/plugins/*.la
-	# XXX dbus-python does not work with py3; must be ported to gi/GDBus
-	rm -rf ${PREFIX}/lib/gedit/plugins/{dashboard,synctex}{.plugin,/}
 
 .include <bsd.port.mk>
