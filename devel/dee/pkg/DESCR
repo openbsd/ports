@@ -1,0 +1,4 @@
+Libdee is a library that uses DBus to provide objects allowing you to
+create Model-View-Controller type programs across DBus. It also consists
+of utility objects which extend DBus allowing for peer-to-peer
+discoverability of known objects without needing a central registrar.
