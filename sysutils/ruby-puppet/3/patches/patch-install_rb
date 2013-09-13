@@ -1,10 +1,10 @@
-$OpenBSD: patch-install_rb,v 1.1 2013/03/08 16:12:47 ajacoutot Exp $
+$OpenBSD: patch-install_rb,v 1.2 2013/09/13 07:20:30 jasper Exp $
 
 Don't gzip(1) the manual pages.
 
---- install.rb.orig	Wed Dec 26 23:16:17 2012
-+++ install.rb	Wed Jan 23 23:50:53 2013
-@@ -134,9 +134,6 @@ def do_man(man, strip = 'man/')
+--- install.rb.orig	Tue Sep 10 00:15:46 2013
++++ install.rb	Wed Sep 11 23:30:18 2013
+@@ -135,9 +135,6 @@ def do_man(man, strip = 'man/')
        FileUtils.chmod(0755, om)
        FileUtils.install(mf, omf, {:mode => 0644, :preserve => true, :verbose => true})
      end
