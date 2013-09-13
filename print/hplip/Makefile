@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2013/09/10 13:26:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.99 2013/09/13 16:43:19 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -20,8 +20,9 @@ PKGNAME-hpcups=		hpcups-${V}
 PKGNAME-hpijs=		hpijs-${V}
 PKGNAME-gui=		hplip-gui-${V}
 
-REVISION-main=		0
+REVISION-main=		1
 REVISION-common=	1
+REVISION-hpcups=	1
 
 SHARED_LIBS +=  hpmud		2.0 # 0.6
 SHARED_LIBS +=  hpip		2.0 # 0.1
@@ -89,8 +90,8 @@ RUN_DEPENDS-hpaio=	${MODGETTEXT_RUN_DEPENDS}
 ### -hpcups
 WANTLIB-hpcups += ${WANTLIB} ${cWANTLIB} z asn1 gssapi krb5 ssl
 WANTLIB-hpcups += c jpeg stdc++ hpip cups cupsimage dbus-1
-WANTLIB-hpcups += com_err heimbase roken wind
-WANTLIB-hpcups += avahi-client avahi-common
+WANTLIB-hpcups += com_err heimbase roken wind usb-1.0
+WANTLIB-hpcups += avahi-client avahi-common hpmud netsnmp
 
 LIB_DEPENDS-hpcups=	graphics/jpeg \
 			print/hplip,-common \

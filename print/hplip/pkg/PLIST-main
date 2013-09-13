@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.27 2013/08/22 10:49:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.28 2013/09/13 16:43:20 ajacoutot Exp $
 @conflict hplip-docs-*
 @conflict hplip-gui-<3.13.7p2
 @extraunexec rm -rf /usr/local/share/hplip/data/firmware
@@ -27,12 +27,6 @@ bin/hp-upgrade
 lib/python${MODPY_VERSION}/site-packages/cupsext.so
 lib/python${MODPY_VERSION}/site-packages/hpmudext.so
 lib/python${MODPY_VERSION}/site-packages/pcardext.so
-@bin libexec/cups/backend/hp
-@mode 0700
-libexec/cups/backend/hpfax
-@mode
-libexec/cups/filter/hpcac
-libexec/cups/filter/pstotiff
 share/doc/hplip/
 share/doc/hplip/COPYING
 share/doc/hplip/README_LIBJPG
