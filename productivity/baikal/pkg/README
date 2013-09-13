@@ -1,27 +1,35 @@
-$OpenBSD: README,v 1.2 2013/06/23 09:20:45 jung Exp $
+$OpenBSD: README,v 1.3 2013/09/13 15:27:58 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-Apache Configuration
-====================
+HTTP server Configuration
+==========================
 Baikal has been installed into ${INSTDIR}.
 
 You should point this to the DocumentRoot of your web-server:
    # ln -s ../baikal/html /var/www/htdocs/baikal
 (make sure you use a relative symlink since Apache is chrooted)
 
-You can ensure you have a working install by accessing:
-http://<hostname>/baikal/
-
-You may want to adjust the rights of the ${INSTDIR}Specific/
-folder to ensure write access for the installer.
-
 Alternatively you can setup a virtual host using the configuration
-provided in ${INSTDIR}Specific/virtualhosts/
+provided in ${INSTDIR}/Specific/virtualhosts/
+
+Database Configuration
+======================
+Baikal can work with a MySQL or SQLite3 database.
+Support for SQLite3 is included with the main php package; to use
+another database, the corresponding package needs to be installed:
+    php-pdo_mysql
+
+
+Post-installation
+=================
+To finish the installation:
+    # touch ${INSTDIR}/Specific/ENABLE_INSTALL
+    -> go to http://<hostname>/baikal/ then follow the directions
 
 Baikal administration
 =====================
-To administer Baikal the following URL needs to be accessed:
-http://<hostname>/baikal/
+To administer Baikal, point your browser to:
+    http://<hostname>/baikal/admin/

@@ -1,0 +1,35 @@
+$OpenBSD: patch-Specific_virtualhosts_baikal_nginx,v 1.1 2013/09/13 15:27:58 ajacoutot Exp $
+--- Specific/virtualhosts/baikal.nginx.orig	Fri Sep 13 15:10:51 2013
++++ Specific/virtualhosts/baikal.nginx	Fri Sep 13 15:12:06 2013
+@@ -2,11 +2,11 @@ server {
+     listen       80;
+     server_name  dav.mydomain.com;
+ 
+-    root  /var/www/dav.mydomain.com;
++    root  /var/www/baikal/html;
+     index index.php;
+ 
+-	rewrite ^/.well-known/caldav /cal.php redirect;
+-	rewrite ^/.well-known/carddav /card.php redirect;
++    rewrite ^/.well-known/caldav /cal.php redirect;
++    rewrite ^/.well-known/carddav /card.php redirect;
+     
+     charset utf-8;
+ 
+@@ -18,7 +18,7 @@ server {
+     location ~ ^(.+\.php)(.*)$ {
+         try_files $fastcgi_script_name =404;
+         fastcgi_split_path_info  ^(.+\.php)(.*)$;
+-        fastcgi_pass   unix:/var/run/php-fpm/php-fpm.sock;
++        fastcgi_pass   127.0.0.1:9000;
+         fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+         fastcgi_param  PATH_INFO        $fastcgi_path_info;
+         include        /etc/nginx/fastcgi_params;
+@@ -26,6 +26,6 @@ server {
+ 
+     error_page   500 502 503 504  /50x.html;
+     location = /50x.html {
+-        root   /var/www/nginx-default;
++        root   /var/www/htdocs;
+     }
+ }
