@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.54 2013/05/02 10:01:34 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.55 2013/09/13 07:10:01 dcoppa Exp $
 @pkgpath devel/git
 @bin bin/git
 bin/git-cvsserver
@@ -29,6 +29,7 @@ libexec/git/git-bisect
 @bin libexec/git/git-cat-file
 @bin libexec/git/git-check-attr
 @bin libexec/git/git-check-ignore
+@bin libexec/git/git-check-mailmap
 @bin libexec/git/git-check-ref-format
 @bin libexec/git/git-checkout
 @bin libexec/git/git-checkout-index
@@ -131,7 +132,6 @@ libexec/git/git-relink
 @bin libexec/git/git-remote-ftps
 @bin libexec/git/git-remote-http
 @bin libexec/git/git-remote-https
-libexec/git/git-remote-testpy
 @bin libexec/git/git-remote-testsvn
 libexec/git/git-repack
 @bin libexec/git/git-replace
@@ -208,6 +208,7 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-cat-file.1
 @man man/man1/git-check-attr.1
 @man man/man1/git-check-ignore.1
+@man man/man1/git-check-mailmap.1
 @man man/man1/git-check-ref-format.1
 @man man/man1/git-checkout-index.1
 @man man/man1/git-checkout.1
@@ -392,6 +393,7 @@ share/gitweb/static/gitweb.css
 share/gitweb/static/gitweb.js
 share/locale/da/LC_MESSAGES/git.mo
 share/locale/de/LC_MESSAGES/git.mo
+share/locale/fr/LC_MESSAGES/git.mo
 share/locale/is/
 share/locale/is/LC_MESSAGES/
 share/locale/is/LC_MESSAGES/git.mo

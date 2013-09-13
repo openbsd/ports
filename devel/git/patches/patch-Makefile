@@ -1,24 +1,24 @@
-$OpenBSD: patch-Makefile,v 1.41 2013/08/11 11:48:43 benoit Exp $
---- Makefile.orig	Mon Jul 22 20:59:55 2013
-+++ Makefile	Sun Aug 11 12:34:59 2013
-@@ -2059,13 +2059,13 @@ $(REMOTE_CURL_PRIMARY): remote-curl.o http.o http-walk
+$OpenBSD: patch-Makefile,v 1.42 2013/09/13 07:10:01 dcoppa Exp $
+--- Makefile.orig	Thu Sep 12 13:47:54 2013
++++ Makefile	Thu Sep 12 13:49:48 2013
+@@ -2074,13 +2074,13 @@ $(REMOTE_CURL_PRIMARY): remote-curl.o http.o http-walk
  		$(LIBS) $(CURL_LIBCURL) $(EXPAT_LIBEXPAT)
  
  $(LIB_FILE): $(LIB_OBJS)
--	$(QUIET_AR)$(RM) $@ && $(AR) rcs $@ $(LIB_OBJS)
-+	$(QUIET_AR)$(RM) $@ && $(AR) rc $@ $(LIB_OBJS) && ranlib $@
+-	$(QUIET_AR)$(RM) $@ && $(AR) rcs $@ $^
++	$(QUIET_AR)$(RM) $@ && $(AR) rc $@ $^ && ranlib $@
  
  $(XDIFF_LIB): $(XDIFF_OBJS)
--	$(QUIET_AR)$(RM) $@ && $(AR) rcs $@ $(XDIFF_OBJS)
-+	$(QUIET_AR)$(RM) $@ && $(AR) rc $@ $(XDIFF_OBJS) && ranlib $@
+-	$(QUIET_AR)$(RM) $@ && $(AR) rcs $@ $^
++	$(QUIET_AR)$(RM) $@ && $(AR) rc $@ $^ && ranlib $@
  
  $(VCSSVN_LIB): $(VCSSVN_OBJS)
--	$(QUIET_AR)$(RM) $@ && $(AR) rcs $@ $(VCSSVN_OBJS)
-+	$(QUIET_AR)$(RM) $@ && $(AR) rc $@ $(VCSSVN_OBJS) && ranlib $@
+-	$(QUIET_AR)$(RM) $@ && $(AR) rcs $@ $^
++	$(QUIET_AR)$(RM) $@ && $(AR) rc $@ $^ && ranlib $@
  
  export DEFAULT_EDITOR DEFAULT_PAGER
  
-@@ -2239,7 +2239,7 @@ export TEST_NO_MALLOC_CHECK
+@@ -2258,7 +2258,7 @@ export TEST_NO_MALLOC_CHECK
  
  ### Testing rules
  
