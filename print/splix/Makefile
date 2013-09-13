@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/08/22 08:04:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2013/09/13 16:41:46 ajacoutot Exp $
 
 COMMENT=	CUPS drivers for SPL printers
 
@@ -6,7 +6,7 @@ V=		2.0.0
 SNV_REV=	308
 DISTNAME=	splix-${V}r${SNV_REV}
 PKGNAME=	splix-${V}.${SNV_REV}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	print
 
@@ -28,9 +28,6 @@ LIB_DEPENDS=	print/cups,-libs \
 
 # gstoraster
 RUN_DEPENDS=	print/cups-filters
-
-# package is only useful if cups is installed
-RUN_DEPENDS +=	print/cups
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes
