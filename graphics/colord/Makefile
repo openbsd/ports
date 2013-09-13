@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.29 2013/08/06 19:10:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2013/09/13 14:23:01 ajacoutot Exp $
 
 COMMENT=	device color profile management daemon
 
-V=		1.0.2
+V=		1.0.3
 DISTNAME=	colord-${V}
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS +=  colordprivate        0.1      # 1.20
-SHARED_LIBS +=  colord               0.4      # 1.20
+SHARED_LIBS +=  colordprivate        0.1      # 1.21
+SHARED_LIBS +=  colord               0.4      # 1.21
 
 CATEGORIES=	graphics print
 
@@ -31,7 +31,7 @@ BUILD_DEPENDS=	devel/gobject-introspection \
 		lang/vala \
 		textproc/docbook2x
 
-LIB_DEPENDS=	graphics/lcms2>=2.4p0 \
+LIB_DEPENDS=	graphics/lcms2 \
 		sysutils/polkit
 
 # polkit(8) almost always needs to know the "active" session
