@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/07/13 16:16:36 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/09/13 07:09:37 bcallah Exp $
 @bin bin/birdfont
 @bin bin/birdfont-export
 @lib lib/libbirdfont.so.${LIBbirdfont_VERSION}
@@ -17,11 +17,13 @@ share/birdfont/icons/add_new_grid.png
 share/birdfont/icons/available_characters.png
 share/birdfont/icons/background_help_lines.png
 share/birdfont/icons/cancel_save.png
+share/birdfont/icons/circle.png
 share/birdfont/icons/close_paths.png
+share/birdfont/icons/convert_point.png
 share/birdfont/icons/corner.png
+share/birdfont/icons/create_line.png
 share/birdfont/icons/cubic_points.png
 share/birdfont/icons/custom_character_set.png
-share/birdfont/icons/cut.png
 share/birdfont/icons/cut_background.png
 share/birdfont/icons/delete_menu_item.png
 share/birdfont/icons/delete_selected_glyph.png
@@ -30,11 +32,15 @@ share/birdfont/icons/edit_point.png
 share/birdfont/icons/edit_point_cubic.png
 share/birdfont/icons/edit_point_handle.png
 share/birdfont/icons/export.png
+share/birdfont/icons/fill_open_path.png
+share/birdfont/icons/flip_horizontal.png
+share/birdfont/icons/flip_vertical.png
 share/birdfont/icons/full_glyph.png
 share/birdfont/icons/help_lines.png
 share/birdfont/icons/info_icon.png
 share/birdfont/icons/insert_background.png
 share/birdfont/icons/insert_point_on_path.png
+share/birdfont/icons/kerning_class.png
 share/birdfont/icons/move.png
 share/birdfont/icons/move_background.png
 share/birdfont/icons/move_layer.png
@@ -50,14 +56,19 @@ share/birdfont/icons/pen_tool.png
 share/birdfont/icons/prev.png
 share/birdfont/icons/previous_tab.png
 share/birdfont/icons/quadratic_points.png
+share/birdfont/icons/rectangle.png
+share/birdfont/icons/resize.png
 share/birdfont/icons/resize_handle.png
 share/birdfont/icons/reverse_path.png
 share/birdfont/icons/selected_edit_point.png
 share/birdfont/icons/selected_edit_point_cubic.png
+share/birdfont/icons/selected_edit_point_handle.png
+share/birdfont/icons/show_all_line_handles.png
 share/birdfont/icons/show_background.png
 share/birdfont/icons/show_xheight_helplines.png
 share/birdfont/icons/slow_test.png
 share/birdfont/icons/spin_button.png
+share/birdfont/icons/symmetric.png
 share/birdfont/icons/tab1_left.png
 share/birdfont/icons/tab1_right.png
 share/birdfont/icons/tab2_left.png
@@ -74,6 +85,7 @@ share/birdfont/icons/tool_button_deselected_active.png
 share/birdfont/icons/tool_button_selected.png
 share/birdfont/icons/tool_button_selected_active.png
 share/birdfont/icons/toolbox_background.png
+share/birdfont/icons/ttf_units.png
 share/birdfont/icons/union_paths.png
 share/birdfont/icons/utf_8.png
 share/birdfont/icons/version.png

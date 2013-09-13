@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2013/07/13 16:16:36 bcallah Exp $
---- configure.orig	Fri Jul  5 18:29:19 2013
-+++ configure	Fri Jul  5 18:29:47 2013
-@@ -83,7 +83,7 @@ parser.add_option("-c", "--cc", dest="cc", help="C com
+$OpenBSD: patch-configure,v 1.2 2013/09/13 07:09:36 bcallah Exp $
+--- configure.orig	Thu Sep 12 22:27:17 2013
++++ configure	Thu Sep 12 22:27:36 2013
+@@ -82,7 +82,7 @@ parser.add_option("-c", "--cc", dest="cc", help="C com
  (options, args) = parser.parse_args()
  
  if not options.prefix:
