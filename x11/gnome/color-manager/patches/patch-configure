@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.8 2013/04/15 09:36:41 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.9 2013/09/13 14:18:39 ajacoutot Exp $
 
 /var/lib -> /var/db
 
---- configure.orig	Mon Apr 15 10:43:14 2013
-+++ configure	Mon Apr 15 11:30:12 2013
-@@ -18978,7 +18978,7 @@ else
+--- configure.orig	Fri Sep 13 16:02:00 2013
++++ configure	Fri Sep 13 16:13:49 2013
+@@ -19019,7 +19019,7 @@ else
  fi
  
  
