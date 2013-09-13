@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2013/07/19 09:22:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2013/09/13 06:08:24 ajacoutot Exp $
 
 COMMENT=		contacts manager for GNOME
 
 GNOME_PROJECT=		gnome-contacts
 GNOME_VERSION=		3.8.3
+REVISION=		0
 
 CATEGORIES=		productivity
 
@@ -18,13 +19,12 @@ WANTLIB += edata-book-1.2 edataserver-1.2 expat ffi folks folks-eds
 WANTLIB += folks-telepathy fontconfig freetype gck-1 gcr-base-3
 WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gee-0.8 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gnome-desktop-3 goa-1.0 gobject-2.0 gpg-error
-WANTLIB += graphite2 gssapi gthread-2.0 gtk-3 harfbuzz
-WANTLIB += krb5 m notify nspr4 nss3 nssutil3 p11-kit
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += plc4 plds4 png pthread pthread-stubs secret-1 smime3
-WANTLIB += softokn3 soup-2.4 sqlite3 ssl3 telepathy-glib xcb xcb-render
-WANTLIB += xcb-shm xkbfile xml2 z zeitgeist-1.0
-WANTLIB += heimbase roken wind
+WANTLIB += graphite2 gssapi gthread-2.0 gtk-3 harfbuzz heimbase
+WANTLIB += krb5 m notify nspr4 nss3 nssutil3 p11-kit pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
+WANTLIB += png pthread pthread-stubs roken secret-1 smime3 softokn3
+WANTLIB += soup-2.4 sqlite3 ssl3 telepathy-glib wind xcb xcb-render
+WANTLIB += xcb-shm xkbfile xml2 z zeitgeist-2.0
 
 MODULES=		devel/gettext \
 			x11/gnome \
