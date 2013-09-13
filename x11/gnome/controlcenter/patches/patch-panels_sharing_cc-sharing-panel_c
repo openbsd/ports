@@ -1,10 +1,10 @@
-$OpenBSD: patch-panels_sharing_cc-sharing-panel_c,v 1.4 2013/08/06 19:09:09 ajacoutot Exp $
+$OpenBSD: patch-panels_sharing_cc-sharing-panel_c,v 1.5 2013/09/13 14:12:53 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=697413
 
---- panels/sharing/cc-sharing-panel.c.orig	Wed Jul 24 15:22:24 2013
-+++ panels/sharing/cc-sharing-panel.c	Thu Jul 25 10:49:07 2013
-@@ -902,10 +902,12 @@ cc_sharing_panel_init (CcSharingPanel *self)
+--- panels/sharing/cc-sharing-panel.c.orig	Fri Sep 13 13:25:56 2013
++++ panels/sharing/cc-sharing-panel.c	Fri Sep 13 16:00:44 2013
+@@ -921,10 +921,12 @@ cc_sharing_panel_init (CcSharingPanel *self)
                      G_CALLBACK (cc_sharing_panel_master_switch_notify), self);
  
  
