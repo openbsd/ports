@@ -1,0 +1,11 @@
+$OpenBSD: patch-SConscript,v 1.1 2013/09/14 14:18:45 pascal Exp $
+--- SConscript.orig	Fri Sep 13 12:40:46 2013
++++ SConscript	Fri Sep 13 12:41:05 2013
+@@ -97,7 +97,6 @@ class Project:
+         self.opts.Add('CPPDEFINES', 'defined constants', [])
+         self.opts.Add('LIBS',       'Additional libraries', [])
+         self.opts.Add('CCFLAGS',    'C Compiler flags', [])
+-        self.opts.Add('CXXFLAGS',   'C++ Compiler flags', ["-O2", "-s"])
+         self.opts.Add('LINKFLAGS',  'Linker Compiler flags', [])
+ 
+         self.opts.Add(BoolVariable('with_opengl',        'Build with OpenGL support', True))

@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_engine_input_xinput_xinput_driver_cpp,v 1.1 2013/09/14 14:18:46 pascal Exp $
+--- src/engine/input/xinput/xinput_driver.cpp.orig	Fri Sep 13 12:51:04 2013
++++ src/engine/input/xinput/xinput_driver.cpp	Fri Sep 13 12:56:30 2013
+@@ -17,8 +17,8 @@
+ #include "engine/input/xinput/xinput_driver.hpp"
+ 
+ #include "engine/input/xinput/xinput_device.hpp"
+-#include "pingus/debug.hpp"
+ #include "pingus/globals.hpp"
++#include <iostream>
+ 
+ namespace Input {
+ 
+@@ -67,7 +67,6 @@ XInputDriver::setup_xinput()
+     XDeviceInfo* info = XListInputDevices(sys.info.x11.display, &num_devices);
+     for(int i = 0; i < num_devices; ++i) 
+     {
+-      pout(PINGUS_DEBUG_INPUT) << "XInputDriver: Device name='" << info[i].name << "'" << std::endl;
+       // FIXME: Xinput isn't necesarrily a mouse, could be anything
+       //if (info[i].use == IsXExtensionDevice)
+       // {
