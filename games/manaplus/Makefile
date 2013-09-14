@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2013/08/31 23:25:52 bcallah Exp $
+# $OpenBSD: Makefile,v 1.22 2013/09/14 19:47:08 bcallah Exp $
 
 COMMENT =	extended client for The Mana World
 
-V =		1.3.9.1
+V =		1.3.9.15
 DISTNAME =	manaplus-${V}
 EXTRACT_SUFX =	.tar.xz
 
@@ -41,7 +41,7 @@ BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
 
 FAKE_FLAGS +=		desktopdir=${PREFIX}/share/applications/
 
-AUTOCONF_VERSION =	2.59
+AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.9
 
 pre-configure:
