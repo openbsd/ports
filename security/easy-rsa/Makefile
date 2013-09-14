@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/02 11:40:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2013/09/14 21:59:59 sthen Exp $
 
 COMMENT =	small RSA key management package
 
 PKGNAME =	easy-rsa-2.2.0
+REVISION =	0
 DISTNAME =	${PKGNAME}_master
 CATEGORIES =	security
 
@@ -19,5 +20,7 @@ NO_TEST =		Yes
 
 post-install:
 	@mv ${PREFIX}/share/easy-rsa/vars{,.dist}
+	perl -pi -e 's,source \./vars,. ./vars,g' \
+	    ${PREFIX}/share/doc/easy-rsa/* ${PREFIX}/share/easy-rsa/*
 
 .include <bsd.port.mk>
