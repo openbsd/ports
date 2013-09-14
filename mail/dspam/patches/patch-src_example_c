@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_example_c,v 1.1 2005/10/26 06:18:38 jakob Exp $
---- src/example.c.orig	Sat Sep 24 19:49:49 2005
-+++ src/example.c	Mon Oct 17 14:48:42 2005
-@@ -68,7 +68,7 @@ main (int argc, char **argv)
+$OpenBSD: patch-src_example_c,v 1.2 2013/09/14 17:12:12 landry Exp $
+--- src/example.c.orig	Wed Apr 11 20:48:33 2012
++++ src/example.c	Sat Jan  5 15:36:07 2013
+@@ -67,7 +67,7 @@ main (int argc, char **argv)
        fprintf (stderr, "out of memory!");
        exit (EXIT_FAILURE);
      }

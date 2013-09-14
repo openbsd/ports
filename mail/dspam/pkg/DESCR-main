@@ -12,17 +12,3 @@ Available flavors are:
 - clamav: enable usage of the clam antivirus.
 
 - ldap: include support for LDAP verification.
-
-- sqlite: use the sqlite 2.x library as a storage engine.
-
-- sqlite3: use the sqlite 3.x library as a storage engine. This is the
-default.
-
-- pgsql: use a postgresql server as a storage engine.
-
-- mysql: use a mysql server as a storage engine.
-
-- hash: use the CRM Sparse Spectra (CSS) storage engine.
-
-- preferences : store user preferences in the database instead of flat files.
-Has any effect only on mysql and pgsql flavors.

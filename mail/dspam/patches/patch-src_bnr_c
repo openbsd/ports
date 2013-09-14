@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_bnr_c,v 1.1 2005/10/26 06:18:38 jakob Exp $
---- src/bnr.c.orig	Sat Sep 24 19:49:48 2005
-+++ src/bnr.c	Mon Oct 17 14:48:42 2005
-@@ -137,11 +137,11 @@ int bnr_instantiate(BNR_CTX *BTX) {
+$OpenBSD: patch-src_bnr_c,v 1.2 2013/09/14 17:12:11 landry Exp $
+--- src/bnr.c.orig	Wed Apr 11 20:48:33 2012
++++ src/bnr.c	Sat Jan  5 15:35:35 2013
+@@ -136,11 +136,11 @@ int bnr_instantiate(BNR_CTX *BTX) {
      }
  
      previous_bnr_probs[BNR_SIZE-1] = _bnr_round(node_list->value);
@@ -15,7 +15,7 @@ $OpenBSD: patch-src_bnr_c,v 1.1 2005/10/26 06:18:38 jakob Exp $
      }
  
  #ifdef LIBBNR_VERBOSE_DEBUG
-@@ -280,11 +280,11 @@ int bnr_finalize(BNR_CTX *BTX) {
+@@ -279,11 +279,11 @@ int bnr_finalize(BNR_CTX *BTX) {
      previous_bnr_probs[BNR_SIZE-1] = _bnr_round(node_list->value);
      previous_bnr_tokens[BNR_SIZE-1] = node_list;
  

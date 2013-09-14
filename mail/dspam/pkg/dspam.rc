@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# $OpenBSD: dspam.rc,v 1.1 2013/09/14 17:12:16 landry Exp $
+
+daemon="${TRUEPREFIX}/bin/dspam --daemon"
+daemon_user="_dspam"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1

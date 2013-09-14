@@ -1,30 +1,29 @@
-$OpenBSD: patch-src_pgsql_drv_c,v 1.6 2010/10/24 12:14:08 naddy Exp $
---- src/pgsql_drv.c.orig	Sat Jul 29 15:38:48 2006
-+++ src/pgsql_drv.c	Sun Oct 24 13:51:05 2010
-@@ -1146,7 +1146,7 @@ _ds_get_signature (DSPAM_CTX * CTX, struct _ds_spam_si
- 
-     p = _pgsql_drv_getpwuid (CTX, uid);
-     if (!p) {
--      LOG(LOG_CRIT, "_ds_get_signature(): _mysql_drv_getpwuid(%d) failed: aborting", uid);
-+      LOG(LOG_CRIT, "_ds_get_signature(): _pgsql_drv_getpwuid(%d) failed: aborting", uid);
-       return EFAILURE;
-     }
-     username = strdup(p->pw_name);
-@@ -1241,7 +1241,7 @@ _ds_set_signature (DSPAM_CTX * CTX, struct _ds_spam_si
-   mem = PQescapeBytea(SIG->data, SIG->length, &length);
+$OpenBSD: patch-src_pgsql_drv_c,v 1.7 2013/09/14 17:12:13 landry Exp $
+chunk 2; fix runtime w/ pg > 9.1
+from http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=694942
+http://sourceforge.net/p/dspam/bug-tracker/141/
+chunk1: http://sourceforge.net/p/dspam/bug-tracker/112/
+--- src/pgsql_drv.c.orig	Wed Apr 11 20:48:33 2012
++++ src/pgsql_drv.c	Fri Sep  6 10:37:25 2013
+@@ -1537,7 +1537,7 @@ _ds_set_signature (DSPAM_CTX * CTX, struct _ds_spam_si
+   }
  
    snprintf (scratch, sizeof (scratch),
--            "INSERT INTO dspam_signature_data (uid, signature, length, created_on, data) VALUES (%d, '%s', %ld, CURRENT_DATE, '",
-+            "INSERT INTO dspam_signature_data (uid, signature, length, created_on, data) VALUES (%d, '%s', %ld, CURRENT_DATE, E'",
-             (int)p->pw_uid, signature, SIG->length);
+-            "INSERT INTO dspam_signature_data (uid,signature,length,created_on,data) VALUES (%d,'%s',%lu,CURRENT_DATE,'",
++            "INSERT INTO dspam_signature_data (uid,signature,length,created_on,data) VALUES (%d,'%s',%lu,CURRENT_DATE, E'",
+             (int) p->pw_uid, sig_esc, (unsigned long) SIG->length);
+   free(sig_esc);
    buffer_cat (query, scratch);
-   buffer_cat (query, (const char *) mem);
-@@ -1405,7 +1405,7 @@ _ds_get_nextuser (DSPAM_CTX * CTX)
-         virtual_username,
-         virtual_table);
- #else
--    strcpy (query, "DECLARE dscursor CURSOR FOR SELECT DISTINCT uid FROM dspam_stats");
-+    strlcpy (query, "DECLARE dscursor CURSOR FOR SELECT DISTINCT uid FROM dspam_stats", sizeof (query));
- #endif
+@@ -3082,6 +3082,12 @@ PGconn *_pgsql_drv_connect(DSPAM_CTX *CTX)
+     return NULL;
+   }
  
-     result = PQexec(s->dbh, query);
++  if (PQserverVersion(dbh) >= 90100)
++  {
++    PGresult *result = PQexec(dbh, "SET standard_conforming_strings TO off;");
++    if (result)
++      PQclear(result);
++  }
+   return dbh;
+ 
+ FAILURE:

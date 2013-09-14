@@ -1,19 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/05/11 12:57:48 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2013/09/14 17:12:16 landry Exp $
+%%clamav%%
+%%domainscale%%
+%%ldap%%
+%%largescale%%
+@pkgpath mail/dspam[,hash][,sqlite][,sqlite3][,mysql][,pgsql][,preferences]
 @newgroup _dspam:540
 @newuser _dspam:540:540:daemon:DSPAM Account:/var/dspam:/sbin/nologin
 @extraunexec rm -rf /var/dspam/*
-%%SHARED%%
-bin/dspam
-bin/dspam_2sql
-bin/dspam_admin
-bin/dspam_clean
-bin/dspam_crc
-bin/dspam_dump
+@bin bin/cssclean
+@bin bin/csscompress
+@bin bin/cssconvert
+@bin bin/cssstat
+@bin bin/dspam
+@bin bin/dspam_2sql
+@bin bin/dspam_admin
+@bin bin/dspam_clean
+@bin bin/dspam_crc
+@bin bin/dspam_dump
 bin/dspam_logrotate
-bin/dspam_merge
-bin/dspam_stats
+@bin bin/dspam_merge
+bin/dspam_notify
+@bin bin/dspam_stats
 bin/dspam_train
-bin/dspamc
+@bin bin/dspamc
 include/dspam/
 include/dspam/buffer.h
 include/dspam/config.h
@@ -22,24 +31,34 @@ include/dspam/decode.h
 include/dspam/diction.h
 include/dspam/error.h
 include/dspam/heap.h
-include/dspam/ldap_client.h
 include/dspam/libdspam.h
 include/dspam/libdspam_objects.h
 include/dspam/nodetree.h
+include/dspam/pref.h
+include/dspam/read_config.h
 include/dspam/storage_driver.h
 include/dspam/tokenizer.h
-lib/libdspam.a
-lib/libdspam.la
+lib/dspam/
+@comment lib/dspam/libhash_drv.la
+lib/dspam/libhash_drv.so
+@comment lib/dspam/libsqlite3_drv.la
+lib/dspam/libsqlite3_drv.so
+@comment lib/libdspam.la
+@lib lib/libdspam.so.${LIBdspam_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/dspam.pc
 @man man/man1/dspam.1
+@man man/man1/dspam_admin.1
 @man man/man1/dspam_clean.1
+@man man/man1/dspam_crc.1
 @man man/man1/dspam_dump.1
+@man man/man1/dspam_logrotate.1
 @man man/man1/dspam_merge.1
 @man man/man1/dspam_stats.1
 @man man/man1/dspam_train.1
 @man man/man3/dspam_addattribute.3
 @man man/man3/dspam_attach.3
+@man man/man3/dspam_clearattributes.3
 @man man/man3/dspam_create.3
 @man man/man3/dspam_destroy.3
 @man man/man3/dspam_detach.3
@@ -52,23 +71,28 @@ share/doc/dspam/README
 share/doc/dspam/RELEASE.NOTES
 share/doc/dspam/UPGRADING
 share/doc/dspam/courier.txt
+share/doc/dspam/cssclean.txt
 share/doc/dspam/exim.txt
 share/doc/dspam/markov.txt
+share/doc/dspam/osx.txt
 share/doc/dspam/pop3filter.txt
 share/doc/dspam/postfix.txt
 share/doc/dspam/qmail.txt
 share/doc/dspam/relay.txt
 share/doc/dspam/sendmail.txt
+share/doc/dspam/sqlite_drv.txt
+share/doc/dspam/tests.txt
 share/examples/dspam/
 share/examples/dspam/dspam.conf
 @sample ${SYSCONFDIR}/dspam.conf
-%%sqlite3%%
-%%sqlite%%
-%%mysql%%
-%%pgsql%%
-%%hash%%
+share/examples/dspam/sqlite/
+share/examples/dspam/sqlite/purge-2.sql
+share/examples/dspam/sqlite/purge-3.sql
+@rcscript ${RCDIR}/dspam
 @mode 755
 @owner _dspam
 @group _dspam
 @sample /var/dspam/
 @sample /var/dspam/data/
+@sample /var/dspam/log/
+@sample /var/run/dspam/

@@ -1,24 +1,37 @@
-# $OpenBSD: Makefile,v 1.46 2013/06/20 08:26:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2013/09/14 17:12:10 landry Exp $
 
-COMMENT=	anti-spam filter
+COMMENT-main=	anti-spam filter
+COMMENT-pgsql=	PostgreSQL driver for dspam
+COMMENT-mysql=	MySQL driver for dspam
 
-VERSION=	3.8.0
-DISTNAME=	dspam-${VERSION}
-REVISION=	9
-SHARED_LIBS=	dspam	8.0
+VERSION=	3.10.2
+DISTNAME=	dspam-3.10.2
+PKGNAME-main =	${PKGNAME}
+.for p in pgsql mysql
+PKGNAME-$p =	dspam-$p-${VERSION}
+# non-flavoured db backend packages
+FULLPKGNAME-$p = dspam-$p-${VERSION}
+FULLPKGPATH-$p = ${PKGPATH},-$p
+.endfor
+SHARED_LIBS=	dspam	9.0
 CATEGORIES=	mail
+SHARED_ONLY =	Yes
 
-MASTER_SITES=	http://dspam.nuclearelephant.com/sources/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dspam/}
 
 HOMEPAGE=	http://dspam.nuclearelephant.com/
 
 MAINTAINER=     Todd T. Fries <todd@OpenBSD.org>
 
-# GPL
+# AGPLv3/BSD/GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m
+MULTI_PACKAGES = -main -mysql -pgsql
+WANTLIB = m pthread
+WANTLIB-main += ${WANTLIB} c sqlite3
 
+USE_LIBTOOL=		Yes
+LIBTOOL_FLAGS =	--tag=disable-static
 USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 SEPARATE_BUILD=		Yes
@@ -29,93 +42,46 @@ CONFIGURE_ARGS+=	--with-dspam-home=/var/dspam \
 			--with-dspam-owner=root \
 			--with-dspam-group=bin \
 			--with-dspam-mode=0555 \
+			--with-storage-driver=sqlite3_drv,mysql_drv,pgsql_drv,hash_drv \
+			--with-mysql-includes=${LOCALBASE}/include/mysql \
+			--with-mysql-libraries=${LOCALBASE}/lib/mysql \
+			--with-pgsql-includes=${LOCALBASE}/include/postgresql \
+			--with-pgsql-libraries=${LOCALBASE}/lib \
+			--enable-virtual-users \
+			--enable-preferences-extension \
+			--enable-daemon \
 			--enable-long-usernames
 
-DOCS=		${WRKSRC}/README ${WRKSRC}/UPGRADING ${WRKSRC}/RELEASE.NOTES \
-		${WRKSRC}/doc/courier.txt ${WRKSRC}/doc/exim.txt \
-		${WRKSRC}/doc/markov.txt ${WRKSRC}/doc/pop3filter.txt \
-		${WRKSRC}/doc/postfix.txt ${WRKSRC}/doc/qmail.txt \
-		${WRKSRC}/doc/relay.txt ${WRKSRC}/doc/sendmail.txt
-
 EXAMPLESDIR=	${PREFIX}/share/examples/dspam
-DAEMON_SUPPORT=
 
-FLAVORS=	sqlite3 sqlite mysql pgsql hash clamav ldap preferences \
-		domainscale largescale
-FLAVOR?=	sqlite3
+FLAVORS=	clamav ldap domainscale largescale
+FLAVOR?=
 
 . if ${FLAVOR:Mlargescale} && ${FLAVOR:Mdomainscale}
 ERRORS+= "Fatal: choose either domainscale or largescale, not both"
 . endif
 
-.for d in sqlite3 sqlite mysql pgsql hash
-.  if ${FLAVOR:M$d}
-DRIVER ?= $d
-.    if ${DRIVER} != "$d"
-ERRORS += "Fatal: choose either mysql or pgsql or sqlite or sqlite3 or hash"
-.    endif
-.  endif
-.endfor
+LIB_DEPENDS-mysql=	${PKGNAME-main}:${BUILD_PKGPATH},-main \
+			databases/mysql
+WANTLIB-mysql=		${WANTLIB} dspam z ssl crypto lib/mysql/mysqlclient
 
-.if !defined(DRIVER)
-DRIVER = sqlite3
-FLAVOR += sqlite3
-.endif
-
-.if ${DRIVER} == "mysql"
-CONFIGURE_ARGS+=	--with-storage-driver=mysql_drv \
-			--with-mysql-includes=${LOCALBASE}/include/mysql \
-			--with-mysql-libraries=${LOCALBASE}/lib/mysql \
-			--enable-virtual-users
-LIB_DEPENDS+=		databases/mysql
-WANTLIB+=		z ssl crypto lib/mysql/mysqlclient>=14
-.elif ${DRIVER} == "pgsql"
-CONFIGURE_ARGS+=	--with-storage-driver=pgsql_drv \
-			--with-pgsql-includes=${LOCALBASE}/include/postgresql \
-			--with-pgsql-libraries=${LOCALBASE}/lib \
-			--enable-virtual-users
-LIB_DEPENDS+=		databases/postgresql
-WANTLIB +=		pq>=4 com_err crypto ssl
-.elif ${DRIVER} == "hash"
-CONFIGURE_ARGS+=	--with-storage-driver=hash_drv
-.elif ${DRIVER} == "sqlite"
-CONFIGURE_ARGS+=	--with-storage-driver=sqlite_drv \
-			--with-sqlite-includes=${LOCALBASE}/include \
-			--with-sqlite-libraries=${LOCALBASE}/lib
-LIB_DEPENDS+=		databases/sqlite
-WANTLIB +=		sqlite>=8
-.elif ${DRIVER} == "sqlite3"
-CONFIGURE_ARGS+=	--with-storage-driver=sqlite3_drv \
-			--with-sqlite-includes=${LOCALBASE}/include \
-			--with-sqlite-libraries=${LOCALBASE}/lib
-WANTLIB +=		sqlite3>=8
-DRIVER =		sqlite
-.endif
-
-.if ${DRIVER} != "sqlite"
-DAEMON_SUPPORT=		Yes
-CONFIGURE_ARGS+=	--enable-daemon
-WANTLIB+=		pthread
-.endif
+LIB_DEPENDS-pgsql=	${PKGNAME-main}:${BUILD_PKGPATH},-main \
+			databases/postgresql
+WANTLIB-pgsql=		${WANTLIB} c com_err crypto dspam pq ssl
 
 .if ${FLAVOR:Mclamav}
 CONFIGURE_ARGS+=	--enable-clamav
-LIB_DEPENDS+=		security/clamav
-WANTLIB +=		clamav>=1
+LIB_DEPENDS-main+=		security/clamav
+WANTLIB-main +=		clamav>=1
 .endif
 
 .if ${FLAVOR:Mldap}
 CONFIGURE_ARGS+=	--enable-ldap
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-LIB_DEPENDS+=		databases/openldap
-WANTLIB+=		crypto ssl sasl2 asn1 com_err gssapi krb5 \
-			ldap-2.4 lber-2.4 heimbase \
-			roken wind
-.endif
-
-.if ${FLAVOR:Mpreferences}
-CONFIGURE_ARGS+=	--enable-preferences-extension
+LIB_DEPENDS-main+=		databases/openldap
+WANTLIB-main+=		crypto ssl sasl2 asn1 com_err gssapi krb5 \
+			ldap-2.4 lber-2.4 heimbase roken wind
 .endif
 
 .if ${FLAVOR:Mdomainscale}
@@ -135,13 +101,12 @@ post-install:
 	${INSTALL_DATA} ${WRKBUILD}/src/dspam.conf \
 		${PREFIX}/share/examples/dspam/dspam.conf
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dspam
-	${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/dspam
-.if ${DRIVER} != "hash"
+	${INSTALL_DATA} ${WRKSRC}/{README,UPGRADING,RELEASE.NOTES,doc/*.txt} ${PREFIX}/share/doc/dspam
+.for DRIVER in mysql sqlite pgsql
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}/${DRIVER}
 	${INSTALL_DATA} ${WRKSRC}/src/tools.${DRIVER}_drv/*.sql \
 		${EXAMPLESDIR}/${DRIVER}
-	${INSTALL_DATA} ${WRKSRC}/doc/${DRIVER}_drv.txt \
-		${PREFIX}/share/doc/dspam
-.endif
+.endfor
+
 
 .include <bsd.port.mk>
