@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2013/01/21 19:08:00 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2013/09/14 09:52:00 ajacoutot Exp $
 @conflict poppler-qt-<0.5.4p0
 @pkgpath print/poppler
-%%SHARED%%
 include/poppler/
 include/poppler/Annot.h
 include/poppler/Array.h
@@ -153,10 +152,13 @@ lib/girepository-1.0/
 lib/girepository-1.0/Poppler-0.18.typelib
 lib/libpoppler-cpp.a
 lib/libpoppler-cpp.la
+@lib lib/libpoppler-cpp.so.${LIBpoppler-cpp_VERSION}
 lib/libpoppler-glib.a
 lib/libpoppler-glib.la
+@lib lib/libpoppler-glib.so.${LIBpoppler-glib_VERSION}
 lib/libpoppler.a
 lib/libpoppler.la
+@lib lib/libpoppler.so.${LIBpoppler_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/poppler-cairo.pc
 lib/pkgconfig/poppler-cpp.pc

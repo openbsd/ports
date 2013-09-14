@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.2 2011/11/12 10:50:54 robert Exp $
-@lib lib/libpoppler-cpp.so.${LIBpoppler-cpp_VERSION}
-@lib lib/libpoppler-glib.so.${LIBpoppler-glib_VERSION}
-@lib lib/libpoppler.so.${LIBpoppler_VERSION}

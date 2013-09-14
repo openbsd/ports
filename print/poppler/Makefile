@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.77 2013/08/15 18:40:20 kili Exp $
+# $OpenBSD: Makefile,v 1.78 2013/09/14 09:51:59 ajacoutot Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
 COMMENT-qt4=	qt4 interface to PDF rendering library
 COMMENT-utils=	PDF conversion tools and utilities
 
-V=		0.24.0
+V=		0.24.1
 DISTNAME=	poppler-$V
 CATEGORIES=	print
 PKGNAME-main=	poppler-$V
@@ -58,6 +58,9 @@ CONFIGURE_ARGS+=	--disable-poppler-qt4
 MODULES+=	devel/gettext
 
 BUILD_DEPENDS+= devel/gobject-introspection
+
+RUN_DEPENDS-main=${MODGETTEXT_RUN_DEPENDS} \
+		print/poppler-data>=0.4.6p0
 
 LIB_DEPENDS-main=${MODGETTEXT_LIB_DEPENDS} \
 		devel/glib2 \
