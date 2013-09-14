@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.88 2013/09/06 17:11:01 espie Exp $
+# $OpenBSD: Engine.pm,v 1.89 2013/09/14 14:58:12 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -602,7 +602,7 @@ sub new
 		$o->{tofetch} = DPB::SubEngine::Fetch->new($o);
 	}
 	$o->{log} = $state->logger->open("engine");
-	$o->{stats} = DPB::Util->make_hot($state->logger->open("stats"));
+	$o->{stats} = DPB::Stats->new($state);
 	return $o;
 }
 
@@ -619,13 +619,14 @@ sub log_no_ts
 	my ($self, $kind, $v, $extra) = @_;
 	$extra //= '';
 	my $fh = $self->{log};
-	print $fh "$$\@$self->{ts}: $kind: ", $v->logname, "$extra\n";
+	my $ts = int($self->{ts});
+	print $fh "$$\@$ts: $kind: ", $v->logname, "$extra\n";
 }
 
 sub log
 {
 	my $self = shift;
-	$self->{ts} = CORE::time();
+	$self->{ts} = time();
 	$self->log_no_ts(@_);
 }
 
@@ -701,13 +702,7 @@ sub report
 sub stats
 {
 	my $self = shift;
-	my $fh = $self->{stats};
-	$self->{statline} //= "";
-	my $line = $self->statline;
-	if ($line ne $self->{statline}) {
-		$self->{statline} = $line;
-		print $fh $$, " ", $self->{ts}, " ", $line, "\n";
-	}
+	$self->{stats}->log($self->{ts}, $self->statline);
 }
 
 sub important
@@ -1131,6 +1126,37 @@ sub find_best
 		}
 	}
 	return $list;
+}
+
+package DPB::Stats;
+use DPB::Clock;
+
+sub new
+{
+	my ($class, $state) = @_;
+	my $o = bless { 
+	    fh => DPB::Util->make_hot($state->logger->open("stats")),
+	    lost_time => 0,
+	    statline => ''},
+	    	$class;
+	DPB::Clock->register($o);
+	return $o;
+}
+
+sub log
+{
+	my ($self, $ts, $line) = @_;
+	return if $line eq $self->{statline};
+
+	$self->{statline} = $line;
+	print {$self->{fh}} join(' ', $$, int($ts), 
+	    int($ts-$self->{lost_time}), $line), "\n";
+}
+
+sub stopped_clock
+{
+	my ($self, $gap) = @_;
+	$self->{lost_time} += $gap;
 }
 
 1;
