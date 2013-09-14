@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.6 2013/09/11 10:44:13 espie Exp $
+# $OpenBSD: Config.pm,v 1.7 2013/09/14 09:42:11 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -211,10 +211,6 @@ sub command_line_overrides
 		$override_prop->{timeout} = 
 		    $state->{subst}->value('CONNECTION_TIMEOUT');
 	}
-	if ($state->define_present('WAIT_TIMEOUT')) {
-		$override_prop->{wait_timeout} = 
-		    $state->{subst}->value('WAIT_TIMEOUT');
-	}
 	if ($state->opt('J')) {
 		$override_prop->{junk} = $state->opt('J');
 	}
@@ -241,7 +237,6 @@ sub parse_config_files
 	my $default_prop = {
 		junk => 150, 
 		parallel => '/2',
-		wait_timeout => 600,
 		small => 120,
 	};
 

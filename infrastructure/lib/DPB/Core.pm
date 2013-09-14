@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.41 2013/09/11 10:44:14 espie Exp $
+# $OpenBSD: Core.pm,v 1.42 2013/09/14 09:42:11 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -25,9 +25,6 @@ my $hosts = {};
 sub new
 {
 	my ($class, $name, $prop) = @_;
-#	if ($class->name_is_localhost($name)) {
-#		delete $prop->{wait_timeout};
-#	}
 	$hosts->{$name} //= bless {host => $name, 
 		prop => DPB::HostProperties->finalize($prop) }, $class;
 }
