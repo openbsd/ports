@@ -1,12 +1,12 @@
-$OpenBSD: patch-make-target-contrib_sh,v 1.2 2012/08/11 23:02:23 pascal Exp $
+$OpenBSD: patch-make-target-contrib_sh,v 1.3 2013/09/15 16:34:00 jca Exp $
 
 Only run the contrib tests if $RUN_CONTRIB_TESTS is not empty.  This
 allows the contribs to be build when USE_SYSTRACE=Yes, and the tests
 to be run later in do-regress.
 
---- make-target-contrib.sh.orig	Mon Dec  5 00:09:01 2011
-+++ make-target-contrib.sh	Sat Aug 11 16:55:34 2012
-@@ -43,6 +43,7 @@ export SBCL SBCL_BUILDING_CONTRIB
+--- make-target-contrib.sh.orig	Sun Jun  2 15:12:40 2013
++++ make-target-contrib.sh	Sun Sep 15 03:26:47 2013
+@@ -44,6 +44,7 @@ export SBCL SBCL_BUILDING_CONTRIB
  # as SB-RT and SB-GROVEL, but FIXME: there's probably a better
  # solution.  -- CSR, 2003-05-30
  
@@ -14,7 +14,7 @@ to be run later in do-regress.
  find contrib/ \( -name '*.fasl' -o \
                   -name '*.FASL' -o \
                   -name 'foo.c' -o \
-@@ -57,6 +58,11 @@ find contrib/ \( -name '*.fasl' -o \
+@@ -58,6 +59,11 @@ find contrib/ \( -name '*.fasl' -o \
  
  find output -name 'building-contrib.*' -print | xargs rm -f
  
@@ -26,7 +26,7 @@ to be run later in do-regress.
  # Ignore all source registries.
  CL_SOURCE_REGISTRY='(:source-registry :ignore-inherited-configuration)'
  export CL_SOURCE_REGISTRY
-@@ -74,7 +80,7 @@ for i in $contribs_to_build; do
+@@ -75,7 +81,7 @@ for i in $contribs_to_build; do
      # export INSTALL_DIR=$SBCL_HOME/`basename $i `
      test -f $i/test-passed && rm $i/test-passed
      # hack to get exit codes right.

@@ -1,0 +1,40 @@
+$OpenBSD: patch-src_code_unix_lisp,v 1.1 2013/09/15 16:34:00 jca Exp $
+
+Cope with 64-bit time_t.
+
+--- src/code/unix.lisp.orig	Sun Jun  2 15:12:40 2013
++++ src/code/unix.lisp	Sun Sep 15 14:17:59 2013
+@@ -215,16 +215,19 @@ corresponds to NAME, or NIL if there is none."
+           (tv-sec time-t)           ; seconds
+           (tv-usec suseconds-t)))   ; and microseconds
+ 
+-;; The above definition doesn't work on 64-bit OpenBSD platforms.
+-;; Both tv_sec and tv_usec are declared as long instead of time_t, and
+-;; time_t is a typedef for int.
+-#!+(or openbsd netbsd)
++;; The following definition was used on OpenBSD pre-5.5.
++;; Both tv_sec and tv_usec were declared as long instead of time_t, and
++;; time_t was a typedef for int.
++;; Note: time_t is 64-bit on all architectures, starting from OpenBSD 5.5.
++;; FIXME: it seems recent NetBSD releases use a 64-bit time_t too.
++#!+netbsd
+ (define-alien-type nil
+   (struct timeval
+           (tv-sec long)             ; seconds
+           (tv-usec long)))          ; and microseconds
+ 
+-#!+win32
++;; OpenBSD 5.5 uses this struct layout.
++#!+(or win32 openbsd)
+ (define-alien-type nil
+   (struct timeval
+           (tv-sec time-t)           ; seconds
+@@ -948,6 +951,8 @@ avoiding atexit(3) hooks, etc. Otherwise exit(2) is ca
+ ;; Just as with struct timeval, 64-bit OpenBSD has problems with the
+ ;; above definition.  tv_sec is declared as time_t instead of long,
+ ;; and time_t is a typedef for int.
++;; Note: time_t is 64-bit on all architectures, starting from OpenBSD 5.5
++;; FIXME: it seems recent NetBSD releases use a 64-bit time_t too.
+ #!+(or openbsd netbsd)
+ (define-alien-type nil
+     (struct timespec
