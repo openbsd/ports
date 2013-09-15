@@ -1,0 +1,22 @@
+$OpenBSD: patch-lib_puppet_transaction_report_rb,v 1.1 2013/09/15 19:32:47 jasper Exp $
+
+From e603ed1efa1aa7ed9cbc2d57d3f3ffae55e03153 Mon Sep 17 00:00:00 2001
+From: Andrew Parker <andy@puppetlabs.com>
+Date: Fri, 13 Sep 2013 13:48:02 -0700
+Subject: [PATCH] (#22530) Support both YAML and PSON
+
+--- lib/puppet/transaction/report.rb.orig	Thu Sep 12 22:57:39 2013
++++ lib/puppet/transaction/report.rb	Sun Sep 15 21:30:14 2013
+@@ -316,7 +316,11 @@ class Puppet::Transaction::Report
+   end
+ 
+   def self.supported_formats
+-    [Puppet[:report_serialization_format].intern]
++    [:pson, :yaml]
++  end
++
++  def self.default_format
++    Puppet[:report_serialization_format].intern
+   end
+ 
+   private

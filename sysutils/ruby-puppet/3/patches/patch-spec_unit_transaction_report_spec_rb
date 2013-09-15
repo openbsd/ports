@@ -1,0 +1,22 @@
+$OpenBSD: patch-spec_unit_transaction_report_spec_rb,v 1.1 2013/09/15 19:32:47 jasper Exp $
+
+From e603ed1efa1aa7ed9cbc2d57d3f3ffae55e03153 Mon Sep 17 00:00:00 2001
+From: Andrew Parker <andy@puppetlabs.com>
+Date: Fri, 13 Sep 2013 13:48:02 -0700
+Subject: [PATCH] (#22530) Support both YAML and PSON
+
+--- spec/unit/transaction/report_spec.rb.orig	Thu Sep 12 22:57:42 2013
++++ spec/unit/transaction/report_spec.rb	Sun Sep 15 21:30:14 2013
+@@ -376,7 +376,11 @@ describe Puppet::Transaction::Report do
+   end
+ 
+   it "defaults to serializing to pson" do
+-    expect(Puppet::Transaction::Report.supported_formats).to eq([:pson])
++    expect(Puppet::Transaction::Report.default_format).to eq(:pson)
++  end
++
++  it "supports both yaml and pson" do
++    expect(Puppet::Transaction::Report.supported_formats).to eq([:pson, :yaml])
+   end
+ 
+   it "can make a round trip through pson" do
