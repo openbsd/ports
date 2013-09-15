@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: out-of-date,v 1.5 2012/05/07 15:57:51 espie Exp $
+# $OpenBSD: out-of-date,v 1.6 2013/09/15 09:17:25 rpe Exp $
 #
 # Copyright (c) 2005 Bernd Ahlers <bernd@openbsd.org>
 #
@@ -141,7 +141,7 @@ sub collect_port_signatures
 	}
 
 	my $TMPDIR = $ENV{'TMPDIR'} || "/tmp";
-	my $tempdir = File::Temp::tempdir("libcache.XXXXXXX", DIR => $TMPDIR, CLEANUP => 1);
+	my $tempdir = File::Temp::tempdir("libcache.XXXXXXXXXX", DIR => $TMPDIR, CLEANUP => 1);
 	$ENV{'_DEPENDS_CACHE'} = $tempdir;
 	my $cmd = "cd $portsdir && FULLPATH=Yes SUBDIR=\"".join(' ', @subdirs)
 	    ."\" REPORT_PROBLEM=true make print-package-signature";
