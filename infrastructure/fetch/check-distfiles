@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: check-distfiles,v 1.4 2003/02/25 11:36:55 espie Exp $
+# $OpenBSD: check-distfiles,v 1.5 2013/09/15 09:20:04 rpe Exp $
 #
 # Copyright (c) 1999 Marc Espie.
 # 
@@ -31,8 +31,8 @@ export PATH
 # This script does a full-scale check of everything that lives under
 # /usr/ports/distfiles
 PORTS=/usr/ports
-ALLSUMS=`mktemp /tmp/checksums.XXXXXX` || exit 1
-GREP_RESULT=`mktemp /tmp/grep.XXXXXX` || exit 1
+ALLSUMS=`mktemp /tmp/checksums.XXXXXXXXXX` || exit 1
+GREP_RESULT=`mktemp /tmp/grep.XXXXXXXXXX` || exit 1
 # assume that INDEX is up-to-date
 touch $ALLSUMS
 cut -d\| -f2 <$PORTS/INDEX|while read i
