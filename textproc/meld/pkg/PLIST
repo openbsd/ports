@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.12 2012/06/15 08:32:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2013/09/15 07:10:39 ajacoutot Exp $
 bin/meld
 lib/python${MODPY_VERSION}/site-packages/meld/
 lib/python${MODPY_VERSION}/site-packages/meld/meld/
 lib/python${MODPY_VERSION}/site-packages/meld/meld/__init__.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/meld/meld/dbus_service.py
+lib/python${MODPY_VERSION}/site-packages/meld/meld/dbus_service.pyc
+lib/python${MODPY_VERSION}/site-packages/meld/meld/dbus_service.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/diffmap.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/diffmap.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/diffmap.pyo
@@ -20,6 +23,9 @@ lib/python${MODPY_VERSION}/site-packages/meld/meld/filediff.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/filemerge.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/filemerge.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/filemerge.pyo
+lib/python${MODPY_VERSION}/site-packages/meld/meld/filters.py
+lib/python${MODPY_VERSION}/site-packages/meld/meld/filters.pyc
+lib/python${MODPY_VERSION}/site-packages/meld/meld/filters.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/linkmap.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/linkmap.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/linkmap.pyo
@@ -29,6 +35,9 @@ lib/python${MODPY_VERSION}/site-packages/meld/meld/matchers.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/meldapp.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/meldapp.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/meldapp.pyo
+lib/python${MODPY_VERSION}/site-packages/meld/meld/meldbuffer.py
+lib/python${MODPY_VERSION}/site-packages/meld/meld/meldbuffer.pyc
+lib/python${MODPY_VERSION}/site-packages/meld/meld/meldbuffer.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/melddoc.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/melddoc.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/melddoc.pyo
@@ -41,6 +50,9 @@ lib/python${MODPY_VERSION}/site-packages/meld/meld/merge.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/misc.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/misc.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/misc.pyo
+lib/python${MODPY_VERSION}/site-packages/meld/meld/newdifftab.py
+lib/python${MODPY_VERSION}/site-packages/meld/meld/newdifftab.pyc
+lib/python${MODPY_VERSION}/site-packages/meld/meld/newdifftab.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/patchdialog.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/patchdialog.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/patchdialog.pyo
@@ -50,9 +62,15 @@ lib/python${MODPY_VERSION}/site-packages/meld/meld/paths.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/preferences.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/preferences.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/preferences.pyo
+lib/python${MODPY_VERSION}/site-packages/meld/meld/recent.py
+lib/python${MODPY_VERSION}/site-packages/meld/meld/recent.pyc
+lib/python${MODPY_VERSION}/site-packages/meld/meld/recent.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/task.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/task.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/task.pyo
+lib/python${MODPY_VERSION}/site-packages/meld/meld/test_matchers.py
+lib/python${MODPY_VERSION}/site-packages/meld/meld/test_matchers.pyc
+lib/python${MODPY_VERSION}/site-packages/meld/meld/test_matchers.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/tree.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/tree.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/tree.pyo
@@ -84,6 +102,12 @@ lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/msgarea.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/notebooklabel.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/notebooklabel.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/notebooklabel.pyo
+lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/statusbar.py
+lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/statusbar.pyc
+lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/statusbar.pyo
+lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/vcdialogs.py
+lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/vcdialogs.pyc
+lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/vcdialogs.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/wraplabel.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/wraplabel.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/wraplabel.pyo
@@ -94,9 +118,9 @@ lib/python${MODPY_VERSION}/site-packages/meld/meld/util/
 lib/python${MODPY_VERSION}/site-packages/meld/meld/util/__init__.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/util/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/util/__init__.pyo
-lib/python${MODPY_VERSION}/site-packages/meld/meld/util/namedtuple.py
-lib/python${MODPY_VERSION}/site-packages/meld/meld/util/namedtuple.pyc
-lib/python${MODPY_VERSION}/site-packages/meld/meld/util/namedtuple.pyo
+lib/python${MODPY_VERSION}/site-packages/meld/meld/util/compat.py
+lib/python${MODPY_VERSION}/site-packages/meld/meld/util/compat.pyc
+lib/python${MODPY_VERSION}/site-packages/meld/meld/util/compat.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/util/prefs.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/util/prefs.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/util/prefs.pyo
@@ -116,9 +140,6 @@ lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/_vc.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/bzr.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/bzr.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/bzr.pyo
-lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/cdv.py
-lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/cdv.pyc
-lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/cdv.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/cvs.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/cvs.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/cvs.pyo
@@ -137,9 +158,6 @@ lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/mercurial.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/monotone.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/monotone.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/monotone.pyo
-lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/rcs.py
-lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/rcs.pyc
-lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/rcs.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/svk.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/svk.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/svk.pyo
@@ -149,9 +167,6 @@ lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/svn.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/svn_17.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/svn_17.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/svn_17.pyo
-lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/tla.py
-lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/tla.pyc
-lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/tla.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/vcview.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/vcview.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/vcview.pyo
@@ -166,6 +181,10 @@ share/gnome/help/meld/es/
 share/gnome/help/meld/es/meld.xml
 share/gnome/help/meld/fr/
 share/gnome/help/meld/fr/meld.xml
+share/icons/HighContrast/
+share/icons/HighContrast/scalable/
+share/icons/HighContrast/scalable/apps/
+share/icons/HighContrast/scalable/apps/meld.svg
 share/icons/hicolor/16x16/apps/meld.png
 share/icons/hicolor/22x22/apps/meld.png
 share/icons/hicolor/32x32/apps/meld.png
@@ -184,6 +203,7 @@ share/locale/en_CA/LC_MESSAGES/meld.mo
 share/locale/en_GB/LC_MESSAGES/meld.mo
 share/locale/eo/LC_MESSAGES/meld.mo
 share/locale/es/LC_MESSAGES/meld.mo
+share/locale/eu/LC_MESSAGES/meld.mo
 share/locale/fi/LC_MESSAGES/meld.mo
 share/locale/fr/LC_MESSAGES/meld.mo
 share/locale/gl/LC_MESSAGES/meld.mo
@@ -211,6 +231,7 @@ share/locale/vi/LC_MESSAGES/meld.mo
 share/locale/zh_CN/LC_MESSAGES/meld.mo
 share/locale/zh_TW/LC_MESSAGES/meld.mo
 share/meld/
+share/meld/gtkrc
 share/meld/icons/
 share/meld/icons/button_apply0.xpm
 share/meld/icons/button_apply1.xpm
@@ -224,10 +245,12 @@ share/meld/icons/filter-nonvc-24.png
 share/meld/icons/filter-normal-24.png
 share/meld/icons/meld-locked.png
 share/meld/icons/meld-unlocked.png
+share/meld/icons/meld-vc-icon.png
 share/meld/icons/vc-add-24.png
 share/meld/icons/vc-checkout-24.png
 share/meld/icons/vc-commit-24.png
 share/meld/icons/vc-icon.png
+share/meld/icons/vc-push-24.png
 share/meld/icons/vc-remove-24.png
 share/meld/icons/vc-resolve-24.png
 share/meld/icons/vc-update-24.png
@@ -242,14 +265,20 @@ share/meld/ui/meldapp-ui.xml
 share/meld/ui/meldapp.ui
 share/meld/ui/patch-dialog.ui
 share/meld/ui/preferences.ui
+share/meld/ui/tab-placeholder.ui
 share/meld/ui/vcview-ui.xml
 share/meld/ui/vcview.ui
+share/mime/packages/meld.xml
 share/omf/
 share/omf/meld/
 share/omf/meld/meld-C.omf
 share/omf/meld/meld-es.omf
 share/omf/meld/meld-fr.omf
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
