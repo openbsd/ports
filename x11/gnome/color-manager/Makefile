@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2013/09/13 14:18:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2013/09/16 15:49:19 ajacoutot Exp $
 
 COMMENT=	color profile manager for GNOME
 
 GNOME_PROJECT=	gnome-color-manager
 GNOME_VERSION=	3.8.3
+REVISION=	0
 
 CATEGORIES=	graphics
 
