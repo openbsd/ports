@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2013/09/16 10:55:00 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2013/09/16 21:16:17 sthen Exp $
 
 ONLY_FOR_ARCHS = alpha amd64 hppa i386 powerpc sparc64
 DPB_PROPERTIES = parallel
@@ -8,7 +8,7 @@ FULL_VERSION = $V
 FULL_PKGVERSION = $V
 
 ADASTRAP_LIBC-i386 = 70.0
-ADASTRAP-i386 = adastrap-i386-$V-2.tar.xz
+ADASTRAP-i386 = adastrap-i386-$V-3.tar.xz
 ADASTRAP_LIBC-amd64 = 70.0
 ADASTRAP-amd64 = adastrap-amd64-$V-3.tar.xz
 ADASTRAP_LIBC-sparc64 = 70.0
