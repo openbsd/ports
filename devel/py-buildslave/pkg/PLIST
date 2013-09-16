@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/01/09 19:57:38 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/09/16 10:02:29 landry Exp $
 @newgroup _buildslave:674
 @newuser _buildslave:674:_buildslave:daemon:BuildBot slave daemon:${HOMEDIR}:/sbin/nologin
 bin/buildslave
@@ -60,6 +60,8 @@ lib/python${MODPY_VERSION}/site-packages/buildslave/monkeypatches/bug4881.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/monkeypatches/bug4881.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/monkeypatches/bug5079.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/monkeypatches/bug5079.pyc
+lib/python${MODPY_VERSION}/site-packages/buildslave/monkeypatches/testcase_assert.py
+lib/python${MODPY_VERSION}/site-packages/buildslave/monkeypatches/testcase_assert.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/pbutil.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/pbutil.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/runprocess.py
@@ -67,6 +69,8 @@ lib/python${MODPY_VERSION}/site-packages/buildslave/runprocess.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/scripts/
 lib/python${MODPY_VERSION}/site-packages/buildslave/scripts/__init__.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/scripts/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/buildslave/scripts/base.py
+lib/python${MODPY_VERSION}/site-packages/buildslave/scripts/base.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/scripts/logwatcher.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/scripts/logwatcher.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/scripts/runner.py
@@ -128,6 +132,10 @@ lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_commands_util
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_commands_utils.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_runprocess.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_runprocess.pyc
+lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_scripts_base.py
+lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_scripts_base.pyc
+lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_scripts_runner.py
+lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_scripts_runner.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_util.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_util.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/util/
