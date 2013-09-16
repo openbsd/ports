@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2013/09/12 09:12:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.126 2013/09/16 08:24:17 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		3.0
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # 7.0
 
@@ -20,7 +20,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # GPLv2 with exception clause
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += EGL GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xt archive atk-1.0 atk-bridge-2.0
 WANTLIB += atspi bz2 c cairo cairo-gobject crypto curl dbus-1
 WANTLIB += dbus-glib-1 enchant expat ffi fontconfig freetype gailutil-3
@@ -63,8 +63,12 @@ RUN_DEPENDS +=		www/py-mako${MODPY_FLAVOR}
 # grilo plugin
 RUN_DEPENDS +=		x11/gnome/grilo-plugins
 
+# rbzeitgeist plugin
+RUN_DEPENDS +=		productivity/zeitgeist
+
 # needed for flac support
 RUN_DEPENDS +=		multimedia/gstreamer1/plugins-good
+
 # needed for mp3 support
 RUN_DEPENDS +=		multimedia/gstreamer1/plugins-ugly
 

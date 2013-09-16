@@ -1,0 +1,41 @@
+$OpenBSD: patch-metadata_rb-metadata-dbus-service_c,v 1.1 2013/09/16 08:24:18 ajacoutot Exp $
+
+From 76540fdaa7baf56b01d8d269cbe482b1dbc58f09 Mon Sep 17 00:00:00 2001
+From: Jonathan Matthew <jonathan@d14n.org>
+Date: Fri, 13 Sep 2013 12:19:13 +0000
+Subject: metadata: GDBusServer new-connection signal needs a return value
+
+--- metadata/rb-metadata-dbus-service.c.orig	Sun Nov 11 11:59:34 2012
++++ metadata/rb-metadata-dbus-service.c	Mon Sep 16 10:13:38 2013
+@@ -220,7 +220,7 @@ connection_closed_cb (GDBusConnection *connection,
+ 	svc->connection = NULL;
+ }
+ 
+-static void
++static gboolean
+ new_connection_cb (GDBusServer *server,
+ 		   GDBusConnection *connection,
+ 		   ServiceData *svc)
+@@ -231,7 +231,7 @@ new_connection_cb (GDBusServer *server,
+ 	/* don't allow more than one connection at a time */
+ 	if (svc->connection) {
+ 		rb_debug ("metadata service already has a client.  go away.");
+-		return;
++		return FALSE;
+ 	}
+ 	g_dbus_connection_register_object (connection,
+ 					   RB_METADATA_DBUS_OBJECT_PATH,
+@@ -243,11 +243,13 @@ new_connection_cb (GDBusServer *server,
+ 	if (error != NULL) {
+ 		rb_debug ("unable to register metadata object: %s", error->message);
+ 		g_clear_error (&error);
++		return FALSE;
+ 	} else {
+ 		svc->connection = g_object_ref (connection);
+ 		g_signal_connect (connection, "closed", G_CALLBACK (connection_closed_cb), svc);
+ 
+ 		g_dbus_connection_set_exit_on_close (connection, (svc->external == FALSE));
++		return TRUE;
+ 	}
+ }
+ 
