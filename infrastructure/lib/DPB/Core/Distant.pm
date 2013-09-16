@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.11 2013/09/11 10:44:14 espie Exp $
+# $OpenBSD: Distant.pm,v 1.12 2013/09/16 11:23:51 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -19,6 +19,24 @@ use warnings;
 
 use DPB::Core;
 use OpenBSD::Paths;
+
+package DPB::Host::Distant;
+our @ISA = (qw(DPB::Host));
+sub shellclass
+{
+	return "DPB::Ssh";
+}
+
+sub is_localhost
+{
+	return 0;
+}
+
+sub is_alive
+{
+	my $self = shift;
+	return $self->shell->is_alive;
+}
 
 package DPB::Ssh;
 our @ISA = qw(DPB::Shell::Chroot);
@@ -203,17 +221,6 @@ DPB::Core->register_report(\&alive_hosts, \&changed_hosts);
 package DPB::Core::Distant;
 our @ISA = qw(DPB::Core);
 my @dead_cores = ();
-
-sub shellclass
-{
-	"DPB::Ssh"
-}
-
-sub is_alive
-{
-	my $self = shift;
-	return $self->{shell}->is_alive;
-}
 
 sub mark_ready
 {

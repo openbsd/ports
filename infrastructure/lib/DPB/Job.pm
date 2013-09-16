@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Job.pm,v 1.7 2013/06/30 16:35:43 espie Exp $
+# $OpenBSD: Job.pm,v 1.8 2013/09/16 11:23:50 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -46,7 +46,7 @@ sub new
 sub run
 {
 	my ($self, $core) = @_;
-	&{$self->code($core)}($core->{shell});
+	&{$self->code($core)}($core->shell);
 }
 
 sub process

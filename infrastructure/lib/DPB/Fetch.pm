@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.54 2013/06/21 09:05:18 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.55 2013/09/16 11:23:50 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -714,7 +714,7 @@ sub run
 {
 	my ($self, $core) = @_;
 	my $job = $core->job;
-	my $shell = $core->{shell};
+	my $shell = $core->shell;
 	my $site = $self->{site};
 	$self->redirect($job->{log});
 	if ($job->{file}{sz} == 0) {

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.42 2013/09/14 09:42:11 espie Exp $
+# $OpenBSD: Core.pm,v 1.43 2013/09/16 11:23:50 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -22,11 +22,29 @@ package DPB::Host;
 
 my $hosts = {};
 
+sub shell
+{
+	my $self = shift;
+	return $self->{shell};
+}
+
 sub new
 {
 	my ($class, $name, $prop) = @_;
-	$hosts->{$name} //= bless {host => $name, 
-		prop => DPB::HostProperties->finalize($prop) }, $class;
+	if (!defined $hosts->{$name}) {
+		if ($class->name_is_localhost($name)) {
+			$class = "DPB::Host::Localhost";
+		} else {
+			require DPB::Core::Distant;
+			$class = "DPB::Host::Distant";
+		}
+		my $h = bless {host => $name, 
+			prop => DPB::HostProperties->finalize($prop) }, $class;
+		# XXX have to register *before* creating the shell
+		$hosts->{$name} = $h;
+		$h->{shell} = $h->shellclass->new($h);
+	}
+	return $hosts->{$name};
 }
 
 sub name
@@ -55,12 +73,28 @@ sub name_is_localhost
 	}
 }
 
+package DPB::Host::Localhost;
+our @ISA = qw(DPB::Host);
+
 sub is_localhost
 {
-	my $o = shift;
-	return $o->name_is_localhost($o->{host});
+	return 1;
 }
 
+sub is_alive
+{
+	return 1;
+}
+
+sub shellclass
+{
+	my $self = shift;
+	if ($self->{prop}->{chroot}) {
+		return "DPB::Shell::Local::Chroot";
+	} else {
+		return "DPB::Shell::Local";
+	}
+}
 
 # here, a "core" is an entity responsible for scheduling cpu, such as
 # running a job, which is a collection of tasks.
@@ -113,25 +147,20 @@ sub handle_events
 
 sub is_alive
 {
-	return 1;
-}
-
-sub shellclass
-{
-	"DPB::Shell::Abstract";
+	my $self = shift;
+	return $self->host->is_alive;
 }
 
 sub shell
 {
 	my $self = shift;
-	return $self->{shell};
+	return $self->host->shell;
 }
 
 sub new
 {
 	my ($class, $host, $prop) = @_;
 	my $c = bless {host => DPB::Host->new($host, $prop)}, $class;
-	$c->{shell} = $c->shellclass->new($c->host);
 	$allhosts{$c->hostname} = 1;
 	return $c;
 }
@@ -674,16 +703,6 @@ sub is_local
 	return 1;
 }
 
-sub shellclass
-{
-	my $self = shift;
-	if ($self->prop->{chroot}) {
-		return "DPB::Shell::Local::Chroot";
-	} else {
-		return "DPB::Shell::Local";
-	}
-}
-
 package DPB::Core::Fetcher;
 our @ISA = qw(DPB::Core::Local);
 
@@ -754,6 +773,11 @@ sub sudo
 package DPB::Shell::Local;
 our @ISA = qw(DPB::Shell::Abstract);
 
+sub is_alive
+{
+	return 1;
+}
+
 sub chdir
 {
 	my ($self, $dir) = @_;
@@ -823,6 +847,11 @@ sub quote
 {
 	my ($self, $cmd) = @_;
 	return $cmd;
+}
+
+sub is_alive
+{
+	return 1;
 }
 
 1;
