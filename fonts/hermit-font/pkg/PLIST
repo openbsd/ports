@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/09/16 21:51:45 abieber Exp $
+lib/X11/fonts/
+@fontdir lib/X11/fonts/hermit/
+lib/X11/fonts/hermit/hermit.otf
+lib/X11/fonts/hermit/hermit.ttf
