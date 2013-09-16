@@ -1,7 +1,7 @@
-$OpenBSD: patch-spectro_hidio_c,v 1.1.1.1 2011/11/06 17:35:53 ajacoutot Exp $
---- spectro/hidio.c.orig	Sun Nov  6 10:40:15 2011
-+++ spectro/hidio.c	Sun Nov  6 10:40:26 2011
-@@ -51,7 +51,7 @@
+$OpenBSD: patch-spectro_hidio_c,v 1.2 2013/09/16 15:48:29 ajacoutot Exp $
+--- spectro/hidio.c.orig	Fri Aug 16 18:01:22 2013
++++ spectro/hidio.c	Mon Sep 16 13:38:31 2013
+@@ -58,7 +58,7 @@
  #include <sys/stat.h>
  #include <fcntl.h>
  #include <unistd.h>

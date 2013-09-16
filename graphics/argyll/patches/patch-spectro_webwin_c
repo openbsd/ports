@@ -1,0 +1,12 @@
+$OpenBSD: patch-spectro_webwin_c,v 1.1 2013/09/16 15:48:30 ajacoutot Exp $
+--- spectro/webwin.c.orig	Mon Sep 16 14:00:48 2013
++++ spectro/webwin.c	Mon Sep 16 14:03:52 2013
+@@ -24,7 +24,7 @@
+ # include <ifaddrs.h>
+ # include <netinet/in.h> 
+ # include <arpa/inet.h>
+-# ifdef __FreeBSD__
++# if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #  include <sys/socket.h>
+ # endif /* __FreeBSD__ */
+ #endif

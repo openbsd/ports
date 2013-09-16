@@ -1,0 +1,12 @@
+$OpenBSD: patch-spectro_usbio_c,v 1.1 2013/09/16 15:48:29 ajacoutot Exp $
+--- spectro/usbio.c.orig	Mon Aug 19 08:29:25 2013
++++ spectro/usbio.c	Mon Sep 16 14:59:13 2013
+@@ -94,7 +94,7 @@ static int icoms_usb_wait_io(
+ #  include "usbio_ox.c"
+ # endif
+ # if defined(UNIX_X11)
+-#  if defined(__FreeBSD__)
++#  if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #   include "usbio_bsd.c"
+ #  else
+ #   include "usbio_lx.c"
