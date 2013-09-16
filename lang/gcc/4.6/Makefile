@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2013/09/16 10:28:15 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2013/09/16 10:55:00 espie Exp $
 
 ONLY_FOR_ARCHS = alpha amd64 hppa i386 powerpc sparc64
 DPB_PROPERTIES = parallel
@@ -10,7 +10,7 @@ FULL_PKGVERSION = $V
 ADASTRAP_LIBC-i386 = 70.0
 ADASTRAP-i386 = adastrap-i386-$V-2.tar.xz
 ADASTRAP_LIBC-amd64 = 70.0
-ADASTRAP-amd64 = adastrap-amd64-$V-2.tar.xz
+ADASTRAP-amd64 = adastrap-amd64-$V-3.tar.xz
 ADASTRAP_LIBC-sparc64 = 70.0
 ADASTRAP-sparc64 = adastrap-sparc64-$V-2.tar.xz
 
@@ -214,9 +214,9 @@ post-extract:
 .for f in egcc gnatbind gnatmake gnatlink
 	echo "#! /bin/sh" >${WRKDIR}/bin/$f
 	echo 'GNAT_ROOT=${WRKDIR}/bootstrap GCC_ROOT=${WRKDIR}/bootstrap LD_LIBRARY_PATH=${WRKDIR}/bootstrap/system-libs exec ${WRKDIR}/bootstrap/bin/$f "$$@"' >>${WRKDIR}/bin/$f
-	rm -rf ${WRKDIR}/bootstrap/lib/gcc/*-unknown-openbsd*/$V/include-fixed
 	chmod a+x ${WRKDIR}/bin/$f
 .endfor
+	rm -rf ${WRKDIR}/bootstrap/lib/gcc/*-unknown-openbsd*/$V/include-fixed
 	ln -sf /usr/bin/nm ${WRKDIR}/bin/enm
 	echo "# This file automatically generated" >> ${WRKSRC}/libversions
 .for l v in ${SHARED_LIBS}
