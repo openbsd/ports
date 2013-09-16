@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.89 2013/09/14 14:58:12 espie Exp $
+# $OpenBSD: Engine.pm,v 1.90 2013/09/16 21:29:13 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -130,11 +130,11 @@ sub unlock_early
 	while (my ($k, $w) = each %$h) {
 		if ($sub->{builder}->end_check($w)) {
 			$sub->mark_as_done($w);
-			delete $h->{$w};
+			delete $h->{$k};
 		} else {
 			$okay = 0;
 			# infamous
-			$engine->log('H', $v);
+			$engine->log('H', $w);
 		}
 	}
 	if ($okay) {
