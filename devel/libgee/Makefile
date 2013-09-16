@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2013/08/19 16:27:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2013/09/16 18:38:57 ajacoutot Exp $
 
 COMMENT=	GObject based collection library
 
 GNOME_PROJECT=	libgee
-GNOME_VERSION=	0.10.4
+GNOME_VERSION=	0.10.5
 
 SHARED_LIBS +=  gee-0.8                   1.0 # 1.0
 
@@ -27,6 +27,5 @@ MODULES=	devel/gettext \
 MODGNOME_TOOLS= gi vala
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--disable-doc
 
 .include <bsd.port.mk>
