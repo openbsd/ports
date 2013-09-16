@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2013/08/16 07:37:18 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.61 2013/09/16 10:28:15 espie Exp $
 
 ONLY_FOR_ARCHS = alpha amd64 hppa i386 powerpc sparc64
 DPB_PROPERTIES = parallel
@@ -24,13 +24,13 @@ PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 PKGNAME-go =	gccgo-${FULL_PKGVERSION}
 PKGSPEC-main = gcc->=4.6,<4.7
 
-REVISION-main =	2
+REVISION-main =	3
 REVISION-c++ =	0
 #REVISION-estdc =
 REVISION-f95 =	0
 REVISION-java =	0
 REVISION-objc =	0
-REVISION-ada =	1
+REVISION-ada =	2
 REVISION-go =	0
 
 SHARED_LIBS =	estdc++		14.0 \
@@ -214,6 +214,7 @@ post-extract:
 .for f in egcc gnatbind gnatmake gnatlink
 	echo "#! /bin/sh" >${WRKDIR}/bin/$f
 	echo 'GNAT_ROOT=${WRKDIR}/bootstrap GCC_ROOT=${WRKDIR}/bootstrap LD_LIBRARY_PATH=${WRKDIR}/bootstrap/system-libs exec ${WRKDIR}/bootstrap/bin/$f "$$@"' >>${WRKDIR}/bin/$f
+	rm -rf ${WRKDIR}/bootstrap/lib/gcc/*-unknown-openbsd*/$V/include-fixed
 	chmod a+x ${WRKDIR}/bin/$f
 .endfor
 	ln -sf /usr/bin/nm ${WRKDIR}/bin/enm
@@ -257,6 +258,7 @@ adastrap: ${ADA_PACKAGE} ${GCC_PACKAGE}
 	cd ${WRKDIR}/prepare/bootstrap && tar zxf ${ADA_PACKAGE}
 	cd ${WRKDIR}/prepare/bootstrap && tar zxf ${GCC_PACKAGE}
 	rm -rf ${WRKDIR}/prepare/bootstrap/{+*,info,man}
+	rm -rf ${WRKDIR}/prepare/bootstrap/lib/gcc/*-unknown-openbsd*/$V/include-fixed
 	if ! ldd ${WRKDIR}/prepare/bootstrap/bin/egcc | \
 		fgrep libc.so.${ADASTRAP_LIBC-${MACHINE_ARCH}} >/dev/null; then \
 		echo 1>&2 "Error: adastrap egcc linked against wrong libc"; \
