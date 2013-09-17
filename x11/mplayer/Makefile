@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.224 2013/09/06 23:14:39 brad Exp $
+# $OpenBSD: Makefile,v 1.225 2013/09/17 05:18:15 mlarkin Exp $
 
 SHARED_ONLY=		Yes
 
@@ -147,7 +147,7 @@ WANTLIB +=	vorbisenc vorbis
 
 CONFIGURE_ENV += LOCALBASE="${LOCALBASE}" TMPDIR="${WRKBUILD}"
 
-# binutils 2.15 does not support SSSE3 / SSE4 for amd64 / i386
+# binutils 2.15 does not support SSE3 / SSE4 for amd64 / i386
 .if ${MACHINE_ARCH:Mamd64} || ${MACHINE_ARCH:Mi386}
 CONFIGURE_ARGS += --enable-runtime-cpudetection
 CONFIGURE_ARGS += --disable-ssse3
