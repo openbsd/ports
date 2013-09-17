@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.214 2013/04/06 08:19:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.215 2013/09/17 10:45:55 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -8,7 +8,6 @@
      SUBDIR += at-spi2-core
      SUBDIR += backgrounds
      SUBDIR += banshee
-     SUBDIR += baker
      SUBDIR += baobab
      SUBDIR += calculator
      SUBDIR += caribou
