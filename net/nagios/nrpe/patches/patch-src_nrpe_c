@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_nrpe_c,v 1.6 2013/04/17 15:15:16 sthen Exp $
---- src/nrpe.c.orig	Fri Dec 21 17:22:00 2012
-+++ src/nrpe.c	Wed Apr 17 15:51:14 2013
+$OpenBSD: patch-src_nrpe_c,v 1.7 2013/09/17 21:22:27 sthen Exp $
+--- src/nrpe.c.orig	Fri Sep  6 16:27:13 2013
++++ src/nrpe.c	Tue Sep 17 22:16:49 2013
 @@ -30,6 +30,8 @@
  #include "utils.h"
  #include "acl.h"
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_nrpe_c,v 1.6 2013/04/17 15:15:16 sthen Exp $
  #ifdef HAVE_SSL
  #include "../include/dh.h"
  #endif
-@@ -54,7 +56,7 @@ int use_ssl=FALSE;
+@@ -61,7 +63,7 @@ int use_ssl=FALSE;
  char    *command_name=NULL;
  char    *macro_argv[MAX_COMMAND_ARGUMENTS];
  
@@ -18,8 +18,8 @@ $OpenBSD: patch-src_nrpe_c,v 1.6 2013/04/17 15:15:16 sthen Exp $
 +char    config_file[MAX_INPUT_BUFFER]="${SYSCONFDIR}/nrpe.cfg";
  int     log_facility=LOG_DAEMON;
  int     server_port=DEFAULT_SERVER_PORT;
- char    server_address[16]="0.0.0.0";
-@@ -891,8 +893,14 @@ void wait_for_connections(void){
+ char    server_address[NI_MAXHOST]="";
+@@ -969,8 +971,14 @@ void wait_for_connections(void){
  					continue;
  
  				/* socket is nonblocking and we don't have a connection yet */
