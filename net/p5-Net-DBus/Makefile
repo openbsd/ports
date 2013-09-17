@@ -1,24 +1,23 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:35:52 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/09/17 12:27:16 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	communicate with DBus message system
+COMMENT=	Perl API to the dbus inter-application messaging system
 
 MODULES=	cpan
-DISTNAME=	Net-DBus-0.33.6
-REVISION=	5
-CATEGORIES=	net
-USE_GROFF =	Yes
+DISTNAME=	Net-DBus-1.0.0
+CATEGORIES=	net x11
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c dbus-1>=6
+WANTLIB += dbus-1
 
 RUN_DEPENDS=	textproc/p5-XML-Twig
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	textproc/p5-XML-Twig
 LIB_DEPENDS=	x11/dbus
+TEST_DEPENDS=	devel/p5-Test-Pod-Coverage
 
 .include <bsd.port.mk>
