@@ -1,12 +1,12 @@
-$OpenBSD: patch-spec_unit_provider_service_openbsd_spec_rb,v 1.2 2013/09/17 09:54:36 jasper Exp $
+$OpenBSD: patch-spec_unit_provider_service_openbsd_spec_rb,v 1.3 2013/09/17 18:45:31 jasper Exp $
 
 From 1de80e849cd5871aa6ce2828dab11dda1b1575a1 Mon Sep 17 00:00:00 2001
 From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
 Date: Tue, 17 Sep 2013 10:57:45 +0200
 Subject: [PATCH] (#22579) Add service provider for OpenBSD's rc.d
 
---- spec/unit/provider/service/openbsd_spec.rb.orig	Tue Sep 17 11:53:38 2013
-+++ spec/unit/provider/service/openbsd_spec.rb	Tue Sep 17 11:54:00 2013
+--- spec/unit/provider/service/openbsd_spec.rb.orig	Tue Sep 17 20:44:10 2013
++++ spec/unit/provider/service/openbsd_spec.rb	Tue Sep 17 20:44:52 2013
 @@ -0,0 +1,125 @@
 +#!/usr/bin/env ruby
 +#
@@ -56,13 +56,13 @@ Subject: [PATCH] (#22579) Add service provider for OpenBSD's rc.d
 +  describe "#start" do
 +    it "should use the supplied start command if specified" do
 +      provider = described_class.new(Puppet::Type.type(:service).new(:name => 'sshd', :start => '/bin/foo'))
-+      provider.expects(:execute).with(['/bin/foo'], :failonfail => true, :squelch => true)
++      provider.expects(:execute).with(['/bin/foo'], :failonfail => true, :override_locale => false, :squelch => true)
 +      provider.start
 +    end
 +
 +    it "should start the service otherwise" do
 +      provider = described_class.new(Puppet::Type.type(:service).new(:name => 'sshd'))
-+      provider.expects(:execute).with(['/etc/rc.d/sshd', '-f', :start], :failonfail => true, :squelch => true)
++      provider.expects(:execute).with(['/etc/rc.d/sshd', '-f', :start], :failonfail => true, :override_locale => false, :squelch => true)
 +      provider.expects(:search).with('sshd').returns('/etc/rc.d/sshd')
 +      provider.start
 +    end
@@ -71,13 +71,13 @@ Subject: [PATCH] (#22579) Add service provider for OpenBSD's rc.d
 +  describe "#stop" do
 +    it "should use the supplied stop command if specified" do
 +      provider = described_class.new(Puppet::Type.type(:service).new(:name => 'sshd', :stop => '/bin/foo'))
-+      provider.expects(:execute).with(['/bin/foo'], :failonfail => true, :squelch => true)
++      provider.expects(:execute).with(['/bin/foo'], :failonfail => true, :override_locale => false, :squelch => true)
 +      provider.stop
 +    end
 +
 +    it "should stop the service otherwise" do
 +      provider = described_class.new(Puppet::Type.type(:service).new(:name => 'sshd'))
-+      provider.expects(:execute).with(['/etc/rc.d/sshd', :stop], :failonfail => true, :squelch => true)
++      provider.expects(:execute).with(['/etc/rc.d/sshd', :stop], :failonfail => true, :override_locale => false, :squelch => true)
 +      provider.expects(:search).with('sshd').returns('/etc/rc.d/sshd')
 +      provider.stop
 +    end
@@ -86,23 +86,23 @@ Subject: [PATCH] (#22579) Add service provider for OpenBSD's rc.d
 +  describe "#status" do
 +    it "should use the status command from the resource" do
 +      provider = described_class.new(Puppet::Type.type(:service).new(:name => 'sshd', :status => '/bin/foo'))
-+      provider.expects(:execute).with(['/etc/rc.d/sshd', :status], :failonfail => false, :squelch => true).never
-+      provider.expects(:execute).with(['/bin/foo'], :failonfail => false, :squelch => true)
++      provider.expects(:execute).with(['/etc/rc.d/sshd', :status], :failonfail => false, :override_locale => false, :squelch => true).never
++      provider.expects(:execute).with(['/bin/foo'], :failonfail => false, :override_locale => false, :squelch => true)
 +      provider.status
 +    end
 +
 +      it "should return :stopped when status command returns with a non-zero exitcode" do
 +        provider = described_class.new(Puppet::Type.type(:service).new(:name => 'sshd', :status => '/bin/foo'))
-+        provider.expects(:execute).with(['/etc/rc.d/sshd', :status], :failonfail => false, :squelch => true).never
-+        provider.expects(:execute).with(['/bin/foo'], :failonfail => false, :squelch => true)
++        provider.expects(:execute).with(['/etc/rc.d/sshd', :status], :failonfail => false, :override_locale => false, :squelch => true).never
++        provider.expects(:execute).with(['/bin/foo'], :failonfail => false, :override_locale => false, :squelch => true)
 +        $CHILD_STATUS.stubs(:exitstatus).returns 3
 +        provider.status.should == :stopped
 +      end
 +
 +      it "should return :running when status command returns with a zero exitcode" do
 +        provider = described_class.new(Puppet::Type.type(:service).new(:name => 'sshd', :status => '/bin/foo'))
-+        provider.expects(:execute).with(['/etc/rc.d/sshd', :status], :failonfail => false, :squelch => true).never
-+        provider.expects(:execute).with(['/bin/foo'], :failonfail => false, :squelch => true)
++        provider.expects(:execute).with(['/etc/rc.d/sshd', :status], :failonfail => false, :override_locale => false, :squelch => true).never
++        provider.expects(:execute).with(['/bin/foo'], :failonfail => false, :override_locale => false, :squelch => true)
 +        $CHILD_STATUS.stubs(:exitstatus).returns 0
 +        provider.status.should == :running
 +      end
@@ -111,23 +111,23 @@ Subject: [PATCH] (#22579) Add service provider for OpenBSD's rc.d
 +  describe "#restart" do
 +    it "should use the supplied restart command if specified" do
 +      provider = described_class.new(Puppet::Type.type(:service).new(:name => 'sshd', :restart => '/bin/foo'))
-+      provider.expects(:execute).with(['/etc/rc.d/sshd', '-f', :restart], :failonfail => true, :squelch => true).never
-+      provider.expects(:execute).with(['/bin/foo'], :failonfail => true, :squelch => true)
++      provider.expects(:execute).with(['/etc/rc.d/sshd', '-f', :restart], :failonfail => true, :override_locale => false, :squelch => true).never
++      provider.expects(:execute).with(['/bin/foo'], :failonfail => true, :override_locale => false, :squelch => true)
 +      provider.restart
 +    end
 +
 +    it "should restart the service with rc-service restart if hasrestart is true" do
 +      provider = described_class.new(Puppet::Type.type(:service).new(:name => 'sshd', :hasrestart => true))
-+      provider.expects(:execute).with(['/etc/rc.d/sshd', '-f', :restart], :failonfail => true, :squelch => true)
++      provider.expects(:execute).with(['/etc/rc.d/sshd', '-f', :restart], :failonfail => true, :override_locale => false, :squelch => true)
 +      provider.expects(:search).with('sshd').returns('/etc/rc.d/sshd')
 +      provider.restart
 +    end
 +
 +    it "should restart the service with rc-service stop/start if hasrestart is false" do
 +      provider = described_class.new(Puppet::Type.type(:service).new(:name => 'sshd', :hasrestart => false))
-+      provider.expects(:execute).with(['/etc/rc.d/sshd', '-f', :restart], :failonfail => true, :squelch => true).never
-+      provider.expects(:execute).with(['/etc/rc.d/sshd', :stop], :failonfail => true, :squelch => true)
-+      provider.expects(:execute).with(['/etc/rc.d/sshd', '-f', :start], :failonfail => true, :squelch => true)
++      provider.expects(:execute).with(['/etc/rc.d/sshd', '-f', :restart], :failonfail => true, :override_locale => false, :squelch => true).never
++      provider.expects(:execute).with(['/etc/rc.d/sshd', :stop], :failonfail => true, :override_locale => false, :squelch => true)
++      provider.expects(:execute).with(['/etc/rc.d/sshd', '-f', :start], :failonfail => true, :override_locale => false, :squelch => true)
 +      provider.expects(:search).with('sshd').returns('/etc/rc.d/sshd')
 +      provider.restart
 +    end

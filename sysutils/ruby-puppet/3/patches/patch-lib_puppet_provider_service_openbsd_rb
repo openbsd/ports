@@ -1,13 +1,13 @@
-$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.4 2013/09/17 09:54:35 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.5 2013/09/17 18:45:31 jasper Exp $
 
 From 1de80e849cd5871aa6ce2828dab11dda1b1575a1 Mon Sep 17 00:00:00 2001
 From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
 Date: Tue, 17 Sep 2013 10:57:45 +0200
 Subject: [PATCH] (#22579) Add service provider for OpenBSD's rc.d
 
---- lib/puppet/provider/service/openbsd.rb.orig	Tue Sep 17 10:58:36 2013
-+++ lib/puppet/provider/service/openbsd.rb	Tue Sep 17 11:00:26 2013
-@@ -0,0 +1,38 @@
+--- lib/puppet/provider/service/openbsd.rb.orig	Tue Sep 17 20:44:10 2013
++++ lib/puppet/provider/service/openbsd.rb	Tue Sep 17 20:44:36 2013
+@@ -0,0 +1,23 @@
 +Puppet::Type.type(:service).provide :openbsd, :parent => :init do
 +
 +  desc "Provider for OpenBSD's rc.d daemon control scripts"
@@ -15,11 +15,9 @@ Subject: [PATCH] (#22579) Add service provider for OpenBSD's rc.d
 +  confine :operatingsystem => :openbsd
 +  defaultfor :operatingsystem => :openbsd
 +
-+  class << self
-+    attr_accessor :defpath
++  def self.defpath
++    ["/etc/rc.d"]
 +  end
-+
-+  @defpath = "/etc/rc.d"
 +
 +  def startcmd
 +    [self.initscript, "-f", :start]
@@ -32,17 +30,4 @@ Subject: [PATCH] (#22579) Add service provider for OpenBSD's rc.d
 +  def statuscmd
 +    [self.initscript, :check]
 +  end
-+
-+  # A simple wrapper so execution failures are a bit more informative.
-+  # If an exception occurs, we show a warning instead of an error.
-+  def texecute(type, command, fof = true)
-+    begin
-+      # #565: Services generally produce no output, so squelch them.
-+      execute(command, :failonfail => fof, :squelch => true)
-+    rescue Puppet::ExecutionFailure => detail
-+      @resource.warning "Could not #{type} #{@resource.ref}: #{detail}"
-+    end
-+    nil
-+  end
-+
 +end
