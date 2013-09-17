@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.2 2011/05/31 09:49:52 dcoppa Exp $
---- setup.py.orig	Thu Oct  8 09:26:23 2009
-+++ setup.py	Thu May 26 12:02:03 2011
-@@ -196,7 +196,7 @@ class coverage_cmd(Command):
+$OpenBSD: patch-setup_py,v 1.3 2013/09/17 14:12:40 dcoppa Exp $
+--- setup.py.orig	Fri Sep  6 11:11:46 2013
++++ setup.py	Mon Sep 16 07:48:58 2013
+@@ -171,7 +171,7 @@ class coverage_cmd(Command):
              raise SystemExit("Coverage percentage went up; change setup.py.")
  
  if os.name == "posix":
