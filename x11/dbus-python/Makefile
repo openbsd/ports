@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/09/11 14:38:44 nigel Exp $
+# $OpenBSD: Makefile,v 1.30 2013/09/17 10:07:51 sthen Exp $
 
 COMMENT-main =		dbus bindings for Python
 COMMENT-common =	common files for py-dbus
@@ -11,6 +11,7 @@ FULLPKGNAME-common =	py-dbus-common-${V}
 FULLPKGPATH-common =	x11/dbus-python,-common
 
 REVISION-main =		1
+REVISION-common =	0
 
 CATEGORIES =		x11
 
