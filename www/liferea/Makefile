@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.57 2013/08/26 20:21:13 bcallah Exp $
+# $OpenBSD: Makefile,v 1.58 2013/09/17 16:51:53 bcallah Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		simple GTK desktop news aggregator
 
-DISTNAME=		liferea-1.10.1a
+DISTNAME=		liferea-1.10.2
 CATEGORIES=		www x11
 EXTRACT_SUFX=		.tar.bz2
 
 HOMEPAGE=		http://liferea.sourceforge.net/
 
-MAINTAINER=		Wiktor Izdebski <vicviq@gmail.com>
+MAINTAINER=		Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -55,6 +55,6 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-USE_GMAKE =		Yes
+USE_GMAKE=		Yes
 
 .include <bsd.port.mk>
