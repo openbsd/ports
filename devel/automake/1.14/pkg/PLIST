@@ -1,0 +1,131 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/09/17 20:01:33 brad Exp $
+@option no-default-conflict
+@conflict ${PKGSPEC}
+@comment bin/aclocal
+bin/aclocal${SUFFIX}
+@comment bin/automake
+bin/automake${SUFFIX}
+@info info/automake${SUFFIX}.info
+@comment @info info/automake-history.info
+@man man/man1/aclocal${SUFFIX}.1
+@comment @man man/man1/aclocal.1
+@man man/man1/automake${SUFFIX}.1
+@comment @man man/man1/automake.1
+share/aclocal${SUFFIX}/
+share/aclocal${SUFFIX}/amversion.m4
+share/aclocal${SUFFIX}/ar-lib.m4
+share/aclocal${SUFFIX}/as.m4
+share/aclocal${SUFFIX}/auxdir.m4
+share/aclocal${SUFFIX}/cond-if.m4
+share/aclocal${SUFFIX}/cond.m4
+share/aclocal${SUFFIX}/depend.m4
+share/aclocal${SUFFIX}/depout.m4
+share/aclocal${SUFFIX}/dmalloc.m4
+share/aclocal${SUFFIX}/extra-recurs.m4
+share/aclocal${SUFFIX}/gcj.m4
+share/aclocal${SUFFIX}/init.m4
+share/aclocal${SUFFIX}/install-sh.m4
+share/aclocal${SUFFIX}/internal/
+share/aclocal${SUFFIX}/internal/ac-config-macro-dirs.m4
+share/aclocal${SUFFIX}/lead-dot.m4
+share/aclocal${SUFFIX}/lex.m4
+share/aclocal${SUFFIX}/lispdir.m4
+share/aclocal${SUFFIX}/maintainer.m4
+share/aclocal${SUFFIX}/make.m4
+share/aclocal${SUFFIX}/missing.m4
+share/aclocal${SUFFIX}/mkdirp.m4
+share/aclocal${SUFFIX}/obsolete.m4
+share/aclocal${SUFFIX}/options.m4
+share/aclocal${SUFFIX}/prog-cc-c-o.m4
+share/aclocal${SUFFIX}/python.m4
+share/aclocal${SUFFIX}/runlog.m4
+share/aclocal${SUFFIX}/sanity.m4
+share/aclocal${SUFFIX}/silent.m4
+share/aclocal${SUFFIX}/strip.m4
+share/aclocal${SUFFIX}/substnot.m4
+share/aclocal${SUFFIX}/tar.m4
+share/aclocal${SUFFIX}/upc.m4
+share/aclocal${SUFFIX}/vala.m4
+@comment share/aclocal/README
+share/automake${SUFFIX}/
+share/automake${SUFFIX}/Automake/
+share/automake${SUFFIX}/Automake/ChannelDefs.pm
+share/automake${SUFFIX}/Automake/Channels.pm
+share/automake${SUFFIX}/Automake/Condition.pm
+share/automake${SUFFIX}/Automake/Config.pm
+share/automake${SUFFIX}/Automake/Configure_ac.pm
+share/automake${SUFFIX}/Automake/DisjConditions.pm
+share/automake${SUFFIX}/Automake/FileUtils.pm
+share/automake${SUFFIX}/Automake/General.pm
+share/automake${SUFFIX}/Automake/Getopt.pm
+share/automake${SUFFIX}/Automake/Item.pm
+share/automake${SUFFIX}/Automake/ItemDef.pm
+share/automake${SUFFIX}/Automake/Language.pm
+share/automake${SUFFIX}/Automake/Location.pm
+share/automake${SUFFIX}/Automake/Options.pm
+share/automake${SUFFIX}/Automake/Rule.pm
+share/automake${SUFFIX}/Automake/RuleDef.pm
+share/automake${SUFFIX}/Automake/VarDef.pm
+share/automake${SUFFIX}/Automake/Variable.pm
+share/automake${SUFFIX}/Automake/Version.pm
+share/automake${SUFFIX}/Automake/Wrap.pm
+share/automake${SUFFIX}/Automake/XFile.pm
+share/automake${SUFFIX}/COPYING
+share/automake${SUFFIX}/INSTALL
+share/automake${SUFFIX}/am/
+share/automake${SUFFIX}/am/check.am
+share/automake${SUFFIX}/am/check2.am
+share/automake${SUFFIX}/am/clean-hdr.am
+share/automake${SUFFIX}/am/clean.am
+share/automake${SUFFIX}/am/compile.am
+share/automake${SUFFIX}/am/configure.am
+share/automake${SUFFIX}/am/data.am
+share/automake${SUFFIX}/am/dejagnu.am
+share/automake${SUFFIX}/am/depend.am
+share/automake${SUFFIX}/am/depend2.am
+share/automake${SUFFIX}/am/distdir.am
+share/automake${SUFFIX}/am/footer.am
+share/automake${SUFFIX}/am/header-vars.am
+share/automake${SUFFIX}/am/header.am
+share/automake${SUFFIX}/am/inst-vars.am
+share/automake${SUFFIX}/am/install.am
+share/automake${SUFFIX}/am/java.am
+share/automake${SUFFIX}/am/lang-compile.am
+share/automake${SUFFIX}/am/lex.am
+share/automake${SUFFIX}/am/library.am
+share/automake${SUFFIX}/am/libs.am
+share/automake${SUFFIX}/am/libtool.am
+share/automake${SUFFIX}/am/lisp.am
+share/automake${SUFFIX}/am/ltlib.am
+share/automake${SUFFIX}/am/ltlibrary.am
+share/automake${SUFFIX}/am/mans-vars.am
+share/automake${SUFFIX}/am/mans.am
+share/automake${SUFFIX}/am/program.am
+share/automake${SUFFIX}/am/progs.am
+share/automake${SUFFIX}/am/python.am
+share/automake${SUFFIX}/am/remake-hdr.am
+share/automake${SUFFIX}/am/scripts.am
+share/automake${SUFFIX}/am/subdirs.am
+share/automake${SUFFIX}/am/tags.am
+share/automake${SUFFIX}/am/texi-vers.am
+share/automake${SUFFIX}/am/texibuild.am
+share/automake${SUFFIX}/am/texinfos.am
+share/automake${SUFFIX}/am/vala.am
+share/automake${SUFFIX}/am/yacc.am
+share/automake${SUFFIX}/ar-lib
+share/automake${SUFFIX}/compile
+share/automake${SUFFIX}/config.guess
+share/automake${SUFFIX}/config.sub
+share/automake${SUFFIX}/depcomp
+share/automake${SUFFIX}/install-sh
+share/automake${SUFFIX}/mdate-sh
+share/automake${SUFFIX}/missing
+share/automake${SUFFIX}/mkinstalldirs
+share/automake${SUFFIX}/py-compile
+share/automake${SUFFIX}/tap-driver.pl
+share/automake${SUFFIX}/tap-driver.sh
+share/automake${SUFFIX}/test-driver
+share/automake${SUFFIX}/texinfo.tex
+share/automake${SUFFIX}/ylwrap
+share/doc/automake${SUFFIX}/
+share/doc/automake${SUFFIX}/amhello-1.0.tar.gz

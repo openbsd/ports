@@ -1,0 +1,31 @@
+$OpenBSD: patch-doc_automake_texi,v 1.1.1.1 2013/09/17 20:01:33 brad Exp $
+--- doc/automake.texi.orig	Sat Apr 21 10:38:05 2012
++++ doc/automake.texi	Thu May 24 22:54:00 2012
+@@ -1,7 +1,8 @@
+ \input texinfo   @c -*-texinfo-*-
+ @c %**start of header
+-@setfilename automake.info
+-@settitle automake
++@setfilename automake${SUFFIX}.info
++@dircategory Programming & development tools
++@settitle automake${SUFFIX}
+ @setchapternewpage off
+ @c %**end of header
+ 
+@@ -38,13 +39,13 @@ section entitled ``GNU Free Documentation License.''
+ 
+ @dircategory Software development
+ @direntry
+-* Automake: (automake).         Making GNU standards-compliant Makefiles.
++* automake${SUFFIX}: (automake${SUFFIX}).         Making GNU standards-compliant Makefiles.
+ @end direntry
+ 
+ @dircategory Individual utilities
+ @direntry
+-* aclocal-invocation: (automake)aclocal Invocation.   Generating aclocal.m4.
+-* automake-invocation: (automake)automake Invocation. Generating Makefile.in.
++* aclocal${SUFFIX}: (automake${SUFFIX})aclocal Invocation.   Generating aclocal.m4.
++* automake${SUFFIX}: (automake${SUFFIX})automake Invocation. Generating Makefile.in.
+ @end direntry
+ 
+ @titlepage
