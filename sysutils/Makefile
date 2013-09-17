@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.299 2013/08/10 14:55:14 robert Exp $
+# $OpenBSD: Makefile,v 1.300 2013/09/17 11:22:13 sthen Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -211,6 +211,7 @@
      SUBDIR += torture
      SUBDIR += tpb
      SUBDIR += tphdisk
+     SUBDIR += tray-app
      SUBDIR += tree
      SUBDIR += upower
      SUBDIR += upsd
