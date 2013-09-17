@@ -1,16 +1,16 @@
-$OpenBSD: patch-doc_reference_conf,v 1.1 2013/08/07 23:41:08 brad Exp $
---- doc/reference.conf.orig	Fri Aug  2 15:02:49 2013
-+++ doc/reference.conf	Tue Aug  6 00:41:09 2013
-@@ -111,7 +111,7 @@ serverinfo {
+$OpenBSD: patch-doc_reference_conf,v 1.2 2013/09/17 19:53:00 brad Exp $
+--- doc/reference.conf.orig	Sun Aug 18 16:12:33 2013
++++ doc/reference.conf	Sun Sep 15 15:06:50 2013
+@@ -108,7 +108,7 @@ serverinfo {
+ 	 *	chown <ircd-user>.<ircd.group> rsa.key
  	 *	chmod 0600 rsa.key
- 	 *	chmod 0644 rsa.pub
  	 */
 -#	rsa_private_key_file = "/usr/local/ircd/etc/rsa.key";
 +#	rsa_private_key_file = "${SYSCONFDIR}/ircd-hybrid/rsa.key";
  
  	/*
  	 * ssl_certificate_file: the path to the file containing our
-@@ -133,7 +133,7 @@ serverinfo {
+@@ -130,7 +130,7 @@ serverinfo {
  	 *	Common Name: irc.someirc.net
  	 *	E-mail: you@domain.com
  	 */
@@ -19,7 +19,7 @@ $OpenBSD: patch-doc_reference_conf,v 1.1 2013/08/07 23:41:08 brad Exp $
  
  	/*
  	 * ssl_dh_param_file:
-@@ -150,7 +150,7 @@ serverinfo {
+@@ -147,7 +147,7 @@ serverinfo {
  	 * regarding specific OpenSSL dhparam command-line options
  	 * can be found in the OpenSSL manual.
  	 */
@@ -28,7 +28,7 @@ $OpenBSD: patch-doc_reference_conf,v 1.1 2013/08/07 23:41:08 brad Exp $
  
  	/*
  	 * ssl_cipher_list:
-@@ -456,7 +456,7 @@ operator {
+@@ -453,7 +453,7 @@ operator {
  	 * A password should not be defined when this is used; see 
  	 * doc/challenge.txt for more information.
  	 */
@@ -37,7 +37,7 @@ $OpenBSD: patch-doc_reference_conf,v 1.1 2013/08/07 23:41:08 brad Exp $
  
  	/*
  	 * ssl_certificate_fingerprint: enhances security by additionally checking
-@@ -1236,8 +1236,8 @@ modules {
+@@ -1233,8 +1233,8 @@ modules {
  	 * path: other paths to search for modules specified below
  	 * and in "/module load".
  	 */
