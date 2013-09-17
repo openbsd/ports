@@ -1,7 +1,13 @@
-$OpenBSD: patch-spec_unit_provider_service_openbsd_spec_rb,v 1.1 2013/09/17 09:00:58 jasper Exp $
---- spec/unit/provider/service/openbsd_spec.rb.orig	Tue Sep 17 10:59:45 2013
-+++ spec/unit/provider/service/openbsd_spec.rb	Tue Sep 17 10:59:56 2013
-@@ -0,0 +1,130 @@
+$OpenBSD: patch-spec_unit_provider_service_openbsd_spec_rb,v 1.2 2013/09/17 09:54:36 jasper Exp $
+
+From 1de80e849cd5871aa6ce2828dab11dda1b1575a1 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Tue, 17 Sep 2013 10:57:45 +0200
+Subject: [PATCH] (#22579) Add service provider for OpenBSD's rc.d
+
+--- spec/unit/provider/service/openbsd_spec.rb.orig	Tue Sep 17 11:53:38 2013
++++ spec/unit/provider/service/openbsd_spec.rb	Tue Sep 17 11:54:00 2013
+@@ -0,0 +1,125 @@
 +#!/usr/bin/env ruby
 +#
 +# Unit testing for the OpenBSD service provider
@@ -11,20 +17,10 @@ $OpenBSD: patch-spec_unit_provider_service_openbsd_spec_rb,v 1.1 2013/09/17 09:0
 +provider_class = Puppet::Type.type(:service).provider(:openbsd)
 +
 +describe provider_class do
-+#  before :each do
-+#    @resource = stub 'resource'
-+#    @provider = provider_class.new
-+
-+    # Catch all; no parameters set
-+#    @resource.stubs(:[]).returns(nil)
-+
-+    # Do set name and ensure
-+#    @resource.stubs(:[]).with(:name).returns "myservice"
-+#    @resource.stubs(:[]).with(:ensure).returns "running"
-+#    @resource.stubs(:ref).returns "Service[myservice]"
-+
-+#    @provider.resource = @resource
-+#  end
++  before :each do
++    Puppet::Type.type(:service).stubs(:defaultprovider).returns described_class
++    Facter.stubs(:value).with(:operatingsystem).returns :openbsd
++  end
 +
 +  let :rcscripts do
 +    [
@@ -41,6 +37,7 @@ $OpenBSD: patch-spec_unit_provider_service_openbsd_spec_rb,v 1.1 2013/09/17 09:0
 +    end
 +
 +    it "should list all available services" do
++      FileTest.expects(:directory?).with('/etc/rc.d').returns true
 +      Dir.expects(:entries).with('/etc/rc.d').returns rcscripts
 +
 +      rcscripts.each do |script|
@@ -66,6 +63,7 @@ $OpenBSD: patch-spec_unit_provider_service_openbsd_spec_rb,v 1.1 2013/09/17 09:0
 +    it "should start the service otherwise" do
 +      provider = described_class.new(Puppet::Type.type(:service).new(:name => 'sshd'))
 +      provider.expects(:execute).with(['/etc/rc.d/sshd', '-f', :start], :failonfail => true, :squelch => true)
++      provider.expects(:search).with('sshd').returns('/etc/rc.d/sshd')
 +      provider.start
 +    end
 +  end
@@ -80,6 +78,7 @@ $OpenBSD: patch-spec_unit_provider_service_openbsd_spec_rb,v 1.1 2013/09/17 09:0
 +    it "should stop the service otherwise" do
 +      provider = described_class.new(Puppet::Type.type(:service).new(:name => 'sshd'))
 +      provider.expects(:execute).with(['/etc/rc.d/sshd', :stop], :failonfail => true, :squelch => true)
++      provider.expects(:search).with('sshd').returns('/etc/rc.d/sshd')
 +      provider.stop
 +    end
 +  end
@@ -120,6 +119,7 @@ $OpenBSD: patch-spec_unit_provider_service_openbsd_spec_rb,v 1.1 2013/09/17 09:0
 +    it "should restart the service with rc-service restart if hasrestart is true" do
 +      provider = described_class.new(Puppet::Type.type(:service).new(:name => 'sshd', :hasrestart => true))
 +      provider.expects(:execute).with(['/etc/rc.d/sshd', '-f', :restart], :failonfail => true, :squelch => true)
++      provider.expects(:search).with('sshd').returns('/etc/rc.d/sshd')
 +      provider.restart
 +    end
 +
@@ -128,6 +128,7 @@ $OpenBSD: patch-spec_unit_provider_service_openbsd_spec_rb,v 1.1 2013/09/17 09:0
 +      provider.expects(:execute).with(['/etc/rc.d/sshd', '-f', :restart], :failonfail => true, :squelch => true).never
 +      provider.expects(:execute).with(['/etc/rc.d/sshd', :stop], :failonfail => true, :squelch => true)
 +      provider.expects(:execute).with(['/etc/rc.d/sshd', '-f', :start], :failonfail => true, :squelch => true)
++      provider.expects(:search).with('sshd').returns('/etc/rc.d/sshd')
 +      provider.restart
 +    end
 +  end
