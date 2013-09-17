@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2013/07/12 00:49:23 jca Exp $
+# $OpenBSD: Makefile,v 1.14 2013/09/17 11:10:01 ajacoutot Exp $
 
 COMMENT=	IPC library used by GnuPG and gpgme
 
-DISTNAME=	libassuan-2.1.0
+DISTNAME=	libassuan-2.1.1
 EXTRACT_SUFX=	.tar.bz2
 
 SHARED_LIBS +=  assuan            1.1      # 2.0
