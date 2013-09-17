@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/26 08:28:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2013/09/17 12:41:20 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	perl interface to the Pango libraries
 
-DISTNAME=	Pango-1.222
+DISTNAME=	Pango-1.224
 CATEGORIES=	x11 devel
-CPAN_AUTHOR=	TSCH
+CPAN_AUTHOR=	XAOC
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,11 +19,14 @@ LIB_DEPENDS=	devel/pango
 WANTLIB += cairo fontconfig freetype glib-2.0 gobject-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 z
 
-RUN_DEPENDS=	devel/p5-Glib2>=1.280 \
-		graphics/p5-Cairo>=1.101
+RUN_DEPENDS=	devel/p5-Glib2 \
+		graphics/p5-Cairo
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		devel/p5-ExtUtils-Depends \
 		devel/p5-ExtUtils-PkgConfig
+
+TEST_IS_INTERACTIVE=	x11
+TEST_DEPENDS=		x11/p5-Gtk2
 
 .include <bsd.port.mk>
