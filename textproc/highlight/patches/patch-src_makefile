@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_makefile,v 1.9 2013/03/10 15:32:32 benoit Exp $
---- src/makefile.orig	Fri Feb  1 21:37:56 2013
-+++ src/makefile	Fri Mar  8 10:27:00 2013
+$OpenBSD: patch-src_makefile,v 1.10 2013/09/18 07:23:32 benoit Exp $
+--- src/makefile.orig	Thu Jun 27 22:36:48 2013
++++ src/makefile	Wed Sep 18 09:06:34 2013
 @@ -12,11 +12,11 @@
  
  # See src/gui-qt/highlight.pro for the Qt GUI compilation options
@@ -15,20 +15,20 @@ $OpenBSD: patch-src_makefile,v 1.9 2013/03/10 15:32:32 benoit Exp $
  #CFLAGS:=-ggdb ${CFLAGS}
  
  CFLAGS_DILU=-fno-strict-aliasing
-@@ -34,10 +34,10 @@
+@@ -37,10 +37,10 @@
+ # - remove -DUSE_LUA52
+ # - use lua5.1 in the pkg-config calls
  
- 
- # If Lua 5.2 is not default on your system yet you have to omit 5.1:
--LUA_CFLAGS=$(shell pkg-config --cflags lua5.1)
+-LUA_CFLAGS=$(shell pkg-config --cflags lua) -DUSE_LUA52
 +LUA_CFLAGS=-I${LOCALBASE}/include
  
  # default lua lib
--LUA_LIBS=$(shell pkg-config --libs lua5.1)
+-LUA_LIBS=$(shell pkg-config --libs lua)
 +LUA_LIBS=-llua
- # luajit lib
- #LUA_LIBS=$(shell pkg-config --libs luajit)
  
-@@ -47,10 +47,10 @@
+ # luajit lib
+ # LUA_LIBS=$(shell pkg-config --libs luajit)
+@@ -51,10 +51,10 @@
  DILU_DIR=${CORE_DIR}Diluculum/
  
  ifndef HL_CONFIG_DIR
