@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.13 2013/03/03 17:43:15 ajacoutot Exp $
---- configure.orig	Fri Feb 22 13:45:11 2013
-+++ configure	Fri Feb 22 14:03:36 2013
-@@ -10904,7 +10904,6 @@ openbsd*)
+$OpenBSD: patch-configure,v 1.14 2013/09/18 19:18:16 ajacoutot Exp $
+--- configure.orig	Wed Sep 18 13:08:35 2013
++++ configure	Wed Sep 18 20:26:35 2013
+@@ -10948,7 +10948,6 @@ openbsd*)
      *)				need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
@@ -9,8 +9,8 @@ $OpenBSD: patch-configure,v 1.13 2013/03/03 17:43:15 ajacoutot Exp $
    shlibpath_var=LD_LIBRARY_PATH
    if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case $host_os in
-@@ -14670,6 +14669,12 @@ case "$host" in
-     NO_UNDEFINED_LDFLAGS="-no-undefined"
+@@ -14714,6 +14713,12 @@ case "$host" in
+     NO_UNDEFINED_FLAGS="-no-undefined"
      ;;
  
 +  *-*-openbsd*)
@@ -20,5 +20,5 @@ $OpenBSD: patch-configure,v 1.13 2013/03/03 17:43:15 ajacoutot Exp $
 +      VERSION_SCRIPT_FLAGS="-Wl,-M -Wl,"
 +    ;;
    *)
-     NO_UNDEFINED_FLAGS="-Wl,--no-undefined"
-     VERSION_SCRIPT_FLAGS=-Wl,--version-script=
+     `ld --help 2>&1 | grep -- --no-undefined >/dev/null` && \
+       NO_UNDEFINED_FLAGS="-Wl,--no-undefined"

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/03/03 17:43:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/09/18 19:18:16 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 @pkgpath ${BASE_PKGPATH},-main
 @pkgpath x11/gtk-vnc,gtk2
@@ -82,6 +82,9 @@ share/locale/sr@latin/
 share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/gtk-vnc.mo
 share/locale/sv/LC_MESSAGES/gtk-vnc.mo
+share/locale/tg/
+share/locale/tg/LC_MESSAGES/
+share/locale/tg/LC_MESSAGES/gtk-vnc.mo
 share/locale/th/
 share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/gtk-vnc.mo
