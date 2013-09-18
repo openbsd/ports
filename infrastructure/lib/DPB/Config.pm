@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.7 2013/09/14 09:42:11 espie Exp $
+# $OpenBSD: Config.pm,v 1.8 2013/09/18 13:07:32 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -333,13 +333,17 @@ sub finalize
 		$prop->{memory} = $prop->{mem};
 	}
 	if (defined $prop->{chroot}) {
-		if (!defined $prop->{chroot_user}) {
-			if (!defined $default_user) {
-				$default_user = `whoami`;
-				chomp($default_user);
+		if ($prop->{chroot} eq '/' || $prop->{chroot} eq '') {
+			delete $prop->{chroot};
+		} else {
+			if (!defined $prop->{chroot_user}) {
+				if (!defined $default_user) {
+					$default_user = `whoami`;
+					chomp($default_user);
+				}
 			}
+			$prop->{chroot_user} = $default_user;
 		}
-		$prop->{chroot_user} = $default_user;
 	}
 	if (defined $prop->{memory}) {
 		my $_ = $prop->{memory};
