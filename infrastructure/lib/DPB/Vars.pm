@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.35 2013/06/21 09:05:18 espie Exp $
+# $OpenBSD: Vars.pm,v 1.36 2013/09/18 15:30:40 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -45,7 +45,7 @@ our @ISA = qw(DPB::GetThings);
 use OpenBSD::Paths;
 sub get
 {
-	my ($class, $make, @names) = @_;
+	my ($class, $shell, $make, @names) = @_;
 	pipe(my $rh, my $wh);
 	my $pid = fork();
 	if ($pid == 0) {
@@ -80,9 +80,9 @@ EOT
 		waitpid($pid, 0);
 	} else {
 		close STDIN;
-		chdir('/');
 		open(STDIN, '<&', $rh);
-		exec {$make} ('make', '-f', '-', 'print-data');
+		$shell->chdir('/')
+			->exec($make, '-f', '-', 'print-data');
 		die "oops couldn't exec $make";
     	}
 	return @list;

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.43 2013/09/16 11:23:50 espie Exp $
+# $OpenBSD: Core.pm,v 1.44 2013/09/18 15:30:40 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -734,6 +734,7 @@ package DPB::Shell::Abstract;
 sub new
 {
 	my ($class, $host) = @_;
+	$host //= {}; # this makes it possible to build "localhost" shells
 	bless {sudo => 0, prop => $host->{prop}}, $class;
 }
 
