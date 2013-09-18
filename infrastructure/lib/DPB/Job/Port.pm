@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.112 2013/09/08 11:10:59 espie Exp $
+# $OpenBSD: Port.pm,v 1.113 2013/09/18 13:26:40 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -29,6 +29,8 @@ sub setup
 }
 
 sub is_serialized { 0 }
+sub want_frozen { 1 }
+sub want_percent { 1 }
 
 sub finalize
 {
@@ -235,6 +237,7 @@ package DPB::Task::Port::Serialized;
 our @ISA = qw(DPB::Task::Port);
 
 sub is_serialized { 1 }
+sub want_percent { 0 }
 
 sub setup
 {
@@ -301,6 +304,8 @@ sub setup
 {
 	return $_[0];
 }
+
+sub want_frozen { 0 }
 
 sub run
 {
@@ -486,6 +491,8 @@ sub finalize
 package DPB::Task::Port::ShowSize;
 our @ISA = qw(DPB::Task::Port);
 
+sub want_percent { 0 }
+
 sub fork
 {
 	my ($self, $core) = @_;
@@ -525,6 +532,8 @@ package DPB::Task::Port::Install;
 our @ISA=qw(DPB::Task::Port);
 
 sub notime { 1 }
+
+sub want_percent { 0 }
 
 sub run
 {
@@ -582,6 +591,7 @@ package DPB::Task::Port::BaseClean;
 our @ISA = qw(DPB::Task::BasePort);
 
 sub notime { 1 }
+sub want_percent { 0 }
 
 sub finalize
 {
@@ -928,9 +938,16 @@ sub set_watch
 sub watched
 {
 	my ($self, $current, $core) = @_;
-	return "" unless defined $self->{watched};
-	my $diff = $self->{watched}->check_change($current);
-	my $msg = $self->{watched}->change_message($diff);
+	my $w = $self->{watched};
+	return "" unless defined $w;
+	my $diff = $w->check_change($current);
+	my $msg = '';
+	if ($self->{task}->want_percent) {
+		$msg .= $w->percent_message;
+	}
+	if ($self->{task}->want_frozen) {
+		$msg .= $w->frozen_message($diff);
+	}
 	my $stuck = $core->stuck_timeout;
 	if (defined $stuck) {
 		if ($diff > $stuck) {
