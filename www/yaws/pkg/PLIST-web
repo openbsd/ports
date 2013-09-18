@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST-web,v 1.3 2012/10/30 20:29:21 jasper Exp $
+@comment $OpenBSD: PLIST-web,v 1.4 2013/09/18 07:53:26 jasper Exp $
 yaws/
 yaws/ebin/
 yaws/ebin/advanced_echo_callback.beam
 yaws/ebin/authmod_gssapi.beam
 yaws/ebin/basic_echo_callback.beam
+yaws/ebin/basic_echo_callback_extended.beam
 yaws/ebin/myappmod.beam
 yaws/ebin/server_sent_events.beam
 yaws/ebin/shopcart.beam
