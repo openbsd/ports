@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.56 2013/09/18 13:26:39 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.57 2013/09/18 21:50:12 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -834,7 +834,7 @@ sub watched
 	my ($self, $current, $core) = @_;
 	my $w = $self->{watched};
 	my $diff = $w->check_change($current);
-	my $msg = $w->progress_message . $w->frozen_message($diff);
+	my $msg = $w->percent_message . $w->frozen_message($diff);
 	my $to = $core->fetch_timeout;
 	if (defined $to) {
 		if ($diff > $to) {
