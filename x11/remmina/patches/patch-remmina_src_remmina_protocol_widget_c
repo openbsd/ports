@@ -1,0 +1,40 @@
+$OpenBSD: patch-remmina_src_remmina_protocol_widget_c,v 1.1 2013/09/18 17:36:42 ajacoutot Exp $
+
+https://github.com/FreeRDP/Remmina/commit/bed49ad62d78718c0876c000a97c68cc87f12c7c
+
+--- remmina/src/remmina_protocol_widget.c.orig	Fri Feb 10 19:54:23 2012
++++ remmina/src/remmina_protocol_widget.c	Fri Sep 13 10:56:52 2013
+@@ -267,13 +267,7 @@ gboolean remmina_protocol_widget_close_connection(Remm
+ 		gp->priv->chat_window = NULL;
+ 	}
+ 
+-#ifdef HAVE_LIBSSH
+-	if (gp->priv->ssh_tunnel)
+-	{
+-		remmina_ssh_tunnel_free(gp->priv->ssh_tunnel);
+-		gp->priv->ssh_tunnel = NULL;
+-	}
+-#endif
++	gboolean retval;
+ 
+ 	if (!gp->priv->plugin || !gp->priv->plugin->close_connection)
+ 	{
+@@ -281,7 +275,17 @@ gboolean remmina_protocol_widget_close_connection(Remm
+ 		return FALSE;
+ 	}
+ 
+-	return gp->priv->plugin->close_connection(gp);
++	retval = gp->priv->plugin->close_connection(gp);
++
++	#ifdef HAVE_LIBSSH
++	if (gp->priv->ssh_tunnel)
++	{
++		remmina_ssh_tunnel_free(gp->priv->ssh_tunnel);
++		gp->priv->ssh_tunnel = NULL;
++	}
++	#endif
++
++	return retval;
+ }
+ 
+ static gboolean remmina_protocol_widget_emit_signal_timeout(gpointer user_data)
