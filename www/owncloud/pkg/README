@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.18 2013/09/09 10:18:22 ajacoutot Exp $
+$OpenBSD: README,v 1.19 2013/09/18 00:04:33 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -44,7 +44,7 @@ Support for SQLite3 is included with the main php package; to use
 another database, the corresponding package needs to be installed:
     php-pdo_pgsql or php-pdo_mysql
 
-When using SQLite, not further configuration is required. However, with
+When using SQLite, no further configuration is required. However, with
 MySQL or PostgreSQL, the file ${INSTDIR}/config/config.sample.php will
 need to be copied to ${INSTDIR}/config/config.php and configured
 accordingly.
@@ -78,7 +78,7 @@ must be installed to properly upgrade the database:
 
 WebDAV access
 =============
-The personnal WebDAV share can be accessed using the following URL (e.g.
+The personal WebDAV share can be accessed using the following URL (e.g.
 with Nautilus, Thunar or Doplhin) and the corresponding user and
 password for the share:
     http://<hostname>/owncloud/remote.php/webdav/
