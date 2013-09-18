@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2013/07/17 03:27:01 bentley Exp $
+# $OpenBSD: Makefile,v 1.18 2013/09/18 11:38:47 dcoppa Exp $
 
 COMMENT=		Dynamic DNS service update client
 
 DISTNAME=		ddclient-3.8.1
 CATEGORIES=		net
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE=		http://ddclient.sourceforge.net/
 
@@ -13,7 +13,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ddclient/}
 
-RUN_DEPENDS=		security/p5-IO-Socket-SSL
+RUN_DEPENDS=		security/p5-Digest-SHA1 \
+			security/p5-IO-Socket-SSL
 
 NO_BUILD=		Yes
 NO_TEST=		Yes

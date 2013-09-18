@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/12/01 09:58:43 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/09/18 11:38:47 dcoppa Exp $
 sbin/ddclient
 share/doc/ddclient/
 share/doc/ddclient/README
@@ -9,7 +9,9 @@ share/examples/ddclient/
 share/examples/ddclient/sample-ddclient-wrapper.sh
 share/examples/ddclient/sample-etc_cron.d_ddclient
 share/examples/ddclient/sample-etc_ddclient.conf
+@mode 0600
 @sample ${SYSCONFDIR}/ddclient/ddclient.conf
+@mode
 share/examples/ddclient/sample-etc_dhclient-exit-hooks
 share/examples/ddclient/sample-etc_dhcpc_dhcpcd-eth0.exe
 share/examples/ddclient/sample-etc_ppp_ip-up.local
