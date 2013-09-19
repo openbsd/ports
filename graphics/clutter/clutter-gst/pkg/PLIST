@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/09/29 13:04:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/09/19 08:01:32 ajacoutot Exp $
 include/clutter-gst-${API_VERSION}/
 include/clutter-gst-${API_VERSION}/clutter-gst/
 include/clutter-gst-${API_VERSION}/clutter-gst/clutter-gst-enum-types.h
@@ -27,8 +27,11 @@ share/gtk-doc/html/clutter-gst/clutter-gst.devhelp2
 share/gtk-doc/html/clutter-gst/home.png
 share/gtk-doc/html/clutter-gst/index.html
 share/gtk-doc/html/clutter-gst/index.sgml
+share/gtk-doc/html/clutter-gst/left-insensitive.png
 share/gtk-doc/html/clutter-gst/left.png
 share/gtk-doc/html/clutter-gst/license.html
+share/gtk-doc/html/clutter-gst/right-insensitive.png
 share/gtk-doc/html/clutter-gst/right.png
 share/gtk-doc/html/clutter-gst/style.css
+share/gtk-doc/html/clutter-gst/up-insensitive.png
 share/gtk-doc/html/clutter-gst/up.png
