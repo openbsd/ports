@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/09/16 21:16:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2013/09/19 18:33:25 naddy Exp $
 
 ONLY_FOR_ARCHS = alpha amd64 i386 powerpc sparc64
 
@@ -124,6 +124,7 @@ MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC} ${WRKSRC}/gcc
 EXTRA_ENV += am_cv_func_iconv=no JAR=no
 EXTRA_ENV += ac_cv_prog_M4=/usr/bin/m4
 EXTRA_ENV += ac_cv_header_magic_h=no
+EXTRA_ENV += lt_cv_path_SED=/usr/bin/sed
 EXTRA_ENV += STRIP=/usr/bin/strip
 MAKE_FLAGS +=	 ac_cv_path_mkdir=/bin/mkdir
 
