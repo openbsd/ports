@@ -1,5 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2009/08/01 14:11:20 sthen Exp $
-@lib lib/libct.so.${LIBct_VERSION}
-@lib lib/libsybdb.so.${LIBsybdb_VERSION}
+@comment $OpenBSD: PFRAG.shared,v 1.10 2013/09/19 17:11:21 sthen Exp $
 lib/libtdsodbc.so
-@lib lib/libtdsodbc.so.${LIBtdsodbc_VERSION}
