@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.59 2013/09/19 12:20:08 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.60 2013/09/19 13:06:44 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -59,8 +59,22 @@ MODMOZ_WANTLIB +=	event
 # for old mozillas : fennec, sunbird, firefox36, xulrunner
 MODMOZ_LIB_DEPENDS +=	devel/nspr \
 			security/nss
+
+# no --with-system-jpeg starting with fx 18, requires libjpeg-turbo because of bug 791305
 CONFIGURE_ARGS +=	--with-system-jpeg=${LOCALBASE}
 MODMOZ_WANTLIB += jpeg
+
+# for mozilla branches 1.9.2 and esr10 (fennec), build against systemwide cairo
+CONFIGURE_ARGS +=	--enable-system-cairo
+
+# gecko doesnt link anymore with krb5 since 22 (bug 648730)
+MODMOZ_WANTLIB +=	crypto krb5 asn1 com_err heimbase roken wind
+
+# sydneyaudio was removed in gecko 22
+post-extract:
+# syndeyaudio sndio file comes from ffx FILESDIR
+	cp -f ${PORTSDIR}/www/mozilla-firefox/files/sydney_audio_sndio.c \
+		${WRKSRC}/${_MOZDIR}/media/libsydneyaudio/src/
 .endif
 
 MODMOZ_WANTLIB +=	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
@@ -70,11 +84,6 @@ MODMOZ_WANTLIB +=	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
 		nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pixman-1 plc4 plds4 pthread pthread-stubs \
 		smime3 sndio nssutil3 ssl3 stdc++ z
-
-# gecko doesnt link anymore with krb5 since 22 (bug 648730)
-.if ${MOZILLA_PROJECT} != "firefox"
-MOZMOZ_WANTLIB +=	crypto krb5 asn1 com_err heimbase roken wind
-.endif
 
 # for all mozilla ports, build against systemwide sqlite3
 MODMOZ_WANTLIB +=	sqlite3>=23
@@ -116,14 +125,8 @@ CONFIGURE_ARGS +=	--with-system-zlib=/usr	\
 		--enable-svg-renderer=cairo	\
 		--enable-canvas
 
-# no --with-system-jpeg starting with fx 18, requires libjpeg-turbo because of bug 791305
 
-# for mozilla branches 1.9.2 and 2.x.x, build against systemwide cairo
-.if ${MOZILLA_BRANCH} != 1.9.1
-CONFIGURE_ARGS +=--enable-system-cairo
-.endif
-
-# those ones only apply to mozilla branch 1.9.2 but 1.9.1 apps don't complain
+# those ones only apply to mozilla branch 1.9.2
 # crashreporter uses google breakpad, osx/win/lin/sol only
 CONFIGURE_ARGS +=--disable-freetypetest		\
 		--disable-mochitest		\
@@ -181,14 +184,6 @@ CONFIGURE_ENV +=${MAKE_ENV} \
 
 MODGNU_CONFIG_GUESS_DIRS +=	${WRKSRC}/${_MOZDIR}/build/autoconf \
 				${WRKSRC}/${_MOZDIR}/js/src/build/autoconf
-
-# sydneyaudio was removed in gecko 22
-.if ${MOZILLA_PROJECT} != "firefox" && ${MOZILLA_PROJECT} != "seamonkey"
-post-extract:
-# syndeyaudio sndio file comes from ffx FILESDIR
-	cp -f ${PORTSDIR}/www/mozilla-firefox/files/sydney_audio_sndio.c \
-		${WRKSRC}/${_MOZDIR}/media/libsydneyaudio/src/
-.endif
 
 # files to run SUBST_CMD on
 MOZILLA_SUBST_FILES +=	${_MOZDIR}/xpcom/io/nsAppFileLocationProvider.cpp \
