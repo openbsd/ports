@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/19 17:45:54 kili Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2013/09/19 22:30:06 sthen Exp $
 @bin bin/dbl2png
 @bin bin/gif2dbl
 @bin bin/gif2mask
@@ -24,5 +23,6 @@ include/ming.h
 include/mingpp.h
 lib/libming.a
 lib/libming.la
+@lib lib/libming.so.${LIBming_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/libming.pc

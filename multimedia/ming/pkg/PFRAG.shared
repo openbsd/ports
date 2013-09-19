@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/06/19 17:45:54 kili Exp $
-@lib lib/libming.so.${LIBming_VERSION}
