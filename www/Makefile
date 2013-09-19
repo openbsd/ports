@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.621 2013/09/19 14:50:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.622 2013/09/19 14:57:50 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -542,6 +542,5 @@
      SUBDIR += youtube-dl
      SUBDIR += yui
      SUBDIR += zendframework
-     SUBDIR += zurmo
 
 .include <bsd.port.subdir.mk>
