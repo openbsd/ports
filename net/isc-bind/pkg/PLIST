@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/05/29 20:19:15 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/09/19 23:33:12 sthen Exp $
+@pkgpath net/isc-bind,ratelimit
 @bin bin/dig
 @bin bin/host
 bin/isc-config.sh
@@ -148,11 +149,13 @@ include/isc/resource.h
 include/isc/result.h
 include/isc/resultclass.h
 include/isc/rwlock.h
+include/isc/safe.h
 include/isc/serial.h
 include/isc/sha1.h
 include/isc/sha2.h
 include/isc/sockaddr.h
 include/isc/socket.h
+include/isc/stat.h
 include/isc/stdio.h
 include/isc/stdlib.h
 include/isc/stdtime.h

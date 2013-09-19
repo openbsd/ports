@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.19 2013/08/28 20:55:22 rpe Exp $
+# $OpenBSD: Makefile,v 1.20 2013/09/19 23:33:11 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
-V=		9.9.3-P2
-REVISION=	0
+V=		9.9.4
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
 
-SHARED_LIBS +=  bind9                     0.0 # 60.4
-SHARED_LIBS +=  dns                       0.0 # 70.2
-SHARED_LIBS +=  isc                       0.0 # 63.1
-SHARED_LIBS +=  isccc                     0.0 # 60.0
-SHARED_LIBS +=  isccfg                    0.0 # 62.0
-SHARED_LIBS +=  lwres                     0.0 # 60.1
+SHARED_LIBS +=  bind9                     0.0 # 90.8
+SHARED_LIBS +=  dns                       0.0 # 101.1
+SHARED_LIBS +=  isc                       0.1 # 97.1
+SHARED_LIBS +=  isccc                     0.0 # 90.4
+SHARED_LIBS +=  isccfg                    0.0 # 90.7
+SHARED_LIBS +=  lwres                     0.0 # 90.5
 
 CATEGORIES=	net
 
@@ -24,16 +23,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=	c crypto m pthread xml2 z
 
 MASTER_SITES=	${MASTER_SITE_ISC:=bind9/$V/}
-MASTER_SITES0=	http://ss.vix.su/~vjs/
-
-FLAVORS=	ratelimit
-FLAVOR?=
-
-.if ${FLAVOR:Mratelimit}
-PATCHFILES+=	rl-${V}.patch:0
-.else
-SUPDISTFILES+=	rl-${V}.patch:0
-.endif
 
 MODULES=	converters/libiconv \
 		lang/python
