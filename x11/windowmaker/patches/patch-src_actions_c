@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_actions_c,v 1.4 2013/08/22 23:03:21 sthen Exp $
+$OpenBSD: patch-src_actions_c,v 1.5 2013/09/19 20:43:54 sthen Exp $
 
 1. Fix periodic focus bug
 From: Pedro Gimeno <parigalo@formauri.es>
@@ -10,8 +10,8 @@ From: Ambrus Szabo <donamo@donamo.hu>
 Date: Tue, 5 Apr 2011 12:36:11 +0200
 http://repo.or.cz/w/wmaker-crm.git/commit/7490b14bf0573283cd11eea3b1b6392c6f38e2dd
 
---- src/actions.c.orig	Sun Jul  3 19:25:14 2005
-+++ src/actions.c	Wed Jul 17 23:20:47 2013
+--- src/actions.c.orig	Sun Jul  3 18:25:14 2005
++++ src/actions.c	Thu Sep 19 21:43:05 2013
 @@ -78,6 +78,15 @@ static struct {
  #define SHADE_STEPS	shadePars[(int)wPreferences.shade_speed].steps
  #define SHADE_DELAY	shadePars[(int)wPreferences.shade_speed].delay
@@ -44,19 +44,19 @@ http://repo.or.cz/w/wmaker-crm.git/commit/7490b14bf0573283cd11eea3b1b6392c6f38e2
      if (!old_scr)
 @@ -463,8 +472,8 @@ wMaximizeWindow(WWindow *wwin, int directions)
                      &new_width, &new_height);
-
+ 
      wWindowConfigure(wwin, new_x, new_y, new_width, new_height);
 +    wWindowSynthConfigureNotify(wwin);
-
+ 
 -
      WMPostNotificationName(WMNChangedState, wwin, "maximize");
-
+ 
      wSoundPlay(WSOUND_MAXIMIZE);
 @@ -494,6 +503,7 @@ wUnmaximizeWindow(WWindow *wwin)
-
+ 
      wwin->flags.maximized = 0;
      wWindowConfigure(wwin, x, y, w, h);
 +    wWindowSynthConfigureNotify(wwin);
-
+ 
      WMPostNotificationName(WMNChangedState, wwin, "maximize");
-
+ 
