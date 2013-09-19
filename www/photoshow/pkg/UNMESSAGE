@@ -1,3 +1,0 @@
-To completely deinstall photoshow you need to perform the following step
-as root:
-    # rm -f /var/www/conf/modules/photoshow.conf
