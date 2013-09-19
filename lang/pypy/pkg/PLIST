@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/06/19 13:07:38 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/09/19 08:39:31 sthen Exp $
 bin/pypy
 pypy/
 pypy/bin/
@@ -2886,6 +2886,21 @@ pypy/lib-python/2.7/zipfile.pyc
 pypy/lib_pypy/
 pypy/lib_pypy/__init__.py
 pypy/lib_pypy/__init__.pyc
+pypy/lib_pypy/__pycache__/
+pypy/lib_pypy/__pycache__/_cffi__g24366574x62c16045.c
+pypy/lib_pypy/__pycache__/_cffi__g24366574x62c16045.pypy-21.so
+pypy/lib_pypy/__pycache__/_cffi__g3b3d68b9x310af836.c
+pypy/lib_pypy/__pycache__/_cffi__g3b3d68b9x310af836.pypy-21.so
+pypy/lib_pypy/__pycache__/_cffi__g7019d5d3xad93c709.c
+pypy/lib_pypy/__pycache__/_cffi__g7019d5d3xad93c709.pypy-21.so
+pypy/lib_pypy/__pycache__/usr/
+pypy/lib_pypy/__pycache__/usr/local/
+pypy/lib_pypy/__pycache__/usr/local/pypy/
+pypy/lib_pypy/__pycache__/usr/local/pypy/lib_pypy/
+pypy/lib_pypy/__pycache__/usr/local/pypy/lib_pypy/__pycache__/
+pypy/lib_pypy/__pycache__/usr/local/pypy/lib_pypy/__pycache__/_cffi__g24366574x62c16045.o
+pypy/lib_pypy/__pycache__/usr/local/pypy/lib_pypy/__pycache__/_cffi__g3b3d68b9x310af836.o
+pypy/lib_pypy/__pycache__/usr/local/pypy/lib_pypy/__pycache__/_cffi__g7019d5d3xad93c709.o
 pypy/lib_pypy/_codecs_cn.py
 pypy/lib_pypy/_codecs_cn.pyc
 pypy/lib_pypy/_codecs_hk.py
@@ -2945,6 +2960,8 @@ pypy/lib_pypy/_pypy_interact.py
 pypy/lib_pypy/_pypy_interact.pyc
 pypy/lib_pypy/_pypy_irc_topic.py
 pypy/lib_pypy/_pypy_irc_topic.pyc
+pypy/lib_pypy/_pypy_testcapi.py
+pypy/lib_pypy/_pypy_testcapi.pyc
 pypy/lib_pypy/_pypy_wait.py
 pypy/lib_pypy/_pypy_wait.pyc
 pypy/lib_pypy/_scproxy.py
@@ -2964,6 +2981,25 @@ pypy/lib_pypy/_subprocess.pyc
 pypy/lib_pypy/_testcapi.py
 pypy/lib_pypy/_testcapi.pyc
 pypy/lib_pypy/_testcapimodule.c
+pypy/lib_pypy/_tkinter/
+pypy/lib_pypy/_tkinter/__init__.py
+pypy/lib_pypy/_tkinter/__init__.pyc
+pypy/lib_pypy/_tkinter/__pycache__/
+pypy/lib_pypy/_tkinter/__pycache__/_cffi__gf5a2d03x49dc1c04.c
+pypy/lib_pypy/_tkinter/__pycache__/_cffi__gf5a2d03x49dc1c04.pypy-21.so
+pypy/lib_pypy/_tkinter/__pycache__/usr/
+pypy/lib_pypy/_tkinter/__pycache__/usr/local/
+pypy/lib_pypy/_tkinter/__pycache__/usr/local/pypy/
+pypy/lib_pypy/_tkinter/__pycache__/usr/local/pypy/lib_pypy/
+pypy/lib_pypy/_tkinter/__pycache__/usr/local/pypy/lib_pypy/_tkinter/
+pypy/lib_pypy/_tkinter/__pycache__/usr/local/pypy/lib_pypy/_tkinter/__pycache__/
+pypy/lib_pypy/_tkinter/__pycache__/usr/local/pypy/lib_pypy/_tkinter/__pycache__/_cffi__gf5a2d03x49dc1c04.o
+pypy/lib_pypy/_tkinter/app.py
+pypy/lib_pypy/_tkinter/app.pyc
+pypy/lib_pypy/_tkinter/tclobj.py
+pypy/lib_pypy/_tkinter/tclobj.pyc
+pypy/lib_pypy/_tkinter/tklib.py
+pypy/lib_pypy/_tkinter/tklib.pyc
 pypy/lib_pypy/cPickle.py
 pypy/lib_pypy/cPickle.pyc
 pypy/lib_pypy/cStringIO.py
@@ -3030,6 +3066,14 @@ pypy/lib_pypy/cffi/verifier.pyc
 pypy/lib_pypy/ctypes_config_cache/
 pypy/lib_pypy/ctypes_config_cache/__init__.py
 pypy/lib_pypy/ctypes_config_cache/__init__.pyc
+pypy/lib_pypy/ctypes_config_cache/_locale_64_.py
+pypy/lib_pypy/ctypes_config_cache/_locale_64_.pyc
+pypy/lib_pypy/ctypes_config_cache/_locale_cache.py
+pypy/lib_pypy/ctypes_config_cache/_locale_cache.pyc
+pypy/lib_pypy/ctypes_config_cache/_resource_64_.py
+pypy/lib_pypy/ctypes_config_cache/_resource_64_.pyc
+pypy/lib_pypy/ctypes_config_cache/_resource_cache.py
+pypy/lib_pypy/ctypes_config_cache/_resource_cache.pyc
 pypy/lib_pypy/ctypes_config_cache/dumpcache.py
 pypy/lib_pypy/ctypes_config_cache/dumpcache.pyc
 pypy/lib_pypy/ctypes_config_cache/locale.ctc.py
@@ -3038,8 +3082,6 @@ pypy/lib_pypy/ctypes_config_cache/rebuild.py
 pypy/lib_pypy/ctypes_config_cache/rebuild.pyc
 pypy/lib_pypy/ctypes_config_cache/resource.ctc.py
 pypy/lib_pypy/ctypes_config_cache/resource.ctc.pyc
-pypy/lib_pypy/ctypes_config_cache/syslog.ctc.py
-pypy/lib_pypy/ctypes_config_cache/syslog.ctc.pyc
 pypy/lib_pypy/ctypes_support.py
 pypy/lib_pypy/ctypes_support.pyc
 pypy/lib_pypy/datetime.py
@@ -3050,6 +3092,7 @@ pypy/lib_pypy/disassembler.py
 pypy/lib_pypy/disassembler.pyc
 pypy/lib_pypy/future_builtins.py
 pypy/lib_pypy/future_builtins.pyc
+pypy/lib_pypy/greenlet.egg-info
 pypy/lib_pypy/greenlet.py
 pypy/lib_pypy/greenlet.pyc
 pypy/lib_pypy/grp.py

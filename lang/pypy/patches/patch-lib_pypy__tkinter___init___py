@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_pypy__tkinter___init___py,v 1.1 2013/09/19 08:39:31 sthen Exp $
+
+Allow tkinter to use a single threaded TCL.
+From upstream a2cfb94ccff5
+
+--- lib_pypy/_tkinter/__init__.py.orig	Thu Aug  1 10:57:52 2013
++++ lib_pypy/_tkinter/__init__.py	Sun Sep 15 17:12:09 2013
+@@ -22,6 +22,7 @@ TCL_VERSION = tkffi.string(tklib.get_tcl_version())
+ READABLE = tklib.TCL_READABLE
+ WRITABLE = tklib.TCL_WRITABLE
+ EXCEPTION = tklib.TCL_EXCEPTION
++DONT_WAIT = tklib.TCL_DONT_WAIT
+ 
+ def create(screenName=None, baseName=None, className=None,
+            interactive=False, wantobjects=False, wantTk=True,

@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST.amd64,v 1.1.1.1 2013/06/11 22:10:48 edd Exp $
-${FULLPKGNAME}/lib_pypy/ctypes_config_cache/_locale_x86_64_.py
-${FULLPKGNAME}/lib_pypy/ctypes_config_cache/_resource_x86_64_.py
-${FULLPKGNAME}/lib_pypy/ctypes_config_cache/_syslog_x86_64_.py

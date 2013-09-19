@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/08/16 22:04:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2013/09/19 08:39:30 sthen Exp $
 
 VMEM_WARNING =		Yes
 
@@ -6,11 +6,10 @@ ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		fast implementation of the Python language
 
-V =			2.0.2
+V =			2.1
 DISTNAME =		pypy-${V}-src
 PKGNAME =		pypy-${V}
-REVISION =		1
-BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-$V-1.tar.xz
+BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-$V-2.tar.xz
 
 CATEGORIES =		lang
 
@@ -38,13 +37,14 @@ DISTFILES +=		${BOOTSTRAP-${MACHINE_ARCH}}:0
 # if adding archs, list *all* bootstraps in SUPDISTFILES
 SUPDISTFILES =		${BOOTSTRAP-amd64}:0
 
-MODULES +=		devel/gettext lang/python gcc4
+MODULES +=		devel/gettext lang/python gcc4 lang/tcl x11/tk
 MODPY_VERSION =		2.7
 MODGCC4_ARCHS =		*
 MODGCC4_LANGS =		c c++
 
 USE_GMAKE =		Yes
-BUILD_DEPENDS =		textproc/py-sphinx
+BUILD_DEPENDS =		textproc/py-sphinx ${MODTK_BUILD_DEPENDS}
+RUN_DEPENDS =		${MODTK_RUN_DEPENDS}
 
 WRKDIST =		${WRKDIR}/pypy-${V}-src
 
@@ -57,6 +57,20 @@ post-extract:
 	echo 'LD_LIBRARY_PATH=${WRKDIR}/bootstrap/system-libs exec ${WRKDIR}/bootstrap/bin/pypy "$$@"' >> ${WRKDIR}/bin/pypy
 	chmod +x ${WRKDIR}/bin/pypy
 .endif
+
+SUBST_VARS +=	MODTK_INCDIR MODTCL_INCDIR
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/lib_pypy/_tkinter/tklib.py
+	# prevent crap in the plist
+	rm ${WRKSRC}/lib_pypy/_tkinter/tklib.py${PATCHORIG} \
+		${WRKSRC}/lib_pypy/_tkinter/tklib.py.beforesubst \
+		${WRKSRC}/lib_pypy/_tkinter/__init__.py${PATCHORIG} \
+		${WRKSRC}/lib_pypy/_tkinter/app.py${PATCHORIG}
+
+# When updating the port, see pypy/tool/release/package.py and check for
+# new modules which require a cffi cache.
+CFFI_CACHES =	_sqlite3, _curses, syslog, _tkinter
 
 do-build:
 .if ${FLAVOR:Mno_bootstrap}
@@ -87,6 +101,19 @@ do-install:
 	${PREFIX}/pypy/bin/pypy -m compileall ${PREFIX}/pypy/lib_pypy
 	find ${PREFIX}/pypy/lib-python/2.7 -name "*.py" | grep -v test \
 	  | xargs ${PREFIX}/pypy/bin/pypy -m compileall
+	# make cffi cache
+	# this will generate various __pycache__ directories in lib_pypy.
+	# and it puts absolute paths in there too, yay...
+	${PREFIX}/pypy/bin/pypy -c 'import ${CFFI_CACHES}'
+	# but it contains absolute paths, so we fox that:
+	${INSTALL_DATA_DIR} ${PREFIX}/pypy/lib_pypy/__pycache__/${TRUEPREFIX}/pypy/
+	mv ${PREFIX}/pypy/lib_pypy/__pycache__/${PREFIX}/pypy/* \
+		${PREFIX}/pypy/lib_pypy/__pycache__/${TRUEPREFIX}/pypy/
+	rm -Rf ${PREFIX}/pypy/lib_pypy/__pycache__/${PORTSDIR}
+	${INSTALL_DATA_DIR} ${PREFIX}/pypy/lib_pypy/_tkinter/__pycache__/${TRUEPREFIX}/pypy/
+	mv ${PREFIX}/pypy/lib_pypy/_tkinter/__pycache__/${PREFIX}/pypy/* \
+		${PREFIX}/pypy/lib_pypy/_tkinter/__pycache__/${TRUEPREFIX}/pypy/
+	rm -Rf ${PREFIX}/pypy/lib_pypy/_tkinter/__pycache__/${PORTSDIR}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/pypy/lib_pypy
 	chown -R ${SHAREOWN}:${SHAREGRP}  ${PREFIX}/pypy/lib-python/2.7
 	cd ${PREFIX}/bin && ln -s ../pypy/bin/pypy

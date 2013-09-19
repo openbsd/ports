@@ -1,21 +1,18 @@
-$OpenBSD: patch-rpython_translator_platform_openbsd_py,v 1.1.1.1 2013/06/11 22:10:46 edd Exp $
+$OpenBSD: patch-rpython_translator_platform_openbsd_py,v 1.2 2013/09/19 08:39:31 sthen Exp $
 
 Fixes the order of CFLAGS and LDFLAGS.
 https://bitbucket.org/pypy/pypy/pull-request/153
 
 -O3 not allowed in ports builds.
 
---- rpython/translator/platform/openbsd.py.orig	Tue May 21 09:09:59 2013
-+++ rpython/translator/platform/openbsd.py	Tue Jun 11 15:34:43 2013
-@@ -8,8 +8,9 @@ class OpenBSD(BSD):
-     DEFAULT_CC = "cc"
+--- rpython/translator/platform/openbsd.py.orig	Thu Aug  1 10:58:00 2013
++++ rpython/translator/platform/openbsd.py	Tue Sep  3 17:38:43 2013
+@@ -9,7 +9,7 @@ class OpenBSD(BSD):
      name = "openbsd"
  
--    link_flags = os.environ.get("LDFLAGS", '-pthread').split()
--    cflags = os.environ.get("CFLAGS", "-O3 -pthread -fomit-frame-pointer -D_BSD_SOURCE").split()
-+    link_flags = os.environ.get("LDFLAGS", "").split() + ['-pthread']
+     link_flags = os.environ.get("LDFLAGS", "").split() + ['-pthread']
+-    cflags = ['-O3', '-pthread', '-fomit-frame-pointer', '-D_BSD_SOURCE'
 +    cflags = ['-pthread', '-fomit-frame-pointer', '-D_BSD_SOURCE'
-+             ] + os.environ.get("CFLAGS", "").split()
+              ] + os.environ.get("CFLAGS", "").split()
  
      def _libs(self, libraries):
-         libraries=set(libraries + ("intl", "iconv", "compat"))
