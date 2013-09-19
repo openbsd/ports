@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.51 2013/06/26 19:29:16 landry Exp $
+@comment $OpenBSD: PLIST,v 1.52 2013/09/19 13:44:13 landry Exp $
 @conflict firefox3-*
 @conflict firefox35-*
+@conflict firefox36-*
 @conflict mozilla-firebird-*
 @conflict mozilla-firefox-*
 @pkgpath www/firefox3
 @pkgpath www/firefox35
+@pkgpath www/firefox36
 @pkgpath www/firefox4
 @pkgpath www/mozilla-firefox,-main
 bin/${MOZILLA_PROJECT}
