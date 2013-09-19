@@ -1,11 +1,14 @@
-$OpenBSD: patch-gio_gunixmounts_c,v 1.9 2013/09/19 11:35:23 ajacoutot Exp $
+$OpenBSD: patch-gio_gunixmounts_c,v 1.10 2013/09/19 11:56:11 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=583330
-From FreeBSD: poll the list of mounted filesystems since we can't rely
-on checking for mtab updates like other systems.
+
+From d474309c3f439fbe8c4af8cd9acac70235cf67a3 Mon Sep 17 00:00:00 2001
+From: Lionel Landwerlin <llandwerlin@gmail.com>
+Date: Fri, 05 Apr 2013 14:18:28 +0000
+Subject: gunixmounts: correctly flag hasmntopt usage
 
 --- gio/gunixmounts.c.orig	Wed Aug  7 16:34:32 2013
-+++ gio/gunixmounts.c	Thu Sep 19 12:51:59 2013
++++ gio/gunixmounts.c	Thu Sep 19 13:42:05 2013
 @@ -155,6 +155,9 @@ struct _GUnixMountMonitor {
    GFileMonitor *fstab_monitor;
    GFileMonitor *mtab_monitor;
@@ -73,7 +76,19 @@ on checking for mtab updates like other systems.
      "kernfs",
      "linprocfs",
      "proc",
-@@ -1126,6 +1142,10 @@ get_mounts_timestamp (void)
+@@ -774,9 +790,11 @@ _g_get_unix_mount_points (void)
+           (strcmp (mntent->mnt_dir, "none") == 0))
+ 	continue;
+ 
++#ifdef HAVE_HASMNTOPT
+       /* We ignore bind fstab entries, as we ignore bind mounts anyway */
+       if (hasmntopt (mntent, "bind"))
+         continue;
++#endif
+ 
+       mount_entry = g_new0 (GUnixMountPoint, 1);
+       mount_entry->mount_path = g_strdup (mntent->mnt_dir);
+@@ -1126,6 +1144,10 @@ get_mounts_timestamp (void)
        if (stat (monitor_file, &buf) == 0)
  	return (guint64)buf.st_mtime;
      }
@@ -84,7 +99,7 @@ on checking for mtab updates like other systems.
    return 0;
  }
  
-@@ -1271,6 +1291,13 @@ g_unix_mount_monitor_finalize (GObject *object)
+@@ -1271,6 +1293,13 @@ g_unix_mount_monitor_finalize (GObject *object)
        g_object_unref (monitor->mtab_monitor);
      }
  
@@ -98,7 +113,7 @@ on checking for mtab updates like other systems.
    the_mount_monitor = NULL;
  
    G_OBJECT_CLASS (g_unix_mount_monitor_parent_class)->finalize (object);
-@@ -1352,6 +1379,52 @@ mtab_file_changed (GFileMonitor      *monitor,
+@@ -1352,6 +1381,52 @@ mtab_file_changed (GFileMonitor      *monitor,
  }
  
  static gboolean
@@ -151,7 +166,7 @@ on checking for mtab updates like other systems.
  proc_mounts_changed (GIOChannel   *channel,
                       GIOCondition  cond,
                       gpointer      user_data)
-@@ -1415,6 +1488,12 @@ g_unix_mount_monitor_init (GUnixMountMonitor *monitor)
+@@ -1415,6 +1490,12 @@ g_unix_mount_monitor_init (GUnixMountMonitor *monitor)
            g_object_unref (file);
            g_signal_connect (monitor->mtab_monitor, "changed", (GCallback)mtab_file_changed, monitor);
          }
