@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/09/19 14:55:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2013/09/19 14:56:28 sthen Exp $
 
 SHARED_ONLY =		Yes
 # Racket only supports i386 and amd64 on OpenBSD
@@ -59,7 +59,7 @@ WRKSRC =		${WRKDIST}/src
 
 NO_TEST =		Yes
 VMEM_WARNING =		Yes
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD =	Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
