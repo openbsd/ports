@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:07:38 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/09/19 16:24:51 landry Exp $
 
 COMMENT =		free OpenGl billard game
+BROKEN =		uses GL symbols removed in recent updates
 
 DISTNAME =		foobillard-3.0a
 
