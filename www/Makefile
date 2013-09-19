@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.622 2013/09/19 14:57:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.623 2013/09/19 15:55:27 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -369,7 +369,6 @@
      SUBDIR += pecl-swish
      SUBDIR += pecl-uploadprogress
      SUBDIR += perlbal
-     SUBDIR += photoshow
      SUBDIR += php-markdown
      SUBDIR += php-openid
      SUBDIR += php-predis
@@ -523,7 +522,6 @@
      SUBDIR += w3mir
      SUBDIR += wApua
      SUBDIR += wbox
-     SUBDIR += webacula
      SUBDIR += webalizer
      SUBDIR += webcollab
      SUBDIR += webgui
