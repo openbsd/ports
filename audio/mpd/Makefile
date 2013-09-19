@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.54 2013/03/21 08:45:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2013/09/19 15:02:16 dcoppa Exp $
 
 COMMENT =		Music Player Daemon
-DISTNAME =		mpd-0.17.3
+DISTNAME =		mpd-0.17.5
 CATEGORIES =		audio
 HOMEPAGE =		http://www.musicpd.org/
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
@@ -14,7 +14,7 @@ WANTLIB =		FLAC ao audiofile c cdio cdio_cdda cdio_paranoia \
 			mikmod ogg pthread samplerate sndfile sndio \
 			stdc++ z
 
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=musicpd/}
+MASTER_SITES =		http://www.musicpd.org/download/mpd/stable/
 
 MODULES =		devel/gettext
 
