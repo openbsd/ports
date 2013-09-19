@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.11 2013/08/12 04:11:21 robert Exp $
+# $OpenBSD: Makefile,v 1.12 2013/09/19 14:55:42 ajacoutot Exp $
 
 COMMENT=	monitoring and reporting tool for bacula(8)
 
 DISTNAME=	bacula-web-5.2.13-1
 PKGNAME=	bacula-web-5.2.13.1
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	www sysutils
 
 HOMEPAGE=	http://www.bacula-web.org/
+
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
