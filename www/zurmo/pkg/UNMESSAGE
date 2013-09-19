@@ -1,4 +1,0 @@
-To completely deinstall Zurmo you need to perform the following steps
-as root:
-    rm -f /var/www/conf/modules/zurmo.conf
-    rm -rf ${PREFIX}/zurmo
