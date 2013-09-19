@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.236 2013/08/15 10:42:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.237 2013/09/19 13:19:16 landry Exp $
 
 COMMENT =	Mozilla web browser
-BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 
 # Don't forget to bump www/firefox-i18n after updates.
 # Don't forget to update devel/xulrunner/2.0 if patches changes.
 
-MOZILLA_VERSION =	23.0
-REVISION =		0
+MOZILLA_VERSION =	24.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
 #MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/
-SO_VERSION =	42.0
+SO_VERSION =	43.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	browsercomps mozalloc mozgnome xul
@@ -30,7 +28,7 @@ MODPY_RUNDEP =	No
 
 # necessary glue to build with the correct compiler after fx 17
 MODULES +=		gcc4 lang/clang
-MODGCC4_ARCHS =		powerpc
+MODGCC4_ARCHS =		powerpc sparc64 alpha
 MODGCC4_LANGS =		c c++
 MODCLANG_ARCHS =	amd64 i386
 MODCLANG_LANGS =	c c++
@@ -46,10 +44,6 @@ WANTLIB +=	kvm
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
 CONFIGURE_ARGS +=	--disable-debug-symbols
 .endif
-
-# XXX remove in 24
-CONFIGURE_ENV+=	TERM=xterm
-MAKE_ENV+=	TERM=xterm
 
 CONFIGURE_ARGS +=	--enable-gstreamer
 LIB_DEPENDS +=	multimedia/gstreamer-0.10/plugins-base
