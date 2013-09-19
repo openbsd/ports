@@ -1,21 +1,21 @@
-$OpenBSD: patch-gio_gunixmounts_c,v 1.8 2013/03/27 17:49:34 ajacoutot Exp $
+$OpenBSD: patch-gio_gunixmounts_c,v 1.9 2013/09/19 11:35:23 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=583330
 From FreeBSD: poll the list of mounted filesystems since we can't rely
 on checking for mtab updates like other systems.
 
---- gio/gunixmounts.c.orig	Wed Mar 13 14:39:09 2013
-+++ gio/gunixmounts.c	Tue Mar 26 11:02:30 2013
-@@ -156,6 +156,9 @@ struct _GUnixMountMonitor {
+--- gio/gunixmounts.c.orig	Wed Aug  7 16:34:32 2013
++++ gio/gunixmounts.c	Thu Sep 19 12:51:59 2013
+@@ -155,6 +155,9 @@ struct _GUnixMountMonitor {
+   GFileMonitor *fstab_monitor;
    GFileMonitor *mtab_monitor;
  
-   GSource *proc_mounts_watch_source;
-+
 +  guint mount_poller_source;
 +  GList *mount_poller_mounts;
++
+   GSource *proc_mounts_watch_source;
  };
  
- struct _GUnixMountMonitorClass {
 @@ -167,6 +170,8 @@ static GUnixMountMonitor *the_mount_monitor = NULL;
  static GList *_g_get_unix_mounts (void);
  static GList *_g_get_unix_mount_points (void);
@@ -33,7 +33,7 @@ on checking for mtab updates like other systems.
  #include <sys/ucred.h>
  #include <sys/mount.h>
  #include <fstab.h>
-@@ -243,11 +249,14 @@ g_unix_is_mount_path_system_internal (const char *moun
+@@ -243,22 +249,31 @@ g_unix_is_mount_path_system_internal (const char *moun
      "/",              /* we already have "Filesystem root" in Nautilus */ 
      "/bin",
      "/boot",
@@ -48,7 +48,11 @@ on checking for mtab updates like other systems.
      "/live/cow",
      "/live/image",
      "/media",
-@@ -258,7 +267,12 @@ g_unix_is_mount_path_system_internal (const char *moun
+     "/mnt",
+     "/opt",
++    "/rescue",
+     "/root",
+     "/sbin",
      "/srv",
      "/tmp",
      "/usr",
@@ -56,12 +60,20 @@ on checking for mtab updates like other systems.
      "/usr/local",
 +    "/usr/obj",
 +    "/usr/ports",
-+    "/usr/xobj",
 +    "/usr/src",
++    "/usr/xobj",
      "/var",
      "/var/crash",
      "/var/local",
-@@ -1126,6 +1140,10 @@ get_mounts_timestamp (void)
+@@ -299,6 +314,7 @@ guess_system_internal (const char *mountpoint,
+     "devfs",
+     "devpts",
+     "ecryptfs",
++    "fdescfs",
+     "kernfs",
+     "linprocfs",
+     "proc",
+@@ -1126,6 +1142,10 @@ get_mounts_timestamp (void)
        if (stat (monitor_file, &buf) == 0)
  	return (guint64)buf.st_mtime;
      }
@@ -72,7 +84,7 @@ on checking for mtab updates like other systems.
    return 0;
  }
  
-@@ -1271,6 +1289,13 @@ g_unix_mount_monitor_finalize (GObject *object)
+@@ -1271,6 +1291,13 @@ g_unix_mount_monitor_finalize (GObject *object)
        g_object_unref (monitor->mtab_monitor);
      }
  
@@ -86,11 +98,10 @@ on checking for mtab updates like other systems.
    the_mount_monitor = NULL;
  
    G_OBJECT_CLASS (g_unix_mount_monitor_parent_class)->finalize (object);
-@@ -1362,6 +1387,51 @@ proc_mounts_changed (GIOChannel   *channel,
-   return TRUE;
+@@ -1352,6 +1379,52 @@ mtab_file_changed (GFileMonitor      *monitor,
  }
  
-+static gboolean
+ static gboolean
 +mount_change_poller (gpointer user_data)
 +{
 +  GUnixMountMonitor *mount_monitor;
@@ -112,15 +123,15 @@ on checking for mtab updates like other systems.
 +      for (i = 0; i < g_list_length (current_mounts); i++)
 +        {
 +          GUnixMountEntry *m1;
-+	  GUnixMountEntry *m2;
++         GUnixMountEntry *m2;
 +
-+	  m1 = (GUnixMountEntry *)g_list_nth_data (current_mounts, i);
-+	  m2 = (GUnixMountEntry *)g_list_nth_data (mount_monitor->mount_poller_mounts, i);
++         m1 = (GUnixMountEntry *)g_list_nth_data (current_mounts, i);
++         m2 = (GUnixMountEntry *)g_list_nth_data (mount_monitor->mount_poller_mounts, i);
 +          if (! has_changed && g_unix_mount_compare (m1, m2) != 0)
 +            has_changed = TRUE;
 +
-+	  g_unix_mount_free (m2);
-+	}
++         g_unix_mount_free (m2);
++       }
 +    }
 +
 +  g_list_free (mount_monitor->mount_poller_mounts);
@@ -135,10 +146,12 @@ on checking for mtab updates like other systems.
 +  return TRUE;
 +}
 +
- static void
- g_unix_mount_monitor_init (GUnixMountMonitor *monitor)
- {
-@@ -1415,6 +1485,12 @@ g_unix_mount_monitor_init (GUnixMountMonitor *monitor)
++
++static gboolean
+ proc_mounts_changed (GIOChannel   *channel,
+                      GIOCondition  cond,
+                      gpointer      user_data)
+@@ -1415,6 +1488,12 @@ g_unix_mount_monitor_init (GUnixMountMonitor *monitor)
            g_object_unref (file);
            g_signal_connect (monitor->mtab_monitor, "changed", (GCallback)mtab_file_changed, monitor);
          }
