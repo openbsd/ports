@@ -1,21 +1,24 @@
-# $OpenBSD: Makefile,v 1.11 2013/08/07 15:37:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2013/09/19 18:00:33 dcoppa Exp $
 
 COMMENT=		library for interfacing MPD
 
-DISTNAME=		libmpdclient-2.7
-SHARED_LIBS=		mpdclient 1.2	# 2.5
+MAJV=			2
+MINV=			8
+DISTNAME=		libmpdclient-${MAJV}.${MINV}
+SHARED_LIBS=		mpdclient 1.3	# 2.8
 CATEGORIES=		audio
-HOMEPAGE=		http://mpd.wikia.com/wiki/ClientLib:libmpdclient
+HOMEPAGE=		http://www.musicpd.org/libs/libmpdclient/
 
 MAINTAINER=		David Coppa <dcoppa@openbsd.org>
 
 # 3-BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=musicpd/}
+MASTER_SITES=		http://www.musicpd.org/download/libmpdclient/${MAJV}/
 
+USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		ac_cv_path_DOXYGEN=""
+CONFIGURE_ARGS=		--disable-documentation
 
 .include <bsd.port.mk>

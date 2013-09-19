@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/11/07 12:36:08 sthen Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.4 2013/09/19 18:00:33 dcoppa Exp $
 include/mpd/
 include/mpd/async.h
 include/mpd/audio_format.h
@@ -36,9 +35,13 @@ include/mpd/tag.h
 include/mpd/version.h
 lib/libmpdclient.a
 lib/libmpdclient.la
+@lib lib/libmpdclient.so.${LIBmpdclient_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/libmpdclient.pc
 share/doc/libmpdclient/
 share/doc/libmpdclient/COPYING
 share/doc/libmpdclient/NEWS
 share/doc/libmpdclient/README
+share/vala/
+share/vala/vapi/
+share/vala/vapi/libmpdclient.vapi
