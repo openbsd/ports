@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/05/16 18:56:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/09/19 08:32:21 ajacoutot Exp $
 @bin bin/grilo-simple-playlist
 @bin bin/grilo-test-ui-${API}
 @bin bin/grl-inspect-${API}
@@ -45,12 +45,30 @@ lib/pkgconfig/grilo-net-${API}.pc
 share/gir-1.0/
 share/gir-1.0/Grl-${API}.gir
 share/gir-1.0/GrlNet-${API}.gir
+share/locale/as/
+share/locale/as/LC_MESSAGES/
+share/locale/as/LC_MESSAGES/grilo.mo
 share/locale/cs/LC_MESSAGES/grilo.mo
+share/locale/da/LC_MESSAGES/grilo.mo
+share/locale/de/LC_MESSAGES/grilo.mo
 share/locale/el/LC_MESSAGES/grilo.mo
 share/locale/es/LC_MESSAGES/grilo.mo
+share/locale/fr/LC_MESSAGES/grilo.mo
 share/locale/gl/LC_MESSAGES/grilo.mo
+share/locale/id/LC_MESSAGES/grilo.mo
+share/locale/it/LC_MESSAGES/grilo.mo
+share/locale/ja/LC_MESSAGES/grilo.mo
+share/locale/ko/LC_MESSAGES/grilo.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
+share/locale/lt/LC_MESSAGES/grilo.mo
+share/locale/lv/LC_MESSAGES/grilo.mo
+share/locale/nb/LC_MESSAGES/grilo.mo
+share/locale/pa/LC_MESSAGES/grilo.mo
 share/locale/pl/LC_MESSAGES/grilo.mo
 share/locale/pt_BR/LC_MESSAGES/grilo.mo
+share/locale/ru/LC_MESSAGES/grilo.mo
+share/locale/sk/LC_MESSAGES/grilo.mo
 share/locale/sl/LC_MESSAGES/grilo.mo
 share/locale/sr/LC_MESSAGES/grilo.mo
 share/locale/sr@latin/
@@ -59,6 +77,9 @@ share/locale/sr@latin/LC_MESSAGES/grilo.mo
 share/locale/tg/
 share/locale/tg/LC_MESSAGES/
 share/locale/tg/LC_MESSAGES/grilo.mo
+share/locale/zh_CN/LC_MESSAGES/grilo.mo
+share/locale/zh_HK/LC_MESSAGES/grilo.mo
+share/locale/zh_TW/LC_MESSAGES/grilo.mo
 share/vala/
 share/vala/vapi/
 share/vala/vapi/grilo-${API}.deps
