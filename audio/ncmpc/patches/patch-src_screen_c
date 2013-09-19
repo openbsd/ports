@@ -1,16 +1,16 @@
-$OpenBSD: patch-src_screen_c,v 1.4 2012/03/04 16:57:19 dcoppa Exp $
---- src/screen.c.orig	Sun Feb  5 20:04:22 2012
-+++ src/screen.c	Fri Mar  2 13:18:26 2012
-@@ -40,6 +40,8 @@
- #include "screen_lyrics.h"
+$OpenBSD: patch-src_screen_c,v 1.5 2013/09/19 16:34:15 dcoppa Exp $
+--- src/screen.c.orig	Tue Jun 12 21:17:38 2012
++++ src/screen.c	Thu Sep 19 17:45:24 2013
+@@ -41,6 +41,8 @@
  #include "screen_outputs.h"
+ #include "screen_chat.h"
  
 +#include <sys/ioctl.h>
 +
  #include <mpd/client.h>
  
  #include <stdlib.h>
-@@ -47,6 +49,7 @@
+@@ -48,6 +50,7 @@
  #include <string.h>
  #include <time.h>
  #include <locale.h>
@@ -18,7 +18,7 @@ $OpenBSD: patch-src_screen_c,v 1.4 2012/03/04 16:57:19 dcoppa Exp $
  
  #ifndef NCMPC_MINI
  /** welcome message time [s] */
-@@ -200,6 +203,13 @@ screen_exit(void)
+@@ -201,6 +204,13 @@ screen_exit(void)
  void
  screen_resize(struct mpdclient *c)
  {

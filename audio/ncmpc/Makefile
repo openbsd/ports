@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/10 22:55:04 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2013/09/19 16:34:14 dcoppa Exp $
 
 COMMENT=		curses based frontend for mpd
 
-DISTNAME=		ncmpc-0.20
+MAJV=			0
+MINV=			21
+DISTNAME=		ncmpc-${MAJV}.${MINV}
 EPOCH=			0
 CATEGORIES=		audio
-REVISION=	0
 
-HOMEPAGE=		http://mpd.wikia.com/wiki/Client:Ncmpc
+HOMEPAGE=		http://www.musicpd.org/clients/ncmpc/
 
 MAINTAINER=		David Coppa <dcoppa@openbsd.org>
 
@@ -19,7 +20,7 @@ LIB_DEPENDS=		devel/glib2 \
 			audio/libmpdclient>=2.4
 MODULES=		devel/gettext
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=musicpd/}
+MASTER_SITES=		http://www.musicpd.org/download/ncmpc/${MAJV}/
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPP=${CPP} \
