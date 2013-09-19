@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.58 2013/08/08 06:58:31 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.59 2013/09/19 12:20:08 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -150,9 +150,7 @@ INSTALL_STRIP =
 CONFIGURE_ARGS +=--enable-application=${MOZILLA_CODENAME}
 
 .if ${MOZILLA_PROJECT} == "firefox" || \
-	${MOZILLA_PROJECT} == "firefox35" || \
 	${MOZILLA_PROJECT} == "firefox36" || \
-	${MOZILLA_PROJECT} == "xulrunner" || \
 	${MOZILLA_PROJECT} == "fennec" || \
 	${MOZILLA_PROJECT} == "xulrunner1.9"
 WRKDIST ?=	${WRKDIR}/mozilla-${MOZILLA_BRANCH}
@@ -198,7 +196,7 @@ MOZILLA_SUBST_FILES +=	${_MOZDIR}/xpcom/io/nsAppFileLocationProvider.cpp \
 			${_MOZDIR}/extensions/spellcheck/hunspell/src/mozHunspell.cpp \
 			${_MOZDIR}/toolkit/xre/nsXREDirProvider.cpp
 
-.if ${MOZILLA_BRANCH} == 1.9.1 || ${MOZILLA_BRANCH} == 1.9.2
+.if ${MOZILLA_BRANCH} == 1.9.2
 MOZILLA_SUBST_FILES +=	${_MOZDIR}/js/src/xpconnect/shell/Makefile.in
 .endif
 
@@ -211,8 +209,7 @@ pre-configure:
 .endfor
 
 # common install target - ports can use post-install for specific stuff
-.if (${MOZILLA_PROJECT} == "xulrunner1.9" && ${MOZILLA_BRANCH} == "1.9.2") || \
-	${MOZILLA_PROJECT} == "firefox35" || \
+.if ${MOZILLA_PROJECT} == "xulrunner1.9" || \
 	${MOZILLA_PROJECT} == "firefox36" || \
 	${MOZILLA_PROJECT} == "sunbird"
 do-install:
