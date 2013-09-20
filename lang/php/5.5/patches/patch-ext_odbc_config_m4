@@ -1,11 +1,14 @@
-$OpenBSD: patch-ext_odbc_config_m4,v 1.1.1.1 2013/08/07 16:46:55 robert Exp $
---- ext/odbc/config.m4.orig.port	Tue Jul 31 14:02:00 2007
-+++ ext/odbc/config.m4	Sat Jun 18 12:14:50 2011
+$OpenBSD: patch-ext_odbc_config_m4,v 1.2 2013/09/20 20:20:28 sthen Exp $
+
+don't link php binary with iodbc
+
+--- ext/odbc/config.m4.orig.port	Fri Sep 20 15:48:07 2013
++++ ext/odbc/config.m4	Fri Sep 20 15:48:28 2013
 @@ -373,7 +373,6 @@ PHP_ARG_WITH(iodbc,,
-     if test "$PHP_IODBC" = "yes"; then
-       PHP_IODBC=/usr/local
-     fi
--    PHP_ADD_LIBRARY_WITH_PATH(iodbc, $PHP_IODBC/$PHP_LIBDIR)
-     PHP_ADD_INCLUDE($PHP_IODBC/include, 1)
-     ODBC_TYPE=iodbc
-     ODBC_INCLUDE=-I$PHP_IODBC/include
+       AC_PATH_PROG(PKG_CONFIG, pkg-config, no)
+     fi 
+     if test -x "$PKG_CONFIG" && $PKG_CONFIG --exists libiodbc ; then
+-      PHP_ADD_LIBRARY_WITH_PATH(iodbc, $PHP_IODBC/$PHP_LIBDIR)
+       ODBC_TYPE=iodbc
+       ODBC_INCLUDE=`$PKG_CONFIG --cflags-only-I libiodbc`
+       ODBC_LFLAGS=`$PKG_CONFIG --libs-only-L libiodbc`
