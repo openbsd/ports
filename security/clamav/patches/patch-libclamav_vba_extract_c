@@ -1,6 +1,6 @@
-$OpenBSD: patch-libclamav_vba_extract_c,v 1.6 2010/04/01 13:18:54 sthen Exp $
---- libclamav/vba_extract.c.orig	Thu Jan  7 17:09:18 2010
-+++ libclamav/vba_extract.c	Wed Mar 10 21:28:42 2010
+$OpenBSD: patch-libclamav_vba_extract_c,v 1.7 2013/09/20 15:23:03 sthen Exp $
+--- libclamav/vba_extract.c.orig	Mon Sep 16 20:28:14 2013
++++ libclamav/vba_extract.c	Fri Sep 20 15:27:54 2013
 @@ -95,7 +95,7 @@ vba_endian_convert_32(uint32_t value, int big_endian)
  
  

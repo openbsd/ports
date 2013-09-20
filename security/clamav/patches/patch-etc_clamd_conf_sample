@@ -1,5 +1,6 @@
---- etc/clamd.conf.orig	Tue Mar  6 16:31:31 2012
-+++ etc/clamd.conf	Thu Mar 15 17:06:51 2012
+$OpenBSD: patch-etc_clamd_conf_sample,v 1.1 2013/09/20 15:23:00 sthen Exp $
+--- etc/clamd.conf.sample.orig	Mon Sep 16 20:28:14 2013
++++ etc/clamd.conf.sample	Fri Sep 20 15:27:54 2013
 @@ -11,7 +11,7 @@ Example
  # LogFile must be writable for the user running daemon.
  # A full path is required.
@@ -9,7 +10,7 @@
  
  # By default the log file is locked for writing - the lock protects against
  # running clamd multiple times (if want to run another clamd, please
-@@ -66,7 +66,7 @@ Example
+@@ -71,7 +71,7 @@ Example
  
  # Path to the database directory.
  # Default: hardcoded (depends on installation options)
@@ -18,7 +19,7 @@
  
  # Only load the official signatures published by the ClamAV project.
  # Default: no
-@@ -186,7 +186,7 @@ Example
+@@ -191,7 +191,7 @@ Example
  
  # Run as another user (clamd must be started by root for this option to work)
  # Default: don't drop privileges
@@ -27,7 +28,7 @@
  
  # Initialize supplementary group access (clamd must be started by root).
  # Default: no
-@@ -422,7 +422,7 @@ Example
+@@ -448,7 +448,7 @@ Example
  # deeply the process should be continued.
  # Note: setting this limit too high may result in severe damage to the system.
  # Default: 16

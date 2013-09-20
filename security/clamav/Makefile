@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.84 2013/05/08 20:25:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.85 2013/09/20 15:22:58 sthen Exp $
 
 COMMENT=		virus scanner
-DISTNAME=		clamav-0.97.8
-REVISION=		0
+DISTNAME=		clamav-0.98
 
 CATEGORIES=		security
-SHARED_LIBS=		clamav 20.0 \
-			clamunrar 2.0 \
-			clamunrar_iface 2.0
+SHARED_LIBS=		clamav 21.0 \
+			clamunrar 3.0 \
+			clamunrar_iface 3.0
 
 HOMEPAGE=		http://www.clamav.net/
 
@@ -25,7 +24,6 @@ LIB_DEPENDS=		archivers/bzip2 \
 			devel/libtool,-ltdl
 
 RUN_DEPENDS=		archivers/lha \
-			archivers/zoo \
 			archivers/arc \
 			archivers/unzip
 
@@ -54,6 +52,7 @@ LDFLAGS+=	-pthread -L/usr/lib \
 		-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" \
 		CPPFLAGS="${CPPFLAGS}"
+FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/clamav
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mllvm}
@@ -67,8 +66,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/clamav \
 		${PREFIX}/share/examples/clamav
 	cd ${WRKSRC}/docs; ${INSTALL_DATA} *.pdf ${PREFIX}/share/doc/clamav
-	cd ${WRKSRC}/etc; ${INSTALL_DATA} clamd.conf freshclam.conf \
-		clamav-milter.conf ${PREFIX}/share/examples/clamav
 	cd ${WRKSRC}/examples; ${INSTALL_DATA} ex1.c \
 		${PREFIX}/share/examples/clamav
 
