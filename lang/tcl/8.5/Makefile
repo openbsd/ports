@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2013/07/16 02:48:05 stu Exp $
+# $OpenBSD: Makefile,v 1.28 2013/09/20 10:09:08 stu Exp $
 
 COMMENT =		Tool Command Language
 
-DISTNAME =		tcl8.5.14
-PKGNAME =		tcl-8.5.14
-REVISION =		1
-SHARED_LIBS =		tcl85 1.4
+DISTNAME =		tcl8.5.15
+PKGNAME =		tcl-8.5.15
+SHARED_LIBS =		tcl85 1.5
 CATEGORIES =		lang lang/tcl
 HOMEPAGE =		http://www.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -59,7 +58,6 @@ ALL_TARGET =		all libtcl85.a
 CONFIGURE_ARGS +=	EXTRA_INSTALL_BINARIES='@echo "Installing libtcl85.a to $$(LIB_INSTALL_DIR)/" \
 			&& $$(INSTALL_DATA) libtcl85.a $$(LIB_INSTALL_DIR)/libtcl85.a \
 			&& (cd $$(LIB_INSTALL_DIR) ; $$(RANLIB) libtcl85.a)'
-CONFIGURE_ARGS +=	tcl_cv_ld_elf=yes
 .endif
 
 WRKSRC =		${WRKDIST}/unix

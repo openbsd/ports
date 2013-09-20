@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2013/07/06 11:06:36 stu Exp $
+# $OpenBSD: Makefile,v 1.33 2013/09/20 10:10:04 stu Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
-DISTNAME =		tk8.5.14
-PKGNAME =		tk-8.5.14
-REVISION =		0
-SHARED_LIBS =		tk85 0.11
+DISTNAME =		tk8.5.15
+PKGNAME =		tk-8.5.15
+SHARED_LIBS =		tk85 0.12
 CATEGORIES =		x11 x11/tk
 HOMEPAGE =		http://www.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -55,9 +54,9 @@ FLAVOR ?=
 .if ${FLAVOR:Mthreaded}
 CONFIGURE_ARGS +=	--enable-threads
 WANTLIB +=		pthread
-LIB_DEPENDS +=		tcl->=8.5.14,<8.5.15-threaded:lang/tcl/8.5,threaded
+LIB_DEPENDS +=		tcl->=8.5.15,<8.5.16-threaded:lang/tcl/8.5,threaded
 .else
-LIB_DEPENDS +=		tcl->=8.5.14,<8.5.15-!threaded:lang/tcl/8.5
+LIB_DEPENDS +=		tcl->=8.5.15,<8.5.16-!threaded:lang/tcl/8.5
 .endif
 
 .include <bsd.port.arch.mk>
@@ -67,7 +66,6 @@ ALL_TARGET =		all libtk85.a
 CONFIGURE_ARGS +=	EXTRA_INSTALL_BINARIES='@echo "Installing libtk85.a to $$(LIB_INSTALL_DIR)/" \
 			&& $$(INSTALL_DATA) libtk85.a $$(LIB_INSTALL_DIR)/libtk85.a \
 			&& (cd $$(LIB_INSTALL_DIR) ; $$(RANLIB) libtk85.a)'
-CONFIGURE_ARGS +=	tcl_cv_ld_elf=yes
 .endif
 
 TEST_IS_INTERACTIVE =	X11

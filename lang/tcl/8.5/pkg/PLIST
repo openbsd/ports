@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2013/07/06 11:04:19 stu Exp $
+@comment $OpenBSD: PLIST,v 1.14 2013/09/20 10:09:09 stu Exp $
 @option no-default-conflict
 @conflict tcl->=8.5,<8.6
 %%SHARED%%
@@ -808,10 +808,10 @@ lib/tcl/tcl8.5/man/catn/
 lib/tcl/tcl8.5/man/license.terms
 lib/tcl/tcl8.5/modules/
 lib/tcl/tcl8.5/modules/8.5/
-lib/tcl/tcl8.5/modules/8.5/http-2.7.11.tm
-lib/tcl/tcl8.5/modules/8.5/msgcat-1.5.1.tm
+lib/tcl/tcl8.5/modules/8.5/http-2.7.12.tm
+lib/tcl/tcl8.5/modules/8.5/msgcat-1.5.2.tm
 lib/tcl/tcl8.5/modules/8.5/platform/
-lib/tcl/tcl8.5/modules/8.5/platform-1.0.11.tm
+lib/tcl/tcl8.5/modules/8.5/platform-1.0.12.tm
 lib/tcl/tcl8.5/modules/8.5/platform/shell-1.1.4.tm
 lib/tcl/tcl8.5/modules/8.5/tcltest-2.3.5.tm
 lib/tcl/tcl8.5/msgs/

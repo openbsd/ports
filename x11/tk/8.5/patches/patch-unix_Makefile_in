@@ -1,6 +1,6 @@
-$OpenBSD: patch-unix_Makefile_in,v 1.11 2013/06/28 06:13:04 stu Exp $
---- unix/Makefile.in.orig	Mon Apr  1 14:36:49 2013
-+++ unix/Makefile.in	Tue Apr  9 22:16:04 2013
+$OpenBSD: patch-unix_Makefile_in,v 1.12 2013/09/20 10:10:05 stu Exp $
+--- unix/Makefile.in.orig	Fri Aug 30 12:28:24 2013
++++ unix/Makefile.in	Thu Sep  5 17:46:15 2013
 @@ -541,6 +541,7 @@ PUBLIC_HDRS = $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkDec
  # The private headers we want installed for install-private-headers
  PRIVATE_HDRS = $(GENERIC_DIR)/tkInt.h $(GENERIC_DIR)/tkIntDecls.h \
@@ -32,7 +32,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.11 2013/06/28 06:13:04 stu Exp $
  	@if test -f "tk${MAJOR_VERSION}${MINOR_VERSION}.dll"; then \
  	    $(INSTALL_LIBRARY) "tk${MAJOR_VERSION}${MINOR_VERSION}.dll" "$(DLL_INSTALL_DIR)";\
  	    chmod 555 "$(DLL_INSTALL_DIR)/tk${MAJOR_VERSION}${MINOR_VERSION}.dll";\
-@@ -783,6 +788,7 @@ install-demos:
+@@ -785,6 +790,7 @@ install-demos:
  	    if [ -f $$i ] ; then \
  		sed -e '3 s|exec wish|exec wish$(VERSION)|' \
  			$$i > "$(DEMO_INSTALL_DIR)"/`basename $$i`; \
@@ -40,7 +40,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.11 2013/06/28 06:13:04 stu Exp $
  	    fi; \
  	    done;
  	@for i in $(DEMOPROGS); \
-@@ -790,7 +796,7 @@ install-demos:
+@@ -792,7 +798,7 @@ install-demos:
  	    if test $$i = "square"; then \
  	    rm -f  "$(DEMO_INSTALL_DIR)/$$i"; \
  	    else \
