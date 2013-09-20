@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/09/19 22:30:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2013/09/20 08:35:54 sthen Exp $
 
 COMMENT=	Flash 4/5 movie output library
 
 DISTNAME=	ming-0.4.5
+REVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ming/}
 
