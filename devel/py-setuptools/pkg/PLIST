@@ -1,7 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/12/14 20:25:11 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/09/20 11:24:33 edd Exp $
 @conflict py-distribute-*
 @comment bin/easy_install
 bin/easy_install-${MODPY_VERSION}
+lib/python${MODPY_VERSION}/site-packages/_markerlib/
+lib/python${MODPY_VERSION}/site-packages/_markerlib/__init__.py
+lib/python${MODPY_VERSION}/site-packages/_markerlib/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/_markerlib/markers.py
+lib/python${MODPY_VERSION}/site-packages/_markerlib/markers.pyc
 lib/python${MODPY_VERSION}/site-packages/easy_install.py
 lib/python${MODPY_VERSION}/site-packages/easy_install.pyc
 lib/python${MODPY_VERSION}/site-packages/pkg_resources.py
@@ -13,12 +18,24 @@ lib/python${MODPY_VERSION}/site-packages/setuptools-${MODPY_EGG_VERSION}-py${MOD
 lib/python${MODPY_VERSION}/site-packages/setuptools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/setuptools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/setuptools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/setuptools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/setuptools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/setuptools/__init__.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/_backport/
+lib/python${MODPY_VERSION}/site-packages/setuptools/_backport/__init__.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/_backport/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/_backport/hashlib/
+lib/python${MODPY_VERSION}/site-packages/setuptools/_backport/hashlib/__init__.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/_backport/hashlib/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/_backport/hashlib/_sha.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/_backport/hashlib/_sha.pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/_backport/hashlib/_sha256.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/_backport/hashlib/_sha256.pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/_backport/hashlib/_sha512.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/_backport/hashlib/_sha512.pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/archive_util.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/archive_util.pyc
-lib/python${MODPY_VERSION}/site-packages/setuptools/cli.exe
 lib/python${MODPY_VERSION}/site-packages/setuptools/command/
 lib/python${MODPY_VERSION}/site-packages/setuptools/command/__init__.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/command/__init__.pyc
@@ -62,25 +79,70 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/command/test.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/command/test.pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/command/upload.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/command/upload.pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/command/upload_docs.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/command/upload_docs.pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/compat.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/compat.pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/depends.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/depends.pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/dist.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/dist.pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/extension.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/extension.pyc
-lib/python${MODPY_VERSION}/site-packages/setuptools/gui.exe
 lib/python${MODPY_VERSION}/site-packages/setuptools/package_index.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/package_index.pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/py24compat.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/py24compat.pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/py26compat.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/py26compat.pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/py27compat.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/py27compat.pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/sandbox.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/sandbox.pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/script template (dev).py
+lib/python${MODPY_VERSION}/site-packages/setuptools/script template (dev).pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/script template.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/script template.pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/site-patch.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/site-patch.pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/ssl_support.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/ssl_support.pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/tests/
 lib/python${MODPY_VERSION}/site-packages/setuptools/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/tests/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/tests/doctest.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/tests/doctest.pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/tests/py26compat.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/tests/py26compat.pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/tests/script-with-bom.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/tests/script-with-bom.pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/tests/server.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/tests/server.pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/tests/test_bdist_egg.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/tests/test_bdist_egg.pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/tests/test_build_ext.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/tests/test_build_ext.pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/tests/test_develop.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/tests/test_develop.pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/tests/test_dist_info.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/tests/test_dist_info.pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/tests/test_easy_install.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/tests/test_easy_install.pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/tests/test_egg_info.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/tests/test_egg_info.pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/tests/test_markerlib.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/tests/test_markerlib.pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/tests/test_packageindex.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/tests/test_packageindex.pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/tests/test_resources.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/tests/test_resources.pyc
-lib/python${MODPY_VERSION}/site-packages/site.py
-lib/python${MODPY_VERSION}/site-packages/site.pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/tests/test_sandbox.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/tests/test_sandbox.pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/tests/test_sdist.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/tests/test_sdist.pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/tests/test_test.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/tests/test_test.pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/tests/test_upload_docs.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/tests/test_upload_docs.pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools/version.py
+lib/python${MODPY_VERSION}/site-packages/setuptools/version.pyc
