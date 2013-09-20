@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2013/07/11 07:50:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2013/09/20 13:02:49 okan Exp $
 
 COMMENT =	GNU system administration tool for networks
 
-DISTNAME =	cfengine-3.4.4
+DISTNAME =	cfengine-3.4.5
 F =		${DISTNAME}${EXTRACT_SUFX}
 DISTFILES =	$F{download?file=$F}
 
-REVISION =	1
 SHARED_LIBS +=  promises	0.0 # 1.0
 CATEGORIES =	sysutils
 HOMEPAGE =	http://cfengine.com/
