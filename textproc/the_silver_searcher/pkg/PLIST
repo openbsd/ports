@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/09/20 12:46:59 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/09/20 14:40:09 bcallah Exp $
 @bin bin/ag
 @man man/man1/ag.1
 share/bash-completion/
 share/bash-completion/completions/
-share/bash-completion/completions/ag.bashcomp.sh
+share/bash-completion/completions/ag
