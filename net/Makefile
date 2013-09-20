@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.814 2013/08/31 00:10:20 bluhm Exp $
+# $OpenBSD: Makefile,v 1.815 2013/09/20 11:01:59 naddy Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -166,7 +166,6 @@
      SUBDIR += irssi-silc
      SUBDIR += irssi-xmpp
      SUBDIR += isc-bind
-     SUBDIR += isc-bind,ratelimit
      SUBDIR += isc-dhcp
      SUBDIR += jabberd,mysql
      SUBDIR += jabberd,mysql,ldap
