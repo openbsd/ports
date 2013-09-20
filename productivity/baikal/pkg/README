@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2013/09/13 15:27:58 ajacoutot Exp $
+$OpenBSD: README,v 1.4 2013/09/20 07:11:02 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -22,12 +22,11 @@ Support for SQLite3 is included with the main php package; to use
 another database, the corresponding package needs to be installed:
     php-pdo_mysql
 
-
 Post-installation
 =================
 To finish the installation:
     # touch ${INSTDIR}/Specific/ENABLE_INSTALL
-    -> go to http://<hostname>/baikal/ then follow the directions
+    -> go to http://<hostname>/baikal/ then follow the instructions
 
 Baikal administration
 =====================
