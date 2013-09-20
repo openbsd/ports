@@ -1,7 +1,7 @@
-$OpenBSD: patch-ext_standard_config_m4,v 1.1.1.1 2013/08/07 16:35:46 robert Exp $
---- ext/standard/config.m4.orig.port	Wed Jul  3 08:10:53 2013
-+++ ext/standard/config.m4	Sat Jul 27 18:39:50 2013
-@@ -366,16 +366,16 @@ dnl
+$OpenBSD: patch-ext_standard_config_m4,v 1.2 2013/09/20 20:20:10 sthen Exp $
+--- ext/standard/config.m4.orig.port	Wed Sep 18 06:48:57 2013
++++ ext/standard/config.m4	Fri Sep 20 15:22:03 2013
+@@ -388,16 +388,16 @@ dnl
  dnl Detect library functions needed by php dns_xxx functions
  dnl ext/standard/php_dns.h will collect these in a single define: HAVE_FULL_DNS_FUNCS
  dnl

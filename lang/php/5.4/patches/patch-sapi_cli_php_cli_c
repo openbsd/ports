@@ -1,7 +1,7 @@
-$OpenBSD: patch-sapi_cli_php_cli_c,v 1.1.1.1 2013/08/07 16:35:46 robert Exp $
---- sapi/cli/php_cli.c.orig.port	Sat Jul 27 18:45:21 2013
-+++ sapi/cli/php_cli.c	Sat Jul 27 18:45:54 2013
-@@ -667,6 +667,7 @@ static int do_cli(int argc, char **argv TSRMLS_DC) /* 
+$OpenBSD: patch-sapi_cli_php_cli_c,v 1.2 2013/09/20 20:20:11 sthen Exp $
+--- sapi/cli/php_cli.c.orig.port	Wed Sep 18 06:48:57 2013
++++ sapi/cli/php_cli.c	Fri Sep 20 15:22:03 2013
+@@ -668,6 +668,7 @@ static int do_cli(int argc, char **argv TSRMLS_DC) /* 
  	int lineno = 0;
  	const char *param_error=NULL;
  	int hide_argv = 0;
