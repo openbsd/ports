@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_example_conf_in,v 1.11 2012/12/12 16:00:34 sthen Exp $
---- doc/example.conf.in.orig	Wed Dec 12 08:45:28 2012
-+++ doc/example.conf.in	Wed Dec 12 10:05:52 2012
-@@ -193,7 +193,7 @@ server:
+$OpenBSD: patch-doc_example_conf_in,v 1.12 2013/09/20 20:57:53 brad Exp $
+--- doc/example.conf.in.orig	Thu Sep 12 02:53:12 2013
++++ doc/example.conf.in	Fri Sep 13 17:19:24 2013
+@@ -197,7 +197,7 @@ server:
  	# chroot: "@UNBOUND_CHROOT_DIR@"
  
  	# if given, user privileges are dropped (after binding port),
@@ -10,7 +10,7 @@ $OpenBSD: patch-doc_example_conf_in,v 1.11 2012/12/12 16:00:34 sthen Exp $
  	# If you give "" no privileges are dropped.
  	# username: "@UNBOUND_USERNAME@"
  
-@@ -485,7 +485,7 @@ python:
+@@ -530,7 +530,7 @@ python:
  remote-control:
  	# Enable remote control with unbound-control(8) here.
  	# set up the keys and certificates with unbound-control-setup.

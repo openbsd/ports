@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/05/23 06:52:21 jakob Exp $
-@lib lib/libunbound.so.${LIBunbound_VERSION}

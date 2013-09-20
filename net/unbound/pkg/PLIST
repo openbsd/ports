@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/12/12 16:00:34 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/09/20 20:57:54 brad Exp $
 @newgroup _unbound:601
 @newuser _unbound:601:601:daemon:Unbound Daemon:/var/unbound:/sbin/nologin
-%%SHARED%%
 include/unbound.h
 lib/libunbound.a
 lib/libunbound.la
+@lib lib/libunbound.so.${LIBunbound_VERSION}
 @man man/man1/unbound-host.1
 @man man/man3/libunbound.3
 @man man/man3/ub_cancel.3
@@ -40,6 +40,7 @@ lib/libunbound.la
 @man man/man5/unbound.conf.5
 @man man/man8/unbound-anchor.8
 @man man/man8/unbound-checkconf.8
+@man man/man8/unbound-control-setup.8
 @man man/man8/unbound-control.8
 @man man/man8/unbound.8
 @bin sbin/unbound
