@@ -1,0 +1,17 @@
+$OpenBSD: patch-ProxyChannel_cxx,v 1.1 2013/09/20 07:05:12 ajacoutot Exp $
+
+error: aggregate 'iovec iov' has incomplete type and cannot be defined
+
+--- ProxyChannel.cxx.orig	Fri Sep 20 09:02:15 2013
++++ ProxyChannel.cxx	Fri Sep 20 09:01:48 2013
+@@ -57,6 +57,10 @@
+ 	#include "h235/h235crypto.h"
+ #endif
+ 
++#ifdef __OpenBSD__
++#include <sys/uio.h>
++#endif
++
+ #ifdef _WIN32
+ #include <mswsock.h>
+ #endif
