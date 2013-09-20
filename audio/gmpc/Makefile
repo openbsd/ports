@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2013/03/21 08:45:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2013/09/20 05:32:57 dcoppa Exp $
 
 COMMENT=		GNOME music player client
 
@@ -25,7 +25,7 @@ WANTLIB=		ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 			GL Xxf86vm dbus-1 dbus-glib-1 drm xcb-shm \
 			mpd soup-2.4 xcb-render ffi unique-1.0
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=musicpd/}
+MASTER_SITES=		http://www.musicpd.org/download/gmpc/${VERSION}/
 
 MODULES=		devel/gettext textproc/intltool
 

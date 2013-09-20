@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/05/31 15:34:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2013/09/20 05:32:57 dcoppa Exp $
 
 SHARED_ONLY =	Yes
 
@@ -17,7 +17,7 @@ CATEGORIES =	audio
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 HOMEPAGE =	http://gmpclient.org/plugins
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=musicpd/}
+MASTER_SITES =	http://www.musicpd.org/download/gmpc-plugins/${VERSION}/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

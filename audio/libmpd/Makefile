@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/21 08:45:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2013/09/20 05:32:57 dcoppa Exp $
 
 COMMENT=		mpd client library
 
@@ -15,7 +15,7 @@ HOMEPAGE =		http://gmpclient.org/
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=musicpd/}
+MASTER_SITES=		http://www.musicpd.org/download/libmpd/${VERSION}/
 
 LIB_DEPENDS=		devel/glib2
 WANTLIB=		glib-2.0 pcre
