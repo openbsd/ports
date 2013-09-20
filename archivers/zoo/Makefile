@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/10 22:28:05 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2013/09/20 20:37:15 sthen Exp $
 
 COMMENT=	handle the old .ZOO archive format
 
 DISTNAME=	zoo-2.10pl1
 PKGNAME=	zoo-2.10.1
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
+MASTER_SITES=	http://spacehopper.org/mirrors/
 
 # Conditional
 PERMIT_PACKAGE_CDROM=	Yes
