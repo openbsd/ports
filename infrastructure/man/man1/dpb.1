@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.85 2013/09/10 17:52:11 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.86 2013/09/21 09:12:39 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: September 10 2013 $
+.Dd $Mdocdate: September 21 2013 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -361,11 +361,26 @@ Note that you should always allow for some margin, as
 makes its decision based on the size information collected during previous
 builds, so in cases of significant updates, the work directory size will
 usually grow.
+.it nochecksum=0/1
+Defaults to 1.
+During the junk stage, run
+.Xr pkg_delete 1
+with the
+.Fl q
+(no checksum) option.
 .It parallel=p
 Run big ports on several cores.
 See
 .Fl p
 option.
+.It repair=0/1
+Defaults to 1.
+Run
+.Xr pkg_add 1
+with the repair option.
+This is useful on some bulk machines which tend to crash a lot, leaving
+.Pa /var/db/pkg
+in a weird state.
 .It sf=n
 Speed factor.
 An estimate of that machine's speed with that number of jobs
@@ -382,6 +397,11 @@ ports known to build under that duration are deemed to be small, so
 won't bother calling fine-grained steps for patch/configure/fake.
 It will go straight to build and package instead.
 Defaults to 120 seconds.
+.It squiggles=n
+Number of squiggles on this host (see
+.Sq the squiggle heuristics
+below).
+Defaults to 1 squiggle for hosts with 4 jobs or more, 0 otherwise.
 .It stuck=s
 Stuck timeout (in seconds * sf) after which tasks which show no progress
 will get killed.
@@ -415,7 +435,7 @@ new dependencies, it will be followed by a
 stage which uses
 .Xr pkg_delete 1
 with the
-.Fl aX
+.Fl aXI
 options to delete automatically installed packages that are currently
 not needed.
 .Pp
@@ -587,6 +607,10 @@ www/mozilla-firefox(build) [9452] 41% unchanged for 92 seconds
 This contains:
 .Bl -dash
 .It
+an optional
+.Sq ~
+squiggle marker (see below),
+.It
 the pkgpath being built,
 .It
 the step currently being run,
@@ -678,6 +702,21 @@ previous builds can be used to try to build long-running jobs first.
 Similarly, fetches will use the continue option of
 .Xr ftp 1 ,
 since distfiles are checksummed after the fetch anyways.
+.Ss THE SQUIGGLE HEURISTICS
+However, on machines with lots of cores, the basic scheduling heuristics
+yields a tail of very small jobs, where
+.Nm
+will mostly wait on
+.Xr pkg_add 1
+to solve dependencies.
+Starting with
+.Ox 5.5 ,
+a new mechanism (squiggles) was introduced to counter-balance this effect:
+big machines devote some of their cores to
+.Sq squiggles ,
+jobs that walk the queue in reverse, thus building smallest ports first.
+As a result, small ports are built as a trickle alongside the largest ports,
+thus offsetting the negative effect of the exponential queue for a large part.
 .Sh LOCKS AND ERRORS
 .Nm
 still uses the normal ports tree mechanism while building, which includes
