@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.2 2013/09/08 11:10:59 espie Exp $
+# $OpenBSD: Init.pm,v 1.3 2013/09/21 08:40:09 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -81,11 +81,9 @@ sub new
 {
 	my ($class, $host, $prop) = @_;
 	if (DPB::Host->name_is_localhost($host)) {
-		return $init->{localhost} //= DPB::Core::Local->new_noreg($host, $prop);
-	} else {
-		require DPB::Core::Distant;
-		return $init->{$host} //= DPB::Core::Distant->new_noreg($host, $prop);
+		$host = 'localhost';
 	}
+	return $init->{$host} //= DPB::Core->new_noreg($host, $prop);
 }
 
 

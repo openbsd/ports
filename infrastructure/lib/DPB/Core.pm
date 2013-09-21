@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.44 2013/09/18 15:30:40 espie Exp $
+# $OpenBSD: Core.pm,v 1.45 2013/09/21 08:40:09 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -31,13 +31,14 @@ sub shell
 sub new
 {
 	my ($class, $name, $prop) = @_;
+	if ($class->name_is_localhost($name)) {
+		$class = "DPB::Host::Localhost";
+		$name = 'localhost';
+	} else {
+		require DPB::Core::Distant;
+		$class = "DPB::Host::Distant";
+	}
 	if (!defined $hosts->{$name}) {
-		if ($class->name_is_localhost($name)) {
-			$class = "DPB::Host::Localhost";
-		} else {
-			require DPB::Core::Distant;
-			$class = "DPB::Host::Distant";
-		}
 		my $h = bless {host => $name, 
 			prop => DPB::HostProperties->finalize($prop) }, $class;
 		# XXX have to register *before* creating the shell
