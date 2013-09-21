@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.46 2013/09/21 08:41:55 espie Exp $
+# $OpenBSD: Core.pm,v 1.47 2013/09/21 08:44:32 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -501,6 +501,9 @@ sub one_core
 	my $s = $core->job->name." [$core->{pid}]".
 	    (DPB::Host->name_is_localhost($hostname) ? "" : " on ".$hostname).
 	    $core->job->watched($time, $core);
+    	if ($core->{squiggle}) {
+		$s = '~'.$s;
+	}
 	if (defined $core->{swallowed}) {
 		$s = (scalar(@{$core->{swallowed}})+1).'*'.$s;
 	}
@@ -606,6 +609,7 @@ sub mark_available
 		# be swallowed
 		if (defined $core->host->{swallow}) {
 			for my $c (values %{$core->host->{swallow}}) {
+				$core->unsquiggle;
 				push(@{$c->{swallowed}}, $core);
 				if (--$c->{swallow} == 0) {
 					delete $core->host->{swallow}{$c};
@@ -629,7 +633,22 @@ sub get
 	if (@$a > 1) {
 		@$a = sort {$b->sf <=> $a->sf} @$a;
 	}
-	return shift @$a;
+	my $core = shift @$a;
+	if (!$core->{squiggle} && $core->host->{wantsquiggles}) {
+		$core->host->{wantsquiggles}--;
+		$core->{squiggle} = 1;
+	}
+	return $core;
+}
+
+sub unsquiggle
+{
+	my $core = shift;
+	if ($core->{squiggle}) {
+		delete $core->{squiggle};
+		$core->host->{wantsquiggles}++;
+	}
+	return $core;
 }
 
 sub get_affinity
@@ -712,6 +731,13 @@ my $fetchcores = [];
 sub available
 {
 	return $fetchcores;
+}
+
+sub get
+{
+	my $self = shift;
+	$a = $self->available;
+	return shift @$a;
 }
 
 package DPB::Core::Clock;
