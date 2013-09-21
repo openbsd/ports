@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.113 2013/09/18 13:26:40 espie Exp $
+# $OpenBSD: Port.pm,v 1.114 2013/09/21 08:56:44 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -355,6 +355,9 @@ sub run
 	if ($job->{builder}{forceupdate}) {
 		push(@cmd,  "-Dinstalled");
 	}
+	if ($core->prop->{repair}) {
+		push(@cmd, "-Drepair");
+	}
 	if ($job->{builder}{state}{localbase} ne '/usr/local') {
 		push(@cmd, "-L", $job->{builder}{state}{localbase});
 	}
@@ -466,7 +469,11 @@ sub run
 	    $core->hostname);
 	if (defined $h && $self->add_live_depends($h, $core)) {
 		$self->add_dontjunk($job, $h);
-		my @cmd = ('/usr/sbin/pkg_delete', '-aIX', sort keys %$h);
+		my $opt = '-aiX';
+		if ($core->prop->{nochecksum}) {
+			$opt .= 'q';
+		}
+		my @cmd = ('/usr/sbin/pkg_delete', $opt, sort keys %$h);
 		print join(' ', @cmd, "\n");
 		$core->shell->sudo->exec(@cmd);
 		exit(1);
