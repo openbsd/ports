@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.3 2013/09/21 08:40:09 espie Exp $
+# $OpenBSD: Init.pm,v 1.4 2013/09/21 08:46:06 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -63,6 +63,11 @@ sub finalize
 	my ($self, $core) = @_;
 	$self->{signature}->print_out($core, $self->{logger});
 	if ($self->{signature}->matches($core, $self->{logger})) {
+		if (defined $core->prop->{squiggles}) {
+			$core->host->{wantsquiggles} = $core->prop->{squiggles};
+		} elsif ($core->prop->{jobs} > 3) {
+			$core->host->{wantsquiggles} = 1;
+		}
 		for my $i (1 .. $core->prop->{jobs}) {
 			ref($core)->new($core->hostname, $core->prop)->mark_ready;
 		}

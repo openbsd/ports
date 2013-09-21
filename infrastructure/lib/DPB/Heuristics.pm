@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.21 2013/06/21 09:05:18 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.22 2013/09/21 08:46:07 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -282,6 +282,15 @@ sub next
 	return pop @$self;
 }
 
+package DPB::Heuristics::ReverseSimpleSorter;
+our @ISA = (qw(DPB::Heuristics::SimpleSorter));
+
+sub next
+{
+	my $self = shift;
+	return shift @$self;
+}
+
 package DPB::Heuristics::Sorter;
 sub new
 {
@@ -385,7 +394,16 @@ our @ISA = qw(DPB::Heuristics::Bin);
 
 sub sorted
 {
-	my $self = shift;
+	my ($self, $core) = @_;
+	if ($core->{squiggle}) {
+		return DPB::Heuristics::ReverseSimpleSorter->new($self);
+	}
+	return $self->find_sorter($core);
+}
+
+sub find_sorter
+{
+	my ($self, $core) = @_;
 	return DPB::Heuristics::SimpleSorter->new($self);
 }
 
@@ -423,12 +441,12 @@ sub remove
 	$self->{bins}[find_bin($v->{weight})]->remove($v);
 }
 
-sub sorted
+sub find_sorter
 {
 	my ($self, $core) = @_;
 	my $all = DPB::Core->all_sf;
 	if ($core->sf > $all->[-1] - 1) {
-		return $self->SUPER::sorted($core);
+		return $self->SUPER::find_sorter($core);
 	} else {
 		return DPB::Heuristics::Sorter->new($self->bin_part($core->sf,
 		    $all));
