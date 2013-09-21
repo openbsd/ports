@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2013/08/07 15:37:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2013/09/21 17:59:07 jturner Exp $
 
 COMMENT =		simple distributed software configuration management
 
-DISTNAME =		fossil-src-20130618210923
-PKGNAME =		fossil-1.26
+DISTNAME =		fossil-src-20130911114349
+PKGNAME =		fossil-1.27
 EPOCH =			0
 CATEGORIES =		devel www
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 FLAVORS=		static
 FLAVOR?=
 
-WANTLIB =		c crypto ssl sqlite3>=23.0 z
+WANTLIB =		c crypto ssl sqlite3>=26.0 z
 
 MODULES =		lang/tcl
 
