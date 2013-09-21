@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.47 2013/09/21 08:44:32 espie Exp $
+# $OpenBSD: Core.pm,v 1.48 2013/09/21 09:20:17 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -838,7 +838,6 @@ sub exec
 	my ($self, @argv) = @_;
 	my $chroot = $self->prop->{chroot};
 	if ($self->{env}) {
-		unshift @argv, 'exec';
 		while (my ($k, $v) = each %{$self->{env}}) {
 			$v //= '';
 			unshift @argv, "$k=\'$v\'";
