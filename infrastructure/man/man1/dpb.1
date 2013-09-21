@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.86 2013/09/21 09:12:39 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.87 2013/09/21 14:47:00 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -1191,6 +1191,22 @@ connects to external hosts through
 relying on
 .Xr ssh_config 5
 for any special cases.
+.Pp
+.Nm
+requires ssh protocol 2, and won't work with ssh 1.
+Currently, it doesn't even report a problem, it just won't start jobs.
+.Pp
+When fetching distfiles,
+.Nm
+may freeze and spin in a tight loop while the last distfiles are being fetched.
+This is definitely a bug, which has been around for quite some time, which
+is a bit difficult to reproduce, and hasn't been fixed yet.
+So if
+.Nm
+stops updating its display right around the end of fetch, you've hit the bug.
+Just kill
+.Nm
+and restart it.
 .Sh SEE ALSO
 .Xr clean-old-distfiles 1 ,
 .Xr pkgpath 7
