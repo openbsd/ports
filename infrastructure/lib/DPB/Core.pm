@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.48 2013/09/21 09:20:17 espie Exp $
+# $OpenBSD: Core.pm,v 1.49 2013/09/21 11:31:19 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -607,7 +607,7 @@ sub mark_available
 
 		# if this host has cores that swallow things, let us 
 		# be swallowed
-		if (defined $core->host->{swallow}) {
+		if ($core->can_be_swallowed) {
 			for my $c (values %{$core->host->{swallow}}) {
 				$core->unsquiggle;
 				push(@{$c->{swallowed}}, $core);
@@ -634,11 +634,23 @@ sub get
 		@$a = sort {$b->sf <=> $a->sf} @$a;
 	}
 	my $core = shift @$a;
-	if (!$core->{squiggle} && $core->host->{wantsquiggles}) {
+	if ($core->can_squiggle && $core->host->{wantsquiggles}) {
 		$core->host->{wantsquiggles}--;
 		$core->{squiggle} = 1;
 	}
 	return $core;
+}
+
+sub can_squiggle
+{
+	my $core = shift;
+	return !$core->{squiggle};
+}
+
+sub can_be_swallowed
+{
+	my $core = shift;
+	return defined $core->host->{swallow};
 }
 
 sub unsquiggle
@@ -733,11 +745,14 @@ sub available
 	return $fetchcores;
 }
 
-sub get
+sub can_squiggle
 {
-	my $self = shift;
-	$a = $self->available;
-	return shift @$a;
+	return 0;
+}
+
+sub can_be_swallowed
+{
+	return 0;
 }
 
 package DPB::Core::Clock;
