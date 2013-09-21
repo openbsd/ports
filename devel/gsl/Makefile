@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.32 2013/03/21 08:45:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2013/09/21 15:57:28 sebastia Exp $
 
 COMMENT=	GNU Scientific Library
+BROKEN-vax =	missing ieeefp.h
 
 DISTNAME=	gsl-1.15
 REVISION=	0
