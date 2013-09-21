@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.45 2013/09/21 08:40:09 espie Exp $
+# $OpenBSD: Core.pm,v 1.46 2013/09/21 08:41:55 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -812,6 +812,7 @@ sub exec
 	my ($self, @argv) = @_;
 	my $chroot = $self->prop->{chroot};
 	if ($self->{env}) {
+		unshift @argv, 'exec';
 		while (my ($k, $v) = each %{$self->{env}}) {
 			$v //= '';
 			unshift @argv, "$k=\'$v\'";
@@ -831,7 +832,7 @@ sub exec
 		if (!$self->{sudo}) {
 			push(@cmd2, "-u", $self->prop->{chroot_user});
 		}
-		$self->_run(@cmd2, $chroot, "sh", "-c", $self->quote($cmd));
+		$self->_run(@cmd2, $chroot, "/bin/sh", "-c", $self->quote($cmd));
 	} else {
 		$self->_run($cmd);
 	}
