@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.49 2013/09/21 11:31:19 espie Exp $
+# $OpenBSD: Core.pm,v 1.50 2013/09/22 06:29:38 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -497,16 +497,20 @@ sub one_core
 {
 	my ($core, $time) = @_;
 	my $hostname = $core->hostname;
-		
-	my $s = $core->job->name." [$core->{pid}]".
-	    (DPB::Host->name_is_localhost($hostname) ? "" : " on ".$hostname).
-	    $core->job->watched($time, $core);
+	my $s = $core->job->name;
     	if ($core->{squiggle}) {
 		$s = '~'.$s;
 	}
 	if (defined $core->{swallowed}) {
 		$s = (scalar(@{$core->{swallowed}})+1).'*'.$s;
 	}
+	if ($core->{inmem}) {
+		$s .= '+';
+	}
+		
+	$s .= " [$core->{pid}]".
+	    (DPB::Host->name_is_localhost($hostname) ? "" : " on ".$hostname).
+	    $core->job->watched($time, $core);
     	return $s;
 }
 
