@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/09/20 11:53:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2013/09/22 18:50:23 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	H.323 gatekeeper
 
 V=		3.4
 DISTNAME=	gnugk-${V}
-REVISION=	0
+REVISION=	1
 
 WRKDIST=	${WRKDIR}/gnugk-${V}
 
@@ -33,6 +33,9 @@ BUILD_DEPENDS=	databases/mysql \
 LIB_DEPENDS=	net/h323plus>=1.24.99 \
 		net/net-snmp \
 		security/libssh
+
+# gnugk.1:34:1: FATAL: child violates parent syntax
+USE_GROFF=	Yes
 
 USE_GMAKE=	Yes
 ALL_TARGET=	optshared # XXX gkdefault
