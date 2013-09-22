@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2013/09/15 07:10:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2013/09/22 19:55:11 ajacoutot Exp $
 bin/meld
 lib/python${MODPY_VERSION}/site-packages/meld/
 lib/python${MODPY_VERSION}/site-packages/meld/meld/
@@ -170,6 +170,8 @@ lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/svn_17.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/vcview.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/vcview.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/vcview.pyo
+share/appdata/
+share/appdata/meld.appdata.xml
 share/applications/meld.desktop
 share/doc/meld/
 share/gnome/
