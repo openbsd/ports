@@ -1,7 +1,7 @@
-$OpenBSD: patch-unix_Makefile_in,v 1.1.1.1 2013/02/02 11:18:09 stu Exp $
---- unix/Makefile.in.orig	Wed Dec 19 10:39:12 2012
-+++ unix/Makefile.in	Sun Jan 27 11:46:55 2013
-@@ -559,6 +559,7 @@ PUBLIC_HDRS = $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkDec
+$OpenBSD: patch-unix_Makefile_in,v 1.2 2013/09/22 10:35:45 stu Exp $
+--- unix/Makefile.in.orig	Tue Sep  3 13:38:32 2013
++++ unix/Makefile.in	Sat Sep  7 09:55:16 2013
+@@ -558,6 +558,7 @@ PUBLIC_HDRS = $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkDec
  # The private headers we want installed for install-private-headers
  PRIVATE_HDRS = $(GENERIC_DIR)/tkInt.h $(GENERIC_DIR)/tkIntDecls.h \
  	$(GENERIC_DIR)/tkIntPlatDecls.h $(GENERIC_DIR)/tkPort.h \
@@ -9,7 +9,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.1.1.1 2013/02/02 11:18:09 stu Exp $
  	$(TTK_HDRS) $(@TK_WINDOWINGSYSTEM@_PRIVATE_HDRS)
  
  DEMOPROGS = browse hello ixset rmt rolodex square tcolor timer widget
-@@ -590,6 +591,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
+@@ -589,6 +590,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f $@
  	@MAKE_STUB_LIB@
  
@@ -20,7 +20,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.1.1.1 2013/02/02 11:18:09 stu Exp $
  # Build Aqua resource files
  ${TK_RSRC_FILE}: $(AQUA_RESOURCES)
  	rm -f $@
-@@ -741,10 +746,10 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $
+@@ -740,10 +745,10 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $
  	    echo "}";\
  	    fi \
  	    ) > "$(PKG_INDEX)"; \
@@ -32,7 +32,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.1.1.1 2013/02/02 11:18:09 stu Exp $
  	@if test -f "tk${MAJOR_VERSION}${MINOR_VERSION}.dll"; then \
  	    $(INSTALL_LIBRARY) "tk${MAJOR_VERSION}${MINOR_VERSION}.dll" "$(DLL_INSTALL_DIR)";\
  	    chmod 555 "$(DLL_INSTALL_DIR)/tk${MAJOR_VERSION}${MINOR_VERSION}.dll";\
-@@ -760,7 +765,7 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $
+@@ -761,7 +766,7 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $
  	@EXTRA_INSTALL_BINARIES@
  	@echo "Installing pkg-config file to $(LIB_INSTALL_DIR)/pkgconfig/"
  	@$(INSTALL_DATA_DIR) $(LIB_INSTALL_DIR)/pkgconfig
@@ -41,7 +41,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.1.1.1 2013/02/02 11:18:09 stu Exp $
  
  install-libraries: libraries
  	@for i in "$(SCRIPT_INSTALL_DIR)" "$(SCRIPT_INSTALL_DIR)/images" \
-@@ -815,6 +820,7 @@ install-demos:
+@@ -816,6 +821,7 @@ install-demos:
  	    if [ -f $$i ] ; then \
  		sed -e '3 s|exec wish|exec wish$(VERSION)|' \
  			$$i > "$(DEMO_INSTALL_DIR)"/`basename $$i`; \
@@ -49,7 +49,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.1.1.1 2013/02/02 11:18:09 stu Exp $
  	    fi; \
  	    done;
  	@for i in $(DEMOPROGS); \
-@@ -822,7 +828,7 @@ install-demos:
+@@ -823,7 +829,7 @@ install-demos:
  	    if test $$i = "square"; then \
  	    rm -f  "$(DEMO_INSTALL_DIR)/$$i"; \
  	    else \

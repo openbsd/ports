@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2013/07/09 16:15:01 stu Exp $
+# $OpenBSD: Makefile,v 1.5 2013/09/22 10:35:44 stu Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
-DISTNAME =		tk8.6.0
-PKGNAME =		tk-8.6.0
-REVISION =		1
-SHARED_LIBS =		tk86 0.0
+DISTNAME =		tk8.6.1
+PKGNAME =		tk-8.6.1
+SHARED_LIBS =		tk86 0.1
 CATEGORIES =		x11 x11/tk
 HOMEPAGE =		http://www.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -17,7 +16,7 @@ WANTLIB =		X11 Xext Xft Xss c m pthread tcl86 z
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcl/}
 DISTFILES =		${DISTNAME}-src.tar.gz
 
-LIB_DEPENDS =		tcl->=8.6.0,<8.6.1:lang/tcl/8.6
+LIB_DEPENDS =		tcl->=8.6.1,<8.6.2:lang/tcl/8.6
 
 MAKE_FLAGS +=		TK_LIBRARY='$$(prefix)/lib/tcl/tk$$(VERSION)' \
 			TCL_GENERIC_DIR='$$(GENERIC_DIR)' \
@@ -57,7 +56,6 @@ ALL_TARGET =		all libtk86.a
 CONFIGURE_ARGS +=	EXTRA_INSTALL_BINARIES='@echo "Installing libtk86.a to $$(LIB_INSTALL_DIR)/" \
 			&& $$(INSTALL_DATA) libtk86.a $$(LIB_INSTALL_DIR)/libtk86.a \
 			&& (cd $$(LIB_INSTALL_DIR) ; $$(RANLIB) libtk86.a)'
-CONFIGURE_ARGS +=	tcl_cv_ld_elf=yes
 .endif
 
 TEST_IS_INTERACTIVE =	X11

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/07/09 16:14:20 stu Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/09/22 10:33:13 stu Exp $
 @option no-default-conflict
 @conflict tcl->=8.6,<8.7
 %%SHARED%%
@@ -526,6 +526,7 @@ lib/tcl/tcl8.6/man/cat3/
 @man lib/tcl/tcl8.6/man/cat3/Tcl_NRCreateCommand.0
 @man lib/tcl/tcl8.6/man/cat3/Tcl_NREvalObj.0
 @man lib/tcl/tcl8.6/man/cat3/Tcl_NREvalObjv.0
+@man lib/tcl/tcl8.6/man/cat3/Tcl_NRExprObj.0
 @man lib/tcl/tcl8.6/man/cat3/Tcl_NewBignumObj.0
 @man lib/tcl/tcl8.6/man/cat3/Tcl_NewBooleanObj.0
 @man lib/tcl/tcl8.6/man/cat3/Tcl_NewByteArrayObj.0
@@ -927,13 +928,13 @@ lib/tcl/tcl8.6/man/catn/
 lib/tcl/tcl8.6/man/license.terms
 lib/tcl/tcl8.6/modules/
 lib/tcl/tcl8.6/modules/8.5/
-lib/tcl/tcl8.6/modules/8.5/msgcat-1.5.0.tm
+lib/tcl/tcl8.6/modules/8.5/msgcat-1.5.2.tm
 lib/tcl/tcl8.6/modules/8.5/platform/
-lib/tcl/tcl8.6/modules/8.5/platform-1.0.10.tm
+lib/tcl/tcl8.6/modules/8.5/platform-1.0.12.tm
 lib/tcl/tcl8.6/modules/8.5/platform/shell-1.1.4.tm
-lib/tcl/tcl8.6/modules/8.5/tcltest-2.3.5.tm
+lib/tcl/tcl8.6/modules/8.5/tcltest-2.3.6.tm
 lib/tcl/tcl8.6/modules/8.6/
-lib/tcl/tcl8.6/modules/8.6/http-2.8.5.tm
+lib/tcl/tcl8.6/modules/8.6/http-2.8.7.tm
 lib/tcl/tcl8.6/msgs/
 lib/tcl/tcl8.6/msgs/af.msg
 lib/tcl/tcl8.6/msgs/af_za.msg

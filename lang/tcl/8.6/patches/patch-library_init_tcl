@@ -1,7 +1,7 @@
-$OpenBSD: patch-library_init_tcl,v 1.1.1.1 2013/02/02 11:15:01 stu Exp $
---- library/init.tcl.orig	Tue May 31 11:03:46 2011
-+++ library/init.tcl	Wed Oct  5 01:55:14 2011
-@@ -51,11 +51,14 @@ namespace eval tcl {
+$OpenBSD: patch-library_init_tcl,v 1.2 2013/09/22 10:33:12 stu Exp $
+--- library/init.tcl.orig	Tue Sep  3 08:47:31 2013
++++ library/init.tcl	Sat Sep  7 08:33:19 2013
+@@ -52,11 +52,14 @@ namespace eval tcl {
  	    lappend ::auto_path $Dir
  	}
      }

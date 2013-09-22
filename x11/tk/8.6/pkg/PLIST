@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/07/09 16:15:01 stu Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/09/22 10:35:45 stu Exp $
 @option no-default-conflict
 @conflict tk->=8.6,<8.7
 %%SHARED%%
@@ -10,6 +10,7 @@ include/tk8.6/tkDecls.h
 include/tk8.6/tkInt.h
 include/tk8.6/tkIntDecls.h
 include/tk8.6/tkIntPlatDecls.h
+include/tk8.6/tkIntXlibDecls.h
 include/tk8.6/tkPlatDecls.h
 include/tk8.6/tkPort.h
 include/tk8.6/tkUnixDefault.h

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2013/07/16 02:48:45 stu Exp $
+# $OpenBSD: Makefile,v 1.7 2013/09/22 10:33:12 stu Exp $
 
 COMMENT =		Tool Command Language
 
-DISTNAME =		tcl8.6.0
-PKGNAME =		tcl-8.6.0
-REVISION =		3
-SHARED_LIBS =		tcl86 0.0
+DISTNAME =		tcl8.6.1
+PKGNAME =		tcl-8.6.1
+SHARED_LIBS =		tcl86 0.1
 CATEGORIES =		lang lang/tcl
 HOMEPAGE =		http://www.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -16,7 +15,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =		c m pthread z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcl/}
-DISTFILES =		tcl-core8.6.0-src.tar.gz
+DISTFILES =		tcl-core8.6.1-src.tar.gz
 
 MAKE_FLAGS +=		TCL_PACKAGE_PATH='$$(prefix)/lib/tcl' \
 			TCL_LIBRARY='$$(prefix)/lib/tcl/tcl$$(VERSION)'
@@ -48,7 +47,6 @@ ALL_TARGET =		binaries libtcl86.a
 CONFIGURE_ARGS +=	EXTRA_INSTALL_BINARIES='@echo "Installing libtcl86.a to $$(LIB_INSTALL_DIR)/" \
 			&& $$(INSTALL_DATA) libtcl86.a $$(LIB_INSTALL_DIR)/libtcl86.a \
 			&& (cd $$(LIB_INSTALL_DIR) ; $$(RANLIB) libtcl86.a)'
-CONFIGURE_ARGS +=	tcl_cv_ld_elf=yes
 .else
 ALL_TARGET =		binaries
 .endif
