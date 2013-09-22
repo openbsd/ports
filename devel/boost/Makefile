@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2013/04/12 01:11:32 brad Exp $
+# $OpenBSD: Makefile,v 1.47 2013/09/22 14:31:24 dcoppa Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -7,7 +7,7 @@ COMMENT=	free peer-reviewed portable C++ source libraries
 VERSION=	1.53.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME=	boost-${VERSION}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=boost/}
 EXTRACT_SUFX=	.tar.bz2
@@ -19,6 +19,7 @@ BOOST_LIBS=	boost_atomic-mt \
 		boost_filesystem boost_filesystem-mt \
 		boost_graph boost_graph-mt \
 		boost_iostreams boost_iostreams-mt \
+		boost_locale-mt \
 		boost_math_c99 boost_math_c99-mt \
 		boost_math_c99f boost_math_c99f-mt \
 		boost_math_c99l boost_math_c99l-mt \
@@ -52,12 +53,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c m pthread stdc++ util z
 
-MODULES=	lang/python
+MODULES=	converters/libiconv \
+		lang/python
 MODPY_RUNDEP=	No
 
 MAKE_ENV=	GCC="${CC}" GXX="${CXX}"
 
-BJAM_CONFIG=	-sNO_BZIP2=1 \
+BJAM_CONFIG=	-sICONV_PATH=${LOCALBASE} \
+		-sNO_BZIP2=1 \
 		-d+2 -q \
 		-j ${MAKE_JOBS} \
 		cflags='${CFLAGS}' cxxflags='${CXXFLAGS}' \

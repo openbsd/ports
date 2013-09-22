@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2013/03/08 01:21:38 brad Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/09/22 14:31:24 dcoppa Exp $
 @bin bin/bjam
 include/boost/
 include/boost/accumulators/
@@ -10116,6 +10116,8 @@ lib/libboost_iostreams-mt.a
 @lib lib/libboost_iostreams-mt.so.${LIBboost_iostreams-mt_VERSION}
 lib/libboost_iostreams.a
 @lib lib/libboost_iostreams.so.${LIBboost_iostreams_VERSION}
+lib/libboost_locale-mt.a
+@lib lib/libboost_locale-mt.so.${LIBboost_locale-mt_VERSION}
 lib/libboost_math_c99-mt.a
 @lib lib/libboost_math_c99-mt.so.${LIBboost_math_c99-mt_VERSION}
 lib/libboost_math_c99.a
