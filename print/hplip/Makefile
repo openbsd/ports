@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2013/09/13 16:43:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.100 2013/09/22 19:00:42 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ COMMENT-hpcups=		HP native CUPS driver
 COMMENT-hpijs=		HP ghostscript driver (spooler independent)
 COMMENT-gui=		HPLIP graphical tools
 
-V=			3.13.8
+V=			3.13.9
 DISTNAME=		hplip-${V}
 SUBST_VARS=		V
 
@@ -19,10 +19,6 @@ PKGNAME-hpaio=		hpaio-${V}
 PKGNAME-hpcups=		hpcups-${V}
 PKGNAME-hpijs=		hpijs-${V}
 PKGNAME-gui=		hplip-gui-${V}
-
-REVISION-main=		1
-REVISION-common=	1
-REVISION-hpcups=	1
 
 SHARED_LIBS +=  hpmud		2.0 # 0.6
 SHARED_LIBS +=  hpip		2.0 # 0.1
@@ -192,6 +188,7 @@ post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/share/hplip
 	rm -r ${WRKINST}/usr/lib
+	rm -r ${WRKINST}/etc/udev
 	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/*.la
 	rm ${PREFIX}/lib/sane/*.la
 

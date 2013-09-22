@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST-hpijs,v 1.30 2013/08/22 10:49:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST-hpijs,v 1.31 2013/09/22 19:00:43 ajacoutot Exp $
 @conflict hplip-libs-<=3.9.8
 @conflict hpcups-<=3.2.11
 @pkgpath print/hpijs
 @bin bin/hpijs
-@bin libexec/cups/filter/hplipjs
 share/cups/drv/hp/hpijs.drv
 share/foomatic/
 share/foomatic/db/
@@ -185,6 +184,7 @@ share/foomatic/db/source/PPD/HP/hp-designjet_t790ps_24in-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_t790ps_44in-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_t920-postscript.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_z5200_postscript-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-designjet_z5400-postscript.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_z6100ps_42in_photo-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_z6100ps_60in_photo-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_z6200_42in_photo-ps.ppd.gz
@@ -238,6 +238,7 @@ share/foomatic/db/source/PPD/HP/hp-deskjet_3920-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_3940-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_400-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_400l-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-deskjet_4510_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_460-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_4610_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_4620_series-hpijs.ppd.gz
@@ -655,6 +656,7 @@ share/foomatic/db/source/PPD/HP/hp-laserjet_p4515n-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_p4515tn-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_p4515x-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_p4515xm-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-laserjet_pro_mfp_m435-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_professional_m1132_mfp-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_professional_m1136_mfp-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_professional_m1137_mfp-hpijs.ppd.gz
@@ -712,6 +714,7 @@ share/foomatic/db/source/PPD/HP/hp-officejet_4500_g510n-z-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_4500_k710-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_4610_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_4620_series-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-officejet_4630_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_5100_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_5105-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_5110-hpijs.ppd.gz
