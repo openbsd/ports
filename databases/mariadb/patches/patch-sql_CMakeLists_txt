@@ -1,6 +1,22 @@
-$OpenBSD: patch-sql_CMakeLists_txt,v 1.2 2013/05/30 12:39:18 brad Exp $
---- sql/CMakeLists.txt.orig	Tue May 21 18:09:51 2013
-+++ sql/CMakeLists.txt	Fri May 24 19:48:19 2013
+$OpenBSD: patch-sql_CMakeLists_txt,v 1.3 2013/09/22 14:28:13 dcoppa Exp $
+--- sql/CMakeLists.txt.orig	Wed Jul 17 16:51:28 2013
++++ sql/CMakeLists.txt	Fri Sep 20 14:02:31 2013
+@@ -25,7 +25,6 @@ ${CMAKE_BINARY_DIR}/sql
+ SET(GEN_SOURCES
+ ${CMAKE_CURRENT_BINARY_DIR}/sql_yacc.h 
+ ${CMAKE_CURRENT_BINARY_DIR}/sql_yacc.cc
+-${CMAKE_CURRENT_BINARY_DIR}/sql_builtin.cc
+ ${CMAKE_CURRENT_BINARY_DIR}/lex_hash.h 
+ )
+ 
+@@ -60,6 +59,7 @@ SET (SQL_SOURCE
+                sql_cursor.cc sql_db.cc sql_delete.cc sql_derived.cc sql_do.cc 
+                sql_error.cc sql_handler.cc sql_help.cc sql_insert.cc sql_lex.cc 
+                sql_list.cc sql_load.cc sql_manager.cc sql_parse.cc
++               ${CMAKE_CURRENT_BINARY_DIR}/sql_builtin.cc
+                sql_partition.cc sql_plugin.cc sql_prepare.cc sql_rename.cc 
+                debug_sync.cc debug_sync.h
+                sql_repl.cc sql_select.cc sql_show.cc sql_state.c sql_string.cc
 @@ -268,7 +268,7 @@ ADD_CUSTOM_TARGET(distclean
    VERBATIM
    )

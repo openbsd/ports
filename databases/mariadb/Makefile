@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/09/04 19:20:28 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2013/09/22 14:28:13 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
@@ -47,7 +47,6 @@ LIB_DEPENDS-tests=	${BASE_PKGPATH}>=5.5,<5.6
 VMEM_WARNING=	Yes
 
 USE_GROFF=	Yes
-USE_NINJA=	No
 
 CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DINSTALL_DOCDIR="share/doc/mysql" \
