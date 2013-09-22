@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/09/22 23:26:41 sebastia Exp $
+# $OpenBSD: Makefile,v 1.12 2013/09/22 23:27:32 sebastia Exp $
 
 COMMENT =	framework for accessing and rendering PDF content
 
@@ -14,10 +14,7 @@ MODULES =		x11/gnustep
 MODGNUSTEP_NEEDS_BASE =	No
 MODGNUSTEP_NEEDS_GUI =	No
 WANTLIB += 		stdc++ pthread freetype m
-BUILD_DEPENDS =		x11/gnustep/gui \
-			textproc/xpdf:patch
-
-BUNDLED_XPDF =		3.02
+BUILD_DEPENDS =		x11/gnustep/gui
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	${MAKE_ENV}
