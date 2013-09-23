@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD: varnishd.rc,v 1.1 2013/09/23 08:23:16 jasper Exp $
+
+daemon="${PREFIX}/sbin/varnishd"
+daemon_flags="-f ${SYSCONFDIR}/varnish/default.vcl -u _varnish"
+rc_reload=NO
+
+. /etc/rc.d/rc.subr
+
+pexp="varnishd: Varnish-Mgr"
+
+rc_cmd $1

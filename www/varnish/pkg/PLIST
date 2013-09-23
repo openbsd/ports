@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/12/23 13:06:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/09/23 08:23:16 jasper Exp $
 @newgroup _varnish:625
 @newuser _varnish:625:_varnish:daemon:Varnish Cache:/var/varnish:/bin/sh
 @bin bin/varnishadm
@@ -52,3 +52,4 @@ share/examples/varnish/default.vcl
 @sample ${SYSCONFDIR}/varnish/default.vcl
 @exec-add mkdir -p /var/varnish
 @extraunexec rm -fr /var/varnish
+@rcscript ${RCDIR}/varnishd
