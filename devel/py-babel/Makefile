@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2013/09/20 16:47:01 fgsch Exp $
+# $OpenBSD: Makefile,v 1.12 2013/09/23 18:43:26 ajacoutot Exp $
 
 COMMENT=		I18N/L10N tools for Python
 
-MODPY_EGG_VERSION=	0.9.6
+MODPY_EGG_VERSION=	1.3
 DISTNAME=		Babel-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME:L}
-REVISION=		3
 CATEGORIES=    		devel
 
-HOMEPAGE=		http://babel.edgewall.org/
-MASTER_SITES=		http://ftp.edgewall.com/pub/babel/
+HOMEPAGE=		http://babel.pocoo.org/
+MASTER_SITES=		${MASTER_SITE_PYPI:=B/Babel/}
 
 MODULES=		lang/python
 PKG_ARCH=		*
@@ -22,6 +21,7 @@ FLAVOR?=
 
 MODPY_SETUPTOOLS=	Yes
 
+RUN_DEPENDS=		devel/py-tz${MODPY_FLAVOR}
 TEST_DEPENDS=		devel/py-tz${MODPY_FLAVOR}
 
 .if ${FLAVOR:Mpython3}
