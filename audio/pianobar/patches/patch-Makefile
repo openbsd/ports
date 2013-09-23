@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.21 2013/05/17 08:21:48 dcoppa Exp $
---- Makefile.orig	Thu May 16 09:41:57 2013
-+++ Makefile	Thu May 16 11:41:12 2013
-@@ -6,20 +6,8 @@ LIBDIR:=${PREFIX}/lib
+$OpenBSD: patch-Makefile,v 1.22 2013/09/23 08:40:23 dcoppa Exp $
+--- Makefile.orig	Sun Sep 15 15:54:04 2013
++++ Makefile	Mon Sep 23 10:33:19 2013
+@@ -6,22 +6,8 @@ LIBDIR:=${PREFIX}/lib
  INCDIR:=${PREFIX}/include
  MANDIR:=${PREFIX}/share/man
  DYNLINK:=0
@@ -15,6 +15,8 @@ $OpenBSD: patch-Makefile,v 1.21 2013/05/17 08:21:48 dcoppa Exp $
 -	OS := $(shell uname)
 -	ifeq (${OS},Darwin)
 -		CC=gcc -std=c99
+-	else ifeq (${OS},FreeBSD)
+-		CC=cc -std=c99
 -	else
 -		CC=c99
 -	endif
@@ -23,7 +25,7 @@ $OpenBSD: patch-Makefile,v 1.21 2013/05/17 08:21:48 dcoppa Exp $
  PIANOBAR_DIR:=src
  PIANOBAR_SRC:=\
  		${PIANOBAR_DIR}/main.c \
-@@ -93,38 +81,32 @@ LIBJSONC_LDFLAGS:=$(shell pkg-config --libs json-c 2>/
+@@ -99,38 +85,32 @@ LIBJSONC_LDFLAGS:=$(shell pkg-config --libs json-c 2>/
  
  # build pianobar
  ifeq (${DYNLINK},1)
@@ -70,7 +72,7 @@ $OpenBSD: patch-Makefile,v 1.21 2013/05/17 08:21:48 dcoppa Exp $
  			$(CC) -M ${CFLAGS} -I ${LIBPIANO_INCLUDE} -I ${LIBWAITRESS_INCLUDE} \
  			${LIBFAAD_CFLAGS} ${LIBMAD_CFLAGS} ${LIBGNUTLS_CFLAGS} \
  			${LIBGCRYPT_CFLAGS} ${LIBJSONC_CFLAGS} $< > $@.$$$$; \
-@@ -137,21 +119,18 @@ libpiano.so.0: ${LIBPIANO_RELOBJ} ${LIBPIANO_HDR} ${LI
+@@ -143,21 +123,18 @@ libpiano.so.0: ${LIBPIANO_RELOBJ} ${LIBPIANO_HDR} ${LI
  
  # build standard object files
  %.o: %.c
@@ -96,26 +98,31 @@ $OpenBSD: patch-Makefile,v 1.21 2013/05/17 08:21:48 dcoppa Exp $
  			${LIBPIANO_RELOBJ} ${LIBWAITRESS_RELOBJ} pianobar libpiano.so* \
  			libpiano.a waitress-test $(PIANOBAR_SRC:.c=.d) $(LIBPIANO_SRC:.c=.d) \
  			$(LIBWAITRESS_SRC:.c=.d)
-@@ -199,17 +178,15 @@ else
+@@ -203,18 +180,16 @@ install: pianobar install-libpiano
+ else
  install: pianobar
  endif
- 	install -d ${DESTDIR}/${BINDIR}/
+-	install -d ${DESTDIR}/${BINDIR}/
 -	install -m755 pianobar ${DESTDIR}/${BINDIR}/
-+	${INSTALL_PROGRAM} pianobar ${DESTDIR}/${BINDIR}/
- 	install -d ${DESTDIR}/${MANDIR}/man1/
+-	install -d ${DESTDIR}/${MANDIR}/man1/
 -	install -m644 contrib/pianobar.1 ${DESTDIR}/${MANDIR}/man1/
++	${INSTALL_DATA_DIR} ${DESTDIR}/${BINDIR}/
++	${INSTALL_PROGRAM} pianobar ${DESTDIR}/${BINDIR}/
++	${INSTALL_DATA_DIR} ${DESTDIR}/${MANDIR}/man1/
 +	${INSTALL_MAN} contrib/pianobar.1 ${DESTDIR}/${MANDIR}/man1/
  
  install-libpiano:
- 	install -d ${DESTDIR}/${LIBDIR}/
+-	install -d ${DESTDIR}/${LIBDIR}/
 -	install -m644 libpiano.so.0.0.0 ${DESTDIR}/${LIBDIR}/
 -	ln -s libpiano.so.0.0.0 ${DESTDIR}/${LIBDIR}/libpiano.so.0
 -	ln -s libpiano.so.0 ${DESTDIR}/${LIBDIR}/libpiano.so
 -	install -m644 libpiano.a ${DESTDIR}/${LIBDIR}/
+-	install -d ${DESTDIR}/${INCDIR}/
+-	install -m644 src/libpiano/piano.h ${DESTDIR}/${INCDIR}/
++	${INSTALL_DATA_DIR} ${DESTDIR}/${LIBDIR}/
 +	${INSTALL_DATA} libpiano.so.${LIBpiano_VERSION} ${DESTDIR}/${LIBDIR}/
 +	${INSTALL_DATA} libpiano.a ${DESTDIR}/${LIBDIR}/
- 	install -d ${DESTDIR}/${INCDIR}/
--	install -m644 src/libpiano/piano.h ${DESTDIR}/${INCDIR}/
++	${INSTALL_DATA_DIR} ${DESTDIR}/${INCDIR}/
 +	${INSTALL_DATA} src/libpiano/piano.h ${DESTDIR}/${INCDIR}/
  
  .PHONY: install install-libpiano test debug all
