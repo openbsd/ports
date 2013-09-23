@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.50 2013/09/22 06:29:38 espie Exp $
+# $OpenBSD: Core.pm,v 1.51 2013/09/23 13:00:02 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -639,8 +639,13 @@ sub get
 	}
 	my $core = shift @$a;
 	if ($core->can_squiggle && $core->host->{wantsquiggles}) {
-		$core->host->{wantsquiggles}--;
-		$core->{squiggle} = 1;
+		if ($core->host->{wantsquiggles} < 1 && rand() <= $core->host->{wantsquiggles}) {
+			$core->{squiggle} = $core->host->{wantsquiggles};
+			$core->host->{wantsquiggles} = 0;
+		} else {
+			$core->host->{wantsquiggles}--;
+			$core->{squiggle} = 1;
+		}
 	}
 	return $core;
 }
@@ -661,8 +666,8 @@ sub unsquiggle
 {
 	my $core = shift;
 	if ($core->{squiggle}) {
+		$core->host->{wantsquiggles} += $core->{squiggle};
 		delete $core->{squiggle};
-		$core->host->{wantsquiggles}++;
 	}
 	return $core;
 }
