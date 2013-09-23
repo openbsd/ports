@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.115 2013/09/23 12:25:17 espie Exp $
+# $OpenBSD: Port.pm,v 1.116 2013/09/23 12:32:59 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -94,10 +94,12 @@ sub run
 
 	my @l = $builder->make_args;
 	my $make = $builder->make;
+	my @env = ();
 	if (defined $builder->{rsslog}) {
 		unless ($self->notime) {
 			$make = $builder->{wrapper};
 			$l[0] = $make;
+			push(@env, WRAPPER_OUTPUT => $builder->{rsslog});
 		}
 	}
 
@@ -107,7 +109,7 @@ sub run
 	    ->sudo($self->{sudo})
 	    ->env(SUBDIR => $fullpkgpath, 
 		PHASE => $t, 
-		WRAPPER_OUTPUT => $builder->{rsslog})
+		@env)
 	    ->exec(@args);
 	exit(1);
 }
