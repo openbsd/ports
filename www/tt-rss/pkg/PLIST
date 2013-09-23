@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/09/08 17:19:33 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/09/23 06:43:11 landry Exp $
 tt-rss/
 tt-rss/LICENSE
 tt-rss/README.md
@@ -1776,6 +1776,16 @@ tt-rss/lib/jshrink/
 tt-rss/lib/jshrink/LICENSE
 tt-rss/lib/jshrink/Minifier.php
 tt-rss/lib/jshrink/README.md
+tt-rss/lib/languagedetect/
+tt-rss/lib/languagedetect/LanguageDetect.php
+tt-rss/lib/languagedetect/Text/
+tt-rss/lib/languagedetect/Text/LanguageDetect/
+tt-rss/lib/languagedetect/Text/LanguageDetect/Exception.php
+tt-rss/lib/languagedetect/Text/LanguageDetect/ISO639.php
+tt-rss/lib/languagedetect/Text/LanguageDetect/Parser.php
+tt-rss/lib/languagedetect/data/
+tt-rss/lib/languagedetect/data/lang.dat
+tt-rss/lib/languagedetect/data/unicode_blocks.dat
 tt-rss/lib/otphp/
 tt-rss/lib/otphp/LICENCE
 tt-rss/lib/otphp/lib/
@@ -2358,10 +2368,14 @@ tt-rss/plugins/af_explosm/
 tt-rss/plugins/af_explosm/init.php
 tt-rss/plugins/af_gocomics/
 tt-rss/plugins/af_gocomics/init.php
+tt-rss/plugins/af_natgeo/
+tt-rss/plugins/af_natgeo/init.php
 tt-rss/plugins/af_pennyarcade/
 tt-rss/plugins/af_pennyarcade/init.php
 tt-rss/plugins/af_redditimgur/
 tt-rss/plugins/af_redditimgur/init.php
+tt-rss/plugins/af_sciam/
+tt-rss/plugins/af_sciam/init.php
 tt-rss/plugins/af_unburn/
 tt-rss/plugins/af_unburn/init.php
 tt-rss/plugins/af_whomp/
@@ -2372,6 +2386,8 @@ tt-rss/plugins/auth_remote/
 tt-rss/plugins/auth_remote/init.php
 tt-rss/plugins/bookmarklets/
 tt-rss/plugins/bookmarklets/init.php
+tt-rss/plugins/cache_starred_images/
+tt-rss/plugins/cache_starred_images/init.php
 tt-rss/plugins/close_button/
 tt-rss/plugins/close_button/button.png
 tt-rss/plugins/close_button/init.php
@@ -2402,6 +2418,11 @@ tt-rss/plugins/mailto/init.php
 tt-rss/plugins/mailto/mail.png
 tt-rss/plugins/mark_button/
 tt-rss/plugins/mark_button/init.php
+tt-rss/plugins/no_iframes/
+tt-rss/plugins/no_iframes/init.php
+tt-rss/plugins/no_title_counters/
+tt-rss/plugins/no_title_counters/init.js
+tt-rss/plugins/no_title_counters/init.php
 tt-rss/plugins/note/
 tt-rss/plugins/note/init.php
 tt-rss/plugins/note/note.js
@@ -2415,6 +2436,10 @@ tt-rss/plugins/share/notshared.png
 tt-rss/plugins/share/share.js
 tt-rss/plugins/share/share.png
 tt-rss/plugins/share/share_prefs.js
+tt-rss/plugins/shorten_expanded/
+tt-rss/plugins/shorten_expanded/init.css
+tt-rss/plugins/shorten_expanded/init.js
+tt-rss/plugins/shorten_expanded/init.php
 tt-rss/plugins/swap_jk/
 tt-rss/plugins/swap_jk/init.php
 tt-rss/plugins/updater/
@@ -2457,6 +2482,8 @@ tt-rss/schema/versions/mysql/119.sql
 tt-rss/schema/versions/mysql/12.sql
 tt-rss/schema/versions/mysql/120.sql
 tt-rss/schema/versions/mysql/121.sql
+tt-rss/schema/versions/mysql/122.sql
+tt-rss/schema/versions/mysql/123.sql
 tt-rss/schema/versions/mysql/13.sql
 tt-rss/schema/versions/mysql/14.sql
 tt-rss/schema/versions/mysql/15.sql
@@ -2577,6 +2604,8 @@ tt-rss/schema/versions/pgsql/119.sql
 tt-rss/schema/versions/pgsql/12.sql
 tt-rss/schema/versions/pgsql/120.sql
 tt-rss/schema/versions/pgsql/121.sql
+tt-rss/schema/versions/pgsql/122.sql
+tt-rss/schema/versions/pgsql/123.sql
 tt-rss/schema/versions/pgsql/13.sql
 tt-rss/schema/versions/pgsql/14.sql
 tt-rss/schema/versions/pgsql/15.sql

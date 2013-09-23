@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2013/09/08 17:19:32 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2013/09/23 06:43:11 landry Exp $
 
 COMMENT=		webbased rss reader with standalone look and feel
 
-V=			1.9
+V=			1.10
 DISTNAME=		Tiny-Tiny-RSS-$V
 PKGNAME=		tt-rss-$V
 CATEGORIES=		www
