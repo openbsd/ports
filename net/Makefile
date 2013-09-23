@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.815 2013/09/20 11:01:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.816 2013/09/23 13:50:37 sthen Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -418,6 +418,7 @@
      SUBDIR += pear-HTTP
      SUBDIR += pear-HTTP-Request
      SUBDIR += pear-Net-DNS
+     SUBDIR += pear-Net-DNS2
      SUBDIR += pear-Net-IMAP
      SUBDIR += pear-Net-IPv4
      SUBDIR += pear-Net-IPv6
