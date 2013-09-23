@@ -1,8 +1,8 @@
-$OpenBSD: patch-default_config,v 1.1.1.1 2013/07/11 18:16:06 bcallah Exp $
---- default.config.orig	Wed Mar 27 10:14:56 2013
-+++ default.config	Wed Mar 27 10:19:04 2013
-@@ -51,11 +51,11 @@ frontpage=exercises/standard/learningtree.txt
- rcfileversion=18
+$OpenBSD: patch-default_config,v 1.2 2013/09/23 18:25:05 bcallah Exp $
+--- default.config.orig	Sun Sep 15 16:04:41 2013
++++ default.config	Mon Sep 16 21:39:33 2013
+@@ -54,11 +54,11 @@ frontpage=exercises/standard/learningtree.txt
+ rcfileversion=21
  random_function=random_by_random
  randomness=1.1
 -midi_to_wav_cmd=timidity
@@ -16,7 +16,7 @@ $OpenBSD: patch-default_config,v 1.1.1.1 2013/07/11 18:16:06 bcallah Exp $
  wav_to_ogg_cmd_options=%(in)s
  win32_ignore_drives=('A:\\', 'B:\\')
  set_patch_delay=100
-@@ -66,23 +66,23 @@ history_forward_ak=<alt>Right
+@@ -69,23 +69,23 @@ history_forward_ak=<alt>Right
  history_reload_ak=<ctrl>r
  
  [programs]

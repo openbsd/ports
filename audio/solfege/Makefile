@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/07/11 18:16:06 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2013/09/23 18:25:04 bcallah Exp $
 
 COMMENT =	solfege and ear training program
-DISTNAME =	solfege-3.22.0
+DISTNAME =	solfege-3.22.1
 CATEGORIES =	audio x11
 
 HOMEPAGE =	http://www.solfege.org/
@@ -37,7 +37,6 @@ NO_TEST =	Yes
 
 post-patch:
 	perl -pi -e "s,cp,${LOCALBASE}/bin/gcp,g" ${WRKSRC}/Makefile.in
-	cp ${FILESDIR}/solfege.1 ${WRKSRC}/solfege.1
 
 pre-configure:
 	cd ${WRKSRC} && ${SUBST_CMD} default.config run-solfege.py.in system.rc && \
