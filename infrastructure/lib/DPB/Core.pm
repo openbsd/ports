@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.52 2013/09/23 14:21:47 espie Exp $
+# $OpenBSD: Core.pm,v 1.53 2013/09/23 14:50:54 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -638,7 +638,10 @@ sub get
 		@$a = sort {$b->sf <=> $a->sf} @$a;
 	}
 	my $core = shift @$a;
-	if ($core->can_squiggle && $core->host->{wantsquiggles}) {
+	if ($core->may_unsquiggle) {
+		return $core;
+	}
+	if (!$core->{squiggle} && $core->host->{wantsquiggles}) {
 		if ($core->host->{wantsquiggles} < 1) {
 			if (rand() <= $core->host->{wantsquiggles}) {
 				$core->{squiggle} = $core->host->{wantsquiggles};
@@ -652,16 +655,22 @@ sub get
 	return $core;
 }
 
-sub can_squiggle
-{
-	my $core = shift;
-	return !$core->{squiggle};
-}
-
 sub can_be_swallowed
 {
 	my $core = shift;
 	return defined $core->host->{swallow};
+}
+
+sub may_unsquiggle
+{
+	my $core = shift;
+	if ($core->{squiggle} && $core->{squiggle} < 1) {
+		if (rand() >= $core->{squiggle}) {
+			$core->unsquiggle;
+			return 1;
+		}
+	}
+	return 0;
 }
 
 sub unsquiggle
@@ -756,9 +765,9 @@ sub available
 	return $fetchcores;
 }
 
-sub can_squiggle
+sub may_unsquiggle
 {
-	return 0;
+	return 1;
 }
 
 sub can_be_swallowed
