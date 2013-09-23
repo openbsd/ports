@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2013/08/13 11:44:56 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.5 2013/09/23 14:11:12 dcoppa Exp $
 
 COMMENT =	LuaDoc-compatible documentation generation system
 
-VER =		1.3.13
+VER =		1.4.0
 DISTNAME =	LDoc-${VER}
 PKGNAME =	lualdoc-${VER}
-REVISION =	1
 CATEGORIES =	devel
 
 HOMEPAGE =	http://stevedonovan.github.io/ldoc/
