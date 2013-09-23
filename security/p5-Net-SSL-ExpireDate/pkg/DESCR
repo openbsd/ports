@@ -1,0 +1,3 @@
+Net::SSL::ExpireDate fetches a certificate from the network (SSL) or local
+file, obtains its start and expiration dates, and allows validity to be
+tested or dates to be returned.

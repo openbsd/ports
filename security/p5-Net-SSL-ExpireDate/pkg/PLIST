@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/09/23 11:49:21 sthen Exp $
+${P5SITE}/Net/
+${P5SITE}/Net/SSL/
+${P5SITE}/Net/SSL/ExpireDate.pm
+@man man/man3p/Net::SSL::ExpireDate.3p
