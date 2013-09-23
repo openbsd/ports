@@ -1,0 +1,5 @@
+sslScanner is an open source Perl application which connects to a range
+of hosts/ports which are running SSL based services such as HTTPS.
+It then displays the certificate CN and how long is left until the
+certificate expires. It also has a mode suitable for use from cron(8),
+to alert on certificates expiring within a certain number of days.
