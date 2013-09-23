@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.625 2013/09/20 09:09:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.626 2013/09/23 11:38:23 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -47,7 +47,6 @@
      SUBDIR += epiphany
      SUBDIR += erl-mochiweb
      SUBDIR += erl-webmachine
-     SUBDIR += ezpublish
      SUBDIR += fcgi
      SUBDIR += fcgi-cgi
      SUBDIR += fennec
@@ -107,7 +106,6 @@
      SUBDIR += llgal
      SUBDIR += luakit
      SUBDIR += man2web
-     SUBDIR += mantis
      SUBDIR += mediawiki
      SUBDIR += mediawiki-CategoryTree
      SUBDIR += mediawiki-httpauth
@@ -371,8 +369,6 @@
      SUBDIR += php-predis
      SUBDIR += phpicalendar
      SUBDIR += phpldapadmin
-     SUBDIR += phplist
-     SUBDIR += phpmemcachedadmin
      SUBDIR += phpmyadmin
      SUBDIR += phppgadmin
      SUBDIR += phpvirtualbox
@@ -511,7 +507,6 @@
      SUBDIR += varnish
      SUBDIR += visitors
      SUBDIR += vteplugin
-     SUBDIR += vtigercrm
      SUBDIR += w3m
      SUBDIR += w3m,image
      SUBDIR += w3m,japanese
