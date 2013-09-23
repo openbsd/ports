@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.12 2013/09/16 11:23:51 espie Exp $
+# $OpenBSD: Distant.pm,v 1.13 2013/09/23 12:26:06 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -43,14 +43,9 @@ our @ISA = qw(DPB::Shell::Chroot);
 
 sub ssh
 {
-	my ($class, $socket, $timeout) = @_;
-	return ('ssh', '-o', "connectTimeout=$timeout",
-	    '-o', "serverAliveInterval=$timeout",
-	    '-S', $socket);
+	my ($class, $socket) = @_;
+	return ('ssh', '-S', $socket);
 }
-
-#	    '-o', 'clearAllForwardings=yes',
-#	    '-o', 'EscapeChar=none',
 
 sub new
 {
@@ -72,11 +67,6 @@ sub socket
 	shift->{master}->socket;
 }
 
-sub timeout
-{
-	shift->{master}->timeout;
-}
-
 sub hostname
 {
 	shift->{master}->hostname;
@@ -86,8 +76,7 @@ sub _run
 {
 	my ($self, @cmd) = @_;
 	exec {OpenBSD::Paths->ssh}
-	    ($self->ssh($self->socket, $self->timeout),
-	    $self->hostname, join(' ', @cmd));
+	    ($self->ssh($self->socket), $self->hostname, join(' ', @cmd));
 }
 
 sub quote
@@ -110,7 +99,9 @@ sub run
 	open STDOUT, '>/dev/null';
 	open STDERR, '>&STDOUT';
 	exec {OpenBSD::Paths->ssh}
-	    (DPB::Ssh->ssh($socket, $timeout),
+	    (DPB::Ssh->ssh($socket),
+	    	'-o', "connectTimeout=$timeout",
+		'-o', "serverAliveInterval=$timeout",
 		'-N', '-M', $host);
 	exit(1);
 }
