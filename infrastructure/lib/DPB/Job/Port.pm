@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.114 2013/09/21 08:56:44 espie Exp $
+# $OpenBSD: Port.pm,v 1.115 2013/09/23 12:25:17 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -78,7 +78,7 @@ sub run
 	$self->handle_output($job);
 	close STDIN;
 	open STDIN, '</dev/null';
-	my @args = ($t, "TRUST_PACKAGES=Yes",
+	my @args = ($t, 
 	    "FETCH_PACKAGES=No",
 	    "PREPARE_CHECK_ONLY=Yes",
 	    "REPORT_PROBLEM='exit 1'", "BULK=No");
@@ -752,7 +752,7 @@ sub save_depends
 	print {$job->{lock}} "needed=", join(' ', sort @$l), "\n";
 }
 
-sub has_depends
+sub need_depends
 {
 	my ($self, $core) = @_;
 	my $dep = $self->{v}{info}->solve_depends;
@@ -811,7 +811,7 @@ sub add_normal_tasks
 	$hostprop->{junk_count} //= 0;
 	$hostprop->{depends_count} //= 0;
 	$hostprop->{ports_count} //= 0;
-	my $c = $self->has_depends($core);
+	my $c = $self->need_depends($core);
 	$hostprop->{ports_count}++;
 	$hostprop->{depends_count} += $c;
 	if ($c) {
