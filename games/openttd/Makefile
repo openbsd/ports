@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.32 2013/06/25 22:41:41 bentley Exp $
+# $OpenBSD: Makefile,v 1.33 2013/09/24 06:33:02 bentley Exp $
 
 COMMENT=	open source clone of the game Transport Tycoon Deluxe
 
-V =		1.3.1
+V =		1.3.2
 DISTNAME =	openttd-${V}
 EXTRACT_SUFX=	-source.tar.gz
 GFX_V=		0.4.7
@@ -24,12 +24,12 @@ MAINTAINER =	Anthony J. Bentley <anthony@cathet.us>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += SDL c fontconfig freetype icudata icui18n icuuc
-WANTLIB += lzma lzo2 m png pthread stdc++ z
+WANTLIB += icule iculx lzma lzo2 m png pthread stdc++ z
 
 MASTER_SITES=		http://binaries.openttd.org/releases/${V}/
-MASTER_SITES0=		http://bundles.openttdcoop.org/opengfx/releases/${GFX_V}/
-MASTER_SITES1=		http://bundles.openttdcoop.org/opensfx/releases/${SFX_V}/
-MASTER_SITES2=		http://bundles.openttdcoop.org/openmsx/releases/${MSX_V}/
+MASTER_SITES0=		https://bundles.openttdcoop.org/opengfx/releases/${GFX_V}/
+MASTER_SITES1=		https://bundles.openttdcoop.org/opensfx/releases/${SFX_V}/
+MASTER_SITES2=		https://bundles.openttdcoop.org/openmsx/releases/${MSX_V}/
 
 LIB_DEPENDS=		archivers/lzo2 \
 			devel/sdl \
