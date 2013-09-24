@@ -1,12 +1,12 @@
 Prevent log messages when the tocc file doesn't exist.
 
-$OpenBSD: patch-src_mlmmj-process_c,v 1.2 2012/01/24 02:20:35 okan Exp $
---- src/mlmmj-process.c.orig	Tue Aug 24 07:38:12 2010
-+++ src/mlmmj-process.c	Tue Jan 17 13:21:37 2012
-@@ -721,8 +721,6 @@ int main(int argc, char **argv)
- 	addrtocc = !(statctrl(listdir, "tocc"));
+$OpenBSD: patch-src_mlmmj-process_c,v 1.3 2013/09/24 17:43:57 okan Exp $
+--- src/mlmmj-process.c.orig	Fri Mar 30 19:35:21 2012
++++ src/mlmmj-process.c	Wed Jul  3 12:04:39 2013
+@@ -825,8 +825,6 @@ int main(int argc, char **argv)
  	if(addrtocc) {
  		for(i = 0; i < toemails.emailcount; i++) {
+ 			errno = 0;
 -			log_error(LOG_ARGS, "Found To: %s",
 -				toemails.emaillist[i]);
  			for(j = 0; j < alternates->count; j++) {

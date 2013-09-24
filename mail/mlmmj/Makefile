@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:23:51 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/09/24 17:43:57 okan Exp $
 
 COMMENT=	mailing list manager
 
-DISTNAME=	mlmmj-1.2.17.1
+DISTNAME=	mlmmj-1.2.18.0
 CATEGORIES=    	mail
 
 HOMEPAGE=	http://mlmmj.org/
@@ -16,19 +16,14 @@ WANTLIB=		c
 MASTER_SITES=	http://mlmmj.org/releases/
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--enable-recieve-strip=yes
+CONFIGURE_ARGS+=--enable-receive-strip=yes
 
-DOCS=	README.access README.exim4 README.security README.sendmail TUNABLES
+DOCS=	README* TUNABLES
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mlmmj
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/mlmmj
-	cd ${WRKSRC} && ${INSTALL_DATA} contrib/recievestrip/README \
-		${PREFIX}/share/doc/mlmmj/README.recieve-strip
-	mv ${PREFIX}/bin/mlmmj-make-ml.sh ${PREFIX}/bin/mlmmj-make-ml
-	mv ${PREFIX}/man/man1/mlmmj-make-ml.sh.1 \
-		${PREFIX}/man/man1/mlmmj-make-ml.1
-	sed -e 's/mlmmj-make-ml\.sh/mlmmj-make-ml/g' ${WRKSRC}/README > \
-		${PREFIX}/share/doc/mlmmj/README
+	cd ${WRKSRC} && ${INSTALL_DATA} contrib/receivestrip/README \
+		${PREFIX}/share/doc/mlmmj/README.receive-strip
 
 .include <bsd.port.mk>

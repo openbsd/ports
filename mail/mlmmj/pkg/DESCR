@@ -1,2 +1,6 @@
-mlmmj is a mailing list manager with the same functionality as the
-brilliant ezmlm, but with a decent license and mail server independency.
+Mlmmj is a simple and slim mailing list manager (MLM) inspired by ezmlm. It
+works with many different Mail Transport Agents (MTAs) and is simple for a
+system adminstrator to install, configure and integrate with other software.
+As it uses very few resources, and requires no daemons, it is ideal for
+installation on systems where resources are limited, such as Virtual Private
+Servers (VPSes).
