@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.5 2012/03/29 14:57:00 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.6 2013/09/24 13:34:36 ajacoutot Exp $
 
 OpenBSD uses /var/db/gconf which is detected correctly by other code.
 
---- configure.orig	Mon Feb  6 01:26:00 2012
-+++ configure	Thu Mar 29 15:46:20 2012
-@@ -5461,12 +5461,6 @@ fi
+--- configure.orig	Sat Apr 20 23:07:33 2013
++++ configure	Tue Sep 24 12:57:44 2013
+@@ -5334,12 +5334,6 @@ fi
  
  
  
