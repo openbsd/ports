@@ -1,5 +1,5 @@
 This is GStreamer, a framework for streaming media.
-This package contains the "base" elements for gstreamer-${VERSION}.
+This package contains the "base" elements for gstreamer-${API}.
 
 A well-groomed and well-maintained collection of GStreamer plug-ins and
 elements, spanning the range of possible types of elements one would

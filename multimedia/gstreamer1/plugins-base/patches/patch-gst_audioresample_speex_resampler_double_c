@@ -1,11 +1,11 @@
-$OpenBSD: patch-gst_audioresample_speex_resampler_double_c,v 1.1.1.1 2012/09/06 13:00:53 ajacoutot Exp $
+$OpenBSD: patch-gst_audioresample_speex_resampler_double_c,v 1.2 2013/09/24 18:29:16 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=670690
 
---- gst/audioresample/speex_resampler_double.c.orig	Fri Dec 30 13:29:15 2011
-+++ gst/audioresample/speex_resampler_double.c	Wed Feb 22 20:06:10 2012
+--- gst/audioresample/speex_resampler_double.c.orig	Fri Apr 26 08:20:28 2013
++++ gst/audioresample/speex_resampler_double.c	Tue Sep 24 16:05:14 2013
 @@ -17,7 +17,9 @@
-  * Boston, MA 02111-1307, USA.
+  * Boston, MA 02110-1301, USA.
   */
  
 +#ifdef __SSE2__

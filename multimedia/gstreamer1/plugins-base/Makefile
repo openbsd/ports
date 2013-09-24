@@ -1,40 +1,39 @@
-# $OpenBSD: Makefile,v 1.15 2013/08/30 07:46:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2013/09/24 18:29:16 ajacoutot Exp $
 
 COMMENT=		base elements for GStreamer
 
 DISTNAME=		gst-plugins-base-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-base-${V}
 
-SHARED_LIBS +=  gsttag-1.0           0.0      # 9.0
-SHARED_LIBS +=  gstaudio-1.0         0.0      # 9.0
-SHARED_LIBS +=  gstfft-1.0           0.0      # 9.0
-SHARED_LIBS +=  gstrtp-1.0           0.0      # 9.0
-SHARED_LIBS +=  gstsdp-1.0           0.0      # 9.0
-SHARED_LIBS +=  gstvideo-1.0         0.1      # 9.0
-SHARED_LIBS +=  gstapp-1.0           0.0      # 9.0
-SHARED_LIBS +=  gstrtsp-1.0          0.0      # 9.0
-SHARED_LIBS +=  gstpbutils-1.0       0.0      # 9.0
-SHARED_LIBS +=  gstriff-1.0          0.0      # 9.0
+SHARED_LIBS +=  gsttag-1.0           1.0      # 200.0
+SHARED_LIBS +=  gstaudio-1.0         1.0      # 200.0
+SHARED_LIBS +=  gstfft-1.0           1.0      # 200.0
+SHARED_LIBS +=  gstrtp-1.0           1.0      # 200.0
+SHARED_LIBS +=  gstsdp-1.0           1.0      # 200.0
+SHARED_LIBS +=  gstvideo-1.0         1.0      # 200.0
+SHARED_LIBS +=  gstapp-1.0           1.0      # 200.0
+SHARED_LIBS +=  gstrtsp-1.0          1.0      # 200.0
+SHARED_LIBS +=  gstpbutils-1.0       1.0      # 200.0
+SHARED_LIBS +=  gstriff-1.0          1.0      # 200.0
+SHARED_LIBS +=  gstallocators-1.0    0.0      # 200.0
 
 WANTLIB += ICE SM X11 Xext Xrender Xv c cairo cdda_interface cdda_paranoia
 WANTLIB += expat ffi fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gstbase-1.0 gstreamer-1.0 gthread-2.0
-WANTLIB += harfbuzz m ogg orc-0.4 orc-test-0.4
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs sndio theoradec theoraenc
-WANTLIB += vorbis vorbisenc vorbisidec xcb xcb-render xcb-shm
-WANTLIB += z
+WANTLIB += harfbuzz m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs sndio theoradec
+WANTLIB += theoraenc vorbis vorbisenc vorbisidec xcb xcb-render
+WANTLIB += xcb-shm z
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-base/}
 
 # needed for ${WRKSRC}/tests/
 BUILD_DEPENDS=		x11/gtk+2
 
-LIB_DEPENDS=	 	${P}/core>=1.0.6 \
+LIB_DEPENDS=	 	${P}/core=${V} \
 			audio/cdparanoia \
 			audio/libvorbis \
 			audio/tremor \
-			devel/orc \
 			devel/pango \
 			multimedia/libtheora
 
@@ -42,7 +41,10 @@ LIB_DEPENDS=	 	${P}/core>=1.0.6 \
 RUN_DEPENDS +=		x11/gnome/gvfs
 
 CONFIGURE_ARGS=		--enable-sndio \
-			--disable-libvisual # XXX libvisual needs to be ported
+			--disable-libvisual #XXX libvisual needs to be ported
+
+# needs orc >= 0.4.16
+CONFIGURE_ARGS +=	--disable-orc
 
 ### SNDIO ###
 CONFIGURE_STYLE +=	gnu
