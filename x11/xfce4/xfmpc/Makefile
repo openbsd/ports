@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2013/05/31 15:35:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2013/09/24 16:25:37 ajacoutot Exp $
 
 COMMENT=	Xfce4 Music Player Daemon client
 
 XFCE_VERSION=	0.2.2
 XFCE_GOODIE=	xfmpc
-REVISION =	2
+REVISION =	3
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

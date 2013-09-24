@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_mpdclient_c,v 1.1 2013/09/24 16:25:38 ajacoutot Exp $
+
+Do not try to unlock an unlocked mutex.
+
+--- src/mpdclient.c.orig	Tue Sep 24 18:13:38 2013
++++ src/mpdclient.c	Tue Sep 24 18:14:58 2013
+@@ -389,8 +389,6 @@ xfmpc_mpdclient_connect_thread (XfmpcMpdclient *mpdcli
+ 
+   priv->connecting = FALSE;
+ 
+-  g_mutex_unlock (priv->mutex);
+-
+   return NULL;
+ }
+ 
+@@ -426,6 +424,8 @@ xfmpc_mpdclient_connect (XfmpcMpdclient *mpdclient)
+   g_thread_join (thread);
+ 
+   g_signal_emit (mpdclient, signals[SIG_CONNECTED], 0);
++
++  g_mutex_unlock (priv->mutex);
+ 
+   return TRUE;
+ }
