@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_AppWindow_vala,v 1.1 2013/09/24 10:24:43 jasper Exp $
+
+commit 9b1d9c50af912a85ae63200d1867da54f75938a7
+Author: Joseph Bylund <joseph.bylund@gmail.com>
+Date:   Mon Aug 5 15:06:09 2013 -0700
+Subject: Doesn't build with Vala 0.21.1, "close" conflict in GTK 3.10: Closes #7295, Closes #7254
+
+--- src/AppWindow.vala.orig	Tue Sep 24 12:05:40 2013
++++ src/AppWindow.vala	Tue Sep 24 12:05:49 2013
+@@ -156,7 +156,7 @@ public class FullscreenWindow : PageWindow {
+         AppWindow.get_instance().end_fullscreen();
+     }
+     
+-    public void close() {
++    public new void close() {
+         on_close();
+     }
+     
