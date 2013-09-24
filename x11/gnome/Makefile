@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.215 2013/09/17 10:45:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.216 2013/09/24 10:55:18 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -41,7 +41,6 @@
      SUBDIR += gjs
      SUBDIR += gnote
      SUBDIR += grilo
-     SUBDIR += grilo-mediaserver2
      SUBDIR += grilo-plugins
      SUBDIR += gucharmap
      SUBDIR += gvfs,
