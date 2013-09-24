@@ -1,4 +1,4 @@
 This is GStreamer, a framework for streaming media.
-This package contains the "libav" elements for gstreamer-${VERSION}.
+This package contains the "libav" elements for gstreamer-${API}.
 
 This module contains a GStreamer plugin for libav (FFmpeg).

@@ -1,7 +1,7 @@
-$OpenBSD: patch-gst-libs_ext_libav_configure,v 1.4 2013/04/27 14:49:21 ajacoutot Exp $
---- gst-libs/ext/libav/configure.orig	Fri Apr 26 13:29:24 2013
-+++ gst-libs/ext/libav/configure	Sat Apr 27 16:33:50 2013
-@@ -2624,7 +2624,7 @@ die_license_disabled version3 libvo_amrwbenc
+$OpenBSD: patch-gst-libs_ext_libav_configure,v 1.5 2013/09/24 18:30:47 ajacoutot Exp $
+--- gst-libs/ext/libav/configure.orig	Tue Sep 24 14:41:14 2013
++++ gst-libs/ext/libav/configure	Tue Sep 24 18:28:02 2013
+@@ -3132,7 +3132,7 @@ die_license_disabled version3 libvo_amrwbenc
  
  enabled version3 && { enabled gpl && enable gplv3 || enable lgplv3; }
  
@@ -10,22 +10,22 @@ $OpenBSD: patch-gst-libs_ext_libav_configure,v 1.4 2013/04/27 14:49:21 ajacoutot
  
  enable_pic() {
      enable pic
-@@ -3065,7 +3065,6 @@ enabled extra_warnings && check_cflags -Winline
+@@ -3608,7 +3608,6 @@ enabled extra_warnings && check_cflags -Winline
  # add some linker flags
  check_ldflags -Wl,--warn-common
- check_ldflags -Wl,-rpath-link=libpostproc:libswscale:libavfilter:libavdevice:libavformat:libavcodec:libavutil
+ check_ldflags -Wl,-rpath-link=libswscale:libavfilter:libavdevice:libavformat:libavcodec:libavutil:libavresample
 -test_ldflags -Wl,-Bsymbolic && append SHFLAGS -Wl,-Bsymbolic
  
- echo "X{};" > $TMPV
- if test_ldflags -Wl,--version-script,$TMPV; then
-@@ -3084,10 +3083,6 @@ if [ -n "$optflags" ]; then
-     add_cflags $optflags
- elif enabled small; then
-     add_cflags $size_cflags
--elif enabled optimizations; then
--    add_cflags $speed_cflags
--else
--    add_cflags $noopt_cflags
+ enabled xmm_clobber_test &&
+     check_ldflags -Wl,--wrap,avcodec_open2              \
+@@ -3637,10 +3636,6 @@ fi
+ if [ -z "$optflags" ]; then
+     if enabled small; then
+         optflags=$cflags_size
+-    elif enabled optimizations; then
+-        optflags=$cflags_speed
+-    else
+-        optflags=$cflags_noopt
+     fi
  fi
- check_cflags -fno-math-errno
- check_cflags -fno-signed-zeros
+ 
