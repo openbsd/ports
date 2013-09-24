@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.87 2013/09/21 14:47:00 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.88 2013/09/24 09:46:44 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: September 21 2013 $
+.Dd $Mdocdate: September 24 2013 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -238,6 +238,11 @@ Do not update the distfiles history.
 For instance, if
 .Nm
 is run a second time after a problem during the first run.
+.It Ar RECORD
+Define a file which will save all terminal output.
+Mostly useful for presentations, as a way to save
+.Nm dpb
+output and replay it later at a faster rate.
 .It Ar STARTUP
 Define a start-up script on the command-line, override any host file contents.
 .It Ar STUCK_TIMEOUT
@@ -620,6 +625,10 @@ an optional
 for ports with the
 .Sq unjunk
 property.
+.It
+an optional
+.Sq +
+for ports built in memory.
 .It
 the pid running that task (note that this is always a pid on the host
 running dpb: for distributed builds, it will be an
@@ -1160,7 +1169,7 @@ and
 .Pa /usr/X11R6/include
 for consistency, but it doesn't.
 .Pp
-When an host fails consistency check, there is not yet a way to re-add it
+When a host fails consistency check, there is not yet a way to re-add it
 after fixing the problem.
 You have to stop
 .Nm ,
