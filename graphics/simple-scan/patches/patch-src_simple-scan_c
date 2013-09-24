@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_simple-scan_c,v 1.5 2012/09/30 07:19:18 ajacoutot Exp $
+$OpenBSD: patch-src_simple-scan_c,v 1.6 2013/09/24 09:19:37 ajacoutot Exp $
 
 No gudev under OpenBSD.
 
---- src/simple-scan.c.orig	Tue Sep 25 05:11:56 2012
-+++ src/simple-scan.c	Sun Sep 30 09:15:20 2012
+--- src/simple-scan.c.orig	Thu Mar 21 04:33:34 2013
++++ src/simple-scan.c	Tue Sep 24 10:43:42 2013
 @@ -15,7 +15,9 @@
  #include <glib.h>
  #include <glib-object.h>
@@ -14,7 +14,7 @@ No gudev under OpenBSD.
  #include <stdlib.h>
  #include <string.h>
  #include <stdio.h>
-@@ -159,7 +161,9 @@ struct _SimpleScanClass {
+@@ -158,7 +160,9 @@ struct _SimpleScanClass {
  struct _SimpleScanPrivate {
  	ScanDevice* default_device;
  	gboolean have_devices;
@@ -24,7 +24,7 @@ No gudev under OpenBSD.
  	UserInterface* ui;
  	Scanner* scanner;
  	Book* book;
-@@ -331,8 +335,10 @@ static void simple_scan_scanner_failed_cb (SimpleScan*
+@@ -332,8 +336,10 @@ static void simple_scan_scanner_failed_cb (SimpleScan*
  static void _simple_scan_scanner_failed_cb_scanner_scan_failed (Scanner* _sender, gint error_code, const gchar* error_string, gpointer self);
  static void simple_scan_scanner_scanning_changed_cb (SimpleScan* self, Scanner* scanner);
  static void _simple_scan_scanner_scanning_changed_cb_scanner_scanning_changed (Scanner* _sender, gpointer self);
@@ -35,7 +35,7 @@ No gudev under OpenBSD.
  void user_interface_set_scan_devices (UserInterface* self, GList* devices);
  void user_interface_set_selected_device (UserInterface* self, const gchar* device);
  static void _scan_device_unref0_ (gpointer var);
-@@ -485,9 +491,11 @@ static void _simple_scan_scanner_scanning_changed_cb_s
+@@ -486,9 +492,11 @@ static void _simple_scan_scanner_scanning_changed_cb_s
  }
  
  
@@ -47,7 +47,7 @@ No gudev under OpenBSD.
  
  
  static void _scan_device_unref0_ (gpointer var) {
-@@ -526,8 +534,10 @@ static void simple_scan_real_startup (GApplication* ba
+@@ -527,8 +535,10 @@ static void simple_scan_real_startup (GApplication* ba
  	gint _subsystems_size_;
  	gchar** _tmp18_;
  	gint _tmp18__length1;
@@ -58,7 +58,7 @@ No gudev under OpenBSD.
  	ScanDevice* _tmp21_;
  	self = (SimpleScan*) base;
  	G_APPLICATION_CLASS (simple_scan_parent_class)->startup ((GApplication*) G_TYPE_CHECK_INSTANCE_CAST (self, GTK_TYPE_APPLICATION, GtkApplication));
-@@ -574,11 +584,13 @@ static void simple_scan_real_startup (GApplication* ba
+@@ -575,11 +585,13 @@ static void simple_scan_real_startup (GApplication* ba
  	_subsystems_size_ = subsystems_length1;
  	_tmp18_ = subsystems;
  	_tmp18__length1 = subsystems_length1;
@@ -72,7 +72,7 @@ No gudev under OpenBSD.
  	_tmp21_ = self->priv->default_device;
  	if (_tmp21_ != NULL) {
  		GList* device_list;
-@@ -628,8 +640,10 @@ static void simple_scan_real_shutdown (GApplication* b
+@@ -629,8 +641,10 @@ static void simple_scan_real_shutdown (GApplication* b
  	self->priv->book = NULL;
  	_user_interface_unref0 (self->priv->ui);
  	self->priv->ui = NULL;
@@ -83,7 +83,7 @@ No gudev under OpenBSD.
  	_tmp0_ = self->priv->scanner;
  	scanner_free (_tmp0_);
  }
-@@ -1741,6 +1755,7 @@ static void simple_scan_log_cb (const gchar* log_domai
+@@ -1742,6 +1756,7 @@ static void simple_scan_log_cb (const gchar* log_domai
  }
  
  
@@ -91,7 +91,7 @@ No gudev under OpenBSD.
  static void simple_scan_on_uevent (SimpleScan* self, GUdevClient* client, const gchar* action, GUdevDevice* device) {
  	Scanner* _tmp0_;
  	g_return_if_fail (self != NULL);
-@@ -1750,6 +1765,7 @@ static void simple_scan_on_uevent (SimpleScan* self, G
+@@ -1751,6 +1766,7 @@ static void simple_scan_on_uevent (SimpleScan* self, G
  	_tmp0_ = self->priv->scanner;
  	scanner_redetect (_tmp0_);
  }
@@ -99,7 +99,7 @@ No gudev under OpenBSD.
  
  
  static glong string_strnlen (gchar* str, glong maxlen) {
-@@ -2372,7 +2388,9 @@ gint simple_scan_main (gchar** args, int args_length1)
+@@ -2373,7 +2389,9 @@ gint simple_scan_main (gchar** args, int args_length1)
  		const gchar* _tmp37_;
  		gchar* _tmp38_;
  		_tmp30_ = scan_device_new ();
@@ -109,7 +109,7 @@ No gudev under OpenBSD.
  		device = _tmp30_;
  		_tmp31_ = device;
  		_tmp32_ = args;
-@@ -2449,7 +2467,9 @@ static void simple_scan_finalize (GObject* obj) {
+@@ -2450,7 +2468,9 @@ static void simple_scan_finalize (GObject* obj) {
  	SimpleScan * self;
  	self = G_TYPE_CHECK_INSTANCE_CAST (obj, TYPE_SIMPLE_SCAN, SimpleScan);
  	_scan_device_unref0 (self->priv->default_device);
