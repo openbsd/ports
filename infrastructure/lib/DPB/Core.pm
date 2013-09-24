@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.53 2013/09/23 14:50:54 espie Exp $
+# $OpenBSD: Core.pm,v 1.54 2013/09/24 10:07:27 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -873,13 +873,14 @@ sub exec
 	my ($self, @argv) = @_;
 	my $chroot = $self->prop->{chroot};
 	if ($self->{env}) {
+		unshift @argv, 'exec' unless $self->{sudo} && !$chroot;
 		while (my ($k, $v) = each %{$self->{env}}) {
 			$v //= '';
 			unshift @argv, "$k=\'$v\'";
 		}
 	}
 	if ($self->{sudo} && !$chroot) {
-		unshift(@argv, OpenBSD::Paths->sudo, "-E");
+		unshift(@argv, 'exec', OpenBSD::Paths->sudo, "-E");
 	}
 	my $cmd = join(' ', @argv);
 	if ($self->{dir}) {
