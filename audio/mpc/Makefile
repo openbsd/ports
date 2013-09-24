@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2013/09/19 16:33:17 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.15 2013/09/24 14:30:33 dcoppa Exp $
 
 COMMENT=		command line client for mpd
 
-MAJV=			0
-MINV=			23
-DISTNAME=		mpc-${MAJV}.${MINV}
+VER=			0.23
+DISTNAME=		mpc-${VER}
 CATEGORIES=		audio
 
 HOMEPAGE=		http://www.musicpd.org/clients/mpc/
@@ -17,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c mpdclient
 LIB_DEPENDS=		audio/libmpdclient>=2.2
 
-MASTER_SITES=		http://www.musicpd.org/download/mpc/${MAJV}/
+MASTER_SITES=		http://www.musicpd.org/download/mpc/${VER:R}/
 
 MODULES=		converters/libiconv
 
