@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.31 2013/04/05 06:59:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2013/09/24 08:39:04 ajacoutot Exp $
 
 COMMENT=	framework for defining and tracking users
 
-DISTNAME=	ConsoleKit-0.4.5
+DISTNAME=	ConsoleKit-0.4.6
+EXTRACT_SUFX=	.tar.xz
 PKGNAME=	${DISTNAME:L}
-REVISION=	9
 
 CATEGORIES=	sysutils	
 
-EXTRACT_SUFX=	.tar.bz2
-
-SHARED_LIBS+=	ck-connector	1.0
+SHARED_LIBS +=  ck-connector         1.0      # 0.0
 
 HOMEPAGE=	http://www.freedesktop.org/wiki/Software/ConsoleKit
 
@@ -27,10 +25,10 @@ MASTER_SITES=	http://www.freedesktop.org/software/ConsoleKit/dist/
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	sysutils/polkit>=0.101 \
+LIB_DEPENDS=	sysutils/polkit \
 		x11/dbus-glib
 
-AUTOCONF_VERSION= 2.68
+AUTOCONF_VERSION= 2.69
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

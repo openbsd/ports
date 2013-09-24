@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/06/01 11:29:53 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.7 2013/09/24 08:39:06 ajacoutot Exp $
 @bin bin/ck-history
 @bin bin/ck-launch-session
 @bin bin/ck-list-sessions
@@ -15,6 +14,7 @@ lib/ConsoleKit/scripts/ck-system-restart
 lib/ConsoleKit/scripts/ck-system-stop
 lib/libck-connector.a
 lib/libck-connector.la
+@lib lib/libck-connector.so.${LIBck-connector_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/ck-connector.pc
 @bin libexec/ck-collect-session-info

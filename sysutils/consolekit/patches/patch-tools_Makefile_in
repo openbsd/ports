@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_Makefile_in,v 1.3 2011/04/28 13:08:33 ajacoutot Exp $
---- tools/Makefile.in.orig	Thu Feb 17 00:44:31 2011
-+++ tools/Makefile.in	Wed Apr 27 15:40:59 2011
-@@ -37,6 +37,7 @@ host_triplet = @host@
+$OpenBSD: patch-tools_Makefile_in,v 1.4 2013/09/24 08:39:05 ajacoutot Exp $
+--- tools/Makefile.in.orig	Fri Jul 19 18:12:28 2013
++++ tools/Makefile.in	Tue Sep 24 10:29:59 2013
+@@ -82,6 +82,7 @@ host_triplet = @host@
  @CK_COMPILE_LINUX_TRUE@am__append_1 = linux
  @CK_COMPILE_FREEBSD_TRUE@am__append_2 = freebsd
  @CK_COMPILE_SOLARIS_TRUE@am__append_3 = solaris
@@ -9,7 +9,7 @@ $OpenBSD: patch-tools_Makefile_in,v 1.3 2011/04/28 13:08:33 ajacoutot Exp $
  bin_PROGRAMS = ck-launch-session$(EXEEXT) ck-list-sessions$(EXEEXT) \
  	ck-history$(EXEEXT) $(am__EXEEXT_1)
  sbin_PROGRAMS = ck-log-system-start$(EXEEXT) \
-@@ -359,6 +360,7 @@ DIST_SUBDIRS = \
+@@ -484,6 +485,7 @@ DIST_SUBDIRS = \
  	linux		\
  	freebsd		\
  	solaris		\
