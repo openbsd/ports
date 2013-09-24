@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.12 2012/10/12 14:55:42 ajacoutot Exp $
---- src/ck-sysdeps-openbsd.c.orig	Fri Oct 12 16:30:06 2012
-+++ src/ck-sysdeps-openbsd.c	Fri Oct 12 16:30:21 2012
+$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.13 2013/09/24 08:52:44 jca Exp $
+--- src/ck-sysdeps-openbsd.c.orig	Tue Sep 24 00:48:32 2013
++++ src/ck-sysdeps-openbsd.c	Tue Sep 24 00:53:08 2013
 @@ -0,0 +1,438 @@
 +/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
 + *
@@ -183,7 +183,7 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.12 2012/10/12 14:55:42 ajacoutot Ex
 +        P->wchan      = (unsigned long) p.p_wchan;
 +        P->state      = p.p_stat;
 +        P->nice       = p.p_nice;
-+        P->flags      = p.p_realflag;
++        P->flags      = p.p_psflags;
 +        P->tpgid      = p.p_tpgid;
 +        P->processor  = p.p_cpuid;
 +
