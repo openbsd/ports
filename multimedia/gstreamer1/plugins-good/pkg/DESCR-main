@@ -1,5 +1,5 @@
 This is GStreamer, a framework for streaming media.
-This package contains the "good" elements for gstreamer-${VERSION}.
+This package contains the "good" elements for gstreamer-${API}.
 
     "Such ingratitude.  After all the times I've saved your life."
 

@@ -1,10 +1,10 @@
-$OpenBSD: patch-sys_v4l2_gstv4l2object_c,v 1.1.1.1 2012/09/06 13:01:31 ajacoutot Exp $
+$OpenBSD: patch-sys_v4l2_gstv4l2object_c,v 1.2 2013/09/24 18:29:47 ajacoutot Exp $
 
 No more anonymous unions in video(4).
 
---- sys/v4l2/gstv4l2object.c.orig	Wed Aug  8 12:31:57 2012
-+++ sys/v4l2/gstv4l2object.c	Wed Sep  5 13:44:49 2012
-@@ -1625,8 +1625,8 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
+--- sys/v4l2/gstv4l2object.c.orig	Wed Sep  4 19:08:13 2013
++++ sys/v4l2/gstv4l2object.c	Tue Sep 24 16:46:25 2013
+@@ -1733,8 +1733,8 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
      g_value_init (&rate, GST_TYPE_FRACTION);
  
      do {
@@ -15,7 +15,7 @@ No more anonymous unions in video(4).
  
        if (num > G_MAXINT || denom > G_MAXINT) {
          /* let us hope we don't get here... */
-@@ -1658,8 +1658,8 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
+@@ -1766,8 +1766,8 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
      g_value_init (&max, GST_TYPE_FRACTION);
  
      /* get the min */
@@ -26,7 +26,7 @@ No more anonymous unions in video(4).
      if (minnum > G_MAXINT || mindenom > G_MAXINT) {
        minnum >>= 1;
        mindenom >>= 1;
-@@ -1669,8 +1669,8 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
+@@ -1777,8 +1777,8 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
      gst_value_set_fraction (&min, minnum, mindenom);
  
      /* get the max */
@@ -37,7 +37,7 @@ No more anonymous unions in video(4).
      if (maxnum > G_MAXINT || maxdenom > G_MAXINT) {
        maxnum >>= 1;
        maxdenom >>= 1;
-@@ -1681,8 +1681,8 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
+@@ -1789,8 +1789,8 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
      gst_value_set_fraction (&max, maxnum, maxdenom);
  
      /* get the step */
@@ -48,7 +48,7 @@ No more anonymous unions in video(4).
      if (num > G_MAXINT || denom > G_MAXINT) {
        num >>= 1;
        denom >>= 1;
-@@ -1733,15 +1733,15 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
+@@ -1841,15 +1841,15 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
  
      g_value_init (&rates, GST_TYPE_FRACTION_RANGE);
  
@@ -68,7 +68,7 @@ No more anonymous unions in video(4).
      if (maxnum > G_MAXINT || maxdenom > G_MAXINT) {
        maxnum >>= 1;
        maxdenom >>= 1;
-@@ -1837,10 +1837,10 @@ gst_v4l2_object_probe_caps_for_format (GstV4l2Object *
+@@ -1947,10 +1947,10 @@ gst_v4l2_object_probe_caps_for_format (GstV4l2Object *
    if (size.type == V4L2_FRMSIZE_TYPE_DISCRETE) {
      do {
        GST_LOG_OBJECT (v4l2object->element, "got discrete frame size %dx%d",
@@ -82,7 +82,7 @@ No more anonymous unions in video(4).
  
        if (w && h) {
          tmp =
-@@ -1858,21 +1858,21 @@ gst_v4l2_object_probe_caps_for_format (GstV4l2Object *
+@@ -1968,21 +1968,21 @@ gst_v4l2_object_probe_caps_for_format (GstV4l2Object *
    } else if (size.type == V4L2_FRMSIZE_TYPE_STEPWISE) {
      GST_DEBUG_OBJECT (v4l2object->element, "we have stepwise frame sizes:");
      GST_DEBUG_OBJECT (v4l2object->element, "min width:   %d",
@@ -113,7 +113,7 @@ No more anonymous unions in video(4).
        if (w == 0 || h == 0)
          continue;
  
-@@ -1890,18 +1890,18 @@ gst_v4l2_object_probe_caps_for_format (GstV4l2Object *
+@@ -2000,18 +2000,18 @@ gst_v4l2_object_probe_caps_for_format (GstV4l2Object *
  
      GST_DEBUG_OBJECT (v4l2object->element, "we have continuous frame sizes:");
      GST_DEBUG_OBJECT (v4l2object->element, "min width:   %d",
