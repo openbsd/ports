@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: minbif.rc,v 1.1 2013/09/24 15:34:49 landry Exp $
+
+daemon="${TRUEPREFIX}/bin/minbif -m 2"
+daemon_flags="${SYSCONFDIR}/minbif.conf"
+daemon_user="_minbif"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1

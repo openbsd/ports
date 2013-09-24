@@ -1,13 +1,14 @@
-$OpenBSD: patch-src_core_minbif_cpp,v 1.1.1.1 2010/09/13 19:44:40 landry Exp $
---- src/core/minbif.cpp.orig	Fri Jun 11 22:10:23 2010
-+++ src/core/minbif.cpp	Fri Jun 11 22:10:54 2010
-@@ -22,6 +22,9 @@
- #include <fstream>
- #include <cstring>
- #include <sys/resource.h>
-+#include <sys/types.h>
-+#include <unistd.h>
-+
- #include <purple.h>
- #include <getopt.h>
+$OpenBSD: patch-src_core_minbif_cpp,v 1.2 2013/09/24 15:34:46 landry Exp $
+https://symlink.me/projects/minbif/repository/revisions/6a7361fffe6133a77c3653f30b3946f597ec4321/diff/src/core/minbif.cpp
+--- src/core/minbif.cpp.orig	Sun Dec  4 15:24:51 2011
++++ src/core/minbif.cpp	Tue Sep 24 10:13:16 2013
+@@ -239,7 +239,9 @@ int Minbif::main(int argc, char** argv)
+ 		}
+ 		sighandler.setApplication(this);
+ 
++#if !GLIB_CHECK_VERSION(2, 32, 0)
+ 		g_thread_init(NULL);
++#endif
+ 		loop = g_main_new(FALSE);
+ 		g_main_run(loop);
  
