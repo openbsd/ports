@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/06/28 12:01:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2013/09/24 18:53:27 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -8,7 +8,7 @@ COMMENT=	GTK+2 subtitles editor
 
 V=		0.40.0
 DISTNAME=	subtitleeditor-${V}
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	graphics editors
 
@@ -27,7 +27,7 @@ WANTLIB += gobject-2.0 graphite2 gstaudio-0.10 gstbase-0.10 gstcdda-0.10
 WANTLIB += gstcontroller-0.10 gstdataprotocol-0.10 gstinterfaces-0.10
 WANTLIB += gstnet-0.10 gstnetbuffer-0.10 gstpbutils-0.10 gstreamer-0.10
 WANTLIB += gstreamermm-0.10 gstrtp-0.10 gsttag-0.10 gstvideo-0.10
-WANTLIB += gthread-2.0 gtk-x11-2.0 gtkmm-2.4 harfbuzz m orc-0.4
+WANTLIB += gthread-2.0 gtk-x11-2.0 gtkmm-2.4 harfbuzz m
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs sigc-2.0 stdc++
 WANTLIB += xcb xcb-render xcb-shm xml++-2.6 xml2 z

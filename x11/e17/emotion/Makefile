@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2013/07/07 21:25:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2013/09/24 18:53:29 ajacoutot Exp $
 
 COMMENT =		video (and audio) codec playback library
 
 DISTNAME =		emotion-1.7.6
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS +=	emotion                   1.0 # 8.6
 
@@ -17,7 +17,7 @@ WANTLIB += ecore_input_evas ecore_ipc ecore_x edje eet eina eio
 WANTLIB += embryo evas expat ffi fontconfig freetype fribidi glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gstbase-0.10 gstinterfaces-0.10
 WANTLIB += gstreamer-0.10 gstvideo-0.10 gthread-2.0 harfbuzz
-WANTLIB += idn jpeg m orc-0.4 pcre pthread pthread-stubs
+WANTLIB += idn jpeg m pcre pthread pthread-stubs
 WANTLIB += ssl xcb xml2 z ${MODLUA_WANTLIB}
 
 MODULES =		devel/gettext \
