@@ -1,12 +1,142 @@
-$OpenBSD: patch-docs_gnugk_1,v 1.7 2013/01/16 14:18:53 ajacoutot Exp $
---- docs/gnugk.1.orig	Thu Aug 23 15:09:29 2012
-+++ docs/gnugk.1	Wed Jan 16 08:12:25 2013
-@@ -78,7 +78,7 @@ Write trace log to the specified file.
- Set trace verbosity. The more \-t you add, the more verbose to output. For example, use \-ttttt to set the trace level to 5. 
+$OpenBSD: patch-docs_gnugk_1,v 1.8 2013/09/24 08:25:17 bentley Exp $
+--- docs/gnugk.1.orig	Thu Aug 23 07:09:29 2012
++++ docs/gnugk.1	Tue Sep 24 02:06:40 2013
+@@ -2,16 +2,16 @@
+ .\"
+ .\" gnugk.1
+ .\"
+-.\" Author: 
+-.\"	Jan Willamowius <jan@willamowius.de> 
+-.\" Man page Composer: 
++.\" Author:
++.\"	Jan Willamowius <jan@willamowius.de>
++.\" Man page Composer:
+ .\"     Ivan Lopez <ivan.n.lopez@gmail.com>
+ .\"
+-.\" Created: Tue May  15 2005 
++.\" Created: Tue May  15 2005
+ .\"
+ .\"
+ .Dd August 7, 2011
+-.Dt GNUGK 1 
++.Dt GNUGK 1
+ .Os
+ .Sh NAME
+ .Nm gnugk
+@@ -30,64 +30,85 @@
+ .Op Fl -pid Ar filename
+ .Op Fl -core Ar n
+ .Sh DESCRIPTION
+-.Bl -tag -width Ds
+-The GNU Gatekeeper is an open-source project that implements a H.323 gatekeeper. A H.323 gatekeeper controls all H.323 clients in its zone. It allows you, among other things, to register devices, make calls, perform AAA (Authentication, Authorization and Auditing), manage configurations at runtime and traverse NAT.
+-.El
++The GNU Gatekeeper is an open-source project that implements a H.323 gatekeeper.
++A H.323 gatekeeper controls all H.323 clients in its zone.
++It allows you, among other things, to register devices, make calls, perform AAA (Authentication, Authorization and Auditing), manage configurations at runtime and traverse NAT.
+ .Sh OPTIONS
++The behavior of the gatekeeper is determined through command line options and the configuration file.
++Some command line options may override settings found in the configuration file.
++For example, the option
++.Fl l
++overrides the setting
++.Dq TimeToLive
++in the configuration file.
++Almost every option has a short and a long format, e.g.,
++.Fl c
++is the same as
++.Fl -config .
+ .Bl -tag -width Ds
+-The behavior of the gatekeeper is determined through command line options and the configuration file. Some command line options may override settings found in the configuration file. For example, the option 
+-.Em -l 
+-overrides the setting "TimeToLive" in the configuration file. 
+-Almost every option has a short and a long format, e.g., 
+-.Em -c 
+-is the same as 
+-.Em --config. 
+ .It Fl h -help
+- Show all available options and quit the program. 
++Show all available options and quit the program.
+ .It Fl c -config Ar filename
+-Specify the configuration file to use. 
++Specify the configuration file to use.
+ .It Fl s -section Ar section
+-Specify which main section to use in the configuration file. The default is 
+-.Em [Gatekeeper::Main]. 
++Specify which main section to use in the configuration file.
++The default is
++.Em [Gatekeeper::Main] .
+ .It Fl l -timetolive Ar n
+-Specify the time-to-live timer (in seconds) for endpoint registration. This overrides the setting "TimeToLive" in the configuration file. A detailed explanation can be found in the manual.
++Specify the time-to-live timer (in seconds) for endpoint registration.
++This overrides the setting
++.Dq TimeToLive
++in the configuration file.
++A detailed explanation can be found in the manual.
+ .It Fl b -bandwidth Ar n
+-Specify the total bandwidth available for the gatekeeper. Without specifying this option, bandwidth management is disabled by default. 
++Specify the total bandwidth available for the gatekeeper.
++Without specifying this option, bandwidth management is disabled by default.
+ .It Fl -pid Ar filename
+-Specify the pid file.  Only valid for Unix version. 
++Specify the pid file.
++Only valid for Unix version.
+ .It Fl u -user Ar name
+-Run the gatekeeper process as this user. Only valid for Unix versions. 
++Run the gatekeeper process as this user.
++Only valid for Unix versions.
+ .It Fl -core Ar n
+-(Unix only) Enable writing core dump files when the application crashes. A core dump file will not exceed n bytes in size. A special constant "unlimited" may also be specified. 
++(Unix only) Enable writing core dump files when the application crashes.
++A core dump file will not exceed n bytes in size.
++A special constant
++.Dq unlimited
++may also be specified.
+ .El
+ .Ss Gatekeeper Mode
++The options in this subsection override the settings in the [RoutedMode] section of the configuration file.
+ .Bl -tag -width Ds
+-The options in this subsection override the settings in the [RoutedMode] section of the configuration file. 
+ .It Fl d -direct
+-Use direct endpoint call signaling. 
++Use direct endpoint call signaling.
+ .It Fl r -routed
+-Use gatekeeper routed call signaling. 
++Use gatekeeper routed call signaling.
+ .It Fl rr -h245routed
+-Use gatekeeper routed call signaling and H.245 control channel. 
++Use gatekeeper routed call signaling and H.245 control channel.
+ .El
+ .Ss Debug Information
+ .Bl -tag -width Ds
+ .It Fl o -output Ar filename
+ Write trace log to the specified file.
+ .It Fl t -trace
+-Set trace verbosity. The more \-t you add, the more verbose to output. For example, use \-ttttt to set the trace level to 5. 
++Set trace verbosity.
++The more
++.Fl t
++you add, the more verbose to output.
++For example, use
++.Fl ttttt
++to set the trace level to 5.
  .El
  .Sh FILES
 -.Pa /etc/gatekeeper.ini
 +.Pa ${SYSCONFDIR}/gatekeeper.ini
  .Sh AUTHORS
- The project coordinator is 
- .Em Jan Willamowius 
+-The project coordinator is 
+-.Em Jan Willamowius 
+-<jan@willamowius.de> 
++The project coordinator is
++.An Jan Willamowius Aq Mt jan@willamowius.de .
+ .Sh SEE ALSO
+ .Xr gatekeeper.ini 5 (and HTML manual)
+ .Pp
+-http://www.gnugk.org/ (project homepage)
++.Lk http://www.gnugk.org/ "Project homepage"
+ .Pp
+-http://www.gnugk.org/gnugk-manual.html (manual for latest release)
++.Lk http://www.gnugk.org/gnugk-manual.html "Manual for latest release"
+ .Pp
+-http://www.willamowius.com/gnugk-support.html (commercial support)
++.Lk http://www.willamowius.com/gnugk-support.html "Commercial support"
