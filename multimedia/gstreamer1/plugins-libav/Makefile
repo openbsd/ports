@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/09/24 18:30:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2013/09/24 18:31:13 ajacoutot Exp $
 
 COMMENT=		ffmpeg elements for GStreamer
 
@@ -48,7 +48,7 @@ CONFIGURE_ARGS +=	--disable-orc
 
 MAKE_ENV=		V=1
 
-# libavcodec.a(log2_tab.o)(.rodata+0x0): multiple definition of `ff_log2_tab'
+# XXX libavcodec.a(log2_tab.o)(.rodata+0x0): multiple definition of `ff_log2_tab'
 USE_LIBTOOL=		no
 
 # make sure bundled libav headers are chosen over the system FFmpeg ones
