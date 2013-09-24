@@ -1,5 +1,5 @@
 This is GStreamer, a framework for streaming media.
-This package contains the "ugly" elements for gstreamer-${VERSION}.
+This package contains the "ugly" elements for gstreamer-${API}.
 
     "When you have to shoot, shoot.  Don't talk."
 
