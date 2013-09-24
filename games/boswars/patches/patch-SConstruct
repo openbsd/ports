@@ -1,6 +1,6 @@
-$OpenBSD: patch-SConstruct,v 1.6 2012/07/10 15:22:45 jasper Exp $
---- SConstruct.orig	Sun Apr 18 20:04:54 2010
-+++ SConstruct	Mon Jul  9 19:37:51 2012
+$OpenBSD: patch-SConstruct,v 1.7 2013/09/24 04:53:18 brad Exp $
+--- SConstruct.orig	Sun Jun  2 08:41:11 2013
++++ SConstruct	Sat Sep 14 21:46:08 2013
 @@ -32,12 +32,12 @@ SConsignFile()
  
  def DefineOptions(filename, args):
@@ -40,7 +40,7 @@ $OpenBSD: patch-SConstruct,v 1.6 2012/07/10 15:22:45 jasper Exp $
    opengl['darwin'] = {
 @@ -155,6 +162,8 @@ def CheckOpenGL(env, conf):
    else:
-      if sys.platform[:5] == 'linux':
+      if sys.platform[:5] == 'linux' or sys.platform.startswith('gnukfreebsd'):
          platform = 'linux'
 +     if sys.platform[:7] == 'openbsd':
 +        platform = 'openbsd'
