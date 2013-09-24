@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1 2013/09/24 15:59:13 jasper Exp $
+
+Disable deprecation warnings untill upstream fully supports
+vala >= 0.22.0
+
+--- src/CMakeLists.txt.orig	Tue Sep 24 12:17:01 2013
++++ src/CMakeLists.txt	Tue Sep 24 12:17:11 2013
+@@ -439,7 +439,7 @@ set(VALAC_OPTIONS
+     --thread
+     --enable-checking
+     --debug
+-    --fatal-warnings
++    --enable-deprecated
+     ${EXTRA_VALA_OPTIONS}
+ )
+ 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/07/13 10:26:54 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2013/09/24 15:59:13 jasper Exp $
 
 COMMENT =	lightweight mail user agent
 
 DISTNAME =	geary-0.3.1
+REVISION =	0
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 CATEGORIES =	mail
