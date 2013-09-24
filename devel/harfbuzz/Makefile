@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.14 2013/08/10 18:29:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2013/09/24 09:18:31 ajacoutot Exp $
 
 COMMENT-main=		text shaping library
 COMMENT-icu=		ICU support for libharfbuzz
 
-V=			0.9.19
+V=			0.9.21
 DISTNAME=		harfbuzz-${V}
 EXTRACT_SUFX=		.tar.bz2
 
 PKGNAME-main=		harfbuzz-${V}
 PKGNAME-icu=		harfbuzz-icu-${V}
 
-SHARED_LIBS +=  harfbuzz             4.0    # 918.0
-SHARED_LIBS +=  harfbuzz-icu         0.0    # 918.0
+SHARED_LIBS +=  harfbuzz             4.1      # 921.0
+SHARED_LIBS +=  harfbuzz-icu         0.0      # 921.0
 
 CATEGORIES=		devel graphics textproc
 
@@ -22,8 +22,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ffi freetype glib-2.0 gobject-2.0 graphite2 m pcre pthread
-WANTLIB += stdc++ z
+WANTLIB += freetype glib-2.0 graphite2 m pcre pthread stdc++ z
 
 MASTER_SITES=		http://www.freedesktop.org/software/harfbuzz/release/
 
@@ -49,8 +48,14 @@ LIB_DEPENDS-icu=	devel/harfbuzz,-main=${V} \
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--with-icu \
+			--disable-gtk-doc \
 			--with-graphite2
+
+# If one of these tools is found at configure stage, it might be used,
+# no matter whether we use --disable-gtk-doc or not.
+CONFIGURE_ENV +=	ac_cv_path_GTKDOC_CHECK="" \
+			ac_cv_path_GTKDOC_REBASE="" \
+			ac_cv_path_GTKDOC_MKPDF=""
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/check-symbols.sh
