@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2013/09/13 06:08:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.138 2013/09/24 16:51:03 ajacoutot Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
@@ -81,7 +81,7 @@ CONFIGURE_ARGS+=	--disable-gudev \
 # XXX needs geocode-glib
 CONFIGURE_ARGS +=	--disable-geocode
 
-# XXX needs signond, libsignon-glib
+# needs signond, libsignon-glib -- Ubuntu/Meego
 CONFIGURE_ARGS +=	--disable-ubuntu-online-accounts
 
 # needs connman or network-manager

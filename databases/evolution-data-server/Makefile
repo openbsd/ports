@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.156 2013/09/11 14:02:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.157 2013/09/24 16:51:04 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -66,7 +66,7 @@ CONFIGURE_ARGS=		--with-krb5 \
 			--with-libdb=${LOCALBASE} \
 			--with-openldap=${LOCALBASE}
 
-# XXX needs signond, libsignon-glib
+# needs signond, libsignon-glib -- Ubuntu/Meego
 CONFIGURE_ARGS +=	--disable-uoa
 
 pre-configure:
