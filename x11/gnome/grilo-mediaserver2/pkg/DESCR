@@ -1,4 +1,0 @@
-grilo-mediaserver2, implements the D-BUS interface MediaServerSpec, for
-exposing media content over D-Bus. Rygel can consume content using this
-interface. Basically, it means that by using grilo-mediaserver2 and
-Rygel you can expose media content provided by Grilo on the UPnP realm.
