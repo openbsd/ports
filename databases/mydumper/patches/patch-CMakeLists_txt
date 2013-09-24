@@ -1,0 +1,12 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2013/09/24 14:44:44 giovanni Exp $
+--- CMakeLists.txt.orig	Tue Sep 24 14:55:22 2013
++++ CMakeLists.txt	Tue Sep 24 14:56:43 2013
+@@ -16,7 +16,7 @@ if (BUILD_DOCS)
+   add_subdirectory(docs)
+ endif (BUILD_DOCS)
+ 
+-set(CMAKE_C_FLAGS "-Wall -Wno-deprecated-declarations -Wunused -Wwrite-strings -Wno-strict-aliasing -Wextra -Wshadow -Werror -O3 -g ${MYSQL_CFLAGS}")
++set(CMAKE_C_FLAGS "-Wall -Wno-deprecated-declarations -Wunused -Wwrite-strings -Wno-strict-aliasing -Wextra -Wshadow -Werror ${MYSQL_CFLAGS}")
+ 
+ include_directories(${MYDUMPER_SOURCE_DIR} ${MYSQL_INCLUDE_DIR} ${GLIB2_INCLUDE_DIR} ${PCRE_INCLUDE_DIR} ${ZLIB_INCLUDE_DIRS})
+ 

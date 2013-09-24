@@ -1,0 +1,71 @@
+$OpenBSD: patch-docs_CMakeLists_txt,v 1.1.1.1 2013/09/24 14:44:44 giovanni Exp $
+textproc/py-sphinx fails while generating man pages
+--- docs/CMakeLists.txt.orig	Tue Sep 24 15:36:51 2013
++++ docs/CMakeLists.txt	Tue Sep 24 15:37:29 2013
+@@ -88,66 +88,6 @@ if(GENERATE_DOC)
+     DESTINATION "share/doc/mydumper"
+   )
+ 
+-  # HTML output directory
+-  set(SPHINX_MAN_DIR "${CMAKE_CURRENT_BINARY_DIR}/man")
+-  # This target builds a manual page using Sphinx.
+-
+-  add_custom_target(doc_man ALL
+-    ${SPHINX_EXECUTABLE}
+-      -q -b man
+-      -c "${BINARY_BUILD_DIR}"
+-      -d "${SPHINX_CACHE_DIR}"
+-      "${SOURCES_DIR}"
+-      "${SPHINX_MAN_DIR}"
+-    COMMENT "Building manual page with Sphinx"
+-  )
+-  list(APPEND CLEAN_FILES
+-    "${SPHINX_MAN_DIR}"
+-  )
+-  add_dependencies(doc_man
+-    doc_sources
+-  )
+-  # serialize Sphinx targets to avoid cache conflicts in parallel builds
+-  add_dependencies(doc_man
+-    doc_html
+-  )
+-  install(FILES "${SPHINX_MAN_DIR}/mydumper.1" "${SPHINX_MAN_DIR}/myloader.1"
+-    DESTINATION "share/man/man1"
+-  )
+-
+-  # This target builds PDF documentation using Sphinx and LaTeX.
+-  if(PDFLATEX_COMPILER)
+-    # PDF output directory
+-    set(SPHINX_PDF_DIR "${CMAKE_CURRENT_BINARY_DIR}/pdf")
+-
+-    add_custom_target(doc_pdf ALL
+-      ${SPHINX_EXECUTABLE}
+-	-q -b latex
+-	-c "${BINARY_BUILD_DIR}"
+-	-d "${SPHINX_CACHE_DIR}"
+-	"${SOURCES_DIR}"
+-	"${SPHINX_PDF_DIR}"
+-      COMMENT "Building PDF documentation with Sphinx"
+-    )
+-    add_custom_command(TARGET doc_pdf POST_BUILD
+-      COMMAND ${CMAKE_MAKE_PROGRAM} LATEXOPTS=-interaction=batchmode
+-      WORKING_DIRECTORY "${SPHINX_PDF_DIR}"
+-    )
+-    list(APPEND CLEAN_FILES
+-      "${SPHINX_PDF_DIR}"
+-    )
+-    add_dependencies(doc_pdf
+-      doc_sources
+-    )
+-    # serialize Sphinx targets to avoid cache conflicts in parallel builds
+-    add_dependencies(doc_pdf
+-      doc_man
+-    )
+-    install(FILES "${SPHINX_PDF_DIR}/mydumper.pdf"
+-      DESTINATION "share/doc/mydumper"
+-    )
+-  endif(PDFLATEX_COMPILER)
+-
+   # Add output directories to clean target.
+   set_directory_properties(PROPERTIES
+     ADDITIONAL_MAKE_CLEAN_FILES "${CLEAN_FILES}"

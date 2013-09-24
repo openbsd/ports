@@ -1,0 +1,2 @@
+mydumper is complement to mysqldump, for MySQL data dumping, providing
+parallelism, performance and easier to manage output.

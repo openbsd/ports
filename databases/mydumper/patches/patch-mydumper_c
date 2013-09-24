@@ -1,0 +1,19 @@
+$OpenBSD: patch-mydumper_c,v 1.1.1.1 2013/09/24 14:44:44 giovanni Exp $
+--- mydumper.c.orig	Mon Sep 16 09:04:58 2013
++++ mydumper.c	Mon Sep 16 09:21:48 2013
+@@ -579,6 +579,7 @@ MYSQL *create_main_connection()
+ 
+ 	if (!mysql_real_connect(conn, hostname, username, password, db, port, socket_path, 0)) {
+ 		g_critical("Error connecting to database: %s", mysql_error(conn));
++		rmdir(output_directory);
+ 		exit(EXIT_FAILURE);
+ 	}
+ 	if ((detected_server == SERVER_TYPE_MYSQL) && mysql_query(conn, "SET SESSION wait_timeout = 2147483")){
+@@ -598,6 +599,7 @@ MYSQL *create_main_connection()
+ 			break;
+ 		default:
+ 			g_critical("Cannot detect server type");
++			rmdir(output_directory);
+ 			exit(EXIT_FAILURE);
+ 			break;
+ 	}
