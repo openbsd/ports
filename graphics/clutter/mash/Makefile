@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/05/30 15:19:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2013/09/24 10:35:07 ajacoutot Exp $
 
 COMMENT=	library for using real 3D models within a Clutter scene
 
@@ -11,7 +11,7 @@ SHARED_LIBS +=  mash-0.2                  0.0 # 0.0
 
 HOMEPAGE=	http://clutter-project.github.io/mash/
 
-MASTER_SITES=	https://github.com/downloads/clutter-project/mash/
+MASTER_SITES=	http://cloud.github.com/downloads/clutter-project/mash/
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo cairo-gobject
