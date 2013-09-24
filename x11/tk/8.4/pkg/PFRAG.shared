@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2013/07/06 11:06:17 stu Exp $
-lib/libtk84_pic.a
-lib/libtkstub84_pic.a
-lib/tcl/tk8.4/pkgIndex.tcl

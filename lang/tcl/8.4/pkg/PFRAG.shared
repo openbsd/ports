@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2013/07/06 11:03:44 stu Exp $
-lib/libtcl84_pic.a
-lib/libtclstub84_pic.a
