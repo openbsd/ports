@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.352 2013/08/21 10:36:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.353 2013/09/25 07:53:00 sthen Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -66,6 +66,7 @@
      SUBDIR += geomview
      SUBDIR += gfract
      SUBDIR += gif2png
+     SUBDIR += giflib
      SUBDIR += gifsicle
      SUBDIR += giftrans
      SUBDIR += gimp
@@ -138,7 +139,6 @@
      SUBDIR += libpgf
      SUBDIR += libqrencode
      SUBDIR += libraw
-     SUBDIR += libungif
      SUBDIR += libvidcap
      SUBDIR += libwebp
      SUBDIR += libwmf
