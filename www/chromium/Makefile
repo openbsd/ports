@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2013/09/25 16:53:53 sthen Exp $
-
-BROKEN = sysctl changes
+# $OpenBSD: Makefile,v 1.149 2013/09/25 23:39:55 sthen Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -8,6 +6,7 @@ DPB_PROPERTIES=		parallel
 COMMENT=		Chromium browser
 
 V=			28.0.1500.95
+REVISION=		0
 DISTNAME=		chromium-${V}
 
 CATEGORIES=		www

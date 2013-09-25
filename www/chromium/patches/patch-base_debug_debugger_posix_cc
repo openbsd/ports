@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_debug_debugger_posix_cc,v 1.12 2013/04/03 08:19:10 robert Exp $
---- base/debug/debugger_posix.cc.orig.port	Fri Mar 22 02:13:43 2013
-+++ base/debug/debugger_posix.cc	Tue Apr  2 21:05:17 2013
+$OpenBSD: patch-base_debug_debugger_posix_cc,v 1.13 2013/09/25 23:39:55 sthen Exp $
+--- base/debug/debugger_posix.cc.orig.port	Wed Jul 24 19:31:42 2013
++++ base/debug/debugger_posix.cc	Wed Sep 25 13:57:45 2013
 @@ -33,6 +33,10 @@
  #include <sys/sysctl.h>
  #endif
@@ -12,7 +12,7 @@ $OpenBSD: patch-base_debug_debugger_posix_cc,v 1.12 2013/04/03 08:19:10 robert E
  #if defined(OS_FREEBSD)
  #include <sys/user.h>
  #endif
-@@ -110,33 +114,36 @@ bool BeingDebugged() {
+@@ -110,33 +114,38 @@ bool BeingDebugged() {
  
    // Caution: struct kinfo_proc is marked __APPLE_API_UNSTABLE.  The source and
    // binary interfaces may change.
@@ -45,6 +45,8 @@ $OpenBSD: patch-base_debug_debugger_posix_cc,v 1.12 2013/04/03 08:19:10 robert E
  #if defined(OS_FREEBSD)
 -  being_debugged = (info.ki_flag & P_TRACED) != 0;
 +  being_debugged = (info->ki_flag & P_TRACED) != 0;
++#elif defined(OS_OPENBSD) && !defined(_P_TRACED)
++  being_debugged = (info->p_psflags & PS_TRACED) != 0;
  #elif defined(OS_BSD)
 -  being_debugged = (info.p_flag & P_TRACED) != 0;
 +  being_debugged = (info->p_flag & P_TRACED) != 0;
