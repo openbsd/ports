@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.176 2013/09/19 13:37:50 landry Exp $
+# $OpenBSD: Makefile,v 1.177 2013/09/25 16:53:52 sthen Exp $
+
+BROKEN = sysctl changes
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension

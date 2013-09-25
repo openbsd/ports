@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.237 2013/09/19 13:19:16 landry Exp $
+# $OpenBSD: Makefile,v 1.238 2013/09/25 16:53:53 sthen Exp $
+
+BROKEN = sysctl changes
 
 COMMENT =	Mozilla web browser
 

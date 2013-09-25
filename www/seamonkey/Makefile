@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.143 2013/09/19 13:24:53 landry Exp $
+# $OpenBSD: Makefile,v 1.144 2013/09/25 16:53:53 sthen Exp $
+
+BROKEN = sysctl changes
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
