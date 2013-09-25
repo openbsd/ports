@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2013/04/18 12:00:45 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.24 2013/09/25 07:12:54 rpointel Exp $
 
 COMMENT=	simple login manager
 
 DISTNAME=	slim-1.3.5
+REVISION=	0
 
 CATEGORIES=	x11
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
