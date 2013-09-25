@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_mpdclient_c,v 1.1 2013/09/24 16:25:38 ajacoutot Exp $
+$OpenBSD: patch-src_mpdclient_c,v 1.2 2013/09/25 15:59:44 landry Exp $
 
 Do not try to unlock an unlocked mutex.
+https://bugzilla.xfce.org/show_bug.cgi?id=10366
 
 --- src/mpdclient.c.orig	Tue Sep 24 18:13:38 2013
 +++ src/mpdclient.c	Tue Sep 24 18:14:58 2013
