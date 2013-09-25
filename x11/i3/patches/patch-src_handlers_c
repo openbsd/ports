@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_handlers_c,v 1.14 2013/09/02 06:15:34 dcoppa Exp $
+$OpenBSD: patch-src_handlers_c,v 1.15 2013/09/25 09:58:14 dcoppa Exp $
 
 commit 0b168ee499e6065969ddd3359f95dfdf7e14350c
 Author: Kacper Kowalik (Xarthisius) <xarthisius@gentoo.org>
@@ -12,8 +12,14 @@ Date:   Fri Aug 30 19:59:57 2013 +0200
 
 Bugfix: update root geometry on output changes for "fullscreen global"
 
+commit 1a1d42153408822d267d0cb4718b22d8ff116f27
+Author: Michael Stapelberg <michael@stapelberg.de>
+Date:   Tue Sep 24 07:47:36 2013 +0200
+
+Bugfix: correctly recognize assigned windows as urgent
+
 --- src/handlers.c.orig	Wed Aug  7 20:50:24 2013
-+++ src/handlers.c	Mon Sep  2 07:46:48 2013
++++ src/handlers.c	Wed Sep 25 11:37:50 2013
 @@ -13,6 +13,7 @@
  #include "all.h"
  
@@ -22,11 +28,10 @@ Bugfix: update root geometry on output changes for "fullscreen global"
  #include <sys/time.h>
  #include <xcb/randr.h>
  #include <X11/XKBlib.h>
-@@ -421,6 +422,19 @@ int handle_configure_event(void *prophs, xcb_connectio
-  */
+@@ -422,6 +423,19 @@ int handle_configure_event(void *prophs, xcb_connectio
  static void handle_screen_change(xcb_generic_event_t *e) {
      DLOG("RandR screen change\n");
-+
+ 
 +    /* The geometry of the root window is used for "fullscreen global" and
 +     * changes when new outputs are added. */
 +    xcb_get_geometry_cookie_t cookie = xcb_get_geometry(conn, root);
@@ -39,6 +44,36 @@ Bugfix: update root geometry on output changes for "fullscreen global"
 +
 +    croot->rect.width = reply->width;
 +    croot->rect.height = reply->height;
- 
++
      randr_query_outputs();
+ 
+     scratchpad_fix_resolution();
+@@ -869,24 +883,13 @@ static bool handle_hints(void *data, xcb_connection_t 
+         return false;
+     }
+ 
+-    xcb_icccm_wm_hints_t hints;
+-
++    bool urgency_hint;
+     if (reply == NULL)
+-        if (!(reply = xcb_get_property_reply(conn, xcb_icccm_get_wm_hints(conn, window), NULL)))
+-            return false;
+-
+-    if (!xcb_icccm_get_wm_hints_from_reply(&hints, reply))
+-        return false;
+-
+-    /* Update the flag on the client directly */
+-    bool hint_urgent = (xcb_icccm_wm_hints_get_urgency(&hints) != 0);
+-    con_set_urgency(con, hint_urgent);
+-
++        reply = xcb_get_property_reply(conn, xcb_icccm_get_wm_hints(conn, window), NULL);
++    window_update_hints(con->window, reply, &urgency_hint);
++    con_set_urgency(con, urgency_hint);
+     tree_render();
+ 
+-    if (con->window)
+-        window_update_hints(con->window, reply);
+-    else free(reply);
+     return true;
+ }
  
