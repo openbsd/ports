@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2013/06/04 18:41:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2013/09/25 07:58:50 sthen Exp $
 
 COMMENT=	GDI+ comptible API
 
 DISTNAME=	libgdiplus-2.10
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	x11 devel
 
@@ -16,12 +16,11 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 # GPLv2 and Mozilla Public License 1.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xau Xdmcp Xrender cairo expat fontconfig freetype
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 jpeg m pcre
-WANTLIB += pixman-1 png pthread-stubs xcb z exif ungif
-WANTLIB += gthread-2.0 xcb-render pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 tiff
-WANTLIB += GL Xdamage Xext Xfixes Xxf86vm drm xcb-shm
+WANTLIB += X11 Xext Xrender cairo exif expat ffi fontconfig freetype
+WANTLIB += gif glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB += harfbuzz jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs tiff xcb xcb-render
+WANTLIB += xcb-shm z
 
 MASTER_SITES=	ftp://ftp.novell.com/pub/mono/sources/libgdiplus/
 EXTRACT_SUFX=	.tar.bz2
@@ -32,7 +31,7 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	devel/pango \
 		graphics/tiff \
 		graphics/libexif \
-		graphics/libungif
+		graphics/giflib
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \

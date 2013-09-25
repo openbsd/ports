@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2013/06/04 18:41:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2013/09/25 07:58:41 sthen Exp $
 
 COMMENT=	image manipulation functions for Objective Caml
 CATEGORIES=	graphics
 
 V=		4.0.1
-REVISION=	0
+REVISION=	1
 DISTNAME=	camlimages-$V
 PKGNAME=	ocaml-${DISTNAME}
 DISTFILES=	v$V.tar.gz
+# XXX bogus filename; fix at next update, see new DISTFILES syntax with {}
 MASTER_SITES=	https://bitbucket.org/camlspotter/camlimages/get/
 WRKDIST=	${WRKDIR}/camlspotter-camlimages-c803efa9d5d3
 
@@ -21,7 +22,7 @@ MODULES=	lang/ocaml
 WANTLIB+=	c X11 Xpm freetype gif jpeg m png tiff z
 
 LIB_DEPENDS=	graphics/jpeg \
-		graphics/libungif \
+		graphics/giflib \
 		graphics/png \
 		graphics/tiff
 BUILD_DEPENDS=	devel/omake \
@@ -43,8 +44,7 @@ MAKE_FLAGS+=	CFLAGS="${CFLAGS} \
 			-L${X11BASE}/lib \
 			-L${LOCALBASE}/lib"
 
-# test exists, but needs manual run and then user interaction
-TEST_IS_INTERACTIVE = Yes
+TEST_IS_INTERACTIVE = X11
 
 OMAKE=		omake --force-dotomake --dotomake ${WRKSRC}/omake_cache
 
@@ -57,5 +57,8 @@ do-install:
 
 post-install:
 	@cp -R ${WRKSRC}/examples/ ${PREFIX}/share/examples/ocaml-camlimages
+
+do-test:
+	cd ${WRKSRC}/test && ./test
 
 .include <bsd.port.mk>

@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_gifread_c,v 1.1 2013/09/25 07:58:41 sthen Exp $
+
+giflib 5.0+
+
+--- src/gifread.c.orig	Thu Sep 19 16:51:12 2013
++++ src/gifread.c	Thu Sep 19 16:53:32 2013
+@@ -140,7 +140,7 @@ value dGifOpenFileName( value name )
+   GifFileType *GifFile;
+   int i;
+ 
+-  if((GifFile = DGifOpenFileName( String_val(name) )) == NULL){
++  if((GifFile = DGifOpenFileName( String_val(name), NULL )) == NULL){
+     failwith("DGifOpenFileName");
+   }
+ 
+@@ -200,7 +200,7 @@ value dGifGetLine( value hdl )
+ 
+   if( DGifGetLine(GifFile, String_val(buf), GifFile->Image.Width ) 
+       == GIF_ERROR ){
+-    PrintGifError ();
++    fprintf(stderr, "GIF-LIB error: %s\n", GifErrorString(GifFile->Error));
+     failwith("DGifGetLine");
+   }
+   CAMLreturn(buf);

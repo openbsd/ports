@@ -1,0 +1,25 @@
+$OpenBSD: patch-Source_NSBitmapImageRep+GIF_m,v 1.1 2013/09/25 07:58:49 sthen Exp $
+
+handle giflib 5.0+ (in a basic way; though 5.0+ *is* threadsafe so the
+error handling could be improved)
+
+--- Source/NSBitmapImageRep+GIF.m.orig	Thu Sep 19 06:18:37 2013
++++ Source/NSBitmapImageRep+GIF.m	Thu Sep 19 06:18:53 2013
+@@ -142,7 +142,7 @@ static int gs_gif_output(GifFileType *file, const GifB
+     }
+ 
+   gs_gif_init_input_source(&src, imageData);
+-  file = DGifOpen(&src, gs_gif_input);
++  file = DGifOpen(&src, gs_gif_input, NULL);
+   if (file == NULL)
+     {
+       /* we do not use giferror here because it doesn't
+@@ -216,7 +216,7 @@ static int gs_gif_output(GifFileType *file, const GifB
+ 
+   /* open the image */
+   gs_gif_init_input_source(&src, imageData);
+-  file = DGifOpen(&src, gs_gif_input);
++  file = DGifOpen(&src, gs_gif_input, NULL);
+   if (file == NULL)
+     {
+       /* we do not use giferror here because it doesn't

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2013/08/22 23:03:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.90 2013/09/25 07:58:50 sthen Exp $
 
 COMMENT-main=		window manager that emulates NEXTSTEP(tm)
 COMMENT-lang=		language subpackage for Window Maker
@@ -6,7 +6,7 @@ COMMENT-lang=		language subpackage for Window Maker
 V=			0.92.0
 DISTNAME=		WindowMaker-${V}
 PKGNAME-main=		${DISTNAME:L}
-REVISION-main=		14
+REVISION-main=		54
 FULLPKGNAME-lang=	windowmaker-lang-${V}
 REVISION-lang=		3
 
@@ -20,7 +20,7 @@ HOMEPAGE=		http://www.windowmaker.info/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xext Xft Xinerama Xpm Xrender c expat fontconfig
-WANTLIB += freetype jpeg m png pthread-stubs tiff ungif xcb z
+WANTLIB += freetype jpeg m png pthread-stubs tiff gif xcb z
 
 MASTER_SITES=		${MASTER_SITE_WINDOWMAKER:=source/release/}
 EXTRACT_SUFX=		.tar.bz2
@@ -42,7 +42,7 @@ MULTI_PACKAGES=		-main -lang
 MODULES=		devel/gettext
 LIB_DEPENDS=		graphics/tiff \
 			graphics/png \
-			graphics/libungif
+			graphics/giflib
 
 RUN_DEPENDS-lang=	x11/windowmaker>=0.90.0
 LIB_DEPENDS-lang=

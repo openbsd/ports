@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2013/06/04 18:41:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2013/09/25 07:58:45 sthen Exp $
 
 COMMENT =		compressing non-caching HTTP proxy
 
 DISTNAME =		ziproxy-3.2.1
+REVISION =		0
 EXTRACT_SUFX =		.tar.bz2
 
 CATEGORIES =		net www
@@ -14,12 +15,12 @@ MAINTAINER =		Gonzalo L. R. <gonzalo@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		c m pthread z gif>=5 png>=8 jpeg>=62 jasper>=2
+WANTLIB +=		c m pthread z gif>=6 png>=8 jpeg>=62 jasper>=2
 WANTLIB +=		sasl2
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ziproxy/}
 
-LIB_DEPENDS =		graphics/libungif \
+LIB_DEPENDS =		graphics/giflib \
 			graphics/png \
 			graphics/jpeg \
 			graphics/jasper \

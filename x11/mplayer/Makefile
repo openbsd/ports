@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.226 2013/09/17 05:25:39 mlarkin Exp $
+# $OpenBSD: Makefile,v 1.227 2013/09/25 07:58:50 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,6 +9,7 @@ COMMENT =		movie player supporting many formats
 
 V =			20130819
 FFMPEG_V =		20130718
+REVISION =		0
 
 SUBST_VARS += 		PREFIX CONFDIR
 
@@ -29,7 +30,7 @@ WANTLIB =	GL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm ass avcodec \
 		avformat avutil bluray bz2 c cdda_interface cdda_paranoia \
 		crypto dv dvdnavmini dvdread enca fontconfig freetype \
 		fribidi jpeg m mng mp3lame ncurses ogg>=5 opus png postproc \
-		pthread SDL sndio speex stdc++ swscale ungif util x264>=5 \
+		pthread SDL sndio speex stdc++ swscale gif util x264>=5 \
 		xvidcore z
 
 # we use a snapshot
@@ -41,7 +42,7 @@ MODULES +=	converters/libiconv
 
 LIB_DEPENDS =	graphics/png \
 		graphics/jpeg \
-		graphics/libungif \
+		graphics/giflib \
 		graphics/ffmpeg>=${FFMPEG_V} \
 		audio/cdparanoia>=3.a9.8 \
 		audio/speex \

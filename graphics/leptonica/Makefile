@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/07/09 20:01:38 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/09/25 07:58:40 sthen Exp $
 
 COMMENT=	image processing and analysis library
 
 DISTNAME=	leptonica-1.68
-REVISION =	0
+REVISION=	1
 
 SHARED_LIBS +=  lept                 0.0      # 2.0
 
@@ -20,7 +20,7 @@ MASTER_SITES=	${HOMEPAGE}/source/
 LIBM_CHECK =	powf expf
 
 LIB_DEPENDS=	graphics/libwebp \
-		graphics/libungif \
+		graphics/giflib \
 		graphics/tiff
 
 # for non-shared archs...

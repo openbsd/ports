@@ -1,0 +1,42 @@
+$OpenBSD: patch-src_modules_loaders_gif_evas_image_load_gif_c,v 1.1 2013/09/25 07:58:48 sthen Exp $
+
+giflib 5.0+
+
+--- src/modules/loaders/gif/evas_image_load_gif.c.orig	Thu Sep 19 06:12:05 2013
++++ src/modules/loaders/gif/evas_image_load_gif.c	Thu Sep 19 06:13:56 2013
+@@ -700,7 +700,7 @@ evas_image_load_file_head_gif(Image_Entry *ie, const c
+         return EINA_FALSE;
+      }
+ 
+-   gif = DGifOpenFileHandle(fd);
++   gif = DGifOpenFileHandle(fd, NULL);
+    if (!gif)
+      {
+         if (fd) close(fd);
+@@ -838,7 +838,7 @@ evas_image_load_specific_frame(Image_Entry *ie, const 
+         return EINA_FALSE;
+      }
+ 
+-   gif = DGifOpenFileHandle(fd);
++   gif = DGifOpenFileHandle(fd, NULL);
+    if (!gif)
+      {
+         if (fd) close(fd);
+@@ -927,7 +927,7 @@ evas_image_load_file_data_gif(Image_Entry *ie, const c
+                   return EINA_FALSE;
+                }
+ 
+-             gif = DGifOpenFileHandle(fd);
++             gif = DGifOpenFileHandle(fd, NULL);
+              if (!gif)
+                {
+                   if (fd) close(fd);
+@@ -1000,7 +1000,7 @@ evas_image_load_frame_duration_gif(Image_Entry *ie, co
+ #endif
+    if (fd < 0) return -1;
+ 
+-   gif = DGifOpenFileHandle(fd);
++   gif = DGifOpenFileHandle(fd, NULL);
+    if (!gif)
+      {
+         if (fd) close(fd);

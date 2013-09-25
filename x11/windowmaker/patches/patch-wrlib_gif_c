@@ -1,0 +1,36 @@
+$OpenBSD: patch-wrlib_gif_c,v 1.1 2013/09/25 07:58:51 sthen Exp $
+
+handle giflib 5.0+
+
+--- wrlib/gif.c.orig	Tue Oct 12 12:21:01 2004
++++ wrlib/gif.c	Thu Sep 19 14:59:11 2013
+@@ -49,6 +49,7 @@ RLoadGIF(RContext *context, char *file, int index)
+     GifPixelType *buffer = NULL;
+     int i, j, k;
+     int width, height;
++    int giferr = 0;
+     GifRecordType recType;
+     ColorMapObject *colormap;
+     unsigned char rmap[256];
+@@ -61,10 +62,10 @@ RLoadGIF(RContext *context, char *file, int index)
+     /* default error message */
+     RErrorCode = RERR_BADINDEX;
+ 
+-    gif = DGifOpenFileName(file);
++    gif = DGifOpenFileName(file, &giferr);
+ 
+     if (!gif) {
+-        switch (GifLastError()) {
++        switch (giferr) {
+         case D_GIF_ERR_OPEN_FAILED:
+             RErrorCode = RERR_OPEN;
+             break;
+@@ -202,7 +203,7 @@ RLoadGIF(RContext *context, char *file, int index)
+     /* yuck! */
+     goto did_not_get_any_errors;
+ giferr:
+-    switch (GifLastError()) {
++    switch (gif->Error) {
+     case D_GIF_ERR_OPEN_FAILED:
+         RErrorCode = RERR_OPEN;
+         break;

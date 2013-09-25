@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.149 2013/09/24 18:53:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.150 2013/09/25 07:58:48 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		powerful desktop search tool and indexer
 
 GNOME_PROJECT=		tracker
 GNOME_VERSION=		0.16.2
-REVISION=		0
+REVISION=		1
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
@@ -61,7 +61,7 @@ LIB_DEPENDS=		x11/gnome/totem-pl-parser \
 			textproc/exempi \
 			sysutils/e2fsprogs>=1.42.7 \
 			graphics/libexif \
-			graphics/libungif \
+			graphics/giflib \
 			audio/libcue \
 			converters/enca \
 			audio/taglib \

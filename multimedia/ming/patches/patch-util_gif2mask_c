@@ -1,0 +1,29 @@
+$OpenBSD: patch-util_gif2mask_c,v 1.1 2013/09/25 07:58:44 sthen Exp $
+
+support giflib 5.0+, from http://cvsweb.netbsd.org/bsdweb.cgi/pkgsrc/multimedia/ming/patches/
+
+--- util/gif2mask.c.orig	Sat Jun  8 08:08:51 2013
++++ util/gif2mask.c	Fri Sep 20 02:52:28 2013
+@@ -13,10 +13,12 @@
+ 
+ #define max(a,b,c) (((a)>(b))?(((c)>(a))?(c):(a)):(((c)>(b))?(c):(b)))
+ 
++int ErrorCode;
++
+ void error(char *msg)
+ {
+   printf("%s:\n\n", msg);
+-  PrintGifError();
++  PrintGifError(ErrorCode);
+   exit(-1);
+ }
+ 
+@@ -28,7 +30,7 @@ unsigned char *readGif(char *fileName, int *length)
+   unsigned char *data;
+   int i, nColors, size;
+ 
+-  if((file = DGifOpenFileName(fileName)) == NULL)
++  if((file = DGifOpenFileName(fileName, &ErrorCode)) == NULL)
+     error("Error opening file");
+ 
+   if(DGifSlurp(file) != GIF_OK)

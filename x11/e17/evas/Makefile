@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2013/07/07 21:25:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2013/09/25 07:58:48 sthen Exp $
 
 COMMENT =		canvas API for X
 
 VERSION = 		1.7.6
 DISTNAME =		evas-${VERSION}.1
 EPOCH =			2
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=	evas                 3.0      # 8.6
 
@@ -26,11 +26,10 @@ MODE17_PURGE_LA =	lib/evas/modules
 VMEM_WARNING =		Yes
 
 LIB_DEPENDS =		x11/e17/eet>=1.7.6v2 \
-			graphics/libungif \
+			graphics/giflib \
 			graphics/png \
 			graphics/tiff \
 			graphics/jpeg \
-			graphics/libungif \
 			devel/harfbuzz \
 			devel/glib2 \
 			devel/fribidi \

@@ -1,7 +1,28 @@
-$OpenBSD: patch-Imlib_load_c,v 1.7 2011/07/08 20:36:09 naddy Exp $
+$OpenBSD: patch-Imlib_load_c,v 1.8 2013/09/25 07:56:59 sthen Exp $
+
+handle giflib-5.0+
+https://projects.archlinux.org/svntogit/packages.git/plain/trunk/imlib-giflib5.patch?h=packages/imlib
+
+and other patches
+
 --- Imlib/load.c.orig	Fri Mar 22 07:43:04 2002
-+++ Imlib/load.c	Mon Jul  4 17:33:14 2011
-@@ -191,12 +191,12 @@ _LoadPNG(ImlibData * id, FILE * f, int *w, int *h, int
++++ Imlib/load.c	Thu Sep 19 05:44:29 2013
+@@ -4,6 +4,14 @@
+ #include "Imlib_private.h"
+ #include <setjmp.h>
+ 
++static void
++localPrintGifError(void)
++{
++    int ErrorCode=0;
++    GifErrorString(ErrorCode);
++    fprintf(stderr, "\nGIF-LIB error: %i.\n", ErrorCode);
++}
++
+ /*      Split the ID - damages input    */
+ 
+ static char        *
+@@ -191,12 +199,12 @@ _LoadPNG(ImlibData * id, FILE * f, int *w, int *h, int
        png_destroy_read_struct(&png_ptr, NULL, NULL);
        return NULL;
      }
@@ -16,7 +37,7 @@ $OpenBSD: patch-Imlib_load_c,v 1.7 2011/07/08 20:36:09 naddy Exp $
      {
        png_destroy_read_struct(&png_ptr, &info_ptr, NULL);
        return NULL;
-@@ -254,7 +254,8 @@ _LoadPNG(ImlibData * id, FILE * f, int *w, int *h, int
+@@ -254,7 +262,8 @@ _LoadPNG(ImlibData * id, FILE * f, int *w, int *h, int
    png_read_image(png_ptr, lines);
    png_destroy_read_struct(&png_ptr, &info_ptr, NULL);
    ptr = data;
@@ -26,7 +47,7 @@ $OpenBSD: patch-Imlib_load_c,v 1.7 2011/07/08 20:36:09 naddy Exp $
      {
        for (y = 0; y < *h; y++)
  	{
-@@ -279,6 +280,7 @@ _LoadPNG(ImlibData * id, FILE * f, int *w, int *h, int
+@@ -279,6 +288,7 @@ _LoadPNG(ImlibData * id, FILE * f, int *w, int *h, int
  	    }
  	}
      }
@@ -34,7 +55,7 @@ $OpenBSD: patch-Imlib_load_c,v 1.7 2011/07/08 20:36:09 naddy Exp $
    else if (color_type == PNG_COLOR_TYPE_GRAY)
      {
        for (y = 0; y < *h; y++)
-@@ -294,6 +296,7 @@ _LoadPNG(ImlibData * id, FILE * f, int *w, int *h, int
+@@ -294,6 +304,7 @@ _LoadPNG(ImlibData * id, FILE * f, int *w, int *h, int
  	    }
  	}
      }
@@ -42,7 +63,41 @@ $OpenBSD: patch-Imlib_load_c,v 1.7 2011/07/08 20:36:09 naddy Exp $
    else
      {
        for (y = 0; y < *h; y++)
-@@ -631,12 +634,12 @@ _LoadBMP(ImlibData * id, FILE *file, int *w, int *h, i
+@@ -433,6 +444,7 @@ _LoadGIF(ImlibData * id, FILE *f, int *w, int *h, int 
+   int                 intjump[] = {8, 8, 4, 2};
+   int                 istransp, transp;
+   int                 fd;
++  int                 Error;
+ 
+   done = 0;
+   istransp = 0;
+@@ -443,7 +455,7 @@ _LoadGIF(ImlibData * id, FILE *f, int *w, int *h, int 
+   fd = fileno(f);
+   /* Apparently rewind(f) isn't sufficient */
+   lseek(fd, (long) 0, 0);
+-  gif = DGifOpenFileHandle(fd);
++  gif = DGifOpenFileHandle(fd, &Error);
+ 
+   if (!gif)
+     return NULL;
+@@ -451,14 +463,14 @@ _LoadGIF(ImlibData * id, FILE *f, int *w, int *h, int 
+     {
+       if (DGifGetRecordType(gif, &rec) == GIF_ERROR)
+ 	{
+-	  PrintGifError();
++	  localPrintGifError();
+ 	  rec = TERMINATE_RECORD_TYPE;
+ 	}
+       if ((rec == IMAGE_DESC_RECORD_TYPE) && (!done))
+ 	{
+ 	  if (DGifGetImageDesc(gif) == GIF_ERROR)
+ 	    {
+-	      PrintGifError();
++	      localPrintGifError();
+ 	      rec = TERMINATE_RECORD_TYPE;
+ 	    }
+ 	  *w = gif->Image.Width;
+@@ -631,12 +643,12 @@ _LoadBMP(ImlibData * id, FILE *file, int *w, int *h, i
    fread(dbuf, 4, 2, file);
    *w = (int)dbuf[0];
    *h = (int)dbuf[1];
@@ -57,7 +112,7 @@ $OpenBSD: patch-Imlib_load_c,v 1.7 2011/07/08 20:36:09 naddy Exp $
      {
        fprintf(stderr, "IMLIB ERROR: Image height > 32767 pixels for file\n");
        return NULL;
-@@ -645,9 +648,9 @@ _LoadBMP(ImlibData * id, FILE *file, int *w, int *h, i
+@@ -645,9 +657,9 @@ _LoadBMP(ImlibData * id, FILE *file, int *w, int *h, i
    planes = (int)word;
    fread(&word, 2, 1, file);
    bpp = (int)word;
@@ -69,7 +124,7 @@ $OpenBSD: patch-Imlib_load_c,v 1.7 2011/07/08 20:36:09 naddy Exp $
        return NULL;
      }
    fread(dbuf, 4, 4, file);
-@@ -661,6 +664,9 @@ _LoadBMP(ImlibData * id, FILE *file, int *w, int *h, i
+@@ -661,6 +673,9 @@ _LoadBMP(ImlibData * id, FILE *file, int *w, int *h, i
    ncolors = (int)dbuf[0];
    if (ncolors == 0)
      ncolors = 1 << bpp;
@@ -79,7 +134,7 @@ $OpenBSD: patch-Imlib_load_c,v 1.7 2011/07/08 20:36:09 naddy Exp $
    /* some more sanity checks */
    if (((comp == BI_RLE4) && (bpp != 4)) || ((comp == BI_RLE8) && (bpp != 8)) || ((comp == BI_BITFIELDS) && (bpp != 16 && bpp != 32)))
      {
-@@ -786,9 +792,13 @@ _LoadBMP(ImlibData * id, FILE *file, int *w, int *h, i
+@@ -786,9 +801,13 @@ _LoadBMP(ImlibData * id, FILE *file, int *w, int *h, i
  		  for (bit = 0; bit < 8; bit++)
  		    {
  		      index = ((byte & (0x80 >> bit)) ? 1 : 0);
@@ -93,7 +148,7 @@ $OpenBSD: patch-Imlib_load_c,v 1.7 2011/07/08 20:36:09 naddy Exp $
  		      column++;
  		    }
  		}
-@@ -810,9 +820,13 @@ _LoadBMP(ImlibData * id, FILE *file, int *w, int *h, i
+@@ -810,9 +829,13 @@ _LoadBMP(ImlibData * id, FILE *file, int *w, int *h, i
  			  index = ((byte & (0xF0 >> nibble * 4)) >> (!nibble * 4));
  			  if (index >= 16)
  			    index = 15;
@@ -107,7 +162,7 @@ $OpenBSD: patch-Imlib_load_c,v 1.7 2011/07/08 20:36:09 naddy Exp $
  			  column++;
  			}
  		    }
-@@ -851,9 +865,13 @@ _LoadBMP(ImlibData * id, FILE *file, int *w, int *h, i
+@@ -851,9 +874,13 @@ _LoadBMP(ImlibData * id, FILE *file, int *w, int *h, i
  				{
  				  linepos++;
  				  byte = getc(file);
@@ -121,7 +176,7 @@ $OpenBSD: patch-Imlib_load_c,v 1.7 2011/07/08 20:36:09 naddy Exp $
  				  column++;
  				}
  			      if (absolute & 0x01)
-@@ -864,9 +882,13 @@ _LoadBMP(ImlibData * id, FILE *file, int *w, int *h, i
+@@ -864,9 +891,13 @@ _LoadBMP(ImlibData * id, FILE *file, int *w, int *h, i
  			{
  			  for (i = 0; i < first; i++)
  			    {
@@ -135,7 +190,7 @@ $OpenBSD: patch-Imlib_load_c,v 1.7 2011/07/08 20:36:09 naddy Exp $
  			      column++;
  			      linepos++;
  			    }
-@@ -874,9 +896,13 @@ _LoadBMP(ImlibData * id, FILE *file, int *w, int *h, i
+@@ -874,9 +905,13 @@ _LoadBMP(ImlibData * id, FILE *file, int *w, int *h, i
  		    }
  		  else
  		    {
@@ -149,7 +204,7 @@ $OpenBSD: patch-Imlib_load_c,v 1.7 2011/07/08 20:36:09 naddy Exp $
  		      column++;
  		    }
  		}
-@@ -884,9 +910,12 @@ _LoadBMP(ImlibData * id, FILE *file, int *w, int *h, i
+@@ -884,9 +919,12 @@ _LoadBMP(ImlibData * id, FILE *file, int *w, int *h, i
  	  else if (bpp == 24)
  	    {
  	      linepos += fread(bbuf, 1, 3, file);
@@ -162,7 +217,7 @@ $OpenBSD: patch-Imlib_load_c,v 1.7 2011/07/08 20:36:09 naddy Exp $
  	      column++;
  	    }
  	  else if (bpp == 16)
-@@ -894,12 +923,16 @@ _LoadBMP(ImlibData * id, FILE *file, int *w, int *h, i
+@@ -894,12 +932,16 @@ _LoadBMP(ImlibData * id, FILE *file, int *w, int *h, i
  	      unsigned char       temp;
  
  	      linepos += fread(&word, 2, 1, file);
@@ -179,7 +234,7 @@ $OpenBSD: patch-Imlib_load_c,v 1.7 2011/07/08 20:36:09 naddy Exp $
  	      column++;
  	    }
  	  else
-@@ -907,12 +940,16 @@ _LoadBMP(ImlibData * id, FILE *file, int *w, int *h, i
+@@ -907,12 +949,16 @@ _LoadBMP(ImlibData * id, FILE *file, int *w, int *h, i
  	      unsigned char       temp;
  
  	      linepos += fread(&dword, 4, 1, file);
@@ -196,7 +251,7 @@ $OpenBSD: patch-Imlib_load_c,v 1.7 2011/07/08 20:36:09 naddy Exp $
  	      column++;
  	    }
  	}
-@@ -1061,7 +1098,7 @@ _LoadXPM(ImlibData * id, FILE *file, int *w, int *h, i
+@@ -1061,7 +1107,7 @@ _LoadXPM(ImlibData * id, FILE *file, int *w, int *h, i
  			  if (line[k] != ' ')
  			    {
  			      s[0] = 0;
@@ -205,7 +260,7 @@ $OpenBSD: patch-Imlib_load_c,v 1.7 2011/07/08 20:36:09 naddy Exp $
  			      slen = strlen(s);
  			      k += slen;
  			      if (!strcmp(s, "c"))
-@@ -1861,7 +1898,7 @@ Imlib_load_image(ImlibData * id, char *file)
+@@ -1861,7 +1907,7 @@ Imlib_load_image(ImlibData * id, char *file)
  	  free(im);
  	  return NULL;
  	}
@@ -214,7 +269,7 @@ $OpenBSD: patch-Imlib_load_c,v 1.7 2011/07/08 20:36:09 naddy Exp $
        if (num <= 0)
  	{
  	  fclose(p);
-@@ -1870,10 +1907,10 @@ Imlib_load_image(ImlibData * id, char *file)
+@@ -1870,10 +1916,10 @@ Imlib_load_image(ImlibData * id, char *file)
  	}
        while (fgets(s, 4096, p))
  	{

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/09/20 08:35:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2013/09/25 07:58:44 sthen Exp $
 
 COMMENT=	Flash 4/5 movie output library
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c freetype m png gif z
 
-LIB_DEPENDS=	graphics/libungif \
+LIB_DEPENDS=	graphics/giflib \
 		graphics/png
 BUILD_DEPENDS=	devel/bison
 

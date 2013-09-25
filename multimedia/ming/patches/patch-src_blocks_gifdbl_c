@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_blocks_gifdbl_c,v 1.1 2013/09/25 07:58:44 sthen Exp $
+
+support giflib 5.0+, from http://cvsweb.netbsd.org/bsdweb.cgi/pkgsrc/multimedia/ming/patches/
+
+--- src/blocks/gifdbl.c.orig	Thu Sep 19 17:06:25 2013
++++ src/blocks/gifdbl.c	Thu Sep 19 17:06:51 2013
+@@ -227,7 +227,7 @@ SWFDBLBitmapData newSWFDBLBitmapData_fromGifFile(const
+ 	SWFDBLBitmapData ret;
+ 	struct dbl_data gifdata;
+ 
+-	if((file = DGifOpenFileName(fileName)) == NULL)
++	if((file = DGifOpenFileName(fileName, NULL)) == NULL)
+ 		return NULL;
+ 	if(!readGif(file, &gifdata))
+ 		return NULL;
+@@ -246,7 +246,7 @@ SWFDBLBitmapData newSWFDBLBitmapData_fromGifInput(SWFI
+ 	SWFDBLBitmapData ret;
+ 	struct dbl_data gifdata;
+ 
+-	if((file = DGifOpen(input, (InputFunc) gifReadFunc)) == NULL)
++	if((file = DGifOpen(input, (InputFunc) gifReadFunc, NULL)) == NULL)
+ 		return NULL;
+ 	if(!readGif(file, &gifdata))
+ 		return NULL;

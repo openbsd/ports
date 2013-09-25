@@ -1,0 +1,15 @@
+$OpenBSD: patch-libbase_GnashImageGif_cpp,v 1.1 2013/09/25 07:58:47 sthen Exp $
+
+giflib 5.0+
+
+--- libbase/GnashImageGif.cpp.orig	Thu Sep 19 06:51:00 2013
++++ libbase/GnashImageGif.cpp	Thu Sep 19 06:51:07 2013
+@@ -269,7 +269,7 @@ GifInput::processRecord(GifRecordType record)
+ void
+ GifInput::read()
+ {
+-    _gif = DGifOpen(_inStream.get(), &readData); 
++    _gif = DGifOpen(_inStream.get(), &readData, NULL); 
+ 
+     GifRecordType record;
+ 

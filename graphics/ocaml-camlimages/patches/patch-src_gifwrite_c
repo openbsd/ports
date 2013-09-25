@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_gifwrite_c,v 1.1 2013/09/25 07:58:42 sthen Exp $
+
+giflib 5.0+
+
+--- src/gifwrite.c.orig	Thu Sep 19 16:50:20 2013
++++ src/gifwrite.c	Thu Sep 19 16:54:09 2013
+@@ -52,7 +52,7 @@ ColorMapObject *ColorMapObject_val( value cmap )
+ fprintf(stderr, "Creating map with length = %d ...\n", len);
+ fflush(stderr);
+ */
+-  cmapobj = MakeMapObject( len, NULL );
++  cmapobj = GifMakeMapObject( len, NULL );
+   for(i=0; i< len; i++){
+     cmapobj->Colors[i].Red   = Int_val(Field(Field(cmap,i),0));
+     cmapobj->Colors[i].Green = Int_val(Field(Field(cmap,i),1));
+@@ -68,7 +68,7 @@ value eGifOpenFileName( name )
+ 
+   GifFileType *GifFileOut;
+ 
+-  if ((GifFileOut = EGifOpenFileName( String_val( name ), 0) )== NULL) {
++  if ((GifFileOut = EGifOpenFileName( String_val( name ), 0, NULL) )== NULL) {
+     failwith("EGifOpenFileName");
+   }
+   /* gcc -fwritable-strings is required to compile libungif */
+@@ -133,7 +133,7 @@ value eGifPutLine( value oc, value buf )
+ 
+   if ( EGifPutLine(GifFileOut, String_val(buf), GifFileOut->Image.Width) 
+        == GIF_ERROR ){
+-    PrintGifError ();
++    fprintf(stderr, "GIF-LIB error: %s\n", GifErrorString(GifFileOut->Error));
+     failwith("EGifPutLine");
+   }
+   CAMLreturn(Val_unit);

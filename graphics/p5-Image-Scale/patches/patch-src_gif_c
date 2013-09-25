@@ -1,0 +1,100 @@
+$OpenBSD: patch-src_gif_c,v 1.1 2013/09/25 07:58:42 sthen Exp $
+
+a start at handling giflib 5.0+; incomplete, it also needs to handle changes
+to the GIF89 extension handling API.
+
+--- src/gif.c.orig	Thu Sep 19 11:22:37 2013
++++ src/gif.c	Thu Sep 19 11:29:23 2013
+@@ -55,11 +55,11 @@ image_gif_read_buf(GifFileType *gif, GifByteType *data
+ int
+ image_gif_read_header(image *im)
+ {
+-  im->gif = DGifOpen(im, image_gif_read_buf);
++  int err = 0;
++  im->gif = DGifOpen(im, image_gif_read_buf, &err);
+   
+   if (im->gif == NULL) {
+-    PrintGifError();
+-    warn("Image::Scale unable to open GIF file (%s)\n", SvPVX(im->path));
++    warn("Image::Scale unable to open GIF file (%s): %s\n", SvPVX(im->path), GifErrorString(err));
+     image_gif_finish(im);
+     return 0;
+   }
+@@ -108,8 +108,7 @@ image_gif_load(image *im)
+   
+   do { 
+     if (DGifGetRecordType(im->gif, &RecordType) == GIF_ERROR) {
+-      PrintGifError();
+-      warn("Image::Scale unable to read GIF file (%s)\n", SvPVX(im->path));
++      warn("Image::Scale unable to read GIF file (%s): %s\n", SvPVX(im->path), GifErrorString(im->gif->Error));
+       image_gif_finish(im);
+       return 0;
+     }
+@@ -117,8 +116,7 @@ image_gif_load(image *im)
+     switch (RecordType) {
+       case IMAGE_DESC_RECORD_TYPE:      
+         if (DGifGetImageDesc(im->gif) == GIF_ERROR) {
+-          PrintGifError();
+-          warn("Image::Scale unable to read GIF file (%s)\n", SvPVX(im->path));
++          warn("Image::Scale unable to read GIF file (%s): %s\n", SvPVX(im->path), GifErrorString(im->gif->Error));
+           image_gif_finish(im);
+           return 0;
+         }
+@@ -148,8 +146,7 @@ image_gif_load(image *im)
+             for (x = InterlacedOffset[i]; x < im->height; x += InterlacedJumps[i]) {
+               ofs = x * im->width;
+               if (DGifGetLine(im->gif, line, 0) != GIF_OK) {
+-                PrintGifError();
+-                warn("Image::Scale unable to read GIF file (%s)\n", SvPVX(im->path));
++                warn("Image::Scale unable to read GIF file (%s): %s\n", SvPVX(im->path), GifErrorString(im->gif->Error));
+                 image_gif_finish(im);
+                 return 0;
+               }
+@@ -170,8 +167,7 @@ image_gif_load(image *im)
+           ofs = 0;
+           for (x = 0; x < im->height; x++) {
+             if (DGifGetLine(im->gif, line, 0) != GIF_OK) {
+-              PrintGifError();
+-              warn("Image::Scale unable to read GIF file (%s)\n", SvPVX(im->path));
++              warn("Image::Scale unable to read GIF file (%s): %s\n", SvPVX(im->path), GifErrorString(im->gif->Error));
+               image_gif_finish(im);
+               return 0;
+             }
+@@ -193,8 +189,7 @@ image_gif_load(image *im)
+       
+       case EXTENSION_RECORD_TYPE:
+         if (DGifGetExtension(im->gif, &temp_save.Function, &ExtData) == GIF_ERROR) {
+-          PrintGifError();
+-          warn("Image::Scale unable to read GIF file (%s)\n", SvPVX(im->path));
++          warn("Image::Scale unable to read GIF file (%s): %s\n", SvPVX(im->path), GifErrorString(im->gif->Error));
+           image_gif_finish(im);
+           return 0;
+         }
+@@ -211,15 +206,13 @@ image_gif_load(image *im)
+         while (ExtData != NULL) {
+           /* Create an extension block with our data */
+           if (AddExtensionBlock(&temp_save, ExtData[0], &ExtData[1]) == GIF_ERROR) {
+-            PrintGifError();
+-            warn("Image::Scale unable to read GIF file (%s)\n", SvPVX(im->path));
++            warn("Image::Scale unable to read GIF file (%s): %s\n", SvPVX(im->path), GifErrorString(im->gif->Error));
+             image_gif_finish(im);
+             return 0;
+           }
+ 
+           if (DGifGetExtensionNext(im->gif, &ExtData) == GIF_ERROR) {
+-            PrintGifError();
+-            warn("Image::Scale unable to read GIF file (%s)\n", SvPVX(im->path));
++            warn("Image::Scale unable to read GIF file (%s): %s\n", SvPVX(im->path), GifErrorString(im->gif->Error));
+             image_gif_finish(im);
+             return 0;
+           }
+@@ -242,8 +235,7 @@ image_gif_finish(image *im)
+ {
+   if (im->gif != NULL) {
+     if (DGifCloseFile(im->gif) != GIF_OK) {
+-      PrintGifError();
+-      warn("Image::Scale unable to close GIF file (%s)\n", SvPVX(im->path));
++      warn("Image::Scale unable to close GIF file (%s): %s\n", SvPVX(im->path), GifErrorString(im->gif->Error));
+     }
+     im->gif = NULL;
+     

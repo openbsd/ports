@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:23:52 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/09/25 07:58:43 sthen Exp $
 
 COMMENT=		detect image spam with SpamAssassin
 
 V=			3.6.0.146
 DISTNAME=		fuzzyocr-$V
 PKGNAME=		p5-FuzzyOcr-$V
-REVISION=		0
+REVISION=		1
 PKG_ARCH=		*
 CATEGORIES=		mail perl5
 
@@ -16,7 +16,7 @@ MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 
 RUN_DEPENDS=		devel/p5-MLDBM-Sync \
 			graphics/gocr \
-			graphics/libungif \
+			graphics/giflib \
 			graphics/netpbm \
 			graphics/ocrad \
 			graphics/ImageMagick \

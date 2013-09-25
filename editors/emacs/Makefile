@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2013/08/20 22:05:51 zhuk Exp $
+# $OpenBSD: Makefile,v 1.40 2013/09/25 07:56:57 sthen Exp $
 
 BROKEN-hppa =		Invalid function: "DEAD"
 
@@ -6,7 +6,7 @@ COMMENT=		GNU editor: extensible, customizable, self-documenting
 
 VERSION=		24.3
 DISTNAME=		emacs-${VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		editors
 
@@ -28,7 +28,8 @@ FLAVOR?=		gtk3
 
 GCCARCH=		${MACHINE_ARCH}-unknown-openbsd
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.69
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
 CONFIGURE_ARGS=		--build="${GCCARCH}" \
 			--without-compress-info
@@ -58,7 +59,7 @@ LIB_DEPENDS+=		x11/dbus \
 			graphics/jpeg \
 			graphics/png \
 			graphics/tiff \
-			graphics/libungif \
+			graphics/giflib \
 			graphics/ImageMagick
 RUN_DEPENDS+=		devel/xdg-utils
 WANTLIB+=		dbus-1 rsvg-2 gio-2.0 gdk_pixbuf-2.0 gobject-2.0 \

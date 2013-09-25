@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:35:44 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/09/25 07:58:45 sthen Exp $
 
 COMMENT=	SWF manipulation and generation utilities
 
 DISTNAME=	swftools-0.9.1
-REVISION=	1
+REVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${HOMEPAGE}
 
@@ -12,11 +12,11 @@ HOMEPAGE=	http://www.swftools.org/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c fftw3 freetype jpeg m mp3lame stdc++ ungif z
+WANTLIB=	c fftw3 freetype jpeg m mp3lame stdc++ gif z
 
 LIB_DEPENDS=	audio/lame \
 		graphics/jpeg \
-		graphics/libungif \
+		graphics/giflib \
 		math/fftw3
 
 VMEM_WARNING=	Yes

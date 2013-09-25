@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/08/12 04:11:20 robert Exp $
+# $OpenBSD: Makefile,v 1.29 2013/09/25 07:56:58 sthen Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl
 SHARED_ONLY=	Yes
@@ -16,6 +16,7 @@ PKGNAME-php=	php-mapscript-${V}
 PKGNAME-perl=	p5-mapscript-${V}
 SHARED_LIBS +=	mapserver 0.0# 0.0
 REVISION-php =	0
+REVISION-main =	0
 
 CATEGORIES=	geo www
 
@@ -35,6 +36,7 @@ LIB_DEPENDS=	devel/proj \
 		geo/gdal \
 		geo/geos \
 		graphics/gd \
+		graphics/giflib \
 		www/fcgi
 
 RUN_DEPENDS-php=	${MODPHP_RUN_DEPENDS}

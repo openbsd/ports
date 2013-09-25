@@ -1,0 +1,15 @@
+$OpenBSD: patch-gutils_gimagereadgif_c,v 1.1 2013/09/25 07:58:46 sthen Exp $
+
+giflib 5.0+
+
+--- gutils/gimagereadgif.c.orig	Thu Sep 19 06:41:58 2013
++++ gutils/gimagereadgif.c	Thu Sep 19 06:44:24 2013
+@@ -220,7 +220,7 @@ GImage *GImageReadGif(char *filename) {
+     GifFileType *gif;
+     int i;
+ 
+-    if ((gif = DGifOpenFileName(filename)) == NULL) {
++    if ((gif = DGifOpenFileName(filename, NULL)) == NULL) {
+ 	fprintf( stderr, "can't open %s\n", filename);
+ return( NULL );
+     }

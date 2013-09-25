@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/06/04 18:41:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2013/09/25 07:56:57 sthen Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
@@ -6,6 +6,7 @@ COMMENT-perl =	perl bindings for GDAL
 
 V =		1.10.0
 DISTNAME =	gdal-${V}
+REVISION-main =	0
 SHARED_ONLY =	Yes
 
 PKGNAME-main =	${DISTNAME}
@@ -36,7 +37,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			geo/spatialite/libspatialite \
 			devel/libidn \
 			graphics/png \
-			graphics/libungif \
+			graphics/giflib \
 			graphics/jpeg \
 			graphics/jasper \
 			devel/pcre \

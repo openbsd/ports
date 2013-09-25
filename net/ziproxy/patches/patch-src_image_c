@@ -1,15 +1,24 @@
-$OpenBSD: patch-src_image_c,v 1.2 2012/09/27 13:17:12 gonzalo Exp $
+$OpenBSD: patch-src_image_c,v 1.3 2013/09/25 07:58:46 sthen Exp $
 
-Fix build with png-1.5.
+Fix build with giflib-5.0
 
---- src/image.c.orig	Fri Sep  7 09:48:04 2012
-+++ src/image.c	Fri Sep  7 09:48:44 2012
-@@ -557,7 +557,7 @@ int png2bitmap(char *inbuf, int insize, raw_bitmap **o
- 	bmp = new_raw_bitmap();
- 	*out = bmp;
+--- src/image.c.orig	Wed Feb  8 06:02:15 2012
++++ src/image.c	Thu Sep 19 05:01:14 2013
+@@ -905,7 +905,7 @@ int gif2bitmap(char *inbuf, int insize, raw_bitmap **o
+ 	desc.size=insize;
+ 	desc.x.pos=0;
  
--	png_set_read_fn (png_ptr, (void *) &desc, mem_to_png);
-+	png_set_read_fn(png_ptr,&desc,mem_to_png);
- 	
- 	png_read_info (png_ptr,info_ptr);
- 	png_get_IHDR (png_ptr, info_ptr, &width_png_uint_32, &height_png_uint_32,
+-	if ((GifFile = DGifOpen((void*)&desc, &gif_mem_input)) == NULL) 
++	if ((GifFile = DGifOpen((void*)&desc, &gif_mem_input, NULL)) == NULL) 
+     		return( IMG_RET_ERR_UNKNOWN + IMG_RET_FLG_WHILE_DECOMP);//more possible reasons
+ 
+ 	bmp = new_raw_bitmap();
+@@ -1738,7 +1738,7 @@ static int bitmap2jp2 (raw_bitmap *bmp, float rate, ch
+ 		cmptparm->width = cwidth [cmptno];
+ 		cmptparm->height = cheight [cmptno];
+ 		cmptparm->prec = cbitlen [cmptno];
+-		cmptparm->sgnd = false;	// we only generate unsigned components
++		cmptparm->sgnd = 0;	// we only generate unsigned components
+ 
+ 		cshiftR [cmptno] = 8 - cbitlen [cmptno]; // calculate the resampling shift for this component
+ 	}

@@ -1,0 +1,56 @@
+$OpenBSD: patch-gdk_imlib_io-gif_c,v 1.1 2013/09/25 07:56:59 sthen Exp $
+
+handle giflib 5.0+
+https://projects.archlinux.org/svntogit/packages.git/plain/trunk/imlib-giflib5.patch?h=packages/imlib
+
+--- gdk_imlib/io-gif.c.orig	Mon Mar  4 10:06:29 2002
++++ gdk_imlib/io-gif.c	Thu Sep 19 05:44:57 2013
+@@ -10,6 +10,14 @@ unsigned char loader_gif (FILE *f, int *w, int *h, int
+ #else
+ #include <gif_lib.h>
+ 
++static void
++localPrintGifError(void)
++{
++    int ErrorCode=0;
++    GifErrorString(ErrorCode);
++    fprintf(stderr, "\nGIF-LIB error: %i.\n", ErrorCode);
++}
++
+ unsigned char      *
+ loader_gif(FILE *f, int *w, int *h, int *t)
+ {
+@@ -23,6 +31,7 @@ loader_gif(FILE *f, int *w, int *h, int *t)
+   int                 intjump[] = {8, 8, 4, 2};
+   int                 istransp, transp;
+   int                 fd;
++  int                 Error;
+ 
+   done = 0;
+   istransp = 0;
+@@ -30,7 +39,7 @@ loader_gif(FILE *f, int *w, int *h, int *t)
+   fd = fileno(f);
+   /* Apparently rewind(f) isn't sufficient */
+   lseek(fd, (long) 0, 0);
+-  gif = DGifOpenFileHandle(fd);
++  gif = DGifOpenFileHandle(fd, NULL);
+ 
+   transp = -1;
+   data = NULL;
+@@ -43,14 +52,14 @@ loader_gif(FILE *f, int *w, int *h, int *t)
+     {
+       if (DGifGetRecordType(gif, &rec) == GIF_ERROR)
+ 	{
+-	  PrintGifError();
++	  localPrintGifError();
+ 	  rec = TERMINATE_RECORD_TYPE;
+ 	}
+       if ((rec == IMAGE_DESC_RECORD_TYPE) && (!done))
+ 	{
+ 	  if (DGifGetImageDesc(gif) == GIF_ERROR)
+ 	    {
+-	      PrintGifError();
++	      localPrintGifError();
+ 	      rec = TERMINATE_RECORD_TYPE;
+ 	    }
+ 	  *w = gif->Image.Width;

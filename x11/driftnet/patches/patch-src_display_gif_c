@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_display_gif_c,v 1.1 2013/09/25 07:58:47 sthen Exp $
+--- src/display/gif.c.orig	Thu Sep 19 16:47:28 2013
++++ src/display/gif.c	Thu Sep 19 16:47:48 2013
+@@ -22,7 +22,7 @@
+  */
+ int gif_load_hdr(img I) {
+     GifFileType *g;
+-    g = I->us = DGifOpenFileHandle(fileno(I->fp));
++    g = I->us = DGifOpenFileHandle(fileno(I->fp), NULL);
+     if (!I->us) {
+         I->err = IE_HDRFORMAT;
+         return 0;

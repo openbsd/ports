@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_image_c,v 1.1 2013/09/25 07:56:57 sthen Exp $
+
+handle giflib 5.0+
+
+--- src/image.c.orig	Thu Sep 19 14:37:38 2013
++++ src/image.c	Thu Sep 19 14:38:05 2013
+@@ -7192,7 +7192,7 @@ gif_load (struct frame *f, struct image *img)
+ 	}
+ 
+       /* Open the GIF file.  */
+-      gif = fn_DGifOpenFileName (SSDATA (file));
++      gif = fn_DGifOpenFileName (SSDATA (file), NULL);
+       if (gif == NULL)
+ 	{
+ 	  image_error ("Cannot open `%s'", file, Qnil);
+@@ -7213,7 +7213,7 @@ gif_load (struct frame *f, struct image *img)
+       memsrc.len = SBYTES (specified_data);
+       memsrc.index = 0;
+ 
+-      gif = fn_DGifOpen (&memsrc, gif_read_from_memory);
++      gif = fn_DGifOpen (&memsrc, gif_read_from_memory, NULL);
+       if (!gif)
+ 	{
+ 	  image_error ("Cannot open memory source `%s'", img->spec, Qnil);

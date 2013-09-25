@@ -1,0 +1,40 @@
+$OpenBSD: patch-src_gif2swf_c,v 1.1 2013/09/25 07:58:45 sthen Exp $
+
+giflib 5.0+
+
+--- src/gif2swf.c.orig	Thu Sep 19 15:04:17 2013
++++ src/gif2swf.c	Thu Sep 19 15:14:51 2013
+@@ -230,13 +230,13 @@ TAG *MovieAddFrame(SWF * swf, TAG * t, char *sname, in
+     }
+     fclose(fi);
+ 
+-    if ((gft = DGifOpenFileName(sname)) == NULL) {
++    if ((gft = DGifOpenFileName(sname, NULL)) == NULL) {
+         fprintf(stderr, "%s is not a GIF file!\n", sname);
+         return t;
+     }
+ 
+     if (DGifSlurp(gft) != GIF_OK) {
+-        PrintGifError();
++        fprintf(stderr, "giflib error: %s in %s\n", GifErrorString(gft->Error), sname);
+         return t;
+     }
+ 
+@@ -488,7 +488,7 @@ int CheckInputFile(char *fname, char **realname)
+     }
+     fclose(fi);
+ 
+-    if ((gft = DGifOpenFileName(s)) == NULL) {
++    if ((gft = DGifOpenFileName(s, NULL)) == NULL) {
+         fprintf(stderr, "%s is not a GIF file!\n", fname);
+         return -1;
+     }
+@@ -499,7 +499,7 @@ int CheckInputFile(char *fname, char **realname)
+         global.max_image_height = gft->SHeight;
+ 
+     if (DGifSlurp(gft) != GIF_OK) { 
+-        PrintGifError();
++        fprintf(stderr, "giflib error: %s\n", GifErrorString(gft->Error));
+         return -1;
+     }
+     // After DGifSlurp() call, gft->ImageCount become available

@@ -1,0 +1,93 @@
+$OpenBSD: patch-image_gif_c,v 1.1 2013/09/25 07:58:43 sthen Exp $
+
+support giflib 5.0+
+
+--- image/gif.c.orig	Mon Mar  6 23:59:56 2000
++++ image/gif.c	Fri Sep 20 03:51:20 2013
+@@ -15,6 +15,7 @@
+ 
+ #ifdef USE_GIF
+ 
++#include <stdlib.h>
+ #include "image.h"
+ #include <gif_lib.h>
+ 
+@@ -50,7 +51,7 @@ gifLoad(fullname, name, verbose)
+ 	ColorMapObject *ColorMap;
+ 	GifColorType *ColorMapEntry;
+ 
+-	GifFile = DGifOpenFileName(fullname);
++	GifFile = DGifOpenFileName(fullname, NULL);
+ 	if (GifFile == NULL)
+ 		return NULL;
+ 
+@@ -87,13 +88,13 @@ gifLoad(fullname, name, verbose)
+ 	/* Scan the content of the GIF file and load the image(s) in: */
+ 	do {
+ 		if (DGifGetRecordType(GifFile, &RecordType) == GIF_ERROR) {
+-			PrintGifError();
++			fprintf(stderr, "giflib error: %s\n", GifErrorString(GifFile->Error));
+ 			exit(-1);
+ 		}
+ 		switch (RecordType) {
+ 		case IMAGE_DESC_RECORD_TYPE:
+ 			if (DGifGetImageDesc(GifFile) == GIF_ERROR) {
+-				PrintGifError();
++				fprintf(stderr, "giflib error: %s\n", GifErrorString(GifFile->Error));
+ 				exit(-1);
+ 			}
+ 			Row = GifFile->Image.Top; /* Image Position relative to Screen. */
+@@ -113,7 +114,7 @@ gifLoad(fullname, name, verbose)
+ 							     j += InterlacedJumps[i]) {
+ 					if (DGifGetLine(GifFile, &ScreenBuffer[j][Col],
+ 					    Width) == GIF_ERROR) {
+-					    PrintGifError();
++					    fprintf(stderr, "giflib error: %s\n", GifErrorString(GifFile->Error));
+ 					    exit(-1);
+ 					}
+ 				}
+@@ -122,7 +123,7 @@ gifLoad(fullname, name, verbose)
+ 				for (i = 0; i < Height; i++) {
+ 					if (DGifGetLine(GifFile, &ScreenBuffer[Row++][Col],
+ 					    Width) == GIF_ERROR) {
+-						PrintGifError();
++					    	fprintf(stderr, "giflib error: %s\n", GifErrorString(GifFile->Error));
+ 						exit(-1);
+ 					}
+ 				}
+@@ -131,7 +132,7 @@ gifLoad(fullname, name, verbose)
+ 		case EXTENSION_RECORD_TYPE:
+ 			/* Skip any extension blocks in file: */
+ 			if (DGifGetExtension(GifFile, &ExtCode, &Extension) == GIF_ERROR) {
+-				PrintGifError();
++				fprintf(stderr, "giflib error: %s\n", GifErrorString(GifFile->Error));
+ 				exit(-1);
+ 			}
+ 			/* very adhoc transparency support */
+@@ -141,7 +142,7 @@ gifLoad(fullname, name, verbose)
+ 			}
+ 			while (Extension != NULL) {
+ 				if (DGifGetExtensionNext(GifFile, &Extension) == GIF_ERROR) {
+-					PrintGifError();
++					fprintf(stderr, "giflib error: %s\n", GifErrorString(GifFile->Error));
+ 					exit(-1);
+ 				}
+ 			}
+@@ -180,7 +181,7 @@ gifLoad(fullname, name, verbose)
+ 	}
+ 
+ 	if (DGifCloseFile(GifFile) == GIF_ERROR) {
+-		PrintGifError();
++		fprintf(stderr, "giflib error: %s\n", GifErrorString(GifFile->Error));
+ 		exit(-1);
+ 	}
+ 
+@@ -196,7 +197,7 @@ gifIdent(fullname, name)
+ 	GifFileType *gifp;
+ 	int ret;
+ 
+-	gifp = DGifOpenFileName(fullname);
++	gifp = DGifOpenFileName(fullname, NULL);
+ 	if (gifp == NULL)
+ 		ret = 0;
+ 	else {

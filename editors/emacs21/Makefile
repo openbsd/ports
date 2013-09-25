@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2013/08/07 15:37:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.70 2013/09/25 07:56:57 sthen Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -11,7 +11,7 @@ FULLPKGNAME-el=		emacs-el-${VERSION}
 FULLPKGPATH-el=		editors/emacs21,-el
 FULLPKGNAME-leim=	emacs-leim-${VERSION}
 FULLPKGPATH-leim=	editors/emacs21,-leim
-REVISION-main=		23
+REVISION-main=		24
 REVISION-el=		6
 REVISION-leim=		6
 
@@ -51,11 +51,11 @@ WANTLIB-main=		c m ncurses ossaudio
 .if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+=	--with-x=no
 .else
-LIB_DEPENDS-main=	graphics/libungif \
+LIB_DEPENDS-main=	graphics/giflib \
 			graphics/png \
 			graphics/tiff
 WANTLIB-main+=		ICE SM X11 Xaw Xext Xmu Xpm Xt z
-WANTLIB-main+=		ungif jpeg png tiff
+WANTLIB-main+=		gif jpeg png tiff
 .endif
 
 RUN_DEPENDS=		emacs-${VERSION}:${PKGPATH}
