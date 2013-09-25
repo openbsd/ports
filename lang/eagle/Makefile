@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/09/25 12:25:17 stu Exp $
 
 COMMENT =	Tcl implementation for the CLR
 
 V =		1.0
-P =		4691.37889
+P =		5000.25377
 DISTNAME =	eagle-${V}
-PKGNAME =	${DISTNAME}-beta26
+PKGNAME =	${DISTNAME}-beta28
 CATEGORIES =	lang lang/tcl
 HOMEPAGE =	http://eagle.to/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -37,8 +37,10 @@ EAGLE_BIN_DIR =	${EAGLE_INS_DIR}/bin
 EAGLE_LIB_DIR =	${EAGLE_INS_DIR}/lib/Eagle${V}
 EAGLE_BIN =	${PREFIX}/bin/eagle
 
-# Some tests are too timing-sensitive to succeed everywhere so don't run them
-EAGLE_TEST_FLAGS = -notFile 'benchmark.eagle delayout.eagle perf*.eagle'
+# Skip tests that are too timing-sensitive to succeed everywhere
+# Skip tests that use too much memory and hang
+EAGLE_TEST_FLAGS = -notFile 'benchmark.eagle delayout.eagle perf*.eagle' \
+		   -skip 'lmap-7.7 lmap-7.8'
 
 do-install:
 	${INSTALL_DATA_DIR} ${EAGLE_BIN_DIR} ${EAGLE_LIB_DIR}
