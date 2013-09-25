@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/09/19 08:32:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2013/09/25 06:25:38 jasper Exp $
 
 COMMENT=	framework for making media discovery and browsing easy
 
@@ -35,5 +35,9 @@ LIB_DEPENDS=	devel/libsoup \
 		x11/gtk+3
 
 MODGNOME_TOOLS= gi vala
+
+# XXX: Remove when updating to the next release which merges in patch-configure_ac
+AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	autoconf
 
 .include <bsd.port.mk>
