@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_common_quoted-printable_h,v 1.1 2012/06/29 14:02:54 landry Exp $
+$OpenBSD: patch-src_common_quoted-printable_h,v 1.2 2013/09/25 08:03:14 landry Exp $
 http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2640
---- src/common/quoted-printable.h.orig	Wed Jun 27 11:05:23 2012
-+++ src/common/quoted-printable.h	Fri Jun 29 10:56:09 2012
+--- src/common/quoted-printable.h.orig	Tue Mar 19 02:31:04 2013
++++ src/common/quoted-printable.h	Sun Sep 22 23:00:10 2013
 @@ -22,6 +22,18 @@
  
  #include <glib.h>
@@ -13,10 +13,10 @@ http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2640
 + * Therefore the caller can chain multiple lines of encoded data resulting from
 + * sequential runs by glueing them together with line breaks.
 + * The number of processed input characters is returned. */
-+gint qp_encode			(gboolean	text,
-+				 gchar		*out,
-+				 const guchar	*in,
-+				 gint		len);
++gint qp_encode                 (gboolean       text,
++				gchar          *out,
++				const guchar   *in,
++				gint           len);
 +/* Deprecated */
  void qp_encode_line		(gchar		*out,
  				 const guchar	*in);

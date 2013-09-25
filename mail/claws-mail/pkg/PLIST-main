@@ -1,4 +1,12 @@
-@comment $OpenBSD: PLIST-main,v 1.27 2012/10/09 16:41:29 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.28 2013/09/25 08:03:17 landry Exp $
+@conflict claws-mail-attremover-*
+@conflict claws-mail-notification-*
+@conflict claws-mail-rssyl-*
+@conflict claws-mail-vcalendar-*
+@pkgpath mail/claws-mail-attremover
+@pkgpath mail/claws-mail-notification
+@pkgpath mail/claws-mail-rssyl
+@pkgpath mail/claws-mail-vcalendar
 @pkgpath mail/sylpheed-claws,-main[,compface][,pgpmime][,jpilot][,ldap]
 @pkgpath mail/sylpheed-claws[,compface][,pgpmime][,jpilot][,ldap]
 @bin bin/claws-mail
@@ -25,9 +33,11 @@ include/claws-mail/addrindex.h
 include/claws-mail/addritem.h
 include/claws-mail/addrquery.h
 include/claws-mail/addrselect.h
+include/claws-mail/advsearch.h
 include/claws-mail/alertpanel.h
 include/claws-mail/autofaces.h
 include/claws-mail/browseldap.h
+include/claws-mail/claws-features.h
 include/claws-mail/codeconv.h
 include/claws-mail/common/
 include/claws-mail/common/base64.h
@@ -58,7 +68,6 @@ include/claws-mail/common/version.h
 include/claws-mail/common/xml.h
 include/claws-mail/common/xmlprops.h
 include/claws-mail/compose.h
-include/claws-mail/config.h
 include/claws-mail/crash.h
 include/claws-mail/customheader.h
 include/claws-mail/displayheader.h
@@ -148,6 +157,7 @@ include/claws-mail/matcher.h
 include/claws-mail/matcher_parser.h
 include/claws-mail/matcher_parser_lex.h
 include/claws-mail/matcher_parser_parse.h
+include/claws-mail/matchertypes.h
 include/claws-mail/mbox.h
 include/claws-mail/message_search.h
 include/claws-mail/messageview.h
@@ -162,6 +172,22 @@ include/claws-mail/noticeview.h
 include/claws-mail/partial_download.h
 include/claws-mail/pine.h
 include/claws-mail/plugins/
+include/claws-mail/plugins/claws-mail/
+include/claws-mail/plugins/claws-mail/archiver.h
+include/claws-mail/plugins/claws-mail/archiver_prefs.h
+include/claws-mail/plugins/claws-mail/gtkhotkey/
+include/claws-mail/plugins/claws-mail/gtkhotkey/eggaccelerators.h
+include/claws-mail/plugins/claws-mail/gtkhotkey/gtk-hotkey-error.h
+include/claws-mail/plugins/claws-mail/gtkhotkey/gtk-hotkey-info.h
+include/claws-mail/plugins/claws-mail/gtkhotkey/gtk-hotkey-key-file-registry.h
+include/claws-mail/plugins/claws-mail/gtkhotkey/gtk-hotkey-listener.h
+include/claws-mail/plugins/claws-mail/gtkhotkey/gtk-hotkey-marshal.h
+include/claws-mail/plugins/claws-mail/gtkhotkey/gtk-hotkey-registry.h
+include/claws-mail/plugins/claws-mail/gtkhotkey/gtk-hotkey-utils.h
+include/claws-mail/plugins/claws-mail/gtkhotkey/gtk-hotkey-x11-listener.h
+include/claws-mail/plugins/claws-mail/gtkhotkey/gtkhotkey.h
+include/claws-mail/plugins/claws-mail/gtkhotkey/tomboykeybinder.h
+include/claws-mail/plugins/claws-mail/ical.h
 include/claws-mail/plugins/pgpcore/
 include/claws-mail/plugins/pgpcore/passphrase.h
 include/claws-mail/plugins/pgpcore/pgp_viewer.h
@@ -174,6 +200,8 @@ include/claws-mail/plugins/pgpmime/
 include/claws-mail/plugins/pgpmime/pgpmime.h
 include/claws-mail/plugins/smime/
 include/claws-mail/plugins/smime/smime.h
+include/claws-mail/plugins/vcalendar/
+include/claws-mail/plugins/vcalendar/vcal_interface.h
 include/claws-mail/pop.h
 include/claws-mail/prefs_account.h
 include/claws-mail/prefs_actions.h
@@ -210,6 +238,7 @@ include/claws-mail/privacy.h
 include/claws-mail/procheader.h
 include/claws-mail/procmime.h
 include/claws-mail/procmsg.h
+include/claws-mail/proctypes.h
 include/claws-mail/quote_fmt.h
 include/claws-mail/quote_fmt_lex.h
 include/claws-mail/quote_fmt_parse.h
@@ -229,9 +258,32 @@ include/claws-mail/undo.h
 include/claws-mail/unmime.h
 include/claws-mail/uri_opener.h
 include/claws-mail/vcard.h
+include/claws-mail/viewtypes.h
 include/claws-mail/wizard.h
 lib/claws-mail/
 lib/claws-mail/plugins/
+lib/claws-mail/plugins/address_keeper.la
+lib/claws-mail/plugins/address_keeper.so
+lib/claws-mail/plugins/archive.la
+lib/claws-mail/plugins/archive.so
+lib/claws-mail/plugins/att_remover.la
+lib/claws-mail/plugins/att_remover.so
+lib/claws-mail/plugins/attachwarner.la
+lib/claws-mail/plugins/attachwarner.so
+lib/claws-mail/plugins/bsfilter.la
+lib/claws-mail/plugins/bsfilter.so
+lib/claws-mail/plugins/clamd.la
+lib/claws-mail/plugins/clamd.so
+lib/claws-mail/plugins/fetchinfo.la
+lib/claws-mail/plugins/fetchinfo.so
+lib/claws-mail/plugins/mailmbox.la
+lib/claws-mail/plugins/mailmbox.so
+lib/claws-mail/plugins/newmail.la
+lib/claws-mail/plugins/newmail.so
+lib/claws-mail/plugins/notification.la
+lib/claws-mail/plugins/notification.so
+lib/claws-mail/plugins/perl.la
+lib/claws-mail/plugins/perl.so
 lib/claws-mail/plugins/pgpcore.la
 lib/claws-mail/plugins/pgpcore.so
 lib/claws-mail/plugins/pgpinline.deps
@@ -240,11 +292,17 @@ lib/claws-mail/plugins/pgpinline.so
 lib/claws-mail/plugins/pgpmime.deps
 lib/claws-mail/plugins/pgpmime.la
 lib/claws-mail/plugins/pgpmime.so
+lib/claws-mail/plugins/rssyl.la
+lib/claws-mail/plugins/rssyl.so
 lib/claws-mail/plugins/smime.deps
 lib/claws-mail/plugins/smime.la
 lib/claws-mail/plugins/smime.so
-lib/claws-mail/plugins/trayicon.la
-lib/claws-mail/plugins/trayicon.so
+lib/claws-mail/plugins/spamreport.la
+lib/claws-mail/plugins/spamreport.so
+lib/claws-mail/plugins/tnef_parse.la
+lib/claws-mail/plugins/tnef_parse.so
+lib/claws-mail/plugins/vcalendar.la
+lib/claws-mail/plugins/vcalendar.so
 lib/pkgconfig/claws-mail.pc
 @man man/man1/claws-mail.1
 share/applications/claws-mail.desktop
@@ -302,6 +360,7 @@ share/locale/en_GB/LC_MESSAGES/claws-mail.mo
 share/locale/es/LC_MESSAGES/claws-mail.mo
 share/locale/fi/LC_MESSAGES/claws-mail.mo
 share/locale/fr/LC_MESSAGES/claws-mail.mo
+share/locale/he/LC_MESSAGES/claws-mail.mo
 share/locale/hu/LC_MESSAGES/claws-mail.mo
 share/locale/id_ID/
 share/locale/id_ID/LC_MESSAGES/

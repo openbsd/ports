@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_procmime_c,v 1.8 2012/10/09 17:01:16 sthen Exp $
+$OpenBSD: patch-src_procmime_c,v 1.9 2013/09/25 08:03:16 landry Exp $
 http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2640
 http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2641
 http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2642
 http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2743
---- src/procmime.c.orig	Wed Jun 27 11:05:22 2012
-+++ src/procmime.c	Tue Oct  9 18:51:08 2012
-@@ -562,16 +562,29 @@ gboolean procmime_encode_content(MimeInfo *mimeinfo, E
+--- src/procmime.c.orig	Wed May  8 04:46:17 2013
++++ src/procmime.c	Sun Sep 22 23:00:18 2013
+@@ -616,10 +616,22 @@ gboolean procmime_encode_content(MimeInfo *mimeinfo, E
  			g_free(tmp_file);
  		}
  	} else if (encoding == ENC_QUOTED_PRINTABLE) {
@@ -14,7 +14,7 @@ http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2743
 +		gint n, len = 0;
 +		gboolean firstrun = TRUE;
  
--		while (fgets(inbuf, sizeof(inbuf), infp) != NULL) {
+-		while (SC_FGETS(inbuf, sizeof(inbuf), infp) != NULL) {
 -			qp_encode_line(outbuf, inbuf);
 +		while ((len += fread(inbuf + len, 1,
 +			sizeof(inbuf) - len - 1,
@@ -23,25 +23,16 @@ http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2743
 +			if (firstrun == FALSE)
 +				if (fputs("\r\n", outfp) == EOF)
 +					err = TRUE;
- 
 +			inbuf[len] = '\0';
 +			n = qp_encode(mimeinfo->type == MIMETYPE_TEXT,
 +					outbuf, inbuf, len);
 +			len -= n;
 +			memmove(inbuf, inbuf + n, len);
-+
+ 
  			if (!strncmp("From ", outbuf, sizeof("From ")-1)) {
  				gchar *tmpbuf = outbuf;
--				
-+
- 				tmpbuf += sizeof("From ")-1;
--				
-+
- 				if (fputs("=46rom ", outfp) == EOF)
- 					err = TRUE;
- 				if (fputs(tmpbuf, outfp) == EOF)
-@@ -580,14 +593,40 @@ gboolean procmime_encode_content(MimeInfo *mimeinfo, E
- 				if (fputs(outbuf, outfp) == EOF)
+@@ -634,14 +646,39 @@ gboolean procmime_encode_content(MimeInfo *mimeinfo, E
+ 				if (SC_FPUTS(outbuf, outfp) == EOF)
  					err = TRUE;
  			}
 +			firstrun = FALSE;
@@ -51,9 +42,9 @@ http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2743
 +		gchar buf[MAXSMTPTEXTLEN+1];
 +		gint leftover = 0;
  
--		while (fgets(buf, sizeof(buf), infp) != NULL) {
+-		while (SC_FGETS(buf, sizeof(buf), infp) != NULL) {
 -			strcrchomp(buf);
--			if (fputs(buf, outfp) == EOF)
+-			if (SC_FPUTS(buf, outfp) == EOF)
 +		while (fgets(buf + leftover,
 +				sizeof(buf) - leftover,
 +				infp) != NULL)
@@ -75,26 +66,25 @@ http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2743
 +				*c = *(c-1);
 +				*--c = '\0';
 +				leftover++;
-+				}
-+
++			}
 +			if (fputs(buf, outfp) == EOF || putc('\n', outfp) == EOF)
- 				err = TRUE;
 +
+ 				err = TRUE;
 +			for (l = buf; l-buf < leftover; l++)
 +				*l = *++c;
  		}
  	}
  
-@@ -1094,7 +1133,7 @@ GList *procmime_get_mime_type_list(void)
+@@ -1183,7 +1220,7 @@ GList *procmime_get_mime_type_list(void)
  #endif
  	{
  		fp_is_glob_file = FALSE;
--		if ((fp = g_fopen("/etc/mime.types", "rb")) == NULL) {
-+		if ((fp = g_fopen("/var/www/conf/mime.types", "rb")) == NULL) {
- 			if ((fp = g_fopen(SYSCONFDIR "/mime.types", "rb")) 
+-		if ((fp = procmime_fopen("/etc/mime.types", "rb")) == NULL) {
++		if ((fp = procmime_fopen("/var/www/conf/mime.types", "rb")) == NULL) {
+ 			if ((fp = procmime_fopen(SYSCONFDIR "/mime.types", "rb")) 
  				== NULL) {
  				FILE_OP_ERROR(SYSCONFDIR "/mime.types", 
-@@ -1174,11 +1213,12 @@ EncodingType procmime_get_encoding_for_text_file(const
+@@ -1263,11 +1300,12 @@ EncodingType procmime_get_encoding_for_text_file(const
  {
  	FILE *fp;
  	guchar buf[BUFFSIZE];
@@ -106,9 +96,9 @@ http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2743
  	gfloat octet_percentage;
 -	gboolean force_b64 = FALSE;
  
- 	if ((fp = g_fopen(file, "rb")) == NULL) {
+ 	if ((fp = procmime_fopen(file, "rb")) == NULL) {
  		FILE_OP_ERROR(file, "fopen");
-@@ -1190,11 +1230,27 @@ EncodingType procmime_get_encoding_for_text_file(const
+@@ -1279,11 +1317,27 @@ EncodingType procmime_get_encoding_for_text_file(const
  		gint i;
  
  		for (p = buf, i = 0; i < len; ++p, ++i) {
@@ -116,40 +106,41 @@ http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2743
 -				++octet_chars;
 -			if (*p == '\0') {
 -				force_b64 = TRUE;
+-				*has_binary = TRUE;
 +			switch (*p) {
-+			case '\n':
-+				if (cr) linelen--;
-+				maxlinelen = MAX(linelen, maxlinelen);
-+				linelen = 0;
-+				cr = FALSE;
-+				break;
-+			case '\r':
-+				cr = TRUE;
-+				linelen++;
-+				break;
-+			case '\0':
- 				*has_binary = TRUE;
-+				maxlinelen = G_MAXINT;
-+				cr = FALSE;
-+				break;
-+			default:
-+				if (*p & 0x80)
-+					octet_chars++;
-+				linelen++;
-+				cr = FALSE;
++				case '\n':
++					if (cr) linelen--;
++					maxlinelen = MAX(linelen, maxlinelen);
++					linelen = 0;
++					cr = FALSE;
++					break;
++				case '\r':
++					cr = TRUE;
++					linelen++;
++					break;
++				case '\0':
++					*has_binary = TRUE;
++					maxlinelen = G_MAXINT;
++					cr = FALSE;
++					break;
++				default:
++					if (*p & 0x80)
++						octet_chars++;
++					linelen++;
++					cr = FALSE;
  			}
  		}
  		total_len += len;
-@@ -1208,15 +1264,20 @@ EncodingType procmime_get_encoding_for_text_file(const
+@@ -1297,15 +1351,20 @@ EncodingType procmime_get_encoding_for_text_file(const
  		octet_percentage = 0.0;
  
  	debug_print("procmime_get_encoding_for_text_file(): "
 -		    "8bit chars: %zd / %zd (%f%%)\n", octet_chars, total_len,
 -		    100.0 * octet_percentage);
-+		    "8bit chars: %zd / %zd (%f%%). "
-+		    "maximum line length: %d chars\n",
-+		    octet_chars, total_len, 100.0 * octet_percentage,
-+		    maxlinelen);
++			"8bit chars: %zd / %zd (%f%%). "
++			"maximum line length: %d chars\n",
++			octet_chars, total_len, 100.0 * octet_percentage,
++			maxlinelen);
  
 -	if (octet_percentage > 0.20 || force_b64) {
 +	if (octet_percentage > 0.20) {
@@ -165,12 +156,3 @@ http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2743
  	} else {
  		debug_print("using 7bit\n");
  		return ENC_7BIT;
-@@ -1753,6 +1814,8 @@ static void parse_parameters(const gchar *parameters, 
- 			continue;
- 
- 		charset = value;
-+		if (charset == NULL)
-+			continue;
- 		lang = strchr(charset, '\'');
- 		if (lang == NULL)
- 			continue;

@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-htmlviewer,v 1.1 2013/09/25 08:03:17 landry Exp $
+@conflict claws-mail-htmlviewer-*
+@pkgpath mail/claws-mail-htmlviewer
+lib/claws-mail/plugins/fancy.la
+lib/claws-mail/plugins/fancy.so

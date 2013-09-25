@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_common_defs_h,v 1.1 2012/06/29 14:02:54 landry Exp $
+$OpenBSD: patch-src_common_defs_h,v 1.2 2013/09/25 08:03:14 landry Exp $
 http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2642
---- src/common/defs.h.orig	Fri Dec 16 09:09:34 2011
-+++ src/common/defs.h	Tue Apr  3 13:07:33 2012
-@@ -148,6 +148,9 @@
+--- src/common/defs.h.orig	Tue Mar 19 02:31:04 2013
++++ src/common/defs.h	Sun Sep 22 23:00:04 2013
+@@ -146,6 +146,9 @@
  
  #define BUFFSIZE			8192
  

@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_common_quoted-printable_c,v 1.1 2012/06/29 14:02:54 landry Exp $
+$OpenBSD: patch-src_common_quoted-printable_c,v 1.2 2013/09/25 08:03:14 landry Exp $
 http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2640
---- src/common/quoted-printable.c.orig	Wed Jun 27 11:05:23 2012
-+++ src/common/quoted-printable.c	Fri Jun 29 11:08:56 2012
-@@ -22,66 +22,81 @@
+--- src/common/quoted-printable.c.orig	Tue Mar 19 02:31:04 2013
++++ src/common/quoted-printable.c	Sun Sep 22 23:00:10 2013
+@@ -22,66 +22,79 @@
  
  #include "utils.h"
  
@@ -28,10 +28,7 @@ http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2640
 -	gchar *outp = out;
 -	guchar ch;
 -	gint len = 0;
-+	/* counters of input/output characters */
-+	gint inc = 0;
-+	gint outc = 1; /* one character reserved for '=' soft line break */
- 
+-
 -	while (*inp != '\0') {
 -		ch = *inp;
 -
@@ -53,6 +50,9 @@ http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2640
 -				SOFT_LBREAK_IF_REQUIRED(1);
 -				*outp++ = *inp++;
 -				len++;
++	/* counters of input/output characters */
++	gint inc = 0;
++	gint outc = 1; /* one character reserved for '=' soft line break */
 +	while(inc < len) {
 +		/* allow literal linebreaks in text */
 +		if(text) {
@@ -88,7 +88,7 @@ http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2640
 +		}
 +		/* Cave: Whitespace is unconditionally output literally,
 +		 * but according to the RFC it must not be output before a
-+		 * linebreak. 
++		 * linebreak.
 +		 * This requirement is obeyed by quoting all linebreaks
 +		 * and therefore ending all lines with '='. */
 +		else if((*in >= ' ' && *in <= '~') || *in == '\t') {
@@ -121,11 +121,11 @@ http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2640
  
 -	if (len > 0)
 -		*outp++ = '\n';
+-
+-	*outp = '\0';
 +void qp_encode_line(gchar *out, const guchar *in) {
 +	while (*in != '\0') {
 +		in += qp_encode(TRUE, out, in, strlen(in));
- 
--	*outp = '\0';
 +		while(*out != '\0') out++;
 +		*out++ = '\n';
 +		*out++ = '\0';
