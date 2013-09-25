@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_update-desktop-database_c,v 1.9 2012/05/03 15:24:54 ajacoutot Exp $
+$OpenBSD: patch-src_update-desktop-database_c,v 1.10 2013/09/25 19:24:34 ajacoutot Exp $
 
 XXX remove when kde3 is gone;
 Quiet warnings about deprecated/discouraged and invalid MIME types.
@@ -12,9 +12,9 @@ because fd.o environments use these files to create menu structures,
 links to applications... and a user should be able to edit the link icon
 or menu he just created.
 
---- src/update-desktop-database.c.orig	Thu Dec 15 15:00:55 2011
-+++ src/update-desktop-database.c	Mon Jan  2 15:00:50 2012
-@@ -142,15 +142,9 @@ process_desktop_file (const char  *desktop_file,
+--- src/update-desktop-database.c.orig	Mon Jan  7 08:59:20 2013
++++ src/update-desktop-database.c	Wed Sep 25 21:20:43 2013
+@@ -149,15 +149,9 @@ process_desktop_file (const char  *desktop_file,
          case MU_VALID:
            break;
          case MU_DISCOURAGED:
@@ -30,13 +30,13 @@ or menu he just created.
            g_free (valid_error);
            /* not a break: we continue to the next mime type */
            continue;
-@@ -220,6 +214,10 @@ process_desktop_files (const char  *desktop_dir,
+@@ -227,6 +221,10 @@ process_desktop_files (const char  *desktop_dir,
          }
  
        name = g_strdup_printf ("%s%s", prefix, filename);
 +
 +      if (chmod(full_path, 0644) != 0)
-+          printf("Cannot give 644 perms to :%s", full_path);
++          printf("Cannot give 644 perms to: %s", full_path);
 +
        process_desktop_file (full_path, name, &process_error);
        g_free (name);

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2013/03/21 08:45:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2013/09/25 19:24:34 ajacoutot Exp $
 
 COMMENT=	utilities for dot.desktop entries
 
-DISTNAME=	desktop-file-utils-0.21
+DISTNAME=	desktop-file-utils-0.22
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
 
 CATEGORIES=	devel
 
@@ -29,6 +28,5 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_prog_EMACS=no
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>
