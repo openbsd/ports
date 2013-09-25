@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-libs,v 1.3 2013/03/19 08:49:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST-libs,v 1.4 2013/09/25 08:39:27 ajacoutot Exp $
 @conflict cups-<1.6.0
 @newgroup _cups:541
 @newuser _cups:541:541:daemon:CUPS printer spooler daemon:/nonexistent:/sbin/nologin
@@ -32,7 +32,12 @@ lib/libcupsmime.a
 @lib lib/libcupsmime.so.${LIBcupsmime_VERSION}
 lib/libcupsppdc.a
 @lib lib/libcupsppdc.so.${LIBcupsppdc_VERSION}
+libexec/cups/
+libexec/cups/backend/
+libexec/cups/driver/
+libexec/cups/filter/
 @man man/man1/cups-config.1
+share/cups/model/
 @group _cups
 @sample ${SYSCONFDIR}/cups/
 @group

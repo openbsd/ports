@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2013/07/12 07:19:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2013/09/25 08:39:27 ajacoutot Exp $
 @conflict LPRng-*
 @pkgpath print/cups
 @pkgpath print/cups,ldap
@@ -40,7 +40,6 @@ libexec/cups/daemon/
 @bin libexec/cups/daemon/cups-driverd
 @bin libexec/cups/daemon/cups-exec
 @bin libexec/cups/daemon/cups-lpd
-libexec/cups/driver/
 @bin libexec/cups/filter/commandtops
 @bin libexec/cups/filter/gziptoany
 @bin libexec/cups/filter/pstops
@@ -663,6 +662,8 @@ share/cups/templates/subscription-canceled.tmpl
 share/cups/templates/test-page.tmpl
 share/cups/templates/trailer.tmpl
 share/cups/templates/users.tmpl
+share/cups/usb/
+share/cups/usb/org.cups.usb-quirks
 share/doc/cups/
 share/doc/cups/ca/
 share/doc/cups/ca/index.html
