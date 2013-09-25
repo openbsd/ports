@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2012/09/21 15:48:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.31 2013/09/25 12:39:26 ajacoutot Exp $
 @unexec-delete rm -f ${SYSCONFDIR}/pango/pango.modules
 @bin bin/pango-querymodules
 @bin bin/pango-view
@@ -97,6 +97,7 @@ share/gtk-doc/html/pango/home.png
 share/gtk-doc/html/pango/index.html
 share/gtk-doc/html/pango/index.sgml
 share/gtk-doc/html/pango/layout.gif
+share/gtk-doc/html/pango/left-insensitive.png
 share/gtk-doc/html/pango/left.png
 share/gtk-doc/html/pango/lowlevel.html
 share/gtk-doc/html/pango/pango-Bidirectional-Text.html
@@ -125,10 +126,12 @@ share/gtk-doc/html/pango/pango-querymodules.html
 share/gtk-doc/html/pango/pango.devhelp2
 share/gtk-doc/html/pango/pango.html
 share/gtk-doc/html/pango/rendering.html
+share/gtk-doc/html/pango/right-insensitive.png
 share/gtk-doc/html/pango/right.png
 share/gtk-doc/html/pango/rotated-text.png
 share/gtk-doc/html/pango/style.css
 share/gtk-doc/html/pango/tools.html
+share/gtk-doc/html/pango/up-insensitive.png
 share/gtk-doc/html/pango/up.png
 @sample ${SYSCONFDIR}/pango/
 @exec %D/bin/pango-querymodules > ${SYSCONFDIR}/pango/pango.modules
