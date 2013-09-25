@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.13 2013/09/23 12:26:06 espie Exp $
+# $OpenBSD: Distant.pm,v 1.14 2013/09/25 08:49:49 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -102,6 +102,10 @@ sub run
 	    (DPB::Ssh->ssh($socket),
 	    	'-o', "connectTimeout=$timeout",
 		'-o', "serverAliveInterval=$timeout",
+		#'-o', "ClearAllForwardings=yes",
+		'-o', "ForwardX11=no",
+		'-o', "ForwardAgent=no",
+		'-o', "GatewayPorts=no",
 		'-N', '-M', $host);
 	exit(1);
 }
