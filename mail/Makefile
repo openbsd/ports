@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.298 2013/09/19 21:43:31 landry Exp $
+# $OpenBSD: Makefile,v 1.299 2013/09/25 08:04:54 landry Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -21,11 +21,6 @@
      SUBDIR += clamsmtp
      SUBDIR += claws-mail
      SUBDIR += claws-mail,ldap
-     SUBDIR += claws-mail-attremover
-     SUBDIR += claws-mail-htmlviewer
-     SUBDIR += claws-mail-notification
-     SUBDIR += claws-mail-rssyl
-     SUBDIR += claws-mail-vcalendar
      SUBDIR += cmail
      SUBDIR += courier-authlib
      SUBDIR += courier-imap
