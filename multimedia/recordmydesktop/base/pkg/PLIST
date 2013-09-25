@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/07/04 21:15:24 jasper Exp $
-@bin bin/recordmydesktop
-@man man/man1/recordmydesktop.1
