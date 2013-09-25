@@ -1,0 +1,4 @@
+giflib is a library for rendering and generating GIF image files. This
+is the GIF service code in C used for over two decades by graphics
+applications, Web browsers, game consoles, ATMs, and pretty much
+anything else that throws pixels on a display.

@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST,v 1.8 2013/09/25 07:52:05 sthen Exp $
+@conflict libungif-*
+@pkgpath graphics/libungif
+@bin bin/gif2raw
+@bin bin/gif2rgb
+@bin bin/gifbuild
+@bin bin/gifclrmp
+@bin bin/gifecho
+@bin bin/giffix
+@bin bin/gifinto
+@bin bin/giftext
+@bin bin/giftool
+include/gif_lib.h
+lib/libgif.a
+lib/libgif.la
+@lib lib/libgif.so.${LIBgif_VERSION}
+@man man/man1/gif2raw.1
+@man man/man1/gif2rgb.1
+@man man/man1/gifbg.1
+@man man/man1/gifbuild.1
+@man man/man1/gifclrmp.1
+@man man/man1/gifcolor.1
+@man man/man1/gifecho.1
+@man man/man1/giffix.1
+@man man/man1/gifhisto.1
+@man man/man1/gifinto.1
+@man man/man1/giflib.1
+@man man/man1/giftext.1
+@man man/man1/giftool.1
+@man man/man1/gifwedge.1
+share/doc/giflib/
+share/doc/giflib/README
