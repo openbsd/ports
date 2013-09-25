@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/07/27 17:26:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2013/09/25 07:55:59 sthen Exp $
 @pkgpath graphics/p5-Imager,libs
 ${P5ARCH}/
 ${P5ARCH}/Imager/
@@ -7,7 +7,7 @@ ${P5ARCH}/Imager/API.pod
 ${P5ARCH}/Imager/APIRef.pod
 ${P5ARCH}/Imager/Color/
 ${P5ARCH}/Imager/Color.pm
-@comment ${P5ARCH}/Imager/Color/Float.pm
+${P5ARCH}/Imager/Color/Float.pm
 ${P5ARCH}/Imager/Color/Table.pm
 ${P5ARCH}/Imager/Cookbook.pod
 ${P5ARCH}/Imager/CountColor.pm
@@ -26,7 +26,7 @@ ${P5ARCH}/Imager/File/PNG.pm
 ${P5ARCH}/Imager/File/SGI.pm
 ${P5ARCH}/Imager/File/TIFF.pm
 ${P5ARCH}/Imager/Files.pod
-@comment ${P5ARCH}/Imager/Fill.pm
+${P5ARCH}/Imager/Fill.pm
 ${P5ARCH}/Imager/Filter/
 ${P5ARCH}/Imager/Filter/DynTest.pm
 ${P5ARCH}/Imager/Filter/Flines.pm
@@ -36,22 +36,27 @@ ${P5ARCH}/Imager/Font/
 ${P5ARCH}/Imager/Font.pm
 ${P5ARCH}/Imager/Font/BBox.pm
 ${P5ARCH}/Imager/Font/FT2.pm
-@comment ${P5ARCH}/Imager/Font/FreeType2.pm
+${P5ARCH}/Imager/Font/FreeType2.pm
 ${P5ARCH}/Imager/Font/Image.pm
-@comment ${P5ARCH}/Imager/Font/Truetype.pm
-@comment ${P5ARCH}/Imager/Font/Type1.pm
+${P5ARCH}/Imager/Font/T1.pm
+${P5ARCH}/Imager/Font/Test.pm
+${P5ARCH}/Imager/Font/Truetype.pm
+${P5ARCH}/Imager/Font/Type1.pm
 ${P5ARCH}/Imager/Font/Wrap.pm
-@comment ${P5ARCH}/Imager/Fountain.pm
+${P5ARCH}/Imager/Fountain.pm
 ${P5ARCH}/Imager/Handy.pod
 ${P5ARCH}/Imager/IO.pod
 ${P5ARCH}/Imager/ImageTypes.pod
 ${P5ARCH}/Imager/Inline.pod
+${P5ARCH}/Imager/Install.pod
 ${P5ARCH}/Imager/LargeSamples.pod
-@comment ${P5ARCH}/Imager/Matrix2d.pm
+${P5ARCH}/Imager/Matrix2d.pm
 ${P5ARCH}/Imager/Preprocess.pm
 ${P5ARCH}/Imager/Probe.pm
 ${P5ARCH}/Imager/Regops.pm
+${P5ARCH}/Imager/Security.pod
 ${P5ARCH}/Imager/Test.pm
+${P5ARCH}/Imager/Threads.pod
 ${P5ARCH}/Imager/Transform.pm
 ${P5ARCH}/Imager/Transformations.pod
 ${P5ARCH}/Imager/Tutorial.pod
@@ -73,6 +78,7 @@ ${P5ARCH}/Imager/include/imexttypes.h
 ${P5ARCH}/Imager/include/imio.h
 ${P5ARCH}/Imager/include/immacros.h
 ${P5ARCH}/Imager/include/imperl.h
+${P5ARCH}/Imager/include/imperlio.h
 ${P5ARCH}/Imager/include/imrender.h
 ${P5ARCH}/Imager/include/iolayer.h
 ${P5ARCH}/Imager/include/iolayert.h
@@ -123,6 +129,9 @@ ${P5ARCH}/auto/Imager/Font/
 ${P5ARCH}/auto/Imager/Font/FT2/
 ${P5ARCH}/auto/Imager/Font/FT2/FT2.bs
 ${P5ARCH}/auto/Imager/Font/FT2/FT2.so
+${P5ARCH}/auto/Imager/Font/T1/
+${P5ARCH}/auto/Imager/Font/T1/T1.bs
+${P5ARCH}/auto/Imager/Font/T1/T1.so
 ${P5ARCH}/auto/Imager/Imager.bs
 ${P5ARCH}/auto/Imager/Imager.so
 @man man/man3p/Imager.3p
@@ -153,6 +162,8 @@ ${P5ARCH}/auto/Imager/Imager.so
 @man man/man3p/Imager::Font::BBox.3p
 @man man/man3p/Imager::Font::FT2.3p
 @man man/man3p/Imager::Font::FreeType2.3p
+@man man/man3p/Imager::Font::T1.3p
+@man man/man3p/Imager::Font::Test.3p
 @man man/man3p/Imager::Font::Truetype.3p
 @man man/man3p/Imager::Font::Type1.3p
 @man man/man3p/Imager::Font::Wrap.3p
@@ -161,12 +172,15 @@ ${P5ARCH}/auto/Imager/Imager.so
 @man man/man3p/Imager::IO.3p
 @man man/man3p/Imager::ImageTypes.3p
 @man man/man3p/Imager::Inline.3p
+@man man/man3p/Imager::Install.3p
 @man man/man3p/Imager::LargeSamples.3p
 @man man/man3p/Imager::Matrix2d.3p
 @man man/man3p/Imager::Preprocess.3p
 @man man/man3p/Imager::Probe.3p
 @man man/man3p/Imager::Regops.3p
+@man man/man3p/Imager::Security.3p
 @man man/man3p/Imager::Test.3p
+@man man/man3p/Imager::Threads.3p
 @man man/man3p/Imager::Transform.3p
 @man man/man3p/Imager::Transformations.3p
 @man man/man3p/Imager::Tutorial.3p

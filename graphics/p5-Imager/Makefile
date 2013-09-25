@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2013/03/11 11:10:55 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2013/09/25 07:55:59 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	generate and manipulate images
 
-DISTNAME=	Imager-0.84
-REVISION=	0
+DISTNAME=	Imager-0.97
 CATEGORIES=	graphics
 MODULES=	cpan
 
@@ -16,17 +15,17 @@ MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c freetype gif jpeg m png tiff z
+WANTLIB += freetype gif jpeg m png t1 tiff z
 
-LIB_DEPENDS=	graphics/png \
+LIB_DEPENDS=	devel/t1lib \
+		graphics/png \
 		graphics/jpeg \
 		graphics/tiff \
-		graphics/libungif
+		graphics/giflib
 
-CONFIGURE_ARGS=	--enable jpeg,tiff,png,ungif,T1-fonts,freetype2 \
+CONFIGURE_ARGS=	--enable jpeg,tiff,png,gif,T1-fonts,freetype2 \
 		--incpath="${LOCALBASE}/include:${X11BASE}/include" \
 		--libpath="${LOCALBASE}/lib:${X11BASE}/lib"
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>
