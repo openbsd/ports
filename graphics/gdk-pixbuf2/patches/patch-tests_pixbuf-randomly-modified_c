@@ -1,0 +1,19 @@
+$OpenBSD: patch-tests_pixbuf-randomly-modified_c,v 1.1 2013/09/25 12:38:37 ajacoutot Exp $
+
+From 07c888ca7d6cb0b9675d21e278c28a156684b7ea Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Tue, 24 Sep 2013 09:10:21 +0000
+Subject: RLIMIT_AS: make sure it is defined before using it
+
+--- tests/pixbuf-randomly-modified.c.orig	Tue Sep 24 10:50:04 2013
++++ tests/pixbuf-randomly-modified.c	Tue Sep 24 10:50:39 2013
+@@ -109,7 +109,9 @@ main (int argc, char **argv)
+   max_mem_size.rlim_cur = 100 * 1024 * 1024; /* 100M */
+   max_mem_size.rlim_max = max_mem_size.rlim_cur;
+   setrlimit (RLIMIT_DATA, &max_mem_size);
++#if defined (RLIMIT_AS)
+   setrlimit (RLIMIT_AS, &max_mem_size);
++#endif
+ 
+   g_test_init (&argc, &argv, NULL);
+ 

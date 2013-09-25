@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/03/27 17:50:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/09/25 12:38:37 ajacoutot Exp $
 @conflict gtk+2-<2.22
 @conflict gtk+2-docs-<2.22
 @unexec-delete rm -f %D/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
@@ -50,6 +50,7 @@ share/gtk-doc/html/gdk-pixbuf/api-index-2-14.html
 share/gtk-doc/html/gdk-pixbuf/api-index-2-2.html
 share/gtk-doc/html/gdk-pixbuf/api-index-2-26.html
 share/gtk-doc/html/gdk-pixbuf/api-index-2-28.html
+share/gtk-doc/html/gdk-pixbuf/api-index-2-30.html
 share/gtk-doc/html/gdk-pixbuf/api-index-2-4.html
 share/gtk-doc/html/gdk-pixbuf/api-index-2-6.html
 share/gtk-doc/html/gdk-pixbuf/api-index-2-8.html

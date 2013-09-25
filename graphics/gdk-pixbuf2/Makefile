@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.34 2013/06/09 15:26:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2013/09/25 12:38:36 ajacoutot Exp $
 
 COMMENT=		graphic library for gtk+2
 
 GNOME_PROJECT=		gdk-pixbuf
-GNOME_VERSION=		2.28.2
-REVISION=		1
+GNOME_VERSION=		2.30.0
 
 CATEGORIES=		graphics
 
-SHARED_LIBS +=  gdk_pixbuf-2.0       2800.0   # 2800.0
-SHARED_LIBS +=  gdk_pixbuf_xlib-2.0  2800.0   # 2800.0
+SHARED_LIBS +=  gdk_pixbuf-2.0       3000.0   # 3000.0
+SHARED_LIBS +=  gdk_pixbuf_xlib-2.0  3000.0   # 3000.0
 
 HOMEPAGE=		http://www.gtk.org/
 
@@ -24,7 +23,7 @@ WANTLIB += jasper jpeg m pcre png pthread tiff xcb z
 MODULES=		devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		devel/glib2 \
+LIB_DEPENDS=		devel/glib2>=2.38.0 \
 			graphics/jasper \
 			graphics/png \
 			graphics/tiff
@@ -38,6 +37,8 @@ MODGNOME_TOOLS=		gi
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-libjasper \
 			--with-x11
+
+TEST_DEPENDS=		${BASE_PKGPATH}=${GNOME_VERSION}
 
 post-install:
 	rm ${PREFIX}/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.{a,la}
