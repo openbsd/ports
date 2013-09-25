@@ -1,2 +1,4 @@
-mydumper is complement to mysqldump, for MySQL data dumping, providing
-parallelism, performance and easier to manage output.
+mydumper is an alternative to mysqldump, for MySQL data dumping, providing
+parallelism, performance and easier to manage output. It also features a
+daemon mode, using MySQL's binary log files, allowing creation of regular
+consistent snapshots.

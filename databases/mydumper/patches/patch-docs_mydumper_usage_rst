@@ -1,0 +1,36 @@
+$OpenBSD: patch-docs_mydumper_usage_rst,v 1.1 2013/09/25 09:02:09 giovanni Exp $
+remove tags that breaks textproc/py-sphinx
+--- docs/mydumper_usage.rst.orig	Wed Sep 25 09:12:54 2013
++++ docs/mydumper_usage.rst	Wed Sep 25 09:13:37 2013
+@@ -48,10 +48,8 @@ The :program:`mydumper` tool has several available opt
+ 
+    The port for the MySQL connection.
+ 
+-   .. note::
++   Note: For localhost TCP connections use 127.0.0.1 for :option:`--host`.
+ 
+-      For localhost TCP connections use 127.0.0.1 for :option:`--host`.
+-
+ .. option:: --socket, -S
+ 
+    The UNIX domain socket file to use for the connection
+@@ -68,10 +66,8 @@ The :program:`mydumper` tool has several available opt
+ 
+    The number of threads to use for dumping data, default is 4
+ 
+-   .. note::
++   Note: Other threads are used in mydumper, this option does not control these
+ 
+-      Other threads are used in mydumper, this option does not control these
+-
+ .. option:: --outputdir, -o
+ 
+    Output directory name, default is export-YYYYMMDD-HHMMSS
+@@ -148,6 +144,4 @@ The :program:`mydumper` tool has several available opt
+ 
+    Do not execute the temporary shared read lock.
+ 
+-   .. warning::
+-      
+-      This will cause inconsistent backups.
++   Warning: This will cause inconsistent backups.

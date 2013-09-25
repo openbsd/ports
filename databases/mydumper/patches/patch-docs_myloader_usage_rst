@@ -1,0 +1,27 @@
+$OpenBSD: patch-docs_myloader_usage_rst,v 1.1 2013/09/25 09:02:09 giovanni Exp $
+remove tags that breaks textproc/py-sphinx
+--- docs/myloader_usage.rst.orig	Wed Sep 25 09:12:59 2013
++++ docs/myloader_usage.rst	Wed Sep 25 09:14:00 2013
+@@ -41,10 +41,8 @@ The :program:`myloader` tool has several available opt
+ 
+    The port for the MySQL connection.
+ 
+-   .. note::
++   Note: For localhost TCP connections use 127.0.0.1 for :option:`--host`.
+ 
+-      For localhost TCP connections use 127.0.0.1 for :option:`--host`.
+-
+ .. option:: --socket, -S
+ 
+    The UNIX domain socket file to use for the connection
+@@ -69,9 +67,7 @@ The :program:`myloader` tool has several available opt
+ 
+    An alternative database to load the dump into
+ 
+-   .. note::
+-
+-      For use with single database dumps.  When using with multi-database dumps
++   Note: For use with single database dumps.  When using with multi-database dumps
+       that have duplicate table names in more than one database it may cause 
+       errors.  Alternatively this scenario may give unpredictable results with
+       :option:`--overwrite-tables`.

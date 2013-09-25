@@ -1,0 +1,14 @@
+$OpenBSD: patch-docs__build_conf_py_in,v 1.1 2013/09/25 09:02:09 giovanni Exp $
+--- docs/_build/conf.py.in.orig	Tue Sep 24 23:32:25 2013
++++ docs/_build/conf.py.in	Tue Sep 24 23:34:42 2013
+@@ -211,8 +211,8 @@ latex_documents = [
+ # One entry per manual page. List of tuples
+ # (source start file, name, description, authors, manual section).
+ man_pages = [
+-    ('mydumper_usage', 'mydumper', u'@PROGRAM_DESC@',
++    ('mydumper_usage', 'mydumper', u'a tool to dump MySql data',
+      [u'Andrew Hutchings'], 1),
+-    ('myloader_usage', 'myloader', u'@PROGRAM_DESC@',
++    ('myloader_usage', 'myloader', u'a tool to load MySql data',
+      [u'Andrew Hutchings'], 1)
+ ]
