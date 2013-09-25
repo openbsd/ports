@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2013/09/19 16:24:51 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2013/09/25 12:43:11 kirby Exp $
 
 COMMENT =		free OpenGl billard game
-BROKEN =		uses GL symbols removed in recent updates
 
 DISTNAME =		foobillard-3.0a
 
@@ -19,5 +18,6 @@ LIB_DEPENDS =		graphics/png \
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	automake
+CFLAGS += 		-DNO_NV_BUMPREF
 
 .include <bsd.port.mk>
