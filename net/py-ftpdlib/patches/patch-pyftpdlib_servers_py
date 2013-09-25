@@ -1,0 +1,14 @@
+$OpenBSD: patch-pyftpdlib_servers_py,v 1.1 2013/09/25 07:13:02 sthen Exp $
+--- pyftpdlib/servers.py.orig	Fri Apr 19 16:36:06 2013
++++ pyftpdlib/servers.py	Tue Sep 24 21:04:26 2013
+@@ -513,6 +513,10 @@ else:
+ if os.name == 'posix':
+     try:
+         import multiprocessing
++        # Work around https://code.google.com/p/pyftpdlib/issues/detail?id=272
++        # on OpenBSD.
++        multiprocessing.Lock()
++        multiprocessing.Event()
+     except ImportError:
+         pass
+     else:
