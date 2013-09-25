@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.10 2013/09/23 14:25:13 espie Exp $
+# $OpenBSD: Config.pm,v 1.11 2013/09/25 07:01:35 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -106,9 +106,6 @@ sub parse_command_line
 	if ($state->define_present("STARTUP")) {
 		$state->{startup_script} = $state->{subst}->value("STARTUP");
 	}
-	if ($state->define_present("RECORD")) {
-		$state->{record} = $state->{subst}->value("RECORD");
-	}
 	if ($state->define_present('LOGDIR')) {
 		$state->{logdir} = $state->subst->value('LOGDIR');
 	}
@@ -158,6 +155,9 @@ sub parse_command_line
 	# redo this in case config files changed it
 	$state->{logdir} = $state->expand_path($state->{logdir});
 
+	if ($state->define_present("RECORD")) {
+		$state->{record} = $state->expand_path($state->{subst}->value("RECORD"));
+	}
 	$state->{size_log} = $state->expand_path($state->{size_log});
 	$state->{lockdir} = $state->expand_path($state->{lockdir});
 	if (!$state->{subst}->value("NO_BUILD_STATS")) {
