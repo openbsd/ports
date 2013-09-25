@@ -1,0 +1,49 @@
+$OpenBSD: patch-tests_makefile,v 1.1.1.1 2013/09/25 07:49:50 sthen Exp $
+
+#1, gmake-ism
+
+#2, unsure if this is a test bug or a command-line parser bug, but the -p
+value isn't read in the original order; same on Linux
+
+#3, "head --bytes=-20" means "display most of the file, but trim last 20 bytes"
+which isn't easily replicable with base tools, so just use ghead from coreutils
+
+--- tests/makefile.orig	Mon Sep 23 21:44:53 2013
++++ tests/makefile	Mon Sep 23 22:27:54 2013
+@@ -29,12 +29,12 @@ rebuild: render-rebuild \
+ UTILS = ../util
+ PICS = ../pic
+ 
+-GIFS := $(shell ls ../pic/*.gif)
++GIFS := `ls ../pic/*.gif`
+ 
+ # Test decompression and rendering by unpacking images,
+ # converting them to RGB, and comparing that result to a check file.
+ render-regress:
+-	@for test in $(GIFS); \
++	for test in $(GIFS); \
+ 	do \
+ 	    stem=`basename $${test} | sed -e "s/.gif$$//"`; \
+ 	    if echo "Testing RGB rendering of $${test}" >&2; \
+@@ -52,7 +52,7 @@ render-rebuild:
+ 
+ gif2raw-regress:
+ 	@echo "gif2raw: Checking that it can self-invert."
+-	@$(UTILS)/gif2raw <$(PICS)/treescap.gif | $(UTILS)/gif2raw -s 40 40 -p treescap.map | $(UTILS)/gif2rgb | cmp - treescap.rgb
++	@$(UTILS)/gif2raw <$(PICS)/treescap.gif | $(UTILS)/gif2raw -p treescap.map -s 40 40 | $(UTILS)/gif2rgb | cmp - treescap.rgb
+ 
+ gif2rgb-rebuild:
+ 	@echo "Rebuilding gif2rgb checkfile."
+@@ -109,10 +109,10 @@ giffilter-regress:
+ 
+ giffix-rebuild:
+ 	@echo "Rebuilding giffix test."
+-	@head --bytes=-20 <$(PICS)/treescap.gif | $(UTILS)/giffix 2>/dev/null | $(UTILS)/gifbuild -d >giffixed.ico
++	@ghead --bytes=-20 <$(PICS)/treescap.gif | $(UTILS)/giffix 2>/dev/null | $(UTILS)/gifbuild -d >giffixed.ico
+ giffix-regress:
+ 	@echo "giffix: Testing giffix behavior"
+-	@head --bytes=-20 <$(PICS)/treescap.gif | $(UTILS)/giffix 2>/dev/null | $(UTILS)/gifbuild -d | diff -u giffixed.ico -
++	@ghead --bytes=-20 <$(PICS)/treescap.gif | $(UTILS)/giffix 2>/dev/null | $(UTILS)/gifbuild -d | diff -u giffixed.ico -
+ 
+ gifinto-regress:
+ 	@echo "gifinto: Checking behavior on short files."
