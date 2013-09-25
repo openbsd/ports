@@ -1,6 +1,18 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2013/03/27 14:07:19 bcallah Exp $
---- CMakeLists.txt.orig	Wed Mar 27 01:10:05 2013
-+++ CMakeLists.txt	Wed Mar 27 01:10:15 2013
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2013/09/25 12:26:46 ajacoutot Exp $
+
+Fix build with gtk+3 >= 3.10.0
+
+--- CMakeLists.txt.orig	Mon Jun 24 21:22:42 2013
++++ CMakeLists.txt	Wed Sep 25 14:01:17 2013
+@@ -38,7 +38,7 @@ ADD_DEFINITIONS (-DBUILDTYPE=\\\"${CMAKE_BUILD_TYPE}\\
+ IF (${CMAKE_BUILD_TYPE} MATCHES "Debug")
+ 	SET (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
+ ELSE (${CMAKE_BUILD_TYPE} NOT MATCHES "Debug")
+-	SET (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O2 -Wno-deprecated-declarations -DGDK_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED")
++	SET (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O2 -Wno-deprecated-declarations -DGDK_DISABLE_DEPRECATED")
+ ENDIF (${CMAKE_BUILD_TYPE} MATCHES "Debug")
+ 
+ INCLUDE_DIRECTORIES (. ${GTK_INCLUDE_DIRS} ${VTE_INCLUDE_DIRS})
 @@ -53,7 +53,7 @@ INSTALL (TARGETS sakura RUNTIME DESTINATION bin)	
  INSTALL (FILES sakura.desktop DESTINATION share/applications)
  INSTALL (FILES terminal-tango.svg DESTINATION share/pixmaps)

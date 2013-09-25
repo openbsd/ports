@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile,v 1.1 2013/09/25 12:26:46 ajacoutot Exp $
+
+Fix build with gtk+3 >= 3.10.0
+
+--- Makefile.orig	Wed Sep 25 13:52:42 2013
++++ Makefile	Wed Sep 25 13:52:56 2013
+@@ -11,7 +11,7 @@ SRCS+= history.c completion.c tldlist.c externaleditor
+ CFLAGS+= -O2 -Wall -Wno-format-extra-args -Wunused -Wextra -Wno-unused-parameter
+ CFLAGS+= -Wno-missing-field-initializers -Wno-sign-compare
+ CFLAGS+= -Wno-deprecated-declarations -Wfloat-equal ${DEBUG}
+-CFLAGS+= -DGTK_DISABLE_SINGLE_INCLUDES -DGDK_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED -DGSEAL_ENABLE
++CFLAGS+= -DGTK_DISABLE_SINGLE_INCLUDES -DGDK_DISABLE_DEPRECATED -DGSEAL_ENABLE
+ CFLAGS+= -I. -I${.CURDIR}
+ LDADD= -lutil
+ GTK_VERSION ?= gtk3

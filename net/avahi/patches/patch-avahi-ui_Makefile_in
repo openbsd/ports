@@ -1,0 +1,17 @@
+$OpenBSD: patch-avahi-ui_Makefile_in,v 1.1 2013/09/25 12:27:12 ajacoutot Exp $
+
+Allow building with deprecated GTK+ symbols
+https://bugzilla.redhat.com/show_bug.cgi?id=1001676
+
+--- avahi-ui/Makefile.in.orig	Wed Sep 25 09:13:06 2013
++++ avahi-ui/Makefile.in	Wed Sep 25 09:13:35 2013
+@@ -464,8 +464,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ 
+ # This cool debug trap works on i386/gcc only
+-AM_CFLAGS = -I$(top_srcdir) -DG_DISABLE_DEPRECATED=1 \
+-	-DGDK_DISABLE_DEPRECATED=1 -DGTK_DISABLE_DEPRECATED=1 \
++AM_CFLAGS = -I$(top_srcdir) \
+ 	'-DDEBUG_TRAP=__asm__("int $$3")' $(am__append_1)
+ pkglibdatadir = $(libdir)/avahi
+ desktopdir = $(datadir)/applications
