@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.177 2013/09/25 16:53:52 sthen Exp $
-
-BROKEN = sysctl changes
+# $OpenBSD: Makefile,v 1.178 2013/09/25 23:34:00 sthen Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -9,6 +7,7 @@ COMMENT-enigmail =	Mozilla Thunderbird GnuPG extension
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
 MOZILLA_VERSION =	24.0
+REVISION =		0
 MOZILLA_BRANCH =	esr24
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	mail
