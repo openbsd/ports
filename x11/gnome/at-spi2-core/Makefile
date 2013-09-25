@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2013/04/16 13:17:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2013/09/25 12:39:57 ajacoutot Exp $
 
 COMMENT=	service interface for assistive technologies
 
 GNOME_PROJECT=	at-spi2-core
-GNOME_VERSION=	2.8.0
+GNOME_VERSION=	2.10.0
 
 SHARED_LIBS +=  atspi                     0.1 # 0.1
 
@@ -19,7 +19,7 @@ MODULES=	devel/gettext \
 		x11/gnome
 
 LIB_DEPENDS=	x11/dbus \
-		devel/glib2>=2.36.0
+		devel/glib2>=2.38.0
 
 MODGNOME_TOOLS= gi
 
