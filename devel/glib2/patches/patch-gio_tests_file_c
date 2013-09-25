@@ -1,11 +1,11 @@
-$OpenBSD: patch-gio_tests_file_c,v 1.5 2013/06/01 22:56:06 ajacoutot Exp $
+$OpenBSD: patch-gio_tests_file_c,v 1.6 2013/09/25 12:37:07 ajacoutot Exp $
 
 XXX why isn't this working with kqueue?
 push upstream when fixed
 
---- gio/tests/file.c.orig	Tue Mar 26 11:03:40 2013
-+++ gio/tests/file.c	Tue Mar 26 11:04:53 2013
-@@ -427,11 +427,12 @@ test_create_delete (gconstpointer d)
+--- gio/tests/file.c.orig	Thu Aug  8 12:00:40 2013
++++ gio/tests/file.c	Tue Sep 24 10:05:43 2013
+@@ -450,11 +450,12 @@ test_create_delete (gconstpointer d)
    data->monitor = g_file_monitor_file (data->file, 0, NULL, &error);
    g_assert_no_error (error);
  

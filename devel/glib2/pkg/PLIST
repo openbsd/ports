@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2013/08/07 16:25:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.31 2013/09/25 12:37:08 ajacoutot Exp $
 @conflict glib2-docs-*
 @conflict glib2-fam-*
 @pkgpath devel/glib2,-docs
@@ -44,6 +44,7 @@ include/glib-2.0/gio/gasyncinitable.h
 include/glib-2.0/gio/gasyncresult.h
 include/glib-2.0/gio/gbufferedinputstream.h
 include/glib-2.0/gio/gbufferedoutputstream.h
+include/glib-2.0/gio/gbytesicon.h
 include/glib-2.0/gio/gcancellable.h
 include/glib-2.0/gio/gcharsetconverter.h
 include/glib-2.0/gio/gcontenttype.h
@@ -122,6 +123,7 @@ include/glib-2.0/gio/gpermission.h
 include/glib-2.0/gio/gpollableinputstream.h
 include/glib-2.0/gio/gpollableoutputstream.h
 include/glib-2.0/gio/gpollableutils.h
+include/glib-2.0/gio/gpropertyaction.h
 include/glib-2.0/gio/gproxy.h
 include/glib-2.0/gio/gproxyaddress.h
 include/glib-2.0/gio/gproxyaddressenumerator.h
@@ -325,8 +327,8 @@ share/bash-completion/completions/gsettings
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/gdb/
 share/gdb/auto-load/
-share/gdb/auto-load/libglib-2.0.so.0.3600.4-gdb.py
-share/gdb/auto-load/libgobject-2.0.so.0.3600.4-gdb.py
+share/gdb/auto-load/libglib-2.0.so.0.3800.0-gdb.py
+share/gdb/auto-load/libgobject-2.0.so.0.3800.0-gdb.py
 share/glib-2.0/
 share/glib-2.0/codegen/
 share/glib-2.0/codegen/__init__.py
@@ -496,6 +498,7 @@ share/gtk-doc/html/gio/api-index-2-30.html
 share/gtk-doc/html/gio/api-index-2-32.html
 share/gtk-doc/html/gio/api-index-2-34.html
 share/gtk-doc/html/gio/api-index-2-36.html
+share/gtk-doc/html/gio/api-index-2-38.html
 share/gtk-doc/html/gio/api-index-deprecated.html
 share/gtk-doc/html/gio/api-index-full.html
 share/gtk-doc/html/gio/application.html
@@ -537,6 +540,7 @@ share/gtk-doc/html/gio/gio-D-Bus-Utilities.html
 share/gtk-doc/html/gio/gio-Desktop-file-based-GAppInfo.html
 share/gtk-doc/html/gio/gio-Extension-Points.html
 share/gtk-doc/html/gio/gio-GActionGroup-exporter.html
+share/gtk-doc/html/gio/gio-GBytesIcon.html
 share/gtk-doc/html/gio/gio-GContentType.html
 share/gtk-doc/html/gio/gio-GConverterInputstream.html
 share/gtk-doc/html/gio/gio-GConverterOutputstream.html
@@ -546,6 +550,7 @@ share/gtk-doc/html/gio/gio-GIOError.html
 share/gtk-doc/html/gio/gio-GIOScheduler.html
 share/gtk-doc/html/gio/gio-GInetAddressMask.html
 share/gtk-doc/html/gio/gio-GMenuModel-exporter.html
+share/gtk-doc/html/gio/gio-GPropertyAction.html
 share/gtk-doc/html/gio/gio-GResource.html
 share/gtk-doc/html/gio/gio-GSettingsSchema-GSettingsSchemaSource.html
 share/gtk-doc/html/gio/gio-GWin32InputStream.html
@@ -608,6 +613,7 @@ share/gtk-doc/html/glib/api-index-2-30.html
 share/gtk-doc/html/glib/api-index-2-32.html
 share/gtk-doc/html/glib/api-index-2-34.html
 share/gtk-doc/html/glib/api-index-2-36.html
+share/gtk-doc/html/glib/api-index-2-38.html
 share/gtk-doc/html/glib/api-index-2-4.html
 share/gtk-doc/html/glib/api-index-2-6.html
 share/gtk-doc/html/glib/api-index-2-8.html
@@ -731,6 +737,7 @@ share/gtk-doc/html/gobject/api-index-2-30.html
 share/gtk-doc/html/gobject/api-index-2-32.html
 share/gtk-doc/html/gobject/api-index-2-34.html
 share/gtk-doc/html/gobject/api-index-2-36.html
+share/gtk-doc/html/gobject/api-index-2-38.html
 share/gtk-doc/html/gobject/api-index-2-4.html
 share/gtk-doc/html/gobject/api-index-2-6.html
 share/gtk-doc/html/gobject/api-index-2-8.html
@@ -800,6 +807,9 @@ share/locale/af/LC_MESSAGES/glib20.mo
 share/locale/am/
 share/locale/am/LC_MESSAGES/
 share/locale/am/LC_MESSAGES/glib20.mo
+share/locale/an/
+share/locale/an/LC_MESSAGES/
+share/locale/an/LC_MESSAGES/glib20.mo
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/glib20.mo

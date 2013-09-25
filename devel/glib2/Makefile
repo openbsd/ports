@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.212 2013/09/19 11:56:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.213 2013/09/25 12:37:06 ajacoutot Exp $
 
 COMMENT=		general-purpose utility library
 
 GNOME_PROJECT=		glib
-GNOME_VERSION=		2.36.4
+GNOME_VERSION=		2.38.0
 PKGNAME=		${DISTNAME:S/glib/glib2/}
-REVISION=		1
 
 CATEGORIES=		devel
 
@@ -13,11 +12,11 @@ HOMEPAGE=		http://www.gtk.org/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-SHARED_LIBS +=  glib-2.0             3600.1   # 3600.3
-SHARED_LIBS +=  gmodule-2.0          3600.1   # 3600.3
-SHARED_LIBS +=  gthread-2.0          3600.1   # 3600.3
-SHARED_LIBS +=  gobject-2.0          3600.1   # 3600.3
-SHARED_LIBS +=  gio-2.0              3600.1   # 3600.3
+SHARED_LIBS +=  glib-2.0             3800.0   # 3800.0
+SHARED_LIBS +=  gmodule-2.0          3800.0   # 3800.0
+SHARED_LIBS +=  gthread-2.0          3800.0   # 3800.0
+SHARED_LIBS +=  gobject-2.0          3800.0   # 3800.0
+SHARED_LIBS +=  gio-2.0              3800.0   # 3800.0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -42,14 +41,10 @@ TEST_IS_INTERACTIVE=	x11
 TEST_DEPENDS=		devel/desktop-file-utils \
 			x11/dbus
 
-#CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-static \
 			--with-pcre=system \
 			--disable-fam
-
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.69
-CONFIGURE_ARGS +=	--disable-maintainer-mode
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mgcc3}
