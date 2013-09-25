@@ -1,8 +1,8 @@
-$OpenBSD: patch-gtk_Makefile_in,v 1.17 2013/08/30 14:47:20 ajacoutot Exp $
---- gtk/Makefile.in.orig	Fri Aug 30 14:38:33 2013
-+++ gtk/Makefile.in	Fri Aug 30 15:19:22 2013
-@@ -1185,7 +1185,7 @@ INTROSPECTION_COMPILER_ARGS = \
- SUBDIRS = a11y native . tests
+$OpenBSD: patch-gtk_Makefile_in,v 1.18 2013/09/25 12:42:19 ajacoutot Exp $
+--- gtk/Makefile.in.orig	Mon Sep 23 19:48:07 2013
++++ gtk/Makefile.in	Tue Sep 24 12:49:42 2013
+@@ -1019,7 +1019,7 @@ INTROSPECTION_COMPILER_ARGS = \
+ SUBDIRS = a11y native .
  @HAVE_CUPS_FALSE@@HAVE_PAPI_CUPS_FALSE@@HAVE_PAPI_FALSE@GTK_PRINT_BACKENDS = file,lpr
  @HAVE_CUPS_FALSE@@HAVE_PAPI_CUPS_FALSE@@HAVE_PAPI_TRUE@GTK_PRINT_BACKENDS = file,papi
 -@HAVE_CUPS_TRUE@@HAVE_PAPI_CUPS_FALSE@GTK_PRINT_BACKENDS = file,cups
