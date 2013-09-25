@@ -1,7 +1,7 @@
-$OpenBSD: patch-python_tests_Makefile_in,v 1.12 2013/04/14 23:22:05 sthen Exp $
---- python/tests/Makefile.in.orig	Tue Sep 11 07:55:37 2012
-+++ python/tests/Makefile.in	Sat Apr 13 22:06:09 2013
-@@ -312,7 +312,7 @@ target_alias = @target_alias@
+$OpenBSD: patch-python_tests_Makefile_in,v 1.13 2013/09/25 12:32:24 jasper Exp $
+--- python/tests/Makefile.in.orig	Fri Apr 19 09:36:12 2013
++++ python/tests/Makefile.in	Tue Sep 24 10:51:49 2013
+@@ -334,7 +334,7 @@ target_alias = @target_alias@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
@@ -10,7 +10,7 @@ $OpenBSD: patch-python_tests_Makefile_in,v 1.12 2013/04/14 23:22:05 sthen Exp $
  dist_example_DATA = $(PYTESTS) $(XMLS)
  PYTESTS = \
      build.py	\
-@@ -349,7 +349,6 @@ PYTESTS = \
+@@ -372,7 +372,6 @@ PYTESTS = \
      readererr.py\
      relaxng.py	\
      schema.py	\
