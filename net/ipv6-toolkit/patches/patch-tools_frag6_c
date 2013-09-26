@@ -1,0 +1,213 @@
+$OpenBSD: patch-tools_frag6_c,v 1.1 2013/09/26 21:52:35 bluhm Exp $
+--- tools/frag6.c.orig	Fri Aug 16 07:36:52 2013
++++ tools/frag6.c	Sun Sep  8 21:03:41 2013
+@@ -263,8 +263,7 @@ int main(int argc, char **argv){
+ 	}
+ 
+ 
+-	srandom(time(NULL));
+-	hoplimit=64+random()%180;
++	hoplimit=64+arc4random_uniform(180);
+ 	init_iface_data(&idata);
+ 
+ 	while((r=getopt_long(argc, argv, shortopts, longopts, NULL)) != -1) {
+@@ -822,7 +821,7 @@ int main(int argc, char **argv){
+ 				if(verbose_f)
+ 					puts("Sending Fragments for Test #1....");
+ 
+-				id= random();
++				id= arc4random();
+ 
+ 				if(send_fragment2(sizeof(struct icmp6_hdr)+minfragsize*2-overlap, id, 0, minfragsize, \
+ 									FIRST_FRAGMENT, block1) == -1){
+@@ -840,7 +839,7 @@ int main(int argc, char **argv){
+ 				if(verbose_f)
+ 					puts("Sending Fragments for Test #2....");
+ 
+-				id= random();
++				id= arc4random();
+ 
+ 				if(send_fragment2(sizeof(struct icmp6_hdr)+minfragsize * 3-overlap, id, 0, minfragsize, \
+ 									FIRST_FRAGMENT, block2) == -1){
+@@ -862,7 +861,7 @@ int main(int argc, char **argv){
+ 				if(verbose_f)
+ 					puts("Sending Fragments for Test #3....");
+ 
+-				id= random();
++				id= arc4random();
+ 
+ 				if(send_fragment2(sizeof(struct icmp6_hdr)+minfragsize * 3-overlap, id, 0, minfragsize, \
+ 									FIRST_FRAGMENT, block3) == -1){
+@@ -885,7 +884,7 @@ int main(int argc, char **argv){
+ 				if(verbose_f)
+ 					puts("Sending Fragments for Test #4....");
+ 
+-				id= random();
++				id= arc4random();
+ 
+ 				if(send_fragment2(sizeof(struct icmp6_hdr)+minfragsize *4, id, 0, minfragsize, FIRST_FRAGMENT, \
+ 									block4) == -1){
+@@ -908,7 +907,7 @@ int main(int argc, char **argv){
+ 				if(verbose_f)
+ 					puts("Sending Fragments for Test #5....");
+ 
+-				id= random();
++				id= arc4random();
+ 
+ 				if(send_fragment2(sizeof(struct icmp6_hdr)+minfragsize * 4 - overlap, id, 0, minfragsize, \
+ 									FIRST_FRAGMENT, block5) == -1){
+@@ -1066,7 +1065,7 @@ int main(int argc, char **argv){
+ 		lastfrag1=0;		
+ 		ntest1=0;
+ 		ntest2=0;
+-		icmp6_sig= random();
++		icmp6_sig= arc4random();
+ 		testtype= FIXED_ORIGIN;
+ 
+ 		if(srcprefix_f){
+@@ -1084,8 +1083,8 @@ int main(int argc, char **argv){
+ 
+ 			if( testtype==FIXED_ORIGIN && ((curtime - start) >= ID_ASSESS_TIMEOUT || ntest1 >= NSAMPLES)){
+ 				testtype= MULTI_ORIGIN;
+-				addr_sig= random();
+-				addr_key= random();
++				addr_sig= arc4random();
++				addr_key= arc4random();
+ 				start= curtime;
+ 				continue;
+ 			}
+@@ -1317,7 +1316,7 @@ int main(int argc, char **argv){
+ 		pcap_freecode(&pcap_filter);
+ 
+ 		maxsizedchunk= idata.mtu - sizeof(struct ip6_hdr) - sizeof(struct ip6_frag);
+-		id=random();
++		id=arc4random();
+ 		foffset=0;
+ 		i=0;
+ 
+@@ -1399,7 +1398,7 @@ int main(int argc, char **argv){
+ 				frags=0;
+ 
+ 				if(!foffset_f){
+-					foffset= random();
++					foffset= arc4random();
+ 				}
+ 
+ 				if(forder != LAST_FRAGMENT){
+@@ -1407,7 +1406,7 @@ int main(int argc, char **argv){
+ 				}
+ 
+ 				while(frags < nfrags){
+-					if(send_fragment(fid_f?fid:random(), foffset, fsize_f?fsize:( ((MIN_FRAG_SIZE+(random()%400))>>3)<<3), \
++					if(send_fragment(fid_f?fid:arc4random(), foffset, fsize_f?fsize:( ((MIN_FRAG_SIZE+(arc4random_uniform(400)))>>3)<<3), \
+ 						forder, tstamp_f) == -1){
+ 
+ 						puts("Error sending packet");
+@@ -1932,7 +1931,7 @@ int send_fragment2(u_int16_t ip6len, unsigned int id, 
+ 		icmp6->icmp6_code = 0;
+ 		icmp6->icmp6_cksum = 0;
+ 		icmp6->icmp6_data16[0]= htons(getpid());	/* Identifier */
+-		icmp6->icmp6_data16[1]= htons(random());		/* Sequence Number */
++		icmp6->icmp6_data16[1]= arc4random();		/* Sequence Number */
+ 
+ 		ptr+= sizeof(struct icmp6_hdr);
+ 
+@@ -1993,7 +1992,6 @@ int send_fragment2(u_int16_t ip6len, unsigned int id, 
+  */
+ int send_fragment(unsigned int id, unsigned int offset, unsigned int fsize, unsigned int forder, unsigned int tstamp_f){
+ 	time_t	tstamp;
+-	unsigned int i;
+ 
+ 	ethernet= (struct ether_header *) buffer;
+ 	dlt_null= (struct dlt_null *) buffer;
+@@ -2126,7 +2124,7 @@ int send_fragment(unsigned int id, unsigned int offset
+ 		icmp6->icmp6_code = 0;
+ 		icmp6->icmp6_cksum = 0;
+ 		icmp6->icmp6_data16[0]= htons(getpid());	/* Identifier */
+-		icmp6->icmp6_data16[1]= htons(random());		/* Sequence Number */
++		icmp6->icmp6_data16[1]= arc4random();		/* Sequence Number */
+ 
+ 		ptr+= sizeof(struct icmp6_hdr);
+ 		fsize-= sizeof(struct icmp6_hdr);
+@@ -2153,10 +2151,8 @@ int send_fragment(unsigned int id, unsigned int offset
+ 				fsize=0;
+ 		}
+ 
+-		for(i=0; i< (fsize/4); i++){
+-			*(u_int32_t *)ptr = random();
+-			ptr += sizeof(u_int32_t);
+-		}
++		arc4random_buf(ptr, fsize & ~3);
++		ptr += fsize & ~3;
+ 
+ 		ipv6->ip6_plen= htons(ptr-(v6buffer + MIN_IPV6_HLEN));
+ 		icmp6->icmp6_cksum = in_chksum(v6buffer, icmp6, ptr-((unsigned char *)icmp6), IPPROTO_ICMPV6);
+@@ -2193,10 +2189,8 @@ int send_fragment(unsigned int id, unsigned int offset
+ 			return(-1);
+ 		}
+ 
+-		for(i=0; i<(fsize/4); i++){
+-			*(u_int32_t *)ptr = random();
+-			ptr += sizeof(u_int32_t);
+-		}
++		arc4random_buf(ptr, fsize & ~3);
++		ptr += fsize & ~3;
+ 
+ 		ipv6->ip6_plen= htons(ptr-(v6buffer + MIN_IPV6_HLEN));
+ 	}
+@@ -2227,7 +2221,6 @@ int send_fid_probe(void){
+ 	struct ether_header	*ethernet;
+ 	struct ip6_hdr		*ipv6;
+ 	unsigned char		*fptr, *fptrend;
+-	unsigned int		i;
+ 
+ 	ethernet= (struct ether_header *) buffer;
+ 	v6buffer = buffer + linkhsize;
+@@ -2266,16 +2259,14 @@ int send_fid_probe(void){
+ 	icmp6->icmp6_code = 0;
+ 	icmp6->icmp6_cksum = 0;
+ 	icmp6->icmp6_data16[0]= htons(getpid());	/* Identifier */
+-	icmp6->icmp6_data16[1]= htons(random());	/* Sequence Number */
++	icmp6->icmp6_data16[1]= arc4random();		/* Sequence Number */
+ 
+ 	ptr+= sizeof(struct icmp6_hdr);
+ 	*(u_int32_t *)ptr= icmp6_sig;
+ 	ptr+= sizeof(u_int32_t);
+ 
+-	for(i=0;i<400; i++){
+-		*(u_int32_t *)ptr= random();
+-		ptr+=sizeof(u_int32_t);
+-	}
++	arc4random_buf(ptr, 1600);
++	ptr += 1600;
+ 
+ 	icmp6->icmp6_cksum = in_chksum(v6buffer, icmp6, ptr-(unsigned char *)icmp6, IPPROTO_ICMPV6);
+ 
+@@ -2293,7 +2284,7 @@ int send_fid_probe(void){
+ 	fptr = fptr + (fragpart-buffer);
+ 
+ 	fh= (struct ip6_frag *) (fragbuffer + linkhsize + sizeof(struct ip6_hdr));
+-	fh->ip6f_ident=random();
++	fh->ip6f_ident=arc4random();
+ 	startoffragment = fptr;
+ 
+ 	/* We'll be sending packets of at most 1280 bytes (the IPv6 minimum MTU) */
+@@ -2648,7 +2639,7 @@ void randomize_ipv6_addr(struct in6_addr *ipv6addr, st
+ 		ipv6addr->s6_addr16[i]= 0;
+ 
+ 	for(i=startrand; i<8; i++)
+-		ipv6addr->s6_addr16[i]=random();
++		ipv6addr->s6_addr16[i]=arc4random();
+ 
+ 	if(preflen%16){
+ 		mask=0xffff;
+@@ -2673,8 +2664,7 @@ void randomize_ipv6_addr(struct in6_addr *ipv6addr, st
+  */
+ 
+ void randomize_ether_addr(struct ether_addr *ethaddr){
+-	for(i=0; i<6; i++)
+-		ethaddr->a[i]= random();
++	arc4random_buf(ethaddr, sizeof(struct ether_addr));
+ 
+ 	ethaddr->a[0]= (ethaddr->a[0] & 0xfc) | 0x02;
+ }

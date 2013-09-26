@@ -1,27 +1,15 @@
-$OpenBSD: patch-tools_icmp6_c,v 1.1.1.1 2013/08/30 23:41:15 bluhm Exp $
+$OpenBSD: patch-tools_icmp6_c,v 1.2 2013/09/26 21:52:35 bluhm Exp $
 --- tools/icmp6.c.orig	Fri Aug 16 08:00:40 2013
-+++ tools/icmp6.c	Wed Aug 28 01:22:04 2013
-@@ -30,6 +30,10 @@
-  * Please send any bug reports to Fernando Gont <fgont@si6networks.com>
-  */
- 
-+#include <sys/types.h>
-+#include <sys/param.h>
-+#include <sys/socket.h>
-+
- #include <errno.h>
- #include <stdlib.h>
- #include <stdio.h>
-@@ -39,8 +43,6 @@
- #include <signal.h>
- #include <string.h>
++++ tools/icmp6.c	Sun Sep  8 22:09:53 2013
+@@ -41,6 +41,7 @@
  #include <pcap.h>
--#include <sys/types.h>
--#include <sys/param.h>
+ #include <sys/types.h>
+ #include <sys/param.h>
++#include <sys/socket.h>
  #include <setjmp.h>
  #include <netinet/in.h>
  #include <arpa/inet.h>
-@@ -54,7 +56,6 @@
+@@ -54,7 +55,6 @@
  #elif defined (__FreeBSD__) || defined(__NetBSD__) || defined (__OpenBSD__) || defined(__APPLE__)
  	#include <net/if_dl.h>
  #endif
@@ -29,3 +17,206 @@ $OpenBSD: patch-tools_icmp6_c,v 1.1.1.1 2013/08/30 23:41:15 bluhm Exp $
  #include "icmp6.h"
  #include "ipv6toolkit.h"
  #include <netinet/tcp.h>
+@@ -290,7 +290,7 @@ int main(int argc, char **argv){
+ 	}
+ 
+ 	init_iface_data(&idata);
+-	hoplimit=64+random()%180;
++	hoplimit=64+arc4random_uniform(180);
+ 
+ 	while((r=getopt_long(argc, argv, shortopts, longopts, NULL)) != -1) {
+ 		option= r;
+@@ -1108,8 +1108,6 @@ int main(int argc, char **argv){
+ 		hsrcaddr= idata.ether;
+ 	}
+ 
+-	srandom(time(NULL));
+-
+ 	if(!srcaddr_f || srcprefix_f){
+ 		if(srcprefix_f){
+ 			randprefix=srcaddr;
+@@ -1154,7 +1152,7 @@ int main(int argc, char **argv){
+ 		rhdefault_f=1;
+ 
+ 	if(!ip6hoplimit_f)
+-		ip6hoplimit=64+random()%180;
++		ip6hoplimit=64+arc4random_uniform(180);
+ 
+ 	if(!ip6length_f)
+ 		ip6length=1460;
+@@ -1177,21 +1175,21 @@ int main(int argc, char **argv){
+ 			tcpflags= tcpflags | TH_ACK;
+ 
+ 		if(!tcpack_f)
+-			tcpack= random();
++			tcpack= arc4random();
+ 
+ 		if(!tcpseq_f)
+-			tcpseq= random();
++			tcpseq= arc4random();
+ 
+ 		if(!tcpwin_f)
+-			tcpwin= ((u_int16_t) random() + 1500) & (u_int16_t)0x7f00;
++			tcpwin= ((u_int16_t) arc4random() + 1500) & (u_int16_t)0x7f00;
+ 
+ 		if(!peerportl_f){
+-			peerportl= random();
++			peerportl= arc4random();
+ 			peerporth= peerportl;
+ 		}
+ 
+ 		if(!targetportl_f){
+-			targetportl= random();
++			targetportl= arc4random();
+ 			targetporth= targetportl;
+ 		}
+ 
+@@ -1201,22 +1199,22 @@ int main(int argc, char **argv){
+ 
+ 	if(rhudp_f){
+ 		if(!peerportl_f){
+-			peerportl= random();
++			peerportl= arc4random();
+ 			peerporth= peerportl;
+ 		}
+ 
+ 		if(!targetportl_f){
+-			targetportl= random();
++			targetportl= arc4random();
+ 			targetporth= targetportl;
+ 		}
+ 	}
+ 
+ 	if(rhicmp6_f){
+ 		if(!icmp6id_f)
+-			icmp6id= random();
++			icmp6id= arc4random();
+ 
+ 		if(!icmp6seq_f)
+-			icmp6seq= random();
++			icmp6seq= arc4random();
+ 	}
+ 
+ 	if(!icmp6type_f){
+@@ -1232,7 +1230,7 @@ int main(int argc, char **argv){
+ 
+ 		case ICMP6_PARAM_PROB:
+ 			if(pointer_f)
+-				pointer= random()%40;
++				pointer= arc4random_uniform(40);
+ 			break;
+ 
+ 		case ICMP6_DST_UNREACH:
+@@ -1758,7 +1756,7 @@ void send_packet(const u_char *pktdata, struct pcap_pk
+ 						rhtcp->th_urp= htons(tcpurg);
+ 						rhtcp->th_win= htons(tcpwin);
+ 						rhtcp->th_off= MIN_TCP_HLEN >> 2;
+-						rhtcp->th_sum = random();
++						rhtcp->th_sum = arc4random();
+ 
+ 						if(rhbytes <= (MIN_IPV6_HLEN + MIN_TCP_HLEN)){
+ 							bcopy(rhbuff, ptr, rhbytes);
+@@ -1769,11 +1767,9 @@ void send_packet(const u_char *pktdata, struct pcap_pk
+ 							ptr += MIN_IPV6_HLEN+MIN_TCP_HLEN;
+ 							rhbytes -= MIN_IPV6_HLEN+MIN_TCP_HLEN;
+ 
+-							while(rhbytes>=4){
+-								*(u_int32_t *)ptr = random();
+-								ptr += sizeof(u_int32_t);
+-								rhbytes -= sizeof(u_int32_t);
+-							}
++							arc4random_buf(ptr, rhbytes);
++							ptr += rhbytes;
++							rhbytes = 0;
+ 						}
+ 					}
+ 
+@@ -1783,7 +1779,7 @@ void send_packet(const u_char *pktdata, struct pcap_pk
+ 						rhudp->uh_sport= htons(targetport);
+ 						rhudp->uh_dport= htons(peerport);
+ 						rhudp->uh_ulen= rhipv6->ip6_plen;
+-						rhudp->uh_sum= random();
++						rhudp->uh_sum= arc4random();
+ 
+ 						if(rhbytes <= (MIN_IPV6_HLEN + MIN_UDP_HLEN)){
+ 							bcopy(rhbuff, ptr, rhbytes);
+@@ -1793,11 +1789,9 @@ void send_packet(const u_char *pktdata, struct pcap_pk
+ 							bcopy(rhbuff, ptr, MIN_IPV6_HLEN+MIN_UDP_HLEN);
+ 							ptr += MIN_IPV6_HLEN+MIN_UDP_HLEN;
+ 							rhbytes -= MIN_IPV6_HLEN+MIN_UDP_HLEN;
+-							while(rhbytes>=4){
+-								*(u_int32_t *)ptr = random();
+-								ptr += sizeof(u_int32_t);
+-								rhbytes -= sizeof(u_int32_t);
+-							}
++							arc4random_buf(ptr, rhbytes);
++							ptr += rhbytes;
++							rhbytes = 0;
+ 						}
+ 					}
+ 					else if(rhicmp6_f){
+@@ -1805,9 +1799,9 @@ void send_packet(const u_char *pktdata, struct pcap_pk
+ 						rhicmp6 = (struct icmp6_hdr *) (rhbuff + sizeof(struct ip6_hdr));
+ 						rhicmp6->icmp6_type = ICMP6_ECHO_REQUEST;
+ 						rhicmp6->icmp6_code = 0;
+-						rhicmp6->icmp6_cksum = random();
+-						rhicmp6->icmp6_data16[0]= random(); /* Identifier */
+-						rhicmp6->icmp6_data16[1]= random(); /* Sequence Number */
++						rhicmp6->icmp6_cksum = arc4random();
++						rhicmp6->icmp6_data16[0]= arc4random(); /* Identifier */
++						rhicmp6->icmp6_data16[1]= arc4random(); /* Sequence Number */
+ 
+ 						if(rhbytes <= (MIN_IPV6_HLEN + MIN_ICMP6_HLEN)){
+ 							bcopy(rhbuff, ptr, rhbytes);
+@@ -1817,11 +1811,9 @@ void send_packet(const u_char *pktdata, struct pcap_pk
+ 							bcopy(rhbuff, ptr, MIN_IPV6_HLEN+MIN_ICMP6_HLEN);
+ 							ptr += MIN_IPV6_HLEN+MIN_ICMP6_HLEN;
+ 							rhbytes -= MIN_IPV6_HLEN+MIN_ICMP6_HLEN;
+-							while(rhbytes>=4){
+-								*(u_int32_t *)ptr = random();
+-								ptr += sizeof(u_int32_t);
+-								rhbytes -= sizeof(u_int32_t);
+-							}
++							arc4random_buf(ptr, rhbytes);
++							ptr += rhbytes;
++							rhbytes = 0;
+ 						}
+ 					}
+ 				}
+@@ -1860,7 +1852,7 @@ void send_packet(const u_char *pktdata, struct pcap_pk
+ 
+ 				memcpy(fptr, (char *) &fraghdr, FRAG_HDR_SIZE);
+ 				fh= (struct ip6_frag *) fptr;
+-				fh->ip6f_ident=random();
++				fh->ip6f_ident=arc4random();
+ 				startoffragment = fptr + FRAG_HDR_SIZE;
+ 
+ 				/*
+@@ -2589,7 +2581,7 @@ void randomize_ipv6_addr(struct in6_addr *ipv6addr, st
+ 		ipv6addr->s6_addr16[i]= 0;
+ 
+ 	for(i=startrand; i<8; i++)
+-		ipv6addr->s6_addr16[i]=random();
++		ipv6addr->s6_addr16[i]=arc4random();
+ 
+ 	if(preflen%16){
+ 		mask=0xffff;
+@@ -2614,8 +2606,7 @@ void randomize_ipv6_addr(struct in6_addr *ipv6addr, st
+  */
+ 
+ void randomize_ether_addr(struct ether_addr *ethaddr){
+-	for(i=0; i<6; i++)
+-		ethaddr->a[i]= random();
++	arc4random_buf(ethaddr, sizeof(struct ether_addr));
+ 
+ 	ethaddr->a[0]= (ethaddr->a[0] & 0xfc) | 0x02;
+ }
+@@ -3519,7 +3510,7 @@ int send_neighbor_advert(struct iface_data *idata, pca
+ 
+ 		memcpy(fptr, (char *) &fraghdr, FRAG_HDR_SIZE);
+ 		fh= (struct ip6_frag *) fptr;
+-		fh->ip6f_ident=random();
++		fh->ip6f_ident=arc4random();
+ 		startoffragment = fptr + FRAG_HDR_SIZE;
+ 
+ 		/*

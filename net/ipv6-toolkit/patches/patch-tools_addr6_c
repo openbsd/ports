@@ -1,0 +1,14 @@
+$OpenBSD: patch-tools_addr6_c,v 1.1 2013/09/26 21:52:35 bluhm Exp $
+--- tools/addr6.c.orig	Sat Aug 10 08:43:26 2013
++++ tools/addr6.c	Sun Sep  8 20:37:06 2013
+@@ -1437,8 +1437,8 @@ int init_host_list(struct host_list *hlist){
+ 
+ 	hlist->nhosts= 0;
+ 	hlist->maxhosts= MAX_HOST_ENTRIES;
+-	hlist->key_l= rand();
+-	hlist->key_h= rand();
++	hlist->key_l= arc4random();
++	hlist->key_h= arc4random();
+ 	return(1);
+ }
+ 

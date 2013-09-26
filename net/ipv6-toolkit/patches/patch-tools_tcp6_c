@@ -1,0 +1,186 @@
+$OpenBSD: patch-tools_tcp6_c,v 1.1 2013/09/26 21:52:36 bluhm Exp $
+--- tools/tcp6.c.orig	Thu Aug 22 16:34:21 2013
++++ tools/tcp6.c	Sun Sep  8 22:10:54 2013
+@@ -225,7 +225,7 @@ int main(int argc, char **argv){
+ 	fd_set			sset, rset;
+ 	int				r, sel;
+ 	struct timeval	timeout, stimeout, curtime, lastprobe, wmtimeout;
+-	unsigned long	pktinterval;
++	unsigned long	pktinterval = 1000; /* We Default to 1000 pps */
+ 	struct passwd	*pwdptr;
+ 
+ 	static struct option longopts[] = {
+@@ -1055,8 +1055,6 @@ int main(int argc, char **argv){
+ 		exit(1);
+ 	}
+ 
+-	srandom(time(NULL));
+-
+ 	/*
+ 	  If the flood option ("-F") has been specified, but no prefix has been specified,
+ 	  select the random Source Addresses from the link-local unicast prefix (fe80::/64).
+@@ -1220,10 +1218,6 @@ int main(int argc, char **argv){
+ 			pktinterval= ((packetsize * 8)/rate) * 1000000;
+ 	}
+ 
+-	/* We Default to 1000 pps */
+-	if(!pps_f && !bps_f)
+-		pktinterval= 1000;
+-
+ 	if( !fragh_f && dstoptuhdr_f){
+ 		puts("Dst. Options Header (Unfragmentable Part) set, but Fragmentation not specified");
+ 		exit(1);
+@@ -1242,16 +1236,16 @@ int main(int argc, char **argv){
+ 			tcpflags= tcpflags | TH_ACK;
+ 
+ 		if(!tcpack_f)
+-			tcpack= random();
++			tcpack= arc4random();
+ 
+ 		if(!tcpseq_f)
+-			tcpseq= random();
++			tcpseq= arc4random();
+ 
+ 		if(!srcport_f)
+-			srcport= random();
++			srcport= arc4random();
+ 
+ 		if(!dstport_f)
+-			dstport= random();
++			dstport= arc4random();
+ 
+ 		if(!tcpurg_f)
+ 			tcpurg= 0;
+@@ -1259,7 +1253,7 @@ int main(int argc, char **argv){
+ 
+ 	/* By default, we randomize the TCP Window */
+ 	if(!tcpwin_f)
+-		tcpwin= ((u_int16_t) random() + 1500) & (u_int16_t)0x7f00;
++		tcpwin= ((u_int16_t) arc4random() + 1500) & (u_int16_t)0x7f00;
+ 
+ 	if(!rhbytes_f)
+ 		rhbytes=0;
+@@ -1285,7 +1279,7 @@ int main(int argc, char **argv){
+ 
+ 	/* Set initial contents of the attack packet */
+ 	init_packet_data(&idata);
+-	addr_key= random();
++	addr_key= arc4random();
+ 
+ 	if(sleep_f)
+ 		pktinterval= (nsleep * 1000000)/(nsources * nports);
+@@ -1779,7 +1773,7 @@ void send_packet(const u_char *pktdata){
+ 					/* If it is a pure SYN, respond with a SYN/ACK */
+ 					if(!(pkt_tcp->th_flags & TH_ACK)){
+ 						tcp->th_flags = tcp->th_flags | TH_SYN | TH_ACK;
+-						tcp->th_seq= random();
++						tcp->th_seq= arc4random();
+ 						tcp->th_ack= htonl(ntohl(pkt_tcp->th_seq) + ((pkt_end - (unsigned char *)pkt_tcp) - (pkt_tcp->th_off << 2)));
+ 						tcp->th_ack= htonl(ntohl(tcp->th_ack) + ((pkt_tcp->th_flags & TH_FIN)?1:0) + \
+ 							((pkt_tcp->th_flags & TH_SYN)?1:0));
+@@ -1789,7 +1783,7 @@ void send_packet(const u_char *pktdata){
+ 					/* If it is a pure SYN, respond with a SYN */
+ 					if(!(pkt_tcp->th_flags & TH_ACK)){
+ 						tcp->th_flags = tcp->th_flags | TH_SYN;
+-						tcp->th_seq= random();
++						tcp->th_seq= arc4random();
+ 						tcp->th_ack= 0;
+ 					}
+ 					else{
+@@ -2009,17 +2003,9 @@ void send_packet(const u_char *pktdata){
+ 				exit(1);
+ 			}
+ 
+-			while(rhbytes>=4){
+-				*(u_int32_t *)ptr = random();
+-				ptr += sizeof(u_int32_t);
+-				rhbytes -= sizeof(u_int32_t);
+-			}
+-
+-			while(rhbytes>0){
+-				*(u_int8_t *) ptr= (u_int8_t) random();
+-				ptr++;
+-				rhbytes--;
+-			}
++			arc4random_buf(ptr, rhbytes);
++			ptr += rhbytes;
++			rhbytes = 0;
+ 		}
+ 
+ 		tcp->th_sum = 0;
+@@ -2123,19 +2109,10 @@ void send_packet(const u_char *pktdata){
+ 			exit(1);
+ 		}
+ 
+-		while(rhbytes>=4){
+-			*(u_int32_t *)ptr = random();
+-			ptr += sizeof(u_int32_t);
+-			rhbytes -= sizeof(u_int32_t);
+-		}
++		arc4random_buf(ptr, rhbytes);
++		ptr += rhbytes;
++		rhbytes = 0;
+ 
+-		while(rhbytes>0){
+-			*(u_int8_t *) ptr= (u_int8_t) random();
+-			ptr++;
+-			rhbytes--;
+-		}
+-
+-
+ 		if(pktdata == NULL && (floods_f && ports == 0)){
+ 			/* 
+ 			   Randomizing the IPv6 Source address based on the prefix specified by 
+@@ -2149,20 +2126,19 @@ void send_packet(const u_char *pktdata){
+ 			   detect which IPv6 addresses we have used.
+ 			 */
+ 			if(listen_f && useaddrkey_f){
+-				ipv6->ip6_src.s6_addr16[4]= random();
++				ipv6->ip6_src.s6_addr16[4]= arc4random();
+ 				ipv6->ip6_src.s6_addr16[5]= ipv6->ip6_src.s6_addr16[4] ^ addr_key;
+-				ipv6->ip6_src.s6_addr16[6]= random();
++				ipv6->ip6_src.s6_addr16[6]= arc4random();
+ 				ipv6->ip6_src.s6_addr16[7]= ipv6->ip6_src.s6_addr16[6] ^ addr_key;
+ 			}
+ 
+ 			if(idata.type == DLT_EN10MB && idata.flags != IFACE_LOOPBACK && !hsrcaddr_f){
+-				for(i=0; i<6; i++)
+-					ethernet->src.a[i]= random();
++				arc4random_buf(&ethernet->src, sizeof(struct ether_addr));
+ 			}
+ 		}
+ 
+ 		if(pktdata == NULL && floodp_f){
+-			tcp->th_sport= random();
++			tcp->th_sport= arc4random();
+ 		}
+ 
+ 		tcp->th_sum = 0;
+@@ -2214,7 +2190,7 @@ void frag_and_send(void){
+ 
+ 		memcpy(fptr, (char *) &fraghdr, FRAG_HDR_SIZE);
+ 		fh= (struct ip6_frag *) fptr;
+-		fh->ip6f_ident=random();
++		fh->ip6f_ident=arc4random();
+ 		startoffragment = fptr + FRAG_HDR_SIZE;
+ 
+ 		/*
+@@ -2856,7 +2832,7 @@ void randomize_ipv6_addr(struct in6_addr *ipv6addr, st
+ 		ipv6addr->s6_addr16[i]= 0;
+ 
+ 	for(i=startrand; i<8; i++)
+-		ipv6addr->s6_addr16[i]=random();
++		ipv6addr->s6_addr16[i]=arc4random();
+ 
+ 	if(preflen%16){
+ 		mask=0xffff;
+@@ -2881,8 +2857,7 @@ void randomize_ipv6_addr(struct in6_addr *ipv6addr, st
+  */
+ 
+ void randomize_ether_addr(struct ether_addr *ethaddr){
+-	for(i=0; i<6; i++)
+-		ethaddr->a[i]= random();
++	arc4random_buf(ethaddr, sizeof(struct ether_addr));
+ 
+ 	ethaddr->a[0]= (ethaddr->a[0] & 0xfc) | 0x02;
+ }
