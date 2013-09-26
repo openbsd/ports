@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2013/09/26 12:48:01 ajacoutot Exp $
-
-# XXX rework patch-libgweather_weather_c
+# $OpenBSD: Makefile,v 1.51 2013/09/26 15:56:25 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,6 +6,7 @@ COMMENT=		weather information access library
 
 GNOME_PROJECT=		libgweather
 GNOME_VERSION=		3.10.0
+REVISION=		0
 
 SHARED_LIBS +=		gweather-3             2.0      # 2.0
 
