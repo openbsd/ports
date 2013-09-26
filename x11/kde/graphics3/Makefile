@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2013/09/25 07:58:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.111 2013/09/26 09:16:52 sthen Exp $
 
 COMMENT-main =		K Desktop Environment, graphic applications
 COMMENT-kamera =	KDE interface to digital cameras
@@ -9,11 +9,15 @@ VERSION =		3.5.10
 DISTNAME =		kdegraphics-${VERSION}
 MODKDE_VERSION =	3.5.8
 
+REVISION-main =		19
+REVISION-kamera =	9
+REVISION-kpov =		8
+REVISION-sane =		12
+
 SEPARATE_BUILD =	flavored
 MULTI_PACKAGES =	-main -kpov -kamera -sane
 
 PKGNAME-main =		${DISTNAME}
-REVISION-main =		0
 PKGNAME-kamera =	kamera-${VERSION}
 PKGNAME-kpov =		kpovmodeller-${VERSION}
 PKGNAME-sane =		ksane-${VERSION}
@@ -67,11 +71,6 @@ WANTLIB-main = 		${WANTLIB}
 WANTLIB-kpov =		${WANTLIB}
 WANTLIB-kamera =	${WANTLIB}
 WANTLIB-sane =		${WANTLIB}
-
-REVISION-main = 18
-REVISION-kamera = 9
-REVISION-kpov = 8
-REVISION-sane = 12
 
 WANTLIB-main +=	 GL Half ICE Iex IlmImf IlmThread Imath Imlib SM \
 	Xcursor Xdamage Xext Xfixes Xft Xi Xinerama Xmu Xrandr Xrender Xt \
