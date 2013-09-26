@@ -1,23 +1,24 @@
-# $OpenBSD: Makefile,v 1.157 2013/09/24 16:51:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.158 2013/09/26 14:11:03 ajacoutot Exp $
+
+# XXX add libphonenumber support when a cpp release is out
 
 SHARED_ONLY=		Yes
 
 COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
-GNOME_VERSION=		3.8.5
-REVISION=		4
+GNOME_VERSION=		3.10.0
 
 CATEGORIES=		databases productivity
 
-SHARED_LIBS +=  camel-1.2            35.0     # 43.0
-SHARED_LIBS +=  edataserver-1.2      17.0     # 17.0
-SHARED_LIBS +=  ebackend-1.2         4.0      # 6.0
-SHARED_LIBS +=  ebook-contacts-1.2   0.0      # 0.0
-SHARED_LIBS +=  edata-book-1.2       15.0     # 17.0
-SHARED_LIBS +=  ebook-1.2            18.0     # 17.1
-SHARED_LIBS +=  ecal-1.2             14.0     # 15.0
-SHARED_LIBS +=  edata-cal-1.2        17.0     # 20.
+SHARED_LIBS +=  camel-1.2            36.0     # 43.0
+SHARED_LIBS +=  edataserver-1.2      18.0     # 17.0
+SHARED_LIBS +=  ebackend-1.2         5.0      # 6.0
+SHARED_LIBS +=  ebook-contacts-1.2   1.0      # 0.0
+SHARED_LIBS +=  edata-book-1.2       16.0     # 17.0
+SHARED_LIBS +=  ebook-1.2            19.0     # 17.1
+SHARED_LIBS +=  ecal-1.2             15.0     # 15.0
+SHARED_LIBS +=  edata-cal-1.2        18.0     # 20.
 
 HOMEPAGE=	http://www.gnome.org/projects/evolution/
 
@@ -53,7 +54,7 @@ LIB_DEPENDS= 		databases/db/v4 \
 			devel/libgdata \
 			net/liboauth \
 			textproc/libical \
-			x11/gnome/gcr>=3.6.0 \
+			x11/gnome/gcr \
 			x11/gnome/libgweather \
 			x11/gnome/online-accounts
 
