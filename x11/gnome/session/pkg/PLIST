@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.43 2013/03/29 15:41:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.44 2013/09/26 15:11:46 ajacoutot Exp $
 @bin bin/gnome-session
 @bin bin/gnome-session-inhibit
 @bin bin/gnome-session-properties
@@ -11,15 +11,15 @@
 @man man/man1/gnome-session-quit.1
 @man man/man1/gnome-session.1
 share/GConf/gsettings/gnome-session.convert
-share/applications/session-properties.desktop
+share/applications/gnome-session-properties.desktop
 share/doc/gnome-session/
 share/doc/gnome-session/dbus/
 share/doc/gnome-session/dbus/gnome-session.html
 share/glib-2.0/schemas/org.gnome.SessionManager.gschema.xml
-share/gnome-session/gsm-inhibit-dialog.ui
 share/gnome-session/hardware-compatibility
 share/gnome-session/session-properties.ui
 share/gnome-session/sessions/gnome-dummy.session
+share/gnome-session/sessions/gnome-wayland.session
 share/gnome-session/sessions/gnome.session
 share/icons/hicolor/16x16/apps/session-properties.png
 share/icons/hicolor/22x22/apps/session-properties.png
@@ -142,6 +142,8 @@ share/locale/zh_CN/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/zu/LC_MESSAGES/gnome-session-3.0.mo
+share/wayland-sessions/
+share/wayland-sessions/gnome-wayland.desktop
 share/xsessions/
 share/xsessions/gnome.desktop
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
