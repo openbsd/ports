@@ -1,0 +1,19 @@
+$OpenBSD: patch-configure_ac,v 1.1 2013/09/26 13:25:34 jasper Exp $
+
+Revert:
+From f5119db95aab7e97a30aca646833bcd72d4ba51f Mon Sep 17 00:00:00 2001
+From: Sen de Brca <leftmostcat@gmail.com>
+Date: Wed, 28 Aug 2013 17:02:30 +0000
+Subject: Update to new webkitgtk-2.1.90 API
+
+--- configure.ac.orig	Thu Sep 26 15:13:06 2013
++++ configure.ac	Thu Sep 26 15:13:28 2013
+@@ -91,7 +91,7 @@ PKG_CHECK_MODULES(GTK, [gtk+-3.0 >= 3.5.1])
+ AC_SUBST(GTK_CFLAGS)
+ AC_SUBST(GTK_LIBS)
+ 
+-PKG_CHECK_MODULES(WEBKIT_GTK, [webkitgtk-3.0 >= 2.1.90])
++PKG_CHECK_MODULES(WEBKIT_GTK, [webkitgtk-3.0])
+ AC_SUBST(WEBKIT_GTK_CFLAGS)
+ AC_SUBST(WEBKIT_GTK_LIBS)
+ 

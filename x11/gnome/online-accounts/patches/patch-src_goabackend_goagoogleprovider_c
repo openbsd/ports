@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_goabackend_goagoogleprovider_c,v 1.1 2013/09/26 13:25:34 jasper Exp $
+
+Revert:
+From f5119db95aab7e97a30aca646833bcd72d4ba51f Mon Sep 17 00:00:00 2001
+From: Sen de Brca <leftmostcat@gmail.com>
+Date: Wed, 28 Aug 2013 17:02:30 +0000
+Subject: Update to new webkitgtk-2.1.90 API
+
+--- src/goabackend/goagoogleprovider.c.orig	Tue Sep 24 17:45:27 2013
++++ src/goabackend/goagoogleprovider.c	Thu Sep 26 15:13:28 2013
+@@ -273,8 +273,8 @@ is_deny_node (GoaOAuth2Provider *provider, WebKitDOMNo
+   if (!WEBKIT_DOM_IS_HTML_BUTTON_ELEMENT (node))
+     goto out;
+ 
+-  element = WEBKIT_DOM_ELEMENT (node);
+-  id = webkit_dom_element_get_id (element);
++  element = WEBKIT_DOM_HTML_ELEMENT (node);
++  id = webkit_dom_html_element_get_id (element);
+   if (g_strcmp0 (id, "submit_deny_access") != 0)
+     goto out;
+ 
+@@ -303,7 +303,7 @@ is_identity_node (GoaOAuth2Provider *provider, WebKitD
+   if (g_strcmp0 (element_type, "email") != 0)
+     goto out;
+ 
+-  id = webkit_dom_element_get_id (WEBKIT_DOM_ELEMENT (element));
++  id = webkit_dom_html_element_get_id (WEBKIT_DOM_HTML_ELEMENT (element));
+   if (g_strcmp0 (id, "Email") != 0)
+     goto out;
+ 
