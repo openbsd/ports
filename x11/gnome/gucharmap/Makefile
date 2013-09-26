@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.75 2013/05/31 15:35:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2013/09/26 15:01:08 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		Unicode character map for the GNOME project
 
 GNOME_PROJECT=		gucharmap
-GNOME_VERSION=		3.8.2
-REVISION=		0
+GNOME_VERSION=		3.9.99
 
 SHARED_LIBS +=  gucharmap_2_90            7.0 # 7.0
 
@@ -28,7 +27,7 @@ MODULES=		devel/gettext \
 			devel/dconf \
 			x11/gnome
 
-MODGNOME_TOOLS= 	gi yelp
+MODGNOME_TOOLS= 	gi vala yelp
 MODGNOME_DESKTOP_FILE=	Yes
 
 # configure checks for desktop-file-validate(1)
