@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2013/05/31 15:35:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2013/09/26 08:05:30 ajacoutot Exp $
 
 COMMENT=	library for bits of crypto UI and parsing
 
 GNOME_PROJECT=	gcr
-GNOME_VERSION=	3.8.2
-REVISION=	0
+GNOME_VERSION=	3.10.0
 
 SHARED_LIBS +=  gck-1                1.0      # 0.0
 SHARED_LIBS +=  gcr-base-3           2.0      # 1.0
@@ -27,7 +26,7 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/dconf
 
-MODGNOME_TOOLS=		gi
+MODGNOME_TOOLS=		gi vala
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 

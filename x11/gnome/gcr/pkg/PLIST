@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/03/29 09:47:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/09/26 08:05:31 ajacoutot Exp $
 @conflict gnome-keyring-<3.4.0
 @bin bin/gcr-viewer
 include/gck-1/
@@ -295,6 +295,12 @@ share/locale/zh_CN/LC_MESSAGES/gcr.mo
 share/locale/zh_HK/LC_MESSAGES/gcr.mo
 share/locale/zh_TW/LC_MESSAGES/gcr.mo
 share/mime/packages/gcr-crypto-types.xml
+share/vala/vapi/gck-1.deps
+share/vala/vapi/gck-1.vapi
+share/vala/vapi/gcr-3.deps
+share/vala/vapi/gcr-3.vapi
+share/vala/vapi/gcr-ui-3.deps
+share/vala/vapi/gcr-ui-3.vapi
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-mime-database %D/share/mime
