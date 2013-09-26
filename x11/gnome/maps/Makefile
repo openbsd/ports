@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/09/26 15:49:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2013/09/26 17:21:13 ajacoutot Exp $
 
 COMMENT=		map application for GNOME
 
@@ -11,7 +11,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=		x11/gnome \
 			devel/dconf
 
-MODGNOME_TOOLS=		gi
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 
