@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.20 2013/09/06 15:28:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2013/09/26 14:55:28 jasper Exp $
 
 COMMENT=		modern 3D graphics API
 
 GNOME_PROJECT=		cogl
 GNOME_VERSION=		${MAJOR}.0
-REVISION=		0
 
-SHARED_LIBS +=  cogl                 1.0      # 13.1
-SHARED_LIBS +=  cogl-pango           1.0      # 13.1
+SHARED_LIBS +=  cogl                 2.0      # 14.0
+SHARED_LIBS +=  cogl-pango           2.0      # 14.0
 
 WANTLIB += X11 Xcomposite Xdamage Xext Xfixes Xrandr Xrender cairo
 WANTLIB += expat ffi fontconfig freetype gdk_pixbuf-2.0 gio-2.0
@@ -30,9 +29,6 @@ TEST_IS_INTERACTIVE=	x11
 
 pre-configure:
 	perl -pi -e 's,/bin/bash,${LOCALBASE}/bin/bash,' \
-		${WRKSRC}/tests/conform/run-tests.sh
-
-do-test:
-	cd ${WRKSRC}/tests && ${MAKE_PROGRAM} test
+		${WRKSRC}/tests/run-tests.sh
 
 .include <bsd.port.mk>
