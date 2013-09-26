@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.67 2013/04/16 13:16:30 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.68 2013/09/26 07:50:43 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -69,7 +69,7 @@ MODGNOME_CONFIGURE_ARGS_vala=--disable-vala --disable-vala-bindings
 .if defined(MODGNOME_TOOLS)
 .   if ${MODGNOME_TOOLS:Mgi}
         MODGNOME_CONFIGURE_ARGS_gi=--enable-introspection
-        MODGNOME_BUILD_DEPENDS+=devel/gobject-introspection>=1.36.0
+        MODGNOME_BUILD_DEPENDS+=devel/gobject-introspection>=1.38.0
 .   endif
 
 .   if ${MODGNOME_TOOLS:Mgtk-doc}
@@ -79,12 +79,12 @@ MODGNOME_CONFIGURE_ARGS_vala=--disable-vala --disable-vala-bindings
 
 .   if ${MODGNOME_TOOLS:Mvala}
         MODGNOME_CONFIGURE_ARGS_vala=--enable-vala --enable-vala-bindings
-        MODGNOME_BUILD_DEPENDS+=lang/vala>=0.20.0
+        MODGNOME_BUILD_DEPENDS+=lang/vala>=0.22.0
 .   endif
 
 .   if ${MODGNOME_TOOLS:Myelp}
         MODGNOME_BUILD_DEPENDS+=x11/gnome/yelp-tools
-        MODGNOME_BUILD_DEPENDS+=x11/gnome/doc-utils>=0.20.10p0
+        MODGNOME_BUILD_DEPENDS+=x11/gnome/doc-utils>=0.20.10p1
         _yelp_depend=x11/gnome/yelp
         MODGNOME_RUN_DEPENDS+=${_yelp_depend}
         MODGNOME_RUN_DEPENDS_yelp=${_yelp_depend}
