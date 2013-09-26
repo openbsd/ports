@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.130 2013/09/26 14:44:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.131 2013/09/26 15:15:02 ajacoutot Exp $
 
 COMMENT=		GNOME file manager
 
@@ -50,8 +50,6 @@ LIB_DEPENDS=		x11/gnome/desktop \
 
 MODGNOME_TOOLS= 	gi
 MODGNOME_DESKTOP_FILE=	Yes
-
-CONFIGURE_ARGS+= 	--disable-update-mimedb
 
 # it would introduce a cyclic dependency with x11/gnome/tracker; also it
 # is better to keep the regular search for nautilus so that we can get
