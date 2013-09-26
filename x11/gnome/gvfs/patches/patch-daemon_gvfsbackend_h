@@ -1,6 +1,9 @@
-$OpenBSD: patch-daemon_gvfsbackend_h,v 1.3 2013/09/26 09:32:43 ajacoutot Exp $
+$OpenBSD: patch-daemon_gvfsbackend_h,v 1.4 2013/09/26 11:41:50 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=708814
+From a390856358db1d9fbdd6406d7d781bce0e93477b Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Thu, 26 Sep 2013 09:28:15 +0000
+Subject: build: do not redefine GVfsBackend
 
 --- daemon/gvfsbackend.h.orig	Thu Sep 26 11:23:30 2013
 +++ daemon/gvfsbackend.h	Thu Sep 26 11:23:33 2013
