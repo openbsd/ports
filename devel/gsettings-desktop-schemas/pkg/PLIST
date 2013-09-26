@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2013/05/14 11:53:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2013/09/26 07:07:56 ajacoutot Exp $
 include/gsettings-desktop-schemas/
 include/gsettings-desktop-schemas/gdesktop-enums.h
 lib/girepository-1.0/
@@ -13,10 +13,12 @@ share/glib-2.0/schemas/10_org.gnome.desktop.lockdown.gschema.override
 share/glib-2.0/schemas/10_org.gnome.desktop.media-handling.gschema.override
 share/glib-2.0/schemas/10_org.gnome.desktop.screensaver.gschema.override
 share/glib-2.0/schemas/org.gnome.desktop.a11y.applications.gschema.xml
+share/glib-2.0/schemas/org.gnome.desktop.a11y.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.a11y.keyboard.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.a11y.magnifier.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.a11y.mouse.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.background.gschema.xml
+share/glib-2.0/schemas/org.gnome.desktop.datetime.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.default-applications.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.enums.xml
 share/glib-2.0/schemas/org.gnome.desktop.input-sources.gschema.xml
@@ -51,6 +53,7 @@ share/locale/fi/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/fr/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/gl/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/gu/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/he/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/hi/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/hu/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/id/LC_MESSAGES/gsettings-desktop-schemas.mo
