@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2013/06/18 12:05:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2013/09/26 10:22:52 ajacoutot Exp $
 bin/orca
 lib/python${MODPY_VERSION}/site-packages/orca/
 lib/python${MODPY_VERSION}/site-packages/orca/__init__.py
@@ -93,8 +93,6 @@ lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}orca_platform.${MO
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}orca_platform.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}orca_state.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}orca_state.${MODPY_PYC_MAGIC_TAG}pyo
-lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}outline.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}outline.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}phonnames.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}phonnames.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/${MODPY_PYCACHE}pronunciation_dict.${MODPY_PYC_MAGIC_TAG}pyc
@@ -181,7 +179,6 @@ lib/python${MODPY_VERSION}/site-packages/orca/orca_gui_profile.py
 lib/python${MODPY_VERSION}/site-packages/orca/orca_i18n.py
 lib/python${MODPY_VERSION}/site-packages/orca/orca_platform.py
 lib/python${MODPY_VERSION}/site-packages/orca/orca_state.py
-lib/python${MODPY_VERSION}/site-packages/orca/outline.py
 lib/python${MODPY_VERSION}/site-packages/orca/phonnames.py
 lib/python${MODPY_VERSION}/site-packages/orca/pronunciation_dict.py
 lib/python${MODPY_VERSION}/site-packages/orca/punctuation_settings.py
@@ -302,6 +299,17 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/empathy/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/empathy/${MODPY_PYCACHE}script_utilities.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/empathy/script.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/empathy/script_utilities.py
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evince/
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evince/__init__.py
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evince/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evince/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evince/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evince/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evince/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evince/${MODPY_PYCACHE}script_utilities.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evince/${MODPY_PYCACHE}script_utilities.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evince/script.py
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evince/script_utilities.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evolution/
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evolution/__init__.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/evolution/${MODPY_PYCACHE}/
@@ -362,6 +370,17 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gedit/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gedit/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gedit/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gedit/script.py
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-documents/
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-documents/__init__.py
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-documents/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-documents/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-documents/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-documents/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-documents/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-documents/${MODPY_PYCACHE}speech_generator.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-documents/${MODPY_PYCACHE}speech_generator.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-documents/script.py
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-documents/speech_generator.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-keyring-ask/
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-keyring-ask/__init__.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-keyring-ask/${MODPY_PYCACHE}/
