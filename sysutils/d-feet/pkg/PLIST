@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2013/07/10 09:56:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/09/26 08:22:01 ajacoutot Exp $
 bin/d-feet
 lib/python${MODPY_VERSION}/site-packages/dfeet/
 lib/python${MODPY_VERSION}/site-packages/dfeet/__init__.py
@@ -41,7 +41,7 @@ share/applications/d-feet.desktop
 share/d-feet/
 share/d-feet/ui/
 share/d-feet/ui/addconnectiondialog.ui
-share/d-feet/ui/buswatch.ui
+share/d-feet/ui/bus.ui
 share/d-feet/ui/executedialog.ui
 share/d-feet/ui/introspection.ui
 share/d-feet/ui/mainwindow.ui
@@ -58,6 +58,7 @@ share/icons/HighContrast/scalable/
 share/icons/HighContrast/scalable/apps/
 share/icons/HighContrast/scalable/apps/d-feet.svg
 share/icons/hicolor/16x16/apps/d-feet.png
+share/icons/hicolor/16x16/apps/dfeet-icon-default-service.png
 share/icons/hicolor/16x16/apps/dfeet-method-category.png
 share/icons/hicolor/16x16/apps/dfeet-method.png
 share/icons/hicolor/16x16/apps/dfeet-object.png
@@ -71,9 +72,15 @@ share/icons/hicolor/32x32/apps/d-feet.png
 share/icons/hicolor/48x48/apps/d-feet.png
 share/icons/hicolor/scalable/apps/d-feet.svg
 share/locale/cs/LC_MESSAGES/d-feet.mo
+share/locale/de/LC_MESSAGES/d-feet.mo
+share/locale/el/LC_MESSAGES/d-feet.mo
 share/locale/es/LC_MESSAGES/d-feet.mo
+share/locale/gl/LC_MESSAGES/d-feet.mo
+share/locale/hu/LC_MESSAGES/d-feet.mo
+share/locale/pl/LC_MESSAGES/d-feet.mo
 share/locale/pt_BR/LC_MESSAGES/d-feet.mo
 share/locale/sl/LC_MESSAGES/d-feet.mo
+share/locale/zh_CN/LC_MESSAGES/d-feet.mo
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

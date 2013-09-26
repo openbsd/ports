@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_dfeet_bus_watch_py,v 1.1 2013/05/22 19:14:05 ajacoutot Exp $
---- src/dfeet/bus_watch.py.orig	Wed May 15 06:29:45 2013
-+++ src/dfeet/bus_watch.py	Wed May 22 20:53:46 2013
+$OpenBSD: patch-src_dfeet_bus_watch_py,v 1.2 2013/09/26 08:22:01 ajacoutot Exp $
+--- src/dfeet/bus_watch.py.orig	Sun Sep  1 07:59:33 2013
++++ src/dfeet/bus_watch.py	Wed Sep 25 20:39:49 2013
 @@ -1,6 +1,7 @@
  # -*- coding: utf-8 -*-
  from __future__ import print_function
@@ -9,14 +9,14 @@ $OpenBSD: patch-src_dfeet_bus_watch_py,v 1.1 2013/05/22 19:14:05 ajacoutot Exp $
  from gi.repository import GObject, Gtk, Gio
  
  from dfeet.uiloader import UILoader
-@@ -20,9 +21,7 @@ class DBusBusName(GObject.GObject):
- 
-     def __update_cmdline(self):
-         if self.pid > 0:
--            procpath = '/proc/' + str(self.pid) + '/cmdline'
+@@ -71,9 +72,7 @@ class BusNameBox(Gtk.VBox):
+     def __update_command_line(self):
+         """get the command line of process-id is available"""
+         if self.__process_id > 0:
+-            procpath = '/proc/' + str(self.__process_id) + '/cmdline'
 -            with open(procpath, 'r') as f:
--                self.__cmdline = " ".join(f.readline().split('\0'))
+-                self.__command_line = " ".join(f.readline().split('\0'))
 +            self.__cmdline = " ".join(subprocess.Popen(['/bin/ps', '-o', 'command=', '-p', str(self.pid)], stdout=subprocess.PIPE ).communicate()[0].strip().split('\0'))
          else:
-             self.__cmdline = ''
+             self.__command_line = ''
  
