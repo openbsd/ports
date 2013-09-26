@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.110 2013/09/24 18:53:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.111 2013/09/26 12:48:02 ajacoutot Exp $
+
+# XXX change proxy settings without network-manager?
 
 SHARED_ONLY=		Yes
 

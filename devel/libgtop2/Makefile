@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.102 2013/08/26 08:43:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.103 2013/09/26 12:48:01 ajacoutot Exp $
+
+# XXX fix procmap (Memory Writable column in gnome-system-monitor); remove lsof hack
 
 COMMENT=		portable library for obtaining system information
 

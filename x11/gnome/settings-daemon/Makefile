@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.114 2013/09/06 14:15:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.115 2013/09/26 12:48:01 ajacoutot Exp $
+
+# XXX gcm-dmi.c:141:2: warning: #warning Please add dmi support for your OS
 
 SHARED_ONLY=	Yes
 

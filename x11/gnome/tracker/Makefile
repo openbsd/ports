@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2013/09/25 07:58:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.151 2013/09/26 12:48:02 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -105,7 +105,8 @@ CONFIGURE_ARGS +=	--disable-miner-rss
 # needs libiptcdata
 CONFIGURE_ARGS +=	--disable-libiptcdata
 
-# XXX temporarily disable evolution miner which does not build with evo >= 3.6.0
+# XXX re-enable evolution plugins when fixed upstream
+# temporarily disable evolution miner which does not build with evo >= 3.6.0
 # when fixed:
 #  uncomment BUILD_DEPENDS on evolution
 #  uncomment the rm call in post-install

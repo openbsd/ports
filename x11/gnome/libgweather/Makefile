@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.49 2013/09/26 09:33:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2013/09/26 12:48:01 ajacoutot Exp $
+
+# XXX rework patch-libgweather_weather_c
 
 SHARED_ONLY=		Yes
 

@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.28 2013/05/31 15:35:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2013/09/26 12:48:01 ajacoutot Exp $
+
+# XXX find a way to catch button press events
+# (and check gsd and gcc power support)
 
 COMMENT=		GNOME power manager
 
