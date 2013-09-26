@@ -1,17 +1,17 @@
-$OpenBSD: patch-editor_Makefile_in,v 1.9 2013/07/17 05:54:36 ajacoutot Exp $
---- editor/Makefile.in.orig	Tue Jul 16 18:43:49 2013
-+++ editor/Makefile.in	Wed Jul 17 07:26:31 2013
-@@ -101,7 +101,7 @@ am_dconf_editor_OBJECTS = dconf_editor-dconf-editor.$(
- 	dconf_editor-dconf-view.$(OBJEXT)
- dconf_editor_OBJECTS = $(am_dconf_editor_OBJECTS)
+$OpenBSD: patch-editor_Makefile_in,v 1.10 2013/09/26 07:05:05 ajacoutot Exp $
+--- editor/Makefile.in.orig	Mon Sep 23 23:29:28 2013
++++ editor/Makefile.in	Thu Sep 26 08:51:37 2013
+@@ -103,7 +103,7 @@ nodist_dconf_editor_OBJECTS = dconf_editor-resources.$
+ dconf_editor_OBJECTS = $(am_dconf_editor_OBJECTS) \
+ 	$(nodist_dconf_editor_OBJECTS)
  am__DEPENDENCIES_1 =
 -dconf_editor_DEPENDENCIES = ../client/libdconf.so.1 \
 +dconf_editor_DEPENDENCIES = ../client/libdconf.so.${LIBdconf_VERSION} \
  	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
  	$(am__DEPENDENCIES_1)
  dconf_editor_LINK = $(CCLD) $(dconf_editor_CFLAGS) $(CFLAGS) \
-@@ -353,7 +353,7 @@ TEST_PROGS = 
- INCLUDES = -I$(top_srcdir) -I$(top_srcdir)/client
+@@ -355,7 +355,7 @@ TEST_PROGS = 
+ AM_CPPFLAGS = -I$(top_srcdir) -I$(top_srcdir)/client
  dconf_editor_VALAFLAGS = --vapidir ../client --pkg gtk+-3.0 --pkg gmodule-2.0 --pkg libxml-2.0 --pkg dconf
  dconf_editor_LDADD = \
 -	../client/libdconf.so.1		\

@@ -1,10 +1,7 @@
-@comment $OpenBSD: PLIST-editor,v 1.10 2013/07/17 05:54:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST-editor,v 1.11 2013/09/26 07:05:05 ajacoutot Exp $
 @conflict dconf-<0.5.1p5
 @bin bin/dconf-editor
 share/applications/dconf-editor.desktop
-share/dconf-editor/
-share/dconf-editor/dconf-editor-menu.ui
-share/dconf-editor/dconf-editor.ui
 share/glib-2.0/schemas/ca.desrt.dconf-editor.gschema.xml
 share/icons/HighContrast/
 share/icons/HighContrast/16x16/
@@ -28,10 +25,10 @@ share/icons/HighContrast/48x48/apps/dconf-editor.png
 share/icons/hicolor/16x16/apps/dconf-editor.png
 share/icons/hicolor/22x22/apps/dconf-editor.png
 share/icons/hicolor/24x24/apps/dconf-editor.png
+share/icons/hicolor/256x256/apps/dconf-editor.png
 share/icons/hicolor/32x32/apps/dconf-editor.png
 share/icons/hicolor/48x48/apps/dconf-editor.png
 share/icons/hicolor/64x64/apps/dconf-editor.png
-share/icons/hicolor/256x256/apps/dconf-editor.png
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
