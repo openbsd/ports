@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/05/28 08:51:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/09/26 08:50:48 ajacoutot Exp $
 @bin bin/simple-scan
 @man man/man1/simple-scan.1
+share/appdata/
+share/appdata/simple-scan.appdata.xml
 share/applications/simple-scan.desktop
 share/glib-2.0/schemas/org.gnome.SimpleScan.gschema.xml
 share/help/
@@ -35,8 +37,13 @@ share/help/de/simple-scan/scanning.page
 share/locale/af/LC_MESSAGES/simple-scan.mo
 share/locale/ar/LC_MESSAGES/simple-scan.mo
 share/locale/ast/LC_MESSAGES/simple-scan.mo
+share/locale/az/LC_MESSAGES/simple-scan.mo
 share/locale/bg/LC_MESSAGES/simple-scan.mo
+share/locale/bo/
+share/locale/bo/LC_MESSAGES/
+share/locale/bo/LC_MESSAGES/simple-scan.mo
 share/locale/ca/LC_MESSAGES/simple-scan.mo
+share/locale/ca@valencia/LC_MESSAGES/simple-scan.mo
 share/locale/cs/LC_MESSAGES/simple-scan.mo
 share/locale/da/LC_MESSAGES/simple-scan.mo
 share/locale/de/LC_MESSAGES/simple-scan.mo
@@ -48,23 +55,47 @@ share/locale/et/LC_MESSAGES/simple-scan.mo
 share/locale/eu/LC_MESSAGES/simple-scan.mo
 share/locale/fi/LC_MESSAGES/simple-scan.mo
 share/locale/fr/LC_MESSAGES/simple-scan.mo
+share/locale/gd/
+share/locale/gd/LC_MESSAGES/
+share/locale/gd/LC_MESSAGES/simple-scan.mo
 share/locale/gl/LC_MESSAGES/simple-scan.mo
 share/locale/he/LC_MESSAGES/simple-scan.mo
 share/locale/hr/LC_MESSAGES/simple-scan.mo
 share/locale/hu/LC_MESSAGES/simple-scan.mo
+share/locale/hy/LC_MESSAGES/simple-scan.mo
 share/locale/id/LC_MESSAGES/simple-scan.mo
 share/locale/it/LC_MESSAGES/simple-scan.mo
 share/locale/ja/LC_MESSAGES/simple-scan.mo
+share/locale/kk/LC_MESSAGES/simple-scan.mo
+share/locale/km/LC_MESSAGES/simple-scan.mo
+share/locale/ky/LC_MESSAGES/simple-scan.mo
 share/locale/lt/LC_MESSAGES/simple-scan.mo
+share/locale/lv/LC_MESSAGES/simple-scan.mo
+share/locale/mhr/
+share/locale/mhr/LC_MESSAGES/
+share/locale/mhr/LC_MESSAGES/simple-scan.mo
 share/locale/ms/LC_MESSAGES/simple-scan.mo
+share/locale/my/
+share/locale/my/LC_MESSAGES/
+share/locale/my/LC_MESSAGES/simple-scan.mo
 share/locale/nb/LC_MESSAGES/simple-scan.mo
 share/locale/nl/LC_MESSAGES/simple-scan.mo
 share/locale/oc/LC_MESSAGES/simple-scan.mo
+share/locale/pa/LC_MESSAGES/simple-scan.mo
 share/locale/pl/LC_MESSAGES/simple-scan.mo
 share/locale/pt/LC_MESSAGES/simple-scan.mo
 share/locale/pt_BR/LC_MESSAGES/simple-scan.mo
 share/locale/ro/LC_MESSAGES/simple-scan.mo
 share/locale/ru/LC_MESSAGES/simple-scan.mo
+share/locale/sd/
+share/locale/sd/LC_MESSAGES/
+share/locale/sd/LC_MESSAGES/simple-scan.mo
+share/locale/se/
+share/locale/se/LC_MESSAGES/
+share/locale/se/LC_MESSAGES/simple-scan.mo
+share/locale/shn/
+share/locale/shn/LC_MESSAGES/
+share/locale/shn/LC_MESSAGES/simple-scan.mo
 share/locale/sk/LC_MESSAGES/simple-scan.mo
 share/locale/sl/LC_MESSAGES/simple-scan.mo
 share/locale/sq/LC_MESSAGES/simple-scan.mo
@@ -78,6 +109,7 @@ share/locale/uk/LC_MESSAGES/simple-scan.mo
 share/locale/ur/
 share/locale/ur/LC_MESSAGES/
 share/locale/ur/LC_MESSAGES/simple-scan.mo
+share/locale/uz/LC_MESSAGES/simple-scan.mo
 share/locale/vi/LC_MESSAGES/simple-scan.mo
 share/locale/zh_CN/LC_MESSAGES/simple-scan.mo
 share/locale/zh_TW/LC_MESSAGES/simple-scan.mo
@@ -102,7 +134,6 @@ share/simple-scan/icons/hicolor/48x48/actions/object-crop.png
 share/simple-scan/icons/hicolor/scalable/
 share/simple-scan/icons/hicolor/scalable/actions/
 share/simple-scan/icons/hicolor/scalable/actions/object-crop.svg
-share/simple-scan/simple-scan.ui
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/update-desktop-database

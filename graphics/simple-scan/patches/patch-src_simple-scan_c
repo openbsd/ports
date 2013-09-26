@@ -1,9 +1,6 @@
-$OpenBSD: patch-src_simple-scan_c,v 1.6 2013/09/24 09:19:37 ajacoutot Exp $
-
-No gudev under OpenBSD.
-
---- src/simple-scan.c.orig	Thu Mar 21 04:33:34 2013
-+++ src/simple-scan.c	Tue Sep 24 10:43:42 2013
+$OpenBSD: patch-src_simple-scan_c,v 1.7 2013/09/26 08:50:48 ajacoutot Exp $
+--- src/simple-scan.c.orig	Thu Sep 26 10:29:05 2013
++++ src/simple-scan.c	Thu Sep 26 10:38:12 2013
 @@ -15,7 +15,9 @@
  #include <glib.h>
  #include <glib-object.h>
@@ -35,19 +32,21 @@ No gudev under OpenBSD.
  void user_interface_set_scan_devices (UserInterface* self, GList* devices);
  void user_interface_set_selected_device (UserInterface* self, const gchar* device);
  static void _scan_device_unref0_ (gpointer var);
-@@ -486,9 +492,11 @@ static void _simple_scan_scanner_scanning_changed_cb_s
+@@ -521,11 +527,13 @@ static void _simple_scan_scanner_scanning_changed_cb_s
  }
  
  
 +#ifndef __OpenBSD__
  static void _simple_scan_on_uevent_g_udev_client_uevent (GUdevClient* _sender, const gchar* action, GUdevDevice* device, gpointer self) {
+ #line 67 "/home/bob/bzr/simple-scan/trunk/src/simple-scan.vala"
  	simple_scan_on_uevent (self, _sender, action, device);
+ #line 528 "simple-scan.c"
  }
 +#endif
  
  
  static void _scan_device_unref0_ (gpointer var) {
-@@ -527,8 +535,10 @@ static void simple_scan_real_startup (GApplication* ba
+@@ -569,8 +577,10 @@ static void simple_scan_real_startup (GApplication* ba
  	gint _subsystems_size_;
  	gchar** _tmp18_;
  	gint _tmp18__length1;
@@ -56,66 +55,61 @@ No gudev under OpenBSD.
  	GUdevClient* _tmp20_;
 +#endif
  	ScanDevice* _tmp21_;
+ #line 44 "/home/bob/bzr/simple-scan/trunk/src/simple-scan.vala"
  	self = (SimpleScan*) base;
- 	G_APPLICATION_CLASS (simple_scan_parent_class)->startup ((GApplication*) G_TYPE_CHECK_INSTANCE_CAST (self, GTK_TYPE_APPLICATION, GtkApplication));
-@@ -575,11 +585,13 @@ static void simple_scan_real_startup (GApplication* ba
- 	_subsystems_size_ = subsystems_length1;
+@@ -662,6 +672,7 @@ static void simple_scan_real_startup (GApplication* ba
  	_tmp18_ = subsystems;
+ #line 66 "/home/bob/bzr/simple-scan/trunk/src/simple-scan.vala"
  	_tmp18__length1 = subsystems_length1;
 +#ifndef __OpenBSD__
+ #line 66 "/home/bob/bzr/simple-scan/trunk/src/simple-scan.vala"
  	_tmp19_ = g_udev_client_new (_tmp18_);
- 	_g_object_unref0 (self->priv->udev_client);
- 	self->priv->udev_client = _tmp19_;
+ #line 66 "/home/bob/bzr/simple-scan/trunk/src/simple-scan.vala"
+@@ -672,6 +683,7 @@ static void simple_scan_real_startup (GApplication* ba
  	_tmp20_ = self->priv->udev_client;
+ #line 67 "/home/bob/bzr/simple-scan/trunk/src/simple-scan.vala"
  	g_signal_connect_object (_tmp20_, "uevent", (GCallback) _simple_scan_on_uevent_g_udev_client_uevent, self, 0);
 +#endif
+ #line 69 "/home/bob/bzr/simple-scan/trunk/src/simple-scan.vala"
  	_tmp21_ = self->priv->default_device;
- 	if (_tmp21_ != NULL) {
- 		GList* device_list;
-@@ -629,8 +641,10 @@ static void simple_scan_real_shutdown (GApplication* b
- 	self->priv->book = NULL;
+ #line 69 "/home/bob/bzr/simple-scan/trunk/src/simple-scan.vala"
+@@ -752,10 +764,12 @@ static void simple_scan_real_shutdown (GApplication* b
  	_user_interface_unref0 (self->priv->ui);
+ #line 90 "/home/bob/bzr/simple-scan/trunk/src/simple-scan.vala"
  	self->priv->ui = NULL;
 +#ifndef __OpenBSD__
+ #line 91 "/home/bob/bzr/simple-scan/trunk/src/simple-scan.vala"
  	_g_object_unref0 (self->priv->udev_client);
+ #line 91 "/home/bob/bzr/simple-scan/trunk/src/simple-scan.vala"
  	self->priv->udev_client = NULL;
 +#endif
+ #line 92 "/home/bob/bzr/simple-scan/trunk/src/simple-scan.vala"
  	_tmp0_ = self->priv->scanner;
- 	scanner_free (_tmp0_);
- }
-@@ -1742,6 +1756,7 @@ static void simple_scan_log_cb (const gchar* log_domai
+ #line 92 "/home/bob/bzr/simple-scan/trunk/src/simple-scan.vala"
+@@ -2596,6 +2610,7 @@ static void simple_scan_log_cb (const gchar* log_domai
  }
  
  
 +#ifndef __OpenBSD__
  static void simple_scan_on_uevent (SimpleScan* self, GUdevClient* client, const gchar* action, GUdevDevice* device) {
  	Scanner* _tmp0_;
- 	g_return_if_fail (self != NULL);
-@@ -1751,6 +1766,7 @@ static void simple_scan_on_uevent (SimpleScan* self, G
- 	_tmp0_ = self->priv->scanner;
+ #line 453 "/home/bob/bzr/simple-scan/trunk/src/simple-scan.vala"
+@@ -2612,6 +2627,7 @@ static void simple_scan_on_uevent (SimpleScan* self, G
  	scanner_redetect (_tmp0_);
+ #line 2613 "simple-scan.c"
  }
 +#endif
  
  
  static glong string_strnlen (gchar* str, glong maxlen) {
-@@ -2373,7 +2389,9 @@ gint simple_scan_main (gchar** args, int args_length1)
- 		const gchar* _tmp37_;
- 		gchar* _tmp38_;
- 		_tmp30_ = scan_device_new ();
-+#ifndef __OpenBSD__
- 		_scan_device_unref0 (device);
-+#endif
- 		device = _tmp30_;
- 		_tmp31_ = device;
- 		_tmp32_ = args;
-@@ -2450,7 +2468,9 @@ static void simple_scan_finalize (GObject* obj) {
- 	SimpleScan * self;
+@@ -3763,8 +3779,10 @@ static void simple_scan_finalize (GObject* obj) {
  	self = G_TYPE_CHECK_INSTANCE_CAST (obj, TYPE_SIMPLE_SCAN, SimpleScan);
+ #line 32 "/home/bob/bzr/simple-scan/trunk/src/simple-scan.vala"
  	_scan_device_unref0 (self->priv->default_device);
 +#ifndef __OpenBSD__
+ #line 34 "/home/bob/bzr/simple-scan/trunk/src/simple-scan.vala"
  	_g_object_unref0 (self->priv->udev_client);
 +#endif
+ #line 35 "/home/bob/bzr/simple-scan/trunk/src/simple-scan.vala"
  	_user_interface_unref0 (self->priv->ui);
- 	_scanner_unref0 (self->priv->scanner);
- 	_book_unref0 (self->priv->book);
+ #line 36 "/home/bob/bzr/simple-scan/trunk/src/simple-scan.vala"

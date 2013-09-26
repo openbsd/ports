@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure_ac,v 1.2 2013/09/24 09:19:37 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.3 2013/09/26 08:50:48 ajacoutot Exp $
 
 No gudev under OpenBSD.
 
---- configure.ac.orig	Tue Mar 26 03:06:09 2013
-+++ configure.ac	Tue Sep 24 10:52:09 2013
-@@ -27,7 +27,6 @@ PKG_CHECK_MODULES(SIMPLE_SCAN, [
+--- configure.ac.orig	Wed Sep 25 07:40:41 2013
++++ configure.ac	Thu Sep 26 10:28:39 2013
+@@ -28,7 +28,6 @@ PKG_CHECK_MODULES(SIMPLE_SCAN, [
      zlib
      cairo
      gdk-pixbuf-2.0
