@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2013/05/14 07:47:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2013/09/26 07:19:53 ajacoutot Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		developer documentation for GNOME
 
 GNOME_PROJECT=		gnome-devel-docs
-GNOME_VERSION=		3.8.1
+GNOME_VERSION=		3.10.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
