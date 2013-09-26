@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/06/18 14:58:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/09/26 06:31:53 ajacoutot Exp $
 share/icons/gnome/scalable/
 share/icons/gnome/scalable/actions/
 share/icons/gnome/scalable/actions/action-unavailable-symbolic.svg
@@ -299,9 +299,13 @@ share/icons/gnome/scalable/status/mail-attachment-symbolic.svg
 share/icons/gnome/scalable/status/mail-read-symbolic.svg
 share/icons/gnome/scalable/status/mail-replied-symbolic.svg
 share/icons/gnome/scalable/status/mail-unread-symbolic.svg
+share/icons/gnome/scalable/status/media-playlist-consecutive-rtl-symbolic.svg
 share/icons/gnome/scalable/status/media-playlist-consecutive-symbolic.svg
+share/icons/gnome/scalable/status/media-playlist-repeat-rtl-symbolic.svg
+share/icons/gnome/scalable/status/media-playlist-repeat-song-rtl-symbolic.svg
 share/icons/gnome/scalable/status/media-playlist-repeat-song-symbolic.svg
 share/icons/gnome/scalable/status/media-playlist-repeat-symbolic.svg
+share/icons/gnome/scalable/status/media-playlist-shuffle-rtl-symbolic.svg
 share/icons/gnome/scalable/status/media-playlist-shuffle-symbolic.svg
 share/icons/gnome/scalable/status/microphone-sensitivity-high-symbolic.svg
 share/icons/gnome/scalable/status/microphone-sensitivity-low-symbolic.svg
@@ -365,6 +369,7 @@ share/icons/gnome/scalable/status/user-invisible-symbolic.svg
 share/icons/gnome/scalable/status/user-offline-symbolic.svg
 share/icons/gnome/scalable/status/user-status-pending-symbolic.svg
 share/icons/gnome/scalable/status/user-trash-full-symbolic.svg
+share/icons/gnome/scalable/status/view-wrapped-rtl-symbolic.svg
 share/icons/gnome/scalable/status/view-wrapped-symbolic.svg
 share/icons/gnome/scalable/status/weather-clear-night-symbolic.svg
 share/icons/gnome/scalable/status/weather-clear-symbolic.svg
