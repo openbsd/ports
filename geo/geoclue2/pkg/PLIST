@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/09/26 08:41:46 jasper Exp $
+lib/pkgconfig/
+lib/pkgconfig/geoclue-2.0.pc
+@bin libexec/geoclue
+share/dbus-1/
+share/dbus-1/system-services/
+share/dbus-1/system-services/org.freedesktop.GeoClue2.service
+share/examples/geoclue/
+@sample ${SYSCONFDIR}/dbus-1/
+@sample ${SYSCONFDIR}/dbus-1/system.d/
+share/examples/geoclue/org.freedesktop.GeoClue2.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/org.freedesktop.GeoClue2.conf
+share/geoclue-2.0/
+share/geoclue-2.0/geoclue-interface.xml
