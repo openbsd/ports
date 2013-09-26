@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.151 2013/09/26 12:48:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.152 2013/09/26 18:51:52 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		powerful desktop search tool and indexer
 
 GNOME_PROJECT=		tracker
 GNOME_VERSION=		0.16.2
-REVISION=		1
+REVISION=		2
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
@@ -16,6 +16,7 @@ PKGNAME=		meta-tracker-${VERSION}
 # NOTE: when MAJ_V changes, increment TRACKER_VERSION accordingly and bump:
 # x11/gnome/documents
 # x11/gnome/grilo-plugins
+# x11/gnome/online-miners
 # x11/gnome/photos
 # x11/gnome/rygel
 MAJ_V=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -36,18 +37,17 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender archive atk-1.0 atk-bridge-2.0
-WANTLIB += atspi bz2 c cairo cairo-gobject crypto cue curl dbus-1
-WANTLIB += dbus-glib-1 enca exempi exif expat ffi fontconfig freetype
-WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gmime-2.6
+WANTLIB += atspi bz2 c cairo cairo-gobject cue dbus-1 dbus-glib-1
+WANTLIB += enca exempi exif expat ffi fontconfig freetype gcrypt
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gmime-2.6
 WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 gsf-1 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
 WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz icudata icui18n
-WANTLIB += icuuc idn jpeg kvm lcms2 lua5.1 lzma m nautilus-extension
-WANTLIB += openjpeg pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png poppler poppler-glib pthread pthread-stubs
-WANTLIB += quvi secret-1 soup-2.4 soup-gnome-2.4 sqlite3 ssl stdc++
-WANTLIB += tag tag_c tiff totem-plparser upower-glib uuid xcb
-WANTLIB += xcb-render xcb-shm xml2 z
+WANTLIB += icuuc jpeg kvm lcms2 lzma m nautilus-extension openjpeg
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png poppler poppler-glib pthread pthread-stubs secret-1
+WANTLIB += soup-2.4 sqlite3 stdc++ tag tag_c tiff totem-plparser
+WANTLIB += upower-glib uuid xcb xcb-render xcb-shm xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome \
