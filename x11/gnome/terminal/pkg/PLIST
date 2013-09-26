@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2013/07/07 18:53:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.43 2013/09/26 15:37:05 jasper Exp $
 @conflict nautilus-open-terminal-*
 @pkgpath x11/gnome/nautilus-open-terminal
 @bin bin/gnome-terminal
@@ -41,6 +41,39 @@ share/help/C/gnome-terminal/txt-copy-paste.page
 share/help/C/gnome-terminal/txt-links.page
 share/help/C/gnome-terminal/txt-search.page
 share/help/C/gnome-terminal/txt-select-text.page
+share/help/cs/
+share/help/cs/gnome-terminal/
+share/help/cs/gnome-terminal/adv-keyboard-shortcuts.page
+share/help/cs/gnome-terminal/app-colors.page
+share/help/cs/gnome-terminal/app-cursor.page
+share/help/cs/gnome-terminal/app-fonts.page
+share/help/cs/gnome-terminal/app-fullscreen.page
+share/help/cs/gnome-terminal/app-terminal-sizes.page
+share/help/cs/gnome-terminal/app-zoom.page
+share/help/cs/gnome-terminal/figures/
+share/help/cs/gnome-terminal/figures/gnome-terminal-icon.png
+share/help/cs/gnome-terminal/figures/gnome-terminal.png
+share/help/cs/gnome-terminal/gs-execute-commands.page
+share/help/cs/gnome-terminal/gs-tabs.page
+share/help/cs/gnome-terminal/index.page
+share/help/cs/gnome-terminal/introduction.page
+share/help/cs/gnome-terminal/legal.xml
+share/help/cs/gnome-terminal/overview.page
+share/help/cs/gnome-terminal/pref-bell.page
+share/help/cs/gnome-terminal/pref-custom-command.page
+share/help/cs/gnome-terminal/pref-custom-exit.page
+share/help/cs/gnome-terminal/pref-encoding.page
+share/help/cs/gnome-terminal/pref-keyboard-access.page
+share/help/cs/gnome-terminal/pref-menubar.page
+share/help/cs/gnome-terminal/pref-profiles.page
+share/help/cs/gnome-terminal/pref-scrolling.page
+share/help/cs/gnome-terminal/pref-title.page
+share/help/cs/gnome-terminal/pref.page
+share/help/cs/gnome-terminal/profile.page
+share/help/cs/gnome-terminal/txt-copy-paste.page
+share/help/cs/gnome-terminal/txt-links.page
+share/help/cs/gnome-terminal/txt-search.page
+share/help/cs/gnome-terminal/txt-select-text.page
 share/help/de/
 share/help/de/gnome-terminal/
 share/help/de/gnome-terminal/adv-keyboard-shortcuts.page
@@ -173,6 +206,39 @@ share/help/gl/gnome-terminal/txt-copy-paste.page
 share/help/gl/gnome-terminal/txt-links.page
 share/help/gl/gnome-terminal/txt-search.page
 share/help/gl/gnome-terminal/txt-select-text.page
+share/help/hu/
+share/help/hu/gnome-terminal/
+share/help/hu/gnome-terminal/adv-keyboard-shortcuts.page
+share/help/hu/gnome-terminal/app-colors.page
+share/help/hu/gnome-terminal/app-cursor.page
+share/help/hu/gnome-terminal/app-fonts.page
+share/help/hu/gnome-terminal/app-fullscreen.page
+share/help/hu/gnome-terminal/app-terminal-sizes.page
+share/help/hu/gnome-terminal/app-zoom.page
+share/help/hu/gnome-terminal/figures/
+share/help/hu/gnome-terminal/figures/gnome-terminal-icon.png
+share/help/hu/gnome-terminal/figures/gnome-terminal.png
+share/help/hu/gnome-terminal/gs-execute-commands.page
+share/help/hu/gnome-terminal/gs-tabs.page
+share/help/hu/gnome-terminal/index.page
+share/help/hu/gnome-terminal/introduction.page
+share/help/hu/gnome-terminal/legal.xml
+share/help/hu/gnome-terminal/overview.page
+share/help/hu/gnome-terminal/pref-bell.page
+share/help/hu/gnome-terminal/pref-custom-command.page
+share/help/hu/gnome-terminal/pref-custom-exit.page
+share/help/hu/gnome-terminal/pref-encoding.page
+share/help/hu/gnome-terminal/pref-keyboard-access.page
+share/help/hu/gnome-terminal/pref-menubar.page
+share/help/hu/gnome-terminal/pref-profiles.page
+share/help/hu/gnome-terminal/pref-scrolling.page
+share/help/hu/gnome-terminal/pref-title.page
+share/help/hu/gnome-terminal/pref.page
+share/help/hu/gnome-terminal/profile.page
+share/help/hu/gnome-terminal/txt-copy-paste.page
+share/help/hu/gnome-terminal/txt-links.page
+share/help/hu/gnome-terminal/txt-search.page
+share/help/hu/gnome-terminal/txt-select-text.page
 share/help/pt_BR/
 share/help/pt_BR/gnome-terminal/
 share/help/pt_BR/gnome-terminal/adv-keyboard-shortcuts.page
