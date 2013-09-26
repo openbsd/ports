@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/09/19 08:32:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/09/26 18:14:57 ajacoutot Exp $
 @bin bin/grilo-simple-playlist
 @bin bin/grilo-test-ui-${API}
 @bin bin/grl-inspect-${API}
@@ -32,6 +32,7 @@ include/grilo-${API}/net/grl-net.h
 lib/girepository-1.0/
 lib/girepository-1.0/Grl-${API}.typelib
 lib/girepository-1.0/GrlNet-${API}.typelib
+lib/grilo-${API}/
 lib/libgrilo-${API}.a
 lib/libgrilo-${API}.la
 @lib lib/libgrilo-${API}.so.${LIBgrilo-0.2_VERSION}

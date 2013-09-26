@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/09/25 06:25:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2013/09/26 18:14:56 ajacoutot Exp $
 
 COMMENT=	framework for making media discovery and browsing easy
 
@@ -6,6 +6,7 @@ GNOME_PROJECT=	grilo
 GNOME_VERSION=	0.2.7
 API=		0.2
 SUBST_VARS=	API
+REVISION=	0
 
 SHARED_LIBS +=  grilo-0.2            1.0      # 5.0
 SHARED_LIBS +=  grlnet-0.2           1.0      # 1.5
@@ -39,5 +40,10 @@ MODGNOME_TOOLS= gi vala
 # XXX: Remove when updating to the next release which merges in patch-configure_ac
 AUTOCONF_VERSION=	2.69
 CONFIGURE_STYLE=	autoconf
+
+# Own the grilo plugins directory to prevent warnings that this
+# directory does not exist when no plugin is installed.
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/grilo-${API}
 
 .include <bsd.port.mk>
