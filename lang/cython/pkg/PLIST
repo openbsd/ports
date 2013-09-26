@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/03/06 07:42:54 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/09/26 07:58:46 benoit Exp $
 bin/cygdb
 bin/cython
 lib/python${MODPY_VERSION}/site-packages/Cython/
@@ -109,6 +109,8 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestTreePath.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestTreePath.pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestUtilityLoad.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestUtilityLoad.pyc
+lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestVisitor.py
+lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/TestVisitor.pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/Tests/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Cython/Compiler/TreeFragment.py
@@ -209,6 +211,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/buffer.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/bytes.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/cobject.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/complex.pxd
+lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/datetime.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/dict.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/exc.pxd
 lib/python${MODPY_VERSION}/site-packages/Cython/Includes/cpython/float.pxd
@@ -344,6 +347,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Utility/ObjectHandling.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Optimize.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Overflow.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Printing.c
+lib/python${MODPY_VERSION}/site-packages/Cython/Utility/Profile.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/StringTools.c
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/TestCyUtilityLoader.pyx
 lib/python${MODPY_VERSION}/site-packages/Cython/Utility/TestCythonScope.pyx

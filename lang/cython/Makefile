@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/09/26 07:58:45 benoit Exp $
 
 COMMENT =		C-Extensions for Python
 
-MODPY_EGG_VERSION = 	0.18
+MODPY_EGG_VERSION = 	0.19.1
 DISTNAME =		Cython-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:L}
 
@@ -15,7 +15,7 @@ MASTER_SITES =		${HOMEPAGE}release/ \
 # Apache 2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=  c pthread ${MODPY_WANTLIB}
+WANTLIB +=  pthread ${MODPY_WANTLIB}
 
 MODULES =		lang/python
 
