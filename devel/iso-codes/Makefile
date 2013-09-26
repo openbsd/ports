@@ -1,12 +1,15 @@
-# $OpenBSD: Makefile,v 1.38 2013/09/26 06:36:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2013/09/26 11:23:27 jasper Exp $
 
 COMMENT=	lists of the country, language and currency iso names
 
 DISTNAME=	iso-codes-3.46
+REVISION=	0
 
 CATEGORIES=	devel
 
 HOMEPAGE=	http://alioth.debian.org/projects/pkg-isocodes/
+
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
