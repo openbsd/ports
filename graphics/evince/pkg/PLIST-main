@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.27 2013/05/15 07:57:57 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.28 2013/09/26 16:06:48 jasper Exp $
 @pkgpath graphics/evince
 @bin bin/evince
 @bin bin/evince-previewer
@@ -174,11 +174,14 @@ share/gtk-doc/html/evince/evince.devhelp2
 share/gtk-doc/html/evince/home.png
 share/gtk-doc/html/evince/index.html
 share/gtk-doc/html/evince/index.sgml
+share/gtk-doc/html/evince/left-insensitive.png
 share/gtk-doc/html/evince/left.png
 share/gtk-doc/html/evince/licence.html
 share/gtk-doc/html/evince/object-tree.html
+share/gtk-doc/html/evince/right-insensitive.png
 share/gtk-doc/html/evince/right.png
 share/gtk-doc/html/evince/style.css
+share/gtk-doc/html/evince/up-insensitive.png
 share/gtk-doc/html/evince/up.png
 share/gtk-doc/html/libevdocument-${MAJ_V}/
 share/gtk-doc/html/libevdocument-${MAJ_V}/EvAnnotation.html
@@ -196,6 +199,7 @@ share/gtk-doc/html/libevdocument-${MAJ_V}/EvDocumentLayers.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/EvDocumentLinks.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/EvDocumentPrint.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/EvDocumentSecurity.html
+share/gtk-doc/html/libevdocument-${MAJ_V}/EvDocumentText.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/EvDocumentTransition.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/EvFileExporter.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/EvFormField.html
@@ -205,7 +209,11 @@ share/gtk-doc/html/libevdocument-${MAJ_V}/EvPage.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/EvRenderContext.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/EvSelection.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/annotation-glossary.html
+share/gtk-doc/html/libevdocument-${MAJ_V}/api-index-3-10.html
+share/gtk-doc/html/libevdocument-${MAJ_V}/api-index-3-4.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/api-index-3-6.html
+share/gtk-doc/html/libevdocument-${MAJ_V}/api-index-3-8.html
+share/gtk-doc/html/libevdocument-${MAJ_V}/api-index-deprecated.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/api-index-full.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/document-data.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/document-helpers.html
@@ -213,10 +221,10 @@ share/gtk-doc/html/libevdocument-${MAJ_V}/document-interfaces.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/home.png
 share/gtk-doc/html/libevdocument-${MAJ_V}/index.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/index.sgml
+share/gtk-doc/html/libevdocument-${MAJ_V}/left-insensitive.png
 share/gtk-doc/html/libevdocument-${MAJ_V}/left.png
 share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-${MAJ_V}.devhelp2
 share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-EvDocumentMisc.html
-share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-EvDocumentText.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-Version-checks.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-ev-backends-manager.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-ev-document-factory.html
@@ -229,16 +237,22 @@ share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-ev-mapping.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-ev-transition-effect.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/licence.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/object-tree.html
+share/gtk-doc/html/libevdocument-${MAJ_V}/right-insensitive.png
 share/gtk-doc/html/libevdocument-${MAJ_V}/right.png
 share/gtk-doc/html/libevdocument-${MAJ_V}/style.css
+share/gtk-doc/html/libevdocument-${MAJ_V}/up-insensitive.png
 share/gtk-doc/html/libevdocument-${MAJ_V}/up.png
 share/gtk-doc/html/libevview-${MAJ_V}/
 share/gtk-doc/html/libevview-${MAJ_V}/EvJob.html
+share/gtk-doc/html/libevview-${MAJ_V}/api-index-3-10.html
 share/gtk-doc/html/libevview-${MAJ_V}/api-index-3-6.html
+share/gtk-doc/html/libevview-${MAJ_V}/api-index-3-8.html
+share/gtk-doc/html/libevview-${MAJ_V}/api-index-deprecated.html
 share/gtk-doc/html/libevview-${MAJ_V}/api-index-full.html
 share/gtk-doc/html/libevview-${MAJ_V}/home.png
 share/gtk-doc/html/libevview-${MAJ_V}/index.html
 share/gtk-doc/html/libevview-${MAJ_V}/index.sgml
+share/gtk-doc/html/libevview-${MAJ_V}/left-insensitive.png
 share/gtk-doc/html/libevview-${MAJ_V}/left.png
 share/gtk-doc/html/libevview-${MAJ_V}/libevview-${MAJ_V}.devhelp2
 share/gtk-doc/html/libevview-${MAJ_V}/libevview-ev-annotation-window.html
@@ -249,12 +263,13 @@ share/gtk-doc/html/libevview-${MAJ_V}/libevview-ev-print-operation.html
 share/gtk-doc/html/libevview-${MAJ_V}/libevview-ev-stock-icons.html
 share/gtk-doc/html/libevview-${MAJ_V}/libevview-ev-view-cursor.html
 share/gtk-doc/html/libevview-${MAJ_V}/libevview-ev-view-presentation.html
-share/gtk-doc/html/libevview-${MAJ_V}/libevview-ev-view-type-builtins.html
 share/gtk-doc/html/libevview-${MAJ_V}/libevview-ev-view.html
 share/gtk-doc/html/libevview-${MAJ_V}/licence.html
 share/gtk-doc/html/libevview-${MAJ_V}/object-tree.html
+share/gtk-doc/html/libevview-${MAJ_V}/right-insensitive.png
 share/gtk-doc/html/libevview-${MAJ_V}/right.png
 share/gtk-doc/html/libevview-${MAJ_V}/style.css
+share/gtk-doc/html/libevview-${MAJ_V}/up-insensitive.png
 share/gtk-doc/html/libevview-${MAJ_V}/up.png
 share/gtk-doc/html/libevview-${MAJ_V}/view-view.html
 share/help/
