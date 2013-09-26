@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.18 2013/05/14 12:16:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2013/09/26 16:09:19 ajacoutot Exp $
 include/totem-pl-parser/
 include/totem-pl-parser/1/
 include/totem-pl-parser/1/plparser/
-include/totem-pl-parser/1/plparser/totem-disc.h
 include/totem-pl-parser/1/plparser/totem-pl-parser-builtins.h
 include/totem-pl-parser/1/plparser/totem-pl-parser-features.h
 include/totem-pl-parser/1/plparser/totem-pl-parser-mini.h
@@ -17,6 +16,7 @@ lib/libtotem-plparser.la
 @lib lib/libtotem-plparser.so.${LIBtotem-plparser_VERSION}
 lib/pkgconfig/totem-plparser-mini.pc
 lib/pkgconfig/totem-plparser.pc
+@bin libexec/totem-pl-parser-videosite
 share/gir-1.0/TotemPlParser-1.0.gir
 share/gtk-doc/html/totem-pl-parser/
 share/gtk-doc/html/totem-pl-parser/TotemPlParser.html
@@ -32,7 +32,6 @@ share/gtk-doc/html/totem-pl-parser/ix02.html
 share/gtk-doc/html/totem-pl-parser/left.png
 share/gtk-doc/html/totem-pl-parser/right.png
 share/gtk-doc/html/totem-pl-parser/style.css
-share/gtk-doc/html/totem-pl-parser/totem-pl-parser-TotemDisc.html
 share/gtk-doc/html/totem-pl-parser/totem-pl-parser-TotemPlPlaylistIter.html
 share/gtk-doc/html/totem-pl-parser/totem-pl-parser.devhelp2
 share/gtk-doc/html/totem-pl-parser/up.png

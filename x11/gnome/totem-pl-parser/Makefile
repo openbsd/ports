@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.54 2013/05/14 12:16:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2013/09/26 16:09:18 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	GObject-based parsing library
 
 GNOME_PROJECT=	totem-pl-parser
-GNOME_VERSION=	3.4.5
+GNOME_VERSION=	3.10.0
 
-SHARED_LIBS +=  totem-plparser       17.3     # 17.4
-SHARED_LIBS +=  totem-plparser-mini  17.3     # 17.4
+SHARED_LIBS +=  totem-plparser       18.0     # 18.0
+SHARED_LIBS +=  totem-plparser-mini  18.0     # 18.0
 
 CATEGORIES=	multimedia textproc
 
@@ -17,25 +17,21 @@ HOMEPAGE=	http://projects.gnome.org/totem/
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += archive bz2 crypto curl expat ffi gcrypt gio-2.0 glib-2.0
-WANTLIB += gmime-2.6 gmodule-2.0 gobject-2.0 gpg-error gthread-2.0
-WANTLIB += idn lua5.1 lzma m pcre pthread quvi soup-2.4 soup-gnome-2.4
-WANTLIB += sqlite3 ssl xml2 z
+WANTLIB += archive bz2 c crypto curl expat ffi gcrypt gio-2.0
+WANTLIB += glib-2.0 gmime-2.6 gmodule-2.0 gobject-2.0 gpg-error
+WANTLIB += gthread-2.0 idn lua5.1 lzma m pcre proxy pthread quvi-0.9
+WANTLIB += soup-2.4 sqlite3 ssl xml2 z
 
 MODULES=	devel/gettext \
 		x11/gnome
 
 LIB_DEPENDS=	mail/gmime \
 		textproc/libxml \
-		devel/libsoup,-gnome \
+		devel/libsoup \
 		archivers/libarchive \
-		net/quvi/libquvi \
+		net/quvi/libquvi>=0.9.3 \
 		security/libgcrypt
 
 MODGNOME_TOOLS= gi
-
-CONFIGURE_ARGS=	--enable-quvi \
-		--enable-libarchive \
-		--enable-libgcrypt
 
 .include <bsd.port.mk>
