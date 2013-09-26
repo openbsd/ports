@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2013/06/01 18:56:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2013/09/26 16:24:54 ajacoutot Exp $
 
 COMMENT=		clock application for GNOME
 
 GNOME_PROJECT=		gnome-clocks
-GNOME_VERSION=		3.8.2
-REVISION=		0
+GNOME_VERSION=		3.10.0
 
 HOMEPAGE=		https://live.gnome.org/GnomeClocks
 
@@ -14,12 +13,13 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += c cairo cairo-gobject canberra dbus-1 expat ffi fontconfig
-WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gnome-desktop-3 gobject-2.0 graphite2 gthread-2.0 gtk-3
-WANTLIB += gweather-3 harfbuzz ltdl m notify
-WANTLIB += ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs soup-2.4 sqlite3 vorbis vorbisfile
-WANTLIB += xcb xcb-render xcb-shm xkbfile xml2 z
+WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 geocode-glib gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gnome-desktop-3 gobject-2.0 graphite2
+WANTLIB += gthread-2.0 gtk-3 gweather-3 harfbuzz json-glib-1.0
+WANTLIB += ltdl m notify ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs soup-2.4 sqlite3
+WANTLIB += vorbis vorbisfile xcb xcb-render xcb-shm xkbfile xml2
+WANTLIB += z
 
 MODULES=		devel/dconf \
 			devel/gettext \
@@ -28,6 +28,7 @@ MODULES=		devel/dconf \
 LIB_DEPENDS=		audio/libcanberra \
 			devel/libnotify \
 			devel/libtool,-ltdl \
+			geo/geocode-glib \
 			x11/gnome/desktop \
 			x11/gnome/libgweather
 
