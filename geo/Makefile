@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2013/09/26 08:27:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2013/09/26 08:42:24 jasper Exp $
 
      SUBDIR =
      SUBDIR += emerillon
@@ -6,6 +6,7 @@
      SUBDIR += garmindev
      SUBDIR += gdal
      SUBDIR += geoclue
+     SUBDIR += geoclue2
      SUBDIR += geocode-glib
      SUBDIR += geos
      SUBDIR += gimgtools
