@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/03/29 18:24:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/09/26 16:32:06 ajacoutot Exp $
 @bin bin/gnome-power-statistics
+share/appdata/
+share/appdata/gnome-power-statistics.appdata.xml
 share/applications/gnome-power-statistics.desktop
 share/glib-2.0/schemas/org.gnome.power-manager.gschema.xml
 share/icons/HighContrast/
