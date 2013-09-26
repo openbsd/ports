@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_Makefile_in,v 1.5 2013/05/13 18:20:54 ajacoutot Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.6 2013/09/26 14:29:55 ajacoutot Exp $
 
-cc1: error: unrecognized command line option "-Wno-unused-but-set-variable"
+GCC: cc1: error: unrecognized command line option "-Wno-unused-but-set-variable"
 
---- src/Makefile.in.orig	Mon May 13 19:42:32 2013
-+++ src/Makefile.in	Mon May 13 20:08:19 2013
-@@ -401,7 +401,6 @@ AM_CFLAGS = \
- 	-I$(top_srcdir)/egg-list-box	\
- 	-I$(top_srcdir)/libgd		\
+--- src/Makefile.in.orig	Mon Sep 23 20:12:01 2013
++++ src/Makefile.in	Thu Sep 26 16:15:32 2013
+@@ -350,7 +350,6 @@ baobab_SOURCES = \
+ AM_CFLAGS = \
+ 	$(BAOBAB_CFLAGS)		\
  	-Wall				\
 -	-Wno-unused-but-set-variable	\
  	-Wno-unused-variable		\
