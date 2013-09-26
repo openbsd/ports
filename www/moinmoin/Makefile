@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2013/05/18 05:54:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2013/09/26 14:35:34 fgsch Exp $
 
 COMMENT =	wiki engine written in python
 
-MODPY_EGG_VERSION = 1.9.6
+MODPY_EGG_VERSION = 1.9.7
 DISTNAME =	moin-${MODPY_EGG_VERSION}
 PKGNAME =	moin${DISTNAME}
 
@@ -20,9 +20,8 @@ MODULES =	lang/python
 
 NO_TEST =	Yes
 
-post-configure:
-	@cd ${WRKSRC}/wiki/server && perl -pi -e \
-	    's,/usr/bin/env python|/usr/bin/python,${MODPY_BIN},g' \
+pre-configure:
+	@cd ${WRKSRC}/wiki/server && ${MODPY_BIN_ADJ} \
 	    moin moin.ajp moin.cgi moin.fcgi moin.scgi test.wsgi
 
 post-install:
