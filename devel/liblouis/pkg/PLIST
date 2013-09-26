@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/04/16 10:25:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/09/26 09:57:45 ajacoutot Exp $
 @bin bin/lou_allround
 @bin bin/lou_checkhyphens
 @bin bin/lou_checktable
@@ -22,6 +22,7 @@ lib/python${MODPY_VERSION}/site-packages/louis/${MODPY_PYCACHE}__init__.${MODPY_
 @man man/man1/lou_checkhyphens.1
 @man man/man1/lou_checktable.1
 @man man/man1/lou_debug.1
+@man man/man1/lou_trace.1
 @man man/man1/lou_translate.1
 share/doc/liblouis/
 share/doc/liblouis/liblouis.html
@@ -57,13 +58,14 @@ share/liblouis/tables/chardefs-ueb.cti
 share/liblouis/tables/chardefs.cti
 share/liblouis/tables/ckb-chardefs.cti
 share/liblouis/tables/ckb-g1.ctb
-share/liblouis/tables/ckb-translation.ctb
-share/liblouis/tables/compress.ctb
-share/liblouis/tables/corrections.ctb
+share/liblouis/tables/ckb-translation.cti
+share/liblouis/tables/compress.cti
+share/liblouis/tables/controlchars.cti
+share/liblouis/tables/corrections.cti
 share/liblouis/tables/countries.cti
 share/liblouis/tables/cs-chardefs.cti
 share/liblouis/tables/cs-g1.ctb
-share/liblouis/tables/cs-translation.ctb
+share/liblouis/tables/cs-translation.cti
 share/liblouis/tables/cy-cy-g1.utb
 share/liblouis/tables/cy-cy-g2.ctb
 share/liblouis/tables/da-1252.ctb
@@ -87,9 +89,9 @@ share/liblouis/tables/de-de-g2.ctb
 share/liblouis/tables/de-de.dis
 share/liblouis/tables/de-eurobrl6.dis
 share/liblouis/tables/de-eurobrl6u.dis
-share/liblouis/tables/de-g0-core.utb
-share/liblouis/tables/de-g1-core.ctb
-share/liblouis/tables/de-g2-core.ctb
+share/liblouis/tables/de-g0-core.uti
+share/liblouis/tables/de-g1-core.cti
+share/liblouis/tables/de-g2-core.cti
 share/liblouis/tables/devanagari.cti
 share/liblouis/tables/digits6Dots.uti
 share/liblouis/tables/digits6DotsPlusDot6.uti
@@ -97,6 +99,7 @@ share/liblouis/tables/digits8Dots.uti
 share/liblouis/tables/dra.ctb
 share/liblouis/tables/en-GB-g2.ctb
 share/liblouis/tables/en-chess.ctb
+share/liblouis/tables/en-gb-comp8.ctb
 share/liblouis/tables/en-gb-g1.utb
 share/liblouis/tables/en-ueb-g1.ctb
 share/liblouis/tables/en-ueb-g2.ctb
@@ -105,17 +108,17 @@ share/liblouis/tables/en-us-comp6.ctb
 share/liblouis/tables/en-us-comp8.ctb
 share/liblouis/tables/en-us-compbrl.ctb
 share/liblouis/tables/en-us-g1.ctb
-share/liblouis/tables/en-us-g1.utb
 share/liblouis/tables/en-us-g2.ctb
 share/liblouis/tables/en-us-interline.ctb
 share/liblouis/tables/en-us-mathtext.ctb
 share/liblouis/tables/en_CA.ctb
+share/liblouis/tables/eo-g1-x-system.ctb
 share/liblouis/tables/eo-g1.ctb
 share/liblouis/tables/es-chardefs.cti
 share/liblouis/tables/es-g1.ctb
 share/liblouis/tables/es-new.dis
 share/liblouis/tables/es-old.dis
-share/liblouis/tables/es-translation.ctb
+share/liblouis/tables/es-translation.cti
 share/liblouis/tables/et-g0.utb
 share/liblouis/tables/et.ctb
 share/liblouis/tables/ethio-g1.ctb
@@ -149,16 +152,20 @@ share/liblouis/tables/hu-hu-comp8.ctb
 share/liblouis/tables/hu-hu-g1.ctb
 share/liblouis/tables/hy.ctb
 share/liblouis/tables/hyph_cs_CZ.dic
+share/liblouis/tables/hyph_da_DK.dic
 share/liblouis/tables/hyph_de_DE.dic
 share/liblouis/tables/hyph_en_US.dic
+share/liblouis/tables/hyph_eo.dic
 share/liblouis/tables/hyph_es_ES.dic
 share/liblouis/tables/hyph_fr_FR.dic
 share/liblouis/tables/hyph_hu_HU.dic
 share/liblouis/tables/hyph_it_IT.dic
+share/liblouis/tables/hyph_nb_NO.dic
 share/liblouis/tables/hyph_nl_NL.dic
-share/liblouis/tables/hyph_no_NO.dic
+share/liblouis/tables/hyph_nn_NO.dic
 share/liblouis/tables/hyph_pl_PL.dic
 share/liblouis/tables/hyph_pt_PT.dic
+share/liblouis/tables/hyph_ru.dic
 share/liblouis/tables/hyph_sv_SE.dic
 share/liblouis/tables/is-chardefs6.cti
 share/liblouis/tables/is-chardefs8.cti
@@ -169,12 +176,14 @@ share/liblouis/tables/iu-ca-g1.ctb
 share/liblouis/tables/kannada.cti
 share/liblouis/tables/kha.ctb
 share/liblouis/tables/kn.ctb
-share/liblouis/tables/ko.ctb
+share/liblouis/tables/ko-g1.ctb
+share/liblouis/tables/ko-g2.ctb
+share/liblouis/tables/ko.cti
 share/liblouis/tables/kok.ctb
 share/liblouis/tables/kru.ctb
-share/liblouis/tables/lang2table
 share/liblouis/tables/latinLetterDef6Dots.uti
 share/liblouis/tables/latinLetterDef8Dots.uti
+share/liblouis/tables/litdigits6Dots.uti
 share/liblouis/tables/loweredDigits6Dots.uti
 share/liblouis/tables/loweredDigits8Dots.uti
 share/liblouis/tables/lt.ctb
@@ -196,7 +205,7 @@ share/liblouis/tables/nemethdefs.cti
 share/liblouis/tables/new.ctb
 share/liblouis/tables/nl-BE-chardefs.cti
 share/liblouis/tables/nl-BE-g1.ctb
-share/liblouis/tables/nl-BE-translation.ctb
+share/liblouis/tables/nl-BE-translation.cti
 share/liblouis/tables/nl-BE.dis
 share/liblouis/tables/nl-be-g1.utb
 share/liblouis/tables/no-no-g0.utb
@@ -216,7 +225,10 @@ share/liblouis/tables/pt-pt-comp8.ctb
 share/liblouis/tables/pt-pt-g1.utb
 share/liblouis/tables/pt-pt-g2.ctb
 share/liblouis/tables/ro.ctb
-share/liblouis/tables/ru-ru-comp8
+share/liblouis/tables/ru-chardefs.cti
+share/liblouis/tables/ru-compbrl.ctb
+share/liblouis/tables/ru-letters.dis
+share/liblouis/tables/ru-litbrl.ctb
 share/liblouis/tables/ru-ru-g1.utb
 share/liblouis/tables/ru-ru.dis
 share/liblouis/tables/ru.ctb
@@ -231,7 +243,7 @@ share/liblouis/tables/sl-si-g1.utb
 share/liblouis/tables/spaces.ctb
 share/liblouis/tables/sr-chardefs.cti
 share/liblouis/tables/sr-g1.ctb
-share/liblouis/tables/sr-translation.ctb
+share/liblouis/tables/sr-translation.cti
 share/liblouis/tables/sv-1989.ctb
 share/liblouis/tables/sv-1996.ctb
 share/liblouis/tables/ta-ta-g1.ctb
@@ -252,7 +264,7 @@ share/liblouis/tables/unicodedefs.cti
 share/liblouis/tables/us-table.dis
 share/liblouis/tables/vi.ctb
 share/liblouis/tables/wiskunde-chardefs.cti
-share/liblouis/tables/wiskunde-translation.ctb
+share/liblouis/tables/wiskunde-translation.cti
 share/liblouis/tables/wiskunde.ctb
 share/liblouis/tables/zh-hk.ctb
 share/liblouis/tables/zh-tw.ctb
