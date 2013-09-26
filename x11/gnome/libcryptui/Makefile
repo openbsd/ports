@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2013/05/31 15:35:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2013/09/26 08:00:17 ajacoutot Exp $
 
 COMMENT=	interface components for OpenPGP
 
 GNOME_PROJECT=	libcryptui
-GNOME_VERSION=	3.8.0
-REVISION=	0
+GNOME_VERSION=	3.10.0
 
-SHARED_LIBS +=	cryptui              2.0      # .0.0
+SHARED_LIBS +=  cryptui              2.0      # 0.0
 
 CATEGORIES=	security
 
