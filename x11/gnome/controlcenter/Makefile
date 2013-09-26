@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2013/09/26 12:48:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.112 2013/09/26 17:14:16 ajacoutot Exp $
 
 # XXX change proxy settings without network-manager?
 
@@ -7,8 +7,7 @@ SHARED_ONLY=		Yes
 COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
-GNOME_VERSION=		3.8.5
-REVISION=		0
+GNOME_VERSION=		3.10.0
 
 CATEGORIES=		x11
 
@@ -35,7 +34,7 @@ WANTLIB += pulse pulse-mainloop-glib pwquality rest-0.7 roken
 WANTLIB += secret-1 smbclient sndfile soup-2.4 soup-gnome-2.4
 WANTLIB += sqlite3 stdc++ upower-glib vorbis vorbisenc vorbisfile
 WANTLIB += webkitgtk-3.0 webp wind xcb xcb-render xcb-shm xkbfile
-WANTLIB += xml2 xslt z
+WANTLIB += xml2 xslt z telepathy-glib
 
 MODULES=		devel/gettext \
 			x11/gnome

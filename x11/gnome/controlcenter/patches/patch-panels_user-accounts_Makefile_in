@@ -1,10 +1,10 @@
-$OpenBSD: patch-panels_user-accounts_Makefile_in,v 1.10 2013/08/06 19:09:09 ajacoutot Exp $
+$OpenBSD: patch-panels_user-accounts_Makefile_in,v 1.11 2013/09/26 17:14:17 ajacoutot Exp $
 
 XXX push upstream: on OpenBSD, crypt() is part of libc, create a proper configure check
 
---- panels/user-accounts/Makefile.in.orig	Thu Jul 25 10:35:30 2013
-+++ panels/user-accounts/Makefile.in	Thu Jul 25 10:49:07 2013
-@@ -547,7 +547,7 @@ libuser_accounts_la_SOURCES = \
+--- panels/user-accounts/Makefile.in.orig	Tue Sep 24 15:00:43 2013
++++ panels/user-accounts/Makefile.in	Thu Sep 26 18:43:33 2013
+@@ -546,7 +546,7 @@ libuser_accounts_la_SOURCES = \
  	$(BUILT_SOURCES)
  
  libuser_accounts_la_LIBADD = $(PANEL_LIBS) $(USER_ACCOUNTS_PANEL_LIBS) \
