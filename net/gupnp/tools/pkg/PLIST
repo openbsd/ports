@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/03/28 19:44:51 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/09/26 08:16:38 jasper Exp $
 @bin bin/gssdp-discover
 @bin bin/gupnp-av-cp
 @bin bin/gupnp-network-light
@@ -32,6 +32,7 @@ share/gupnp-tools/xml/network-light-desc.xml
 @unexec-delete %D/bin/update-desktop-database
 share/locale/cs/LC_MESSAGES/gupnp-tools.mo
 share/locale/de/LC_MESSAGES/gupnp-tools.mo
+share/locale/el/LC_MESSAGES/gupnp-tools.mo
 share/locale/es/LC_MESSAGES/gupnp-tools.mo
 share/locale/ja/LC_MESSAGES/gupnp-tools.mo
 share/locale/pl/LC_MESSAGES/gupnp-tools.mo
