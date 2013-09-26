@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.98 2013/09/26 09:32:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.99 2013/09/26 14:11:54 ajacoutot Exp $
 
 COMMENT-main=	GNOME Virtual File System
 COMMENT-smb=	GVFS mount module for samba
 COMMENT-goa=	GVFS volume monitor for gnome-online-account
 
 GNOME_PROJECT=	gvfs
-GNOME_VERSION=	1.18.0
+GNOME_VERSION=	1.18.1
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-smb=	${GNOME_PROJECT}-smb-${GNOME_VERSION}
@@ -72,10 +72,10 @@ CONFIGURE_ARGS=	--disable-cdda \
 		--disable-udev \
 		--disable-gdu
 
-MULTI_PACKAGES=		-main #-smb -goa
+MULTI_PACKAGES=		-main -smb -goa
 
-#PSEUDO_FLAVORS=		no_smb no_goa bootstrap
-#FLAVOR?=		no_smb no_goa
+PSEUDO_FLAVORS=		no_smb no_goa bootstrap
+FLAVOR?=		no_smb no_goa
 
 .include <bsd.port.arch.mk>
 
