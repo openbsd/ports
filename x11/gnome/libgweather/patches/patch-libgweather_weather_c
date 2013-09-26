@@ -1,0 +1,22 @@
+$OpenBSD: patch-libgweather_weather_c,v 1.1 2013/09/26 09:33:57 jasper Exp $
+
+Assume metric since _NL_MEASUREMENT_MEASUREMENT is not defined.
+https://bugzilla.gnome.org/show_bug.cgi?id=708561
+
+--- libgweather/weather.c.orig	Thu Sep 26 11:11:40 2013
++++ libgweather/weather.c	Thu Sep 26 11:20:01 2013
+@@ -701,12 +701,14 @@ gweather_info_get_conditions (GWeatherInfo *info)
+ static gboolean
+ is_locale_metric (void)
+ {
++#ifdef _NL_MEASUREMENT_MEASUREMENT
+     const char *fmt;
+     fmt = nl_langinfo (_NL_MEASUREMENT_MEASUREMENT);
+ 
+     if (fmt && *fmt == 2)
+ 	return FALSE;
+     else
++#endif
+ 	return TRUE;
+ }
+ 
