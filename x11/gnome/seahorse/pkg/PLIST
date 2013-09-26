@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2013/03/29 19:25:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2013/09/26 11:23:18 ajacoutot Exp $
 @bin bin/seahorse
 lib/seahorse/
 @bin lib/seahorse/seahorse-ssh-askpass
@@ -9,9 +9,15 @@ share/GConf/gsettings/
 share/GConf/gsettings/org.gnome.seahorse.convert
 share/GConf/gsettings/org.gnome.seahorse.manager.convert
 share/applications/seahorse.desktop
+share/dbus-1/
+share/dbus-1/services/
+share/dbus-1/services/org.gnome.seahorse.Application.service
 share/glib-2.0/schemas/org.gnome.seahorse.gschema.xml
 share/glib-2.0/schemas/org.gnome.seahorse.manager.gschema.xml
 share/glib-2.0/schemas/org.gnome.seahorse.window.gschema.xml
+share/gnome-shell/
+share/gnome-shell/search-providers/
+share/gnome-shell/search-providers/seahorse-search-provider.ini
 share/help/
 share/help/C/
 share/help/C/seahorse/

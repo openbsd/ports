@@ -1,0 +1,14 @@
+$OpenBSD: patch-libseahorse_seahorse-util_h,v 1.1 2013/09/26 11:23:18 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=708827
+
+--- libseahorse/seahorse-util.h.orig	Thu Sep 26 13:10:45 2013
++++ libseahorse/seahorse-util.h	Thu Sep 26 13:10:53 2013
+@@ -34,7 +34,6 @@
+ typedef guint64 SeahorseVersion;
+ 
+ gchar*      seahorse_util_get_date_string           (const time_t time);
+-gchar*      seahorse_util_get_display_date_string   (const time_t time);
+ 
+ 
+ #define     SEAHORSE_ERROR                      (seahorse_util_error_domain ())

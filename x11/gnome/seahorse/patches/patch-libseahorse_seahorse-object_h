@@ -1,0 +1,14 @@
+$OpenBSD: patch-libseahorse_seahorse-object_h,v 1.1 2013/09/26 11:23:17 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=708827
+
+--- libseahorse/seahorse-object.h.orig	Thu Sep 26 13:09:10 2013
++++ libseahorse/seahorse-object.h	Thu Sep 26 13:09:13 2013
+@@ -52,7 +52,6 @@
+ #define SEAHORSE_IS_OBJECT_CLASS(klass)    (G_TYPE_CHECK_CLASS_TYPE ((klass), SEAHORSE_TYPE_OBJECT))
+ #define SEAHORSE_OBJECT_GET_CLASS(obj)     (G_TYPE_INSTANCE_GET_CLASS ((obj), SEAHORSE_TYPE_OBJECT, SeahorseObjectClass))
+ 
+-typedef struct _SeahorsePlace SeahorsePlace;
+ typedef struct _SeahorseObject SeahorseObject;
+ typedef struct _SeahorseObjectClass SeahorseObjectClass;
+ typedef struct _SeahorseObjectPrivate SeahorseObjectPrivate;
