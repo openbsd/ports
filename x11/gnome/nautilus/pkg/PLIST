@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.43 2013/04/16 06:34:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.44 2013/09/26 14:44:38 ajacoutot Exp $
 %%SHARED%%
 @bin bin/nautilus
 @bin bin/nautilus-autorun-software
@@ -53,6 +53,7 @@ share/gtk-doc/html/libnautilus-extension/home.png
 share/gtk-doc/html/libnautilus-extension/index.html
 share/gtk-doc/html/libnautilus-extension/index.sgml
 share/gtk-doc/html/libnautilus-extension/ix01.html
+share/gtk-doc/html/libnautilus-extension/left-insensitive.png
 share/gtk-doc/html/libnautilus-extension/left.png
 share/gtk-doc/html/libnautilus-extension/libnautilus-extension-nautilus-column-provider.html
 share/gtk-doc/html/libnautilus-extension/libnautilus-extension-nautilus-column.html
@@ -66,8 +67,10 @@ share/gtk-doc/html/libnautilus-extension/libnautilus-extension-nautilus-property
 share/gtk-doc/html/libnautilus-extension/libnautilus-extension-nautilus-property-page.html
 share/gtk-doc/html/libnautilus-extension/libnautilus-extension.devhelp2
 share/gtk-doc/html/libnautilus-extension/pt01.html
+share/gtk-doc/html/libnautilus-extension/right-insensitive.png
 share/gtk-doc/html/libnautilus-extension/right.png
 share/gtk-doc/html/libnautilus-extension/style.css
+share/gtk-doc/html/libnautilus-extension/up-insensitive.png
 share/gtk-doc/html/libnautilus-extension/up.png
 share/locale/af/LC_MESSAGES/nautilus.mo
 share/locale/am/LC_MESSAGES/nautilus.mo
@@ -109,8 +112,6 @@ share/locale/eu/LC_MESSAGES/nautilus.mo
 share/locale/fa/LC_MESSAGES/nautilus.mo
 share/locale/fi/LC_MESSAGES/nautilus.mo
 share/locale/fr/LC_MESSAGES/nautilus.mo
-share/locale/fur/
-share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/nautilus.mo
 share/locale/fy/
 share/locale/fy/LC_MESSAGES/
