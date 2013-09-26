@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/03/29 15:19:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/09/26 15:03:42 jasper Exp $
 @conflict gnome-utils-*
 @bin bin/gnome-font-viewer
 @bin bin/gnome-thumbnail-font
@@ -93,6 +93,9 @@ share/locale/ja/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/ka/
 share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/gnome-font-viewer.mo
+share/locale/kk/
+share/locale/kk/LC_MESSAGES/
+share/locale/kk/LC_MESSAGES/gnome-font-viewer.mo
 share/locale/km/
 share/locale/km/LC_MESSAGES/
 share/locale/km/LC_MESSAGES/gnome-font-viewer.mo
