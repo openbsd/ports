@@ -1,10 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/11 15:21:24 jasper Exp $
-%%SHARED%%
-include/quvi/
-include/quvi/llst.h
-include/quvi/net.h
-include/quvi/quvi.h
-lib/libquvi.a
-lib/libquvi.la
-lib/pkgconfig/libquvi.pc
+@comment $OpenBSD: PLIST,v 1.2 2013/09/26 15:53:51 ajacoutot Exp $
+include/quvi-0.9/
+include/quvi-0.9/quvi/
+include/quvi-0.9/quvi.h
+include/quvi-0.9/quvi/qbool.h
+include/quvi-0.9/quvi/qcallback.h
+include/quvi-0.9/quvi/qdef.h
+include/quvi-0.9/quvi/qerror.h
+include/quvi-0.9/quvi/qfunc.h
+include/quvi-0.9/quvi/qhttpmiprop.h
+include/quvi-0.9/quvi/qinfo.h
+include/quvi-0.9/quvi/qmediaprop.h
+include/quvi-0.9/quvi/qoption.h
+include/quvi-0.9/quvi/qplaylistprop.h
+include/quvi-0.9/quvi/qscript.h
+include/quvi-0.9/quvi/qsubtprop.h
+include/quvi-0.9/quvi/qsupp.h
+include/quvi-0.9/quvi/qversion.h
+lib/libquvi-0.9.a
+lib/libquvi-0.9.la
+@lib lib/libquvi-0.9.so.${LIBquvi-0.9_VERSION}
+lib/pkgconfig/libquvi-0.9.pc
 @man man/man3/libquvi.3
+@man man/man7/quvi-object.7

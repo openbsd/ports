@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2013/09/26 15:53:50 ajacoutot Exp $
+
+We want versioned solibs.
+
+--- src/Makefile.in.orig	Thu Sep 26 17:40:24 2013
++++ src/Makefile.in	Thu Sep 26 17:40:36 2013
+@@ -380,10 +380,10 @@ libquvi_0_9_la_CPPFLAGS = \
+ libquvi_0_9_la_CFLAGS = $(AM_CFLAGS)
+ 
+ # Use -release with the unstable (frequent API/ABI changes) releases.
+-libquvi_0_9_la_LDFLAGS = $(AM_LDFLAGS) -release $(VERSION)
++#libquvi_0_9_la_LDFLAGS = $(AM_LDFLAGS) -release $(VERSION)
+ 
+ # Use -version-info with the stable releases.
+-#libquvi_0_9_la_LDFLAGS+=-version-info $(LT_CUR):$(LT_REV):$(LT_AGE)
++libquvi_0_9_la_LDFLAGS+=-version-info $(LT_CUR):$(LT_REV):$(LT_AGE)
+ libquvi_0_9_la_LIBADD = \
+   $(top_builddir)/src/gcrypt/libconvenience_gcrypt.la\
+   $(top_builddir)/src/misc/libconvenience_misc.la\
