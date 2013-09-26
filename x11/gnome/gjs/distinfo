@@ -1,4 +1,2 @@
-SHA256 (gnome/gjs-1.36.1.tar.xz) = 0lnvLXAvqcyZSKNdDnAXBtkHmP0oVWV7fp3cmkTfz4c=
-SHA256 (gnome/gjs-gnome-3-8-js17.patch) = IhVQ0ZIEOwaQL2xocQfyn0XzbDgntB+kXhIYkC8sz/0=
-SIZE (gnome/gjs-1.36.1.tar.xz) = 404664
-SIZE (gnome/gjs-gnome-3-8-js17.patch) = 58678
+SHA256 (gnome/gjs-1.38.1.tar.xz) = ayBloOe9HbVipwxf1S6iSZCX8c8CycJ50bgrZgv7gXY=
+SIZE (gnome/gjs-1.38.1.tar.xz) = 421160

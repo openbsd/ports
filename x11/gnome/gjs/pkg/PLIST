@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/04/22 17:52:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/09/26 06:29:10 jasper Exp $
 bin/gjs
 @bin bin/gjs-console
 include/gjs-1.0/
@@ -29,15 +29,18 @@ include/gjs-1.0/gjs/importer.h
 include/gjs-1.0/gjs/jsapi-util.h
 include/gjs-1.0/gjs/mem.h
 include/gjs-1.0/gjs/native.h
+include/gjs-1.0/gjs/runtime.h
 include/gjs-1.0/gjs/type-module.h
 lib/gjs/
-lib/gjs-1.0/
 lib/gjs/girepository-1.0/
 lib/gjs/girepository-1.0/GjsPrivate-1.0.typelib
 lib/libgjs.la
 @lib lib/libgjs.so.${LIBgjs_VERSION}
 lib/pkgconfig/gjs-1.0.pc
 lib/pkgconfig/gjs-internals-1.0.pc
+libexec/gjs/
+libexec/gjs/installed-tests/
+libexec/gjs/installed-tests/js/
 share/examples/gjs/
 share/examples/gjs/clutter.js
 share/examples/gjs/gio-cat.js
