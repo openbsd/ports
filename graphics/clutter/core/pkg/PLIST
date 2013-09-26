@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/03/28 19:33:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/09/26 14:56:13 jasper Exp $
 @conflict cogl-<1.8.0
 include/clutter-${API_VERSION}/
 include/clutter-${API_VERSION}/cally/
@@ -187,10 +187,13 @@ share/gtk-doc/html/cally/ix01.html
 share/gtk-doc/html/cally/ix02.html
 share/gtk-doc/html/cally/ix03.html
 share/gtk-doc/html/cally/ix04.html
+share/gtk-doc/html/cally/left-insensitive.png
 share/gtk-doc/html/cally/left.png
 share/gtk-doc/html/cally/license.html
+share/gtk-doc/html/cally/right-insensitive.png
 share/gtk-doc/html/cally/right.png
 share/gtk-doc/html/cally/style.css
+share/gtk-doc/html/cally/up-insensitive.png
 share/gtk-doc/html/cally/up.png
 share/gtk-doc/html/clutter/
 share/gtk-doc/html/clutter/ClutterAction.html
@@ -311,6 +314,7 @@ share/gtk-doc/html/clutter/clutter-Utilities.html
 share/gtk-doc/html/clutter/clutter-Value-intervals.html
 share/gtk-doc/html/clutter/clutter-Versioning-Macros.html
 share/gtk-doc/html/clutter/clutter-Wayland-compositor-specific-support.html
+share/gtk-doc/html/clutter/clutter-Wayland-specific-support.html
 share/gtk-doc/html/clutter/clutter-Win32-Specific-Support.html
 share/gtk-doc/html/clutter/clutter-X11-Specific-Support.html
 share/gtk-doc/html/clutter/clutter-overview.html
@@ -347,6 +351,7 @@ share/gtk-doc/html/clutter/ix11.html
 share/gtk-doc/html/clutter/ix12.html
 share/gtk-doc/html/clutter/ix13.html
 share/gtk-doc/html/clutter/ix14.html
+share/gtk-doc/html/clutter/left-insensitive.png
 share/gtk-doc/html/clutter/left.png
 share/gtk-doc/html/clutter/license.html
 share/gtk-doc/html/clutter/migrating-ClutterAnimation.html
@@ -357,12 +362,15 @@ share/gtk-doc/html/clutter/migration.html
 share/gtk-doc/html/clutter/offscreen-redirect.png
 share/gtk-doc/html/clutter/path-alpha-func.png
 share/gtk-doc/html/clutter/pt09.html
+share/gtk-doc/html/clutter/right-insensitive.png
 share/gtk-doc/html/clutter/right.png
 share/gtk-doc/html/clutter/running-clutter.html
 share/gtk-doc/html/clutter/style.css
 share/gtk-doc/html/clutter/table-layout.png
+share/gtk-doc/html/clutter/up-insensitive.png
 share/gtk-doc/html/clutter/up.png
 share/gtk-doc/html/clutter/using-cairo.html
+share/locale/an/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/ar/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/as/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/ast/LC_MESSAGES/clutter-${API_VERSION}.mo
@@ -410,7 +418,6 @@ share/locale/sr@latin/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/sv/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/ta/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/te/LC_MESSAGES/clutter-${API_VERSION}.mo
-share/locale/tg/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/tr/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/ug/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/uk/LC_MESSAGES/clutter-${API_VERSION}.mo
