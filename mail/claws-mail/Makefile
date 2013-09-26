@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2013/09/25 08:03:13 landry Exp $
+# $OpenBSD: Makefile,v 1.66 2013/09/26 13:46:28 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,6 +10,7 @@ COMMENT-htmlviewer=	fancy htmlviewer plugin
 COMMENT-pdfviewer=	pdfviewer plugin
 
 V=			3.9.2
+REVISION=		0
 DISTNAME=		claws-mail-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
@@ -41,37 +42,40 @@ RUN_DEPENDS-bogofilter=	${BUILD_PKGPATH} \
 RUN_DEPENDS-spamassassin=${BUILD_PKGPATH} \
 			mail/p5-Mail-SpamAssassin
 
-WANTLIB=		X11 Xcomposite Xcursor Xdamage Xext Xfixes \
-			Xi Xinerama Xrandr Xrender asn1 atk-1.0 bz2 cairo \
-			com_err crypto curl etpan>=13 execinfo expat ffi \
-			fontconfig freetype gdk_pixbuf-2.0 gdk-x11-2.0 gio-2.0 \
-			glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gssapi \
-			gthread-2.0 gtk-x11-2.0 harfbuzz heimbase idn krb5 \
-			m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
-			pixman-1 png pthread pthread-stubs roken sasl2 ssl \
-			stdc++ wind xcb xcb-render xcb-shm z
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender archive atk-1.0 bz2 cairo crypto curl
+WANTLIB += etpan execinfo expat ffi fontconfig freetype gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz idn lzma m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += pthread-stubs sasl2 ssl xcb xcb-render xcb-shm z
 
-WANTLIB-main=		${WANTLIB} ICE SM X11-xcb c dbus-1 gmp hogweed nettle \
-			tasn1 xcb-aux assuan startup-notification-1 enchant \
-			gnutls gpgme dbus-glib-1 gpg-error p11-kit perl util \
-			xml2
+WANTLIB-main =  ${WANTLIB}
+WANTLIB-main += ICE SM X11-xcb assuan c dbus-1 dbus-glib-1 enchant
+WANTLIB-main += gmp gnutls gpg-error gpgme hogweed nettle p11-kit perl
+WANTLIB-main += startup-notification-1 stdc++ tasn1 util xcb-aux xml2
 
-WANTLIB-htmlviewer=	${WANTLIB} EGL GL ICE SM Xt archive dbus-1 dbus-glib-1 \
-			enchant gailutil gcrypt geoclue gpg-error gstapp-1.0 \
-			gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0 \
-			gsttag-1.0 gstreamer-1.0 gstvideo-1.0 harfbuzz-icu \
-			icudata icui18n icuuc javascriptcoregtk-1.0 jpeg \
-			orc-0.4 secret-1 soup-2.4 soup-gnome-2.4 sqlite3 \
-			webkitgtk-1.0 webp xml2 xslt
+WANTLIB-htmlviewer =  ${WANTLIB}
+WANTLIB-htmlviewer += EGL GL ICE SM Xt asn1 com_err dbus-1 dbus-glib-1 enchant
+WANTLIB-htmlviewer += gailutil gcrypt geoclue gpg-error graphite2 gssapi
+WANTLIB-htmlviewer += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
+WANTLIB-htmlviewer += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 harfbuzz-icu
+WANTLIB-htmlviewer += heimbase icudata icui18n icuuc javascriptcoregtk-1.0
+WANTLIB-htmlviewer += jpeg krb5 roken secret-1 soup-2.4 soup-gnome-2.4 sqlite3
+WANTLIB-htmlviewer += stdc++ webkitgtk-1.0 webp wind xml2 xslt
 
-WANTLIB-pdfviewer=	${WANTLIB} jpeg lcms2 openjpeg poppler poppler-glib tiff
+WANTLIB-pdfviewer =  ${WANTLIB}
+WANTLIB-pdfviewer += asn1 com_err graphite2 gssapi heimbase jpeg krb5 lcms2
+WANTLIB-pdfviewer += openjpeg poppler poppler-glib roken tiff wind
 
 WANTLIB-docs=
 
-LIB_DEPENDS=		x11/gtk+2 \
+LIB_DEPENDS=		archivers/libarchive \
+			archivers/xz \
 			devel/libexecinfo \
 			mail/libetpan \
-			security/cyrus-sasl2
+			security/cyrus-sasl2 \
+			x11/gtk+2
 
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			devel/desktop-file-utils \
