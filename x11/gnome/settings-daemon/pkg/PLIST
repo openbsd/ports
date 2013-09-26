@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2013/07/20 12:33:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2013/09/26 14:51:44 ajacoutot Exp $
 include/gnome-settings-daemon-3.0/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/gnome-settings-plugin.h
@@ -8,6 +8,7 @@ lib/gnome-settings-daemon-3.0/a11y-settings.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/clipboard.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/color.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/cursor.gnome-settings-plugin
+lib/gnome-settings-daemon-3.0/datetime.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/housekeeping.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/keyboard.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/liba11y-keyboard.so
@@ -15,6 +16,7 @@ lib/gnome-settings-daemon-3.0/liba11y-settings.so
 lib/gnome-settings-daemon-3.0/libclipboard.so
 lib/gnome-settings-daemon-3.0/libcolor.so
 lib/gnome-settings-daemon-3.0/libcursor.so
+lib/gnome-settings-daemon-3.0/libdatetime.so
 lib/gnome-settings-daemon-3.0/libgsd.so
 lib/gnome-settings-daemon-3.0/libhousekeeping.so
 lib/gnome-settings-daemon-3.0/libkeyboard.so
@@ -24,6 +26,7 @@ lib/gnome-settings-daemon-3.0/libpower.so
 lib/gnome-settings-daemon-3.0/libprint-notifications.so
 lib/gnome-settings-daemon-3.0/libremote-display.so
 lib/gnome-settings-daemon-3.0/libscreensaver-proxy.so
+lib/gnome-settings-daemon-3.0/libsmartcard.so
 lib/gnome-settings-daemon-3.0/libsound.so
 lib/gnome-settings-daemon-3.0/libxrandr.so
 lib/gnome-settings-daemon-3.0/libxsettings.so
@@ -33,6 +36,7 @@ lib/gnome-settings-daemon-3.0/power.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/print-notifications.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/remote-display.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/screensaver-proxy.gnome-settings-plugin
+lib/gnome-settings-daemon-3.0/smartcard.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/sound.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/xrandr.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/xsettings.gnome-settings-plugin
@@ -44,6 +48,7 @@ libexec/gnome-settings-daemon-localeexec
 @bin libexec/gsd-test-a11y-keyboard
 @bin libexec/gsd-test-a11y-settings
 @bin libexec/gsd-test-cursor
+@bin libexec/gsd-test-datetime
 @bin libexec/gsd-test-housekeeping
 @bin libexec/gsd-test-input-helper
 @bin libexec/gsd-test-keyboard
@@ -52,6 +57,7 @@ libexec/gnome-settings-daemon-localeexec
 @bin libexec/gsd-test-print-notifications
 @bin libexec/gsd-test-remote-display
 @bin libexec/gsd-test-screensaver-proxy
+@bin libexec/gsd-test-smartcard
 @bin libexec/gsd-test-sound
 @bin libexec/gsd-test-xrandr
 @bin libexec/gsd-test-xsettings
@@ -59,8 +65,6 @@ libexec/gnome-settings-daemon-localeexec
 share/GConf/gsettings/gnome-settings-daemon.convert
 share/dbus-1/services/org.freedesktop.IBus.service
 share/examples/gnome-settings-daemon/
-share/examples/gnome-settings-daemon/gnome-settings-daemon/
-share/examples/gnome-settings-daemon/gnome-settings-daemon/xrandr/
 @sample ${SYSCONFDIR}/gnome-settings-daemon/
 @sample ${SYSCONFDIR}/gnome-settings-daemon/xrandr/
 share/examples/gnome-settings-daemon/xdg/
@@ -76,6 +80,7 @@ share/glib-2.0/schemas/org.gnome.settings-daemon.enums.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.peripherals.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.peripherals.wacom.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.color.gschema.xml
+share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.datetime.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.housekeeping.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.keyboard.gschema.xml
@@ -89,6 +94,8 @@ share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.xsettings.gschema.xml
 share/gnome-settings-daemon/
 share/gnome-settings-daemon-3.0/
 share/gnome-settings-daemon-3.0/input-device-example.sh
+share/gnome-settings-daemon/datetime/
+share/gnome-settings-daemon/datetime/backward
 share/gnome-settings-daemon/icons/
 share/gnome-settings-daemon/icons/hicolor/
 share/gnome-settings-daemon/icons/hicolor/64x64/
@@ -185,6 +192,7 @@ share/locale/sr@latin/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/sv/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/ta/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/te/LC_MESSAGES/gnome-settings-daemon.mo
+share/locale/tg/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/th/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/tr/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/ug/LC_MESSAGES/gnome-settings-daemon.mo
