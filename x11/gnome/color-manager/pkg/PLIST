@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.10 2013/03/29 16:54:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/09/26 16:23:53 ajacoutot Exp $
 @bin bin/gcm-calibrate
 @bin bin/gcm-import
 @bin bin/gcm-inspect
 @bin bin/gcm-picker
 @bin bin/gcm-viewer
 @bin libexec/gcm-helper-exiv
+share/appdata/
+share/appdata/gcm-viewer.appdata.xml
 share/applications/gcm-calibrate.desktop
 share/applications/gcm-import.desktop
 share/applications/gcm-picker.desktop
@@ -82,6 +84,12 @@ share/help/fr/gnome-color-manager/color-import-linux.page
 share/help/fr/gnome-color-manager/color-import-osx.page
 share/help/fr/gnome-color-manager/color-import-windows.page
 share/help/fr/gnome-color-manager/legal.xml
+share/help/gl/
+share/help/gl/gnome-color-manager/
+share/help/gl/gnome-color-manager/color-import-linux.page
+share/help/gl/gnome-color-manager/color-import-osx.page
+share/help/gl/gnome-color-manager/color-import-windows.page
+share/help/gl/gnome-color-manager/legal.xml
 share/help/ml/
 share/help/ml/gnome-color-manager/
 share/help/ml/gnome-color-manager/color-import-linux.page
@@ -142,6 +150,7 @@ share/locale/hu/LC_MESSAGES/gnome-color-manager.mo
 share/locale/id/LC_MESSAGES/gnome-color-manager.mo
 share/locale/it/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ja/LC_MESSAGES/gnome-color-manager.mo
+share/locale/kk/LC_MESSAGES/gnome-color-manager.mo
 share/locale/kn/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ko/LC_MESSAGES/gnome-color-manager.mo
 share/locale/lt/LC_MESSAGES/gnome-color-manager.mo
@@ -149,6 +158,7 @@ share/locale/lv/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ml/LC_MESSAGES/gnome-color-manager.mo
 share/locale/mr/LC_MESSAGES/gnome-color-manager.mo
 share/locale/nb/LC_MESSAGES/gnome-color-manager.mo
+share/locale/nl/LC_MESSAGES/gnome-color-manager.mo
 share/locale/or/LC_MESSAGES/gnome-color-manager.mo
 share/locale/pa/LC_MESSAGES/gnome-color-manager.mo
 share/locale/pl/LC_MESSAGES/gnome-color-manager.mo
