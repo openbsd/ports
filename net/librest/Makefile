@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2013/04/16 13:17:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2013/09/26 07:44:22 jasper Exp $
 
 COMMENT =	access web services that claim to be RESTful
 
 GNOME_VERSION =	0.7.90
 GNOME_PROJECT =	rest
 PKGNAME =	lib${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	net devel
 
@@ -34,5 +34,7 @@ CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ARGS =	--with-gnome \
 			--with-ca-certificates=/etc/ssl/cert.pem
+
+PORTHOME=		${WRKDIST}
 
 .include <bsd.port.mk>
