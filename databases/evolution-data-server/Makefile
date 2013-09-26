@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.158 2013/09/26 14:11:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.159 2013/09/26 14:34:20 ajacoutot Exp $
 
 # XXX add libphonenumber support when a cpp release is out
 
@@ -11,14 +11,14 @@ GNOME_VERSION=		3.10.0
 
 CATEGORIES=		databases productivity
 
-SHARED_LIBS +=  camel-1.2            36.0     # 43.0
-SHARED_LIBS +=  edataserver-1.2      18.0     # 17.0
-SHARED_LIBS +=  ebackend-1.2         5.0      # 6.0
+SHARED_LIBS +=  camel-1.2            36.0     # 45.0
+SHARED_LIBS +=  edataserver-1.2      18.0     # 18.0
+SHARED_LIBS +=  ebackend-1.2         5.0      # 7.0
 SHARED_LIBS +=  ebook-contacts-1.2   1.0      # 0.0
-SHARED_LIBS +=  edata-book-1.2       16.0     # 17.0
+SHARED_LIBS +=  edata-book-1.2       16.0     # 20.0
 SHARED_LIBS +=  ebook-1.2            19.0     # 17.1
-SHARED_LIBS +=  ecal-1.2             15.0     # 15.0
-SHARED_LIBS +=  edata-cal-1.2        18.0     # 20.
+SHARED_LIBS +=  ecal-1.2             15.0     # 16.0
+SHARED_LIBS +=  edata-cal-1.2        18.0     # 23.0
 
 HOMEPAGE=	http://www.gnome.org/projects/evolution/
 
