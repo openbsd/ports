@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/09/26 08:05:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2013/09/26 11:41:24 ajacoutot Exp $
 
 COMMENT=	library for bits of crypto UI and parsing
 
@@ -38,8 +38,6 @@ RUN_DEPENDS=	misc/shared-mime-info
 LIB_DEPENDS=	x11/gtk+3 \
 		security/libgcrypt \
 		security/p11-kit
-
-CONFIGURE_ARGS=	--disable-update-mime
 
 # XXX push a proper fix upstream
 BUILD_DEPENDS += textproc/gsed
