@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2013/05/14 06:44:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2013/09/26 07:20:09 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	network-related gio modules for glib2
 
-GNOME_VERSION=	2.36.2
+GNOME_VERSION=	2.38.0
 GNOME_PROJECT=	glib-networking
 
 PKGNAME=	glib2-networking-${GNOME_VERSION}
@@ -30,7 +30,7 @@ RUN_DEPENDS=	devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=	net/libproxy \
 		security/gnutls \
-		devel/glib2>=2.36.0
+		devel/glib2
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
