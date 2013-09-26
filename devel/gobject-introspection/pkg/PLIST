@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2013/03/28 19:32:11 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2013/09/26 06:27:49 jasper Exp $
 bin/g-ir-annotation-tool
 @bin bin/g-ir-compiler
 @bin bin/g-ir-generate
@@ -37,6 +37,7 @@ lib/girepository-1.0/cairo-1.0.typelib
 lib/girepository-1.0/fontconfig-2.0.typelib
 lib/girepository-1.0/freetype2-2.0.typelib
 lib/girepository-1.0/libxml2-2.0.typelib
+lib/girepository-1.0/win32-1.0.typelib
 lib/girepository-1.0/xfixes-4.0.typelib
 lib/girepository-1.0/xft-2.0.typelib
 lib/girepository-1.0/xlib-2.0.typelib
@@ -62,6 +63,13 @@ lib/gobject-introspection/giscanner/cachestore.pyo
 lib/gobject-introspection/giscanner/codegen.py
 lib/gobject-introspection/giscanner/codegen.pyc
 lib/gobject-introspection/giscanner/codegen.pyo
+lib/gobject-introspection/giscanner/collections/
+lib/gobject-introspection/giscanner/collections/__init__.py
+lib/gobject-introspection/giscanner/collections/__init__.pyc
+lib/gobject-introspection/giscanner/collections/__init__.pyo
+lib/gobject-introspection/giscanner/collections/ordereddict.py
+lib/gobject-introspection/giscanner/collections/ordereddict.pyc
+lib/gobject-introspection/giscanner/collections/ordereddict.pyo
 lib/gobject-introspection/giscanner/docmain.py
 lib/gobject-introspection/giscanner/docmain.pyc
 lib/gobject-introspection/giscanner/docmain.pyo
@@ -132,9 +140,6 @@ lib/gobject-introspection/giscanner/maintransformer.pyo
 lib/gobject-introspection/giscanner/message.py
 lib/gobject-introspection/giscanner/message.pyc
 lib/gobject-introspection/giscanner/message.pyo
-lib/gobject-introspection/giscanner/odict.py
-lib/gobject-introspection/giscanner/odict.pyc
-lib/gobject-introspection/giscanner/odict.pyo
 lib/gobject-introspection/giscanner/scannermain.py
 lib/gobject-introspection/giscanner/scannermain.pyc
 lib/gobject-introspection/giscanner/scannermain.pyo
@@ -181,6 +186,7 @@ share/gir-1.0/cairo-1.0.gir
 share/gir-1.0/fontconfig-2.0.gir
 share/gir-1.0/freetype2-2.0.gir
 share/gir-1.0/libxml2-2.0.gir
+share/gir-1.0/win32-1.0.gir
 share/gir-1.0/xfixes-4.0.gir
 share/gir-1.0/xft-2.0.gir
 share/gir-1.0/xlib-2.0.gir

@@ -1,6 +1,6 @@
-$OpenBSD: patch-giscanner_dumper_py,v 1.6 2013/03/28 19:32:11 jasper Exp $
---- giscanner/dumper.py.orig	Sat Feb 23 11:40:08 2013
-+++ giscanner/dumper.py	Tue Mar 26 17:12:03 2013
+$OpenBSD: patch-giscanner_dumper_py,v 1.7 2013/09/26 06:27:49 jasper Exp $
+--- giscanner/dumper.py.orig	Tue Sep 24 15:41:09 2013
++++ giscanner/dumper.py	Wed Sep 25 09:24:11 2013
 @@ -82,7 +82,7 @@ class DumpCompiler(object):
          self._get_type_functions = get_type_functions
          self._error_quark_functions = error_quark_functions
@@ -10,7 +10,7 @@ $OpenBSD: patch-giscanner_dumper_py,v 1.6 2013/03/28 19:32:11 jasper Exp $
          self._linker_cmd = os.environ.get('CC', self._compiler_cmd)
          self._pkgconfig_cmd = os.environ.get('PKG_CONFIG', 'pkg-config')
          self._pkgconfig_msvc_flags = ''
-@@ -204,7 +204,7 @@ class DumpCompiler(object):
+@@ -205,7 +205,7 @@ class DumpCompiler(object):
          args = self._compiler_cmd.split()
          # Do not add -Wall when using init code as we do not include any
          # header of the library being introspected

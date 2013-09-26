@@ -1,12 +1,12 @@
-$OpenBSD: patch-giscanner_sourcescanner_py,v 1.5 2013/03/28 19:32:11 jasper Exp $
---- giscanner/sourcescanner.py.orig	Tue Mar 26 17:11:31 2013
-+++ giscanner/sourcescanner.py	Tue Mar 26 17:11:49 2013
-@@ -275,7 +275,7 @@ class SourceScanner(object):
+$OpenBSD: patch-giscanner_sourcescanner_py,v 1.6 2013/09/26 06:27:49 jasper Exp $
+--- giscanner/sourcescanner.py.orig	Wed Sep 25 09:23:42 2013
++++ giscanner/sourcescanner.py	Wed Sep 25 09:23:54 2013
+@@ -276,7 +276,7 @@ class SourceScanner(object):
  
          defines = ['__GI_SCANNER__']
          undefs = []
--        cpp_exec = os.environ.get('CC', 'cc').split()
-+        cpp_exec = os.environ.get('CC', '${CC}').split()
-         # The Microsoft compiler/preprocessor (cl) does not accept
-         # source input from stdin (the '-' flag), so we need
-         # some help from gcc from MinGW/Cygwin or so.
+-        cpp_args = os.environ.get('CC', 'cc').split()  # support CC="ccache gcc"
++        cpp_args = os.environ.get('CC', '${CC}').split()  # support CC="ccache gcc"
+         if 'cl' in cpp_args:
+             # The Microsoft compiler/preprocessor (cl) does not accept
+             # source input from stdin (the '-' flag), so we need
