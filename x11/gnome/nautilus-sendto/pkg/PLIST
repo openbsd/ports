@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/03/30 08:07:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/09/26 14:58:57 ajacoutot Exp $
 @conflict nautilus-sendto-pidgin-*
 @pkgpath x11/gnome/nautilus-sendto,-main
 @bin bin/nautilus-sendto
 @man man/man1/nautilus-sendto.1
 share/locale/af/LC_MESSAGES/nautilus-sendto.mo
-share/locale/an/
-share/locale/an/LC_MESSAGES/
 share/locale/an/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ar/LC_MESSAGES/nautilus-sendto.mo
 share/locale/as/LC_MESSAGES/nautilus-sendto.mo
@@ -38,6 +36,7 @@ share/locale/fr/LC_MESSAGES/nautilus-sendto.mo
 share/locale/fur/
 share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/nautilus-sendto.mo
+share/locale/ga/LC_MESSAGES/nautilus-sendto.mo
 share/locale/gl/LC_MESSAGES/nautilus-sendto.mo
 share/locale/gu/LC_MESSAGES/nautilus-sendto.mo
 share/locale/he/LC_MESSAGES/nautilus-sendto.mo
