@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2013/09/04 16:27:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.39 2013/09/26 08:23:26 ajacoutot Exp $
 include/gnome-desktop-3.0/
 include/gnome-desktop-3.0/libgnome-desktop/
 include/gnome-desktop-3.0/libgnome-desktop/gnome-bg-crossfade.h
@@ -39,11 +39,14 @@ share/gtk-doc/html/gnome-desktop3/index.html
 share/gtk-doc/html/gnome-desktop3/index.sgml
 share/gtk-doc/html/gnome-desktop3/intro.html
 share/gtk-doc/html/gnome-desktop3/languages.html
+share/gtk-doc/html/gnome-desktop3/left-insensitive.png
 share/gtk-doc/html/gnome-desktop3/left.png
 share/gtk-doc/html/gnome-desktop3/randr.html
+share/gtk-doc/html/gnome-desktop3/right-insensitive.png
 share/gtk-doc/html/gnome-desktop3/right.png
 share/gtk-doc/html/gnome-desktop3/style.css
 share/gtk-doc/html/gnome-desktop3/thumbnail.html
+share/gtk-doc/html/gnome-desktop3/up-insensitive.png
 share/gtk-doc/html/gnome-desktop3/up.png
 share/gtk-doc/html/gnome-desktop3/wall-clock.html
 share/gtk-doc/html/gnome-desktop3/xkb-info.html
@@ -67,6 +70,8 @@ share/help/ca/fdl/
 share/help/ca/fdl/index.docbook
 share/help/ca/gpl/
 share/help/ca/gpl/index.docbook
+share/help/ca/lgpl/
+share/help/ca/lgpl/index.docbook
 share/help/cs/
 share/help/cs/gpl/
 share/help/cs/gpl/index.docbook
@@ -113,6 +118,8 @@ share/help/fr/lgpl/index.docbook
 share/help/gl/
 share/help/gl/fdl/
 share/help/gl/fdl/index.docbook
+share/help/gl/gpl/
+share/help/gl/gpl/index.docbook
 share/help/hu/
 share/help/hu/fdl/
 share/help/hu/fdl/index.docbook
@@ -148,6 +155,8 @@ share/help/pl/fdl/index.docbook
 share/help/pt_BR/
 share/help/pt_BR/fdl/
 share/help/pt_BR/fdl/index.docbook
+share/help/pt_BR/gpl/
+share/help/pt_BR/gpl/index.docbook
 share/help/pt_BR/lgpl/
 share/help/pt_BR/lgpl/index.docbook
 share/help/sl/
@@ -217,6 +226,7 @@ share/locale/da/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/de/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/dz/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/el/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/en/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/en@shaw/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/en_CA/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/en_GB/LC_MESSAGES/gnome-desktop-3.0.mo
@@ -296,6 +306,7 @@ share/locale/sr@latin/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/sv/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/ta/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/te/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/tg/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/th/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/tk/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/tr/LC_MESSAGES/gnome-desktop-3.0.mo
