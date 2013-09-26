@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/03/29 10:04:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/09/26 06:38:23 ajacoutot Exp $
 share/pkgconfig/
 share/pkgconfig/yelp-xsl.pc
 share/yelp-xsl/
@@ -83,6 +83,7 @@ share/yelp-xsl/xslt/docbook/
 share/yelp-xsl/xslt/docbook/common/
 share/yelp-xsl/xslt/docbook/common/db-chunk.xsl
 share/yelp-xsl/xslt/docbook/common/db-common.xsl
+share/yelp-xsl/xslt/docbook/common/db-profile.xsl
 share/yelp-xsl/xslt/docbook/common/db-title.xsl
 share/yelp-xsl/xslt/docbook/common/db-xref.xsl
 share/yelp-xsl/xslt/docbook/html/
