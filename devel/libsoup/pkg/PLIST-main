@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2013/04/16 13:28:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2013/09/26 08:17:59 ajacoutot Exp $
 @pkgpath devel/libsoup
 @pkgpath devel/libsoup,ssl
 include/libsoup-${API_VERSION}/
@@ -79,7 +79,6 @@ share/gtk-doc/html/libsoup-${API_VERSION}/SoupMessageHeaders.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupMultipart.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupMultipartInputStream.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupProxyResolverDefault.html
-share/gtk-doc/html/libsoup-${API_VERSION}/SoupProxyURIResolver.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupRequest.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupRequestData.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupRequestFile.html
@@ -152,6 +151,7 @@ share/locale/lv/LC_MESSAGES/libsoup.mo
 share/locale/ml/LC_MESSAGES/libsoup.mo
 share/locale/mr/LC_MESSAGES/libsoup.mo
 share/locale/nb/LC_MESSAGES/libsoup.mo
+share/locale/nl/LC_MESSAGES/libsoup.mo
 share/locale/or/LC_MESSAGES/libsoup.mo
 share/locale/pa/LC_MESSAGES/libsoup.mo
 share/locale/pl/LC_MESSAGES/libsoup.mo
