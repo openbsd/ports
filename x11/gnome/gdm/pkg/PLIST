@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.66 2013/06/17 13:22:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.67 2013/09/27 10:16:56 ajacoutot Exp $
 @comment starts a full gnome-session as _gdm which requires a valid homedir
 @newgroup _gdm:676
 @newuser _gdm:676:_gdm:daemon:GNOME Display Manager:/var/db/gdm:/sbin/nologin
@@ -22,27 +22,14 @@ include/gdm/gdm-client-glue.h
 include/gdm/gdm-client.h
 include/gdm/gdm-sessions.h
 include/gdm/gdm-user-switching.h
-include/gdm/simple-greeter/
-include/gdm/simple-greeter/gdm-login-extension.h
-lib/gdm/
-lib/gdm/simple-greeter/
-lib/gdm/simple-greeter/extensions/
-lib/gdm/simple-greeter/extensions/libfingerprint.so
-lib/gdm/simple-greeter/extensions/libpassword.so
-lib/gdm/simple-greeter/extensions/libsmartcard.so
 lib/girepository-1.0/Gdm-1.0.typelib
 lib/libgdm.la
 @lib lib/libgdm.so.${LIBgdm_VERSION}
-lib/libgdmsimplegreeter.la
-@lib lib/libgdmsimplegreeter.so.${LIBgdmsimplegreeter_VERSION}
 lib/pkgconfig/gdm.pc
-lib/pkgconfig/gdmsimplegreeter.pc
 @bin libexec/gdm-host-chooser
 @bin libexec/gdm-session-worker
 @bin libexec/gdm-simple-chooser
-@bin libexec/gdm-simple-greeter
 @bin libexec/gdm-simple-slave
-@bin libexec/gdm-smartcard-worker
 @bin libexec/gdm-xdmcp-chooser-slave
 @bin sbin/gdm
 share/examples/gdm/
@@ -132,7 +119,6 @@ share/examples/gdm/var/db/gdm/.pulse/client.conf
 @owner
 @group
 share/gdm/gdb-cmd
-share/gdm/gdm-greeter-login-window.ui
 share/gdm/gdm.schemas
 share/gdm/greeter/
 share/gdm/greeter/applications/
@@ -144,22 +130,11 @@ share/gdm/greeter/applications/polkit-gnome-authentication-agent-1.desktop
 share/gdm/greeter/autostart/
 share/gdm/greeter/autostart/orca-autostart.desktop
 share/gdm/locale.alias
-share/gdm/simple-greeter/
-share/gdm/simple-greeter/extensions/
-share/gdm/simple-greeter/extensions/fingerprint/
-share/gdm/simple-greeter/extensions/fingerprint/page.ui
-share/gdm/simple-greeter/extensions/password/
-share/gdm/simple-greeter/extensions/password/page.ui
-share/gdm/simple-greeter/extensions/smartcard/
-share/gdm/simple-greeter/extensions/smartcard/page.ui
-share/gdm/simple-greeter/extensions/unified/
-share/gdm/simple-greeter/extensions/unified/page.ui
 share/gir-1.0/Gdm-1.0.gir
 share/glib-2.0/schemas/10_org.gnome.login-screen.gschema.override
 share/glib-2.0/schemas/org.gnome.login-screen.gschema.xml
 share/gnome-session/
 share/gnome-session/sessions/
-share/gnome-session/sessions/gdm-fallback.session
 share/gnome-session/sessions/gdm-shell.session
 share/help/C/gdm/
 share/help/C/gdm/index.docbook
@@ -203,6 +178,9 @@ share/help/oc/
 share/help/oc/gdm/
 share/help/oc/gdm/index.docbook
 share/help/oc/gdm/legal.xml
+share/help/pt_BR/gdm/
+share/help/pt_BR/gdm/index.docbook
+share/help/pt_BR/gdm/legal.xml
 share/help/ru/
 share/help/ru/gdm/
 share/help/ru/gdm/index.docbook
@@ -226,13 +204,9 @@ share/help/zh_CN/
 share/help/zh_CN/gdm/
 share/help/zh_CN/gdm/index.docbook
 share/help/zh_CN/gdm/legal.xml
-share/icons/hicolor/16x16/apps/gdm-fingerprint.png
-share/icons/hicolor/16x16/apps/gdm-smartcard.png
 share/icons/hicolor/16x16/apps/gdm-xnest.png
 share/icons/hicolor/32x32/apps/gdm-setup.png
 share/icons/hicolor/32x32/apps/gdm-xnest.png
-share/icons/hicolor/48x48/apps/gdm-fingerprint.png
-share/icons/hicolor/48x48/apps/gdm-smartcard.png
 share/locale/af/LC_MESSAGES/gdm.mo
 share/locale/am/LC_MESSAGES/gdm.mo
 share/locale/an/LC_MESSAGES/gdm.mo
