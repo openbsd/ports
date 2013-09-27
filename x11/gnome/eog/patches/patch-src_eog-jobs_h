@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_eog-jobs_h,v 1.1 2013/09/27 09:53:07 jasper Exp $
+
+Prevent redeclaration of EogJob
+
+--- src/eog-jobs.h.orig	Fri Sep 27 11:40:07 2013
++++ src/eog-jobs.h	Fri Sep 27 11:42:06 2013
+@@ -100,7 +100,11 @@ G_BEGIN_DECLS
+ typedef struct _EogURIConverter EogURIConverter;
+ #endif
+ 
++#ifndef __EOG_JOB_DECLR__
++#define __EOG_JOB_DECLR__
+ typedef struct _EogJob               EogJob;
++#endif
++
+ typedef struct _EogJobClass          EogJobClass;
+ 
+ typedef struct _EogJobCopy           EogJobCopy;
