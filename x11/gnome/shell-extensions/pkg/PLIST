@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/09/11 14:06:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/09/27 14:05:10 jasper Exp $
 share/applications/gnome-shell-classic.desktop
-share/glib-2.0/schemas/org.gnome.shell.extensions.alternative-status-menu.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.auto-move-windows.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.classic-overrides.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.example.gschema.xml
@@ -15,11 +14,6 @@ share/gnome-shell/extensions/alternate-tab@gnome-shell-extensions.gcampax.github
 share/gnome-shell/extensions/alternate-tab@gnome-shell-extensions.gcampax.github.com/metadata.json
 share/gnome-shell/extensions/alternate-tab@gnome-shell-extensions.gcampax.github.com/prefs.js
 share/gnome-shell/extensions/alternate-tab@gnome-shell-extensions.gcampax.github.com/stylesheet.css
-share/gnome-shell/extensions/alternative-status-menu@gnome-shell-extensions.gcampax.github.com/
-share/gnome-shell/extensions/alternative-status-menu@gnome-shell-extensions.gcampax.github.com/convenience.js
-share/gnome-shell/extensions/alternative-status-menu@gnome-shell-extensions.gcampax.github.com/extension.js
-share/gnome-shell/extensions/alternative-status-menu@gnome-shell-extensions.gcampax.github.com/metadata.json
-share/gnome-shell/extensions/alternative-status-menu@gnome-shell-extensions.gcampax.github.com/stylesheet.css
 share/gnome-shell/extensions/apps-menu@gnome-shell-extensions.gcampax.github.com/
 share/gnome-shell/extensions/apps-menu@gnome-shell-extensions.gcampax.github.com/convenience.js
 share/gnome-shell/extensions/apps-menu@gnome-shell-extensions.gcampax.github.com/extension.js
@@ -86,11 +80,6 @@ share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.
 share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/metadata.json
 share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/prefs.js
 share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/stylesheet.css
-share/gnome-shell/extensions/xrandr-indicator@gnome-shell-extensions.gcampax.github.com/
-share/gnome-shell/extensions/xrandr-indicator@gnome-shell-extensions.gcampax.github.com/convenience.js
-share/gnome-shell/extensions/xrandr-indicator@gnome-shell-extensions.gcampax.github.com/extension.js
-share/gnome-shell/extensions/xrandr-indicator@gnome-shell-extensions.gcampax.github.com/metadata.json
-share/gnome-shell/extensions/xrandr-indicator@gnome-shell-extensions.gcampax.github.com/stylesheet.css
 share/gnome-shell/modes/
 share/gnome-shell/modes/classic.json
 share/gnome-shell/theme/classic-process-working.svg
@@ -99,6 +88,7 @@ share/gnome-shell/theme/classic-toggle-off-us.svg
 share/gnome-shell/theme/classic-toggle-on-intl.svg
 share/gnome-shell/theme/classic-toggle-on-us.svg
 share/gnome-shell/theme/gnome-classic.css
+share/locale/an/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/ar/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/as/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/ca/LC_MESSAGES/gnome-shell-extensions.mo
@@ -109,10 +99,12 @@ share/locale/el/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/en_GB/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/eo/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/es/LC_MESSAGES/gnome-shell-extensions.mo
+share/locale/et/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/eu/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/fa/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/fi/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/fr/LC_MESSAGES/gnome-shell-extensions.mo
+share/locale/fur/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/gl/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/gu/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/he/LC_MESSAGES/gnome-shell-extensions.mo
@@ -120,10 +112,11 @@ share/locale/hu/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/id/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/it/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/ja/LC_MESSAGES/gnome-shell-extensions.mo
+share/locale/kk/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/ko/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/lt/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/lv/LC_MESSAGES/gnome-shell-extensions.mo
-share/locale/mr/LC_MESSAGES/gnome-shell-extensions.mo
+share/locale/ml/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/nb/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/nl/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/pa/LC_MESSAGES/gnome-shell-extensions.mo
@@ -138,6 +131,7 @@ share/locale/sr@latin/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/sv/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/ta/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/te/LC_MESSAGES/gnome-shell-extensions.mo
+share/locale/tg/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/uk/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/vi/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-shell-extensions.mo
