@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.84 2013/09/27 17:33:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.85 2013/09/27 17:48:32 ajacoutot Exp $
 
-COMMENT-main=	configuration database system for GNOME
+COMMENT=	configuration database system for GNOME
 
 GNOME_PROJECT=	GConf
 GNOME_VERSION=	3.2.6
-PKGNAME-main=	gconf2-${GNOME_VERSION}
+PKGNAME=	gconf2-${GNOME_VERSION}
 
-REVISION-main=	1
+REVISION=	2
 
 SHARED_LIBS +=	gconf-2              6.2      # 5.5
 
@@ -27,18 +27,13 @@ WANTLIB += m xml2 dbus-1 dbus-glib-1
 MODULES=	devel/gettext \
 		x11/gnome
 
-# needed for gsettings-schema-convert(1) (-main)
-MODULES+=	lang/python
+# needed for gsettings-schema-convert(1)
+MODULES +=	lang/python
 MODPY_BUILDDEP=	No
 MODPY_RUNDEP=	No
 MODPY_ADJ_FILES=gsettings/gsettings-schema-convert
 
-MULTI_PACKAGES=	-main
-
-RUN_DEPENDS-main= ${MODGETTEXT_RUN_DEPENDS} \
-		${MODPY_RUN_DEPENDS}
-LIB_DEPENDS-main= ${LIB_DEPENDS} \
-		textproc/libxml \
+LIB_DEPENDS=	textproc/libxml \
 		x11/dbus-glib
 
 MODGNOME_TOOLS=	gi
@@ -46,12 +41,11 @@ MODGNOME_TOOLS=	gi
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--without-openldap \
 		--disable-gtk \
-		--disable-orbit
+		--disable-orbit \
+		--disable-defaults-service
 
 FAKE_FLAGS=	sysgconfdir=${PREFIX}/share/examples/gconf2 \
 		sysconfdir=${PREFIX}/share/examples/gconf2
-
-CONFIGURE_ARGS+= --disable-defaults-service
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/gsettings/gsettings-data-convert.1

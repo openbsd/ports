@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2013/09/27 17:33:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2013/09/27 17:48:32 ajacoutot Exp $
 @conflict gconf2-polkit-*
-@pkgpath devel/gconf2
+@pkgpath devel/gconf2,-main
 @pkgpath devel/gconf2,-polkit
 @unexec-delete rm -fr /var/db/gconf/gconf.xml.defaults/*
 @unexec-delete rm -fr /var/db/gconf/gconf.xml.mandatory/*
