@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2013/09/24 18:53:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.128 2013/09/27 13:40:15 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		3.0
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # 7.0
 
@@ -22,20 +22,19 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += EGL GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xt archive atk-1.0 atk-bridge-2.0
-WANTLIB += atspi bz2 c cairo cairo-gobject crypto curl dbus-1
-WANTLIB += dbus-glib-1 enchant expat ffi fontconfig freetype gailutil-3
-WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 geoclue gio-2.0 girepository-1.0
+WANTLIB += atspi bz2 c cairo cairo-gobject dbus-1 dbus-glib-1
+WANTLIB += enchant expat ffi fontconfig freetype gailutil-3 gcrypt
+WANTLIB += gdk-3 gdk_pixbuf-2.0 geoclue gio-2.0 girepository-1.0
 WANTLIB += glib-2.0 gmime-2.6 gmodule-2.0 gobject-2.0 gpg-error
 WANTLIB += gpod graphite2 grilo-0.2 gstapp-1.0 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstcontroller-1.0 gstfft-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
-WANTLIB += harfbuzz-icu icudata icui18n icuuc idn javascriptcoregtk-3.0
-WANTLIB += jpeg json-glib-1.0 lua5.1 lzma m notify pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0
-WANTLIB += pixman-1 plist png pthread pthread-stubs quvi secret-1
-WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 ssl stdc++ tdb totem-plparser
-WANTLIB += webkitgtk-3.0 webp xcb xcb-render xcb-shm xml2 xslt
-WANTLIB += z
+WANTLIB += harfbuzz-icu icudata icui18n icuuc javascriptcoregtk-3.0
+WANTLIB += jpeg json-glib-1.0 lzma m notify pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 plist
+WANTLIB += png pthread pthread-stubs secret-1 soup-2.4 soup-gnome-2.4
+WANTLIB += sqlite3 stdc++ tdb totem-plparser webkitgtk-3.0 webp
+WANTLIB += xcb xcb-render xcb-shm xml2 xslt z
 
 MODULES=		devel/dconf \
 			devel/gettext \
