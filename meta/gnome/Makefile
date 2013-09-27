@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2013/09/26 08:23:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2013/09/27 16:30:03 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (base installation)
 COMMENT-extra=		GNOME desktop meta-package (full installation)
@@ -8,6 +8,9 @@ PKGNAME=		gnome-${V}
 
 PKGNAME-main=		gnome-${V}
 PKGNAME-extra=		gnome-extra-${V}
+
+REVISION-main=		0
+REVISION-extra=		0
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -63,10 +66,15 @@ RUN_DEPENDS-main +=	x11/gnome/gvfs,-goa, \
 
 # "Make it fancy!"
 RUN_DEPENDS-main +=	x11/gnome/alacarte \
+			x11/gnome/bijiben \
 			x11/gnome/documents \
 			x11/gnome/eog-plugins \
 			x11/gnome/gedit-plugins \
+			x11/gnome/grilo-plugins \
+			x11/gnome/maps \
+			x11/gnome/music \
 			x11/gnome/nautilus-sendto \
+			x11/gnome/online-miners \
 			x11/gnome/photos \
 			x11/gnome/seahorse \
 			x11/gnome/seahorse-nautilus \
@@ -84,11 +92,12 @@ RUN_DEPENDS-extra +=	STEM-=${V}:${BASE_PKGPATH},-main \
 			sysutils/deja-dup \
 			x11/gnome/ekiga \
 			x11/gnome/empathy \
-			x11/gnome/gnote \
 			x11/gnome/icon-theme-extras \
 			x11/gnome/rygel \
 			x11/gnome/totem \
 			x11/gnome/user-share \
 			x11/gnome/vinagre
+
+# RUN_DEPENDS-extra +=	www/epiphany
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.21 2013/09/06 14:58:19 ajacoutot Exp $
+$OpenBSD: README-main,v 1.22 2013/09/27 16:30:03 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -12,7 +12,8 @@ The GNOME desktop is composed of 2 meta-packages:
 
 The "gnome" package is focused on generic usage to give the user the
 choice to install his favorite applications for daily usage (i.e. PIM,
-office and development type packages have been left out on purpose).
+WWW browser, office and development applications have been left out on
+purpose).
 
 OpenGL and drm(4)
 =================
