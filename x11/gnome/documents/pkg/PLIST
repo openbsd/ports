@@ -1,25 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/06/10 05:43:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/09/27 11:26:10 ajacoutot Exp $
 bin/gnome-documents
 lib/gnome-documents/
 lib/gnome-documents/girepository-1.0/
-lib/gnome-documents/girepository-1.0/Egg-1.0.typelib
 lib/gnome-documents/girepository-1.0/Gd-1.0.typelib
 lib/gnome-documents/girepository-1.0/GdPrivate-1.0.typelib
 lib/gnome-documents/libgd.so
-lib/gnome-documents/libgdminer-1.0.so
 lib/gnome-documents/libgdprivate-1.0.so
-@bin libexec/gd-tracker-gdata-miner
-@bin libexec/gd-tracker-zpj-miner
 @man man/man1/gnome-documents.1
+share/appdata/
+share/appdata/gnome-documents.appdata.xml
 share/applications/gnome-documents.desktop
-share/dbus-1/services/org.gnome.Documents.GDataMiner.service
 share/dbus-1/services/org.gnome.Documents.SearchProvider.service
-share/dbus-1/services/org.gnome.Documents.ZpjMiner.service
 share/glib-2.0/schemas/org.gnome.Documents.enums.xml
 share/glib-2.0/schemas/org.gnome.documents.gschema.xml
 share/gnome-documents/
 share/gnome-documents/gir-1.0/
-share/gnome-documents/gir-1.0/Egg-1.0.gir
 share/gnome-documents/gir-1.0/Gd-1.0.gir
 share/gnome-documents/gir-1.0/GdPrivate-1.0.gir
 share/gnome-documents/gnome-documents.gresource
@@ -36,6 +31,7 @@ share/gnome-documents/js/mainWindow.js
 share/gnome-documents/js/manager.js
 share/gnome-documents/js/miners.js
 share/gnome-documents/js/notifications.js
+share/gnome-documents/js/password.js
 share/gnome-documents/js/path.js
 share/gnome-documents/js/places.js
 share/gnome-documents/js/presentation.js
@@ -80,6 +76,7 @@ share/locale/fa/LC_MESSAGES/gnome-documents.mo
 share/locale/fi/LC_MESSAGES/gnome-documents.mo
 share/locale/fr/LC_MESSAGES/gnome-documents.mo
 share/locale/fur/LC_MESSAGES/gnome-documents.mo
+share/locale/ga/LC_MESSAGES/gnome-documents.mo
 share/locale/gl/LC_MESSAGES/gnome-documents.mo
 share/locale/gu/LC_MESSAGES/gnome-documents.mo
 share/locale/he/LC_MESSAGES/gnome-documents.mo
