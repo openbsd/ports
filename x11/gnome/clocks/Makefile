@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2013/09/26 16:24:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2013/09/27 13:24:56 ajacoutot Exp $
 
 COMMENT=		clock application for GNOME
 
 GNOME_PROJECT=		gnome-clocks
 GNOME_VERSION=		3.10.0
+REVISION=		0
 
 HOMEPAGE=		https://live.gnome.org/GnomeClocks
 
@@ -31,6 +32,9 @@ LIB_DEPENDS=		audio/libcanberra \
 			geo/geocode-glib \
 			x11/gnome/desktop \
 			x11/gnome/libgweather
+
+BUILD_DEPENDS +=	geo/geoclue2
+RUN_DEPENDS +=		geo/geoclue2
 
 MODGNOME_TOOLS=		gi vala
 MODGNOME_DESKTOP_FILE=	Yes
