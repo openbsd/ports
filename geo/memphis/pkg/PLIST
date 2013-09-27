@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/07/16 14:05:08 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/09/27 09:39:32 ajacoutot Exp $
 include/libmemphis-0.2/
 include/libmemphis-0.2/memphis/
 include/libmemphis-0.2/memphis/memphis-data-pool.h
@@ -41,3 +41,7 @@ share/gtk-doc/html/libmemphis/style.css
 share/gtk-doc/html/libmemphis/up.png
 share/memphis/
 share/memphis/default-rules.xml
+share/vala/
+share/vala/vapi/
+share/vala/vapi/memphis-0.2.deps
+share/vala/vapi/memphis-0.2.vapi

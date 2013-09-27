@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/21 08:45:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2013/09/27 09:39:32 ajacoutot Exp $
 
 COMMENT=		map-rendering engine for OpenStreetMap
 
 DISTNAME=		memphis-0.2.3
 SHARED_LIBS +=  memphis-0.2          0.0      # 0.2
 CATEGORIES=		geo devel
+REVISION=		0
 
 HOMEPAGE=		http://trac.openstreetmap.ch/trac/memphis/
 
@@ -15,20 +16,23 @@ MASTER_SITES=		http://wenner.ch/files/public/mirror/memphis/
 
 MODULES=		devel/gettext
 
-WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm
-WANTLIB += cairo drm expat ffi fontconfig freetype glib-2.0 gobject-2.0
-WANTLIB += gthread-2.0 m pcre pixman-1 png pthread-stubs stdc++
+WANTLIB += X11 Xext Xrender cairo expat ffi fontconfig freetype
+WANTLIB += glib-2.0 gobject-2.0 m pcre pixman-1 png pthread pthread-stubs
 WANTLIB += xcb xcb-render xcb-shm z
 
-BUILD_DEPENDS=		devel/gobject-introspection
+BUILD_DEPENDS=		devel/gobject-introspection \
+			lang/vala
 
 LIB_DEPENDS=		graphics/cairo
 
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-introspection=yes \
-			--disable-vala
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--enable-introspection \
+			--enable-vala
+
+post-install:
+	rm ${PREFIX}/bin/example
 
 .include <bsd.port.mk>
