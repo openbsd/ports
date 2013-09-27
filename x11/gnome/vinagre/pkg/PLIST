@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2013/03/30 07:41:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2013/09/27 07:22:37 ajacoutot Exp $
 @bin bin/vinagre
 @man man/man1/vinagre.1
 share/GConf/gsettings/org.gnome.Vinagre.convert
@@ -21,6 +21,20 @@ share/help/C/vinagre/keyboard-shortcuts.page
 share/help/C/vinagre/scaling.page
 share/help/C/vinagre/take-screenshot.page
 share/help/C/vinagre/view-only.page
+share/help/cs/
+share/help/cs/vinagre/
+share/help/cs/vinagre/connect-file.page
+share/help/cs/vinagre/connect-reverse.page
+share/help/cs/vinagre/connect.page
+share/help/cs/vinagre/figures/
+share/help/cs/vinagre/figures/vinagre-connected.png
+share/help/cs/vinagre/fullscreen.page
+share/help/cs/vinagre/index.page
+share/help/cs/vinagre/introduction.page
+share/help/cs/vinagre/keyboard-shortcuts.page
+share/help/cs/vinagre/scaling.page
+share/help/cs/vinagre/take-screenshot.page
+share/help/cs/vinagre/view-only.page
 share/help/de/
 share/help/de/vinagre/
 share/help/de/vinagre/connect-file.page
@@ -147,6 +161,20 @@ share/help/lv/vinagre/keyboard-shortcuts.page
 share/help/lv/vinagre/scaling.page
 share/help/lv/vinagre/take-screenshot.page
 share/help/lv/vinagre/view-only.page
+share/help/pt_BR/
+share/help/pt_BR/vinagre/
+share/help/pt_BR/vinagre/connect-file.page
+share/help/pt_BR/vinagre/connect-reverse.page
+share/help/pt_BR/vinagre/connect.page
+share/help/pt_BR/vinagre/figures/
+share/help/pt_BR/vinagre/figures/vinagre-connected.png
+share/help/pt_BR/vinagre/fullscreen.page
+share/help/pt_BR/vinagre/index.page
+share/help/pt_BR/vinagre/introduction.page
+share/help/pt_BR/vinagre/keyboard-shortcuts.page
+share/help/pt_BR/vinagre/scaling.page
+share/help/pt_BR/vinagre/take-screenshot.page
+share/help/pt_BR/vinagre/view-only.page
 share/help/ru/
 share/help/ru/vinagre/
 share/help/ru/vinagre/connect-file.page
@@ -175,6 +203,20 @@ share/help/sl/vinagre/keyboard-shortcuts.page
 share/help/sl/vinagre/scaling.page
 share/help/sl/vinagre/take-screenshot.page
 share/help/sl/vinagre/view-only.page
+share/help/zh_CN/
+share/help/zh_CN/vinagre/
+share/help/zh_CN/vinagre/connect-file.page
+share/help/zh_CN/vinagre/connect-reverse.page
+share/help/zh_CN/vinagre/connect.page
+share/help/zh_CN/vinagre/figures/
+share/help/zh_CN/vinagre/figures/vinagre-connected.png
+share/help/zh_CN/vinagre/fullscreen.page
+share/help/zh_CN/vinagre/index.page
+share/help/zh_CN/vinagre/introduction.page
+share/help/zh_CN/vinagre/keyboard-shortcuts.page
+share/help/zh_CN/vinagre/scaling.page
+share/help/zh_CN/vinagre/take-screenshot.page
+share/help/zh_CN/vinagre/view-only.page
 share/icons/hicolor/16x16/mimetypes/application-x-remote-connection.png
 share/icons/hicolor/16x16/mimetypes/application-x-vnc.png
 share/icons/hicolor/16x16/status/view-minimize.png
