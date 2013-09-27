@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.152 2013/09/26 18:51:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.153 2013/09/27 07:39:34 ajacoutot Exp $
+
+EVO_VERSION=		3.8
 
 SHARED_ONLY=		Yes
 
@@ -6,23 +8,20 @@ COMMENT=		powerful desktop search tool and indexer
 
 GNOME_PROJECT=		tracker
 GNOME_VERSION=		0.16.2
-REVISION=		2
+REVISION=		3
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
 PKGNAME=		meta-tracker-${VERSION}
 
-# Only get the first x.y which is needed in the PLIST.
-# NOTE: when MAJ_V changes, increment TRACKER_VERSION accordingly and bump:
+# NOTE: when TRACKER_VERSION changes, increment accordingly and bump:
 # x11/gnome/documents
 # x11/gnome/grilo-plugins
 # x11/gnome/online-miners
 # x11/gnome/photos
 # x11/gnome/rygel
-MAJ_V=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
-
-EVO_VERSION=		3.4
-SUBST_VARS=		MAJ_V EVO_VERSION
+TRACKER_VERSION=	${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+SUBST_VARS=		TRACKER_VERSION
 
 SHARED_LIBS +=  tracker-common       3.0      # 1600.0
 SHARED_LIBS +=  tracker-data         3.0      # 1600.0

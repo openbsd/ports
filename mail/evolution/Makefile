@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.207 2013/09/11 13:46:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.208 2013/09/27 07:39:33 ajacoutot Exp $
 
 # XXX textproc/highlight
 
@@ -13,14 +13,15 @@ GNOME_VERSION=		3.8.5
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
 
-REVISION-main=		4
+REVISION-main=		5
+REVISION-plugins=	0
 
-# NOTE: when R changes, increment EVO_VERSION accordingly and bump:
+# NOTE: when EVO_VERSION changes, increment accordingly and bump:
 # mail/evolution-ews
 # mail/evolution-rss
 # x11/gnome/tracker
-R=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
-SUBST_VARS=		R
+EVO_VERSION=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+SUBST_VARS=		EVO_VERSION
 
 CATEGORIES=		mail
 
