@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2013/09/27 06:32:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.119 2013/09/27 16:03:49 ajacoutot Exp $
 
 # XXX gcm-dmi.c:141:2: warning: #warning Please add dmi support for your OS
 
@@ -50,10 +50,6 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas
 # man pages
 BUILD_DEPENDS +=	textproc/docbook-xsl
 
-# datetime
-BUILD_DEPENDS +=	geo/geoclue2
-RUN_DEPENDS +=		geo/geoclue2
-
 # share/polkit-1/actions/org.gnome.settings-daemon.plugins.power.policy
 RUN_DEPENDS +=		sysutils/polkit
 
@@ -62,6 +58,10 @@ RUN_DEPENDS +=		sysutils/consolekit
 
 # plugins/mouse/gsd-mouse-manager.c
 RUN_DEPENDS +=		x11/gnome/mousetweaks
+
+# plugins/datetime/geoclue.c
+BUILD_DEPENDS +=	geo/geoclue2
+RUN_DEPENDS +=		geo/geoclue2
 
 # plugins/power/gsd-power-manager.c; optional dependency
 # cyclic dep: gnome-session -> gnome-settings-daemon -> gnome-session
