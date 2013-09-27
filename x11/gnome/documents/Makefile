@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.22 2013/09/24 18:53:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2013/09/27 07:30:26 ajacoutot Exp $
+
+TRACKER_VERSION=0.16
 
 SHARED_ONLY=	Yes
 
@@ -9,9 +11,6 @@ GNOME_VERSION=	3.8.4
 REVISION=	0
 
 HOMEPAGE=	https://live.gnome.org/GnomeDocuments
-
-TRACKER_VERSION=0.16
-SUBST_VARS=	TRACKER_VERSION
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

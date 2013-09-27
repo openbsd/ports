@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.31 2013/09/24 18:53:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2013/09/27 07:30:26 ajacoutot Exp $
+
+EVO_VERSION=		3.8
+SUBST_VARS +=		EVO_VERSION
 
 SHARED_ONLY=		Yes
 
@@ -12,9 +15,6 @@ CATEGORIES=		mail
 
 SHARED_LIBS +=  eews-1.2             1.0      # unknown
 SHARED_LIBS +=  ewsutils             1.0      # unknown
-
-EVO_VERSION=		3.8
-SUBST_VARS=		EVO_VERSION
 
 HOMEPAGE=		http://projects.gnome.org/evolution/
 

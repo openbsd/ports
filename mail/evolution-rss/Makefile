@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.32 2013/09/24 18:53:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2013/09/27 07:30:26 ajacoutot Exp $
+
+EVO_VERSION=		3.8
+SUBST_VARS +=		EVO_VERSION
 
 SHARED_ONLY=		Yes
 
@@ -9,9 +12,6 @@ GNOME_VERSION=		0.3.93
 REVISION=		4
 
 CATEGORIES=		mail
-
-EVO_VERSION=		3.8
-SUBST_VARS=		EVO_VERSION
 
 HOMEPAGE=		http://gnome.eu.org/evo/index.php/Evolution_RSS_Reader_Plugin
 
