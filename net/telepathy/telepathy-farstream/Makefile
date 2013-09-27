@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/09/28 14:26:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2013/09/27 17:34:42 jasper Exp $
 
 COMMENT=		flexible communications framework, farstream component
 
@@ -22,13 +22,6 @@ LIB_DEPENDS=		net/farstream>=0.2.0 \
 			net/telepathy/telepathy-glib>=0.19.9
 
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--disable-gtk-doc \
 			--enable-introspection
-
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
-		ac_cv_path_GTKDOC_REBASE="" \
-		ac_cv_path_GTKDOC_MKPDF=""
 
 .include <bsd.port.mk>

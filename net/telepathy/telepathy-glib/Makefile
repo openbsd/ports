@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2013/09/26 12:33:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2013/09/27 17:34:42 jasper Exp $
 
 COMMENT=		flexible communications framework, glib bindings
 
@@ -25,15 +25,8 @@ BUILD_DEPENDS=		devel/gobject-introspection>=1.30.0 \
 LIB_DEPENDS=		x11/dbus-glib
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-gtk-doc \
 			--enable-introspection \
 			--enable-vala-bindings
 #CONFIGURE_ARGS+=	--enable-backtrace (add -llibexecinfo)
-
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
-		ac_cv_path_GTKDOC_REBASE="" \
-		ac_cv_path_GTKDOC_MKPDF=""
 
 .include <bsd.port.mk>

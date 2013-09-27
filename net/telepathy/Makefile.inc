@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.15 2013/05/14 07:17:06 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.16 2013/09/27 17:34:42 jasper Exp $
 
 SHARED_ONLY?=	Yes
 
@@ -22,5 +22,14 @@ MAINTAINER?=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 USE_GMAKE?=	Yes
 
-
 CONFIGURE_STYLE?=gnu
+
+.if defined(CONFIGURE_STYLE) && ${CONFIGURE_STYLE:Mgnu}
+    CONFIGURE_ARGS+=--disable-gtk-doc
+
+    # If one of these tools is found at configure stage, it might be used,
+    # no matter whether we use --disable-gtk-doc or not.
+    CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
+                    ac_cv_path_GTKDOC_REBASE="" \
+                    ac_cv_path_GTKDOC_MKPDF=""
+.endif

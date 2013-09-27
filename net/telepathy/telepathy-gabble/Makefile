@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2013/09/27 14:03:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.62 2013/09/27 17:34:42 jasper Exp $
 
 COMMENT=		flexible communications framework, xmpp component
 
@@ -31,16 +31,9 @@ RUN_DEPENDS +=		devel/py-gobject3
 MODPY_ADJ_FILES=	plugins/telepathy-gabble-xmpp-console
 
 CONFIGURE_ARGS=		--with-ca-certificates=/etc/ssl/cert.pem \
-			--disable-gtk-doc \
 			--disable-Werror \
 			--enable-plugins
 
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/lib/ext/wocky
-
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
-		ac_cv_path_GTKDOC_REBASE="" \
-		ac_cv_path_GTKDOC_MKPDF=""
 
 .include <bsd.port.mk>
