@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2013/03/29 13:19:36 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.19 2013/09/27 12:37:21 ajacoutot Exp $
 @bin bin/planner
 include/planner-1.0/
 include/planner-1.0/libplanner/
@@ -92,53 +92,6 @@ share/gnome/help/planner/C/figures/task-up.png
 share/gnome/help/planner/C/figures/task-view.png
 share/gnome/help/planner/C/legal.xml
 share/gnome/help/planner/C/planner.xml
-share/gnome/help/planner/es/
-share/gnome/help/planner/es/figures/
-share/gnome/help/planner/es/figures/calendar-new.png
-share/gnome/help/planner/es/figures/calendar-week.png
-share/gnome/help/planner/es/figures/calendar-working-time.png
-share/gnome/help/planner/es/figures/calendar.png
-share/gnome/help/planner/es/figures/day-types.png
-share/gnome/help/planner/es/figures/gantt-view.png
-share/gnome/help/planner/es/figures/group1-subtask-dialog.png
-share/gnome/help/planner/es/figures/group1-subtasks.png
-share/gnome/help/planner/es/figures/group1-task-linked.png
-share/gnome/help/planner/es/figures/group1-task-linking.png
-share/gnome/help/planner/es/figures/group1-task.png
-share/gnome/help/planner/es/figures/group1-tasks-linked.png
-share/gnome/help/planner/es/figures/new-project.png
-share/gnome/help/planner/es/figures/print-project-paper.png
-share/gnome/help/planner/es/figures/print-project-selectviews.png
-share/gnome/help/planner/es/figures/print-project.png
-share/gnome/help/planner/es/figures/project-properties-custom-add.png
-share/gnome/help/planner/es/figures/project-properties-custom.png
-share/gnome/help/planner/es/figures/project-properties.png
-share/gnome/help/planner/es/figures/project-zoom-fit.png
-share/gnome/help/planner/es/figures/project-zoom-up.png
-share/gnome/help/planner/es/figures/resource-editor-sorted.png
-share/gnome/help/planner/es/figures/resource-editor.png
-share/gnome/help/planner/es/figures/resource-group-editor.png
-share/gnome/help/planner/es/figures/resource-insert.png
-share/gnome/help/planner/es/figures/resource-properties-calendar.png
-share/gnome/help/planner/es/figures/resource-properties-general.png
-share/gnome/help/planner/es/figures/several-projects.png
-share/gnome/help/planner/es/figures/task-constraints.png
-share/gnome/help/planner/es/figures/task-custom-properties-add.png
-share/gnome/help/planner/es/figures/task-custom-properties.png
-share/gnome/help/planner/es/figures/task-edit-advanced.png
-share/gnome/help/planner/es/figures/task-edit-note.png
-share/gnome/help/planner/es/figures/task-edit-predecessors-add-remove.png
-share/gnome/help/planner/es/figures/task-edit-predecessors-add.png
-share/gnome/help/planner/es/figures/task-edit-predecessors.png
-share/gnome/help/planner/es/figures/task-edit-resource-assigned.png
-share/gnome/help/planner/es/figures/task-edit-resources.png
-share/gnome/help/planner/es/figures/task-edit.png
-share/gnome/help/planner/es/figures/task-insert.png
-share/gnome/help/planner/es/figures/task-properties-dialog.png
-share/gnome/help/planner/es/figures/task-up.png
-share/gnome/help/planner/es/figures/task-view.png
-share/gnome/help/planner/es/legal.xml
-share/gnome/help/planner/es/planner.xml
 share/gnome/help/planner/eu/
 share/gnome/help/planner/eu/figures/
 share/gnome/help/planner/eu/figures/calendar-new.png
@@ -255,7 +208,6 @@ share/locale/sr/LC_MESSAGES/planner.mo
 share/locale/sr@Latn/
 share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/planner.mo
-share/locale/sr@latin/LC_MESSAGES/planner.mo
 share/locale/sv/LC_MESSAGES/planner.mo
 share/locale/ta/LC_MESSAGES/planner.mo
 share/locale/tr/LC_MESSAGES/planner.mo
@@ -268,7 +220,6 @@ share/mime/packages/planner.xml
 share/omf/
 share/omf/planner/
 share/omf/planner/planner-C.omf
-share/omf/planner/planner-es.omf
 share/omf/planner/planner-eu.omf
 share/pixmaps/
 share/pixmaps/gnome-planner.png
