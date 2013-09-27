@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.33 2013/09/27 07:30:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2013/09/27 09:47:12 ajacoutot Exp $
 
-EVO_VERSION=		3.8
+EVO_VERSION=		3.10
 SUBST_VARS +=		EVO_VERSION
 
 SHARED_ONLY=		Yes
@@ -8,8 +8,7 @@ SHARED_ONLY=		Yes
 COMMENT=		RSS reader plugin for evolution
 
 GNOME_PROJECT=		evolution-rss
-GNOME_VERSION=		0.3.93
-REVISION=		4
+GNOME_VERSION=		0.3.94
 
 CATEGORIES=		mail
 
@@ -21,7 +20,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += EGL GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xt asn1 atk-1.0 atk-bridge-2.0
 WANTLIB += atspi c cairo cairo-gobject camel-1.2 com_err crypto
 WANTLIB += db dbus-1 dbus-glib-1 ebackend-1.2 ebook-1.2 ebook-contacts-1.2
@@ -32,16 +31,16 @@ WANTLIB += gmodule-2.0 gnome-desktop-3 gobject-2.0 gpg-error graphite2
 WANTLIB += gssapi gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0
 WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
 WANTLIB += gthread-2.0 gtk-3 gtkhtml-4.0 gtkhtml-editor-4.0 harfbuzz
-WANTLIB += ical icalss icalvcal icui18n javascriptcoregtk-3.0
-WANTLIB += jpeg krb5 m nspr4 nss3 nssutil3 p11-kit pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
-WANTLIB += png pthread pthread-stubs secret-1 smime3 softokn3
-WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 ssl3 stdc++ webkitgtk-3.0
-WANTLIB += webp xcb xcb-render xcb-shm xkbfile xml2 xslt z
-WANTLIB += harfbuzz-icu heimbase icudata icuuc
-WANTLIB += roken wind
+WANTLIB += harfbuzz-icu heimbase ical icalss icalvcal icudata
+WANTLIB += icui18n icuuc javascriptcoregtk-3.0 jpeg krb5 m nspr4
+WANTLIB += nss3 nssutil3 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
+WANTLIB += roken secret-1 smime3 softokn3 soup-2.4 soup-gnome-2.4
+WANTLIB += sqlite3 ssl3 stdc++ webkitgtk-3.0 webp wind xcb xcb-render
+WANTLIB += xcb-shm xkbfile xml2 xslt z
 
-MASTER_SITES=		http://gnome.eu.org/
+#MASTER_SITES=		http://gnome.eu.org/
+MASTER_SITES=		http://distfiles.bsdfrog.org/
 
 MODULES=		devel/gettext \
 			devel/dconf \
