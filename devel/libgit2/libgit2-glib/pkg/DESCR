@@ -1,0 +1,3 @@
+libgit2-glib is a glib library which wraps libgit2 providing making it
+easier to develop manage git repositories in a GObject oriented
+application.
