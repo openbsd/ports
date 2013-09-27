@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.56 2013/05/31 15:34:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2013/09/27 10:43:01 jasper Exp $
 
 COMMENT=	user interface builder for the gtk+3 toolkit
 
-GNOME_VERSION=	3.14.2
+GNOME_VERSION=	3.16.0
 GNOME_PROJECT= 	glade
-REVISION=	1
 
 CATEGORIES=	devel
 
@@ -18,14 +17,13 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # GPLv2 - LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
-WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject dbus-1 drm
-WANTLIB += expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += gtk-3 harfbuzz m pango-1.0 pangocairo-1.0
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
+WANTLIB += c cairo cairo-gobject dbus-1 expat ffi fontconfig freetype
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += stdc++ util xcb xcb-render xcb-shm xml2 z ${MODPY_WANTLIB}
+WANTLIB += util xcb xcb-render xcb-shm xml2 z ${MODPY_WANTLIB}
 
 MODULES=	devel/gettext \
 		x11/gnome \
