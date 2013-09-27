@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.139 2013/09/24 18:53:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.140 2013/09/27 14:03:45 jasper Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
-GNOME_VERSION=		3.8.4
+GNOME_VERSION=		3.10.0
 SUBST_VARS=		GNOME_VERSION
-REVISION=		5
 
 CATEGORIES=		net
 
@@ -34,7 +33,7 @@ WANTLIB += pcre pixman-1 png pthread pthread-stubs pulse pulse-mainloop-glib
 WANTLIB += secret-1 sndfile soup-2.4 soup-gnome-2.4 sqlite3 stdc++
 WANTLIB += tasn1 telepathy-farstream telepathy-glib telepathy-logger
 WANTLIB += vorbis vorbisenc vorbisfile webkitgtk-3.0 webp xcb
-WANTLIB += xcb-render xcb-shm xml2 xslt z zeitgeist-2.0
+WANTLIB += xcb-render xcb-shm xml2 xslt z zeitgeist-2.0 geocode-glib
 
 MODULES=		devel/dconf \
 			devel/gettext \
@@ -49,7 +48,7 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			audio/pulseaudio>=2.1 \
 			devel/libnotify \
-			geo/geoclue \
+			geo/geocode-glib \
 			geo/libchamplain>=0.12.2 \
 			graphics/clutter/clutter-gst \
 			net/telepathy/folks \
@@ -77,9 +76,6 @@ MODGNOME_TOOLS= 	yelp
 CONFIGURE_ARGS+=	--disable-gudev \
 			--disable-Werror \
 			--without-cheese
-
-# XXX needs geocode-glib
-CONFIGURE_ARGS +=	--disable-geocode
 
 # needs signond, libsignon-glib -- Ubuntu/Meego
 CONFIGURE_ARGS +=	--disable-ubuntu-online-accounts
