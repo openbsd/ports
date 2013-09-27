@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2013/09/24 18:29:48 ajacoutot Exp $
-@conflict gstreamer1-plugins-bad-<0.11.99
+@comment $OpenBSD: PLIST-main,v 1.6 2013/09/27 14:36:20 ajacoutot Exp $
+@conflict gstreamer1-plugins-bad-<1.2.0
 lib/gstreamer-${API}/libgstalaw.so
 lib/gstreamer-${API}/libgstalpha.so
 lib/gstreamer-${API}/libgstalphacolor.so
