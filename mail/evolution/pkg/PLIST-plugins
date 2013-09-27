@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-plugins,v 1.15 2013/09/27 07:39:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST-plugins,v 1.16 2013/09/27 09:30:40 ajacoutot Exp $
 @conflict evolution-<=3.2.2p0
+lib/evolution/${EVO_VERSION}/modules/module-spamassassin.so
 lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-dbx-import.so
 lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-email-custom-header.so
 lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-evolution-attachment-reminder.so
@@ -29,6 +30,7 @@ share/evolution/${EVO_VERSION}/errors/org-gnome-external-editor.error
 share/evolution/${EVO_VERSION}/errors/org-gnome-face.error
 share/evolution/${EVO_VERSION}/errors/org-gnome-mailing-list-actions.error
 share/evolution/${EVO_VERSION}/ui/org-gnome-email-custom-header.ui
+share/glib-2.0/schemas/org.gnome.evolution.spamassassin.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.plugin.attachment-reminder.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.plugin.email-custom-header.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.plugin.external-editor.gschema.xml

@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.25 2013/09/10 07:20:53 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.26 2013/09/27 09:30:39 ajacoutot Exp $
 
 XXX patch evo_krb5_support.m4 to use krb5-config(1) and push upstream
 (and remove the call to krb5-config from MODGNOME_CPPFLAGS)
 
---- configure.orig	Sun Aug 11 13:42:23 2013
-+++ configure	Sat Aug 31 10:57:17 2013
-@@ -16843,7 +16843,7 @@ $as_echo_n "checking for Kerberos 5... " >&6; }
+--- configure.orig	Sat Sep 21 14:52:29 2013
++++ configure	Fri Sep 27 10:09:04 2013
+@@ -16847,7 +16847,7 @@ $as_echo_n "checking for Kerberos 5... " >&6; }
  		esac
  
  		mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"

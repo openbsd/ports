@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.209 2013/09/27 07:47:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.210 2013/09/27 09:30:39 ajacoutot Exp $
 
 # XXX textproc/highlight
 
@@ -8,13 +8,10 @@ COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		3.8.5
+GNOME_VERSION=		3.10.0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
-
-REVISION-main=		5
-REVISION-plugins=	0
 
 # NOTE: when EVO_VERSION changes, increment accordingly and bump:
 # mail/evolution-ews
@@ -37,7 +34,7 @@ WANTLIB-main += ${WANTLIB}
 WANTLIB-main += atk-1.0 c cairo cairo-gobject camel-1.2 canberra canberra-gtk3
 WANTLIB-main += ebackend-1.2 ebook-1.2 ebook-contacts-1.2 ecal-1.2
 WANTLIB-main += edataserver-1.2 gailutil-3 gdata gdk-3 gdk_pixbuf-2.0
-WANTLIB-main += gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3 goa-1.0
+WANTLIB-main += gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3
 WANTLIB-main += gobject-2.0 gstreamer-1.0 gtk-3 gtkhtml-4.0 gtkhtml-editor-4.0
 WANTLIB-main += gweather-3 ical icalvcal ldap-2.4 m notify nspr4 nss3
 WANTLIB-main += pango-1.0 pangocairo-1.0 plc4 pthread secret-1 smime3
@@ -86,12 +83,20 @@ RUN_DEPENDS-plugins +=	mail/evolution,-main=${GNOME_VERSION}
 BUILD_DEPENDS +=	textproc/highlight
 RUN_DEPENDS-main +=	textproc/highlight
 
+# module-bogofilter.so
+BUILD_DEPENDS +=	mail/bogofilter
+RUN_DEPENDS-main +=	mail/bogofilter
+
+# module-spamassassin.so
+BUILD_DEPENDS +=	mail/p5-Mail-SpamAssassin
+RUN_DEPENDS-plugins +=	mail/p5-Mail-SpamAssassin
+
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include \
-			$$(krb5-config --cflags) \
-			-DBOGOFILTER_BINARY="\\\"${LOCALBASE}/bin/bogofilter\\\""
+			$$(krb5-config --cflags)
+
 # without --as-needed, evolution takes 20 minutes (yes, 20!) to start
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib -Wl,-rpath,${TRUEPREFIX}/lib/evolution/${EVO_VERSION}:${TRUEPREFIX}/lib \
 				-Wl,--as-needed
@@ -100,10 +105,6 @@ LIBTOOL_FLAGS=		--tag=disable-static
 YACC=			bison
 
 CONFIGURE_STYLE=	gnu
-
-CONFIGURE_ENV=		BOGOFILTER=${LOCALBASE}/bin/bogofilter \
-			SPAMASSASSIN=${LOCALBASE}/bin/spamassassin \
-			SA_LEARN=${LOCALBASE}/bin/sa-learn
 
 CONFIGURE_ARGS=		--disable-static \
 			--with-openldap="${LOCALBASE}" \
