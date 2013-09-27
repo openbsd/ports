@@ -1,3 +1,0 @@
-gconf2-polkit provides PolicyKit integration for GConf2.
-It can be used for e.g. by gconf-editor to apply system-wide defaults
-and/or mandatory values.

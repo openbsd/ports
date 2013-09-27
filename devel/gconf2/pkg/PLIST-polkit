@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST-polkit,v 1.2 2011/09/18 22:04:01 ajacoutot Exp $
-@bin libexec/gconf-defaults-mechanism
-share/dbus-1/system-services/org.gnome.GConf.Defaults.service
-share/examples/gconf2/dbus-1/
-share/examples/gconf2/dbus-1/system.d/
-share/examples/gconf2/dbus-1/system.d/org.gnome.GConf.Defaults.conf
-@sample ${SYSCONFDIR}/dbus-1/system.d/org.gnome.GConf.Defaults.conf
-share/polkit-1/actions/org.gnome.gconf.defaults.policy
