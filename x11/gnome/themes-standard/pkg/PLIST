@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2013/09/08 07:03:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2013/09/27 11:31:34 ajacoutot Exp $
 @conflict gnome-themes-<2.32.1p3
 @unexec-delete rm -f %D/share/icons/Adwaita/icon-theme.cache
 @unexec-delete rm -f %D/share/icons/HighContrast/icon-theme.cache
@@ -205,7 +205,6 @@ share/icons/HighContrast/16x16/actions/zoom-in.png
 share/icons/HighContrast/16x16/actions/zoom-original.png
 share/icons/HighContrast/16x16/actions/zoom-out.png
 share/icons/HighContrast/16x16/apps/
-share/icons/HighContrast/16x16/apps/abrt-gui.png
 share/icons/HighContrast/16x16/apps/accessories-calculator.png
 share/icons/HighContrast/16x16/apps/accessories-character-map.png
 share/icons/HighContrast/16x16/apps/accessories-dictionary.png
@@ -234,6 +233,7 @@ share/icons/HighContrast/16x16/apps/firefox.png
 share/icons/HighContrast/16x16/apps/five-or-more.png
 share/icons/HighContrast/16x16/apps/gimp.png
 share/icons/HighContrast/16x16/apps/glade.png
+share/icons/HighContrast/16x16/apps/gnome-abrt.png
 share/icons/HighContrast/16x16/apps/gnome-aisleriot.png
 share/icons/HighContrast/16x16/apps/gnome-boxes.png
 share/icons/HighContrast/16x16/apps/gnome-documents.png
@@ -637,7 +637,6 @@ share/icons/HighContrast/22x22/actions/zoom-in.png
 share/icons/HighContrast/22x22/actions/zoom-original.png
 share/icons/HighContrast/22x22/actions/zoom-out.png
 share/icons/HighContrast/22x22/apps/
-share/icons/HighContrast/22x22/apps/abrt-gui.png
 share/icons/HighContrast/22x22/apps/accessories-calculator.png
 share/icons/HighContrast/22x22/apps/accessories-character-map.png
 share/icons/HighContrast/22x22/apps/accessories-dictionary.png
@@ -666,6 +665,7 @@ share/icons/HighContrast/22x22/apps/firefox.png
 share/icons/HighContrast/22x22/apps/five-or-more.png
 share/icons/HighContrast/22x22/apps/gimp.png
 share/icons/HighContrast/22x22/apps/glade.png
+share/icons/HighContrast/22x22/apps/gnome-abrt.png
 share/icons/HighContrast/22x22/apps/gnome-aisleriot.png
 share/icons/HighContrast/22x22/apps/gnome-boxes.png
 share/icons/HighContrast/22x22/apps/gnome-documents.png
@@ -1069,7 +1069,6 @@ share/icons/HighContrast/24x24/actions/zoom-in.png
 share/icons/HighContrast/24x24/actions/zoom-original.png
 share/icons/HighContrast/24x24/actions/zoom-out.png
 share/icons/HighContrast/24x24/apps/
-share/icons/HighContrast/24x24/apps/abrt-gui.png
 share/icons/HighContrast/24x24/apps/accessories-calculator.png
 share/icons/HighContrast/24x24/apps/accessories-character-map.png
 share/icons/HighContrast/24x24/apps/accessories-dictionary.png
@@ -1098,6 +1097,7 @@ share/icons/HighContrast/24x24/apps/firefox.png
 share/icons/HighContrast/24x24/apps/five-or-more.png
 share/icons/HighContrast/24x24/apps/gimp.png
 share/icons/HighContrast/24x24/apps/glade.png
+share/icons/HighContrast/24x24/apps/gnome-abrt.png
 share/icons/HighContrast/24x24/apps/gnome-aisleriot.png
 share/icons/HighContrast/24x24/apps/gnome-boxes.png
 share/icons/HighContrast/24x24/apps/gnome-documents.png
@@ -1501,7 +1501,6 @@ share/icons/HighContrast/256x256/actions/zoom-in.png
 share/icons/HighContrast/256x256/actions/zoom-original.png
 share/icons/HighContrast/256x256/actions/zoom-out.png
 share/icons/HighContrast/256x256/apps/
-share/icons/HighContrast/256x256/apps/abrt-gui.png
 share/icons/HighContrast/256x256/apps/accessories-calculator.png
 share/icons/HighContrast/256x256/apps/accessories-character-map.png
 share/icons/HighContrast/256x256/apps/accessories-dictionary.png
@@ -1529,6 +1528,7 @@ share/icons/HighContrast/256x256/apps/firefox.png
 share/icons/HighContrast/256x256/apps/five-or-more.png
 share/icons/HighContrast/256x256/apps/gimp.png
 share/icons/HighContrast/256x256/apps/glade.png
+share/icons/HighContrast/256x256/apps/gnome-abrt.png
 share/icons/HighContrast/256x256/apps/gnome-aisleriot.png
 share/icons/HighContrast/256x256/apps/gnome-boxes.png
 share/icons/HighContrast/256x256/apps/gnome-documents.png
@@ -1932,7 +1932,6 @@ share/icons/HighContrast/32x32/actions/zoom-in.png
 share/icons/HighContrast/32x32/actions/zoom-original.png
 share/icons/HighContrast/32x32/actions/zoom-out.png
 share/icons/HighContrast/32x32/apps/
-share/icons/HighContrast/32x32/apps/abrt-gui.png
 share/icons/HighContrast/32x32/apps/accessories-calculator.png
 share/icons/HighContrast/32x32/apps/accessories-character-map.png
 share/icons/HighContrast/32x32/apps/accessories-dictionary.png
@@ -1961,6 +1960,7 @@ share/icons/HighContrast/32x32/apps/firefox.png
 share/icons/HighContrast/32x32/apps/five-or-more.png
 share/icons/HighContrast/32x32/apps/gimp.png
 share/icons/HighContrast/32x32/apps/glade.png
+share/icons/HighContrast/32x32/apps/gnome-abrt.png
 share/icons/HighContrast/32x32/apps/gnome-aisleriot.png
 share/icons/HighContrast/32x32/apps/gnome-boxes.png
 share/icons/HighContrast/32x32/apps/gnome-documents.png
@@ -2368,7 +2368,6 @@ share/icons/HighContrast/48x48/animations/process-idle.png
 share/icons/HighContrast/48x48/animations/process-idle.svg
 share/icons/HighContrast/48x48/animations/process-working.png
 share/icons/HighContrast/48x48/apps/
-share/icons/HighContrast/48x48/apps/abrt-gui.png
 share/icons/HighContrast/48x48/apps/accessories-calculator.png
 share/icons/HighContrast/48x48/apps/accessories-character-map.png
 share/icons/HighContrast/48x48/apps/accessories-dictionary.png
@@ -2397,6 +2396,7 @@ share/icons/HighContrast/48x48/apps/firefox.png
 share/icons/HighContrast/48x48/apps/five-or-more.png
 share/icons/HighContrast/48x48/apps/gimp.png
 share/icons/HighContrast/48x48/apps/glade.png
+share/icons/HighContrast/48x48/apps/gnome-abrt.png
 share/icons/HighContrast/48x48/apps/gnome-aisleriot.png
 share/icons/HighContrast/48x48/apps/gnome-boxes.png
 share/icons/HighContrast/48x48/apps/gnome-documents.png
