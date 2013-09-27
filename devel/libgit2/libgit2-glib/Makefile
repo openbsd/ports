@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/09/27 12:17:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/09/27 14:36:29 jasper Exp $
 
 COMMENT=		GLib library wrapping libgit2
 
 V=			0.0.6
 PROJECT=		libgit2-glib
+REVISION=		0
 SHARED_LIBS +=	git2-glib-1.0        0.0      # 0.0
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/${PROJECT}/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}

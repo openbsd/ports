@@ -1,0 +1,15 @@
+$OpenBSD: patch-libgit2-glib-1_0_pc_in,v 1.1 2013/09/27 14:36:30 jasper Exp $
+
+Actually make these substituable variables...
+
+--- libgit2-glib-1.0.pc.in.orig	Fri Sep 27 16:30:17 2013
++++ libgit2-glib-1.0.pc.in	Fri Sep 27 16:30:39 2013
+@@ -5,7 +5,7 @@ includedir=@includedir@
+ 
+ Name: libgit2-glib
+ Description: libgit2-glib, a a glib wrapper library around the libgit2 git access library.
+-Requires: libgit2 >= GIT2_REQUIRED, glib-2.0 >= @GLIB_REQUIRED@, gobject-2.0 >= @GLIB_REQUIRED@, gio-2.0 >= @GLIB_REQUIRED@, gobject-introspection-1.0 >= @INTROSPECTION_REQUIRED
++Requires: libgit2 >= @GIT2_REQUIRED@, glib-2.0 >= @GLIB_REQUIRED@, gobject-2.0 >= @GLIB_REQUIRED@, gio-2.0 >= @GLIB_REQUIRED@, gobject-introspection-1.0 >= @INTROSPECTION_REQUIRED@
+ Version: @VERSION@
+ Cflags: -I${includedir}/libgit2-glib-1.0
+ Libs: -L${libdir} -lgit2-glib-1.0
