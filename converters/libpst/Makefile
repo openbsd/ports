@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.29 2013/03/21 08:45:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2013/09/27 08:09:16 ajacoutot Exp $
 
 BROKEN-hppa=		linking .libs/python-libpst.o fails
 
 COMMENT-main=		read and convert Microsoft Outlook mail files
 COMMENT-python=		python interface to libpst
 
-DISTNAME=		libpst-0.6.55
-SHARED_LIBS +=  pst                  2.0      # 5.5
+DISTNAME=		libpst-0.6.61
+
+SHARED_LIBS +=  pst                  3.0      # 5.9
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-python=		py-${DISTNAME}
@@ -21,11 +22,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 cWANTLIB += m pthread stdc++ ${MODLIBICONV_WANTLIB}
 
 WANTLIB-main += ${cWANTLIB}
-WANTLIB-main += c expat fontconfig freetype jpeg m png pthread stdc++
-WANTLIB-main += gd>=20 z
+WANTLIB-main += bz2 c expat ffi fontconfig freetype gd gio-2.0 glib-2.0
+WANTLIB-main += gmodule-2.0 gobject-2.0 gsf-1 intl jpeg pcre png pthread-stubs
+WANTLIB-main += xml2 z
 
 WANTLIB-python += ${cWANTLIB}
-WANTLIB-python += pst>=1 util boost_python
+WANTLIB-python += pst util boost_python
 
 MASTER_SITES=		${HOMEPAGE}/packages/ \
 			http://distfiles.nl/
@@ -38,6 +40,7 @@ MODULES=		converters/libiconv \
 BUILD_DEPENDS=		${RUN_DEPENDS-main}
 RUN_DEPENDS-main=	graphics/ImageMagick
 LIB_DEPENDS-main=	${MODLIBICONV_LIB_DEPENDS} \
+			devel/libgsf \
 			graphics/gd
 
 LIB_DEPENDS-python=	${MODLIBICONV_LIB_DEPENDS} \
