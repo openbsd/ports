@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2013/09/26 14:51:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.117 2013/09/27 06:31:13 ajacoutot Exp $
 
 # XXX gcm-dmi.c:141:2: warning: #warning Please add dmi support for your OS
 
@@ -8,6 +8,7 @@ COMMENT=	GNOME settings daemon
 
 GNOME_PROJECT=	gnome-settings-daemon
 GNOME_VERSION=	3.10.0
+REVISION=	0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -48,6 +49,10 @@ RUN_DEPENDS=	devel/gsettings-desktop-schemas
 
 # man pages
 BUILD_DEPENDS += textproc/docbook-xsl
+
+# datetime
+BUILD_DEPENDS += geo/geoclue2
+RUN_DEPENDS +=	 geo/geoclue2
 
 # share/polkit-1/actions/org.gnome.settings-daemon.plugins.power.policy
 RUN_DEPENDS +=	sysutils/polkit
