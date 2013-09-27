@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.66 2013/09/12 07:10:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2013/09/27 10:29:26 jasper Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
-GNOME_VERSION=		3.8.3
-REVISION=		0
+GNOME_VERSION=		3.10.0
 
 CATEGORIES=		editors
 
@@ -44,6 +43,8 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			x11/dbus-python${MODPY_FLAVOR} \
 			x11/gnome/gedit \
 			x11/gnome/gucharmap
+
+MODGNOME_TOOLS=		yelp
 
 # dashboard plugin
 RUN_DEPENDS +=		productivity/zeitgeist
