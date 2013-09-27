@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/05/31 15:34:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2013/09/27 17:49:07 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -10,8 +10,8 @@ DISTNAME =		ogmrip-$V
 PKGNAME-main =		ogmrip-$V
 PKGNAME-dvdcpy =	dvdcpy-$V
 
-REVISION-main=		0
-REVISION-dvdcpy=	0
+REVISION-main=		1
+REVISION-dvdcpy=	1
 
 SHARED_LIBS +=  ogmdvd-gtk                0.0 # 1.0
 SHARED_LIBS +=  ogmdvd                    0.0 # 1.0

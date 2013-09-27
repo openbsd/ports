@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/05/31 15:34:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/09/27 17:49:05 ajacoutot Exp $
 
 COMMENT =		lightweight mapping application for use with or without GPS
 
 DISTNAME =		foxtrotgps-1.1.1
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		geo x11
 

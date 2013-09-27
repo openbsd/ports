@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2013/09/25 07:56:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2013/09/27 17:49:02 ajacoutot Exp $
 
 BROKEN-hppa =		Invalid function: "DEAD"
 
@@ -6,7 +6,7 @@ COMMENT=		GNU editor: extensible, customizable, self-documenting
 
 VERSION=		24.3
 DISTNAME=		emacs-${VERSION}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		editors
 

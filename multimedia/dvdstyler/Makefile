@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/09/11 18:15:10 brad Exp $
+# $OpenBSD: Makefile,v 1.26 2013/09/27 17:49:06 ajacoutot Exp $
 
 COMMENT=		DVD authoring application
 
@@ -7,6 +7,7 @@ PKGNAME=		${DISTNAME:L}
 CATEGORIES=		multimedia
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=dvdstyler/}
 EXTRACT_SUFX=		.tar.bz2
+REVISION=		0
 
 HOMEPAGE=		http://www.dvdstyler.org/
 

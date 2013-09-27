@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2013/06/20 06:54:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2013/09/27 17:49:12 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ GNOME_VERSION=		2.24.4
 EXTRACT_SUFX=		.tar.bz2
 PKGNAME=		gnome-vfs2-${VERSION}
 
-REVISION=		8
+REVISION=		9
 
 SHARED_LIBS +=	gnomevfs-2           2400.0   # .2400.0
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2013/09/27 17:49:10 ajacoutot Exp $
 
 COMMENT=	3D filesystem visualizer
 
 V=		1.0.1
 DISTNAME=	fsv2-$V
 PKGNAME=	fsv-$V
-REVISION=	0
+REVISION=	1
 CATEGORIES=     x11
 
 HOMEPAGE=	http://fedorchenko.net/fsv2.php
