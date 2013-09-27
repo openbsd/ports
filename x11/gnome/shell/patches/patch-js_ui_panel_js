@@ -1,26 +1,43 @@
-$OpenBSD: patch-js_ui_panel_js,v 1.8 2013/08/06 18:09:20 jasper Exp $
+$OpenBSD: patch-js_ui_panel_js,v 1.9 2013/09/27 14:04:47 jasper Exp $
 
 Make Network Manager support optional.
 https://bugzilla.gnome.org/show_bug.cgi?id=679871
 
---- js/ui/panel.js.orig	Wed Jul 31 00:20:54 2013
-+++ js/ui/panel.js	Wed Jul 31 07:54:06 2013
-@@ -933,11 +933,13 @@ if (Config.HAVE_BLUETOOTH)
-     PANEL_ITEM_IMPLEMENTATIONS['bluetooth'] =
-         imports.ui.status.bluetooth.Indicator;
+--- js/ui/panel.js.orig	Tue Sep 24 20:20:37 2013
++++ js/ui/panel.js	Fri Sep 27 15:26:49 2013
+@@ -811,7 +811,12 @@ const AggregateMenu = new Lang.Class({
+         this._indicators = new St.BoxLayout({ style_class: 'panel-status-indicators-box' });
+         this.actor.add_child(this._indicators);
  
--try {
--    PANEL_ITEM_IMPLEMENTATIONS['network'] =
--        imports.ui.status.network.NMApplet;
--} catch(e) {
--    log('NMApplet is not supported. It is possible that your NetworkManager version is too old');
-+if (Config.HAVE_NETWORK_MANAGER) {
-+    try {
-+        PANEL_ITEM_IMPLEMENTATIONS['network'] =
-+            imports.ui.status.network.NMApplet;
-+    } catch(e) {
-+        log('NMApplet is not supported. It is possible that your NetworkManager version is too old');
-+    }
- }
+-        this._network = new imports.ui.status.network.NMApplet();
++	if (Config.HAVE_NETWORK_MANAGER) {
++            this._network = new imports.ui.status.network.NMApplet();
++	} else {
++            this._network = null;
++        }
++
+         if (Config.HAVE_BLUETOOTH) {
+             this._bluetooth = new imports.ui.status.bluetooth.Indicator();
+         } else {
+@@ -826,7 +831,9 @@ const AggregateMenu = new Lang.Class({
+         this._screencast = new imports.ui.status.screencast.Indicator();
  
- const Panel = new Lang.Class({
+         this._indicators.add_child(this._screencast.indicators);
+-        this._indicators.add_child(this._network.indicators);
++        if (this._network) {
++            this._indicators.add_child(this._network.indicators);
++        }
+         if (this._bluetooth) {
+             this._indicators.add_child(this._bluetooth.indicators);
+         }
+@@ -840,7 +847,9 @@ const AggregateMenu = new Lang.Class({
+         this.menu.addMenuItem(this._volume.menu);
+         this.menu.addMenuItem(this._brightness.menu);
+         this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
+-        this.menu.addMenuItem(this._network.menu);
++        if (this._network) {
++            this.menu.addMenuItem(this._network.menu);
++        }
+         if (this._bluetooth) {
+             this.menu.addMenuItem(this._bluetooth.menu);
+         }

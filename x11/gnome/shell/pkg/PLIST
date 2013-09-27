@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2013/06/10 15:21:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2013/09/27 14:04:47 jasper Exp $
 @conflict gnome-panel-*
 @conflict gnome-screensaver-*
 @conflict notification-daemon-*
@@ -13,8 +13,10 @@ lib/gnome-shell/
 lib/gnome-shell/Gvc-1.0.typelib
 lib/gnome-shell/Shell-0.1.typelib
 lib/gnome-shell/ShellJS-0.1.typelib
+lib/gnome-shell/ShellMenu-0.1.typelib
 lib/gnome-shell/St-1.0.typelib
 lib/gnome-shell/libgnome-shell-js.so
+lib/gnome-shell/libgnome-shell-menu.so
 lib/gnome-shell/libgnome-shell.so
 lib/mozilla/
 lib/mozilla/plugins/
@@ -34,16 +36,15 @@ share/dbus-1/interfaces/org.gnome.ShellSearchProvider2.xml
 share/dbus-1/services/org.gnome.Shell.CalendarServer.service
 share/dbus-1/services/org.gnome.Shell.HotplugSniffer.service
 share/glib-2.0/schemas/org.gnome.shell.gschema.xml
-share/gnome-control-center/keybindings/50-gnome-shell-screenshot.xml
 share/gnome-control-center/keybindings/50-gnome-shell-system.xml
 share/gnome-shell/js/
 share/gnome-shell/js/extensionPrefs/
 share/gnome-shell/js/extensionPrefs/main.js
 share/gnome-shell/js/gdm/
+share/gnome-shell/js/gdm/authPrompt.js
 share/gnome-shell/js/gdm/batch.js
 share/gnome-shell/js/gdm/fingerprint.js
 share/gnome-shell/js/gdm/loginDialog.js
-share/gnome-shell/js/gdm/powerMenu.js
 share/gnome-shell/js/gdm/realmd.js
 share/gnome-shell/js/gdm/util.js
 share/gnome-shell/js/misc/
@@ -56,12 +57,15 @@ share/gnome-shell/js/misc/history.js
 share/gnome-shell/js/misc/jsParse.js
 share/gnome-shell/js/misc/loginManager.js
 share/gnome-shell/js/misc/modemManager.js
+share/gnome-shell/js/misc/objectManager.js
 share/gnome-shell/js/misc/params.js
+share/gnome-shell/js/misc/smartcardManager.js
 share/gnome-shell/js/misc/util.js
 share/gnome-shell/js/perf/
 share/gnome-shell/js/perf/core.js
 share/gnome-shell/js/ui/
 share/gnome-shell/js/ui/altTab.js
+share/gnome-shell/js/ui/animation.js
 share/gnome-shell/js/ui/appDisplay.js
 share/gnome-shell/js/ui/appFavorites.js
 share/gnome-shell/js/ui/background.js
@@ -76,7 +80,6 @@ share/gnome-shell/js/ui/components/autorunManager.js
 share/gnome-shell/js/ui/components/keyring.js
 share/gnome-shell/js/ui/components/networkAgent.js
 share/gnome-shell/js/ui/components/polkitAgent.js
-share/gnome-shell/js/ui/components/recorder.js
 share/gnome-shell/js/ui/components/telepathyClient.js
 share/gnome-shell/js/ui/ctrlAltTab.js
 share/gnome-shell/js/ui/dash.js
@@ -86,6 +89,7 @@ share/gnome-shell/js/ui/endSessionDialog.js
 share/gnome-shell/js/ui/environment.js
 share/gnome-shell/js/ui/extensionDownloader.js
 share/gnome-shell/js/ui/extensionSystem.js
+share/gnome-shell/js/ui/focusCaretTracker.js
 share/gnome-shell/js/ui/grabHelper.js
 share/gnome-shell/js/ui/ibusCandidatePopup.js
 share/gnome-shell/js/ui/iconGrid.js
@@ -106,6 +110,7 @@ share/gnome-shell/js/ui/panel.js
 share/gnome-shell/js/ui/panelMenu.js
 share/gnome-shell/js/ui/pointerWatcher.js
 share/gnome-shell/js/ui/popupMenu.js
+share/gnome-shell/js/ui/remoteMenu.js
 share/gnome-shell/js/ui/remoteSearch.js
 share/gnome-shell/js/ui/runDialog.js
 share/gnome-shell/js/ui/screenShield.js
@@ -119,18 +124,21 @@ share/gnome-shell/js/ui/sessionMode.js
 share/gnome-shell/js/ui/shellDBus.js
 share/gnome-shell/js/ui/shellEntry.js
 share/gnome-shell/js/ui/shellMountOperation.js
+share/gnome-shell/js/ui/slider.js
 share/gnome-shell/js/ui/status/
 share/gnome-shell/js/ui/status/accessibility.js
 share/gnome-shell/js/ui/status/bluetooth.js
+share/gnome-shell/js/ui/status/brightness.js
 share/gnome-shell/js/ui/status/keyboard.js
-share/gnome-shell/js/ui/status/lockScreenMenu.js
 share/gnome-shell/js/ui/status/network.js
 share/gnome-shell/js/ui/status/power.js
+share/gnome-shell/js/ui/status/rfkill.js
+share/gnome-shell/js/ui/status/screencast.js
+share/gnome-shell/js/ui/status/system.js
 share/gnome-shell/js/ui/status/volume.js
 share/gnome-shell/js/ui/switcherPopup.js
 share/gnome-shell/js/ui/tweener.js
 share/gnome-shell/js/ui/unlockDialog.js
-share/gnome-shell/js/ui/userMenu.js
 share/gnome-shell/js/ui/userWidget.js
 share/gnome-shell/js/ui/viewSelector.js
 share/gnome-shell/js/ui/wanda.js
@@ -161,6 +169,8 @@ share/gnome-shell/theme/logged-in-indicator.svg
 share/gnome-shell/theme/message-tray-background.png
 share/gnome-shell/theme/more-results.svg
 share/gnome-shell/theme/noise-texture.png
+share/gnome-shell/theme/page-indicator-active.svg
+share/gnome-shell/theme/page-indicator-inactive.svg
 share/gnome-shell/theme/panel-button-border.svg
 share/gnome-shell/theme/panel-button-highlight-narrow.svg
 share/gnome-shell/theme/panel-button-highlight-wide.svg
@@ -213,7 +223,6 @@ share/gtk-doc/html/shell/shell-shell-keybinding-modes.html
 share/gtk-doc/html/shell/shell-shell-polkit-authentication-agent.html
 share/gtk-doc/html/shell/shell-shell-recorder.html
 share/gtk-doc/html/shell/shell-shell-util.html
-share/gtk-doc/html/shell/shell-shell-xfixes-cursor.html
 share/gtk-doc/html/shell/shell.devhelp2
 share/gtk-doc/html/shell/style.css
 share/gtk-doc/html/shell/up.png

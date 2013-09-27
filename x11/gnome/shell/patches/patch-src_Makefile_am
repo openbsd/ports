@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_Makefile_am,v 1.4 2013/03/30 08:04:19 jasper Exp $
+$OpenBSD: patch-src_Makefile_am,v 1.5 2013/09/27 14:04:47 jasper Exp $
 
 Make Network Manager support optional.
 https://bugzilla.gnome.org/show_bug.cgi?id=679871
 
---- src/Makefile.am.orig	Fri Mar 22 20:06:31 2013
-+++ src/Makefile.am	Fri Mar 29 21:57:26 2013
-@@ -116,7 +116,6 @@ shell_public_headers_h =		\
+--- src/Makefile.am.orig	Thu Sep 12 20:09:56 2013
++++ src/Makefile.am	Fri Sep 27 15:19:30 2013
+@@ -103,7 +103,6 @@ shell_public_headers_h =		\
  	shell-invert-lightness-effect.h	\
  	shell-keybinding-modes.h	\
  	shell-mount-operation.h		\
@@ -13,15 +13,15 @@ https://bugzilla.gnome.org/show_bug.cgi?id=679871
  	shell-perf-log.h		\
  	shell-screenshot.h		\
  	shell-slicer.h			\
-@@ -159,7 +158,6 @@ libgnome_shell_la_SOURCES =		\
- 	shell-keyring-prompt.h		\
- 	shell-keyring-prompt.c		\
+@@ -140,7 +139,6 @@ libgnome_shell_base_la_SOURCES = 	\
+ 	shell-menu-tracker.c		\
+ 	shell-menu-tracker.h		\
  	shell-mount-operation.c		\
 -	shell-network-agent.c		\
  	shell-perf-log.c		\
  	shell-polkit-authentication-agent.h	\
  	shell-polkit-authentication-agent.c	\
-@@ -233,6 +231,16 @@ endif BUILD_RECORDER
+@@ -242,6 +240,16 @@ endif BUILD_RECORDER
  
  ########################################
  
@@ -38,15 +38,15 @@ https://bugzilla.gnome.org/show_bug.cgi?id=679871
  libexec_PROGRAMS += gnome-shell-perf-helper
  
  gnome_shell_perf_helper_SOURCES = shell-perf-helper.c
-@@ -287,7 +295,10 @@ libgnome_shell_la_LIBADD =		\
- libgnome_shell_la_CPPFLAGS = $(gnome_shell_cflags)
+@@ -331,7 +339,10 @@ INTROSPECTION_GIRS += ShellMenu-0.1.gir
+ CLEANFILES += ShellMenu-0.1.gir
  
- Shell-0.1.gir: libgnome-shell.la St-1.0.gir
+ Shell-0.1.gir: gnome-shell St-1.0.gir ShellMenu-0.1.gir
 -Shell_0_1_gir_INCLUDES = Clutter-1.0 ClutterX11-1.0 Meta-3.0 TelepathyGLib-0.12 Soup-2.4 GMenu-3.0 NetworkManager-1.0 NMClient-1.0
 +Shell_0_1_gir_INCLUDES = Clutter-1.0 ClutterX11-1.0 Meta-3.0 TelepathyGLib-0.12 Soup-2.4 GMenu-3.0
 +if NETWORK_MANAGER
 +Shell_0_1_gir_INCLUDES += NetworkManager-1.0 NMClient-1.0
 +endif
  Shell_0_1_gir_CFLAGS = $(libgnome_shell_la_CPPFLAGS) -I $(srcdir)
- Shell_0_1_gir_LIBS = libgnome-shell.la
- Shell_0_1_gir_FILES = $(libgnome_shell_la_gir_sources)
+ # Hack! we use PROGRAM instead of LIBS so that the soname is not included
+ # in the typelib. This way the symbols will be resolved with the libgnome-shell
