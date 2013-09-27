@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2013/04/17 13:39:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2013/09/27 12:38:43 jasper Exp $
 @bin bin/rygel
 @bin bin/rygel-preferences
 include/rygel-2.0/
@@ -22,12 +22,19 @@ lib/rygel-2.0/
 lib/rygel-2.0/engines/
 lib/rygel-2.0/engines/librygel-media-engine-gst.so
 lib/rygel-2.0/engines/librygel-media-engine-simple.so
+lib/rygel-2.0/engines/media-engine-gst.plugin
+lib/rygel-2.0/engines/media-engine-simple.plugin
 lib/rygel-2.0/plugins/
+lib/rygel-2.0/plugins/external.plugin
 lib/rygel-2.0/plugins/librygel-external.so
 lib/rygel-2.0/plugins/librygel-media-export.so
 lib/rygel-2.0/plugins/librygel-mpris.so
 lib/rygel-2.0/plugins/librygel-playbin.so
 lib/rygel-2.0/plugins/librygel-tracker.so
+lib/rygel-2.0/plugins/media-export.plugin
+lib/rygel-2.0/plugins/mpris.plugin
+lib/rygel-2.0/plugins/playbin.plugin
+lib/rygel-2.0/plugins/tracker.plugin
 @man man/man1/rygel.1
 @man man/man5/rygel.conf.5
 share/applications/rygel-preferences.desktop
@@ -91,6 +98,7 @@ share/locale/sr@latin/LC_MESSAGES/rygel.mo
 share/locale/sv/LC_MESSAGES/rygel.mo
 share/locale/ta/LC_MESSAGES/rygel.mo
 share/locale/te/LC_MESSAGES/rygel.mo
+share/locale/tg/LC_MESSAGES/rygel.mo
 share/locale/th/LC_MESSAGES/rygel.mo
 share/locale/tr/LC_MESSAGES/rygel.mo
 share/locale/ug/LC_MESSAGES/rygel.mo
