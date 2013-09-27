@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/09/27 13:24:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2013/09/27 13:26:21 ajacoutot Exp $
 
 COMMENT=		clock application for GNOME
 
@@ -33,6 +33,7 @@ LIB_DEPENDS=		audio/libcanberra \
 			x11/gnome/desktop \
 			x11/gnome/libgweather
 
+# geocoding.c
 BUILD_DEPENDS +=	geo/geoclue2
 RUN_DEPENDS +=		geo/geoclue2
 
