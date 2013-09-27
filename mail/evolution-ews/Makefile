@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.32 2013/09/27 07:30:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2013/09/27 09:46:37 ajacoutot Exp $
 
-EVO_VERSION=		3.8
+EVO_VERSION=		3.10
 SUBST_VARS +=		EVO_VERSION
 
 SHARED_ONLY=		Yes
@@ -8,8 +8,7 @@ SHARED_ONLY=		Yes
 COMMENT=		evolution connector for MS Exchange via EWS
 
 GNOME_PROJECT=		evolution-ews
-GNOME_VERSION=		3.8.5
-REVISION=		0
+GNOME_VERSION=		3.10.0
 
 CATEGORIES=		mail
 
@@ -24,7 +23,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += EGL GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xt asn1 atk-1.0 atk-bridge-2.0
 WANTLIB += atspi cairo cairo-gobject camel-1.2 canberra canberra-gtk3
 WANTLIB += com_err crypto db dbus-1 dbus-glib-1 ebackend-1.2 ebook-1.2
@@ -37,12 +36,12 @@ WANTLIB += gstbase-1.0 gstfft-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 gtkhtml-4.0
 WANTLIB += gtkhtml-editor-4.0 harfbuzz harfbuzz-icu heimbase ical
 WANTLIB += icalss icalvcal icudata icui18n icuuc javascriptcoregtk-3.0
-WANTLIB += jpeg krb5 ltdl m mspack nspr4 nss3 nssutil3 ogg
-WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs roken
-WANTLIB += secret-1 smime3 softokn3 soup-2.4 soup-gnome-2.4 sqlite3
-WANTLIB += ssl3 stdc++ vorbis vorbisfile webkitgtk-3.0 webp wind
-WANTLIB += xcb xcb-render xcb-shm xkbfile xml2 xslt z
+WANTLIB += jpeg krb5 ltdl m mspack nspr4 nss3 nssutil3 ogg p11-kit
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += plc4 plds4 png pthread pthread-stubs roken secret-1
+WANTLIB += smime3 softokn3 soup-2.4 soup-gnome-2.4 sqlite3 ssl3
+WANTLIB += stdc++ vorbis vorbisfile webkitgtk-3.0 webp wind xcb
+WANTLIB += xcb-render xcb-shm xkbfile xml2 xslt z
 
 MODULES=		devel/gettext \
 			x11/gnome
