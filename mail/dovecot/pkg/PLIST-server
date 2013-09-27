@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.40 2013/08/13 00:29:58 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.41 2013/09/27 01:35:52 brad Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -133,9 +133,11 @@ include/dovecot/http-client-private.h
 include/dovecot/http-client.h
 include/dovecot/http-date.h
 include/dovecot/http-header-parser.h
+include/dovecot/http-header.h
 include/dovecot/http-message-parser.h
 include/dovecot/http-parser.h
 include/dovecot/http-request-parser.h
+include/dovecot/http-request.h
 include/dovecot/http-response-parser.h
 include/dovecot/http-response.h
 include/dovecot/http-transfer.h
@@ -218,6 +220,7 @@ include/dovecot/istream-chain.h
 include/dovecot/istream-concat.h
 include/dovecot/istream-crlf.h
 include/dovecot/istream-dot.h
+include/dovecot/istream-hash.h
 include/dovecot/istream-header-filter.h
 include/dovecot/istream-jsonstr.h
 include/dovecot/istream-mail.h
@@ -765,6 +768,7 @@ share/doc/dovecot/wiki/SharedMailboxes.Public.txt
 share/doc/dovecot/wiki/SharedMailboxes.Shared.txt
 share/doc/dovecot/wiki/SharedMailboxes.Symlinks.txt
 share/doc/dovecot/wiki/SharedMailboxes.txt
+share/doc/dovecot/wiki/SocketUnavailable.txt
 share/doc/dovecot/wiki/Statistics.txt
 share/doc/dovecot/wiki/SystemUsers.txt
 share/doc/dovecot/wiki/TestInstallation.txt
