@@ -1,0 +1,18 @@
+$OpenBSD: patch-configure_ac,v 1.1 2013/09/27 07:16:22 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=708892
+
+--- configure.ac.orig	Fri Sep 27 09:03:14 2013
++++ configure.ac	Fri Sep 27 09:03:27 2013
+@@ -300,11 +300,8 @@ AC_MSG_RESULT([$have_ipv6])
+ GTK_VERSION=3.0.0
+ GLIB_VERSION=2.17.0
+ GIO_VERSION=2.26
+-SOUP_VERSION=2.24.0
+ 
+ PKG_CHECK_MODULES([VINO_SERVER], [glib-2.0 >= $GLIB_VERSION gio-unix-2.0 gtk+-x11-3.0 >= $GTK_VERSION $TELEPATHY_GLIB_DEPS libnotify >= 0.7.0 $SECRET_DEPS $NETWORKMANAGER_DEPS $GNUTLS_DEPS $AVAHI_DEPS])
+-
+-PKG_CHECK_MODULES([VINO_CAPPLET], [glib-2.0 >= $GLIB_VERSION gio-2.0 >= $GIO_VERSION gtk+-3.0 >= $GTK_VERSION libsoup-2.4 >= $SOUP_VERSION $SECRET_DEPS])
+ 
+ PKG_CHECK_MODULES([VINO_TOOLS], [glib-2.0 >= $GLIB_VERSION gio-2.0 >= $GIO_VERSION gobject-2.0 >= $GLIB_VERSION $SECRET_DEPS])
+ 
