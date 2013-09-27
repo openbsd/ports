@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.218 2013/09/27 10:41:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.219 2013/09/27 16:09:52 jasper Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -9,6 +9,7 @@
      SUBDIR += backgrounds
      SUBDIR += banshee
      SUBDIR += baobab
+     SUBDIR += bijiben
      SUBDIR += calculator
      SUBDIR += caribou
      SUBDIR += clocks
