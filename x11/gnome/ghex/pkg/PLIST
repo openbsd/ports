@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/03/29 18:08:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/09/27 10:25:19 jasper Exp $
 @bin bin/ghex
 include/gtkhex-3/
 include/gtkhex-3/gtkhex.h
@@ -8,6 +8,8 @@ lib/libgtkhex-3.la
 @lib lib/libgtkhex-3.so.${LIBgtkhex-3_VERSION}
 lib/pkgconfig/gtkhex-3.pc
 share/GConf/gsettings/ghex.convert
+share/appdata/
+share/appdata/ghex.appdata.xml
 share/applications/ghex.desktop
 share/glib-2.0/schemas/org.gnome.GHex.gschema.xml
 share/help/
