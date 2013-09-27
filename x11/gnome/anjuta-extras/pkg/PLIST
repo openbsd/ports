@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/03/30 11:16:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/09/27 14:10:10 jasper Exp $
 lib/anjuta/anjuta-editor.plugin
 lib/anjuta/anjuta-sample.plugin
 lib/anjuta/anjuta-scratchbox.plugin
@@ -16,11 +16,8 @@ share/anjuta/ui/anjuta-sample.ui
 share/anjuta/ui/anjuta-scintilla.xml
 share/glib-2.0/schemas/org.gnome.anjuta.plugins.scintilla.gschema.xml
 share/glib-2.0/schemas/org.gnome.anjuta.plugins.scratchbox.gschema.xml
-share/gnome/help/anjuta-manual/
-share/gnome/help/anjuta-manual/C/
-share/gnome/help/anjuta-manual/C/scintilla-plugin.page
-share/gnome/help/anjuta-manual/de/
-share/gnome/help/anjuta-manual/de/scintilla-plugin.page
+share/help/C/anjuta-manual/scintilla-plugin.page
+share/help/de/anjuta-manual/scintilla-plugin.page
 share/locale/ar/LC_MESSAGES/anjuta-extras.mo
 share/locale/az/LC_MESSAGES/anjuta-extras.mo
 share/locale/be@latin/LC_MESSAGES/anjuta-extras.mo
