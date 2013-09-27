@@ -1,6 +1,9 @@
-$OpenBSD: patch-libgit2-glib-1_0_pc_in,v 1.1 2013/09/27 14:36:30 jasper Exp $
+$OpenBSD: patch-libgit2-glib-1_0_pc_in,v 1.2 2013/09/27 17:29:33 jasper Exp $
 
-Actually make these substituable variables...
+From a14ce36bcc8ad95203c0e02a9fb8ad02339ab8f6 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Fri, 27 Sep 2013 14:41:15 +0000
+Subject: Unbreak pkg-config file; some "variables" were mangled and not substituted.
 
 --- libgit2-glib-1.0.pc.in.orig	Fri Sep 27 16:30:17 2013
 +++ libgit2-glib-1.0.pc.in	Fri Sep 27 16:30:39 2013
