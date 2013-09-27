@@ -1,6 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.1 2013/09/27 07:16:22 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2013/09/27 08:08:02 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=708892
+From 6cc1b82fa37eaffe7a01284acbfc91c3521407a4 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Fri, 27 Sep 2013 07:13:42 +0000
+Subject: remove dependency on libsoup
 
 --- configure.ac.orig	Fri Sep 27 09:03:14 2013
 +++ configure.ac	Fri Sep 27 09:03:27 2013
