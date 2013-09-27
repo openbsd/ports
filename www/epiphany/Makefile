@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.103 2013/09/26 15:59:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.104 2013/09/27 16:31:28 ajacoutot Exp $
 
+# add to meta/gnome,-extra when un-BROKEN
 BROKEN=		needs webkit2
 
 SHARED_ONLY=	Yes
