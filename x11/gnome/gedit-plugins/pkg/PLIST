@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2013/09/27 10:29:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.22 2013/09/27 14:40:03 jasper Exp $
 lib/gedit/plugins/${MODPY_PYCACHE}/
 lib/gedit/plugins/${MODPY_PYCACHE}bracketcompletion.${MODPY_PYC_MAGIC_TAG}pyc
 lib/gedit/plugins/${MODPY_PYCACHE}bracketcompletion.${MODPY_PYC_MAGIC_TAG}pyo
@@ -109,6 +109,21 @@ lib/gedit/plugins/dashboard/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyo
 lib/gedit/plugins/dashboard/dashboard.py
 lib/gedit/plugins/dashboard/utils.py
 lib/gedit/plugins/drawspaces.plugin
+lib/gedit/plugins/git/
+lib/gedit/plugins/git.plugin
+lib/gedit/plugins/git/__init__.py
+lib/gedit/plugins/git/${MODPY_PYCACHE}/
+lib/gedit/plugins/git/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/git/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/git/${MODPY_PYCACHE}diffrenderer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/git/${MODPY_PYCACHE}diffrenderer.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/git/${MODPY_PYCACHE}viewactivatable.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/git/${MODPY_PYCACHE}viewactivatable.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/git/${MODPY_PYCACHE}windowactivatable.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/git/${MODPY_PYCACHE}windowactivatable.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/git/diffrenderer.py
+lib/gedit/plugins/git/viewactivatable.py
+lib/gedit/plugins/git/windowactivatable.py
 lib/gedit/plugins/gpdefs.py
 lib/gedit/plugins/joinlines.plugin
 lib/gedit/plugins/joinlines.py
