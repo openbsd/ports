@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.10 2013/03/04 18:49:29 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/09/27 14:03:31 jasper Exp $
 bin/telepathy-gabble-xmpp-console
 lib/telepathy/
 lib/telepathy/gabble-0/
 lib/telepathy/gabble-0/lib/
-lib/telepathy/gabble-0/lib/libgabble-plugins-0.16.5.so
+lib/telepathy/gabble-0/lib/libgabble-plugins-0.18.1.so
 @comment lib/telepathy/gabble-0/lib/libgabble-plugins.a
 @comment lib/telepathy/gabble-0/lib/libgabble-plugins.la
 lib/telepathy/gabble-0/lib/libgabble-plugins.so
-lib/telepathy/gabble-0/lib/libwocky-telepathy-gabble-0.16.5.so
+lib/telepathy/gabble-0/lib/libwocky-telepathy-gabble-0.18.1.so
 @comment lib/telepathy/gabble-0/lib/libwocky.a
 @comment lib/telepathy/gabble-0/lib/libwocky.la
 lib/telepathy/gabble-0/lib/libwocky.so
