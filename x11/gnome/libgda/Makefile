@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2013/07/19 11:59:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.82 2013/09/27 07:06:18 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -11,9 +11,8 @@ COMMENT-ui=		GTK+ extension and tools for libgda
 GNOME_PROJECT=		libgda
 GNOME_VERSION=		5.1.2
 
-# NOTE: when GDA_MAJOR changes, increment GDA_MAJOR accordingly and bump:
-# x11/gnome/libgdamm
 GDA_MAJOR=		5.0
+SUBST_VARS=		GDA_MAJOR
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}
@@ -53,8 +52,6 @@ MODULES=		devel/gettext \
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
-
-SUBST_VARS=		GDA_MAJOR
 
 # /libgda-5.1.2_writes_to_HOME/.cache/g-ir-scanner
 PORTHOME=		${WRKDIST}
