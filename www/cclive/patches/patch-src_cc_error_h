@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_cc_error_h,v 1.1 2013/09/27 13:47:35 ajacoutot Exp $
+
+XXX ./cc/error.h:42: error: invalid conversion from 'int' to 'const char*
+XSI versus GNU implementation.
+
+--- src/cc/error.h.orig	Fri Sep 27 15:33:07 2013
++++ src/cc/error.h	Fri Sep 27 15:32:07 2013
+@@ -36,13 +36,13 @@ namespace cc
+ namespace error
+ {
+ 
+-static inline std::string strerror(const int ec)
++static inline int strerror(const int ec)
+ {
+   char buf[256];
+   return strerror_r(ec, buf, sizeof(buf));
+ }
+ 
+-static inline std::string strerror() { return strerror(errno); }
++static inline int strerror() { return strerror(errno); }
+ 
+ typedef boost::tuple<std::string,std::string> type_tuple;
+ typedef boost::error_info<struct tag_tuple,type_tuple> errinfo_tuple;
