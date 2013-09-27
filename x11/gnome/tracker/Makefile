@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.153 2013/09/27 07:39:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.154 2013/09/27 07:47:54 ajacoutot Exp $
 
 EVO_VERSION=		3.8
 
@@ -114,7 +114,7 @@ CONFIGURE_ARGS +=	--disable-miner-evolution
 # XXX make it build until we figure out the full extent of the brain-damage
 CONFIGURE_ARGS +=	--disable-unit-tests
 
-MODGNOME_LDFLAGS=	-Wl,-rpath,${TRUEPREFIX}/lib/tracker-${MAJ_V}
+MODGNOME_LDFLAGS=	-Wl,-rpath,${TRUEPREFIX}/lib/tracker-${TRACKER_VERSION}
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/meta-tracker/
 
@@ -124,8 +124,8 @@ pre-configure:
 		${WRKSRC}/src/tracker-needle/tracker-utils.vala
 
 post-install:
-	rm ${PREFIX}/lib/tracker-${MAJ_V}/extract-modules/*.la
-	rm ${PREFIX}/lib/tracker-${MAJ_V}/writeback-modules/*.la
+	rm ${PREFIX}/lib/tracker-${TRACKER_VERSION}/extract-modules/*.la
+	rm ${PREFIX}/lib/tracker-${TRACKER_VERSION}/writeback-modules/*.la
 #	rm ${PREFIX}/lib/evolution/${EVO_VERSION}/plugins/*.la
 	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.la
 

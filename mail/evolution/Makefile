@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.208 2013/09/27 07:39:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.209 2013/09/27 07:47:54 ajacoutot Exp $
 
 # XXX textproc/highlight
 
@@ -93,7 +93,7 @@ MODGNOME_CPPFLAGS=	-I${X11BASE}/include \
 			$$(krb5-config --cflags) \
 			-DBOGOFILTER_BINARY="\\\"${LOCALBASE}/bin/bogofilter\\\""
 # without --as-needed, evolution takes 20 minutes (yes, 20!) to start
-MODGNOME_LDFLAGS=	-L${X11BASE}/lib -Wl,-rpath,${TRUEPREFIX}/lib/evolution/${R}:${TRUEPREFIX}/lib \
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib -Wl,-rpath,${TRUEPREFIX}/lib/evolution/${EVO_VERSION}:${TRUEPREFIX}/lib \
 				-Wl,--as-needed
 
 LIBTOOL_FLAGS=		--tag=disable-static
@@ -113,7 +113,7 @@ CONFIGURE_ARGS=		--disable-static \
 FAKE_FLAGS=		autostartdir=${PREFIX}/share/examples/evolution/xdg/autostart
 
 post-install:
-	rm ${PREFIX}/lib/evolution/${R}/{modules,plugins}/*.la
-	find ${PREFIX}/share/evolution/${R}/default -perm 444 -exec chmod 644 {} \;
+	rm ${PREFIX}/lib/evolution/${EVO_VERSION}/{modules,plugins}/*.la
+	find ${PREFIX}/share/evolution/${EVO_VERSION}/default -perm 444 -exec chmod 644 {} \;
 
 .include <bsd.port.mk>
