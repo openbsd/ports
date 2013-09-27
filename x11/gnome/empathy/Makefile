@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.140 2013/09/27 14:03:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.141 2013/09/27 16:07:58 ajacoutot Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		3.10.0
 SUBST_VARS=		GNOME_VERSION
+REVISION=		0
 
 CATEGORIES=		net
 
@@ -65,6 +66,10 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			net/telepathy/telepathy-idle \
 			net/telepathy/telepathy-salut \
 			x11/gnome/contacts
+
+# libempathy-gtk/empathy-geoclue-helper.c
+BUILD_DEPENDS +=	geo/geoclue2
+RUN_DEPENDS +=		geo/geoclue2
 
 # gst-pulse (src/empathy-audio-sink.c)
 RUN_DEPENDS +=		multimedia/gstreamer1/plugins-good,-pulse
