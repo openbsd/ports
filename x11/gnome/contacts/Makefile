@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2013/09/13 06:08:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2013/09/27 12:28:08 jasper Exp $
 
 COMMENT=		contacts manager for GNOME
 
 GNOME_PROJECT=		gnome-contacts
-GNOME_VERSION=		3.8.3
-REVISION=		0
+GNOME_VERSION=		3.10
 
 CATEGORIES=		productivity
 
@@ -31,7 +30,7 @@ MODULES=		devel/gettext \
 			devel/dconf
 
 LIB_DEPENDS=		devel/libnotify \
-			net/telepathy/folks>=0.9.1 \
+			net/telepathy/folks>=0.9.5 \
 			x11/gnome/desktop
 
 MODGNOME_DESKTOP_FILE=	Yes
