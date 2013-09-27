@@ -1,10 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/05/14 07:36:13 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/09/27 14:04:23 jasper Exp $
 @conflict metacity-*
 @pkgpath x11/gnome/metacity
 @bin bin/mutter
-@bin bin/mutter-message
-@bin bin/mutter-theme-viewer
-@bin bin/mutter-window-demo
 include/mutter/
 include/mutter/meta/
 include/mutter/meta/atomnames.h
@@ -22,12 +19,13 @@ include/mutter/meta/main.h
 include/mutter/meta/meta-background-actor.h
 include/mutter/meta/meta-background-group.h
 include/mutter/meta/meta-background.h
+include/mutter/meta/meta-cursor-tracker.h
+include/mutter/meta/meta-idle-monitor.h
 include/mutter/meta/meta-plugin.h
 include/mutter/meta/meta-shadow-factory.h
 include/mutter/meta/meta-shaped-texture.h
 include/mutter/meta/meta-window-actor.h
 include/mutter/meta/prefs.h
-include/mutter/meta/preview-widget.h
 include/mutter/meta/screen.h
 include/mutter/meta/theme.h
 include/mutter/meta/types.h
@@ -44,9 +42,6 @@ lib/mutter/plugins/default.so
 lib/pkgconfig/
 lib/pkgconfig/libmutter.pc
 lib/pkgconfig/mutter-plugins.pc
-@man man/man1/mutter-message.1
-@man man/man1/mutter-theme-viewer.1
-@man man/man1/mutter-window-demo.1
 @man man/man1/mutter.1
 share/GConf/gsettings/mutter-schemas.convert
 share/applications/mutter.desktop
@@ -78,6 +73,7 @@ share/gtk-doc/html/meta/deprecated-api-index.html
 share/gtk-doc/html/meta/home.png
 share/gtk-doc/html/meta/index.html
 share/gtk-doc/html/meta/index.sgml
+share/gtk-doc/html/meta/left-insensitive.png
 share/gtk-doc/html/meta/left.png
 share/gtk-doc/html/meta/meta-Common.html
 share/gtk-doc/html/meta/meta-Errors.html
@@ -91,9 +87,11 @@ share/gtk-doc/html/meta/meta-Utility-functions.html
 share/gtk-doc/html/meta/meta.devhelp2
 share/gtk-doc/html/meta/mutter-overview.html
 share/gtk-doc/html/meta/object-tree.html
+share/gtk-doc/html/meta/right-insensitive.png
 share/gtk-doc/html/meta/right.png
 share/gtk-doc/html/meta/running-mutter.html
 share/gtk-doc/html/meta/style.css
+share/gtk-doc/html/meta/up-insensitive.png
 share/gtk-doc/html/meta/up.png
 share/locale/am/LC_MESSAGES/mutter.mo
 share/locale/ar/LC_MESSAGES/mutter.mo
@@ -143,6 +141,7 @@ share/locale/is/LC_MESSAGES/mutter.mo
 share/locale/it/LC_MESSAGES/mutter.mo
 share/locale/ja/LC_MESSAGES/mutter.mo
 share/locale/ka/LC_MESSAGES/mutter.mo
+share/locale/kk/LC_MESSAGES/mutter.mo
 share/locale/kn/LC_MESSAGES/mutter.mo
 share/locale/ko/LC_MESSAGES/mutter.mo
 share/locale/ku/LC_MESSAGES/mutter.mo
@@ -196,9 +195,6 @@ share/locale/yo/LC_MESSAGES/mutter.mo
 share/locale/zh_CN/LC_MESSAGES/mutter.mo
 share/locale/zh_HK/LC_MESSAGES/mutter.mo
 share/locale/zh_TW/LC_MESSAGES/mutter.mo
-share/mutter/
-share/mutter/icons/
-share/mutter/icons/mutter-window-demo.png
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

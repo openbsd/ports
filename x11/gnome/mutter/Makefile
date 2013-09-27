@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2013/08/06 18:10:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2013/09/27 14:04:23 jasper Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		3.8.4
+GNOME_VERSION=		3.10.0.1
 
 SHARED_LIBS +=  mutter                    0.1 # 0.0
 
@@ -20,6 +20,7 @@ WANTLIB += gtk-3 harfbuzz json-glib-1.0 ltdl
 WANTLIB += m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs startup-notification-1 vorbis
 WANTLIB += vorbisfile xcb xcb-aux xcb-render xcb-shm z
+WANTLIB += dbus-glib-1 gnome-desktop-3 upower-glib xkbfile
 
 MODULES=		devel/dconf \
 			devel/gettext \
@@ -29,8 +30,10 @@ MODGNOME_TOOLS=		gi
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			devel/startup-notification \
-			graphics/clutter/core>=1.14.0 \
-			devel/gobject-introspection
+			graphics/clutter/core>=1.16.0 \
+			devel/gobject-introspection \
+			x11/gnome/desktop \
+			sysutils/upower
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			x11/gnome/zenity
