@@ -1,0 +1,43 @@
+$OpenBSD: patch-src_simple-scan_vala,v 1.1 2013/09/27 08:40:58 ajacoutot Exp $
+
+No (g)udev under OpenBSD.
+
+--- src/simple-scan.vala.orig	Fri Sep 27 10:33:59 2013
++++ src/simple-scan.vala	Fri Sep 27 10:34:10 2013
+@@ -31,7 +31,6 @@ public class SimpleScan : Gtk.Application
+ 
+     private ScanDevice? default_device = null;
+     private bool have_devices = false;
+-    private GUdev.Client udev_client;
+     private UserInterface ui;
+     private Scanner scanner;
+     private Book book;
+@@ -63,8 +62,6 @@ public class SimpleScan : Gtk.Application
+         scanner.scanning_changed.connect (scanner_scanning_changed_cb);
+ 
+         string[]? subsystems = { "usb", null };
+-        udev_client = new GUdev.Client (subsystems);
+-        udev_client.uevent.connect (on_uevent);
+ 
+         if (default_device != null)
+         {
+@@ -88,7 +85,6 @@ public class SimpleScan : Gtk.Application
+         base.shutdown ();
+         book = null;
+         ui = null;
+-        udev_client = null;
+         scanner.free ();
+     }
+ 
+@@ -448,11 +444,6 @@ public class SimpleScan : Gtk.Application
+         log_file.printf ("[%+.2fs] %s %s\n", log_timer.elapsed (), prefix, message);
+         if (debug_enabled)
+             stderr.printf ("[%+.2fs] %s %s\n", log_timer.elapsed (), prefix, message);
+-    }
+-
+-    private void on_uevent (GUdev.Client client, string action, GUdev.Device device)
+-    {
+-        scanner.redetect ();
+     }
+ 
+     private static void fix_pdf (string filename) throws Error
