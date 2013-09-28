@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/05/31 15:34:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2013/09/28 08:50:42 ajacoutot Exp $
 
 # XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
 CFLAGS +=	"-DG_CONST_RETURN=const"
@@ -7,12 +7,10 @@ COMMENT =	library for writing single instance GTK+2 applications
 
 GNOME_PROJECT =	libunique
 GNOME_VERSION =	1.1.6
-REVISION=	6
+REVISION=	7
 
 SHARED_LIBS +=  unique-1.0           2.0      # .100.6
 CATEGORIES =	devel
-
-HOMEPAGE =	http://live.gnome.org/LibUnique
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes

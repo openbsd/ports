@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.22 2013/08/21 16:20:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2013/09/28 08:51:12 ajacoutot Exp $
 
 COMMENT=	input assistive technology
 
 GNOME_PROJECT=	caribou
 GNOME_VERSION=	0.4.12
+REVISION=	0
 
 SHARED_LIBS +=  caribou                   0.0 # 0.0
-
-HOMEPAGE=	https://live.gnome.org/Caribou/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/09/27 17:49:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2013/09/28 08:50:35 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		social web services integration framework
 
 GNOME_PROJECT=		libsocialweb
 GNOME_VERSION=		0.25.21
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  socialweb-client          2.0 # 2.0
 SHARED_LIBS +=  socialweb-keyfob          0.0 # 0.0

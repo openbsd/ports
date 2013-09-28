@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.57 2013/09/27 07:16:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2013/09/28 08:51:32 ajacoutot Exp $
 
 COMMENT=		GNOME desktop sharing server
 
 GNOME_PROJECT=		vino
 GNOME_VERSION=		3.10.0
+REVISION=		0
 
 CATEGORIES=		net
-
-HOMEPAGE=		https://live.gnome.org/Vino
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

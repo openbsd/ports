@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.10 2013/04/16 13:17:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2013/09/28 08:50:43 ajacoutot Exp $
 
 COMMENT =	library for writing single instance GTK+3 applications
 
 GNOME_PROJECT =	libunique
 GNOME_VERSION =	3.0.2
-REVISION=		0
+REVISION=	1
 
 PKGNAME=	${GNOME_PROJECT}3-${GNOME_VERSION}
 
 SHARED_LIBS +=  unique-3.0                0.0 # 0.0
 CATEGORIES =	devel
-
-HOMEPAGE =	http://live.gnome.org/LibUnique
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes

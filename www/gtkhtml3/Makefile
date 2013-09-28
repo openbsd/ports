@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2013/09/27 17:49:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2013/09/28 08:50:39 ajacoutot Exp $
 
 # XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
 CFLAGS +=	"-DG_CONST_RETURN=const"
@@ -14,9 +14,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 PKGNAME=		gtkhtml3-${VERSION}
 
-REVISION=		7
-
-HOMEPAGE=		http://www.gnome.org/
+REVISION=		8
 
 SHARED_LIBS +=  gtkhtml-3.14         4.0      # 20.1
 SHARED_LIBS +=  gtkhtml-editor-3.14  0.0      # unknown

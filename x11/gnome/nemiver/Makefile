@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/06/01 17:53:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2013/09/28 08:51:26 ajacoutot Exp $
 
 BROKEN=		runtime issue (threads related?)
 
@@ -11,8 +11,6 @@ GNOME_VERSION=	0.9.4
 REVISION=	1
 
 CATEGORIES=	devel
-
-HOMEPAGE=	http://projects.gnome.org/nemiver/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

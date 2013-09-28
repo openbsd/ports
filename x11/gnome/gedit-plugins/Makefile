@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.68 2013/09/27 14:40:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.69 2013/09/28 08:51:18 ajacoutot Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
 GNOME_VERSION=		3.10.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		editors
-
-HOMEPAGE=		http://live.gnome.org/Gedit/Plugins
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2013/06/01 20:23:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2013/09/28 08:51:24 ajacoutot Exp $
 
 COMMENT=		MIME and application database for GNOME
 
 GNOME_PROJECT=		gnome-mime-data
 GNOME_VERSION=		2.18.0
 CATEGORIES=		x11
-REVISION=		6
+REVISION=		7
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

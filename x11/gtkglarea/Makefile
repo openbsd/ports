@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2013/03/11 11:46:13 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2013/09/28 08:50:34 ajacoutot Exp $
 
 COMMENT=		OpenGL widget for GTK+2 GUI toolkit
 
 GNOME_PROJECT=		gtkglarea
 GNOME_VERSION=		2.0.1
-REVISION=	1
+REVISION=		2
 
 SHARED_LIBS +=  gtkgl-2.0      0.0               # .1.1
 

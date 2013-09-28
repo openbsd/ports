@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:09 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/09/28 08:50:44 ajacoutot Exp $
 
 COMMENT=	GUI and non-GUI C-sharp code library
 
@@ -6,10 +6,9 @@ COMMENT=	GUI and non-GUI C-sharp code library
 # as it copies the dll from this package and bundle them in its own.
 GNOME_PROJECT=	hyena
 GNOME_VERSION=	0.5
+REVISION=	0
 
 CATEGORIES=	devel
-
-HOMEPAGE=	http://live.gnome.org/Hyena
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes

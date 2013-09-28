@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2013/05/31 15:34:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.108 2013/09/28 08:50:43 ajacoutot Exp $
 
 # Don't pull in x11/py-gtk2 on these archs; build fails with binutils 2.15
 NOT_FOR_ARCHS-python=	mips64 mips64el
@@ -14,12 +14,10 @@ SHARED_LIBS+=	vte	14.1    # 2609.0
 FULLPKGNAME-main=	vte-${GNOME_VERSION}
 FULLPKGNAME-python= 	py-${DISTNAME}
 
-REVISION-main =		10
-REVISION-python = 	7
+REVISION-main =		11
+REVISION-python = 	8
 
 CATEGORIES=		devel
-
-HOMEPAGE=		http://www.gnome.org/
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>

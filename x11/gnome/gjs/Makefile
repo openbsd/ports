@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/09/26 06:29:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2013/09/28 08:51:19 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,12 +6,11 @@ COMMENT=		Javascript bindings for GNOME
 
 GNOME_PROJECT=		gjs
 GNOME_VERSION=		1.38.1
+REVISION=		0
 
 SHARED_LIBS +=  gjs                  3.0      # 0.0
 
 CATEGORIES=		devel
-
-HOMEPAGE=		http://live.gnome.org/Gjs
 
 # MIT
 # console modules (modules/console.c) and stack printer (gjs/stack.c)

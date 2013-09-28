@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/09/26 07:03:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2013/09/28 08:51:18 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -6,6 +6,7 @@ COMMENT=		getting started with GNOM
 
 GNOME_PROJECT=		gnome-getting-started-docs
 GNOME_VERSION=		3.10.0.1
+REVISION=		0
 
 # CC Attribution-ShareAlike 3.0 Unported
 PERMIT_PACKAGE_CDROM=	Yes

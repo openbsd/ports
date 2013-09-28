@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/09/27 09:46:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2013/09/28 08:50:41 ajacoutot Exp $
 
 EVO_VERSION=		3.10
 SUBST_VARS +=		EVO_VERSION
@@ -9,13 +9,12 @@ COMMENT=		evolution connector for MS Exchange via EWS
 
 GNOME_PROJECT=		evolution-ews
 GNOME_VERSION=		3.10.0
+REVISION=		0
 
 CATEGORIES=		mail
 
 SHARED_LIBS +=  eews-1.2             1.0      # unknown
 SHARED_LIBS +=  ewsutils             1.0      # unknown
-
-HOMEPAGE=		http://projects.gnome.org/evolution/
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>

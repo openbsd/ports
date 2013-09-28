@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2013/09/27 10:25:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2013/09/28 08:51:19 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,12 +6,11 @@ COMMENT=		binary editor
 
 GNOME_PROJECT=		ghex
 GNOME_VERSION=		3.10.0
+REVISION=		0
 
 SHARED_LIBS +=  gtkhex-3                  0.0 # 0.0
 
 CATEGORIES=		sysutils editors
-
-HOMEPAGE=		https://live.gnome.org/Ghex
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

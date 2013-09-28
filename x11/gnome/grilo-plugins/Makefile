@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/09/27 10:19:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2013/09/28 08:51:19 ajacoutot Exp $
 
 TRACKER_VERSION=0.16
 
@@ -8,14 +8,12 @@ COMMENT=	plugins for Grilo
 
 GNOME_PROJECT=	grilo-plugins
 GNOME_VERSION=	0.2.9
-REVISION=	0
+REVISION=	1
 
 API=		0.2
 SUBST_VARS=	API
 
 CATEGORIES+=	multimedia
-
-HOMEPAGE=	http://live.gnome.org/Grilo
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.62 2013/06/04 20:16:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2013/09/28 08:51:33 ajacoutot Exp $
 
 COMMENT=		dialogs for GNOME
 
 GNOME_PROJECT=		zenity
 GNOME_VERSION=		3.8.0
-REVISION=		1
-
-HOMEPAGE=		https://live.gnome.org/Zenity
+REVISION=		2
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes

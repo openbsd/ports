@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2013/04/16 13:17:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2013/09/28 08:51:23 ajacoutot Exp $
 
 COMMENT=	GLib/GObject wrapper for SkyDrive and Hotmail REST APIs
 
 GNOME_PROJECT=	libzapojit
 GNOME_VERSION=	0.0.3
-REVISION=	0
+REVISION=	1
 
 API_V=		0.0
 SUBST_VARS=	API_V
 
 SHARED_LIBS +=  zapojit-0.0               0.0 # 0.0
-
-HOMEPAGE=	https://live.gnome.org/Zapojit
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes

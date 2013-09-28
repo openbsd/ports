@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.28 2013/09/26 08:22:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2013/09/28 08:50:38 ajacoutot Exp $
 
 COMMENT=		dbus debugger
 
 GNOME_VERSION=		0.3.7
 GNOME_PROJECT=		d-feet
 MODPY_EGG_VERSION=	${GNOME_VERSION}
+REVISION=		0
 
 CATEGORIES=		sysutils
-
-HOMEPAGE=		https://wiki.gnome.org/DFeet/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

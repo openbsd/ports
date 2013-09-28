@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2013/07/11 18:28:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2013/09/28 08:51:18 ajacoutot Exp $
 
 COMMENT=	LaTeX plugin for Gedit
 
 GNOME_PROJECT=	gedit-latex
 GNOME_VERSION=	3.8.0
+REVISION=	0
 
 CATEGORIES=	editors print
-
-HOMEPAGE=	https://live.gnome.org/Gedit/LaTeXPlugin
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes

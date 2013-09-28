@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2013/08/29 07:20:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2013/09/28 08:50:45 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,12 +6,11 @@ COMMENT=		Google Data API based Glib client library
 
 GNOME_PROJECT=		libgdata
 GNOME_VERSION=		0.14.0
+REVISION=		0
 
 SHARED_LIBS +=  gdata                16.1     # 18.2
 
 CATEGORIES=		devel net
-
-HOMEPAGE=		http://live.gnome.org/libgdata
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>

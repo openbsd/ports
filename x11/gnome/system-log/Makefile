@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2013/05/31 15:35:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2013/09/28 08:51:29 ajacoutot Exp $
 
 COMMENT=		system log viewer for GNOME
 
 GNOME_PROJECT=		gnome-system-log
 GNOME_VERSION=		3.8.1
-REVISION=		0
+REVISION=		1
 
 # GPLv2+ - GFDLv1.1
 PERMIT_PACKAGE_CDROM=	Yes

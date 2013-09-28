@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2013/09/27 16:31:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.105 2013/09/28 08:50:38 ajacoutot Exp $
 
 # add to meta/gnome,-extra when un-BROKEN
 BROKEN=		needs webkit2
@@ -9,7 +9,7 @@ COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	3.8.2
-REVISION=	1
+REVISION=	2
 
 # NOTE: when M changes, increment M accordingly
 M=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -17,8 +17,6 @@ SUBST_VARS=	M
 
 CATEGORIES=	www
 USE_GROFF =	Yes
-
-HOMEPAGE=	http://projects.gnome.org/epiphany/
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>

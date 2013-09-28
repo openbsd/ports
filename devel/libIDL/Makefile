@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.38 2013/03/11 10:50:09 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2013/09/28 08:50:45 ajacoutot Exp $
 
 COMMENT=		IDL parsing library
 
 GNOME_PROJECT=		libIDL
 GNOME_VERSION=		0.8.14
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=	IDL-2                0.1      # .0.0
 
 CATEGORIES=		devel
-
-HOMEPAGE=		http://www.gnome.org/
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>

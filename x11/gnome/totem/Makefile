@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2013/09/27 09:59:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.110 2013/09/28 08:51:30 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,12 +6,11 @@ COMMENT=		official media player for GNOME
 
 GNOME_PROJECT=		totem
 GNOME_VERSION=		3.10.0
+REVISION=		0
 
 SHARED_LIBS +=  totem                0.0      # unknown
 
 CATEGORIES=		multimedia
-
-HOMEPAGE=		http://projects.gnome.org/totem/
 
 # GPLv2 with exception clause - LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes

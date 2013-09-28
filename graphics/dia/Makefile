@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2013/06/04 18:41:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.97 2013/09/28 08:50:41 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,11 +6,9 @@ COMMENT=	technical diagrams drawing tool
 
 GNOME_PROJECT=	dia
 GNOME_VERSION=	0.97.2
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	graphics
-
-HOMEPAGE=	http://live.gnome.org/Dia/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 

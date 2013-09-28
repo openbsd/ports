@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.10 2013/04/16 13:17:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2013/09/28 08:50:45 ajacoutot Exp $
 
 COMMENT=	GObject based collection library
 
 GNOME_PROJECT=	libgee
 GNOME_VERSION=	0.6.8
 PKGNAME=	${GNOME_PROJECT}06-${GNOME_VERSION}
+REVISION=	0
 
 SHARED_LIBS +=  gee 1.0 # .2.0
 
 CATEGORIES=	devel
-
-HOMEPAGE=	http://live.gnome.org/Libgee
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>

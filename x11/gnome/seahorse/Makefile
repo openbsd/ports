@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.87 2013/09/26 11:23:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2013/09/28 08:51:27 ajacoutot Exp $
 
 COMMENT=		GNOME encryption interface
 
 GNOME_PROJECT=		seahorse
 GNOME_VERSION=		3.10.0
+REVISION=		0
 
 CATEGORIES=		security
-
-HOMEPAGE=		http://projects.gnome.org/seahorse/
 
 # GPLv2/GFDLv1.1
 PERMIT_PACKAGE_CDROM=	Yes

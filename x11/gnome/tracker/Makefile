@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.154 2013/09/27 07:47:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.155 2013/09/28 08:51:31 ajacoutot Exp $
 
 EVO_VERSION=		3.8
 
@@ -8,7 +8,7 @@ COMMENT=		powerful desktop search tool and indexer
 
 GNOME_PROJECT=		tracker
 GNOME_VERSION=		0.16.2
-REVISION=		3
+REVISION=		4
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
@@ -28,8 +28,6 @@ SHARED_LIBS +=  tracker-data         3.0      # 1600.0
 SHARED_LIBS +=  tracker-sparql-0.16  0.0      # 1600.0
 SHARED_LIBS +=  tracker-extract-0.16 0.0      # 1600.0
 SHARED_LIBS +=  tracker-miner-0.16   0.0      # 1600.0
-
-HOMEPAGE=		http://projects.gnome.org/tracker/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

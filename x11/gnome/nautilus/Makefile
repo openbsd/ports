@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.132 2013/09/27 07:09:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.133 2013/09/28 08:51:25 ajacoutot Exp $
 
 COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		3.10.0
+REVISION=		0
 
 SHARED_LIBS +=  nautilus-extension   3.0      # 5.0
 
 CATEGORIES=		x11
-
-HOMEPAGE=		http://www.gnome.org/projects/nautilus/
 
 # GPLv2 - LGPLv2 - GFPLv1.1
 PERMIT_PACKAGE_CDROM=	Yes

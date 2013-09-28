@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.95 2013/09/26 12:33:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.96 2013/09/28 08:51:33 ajacoutot Exp $
 
 COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
 GNOME_VERSION=		3.10.0
+REVISION=		0
 
 SHARED_LIBS +=  yelp                      0.0 # 0.0
-
-HOMEPAGE=		https://projects.gnome.org/yelp/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

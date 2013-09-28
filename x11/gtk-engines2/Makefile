@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2013/03/11 11:46:12 espie Exp $
+# $OpenBSD: Makefile,v 1.55 2013/09/28 08:50:37 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,11 +10,9 @@ EXTRACT_SUFX=		.tar.bz2
 
 # warning: PKGNAME does not default to ${DISTNAME}
 PKGNAME=		gtk-engines2-${GNOME_VERSION}
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		x11
-
-HOMEPAGE=		http://www.gnome.org/
 
 # LGPLv2.1/GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

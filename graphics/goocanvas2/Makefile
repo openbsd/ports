@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.13 2013/04/16 13:17:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2013/09/28 08:50:42 ajacoutot Exp $
 
 COMMENT=		canvas widget for GTK+ based on Cairo
 
 GNOME_PROJECT=		goocanvas
 GNOME_VERSION=		2.0.1
 PKGNAME=		goocanvas2-${GNOME_VERSION}
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=  goocanvas-2.0             0.0 # 11.0
 CATEGORIES=		graphics
-
-HOMEPAGE=		http://live.gnome.org/GooCanvas
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes

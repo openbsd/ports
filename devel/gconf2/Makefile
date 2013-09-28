@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2013/09/27 17:48:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2013/09/28 08:50:44 ajacoutot Exp $
 
 COMMENT=	configuration database system for GNOME
 
@@ -6,13 +6,11 @@ GNOME_PROJECT=	GConf
 GNOME_VERSION=	3.2.6
 PKGNAME=	gconf2-${GNOME_VERSION}
 
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS +=	gconf-2              6.2      # 5.5
 
 CATEGORIES=	devel
-
-HOMEPAGE=	http://www.gnome.org/projects/gconf/
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>

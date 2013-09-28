@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.74 2013/09/27 10:37:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2013/09/28 08:51:14 ajacoutot Exp $
 
 COMMENT=	API documentation browser for GNOME
 
 GNOME_PROJECT=	devhelp
 GNOME_VERSION=	3.8.2
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS +=  devhelp-3                 0.0 # 0.0
 
 CATEGORIES=	textproc
-
-HOMEPAGE=	http://live.gnome.org/devhelp
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

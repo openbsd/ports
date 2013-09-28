@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.89 2013/09/02 09:44:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.90 2013/09/28 08:50:39 ajacoutot Exp $
 
 COMMENT=		spreadsheet application for GNOME
 
 GNOME_PROJECT=		gnumeric
 GNOME_VERSION=		1.12.7
+REVISION=		0
 
 CATEGORIES=    		math
-
-HOMEPAGE=		http://www.gnome.org/projects/gnumeric/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

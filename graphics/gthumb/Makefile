@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2013/07/10 17:26:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.73 2013/09/28 08:50:40 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,13 +6,12 @@ COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
 GNOME_VERSION=	3.2.3
+REVISION=	0
 
 API_V=		${GNOME_VERSION:R}
 SUBST_VARS=	API_V
 
 CATEGORIES=	graphics
-
-HOMEPAGE=	http://live.gnome.org/gthumb
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>

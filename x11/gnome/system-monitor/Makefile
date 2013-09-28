@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2013/05/31 15:35:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2013/09/28 08:51:30 ajacoutot Exp $
 
 # XXX when fixed, add x11/gnome/system-monitor to meta/gnome,-main
 BROKEN=		runtime breakage, our libgtop2 does not implement procopenfiles
@@ -7,7 +7,7 @@ COMMENT=	sytem monitor for GNOME
 
 GNOME_PROJECT=	gnome-system-monitor
 GNOME_VERSION=	3.8.2.1
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	sysutils
 

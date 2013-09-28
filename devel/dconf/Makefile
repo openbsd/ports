@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2013/09/26 07:05:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2013/09/28 08:50:36 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -11,12 +11,13 @@ GNOME_VERSION=		0.18.0
 PKGNAME-main=		${DISTNAME}
 PKGNAME-editor=		dconf-editor-${GNOME_VERSION}
 
+REVISION-main=		0
+REVISION-editor=	0
+
 SHARED_LIBS +=		dconf        1.0 # 1.0.0
 SHARED_LIBS +=		dconf-dbus-1 1.0 # 1.0.0
 
 CATEGORIES=		devel
-
-HOMEPAGE=		http://live.gnome.org/dconf
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/06/28 09:59:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2013/09/28 08:51:22 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	C++ interface to the graphics library for GNOME
 GNOME_PROJECT=	libgnomecanvasmm
 GNOME_VERSION=	2.26.0
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	9
+REVISION=	10
 
 SHARED_LIBS +=  gnomecanvasmm-2.6         1.0 # 1.6
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2013/06/23 11:41:14 landry Exp $
+# $OpenBSD: Makefile,v 1.38 2013/09/28 08:51:19 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,14 +6,12 @@ COMMENT=		desktop note-taking application written in C++
 
 GNOME_PROJECT=		gnote
 GNOME_VERSION=		3.8.1
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=	gnote-3.8                 0.0 # 0.0
 SHARED_LIBS +=	gnote                     0.0 # 0.0
 
 SUBST_VARS=		GNOME_VERSION
-
-HOMEPAGE=		http://live.gnome.org/Gnote
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes

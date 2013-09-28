@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:46:12 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/09/28 08:50:37 ajacoutot Exp $
 
 COMMENT=		GTK+ Object Builder
 
 GNOME_PROJECT=		gob2
 GNOME_VERSION=		2.0.19
+REVISION=		0
 
 CATEGORIES=		x11 devel
-
-HOMEPAGE=		http://www.gnome.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

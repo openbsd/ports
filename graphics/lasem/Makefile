@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2013/05/31 15:34:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2013/09/28 08:50:40 ajacoutot Exp $
 
 COMMENT=	MathML and SVG rendering library
 
 GNOME_PROJECT=	lasem
 GNOME_VERSION=	0.4.1
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  lasem-0.4            0.0      # 4.1
 
 CATEGORIES=	graphics devel
-
-HOMEPAGE=	https://live.gnome.org/Lasem
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>

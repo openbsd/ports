@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.109 2013/09/27 07:45:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.110 2013/09/28 08:51:17 ajacoutot Exp $
 
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
 GNOME_VERSION=		3.10.0
+REVISION=		0
 
 CATEGORIES=		editors
-
-HOMEPAGE=		http://projects.gnome.org/gedit/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/09/27 05:51:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2013/09/28 08:51:28 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,10 +6,9 @@ COMMENT=	GnuPG extension for nautilus(1)
 
 GNOME_PROJECT=	seahorse-nautilus
 GNOME_VERSION=	3.10.0
+REVISION=	0
 
 CATEGORIES=	security
-
-HOMEPAGE=	http://projects.gnome.org/seahorse/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2013/05/31 15:35:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/09/28 08:51:28 ajacoutot Exp $
 
 COMMENT=		GNOME tool to search files
 
 GNOME_PROJECT=		gnome-search-tool
 GNOME_VERSION=		3.6.0
-REVISION=		0
+REVISION=		1
 
 # GPLv2 - GFDLv1.1
 PERMIT_PACKAGE_CDROM=	Yes

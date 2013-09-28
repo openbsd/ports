@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:46:10 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/09/28 08:51:18 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	themes design plugin for Gedit
 
 GNOME_PROJECT=	gedit-cossa
 GNOME_VERSION=	3.2.0
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	editors
 

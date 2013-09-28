@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2013/09/18 19:18:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2013/09/28 08:50:37 ajacoutot Exp $
 
 COMMENT=		VNC viewer widget for GTK
 
 GNOME_PROJECT=		gtk-vnc
 GNOME_VERSION=		0.5.3
+REVISION=		0
 
 PKGNAME=		${DISTNAME}
 
@@ -11,8 +12,6 @@ SHARED_LIBS +=  gvnc-1.0             0.1      # 0.1
 SHARED_LIBS +=  gtk-vnc-2.0          0.1      # 0.2
 
 CATEGORIES=		x11 net
-
-HOMEPAGE=		http://live.gnome.org/gtk-vnc
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes

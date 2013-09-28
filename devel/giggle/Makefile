@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2013/05/31 15:34:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2013/09/28 08:50:44 ajacoutot Exp $
 
 COMMENT=	gtk-based git repository viewer
 
 GNOME_VERSION=	0.6.2
 GNOME_PROJECT=	giggle
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel x11
 
@@ -12,8 +12,6 @@ SHARED_LIBS +=  giggle               0.0      # 0.0
 SHARED_LIBS +=  giggle-git           0.0      # 0.0
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
-
-HOMEPAGE=	http://live.gnome.org/giggle
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

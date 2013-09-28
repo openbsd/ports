@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2013/06/21 22:38:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2013/09/28 08:50:39 ajacoutot Exp $
 
 COMMENT=		Easy Publish and Consume library
 
 GNOME_PROJECT=		libepc
 GNOME_VERSION=		0.4.4
-REVISION=		0
+REVISION=		1
 SHARED_LIBS +=  epc-1.0              0.0      # 3.0
 SHARED_LIBS +=  epc-ui-1.0           0.0      # 3.0
 CATEGORIES=		net
-
-HOMEPAGE=		http://live.gnome.org/libepc/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes

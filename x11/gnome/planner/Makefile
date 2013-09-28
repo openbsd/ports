@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.61 2013/09/27 17:49:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2013/09/28 08:51:27 ajacoutot Exp $
 
 COMMENT=		project management application
 
 GNOME_PROJECT=		planner
 GNOME_VERSION=		0.14.6
 EPOCH=			0
-REVISION=		0
+REVISION=		1
 
 # Fedora patches as of 2013-08-04 04:26:11 (GMT)
 MASTER_SITES0=		http://pkgs.fedoraproject.org/cgit/planner.git/plain/
@@ -30,8 +30,6 @@ PATCHFILES +=		$p.patch:0
 CATEGORIES=		productivity
 
 SHARED_LIBS +=  planner-1            0.0      # .0.0
-
-HOMEPAGE=		http://live.gnome.org/Planner
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes

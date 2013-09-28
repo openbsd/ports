@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/09/27 07:30:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2013/09/28 08:51:26 ajacoutot Exp $
 
 TRACKER_VERSION=	0.16
 
@@ -6,10 +6,9 @@ COMMENT=		access, organize and share your photos on GNOME
 
 GNOME_PROJECT=		gnome-photos
 GNOME_VERSION=		3.10.0
+REVISION=		0
 
 CATEGORIES=		graphics
-
-HOMEPAGE=		https://live.gnome.org/GnomePhotos
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
