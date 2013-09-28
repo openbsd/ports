@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/03/06 22:57:03 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/09/28 17:52:14 fgsch Exp $
 lib/python${MODPY_VERSION}/site-packages/Jinja2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Jinja2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Jinja2-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -10,18 +10,8 @@ lib/python${MODPY_VERSION}/site-packages/Jinja2-${MODPY_EGG_VERSION}-py${MODPY_V
 lib/python${MODPY_VERSION}/site-packages/jinja2/
 lib/python${MODPY_VERSION}/site-packages/jinja2/__init__.py
 lib/python${MODPY_VERSION}/site-packages/jinja2/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/jinja2/_debugsupport.c
-lib/python${MODPY_VERSION}/site-packages/jinja2/_markupsafe/
-lib/python${MODPY_VERSION}/site-packages/jinja2/_markupsafe/__init__.py
-lib/python${MODPY_VERSION}/site-packages/jinja2/_markupsafe/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/jinja2/_markupsafe/_bundle.py
-lib/python${MODPY_VERSION}/site-packages/jinja2/_markupsafe/_bundle.pyc
-lib/python${MODPY_VERSION}/site-packages/jinja2/_markupsafe/_constants.py
-lib/python${MODPY_VERSION}/site-packages/jinja2/_markupsafe/_constants.pyc
-lib/python${MODPY_VERSION}/site-packages/jinja2/_markupsafe/_native.py
-lib/python${MODPY_VERSION}/site-packages/jinja2/_markupsafe/_native.pyc
-lib/python${MODPY_VERSION}/site-packages/jinja2/_markupsafe/tests.py
-lib/python${MODPY_VERSION}/site-packages/jinja2/_markupsafe/tests.pyc
+lib/python${MODPY_VERSION}/site-packages/jinja2/_compat.py
+lib/python${MODPY_VERSION}/site-packages/jinja2/_compat.pyc
 lib/python${MODPY_VERSION}/site-packages/jinja2/_stringdefs.py
 lib/python${MODPY_VERSION}/site-packages/jinja2/_stringdefs.pyc
 lib/python${MODPY_VERSION}/site-packages/jinja2/bccache.py
@@ -65,6 +55,8 @@ lib/python${MODPY_VERSION}/site-packages/jinja2/testsuite/__init__.py
 lib/python${MODPY_VERSION}/site-packages/jinja2/testsuite/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/jinja2/testsuite/api.py
 lib/python${MODPY_VERSION}/site-packages/jinja2/testsuite/api.pyc
+lib/python${MODPY_VERSION}/site-packages/jinja2/testsuite/bytecode_cache.py
+lib/python${MODPY_VERSION}/site-packages/jinja2/testsuite/bytecode_cache.pyc
 lib/python${MODPY_VERSION}/site-packages/jinja2/testsuite/core_tags.py
 lib/python${MODPY_VERSION}/site-packages/jinja2/testsuite/core_tags.pyc
 lib/python${MODPY_VERSION}/site-packages/jinja2/testsuite/debug.py

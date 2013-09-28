@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:44:48 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/09/28 17:52:14 fgsch Exp $
 
 COMMENT =		fast, optionally sandboxed, Python template engine
 
-MODPY_EGG_VERSION =	2.6
+MODPY_EGG_VERSION =	2.7.1
 DISTNAME =		Jinja2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		2
 
 CATEGORIES =		www devel
 
@@ -19,9 +18,9 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		${MASTER_SITE_PYPI:=J/Jinja2/}
 
 MODULES =		lang/python
+RUN_DEPENDS =		textproc/py-MarkupSafe
+TEST_DEPENDS =		${RUN_DEPENDS}
 
 MODPY_SETUPTOOLS =	Yes
-
-TEST_DEPENDS =	devel/py-nose
 
 .include <bsd.port.mk>
