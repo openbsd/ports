@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.10 2010/10/23 11:10:18 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2013/09/28 08:47:58 ajacoutot Exp $
 
 DIST_SUBDIR=		gnome
-
-HOMEPAGE?=		http://www.gnome.org/
 
 MAINTAINER?=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>

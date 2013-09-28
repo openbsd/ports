@@ -1,10 +1,11 @@
-# $OpenBSD: gnome.port.mk,v 1.68 2013/09/26 07:50:43 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.69 2013/09/28 08:47:58 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
 .if (defined(GNOME_PROJECT) && defined(GNOME_VERSION))
 DISTNAME=		${GNOME_PROJECT}-${GNOME_VERSION}
 VERSION=		${GNOME_VERSION}
+HOMEPAGE?=		https://wiki.gnome.org/
 MASTER_SITES?=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/}
 EXTRACT_SUFX?=		.tar.xz
 CATEGORIES+=		x11/gnome
