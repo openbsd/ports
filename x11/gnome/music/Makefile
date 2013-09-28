@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/09/27 10:39:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2013/09/28 06:52:02 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -29,6 +29,8 @@ MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_ADJ_FILES=	gnome-music.in
 
 LIB_DEPENDS=		x11/gtk+3
+
+BUILD_DEPENDS=		x11/gnome/grilo
 
 RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 			x11/dbus-python${MODPY_FLAVOR} \
