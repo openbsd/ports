@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/03/30 07:14:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/09/28 07:25:08 ajacoutot Exp $
 include/libgdl-3.0/
 include/libgdl-3.0/gdl/
 include/libgdl-3.0/gdl/gdl-dock-bar.h
@@ -174,6 +174,9 @@ share/locale/sv/LC_MESSAGES/gdl-3.mo
 share/locale/te/
 share/locale/te/LC_MESSAGES/
 share/locale/te/LC_MESSAGES/gdl-3.mo
+share/locale/tg/
+share/locale/tg/LC_MESSAGES/
+share/locale/tg/LC_MESSAGES/gdl-3.mo
 share/locale/th/
 share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/gdl-3.mo
