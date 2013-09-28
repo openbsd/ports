@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/09/28 08:51:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2013/09/28 10:47:45 ajacoutot Exp $
 
 COMMENT=	library for bits of crypto UI and parsing
 
@@ -30,9 +30,6 @@ MODULES=	devel/gettext \
 MODGNOME_TOOLS=		gi vala
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
-
-# asn1Parser(1) is used by configure for parsing ASN.1 files
-BUILD_DEPENDS += security/libtasn1
 
 RUN_DEPENDS=	misc/shared-mime-info
 
