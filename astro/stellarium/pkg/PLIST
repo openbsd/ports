@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/09/08 15:24:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/09/28 11:33:12 ajacoutot Exp $
 @bin bin/stellarium
 @man man/man1/stellarium.1
 share/applications/stellarium.desktop
@@ -486,6 +486,8 @@ share/stellarium/landscapes/hurricane/hurricaneb.png
 share/stellarium/landscapes/hurricane/landscape.ini
 share/stellarium/landscapes/jupiter/
 share/stellarium/landscapes/jupiter/description.en.utf8
+share/stellarium/landscapes/jupiter/description.fr.utf8
+share/stellarium/landscapes/jupiter/description.pt_BR.utf8
 share/stellarium/landscapes/jupiter/description.ru.utf8
 share/stellarium/landscapes/jupiter/jupiter-256.png
 share/stellarium/landscapes/jupiter/landscape.ini
@@ -517,6 +519,8 @@ share/stellarium/landscapes/moon/description.uk.utf8
 share/stellarium/landscapes/moon/landscape.ini
 share/stellarium/landscapes/neptune/
 share/stellarium/landscapes/neptune/description.en.utf8
+share/stellarium/landscapes/neptune/description.fr.utf8
+share/stellarium/landscapes/neptune/description.pt_BR.utf8
 share/stellarium/landscapes/neptune/description.ru.utf8
 share/stellarium/landscapes/neptune/landscape.ini
 share/stellarium/landscapes/neptune/neptune-256.png
@@ -569,6 +573,8 @@ share/stellarium/landscapes/trees/landscape.ini
 share/stellarium/landscapes/trees/trees_512.png
 share/stellarium/landscapes/uranus/
 share/stellarium/landscapes/uranus/description.en.utf8
+share/stellarium/landscapes/uranus/description.fr.utf8
+share/stellarium/landscapes/uranus/description.pt_BR.utf8
 share/stellarium/landscapes/uranus/description.ru.utf8
 share/stellarium/landscapes/uranus/landscape.ini
 share/stellarium/landscapes/uranus/uranus-256.png
