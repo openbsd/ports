@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2013/09/24 18:31:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2013/09/29 17:11:45 ajacoutot Exp $
 
 COMMENT=		ffmpeg elements for GStreamer
 
 DISTNAME=		gst-libav-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-libav-${V}
+REVISION=		0
 
 # sync with graphics/ffmpeg
 PERMIT_PACKAGE_CDROM=	patents
@@ -49,9 +50,9 @@ CONFIGURE_ARGS +=	--disable-orc
 MAKE_ENV=		V=1
 
 # XXX libavcodec.a(log2_tab.o)(.rodata+0x0): multiple definition of `ff_log2_tab'
-USE_LIBTOOL=		no
+USE_LIBTOOL=		gnu
 
 # make sure bundled libav headers are chosen over the system FFmpeg ones
-CPPFLAGS +=		-I../../gst-libs -I../../gst-libs/ext/libav
+CPPFLAGS +=		-I${WRKBUILD}/gst-libs/ext/libav
 
 .include <bsd.port.mk>
