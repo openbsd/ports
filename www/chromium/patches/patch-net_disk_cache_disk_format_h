@@ -1,12 +1,12 @@
-$OpenBSD: patch-net_disk_cache_disk_format_h,v 1.6 2013/04/03 08:19:10 robert Exp $
---- net/disk_cache/disk_format.h.orig.port	Fri Mar 22 02:13:23 2013
-+++ net/disk_cache/disk_format.h	Tue Apr  2 21:05:17 2013
-@@ -157,7 +157,7 @@ struct RankingsNode {
+$OpenBSD: patch-net_disk_cache_disk_format_h,v 1.7 2013/09/29 19:04:04 robert Exp $
+--- net/disk_cache/disk_format.h.orig.port	Wed Sep 18 10:14:10 2013
++++ net/disk_cache/disk_format.h	Sun Sep 22 16:09:42 2013
+@@ -146,7 +146,7 @@ struct RankingsNode {
  };
  #pragma pack(pop)
  
 -COMPILE_ASSERT(sizeof(RankingsNode) == 36, bad_RankingsNode);
 +//COMPILE_ASSERT(sizeof(RankingsNode) == 36, bad_RankingsNode);
  
- const uint32 kBlockMagic = 0xC104CAC3;
- const int kBlockHeaderSize = 8192;  // Two pages: almost 64k entries
+ }  // namespace disk_cache
+ 

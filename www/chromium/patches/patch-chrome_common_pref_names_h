@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_common_pref_names_h,v 1.1 2013/09/29 19:04:02 robert Exp $
+--- chrome/common/pref_names.h.orig.port	Sat Sep 28 12:35:37 2013
++++ chrome/common/pref_names.h	Sat Sep 28 12:36:38 2013
+@@ -341,7 +341,7 @@ extern const char kAllowDeletingBrowserHistory[];
+ extern const char kForceSafeSearch[];
+ extern const char kDeleteTimePeriod[];
+ extern const char kLastClearBrowsingDataTime[];
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ extern const char kUsesSystemTheme[];
+ #endif
+ extern const char kCurrentThemePackFilename[];

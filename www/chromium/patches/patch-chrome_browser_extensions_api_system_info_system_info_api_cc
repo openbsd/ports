@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_extensions_api_system_info_system_info_api_cc,v 1.1 2013/05/30 18:42:18 robert Exp $
---- chrome/browser/extensions/api/system_info/system_info_api.cc.orig.port	Thu May 30 19:59:46 2013
-+++ chrome/browser/extensions/api/system_info/system_info_api.cc	Thu May 30 20:01:00 2013
-@@ -120,11 +120,15 @@ SystemInfoEventRouter* SystemInfoEventRouter::GetInsta
+$OpenBSD: patch-chrome_browser_extensions_api_system_info_system_info_api_cc,v 1.2 2013/09/29 19:04:01 robert Exp $
+--- chrome/browser/extensions/api/system_info/system_info_api.cc.orig.port	Wed Sep 18 10:13:32 2013
++++ chrome/browser/extensions/api/system_info/system_info_api.cc	Sun Sep 22 16:09:41 2013
+@@ -109,11 +109,15 @@ SystemInfoEventRouter* SystemInfoEventRouter::GetInsta
  }
  
  SystemInfoEventRouter::SystemInfoEventRouter() {
@@ -17,7 +17,7 @@ $OpenBSD: patch-chrome_browser_extensions_api_system_info_system_info_api_cc,v 1
  }
  
  void SystemInfoEventRouter::StartWatchingStorages(
-@@ -133,9 +137,11 @@ void SystemInfoEventRouter::StartWatchingStorages(
+@@ -122,9 +126,11 @@ void SystemInfoEventRouter::StartWatchingStorages(
    if (!success)
      return;
  
@@ -29,7 +29,7 @@ $OpenBSD: patch-chrome_browser_extensions_api_system_info_system_info_api_cc,v 1
  }
  
  void SystemInfoEventRouter::StopWatchingStorages(
-@@ -144,9 +150,11 @@ void SystemInfoEventRouter::StopWatchingStorages(
+@@ -133,9 +139,11 @@ void SystemInfoEventRouter::StopWatchingStorages(
    if (!success)
      return;
  
@@ -41,7 +41,7 @@ $OpenBSD: patch-chrome_browser_extensions_api_system_info_system_info_api_cc,v 1
  }
  
  void SystemInfoEventRouter::AddEventListener(const std::string& event_name) {
-@@ -156,6 +164,7 @@ void SystemInfoEventRouter::AddEventListener(const std
+@@ -145,6 +153,7 @@ void SystemInfoEventRouter::AddEventListener(const std
    if (watching_event_set_.count(event_name) > 1)
      return;
  
@@ -49,15 +49,15 @@ $OpenBSD: patch-chrome_browser_extensions_api_system_info_system_info_api_cc,v 1
    // Start watching the |event_name| event if the first event listener arrives.
    // For systemInfo.storage event.
    if (IsAvailableCapacityChangedEvent(event_name)) {
-@@ -164,6 +173,7 @@ void SystemInfoEventRouter::AddEventListener(const std
+@@ -153,6 +162,7 @@ void SystemInfoEventRouter::AddEventListener(const std
                     base::Unretained(this)));
      return;
    }
 +#endif
  
-   // For systemInfo.cpu event.
-   if (IsCpuUpdatedEvent(event_name)) {
-@@ -189,6 +199,7 @@ void SystemInfoEventRouter::RemoveEventListener(
+   // For systemInfo.display event.
+   if (IsDisplayChangedEvent(event_name)) {
+@@ -174,6 +184,7 @@ void SystemInfoEventRouter::RemoveEventListener(
    if (watching_event_set_.count(event_name) > 0)
      return;
  
@@ -65,11 +65,11 @@ $OpenBSD: patch-chrome_browser_extensions_api_system_info_system_info_api_cc,v 1
    // In case of the last event listener is removed, we need to stop watching
    // it to avoid unnecessary overhead.
    if (IsAvailableCapacityChangedEvent(event_name)) {
-@@ -196,6 +207,7 @@ void SystemInfoEventRouter::RemoveEventListener(
+@@ -181,6 +192,7 @@ void SystemInfoEventRouter::RemoveEventListener(
          base::Bind(&SystemInfoEventRouter::StopWatchingStorages,
                     base::Unretained(this)));
    }
 +#endif
  
-   if (IsCpuUpdatedEvent(event_name)) {
-     CpuInfoProvider::Get()->StopSampling();
+   if (IsDisplayChangedEvent(event_name)) {
+ #if defined(USE_ASH)

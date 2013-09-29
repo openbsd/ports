@@ -1,15 +1,15 @@
-$OpenBSD: patch-content_content_browser_gypi,v 1.18 2013/07/15 14:59:30 robert Exp $
---- content/content_browser.gypi.orig.port	Wed Jun 12 09:28:07 2013
-+++ content/content_browser.gypi	Sat Jul 13 23:52:27 2013
-@@ -187,7 +187,6 @@
+$OpenBSD: patch-content_content_browser_gypi,v 1.19 2013/09/29 19:04:03 robert Exp $
+--- content/content_browser.gypi.orig.port	Wed Sep 18 10:13:08 2013
++++ content/content_browser.gypi	Sun Sep 22 16:09:42 2013
+@@ -193,7 +193,6 @@
      'public/browser/web_ui_message_handler.h',
      'public/browser/worker_service.h',
      'public/browser/worker_service_observer.h',
 -    'public/browser/zygote_host_linux.h',
      'browser/accessibility/accessibility_tree_formatter.cc',
      'browser/accessibility/accessibility_tree_formatter.h',
-     'browser/accessibility/accessibility_tree_formatter_mac.mm',
-@@ -339,8 +338,6 @@
+     'browser/accessibility/accessibility_tree_formatter_android.cc',
+@@ -358,8 +357,6 @@
      'browser/devtools/worker_devtools_manager.h',
      'browser/devtools/worker_devtools_message_filter.cc',
      'browser/devtools/worker_devtools_message_filter.h',
@@ -18,7 +18,7 @@ $OpenBSD: patch-content_content_browser_gypi,v 1.18 2013/07/15 14:59:30 robert E
      'browser/device_monitor_mac.h',
      'browser/device_monitor_mac.mm',
      'browser/device_orientation/accelerometer_mac.cc',
-@@ -407,8 +404,6 @@
+@@ -426,8 +423,6 @@
      'browser/download/drag_download_file.h',
      'browser/download/drag_download_util.cc',
      'browser/download/drag_download_util.h',
@@ -27,7 +27,7 @@ $OpenBSD: patch-content_content_browser_gypi,v 1.18 2013/07/15 14:59:30 robert E
      'browser/download/file_metadata_mac.h',
      'browser/download/file_metadata_mac.mm',
      'browser/download/mhtml_generation_manager.cc',
-@@ -807,8 +802,6 @@
+@@ -879,8 +874,6 @@
      'browser/renderer_host/render_message_filter.h',
      'browser/renderer_host/render_process_host_impl.cc',
      'browser/renderer_host/render_process_host_impl.h',
@@ -36,7 +36,7 @@ $OpenBSD: patch-content_content_browser_gypi,v 1.18 2013/07/15 14:59:30 robert E
      'browser/renderer_host/render_view_host_delegate.cc',
      'browser/renderer_host/render_view_host_delegate.h',
      'browser/renderer_host/render_view_host_factory.cc',
-@@ -948,8 +941,6 @@
+@@ -1031,8 +1024,6 @@
      'browser/tracing/trace_subscriber_stdio.h',
      'browser/tracing/tracing_ui.cc',
      'browser/tracing/tracing_ui.h',
@@ -45,7 +45,7 @@ $OpenBSD: patch-content_content_browser_gypi,v 1.18 2013/07/15 14:59:30 robert E
      'browser/user_metrics.cc',
      'browser/utility_process_host_impl.cc',
      'browser/utility_process_host_impl.h',
-@@ -1034,11 +1025,6 @@
+@@ -1121,11 +1112,6 @@
      'browser/worker_host/worker_service_impl.h',
      'browser/worker_host/worker_storage_partition.cc',
      'browser/worker_host/worker_storage_partition.h',

@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_WebKit_Source_core_core_gyp_core_gyp,v 1.1 2013/07/15 14:59:30 robert Exp $
---- third_party/WebKit/Source/core/core.gyp/core.gyp.orig.port	Sun Jul 14 00:15:05 2013
-+++ third_party/WebKit/Source/core/core.gyp/core.gyp	Sun Jul 14 00:18:14 2013
-@@ -608,7 +608,7 @@
+$OpenBSD: patch-third_party_WebKit_Source_core_core_gyp,v 1.1 2013/09/29 19:04:04 robert Exp $
+--- third_party/WebKit/Source/core/core.gyp.orig.port	Sun Sep 22 16:28:49 2013
++++ third_party/WebKit/Source/core/core.gyp	Sun Sep 22 16:29:47 2013
+@@ -644,7 +644,7 @@
              ['exclude', 'platform/chromium/ScrollbarThemeChromiumDefault.h'],
            ],
          }],
@@ -10,7 +10,7 @@ $OpenBSD: patch-third_party_WebKit_Source_core_core_gyp_core_gyp,v 1.1 2013/07/1
            'sources/': [
              # Cherry-pick files excluded by the broader regular expressions above.
              ['include', 'platform/graphics/harfbuzz/FontHarfBuzz\\.cpp$'],
-@@ -629,7 +629,7 @@
+@@ -665,7 +665,7 @@
              ['exclude', 'Harfbuzz[^/]+\\.(cpp|h)$'],
            ],
          }],
@@ -19,16 +19,16 @@ $OpenBSD: patch-third_party_WebKit_Source_core_core_gyp_core_gyp,v 1.1 2013/07/1
            'sources/': [
              ['exclude', 'Linux\\.cpp$'],
            ],
-@@ -740,7 +740,7 @@
+@@ -775,7 +775,7 @@
              ['exclude', 'platform/graphics/FontPlatformData\\.cpp$'],
            ],
          }],
--        ['OS != "linux" and OS != "mac"', {
-+        ['OS != "linux" and OS != "mac" and OS != "openbsd"', {
+-        ['OS != "linux" and OS != "mac" and (OS != "win" or (OS == "win" and "ENABLE_GDI_FONTS_ON_WINDOWS=1" in feature_defines))', {
++        ['OS != "linux" and OS != "mac" and OS != "openbsd" and (OS != "win" or (OS == "win" and "ENABLE_GDI_FONTS_ON_WINDOWS=1" in feature_defines))', {
            'sources/': [
              ['exclude', 'VDMX[^/]+\\.(cpp|h)$'],
            ],
-@@ -900,7 +900,7 @@
+@@ -946,7 +946,7 @@
            # Due to a bug in gcc 4.6 in android NDK, we get warnings about uninitialized variable.
            'cflags': ['-Wno-uninitialized'],
          }],
@@ -37,7 +37,7 @@ $OpenBSD: patch-third_party_WebKit_Source_core_core_gyp_core_gyp,v 1.1 2013/07/1
            'sources/': [
              ['exclude', 'Linux\\.cpp$'],
            ],
-@@ -945,7 +945,7 @@
+@@ -991,7 +991,7 @@
          ['OS=="win" and buildtype=="Official"', {
            'msvs_shard': 19,
          }],

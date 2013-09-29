@@ -1,12 +1,12 @@
-$OpenBSD: patch-ui_gl_gl_gyp,v 1.1 2013/07/15 14:59:30 robert Exp $
---- ui/gl/gl.gyp.orig.port	Sun Jul 14 00:00:38 2013
-+++ ui/gl/gl.gyp	Sun Jul 14 00:01:04 2013
-@@ -188,7 +188,7 @@
+$OpenBSD: patch-ui_gl_gl_gyp,v 1.2 2013/09/29 19:04:07 robert Exp $
+--- ui/gl/gl.gyp.orig.port	Sun Sep 22 16:36:02 2013
++++ ui/gl/gl.gyp	Sun Sep 22 16:37:44 2013
+@@ -178,7 +178,7 @@
          },
        ],
        'conditions': [
--        ['OS in ("win", "android") or (OS == "linux" and use_x11 == 1)', {
-+        ['OS in ("win", "android") or (OS in ("linux", "openbsd") and use_x11 == 1)', {
+-        ['OS in ("win", "android", "linux")', {
++        ['OS in ("win", "android", "linux", "openbsd")', {
            'sources': [
-             'async_pixel_transfer_delegate_egl.cc',
-             'async_pixel_transfer_delegate_egl.h',
+             'egl_util.cc',
+             'egl_util.h',

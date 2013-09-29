@@ -1,0 +1,13 @@
+$OpenBSD: patch-base_process_process_iterator_openbsd_cc,v 1.1 2013/09/29 19:04:00 robert Exp $
+--- base/process/process_iterator_openbsd.cc.orig.port	Sat Sep 28 19:45:12 2013
++++ base/process/process_iterator_openbsd.cc	Sat Sep 28 19:46:09 2013
+@@ -5,6 +5,9 @@
+ #include "base/process/process_iterator.h"
+ 
+ #include <errno.h>
++#include <unistd.h>
++#include <sys/param.h>
++#include <sys/proc.h>
+ #include <sys/sysctl.h>
+ 
+ #include "base/logging.h"

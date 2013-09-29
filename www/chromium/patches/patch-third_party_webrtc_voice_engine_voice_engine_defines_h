@@ -1,10 +1,10 @@
-$OpenBSD: patch-third_party_webrtc_voice_engine_voice_engine_defines_h,v 1.1 2013/07/15 14:59:30 robert Exp $
---- third_party/webrtc/voice_engine/voice_engine_defines.h.orig.port	Sun Jul 14 01:00:21 2013
-+++ third_party/webrtc/voice_engine/voice_engine_defines.h	Sun Jul 14 01:19:10 2013
-@@ -260,7 +260,7 @@ inline int VoEChannelId(const int moduleId)
+$OpenBSD: patch-third_party_webrtc_voice_engine_voice_engine_defines_h,v 1.2 2013/09/29 19:04:07 robert Exp $
+--- third_party/webrtc/voice_engine/voice_engine_defines.h.orig.port	Sun Sep 22 16:34:36 2013
++++ third_party/webrtc/voice_engine/voice_engine_defines.h	Sun Sep 22 16:34:47 2013
+@@ -260,7 +260,7 @@ inline int VoEChannelId(int moduleId)
+ #include <pthread.h>
  #include <sys/socket.h>
- #include <netinet/in.h>
- #include <arpa/inet.h>
+ #include <sys/types.h>
 -#ifndef QNX
 +#if !defined(QNX) && !defined(__OpenBSD__)
    #include <linux/net.h>

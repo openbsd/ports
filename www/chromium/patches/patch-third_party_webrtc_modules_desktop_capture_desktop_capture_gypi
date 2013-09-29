@@ -1,0 +1,11 @@
+$OpenBSD: patch-third_party_webrtc_modules_desktop_capture_desktop_capture_gypi,v 1.1 2013/09/29 19:04:06 robert Exp $
+--- third_party/webrtc/modules/desktop_capture/desktop_capture.gypi.orig.port	Sun Sep 22 17:26:47 2013
++++ third_party/webrtc/modules/desktop_capture/desktop_capture.gypi	Sun Sep 22 17:28:07 2013
+@@ -66,6 +66,7 @@
+           ],
+         }],
+         ['use_x11 == 1', {
++          'include_dirs': [ '/usr/X11R6/include' ],
+           'link_settings': {
+             'libraries': [
+               '-lX11',

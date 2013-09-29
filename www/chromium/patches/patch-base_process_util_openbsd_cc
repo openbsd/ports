@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_process_util_openbsd_cc,v 1.11 2013/04/03 08:19:10 robert Exp $
---- base/process_util_openbsd.cc.orig.port	Fri Mar 22 02:13:44 2013
-+++ base/process_util_openbsd.cc	Tue Apr  2 21:05:17 2013
+$OpenBSD: patch-base_process_util_openbsd_cc,v 1.12 2013/09/29 19:04:00 robert Exp $
+--- base/process_util_openbsd.cc.orig.port	Sun Sep 22 16:13:07 2013
++++ base/process_util_openbsd.cc	Sun Sep 22 16:16:16 2013
 @@ -10,6 +10,7 @@
  #include <errno.h>
  #include <fcntl.h>
@@ -9,18 +9,18 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.11 2013/04/03 08:19:10 robert E
  #include <sys/sysctl.h>
  #include <sys/time.h>
  #include <sys/types.h>
-@@ -20,49 +21,69 @@
+@@ -19,9 +20,9 @@
+ #include <unistd.h>
  
- #include "base/file_util.h"
  #include "base/logging.h"
 -#include "base/string_tokenizer.h"
- #include "base/string_util.h"
  #include "base/strings/string_number_conversions.h"
  #include "base/strings/string_split.h"
 +#include "base/strings/string_tokenizer.h"
+ #include "base/strings/string_util.h"
  #include "base/sys_info.h"
  #include "base/threading/thread_restrictions.h"
- 
+@@ -29,39 +30,59 @@
  namespace base {
  
  ProcessId GetParentProcessId(ProcessHandle process) {
@@ -94,104 +94,4 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.11 2013/04/03 08:19:10 robert E
 +  return FilePath(path);
  }
  
- ProcessIterator::ProcessIterator(const ProcessFilter* filter)
-@@ -194,20 +215,28 @@ ProcessMetrics* ProcessMetrics::CreateProcessMetrics(P
- }
- 
- size_t ProcessMetrics::GetPagefileUsage() const {
--  struct kinfo_proc info;
--  size_t length;
-+  struct kinfo_proc *info;
-+  size_t length, pfu;
-   int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_,
-                 sizeof(struct kinfo_proc), 0 };
- 
-   if (sysctl(mib, arraysize(mib), NULL, &length, NULL, 0) < 0)
-     return -1;
- 
-+  info = (struct kinfo_proc *)malloc(length);
-+
-   mib[5] = (length / sizeof(struct kinfo_proc));
- 
--  if (sysctl(mib, arraysize(mib), &info, &length, NULL, 0) < 0)
--    return -1;
-+  if (sysctl(mib, arraysize(mib), info, &length, NULL, 0) < 0) {
-+    pfu = -1;
-+    goto out;
-+  }
- 
--  return (info.p_vm_tsize + info.p_vm_dsize + info.p_vm_ssize);
-+  pfu = (info->p_vm_tsize + info->p_vm_dsize + info->p_vm_ssize);
-+
-+out:
-+  free(info);
-+  return pfu;
- }
- 
- size_t ProcessMetrics::GetPeakPagefileUsage() const {
-@@ -216,20 +245,28 @@ size_t ProcessMetrics::GetPeakPagefileUsage() const {
- }
- 
- size_t ProcessMetrics::GetWorkingSetSize() const {
--  struct kinfo_proc info;
--  size_t length;
-+  struct kinfo_proc *info;
-+  size_t length, wss;
-   int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_,
-                 sizeof(struct kinfo_proc), 0 };
- 
-   if (sysctl(mib, arraysize(mib), NULL, &length, NULL, 0) < 0)
-     return -1;
- 
-+  info = (struct kinfo_proc *)malloc(length);
-+
-   mib[5] = (length / sizeof(struct kinfo_proc));
- 
--  if (sysctl(mib, arraysize(mib), &info, &length, NULL, 0) < 0)
--    return -1;
-+  if (sysctl(mib, arraysize(mib), info, &length, NULL, 0) < 0) {
-+    wss = -1;
-+    goto out;
-+  }
- 
--  return info.p_vm_rssize * getpagesize();
-+  wss = (info->p_vm_rssize * getpagesize());
-+
-+out:
-+  free(info);
-+  return wss;
- }
- 
- size_t ProcessMetrics::GetPeakWorkingSetSize() const {
-@@ -270,20 +307,27 @@ bool ProcessMetrics::GetIOCounters(IoCounters* io_coun
- }
- 
- static int GetProcessCPU(pid_t pid) {
--  struct kinfo_proc info;
-+  struct kinfo_proc *info;
-   size_t length;
-+  int pctcpu = 0;
-   int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, pid,
-                 sizeof(struct kinfo_proc), 0 };
- 
-   if (sysctl(mib, arraysize(mib), NULL, &length, NULL, 0) < 0)
-     return -1;
- 
-+  info = (struct kinfo_proc *)malloc(length);
-+
-   mib[5] = (length / sizeof(struct kinfo_proc));
- 
--  if (sysctl(mib, arraysize(mib), &info, &length, NULL, 0) < 0)
--    return 0;
-+  if (sysctl(mib, arraysize(mib), info, &length, NULL, 0) < 0)
-+    goto out;
- 
--  return info.p_pctcpu;
-+  pctcpu = info->p_pctcpu;
-+
-+out:
-+  free(info);
-+  return pctcpu;
- }
- 
- double ProcessMetrics::GetCPUUsage() {
+ void EnableTerminationOnOutOfMemory() {

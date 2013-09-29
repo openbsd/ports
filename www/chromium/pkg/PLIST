@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2013/07/15 14:59:31 robert Exp $
+@comment $OpenBSD: PLIST,v 1.27 2013/09/29 19:04:08 robert Exp $
 bin/chrome
 chrome/
 @bin chrome/chrome
@@ -140,6 +140,8 @@ chrome/resources/inspector/Images/segmentHoverEnd.png
 chrome/resources/inspector/Images/segmentSelected.png
 chrome/resources/inspector/Images/segmentSelectedEnd.png
 chrome/resources/inspector/Images/sessionStorage.png
+chrome/resources/inspector/Images/settingsListRemove.png
+chrome/resources/inspector/Images/settingsListRemove_2x.png
 chrome/resources/inspector/Images/spinner.gif
 chrome/resources/inspector/Images/spinnerActive.gif
 chrome/resources/inspector/Images/spinnerActiveSelected.gif
@@ -210,6 +212,7 @@ chrome/resources/inspector/resourceView.css
 chrome/resources/inspector/resourcesPanel.css
 chrome/resources/inspector/revisionHistory.css
 chrome/resources/inspector/scriptsPanel.css
+chrome/resources/inspector/showhint.css
 chrome/resources/inspector/sidebarPane.css
 chrome/resources/inspector/spectrum.css
 chrome/resources/inspector/splitView.css

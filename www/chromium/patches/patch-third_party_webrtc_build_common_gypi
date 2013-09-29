@@ -1,12 +1,12 @@
-$OpenBSD: patch-third_party_webrtc_build_common_gypi,v 1.5 2013/07/15 14:59:30 robert Exp $
---- third_party/webrtc/build/common.gypi.orig.port	Sun Jul 14 01:01:21 2013
-+++ third_party/webrtc/build/common.gypi	Sun Jul 14 01:02:01 2013
-@@ -263,7 +263,7 @@
-           'WEBRTC_CLOCK_TYPE_REALTIME',
+$OpenBSD: patch-third_party_webrtc_build_common_gypi,v 1.6 2013/09/29 19:04:06 robert Exp $
+--- third_party/webrtc/build/common.gypi.orig.port	Wed Sep 18 10:27:17 2013
++++ third_party/webrtc/build/common.gypi	Sun Sep 22 16:09:42 2013
+@@ -260,7 +260,7 @@
+           'WEBRTC_IOS',
          ],
        }],
 -      ['OS=="linux"', {
 +      ['OS=="linux" or OS=="openbsd"', {
          'defines': [
            'WEBRTC_LINUX',
-           'WEBRTC_THREAD_RR',
+         ],

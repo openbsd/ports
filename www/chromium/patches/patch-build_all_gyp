@@ -1,7 +1,7 @@
-$OpenBSD: patch-build_all_gyp,v 1.9 2013/07/15 14:59:30 robert Exp $
---- build/all.gyp.orig.port	Wed Jun 12 09:28:36 2013
-+++ build/all.gyp	Sun Jul  7 15:54:58 2013
-@@ -230,7 +230,6 @@
+$OpenBSD: patch-build_all_gyp,v 1.10 2013/09/29 19:04:00 robert Exp $
+--- build/all.gyp.orig.port	Wed Sep 18 10:14:30 2013
++++ build/all.gyp	Sun Sep 22 16:09:41 2013
+@@ -235,7 +235,6 @@
              '../jingle/jingle.gyp:jingle_unittests',
              '../ppapi/ppapi_internal.gyp:ppapi_unittests',
              '../printing/printing.gyp:printing_unittests',

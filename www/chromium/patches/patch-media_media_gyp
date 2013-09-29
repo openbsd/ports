@@ -1,12 +1,12 @@
-$OpenBSD: patch-media_media_gyp,v 1.21 2013/07/15 14:59:30 robert Exp $
---- media/media.gyp.orig.port	Wed Jun 12 09:30:01 2013
-+++ media/media.gyp	Sun Jul  7 15:54:58 2013
-@@ -33,11 +33,15 @@
+$OpenBSD: patch-media_media_gyp,v 1.22 2013/09/29 19:04:03 robert Exp $
+--- media/media.gyp.orig.port	Sun Sep 22 16:25:27 2013
++++ media/media.gyp	Sun Sep 22 16:27:01 2013
+@@ -27,11 +27,15 @@
        }, {
          'use_alsa%': 0,
        }],
--      ['os_posix == 1 and OS != "mac" and OS != "ios" and OS != "android" and chromeos != 1', {
-+      ['os_posix == 1 and OS != "mac" and OS != "ios" and OS != "android" and chromeos != 1 and os_bsd != 1', {
+-      ['os_posix==1 and OS!="mac" and OS!="ios" and OS!="android" and chromeos!=1', {
++      ['os_posix==1 and OS!="mac" and OS!="ios" and OS!="android" and chromeos!=1 and os_bsd != 1', {
          'use_pulseaudio%': 1,
        }, {
          'use_pulseaudio%': 0,
@@ -18,7 +18,7 @@ $OpenBSD: patch-media_media_gyp,v 1.21 2013/07/15 14:59:30 robert Exp $
      ],
    },
    'targets': [
-@@ -162,6 +166,8 @@
+@@ -155,6 +159,8 @@
          'audio/pulse/audio_manager_pulse.h',
          'audio/pulse/pulse_output.cc',
          'audio/pulse/pulse_output.h',
@@ -27,7 +27,7 @@ $OpenBSD: patch-media_media_gyp,v 1.21 2013/07/15 14:59:30 robert Exp $
          'audio/pulse/pulse_input.cc',
          'audio/pulse/pulse_input.h',
          'audio/pulse/pulse_unified.cc',
-@@ -612,6 +618,21 @@
+@@ -583,6 +589,21 @@
              'webm/chromeos/ebml_writer.h',
              'webm/chromeos/webm_encoder.cc',
              'webm/chromeos/webm_encoder.h',

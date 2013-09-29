@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.12 2013/07/15 14:59:30 robert Exp $
---- content/browser/browser_main_loop.cc.orig.port	Wed Jun 12 09:28:05 2013
-+++ content/browser/browser_main_loop.cc	Sun Jul  7 15:54:58 2013
-@@ -88,7 +88,7 @@
+$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.13 2013/09/29 19:04:03 robert Exp $
+--- content/browser/browser_main_loop.cc.orig.port	Wed Sep 18 10:13:03 2013
++++ content/browser/browser_main_loop.cc	Sun Sep 22 16:09:42 2013
+@@ -89,7 +89,7 @@
  #include "ui/gfx/gtk_util.h"
  #endif
  
@@ -10,16 +10,16 @@ $OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.12 2013/07/15 14:59:30 
  #include <sys/stat.h>
  
  #include "base/process_util.h"
-@@ -108,7 +108,7 @@
+@@ -109,7 +109,7 @@
  namespace content {
  namespace {
  
 -#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
  void SetupSandbox(const CommandLine& parsed_command_line) {
+   TRACE_EVENT0("startup", "SetupSandbox");
    // TODO(evanm): move this into SandboxWrapper; I'm just trying to move this
-   // code en masse out of chrome_main for now.
-@@ -323,7 +323,7 @@ void BrowserMainLoop::EarlyInitialization() {
+@@ -340,7 +340,7 @@ void BrowserMainLoop::EarlyInitialization() {
    crypto::EnsureNSPRInit();
  #endif  // !defined(USE_OPENSSL)
  

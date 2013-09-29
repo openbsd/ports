@@ -1,6 +1,6 @@
-$OpenBSD: patch-third_party_webrtc_system_wrappers_source_atomic32_posix_cc,v 1.1 2013/07/15 14:59:30 robert Exp $
---- third_party/webrtc/system_wrappers/source/atomic32_posix.cc.orig.port	Sun Jul 14 01:13:10 2013
-+++ third_party/webrtc/system_wrappers/source/atomic32_posix.cc	Sun Jul 14 01:13:17 2013
+$OpenBSD: patch-third_party_webrtc_system_wrappers_source_atomic32_posix_cc,v 1.2 2013/09/29 19:04:06 robert Exp $
+--- third_party/webrtc/system_wrappers/source/atomic32_posix.cc.orig.port	Wed Sep 18 10:27:17 2013
++++ third_party/webrtc/system_wrappers/source/atomic32_posix.cc	Sun Sep 22 16:09:42 2013
 @@ -12,7 +12,7 @@
  
  #include <assert.h>
@@ -8,5 +8,5 @@ $OpenBSD: patch-third_party_webrtc_system_wrappers_source_atomic32_posix_cc,v 1.
 -#include <malloc.h>
 +#include <stdlib.h>
  
- #include "common_types.h"
+ #include "webrtc/common_types.h"
  

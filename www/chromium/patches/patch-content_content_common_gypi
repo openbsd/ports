@@ -1,7 +1,13 @@
-$OpenBSD: patch-content_content_common_gypi,v 1.7 2013/07/15 14:59:30 robert Exp $
---- content/content_common.gypi.orig.port	Wed Jun 12 09:28:07 2013
-+++ content/content_common.gypi	Sun Jul  7 15:54:58 2013
-@@ -339,10 +339,6 @@
+$OpenBSD: patch-content_content_common_gypi,v 1.8 2013/09/29 19:04:03 robert Exp $
+--- content/content_common.gypi.orig.port	Wed Sep 18 10:13:08 2013
++++ content/content_common.gypi	Sat Sep 28 12:42:31 2013
+@@ -291,16 +291,11 @@
+     'common/quota_messages.h',
+     'common/resource_messages.cc',
+     'common/resource_messages.h',
+-    'common/sandbox_init_linux.cc',
+     'common/sandbox_init_mac.cc',
+     'common/sandbox_init_mac.h',
      'common/sandbox_init_win.cc',
      'common/sandbox_mac.h',
      'common/sandbox_mac.mm',

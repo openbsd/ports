@@ -1,17 +1,12 @@
-$OpenBSD: patch-net_third_party_nss_ssl_bodge_secitem_array_c,v 1.1 2013/07/15 14:59:30 robert Exp $
---- net/third_party/nss/ssl/bodge/secitem_array.c.orig.port	Sat Jul 13 19:19:21 2013
-+++ net/third_party/nss/ssl/bodge/secitem_array.c	Sat Jul 13 19:22:43 2013
-@@ -11,13 +11,6 @@
+$OpenBSD: patch-net_third_party_nss_ssl_bodge_secitem_array_c,v 1.2 2013/09/29 19:04:04 robert Exp $
+--- net/third_party/nss/ssl/bodge/secitem_array.c.orig.port	Sun Sep 22 16:56:33 2013
++++ net/third_party/nss/ssl/bodge/secitem_array.c	Sun Sep 22 16:56:36 2013
+@@ -12,8 +12,6 @@
  #include "secerr.h"
  #include "secport.h"
  
 -typedef struct SECItemArrayStr SECItemArray;
 -
--struct SECItemArrayStr {
--    SECItem *items;
--    unsigned int len;
--};
--
- SECItemArray *
- SECITEM_AllocArray(PLArenaPool *arena, SECItemArray *array, unsigned int len)
- {
+ #define NSSUTIL_VERSION_NUM \
+     (NSSUTIL_VMAJOR * 10000 + NSSUTIL_VMINOR * 100 + NSSUTIL_VPATCH)
+ #if NSSUTIL_VERSION_NUM < 31500

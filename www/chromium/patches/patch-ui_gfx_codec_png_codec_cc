@@ -1,12 +1,12 @@
-$OpenBSD: patch-ui_gfx_codec_png_codec_cc,v 1.4 2013/04/03 08:19:10 robert Exp $
---- ui/gfx/codec/png_codec.cc.orig.port	Fri Mar 22 02:14:33 2013
-+++ ui/gfx/codec/png_codec.cc	Tue Apr  2 21:05:18 2013
-@@ -8,7 +8,7 @@
- #include "base/string_util.h"
- #include "ui/gfx/size.h"
- #include "ui/gfx/skia_util.h"
+$OpenBSD: patch-ui_gfx_codec_png_codec_cc,v 1.5 2013/09/29 19:04:07 robert Exp $
+--- ui/gfx/codec/png_codec.cc.orig.port	Sun Sep 22 16:35:48 2013
++++ ui/gfx/codec/png_codec.cc	Sun Sep 22 16:35:56 2013
+@@ -6,7 +6,7 @@
+ 
+ #include "base/logging.h"
+ #include "base/strings/string_util.h"
 -#include "third_party/libpng/png.h"
 +#include <png.h>
  #include "third_party/skia/include/core/SkBitmap.h"
- #include "third_party/skia/include/core/SkUnPreMultiply.h"
  #include "third_party/skia/include/core/SkColorPriv.h"
+ #include "third_party/skia/include/core/SkUnPreMultiply.h"

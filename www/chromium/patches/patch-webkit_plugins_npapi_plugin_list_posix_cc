@@ -1,7 +1,7 @@
-$OpenBSD: patch-webkit_plugins_npapi_plugin_list_posix_cc,v 1.4 2013/04/03 08:19:10 robert Exp $
---- webkit/plugins/npapi/plugin_list_posix.cc.orig.port	Fri Mar 22 02:13:02 2013
-+++ webkit/plugins/npapi/plugin_list_posix.cc	Tue Apr  2 21:05:18 2013
-@@ -182,7 +182,7 @@ void PluginList::GetPluginDirectories(std::vector<base
+$OpenBSD: patch-webkit_plugins_npapi_plugin_list_posix_cc,v 1.5 2013/09/29 19:04:07 robert Exp $
+--- webkit/plugins/npapi/plugin_list_posix.cc.orig.port	Wed Sep 18 10:14:05 2013
++++ webkit/plugins/npapi/plugin_list_posix.cc	Sun Sep 22 16:09:42 2013
+@@ -474,7 +474,7 @@ void PluginList::GetPluginDirectories(std::vector<base
    // 3) NS_SYSTEM_PLUGINS_DIR:
    // This varies across different browsers and versions, so check 'em all.
    plugin_dirs->push_back(base::FilePath("/usr/lib/browser-plugins"));

@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_renderer_renderer_main_platform_delegate_linux_cc,v 1.8 2013/07/15 14:59:30 robert Exp $
---- content/renderer/renderer_main_platform_delegate_linux.cc.orig.port	Sun Jul  7 15:58:28 2013
-+++ content/renderer/renderer_main_platform_delegate_linux.cc	Sun Jul  7 15:59:08 2013
-@@ -41,7 +41,9 @@ bool RendererMainPlatformDelegate::EnableSandbox() {
+$OpenBSD: patch-content_renderer_renderer_main_platform_delegate_linux_cc,v 1.9 2013/09/29 19:04:03 robert Exp $
+--- content/renderer/renderer_main_platform_delegate_linux.cc.orig.port	Wed Sep 18 10:13:04 2013
++++ content/renderer/renderer_main_platform_delegate_linux.cc	Sun Sep 22 16:09:42 2013
+@@ -50,7 +50,9 @@ bool RendererMainPlatformDelegate::EnableSandbox() {
    // http://code.google.com/p/chromium/wiki/LinuxSUIDSandbox
    //
    // Anything else is started in InitializeSandbox().
@@ -11,7 +11,7 @@ $OpenBSD: patch-content_renderer_renderer_main_platform_delegate_linux_cc,v 1.8 
    return true;
  }
  
-@@ -55,6 +57,7 @@ void RendererMainPlatformDelegate::RunSandboxTests(boo
+@@ -64,6 +66,7 @@ void RendererMainPlatformDelegate::RunSandboxTests(boo
    if (no_sandbox)
      return;
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-content_renderer_renderer_main_platform_delegate_linux_cc,v 1.8 
    // about:sandbox uses a value returned from LinuxSandbox::GetStatus() before
    // any renderer has been started.
    // Here, we test that the status of SeccompBpf in the renderer is consistent
-@@ -80,6 +83,7 @@ void RendererMainPlatformDelegate::RunSandboxTests(boo
+@@ -89,6 +92,7 @@ void RendererMainPlatformDelegate::RunSandboxTests(boo
      CHECK_EQ(errno, EPERM);
    }
  #endif  // __x86_64__
