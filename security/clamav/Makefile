@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2013/09/20 15:22:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.86 2013/09/29 22:38:29 sthen Exp $
 
 COMMENT=		virus scanner
 DISTNAME=		clamav-0.98
@@ -70,6 +70,6 @@ post-install:
 		${PREFIX}/share/examples/clamav
 
 pre-test:
-	ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
+	-ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 
 .include <bsd.port.mk>
