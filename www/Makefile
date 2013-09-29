@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.626 2013/09/23 11:38:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.627 2013/09/29 18:36:29 rpe Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -502,7 +502,6 @@
      SUBDIR += trac-ldapplugin
      SUBDIR += tracnav
      SUBDIR += tt-rss
-     SUBDIR += twiki
      SUBDIR += twill
      SUBDIR += varnish
      SUBDIR += visitors
