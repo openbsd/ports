@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/25 05:28:12 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/09/29 09:32:57 ajacoutot Exp $
 ${P5SITE}/Gtk2/
 ${P5SITE}/Gtk2/Ex/
 ${P5SITE}/Gtk2/Ex/FormFactory/
@@ -16,6 +16,7 @@ ${P5SITE}/Gtk2/Ex/FormFactory/Expander.pm
 ${P5SITE}/Gtk2/Ex/FormFactory/Form.pm
 ${P5SITE}/Gtk2/Ex/FormFactory/GtkWidget.pm
 ${P5SITE}/Gtk2/Ex/FormFactory/HBox.pm
+${P5SITE}/Gtk2/Ex/FormFactory/HPaned.pm
 ${P5SITE}/Gtk2/Ex/FormFactory/HSeparator.pm
 ${P5SITE}/Gtk2/Ex/FormFactory/Image.pm
 ${P5SITE}/Gtk2/Ex/FormFactory/Intro.pm
@@ -55,6 +56,7 @@ ${P5SITE}/Gtk2/Ex/FormFactory/YesNo.pm
 @man man/man3p/Gtk2::Ex::FormFactory::Form.3p
 @man man/man3p/Gtk2::Ex::FormFactory::GtkWidget.3p
 @man man/man3p/Gtk2::Ex::FormFactory::HBox.3p
+@man man/man3p/Gtk2::Ex::FormFactory::HPaned.3p
 @man man/man3p/Gtk2::Ex::FormFactory::HSeparator.3p
 @man man/man3p/Gtk2::Ex::FormFactory::Image.3p
 @man man/man3p/Gtk2::Ex::FormFactory::Intro.3p
