@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2013/05/31 15:35:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2013/09/30 19:01:21 jasper Exp $
 
 COMMENT=	GTK client and libraries for SPICE remote desktop servers
 
-DISTNAME=	spice-gtk-0.19
+DISTNAME=	spice-gtk-0.20
 CATEGORIES=	x11 net
-REVISION=	0
 
-SHARED_LIBS +=  spice-client-glib-2.0     0.0 # 8.0
-SHARED_LIBS +=  spice-client-gtk-3.0      0.0 # 4.0
+SHARED_LIBS +=  spice-client-glib-2.0     1.0 # 12.0
+SHARED_LIBS +=  spice-client-gtk-3.0      1.0 # 4.0
 SHARED_LIBS +=  spice-controller          0.0 # 0.0
 
-HOMEPAGE=	http://spice-space.org/page/Spice-Gtk
+HOMEPAGE=	http://www.spice-space.org/page/Spice-Gtk
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
@@ -30,6 +29,7 @@ WANTLIB += gstpbutils-0.10 gstreamer-0.10 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += jpeg m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += sasl2 ssl xcb xcb-render xcb-shm xml2 z
+WANTLIB += asn1 com_err gssapi heimbase krb5 roken wind
 
 MODULES=	devel/gettext \
 		lang/python \
