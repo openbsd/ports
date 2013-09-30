@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/05/03 07:08:51 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/09/30 19:01:29 jasper Exp $
 @bin bin/remote-viewer
 @bin bin/virt-viewer
 libexec/spice-xpi-client-remote-viewer
@@ -23,6 +23,9 @@ share/locale/bn/
 share/locale/bn/LC_MESSAGES/
 share/locale/bn/LC_MESSAGES/virt-viewer.mo
 share/locale/bn_IN/LC_MESSAGES/virt-viewer.mo
+share/locale/bo/
+share/locale/bo/LC_MESSAGES/
+share/locale/bo/LC_MESSAGES/virt-viewer.mo
 share/locale/br/
 share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/virt-viewer.mo
