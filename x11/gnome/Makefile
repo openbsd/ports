@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.219 2013/09/27 16:09:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.220 2013/09/30 13:30:19 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -48,6 +48,7 @@
      SUBDIR += icon-theme
      SUBDIR += icon-theme-extras
      SUBDIR += icon-theme-symbolic
+     SUBDIR += initial-setup
      SUBDIR += keyring
      SUBDIR += latexila
      SUBDIR += libbonobo
