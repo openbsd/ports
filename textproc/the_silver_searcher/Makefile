@@ -1,11 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/09/20 14:40:09 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2013/09/30 16:08:27 sthen Exp $
 
-V =		0.16
 COMMENT =	code searching tool, with a focus on speed (ag)
 
-DISTNAME =	the_silver_searcher-${V}
-DISTFILES =	the_silver_searcher-${V}.tar.gz{${V}.tar.gz}
-REVISION =	0
+DISTNAME =	the_silver_searcher-0.17
 CATEGORIES =	textproc
 
 HOMEPAGE =	https://github.com/ggreer/the_silver_searcher
@@ -16,10 +13,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c lzma pcre pthread z
 
-MASTER_SITES =	https://github.com/ggreer/the_silver_searcher/archive/
-
-BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
+MASTER_SITES =	http://geoff.greer.fm/ag/releases/
 
 LIB_DEPENDS =	archivers/xz \
 		devel/pcre
@@ -28,14 +22,6 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
 
 NO_TEST =	YES
-
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.11
-
-pre-configure:
-	cd ${WRKSRC} && \
-		${SETENV} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-			AUTOCONF_VERSION=${AUTOCONF_VERSION} autoreconf -i
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ag ${PREFIX}/bin/ag
