@@ -1,0 +1,19 @@
+$OpenBSD: patch-gnome-initial-setup_gnome-initial-setup_c,v 1.1.1.1 2013/09/30 13:29:36 ajacoutot Exp $
+--- gnome-initial-setup/gnome-initial-setup.c.orig	Sat Sep 28 14:08:43 2013
++++ gnome-initial-setup/gnome-initial-setup.c	Sat Sep 28 14:08:53 2013
+@@ -43,7 +43,6 @@
+ #include "pages/language/gis-language-page.h"
+ #include "pages/keyboard/gis-keyboard-page.h"
+ #include "pages/eulas/gis-eula-pages.h"
+-#include "pages/network/gis-network-page.h"
+ #include "pages/account/gis-account-page.h"
+ #include "pages/location/gis-location-page.h"
+ #include "pages/goa/gis-goa-page.h"
+@@ -70,7 +69,6 @@ static PageData page_table[] = {
+   PAGE (language),
+   PAGE (keyboard),
+   PAGE (eula),
+-  PAGE (network),
+   PAGE (account),
+   PAGE (location),
+   PAGE (goa),

@@ -1,0 +1,14 @@
+$OpenBSD: patch-gnome-initial-setup_gis-page_h,v 1.1.1.1 2013/09/30 13:29:36 ajacoutot Exp $
+
+gis-page.h:38: error: redefinition of typedef 'GisPage'
+
+--- gnome-initial-setup/gis-page.h.orig	Sat Sep 28 13:55:38 2013
++++ gnome-initial-setup/gis-page.h	Sat Sep 28 13:55:45 2013
+@@ -35,7 +35,6 @@ G_BEGIN_DECLS
+ #define GIS_IS_PAGE_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass),  GIS_TYPE_PAGE))
+ #define GIS_PAGE_GET_CLASS(obj)                 (G_TYPE_INSTANCE_GET_CLASS ((obj),  GIS_TYPE_PAGE, GisPageClass))
+ 
+-typedef struct _GisPage        GisPage;
+ typedef struct _GisPageClass   GisPageClass;
+ typedef struct _GisAssistantPagePrivate GisAssistantPagePrivate;
+ 

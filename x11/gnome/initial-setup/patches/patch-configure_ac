@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2013/09/30 13:29:36 ajacoutot Exp $
+--- configure.ac.orig	Sat Sep 28 12:52:42 2013
++++ configure.ac	Sat Sep 28 12:52:56 2013
+@@ -33,10 +33,6 @@ ac_configure_args=$prev_ac_configure_args
+ export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:"$ac_top_build_prefix"egg-list-box
+ 
+ PKG_CHECK_MODULES(INITIAL_SETUP,
+-                  NetworkManager >= $NETWORK_MANAGER_REQUIRED_VERSION
+-                  libnm-glib >= $NETWORK_MANAGER_REQUIRED_VERSION
+-                  libnm-util >= $NETWORK_MANAGER_REQUIRED_VERSION
+-                  libnm-gtk >= $NETWORK_MANAGER_REQUIRED_VERSION
+                   polkit-gobject-1 >= $POLKIT_REQUIRED_VERSION
+                   accountsservice
+                   gnome-desktop-3.0 >= $GNOME_DESKTOP_REQUIRED_VERSION

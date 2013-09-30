@@ -1,0 +1,19 @@
+$OpenBSD: patch-gnome-initial-setup_Makefile_in,v 1.1.1.1 2013/09/30 13:29:36 ajacoutot Exp $
+--- gnome-initial-setup/Makefile.in.orig	Sat Sep 28 13:52:57 2013
++++ gnome-initial-setup/Makefile.in	Sat Sep 28 13:53:05 2013
+@@ -105,7 +105,6 @@ gnome_initial_setup_OBJECTS = $(am_gnome_initial_setup
+ am__DEPENDENCIES_1 =
+ gnome_initial_setup_DEPENDENCIES = pages/language/libgislanguage.la \
+ 	pages/keyboard/libgiskeyboard.la pages/eulas/libgiseulas.la \
+-	pages/network/libgisnetwork.la \
+ 	pages/location/libgislocation.la \
+ 	pages/account/libgisaccount.la pages/goa/libgisgoa.la \
+ 	pages/summary/libgissummary.la $(am__DEPENDENCIES_1)
+@@ -408,7 +407,6 @@ gnome_initial_setup_LDADD = \
+ 	pages/language/libgislanguage.la \
+ 	pages/keyboard/libgiskeyboard.la \
+ 	pages/eulas/libgiseulas.la \
+-	pages/network/libgisnetwork.la \
+ 	pages/location/libgislocation.la \
+ 	pages/account/libgisaccount.la \
+ 	pages/goa/libgisgoa.la \
