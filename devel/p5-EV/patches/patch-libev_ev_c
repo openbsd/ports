@@ -1,0 +1,26 @@
+$OpenBSD: patch-libev_ev_c,v 1.1 2013/09/30 05:43:39 dcoppa Exp $
+--- libev/ev.c.orig	Mon Sep 30 07:36:41 2013
++++ libev/ev.c	Mon Sep 30 07:36:52 2013
+@@ -637,6 +637,12 @@ struct signalfd_siginfo
+       #define ECB_MEMORY_FENCE_RELEASE __asm__ __volatile__ ("")
+     #elif defined __ia64__
+       #define ECB_MEMORY_FENCE         __asm__ __volatile__ ("mf"       : : : "memory")
++    #elif defined __m68k__
++      #define ECB_MEMORY_FENCE         __asm__ __volatile__ (""         : : : "memory")
++    #elif defined __m88k__
++      #define ECB_MEMORY_FENCE         __asm__ __volatile__ ("tb1 0,%%r0,128" : : : "memory")
++    #elif defined __sh__
++      #define ECB_MEMORY_FENCE         __asm__ __volatile__ (""         : : : "memory")
+     #endif
+   #endif
+ #endif
+@@ -1053,6 +1059,9 @@ ecb_inline ecb_bool ecb_little_endian (void) { return 
+     || defined __alpha__ \
+     || defined __hppa__ \
+     || defined __ia64__ \
++    || defined __m68k__ \
++    || defined __m88k__ \
++    || defined __sh__ \
+     || defined _M_IX86 || defined _M_AMD64 || defined _M_IA64
+   #define ECB_STDFP 1
+   #include <string.h> /* for memcpy */
