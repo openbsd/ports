@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.178 2013/09/25 23:34:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.179 2013/09/30 20:10:24 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -97,6 +97,8 @@ XPCOM_ABI =	x86
 XPCOM_ABI =	x86_64
 .elif ${MACHINE_ARCH:Mpowerpc}
 XPCOM_ABI =	ppc
+.elif ${MACHINE_ARCH:Msparc64}
+XPCOM_ABI =	sparc
 .endif
 SUBST_VARS += XPCOM_ABI
 

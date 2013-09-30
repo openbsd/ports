@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2013/09/25 23:39:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.146 2013/09/30 20:10:26 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -94,6 +94,8 @@ XPCOM_ABI =	x86
 XPCOM_ABI =	x86_64
 .elif ${MACHINE_ARCH:Mpowerpc}
 XPCOM_ABI =	ppc
+.elif ${MACHINE_ARCH:Msparc64}
+XPCOM_ABI =	sparc
 .endif
 SUBST_VARS += XPCOM_ABI
 
