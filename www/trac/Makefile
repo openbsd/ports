@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2013/03/11 11:44:50 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2013/09/30 19:35:52 sthen Exp $
 
 COMMENT=	wiki and bug tracking system for software projects
 
 MODPY_EGG_VERSION=1.0.1
+REVISION=	0
 DISTNAME=	Trac-${MODPY_EGG_VERSION}
 PKGNAME=	trac-${MODPY_EGG_VERSION}
 CATEGORIES=	www devel
@@ -30,6 +31,10 @@ RUN_DEPENDS=	${COMMON_DEPS} \
 		textproc/py-pygments
 
 BUILD_DEPENDS=	${COMMON_DEPS}
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/trac
+	cd ${WRKSRC} && pax -rw contrib/ ${PREFIX}/share/examples/trac
 
 do-test:
 	@cd ${WRKSRC} && PYTHONPATH=. ${MODPY_BIN} ./trac/test.py
