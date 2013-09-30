@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_FindTCL_cmake,v 1.9 2013/06/06 12:47:06 dcoppa Exp $
---- Modules/FindTCL.cmake.orig	Wed May 15 19:38:12 2013
-+++ Modules/FindTCL.cmake	Wed May 29 09:29:16 2013
+$OpenBSD: patch-Modules_FindTCL_cmake,v 1.10 2013/09/30 11:18:10 dcoppa Exp $
+--- Modules/FindTCL.cmake.orig	Tue Jul  2 15:41:39 2013
++++ Modules/FindTCL.cmake	Mon Sep 30 12:52:28 2013
 @@ -48,19 +48,36 @@ include(${CMAKE_CURRENT_LIST_DIR}/CMakeFindFrameworks.
  include(${CMAKE_CURRENT_LIST_DIR}/FindTclsh.cmake)
  include(${CMAKE_CURRENT_LIST_DIR}/FindWish.cmake)
@@ -42,7 +42,7 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.9 2013/06/06 12:47:06 dcoppa Exp $
  
  get_filename_component(TCL_INCLUDE_PATH_PARENT "${TCL_INCLUDE_PATH}" PATH)
  get_filename_component(TK_INCLUDE_PATH_PARENT "${TK_INCLUDE_PATH}" PATH)
-@@ -75,19 +92,35 @@ get_filename_component(TK_LIBRARY_PATH_PARENT "${TK_LI
+@@ -75,19 +92,37 @@ get_filename_component(TK_LIBRARY_PATH_PARENT "${TK_LI
  string(REGEX REPLACE
    "^.*tk([0-9]\\.*[0-9]).*$" "\\1" TK_LIBRARY_VERSION "${TK_LIBRARY}")
  
@@ -80,6 +80,8 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.9 2013/06/06 12:47:06 dcoppa Exp $
 +    "${TK_LIBRARY_PATH}"
 +    "${TCL_TCLSH_PATH_PARENT}/lib"
 +    "${TK_WISH_PATH_PARENT}/lib"
++    ${LOCALBASE}/lib/tcl/tcl8.6
++    ${LOCALBASE}/lib/tcl/tk8.6
 +    ${LOCALBASE}/lib/tcl/tcl8.5
 +    ${LOCALBASE}/lib/tcl/tk8.5
 +    ${LOCALBASE}/lib/tcl/tcl8.4
@@ -90,7 +92,7 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.9 2013/06/06 12:47:06 dcoppa Exp $
  if(WIN32)
    get_filename_component(
      ActiveTcl_CurrentVersion
-@@ -107,31 +140,47 @@ if(WIN32)
+@@ -107,31 +142,47 @@ if(WIN32)
      )
  endif()
  
@@ -162,7 +164,7 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.9 2013/06/06 12:47:06 dcoppa Exp $
  
  CMAKE_FIND_FRAMEWORKS(Tcl)
  CMAKE_FIND_FRAMEWORKS(Tk)
-@@ -155,28 +204,44 @@ if(Tk_FRAMEWORKS)
+@@ -155,28 +206,46 @@ if(Tk_FRAMEWORKS)
    endif()
  endif()
  
@@ -220,6 +222,8 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.9 2013/06/06 12:47:06 dcoppa Exp $
 +    /usr/include/tcl8.3
 +    /usr/include/tcl8.2
 +    /usr/include/tcl8.0
++    ${LOCALBASE}/include/tcl8.6
++    ${LOCALBASE}/include/tk8.6
 +    ${LOCALBASE}/include/tcl8.5
 +    ${LOCALBASE}/include/tk8.5
 +    ${LOCALBASE}/include/tcl8.4
