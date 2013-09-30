@@ -1,15 +1,22 @@
-$OpenBSD: patch-content_browser_accessibility_browser_accessibility_manager_gtk_cc,v 1.1 2013/09/30 09:23:13 sthen Exp $
+$OpenBSD: patch-content_browser_accessibility_browser_accessibility_manager_gtk_cc,v 1.2 2013/09/30 14:21:46 robert Exp $
 
 fix build with newer atk
 
---- content/browser/accessibility/browser_accessibility_manager_gtk.cc.orig.port	Mon Sep 30 01:42:29 2013
-+++ content/browser/accessibility/browser_accessibility_manager_gtk.cc	Mon Sep 30 01:42:44 2013
-@@ -7,6 +7,8 @@
- #include "content/browser/accessibility/browser_accessibility_gtk.h"
- #include "content/common/accessibility_messages.h"
- 
-+#pragma clang diagnostic warning "-Wdeprecated-declarations"
-+
- namespace content {
- 
- // static
+https://code.google.com/p/chromium/issues/detail?id=298815
+
+--- content/browser/accessibility/browser_accessibility_manager_gtk.cc.orig.port	Wed Sep 18 10:13:02 2013
++++ content/browser/accessibility/browser_accessibility_manager_gtk.cc	Mon Sep 30 16:20:42 2013
+@@ -55,11 +55,9 @@ void BrowserAccessibilityManagerGtk::NotifyAccessibili
+       RecursivelySendChildrenChanged(GetRoot()->ToBrowserAccessibilityGtk());
+       break;
+     case AccessibilityNotificationFocusChanged:
+-      // Note: atk_focus_tracker_notify may be deprecated in the future;
+-      // follow this bug for the replacement:
+-      // https://bugzilla.gnome.org/show_bug.cgi?id=649575#c4
++      // Note: the focus-event was deprecated in ATK 2.9.4
++      // See https://bugzilla.gnome.org/show_bug.cgi?id=649575#c8
+       g_signal_emit_by_name(atk_object, "focus-event", true);
+-      atk_focus_tracker_notify(atk_object);
+       break;
+     default:
+       break;
