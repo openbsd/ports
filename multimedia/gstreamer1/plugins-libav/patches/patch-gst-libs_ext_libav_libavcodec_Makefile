@@ -1,0 +1,15 @@
+$OpenBSD: patch-gst-libs_ext_libav_libavcodec_Makefile,v 1.1 2013/09/30 15:49:48 ajacoutot Exp $
+
+libavcodec.a(log2_tab.o)(.rodata+0x0): multiple definition of `ff_log2_tab'
+libavformat.a(log2_tab.o)(.rodata+0x0): first defined here
+
+--- gst-libs/ext/libav/libavcodec/Makefile.orig	Mon Sep 30 17:29:36 2013
++++ gst-libs/ext/libav/libavcodec/Makefile	Mon Sep 30 17:29:40 2013
+@@ -23,7 +23,6 @@ OBJS = allcodecs.o                                    
+        fmtconvert.o                                                     \
+        imgconvert.o                                                     \
+        jrevdct.o                                                        \
+-       log2_tab.o                                                       \
+        mathtables.o                                                     \
+        options.o                                                        \
+        parser.o                                                         \
