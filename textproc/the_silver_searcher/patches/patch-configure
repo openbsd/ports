@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure,v 1.1 2013/09/30 17:17:36 bcallah Exp $
+
+# MAINTAINER opened a pull request with upstream for this:
+# https://github.com/ggreer/the_silver_searcher/pull/272
+
+--- configure.orig	Mon Sep 30 12:13:52 2013
++++ configure	Mon Sep 30 12:13:57 2013
+@@ -4655,7 +4655,7 @@ fi
+ done
+ 
+ 
+-for ac_header in pthread.h, zlib.h lzma.h
++for ac_header in pthread.h zlib.h lzma.h
+ do :
+   as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ ac_fn_c_check_header_mongrel "$LINENO" "$ac_header" "$as_ac_Header" "$ac_includes_default"

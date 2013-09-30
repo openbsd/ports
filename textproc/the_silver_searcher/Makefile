@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/09/30 16:08:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2013/09/30 17:17:36 bcallah Exp $
 
 COMMENT =	code searching tool, with a focus on speed (ag)
 
 DISTNAME =	the_silver_searcher-0.17
+REVISION =	0
 CATEGORIES =	textproc
 
 HOMEPAGE =	https://github.com/ggreer/the_silver_searcher
