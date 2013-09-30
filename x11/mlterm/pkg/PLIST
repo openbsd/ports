@@ -1,49 +1,107 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/11/01 11:58:57 naddy Exp $
-bin/mlcc
-bin/mlclient
-@group utmp
+@comment $OpenBSD: PLIST,v 1.5 2013/09/30 09:46:13 dcoppa Exp $
+@bin bin/mlcc
+@bin bin/mlclient
+@bin bin/mlclientx
 @mode g+s
-bin/mlterm
+@group utmp
+@bin bin/mlterm
+@mode u+s
 @group
-@mode
+@bin bin/mlterm-fb
 @comment lib/libkik.a
 @comment lib/libkik.la
+@mode
+@lib lib/libkik.so.${LIBkik_VERSION}
 @comment lib/libmkf.a
 @comment lib/libmkf.la
+@lib lib/libmkf.so.${LIBmkf_VERSION}
+@comment lib/libmlterm_core.a
+@comment lib/libmlterm_core.la
+@lib lib/libmlterm_core.so.${LIBmlterm_core_VERSION}
+lib/mkf/
+@comment lib/mkf/libmkf_8bits.a
+@comment lib/mkf/libmkf_8bits.la
+lib/mkf/libmkf_8bits.so
+@comment lib/mkf/libmkf_jajp.a
+@comment lib/mkf/libmkf_jajp.la
+lib/mkf/libmkf_jajp.so
+@comment lib/mkf/libmkf_kokr.a
+@comment lib/mkf/libmkf_kokr.la
+lib/mkf/libmkf_kokr.so
+@comment lib/mkf/libmkf_zh.a
+@comment lib/mkf/libmkf_zh.la
+lib/mkf/libmkf_zh.so
 lib/mlterm/
 @comment lib/mlterm/libathena.a
 @comment lib/mlterm/libathena.la
+lib/mlterm/libathena.so
+@comment lib/mlterm/libim-kbd-fb.a
+@comment lib/mlterm/libim-kbd-fb.la
+lib/mlterm/libim-kbd-fb.so
 @comment lib/mlterm/libim-kbd.a
 @comment lib/mlterm/libim-kbd.la
+lib/mlterm/libim-kbd.so
 @comment lib/mlterm/libmotif.a
 @comment lib/mlterm/libmotif.la
+lib/mlterm/libmotif.so
 @comment lib/mlterm/libmozmodern.a
 @comment lib/mlterm/libmozmodern.la
+lib/mlterm/libmozmodern.so
 @comment lib/mlterm/libnext.a
 @comment lib/mlterm/libnext.la
+lib/mlterm/libnext.so
+@comment lib/mlterm/libsample-fb.a
+@comment lib/mlterm/libsample-fb.la
+lib/mlterm/libsample-fb.so
 @comment lib/mlterm/libsample.a
 @comment lib/mlterm/libsample.la
+lib/mlterm/libsample.so
 @comment lib/mlterm/libsample2.a
 @comment lib/mlterm/libsample2.la
-libexec/mlconfig
-libexec/mlterm-menu
+lib/mlterm/libsample2.so
+@comment lib/mlterm/libtype_xft.a
+@comment lib/mlterm/libtype_xft.la
+lib/mlterm/libtype_xft.so
+libexec/mlterm/
+@bin libexec/mlterm/mlconfig
+@bin libexec/mlterm/mlimgloader
+@bin libexec/mlterm/mlterm-menu
 @man man/man1/mlclient.1
 @man man/man1/mlterm.1
 share/examples/mlterm/
+@sample ${SYSCONFDIR}/mlterm/
 share/examples/mlterm/aafont
+@sample ${SYSCONFDIR}/mlterm/aafont
 share/examples/mlterm/color
+@sample ${SYSCONFDIR}/mlterm/color
 share/examples/mlterm/font
-share/examples/mlterm/font.ja
+@sample ${SYSCONFDIR}/mlterm/font
+share/examples/mlterm/font-fb
+@sample ${SYSCONFDIR}/mlterm/font-fb
 share/examples/mlterm/key
+@sample ${SYSCONFDIR}/mlterm/key
 share/examples/mlterm/main
-share/examples/mlterm/main.ja
+@sample ${SYSCONFDIR}/mlterm/main
+share/examples/mlterm/menu
+@sample ${SYSCONFDIR}/mlterm/menu
 share/examples/mlterm/taafont
+@sample ${SYSCONFDIR}/mlterm/taafont
 share/examples/mlterm/termcap
+@sample ${SYSCONFDIR}/mlterm/termcap
 share/examples/mlterm/tfont
+@sample ${SYSCONFDIR}/mlterm/tfont
 share/examples/mlterm/vaafont
+@sample ${SYSCONFDIR}/mlterm/vaafont
 share/examples/mlterm/vfont
+@sample ${SYSCONFDIR}/mlterm/vfont
 share/examples/mlterm/xim
+@sample ${SYSCONFDIR}/mlterm/xim
+share/locale/ar/LC_MESSAGES/mlconfig.mo
 share/locale/de/LC_MESSAGES/mlconfig.mo
 share/locale/ja/LC_MESSAGES/mlconfig.mo
+share/locale/vi/LC_MESSAGES/mlconfig.mo
 share/locale/zh_TW/LC_MESSAGES/mlconfig.mo
-%%SHARED%%
+share/mlterm/
+share/mlterm/kbd/
+share/mlterm/kbd/kbd.six
+share/mlterm/kbd/pressed_kbd.six

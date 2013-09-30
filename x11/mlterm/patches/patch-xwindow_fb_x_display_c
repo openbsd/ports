@@ -1,0 +1,17 @@
+$OpenBSD: patch-xwindow_fb_x_display_c,v 1.1 2013/09/30 09:46:11 dcoppa Exp $
+
+Make mlterm-fb work on OpenBSD/luna88k 1bpp framebuffer
+https://bitbucket.org/arakiken/mlterm/commits/a33db31c77923d8285fd090fa03335073135ba34
+
+--- xwindow/fb/x_display.c.orig	Mon Aug  5 14:48:52 2013
++++ xwindow/fb/x_display.c	Tue Sep 24 10:27:23 2013
+@@ -1922,7 +1922,8 @@ open_display(void)
+ 
+ 		if( ioctl( _display.fb_fd , WSDISPLAYIO_SETGFXMODE , &gfx_mode) == -1)
+ 		{
+-			goto  error ;
++			/* Always failed on OpenBSD/luna88k. */
++			kik_msg_printf( "Failed to set screen resolution (gfx mode).\n") ;
+ 		}
+ 	}
+ 

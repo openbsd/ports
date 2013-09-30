@@ -1,46 +1,46 @@
-# $OpenBSD: Makefile,v 1.31 2013/03/21 08:48:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2013/09/30 09:46:08 dcoppa Exp $
+
+SHARED_ONLY=	Yes
 
 COMMENT=	color terminal emulator with unicode support
-DISTNAME=	mlterm-2.9.0
-REVISION=	13
+DISTNAME=	mlterm-3.2.2
 
-SHARED_LIBS=	kik	10.0 \
-		mkf	13.0
+SHARED_LIBS+=	kik	11.0 # 15.1
+SHARED_LIBS+=	mkf	14.0 # 16.0
+SHARED_LIBS+=	mlterm_core	0.0
+
 CATEGORIES=	x11
-
-MAINTAINER=	Waldemar Brodkorb <wbx@openbsd.de>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
-WANTLIB += Xfixes Xft Xi Xinerama Xrandr Xrender atk-1.0 c cairo
-WANTLIB += expat fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png util z pthread-stubs xcb gdk_pixbuf-2.0
-WANTLIB += gdk-x11-2.0 gtk-x11-2.0
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xft Xi
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo expat ffi
+WANTLIB += fontconfig freetype gdk_pixbuf-2.0 gdk-x11-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB += gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += util xcb xcb-render xcb-shm z
 
 HOMEPAGE=	http://mlterm.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mlterm/}
-
-SHARED_ONLY=	Yes
 
 LIB_DEPENDS=	x11/gtk+2
 
 MODULES=	devel/gettext
 
-AUTOCONF_VERSION=2.13
+FAKE_FLAGS=	sysconfdir="${PREFIX}/share/examples"
+
 CONFIGURE_STYLE=autoconf
+AUTOCONF_VERSION=2.65
 CONFIGURE_ARGS=	--enable-anti-alias --enable-utmp \
-		--with-imagelib=gdk-pixbuf2 --with-type-engines=xft,xcore
+		--with-gui=xlib,fb --with-imagelib=gdk-pixbuf2 \
+		--with-type-engines=xft,xcore
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/freetype2"
 MAKE_ENV=	LIBkik_VERSION=${LIBkik_VERSION} \
-		LIBmkf_VERSION=${LIBmkf_VERSION}
+		LIBmkf_VERSION=${LIBmkf_VERSION} \
+		LIBmlterm_core_VERSION=${LIBmlterm_core_VERSION}
 
 NO_TEST=	Yes
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mlterm
-	${INSTALL_DATA} ${WRKSRC}/etc/[a-z]* ${PREFIX}/share/examples/mlterm
 
 .include <bsd.port.mk>

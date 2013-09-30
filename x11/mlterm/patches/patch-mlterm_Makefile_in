@@ -1,0 +1,21 @@
+$OpenBSD: patch-mlterm_Makefile_in,v 1.1 2013/09/30 09:46:10 dcoppa Exp $
+--- mlterm/Makefile.in.orig	Tue Sep 24 12:09:22 2013
++++ mlterm/Makefile.in	Tue Sep 24 12:14:47 2013
+@@ -29,6 +29,8 @@ OBJ = ml_char_encoding.o ml_color.o ml_edit.o ml_edit_
+ 	ml_pty.o @ML_PTY_OBJ@
+ 
+ LIBNAME = libmlterm
++MAJOR = ${LIBmlterm_core_VERSION:R}
++MINOR = ${LIBmlterm_core_VERSION:E}
+ 
+ LIBTOOL_CC = $(LIBTOOL) --mode=compile $(CC) $(CFLAGS)
+ LIBTOOL_LINK = $(LIBTOOL) --mode=link $(CC) @LDFLAGS@
+@@ -47,7 +49,7 @@ $(LIBNAME)_core.a : $(OBJ_CORE)
+ 
+ $(LIBNAME)_core.la : $(OBJ_CORE)
+ 	$(LIBTOOL_LINK) -o $(LIBNAME)_core.la $(OBJ_CORE:.o=.lo) \
+-	@NO_UNDEFINED_FLAG@ -rpath $(libdir) -avoid-version @LKIK@ $(LIBS)
++	@NO_UNDEFINED_FLAG@ -rpath $(libdir) -version-info $(MAJOR):$(MINOR):0 @LKIK@ $(LIBS)
+ 
+ install : $(LIBDIR)
+ 	if test "`echo @LMLTERM_CORE@|grep .la`" != "" ; then \

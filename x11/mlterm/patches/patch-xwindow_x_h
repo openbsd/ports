@@ -1,0 +1,14 @@
+$OpenBSD: patch-xwindow_x_h,v 1.1 2013/09/30 09:46:11 dcoppa Exp $
+
+'XKeycodeToKeysym' is deprecated
+
+--- xwindow/x.h.orig	Mon Sep 30 10:32:56 2013
++++ xwindow/x.h	Mon Sep 30 10:33:28 2013
+@@ -17,6 +17,7 @@
+ #else	/* USE_WIN32GUI/USE_FRAMEBUFFER */
+ 
+ /* This must be included ahead of Xft.h on XFree86-4.0.x or before. */
++#include  <X11/XKBlib.h>
+ #include  <X11/Xlib.h>
+ #include  <X11/keysym.h>	/* XK_xxx */
+ #include  <X11/Xatom.h>		/* XA_xxx */
