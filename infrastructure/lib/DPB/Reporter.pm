@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.19 2013/09/23 14:25:12 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.20 2013/09/30 19:08:35 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -123,6 +123,7 @@ sub make_singleton
     	if (defined $state->{record}) {
 		open $singleton->{record}, '>>', $state->{record};
 	}
+	return $singleton;
 }
 
 sub filter
