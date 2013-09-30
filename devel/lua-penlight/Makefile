@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2013/09/23 14:09:55 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.5 2013/09/30 13:04:06 dcoppa Exp $
 
 COMMENT =	pure Lua libraries focusing on input data handling
 
-VER =		1.3.0
+VER =		1.3.1
 DISTNAME =	Penlight-${VER}
 PKGNAME =	lua-penlight-${VER}
 CATEGORIES =	devel
