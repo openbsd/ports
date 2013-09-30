@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.116 2013/06/20 08:26:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.117 2013/09/30 19:26:03 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	secure, fast, compliant, and very flexible web-server
 
-DISTNAME=	lighttpd-1.4.32
-REVISION=	8
+DISTNAME=	lighttpd-1.4.33
 CATEGORIES=	www net
 MASTER_SITES=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -16,7 +15,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c crypto ${MODLUA_WANTLIB} m pcre ssl z
+WANTLIB=	c crypto m pcre ssl z ${MODLUA_WANTLIB}
 
 MODULES=	lang/lua
 MODLUA_SA=	Yes
@@ -26,8 +25,7 @@ LIB_DEPENDS+=	devel/pcre \
 RUN_DEPENDS+=	www/spawn-fcgi
 
 LIBTOOL_FLAGS=	--tag=disable-static
-CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.69
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --libdir="${PREFIX}/lib/lighttpd" \
 		 --with-lua \
 		 --with-openssl \
