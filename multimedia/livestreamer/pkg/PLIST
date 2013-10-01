@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/09/07 19:50:56 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/10/01 00:48:22 bcallah Exp $
 bin/livestreamer
 lib/python${MODPY_VERSION}/site-packages/livestreamer/
 lib/python${MODPY_VERSION}/site-packages/livestreamer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -52,8 +52,14 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer/packages/flashmedia/util.p
 lib/python${MODPY_VERSION}/site-packages/livestreamer/packages/flashmedia/util.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/packages/pbs.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/packages/pbs.pyc
-lib/python${MODPY_VERSION}/site-packages/livestreamer/plugin.py
-lib/python${MODPY_VERSION}/site-packages/livestreamer/plugin.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugin/
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugin/__init__.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugin/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugin/api/
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugin/api/__init__.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugin/api/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugin/plugin.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugin/plugin.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/__init__.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/__init__.pyc
@@ -73,10 +79,14 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/freedocast.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/freedocast.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/gomtv.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/gomtv.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/hashd.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/hashd.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/ilive.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/ilive.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/justintv.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/justintv.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/justintv_common.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/justintv_common.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/livestation.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/livestation.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/livestream.py
@@ -95,6 +105,8 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/streamingvideoprov
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/streamingvideoprovider.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/svtplay.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/svtplay.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/twitch.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/twitch.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/ustreamtv.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/ustreamtv.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/veetle.py
@@ -112,12 +124,16 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/__init__.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/akamaihd.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/akamaihd.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/flvconcat.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/flvconcat.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/hds.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/hds.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/hls.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/hls.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/http.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/http.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/playlist.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/playlist.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/rtmpdump.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/rtmpdump.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/stream.py

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/09/07 22:13:39 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2013/10/01 00:48:22 bcallah Exp $
 
-MODPY_EGG_VERSION =	1.5.2
+MODPY_EGG_VERSION =	1.6.0
 COMMENT =	pipe video streams into a video player
 DISTNAME =	livestreamer-${MODPY_EGG_VERSION}
-DISTFILES =	livestreamer-${MODPY_EGG_VERSION}.tar.gz{v${MODPY_EGG_VERSION}.tar.gz}
 CATEGORIES =	multimedia net
 
 HOMEPAGE =	http://livestreamer.tanuki.se/
@@ -15,7 +14,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # src/livestreamer/plugins/gomtv.py: Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	https://github.com/chrippa/livestreamer/archive/
+MASTER_SITES =	${MASTER_SITE_PYPI:=l/livestreamer/}
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes
