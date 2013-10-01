@@ -1,7 +1,7 @@
-$OpenBSD: patch-cfg_param_c,v 1.1.1.1 2013/04/16 09:59:35 sthen Exp $
---- cfg_param.c.orig	Fri Mar  8 02:53:48 2013
-+++ cfg_param.c	Fri Mar  8 02:53:51 2013
-@@ -45,8 +45,8 @@ struct ci_server_conf CONF = {
+$OpenBSD: patch-cfg_param_c,v 1.2 2013/10/01 15:53:08 sthen Exp $
+--- cfg_param.c.orig	Sun Apr 28 11:43:05 2013
++++ cfg_param.c	Tue Oct  1 14:33:30 2013
+@@ -46,8 +46,8 @@ struct ci_server_conf CONF = {
  #else
       "/var/tmp/", /*TMPDIR*/ "/var/run/c-icap/c-icap.pid", /*PIDFILE*/ "/var/run/c-icap/c-icap.ctl",   /*COMMANDS_SOCKET; */
  #endif
