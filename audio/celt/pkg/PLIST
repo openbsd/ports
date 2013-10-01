@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/02 22:16:02 dcoppa Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2013/10/01 10:20:34 dcoppa Exp $
 @bin bin/celtdec
 @bin bin/celtenc
 include/celt/
@@ -8,5 +7,6 @@ include/celt/celt_header.h
 include/celt/celt_types.h
 lib/libcelt0.a
 lib/libcelt0.la
+@lib lib/libcelt0.so.${LIBcelt0_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/celt.pc
