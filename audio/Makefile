@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.311 2013/08/11 15:00:39 landry Exp $
+# $OpenBSD: Makefile,v 1.312 2013/10/01 10:33:07 dcoppa Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -24,6 +24,7 @@
      SUBDIR += cdparanoia
      SUBDIR += celt
      SUBDIR += celt051
+     SUBDIR += celt07
      SUBDIR += chromaprint
      SUBDIR += clementine
      SUBDIR += cmixer
@@ -134,6 +135,7 @@
      SUBDIR += mscore
      SUBDIR += mt-daapd
      SUBDIR += multimux
+     SUBDIR += mumble
      SUBDIR += musepack
      SUBDIR += musique
      SUBDIR += nap
