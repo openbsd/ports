@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_mumble_ConnectDialog_cpp,v 1.1.1.1 2013/10/01 10:28:44 dcoppa Exp $
+
+Prevent method from being hidden instead of being overridden
+
+--- src/mumble/ConnectDialog.cpp.orig	Sat Sep 28 03:41:43 2013
++++ src/mumble/ConnectDialog.cpp	Sat Sep 28 03:43:07 2013
+@@ -113,7 +113,7 @@ ServerView::~ServerView() {
+ 	delete siPublic;
+ }
+ 
+-QMimeData *ServerView::mimeData(const QList<QTreeWidgetItem *>& mimeitems) const {
++QMimeData *ServerView::mimeData(QList<QTreeWidgetItem *> mimeitems) const {
+ 	if (mimeitems.isEmpty())
+ 		return NULL;
+ 

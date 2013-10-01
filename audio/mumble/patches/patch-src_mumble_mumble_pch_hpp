@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_mumble_mumble_pch_hpp,v 1.1.1.1 2013/10/01 10:28:44 dcoppa Exp $
+
+Use celt from our ports tree
+
+--- src/mumble/mumble_pch.hpp.orig	Wed Sep 25 15:40:40 2013
++++ src/mumble/mumble_pch.hpp	Wed Sep 25 15:41:52 2013
+@@ -52,7 +52,7 @@
+ #define __int64_t __int64
+ #include <sndfile.h>
+ #undef __int64_t
+-#include <celt.h>
++#include <celt07/celt.h>
+ #ifdef USE_SBCELT
+ #include <sbcelt.h>
+ #endif

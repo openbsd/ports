@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_mumble_CELTCodec_h,v 1.1.1.1 2013/10/01 10:28:44 dcoppa Exp $
+
+Use celt from our ports tree
+
+--- src/mumble/CELTCodec.h.orig	Wed Sep 25 16:42:04 2013
++++ src/mumble/CELTCodec.h	Wed Sep 25 16:42:34 2013
+@@ -32,7 +32,7 @@
+ #define CELTCODEC_H_
+ 
+ #include <stdint.h>
+-#include <celt.h>
++#include <celt07/celt.h>
+ 
+ #include <QtCore/QLibrary>
+ #include <QtCore/QString>

@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_mumble_TextToSpeech_unix_cpp,v 1.1.1.1 2013/10/01 10:28:44 dcoppa Exp $
+--- src/mumble/TextToSpeech_unix.cpp.orig	Sat Jun  1 23:16:32 2013
++++ src/mumble/TextToSpeech_unix.cpp	Wed Aug 21 16:01:20 2013
+@@ -33,7 +33,7 @@
+ #include "TextToSpeech.h"
+ 
+ #ifdef USE_SPEECHD
+-#include <libspeechd.h>
++#include <speech-dispatcher/libspeechd.h>
+ #endif
+ 
+ #include "Global.h"
+@@ -81,7 +81,6 @@ void TextToSpeechPrivate::setVolume(int vol) {
+ }
+ #else
+ TextToSpeechPrivate::TextToSpeechPrivate() {
+-	qWarning("TextToSpeech: Compiled without support for speech-dispatcher");
+ }
+ 
+ TextToSpeechPrivate::~TextToSpeechPrivate() {

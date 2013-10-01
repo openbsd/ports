@@ -1,0 +1,13 @@
+$OpenBSD: patch-compiler_pri,v 1.1.1.1 2013/10/01 10:28:44 dcoppa Exp $
+--- compiler.pri.orig	Sat Jun  1 23:16:30 2013
++++ compiler.pri	Wed Sep 25 16:28:26 2013
+@@ -114,8 +114,7 @@ unix:!macx {
+ 		QMAKE_LFLAGS = -Wl,--no-add-needed
+ 	}
+ 
+-	DEFINES *= _FORTIFY_SOURCE=2
+-	QMAKE_LFLAGS *= -Wl,-z,relro -Wl,-z,now
++	QMAKE_LFLAGS *= -Wl,--export-dynamic -Wl,-z,now
+ 
+ 	CONFIG(symbols) {
+ 		QMAKE_CFLAGS *= -g

@@ -1,0 +1,43 @@
+$OpenBSD: patch-src_mumble_Audio_cpp,v 1.1.1.1 2013/10/01 10:28:44 dcoppa Exp $
+
+Fix loading of CELT plugins; use celt from our tree
+
+--- src/mumble/Audio.cpp.orig	Sat Jun  1 23:16:31 2013
++++ src/mumble/Audio.cpp	Wed Sep 25 16:04:00 2013
+@@ -66,34 +66,20 @@ void CodecInit::initialize() {
+ 		delete codec;
+ 	}
+ #else
+-	codec = new CELTCodec070(QLatin1String("0.7.0"));
++	codec = new CELTCodec070(QLatin1String("07"));
+ 	if (codec->isValid()) {
+ 		codec->report();
+ 		g.qmCodecs.insert(codec->bitstreamVersion(), codec);
+ 	} else {
+ 		delete codec;
+-		codec = new CELTCodec070(QLatin1String("0.0.0"));
+-		if (codec->isValid()) {
+-			codec->report();
+-			g.qmCodecs.insert(codec->bitstreamVersion(), codec);
+-		} else {
+-			delete codec;
+-		}
+ 	}
+ 
+-	codec = new CELTCodec011(QLatin1String("0.11.0"));
++	codec = new CELTCodec011(QLatin1String("0"));
+ 	if (codec->isValid()) {
+ 		codec->report();
+ 		g.qmCodecs.insert(codec->bitstreamVersion(), codec);
+ 	} else {
+ 		delete codec;
+-		codec = new CELTCodec011(QLatin1String("2.0.0"));
+-		if (codec->isValid()) {
+-			codec->report();
+-			g.qmCodecs.insert(codec->bitstreamVersion(), codec);
+-		} else {
+-			delete codec;
+-		}
+ 	}
+ #endif
+ }

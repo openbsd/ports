@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_mumble_ServerHandler_cpp,v 1.1.1.1 2013/10/01 10:28:44 dcoppa Exp $
+
+Add missing headers
+
+--- src/mumble/ServerHandler.cpp.orig	Sat Jun  1 23:16:32 2013
++++ src/mumble/ServerHandler.cpp	Wed Aug 21 16:01:20 2013
+@@ -46,6 +46,13 @@
+ #include "SSL.h"
+ #include "User.h"
+ 
++#ifdef Q_OS_UNIX
++#include <sys/socket.h>
++#include <sys/types.h>
++#include <netinet/in.h>
++#include <netinet/tcp.h>
++#endif
++
+ ServerHandlerMessageEvent::ServerHandlerMessageEvent(const QByteArray &msg, unsigned int mtype, bool flush) : QEvent(static_cast<QEvent::Type>(SERVERSEND_EVENT)) {
+ 	qbaMsg = msg;
+ 	uiType = mtype;

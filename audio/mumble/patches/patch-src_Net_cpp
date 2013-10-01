@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_Net_cpp,v 1.1.1.1 2013/10/01 10:28:44 dcoppa Exp $
+
+Add missing headers
+
+--- src/Net.cpp.orig	Sat Jun  1 23:16:31 2013
++++ src/Net.cpp	Wed Aug 21 16:01:20 2013
+@@ -32,6 +32,13 @@
+ 
+ #include "Net.h"
+ 
++#ifdef Q_OS_UNIX
++#include <sys/socket.h>
++#include <sys/types.h>
++#include <netinet/in.h>
++#include <netinet/tcp.h>
++#endif
++
+ HostAddress::HostAddress() {
+ 	addr[0] = addr[1] = 0ULL;
+ }

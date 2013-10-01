@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_mumble_ConnectDialog_h,v 1.1.1.1 2013/10/01 10:28:44 dcoppa Exp $
+
+Prevent method from being hidden instead of being overridden
+
+--- src/mumble/ConnectDialog.h.orig	Sat Sep 28 03:41:05 2013
++++ src/mumble/ConnectDialog.h	Sat Sep 28 03:43:16 2013
+@@ -107,7 +107,7 @@ class ServerView : public QTreeWidget {
+ 
+ 		ServerItem *getParent(const QString &continent, const QString &countrycode, const QString &countryname, const QString &usercontinentcode, const QString &usercountrycode);
+ 	protected:
+-		virtual QMimeData *mimeData(const QList<QTreeWidgetItem *>&) const;
++		virtual QMimeData *mimeData(QList<QTreeWidgetItem *>) const;
+ 		virtual QStringList mimeTypes() const;
+ 		virtual Qt::DropActions supportedDropActions() const;
+ 		virtual bool dropMimeData(QTreeWidgetItem *, int, const QMimeData *, Qt::DropAction);

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_mumble_GlobalShortcut_unix_cpp,v 1.1.1.1 2013/10/01 10:28:44 dcoppa Exp $
+
+'XKeycodeToKeysym' is deprecated
+
+--- src/mumble/GlobalShortcut_unix.cpp.orig	Sat Jun  1 23:16:31 2013
++++ src/mumble/GlobalShortcut_unix.cpp	Wed Aug 21 16:01:20 2013
+@@ -324,7 +324,7 @@ QString GlobalShortcutX::buttonName(const QVariant &v)
+ 	if (!ok)
+ 		return QString();
+ 	if ((key < 0x118) || (key >= 0x128)) {
+-		KeySym ks=XKeycodeToKeysym(QX11Info::display(), static_cast<KeyCode>(key), 0);
++		KeySym ks=XkbKeycodeToKeysym(QX11Info::display(), static_cast<KeyCode>(key), 0, 0);
+ 		if (ks == NoSymbol) {
+ 			return QLatin1String("0x")+QString::number(key,16);
+ 		} else {

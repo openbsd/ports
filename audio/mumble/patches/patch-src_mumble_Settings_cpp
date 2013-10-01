@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_mumble_Settings_cpp,v 1.1.1.1 2013/10/01 10:28:44 dcoppa Exp $
+
+Disable Text-To-Speech
+
+Disable submitting anonymous statistics
+
+--- src/mumble/Settings.cpp.orig	Sat Jun  1 23:16:32 2013
++++ src/mumble/Settings.cpp	Wed Sep 25 15:40:29 2013
+@@ -254,7 +254,7 @@ Settings::Settings() {
+ 	atTransmit = VAD;
+ 	bTransmitPosition = false;
+ 	bMute = bDeaf = false;
+-	bTTS = true;
++	bTTS = false;
+ 	bTTSMessageReadBack = false;
+ 	iTTSVolume = 75;
+ 	iTTSThreshold = 250;
+@@ -313,7 +313,7 @@ Settings::Settings() {
+ 	bHideInTray = true;
+ #endif
+ 	bStateInTray = true;
+-	bUsage = true;
++	bUsage = false;
+ 	bShowUserCount = false;
+ 	bChatBarUseSelection = false;
+ 	wlWindowLayout = LayoutClassic;

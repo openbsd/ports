@@ -1,0 +1,15 @@
+$OpenBSD: patch-main_pro,v 1.1.1.1 2013/10/01 10:28:44 dcoppa Exp $
+
+Use celt from our ports tree
+
+--- main.pro.orig	Sat Jun  1 23:16:30 2013
++++ main.pro	Thu Sep 26 11:10:30 2013
+@@ -12,7 +12,7 @@ CONFIG *= ordered debug_and_release
+   CONFIG(sbcelt) {
+     SUBDIRS *= celt-0.7.0-build sbcelt-lib-build sbcelt-helper-build
+   } else {
+-    unix:!CONFIG(bundled-celt):system(pkg-config --atleast-version=0.7.0 celt) {
++    unix:!CONFIG(bundled-celt):system(pkg-config --atleast-version=0.7.0 celt07) {
+       CONFIG *= no-bundled-celt
+     }
+     !CONFIG(no-bundled-celt) {
