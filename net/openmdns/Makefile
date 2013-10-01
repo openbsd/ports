@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2013/08/09 14:32:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2013/10/01 07:36:06 jca Exp $
 
 COMMENT =		MDNS/DNS-SD daemon
 
 DISTNAME =		openmdns-0.5
-REVISION =		1
+REVISION =		2
 CATEGORIES =		net
 
 MAINTAINER =		Gonzalo L. R. <gonzalo@openbsd.org>
