@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2013/08/24 17:33:49 zhuk Exp $
+# $OpenBSD: Makefile,v 1.32 2013/10/01 21:56:56 zhuk Exp $
 
 COMMENT =	KDE core libraries
 DISTNAME =	kdelibs-${MODKDE4_VERSION}
 PKGSPEC =	kdelibs->=4
-REVISION =	3
+REVISION =	4
 
 DPB_PROPERTIES =	parallel
 
@@ -93,8 +93,8 @@ LIB_DEPENDS =	archivers/bzip2 \
 		databases/soprano>=${MIN_SOPRANO_VERSION} \
 		databases/strigi \
 		devel/pcre \
+		graphics/giflib \
 		graphics/jasper \
-		graphics/libungif \
 		graphics/openexr \
 		security/qca2 \
 		sysutils/gamin \
