@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:23:56 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/10/01 09:07:16 ajacoutot Exp $
 
 COMMENT=	log colorizer
 
@@ -8,7 +8,7 @@ CATEGORIES=	misc
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
-MASTER_SITES=	http://distfiles.bsdfrog.org/
+MASTER_SITES=	https://distfiles.bsdfrog.org/
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

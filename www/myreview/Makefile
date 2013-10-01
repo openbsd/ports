@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/08/12 04:11:21 robert Exp $
+# $OpenBSD: Makefile,v 1.16 2013/10/01 09:07:17 ajacoutot Exp $
 
 COMMENT=	web-based conference management software
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://myreview.lri.fr/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://distfiles.bsdfrog.org/
+MASTER_SITES=	https://distfiles.bsdfrog.org/
 MASTER_SITES0=	http://www.lri.fr/~rigaux/
 
 EXTRACT_ONLY=

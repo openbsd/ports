@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2013/06/04 18:41:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.92 2013/10/01 09:07:18 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -14,7 +14,7 @@ REVISION=	7
 # DejaVu Serif.: fixes font corruption issue on machines where
 # msttcorefonts are not installed.
 PATCHFILES=	abiword-dejavu.patch:0
-MASTER_SITES0=	http://distfiles.bsdfrog.org/
+MASTER_SITES0=	https://distfiles.bsdfrog.org/
 
 SHARED_LIBS +=	abiword-2.8 0.0 # .0.0
 

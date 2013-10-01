@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/06/21 22:37:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2013/10/01 09:07:14 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 # .so shared library equivalent.
 WANTLIB =		uuid m mysqlclient pcrecpp pq stdc++ sqlite3
 
-MASTER_SITES=		http://distfiles.bsdfrog.org/
+MASTER_SITES=		https://distfiles.bsdfrog.org/
 
 MODULES =		devel/cmake
 

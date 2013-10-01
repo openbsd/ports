@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/07/12 08:10:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2013/10/01 09:07:16 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 # tarballs are only available for a 24 hour period
 #MASTER_SITES=		http://www.openprinting.org/download/foomatic/
-MASTER_SITES=		http://distfiles.bsdfrog.org/
+MASTER_SITES=		https://distfiles.bsdfrog.org/
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-ppds-to-cups

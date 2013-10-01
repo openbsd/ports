@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2013/08/24 09:17:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2013/10/01 09:07:16 ajacoutot Exp $
 
 COMMENT=	driver for ZjStream wire protocol compatible printers
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c cups m pthread
 
-MASTER_SITES=	http://distfiles.bsdfrog.org/
+MASTER_SITES=	https://distfiles.bsdfrog.org/
 
 USE_GMAKE=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2013/08/20 22:05:55 zhuk Exp $
+# $OpenBSD: Makefile,v 1.36 2013/10/01 09:07:18 ajacoutot Exp $
 
 COMMENT=	SVG vector drawing application
 
@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=inkscape/}
 # (patch from Fedora)
 PATCHFILES=	inkscape-glib-2.32.patch:0
 PATCH_DIST_STRIP=-p1
-MASTER_SITES0=	http://distfiles.bsdfrog.org/
+MASTER_SITES0=	https://distfiles.bsdfrog.org/
 
 HOMEPAGE=	http://www.inkscape.org/
 

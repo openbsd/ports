@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2013/09/27 09:47:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2013/10/01 09:07:15 ajacoutot Exp $
 
 EVO_VERSION=		3.10
 SUBST_VARS +=		EVO_VERSION
@@ -40,7 +40,7 @@ WANTLIB += sqlite3 ssl3 stdc++ webkitgtk-3.0 webp wind xcb xcb-render
 WANTLIB += xcb-shm xkbfile xml2 xslt z
 
 #MASTER_SITES=		http://gnome.eu.org/
-MASTER_SITES=		http://distfiles.bsdfrog.org/
+MASTER_SITES=		https://distfiles.bsdfrog.org/
 
 MODULES=		devel/gettext \
 			devel/dconf \

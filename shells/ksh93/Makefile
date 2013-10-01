@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:41:29 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/10/01 09:07:17 ajacoutot Exp $
 
 BROKEN-mips64 =		libast is not built
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP =	Yes
 
 WANTLIB += c m util
 
-MASTER_SITES =		http://distfiles.bsdfrog.org/
+MASTER_SITES =		https://distfiles.bsdfrog.org/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} INIT.${V}${EXTRACT_SUFX}
 EXTRACT_SUFX =		.tgz
 DIST_SUBDIR =		ksh93

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/09/19 21:16:54 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.18 2013/10/01 09:07:19 ajacoutot Exp $
 
 ONLY_FOR_ARCHS = alpha amd64 i386 powerpc sparc64
 
@@ -84,7 +84,7 @@ TEST_DEPENDS = 	devel/dejagnu \
 MASTER_SITES =	${MASTER_SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
 MASTER_SITES0 =	http://spacehopper.org/mirrors/ \
 		http://distfiles.tmux.org/adastrap/ \
-		http://distfiles.bsdfrog.org/
+		https://distfiles.bsdfrog.org/
 MASTER_SITES1 =	ftp://sources.redhat.com/pub/java/
 
 LANGS = c

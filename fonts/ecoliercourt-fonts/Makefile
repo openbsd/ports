@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:06:05 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/10/01 09:07:15 ajacoutot Exp $
 
 PKG_ARCH=	*
 
@@ -14,7 +14,7 @@ CATEGORIES=	fonts x11 education
 # Open Font License
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://distfiles.bsdfrog.org/
+MASTER_SITES=	https://distfiles.bsdfrog.org/
 
 DIST_SUBDIR=	ecoliercourt
 EXTRACT_ONLY=

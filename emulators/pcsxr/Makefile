@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:06:04 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/10/01 09:07:14 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -15,7 +15,7 @@ MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	http://distfiles.bsdfrog.org/
+MASTER_SITES =	https://distfiles.bsdfrog.org/
 EXTRACT_SUFX =	.tar.bz2
 
 USE_GMAKE =	Yes

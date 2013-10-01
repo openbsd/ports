@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/08/18 09:21:58 pascal Exp $
+# $OpenBSD: Makefile,v 1.6 2013/10/01 09:07:18 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -20,7 +20,7 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		ftp://ftp.freepascal.org/pub/fpc/dist/$V/source/
-MASTER_SITES0 =		http://distfiles.bsdfrog.org/
+MASTER_SITES0 =		https://distfiles.bsdfrog.org/
 DIST_SUBDIR =		fpc
 BOOTSTRAP =		fpcboot-openbsd-$V-${BOOT_GEN}${EXTRACT_SUFX}
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} ${BOOTSTRAP}:0
