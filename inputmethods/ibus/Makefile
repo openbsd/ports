@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.40 2013/08/07 21:32:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2013/10/01 21:21:16 fgsch Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	intelligent input bus framework
 
-DISTNAME =	ibus-1.5.2
-REVISION =	3
+DISTNAME =	ibus-1.5.4
 
-SHARED_LIBS =	ibus-1.0	3.0
+SHARED_LIBS =	ibus-1.0	4.0 # 5.504
 
 CATEGORIES =	inputmethods chinese japanese korean
 
@@ -18,14 +17,14 @@ MAINTAINER =	Federico G. Schwindt <fgsch@openbsd.org>
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
+WANTLIB = 	ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
 		Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi \
 		c cairo cairo-gobject dbus-1 dconf expat ffi fontconfig \
 		freetype gdk-3 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3 \
-		gtk-x11-2.0 harfbuzz m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread \
-		pthread-stubs xcb xcb-render xcb-shm z
+		gtk-x11-2.0 harfbuzz m notify pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs \
+		xcb xcb-render xcb-shm z
 
 MASTER_SITES =	https://ibus.googlecode.com/files/
 
@@ -34,24 +33,24 @@ MODULES =	devel/dconf \
 		lang/python \
 		textproc/intltool
 
-BUILD_DEPENDS =	devel/gobject-introspection \
-		devel/iso-codes \
+BUILD_DEPENDS =	devel/iso-codes \
 		devel/py-gobject3 \
 		lang/vala
-RUN_DEPENDS =	devel/iso-codes \
-		devel/desktop-file-utils \
+RUN_DEPENDS =	devel/desktop-file-utils \
+		devel/iso-codes \
 		devel/py-gobject3 \
-		devel/py-xdg \
 		x11/gtk+2,-guic
 
-LIB_DEPENDS =	x11/gtk+2 \
+LIB_DEPENDS =	devel/libnotify \
+		x11/gtk+2 \
 		x11/gtk+3
 
 USE_GMAKE =	Yes
 LIBTOOL_FLAGS =	--tag=disable-static
 
 CONFIGURE_STYLE = gnu
-CONFIGURE_ARGS = --disable-gtk-doc-html \
+CONFIGURE_ARGS = --mandir=${PREFIX}/man \
+		 --disable-gtk-doc-html \
 		 --enable-introspection \
 		 --enable-vala
 CONFIGURE_ENV =	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \

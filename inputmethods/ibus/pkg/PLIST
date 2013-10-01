@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2013/07/07 09:53:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2013/10/01 21:21:17 fgsch Exp $
 @bin bin/ibus
 @bin bin/ibus-daemon
 bin/ibus-setup
@@ -30,6 +30,7 @@ include/ibus-1.0/ibuspanelservice.h
 include/ibus-1.0/ibusproperty.h
 include/ibus-1.0/ibusproplist.h
 include/ibus-1.0/ibusproxy.h
+include/ibus-1.0/ibusregistry.h
 include/ibus-1.0/ibusserializable.h
 include/ibus-1.0/ibusservice.h
 include/ibus-1.0/ibusshare.h
@@ -53,14 +54,13 @@ lib/python${MODPY_VERSION}/site-packages/gi/overrides/IBus.pyo
 @bin libexec/ibus-engine-simple
 @bin libexec/ibus-ui-gtk3
 @bin libexec/ibus-x11
+@man man/man1/ibus-daemon.1
+@man man/man1/ibus-setup.1
+@man man/man1/ibus.1
 share/GConf/
 share/GConf/gsettings/
 share/GConf/gsettings/ibus.convert
 share/applications/ibus-setup.desktop
-share/applications/ibus.desktop
-@sample ${SYSCONFDIR}/xdg/
-@sample ${SYSCONFDIR}/xdg/autostart/
-@sample ${SYSCONFDIR}/xdg/autostart/ibus.desktop
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/ibus/
 share/examples/ibus/bash_completion.d/
@@ -98,6 +98,7 @@ share/gtk-doc/html/ibus/IBusPanelService.html
 share/gtk-doc/html/ibus/IBusPropList.html
 share/gtk-doc/html/ibus/IBusProperty.html
 share/gtk-doc/html/ibus/IBusProxy.html
+share/gtk-doc/html/ibus/IBusRegistry.html
 share/gtk-doc/html/ibus/IBusSerializable.html
 share/gtk-doc/html/ibus/IBusService.html
 share/gtk-doc/html/ibus/IBusText.html
@@ -190,6 +191,7 @@ share/locale/fr/LC_MESSAGES/ibus10.mo
 share/locale/gu/LC_MESSAGES/ibus10.mo
 share/locale/hi/LC_MESSAGES/ibus10.mo
 share/locale/hu/LC_MESSAGES/ibus10.mo
+share/locale/ia/LC_MESSAGES/ibus10.mo
 share/locale/it/LC_MESSAGES/ibus10.mo
 share/locale/ja/LC_MESSAGES/ibus10.mo
 share/locale/kn/LC_MESSAGES/ibus10.mo
@@ -229,3 +231,4 @@ share/vala/vapi/ibus-1.0.vapi
 @exec %D/bin/dconf update
 @unexec-delete %D/bin/dconf update
 @unexec-delete rm -f ${SYSCONFDIR}/dconf/db/ibus
+@sample /var/cache/ibus/

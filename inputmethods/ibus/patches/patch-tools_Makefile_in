@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_Makefile_in,v 1.2 2013/05/07 07:59:25 fgsch Exp $
---- tools/Makefile.in.orig	Wed Apr 17 02:31:37 2013
-+++ tools/Makefile.in	Fri May  3 09:57:54 2013
-@@ -456,7 +456,6 @@ AM_CFLAGS = \
+$OpenBSD: patch-tools_Makefile_in,v 1.3 2013/10/01 21:21:17 fgsch Exp $
+--- tools/Makefile.in.orig	Fri Sep 20 04:17:27 2013
++++ tools/Makefile.in	Sat Sep 28 20:02:51 2013
+@@ -489,7 +489,6 @@ AM_CFLAGS = \
  	-DG_LOG_DOMAIN=\"IBUS\" \
  	-DIBUS_DISABLE_DEPRECATED \
  	-Wno-unused-variable \
@@ -9,3 +9,24 @@ $OpenBSD: patch-tools_Makefile_in,v 1.2 2013/05/07 07:59:25 fgsch Exp $
  	-Wno-unused-function \
  	$(NULL)
  
+@@ -526,7 +525,7 @@ bash_completiondir = @datadir@/bash-completion/complet
+ man_one_in_files = ibus.1.in
+ man_one_files = $(man_one_in_files:.1.in=.1)
+ man_one_DATA = $(man_one_files:.1=.1.gz) 
+-man_onedir = $(datadir)/man/man1
++man_onedir = $(mandir)/man1
+ EXTRA_DIST = \
+ 	$(man_one_in_files) \
+ 	ibus.bash \
+@@ -689,9 +688,9 @@ uninstall-bash_completionDATA:
+ 	@list='$(bash_completion_DATA)'; test -n "$(bash_completiondir)" || list=; \
+ 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+ 	dir='$(DESTDIR)$(bash_completiondir)'; $(am__uninstall_files_from_dir)
+-install-man_oneDATA: $(man_one_DATA)
++install-man_oneDATA: $(man_one_files)
+ 	@$(NORMAL_INSTALL)
+-	@list='$(man_one_DATA)'; test -n "$(man_onedir)" || list=; \
++	@list='$(man_one_files)'; test -n "$(man_onedir)" || list=; \
+ 	if test -n "$$list"; then \
+ 	  echo " $(MKDIR_P) '$(DESTDIR)$(man_onedir)'"; \
+ 	  $(MKDIR_P) "$(DESTDIR)$(man_onedir)" || exit 1; \
