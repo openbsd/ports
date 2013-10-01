@@ -1,0 +1,14 @@
+$OpenBSD: patch-base_runtime_include_ml-timer_h,v 1.1 2013/10/01 07:12:49 jca Exp $
+--- base/runtime/include/ml-timer.h.orig	Thu Jun  1 20:34:03 2000
++++ base/runtime/include/ml-timer.h	Tue Oct  1 02:11:10 2013
+@@ -14,8 +14,8 @@
+  * struct timeval, but others do not.
+  */
+ typedef struct {
+-    Int32_t	seconds;
+-    Int32_t	uSeconds;
++    time_t	seconds;
++    long	uSeconds;
+ } Time_t;
+ 
+ extern void GetCPUTime (Time_t *user_t, Time_t *sys_t);
