@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.61 2013/09/05 06:24:34 landry Exp $
+# $OpenBSD: Makefile,v 1.62 2013/10/01 08:59:10 ajacoutot Exp $
 
-COMMENT=	API for accessing scanners, backends
 BROKEN-alpha =	ICE hp5590.c:1141: error: unrecognizable insn
 
-DISTNAME=	sane-backends-1.0.23
-REVISION=	4
+COMMENT=	API for accessing scanners, backends
 
-SHARED_LIBS=	sane 2.0 # .1.0
+DISTNAME=	sane-backends-1.0.24
+
+SHARED_LIBS +=  sane                 2.0      # unknown
+
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.sane-project.org/
@@ -20,18 +21,8 @@ WANTLIB += asn1 c crypto cups gssapi jpeg krb5 m pthread ssl tiff
 WANTLIB += usb usb-1.0 z avahi-client avahi-common dbus-1
 WANTLIB += com_err heimbase roken wind
 
-# XXX
-# README.txt: Due to limitations in alioth's file upload software, the
-# release has been divided into 3 parts. Download all three, and the
-# .md5sum. Join them using the following command:
-# cat sane-backends-1.0.23.tar.gz.[1-3] > sane-backends-1.0.23.tar.gz
-# Then check the md5sum as follows:
-# md5sum -c sane-backends-1.0.23.tar.gz.md5
-# MASTER_SITES=	https://alioth.debian.org/frs/download.php/3752/ \
-#		ftp://ftp.sane-project.org/pub/sane/${DISTNAME}/ \
-#		ftp://ftp.sane-project.org/pub/sane/old-versions/${DISTNAME}/ \
-#		ftp://ftp2.sane-project.org/pub/sane/${DISTNAME}/
-MASTER_SITES=	http://distfiles.bsdfrog.org/
+MASTER_SITES=	https://distfiles.bsdfrog.org/ \
+		ftp://ftp2.sane-project.org/pub/sane/${DISTNAME}/
 
 MODULES=	devel/gettext
 
@@ -43,8 +34,6 @@ FLAVORS=	snmp
 FLAVOR?=
 
 USE_GMAKE=	Yes
-USE_GROFF=	Yes
-NO_TEST=	Yes
 
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/spool
 
@@ -69,6 +58,9 @@ CONFIGURE_ARGS += --with-snmp
 CONFIGURE_ARGS += --without-snmp
 .endif
 
+# missing check in configure for config.h.in
+CFLAGS +=	-DHAVE_SYS_SOCKET_H
+
 FAKE_FLAGS=	configdir=${PREFIX}/share/examples/sane-backends/sane.d
 
 pre-configure:
@@ -79,6 +71,7 @@ post-install:
 	find ${PREFIX} -name \*microtek2\* | xargs rm
 	cp -R ${WRKSRC}/tools/openbsd/ \
 		${PREFIX}/share/examples/sane-backends/hotplug
+	rm ${PREFIX}/share/doc/sane-backends/README*
 	rm ${PREFIX}/share/examples/sane-backends/hotplug/{attach,detach}.orig
 
 .include <bsd.port.mk>

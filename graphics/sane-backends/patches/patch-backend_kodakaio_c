@@ -1,16 +1,14 @@
-$OpenBSD: patch-backend_kodakaio_c,v 1.1 2013/03/08 06:44:18 ajacoutot Exp $
-
-Don't print error messages on stdout (corrupts output):
-https://alioth.debian.org/tracker/index.php?func=detail&aid=313851&group_id=30186&atid=410366
-
---- backend/kodakaio.c.orig	Mon Feb 25 23:40:02 2013
-+++ backend/kodakaio.c	Mon Feb 25 23:40:57 2013
-@@ -2197,7 +2197,7 @@ First version only does autodiscovery */
+$OpenBSD: patch-backend_kodakaio_c,v 1.2 2013/10/01 08:59:11 ajacoutot Exp $
+--- backend/kodakaio.c.orig	Tue Oct  1 10:31:13 2013
++++ backend/kodakaio.c	Tue Oct  1 10:31:41 2013
+@@ -182,6 +182,10 @@ normal levels. This system is a plan rather than a rea
+ #include <poll.h>
+ #include <time.h>
  
- 	reply = cupsGetDevices(CUPS_HTTP_DEFAULT, CUPS_TIMEOUT_DEFAULT, 
- 		"dnssd", CUPS_EXCLUDE_NONE, ProcessDevice, Dummy);
--	if(reply != IPP_OK) printf("Failed cupsGetDevices\n");
-+	if(reply != IPP_OK) fprintf(stderr, "Failed cupsGetDevices\n");
- 
- 	return 0;
- }
++#ifdef HAVE_SYS_SOCKET_H
++#include <sys/socket.h>
++#endif
++
+ #if WITH_AVAHI
+ /* used for auto detecting network printers  */
+ #include <assert.h>

@@ -1,15 +1,14 @@
-$OpenBSD: patch-tools_openbsd_attach,v 1.1 2012/02/16 22:29:15 ajacoutot Exp $
---- tools/openbsd/attach.orig	Thu Feb 16 15:47:58 2012
-+++ tools/openbsd/attach	Thu Feb 16 15:49:40 2012
-@@ -11,8 +11,9 @@ case $DEVCLASS in
+$OpenBSD: patch-tools_openbsd_attach,v 1.2 2013/10/01 08:59:11 ajacoutot Exp $
+--- tools/openbsd/attach.orig	Sat Feb 23 03:00:56 2013
++++ tools/openbsd/attach	Tue Oct  1 10:24:46 2013
+@@ -11,8 +11,8 @@ case $DEVCLASS in
  		BUSNAME=`usbdevs -v -d | egrep "Controller|$DEVNAME\$" | grep -B 1 ugen0$ | head -n 1 | sed -e 's,Controller ,,' -e 's,:$,,' `
  		echo $BUSNAME >  /var/run/${DEVNAME}.bus
  		# probably our scanner
 -		chgrp usb /dev/"$DEVNAME".*
 -		chgrp usb /dev/"$BUSNAME"
-+		# id 541 = _cups
-+		chown 541:_saned /dev/"$DEVNAME".*
-+		chown 541:_saned /dev/"$BUSNAME"
++		chown _cups:_saned /dev/"$DEVNAME".*
++		chown _cups:_saned /dev/"$BUSNAME"
  		;;
  	esac
  

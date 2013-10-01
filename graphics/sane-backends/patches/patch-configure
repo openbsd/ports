@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.13 2012/08/28 08:26:40 ajacoutot Exp $
---- configure.orig	Sun Aug 19 22:45:11 2012
-+++ configure	Tue Aug 28 09:11:02 2012
-@@ -7353,18 +7353,6 @@ if test "${with_group+set}" = set; then :
+$OpenBSD: patch-configure,v 1.14 2013/10/01 08:59:11 ajacoutot Exp $
+--- configure.orig	Tue Oct  1 03:01:13 2013
++++ configure	Tue Oct  1 10:18:32 2013
+@@ -7450,18 +7450,6 @@ if test "${with_group+set}" = set; then :
  
  fi
  
@@ -20,7 +20,7 @@ $OpenBSD: patch-configure,v 1.13 2012/08/28 08:26:40 ajacoutot Exp $
    fi
    if test $use_locking = yes ; then
      INSTALL_LOCKPATH=install-lockpath
-@@ -8009,7 +7997,7 @@ $as_echo "#define STDC_HEADERS 1" >>confdefs.h
+@@ -8114,7 +8102,7 @@ $as_echo "#define STDC_HEADERS 1" >>confdefs.h
  
  fi
  
@@ -29,7 +29,7 @@ $OpenBSD: patch-configure,v 1.13 2012/08/28 08:26:40 ajacoutot Exp $
      sys/time.h sys/shm.h sys/ipc.h sys/signal.h sys/scanio.h os2.h \
      sys/socket.h sys/io.h sys/hw.h sys/types.h linux/ppdev.h \
      dev/ppbus/ppi.h machine/cpufunc.h sys/bitypes.h sys/sem.h sys/poll.h \
-@@ -8267,6 +8255,7 @@ $as_echo_n "checking for socklen_t in <sys/socket.h>..
+@@ -8372,6 +8360,7 @@ $as_echo_n "checking for socklen_t in <sys/socket.h>..
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
@@ -37,9 +37,9 @@ $OpenBSD: patch-configure,v 1.13 2012/08/28 08:26:40 ajacoutot Exp $
  #include <sys/socket.h>
  
  int
-@@ -9548,7 +9537,7 @@ fi
+@@ -9650,7 +9639,7 @@ $as_echo "#define HAVE_DEV_URANDOM 1" >>confdefs.h
+ fi
  
- nl added by PN 3/2/12 to detect cups
  $as_echo "checking for cups"
 -if test -e /usr/include/cups/cups.h ; then
 +if test -e ${LOCALBASE}/include/cups/cups.h ; then
