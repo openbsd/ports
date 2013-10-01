@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/01 10:09:51 dcoppa Exp $
+@bin bin/celtdec07
+@bin bin/celtenc07
+include/celt07/
+include/celt07/celt.h
+include/celt07/celt_header.h
+include/celt07/celt_types.h
+lib/libcelt07.a
+lib/libcelt07.la
+@lib lib/libcelt07.so.${LIBcelt07_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/celt07.pc
