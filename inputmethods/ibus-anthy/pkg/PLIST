@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/01/18 12:42:16 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/10/01 21:22:08 fgsch Exp $
 include/ibus-anthy-1.0/
 include/ibus-anthy-1.0/anthygcontext.h
 lib/girepository-1.0/Anthy-9000.typelib
@@ -10,8 +10,10 @@ share/applications/ibus-setup-anthy.desktop
 share/gir-1.0/Anthy-9000.gir
 share/ibus-anthy/
 share/ibus-anthy/dicts/
+share/ibus-anthy/dicts/era.t
 share/ibus-anthy/dicts/oldchar.t
 share/ibus-anthy/dicts/symbol.t
+share/ibus-anthy/dicts/zipcode.t
 share/ibus-anthy/engine/
 share/ibus-anthy/engine/_config.py
 share/ibus-anthy/engine/_config.pyc
