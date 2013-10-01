@@ -1,15 +1,15 @@
-$OpenBSD: patch-xwindow_fb_x_h,v 1.1 2013/09/30 09:46:11 dcoppa Exp $
+$OpenBSD: patch-xwindow_fb_x_h,v 1.2 2013/10/01 06:13:22 dcoppa Exp $
 
 'XKeycodeToKeysym' is deprecated
 
 --- xwindow/fb/x.h.orig	Mon Aug  5 14:48:52 2013
-+++ xwindow/fb/x.h	Mon Sep 30 10:48:09 2013
++++ xwindow/fb/x.h	Tue Oct  1 07:41:40 2013
 @@ -578,7 +578,7 @@ typedef struct
  
  /* XXX dummy */
  #define XKeysymToKeycode(disp,ks)  (ks)
 -#define XKeycodeToKeysym(disp,kc,i)  (kc)
-+#define XkbKeycodeToKeysym(disp,kc,a,b)  (kc)
++#define XkbKeycodeToKeysym(disp,kc,i,j)  (kc)
  #define XKeysymToString(ks)	""
  #define DisplayString(disp)	":0.0"
  #define DefaultScreen(disp)	(0)

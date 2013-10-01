@@ -1,16 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/09/30 09:46:13 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/10/01 06:13:22 dcoppa Exp $
 @bin bin/mlcc
 @bin bin/mlclient
 @bin bin/mlclientx
 @mode g+s
 @group utmp
 @bin bin/mlterm
-@mode u+s
+@mode
 @group
+@mode u+s
 @bin bin/mlterm-fb
+@mode
 @comment lib/libkik.a
 @comment lib/libkik.la
-@mode
 @lib lib/libkik.so.${LIBkik_VERSION}
 @comment lib/libmkf.a
 @comment lib/libmkf.la
