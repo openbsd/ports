@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/09/08 19:50:46 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2013/10/02 14:42:09 bcallah Exp $
 
 # Fails for me on macppc, sgi, and sparc64.
 NOT_FOR_ARCHS =	${BE_ARCHS}
 
-V =		20130908
+V =		20130929
 COMMENT =	high-level, extensible programming language
 DISTNAME =	seed7_05_${V}
 PKGNAME =	seed7-${V}
