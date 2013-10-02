@@ -1,0 +1,6 @@
+This script is intended to help you watch URLs and get notified (via
+email or in your terminal) of any changes. The change notification will
+include the URL that has changed and a unified diff of what has changed.
+
+The script supports the use of a filtering hook function to strip
+trivially-varying elements of a webpage.
