@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/10/26 16:59:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/10/02 10:45:26 ajacoutot Exp $
 @conflict pwlib-*
 @pkgpath devel/pwlib
 @pkgpath devel/pwlib,ldap
@@ -176,15 +176,15 @@ include/ptlib/videoio.h
 include/ptlib/videoio1394dc.h
 include/ptlib/wxstring.h
 @lib lib/libpt.so.${LIBpt_VERSION}
-lib/libpt_s.a
+lib/pkgconfig/
 lib/pkgconfig/ptlib.pc
-lib/ptlib/
-lib/ptlib/devices/
-lib/ptlib/devices/sound/
-lib/ptlib/devices/sound/sndio_pwplugin.so
-lib/ptlib/devices/videoinput/
-lib/ptlib/devices/videoinput/bsdvideo_pwplugin.so
-lib/ptlib/devices/videoinput/v4l2_pwplugin.so
+lib/ptlib-${V}/
+lib/ptlib-${V}/devices/
+lib/ptlib-${V}/devices/sound/
+lib/ptlib-${V}/devices/sound/sndio_pwplugin.so
+lib/ptlib-${V}/devices/videoinput/
+lib/ptlib-${V}/devices/videoinput/bsdvideo_pwplugin.so
+lib/ptlib-${V}/devices/videoinput/v4l2_pwplugin.so
 share/ptlib/
 share/ptlib/make/
 share/ptlib/make/common.mak

@@ -1,23 +1,7 @@
-$OpenBSD: patch-make_common_mak,v 1.2 2011/10/26 16:59:09 ajacoutot Exp $
---- make/common.mak.orig	Fri Oct 14 08:54:53 2011
-+++ make/common.mak	Wed Oct 26 10:37:55 2011
-@@ -80,6 +80,7 @@ endif
- SOURCES         := $(strip $(SOURCES))
- 
- 
-+ifneq ($(OSTYPE),OpenBSD)
- ifeq ($(V)$(VERBOSE),)
- Q    = @
- Q_CC = @echo [CC] `echo $< | sed s/$PWD//` ; 
-@@ -87,6 +88,7 @@ Q_DEP= @echo [DEP] `echo $< | sed s/$PWD//` ; 
- Q_AR = @echo [AR] `echo $@ | sed s/$PWD//` ; 
- Q_LD = @echo [LD] `echo $@ | sed s/$PWD//` ; 
- endif
-+endif
- 
- 
- #
-@@ -164,7 +166,7 @@ TARGET_LIBS	= $(PTLIBDIR)/lib_$(PLATFORM_TYPE)/$(PTLIB
+$OpenBSD: patch-make_common_mak,v 1.3 2013/10/02 10:45:25 ajacoutot Exp $
+--- make/common.mak.orig	Thu Aug 15 01:20:27 2013
++++ make/common.mak	Tue Oct  1 20:05:32 2013
+@@ -164,7 +164,7 @@ TARGET_LIBS	= $(PTLIBDIR)/lib_$(PLATFORM_TYPE)/$(PTLIB
  
  # distinguish betweek building and using pwlib
  ifeq (,$(wildcard $(PTLIBDIR)/src))
