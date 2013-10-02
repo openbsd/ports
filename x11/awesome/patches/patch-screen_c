@@ -1,0 +1,51 @@
+$OpenBSD: patch-screen_c,v 1.1 2013/10/02 11:49:00 dcoppa Exp $
+
+commit fd8f2e23eeeec8d77f997d63b229fdc861beff03
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Sep 27 23:07:33 2013 +0200
+
+screen: Make sure we always have a screen
+
+It is possible to configure RANDR so that no outputs are available. This means
+awesome would be running with zero screens which leads to all kinds of
+funnyness.
+
+Work around this by falling back to other configuration mechanisms if we get no
+screens from one of them. After all, screen_scan_x11() will always be able to
+add a screen.
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+--- screen.c.orig	Wed Oct  2 12:46:04 2013
++++ screen.c	Wed Oct  2 12:48:46 2013
+@@ -76,6 +76,12 @@ screen_add(screen_t new_screen)
+ }
+ 
+ static bool
++screens_exist(void)
++{
++    return globalconf.screens.len > 0;
++}
++
++static bool
+ screen_scan_randr(void)
+ {
+     /* Check for extension before checking for XRandR */
+@@ -150,7 +156,7 @@ screen_scan_randr(void)
+ 
+             p_delete(&screen_res_r);
+ 
+-            return true;
++            return screens_exist();
+         }
+     }
+ 
+@@ -195,7 +201,7 @@ screen_scan_xinerama(void)
+ 
+         p_delete(&xsq);
+ 
+-        return true;
++        return screens_exist();
+     }
+ 
+     return false;
