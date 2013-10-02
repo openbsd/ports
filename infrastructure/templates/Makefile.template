@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.template,v 1.67 2013/07/10 15:22:23 bcallah Exp $
+# $OpenBSD: Makefile.template,v 1.68 2013/10/02 07:34:45 ajacoutot Exp $
 # $FreeBSD/NetBSD: credit FreeBSD/NetBSD if thats where the port came from $
 # Original from: credit the original author here
 #
@@ -126,7 +126,7 @@ MASTER_SITES =		???
 #AUTOCONF_VERSION =	??? (defaults to 2.13)
 #AUTOMAKE_VERSION =	??? (defaults to 1.4)
 # config.guess and others are copied here
-#MODGNU_CONFIG_GUESS_DIRS = ??? (defaults to ${WRKSRC}
+#MODGNU_CONFIG_GUESS_DIRS = ??? (defaults to ${WRKSRC})
 
 # Is the build automagic or is it interactive
 #
