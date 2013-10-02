@@ -1,0 +1,2 @@
+This is a backport of the concurrent.futures package from Python 3.2 which
+provides a high-level interface for asynchronously executing callables.
