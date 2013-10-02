@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.627 2013/09/29 18:36:29 rpe Exp $
+# $OpenBSD: Makefile,v 1.628 2013/10/02 07:56:29 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -503,6 +503,7 @@
      SUBDIR += tracnav
      SUBDIR += tt-rss
      SUBDIR += twill
+     SUBDIR += urlwatch
      SUBDIR += varnish
      SUBDIR += visitors
      SUBDIR += vteplugin
