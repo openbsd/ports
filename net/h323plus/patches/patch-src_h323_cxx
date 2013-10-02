@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_h323_cxx,v 1.1 2013/01/16 14:18:17 ajacoutot Exp $
+$OpenBSD: patch-src_h323_cxx,v 1.2 2013/10/02 10:46:14 ajacoutot Exp $
 
-h323.cxx:2625: error: 'IsH46019Multiplexed' was not declared in this scope
+http://h323plus.cvs.sourceforge.net/viewvc/h323plus/h323plus/src/h323.cxx?r1=1.119&r2=1.120
 
---- src/h323.cxx.orig	Wed Jan 16 08:57:50 2013
-+++ src/h323.cxx	Wed Jan 16 08:57:40 2013
+--- src/h323.cxx.orig	Tue Nov 20 13:12:55 2012
++++ src/h323.cxx	Tue Oct  1 18:35:04 2013
 @@ -2621,7 +2621,7 @@ PBoolean H323Connection::OnNatDetected()
  }
  
