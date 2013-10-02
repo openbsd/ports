@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2013/08/21 10:36:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2013/10/02 19:04:12 ajacoutot Exp $
 
 COMMENT=	scanner frontend for SANE
 
-DISTNAME=	xsane-0.998
-REVISION=	4
+DISTNAME=	xsane-0.999
 
 CATEGORIES=	graphics
 
@@ -23,9 +22,11 @@ WANTLIB += gtk-x11-2.0 jpeg lcms m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += png sane tiff z
 
 MODULES=	devel/gettext
+
 LIB_DEPENDS=	x11/gtk+2 \
 		graphics/lcms \
 		graphics/sane-backends
+
 RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/xdg-utils
 
@@ -34,8 +35,7 @@ USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -liconv" \
-		gt_cv_func_gettext_libintl=yes
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 NO_TEST=	Yes
 
