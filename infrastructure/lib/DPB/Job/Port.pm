@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.116 2013/09/23 12:32:59 espie Exp $
+# $OpenBSD: Port.pm,v 1.117 2013/10/02 09:16:01 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -638,22 +638,6 @@ sub finalize
 	my ($self, $core) = @_;
 	$self->requeue($core);
 	$self->SUPER::finalize($core);
-}
-
-package DPB::Task::Port::VerifyPackages;
-our @ISA = qw(DPB::Task::Port);
-sub finalize
-{
-	my ($self, $core) = @_;
-	if ($core->{status} != 0) {
-		return 0;
-	}
-}
-
-sub run
-{
-	sleep 10;
-	exit(0);
 }
 
 package DPB::Port::TaskFactory;
