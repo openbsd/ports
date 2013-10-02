@@ -121,7 +121,7 @@ sub make_singleton
 	    producers => $class->filter_can(\@_, $class->filter),
 	    timeout => $state->{display_timeout} // 10,
 	    continued => 0}, $class;
-    	if (defined $state->{record}) {
+    	if ($state->{record}) {
 		open $singleton->{record}, '>>', $state->{record};
 	}
 	return $singleton;
