@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.20 2013/09/30 19:08:35 espie Exp $
+# $openbsd: reporter.pm,v 1.20 2013/09/30 19:08:35 espie exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -14,13 +14,14 @@
 # WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
 use strict;
 use warnings;
 
-use Term::Cap;
 use OpenBSD::Error;
 use DPB::Util;
 use DPB::Clock;
+use DPB::MiniCurses;
 
 package DPB::Reporter;
 my $singleton;
@@ -158,43 +159,9 @@ sub myprint
 }
 
 package DPB::Reporter::Tty;
-our @ISA = qw(DPB::Reporter DPB::Limiter);
+our @ISA = qw(DPB::MiniCurses DPB::Reporter DPB::Limiter);
 
 my $extra = '';
-my $width;
-my $wsz_format = 'SSSS';
-our %sizeof;
-
-sub find_window_size
-{
-	my $self = shift;
-	# try to get exact window width
-	my $r;
-	$r = pack($wsz_format, 0, 0, 0, 0);
-	$sizeof{'struct winsize'} = 8;
-	require 'sys/ttycom.ph';
-	$width = 80;
-	if (ioctl(STDOUT, &TIOCGWINSZ, $r)) {
-		my ($rows, $cols, $xpix, $ypix) =
-		    unpack($wsz_format, $r);
-		$self->{width} = $cols;
-		$self->{height} = $rows;
-	}
-}
-
-sub term_send
-{
-	my ($self, $seq) = @_;
-	$self->{terminal}->Tputs($seq, 1, \*STDOUT);
-}
-
-sub refresh
-{
-	my $self = shift;
-	$self->{write} = 'go_write_home';
-	$self->{force} = 1;
-}
-
 sub handle_window
 {
 	my $self = shift;
@@ -224,144 +191,17 @@ sub new
 	my $class = shift;
 	my $state = shift;
 	$class->make_singleton($state, @_);
-	my $oldfh = select(STDOUT);
-	$| = 1;
-	# XXX go back to totally non-buffered raw shit
-	binmode(STDOUT, ':pop');
-	select($oldfh);
-	use POSIX;
-	my $termios = POSIX::Termios->new;
-	$termios->getattr(0);
-	$singleton->{terminal} = Term::Cap->Tgetent({ OSPEED =>
-	    $termios->getospeed });
-	$singleton->find_window_size;
+	$singleton->create_terminal;
 	$singleton->set_sig_handlers;
-	$singleton->{home} = $singleton->{terminal}->Tputs("ho", 1);
-	$singleton->{clear} = $singleton->{terminal}->Tputs("cl", 1);
-	$singleton->{down} = $singleton->{terminal}->Tputs("do", 1);
-	$singleton->{glitch} = $singleton->{terminal}->Tputs("xn", 1);
-	$singleton->{cleareol} = $singleton->{terminal}->Tputs("ce", 1);
 	if ($state->{subst}->value("NO_CURSOR")) {
 		$singleton->{invisible} = 
 		    $singleton->{terminal}->Tputs("vi", 1);
 		$singleton->{visible} = 
 		    $singleton->{terminal}->Tputs("ve", 1);
 	}
-	if ($singleton->{home}) {
-		$singleton->{write} = "go_write_home";
-	} else {
-		$singleton->{write} = "write_clear";
-	}
 	# no cursor, to avoid flickering
 	$singleton->set_cursor;
 	return $singleton;
-}
-
-sub write_clear
-{
-	my ($self, $msg) = @_;
-	my $r = $self->{clear};
-	$self->{oldlines} = [$self->cut_lines($msg)];
-	my $n = 2;
-	for my $line (@{$self->{oldlines}}) {
-		last if $n++ > $self->{height};
-		$r .= $self->clamped($line);
-	}
-	print $r;
-}
-
-sub cut_lines
-{
-	my ($self, $msg) = @_;
-	my @lines = ();
-	for my $line (split("\n", $msg)) {
-		while (length $line > $self->{width}) {
-			push(@lines, substr($line, 0, $self->{width}));
-			$line = substr($line, $self->{width});
-		}
-		push(@lines, $line);
-	}
-	return @lines;
-}
-
-sub clamped
-{
-	my ($self, $line) = @_;
-	if (!$self->{glitch} && length $line == $self->{width}) {
-		return $line;
-	} else {
-		return $line."\n";
-	}
-}
-
-sub clear_clamped
-{
-	my ($self, $line) = @_;
-	if (!$self->{glitch} && length $line == $self->{width}) {
-		return $line;
-	} else {
-		return $self->{cleareol}.$line."\n";
-	}
-}
-
-sub do_line
-{
-	my ($self, $new, $old) = @_;
-	# line didn't change: try to go down
-	if (defined $old && $old eq $new) {
-		if ($self->{down}) {
-			return $self->{down};
-		}
-	}
-	# adjust newline to correct length
-	if (defined $old && (length $old) > (length $new)) {
-		if ($self->{cleareol}) {
-			return $self->clear_clamped($new);
-		}
-		$new .= " "x ((length $old) - (length $new));
-	}
-	return $self->clamped($new);
-}
-
-sub lines
-{
-	my ($self, @new) = @_;
-
-	my $n = 2;
-	my $r = '';
-
-	while (@new > 0) {
-		return $r if $n++ > $self->{height};
-		$r .= $self->do_line(shift @new, shift @{$self->{oldlines}});
-	}
-	# extra lines must disappear
-	while (@{$self->{oldlines}} > 0) {
-		my $line = shift @{$self->{oldlines}};
-		if ($self->{cleareol}) {
-			$r .= $self->clear_clamped('');
-		} else {
-			$line = " "x (length $line);
-			$r .= $self->clamped($line);
-		}
-		last if $n++ > $self->{height};
-	}
-	return $r;
-}
-
-sub write_home
-{
-	my ($self, $msg) = @_;
-	my @new = $self->cut_lines($msg);
-	print $self->{home}.$self->lines(@new);
-	$self->{oldlines} = \@new;
-}
-
-sub go_write_home
-{
-	# first report has to clear the screen
-	my ($self, $msg) = @_;
-	$self->write_clear($msg);
-	$self->{write} = 'write_home';
 }
 
 sub report
