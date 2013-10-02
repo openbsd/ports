@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1163 2013/09/12 07:00:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1164 2013/10/02 07:55:30 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1136,6 +1136,7 @@
      SUBDIR += py-epsilon
      SUBDIR += py-extremes
      SUBDIR += py-fpconst
+     SUBDIR += py-futures
      SUBDIR += py-gdata
      SUBDIR += py-gevent
      SUBDIR += py-gitdb
