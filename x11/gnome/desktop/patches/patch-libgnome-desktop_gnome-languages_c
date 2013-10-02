@@ -1,9 +1,12 @@
-$OpenBSD: patch-libgnome-desktop_gnome-languages_c,v 1.4 2013/09/02 16:04:20 ajacoutot Exp $
+$OpenBSD: patch-libgnome-desktop_gnome-languages_c,v 1.5 2013/10/02 16:07:46 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=698383
+From 91082e8d0ef7dc3fe372fb5228fd3bb5a26efa81 Mon Sep 17 00:00:00 2001
+From: Stefan Sperling <stsp@openbsd.org>
+Date: Wed, 28 Aug 2013 16:25:34 +0000
+Subject: Obtain supported locales from "locale -a" output.
 
---- libgnome-desktop/gnome-languages.c.orig	Sun Mar 17 02:49:53 2013
-+++ libgnome-desktop/gnome-languages.c	Mon Sep  2 17:48:15 2013
+--- libgnome-desktop/gnome-languages.c.orig	Sat Mar  2 16:55:49 2013
++++ libgnome-desktop/gnome-languages.c	Wed Oct  2 17:32:35 2013
 @@ -44,10 +44,7 @@
  #ifndef __LC_LAST
  #define __LC_LAST       13
@@ -58,8 +61,12 @@ https://bugzilla.gnome.org/show_bug.cgi?id=698383
  
          if (!utf8_only) {
                  g_free (locale->id);
-@@ -495,91 +476,6 @@ struct nameent
-         uint32_t locrec_offset;
+@@ -492,94 +473,9 @@ add_locale (const char *language_name,
+ struct nameent
+ {
+         char    *name;
+-        uint32_t locrec_offset;
++        guint32 locrec_offset;
  };
  
 -static gboolean
