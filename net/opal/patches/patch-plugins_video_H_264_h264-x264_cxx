@@ -1,12 +1,12 @@
-$OpenBSD: patch-plugins_video_H_264_h264-x264_cxx,v 1.6 2013/03/21 07:50:56 landry Exp $
+$OpenBSD: patch-plugins_video_H_264_h264-x264_cxx,v 1.7 2013/10/02 10:46:37 ajacoutot Exp $
 
 LOCALBASE/include/libavutil/common.h:170: error: 'UINT64_C' was not declared in this scope,
 so move headers so that __STDC_CONSTANT_MACROS is defined at the right time.
 
---- plugins/video/H.264/h264-x264.cxx.orig	Wed Feb 20 03:18:02 2013
-+++ plugins/video/H.264/h264-x264.cxx	Thu Mar 21 08:47:42 2013
+--- plugins/video/H.264/h264-x264.cxx.orig	Thu Aug 15 01:22:47 2013
++++ plugins/video/H.264/h264-x264.cxx	Tue Oct  1 18:33:36 2013
 @@ -36,15 +36,15 @@
-  * $Date: 2013/03/21 07:50:56 $
+  * $Date: 2013/10/02 10:46:37 $
   */
  
 +#include "../common/ffmpeg.h"

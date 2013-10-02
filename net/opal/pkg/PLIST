@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/08/25 13:17:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/10/02 10:46:37 ajacoutot Exp $
 include/opal/
 include/opal/asn/
 include/opal/asn/gcc.h
@@ -149,30 +149,29 @@ include/opal/zrtp/
 include/opal/zrtp/opalzrtp.h
 include/opal/zrtp/zrtpeventproc.h
 @lib lib/libopal.so.${LIBopal_VERSION}
-lib/libopal_s.a
-lib/opal/
-lib/opal/codecs/
-lib/opal/codecs/audio/
-lib/opal/codecs/audio/celt_ptplugin.so
-lib/opal/codecs/audio/g7221_ptplugin.so
-lib/opal/codecs/audio/g7222_ptplugin.so
-lib/opal/codecs/audio/g722_ptplugin.so
-lib/opal/codecs/audio/g726_ptplugin.so
-lib/opal/codecs/audio/gsm0610_ptplugin.so
-lib/opal/codecs/audio/gsmamrcodec_ptplugin.so
-lib/opal/codecs/audio/iLBC_ptplugin.so
-lib/opal/codecs/audio/ima_adpcm_ptplugin.so
-lib/opal/codecs/audio/lpc10_ptplugin.so
-lib/opal/codecs/audio/speex_ptplugin.so
-lib/opal/codecs/video/
-lib/opal/codecs/video/h261_vic_ptplugin.so
-lib/opal/codecs/video/h263_ffmpeg_ptplugin.so
-@bin lib/opal/codecs/video/h264_video_pwplugin_helper
-lib/opal/codecs/video/h264_x264_ptplugin.so
-lib/opal/codecs/video/mpeg4_ffmpeg_ptplugin.so
-lib/opal/codecs/video/theora_ptplugin.so
-lib/opal/fax/
-lib/opal/fax/spandsp_ptplugin.so
+lib/opal-${V}/
+lib/opal-${V}/codecs/
+lib/opal-${V}/codecs/audio/
+lib/opal-${V}/codecs/audio/celt_ptplugin.so
+lib/opal-${V}/codecs/audio/g7221_ptplugin.so
+lib/opal-${V}/codecs/audio/g7222_ptplugin.so
+lib/opal-${V}/codecs/audio/g722_ptplugin.so
+lib/opal-${V}/codecs/audio/g726_ptplugin.so
+lib/opal-${V}/codecs/audio/gsm0610_ptplugin.so
+lib/opal-${V}/codecs/audio/gsmamrcodec_ptplugin.so
+lib/opal-${V}/codecs/audio/iLBC_ptplugin.so
+lib/opal-${V}/codecs/audio/ima_adpcm_ptplugin.so
+lib/opal-${V}/codecs/audio/lpc10_ptplugin.so
+lib/opal-${V}/codecs/audio/speex_ptplugin.so
+lib/opal-${V}/codecs/video/
+lib/opal-${V}/codecs/video/h261_vic_ptplugin.so
+lib/opal-${V}/codecs/video/h263_ffmpeg_ptplugin.so
+@bin lib/opal-${V}/codecs/video/h264_video_pwplugin_helper
+lib/opal-${V}/codecs/video/h264_x264_ptplugin.so
+lib/opal-${V}/codecs/video/mpeg4_ffmpeg_ptplugin.so
+lib/opal-${V}/codecs/video/theora_ptplugin.so
+lib/opal-${V}/fax/
+lib/opal-${V}/fax/spandsp_ptplugin.so
 lib/pkgconfig/opal.pc
 share/opal/
 share/opal/opal_inc.mak
