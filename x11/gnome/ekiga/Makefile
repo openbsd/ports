@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2013/09/27 17:49:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2013/10/02 10:48:55 ajacoutot Exp $
 
 # if ekiga ever moves to gstreamer, detect_sndiosink_devices() will need
 # to be implemented in:
@@ -10,7 +10,7 @@ COMMENT=	SIP and H.323 compatible conferencing application
 
 GNOME_PROJECT=	ekiga
 GNOME_VERSION=	4.0.1
-REVISION=	5
+REVISION=	6
 
 # pkg/PLIST
 SUBST_VARS +=	GNOME_VERSION
@@ -29,20 +29,19 @@ WANTLIB += ebook-1.2 ebook-contacts-1.2 edata-book-1.2 edataserver-1.2
 WANTLIB += expat ffi fontconfig freetype gck-1 gcr-base-3 gcrypt
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gpg-error graphite2 gssapi gthread-2.0
-WANTLIB += gtk-x11-2.0 harfbuzz krb5 lber-2.4
-WANTLIB += ldap-2.4 ldap_r-2.4 m notify nspr4 nss3 nssutil3 opal
-WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 plc4 plds4 png pt pthread pthread-stubs sasl2
+WANTLIB += gtk-x11-2.0 harfbuzz heimbase krb5 lber-2.4 ldap-2.4
+WANTLIB += ldap_r-2.4 m notify nspr4 nss3 nssutil3 opal p11-kit
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += plc4 plds4 png pt pthread pthread-stubs roken sasl2
 WANTLIB += secret-1 smime3 sndio softokn3 soup-2.4 speexdsp sqlite3
-WANTLIB += ssl ssl3 stdc++ usbhid xcb xcb-render xcb-shm xml2
-WANTLIB += heimbase roken wind
-WANTLIB += z
+WANTLIB += ssl ssl3 stdc++ usbhid wind xcb xcb-render xcb-shm
+WANTLIB += xml2 z
 
 MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-LIB_DEPENDS=	net/opal>=3.10.10 \
+LIB_DEPENDS=	net/opal \
 		devel/sdl \
 		databases/evolution-data-server \
 		devel/libnotify \
