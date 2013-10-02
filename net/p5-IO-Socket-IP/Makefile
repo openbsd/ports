@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/12 14:11:26 giovanni Exp $
+# $OpenBSD: Makefile,v 1.2 2013/10/02 14:45:54 giovanni Exp $
 
 COMMENT =	A drop-in replacement for IO::Socket::INET
 
-DISTNAME =	IO-Socket-IP-0.19
+DISTNAME =	IO-Socket-IP-0.24
 
 CATEGORIES =	net
 
