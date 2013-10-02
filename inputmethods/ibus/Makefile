@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.41 2013/10/01 21:21:16 fgsch Exp $
+# $OpenBSD: Makefile,v 1.42 2013/10/02 16:37:55 fgsch Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	intelligent input bus framework
 
 DISTNAME =	ibus-1.5.4
+REVISION =	0
 
 SHARED_LIBS =	ibus-1.0	4.0 # 5.504
 
@@ -29,6 +30,7 @@ WANTLIB = 	ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
 MASTER_SITES =	https://ibus.googlecode.com/files/
 
 MODULES =	devel/dconf \
+		devel/gconf2 \
 		devel/gettext \
 		lang/python \
 		textproc/intltool
@@ -44,6 +46,8 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 LIB_DEPENDS =	devel/libnotify \
 		x11/gtk+2 \
 		x11/gtk+3
+
+MODGCONF2_LIBDEP =	No
 
 USE_GMAKE =	Yes
 LIBTOOL_FLAGS =	--tag=disable-static
