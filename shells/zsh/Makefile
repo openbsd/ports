@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.68 2013/03/11 11:41:29 espie Exp $
+# $OpenBSD: Makefile,v 1.69 2013/10/02 19:49:11 gsoares Exp $
 
 COMMENT=	Z shell, Bourne shell-compatible
 
-V=		5.0.0
+V=		5.0.2
 DISTNAME=	zsh-$V
 CATEGORIES=	shells
 
@@ -51,6 +51,7 @@ pre-configure:
 .for i in ${EXTFILES}
 	perl -pi -e "s,/bin/zsh,${TRUEPREFIX}/bin/zsh,g" ${WRKSRC}/Functions/${i}
 .endfor
+	@find ${WRKSRC} -name "*.orig" -exec rm -f {} \;
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/$V/scripts/

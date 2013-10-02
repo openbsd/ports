@@ -1,24 +1,29 @@
-$OpenBSD: patch-Completion_Unix_Command__find,v 1.2 2008/02/08 04:55:08 okan Exp $
---- Completion/Unix/Command/_find.orig	Thu Dec 13 15:04:47 2007
-+++ Completion/Unix/Command/_find	Thu Dec 13 15:13:49 2007
-@@ -1,71 +1,40 @@
+$OpenBSD: patch-Completion_Unix_Command__find,v 1.3 2013/10/02 19:49:12 gsoares Exp $
+--- Completion/Unix/Command/_find.orig	Sun Aug 11 04:52:54 2013
++++ Completion/Unix/Command/_find	Sun Aug 11 04:53:00 2013
+@@ -1,82 +1,39 @@
 -#compdef find
 +#compdef find (OpenBSD)
 +# Sebastian Stark <seb@todesplanet.de>
  
  _arguments \
+-  '(- *)-help' '(-)--help' \
+-  '(- *)-version' '(-)--version' \
+-  '(-L -P)-H[only follow symlinks when resolving command-line arguments]' \
+-  '(-H -P)-L[follow symlinks]' \
+-  '(-H -L)-P[never follow symlinks]' \
+-  '-D[print diagnostics]:deb option:(help tree search stat rates opt exec)' \
+-  '-O+[enable query optimisation]:level:(1 2 3)' \
 -  '*-daystart' \
--  '*-depth' \
+-  '*-d' '*-depth' \
 -  '*-follow' \
--  '*-help' \
--  '*-ignore_readdir_race' \
--  '*-maxdepth:maximum search depth:' \
--  '*-mindepth:minimum search depth:' \
+-  '(-noignore_readdir_race)-ignore_readdir_race' \
+-  '*-maxdepth:maximum search depth' \
+-  '*-mindepth:minimum search depth' \
 -  '*-mount' \
--  '*-noignore_readdir_race' \
+-  '(-ignore_readdir_race)-noignore_readdir_race' \
 -  '*-noleaf' \
--  '*-regextype:regexp syntax:(emacs posix-awk posix-basic posix-egrep posix-extended)' \
--  '*-version' \
+-  '-regextype:regexp syntax:(emacs posix-awk posix-basic posix-egrep posix-extended)' \
 -  '*-warn' \
 -  '*-nowarn' \
 -  '*-xdev' \
@@ -37,6 +42,7 @@ $OpenBSD: patch-Completion_Unix_Command__find,v 1.2 2008/02/08 04:55:08 okan Exp
 -  '*-used:access after inode change (days):' \
 +  '*-ctime:inode change time (minutes)' \
    '*-empty' \
+-  '*-executable' \
 -  '*-false' \
 -  '*-fstype:file system type:_file_systems' \
 -  '*-gid:numeric group ID:' \
@@ -71,6 +77,8 @@ $OpenBSD: patch-Completion_Unix_Command__find,v 1.2 2008/02/08 04:55:08 okan Exp
    '*-nouser' \
    '*-nogroup' \
 -  '*-perm:file permission bits:' \
+-  '*-readable' \
+-  '*-writable' \
 -  '*-size:file size:' \
 -  '*-samefile:same inode as:_files' \
 -  '*-true' \
@@ -81,7 +89,7 @@ $OpenBSD: patch-Completion_Unix_Command__find,v 1.2 2008/02/08 04:55:08 okan Exp
 -  '*-execdir:program: _command_names -e:*\;::program arguments: _normal' \
    '*-ok:program: _command_names -e:*\;::program arguments: _normal' \
 -  '*-okdir:program: _command_names -e:*\;::program arguments: _normal' \
-   '*-fls:output file:_files' \
+-  '*-fls:output file:_files' \
 -  '*-fprint:output file:_files' \
 -  '*-fprint0:output file:_files' \
 -  '*-fprintf:output file:_files:output format:' \
@@ -93,6 +101,9 @@ $OpenBSD: patch-Completion_Unix_Command__find,v 1.2 2008/02/08 04:55:08 okan Exp
    '*-prune' \
 -  '*-quit' \
 -  '*-ls' \
+-  '*-and' '*-a' \
+-  '*-or' '*-o' \
+-  '*-not' \
 +  '*-size:file size:' \
 +  '*-type:file type:((b\:block\ special\ file c\:character\ special\ file d\:directory p\:named\ pipe f\:normal\ file l\:symbolic\ link s\:socket))' \
 +  '*-user:user:_users' \
