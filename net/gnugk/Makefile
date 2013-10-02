@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2013/09/24 08:25:17 bentley Exp $
+# $OpenBSD: Makefile,v 1.36 2013/10/02 10:47:06 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	H.323 gatekeeper
 
 V=		3.4
 DISTNAME=	gnugk-${V}
-REVISION=	2
+REVISION=	3
 
 WRKDIST=	${WRKDIR}/gnugk-${V}
 
@@ -20,8 +20,8 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += SDL c crypto expat h323 kvm lber ldap ldap_r lua5.1
-WANTLIB += m netsnmp netsnmpagent netsnmpmibs pt pthread ssh ssl
-WANTLIB += stdc++ wrap
+WANTLIB += m netsnmp netsnmpagent netsnmpmibs pt pthread sasl2
+WANTLIB += ssh ssl stdc++ wrap
 
 MODULES=	lang/lua
 
@@ -30,18 +30,20 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openh323gk/}
 BUILD_DEPENDS=	databases/mysql \
 		databases/postgresql
 
-LIB_DEPENDS=	net/h323plus>=1.24.99 \
+LIB_DEPENDS=	net/h323plus \
 		net/net-snmp \
 		security/libssh
 
+ALL_TARGET=	optshared #XXX gkdefault
 USE_GMAKE=	Yes
-ALL_TARGET=	optshared # XXX gkdefault
 NO_TEST=	Yes
 
 CONFIGURE_STYLE=gnu
+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PTLIBDIR=`ptlib-config --ptlibdir`
+
 CONFIGURE_ARGS=	--disable-firebird \
 		--disable-unixodbc \
 		--with-pgsql-include-dir=${LOCALBASE}/include/postgresql \
@@ -51,9 +53,10 @@ CONFIGURE_ARGS=	--disable-firebird \
 # patented
 CONFIGURE_ARGS += --disable-h46018
 
-MAKE_ENV=	CC=${CC} CPLUS=${CXX} \
-		STDCCFLAGS="${STDCCFLAGS} -I${LOCALBASE}/include/openh323" \
-		INSTALLBIN_DIR=${WRKINST}${TRUEPREFIX}/bin
+MAKE_ENV=	VERBOSE=1 \
+		STDCCFLAGS="${STDCCFLAGS} -I${LOCALBASE}/include/openh323"
+
+FAKE_FLAGS=	INSTALLBIN_DIR=${WRKINST}${TRUEPREFIX}/bin
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/docs/gnugk.1 ${WRKSRC}/configure
@@ -63,7 +66,7 @@ post-build:
 	cd ${WRKSRC}/addpasswd && \
 		OBJDIR=. \
 		SYSLIBDIR=`ptlib-config --libdir` \
-		PTLIBDIR=`ptlib-config --ptlibdir` ${MAKE_PROGRAM}
+		PTLIBDIR=`ptlib-config --ptlibdir` ${MAKE_ENV} ${MAKE_PROGRAM}
 
 post-install:
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man1/
