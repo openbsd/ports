@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2013/03/29 13:57:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.31 2013/10/03 06:12:44 ajacoutot Exp $
 include/gnome-menus-3.0/
 include/gnome-menus-3.0/gmenu-tree.h
 lib/girepository-1.0/GMenu-3.0.typelib
@@ -32,8 +32,6 @@ share/examples/gnome-menus/xdg/menus/gnome-applications.menu
 @sample ${SYSCONFDIR}/xdg/menus/gnome-applications.menu
 share/gir-1.0/GMenu-3.0.gir
 share/locale/af/LC_MESSAGES/gnome-menus-3.0.mo
-share/locale/an/
-share/locale/an/LC_MESSAGES/
 share/locale/an/LC_MESSAGES/gnome-menus-3.0.mo
 share/locale/ar/LC_MESSAGES/gnome-menus-3.0.mo
 share/locale/as/LC_MESSAGES/gnome-menus-3.0.mo
@@ -96,6 +94,9 @@ share/locale/hi/LC_MESSAGES/gnome-menus-3.0.mo
 share/locale/hr/LC_MESSAGES/gnome-menus-3.0.mo
 share/locale/hu/LC_MESSAGES/gnome-menus-3.0.mo
 share/locale/hy/LC_MESSAGES/gnome-menus-3.0.mo
+share/locale/ia/
+share/locale/ia/LC_MESSAGES/
+share/locale/ia/LC_MESSAGES/gnome-menus-3.0.mo
 share/locale/id/LC_MESSAGES/gnome-menus-3.0.mo
 share/locale/ig/
 share/locale/ig/LC_MESSAGES/
