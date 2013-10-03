@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/08/08 11:24:32 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/10/03 13:12:51 jsg Exp $
 firmware/radeon-aruba_me
 firmware/radeon-aruba_pfp
 firmware/radeon-aruba_rlc
@@ -13,6 +13,7 @@ firmware/radeon-bonaire_mec
 firmware/radeon-bonaire_pfp
 firmware/radeon-bonaire_rlc
 firmware/radeon-bonaire_sdma
+firmware/radeon-bonaire_smc
 firmware/radeon-bonaire_uvd
 firmware/radeon-btc_rlc
 firmware/radeon-caicos_mc
@@ -49,6 +50,12 @@ firmware/radeon-kabini_mec
 firmware/radeon-kabini_pfp
 firmware/radeon-kabini_rlc
 firmware/radeon-kabini_sdma
+firmware/radeon-kaveri_ce
+firmware/radeon-kaveri_me
+firmware/radeon-kaveri_mec
+firmware/radeon-kaveri_pfp
+firmware/radeon-kaveri_rlc
+firmware/radeon-kaveri_sdma
 firmware/radeon-license
 firmware/radeon-oland_ce
 firmware/radeon-oland_mc
