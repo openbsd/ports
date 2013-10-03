@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.72 2013/09/24 16:55:02 ajacoutot Exp $
+# $OpenBSD: python.port.mk,v 1.73 2013/10/03 16:28:00 dcoppa Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -91,6 +91,7 @@ MODPY_SETUPUTILS =	Yes
 # The setuptools uses test target
 TEST_TARGET ?=	test
 _MODPY_USERBASE =
+_MODPY_PRE_BUILD_STEPS += ;${MODPY_CMD} egg_info || true
 .else
 # Try to detect the case where a port will build regardless of setuptools
 # but the final plist will be different if it's present.
@@ -117,13 +118,6 @@ MODPY_BIN =		${LOCALBASE}/bin/python${MODPY_VERSION}
 MODPY_INCDIR =		${LOCALBASE}/include/python${MODPY_VERSION}${MODPY_LIB_SUFFIX}
 MODPY_LIBDIR =		${LOCALBASE}/lib/python${MODPY_VERSION}
 MODPY_SITEPKG =		${MODPY_LIBDIR}/site-packages
-
-.if defined(MODPY_BADEGGS)
-.  for egg in ${MODPY_BADEGGS}
-_MODPY_PRE_BUILD_STEPS += ;mkdir -p ${WRKBUILD}/${egg}.egg-info
-.  endfor
-.endif
-
 
 # usually setup.py but Setup.py can be found too
 MODPY_SETUP ?=		setup.py
