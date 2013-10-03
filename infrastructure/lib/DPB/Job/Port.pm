@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.120 2013/10/03 18:16:53 espie Exp $
+# $OpenBSD: Port.pm,v 1.121 2013/10/03 18:21:16 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -426,10 +426,16 @@ our @ISA=qw(DPB::Task::Port::Serialized);
 
 sub notime { 1 }
 
+# uninstall is actually a "tentative" junk case
+# it might not happen for various reasons:
+# - a port that's building on the same host that says "nojunk"
+# - something else went thru simultaneously and junked already
+
+
 sub setup
 {
 	my ($task, $core) = @_;
-	# zap things HERE
+	# check we *REALLY* mean it
 	if ($core->prop->{depends_count} < $core->prop->{junk}) {
 		$task->junk_unlock($core);
 		return $core->job->next_task($core);
@@ -494,6 +500,8 @@ sub run
 sub finalize
 {
 	my ($self, $core) = @_;
+
+	# did we really run ? then clean up stuff
 	if ($core->{status} == 0) {
 		$core->prop->{junk_count} = 0;
 		$core->prop->{ports_count} = 0;
@@ -511,6 +519,7 @@ sub finalize
 		}
 	}
 
+	# otherwise, hey, it's not important, never error out because of us
 	$core->{status} = 0;
 	$self->SUPER::finalize($core);
 	return 1;
