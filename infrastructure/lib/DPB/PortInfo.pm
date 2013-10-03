@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.27 2013/06/25 19:48:14 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.28 2013/10/03 17:42:58 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -123,6 +123,37 @@ sub string
 	return join(', ', keys %$self);
 }
 
+package AddPropertyList;
+our @ISA = (qw(AddList));
+
+sub new
+{
+	my ($class, $value) = @_;
+	my %h = ();
+	for my $v ($class->make_list($value)) {
+		if ($v =~ /^(tag)\:(.*)$/) {
+			$h{$1} = $2;
+		} else {
+			$h{$v} = 1;
+		}
+	}
+	bless \%h, $class;
+}
+
+sub string
+{
+	my $self = shift;
+	my @l = ();
+	while (my ($k, $v) = each %$self) {
+		if ($v eq '1') {
+			push(@l, $k);
+		} else {
+			push(@l, "$k->$v");
+		}
+	}
+	return join(',', @l);
+}
+
 package AddOrderedList;
 our @ISA = qw(AddList);
 sub new
@@ -234,7 +265,7 @@ my %adder = (
 	LIB_DEPENDS => "AddDepends",
 	SUBPACKAGE => "AddInfo",
 	BUILD_PACKAGES => "AddList",
-	DPB_PROPERTIES => "AddList",
+	DPB_PROPERTIES => "AddPropertyList",
 	IGNORE => "AddIgnore",
 	FLAVOR => "AddList",
 	DISTFILES => 'AddList',

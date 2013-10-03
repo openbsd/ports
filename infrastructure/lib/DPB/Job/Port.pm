@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.118 2013/10/03 08:02:55 espie Exp $
+# $OpenBSD: Port.pm,v 1.119 2013/10/03 17:42:58 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -499,6 +499,17 @@ sub finalize
 		$core->prop->{ports_count} = 0;
 		$core->prop->{depends_count} = 0;
 	}
+	my $still_tainted = 0;
+	for my $job ($core->same_host_jobs) {
+		if ($job->{v}{info}->has_property('tag')) {
+			$still_tainted = 1;
+			last;
+		}
+	}
+	if (!$still_tainted) {
+		delete $core->prop->{tainted};
+	}
+
 	$core->{status} = 0;
 	$self->SUPER::finalize($core);
 	return 1;

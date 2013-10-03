@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SubEngine.pm,v 1.4 2013/10/03 13:12:28 espie Exp $
+# $OpenBSD: SubEngine.pm,v 1.5 2013/10/03 17:42:58 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -243,6 +243,7 @@ sub preempt_core
 	# note we don't actually remove stuff from the queue until needed, 
 	# so mismatches holds a copy of stuff that's still there.
 	$self->{mismatches} = [];
+	$self->{tag_mismatches} = [];
 	return 0;
 }
 
@@ -254,9 +255,19 @@ sub can_start_build
 		push(@{$self->{mismatches}}, $v);
 		return 0;
 	}
+	# if the tag mismatch, we keep it for much much later.
+	# currently, we don't even try to recuperate, so this will
+	# fail abysmally if there's no junking going on
+	if ($core->prop->{tainted} && $v->{info}->has_property('tag')) {
+		if ($v->{info}->has_property('tag') ne $core->prop->{tainted}) {
+		    $self->log('K', $v, " ".$core->hostname);
+		    	push(@{$self->{tag_mismatches}}, $v);
+			return 0;
+		}
+	}
 	# keep affinity mismatches for later
 	if (defined $v->{affinity} && !$core->matches($v->{affinity})) {
-		$self->log('a', $v, 
+		$self->log('A', $v, 
 		    " ".$core->hostname." ".$v->{affinity});
 		# try to start them anyways, on the "right" core
 		my $core2 = DPB::Core->get_affinity($v->{affinity});
@@ -420,6 +431,9 @@ sub start_build
 	my ($self, $v, $core, $lock) = @_;
 	$self->log('J', $v, " ".$core->hostname);
 	$self->{engine}{affinity}->start($v, $core);
+	if ($v->{info}->has_property('tag')) {
+		$core->prop->{tainted} = $v->{info}->has_property('tag');
+	}
 	$self->{builder}->build($v, $core, $lock, 
 	    sub {
 	    	my $fail = shift;
@@ -433,6 +447,7 @@ sub end_build
 	$self->{engine}{affinity}->finished($v);
 	$self->{engine}{heuristics}->finish_special($v);
 }
+
 
 # for fetch-only, we do the same as Build, except we're never happy
 package DPB::SubEngine::NoBuild;
