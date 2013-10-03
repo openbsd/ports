@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SubEngine.pm,v 1.2 2013/10/03 12:46:51 espie Exp $
+# $OpenBSD: SubEngine.pm,v 1.3 2013/10/03 12:55:44 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -214,11 +214,6 @@ sub dump
 {
 	my ($self, $k, $fh) = @_;
 #	$self->{queue}->dump($k, $fh);
-}
-
-sub check_for_memory_hogs
-{
-	return 0;
 }
 
 package DPB::SubEngine::Build;
