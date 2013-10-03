@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 10:50:25 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/10/03 16:37:15 dcoppa Exp $
 
 COMMENT =	pure Python implementation of Git file formats and protocols
 
@@ -18,8 +18,6 @@ MASTER_SITES =		${HOMEPAGE}
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
-
-MODPY_BADEGGS =		dulwich
 
 TEST_DEPENDS =	devel/py-nose
 

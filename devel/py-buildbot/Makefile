@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/09/16 10:02:28 landry Exp $
+# $OpenBSD: Makefile,v 1.23 2013/10/03 16:37:15 dcoppa Exp $
 
 COMMENT =	continuous integration framework
 
@@ -20,7 +20,6 @@ MASTER_SITES =	https://buildbot.googlecode.com/files/
 MODULES =	lang/python
 
 MODPY_SETUPTOOLS = Yes
-MODPY_BADEGGS =	buildbot
 
 RUN_DEPENDS =	databases/py-sqlalchemy \
 		databases/py-sqlalchemy-migrate \

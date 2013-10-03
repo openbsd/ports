@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2013/10/02 16:38:57 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.50 2013/10/03 16:37:17 dcoppa Exp $
 
 COMMENT =	command-line program to download videos from YouTube.com
 
@@ -19,8 +19,6 @@ MASTER_SITES =	http://youtube-dl.org/downloads/${MODPY_EGG_VERSION}/
 MODULES =	lang/python
 
 MODPY_SETUPTOOLS = Yes
-
-MODPY_BADEGGS =	youtube-dl
 
 USE_GROFF =	Yes
 

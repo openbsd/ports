@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/09/25 07:13:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2013/10/03 16:37:17 dcoppa Exp $
 
 COMMENT=		FTP server library for Python
 
@@ -20,7 +20,6 @@ MASTER_SITES=		https://pyftpdlib.googlecode.com/files/
 MODULES=		lang/python
 
 MODPY_SETUPTOOLS =	Yes
-MODPY_BADEGGS =	pyftpdlib
 
 NO_TEST=		Yes
 

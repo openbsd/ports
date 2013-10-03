@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 10:50:27 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/10/03 16:37:16 dcoppa Exp $
 
 COMMENT =	console user interface library for python
 
@@ -19,7 +19,6 @@ TEST_DEPENDS =	devel/py-gobject \
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS = Yes
-MODPY_BADEGGS =	urwid
 
 PKG_ARCH =	*
 

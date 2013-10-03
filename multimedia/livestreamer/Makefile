@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/10/01 00:48:22 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2013/10/03 16:37:17 dcoppa Exp $
 
 MODPY_EGG_VERSION =	1.6.0
 COMMENT =	pipe video streams into a video player
@@ -18,7 +18,6 @@ MASTER_SITES =	${MASTER_SITE_PYPI:=l/livestreamer/}
 
 MODULES =	lang/python
 MODPY_SETUPTOOLS =	Yes
-MODPY_BADEGGS =	src/livestreamer
 
 RUN_DEPENDS =	net/rtmpdump \
 		security/py-crypto \

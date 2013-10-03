@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/08/07 21:32:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2013/10/03 16:37:18 dcoppa Exp $
 
 COMMENT =		Python HTTP client library
 
@@ -19,8 +19,6 @@ MASTER_SITES =		https://httplib2.googlecode.com/files/
 MODULES =		lang/python
 
 MODPY_SETUPTOOLS =	Yes
-
-MODPY_BADEGGS =		python${MODPY_MAJOR_VERSION}/httplib2
 
 pre-patch:
 	@perl -pi -e 's|\r\n|\n|g' ${WRKDIST}/python3/httplib2test.py

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:44:50 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/10/03 16:37:18 dcoppa Exp $
 
 COMMENT=		ldap authentication plugin for trac
 
@@ -24,6 +24,5 @@ NO_TEST=		Yes
 MODULES=		lang/python
 
 MODPY_SETUPTOOLS=	Yes
-MODPY_BADEGGS=	LdapPlugin
 
 .include <bsd.port.mk>

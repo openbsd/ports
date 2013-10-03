@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2013/07/21 18:26:29 miod Exp $
+# $OpenBSD: Makefile,v 1.38 2013/10/03 16:37:16 dcoppa Exp $
 
 COMMENT=		fast array and numeric programming library for Python
 BROKEN-m88k=		lacks cpu information
@@ -37,8 +37,6 @@ LIB_DEPENDS=            math/lapack \
 .if ${MACHINE_ARCH} == "powerpc"
 PATCH_LIST=	patch-* powerpc-patch-numpy_distutils_fcompiler_gnu_py
 .endif
-
-MODPY_BADEGGS = numpy
 
 pre-build:
 	cp -f ${WRKSRC}/numpy/distutils/site.cfg ${WRKSRC}/site.cfg

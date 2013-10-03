@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/09/04 18:40:21 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2013/10/03 16:37:17 dcoppa Exp $
 
 BROKEN-sparc64 =	ICE in scipy/optimize/minpack/qrsolv.f:189
 BROKEN-hppa =		ICE in scipy/special/specfun/specfun.f:5151
@@ -26,7 +26,6 @@ MODULES=		lang/python fortran
 MODFORTRAN_COMPILER =	g77
 MODPY_SETUPTOOLS=       Yes
 MODPY_SETUP=            setupegg.py
-MODPY_BADEGGS=		scipy
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			${MODFORTRAN_BUILD_DEPENDS}

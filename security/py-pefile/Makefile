@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/08/06 19:20:09 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2013/10/03 16:37:17 dcoppa Exp $
 
 COMMENT =		Python module to read and work with PE files
 
@@ -21,7 +21,6 @@ MASTER_SITES =		https://pefile.googlecode.com/files/
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS = 	Yes
-MODPY_BADEGGS =		pefile
 
 NO_TEST =		Yes
 

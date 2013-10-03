@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/09/05 11:20:20 edd Exp $
+# $OpenBSD: Makefile,v 1.13 2013/10/03 16:37:16 dcoppa Exp $
 
 COMMENT =	push/pull from a Git server repository using Mercurial
 
@@ -27,8 +27,6 @@ TEST_DEPENDS =	${RUN_DEPENDS} \
 			archivers/bzip2 \
 			archivers/unzip \
 			devel/git,-main
-
-MODPY_BADEGGS =		hg-git
 
 pre-test:
 	perl -pi -e 's|python |python${MODPY_VERSION} |g' \

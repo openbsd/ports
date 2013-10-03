@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:27 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/10/03 16:37:16 dcoppa Exp $
 
 COMMENT=		CIM operations over HTTP in Python
 
@@ -19,6 +19,5 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pywbem/}
 MODULES=		lang/python
 
 MODPY_SETUPTOOLS=	Yes
-MODPY_BADEGGS=		pywbem
 
 .include <bsd.port.mk>

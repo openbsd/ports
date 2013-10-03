@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/05/16 12:45:12 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.2 2013/10/03 16:37:15 dcoppa Exp $
 
 COMMENT =	import changesets from CVS into Git
 
@@ -19,8 +19,6 @@ MASTER_SITES =	http://sha256.net/git-cvs/
 MODULES =	lang/python
 
 MODPY_SETUPTOOLS = Yes
-
-MODPY_BADEGGS =	git_cvs
 
 MODPY_ADJ_FILES = scripts/git-cvs
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 10:50:25 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/10/03 16:37:15 dcoppa Exp $
 
 COMMENT=		Python-powered template engine and code generator
 
@@ -19,7 +19,6 @@ MODULES=		lang/python
 TEST_DEPENDS=	devel/py-cheetah
 MODPY_SETUPTOOLS=	Yes
 MAKE_ENV+=		CHEETAH_USE_SETUPTOOLS=1
-MODPY_BADEGGS=		Cheetah
 
 WANTLIB +=		${MODPY_WANTLIB}
 
