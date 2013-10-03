@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.117 2013/10/02 09:16:01 espie Exp $
+# $OpenBSD: Port.pm,v 1.118 2013/10/03 08:02:55 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -64,6 +64,24 @@ sub handle_output
 	print ">>> Running $self->{phase} in $job->{path} at ", time(), "\n";
 }
 
+sub tweak_args
+{
+	my ($self, $args, $job, $builder) = @_;
+	push(@$args,
+	    "FETCH_PACKAGES=No",
+	    "PREPARE_CHECK_ONLY=Yes",
+	    "REPORT_PROBLEM='exit 1'", "BULK=No");
+	if ($job->{parallel}) {
+		push(@$args, "MAKE_JOBS=$job->{parallel}");
+	}
+	if ($job->{special}) {
+		push(@$args, "USE_MFS=Yes");
+	}
+	if ($builder->{fetch}) {
+		push(@$args, "NO_CHECKSUM=Yes");
+	}
+}
+
 sub run
 {
 	my ($self, $core) = @_;
@@ -78,19 +96,8 @@ sub run
 	$self->handle_output($job);
 	close STDIN;
 	open STDIN, '</dev/null';
-	my @args = ($t, 
-	    "FETCH_PACKAGES=No",
-	    "PREPARE_CHECK_ONLY=Yes",
-	    "REPORT_PROBLEM='exit 1'", "BULK=No");
-	if ($job->{parallel}) {
-		push(@args, "MAKE_JOBS=$job->{parallel}");
-	}
-	if ($job->{special}) {
-		push(@args, "USE_MFS=Yes");
-	}
-	if ($builder->{fetch}) {
-		push(@args, "NO_CHECKSUM=Yes");
-	}
+	my @args = ($t);
+	$self->tweak_args(\@args, $job, $builder);
 
 	my @l = $builder->make_args;
 	my $make = $builder->make;
