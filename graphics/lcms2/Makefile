@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/30 15:49:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/10/03 20:21:01 brad Exp $
 
 COMMENT =	color management library
 
-DISTNAME =	lcms2-2.4
-SHARED_LIBS =	lcms2	0.3
+DISTNAME =	lcms2-2.5
 CATEGORIES =	graphics
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=lcms/}
-REVISION =	0
+
+SHARED_LIBS =	lcms2	1.0
 
 HOMEPAGE =	http://www.littlecms.com/
 
