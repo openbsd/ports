@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2013/09/27 14:40:03 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.23 2013/10/03 09:49:04 jasper Exp $
 lib/gedit/plugins/${MODPY_PYCACHE}/
 lib/gedit/plugins/${MODPY_PYCACHE}bracketcompletion.${MODPY_PYC_MAGIC_TAG}pyc
 lib/gedit/plugins/${MODPY_PYCACHE}bracketcompletion.${MODPY_PYC_MAGIC_TAG}pyo
@@ -12,6 +12,8 @@ lib/gedit/plugins/${MODPY_PYCACHE}joinlines.${MODPY_PYC_MAGIC_TAG}pyc
 lib/gedit/plugins/${MODPY_PYCACHE}joinlines.${MODPY_PYC_MAGIC_TAG}pyo
 lib/gedit/plugins/${MODPY_PYCACHE}smartspaces.${MODPY_PYC_MAGIC_TAG}pyc
 lib/gedit/plugins/${MODPY_PYCACHE}smartspaces.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/${MODPY_PYCACHE}terminal.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/${MODPY_PYCACHE}terminal.${MODPY_PYC_MAGIC_TAG}pyo
 lib/gedit/plugins/bookmarks.plugin
 lib/gedit/plugins/bracketcompletion.plugin
 lib/gedit/plugins/bracketcompletion.py
@@ -156,6 +158,8 @@ lib/gedit/plugins/synctex/${MODPY_PYCACHE}synctex.${MODPY_PYC_MAGIC_TAG}pyc
 lib/gedit/plugins/synctex/${MODPY_PYCACHE}synctex.${MODPY_PYC_MAGIC_TAG}pyo
 lib/gedit/plugins/synctex/evince_dbus.py
 lib/gedit/plugins/synctex/synctex.py
+lib/gedit/plugins/terminal.plugin
+lib/gedit/plugins/terminal.py
 lib/gedit/plugins/textsize/
 lib/gedit/plugins/textsize.plugin
 lib/gedit/plugins/textsize/__init__.py
@@ -223,6 +227,7 @@ share/gedit/plugins/commander/modules/reload.py
 share/gedit/plugins/commander/modules/set.py
 share/gedit/plugins/commander/modules/shell.py
 share/glib-2.0/schemas/org.gnome.gedit.plugins.drawspaces.gschema.xml
+share/glib-2.0/schemas/org.gnome.gedit.plugins.terminal.gschema.xml
 share/glib-2.0/schemas/org.gnome.gedit.plugins.wordcompletion.gschema.xml
 share/help/C/gedit/bookmarks.page
 share/help/C/gedit/bracket-comp.page

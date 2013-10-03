@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.69 2013/09/28 08:51:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2013/10/03 09:49:03 jasper Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
 GNOME_VERSION=		3.10.0
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		editors
 
@@ -52,6 +52,8 @@ RUN_DEPENDS +=		productivity/zeitgeist
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
+AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--disable-static
 
 post-install:

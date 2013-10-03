@@ -1,0 +1,15 @@
+$OpenBSD: patch-plugins_terminal_terminal_py,v 1.1 2013/10/03 09:49:04 jasper Exp $
+
+Fix two AttributeErrors which broke the terminal plugin at runtime.
+
+--- plugins/terminal/terminal.py.orig	Thu Oct  3 11:38:01 2013
++++ plugins/terminal/terminal.py	Thu Oct  3 11:39:55 2013
+@@ -45,8 +45,6 @@ class GeditTerminal(Vte.Terminal):
+     def __init__(self):
+         Vte.Terminal.__init__(self)
+ 
+-        self.set_background_image(None)
+-        self.set_background_transparent(False)
+         self.set_size(self.get_column_count(), 5)
+         self.set_size_request(200, 50)
+ 

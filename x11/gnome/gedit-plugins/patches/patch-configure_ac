@@ -1,0 +1,26 @@
+$OpenBSD: patch-configure_ac,v 1.1 2013/10/03 09:49:04 jasper Exp $
+
+- Fix some sed (mis)usage.
+- Use a proper check to test for vte2_90.
+
+--- configure.ac.orig	Thu Oct  3 11:27:14 2013
++++ configure.ac	Thu Oct  3 11:30:51 2013
+@@ -205,7 +205,7 @@ undef_plugin() {
+ 		disabled_plugins="$disabled_plugins, $1 ($2)"
+ 	fi
+ 	
+-	PLUGINS=$(echo "$PLUGINS" | sed -e "s/[[^a-zA-Z0-9_]]$1[[ \t\r\n\f]]\{1,\}/ /" -e "s/[[^a-zA-Z0-9_]]$1$//" -e "s/^$1[[ \t\r\n\f]]\{1,\}//")
++	PLUGINS=$(echo "$PLUGINS" | gsed -e "s/[[^a-zA-Z0-9_]]$1[[ \t\r\n\f]]\{1,\}/ /" -e "s/[[^a-zA-Z0-9_]]$1$//" -e "s/^$1[[ \t\r\n\f]]\{1,\}//")
+ }
+ 
+ # ================================================================
+@@ -252,7 +252,8 @@ plugin_defined terminal
+ 
+ if test "$?" = 1
+ then
+-    AC_CHECK_LIB([vte2_90], [vte_terminal_new], [have_vte=yes], [have_vte=no])
++    PKG_CHECK_MODULES([vte2_90],
++	[vte-2.90], [have_vte=yes],[have_vte=no])
+ 
+ 	if test "x$have_vte" = "xno"; then
+ 		plugin_defined_explicit terminal
