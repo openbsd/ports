@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SubEngine.pm,v 1.3 2013/10/03 12:55:44 espie Exp $
+# $OpenBSD: SubEngine.pm,v 1.4 2013/10/03 13:12:28 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -276,6 +276,19 @@ sub can_start_build
 	}
 }
 
+sub check_for_memory_hogs
+{
+	my ($self, $v, $core) = @_;
+	if ($v->{info}->has_property('memoryhog')) {
+		for my $job ($core->same_host_jobs) {
+			if ($job->{v}{info}->has_property('memoryhog')) {
+				return 1;
+			}
+		}
+	}
+	return 0;
+}
+
 sub recheck_mismatches
 {
 	my ($self, $core) = @_;
@@ -419,19 +432,6 @@ sub end_build
 	my ($self, $v) = @_;
 	$self->{engine}{affinity}->finished($v);
 	$self->{engine}{heuristics}->finish_special($v);
-}
-
-sub check_for_memory_hogs
-{
-	my ($self, $v, $core) = @_;
-	if ($v->{info}->has_property('memoryhog')) {
-		for my $job ($core->same_host_jobs) {
-			if ($job->{v}{info}->has_property('memoryhog')) {
-				return 1;
-			}
-		}
-	}
-	return 0;
 }
 
 # for fetch-only, we do the same as Build, except we're never happy
