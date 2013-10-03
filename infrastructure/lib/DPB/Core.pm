@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.55 2013/10/02 09:14:29 espie Exp $
+# $OpenBSD: Core.pm,v 1.56 2013/10/03 17:34:44 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -86,6 +86,7 @@ sub is_alive
 {
 	return 1;
 }
+
 
 sub shellclass
 {
@@ -804,6 +805,11 @@ sub prop
 {
 	my $self = shift;
 	return $self->{prop};
+}
+
+sub stringize_master_pid
+{
+	return "";
 }
 
 sub chdir

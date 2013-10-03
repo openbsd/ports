@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.4 2013/09/21 08:46:06 espie Exp $
+# $OpenBSD: Init.pm,v 1.5 2013/10/03 17:34:44 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -90,6 +90,43 @@ sub new
 	}
 	return $init->{$host} //= DPB::Core->new_noreg($host, $prop);
 }
+
+sub alive_hosts
+{
+	my @l = ();
+	while (my ($host, $c) = each %$init) {
+		if ($c->prop->{tainted}) {
+			$host = "$host(".$c->prop->{tainted}.")";
+		}
+		if ($c->is_alive) {
+			push(@l, $host." ".$c->shell->stringize_master_pid);
+		} else {
+			push(@l, $c.'-');
+		}
+	}
+	return "Hosts: ".join(' ', sort(@l))."\n";
+}
+
+sub changed_hosts
+{
+	my @l = ();
+	while (my ($host, $c) = each %$init) {
+		my $was_alive = $c->{is_alive};
+		if ($c->is_alive) {
+			$c->{is_alive} = 1;
+		} else {
+			$c->{is_alive} = 0;
+		}
+		if ($was_alive && !$c->{is_alive}) {
+			push(@l, "$host went down\n");
+		} elsif (!$was_alive && $c->{is_alive}) {
+			push(@l, "$host came up\n");
+		}
+	}
+	return join('', sort(@l));
+}
+
+DPB::Core->register_report(\&alive_hosts, \&changed_hosts);
 
 
 sub init_cores

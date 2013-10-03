@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.14 2013/09/25 08:49:49 espie Exp $
+# $OpenBSD: Distant.pm,v 1.15 2013/10/03 17:34:44 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -70,6 +70,14 @@ sub socket
 sub hostname
 {
 	shift->{master}->hostname;
+}
+
+sub stringize_master_pid
+{
+	my $shell = shift;
+	my $pid = $shell->{master}->{pid};
+
+	return "[$pid]";
 }
 
 sub _run
@@ -176,42 +184,6 @@ sub find
 	my ($class, $host, $timeout) = @_;
 	$master->{$host} //= $class->create($host, $timeout);
 }
-
-sub alive_hosts
-{
-	my @l = ();
-	for my $shell (values %$master) {
-		my $host = $shell->hostname;
-		if ($shell->is_alive) {
-			push(@l, $host." [$shell->{pid}]");
-		} else {
-			push(@l, $host.'-');
-		}
-	}
-	return "Hosts: ".join(' ', sort(@l))."\n";
-}
-
-sub changed_hosts
-{
-	my @l = ();
-	for my $shell (values %$master) {
-		my $host = $shell->hostname;
-		my $was_alive = $shell->{is_alive};
-		if ($shell->is_alive) {
-			$shell->{is_alive} = 1;
-		} else {
-			$shell->{is_alive} = 0;
-		}
-		if ($was_alive && !$shell->{is_alive}) {
-			push(@l, "$host went down\n");
-		} elsif (!$was_alive && $shell->{is_alive}) {
-			push(@l, "$host came up\n");
-		}
-	}
-	return join('', sort(@l));
-}
-
-DPB::Core->register_report(\&alive_hosts, \&changed_hosts);
 
 package DPB::Core::Distant;
 our @ISA = qw(DPB::Core);
