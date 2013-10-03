@@ -1,6 +1,9 @@
-$OpenBSD: patch-plugins_terminal_terminal_py,v 1.1 2013/10/03 09:49:04 jasper Exp $
+$OpenBSD: patch-plugins_terminal_terminal_py,v 1.2 2013/10/03 10:09:53 jasper Exp $
 
-Fix two AttributeErrors which broke the terminal plugin at runtime.
+From f7ee1be8428bcd3f69ea4f07b503cac62e287c3e Mon Sep 17 00:00:00 2001
+From: Christian Persch <chpe@gnome.org>
+Date: Thu, 26 Sep 2013 00:21:38 +0000
+Subject: terminal: Remove unnecessary calls to set background
 
 --- plugins/terminal/terminal.py.orig	Thu Oct  3 11:38:01 2013
 +++ plugins/terminal/terminal.py	Thu Oct  3 11:39:55 2013

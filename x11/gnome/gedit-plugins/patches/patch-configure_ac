@@ -1,7 +1,11 @@
-$OpenBSD: patch-configure_ac,v 1.1 2013/10/03 09:49:04 jasper Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2013/10/03 10:09:52 jasper Exp $
 
 - Fix some sed (mis)usage.
-- Use a proper check to test for vte2_90.
+
+From d9114839da9769d1e3ca8c25e5b96af27eb4e393 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Thu, 3 Oct 2013 11:59:26 +0200
+Subject: [PATCH] Fix vte detection by using pkg-config
 
 --- configure.ac.orig	Thu Oct  3 11:27:14 2013
 +++ configure.ac	Thu Oct  3 11:30:51 2013
