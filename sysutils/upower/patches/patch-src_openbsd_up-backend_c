@@ -1,10 +1,81 @@
-$OpenBSD: patch-src_openbsd_up-backend_c,v 1.8 2013/03/29 12:41:26 ajacoutot Exp $
+$OpenBSD: patch-src_openbsd_up-backend_c,v 1.9 2013/10/03 10:52:59 jasper Exp $
 
-https://bugs.freedesktop.org/show_bug.cgi?id=62795
+- Recognize a battery not being present (and reset various metrics accordingly)
+- Recognize a fully charged battery
+- Remove unneeded g_thread_init():
+  https://bugs.freedesktop.org/show_bug.cgi?id=62795
 
---- src/openbsd/up-backend.c.orig	Wed Mar 27 07:53:00 2013
-+++ src/openbsd/up-backend.c	Wed Mar 27 07:54:28 2013
-@@ -556,7 +556,6 @@ up_backend_init (UpBackend *backend)
+--- src/openbsd/up-backend.c.orig	Thu Jan  3 21:47:08 2013
++++ src/openbsd/up-backend.c	Thu Oct  3 12:47:29 2013
+@@ -305,7 +305,7 @@ static gboolean
+ up_backend_update_battery_state(UpDevice* device)
+ {
+ 	gdouble percentage;
+-	gboolean ret;
++	gboolean ret, is_present;
+ 	struct sensordev sdev;
+ 	UpDeviceState cur_state, new_state;
+ 	gint64 cur_time_to_empty, new_time_to_empty;
+@@ -319,16 +319,49 @@ up_backend_update_battery_state(UpDevice* device)
+ 		"state", &cur_state,
+ 		"percentage", &percentage,
+ 		"time-to-empty", &cur_time_to_empty,
++		"is-present", &is_present,
+ 		(void*) NULL);
+ 
+ 	/* XXX use acpibat0.raw0 if available */
++	/*
++	 * XXX: Stop having a split brain regarding
++	 * up_backend_apm_get_battery_state_value(). Either move the state
++	 * setting code below into that function, or inline that function here.
++	 */
+ 	new_state = up_backend_apm_get_battery_state_value(a.battery_state);
+ 	// if percentage/minutes goes down or ac is off, we're likely discharging..
+ 	if (percentage < a.battery_life || cur_time_to_empty < new_time_to_empty || a.ac_state == APM_AC_OFF)
+ 		new_state = UP_DEVICE_STATE_DISCHARGING;
++	/*
++	 * If we're on AC, we may either be charging, or the battery is already
++	 * fully charged. Figure out which.
++	 */
+ 	if (a.ac_state == APM_AC_ON)
+-		new_state = UP_DEVICE_STATE_CHARGING;
++		if ((gdouble) a.battery_life >= 99.0)
++			new_state = UP_DEVICE_STATE_FULLY_CHARGED;
++		else
++			new_state = UP_DEVICE_STATE_CHARGING;
+ 
++	if ((a.battery_state == APM_BATTERY_ABSENT) ||
++	    (a.battery_state == APM_BATT_UNKNOWN)) {
++	    	/* Reset some known fields which remain untouched below. */
++		g_object_set(device,
++			     "is-rechargeable", FALSE,
++			     "energy", (gdouble) 0.0,
++			     "energy-empty", (gdouble) 0.0,
++			     "energy-full", (gdouble) 0.0,
++			     "energy-full-design", (gdouble) 0.0,
++			     "energy-rate", (gdouble) 0.0,
++			     NULL);
++		is_present = FALSE;
++		if (a.battery_state == APM_BATTERY_ABSENT)
++			new_state = UP_DEVICE_STATE_EMPTY;
++		else
++			new_state = UP_DEVICE_STATE_UNKNOWN;
++	} else {
++		is_present = TRUE;
++	}
++
+ 	// zero out new_time_to empty if we're not discharging or minutes_left is negative
+ 	new_time_to_empty = (new_state == UP_DEVICE_STATE_DISCHARGING && a.minutes_left > 0 ? a.minutes_left : 0);
+ 
+@@ -340,6 +373,7 @@ up_backend_update_battery_state(UpDevice* device)
+ 			"state", new_state,
+ 			"percentage", (gdouble) a.battery_life,
+ 			"time-to-empty", new_time_to_empty * 60,
++			"is-present", is_present,
+ 			(void*) NULL);
+ 		if(up_native_get_sensordev("acpibat0", &sdev))
+ 			up_backend_update_acpibat_state(device, sdev);
+@@ -556,7 +590,6 @@ up_backend_init (UpBackend *backend)
  		device_class->get_low_battery = up_apm_device_get_low_battery;
  		device_class->get_online = up_apm_device_get_online;
  		device_class->refresh = up_apm_device_refresh;
@@ -12,3 +83,8 @@ https://bugs.freedesktop.org/show_bug.cgi?id=62795
  		/* creates thread */
  		if((backend->priv->apm_thread = (GThread*) g_thread_create((GThreadFunc)up_backend_apm_event_thread, (void*) backend, FALSE, &err) == NULL))
  		{
+@@ -610,4 +643,3 @@ up_backend_finalize (GObject *object)
+ 
+ 	G_OBJECT_CLASS (up_backend_parent_class)->finalize (object);
+ }
+-
