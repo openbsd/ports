@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SubEngine.pm,v 1.1 2013/10/03 08:03:27 espie Exp $
+# $OpenBSD: SubEngine.pm,v 1.2 2013/10/03 12:46:51 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -90,11 +90,6 @@ sub already_done
 {
 }
 
-sub start_install
-{
-	return 0;
-}
-
 sub lock_and_start_build
 {
 	my ($self, $core, $v) = @_;
@@ -117,19 +112,11 @@ sub start
 	my $self = shift;
 	my $core = $self->get_core;
 
-	if (@{$self->{engine}{requeued}} > 0) {
-		$self->{engine}->rebuild_info($core);
-		return;
-	}
-	if ($self->start_install($core)) {
+	if ($self->preempt_core($core)) {
 		return;
 	}
 
 	my $o = $self->sorted($core);
-
-	# note we don't actually remove stuff from the queue until needed, 
-	# so mismatches holds a copy of stuff that's still there.
-	my @mismatches = ();
 
 	# first pass, try to find something we can build
 	while (my $v = $o->next) {
@@ -146,48 +133,33 @@ sub start
 			$self->log('^', $v);
 			next;
 		}
-		if ($self->check_for_memory_hogs($v, $core)) {
-			push(@mismatches, $v);
-			next;
-		}
-		# keep affinity mismatches for later
-		if (defined $v->{affinity} && !$core->matches($v->{affinity})) {
-			$self->log('A', $v, 
-			    " ".$core->hostname." ".$v->{affinity});
-			# try to start them anyways, on the "right" core
-			my $core2 = DPB::Core->get_affinity($v->{affinity});
-			if (defined $core2) {
-				if ($self->lock_and_start_build($core2, $v)) {
-					next;
-				} else {
-					$core2->mark_ready;
-				}
-			}
-			push(@mismatches, $v);
-			next;
-		}
 		# if there's no external lock, we can build
-		if ($self->lock_and_start_build($core, $v)) {
+		if ($self->can_start_build($v, $core)) {
 			return;
 		}
 	}
-	# let's make sure we don't have something else first
-	if (@mismatches > 0) {
-		if ($self->{engine}->check_buildable(1)) {
-			$core->mark_ready;
-			return $self->start;
-		}
-	}
-	# second pass, affinity mismatches
-	for my $v (@mismatches) {
-		if ($self->lock_and_start_build($core, $v)) {
-			$self->log('Y', $v, 
-			    " ".$core->hostname." ".$v->{affinity});
-			return;
-		}
+	if ($self->recheck_mismatches($core)) {
+		return;
 	}
 	# couldn't build anything, don't forget to give back the core.
 	$core->mark_ready;
+}
+
+sub preempt_core
+{
+	return 0;
+}
+
+sub can_start_build
+{
+	my ($self, $v, $core) = @_;
+
+	return $self->lock_and_start_build($core, $v);
+}
+
+sub recheck_mismatches
+{
+	return 0;
 }
 
 sub done
@@ -259,6 +231,75 @@ sub new
 	$o->{toinstall} = [];
 	$o->{nfs} = {};
 	return $o;
+}
+
+
+sub preempt_core
+{
+	my ($self, $core) = @_;
+
+	if (@{$self->{engine}{requeued}} > 0) {
+		$self->{engine}->rebuild_info($core);
+		return 1;
+	}
+	if ($self->start_install($core)) {
+		return 1;
+	}
+	# note we don't actually remove stuff from the queue until needed, 
+	# so mismatches holds a copy of stuff that's still there.
+	$self->{mismatches} = [];
+	return 0;
+}
+
+sub can_start_build
+{
+	my ($self, $v, $core) = @_;
+
+	if ($self->check_for_memory_hogs($v, $core)) {
+		push(@{$self->{mismatches}}, $v);
+		return 0;
+	}
+	# keep affinity mismatches for later
+	if (defined $v->{affinity} && !$core->matches($v->{affinity})) {
+		$self->log('a', $v, 
+		    " ".$core->hostname." ".$v->{affinity});
+		# try to start them anyways, on the "right" core
+		my $core2 = DPB::Core->get_affinity($v->{affinity});
+		if (defined $core2) {
+			if ($self->lock_and_start_build($core2, $v)) {
+				return 0;
+			} else {
+				$core2->mark_ready;
+			}
+		}
+		push(@{$self->{mismatches}}, $v);
+		return 0;
+	}
+	# if there's no external lock, we can build
+	if ($self->lock_and_start_build($core, $v)) {
+		return 1;
+	}
+}
+
+sub recheck_mismatches
+{
+	my ($self, $core) = @_;
+	# let's make sure we don't have something else first
+	if (@{$self->{mismatches}} > 0) {
+		if ($self->{engine}->check_buildable(1)) {
+			$core->mark_ready;
+			return $self->start;
+		}
+	}
+	# second pass, affinity mismatches
+	for my $v (@{$self->{mismatches}}) {
+		if ($self->lock_and_start_build($core, $v)) {
+			$self->log('Y', $v, 
+			    " ".$core->hostname." ".$v->{affinity});
+			return 1;
+		}
+	}
+	return 0;
 }
 
 sub will_install
