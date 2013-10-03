@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.89 2013/10/03 16:12:05 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.90 2013/10/03 16:33:08 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -729,6 +729,13 @@ big machines devote some of their cores to
 jobs that walk the queue in reverse, thus building smallest ports first.
 As a result, small ports are built as a trickle alongside the largest ports,
 thus offsetting the negative effect of the exponential queue for a large part.
+.Pp
+Note that
+.Sq squiggles
+can be a non-integral value, usually lower than 1, in which case they
+represent the fraction of cores that should be affected to squiggles,
+as decided randomly at the start of each build.
+0.7 or 0.8 might be a good choice for dual core machines.
 .Sh LOCKS AND ERRORS
 .Nm
 still uses the normal ports tree mechanism while building, which includes
