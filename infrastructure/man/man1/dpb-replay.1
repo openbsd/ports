@@ -1,0 +1,41 @@
+.\"	$OpenBSD: dpb-replay.1,v 1.1 2013/10/03 16:12:05 espie Exp $
+.\"
+.\" Copyright (c) 2013 Marc Espie <espie@openbsd.org>
+.\"
+.\" Permission to use, copy, modify, and distribute this software for any
+.\" purpose with or without fee is hereby granted, provided that the above
+.\" copyright notice and this permission notice appear in all copies.
+.\"
+.\" THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+.\" WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+.\" MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+.\" ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+.\" WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+.\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+.\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+.\"
+.Dd $Mdocdate: October 3 2013 $
+.Dt DPB-REPLAY 1
+.Os
+.Sh NAME
+.Nm dpb-replay
+.Nd replays dpb terminal output
+.Sh SYNOPSIS
+.Nm
+.Ar file
+.Op Ar speedup
+.Sh DESCRIPTION
+.Nm
+is used to replay
+.Xr dpb 1
+terminal logs
+.Po
+.Pa %L/term-reports.log
+.Pc
+later, usually at a much higher speed than the first run,
+for demonstration and optimization purposes.
+The optional
+.Ar speedup
+parameter defaults to 10 times the original speed.
+.Sh SEE ALSO
+.Xr dpb 1

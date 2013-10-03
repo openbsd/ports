@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.88 2013/09/24 09:46:44 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.89 2013/10/03 16:12:05 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: September 24 2013 $
+.Dd $Mdocdate: October 3 2013 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -243,6 +243,9 @@ Define a file which will save all terminal output.
 Mostly useful for presentations, as a way to save
 .Nm dpb
 output and replay it later at a faster rate.
+Defaults to
+.Pa %L/term-reports.log ,
+can be set to nothing to disable.
 .It Ar STARTUP
 Define a start-up script on the command-line, override any host file contents.
 .It Ar STUCK_TIMEOUT
@@ -1113,6 +1116,9 @@ creating new jobs.
 .It Pa stop-<hostname>
 Not a logfile at all, but created by the user to stop hostname creating
 new jobs.
+.It Pa term-reports.log
+Saves all terminal output, so that it can be replayed at hi speed with
+.Xr dpb-replay 1 .
 .It Pa vars.log
 Logs the directories that were walked in the ports tree for dependency
 information, including the path to a dependency that triggered this
@@ -1218,6 +1224,7 @@ Just kill
 and restart it.
 .Sh SEE ALSO
 .Xr clean-old-distfiles 1 ,
+.Xr dpb-replay 1 ,
 .Xr pkgpath 7
 .Sh AUTHOR
 Marc Espie
