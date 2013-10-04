@@ -1,0 +1,4 @@
+BoundedChan is a Haskell library providing bounded (limited capacity)
+channels.
+BoundedChans differ from Chans in that channels are guaranteed to
+contain no more than a certain number of elements.
