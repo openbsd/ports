@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SubEngine.pm,v 1.5 2013/10/03 17:42:58 espie Exp $
+# $OpenBSD: SubEngine.pm,v 1.6 2013/10/04 11:26:15 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -260,8 +260,10 @@ sub can_start_build
 	# fail abysmally if there's no junking going on
 	if ($core->prop->{tainted} && $v->{info}->has_property('tag')) {
 		if ($v->{info}->has_property('tag') ne $core->prop->{tainted}) {
-		    $self->log('K', $v, " ".$core->hostname);
-		    	push(@{$self->{tag_mismatches}}, $v);
+			$self->log('K', $v, " ".$core->hostname." ".
+			    $core->prop->{tainted}." vs ".
+			    $v->{info}->has_property('tag'));
+			push(@{$self->{tag_mismatches}}, $v);
 			return 0;
 		}
 	}
@@ -300,9 +302,35 @@ sub check_for_memory_hogs
 	return 0;
 }
 
+sub can_be_junked
+{
+	my ($self, $v, $core) = @_;
+	my $tag = $v->{info}->has_property('tag');
+	for my $job ($core->same_host_jobs) {
+		if ($job->{v}{info}->has_property('tag') &&
+		    $job->{v}{info}->has_property('tag') ne $tag) {
+		    	return 0;
+		}
+	}
+	return 1;
+}
+
 sub recheck_mismatches
 {
 	my ($self, $core) = @_;
+
+	# first let's try to force junking
+	if (@{$self->{tag_mismatches}} > 0) {
+		for my $v (@{$self->{tag_mismatches}}) {
+			next unless $self->can_be_junked($v, $core);
+			$v->{forcejunk} = 1;
+			if ($self->lock_and_start_build($core, $v)) {
+				$self->log('C', $v);
+				return 1;
+			}
+			delete $v->{forcejunk};
+		}
+	}
 	# let's make sure we don't have something else first
 	if (@{$self->{mismatches}} > 0) {
 		if ($self->{engine}->check_buildable(1)) {
