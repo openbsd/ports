@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2013/08/07 21:31:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2013/10/04 08:25:08 dcoppa Exp $
 
 COMMENT =		minimalistic Mumble server
 
-DISTNAME =		umurmur-0.2.10
-REVISION =		1
+DISTNAME =		umurmur-0.2.13
 CATEGORIES =		audio
 
 HOMEPAGE =		https://umurmur.googlecode.com/
