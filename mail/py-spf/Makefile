@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:23:53 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/10/04 09:33:03 giovanni Exp $
 
 COMMENT=	Sender-Policy-Framework queries in Python
 
-MODPY_EGG_VERSION=2.0.7
+MODPY_EGG_VERSION=2.0.8
 DISTNAME=	pyspf-${MODPY_EGG_VERSION}
 PKGNAME=	py-spf-${MODPY_EGG_VERSION}
-REVISION=	0
 CATEGORIES=	mail
 
 HOMEPAGE=	http://bmsi.com/python/milter.html
@@ -24,7 +23,8 @@ BUILD_DEPENDS=	net/py-dns
 RUN_DEPENDS=	mail/py-authres
 
 TEST_DEPENDS=${FULLPKGNAME}:${BUILD_PKGPATH} \
-		textproc/py-yaml
+		textproc/py-yaml \
+		net/py-ipaddr
 
 do-test:
 	@cd ${WRKSRC}/test && ${MODPY_BIN} testspf.py
