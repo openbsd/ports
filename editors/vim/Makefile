@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.129 2013/03/26 08:12:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.130 2013/10/04 08:44:03 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
-VERSION=	7.3.850
+VERSION=	7.4.45
 DISTNAME=	vim-${VERSION}
 PKGNAME-main=	vim-${VERSION}
 PKGNAME-lang=	vim-lang-${VERSION}
-REVISION-lang=	2
 P=		vim${VERSION:R:S/.//}
 CATEGORIES=	editors
 # Upstream's normal distribution (http://ftp.vim.org/pub/vim/unix/) consists
@@ -17,7 +16,6 @@ MASTER_SITES=	http://spacehopper.org/mirrors/
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://www.vim.org/
-MAINTAINER=	Chris Kuethe <ckuethe@openbsd.org>
 
 # allow vim to build on vax?
 .if (${MACHINE_ARCH} == "vax")
@@ -106,7 +104,7 @@ CONFIGURE_ARGS+= --enable-gui="gtk2" \
 		--enable-xim \
 		--with-x
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xpm Xrandr Xrender Xt atk-1.0 cairo expat
+WANTLIB += Xi Xinerama Xpm Xrandr Xrender Xt atk-1.0 cairo
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pthread z
