@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.22 2013/07/18 05:36:54 espie Exp $
+# $OpenBSD: Locks.pm,v 1.23 2013/10/04 20:28:41 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -196,6 +196,33 @@ sub find_dependencies
 		}
 	}
 	return $h;
+}
+
+sub find_tag
+{
+	my ($self, $hostname) = @_;
+	opendir(my $dir, $self->{lockdir});
+	while (my $name = readdir($dir)) {
+		my $fullname = $self->{lockdir}."/".$name;
+		next if -d $fullname;
+		next if $name =~ m/^host:/;
+		open(my $f, '<', $fullname);
+		my ($host, $cleaned, $tag);
+		while (<$f>) {
+			if (m/^host=(.*)/) {
+				$host = $1;
+			} elsif (m/^cleaned$/) {
+				$cleaned = 1;
+			} elsif (m/^tag=(.*)/) {
+				$tag = $1;
+			}
+		}
+		next if $cleaned;
+		if (defined $host && $host eq $hostname) {
+			return $tag if defined $tag;
+		}
+	}
+	return undef;
 }
 
 1;

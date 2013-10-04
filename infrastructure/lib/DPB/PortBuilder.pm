@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.50 2013/09/22 06:29:38 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.51 2013/10/04 20:28:41 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -204,6 +204,9 @@ sub build
 	} else {
 		print $fh ">>> Building under ";
 		$core->{inmem} = 0;
+	}
+	if ($v->{info}->has_property('tag')) {
+		print $lock "tag=".$v->{info}->has_property('tag')."\n";
 	}
 	$v->quick_dump($fh);
 

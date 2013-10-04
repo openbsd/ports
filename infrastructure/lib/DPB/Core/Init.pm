@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.5 2013/10/03 17:34:44 espie Exp $
+# $OpenBSD: Init.pm,v 1.6 2013/10/04 20:28:41 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -157,6 +157,10 @@ sub init_cores
 				    ->exec(@args);
 			    }
 			));
+		}
+		my $tag = $state->locker->find_tag($core->hostname);
+		if (defined $tag) {
+			$core->prop->{tainted} = $tag;
 		}
 		if (defined $stale->{$core->hostname}) {
 			my $subdirlist=join(' ', @{$stale->{$core->hostname}});

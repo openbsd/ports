@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.125 2013/10/04 17:48:24 espie Exp $
+# $OpenBSD: Port.pm,v 1.126 2013/10/04 20:28:41 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -493,8 +493,7 @@ sub run
 		exit(2);
 	}
 
-	my $h = $job->{builder}->locker->find_dependencies(
-	    $core->hostname);
+	my $h = $job->{builder}->locker->find_dependencies($core->hostname);
 	if (defined $h && $self->add_live_depends($h, $core)) {
 		$self->add_dontjunk($job, $h);
 		my $opt = '-aiX';
@@ -526,6 +525,9 @@ sub finalize
 				$still_tainted = 1;
 				last;
 			}
+		}
+	    	if (defined $core->job->{builder}->locker->find_tag($core->hostname)) {
+			$still_tainted = 1;
 		}
 		print {$core->job->{logfh}} "Still tainted: $still_tainted\n";
 		if (!$still_tainted) {
