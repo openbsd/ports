@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2013/07/14 17:28:39 bcallah Exp $
+# $OpenBSD: Makefile,v 1.26 2013/10/04 23:26:51 bcallah Exp $
 
 COMMENT=	RSS Aggregator Without Delusions Of Grandeur
 
-MODPY_EGG_VERSION=	2.15
+MODPY_EGG_VERSION=	2.18
 DISTNAME=	rawdog-${MODPY_EGG_VERSION}
 CATEGORIES=	www news
 
@@ -17,7 +17,9 @@ MASTER_SITES=	http://offog.org/files/
 
 MODULES=	lang/python
 
-USE_GROFF =	Yes
+RUN_DEPENDS=	textproc/py-feedparser
+
+USE_GROFF=	Yes
 NO_TEST=	Yes
 
 DOCDIR=		${PREFIX}/share/doc/rawdog
