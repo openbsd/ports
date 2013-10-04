@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_option_c,v 1.1 2013/10/04 08:45:21 sthen Exp $
+
+Disable new NFA regexp engine for now, syntax highlighting is unusably
+slow if malloc flag 'J' is used.
+
+--- src/option.c.orig	Tue Oct  1 08:50:58 2013
++++ src/option.c	Tue Oct  1 09:15:05 2013
+@@ -2097,7 +2097,7 @@ static struct vimoption
+ 			    {(char_u *)2000L, (char_u *)0L} SCRIPTID_INIT},
+     {"regexpengine", "re",  P_NUM|P_VI_DEF,
+ 			    (char_u *)&p_re, PV_NONE,
+-			    {(char_u *)0L, (char_u *)0L} SCRIPTID_INIT},
++			    {(char_u *)1L, (char_u *)1L} SCRIPTID_INIT},
+     {"relativenumber", "rnu", P_BOOL|P_VI_DEF|P_RWIN,
+ 			    (char_u *)VAR_WIN, PV_RNU,
+ 			    {(char_u *)FALSE, (char_u *)0L} SCRIPTID_INIT},
