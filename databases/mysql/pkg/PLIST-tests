@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.55 2013/06/12 20:36:33 brad Exp $
+@comment $OpenBSD: PLIST-tests,v 1.56 2013/10/04 07:09:18 giovanni Exp $
 @conflict mariadb-tests-*
 @pkgpath databases/mariadb,-tests
 @man man/man1/mysql-stress-test.pl.1
@@ -301,6 +301,7 @@ share/mysql-test/include/have_ucs2.inc
 share/mysql-test/include/have_udf.inc
 share/mysql-test/include/have_ujis.inc
 share/mysql-test/include/have_utf8.inc
+share/mysql-test/include/have_valgrind.inc
 share/mysql-test/include/index_merge1.inc
 share/mysql-test/include/index_merge2.inc
 share/mysql-test/include/index_merge_2sweeps.inc
