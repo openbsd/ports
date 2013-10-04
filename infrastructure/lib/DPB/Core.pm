@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.56 2013/10/03 17:34:44 espie Exp $
+# $OpenBSD: Core.pm,v 1.57 2013/10/04 07:18:38 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -489,6 +489,8 @@ sub same_host_jobs
 	my @jobs = ();
 	for my $core (values %{$self->repository}) {
 		next if $core->hostname ne $self->hostname;
+		# XXX only interested in "real" jobs now
+		next if !defined $core->job->{v};
 		push(@jobs, $core->job);
 	}
 	return @jobs;

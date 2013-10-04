@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.122 2013/10/04 07:15:10 espie Exp $
+# $OpenBSD: Port.pm,v 1.123 2013/10/04 07:18:38 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -509,8 +509,7 @@ sub finalize
 
 		my $still_tainted = 0;
 		for my $job ($core->same_host_jobs) {
-			if (defined $job->{v} && 
-			    $job->{v}{info}->has_property('tag')) {
+			if ($job->{v}{info}->has_property('tag')) {
 				$still_tainted = 1;
 				last;
 			}
