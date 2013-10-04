@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_puppet_module_tool_tar_gnu_rb,v 1.1 2013/10/04 09:13:29 jasper Exp $
+
+BSD tar(1) doesn't know these options.
+
+--- lib/puppet/module_tool/tar/gnu.rb.orig	Fri Oct  4 11:08:26 2013
++++ lib/puppet/module_tool/tar/gnu.rb	Fri Oct  4 11:08:40 2013
+@@ -1,6 +1,6 @@
+ class Puppet::ModuleTool::Tar::Gnu
+   def unpack(sourcefile, destdir, owner)
+-    Puppet::Util::Execution.execute("tar xzf #{sourcefile} --no-same-permissions --no-same-owner -C #{destdir}")
++    Puppet::Util::Execution.execute("tar xzf #{sourcefile} -C #{destdir}")
+     Puppet::Util::Execution.execute("find #{destdir} -type d -exec chmod 755 {} +")
+     Puppet::Util::Execution.execute("find #{destdir} -type f -exec chmod 644 {} +")
+     Puppet::Util::Execution.execute("chown -R #{owner} #{destdir}")
