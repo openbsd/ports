@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.123 2013/10/04 07:18:38 espie Exp $
+# $OpenBSD: Port.pm,v 1.124 2013/10/04 11:17:33 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -19,6 +19,19 @@ use warnings;
 
 use DPB::Job;
 use DPB::Clock;
+
+package DPB::Junk;
+sub want
+{
+	my ($class, $core, $job) = @_;
+	# job is normally attached to core, unless it's not attached,
+	# and then we pass it as an extra parameter
+	$job //= $core->job;
+	return 1 if $job->{v}{forcejunk};
+	return 0 unless defined $core->prop->{junk};
+	return $core->prop->{depends_count} >= $core->prop->{junk};
+}
+
 package DPB::Task::BasePort;
 our @ISA = qw(DPB::Task::Clocked);
 use OpenBSD::Paths;
@@ -436,7 +449,7 @@ sub setup
 {
 	my ($task, $core) = @_;
 	# check we *REALLY* mean it
-	if ($core->prop->{depends_count} < $core->prop->{junk}) {
+	if (!DPB::Junk->want($core)) {
 		$task->junk_unlock($core);
 		return $core->job->next_task($core);
 	}
@@ -476,7 +489,7 @@ sub run
 
 	$self->handle_output($job);
 	# we got pre-empted
-	if ($core->prop->{depends_count} < $core->prop->{junk}) {
+	if (!DPB::Junk->want($core)) {
 		exit(2);
 	}
 
@@ -519,8 +532,10 @@ sub finalize
 		}
 	}
 
-	# otherwise, hey, it's not important, never error out because of us
-	$core->{status} = 0;
+	# unless we really need junk for tags, don't error out because of us
+	if (!$core->job->{v}{forcejunk}) {
+		$core->{status} = 0;
+	}
 	$self->SUPER::finalize($core);
 	return 1;
 }
@@ -834,15 +849,13 @@ sub add_normal_tasks
 	}
 	# gc stuff we will no longer need
 	delete $self->{v}{info}{solved};
-	if ($hostprop->{junk}) {
-		if ($hostprop->{depends_count} >= $hostprop->{junk}) {
-			my $fh = $self->{builder}->logger->open("junk");
-			print $fh "$$@", CORE::time(), ": ", $core->hostname,
-			    ": depends=$hostprop->{depends_count} ",
-			    " ports=$hostprop->{ports_count} ",
-			    " junk=$hostprop->{junk_count} -> $self->{path}\n";
-			push(@todo, 'junk');
-		}
+	if (DPB::Junk->want($core, $self)) {
+		my $fh = $self->{builder}->logger->open("junk");
+		print $fh "$$@", CORE::time(), ": ", $core->hostname,
+		    ": depends=$hostprop->{depends_count} ",
+		    " ports=$hostprop->{ports_count} ",
+		    " junk=$hostprop->{junk_count} -> $self->{path}\n";
+		push(@todo, 'junk');
 	}
 	if ($builder->{fetch}) {
 		push(@todo, qw(checksum));
