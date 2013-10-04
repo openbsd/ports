@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2013/06/09 15:26:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2013/10/04 07:25:31 ajacoutot Exp $
 
 COMMENT=	gtk+3 spelling checker
 
-DISTNAME=	gtkspell3-3.0.3
-REVISION=	1
+DISTNAME=	gtkspell3-3.0.4
 
 SHARED_LIBS +=  gtkspell3-3          0.1      # 1.0
 
@@ -20,36 +19,21 @@ WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += cairo cairo-gobject dbus-1 enchant expat ffi fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 gtk-3 m
+WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz m
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += pthread pthread-stubs stdc++ xcb xcb-render xcb-shm
-WANTLIB += harfbuzz z graphite2 png
+WANTLIB += png pthread pthread-stubs stdc++ xcb xcb-render xcb-shm
+WANTLIB += z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtkspell/}
 
-USE_GMAKE=	Yes
-
 MODULES=	devel/gettext \
-		textproc/intltool
+		x11/gnome
 
-BUILD_DEPENDS=	devel/gobject-introspection \
-		lang/vala
+MODGNOME_TOOLS=	gi vala
 
 LIB_DEPENDS=	textproc/enchant \
 		x11/gtk+3
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-gtk-doc \
-		--enable-introspection \
-		--enable-vala
-
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
-		ac_cv_path_GTKDOC_REBASE="" \
-		ac_cv_path_GTKDOC_MKPDF=""
 
 .include <bsd.port.mk>
