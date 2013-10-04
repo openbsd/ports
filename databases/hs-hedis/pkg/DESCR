@@ -1,0 +1,25 @@
+This library is a Haskell client for the Redis datastore.
+
+Compared to other Haskell client libraries it has some advantages:
+
+Complete Redis 2.6 command set:
+    All Redis commands are available as haskell functions, except
+    for the MONITOR and SYNC commands.
+    Additionally, a low-level API is exposed that makes it easy for
+    the library user to implement further commands, such as new
+    commands from an experimental Redis version.
+
+Automatic optimal pipelining:
+    Commands are pipelined as much as possible without any work by
+    the user.
+
+Enforced Pub/Sub semantics:
+    When subscribed to the Redis Pub/Sub server, clients are not
+    allowed to issue commands other than subscribing to or unsubscribing
+    from channels. This library uses the type system to enforce the
+    correct behavior.
+
+Connect via TCP or Unix Domain Socket:
+    TCP sockets are the default way to connect to a Redis server.
+    For connections to a server on the same machine, Unix domain
+    sockets offer higher performance than the standard TCP connection.
