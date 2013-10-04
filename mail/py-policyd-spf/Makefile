@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:23:53 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/10/04 09:37:43 giovanni Exp $
 
 COMMENT=	external SPF policy checker for postfix
 
-MODPY_EGG_VERSION=	1.1
+MODPY_EGG_VERSION=1.2
 DISTNAME=	pypolicyd-spf-${MODPY_EGG_VERSION}
 PKGNAME=	py-policyd-spf-${MODPY_EGG_VERSION}
 CATEGORIES=	mail
@@ -20,7 +20,8 @@ MODULES=        lang/python
 USE_GROFF =	Yes
 
 BUILD_DEPENDS=	mail/py-spf
-RUN_DEPENDS=	mail/py-spf net/py-dns
+RUN_DEPENDS=	mail/py-spf \
+		net/py-dns
 
 NO_TEST=	Yes
 

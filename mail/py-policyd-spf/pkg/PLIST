@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/11/12 09:57:46 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/10/04 09:37:43 giovanni Exp $
 bin/policyd-spf
 lib/python${MODPY_VERSION}/site-packages/policydspfsupp.py
 lib/python${MODPY_VERSION}/site-packages/policydspfsupp.pyc
 lib/python${MODPY_VERSION}/site-packages/policydspfuser.py
 lib/python${MODPY_VERSION}/site-packages/policydspfuser.pyc
-lib/python${MODPY_VERSION}/site-packages/python_policyd_spf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/pypolicyd_spf-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 @man man/man1/policyd-spf.1
 @man man/man5/policyd-spf.conf.5
 @man man/man5/policyd-spf.peruser.5
