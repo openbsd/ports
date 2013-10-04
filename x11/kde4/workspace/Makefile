@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2013/08/24 17:33:53 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2013/10/04 22:49:08 zhuk Exp $
 
 COMMENT =	KDE workspace
 DISTNAME =	kde-workspace-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 # TODO:
 # Port ksysguard to OpenBSD (sensors framework, lsof(1) call replace and others).
@@ -78,7 +78,7 @@ WANTLIB += strigiqtdbusclient usb xml2 xmms
 MODULES =	devel/gettext multimedia/phonon lang/python lang/ruby
 MODKDE4_USE =	pim
 
-MODRUBY_REV =		1.8
+MODRUBY_REV =		1.9
 MODRUBY_BUILDDEP =	No
 
 BUILD_DEPENDS =	misc/shared-desktop-ontologies \
@@ -103,12 +103,15 @@ LIB_DEPENDS =	audio/xmms \
 
 CONFIGURE_ARGS =	-DWITH_Googlegadgets:Bool=False \
 			-DWITH_NetworkManager:Bool=False \
+			-DWITH_OpenGLES:Bool=False \
 			-DWITH_PCIUTILS:Bool=False \
 			-DWITH_RAW1394:Bool=False \
 			-DWITH_Sensors:Bool=False
 
 MODKDE4_SYSCONF_FILES =	dbus-1		share/examples \
 			ksysguarddrc	share/examples/kde
+
+# Note: struct ucred check results are not used, do not look there.
 
 post-extract:
 	cp ${FILESDIR}/checkpass_bsd.c ${WRKSRC}/kcheckpass/

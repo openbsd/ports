@@ -1,6 +1,6 @@
-$OpenBSD: patch-ConfigureChecks_cmake,v 1.1.1.1 2013/04/24 19:17:42 zhuk Exp $
---- ConfigureChecks.cmake.orig	Tue Jan  3 23:43:13 2012
-+++ ConfigureChecks.cmake	Wed Jan 18 03:31:03 2012
+$OpenBSD: patch-ConfigureChecks_cmake,v 1.2 2013/10/04 22:49:08 zhuk Exp $
+--- ConfigureChecks.cmake.orig	Fri Jun 28 21:10:45 2013
++++ ConfigureChecks.cmake	Sat Oct  5 00:11:41 2013
 @@ -50,6 +50,7 @@ get_filename_component(xrootdir "${XBINDIR}" PATH)
  set(XLIBDIR "${xrootdir}/lib/X11")
  
@@ -9,3 +9,12 @@ $OpenBSD: patch-ConfigureChecks_cmake,v 1.1.1.1 2013/04/24 19:17:42 zhuk Exp $
  check_function_exists(vsyslog HAVE_VSYSLOG)
  check_function_exists(statvfs HAVE_STATVFS)
  
+@@ -90,7 +91,7 @@ check_type_size("struct ucred" STRUCT_UCRED)       # k
+ check_function_exists(getpeereid  HAVE_GETPEEREID) # kdesu
+ check_function_exists(setpriority  HAVE_SETPRIORITY) # kscreenlocker 
+ 
+-set(CMAKE_REQUIRED_INCLUDES ${X11_Xrandr_INCLUDE_PATH}/Xrandr.h)
++set(CMAKE_REQUIRED_INCLUDES ${X11_Xrandr_INCLUDE_PATH})
+ set(CMAKE_REQUIRED_LIBRARIES ${X11_Xrandr_LIB})
+ check_function_exists(XRRGetScreenSizeRange XRANDR_1_2_FOUND)
+ macro_bool_to_01(XRANDR_1_2_FOUND HAS_RANDR_1_2)

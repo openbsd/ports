@@ -1,0 +1,14 @@
+$OpenBSD: patch-kcontrol_screensaver_CMakeLists_txt,v 1.1 2013/10/04 22:49:08 zhuk Exp $
+--- kcontrol/screensaver/CMakeLists.txt.orig	Fri Oct  4 21:27:11 2013
++++ kcontrol/screensaver/CMakeLists.txt	Sat Oct  5 02:13:18 2013
+@@ -1,7 +1,7 @@
+ 
+-if(WITH_OpenGL)
+-check_library_exists(GL glXChooseVisual "" HAVE_GLXCHOOSEVISUAL)
+-endif(WITH_OpenGL)
++if(OPENGL_FOUND)
++  check_library_exists(${OPENGL_gl_LIBRARY} glXChooseVisual "" HAVE_GLXCHOOSEVISUAL)
++endif(OPENGL_FOUND)
+ configure_file (config-screensaver.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-screensaver.h )
+ 
+ ########### next target ###############
