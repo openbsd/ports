@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.124 2013/10/04 11:17:33 espie Exp $
+# $OpenBSD: Port.pm,v 1.125 2013/10/04 17:48:24 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -527,6 +527,7 @@ sub finalize
 				last;
 			}
 		}
+		print {$core->job->{logfh}} "Still tainted: $still_tainted\n";
 		if (!$still_tainted) {
 			delete $core->prop->{tainted};
 		}
