@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_3rdparty_javascriptcore_JavaScriptCore_wtf_Platform_h,v 1.6 2013/01/14 22:09:43 bcallah Exp $
---- src/3rdparty/javascriptcore/JavaScriptCore/wtf/Platform.h.orig	Thu Apr 26 15:46:22 2012
-+++ src/3rdparty/javascriptcore/JavaScriptCore/wtf/Platform.h	Wed Jan  9 13:47:38 2013
+$OpenBSD: patch-src_3rdparty_javascriptcore_JavaScriptCore_wtf_Platform_h,v 1.7 2013/10/04 13:15:40 dcoppa Exp $
+--- src/3rdparty/javascriptcore/JavaScriptCore/wtf/Platform.h.orig	Fri Jun  7 07:16:58 2013
++++ src/3rdparty/javascriptcore/JavaScriptCore/wtf/Platform.h	Fri Sep 27 10:10:55 2013
 @@ -142,6 +142,30 @@
  #endif
  #endif
@@ -44,7 +44,7 @@ $OpenBSD: patch-src_3rdparty_javascriptcore_JavaScriptCore_wtf_Platform_h,v 1.6 
  /* ==== OS() - underlying operating system; only to be used for mandated low-level services like 
     virtual memory, not to choose a GUI toolkit ==== */
  
-@@ -884,7 +910,7 @@
+@@ -873,7 +899,7 @@
  #endif
  
  #if !defined(WTF_USE_JSVALUE64) && !defined(WTF_USE_JSVALUE32) && !defined(WTF_USE_JSVALUE32_64)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2013/06/12 20:36:34 brad Exp $
+# $OpenBSD: Makefile,v 1.115 2013/10/04 13:15:39 dcoppa Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 SHARED_ONLY =		Yes
@@ -24,14 +24,6 @@ PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
 
-REVISION-main=		7
-REVISION-mysql=		3
-REVISION-postgresql=	1
-REVISION-examples=	0
-REVISION-sqlite2=	1
-REVISION-tds=		1
-REVISION-debug=		0
-
 # XXX qmake include parser is bogus
 DPB_PROPERTIES =	parallel	nojunk
 
@@ -39,7 +31,7 @@ SHARED_LIBS =	Qt3Support 8.0 \
 		QtCore 9.0 \
 		QtDesigner 7.0 \
 		QtDesignerComponents 7.0 \
-		QtGui 10.0 \
+		QtGui 10.1 \
 		QtNetwork 9.1 \
 		QtOpenGL 7.0 \
 		QtSql 8.0 \
@@ -53,19 +45,19 @@ SHARED_LIBS =	Qt3Support 8.0 \
 		QtHelp 1.0 \
 		QtXmlPatterns 0.0 \
 		QtScriptTools 0.0 \
-		QtWebKit 2.0 \
+		QtWebKit 3.0 \
 		phonon 4.1 \
 		QtDeclarative 0.0
 
 
-VERSION =	4.8.2
-PKGVERSION =	4.8.2
+VERSION =	4.8.5
+PKGVERSION =	4.8.5
 DISTNAME =	qt-everywhere-opensource-src-${VERSION}
 
 CATEGORIES =	x11
-MASTER_SITES =  http://releases.qt-project.org/qt4/source/
+MASTER_SITES =  http://download.qt-project.org/official_releases/qt/4.8/${VERSION}/
 
-HOMEPAGE =	http://qt.nokia.com/
+HOMEPAGE =	http://qt-project.org/
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 

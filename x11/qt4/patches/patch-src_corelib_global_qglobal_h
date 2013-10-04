@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_corelib_global_qglobal_h,v 1.15 2012/06/14 09:38:35 espie Exp $
---- src/corelib/global/qglobal.h.orig	Thu Apr 26 21:46:08 2012
-+++ src/corelib/global/qglobal.h	Sun Jun 10 13:25:08 2012
-@@ -2336,7 +2336,7 @@ typedef uint Flags;
+$OpenBSD: patch-src_corelib_global_qglobal_h,v 1.16 2013/10/04 13:15:40 dcoppa Exp $
+--- src/corelib/global/qglobal.h.orig	Fri Jun  7 07:16:52 2013
++++ src/corelib/global/qglobal.h	Fri Sep 27 10:10:56 2013
+@@ -2359,7 +2359,7 @@ typedef uint Flags;
  
  #endif /* Q_NO_TYPESAFE_FLAGS */
  

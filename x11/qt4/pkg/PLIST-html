@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-html,v 1.28 2012/06/14 09:38:36 espie Exp $
+@comment $OpenBSD: PLIST-html,v 1.29 2013/10/04 13:15:41 dcoppa Exp $
 share/doc/qt4/html/
 share/doc/qt4/html/3rdparty.html
 share/doc/qt4/html/abstractwidgets.html
@@ -822,6 +822,7 @@ share/doc/qt4/html/declarative-ui-components-slideswitch-slideswitch-qmlproject.
 share/doc/qt4/html/declarative-ui-components-slideswitch-slideswitch-svg.html
 share/doc/qt4/html/declarative-ui-components-slideswitch.html
 share/doc/qt4/html/declarative-ui-components-spinner-main-cpp.html
+share/doc/qt4/html/declarative-ui-components-spinner-qml-spinner-content-spinner-qml.html
 share/doc/qt4/html/declarative-ui-components-spinner-qml-spinner-main-qml.html
 share/doc/qt4/html/declarative-ui-components-spinner-spinner-pro.html
 share/doc/qt4/html/declarative-ui-components-spinner-spinner-qmlproject.html
@@ -1897,7 +1898,6 @@ share/doc/qt4/html/images/appicon_packagecontents.png
 share/doc/qt4/html/images/appicon_screenshot.png
 share/doc/qt4/html/images/application-menus.png
 share/doc/qt4/html/images/application.png
-share/doc/qt4/html/images/arrow_bc.png
 share/doc/qt4/html/images/arrow_down.png
 share/doc/qt4/html/images/arthurplugin-demo.png
 share/doc/qt4/html/images/assistant-address-toolbar.png
@@ -1923,12 +1923,16 @@ share/doc/qt4/html/images/basicsortfiltermodel-example.png
 share/doc/qt4/html/images/bearercloud-example.png
 share/doc/qt4/html/images/bearermonitor-example.png
 share/doc/qt4/html/images/bearings.png
-share/doc/qt4/html/images/bgrContent.png
+share/doc/qt4/html/images/bg_l.png
+share/doc/qt4/html/images/bg_l_blank.png
+share/doc/qt4/html/images/bg_ll_blank.png
+share/doc/qt4/html/images/bg_r.png
+share/doc/qt4/html/images/bg_ul_blank.png
 share/doc/qt4/html/images/blockingfortuneclient-example.png
-share/doc/qt4/html/images/blu_dot.png
 share/doc/qt4/html/images/blurpickereffect-example.png
 share/doc/qt4/html/images/books-demo.png
 share/doc/qt4/html/images/borderlayout-example.png
+share/doc/qt4/html/images/box_bg.png
 share/doc/qt4/html/images/boxes-demo.png
 share/doc/qt4/html/images/branchindicatorimage.png
 share/doc/qt4/html/images/breadcrumb.png
@@ -1937,8 +1941,8 @@ share/doc/qt4/html/images/broadcastsender-example.png
 share/doc/qt4/html/images/browser-demo.png
 share/doc/qt4/html/images/brush-outline.png
 share/doc/qt4/html/images/brush-styles.png
-share/doc/qt4/html/images/btn_next.png
-share/doc/qt4/html/images/btn_prev.png
+share/doc/qt4/html/images/btn_next_green.png
+share/doc/qt4/html/images/btn_prev_green.png
 share/doc/qt4/html/images/bullet_dn.png
 share/doc/qt4/html/images/bullet_gt.png
 share/doc/qt4/html/images/bullet_sq.png
@@ -2292,6 +2296,7 @@ share/doc/qt4/html/images/factorial-example.png
 share/doc/qt4/html/images/fademessageeffect-example-faded.png
 share/doc/qt4/html/images/fademessageeffect-example.png
 share/doc/qt4/html/images/fancybrowser-example.png
+share/doc/qt4/html/images/feedbackground.png
 share/doc/qt4/html/images/fetchmore-example.png
 share/doc/qt4/html/images/filedialogurls.png
 share/doc/qt4/html/images/filetree_1-example.png
@@ -2385,19 +2390,16 @@ share/doc/qt4/html/images/gtk-toolbox.png
 share/doc/qt4/html/images/gtk-toolbutton.png
 share/doc/qt4/html/images/gtk-treeview.png
 share/doc/qt4/html/images/header.png
+share/doc/qt4/html/images/header_bg.png
 share/doc/qt4/html/images/headerimage.png
 share/doc/qt4/html/images/hellogl-es-example.png
 share/doc/qt4/html/images/hellogl-example.png
-share/doc/qt4/html/images/home.png
 share/doc/qt4/html/images/horBar.png
 share/doc/qt4/html/images/horizontalpositioner_example.png
 share/doc/qt4/html/images/hoverevents.png
 share/doc/qt4/html/images/http-example.png
 share/doc/qt4/html/images/httpstack.png
 share/doc/qt4/html/images/i18n-example.png
-share/doc/qt4/html/images/ico_note.png
-share/doc/qt4/html/images/ico_note_attention.png
-share/doc/qt4/html/images/ico_out.png
 share/doc/qt4/html/images/icon.png
 share/doc/qt4/html/images/icons-example.png
 share/doc/qt4/html/images/icons-view-menu.png
@@ -2629,6 +2631,8 @@ share/doc/qt4/html/images/orientation-portrait-ui.png
 share/doc/qt4/html/images/orientation-portrait.png
 share/doc/qt4/html/images/overpainting-example.png
 share/doc/qt4/html/images/padnavigator-example.png
+share/doc/qt4/html/images/page.png
+share/doc/qt4/html/images/page_bg.png
 share/doc/qt4/html/images/painterpaths-example.png
 share/doc/qt4/html/images/painting-examples.png
 share/doc/qt4/html/images/paintsystem-antialiasing.png
@@ -3077,7 +3081,6 @@ share/doc/qt4/html/images/qurl-querystring.png
 share/doc/qt4/html/images/qvbox-m.png
 share/doc/qt4/html/images/qvboxlayout-with-5-children.png
 share/doc/qt4/html/images/qwebview-diagram.png
-share/doc/qt4/html/images/qwebview-url.png
 share/doc/qt4/html/images/qwindowsstyle.png
 share/doc/qt4/html/images/qwindowsxpstyle.png
 share/doc/qt4/html/images/qwsserver_keyboardfilter.png
@@ -3200,6 +3203,7 @@ share/doc/qt4/html/images/spinbox.png
 share/doc/qt4/html/images/spinboxdelegate-example.png
 share/doc/qt4/html/images/spinboxes-example.png
 share/doc/qt4/html/images/spinboximage.png
+share/doc/qt4/html/images/spinner.gif
 share/doc/qt4/html/images/spreadsheet-demo.png
 share/doc/qt4/html/images/sprites-combined.png
 share/doc/qt4/html/images/sql-examples.png
@@ -7341,6 +7345,10 @@ share/doc/qt4/html/script-qstetrix.html
 share/doc/qt4/html/script.html
 share/doc/qt4/html/scripting.html
 share/doc/qt4/html/scripts/
+share/doc/qt4/html/scripts/functions.js
+share/doc/qt4/html/scripts/jquery.js
+share/doc/qt4/html/scripts/narrow.js
+share/doc/qt4/html/scripts/superfish.js
 share/doc/qt4/html/session.html
 share/doc/qt4/html/shadow-builds-wince.html
 share/doc/qt4/html/shared.html
@@ -7431,7 +7439,12 @@ share/doc/qt4/html/statemachine.html
 share/doc/qt4/html/string-processing.html
 share/doc/qt4/html/style/
 share/doc/qt4/html/style-reference.html
-share/doc/qt4/html/style/offline.css
+share/doc/qt4/html/style/narrow.css
+share/doc/qt4/html/style/style.css
+share/doc/qt4/html/style/style_ie6.css
+share/doc/qt4/html/style/style_ie7.css
+share/doc/qt4/html/style/style_ie8.css
+share/doc/qt4/html/style/superfish.css
 share/doc/qt4/html/stylesheet-customizing.html
 share/doc/qt4/html/stylesheet-designer.html
 share/doc/qt4/html/stylesheet-examples.html
@@ -7440,7 +7453,6 @@ share/doc/qt4/html/stylesheet-syntax.html
 share/doc/qt4/html/stylesheet.html
 share/doc/qt4/html/supported-platforms.html
 share/doc/qt4/html/symbian-platform-security-requirements.html
-share/doc/qt4/html/symbian-support.html
 share/doc/qt4/html/symbian-with-qt-introduction.html
 share/doc/qt4/html/symbianexceptionsafety.html
 share/doc/qt4/html/technology-apis.html
@@ -9549,7 +9561,6 @@ share/doc/qt4/src/images/qurl-querystring.png
 share/doc/qt4/src/images/qvbox-m.png
 share/doc/qt4/src/images/qvboxlayout-with-5-children.png
 share/doc/qt4/src/images/qwebview-diagram.png
-share/doc/qt4/src/images/qwebview-url.png
 share/doc/qt4/src/images/qwindowsstyle.png
 share/doc/qt4/src/images/qwindowsxpstyle.png
 share/doc/qt4/src/images/qwsserver_keyboardfilter.png

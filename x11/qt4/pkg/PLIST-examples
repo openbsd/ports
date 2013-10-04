@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.28 2012/06/14 09:38:36 espie Exp $
+@comment $OpenBSD: PLIST-examples,v 1.29 2013/10/04 13:15:41 dcoppa Exp $
 @conflict qt4-<=4.2.2
 bin/pixeltool
 bin/qtdemo
@@ -2107,6 +2107,10 @@ lib/qt4/examples/declarative/ui-components/spinner/
 lib/qt4/examples/declarative/ui-components/spinner/main.cpp
 lib/qt4/examples/declarative/ui-components/spinner/qml/
 lib/qt4/examples/declarative/ui-components/spinner/qml/spinner/
+lib/qt4/examples/declarative/ui-components/spinner/qml/spinner/content/
+lib/qt4/examples/declarative/ui-components/spinner/qml/spinner/content/Spinner.qml
+lib/qt4/examples/declarative/ui-components/spinner/qml/spinner/content/spinner-bg.png
+lib/qt4/examples/declarative/ui-components/spinner/qml/spinner/content/spinner-select.png
 lib/qt4/examples/declarative/ui-components/spinner/qml/spinner/main.qml
 @bin lib/qt4/examples/declarative/ui-components/spinner/spinner
 lib/qt4/examples/declarative/ui-components/spinner/spinner.pro
@@ -3012,6 +3016,18 @@ lib/qt4/examples/mainwindows/application/images/save.png
 lib/qt4/examples/mainwindows/application/main.cpp
 lib/qt4/examples/mainwindows/application/mainwindow.cpp
 lib/qt4/examples/mainwindows/application/mainwindow.h
+lib/qt4/examples/mainwindows/dockwidgets/
+@bin lib/qt4/examples/mainwindows/dockwidgets/dockwidgets
+lib/qt4/examples/mainwindows/dockwidgets/dockwidgets.pro
+lib/qt4/examples/mainwindows/dockwidgets/dockwidgets.qrc
+lib/qt4/examples/mainwindows/dockwidgets/images/
+lib/qt4/examples/mainwindows/dockwidgets/images/new.png
+lib/qt4/examples/mainwindows/dockwidgets/images/print.png
+lib/qt4/examples/mainwindows/dockwidgets/images/save.png
+lib/qt4/examples/mainwindows/dockwidgets/images/undo.png
+lib/qt4/examples/mainwindows/dockwidgets/main.cpp
+lib/qt4/examples/mainwindows/dockwidgets/mainwindow.cpp
+lib/qt4/examples/mainwindows/dockwidgets/mainwindow.h
 lib/qt4/examples/mainwindows/mainwindows.pro
 lib/qt4/examples/mainwindows/mdi/
 lib/qt4/examples/mainwindows/mdi/images/
