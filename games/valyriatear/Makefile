@@ -1,30 +1,34 @@
-# $OpenBSD: Makefile,v 1.3 2013/04/09 14:03:05 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2013/10/04 18:12:09 bcallah Exp $
 
-V =		0.5.1
+V =		0.6.0
 COMMENT =	free J-RPG game
-DISTNAME =	valyriatear-${V}
+DISTNAME =	ValyriaTear-${V}
+PKGNAME =	valyriatear-${V}
 CATEGORIES =	games x11
 
 HOMEPAGE =	http://valyriatear.blogspot.com/
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
-# Main game, some artwork, some music is GPLv2+
-# Rest of artwork, some music is CC by SA 3.0
-# A few music files are GPLv3
+# Main game is GPLv2+
+# Art/music a variety of CC and GPL.
 # Fonts are OFL 1.1
 # For specific details, see the LICENSES file.
-PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL GLU ICE SDL SDL_image SDL_ttf SM X11 Xext c jpeg
-WANTLIB += m ogg openal png pthread stdc++ vorbis vorbisfile z
+WANTLIB += GL GLU ICE SDL SDL_image SDL_ttf SM X11 Xext c
+WANTLIB += m ogg openal png pthread vorbis vorbisfile z
 WANTLIB += ${MODLUA_WANTLIB}
 
-MASTER_SITES =	https://github.com/Bertram25/ValyriaTear/archive/${V}/
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=valyriatear/}
 
 MODULES =	devel/cmake \
 		devel/gettext \
+		gcc4 \
 		lang/lua
+
+MODGCC4_ARCHS =	*
+MODGCC4_LANGS =	c c++
 
 BUILD_DEPENDS =	devel/boost>=1.52
 
@@ -34,22 +38,18 @@ LIB_DEPENDS =	audio/libogg \
 		devel/sdl-image \
 		devel/sdl-ttf
 
-RUN_DEPENDS =	devel/desktop-file-utils
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+2,-guic
 
 WRKDIST =	${WRKDIR}/ValyriaTear-${V}
 WRKSRC =	${WRKDIST}
 
 NO_TEST =	Yes
 
-# We need two extra FindModule.cmake other than what's provided.
-# Otherwise we get a bunch of undefined references linker errors.
-# I pushed this upstream; next update this goes away.
-post-extract:
-	cp ${FILESDIR}/*.cmake ${WRKSRC}/CMake/Modules/
-
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/valyriatear
-	${INSTALL_DATA} ${WRKSRC}/{COPYING,LICENSES,MANUAL} ${PREFIX}/share/doc/valyriatear
+	${INSTALL_DATA} ${WRKSRC}/{COPYING.{CC{-BY-3,-BY-SA-3,0},GPL-{2,3}},LICENSES,MANUAL} ${PREFIX}/share/doc/valyriatear
 	${INSTALL_DATA} ${WRKSRC}/img/fonts/{GPL,OFL-1.1}.txt ${PREFIX}/share/doc/valyriatear
+	${INSTALL_MAN} ${WRKSRC}/doc/valyriatear.6 ${PREFIX}/man/man6
 
 .include <bsd.port.mk>
