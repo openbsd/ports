@@ -1,10 +1,10 @@
-$OpenBSD: patch-tests_twisted_Makefile_in,v 1.3 2013/09/26 14:14:54 jasper Exp $
+$OpenBSD: patch-tests_twisted_Makefile_in,v 1.4 2013/10/04 07:40:42 jasper Exp $
 
 https://bugs.freedesktop.org/show_bug.cgi?id=65979
 
---- tests/twisted/Makefile.in.orig	Wed May  1 16:47:40 2013
-+++ tests/twisted/Makefile.in	Thu Sep 26 14:47:49 2013
-@@ -204,7 +204,7 @@ SHELL = @SHELL@
+--- tests/twisted/Makefile.in.orig	Thu Oct  3 14:13:41 2013
++++ tests/twisted/Makefile.in	Fri Oct  4 09:28:16 2013
+@@ -255,7 +255,7 @@ SHELL = @SHELL@
  STRIP = @STRIP@
  TELEPATHY_CFLAGS = @TELEPATHY_CFLAGS@
  TELEPATHY_LIBS = @TELEPATHY_LIBS@
