@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile,v 1.1.1.1 2012/10/27 14:05:33 abieber Exp $
---- src/Makefile.orig	Tue Oct 16 19:30:00 2012
-+++ src/Makefile	Sat Oct 20 10:57:31 2012
+$OpenBSD: patch-src_Makefile,v 1.2 2013/10/05 15:51:08 abieber Exp $
+--- src/Makefile.orig	Mon Jun  3 13:00:00 2013
++++ src/Makefile	Sat Oct  5 09:33:07 2013
 @@ -304,6 +304,11 @@ ifeq (iOS,$(TARGET_SYS))
    TARGET_DYNXLDOPTS=
    TARGET_XSHLDFLAGS+= -install_name $(TARGET_DYLIBPATH) -compatibility_version $(MAJVER).$(MINVER) -current_version $(MAJVER).$(MINVER).$(RELVER)
@@ -21,7 +21,7 @@ $OpenBSD: patch-src_Makefile,v 1.1.1.1 2012/10/27 14:05:33 abieber Exp $
  
  ifneq ($(HOST_SYS),$(TARGET_SYS))
    ifeq (Windows,$(TARGET_SYS))
-@@ -549,10 +555,10 @@ endif
+@@ -550,10 +556,10 @@ endif
  endif
  endif
  

@@ -1,4 +1,2 @@
-SHA256 (LuaJIT-2.0.1.tar.gz) = I3HM61NFPYp7NkUeagzNtmI2kkVF1gQt3Uw06WaJkMA=
-SHA256 (LuaJIT-2.0.1_hotfix1.patch) = FDiY3j/oRFVoT925KUfTbBpRxqbjiEgT/l4CW9RlI2g=
-SIZE (LuaJIT-2.0.1.tar.gz) = 841399
-SIZE (LuaJIT-2.0.1_hotfix1.patch) = 3591
+SHA256 (LuaJIT-2.0.2.tar.gz) = wFICl0pYkOd3sYGQisI3YltJmuzgJmVNfMM2B+P0bDg=
+SIZE (LuaJIT-2.0.2.tar.gz) = 843031
