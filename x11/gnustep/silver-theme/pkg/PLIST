@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/05 06:44:57 sebastia Exp $
+lib/GNUstep/Themes/Silver.theme/
+lib/GNUstep/Themes/Silver.theme/Resources/
+lib/GNUstep/Themes/Silver.theme/Resources/Info-gnustep.plist
+lib/GNUstep/Themes/Silver.theme/Resources/Silver.tiff
+lib/GNUstep/Themes/Silver.theme/Resources/ThemeColors.clr
+lib/GNUstep/Themes/Silver.theme/Resources/ThemeExtraColors.clr
+lib/GNUstep/Themes/Silver.theme/Resources/ThemeExtraHighlightedColors.clr
+lib/GNUstep/Themes/Silver.theme/Resources/ThemeExtraSelectedColors.clr
+lib/GNUstep/Themes/Silver.theme/Resources/ThemeImages/
+lib/GNUstep/Themes/Silver.theme/Resources/ThemeImages/NSFolder.tiff
+lib/GNUstep/Themes/Silver.theme/Resources/ThemeImages/common_DocsFolder.tiff
+lib/GNUstep/Themes/Silver.theme/Resources/ThemeImages/common_DownloadFolder.tiff
+lib/GNUstep/Themes/Silver.theme/Resources/ThemeImages/common_GSFolder.tiff
+lib/GNUstep/Themes/Silver.theme/Resources/ThemeImages/common_HomeDirectory.tiff
+lib/GNUstep/Themes/Silver.theme/Resources/ThemeImages/common_ImageFolder.tiff
+lib/GNUstep/Themes/Silver.theme/Resources/ThemeImages/common_LibraryFolder.tiff
+lib/GNUstep/Themes/Silver.theme/Resources/ThemeImages/common_MusicFolder.tiff
+lib/GNUstep/Themes/Silver.theme/Resources/ThemeImages/common_RadioOff.tiff
+lib/GNUstep/Themes/Silver.theme/Resources/ThemeImages/common_RadioOn.tiff
+lib/GNUstep/Themes/Silver.theme/Resources/ThemeImages/common_SwitchOff.tiff
+lib/GNUstep/Themes/Silver.theme/Resources/ThemeImages/common_SwitchOn.tiff
+lib/GNUstep/Themes/Silver.theme/Resources/ThemeImages/common_Tile.tiff
+lib/GNUstep/Themes/Silver.theme/Resources/ThemeTiles/
+lib/GNUstep/Themes/Silver.theme/Resources/ThemeTiles/GSScrollerHorizontalKnob.tiff
+lib/GNUstep/Themes/Silver.theme/Resources/ThemeTiles/GSScrollerVerticalKnob.tiff
+lib/GNUstep/Themes/Silver.theme/Resources/ThemeTiles/MenuItem.tiff
+lib/GNUstep/Themes/Silver.theme/Resources/ThemeTiles/NSButton.tiff
+lib/GNUstep/Themes/Silver.theme/Resources/ThemeTiles/NSButtonDisabled.tiff
+lib/GNUstep/Themes/Silver.theme/Resources/ThemeTiles/NSButtonHighlighted.tiff
+lib/GNUstep/Themes/Silver.theme/Resources/ThemeTiles/NSButtonSelected.tiff
+lib/GNUstep/Themes/Silver.theme/Resources/ThemeTiles/NSMenuItemHighlighted.tiff
+@bin lib/GNUstep/Themes/Silver.theme/Silver
+lib/GNUstep/Themes/Silver.theme/stamp.make
