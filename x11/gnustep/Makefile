@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2013/05/14 11:05:14 sebastia Exp $
+# $OpenBSD: Makefile,v 1.38 2013/10/05 06:47:22 sebastia Exp $
 
      SUBDIR =
      SUBDIR += aclock
@@ -37,6 +37,7 @@
      SUBDIR += make
      SUBDIR += matharray
      SUBDIR += mpdcon
+     SUBDIR += neos-theme
      SUBDIR += netclasses
      SUBDIR += paje
      SUBDIR += pantomime
@@ -47,6 +48,7 @@
      SUBDIR += remotedesk
      SUBDIR += renaissance
      SUBDIR += rsskit
+     SUBDIR += silver-theme
      SUBDIR += simpleagenda
      SUBDIR += sqlclient
      SUBDIR += sudoku
