@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.54 2013/07/13 11:53:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2013/10/05 11:50:00 sthen Exp $
 
 COMMENT=	Matt's traceroute - network diagnostic tool#'
 
 DISTNAME=	mtr-0.82
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
@@ -20,7 +20,7 @@ MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/bind" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/libbind -R${LOCALBASE}/lib/libbind -lbind"
+		LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/libbind -Wl,-rpath ${LOCALBASE}/lib/libbind -lbind"
 
 FLAVORS=	gtk
 FLAVOR?=
