@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:41:27 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/10/05 12:30:45 naddy Exp $
 
 COMMENT=	simple password generator
 
@@ -19,7 +19,6 @@ WANTLIB=		c
 AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE=autoconf
 MAKE_FLAGS=	WALL_OPTS=""
-USE_GROFF =	Yes
 
 NO_TEST=	Yes
 
