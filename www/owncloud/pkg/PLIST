@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2013/09/11 07:53:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2013/10/05 08:18:03 ajacoutot Exp $
 @extra owncloud/config/config.php
 owncloud/
 owncloud/.htaccess.dist
@@ -987,7 +987,6 @@ owncloud/3rdparty/timepicker/js/jquery.ui.timepicker.js
 owncloud/3rdparty/timepicker/releases.txt
 owncloud/AUTHORS
 owncloud/COPYING-AGPL
-owncloud/COPYING-README
 owncloud/README
 @owner www
 owncloud/apps/
@@ -1580,6 +1579,7 @@ owncloud/apps/contacts/lib/sabre/addressbookroot.php
 owncloud/apps/contacts/lib/sabre/backend.php
 owncloud/apps/contacts/lib/sabre/card.php
 owncloud/apps/contacts/lib/sabre/useraddressbooks.php
+owncloud/apps/contacts/lib/sabre/validatorplugin.php
 owncloud/apps/contacts/lib/search.php
 owncloud/apps/contacts/lib/share/
 owncloud/apps/contacts/lib/share/addressbook.php
@@ -3198,6 +3198,7 @@ owncloud/apps/gallery/js/
 owncloud/apps/gallery/js/gallery.js
 owncloud/apps/gallery/js/jquery.mousewheel-3.1.1.js
 owncloud/apps/gallery/js/slideshow.js
+owncloud/apps/gallery/js/thumbnail.js
 owncloud/apps/gallery/l10n/
 owncloud/apps/gallery/l10n/ar.php
 owncloud/apps/gallery/l10n/bg_BG.php
@@ -4498,6 +4499,7 @@ owncloud/core/doc/user/_sources/pim/sync_ios.txt
 owncloud/core/doc/user/_sources/pim/sync_kde.txt
 owncloud/core/doc/user/_sources/pim/sync_osx.txt
 owncloud/core/doc/user/_sources/pim/sync_thunderbird.txt
+owncloud/core/doc/user/_sources/pim/troubleshooting.txt
 owncloud/core/doc/user/_sources/webinterface.txt
 owncloud/core/doc/user/_static/
 owncloud/core/doc/user/_static/basic.css
@@ -4544,6 +4546,7 @@ owncloud/core/doc/user/pim/sync_ios.html
 owncloud/core/doc/user/pim/sync_kde.html
 owncloud/core/doc/user/pim/sync_osx.html
 owncloud/core/doc/user/pim/sync_thunderbird.html
+owncloud/core/doc/user/pim/troubleshooting.html
 owncloud/core/doc/user/search.html
 owncloud/core/doc/user/searchindex.js
 owncloud/core/doc/user/webinterface.html
