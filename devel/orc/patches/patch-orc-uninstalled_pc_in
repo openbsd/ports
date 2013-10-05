@@ -1,12 +1,12 @@
-$OpenBSD: patch-orc-uninstalled_pc_in,v 1.2 2012/08/26 07:17:20 ajacoutot Exp $
---- orc-uninstalled.pc.in.orig	Tue Apr 12 12:22:03 2011
-+++ orc-uninstalled.pc.in	Thu Aug 16 17:37:32 2012
+$OpenBSD: patch-orc-uninstalled_pc_in,v 1.3 2013/10/05 19:54:46 brad Exp $
+--- orc-uninstalled.pc.in.orig	Mon Apr  1 14:31:32 2013
++++ orc-uninstalled.pc.in	Fri Oct  4 03:34:47 2013
 @@ -6,7 +6,7 @@ includedir=${pcfiledir}/
  Name: orc-@ORC_MAJORMINOR@ uninstalled
  Description: Library of Optimized Inner Loops Runtime Compiler
  Version: @VERSION@
--Libs: -L${libdir} -lorc-@ORC_MAJORMINOR@ @LIBM@ @LIBRT@
-+Libs: -L${libdir} -lorc-@ORC_MAJORMINOR@ -lpthread @LIBM@ @LIBRT@
+-Libs: @abs_top_builddir@/orc/liborc-@ORC_MAJORMINOR@.la  @LIBM@ @LIBRT@
++Libs: @abs_top_builddir@/orc/liborc-@ORC_MAJORMINOR@.la  @LIBM@ @LIBRT@ @PTHREAD_LIBS@
  Cflags: -I${includedir}
  
  orcc=${pcfiledir}/tools/orcc@EXEEXT@

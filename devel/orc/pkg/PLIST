@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/10/04 06:45:41 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.6 2013/10/05 19:54:47 brad Exp $
 @bin bin/orc-bugreport
 @bin bin/orcc
 include/orc-0.4/
@@ -9,30 +8,48 @@ include/orc-0.4/orc-test/orcarray.h
 include/orc-0.4/orc-test/orcprofile.h
 include/orc-0.4/orc-test/orcrandom.h
 include/orc-0.4/orc-test/orctest.h
-include/orc-0.4/orc/opcodes.h
 include/orc-0.4/orc/orc-stdint.h
 include/orc-0.4/orc/orc.h
 include/orc-0.4/orc/orcarm.h
+include/orc-0.4/orc/orcbytecode.h
+include/orc-0.4/orc/orcbytecodes.h
+include/orc-0.4/orc/orccode.h
+include/orc-0.4/orc/orccompiler.h
+include/orc-0.4/orc/orcconstant.h
+include/orc-0.4/orc/orccpu.h
 include/orc-0.4/orc/orccpuinsn.h
 include/orc-0.4/orc/orcdebug.h
 include/orc-0.4/orc/orcemulateopcodes.h
+include/orc-0.4/orc/orcexecutor.h
 include/orc-0.4/orc/orcfunctions.h
+include/orc-0.4/orc/orcinstruction.h
+include/orc-0.4/orc/orcinternal.h
+include/orc-0.4/orc/orclimits.h
+include/orc-0.4/orc/orcmips.h
 include/orc-0.4/orc/orcmmx.h
 include/orc-0.4/orc/orcneon.h
 include/orc-0.4/orc/orconce.h
+include/orc-0.4/orc/orcopcode.h
 include/orc-0.4/orc/orcparse.h
 include/orc-0.4/orc/orcpowerpc.h
 include/orc-0.4/orc/orcprogram.h
+include/orc-0.4/orc/orcrule.h
 include/orc-0.4/orc/orcsse.h
+include/orc-0.4/orc/orctarget.h
 include/orc-0.4/orc/orcutils.h
+include/orc-0.4/orc/orcvariable.h
 include/orc-0.4/orc/orcx86.h
 include/orc-0.4/orc/orcx86insn.h
 lib/liborc-0.4.a
 lib/liborc-0.4.la
+@lib lib/liborc-0.4.so.${LIBorc-0.4_VERSION}
 lib/liborc-test-0.4.a
 lib/liborc-test-0.4.la
+@lib lib/liborc-test-0.4.so.${LIBorc-test-0.4_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/orc-0.4.pc
+share/aclocal/
+share/aclocal/orc.m4
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/orc/
@@ -61,10 +78,10 @@ share/gtk-doc/html/orc/orc-building.html
 share/gtk-doc/html/orc/orc-concepts.html
 share/gtk-doc/html/orc/orc-misc.html
 share/gtk-doc/html/orc/orc-opcodes.html
+share/gtk-doc/html/orc/orc-program.html
 share/gtk-doc/html/orc/orc-runninging.html
 share/gtk-doc/html/orc/orc-tutorial.html
 share/gtk-doc/html/orc/orc-x86.html
-share/gtk-doc/html/orc/orc.devhelp
 share/gtk-doc/html/orc/orc.devhelp2
 share/gtk-doc/html/orc/right.png
 share/gtk-doc/html/orc/style.css

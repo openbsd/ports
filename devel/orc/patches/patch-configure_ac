@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure_ac,v 1.6 2012/08/26 07:17:20 ajacoutot Exp $
---- configure.ac.orig	Sun Oct  2 23:34:22 2011
-+++ configure.ac	Thu Aug 16 17:37:55 2012
-@@ -171,7 +171,7 @@ ORC_CFLAGS="$ORC_CFLAGS \$(ERROR_CFLAGS) -I\$(top_srcd
+$OpenBSD: patch-configure_ac,v 1.7 2013/10/05 19:54:46 brad Exp $
+--- configure.ac.orig	Sat Aug 24 13:16:03 2013
++++ configure.ac	Fri Oct  4 03:33:54 2013
+@@ -188,7 +188,7 @@ ORC_CFLAGS="$ORC_CFLAGS \$(ERROR_CFLAGS) -I\$(top_srcd
  AC_SUBST(ERROR_CFLAGS)
  AC_SUBST(ORC_CFLAGS)
  
 -ORC_LIBS="\$(top_builddir)/orc/liborc-$ORC_MAJORMINOR.la $LIBM $LIBRT"
-+ORC_LIBS="\$(top_builddir)/orc/liborc-$ORC_MAJORMINOR.la -lpthread $LIBM $LIBRT"
++ORC_LIBS="\$(top_builddir)/orc/liborc-$ORC_MAJORMINOR.la $LIBM $LIBRT $PTHREAD_LIBS"
  AC_SUBST(ORC_LIBS)
  
  #CFLAGS=`echo $CFLAGS | sed s/O2/O0/`
