@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.6 2013/10/04 20:28:41 espie Exp $
+# $OpenBSD: Init.pm,v 1.7 2013/10/05 08:40:55 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -67,6 +67,8 @@ sub finalize
 			$core->host->{wantsquiggles} = $core->prop->{squiggles};
 		} elsif ($core->prop->{jobs} > 3) {
 			$core->host->{wantsquiggles} = 1;
+		} elsif ($core->prop->{jobs} > 1) {
+			$core->host->{wantsquiggles} = 0.7;
 		}
 		for my $i (1 .. $core->prop->{jobs}) {
 			ref($core)->new($core->hostname, $core->prop)->mark_ready;
