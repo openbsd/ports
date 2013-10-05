@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.1 2012/01/17 18:08:22 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2013/10/05 07:34:40 espie Exp $
 
 LANGS= ca cs cy da de el en_GB es et eu fi fr \
 	hu it ja lv ms nb nl pl pt pt_BR ru sk sl sr sr@Latn \
 	sv tr uk zh_CN zh_TW
 
-REVISION =	2
+REVISION =	3
 
 .for i in ${LANGS}
 SUPDISTFILES += koffice-l10n-$i-${VERSION}.tar.bz2

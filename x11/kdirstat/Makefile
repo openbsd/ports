@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2013/06/24 15:53:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.28 2013/10/05 07:34:42 espie Exp $
 
 COMMENT=	graphical disk usage utility for KDE
 
 DISTNAME=	kdirstat-2.4.0
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	x11
 

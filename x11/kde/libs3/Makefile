@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2013/09/04 18:17:54 landry Exp $
+# $OpenBSD: Makefile,v 1.130 2013/10/05 07:34:39 espie Exp $
 
 BROKEN-alpha =		.got subsegment exceeds 64K
 
@@ -10,6 +10,7 @@ DISTNAME =		kdelibs-${VERSION}
 MASTER_SITES0 =  	ftp://ftp.kde.org/pub/kde/security_patches/
 
 PKGNAME-main =		${DISTNAME}
+PKGSPEC-main =		kdelibs->=3,<4
 PKGNAME-cups =		kdecups-${VERSION}
 MODKDE_VERSION =		3.5.8
 SHARED_LIBS +=	DCOP                 7.0      # .6.0
@@ -96,7 +97,7 @@ LIB_DEPENDS-cups = \
 
 
 REVISION-main = 24
-REVISION-cups = 11
+REVISION-cups = 12
 
 WANTLIB-main =	${WANTLIB} 
 WANTLIB-main +=	GL Half Iex IlmImf>=4 IlmThread Imath Xcursor Xdamage Xfixes

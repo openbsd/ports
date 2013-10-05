@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2013/06/24 15:53:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.18 2013/10/05 07:34:37 espie Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	powerful KDE batch file renamer
 
 DISTNAME =	krename-3.0.14
-REVISION =	9
+REVISION =	10
 
 SRCFILES =	${DISTNAME}.tar.bz2
 DOCFILES =	krename-3.0.12.pdf \

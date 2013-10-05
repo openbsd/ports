@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2013/06/24 15:53:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.24 2013/10/05 07:34:34 espie Exp $
 
 CATEGORIES=	math x11/kde
 COMMENT=	data viewing/plotting tool
 
 DISTNAME=	kst-1.2.1
-REVISION=	7
+REVISION=	8
 SHARED_ONLY=	Yes
 SHARED_LIBS=	kst		4.0 \
 		kstapp		4.0 \

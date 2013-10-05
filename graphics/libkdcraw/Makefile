@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/08/12 06:52:56 zhuk Exp $
+# $OpenBSD: Makefile,v 1.18 2013/10/05 07:34:33 espie Exp $
 
 COMMENT-main =	grab raw data from digital cameras
 COMMENT-icons =	common icons for all libkdcraw versions
@@ -8,7 +8,7 @@ V =		0.1.9
 DISTNAME =	libkdcraw-${V}
 PKGNAME-main =	${PKGNAME}
 PKGNAME-icons =	libkdcraw-icons-${V}
-REVISION-main =	6
+REVISION-main =	7
 REVISION-icons =0
 
 HOMEPAGE =	http://www.kipi-plugins.org/drupal/

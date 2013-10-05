@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2013/06/24 15:53:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.11 2013/10/05 07:34:35 espie Exp $
 
 COMMENT =		guitar tab editor
 
 DISTNAME =		kguitar-0.5.1
-REVISION=		4
+REVISION=		5
 
 CATEGORIES =		multimedia kde
 

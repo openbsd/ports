@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/19 13:07:14 nigel Exp $
+# $OpenBSD: Makefile,v 1.26 2013/10/05 07:34:40 espie Exp $
 
 COMMENT= 		kde front end for ogle
 CATEGORIES=		x11 x11/kde 
@@ -17,7 +17,7 @@ CONFIGURE_ARGS+=--with-ogle-includes=${LOCALBASE}/include
 
 MODULES=	x11/kde devel/gettext
 
-REVISION = 9
+REVISION = 10
 WANTLIB +=	ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2 c
 WANTLIB +=	dvdcontrol expat fam fontconfig freetype idn lib/kde3/DCOP
 WANTLIB +=	lib/kde3/kdecore>=4 lib/kde3/kdefx lib/kde3/kdesu

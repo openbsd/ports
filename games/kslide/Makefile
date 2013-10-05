@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2013/06/27 11:53:00 zhuk Exp $
+# $OpenBSD: Makefile,v 1.25 2013/10/05 07:34:31 espie Exp $
 
 COMMENT=	puzzle game for KDE
 
 DISTNAME=	kslide-0.90
-REVISION =	6
+REVISION =	7
 CATEGORIES=	games
 
 HOMEPAGE=	http://perso.wanadoo.fr/coquelle/taquin/
@@ -26,6 +26,7 @@ EXTRACT_SUFX=	.tar.bz2
 
 RUN_DEPENDS=	x11/gtk+2,-guic
 LIB_DEPENDS=	x11/kde/libs3
+DPB_PROPERTIES =	tag:kde3
 
 MODULES=	x11/qt3 devel/gettext
 

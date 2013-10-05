@@ -1,4 +1,4 @@
-# $OpenBSD: kde.port.mk,v 1.40 2013/07/08 14:03:29 zhuk Exp $
+# $OpenBSD: kde.port.mk,v 1.41 2013/10/05 07:34:37 espie Exp $
 
 SHARED_ONLY ?=	Yes
 
@@ -89,4 +89,9 @@ MODKDE_post-install = mkdir -p ${PREFIX}/${KDE}; cd ${PREFIX}/${KDE}
 MODKDE_post-install += ; test -e ../lib$l.so.$v && \
 	ln -sf ../lib$l.so.$v lib$l.so.$v
 . endfor
+.endif
+
+KDE3_ONLY ?= Yes
+.if ${KDE3_ONLY:L} == "yes"
+DPB_PROPERTIES += tag:kde3
 .endif

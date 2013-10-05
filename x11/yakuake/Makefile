@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2013/06/24 15:53:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.16 2013/10/05 07:34:43 espie Exp $
 
 COMMENT=	yet another kuake KDE terminal emulator
 
 DISTNAME=	yakuake-2.8.1
-REVISION=	8
+REVISION=	9
 CATEGORIES=	x11 x11/kde
 
 EXTRACT_SUFX=	.tar.bz2

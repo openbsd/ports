@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2013/08/13 21:51:28 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2013/10/05 07:34:43 espie Exp $
 
 COMMENT =	Thunar archive plugin
 
 XFCE_VERSION =	0.3.1
 THUNAR_PLUGIN =	thunar-archive-plugin
-REVISION =	0
+REVISION =	1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

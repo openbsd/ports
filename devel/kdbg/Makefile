@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2013/06/24 15:53:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.36 2013/10/05 07:34:30 espie Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	graphical debugger for KDE
 
 DISTNAME=	kdbg-1.2.5
-REVISION =	7
+REVISION =	8
 CATEGORIES=	devel
 HOMEPAGE=	http://www.kdbg.org/
 

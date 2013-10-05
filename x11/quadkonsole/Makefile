@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2013/06/24 15:53:39 zhuk Exp $
+# $OpenBSD: Makefile,v 1.19 2013/10/05 07:34:43 espie Exp $
 
 COMMENT=	terminal application that embeds Konsole for KDE
 
 DISTNAME=	quadkonsole-2.0
-REVISION=	9
+REVISION=	10
 CATEGORIES=	x11 x11/kde
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
