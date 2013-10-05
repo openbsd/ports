@@ -1,0 +1,21 @@
+$OpenBSD: patch-kopete_plugins_otr_kopete_otr_config_desktop,v 1.1 2013/10/05 01:39:02 zhuk Exp $
+Support for libotr-4.0, from upstream.
+--- kopete/plugins/otr/kopete_otr_config.desktop.orig	Fri Jun 28 22:08:21 2013
++++ kopete/plugins/otr/kopete_otr_config.desktop	Sat Oct  5 05:10:45 2013
+@@ -49,7 +49,7 @@ Comment[ro]=Criptează sesiunile de discuție cu cript
+ Comment[ru]=Шифрует разговоры по протоколу OTR
+ Comment[si]=වාර්ථාවෙන්-බැහැර සංකේතන භාවිතයෙන් සංවාද වාර සංකේතනය කරන්න
+ Comment[sk]=Zašifruje rozhovory pomocou Off-The-Record (OTR) šifrovania
+-Comment[sl]=Šifriranje klepetov s pomočjo Off-The-Record
++Comment[sl]=Šifriranje klepetov s pomočjo šifriranja Off-The-Record
+ Comment[sr]=Шифрујте сесије ћаскања оф‑д‑рекордом
+ Comment[sr@ijekavian]=Шифрујте сесије ћаскања оф‑д‑рекордом
+ Comment[sr@ijekavianlatin]=Šifrujte sesije ćaskanja Off‑The‑Recordom
+@@ -112,6 +112,7 @@ Name[sr@ijekavianlatin]=OTR
+ Name[sr@latin]=OTR
+ Name[sv]=OTR
+ Name[tr]=OTR
++Name[ug]=OTR
+ Name[uk]=OTR
+ Name[x-test]=xxOTRxx
+ Name[zh_CN]=非正式加密

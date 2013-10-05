@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2013/08/24 17:33:50 zhuk Exp $
+# $OpenBSD: Makefile,v 1.15 2013/10/05 01:39:02 zhuk Exp $
 
 COMMENT =	KDE network applications collection
 DISTNAME =	kdenetwork-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	kgetcore		50.0 # 4.0
 SHARED_LIBS +=	kopete			50.0 # 4.0
@@ -38,7 +38,7 @@ WANTLIB += ${KDE4LIB}/nepomukquery ${KDE4LIB}/nepomukutils ${KDE4LIB}/plasma
 WANTLIB += ${KDE4LIB}/qgpgme ${KDE4LIB}/solid
 WANTLIB += gadu glib-2.0 gpg-error gpgme++-pthread gpgme-pthread idn
 WANTLIB += assuan jasper jpeg meanwhile mms otr qca2 qimageblitz soprano
-WANTLIB += telepathy-qt4 xml2 xmms xslt
+WANTLIB += streamanalyzer streams telepathy-qt4 xml2 xmms xslt
 
 MODULES =	devel/gettext multimedia/phonon
 
@@ -49,13 +49,14 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+2,-guic
 
 LIB_DEPENDS =	audio/xmms \
+		databases/strigi \
 		graphics/qimageblitz \
 		multimedia/libmms \
 		net/libgadu \
 		net/libktorrent \
 		net/meanwhile \
 		net/telepathy/telepathy-qt \
-		security/libotr \
+		security/libotr>=4 \
 		security/qca2 \
 		${MODKDE4_DEP_DIR}/baseapps>=${MODKDE4_DEP_VERSION}
 

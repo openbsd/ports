@@ -1,8 +1,14 @@
-$OpenBSD: patch-kget_CMakeLists_txt,v 1.1 2013/07/04 00:46:39 zhuk Exp $
-Don't forget to install KGet documentation.
---- kget/CMakeLists.txt.orig	Wed Jul  3 16:31:49 2013
-+++ kget/CMakeLists.txt	Wed Jul  3 16:32:06 2013
-@@ -94,6 +94,7 @@ endif(QGPGME_FOUND)
+$OpenBSD: patch-kget_CMakeLists_txt,v 1.2 2013/10/05 01:39:02 zhuk Exp $
+1. Make sure exceptions flag is correctly propagated.
+2. Don't forget to install KGet documentation.
+--- kget/CMakeLists.txt.orig	Fri Jun 28 22:07:00 2013
++++ kget/CMakeLists.txt	Sat Oct  5 04:42:39 2013
+@@ -89,10 +89,12 @@ if(QGPGME_FOUND)
+         ${Boost_INCLUDE_DIRS}
+         ${QGPGME_INCLUDE_DIR}
+     )
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${KDE4_ENABLE_EXCEPTIONS}")
+ endif(QGPGME_FOUND)
  
  add_subdirectory(conf)
  add_subdirectory(core)
@@ -10,3 +16,11 @@ Don't forget to install KGet documentation.
  add_subdirectory(ui)
  add_subdirectory(transfer-plugins)
  add_subdirectory(extensions)
+@@ -215,7 +217,6 @@ endif (QCA2_FOUND)
+ 
+ if (QGPGME_FOUND)
+     target_link_libraries(kgetcore ${QGPGME_LIBRARIES})
+-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${KDE4_ENABLE_EXCEPTIONS}")
+ endif(QGPGME_FOUND)
+ 
+ set_target_properties(kgetcore PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION} )

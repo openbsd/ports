@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/05/14 09:16:28 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/10/05 01:39:03 zhuk Exp $
 @bin bin/kget
 @bin bin/kopete
 bin/kopete_latexconvert.sh
@@ -198,6 +198,7 @@ lib/kde4/sambausershareplugin.so
 @lib lib/libkyahoo.so.${LIBkyahoo_VERSION}
 @lib lib/liboscar.so.${LIBoscar_VERSION}
 @lib lib/libqgroupwise.so.${LIBqgroupwise_VERSION}
+lib/strigi/strigita_torrent_analyzer.so
 netscape/
 netscape/plugins/
 netscape/plugins/skypebuttons.so
