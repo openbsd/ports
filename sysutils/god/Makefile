@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:41:30 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/10/06 17:28:20 jeremy Exp $
 
 COMMENT=	system monitoring framework written in Ruby
 
 DISTNAME=	god-0.7.3
 FULLPKGNAME=	${DISTNAME}
-REVISION=	10
+REVISION=	11
 CATEGORIES=	sysutils
 
 # MIT
@@ -15,7 +15,7 @@ MODULES=	lang/ruby
 MODRUBY_REV =		1.9
 MODRUBY_HANDLE_FLAVORS = No
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/ruby-hoe>=1.4.0
+RUN_DEPENDS=	devel/ruby-hoe,${MODRUBY_FLAVOR}>=1.4.0
 
 CONFIGURE_STYLE=ruby gem ext
 GEM_FLAGS =	--no-format-executable
