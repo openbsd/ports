@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:42:47 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/10/06 00:18:27 jeremy Exp $
 
 COMMENT =	generate random strings from most regular expressions
 
@@ -12,9 +12,5 @@ PERMIT_PACKAGE_CDROM = Yes
 MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
-
-TEST_DEPENDS =	devel/ruby-rcov,${MODRUBY_FLAVOR}
-MODRUBY_TEST =	rake rspec
-MODRUBY_TEST_TARGET = specs
 
 .include <bsd.port.mk>

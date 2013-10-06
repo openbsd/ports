@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:42:46 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/10/06 00:18:00 jeremy Exp $
 
 COMMENT=		alternative to ruby ri command-line tool
 
@@ -14,8 +14,5 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=		lang/ruby
 
 CONFIGURE_STYLE=	ruby gem
-
-TEST_DEPENDS=	devel/ruby-rcov,${MODRUBY_FLAVOR}
-MODRUBY_TEST=	rake
 
 .include <bsd.port.mk>
