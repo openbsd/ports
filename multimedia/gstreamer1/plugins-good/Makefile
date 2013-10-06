@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/09/27 14:36:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2013/10/06 09:08:18 ajacoutot Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # x11/xfce4/xfce4-mixer
@@ -12,11 +12,12 @@ PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-good-${V}
 PKGNAME-main=		${PKGNAME}
 PKGNAME-pulse=		${GST_PKGNAME_PREFIX}-plugins-pulse-${V}
 
-REVISION-main=		0
+REVISION-main=		1
+REVISION-pulse=		0
 
 WANTLIB += ffi glib-2.0 gmodule-2.0 gobject-2.0 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
-WANTLIB += m pcre pthread z ICE SM X11 Xext xcb
+WANTLIB += m orc-0.4 pcre pthread z ICE SM X11 Xext xcb
 
 WANTLIB-main +=	${WANTLIB}
 WANTLIB-main += FLAC Xdamage Xfixes Xv bz2 xml2 pthread-stubs
@@ -58,9 +59,6 @@ CONFIGURE_ARGS=		--disable-aalib \
 			--disable-oss4 \
 			--disable-sunaudio \
 			--disable-waveform
-
-# needs orc >= 0.4.16
-CONFIGURE_ARGS +=	--disable-orc
 
 pre-configure:
 	perl -pi -e 's,/dev/dsp,/dev/audio,g' \

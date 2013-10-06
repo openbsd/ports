@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2013/09/24 18:29:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2013/10/06 09:08:18 ajacoutot Exp $
 
 COMMENT=		base elements for GStreamer
 
 DISTNAME=		gst-plugins-base-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-base-${V}
+REVISION=		0
 
 SHARED_LIBS +=  gsttag-1.0           1.0      # 200.0
 SHARED_LIBS +=  gstaudio-1.0         1.0      # 200.0
@@ -20,10 +21,10 @@ SHARED_LIBS +=  gstallocators-1.0    0.0      # 200.0
 WANTLIB += ICE SM X11 Xext Xrender Xv c cairo cdda_interface cdda_paranoia
 WANTLIB += expat ffi fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gstbase-1.0 gstreamer-1.0 gthread-2.0
-WANTLIB += harfbuzz m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs sndio theoradec
-WANTLIB += theoraenc vorbis vorbisenc vorbisidec xcb xcb-render
-WANTLIB += xcb-shm z
+WANTLIB += harfbuzz m ogg orc-0.4 orc-test-0.4 pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += sndio theoradec theoraenc vorbis vorbisenc vorbisidec
+WANTLIB += xcb xcb-render xcb-shm z
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-base/}
 
@@ -34,6 +35,7 @@ LIB_DEPENDS=	 	${P}/core=${V} \
 			audio/cdparanoia \
 			audio/libvorbis \
 			audio/tremor \
+			devel/orc>=0.4.18 \
 			devel/pango \
 			multimedia/libtheora
 
@@ -42,9 +44,6 @@ RUN_DEPENDS +=		x11/gnome/gvfs
 
 CONFIGURE_ARGS=		--enable-sndio \
 			--disable-libvisual #XXX libvisual needs to be ported
-
-# needs orc >= 0.4.16
-CONFIGURE_ARGS +=	--disable-orc
 
 ### SNDIO ###
 CONFIGURE_STYLE +=	gnu

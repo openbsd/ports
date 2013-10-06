@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2013/09/26 09:27:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2013/10/06 09:08:18 ajacoutot Exp $
 
 COMMENT=		bad elements for GStreamer
 
 DISTNAME=		gst-plugins-bad-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-bad-${V}
+REVISION=		0
 
 SHARED_LIBS +=  gstphotography-1.0      1.0    # 200.0
 SHARED_LIBS +=  gstbasecamerabinsrc-1.0 1.0    # 200.0
@@ -93,9 +94,6 @@ CONFIGURE_ARGS +=	--disable-sndio
 
 # this add some build dependencies (e.g. gtk+2, gtk+3) for no real use
 CONFIGURE_ARGS +=	--disable-examples
-
-# needs orc >= 0.4.16
-CONFIGURE_ARGS +=	--disable-orc
 
 pre-configure:
 	perl -pi -e 's,/dev/dvd,/dev/rcd0c,g' \

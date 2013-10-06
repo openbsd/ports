@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2013/09/30 15:49:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2013/10/06 09:08:19 ajacoutot Exp $
 
 COMMENT=		ffmpeg elements for GStreamer
 
 DISTNAME=		gst-libav-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-libav-${V}
-REVISION=		1
+REVISION=		2
 
 # sync with graphics/ffmpeg
 PERMIT_PACKAGE_CDROM=	patents
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB += bz2 ffi glib-2.0 gmodule-2.0 gobject-2.0 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
-WANTLIB += gstvideo-1.0 m pcre pthread z
+WANTLIB += gstvideo-1.0 m orc-0.4 pcre pthread z
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-libav/}
 
@@ -44,9 +44,6 @@ libav_CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 			--disable-iwmmxt
 
 CONFIGURE_ARGS=		--with-libav-extra-configure="${libav_CONFIGURE_ARGS}"
-
-# needs orc >= 0.4.16
-CONFIGURE_ARGS +=	--disable-orc
 
 MAKE_ENV=		V=1
 
