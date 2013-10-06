@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.127 2013/10/06 07:08:09 espie Exp $
+# $OpenBSD: Port.pm,v 1.128 2013/10/06 12:40:44 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -156,6 +156,15 @@ sub finalize
 		$core->job->replace_tasks(DPB::Task::Port::BaseClean->new(
 			'clean'));
 		return 1;
+	}
+	# XXX in case we taint the core, we will mark ourselves as cleaned
+	# so the tag and dependencies may vanish.
+	#
+	# this is a bit of a pain for fixing errors, but this ensures bulks
+	# *will* finish anyhow
+	#
+	if ($core->job->{v}{info}->has_property('tag')) {
+		print {$core->job->{lock}} "cleaned\n";
 	}
 	return 0;
 }
@@ -543,6 +552,20 @@ sub finalize
 	return 1;
 }
 
+# there's nothing to run here, just where we get committed to affinity
+package DPB::Task::Port::InBetween;
+our @ISA = qw(DPB::Task::BasePort);
+sub setup
+{
+	my ($self, $core) = @_;
+
+	my $job = $core->job;
+
+	$job->{builder}{state}{affinity}->start($job->{v}, $core);
+
+	return $job->next_task($core);
+}
+
 package DPB::Task::Port::ShowSize;
 our @ISA = qw(DPB::Task::Port);
 
@@ -700,7 +723,8 @@ my $repo = {
 	fetch => 'DPB::Task::Port::Fetch',
 	depends => 'DPB::Task::Port::Depends',
 	'show-size' => 'DPB::Task::Port::ShowSize',
-	'junk' => 'DPB::Task::Port::Uninstall',
+	junk => 'DPB::Task::Port::Uninstall',
+	inbetween => 'DPB::Task::Port::InBetween',
 };
 
 sub create
@@ -871,6 +895,7 @@ sub add_normal_tasks
 		push(@todo, qw(fetch));
 	}
 
+	push(@todo, qw(inbetween));
 	if (!$small) {
 		push(@todo, qw(patch configure));
 	}
@@ -880,7 +905,7 @@ sub add_normal_tasks
 		push(@todo, qw(fake));
 	}
 	push(@todo, qw(package));
-	if ($builder->want_size($self->{v})) {
+	if ($core->{inmem} || $builder->want_size($self->{v})) {
 		push @todo, 'show-size';
 	}
 	if (!$dontclean) {

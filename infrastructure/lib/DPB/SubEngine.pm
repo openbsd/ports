@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SubEngine.pm,v 1.6 2013/10/04 11:26:15 espie Exp $
+# $OpenBSD: SubEngine.pm,v 1.7 2013/10/06 12:40:43 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -458,7 +458,6 @@ sub start_build
 {
 	my ($self, $v, $core, $lock) = @_;
 	$self->log('J', $v, " ".$core->hostname);
-	$self->{engine}{affinity}->start($v, $core);
 	if ($v->{info}->has_property('tag')) {
 		$core->prop->{tainted} = $v->{info}->has_property('tag');
 	}
