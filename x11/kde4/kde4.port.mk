@@ -1,4 +1,4 @@
-# $OpenBSD: kde4.port.mk,v 1.8 2013/10/06 10:23:37 zhuk Exp $
+# $OpenBSD: kde4.port.mk,v 1.9 2013/10/06 10:51:48 zhuk Exp $
 
 # The version of KDE SC in x11/kde4
 _MODKDE4_STABLE =	4.10.5
@@ -132,6 +132,10 @@ FLAVOR ?=
 
 .if ${MODKDE4_USE:L:Mruntime} || ${MODKDE4_USE:L:Mpim}
 MODKDE4_USE +=		libs
+.endif
+
+.if !empty(MODKDE4_USE)
+DPB_PROPERTIES +=	tag:kde4
 .endif
 
 # Small hack, until automoc4 will be gone
