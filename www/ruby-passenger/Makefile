@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/08/14 03:08:09 lteo Exp $
+# $OpenBSD: Makefile,v 1.32 2013/10/06 20:54:28 jeremy Exp $
 
 COMMENT-main =		Nginx module for deploying ruby applications
 COMMENT-standalone =	ruby web application server
@@ -27,6 +27,9 @@ MULTI_PACKAGES =	-main -standalone
 
 MODULES =		devel/gettext \
 			lang/ruby
+
+FLAVORS =		ruby18 ruby19
+FLAVOR ?=		ruby19
 
 SHARED_ONLY-main =	Yes
 SHARED_ONLY-standalone =	Yes
