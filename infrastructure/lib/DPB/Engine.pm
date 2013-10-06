@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.93 2013/10/06 13:33:29 espie Exp $
+# $OpenBSD: Engine.pm,v 1.94 2013/10/06 15:49:23 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -34,7 +34,6 @@ sub subengine_class
 	if ($state->{fetch_only}) {
 		return "DPB::SubEngine::NoBuild";
 	} else {
-		require DPB::SubEngine::Build;
 		return "DPB::SubEngine::Build";
 	}
 }

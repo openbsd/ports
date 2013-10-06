@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.98 2013/10/06 14:03:07 espie Exp $
+# $OpenBSD: dpb,v 1.99 2013/10/06 15:49:22 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -183,7 +183,8 @@ while (!DPB::Core->avail) {
 }
 my $core = DPB::Core->get;
 
-if (DPB::Core::Init->hostcount == 1 && $core->prop->{jobs} == 1) {
+if (!$state->{fetch_only} && 
+    DPB::Core::Init->hostcount == 1 && $core->prop->{jobs} == 1) {
 	$core->clone->mark_ready;
 	$state->{opt}{e} = 1;
 }
