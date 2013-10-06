@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/01/17 18:29:42 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/10/06 00:01:19 nigel Exp $
      SUBDIR += af
      SUBDIR += am
      SUBDIR += bg
@@ -33,6 +33,7 @@
      SUBDIR += ny
      SUBDIR += pl
      SUBDIR += pt
+     SUBDIR += ro
      SUBDIR += ru
      SUBDIR += rw
      SUBDIR += sk

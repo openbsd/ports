@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile.inc,v 1.4 2013/03/11 12:21:08 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2013/10/06 00:01:19 nigel Exp $
 
 LANGS = 	af am bg ca cs cy da de el eo es fo fr ga gd gl he hr hu \
 		id it ku la lt lv mg mi ms nb nl nn ny pl pt ro ru rw sk \
 		sl sv sw tet tl tn uk yi zu
 
 HOMEPAGE = 	http://www.vim.org/
-VERSION = 	7.3
+VERSION = 	7.4
 P = 		${VERSION:C/[\.]//g}
 CATEGORIES = 	editors
-MASTER_SITES = 	ftp://ftp.vim.org/pub/vim/runtime/spell/
+MASTER_SITES = 	http://ftp.vim.org/pub/vim/runtime/spell/ \
+		ftp://ftp.vim.org/pub/vim/runtime/spell/
 DIST_SUBDIR = 	vim-spell
 EXTRACT_ONLY =
 DISTNAME = 	vim-spell-${VERSION}
-REVISION =	1
 
 # GPLv2+, LGPL, GFDL
 PERMIT_PACKAGE_CDROM = 	Yes
