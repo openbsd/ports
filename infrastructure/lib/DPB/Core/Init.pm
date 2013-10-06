@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.8 2013/10/06 13:33:36 espie Exp $
+# $OpenBSD: Init.pm,v 1.9 2013/10/06 13:53:12 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -91,6 +91,11 @@ sub new
 		$host = 'localhost';
 	}
 	return $init->{$host} //= DPB::Core->new_noreg($host, $prop);
+}
+
+sub hostcount
+{
+	return scalar(keys %$init);
 }
 
 sub alive_hosts
