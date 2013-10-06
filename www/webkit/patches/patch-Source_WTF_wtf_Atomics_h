@@ -1,11 +1,11 @@
-$OpenBSD: patch-Source_WTF_wtf_Atomics_h,v 1.1 2013/04/13 09:11:02 landry Exp $
+$OpenBSD: patch-Source_WTF_wtf_Atomics_h,v 1.2 2013/10/06 14:03:43 landry Exp $
 
 https://bugs.webkit.org/show_bug.cgi?id=86835
 Fix build failure on sparc64 since 1.8.1, provide atomic{In,De}crement implems based on __sync_fetch_and_add builtin
 
---- Source/WTF/wtf/Atomics.h.orig	Tue Jan 29 11:00:42 2013
-+++ Source/WTF/wtf/Atomics.h	Fri Mar  8 00:57:25 2013
-@@ -116,6 +116,12 @@ inline int atomicDecrement(int volatile* addend) { ret
+--- Source/WTF/wtf/Atomics.h.orig	Wed Jun 26 10:42:13 2013
++++ Source/WTF/wtf/Atomics.h	Mon Jul 15 23:03:44 2013
+@@ -112,6 +112,12 @@ inline int atomicDecrement(int volatile* addend) { ret
  inline int64_t atomicIncrement(int64_t volatile* addend) { return __sync_add_and_fetch(addend, 1); }
  inline int64_t atomicDecrement(int64_t volatile* addend) { return __sync_sub_and_fetch(addend, 1); }
  

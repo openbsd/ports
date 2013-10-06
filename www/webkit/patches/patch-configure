@@ -1,37 +1,39 @@
-$OpenBSD: patch-configure,v 1.16 2013/08/06 19:11:30 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.17 2013/10/06 14:03:44 landry Exp $
 
 https://bugs.webkit.org/show_bug.cgi?id=117796
 
-- Chunk 1, 2 & 6 : https://bugs.webkit.org/show_bug.cgi?id=109932
+- Chunk 1, 2 & 4 : https://bugs.webkit.org/show_bug.cgi?id=109932
 Only webkit2 requires c++11 features atm, so let's relax the check until we have webkit2
+
+- Chunk 5 : no librt on OpenBSD
 
 - Chunk 3 : GNOME Bug 627126 - gsettings schema files don't get installed on FreeBSD
 glib commit 136e705e8383ff8848e425ac01278102d7badc52
 
-- Chunk 7 : Don't force the use of -O2, the ports infrastructure
+- Chunk 6 : Don't force the use of -O2, the ports infrastructure
 takes care of that
 
---- configure.orig	Fri Jul 19 14:11:39 2013
-+++ configure	Sat Jul 20 18:29:22 2013
-@@ -4729,7 +4729,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+--- configure.orig	Fri Sep 27 11:19:49 2013
++++ configure	Thu Oct  3 21:19:34 2013
+@@ -4789,7 +4789,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
--#if !(defined(__GNUC__) && !defined(__clang__) && !defined(__INTEL_COMPILER) && __GNUC__ >= 4 && __GNUC_MINOR__ >= 7) \
-+#if !(defined(__GNUC__) && !defined(__clang__) && !defined(__INTEL_COMPILER) && __GNUC__ >= 4 && __GNUC_MINOR__ >= 2) \
-     && !(defined(__clang__) && __clang_major__ >= 3 && __clang_minor__ >= 0)
- #error Unsupported compiler
+-#if !(defined(__GNUC__) && !defined(__clang__) && !defined(__INTEL_COMPILER) && __GNUC__ >= 4 && __GNUC_MINOR__ >= 7)
++#if !(defined(__GNUC__) && !defined(__clang__) && !defined(__INTEL_COMPILER) && __GNUC__ >= 4 && __GNUC_MINOR__ >= 2)
+ #error Not a supported GCC compiler
  #endif
-@@ -4766,7 +4766,7 @@ ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
+ 
+@@ -4847,7 +4847,7 @@ ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
--#if !(defined(__GNUG__) && defined(__GNUC__) && !defined(__clang__) && !defined(__INTEL_COMPILER) && __GNUC__ >= 4 && __GNUC_MINOR__ >= 7) \
-+#if !(defined(__GNUG__) && defined(__GNUC__) && !defined(__clang__) && !defined(__INTEL_COMPILER) && __GNUC__ >= 4 && __GNUC_MINOR__ >= 2) \
-     && !(defined(__clang__) && __clang_major__ >= 3 && __clang_minor__ >= 0)
- #error Unsupported compiler
+-#if !(defined(__GNUG__) && defined(__GNUC__) && !defined(__clang__) && !defined(__INTEL_COMPILER) && __GNUC__ >= 4 && __GNUC_MINOR__ >= 7)
++#if !(defined(__GNUG__) && defined(__GNUC__) && !defined(__clang__) && !defined(__INTEL_COMPILER) && __GNUC__ >= 4 && __GNUC_MINOR__ >= 2)
+ #error Not a supported G++ compiler
  #endif
-@@ -17503,26 +17503,14 @@ gsettings__enum_file = $(addsuffix .enums.xml,$(gsetti
+ 
+@@ -17608,26 +17608,14 @@ gsettings__enum_file = $(addsuffix .enums.xml,$(gsetti
  
  all-am: $(gsettings_SCHEMAS:.xml=.valid)
  uninstall-am: uninstall-gsettings-schemas
@@ -61,66 +63,25 @@ takes care of that
  	test -n "$(GSETTINGS_DISABLE_SCHEMAS_COMPILE)$(DESTDIR)" || $(GLIB_COMPILE_SCHEMAS) $(gsettingsschemadir)
  
  uninstall-gsettings-schemas:
-@@ -19456,12 +19444,12 @@ if test -n "$HARFBUZZ_ICU_CFLAGS"; then
-     pkg_cv_HARFBUZZ_ICU_CFLAGS="$HARFBUZZ_ICU_CFLAGS"
-  elif test -n "$PKG_CONFIG"; then
-     if test -n "$PKG_CONFIG" && \
--    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"harfbuzz-icu >= \$0.9.7\""; } >&5
--  ($PKG_CONFIG --exists --print-errors "harfbuzz-icu >= $0.9.7") 2>&5
-+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"harfbuzz-icu >= \0.9.7\""; } >&5
-+  ($PKG_CONFIG --exists --print-errors "harfbuzz-icu >= 0.9.7") 2>&5
-   ac_status=$?
-   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-   test $ac_status = 0; }; then
--  pkg_cv_HARFBUZZ_ICU_CFLAGS=`$PKG_CONFIG --cflags "harfbuzz-icu >= $0.9.7" 2>/dev/null`
-+  pkg_cv_HARFBUZZ_ICU_CFLAGS=`$PKG_CONFIG --cflags "harfbuzz-icu >= 0.9.7" 2>/dev/null`
- 		      test "x$?" != "x0" && pkg_failed=yes
- else
-   pkg_failed=yes
-@@ -19473,12 +19461,12 @@ if test -n "$HARFBUZZ_ICU_LIBS"; then
-     pkg_cv_HARFBUZZ_ICU_LIBS="$HARFBUZZ_ICU_LIBS"
-  elif test -n "$PKG_CONFIG"; then
-     if test -n "$PKG_CONFIG" && \
--    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"harfbuzz-icu >= \$0.9.7\""; } >&5
--  ($PKG_CONFIG --exists --print-errors "harfbuzz-icu >= $0.9.7") 2>&5
-+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"harfbuzz-icu >= \0.9.7\""; } >&5
-+  ($PKG_CONFIG --exists --print-errors "harfbuzz-icu >= 0.9.7") 2>&5
-   ac_status=$?
-   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-   test $ac_status = 0; }; then
--  pkg_cv_HARFBUZZ_ICU_LIBS=`$PKG_CONFIG --libs "harfbuzz-icu >= $0.9.7" 2>/dev/null`
-+  pkg_cv_HARFBUZZ_ICU_LIBS=`$PKG_CONFIG --libs "harfbuzz-icu >= 0.9.7" 2>/dev/null`
- 		      test "x$?" != "x0" && pkg_failed=yes
- else
-   pkg_failed=yes
-@@ -19499,14 +19487,14 @@ else
-         _pkg_short_errors_supported=no
+@@ -20953,7 +20941,7 @@ $as_echo "$ac_cv_search_shm_open" >&6; }
+ ac_res=$ac_cv_search_shm_open
+ if test "$ac_res" != no; then :
+   test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
+-  SHM_LIBS="-lrt"
++  SHM_LIBS=""
  fi
-         if test $_pkg_short_errors_supported = yes; then
--	        HARFBUZZ_ICU_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "harfbuzz-icu >= $0.9.7" 2>&1`
-+	        HARFBUZZ_ICU_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "harfbuzz-icu >= 0.9.7" 2>&1`
-         else
--	        HARFBUZZ_ICU_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "harfbuzz-icu >= $0.9.7" 2>&1`
-+	        HARFBUZZ_ICU_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "harfbuzz-icu >= 0.9.7" 2>&1`
-         fi
- 	# Put the nasty error message in config.log where it belongs
- 	echo "$HARFBUZZ_ICU_PKG_ERRORS" >&5
  
--	as_fn_error $? "Package requirements (harfbuzz-icu >= $0.9.7) were not met:
-+	as_fn_error $? "Package requirements (harfbuzz-icu >= 0.9.7) were not met:
  
- $HARFBUZZ_ICU_PKG_ERRORS
- 
-@@ -21160,7 +21148,7 @@ fi
+@@ -21368,7 +21356,7 @@ fi
  # Use C99 as the language standard for C code.
- CFLAGS="$CFLAGS -std=c99"
- # Do not warn about C++11 incompatibilities.
--CXXFLAGS="$CXXFLAGS -Wno-c++11-compat"
-+# CXXFLAGS="$CXXFLAGS -Wno-c++11-compat"
+ CFLAGS="$CFLAGS -pthread -std=c99"
+ # Use the C++11 standard. Do not warn about C++11 incompatibilities.
+-CXXFLAGS="$CXXFLAGS -pthread -std=c++11 -Wno-c++11-compat"
++#CXXFLAGS="$CXXFLAGS -pthread -std=c++11 -Wno-c++11-compat"
  
- # Clang requires suppression of unused arguments warning.
- if test "$CC" = "clang"; then
-@@ -21188,8 +21176,8 @@ fi
+ # Clang requires suppression of unused arguments warnings.
+ if test "$c_compiler" = "clang"; then
+@@ -21405,8 +21393,8 @@ fi
  
  # Add the appropriate 'O' level for optimized builds.
  if test "$enable_optimizations" = "yes"; then

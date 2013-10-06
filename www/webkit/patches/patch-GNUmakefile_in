@@ -1,119 +1,73 @@
-$OpenBSD: patch-GNUmakefile_in,v 1.22 2013/08/06 19:11:30 ajacoutot Exp $
+$OpenBSD: patch-GNUmakefile_in,v 1.23 2013/10/06 14:03:42 landry Exp $
 
-- chunk 2,3,4 : install GtkLauncher, remove silent build lines
-- chunk 1,5,6,7,8,9 : add Atomics.cpp to the build (fixes mips64 ? #106739)
-- chunk 12 : install gtk-doc in a versionned dir to avoid conflicts
-- chunk 13 : dont rebase doc, python process fails
-- chunk 11 : dont rerun make within make during install, gmake blows
-- chunk 10 : append extra -O0 cflags for sparc64 which otherwise result in overoptimization
+- chunk 1,2 : install GtkLauncher, remove silent build lines
+- chunk 5 : install gtk-doc in a versionned dir to avoid conflicts
+- chunk 6 : dont rebase doc, python process fails
+- chunk 4 : dont rerun make within make during install, gmake blows
+- chunk 3 : append extra -O0 cflags for sparc64 which otherwise result in overoptimization
   by emitting a fdtox %r8, %r7 call, whose second operand isn't even and thus invalid.
 (on Source/JavaScriptCore/runtime/NumberPrototype.cpp)
-
---- GNUmakefile.in.orig	Fri Jul 19 14:12:04 2013
-+++ GNUmakefile.in	Sat Jul 20 18:29:22 2013
-@@ -1017,6 +1017,7 @@ libWTF_la_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__D
- am__objects_2 = Source/WTF/wtf/libWTF_la-ArrayBuffer.lo \
- 	Source/WTF/wtf/libWTF_la-ArrayBufferView.lo \
- 	Source/WTF/wtf/libWTF_la-Assertions.lo \
-+	Source/WTF/wtf/libWTF_la-Atomics.lo \
- 	Source/WTF/wtf/libWTF_la-BitVector.lo \
- 	Source/WTF/wtf/libWTF_la-CryptographicallyRandomNumber.lo \
- 	Source/WTF/wtf/libWTF_la-CurrentTime.lo \
-@@ -10770,7 +10771,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES
+- chunk 7 & 8 : https://bugs.webkit.org/show_bug.cgi?id=118732
+--- GNUmakefile.in.orig	Fri Sep 27 11:20:10 2013
++++ GNUmakefile.in	Thu Oct  3 21:19:34 2013
+@@ -11289,11 +11289,11 @@ am__v_P_0 = false
+ am__v_P_1 = :
+ AM_V_GEN = $(am__v_GEN_@AM_V@)
+ am__v_GEN_ = $(am__v_GEN_@AM_DEFAULT_V@)
+-am__v_GEN_0 = @echo "  GEN     " $@;
++am__v_GEN_0 =
+ am__v_GEN_1 = 
+ AM_V_at = $(am__v_at_@AM_V@)
+ am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
+-am__v_at_0 = @
++am__v_at_0 =
+ am__v_at_1 = 
+ DEFAULT_INCLUDES = -I.@am__isrc@
+ depcomp = $(SHELL) $(top_srcdir)/Source/autotools/depcomp
+@@ -11303,7 +11303,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES
  	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  AM_V_CC = $(am__v_CC_@AM_V@)
  am__v_CC_ = $(am__v_CC_@AM_DEFAULT_V@)
--am__v_CC_0 = @echo "  CC    " $@;
+-am__v_CC_0 = @echo "  CC      " $@;
 +am__v_CC_0 =
- AM_V_at = $(am__v_at_@AM_V@)
- am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
- am__v_at_0 = @
-@@ -10780,22 +10781,22 @@ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAG
+ am__v_CC_1 = 
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+@@ -11311,13 +11311,13 @@ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAG
  	$(AM_LDFLAGS) $(LDFLAGS) -o $@
  AM_V_CCLD = $(am__v_CCLD_@AM_V@)
  am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
--am__v_CCLD_0 = @echo "  CCLD  " $@;
+-am__v_CCLD_0 = @echo "  CCLD    " $@;
 +am__v_CCLD_0 =
+ am__v_CCLD_1 = 
  CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
  	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
  AM_V_CXX = $(am__v_CXX_@AM_V@)
  am__v_CXX_ = $(am__v_CXX_@AM_DEFAULT_V@)
--am__v_CXX_0 = @echo "  CXX   " $@;
+-am__v_CXX_0 = @echo "  CXX     " $@;
 +am__v_CXX_0 =
+ am__v_CXX_1 = 
  CXXLD = $(CXX)
  CXXLINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
- 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
+@@ -11325,7 +11325,7 @@ CXXLINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOL
  	$(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
  AM_V_CXXLD = $(am__v_CXXLD_@AM_V@)
  am__v_CXXLD_ = $(am__v_CXXLD_@AM_DEFAULT_V@)
--am__v_CXXLD_0 = @echo "  CXXLD " $@;
+-am__v_CXXLD_0 = @echo "  CXXLD   " $@;
 +am__v_CXXLD_0 =
- AM_V_GEN = $(am__v_GEN_@AM_V@)
- am__v_GEN_ = $(am__v_GEN_@AM_DEFAULT_V@)
--am__v_GEN_0 = @echo "  GEN   " $@;
-+am__v_GEN_0 =
+ am__v_CXXLD_1 = 
  SOURCES = $(Libraries_WebExtensions_libWebExtensionTest_la_SOURCES) \
- 	$(Libraries_libTestRunnerInjectedBundle_la_SOURCES) \
- 	$(nodist_Libraries_libTestRunnerInjectedBundle_la_SOURCES) \
-@@ -11262,7 +11263,7 @@ pkgconfigdir := $(libdir)/pkgconfig
+ 	$(Libraries_WebExtensions_libWebProcessTest_la_SOURCES) \
+@@ -11839,7 +11839,7 @@ pkgconfigdir := $(libdir)/pkgconfig
  libwebkitgtkincludedir := $(prefix)/include/webkitgtk-@WEBKITGTK_API_VERSION@
  
  # Libraries and support components
 -bin_PROGRAMS := Programs/jsc-@WEBKITGTK_API_MAJOR_VERSION@$(EXEEXT)
 +bin_PROGRAMS := Programs/jsc-@WEBKITGTK_API_MAJOR_VERSION@$(EXEEXT) Programs/GtkLauncher$(EXEEXT)
+ noinst_DATA := $(am__append_45) $(am__append_70)
+ noinst_HEADERS := 
  
- # It seems that $(shell) does not expand when it is a rule dependency, so
- # we must redefine this list of copied files with traditional dependency wildcards.
-@@ -11852,6 +11853,7 @@ wtf_sources := Source/WTF/config.h Source/WTF/wtf/Plat
- 	Source/WTF/wtf/ArrayBufferView.cpp \
- 	Source/WTF/wtf/ArrayBufferView.h Source/WTF/wtf/Assertions.cpp \
- 	Source/WTF/wtf/Assertions.h Source/WTF/wtf/Atomics.h \
-+	Source/WTF/wtf/Atomics.cpp \
- 	Source/WTF/wtf/BitArray.h Source/WTF/wtf/BitVector.cpp \
- 	Source/WTF/wtf/BitVector.h Source/WTF/wtf/Bitmap.h \
- 	Source/WTF/wtf/BlockStack.h Source/WTF/wtf/BloomFilter.h \
-@@ -23564,6 +23566,9 @@ Source/WTF/wtf/libWTF_la-ArrayBufferView.lo:  \
- Source/WTF/wtf/libWTF_la-Assertions.lo:  \
- 	Source/WTF/wtf/$(am__dirstamp) \
- 	Source/WTF/wtf/$(DEPDIR)/$(am__dirstamp)
-+Source/WTF/wtf/libWTF_la-Atomics.lo:  \
-+	Source/WTF/wtf/$(am__dirstamp) \
-+	Source/WTF/wtf/$(DEPDIR)/$(am__dirstamp)
- Source/WTF/wtf/libWTF_la-BitVector.lo: Source/WTF/wtf/$(am__dirstamp) \
- 	Source/WTF/wtf/$(DEPDIR)/$(am__dirstamp)
- Source/WTF/wtf/libWTF_la-CryptographicallyRandomNumber.lo:  \
-@@ -40174,6 +40179,8 @@ mostlyclean-compile:
- 	-rm -f Source/WTF/wtf/libWTF_la-ArrayBufferView.lo
- 	-rm -f Source/WTF/wtf/libWTF_la-Assertions.$(OBJEXT)
- 	-rm -f Source/WTF/wtf/libWTF_la-Assertions.lo
-+	-rm -f Source/WTF/wtf/libWTF_la-Atomics.$(OBJEXT)
-+	-rm -f Source/WTF/wtf/libWTF_la-Atomics.lo
- 	-rm -f Source/WTF/wtf/libWTF_la-BitVector.$(OBJEXT)
- 	-rm -f Source/WTF/wtf/libWTF_la-BitVector.lo
- 	-rm -f Source/WTF/wtf/libWTF_la-CryptographicallyRandomNumber.$(OBJEXT)
-@@ -47302,6 +47309,7 @@ distclean-compile:
- @AMDEP_TRUE@@am__include@ @am__quote@Source/WTF/wtf/$(DEPDIR)/libWTF_la-ArrayBuffer.Plo@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@Source/WTF/wtf/$(DEPDIR)/libWTF_la-ArrayBufferView.Plo@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@Source/WTF/wtf/$(DEPDIR)/libWTF_la-Assertions.Plo@am__quote@
-+@AMDEP_TRUE@@am__include@ @am__quote@Source/WTF/wtf/$(DEPDIR)/libWTF_la-Atomics.Plo@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@Source/WTF/wtf/$(DEPDIR)/libWTF_la-BitVector.Plo@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@Source/WTF/wtf/$(DEPDIR)/libWTF_la-CryptographicallyRandomNumber.Plo@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@Source/WTF/wtf/$(DEPDIR)/libWTF_la-CurrentTime.Plo@am__quote@
-@@ -51997,6 +52005,13 @@ Source/WTF/wtf/libWTF_la-Assertions.lo: Source/WTF/wtf
- @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
- @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libWTF_la_CPPFLAGS) $(CPPFLAGS) $(libWTF_la_CXXFLAGS) $(CXXFLAGS) -c -o Source/WTF/wtf/libWTF_la-Assertions.lo `test -f 'Source/WTF/wtf/Assertions.cpp' || echo '$(srcdir)/'`Source/WTF/wtf/Assertions.cpp
- 
-+Source/WTF/wtf/libWTF_la-Atomics.lo: Source/WTF/wtf/Atomics.cpp
-+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libWTF_la_CPPFLAGS) $(CPPFLAGS) $(libWTF_la_CXXFLAGS) $(CXXFLAGS) -MT Source/WTF/wtf/libWTF_la-Atomics.lo -MD -MP -MF Source/WTF/wtf/$(DEPDIR)/libWTF_la-Atomics.Tpo -c -o Source/WTF/wtf/libWTF_la-Atomics.lo `test -f 'Source/WTF/wtf/Atomics.cpp' || echo '$(srcdir)/'`Source/WTF/wtf/Atomics.cpp
-+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) Source/WTF/wtf/$(DEPDIR)/libWTF_la-Atomics.Tpo Source/WTF/wtf/$(DEPDIR)/libWTF_la-Atomics.Plo
-+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='Source/WTF/wtf/Atomics.cpp' object='Source/WTF/wtf/libWTF_la-Atomics.lo' libtool=yes @AMDEPBACKSLASH@
-+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libWTF_la_CPPFLAGS) $(CPPFLAGS) $(libWTF_la_CXXFLAGS) $(CXXFLAGS) -c -o Source/WTF/wtf/libWTF_la-Atomics.lo `test -f 'Source/WTF/wtf/Atomics.cpp' || echo '$(srcdir)/'`Source/WTF/wtf/Atomics.cpp
-+
- Source/WTF/wtf/libWTF_la-BitVector.lo: Source/WTF/wtf/BitVector.cpp
- @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libWTF_la_CPPFLAGS) $(CPPFLAGS) $(libWTF_la_CXXFLAGS) $(CXXFLAGS) -MT Source/WTF/wtf/libWTF_la-BitVector.lo -MD -MP -MF Source/WTF/wtf/$(DEPDIR)/libWTF_la-BitVector.Tpo -c -o Source/WTF/wtf/libWTF_la-BitVector.lo `test -f 'Source/WTF/wtf/BitVector.cpp' || echo '$(srcdir)/'`Source/WTF/wtf/BitVector.cpp
- @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) Source/WTF/wtf/$(DEPDIR)/libWTF_la-BitVector.Tpo Source/WTF/wtf/$(DEPDIR)/libWTF_la-BitVector.Plo
-@@ -75259,7 +75274,7 @@ Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WE
+@@ -69653,7 +69653,7 @@ Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WE
  @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la_CPPFLAGS) $(CPPFLAGS) $(libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la_CXXFLAGS) $(CXXFLAGS) -c -o Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberObject.lo `test -f 'Source/JavaScriptCore/runtime/NumberObject.cpp' || echo '$(srcdir)/'`Source/JavaScriptCore/runtime/NumberObject.cpp
  
  Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberPrototype.lo: Source/JavaScriptCore/runtime/NumberPrototype.cpp
@@ -122,8 +76,8 @@ $OpenBSD: patch-GNUmakefile_in,v 1.22 2013/08/06 19:11:30 ajacoutot Exp $
  @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) Source/JavaScriptCore/runtime/$(DEPDIR)/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberPrototype.Tpo Source/JavaScriptCore/runtime/$(DEPDIR)/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberPrototype.Plo
  @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='Source/JavaScriptCore/runtime/NumberPrototype.cpp' object='Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberPrototype.lo' libtool=yes @AMDEPBACKSLASH@
  @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@@ -83129,14 +83144,12 @@ installdirs:
- 	for dir in "$(DESTDIR)$(injectedbundledir)" "$(DESTDIR)$(libdir)" "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(audiodir)" "$(DESTDIR)$(audiodir)" "$(DESTDIR)$(resourcesdir)" "$(DESTDIR)$(webinspectordir)" "$(DESTDIR)$(webinspectorimagesdir)" "$(DESTDIR)$(webinspectoruglifyjsdir)" "$(DESTDIR)$(webresourcesdir)" "$(DESTDIR)$(girdir)" "$(DESTDIR)$(gir2dir)" "$(DESTDIR)$(pkgconfigdir)" "$(DESTDIR)$(remoteinspectordir)" "$(DESTDIR)$(typelibsdir)" "$(DESTDIR)$(typelibs2dir)" "$(DESTDIR)$(libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_ladir)" "$(DESTDIR)$(libwebkit2gtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_ladir)" "$(DESTDIR)$(libwebkit2gtkincludedir)" "$(DESTDIR)$(libwebkitgtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_ladir)" "$(DESTDIR)$(libwebkit2gtkincludedir)" "$(DESTDIR)$(libwebkitdomincludedir)" "$(DESTDIR)$(libwebkitgtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_ladir)"; do \
+@@ -77464,14 +77464,12 @@ installdirs:
+ 	for dir in "$(DESTDIR)$(injectedbundledir)" "$(DESTDIR)$(libdir)" "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(audiodir)" "$(DESTDIR)$(audiodir)" "$(DESTDIR)$(resourcesdir)" "$(DESTDIR)$(webresourcesdir)" "$(DESTDIR)$(girdir)" "$(DESTDIR)$(pkgconfigdir)" "$(DESTDIR)$(typelibsdir)" "$(DESTDIR)$(libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_ladir)" "$(DESTDIR)$(libwebkit2gtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_ladir)" "$(DESTDIR)$(libwebkit2gtkincludedir)" "$(DESTDIR)$(libwebkitgtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_ladir)" "$(DESTDIR)$(libwebkit2gtkincludedir)" "$(DESTDIR)$(libwebkitdomincludedir)" "$(DESTDIR)$(libwebkitgtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_ladir)"; do \
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
 -install: $(BUILT_SOURCES)
@@ -139,7 +93,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.22 2013/08/06 19:11:30 ajacoutot Exp $
  
  installcheck: installcheck-am
  install-strip:
-@@ -84409,7 +84422,7 @@ install-data-local:
+@@ -78768,7 +78766,7 @@ install-data-local:
  @ENABLE_WEBKIT1_TRUE@	  if test -n "$(DOC_MODULE_VERSION)"; then \
  @ENABLE_WEBKIT1_TRUE@	    installdir="$(DESTDIR)$(HTML_DIR)/webkitgtk-$(DOC_MODULE_VERSION)"; \
  @ENABLE_WEBKIT1_TRUE@	  else \
@@ -148,12 +102,23 @@ $OpenBSD: patch-GNUmakefile_in,v 1.22 2013/08/06 19:11:30 ajacoutot Exp $
  @ENABLE_WEBKIT1_TRUE@	  fi; \
  @ENABLE_WEBKIT1_TRUE@	  $(mkinstalldirs) $${installdir} ; \
  @ENABLE_WEBKIT1_TRUE@	  for i in $$installfiles; do \
-@@ -84441,7 +84454,7 @@ install-data-local:
- @ENABLE_WEBKIT2_TRUE@	      $${installdir}/webkit2gtk-$(DOC_MODULE_VERSION).devhelp2; \
- @ENABLE_WEBKIT2_TRUE@	  fi; \
- @ENABLE_WEBKIT2_TRUE@	fi
--	@$(AM_V_GEN) PKG_CONFIG=$(PKG_CONFIG) $(PYTHON) $(srcdir)/Tools/gtk/generate-gtkdoc --rebase --virtual-root=$${DESTDIR}
-+@ENABLE_GTK_DOC_TRUE@	@$(AM_V_GEN) PKG_CONFIG=$(PKG_CONFIG) $(PYTHON) $(srcdir)/Tools/gtk/generate-gtkdoc --rebase --virtual-root=$${DESTDIR}
+@@ -78969,7 +78967,8 @@ $(plugin_process_for_dep): $(plugin_process_for_dep_li
+ WebCoreLayerGtk2.a: $(webcore_layer_gtk2_deps)
+ 	$(AM_V_GEN)
+ 	$(AM_V_at)$(shell rm -f $@)
+-	$(AM_V_at)$(foreach archive, $(webcore_layer_gtk2_archives), $(shell ar t $(archive) | xargs -n50 ar cruT $@))
++	$(AM_V_at)$(foreach archive, $(webcore_layer_gtk2_archives), $(shell ar t $(archive) | while read f ; do find . -name $$f ; done | xargs -n50 ar cru $@))
++	ln $@ libWebCoreLayerGtk2.a
  
- uninstall-local:
- @ENABLE_WEBKIT1_TRUE@	@DOC_MODULE_VERSION=`cat ./Documentation/webkitgtk/version.xml`; \
+ @ENABLE_WEBKIT2_TRUE@Programs/resources/webkit2gtk-tests-resources.gresource: Source/WebKit2/UIProcess/API/gtk/tests/resources/webkit2gtk-tests.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/Source/WebKit2/UIProcess/API/gtk/tests/resources/webkit2gtk-tests.gresource.xml)
+ @ENABLE_WEBKIT2_TRUE@	$(AM_V_at)mkdir -p ${GENPROGRAMS}/resources
+@@ -79010,7 +79009,8 @@ DerivedSources/InjectedBundle/JS%.cpp: Tools/WebKitTes
+ WebCoreLayer.a: $(webcore_layer_deps)
+ 	$(AM_V_GEN)
+ 	$(AM_V_at)$(shell rm -f $@)
+-	$(AM_V_at)$(foreach archive, $(webcore_layer_archives), $(shell ar t $(archive) | xargs -n50 ar cruT $@))
++	$(AM_V_at)$(foreach archive, $(webcore_layer_archives), $(shell ar t $(archive) | while read f ; do find . -name $$f ; done | xargs -n50 ar cru $@))
++	ln $@ libWebCoreLayer.a
+ 
+ stamp-testwebkitapi-webcore-forwarding-headers: $(WebKit2)/Scripts/generate-forwarding-headers.pl $(Programs_TestWebKitAPI_TestWebCore_SOURCES)
+ 	$(AM_V_GEN)$(PERL) $< $(srcdir)/Tools/TestWebKitAPI/Tests/WebCore $(GENSOURCES_WEBCORE)/include gtk \

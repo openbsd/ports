@@ -1,0 +1,13 @@
+$OpenBSD: patch-Source_WebKit2_WebProcess_soup_WebKitSoupRequestInputStream_h,v 1.1 2013/10/06 14:03:44 landry Exp $
+Fix build failure on amd64 ?
+--- Source/WebKit2/WebProcess/soup/WebKitSoupRequestInputStream.h.orig	Sun Jun  2 21:34:20 2013
++++ Source/WebKit2/WebProcess/soup/WebKitSoupRequestInputStream.h	Sun Jun  2 21:34:33 2013
+@@ -46,7 +46,7 @@ struct _WebKitSoupRequestInputStreamClass {
+ };
+ 
+ GType webkit_soup_request_input_stream_get_type();
+-GInputStream* webkitSoupRequestInputStreamNew(guint64 contentLength);
++GInputStream* webkitSoupRequestInputStreamNew(uint64_t contentLength);
+ void webkitSoupRequestInputStreamAddData(WebKitSoupRequestInputStream*, const void* data, size_t dataLength);
+ bool webkitSoupRequestInputStreamFinished(WebKitSoupRequestInputStream*);
+ 

@@ -1,0 +1,15 @@
+$OpenBSD: patch-Source_WTF_wtf_MathExtras_h,v 1.1 2013/10/06 14:03:43 landry Exp $
+signbit & isfinite are defined in gcc's cmath for 4.6 & 4.8..
+so partly revert https://bugs.webkit.org/show_bug.cgi?id=19975, make it conditional to older gcc
+--- Source/WTF/wtf/MathExtras.h.orig	Wed Jun 26 10:42:13 2013
++++ Source/WTF/wtf/MathExtras.h	Thu Jul 18 09:30:59 2013
+@@ -106,7 +106,8 @@ inline bool isinf(double x) { return !finite(x) && !is
+ 
+ #endif
+ 
+-#if OS(OPENBSD)
++/* isfinite and signbit exist in gcc 4.6 or 4.8, not in 4.2 */
++#if OS(OPENBSD) && (defined(__GNUC__) && __GNUC__ >= 4 && __GNUC_MINOR__ <= 2)
+ 
+ namespace std {
+ 

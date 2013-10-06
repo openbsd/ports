@@ -1,8 +1,10 @@
-$OpenBSD: patch-Source_JavaScriptCore_llint_LowLevelInterpreter_asm,v 1.1 2013/04/13 09:11:02 landry Exp $
+$OpenBSD: patch-Source_JavaScriptCore_llint_LowLevelInterpreter_asm,v 1.2 2013/10/06 14:03:42 landry Exp $
 https://bugs.webkit.org/show_bug.cgi?id=103128
---- Source/JavaScriptCore/llint/LowLevelInterpreter.asm.orig	Sun Mar 31 11:48:40 2013
-+++ Source/JavaScriptCore/llint/LowLevelInterpreter.asm	Sun Mar 31 19:00:09 2013
-@@ -87,6 +87,12 @@ else
+https://bug-103128-attachments.webkit.org/attachment.cgi?id=202076
+Last chunk: https://bug-103128-attachments.webkit.org/attachment.cgi?id=202651
+--- Source/JavaScriptCore/llint/LowLevelInterpreter.asm.orig	Fri Sep 20 09:24:34 2013
++++ Source/JavaScriptCore/llint/LowLevelInterpreter.asm	Sun Oct  6 14:48:27 2013
+@@ -109,6 +109,12 @@ else
      const PayloadOffset = 0
  end
  
@@ -15,7 +17,7 @@ https://bugs.webkit.org/show_bug.cgi?id=103128
  # Constant for reasoning about butterflies.
  const IsArray                  = 1
  const IndexingShapeMask        = 30
-@@ -263,13 +269,13 @@ macro assertNotConstant(index)
+@@ -276,13 +282,13 @@ macro assertNotConstant(index)
  end
  
  macro functionForCallCodeBlockGetter(targetRegister)
@@ -31,12 +33,16 @@ https://bugs.webkit.org/show_bug.cgi?id=103128
      loadp JSFunction::m_executable[targetRegister], targetRegister
      loadp FunctionExecutable::m_codeBlockForConstruct[targetRegister], targetRegister
  end
-@@ -824,7 +830,7 @@ macro interpretResolveWithBase(opcodeLength, slowPath)
-     getResolveOperation(4, t0)
-     btpz t0, .slowPath
- 
--    loadp ScopeChain[cfr], t3
-+    loadp ScopeChain + CellOffset[cfr], t3
-     # Get the base
-     loadis ResolveOperation::m_operation[t0], t2
- 
+@@ -657,7 +663,11 @@ _llint_op_jngreatereq:
+ _llint_op_loop_hint:
+     traceExecution()
+     loadp JITStackFrame::vm[sp], t1
+-    loadb VM::watchdog+Watchdog::m_timerDidFire[t1], t0
++    if FOUR_BYTE_BOOL
++        loadi VM::watchdog+Watchdog::m_timerDidFire[t1], t0
++    else
++        loadb VM::watchdog+Watchdog::m_timerDidFire[t1], t0
++    end
+     btbnz t0, .handleWatchdogTimer
+ .afterWatchdogTimerCheck:
+     checkSwitchToJITForLoop()
