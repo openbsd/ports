@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2013/10/06 14:18:22 landry Exp $
-
-ONLY_FOR_ARCHS=	${GCC4_ARCHS}
+# $OpenBSD: Makefile,v 1.96 2013/10/06 16:27:26 ajacoutot Exp $
 
 COMMENT =	open source web browser engine for Gtk+
 
@@ -10,7 +8,7 @@ PKGNAME =	webkit-${V}
 EPOCH =		0
 CATEGORIES =	www
 DPB_PROPERTIES =parallel
-EXTRACT_SUFX=	.tar.xz
+REVISION =	0
 
 HOMEPAGE =	http://webkitgtk.org/
 MASTER_SITES =	${HOMEPAGE}/releases/
@@ -21,42 +19,45 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org> \
 # LGPLv2 and BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-VMEM_WARNING =	Yes
-
-USE_GMAKE =	Yes
-
 MODULES =	devel/gettext \
-		textproc/intltool  \
 		lang/python \
-		lang/ruby
+		lang/ruby \
+		x11/gnome
 
-MODPY_RUNDEP =	No
+
+MODULES +=		gcc4
+MODGCC4_ARCHS =		*
+MODGCC4_LANGS =		c++
+#MODGCC4_VERSION =	4.8
+
+MAKE_FILE =		GNUmakefile
+PORTHOME =		${WRKDIST}
+SUBST_VARS =		WEBKIT_API_VERSION GTK_API_VERSION
+VMEM_WARNING =		Yes
+
+MODPY_RUNDEP =		No
 MODRUBY_RUNDEP =	No
 MODPY_ADJ_FILES =	Tools/gtk/generate-feature-defines-files
+
+MODGNOME_CPPFLAGS =	-I${X11BASE}/include
+MODGNOME_LDFLAGS =	-L${X11BASE}/lib -lX11
+MODGNOME_TOOLS =	gi
 
 # XXX TODO switch to cmake ?
 CONFIGURE_STYLE =	gnu
 # breaks because of missing webkit2/ headers dir ?
 #SEPARATE_BUILD =	Yes
-PORTHOME =	${WRKDIST}
 
-CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lX11" \
-		ac_cv_path_FLEX=${LOCALBASE}/bin/gflex \
+CONFIGURE_ENV =	ac_cv_path_FLEX=${LOCALBASE}/bin/gflex \
 		ac_cv_path_RUBY=${RUBY}
 
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
-		ac_cv_path_GTKDOC_REBASE="" \
-		ac_cv_path_GTKDOC_MKPDF=""
+#c++0x in 4.6, c++11 in 4.8 - removed in a patch but we need to readd it for wk2
+CONFIGURE_ENV +=	CXXFLAGS="${CXXFLAGS} -std=c++0x -Wno-c++0x-compat"
 
 LIBTOOL_FLAGS =	--tag=disable-static
-CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
-		--disable-static \
-		--disable-gtk-doc \
-		--enable-introspection \
-		--enable-spellcheck
+CONFIGURE_ARGS= --disable-static \
+		--enable-spellcheck \
+		--with-gtk=${GTK_API_VERSION}
 
 # XXX: uncomment if you want to debug the javascript engine
 # this will only build the needed libs and the shell
@@ -68,8 +69,6 @@ CONFIGURE_ARGS +=	--enable-optimizations=no
 # XXX huge hack LDFLAGS is already added a bit before
 CONFIGURE_ENV +=	COVERAGE_LDFLAGS="-Wl,--relax"
 .endif
-
-MAKE_FILE =	GNUmakefile
 
 .if ${MACHINE_ARCH:Msparc64}
 # until 1.9 is reliable on sparc64...
@@ -101,8 +100,7 @@ LIB_DEPENDS =	multimedia/gstreamer1/core \
 
 BUILD_DEPENDS =	devel/bison \
 		devel/flex \
-		devel/gperf \
-		devel/gobject-introspection
+		devel/gperf
 
 # WebKitPluginProcess links against gtk2 for flash plugin, even with gtk3 ?
 LIB_DEPENDS +=	x11/gtk+2,-main
@@ -110,16 +108,6 @@ WANTLIB +=	gdk-x11-2.0 gtk-x11-2.0
 
 FLAVORS = gtk3
 FLAVOR ?=
-# eases PLIST/PFRAGs
-SUBST_VARS =	WEBKIT_API_VERSION GTK_API_VERSION
-
-MODULES +=		gcc4
-MODGCC4_ARCHS =		amd64 i386 powerpc hppa alpha mips64 sparc64 mips64el
-MODGCC4_LANGS =		c c++
-#MODGCC4_VERSION =	4.8
-
-#c++0x in 4.6, c++11 in 4.8 - removed in a patch but we need to readd it for wk2
-CONFIGURE_ENV +=	CXXFLAGS="${CXXFLAGS} -std=c++0x -Wno-c++0x-compat"
 
 .if ${FLAVOR:Mgtk3}
 #XXX gross, but needed to have __sync_add_and_fetch_8 on 32-bits
@@ -143,7 +131,6 @@ WEBKIT_API_VERSION =	1.0
 GTK_API_VERSION =	2.0
 .endif
 
-CONFIGURE_ARGS += --with-gtk=${GTK_API_VERSION}
 SHARED_LIBS += javascriptcoregtk-${WEBKIT_API_VERSION}	4.0 # 15.5
 SHARED_LIBS += webkitgtk-${WEBKIT_API_VERSION}		6.0 # 19.8
 
