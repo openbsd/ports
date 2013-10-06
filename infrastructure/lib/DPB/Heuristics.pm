@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.23 2013/09/25 08:49:07 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.24 2013/10/06 12:38:23 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -103,12 +103,19 @@ sub match_pkgname
 my $used_memory = {};
 my $used_per_host = {};
 
-sub special_parameters
+sub build_in_memory
 {
 	my ($self, $core, $v) = @_;
 	my $t = $core->memory;
 	return 0 if !defined $t;
+
+	# first match previous affinity
+	if ($v->{affinity}) {
+		return $v->{mem_affinity};
+	}
+
 	my $p = $v->pkgpath_and_flavors;
+
 	# we build in memory if we know this port and it's light enough
 	if (defined $wrkdir{$p}) {
 		my $hostname = $core->hostname;
@@ -116,7 +123,7 @@ sub special_parameters
 		if ($used_per_host->{$hostname} + $wrkdir{$p} <= $t) {
 			$used_per_host->{$hostname} += $wrkdir{$p};
 			$used_memory->{$p} = $hostname;
-			return 1;
+			return $wrkdir{$p};
 		}
 	}
 	return 0;

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.51 2013/10/04 20:28:41 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.52 2013/10/06 12:38:24 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -194,13 +194,13 @@ sub build
 	my ($self, $v, $core, $lock, $final_sub) = @_;
 	my $start = time();
 	my $log = $self->logger->make_logs($v);
-	my $special = $self->{heuristics}->special_parameters($core, $v);
+	my $memsize = $self->{heuristics}->build_in_memory($core, $v);
 
 	open my $fh, ">>", $log or die "can't open $log: $!";
-	if ($special) {
-		print $lock "mfs\n";
+	if ($memsize) {
+		print $lock "mem=$memsize\n";
 		print $fh ">>> Building in memory under ";
-		$core->{inmem} = 1;
+		$core->{inmem} = $memsize;
 	} else {
 		print $fh ">>> Building under ";
 		$core->{inmem} = 0;
@@ -211,7 +211,7 @@ sub build
 	$v->quick_dump($fh);
 
 	my $job;
-	$job = DPB::Job::Port->new($log, $fh, $v, $lock, $self, $special, $core,
+	$job = DPB::Job::Port->new($log, $fh, $v, $lock, $self, $memsize, $core,
 	    sub {
 	    	close($fh); 
 		$self->end_lock($lock, $core, $job); 
