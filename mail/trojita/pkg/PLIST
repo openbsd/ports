@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/05/08 02:03:11 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/10/06 01:51:38 jturner Exp $
+@bin bin/be.contacts
 @bin bin/trojita
+@lib lib/libtrojita_plugins.so.${LIBtrojita_plugins_VERSION}
 share/applications/trojita.desktop
 share/icons/hicolor/32x32/apps/trojita.png
 share/icons/hicolor/scalable/apps/trojita.svg
@@ -23,11 +25,13 @@ share/trojita/locale/trojita_common_nl.qm
 share/trojita/locale/trojita_common_pl.qm
 share/trojita/locale/trojita_common_pt.qm
 share/trojita/locale/trojita_common_pt_BR.qm
+share/trojita/locale/trojita_common_ro.qm
 share/trojita/locale/trojita_common_sk.qm
 share/trojita/locale/trojita_common_sv.qm
 share/trojita/locale/trojita_common_tr.qm
+share/trojita/locale/trojita_common_ug.qm
 share/trojita/locale/trojita_common_uk.qm
-share/trojita/locale/trojita_common_x-test.qm
+share/trojita/locale/trojita_common_x_test.qm
 share/trojita/locale/trojita_common_zh_CN.qm
 share/trojita/locale/trojita_common_zh_TW.qm
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

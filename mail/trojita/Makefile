@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/08 02:03:11 jturner Exp $
+# $OpenBSD: Makefile,v 1.3 2013/10/06 01:51:38 jturner Exp $
 
 COMMENT =		fast Qt IMAP e-mail client
 
-DISTNAME =		trojita-0.3.93
+DISTNAME =		trojita-0.3.96
 CATEGORIES =		mail x11
+
+SHARED_LIBS =		trojita_plugins	0.0 # 0.0
 
 MAINTAINER =		James Turner <james@calminferno.net>
 
@@ -14,21 +16,27 @@ EXTRACT_SUFX =		.tar.bz2
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += 		ICE lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSql
-WANTLIB +=		lib/qt4/QtWebKit SM X11 Xext Xi Xinerama Xrender
-WANTLIB += 		c fontconfig freetype m pthread stdc++
+WANTLIB += 		lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSql
+WANTLIB +=		lib/qt4/QtWebKit c m pthread z
 
-MODULES =		x11/qt4
+MODULES =		devel/cmake gcc4 x11/qt4
+
+MODGCC4_ARCHS =		*
+MODGCC4_LANGS =		c++
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+2,-guic
 
-FAKE_FLAGS =		INSTALL_ROOT=${WRKINST}
+CONFIGURE_ENV +=	QTDIR="${MODQT_LIBDIR}"
+CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=Release \
+			-DWITH_HARMATTAN=OFF \
+			-DWITH_RAGEL=OFF \
+			-DWITH_QT5=OFF \
+			-DGIT_EXECUTABLE=""
 
-TEST_FLAGS =		DISPLAY=:0
 TEST_IS_INTERACTIVE =	X11
 
-do-configure:
-	cd ${WRKDIST} && qmake4 trojita.pro
+do-test:
+	cd ${WRKBUILD} && ${LOCALBASE}/bin/ctest --output-on-failure
 
 .include <bsd.port.mk>
