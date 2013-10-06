@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2013/09/05 18:41:35 bcallah Exp $
+# $OpenBSD: Makefile,v 1.10 2013/10/06 05:11:22 bcallah Exp $
 
 COMMENT =	command line app.net client
-DISTNAME =	texapp-0.6.2
+DISTNAME =	texapp-0.6.3
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.floodgap.com/software/texapp/
