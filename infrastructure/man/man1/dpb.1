@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.92 2013/10/06 10:54:02 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.93 2013/10/06 10:54:53 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -838,8 +838,8 @@ problem.
 .Sh TAGS FOR BUILDING KDE
 Currently, kde3 and kde4 can't be built simultaneously.
 Conflicting ports have been annotated with
-DPB_PROPERTIES = tag:kde3 ,
-DPB_PROPERTIES = tag:kde4
+DPB_PROPERTIES=tag:kde3 ,
+DPB_PROPERTIES=tag:kde4
 respectively.
 .Pp
 .Nm
@@ -856,7 +856,7 @@ stage even if junk=0.
 In order for builds to proceed gracefully, machines should start
 in a clean slate, without kde3 or kde4 installed.
 .Pp
-As a special-case, failing ports with a kde3 or kde4 will not
+As a special-case, failing ports with a kde3 or kde4 tag will not
 interfere with clean-up, so that hosts do not get locked down to
 a specific tag.
 This also means that their dependencies
