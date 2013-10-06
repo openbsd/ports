@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.126 2013/10/04 20:28:41 espie Exp $
+# $OpenBSD: Port.pm,v 1.127 2013/10/06 07:08:09 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -648,13 +648,18 @@ our @ISA = qw(DPB::Task::BasePort);
 sub notime { 1 }
 sub want_percent { 0 }
 
+sub setup
+{
+	my ($task, $core) = @_;
+	print {$core->job->{lock}} "cleaned\n";
+	return $task;
+}
 sub finalize
 {
 	my ($self, $core) = @_;
 	if ($self->requeue($core)) {
 		return 1;
 	}
-	print {$core->job->{lock}} "cleaned\n";
 	$self->SUPER::finalize($core);
 	return 1;
 }
