@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2013/10/06 09:08:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.101 2013/10/06 15:44:50 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -17,25 +17,25 @@ HOMEPAGE=		http://www.anjuta.org/
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += EGL GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xt apr-1 aprutil-1 asn1
 WANTLIB += atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
-WANTLIB += crypto db dbus-1 dbus-glib-1 devhelp-3 enchant expat
-WANTLIB += ffi fontconfig freetype gailutil-3 gcrypt gda-5.0 gdk-3
+WANTLIB += com_err crypto db dbus-1 dbus-glib-1 devhelp-3 enchant
+WANTLIB += expat ffi fontconfig freetype gcrypt gda-5.0 gdk-3
 WANTLIB += gdk_pixbuf-2.0 gdl-3 geoclue gio-2.0 gladeui-2 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 gssapi
 WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
-WANTLIB += gtksourceview-3.0 harfbuzz icudata icui18n icuuc
-WANTLIB += javascriptcoregtk-3.0 jpeg krb5 m magic ncurses neon
-WANTLIB += orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png proxy pthread pthread-stubs sasl2 secret-1
-WANTLIB += soup-2.4 sqlite3 ssl stdc++ svn_client-1 svn_delta-1
-WANTLIB += svn_diff-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1
-WANTLIB += svn_ra-1 svn_ra_local-1 svn_ra_neon-1 svn_ra_svn-1
-WANTLIB += svn_repos-1 svn_subr-1 svn_wc-1 util vte2_90 webkitgtk-3.0
-WANTLIB += webp xcb xcb-render xcb-shm xml2 xslt z vala-0.22 wind
-WANTLIB += com_err harfbuzz-icu heimbase roken EGL
+WANTLIB += gtksourceview-3.0 harfbuzz harfbuzz-icu heimbase icudata
+WANTLIB += icui18n icuuc javascriptcoregtk-3.0 jpeg krb5 m magic
+WANTLIB += ncurses neon pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png proxy pthread pthread-stubs roken
+WANTLIB += sasl2 secret-1 soup-2.4 sqlite3 ssl stdc++ svn_client-1
+WANTLIB += svn_delta-1 svn_diff-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1
+WANTLIB += svn_fs_util-1 svn_ra-1 svn_ra_local-1 svn_ra_neon-1
+WANTLIB += svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1 util vala-0.22
+WANTLIB += vte2_90 webkit2gtk-3.0 webp wind xcb xcb-render xcb-shm
+WANTLIB += xml2 xslt z orc-0.4
 WANTLIB += ${MODPY_WANTLIB}
 
 MODULES=		devel/dconf \
@@ -55,7 +55,7 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			devel/vte3 \
 			lang/vala>=0.22.0 \
 			textproc/icu4c \
-			x11/gnome/devhelp \
+			x11/gnome/devhelp>=3.10.0 \
 			x11/gnome/gdl \
 			x11/gtksourceview3 \
 			x11/gnome/libgda
