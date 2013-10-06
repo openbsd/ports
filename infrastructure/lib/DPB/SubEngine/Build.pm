@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Build.pm,v 1.2 2013/10/06 13:33:39 espie Exp $
+# $OpenBSD: Build.pm,v 1.3 2013/10/06 13:48:28 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -19,7 +19,7 @@ use strict;
 use warnings;
 
 package DPB::SubEngine::Build;
-our @ISA = qw(DPB::SubEngine);
+our @ISA = qw(DPB::SubEngine::BuildBase);
 sub new
 {
 	my ($class, $engine, $builder) = @_;
@@ -173,12 +173,6 @@ sub non_empty
 {
 	my $self = shift;
 	return  $self->SUPER::non_empty || @{$self->{toinstall}} > 0;
-}
-
-sub new_queue
-{
-	my ($class, $engine) = @_;
-	return $engine->{heuristics}->new_queue;
 }
 
 sub mark_as_done

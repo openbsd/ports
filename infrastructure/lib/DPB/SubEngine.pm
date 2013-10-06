@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SubEngine.pm,v 1.9 2013/10/06 13:33:35 espie Exp $
+# $OpenBSD: SubEngine.pm,v 1.10 2013/10/06 13:48:27 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -216,11 +216,20 @@ sub dump
 #	$self->{queue}->dump($k, $fh);
 }
 
+package DPB::SubEngine::BuildBase;
+our @ISA = qw(DPB::SubEngine);
+
+sub new_queue
+{
+	my ($class, $engine) = @_;
+	return $engine->{heuristics}->new_queue;
+}
+
 
 # for fetch-only, we do the same as Build, except we're never happy
 package DPB::SubEngine::NoBuild;
 
-our @ISA = qw(DPB::SubEngine::Build);
+our @ISA = qw(DPB::SubEngine::BuildBase);
 sub is_done
 {
 	return 0;
