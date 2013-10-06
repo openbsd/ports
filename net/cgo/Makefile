@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/08/08 09:59:01 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2013/10/06 14:29:22 bcallah Exp $
 
 COMMENT =	simple terminal based gopher client
-DISTNAME =	cgo-20130722
+DISTNAME =	cgo-20131006
 CATEGORIES =	net
 
 HOMEPAGE =	https://github.com/kieselsteini/cgo/
@@ -23,5 +23,6 @@ NO_TEST =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cgo ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/cgo.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
