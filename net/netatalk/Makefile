@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.50 2013/06/20 06:54:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2013/10/06 21:49:32 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	AFP file and print services for IP networks
 
-DISTNAME=	netatalk-2.2.3
-REVISION=	5
+DISTNAME=	netatalk-2.2.5
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netatalk/}
 EXTRACT_SUFX=	.tar.bz2
@@ -29,7 +28,6 @@ CONFIGURE_ARGS=	--disable-cups \
 		--enable-krbV-uam \
 		--with-ssl-dir=/usr \
 		--with-uams-path=${PREFIX}/lib/netatalk/uams \
-		--without-acls \
 		--without-ldap \
 		--without-pam
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
