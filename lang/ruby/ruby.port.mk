@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.66 2013/08/18 21:05:20 zhuk Exp $
+# $OpenBSD: ruby.port.mk,v 1.67 2013/10/06 17:40:30 jeremy Exp $
 
 # ruby module
 
@@ -49,9 +49,9 @@ FULLPKGNAME?=		${MODRUBY_PKG_PREFIX}-${PKGNAME}
 SUBST_VARS+=		GEM_BIN_SUFFIX GEM_MAN_SUFFIX
 
 FLAVOR?=
-# Without a FLAVOR, assume the use of ruby 1.9.
+# Without a FLAVOR, assume the use of ruby 2.0.
 .    if empty(FLAVOR)
-FLAVOR =		ruby19
+FLAVOR =		ruby20
 .    endif
 
 # Check for conflicting FLAVORs and set MODRUBY_REV appropriately based
@@ -77,9 +77,9 @@ PKG_ARGS+=	-f ${PORTSDIR}/lang/ruby/ruby18.PLIST
 .endif
 
 # The default ruby version to use for non-gem/extconf ports.
-# Defaults to ruby 1.9 for consistency with the default ruby19
+# Defaults to ruby 2.0 for consistency with the default ruby20
 # FLAVOR for gem/extconf ports.
-MODRUBY_REV?=		1.9
+MODRUBY_REV?=		2.0
 
 # Have the man pages for the rbx and jruby versions of a gem file
 # use an -rbx or -jruby suffix to avoid conflicts with the
