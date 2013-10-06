@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.354 2013/10/02 08:37:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.355 2013/10/06 18:46:26 lteo Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -170,6 +170,7 @@
      SUBDIR += openexr-viewers
      SUBDIR += openimageio
      SUBDIR += openjpeg
+     SUBDIR += optipng
      SUBDIR += p5-Cairo
      SUBDIR += p5-Captcha-reCAPTCHA
      SUBDIR += p5-Chart
