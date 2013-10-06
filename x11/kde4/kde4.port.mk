@@ -1,4 +1,4 @@
-# $OpenBSD: kde4.port.mk,v 1.7 2013/07/04 00:44:21 zhuk Exp $
+# $OpenBSD: kde4.port.mk,v 1.8 2013/10/06 10:23:37 zhuk Exp $
 
 # The version of KDE SC in x11/kde4
 _MODKDE4_STABLE =	4.10.5
@@ -101,7 +101,6 @@ MODKDE4_RESOURCES ?=	No
 MODKDE4_USE ?=		runtime
 .else
 MODKDE4_USE ?=		libs
-MODKDE4_NO_QT ?=	Yes
 .endif
 
 _MODKDE4_USE_ALL =	libs runtime workspace pim games
@@ -135,6 +134,12 @@ FLAVOR ?=
 MODKDE4_USE +=		libs
 .endif
 
+# Small hack, until automoc4 will be gone
+PKGNAME ?= ${DISTNAME}
+.if !${PKGNAME:Mautomoc4-*}
+MODKDE4_BUILD_DEPENDS +=	devel/automoc
+.endif
+
 .if ${MODKDE4_RESOURCES:L} != "no"
 PKG_ARCH ?=		*
 MODKDE4_NO_QT ?=	Yes	# resources usually don't need Qt
@@ -145,12 +150,6 @@ MODKDE4_BUILD_DEPENDS +=	${MODKDE4_DEP_DIR}/workspace>=${MODKDE4_DEP_VERSION}
 MODKDE4_BUILD_DEPENDS +=	${MODKDE4_DEP_DIR}/libs>=${MODKDE4_DEP_VERSION}
 .   endif
 .else
-# Small hack, until automoc4 will be gone
-PKGNAME ?= ${DISTNAME}
-.   if !${PKGNAME:Mautomoc4-*}
-MODKDE4_BUILD_DEPENDS +=	devel/automoc
-.   endif
-
 MODKDE4_NO_QT ?=	No
 .   if ${MODKDE4_USE:L:Mlibs}
 .       if ${MODKDE4_NO_QT:L} == "yes"
