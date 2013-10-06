@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2013/09/28 08:50:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2013/10/06 15:32:11 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
 GNOME_VERSION=	3.2.3
-REVISION=	0
+REVISION=	1
 
 API_V=		${GNOME_VERSION:R}
 SUBST_VARS=	API_V
@@ -24,10 +24,11 @@ WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += c cairo cairo-gobject clutter-1.0 clutter-gtk-1.0 cogl
 WANTLIB += dbus-1 exiv2 expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gthread-2.0 gtk-3 harfbuzz jpeg
+WANTLIB += gstreamer-1.0 gthread-2.0 gtk-3 harfbuzz jpeg json-glib-1.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs rsvg-2 stdc++ tiff xcb xcb-render
-WANTLIB += xcb-shm z gstreamer-1.0 webp
+WANTLIB += png pthread pthread-stubs rsvg-2 secret-1 soup-2.4
+WANTLIB += soup-gnome-2.4 stdc++ tiff webkit2gtk-3.0 webp xcb
+WANTLIB += xcb-render xcb-shm z
 
 MODULES=	devel/dconf \
 		devel/gettext \
@@ -42,6 +43,7 @@ LIB_DEPENDS=	graphics/clutter/clutter-gtk  \
 		graphics/exiv2 \
 		graphics/libwebp \
 		multimedia/gstreamer1/core \
+		www/webkit,gtk3>=2.2.0v0 \
 		x11/gnome/librsvg
 
 RUN_DEPENDS=	graphics/dcraw \

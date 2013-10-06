@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2013/03/29 19:29:22 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.25 2013/10/06 15:32:11 ajacoutot Exp $
 @bin bin/gthumb
 include/gthumb-${API_V}/
 include/gthumb-${API_V}/gthumb/
@@ -110,6 +110,7 @@ include/gthumb-${API_V}/gthumb/typedefs.h
 include/gthumb-${API_V}/gthumb/zlib-utils.h
 lib/gthumb/
 lib/gthumb/extensions/
+lib/gthumb/extensions/23hq.extension
 lib/gthumb/extensions/bookmarks.extension
 lib/gthumb/extensions/cairo_io.extension
 lib/gthumb/extensions/catalogs.extension
@@ -121,10 +122,13 @@ lib/gthumb/extensions/desktop_background.extension
 lib/gthumb/extensions/edit_metadata.extension
 lib/gthumb/extensions/exiv2_tools.extension
 lib/gthumb/extensions/export_tools.extension
+lib/gthumb/extensions/facebook.extension
 lib/gthumb/extensions/file_manager.extension
 lib/gthumb/extensions/file_tools.extension
 lib/gthumb/extensions/file_viewer.extension
 lib/gthumb/extensions/find_duplicates.extension
+lib/gthumb/extensions/flicker.extension
+lib/gthumb/extensions/flicker_utils.extension
 lib/gthumb/extensions/gstreamer_tools.extension
 lib/gthumb/extensions/gstreamer_utils.extension
 lib/gthumb/extensions/image_print.extension
@@ -132,6 +136,7 @@ lib/gthumb/extensions/image_rotation.extension
 lib/gthumb/extensions/image_viewer.extension
 lib/gthumb/extensions/importer.extension
 lib/gthumb/extensions/jpeg_utils.extension
+lib/gthumb/extensions/lib23hq.so
 lib/gthumb/extensions/libbookmarks.so
 lib/gthumb/extensions/libcairo_io.so
 lib/gthumb/extensions/libcatalogs.so
@@ -143,10 +148,13 @@ lib/gthumb/extensions/libdesktop_background.so
 lib/gthumb/extensions/libedit_metadata.so
 lib/gthumb/extensions/libexiv2_tools.so
 lib/gthumb/extensions/libexport_tools.so
+lib/gthumb/extensions/libfacebook.so
 lib/gthumb/extensions/libfile_manager.so
 lib/gthumb/extensions/libfile_tools.so
 lib/gthumb/extensions/libfile_viewer.so
 lib/gthumb/extensions/libfind_duplicates.so
+lib/gthumb/extensions/libflicker.so
+lib/gthumb/extensions/libflicker_utils.so
 lib/gthumb/extensions/libgstreamer_tools.so
 lib/gthumb/extensions/libgstreamer_utils.so
 lib/gthumb/extensions/libimage_print.so
@@ -155,7 +163,10 @@ lib/gthumb/extensions/libimage_viewer.so
 lib/gthumb/extensions/libimporter.so
 lib/gthumb/extensions/libjpeg_utils.so
 lib/gthumb/extensions/liblist_tools.so
+lib/gthumb/extensions/liboauth.so
 lib/gthumb/extensions/libphoto_importer.so
+lib/gthumb/extensions/libphotobucket.so
+lib/gthumb/extensions/libpicasaweb.so
 lib/gthumb/extensions/libraw_files.so
 lib/gthumb/extensions/libred_eye_removal.so
 lib/gthumb/extensions/librename_series.so
@@ -165,7 +176,10 @@ lib/gthumb/extensions/libselections.so
 lib/gthumb/extensions/libslideshow.so
 lib/gthumb/extensions/libwebalbums.so
 lib/gthumb/extensions/list_tools.extension
+lib/gthumb/extensions/oauth.extension
 lib/gthumb/extensions/photo_importer.extension
+lib/gthumb/extensions/photobucket.extension
+lib/gthumb/extensions/picasaweb.extension
 lib/gthumb/extensions/raw_files.extension
 lib/gthumb/extensions/red_eye_removal.extension
 lib/gthumb/extensions/rename_series.extension
@@ -358,19 +372,33 @@ share/gthumb/ui/convert-format.ui
 share/gthumb/ui/crop-options.ui
 share/gthumb/ui/edit-comment-page.ui
 share/gthumb/ui/edit-exiv2-page.ui
+share/gthumb/ui/export-to-facebook.ui
+share/gthumb/ui/export-to-flickr.ui
+share/gthumb/ui/export-to-photobucket.ui
+share/gthumb/ui/export-to-picasaweb.ui
 share/gthumb/ui/extensions-preferences.ui
+share/gthumb/ui/facebook-album-properties.ui
+share/gthumb/ui/facebook-export-completed.ui
 share/gthumb/ui/filter-editor.ui
 share/gthumb/ui/find-duplicates-choose-folders.ui
 share/gthumb/ui/find-duplicates-dialog.ui
 share/gthumb/ui/find-duplicates.ui
+share/gthumb/ui/flicker-export-completed.ui
+share/gthumb/ui/flickr-ask-authorization-old.ui
 share/gthumb/ui/grayscale-options.ui
 share/gthumb/ui/histogram-info.ui
 share/gthumb/ui/image-viewer-preferences.ui
 share/gthumb/ui/image-wall.ui
+share/gthumb/ui/import-from-facebook.ui
+share/gthumb/ui/import-from-flickr.ui
+share/gthumb/ui/import-from-picasaweb.ui
 share/gthumb/ui/import-preferences.ui
 share/gthumb/ui/jpeg-options.ui
 share/gthumb/ui/location.ui
 share/gthumb/ui/mediabar.ui
+share/gthumb/ui/oauth-account-chooser.ui
+share/gthumb/ui/oauth-account-manager.ui
+share/gthumb/ui/oauth-ask-authorization.ui
 share/gthumb/ui/organize-files-task.ui
 share/gthumb/ui/organize-files.ui
 share/gthumb/ui/overwrite-dialog.ui
@@ -378,6 +406,10 @@ share/gthumb/ui/personalize-filters.ui
 share/gthumb/ui/personalize-scripts.ui
 share/gthumb/ui/photo-importer-options.ui
 share/gthumb/ui/photo-importer.ui
+share/gthumb/ui/photobucket-album-properties.ui
+share/gthumb/ui/photobucket-export-completed.ui
+share/gthumb/ui/picasa-web-album-properties.ui
+share/gthumb/ui/picasa-web-export-completed.ui
 share/gthumb/ui/png-options.ui
 share/gthumb/ui/preferences.ui
 share/gthumb/ui/print-layout.ui
