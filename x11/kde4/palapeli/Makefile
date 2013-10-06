@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:28 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/10/06 18:53:15 zhuk Exp $
 
 COMMENT =	jigsaw puzzle game for KDE
 DISTNAME =	palapeli-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	pala		50.0
 
@@ -9,6 +10,8 @@ WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kfile ${KDE4LIB}/kio
+
+MODKDE4_USE =	games
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
