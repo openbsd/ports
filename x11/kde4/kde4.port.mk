@@ -1,4 +1,4 @@
-# $OpenBSD: kde4.port.mk,v 1.9 2013/10/06 10:51:48 zhuk Exp $
+# $OpenBSD: kde4.port.mk,v 1.10 2013/10/06 14:42:24 zhuk Exp $
 
 # The version of KDE SC in x11/kde4
 _MODKDE4_STABLE =	4.10.5
@@ -233,6 +233,10 @@ MODKDE4_CONF_ARGS +=	-DINCLUDE_INSTALL_DIR:Path=${MODKDE4_INCLUDE_DIR} \
 			-DKDE4_INFO_INSTALL_DIR:Path=${PREFIX}/info \
 			-DKDE4_MAN_INSTALL_DIR:Path=${PREFIX}/man \
 			-DKDE4_SYSCONF_INSTALL_DIR:Path=${SYSCONFDIR}
+
+# Make sure that KDE4-specific places are searched first
+MODKDE4_CONF_ARGS +=	-DCMAKE_INCLUDE_PATH=${LOCALBASE}/${MODKDE4_INCLUDE_DIR} \
+			-DCMAKE_LIBRARY_PATH=${LOCALBASE}/${MODKDE4_LIB_DIR}
 .endif
 
 # FIXME
