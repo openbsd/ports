@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2013/10/06 14:03:42 landry Exp $
+# $OpenBSD: Makefile,v 1.95 2013/10/06 14:18:22 landry Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -15,7 +15,8 @@ EXTRACT_SUFX=	.tar.xz
 HOMEPAGE =	http://webkitgtk.org/
 MASTER_SITES =	${HOMEPAGE}/releases/
 
-MAINTAINER =	Landry Breuil <landry@openbsd.org>
+MAINTAINER =	Landry Breuil <landry@openbsd.org> \
+		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2 and BSD
 PERMIT_PACKAGE_CDROM =	Yes
