@@ -1,0 +1,13 @@
+$OpenBSD: patch-bindings_gir_WebKit-3_0_gir,v 1.1 2013/10/06 14:04:41 landry Exp $
+Fix build with webkit >= 2.2
+--- bindings/gir/WebKit-3.0.gir.orig	Sun Oct  6 10:50:12 2013
++++ bindings/gir/WebKit-3.0.gir	Sun Oct  6 10:50:19 2013
+@@ -15,7 +15,7 @@ Precise and Quantal. -->
+   <include name="GdkPixbuf" version="2.0"/>
+   <include name="Gio" version="2.0"/>
+   <include name="Gtk" version="3.0"/>
+-  <include name="JSCore" version="3.0"/>
++  <include name="JavaScriptCore" version="3.0"/>
+   <include name="Pango" version="1.0"/>
+   <include name="Soup" version="2.4"/>
+   <include name="cairo" version="1.0"/>
