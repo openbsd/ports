@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/10 22:28:05 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/10/06 19:12:08 lteo Exp $
 
 COMMENT=	file compressor with a high compression ratio
 
 DISTNAME=	rzip-2.1
+REVISION=	0
 CATEGORIES=	archivers
 HOMEPAGE=	http://rzip.samba.org/
 
-MAINTAINER=	Lawrence Teo <lteo.openbsd1@calyptix.com>
+MAINTAINER=	Lawrence Teo <lteo@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
