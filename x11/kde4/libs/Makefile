@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2013/10/06 10:51:48 zhuk Exp $
+# $OpenBSD: Makefile,v 1.34 2013/10/06 14:48:51 zhuk Exp $
 
 COMMENT =	KDE core libraries
 DISTNAME =	kdelibs-${MODKDE4_VERSION}
 PKGSPEC =	kdelibs->=4
-REVISION =	4
+REVISION =	5
 
 DPB_PROPERTIES =	parallel tag:kde4
 
@@ -118,7 +118,7 @@ CONFIGURE_ARGS +=	-D_KDE_DEFAULT_HOME_POSTFIX:String="4" \
 			-DKDESU_USE_SUDO_DEFAULT:Bool=TRUE
 
 # Reimplemented CMake modules, because previous were totally broken
-REWR_CMAKE_MODULES =	FindXine FindXKB FindPolkitQt
+REWR_CMAKE_MODULES =	FindKexiv2 FindXine FindXKB FindPolkitQt
 
 # Contain (required) additional functionality compared to system ones
 WRAP_CMAKE_MODULES =	FindLibXslt
