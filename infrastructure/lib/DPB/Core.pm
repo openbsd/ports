@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.59 2013/10/06 13:33:28 espie Exp $
+# $OpenBSD: Core.pm,v 1.60 2013/10/06 14:01:52 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -165,6 +165,12 @@ sub new
 	my $c = bless {host => DPB::Host->new($host, $prop)}, $class;
 	$allhosts{$c->hostname} = 1;
 	return $c;
+}
+
+sub clone
+{
+	my $self = shift;
+	return ref($self)->new($self->hostname, $self->prop);
 }
 
 sub host

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.9 2013/10/06 13:53:12 espie Exp $
+# $OpenBSD: Init.pm,v 1.10 2013/10/06 14:01:52 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -71,7 +71,7 @@ sub finalize
 			$core->host->{wantsquiggles} = 0.7;
 		}
 		for my $i (1 .. $core->prop->{jobs}) {
-			ref($core)->new($core->hostname, $core->prop)->mark_ready;
+			$core->clone->mark_ready;
 		}
 		return 1;
 	} else {
