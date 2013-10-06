@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2013/09/28 08:51:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.114 2013/10/06 09:08:54 ajacoutot Exp $
 
 # XXX change proxy settings without network-manager?
 
@@ -8,7 +8,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.10.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 
@@ -28,7 +28,7 @@ WANTLIB += graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0
 WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
 WANTLIB += gthread-2.0 gtk-3 gtop-2.0 harfbuzz harfbuzz-icu heimbase
 WANTLIB += ibus-1.0 icudata icui18n icuuc javascriptcoregtk-3.0
-WANTLIB += jpeg json-c json-glib-1.0 krb5 kvm lcms2 ltdl m ogg
+WANTLIB += jpeg json-c json-glib-1.0 krb5 kvm lcms2 ltdl m ogg orc-0.4
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png polkit-gobject-1 pthread pthread-stubs
 WANTLIB += pulse pulse-mainloop-glib pwquality rest-0.7 roken

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2013/09/28 08:50:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.106 2013/10/06 09:08:51 ajacoutot Exp $
 
 # add to meta/gnome,-extra when un-BROKEN
 BROKEN=		needs webkit2
@@ -9,7 +9,7 @@ COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	3.8.2
-REVISION=	2
+REVISION=	3
 
 # NOTE: when M changes, increment M accordingly
 M=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -34,7 +34,7 @@ WANTLIB += geoclue gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3
 WANTLIB += gobject-2.0 gpg-error graphite2 gstapp-1.0 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstfft-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
-WANTLIB += icui18n javascriptcoregtk-3.0 jpeg
+WANTLIB += icui18n javascriptcoregtk-3.0 jpeg orc-0.4
 WANTLIB += m notify p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs secret-1 soup-2.4
 WANTLIB += sqlite3 startup-notification-1 stdc++ webkitgtk-3.0

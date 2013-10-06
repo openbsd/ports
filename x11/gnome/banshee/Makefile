@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/09/24 18:53:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2013/10/06 09:08:54 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	music management and playback application for GNOME
 
 GNOME_VERSION=	2.6.1
 GNOME_PROJECT=	banshee
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	audio multimedia
 
@@ -26,7 +26,7 @@ WANTLIB += gstfft-0.10 gstfft-1.0 gstinterfaces-0.10 gstpbutils-0.10
 WANTLIB += gstpbutils-1.0 gstreamer-0.10 gstreamer-1.0 gsttag-0.10
 WANTLIB += gsttag-1.0 gstvideo-0.10 gstvideo-1.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += harfbuzz icui18n javascriptcoregtk-1.0
-WANTLIB += jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += jpeg m orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs secret-1 soup-2.4
 WANTLIB += soup-gnome-2.4 sqlite3 stdc++ webkitgtk-1.0 webp xcb
 WANTLIB += xcb-render xcb-shm xml2 xslt z

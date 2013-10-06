@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2013/09/28 08:51:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2013/10/06 09:08:55 ajacoutot Exp $
 
 COMMENT=	interfaces for interacting with online accounts
 
 GNOME_PROJECT=	gnome-online-accounts
 GNOME_VERSION=	3.10.0
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  goa-1.0              2.0      # .0.0
 SHARED_LIBS +=  goa-backend-1.0      2.0      # .0.0
@@ -21,7 +21,7 @@ WANTLIB += gobject-2.0 gpg-error graphite2 gstapp-1.0 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstfft-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += harfbuzz-icu icudata icui18n icuuc javascriptcoregtk-3.0
-WANTLIB += jpeg json-glib-1.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += jpeg json-glib-1.0 m orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs rest-0.7 secret-1
 WANTLIB += soup-2.4 sqlite3 stdc++ telepathy-glib webkitgtk-3.0
 WANTLIB += webp xcb xcb-render xcb-shm xml2 xslt z

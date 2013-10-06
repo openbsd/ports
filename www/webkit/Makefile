@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2013/09/24 18:53:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.93 2013/10/06 09:08:52 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -11,7 +11,7 @@ EPOCH =		0
 CATEGORIES =	www
 DPB_PROPERTIES =parallel
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE =	http://webkitgtk.org/
 MASTER_SITES =	${HOMEPAGE}/releases/
@@ -83,7 +83,7 @@ WANTLIB =	ICE SM X11 Xcomposite Xcursor Xdamage Xext \
 		expat fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 gthread-2.0 jpeg m harfbuzz-icu \
 		Xxf86vm dbus-1 dbus-glib-1 drm geoclue \
-		gstaudio-1.0 gstfft-1.0 gdk_pixbuf-2.0 \
+		gstaudio-1.0 gstfft-1.0 gdk_pixbuf-2.0 orc-0.4 \
 		gstreamer-1.0 gstbase-1.0 gstvideo-1.0 gstapp-1.0 gstpbutils-1.0 \
 		icudata icui18n icuuc sqlite3 xslt enchant soup-2.4 \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pthread GL xcb-shm \
