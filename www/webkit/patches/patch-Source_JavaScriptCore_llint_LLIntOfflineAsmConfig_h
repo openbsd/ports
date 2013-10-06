@@ -1,0 +1,15 @@
+$OpenBSD: patch-Source_JavaScriptCore_llint_LLIntOfflineAsmConfig_h,v 1.1 2013/10/06 14:23:04 landry Exp $
+https://bug-103128-attachments.webkit.org/attachment.cgi?id=202651
+--- Source/JavaScriptCore/llint/LLIntOfflineAsmConfig.h.orig	Sun Oct  6 14:46:31 2013
++++ Source/JavaScriptCore/llint/LLIntOfflineAsmConfig.h	Sun Oct  6 14:47:41 2013
+@@ -153,4 +153,10 @@
+ #endif
+ #endif
+ 
++#if CPU(PPC)
++#define OFFLINE_ASM_FOUR_BYTE_BOOL 1
++#else
++#define OFFLINE_ASM_FOUR_BYTE_BOOL 0
++#endif
++
+ #endif // LLIntOfflineAsmConfig_h
