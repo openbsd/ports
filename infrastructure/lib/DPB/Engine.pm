@@ -1,7 +1,7 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.92 2013/10/06 13:22:18 espie Exp $
+# $OpenBSD: Engine.pm,v 1.93 2013/10/06 13:33:29 espie Exp $
 #
-# Copyright (c) 2010 Marc Espie <espie@openbsd.org>
+# Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above

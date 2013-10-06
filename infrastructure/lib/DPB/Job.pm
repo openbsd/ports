@@ -1,7 +1,7 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Job.pm,v 1.8 2013/09/16 11:23:50 espie Exp $
+# $OpenBSD: Job.pm,v 1.9 2013/10/06 13:33:31 espie Exp $
 #
-# Copyright (c) 2010 Marc Espie <espie@openbsd.org>
+# Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above

@@ -1,7 +1,7 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Clock.pm,v 1.5 2013/09/18 13:26:39 espie Exp $
+# $OpenBSD: Clock.pm,v 1.6 2013/10/06 13:33:27 espie Exp $
 #
-# Copyright (c) 2011 Marc Espie <espie@openbsd.org>
+# Copyright (c) 2011-2013 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above

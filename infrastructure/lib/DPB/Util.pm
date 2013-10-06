@@ -1,7 +1,7 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Util.pm,v 1.3 2013/01/04 12:06:25 espie Exp $
+# $OpenBSD: Util.pm,v 1.4 2013/10/06 13:33:35 espie Exp $
 #
-# Copyright (c) 2010 Marc Espie <espie@openbsd.org>
+# Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above

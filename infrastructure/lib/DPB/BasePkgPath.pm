@@ -1,7 +1,7 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: BasePkgPath.pm,v 1.4 2013/03/03 11:11:08 espie Exp $
+# $OpenBSD: BasePkgPath.pm,v 1.5 2013/10/06 13:33:26 espie Exp $
 #
-# Copyright (c) 2010 Marc Espie <espie@openbsd.org>
+# Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above

@@ -1,7 +1,7 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Signature.pm,v 1.5 2013/03/03 00:50:00 espie Exp $
+# $OpenBSD: Signature.pm,v 1.6 2013/10/06 13:33:34 espie Exp $
 #
-# Copyright (c) 2010 Marc Espie <espie@openbsd.org>
+# Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above
