@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.24 2013/10/06 12:38:23 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.25 2013/10/06 13:22:19 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -552,87 +552,6 @@ sub new_queue
 {
 	my $self = shift;
 	return DPB::Heuristics::Queue->new($self);
-}
-
-package DPB::Heuristics::FetchQueue;
-our @ISA = qw(DPB::Heuristics::Queue);
-sub new
-{
-	my ($class, $h) = @_;
-	$class->SUPER::new($h)->set_h1;
-}
-
-sub set_h1
-{
-	bless shift, "DPB::Heuristics::FetchQueue1";
-}
-
-sub set_h2
-{
-	bless shift, "DPB::Heuristics::FetchQueue2";
-}
-
-sub set_fetchonly
-{
-	bless shift, "DPB::Heuristics::FetchOnlyQueue";
-}
-
-sub sorted
-{
-	my $self = shift;
-	if ($self->{results}++ > 50 ||
-	    defined $self->{sorted} && @{$self->{sorted}} < 10) {
-		$self->{results} = 0;
-		undef $self->{sorted};
-	}
-	return $self->{sorted} //= DPB::Heuristics::SimpleSorter->new($self);
-}
-
-package DPB::Heuristics::FetchQueue1;
-our @ISA = qw(DPB::Heuristics::FetchQueue);
-
-# heuristic 1: grab the smallest distfiles that can build directly
-# so that we avoid queue starvation
-sub sorted_values
-{
-	my $self = shift;
-	my @l = grep {$_->{path}{has} == 0} values %{$self->{o}};
-	if (!@l) {
-		@l = grep {$_->{path}{has} < 2} values %{$self->{o}};
-		if (!@l) {
-			@l = values %{$self->{o}};
-		}
-	}
-	return [sort {$b->{sz} <=> $a->{sz}} @l];
-}
-
-package DPB::Heuristics::FetchQueue2;
-our @ISA = qw(DPB::Heuristics::FetchQueue);
-
-# heuristic 2: assume we're running good enough, grab distfiles that allow
-# build to proceed as usual
-# we don't care so much about multiple distfiles
-sub sorted_values
-{
-	my $self = shift;
-	my @l = grep {$_->{path}{has} < 2} values %{$self->{o}};
-	if (!@l) {
-		@l = values %{$self->{o}};
-	}
-	my $h = $self->{h};
-	return [sort
-	    {$h->measure($a->{path}) <=> $h->measure($b->{path})}
-	    @l];
-}
-
-package DPB::Heuristics::FetchOnlyQueue;
-our @ISA = qw(DPB::Heuristics::FetchQueue);
-
-# for fetch-only, grab all files, largest ones first.
-sub sorted_values
-{
-	my $self = shift;
-	return [sort {$a->{sz} <=> $b->{sz}} values %{$self->{o}}];
 }
 
 1;

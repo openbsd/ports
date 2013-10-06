@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.91 2013/10/03 08:03:27 espie Exp $
+# $OpenBSD: Engine.pm,v 1.92 2013/10/06 13:22:18 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -28,6 +28,17 @@ our @ISA = qw(DPB::Limiter);
 use DPB::Heuristics;
 use DPB::Util;
 
+sub subengine_class
+{
+	my ($class, $state) = @_;
+	if ($state->{fetch_only}) {
+		return "DPB::SubEngine::NoBuild";
+	} else {
+		require DPB::SubEngine::Build;
+		return "DPB::SubEngine::Build";
+	}
+}
+
 sub new
 {
 	my ($class, $state) = @_;
@@ -45,9 +56,9 @@ sub new
 	    ts => time(),
 	    requeued => [],
 	    ignored => []}, $class;
-	$o->{buildable} = ($state->{fetch_only} ? "DPB::SubEngine::NoBuild"
-	    : "DPB::SubEngine::Build")->new($o, $state->builder);
+	$o->{buildable} = $class->subengine_class($state)->new($o, $state->builder);
 	if ($state->{want_fetchinfo}) {
+		require DPB::SubEngine::Fetch;
 		$o->{tofetch} = DPB::SubEngine::Fetch->new($o);
 	}
 	$o->{log} = $state->logger->open("engine");

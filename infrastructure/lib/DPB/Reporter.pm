@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $openbsd: reporter.pm,v 1.20 2013/09/30 19:08:35 espie exp $
+# $OpenBSD: Reporter.pm,v 1.23 2013/10/06 13:22:19 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -21,12 +21,15 @@ use warnings;
 use OpenBSD::Error;
 use DPB::Util;
 use DPB::Clock;
-use DPB::MiniCurses;
 
 package DPB::Reporter;
 my $singleton;
 
-sub ttyclass() 	{ "DPB::Reporter::Tty" }
+sub ttyclass() 	
+{
+	require DPB::Reporter::Tty;
+	return "DPB::Reporter::Tty";
+}
 
 sub term_send
 {
@@ -155,88 +158,6 @@ sub myprint
 		$singleton->myprint(@_);
 	} else {
 		print @_;
-	}
-}
-
-package DPB::Reporter::Tty;
-our @ISA = qw(DPB::MiniCurses DPB::Reporter DPB::Limiter);
-
-my $extra = '';
-sub handle_window
-{
-	my $self = shift;
-	$self->set_cursor;
-	$self->find_window_size;
-	$self->refresh;
-}
-
-sub set_sig_handlers
-{
-	my $self = shift;
-	$self->SUPER::set_sig_handlers;
-	$SIG{'WINCH'} = sub {
-		$self->handle_window;
-	};
-	OpenBSD::Handler->register(sub {
-		$self->reset_cursor; });
-}
-
-sub filter
-{
-	'report';
-}
-
-sub new
-{
-	my $class = shift;
-	my $state = shift;
-	$class->make_singleton($state, @_);
-	$singleton->create_terminal;
-	$singleton->set_sig_handlers;
-	if ($state->{subst}->value("NO_CURSOR")) {
-		$singleton->{invisible} = 
-		    $singleton->{terminal}->Tputs("vi", 1);
-		$singleton->{visible} = 
-		    $singleton->{terminal}->Tputs("ve", 1);
-	}
-	# no cursor, to avoid flickering
-	$singleton->set_cursor;
-	return $singleton;
-}
-
-sub report
-{
-	my ($self, $force) = @_;
-	if ($self->{force}) {
-		$force = 1;
-		undef $self->{force};
-	}
-	$self->limit($force, 150, "REP", 1,
-	    sub {
-		my $msg = "";
-		for my $prod (@{$self->{producers}}) {
-			$msg.= $prod->report;
-		}
-		$msg .= $extra;
-		if ($msg ne $self->{msg} || $self->{continued}) {
-			if (defined $self->{record}) {
-				print {$self->{record}} "@@@", time(), "\n";
-				print {$self->{record}} $msg;
-			}
-			$self->{continued} = 0;
-			my $method = $self->{write};
-			$self->$method($msg);
-			$self->{msg} = $msg;
-		}
-	    });
-}
-
-sub myprint
-{
-	my $self = shift;
-	for my $string (@_) {
-		$string =~ s/^\t/       /gm; # XXX dirty hack for warn
-		$extra .= $string;
 	}
 }
 
