@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Affinity.pm,v 1.4 2012/12/30 14:04:17 espie Exp $
+# $OpenBSD: Affinity.pm,v 1.5 2013/10/06 12:37:05 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -58,6 +58,9 @@ sub start
 		$w->{affinity} = $host;
 		print $fh "host=$host\n";
 		print $fh "path=", $w->fullpkgpath, "\n";
+		if ($core->{inmem}) {
+			print $fh "mem=$core->{inmem}\n";
+		}
 		close $fh;
 	}
 }
@@ -69,6 +72,7 @@ sub unmark
 	my ($self, $v) = @_;
 	unlink($self->affinity_marker($v));
 	delete $v->{affinity};
+	delete $v->{mem_affinity};
 }
 
 # on the other hand, when we finish building a port, we can unmark all paths.
@@ -88,7 +92,7 @@ sub retrieve_existing_markers
 	while (my $e = readdir $d) {
 		next unless -f "$self->{dir}/$e";
 		open my $fh, '<', "$self->{dir}/$e" or return;
-		my ($hostname, $pkgpath);
+		my ($hostname, $pkgpath, $memory);
 		while (<$fh>) {
 			chomp;
 			if (m/^host\=(.*)/) {
@@ -97,12 +101,18 @@ sub retrieve_existing_markers
 			if (m/^path\=(.*)/) {
 				$pkgpath = $1;
 			}
+			if (m/^mem\=(.*)/) {
+				$memory = $1;
+			}
 		}
 		close $fh;
 		next unless (defined $pkgpath) && (defined $hostname);
 
 		my $v = DPB::PkgPath->new($pkgpath);
 		$v->{affinity} = $hostname;
+		if ($memory) {
+			$v->{mem_affinity} = $memory;
+		}
 		print $log "$$:", $v->fullpkgpath, " => ", $hostname, "\n";
 	}
 	close $log;
@@ -111,11 +121,13 @@ sub retrieve_existing_markers
 sub simplifies_to
 {
 	my ($self, $v, $w) = @_;
-	if (defined $v->{affinity}) {
-		$w->{affinity} //= $v->{affinity};
-	}
-	if (defined $w->{affinity}) {
-		$v->{affinity} //= $w->{affinity};
+	for my $tag ("affinity", "mem_affinity") {
+		if (defined $v->{$tag}) {
+			$w->{$tag} //= $v->{$tag};
+		}
+		if (defined $w->{$tag}) {
+			$v->{$tag} //= $w->{$tag};
+		}
 	}
 }
 
