@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Build.pm,v 1.3 2013/10/06 13:48:28 espie Exp $
+# $OpenBSD: Build.pm,v 1.4 2013/10/07 18:01:33 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -23,8 +23,7 @@ our @ISA = qw(DPB::SubEngine::BuildBase);
 sub new
 {
 	my ($class, $engine, $builder) = @_;
-	my $o = $class->SUPER::new($engine);
-	$o->{builder} = $builder;
+	my $o = $class->SUPER::new($engine, $builder);
 	$o->{toinstall} = [];
 	$o->{nfs} = {};
 	return $o;
