@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.54 2013/10/06 13:33:33 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.55 2013/10/07 17:50:29 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -52,9 +52,13 @@ sub new
 
 sub want_size
 {
-	my ($self, $v) = @_;
+	my ($self, $v, $core) = @_;
 	if (!$self->{wantsize}) {
 		return 0;
+	}
+	# always show for inmem
+	if ($core->{inmem}) {
+		return 1;
 	}
 	# do we already have this stats ? don't run it every time
 	if ($self->{heuristics}->match_pkgname($v)) {
