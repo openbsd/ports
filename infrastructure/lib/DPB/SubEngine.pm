@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SubEngine.pm,v 1.13 2013/10/07 20:01:55 espie Exp $
+# $OpenBSD: SubEngine.pm,v 1.14 2013/10/07 20:23:13 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -107,13 +107,11 @@ sub lock_and_start_build
 	}
 }
 
-sub start
+sub use_core
 {
-	my $self = shift;
-	my $core = $self->get_core;
-
+	my ($self, $core) = @_;
 	if ($self->preempt_core($core)) {
-		return;
+		return 1;
 	}
 
 	my $o = $self->sorted($core);
@@ -135,14 +133,21 @@ sub start
 		}
 		# if there's no external lock, we can build
 		if ($self->can_start_build($v, $core)) {
-			return;
+			return 1;
 		}
 	}
 	if ($self->recheck_mismatches($core)) {
-		return;
+		return 1;
 	}
-	# couldn't build anything, don't forget to give back the core.
-	$core->mark_ready;
+	return 0;
+}
+
+sub start
+{
+	my $self = shift;
+	my $core = $self->get_core;
+
+	$self->use_core($core) || $core->mark_ready;
 }
 
 sub preempt_core

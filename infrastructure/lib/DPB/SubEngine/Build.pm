@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Build.pm,v 1.5 2013/10/07 20:01:56 espie Exp $
+# $OpenBSD: Build.pm,v 1.6 2013/10/07 20:23:13 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -134,8 +134,7 @@ sub recheck_mismatches
 	# let's make sure we don't have something else first
 	if (@{$self->{mismatches}} > 0) {
 		if ($self->{engine}->check_buildable(1)) {
-			$core->mark_ready;
-			return $self->start;
+			return $self->use_core($core);
 		}
 	}
 	# second pass, affinity mismatches
