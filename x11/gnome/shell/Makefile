@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.60 2013/09/28 08:51:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2013/10/07 14:27:15 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.10.0.1
-REVISION=		0
+REVISION=		1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -94,8 +94,7 @@ MODGNOME_DESKTOP_FILE=	Yes
 
 LIBTOOL_FLAGS= 		--tag=disable-static
 
-CONFIGURE_ARGS=		--disable-static \
-			--without-systemd
+CONFIGURE_ARGS=		--disable-static
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.11

@@ -1,0 +1,53 @@
+$OpenBSD: patch-src_shell-global_c,v 1.1 2013/10/07 14:27:15 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=709571
+
+--- src/shell-global.c.orig	Mon Oct  7 16:06:32 2013
++++ src/shell-global.c	Mon Oct  7 16:06:00 2013
+@@ -34,6 +34,11 @@
+ #include <malloc.h>
+ #endif
+ 
++#ifdef __OpenBSD__
++#include <sys/param.h>
++#include <sys/sysctl.h>
++#endif
++
+ #include "shell-enum-types.h"
+ #include "shell-global-private.h"
+ #include "shell-perf-log.h"
+@@ -1100,20 +1105,30 @@ shell_global_reexec_self (ShellGlobal *global)
+   char *buf_p;
+   char *buf_end;
+   GError *error = NULL;
+-  
+-  /* Linux specific (I think, anyways). */
++
++#if defined __linux__
+   if (!g_file_get_contents ("/proc/self/cmdline", &buf, &len, &error))
+     {
+       g_warning ("failed to get /proc/self/cmdline: %s", error->message);
+       return;
+     }
+-      
++#elif defined __OpenBSD__
++  int pid = getpid();
++  int mib[] = { CTL_KERN, KERN_PROC_ARGS, pid, KERN_PROC_ARGV };
++  if (sysctl(mib, G_N_ELEMENTS (mib), &buf, &len, NULL, 0) == -1) {
++    g_warning ("failed to get command line args: %d", errno);
++    return;
++  }
++#else
++  return;
++#endif
++  
+   buf_end = buf+len;
+   arr = g_ptr_array_new ();
+   /* The cmdline file is NUL-separated */
+   for (buf_p = buf; buf_p < buf_end; buf_p = buf_p + strlen (buf_p) + 1)
+     g_ptr_array_add (arr, buf_p);
+-  
++
+   g_ptr_array_add (arr, NULL);
+ 
+   /* Close all file descriptors other than stdin/stdout/stderr, otherwise
