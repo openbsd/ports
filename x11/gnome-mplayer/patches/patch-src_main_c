@@ -1,19 +1,10 @@
-$OpenBSD: patch-src_main_c,v 1.26 2013/05/27 11:43:08 dcoppa Exp $
+$OpenBSD: patch-src_main_c,v 1.27 2013/10/07 10:22:38 dcoppa Exp $
 
 Fix problem with remembered softvol not being loaded
-(upstream svn revision r2424)
 
---- src/main.c.orig	Mon Feb 18 15:58:47 2013
-+++ src/main.c	Mon May 27 12:48:57 2013
-@@ -65,7 +65,6 @@ static gchar *tv_input;
- static gint tv_width;
- static gint tv_height;
- static gint tv_fps;
--static gint pref_volume;
- 
- typedef struct _PlayData {
-     gchar uri[4096];
-@@ -89,7 +88,6 @@ static GOptionEntry entries[] = {
+--- src/main.c.orig	Mon Oct  7 10:34:53 2013
++++ src/main.c	Mon Oct  7 10:38:49 2013
+@@ -88,7 +88,6 @@ static GOptionEntry entries[] = {
       N_("Last software volume percentage- only applied when remember_softvol is set to TRUE"),
       NULL},
      {"mixer", 0, 0, G_OPTION_ARG_STRING, &(audio_device.alsa_mixer), N_("Mixer to use"), NULL},
@@ -21,7 +12,7 @@ Fix problem with remembered softvol not being loaded
      // note that sizeof(gint)==sizeof(gboolean), so we can give &showcontrols here
      {"showcontrols", 0, 0, G_OPTION_ARG_INT, &showcontrols, N_("Show the controls in window"),
       "[0|1]"},
-@@ -832,7 +830,6 @@ int main(int argc, char *argv[])
+@@ -841,7 +840,6 @@ int main(int argc, char *argv[])
      update_control_flag = FALSE;
      skip_fixed_allocation_on_show = FALSE;
      skip_fixed_allocation_on_hide = FALSE;
@@ -29,7 +20,17 @@ Fix problem with remembered softvol not being loaded
      use_mplayer2 = FALSE;
      enable_global_menu = FALSE;
      cover_art_uri = NULL;
-@@ -1042,7 +1039,9 @@ int main(int argc, char *argv[])
+@@ -910,9 +908,6 @@ int main(int argc, char *argv[])
+     pplevel = gm_pref_store_get_int(gm_store, PPLEVEL);
+ #ifndef HAVE_ASOUNDLIB
+     volume = gm_pref_store_get_int(gm_store, VOLUME);
+-    if (pref_volume == -1) {
+-        pref_volume = volume;
+-    }
+ #endif
+     audio_channels = gm_pref_store_get_int(gm_store, AUDIO_CHANNELS);
+     use_hw_audio = gm_pref_store_get_boolean(gm_store, USE_HW_AUDIO);
+@@ -1058,7 +1053,9 @@ int main(int argc, char *argv[])
          printf(_("gmtk v%s\n"), gmtk_version());
          printf("GTK %i.%i.%i\n", GTK_MAJOR_VERSION, GTK_MINOR_VERSION, GTK_MICRO_VERSION);
          printf("GLIB %i.%i.%i\n", GLIB_MAJOR_VERSION, GLIB_MINOR_VERSION, GLIB_MICRO_VERSION);
@@ -39,32 +40,19 @@ Fix problem with remembered softvol not being loaded
      }
  
      if (cache_size == 0)
-@@ -1084,6 +1083,7 @@ int main(int argc, char *argv[])
-         if (remember_softvol && volume_softvol != -1) {
-             gm_log(verbose, G_LOG_LEVEL_INFO, "Using last volume of %f%%", volume_softvol * 100.0);
-             volume = (gdouble) volume_softvol *100.0;
-+            audio_device.volume = volume / 100.0;
-         } else {
-             volume = 100.0;
-         }
-@@ -1308,16 +1308,11 @@ int main(int argc, char *argv[])
-     // disabling this line seems to help with hangs on startup when using pulseaudio
+@@ -1326,14 +1323,7 @@ int main(int argc, char *argv[])
      //gm_audio_get_volume(&audio_device);
      set_media_player_attributes(media);
--    if (!softvol) {
+     if (softvol) {
 -        if (pref_volume != -1) {
 -            audio_device.volume = (gdouble) pref_volume / 100.0;
 -            gm_log(verbose, G_LOG_LEVEL_INFO, "The volume on '%s' is %f", audio_device.description,
 -                   audio_device.volume);
 -            volume = audio_device.volume * 100;
+-        } else {
+-            audio_device.volume = volume / 100.0;
 -        }
--    } else {
--        audio_device.volume = volume / 100.0;
-+    if (softvol) {
-+            audio_device.volume = volume / 100.0;
++        audio_device.volume = volume / 100.0;
      }
-+    gm_log(verbose, G_LOG_LEVEL_DEBUG, "Volume is %lf Audio Device Volume = %f", volume, audio_device.volume);
-+
- #ifdef GTK2_12_ENABLED
-     gtk_scale_button_set_value(GTK_SCALE_BUTTON(vol_slider), audio_device.volume);
- #else
+     gm_log(verbose, G_LOG_LEVEL_DEBUG, "Volume is %lf Audio Device Volume = %f", volume, audio_device.volume);
+ 

@@ -1,9 +1,11 @@
-$OpenBSD: patch-apps_gnome-mplayer_preferences_gschema_xml,v 1.10 2013/05/27 11:43:08 dcoppa Exp $
+$OpenBSD: patch-apps_gnome-mplayer_preferences_gschema_xml,v 1.11 2013/10/07 10:22:37 dcoppa Exp $
 
 Set some sane defaults:
 use xv as default video output
 disable bar animation in full screen
+disable fetching of cover artworks (erratic behaviour)
 use mplayer's software volume control
+disable PulseAudio's flat volume option
 remember the software volume value
 set location of mplayer binary
 use /dev/rcd0c as default optical device
@@ -11,8 +13,8 @@ use sndio as default audio device
 use English as default language
 disable nautilus plugin
 
---- apps.gnome-mplayer.preferences.gschema.xml.orig	Wed Jan  4 21:12:33 2012
-+++ apps.gnome-mplayer.preferences.gschema.xml	Mon May 27 12:18:43 2013
+--- apps.gnome-mplayer.preferences.gschema.xml.orig	Wed Apr 24 21:48:11 2013
++++ apps.gnome-mplayer.preferences.gschema.xml	Mon Oct  7 10:20:53 2013
 @@ -1,7 +1,7 @@
  <schemalist>
    <schema id="apps.gnome-mplayer.preferences" path="/apps/gnome-mplayer/preferences/">
@@ -31,6 +33,15 @@ disable nautilus plugin
        <summary>Disable Animation</summary>
        <description>Disable animation of fullscreen control bar sliding away</description>
      </key>
+@@ -126,7 +126,7 @@
+       <description>Time in seconds before controls are hidden when in fullscreen mode values less than 1 disable auto hide</description>
+     </key>
+     <key name="disable-cover-art-fetch" type="b">
+-      <default>false</default>
++      <default>true</default>
+       <summary>Disable Fetch of Cover Art</summary>
+       <description>When set to TRUE cached covers are loaded, but new ones are not retrieved</description>
+     </key>
 @@ -136,7 +136,7 @@
        <description>When set to TRUE the cache value is always used, even for streaming media</description>
      </key>
@@ -39,6 +50,15 @@ disable nautilus plugin
 +      <default>true</default>
        <summary>Have mplayer use the softvol option</summary>
        <description>When set to TRUE the softvol option is passed to mplayer, useful for machines without pulseaudio</description>
+     </key>
+@@ -246,7 +246,7 @@
+       <description>Place status icon in the tray</description>
+     </key>
+     <key name="use-pulse-flat-volume" type="b">
+-      <default>true</default>
++      <default>false</default>
+       <summary>Set to TRUE if using with pulseaudio 0.9.15</summary>
+       <description>PulseAudio started using a flat volume option by default in 0.9.15 (you can disable however)</description>
      </key>
 @@ -271,7 +271,7 @@
        <description>Configuration value for mplayer to control the number of audio channels</description>
@@ -90,4 +110,4 @@ disable nautilus plugin
 +      <default>false</default>
        <summary>Enable Audio/Video plugin in Nautilus</summary>
        <description>Enable Audio/Video plugin in Nautilus</description>
-     </key>    
+     </key>

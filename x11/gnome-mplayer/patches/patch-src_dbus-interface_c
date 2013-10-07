@@ -1,105 +1,11 @@
-$OpenBSD: patch-src_dbus-interface_c,v 1.2 2013/05/24 08:31:37 dcoppa Exp $
-
-Protect for media == null in dbus-interface
-(upstream svn revision r2440)
+$OpenBSD: patch-src_dbus-interface_c,v 1.3 2013/10/07 10:22:38 dcoppa Exp $
 
 Prevent gnome-mplayer from hanging at startup when executed outside
 of a Desktop Environment
 
---- src/dbus-interface.c.orig	Mon Feb 18 15:58:47 2013
-+++ src/dbus-interface.c	Thu May 23 15:37:07 2013
-@@ -112,9 +112,11 @@ static DBusHandlerResult filter_func(DBusConnection * 
-             gm_log(verbose, G_LOG_LEVEL_DEBUG, "Path matched %s", dbus_message_get_path(message));
-             if (message_type == DBUS_MESSAGE_TYPE_SIGNAL) {
-                 if (g_ascii_strcasecmp(dbus_message_get_member(message), "Open") == 0) {
--                    if (gmtk_media_player_get_media_state(GMTK_MEDIA_PLAYER(media)) != MEDIA_STATE_UNKNOWN) {
--                        dontplaynext = TRUE;
--                        gmtk_media_player_set_state(GMTK_MEDIA_PLAYER(media), MEDIA_STATE_QUIT);
-+                    if (media != NULL) {
-+                        if (gmtk_media_player_get_media_state(GMTK_MEDIA_PLAYER(media)) != MEDIA_STATE_UNKNOWN) {
-+                            dontplaynext = TRUE;
-+                            gmtk_media_player_set_state(GMTK_MEDIA_PLAYER(media), MEDIA_STATE_QUIT);
-+                        }
-                     }
-                     dbus_error_init(&error);
-                     if (dbus_message_get_args(message, &error, DBUS_TYPE_STRING, &s, DBUS_TYPE_INVALID)) {
-@@ -326,8 +328,10 @@ static DBusHandlerResult filter_func(DBusConnection * 
- 					dbus_unhook();
-                     gtk_main_quit();
- */
--                    if (gmtk_media_player_get_media_state(GMTK_MEDIA_PLAYER(media)) != MEDIA_STATE_UNKNOWN)
--                        dontplaynext = TRUE;
-+                    if (media != NULL) {
-+                        if (gmtk_media_player_get_media_state(GMTK_MEDIA_PLAYER(media)) != MEDIA_STATE_UNKNOWN)
-+                            dontplaynext = TRUE;
-+                    }
-                     g_idle_add(set_quit, idledata);
-                     return DBUS_HANDLER_RESULT_HANDLED;
-                 }
-@@ -393,10 +397,12 @@ static DBusHandlerResult filter_func(DBusConnection * 
-                 if (g_ascii_strcasecmp(dbus_message_get_member(message), "SetPercent") == 0 && idledata != NULL) {
-                     dbus_error_init(&error);
-                     if (dbus_message_get_args(message, &error, DBUS_TYPE_DOUBLE, &percent, DBUS_TYPE_INVALID)) {
--                        gmtk_media_player_seek(GMTK_MEDIA_PLAYER(media),
--                                               gmtk_media_player_get_attribute_double(GMTK_MEDIA_PLAYER(media),
--                                                                                      ATTRIBUTE_LENGTH) * percent,
--                                               SEEK_ABSOLUTE);
-+                        if (media != NULL) {
-+                            gmtk_media_player_seek(GMTK_MEDIA_PLAYER(media),
-+                                                   gmtk_media_player_get_attribute_double(GMTK_MEDIA_PLAYER(media),
-+                                                                                          ATTRIBUTE_LENGTH) * percent,
-+                                                   SEEK_ABSOLUTE);
-+                        }
-                         g_idle_add(set_progress_value, idledata);
-                     } else {
-                         dbus_error_free(&error);
-@@ -410,10 +416,12 @@ static DBusHandlerResult filter_func(DBusConnection * 
-                         (message, &error, DBUS_TYPE_DOUBLE, &percent, DBUS_TYPE_INT32, &source_id, DBUS_TYPE_INVALID)) {
-                         if (source_id != control_id) {
-                             idledata->fromdbus = TRUE;
--                            gmtk_media_player_seek(GMTK_MEDIA_PLAYER(media),
--                                                   gmtk_media_player_get_attribute_double(GMTK_MEDIA_PLAYER(media),
--                                                                                          ATTRIBUTE_LENGTH) * percent,
--                                                   SEEK_ABSOLUTE);
-+                            if (media != NULL) {
-+                                gmtk_media_player_seek(GMTK_MEDIA_PLAYER(media),
-+                                                       gmtk_media_player_get_attribute_double(GMTK_MEDIA_PLAYER(media),
-+                                                                                              ATTRIBUTE_LENGTH) *
-+                                                       percent, SEEK_ABSOLUTE);
-+                            }
-                         }
-                     } else {
-                         dbus_error_free(&error);
-@@ -442,8 +450,10 @@ static DBusHandlerResult filter_func(DBusConnection * 
-                     dbus_error_init(&error);
-                     if (dbus_message_get_args(message, &error, DBUS_TYPE_STRING, &s, DBUS_TYPE_INVALID)) {
-                         g_strlcpy(idledata->progress_text, s, sizeof(idledata->progress_text));
--                        if (gmtk_media_player_get_media_state(GMTK_MEDIA_PLAYER(media)) != MEDIA_STATE_PLAY)
--                            g_idle_add(set_progress_text, idledata);
-+                        if (media != NULL) {
-+                            if (gmtk_media_player_get_media_state(GMTK_MEDIA_PLAYER(media)) != MEDIA_STATE_PLAY)
-+                                g_idle_add(set_progress_text, idledata);
-+                        }
-                     } else {
-                         dbus_error_free(&error);
-                     }
-@@ -506,9 +516,12 @@ static DBusHandlerResult filter_func(DBusConnection * 
-                 if (g_ascii_strcasecmp(dbus_message_get_member(message), "SetURL") == 0) {
-                     dbus_error_init(&error);
-                     if (dbus_message_get_args(message, &error, DBUS_TYPE_STRING, &s, DBUS_TYPE_INVALID)) {
--                        gmtk_media_player_set_uri(GMTK_MEDIA_PLAYER(media), s);
--                        g_strlcpy(idledata->url, s, sizeof(idledata->url));
--                        g_idle_add(show_copyurl, idledata);
-+                        if (s != NULL) {
-+                            if (media != NULL)
-+                                gmtk_media_player_set_uri(GMTK_MEDIA_PLAYER(media), s);
-+                            g_strlcpy(idledata->url, s, sizeof(idledata->url));
-+                            g_idle_add(show_copyurl, idledata);
-+                        }
-                     } else {
-                         dbus_error_free(&error);
-                     }
-@@ -1622,10 +1635,14 @@ static gboolean switch_screensaver(gboolean enabled)
+--- src/dbus-interface.c.orig	Tue Jul 23 22:36:58 2013
++++ src/dbus-interface.c	Mon Oct  7 10:10:48 2013
+@@ -1635,10 +1635,14 @@ static gboolean switch_screensaver(gboolean enabled)
  
  void dbus_enable_screensaver()
  {

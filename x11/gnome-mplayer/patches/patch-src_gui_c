@@ -1,85 +1,18 @@
-$OpenBSD: patch-src_gui_c,v 1.36 2013/05/27 11:43:08 dcoppa Exp $
-
-Make fullscreen work under tiling window managers
-(upstream svn revision r2428)
+$OpenBSD: patch-src_gui_c,v 1.37 2013/10/07 10:22:38 dcoppa Exp $
 
 Fix problem with remembered softvol not being loaded
-(upstream svn revision r2424)
 
-Fix problem with screenshot being done twice
-(upstream svn revision r2430)
-
---- src/gui.c.orig	Thu Feb 28 18:07:49 2013
-+++ src/gui.c	Mon May 27 12:58:01 2013
-@@ -634,7 +634,8 @@ void adjust_layout()
-         if (!enable_global_menu) {
-             gmtk_get_allocation(menubar, &alloc);
-             gm_log(verbose, G_LOG_LEVEL_DEBUG, "menubar = %i", alloc.height);
--            total_height += alloc.height;
-+			if (!fullscreen)
-+	            total_height += alloc.height;
-             gm_log(verbose, G_LOG_LEVEL_DEBUG, "total_height = %i", total_height);
+--- src/gui.c.orig	Fri Aug 16 16:40:22 2013
++++ src/gui.c	Mon Oct  7 10:31:41 2013
+@@ -1706,11 +1706,6 @@ gboolean set_volume(void *data)
+         if (!(softvol || audio_device.type == AUDIO_TYPE_SOFTVOL)) {
+             gm_audio_get_volume(&audio_device);
          }
-     }
-@@ -1673,13 +1674,17 @@ gboolean set_software_volume(gdouble * data)
- 
- gboolean hookup_volume(void *data)
- {
--    if (gm_audio_update_device(&audio_device)) {
--        if (softvol || audio_device.type == AUDIO_TYPE_SOFTVOL) {
--            gm_audio_set_server_volume_update_callback(&audio_device, NULL);
--        } else {
--            gm_audio_set_server_volume_update_callback(&audio_device, set_volume);
-+    gm_log(verbose, G_LOG_LEVEL_DEBUG, "hookup_volume is %f", audio_device.volume);
-+    if (softvol == FALSE) {
-+        if (gm_audio_update_device(&audio_device)) {
-+            if (audio_device.type == AUDIO_TYPE_SOFTVOL) {
-+                gm_audio_set_server_volume_update_callback(&audio_device, NULL);
-+            } else {
-+                gm_audio_set_server_volume_update_callback(&audio_device, set_volume);
-+            }
-         }
-     }
-+    gm_log(verbose, G_LOG_LEVEL_DEBUG, "out hookup_volume is %f", audio_device.volume);
-     return FALSE;
- }
- 
-@@ -1689,10 +1694,13 @@ gboolean set_volume(void *data)
-     IdleData *idle = (IdleData *) data;
-     gchar *buf = NULL;
- 
-+    gm_log(verbose, G_LOG_LEVEL_DEBUG, "set_volume new volume is %f", audio_device.volume);
-     if (data == NULL) {
-         gm_log(verbose, G_LOG_LEVEL_DEBUG, "in set_volume without data");
--        gm_audio_get_volume(&audio_device);
--        gm_log(verbose, G_LOG_LEVEL_DEBUG, "new volume is %f", audio_device.volume);
-+        if (!(softvol || audio_device.type == AUDIO_TYPE_SOFTVOL)) {
-+            gm_audio_get_volume(&audio_device);
-+        }
-+        gm_log(verbose, G_LOG_LEVEL_DEBUG, "data is null new volume is %f", audio_device.volume);
+-        if (pref_volume != -1) {
+-            audio_device.volume = (gdouble) pref_volume / 100.0;
+-            gmtk_media_player_set_volume(GMTK_MEDIA_PLAYER(media), audio_device.volume);
+-            pref_volume = -1;
+-        }
+         gm_log(verbose, G_LOG_LEVEL_DEBUG, "data is null new volume is %f", audio_device.volume);
  #ifdef GTK2_12_ENABLED
          gtk_scale_button_set_value(GTK_SCALE_BUTTON(vol_slider), audio_device.volume);
- #else
-@@ -2108,7 +2116,8 @@ gboolean window_key_callback(GtkWidget * widget, GdkEv
-         case FILE_OPEN_LOCATION:
-             break;
-         case EDIT_SCREENSHOT:
--            gmtk_media_player_send_command(GMTK_MEDIA_PLAYER(media), COMMAND_TAKE_SCREENSHOT);
-+            if (fullscreen)
-+                gmtk_media_player_send_command(GMTK_MEDIA_PLAYER(media), COMMAND_TAKE_SCREENSHOT);
-             return FALSE;
-         case EDIT_PREFERENCES:
-             break;
-@@ -4304,11 +4313,11 @@ void config_apply(GtkWidget * widget, void *data)
-     }
-     audio_device.description = g_strdup(audio_device_name);
-     gm_audio_update_device(&audio_device);
--    gm_audio_get_volume(&audio_device);
-     if (softvol || audio_device.type == AUDIO_TYPE_SOFTVOL) {
-         gm_audio_set_server_volume_update_callback(&audio_device, NULL);
-         gmtk_media_player_set_attribute_boolean(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_SOFTVOL, TRUE);
-     } else {
-+        gm_audio_get_volume(&audio_device);
-         gm_audio_set_server_volume_update_callback(&audio_device, set_volume);
-         gmtk_media_player_set_attribute_boolean(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_SOFTVOL, FALSE);
-     }

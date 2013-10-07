@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.78 2013/08/07 21:33:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.79 2013/10/07 10:22:37 dcoppa Exp $
 
 COMMENT =		GTK+/GNOME frontend for MPlayer
 
-V =			1.0.8
-DISTNAME =		gnome-mplayer-${V}
-REVISION =		2
+V =			1.0.9alpha
+DISTNAME =		gnome-mplayer-1.0.9a
+PKGNAME =		gnome-mplayer-${V}
 
 CATEGORIES =		x11 multimedia
 
@@ -37,7 +37,8 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 
 USE_GMAKE =		Yes
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoconf
+AUTOCONF_VERSION =	2.69
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include \
 				-I${X11BASE}/include" \

@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure_in,v 1.1 2013/10/07 10:22:37 dcoppa Exp $
+--- configure.in.orig	Mon Oct  7 10:47:07 2013
++++ configure.in	Mon Oct  7 10:47:54 2013
+@@ -127,11 +127,11 @@ AS_IF([test "x$ENABLE_GTK3" != "xyes"],   
+ 
+ ])
+ 
+-PKG_CHECK_MODULES(GMLIB, [gmlib >= 1.0.7])
++PKG_CHECK_MODULES(GMLIB, [gmlib])
+ AC_SUBST(GMLIB_CFLAGS)
+ AC_SUBST(GMLIB_LIBS)
+ 
+-PKG_CHECK_MODULES(GMTK, [gmtk >= 1.0.7])
++PKG_CHECK_MODULES(GMTK, [gmtk])
+ AC_SUBST(GMTK_CFLAGS)
+ AC_SUBST(GMTK_LIBS)
+ 
