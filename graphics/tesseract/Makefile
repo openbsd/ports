@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/08/09 17:39:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2013/10/07 06:50:59 espie Exp $
 
 COMMENT-main=	OCR Engine developed at HP Labs
 
@@ -13,6 +13,10 @@ SHARED_LIBS +=  tesseract            3.1      # 3.1
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		eng.traineddata.gz
+
+MAJOR_V=	${V:C/^([0-9]+).*/\1/}
+LANG_V=		${MAJOR_V}.20101024
+DIST_SUBDIR=	tesseract-${LANG_V}
 			
 HOMEPAGE=	https://tesseract-ocr.googlecode.com/
 
@@ -20,27 +24,6 @@ HOMEPAGE=	https://tesseract-ocr.googlecode.com/
 PERMIT_PACKAGE_CDROM=	Yes
 
 MULTI_PACKAGES=	-main
-
-### languages ##########################################################
-# language files are unversionned
-MAJOR_V=	${V:C/^([0-9]+).*/\1/}
-LANG_V=		${MAJOR_V}.20101024
-DIST_SUBDIR=	tesseract-${LANG_V}
-
-LANGS+=	bul cat ces chi_sim chi_tra dan-frak dan deu ell fin fra hun ind
-LANGS+=	ita jpn kor lav lit nld nor pol por ron rus slk slv spa srp swe
-LANGS+=	tgl tur ukr vie
-
-.for l in ${LANGS}
-COMMENT-${l}=	${l} language data for Tesseract
-DISTFILES+=	${l}.traineddata.gz
-PKGNAME-${l}=	tesseract-${l}-${LANG_V}
-MULTI_PACKAGES+=-${l}
-REVISION-${l}=	4
-RUN_DEPENDS-${l}=	${BASE_PKGPATH}>=${MAJOR_V}
-PKG_ARCH-${l}=	*
-.endfor
-### end languages ######################################################
 
 WANTLIB-main=	c jpeg m pthread stdc++ z tiff png gif lept webp
 
