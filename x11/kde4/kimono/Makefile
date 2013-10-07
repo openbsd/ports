@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/10/07 16:57:30 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/10/07 17:30:14 zhuk Exp $
 
 CATEGORIES =	devel
 COMMENT =	KDE bindings for .NET
 DISTNAME =	kimono-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kimono			50.0 # 2.0
 SHARED_LIBS +=	akonadi-sharp		50.0
@@ -11,7 +12,6 @@ SHARED_LIBS +=	ktexteditor-sharp	50.0
 SHARED_LIBS +=	nepomuk-sharp		50.0
 SHARED_LIBS +=	plasma-sharp		50.0
 SHARED_LIBS +=	soprano-sharp		50.0
-KDE4_ONLY =	Yes
 
 WANTLIB =  m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
@@ -36,7 +36,7 @@ WANTLIB += ${KDE4LIB}/smokesoprano
 WANTLIB += gc mono-2.0 soprano sopranoclient sopranoserver sopranoindex
 
 MODULES =		lang/mono
-MODKDE4_USE =
+MODKDE4_USE =		libs
 
 BUILD_DEPENDS =		misc/shared-desktop-ontologies \
 			productivity/akonadi>=${MIN_AKONADI_VERSION} \
