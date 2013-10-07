@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.63 2013/10/07 19:49:56 espie Exp $
+# $OpenBSD: Core.pm,v 1.64 2013/10/07 20:23:39 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -501,7 +501,6 @@ sub same_host_jobs
 	for my $core (values %{$self->repository}) {
 		next if $core->hostname ne $self->hostname;
 		# XXX only interested in "real" jobs now
-		next if !defined $core->job;
 		next if !defined $core->job->{v};
 		push(@jobs, $core->job);
 	}
@@ -513,12 +512,7 @@ sub one_core
 	my ($core, $time) = @_;
 	my $hostname = $core->hostname;
 
-	my $s;
-	if ($core->job) {
-		$s = $core->job->name;
-	} else {
-		$s = "?????";
-	}
+	my $s = $core->job->name;
     	if ($core->{squiggle}) {
 		$s = '~'.$s;
 	}
