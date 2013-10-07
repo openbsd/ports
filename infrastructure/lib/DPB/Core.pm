@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.64 2013/10/07 20:23:39 espie Exp $
+# $OpenBSD: Core.pm,v 1.65 2013/10/07 20:36:27 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -477,7 +477,8 @@ sub set_logdir
 
 sub is_local
 {
-	return 0;
+	my $self = shift;
+	return $self->host->is_localhost;
 }
 
 my @extra_report = ();
@@ -766,11 +767,6 @@ sub hostname
 		chomp($host = `hostname`);
 	}
 	return $host;
-}
-
-sub is_local
-{
-	return 1;
 }
 
 package DPB::Core::Fetcher;
