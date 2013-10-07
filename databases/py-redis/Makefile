@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/10/07 13:39:53 rpointel Exp $
+# $OpenBSD: Makefile,v 1.25 2013/10/07 13:47:41 dcoppa Exp $
 
 COMMENT =		Python interface to Redis
 
@@ -19,7 +19,11 @@ MODULES =		lang/python
 
 MODPY_SETUPTOOLS =	Yes
 
-TEST_DEPENDS =		devel/py-test \
+# Be sure to have a redis server running on localhost
+TEST_IS_INTERACTIVE =	Yes
+
+TEST_DEPENDS =		databases/redis \
+			devel/py-test \
 			devel/py-py
 
 .include <bsd.port.mk>
