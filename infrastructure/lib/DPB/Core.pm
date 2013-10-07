@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.62 2013/10/07 18:02:07 espie Exp $
+# $OpenBSD: Core.pm,v 1.63 2013/10/07 19:49:56 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -404,7 +404,7 @@ sub mark_ready
 	my $self = shift;
 	if ($self->{pid}) {
 		require Data::Dumper;
-		print Date::Dumper::Dumper($self), "\n";
+		print Data::Dumper::Dumper($self), "\n";
 		die "Marking ready an incomplete process";
 	}
 	delete $self->{job};
