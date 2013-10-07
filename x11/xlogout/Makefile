@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:46:19 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/10/07 21:35:00 naddy Exp $
 
 COMMENT=	simple logout button
 
@@ -17,7 +17,6 @@ MASTER_SITES=	ftp://ftp.tu-darmstadt.de/pub/X11/other/
 EXTRACT_SUFX=	.tar.Z
 
 WRKDIST=	${WRKDIR}/xlogout
-USE_GROFF =	Yes
 CONFIGURE_STYLE= imake
 
 NO_TEST=	Yes
