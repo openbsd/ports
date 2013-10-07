@@ -1,0 +1,34 @@
+$OpenBSD: patch-screen_h,v 1.1 2013/10/07 14:28:52 dcoppa Exp $
+
+commit 0bdaed2704c3b6315366f6c1f3d098cf707febe6
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Oct 4 15:24:09 2013 +0200
+
+screen: Fix screen equality comparison (FS#1151)
+
+We did some black magic which broke and was replaced with more black magic. This
+now broke using screen objects as table indexes:
+
+$ echo 'local l, s = {}, screen[1] ; l[s] = 42 ; return l[s]' | awesome-client
+double 42
+$ echo 'local l, s = {}, screen[1] ; l[s] = 42 ; return l[screen[1]]' | awesome-client
+<no output>
+
+Fix this by using just a single lua userdata for representing a screen object.
+
+It would be even better if screens were allocated with lua, but that doesn't
+really provide any benefits right now and would be more complicated...
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+--- screen.h.orig	Mon Apr  1 13:44:46 2013
++++ screen.h	Mon Oct  7 15:36:23 2013
+@@ -36,6 +36,8 @@ struct a_screen
+     signal_array_t signals;
+     /** The screen outputs informations */
+     screen_output_array_t outputs;
++    /** The lua userdata representing this screen */
++    void *userdata;
+ };
+ ARRAY_FUNCS(screen_t, screen, DO_NOTHING)
+ 

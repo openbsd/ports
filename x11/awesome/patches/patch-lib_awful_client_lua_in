@@ -1,0 +1,27 @@
+$OpenBSD: patch-lib_awful_client_lua_in,v 1.7 2013/10/07 14:28:51 dcoppa Exp $
+
+commit f3573dbb198a06bd12bfb0b7c6a8fcabad417dcd
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Oct 4 12:04:16 2013 +0200
+
+awful.client.tiled: Ignore fullscreen (etc) clients (FS#1106)
+
+I am looking forward to the bug reports requesting awful.client.floating.set(c,
+true) to also automatically un-fullscreen the client...
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+--- lib/awful/client.lua.in.orig	Mon Apr  1 13:44:46 2013
++++ lib/awful/client.lua.in	Mon Oct  7 15:14:02 2013
+@@ -220,7 +220,10 @@ function client.tiled(screen)
+     local tclients = {}
+     -- Remove floating clients
+     for k, c in pairs(clients) do
+-        if not client.floating.get(c) then
++        if not client.floating.get(c)
++            and not c.fullscreen
++            and not c.maximized_vertical
++            and not c.maximized_horizontal then
+             table.insert(tclients, c)
+         end
+     end

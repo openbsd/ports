@@ -1,4 +1,4 @@
-$OpenBSD: patch-awesome_c,v 1.6 2013/06/17 13:23:34 dcoppa Exp $
+$OpenBSD: patch-awesome_c,v 1.7 2013/10/07 14:28:51 dcoppa Exp $
 
 Revert to the old xcb-util-0.3.6 API
 
@@ -10,9 +10,47 @@ honor appended -c option for --check
 
 Signed-off-by: Uli Schlachter <psychon@znc.in>
 
+commit 9b7873392228e8ebab407144f1aacaead4f9733d
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Oct 4 10:01:03 2013 +0200
+
+Fix possible deadlock during startup
+
+For setting up the wallpaper, awesome needs a second connection to the X11
+server (isn't SetCloseDownMode just great?).
+
+However, it was possible to have a dead-lock with our main connection due to
+this. Awesome does a GrabServer during startup so that nothing else can use the
+X11 server while we set ourselves up. The server is ungrabbed right before the
+lua config is read. However, nothing makes sure that this ungrab request really
+is sent to the server instead of just waiting in xcb's output buffer.
+
+The dead-lock would now happen if we try to establish a second connection to the
+X11 server before the ungrab request was flushed on the main connection. The
+server will wait for the ungrab on the first connection, awesome is waiting for
+the second connection to be successfully established.
+
+Fix this by making sure the UngrabServer request is flushed before parsing the
+config file.
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
 --- awesome.c.orig	Mon Apr  1 13:44:46 2013
-+++ awesome.c	Mon Jun 17 14:57:00 2013
-@@ -136,7 +136,7 @@ scan(xcb_query_tree_cookie_t tree_c)
++++ awesome.c	Mon Oct  7 15:53:09 2013
+@@ -68,6 +68,12 @@ awesome_atexit(bool restart)
+     lua_pushboolean(globalconf.L, restart);
+     signal_object_emit(globalconf.L, &global_signals, "exit", 1);
+ 
++    /* TODO: Reparent windows back to root window, placing them according to
++     * their window gravity. Right now we pretend to use static gravity and that
++     * works automatically thanks to xcb_change_save_set(). See
++     * titlebar_resize().
++     */
++
+     a_dbus_cleanup();
+ 
+     systray_cleanup();
+@@ -136,7 +142,7 @@ scan(xcb_query_tree_cookie_t tree_c)
  
          if(!attr_r || attr_r->override_redirect
             || attr_r->map_state == XCB_MAP_STATE_UNMAPPED
@@ -21,7 +59,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
          {
              geom_wins[i] = NULL;
              p_delete(&attr_r);
-@@ -288,6 +288,7 @@ main(int argc, char **argv)
+@@ -288,6 +294,7 @@ main(int argc, char **argv)
      ssize_t cmdlen = 1;
      xdgHandle xdg;
      bool no_argb = false;
@@ -29,7 +67,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
      xcb_generic_event_t *event;
      xcb_query_tree_cookie_t tree_c;
      static struct option long_options[] =
-@@ -340,16 +341,8 @@ main(int argc, char **argv)
+@@ -340,16 +347,8 @@ main(int argc, char **argv)
              exit_help(EXIT_SUCCESS);
              break;
            case 'k':
@@ -48,11 +86,10 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
            case 'c':
              if(a_strlen(optarg))
                  confpath = a_strdup(optarg);
-@@ -360,6 +353,20 @@ main(int argc, char **argv)
-             no_argb = true;
+@@ -361,6 +360,20 @@ main(int argc, char **argv)
              break;
          }
-+
+ 
 +    if (run_test)
 +    {
 +        if(!luaA_parserc(&xdg, confpath, false))
@@ -66,6 +103,15 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
 +            return EXIT_SUCCESS;
 +        }
 +    }
- 
++
      /* register function for signals */
      g_unix_signal_add(SIGINT, exit_on_signal, NULL);
+     g_unix_signal_add(SIGTERM, exit_on_signal, NULL);
+@@ -518,6 +531,7 @@ main(int argc, char **argv)
+ 
+     /* we will receive events, stop grabbing server */
+     xcb_ungrab_server(globalconf.connection);
++    xcb_flush(globalconf.connection);
+ 
+     /* Parse and run configuration file */
+     if (!luaA_parserc(&xdg, confpath, true))

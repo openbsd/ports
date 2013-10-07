@@ -1,0 +1,24 @@
+$OpenBSD: patch-lib_awful_screen_lua_in,v 1.1 2013/10/07 14:28:52 dcoppa Exp $
+
+commit a6466864f945d3a5526a89efcf31375e82969a20
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Oct 4 11:27:35 2013 +0200
+
+awful.screen.focus: Don't move mouse to (0, 0) first (FS#1173)
+
+Setting mouse.screen moves the pointer to the top left corner of that screen.
+However, the very next line would then move the pointer elsewhere again. Thus,
+the first one wasn't needed at all.
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+--- lib/awful/screen.lua.in.orig	Mon Apr  1 13:44:46 2013
++++ lib/awful/screen.lua.in	Mon Oct  7 15:05:42 2013
+@@ -61,7 +61,6 @@ function screen.focus(_screen)
+     pos.y = capi.screen[_screen].geometry.y + rely * capi.screen[_screen].geometry.height
+ 
+    -- move cursor without triggering signals mouse::enter and mouse::leave
+-    capi.mouse.screen = _screen
+     capi.mouse.coords(pos, true)
+ 
+     local c = client.focus.history.get(_screen, 0)

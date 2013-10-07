@@ -1,4 +1,25 @@
-$OpenBSD: patch-screen_c,v 1.1 2013/10/02 11:49:00 dcoppa Exp $
+$OpenBSD: patch-screen_c,v 1.2 2013/10/07 14:28:52 dcoppa Exp $
+
+commit 0bdaed2704c3b6315366f6c1f3d098cf707febe6
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Oct 4 15:24:09 2013 +0200
+
+screen: Fix screen equality comparison (FS#1151)
+
+We did some black magic which broke and was replaced with more black magic. This
+now broke using screen objects as table indexes:
+
+$ echo 'local l, s = {}, screen[1] ; l[s] = 42 ; return l[s]' | awesome-client
+double 42
+$ echo 'local l, s = {}, screen[1] ; l[s] = 42 ; return l[screen[1]]' | awesome-client
+<no output>
+
+Fix this by using just a single lua userdata for representing a screen object.
+
+It would be even better if screens were allocated with lua, but that doesn't
+really provide any benefits right now and would be more complicated...
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
 
 commit fd8f2e23eeeec8d77f997d63b229fdc861beff03
 Author: Uli Schlachter <psychon@znc.in>
@@ -16,9 +37,23 @@ add a screen.
 
 Signed-off-by: Uli Schlachter <psychon@znc.in>
 
---- screen.c.orig	Wed Oct  2 12:46:04 2013
-+++ screen.c	Wed Oct  2 12:48:46 2013
-@@ -76,6 +76,12 @@ screen_add(screen_t new_screen)
+--- screen.c.orig	Mon Apr  1 13:44:46 2013
++++ screen.c	Mon Oct  7 15:36:23 2013
+@@ -71,11 +71,26 @@ screen_add(screen_t new_screen)
+                     MAX(new_screen.geometry.height, screen_to_test->geometry.height);
+                 return;
+             }
++
+     signal_add(&new_screen.signals, "property::workarea");
+     screen_array_append(&globalconf.screens, new_screen);
++
++    /* Allocate the lua userdata object representing this screen */
++    screen_t *s = &globalconf.screens.tab[globalconf.screens.len-1];
++    screen_t **ps = lua_newuserdata(globalconf.L, sizeof(*ps));
++    *ps = s;
++    luaL_getmetatable(globalconf.L, "screen");
++    lua_setmetatable(globalconf.L, -2);
++    s->userdata = luaA_object_ref(globalconf.L, -1);
  }
  
  static bool
@@ -31,7 +66,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
  screen_scan_randr(void)
  {
      /* Check for extension before checking for XRandR */
-@@ -150,7 +156,7 @@ screen_scan_randr(void)
+@@ -150,7 +165,7 @@ screen_scan_randr(void)
  
              p_delete(&screen_res_r);
  
@@ -40,7 +75,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
          }
      }
  
-@@ -195,7 +201,7 @@ screen_scan_xinerama(void)
+@@ -195,7 +210,7 @@ screen_scan_xinerama(void)
  
          p_delete(&xsq);
  
@@ -49,3 +84,47 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
      }
  
      return false;
+@@ -392,10 +407,7 @@ screen_client_moveto(client_t *c, screen_t *new_screen
+ static int
+ luaA_pushscreen(lua_State *L, screen_t *s)
+ {
+-    screen_t **ps = lua_newuserdata(L, sizeof(*ps));
+-    *ps = s;
+-    luaL_getmetatable(L, "screen");
+-    lua_setmetatable(L, -2);
++    luaA_object_push(L, s->userdata);
+     return 1;
+ }
+ 
+@@ -493,23 +505,6 @@ luaA_screen_index(lua_State *L)
+     return 0;
+ }
+ 
+-/** A screen.
+- * \param L The Lua VM state.
+- * \return The number of elements pushed on stack.
+- */
+-static int
+-luaA_screen_equal(lua_State *L)
+-{
+-    screen_t **ps1;
+-    screen_t **ps2;
+-
+-    ps1 = luaL_checkudata(L, 1, "screen");
+-    ps2 = luaL_checkudata(L, 2, "screen");
+-    lua_pushboolean(L, *ps1 == *ps2);
+-
+-    return 1;
+-}
+-
+ /** Add a signal to a screen.
+  * \param L The Lua VM state.
+  * \return The number of elements pushed on stack.
+@@ -625,7 +620,6 @@ const struct luaL_Reg awesome_screen_meta[] =
+     { "disconnect_signal", luaA_screen_disconnect_signal },
+     { "emit_signal", luaA_screen_emit_signal },
+     { "__index", luaA_screen_index },
+-    { "__eq", luaA_screen_equal },
+     { NULL, NULL }
+ };
+ 
