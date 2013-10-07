@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_features_rb,v 1.1 2013/10/07 20:56:53 jeremy Exp $
+--- src/features.rb.orig	Fri Jun 27 04:29:30 2008
++++ src/features.rb	Thu Oct  3 13:31:27 2013
+@@ -813,7 +813,7 @@ end
+ begin
+    conftest = CONFTEST_C.dup
+    class Object
+-      remove_const('CONFTEST_C')
++      remove_const('CONFTEST_C') rescue nil
+    end
+ 
+    CONFTEST_C = 'conftest.cxx'
+@@ -878,7 +878,7 @@ EOT
+ 
+ ensure
+    class Object
+-      remove_const('CONFTEST_C')
++      remove_const('CONFTEST_C') rescue nil
+    end
+ 
+    CONFTEST_C = conftest
