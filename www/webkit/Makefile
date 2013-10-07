@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2013/10/06 19:56:42 landry Exp $
+# $OpenBSD: Makefile,v 1.98 2013/10/07 18:47:55 landry Exp $
 
 COMMENT =	open source web browser engine for Gtk+
 
@@ -8,7 +8,7 @@ PKGNAME =	webkit-${V}
 EPOCH =		0
 CATEGORIES =	www
 DPB_PROPERTIES =parallel
-REVISION =	0
+REVISION =	1
 EXTRACT_SUFX =	.tar.xz
 
 HOMEPAGE =	http://webkitgtk.org/
@@ -78,6 +78,7 @@ MODRUBY_REV =	1.8
 
 WANTLIB =	ICE SM X11 Xcomposite Xcursor Xdamage Xext \
 		Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 c xcb-render \
+		EGL X11-xcb Xau Xdmcp glapi xcb-dri2 xcb-glx xcb-shape xcb-xfixes \
 		expat fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 gthread-2.0 jpeg m harfbuzz-icu \
 		Xxf86vm dbus-1 dbus-glib-1 drm geoclue \
