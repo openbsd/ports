@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2013/10/07 10:22:37 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.80 2013/10/07 10:37:57 dcoppa Exp $
 
 COMMENT =		GTK+/GNOME frontend for MPlayer
 
@@ -53,7 +53,8 @@ CONFIGURE_ARGS =	--with-dbus \
 			--without-libgda \
 			--without-libmusicbrainz3 \
 			--without-pulseaudio \
-			--disable-nautilus
+			--disable-nautilus \
+			--disable-nemo
 
 pre-install:
 	${SUBST_CMD} ${WRKBUILD}/apps.gnome-mplayer.preferences.gschema.xml
