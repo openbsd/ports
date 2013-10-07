@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-fra,v 1.1 2010/10/24 12:45:53 ajacoutot Exp $
-@pkgpath graphics/tesseract,-fr
-share/tessdata/fra.traineddata
