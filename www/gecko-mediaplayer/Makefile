@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2013/08/07 21:32:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2013/10/07 10:24:17 dcoppa Exp $
 
 COMMENT =		gnome-mplayer browser media plugin
-V =			1.0.8
-DISTNAME =		gecko-mediaplayer-${V}
+V =			1.0.9alpha
+DISTNAME =		gecko-mediaplayer-1.0.9a
+PKGNAME =		gecko-mediaplayer-${V}
 CATEGORIES =		www
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
