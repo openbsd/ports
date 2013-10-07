@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gmtk_pc_in,v 1.1 2013/10/07 10:20:29 dcoppa Exp $
+--- src/gmtk.pc.in.orig	Mon Oct  7 10:54:02 2013
++++ src/gmtk.pc.in	Mon Oct  7 10:54:21 2013
+@@ -10,7 +10,7 @@ gtk3=@ENABLE_GTK3@
+ Name: gmtk
+ Description: Gnome Media Player Toolkit
+ Version: @VERSION@
+-Requires.private: gmlib >= @VERSION@
++Requires.private: gmlib
+ Requires: 
+ Libs: -L${libdir} -lgmtk
+ Cflags: -I${includedir}
