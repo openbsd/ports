@@ -1,4 +1,4 @@
-# $OpenBSD: kde4.port.mk,v 1.10 2013/10/06 14:42:24 zhuk Exp $
+# $OpenBSD: kde4.port.mk,v 1.11 2013/10/07 16:57:29 espie Exp $
 
 # The version of KDE SC in x11/kde4
 _MODKDE4_STABLE =	4.10.5
@@ -134,7 +134,13 @@ FLAVOR ?=
 MODKDE4_USE +=		libs
 .endif
 
-.if !empty(MODKDE4_USE)
+.if empty(MODKDE4_USE)
+KDE4_ONLY ?= No
+.else
+KDE4_ONLY ?= Yes
+.endif
+
+.if ${KDE4_ONLY:L} == "yes"
 DPB_PROPERTIES +=	tag:kde4
 .endif
 

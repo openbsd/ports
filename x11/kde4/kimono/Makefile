@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:26 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/10/07 16:57:30 espie Exp $
 
 CATEGORIES =	devel
 COMMENT =	KDE bindings for .NET
@@ -11,6 +11,7 @@ SHARED_LIBS +=	ktexteditor-sharp	50.0
 SHARED_LIBS +=	nepomuk-sharp		50.0
 SHARED_LIBS +=	plasma-sharp		50.0
 SHARED_LIBS +=	soprano-sharp		50.0
+KDE4_ONLY =	Yes
 
 WANTLIB =  m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
