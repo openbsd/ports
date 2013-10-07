@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Build.pm,v 1.4 2013/10/07 18:01:33 espie Exp $
+# $OpenBSD: Build.pm,v 1.5 2013/10/07 20:01:56 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -34,8 +34,7 @@ sub preempt_core
 {
 	my ($self, $core) = @_;
 
-	if (@{$self->{engine}{requeued}} > 0) {
-		$self->{engine}->rebuild_info($core);
+	if ($self->SUPER::preempt_core($core)) {
 		return 1;
 	}
 	if ($self->start_install($core)) {

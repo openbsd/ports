@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SubEngine.pm,v 1.12 2013/10/07 18:01:33 espie Exp $
+# $OpenBSD: SubEngine.pm,v 1.13 2013/10/07 20:01:55 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -147,6 +147,12 @@ sub start
 
 sub preempt_core
 {
+	my ($self, $core) = @_;
+
+	if (@{$self->{engine}{requeued}} > 0) {
+		$self->{engine}->rebuild_info($core);
+		return 1;
+	}
 	return 0;
 }
 
