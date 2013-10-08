@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.301 2013/10/07 19:23:42 landry Exp $
+# $OpenBSD: Makefile,v 1.302 2013/10/08 17:27:46 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -208,6 +208,7 @@
      SUBDIR += tentakel
      SUBDIR += testdisk
      SUBDIR += tkdvd
+     SUBDIR += toad
      SUBDIR += toprump
      SUBDIR += torture
      SUBDIR += tpb
