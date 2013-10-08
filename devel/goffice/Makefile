@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.58 2013/09/28 08:50:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2013/10/08 09:19:17 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	document centric objects and utilities
 
-# When GNOME_VERSION version change, update GOFFICE_API_VERSION and
-# GOFFICE_VERSION in math/gnumeric then bump REVISION.
 GNOME_PROJECT=	goffice
-GNOME_VERSION=	0.10.7
-REVISION=	0
+GNOME_VERSION=	0.10.8
+
+# NOTE: when GNOME_VERSION changes, increment GOFFICE_VERSION and
+# GOFFICE_API_VERSION accordingly and bump:
+# math/gnumeric
+GOFFICE_API_VERSION=	${GNOME_VERSION:R}
+SUBST_VARS=		GNOME_VERSION GOFFICE_API_VERSION
 
 SHARED_LIBS +=  goffice-0.10         0.0      # 10.3
 
 CATEGORIES=	devel
-
-API_VERSION=	${GNOME_VERSION:R}
-SUBST_VARS=	GNOME_VERSION API_VERSION
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
