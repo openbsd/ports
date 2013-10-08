@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.521 2013/09/10 13:43:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.522 2013/10/08 18:38:12 jasper Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -37,7 +37,6 @@
      SUBDIR += dbus-python,python3
      SUBDIR += dbus-tcl
      SUBDIR += dclock
-     SUBDIR += devilspie
      SUBDIR += dmenu
      SUBDIR += driconf
      SUBDIR += driftnet
@@ -70,7 +69,6 @@
      SUBDIR += gammapage
      SUBDIR += gbdfed
      SUBDIR += gcolor2
-     SUBDIR += gdevilspie
      SUBDIR += gentoo
      SUBDIR += gigolo
      SUBDIR += gmrun
