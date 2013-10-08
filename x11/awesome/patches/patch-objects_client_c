@@ -1,7 +1,6 @@
-$OpenBSD: patch-objects_client_c,v 1.4 2013/10/07 14:28:52 dcoppa Exp $
+$OpenBSD: patch-objects_client_c,v 1.5 2013/10/08 11:48:58 dcoppa Exp $
 
 Revert to the old xcb-util-0.3.6 API
-
 
 commit a0e45e878e450d890a0ab541d48d8dd6c1ede943
 Author: Uli Schlachter <psychon@znc.in>
@@ -18,6 +17,20 @@ value for the property are equal.
 
 Signed-off-by: Uli Schlachter <psychon@znc.in>
 
+commit c3bca6ac344577781858e06c83e310b69ac9a4e0
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Fri Oct 4 16:12:06 2013 +0200
+
+client: Don't move clients around across restarts (FS#1159)
+
+This kind of forces every client to have a window gravity of "static".
+
+This fixes most of the problem of clients moving around across restarts due to
+the titlebar. What is left is that they move due to the border width which
+should be handled in another patch. Also, another patch should make this honor
+the client's actual window gravity.
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
 
 commit 11bef0795a450865b589c1c906bf97141436d314
 Author: Uli Schlachter <psychon@znc.in>

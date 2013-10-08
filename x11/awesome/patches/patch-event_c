@@ -1,4 +1,4 @@
-$OpenBSD: patch-event_c,v 1.3 2013/05/24 16:15:24 dcoppa Exp $
+$OpenBSD: patch-event_c,v 1.4 2013/10/08 11:48:58 dcoppa Exp $
 
 commit 2d3103345e3a266eaf1d5261ef37e36ac5498ecc
 Author: Uli Schlachter <psychon@znc.in>
@@ -14,7 +14,6 @@ ConfigureRequest handling.
 This was tested with test-gravity from metacity (in src/wm-tester).
 
 Signed-off-by: Uli Schlachter <psychon@znc.in>
-
 
 Revert to the old xcb-util-0.3.6 API
 
