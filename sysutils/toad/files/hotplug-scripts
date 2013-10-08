@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# /etc/hotplug/{attach,detach}
+
+DEVCLASS=$1
+DEVNAME=$2
+
+case $DEVCLASS in
+2)
+	${TRUEPREFIX}/libexec/toad ${0##*/} $DEVCLASS $DEVNAME
+	;;
+esac

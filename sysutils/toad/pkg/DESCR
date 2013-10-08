@@ -1,0 +1,12 @@
+toad(8) (Toad Opens All Devices) is a utility meant to be started from
+the OpenBSD hotplugd(8) attach and detach scripts. It will try to mount
+all partitions found on the device under /run/media/username/device.
+Where username is the active user login name and device is the type of
+the device: usb or cd, followed by its number (from 0 to 9).
+This follows the udev hierarchy in Linux which allows interaction with
+GLib/GIO's GUnixMount.
+
+It comes with toadd(8), a small daemon that will detect the insertion of
+a medium in the optical drives of the machine by periodically reading
+their disklabel(8) (every 8 seconds) and call toad(8) with the attach or
+detach argument respectively.

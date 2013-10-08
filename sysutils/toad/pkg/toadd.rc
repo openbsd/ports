@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: toadd.rc,v 1.1.1.1 2013/10/08 17:27:01 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/libexec/toadd"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1
