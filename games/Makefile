@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.273 2013/08/23 11:17:19 pascal Exp $
+# $OpenBSD: Makefile,v 1.274 2013/10/08 06:04:55 bentley Exp $
 
      SUBDIR =
      SUBDIR += abuse
@@ -220,6 +220,7 @@
      SUBDIR += wesnoth
      SUBDIR += wesnoth,lite
      SUBDIR += widelands
+     SUBDIR += wizznic
      SUBDIR += wmminichess
      SUBDIR += wmtictactoe
      SUBDIR += wordwarvi
