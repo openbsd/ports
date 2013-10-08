@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/08/22 18:14:46 kirby Exp $
+# $OpenBSD: Makefile,v 1.4 2013/10/08 07:02:34 landry Exp $
 
 COMMENT =	remote execution and configuration management system
 
-MODPY_EGG_VERSION =	0.16.3
+MODPY_EGG_VERSION =	0.17.0
 DISTNAME =	salt-${MODPY_EGG_VERSION}
-REVISION =	1
 
 CATEGORIES =	sysutils net devel
 
@@ -23,7 +22,12 @@ RUN_DEPENDS =	net/py-zmq \
 		security/py-crypto \
 		textproc/py-yaml
 
+TEST_DEPENDS =	devel/py-pip \
+		sysutils/salt-testing
+
+#FAILED (total=542, skipped=32, passed=484, failures=17, errors=9) 
 do-test:
+	ln -sf ${LOCALBASE}/bin/pip-${MODPY_VERSION} ${WRKDIR}/bin/pip
 	@${MODPY_TEST_TARGET}
 
 post-install:
