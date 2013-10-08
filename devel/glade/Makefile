@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2013/09/27 10:43:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.58 2013/10/08 10:58:25 ajacoutot Exp $
 
 COMMENT=	user interface builder for the gtk+3 toolkit
 
@@ -30,6 +30,9 @@ MODULES=	devel/gettext \
 		lang/python
 
 BUILD_DEPENDS=	devel/py-gobject3
+
+# man pages
+BUILD_DEPENDS += textproc/docbook-xsl
 
 LIB_DEPENDS=	x11/gtk+3>=3.5.18 \
 		devel/libffi
