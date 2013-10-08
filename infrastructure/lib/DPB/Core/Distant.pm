@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.16 2013/10/06 13:33:36 espie Exp $
+# $OpenBSD: Distant.pm,v 1.17 2013/10/08 07:35:10 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -77,7 +77,7 @@ sub stringize_master_pid
 	my $shell = shift;
 	my $pid = $shell->{master}->{pid};
 
-	return "[$pid]";
+	return " [$pid]";
 }
 
 sub _run

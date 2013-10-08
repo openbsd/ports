@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.11 2013/10/06 17:21:53 espie Exp $
+# $OpenBSD: Init.pm,v 1.12 2013/10/08 07:35:10 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -98,6 +98,14 @@ sub hostcount
 	return scalar(keys %$init);
 }
 
+sub taint
+{
+	my ($class, $host, $tag) = @_;
+	if (defined $init->{$host}) {
+		$init->{$host}->prop->{tainted} = $tag;
+	}
+}
+
 sub alive_hosts
 {
 	my @l = ();
@@ -106,7 +114,7 @@ sub alive_hosts
 			$host = "$host(".$c->prop->{tainted}.")";
 		}
 		if ($c->is_alive) {
-			push(@l, $host." ".$c->shell->stringize_master_pid);
+			push(@l, $host.$c->shell->stringize_master_pid);
 		} else {
 			push(@l, $host.'-');
 		}
