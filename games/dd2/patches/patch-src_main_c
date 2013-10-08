@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_main_c,v 1.1.1.1 2013/10/08 08:45:19 sthen Exp $
+
+DD2_DATA directory isn't writable (PREFIX/share). The port will use /var/games.
+
+--- src/main.c.orig	Tue Aug 14 20:59:42 2007
++++ src/main.c	Mon Aug 26 16:25:38 2013
+@@ -296,7 +296,7 @@ main (int argc, char *argv[])
+ #endif
+ 
+ 	/* read hi-scores */
+-	sprintf(buffer,"%s/dd2-hiscore",DD2_DATA);
++	sprintf(buffer,"%s/dd2-hiscore",DD2_SCORE);
+ 	if(!loadScore(buffer,hiscore))
+ 		fprintf(stderr,"unable to read hi-scores, using defaults\n");
+ 
+@@ -463,7 +463,7 @@ main (int argc, char *argv[])
+ 	saveCFG(buffer,&conf);
+ 
+ 	/* save hi-scores */
+-	sprintf(buffer,"%s/dd2-hiscore",DD2_DATA);
++	sprintf(buffer,"%s/dd2-hiscore",DD2_SCORE);
+ 	if(!saveScore(buffer,hiscore))
+ 		fprintf(stderr,"unable to save hi-scores\ndo you have permissions to write into %s?\n"
+ 			,buffer);

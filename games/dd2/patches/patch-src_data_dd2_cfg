@@ -1,0 +1,10 @@
+$OpenBSD: patch-src_data_dd2_cfg,v 1.1.1.1 2013/10/08 08:45:19 sthen Exp $
+--- src/data/dd2.cfg.orig	Sat Sep 21 23:17:09 2013
++++ src/data/dd2.cfg	Sat Sep 21 23:17:16 2013
+@@ -2,5 +2,5 @@ BEGIN
+ SOUND=3
+ CONTROL_1=0
+ CONTROL_2=0
+-FULL_SCREEN=1
++FULL_SCREEN=0
+ END

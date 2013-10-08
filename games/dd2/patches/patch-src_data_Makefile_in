@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_data_Makefile_in,v 1.1.1.1 2013/10/08 08:45:19 sthen Exp $
+
+The hiscore file is installed by hand in a directory writable by the group
+"games".
+
+--- src/data/Makefile.in.orig	Mon Aug 26 17:35:38 2013
++++ src/data/Makefile.in	Mon Aug 26 17:36:25 2013
+@@ -65,9 +65,9 @@ SDL_CONFIG = @SDL_CONFIG@
+ SDL_LIBS = @SDL_LIBS@
+ VERSION = @VERSION@
+ 
+-pkgdata_DATA = bgm1.xm bgm2.xm efx1.wav efx2.wav efx3.wav efx4.wav efx5.wav efx6.wav efx7.wav efx8.wav gfx.bmp dd2.cfg game.act dd2-hiscore
++pkgdata_DATA = bgm1.xm bgm2.xm efx1.wav efx2.wav efx3.wav efx4.wav efx5.wav efx6.wav efx7.wav efx8.wav gfx.bmp dd2.cfg game.act
+ 
+-EXTRA_DIST = bgm1.xm bgm2.xm efx1.wav efx2.wav efx3.wav efx4.wav efx5.wav efx6.wav efx7.wav efx8.wav gfx.bmp dd2.cfg game.act dd2-hiscore
++EXTRA_DIST = bgm1.xm bgm2.xm efx1.wav efx2.wav efx3.wav efx4.wav efx5.wav efx6.wav efx7.wav efx8.wav gfx.bmp dd2.cfg game.act
+ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_CLEAN_FILES = 
+@@ -197,7 +197,6 @@ maintainer-clean-generic clean mostlyclean distclean m
+ 
+ 
+ install-data-hook:
+-	chmod a+rw $(pkgdatadir)/dd2-hiscore
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

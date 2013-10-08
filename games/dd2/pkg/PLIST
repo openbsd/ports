@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/08 08:45:19 sthen Exp $
+@mode 2555
+@group games
+@bin bin/dd2
+@mode
+@group
+share/dd2/
+share/dd2/bgm1.xm
+share/dd2/bgm2.xm
+share/dd2/dd2.cfg
+share/dd2/efx1.wav
+share/dd2/efx2.wav
+share/dd2/efx3.wav
+share/dd2/efx4.wav
+share/dd2/efx5.wav
+share/dd2/efx6.wav
+share/dd2/efx7.wav
+share/dd2/efx8.wav
+share/dd2/game.act
+share/dd2/gfx.bmp
+share/doc/dd2/
+share/doc/dd2/AUTHORS
+share/doc/dd2/COPYING
+share/doc/dd2/ChangeLog
+share/doc/dd2/NEWS
+share/doc/dd2/README
+share/doc/dd2/TODO
+share/examples/dd2/
+share/examples/dd2/dd2-hiscore
+@mode g+w
+@group games
+@sample /var/games/dd2-hiscore
+@mode
+@group
