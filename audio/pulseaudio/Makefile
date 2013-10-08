@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2013/06/17 14:47:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2013/10/08 11:58:08 ajacoutot Exp $
 
 # XXX
 # util.c: implement pa_get_binary_name()
@@ -51,6 +51,7 @@ LIBTOOL_FLAGS=		--tag=disable-static
 
 # needed for tests
 BUILD_DEPENDS +=	devel/check
+TEST_FLAGS=		HOME=${WRKDIST}
 
 LIB_DEPENDS=		audio/libsndfile \
 			audio/speex \
