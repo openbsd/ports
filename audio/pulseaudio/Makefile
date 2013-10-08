@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2013/10/08 11:58:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2013/10/08 13:33:20 ajacoutot Exp $
 
 # XXX
 # util.c: implement pa_get_binary_name()
@@ -86,7 +86,7 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-asyncns \
 			--disable-bluez \
 			--disable-esound \
-			--disable-gtk2 \
+			--disable-gtk3 \
 			--disable-jack \
 			--disable-hal-compat \
 			--disable-systemd \
