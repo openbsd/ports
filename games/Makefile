@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.274 2013/10/08 06:04:55 bentley Exp $
+# $OpenBSD: Makefile,v 1.275 2013/10/08 08:45:48 sthen Exp $
 
      SUBDIR =
      SUBDIR += abuse
@@ -51,6 +51,7 @@
      SUBDIR += crossfire-client
      SUBDIR += csmash
      SUBDIR += dangerdeep
+     SUBDIR += dd2
      SUBDIR += defendguin
      SUBDIR += doomdata
      SUBDIR += dopewars
