@@ -1,7 +1,7 @@
-$OpenBSD: patch-openbox_moveresize_c,v 1.1 2012/10/23 14:30:56 gonzalo Exp $
---- openbox/moveresize.c.orig	Wed Oct 10 17:27:34 2012
-+++ openbox/moveresize.c	Wed Oct 10 17:29:12 2012
-@@ -326,6 +326,16 @@ void moveresize_end(gboolean cancel)
+$OpenBSD: patch-openbox_moveresize_c,v 1.2 2013/10/08 11:18:58 dcoppa Exp $
+--- openbox/moveresize.c.orig	Mon Aug 12 03:33:24 2013
++++ openbox/moveresize.c	Mon Oct  7 18:29:46 2013
+@@ -330,6 +330,16 @@ void moveresize_end(gboolean cancel)
  #endif
      }
  

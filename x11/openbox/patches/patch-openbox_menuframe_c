@@ -1,0 +1,22 @@
+$OpenBSD: patch-openbox_menuframe_c,v 1.1 2013/10/08 11:18:58 dcoppa Exp $
+
+commit 0afb5b28c63651c1e598bbd4d88c60ac0b478567
+Author: Tom Sires <tsires@uno.edu>
+Date:   Tue Aug 27 08:02:31 2013 -0500
+
+Fix a typo causing submenuShowDelay to be ignored (Bug 6019)
+
+--- openbox/menuframe.c.orig	Mon Aug 12 03:33:24 2013
++++ openbox/menuframe.c	Tue Oct  8 07:39:35 2013
+@@ -1242,9 +1242,9 @@ void menu_frame_select(ObMenuFrame *self, ObMenuEntryF
+         if (self->selected->entry->type == OB_MENU_ENTRY_TYPE_SUBMENU) {
+             /* only show if the submenu isn't already showing */
+             if (oldchild_entry != self->selected) {
+-                if (immediate || config_submenu_hide_delay == 0)
++                if (immediate || config_submenu_show_delay == 0)
+                     menu_entry_frame_show_submenu(self->selected);
+-                else if (config_submenu_hide_delay > 0) {
++                else if (config_submenu_show_delay > 0) {
+                     if (submenu_show_timer)
+                         g_source_remove(submenu_show_timer);
+                     submenu_show_timer =

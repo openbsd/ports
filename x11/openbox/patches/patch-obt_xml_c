@@ -1,7 +1,7 @@
-$OpenBSD: patch-obt_xml_c,v 1.1 2012/05/29 15:52:08 fgsch Exp $
---- obt/xml.c.orig	Tue May 29 01:49:56 2012
-+++ obt/xml.c	Tue May 29 01:51:19 2012
-@@ -129,6 +129,8 @@ static gboolean load_file(ObtXmlInst *i,
+$OpenBSD: patch-obt_xml_c,v 1.2 2013/10/08 11:18:57 dcoppa Exp $
+--- obt/xml.c.orig	Mon Aug 12 03:33:24 2013
++++ obt/xml.c	Mon Oct  7 18:29:46 2013
+@@ -146,6 +146,8 @@ static gboolean load_file(ObtXmlInst *i,
  
          if (!domain && !filename) /* given a full path to the file */
              path = g_strdup(it->data);

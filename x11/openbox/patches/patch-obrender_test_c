@@ -1,0 +1,26 @@
+$OpenBSD: patch-obrender_test_c,v 1.1 2013/10/08 11:18:57 dcoppa Exp $
+
+commit 9750e5cea8d8cdab2b8b988a8c5d6392b0dbeae8
+Author: Ian Zimmerman <itz@buug.org>
+Date:   Sat Aug 17 15:13:05 2013 -0700
+
+Fix gcc warnings
+
+--- obrender/test.c.orig	Mon Aug 12 03:33:24 2013
++++ obrender/test.c	Tue Oct  8 07:44:53 2013
+@@ -46,7 +46,6 @@ gint main()
+     RrAppearance *look;
+     int done;
+ 
+-    Window root;
+     XEvent report;
+     gint h = 500, w = 500;
+ 
+@@ -64,7 +63,6 @@ gint main()
+                       0);                    /* attributes */
+     XMapWindow(ob_display, win);
+     XSelectInput(ob_display, win, ExposureMask | StructureNotifyMask);
+-    root = RootWindow (ob_display, DefaultScreen (ob_display));
+     inst = RrInstanceNew(ob_display, ob_screen);
+ 
+     look = RrAppearanceNew(inst, 0);

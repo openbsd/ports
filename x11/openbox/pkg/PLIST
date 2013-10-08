@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2011/11/11 10:59:22 benoit Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.28 2013/10/08 11:18:58 dcoppa Exp $
 @bin bin/gdm-control
 @bin bin/gnome-panel-control
 @bin bin/obxprop
@@ -33,6 +32,7 @@ include/openbox/${API_V}/obt/xml.h
 include/openbox/${API_V}/obt/xqueue.h
 lib/libobrender.a
 lib/libobrender.la
+@lib lib/libobrender.so.${LIBobrender_VERSION}
 lib/libobt.a
 lib/libobt.la
 @lib lib/libobt.so.${LIBobt_VERSION}
@@ -76,9 +76,15 @@ share/examples/openbox/xbm/max_toggled.xbm
 share/examples/openbox/xbm/shade.xbm
 share/examples/openbox/xbm/shade_toggled.xbm
 share/gnome/
+share/gnome-session/
+share/gnome-session/sessions/
+share/gnome-session/sessions/openbox-gnome-fallback.session
+share/gnome-session/sessions/openbox-gnome.session
 share/gnome/wm-properties/
 share/gnome/wm-properties/openbox.desktop
+share/locale/af/LC_MESSAGES/openbox.mo
 share/locale/ar/LC_MESSAGES/openbox.mo
+share/locale/be/LC_MESSAGES/openbox.mo
 share/locale/bn_IN/LC_MESSAGES/openbox.mo
 share/locale/ca/LC_MESSAGES/openbox.mo
 share/locale/cs/LC_MESSAGES/openbox.mo
@@ -91,8 +97,10 @@ share/locale/et/LC_MESSAGES/openbox.mo
 share/locale/eu/LC_MESSAGES/openbox.mo
 share/locale/fi/LC_MESSAGES/openbox.mo
 share/locale/fr/LC_MESSAGES/openbox.mo
+share/locale/he/LC_MESSAGES/openbox.mo
 share/locale/hr/LC_MESSAGES/openbox.mo
 share/locale/hu/LC_MESSAGES/openbox.mo
+share/locale/ia/LC_MESSAGES/openbox.mo
 share/locale/it/LC_MESSAGES/openbox.mo
 share/locale/ja/LC_MESSAGES/openbox.mo
 share/locale/lt/LC_MESSAGES/openbox.mo
@@ -102,6 +110,7 @@ share/locale/no/LC_MESSAGES/openbox.mo
 share/locale/pl/LC_MESSAGES/openbox.mo
 share/locale/pt/LC_MESSAGES/openbox.mo
 share/locale/pt_BR/LC_MESSAGES/openbox.mo
+share/locale/ro/LC_MESSAGES/openbox.mo
 share/locale/ru/LC_MESSAGES/openbox.mo
 share/locale/sk/LC_MESSAGES/openbox.mo
 share/locale/sr/LC_MESSAGES/openbox.mo

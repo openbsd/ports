@@ -1,0 +1,21 @@
+$OpenBSD: patch-openbox_screen_c,v 1.1 2013/10/08 11:18:58 dcoppa Exp $
+
+commit 9750e5cea8d8cdab2b8b988a8c5d6392b0dbeae8
+Author: Ian Zimmerman <itz@buug.org>
+Date:   Sat Aug 17 15:13:05 2013 -0700
+
+Fix gcc warnings
+
+--- openbox/screen.c.orig	Mon Aug 12 03:33:24 2013
++++ openbox/screen.c	Tue Oct  8 07:44:53 2013
+@@ -1327,8 +1327,9 @@ typedef struct {
+ static void get_xinerama_screens(Rect **xin_areas, guint *nxin)
+ {
+     guint i;
+-    gint n, l, r, t, b;
++    gint l, r, t, b;
+ #ifdef XINERAMA
++    gint n;
+     XineramaScreenInfo *info;
+ #endif
+ 

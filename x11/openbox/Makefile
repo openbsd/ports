@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.70 2013/05/31 15:35:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2013/10/08 11:18:57 dcoppa Exp $
 
 COMMENT =	small, fast & usable window manager
 
-V =		3.5.0
+V =		3.5.2
 DISTNAME =	openbox-${V}
-REVISION =	3
-SHARED_LIBS +=  obt                  0.0      # 0.1
-SHARED_LIBS +=  obrender             10.0      # 27.1
+SHARED_LIBS +=	obrender	11.0	# 29.1
+SHARED_LIBS +=	obt		1.0	# 2.1
 
 CATEGORIES =	x11
 
@@ -18,11 +17,13 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += ICE Imlib2 SM X11 X11-xcb Xau Xcursor Xext Xfixes Xft
-WANTLIB += Xinerama Xrandr Xrender c expat ffi fontconfig freetype
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 harfbuzz
-WANTLIB += m pango-1.0 pangoft2-1.0 pangoxft-1.0
-WANTLIB += pcre pthread startup-notification-1 xcb xcb-aux xml2
-WANTLIB += z
+WANTLIB += Xinerama Xrandr Xrender c cairo croco-0.6 expat ffi
+WANTLIB += fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangoxft-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs rsvg-2
+WANTLIB += startup-notification-1 xcb xcb-aux xcb-render xcb-shm
+WANTLIB += xml2 z
 
 MASTER_SITES =	${HOMEPAGE}dist/openbox/
 
@@ -34,7 +35,8 @@ RUN_DEPENDS =	devel/py-xdg \
 LIB_DEPENDS +=	devel/pango \
 		devel/startup-notification \
 		graphics/imlib2 \
-		textproc/libxml
+		textproc/libxml \
+		x11/gnome/librsvg
 
 FAKE_FLAGS =	sysconfdir="${PREFIX}/share/examples/openbox" \
 		rcdir="${PREFIX}/share/examples/openbox" \
