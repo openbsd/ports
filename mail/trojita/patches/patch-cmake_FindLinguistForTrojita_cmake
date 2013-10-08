@@ -1,0 +1,30 @@
+$OpenBSD: patch-cmake_FindLinguistForTrojita_cmake,v 1.1 2013/10/08 22:13:31 jturner Exp $
+--- cmake/FindLinguistForTrojita.cmake.orig	Tue Oct  8 10:15:33 2013
++++ cmake/FindLinguistForTrojita.cmake	Tue Oct  8 10:16:20 2013
+@@ -14,7 +14,7 @@ set(QT_LUPDATE_EXECUTABLE NOTFOUND CACHE FILEPATH "" F
+ set(QT_LRELEASE_EXECUTABLE NOTFOUND CACHE FILEPATH "" FORCE)
+ set(QT_LCONVERT_EXECUTABLE NOTFOUND CACHE FILEPATH "" FORCE)
+ 
+-FIND_PROGRAM(QT_LUPDATE_EXECUTABLE NAMES lupdate-qt4 lupdate PATHS
++FIND_PROGRAM(QT_LUPDATE_EXECUTABLE NAMES lupdate4 lupdate PATHS
+   "[HKEY_CURRENT_USER\\Software\\Trolltech\\Qt3Versions\\4.0.0;InstallDir]/bin"
+   "[HKEY_CURRENT_USER\\Software\\Trolltech\\Versions\\4.0.0;InstallDir]/bin"
+   $ENV{QTDIR}/bin
+@@ -28,7 +28,7 @@ else(QT_LUPDATE_EXECUTABLE)
+   endif(LinguistForTrojita_FIND_REQUIRED)
+ endif(QT_LUPDATE_EXECUTABLE)
+ 
+-FIND_PROGRAM(QT_LRELEASE_EXECUTABLE NAMES lrelease-qt4 lrelease PATHS
++FIND_PROGRAM(QT_LRELEASE_EXECUTABLE NAMES lrelease4 lrelease PATHS
+   "[HKEY_CURRENT_USER\\Software\\Trolltech\\Qt3Versions\\4.0.0;InstallDir]/bin"
+   "[HKEY_CURRENT_USER\\Software\\Trolltech\\Versions\\4.0.0;InstallDir]/bin"
+   $ENV{QTDIR}/bin
+@@ -42,7 +42,7 @@ else(QT_LRELEASE_EXECUTABLE)
+   endif(LinguistForTrojita_FIND_REQUIRED)
+ endif(QT_LRELEASE_EXECUTABLE)
+ 
+-FIND_PROGRAM(QT_LCONVERT_EXECUTABLE NAMES lconvert-qt4 lconvert PATHS
++FIND_PROGRAM(QT_LCONVERT_EXECUTABLE NAMES lconvert4 lconvert PATHS
+   "[HKEY_CURRENT_USER\\Software\\Trolltech\\Qt3Versions\\4.0.0;InstallDir]/bin"
+   "[HKEY_CURRENT_USER\\Software\\Trolltech\\Versions\\4.0.0;InstallDir]/bin"
+   $ENV{QTDIR}/bin
