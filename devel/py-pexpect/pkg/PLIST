@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/10/22 09:07:18 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/10/08 05:09:49 rpointel Exp $
 lib/python${MODPY_VERSION}/site-packages/ANSI.py
 lib/python${MODPY_VERSION}/site-packages/ANSI.pyc
 lib/python${MODPY_VERSION}/site-packages/FSM.py
@@ -13,17 +13,11 @@ lib/python${MODPY_VERSION}/site-packages/pxssh.pyc
 lib/python${MODPY_VERSION}/site-packages/screen.py
 lib/python${MODPY_VERSION}/site-packages/screen.pyc
 share/doc/py-pexpect/
-share/doc/py-pexpect/ANSI.html
-share/doc/py-pexpect/FSM.html
 share/doc/py-pexpect/clean.css
 share/doc/py-pexpect/email.png
 share/doc/py-pexpect/examples.html
-share/doc/py-pexpect/fdpexpect.html
 share/doc/py-pexpect/index.html
 share/doc/py-pexpect/index.template.html
-share/doc/py-pexpect/pexpect.html
-share/doc/py-pexpect/pxssh.html
-share/doc/py-pexpect/screen.html
 share/examples/py-pexpect/
 share/examples/py-pexpect/ANSI.py
 share/examples/py-pexpect/FSM.py
@@ -39,8 +33,6 @@ share/examples/py-pexpect/df.py
 share/examples/py-pexpect/fix_cvs_files.py
 share/examples/py-pexpect/ftp.py
 share/examples/py-pexpect/hive.py
-share/examples/py-pexpect/log_69.80.212.10
-share/examples/py-pexpect/log_69.80.212.11
 share/examples/py-pexpect/monitor.py
 share/examples/py-pexpect/passmass.py
 share/examples/py-pexpect/python.py

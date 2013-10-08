@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 10:50:26 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/10/08 05:09:48 rpointel Exp $
 
 COMMENT=	pure Python Expect-like module
 
-MODPY_EGG_VERSION= 2.3
+MODPY_EGG_VERSION= 2.4
 DISTNAME=	pexpect-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
@@ -12,7 +12,7 @@ HOMEPAGE=	http://pexpect.sourceforge.net/
 # Python 
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pexpect/}
+MASTER_SITES =          ${MASTER_SITE_PYPI:=p/pexpect/}
 
 MODULES=	lang/python
 
