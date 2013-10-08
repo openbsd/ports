@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/07/17 17:37:22 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/10/08 09:37:44 nigel Exp $
 ${GEM_BIN}/jekyll${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -212,8 +212,8 @@ ${GEM_LIB}/gems/${DISTNAME}/test/source/_posts/2011-04-12-text-extension.text
 ${GEM_LIB}/gems/${DISTNAME}/test/source/_posts/2013-01-02-post-excerpt.markdown
 ${GEM_LIB}/gems/${DISTNAME}/test/source/_posts/2013-01-12-nil-layout.textile
 ${GEM_LIB}/gems/${DISTNAME}/test/source/_posts/2013-01-12-no-layout.textile
-${GEM_LIB}/gems/${DISTNAME}/test/source/_posts/2013-03-${GEM_BIN_SUFFIX}-not-a-post.markdown/
-${GEM_LIB}/gems/${DISTNAME}/test/source/_posts/2013-03-${GEM_BIN_SUFFIX}-not-a-post.markdown/.gitkeep
+${GEM_LIB}/gems/${DISTNAME}/test/source/_posts/2013-03-19-not-a-post.markdown/
+${GEM_LIB}/gems/${DISTNAME}/test/source/_posts/2013-03-19-not-a-post.markdown/.gitkeep
 ${GEM_LIB}/gems/${DISTNAME}/test/source/_posts/2013-04-11-custom-excerpt.markdown
 ${GEM_LIB}/gems/${DISTNAME}/test/source/_posts/2013-05-10-number-category.textile
 ${GEM_LIB}/gems/${DISTNAME}/test/source/_posts/es/
