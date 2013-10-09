@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2013/07/01 23:21:13 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.16 2013/10/09 10:55:54 sthen Exp $
 @newgroup _smokeping:562
 @newuser _smokeping:562:562:daemon:Smokeping account:/var/empty:/sbin/nologin
 bin/smokeinfo
@@ -157,7 +157,9 @@ share/examples/smokeping/httpd.conf
 share/examples/smokeping/smokemail.dist
 @sample ${SYSCONFDIR}/smokemail
 share/examples/smokeping/smokeping_secrets.dist
+@mode 640
 @sample ${SYSCONFDIR}/smokeping_secrets
+@mode
 share/examples/smokeping/tmail.dist
 @sample ${SYSCONFDIR}/tmail
 @cwd /var/www
