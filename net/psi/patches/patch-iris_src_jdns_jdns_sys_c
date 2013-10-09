@@ -1,6 +1,6 @@
-$OpenBSD: patch-iris_src_jdns_jdns_sys_c,v 1.1 2013/04/21 13:56:27 shadchin Exp $
---- iris/src/jdns/jdns_sys.c.orig	Sun Apr  1 13:15:35 2012
-+++ iris/src/jdns/jdns_sys.c	Sun Apr  8 14:32:54 2012
+$OpenBSD: patch-iris_src_jdns_jdns_sys_c,v 1.2 2013/10/09 16:52:24 shadchin Exp $
+--- iris/src/jdns/jdns_sys.c.orig	Thu Oct  4 06:53:09 2012
++++ iris/src/jdns/jdns_sys.c	Sun Jul 14 21:45:39 2013
 @@ -752,6 +752,7 @@ static jdns_dnsparams_t *dnsparams_get_unixsys()
  	if(n == -1)
  		return params;
@@ -17,3 +17,21 @@ $OpenBSD: patch-iris_src_jdns_jdns_sys_c,v 1.1 2013/04/21 13:56:27 shadchin Exp 
  
  	// nameservers - ipv4
  	for(n = 0; n < MAXNS && n < RESVAR.nscount; ++n)
+@@ -829,6 +831,9 @@ static jdns_dnsparams_t *dnsparams_get_unix()
+ {
+ 	jdns_dnsparams_t *params;
+ 
++#if defined(JDNS_OS_OPENBSD)
++	params = dnsparams_get_unixfiles();
++#else
+ 	// prefer system calls over files
+ 	params = dnsparams_get_unixsys();
+ 	if(params->nameservers->count == 0)
+@@ -836,6 +841,7 @@ static jdns_dnsparams_t *dnsparams_get_unix()
+ 		jdns_dnsparams_delete(params);
+ 		params = dnsparams_get_unixfiles();
+ 	}
++#endif
+ 
+ 	apply_hosts_file(params, "/etc/hosts");
+ 
