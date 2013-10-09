@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SubEngine.pm,v 1.14 2013/10/07 20:23:13 espie Exp $
+# $OpenBSD: SubEngine.pm,v 1.15 2013/10/09 06:20:57 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -147,7 +147,12 @@ sub start
 	my $self = shift;
 	my $core = $self->get_core;
 
-	$self->use_core($core) || $core->mark_ready;
+	if ($self->use_core($core)) {
+		return 1;
+	} else {
+		$core->mark_ready;
+		return 0;
+	}
 }
 
 sub preempt_core

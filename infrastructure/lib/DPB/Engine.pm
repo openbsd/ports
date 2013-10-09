@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.95 2013/10/07 18:01:33 espie Exp $
+# $OpenBSD: Engine.pm,v 1.96 2013/10/09 06:20:56 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -462,15 +462,17 @@ sub rebuild_info
 sub start_new_job
 {
 	my $self = shift;
-	$self->{buildable}->start;
+	my $r = $self->{buildable}->start;
 	$self->flush;
+	return $r;
 }
 
 sub start_new_fetch
 {
 	my $self = shift;
-	$self->{tofetch}->start;
+	my $r = $self->{tofetch}->start;
 	$self->flush;
+	return $r;
 }
 
 sub can_build
