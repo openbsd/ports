@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2013/09/17 16:51:54 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.20 2013/10/09 02:39:32 bcallah Exp $
 @bin bin/liferea
 bin/liferea-add-feed
 lib/liferea/
@@ -13,6 +13,8 @@ lib/liferea/plugins/media-player.py
 man/pl/
 man/pl/man1/
 @man man/pl/man1/liferea.1
+share/appdata/
+share/appdata/liferea.appdata.xml
 share/applications/liferea.desktop
 share/doc/liferea/
 share/doc/liferea/html/
