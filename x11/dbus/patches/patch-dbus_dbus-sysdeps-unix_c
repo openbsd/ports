@@ -1,0 +1,19 @@
+$OpenBSD: patch-dbus_dbus-sysdeps-unix_c,v 1.16 2013/10/09 11:11:49 ajacoutot Exp $
+
+From pkgsrc:
+_dbus_poll: set the timeout value argument to poll to -1 whenever it is
+less than -1 to avoid an infinite EINVAL loop.
+
+--- dbus/dbus-sysdeps-unix.c.orig	Mon Sep 16 14:57:59 2013
++++ dbus/dbus-sysdeps-unix.c	Wed Oct  9 13:11:28 2013
+@@ -2543,6 +2543,10 @@ _dbus_poll (DBusPollFD *fds,
+       _DBUS_STRUCT_OFFSET (DBusPollFD, revents) ==
+       _DBUS_STRUCT_OFFSET (struct pollfd, revents))
+     {
++      if (timeout_milliseconds < -1) {
++        _dbus_warn("_dbus_poll: timeout = %d (fixed)\n", timeout_milliseconds);
++        timeout_milliseconds = -1;
++      }
+       return poll ((struct pollfd*) fds,
+                    n_fds,
+                    timeout_milliseconds);
