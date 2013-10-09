@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_cc_options_h,v 1.1 2013/10/09 13:36:15 sthen Exp $
+
+grrr. even upstream can't keep on top of their stupid incompatible changes.
+
+--- src/cc/options.h.orig	Wed Oct  9 14:30:31 2013
++++ src/cc/options.h	Wed Oct  9 14:30:56 2013
+@@ -469,7 +469,7 @@ struct options : boost::noncopyable
+ 
+     podoc.add_options()
+     (OPT__FILENAME_FORMAT",f",
+-      po::value<std::string>()->default_value("%t.%e"),
++      po::value<std::string>()->default_value("%t.%s"),
+       "Format of media file name")
+     (OPT__UPDATE_INTERVAL",i",
+       po::value<update_interval>()->default_value(update_interval(1)),

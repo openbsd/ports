@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/09/27 13:47:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/10/09 13:36:15 sthen Exp $
 
 COMMENT =		media download tool
 
 DISTNAME =		cclive-0.9.2
+REVISION =		0
 EXTRACT_SUFX =		.tar.xz
 
 CATEGORIES =		www
