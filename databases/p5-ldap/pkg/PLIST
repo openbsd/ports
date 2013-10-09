@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.13 2010/09/21 13:14:01 pea Exp $
+@comment $OpenBSD: PLIST,v 1.14 2013/10/09 14:09:39 sthen Exp $
 ${P5SITE}/Bundle/
 ${P5SITE}/Bundle/Net/
 ${P5SITE}/Bundle/Net/LDAP.pm
 ${P5SITE}/LWP/
 ${P5SITE}/LWP/Protocol/
 ${P5SITE}/LWP/Protocol/ldap.pm
+${P5SITE}/LWP/Protocol/ldapi.pm
 ${P5SITE}/LWP/Protocol/ldaps.pm
 ${P5SITE}/Net/
 ${P5SITE}/Net/LDAP/
@@ -15,14 +16,17 @@ ${P5SITE}/Net/LDAP/Bind.pm
 ${P5SITE}/Net/LDAP/Constant.pm
 ${P5SITE}/Net/LDAP/Control/
 ${P5SITE}/Net/LDAP/Control.pm
+${P5SITE}/Net/LDAP/Control/Assertion.pm
 ${P5SITE}/Net/LDAP/Control/EntryChange.pm
 ${P5SITE}/Net/LDAP/Control/ManageDsaIT.pm
+${P5SITE}/Net/LDAP/Control/MatchedValues.pm
 ${P5SITE}/Net/LDAP/Control/Paged.pm
 ${P5SITE}/Net/LDAP/Control/PasswordPolicy.pm
 ${P5SITE}/Net/LDAP/Control/PersistentSearch.pm
 ${P5SITE}/Net/LDAP/Control/PostRead.pm
 ${P5SITE}/Net/LDAP/Control/PreRead.pm
 ${P5SITE}/Net/LDAP/Control/ProxyAuth.pm
+${P5SITE}/Net/LDAP/Control/Relax.pm
 ${P5SITE}/Net/LDAP/Control/Sort.pm
 ${P5SITE}/Net/LDAP/Control/SortResult.pm
 ${P5SITE}/Net/LDAP/Control/SyncDone.pm
@@ -36,10 +40,14 @@ ${P5SITE}/Net/LDAP/Entry.pod
 ${P5SITE}/Net/LDAP/Examples.pod
 ${P5SITE}/Net/LDAP/Extension/
 ${P5SITE}/Net/LDAP/Extension.pm
+${P5SITE}/Net/LDAP/Extension/Cancel.pm
 ${P5SITE}/Net/LDAP/Extension/Refresh.pm
 ${P5SITE}/Net/LDAP/Extension/SetPassword.pm
 ${P5SITE}/Net/LDAP/Extension/WhoAmI.pm
+${P5SITE}/Net/LDAP/Extra/
 ${P5SITE}/Net/LDAP/Extra.pm
+${P5SITE}/Net/LDAP/Extra/AD.pm
+${P5SITE}/Net/LDAP/Extra/eDirectory.pm
 ${P5SITE}/Net/LDAP/FAQ.pod
 ${P5SITE}/Net/LDAP/Filter.pm
 ${P5SITE}/Net/LDAP/Filter.pod
@@ -63,17 +71,23 @@ ${P5SITE}/Net/LDAP/Util.pm
 ${P5SITE}/Net/LDAPI.pm
 ${P5SITE}/Net/LDAPS.pm
 @man man/man3p/Bundle::Net::LDAP.3p
+@man man/man3p/LWP::Protocol::ldap.3p
+@man man/man3p/LWP::Protocol::ldapi.3p
+@man man/man3p/LWP::Protocol::ldaps.3p
 @man man/man3p/Net::LDAP.3p
 @man man/man3p/Net::LDAP::Constant.3p
 @man man/man3p/Net::LDAP::Control.3p
+@man man/man3p/Net::LDAP::Control::Assertion.3p
 @man man/man3p/Net::LDAP::Control::EntryChange.3p
 @man man/man3p/Net::LDAP::Control::ManageDsaIT.3p
+@man man/man3p/Net::LDAP::Control::MatchedValues.3p
 @man man/man3p/Net::LDAP::Control::Paged.3p
 @man man/man3p/Net::LDAP::Control::PasswordPolicy.3p
 @man man/man3p/Net::LDAP::Control::PersistentSearch.3p
 @man man/man3p/Net::LDAP::Control::PostRead.3p
 @man man/man3p/Net::LDAP::Control::PreRead.3p
 @man man/man3p/Net::LDAP::Control::ProxyAuth.3p
+@man man/man3p/Net::LDAP::Control::Relax.3p
 @man man/man3p/Net::LDAP::Control::Sort.3p
 @man man/man3p/Net::LDAP::Control::SortResult.3p
 @man man/man3p/Net::LDAP::Control::SyncDone.3p
@@ -84,10 +98,13 @@ ${P5SITE}/Net/LDAPS.pm
 @man man/man3p/Net::LDAP::DSML.3p
 @man man/man3p/Net::LDAP::Entry.3p
 @man man/man3p/Net::LDAP::Examples.3p
+@man man/man3p/Net::LDAP::Extension::Cancel.3p
 @man man/man3p/Net::LDAP::Extension::Refresh.3p
 @man man/man3p/Net::LDAP::Extension::SetPassword.3p
 @man man/man3p/Net::LDAP::Extension::WhoAmI.3p
 @man man/man3p/Net::LDAP::Extra.3p
+@man man/man3p/Net::LDAP::Extra::AD.3p
+@man man/man3p/Net::LDAP::Extra::eDirectory.3p
 @man man/man3p/Net::LDAP::FAQ.3p
 @man man/man3p/Net::LDAP::Filter.3p
 @man man/man3p/Net::LDAP::FilterMatch.3p
