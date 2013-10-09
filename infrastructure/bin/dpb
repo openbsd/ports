@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.99 2013/10/06 15:49:22 espie Exp $
+# $OpenBSD: dpb,v 1.100 2013/10/09 06:21:38 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -58,7 +58,7 @@ BEGIN {
 		return $msg;
 	}
 
-	my $trace = 1;
+	my $trace = 0;
 	if ($trace) {
 		$SIG{__WARN__} = sub {
 			my $_ = pop @_;
@@ -208,8 +208,10 @@ sub handle_non_waiting_jobs
 		$checked = 1;
 	}
 	while ($keep_going && DPB::Core->avail && $state->engine->can_build) {
-		$state->engine->start_new_job;
 		$force_report = 1;
+		if (!$state->engine->start_new_job) {
+			last;
+		}
 	}
 	while ($keep_going && DPB::Core::Fetcher->avail &&
 	    $state->engine->can_fetch) {
@@ -217,8 +219,10 @@ sub handle_non_waiting_jobs
 			$state->engine->check_buildable;
 			$checked = 1;
 		}
-		$state->engine->start_new_fetch;
 		$force_report = 1;
+		if (!$state->engine->start_new_fetch) {
+			last;
+		}
 	}
 	my $current = time();
 	DPB::Core->log_concurrency($current, $state->{concurrent});
