@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_Makefile_in,v 1.18 2013/06/13 13:08:53 ajacoutot Exp $
---- tools/Makefile.in.orig	Wed Jun 12 15:02:42 2013
-+++ tools/Makefile.in	Thu Jun 13 15:03:02 2013
-@@ -367,7 +367,7 @@ AM_CPPFLAGS = \
+$OpenBSD: patch-tools_Makefile_in,v 1.19 2013/10/09 11:10:49 ajacoutot Exp $
+--- tools/Makefile.in.orig	Tue Oct  8 14:26:28 2013
++++ tools/Makefile.in	Wed Oct  9 12:43:49 2013
+@@ -412,7 +412,7 @@ AM_CPPFLAGS = \
  	$(DBUS_STATIC_BUILD_CPPFLAGS) \
  	$(DBUS_X_CFLAGS) \
  	-DDBUS_COMPILATION \
@@ -10,8 +10,8 @@ $OpenBSD: patch-tools_Makefile_in,v 1.18 2013/06/13 13:08:53 ajacoutot Exp $
  	$(NULL)
  
  
-@@ -779,12 +779,12 @@ uninstall-am: uninstall-binPROGRAMS
- 	uninstall-binPROGRAMS
+@@ -818,12 +818,12 @@ uninstall-am: uninstall-binPROGRAMS
+ 	uninstall-am uninstall-binPROGRAMS
  
  
 -# create the /var/lib/dbus directory for dbus-uuidgen

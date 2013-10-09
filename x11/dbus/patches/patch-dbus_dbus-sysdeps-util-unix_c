@@ -1,9 +1,9 @@
-$OpenBSD: patch-dbus_dbus-sysdeps-util-unix_c,v 1.8 2013/05/07 07:00:01 ajacoutot Exp $
+$OpenBSD: patch-dbus_dbus-sysdeps-util-unix_c,v 1.9 2013/10/09 11:10:49 ajacoutot Exp $
 
 XXX push upstream
 
---- dbus/dbus-sysdeps-util-unix.c.orig	Fri Nov  9 17:01:44 2012
-+++ dbus/dbus-sysdeps-util-unix.c	Tue May  7 08:47:04 2013
+--- dbus/dbus-sysdeps-util-unix.c.orig	Fri Sep 13 13:22:11 2013
++++ dbus/dbus-sysdeps-util-unix.c	Wed Oct  9 12:43:47 2013
 @@ -55,6 +55,13 @@
  #include <sys/syslimits.h>
  #endif
@@ -41,7 +41,7 @@ XXX push upstream
    if (!_dbus_string_append_printf (&path, "/proc/%ld/cmdline", pid))
      goto oom;
    
-@@ -1149,6 +1164,24 @@ _dbus_command_for_pid (unsigned long  pid,
+@@ -1150,6 +1165,24 @@ _dbus_command_for_pid (unsigned long  pid,
    
    if (!_dbus_close (fd, error))
      goto fail;
@@ -66,7 +66,7 @@ XXX push upstream
    
    string_squash_nonprintable (&cmdline);  
  
-@@ -1163,5 +1196,8 @@ oom:
+@@ -1164,5 +1197,8 @@ oom:
  fail:
    _dbus_string_free (&cmdline);
    _dbus_string_free (&path);

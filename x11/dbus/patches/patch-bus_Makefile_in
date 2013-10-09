@@ -1,10 +1,10 @@
-$OpenBSD: patch-bus_Makefile_in,v 1.19 2013/06/13 13:08:53 ajacoutot Exp $
+$OpenBSD: patch-bus_Makefile_in,v 1.20 2013/10/09 11:10:47 ajacoutot Exp $
 
 XXX -lkvm push upstream (cf. patch-dbus_dbus-sysdeps-util-unix_c)
 
---- bus/Makefile.in.orig	Wed Jun 12 15:02:41 2013
-+++ bus/Makefile.in	Thu Jun 13 15:03:02 2013
-@@ -383,7 +383,7 @@ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+--- bus/Makefile.in.orig	Tue Oct  8 14:26:27 2013
++++ bus/Makefile.in	Wed Oct  9 12:43:49 2013
+@@ -428,7 +428,7 @@ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
  LAUNCHCTL = @LAUNCHCTL@
  LAUNCHD_AGENT_DIR = @LAUNCHD_AGENT_DIR@
  LD = @LD@
@@ -13,7 +13,7 @@ XXX -lkvm push upstream (cf. patch-dbus_dbus-sysdeps-util-unix_c)
  LIBDBUS_LIBS = @LIBDBUS_LIBS@
  LIBOBJS = @LIBOBJS@
  LIBS = @LIBS@
-@@ -1532,7 +1532,6 @@ clean-local:
+@@ -1575,7 +1575,6 @@ clean-local:
  	/bin/rm *.bb *.bbg *.da *.gcov || true
  
  install-data-hook:
@@ -21,7 +21,7 @@ XXX -lkvm push upstream (cf. patch-dbus_dbus-sysdeps-util-unix_c)
  	$(mkinstalldirs) $(DESTDIR)$(configdir)/system.d
  	$(mkinstalldirs) $(DESTDIR)$(configdir)/session.d
  	$(mkinstalldirs) $(DESTDIR)$(datadir)/dbus-1/services
-@@ -1549,13 +1548,6 @@ install-data-hook:
+@@ -1592,13 +1591,6 @@ install-data-hook:
  @HAVE_SYSTEMD_TRUE@	ln -fs ../dbus.service $(DESTDIR)$(systemdsystemunitdir)/multi-user.target.wants/dbus.service
  
  @DBUS_UNIX_TRUE@install-exec-hook:
