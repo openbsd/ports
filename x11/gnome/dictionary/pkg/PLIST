@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/08/06 18:09:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/10/09 13:04:20 ajacoutot Exp $
 @conflict gnome-utils-*
 @bin bin/gnome-dictionary
 include/gdict-1.0/
@@ -61,10 +61,13 @@ share/gtk-doc/html/gdict/ix01.html
 share/gtk-doc/html/gdict/ix02.html
 share/gtk-doc/html/gdict/ix03.html
 share/gtk-doc/html/gdict/ix04.html
+share/gtk-doc/html/gdict/left-insensitive.png
 share/gtk-doc/html/gdict/left.png
+share/gtk-doc/html/gdict/right-insensitive.png
 share/gtk-doc/html/gdict/right.png
 share/gtk-doc/html/gdict/sources.html
 share/gtk-doc/html/gdict/style.css
+share/gtk-doc/html/gdict/up-insensitive.png
 share/gtk-doc/html/gdict/up.png
 share/help/
 share/help/C/
@@ -624,6 +627,7 @@ share/locale/eu/LC_MESSAGES/gnome-dictionary.mo
 share/locale/fa/LC_MESSAGES/gnome-dictionary.mo
 share/locale/fi/LC_MESSAGES/gnome-dictionary.mo
 share/locale/fr/LC_MESSAGES/gnome-dictionary.mo
+share/locale/fur/LC_MESSAGES/gnome-dictionary.mo
 share/locale/ga/LC_MESSAGES/gnome-dictionary.mo
 share/locale/gl/LC_MESSAGES/gnome-dictionary.mo
 share/locale/gu/LC_MESSAGES/gnome-dictionary.mo

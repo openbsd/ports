@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/09/28 08:51:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/10/09 13:04:20 ajacoutot Exp $
 
 COMMENT=		GNOME dictionary application
 
 GNOME_PROJECT=		gnome-dictionary
-GNOME_VERSION=		3.8.0
-REVISION=		0
+GNOME_VERSION=		3.10.0
 
 SHARED_LIBS +=  gdict-1.0                 8.0 # 6.7
 
@@ -19,11 +18,11 @@ WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += xcb xcb-render xcb-shm z
 
-LIB_DEPENDS=		x11/gtk+3
-
 MODULES=		devel/dconf \
 			devel/gettext \
 			x11/gnome
+
+LIB_DEPENDS=		x11/gtk+3
 
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
