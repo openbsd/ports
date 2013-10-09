@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/05/17 12:48:57 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/10/09 11:57:43 stsp Exp $
 include/serf-1/
 include/serf-1/serf.h
 include/serf-1/serf_bucket_types.h
 include/serf-1/serf_bucket_util.h
 lib/libserf-1.a
-lib/libserf-1.la
 @lib lib/libserf-1.so.${LIBserf-1_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/serf-1.pc
