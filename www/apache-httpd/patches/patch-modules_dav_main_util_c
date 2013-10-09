@@ -1,0 +1,24 @@
+$OpenBSD: patch-modules_dav_main_util_c,v 1.3 2013/10/09 12:54:17 stsp Exp $
+https://issues.apache.org/bugzilla/show_bug.cgi?id=55306
+http://svn.apache.org/viewvc?view=revision&revision=1528718
+--- modules/dav/main/util.c.orig	Fri Jun 28 00:35:39 2013
++++ modules/dav/main/util.c	Wed Oct  9 14:24:32 2013
+@@ -929,13 +929,16 @@ static dav_error * dav_validate_resource_state(apr_poo
+         /*
+         ** For methods other than LOCK:
+         **
+-        ** If we have no locks, then <seen_locktoken> can be set to true --
++        ** If we have no locks or if the resource is not being modified
++        ** (per RFC 4918 the lock token is not required on resources
++        ** we are not changing), then <seen_locktoken> can be set to true --
+         ** pretending that we've already met the requirement of seeing one
+         ** of the resource's locks in the If: header.
+         **
+         ** Otherwise, it must be cleared and we'll look for one.
+         */
+-        seen_locktoken = (lock_list == NULL);
++        seen_locktoken = (lock_list == NULL
++                          || flags & DAV_VALIDATE_NO_MODIFY);
+     }
+ 
+     /*

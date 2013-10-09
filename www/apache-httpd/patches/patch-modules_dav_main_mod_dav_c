@@ -1,0 +1,27 @@
+$OpenBSD: patch-modules_dav_main_mod_dav_c,v 1.1 2013/10/09 12:54:16 stsp Exp $
+https://issues.apache.org/bugzilla/show_bug.cgi?id=55304
+https://issues.apache.org/bugzilla/show_bug.cgi?id=55306
+http://svn.apache.org/viewvc?view=revision&revision=1515569
+http://svn.apache.org/viewvc?view=revision&revision=1528718
+--- modules/dav/main/mod_dav.c.orig	Thu Jun 27 18:54:14 2013
++++ modules/dav/main/mod_dav.c	Wed Oct  9 14:28:01 2013
+@@ -2724,7 +2724,7 @@ static int dav_method_copymove(request_rec *r, int is_
+      * The multistatus responses will contain the information about any
+      * resource that fails the validation.
+      *
+-     * We check the parent resource, too, since this is a MOVE. Moving the
++     * We check the parent resource, too, if this is a MOVE. Moving the
+      * resource effectively removes it from the parent collection, so we
+      * must ensure that we have met the appropriate conditions.
+      *
+@@ -2733,7 +2733,9 @@ static int dav_method_copymove(request_rec *r, int is_
+      */
+     if ((err = dav_validate_request(r, resource, depth, NULL,
+                                     &multi_response,
+-                                    DAV_VALIDATE_PARENT
++                                    (is_move ? DAV_VALIDATE_PARENT
++                                             : DAV_VALIDATE_RESOURCE
++                                               | DAV_VALIDATE_NO_MODIFY)
+                                     | DAV_VALIDATE_USE_424,
+                                     NULL)) != NULL) {
+         err = dav_push_error(r->pool, err->status, 0,
