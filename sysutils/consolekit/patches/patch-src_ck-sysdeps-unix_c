@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_ck-sysdeps-unix_c,v 1.10 2012/10/12 14:55:42 ajacoutot Exp $
---- src/ck-sysdeps-unix.c.orig	Tue May  3 01:51:07 2011
-+++ src/ck-sysdeps-unix.c	Fri Oct 12 16:17:55 2012
+$OpenBSD: patch-src_ck-sysdeps-unix_c,v 1.11 2013/10/09 16:43:13 ajacoutot Exp $
+--- src/ck-sysdeps-unix.c.orig	Fri Jul 19 06:15:28 2013
++++ src/ck-sysdeps-unix.c	Wed Oct  9 18:31:11 2013
 @@ -36,6 +36,10 @@
  #include <linux/kd.h>
  #endif

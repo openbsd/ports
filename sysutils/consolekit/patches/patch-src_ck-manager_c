@@ -1,11 +1,13 @@
-$OpenBSD: patch-src_ck-manager_c,v 1.3 2011/04/28 13:08:33 ajacoutot Exp $
+$OpenBSD: patch-src_ck-manager_c,v 1.4 2013/10/09 16:43:13 ajacoutot Exp $
 
 XXX revert 4f88228f31a63c026c424a92827f26ad7535275c
 The Kit people assume the world runs Linux and PAM, see
 https://bugs.freedesktop.org/show_bug.cgi?id=28377
 
---- src/ck-manager.c.orig	Tue Oct 26 16:34:03 2010
-+++ src/ck-manager.c	Sat Dec  4 12:18:29 2010
+Fix deprecated use of polkit_authority_get().
+
+--- src/ck-manager.c.orig	Fri Jul 19 06:15:28 2013
++++ src/ck-manager.c	Wed Oct  9 18:17:24 2013
 @@ -1659,175 +1659,13 @@ open_session_for_leader (CkManager             *manage
          dbus_g_method_return (context, cookie);
  }
@@ -184,3 +186,22 @@ https://bugs.freedesktop.org/show_bug.cgi?id=28377
          open_session_for_leader (manager,
                                   leader,
                                   parameters,
+@@ -2423,10 +2261,16 @@ register_manager (CkManager *manager)
+         GError *error = NULL;
+ 
+ #ifdef HAVE_POLKIT
+-        manager->priv->pol_ctx = polkit_authority_get ();
++        manager->priv->pol_ctx = polkit_authority_get_sync (NULL, &error);
++        if (manager->priv->pol_ctx == NULL) {
++                if (error != NULL) {
++                        g_critical ("error getting polkit authority: %s", error->message);
++                        g_error_free (error);
++                }
++                exit (1);
++        }
+ #endif
+ 
+-        error = NULL;
+         manager->priv->connection = dbus_g_bus_get (DBUS_BUS_SYSTEM, &error);
+         if (manager->priv->connection == NULL) {
+                 if (error != NULL) {
