@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2013/07/05 20:09:59 bentley Exp $
+# $OpenBSD: Makefile,v 1.18 2013/10/09 11:56:37 stsp Exp $
 
 COMMENT=	Python-based build system
 
 VERSION =	2.3.0
+REVISION = 	1
 DISTNAME=	scons-${VERSION}
 CATEGORIES=	devel
 
