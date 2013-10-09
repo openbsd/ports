@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_crypto_ocb_cc,v 1.1 2013/10/09 07:33:41 jca Exp $
+Use generic code on ARM instead of asm because of some unsupported
+instructions.
+Introduced by https://github.com/keithw/mosh/issues/86
+--- src/crypto/ocb.cc.orig	Tue Oct  8 11:57:42 2013
++++ src/crypto/ocb.cc	Tue Oct  8 11:58:01 2013
+@@ -298,7 +298,7 @@
+         return swap_if_le(rval);
+ 	}
+ 
+-	#if __GNUC__ && __arm__
++	#if 0
+ 	static inline block double_block(block b) {
+ 		__asm__ ("adds %1,%1,%1\n\t"
+ 				 "adcs %H1,%H1,%H1\n\t"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/06/11 15:51:58 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2013/10/09 07:33:41 jca Exp $
 
 COMMENT =		mobile shell
 
@@ -30,8 +30,5 @@ CONFIGURE_STYLE =	gnu
 # pick only ld(1) -z now to match upstream
 CONFIGURE_ARGS =	--disable-hardening
 CONFIGURE_ENV =		ac_cv_have_decl_htobe64=yes LDFLAGS="-Wl,-z,now"
-
-# upstream says 1.3 will ship with tests
-NO_TEST =		Yes
 
 .include <bsd.port.mk>
