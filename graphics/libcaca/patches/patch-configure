@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2013/10/10 16:00:34 espie Exp $
+--- configure.orig	Thu Oct 10 17:59:11 2013
++++ configure	Thu Oct 10 17:59:22 2013
+@@ -17655,7 +17655,7 @@ fi
+ 
+ # Build development tools?
+ 
+-pkg_failed=no
++pkg_failed=yes
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for PANGOFT2" >&5
+ $as_echo_n "checking for PANGOFT2... " >&6; }
+ 
