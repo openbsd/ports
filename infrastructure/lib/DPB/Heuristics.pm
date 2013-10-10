@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.26 2013/10/06 13:33:31 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.27 2013/10/10 07:26:40 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -396,7 +396,7 @@ sub count
 sub non_empty
 {
 	my $self = shift;
-	return scalar keys %{$self->{o}};
+	return scalar(keys %{$self->{o}}) != 0;
 }
 
 sub sorted_values
