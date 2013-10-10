@@ -1,0 +1,91 @@
+$OpenBSD: patch-configure_ac,v 1.12 2013/10/10 09:55:24 stsp Exp $
+https://bugzilla.gnome.org/show_bug.cgi?id=709752
+--- configure.ac.orig	Mon Sep 16 03:23:08 2013
++++ configure.ac	Wed Oct  9 18:48:40 2013
+@@ -58,6 +58,7 @@ GI_REQUIRED=0.9.5
+ 
+ dnl Subversion plugin
+ NEON_REQUIRED=0.28.2
++SERF_REQUIRED=1.2.0
+ SVN_MAJOR=1
+ SVN_MINOR=5
+ SVN_PATCH=0
+@@ -653,6 +654,7 @@ fi
+ dnl ******************************************************************
+ dnl Check for extra libs required by subversion.
+ dnl FIXME: This should actually be done by subversion and not by us.
++dnl        See http://subversion.tigris.org/issues/show_bug.cgi?id=4435
+ dnl ******************************************************************
+ 
+ AC_ARG_ENABLE(plugin-subversion,
+@@ -662,6 +664,20 @@ AC_ARG_ENABLE(plugin-subversion,
+     fi ],
+   [ user_disabled_subversion=0 ] )
+ 
++AC_ARG_ENABLE(neon,
++	AS_HELP_STRING([--disable-neon],[Disable neon support in Subversion plugin]),
++	[ if test "$enableval" = "no"; then
++		user_disabled_neon=1
++	  fi ],
++	[ user_disabled_neon=0 ])
++
++AC_ARG_ENABLE(serf,
++	AS_HELP_STRING([--disable-serf],[Disable serf support in Subversion plugin]),
++	[ if test "$enableval" = "no"; then
++		user_disabled_serf=1
++	  fi ],
++	[ user_disabled_serf=0 ])
++
+ AC_MSG_CHECKING(if subversion support is disabled)
+ if test "$user_disabled_subversion" = 1; then
+ 	AC_MSG_RESULT(yes)
+@@ -692,15 +708,26 @@ if test -n "$SVN_INCLUDE" ; then
+ 		SVN_INCLUDE=""
+ 	fi
+ 
+-	dnl -----------------------------------------
+-	dnl NEON. Required by subversion (devel)
+-	dnl------------------------------------------
+-	have_neon=no
+-	PKG_CHECK_MODULES(NEON,                            \
+-                neon, have_neon=yes, have_neon=no)
+-        if test x"$have_neon" = "xno"; then
+-		SVN_INCLUDE=""
++	dnl ----------------------------------------------------------
++	dnl NEON/SERF. Required by subversion (devel) for HTTP support
++	dnl-----------------------------------------------------------
++	# Subversion <= 1.7 relies on neon (recommended) or serf.
++	# Subversion 1.8 dropped neon support and uses serf to talk
++	# to HTTP servers.
++	#
++	# Subversion can be built without HTTP client support so neon and
++	# serf aren't hard requirements. But if present on the system
++	# it is reasonable to assume that Subversion is linked to them.
++	if test "$user_disabled_neon" = 0; then
++		have_neon=no
++		PKG_CHECK_MODULES(NEON,                            \
++			neon, have_neon=yes, have_neon=no)
+ 	fi
++	if test "$user_disabled_serf" = 0; then
++		have_serf=no
++		PKG_CHECK_MODULES(SERF,                            \
++			serf-1, have_serf=yes, have_serf=no)
++	fi
+ 
+ 	dnl Make sure our SVN version is high enough
+ 	dnl Eww, eww, eww, this is dirty
+@@ -730,11 +757,11 @@ dnl ------------------------------------------
+ if test -n "$SVN_INCLUDE" ; then
+ 	SVN_INCLUDE="-I$SVN_INCLUDE"
+ 	if test x != "x$SVN_LIB" ; then
+-	    SVN_LIB="-L$SVN_LIB $APR_LIBS $APR_UTILS_LIBS $NEON_LIBS -lsvn_client-1 -lsvn_subr-1"
++	    SVN_LIB="-L$SVN_LIB $APR_LIBS $APR_UTILS_LIBS $NEON_LIBS $SERF_LIBS -lsvn_client-1 -lsvn_subr-1"
+ 	else
+-	    SVN_LIB="$APR_LIBS $APR_UTILS_LIBS $NEON_LIBS -lsvn_client-1 -lsvn_subr-1"
++	    SVN_LIB="$APR_LIBS $APR_UTILS_LIBS $NEON_LIBS $SERF_LIBS -lsvn_client-1 -lsvn_subr-1"
+ 	fi
+-	SVN_CFLAGS="$APR_CFLAGS $APR_UTILS_CFLAGS $NEON_CFLAGS"
++	SVN_CFLAGS="$APR_CFLAGS $APR_UTILS_CFLAGS $NEON_CFLAGS $SERF_CFLAGS"
+ fi
+ 
+ AM_CONDITIONAL(BUILD_SVN, [test -n "$SVN_INCLUDE"])

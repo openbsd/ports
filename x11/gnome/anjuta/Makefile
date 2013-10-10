@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2013/10/06 15:47:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.103 2013/10/10 09:55:24 stsp Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		3.10.0
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -28,11 +28,11 @@ WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
 WANTLIB += gtksourceview-3.0 harfbuzz harfbuzz-icu heimbase icudata
 WANTLIB += icui18n icuuc javascriptcoregtk-3.0 jpeg krb5 m magic
-WANTLIB += ncurses neon pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png proxy pthread pthread-stubs roken
+WANTLIB += ncurses serf-1 pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs roken
 WANTLIB += sasl2 secret-1 soup-2.4 sqlite3 ssl stdc++ svn_client-1
 WANTLIB += svn_delta-1 svn_diff-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1
-WANTLIB += svn_fs_util-1 svn_ra-1 svn_ra_local-1 svn_ra_neon-1
+WANTLIB += svn_fs_util-1 svn_ra-1 svn_ra_local-1 svn_ra_serf-1
 WANTLIB += svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1 util vala-0.22
 WANTLIB += vte2_90 webkit2gtk-3.0 webp wind xcb xcb-render xcb-shm
 WANTLIB += xml2 xslt z orc-0.4
@@ -74,8 +74,11 @@ MODGNOME_TOOLS= 	gi yelp vala
 
 YACC=			bison -y
 
+AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	--disable-static \
-			--with-symbol-db-shm=/tmp
+			--with-symbol-db-shm=/tmp \
+			--disable-neon
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/plugins/project-wizard/templates/pygtk.wiz.in \
