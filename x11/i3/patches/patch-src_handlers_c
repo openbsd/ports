@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_handlers_c,v 1.15 2013/09/25 09:58:14 dcoppa Exp $
+$OpenBSD: patch-src_handlers_c,v 1.16 2013/10/10 16:34:58 dcoppa Exp $
 
 commit 0b168ee499e6065969ddd3359f95dfdf7e14350c
 Author: Kacper Kowalik (Xarthisius) <xarthisius@gentoo.org>
@@ -12,6 +12,16 @@ Date:   Fri Aug 30 19:59:57 2013 +0200
 
 Bugfix: update root geometry on output changes for "fullscreen global"
 
+commit 05e46848f07460f18574d51eba0b182b177ab2d2
+Author: Tony Crisci <tony@dubstepdish.com>
+Date:   Wed Oct 9 12:49:15 2013 -0400
+
+Reply to _NET_REQUEST_FRAME_EXTENTS correctly
+
+Reply to _NET_REQUEST_FRAME_EXTENTS by settings _NET_FRAME_EXTENTS
+property of the window to the widths of the respective borders added
+by i3.
+
 commit 1a1d42153408822d267d0cb4718b22d8ff116f27
 Author: Michael Stapelberg <michael@stapelberg.de>
 Date:   Tue Sep 24 07:47:36 2013 +0200
@@ -19,7 +29,7 @@ Date:   Tue Sep 24 07:47:36 2013 +0200
 Bugfix: correctly recognize assigned windows as urgent
 
 --- src/handlers.c.orig	Wed Aug  7 20:50:24 2013
-+++ src/handlers.c	Wed Sep 25 11:37:50 2013
++++ src/handlers.c	Thu Oct 10 18:11:55 2013
 @@ -13,6 +13,7 @@
  #include "all.h"
  
@@ -48,7 +58,37 @@ Bugfix: correctly recognize assigned windows as urgent
      randr_query_outputs();
  
      scratchpad_fix_resolution();
-@@ -869,24 +883,13 @@ static bool handle_hints(void *data, xcb_connection_t 
+@@ -703,24 +717,13 @@ static void handle_client_message(xcb_client_message_e
+         // says the application must cope with an estimate that is not entirely
+         // accurate.
+         DLOG("_NET_REQUEST_FRAME_EXTENTS for window 0x%08x\n", event->window);
+-        xcb_get_geometry_reply_t *geometry;
+-        xcb_get_geometry_cookie_t cookie = xcb_get_geometry(conn, event->window);
+ 
+-        if (!(geometry = xcb_get_geometry_reply(conn, cookie, NULL))) {
+-            ELOG("Could not get geometry of X11 window 0x%08x while handling "
+-                 "the _NET_REQUEST_FRAME_EXTENTS ClientMessage\n",
+-                 event->window);
+-            return;
+-        }
+-
+-        DLOG("Current geometry = x=%d, y=%d, width=%d, height=%d\n",
+-             geometry->x, geometry->y, geometry->width, geometry->height);
+-
++        /* The reply data: approximate frame size */
+         Rect r = {
+-            0, // left
+-            geometry->width + 4, // right
+-            0, // top
+-            geometry->height + config.font.height + 5, // bottom
++            config.default_border_width, /* left */
++            config.default_border_width, /* right */
++            config.font.height + 5, /* top */
++            config.default_border_width /* bottom */
+         };
+         xcb_change_property(
+                 conn,
+@@ -869,24 +872,13 @@ static bool handle_hints(void *data, xcb_connection_t 
          return false;
      }
  

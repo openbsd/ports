@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.71 2013/09/25 09:58:14 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.72 2013/10/10 16:34:57 dcoppa Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
 DISTNAME =	i3-4.6
-REVISION =	2
+REVISION =	3
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
