@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/08/24 17:33:52 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2013/10/10 11:54:46 zhuk Exp $
 
 COMMENT =	KDE PIM runtime support
 DISTNAME =	kdepim-runtime-${MODKDE4_VERSION}
@@ -52,5 +52,8 @@ LIB_DEPENDS =	databases/soprano \
 # Long dependency chain, not ported yet.
 CONFIGURE_ARGS=	-DCMAKE_DISABLE_FIND_PACKAGE_Libkolab:Bool=Yes \
 		-DCMAKE_DISABLE_FIND_PACKAGE_Libkolabxml:Bool=Yes
+
+# XXX Upstream fails to set up dependencies for tests
+NO_TEST =	Yes
 
 .include <bsd.port.mk>
