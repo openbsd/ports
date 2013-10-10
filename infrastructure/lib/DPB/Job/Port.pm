@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.131 2013/10/10 07:15:49 espie Exp $
+# $OpenBSD: Port.pm,v 1.132 2013/10/10 10:48:35 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -270,6 +270,8 @@ our @ISA = qw(DPB::Task::Port);
 sub is_serialized { 1 }
 sub want_percent { 0 }
 
+# note that serialized's setup will return its task only if lock
+# happened succesfully, so we can use that in serialized taks
 sub setup
 {
 	my ($task, $core) = @_;
@@ -379,6 +381,10 @@ sub run
 	}
 
 	$self->handle_output($job);
+	if (defined $core->prop->{last_junk}) {
+		print "   last junk was in ",
+		    $core->prop->{last_junk}->fullpkgpath, "\n";
+	}
 	my @cmd = ('/usr/sbin/pkg_add', '-aI');
 	if ($job->{builder}{update}) {
 		push(@cmd, "-rqU", "-Dupdate", "-Dupdatedepends");
@@ -539,6 +545,7 @@ sub finalize
 
 	# did we really run ? then clean up stuff
 	if ($core->{status} == 0) {
+		$core->prop->{last_junk} = $core->job->{v};
 		$core->prop->{junk_count} = 0;
 		$core->prop->{ports_count} = 0;
 		$core->prop->{depends_count} = 0;
