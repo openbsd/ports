@@ -1,3 +1,0 @@
-$OpenBSD: SECURITY,v 1.6 2004/04/08 06:26:57 brad Exp $
-
-The server makes extensive use of strlcpy/strlcat/snprintf.
