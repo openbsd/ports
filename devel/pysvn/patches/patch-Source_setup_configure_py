@@ -1,56 +1,67 @@
-$OpenBSD: patch-Source_setup_configure_py,v 1.1.1.1 2010/12/29 13:47:53 stsp Exp $
+$OpenBSD: patch-Source_setup_configure_py,v 1.2 2013/10/10 09:56:33 stsp Exp $
 
-1) Remove -lresolv.
-
-2) Fix broken lib auto-detection. The configure script will try to stat a
+1) Fix broken lib auto-detection. The configure script will try to stat a
    shared library file, but we don't know the exact filename because it depends
    on the shared library version. So look for a .la file instead. These are
    present for all libraries the script is looking for.
 
---- Source/setup_configure.py.orig	Tue Dec 29 12:31:15 2009
-+++ Source/setup_configure.py	Sun Dec 19 17:05:53 2010
-@@ -433,7 +433,7 @@ LDLIBS=-L%(svn_lib_dir)s -Wl,--rpath -Wl,%(svn_lib_dir
- -lsvn_client-1 \
- -lsvn_diff-1 \
- -lsvn_repos-1 \
-- -lcom_err -lresolv -lexpat -lneon
-+ -lcom_err -lexpat -lneon
+2) Add missing OpenBSD-specific bits.
+
+--- Source/setup_configure.py.orig	Sun Aug 18 14:11:41 2013
++++ Source/setup_configure.py	Wed Oct  9 16:02:28 2013
+@@ -182,6 +182,9 @@ class Setup:
+             elif sys.platform.startswith('freebsd'):
+                 self.platform = 'freebsd'
  
- #include pysvn_common.mak
- '''
-@@ -455,7 +455,7 @@ LDLIBS=-L%(svn_lib_dir)s -Wl,--rpath -Wl,%(svn_lib_dir
- -lsvn_client-1 \
- -lsvn_diff-1 \
- -lsvn_repos-1 \
-- -lresolv -lexpat -lneon
-+ -lexpat -lneon
++            elif sys.platform.startswith('openbsd'):
++                self.platform = 'openbsd'
++
+             elif sys.platform == 'cygwin':
+                 self.platform = 'cygwin'
  
- #include pysvn_common.mak
- '''
-@@ -477,7 +477,7 @@ LDLIBS=-L%(svn_lib_dir)s -Wl,--rpath -Wl,%(svn_lib_dir
- -lsvn_client-1 \
- -lsvn_diff-1 \
- -lsvn_repos-1 \
---lcom_err -lresolv -lexpat -lneon -lssl
-+-lcom_err -lexpat -lneon -lssl
- PYSVN_CREATE_INIT_OPTION=%(pysvn_module_name)s
+@@ -204,6 +207,10 @@ class Setup:
+             self.c_utils = FreeBsdCompilerGCC( self )
+             self.c_pysvn = FreeBsdCompilerGCC( self )
  
- #include pysvn_common.mak
-@@ -500,7 +500,7 @@ LDLIBS=-L%(svn_lib_dir)s \
- -lsvn_client-1 \
- -lsvn_diff-1 \
- -lsvn_repos-1 \
---lcom_err -lresolv -lexpat -lneon -lssl
-+-lcom_err -lexpat -lneon -lssl
- PYSVN_CREATE_INIT_OPTION=%(pysvn_module_name)s
- 
- #include pysvn_common.mak
-@@ -907,7 +907,7 @@ LDLIBS= \
++        elif self.platform == 'openbsd':
++            self.c_utils = OpenBsdCompilerGCC( self )
++            self.c_pysvn = OpenBsdCompilerGCC( self )
++
          elif self.platform == 'cygwin':
+             self.c_utils = CygwinCompilerGCC( self )
+             self.c_pysvn = CygwinCompilerGCC( self )
+@@ -1129,7 +1136,7 @@ class UnixCompilerGCC(CompilerGCC):
+         if self.setup.platform == 'cygwin':
              return '%s.dll.a' % libname
          else:
 -            return '%s.so' % libname
 +            return '%s.la' % libname
  
-     def find_dir( self, name, kw, svn_root_suffix, base_dir_list, check_file ):
-         dirname = self.__find_dir( name, kw, svn_root_suffix, base_dir_list, check_file )
+     def setupUtilities( self ):
+         self._addVar( 'CCCFLAGS',
+@@ -1213,6 +1220,25 @@ class FreeBsdCompilerGCC(UnixCompilerGCC):
+                 '-lcom_err',
+                 '-lexpat',
+                 '-lneon',
++                ] )
++        return py_ld_libs
++
++class OpenBsdCompilerGCC(UnixCompilerGCC):
++    def __init__( self, setup ):
++        UnixCompilerGCC.__init__( self, setup )
++
++    def _getLdLibs( self ):
++        py_ld_libs = [
++                '-L%(SVN_LIB)s',
++                '-Wl,--rpath',
++                '-Wl,/usr/lib:/usr/local/lib',
++                '-lsvn_client-1',
++                '-lsvn_diff-1',
++                '-lsvn_repos-1',
++                ]
++
++        py_ld_libs.extend( [
++                '-lexpat',
+                 ] )
+         return py_ld_libs
+ 

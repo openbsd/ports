@@ -1,10 +1,10 @@
-$OpenBSD: patch-Examples_Client_svn_cmd_py,v 1.1.1.1 2010/12/29 13:47:53 stsp Exp $
+$OpenBSD: patch-Examples_Client_svn_cmd_py,v 1.2 2013/10/10 09:56:32 stsp Exp $
 
 LC_ALL only works for single-byte locales on OpenBSD.
 
---- Examples/Client/svn_cmd.py.orig	Sun Dec 19 17:50:49 2010
-+++ Examples/Client/svn_cmd.py	Sun Dec 19 17:52:24 2010
-@@ -70,7 +70,7 @@ def initLocale():
+--- Examples/Client/svn_cmd.py.orig	Sun Aug  4 15:54:30 2013
++++ Examples/Client/svn_cmd.py	Wed Oct  9 15:29:28 2013
+@@ -81,7 +81,7 @@ def initLocale():
              locale.setlocale( locale.LC_ALL, '%s.%s' % (language_code, encoding) )
          except locale.Error:
              # force a locale that will work

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:27 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/10/10 09:56:32 stsp Exp $
 
 COMMENT =		python interface to subversion
 
-MODPY_EGG_VERSION =	1.7.2
+MODPY_EGG_VERSION =	1.7.8
 DISTNAME = 		pysvn-${MODPY_EGG_VERSION}
-REVISION = 		3
 PKGNAME = 		py-pysvn-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
 
@@ -19,7 +18,7 @@ MASTER_SITES =	http://pysvn.barrys-emacs.org/source_kits/
 
 MODULES = 	lang/python
 LIB_DEPENDS = 	devel/subversion,-main
-WANTLIB = 	com_err expat m neon stdc++ svn_client-1 svn_diff-1 svn_repos-1
+WANTLIB = 	expat m stdc++ svn_client-1 svn_diff-1 svn_repos-1
 
 USE_GMAKE = 	Yes
 _PYSVN_PYVERSION = ${MODPY_VERSION:S/./_/}
