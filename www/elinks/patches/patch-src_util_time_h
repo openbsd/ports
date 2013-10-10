@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_util_time_h,v 1.1 2013/10/10 20:10:51 edd Exp $
+
+Elinks defines it's own timeval struct which is incompatible with OpenBSD's.
+Further, the member names differ from the OpenBSD timeval struct.
+
+It is easier to fix the types in their definition than to define timeval_T
+to timeval_t and patch every use site.
+
+--- src/util/time.h.orig	Tue Oct  8 23:46:40 2013
++++ src/util/time.h	Tue Oct  8 23:47:33 2013
+@@ -23,7 +23,7 @@ typedef long milliseconds_T;
+ /* Redefine a timeval that has all fields signed so calculations
+  * will be simplified on rare systems that define timeval with
+  * unsigned fields. */
+-typedef struct { long sec; long usec; } timeval_T;
++typedef struct { time_t sec; long usec; } timeval_T;
+ 
+ timeval_T *timeval_from_milliseconds(timeval_T *t, milliseconds_T milliseconds);
+ timeval_T *timeval_from_seconds(timeval_T *t, long seconds);
