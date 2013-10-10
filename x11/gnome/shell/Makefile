@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2013/10/07 14:27:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2013/10/10 15:07:47 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
@@ -42,7 +42,7 @@ RUN_DEPENDS +=		devel/gsettings-desktop-schemas
 # man pages
 BUILD_DEPENDS +=	textproc/docbook-xsl
 
-# gnome-keybindings.pc
+# gnome-keybindings.pc, sysutils/accountsservice (unlockDialog.js...)
 BUILD_DEPENDS +=	x11/gnome/controlcenter
 RUN_DEPENDS +=		x11/gnome/controlcenter
 
