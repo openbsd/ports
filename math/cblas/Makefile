@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:23:54 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/10/10 02:08:23 brad Exp $
 
 COMMENT=	C interface to the BLAS library
 
 VERSION=	1.0
 DISTNAME=	cblas
 PKGNAME=	${DISTNAME}-${VERSION}
-REVISION=	1
+REVISION=	2
 SHARED_LIBS=	cblas	1.0
 
 CATEGORIES=	math
 
 HOMEPAGE=	http://www.netlib.org/blas/
-
-MAINTAINER=	Chris Kuethe <ckuethe@openbsd.org>
 
 # freely available
 PERMIT_PACKAGE_CDROM=	Yes

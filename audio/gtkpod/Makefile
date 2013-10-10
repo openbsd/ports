@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.46 2013/08/20 22:05:47 zhuk Exp $
+# $OpenBSD: Makefile,v 1.47 2013/10/10 02:08:19 brad Exp $
 
 COMMENT=	GTK+2 program to synchronize an Apple iPod
 DISTNAME=	gtkpod-1.0.0
-REVISION =	2
+REVISION=	3
 CATEGORIES=	audio x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtkpod/}
 
 HOMEPAGE=	http://www.gtkpod.org/
-
-MAINTAINER=	Chris Kuethe <ckuethe@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

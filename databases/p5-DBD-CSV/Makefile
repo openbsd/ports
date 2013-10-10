@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 02:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/10/10 02:08:20 brad Exp $
 
 COMMENT=	perl DBI driver for CSV files
 
 DISTNAME=	DBD-CSV-0.31
+REVISION=	0
 EXTRACT_SUFX=	.tgz
 CATEGORIES=	databases
 MODULES=	cpan
 USE_GROFF=	Yes
-
-MAINTAINER=	Chris Kuethe <ckuethe@ualberta.ca>
 
 # Perl
 PERMIT_PACKAGE_CDROM=   Yes

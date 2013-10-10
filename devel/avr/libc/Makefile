@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2013/05/30 15:04:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2013/10/10 02:08:21 brad Exp $
 
 COMMENT=	libc for Atmel AVR 8-bit RISC microcontrollers
 
 DISTNAME=	avr-libc-1.8.0
+REVISION=	0
 
 HOMEPAGE=	http://www.nongnu.org/avr-libc/
 

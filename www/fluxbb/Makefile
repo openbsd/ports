@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2013/08/12 04:11:21 robert Exp $
+# $OpenBSD: Makefile,v 1.13 2013/10/10 02:08:24 brad Exp $
 
 COMMENT =	fast, light, user-friendly web forum
 
 V=		1.5.0
 DISTNAME =	fluxbb-${V}
-REVISION =	1
+REVISION =	2
 CATEGORIES =	www
 
 HOMEPAGE =	http://fluxbb.org/
-
-MAINTAINER =	Chris Kuethe <ckuethe@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2013/08/12 04:11:21 robert Exp $
+# $OpenBSD: Makefile,v 1.13 2013/10/10 02:08:25 brad Exp $
 
 COMMENT =	web-based bug tracking system
 
 DISTNAME =	flyspray-0.9.9.7
-REVISION =	1
+REVISION =	2
 CATEGORIES =	www devel
 
 HOMEPAGE =	http://flyspray.org/
-
-MAINTAINER =	Chris Kuethe <ckuethe@openbsd.org>
 
 # GPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.20 2013/05/05 16:48:08 edd Exp $
+# $OpenBSD: Makefile,v 1.21 2013/10/10 02:08:22 brad Exp $
 
 COMMENT=	AVR microcontroller hardware in-system programmer
 
 V=		5.11
 DISTNAME=	avrdude-${V}
+REVISION=	0
 DISTFILES+=	avrdude-${V}.tar.gz avrdude-doc-${V}.pdf
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.nongnu.org/avrdude/
-
-MAINTAINER=	Chris Kuethe <ckuethe@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

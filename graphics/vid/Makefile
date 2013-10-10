@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:10:56 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/10/10 02:08:23 brad Exp $
 
 COMMENT=	get images from USB cameras using the OV511(+) chipsets
 
 DISTNAME=	vid-1.0.1
-REVISION =	4
+REVISION=	5
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://ovtvid-bsd.sourceforge.net/
-MAINTAINER=	Chris Kuethe <ckuethe@ualberta.ca>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

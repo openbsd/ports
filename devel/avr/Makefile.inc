@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.9 2013/05/14 07:15:18 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2013/10/10 02:08:21 brad Exp $
 
 CATEGORIES=	devel
-
-MAINTAINER=	Chris Kuethe <ckuethe@openbsd.org>
 
 CONFIGURE_STYLE=gnu
 

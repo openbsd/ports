@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/06/01 14:18:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2013/10/10 02:08:24 brad Exp $
 
 COMMENT-main =	graphical tools for the MetaGeek Wi-spy spectrum analyser
 COMMENT-utils =	tools for the MetaGeek Wi-spy spectrum analyser
@@ -10,15 +10,14 @@ PKGNAME =	spectrum-tools-$V
 FULLPKGNAME-main =  spectrum-tools-${V:S/-//g}
 FULLPKGNAME-utils = spectrum-tools-utils-${V:S/-//g}
 
-REVISION-main=	0
+REVISION-main=	1
+REVISION-utils= 0
 
 CATEGORIES =	net
 
 MASTER_SITES =	http://www.kismetwireless.net/code/
 
 HOMEPAGE =	http://www.kismetwireless.net/spectools/
-
-MAINTAINER =	Chris Kuethe <ckuethe@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:31 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/10/10 02:08:22 brad Exp $
 
 COMMENT=	in-system programmer for Teensy boards
 
 DISTNAME=	teensy_loader_cli.2.0
 PKGNAME=	teensyloader-2.0
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.pjrc.com/teensy/
 
-MAINTAINER=	Chris Kuethe <ckuethe@openbsd.org>
-
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
+
 WANTLIB=		c
 
 MASTER_SITES=		${HOMEPAGE}

@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:10:54 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/10/10 02:08:23 brad Exp $
 
 COMMENT=	ab initio MOLecular DENsity display program
 
 V=		4.6
 DISTNAME=	molden${V}
 PKGNAME=	molden-${V}
-REVISION =	3
+REVISION=	4
 CATEGORIES=	biology graphics
 
 HOMEPAGE=	http://www.cmbi.ru.nl/molden/molden.html
 
-MAINTAINER=	Chris Kuethe <ckuethe@openbsd.org>
 BROKEN=Author keeps patching and rolling the tarball without bumping version
 # prevent mirroring from even trying to fetch until it's fixed
 DISTFILES=

@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:35:47 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/10/10 02:08:24 brad Exp $
 
 COMMENT=		GNOME MUD/Moo Client
 
 DISTNAME=		gmudix-0.10
-REVISION=		12
+REVISION=		13
 CATEGORIES=		net x11
 
 HOMEPAGE=		http://dw.nl.eu.org/mudix.html
 MASTER_SITES=		http://dw.nl.eu.org/gmudix/
-
-MAINTAINER=		Chris Kuethe <ckuethe@ualberta.ca>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
