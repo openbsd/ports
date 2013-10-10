@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_scripting_lua_core_c,v 1.2 2008/08/21 01:12:35 sthen Exp $
---- src/scripting/lua/core.c.orig	Fri Jun 20 21:19:55 2008
-+++ src/scripting/lua/core.c	Sat Aug  2 21:57:51 2008
-@@ -641,7 +641,7 @@ do_hooks_file(LS, unsigned char *prefix, unsigned char
+$OpenBSD: patch-src_scripting_lua_core_c,v 1.3 2013/10/10 20:08:39 edd Exp $
+--- src/scripting/lua/core.c.orig	Sat Aug 22 12:15:08 2009
++++ src/scripting/lua/core.c	Tue Oct  8 23:28:54 2013
+@@ -645,7 +645,7 @@ do_hooks_file(LS, unsigned char *prefix, unsigned char
  	if (file_can_read(file)) {
  		int oldtop = lua_gettop(S);
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_scripting_lua_core_c,v 1.2 2008/08/21 01:12:35 sthen Exp $
  			sleep(3); /* Let some time to see error messages. */
  		lua_settop(S, oldtop);
  	}
-@@ -652,13 +652,24 @@ do_hooks_file(LS, unsigned char *prefix, unsigned char
+@@ -656,13 +656,24 @@ do_hooks_file(LS, unsigned char *prefix, unsigned char
  void
  init_lua(struct module *module)
  {
@@ -40,7 +40,7 @@ $OpenBSD: patch-src_scripting_lua_core_c,v 1.2 2008/08/21 01:12:35 sthen Exp $
  
  	lua_register(L, LUA_ALERT, l_alert);
  	lua_register(L, "current_url", l_current_url);
-@@ -763,7 +774,7 @@ handle_ret_eval(struct session *ses)
+@@ -767,7 +778,7 @@ handle_ret_eval(struct session *ses)
  		int oldtop = lua_gettop(L);
  
  		if (prepare_lua(ses) == 0) {
