@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.130 2013/10/07 17:50:29 espie Exp $
+# $OpenBSD: Port.pm,v 1.131 2013/10/10 07:15:49 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -457,12 +457,31 @@ sub notime { 1 }
 sub setup
 {
 	my ($task, $core) = @_;
-	# check we *REALLY* mean it
+	# we got pre-empted
 	if (!DPB::Junk->want($core)) {
 		$task->junk_unlock($core);
 		return $core->job->next_task($core);
 	}
-	return $task->SUPER::setup($core);
+	# okay we have to make sure we're locked first
+	my $t2 = $task->SUPER::setup($core);
+	if ($t2 == $task) {
+		my $still_tainted = 0;
+		for my $job ($core->same_host_jobs) {
+			if ($job->{v}{info}->has_property('tag')) {
+				$still_tainted = 1;
+				last;
+			}
+		}
+	    	if (defined $core->job->{builder}->locker
+		    ->find_tag($core->hostname)) {
+			$still_tainted = 0;
+		}
+		print {$core->job->{logfh}} "Still tainted: $still_tainted\n";
+		if (!$still_tainted) {
+			delete $core->prop->{tainted};
+		}
+	}
+	return $t2;
 }
 
 sub add_dontjunk
@@ -497,10 +516,6 @@ sub run
 	my $v = $job->{v};
 
 	$self->handle_output($job);
-	# we got pre-empted
-	if (!DPB::Junk->want($core)) {
-		exit(2);
-	}
 
 	my $h = $job->{builder}->locker->find_dependencies($core->hostname);
 	if (defined $h && $self->add_live_depends($h, $core)) {
@@ -528,26 +543,8 @@ sub finalize
 		$core->prop->{ports_count} = 0;
 		$core->prop->{depends_count} = 0;
 
-		my $still_tainted = 0;
-		for my $job ($core->same_host_jobs) {
-			if ($job->{v}{info}->has_property('tag')) {
-				$still_tainted = 1;
-				last;
-			}
-		}
-	    	if (defined $core->job->{builder}->locker->find_tag($core->hostname)) {
-			$still_tainted = 1;
-		}
-		print {$core->job->{logfh}} "Still tainted: $still_tainted\n";
-		if (!$still_tainted) {
-			delete $core->prop->{tainted};
-		}
 	}
-
-	# unless we really need junk for tags, don't error out because of us
-	if (!$core->job->{v}{forcejunk}) {
-		$core->{status} = 0;
-	}
+	$core->{status} = 0;
 	$self->SUPER::finalize($core);
 	return 1;
 }
