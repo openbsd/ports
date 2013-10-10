@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.133 2013/10/10 15:48:16 espie Exp $
+# $OpenBSD: Port.pm,v 1.134 2013/10/10 20:52:04 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -473,11 +473,12 @@ sub setup
 	if ($t2 != $task) {
 		return $t2;
 	}
+	my $fh = $core->job->{logfh};
 	# so we're locked, let's boogie
 	my $still_tainted = 0;
 	for my $job ($core->same_host_jobs) {
 		if ($job->{nojunk}) {
-			print "Don't run junk because nojunk in ",
+			print $fh "Don't run junk because nojunk in ",
 			    $job->{path}, "\n";
 			$task->junk_unlock($core);
 			return $core->job->next_task($core);
@@ -489,7 +490,7 @@ sub setup
 	if (defined $core->job->{builder}->locker ->find_tag($core->hostname)) {
 		$still_tainted = 1;
 	}
-	print {$core->job->{logfh}} "Still tainted: $still_tainted\n";
+	print $fh "Still tainted: $still_tainted\n";
 	if (!$still_tainted) {
 		delete $core->prop->{tainted};
 	}
