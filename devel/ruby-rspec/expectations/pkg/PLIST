@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/08/06 18:14:11 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/10/10 17:10:53 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.document
@@ -43,6 +43,7 @@ ${GEM_LIB}/gems/${DISTNAME}/features/step_definitions/
 ${GEM_LIB}/gems/${DISTNAME}/features/step_definitions/additional_cli_steps.rb
 ${GEM_LIB}/gems/${DISTNAME}/features/support/
 ${GEM_LIB}/gems/${DISTNAME}/features/support/env.rb
+${GEM_LIB}/gems/${DISTNAME}/features/support/rubinius.rb
 ${GEM_LIB}/gems/${DISTNAME}/features/syntax_configuration.feature
 ${GEM_LIB}/gems/${DISTNAME}/features/test_frameworks/
 ${GEM_LIB}/gems/${DISTNAME}/features/test_frameworks/test_unit.feature
@@ -111,6 +112,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/expectations/extensions/kernel_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/expectations/fail_with_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/expectations/handler_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/expectations/syntax_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/rspec/expectations_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/matchers/
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/matchers/base_matcher_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/matchers/be_close_spec.rb
