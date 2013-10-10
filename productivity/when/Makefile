@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:37:55 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/10/10 17:04:07 jasper Exp $
 
 COMMENT=		simple but effective personal calendar
 
-DISTNAME=		when-1.1.29
+DISTNAME=		when-1.1.31
 CATEGORIES=		productivity
 
 HOMEPAGE=		http://www.lightandmatter.com/when/when.html
