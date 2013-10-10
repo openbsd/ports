@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.132 2013/10/10 10:48:35 espie Exp $
+# $OpenBSD: Port.pm,v 1.133 2013/10/10 15:48:16 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -470,24 +470,30 @@ sub setup
 	}
 	# okay we have to make sure we're locked first
 	my $t2 = $task->SUPER::setup($core);
-	if ($t2 == $task) {
-		my $still_tainted = 0;
-		for my $job ($core->same_host_jobs) {
-			if ($job->{v}{info}->has_property('tag')) {
-				$still_tainted = 1;
-				last;
-			}
+	if ($t2 != $task) {
+		return $t2;
+	}
+	# so we're locked, let's boogie
+	my $still_tainted = 0;
+	for my $job ($core->same_host_jobs) {
+		if ($job->{nojunk}) {
+			print "Don't run junk because nojunk in ",
+			    $job->{path}, "\n";
+			$task->junk_unlock($core);
+			return $core->job->next_task($core);
 		}
-	    	if (defined $core->job->{builder}->locker
-		    ->find_tag($core->hostname)) {
-			$still_tainted = 0;
-		}
-		print {$core->job->{logfh}} "Still tainted: $still_tainted\n";
-		if (!$still_tainted) {
-			delete $core->prop->{tainted};
+		if ($job->{v}{info}->has_property('tag')) {
+			$still_tainted = 1;
 		}
 	}
-	return $t2;
+	if (defined $core->job->{builder}->locker ->find_tag($core->hostname)) {
+		$still_tainted = 1;
+	}
+	print {$core->job->{logfh}} "Still tainted: $still_tainted\n";
+	if (!$still_tainted) {
+		delete $core->prop->{tainted};
+	}
+	return $task;
 }
 
 sub add_dontjunk
@@ -503,10 +509,6 @@ sub add_live_depends
 {
 	my ($self, $h, $core) = @_;
 	for my $job ($core->same_host_jobs) {
-		if ($job->{nojunk}) {
-			print "Don't run junk because nojunk in $job->{path}\n";
-			return 0;
-		}
 		next unless defined $job->{live_depends};
 		for my $d (@{$job->{live_depends}}) {
 			$h->{$d} = 1;
@@ -549,7 +551,6 @@ sub finalize
 		$core->prop->{junk_count} = 0;
 		$core->prop->{ports_count} = 0;
 		$core->prop->{depends_count} = 0;
-
 	}
 	$core->{status} = 0;
 	$self->SUPER::finalize($core);
