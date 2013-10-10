@@ -1,6 +1,12 @@
-$OpenBSD: patch-src_user_c,v 1.20 2013/08/06 19:08:51 ajacoutot Exp $
+$OpenBSD: patch-src_user_c,v 1.21 2013/10/10 09:08:29 ajacoutot Exp $
+
+From 631c57790fe79ee70d79522eb1b3e461e2899d82 Mon Sep 17 00:00:00 2001
+From: Ray Strode <rstrode@redhat.com>
+Date: Tue, 01 Oct 2013 14:50:46 +0000
+Subject: user: treat NULL shadow entry as "password handled remotely"
+
 --- src/user.c.orig	Tue Jun 11 17:50:37 2013
-+++ src/user.c	Thu Jul 25 08:32:30 2013
++++ src/user.c	Thu Oct 10 11:07:18 2013
 @@ -116,7 +116,12 @@ account_type_from_pwent (struct passwd *pwent)
  {
          struct group *grp;
@@ -53,6 +59,15 @@ $OpenBSD: patch-src_user_c,v 1.20 2013/08/06 19:08:51 ajacoutot Exp $
          if (passwd && passwd[0] == '!') {
 +#endif
                  locked = TRUE;
+         }
+         else {
+@@ -264,7 +285,7 @@ user_update_from_pwent (User          *user,
+                 g_object_notify (G_OBJECT (user), "locked");
+         }
+ 
+-        if (passwd && passwd[0] != 0) {
++        if (passwd == NULL || passwd[0] != 0) {
+                 mode = PASSWORD_MODE_REGULAR;
          }
          else {
 @@ -1273,7 +1294,11 @@ user_change_locked_authorized_cb (Daemon              
