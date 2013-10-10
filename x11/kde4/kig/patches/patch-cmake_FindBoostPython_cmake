@@ -1,6 +1,6 @@
-$OpenBSD: patch-cmake_FindBoostPython_cmake,v 1.1 2013/07/04 00:45:07 zhuk Exp $
---- cmake/FindBoostPython.cmake.orig	Tue May 28 22:46:58 2013
-+++ cmake/FindBoostPython.cmake	Sat Jun  8 14:47:27 2013
+$OpenBSD: patch-cmake_FindBoostPython_cmake,v 1.2 2013/10/10 11:50:25 zhuk Exp $
+--- cmake/FindBoostPython.cmake.orig	Fri Jun 28 21:19:41 2013
++++ cmake/FindBoostPython.cmake	Thu Oct 10 15:25:21 2013
 @@ -1,163 +1,147 @@
 -# - Try to find the a valid boost+python combination
 -# Once done this will define
@@ -12,7 +12,7 @@ $OpenBSD: patch-cmake_FindBoostPython_cmake,v 1.1 2013/07/04 00:45:07 zhuk Exp $
 -#  BOOST_PYTHON_LIBS - the needed libs for boost+python
 +#  BoostPython_FOUND        - system has a valid Boost+Python combination
 +#  BoostPython_INCLUDE_DIRS - the include directories for Boost+Python
-+#  BoostPython_LIBRARIES    - the needed libs for Boost+Python
++#  BoostPython_LIBS         - the needed libs for Boost+Python
  
  # Copyright (c) 2006, Pino Toscano, <toscano.pino@tiscali.it>
 +# Copyright (c) 2013, Vadim Zhukov, <persgray@gmail.com>
@@ -24,10 +24,10 @@ $OpenBSD: patch-cmake_FindBoostPython_cmake,v 1.1 2013/07/04 00:45:07 zhuk Exp $
 -    # Already in cache, be silent
 -	set(BOOST_PYTHON_FIND_QUIETLY TRUE)
 -endif(BOOST_PYTHON_INCLUDES AND BOOST_PYTHON_LIBS)
-+if(BoostPython_INCLUDE_DIRS AND BoostPython_LIBRARIES)
++if(BoostPython_INCLUDE_DIRS AND BoostPython_LIBS)
 +  # Already in cache, be silent
 +  set(BoostPython_FIND_QUIETLY TRUE)
-+endif(BoostPython_INCLUDE_DIRS AND BoostPython_LIBRARIES)
++endif(BoostPython_INCLUDE_DIRS AND BoostPython_LIBS)
  
  # some needed includes
  include(CheckCXXSourceCompiles)
@@ -159,7 +159,7 @@ $OpenBSD: patch-cmake_FindBoostPython_cmake,v 1.1 2013/07/04 00:45:07 zhuk Exp $
 +    if(BoostPython_COMPILES)
 +      set(BoostPython_INCLUDE_DIRS ${Boost_INCLUDE_DIRS}   ${PYTHON_INCLUDE_DIRS}
 +          CACHE INTERNAL "Includes search path for Boost+Python")
-+      set(BoostPython_LIBRARIES    ${Boost_PYTHON_LIBRARY} ${PYTHON_LIBRARIES}
++      set(BoostPython_LIBS         ${Boost_PYTHON_LIBRARY} ${PYTHON_LIBRARIES}
 +          CACHE INTERNAL "Linker flags for Boost+Python")
 +    endif(BoostPython_COMPILES)
 +  endif(PYTHONLIBS_FOUND)
@@ -183,7 +183,7 @@ $OpenBSD: patch-cmake_FindBoostPython_cmake,v 1.1 2013/07/04 00:45:07 zhuk Exp $
 +          if(BoostPython_COMPILES)
 +            set(BoostPython_INCLUDE_DIRS ${Boost_INCLUDE_DIRS}   ${${_pyver}_INCLUDE_DIRS}
 +                CACHE INTERNAL "Includes search path for Boost+Python")
-+            set(BoostPython_LIBRARIES    ${Boost_PYTHON_LIBRARY} ${${_pyver}_LDFLAGS}
++            set(BoostPython_LIBS         ${Boost_PYTHON_LIBRARY} ${${_pyver}_LDFLAGS}
 +                CACHE INTERNAL "Linker flags for Boost+Python")
 +          endif(BoostPython_COMPILES)
 +        endif(${_pyver}_FOUND)
@@ -216,7 +216,7 @@ $OpenBSD: patch-cmake_FindBoostPython_cmake,v 1.1 2013/07/04 00:45:07 zhuk Exp $
 +                  if(BoostPython_COMPILES)
 +                    set(BoostPython_INCLUDE_DIRS ${Boost_INCLUDE_DIRS} ${_pydir}
 +                        CACHE INTERNAL "Includes search path for Boost+Python")
-+                    set(BoostPython_LIBRARIES    ${Boost_PYTHON_LIBRARY} -L${_pylibdir} -l${_pyver} -l${_pblib}
++                    set(BoostPython_LIBS         ${Boost_PYTHON_LIBRARY} -L${_pylibdir} -l${_pyver} -l${_pblib}
 +                        CACHE INTERNAL "Linker flags for Boost+Python")
 +                  endif(BoostPython_COMPILES)
 +                endif(NOT BoostPython_COMPILES)
@@ -241,7 +241,7 @@ $OpenBSD: patch-cmake_FindBoostPython_cmake,v 1.1 2013/07/04 00:45:07 zhuk Exp $
 -    endif(NOT _found)
 +find_package_handle_standard_args(BoostPython
 +                                  FOUND_VAR BoostPython_FOUND
-+                                  REQUIRED_VARS BoostPython_COMPILES BoostPython_INCLUDE_DIRS BoostPython_LIBRARIES
++                                  REQUIRED_VARS BoostPython_LIBS BoostPython_INCLUDE_DIRS BoostPython_COMPILES
 +                                 )
  
 -  endforeach(_pyver ${PYTHON_VERSIONS})
@@ -268,4 +268,4 @@ $OpenBSD: patch-cmake_FindBoostPython_cmake,v 1.1 2013/07/04 00:45:07 zhuk Exp $
 -endif(BOOST_PYTHON_FOUND)
 -
 -mark_as_advanced(BOOST_PYTHON_INCLUDES BOOST_PYTHON_LIBS)
-+mark_as_advanced(BoostPython_INCLUDE_DIRS BoostPython_LIBRARIES HAVE_BOOST_SHARED_PTR_HPP)
++mark_as_advanced(BoostPython_INCLUDE_DIRS BoostPython_LIBS HAVE_BOOST_SHARED_PTR_HPP)
