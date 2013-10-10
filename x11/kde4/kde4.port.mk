@@ -1,4 +1,4 @@
-# $OpenBSD: kde4.port.mk,v 1.11 2013/10/07 16:57:29 espie Exp $
+# $OpenBSD: kde4.port.mk,v 1.12 2013/10/10 11:53:24 zhuk Exp $
 
 # The version of KDE SC in x11/kde4
 _MODKDE4_STABLE =	4.10.5
@@ -228,6 +228,8 @@ SUBST_VARS +=		KDE4LIB
 . if "${NO_TEST:L}" != "yes"
 # Enable regression tests if any
 MODKDE4_CONF_ARGS +=	-DKDE4_BUILD_TESTS:Bool=Yes
+. else
+MODKDE4_CONF_ARGS +=	-DKDE4_BUILD_TESTS:Bool=No
 . endif
 
 MODKDE4_CONF_ARGS +=	-DINCLUDE_INSTALL_DIR:Path=${MODKDE4_INCLUDE_DIR} \
