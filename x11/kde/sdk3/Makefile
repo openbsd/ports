@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2013/10/05 07:34:41 espie Exp $
+# $OpenBSD: Makefile,v 1.66 2013/10/10 09:55:48 stsp Exp $
 
 COMMENT-main = 		K Desktop Environment, developer extensions
 COMMENT-svn = 		K Desktop Environment, svn extensions
@@ -10,7 +10,7 @@ PKGNAME-main =		${DISTNAME}
 PKGSPEC-main =		kdesdk->=3,<4
 REVISION-main =		15
 PKGNAME-svn =		kdesvn-${VERSION}
-REVISION-svn =		14
+REVISION-svn =		15
 
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	cvsservice           1.0      # .0.1
@@ -52,10 +52,10 @@ WANTLIB-main +=	kunittest kutils lcms lib/kde3/kcal lib/kde3/kmime mng pcre
 WANTLIB-main +=	pcreposix qui-mt vcard xml2 xslt
 
 WANTLIB-svn +=	Xfixes Xt apr-1 aprutil-1 asn1 crypto db expat fontconfig
-WANTLIB-svn +=	freetype gssapi krb5 magic neon proxy sasl2 sqlite3 ssl
+WANTLIB-svn +=	freetype gssapi krb5 magic sasl2 serf-1 sqlite3 
 WANTLIB-svn +=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 svn_fs_base-1
 WANTLIB-svn +=	svn_fs_fs-1 svn_fs_util-1 svn_ra-1 svn_ra_local-1
-WANTLIB-svn +=	svn_ra_neon-1 svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1
+WANTLIB-svn +=	svn_ra_serf-1 svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1
 WANTLIB-svn +=	com_err heimbase roken wind
 
 post-patch:
