@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2012/04/28 09:53:38 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2013/10/10 09:50:17 stsp Exp $
 @pkgpath devel/subversion,no_bindings
 @pkgpath devel/subversion,-main,gnome_keyring
 @pkgpath devel/subversion
@@ -7,10 +7,15 @@
 @comment @bin bin/diff
 @comment @bin bin/diff3
 @comment @bin bin/diff4
+@bin bin/fsfs-access-map
+@bin bin/fsfs-reorg
+@bin bin/fsfs-stats
 @bin bin/svn
+@bin bin/svn-bench
 @bin bin/svn-populate-node-origins-index
 @bin bin/svn-rep-sharing-stats
 @bin bin/svnadmin
+@bin bin/svnauthz
 @bin bin/svnauthz-validate
 @bin bin/svndumpfilter
 @bin bin/svnlook
@@ -82,8 +87,8 @@ lib/libsvn_ra-1.a
 lib/libsvn_ra-1.la
 lib/libsvn_ra_local-1.a
 lib/libsvn_ra_local-1.la
-lib/libsvn_ra_neon-1.a
-lib/libsvn_ra_neon-1.la
+lib/libsvn_ra_serf-1.a
+lib/libsvn_ra_serf-1.la
 lib/libsvn_ra_svn-1.a
 lib/libsvn_ra_svn-1.la
 lib/libsvn_repos-1.a
@@ -102,6 +107,7 @@ lib/libsvn_wc-1.la
 @man man/man1/svnadmin.1
 @man man/man1/svndumpfilter.1
 @man man/man1/svnlook.1
+@man man/man1/svnmucc.1
 @man man/man1/svnrdump.1
 @man man/man1/svnsync.1
 @man man/man1/svnversion.1
@@ -176,6 +182,7 @@ share/examples/subversion/svnserve-sgid.c
 share/examples/subversion/svnshell.py
 share/examples/subversion/svnshell.rb
 share/examples/subversion/testwrite.c
+share/examples/subversion/walk-config-auth.py
 share/examples/subversion/xslt/
 share/examples/subversion/xslt/svnindex.css
 share/examples/subversion/xslt/svnindex.xsl

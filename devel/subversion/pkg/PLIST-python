@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-python,v 1.8 2010/02/26 18:21:09 espie Exp $
+@comment $OpenBSD: PLIST-python,v 1.9 2013/10/10 09:50:17 stsp Exp $
 @pkgpath devel/subversion,-python,gnome_keyring
-lib/libsvn_swig_py-1.a
-lib/libsvn_swig_py-1.la
-@lib lib/libsvn_swig_py-1.so.${LIBsvn_swig_py-1_VERSION}
+lib/libsvn_swig_${MODPY_PY_PREFIX}1.a
+lib/libsvn_swig_${MODPY_PY_PREFIX}1.la
+@lib lib/libsvn_swig_${MODPY_PY_PREFIX}1.so.${LIBsvn_swig_py-1_VERSION}
 lib/python${MODPY_VERSION}/site-packages/libsvn/
 lib/python${MODPY_VERSION}/site-packages/libsvn/__init__.py
 lib/python${MODPY_VERSION}/site-packages/libsvn/__init__.pyc
