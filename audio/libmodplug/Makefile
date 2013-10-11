@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/21 08:45:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2013/10/11 17:28:17 bcallah Exp $
 
 COMMENT =		library for decoding mod-like music formats
 
-DISTNAME =		libmodplug-0.8.8.2
-REVISION =		1
+DISTNAME =		libmodplug-0.8.8.4
 CATEGORIES =		audio
 
 HOMEPAGE =		http://modplug-xmms.sourceforge.net/
 
-SHARED_LIBS +=         modplug         0.0     # .1.0
+MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
+
+SHARED_LIBS +=          modplug         0.1     # .1.0
 
 # Public domain
 PERMIT_PACKAGE_CDROM = Yes
@@ -16,7 +17,6 @@ PERMIT_PACKAGE_CDROM = Yes
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=modplug-xmms/}
 
 WANTLIB +=		m stdc++
-
 
 NO_TEST =		Yes
 

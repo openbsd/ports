@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/11/07 00:44:09 jeremy Exp $
-@lib lib/libmodplug.so.${LIBmodplug_VERSION}
