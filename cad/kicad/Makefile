@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/04/03 07:13:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2013/10/11 11:26:47 sthen Exp $
 
 COMMENT-main=	schematic and PCB editing software
 COMMENT-docs=	documentation for the kicad library of components
@@ -19,7 +19,7 @@ HOMEPAGE=	http://kicad.sourceforge.net/
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	ftp://iut-tice.ujf-grenoble.fr/cao/
+MASTER_SITES=	http://iut-tice.ujf-grenoble.fr/cao/sources/old_versions/
 MASTER_SITES0=	http://distfiles.nl/
 
 DOCDIST=	doc_components-${V}-${S}.tgz
