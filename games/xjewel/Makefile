@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2013/10/11 20:39:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2013/10/11 21:01:41 naddy Exp $
 
 COMMENT=	dropping jewels game for X11
 
 DISTNAME=	xjewel-1.6
-REVISION =	3
+REVISION =	4
 CATEGORIES=	games
 
 MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/
@@ -16,7 +16,7 @@ WANTLIB=		X11 Xau Xdmcp Xext c pthread-stubs xcb
 MAKE_FLAGS=		HSCORE_FILE=/var/games/xjewel.scores \
 			USERDEFS='-DICON_WINDOW -DUSE_SELECT -DGETPWENT' \
 			BINDIR='${PREFIX}/bin' \
-			MANDIR='${PREFIX}/man/cat6' \
+			MANDIR='${PREFIX}/man/man6' \
 			MANSUFFIX=6 \
 			FFILE=pcf.gz
 
