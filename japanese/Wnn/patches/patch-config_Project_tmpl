@@ -1,5 +1,6 @@
+$OpenBSD: patch-config_Project_tmpl,v 1.9 2013/10/11 20:36:51 naddy Exp $
 --- config/Project.tmpl.orig	Mon Aug 29 10:40:17 1994
-+++ config/Project.tmpl	Sat Aug 30 13:13:02 2008
++++ config/Project.tmpl	Fri Oct 11 21:50:28 2013
 @@ -14,6 +14,20 @@ XCOMM $XConsortium: Project.tmpl,v 1.242 94/04/13 14:5
   *                                                                          *
   ***************************************************************************/
@@ -135,7 +136,7 @@
    TWNNSYSDICDIR = $(TWNNDICDIR)/sys
        TWNNTDSRC = $(CWNNTOP)/td
      TWNNTDICSRC = $(CWNNTOP)/tdic
-@@ -1363,3 +1376,44 @@ XWNMOROMKANMSRC = $(XWNMOTOP)/romkan_m
+@@ -1363,3 +1376,56 @@ XWNMOROMKANMSRC = $(XWNMOTOP)/romkan_m
  #else
        IMAKE_CMD = $(IMAKE) -I$(IMIRULESRC) -I$(IRULESRC) $(IMAKE_DEFINES)
  #endif
@@ -163,6 +164,15 @@
 +clean::									@@\
 +	RemoveFile(file.0)
 +
++#define InstallJManPageAliases(file,destdir,aliases)                    @@\
++install.man::                                                           @@\
++	for i in aliases; do \						@@\
++		(set -x; \						@@\
++		$(RM) $(DESTDIR)destdir/$$i.0;\				@@\
++		(cd $(DESTDIR)/destdir; $(LN) file.0 $$i.0);\		@@\
++		); \							@@\
++	done
++
 +/*
 + * InstallJManPage - generate rules to install the indicated manual page.
 + */
@@ -179,4 +189,7 @@
 +#define InstallManPage	InstallJManPage
 +#undef InstallManPageLong
 +#define InstallManPageLong InstallJManPageLong
++#undef InstallManPageAliases
++#define InstallManPageAliases InstallJManPageAliases
 +          MANPATH := $(MANPATH)/ja_JP.EUC
++          MANSOURCEPATH = $(MANPATH)/cat
