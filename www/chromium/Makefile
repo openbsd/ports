@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.153 2013/10/11 13:52:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.154 2013/10/11 14:53:57 dcoppa Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -7,7 +7,7 @@ COMMENT=		Chromium browser
 
 V=			29.0.1547.76
 DISTNAME=		chromium-${V}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		www
 
@@ -125,9 +125,10 @@ GYP_DEFS+=	-Dffmpeg_branding=Chrome \
 		-Dproprietary_codecs=1
 .endif
 
+MODPY_ADJ_FILES=build/linux/unbundle/replace_gyp_files.py
+
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/webkit/plugins/npapi/plugin_list_posix.cc \
-		${WRKSRC}/build/linux/unbundle/replace_gyp_files.py
+	${SUBST_CMD} ${WRKSRC}/webkit/plugins/npapi/plugin_list_posix.cc
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 .for _arch in x64 ia32
 	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/libavutil \
