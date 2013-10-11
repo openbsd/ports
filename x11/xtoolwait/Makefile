@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/10/11 20:40:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2013/10/11 21:21:09 naddy Exp $
 
 COMMENT=	tool startup utility for X11
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		X11 Xau Xdmcp Xext c 
 
-USE_GROFF =	Yes
 CONFIGURE_STYLE=	imake
 
 NO_TEST=	Yes

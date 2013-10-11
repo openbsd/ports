@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/10/11 20:39:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2013/10/11 21:21:01 naddy Exp $
 
 COMMENT=	hides idle X11 cursor
 
@@ -14,7 +14,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext c
 
-USE_GROFF =	Yes
 
 WRKDIST=	${WRKDIR}/unclutter
 CONFIGURE_STYLE=imake

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/10/11 20:39:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2013/10/11 21:21:01 naddy Exp $
 
 COMMENT=	slide rule component of X11R3's xcalc
 
@@ -15,7 +15,6 @@ MASTER_SITES =	ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/
 
 WANTLIB=	X11 Xau Xdmcp Xext c m
 
-USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	imake
 

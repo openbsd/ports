@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/11 11:07:42 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2013/10/11 21:20:56 naddy Exp $
 
 COMMENT=	win land without colliding with 'flyers' and 'eaters'
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c m
 
 CONFIGURE_STYLE=imake
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 post-install:

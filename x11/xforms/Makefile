@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2013/10/11 20:40:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2013/10/11 21:21:06 naddy Exp $
 
 COMMENT=	GUI toolkit for X11
 
@@ -18,7 +18,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		GL X11 Xau Xdmcp Xext Xpm c jpeg m tiff
 
-USE_GROFF =		Yes
 CONFIGURE_STYLE=	imake
 MAKE_FLAGS=		LIBflimage_VERSION=${LIBflimage_VERSION} \
 			LIBforms_VERSION=${LIBforms_VERSION} \

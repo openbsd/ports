@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2013/10/11 20:39:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2013/10/11 21:20:54 naddy Exp $
 
 COMMENT=	Motif-based audio mixer
 VERSION=	1.2.2
@@ -15,7 +15,6 @@ MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmmix/${VERSION}/src/
 
 CONFIGURE_STYLE=	imake
 LIB_DEPENDS+=		x11/openmotif
-USE_GROFF =		Yes
 
 MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 

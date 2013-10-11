@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/10/11 20:40:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2013/10/11 21:21:07 naddy Exp $
 
 COMMENT=		snowy and Santa-y desktop
 
@@ -18,7 +18,6 @@ WANTLIB=		X11 Xau Xdmcp Xext Xpm c m
 
 MASTER_SITES=		${HOMEPAGE}
 
-USE_GROFF =		Yes
 CONFIGURE_STYLE=	imake
 
 NO_TEST=		Yes

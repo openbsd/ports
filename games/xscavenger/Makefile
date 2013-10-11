@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:07:42 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/10/11 21:20:56 naddy Exp $
 
 DISTNAME=	xscavenger-1.4.4
 REVISION =	2
@@ -14,7 +14,6 @@ COMMENT=	Lode Runner clone
 HOMEPAGE=	http://www.xdr.com/dash/scavenger.html
 MASTER_SITES=	http://www.xdr.com/dash/
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 CONFIGURE_STYLE= imake

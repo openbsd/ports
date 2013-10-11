@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/10/11 20:39:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2013/10/11 21:20:57 naddy Exp $
 
 COMMENT-canna=		X input method for Japanese, canna support
 COMMENT-canna-wnn=	X input method for Japanese, canna and wnn support
@@ -21,7 +21,6 @@ CONFIGURE_STYLE=imake
 FLAVORS=	canna wnn
 FLAVOR?=	wnn
 
-USE_GROFF =	Yes
 
 .if ${FLAVOR:Mwnn}
 BUILD_DEPENDS+=	japanese/Wnn

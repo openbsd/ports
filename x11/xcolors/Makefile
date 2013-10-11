@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/10/11 20:40:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2013/10/11 21:21:04 naddy Exp $
 
 COMMENT=	display all (ok, most of) the colors in the universe
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	ICE SM Xau Xdmcp X11 Xaw Xext Xmu Xpm Xt c m 
 
-USE_GROFF =	Yes
 WRKDIST=	${WRKDIR}/xcolors
 CONFIGURE_STYLE=imake
 

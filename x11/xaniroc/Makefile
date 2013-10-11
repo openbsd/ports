@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/10/11 20:39:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2013/10/11 21:21:02 naddy Exp $
 
 COMMENT=	animate your root-cursor
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_FTP=	no license
 
 WANTLIB=	ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c m
 
-USE_GROFF =	Yes
 CONFIGURE_STYLE=	imake
 
 post-extract:

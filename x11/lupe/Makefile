@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/10/11 20:39:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2013/10/11 21:21:00 naddy Exp $
 
 COMMENT=	real-time magnifying glass for X11
 
@@ -17,7 +17,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext c m 
 
-USE_GROFF =	Yes
 
 CONFIGURE_STYLE=imake
 XMKMF=		xmkmf

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/10/11 10:54:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2013/10/11 21:21:01 naddy Exp $
 
 COMMENT=	one keyboard/mouse to multiple X displays
 
@@ -18,7 +18,6 @@ MASTER_SITES=	ftp://gatekeeper.dec.com/pub/DEC/SRC/x2x/ \
 		ftp://ftp.europe.digital.com/pub/DEC/SRC/x2x/
 
 CONFIGURE_STYLE=imake
-USE_GROFF=	Yes
 NO_TEST=	Yes
 
 pre-build:
