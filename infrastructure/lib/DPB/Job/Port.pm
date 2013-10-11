@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.134 2013/10/10 20:52:04 espie Exp $
+# $OpenBSD: Port.pm,v 1.135 2013/10/11 11:51:04 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -28,6 +28,10 @@ sub want
 	# and then we pass it as an extra parameter
 	$job //= $core->job;
 	return 1 if $job->{v}{forcejunk};
+	# XXX let's wipe the slates at the start of the first tagged
+	# job, as we don't know the exact state of the host.
+	return 1 if $job->{v}{info}->has_property('tag') &&
+	    !defined $core->prop->{last_junk};
 	return 0 unless defined $core->prop->{junk};
 	return $core->prop->{depends_count} >= $core->prop->{junk};
 }
