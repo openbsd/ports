@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2013/10/10 02:08:24 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2013/10/11 17:23:16 brad Exp $
 
 COMMENT=		network statistics gatherer with graphs
 
-DISTNAME=		darkstat-3.0.715
-REVISION=		0
+DISTNAME=		darkstat-3.0.717
 CATEGORIES=		net www
 
 HOMEPAGE=		http://unix4lyfe.org/darkstat/
