@@ -1,12 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.45 2013/10/11 14:42:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.46 2013/10/11 15:01:42 ajacoutot Exp $
 @unexec-delete rm -f %D/share/icons/gnome/icon-theme.cache
-share/examples/gnome-icon-theme/
-share/examples/gnome-icon-theme/gtk-3.0/
-@sample ${SYSCONFDIR}/gtk-3.0/
-share/examples/gnome-icon-theme/gtk-3.0/settings.ini
-@sample ${SYSCONFDIR}/gtk-3.0/settings.ini
-share/gtk-2.0/
-share/gtk-2.0/gtkrc
 share/icons/gnome/
 share/icons/gnome/16x16/
 share/icons/gnome/16x16/actions/
