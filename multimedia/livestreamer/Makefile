@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2013/10/03 16:37:17 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.5 2013/10/11 00:46:06 bcallah Exp $
 
-MODPY_EGG_VERSION =	1.6.0
+MODPY_EGG_VERSION =	1.6.1
 COMMENT =	pipe video streams into a video player
 DISTNAME =	livestreamer-${MODPY_EGG_VERSION}
 CATEGORIES =	multimedia net
@@ -22,5 +22,7 @@ MODPY_SETUPTOOLS =	Yes
 RUN_DEPENDS =	net/rtmpdump \
 		security/py-crypto \
 		www/py-requests
+
+NO_TEST =	Yes
 
 .include <bsd.port.mk>
