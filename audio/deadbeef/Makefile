@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/08/20 22:05:46 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2013/10/11 14:16:57 dcoppa Exp $
 
 SHARED_ONLY =		Yes
 
@@ -78,7 +78,9 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-mono2stereo \
 			--disable-abstract-socket \
 			--disable-gtk3
-CONFIGURE_ENV +=	CPPFLAGS='-I${LOCALBASE}/lib/libzip/include -I${X11BASE}/include' \
+CONFIGURE_ENV +=	CPPFLAGS='-I${LOCALBASE}/lib/libzip/include \
+				  -I${X11BASE}/include \
+				  -I${WRKSRC}/plugins/dumb/dumb-kode54/include' \
 			LDFLAGS='-L${LOCALBASE}/lib -L${X11BASE}/lib'
 
 post-patch:
