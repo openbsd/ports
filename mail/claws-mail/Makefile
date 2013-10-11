@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2013/09/26 13:46:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2013/10/11 22:14:18 landry Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,15 +8,17 @@ COMMENT-clamav=		clamav plugin
 COMMENT-spamassassin=	spamassassin plugin
 COMMENT-htmlviewer=	fancy htmlviewer plugin
 COMMENT-pdfviewer=	pdfviewer plugin
+COMMENT-gdata=		gdata plugin
 
 V=			3.9.2
-REVISION=		0
+REVISION=		1
 DISTNAME=		claws-mail-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 PKGNAME-htmlviewer=	claws-mail-htmlviewer-${V}
 PKGNAME-pdfviewer=	claws-mail-pdfviewer-${V}
+PKGNAME-gdata=		claws-mail-gdata-${V}
 
 CATEGORIES=		mail news
 
@@ -30,7 +32,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 DIST_SUBDIR=		claws
 
-MULTI_PACKAGES=		-main -bogofilter -spamassassin -htmlviewer -pdfviewer
+MULTI_PACKAGES=		-main -bogofilter -spamassassin -htmlviewer -pdfviewer -gdata
 FLAVORS=		jpilot compface ldap debug
 FLAVOR?=
 
@@ -49,26 +51,30 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz idn lzma m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs sasl2 ssl xcb xcb-render xcb-shm z
+WANTLIB += asn1 com_err graphite2 gssapi heimbase krb5 roken wind
 
 WANTLIB-main =  ${WANTLIB}
 WANTLIB-main += ICE SM X11-xcb assuan c dbus-1 dbus-glib-1 enchant
 WANTLIB-main += gmp gnutls gpg-error gpgme hogweed nettle p11-kit perl
 WANTLIB-main += startup-notification-1 stdc++ tasn1 util xcb-aux xml2
+WANTLIB-main += canberra canberra-gtk notify ltdl ogg vorbis vorbisfile
+
+WANTLIB-gdata = ${WANTLIB} 
+WANTLIB-gdata += gck-1 gcr-base-3 gcrypt gdata goa-1.0 gpg-error nspr4
+WANTLIB-gdata += nss3 oauth p11-kit plc4 plds4 smime3 softokn3 soup-2.4
+WANTLIB-gdata += soup-gnome-2.4 sqlite3 ssl3 xml2
 
 WANTLIB-htmlviewer =  ${WANTLIB}
-WANTLIB-htmlviewer += EGL GL ICE SM Xt asn1 com_err dbus-1 dbus-glib-1 enchant
-WANTLIB-htmlviewer += gailutil gcrypt geoclue gpg-error graphite2 gssapi
+WANTLIB-htmlviewer += EGL GL ICE SM Xt dbus-1 dbus-glib-1 enchant
+WANTLIB-htmlviewer += orc-0.4 gcrypt geoclue gpg-error
 WANTLIB-htmlviewer += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
 WANTLIB-htmlviewer += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 harfbuzz-icu
-WANTLIB-htmlviewer += heimbase icudata icui18n icuuc javascriptcoregtk-1.0
-WANTLIB-htmlviewer += jpeg krb5 roken secret-1 soup-2.4 soup-gnome-2.4 sqlite3
-WANTLIB-htmlviewer += stdc++ webkitgtk-1.0 webp wind xml2 xslt
+WANTLIB-htmlviewer += icudata icui18n icuuc javascriptcoregtk-1.0
+WANTLIB-htmlviewer += jpeg secret-1 soup-2.4 soup-gnome-2.4 sqlite3
+WANTLIB-htmlviewer += stdc++ webkitgtk-1.0 webp xml2 xslt
 
 WANTLIB-pdfviewer =  ${WANTLIB}
-WANTLIB-pdfviewer += asn1 com_err graphite2 gssapi heimbase jpeg krb5 lcms2
-WANTLIB-pdfviewer += openjpeg poppler poppler-glib roken tiff wind
-
-WANTLIB-docs=
+WANTLIB-pdfviewer += jpeg lcms2 openjpeg poppler poppler-glib tiff
 
 LIB_DEPENDS=		archivers/libarchive \
 			archivers/xz \
@@ -84,6 +90,8 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/startup-notification \
 			textproc/enchant \
+			audio/libcanberra,-gtk \
+			devel/libnotify \
 			security/gnutls>=2.2 \
 			security/gpgme \
 			x11/dbus-glib
@@ -93,6 +101,9 @@ LIB_DEPENDS-htmlviewer=	${LIB_DEPENDS} \
 
 LIB_DEPENDS-pdfviewer=	${LIB_DEPENDS} \
 			print/poppler
+
+LIB_DEPENDS-gdata=	${LIB_DEPENDS} \
+			devel/libgdata
 
 #geolocation looks for champlain <= 0.10
 #python tries to dlopen libpython2.7.so
@@ -130,12 +141,7 @@ CONFIGURE_ARGS+=	--disable-compface
 .endif
 
 .if ${FLAVOR:Mldap}
-WANTLIB-main+=		roken wind krb5 lber-2.4 ldap-2.4
-WANTLIB-main+=		asn1 com_err graphite2 gssapi heimbase
-WANTLIB-bogofilter+=	${WANTLIB} asn1 com_err graphite2 gssapi heimbase
-WANTLIB-bogofilter+=	krb5 roken wind
-WANTLIB-spamassassin+=	${WANTLIB} asn1 com_err graphite2 gssapi heimbase
-WANTLIB-spamassassin+=	krb5 roken wind
+WANTLIB-main+=		lber-2.4 ldap-2.4
 LIB_DEPENDS-main+=	databases/openldap
 .else
 CONFIGURE_ARGS+=	--disable-ldap
