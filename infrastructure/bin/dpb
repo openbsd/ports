@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.100 2013/10/09 06:21:38 espie Exp $
+# $OpenBSD: dpb,v 1.101 2013/10/11 10:26:44 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -190,6 +190,7 @@ if (!$state->{fetch_only} &&
 }
 
 my $dump = DPB::Util->make_hot($state->logger->open('dump'));
+my $debug = DPB::Util->make_hot($state->logger->open('debug'));
 
 my $last_time = time() - $state->{display_timeout};
 
@@ -210,6 +211,11 @@ sub handle_non_waiting_jobs
 	while ($keep_going && DPB::Core->avail && $state->engine->can_build) {
 		$force_report = 1;
 		if (!$state->engine->start_new_job) {
+			my $q = $state->engine->{tobuild}{queue};
+			print $debug "SPINNING ON MAIN\n";
+			while (my ($k, $v) = each %{$q->{o}}) {
+				print $debug $k, "=>", $v->logname, "\n";
+			}
 			last;
 		}
 	}
@@ -221,6 +227,11 @@ sub handle_non_waiting_jobs
 		}
 		$force_report = 1;
 		if (!$state->engine->start_new_fetch) {
+			print $debug "SPINNING ON FETCH\n";
+			my $q = $state->engine->{tofetch}{queue};
+			while (my ($k, $v) = each %{$q->{o}}) {
+				print $debug $k, "=>", $v->logname, "\n";
+			}
 			last;
 		}
 	}
