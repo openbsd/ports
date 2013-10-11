@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.62 2013/10/10 15:07:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2013/10/11 12:24:36 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.10.0.1
-REVISION=		1
+REVISION=		2
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

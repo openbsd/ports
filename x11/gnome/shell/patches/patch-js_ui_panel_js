@@ -1,25 +1,25 @@
-$OpenBSD: patch-js_ui_panel_js,v 1.9 2013/09/27 14:04:47 jasper Exp $
+$OpenBSD: patch-js_ui_panel_js,v 1.10 2013/10/11 12:24:36 ajacoutot Exp $
 
-Make Network Manager support optional.
 https://bugzilla.gnome.org/show_bug.cgi?id=679871
+http://sources.debian.net/src/gnome-shell/3.8.4-3/debian/patches/10-make-NetworkManager-optional.patch
+http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/gnome-base/gnome-shell/files/gnome-shell-3.8.3-networkmanager-flag.patch
 
 --- js/ui/panel.js.orig	Tue Sep 24 20:20:37 2013
-+++ js/ui/panel.js	Fri Sep 27 15:26:49 2013
-@@ -811,7 +811,12 @@ const AggregateMenu = new Lang.Class({
++++ js/ui/panel.js	Fri Oct 11 13:50:47 2013
+@@ -811,7 +811,11 @@ const AggregateMenu = new Lang.Class({
          this._indicators = new St.BoxLayout({ style_class: 'panel-status-indicators-box' });
          this.actor.add_child(this._indicators);
  
 -        this._network = new imports.ui.status.network.NMApplet();
-+	if (Config.HAVE_NETWORK_MANAGER) {
++        if (Config.HAVE_NETWORKMANAGER) {
 +            this._network = new imports.ui.status.network.NMApplet();
-+	} else {
++        } else {
 +            this._network = null;
 +        }
-+
          if (Config.HAVE_BLUETOOTH) {
              this._bluetooth = new imports.ui.status.bluetooth.Indicator();
          } else {
-@@ -826,7 +831,9 @@ const AggregateMenu = new Lang.Class({
+@@ -826,7 +830,9 @@ const AggregateMenu = new Lang.Class({
          this._screencast = new imports.ui.status.screencast.Indicator();
  
          this._indicators.add_child(this._screencast.indicators);
@@ -30,7 +30,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=679871
          if (this._bluetooth) {
              this._indicators.add_child(this._bluetooth.indicators);
          }
-@@ -840,7 +847,9 @@ const AggregateMenu = new Lang.Class({
+@@ -840,7 +846,9 @@ const AggregateMenu = new Lang.Class({
          this.menu.addMenuItem(this._volume.menu);
          this.menu.addMenuItem(this._brightness.menu);
          this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());

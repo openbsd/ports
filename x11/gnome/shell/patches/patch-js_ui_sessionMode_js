@@ -1,15 +1,31 @@
-$OpenBSD: patch-js_ui_sessionMode_js,v 1.4 2013/09/27 14:04:47 jasper Exp $
+$OpenBSD: patch-js_ui_sessionMode_js,v 1.5 2013/10/11 12:24:37 ajacoutot Exp $
 
-XXX fix this the correct way (if HAVE_NETWORK_MANAGER) and push it upstream
+https://bugzilla.gnome.org/show_bug.cgi?id=679871
+http://sources.debian.net/src/gnome-shell/3.8.4-3/debian/patches/10-make-NetworkManager-optional.patch
+http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/gnome-base/gnome-shell/files/gnome-shell-3.8.3-networkmanager-flag.patch
 
---- js/ui/sessionMode.js.orig	Tue Aug 27 17:59:43 2013
-+++ js/ui/sessionMode.js	Fri Sep 27 15:20:13 2013
-@@ -92,7 +92,7 @@ const _modes = {
+--- js/ui/sessionMode.js.orig	Fri Oct 11 13:40:28 2013
++++ js/ui/sessionMode.js	Fri Oct 11 13:45:04 2013
+@@ -10,6 +10,8 @@ const FileUtils = imports.misc.fileUtils;
+ const Main = imports.ui.main;
+ const Params = imports.misc.params;
+ 
++const Config = imports.misc.config;
++
+ const DEFAULT_MODE = 'restrictive';
+ 
+ const _modes = {
+@@ -92,8 +94,12 @@ const _modes = {
          isLocked: false,
          isPrimary: true,
          unlockDialog: imports.ui.unlockDialog.UnlockDialog,
 -        components: ['networkAgent', 'polkitAgent', 'telepathyClient',
-+        components: [ 'polkitAgent', 'telepathyClient',
++        components: Config.HAVE_NETWORKMANAGER ?
++                    ['networkAgent', 'polkitAgent', 'telepathyClient',
++                     'keyring', 'autorunManager', 'automountManager'] :
++                    ['polkitAgent', 'telepathyClient',
                       'keyring', 'autorunManager', 'automountManager'],
++
          panel: {
              left: ['activities', 'appMenu'],
+             center: ['dateMenu'],

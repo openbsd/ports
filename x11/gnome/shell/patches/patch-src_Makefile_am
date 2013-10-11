@@ -1,10 +1,11 @@
-$OpenBSD: patch-src_Makefile_am,v 1.5 2013/09/27 14:04:47 jasper Exp $
+$OpenBSD: patch-src_Makefile_am,v 1.6 2013/10/11 12:24:37 ajacoutot Exp $
 
-Make Network Manager support optional.
 https://bugzilla.gnome.org/show_bug.cgi?id=679871
+http://sources.debian.net/src/gnome-shell/3.8.4-3/debian/patches/10-make-NetworkManager-optional.patch
+http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/gnome-base/gnome-shell/files/gnome-shell-3.8.3-networkmanager-flag.patch
 
 --- src/Makefile.am.orig	Thu Sep 12 20:09:56 2013
-+++ src/Makefile.am	Fri Sep 27 15:19:30 2013
++++ src/Makefile.am	Fri Oct 11 14:05:14 2013
 @@ -103,7 +103,6 @@ shell_public_headers_h =		\
  	shell-invert-lightness-effect.h	\
  	shell-keybinding-modes.h	\
@@ -13,7 +14,18 @@ https://bugzilla.gnome.org/show_bug.cgi?id=679871
  	shell-perf-log.h		\
  	shell-screenshot.h		\
  	shell-slicer.h			\
-@@ -140,7 +139,6 @@ libgnome_shell_base_la_SOURCES = 	\
+@@ -115,6 +114,10 @@ shell_public_headers_h =		\
+ 	shell-window-tracker.h		\
+ 	shell-wm.h
+ 
++if HAVE_NETWORKMANAGER
++shell_public_headers_h +=  shell-network-agent.h
++endif
++
+ libgnome_shell_menu_la_SOURCES = 	\
+ 	gtkactionmuxer.h		\
+ 	gtkactionmuxer.c		\
+@@ -140,7 +143,6 @@ libgnome_shell_base_la_SOURCES = 	\
  	shell-menu-tracker.c		\
  	shell-menu-tracker.h		\
  	shell-mount-operation.c		\
@@ -21,30 +33,24 @@ https://bugzilla.gnome.org/show_bug.cgi?id=679871
  	shell-perf-log.c		\
  	shell-polkit-authentication-agent.h	\
  	shell-polkit-authentication-agent.c	\
-@@ -242,6 +240,16 @@ endif BUILD_RECORDER
+@@ -151,6 +153,10 @@ libgnome_shell_base_la_SOURCES = 	\
+ 	shell-tp-client.c		\
+ 	$(NULL)
  
- ########################################
- 
-+if NETWORK_MANAGER
++if HAVE_NETWORKMANAGER
++libgnome_shell_base_la_SOURCES +=  shell-network-agent.c
++endif
 +
-+shell_public_headers_h += shell-network-agent.h
-+
-+libgnome_shell_la_SOURCES += shell-network-agent.c
-+
-+endif NETWORK_MANAGER
-+
-+########################################
-+
- libexec_PROGRAMS += gnome-shell-perf-helper
- 
- gnome_shell_perf_helper_SOURCES = shell-perf-helper.c
-@@ -331,7 +339,10 @@ INTROSPECTION_GIRS += ShellMenu-0.1.gir
+ libgnome_shell_sources =		\
+ 	$(shell_built_sources)		\
+ 	$(shell_public_headers_h)	\
+@@ -331,7 +337,10 @@ INTROSPECTION_GIRS += ShellMenu-0.1.gir
  CLEANFILES += ShellMenu-0.1.gir
  
  Shell-0.1.gir: gnome-shell St-1.0.gir ShellMenu-0.1.gir
 -Shell_0_1_gir_INCLUDES = Clutter-1.0 ClutterX11-1.0 Meta-3.0 TelepathyGLib-0.12 Soup-2.4 GMenu-3.0 NetworkManager-1.0 NMClient-1.0
 +Shell_0_1_gir_INCLUDES = Clutter-1.0 ClutterX11-1.0 Meta-3.0 TelepathyGLib-0.12 Soup-2.4 GMenu-3.0
-+if NETWORK_MANAGER
++if HAVE_NETWORKMANAGER
 +Shell_0_1_gir_INCLUDES += NetworkManager-1.0 NMClient-1.0
 +endif
  Shell_0_1_gir_CFLAGS = $(libgnome_shell_la_CPPFLAGS) -I $(srcdir)
