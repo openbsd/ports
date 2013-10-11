@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/08/08 15:51:07 naddy Exp $
-bin/xwit
+@comment $OpenBSD: PLIST,v 1.3 2013/10/11 10:56:01 naddy Exp $
+@bin bin/xwit
 @man man/cat1/xwit.0
