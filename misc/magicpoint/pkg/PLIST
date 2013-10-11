@@ -1,25 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.10 2005/03/01 18:19:52 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/10/11 20:37:22 naddy Exp $
 bin/eqn2eps
-bin/mgp
+@bin bin/mgp
 bin/mgp2html
 bin/mgp2latex
-bin/mgp2ps
+@bin bin/mgp2ps
 bin/mgpembed
 bin/mgpnet
 bin/tex2eps
-bin/xmindpath
-bin/xwintoppm
+@bin bin/xmindpath
+@bin bin/xwintoppm
 lib/X11/mgp/
 lib/X11/mgp/default.mgp
 lib/X11/mgp/mgp1.jpg
 lib/X11/mgp/mgp2.jpg
 lib/X11/mgp/mgp3.jpg
-@man man/cat1/mgp.0
-@man man/cat1/mgp2ps.0
-@man man/cat1/mgpembed.0
-@man man/cat1/mgpnet.0
-@man man/cat1/xwintoppm.0
+@man man/man1/mgp.1
+@man man/man1/mgp2ps.1
+@man man/man1/mgpembed.1
+@man man/man1/mgpnet.1
 @man man/man1/xmindpath.1
+@man man/man1/xwintoppm.1
 share/doc/mgp/
 share/doc/mgp/COPYRIGHT
 share/doc/mgp/COPYRIGHT.jp
