@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.235 2013/09/28 08:51:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.236 2013/10/11 14:22:20 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
-GNOME_VERSION=		3.10.0
-REVISION=		1
+GNOME_VERSION=		3.10.1
 
 CATEGORIES=		x11
 
@@ -20,7 +19,7 @@ WANTLIB += glib-2.0 gmodule-2.0 gnome-desktop-3 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-3 harfbuzz json-glib-1.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs stdc++ upower-glib xcb xcb-dri2 xcb-glx
-WANTLIB += xcb-render xcb-shm xkbfile 
+WANTLIB += xcb-render xcb-shm xkbfile z
 
 MODULES=	devel/dconf \
 		devel/gettext \
