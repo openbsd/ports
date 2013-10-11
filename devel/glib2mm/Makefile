@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.67 2013/05/02 08:37:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2013/10/11 13:25:10 ajacoutot Exp $
 
 COMMENT=	C++ interface for glib2
 
 GNOME_PROJECT=	glibmm
-GNOME_VERSION=	2.36.2
+GNOME_VERSION=	2.38.0
 PKGNAME=	glib2mm-${GNOME_VERSION}
 
 V=		2.4
@@ -27,7 +27,7 @@ MODULES=	devel/gettext \
 		x11/gnome
 
 LIB_DEPENDS=	devel/libsigc++-2 \
-		devel/glib2>=2.36.0
+		devel/glib2>=2.38.0
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	M4='m4 -g' \
