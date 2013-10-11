@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2013/09/28 08:51:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2013/10/11 14:42:17 ajacoutot Exp $
 
 PKG_ARCH=	*
 
@@ -6,7 +6,7 @@ COMMENT=	base icon theme for GNOME
 
 GNOME_PROJECT=	gnome-icon-theme
 GNOME_VERSION=	3.10.0
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	x11
 
@@ -28,8 +28,6 @@ CONFIGURE_ARGS=	--enable-icon-mapping \
 # don't run gtk-update-icon-cache, the package takes care of it
 CONFIGURE_ENV += ac_cv_path_GTK_UPDATE_ICON_CACHE=/usr/bin/true
 
-EXAMPLEDIR=	${PREFIX}/share/examples/${GNOME_PROJECT}
-
 # gtk-update-icon-cache is checked by configure but do not enforce the
 # dependency: we don't need to run it, the package takes care of that
 pre-configure:
@@ -37,11 +35,12 @@ pre-configure:
 
 # Unbreak GTK+ applications that use gnome-icon-theme, when executed outside
 # of a Desktop Environment
+EXAMPLEDIR=	${PREFIX}/share/examples/${GNOME_PROJECT}
 post-install:
-	${INSTALL_DATA_DIR} ${EXAMPLEDIR}/gtk-2.0
-	${INSTALL_DATA_DIR} ${EXAMPLEDIR}/gtk-3.0
+	${INSTALL_DATA_DIR} ${PREFIX}/share/gtk-2.0
 	@echo 'gtk-icon-theme-name = "gnome"' > \
-		${EXAMPLEDIR}/gtk-2.0/gtkrc
+		${PREFIX}/share/gtk-2.0/gtkrc
+	${INSTALL_DATA_DIR} ${EXAMPLEDIR}/gtk-3.0
 	@printf "[Settings]\ngtk-icon-theme-name = gnome\n" > \
 		${EXAMPLEDIR}/gtk-3.0/settings.ini
 
