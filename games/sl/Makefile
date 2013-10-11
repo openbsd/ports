@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/15 16:14:50 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2013/10/11 23:49:39 naddy Exp $
 
 COMMENT =			Steam Locomotive
 DISTNAME =			sl-3.03
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_CDROM=		Yes
 WANTLIB =			c curses termcap
 
 MASTER_SITES =			http://openbsd.dead-parrot.de/distfiles/
-USE_GROFF =			Yes
 NO_TEST =			Yes
 ALL_TARGET =			sl
 MAKE_FLAGS +=			CC="${CC}" CFLAGS="${CFLAGS}"

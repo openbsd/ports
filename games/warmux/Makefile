@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:07:41 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/10/11 23:49:40 naddy Exp $
 
 COMMENT=		free software clone of Worms(R) game concept
 
@@ -33,6 +33,5 @@ CONFIGURE_ENV+= 	CPPFLAGS="-I${LOCALBASE}/include -DSIZE_T_FIXEDPOINT_METHODS ${
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			MKDIR_P='mkdir -p'
 CONFIGURE_ARGS+=	--enable-servers
-USE_GROFF =		Yes
 
 .include <bsd.port.mk>

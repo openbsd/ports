@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:35:50 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/10/11 23:50:21 naddy Exp $
 
 COMMENT=	update your Snort rules
 
@@ -19,7 +19,6 @@ RUN_DEPENDS=		net/wget
 NO_BUILD=Yes
 NO_TEST=Yes
 PKG_ARCH=*
-USE_GROFF =	Yes
 
 DOCS=	FAQ INSTALL LICENSE README README.templates UPGRADING
 

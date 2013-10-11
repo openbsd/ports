@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:07:38 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/10/11 23:49:34 naddy Exp $
 
 COMMENT =	portable version of iD Software's Doom
 DISTNAME =	chocolate-doom-1.7.0
@@ -21,7 +21,6 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=chocolate-doom/}
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
-USE_GROFF =	Yes
 
 CONFIGURE_STYLE =	gnu
 

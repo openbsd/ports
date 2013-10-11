@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2013/08/07 21:33:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.46 2013/10/11 23:51:52 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -62,7 +62,6 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 # pdftotext(1)
 RUN_DEPENDS +=	print/poppler,-utils
 
-USE_GROFF=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

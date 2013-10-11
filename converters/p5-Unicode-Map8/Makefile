@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 01:30:28 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/10/11 23:48:16 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,6 @@ DISTNAME=	Unicode-Map8-0.12
 REVISION=	3
 CATEGORIES=	converters
 MODULES=	cpan
-USE_GROFF =	Yes
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

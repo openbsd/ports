@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/07/05 09:37:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2013/10/11 23:51:47 naddy Exp $
 
 COMMENT=	access counter, clock and date for WWW pages
 
@@ -21,7 +21,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c
 
 CONFIGURE_STYLE=gnu
-USE_GROFF =	Yes
 
 WWWDIR=		${VARBASE}/www
 

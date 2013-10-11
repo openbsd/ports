@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:13 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/10/11 23:48:30 naddy Exp $
 
 COMMENT= 	pure perl client interface to memcached
 
@@ -14,7 +14,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 RUN_DEPENDS=		devel/p5-String-CRC32
 
-USE_GROFF =		Yes
 TEST_DEPENDS=	misc/memcached
 TEST_IS_INTERACTIVE=	Yes
 

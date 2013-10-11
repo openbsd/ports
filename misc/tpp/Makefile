@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/06/23 16:37:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2013/10/11 23:50:13 naddy Exp $
 
 COMMENT =		text-based presentation program
 
@@ -20,7 +20,6 @@ RUN_DEPENDS =		devel/ruby-ncurses,${MODRUBY_FLAVOR} \
 			misc/figlet
 
 NO_BUILD =		Yes
-USE_GROFF =		Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tpp

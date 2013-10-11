@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:22 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/10/11 23:49:18 naddy Exp $
 
 COMMENT =	Test::More-style wrapper around HTML::Tidy
 
@@ -6,7 +6,6 @@ MODULES =	cpan
 DISTNAME =	Test-HTML-Tidy-1.00
 REVISION =	0
 CATEGORIES =	devel
-USE_GROFF =	Yes
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 

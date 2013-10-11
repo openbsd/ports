@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:46:14 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/10/11 23:51:50 naddy Exp $
 
 COMMENT=	xosd based clock
 DISTNAME=	osd_clock-0.5
@@ -11,7 +11,6 @@ MASTER_SITES=	http://distfiles.nl/
 PERMIT_PACKAGE_CDROM=	Yes
 
 NO_TEST=	Yes
-USE_GROFF =	Yes
 
 LIB_DEPENDS=	x11/xosd
 WANTLIB=	X11 Xext Xt c pthread xosd

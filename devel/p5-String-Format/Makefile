@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:21 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/10/11 23:49:12 naddy Exp $
 
 COMMENT=	perl printf extensions
 
 MODULES=	cpan
-USE_GROFF =	Yes
 
 DISTNAME=	String-Format-1.14
 REVISION=	2

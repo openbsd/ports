@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/21 08:48:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2013/10/11 23:51:04 naddy Exp $
 
 COMMENT=	a software fax modem that uses an IAX channel
 
@@ -18,7 +18,6 @@ LIB_DEPENDS=	graphics/tiff
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =	Yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 

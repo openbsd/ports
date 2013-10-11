@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:35:53 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/10/11 23:50:26 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -16,7 +16,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c
 
-USE_GROFF =	Yes
 
 RUN_DEPENDS =	net/p5-Net-CIDR-Lite \
 		net/p5-Socket6

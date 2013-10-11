@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/10 22:55:06 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/10/11 23:48:08 naddy Exp $
 
 COMMENT=		audio CD to audio file encoder
 DISTNAME=		vlorb-1.2
@@ -20,7 +20,6 @@ RUN_DEPENDS=		audio/cdparanoia \
 
 NO_BUILD=		Yes
 NO_TEST =		Yes
-USE_GROFF =		Yes
 PKG_ARCH=		*
 
 pre-install:

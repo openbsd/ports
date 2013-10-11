@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 01:30:28 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/10/11 23:48:15 naddy Exp $
 
 COMMENT=	handles various Japanese charsets
 
 DISTNAME=	Jcode-2.07
 CATEGORIES=	converters japanese
 MODULES=	cpan
-USE_GROFF =	Yes
 
 HOMEPAGE=	http://openlab.ring.gr.jp/Jcode/
 

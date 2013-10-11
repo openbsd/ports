@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/04/01 18:26:00 rpe Exp $
+# $OpenBSD: Makefile,v 1.20 2013/10/11 23:50:20 naddy Exp $
 
 COMMENT =		console interface for nagios
 
@@ -16,7 +16,6 @@ MASTER_SITES =		ftp://noc.hep.wisc.edu/src/cnagios/ \
 			ftp://noc.hep.wisc.edu/src/cnagios/old-versions/
 
 NO_TEST =		Yes
-USE_GROFF =		Yes
 
 RUN_DEPENDS =		net/nagios/nagios>=3.0
 CONFIGURE_STYLE =	gnu

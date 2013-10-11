@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/10 22:55:05 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2013/10/11 23:48:06 naddy Exp $
 
 COMMENT=	interface to CDDB and freedb servers
 
@@ -12,6 +12,5 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

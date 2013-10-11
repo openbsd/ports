@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:44:46 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/10/11 23:51:41 naddy Exp $
 
 COMMENT=	use HTML Templates which allows expressions
 
 MODULES=	cpan
 DISTNAME=	HTML-Template-Expr-0.07
 CATEGORIES=	www
-USE_GROFF =	Yes
 
 HOMEPAGE=	http://sourceforge.net/projects/html-template/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:35:52 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/10/11 23:50:25 naddy Exp $
 
 COMMENT=	build IPv4 and IPv6 address space hierarchies
 
@@ -13,6 +13,5 @@ PERMIT_PACKAGE_CDROM=	Yes
 RUN_DEPENDS=		net/p5-NetAddr-IP
 
 CONFIGURE_STYLE=modbuild
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

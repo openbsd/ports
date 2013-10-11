@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/09 15:20:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2013/10/11 23:49:22 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,6 @@ COMMENT=	tools to test taintedness
 MODULES=	cpan
 DISTNAME=	Test-Taint-1.06
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

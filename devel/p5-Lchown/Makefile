@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 10:50:18 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/10/11 23:48:55 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,7 +18,6 @@ WANTLIB += c
 
 MODULES=		cpan
 CPAN_AUTHOR=		NCLEATON
-USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	modbuild
 

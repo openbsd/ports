@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/03/11 11:35:45 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2013/10/11 23:50:16 naddy Exp $
 
 COMMENT=		small and efficient HTTP crawler
 
@@ -20,7 +20,6 @@ LIB_DEPENDS=		databases/db/v3
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-db="${LOCALBASE}"
 CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I/usr/local/include/db"
-USE_GROFF =		Yes
 
 NO_TEST=		Yes
 

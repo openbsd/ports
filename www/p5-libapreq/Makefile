@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:44:47 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/10/11 23:51:44 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,6 @@ MODULES=	cpan
 DISTNAME=	libapreq-1.34
 REVISION=	2
 CATEGORIES=	www
-USE_GROFF =	Yes
 
 HOMEPAGE=	http://httpd.apache.org/apreq/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:17 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/10/11 23:48:46 naddy Exp $
 
 COMMENT=	utilities for handling Byte Order Marks
 
@@ -14,6 +14,5 @@ TEST_DEPENDS=devel/p5-Test-Exception
 PERMIT_PACKAGE_CDROM=	Yes
 
 CONFIGURE_STYLE=modbuild
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

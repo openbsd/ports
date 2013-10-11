@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/09/27 17:49:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2013/10/11 23:49:46 naddy Exp $
 
 COMMENT=	gtk2 comic book viewer
 
@@ -29,7 +29,6 @@ RUN_DEPENDS=	graphics/py-Imaging \
 		devel/desktop-file-utils \
 		x11/gtk+2,-guic
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 post-extract:

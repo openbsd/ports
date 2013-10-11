@@ -1,5 +1,5 @@
 # Icon library port
-# $OpenBSD: Makefile,v 1.25 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2013/10/11 23:49:54 naddy Exp $
 
 COMMENT=	useful and interesting programs for Icon
 
@@ -35,7 +35,6 @@ RUN_DEPENDS=lang/icon/interp
 IPATH=${WRKSRC}/gprocs:${WRKSRC}/procs:${LOCALBASE}/share/ipl/ucode
 LPATH=${WRKSRC}/gincl:${WRKSRC}/incl
 BUILDENV=IPATH="${IPATH}"  LPATH="${LPATH}"; export IPATH LPATH;
-USE_GROFF =	Yes
 
 IPL=${PREFIX}/share/ipl
 FLAVORS=	no_x11

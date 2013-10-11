@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/07/02 06:22:27 rpe Exp $
+# $OpenBSD: Makefile,v 1.6 2013/10/11 23:48:10 naddy Exp $
 
 COMMENT=	filesystem benchmark
 
@@ -16,6 +16,5 @@ MASTER_SITES=	http://download.pureftpd.org/pub/blogbench/ \
 WANTLIB=	c pthread
 
 CONFIGURE_STYLE=gnu
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

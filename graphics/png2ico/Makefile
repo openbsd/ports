@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:10:55 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/10/11 23:49:52 naddy Exp $
 
 COMMENT=	Convert PNG images to Windows .ico files
 
@@ -18,7 +18,6 @@ WANTLIB=		c m stdc++ z png>=3
 LIB_DEPENDS=	graphics/png
 
 MAKE_ENV=	CXX="${CXX}"
-USE_GROFF =	Yes
 NO_TEST=	Yes
 WRKDIST=	${WRKDIR}/png2ico
 

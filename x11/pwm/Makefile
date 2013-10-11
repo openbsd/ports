@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:46:15 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/10/11 23:51:52 naddy Exp $
 
 COMMENT=		lightweight window manager with emphasis on usability
 
@@ -15,7 +15,6 @@ MAINTAINER=		Gregory Steuck <greg-openbsd-pwm@nest.cx>
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		X11 c m
 
-USE_GROFF =		Yes
 NO_TEST=		Yes
 
 MAKE_ENV=		CC='${CC}' SYSCONFDIR='${SYSCONFDIR}'

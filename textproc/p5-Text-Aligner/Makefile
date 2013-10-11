@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:42:44 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/10/11 23:51:17 naddy Exp $
 
 COMMENT=	justify strings to various alignment styles
 
 MODULES=	cpan
 DISTNAME=	Text-Aligner-0.07
 CATEGORIES=	textproc
-USE_GROFF =	Yes
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

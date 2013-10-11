@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:10:54 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/10/11 23:49:51 naddy Exp $
 
 COMMENT=	interface to read EXIF tags in JPEG images
 
@@ -10,7 +10,6 @@ CATEGORIES=	graphics
 
 MAINTAINER=	Dan Weeks <danimal@danimal.org>
 MODULES=	cpan
-USE_GROFF =	Yes
 
 # BSD
 PERMIT_PACKAGE_CDROM=   Yes

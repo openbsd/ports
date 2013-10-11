@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/09/27 17:49:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2013/10/11 23:50:14 naddy Exp $
 
 COMMENT=		DVD authoring application
 
@@ -44,7 +44,6 @@ LIB_DEPENDS=		graphics/ffmpeg>=20121026 \
 			x11/wxWidgets,-media>=2.8.12p0
 
 # FIXME: locale/Makefile uses gmake constructs
-USE_GROFF=		Yes
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

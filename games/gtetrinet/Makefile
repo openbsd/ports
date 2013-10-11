@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/09/27 17:49:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2013/10/11 23:49:37 naddy Exp $
 
 MULTI_PACKAGES=	-main -themes
 
@@ -74,7 +74,6 @@ FAKE_FLAGS=	gamesdir=${PREFIX}/bin \
 		schemadir=${PREFIX}/share/schemas/gtetrinet
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 post-install:

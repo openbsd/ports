@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:02:50 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/10/11 23:49:31 naddy Exp $
 
 COMMENT=	update LDAP entries with a text editor
 
@@ -27,7 +27,6 @@ WANTLIB +=	glib-2.0>=0.8 lber ldap popt
 
 MAKE_FILE=	GNUmakefile
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:13 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/10/11 23:48:28 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,6 @@ COMMENT=		helper functions for op tree manipulation
 DISTNAME=		B-Utils-0.11
 REVISION=		2
 CATEGORIES=		devel
-USE_GROFF =		Yes
 
 MODULES=		cpan
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/09/01 17:16:46 rpe Exp $
+# $OpenBSD: Makefile,v 1.14 2013/10/11 23:50:15 naddy Exp $
 COMMENT=		aggregation-based network traffic profiler
 
 DISTNAME=		aguri-0.7
@@ -15,7 +15,6 @@ WANTLIB=		c pcap
 MASTER_SITES=		http://ftp.sunet.se/pub/network/monitoring/kjc/
 
 MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}"
-USE_GROFF =		Yes
 
 do-configure:
 	@perl -pi -e 's,/usr/local,${PREFIX},' ${WRKDIST}/scripts/*

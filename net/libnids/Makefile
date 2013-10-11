@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2013/03/11 11:35:48 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2013/10/11 23:50:19 naddy Exp $
 
 COMMENT=	network monitoring library with TCP/IP reassembly
 
@@ -19,7 +19,6 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --disable-libglib \
 		 --with-libnet="${LOCALBASE}"
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 .include <bsd.port.mk>

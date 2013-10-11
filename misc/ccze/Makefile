@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/10/01 09:07:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2013/10/11 23:50:09 naddy Exp $
 
 COMMENT=	log colorizer
 
@@ -18,7 +18,6 @@ WANTLIB=		c ncurses pcre
 LIB_DEPENDS=	devel/pcre
 
 USE_GMAKE=	Yes
-USE_GROFF=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-builtins=all

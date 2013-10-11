@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/10/11 23:51:54 naddy Exp $
 
 COMMENT=	window manager improved - key driven window manager
 
@@ -20,6 +20,5 @@ MASTER_SITES=	http://code.suckless.org/dl/misc/
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

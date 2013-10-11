@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:22 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/10/11 23:49:18 naddy Exp $
 
 COMMENT=	automated driving and testing of terminal-based programs
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	Test-Expect-0.31
 REVISION=	0
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

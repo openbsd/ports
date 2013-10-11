@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:20 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/10/11 23:48:59 naddy Exp $
 
 COMMENT=	Compare numbers
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	Number-Compare-0.01
 REVISION=	2
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 MAINTAINER=	Sam Smith <S@msmith.net>
 

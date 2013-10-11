@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:07:39 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/10/11 23:49:38 naddy Exp $
 
 COMMENT=	city simulation game
 
@@ -30,7 +30,6 @@ BUILD_DEPENDS=	devel/jam
 RUN_DEPENDS=	devel/desktop-file-utils
 NO_TEST=	Yes
 
-USE_GROFF =	Yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="-liconv -pthread"

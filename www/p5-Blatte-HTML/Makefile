@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:44:44 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2013/10/11 23:51:28 naddy Exp $
 
 COMMENT=	Blatte functions to generate (X)HTML
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	Blatte-HTML-0.9
 REVISION=	0
 HOMEPAGE=	http://www.blatte.org/
-USE_GROFF =	Yes
 
 CATEGORIES=	www
 

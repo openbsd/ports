@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 10:50:16 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/10/11 23:48:43 naddy Exp $
 
 COMMENT= 	find memory cycles in objects
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 
 DISTNAME=	Devel-Cycle-1.11
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

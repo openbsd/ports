@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2013/03/11 11:42:45 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2013/10/11 23:51:23 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,6 @@ MODULES=	cpan devel/gettext
 DISTNAME=	XML-LibXSLT-1.68
 REVISION=	4
 CATEGORIES=	textproc
-USE_GROFF =	Yes
 
 HOMEPAGE=	http://www.axkit.org/
 

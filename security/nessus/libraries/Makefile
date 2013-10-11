@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/21 08:48:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2013/10/11 23:50:44 naddy Exp $
 
 COMMENT=	libraries for Nessus
 DISTNAME=	nessus-libraries-${V}
@@ -7,6 +7,5 @@ REVISION=	2
 SHARED_LIBS=	hosts_gatherer	4.7 \
 		nessus		4.7
 
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

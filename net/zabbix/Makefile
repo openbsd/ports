@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2013/09/04 20:11:14 robert Exp $
+# $OpenBSD: Makefile,v 1.92 2013/10/11 23:50:37 naddy Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -25,7 +25,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=zabbix/}
 
 MODULES=		converters/libiconv lang/php
-USE_GROFF =		Yes
 MODPHP_BUILDDEP =	No
 
 MULTI_PACKAGES =	-main -web

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 01:30:28 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/10/11 23:48:15 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,6 +18,5 @@ WANTLIB += c
 
 CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

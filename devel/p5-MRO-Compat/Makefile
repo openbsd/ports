@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:18 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/10/11 23:48:58 naddy Exp $
 
 COMMENT=	mro::* interface compatibility for Perl < 5.9.5
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	MRO-Compat-0.11
 REVISION=	0
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 CPAN_AUTHOR=	FLORA
 

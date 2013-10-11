@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:31 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/10/11 23:49:30 naddy Exp $
 
 COMMENT=	AVR microcontroller hardware in-system programmer
 
@@ -13,7 +13,6 @@ MAINTAINER=	Martin Reindl <martin@openbsd.org>
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c m stdc++
-USE_GROFF =		Yes
 
 MASTER_SITES=		${MASTER_SITE_SAVANNAH:=uisp/}
 

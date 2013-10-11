@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/09/25 07:58:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2013/10/11 23:51:48 naddy Exp $
 
 COMMENT=	GNUstep gui library
 
@@ -37,7 +37,6 @@ CONFIGURE_STYLE=autoconf gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lstdc++ -lm"
 CONFIGURE_ARGS=	--with-x
-USE_GROFF =	Yes
 
 LIBDIR =	lib/GNUstep/Libraries/gnustep-gui/Versions/${LIBgnustep-gui_VERSION}
 SUBST_VARS +=	LIBDIR

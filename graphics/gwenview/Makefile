@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2013/10/05 07:34:33 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2013/10/11 23:49:46 naddy Exp $
 
 COMMENT=	image viewer for KDE
 
@@ -39,7 +39,6 @@ MAKE_ENV=	KDEDIR="${LOCALBASE}"
 MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION=	2.61
 AUTOCONF?=		/bin/sh ${WRKDIST}/admin/cvs.sh configure

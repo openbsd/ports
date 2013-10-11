@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2013/03/11 11:37:54 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2013/10/11 23:50:40 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -45,7 +45,6 @@ CONFIGURE_ARGS+=	--disable-debugging \
 			--disable-pipe \
 			--with-ncsb-dir=${LOCALBASE}/share/ghostscript/fonts
 USE_GMAKE=		Yes
-USE_GROFF =		Yes
 MAKE_FILE=		GNUmakefile
 
 # Stupid fontforge writes autosave data to ~/.PfaEdit, even in

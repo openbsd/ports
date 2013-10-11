@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:23 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/10/11 23:49:23 naddy Exp $
 
 COMMENT =	a role for classes that can be thrown
 
@@ -7,7 +7,6 @@ DISTNAME =	Throwable-0.102080
 REVISION =	1
 CATEGORIES =	devel
 CPAN_AUTHOR =	RJBS
-USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

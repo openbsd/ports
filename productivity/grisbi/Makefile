@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/05/31 15:34:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2013/10/11 23:50:42 naddy Exp $
 
 COMMENT=	personal accounting application
 SHARED_ONLY =	Yes
@@ -39,7 +39,6 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+2,-guic
 
 USE_GMAKE=	Yes
-USE_GROFF=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \

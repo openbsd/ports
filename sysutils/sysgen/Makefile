@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:41:33 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/10/11 23:51:03 naddy Exp $
 
 COMMENT=		calculates QBUS CSR and Vector assignments
 
@@ -19,7 +19,6 @@ WANTLIB=		c
 WRKDIST=		${WRKDIR}
 
 ALL_TARGET=		sysgen
-USE_GROFF =		Yes
 NO_TEST=		Yes
 
 do-install:

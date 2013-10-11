@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/06/30 19:44:20 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2013/10/11 23:51:05 naddy Exp $
 
 COMMENT=	spell checker designed to eventually replace Ispell
 
@@ -26,7 +26,6 @@ WANTLIB=		c m ncursesw stdc++ pthread
 
 MODULES=		devel/gettext
 
-USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

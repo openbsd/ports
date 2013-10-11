@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 01:30:27 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/10/11 23:48:11 naddy Exp $
 
 COMMENT=		data exchange utility for Siemens mobile phones
 
@@ -17,7 +17,6 @@ MODULES=	devel/gettext
 WANTLIB=	c m
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

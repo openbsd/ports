@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.8 2013/03/11 10:50:17 espie Exp $
+#	$OpenBSD: Makefile,v 1.9 2013/10/11 23:48:52 naddy Exp $
 
 COMMENT=	object-oriented access to real and tied hashes
 
@@ -10,7 +10,6 @@ CATEGORIES=	devel
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
-USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	modbuild
 

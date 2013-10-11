@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 10:50:18 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/10/11 23:48:54 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,6 @@ MODULES=	cpan
 DISTNAME=	IPC-ShareLite-0.17
 REVISION=	2
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:44:46 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/10/11 23:51:44 naddy Exp $
 
 COMMENT=	module for implementing an SCGI interface
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	SCGI-0.6
 REVISION=	0
 CATEGORIES=	www
-USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

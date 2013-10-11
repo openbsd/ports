@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:41:26 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2013/10/11 23:50:45 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,6 @@ MODULES=	cpan
 DISTNAME=	Crypt-DES-2.05
 REVISION=	4
 CATEGORIES=	security
-USE_GROFF =	Yes
 
 PERMIT_PACKAGE_CDROM=   Yes
 

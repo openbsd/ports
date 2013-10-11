@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/11 11:35:55 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/10/11 23:50:32 naddy Exp $
 
 COMMENT=	PPTP client package for Microsoft VPN servers
 
@@ -20,7 +20,6 @@ NO_TEST=	Yes
 
 MAKE_ENV+=	PPPD=/usr/sbin/ppp
 CFLAGS+=	-DUSER_PPP
-USE_GROFF =	Yes
 
 post-patch:
 	@cd ${WRKSRC}; sed -e s,PREFIX,${PREFIX}, < \

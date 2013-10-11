@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/21 08:48:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2013/10/11 23:51:07 naddy Exp $
 
 COMMENT=	object-oriented SGML parser
 
@@ -18,7 +18,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=	devel/gettext textproc/intltool
 WANTLIB=	c m pthread stdc++
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE}

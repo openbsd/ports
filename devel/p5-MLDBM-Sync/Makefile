@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 10:50:18 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/10/11 23:48:57 naddy Exp $
 
 COMMENT=	safe concurrent access to MLDBM databases
 
@@ -7,7 +7,6 @@ VERSION=	0.30
 DISTNAME=	MLDBM-Sync-${VERSION}
 REVISION=	2
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 RUN_DEPENDS=	devel/p5-MLDBM \
 		devel/p5-Tie-Cache

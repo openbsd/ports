@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/05/24 14:10:01 zhuk Exp $
+# $OpenBSD: Makefile,v 1.23 2013/10/11 23:51:47 naddy Exp $
 
 COMMENT=		Small menubar for X11 written in Perl/Tk
 DISTNAME=		belt-1.21
@@ -24,7 +24,6 @@ MODPERL_ADJ_FILES =	${DISTNAME}
 
 RUN_DEPENDS=		x11/p5-Tk
 
-USE_GROFF =		Yes
 
 NO_TEST=		Yes
 

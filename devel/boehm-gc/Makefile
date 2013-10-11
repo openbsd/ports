@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2013/07/03 19:51:38 kurt Exp $
+# $OpenBSD: Makefile,v 1.52 2013/10/11 23:48:23 naddy Exp $
 
 COMMENT-main=	garbage collection and memory leak detection for C and C++
 COMMENT-atomic=	access to hardware provided atomic memory operations
@@ -32,7 +32,6 @@ MAKE_ENV=	CP="cp" \
 		INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_MAN="${INSTALL_MAN}"
 
-USE_GROFF =	Yes
 
 AUTOCONF_VERSION= 2.68
 CONFIGURE_STYLE= autoconf no-autoheader

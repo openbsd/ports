@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:35:53 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/10/11 23:50:25 naddy Exp $
 
 COMMENT=	perl module for IPv4 address parsing
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	Net-IPv4Addr-0.10
 REVISION=	1
 CATEGORIES=	net
-USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

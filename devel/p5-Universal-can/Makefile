@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:23 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/10/11 23:49:27 naddy Exp $
 
 COMMENT =	calling UNIVERSAL::can as a function
 
@@ -12,6 +12,5 @@ CATEGORIES =	devel
 PERMIT_PACKAGE_CDROM =	Yes
 
 CONFIGURE_STYLE=modbuild
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

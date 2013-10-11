@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:07:38 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/10/11 23:49:32 naddy Exp $
 
 COMMENT=	X11 Go Toolset
 
@@ -18,7 +18,6 @@ CONFIGURE_STYLE=gnu
 ALL_TARGET=
 
 NO_TEST=	Yes
-USE_GROFF =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cgoban ${PREFIX}/bin

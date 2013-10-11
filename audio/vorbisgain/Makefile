@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/10 22:55:06 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/10/11 23:48:09 naddy Exp $
 
 COMMENT=		add tags to Ogg Vorbis files to adjust the volume
 
@@ -21,6 +21,5 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-recursive
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =		Yes
 
 .include <bsd.port.mk>

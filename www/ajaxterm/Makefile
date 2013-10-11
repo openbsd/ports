@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:44:40 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/10/11 23:51:27 naddy Exp $
 
 COMMENT = 		web-based SSH client
 
@@ -17,7 +17,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/files/
 
-USE_GROFF =		Yes
 NO_BUILD =		Yes
 
 BUILD_DEPENDS =			${_MODPY_BUILD_DEPENDS}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 10:50:14 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/10/11 23:48:33 naddy Exp $
 
 COMMENT=	validate method/function parameters
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	Class-Container-0.12
 REVISION=	1
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/21 08:45:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2013/10/11 23:49:52 naddy Exp $
 
 COMMENT=	(S)VCD authoring software
 
@@ -20,7 +20,6 @@ WANTLIB += c m z xml2>=11 cdio iso9660 popt
 MODULES=		devel/gettext
 
 USE_GMAKE=		Yes
-USE_GROFF =		Yes
 
 LIB_DEPENDS=		textproc/libxml \
 			audio/libcdio \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2013/05/31 15:34:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2013/10/11 23:50:11 naddy Exp $
 
 COMMENT =	GTK client for LiveJournal
 
@@ -34,7 +34,6 @@ LIB_DEPENDS =	devel/libsoup \
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
-USE_GROFF =		Yes
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-libsoup \

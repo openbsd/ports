@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 10:50:15 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/10/11 23:48:42 naddy Exp $
 
 COMMENT=	perl module for calculates time differences
 
@@ -7,7 +7,6 @@ VERSION=	1.2
 DISTNAME=	Date-Handler-${VERSION}
 REVISION=	1
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

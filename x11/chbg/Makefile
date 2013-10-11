@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/11 11:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2013/10/11 23:51:48 naddy Exp $
 
 COMMENT=		Desktop wallpaper manager and X11 screensaver
 
@@ -32,7 +32,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 FAKE_FLAGS=		GNOME_PREFIX=${PREFIX}
 
 USE_GMAKE=		Yes
-USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 
 MODULES=		devel/gettext

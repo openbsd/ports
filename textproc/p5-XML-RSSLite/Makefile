@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:42:45 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/10/11 23:51:24 naddy Exp $
 
 COMMENT=	lightweight, 'relaxed' RSS (and XML-ish) parser
 
@@ -7,7 +7,6 @@ DISTNAME=	XML-RSSLite-0.11
 REVISION=	0
 CATEGORIES=	textproc
 EXTRACT_SUFX=	.tgz
-USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

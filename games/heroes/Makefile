@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/08/21 09:13:33 zhuk Exp $
+# $OpenBSD: Makefile,v 1.27 2013/10/11 23:49:37 naddy Exp $
 
 COMMENT=	graphically improved game of yore
 
@@ -26,7 +26,6 @@ WANTLIB=	SDL SDL_mixer c m pthread
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=heroes/}
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 
 MODULES=	devel/gettext
 

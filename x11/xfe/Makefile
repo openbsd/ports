@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/08/27 01:57:24 bcallah Exp $
+# $OpenBSD: Makefile,v 1.31 2013/10/11 23:51:56 naddy Exp $
 
 COMMENT=	MS-Explorer like file manager for X
 
@@ -22,7 +22,6 @@ WANTLIB +=	FOX-1.6>=1
 RUN_DEPENDS=	devel/desktop-file-utils
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \

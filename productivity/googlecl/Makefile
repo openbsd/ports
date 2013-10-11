@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/08/07 21:32:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2013/10/11 23:50:41 naddy Exp $
 
 COMMENT=	command-line interface to Google services
 
@@ -19,7 +19,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	https://googlecl.googlecode.com/files/
 
 MODPY_SETUPTOOLS= Yes
-USE_GROFF =	Yes
 RUN_DEPENDS=	devel/py-gdata
 NO_TEST=	Yes
 

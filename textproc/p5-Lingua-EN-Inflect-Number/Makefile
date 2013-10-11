@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:42:43 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/10/11 23:51:09 naddy Exp $
 
 COMMENT=	force number of words to singular or plural
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	Lingua-EN-Inflect-Number-1.1
 REVISION=	0
 CATEGORIES=	textproc
-USE_GROFF =	Yes
 
 MAINTAINER=	Sam Smith <S@msmith.net>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2013/03/11 11:23:58 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2013/10/11 23:50:14 naddy Exp $
 
 COMMENT=		gtk-based frontend to cdrtools
 DISTNAME=		xcdroast-0.98alpha16
@@ -19,7 +19,6 @@ WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread-stubs xcb z gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0
 WANTLIB += GL pthread xcb-render xcb-shm
 
-USE_GROFF =	Yes
 
 MODULES=	devel/gettext
 

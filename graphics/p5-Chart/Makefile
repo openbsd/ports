@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/05/30 10:51:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2013/10/11 23:49:49 naddy Exp $
 
 COMMENT=	Charting library for Perl
 
@@ -12,6 +12,5 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

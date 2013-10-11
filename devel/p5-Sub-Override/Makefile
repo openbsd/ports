@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:21 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/10/11 23:49:14 naddy Exp $
 
 COMMENT=	extension for easily overriding subroutines
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	Sub-Override-0.08
 REVISION=	0
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

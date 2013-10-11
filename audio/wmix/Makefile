@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/10 22:55:06 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/10/11 23:48:09 naddy Exp $
 
 COMMENT=		wm-dockapp; audio mixer
 
@@ -16,7 +16,6 @@ WANTLIB=		X11 Xext Xpm c m ossaudio
 MASTER_SITES=		${HOMEPAGE}software/
 
 MAKE_ENV=		CC="${CC}"
-USE_GROFF =		Yes
 NO_TEST =		Yes
 
 ALL_TARGET=		wmix

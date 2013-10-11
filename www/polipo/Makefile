@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:44:48 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/10/11 23:51:45 naddy Exp $
 
 COMMENT=	HTTP caching proxy
 
@@ -17,7 +17,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c
 
-USE_GROFF=	Yes
 
 post-extract:
 	@perl -pi -e "s,/usr/local/share/polipo/,${LOCALBASE}/share/polipo/," \

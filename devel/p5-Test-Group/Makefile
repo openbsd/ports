@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:22 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/10/11 23:49:18 naddy Exp $
 
 COMMENT=	group together related tests in a test suite
 
@@ -13,7 +13,6 @@ MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 PERMIT_PACKAGE_CDROM=   Yes
 
 CONFIGURE_STYLE=modbuild
-USE_GROFF =	Yes
 
 RUN_DEPENDS=	devel/p5-File-Slurp
 BUILD_DEPENDS=	${RUN_DEPENDS}

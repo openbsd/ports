@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/08/07 21:57:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2013/10/11 23:50:15 naddy Exp $
 
 COMMENT=		BitTorrent Protocol Daemon
 
@@ -17,7 +17,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c crypto m pthread
 
 CONFIGURE_STYLE=	gnu
-USE_GROFF =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/btpd

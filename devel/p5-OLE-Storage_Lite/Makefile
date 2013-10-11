@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:20 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/10/11 23:48:59 naddy Exp $
 
 COMMENT=	simple class for OLE document interface
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=       OLE-Storage_Lite-0.19
 REVISION=	0
 CATEGORIES=	devel perl5
-USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

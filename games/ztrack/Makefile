@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:07:42 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/10/11 23:49:41 naddy Exp $
 
 COMMENT=		ncurses based pseudo-3D driving game
 
@@ -15,7 +15,6 @@ MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS} -DHAVE_RANDOM"
 
 WRKDIST= 		${WRKDIR}/ztrack
 
-USE_GROFF =		Yes
 NO_TEST=		Yes
 
 do-install:

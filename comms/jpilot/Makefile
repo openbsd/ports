@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2013/03/21 08:45:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2013/10/11 23:48:11 naddy Exp $
 
 COMMENT=	desktop organizer software for the palm pilot
 
@@ -30,7 +30,6 @@ MODULES=	devel/gettext \
 		textproc/intltool
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:23:52 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/10/11 23:49:58 naddy Exp $
 
 COMMENT=	generate world unique message-ids
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	Email-MessageID-1.401
 REVISION=	0
 CATEGORIES=	mail
-USE_GROFF =	Yes
 
 MAINTAINER=	Sam Smith <s@msmith.net>
 

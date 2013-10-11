@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:23:58 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/10/11 23:50:12 naddy Exp $
 
 COMMENT=		API for locating user information
 
@@ -10,7 +10,6 @@ CATEGORIES=		misc
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
-USE_GROFF =		Yes
 
 .ifmake test
 PORTHOME=		${HOME}

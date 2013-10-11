@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:23 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/10/11 23:49:25 naddy Exp $
 
 COMMENT=        module for rounded or exact english expression of durations
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	Time-Duration-1.06
 REVISION=	0
 CATEGORIES=     devel
-USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

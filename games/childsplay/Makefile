@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:07:38 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/10/11 23:49:34 naddy Exp $
 
 COMMENT=	suite of educational games for young children
 
@@ -23,7 +23,6 @@ RUN_DEPENDS=	devel/pygame>=1.7
 PKG_ARCH=	*
 NO_BUILD=	Yes
 NO_TEST=	Yes
-USE_GROFF =	Yes
 
 do-install:
 	perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g;' \

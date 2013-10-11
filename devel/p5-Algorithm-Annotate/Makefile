@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 10:50:12 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/10/11 23:48:25 naddy Exp $
 
 COMMENT=	represent a series of changes in annotate form
 
@@ -11,7 +11,6 @@ MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 
-USE_GROFF =	Yes
 RUN_DEPENDS=	devel/p5-Algorithm-Diff>=1.1901
 BUILD_DEPENDS=	${RUN_DEPENDS}
 

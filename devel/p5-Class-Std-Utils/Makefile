@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 10:50:14 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/10/11 23:48:36 naddy Exp $
 
 COMMENT=		utilities functions to build inside-out objects
 
@@ -6,7 +6,6 @@ MODULES=		cpan
 DISTNAME=		Class-Std-Utils-0.0.2
 REVISION=		2
 CATEGORIES=		devel
-USE_GROFF =		Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

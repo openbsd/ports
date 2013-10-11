@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/10 22:55:05 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/10/11 23:48:08 naddy Exp $
 
 COMMENT=		module and program for processing ID3 tags
 
@@ -16,7 +16,6 @@ MASTER_SITES=		${HOMEPAGE}releases/
 MODULES=		lang/python
 
 USE_GMAKE=		Yes
-USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
 

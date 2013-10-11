@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:35:46 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/10/11 23:50:16 naddy Exp $
 
 COMMENT=		DNS queries reflector
 
@@ -13,7 +13,6 @@ MASTER_SITES=		http://www.wolfermann.org/
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c
 
-USE_GROFF =		Yes
 NO_TEST=		Yes
 
 do-install:

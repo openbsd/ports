@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 10:50:21 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/10/11 23:49:13 naddy Exp $
 
 SHARED_ONLY =		Yes
 
@@ -18,6 +18,5 @@ WANTLIB += c
 
 MODULES =		cpan
 
-USE_GROFF =		Yes
 
 .include <bsd.port.mk>

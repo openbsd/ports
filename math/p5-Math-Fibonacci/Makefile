@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:23:55 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/10/11 23:50:06 naddy Exp $
 
 COMMENT=	Fibonacci numbers
 
@@ -12,6 +12,5 @@ MAINTAINER=	Michael Erdely <merdely@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:44:44 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/10/11 23:51:30 naddy Exp $
 
 COMMENT=	process and decode WWW forms and cookies
 
@@ -12,7 +12,6 @@ MAINTAINER=	Abel Camarillo <acamari@the00z.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
-USE_GROFF =	Yes
 
 MODCPAN_EXAMPLES=	Yes
 

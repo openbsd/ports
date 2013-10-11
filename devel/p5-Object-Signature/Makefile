@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:20 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/10/11 23:49:00 naddy Exp $
 
 COMMENT=        cryptographic signatures for objects
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	Object-Signature-1.05
 REVISION=	2
 CATEGORIES=     devel
-USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

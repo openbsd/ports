@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:35:53 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/10/11 23:50:28 naddy Exp $
 
 COMMENT=		traceroute(1) functionality in perl
 
 MODULES=		cpan
 DISTNAME=		Net-Traceroute-1.13
 CATEGORIES=		net
-USE_GROFF =		Yes
 
 HOMEPAGE=		http://www.linnaean.org/~hag/perl/traceroute/traceroute.html
 

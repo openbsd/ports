@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/07/13 08:33:03 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/10/11 23:49:54 naddy Exp $
 
 COMMENT-main=		programming language with generators, X11 and more
 COMMENT-main-no_x11=	programming language with generators
@@ -33,7 +33,6 @@ FLAVOR?=
 MAKE_ENV=	ARCH="${MACHINE_ARCH}"
 CONF_DIR=	${WRKSRC}/config/unix/openbsd
 ALL_TARGET=	Icont Iconc
-USE_GROFF =	Yes
 
 LIBDIR=${TRUEPREFIX}/lib/icon
 

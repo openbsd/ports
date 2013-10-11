@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:12:33 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/10/11 23:49:53 naddy Exp $
 
 COMMENT=	converts Japanese fonts in PostScript documents
 
@@ -23,7 +23,6 @@ MAINTAINER=		Marc Espie <espie@openbsd.org>
 MAKE_FLAGS=	CFLAGS='${CFLAGS} -I..'
 ALL_TARGET=	kanjips
 WRKSRC=	${WRKDIST}/kanjips
-USE_GROFF =	Yes
 
 post-extract:
 	zcat ${FULLDISTDIR}/jis32.Z >${WRKDIST}/jis32

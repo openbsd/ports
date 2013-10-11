@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 10:50:02 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/10/11 23:48:23 naddy Exp $
 
 COMMENT=	generate GNU-style ChangeLogs from CVS repositories
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WRKDIST=	${WRKDIR}
 MASTER_SITES=	http://openbsd.dead-parrot.de/distfiles/
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 PKG_ARCH=	*
 

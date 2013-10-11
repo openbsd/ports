@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2013/04/22 19:37:48 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2013/10/11 23:48:48 naddy Exp $
 
 COMMENT=		File-finding iterator
 
 MODULES=		cpan
 DISTNAME=		File-Next-1.12
 CATEGORIES=		devel
-USE_GROFF =		Yes
 
 MAINTAINER=		Pierre-Yves Ritschard <pyr@spootnik.org>
 

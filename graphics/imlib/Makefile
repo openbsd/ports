@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2013/09/25 07:56:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.72 2013/10/11 23:49:47 naddy Exp $
 
 # only used for kde/graphics3
 COMMENT=	image manipulation library for X11
@@ -27,7 +27,6 @@ LIB_DEPENDS= 	x11/gtk+ \
 		graphics/tiff
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}

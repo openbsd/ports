@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:44:48 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/10/11 23:51:46 naddy Exp $
 
 COMMENT=	web application construction kit
 
@@ -28,7 +28,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}	\
 
 MODPY_EGG_VERSION=	${VERSION}
 MODPY_DISTUTILS_INSTALLARGS=	--install-data=/usr/local/share/doc
-USE_GROFF =	Yes
 
 pre-configure:
 	perl -pi -e 's/h3>/h2>/g' ${WRKSRC}/doc/howto/glossary.xhtml

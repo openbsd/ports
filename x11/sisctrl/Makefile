@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:46:15 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/10/11 23:51:53 naddy Exp $
 
 COMMENT=		display control panel for X.org SiS driver
 
@@ -26,7 +26,6 @@ LIB_DEPENDS=		x11/gtk+2
 
 NO_TEST=		Yes
 
-USE_GROFF =		Yes
 CONFIGURE_STYLE=	simple
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include"
 

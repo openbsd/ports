@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:23:55 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/10/11 23:50:03 naddy Exp $
 
 COMMENT=		generate all subsets of a list of elements
 
@@ -7,7 +7,6 @@ REVISION=		0
 CATEGORIES=		math
 
 MODULES=		cpan
-USE_GROFF =		Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

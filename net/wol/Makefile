@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:35:58 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/10/11 23:50:37 naddy Exp $
 
 COMMENT=		Wake On Lan client
 
@@ -19,6 +19,5 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ahh/}
 MODULES=		devel/gettext
 
 CONFIGURE_STYLE=	gnu
-USE_GROFF =		Yes
 
 .include <bsd.port.mk>

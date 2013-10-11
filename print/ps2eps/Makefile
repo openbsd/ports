@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:37:54 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/10/11 23:50:40 naddy Exp $
 
 COMMENT=	convert Postscript to Encapsulated Postscript
 
@@ -18,7 +18,6 @@ RUN_DEPENDS=	print/ghostscript/gnu
 
 WANTLIB=	c
 WRKDIST= 	${WRKDIR}/ps2eps
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 do-build:

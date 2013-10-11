@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:41:30 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/10/11 23:50:56 naddy Exp $
 
 COMMENT=		dmesg parser
 DISTNAME=		dmassage-0.6
@@ -13,7 +13,6 @@ MASTER_SITES=		http://www.sentia.org/downloads/
 
 NO_TEST=		Yes
 NO_BUILD=		Yes
-USE_GROFF =		Yes
 PKG_ARCH=		*
 
 do-install:

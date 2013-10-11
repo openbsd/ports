@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 10:50:18 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/10/11 23:48:56 naddy Exp $
 
 COMMENT=		perl i18n routines
 
@@ -6,7 +6,6 @@ MODULES=		cpan
 DISTNAME=		Locale-PGetText-0.16
 REVISION=		1
 CATEGORIES=     	devel
-USE_GROFF =		Yes
 
 PERMIT_PACKAGE_CDROM=	Yes
 

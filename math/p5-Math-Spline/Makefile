@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:23:56 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/10/11 23:50:08 naddy Exp $
 
 COMMENT =		cubic spline interpolation of data
 
@@ -10,7 +10,6 @@ CATEGORIES =		math
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		cpan
-USE_GROFF =		Yes
 
 NO_TEST =		Yes
 

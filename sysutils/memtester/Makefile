@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/10/10 02:08:24 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2013/10/11 23:50:57 naddy Exp $
 
 COMMENT=	utility to test for memory faults
 
@@ -15,7 +15,6 @@ WANTLIB=	c
 
 MASTER_SITES=	${HOMEPAGE}/old-versions/
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 do-install:

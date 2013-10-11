@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/10 22:55:05 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/10/11 23:48:07 naddy Exp $
 
 COMMENT =	collection of perl scripts to manage your iPod
 
@@ -18,7 +18,6 @@ EXTRACT_SUFX =	.tgz
 MODULES =	perl
 
 CONFIGURE_STYLE =gnu
-USE_GROFF =	Yes
 
 RUN_DEPENDS =	security/p5-Digest-SHA1 \
 		textproc/p5-XML-Parser \

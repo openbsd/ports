@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 02:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/10/11 23:48:22 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,7 +10,6 @@ PKGNAME=	p5-pgsql-${VERSION}
 REVISION=	3
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Pg/}
-USE_GROFF =	Yes
 
 LIB_DEPENDS =	databases/postgresql
 

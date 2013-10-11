@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:35:54 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/10/11 23:50:29 naddy Exp $
 
 COMMENT=	manage connections, with keep-alive
 
@@ -7,7 +7,6 @@ DISTNAME=	POE-Component-Client-Keepalive-0.25
 REVISION=	0
 EPOCH=		0
 CATEGORIES=	net
-USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

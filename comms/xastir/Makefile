@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/03/11 01:30:27 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2013/10/11 23:48:12 naddy Exp $
 
 COMMENT=	X amateur station tracking and info reporting
 
@@ -15,7 +15,6 @@ MASTER_SITES=	$(MASTER_SITE_SOURCEFORGE:=xastir/)
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
 AUTOMAKE_VERSION=	1.9
-USE_GROFF =		Yes
 MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 .if ${MACHINE} == "sparc64"
 MAKE_FLAGS=	CFLAGS="${CFLAGS} -fno-tree-ter"

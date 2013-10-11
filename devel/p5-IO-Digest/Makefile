@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 10:50:18 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/10/11 23:48:53 naddy Exp $
 
 COMMENT=	module for computing digests while reading or writing
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	IO-Digest-0.10
 REVISION=	1
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

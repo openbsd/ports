@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/10 22:55:02 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/10/11 23:48:04 naddy Exp $
 
 COMMENT=		interactive console id3 tag editor
 
@@ -19,6 +19,5 @@ MASTER_SITES=		${HOMEPAGE:S/id3ed.html//:=id3ed/}
 
 NO_TEST=		Yes
 CONFIGURE_STYLE=	gnu
-USE_GROFF =		Yes
 
 .include <bsd.port.mk>

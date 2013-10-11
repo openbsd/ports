@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:46:14 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/10/11 23:51:51 naddy Exp $
 
 COMMENT=	capture standard error output, display in separate window
 
@@ -15,7 +15,6 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Tk/}
 RUN_DEPENDS=	x11/p5-Tk
 
 CONFIGURE_STYLE= perl
-USE_GROFF =	Yes
 
 NO_TEST=	Yes
 

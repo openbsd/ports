@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 01:30:26 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/10/11 23:48:10 naddy Exp $
 
 COMMENT=	curses DX cluster watcher
 
@@ -13,6 +13,5 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=	c ncurses
 
 MASTER_SITES=	http://www.qsl.net/pg4i/download/
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

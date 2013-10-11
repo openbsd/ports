@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:10:51 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/10/11 23:49:46 naddy Exp $
 
 COMMENT =		identify control points from groups of overlapping images
 
@@ -28,7 +28,6 @@ LIB_DEPENDS =		graphics/jpeg \
 
 MODULES +=		devel/cmake
 CONFIGURE_STYLE =	cmake
-USE_GROFF =		Yes
 
 NO_TEST =		Yes
 

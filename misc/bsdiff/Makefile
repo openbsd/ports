@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/05/30 10:51:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2013/10/11 23:50:09 naddy Exp $
 
 COMMENT=	binary patch tools
 DISTNAME=	bsdiff-4.3
@@ -21,7 +21,6 @@ MAKE_FLAGS=	CC='${CC}' \
 LIB_DEPENDS=	archivers/bzip2
 
 FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/11 10:50:22 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2013/10/11 23:49:16 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,7 +8,6 @@ MODULES=		cpan
 DISTNAME=		Term-ReadLine-Gnu-1.16
 REVISION=		4
 CATEGORIES=		devel
-USE_GROFF =		Yes
 
 PERMIT_PACKAGE_CDROM=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/11 11:07:43 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2013/10/11 23:49:45 naddy Exp $
 
 BROKEN-powerpc=	doesn't build, assembler error: operand out of range
 
@@ -57,7 +57,6 @@ WANTLIB += ${MODPY_WANTLIB} jpeg tiff
 
 CONFIGURE_ENV+=	VERBOSE=1
 CONFIGURE_ARGS =	-DWITH_MAPSERVER=TRUE
-USE_GROFF =	Yes
 
 pre-configure:
 		# otherwise takes precedence over systemwide file

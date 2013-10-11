@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:46:17 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/10/11 23:51:55 naddy Exp $
 
 COMMENT=	GTK+2 front-end for command line archiving tools
 
@@ -26,7 +26,6 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	x11/gtk+2
 RUN_DEPENDS=	devel/desktop-file-utils
 
-USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	BASH_PROG=/bin/sh

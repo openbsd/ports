@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 10:50:23 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/10/11 23:49:21 naddy Exp $
 
 COMMENT= 	check for pod coverage in your distribution
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	Test-Pod-Coverage-1.08
 REVISION=	1
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

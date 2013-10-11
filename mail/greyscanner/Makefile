@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/08/07 21:57:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2013/10/11 23:49:56 naddy Exp $
 
 COMMENT =	greytrapping daemon to compliment OpenBSD spamd
 
@@ -22,7 +22,6 @@ WRKDIST =	${WRKDIR}/greyscanner
 
 NO_BUILD =	Yes
 NO_TEST =	Yes
-USE_GROFF =	Yes
 PKG_ARCH =	*
 
 do-install:

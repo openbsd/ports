@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:35:47 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/10/11 23:50:17 naddy Exp $
 
 COMMENT=	HTTP tunneling utility
 
@@ -16,6 +16,5 @@ WANTLIB=		c
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

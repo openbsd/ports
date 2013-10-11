@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/10 22:55:02 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/10/11 23:48:03 naddy Exp $
 
 COMMENT=		minimalistic console-based audio player
 
@@ -41,7 +41,6 @@ CONFIGURE_ARGS= 	ncurses \
 			verbose \
 			ao
 
-USE_GROFF =		Yes
 NO_TEST=		Yes
 
 LANGS=			ca da de es fi ga nl pl pt_BR ru sv tr uk vi zh_CN

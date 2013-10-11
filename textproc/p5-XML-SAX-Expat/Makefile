@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:42:45 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/10/11 23:51:25 naddy Exp $
 
 COMMENT=	SAX2 driver based on expat
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	XML-SAX-Expat-0.40
 REVISION=	0
 CATEGORIES=	textproc
-USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:44:45 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/10/11 23:51:33 naddy Exp $
 
 COMMENT=	functions for managing FastCGI applications
 
 MODULES=	cpan
 DISTNAME=	FCGI-ProcManager-0.19
 CATEGORIES=	www
-USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/10 22:55:04 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/10/11 23:48:06 naddy Exp $
 
 COMMENT=	interface to Ogg Vorbis information, fully written in Perl
 
@@ -7,7 +7,6 @@ REVISION=	0
 CATEGORIES=	audio
 
 MODULES=	cpan
-USE_GROFF =	Yes
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

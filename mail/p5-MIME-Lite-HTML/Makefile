@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:23:52 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/10/11 23:50:00 naddy Exp $
 
 COMMENT =	transform a HTML page in a MIME-Lite mail
 
@@ -12,6 +12,5 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =	cpan
 RUN_DEPENDS =	mail/p5-MIME-Lite
 BUILD_DEPENDS =	${RUN_DEPENDS}
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

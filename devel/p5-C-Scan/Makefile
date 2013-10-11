@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 10:50:13 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/10/11 23:48:29 naddy Exp $
 
 COMMENT=	module to scan C language files
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	C-Scan-0.74
 REVISION=	1
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 

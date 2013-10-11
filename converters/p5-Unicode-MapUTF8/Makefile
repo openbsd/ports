@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 01:30:28 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/10/11 23:48:16 naddy Exp $
 
 COMMENT=	conversions to and from arbitrary character sets and UTF8
 
@@ -6,7 +6,6 @@ DISTNAME=	Unicode-MapUTF8-1.11
 REVISION=	2
 CATEGORIES=	converters
 MODULES=	cpan
-USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes

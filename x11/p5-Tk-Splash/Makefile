@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:46:14 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/10/11 23:51:51 naddy Exp $
 
 COMMENT=	splash screen widget
 
@@ -13,7 +13,6 @@ RUN_DEPENDS=	x11/p5-Tk
 
 MODULES=	cpan
 
-USE_GROFF =	Yes
 
 TEST_IS_INTERACTIVE= x11
 

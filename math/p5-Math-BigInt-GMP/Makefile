@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:23:55 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/10/11 23:50:05 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,6 @@ MODULES=	cpan
 DISTNAME=	Math-BigInt-GMP-1.24
 REVISION=	2
 CATEGORIES=	math
-USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:35:54 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/10/11 23:50:31 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -21,7 +21,6 @@ MASTER_SITES=		http://www2.mindrot.org/files/flowd/
 WRKSRC=			${WRKDIR}/${DISTNAME}/Flowd-perl
 BUILD_DEPENDS=		net/flowd
 CONFIGURE_STYLE=	perl
-USE_GROFF =		Yes
 
 post-patch:
 	perl -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|" ${WRKSRC}/Makefile.PL

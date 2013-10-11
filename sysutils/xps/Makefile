@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/09/24 09:00:23 jca Exp $
+# $OpenBSD: Makefile,v 1.23 2013/10/11 23:51:04 naddy Exp $
 
 DISTNAME=       xps-4.2
 REVISION=	7
@@ -20,7 +20,6 @@ CONFIGURE_ENV=		LDFLAGS=-lm
 MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 
 LIB_DEPENDS+=		x11/openmotif
-USE_GROFF=		Yes
 
 NO_TEST=		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2013/06/20 08:26:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2013/10/11 23:50:18 naddy Exp $
 
 COMMENT=		jabber server
 DISTNAME=		jabberd-2.0s11
@@ -28,7 +28,6 @@ STORAGES=		mysql postgresql db
 FLAVORS=		${STORAGES} ldap
 FLAVOR?=		mysql
 
-USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-debug \
 			--enable-ssl \

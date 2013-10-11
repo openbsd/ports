@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:23:51 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/10/11 23:49:56 naddy Exp $
 
 COMMENT=	IMAP synchronization tool
 
@@ -22,7 +22,6 @@ RUN_DEPENDS=	converters/p5-DateManip \
 
 NO_BUILD=	Yes
 NO_TEST=	Yes
-USE_GROFF =	Yes
 PKG_ARCH=	*
 
 do-install:

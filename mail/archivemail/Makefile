@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:23:50 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/10/11 23:49:54 naddy Exp $
 
 COMMENT=	archive and compress your old email
 
@@ -14,7 +14,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=archivemail/}
 
 MODULES=	lang/python
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 SUBST_VARS=	VERSION

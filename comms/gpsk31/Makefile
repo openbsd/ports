@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 01:30:26 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/10/11 23:48:11 naddy Exp $
 
 COMMENT=	gtk PSK31 send and receive
 
@@ -26,7 +26,6 @@ WANTLIB += xcb-shm
 
 MASTER_SITES=		http://www.qsl.net/pg4i/download/
 
-USE_GROFF =		Yes
 
 AUTOCONF_VERSION=	2.59
 CONFIGURE_STYLE=	autoconf no-autoheader

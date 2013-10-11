@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:07:37 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/10/11 23:49:31 naddy Exp $
 
 COMMENT=	cute and addictive action-puzzle game
 
@@ -25,7 +25,6 @@ RUN_DEPENDS=	devel/desktop-file-utils
 
 CONFIGURE_STYLE=gnu
 
-USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/amoebax

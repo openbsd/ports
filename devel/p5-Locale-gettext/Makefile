@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 10:50:18 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/10/11 23:48:56 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,7 +10,6 @@ PKGNAME=	p5-Locale-${DISTNAME}
 REVISION=	4
 CPAN_AUTHOR=	PVANDRY
 CATEGORIES=	converters devel
-USE_GROFF =	Yes
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

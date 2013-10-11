@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:46:13 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/10/11 23:51:49 naddy Exp $
 
 COMMENT=		gui cd image editor
 
@@ -30,7 +30,6 @@ WANTLIB += pixman-1 png z pthread-stubs xcb gdk_pixbuf-2.0 gdk-x11-2.0
 WANTLIB += gtk-x11-2.0
 
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
 NO_TEST=		Yes
 
 FAKE_FLAGS=	MYMANPATH=${WRKINST}/${TRUEPREFIX}/man/man1 \

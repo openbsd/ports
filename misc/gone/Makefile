@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:23:57 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/10/11 23:50:10 naddy Exp $
 
 COMMENT=	terminal locking utility
 
@@ -18,7 +18,6 @@ MASTER_SITES=	${HOMEPAGE}/downloads/
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	with_setuid="no"
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 .include <bsd.port.mk>

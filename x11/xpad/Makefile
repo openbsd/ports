@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/04/02 16:41:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2013/10/11 23:51:56 naddy Exp $
 
 COMMENT=	virtual sticky pad system
 
@@ -31,7 +31,6 @@ WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

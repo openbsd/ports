@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:41:27 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/10/11 23:50:48 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,6 @@ MODULES=	cpan
 DISTNAME=	Crypt-Serpent-1.01
 REVISION=	3
 CATEGORIES=	security
-USE_GROFF =	Yes
 
 MAINTAINER=	Stephan A. Rickauer <stephan@openbsd.org>
 

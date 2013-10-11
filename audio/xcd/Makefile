@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/10 22:55:06 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2013/10/11 23:48:09 naddy Exp $
 
 COMMENT =	Tcl/Tk CD player
 DISTNAME =	xcd-1.7
@@ -24,7 +24,6 @@ FAKE_FLAGS =	BINDIR=${WRKINST}${PREFIX}/bin \
 		CDDIR=${WRKINST}${PREFIX}/lib/xcd \
 		MANDIR=${WRKINST}${PREFIX}/man/man1
 
-USE_GROFF =	Yes
 NO_TEST =	Yes
 WRKDIST =	${WRKDIR}/xcd
 

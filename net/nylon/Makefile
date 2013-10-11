@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:35:50 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/10/11 23:50:20 naddy Exp $
 
 COMMENT=	lightweight SOCKS 4 and SOCKS 5 proxy
 DISTNAME=	nylon-1.21
@@ -15,6 +15,5 @@ WANTLIB=		c event
 MASTER_SITES=	${HOMEPAGE}
 
 CONFIGURE_STYLE=gnu
-USE_GROFF =	Yes
 
 .include <bsd.port.mk> 

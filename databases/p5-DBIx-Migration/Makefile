@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 02:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/10/11 23:48:21 naddy Exp $
 
 COMMENT=	seamless DB up- and downgrades
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	DBIx-Migration-0.05
 REVISION=	1
 CATEGORIES=	databases
-USE_GROFF =	Yes
 
 CONFIGURE_STYLE=modbuild
 

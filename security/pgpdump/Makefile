@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:41:27 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/10/11 23:50:53 naddy Exp $
 
 COMMENT=	PGP packet visualizer
 
@@ -14,7 +14,6 @@ WANTLIB=		c z
 MASTER_SITES=	${HOMEPAGE}
 
 CONFIGURE_STYLE=	gnu dest
-USE_GROFF =	Yes
 
 NO_TEST=	Yes
 

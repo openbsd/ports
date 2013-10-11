@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:46:19 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/10/11 23:51:59 naddy Exp $
 
 COMMENT=	dynamically change some settings of an xterm
 
@@ -16,6 +16,5 @@ WANTLIB=		c
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=clts/}
 
 CONFIGURE_STYLE=	gnu
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

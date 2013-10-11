@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:23:52 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/10/11 23:49:58 naddy Exp $
 
 COMMENT = 	library for creating easy email filters
 
@@ -13,7 +13,6 @@ MAINTAINER =	Armin Wolfermann <armin@wolfermann.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	cpan
-USE_GROFF =	Yes
 CPAN_AUTHOR =	RJBS
 
 RUN_DEPENDS =	devel/p5-Class-Trigger>=0.08 \

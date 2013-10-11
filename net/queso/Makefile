@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:35:56 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/10/11 23:50:33 naddy Exp $
 
 COMMENT=	determine remote OS using simple tcp packets
 
@@ -11,7 +11,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c pcap
 
 CONFIGURE_STYLE=gnu
-USE_GROFF =	Yes
 
 NO_TEST=	Yes
 

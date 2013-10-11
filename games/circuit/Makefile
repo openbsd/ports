@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:07:38 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/10/11 23:49:34 naddy Exp $
 
 COMMENT =	finish-the-cycle logic puzzle
 CATEGORIES =	games
@@ -23,7 +23,6 @@ LIB_DEPENDS =	x11/gtk+2
 
 MODULES =	devel/gettext
 
-USE_GROFF =	Yes
 
 do-build:
 	cd ${WRKBUILD} && $(CC) $(CFLAGS) `pkg-config --cflags gtk+-2.0` \
