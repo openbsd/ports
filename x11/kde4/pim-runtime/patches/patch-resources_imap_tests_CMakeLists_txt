@@ -1,0 +1,12 @@
+$OpenBSD: patch-resources_imap_tests_CMakeLists_txt,v 1.1 2013/10/11 07:52:56 zhuk Exp $
+Missing dependencies.
+--- resources/imap/tests/CMakeLists.txt.orig	Thu Oct 10 18:55:08 2013
++++ resources/imap/tests/CMakeLists.txt	Thu Oct 10 18:55:25 2013
+@@ -17,6 +17,7 @@ if(KIMAPTEST_INCLUDE_DIR AND KIMAPTEST_LIBRARY)
+       target_link_libraries(${_testname} ${KDE4_KDECORE_LIBS}
+             ${KDEPIMLIBS_KIMAP_LIBS} ${KDEPIMLIBS_KIMAP_LIBS} ${KIMAPTEST_LIBRARY} ${QT_QTTEST_LIBRARY} imapresource)
+       add_definitions(-DTEST_DATA="\\"${CMAKE_CURRENT_SOURCE_DIR}\\"")
++      add_dependencies(${_testname} akonadi_imap_resource_automoc)
+     ENDFOREACH(_testname)
+   ENDMACRO(IMAP_RESOURCE_UNIT_TESTS)
+ 

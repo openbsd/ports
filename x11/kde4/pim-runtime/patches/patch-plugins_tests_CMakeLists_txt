@@ -1,8 +1,8 @@
-$OpenBSD: patch-plugins_tests_CMakeLists_txt,v 1.1 2013/10/07 09:26:19 zhuk Exp $
-Unbreak build.
---- plugins/tests/CMakeLists.txt.orig	Mon Oct  7 13:01:51 2013
-+++ plugins/tests/CMakeLists.txt	Mon Oct  7 13:06:43 2013
-@@ -8,21 +8,24 @@ include_directories(
+$OpenBSD: patch-plugins_tests_CMakeLists_txt,v 1.2 2013/10/11 07:52:56 zhuk Exp $
+Missing dependencies.
+--- plugins/tests/CMakeLists.txt.orig	Fri Jun 28 21:35:42 2013
++++ plugins/tests/CMakeLists.txt	Thu Oct 10 18:28:44 2013
+@@ -8,21 +8,22 @@ include_directories(
  )
  
  # convenience macro to add akonadi qtestlib unit-tests
@@ -14,9 +14,7 @@ Unbreak build.
    target_link_libraries(${_name} ${KDEPIMLIBS_AKONADI_LIBS} ${KDEPIMLIBS_AKONADI_KMIME_LIBS} ${KDE4_KDECORE_LIBS}
                          ${QT_QTGUI_LIBRARY} ${QT_QTTEST_LIBRARY} ${AKONADI_COMMON_LIBRARIES}
                          ${AKONADI_COMMON_LIBRARIES} ${_libs})
-+  if(_depends)
-+    add_dependencies(${_name} ${_depends})
-+  endif(_depends)
++  add_dependencies(${_name} ${_depends})
  endmacro(add_akonadiplugin_test)
  
  # qtestlib unit tests
