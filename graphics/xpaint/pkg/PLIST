@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/09/05 13:53:45 espie Exp $
-bin/xpaint
+@comment $OpenBSD: PLIST,v 1.8 2013/10/11 20:39:36 naddy Exp $
+@bin bin/xpaint
 lib/X11/app-defaults/XPaint
 lib/X11/app-defaults/XPaint_es
 lib/X11/app-defaults/XPaint_fr
-@man man/cat1/xpaint.0
+man/cat1/xpaint.1
 share/xpaint/
 share/xpaint/XPaintIcon.xpm
 share/xpaint/c_scripts/

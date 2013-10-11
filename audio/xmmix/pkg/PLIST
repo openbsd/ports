@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/04/10 18:00:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/10/11 20:39:20 naddy Exp $
 @pkgpath audio/xmmix,lesstif
-bin/xmmix
+@bin bin/xmmix
 lib/X11/app-defaults/XMmix
 lib/X11/xmmix.hlp
-@man man/cat1/xmmix.0
+@man man/man1/xmmix.1

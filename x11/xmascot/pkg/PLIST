@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 19:26:35 espie Exp $
-bin/xmascot
+@comment $OpenBSD: PLIST,v 1.7 2013/10/11 20:40:11 naddy Exp $
+@bin bin/xmascot
 lib/X11/app-defaults/XMascot
 lib/X11/xmascot/
 lib/X11/xmascot/aquarius.gif
@@ -43,4 +43,4 @@ lib/X11/xmascot/tumamu.xbmmsk
 lib/X11/xmascot/virgo.gif
 lib/X11/xmascot/yubi.xbm
 lib/X11/xmascot/yubi.xbmmsk
-@man man/cat1/xmascot.0
+@man man/man1/xmascot.1

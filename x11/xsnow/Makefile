@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:46:19 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/10/11 20:40:14 naddy Exp $
 
 COMMENT=		snowy and Santa-y desktop
 
 DISTNAME=		xsnow-1.42
-REVISION=		1
+REVISION=		2
 CATEGORIES=		x11
 
 HOMEPAGE=		http://dropmix.xs4all.nl/rick/Xsnow/

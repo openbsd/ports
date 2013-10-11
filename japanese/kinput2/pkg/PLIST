@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1 2004/09/16 23:06:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/10/11 20:39:36 naddy Exp $
 %%wnn%%
-bin/kinput2
+@bin bin/kinput2
 lib/X11/app-defaults/Kinput2
-@man man/cat1/kinput2.0
+@man man/man1/kinput2.1
 share/doc/kinput2/
 share/doc/kinput2/NEWS
 share/doc/kinput2/README

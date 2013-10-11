@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/04/25 16:38:40 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/10/11 20:39:17 naddy Exp $
 @bin bin/ascd
-@man man/cat1/ascd.0
+@man man/man1/ascd.1
 share/AScd/
 share/AScd/Default/
 share/AScd/Default/back.xpm

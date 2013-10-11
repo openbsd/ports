@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/11 11:37:53 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/10/11 20:39:43 naddy Exp $
 
 COMMENT=	9wm with automatic window tiling and virtual desktops
 
 DISTNAME=	larswm-7.5.3
-REVISION =	3
+REVISION =	4
 CATEGORIES=	plan9
 
 HOMEPAGE =	http://larswm.sourceforge.net/

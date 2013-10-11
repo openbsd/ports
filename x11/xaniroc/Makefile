@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:46:17 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2013/10/11 20:39:58 naddy Exp $
 
 COMMENT=	animate your root-cursor
 
 DISTNAME=	xaniroc
 PKGNAME=	xaniroc-1.02
-REVISION=	1
+REVISION=	2
 CATEGORIES=	x11
 
 MASTER_SITES=	ftp://ftp.42.org/pub/orphan/

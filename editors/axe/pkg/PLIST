@@ -1,14 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 18:01:06 espie Exp $
-bin/axe
-bin/axinfo
-bin/coaxe
+@comment $OpenBSD: PLIST,v 1.8 2013/10/11 20:39:22 naddy Exp $
+@bin bin/axe
+@bin bin/axinfo
+@bin bin/coaxe
 bin/faxe
 bin/poleaxe
 lib/X11/app-defaults/Axe
 lib/X11/app-defaults/Axinfo
-lib/X11/axe.info
-lib/X11/axe.info-1
-lib/X11/axe.info-2
+@info lib/X11/axe.info
 lib/X11/axe.tcl
-@man man/cat1/axe.0
-@man man/cat1/axinfo.0
+@man man/man1/axe.1
+@man man/man1/axinfo.1

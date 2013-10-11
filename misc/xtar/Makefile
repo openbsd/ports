@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2013/03/11 11:23:58 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2013/10/11 20:39:40 naddy Exp $
 
 COMMENT=	view and manipulate contents of a tar file
 
 DISTNAME=	xtar-1.4
-REVISION=	3
+REVISION=	4
 CATEGORIES=	misc
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=utilities/}

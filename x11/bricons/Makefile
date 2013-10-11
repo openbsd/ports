@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/11 11:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2013/10/11 20:39:48 naddy Exp $
 
 COMMENT=	quick start-up utility for applications on an X11 display
 
 PKGNAME=	bricons-3.0
-REVISION=	3
+REVISION=	4
 DISTNAME=	bricons-athena-3.0
 CATEGORIES=	x11
 

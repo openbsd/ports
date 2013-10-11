@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 19:26:33 espie Exp $
-bin/xco
-@man man/cat1/xco.0
+@comment $OpenBSD: PLIST,v 1.5 2013/10/11 20:40:02 naddy Exp $
+@bin bin/xco
+@man man/man1/xco.1
 share/doc/xco/
 share/doc/xco/copyright

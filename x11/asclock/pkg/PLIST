@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 19:26:27 espie Exp $
-bin/asclock
-@man man/cat1/asclock.0
+@comment $OpenBSD: PLIST,v 1.5 2013/10/11 20:39:47 naddy Exp $
+@bin bin/asclock
+@man man/man1/asclock.1

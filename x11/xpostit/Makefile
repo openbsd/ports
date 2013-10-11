@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2013/04/05 17:29:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2013/10/11 20:40:11 naddy Exp $
 
 COMMENT=	PostIt (R) messages onto your X11 screen
 
 DISTNAME=	xpostit3.3.1
 PKGNAME=	xpostit-3.3.1
-REVISION=	1
+REVISION=	2
 CATEGORIES=	x11
 
 MASTER_SITES=	${MASTER_SITE_R5CONTRIB}

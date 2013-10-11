@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 19:26:32 espie Exp $
-bin/xaniroc
-@man man/cat1/xaniroc.0
+@comment $OpenBSD: PLIST,v 1.5 2013/10/11 20:39:59 naddy Exp $
+@bin bin/xaniroc
+@man man/man1/xaniroc.1

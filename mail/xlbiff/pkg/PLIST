@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 09:09:45 espie Exp $
-bin/xlbiff
+@comment $OpenBSD: PLIST,v 1.6 2013/10/11 20:39:38 naddy Exp $
+@bin bin/xlbiff
 lib/X11/app-defaults/XLbiff
-@man man/cat1/xlbiff.0
+@man man/man1/xlbiff.1

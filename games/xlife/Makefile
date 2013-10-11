@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2013/03/11 11:07:41 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2013/10/11 20:39:27 naddy Exp $
 
 COMMENT=	John Horton Conway's Game of Life
 
 DISTNAME=	xlife-5.3
-REVISION =	3
+REVISION =	4
 CATEGORIES=	games
 
 HOMEPAGE=	http://www.catb.org/~esr/software.html
@@ -32,7 +32,7 @@ post-install:
 	cp -r ${WRKDIST}/patterns ${PREFIX}/share/xlife
 	${INSTALL_PROGRAM} ${WRKDIST}/lifesrc-3.5/lifesrc ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKDIST}/lifesrc-3.5/lifesrcdumb ${PREFIX}/bin
-	cd ${PREFIX}/man/cat6 && ln -f xlife.0 lifeconv.0
+	cd ${PREFIX}/man/man6 && ln -f xlife.6 lifeconv.6
 #pre-install:
 #	@cd ${WRKSRC}; ${MAKE} install.patterns
 

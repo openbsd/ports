@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2010/10/23 18:24:14 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/10/11 20:39:31 naddy Exp $
 @mode 2755
 @group games
 @bin bin/xpat2
@@ -181,7 +181,7 @@ lib/X11/xpat/russian/keys
 lib/X11/xpat/russian/messages
 lib/X11/xpat/russian/sq01.bdf
 lib/X11/xpat/small.cards
-@man man/cat6/xpat2.0
+@man man/man6/xpat2.6
 share/examples/xpat2/
 share/examples/xpat2/xpat.log
 @mode g+w

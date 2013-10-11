@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/01/04 11:21:22 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/10/11 20:39:25 naddy Exp $
 @mode g+s
 @group games
 @bin bin/xboing
 @mode
 @group
-@man man/cat1/xboing.0
+@man man/man1/xboing.1
 share/examples/xboing/
 share/examples/xboing/xboing.score
 @mode g+w

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 00:50:11 espie Exp $
-bin/xanim
-@man man/cat1/xanim.0
+@comment $OpenBSD: PLIST,v 1.6 2013/10/11 20:39:34 naddy Exp $
+@bin bin/xanim
+@man man/man1/xanim.1
 share/doc/xanim/
 share/doc/xanim/Audio_Checklist.doc
 share/doc/xanim/Codecs.doc

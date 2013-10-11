@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/11 11:07:41 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2013/10/11 20:39:25 naddy Exp $
 
 NOT_FOR_ARCHS=	${LP64_ARCHS}
 
@@ -7,7 +7,7 @@ COMMENT=	shoot them nasty little bugs
 DISTNAME=       xinvaders
 DIST_SUBDIR=	xinvaders
 PKGNAME=	xinvaders-2.0
-REVISION =	1
+REVISION =	2
 CATEGORIES=	games
 
 MAINTAINER=	Paul Janzen <pjanzen@openbsd.org>

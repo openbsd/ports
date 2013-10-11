@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/10/07 17:14:24 naddy Exp $
-bin/larsclock
-bin/larsmenu
-bin/larsremote
-bin/larswm
-@man man/cat1/larsclock.0
-@man man/cat1/larsmenu.0
-@man man/cat1/larsremote.0
-@man man/cat1/larswm.0
+@comment $OpenBSD: PLIST,v 1.8 2013/10/11 20:39:43 naddy Exp $
+@bin bin/larsclock
+@bin bin/larsmenu
+@bin bin/larsremote
+@bin bin/larswm
+@man man/man1/larsclock.1
+@man man/man1/larsmenu.1
+@man man/man1/larsremote.1
+@man man/man1/larswm.1
 share/doc/larswm/
 share/doc/larswm/ChangeLog
 share/doc/larswm/README

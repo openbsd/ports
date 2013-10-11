@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 00:46:12 espie Exp $
-bin/xmine
+@comment $OpenBSD: PLIST,v 1.5 2013/10/11 20:39:28 naddy Exp $
+@bin bin/xmine
 lib/X11/app-defaults/Xmine
-@man man/cat6/xmine.0
+@man man/man6/xmine.6

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2009/06/09 13:19:44 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.12 2013/10/11 20:39:35 naddy Exp $
 @bin bin/xfig
 lib/X11/app-defaults/Fig
 lib/X11/xfig/CompKeyDB
@@ -2624,7 +2624,7 @@ lib/X11/xfig/Libraries/Welding/tv.1.fig
 lib/X11/xfig/Libraries/Welding/tv.2.fig
 lib/X11/xfig/Libraries/Welding/tv.3.fig
 lib/X11/xfig/Libraries/Welding/u.1.fig
-@man man/cat1/xfig.0
+@man man/man1/xfig.1
 share/doc/xfig/
 share/doc/xfig/html/
 share/doc/xfig/html/accelerators.html

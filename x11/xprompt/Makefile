@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:46:19 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/10/11 20:40:13 naddy Exp $
 
 COMMENT=	display a dialog box and prompt user for text
 
 DISTNAME=	xprompt-1.4
-REVISION=	0
+REVISION=	1
 CATEGORIES=	x11
 
 # BSD

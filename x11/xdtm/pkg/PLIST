@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 19:26:33 espie Exp $
-bin/xdtm
+@comment $OpenBSD: PLIST,v 1.6 2013/10/11 20:40:04 naddy Exp $
+@bin bin/xdtm
 bin/xdtm.sh
 lib/X11/app-defaults/Xdtm
 lib/X11/xdtm/
@@ -56,4 +56,4 @@ lib/X11/xdtm/icons/z.icon
 lib/X11/xdtm/new_xdtm.xbm
 lib/X11/xdtm/perm.help
 lib/X11/xdtm/xdtmrc
-@man man/cat1/xdtm.0
+@man man/man1/xdtm.1

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/06/09 15:59:17 eric Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/10/11 20:39:37 naddy Exp $
 @conflict asmail-*
 @bin bin/xfaces
 include/X11/pixmaps/
@@ -43,7 +43,7 @@ include/X11/pixmaps/www-shape.xpm
 include/X11/pixmaps/x.xpm
 include/X11/pixmaps/xconq.xpm
 lib/X11/app-defaults/XFaces
-@man man/cat1/xfaces.0
+@man man/man1/xfaces.1
 share/sounds/
 share/sounds/bong.au
 share/sounds/busy.au

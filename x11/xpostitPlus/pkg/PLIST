@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 19:26:35 espie Exp $
-bin/xpostit+
+@comment $OpenBSD: PLIST,v 1.4 2013/10/11 20:40:12 naddy Exp $
+@bin bin/xpostit+
 lib/X11/app-defaults/XPostitPlus
-@man man/cat1/xpostit+.0
+@man man/man1/xpostit+.1

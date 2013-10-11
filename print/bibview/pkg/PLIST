@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:32:13 espie Exp $
-bin/bibview
+@comment $OpenBSD: PLIST,v 1.5 2013/10/11 20:39:45 naddy Exp $
+@bin bin/bibview
 lib/X11/app-defaults/BibView
 lib/X11/app-defaults/BibView-color
-@man man/cat1/bibview.0
+@man man/man1/bibview.1

@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/04/05 09:49:59 bernd Exp $
-bin/lifeconv
-bin/lifesrc
-bin/lifesrcdumb
-bin/xlife
-@man man/cat6/lifeconv.0
-@man man/cat6/xlife.0
+@comment $OpenBSD: PLIST,v 1.6 2013/10/11 20:39:27 naddy Exp $
+@bin bin/lifeconv
+@bin bin/lifesrc
+@bin bin/lifesrcdumb
+@bin bin/xlife
+@man man/man6/lifeconv.6
+@man man/man6/xlife.6
 share/xlife/
 share/xlife/patterns/
 share/xlife/patterns/codd/

@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/03/17 15:09:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/10/11 20:39:31 naddy Exp $
 @bin bin/xp-mapedit
 @bin bin/xp-replay
 @bin bin/xpilot
 @bin bin/xpilots
-@man man/cat6/xp-mapedit.0
-@man man/cat6/xp-replay.0
-@man man/cat6/xpilot.0
-@man man/cat6/xpilots.0
+@man man/man6/xp-mapedit.6
+@man man/man6/xp-replay.6
+@man man/man6/xpilot.6
+@man man/man6/xpilots.6
 share/xpilot/
 share/xpilot/defaults
 share/xpilot/maps/

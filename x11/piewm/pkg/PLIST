@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 19:26:30 espie Exp $
-bin/piewm
-bin/ssetroot
+@comment $OpenBSD: PLIST,v 1.4 2013/10/11 20:39:52 naddy Exp $
+@bin bin/piewm
+@bin bin/ssetroot
 lib/X11/piewm/
 lib/X11/piewm/system.twmrc
-@man man/cat1/piewm.0
+@man man/man1/piewm.1

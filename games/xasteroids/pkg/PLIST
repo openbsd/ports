@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 00:46:11 espie Exp $
-bin/xasteroids
-@man man/cat6/xasteroids.0
+@comment $OpenBSD: PLIST,v 1.5 2013/10/11 20:39:23 naddy Exp $
+@bin bin/xasteroids
+@man man/man6/xasteroids.6

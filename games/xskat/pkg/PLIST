@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 00:46:12 espie Exp $
-bin/xskat
-@man man/cat1/xskat-de.0
-@man man/cat1/xskat.0
+@comment $OpenBSD: PLIST,v 1.6 2013/10/11 20:39:32 naddy Exp $
+@bin bin/xskat
+@man man/man1/xskat-de.1
+@man man/man1/xskat.1

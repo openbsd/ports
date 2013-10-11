@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 19:26:35 espie Exp $
-bin/xlogout
+@comment $OpenBSD: PLIST,v 1.5 2013/10/11 20:40:10 naddy Exp $
+@bin bin/xlogout
 lib/X11/app-defaults/XLogout
-@man man/cat1/xlogout.0
+@man man/man1/xlogout.1

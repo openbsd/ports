@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/11 11:46:17 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2013/10/11 20:40:05 naddy Exp $
 
 COMMENT=		graphic disk usage viewer
 
 DISTNAME=		xdu-3.0
-REVISION=		2
+REVISION=		3
 CATEGORIES=     	x11
 
 # custom

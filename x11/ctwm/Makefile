@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/10/11 20:39:49 naddy Exp $
 
 COMMENT=	twm, plus support for multiple virtual screens, etc
 
 DISTNAME=	ctwm-3.6
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	x11
 

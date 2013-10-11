@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/10/11 20:39:47 naddy Exp $
 
 COMMENT=	afterstep clock with some language extensions
 
 DISTNAME=	asclock-2.0.12
-REVISION=	0
+REVISION=	1
 CATEGORIES=	x11
 
 MASTER_SITES=	${MASTER_SITE_AFTERSTEP:=apps/asclock/} \

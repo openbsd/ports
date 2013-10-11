@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:46:19 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2013/10/11 20:40:10 naddy Exp $
 
 COMMENT=	moving mascot on your X11 screen
 
 DISTNAME=	xmascot2.6a
 PKGNAME=	xmascot-2.6a
-REVISION=	1
+REVISION=	2
 CATEGORIES=	x11
 
 HOMEPAGE=	http://cclub-flying.dsl.gr.jp/products/xmascot/

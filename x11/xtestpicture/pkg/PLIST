@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 19:26:35 espie Exp $
-bin/xtestpicture
-@man man/cat1/xtestpicture.0
+@comment $OpenBSD: PLIST,v 1.4 2013/10/11 20:40:16 naddy Exp $
+@bin bin/xtestpicture
+@man man/man1/xtestpicture.1

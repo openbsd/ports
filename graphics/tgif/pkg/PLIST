@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/05/28 09:30:40 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/10/11 20:39:33 naddy Exp $
 @bin bin/tgif
 lib/X11/tgif/
 @comment lib/X11/tgif/Copyright
@@ -38,7 +38,7 @@ lib/X11/tgif/tgificon.eps
 lib/X11/tgif/tgificon.obj
 lib/X11/tgif/tgificon.xbm
 lib/X11/tgif/tgificon.xpm
-@man man/cat1/tgif.0
+@man man/man1/tgif.1
 share/doc/tgif/
 share/doc/tgif/License
 share/doc/tgif/README

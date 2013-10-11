@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 17:54:17 espie Exp $
-bin/xgas
+@comment $OpenBSD: PLIST,v 1.5 2013/10/11 20:39:39 naddy Exp $
+@bin bin/xgas
 lib/X11/app-defaults/XGas
-@man man/cat1/xgas.0
+@man man/man1/xgas.1

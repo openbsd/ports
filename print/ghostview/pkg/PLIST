@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:32:14 espie Exp $
-bin/ghostview
+@comment $OpenBSD: PLIST,v 1.5 2013/10/11 20:39:46 naddy Exp $
+@bin bin/ghostview
 lib/X11/app-defaults/Ghostview
-@man man/cat1/ghostview.0
+@man man/man1/ghostview.1

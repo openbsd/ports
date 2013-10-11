@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/01/03 21:49:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/10/11 20:40:06 naddy Exp $
 @bin bin/xfm
 bin/xfm.install
 @bin bin/xfmtype
@@ -439,5 +439,5 @@ lib/X11/xfm/pixmaps/xmosaic.xpm
 lib/X11/xfm/pixmaps/xpaint.xpm
 lib/X11/xfm/pixmaps/xterm.xpm
 lib/X11/xfm/pixmaps/xv.xpm
-@man man/cat1/xfm.0
-@man man/cat1/xfmtype.0
+@man man/man1/xfm.1
+@man man/man1/xfmtype.1

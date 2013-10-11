@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/01/03 21:51:29 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/10/11 20:39:32 naddy Exp $
 @bin bin/scavenger
-@man man/cat1/scavenger.0
+@man man/man1/scavenger.1
 share/doc/scavenger/
 share/doc/scavenger/DOC
 share/scavenger/

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/10/14 22:54:22 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/10/11 20:39:23 naddy Exp $
 @bin bin/spider
 lib/X11/spider/
 lib/X11/spider/doc.controls
@@ -7,4 +7,4 @@ lib/X11/spider/doc.intro
 lib/X11/spider/doc.misc
 lib/X11/spider/doc.rules
 lib/X11/spider/doc.summary
-@man man/cat1/spider.0
+@man man/man1/spider.1

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/11 11:07:42 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2013/10/11 20:39:29 naddy Exp $
 
 COMMENT=	Mr Do video arcade game for X11
 
 V=		4.04
 DISTNAME=	xmris.${V}
 PKGNAME=	xmris-${V}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	games
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/}
@@ -26,7 +26,7 @@ MAKE_FLAGS=	XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults \
 	LOCAL=${PREFIX}
 
 # Must override target, as `all' is a file
-ALL_TARGET=	xmris xmred xmris.0 xmred.0
+ALL_TARGET=	xmris xmred xmris._man xmred._man
 
 NO_TEST=	Yes
 USE_GROFF =	Yes

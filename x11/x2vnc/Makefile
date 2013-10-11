@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:46:17 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/10/11 20:39:57 naddy Exp $
 
 COMMENT=	one keyboard and/or mouse, multiple X and VNC displays
 
 DISTNAME=	x2vnc-1.6.1
-REVISION=	1
+REVISION=	2
 CATEGORIES=	x11
 
 # GPL
@@ -18,12 +18,12 @@ HOMEPAGE=	http://fredrik.hubbe.net/x2vnc.html
 USE_GROFF =	Yes
 CONFIGURE_STYLE=	imake
 
-ALL_TARGET=	x2vnc x2vnc.0
+ALL_TARGET=	x2vnc x2vnc._man
 
 NO_TEST=	Yes
 
 do-install:
-	${INSTALL_MAN} ${WRKSRC}/x2vnc.0 ${PREFIX}/man/cat1
+	${INSTALL_MAN} ${WRKSRC}/x2vnc._man ${PREFIX}/man/man1/x2vnc.1
 	${INSTALL_PROGRAM} ${WRKSRC}/x2vnc ${PREFIX}/bin
 
 .include <bsd.port.mk>

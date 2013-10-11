@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:46:19 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/10/11 20:40:16 naddy Exp $
 
 COMMENT=	tool startup utility for X11
 
 DISTNAME=	xtoolwait-1.3
-REVISION=	0
+REVISION=	1
 CATEGORIES=	x11
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=utilities/} \

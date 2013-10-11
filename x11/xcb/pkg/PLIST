@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 19:26:33 espie Exp $
-bin/xcb
+@comment $OpenBSD: PLIST,v 1.5 2013/10/11 20:40:01 naddy Exp $
+@bin bin/xcb
 lib/X11/app-defaults/Xcb
-@man man/cat1/xcb.0
+@man man/man1/xcb.1

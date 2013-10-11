@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 00:46:11 espie Exp $
-bin/xinvaders
-@man man/cat6/xinvaders.0
+@comment $OpenBSD: PLIST,v 1.6 2013/10/11 20:39:25 naddy Exp $
+@bin bin/xinvaders
+@man man/man6/xinvaders.6

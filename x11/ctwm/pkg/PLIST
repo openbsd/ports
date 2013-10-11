@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 19:26:28 espie Exp $
-bin/ctwm
+@comment $OpenBSD: PLIST,v 1.5 2013/10/11 20:39:49 naddy Exp $
+@bin bin/ctwm
 lib/X11/twm/
 lib/X11/twm/system.ctwmrc
-@man man/cat1/ctwm.0
+@man man/man1/ctwm.1
