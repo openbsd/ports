@@ -1,9 +1,19 @@
-$OpenBSD: patch-cmake_modules_FindQt_cmake,v 1.1.1.1 2013/05/09 19:25:59 zhuk Exp $
+$OpenBSD: patch-cmake_modules_FindQt_cmake,v 1.2 2013/10/11 10:32:07 dcoppa Exp $
+
 Unbreak configure stage.
 Telepathy-qt devs use customized version of module bundled with CMake,
 so we cannot just zap this module.
---- cmake/modules/FindQt.cmake.orig	Wed May  8 16:12:11 2013
-+++ cmake/modules/FindQt.cmake	Wed May  8 16:12:34 2013
+
+From 05fe3f4980bbc6b016e25dcf07e44afe29e377c0
+From: David Edmundson <kde@davidedmundson.co.uk>
+Date: Sun, 29 Sep 2013 22:19:27 +0000
+Subject: Fix compilation on new versions of cmake
+
+Recent cmake has changed the argument count to
+qt4_create_moc_command, we need to adjust accordingly
+
+--- cmake/modules/FindQt.cmake.orig	Fri Jul 13 19:40:23 2012
++++ cmake/modules/FindQt.cmake	Fri Oct 11 11:31:04 2013
 @@ -8,7 +8,7 @@
  # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
  
@@ -13,3 +23,24 @@ so we cannot just zap this module.
                 PATHS "${QT_SEARCH_PATH}/bin" "$ENV{QTDIR}/bin")
    SET(QT_QMAKE_EXECUTABLE ${QT_QMAKE_EXECUTABLE_FINDQT} CACHE PATH "Qt qmake program.")
  ENDIF(NOT QT_QMAKE_EXECUTABLE)
+@@ -74,10 +74,18 @@ ENDMACRO(QT_GET_MOC_FLAGS)
+ 
+ MACRO(QT_CREATE_MOC_COMMAND infile outfile moc_flags moc_options)
+   IF(QT_VERSION_MAJOR MATCHES 4)
+-    QT4_CREATE_MOC_COMMAND(${infile} ${outfile} "${moc_flags}" "${moc_options}")
++    IF(CMAKE_VERSION VERSION_GREATER 2.8.11.20130607)
++      QT4_CREATE_MOC_COMMAND(${infile} ${outfile} "${moc_flags}" "${moc_options}" "")
++    ELSE(CMAKE_VERSION VERSION_GREATER 2.8.11.20130607)
++      QT4_CREATE_MOC_COMMAND(${infile} ${outfile} "${moc_flags}" "${moc_options}")
++    ENDIF(CMAKE_VERSION VERSION_GREATER 2.8.11.20130607)
+   ELSE(QT_VERSION_MAJOR MATCHES 4)
+     IF(QT_VERSION_MAJOR MATCHES 5)
+-      QT5_CREATE_MOC_COMMAND(${infile} ${outfile} "${moc_flags}" "${moc_options}")
++      IF(CMAKE_VERSION VERSION_GREATER 2.8.11.20130607)
++        QT5_CREATE_MOC_COMMAND(${infile} ${outfile} "${moc_flags}" "${moc_options}" "")
++      ELSE(CMAKE_VERSION VERSION_GREATER 2.8.11.20130607)
++        QT5_CREATE_MOC_COMMAND(${infile} ${outfile} "${moc_flags}" "${moc_options}")
++      ENDIF(CMAKE_VERSION VERSION_GREATER 2.8.11.20130607)
+     ENDIF(QT_VERSION_MAJOR MATCHES 5)
+   ENDIF(QT_VERSION_MAJOR MATCHES 4)
+ ENDMACRO(QT_CREATE_MOC_COMMAND)
