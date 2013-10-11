@@ -1,0 +1,12 @@
+$OpenBSD: patch-play_unix_files_c,v 1.1 2013/10/11 08:39:26 espie Exp $
+--- play/unix/files.c.orig	Fri Oct 11 10:03:34 2013
++++ play/unix/files.c	Fri Oct 11 10:07:59 2013
+@@ -14,7 +14,7 @@
+ #endif
+ #ifndef _XOPEN_SOURCE
+ /* to get popen declared */
+-#define _XOPEN_SOURCE 1
++#define _XOPEN_SOURCE 700
+ #endif
+ 
+ #include "config.h"

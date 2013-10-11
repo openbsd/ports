@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:23:56 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/10/11 08:39:25 espie Exp $
 
 # Memory hog, stuck for days on the same file during build.
 NOT_FOR_ARCHS=	sh
@@ -7,6 +7,7 @@ COMMENT=	interpreted language for scientific computing
 
 VERSION=	2.1.06
 DISTNAME=	yorick-${VERSION}
+REVISION =	0
 
 CATEGORIES=	math devel
 
