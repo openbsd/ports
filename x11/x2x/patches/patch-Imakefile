@@ -1,11 +1,11 @@
-$OpenBSD: patch-Imakefile,v 1.1 2011/11/22 09:33:09 jasper Exp $
+$OpenBSD: patch-Imakefile,v 1.2 2013/10/11 10:54:28 naddy Exp $
 
 - Various fixes including -north/-south support.
   From Debian's x2x_1.27-8 patch.
 
---- Imakefile.orig	Mon Nov 21 14:50:47 2011
-+++ Imakefile	Mon Nov 21 14:50:56 2011
-@@ -2,8 +2,8 @@ XCOMM $XConsortium: Imakefile,v 1.5 91/07/17 16:07:10 
+--- Imakefile.orig	Wed Aug 20 18:14:52 1997
++++ Imakefile	Fri Oct 11 01:34:09 2013
+@@ -2,11 +2,8 @@ XCOMM $XConsortium: Imakefile,v 1.5 91/07/17 16:07:10 
          DEPLIBS = $(DEPXTESTLIB) $(DEPEXTENSIONLIB) $(DEPXLIB)
  LOCAL_LIBRARIES = $(XTESTLIB) $(EXTENSIONLIB) $(XLIB)
  
@@ -14,5 +14,8 @@ $OpenBSD: patch-Imakefile,v 1.1 2011/11/22 09:33:09 jasper Exp $
 +           SRCS = lawyerese.c x2x.c
 +           OBJS = lawyerese.o x2x.o
    PROTO_DEFINES = 
+-
+-             CC = gcc
+-    CDEBUGFLAGS = -O
  
-              CC = gcc
+ ComplexProgramTarget(x2x)
