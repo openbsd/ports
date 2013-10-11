@@ -1,7 +1,7 @@
-$OpenBSD: patch-webkit_plugins_npapi_plugin_list_posix_cc,v 1.5 2013/09/29 19:04:07 robert Exp $
+$OpenBSD: patch-webkit_plugins_npapi_plugin_list_posix_cc,v 1.6 2013/10/11 13:52:07 ajacoutot Exp $
 --- webkit/plugins/npapi/plugin_list_posix.cc.orig.port	Wed Sep 18 10:14:05 2013
-+++ webkit/plugins/npapi/plugin_list_posix.cc	Sun Sep 22 16:09:42 2013
-@@ -474,7 +474,7 @@ void PluginList::GetPluginDirectories(std::vector<base
++++ webkit/plugins/npapi/plugin_list_posix.cc	Fri Oct 11 15:38:22 2013
+@@ -474,11 +474,11 @@ void PluginList::GetPluginDirectories(std::vector<base
    // 3) NS_SYSTEM_PLUGINS_DIR:
    // This varies across different browsers and versions, so check 'em all.
    plugin_dirs->push_back(base::FilePath("/usr/lib/browser-plugins"));
@@ -10,3 +10,8 @@ $OpenBSD: patch-webkit_plugins_npapi_plugin_list_posix_cc,v 1.5 2013/09/29 19:04
    plugin_dirs->push_back(base::FilePath("/usr/lib/firefox/plugins"));
    plugin_dirs->push_back(base::FilePath("/usr/lib/xulrunner-addons/plugins"));
  
+-#if defined(ARCH_CPU_64_BITS)
++#if defined(ARCH_CPU_64_BITS) && defined(OS_LINUX)
+   // On my Ubuntu system, /usr/lib64 is a symlink to /usr/lib.
+   // But a user reported on their Fedora system they are separate.
+   plugin_dirs->push_back(base::FilePath("/usr/lib64/browser-plugins"));
