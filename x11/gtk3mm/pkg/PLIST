@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/03/27 17:56:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/10/11 13:26:12 ajacoutot Exp $
 include/gdkmm-3.0/
 include/gdkmm-3.0/gdkmm/
 include/gdkmm-3.0/gdkmm.h
@@ -129,6 +129,7 @@ include/gtkmm-3.0/gtkmm/fontselection.h
 include/gtkmm-3.0/gtkmm/frame.h
 include/gtkmm-3.0/gtkmm/grid.h
 include/gtkmm-3.0/gtkmm/handlebox.h
+include/gtkmm-3.0/gtkmm/headerbar.h
 include/gtkmm-3.0/gtkmm/hvbox.h
 include/gtkmm-3.0/gtkmm/hvbuttonbox.h
 include/gtkmm-3.0/gtkmm/hvpaned.h
@@ -149,6 +150,8 @@ include/gtkmm-3.0/gtkmm/label.h
 include/gtkmm-3.0/gtkmm/layout.h
 include/gtkmm-3.0/gtkmm/levelbar.h
 include/gtkmm-3.0/gtkmm/linkbutton.h
+include/gtkmm-3.0/gtkmm/listbox.h
+include/gtkmm-3.0/gtkmm/listboxrow.h
 include/gtkmm-3.0/gtkmm/liststore.h
 include/gtkmm-3.0/gtkmm/listviewtext.h
 include/gtkmm-3.0/gtkmm/main.h
@@ -169,6 +172,7 @@ include/gtkmm-3.0/gtkmm/pagesetup.h
 include/gtkmm-3.0/gtkmm/pagesetupunixdialog.h
 include/gtkmm-3.0/gtkmm/paned.h
 include/gtkmm-3.0/gtkmm/papersize.h
+include/gtkmm-3.0/gtkmm/placessidebar.h
 include/gtkmm-3.0/gtkmm/plug.h
 include/gtkmm-3.0/gtkmm/printcontext.h
 include/gtkmm-3.0/gtkmm/printer.h
@@ -253,6 +257,7 @@ include/gtkmm-3.0/gtkmm/private/fontselection_p.h
 include/gtkmm-3.0/gtkmm/private/frame_p.h
 include/gtkmm-3.0/gtkmm/private/grid_p.h
 include/gtkmm-3.0/gtkmm/private/handlebox_p.h
+include/gtkmm-3.0/gtkmm/private/headerbar_p.h
 include/gtkmm-3.0/gtkmm/private/hvbox_p.h
 include/gtkmm-3.0/gtkmm/private/hvbuttonbox_p.h
 include/gtkmm-3.0/gtkmm/private/hvpaned_p.h
@@ -273,6 +278,8 @@ include/gtkmm-3.0/gtkmm/private/label_p.h
 include/gtkmm-3.0/gtkmm/private/layout_p.h
 include/gtkmm-3.0/gtkmm/private/levelbar_p.h
 include/gtkmm-3.0/gtkmm/private/linkbutton_p.h
+include/gtkmm-3.0/gtkmm/private/listbox_p.h
+include/gtkmm-3.0/gtkmm/private/listboxrow_p.h
 include/gtkmm-3.0/gtkmm/private/liststore_p.h
 include/gtkmm-3.0/gtkmm/private/main_p.h
 include/gtkmm-3.0/gtkmm/private/menu_p.h
@@ -292,6 +299,7 @@ include/gtkmm-3.0/gtkmm/private/pagesetup_p.h
 include/gtkmm-3.0/gtkmm/private/pagesetupunixdialog_p.h
 include/gtkmm-3.0/gtkmm/private/paned_p.h
 include/gtkmm-3.0/gtkmm/private/papersize_p.h
+include/gtkmm-3.0/gtkmm/private/placessidebar_p.h
 include/gtkmm-3.0/gtkmm/private/plug_p.h
 include/gtkmm-3.0/gtkmm/private/printcontext_p.h
 include/gtkmm-3.0/gtkmm/private/printer_p.h
@@ -315,11 +323,13 @@ include/gtkmm-3.0/gtkmm/private/recentfilter_p.h
 include/gtkmm-3.0/gtkmm/private/recentinfo_p.h
 include/gtkmm-3.0/gtkmm/private/recentmanager_p.h
 include/gtkmm-3.0/gtkmm/private/requisition_p.h
+include/gtkmm-3.0/gtkmm/private/revealer_p.h
 include/gtkmm-3.0/gtkmm/private/scale_p.h
 include/gtkmm-3.0/gtkmm/private/scalebutton_p.h
 include/gtkmm-3.0/gtkmm/private/scrollable_p.h
 include/gtkmm-3.0/gtkmm/private/scrollbar_p.h
 include/gtkmm-3.0/gtkmm/private/scrolledwindow_p.h
+include/gtkmm-3.0/gtkmm/private/searchbar_p.h
 include/gtkmm-3.0/gtkmm/private/searchentry_p.h
 include/gtkmm-3.0/gtkmm/private/selectiondata_p.h
 include/gtkmm-3.0/gtkmm/private/separator_p.h
@@ -330,6 +340,8 @@ include/gtkmm-3.0/gtkmm/private/sizegroup_p.h
 include/gtkmm-3.0/gtkmm/private/socket_p.h
 include/gtkmm-3.0/gtkmm/private/spinbutton_p.h
 include/gtkmm-3.0/gtkmm/private/spinner_p.h
+include/gtkmm-3.0/gtkmm/private/stack_p.h
+include/gtkmm-3.0/gtkmm/private/stackswitcher_p.h
 include/gtkmm-3.0/gtkmm/private/statusbar_p.h
 include/gtkmm-3.0/gtkmm/private/statusicon_p.h
 include/gtkmm-3.0/gtkmm/private/stockitem_p.h
@@ -392,11 +404,13 @@ include/gtkmm-3.0/gtkmm/recentfilter.h
 include/gtkmm-3.0/gtkmm/recentinfo.h
 include/gtkmm-3.0/gtkmm/recentmanager.h
 include/gtkmm-3.0/gtkmm/requisition.h
+include/gtkmm-3.0/gtkmm/revealer.h
 include/gtkmm-3.0/gtkmm/scale.h
 include/gtkmm-3.0/gtkmm/scalebutton.h
 include/gtkmm-3.0/gtkmm/scrollable.h
 include/gtkmm-3.0/gtkmm/scrollbar.h
 include/gtkmm-3.0/gtkmm/scrolledwindow.h
+include/gtkmm-3.0/gtkmm/searchbar.h
 include/gtkmm-3.0/gtkmm/searchentry.h
 include/gtkmm-3.0/gtkmm/selectiondata.h
 include/gtkmm-3.0/gtkmm/selectiondata_private.h
@@ -408,6 +422,8 @@ include/gtkmm-3.0/gtkmm/sizegroup.h
 include/gtkmm-3.0/gtkmm/socket.h
 include/gtkmm-3.0/gtkmm/spinbutton.h
 include/gtkmm-3.0/gtkmm/spinner.h
+include/gtkmm-3.0/gtkmm/stack.h
+include/gtkmm-3.0/gtkmm/stackswitcher.h
 include/gtkmm-3.0/gtkmm/statusbar.h
 include/gtkmm-3.0/gtkmm/statusicon.h
 include/gtkmm-3.0/gtkmm/stock.h
