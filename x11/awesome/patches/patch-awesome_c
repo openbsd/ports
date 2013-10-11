@@ -1,19 +1,32 @@
-$OpenBSD: patch-awesome_c,v 1.8 2013/10/08 11:48:58 dcoppa Exp $
+$OpenBSD: patch-awesome_c,v 1.9 2013/10/11 08:50:21 dcoppa Exp $
 
 Revert to the old xcb-util-0.3.6 API
 
-commit c3bca6ac344577781858e06c83e310b69ac9a4e0
+commit efd243b6d70b9c549c184c3c0b84c481453411e0
 Author: Uli Schlachter <psychon@znc.in>
-Date:   Fri Oct 4 16:12:06 2013 +0200
+Date:   Sun Oct 6 10:34:37 2013 +0200
 
-client: Don't move clients around across restarts (FS#1159)
+event: Handle MotionNotify before ButtonPress/Release (FS#1136)
 
-This kind of forces every client to have a window gravity of "static".
+The above-mentioned bug report says that a window cannot be moved via its
+titlebar if you move the move quickly while clicking.
 
-This fixes most of the problem of clients moving around across restarts due to
-the titlebar. What is left is that they move due to the border width which
-should be handled in another patch. Also, another patch should make this honor
-the client's actual window gravity.
+The reason for this was awesome's "event compression": We don't handle all
+MotionNotify events, because they can come in big quantities. Instead, we only
+want to handle the latest one and ignore all earlier ones (the mouse isn't in
+that position anymore anyway).
+
+The problem now appears if a MotionNotify is moved across a ButtonPress event
+and the ButtonPress is what should cause the window to be moved. Awesome first
+handles the ButtonPress event normally and starts grabbing mouse input. Then,
+our event loop feeds us with an old MotionNotify event in which the button was
+not pressed yet. The code for moving clients gets a motion event in which no
+mouse button is pressed, concludes that the move is done and ungrabs the mouse
+again, even though the button is still physically pressed.
+
+Fix this by making sure that MotionNotify events are never moved across
+ButtonPress or ButtonRelease events. We already did this for EnterNotify and
+LeaveNotify events for similar reasons.
 
 Signed-off-by: Uli Schlachter <psychon@znc.in>
 
@@ -51,21 +64,8 @@ config file.
 Signed-off-by: Uli Schlachter <psychon@znc.in>
 
 --- awesome.c.orig	Mon Apr  1 13:44:46 2013
-+++ awesome.c	Mon Oct  7 15:53:09 2013
-@@ -68,6 +68,12 @@ awesome_atexit(bool restart)
-     lua_pushboolean(globalconf.L, restart);
-     signal_object_emit(globalconf.L, &global_signals, "exit", 1);
- 
-+    /* TODO: Reparent windows back to root window, placing them according to
-+     * their window gravity. Right now we pretend to use static gravity and that
-+     * works automatically thanks to xcb_change_save_set(). See
-+     * titlebar_resize().
-+     */
-+
-     a_dbus_cleanup();
- 
-     systray_cleanup();
-@@ -136,7 +142,7 @@ scan(xcb_query_tree_cookie_t tree_c)
++++ awesome.c	Fri Oct 11 10:07:47 2013
+@@ -136,7 +136,7 @@ scan(xcb_query_tree_cookie_t tree_c)
  
          if(!attr_r || attr_r->override_redirect
             || attr_r->map_state == XCB_MAP_STATE_UNMAPPED
@@ -74,7 +74,25 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
          {
              geom_wins[i] = NULL;
              p_delete(&attr_r);
-@@ -288,6 +294,7 @@ main(int argc, char **argv)
+@@ -183,13 +183,13 @@ a_xcb_check(void)
+         else
+         {
+             uint8_t type = XCB_EVENT_RESPONSE_TYPE(event);
+-            if((type == XCB_ENTER_NOTIFY || type == XCB_LEAVE_NOTIFY) && mouse)
++            if(mouse && (type == XCB_ENTER_NOTIFY || type == XCB_LEAVE_NOTIFY
++                        || type == XCB_BUTTON_PRESS || type == XCB_BUTTON_RELEASE))
+             {
+-                /* Make sure enter/motion/leave events are handled in the
+-                 * correct order */
++                /* Make sure enter/motion/leave/press/release events are handled
++                 * in the correct order */
+                 event_handle(mouse);
+                 p_delete(&mouse);
+-                mouse = NULL;
+             }
+             event_handle(event);
+             p_delete(&event);
+@@ -288,6 +288,7 @@ main(int argc, char **argv)
      ssize_t cmdlen = 1;
      xdgHandle xdg;
      bool no_argb = false;
@@ -82,7 +100,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
      xcb_generic_event_t *event;
      xcb_query_tree_cookie_t tree_c;
      static struct option long_options[] =
-@@ -340,16 +347,8 @@ main(int argc, char **argv)
+@@ -340,16 +341,8 @@ main(int argc, char **argv)
              exit_help(EXIT_SUCCESS);
              break;
            case 'k':
@@ -101,7 +119,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
            case 'c':
              if(a_strlen(optarg))
                  confpath = a_strdup(optarg);
-@@ -361,6 +360,20 @@ main(int argc, char **argv)
+@@ -361,6 +354,20 @@ main(int argc, char **argv)
              break;
          }
  
@@ -122,7 +140,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
      /* register function for signals */
      g_unix_signal_add(SIGINT, exit_on_signal, NULL);
      g_unix_signal_add(SIGTERM, exit_on_signal, NULL);
-@@ -518,6 +531,7 @@ main(int argc, char **argv)
+@@ -518,6 +525,7 @@ main(int argc, char **argv)
  
      /* we will receive events, stop grabbing server */
      xcb_ungrab_server(globalconf.connection);

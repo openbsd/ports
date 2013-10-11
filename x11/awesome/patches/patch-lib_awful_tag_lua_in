@@ -1,0 +1,52 @@
+$OpenBSD: patch-lib_awful_tag_lua_in,v 1.1 2013/10/11 08:50:21 dcoppa Exp $
+
+commit 4abf42b92f0f4b7676da4952dde86b0fce055240
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Tue Oct 8 10:45:22 2013 +0200
+
+awful.tag.withcurrent: Also act on restarts (FS#1155)
+
+When awesome restarts because a new screen was added or removed, clients can end
+up being on a different screen than before the restart. However, the tags will
+be carried across the restart. This means that a client could end up being
+tagged with a tag from another screen. This results in weird behavior of tag
+switches and confuses users.
+
+To work around this, remove the client from any tags that are on a different
+screen during startup. If the client ends up without any tags, it will then be
+tagged with the currently selected tags.
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+--- lib/awful/tag.lua.in.orig	Mon Apr  1 13:44:46 2013
++++ lib/awful/tag.lua.in	Fri Oct 11 10:34:12 2013
+@@ -518,20 +518,17 @@ end
+ 
+ --- Tag a client with the set of current tags.
+ -- @param c The client to tag.
+--- @param startup Optional: don't do anything if true.
+-function tag.withcurrent(c, startup)
+-    if startup ~= true then
+-        local tags = {}
+-        for k, t in ipairs(c:tags()) do
+-            if tag.getscreen(t) == c.screen then
+-                table.insert(tags, t)
+-            end
++function tag.withcurrent(c)
++    local tags = {}
++    for k, t in ipairs(c:tags()) do
++        if tag.getscreen(t) == c.screen then
++            table.insert(tags, t)
+         end
+-        if #tags == 0 then
+-            tags = tag.selectedlist(c.screen)
+-        end
+-        c:tags(tags)
+     end
++    if #tags == 0 then
++        tags = tag.selectedlist(c.screen)
++    end
++    c:tags(tags)
+ end
+ 
+ local function attached_connect_signal_screen(screen, sig, func)

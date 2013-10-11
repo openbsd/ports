@@ -1,4 +1,4 @@
-$OpenBSD: patch-objects_client_c,v 1.5 2013/10/08 11:48:58 dcoppa Exp $
+$OpenBSD: patch-objects_client_c,v 1.6 2013/10/11 08:50:21 dcoppa Exp $
 
 Revert to the old xcb-util-0.3.6 API
 
@@ -14,21 +14,6 @@ slow).
 
 A semi-fix for this is to ignore string property changes if the old and new
 value for the property are equal.
-
-Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit c3bca6ac344577781858e06c83e310b69ac9a4e0
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Fri Oct 4 16:12:06 2013 +0200
-
-client: Don't move clients around across restarts (FS#1159)
-
-This kind of forces every client to have a window gravity of "static".
-
-This fixes most of the problem of clients moving around across restarts due to
-the titlebar. What is left is that they move due to the border width which
-should be handled in another patch. Also, another patch should make this honor
-the client's actual window gravity.
 
 Signed-off-by: Uli Schlachter <psychon@znc.in>
 
@@ -48,7 +33,7 @@ window's geometry.
 Signed-off-by: Uli Schlachter <psychon@znc.in>
 
 --- objects/client.c.orig	Mon Apr  1 13:44:46 2013
-+++ objects/client.c	Mon Oct  7 15:53:09 2013
++++ objects/client.c	Fri Oct 11 10:02:39 2013
 @@ -46,7 +46,7 @@ static void
  client_wipe(client_t *c)
  {
@@ -185,33 +170,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
      }
  
      /* set client as invalid */
-@@ -1554,16 +1559,23 @@ titlebar_resize(client_t *c, client_titlebar_t bar, in
-         return;
- 
-     /* Now resize the client (and titlebars!) suitably (the client without
--     * titlebars should keep its current size!) */
-+     * titlebars should keep its current size!)
-+     * TODO: I guess that this should honor the client's window gravity, right
-+     * now we pretend to have static gravity. See awesome_atexit().
-+     */
-     area_t geometry = c->geometry;
-     int change = size - c->titlebar[bar].size;
-     switch (bar) {
-     case CLIENT_TITLEBAR_TOP:
-+        geometry.y -= change;
-+        /* fall through */;
-     case CLIENT_TITLEBAR_BOTTOM:
-         geometry.height += change;
-         break;
--    case CLIENT_TITLEBAR_RIGHT:
-     case CLIENT_TITLEBAR_LEFT:
-+        geometry.x -= change;
-+        /* fall through */;
-+    case CLIENT_TITLEBAR_RIGHT:
-         geometry.width += change;
-         break;
-     default:
-@@ -1784,11 +1796,16 @@ LUA_OBJECT_EXPORT_PROPERTY(client, client_t, maximized
+@@ -1784,11 +1789,16 @@ LUA_OBJECT_EXPORT_PROPERTY(client, client_t, maximized
  static int
  luaA_client_get_content(lua_State *L, client_t *c)
  {
@@ -231,7 +190,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
                                          ~0, XCB_IMAGE_FORMAT_Z_PIXMAP);
      cairo_surface_t *surface = NULL;
  
-@@ -1861,9 +1878,9 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1861,9 +1871,9 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
  
      lua_createtable(L, 0, 1);
  
@@ -243,7 +202,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
          u_or_p = "program_position";
  
      if(u_or_p)
-@@ -1877,9 +1894,9 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1877,9 +1887,9 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
          u_or_p = NULL;
      }
  
@@ -255,7 +214,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
          u_or_p = "program_size";
  
      if(u_or_p)
-@@ -1892,7 +1909,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1892,7 +1902,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
          lua_setfield(L, -2, u_or_p);
      }
  
@@ -264,7 +223,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
      {
          lua_pushnumber(L, c->size_hints.min_width);
          lua_setfield(L, -2, "min_width");
-@@ -1900,7 +1917,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1900,7 +1910,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
          lua_setfield(L, -2, "min_height");
      }
  
@@ -273,7 +232,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
      {
          lua_pushnumber(L, c->size_hints.max_width);
          lua_setfield(L, -2, "max_width");
-@@ -1908,7 +1925,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1908,7 +1918,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
          lua_setfield(L, -2, "max_height");
      }
  
@@ -282,7 +241,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
      {
          lua_pushnumber(L, c->size_hints.width_inc);
          lua_setfield(L, -2, "width_inc");
-@@ -1916,7 +1933,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1916,7 +1926,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
          lua_setfield(L, -2, "height_inc");
      }
  
@@ -291,7 +250,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
      {
          lua_pushnumber(L, c->size_hints.min_aspect_num);
          lua_setfield(L, -2, "min_aspect_num");
-@@ -1928,7 +1945,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1928,7 +1938,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
          lua_setfield(L, -2, "max_aspect_den");
      }
  
@@ -300,7 +259,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
      {
          lua_pushnumber(L, c->size_hints.base_width);
          lua_setfield(L, -2, "base_width");
-@@ -1936,7 +1953,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1936,7 +1946,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
          lua_setfield(L, -2, "base_height");
      }
  
