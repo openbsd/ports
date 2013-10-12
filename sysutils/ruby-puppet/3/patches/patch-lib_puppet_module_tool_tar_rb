@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_puppet_module_tool_tar_rb,v 1.1 2013/10/12 09:06:18 jasper Exp $
+
+Tag along with Solaris on using gtar.
+
+--- lib/puppet/module_tool/tar.rb.orig	Sat Oct 12 11:03:14 2013
++++ lib/puppet/module_tool/tar.rb	Sat Oct 12 11:03:19 2013
+@@ -4,7 +4,8 @@ module Puppet::ModuleTool::Tar
+   require 'puppet/module_tool/tar/mini'
+ 
+   def self.instance(module_name)
+-    if Facter.value('osfamily') == 'Solaris' && Puppet::Util.which('gtar') && ! Puppet::Util::Platform.windows?
++    if Facter.value('osfamily') == 'Solaris' || Facter.value('osfamily') == 'OpenBSD' \
++      && Puppet::Util.which('gtar') && ! Puppet::Util::Platform.windows?
+       Solaris.new
+     elsif Puppet::Util.which('tar') && ! Puppet::Util::Platform.windows?
+       Gnu.new
