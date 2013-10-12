@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2012/12/17 20:28:05 edd Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2013/10/12 10:23:26 sthen Exp $
 @conflict teTeX_texmf-*
 @conflict texlive_base-<2012
 @conflict texlive_texmf-docs-<2012
@@ -16,9 +16,9 @@
 @man man/man1/allneeded.1
 @man man/man1/amstex.1
 @man man/man1/arlatex.1
-@man man/man1/asy.1
+@comment @man man/man1/asy.1
 @man man/man1/autoinst.1
-@man man/man1/bbox.1
+@comment @man man/man1/bbox.1
 @man man/man1/bg5conv.1
 @man man/man1/bibtex.1
 @man man/man1/bundledoc.1
@@ -35,7 +35,7 @@
 @man man/man1/ctxtools.1
 @man man/man1/cweave.1
 @man man/man1/cweb.1
-@man man/man1/detex.1
+@comment @man man/man1/detex.1
 @man man/man1/deweb.1
 @man man/man1/dosepsbin.1
 @man man/man1/dt2dv.1
@@ -66,33 +66,33 @@
 @man man/man1/e2pall.1
 @man man/man1/ebb.1
 @man man/man1/eplain.1
-@man man/man1/epsffit.1
+@comment @man man/man1/epsffit.1
 @man man/man1/epstopdf.1
 @man man/man1/etex.1
 @man man/man1/extconv.1
 @man man/man1/extractbb.1
-@man man/man1/extractres.1
+@comment @man man/man1/extractres.1
 @man man/man1/fig2epic.1
 @man man/man1/findhyph.1
-@man man/man1/fixdlsrps.1
-@man man/man1/fixfmps.1
-@man man/man1/fixpsditps.1
-@man man/man1/fixpspps.1
-@man man/man1/fixscribeps.1
-@man man/man1/fixtpps.1
-@man man/man1/fixwfwps.1
-@man man/man1/fixwpps.1
-@man man/man1/fixwwps.1
+@comment @man man/man1/fixdlsrps.1
+@comment @man man/man1/fixfmps.1
+@comment @man man/man1/fixpsditps.1
+@comment @man man/man1/fixpspps.1
+@comment @man man/man1/fixscribeps.1
+@comment @man man/man1/fixtpps.1
+@comment @man man/man1/fixwfwps.1
+@comment @man man/man1/fixwpps.1
+@comment @man man/man1/fixwwps.1
 @man man/man1/fmtutil-sys.1
 @man man/man1/fmtutil.1
 @man man/man1/fontinst.1
-@man man/man1/getafm.1
+@comment @man man/man1/getafm.1
 @man man/man1/gftodvi.1
 @man man/man1/gftopk.1
 @man man/man1/gftype.1
 @man man/man1/gsftopk.1
 @man man/man1/hbf2gf.1
-@man man/man1/includeres.1
+@comment @man man/man1/includeres.1
 @man man/man1/install-tl.1
 @man man/man1/jadetex.1
 @man man/man1/kpseaccess.1
@@ -177,17 +177,17 @@
 @man man/man1/pmxab.1
 @man man/man1/pooltype.1
 @man man/man1/prepmx.1
-@man man/man1/ps2eps.1
+@comment @man man/man1/ps2eps.1
 @man man/man1/ps2frag.1
 @man man/man1/ps2pk.1
-@man man/man1/psbook.1
+@comment @man man/man1/psbook.1
 @man man/man1/pslatex.1
-@man man/man1/psmerge.1
-@man man/man1/psnup.1
-@man man/man1/psresize.1
-@man man/man1/psselect.1
+@comment @man man/man1/psmerge.1
+@comment @man man/man1/psnup.1
+@comment @man man/man1/psresize.1
+@comment @man man/man1/psselect.1
 @man man/man1/pstopdf.1
-@man man/man1/pstops.1
+@comment @man man/man1/pstops.1
 @man man/man1/purifyeps.1
 @man man/man1/repstopdf.1
 @man man/man1/rubibtex.1
@@ -235,7 +235,7 @@
 @man man/man1/vlna.1
 @man man/man1/vptovf.1
 @man man/man1/weave.1
-@man man/man1/xasy.1
+@comment @man man/man1/xasy.1
 @man man/man1/xdvi.1
 @man man/man1/xindy.1
 @man man/man3/AbortionNode.3

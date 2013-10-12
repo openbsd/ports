@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2013/04/16 05:21:19 bentley Exp $
+# $OpenBSD: Makefile,v 1.35 2013/10/12 10:23:25 sthen Exp $
 
 COMMENT-context =	texlive texmf for conTeXt
 COMMENT-docs =		texlive documentation
@@ -12,7 +12,7 @@ MASTER_SITES0 =		http://theunixzoo.co.uk/distfiles/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
 			texmf-var-pregen-${V}${EXTRACT_SUFX}:0
-REVISION-main =		0
+REVISION-main =		1
 
 PKGNAME-main =		texlive_texmf-minimal-${V}
 PKGNAME-full =		texlive_texmf-full-${V}
