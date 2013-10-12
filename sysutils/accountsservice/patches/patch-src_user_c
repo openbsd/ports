@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_user_c,v 1.22 2013/10/10 10:19:43 ajacoutot Exp $
+$OpenBSD: patch-src_user_c,v 1.23 2013/10/12 08:43:52 ajacoutot Exp $
 
 From 631c57790fe79ee70d79522eb1b3e461e2899d82 Mon Sep 17 00:00:00 2001
 From: Ray Strode <rstrode@redhat.com>
@@ -6,7 +6,7 @@ Date: Tue, 01 Oct 2013 14:50:46 +0000
 Subject: user: treat NULL shadow entry as "password handled remotely"
 
 --- src/user.c.orig	Tue Jun 11 17:50:37 2013
-+++ src/user.c	Thu Oct 10 12:11:36 2013
++++ src/user.c	Sat Oct 12 10:37:47 2013
 @@ -116,7 +116,12 @@ account_type_from_pwent (struct passwd *pwent)
  {
          struct group *grp;
@@ -55,7 +55,7 @@ Subject: user: treat NULL shadow entry as "password handled remotely"
  
 +#ifdef __OpenBSD__
 +        passwd = pwent->pw_passwd;
-+        if (passwd && passwd == 'skey')
++        if (g_strcmp0(passwd, "skey") == 0)
 +                passwd = NULL;
 +#endif
 +
