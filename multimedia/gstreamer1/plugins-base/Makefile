@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/10/06 09:08:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2013/10/12 08:11:19 sthen Exp $
 
 COMMENT=		base elements for GStreamer
 
@@ -29,9 +29,10 @@ WANTLIB += xcb xcb-render xcb-shm z
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-base/}
 
 # needed for ${WRKSRC}/tests/
-BUILD_DEPENDS=		x11/gtk+2
+BUILD_DEPENDS=		x11/gtk+2 \
+			x11/gtk+3
 
-LIB_DEPENDS=	 	${P}/core=${V} \
+LIB_DEPENDS=		${P}/core=${V} \
 			audio/cdparanoia \
 			audio/libvorbis \
 			audio/tremor \
