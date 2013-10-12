@@ -1,2 +1,5 @@
-@comment $OpenBSD: PFRAG.conflict,v 1.2 2013/08/24 17:33:46 zhuk Exp $
+@comment $OpenBSD: PFRAG.conflict,v 1.3 2013/10/12 12:50:51 espie Exp $
 @conflict ${KDE3_I18N_PKG}-*
+@conflict gwenview-i18n-*
+@conflict libkdcraw-<1
+@conflict libkipi-<1
