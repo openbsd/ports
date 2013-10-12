@@ -1,6 +1,9 @@
-$OpenBSD: patch-lib_puppet_module_tool_tar_rb,v 1.1 2013/10/12 09:06:18 jasper Exp $
+$OpenBSD: patch-lib_puppet_module_tool_tar_rb,v 1.2 2013/10/12 09:20:21 jasper Exp $
 
-Tag along with Solaris on using gtar.
+From b08141638fb4771a389850e058130f2975beddd3 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Sat, 12 Oct 2013 11:06:54 +0200
+Subject: [PATCH] (22853) Let OpenBSD use gtar too.
 
 --- lib/puppet/module_tool/tar.rb.orig	Sat Oct 12 11:03:14 2013
 +++ lib/puppet/module_tool/tar.rb	Sat Oct 12 11:03:19 2013
