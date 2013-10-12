@@ -1,6 +1,6 @@
-$OpenBSD: patch-pftop_c,v 1.15 2011/08/23 11:42:11 sthen Exp $
+$OpenBSD: patch-pftop_c,v 1.16 2013/10/12 13:12:43 sthen Exp $
 --- pftop.c.orig	Wed Nov  7 06:36:46 2007
-+++ pftop.c	Tue Aug 23 12:41:14 2011
++++ pftop.c	Sat Oct 12 14:12:12 2013
 @@ -127,6 +127,13 @@
  #define PT_NOROUTE(x) (0)
  #endif
@@ -411,7 +411,12 @@ $OpenBSD: patch-pftop_c,v 1.15 2011/08/23 11:42:11 sthen Exp $
  	}
  }
  
-@@ -1747,6 +1940,7 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
+@@ -1743,10 +1936,11 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
+ {
+ 	struct pf_altq_node	*node;
+ 	struct pfioc_altq	 pa;
+-	struct pfioc_qstats	 pq;
++	struct pfioc_altqstats	 pq;
  	u_int32_t		 nr;
  	struct queue_stats	 qstats;
  	u_int32_t		 nr_queues;

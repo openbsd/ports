@@ -1,0 +1,12 @@
+$OpenBSD: patch-pf_c,v 1.1 2013/10/12 13:11:34 sthen Exp $
+--- pf.c.orig	Sat Oct 12 14:10:22 2013
++++ pf.c	Sat Oct 12 14:10:25 2013
+@@ -74,7 +74,7 @@ query_queues(int fd, void (*cb)(int, const char *, int
+ 
+ 	/* fetch each of those queues */
+ 	for (nr = 0; nr < mnr; ++nr) {
+-		struct pfioc_qstats pq;
++		struct pfioc_altqstats pq;
+ 		union altq_stats s;
+ 		u_int64_t c[8];
+ 		int i;
