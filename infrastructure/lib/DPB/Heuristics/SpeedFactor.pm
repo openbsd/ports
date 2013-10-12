@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SpeedFactor.pm,v 1.1 2013/10/12 13:53:35 espie Exp $
+# $OpenBSD: SpeedFactor.pm,v 1.2 2013/10/12 14:11:23 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -29,13 +29,13 @@ sub add
 {
 	my ($self, $v) = @_;
 	$self->SUPER::add($v);
-	$self->{weight} += $weight{$v};
+	$self->{weight} += $DPB::Heuristics::weight{$v};
 }
 
 sub remove
 {
 	my ($self, $v) = @_;
-	$self->{weight} -= $weight{$v};
+	$self->{weight} -= $DPB::Heuristics::weight{$v};
 	$self->SUPER::remove($v);
 }
 
@@ -63,7 +63,7 @@ sub add
 {
 	my ($self, $v) = @_;
 	$self->SUPER::add($v);
-	$v->{weight} = $weight{$v};
+	$v->{weight} = $DPB::Heuristics::weight{$v};
 	$self->{bins}[find_bin($v->{weight})]->add($v);
 }
 

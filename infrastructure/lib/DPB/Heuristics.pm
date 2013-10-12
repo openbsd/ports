@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.28 2013/10/12 13:53:35 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.29 2013/10/12 14:11:23 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -25,7 +25,8 @@ package DPB::Heuristics;
 # for now, we don't create a separate object, we assume everything here is
 # "global"
 
-my (%weight, %bad_weight, %wrkdir, %needed_by, %pkgname);
+my (%bad_weight, %wrkdir, %needed_by, %pkgname);
+our %weight;
 
 sub new
 {
