@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.107 2013/06/17 15:54:56 renato Exp $
+# $OpenBSD: OpenBSD,v 1.108 2013/10/12 21:50:01 juanfra Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -29,6 +29,7 @@
 38.66		-121.5		"jeremy"	# Jeremy Evans
 38.9693		-77.3863	"jason"		# Jason L. Wright
 39.179910	-77.058420	"merdely"	# Michael Erdely
+39.47488	-6.371598	"juanfra"	# Juan Francisco Cantero Hurtado
 39.5565		-77.0300	"jdixon"	# Jason Dixon
 39.66138	-104.98088	"guenther"	# Philip Guenther
 40.033779	-105.250051	"millert"	# Todd C. Miller
