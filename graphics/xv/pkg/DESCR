@@ -7,6 +7,6 @@ terminals running the X Window System, Version 11.
 Note that this program is shareware except for personal use only.
 Please read the documentation in the directory
 
-  ${LOCALBASE}/share/doc/xv
+  ${PREFIX}/share/doc/xv
 
 for proper usage.
