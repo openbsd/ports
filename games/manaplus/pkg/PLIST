@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2013/09/14 19:47:09 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.14 2013/10/12 19:15:01 bcallah Exp $
 @conflict tmw-*
 @conflict tmw-music-*
 @pkgpath games/tmw
@@ -101,10 +101,12 @@ share/manaplus/data/graphics/gui/ministatus.xml
 share/manaplus/data/graphics/gui/mouse.png
 share/manaplus/data/graphics/gui/npc.xml
 share/manaplus/data/graphics/gui/ok.xml
+share/manaplus/data/graphics/gui/onlinebrowserbox.xml
 share/manaplus/data/graphics/gui/outfits.xml
 share/manaplus/data/graphics/gui/playerbox.xml
 share/manaplus/data/graphics/gui/playerboxselected.xml
 share/manaplus/data/graphics/gui/popup.xml
+share/manaplus/data/graphics/gui/popupbrowserbox.xml
 share/manaplus/data/graphics/gui/progress-indicator.png
 share/manaplus/data/graphics/gui/progressbar.xml
 share/manaplus/data/graphics/gui/quests.xml
@@ -165,6 +167,7 @@ share/manaplus/data/help/
 share/manaplus/data/help/about.txt
 share/manaplus/data/help/chatcommands.txt
 share/manaplus/data/help/commands.txt
+share/manaplus/data/help/download.txt
 share/manaplus/data/help/footer.txt
 share/manaplus/data/help/header.txt
 share/manaplus/data/help/index.txt
@@ -297,6 +300,10 @@ share/manaplus/data/themes/jewelry/equipment.xml
 share/manaplus/data/themes/jewelry/equipment_background.xml
 share/manaplus/data/themes/jewelry/equipmentbox.png
 share/manaplus/data/themes/jewelry/extendedlistbox.xml
+share/manaplus/data/themes/jewelry/extendedlistbox_high.xml
+share/manaplus/data/themes/jewelry/extendedlistbox_medium.xml
+share/manaplus/data/themes/jewelry/extendedlistbox_xhigh.xml
+share/manaplus/data/themes/jewelry/extendedlistbox_xxhigh.xml
 share/manaplus/data/themes/jewelry/help.xml
 share/manaplus/data/themes/jewelry/incomplete_icon.xml
 share/manaplus/data/themes/jewelry/info.xml
@@ -311,12 +318,17 @@ share/manaplus/data/themes/jewelry/keyboard_icon_medium.xml
 share/manaplus/data/themes/jewelry/keyboard_icon_xhigh.xml
 share/manaplus/data/themes/jewelry/keyboard_icon_xxhigh.xml
 share/manaplus/data/themes/jewelry/listbox.xml
+share/manaplus/data/themes/jewelry/listbox_high.xml
+share/manaplus/data/themes/jewelry/listbox_medium.xml
+share/manaplus/data/themes/jewelry/listbox_xhigh.xml
+share/manaplus/data/themes/jewelry/listbox_xxhigh.xml
 share/manaplus/data/themes/jewelry/login.xml
 share/manaplus/data/themes/jewelry/map.xml
 share/manaplus/data/themes/jewelry/ministatus.xml
 share/manaplus/data/themes/jewelry/mouse.png
 share/manaplus/data/themes/jewelry/npc.xml
 share/manaplus/data/themes/jewelry/ok.xml
+share/manaplus/data/themes/jewelry/onlinebrowserbox.xml
 share/manaplus/data/themes/jewelry/outfits.xml
 share/manaplus/data/themes/jewelry/playerbox.xml
 share/manaplus/data/themes/jewelry/playerboxselected.xml
@@ -324,6 +336,10 @@ share/manaplus/data/themes/jewelry/popup.xml
 share/manaplus/data/themes/jewelry/popup_high.xml
 share/manaplus/data/themes/jewelry/popup_xhigh.xml
 share/manaplus/data/themes/jewelry/popup_xxhigh.xml
+share/manaplus/data/themes/jewelry/popupbrowserbox.xml
+share/manaplus/data/themes/jewelry/popupbrowserbox_high.xml
+share/manaplus/data/themes/jewelry/popupbrowserbox_xhigh.xml
+share/manaplus/data/themes/jewelry/popupbrowserbox_xxhigh.xml
 share/manaplus/data/themes/jewelry/popuplist.xml
 share/manaplus/data/themes/jewelry/popupmenu.xml
 share/manaplus/data/themes/jewelry/popupmenu_high.xml
@@ -369,6 +385,18 @@ share/manaplus/data/themes/mana/mouse.png
 share/manaplus/data/themes/mana/npc.xml
 share/manaplus/data/themes/mana/quests.xml
 share/manaplus/data/themes/mana/social.xml
+share/manaplus/data/themes/mana/target-cursor-in-range-l.png
+share/manaplus/data/themes/mana/target-cursor-in-range-l.xml
+share/manaplus/data/themes/mana/target-cursor-in-range-m.png
+share/manaplus/data/themes/mana/target-cursor-in-range-m.xml
+share/manaplus/data/themes/mana/target-cursor-in-range-s.png
+share/manaplus/data/themes/mana/target-cursor-in-range-s.xml
+share/manaplus/data/themes/mana/target-cursor-normal-l.png
+share/manaplus/data/themes/mana/target-cursor-normal-l.xml
+share/manaplus/data/themes/mana/target-cursor-normal-m.png
+share/manaplus/data/themes/mana/target-cursor-normal-m.xml
+share/manaplus/data/themes/mana/target-cursor-normal-s.png
+share/manaplus/data/themes/mana/target-cursor-normal-s.xml
 share/manaplus/data/themes/pink/
 share/manaplus/data/themes/pink/bubble.png
 share/manaplus/data/themes/pink/buy.xml
