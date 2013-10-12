@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.27 2013/10/10 07:26:40 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.28 2013/10/12 13:53:35 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -231,6 +231,7 @@ sub new_queue
 {
 	my $self = shift;
 	if (DPB::HostProperties->has_sf) {
+		require DPB::Heuristics::SpeedFactor;
 		return DPB::Heuristics::Queue::Part->new($self);
 	} else {
 		return DPB::Heuristics::Queue->new($self);
@@ -405,22 +406,6 @@ sub sorted_values
 	return [sort {$self->{h}->compare($a, $b)} values %{$self->{o}}];
 }
 
-package DPB::Heuristics::Bin::Heavy;
-our @ISA = qw(DPB::Heuristics::Bin);
-sub add
-{
-	my ($self, $v) = @_;
-	$self->SUPER::add($v);
-	$self->{weight} += $weight{$v};
-}
-
-sub remove
-{
-	my ($self, $v) = @_;
-	$self->{weight} -= $weight{$v};
-	$self->SUPER::remove($v);
-}
-
 package DPB::Heuristics::Queue;
 our @ISA = qw(DPB::Heuristics::Bin);
 
@@ -437,105 +422,6 @@ sub find_sorter
 {
 	my ($self, $core) = @_;
 	return DPB::Heuristics::SimpleSorter->new($self);
-}
-
-package DPB::Heuristics::Queue::Part;
-our @ISA = qw(DPB::Heuristics::Queue);
-
-# 20 bins, binary....
-sub find_bin
-{
-	my $w = shift;
-	return 10 if !defined $w;
-	if ($w > 65536) {
-		if ($w > 1048576) { 9 } else { 8 }
-	} elsif ($w > 256) {
-		if ($w > 4096) {
-			if ($w > 16384) { 7 } else { 6 }
-		} elsif ($w > 1024) { 5 } else { 4 }
-	} elsif ($w > 16) {
-		if ($w > 64) { 3 } else { 2 }
-	} elsif ($w > 4) { 1 } else { 0 }
-}
-
-sub add
-{
-	my ($self, $v) = @_;
-	$self->SUPER::add($v);
-	$v->{weight} = $weight{$v};
-	$self->{bins}[find_bin($v->{weight})]->add($v);
-}
-
-sub remove
-{
-	my ($self, $v) = @_;
-	$self->SUPER::remove($v);
-	$self->{bins}[find_bin($v->{weight})]->remove($v);
-}
-
-sub find_sorter
-{
-	my ($self, $core) = @_;
-	my $all = DPB::Core->all_sf;
-	if ($core->sf > $all->[-1] - 1) {
-		return $self->SUPER::find_sorter($core);
-	} else {
-		return DPB::Heuristics::Sorter->new($self->bin_part($core->sf,
-		    $all));
-	}
-}
-
-# simpler partitioning
-sub bin_part
-{
-	my ($self, $wanted, $all_sf) = @_;
-
-	# note that all_sf is sorted
-
-	# compute totals
-	my $sum_sf = 0;
-	for my $i (@$all_sf) {
-		$sum_sf += $i;
-	}
-	my @bins = @{$self->{bins}};
-	my $sum_weight = 0.0;
-	for my $bin (@bins) {
-		$sum_weight += $bin->weight;
-	}
-
-	# setup for the main loop
-	my $partial_weight = 0.0;
-	my $partial_sf = 0.0;
-	my $result = [];
-
-	# go through speed factors until we've gone thru the one we want
-	while (my $sf = shift @$all_sf) {
-		# passed it -> give result
-		last if $sf > $wanted+1;
-
-		# compute threshold for total weight
-		$partial_sf += $sf;
-		my $thr = $sum_weight * $partial_sf / $sum_sf;
-		# grab weights until we reach the desired amount
-		while (my $bin = shift @bins) {
-			$partial_weight += $bin->weight;
-			push(@$result, $bin);
-			last if $partial_weight > $thr;
-		}
-	}
-	return $result;
-}
-
-sub new
-{
-	my ($class, $h) = @_;
-	my $o = $class->SUPER::new($h);
-	my $bins = $o->{bins} = [];
-	for my $i (0 .. 9) {
-		push(@$bins, DPB::Heuristics::Bin::Heavy->new($h));
-	}
-	push(@$bins, DPB::Heuristics::Bin->new($h));
-	return $o;
 }
 
 package DPB::Heuristics::random;
