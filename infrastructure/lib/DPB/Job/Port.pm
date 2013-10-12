@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.135 2013/10/11 11:51:04 espie Exp $
+# $OpenBSD: Port.pm,v 1.136 2013/10/12 13:52:03 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -27,13 +27,17 @@ sub want
 	# job is normally attached to core, unless it's not attached,
 	# and then we pass it as an extra parameter
 	$job //= $core->job;
-	return 1 if $job->{v}{forcejunk};
+	return 2 if $job->{v}{forcejunk};
 	# XXX let's wipe the slates at the start of the first tagged
 	# job, as we don't know the exact state of the host.
-	return 1 if $job->{v}{info}->has_property('tag') &&
+	return 2 if $job->{v}{info}->has_property('tag') &&
 	    !defined $core->prop->{last_junk};
 	return 0 unless defined $core->prop->{junk};
-	return $core->prop->{depends_count} >= $core->prop->{junk};
+	if ($core->prop->{depends_count} >= $core->prop->{junk}) {
+		return 1;
+	} else {
+		return 0;
+	}
 }
 
 package DPB::Task::BasePort;
@@ -885,13 +889,20 @@ sub add_normal_tasks
 	my $c = $self->need_depends($core);
 	$hostprop->{ports_count}++;
 	$hostprop->{depends_count} += $c;
+	my $junk = DPB::Junk->want($core, $self);
+	if ($junk == 2) {
+		push(@todo, 'junk');
+		my $fh = $self->{builder}->logger->open("junk");
+		print $fh "$$@", CORE::time(), ": ", $core->hostname,
+		    ": forced junking -> $self->{path}\n";
+	}
 	if ($c) {
 		$hostprop->{junk_count}++;
 		push(@todo, qw(depends show-prepare-results));
 	}
 	# gc stuff we will no longer need
 	delete $self->{v}{info}{solved};
-	if (DPB::Junk->want($core, $self)) {
+	if ($junk == 1) {
 		my $fh = $self->{builder}->logger->open("junk");
 		print $fh "$$@", CORE::time(), ": ", $core->hostname,
 		    ": depends=$hostprop->{depends_count} ",
