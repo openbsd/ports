@@ -1,4 +1,4 @@
-.\"	$OpenBSD: check-conflicts.1,v 1.4 2013/08/24 16:06:12 zhuk Exp $
+.\"	$OpenBSD: check-conflicts.1,v 1.5 2013/10/12 10:19:20 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: August 24 2013 $
+.Dd $Mdocdate: October 12 2013 $
 .Dt CHECK-CONFLICTS 1
 .Os
 .Sh NAME
@@ -22,7 +22,7 @@
 .Nd verify conflicts between packages
 .Sh SYNOPSIS
 .Nm check-conflicts
-.Op Fl v
+.Op Fl ev
 .Op Fl d Ar plist_dir
 .Op Fl p ports_dir
 .Op Ar pkgname ...
@@ -63,6 +63,10 @@ package itself, or from external sources.
 .Pp
 Options are as follows:
 .Bl -tag -width packing-list
+.It Fl e
+Check for extra logical conflicts, by adding supplementary
+formatted/unformatted manpages, as same name manpages under the
+same base directory will shadow one another.
 .It Fl v
 Be verbose
 .It Fl d Ar plist-dir
