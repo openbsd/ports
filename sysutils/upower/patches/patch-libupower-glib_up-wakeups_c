@@ -1,0 +1,18 @@
+$OpenBSD: patch-libupower-glib_up-wakeups_c,v 1.1 2013/10/12 08:10:13 ajacoutot Exp $
+
+From d43ab28a29420a61d031908abbf1d13b2cb35796 Mon Sep 17 00:00:00 2001
+From: Bastien Nocera <hadess@hadess.net>
+Date: Thu, 10 Oct 2013 16:59:08 +0000
+Subject: lib: Fix a small memory leak
+
+--- libupower-glib/up-wakeups.c.orig	Thu Jun 14 12:49:37 2012
++++ libupower-glib/up-wakeups.c	Fri Oct 11 15:49:11 2013
+@@ -377,6 +377,8 @@ up_wakeups_finalize (GObject *object)
+ 		g_object_unref (wakeups->priv->proxy);
+ 	if (wakeups->priv->prop_proxy != NULL)
+ 		g_object_unref (wakeups->priv->prop_proxy);
++	if (wakeups->priv->bus)
++		dbus_g_connection_unref (wakeups->priv->bus);
+ 
+ 	G_OBJECT_CLASS (up_wakeups_parent_class)->finalize (object);
+ }

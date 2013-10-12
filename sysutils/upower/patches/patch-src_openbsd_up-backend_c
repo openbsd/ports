@@ -1,14 +1,12 @@
-$OpenBSD: patch-src_openbsd_up-backend_c,v 1.11 2013/10/03 13:42:17 landry Exp $
+$OpenBSD: patch-src_openbsd_up-backend_c,v 1.12 2013/10/12 08:10:13 ajacoutot Exp $
 
 - Two OpenBSD fixes: recognize fully charged or absent battery
   https://bugs.freedesktop.org/show_bug.cgi?id=70064
-- Remove unneeded g_thread_init():
-  https://bugs.freedesktop.org/show_bug.cgi?id=62795
 - Use g_thread_try_new() instead of deprecated g_thread_create()
   https://bugs.freedesktop.org/show_bug.cgi?id=70071
 
---- src/openbsd/up-backend.c.orig	Thu Jan  3 21:47:08 2013
-+++ src/openbsd/up-backend.c	Thu Oct  3 13:30:46 2013
+--- src/openbsd/up-backend.c.orig	Fri Sep 20 18:47:11 2013
++++ src/openbsd/up-backend.c	Fri Oct 11 15:48:03 2013
 @@ -305,7 +305,7 @@ static gboolean
  up_backend_update_battery_state(UpDevice* device)
  {
@@ -77,11 +75,9 @@ $OpenBSD: patch-src_openbsd_up-backend_c,v 1.11 2013/10/03 13:42:17 landry Exp $
  			(void*) NULL);
  		if(up_native_get_sensordev("acpibat0", &sdev))
  			up_backend_update_acpibat_state(device, sdev);
-@@ -556,9 +590,8 @@ up_backend_init (UpBackend *backend)
- 		device_class->get_low_battery = up_apm_device_get_low_battery;
+@@ -557,7 +591,7 @@ up_backend_init (UpBackend *backend)
  		device_class->get_online = up_apm_device_get_online;
  		device_class->refresh = up_apm_device_refresh;
--		g_thread_init (NULL);
  		/* creates thread */
 -		if((backend->priv->apm_thread = (GThread*) g_thread_create((GThreadFunc)up_backend_apm_event_thread, (void*) backend, FALSE, &err) == NULL))
 +		if((backend->priv->apm_thread = (GThread*) g_thread_try_new("apm-poller",(GThreadFunc)up_backend_apm_event_thread, (void*) backend, &err) == NULL))
