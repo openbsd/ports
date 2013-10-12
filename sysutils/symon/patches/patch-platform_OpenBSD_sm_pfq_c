@@ -1,0 +1,12 @@
+$OpenBSD: patch-platform_OpenBSD_sm_pfq_c,v 1.1 2013/10/12 13:09:30 sthen Exp $
+--- platform/OpenBSD/sm_pfq.c.orig	Sat Oct 12 14:04:36 2013
++++ platform/OpenBSD/sm_pfq.c	Sat Oct 12 14:05:25 2013
+@@ -131,7 +131,7 @@ void
+ gets_pfq()
+ {
+     struct pfioc_altq qs;
+-    struct pfioc_qstats stats;
++    struct pfioc_altqstats stats;
+     union class_stats q;
+     unsigned int nqs;
+     unsigned int i;

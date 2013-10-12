@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.57 2013/03/11 19:51:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2013/10/12 13:09:30 sthen Exp $
 
 COMMENT-main=		active monitoring tool
 
 V=			2.86
-REVISION=		0
+REVISION=		1
 DISTNAME=		symon-$V
 WRKDIST=		${WRKDIR}/symon
 PKGNAME-main=		${DISTNAME}
@@ -34,7 +34,6 @@ LIB_DEPENDS-mon=
 # gatherer only package
 COMMENT-mux=		symon data gatherer
 
-USE_GROFF =		Yes
 NO_TEST=		Yes
 
 MAKE_ENV=		LIBS="-L${X11BASE}/lib" MANDIR="man"
