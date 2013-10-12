@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/09/20 20:20:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2013/10/12 10:44:23 espie Exp $
 
 BROKEN-hppa =	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -27,6 +27,7 @@ LIB_DEPENDS-fpm=	${LIB_DEPENDS-main}
 WANTLIB-fpm=		${WANTLIB-main}
 RUN_DEPENDS-fpm=	${RUN_DEPENDS-main} \
 			php-${V}:lang/php/${PV}
+REVISION-fpm=		0
 
 # pcntl
 PKGNAME-pcntl?=		php-pcntl-${V}
