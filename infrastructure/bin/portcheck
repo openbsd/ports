@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.37 2013/10/13 16:47:18 zhuk Exp $
+# $OpenBSD: portcheck,v 1.38 2013/10/13 16:54:24 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -714,8 +714,6 @@ sub_checks() {
 #
 #   * Each .py should have corresponding .pyc files, to avoid
 #     generation of the latter at run-time.
-#
-#   * Each .pyc and .pyo should have corresponding .py file.
 check_plist() {
 	$debugging && echo "CALLED: check_plist($*)" >&2
 
@@ -989,8 +987,9 @@ check_plist() {
 	if ((${#py_files[@]} > 0)); then for py in "${py_files[@]}"; do
 		while [[ $ic -lt ${#pyc_files[@]} ]]; do
 			[[ ${pyc_files[$ic]} < "$py"c ]] || break
-			err "${portref}compiled Python module without" \
-			    "source, expected: ${pyc_files[$ic]%c}"
+			# allowed behaviour
+			#err "${portref}compiled Python module without" \
+			#    "source, expected: ${pyc_files[$ic]%c}"
 			((++ic))
 		done
 		if [[ $ic -lt ${#pyc_files[@]} &&
@@ -998,34 +997,40 @@ check_plist() {
 			((++ic))
 		else
 			err "${portref}Python module without" \
-			    "compiled version: $py"
+			    "compiled version, consider using" \
+			    "\${MODPY_LIBDIR}/compileall.py: $py"
 		fi
 
 		while [[ $io -lt ${#pyo_files[@]} ]]; do
 			[[ ${pyo_files[$io]} < "$py"o ]] || break
-			err "${portref}optimized Python module without" \
-			    "source, expected: ${pyo_files[$io]%o}"
+			# allowed behaviour
+			#err "${portref}optimized Python module without" \
+			#    "source, expected: ${pyo_files[$io]%o}"
 			((++io))
 		done
 		if [[ $io -lt ${#pyo_files[@]} &&
 		      ${pyo_files[$io]} == "$py"o ]]; then
 			((++io))
-		# XXX too much noise
+		# too much noise, maybe enable in the future
 		#else
 		#	err "${portref}Python module without" \
 		#	    "optimized version: $py"
 		fi
 	done; fi
-	while (($ic < ${#pyc_files[@]})); do
-		err "${portref}compiled Python module without source," \
-		    "expected: ${pyc_files[$ic]%c}"
-		((++ic))
-	done
-	while (($io < ${#pyo_files[@]})); do
-		err "${portref}optimized Python module without source," \
-		    "expected: ${pyo_files[$io]%o}"
-		((++io))
-	done
+
+	# allowed behaviour
+	#while (($ic < ${#pyc_files[@]})); do
+	#	err "${portref}compiled Python module without source," \
+	#	    "expected: ${pyc_files[$ic]%c}"
+	#	((++ic))
+	#done
+
+	# allowed behaviour
+	#while (($io < ${#pyo_files[@]})); do
+	#	err "${portref}optimized Python module without source," \
+	#	    "expected: ${pyo_files[$io]%o}"
+	#	((++io))
+	#done
 }
 
 # Checks made:
