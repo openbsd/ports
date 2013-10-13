@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.97 2013/10/13 18:31:50 espie Exp $
+# $OpenBSD: Engine.pm,v 1.98 2013/10/13 19:59:06 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -298,7 +298,7 @@ sub adjust_built
 			if ($v->{wantinstall}) {
 				$self->{buildable}->will_install($v);
 			}
-			$self->log_no_ts('I', $v);
+			$self->log_no_ts('I', $v,' # '.$v->fullpkgname);
 			$changes++;
 		} elsif ($self->should_ignore($v, 'RDEPENDS')) {
 			delete $self->{built}{$v};
