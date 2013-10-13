@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Tty.pm,v 1.2 2013/10/06 13:33:38 espie Exp $
+# $OpenBSD: Tty.pm,v 1.3 2013/10/13 18:32:59 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -53,14 +53,8 @@ sub new
 	my $class = shift;
 	my $state = shift;
 	my $self = $class->make_singleton($state, @_);
-	$self->create_terminal;
+	$self->create_terminal($state);
 	$self->set_sig_handlers;
-	if ($state->{subst}->value("NO_CURSOR")) {
-		$self->{invisible} = 
-		    $self->{terminal}->Tputs("vi", 1);
-		$self->{visible} = 
-		    $self->{terminal}->Tputs("ve", 1);
-	}
 	# no cursor, to avoid flickering
 	$self->set_cursor;
 	return $self;

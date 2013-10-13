@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: MiniCurses.pm,v 1.2 2013/10/06 13:33:33 espie Exp $
+# $OpenBSD: MiniCurses.pm,v 1.3 2013/10/13 18:32:58 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -19,6 +19,15 @@ use warnings;
 
 package DPB::MiniCurses;
 use Term::Cap;
+use constant { 
+	BLACK => 0,
+	RED => 1,
+	GREEN => 2,
+	YELLOW => 3,
+	BLUE => 4,
+	PURPLE => 5,
+	TURQUOISE => 6,
+	WHITE => 7 };
 
 my $width;
 my $wsz_format = 'SSSS';
@@ -56,7 +65,7 @@ sub refresh
 
 sub create_terminal
 {
-	my $self = shift;
+	my ($self, $o) = @_;
 	my $oldfh = select(STDOUT);
 	$| = 1;
 	# XXX go back to totally non-buffered raw shit
@@ -73,6 +82,16 @@ sub create_terminal
 	$self->{down} = $self->{terminal}->Tputs("do", 1);
 	$self->{glitch} = $self->{terminal}->Tputs("xn", 1);
 	$self->{cleareol} = $self->{terminal}->Tputs("ce", 1);
+	if ($o->{color}) {
+		$self->{bg} = $self->{terminal}->Tputs('AB', 1);
+		$self->{fg} = $self->{terminal}->Tputs('AF', 1);
+	}
+	if ($o->{nocursor}) {
+		$self->{invisible} = 
+		    $self->{terminal}->Tputs("vi", 1);
+		$self->{visible} = 
+		    $self->{terminal}->Tputs("ve", 1);
+	}
 	if ($self->{home}) {
 		$self->{write} = "go_write_home";
 	} else {
@@ -107,23 +126,69 @@ sub cut_lines
 	return @lines;
 }
 
+sub color
+{
+	my ($self, $expr, $color) = @_;
+	return sprintf($self->{fg}, $color).$expr.sprintf($self->{fg}, WHITE);
+}
+
+sub bg
+{
+	my ($self, $expr, $color) = @_;
+	return sprintf($self->{bg}, $color).$expr.sprintf($self->{bg}, BLACK);
+}
+
+sub mogrify
+{
+	my ($self, $line) = @_;
+	$line =~ s/(\[.*?\])/$self->color($1, GREEN)/ge;
+	$line =~ s/(\(.*?\))/$self->color($1, YELLOW)/ge;
+	$line =~ s/(\d+\%)/$self->color($1, PURPLE)/ge;
+	if ($line =~ m/frozen|waiting-for-lock/) {
+		if ($line =~ m/for\s+\d+\s*(mn|HOURS)/) {
+			$line = $self->bg($self->color($line, GREEN), RED);
+		} else {
+			$line = $self->color($line, RED);
+		}
+	} elsif ($line =~ m/^\</) {
+		$line = $self->color($line, TURQUOISE);
+	} elsif ($line =~ m/^(LISTING|UPDATING)/) {
+		$line = $self->bg($self->color($line, BLUE), RED);
+	} elsif ($line =~ m/^I=/) {
+		$line = $self->bg($self->color($line, YELLOW), BLUE);
+	} elsif ($line =~ m/^E=/) {
+		$line = $self->color($line, RED);
+	} elsif ($line =~ m/^Hosts:/) {
+		$line =~ s/(\w+\-)/$self->color($1, RED)/ge;
+	}
+	return $line;
+}
+
 sub clamped
 {
 	my ($self, $line) = @_;
+	my $l2 = $line;
+	if (defined $self->{fg}) {
+		$l2 = $self->mogrify($l2);
+	}
 	if (!$self->{glitch} && length $line == $self->{width}) {
-		return $line;
+		return $l2;
 	} else {
-		return $line."\n";
+		return $l2."\n";
 	}
 }
 
 sub clear_clamped
 {
 	my ($self, $line) = @_;
+	my $l2 = $line;
+	if (defined $self->{fg}) {
+		$l2 = $self->mogrify($l2);
+	}
 	if (!$self->{glitch} && length $line == $self->{width}) {
-		return $line;
+		return $l2;
 	} else {
-		return $self->{cleareol}.$line."\n";
+		return $self->{cleareol}.$l2."\n";
 	}
 }
 
