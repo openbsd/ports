@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.101 2013/10/11 10:26:44 espie Exp $
+# $OpenBSD: dpb,v 1.102 2013/10/13 18:31:50 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -112,7 +112,6 @@ use DPB::Engine;
 use DPB::PortBuilder;
 use DPB::Reporter;
 use OpenBSD::Error;
-use DPB::Locks;
 use DPB::Job;
 use DPB::Grabber;
 
@@ -125,12 +124,22 @@ sub report
 		"\n";
 }
 
+sub affinityclass
+{
+	if (DPB::Core::Init->hostcount > 1 || 
+	    DPB::HostProperties->has_mem) {
+		require DPB::Affinity;
+		return "DPB::Affinity";
+	} else {
+		require DPB::AffinityStub;
+		return "DPB::AffinityStub";
+	}
+}
+
 my $subdirlist = {};
 
 my $state = DPB::State->new('dpb');
 $state->handle_options;
-$state->{locker} = DPB::Locks->new($state, $state->{lockdir});
-DPB::Core::Init->init_cores($state);
 
 $state->{all} = 1;
 
@@ -170,11 +179,13 @@ if ($state->opt('a')) {
 	$state->{all} = 1;
 }
 
+DPB::Core->reap;
 $state->handle_build_files;
 
 $state->{builder} = DPB::PortBuilder->new($state);
 
-$state->{affinity} = DPB::Affinity->new($state, join("/", $state->logdir, "affinity"));
+$state->{affinity} = affinityclass()->new($state, join("/", $state->logdir, "affinity"));
+
 $state->{engine} = DPB::Engine->new($state);
 $reporter = DPB::Reporter->new($state, "main", "DPB::Core", $state->engine);
 while (!DPB::Core->avail) {

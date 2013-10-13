@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.2 2013/10/06 13:33:34 espie Exp $
+# $OpenBSD: State.pm,v 1.3 2013/10/13 18:31:51 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -26,11 +26,12 @@ use OpenBSD::Paths;
 use DPB::Heuristics;
 use DPB::PkgPath;
 use DPB::Logger;
-use DPB::Affinity;
 use DPB::Config;
 use File::Path;
 use File::Basename;
 use DPB::Core;
+use DPB::Core::Init;
+use DPB::Locks;
 
 sub define_present
 {
@@ -135,13 +136,14 @@ sub handle_options
 {
 	my $state = shift;
 	DPB::Config->parse_command_line($state);
-	$state->parse_size_file;
-
 	$state->{logger} = DPB::Logger->new($state->logdir, $state->opt('c'));
+	$state->{locker} = DPB::Locks->new($state, $state->{lockdir});
+	DPB::Core::Init->init_cores($state);
+	DPB::Core->reap;
+	$state->sizer->parse_size_file;
 	DPB::Limiter->setup($state->logger);
-	$state->heuristics->set_logger($state->logger);
-	
 	$state->{concurrent} = $state->{logger}->open("concurrent");
+	DPB::Core->reap;
 }
 
 sub SUPER_handle_options
@@ -160,6 +162,10 @@ sub heuristics
 	return shift->{heuristics};
 }
 
+sub sizer
+{
+	return shift->{sizer};
+}
 sub locker
 {
 	return shift->{locker};
@@ -309,49 +315,6 @@ sub handle_build_files
 	$state->rewrite_build_info($state->{permanent_log});
 	print "Done\n";
 	$state->heuristics->finished_parsing;
-}
-
-sub parse_size_file
-{
-	my $state = shift;
-	return if $state->{fetch_only};
-	open my $fh, '<', $state->opt('S') // $state->{size_log}  or return;
-
-	print "Reading size stats...";
-	File::Path::mkpath(File::Basename::dirname($state->{size_log}));
-
-	my $rewrite = {};
-	my $_;
-	while (<$fh>) {
-		chomp;
-		my $pkgname;
-		my ($pkgpath, $sz, $sz2) = split(/\s+/, $_);
-		my $i = " $sz";
-		if ($pkgpath =~ m/^(.*)\((.*)\)$/) {
-			($pkgpath, $pkgname) = ($1, $2);
-			if ($state->opt('S')) {
-				undef $pkgname;
-			} else {
-				$i ="($pkgname) $sz";
-			}
-		}
-		if (defined $sz2) {
-			$sz += $sz2;
-			$i .=" $sz2";
-		}
-		$rewrite->{$pkgpath} = $i;
-		my $o = DPB::PkgPath->new($pkgpath);
-		DPB::Heuristics->add_size_info($o, $pkgname, $sz);
-	}
-	close $fh;
-	print "zapping old stuff...";
-	open $fh, '>', $state->{size_log}.'.part' or return;
-	for my $p (sort keys %$rewrite) {
-		print $fh "$p$rewrite->{$p}\n";
-	}
-	close $fh;
-	print "Done\n";
-	rename $state->{size_log}.'.part', $state->{size_log};
 }
 
 1;

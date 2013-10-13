@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.29 2013/10/12 14:11:23 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.30 2013/10/13 18:31:50 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -25,7 +25,7 @@ package DPB::Heuristics;
 # for now, we don't create a separate object, we assume everything here is
 # "global"
 
-my (%bad_weight, %wrkdir, %needed_by, %pkgname);
+my (%bad_weight, %needed_by);
 our %weight;
 
 sub new
@@ -38,12 +38,6 @@ sub random
 {
 	my $self = shift;
 	bless $self, "DPB::Heuristics::random";
-}
-
-sub set_logger
-{
-	my ($self, $logger) = @_;
-	$self->{logger} = $logger;
 }
 
 # we set the "unknown" weight as max if we parsed a file.
@@ -79,66 +73,6 @@ sub equates
 	}
 }
 
-sub add_size_info
-{
-	my ($self, $path, $pkgname, $sz) = @_;
-	$wrkdir{$path->pkgpath_and_flavors} = $sz;
-	if (defined $pkgname) {
-		$pkgname{$path->fullpkgpath} = $pkgname;
-	}
-}
-
-sub match_pkgname
-{
-	my ($self, $v) = @_;
-	my $p = $pkgname{$v->fullpkgpath};
-	if (!defined $p) {
-		return 0;
-	}
-	if ($p eq $v->fullpkgname) {
-		return 1;
-	}
-	return 0;
-}
-
-my $used_memory = {};
-my $used_per_host = {};
-
-sub build_in_memory
-{
-	my ($self, $core, $v) = @_;
-	my $t = $core->memory;
-	return 0 if !defined $t;
-
-	# first match previous affinity
-	if ($v->{affinity}) {
-		return $v->{mem_affinity};
-	}
-
-	my $p = $v->pkgpath_and_flavors;
-
-	# we build in memory if we know this port and it's light enough
-	if (defined $wrkdir{$p}) {
-		my $hostname = $core->hostname;
-		$used_per_host->{$hostname} //= 0;
-		if ($used_per_host->{$hostname} + $wrkdir{$p} <= $t) {
-			$used_per_host->{$hostname} += $wrkdir{$p};
-			$used_memory->{$p} = $hostname;
-			return $wrkdir{$p};
-		}
-	}
-	return 0;
-}
-
-sub finish_special
-{
-	my ($self, $v) = @_;
-	my $p = $v->pkgpath_and_flavors;
-	if (defined $used_memory->{$p}) {
-		my $hostname = $used_memory->{$p};
-		$used_per_host->{$hostname} -= $wrkdir{$p};
-	}
-}
 
 sub set_weight
 {

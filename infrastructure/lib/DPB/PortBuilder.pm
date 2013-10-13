@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.55 2013/10/07 17:50:29 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.56 2013/10/13 18:31:50 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -39,6 +39,7 @@ sub new
 	    fetch => $state->opt('f'),
 	    wantsize => $state->{wantsize},
 	    fullrepo => $state->fullrepo,
+	    sizer => $state->sizer,
 	    heuristics => $state->heuristics}, $class;
 	if ($state->opt('u') || $state->opt('U')) {
 		$self->{update} = 1;
@@ -61,7 +62,7 @@ sub want_size
 		return 1;
 	}
 	# do we already have this stats ? don't run it every time
-	if ($self->{heuristics}->match_pkgname($v)) {
+	if ($self->{sizer}->match_pkgname($v)) {
 		return rand(10) < 1;
 	} else {
 		return 1;
@@ -199,7 +200,7 @@ sub build
 	my ($self, $v, $core, $lock, $final_sub) = @_;
 	my $start = time();
 	my $log = $self->logger->make_logs($v);
-	my $memsize = $self->{heuristics}->build_in_memory($core, $v);
+	my $memsize = $self->{sizer}->build_in_memory($core, $v);
 
 	open my $fh, ">>", $log or die "can't open $log: $!";
 	if ($memsize) {

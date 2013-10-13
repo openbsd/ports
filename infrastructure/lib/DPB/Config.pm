@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.16 2013/10/13 10:34:55 espie Exp $
+# $OpenBSD: Config.pm,v 1.17 2013/10/13 18:31:50 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -115,6 +115,19 @@ sub parse_command_line
 		$state->{wantsize} = $state->{subst}->value('WANTSIZE');
 	} elsif (DPB::HostProperties->has_mem) {
 		$state->{wantsize} = 1;
+	}
+	if ($state->define_present('COLOR')) {
+		$state->{color} = $state->{subst}->value('COLOR');
+	}
+	if ($state->define_present('NO_CURSOR')) {
+		$state->{nocursor} = $state->{subst}->value('NO_CURSOR');
+	}
+	if (DPB::HostProperties->has_mem || $state->{wantsize}) {
+		require DPB::Heuristics::Size;
+		$state->{sizer} = DPB::Heuristics::Size->new($state);
+	} else {
+		require DPB::Heuristics::Nosize;
+		$state->{sizer} = DPB::Heuristics::Nosize->new($state);
 	}
 	if ($state->define_present('FETCH_JOBS') && !defined $state->{opt}{f}) {
 		$state->{opt}{f} = $state->{subst}->value('FETCH_JOBS');

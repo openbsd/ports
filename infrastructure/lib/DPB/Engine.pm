@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.96 2013/10/09 06:20:56 espie Exp $
+# $OpenBSD: Engine.pm,v 1.97 2013/10/13 18:31:50 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -47,6 +47,7 @@ sub new
 	    state => $state,
 	    installable => {},
 	    heuristics => $state->heuristics,
+	    sizer => $state->sizer,
 	    locker => $state->locker,
 	    logger => $state->logger,
 	    affinity => $state->{affinity},
@@ -417,7 +418,7 @@ sub requeue
 {
 	my ($self, $v) = @_;
 	$self->{buildable}->add($v);
-	$self->{heuristics}->finish_special($v);
+	$self->{sizer}->finished($v);
 }
 
 sub requeue_dist

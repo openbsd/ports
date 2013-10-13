@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Build.pm,v 1.6 2013/10/07 20:23:13 espie Exp $
+# $OpenBSD: Build.pm,v 1.7 2013/10/13 18:31:51 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -265,7 +265,20 @@ sub end_build
 {
 	my ($self, $v) = @_;
 	$self->{engine}{affinity}->finished($v);
-	$self->{engine}{heuristics}->finish_special($v);
+	$self->{engine}{sizer}->finished($v);
+}
+
+sub sorted
+{
+	my ($self, $core) = @_;
+	return $self->{engine}{affinity}->sorted($self->{queue}, $core);
+}
+
+sub add
+{
+	my ($self, $v) = @_;
+	$self->{engine}{affinity}->has_in_queue($v);
+	$self->SUPER::add($v);
 }
 
 1;
