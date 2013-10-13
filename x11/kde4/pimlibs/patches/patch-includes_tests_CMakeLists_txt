@@ -1,7 +1,7 @@
-$OpenBSD: patch-includes_tests_CMakeLists_txt,v 1.1 2013/07/04 00:46:53 zhuk Exp $
+$OpenBSD: patch-includes_tests_CMakeLists_txt,v 1.2 2013/10/13 18:39:08 zhuk Exp $
 Unbreak building tests.
---- includes/tests/CMakeLists.txt.orig	Sun Jun 30 19:22:34 2013
-+++ includes/tests/CMakeLists.txt	Sun Jun 30 19:22:38 2013
+--- includes/tests/CMakeLists.txt.orig	Fri Jun 28 21:34:42 2013
++++ includes/tests/CMakeLists.txt	Sun Oct 13 22:35:03 2013
 @@ -21,8 +21,10 @@ macro(add_includes _dir)
  endmacro(add_includes)
  
@@ -14,3 +14,12 @@ Unbreak building tests.
    ${CMAKE_SOURCE_DIR}/kabc
    ${CMAKE_BINARY_DIR}/kabc
    ${CMAKE_SOURCE_DIR}/kcalutils
+@@ -60,7 +62,7 @@ kde4_add_executable( headertest header_compile.cpp )
+ target_link_libraries( headertest ${QT_QTCORE_LIBRARY} )
+ add_dependencies( headertest akonadi ) # ensure calendarsettings.h is generated in parallel builds
+ add_dependencies( headertest kabc ) # ensure addressee.h is generated in parallel builds
+-add_dependencies( headertest kcal )
++add_dependencies( headertest kcal kcalutils ) # ensure htmlexportsettings.h is generated in parallel builds
+ add_dependencies( headertest mailtransport ) # ensure transportbase.h is generated in parallel builds
+ 
+ endif()
