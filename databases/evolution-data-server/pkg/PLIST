@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2013/09/26 14:11:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.37 2013/10/13 16:38:45 ajacoutot Exp $
 include/evolution-data-server/
 include/evolution-data-server/camel/
 include/evolution-data-server/camel/camel-address.h
@@ -305,6 +305,7 @@ lib/evolution-data-server/registry-modules/
 lib/evolution-data-server/registry-modules/module-cache-reaper.so
 lib/evolution-data-server/registry-modules/module-gnome-online-accounts.so
 lib/evolution-data-server/registry-modules/module-google-backend.so
+lib/evolution-data-server/registry-modules/module-outlook-backend.so
 lib/evolution-data-server/registry-modules/module-owncloud-backend.so
 lib/evolution-data-server/registry-modules/module-trust-prompt.so
 lib/evolution-data-server/registry-modules/module-yahoo-backend.so
