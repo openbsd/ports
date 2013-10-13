@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 10:50:12 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/10/13 21:04:41 naddy Exp $
+
+BROKEN-amd64=	hangs in most bulk builds
 
 COMMENT=	.NET build tool inspired by Ant
 
