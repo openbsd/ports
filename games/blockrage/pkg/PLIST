@@ -1,0 +1,41 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/13 20:40:36 bcallah Exp $
+@bin bin/blockrage
+@man man/man6/blockrage.6
+share/blockrage/
+share/blockrage/test/
+share/blockrage/test/dataset.cfg
+share/blockrage/test/fonth.pcx
+share/blockrage/test/fonth.txt
+share/blockrage/test/fontn.pcx
+share/blockrage/test/fontn.txt
+share/blockrage/test/g1p.pcx
+share/blockrage/test/g2p.pcx
+share/blockrage/test/game.col
+share/blockrage/test/logo.pcx
+share/blockrage/test/menu.pcx
+share/blockrage/test/pa0.pcx
+share/blockrage/test/pa1.pcx
+share/blockrage/test/pa2.pcx
+share/blockrage/test/pa3.pcx
+share/blockrage/test/pmenu.pcx
+share/blockrage/test/s00p1.pcx
+share/blockrage/test/s00p1.txt
+share/blockrage/test/s00p2.pcx
+share/blockrage/test/s00p2.txt
+share/blockrage/test/s00p3.pcx
+share/blockrage/test/s00p3.txt
+share/blockrage/test/s00p4.pcx
+share/blockrage/test/s00p4.txt
+share/blockrage/test/s00p5.pcx
+share/blockrage/test/s00p5.txt
+share/blockrage/test/s00p6.pcx
+share/blockrage/test/s00p6.txt
+share/blockrage/test/sfx0.snd
+share/blockrage/test/sfx1.snd
+share/blockrage/test/sfx2.snd
+share/examples/blockrage/
+@sample ${SYSCONFDIR}/blockrage/
+share/examples/blockrage/blockrage-fhs.rc
+@sample ${SYSCONFDIR}/blockrage/blockrage.rc
+share/examples/blockrage/blockrage.cfg
+@sample ${SYSCONFDIR}/blockrage/blockrage.cfg
