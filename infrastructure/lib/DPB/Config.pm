@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.15 2013/10/07 20:01:55 espie Exp $
+# $OpenBSD: Config.pm,v 1.16 2013/10/13 10:34:55 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -109,8 +109,12 @@ sub parse_command_line
 	if ($state->define_present('LOGDIR')) {
 		$state->{logdir} = $state->subst->value('LOGDIR');
 	}
-	if ($state->define_present('WANTSIZE')) {
+	if ($state->{opt}{s}) {
+		$state->{wantsize} = 1;
+	} elsif ($state->define_present('WANTSIZE')) {
 		$state->{wantsize} = $state->{subst}->value('WANTSIZE');
+	} elsif (DPB::HostProperties->has_mem) {
+		$state->{wantsize} = 1;
 	}
 	if ($state->define_present('FETCH_JOBS') && !defined $state->{opt}{f}) {
 		$state->{opt}{f} = $state->{subst}->value('FETCH_JOBS');
@@ -129,9 +133,6 @@ sub parse_command_line
 	}
 	if ($state->{opt}{t}) {
 		$state->{tests} = 1;
-	}
-	if ($state->{opt}{s}) {
-		$state->{wantsize} = 1;
 	}
 
 	$state->{opt}{f} //= 2;
@@ -301,6 +302,7 @@ sub parse_hosts_file
 package DPB::HostProperties;
 
 my $has_sf = 0;
+my $has_mem = 0;
 my $sf;
 
 sub new
@@ -325,6 +327,11 @@ sub add_overrides
 sub has_sf
 {
 	return $has_sf;
+}
+
+sub has_mem
+{
+	return $has_mem;
 }
 
 my $default_user;
@@ -361,6 +368,9 @@ sub finalize
 			$_ *= 1024 * 1024;
 		}
 		$prop->{memory} = $_;
+		if ($prop->{memory} > 0) {
+			$has_mem = 1;
+		}
 	}
 	$prop->{small} //= 120;
 	$prop->{small_timeout} = $prop->{small} * $prop->{sf};
