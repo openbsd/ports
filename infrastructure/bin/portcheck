@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.36 2013/08/27 07:52:15 zhuk Exp $
+# $OpenBSD: portcheck,v 1.37 2013/10/13 16:47:18 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -583,6 +583,12 @@ check_port_dir() {
 check_trailing_whitespace() {
 	egrep -q '[[:space:]]+$' "$1" &&
 		err "trailing whitespace in $1"
+}
+
+# Checks made: obvious
+check_newline_at_eof() {
+	(( $(tail -1 -- "$1" | wc -l) == 0)) &&
+		err "no newline at EOF in $1"
 }
 
 # Checks made:
@@ -1184,6 +1190,7 @@ check_pkg_dir() {
 		[[ -f $F ]] ||
 			err "$F is not a file"
 		check_trailing_whitespace "$F"
+		check_newline_at_eof "$F"
 		[[ -n $subst_cmd ]] && check_subst_vars "$F" "$subst_cmd"
 		egrep -q '\$OpenBSD.*\$' "$F" &&
 			err "$F should not contain \$OpenBSD\$ tag"
@@ -1220,6 +1227,7 @@ check_pkg_dir() {
 			err "$F is not a file"
 		[[ -n $subst_cmd ]] && check_subst_vars "$F" "$subst_cmd"
 		check_trailing_whitespace "$F"
+		check_newline_at_eof "$F"
 		head -n 1 -- "$F" |
 			egrep -q '^(#[[:space:]]*)?\$OpenBSD(:.*)?\$$' ||
 			err "$F does not have \$OpenBSD\$ RCS tag at the top"
@@ -1239,6 +1247,7 @@ check_pkg_dir() {
 			err "$F is not a file"
 		[[ -n $subst_cmd ]] && check_subst_vars "$F" "$subst_cmd"
 		check_trailing_whitespace "$F"
+		check_newline_at_eof "$F"
 		egrep -q '\$OpenBSD.*\$' "$F" &&
 			err "$F should not contain \$OpenBSD\$ tag"
 		;;
