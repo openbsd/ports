@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2013/03/11 11:23:51 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2013/10/13 19:47:46 naddy Exp $
 
 COMMENT-main=		mail delivery agent with filtering abilities
 COMMENT-utils=		quota tools for the Courier mail suite
@@ -26,11 +26,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
-			CPPFLAGS="${CFLAGS:C/ *$//} -I${LOCALBASE}/include" \
+			CPPFLAGS="-I${LOCALBASE}/include" \
 			ac_cv_header_fam_h=no ac_cv_lib_fam_FAMOpen=no
-MAKE_ENV=		INCLUDES="-I${LOCALBASE}/include"
-
-SUBST_VARS=             MAILDROPCONF
 
 CONFIGURE_ARGS=		--sysconfdir=${SYSCONFDIR}/courier \
 			--with-etcdir=${SYSCONFDIR}/courier \
