@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Affinity.pm,v 1.6 2013/10/06 13:33:26 espie Exp $
+# $OpenBSD: Affinity.pm,v 1.7 2013/10/13 18:24:24 espie Exp $
 #
 # Copyright (c) 2012-2013 Marc Espie <espie@openbsd.org>
 #
@@ -128,6 +128,26 @@ sub simplifies_to
 		if (defined $w->{$tag}) {
 			$v->{$tag} //= $w->{$tag};
 		}
+	}
+}
+
+my $queued = {};
+
+sub sorted
+{
+	my ($self, $queue, $core) = @_;
+	# okay, we know we have affinity stuff in the queue (maybe, so we want to do something special here
+	# maybe...
+#	if ($queued->{$core->hostname}) {
+#	}
+	return $queue->sorted($core);
+}
+
+sub has_in_queue
+{
+	my ($self, $v) = @_;
+	if (defined $v->{affinity}) {
+		$queued->{$v} = 1;
 	}
 }
 
