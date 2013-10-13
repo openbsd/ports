@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2013/10/05 07:34:31 espie Exp $
+# $OpenBSD: Makefile,v 1.93 2013/10/13 08:11:21 espie Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -309,8 +309,12 @@ CONFIGURE_ARGS+=--enable-ext-wiki-publisher \
 CONFIGURE_ARGS+=--without-java
 .endif
 
-.if ${FLAVOR:Mparallel}
-NCPU!=		echo $$((`sysctl -n hw.ncpu`+1))
+# XXX libreoffice has its own way to build things in parallel
+PARALLEL_BUILD = No
+.if defined(MAKE_JOBS)
+NCPU=		${MAKE_JOBS}
+.elif ${FLAVOR:Mparallel}
+NCPU=		$$(expr $$(sysctl hw.ncpu + 1))
 .else
 NCPU=		1
 .endif
