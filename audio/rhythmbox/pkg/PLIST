@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2013/09/05 08:25:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.42 2013/10/13 09:27:14 ajacoutot Exp $
 @bin bin/rhythmbox
 @bin bin/rhythmbox-client
 include/rhythmbox/
@@ -260,6 +260,9 @@ lib/rhythmbox/plugins/rb/rb.py
 lib/rhythmbox/plugins/rb/rbconfig.py
 lib/rhythmbox/plugins/rb/stringmatch.py
 lib/rhythmbox/plugins/rbzeitgeist/
+lib/rhythmbox/plugins/rbzeitgeist/${MODPY_PYCACHE}/
+lib/rhythmbox/plugins/rbzeitgeist/${MODPY_PYCACHE}rbzeitgeist.${MODPY_PYC_MAGIC_TAG}pyc
+lib/rhythmbox/plugins/rbzeitgeist/${MODPY_PYCACHE}rbzeitgeist.${MODPY_PYC_MAGIC_TAG}pyo
 lib/rhythmbox/plugins/rbzeitgeist/rbzeitgeist.plugin
 lib/rhythmbox/plugins/rbzeitgeist/rbzeitgeist.py
 lib/rhythmbox/plugins/sendto/
@@ -352,6 +355,7 @@ share/gtk-doc/html/rhythmbox/ch07.html
 share/gtk-doc/html/rhythmbox/home.png
 share/gtk-doc/html/rhythmbox/index.html
 share/gtk-doc/html/rhythmbox/index.sgml
+share/gtk-doc/html/rhythmbox/left-insensitive.png
 share/gtk-doc/html/rhythmbox/left.png
 share/gtk-doc/html/rhythmbox/rhythmbox-RBDeviceSource.html
 share/gtk-doc/html/rhythmbox/rhythmbox-RBEncoder.html
@@ -369,8 +373,10 @@ share/gtk-doc/html/rhythmbox/rhythmbox-rb-text-helpers.html
 share/gtk-doc/html/rhythmbox/rhythmbox-rb-tree-dnd.html
 share/gtk-doc/html/rhythmbox/rhythmbox-rb-util.html
 share/gtk-doc/html/rhythmbox/rhythmbox.devhelp2
+share/gtk-doc/html/rhythmbox/right-insensitive.png
 share/gtk-doc/html/rhythmbox/right.png
 share/gtk-doc/html/rhythmbox/style.css
+share/gtk-doc/html/rhythmbox/up-insensitive.png
 share/gtk-doc/html/rhythmbox/up.png
 share/help/C/rhythmbox/
 share/help/C/rhythmbox/fdl-appendix.xml
