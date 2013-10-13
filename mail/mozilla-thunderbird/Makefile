@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.179 2013/09/30 20:10:24 landry Exp $
+# $OpenBSD: Makefile,v 1.180 2013/10/13 08:13:21 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -6,8 +6,7 @@ COMMENT-enigmail =	Mozilla Thunderbird GnuPG extension
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-MOZILLA_VERSION =	24.0
-REVISION =		0
+MOZILLA_VERSION =	24.0.1
 MOZILLA_BRANCH =	esr24
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	mail
@@ -19,6 +18,8 @@ ENIG_V =		1.5.2
 PKGNAME-enigmail =	enigmail-${ENIG_V}
 EPOCH-lightning =	0
 EPOCH-enigmail =	0
+REVISION-lightning =	1
+REVISION-enigmail =	1
 
 HOMEPAGE =	http://www.mozilla.org/thunderbird/
 
