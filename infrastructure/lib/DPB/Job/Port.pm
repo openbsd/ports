@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.136 2013/10/12 13:52:03 espie Exp $
+# $OpenBSD: Port.pm,v 1.137 2013/10/13 19:57:07 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -451,6 +451,13 @@ sub finalize
 		}
 		close $fh;
 		$job->save_depends(\@r);
+		# XXX we ran junk before us, so retaint *now* before losing the lock
+		if ($job->{v}{info}->has_property('tag') && 
+		    !defined $core->prop->{tainted}) {
+			$core->prop->{tainted} = $job->{v}{info}->has_property('tag');
+                        print {$job->{logfh}} "Forced junk, retainting: ", 
+			    $core->prop->{tainted}, "\n";
+		}
 	} else {
 		$core->{status} = 1;
 	}
