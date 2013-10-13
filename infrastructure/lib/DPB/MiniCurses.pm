@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: MiniCurses.pm,v 1.3 2013/10/13 18:32:58 espie Exp $
+# $OpenBSD: MiniCurses.pm,v 1.4 2013/10/13 19:19:53 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -126,41 +126,61 @@ sub cut_lines
 	return @lines;
 }
 
+sub default_fg
+{
+	my ($self, $color) = @_;
+	$self->{resetfg} = sprintf($self->{fg}, $color);
+}
+
+sub default_bg
+{
+	my ($self, $color) = @_;
+	$self->{resetbg} = sprintf($self->{bg}, $color);
+}
 sub color
 {
 	my ($self, $expr, $color) = @_;
-	return sprintf($self->{fg}, $color).$expr.sprintf($self->{fg}, WHITE);
+	return sprintf($self->{fg}, $color).$expr.$self->{resetfg};
 }
 
 sub bg
 {
 	my ($self, $expr, $color) = @_;
-	return sprintf($self->{bg}, $color).$expr.sprintf($self->{bg}, BLACK);
+	return sprintf($self->{bg}, $color).$expr.$self->{resetbg};
 }
 
 sub mogrify
 {
 	my ($self, $line) = @_;
-	$line =~ s/(\[.*?\])/$self->color($1, GREEN)/ge;
-	$line =~ s/(\(.*?\))/$self->color($1, YELLOW)/ge;
-	$line =~ s/(\d+\%)/$self->color($1, PURPLE)/ge;
+	$self->default_bg(BLACK);
+	$self->default_fg(WHITE);
 	if ($line =~ m/frozen|waiting-for-lock/) {
 		if ($line =~ m/for\s+\d+\s*(mn|HOURS)/) {
 			$line = $self->bg($self->color($line, GREEN), RED);
+			$self->default_bg(RED);
+			$self->default_fg(GREEN);
 		} else {
 			$line = $self->color($line, RED);
+			$self->default_fg(RED);
 		}
 	} elsif ($line =~ m/^\</) {
 		$line = $self->color($line, TURQUOISE);
+		$self->default_fg(TURQUOISE);
 	} elsif ($line =~ m/^(LISTING|UPDATING)/) {
-		$line = $self->bg($self->color($line, BLUE), RED);
+		$line = $self->bg($self->color($line, WHITE), BLUE);
+		$self->default_bg(BLUE);
+		$self->default_fg(WHITE);
 	} elsif ($line =~ m/^I=/) {
-		$line = $self->bg($self->color($line, YELLOW), BLUE);
+		$line = $self->bg($self->color($line, WHITE), BLUE);
 	} elsif ($line =~ m/^E=/) {
 		$line = $self->color($line, RED);
+		$self->default_fg(RED);
 	} elsif ($line =~ m/^Hosts:/) {
 		$line =~ s/(\w+\-)/$self->color($1, RED)/ge;
 	}
+	$line =~ s/(\[\d+\])/$self->color($1, GREEN)/ge;
+	$line =~ s/(\(.*?\))/$self->color($1, YELLOW)/ge;
+	$line =~ s/(\d+\%)/$self->color($1, PURPLE)/ge;
 	return $line;
 }
 
