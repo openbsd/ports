@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_racket_sconfig_h,v 1.1 2013/10/13 17:27:21 juanfra Exp $
+
+Racket doesn't respect its own stack size limit. This patch gives an extra
+margin of 300KB.
+
+Test: racket -e '(load "deep.rktl")'
+
+https://github.com/plt/racket/pull/316
+
+--- src/racket/sconfig.h.orig	Sun Oct 13 06:04:57 2013
++++ src/racket/sconfig.h	Sun Oct 13 06:05:05 2013
+@@ -310,6 +310,9 @@
+ # undef UNIX_STACK_MAXIMUM
+ # define UNIX_STACK_MAXIMUM 4194304
+ 
++# undef STACK_SAFETY_MARGIN
++# define STACK_SAFETY_MARGIN 307200
++
+ #ifndef __ELF__
+ # define UNDERSCORE_DYNLOAD_SYMBOL_PREFIX
+ #endif
