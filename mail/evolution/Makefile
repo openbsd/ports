@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.211 2013/09/28 08:50:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.212 2013/10/13 16:51:20 ajacoutot Exp $
 
 # XXX textproc/highlight
 
@@ -8,13 +8,11 @@ COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		3.10.0
+GNOME_VERSION=		3.10.1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
 
-REVISION-main=		0
-REVISION-plugins=	0
 
 # NOTE: when EVO_VERSION changes, increment accordingly and bump:
 # mail/evolution-ews
