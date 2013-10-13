@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2013/05/06 18:50:47 zhuk Exp $
+# $OpenBSD: Makefile,v 1.53 2013/10/13 21:41:44 naddy Exp $
 
 COMMENT-main=	graph drawing software
 
@@ -73,11 +73,13 @@ WANTLIB += xcb-shm xml2 z ${MODTK_LIB} Xft Xss perl util
 USE_GMAKE =	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
+# Note: --with-tclsh is misspelled "--with-tcl" in configure's help output
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-tcl=yes \
 		--enable-perl \
 		--enable-guile \
-		--with-tcl=${MODTCL_BIN} \
+		--with-tclsh=${MODTCL_BIN} \
+		--with-wish=${MODTK_BIN} \
 		--disable-lua \
 		--disable-io \
 		--disable-java \
