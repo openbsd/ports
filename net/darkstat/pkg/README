@@ -1,0 +1,13 @@
+$OpenBSD: README,v 1.1 2013/10/14 22:31:58 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+By default, when started from the rc.d(8) script, darkstat will listen to
+traffic on the first egress interface, and only allow TCP connections from
+localhost. If using NAT, the internal interface might be a better choice
+than the egress; to use alternative settings, override the defaults in
+rc.conf.local e.g.:
+
+darkstat_flags="-i em2 -b 127.0.0.1 --syslog"
