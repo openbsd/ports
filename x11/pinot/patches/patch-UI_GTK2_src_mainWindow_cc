@@ -1,0 +1,15 @@
+$OpenBSD: patch-UI_GTK2_src_mainWindow_cc,v 1.1 2013/10/14 08:41:52 ajacoutot Exp $
+
+mainWindow.cc:1769: error: no matching function for call to 'mainWindow::close(int&)'
+
+--- UI/GTK2/src/mainWindow.cc.orig	Mon Oct 14 10:35:28 2013
++++ UI/GTK2/src/mainWindow.cc	Sun Oct 13 11:32:06 2013
+@@ -1766,7 +1766,7 @@ void mainWindow::on_thread_end(WorkerThread *pThread)
+ 						viewDoc = true;
+ 					}
+ 
+-					close(inFd);
++					::close(inFd);
+ 				}
+ 
+ 				if (viewDoc == true)

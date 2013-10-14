@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.46 2013/10/11 23:51:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.47 2013/10/14 08:41:52 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	personal search and metasearch
 
 DISTNAME=	pinot-1.03
-REVISION=	4
+REVISION=	5
 
 SHARED_LIBS +=  xapianbackend             0.0 # 1.0
 
@@ -61,7 +61,6 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 
 # pdftotext(1)
 RUN_DEPENDS +=	print/poppler,-utils
-
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
