@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2013/09/26 06:31:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2013/10/14 12:51:43 ajacoutot Exp $
 share/icons/gnome/scalable/
 share/icons/gnome/scalable/actions/
 share/icons/gnome/scalable/actions/action-unavailable-symbolic.svg
@@ -6,6 +6,7 @@ share/icons/gnome/scalable/actions/bookmark-add-symbolic.svg
 share/icons/gnome/scalable/actions/bookmark-new-symbolic.svg
 share/icons/gnome/scalable/actions/call-end-symbolic.svg
 share/icons/gnome/scalable/actions/call-start-symbolic.svg
+share/icons/gnome/scalable/actions/content-loading-symbolic.svg
 share/icons/gnome/scalable/actions/document-open-recent-symbolic.svg
 share/icons/gnome/scalable/actions/document-open-symbolic.svg
 share/icons/gnome/scalable/actions/document-page-setup-symbolic.svg
@@ -256,6 +257,7 @@ share/icons/gnome/scalable/places/network-server-symbolic.svg
 share/icons/gnome/scalable/places/network-workgroup-symbolic.svg
 share/icons/gnome/scalable/places/start-here-symbolic.svg
 share/icons/gnome/scalable/places/user-bookmarks-symbolic.svg
+share/icons/gnome/scalable/places/user-desktop-symbolic.svg
 share/icons/gnome/scalable/places/user-home-symbolic.svg
 share/icons/gnome/scalable/places/user-trash-symbolic.svg
 share/icons/gnome/scalable/status/
