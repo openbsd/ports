@@ -1,0 +1,13 @@
+Lzip is a lossless data compressor with a user interface similar to the
+one of gzip or bzip2. Lzip decompresses almost as fast as gzip and
+compresses more than bzip2, which makes it well suited for software
+distribution and data archiving.
+
+Lzip is a clean implementation of the LZMA algorithm. The lzip file
+format is designed for long-term data archiving. It is clean, provides
+very safe 4 factor integrity checking. Lzip uses the same well-defined
+exit status values used by bzip2, which makes it safer when used in
+pipes or scripts than compressors returning ambiguous warning values,
+like gzip.
+
+This package contains clzip, a C implementation of lzip.

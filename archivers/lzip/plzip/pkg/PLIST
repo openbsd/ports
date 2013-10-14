@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/14 21:23:35 juanfra Exp $
+@bin bin/plzip
+@info info/plzip.info
+@man man/man1/plzip.1

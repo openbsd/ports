@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/14 21:23:33 juanfra Exp $
+@bin bin/lzip
+@info info/lzip.info
+@man man/man1/lzip.1
