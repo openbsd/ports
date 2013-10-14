@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb-replay,v 1.1 2013/10/02 09:09:22 espie Exp $
+# $OpenBSD: dpb-replay,v 1.2 2013/10/14 19:09:04 espie Exp $
 #
 # Copyright (c) 2013 Marc Espie <espie@openbsd.org>
 #
@@ -25,28 +25,28 @@ BEGIN {
 }
 use lib ("$ports1/infrastructure/lib", "$FindBin::Bin/../lib");
 use DPB::MiniCurses;
-
 package Term;
 our @ISA = qw(DPB::MiniCurses);
 
 sub new
 {
-	my $class = shift;
+	my ($class, $opt_c) = @_;
 	my $self = bless {}, $class;
-	$self->create_terminal;
+	$self->create_terminal({color=>$opt_c});
 	return $self;
 }
 
 package main;
 use Time::HiRes (qw(time sleep));
+use OpenBSD::Getopt;
 
+
+our ($opt_s, $opt_c);
+getopts('s:c');
 my $file = shift;
-my $speedup = 10;
-if (@ARGV > 0) {
-	$speedup = shift;
-}
+my $speedup = $opt_s // 10;
 $speedup += 0.0;
-my $term = Term->new;
+my $term = Term->new($opt_c);
 
 open(my $fh, '<', $file);
 
