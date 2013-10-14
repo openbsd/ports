@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/09/28 08:51:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2013/10/14 11:27:12 ajacoutot Exp $
 
 # XXX find a way to catch button press events
 # (and check gsd and gcc power support)
@@ -6,8 +6,7 @@
 COMMENT=		GNOME power manager
 
 GNOME_PROJECT=		gnome-power-manager
-GNOME_VERSION=		3.10.0
-REVISION=		0
+GNOME_VERSION=		3.10.1
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
