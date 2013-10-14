@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2013/01/14 15:04:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2013/10/14 10:44:07 nigel Exp $
 @bin bin/pinot
 @bin bin/pinot-dbus-daemon
 @bin bin/pinot-index
@@ -58,6 +58,8 @@ include/pinot/ViewHistory.h
 include/pinot/Visibility.h
 include/pinot/WebEngine.h
 include/pinot/WorkerThreads.h
+include/pinot/cjkv/
+include/pinot/cjkv/CJKVTokenizer.h
 include/pinot/filters/
 include/pinot/filters/Filter.h
 include/pinot/filters/FilterFactory.h
