@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/10/04 22:49:08 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2013/10/14 20:13:04 zhuk Exp $
 
 COMMENT =	KDE workspace
 DISTNAME =	kde-workspace-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 # TODO:
 # Port ksysguard to OpenBSD (sensors framework, lsof(1) call replace and others).
@@ -104,6 +104,7 @@ LIB_DEPENDS =	audio/xmms \
 CONFIGURE_ARGS =	-DWITH_Googlegadgets:Bool=False \
 			-DWITH_NetworkManager:Bool=False \
 			-DWITH_OpenGLES:Bool=False \
+			-DWITH_PAM:Bool=False \
 			-DWITH_PCIUTILS:Bool=False \
 			-DWITH_RAW1394:Bool=False \
 			-DWITH_Sensors:Bool=False
