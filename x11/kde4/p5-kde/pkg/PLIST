@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 18:34:57 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/10/14 13:59:07 zhuk Exp $
 lib/kde4/kperlpluginfactory.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Akonadi.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Attica.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/KDECore4.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/KDEUi4.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/KFile.pm
@@ -23,8 +22,6 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/SopranoClient.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/SopranoServer.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Akonadi/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Akonadi/Akonadi.so
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Attica/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Attica/Attica.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/KDECore4/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/KDECore4/KDECore4.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/KDEUi4/
