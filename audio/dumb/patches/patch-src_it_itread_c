@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_it_itread_c,v 1.1 2013/10/14 07:17:21 dcoppa Exp $
+
+Fix heap-based buffer overflow in the it_read_envelope function
+(CVE-2006-3668)
+
+--- src/it/itread.c.orig	Mon Aug  8 02:18:41 2005
++++ src/it/itread.c	Fri Oct 11 16:37:22 2013
+@@ -292,6 +292,11 @@ static int it_read_envelope(IT_ENVELOPE *envelope, DUM
+ 
+ 	envelope->flags = dumbfile_getc(f);
+ 	envelope->n_nodes = dumbfile_getc(f);
++	if(envelope->n_nodes > 25) {
++		TRACE("IT error: wrong number of envelope nodes (%d)\n", envelope->n_nodes);
++		envelope->n_nodes = 0;
++		return -1;
++	}
+ 	envelope->loop_start = dumbfile_getc(f);
+ 	envelope->loop_end = dumbfile_getc(f);
+ 	envelope->sus_loop_start = dumbfile_getc(f);

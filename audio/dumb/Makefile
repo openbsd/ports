@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/10 22:55:02 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/10/14 07:17:21 dcoppa Exp $
 
 COMMENT=	IT/MOD/XM player and library
 
 DISTNAME=	dumb-0.9.3
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	audio
 
