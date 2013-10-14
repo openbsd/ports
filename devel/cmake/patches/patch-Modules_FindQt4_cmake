@@ -1,7 +1,7 @@
-$OpenBSD: patch-Modules_FindQt4_cmake,v 1.20 2013/06/21 11:12:51 dcoppa Exp $
---- Modules/FindQt4.cmake.orig	Fri Jun  7 17:21:34 2013
-+++ Modules/FindQt4.cmake	Fri Jun 21 11:38:22 2013
-@@ -569,7 +569,12 @@ endfunction()
+$OpenBSD: patch-Modules_FindQt4_cmake,v 1.21 2013/10/14 12:58:03 dcoppa Exp $
+--- Modules/FindQt4.cmake.orig	Mon Oct  7 17:31:00 2013
++++ Modules/FindQt4.cmake	Wed Oct  9 09:38:48 2013
+@@ -571,7 +571,12 @@ endfunction()
  
  set(QT4_INSTALLED_VERSION_TOO_OLD FALSE)
  
@@ -15,7 +15,7 @@ $OpenBSD: patch-Modules_FindQt4_cmake,v 1.20 2013/06/21 11:12:51 dcoppa Exp $
  _qt4_find_qmake("${_QT4_QMAKE_NAMES}" QT_QMAKE_EXECUTABLE QTVERSION)
  
  if (QT_QMAKE_EXECUTABLE AND QTVERSION)
-@@ -727,6 +732,8 @@ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
+@@ -732,6 +737,8 @@ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
  
    # Set QT_INCLUDES
    set( QT_INCLUDES ${QT_MKSPECS_DIR}/default ${QT_INCLUDE_DIR} ${QT_QTCORE_INCLUDE_DIR})
@@ -24,7 +24,7 @@ $OpenBSD: patch-Modules_FindQt4_cmake,v 1.20 2013/06/21 11:12:51 dcoppa Exp $
  
  
    # ask qmake for the documentation directory
-@@ -1153,13 +1160,13 @@ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
+@@ -1157,13 +1164,13 @@ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
    endif()
  
    find_program(QT_MOC_EXECUTABLE
@@ -40,7 +40,7 @@ $OpenBSD: patch-Modules_FindQt4_cmake,v 1.20 2013/06/21 11:12:51 dcoppa Exp $
      PATHS ${QT_BINARY_DIR}
      NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH
      )
-@@ -1189,13 +1196,13 @@ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
+@@ -1193,13 +1200,13 @@ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
      )
  
    find_program(QT_LUPDATE_EXECUTABLE
@@ -56,7 +56,7 @@ $OpenBSD: patch-Modules_FindQt4_cmake,v 1.20 2013/06/21 11:12:51 dcoppa Exp $
      PATHS ${QT_BINARY_DIR}
      NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH
      )
-@@ -1207,13 +1214,13 @@ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
+@@ -1211,13 +1218,13 @@ if (QT_QMAKE_EXECUTABLE AND QTVERSION)
      )
  
    find_program(QT_DESIGNER_EXECUTABLE

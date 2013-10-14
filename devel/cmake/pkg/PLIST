@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2013/07/04 16:34:06 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.26 2013/10/14 12:58:04 dcoppa Exp $
 @bin bin/ccmake
 @bin bin/cmake
 @bin bin/cpack
@@ -82,6 +82,7 @@ share/cmake/Modules/CMakeFortranCompilerABI.F
 share/cmake/Modules/CMakeFortranCompilerId.F.in
 share/cmake/Modules/CMakeFortranInformation.cmake
 share/cmake/Modules/CMakeGenericSystem.cmake
+share/cmake/Modules/CMakeGraphVizOptions.cmake
 share/cmake/Modules/CMakeImportBuildSettings.cmake
 share/cmake/Modules/CMakeJOMFindMake.cmake
 share/cmake/Modules/CMakeJavaCompiler.cmake.in
@@ -94,6 +95,7 @@ share/cmake/Modules/CMakePackageConfigHelpers.cmake
 share/cmake/Modules/CMakeParseArguments.cmake
 share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake
 share/cmake/Modules/CMakePlatformId.h.in
+share/cmake/Modules/CMakePrintHelpers.cmake
 share/cmake/Modules/CMakePrintSystemInformation.cmake
 share/cmake/Modules/CMakePushCheckState.cmake
 share/cmake/Modules/CMakeRCCompiler.cmake.in
@@ -199,6 +201,10 @@ share/cmake/Modules/Compiler/HP-ASM.cmake
 share/cmake/Modules/Compiler/HP-C.cmake
 share/cmake/Modules/Compiler/HP-CXX.cmake
 share/cmake/Modules/Compiler/HP-Fortran.cmake
+share/cmake/Modules/Compiler/IAR-ASM.cmake
+share/cmake/Modules/Compiler/IAR-C.cmake
+share/cmake/Modules/Compiler/IAR-CXX.cmake
+share/cmake/Modules/Compiler/IAR.cmake
 share/cmake/Modules/Compiler/Intel-ASM.cmake
 share/cmake/Modules/Compiler/Intel-C.cmake
 share/cmake/Modules/Compiler/Intel-CXX.cmake
@@ -486,6 +492,7 @@ share/cmake/Modules/Platform/Darwin-GNU-C.cmake
 share/cmake/Modules/Platform/Darwin-GNU-CXX.cmake
 share/cmake/Modules/Platform/Darwin-GNU-Fortran.cmake
 share/cmake/Modules/Platform/Darwin-GNU.cmake
+share/cmake/Modules/Platform/Darwin-Intel-Fortran.cmake
 share/cmake/Modules/Platform/Darwin-NAG-Fortran.cmake
 share/cmake/Modules/Platform/Darwin-VisualAge-C.cmake
 share/cmake/Modules/Platform/Darwin-VisualAge-CXX.cmake

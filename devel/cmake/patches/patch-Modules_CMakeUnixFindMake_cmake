@@ -1,10 +1,12 @@
-$OpenBSD: patch-Modules_CMakeUnixFindMake_cmake,v 1.4 2012/11/11 17:13:31 dcoppa Exp $
---- Modules/CMakeUnixFindMake.cmake.orig	Wed Oct 31 16:32:05 2012
-+++ Modules/CMakeUnixFindMake.cmake	Fri Nov  2 07:43:30 2012
-@@ -12,5 +12,5 @@
+$OpenBSD: patch-Modules_CMakeUnixFindMake_cmake,v 1.5 2013/10/14 12:58:03 dcoppa Exp $
+--- Modules/CMakeUnixFindMake.cmake.orig	Mon Oct  7 17:31:00 2013
++++ Modules/CMakeUnixFindMake.cmake	Wed Oct  9 09:38:47 2013
+@@ -12,7 +12,7 @@
  # (To distribute this file outside of CMake, substitute the full
  #  License text for the above reference.)
  
 -find_program(CMAKE_MAKE_PROGRAM NAMES gmake make smake)
 +find_program(CMAKE_MAKE_PROGRAM NAMES make gmake smake)
  mark_as_advanced(CMAKE_MAKE_PROGRAM)
+ 
+ # Look for a make tool provided by Xcode
