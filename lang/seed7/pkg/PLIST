@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/08/30 21:41:09 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/10/14 21:59:37 bcallah Exp $
 @bin bin/s7
 @bin bin/s7c
 lib/seed7/
@@ -9,7 +9,9 @@ lib/seed7/bin/s7_data.a
 lib/seed7/bin/s7_draw.a
 lib/seed7/bin/seed7_05.a
 lib/seed7/lib/
+lib/seed7/lib/arc4.s7i
 lib/seed7/lib/array.s7i
+lib/seed7/lib/asn1.s7i
 lib/seed7/lib/bigfile.s7i
 lib/seed7/lib/bigint.s7i
 lib/seed7/lib/bigrat.s7i
@@ -26,6 +28,7 @@ lib/seed7/lib/cgi.s7i
 lib/seed7/lib/char.s7i
 lib/seed7/lib/charsets.s7i
 lib/seed7/lib/chartype.s7i
+lib/seed7/lib/cipher.s7i
 lib/seed7/lib/clib_file.s7i
 lib/seed7/lib/color.s7i
 lib/seed7/lib/complex.s7i
@@ -54,12 +57,14 @@ lib/seed7/lib/forloop.s7i
 lib/seed7/lib/ftp.s7i
 lib/seed7/lib/getf.s7i
 lib/seed7/lib/gethttp.s7i
+lib/seed7/lib/gethttps.s7i
 lib/seed7/lib/graph.s7i
 lib/seed7/lib/graph_file.s7i
 lib/seed7/lib/gtkserver.s7i
 lib/seed7/lib/gzip.s7i
 lib/seed7/lib/hash.s7i
 lib/seed7/lib/hashsetof.s7i
+lib/seed7/lib/hmac.s7i
 lib/seed7/lib/html.s7i
 lib/seed7/lib/html_ent.s7i
 lib/seed7/lib/idxarray.s7i
@@ -86,6 +91,7 @@ lib/seed7/lib/pic16.s7i
 lib/seed7/lib/pic32.s7i
 lib/seed7/lib/pixmap_file.s7i
 lib/seed7/lib/pixmapfont.s7i
+lib/seed7/lib/pkcs1.s7i
 lib/seed7/lib/poll.s7i
 lib/seed7/lib/progs.s7i
 lib/seed7/lib/propertyfile.s7i
@@ -122,6 +128,7 @@ lib/seed7/lib/tar.s7i
 lib/seed7/lib/tee.s7i
 lib/seed7/lib/text.s7i
 lib/seed7/lib/time.s7i
+lib/seed7/lib/tls.s7i
 lib/seed7/lib/upper.s7i
 lib/seed7/lib/utf16.s7i
 lib/seed7/lib/utf8.s7i
@@ -130,6 +137,7 @@ lib/seed7/lib/vecfont18.s7i
 lib/seed7/lib/vectorfont.s7i
 lib/seed7/lib/window.s7i
 lib/seed7/lib/wrinum.s7i
+lib/seed7/lib/x509cert.s7i
 lib/seed7/lib/xml_ent.s7i
 lib/seed7/lib/xmldom.s7i
 lib/seed7/lib/zip.s7i
