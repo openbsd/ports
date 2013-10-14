@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2013/10/04 08:45:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.132 2013/10/14 22:13:21 juanfra Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -6,7 +6,7 @@ COMMENT-lang=	vi clone, NLS subpackage
 VERSION=	7.4.45
 DISTNAME=	vim-${VERSION}
 PKGNAME-main=	vim-${VERSION}
-REVISION-main=	0
+REVISION-main=	1
 PKGNAME-lang=	vim-lang-${VERSION}
 P=		vim${VERSION:R:S/.//}
 CATEGORIES=	editors
@@ -34,7 +34,7 @@ MULTI_PACKAGES=	-main -lang
 FULLPKGNAME-lang= vim-lang-${VERSION}
 FULLPKGPATH-lang= ${PKGPATH},-lang
 
-FLAVORS=	huge gtk2 athena motif no_x11 perl python ruby
+FLAVORS=	huge gtk2 athena motif no_x11 perl python python3 ruby
 FLAVOR?=	gtk2
 
 CONFIGURE_STYLE=gnu
@@ -56,10 +56,28 @@ WANTLIB+=	m perl util
 .if ${FLAVOR:Mpython}
 MODULES+=	lang/python
 CONFIGURE_ENV+=	vi_cv_path_python=${MODPY_BIN}
-CONFIGURE_ARGS+= --enable-pythoninterp \
+CONFIGURE_ARGS+= --enable-pythoninterp=yes --enable-python3interp=no \
 	--with-python-config-dir=${MODPY_LIBDIR}/config
 LIB_DEPENDS+=	${MODPY_LIB_DEPENDS}
 WANTLIB+=	m pthread util ${MODPY_WANTLIB}
+.endif
+
+.if ${FLAVOR:Mpython3}
+MODULES+=	lang/python
+MODPY_MAJOR_VERSION = 3
+CONFIGURE_ENV+=	vi_cv_path_python3=${MODPY_BIN}
+CONFIGURE_ARGS+= --enable-python3interp=yes --enable-pythoninterp=no \
+	--with-python3-config-dir=${MODPY_LIBDIR}/config-${MODPY_VERSION}m
+LIB_DEPENDS+=	${MODPY_LIB_DEPENDS}
+WANTLIB+=	m pthread util ${MODPY_WANTLIB}
+.endif
+
+# Some parts of vim (like python autocompletion) require a version of vim
+# compiled with "+python" or "+python3". If python2 and python3 are enabled
+# in configure, vim is compiled with "+python/dyn" and "+python3/dyn" and that
+# breaks some plugins.
+.if ${FLAVOR:Mpython} && ${FLAVOR:Mpython3}
+ERRORS=		"Fatal: You only can select one python flavor"
 .endif
 
 .if ${FLAVOR:Mruby}

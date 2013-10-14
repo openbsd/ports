@@ -19,5 +19,6 @@ Flavors:
 	no_x11	   - build without X11 support;
 	perl	   - build with Perl support;
 	python	   - build with Python support;
+	python3	   - build with Python3 support;
 	ruby	   - build with Ruby support;
 	huge	   - build with --with-features=huge.
