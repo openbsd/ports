@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/09/27 06:45:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/10/14 14:08:57 ajacoutot Exp $
 @bin bin/gnome-photos
 share/appdata/
 share/appdata/gnome-photos.appdata.xml
@@ -23,6 +23,7 @@ share/icons/hicolor/48x48/apps/gnome-photos.png
 share/locale/ar/LC_MESSAGES/gnome-photos.mo
 share/locale/as/LC_MESSAGES/gnome-photos.mo
 share/locale/ca/LC_MESSAGES/gnome-photos.mo
+share/locale/ca@valencia/LC_MESSAGES/gnome-photos.mo
 share/locale/cs/LC_MESSAGES/gnome-photos.mo
 share/locale/da/LC_MESSAGES/gnome-photos.mo
 share/locale/de/LC_MESSAGES/gnome-photos.mo
@@ -30,6 +31,7 @@ share/locale/el/LC_MESSAGES/gnome-photos.mo
 share/locale/es/LC_MESSAGES/gnome-photos.mo
 share/locale/et/LC_MESSAGES/gnome-photos.mo
 share/locale/eu/LC_MESSAGES/gnome-photos.mo
+share/locale/fa/LC_MESSAGES/gnome-photos.mo
 share/locale/fi/LC_MESSAGES/gnome-photos.mo
 share/locale/fr/LC_MESSAGES/gnome-photos.mo
 share/locale/ga/LC_MESSAGES/gnome-photos.mo
@@ -55,6 +57,7 @@ share/locale/sl/LC_MESSAGES/gnome-photos.mo
 share/locale/sr/LC_MESSAGES/gnome-photos.mo
 share/locale/sr@latin/LC_MESSAGES/gnome-photos.mo
 share/locale/tg/LC_MESSAGES/gnome-photos.mo
+share/locale/tr/LC_MESSAGES/gnome-photos.mo
 share/locale/uk/LC_MESSAGES/gnome-photos.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-photos.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-photos.mo
