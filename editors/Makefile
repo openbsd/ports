@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2013/07/08 22:11:42 bentley Exp $
+# $OpenBSD: Makefile,v 1.101 2013/10/14 22:22:22 juanfra Exp $
 
      SUBDIR =
      SUBDIR += abiword
@@ -59,8 +59,10 @@
      SUBDIR += uemacs
      SUBDIR += vim
      SUBDIR += vim,gtk2,perl,python,ruby
+     SUBDIR += vim,gtk2,perl,python3,ruby
      SUBDIR += vim,no_x11
      SUBDIR += vim,no_x11,perl,python,ruby
+     SUBDIR += vim,no_x11,perl,python3,ruby
      SUBDIR += vim-spell
      SUBDIR += xemacs21
      SUBDIR += xemacs21-sumo
