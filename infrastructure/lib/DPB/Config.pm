@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.17 2013/10/13 18:31:50 espie Exp $
+# $OpenBSD: Config.pm,v 1.18 2013/10/14 12:14:33 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -74,8 +74,6 @@ sub parse_command_line
 		}
 		$state->{fetch_only} = 1;
 		$state->{opt}{f} = $state->{opt}{F};
-		$state->{opt}{j} = 1;
-		$state->{opt}{e} = 1;
 	}
 	if (defined $state->opt('j')) {
 		if ($state->localarch ne $state->arch) {

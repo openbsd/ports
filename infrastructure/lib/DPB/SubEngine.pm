@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SubEngine.pm,v 1.15 2013/10/09 06:20:57 espie Exp $
+# $OpenBSD: SubEngine.pm,v 1.16 2013/10/14 12:14:33 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -157,12 +157,6 @@ sub start
 
 sub preempt_core
 {
-	my ($self, $core) = @_;
-
-	if (@{$self->{engine}{requeued}} > 0) {
-		$self->{engine}->rebuild_info($core);
-		return 1;
-	}
 	return 0;
 }
 
@@ -251,15 +245,26 @@ sub new
 
 # for fetch-only, the engine is *very* abreviated
 package DPB::SubEngine::NoBuild;
-
 our @ISA = qw(DPB::SubEngine::BuildBase);
-sub is_done
+sub preempt_core
+{
+	my ($self, $core) = @_;
+
+	if (@{$self->{engine}{requeued}} > 0) {
+		$self->{engine}->rebuild_info($core);
+		return 1;
+	}
+	return 0;
+}
+
+
+sub non_empty
 {
 	return 0;
 }
 
-sub get_core
+sub is_done
 {
-	return;
+	return 0;
 }
 1;
