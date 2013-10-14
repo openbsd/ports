@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_ck-vt-monitor_c,v 1.5 2012/10/12 15:04:14 ajacoutot Exp $
+$OpenBSD: patch-src_ck-vt-monitor_c,v 1.6 2013/10/14 13:56:10 ajacoutot Exp $
 --- src/ck-vt-monitor.c.orig	Wed Nov 17 01:50:46 2010
 +++ src/ck-vt-monitor.c	Fri Oct 12 16:58:53 2012
 @@ -380,7 +380,8 @@ vt_add_watches (CkVtMonitor *vt_monitor)
@@ -6,7 +6,7 @@ $OpenBSD: patch-src_ck-vt-monitor_c,v 1.5 2012/10/12 15:04:14 ajacoutot Exp $
          gint32 current_num;
  
 -#if defined (__sun) && !defined (HAVE_SYS_VT_H)
-+#if (defined (__sun) && !defined (HAVE_SYS_VT_H)) || (defined(__OpenBSD__) && (!defined(__i386__) && !defined(__amd64__)))
++#if (defined (__sun) && !defined (HAVE_SYS_VT_H)) || (defined(__OpenBSD__) && (!defined(__i386__) && !defined(__amd64__) && !defined(__powerpc__)))
 +        /* On OpenBSD, VT are only available on i386 and amd64 */
          /* Best to do nothing if VT is not supported */
  #elif defined (__sun) && defined (HAVE_SYS_VT_H)

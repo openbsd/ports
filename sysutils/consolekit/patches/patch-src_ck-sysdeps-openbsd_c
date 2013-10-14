@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.13 2013/09/24 08:52:44 jca Exp $
+$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.14 2013/10/14 13:56:10 ajacoutot Exp $
 --- src/ck-sysdeps-openbsd.c.orig	Tue Sep 24 00:48:32 2013
 +++ src/ck-sysdeps-openbsd.c	Tue Sep 24 00:53:08 2013
 @@ -0,0 +1,438 @@
@@ -200,7 +200,7 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.13 2013/09/24 08:52:44 jca Exp $
 +
 +        if (p.p_tdev == NODEV) {
 +		/* XXX how do we associate X with its tty? */
-+#if defined(__i386__) || defined(__amd64__)
++#if defined(__i386__) || defined(__amd64__) || defined(__powerpc__)
 +                memcpy (P->tty_text, "/dev/ttyC4", sizeof P->tty_text);
 +#else
 +                memcpy (P->tty_text, "/dev/ttyC0", sizeof P->tty_text);
@@ -364,8 +364,8 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.13 2013/09/24 08:52:44 jca Exp $
 +{
 +        char *device;
 +
-+/* VT are only available on i386 and amd64 */
-+#if defined(__i386__) || defined(__amd64__)
++/* VT are only available on i386, amd64 and macppc */
++#if defined(__i386__) || defined(__amd64__) || defined(__powerpc__)
 +        /* The device number is always one less than the VT number. */
 +        num--;
 +#endif
@@ -390,8 +390,8 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.13 2013/09/24 08:52:44 jca Exp $
 +        }
 +
 +        if (sscanf (device, "/dev/ttyC%u", &n) == 1) {
-+/* VT are only available on i386 and amd64 */
-+#if defined(__i386__) || defined(__amd64__)
++/* VT are only available on i386, amd64 and macppc */
++#if defined(__i386__) || defined(__amd64__) || defined(__powerpc__)
 +                /* The VT number is always one more than the device number. */
 +                n++;
 +#endif
@@ -418,8 +418,8 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.13 2013/09/24 08:52:44 jca Exp $
 +        active = 0;
 +        ret = FALSE;
 +
-+/* VT are only available on i386 and amd64 */
-+#if defined(__i386__) || defined(__amd64__)
++/* VT are only available on i386, amd64 and macppc */
++#if defined(__i386__) || defined(__amd64__) || defined(__powerpc__)
 +        res = ioctl (console_fd, VT_GETACTIVE, &active);
 +        if (res == ERROR) {
 +                perror ("ioctl VT_GETACTIVE");
