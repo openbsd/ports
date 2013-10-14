@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/09/26 16:24:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/10/14 20:09:06 ajacoutot Exp $
 @bin bin/gnome-clocks
 share/appdata/
 share/appdata/gnome-clocks.appdata.xml
@@ -39,6 +39,21 @@ share/help/es/gnome-clocks/timer.page
 share/help/es/gnome-clocks/world-add.page
 share/help/es/gnome-clocks/world-check.page
 share/help/es/gnome-clocks/world-remove.page
+share/help/fr/
+share/help/fr/gnome-clocks/
+share/help/fr/gnome-clocks/alarm-add.page
+share/help/fr/gnome-clocks/alarm-edit.page
+share/help/fr/gnome-clocks/alarm-remove.page
+share/help/fr/gnome-clocks/alarm-snooze-stop.page
+share/help/fr/gnome-clocks/figures/
+share/help/fr/gnome-clocks/figures/gnome-clocks.png
+share/help/fr/gnome-clocks/index.page
+share/help/fr/gnome-clocks/legal.xml
+share/help/fr/gnome-clocks/stopwatch.page
+share/help/fr/gnome-clocks/timer.page
+share/help/fr/gnome-clocks/world-add.page
+share/help/fr/gnome-clocks/world-check.page
+share/help/fr/gnome-clocks/world-remove.page
 share/help/gl/
 share/help/gl/gnome-clocks/
 share/help/gl/gnome-clocks/alarm-add.page
@@ -54,6 +69,21 @@ share/help/gl/gnome-clocks/timer.page
 share/help/gl/gnome-clocks/world-add.page
 share/help/gl/gnome-clocks/world-check.page
 share/help/gl/gnome-clocks/world-remove.page
+share/help/hu/
+share/help/hu/gnome-clocks/
+share/help/hu/gnome-clocks/alarm-add.page
+share/help/hu/gnome-clocks/alarm-edit.page
+share/help/hu/gnome-clocks/alarm-remove.page
+share/help/hu/gnome-clocks/alarm-snooze-stop.page
+share/help/hu/gnome-clocks/figures/
+share/help/hu/gnome-clocks/figures/gnome-clocks.png
+share/help/hu/gnome-clocks/index.page
+share/help/hu/gnome-clocks/legal.xml
+share/help/hu/gnome-clocks/stopwatch.page
+share/help/hu/gnome-clocks/timer.page
+share/help/hu/gnome-clocks/world-add.page
+share/help/hu/gnome-clocks/world-check.page
+share/help/hu/gnome-clocks/world-remove.page
 share/help/pt_BR/
 share/help/pt_BR/gnome-clocks/
 share/help/pt_BR/gnome-clocks/alarm-add.page
@@ -93,6 +123,7 @@ share/icons/hicolor/22x22/apps/gnome-clocks.png
 share/icons/hicolor/256x256/apps/gnome-clocks.png
 share/icons/hicolor/32x32/apps/gnome-clocks.png
 share/icons/hicolor/48x48/apps/gnome-clocks.png
+share/locale/af/LC_MESSAGES/gnome-clocks.mo
 share/locale/ar/LC_MESSAGES/gnome-clocks.mo
 share/locale/as/LC_MESSAGES/gnome-clocks.mo
 share/locale/be/LC_MESSAGES/gnome-clocks.mo
