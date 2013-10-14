@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2013/07/04 00:47:05 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2013/10/14 13:42:52 zhuk Exp $
 
 CATEGORIES =	devel
 COMMENT =	introspective wrappers around KDE
 DISTNAME =	smokekde-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	smokeakonadi		50.0 # 3.0
-SHARED_LIBS +=	smokeattica		50.0 # 3.0
+#SHARED_LIBS +=	smokeattica		50.0 # 3.0
 SHARED_LIBS +=	smokekate		50.0 # 3.0
 SHARED_LIBS +=	smokekdecore		50.1 # 3.0
 SHARED_LIBS +=	smokekdeui		50.1 # 3.0
@@ -45,15 +46,16 @@ WANTLIB += ${KDE4LIB}/akonadi-contact ${KDE4LIB}/akonadi-kabc
 WANTLIB += ${KDE4LIB}/akonadi-kde ${KDE4LIB}/akonadi-kmime ${KDE4LIB}/kabc
 WANTLIB += ${KDE4LIB}/kcalcore ${KDE4LIB}/kmime ${KDE4LIB}/kpimutils
 WANTLIB += ${KDE4LIB}/kresources
-WANTLIB += attica soprano sopranoclient sopranoserver
+WANTLIB += soprano sopranoclient sopranoserver
 
 MODKDE4_USE =	pim libs
 
 LIB_DEPENDS =	databases/soprano \
-		productivity/attica \
 		${MODKDE4_DEP_DIR}/kate>=${MODKDE4_DEP_VERSION} \
 		${MODKDE4_DEP_DIR}/okular>=${MODKDE4_DEP_VERSION} \
 		${MODKDE4_DEP_DIR}/smokegen>=${MODKDE4_DEP_VERSION} \
 		${MODKDE4_DEP_DIR}/smokeqt>=${MODKDE4_DEP_VERSION}
+
+CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_LibAttica=Yes
 
 .include <bsd.port.mk>

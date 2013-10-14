@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 19:05:11 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/10/14 13:42:53 zhuk Exp $
 include/smoke/akonadi_smoke.h
-include/smoke/attica_smoke.h
 include/smoke/kate_smoke.h
 include/smoke/kdecore_smoke.h
 include/smoke/kdeui_smoke.h
@@ -21,7 +20,6 @@ include/smoke/soprano_smoke.h
 include/smoke/sopranoclient_smoke.h
 include/smoke/sopranoserver_smoke.h
 @lib ${KDE4LIB}/libsmokeakonadi.so.${LIBsmokeakonadi_VERSION}
-@lib ${KDE4LIB}/libsmokeattica.so.${LIBsmokeattica_VERSION}
 @lib ${KDE4LIB}/libsmokekate.so.${LIBsmokekate_VERSION}
 @lib ${KDE4LIB}/libsmokekdecore.so.${LIBsmokekdecore_VERSION}
 @lib ${KDE4LIB}/libsmokekdeui.so.${LIBsmokekdeui_VERSION}
@@ -42,7 +40,6 @@ include/smoke/sopranoserver_smoke.h
 @lib ${KDE4LIB}/libsmokesopranoclient.so.${LIBsmokesopranoclient_VERSION}
 @lib ${KDE4LIB}/libsmokesopranoserver.so.${LIBsmokesopranoserver_VERSION}
 @lib lib/libsmokeakonadi.so.${LIBsmokeakonadi_VERSION}
-@lib lib/libsmokeattica.so.${LIBsmokeattica_VERSION}
 @lib lib/libsmokekate.so.${LIBsmokekate_VERSION}
 @lib lib/libsmokekdecore.so.${LIBsmokekdecore_VERSION}
 @lib lib/libsmokekdeui.so.${LIBsmokekdeui_VERSION}
