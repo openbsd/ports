@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/10/14 13:59:07 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2013/10/14 14:03:01 zhuk Exp $
 
 COMMENT =	KDE bindings for Perl
 DISTNAME =	perlkde-${MODKDE4_VERSION}
@@ -30,6 +30,8 @@ BUILD_DEPENDS =	${MODKDE4_DEP_DIR}/okular>=${MODKDE4_DEP_VERSION} \
 RUN_DEPENDS =	${MODKDE4_DEP_DIR}/p5-qt>=${MODKDE4_DEP_VERSION}
 
 LIB_DEPENDS = 	${MODKDE4_DEP_DIR}/smokekde>=${MODKDE4_DEP_VERSION}
+
+CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_LibAttica=Yes
 
 # Avoid clashing Perl do_open and do_close with GCC's locale_facets.h
 post-patch:
