@@ -1,9 +1,50 @@
-$OpenBSD: patch-Modules_FindRuby_cmake,v 1.7 2013/06/06 12:47:06 dcoppa Exp $
+$OpenBSD: patch-Modules_FindRuby_cmake,v 1.8 2013/10/14 13:02:51 zhuk Exp $
 Add support for rubyarchhdrdir and rubyarchlibdir, with fallback to "defaults"
 on systems that have such directories but RbConfig doesn't have such options.
---- Modules/FindRuby.cmake.orig	Wed May 15 19:38:12 2013
-+++ Modules/FindRuby.cmake	Tue May 28 20:02:18 2013
-@@ -101,6 +101,16 @@ if(RUBY_EXECUTABLE  AND NOT  RUBY_VERSION_MAJOR)
+--- Modules/FindRuby.cmake.orig	Mon Oct  7 19:31:00 2013
++++ Modules/FindRuby.cmake	Mon Oct 14 16:07:54 2013
+@@ -1,6 +1,6 @@
+ # - Find Ruby
+ # This module finds if Ruby is installed and determines where the include files
+-# and libraries are. Ruby 1.8 and 1.9 are supported.
++# and libraries are. Ruby 1.8, 1.9 and 2.0 are supported.
+ #
+ # The minimum required version of Ruby can be specified using the
+ # standard syntax, e.g. find_package(Ruby 1.8)
+@@ -41,9 +41,9 @@
+ 
+ # Determine the list of possible names of the ruby executable depending
+ # on which version of ruby is required
+-set(_RUBY_POSSIBLE_EXECUTABLE_NAMES ruby)
++set(_RUBY_POSSIBLE_EXECUTABLE_NAMES)
+ 
+-# if 1.9 is required, don't look for ruby18 and ruby1.8, default to version 1.8
++# Check if exact version is required, default to version 1.8
+ if(Ruby_FIND_VERSION_MAJOR  AND  Ruby_FIND_VERSION_MINOR)
+    set(Ruby_FIND_VERSION_SHORT_NODOT "${Ruby_FIND_VERSION_MAJOR}${RUBY_FIND_VERSION_MINOR}")
+    # we can't construct that if only major version is given
+@@ -56,16 +56,17 @@ else()
+ endif()
+ 
+ if(NOT Ruby_FIND_VERSION_EXACT)
+-  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby1.9 ruby19)
++  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby2.0 ruby20 ruby1.9 ruby19)
+ 
+   # if we want a version below 1.9, also look for ruby 1.8
+   if("${Ruby_FIND_VERSION_SHORT_NODOT}" VERSION_LESS "19")
+     list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby1.8 ruby18)
+   endif()
+-
+-  list(REMOVE_DUPLICATES _RUBY_POSSIBLE_EXECUTABLE_NAMES)
+ endif()
+ 
++list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby)
++list(REMOVE_DUPLICATES _RUBY_POSSIBLE_EXECUTABLE_NAMES)
++
+ find_program(RUBY_EXECUTABLE NAMES ${_RUBY_POSSIBLE_EXECUTABLE_NAMES})
+ 
+ 
+@@ -101,6 +102,16 @@ if(RUBY_EXECUTABLE  AND NOT  RUBY_VERSION_MAJOR)
     _RUBY_CONFIG_VAR("sitearchdir" RUBY_SITEARCH_DIR)
     _RUBY_CONFIG_VAR("sitelibdir" RUBY_SITELIB_DIR)
  
@@ -20,7 +61,14 @@ on systems that have such directories but RbConfig doesn't have such options.
     # vendor_ruby available ?
     execute_process(COMMAND ${RUBY_EXECUTABLE} -r vendor-specific -e "print 'true'"
        OUTPUT_VARIABLE RUBY_HAS_VENDOR_RUBY  ERROR_QUIET)
-@@ -121,6 +131,8 @@ if(RUBY_EXECUTABLE  AND NOT  RUBY_VERSION_MAJOR)
+@@ -115,12 +126,14 @@ if(RUBY_EXECUTABLE  AND NOT  RUBY_VERSION_MAJOR)
+    set(RUBY_VERSION_MINOR    ${RUBY_VERSION_MINOR}    CACHE PATH "The Ruby minor version" FORCE)
+    set(RUBY_VERSION_PATCH    ${RUBY_VERSION_PATCH}    CACHE PATH "The Ruby patch version" FORCE)
+    set(RUBY_ARCH_DIR         ${RUBY_ARCH_DIR}         CACHE PATH "The Ruby arch dir" FORCE)
+-   set(RUBY_HDR_DIR          ${RUBY_HDR_DIR}          CACHE PATH "The Ruby header dir (1.9)" FORCE)
++   set(RUBY_HDR_DIR          ${RUBY_HDR_DIR}          CACHE PATH "The Ruby header dir (1.9+)" FORCE)
+    set(RUBY_POSSIBLE_LIB_DIR ${RUBY_POSSIBLE_LIB_DIR} CACHE PATH "The Ruby lib dir" FORCE)
+    set(RUBY_RUBY_LIB_DIR     ${RUBY_RUBY_LIB_DIR}     CACHE PATH "The Ruby ruby-lib dir" FORCE)
     set(RUBY_SITEARCH_DIR     ${RUBY_SITEARCH_DIR}     CACHE PATH "The Ruby site arch dir" FORCE)
     set(RUBY_SITELIB_DIR      ${RUBY_SITELIB_DIR}      CACHE PATH "The Ruby site lib dir" FORCE)
     set(RUBY_HAS_VENDOR_RUBY  ${RUBY_HAS_VENDOR_RUBY}  CACHE BOOL "Vendor Ruby is available" FORCE)
@@ -29,7 +77,7 @@ on systems that have such directories but RbConfig doesn't have such options.
     set(RUBY_VENDORARCH_DIR   ${RUBY_VENDORARCH_DIR}   CACHE PATH "The Ruby vendor arch dir" FORCE)
     set(RUBY_VENDORLIB_DIR    ${RUBY_VENDORLIB_DIR}    CACHE PATH "The Ruby vendor lib dir" FORCE)
  
-@@ -133,6 +145,8 @@ if(RUBY_EXECUTABLE  AND NOT  RUBY_VERSION_MAJOR)
+@@ -133,6 +146,8 @@ if(RUBY_EXECUTABLE  AND NOT  RUBY_VERSION_MAJOR)
       RUBY_SITEARCH_DIR
       RUBY_SITELIB_DIR
       RUBY_HAS_VENDOR_RUBY
@@ -38,7 +86,19 @@ on systems that have such directories but RbConfig doesn't have such options.
       RUBY_VENDORARCH_DIR
       RUBY_VENDORLIB_DIR
       RUBY_VERSION_MAJOR
-@@ -166,6 +180,7 @@ find_path(RUBY_INCLUDE_DIR
+@@ -149,7 +164,10 @@ if(RUBY_EXECUTABLE AND NOT RUBY_VERSION_MAJOR)
+    set(RUBY_VERSION_MINOR 8)
+    set(RUBY_VERSION_PATCH 0)
+    # check whether we found 1.9.x
+-   if(${RUBY_EXECUTABLE} MATCHES "ruby1.?9"  OR  RUBY_HDR_DIR)
++   if(${RUBY_EXECUTABLE} MATCHES "ruby2\\.?0")
++      set(RUBY_VERSION_MAJOR 2)
++      set(RUBY_VERSION_MINOR 0)
++   elseif(${RUBY_EXECUTABLE} MATCHES "ruby1\\.?9")
+       set(RUBY_VERSION_MAJOR 1)
+       set(RUBY_VERSION_MINOR 9)
+    endif()
+@@ -166,6 +184,7 @@ find_path(RUBY_INCLUDE_DIR
     NAMES ruby.h
     HINTS
     ${RUBY_HDR_DIR}
@@ -46,7 +106,7 @@ on systems that have such directories but RbConfig doesn't have such options.
     ${RUBY_ARCH_DIR}
     /usr/lib/ruby/${_RUBY_VERSION_SHORT}/i586-linux-gnu/ )
  
-@@ -176,6 +191,7 @@ if( "${Ruby_FIND_VERSION_SHORT_NODOT}" GREATER 18  OR 
+@@ -176,6 +195,7 @@ if( "${Ruby_FIND_VERSION_SHORT_NODOT}" GREATER 18  OR 
     find_path(RUBY_CONFIG_INCLUDE_DIR
       NAMES ruby/config.h  config.h
       HINTS
@@ -54,3 +114,19 @@ on systems that have such directories but RbConfig doesn't have such options.
       ${RUBY_HDR_DIR}/${RUBY_ARCH}
       ${RUBY_ARCH_DIR}
       )
+@@ -185,7 +205,14 @@ endif()
+ 
+ 
+ # Determine the list of possible names for the ruby library
+-set(_RUBY_POSSIBLE_LIB_NAMES ruby ruby-static ruby${_RUBY_VERSION_SHORT} ruby${_RUBY_VERSION_SHORT_NODOT} ruby-${_RUBY_VERSION_SHORT} ruby-${RUBY_VERSION})
++set(_RUBY_POSSIBLE_LIB_NAMES
++  ruby-${RUBY_VERSION}
++  ruby-${_RUBY_VERSION_SHORT}
++  ruby${_RUBY_VERSION_SHORT}
++  ruby${_RUBY_VERSION_SHORT_NODOT}
++  ruby
++  ruby-static
++  )
+ 
+ if(WIN32)
+    set( _RUBY_MSVC_RUNTIME "" )
