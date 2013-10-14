@@ -1,6 +1,9 @@
-$OpenBSD: patch-libseahorse_seahorse-object_h,v 1.1 2013/09/26 11:23:17 ajacoutot Exp $
+$OpenBSD: patch-libseahorse_seahorse-object_h,v 1.2 2013/10/14 13:52:32 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=708827
+From f0f1e10467ffbae2dfdc8b0a31fdcb8c97428b2e Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Thu, 26 Sep 2013 11:19:22 +0000
+Subject: Prevent some redefinitions.
 
 --- libseahorse/seahorse-object.h.orig	Thu Sep 26 13:09:10 2013
 +++ libseahorse/seahorse-object.h	Thu Sep 26 13:09:13 2013
