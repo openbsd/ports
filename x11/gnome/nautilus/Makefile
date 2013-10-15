@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.133 2013/09/28 08:51:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.134 2013/10/15 09:43:55 ajacoutot Exp $
 
 COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		3.10.0
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  nautilus-extension   3.0      # 5.0
 
@@ -27,8 +27,7 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/dconf
 
-RUN_DEPENDS=		misc/shared-mime-info \
-			x11/gnome/gvfs \
+RUN_DEPENDS=		x11/gnome/gvfs \
 			devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=		x11/gnome/desktop \
@@ -38,6 +37,7 @@ LIB_DEPENDS=		x11/gnome/desktop \
 
 MODGNOME_TOOLS= 	gi
 MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_MIME_FILE=	Yes
 
 # it would introduce a cyclic dependency with x11/gnome/tracker; also it
 # is better to keep the regular search for nautilus so that we can get

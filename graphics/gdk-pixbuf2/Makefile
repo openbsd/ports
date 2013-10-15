@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2013/09/25 12:38:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2013/10/15 09:44:20 ajacoutot Exp $
 
 COMMENT=		graphic library for gtk+2
 
 GNOME_PROJECT=		gdk-pixbuf
 GNOME_VERSION=		2.30.0
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -30,8 +31,8 @@ LIB_DEPENDS=		devel/glib2>=2.38.0 \
 
 # configure: detect and set GDK_PIXBUF_USE_GIO_MIME
 BUILD_DEPENDS +=	misc/shared-mime-info
-RUN_DEPENDS +=		misc/shared-mime-info
 
+MODGNOME_MIME_FILE=	Yes
 MODGNOME_TOOLS=		gi
 
 CONFIGURE_STYLE=	gnu

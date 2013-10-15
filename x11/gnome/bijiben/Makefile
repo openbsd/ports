@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/10/13 22:24:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2013/10/15 09:43:54 ajacoutot Exp $
 
 TRACKER_VERSION=	0.16
 
@@ -6,6 +6,7 @@ COMMENT=		simple note editor
 
 GNOME_PROJECT=		bijiben
 GNOME_VERSION=		3.10.1
+REVISION=		0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -38,13 +39,11 @@ LIB_DEPENDS=		graphics/clutter/clutter-gtk \
 			x11/gnome/tracker>=${TRACKER_VERSION}
 
 # needs xdg-email
-RUN_DEPENDS=		devel/xdg-utils \
-			misc/shared-mime-info
-
-CONFIGURE_ARGS=		--disable-update-mimedb
+RUN_DEPENDS=		devel/xdg-utils
 
 MODGNOME_TOOLS=		yelp
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
+MODGNOME_MIME_FILE=	Yes
 
 .include <bsd.port.mk>

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.101 2013/09/28 08:51:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.102 2013/10/15 09:43:54 ajacoutot Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
 GNOME_PROJECT=		eog
 GNOME_VERSION=		3.10.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		graphics
 
@@ -33,12 +33,12 @@ LIB_DEPENDS=		devel/libpeas \
 			x11/gnome/desktop \
 			graphics/lcms2
 
-RUN_DEPENDS=		devel/gsettings-desktop-schemas \
-			misc/shared-mime-info
+RUN_DEPENDS=		devel/gsettings-desktop-schemas
 
 MODGNOME_TOOLS= 	gi yelp
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
+MODGNOME_MIME_FILE=	Yes
 
 post-install:
 	rm ${PREFIX}/lib/eog/plugins/*.{a,la}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/10/06 09:08:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2013/10/15 09:43:53 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	music management and playback application for GNOME
 
 GNOME_VERSION=	2.6.1
 GNOME_PROJECT=	banshee
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	audio multimedia
 
@@ -46,8 +46,7 @@ COMMON_DEPENDS=	devel/mono-notify \
 BUILD_DEPENDS=	${COMMON_DEPENDS} \
 		devel/libmtp
 
-RUN_DEPENDS=	${COMMON_DEPENDS} \
-		misc/shared-mime-info
+RUN_DEPENDS=	${COMMON_DEPENDS}
 
 RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-good #libgstgconfelements
 RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-bad #bpmdetect (soundtouch)
@@ -58,6 +57,7 @@ LIB_DEPENDS=	www/webkit \
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
+MODGNOME_MIME_FILE=	Yes
 MODGNOME_TOOLS=		yelp
 
 LIBTOOL_FLAGS=	--tag=disable-static

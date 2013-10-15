@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2013/09/28 08:50:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.101 2013/10/15 09:44:20 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,9 +18,9 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
 
-REVISION-main=		1
-REVISION-nautilus=	1
-REVISION-dvi=		0
+REVISION-main=		2
+REVISION-nautilus=	2
+REVISION-dvi=		1
 
 SHARED_LIBS +=  evdocument3               0.2 # 4.0
 SHARED_LIBS +=  evview3                   0.0 # 3.0
@@ -64,9 +64,7 @@ RUN_DEPENDS-main= ${RUN_DEPENDS} \
 		archivers/unrar \
 		archivers/unzip \
 		devel/gsettings-desktop-schemas \
-		misc/shared-mime-info \
-		print/ghostscript/gnu \
-		${MODGNOME_RUN_DEPENDS_yelp}
+		print/ghostscript/gnu
 
 WANTLIB-dvi=	${WANTLIB} gs evdocument3 kpathsea spectre ICE SM \
 		jpeg avahi-common dbus-1 pthread
@@ -74,16 +72,18 @@ LIB_DEPENDS-dvi= ${LIB_DEPENDS} \
 		${BASE_PKGPATH} \
 		print/texlive/base \
 		print/libspectre
+RUN_DEPENDS-dvi=${MODGETTEXT_RUN_DEPENDS}
 
 WANTLIB-nautilus= ${WANTLIB} gthread-2.0 nautilus-extension evdocument3 \
 		ICE SM dbus-1 pthread
 LIB_DEPENDS-nautilus= ${BASE_PKGPATH} \
 		${LIB_DEPENDS} \
 		x11/gnome/nautilus
-RUN_DEPENDS-nautilus=
+RUN_DEPENDS-nautilus=${MODGETTEXT_RUN_DEPENDS}
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
+MODGNOME_MIME_FILE=	Yes
 
 LIBTOOL_FLAGS=	--tag=disable-static
 

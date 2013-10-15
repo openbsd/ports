@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.62 2013/09/28 08:51:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2013/10/15 09:43:55 ajacoutot Exp $
 
 COMMENT=		project management application
 
 GNOME_PROJECT=		planner
 GNOME_VERSION=		0.14.6
 EPOCH=			0
-REVISION=		1
+REVISION=		2
 
 # Fedora patches as of 2013-08-04 04:26:11 (GMT)
 MASTER_SITES0=		http://pkgs.fedoraproject.org/cgit/planner.git/plain/
@@ -50,8 +50,6 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/gconf2
 
-RUN_DEPENDS=		misc/shared-mime-info
-
 LIB_DEPENDS=		security/libgcrypt \
 			textproc/libxslt \
 			x11/gnome/libgnomecanvas \
@@ -60,14 +58,13 @@ LIB_DEPENDS=		security/libgcrypt \
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
+MODGNOME_MIME_FILE=	Yes
 MODGCONF2_SCHEMAS_DIR=	planner
 
 CONFIGURE_ARGS= 	--disable-python \
 			--disable-eds \
 			--disable-eds-backend \
 			--without-database
-
-CONFIGURE_ARGS +=	--disable-update-mimedb
 
 post-install:
 	rm ${PREFIX}/lib/planner/{file-modules,plugins,storage-modules}/*.{a,la}

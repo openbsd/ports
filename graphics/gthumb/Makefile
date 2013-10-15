@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2013/10/06 15:32:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2013/10/15 09:44:20 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
 GNOME_VERSION=	3.2.3
-REVISION=	1
+REVISION=	2
 
 API_V=		${GNOME_VERSION:R}
 SUBST_VARS=	API_V
@@ -47,7 +47,6 @@ LIB_DEPENDS=	graphics/clutter/clutter-gtk  \
 		x11/gnome/librsvg
 
 RUN_DEPENDS=	graphics/dcraw \
-		misc/shared-mime-info \
 		multimedia/gstreamer1/plugins-base
 
 LIBTOOL_FLAGS=		--tag=disable-static
@@ -55,6 +54,7 @@ LIBTOOL_FLAGS=		--tag=disable-static
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
+MODGNOME_MIME_FILE=	Yes
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib -Wl,-rpath,${TRUEPREFIX}/lib/gthumb/extensions
 

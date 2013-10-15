@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2013/10/10 09:55:24 stsp Exp $
+# $OpenBSD: Makefile,v 1.104 2013/10/15 09:43:53 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		3.10.0
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -46,8 +46,7 @@ MODULES=		devel/dconf \
 BUILD_DEPENDS=		devel/autogen \
 			devel/bison
 
-RUN_DEPENDS=		misc/shared-mime-info \
-			devel/subversion,-gnome-keyring
+RUN_DEPENDS=		devel/subversion,-gnome-keyring
 
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			devel/glade \
@@ -69,6 +68,7 @@ RUN_DEPENDS +=		devel/py-rope
 LIBTOOL_FLAGS=		--tag=disable-static
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
+MODGNOME_MIME_FILE=	Yes
 
 MODGNOME_TOOLS= 	gi yelp vala
 
