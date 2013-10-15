@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.70 2013/10/15 09:20:49 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.71 2013/10/15 09:43:08 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -44,6 +44,12 @@ MODGNOME_pre-configure += ln -sf /usr/bin/true ${WRKDIR}/bin/desktop-file-valida
 # Set to 'yes' if there are icon files under share/icons/.
 .if defined(MODGNOME_ICON_CACHE) && ${MODGNOME_ICON_CACHE:L} == "yes"
 MODGNOME_RUN_DEPENDS+=	x11/gtk+2,-guic
+.endif
+
+# Set to 'yes' if there are .xml files under share/mime/.
+.if defined(MODGNOME_MIME_FILE) && ${MODGNOME_MIME_FILE:L} == "yes"
+MODGNOME_RUN_DEPENDS+=	misc/shared-mime-info
+MODGNOME_pre-configure += ln -sf /usr/bin/true ${WRKDIR}/bin/update-mime-database
 .endif
 
 USE_GMAKE?=		Yes
