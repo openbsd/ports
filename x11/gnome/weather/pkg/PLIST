@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/09/26 10:59:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/10/15 18:07:15 ajacoutot Exp $
 bin/gnome-weather
 lib/org.gnome.Weather.Application/
 lib/org.gnome.Weather.Application/girepository-1.0/
@@ -19,6 +19,7 @@ share/icons/hicolor/32x32/apps/org.gnome.Weather.Application.png
 share/icons/hicolor/48x48/apps/org.gnome.Weather.Application.png
 share/locale/as/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/ca/LC_MESSAGES/org.gnome.Weather.Application.mo
+share/locale/ca@valencia/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/cs/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/da/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/de/LC_MESSAGES/org.gnome.Weather.Application.mo
@@ -27,6 +28,7 @@ share/locale/en_GB/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/es/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/et/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/eu/LC_MESSAGES/org.gnome.Weather.Application.mo
+share/locale/fa/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/fi/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/fr/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/fur/LC_MESSAGES/org.gnome.Weather.Application.mo
@@ -54,6 +56,7 @@ share/locale/sr/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/sr@latin/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/tg/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/th/LC_MESSAGES/org.gnome.Weather.Application.mo
+share/locale/tr/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/uk/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/zh_CN/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/zh_HK/LC_MESSAGES/org.gnome.Weather.Application.mo
