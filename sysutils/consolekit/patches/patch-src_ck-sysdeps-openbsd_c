@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.14 2013/10/14 13:56:10 ajacoutot Exp $
---- src/ck-sysdeps-openbsd.c.orig	Tue Sep 24 00:48:32 2013
-+++ src/ck-sysdeps-openbsd.c	Tue Sep 24 00:53:08 2013
-@@ -0,0 +1,438 @@
+$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.15 2013/10/15 13:31:15 ajacoutot Exp $
+--- src/ck-sysdeps-openbsd.c.orig	Tue Oct 15 15:24:12 2013
++++ src/ck-sysdeps-openbsd.c	Tue Oct 15 15:27:37 2013
+@@ -0,0 +1,465 @@
 +/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
 + *
 + * Copyright (C) 2006 William Jon McCann <mccann@jhu.edu>
@@ -351,12 +351,39 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.14 2013/10/14 13:56:10 ajacoutot Ex
 +gboolean
 +ck_get_max_num_consoles (guint *num)
 +{
-+	/* XXX how can we find out how many are configured? */
-+        if (num != NULL) {
-+                *num = 7;
++        int      max_consoles;
++        int      res;
++        gboolean ret;
++        struct ttyent *t;
++
++        ret = FALSE;
++        max_consoles = 0;
++
++        res = setttyent ();
++        if (res == 0) {
++                goto done;
 +        }
 +
-+        return TRUE;
++        while ((t = getttyent ()) != NULL) {
++                if (t->ty_status & TTY_ON && strncmp (t->ty_name, "ttyC", 4) == 0)
++                        max_consoles++;
++        }
++
++        /* Increment one more so that all consoles are properly counted
++         * this is arguable a bug in vt_add_watches().
++         */
++        max_consoles++;
++
++        ret = TRUE;
++
++        endttyent ();
++
++done:
++         if (num != NULL) {
++                *num = max_consoles;
++         }
++ 
++        return ret;
 +}
 +
 +char *
