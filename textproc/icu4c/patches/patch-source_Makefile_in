@@ -1,7 +1,7 @@
-$OpenBSD: patch-source_Makefile_in,v 1.8 2013/03/24 10:28:35 ajacoutot Exp $
---- source/Makefile.in.orig	Fri Mar 15 23:16:50 2013
-+++ source/Makefile.in	Sun Mar 24 11:07:42 2013
-@@ -307,8 +307,8 @@ $(top_builddir)/config/pkgdataMakefile:
+$OpenBSD: patch-source_Makefile_in,v 1.9 2013/10/15 13:35:54 ajacoutot Exp $
+--- source/Makefile.in.orig	Fri Oct  4 22:54:58 2013
++++ source/Makefile.in	Mon Oct 14 17:08:05 2013
+@@ -311,8 +311,8 @@ $(top_builddir)/config/pkgdataMakefile:
  
  $(top_builddir)/config/icu-config: $(top_builddir)/Makefile $(top_srcdir)/config/icu-config-top $(top_srcdir)/config/icu-config-bottom $(top_builddir)/config/Makefile.inc @platform_make_fragment@ $(top_srcdir)/config/make2sh.sed
  	-$(RMV) $@

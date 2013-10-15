@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2013/06/01 14:22:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2013/10/15 13:35:54 ajacoutot Exp $
 
 # avoid segfaults from icupkg compiled and then used during the build
 .if ${MACHINE_ARCH} == "arm"
@@ -7,10 +7,10 @@ CFLAGS+=		-O1 -fno-stack-protector
 
 COMMENT=		International Components for Unicode
 
-VERSION=		51.2
+VERSION=		52.1
 DISTNAME=		icu4c-${VERSION:S/./_/g}-src
 PKGNAME=		icu4c-${VERSION}
-SO_VERSION=		6.2
+SO_VERSION=		6.3
 .for _lib in icudata icui18n icuio icule iculx icutest icutu icuuc
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor

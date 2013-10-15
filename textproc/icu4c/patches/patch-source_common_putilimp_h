@@ -1,26 +1,26 @@
-$OpenBSD: patch-source_common_putilimp_h,v 1.6 2013/03/24 10:28:35 ajacoutot Exp $
+$OpenBSD: patch-source_common_putilimp_h,v 1.7 2013/10/15 13:35:54 ajacoutot Exp $
 
 hppa and sparc don't have atomic builtins:
 __sync_val_compare_and_swap, __sync_add_and_fetch, __sync_sub_and_fetch
 don't assume having GNUC >= 401 implies they're here..
 
---- source/common/putilimp.h.orig	Fri Mar 15 23:11:58 2013
-+++ source/common/putilimp.h	Sun Mar 24 11:07:42 2013
-@@ -126,6 +126,8 @@ typedef size_t uintptr_t;
+--- source/common/putilimp.h.orig	Fri Oct  4 22:49:30 2013
++++ source/common/putilimp.h	Mon Oct 14 17:10:25 2013
+@@ -128,6 +128,8 @@ typedef size_t uintptr_t;
     /* not defined */
- #elif U_PLATFORM == U_PF_OS400
+ #elif U_PLATFORM == U_PF_IPHONE
     /* not defined */
 +#elif U_PLATFORM == U_BSD
 +   /* not defined */
  #else
  #   define U_TIMEZONE timezone
  #endif
-@@ -183,7 +185,7 @@ typedef size_t uintptr_t;
-  */
- #ifdef U_HAVE_GCC_ATOMICS
+@@ -187,7 +189,7 @@ typedef size_t uintptr_t;
      /* Use the predefined value. */
--#elif U_GCC_MAJOR_MINOR >= 404
-+#elif U_GCC_MAJOR_MINOR >= 404 && !defined(__hppa__) && (defined(__sparc__) && ! defined(__sparcv9__))
- #   define U_HAVE_GCC_ATOMICS 1
- #else
- #   define U_HAVE_GCC_ATOMICS 0
+ #elif U_PLATFORM == U_PF_MINGW
+     #define U_HAVE_GCC_ATOMICS 0
+-#elif U_GCC_MAJOR_MINOR >= 404 || defined(__clang__)
++#elif U_GCC_MAJOR_MINOR >= 404 && !defined(__hppa__) && (defined(__sparc__) && ! defined(__sparcv9__)) || defined(__clang__)
+     /* TODO: Intel icc and IBM xlc on AIX also support gcc atomics.  (Intel originated them.)
+      *       Add them for these compilers.
+      * Note: Clang sets __GNUC__ defines for version 4.2, so misses the 4.4 test here.
