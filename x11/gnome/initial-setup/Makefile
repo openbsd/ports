@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/10/10 08:41:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2013/10/15 18:38:15 ajacoutot Exp $
 
 COMMENT=		initial-setup firstboot-like tool
 
 GNOME_PROJECT=		gnome-initial-setup
-GNOME_VERSION=		3.10.0.1
-REVISION=		0
+GNOME_VERSION=		3.10.1.1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -13,7 +12,7 @@ WANTLIB += EGL GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xt accountsservice asn1
 WANTLIB += atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
 WANTLIB += com_err crack crypto dbus-1 dbus-glib-1 enchant expat
-WANTLIB += ffi fontconfig freetype gailutil-3 gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB += ffi fontconfig freetype gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gdm geoclue gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3
 WANTLIB += goa-1.0 goa-backend-1.0 gobject-2.0 gpg-error graphite2
 WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
@@ -24,7 +23,7 @@ WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png polkit-gobject-1 pthread pthread-stubs pwquality
 WANTLIB += rest-0.7 roken secret-1 soup-2.4 soup-gnome-2.4 sqlite3
 WANTLIB += stdc++ telepathy-glib webkitgtk-3.0 webp wind xcb xcb-render
-WANTLIB += xcb-shm xkbfile xml2 xslt z
+WANTLIB += xcb-shm xkbfile xml2 xslt z orc-0.4
 
 MODULES=		x11/gnome \
 			devel/dconf \
