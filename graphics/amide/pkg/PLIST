@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/12/23 12:01:12 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/10/15 20:49:58 schwarze Exp $
 @bin bin/amide
 @man man/man1/amide.1
 share/applications/amide.desktop
+share/gnome/
+share/gnome/help/
 share/gnome/help/amide/
 share/gnome/help/amide/C/
 share/gnome/help/amide/C/amide.xml
@@ -55,6 +57,7 @@ share/gtk-doc/html/amitk/right.png
 share/gtk-doc/html/amitk/style.css
 share/gtk-doc/html/amitk/up.png
 share/locale/zh_CN/LC_MESSAGES/amide.mo
+share/omf/
 share/omf/amide/
 share/omf/amide/amide-C.omf
 share/omf/amide/amide-es.omf

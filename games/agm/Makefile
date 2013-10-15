@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:07:37 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2013/10/15 20:49:57 schwarze Exp $
 
 COMMENT=		anagram search utility
 
 DISTNAME=		agm-1.3.1
-REVISION =		1
+REVISION =		2
 CATEGORIES=		games
 
 PERMIT_PACKAGE_CDROM=	no license available
@@ -13,7 +13,6 @@ WANTLIB=		c
 
 MASTER_SITES=		${MASTER_SITE_SUNSITE:=games/amusements/}
 
-USE_GROFF =		Yes
 NO_TEST=		Yes
 
 do-install:

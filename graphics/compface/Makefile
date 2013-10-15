@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:10:51 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/10/15 20:49:58 schwarze Exp $
 
 COMMENT=	programs and library for the 'X-face' mail and news header
 
 DISTNAME=	compface-1.5.2
-REVISION =	0
+REVISION =	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.xemacs.org/pub/xemacs/aux/
 HOMEPAGE=	http://freshmeat.net/projects/compface/
@@ -17,7 +17,6 @@ MAINTAINER=	Hans-Guenter Weigand <hgw@d1906.inka.de>
 
 CONFIGURE_STYLE=gnu
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 do-install:

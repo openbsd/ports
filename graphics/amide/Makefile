@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2013/09/27 17:49:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2013/10/15 20:49:57 schwarze Exp $
 
 COMMENT =	Amide a Medical Imaging Data Examiner
 
 DISTNAME =	amide-0.9.2
-REVISION =	17
+REVISION =	18
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://amide.sourceforge.net/
@@ -44,7 +44,6 @@ LIB_DEPENDS =	devel/gsl>=1.6 \
 		devel/gconf2
 
 USE_GMAKE =	Yes
-USE_GROFF =		Yes
 
 AUTOCONF_VERSION =	2.63
 CONFIGURE_STYLE =	autoconf
