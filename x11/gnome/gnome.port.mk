@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.69 2013/09/28 08:47:58 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.70 2013/10/15 09:20:49 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -38,6 +38,7 @@ MODULES+=		textproc/intltool
 # Set to 'yes' if there are .desktop files under share/applications/.
 .if defined(MODGNOME_DESKTOP_FILE) && ${MODGNOME_DESKTOP_FILE:L} == "yes"
 MODGNOME_RUN_DEPENDS+=	devel/desktop-file-utils
+MODGNOME_pre-configure += ln -sf /usr/bin/true ${WRKDIR}/bin/desktop-file-validate
 .endif
 
 # Set to 'yes' if there are icon files under share/icons/.
