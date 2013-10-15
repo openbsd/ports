@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/12/23 15:15:30 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/10/15 13:48:59 naddy Exp $
 @newgroup _natpmpd:691
 @newuser _natpmpd:691:691:daemon:NAT-PMP Daemon:/var/empty:/sbin/nologin
-man/cat5/natpmpd.conf.5
-man/cat8/natpmpd.8
+@man man/man5/natpmpd.conf.5
+@man man/man8/natpmpd.8
+@bin sbin/natpmpd
 share/examples/natpmpd/
 share/examples/natpmpd/natpmpd.conf
 @sample ${SYSCONFDIR}/natpmpd.conf
-@bin sbin/natpmpd
 @rcscript ${RCDIR}/natpmpd

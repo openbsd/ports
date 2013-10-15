@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/10/08 17:27:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2013/10/15 13:48:59 naddy Exp $
 
 COMMENT=		hotplugd(8) automounter (Toad Opens All Devices)
 
 DISTNAME=		toad-0.3
+REVISION=		0
 
 CATEGORIES=		sysutils
 
@@ -21,7 +22,8 @@ RUN_DEPENDS=		devel/xdg-utils \
 			net/p5-Net-DBus \
 			sysutils/consolekit
 
-MAKE_FLAGS=		PREFIX=${TRUEPREFIX}
+MAKE_FLAGS=		PREFIX=${TRUEPREFIX} \
+			MANDIR=${TRUEPREFIX}/man/man
 NO_TEST=		Yes
 
 post-install:
