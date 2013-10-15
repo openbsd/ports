@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 02:52:08 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/10/15 02:22:00 jeremy Exp $
 
 COMMENT=	PostgreSQL tools from Skype
 
 MODPY_EGG_VERSION=	3.1.1
 DISTNAME=		skytools-${MODPY_EGG_VERSION}
+REVISION=	0
 
 CATEGORIES=	databases
 
