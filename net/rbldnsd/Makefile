@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:35:56 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/10/15 01:18:00 william Exp $
 
 COMMENT=	small daemon for DNSBLs
 
-DISTNAME=	rbldnsd_0.996b
-PKGNAME=	${DISTNAME:S/_/-/}
+DISTNAME=	rbldnsd-0.997a
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.corpit.ru/mjt/rbldnsd.html
@@ -15,11 +14,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c z
 
-MASTER_SITES=	http://www.corpit.ru/mjt/rbldnsd/ \
-		http://openbsd.rutgers.edu/
+MASTER_SITES=	http://www.corpit.ru/mjt/rbldnsd/
 
 CONFIGURE_STYLE=simple
 WRKDIST=	${WRKDIR}/${DISTNAME:S/rbldnsd_/rbldnsd-/}
+RBLDNSD_BASE=	${VARBASE}/rbldnsd
+SUBST_VARS=	VARBASE RBLDNSD_BASE
 
 NO_TEST=	Yes
 
