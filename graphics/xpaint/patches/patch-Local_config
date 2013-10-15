@@ -1,7 +1,7 @@
-$OpenBSD: patch-Local_config,v 1.5 2013/06/04 15:41:23 naddy Exp $
+$OpenBSD: patch-Local_config,v 1.6 2013/10/15 12:50:10 naddy Exp $
 --- Local.config.orig	Sat Apr 30 23:33:14 2005
-+++ Local.config	Mon Sep  5 15:51:50 2005
-@@ -162,6 +162,22 @@ XCOMM CDEBUGFLAGS =
++++ Local.config	Tue Oct 15 00:38:55 2013
+@@ -162,6 +162,21 @@ XCOMM CDEBUGFLAGS =
  
  XCOMM This should take care of everything needed for BSD.
  
@@ -15,7 +15,6 @@ $OpenBSD: patch-Local_config,v 1.5 2013/06/04 15:41:23 naddy Exp $
 +PNG_LIB      = -L${LOCALBASE}/lib -lpng -lz
 +XPM_INCLUDE  = -I${X11BASE}/include/X11
 +BINDIR       = ${TRUEPREFIX}/bin
-+MANDIR       = ${TRUEPREFIX}/man/cat1
 +SHAREDIR     = ${TRUEPREFIX}/share/xpaint
 +XAPPLOADDIR  = ${TRUEPREFIX}/lib/X11/app-defaults
 +EDITOR       = xterm -fn 9x15 -cr green -ms red -bg lightyellow -fg black -e vi
