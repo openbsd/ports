@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2013/08/20 22:05:50 zhuk Exp $
+# $OpenBSD: Makefile,v 1.23 2013/10/15 07:37:51 schwarze Exp $
 
 COMMENT=		enhanced interactive Python shell
 
 MODPY_EGG_VERSION=	0.13.2
 DISTNAME=		ipython-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://ipython.org/
 
@@ -32,8 +32,6 @@ BUILD_DEPENDS =		textproc/py-sphinx \
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_PYPI:=i/ipython/}
-
-USE_GROFF =	Yes
 
 pre-patch:
 	ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
