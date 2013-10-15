@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2013/09/26 07:22:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2013/10/15 17:41:07 ajacoutot Exp $
 @conflict gnome2-user-docs-*
 @pkgpath x11/gnome/users-guide
 share/help/
@@ -337,9 +337,7 @@ share/help/C/gnome-help/printing-setup.page
 share/help/C/gnome-help/printing-streaks.page
 share/help/C/gnome-help/printing-to-file.page
 share/help/C/gnome-help/printing.page
-share/help/C/gnome-help/privacy-hide-notifications.page
 share/help/C/gnome-help/privacy-history-recent-off.page
-share/help/C/gnome-help/privacy-name-visibility.page
 share/help/C/gnome-help/privacy-purge.page
 share/help/C/gnome-help/privacy-screen-lock.page
 share/help/C/gnome-help/privacy.page
@@ -765,9 +763,7 @@ share/help/as/gnome-help/printing-setup.page
 share/help/as/gnome-help/printing-streaks.page
 share/help/as/gnome-help/printing-to-file.page
 share/help/as/gnome-help/printing.page
-share/help/as/gnome-help/privacy-hide-notifications.page
 share/help/as/gnome-help/privacy-history-recent-off.page
-share/help/as/gnome-help/privacy-name-visibility.page
 share/help/as/gnome-help/privacy-purge.page
 share/help/as/gnome-help/privacy-screen-lock.page
 share/help/as/gnome-help/privacy.page
@@ -1164,9 +1160,7 @@ share/help/ca/gnome-help/printing-setup.page
 share/help/ca/gnome-help/printing-streaks.page
 share/help/ca/gnome-help/printing-to-file.page
 share/help/ca/gnome-help/printing.page
-share/help/ca/gnome-help/privacy-hide-notifications.page
 share/help/ca/gnome-help/privacy-history-recent-off.page
-share/help/ca/gnome-help/privacy-name-visibility.page
 share/help/ca/gnome-help/privacy-purge.page
 share/help/ca/gnome-help/privacy-screen-lock.page
 share/help/ca/gnome-help/privacy.page
@@ -1563,9 +1557,7 @@ share/help/cs/gnome-help/printing-setup.page
 share/help/cs/gnome-help/printing-streaks.page
 share/help/cs/gnome-help/printing-to-file.page
 share/help/cs/gnome-help/printing.page
-share/help/cs/gnome-help/privacy-hide-notifications.page
 share/help/cs/gnome-help/privacy-history-recent-off.page
-share/help/cs/gnome-help/privacy-name-visibility.page
 share/help/cs/gnome-help/privacy-purge.page
 share/help/cs/gnome-help/privacy-screen-lock.page
 share/help/cs/gnome-help/privacy.page
@@ -1962,9 +1954,7 @@ share/help/de/gnome-help/printing-setup.page
 share/help/de/gnome-help/printing-streaks.page
 share/help/de/gnome-help/printing-to-file.page
 share/help/de/gnome-help/printing.page
-share/help/de/gnome-help/privacy-hide-notifications.page
 share/help/de/gnome-help/privacy-history-recent-off.page
-share/help/de/gnome-help/privacy-name-visibility.page
 share/help/de/gnome-help/privacy-purge.page
 share/help/de/gnome-help/privacy-screen-lock.page
 share/help/de/gnome-help/privacy.page
@@ -2361,9 +2351,7 @@ share/help/el/gnome-help/printing-setup.page
 share/help/el/gnome-help/printing-streaks.page
 share/help/el/gnome-help/printing-to-file.page
 share/help/el/gnome-help/printing.page
-share/help/el/gnome-help/privacy-hide-notifications.page
 share/help/el/gnome-help/privacy-history-recent-off.page
-share/help/el/gnome-help/privacy-name-visibility.page
 share/help/el/gnome-help/privacy-purge.page
 share/help/el/gnome-help/privacy-screen-lock.page
 share/help/el/gnome-help/privacy.page
@@ -2760,9 +2748,7 @@ share/help/es/gnome-help/printing-setup.page
 share/help/es/gnome-help/printing-streaks.page
 share/help/es/gnome-help/printing-to-file.page
 share/help/es/gnome-help/printing.page
-share/help/es/gnome-help/privacy-hide-notifications.page
 share/help/es/gnome-help/privacy-history-recent-off.page
-share/help/es/gnome-help/privacy-name-visibility.page
 share/help/es/gnome-help/privacy-purge.page
 share/help/es/gnome-help/privacy-screen-lock.page
 share/help/es/gnome-help/privacy.page
@@ -3159,9 +3145,7 @@ share/help/fi/gnome-help/printing-setup.page
 share/help/fi/gnome-help/printing-streaks.page
 share/help/fi/gnome-help/printing-to-file.page
 share/help/fi/gnome-help/printing.page
-share/help/fi/gnome-help/privacy-hide-notifications.page
 share/help/fi/gnome-help/privacy-history-recent-off.page
-share/help/fi/gnome-help/privacy-name-visibility.page
 share/help/fi/gnome-help/privacy-purge.page
 share/help/fi/gnome-help/privacy-screen-lock.page
 share/help/fi/gnome-help/privacy.page
@@ -3558,9 +3542,7 @@ share/help/fr/gnome-help/printing-setup.page
 share/help/fr/gnome-help/printing-streaks.page
 share/help/fr/gnome-help/printing-to-file.page
 share/help/fr/gnome-help/printing.page
-share/help/fr/gnome-help/privacy-hide-notifications.page
 share/help/fr/gnome-help/privacy-history-recent-off.page
-share/help/fr/gnome-help/privacy-name-visibility.page
 share/help/fr/gnome-help/privacy-purge.page
 share/help/fr/gnome-help/privacy-screen-lock.page
 share/help/fr/gnome-help/privacy.page
@@ -3957,9 +3939,7 @@ share/help/gl/gnome-help/printing-setup.page
 share/help/gl/gnome-help/printing-streaks.page
 share/help/gl/gnome-help/printing-to-file.page
 share/help/gl/gnome-help/printing.page
-share/help/gl/gnome-help/privacy-hide-notifications.page
 share/help/gl/gnome-help/privacy-history-recent-off.page
-share/help/gl/gnome-help/privacy-name-visibility.page
 share/help/gl/gnome-help/privacy-purge.page
 share/help/gl/gnome-help/privacy-screen-lock.page
 share/help/gl/gnome-help/privacy.page
@@ -4356,9 +4336,7 @@ share/help/gu/gnome-help/printing-setup.page
 share/help/gu/gnome-help/printing-streaks.page
 share/help/gu/gnome-help/printing-to-file.page
 share/help/gu/gnome-help/printing.page
-share/help/gu/gnome-help/privacy-hide-notifications.page
 share/help/gu/gnome-help/privacy-history-recent-off.page
-share/help/gu/gnome-help/privacy-name-visibility.page
 share/help/gu/gnome-help/privacy-purge.page
 share/help/gu/gnome-help/privacy-screen-lock.page
 share/help/gu/gnome-help/privacy.page
@@ -4755,9 +4733,7 @@ share/help/hi/gnome-help/printing-setup.page
 share/help/hi/gnome-help/printing-streaks.page
 share/help/hi/gnome-help/printing-to-file.page
 share/help/hi/gnome-help/printing.page
-share/help/hi/gnome-help/privacy-hide-notifications.page
 share/help/hi/gnome-help/privacy-history-recent-off.page
-share/help/hi/gnome-help/privacy-name-visibility.page
 share/help/hi/gnome-help/privacy-purge.page
 share/help/hi/gnome-help/privacy-screen-lock.page
 share/help/hi/gnome-help/privacy.page
@@ -5154,9 +5130,7 @@ share/help/hu/gnome-help/printing-setup.page
 share/help/hu/gnome-help/printing-streaks.page
 share/help/hu/gnome-help/printing-to-file.page
 share/help/hu/gnome-help/printing.page
-share/help/hu/gnome-help/privacy-hide-notifications.page
 share/help/hu/gnome-help/privacy-history-recent-off.page
-share/help/hu/gnome-help/privacy-name-visibility.page
 share/help/hu/gnome-help/privacy-purge.page
 share/help/hu/gnome-help/privacy-screen-lock.page
 share/help/hu/gnome-help/privacy.page
@@ -5553,9 +5527,7 @@ share/help/id/gnome-help/printing-setup.page
 share/help/id/gnome-help/printing-streaks.page
 share/help/id/gnome-help/printing-to-file.page
 share/help/id/gnome-help/printing.page
-share/help/id/gnome-help/privacy-hide-notifications.page
 share/help/id/gnome-help/privacy-history-recent-off.page
-share/help/id/gnome-help/privacy-name-visibility.page
 share/help/id/gnome-help/privacy-purge.page
 share/help/id/gnome-help/privacy-screen-lock.page
 share/help/id/gnome-help/privacy.page
@@ -5952,9 +5924,7 @@ share/help/it/gnome-help/printing-setup.page
 share/help/it/gnome-help/printing-streaks.page
 share/help/it/gnome-help/printing-to-file.page
 share/help/it/gnome-help/printing.page
-share/help/it/gnome-help/privacy-hide-notifications.page
 share/help/it/gnome-help/privacy-history-recent-off.page
-share/help/it/gnome-help/privacy-name-visibility.page
 share/help/it/gnome-help/privacy-purge.page
 share/help/it/gnome-help/privacy-screen-lock.page
 share/help/it/gnome-help/privacy.page
@@ -6351,9 +6321,7 @@ share/help/ja/gnome-help/printing-setup.page
 share/help/ja/gnome-help/printing-streaks.page
 share/help/ja/gnome-help/printing-to-file.page
 share/help/ja/gnome-help/printing.page
-share/help/ja/gnome-help/privacy-hide-notifications.page
 share/help/ja/gnome-help/privacy-history-recent-off.page
-share/help/ja/gnome-help/privacy-name-visibility.page
 share/help/ja/gnome-help/privacy-purge.page
 share/help/ja/gnome-help/privacy-screen-lock.page
 share/help/ja/gnome-help/privacy.page
@@ -6750,9 +6718,7 @@ share/help/kn/gnome-help/printing-setup.page
 share/help/kn/gnome-help/printing-streaks.page
 share/help/kn/gnome-help/printing-to-file.page
 share/help/kn/gnome-help/printing.page
-share/help/kn/gnome-help/privacy-hide-notifications.page
 share/help/kn/gnome-help/privacy-history-recent-off.page
-share/help/kn/gnome-help/privacy-name-visibility.page
 share/help/kn/gnome-help/privacy-purge.page
 share/help/kn/gnome-help/privacy-screen-lock.page
 share/help/kn/gnome-help/privacy.page
@@ -7149,9 +7115,7 @@ share/help/lv/gnome-help/printing-setup.page
 share/help/lv/gnome-help/printing-streaks.page
 share/help/lv/gnome-help/printing-to-file.page
 share/help/lv/gnome-help/printing.page
-share/help/lv/gnome-help/privacy-hide-notifications.page
 share/help/lv/gnome-help/privacy-history-recent-off.page
-share/help/lv/gnome-help/privacy-name-visibility.page
 share/help/lv/gnome-help/privacy-purge.page
 share/help/lv/gnome-help/privacy-screen-lock.page
 share/help/lv/gnome-help/privacy.page
@@ -7548,9 +7512,7 @@ share/help/nl/gnome-help/printing-setup.page
 share/help/nl/gnome-help/printing-streaks.page
 share/help/nl/gnome-help/printing-to-file.page
 share/help/nl/gnome-help/printing.page
-share/help/nl/gnome-help/privacy-hide-notifications.page
 share/help/nl/gnome-help/privacy-history-recent-off.page
-share/help/nl/gnome-help/privacy-name-visibility.page
 share/help/nl/gnome-help/privacy-purge.page
 share/help/nl/gnome-help/privacy-screen-lock.page
 share/help/nl/gnome-help/privacy.page
@@ -7947,9 +7909,7 @@ share/help/pa/gnome-help/printing-setup.page
 share/help/pa/gnome-help/printing-streaks.page
 share/help/pa/gnome-help/printing-to-file.page
 share/help/pa/gnome-help/printing.page
-share/help/pa/gnome-help/privacy-hide-notifications.page
 share/help/pa/gnome-help/privacy-history-recent-off.page
-share/help/pa/gnome-help/privacy-name-visibility.page
 share/help/pa/gnome-help/privacy-purge.page
 share/help/pa/gnome-help/privacy-screen-lock.page
 share/help/pa/gnome-help/privacy.page
@@ -8346,9 +8306,7 @@ share/help/pt_BR/gnome-help/printing-setup.page
 share/help/pt_BR/gnome-help/printing-streaks.page
 share/help/pt_BR/gnome-help/printing-to-file.page
 share/help/pt_BR/gnome-help/printing.page
-share/help/pt_BR/gnome-help/privacy-hide-notifications.page
 share/help/pt_BR/gnome-help/privacy-history-recent-off.page
-share/help/pt_BR/gnome-help/privacy-name-visibility.page
 share/help/pt_BR/gnome-help/privacy-purge.page
 share/help/pt_BR/gnome-help/privacy-screen-lock.page
 share/help/pt_BR/gnome-help/privacy.page
@@ -8745,9 +8703,7 @@ share/help/ru/gnome-help/printing-setup.page
 share/help/ru/gnome-help/printing-streaks.page
 share/help/ru/gnome-help/printing-to-file.page
 share/help/ru/gnome-help/printing.page
-share/help/ru/gnome-help/privacy-hide-notifications.page
 share/help/ru/gnome-help/privacy-history-recent-off.page
-share/help/ru/gnome-help/privacy-name-visibility.page
 share/help/ru/gnome-help/privacy-purge.page
 share/help/ru/gnome-help/privacy-screen-lock.page
 share/help/ru/gnome-help/privacy.page
@@ -9144,9 +9100,7 @@ share/help/sl/gnome-help/printing-setup.page
 share/help/sl/gnome-help/printing-streaks.page
 share/help/sl/gnome-help/printing-to-file.page
 share/help/sl/gnome-help/printing.page
-share/help/sl/gnome-help/privacy-hide-notifications.page
 share/help/sl/gnome-help/privacy-history-recent-off.page
-share/help/sl/gnome-help/privacy-name-visibility.page
 share/help/sl/gnome-help/privacy-purge.page
 share/help/sl/gnome-help/privacy-screen-lock.page
 share/help/sl/gnome-help/privacy.page
@@ -9543,9 +9497,7 @@ share/help/sr/gnome-help/printing-setup.page
 share/help/sr/gnome-help/printing-streaks.page
 share/help/sr/gnome-help/printing-to-file.page
 share/help/sr/gnome-help/printing.page
-share/help/sr/gnome-help/privacy-hide-notifications.page
 share/help/sr/gnome-help/privacy-history-recent-off.page
-share/help/sr/gnome-help/privacy-name-visibility.page
 share/help/sr/gnome-help/privacy-purge.page
 share/help/sr/gnome-help/privacy-screen-lock.page
 share/help/sr/gnome-help/privacy.page
@@ -9942,9 +9894,7 @@ share/help/sr@latin/gnome-help/printing-setup.page
 share/help/sr@latin/gnome-help/printing-streaks.page
 share/help/sr@latin/gnome-help/printing-to-file.page
 share/help/sr@latin/gnome-help/printing.page
-share/help/sr@latin/gnome-help/privacy-hide-notifications.page
 share/help/sr@latin/gnome-help/privacy-history-recent-off.page
-share/help/sr@latin/gnome-help/privacy-name-visibility.page
 share/help/sr@latin/gnome-help/privacy-purge.page
 share/help/sr@latin/gnome-help/privacy-screen-lock.page
 share/help/sr@latin/gnome-help/privacy.page
@@ -10341,9 +10291,7 @@ share/help/sv/gnome-help/printing-setup.page
 share/help/sv/gnome-help/printing-streaks.page
 share/help/sv/gnome-help/printing-to-file.page
 share/help/sv/gnome-help/printing.page
-share/help/sv/gnome-help/privacy-hide-notifications.page
 share/help/sv/gnome-help/privacy-history-recent-off.page
-share/help/sv/gnome-help/privacy-name-visibility.page
 share/help/sv/gnome-help/privacy-purge.page
 share/help/sv/gnome-help/privacy-screen-lock.page
 share/help/sv/gnome-help/privacy.page
@@ -10740,9 +10688,7 @@ share/help/ta/gnome-help/printing-setup.page
 share/help/ta/gnome-help/printing-streaks.page
 share/help/ta/gnome-help/printing-to-file.page
 share/help/ta/gnome-help/printing.page
-share/help/ta/gnome-help/privacy-hide-notifications.page
 share/help/ta/gnome-help/privacy-history-recent-off.page
-share/help/ta/gnome-help/privacy-name-visibility.page
 share/help/ta/gnome-help/privacy-purge.page
 share/help/ta/gnome-help/privacy-screen-lock.page
 share/help/ta/gnome-help/privacy.page
@@ -11139,9 +11085,7 @@ share/help/te/gnome-help/printing-setup.page
 share/help/te/gnome-help/printing-streaks.page
 share/help/te/gnome-help/printing-to-file.page
 share/help/te/gnome-help/printing.page
-share/help/te/gnome-help/privacy-hide-notifications.page
 share/help/te/gnome-help/privacy-history-recent-off.page
-share/help/te/gnome-help/privacy-name-visibility.page
 share/help/te/gnome-help/privacy-purge.page
 share/help/te/gnome-help/privacy-screen-lock.page
 share/help/te/gnome-help/privacy.page
@@ -11538,9 +11482,7 @@ share/help/vi/gnome-help/printing-setup.page
 share/help/vi/gnome-help/printing-streaks.page
 share/help/vi/gnome-help/printing-to-file.page
 share/help/vi/gnome-help/printing.page
-share/help/vi/gnome-help/privacy-hide-notifications.page
 share/help/vi/gnome-help/privacy-history-recent-off.page
-share/help/vi/gnome-help/privacy-name-visibility.page
 share/help/vi/gnome-help/privacy-purge.page
 share/help/vi/gnome-help/privacy-screen-lock.page
 share/help/vi/gnome-help/privacy.page
@@ -11937,9 +11879,7 @@ share/help/zh_CN/gnome-help/printing-setup.page
 share/help/zh_CN/gnome-help/printing-streaks.page
 share/help/zh_CN/gnome-help/printing-to-file.page
 share/help/zh_CN/gnome-help/printing.page
-share/help/zh_CN/gnome-help/privacy-hide-notifications.page
 share/help/zh_CN/gnome-help/privacy-history-recent-off.page
-share/help/zh_CN/gnome-help/privacy-name-visibility.page
 share/help/zh_CN/gnome-help/privacy-purge.page
 share/help/zh_CN/gnome-help/privacy-screen-lock.page
 share/help/zh_CN/gnome-help/privacy.page
