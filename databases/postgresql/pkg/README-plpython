@@ -1,0 +1,9 @@
+pl/python requires pthreads in order to work.  OpenBSD does not allow
+shared objects that link to pthreads to be opened via dlopen if the
+executable program does not link to pthreads.  So to use pl/python, you
+must ensure that PostgreSQL links to libpthread.  The easiest way to do
+this is adding the following login class to login.conf:
+
+postgresql:\
+        :setenv=LD_PRELOAD=libpthread.so:\
+        :tc=daemon: 

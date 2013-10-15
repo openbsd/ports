@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST-plpython,v 1.1 2013/10/15 02:18:19 jeremy Exp $
+lib/postgresql/plpython2.so
+share/postgresql/extension/plpython2u--1.0.sql
+share/postgresql/extension/plpython2u--unpackaged--1.0.sql
+share/postgresql/extension/plpython2u.control
+share/postgresql/extension/plpythonu--1.0.sql
+share/postgresql/extension/plpythonu--unpackaged--1.0.sql
+share/postgresql/extension/plpythonu.control

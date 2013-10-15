@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.22 2012/09/24 19:57:02 pea Exp $
+@comment $OpenBSD: PLIST-server,v 1.23 2013/10/15 02:18:19 jeremy Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-clients-*
@@ -10,9 +10,32 @@
 @bin bin/initdb
 @bin bin/pg_controldata
 @bin bin/pg_ctl
+@bin bin/pg_isready
 @bin bin/pg_resetxlog
+@bin bin/pg_xlogdump
 @bin bin/postgres
 bin/postmaster
+@comment include/postgresql/server/port/irix.h
+@comment include/postgresql/server/port/win32/
+@comment include/postgresql/server/port/win32/arpa/
+@comment include/postgresql/server/port/win32/arpa/inet.h
+@comment include/postgresql/server/port/win32/dlfcn.h
+@comment include/postgresql/server/port/win32/grp.h
+@comment include/postgresql/server/port/win32/netdb.h
+@comment include/postgresql/server/port/win32/netinet/
+@comment include/postgresql/server/port/win32/netinet/in.h
+@comment include/postgresql/server/port/win32/pwd.h
+@comment include/postgresql/server/port/win32/sys/
+@comment include/postgresql/server/port/win32/sys/socket.h
+@comment include/postgresql/server/port/win32/sys/wait.h
+@comment include/postgresql/server/port/win32_msvc/
+@comment include/postgresql/server/port/win32_msvc/dirent.h
+@comment include/postgresql/server/port/win32_msvc/sys/
+@comment include/postgresql/server/port/win32_msvc/sys/file.h
+@comment include/postgresql/server/port/win32_msvc/sys/param.h
+@comment include/postgresql/server/port/win32_msvc/sys/time.h
+@comment include/postgresql/server/port/win32_msvc/unistd.h
+@comment include/postgresql/server/port/win32_msvc/utime.h
 include/postgresql/server/
 include/postgresql/server/access/
 include/postgresql/server/access/attnum.h
@@ -25,8 +48,10 @@ include/postgresql/server/access/gist_private.h
 include/postgresql/server/access/gistscan.h
 include/postgresql/server/access/hash.h
 include/postgresql/server/access/heapam.h
+include/postgresql/server/access/heapam_xlog.h
 include/postgresql/server/access/hio.h
 include/postgresql/server/access/htup.h
+include/postgresql/server/access/htup_details.h
 include/postgresql/server/access/itup.h
 include/postgresql/server/access/multixact.h
 include/postgresql/server/access/nbtree.h
@@ -35,6 +60,7 @@ include/postgresql/server/access/reloptions.h
 include/postgresql/server/access/relscan.h
 include/postgresql/server/access/rewriteheap.h
 include/postgresql/server/access/rmgr.h
+include/postgresql/server/access/rmgrlist.h
 include/postgresql/server/access/sdir.h
 include/postgresql/server/access/skey.h
 include/postgresql/server/access/slru.h
@@ -42,6 +68,7 @@ include/postgresql/server/access/spgist.h
 include/postgresql/server/access/spgist_private.h
 include/postgresql/server/access/subtrans.h
 include/postgresql/server/access/sysattr.h
+include/postgresql/server/access/timeline.h
 include/postgresql/server/access/transam.h
 include/postgresql/server/access/tupconvert.h
 include/postgresql/server/access/tupdesc.h
@@ -53,8 +80,10 @@ include/postgresql/server/access/valid.h
 include/postgresql/server/access/visibilitymap.h
 include/postgresql/server/access/xact.h
 include/postgresql/server/access/xlog.h
+include/postgresql/server/access/xlog_fn.h
 include/postgresql/server/access/xlog_internal.h
 include/postgresql/server/access/xlogdefs.h
+include/postgresql/server/access/xlogreader.h
 include/postgresql/server/access/xlogutils.h
 include/postgresql/server/bootstrap/
 include/postgresql/server/bootstrap/bootstrap.h
@@ -92,6 +121,7 @@ include/postgresql/server/catalog/pg_default_acl.h
 include/postgresql/server/catalog/pg_depend.h
 include/postgresql/server/catalog/pg_description.h
 include/postgresql/server/catalog/pg_enum.h
+include/postgresql/server/catalog/pg_event_trigger.h
 include/postgresql/server/catalog/pg_extension.h
 include/postgresql/server/catalog/pg_foreign_data_wrapper.h
 include/postgresql/server/catalog/pg_foreign_server.h
@@ -128,6 +158,7 @@ include/postgresql/server/catalog/pg_type_fn.h
 include/postgresql/server/catalog/pg_user_mapping.h
 include/postgresql/server/catalog/schemapg.h
 include/postgresql/server/catalog/storage.h
+include/postgresql/server/catalog/storage_xlog.h
 include/postgresql/server/catalog/toasting.h
 include/postgresql/server/commands/
 include/postgresql/server/commands/alter.h
@@ -141,9 +172,11 @@ include/postgresql/server/commands/createas.h
 include/postgresql/server/commands/dbcommands.h
 include/postgresql/server/commands/defrem.h
 include/postgresql/server/commands/discard.h
+include/postgresql/server/commands/event_trigger.h
 include/postgresql/server/commands/explain.h
 include/postgresql/server/commands/extension.h
 include/postgresql/server/commands/lockcmds.h
+include/postgresql/server/commands/matview.h
 include/postgresql/server/commands/portalcmds.h
 include/postgresql/server/commands/prepare.h
 include/postgresql/server/commands/proclang.h
@@ -158,6 +191,9 @@ include/postgresql/server/commands/user.h
 include/postgresql/server/commands/vacuum.h
 include/postgresql/server/commands/variable.h
 include/postgresql/server/commands/view.h
+include/postgresql/server/common/
+include/postgresql/server/common/fe_memutils.h
+include/postgresql/server/common/relpath.h
 include/postgresql/server/datatype/
 include/postgresql/server/datatype/timestamp.h
 include/postgresql/server/dynloader.h
@@ -213,7 +249,8 @@ include/postgresql/server/funcapi.h
 include/postgresql/server/getaddrinfo.h
 include/postgresql/server/getopt_long.h
 include/postgresql/server/lib/
-include/postgresql/server/lib/dllist.h
+include/postgresql/server/lib/binaryheap.h
+include/postgresql/server/lib/ilist.h
 include/postgresql/server/lib/stringinfo.h
 include/postgresql/server/libpq/
 include/postgresql/server/libpq/auth.h
@@ -299,20 +336,21 @@ include/postgresql/server/parser/parsetree.h
 include/postgresql/server/parser/scanner.h
 include/postgresql/server/parser/scansup.h
 include/postgresql/server/pg_config.h
+include/postgresql/server/pg_config_ext.h
 include/postgresql/server/pg_config_manual.h
 include/postgresql/server/pg_config_os.h
 include/postgresql/server/pg_trace.h
 include/postgresql/server/pgstat.h
+include/postgresql/server/pgtar.h
 include/postgresql/server/pgtime.h
 include/postgresql/server/plpgsql.h
-include/postgresql/server/port/
 include/postgresql/server/port.h
+include/postgresql/server/port/
 include/postgresql/server/port/aix.h
 include/postgresql/server/port/cygwin.h
 include/postgresql/server/port/darwin.h
 include/postgresql/server/port/freebsd.h
 include/postgresql/server/port/hpux.h
-@comment include/postgresql/server/port/irix.h
 include/postgresql/server/port/linux.h
 include/postgresql/server/port/netbsd.h
 include/postgresql/server/port/openbsd.h
@@ -320,27 +358,7 @@ include/postgresql/server/port/osf.h
 include/postgresql/server/port/sco.h
 include/postgresql/server/port/solaris.h
 include/postgresql/server/port/unixware.h
-@comment include/postgresql/server/port/win32/
 include/postgresql/server/port/win32.h
-@comment include/postgresql/server/port/win32/arpa/
-@comment include/postgresql/server/port/win32/arpa/inet.h
-@comment include/postgresql/server/port/win32/dlfcn.h
-@comment include/postgresql/server/port/win32/grp.h
-@comment include/postgresql/server/port/win32/netdb.h
-@comment include/postgresql/server/port/win32/netinet/
-@comment include/postgresql/server/port/win32/netinet/in.h
-@comment include/postgresql/server/port/win32/pwd.h
-@comment include/postgresql/server/port/win32/sys/
-@comment include/postgresql/server/port/win32/sys/socket.h
-@comment include/postgresql/server/port/win32/sys/wait.h
-@comment include/postgresql/server/port/win32_msvc/
-@comment include/postgresql/server/port/win32_msvc/dirent.h
-@comment include/postgresql/server/port/win32_msvc/sys/
-@comment include/postgresql/server/port/win32_msvc/sys/file.h
-@comment include/postgresql/server/port/win32_msvc/sys/param.h
-@comment include/postgresql/server/port/win32_msvc/sys/time.h
-@comment include/postgresql/server/port/win32_msvc/unistd.h
-@comment include/postgresql/server/port/win32_msvc/utime.h
 include/postgresql/server/portability/
 include/postgresql/server/portability/instr_time.h
 include/postgresql/server/postgres.h
@@ -348,6 +366,7 @@ include/postgresql/server/postgres_ext.h
 include/postgresql/server/postgres_fe.h
 include/postgresql/server/postmaster/
 include/postgresql/server/postmaster/autovacuum.h
+include/postgresql/server/postmaster/bgworker.h
 include/postgresql/server/postmaster/bgwriter.h
 include/postgresql/server/postmaster/fork_process.h
 include/postgresql/server/postmaster/pgarch.h
@@ -359,11 +378,11 @@ include/postgresql/server/regex/
 include/postgresql/server/regex/regcustom.h
 include/postgresql/server/regex/regerrs.h
 include/postgresql/server/regex/regex.h
+include/postgresql/server/regex/regexport.h
 include/postgresql/server/regex/regguts.h
 include/postgresql/server/replication/
 include/postgresql/server/replication/basebackup.h
 include/postgresql/server/replication/syncrep.h
-include/postgresql/server/replication/walprotocol.h
 include/postgresql/server/replication/walreceiver.h
 include/postgresql/server/replication/walsender.h
 include/postgresql/server/replication/walsender_private.h
@@ -420,6 +439,8 @@ include/postgresql/server/storage/buf_internals.h
 include/postgresql/server/storage/buffile.h
 include/postgresql/server/storage/bufmgr.h
 include/postgresql/server/storage/bufpage.h
+include/postgresql/server/storage/checksum.h
+include/postgresql/server/storage/checksum_impl.h
 include/postgresql/server/storage/copydir.h
 include/postgresql/server/storage/fd.h
 include/postgresql/server/storage/freespace.h
@@ -486,6 +507,7 @@ include/postgresql/server/utils/dynahash.h
 include/postgresql/server/utils/dynamic_loader.h
 include/postgresql/server/utils/elog.h
 include/postgresql/server/utils/errcodes.h
+include/postgresql/server/utils/evtcache.h
 include/postgresql/server/utils/fmgroids.h
 include/postgresql/server/utils/fmgrtab.h
 include/postgresql/server/utils/formatting.h
@@ -498,6 +520,7 @@ include/postgresql/server/utils/inet.h
 include/postgresql/server/utils/int8.h
 include/postgresql/server/utils/inval.h
 include/postgresql/server/utils/json.h
+include/postgresql/server/utils/jsonapi.h
 include/postgresql/server/utils/logtape.h
 include/postgresql/server/utils/lsyscache.h
 include/postgresql/server/utils/memutils.h
@@ -520,12 +543,14 @@ include/postgresql/server/utils/relcache.h
 include/postgresql/server/utils/relmapper.h
 include/postgresql/server/utils/reltrigger.h
 include/postgresql/server/utils/resowner.h
+include/postgresql/server/utils/resowner_private.h
 include/postgresql/server/utils/selfuncs.h
 include/postgresql/server/utils/snapmgr.h
 include/postgresql/server/utils/snapshot.h
 include/postgresql/server/utils/sortsupport.h
 include/postgresql/server/utils/spccache.h
 include/postgresql/server/utils/syscache.h
+include/postgresql/server/utils/timeout.h
 include/postgresql/server/utils/timestamp.h
 include/postgresql/server/utils/tqual.h
 include/postgresql/server/utils/tuplesort.h
@@ -549,12 +574,8 @@ lib/postgresql/euc_tw_and_big5.so
 lib/postgresql/latin2_and_win1250.so
 lib/postgresql/latin_and_mic.so
 lib/postgresql/libpqwalreceiver.so
-lib/postgresql/pageinspect.so
-lib/postgresql/passwordcheck.so
 lib/postgresql/plperl.so
 lib/postgresql/plpgsql.so
-lib/postgresql/test_parser.so
-lib/postgresql/unaccent.so
 lib/postgresql/utf8_and_ascii.so
 lib/postgresql/utf8_and_big5.so
 lib/postgresql/utf8_and_cyrillic.so

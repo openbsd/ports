@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-contrib,v 1.9 2012/09/24 19:57:02 pea Exp $
+@comment $OpenBSD: PLIST-contrib,v 1.10 2013/10/15 02:18:18 jeremy Exp $
 @conflict postgresql-uuid-*
 @conflict postgresql-server-<8.4.3
 @pkgpath devel/uuid,-pgsql
@@ -31,6 +31,8 @@ lib/postgresql/isn.so
 lib/postgresql/lo.so
 lib/postgresql/ltree.so
 lib/postgresql/moddatetime.so
+lib/postgresql/pageinspect.so
+lib/postgresql/passwordcheck.so
 lib/postgresql/pg_buffercache.so
 lib/postgresql/pg_freespacemap.so
 lib/postgresql/pg_stat_statements.so
@@ -40,14 +42,18 @@ lib/postgresql/pgcrypto.so
 lib/postgresql/pgrowlocks.so
 lib/postgresql/pgstattuple.so
 lib/postgresql/pgxml.so
+lib/postgresql/postgres_fdw.so
 lib/postgresql/refint.so
 lib/postgresql/seg.so
 lib/postgresql/sslinfo.so
 lib/postgresql/tablefunc.so
 lib/postgresql/tcn.so
+lib/postgresql/test_parser.so
 lib/postgresql/timetravel.so
 lib/postgresql/tsearch2.so
+lib/postgresql/unaccent.so
 lib/postgresql/uuid-ossp.so
+lib/postgresql/worker_spi.so
 @man man/man1/oid2name.1
 @man man/man1/pg_archivecleanup.1
 @man man/man1/pg_standby.1
@@ -76,7 +82,8 @@ share/postgresql/extension/citext.control
 share/postgresql/extension/cube--1.0.sql
 share/postgresql/extension/cube--unpackaged--1.0.sql
 share/postgresql/extension/cube.control
-share/postgresql/extension/dblink--1.0.sql
+share/postgresql/extension/dblink--1.0--1.1.sql
+share/postgresql/extension/dblink--1.1.sql
 share/postgresql/extension/dblink--unpackaged--1.0.sql
 share/postgresql/extension/dblink.control
 share/postgresql/extension/dict_int--1.0.sql
@@ -118,7 +125,8 @@ share/postgresql/extension/ltree.control
 share/postgresql/extension/moddatetime--1.0.sql
 share/postgresql/extension/moddatetime--unpackaged--1.0.sql
 share/postgresql/extension/moddatetime.control
-share/postgresql/extension/pageinspect--1.0.sql
+share/postgresql/extension/pageinspect--1.0--1.1.sql
+share/postgresql/extension/pageinspect--1.1.sql
 share/postgresql/extension/pageinspect--unpackaged--1.0.sql
 share/postgresql/extension/pageinspect.control
 share/postgresql/extension/pg_buffercache--1.0.sql
@@ -131,18 +139,23 @@ share/postgresql/extension/pg_stat_statements--1.0--1.1.sql
 share/postgresql/extension/pg_stat_statements--1.1.sql
 share/postgresql/extension/pg_stat_statements--unpackaged--1.0.sql
 share/postgresql/extension/pg_stat_statements.control
-share/postgresql/extension/pg_trgm--1.0.sql
+share/postgresql/extension/pg_trgm--1.0--1.1.sql
+share/postgresql/extension/pg_trgm--1.1.sql
 share/postgresql/extension/pg_trgm--unpackaged--1.0.sql
 share/postgresql/extension/pg_trgm.control
 share/postgresql/extension/pgcrypto--1.0.sql
 share/postgresql/extension/pgcrypto--unpackaged--1.0.sql
 share/postgresql/extension/pgcrypto.control
-share/postgresql/extension/pgrowlocks--1.0.sql
+share/postgresql/extension/pgrowlocks--1.0--1.1.sql
+share/postgresql/extension/pgrowlocks--1.1.sql
 share/postgresql/extension/pgrowlocks--unpackaged--1.0.sql
 share/postgresql/extension/pgrowlocks.control
-share/postgresql/extension/pgstattuple--1.0.sql
+share/postgresql/extension/pgstattuple--1.0--1.1.sql
+share/postgresql/extension/pgstattuple--1.1.sql
 share/postgresql/extension/pgstattuple--unpackaged--1.0.sql
 share/postgresql/extension/pgstattuple.control
+share/postgresql/extension/postgres_fdw--1.0.sql
+share/postgresql/extension/postgres_fdw.control
 share/postgresql/extension/refint--1.0.sql
 share/postgresql/extension/refint--unpackaged--1.0.sql
 share/postgresql/extension/refint.control

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.22 2012/09/24 19:57:02 pea Exp $
+@comment $OpenBSD: PLIST-main,v 1.23 2013/10/15 02:18:19 jeremy Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-*
@@ -44,6 +44,7 @@ include/postgresql/libpq-events.h
 include/postgresql/libpq-fe.h
 include/postgresql/libpq/libpq-fs.h
 include/postgresql/pg_config.h
+include/postgresql/pg_config_ext.h
 include/postgresql/pg_config_manual.h
 include/postgresql/pg_config_os.h
 include/postgresql/pgtypes_date.h
@@ -65,6 +66,7 @@ lib/libecpg_compat.a
 @comment lib/libecpg_compat.so
 @comment lib/libecpg_compat.so.4
 @lib lib/libecpg_compat.so.${LIBecpg_compat_VERSION}
+lib/libpgcommon.a
 lib/libpgport.a
 lib/libpgtypes.a
 @comment lib/libpgtypes.so
@@ -74,6 +76,11 @@ lib/libpq.a
 @comment lib/libpq.so
 @comment lib/libpq.so.5
 @lib lib/libpq.so.${LIBpq_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/libecpg.pc
+lib/pkgconfig/libecpg_compat.pc
+lib/pkgconfig/libpgtypes.pc
+lib/pkgconfig/libpq.pc
 lib/postgresql/
 lib/postgresql/pgxs/
 lib/postgresql/pgxs/config/
@@ -100,8 +107,10 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man1/pg_config.1
 @man man/man1/pg_dump.1
 @man man/man1/pg_dumpall.1
+@man man/man1/pg_isready.1
 @man man/man1/pg_receivexlog.1
 @man man/man1/pg_restore.1
+@man man/man1/pg_xlogdump.1
 @man man/man1/psql.1
 @man man/man1/reindexdb.1
 @man man/man1/vacuumdb.1
@@ -175,6 +184,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/ALTER_DATABASE.7
 @man man/man7/ALTER_DEFAULT_PRIVILEGES.7
 @man man/man7/ALTER_DOMAIN.7
+@man man/man7/ALTER_EVENT_TRIGGER.7
 @man man/man7/ALTER_EXTENSION.7
 @man man/man7/ALTER_FOREIGN_DATA_WRAPPER.7
 @man man/man7/ALTER_FOREIGN_TABLE.7
@@ -183,10 +193,12 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/ALTER_INDEX.7
 @man man/man7/ALTER_LANGUAGE.7
 @man man/man7/ALTER_LARGE_OBJECT.7
+@man man/man7/ALTER_MATERIALIZED_VIEW.7
 @man man/man7/ALTER_OPERATOR.7
 @man man/man7/ALTER_OPERATOR_CLASS.7
 @man man/man7/ALTER_OPERATOR_FAMILY.7
 @man man/man7/ALTER_ROLE.7
+@man man/man7/ALTER_RULE.7
 @man man/man7/ALTER_SCHEMA.7
 @man man/man7/ALTER_SEQUENCE.7
 @man man/man7/ALTER_SERVER.7
@@ -216,6 +228,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/CREATE_CONVERSION.7
 @man man/man7/CREATE_DATABASE.7
 @man man/man7/CREATE_DOMAIN.7
+@man man/man7/CREATE_EVENT_TRIGGER.7
 @man man/man7/CREATE_EXTENSION.7
 @man man/man7/CREATE_FOREIGN_DATA_WRAPPER.7
 @man man/man7/CREATE_FOREIGN_TABLE.7
@@ -223,6 +236,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/CREATE_GROUP.7
 @man man/man7/CREATE_INDEX.7
 @man man/man7/CREATE_LANGUAGE.7
+@man man/man7/CREATE_MATERIALIZED_VIEW.7
 @man man/man7/CREATE_OPERATOR.7
 @man man/man7/CREATE_OPERATOR_CLASS.7
 @man man/man7/CREATE_OPERATOR_FAMILY.7
@@ -254,6 +268,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/DROP_CONVERSION.7
 @man man/man7/DROP_DATABASE.7
 @man man/man7/DROP_DOMAIN.7
+@man man/man7/DROP_EVENT_TRIGGER.7
 @man man/man7/DROP_EXTENSION.7
 @man man/man7/DROP_FOREIGN_DATA_WRAPPER.7
 @man man/man7/DROP_FOREIGN_TABLE.7
@@ -261,6 +276,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/DROP_GROUP.7
 @man man/man7/DROP_INDEX.7
 @man man/man7/DROP_LANGUAGE.7
+@man man/man7/DROP_MATERIALIZED_VIEW.7
 @man man/man7/DROP_OPERATOR.7
 @man man/man7/DROP_OPERATOR_CLASS.7
 @man man/man7/DROP_OPERATOR_FAMILY.7
@@ -295,6 +311,7 @@ lib/postgresql/pgxs/src/test/regress/
 @man man/man7/PREPARE.7
 @man man/man7/PREPARE_TRANSACTION.7
 @man man/man7/REASSIGN_OWNED.7
+@man man/man7/REFRESH_MATERIALIZED_VIEW.7
 @man man/man7/REINDEX.7
 @man man/man7/RELEASE_SAVEPOINT.7
 @man man/man7/RESET.7

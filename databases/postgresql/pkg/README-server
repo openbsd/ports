@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.13 2012/11/22 10:52:38 sthen Exp $
+$OpenBSD: README-server,v 1.14 2013/10/15 02:18:19 jeremy Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -77,19 +77,11 @@ following in /etc/sysctl.conf will be reasonable for many systems:
 	kern.seminfo.semmns=1024
 
 To serve a large number of connections (>250), you may need higher
-values for the above, and may also need to increase the maximum shared
-memory segment size. On i386 try:
+values for the above.
 
-	kern.shminfo.shmmax=50331648	# this is 48MB.
-					# default on i386 is 32MB
-					# other archs will vary
-
-These numbers should be tuned depending on system use. You will also
-need to tune the max_connect value in the postgresql.conf file to
-increase the number of connections to the backend. See "Managing
-Kernel Resources" in the "Server Setup and Operation" chapter of
-the manual (however at the time of writing the OpenBSD section is
-out-dated; a custom kernel has not been required).
+You may also want to tune the max_connect value in the
+postgresql.conf file to increase the number of connections to the
+backend.
 
 By default, the _postgresql user, and so the postmaster and backend
 processes run in the login(1) class of "daemon". On a busy server,

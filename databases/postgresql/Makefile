@@ -1,26 +1,24 @@
-# $OpenBSD: Makefile,v 1.178 2013/06/20 08:26:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.179 2013/10/15 02:18:16 jeremy Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
 COMMENT-docs=	PostgreSQL RDBMS documentation
 COMMENT-contrib=PostgreSQL RDBMS contributions
+COMMENT-plpython=Python procedural language for PostgreSQL
 
-VERSION=	9.2.4
+VERSION=	9.3.0
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
 PKGNAME-server=	postgresql-server-${VERSION}
 PKGNAME-docs=	postgresql-docs-${VERSION}
 PKGNAME-contrib=postgresql-contrib-${VERSION}
-
-REVISION-main=	2
-REVISION-server=2
-REVISION-contrib=3
+PKGNAME-plpython=postgresql-plpython-${VERSION}
 
 CATEGORIES=	databases
-SHARED_LIBS=	ecpg		7.4 \
-		ecpg_compat	4.4 \
-		pgtypes		4.3 \
-		pq		5.5
+SHARED_LIBS=	ecpg		7.5 \
+		ecpg_compat	4.5 \
+		pgtypes		4.4 \
+		pq		5.6
 
 HOMEPAGE=	http://www.postgresql.org/
 
@@ -37,7 +35,7 @@ MASTER_SITES=	http://ftp.postgresql.org/pub/source/v${VERSION}/ \
 	ftp://ftp.postgresql.org/pub/source/v${VERSION}/ \
 	ftp://ftp5.us.postgresql.org/pub/PostgreSQL/source/v${VERSION}/
 
-MULTI_PACKAGES=	-docs -main -server -contrib
+MULTI_PACKAGES=	-docs -main -server -contrib -plpython
 
 # The -client SUBPACKAGE should build and run fine on static arches,
 # but the server requires loadable library support. Until we figure
@@ -53,10 +51,18 @@ USE_GMAKE=	Yes
 USE_GROFF=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include $$(krb5-config --cflags)" \
+
+MODULES=	lang/python
+MODPY_RUNDEP=	No
+
+#INCLUDES=	${LOCALBASE}/include /usr/include/kerberosV
+CONFIGURE_ENV=	ac_cv_path_PYTHON=${MODPY_BIN} \
+		CPPFLAGS="-I${LOCALBASE}/include $$(krb5-config --cflags)" \
 		LDFLAGS="-L${LOCALBASE}/lib $$(krb5-config --libs)"
+
 CONFIGURE_ARGS=	--disable-rpath --with-openssl=/usr \
 		--with-perl \
+		--with-python \
 		--with-pam=no \
 		--enable-integer-datetimes \
 		--includedir="${PREFIX}/include/postgresql" \
@@ -98,6 +104,10 @@ LIB_DEPENDS-contrib= databases/postgresql=${VERSION} \
 		     devel/uuid
 WANTLIB-contrib=	${WANTLIB-main} pq>=4 ossp-uuid
 
+LIB_DEPENDS-plpython=	${MODPY_LIB_DEPENDS}
+WANTLIB-plpython =	c m pthread util ${MODPY_WANTLIB}
+RUN_DEPENDS-plpython=	databases/postgresql,-server=${VERSION}
+
 WANTLIB-docs=
 PKG_ARCH-docs=	*
 
@@ -126,6 +136,11 @@ NO_TEST=	Yes
 DOCS=	${WRKSRC}/COPYRIGHT ${WRKSRC}/HISTORY \
 	${WRKSRC}/INSTALL ${WRKSRC}/README \
 	${WRKSRC}/doc/TODO
+
+# Work around Makefile issue where it attempts to rebuild
+# the documentation even if it is not necessary.
+pre-build:
+	touch ${WRKSRC}/doc/src/sgml/*-stamp
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/postgresql

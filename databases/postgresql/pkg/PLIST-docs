@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.60 2013/04/04 14:45:46 sthen Exp $
+@comment $OpenBSD: PLIST-docs,v 1.61 2013/10/15 02:18:18 jeremy Exp $
 share/doc/postgresql/
 share/doc/postgresql/COPYRIGHT
 share/doc/postgresql/HISTORY
@@ -27,6 +27,7 @@ share/doc/postgresql/html/app-ecpg.html
 share/doc/postgresql/html/app-initdb.html
 share/doc/postgresql/html/app-pg-ctl.html
 share/doc/postgresql/html/app-pg-dumpall.html
+share/doc/postgresql/html/app-pg-isready.html
 share/doc/postgresql/html/app-pgbasebackup.html
 share/doc/postgresql/html/app-pgconfig.html
 share/doc/postgresql/html/app-pgcontroldata.html
@@ -51,6 +52,7 @@ share/doc/postgresql/html/auto-explain.html
 share/doc/postgresql/html/backup-dump.html
 share/doc/postgresql/html/backup-file.html
 share/doc/postgresql/html/backup.html
+share/doc/postgresql/html/bgworker.html
 share/doc/postgresql/html/biblio.html
 share/doc/postgresql/html/bki-commands.html
 share/doc/postgresql/html/bki-example.html
@@ -80,6 +82,7 @@ share/doc/postgresql/html/catalog-pg-default-acl.html
 share/doc/postgresql/html/catalog-pg-depend.html
 share/doc/postgresql/html/catalog-pg-description.html
 share/doc/postgresql/html/catalog-pg-enum.html
+share/doc/postgresql/html/catalog-pg-event-trigger.html
 share/doc/postgresql/html/catalog-pg-extension.html
 share/doc/postgresql/html/catalog-pg-foreign-data-wrapper.html
 share/doc/postgresql/html/catalog-pg-foreign-server.html
@@ -243,6 +246,11 @@ share/doc/postgresql/html/errcodes-appendix.html
 share/doc/postgresql/html/error-message-reporting.html
 share/doc/postgresql/html/error-style-guide.html
 share/doc/postgresql/html/event-log-registration.html
+share/doc/postgresql/html/event-trigger-definition.html
+share/doc/postgresql/html/event-trigger-example.html
+share/doc/postgresql/html/event-trigger-interface.html
+share/doc/postgresql/html/event-trigger-matrix.html
+share/doc/postgresql/html/event-triggers.html
 share/doc/postgresql/html/executor.html
 share/doc/postgresql/html/explicit-joins.html
 share/doc/postgresql/html/explicit-locking.html
@@ -274,6 +282,7 @@ share/doc/postgresql/html/functions-comparisons.html
 share/doc/postgresql/html/functions-conditional.html
 share/doc/postgresql/html/functions-datetime.html
 share/doc/postgresql/html/functions-enum.html
+share/doc/postgresql/html/functions-event-triggers.html
 share/doc/postgresql/html/functions-formatting.html
 share/doc/postgresql/html/functions-geometry.html
 share/doc/postgresql/html/functions-info.html
@@ -489,6 +498,7 @@ share/doc/postgresql/html/pgtestfsync.html
 share/doc/postgresql/html/pgtesttiming.html
 share/doc/postgresql/html/pgtrgm.html
 share/doc/postgresql/html/pgupgrade.html
+share/doc/postgresql/html/pgxlogdump.html
 share/doc/postgresql/html/planner-optimizer.html
 share/doc/postgresql/html/planner-stats-details.html
 share/doc/postgresql/html/planner-stats.html
@@ -535,6 +545,7 @@ share/doc/postgresql/html/pltcl-trigger.html
 share/doc/postgresql/html/pltcl-unknown.html
 share/doc/postgresql/html/pltcl.html
 share/doc/postgresql/html/populate.html
+share/doc/postgresql/html/postgres-fdw.html
 share/doc/postgresql/html/postgres-user.html
 share/doc/postgresql/html/preface.html
 share/doc/postgresql/html/preventing-server-spoofing.html
@@ -806,6 +817,7 @@ share/doc/postgresql/html/release-9-2-2.html
 share/doc/postgresql/html/release-9-2-3.html
 share/doc/postgresql/html/release-9-2-4.html
 share/doc/postgresql/html/release-9-2.html
+share/doc/postgresql/html/release-9-3.html
 share/doc/postgresql/html/release.html
 share/doc/postgresql/html/resources.html
 share/doc/postgresql/html/role-attributes.html
@@ -815,6 +827,7 @@ share/doc/postgresql/html/routine-vacuuming.html
 share/doc/postgresql/html/row-estimation-examples.html
 share/doc/postgresql/html/rowtypes.html
 share/doc/postgresql/html/rule-system.html
+share/doc/postgresql/html/rules-materializedviews.html
 share/doc/postgresql/html/rules-privileges.html
 share/doc/postgresql/html/rules-status.html
 share/doc/postgresql/html/rules-triggers.html
@@ -910,6 +923,7 @@ share/doc/postgresql/html/sql-alterconversion.html
 share/doc/postgresql/html/sql-alterdatabase.html
 share/doc/postgresql/html/sql-alterdefaultprivileges.html
 share/doc/postgresql/html/sql-alterdomain.html
+share/doc/postgresql/html/sql-altereventtrigger.html
 share/doc/postgresql/html/sql-alterextension.html
 share/doc/postgresql/html/sql-alterforeigndatawrapper.html
 share/doc/postgresql/html/sql-alterforeigntable.html
@@ -918,10 +932,12 @@ share/doc/postgresql/html/sql-altergroup.html
 share/doc/postgresql/html/sql-alterindex.html
 share/doc/postgresql/html/sql-alterlanguage.html
 share/doc/postgresql/html/sql-alterlargeobject.html
+share/doc/postgresql/html/sql-altermaterializedview.html
 share/doc/postgresql/html/sql-alteropclass.html
 share/doc/postgresql/html/sql-alteroperator.html
 share/doc/postgresql/html/sql-alteropfamily.html
 share/doc/postgresql/html/sql-alterrole.html
+share/doc/postgresql/html/sql-alterrule.html
 share/doc/postgresql/html/sql-alterschema.html
 share/doc/postgresql/html/sql-altersequence.html
 share/doc/postgresql/html/sql-alterserver.html
@@ -952,6 +968,7 @@ share/doc/postgresql/html/sql-createcollation.html
 share/doc/postgresql/html/sql-createconversion.html
 share/doc/postgresql/html/sql-createdatabase.html
 share/doc/postgresql/html/sql-createdomain.html
+share/doc/postgresql/html/sql-createeventtrigger.html
 share/doc/postgresql/html/sql-createextension.html
 share/doc/postgresql/html/sql-createforeigndatawrapper.html
 share/doc/postgresql/html/sql-createforeigntable.html
@@ -959,6 +976,7 @@ share/doc/postgresql/html/sql-createfunction.html
 share/doc/postgresql/html/sql-creategroup.html
 share/doc/postgresql/html/sql-createindex.html
 share/doc/postgresql/html/sql-createlanguage.html
+share/doc/postgresql/html/sql-creatematerializedview.html
 share/doc/postgresql/html/sql-createopclass.html
 share/doc/postgresql/html/sql-createoperator.html
 share/doc/postgresql/html/sql-createopfamily.html
@@ -991,6 +1009,7 @@ share/doc/postgresql/html/sql-dropcollation.html
 share/doc/postgresql/html/sql-dropconversion.html
 share/doc/postgresql/html/sql-dropdatabase.html
 share/doc/postgresql/html/sql-dropdomain.html
+share/doc/postgresql/html/sql-dropeventtrigger.html
 share/doc/postgresql/html/sql-dropextension.html
 share/doc/postgresql/html/sql-dropforeigndatawrapper.html
 share/doc/postgresql/html/sql-dropforeigntable.html
@@ -998,6 +1017,7 @@ share/doc/postgresql/html/sql-dropfunction.html
 share/doc/postgresql/html/sql-dropgroup.html
 share/doc/postgresql/html/sql-dropindex.html
 share/doc/postgresql/html/sql-droplanguage.html
+share/doc/postgresql/html/sql-dropmaterializedview.html
 share/doc/postgresql/html/sql-dropopclass.html
 share/doc/postgresql/html/sql-dropoperator.html
 share/doc/postgresql/html/sql-dropopfamily.html
@@ -1033,6 +1053,7 @@ share/doc/postgresql/html/sql-notify.html
 share/doc/postgresql/html/sql-prepare-transaction.html
 share/doc/postgresql/html/sql-prepare.html
 share/doc/postgresql/html/sql-reassign-owned.html
+share/doc/postgresql/html/sql-refreshmaterializedview.html
 share/doc/postgresql/html/sql-reindex.html
 share/doc/postgresql/html/sql-release-savepoint.html
 share/doc/postgresql/html/sql-reset.html
@@ -1139,6 +1160,7 @@ share/doc/postgresql/html/view-pg-cursors.html
 share/doc/postgresql/html/view-pg-group.html
 share/doc/postgresql/html/view-pg-indexes.html
 share/doc/postgresql/html/view-pg-locks.html
+share/doc/postgresql/html/view-pg-matviews.html
 share/doc/postgresql/html/view-pg-prepared-statements.html
 share/doc/postgresql/html/view-pg-prepared-xacts.html
 share/doc/postgresql/html/view-pg-roles.html

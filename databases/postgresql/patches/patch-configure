@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.9 2013/10/15 02:18:17 jeremy Exp $
+
+Remove configure check, since the pl/python does work if you
+LD_PRELOAD libpthread when starting PostgreSQL.
+
+--- configure.orig	Mon May  6 13:57:06 2013
++++ configure	Thu May 16 15:08:07 2013
+@@ -7622,13 +7622,6 @@ pythreads=`${PYTHON} -c "import sys; print(int('thread
+ if test "$pythreads" = "1"; then
+   { $as_echo "$as_me:$LINENO: result: yes" >&5
+ $as_echo "yes" >&6; }
+-  case $host_os in
+-  openbsd*)
+-    { { $as_echo "$as_me:$LINENO: error: threaded Python not supported on this platform" >&5
+-$as_echo "$as_me: error: threaded Python not supported on this platform" >&2;}
+-   { (exit 1); exit 1; }; }
+-    ;;
+-  esac
+ else
+   { $as_echo "$as_me:$LINENO: result: no" >&5
+ $as_echo "no" >&6; }
