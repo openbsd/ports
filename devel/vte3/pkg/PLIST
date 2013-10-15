@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/03/26 09:43:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/10/15 08:11:43 ajacoutot Exp $
 @conflict vte-<0.28.2p3
 @conflict vte-ptyhelper-*
 @bin bin/vte2_90
@@ -78,8 +78,6 @@ share/locale/eu/LC_MESSAGES/vte-2.90.mo
 share/locale/fa/LC_MESSAGES/vte-2.90.mo
 share/locale/fi/LC_MESSAGES/vte-2.90.mo
 share/locale/fr/LC_MESSAGES/vte-2.90.mo
-share/locale/fur/
-share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/vte-2.90.mo
 share/locale/ga/LC_MESSAGES/vte-2.90.mo
 share/locale/gl/LC_MESSAGES/vte-2.90.mo
