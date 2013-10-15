@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2013/05/07 23:40:34 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/10/15 02:26:51 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gemtest
@@ -17,6 +17,9 @@ ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile.cross
 ${GEM_LIB}/gems/${DISTNAME}/ext/
 ${GEM_LIB}/gems/${DISTNAME}/ext/Makefile
+${GEM_LIB}/gems/${DISTNAME}/ext/errorcodes.def
+${GEM_LIB}/gems/${DISTNAME}/ext/errorcodes.rb
+${GEM_LIB}/gems/${DISTNAME}/ext/errorcodes.txt
 ${GEM_LIB}/gems/${DISTNAME}/ext/extconf.h
 ${GEM_LIB}/gems/${DISTNAME}/ext/extconf.rb
 ${GEM_LIB}/gems/${DISTNAME}/ext/gvl_wrappers.c
@@ -28,6 +31,8 @@ ${GEM_LIB}/gems/${DISTNAME}/ext/pg.h
 ${GEM_LIB}/gems/${DISTNAME}/ext/pg.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/pg_connection.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/pg_connection.o
+${GEM_LIB}/gems/${DISTNAME}/ext/pg_errors.c
+${GEM_LIB}/gems/${DISTNAME}/ext/pg_errors.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/pg_ext.so
 ${GEM_LIB}/gems/${DISTNAME}/ext/pg_result.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/pg_result.o
