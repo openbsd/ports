@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/06/12 20:36:34 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2013/10/15 10:29:46 espie Exp $
 
 COMMENT=	IP accounting software
 
@@ -20,12 +20,12 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS= --enable-64bit \
 		--enable-ipv6 \
 		--enable-sqlite3 \
-		--with-sqlite3-includes="/usr/include" \
-		ac_cv_prog_MAKE="/usr/bin/make"
+		--with-sqlite3-includes="/usr/include"
 .ifdef DEBUG
 MAKE_ARGS+=	DEBUG=1
 .endif
 
+CONFIGURE_ENV += ac_cv_prog_MAKE="/usr/bin/make"
 FLAVORS=	mysql postgresql threads
 FLAVOR?=
 
