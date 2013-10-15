@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2013/06/04 18:41:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2013/10/15 13:36:35 naddy Exp $
 
 COMMENT=	filemanager for X Window
 
 DISTNAME=	xnc-4.4.7
-REVISION=	4
+REVISION=	5
 DISTFILES=	${DISTNAME}.src${EXTRACT_SUFX}
 SHARED_LIBS=	xncaqua	1.0 \
 		xncfive	1.0
@@ -21,7 +21,6 @@ WANTLIB += ICE SM X11 Xext c jpeg m pthread-stubs stdc++ xcb z tiff png
 LIB_DEPENDS=	graphics/tiff \
 		graphics/png
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 CONFIGURE_STYLE=	autoconf old dest

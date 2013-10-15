@@ -1,20 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/09/18 12:55:53 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/10/15 13:36:35 naddy Exp $
 @conflict es-*
 bin/bzip.xnc
-bin/groups.xnc
+@bin bin/groups.xnc
 bin/gzip.xnc
-bin/iedit
-bin/ives
+@bin bin/iedit
+@bin bin/ives
 bin/rpm.xnc
-bin/users.xnc
-bin/vs
-bin/xjpegroot
-bin/xnc
-bin/xncloader
-bin/xncsetup
-bin/xnlaunch
-bin/zips.xnc
+@bin bin/users.xnc
+@bin bin/vs
+@bin bin/xjpegroot
+@bin bin/xnc
+@bin bin/xncloader
+@bin bin/xncsetup
+@bin bin/xnlaunch
+@bin bin/zips.xnc
 lib/xnc/
+@lib lib/xnc/libxncaqua.so.${LIBxncaqua_VERSION}
+@lib lib/xnc/libxncfive.so.${LIBxncfive_VERSION}
 @man man/cat1/xnlaunch.0
 @man man/man1/es.1
 @man man/man1/ives.1
@@ -31,4 +33,3 @@ share/examples/xnc/map.gif
 share/examples/xnc/netscape.gif
 share/examples/xnc/term.gif
 share/examples/xnc/tnet.gif
-%%SHARED%%
