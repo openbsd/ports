@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Tty.pm,v 1.3 2013/10/13 18:32:59 espie Exp $
+# $OpenBSD: Tty.pm,v 1.4 2013/10/15 16:02:09 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -28,8 +28,7 @@ sub handle_window
 {
 	my $self = shift;
 	$self->set_cursor;
-	$self->find_window_size;
-	$self->refresh;
+	$self->SUPER::handle_window;
 }
 
 sub set_sig_handlers

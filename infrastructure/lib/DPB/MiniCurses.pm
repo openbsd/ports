@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: MiniCurses.pm,v 1.4 2013/10/13 19:19:53 espie Exp $
+# $OpenBSD: MiniCurses.pm,v 1.5 2013/10/15 16:02:08 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -61,6 +61,13 @@ sub refresh
 	my $self = shift;
 	$self->{write} = 'go_write_home';
 	$self->{force} = 1;
+}
+
+sub handle_window
+{
+	my $self = shift;
+	$self->find_window_size;
+	$self->refresh;
 }
 
 sub create_terminal
