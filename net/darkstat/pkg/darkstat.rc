@@ -1,10 +1,10 @@
 #!/bin/sh
 #
-# $OpenBSD: darkstat.rc,v 1.1 2013/10/14 22:31:59 sthen Exp $
+# $OpenBSD: darkstat.rc,v 1.2 2013/10/15 06:51:59 ajacoutot Exp $
 
 egress_if=$( ifconfig egress 2>/dev/null | head -1 | cut -d : -f 1 )
 
-daemon="/usr/local/sbin/darkstat"
+daemon="${TRUEPREFIX}/sbin/darkstat"
 daemon_flags="-i $egress_if -b 127.0.0.1 --syslog"
 
 . /etc/rc.d/rc.subr
