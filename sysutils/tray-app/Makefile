@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/09/17 11:21:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2013/10/15 22:16:31 jasper Exp $
+
+ONLY_FOR_ARCHS=	${APM_ARCHS}
 
 COMMENT=	small utilities for X11 system tray: eject, battery, mixer
 
