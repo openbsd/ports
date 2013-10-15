@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.91 2013/09/28 08:51:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.92 2013/10/15 07:40:41 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	SAX-based render library for SVG files
 
 GNOME_PROJECT=	librsvg
-GNOME_VERSION=	2.36.4
-REVISION=	5
+GNOME_VERSION=	2.40.0
 
-SHARED_LIBS +=  rsvg-2               38.0     # 38.4
+SHARED_LIBS +=  rsvg-2               38.1     # 42.0
 
 CATEGORIES=	devel graphics
 
@@ -17,10 +16,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xext Xrender c cairo croco-0.6 expat ffi fontconfig
 WANTLIB += freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 graphite2 gthread-2.0 harfbuzz
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
-WANTLIB += xcb-shm xml2 z
+WANTLIB += gobject-2.0 graphite2 gthread-2.0 harfbuzz m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += pthread-stubs xcb xcb-render xcb-shm xml2 z
 
 MODULES=	devel/gettext \
 		x11/gnome
@@ -32,9 +30,7 @@ LIB_DEPENDS=	devel/pango \
 		textproc/libxml \
 		www/libcroco
 
-CONFIGURE_ARGS=	--disable-gtk-theme \
-		--disable-tools \
-		--disable-rsvg-view
+CONFIGURE_ARGS=	--disable-tools
 
 # error: -Bsymbolic requested but not supported by ld
 CONFIGURE_ARGS +=	--disable-Bsymbolic
