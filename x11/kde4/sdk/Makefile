@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2013/07/05 14:32:50 zhuk Exp $
+# $OpenBSD: Makefile,v 1.14 2013/10/15 07:19:36 zhuk Exp $
 
 COMMENT =	KDE software development kit
 DISTNAME =	kdesdk-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	komparedialogpages	50.0 # 4.7
 SHARED_LIBS +=	komparediff2		50.0 # 4.7
@@ -34,7 +34,7 @@ WANTLIB += apr-1 hunspell-1.3 svn_client-1 svn_delta-1 svn_fs-1
 WANTLIB += svn_ra-1 svn_subr-1 xml2 xslt
 WANTLIB += gettextpo qca2 soprano streamanalyzer streams
 
-MODULES =		lang/python lang/ruby
+MODULES =		lang/python lang/ruby perl
 MODKDE4_USE =		pim
 MODPY_BUILDDEP =	No
 MODRUBY_BUILDDEP =	No
@@ -73,6 +73,47 @@ CONFIGURE_ARGS =	-DWITH_Antlr2:Bool=FALSE
 
 SUBST_FILES =	kde-dev-scripts/colorsvn \
 		kde-dev-scripts/svn2log.sh
+
+MODRUBY_ADJ_FILES =	\
+	create_tarball.rb \
+	generate_findpackage_file \
+	gencmake \
+	am2cmake \
+	replaceinallfiles
+
+MODPY_ADJ_FILES =	\
+	kcachegrind/converters/hotshot2calltree \
+	kde-dev-scripts/reviewboarddiff \
+	kde-dev-scripts/kde_generate_export_header \
+	kde-dev-scripts/zonetab2pot.py \
+	kde-dev-scripts/kdelnk2desktop.py \
+	kde-dev-scripts/qt4/adapt-to-icon-spec.py \
+	kde-dev-scripts/grantlee_strings_extractor.py \
+	kde-dev-scripts/kf5/resolve_kuit.py \
+	kde-dev-scripts/kde-systemsettings-tree.py \
+	kde-dev-scripts/rename_source_files \
+	kde-dev-scripts/svn2log.py \
+	lokalize/scripts/xliffmerge.py
+
+MODPERL_ADJ_FILES =	\
+	kde-dev-scripts/fixheaders \
+	kde-dev-scripts/extractrc \
+	kde-dev-scripts/includemocs \
+	kde-dev-scripts/colorsvn \
+	kde-dev-scripts/colorcvs \
+	kde-dev-scripts/cvsblame \
+	kde-dev-scripts/cvscheck \
+	kde-dev-scripts/rc2kcfgxt.pl \
+	kde-dev-scripts/kdemangen.pl \
+	kde-dev-scripts/noncvslist \
+	kde-dev-scripts/svn-clean \
+	kde-dev-scripts/extractattr \
+	kde-dev-scripts/kde-spellcheck.pl \
+	kde-dev-scripts/generate_string_table.pl \
+	kde-dev-scripts/cvs-clean \
+	kde-dev-scripts/svnlastchange \
+	kde-dev-scripts/extend_dmalloc \
+	kde-dev-scripts/cvslastchange \
 
 pre-configure:
 	cd ${WRKSRC} && ${SUBST_CMD} ${SUBST_FILES}
