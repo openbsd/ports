@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/10/14 14:08:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2013/10/15 09:21:23 ajacoutot Exp $
 
 TRACKER_VERSION=	0.16
 
@@ -30,9 +30,6 @@ WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-common
 MODULES=		devel/dconf \
 			devel/gettext \
 			x11/gnome
-
-# desktop-file-validate
-BUILD_DEPENDS=		devel/desktop-file-utils
 
 LIB_DEPENDS=		graphics/gegl \
 			x11/gnome/grilo \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2013/09/28 08:51:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.110 2013/10/15 09:21:23 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -31,9 +31,6 @@ RUN_DEPENDS=	devel/gsettings-desktop-schemas
 LIB_DEPENDS=	devel/gconf2 \
 		devel/vte3>=0.34.6 \
 		sysutils/e2fsprogs>=1.42.7
-
-# configure checks for desktop-file-validate(1)
-BUILD_DEPENDS +=devel/desktop-file-utils
 
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes

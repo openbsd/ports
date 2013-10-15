@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/10/06 09:08:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2013/10/15 09:21:21 ajacoutot Exp $
 
 TRACKER_VERSION=0.16
 
@@ -37,9 +37,6 @@ WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-common
 MODULES=	devel/gettext \
 		devel/dconf \
 		x11/gnome
-
-# desktop-file-validate(1), needed for 'make test'
-BUILD_DEPENDS +=devel/desktop-file-utils
 
 # man pages
 BUILD_DEPENDS += textproc/docbook-xsl
