@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_services_py,v 1.1 2013/03/08 06:51:46 ajacoutot Exp $
---- base/services.py.orig	Fri Feb 22 15:29:34 2013
-+++ base/services.py	Fri Feb 22 15:33:02 2013
+$OpenBSD: patch-base_services_py,v 1.2 2013/10/15 14:20:59 ajacoutot Exp $
+--- base/services.py.orig	Fri Oct 11 11:40:14 2013
++++ base/services.py	Tue Oct 15 15:42:07 2013
 @@ -67,6 +67,9 @@ def restart_cups():
      elif os.path.exists('/etc/init.d/cupsys'):
          return '/etc/init.d/cupsys restart'
@@ -32,5 +32,5 @@ $OpenBSD: patch-base_services_py,v 1.1 2013/03/08 06:51:46 ajacoutot Exp $
 +            if 'stop' in out or 'inactive' in out:
 +                cmd_start = passwordObj.getAuthCmd()%('${RCDIR}/%s start'%service_name)
                  log.debug("cmd_start=%s"%cmd_start)
-                 sts,out = utils.run(cmd_start, passwordObj)
+                 sts,out = utils.run(cmd_start, passwordObj, "Need authentication to start/restart %s service"%service_name)
                  if sts ==0:

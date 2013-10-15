@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2013/09/22 19:00:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.101 2013/10/15 14:20:58 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ COMMENT-hpcups=		HP native CUPS driver
 COMMENT-hpijs=		HP ghostscript driver (spooler independent)
 COMMENT-gui=		HPLIP graphical tools
 
-V=			3.13.9
+V=			3.13.10
 DISTNAME=		hplip-${V}
 SUBST_VARS=		V
 
@@ -45,7 +45,7 @@ cWANTLIB += crypto m pthread
 
 ### -main
 WANTLIB-main += ${WANTLIB} ${cWANTLIB}
-WANTLIB-main += asn1 avahi-client avahi-common c com_err cups dbus-1
+WANTLIB-main += asn1 avahi-client avahi-common com_err cups dbus-1
 WANTLIB-main += gssapi heimbase hpmud krb5 netsnmp roken ssl usb-1.0
 WANTLIB-main += wind z
 
@@ -189,6 +189,7 @@ post-install:
 		${PREFIX}/share/hplip
 	rm -r ${WRKINST}/usr/lib
 	rm -r ${WRKINST}/etc/udev
+	mv ${PREFIX}/share/doc/hplip-${V} ${PREFIX}/share/doc/hplip/html
 	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/*.la
 	rm ${PREFIX}/lib/sane/*.la
 

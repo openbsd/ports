@@ -1,6 +1,6 @@
-$OpenBSD: patch-check_py,v 1.15 2013/08/22 10:49:25 ajacoutot Exp $
---- check.py.orig	Wed Aug  7 08:04:02 2013
-+++ check.py	Thu Aug 22 12:29:24 2013
+$OpenBSD: patch-check_py,v 1.16 2013/10/15 14:21:00 ajacoutot Exp $
+--- check.py.orig	Fri Oct 11 11:40:14 2013
++++ check.py	Tue Oct 15 15:42:07 2013
 @@ -142,9 +142,9 @@ def get_comment(package, Inst_status, installed_ver):
                  comment = "Python Programming is not supported if version is lessthan 2.2" 
      elif package == 'hpaio':
@@ -31,7 +31,7 @@ $OpenBSD: patch-check_py,v 1.15 2013/08/22 10:49:25 ajacoutot Exp $
              },
              PYEXT: 
               { 'cupsext' :         (True,  ['base'], 'CUPS-Extension', self.check_cupsext,'-','FUNC#get_HPLIP_version'),
-@@ -311,9 +311,9 @@ class DependenciesCheck(CoreInstall):
+@@ -310,9 +310,9 @@ class DependenciesCheck(CoreInstall):
                       %(self.distro_name, self.distro_version, self.distro_name, supported_distro_vrs)))
            
          tui.header("SYSTEM INFO")
@@ -43,7 +43,7 @@ $OpenBSD: patch-check_py,v 1.15 2013/08/22 10:49:25 ajacoutot Exp $
          log.info(" Kernel: %s Host: %s Proc: %s Distribution: %s %s"\
               %(Kernel_info,Host_info,Proc_info,self.distro_name, self.distro_version))
          log.info(" Bitness: %s bit\n"%utils.getBitness())
-@@ -329,9 +329,9 @@ class DependenciesCheck(CoreInstall):
+@@ -328,9 +328,9 @@ class DependenciesCheck(CoreInstall):
                  log.warn("HPLIP-Installation: Auto installation is not supported for %s distro  %s version " %(self.distro_name, self.distro_version))
  
              log.info()
@@ -55,7 +55,7 @@ $OpenBSD: patch-check_py,v 1.15 2013/08/22 10:49:25 ajacoutot Exp $
              except (IOError, OSError), e:
                  log.error("Could not access file: %s. Check HPLIP installation." % e.strerror)
                  self.num_errors += 1
-@@ -539,7 +539,7 @@ class DependenciesCheck(CoreInstall):
+@@ -538,7 +538,7 @@ class DependenciesCheck(CoreInstall):
                          #log.info("Installed in HPLIP?: %s" % x)
                          log.info("Device URI: %s" % device_uri)
  

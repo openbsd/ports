@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.28 2013/09/13 16:43:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.29 2013/10/15 14:21:01 ajacoutot Exp $
 @conflict hplip-docs-*
 @conflict hplip-gui-<3.13.7p2
 @extraunexec rm -rf /usr/local/share/hplip/data/firmware
@@ -14,7 +14,6 @@ bin/hp-diagnose_queues
 bin/hp-doctor
 bin/hp-logcapture
 bin/hp-makeuri
-@bin bin/hp-mkuri
 bin/hp-pkservice
 bin/hp-probe
 bin/hp-query
@@ -30,40 +29,41 @@ lib/python${MODPY_VERSION}/site-packages/pcardext.so
 share/doc/hplip/
 share/doc/hplip/COPYING
 share/doc/hplip/README_LIBJPG
-share/doc/hplip/commandline.html
-share/doc/hplip/copying.html
 share/doc/hplip/copyright
-share/doc/hplip/devicemanager.html
-share/doc/hplip/faxtrouble.html
-share/doc/hplip/gettinghelp.html
-share/doc/hplip/hpscan.html
-share/doc/hplip/images/
-share/doc/hplip/images/favicon.ico
-share/doc/hplip/images/print.png
-share/doc/hplip/images/toolbox_actions.png
-share/doc/hplip/images/toolbox_fax.png
-share/doc/hplip/images/toolbox_print_control.png
-share/doc/hplip/images/toolbox_print_settings.png
-share/doc/hplip/images/toolbox_status.png
-share/doc/hplip/images/toolbox_supplies.png
-share/doc/hplip/images/xsane.png
-share/doc/hplip/index.html
-share/doc/hplip/mainttask.html
-share/doc/hplip/plugins.html
-share/doc/hplip/print.html
-share/doc/hplip/printing.html
-share/doc/hplip/printoptions.html
-share/doc/hplip/printtroubleshooting.html
-share/doc/hplip/scanning.html
-share/doc/hplip/scantrouble.html
-share/doc/hplip/sendfax.html
-share/doc/hplip/setup.html
-share/doc/hplip/styles/
-share/doc/hplip/styles/css.css
-share/doc/hplip/systray.html
-share/doc/hplip/troubleshooting.html
-share/doc/hplip/uninstalling.html
-share/doc/hplip/upgrading.html
+share/doc/hplip/html/
+share/doc/hplip/html/commandline.html
+share/doc/hplip/html/copying.html
+share/doc/hplip/html/devicemanager.html
+share/doc/hplip/html/faxtrouble.html
+share/doc/hplip/html/gettinghelp.html
+share/doc/hplip/html/hpscan.html
+share/doc/hplip/html/images/
+share/doc/hplip/html/images/favicon.ico
+share/doc/hplip/html/images/print.png
+share/doc/hplip/html/images/toolbox_actions.png
+share/doc/hplip/html/images/toolbox_fax.png
+share/doc/hplip/html/images/toolbox_print_control.png
+share/doc/hplip/html/images/toolbox_print_settings.png
+share/doc/hplip/html/images/toolbox_status.png
+share/doc/hplip/html/images/toolbox_supplies.png
+share/doc/hplip/html/images/xsane.png
+share/doc/hplip/html/index.html
+share/doc/hplip/html/mainttask.html
+share/doc/hplip/html/plugins.html
+share/doc/hplip/html/print.html
+share/doc/hplip/html/printing.html
+share/doc/hplip/html/printoptions.html
+share/doc/hplip/html/printtroubleshooting.html
+share/doc/hplip/html/scanning.html
+share/doc/hplip/html/scantrouble.html
+share/doc/hplip/html/sendfax.html
+share/doc/hplip/html/setup.html
+share/doc/hplip/html/styles/
+share/doc/hplip/html/styles/css.css
+share/doc/hplip/html/systray.html
+share/doc/hplip/html/troubleshooting.html
+share/doc/hplip/html/uninstalling.html
+share/doc/hplip/html/upgrading.html
 share/hplip/__init__.py
 share/hplip/__init__.pyc
 share/hplip/align.py

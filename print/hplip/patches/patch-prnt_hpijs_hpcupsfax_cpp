@@ -1,7 +1,7 @@
-$OpenBSD: patch-prnt_hpijs_hpcupsfax_cpp,v 1.4 2013/03/08 06:51:46 ajacoutot Exp $
---- prnt/hpijs/hpcupsfax.cpp.orig	Wed Feb 13 17:34:10 2013
-+++ prnt/hpijs/hpcupsfax.cpp	Fri Feb 22 15:05:18 2013
-@@ -93,7 +93,7 @@ static void GetLogLevel ()
+$OpenBSD: patch-prnt_hpijs_hpcupsfax_cpp,v 1.5 2013/10/15 14:21:00 ajacoutot Exp $
+--- prnt/hpijs/hpcupsfax.cpp.orig	Fri Oct 11 11:35:57 2013
++++ prnt/hpijs/hpcupsfax.cpp	Tue Oct 15 15:42:07 2013
+@@ -94,7 +94,7 @@ static void GetLogLevel ()
      FILE    *fp;
      char    str[258];
      char    *p;

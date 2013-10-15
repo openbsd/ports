@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_utils_py,v 1.11 2013/08/06 19:13:37 ajacoutot Exp $
---- base/utils.py.orig	Tue Jul 23 07:18:29 2013
-+++ base/utils.py	Fri Jul 26 16:07:33 2013
+$OpenBSD: patch-base_utils_py,v 1.12 2013/10/15 14:20:59 ajacoutot Exp $
+--- base/utils.py.orig	Fri Oct 11 11:40:14 2013
++++ base/utils.py	Tue Oct 15 15:42:07 2013
 @@ -575,7 +575,7 @@ class UserSettings(object): # Note: Deprecated after 2
          if len(path):
              self.cmd_pcard = 'hp-unload -d %DEVICE_URI%'
@@ -37,7 +37,7 @@ $OpenBSD: patch-base_utils_py,v 1.11 2013/08/06 19:13:37 ajacoutot Exp $
  
      def load(self):
          self.loadDefaults()
-@@ -931,10 +931,9 @@ def all(S,f=lambda x:x):
+@@ -934,10 +934,9 @@ def all(S,f=lambda x:x):
          if not f(x): return False
      return True
  
@@ -50,7 +50,7 @@ $OpenBSD: patch-base_utils_py,v 1.11 2013/08/06 19:13:37 ajacoutot Exp $
  def find_browser():
      if platform_avail and platform.system() == 'Darwin':
          return "open"
-@@ -2071,7 +2070,7 @@ def check_user_groups(required_grps_str, avl_grps):
+@@ -2074,7 +2073,7 @@ def check_user_groups(required_grps_str, avl_grps):
          grps =re.sub(r'\s', '', str(grps))
          exp_grp_list = grps.split(',')
      else:
