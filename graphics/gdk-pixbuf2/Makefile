@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2013/10/15 09:44:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2013/10/15 09:48:53 ajacoutot Exp $
 
 COMMENT=		graphic library for gtk+2
 
@@ -30,6 +30,7 @@ LIB_DEPENDS=		devel/glib2>=2.38.0 \
 			graphics/tiff
 
 # configure: detect and set GDK_PIXBUF_USE_GIO_MIME
+# (g_content_type_from_mime_type requires shared-mime-info)
 BUILD_DEPENDS +=	misc/shared-mime-info
 
 MODGNOME_MIME_FILE=	Yes
