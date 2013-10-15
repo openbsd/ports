@@ -1,17 +1,15 @@
-$OpenBSD: patch-src_vteutils_c,v 1.1 2013/10/15 08:12:07 ajacoutot Exp $
+$OpenBSD: patch-src_vteutils_c,v 1.2 2013/10/15 10:54:25 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=710165
 
---- src/vteutils.c.orig	Tue Oct 15 09:25:58 2013
-+++ src/vteutils.c	Tue Oct 15 09:29:32 2013
-@@ -63,7 +63,11 @@ _vte_mkstemp (void)
+--- src/vteutils.c.orig	Sat Oct 12 12:14:00 2013
++++ src/vteutils.c	Tue Oct 15 12:53:49 2013
+@@ -63,7 +63,9 @@ _vte_mkstemp (void)
          unlink (file_name);
          g_free (file_name);
  
 +#ifdef O_NOATIME
          do { } while (fcntl (fd, F_SETFL, O_NOATIME) == -1 && errno == EINTR);
-+#else
-+        do { } while (fcntl (fd, F_SETFL) == -1 && errno == EINTR);
 +#endif
  
  #ifdef O_TMPFILE
