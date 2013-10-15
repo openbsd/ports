@@ -1,11 +1,19 @@
-$OpenBSD: patch-pllua_h,v 1.1.1.1 2012/10/10 10:41:36 jeremy Exp $
+$OpenBSD: patch-pllua_h,v 1.2 2013/10/15 02:21:13 jeremy Exp $
 
 Recent versions of PostgreSQL require an extra header to get the
 Relation struct defintion, and pllua hasn't been updated recently.
 
---- pllua.h.orig	Tue Oct  9 17:32:18 2012
-+++ pllua.h	Tue Oct  9 17:32:27 2012
-@@ -25,6 +25,7 @@
+--- pllua.h.orig	Sun Sep 20 07:22:21 2009
++++ pllua.h	Thu Oct  3 13:17:41 2013
+@@ -11,6 +11,7 @@
+ #include <fmgr.h>
+ #include <funcapi.h>
+ #include <access/heapam.h>
++#include "access/htup_details.h"
+ #include <catalog/namespace.h>
+ #include <catalog/pg_proc.h>
+ #include <catalog/pg_type.h>
+@@ -25,6 +26,7 @@
  #include <utils/datum.h>
  #include <utils/builtins.h>
  #include <utils/array.h>

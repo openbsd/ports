@@ -1,0 +1,12 @@
+$OpenBSD: patch-plluaapi_c,v 1.1 2013/10/15 02:21:13 jeremy Exp $
+--- plluaapi.c.orig	Thu Oct  3 13:09:19 2013
++++ plluaapi.c	Thu Oct  3 13:09:56 2013
+@@ -22,7 +22,7 @@ typedef struct luaP_Info {
+ /* extended type info */
+ typedef struct luaP_Typeinfo {
+   int oid;
+-  int2 len;
++  int16 len;
+   char type;
+   char align;
+   bool byval;
