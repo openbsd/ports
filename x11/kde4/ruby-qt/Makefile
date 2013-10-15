@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/08/24 17:33:53 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2013/10/15 05:55:01 zhuk Exp $
 
 BROKEN-hppa =	relocation error
 CATEGORIES =	devel lang/ruby x11/kde4
@@ -28,8 +28,8 @@ MODULES =	lang/ruby
 MODKDE4_USE =
 
 # ruby 1.8 not supported as it requires LD_PRELOAD hacks for pthreads
-FLAVORS =		ruby19
-FLAVOR =		ruby19
+FLAVORS =		ruby19 ruby20
+FLAVOR ?=		ruby20
 MODRUBY_HANDLE_FLAVORS=	Yes
 MODRUBY_ADJ_FILES =	*.rb rbqtapi
 SUBST_VARS =		MODRUBY_FLAVOR
@@ -38,6 +38,6 @@ CONFIGURE_ARGS =	-DRUBY_EXECUTABLE=${RUBY}
 
 LIB_DEPENDS =	${MODKDE4_DEP_DIR}/smokeqt
 
-PATCHORIG =	.ports.orig
+NO_TEST =	Yes
 
 .include <bsd.port.mk>
