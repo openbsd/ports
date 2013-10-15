@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.69 2013/10/11 08:50:20 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.70 2013/10/15 09:28:40 dcoppa Exp $
 
 COMMENT=		highly configurable framework window manager
 
-DISTNAME=		awesome-3.5.1
-REVISION=		9
+DISTNAME=		awesome-3.5.2
 EXTRACT_SUFX=		.tar.xz
 CATEGORIES=		x11
 
@@ -18,10 +17,9 @@ WANTLIB=		X11 X11-xcb Xcursor c cairo dbus-1 \
 			execinfo gdk_pixbuf-2.0 glib-2.0 \
 			gobject-2.0 ${MODLUA_WANTLIB} m \
 			startup-notification-1 xcb xcb-atom \
-			xcb-aux xcb-event xcb-icccm xcb-image \
-			xcb-keysyms xcb-property xcb-randr \
-			xcb-render xcb-shape xcb-shm \
-			xcb-xinerama xcb-xtest xdg-basedir
+			xcb-aux xcb-event xcb-icccm xcb-keysyms \
+			xcb-property xcb-randr xcb-render \
+			xcb-shape xcb-xinerama xcb-xtest xdg-basedir
 
 MASTER_SITES=		${HOMEPAGE}download/
 
@@ -71,7 +69,6 @@ post-install:
 	@rm ${WRKINST}/${LOCALBASE}/share/awesome/lib/*.{beforesubst,orig}
 	@rm ${WRKINST}/${LOCALBASE}/share/awesome/lib/awful/*.{beforesubst,orig}
 	@rm ${WRKINST}/${LOCALBASE}/share/awesome/lib/menubar/*.{beforesubst,orig}
-	@rm ${WRKINST}/${LOCALBASE}/share/awesome/lib/wibox/layout/*.orig
 	@rm ${WRKINST}/${LOCALBASE}/share/awesome/themes/default/*.{beforesubst,orig}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/awesome
 	@mv ${WRKINST}/${SYSCONFDIR}/xdg/awesome/rc.lua \

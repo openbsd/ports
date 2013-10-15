@@ -1,21 +1,6 @@
-$OpenBSD: patch-xwindow_c,v 1.3 2013/05/28 11:15:44 dcoppa Exp $
+$OpenBSD: patch-xwindow_c,v 1.4 2013/10/15 09:28:47 dcoppa Exp $
 
 Revert to the old xcb-util-0.3.6 API
-
-commit 2d3103345e3a266eaf1d5261ef37e36ac5498ecc
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun Apr 7 11:57:40 2013 +0200
-
-Implement window gravity in ConfigureRequests
-
-Previously, awesome didn't move windows when they sent a ConfigureRequest
-(and it also shrunk them by the size of titlebars, before it forgot
-to add these). This commit adds proper gravity support to
-ConfigureRequest handling.
-
-This was tested with test-gravity from metacity (in src/wm-tester).
-
-Signed-off-by: Uli Schlachter <psychon@znc.in>
 
 --- xwindow.c.orig	Mon Apr  1 13:44:46 2013
 +++ xwindow.c	Fri May 24 16:58:00 2013
@@ -28,70 +13,3 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
      xcb_get_property_reply_t *prop_r;
  
      if((prop_r = xcb_get_property_reply(globalconf.connection, cookie, NULL)))
-@@ -294,6 +294,66 @@ xwindow_set_shape(xcb_window_t win, int width, int hei
- 
-     if (pixmap != XCB_NONE)
-         xcb_free_pixmap(globalconf.connection, pixmap);
-+}
-+
-+/** Calculate the position change that a window needs applied.
-+ * \param gravity The window gravity that should be used.
-+ * \param change_width_before The window width difference that will be applied.
-+ * \param change_height_before The window height difference that will be applied.
-+ * \param change_width_after The window width difference that will be applied.
-+ * \param change_height_after The window height difference that will be applied.
-+ * \param dx On return, this will be set to the amount the pixel has to be moved.
-+ * \param dy On return, this will be set to the amount the pixel has to be moved.
-+ */
-+void xwindow_translate_for_gravity(xcb_gravity_t gravity, int16_t change_width_before, int16_t change_height_before,
-+        int16_t change_width_after, int16_t change_height_after, int16_t *dx, int16_t *dy)
-+{
-+    int16_t x = 0, y = 0;
-+    int16_t change_height = change_height_before + change_height_after;
-+    int16_t change_width = change_width_before + change_width_after;
-+
-+    switch (gravity) {
-+    case XCB_GRAVITY_WIN_UNMAP:
-+    case XCB_GRAVITY_NORTH_WEST:
-+        break;
-+    case XCB_GRAVITY_NORTH:
-+        x = -change_width / 2;
-+        break;
-+    case XCB_GRAVITY_NORTH_EAST:
-+        x = -change_width;
-+        break;
-+    case XCB_GRAVITY_WEST:
-+        y = -change_height / 2;
-+        break;
-+    case XCB_GRAVITY_CENTER:
-+        x = -change_width / 2;
-+        y = -change_height / 2;
-+        break;
-+    case XCB_GRAVITY_EAST:
-+        x = -change_width;
-+        y = -change_height / 2;
-+        break;
-+    case XCB_GRAVITY_SOUTH_WEST:
-+        y = -change_height;
-+        break;
-+    case XCB_GRAVITY_SOUTH:
-+        x = -change_width / 2;
-+        y = -change_height;
-+        break;
-+    case XCB_GRAVITY_SOUTH_EAST:
-+        x = -change_width;
-+        y = -change_height;
-+        break;
-+    case XCB_GRAVITY_STATIC:
-+        x = -change_width_before;
-+        x = -change_height_before;
-+        break;
-+    }
-+
-+    if (dx)
-+        *dx = x;
-+    if (dy)
-+        *dy = y;
- }
- 
- // vim: filetype=c:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80

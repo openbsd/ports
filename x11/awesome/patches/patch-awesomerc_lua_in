@@ -1,15 +1,6 @@
-$OpenBSD: patch-awesomerc_lua_in,v 1.4 2013/10/02 11:48:59 dcoppa Exp $
-
-commit 81b5e6e54bad698aa9bcc1cadc39df308ef8cd59
-Author: Alexander Kondratev <caa@ipap.ru>
-Date:   Mon Sep 30 14:41:57 2013 +0400
-
-fixed #1184. Calling movetotag method throw an error on a blank screen
-
-Signed-off-by: Uli Schlachter <psychon@znc.in>
-
---- awesomerc.lua.in.orig	Wed Oct  2 12:49:19 2013
-+++ awesomerc.lua.in	Wed Oct  2 12:49:40 2013
+$OpenBSD: patch-awesomerc_lua_in,v 1.5 2013/10/15 09:28:41 dcoppa Exp $
+--- awesomerc.lua.in.orig	Mon Apr  1 13:44:46 2013
++++ awesomerc.lua.in	Mon May 20 13:03:44 2013
 @@ -42,7 +42,7 @@ beautiful.init("@AWESOME_THEMES_PATH@/default/theme.lu
  
  -- This is used later as the default terminal and editor to run.
@@ -19,30 +10,3 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
  editor_cmd = terminal .. " -e " .. editor
  
  -- Default modkey.
-@@ -315,16 +315,20 @@ for i = 1, 9 do
-                   end),
-         awful.key({ modkey, "Shift" }, "#" .. i + 9,
-                   function ()
--                      local tag = awful.tag.gettags(client.focus.screen)[i]
--                      if client.focus and tag then
--                          awful.client.movetotag(tag)
-+                      if client.focus then
-+                          local tag = awful.tag.gettags(client.focus.screen)[i]
-+                          if tag then
-+                              awful.client.movetotag(tag)
-+                          end
-                      end
-                   end),
-         awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
-                   function ()
--                      local tag = awful.tag.gettags(client.focus.screen)[i]
--                      if client.focus and tag then
--                          awful.client.toggletag(tag)
-+                      if client.focus then
-+                          local tag = awful.tag.gettags(client.focus.screen)[i]
-+                          if tag then
-+                              awful.client.toggletag(tag)
-+                          end
-                       end
-                   end))
- end

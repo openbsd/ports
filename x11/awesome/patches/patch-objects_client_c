@@ -1,40 +1,10 @@
-$OpenBSD: patch-objects_client_c,v 1.6 2013/10/11 08:50:21 dcoppa Exp $
+$OpenBSD: patch-objects_client_c,v 1.7 2013/10/15 09:28:46 dcoppa Exp $
 
 Revert to the old xcb-util-0.3.6 API
 
-commit a0e45e878e450d890a0ab541d48d8dd6c1ede943
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Thu Aug 1 11:48:03 2013 +0200
-
-client: Ignore "fake" string property changes
-
-I noticed high CPU usage while using asunder. The reason was that asunder
-re-sets its window name every 0.1 seconds (and awesome's drawing code is way too
-slow).
-
-A semi-fix for this is to ignore string property changes if the old and new
-value for the property are equal.
-
-Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit 11bef0795a450865b589c1c906bf97141436d314
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Mon Sep 16 12:06:10 2013 +0200
-
-client.content: Use correct client size (FS#1150)
-
-The size saved in c->geometry also includes the titlebars. Thus, for getting the
-window content, we have to subtract this from the size.
-
-Before this, the call to xcb_image_get() was failing with a BadMatch error,
-because we were asking for an area that is outside of the actual client's
-window's geometry.
-
-Signed-off-by: Uli Schlachter <psychon@znc.in>
-
---- objects/client.c.orig	Mon Apr  1 13:44:46 2013
-+++ objects/client.c	Fri Oct 11 10:02:39 2013
-@@ -46,7 +46,7 @@ static void
+--- objects/client.c.orig	Sat Oct 12 18:48:49 2013
++++ objects/client.c	Tue Oct 15 09:51:13 2013
+@@ -45,7 +45,7 @@ static void
  client_wipe(client_t *c)
  {
      key_array_wipe(&c->keys);
@@ -43,7 +13,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
      p_delete(&c->machine);
      p_delete(&c->class);
      p_delete(&c->instance);
-@@ -71,20 +71,20 @@ client_set_urgent(lua_State *L, int cidx, bool urgent)
+@@ -70,20 +70,20 @@ client_set_urgent(lua_State *L, int cidx, bool urgent)
      if(c->urgent != urgent)
      {
          xcb_get_property_cookie_t hints =
@@ -70,19 +40,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
  
          luaA_object_emit_signal(L, cidx, "property::urgent", 0);
      }
-@@ -113,6 +113,11 @@ DO_CLIENT_SET_PROPERTY(skip_taskbar)
-     client_set_##prop(lua_State *L, int cidx, char *value) \
-     { \
-         client_t *c = luaA_checkudata(L, cidx, &client_class); \
-+        if (A_STREQ(c->prop, value)) \
-+        { \
-+            p_delete(&value); \
-+            return; \
-+        } \
-         p_delete(&c->prop); \
-         c->prop = value; \
-         luaA_object_emit_signal(L, cidx, "property::" #signal, 0); \
-@@ -561,7 +566,7 @@ HANDLE_GEOM(height)
+@@ -565,7 +565,7 @@ HANDLE_GEOM(height)
       *
       * At this stage it's just safer to keep it in normal state and avoid confusion.
       */
@@ -91,7 +49,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
  
      if(!startup)
      {
-@@ -633,26 +638,26 @@ client_apply_size_hints(client_t *c, area_t geometry)
+@@ -637,26 +637,26 @@ client_apply_size_hints(client_t *c, area_t geometry)
      /* Size hints are applied to the window without any decoration */
      client_remove_titlebar_geometry(c, &geometry);
  
@@ -122,7 +80,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
      {
          /* min size is substituted with base size if not specified */
          minw = c->size_hints.base_width;
-@@ -660,7 +665,7 @@ client_apply_size_hints(client_t *c, area_t geometry)
+@@ -664,7 +664,7 @@ client_apply_size_hints(client_t *c, area_t geometry)
      }
  
      /* Handle the size aspect ratio */
@@ -131,7 +89,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
              && c->size_hints.min_aspect_den > 0
              && c->size_hints.max_aspect_den > 0
              && geometry.height > real_baseh
-@@ -701,7 +706,7 @@ client_apply_size_hints(client_t *c, area_t geometry)
+@@ -705,7 +705,7 @@ client_apply_size_hints(client_t *c, area_t geometry)
      geometry.height = MAX(geometry.height, minh);
  
      /* Handle the maximum size */
@@ -140,7 +98,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
      {
          if(c->size_hints.max_width)
              geometry.width = MIN(geometry.width, c->size_hints.max_width);
-@@ -710,7 +715,7 @@ client_apply_size_hints(client_t *c, area_t geometry)
+@@ -714,7 +714,7 @@ client_apply_size_hints(client_t *c, area_t geometry)
      }
  
      /* Handle the size increment */
@@ -149,7 +107,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
         && c->size_hints.width_inc && c->size_hints.height_inc)
      {
          uint16_t t1 = geometry.width, t2 = geometry.height;
-@@ -892,9 +897,9 @@ client_set_minimized(lua_State *L, int cidx, bool s)
+@@ -896,9 +896,9 @@ client_set_minimized(lua_State *L, int cidx, bool s)
          c->minimized = s;
          banning_need_update();
          if(s)
@@ -161,7 +119,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
          if(strut_has_value(&c->strut))
              screen_emit_signal(globalconf.L, c->screen, "property::workarea", 0);
          luaA_object_emit_signal(L, cidx, "property::minimized", 0);
-@@ -1197,7 +1202,7 @@ client_unmanage(client_t *c, bool window_valid)
+@@ -1201,7 +1201,7 @@ client_unmanage(client_t *c, bool window_valid)
  
          /* Do this last to avoid races with clients. According to ICCCM, clients
           * arent allowed to re-use the window until after this. */
@@ -170,27 +128,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
      }
  
      /* set client as invalid */
-@@ -1784,11 +1789,16 @@ LUA_OBJECT_EXPORT_PROPERTY(client, client_t, maximized
- static int
- luaA_client_get_content(lua_State *L, client_t *c)
- {
--    xcb_image_t *ximage = xcb_image_get(globalconf.connection,
-+    xcb_image_t *ximage;
-+    int width  = c->geometry.width;
-+    int height = c->geometry.height;
-+
-+    width  -= c->titlebar[CLIENT_TITLEBAR_LEFT].size + c->titlebar[CLIENT_TITLEBAR_RIGHT].size;
-+    height -= c->titlebar[CLIENT_TITLEBAR_TOP].size + c->titlebar[CLIENT_TITLEBAR_BOTTOM].size;
-+    ximage = xcb_image_get(globalconf.connection,
-                                         c->window,
-                                         0, 0,
--                                        c->geometry.width,
--                                        c->geometry.height,
-+                                        width, height,
-                                         ~0, XCB_IMAGE_FORMAT_Z_PIXMAP);
-     cairo_surface_t *surface = NULL;
- 
-@@ -1861,9 +1871,9 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1856,9 +1856,9 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
  
      lua_createtable(L, 0, 1);
  
@@ -202,7 +140,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
          u_or_p = "program_position";
  
      if(u_or_p)
-@@ -1877,9 +1887,9 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1872,9 +1872,9 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
          u_or_p = NULL;
      }
  
@@ -214,7 +152,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
          u_or_p = "program_size";
  
      if(u_or_p)
-@@ -1892,7 +1902,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1887,7 +1887,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
          lua_setfield(L, -2, u_or_p);
      }
  
@@ -223,7 +161,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
      {
          lua_pushnumber(L, c->size_hints.min_width);
          lua_setfield(L, -2, "min_width");
-@@ -1900,7 +1910,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1895,7 +1895,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
          lua_setfield(L, -2, "min_height");
      }
  
@@ -232,7 +170,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
      {
          lua_pushnumber(L, c->size_hints.max_width);
          lua_setfield(L, -2, "max_width");
-@@ -1908,7 +1918,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1903,7 +1903,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
          lua_setfield(L, -2, "max_height");
      }
  
@@ -241,7 +179,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
      {
          lua_pushnumber(L, c->size_hints.width_inc);
          lua_setfield(L, -2, "width_inc");
-@@ -1916,7 +1926,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1911,7 +1911,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
          lua_setfield(L, -2, "height_inc");
      }
  
@@ -250,7 +188,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
      {
          lua_pushnumber(L, c->size_hints.min_aspect_num);
          lua_setfield(L, -2, "min_aspect_num");
-@@ -1928,7 +1938,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1923,7 +1923,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
          lua_setfield(L, -2, "max_aspect_den");
      }
  
@@ -259,7 +197,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
      {
          lua_pushnumber(L, c->size_hints.base_width);
          lua_setfield(L, -2, "base_width");
-@@ -1936,7 +1946,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
+@@ -1931,7 +1931,7 @@ luaA_client_get_size_hints(lua_State *L, client_t *c)
          lua_setfield(L, -2, "base_height");
      }
  

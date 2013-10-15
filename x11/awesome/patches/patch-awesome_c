@@ -1,71 +1,30 @@
-$OpenBSD: patch-awesome_c,v 1.9 2013/10/11 08:50:21 dcoppa Exp $
+$OpenBSD: patch-awesome_c,v 1.10 2013/10/15 09:28:41 dcoppa Exp $
+
+Revert to libXcursor
 
 Revert to the old xcb-util-0.3.6 API
 
-commit efd243b6d70b9c549c184c3c0b84c481453411e0
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun Oct 6 10:34:37 2013 +0200
-
-event: Handle MotionNotify before ButtonPress/Release (FS#1136)
-
-The above-mentioned bug report says that a window cannot be moved via its
-titlebar if you move the move quickly while clicking.
-
-The reason for this was awesome's "event compression": We don't handle all
-MotionNotify events, because they can come in big quantities. Instead, we only
-want to handle the latest one and ignore all earlier ones (the mouse isn't in
-that position anymore anyway).
-
-The problem now appears if a MotionNotify is moved across a ButtonPress event
-and the ButtonPress is what should cause the window to be moved. Awesome first
-handles the ButtonPress event normally and starts grabbing mouse input. Then,
-our event loop feeds us with an old MotionNotify event in which the button was
-not pressed yet. The code for moving clients gets a motion event in which no
-mouse button is pressed, concludes that the move is done and ungrabs the mouse
-again, even though the button is still physically pressed.
-
-Fix this by making sure that MotionNotify events are never moved across
-ButtonPress or ButtonRelease events. We already did this for EnterNotify and
-LeaveNotify events for similar reasons.
-
-Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit 57bec371f70f121785cd062dca3b86f18fd685fd
-Author: kardan <kardan@riseup.net>
-Date:   Wed Jun 12 14:15:54 2013 +0200
-
-honor appended -c option for --check
-
-Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit 9b7873392228e8ebab407144f1aacaead4f9733d
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Fri Oct 4 10:01:03 2013 +0200
-
-Fix possible deadlock during startup
-
-For setting up the wallpaper, awesome needs a second connection to the X11
-server (isn't SetCloseDownMode just great?).
-
-However, it was possible to have a dead-lock with our main connection due to
-this. Awesome does a GrabServer during startup so that nothing else can use the
-X11 server while we set ourselves up. The server is ungrabbed right before the
-lua config is read. However, nothing makes sure that this ungrab request really
-is sent to the server instead of just waiting in xcb's output buffer.
-
-The dead-lock would now happen if we try to establish a second connection to the
-X11 server before the ungrab request was flushed on the main connection. The
-server will wait for the ungrab on the first connection, awesome is waiting for
-the second connection to be successfully established.
-
-Fix this by making sure the UngrabServer request is flushed before parsing the
-config file.
-
-Signed-off-by: Uli Schlachter <psychon@znc.in>
-
---- awesome.c.orig	Mon Apr  1 13:44:46 2013
-+++ awesome.c	Fri Oct 11 10:07:47 2013
-@@ -136,7 +136,7 @@ scan(xcb_query_tree_cookie_t tree_c)
+--- awesome.c.orig	Tue Oct 15 10:18:34 2013
++++ awesome.c	Tue Oct 15 10:18:16 2013
+@@ -33,6 +33,9 @@
+ #include <xcb/xtest.h>
+ #include <xcb/shape.h>
+ 
++#include <X11/Xlib-xcb.h>
++#include <X11/XKBlib.h>
++
+ #include <glib-unix.h>
+ 
+ #include "awesome.h"
+@@ -83,7 +86,6 @@ awesome_atexit(bool restart)
+     xcb_aux_sync(globalconf.connection);
+ 
+     /* Disconnect *after* closing lua */
+-    xcb_cursor_context_free(globalconf.cursor_ctx);
+     xcb_disconnect(globalconf.connection);
+ }
+ 
+@@ -134,7 +136,7 @@ scan(xcb_query_tree_cookie_t tree_c)
  
          if(!attr_r || attr_r->override_redirect
             || attr_r->map_state == XCB_MAP_STATE_UNMAPPED
@@ -74,77 +33,37 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
          {
              geom_wins[i] = NULL;
              p_delete(&attr_r);
-@@ -183,13 +183,13 @@ a_xcb_check(void)
-         else
-         {
-             uint8_t type = XCB_EVENT_RESPONSE_TYPE(event);
--            if((type == XCB_ENTER_NOTIFY || type == XCB_LEAVE_NOTIFY) && mouse)
-+            if(mouse && (type == XCB_ENTER_NOTIFY || type == XCB_LEAVE_NOTIFY
-+                        || type == XCB_BUTTON_PRESS || type == XCB_BUTTON_RELEASE))
-             {
--                /* Make sure enter/motion/leave events are handled in the
--                 * correct order */
-+                /* Make sure enter/motion/leave/press/release events are handled
-+                 * in the correct order */
-                 event_handle(mouse);
-                 p_delete(&mouse);
--                mouse = NULL;
-             }
-             event_handle(event);
-             p_delete(&event);
-@@ -288,6 +288,7 @@ main(int argc, char **argv)
-     ssize_t cmdlen = 1;
-     xdgHandle xdg;
-     bool no_argb = false;
-+    bool run_test = false;
-     xcb_generic_event_t *event;
-     xcb_query_tree_cookie_t tree_c;
-     static struct option long_options[] =
-@@ -340,16 +341,8 @@ main(int argc, char **argv)
-             exit_help(EXIT_SUCCESS);
-             break;
-           case 'k':
--            if(!luaA_parserc(&xdg, confpath, false))
--            {
--                fprintf(stderr, "✘ Configuration file syntax error.\n");
--                return EXIT_FAILURE;
--            }
--            else
--            {
--                fprintf(stderr, "✔ Configuration file syntax OK.\n");
--                return EXIT_SUCCESS;
--            }
-+            run_test = true;
-+            break;
-           case 'c':
-             if(a_strlen(optarg))
-                 confpath = a_strdup(optarg);
-@@ -361,6 +354,20 @@ main(int argc, char **argv)
-             break;
-         }
+@@ -375,11 +377,21 @@ main(int argc, char **argv)
+     sigemptyset(&sa.sa_mask);
+     sigaction(SIGSEGV, &sa, 0);
  
-+    if (run_test)
-+    {
-+        if(!luaA_parserc(&xdg, confpath, false))
-+        {
-+            fprintf(stderr, "✘ Configuration file syntax error.\n");
-+            return EXIT_FAILURE;
-+        }
-+        else
-+        {
-+            fprintf(stderr, "✔ Configuration file syntax OK.\n");
-+            return EXIT_SUCCESS;
-+        }
-+    }
++    /* XLib sucks */
++    XkbIgnoreExtension(True);
 +
-     /* register function for signals */
-     g_unix_signal_add(SIGINT, exit_on_signal, NULL);
-     g_unix_signal_add(SIGTERM, exit_on_signal, NULL);
-@@ -518,6 +525,7 @@ main(int argc, char **argv)
++    /* X stuff */
++    globalconf.display = XOpenDisplay(NULL);
++    if (globalconf.display == NULL) {
++        fatal("cannot open display");
++    }
++    XSetEventQueueOwner(globalconf.display, XCBOwnsEventQueue);
++    globalconf.default_screen = XDefaultScreen(globalconf.display);
++    globalconf.connection = XGetXCBConnection(globalconf.display);
+     /* We have no clue where the input focus is right now */
+     globalconf.focus.need_update = true;
  
-     /* we will receive events, stop grabbing server */
-     xcb_ungrab_server(globalconf.connection);
-+    xcb_flush(globalconf.connection);
+-    /* X stuff */
+-    globalconf.connection = xcb_connect(NULL, &globalconf.default_screen);
++    /* Double checking that connection is good and operatable with xcb */
+     if(xcb_connection_has_error(globalconf.connection))
+         fatal("cannot open display");
  
-     /* Parse and run configuration file */
-     if (!luaA_parserc(&xdg, confpath, true))
+@@ -406,9 +418,6 @@ main(int argc, char **argv)
+     xcb_prefetch_extension_data(globalconf.connection, &xcb_randr_id);
+     xcb_prefetch_extension_data(globalconf.connection, &xcb_xinerama_id);
+     xcb_prefetch_extension_data(globalconf.connection, &xcb_shape_id);
+-
+-    if (xcb_cursor_context_new(globalconf.connection, globalconf.screen, &globalconf.cursor_ctx) < 0)
+-        fatal("Failed to initialize xcb-cursor");
+ 
+     /* Setup the main context */
+     g_main_context_set_poll_func(g_main_context_default(), &a_glib_poll);

@@ -1,39 +1,10 @@
-$OpenBSD: patch-property_c,v 1.4 2013/10/07 14:28:52 dcoppa Exp $
+$OpenBSD: patch-property_c,v 1.5 2013/10/15 09:28:46 dcoppa Exp $
 
 Revert to the old xcb-util-0.3.6 API
 
-commit ed66fda1f1d390db18383810c6f91e5aec6ebf16
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Fri Oct 4 14:31:48 2013 +0200
-
-client: Ignore transient_for causing loops (FS#1124)
-
-Lots of code assumes that it can recursively follow a client's transient_for
-field until it reached an end without a transient_for client. Instead of fixing
-all those places to properly handle loops, this patch just makes us ignore
-WM_TRANSIENT_FOR if the property causes a loop.
-
-This means that it can be a little random which WM_TRANSIENT_FOR property is
-ignored, because it will always be the one that happens to complete the cycle. I
-don't think that this is bad, because there shouldn't be any loops in the first
-place.
-
-Lots-of-kudos-to: David Mohr <david@mcbf.net>
-Signed-off-by: Uli Schlachter <psychon@znc.in>
-
-commit 14722aa6e43f7108eddceb1306c3d5f91cb538e9
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Wed Jun 19 19:23:19 2013 +0200
-
-Fix WM_CLIENT_LEADER handling
-
-This was broken since 5d0a81c8bf48. Whoops.
-
-Signed-off-by: Uli Schlachter <psychon@znc.in>
-
---- property.c.orig	Mon Apr  1 13:44:46 2013
-+++ property.c	Mon Oct  7 15:31:55 2013
-@@ -98,23 +98,33 @@ HANDLE_PROPERTY(net_wm_pid)
+--- property.c.orig	Sat Oct 12 18:48:49 2013
++++ property.c	Tue Oct 15 09:51:13 2013
+@@ -98,7 +98,7 @@ HANDLE_PROPERTY(net_wm_pid)
  xcb_get_property_cookie_t
  property_get_wm_transient_for(client_t *c)
  {
@@ -42,44 +13,16 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
  }
  
  void
- property_update_wm_transient_for(client_t *c, xcb_get_property_cookie_t cookie)
- {
-     xcb_window_t trans;
-+    int counter;
-+    client_t *tc, *tmp;
+@@ -108,7 +108,7 @@ property_update_wm_transient_for(client_t *c, xcb_get_
+     int counter;
+     client_t *tc, *tmp;
  
 -    if(!xcb_icccm_get_wm_transient_for_reply(globalconf.connection,
 +    if(!xcb_get_wm_transient_for_reply(globalconf.connection,
  					     cookie,
  					     &trans, NULL))
              return;
- 
-+    tmp = tc = client_getbywin(trans);
-+
-     luaA_object_push(globalconf.L, c);
-     client_set_type(globalconf.L, -1, WINDOW_TYPE_DIALOG);
-     client_set_above(globalconf.L, -1, false);
--    client_set_transient_for(globalconf.L, -1, client_getbywin(trans));
-+
-+    /* Verify that there are no loops in the transient_for relation */
-+    for(counter = 0; tmp != NULL && counter <= globalconf.stack.len; counter++)
-+        tmp = tmp->transient_for;
-+    if (counter <= globalconf.stack.len)
-+        client_set_transient_for(globalconf.L, -1, tc);
-+
-     lua_pop(globalconf.L, 1);
- }
- 
-@@ -122,7 +132,7 @@ xcb_get_property_cookie_t
- property_get_wm_client_leader(client_t *c)
- {
-     return xcb_get_property_unchecked(globalconf.connection, false, c->window,
--                                      WM_CLIENT_LEADER, XCB_ATOM_WINDOW, 1, 32);
-+                                      WM_CLIENT_LEADER, XCB_ATOM_WINDOW, 0, 32);
- }
- 
- /** Update leader hint of a client.
-@@ -146,7 +156,7 @@ property_update_wm_client_leader(client_t *c, xcb_get_
+@@ -156,7 +156,7 @@ property_update_wm_client_leader(client_t *c, xcb_get_
  xcb_get_property_cookie_t
  property_get_wm_normal_hints(client_t *c)
  {
@@ -88,7 +31,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
  }
  
  /** Update the size hints of a client.
-@@ -156,7 +166,7 @@ property_get_wm_normal_hints(client_t *c)
+@@ -166,7 +166,7 @@ property_get_wm_normal_hints(client_t *c)
  void
  property_update_wm_normal_hints(client_t *c, xcb_get_property_cookie_t cookie)
  {
@@ -97,7 +40,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
  					cookie,
  					&c->size_hints, NULL);
  }
-@@ -164,7 +174,7 @@ property_update_wm_normal_hints(client_t *c, xcb_get_p
+@@ -174,7 +174,7 @@ property_update_wm_normal_hints(client_t *c, xcb_get_p
  xcb_get_property_cookie_t
  property_get_wm_hints(client_t *c)
  {
@@ -106,7 +49,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
  }
  
  /** Update the WM hints of a client.
-@@ -174,20 +184,20 @@ property_get_wm_hints(client_t *c)
+@@ -184,20 +184,20 @@ property_get_wm_hints(client_t *c)
  void
  property_update_wm_hints(client_t *c, xcb_get_property_cookie_t cookie)
  {
@@ -132,7 +75,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
          client_set_group_window(globalconf.L, -1, wmh.window_group);
  
      lua_pop(globalconf.L, 1);
-@@ -196,7 +206,7 @@ property_update_wm_hints(client_t *c, xcb_get_property
+@@ -206,7 +206,7 @@ property_update_wm_hints(client_t *c, xcb_get_property
  xcb_get_property_cookie_t
  property_get_wm_class(client_t *c)
  {
@@ -141,7 +84,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
  }
  
  /** Update WM_CLASS of a client.
-@@ -206,9 +216,9 @@ property_get_wm_class(client_t *c)
+@@ -216,9 +216,9 @@ property_get_wm_class(client_t *c)
  void
  property_update_wm_class(client_t *c, xcb_get_property_cookie_t cookie)
  {
@@ -153,7 +96,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
  				     cookie,
  				     &hint, NULL))
          return;
-@@ -217,7 +227,7 @@ property_update_wm_class(client_t *c, xcb_get_property
+@@ -227,7 +227,7 @@ property_update_wm_class(client_t *c, xcb_get_property
      client_set_class_instance(globalconf.L, -1, hint.class_name, hint.instance_name);
      lua_pop(globalconf.L, 1);
  
@@ -162,7 +105,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
  }
  
  static int
-@@ -280,7 +290,7 @@ property_update_net_wm_pid(client_t *c, xcb_get_proper
+@@ -290,7 +290,7 @@ property_update_net_wm_pid(client_t *c, xcb_get_proper
  xcb_get_property_cookie_t
  property_get_wm_protocols(client_t *c)
  {
@@ -171,7 +114,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
  						c->window, WM_PROTOCOLS);
  }
  
-@@ -291,15 +301,15 @@ property_get_wm_protocols(client_t *c)
+@@ -301,15 +301,15 @@ property_get_wm_protocols(client_t *c)
  void
  property_update_wm_protocols(client_t *c, xcb_get_property_cookie_t cookie)
  {

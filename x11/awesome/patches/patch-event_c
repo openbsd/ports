@@ -1,79 +1,19 @@
-$OpenBSD: patch-event_c,v 1.4 2013/10/08 11:48:58 dcoppa Exp $
-
-commit 2d3103345e3a266eaf1d5261ef37e36ac5498ecc
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun Apr 7 11:57:40 2013 +0200
-
-Implement window gravity in ConfigureRequests
-
-Previously, awesome didn't move windows when they sent a ConfigureRequest
-(and it also shrunk them by the size of titlebars, before it forgot
-to add these). This commit adds proper gravity support to
-ConfigureRequest handling.
-
-This was tested with test-gravity from metacity (in src/wm-tester).
-
-Signed-off-by: Uli Schlachter <psychon@znc.in>
+$OpenBSD: patch-event_c,v 1.5 2013/10/15 09:28:42 dcoppa Exp $
 
 Revert to the old xcb-util-0.3.6 API
 
---- event.c.orig	Mon Apr  1 13:44:46 2013
-+++ event.c	Fri May 24 16:58:00 2013
-@@ -285,23 +285,52 @@ event_handle_configurerequest(xcb_configure_request_ev
-     if((c = client_getbywin(ev->window)))
-     {
-         area_t geometry = c->geometry;
-+        int16_t diff_w = 0, diff_h = 0, diff_border = 0;
- 
-         if(ev->value_mask & XCB_CONFIG_WINDOW_X)
-             geometry.x = ev->x;
-         if(ev->value_mask & XCB_CONFIG_WINDOW_Y)
-             geometry.y = ev->y;
-         if(ev->value_mask & XCB_CONFIG_WINDOW_WIDTH)
-+        {
-+            uint16_t old_w = geometry.width;
-             geometry.width = ev->width;
-+            /* The ConfigureRequest specifies the size of the client window, we want the frame */
-+            geometry.width += c->titlebar[CLIENT_TITLEBAR_LEFT].size;
-+            geometry.width += c->titlebar[CLIENT_TITLEBAR_RIGHT].size;
-+            diff_w = geometry.width - old_w;
-+        }
-         if(ev->value_mask & XCB_CONFIG_WINDOW_HEIGHT)
-+        {
-+            uint16_t old_h = geometry.height;
-             geometry.height = ev->height;
--
-+            /* The ConfigureRequest specifies the size of the client window, we want the frame */
-+            geometry.height += c->titlebar[CLIENT_TITLEBAR_TOP].size;
-+            geometry.height += c->titlebar[CLIENT_TITLEBAR_BOTTOM].size;
-+            diff_h = geometry.height - old_h;
-+        }
-         if(ev->value_mask & XCB_CONFIG_WINDOW_BORDER_WIDTH)
-         {
-+            diff_border = ev->border_width - c->border_width;
-+            diff_h += diff_border;
-+            diff_w += diff_border;
-+
-             luaA_object_push(globalconf.L, c);
-             window_set_border_width(globalconf.L, -1, ev->border_width);
-             lua_pop(globalconf.L, 1);
+--- event.c.orig	Sat Oct 12 18:48:49 2013
++++ event.c	Tue Oct 15 10:01:42 2013
+@@ -321,7 +321,7 @@ event_handle_configurerequest(xcb_configure_request_ev
          }
  
-+        /* If the client resizes without moving itself, apply window gravity */
+         /* If the client resizes without moving itself, apply window gravity */
+-        if(c->size_hints.flags & XCB_ICCCM_SIZE_HINT_P_WIN_GRAVITY)
 +        if(c->size_hints.flags & XCB_SIZE_HINT_P_WIN_GRAVITY)
-+        {
-+            int16_t diff_x = 0, diff_y = 0;
-+            xwindow_translate_for_gravity(c->size_hints.win_gravity, diff_border, diff_border, diff_w, diff_h, &diff_x, &diff_y);
-+            if(!(ev->value_mask & XCB_CONFIG_WINDOW_X))
-+                geometry.x += diff_x;
-+            if(!(ev->value_mask & XCB_CONFIG_WINDOW_Y))
-+                geometry.y += diff_y;
-+        }
-+
-         if(!client_resize(c, geometry, false))
-             /* ICCCM 4.1.5 / 4.2.3, if nothing was changed, send an event saying so */
-             client_send_configure(c);
-@@ -672,7 +701,7 @@ event_handle_clientmessage(xcb_client_message_event_t 
+         {
+             int16_t diff_x = 0, diff_y = 0;
+             xwindow_translate_for_gravity(c->size_hints.win_gravity, diff_border, diff_border, diff_w, diff_h, &diff_x, &diff_y);
+@@ -701,7 +701,7 @@ event_handle_clientmessage(xcb_client_message_event_t 
          client_t *c;
          if((c = client_getbywin(ev->window))
             && ev->format == 32
