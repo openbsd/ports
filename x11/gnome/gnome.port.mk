@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.71 2013/10/15 09:43:08 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.72 2013/10/15 09:55:30 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -36,17 +36,26 @@ MODULES+=		textproc/intltool
 .endif
 
 # Set to 'yes' if there are .desktop files under share/applications/.
+# Requires the following goo in PLIST:
+# @exec %D/bin/update-desktop-database
+# @unexec-delete %D/bin/update-desktop-database
 .if defined(MODGNOME_DESKTOP_FILE) && ${MODGNOME_DESKTOP_FILE:L} == "yes"
 MODGNOME_RUN_DEPENDS+=	devel/desktop-file-utils
 MODGNOME_pre-configure += ln -sf /usr/bin/true ${WRKDIR}/bin/desktop-file-validate
 .endif
 
 # Set to 'yes' if there are icon files under share/icons/.
+# Requires the following goo in PLIST (adapt $icon-theme accordingly):
+# @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/$icon-theme
+# @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/$icon-theme
 .if defined(MODGNOME_ICON_CACHE) && ${MODGNOME_ICON_CACHE:L} == "yes"
 MODGNOME_RUN_DEPENDS+=	x11/gtk+2,-guic
 .endif
 
 # Set to 'yes' if there are .xml files under share/mime/.
+# Requires the following goo in PLIST:
+# @exec %D/bin/update-mime-database %D/share/mime
+# @unexec-delete %D/bin/update-mime-database %D/share/mime
 .if defined(MODGNOME_MIME_FILE) && ${MODGNOME_MIME_FILE:L} == "yes"
 MODGNOME_RUN_DEPENDS+=	misc/shared-mime-info
 MODGNOME_pre-configure += ln -sf /usr/bin/true ${WRKDIR}/bin/update-mime-database
