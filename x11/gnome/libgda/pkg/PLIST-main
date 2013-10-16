@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.31 2013/07/19 11:59:53 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.32 2013/10/16 10:26:20 ajacoutot Exp $
 @conflict libgda-db4-*
 @conflict libgda-ldap-<4.2.8p0v0
 @conflict libgda-ui-<5.1.1
@@ -149,11 +149,6 @@ share/examples/libgda/config
 share/examples/libgda/sales_test.db
 @sample ${SYSCONFDIR}/libgda-${GDA_MAJOR}/sales_test.db
 share/gir-1.0/Gda-${GDA_MAJOR}.gir
-share/gnome/
-share/gnome/help/
-share/gnome/help/gda-sql/
-share/gnome/help/gda-sql/C/
-share/gnome/help/gda-sql/C/gda-sql-help.xml
 share/gtk-doc/html/libgda-${GDA_MAJOR}/
 share/gtk-doc/html/libgda-${GDA_MAJOR}/DataModels.png
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaBatch.html

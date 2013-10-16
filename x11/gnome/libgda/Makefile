@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2013/09/27 07:06:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2013/10/16 10:26:20 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -20,9 +20,9 @@ PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
 
-REVISION-main=		3
+REVISION-main=		4
 REVISION-mysql=		2
-REVISION-ui=		2
+REVISION-ui=		3
 REVISION-ldap=		1
 REVISION-pgsql=		1
 
@@ -104,7 +104,6 @@ WANTLIB-main += ${WANTLIB} c gcrypt gpg-error ncurses sqlite3
 WANTLIB-main += readline soup-2.4 crypto gdk_pixbuf-2.0 png xslt
 
 RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
-			${MODGNOME_RUN_DEPENDS_yelp} \
 			devel/iso-codes
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/libsoup \

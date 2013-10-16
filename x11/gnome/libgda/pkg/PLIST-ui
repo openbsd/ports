@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-ui,v 1.22 2013/03/28 19:34:29 jasper Exp $
-@conflict libgda-<4.2.8p1v2
+@comment $OpenBSD: PLIST-ui,v 1.23 2013/10/16 10:26:20 ajacoutot Exp $
+@conflict libgda-<5.1.2p4v2
 @bin bin/gda-browser-${GDA_MAJOR}
 @bin bin/gda-control-center-${GDA_MAJOR}
 @bin bin/gdaui-demo-${GDA_MAJOR}
@@ -422,6 +422,7 @@ share/gnome/help/gda-browser/zh_CN/table-insert-data.page
 share/gnome/help/gda-browser/zh_CN/transactions.page
 share/gnome/help/gda-browser/zh_CN/variables.page
 share/gnome/help/gda-browser/zh_CN/virtual-connections.page
+share/gnome/help/gda-sql/C/gda-sql-help.xml
 share/gtk-doc/html/gda-browser/
 share/gtk-doc/html/gda-browser/BrowserConnection.html
 share/gtk-doc/html/gda-browser/BrowserCore.html
