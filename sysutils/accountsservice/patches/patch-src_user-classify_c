@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_user-classify_c,v 1.1 2013/10/16 08:44:37 ajacoutot Exp $
+
+Add all ports and system users that have a login shell.
+
+--- src/user-classify.c.orig	Wed Oct 16 10:35:26 2013
++++ src/user-classify.c	Wed Oct 16 10:36:36 2013
+@@ -54,7 +54,20 @@ static const char *default_excludes[] = {
+         "man",
+         "at",
+         "gdm",
+-        "gnome-initial-setup"
++        "gnome-initial-setup",
++        "_couchdb",
++        "_ejabberd",
++        "_jabberd",
++        "_mediatomb",
++        "_mon",
++        "_openfire",
++        "_postgresql",
++        "_rancid",
++        "_riak",
++        "_rocrail",
++        "_sabnzbd",
++        "_sogo",
++        "_varnish"
+ };
+ 
+ #define PATH_NOLOGIN "/sbin/nologin"

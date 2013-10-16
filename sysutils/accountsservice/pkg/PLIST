@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/05/30 18:07:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/10/16 08:44:37 ajacoutot Exp $
 @unexec-delete rm -rf /var/db/AccountsService/icons/*
 @unexec-delete rm -rf /var/db/AccountsService/users/*
 include/accountsservice-1.0/
@@ -118,10 +118,6 @@ share/locale/wa/LC_MESSAGES/accounts-service.mo
 share/locale/zh_CN/LC_MESSAGES/accounts-service.mo
 share/locale/zh_TW/LC_MESSAGES/accounts-service.mo
 share/polkit-1/actions/org.freedesktop.accounts.policy
-share/vala/
-share/vala/vapi/
-share/vala/vapi/accountsservice.deps
-share/vala/vapi/accountsservice.vapi
 @sample /var/db/AccountsService/
 @sample /var/db/AccountsService/icons/
 @sample /var/db/AccountsService/users/

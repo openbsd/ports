@@ -1,13 +1,7 @@
-$OpenBSD: patch-src_user_c,v 1.23 2013/10/12 08:43:52 ajacoutot Exp $
-
-From 631c57790fe79ee70d79522eb1b3e461e2899d82 Mon Sep 17 00:00:00 2001
-From: Ray Strode <rstrode@redhat.com>
-Date: Tue, 01 Oct 2013 14:50:46 +0000
-Subject: user: treat NULL shadow entry as "password handled remotely"
-
---- src/user.c.orig	Tue Jun 11 17:50:37 2013
-+++ src/user.c	Sat Oct 12 10:37:47 2013
-@@ -116,7 +116,12 @@ account_type_from_pwent (struct passwd *pwent)
+$OpenBSD: patch-src_user_c,v 1.24 2013/10/16 08:44:37 ajacoutot Exp $
+--- src/user.c.orig	Tue Oct 15 22:25:19 2013
++++ src/user.c	Wed Oct 16 10:34:25 2013
+@@ -123,7 +123,12 @@ account_type_from_pwent (struct passwd *pwent)
  {
          struct group *grp;
          gid_t wheel;
@@ -20,7 +14,7 @@ Subject: user: treat NULL shadow entry as "password handled remotely"
          gint ngroups;
          gint i;
  
-@@ -132,16 +137,28 @@ account_type_from_pwent (struct passwd *pwent)
+@@ -139,16 +144,28 @@ account_type_from_pwent (struct passwd *pwent)
          }
          wheel = grp->gr_gid;
  
@@ -49,7 +43,7 @@ Subject: user: treat NULL shadow entry as "password handled remotely"
  
          return ACCOUNT_TYPE_STANDARD;
  }
-@@ -251,7 +268,18 @@ user_update_from_pwent (User          *user,
+@@ -264,7 +281,18 @@ user_update_from_pwent (User          *user,
                  passwd = spent->sp_pwdp;
  #endif
  
@@ -68,16 +62,7 @@ Subject: user: treat NULL shadow entry as "password handled remotely"
                  locked = TRUE;
          }
          else {
-@@ -264,7 +292,7 @@ user_update_from_pwent (User          *user,
-                 g_object_notify (G_OBJECT (user), "locked");
-         }
- 
--        if (passwd && passwd[0] != 0) {
-+        if (passwd == NULL || passwd[0] != 0) {
-                 mode = PASSWORD_MODE_REGULAR;
-         }
-         else {
-@@ -1273,7 +1301,11 @@ user_change_locked_authorized_cb (Daemon              
+@@ -1552,7 +1580,11 @@ user_change_locked_authorized_cb (Daemon              
                           "%s account of user '%s' (%d)",
                           locked ? "locking" : "unlocking", user->user_name, user->uid);
                  argv[0] = "/usr/sbin/usermod";
@@ -89,7 +74,7 @@ Subject: user: treat NULL shadow entry as "password handled remotely"
                  argv[2] = "--";
                  argv[3] = user->user_name;
                  argv[4] = NULL;
-@@ -1344,13 +1376,23 @@ user_change_account_type_authorized_cb (Daemon        
+@@ -1623,13 +1655,23 @@ user_change_account_type_authorized_cb (Daemon        
  {
          AccountType account_type = GPOINTER_TO_INT (data);
          GError *error;
@@ -113,7 +98,7 @@ Subject: user: treat NULL shadow entry as "password handled remotely"
  
          if (user->account_type != account_type) {
                  sys_log (context,
-@@ -1364,17 +1406,35 @@ user_change_account_type_authorized_cb (Daemon        
+@@ -1643,17 +1685,35 @@ user_change_account_type_authorized_cb (Daemon        
                  }
                  wheel = grp->gr_gid;
  
@@ -149,7 +134,7 @@ Subject: user: treat NULL shadow entry as "password handled remotely"
                          break;
                  case ACCOUNT_TYPE_STANDARD:
                  default:
-@@ -1383,14 +1443,26 @@ user_change_account_type_authorized_cb (Daemon        
+@@ -1662,14 +1722,26 @@ user_change_account_type_authorized_cb (Daemon        
                          break;
                  }
  
