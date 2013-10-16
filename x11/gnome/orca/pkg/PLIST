@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2013/09/26 10:22:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2013/10/16 15:30:05 ajacoutot Exp $
 bin/orca
 lib/python${MODPY_VERSION}/site-packages/orca/
 lib/python${MODPY_VERSION}/site-packages/orca/__init__.py
@@ -377,9 +377,12 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-documents/${MOD
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-documents/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-documents/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-documents/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-documents/${MODPY_PYCACHE}script_utilities.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-documents/${MODPY_PYCACHE}script_utilities.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-documents/${MODPY_PYCACHE}speech_generator.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-documents/${MODPY_PYCACHE}speech_generator.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-documents/script.py
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-documents/script_utilities.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-documents/speech_generator.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-keyring-ask/
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/apps/gnome-keyring-ask/__init__.py
@@ -620,8 +623,11 @@ lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/CALLY/__init__.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/CALLY/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/CALLY/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/CALLY/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/CALLY/${MODPY_PYCACHE}formatting.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/CALLY/${MODPY_PYCACHE}formatting.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/CALLY/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/CALLY/${MODPY_PYCACHE}script.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/CALLY/formatting.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/CALLY/script.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/GAIL.py
 lib/python${MODPY_VERSION}/site-packages/orca/scripts/toolkits/Gecko/
