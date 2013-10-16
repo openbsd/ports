@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/09/27 14:05:10 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/10/16 09:06:08 ajacoutot Exp $
 share/applications/gnome-shell-classic.desktop
 share/glib-2.0/schemas/org.gnome.shell.extensions.auto-move-windows.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.classic-overrides.gschema.xml
@@ -88,10 +88,12 @@ share/gnome-shell/theme/classic-toggle-off-us.svg
 share/gnome-shell/theme/classic-toggle-on-intl.svg
 share/gnome-shell/theme/classic-toggle-on-us.svg
 share/gnome-shell/theme/gnome-classic.css
+share/locale/af/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/an/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/ar/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/as/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/ca/LC_MESSAGES/gnome-shell-extensions.mo
+share/locale/ca@valencia/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/cs/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/da/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/de/LC_MESSAGES/gnome-shell-extensions.mo
@@ -132,6 +134,7 @@ share/locale/sv/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/ta/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/te/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/tg/LC_MESSAGES/gnome-shell-extensions.mo
+share/locale/tr/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/uk/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/vi/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-shell-extensions.mo
