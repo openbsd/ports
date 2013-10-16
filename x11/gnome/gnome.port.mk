@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.72 2013/10/15 09:55:30 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.73 2013/10/16 10:11:25 sthen Exp $
 #
 # Module for GNOME related ports
 
@@ -41,7 +41,7 @@ MODULES+=		textproc/intltool
 # @unexec-delete %D/bin/update-desktop-database
 .if defined(MODGNOME_DESKTOP_FILE) && ${MODGNOME_DESKTOP_FILE:L} == "yes"
 MODGNOME_RUN_DEPENDS+=	devel/desktop-file-utils
-MODGNOME_pre-configure += ln -sf /usr/bin/true ${WRKDIR}/bin/desktop-file-validate
+MODGNOME_pre-configure += ln -sf /usr/bin/true ${WRKDIR}/bin/desktop-file-validate;
 .endif
 
 # Set to 'yes' if there are icon files under share/icons/.
@@ -58,7 +58,7 @@ MODGNOME_RUN_DEPENDS+=	x11/gtk+2,-guic
 # @unexec-delete %D/bin/update-mime-database %D/share/mime
 .if defined(MODGNOME_MIME_FILE) && ${MODGNOME_MIME_FILE:L} == "yes"
 MODGNOME_RUN_DEPENDS+=	misc/shared-mime-info
-MODGNOME_pre-configure += ln -sf /usr/bin/true ${WRKDIR}/bin/update-mime-database
+MODGNOME_pre-configure += ln -sf /usr/bin/true ${WRKDIR}/bin/update-mime-database;
 .endif
 
 USE_GMAKE?=		Yes
