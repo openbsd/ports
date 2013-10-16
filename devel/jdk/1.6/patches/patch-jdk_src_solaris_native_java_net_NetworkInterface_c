@@ -1,0 +1,11 @@
+$OpenBSD: patch-jdk_src_solaris_native_java_net_NetworkInterface_c,v 1.1 2013/10/16 14:12:21 bluhm Exp $
+--- jdk/src/solaris/native/java/net/NetworkInterface.c.orig	Thu Sep  5 02:33:44 2013
++++ jdk/src/solaris/native/java/net/NetworkInterface.c	Thu Sep  5 19:39:48 2013
+@@ -55,6 +55,7 @@
+ #include <net/if_var.h>
+ #elif defined(__OpenBSD__)
+ #include <netinet/if_ether.h>
++#include <netinet6/in6_var.h>
+ #endif
+ #include <net/if_dl.h>
+ #include <netinet/in_var.h>
