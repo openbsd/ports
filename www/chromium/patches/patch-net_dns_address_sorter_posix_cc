@@ -1,0 +1,11 @@
+$OpenBSD: patch-net_dns_address_sorter_posix_cc,v 1.1 2013/10/16 15:04:08 bluhm Exp $
+--- net/dns/address_sorter_posix.cc.orig	Thu Jul 25 03:31:22 2013
++++ net/dns/address_sorter_posix.cc	Fri Sep  6 23:46:26 2013
+@@ -11,6 +11,7 @@
+ #include <ifaddrs.h>
+ #include <net/if.h>
+ #include <netinet/in_var.h>
++#include <netinet6/in6_var.h>
+ #include <string.h>
+ #include <sys/ioctl.h>
+ #endif

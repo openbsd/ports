@@ -1,7 +1,17 @@
-$OpenBSD: patch-configure,v 1.1 2011/08/18 19:22:31 sthen Exp $
---- configure.orig	Wed Jan  7 13:47:14 2009
-+++ configure	Tue Aug 16 21:31:41 2011
-@@ -43568,8 +43568,8 @@ echo "${ECHO_T}no" >&6; }
+$OpenBSD: patch-configure,v 1.2 2013/10/16 15:04:08 bluhm Exp $
+--- configure.orig	Wed Jan  7 19:47:14 2009
++++ configure	Fri Sep  6 19:47:22 2013
+@@ -35100,6 +35100,9 @@ cat >>conftest.$ac_ext <<_ACEOF
+ #ifdef HAVE_NETINET_IN_VAR_H
+ #include <netinet/in_var.h>
+ #endif
++#ifdef HAVE_NETINET6_IN6_VAR_H
++#include <netinet6/in6_var.h>
++#endif
+ // XXX: a hack needed if <netinet6/nd6.h> is not C++ friendly
+ // #define prf_ra in6_prflags::prf_ra
+ #include <netinet6/nd6.h>
+@@ -43568,8 +43571,8 @@ echo "${ECHO_T}no" >&6; }
  	CPARANOIDFLAGS="-Werror -W -Wall -Wwrite-strings -Wbad-function-cast -Wcast-qual -Wpointer-arith -Wcast-align -Wnested-externs"
  	CXXPARANOIDFLAGS="-Werror -W -Wall -Wwrite-strings -Wcast-qual -Wpointer-arith -Wcast-align -Wstrict-prototypes -Woverloaded-virtual -Wtraditional"
      else
