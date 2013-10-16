@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/10/15 09:21:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2013/10/16 11:34:44 ajacoutot Exp $
 
 TRACKER_VERSION=0.16
 
@@ -8,7 +8,7 @@ COMMENT=	document manager for GNOME
 
 GNOME_PROJECT=	gnome-documents
 GNOME_VERSION=	3.10.0
-REVISION=	1
+REVISION=	2
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -46,6 +46,9 @@ LIB_DEPENDS=	devel/libgdata \
 		x11/gnome/gjs \
 		x11/gnome/libzapojit \
 		x11/gnome/tracker
+
+# src/application.js
+RUN_DEPENDS +=	x11/gnome/online-miners
 
 MODGNOME_TOOLS=		gi vala
 MODGNOME_ICON_CACHE=	Yes
