@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.628 2013/10/02 07:56:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.629 2013/10/16 18:06:33 abieber Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -148,6 +148,7 @@
      SUBDIR += mycalendar
      SUBDIR += myreview
      SUBDIR += netsurf
+     SUBDIR += newsbeuter
      SUBDIR += nginx
      SUBDIR += nostromo
      SUBDIR += opera
