@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.102 2013/09/28 10:47:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.103 2013/10/17 07:37:42 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	password agent for the GNOME project
 
 GNOME_PROJECT=	gnome-keyring
-GNOME_VERSION=	3.10.0
-REVISION=	0
+GNOME_VERSION=	3.10.1
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,6 +22,9 @@ WANTLIB += pthread-stubs stdc++ xcb xcb-render xcb-shm z
 MODULES=	devel/gettext \
 		x11/gnome \
 		devel/dconf
+
+# man pages
+BUILD_DEPENDS +=	textproc/docbook-xsl
 
 LIB_DEPENDS=	x11/gnome/gcr
 
