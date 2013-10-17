@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2013/10/08 13:33:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2013/10/17 07:53:10 ajacoutot Exp $
 
 # XXX
 # util.c: implement pa_get_binary_name()
@@ -103,7 +103,8 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 # linked "privately" to lib/pulseaudio/libpulsecommon-X.Y.so
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib \
-				-Wl,-rpath,${TRUEPREFIX}/lib/pulseaudio:${TRUEPREFIX}/lib/pulse-${VERSION}/modules"
+				-Wl,-rpath,${TRUEPREFIX}/lib/pulseaudio:${TRUEPREFIX}/lib/pulse-${VERSION}/modules" \
+			ac_cv_prog_M4=m4
 
 FAKE_FLAGS=		pulseconfdir="${PREFIX}/share/examples/pulseaudio/pulse" \
 			sysconfdir="${PREFIX}/share/examples/pulseaudio"
