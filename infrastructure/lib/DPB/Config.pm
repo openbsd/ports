@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.19 2013/10/17 08:12:28 espie Exp $
+# $OpenBSD: Config.pm,v 1.20 2013/10/17 12:48:09 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -65,13 +65,16 @@ sub parse_command_line
     "[-I pathlist] [-J p] [-j n] [-p parallel] [-P pathlist] [-h hosts]",
     "[-L logdir] [-l lockdir] [-b log] [-M threshold] [-X pathlist]",
     "[pathlist ...]");
+    	$state->{chroot} = $state->opt('B');
 	($state->{ports}, $state->{portspath}, $state->{repo}, $state->{localarch},
 	    $state->{distdir}, $state->{localbase}) =
-		DPB::Vars->get(DPB::Shell::Local->new, $state->make,
+		DPB::Vars->get(DPB::Host::Localhost->getshell($state->{chroot}), 
+		$state->make,
 		"PORTSDIR", "PORTSDIR_PATH", "PACKAGE_REPOSITORY", 
 		"MACHINE_ARCH", "DISTDIR", "LOCALBASE");
 	$state->{arch} //= $state->{localarch};
-	$state->{portspath} = [ split(/:/, $state->{portspath}) ];
+	$state->{portspath} = [ map {$state->anchor($_)} split(/:/, $state->{portspath}) ];
+	$state->{realdistdir} = $state->anchor($state->{distdir});
 	$state->{logdir} = $state->{flogdir} // $ENV{LOGDIR} // '%p/logs/%a';
 	$state->{lockdir} //= $state->{flockdir} // "%L/locks";
 	if (defined $state->{opt}{F}) {
@@ -90,6 +93,7 @@ sub parse_command_line
 			$state->usage("-j takes a numerical argument");
 		}
 	}
+	$state->{realports} = $state->anchor($state->{ports});
 	if (defined $state->{config_files}) {
 		for my $f (@{$state->{config_files}}) {
 			$f = $state->expand_path($f);
@@ -202,7 +206,7 @@ sub parse_command_line
 	} else {
 		$state->{mirror} = $state->{fetch_only};
 	}
-    	$state->{fullrepo} = join("/", $state->{repo}, $state->arch, "all");
+    	$state->{fullrepo} = $state->anchor(join("/", $state->{repo}, $state->arch, "all"));
 }
 
 sub command_line_overrides

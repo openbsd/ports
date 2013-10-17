@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.4 2013/10/17 08:31:45 espie Exp $
+# $OpenBSD: State.pm,v 1.5 2013/10/17 12:48:10 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -60,16 +60,26 @@ sub startdate
 	return sprintf '%04d-%02d-%02d@%02d:%02d:%02d', @l[5,4,3,2,1,0];
 }
 
+sub anchor
+{
+	my ($self, $dir) = @_;
+	if ($self->{chroot}) {
+		return join('/', $self->{chroot}, $dir);
+	} else {
+		return $dir;
+	}
+}
+
 sub expand_path
 {
 	my ($self, $path) = @_;
 	$path =~ s/\%L/$self->{logdir}/g;
-	$path =~ s/\%p/$self->{ports}/g;
+	$path =~ s/\%p/$self->{realports}/g;
 	$path =~ s/\%h/DPB::Core::Local->hostname/ge;
 	$path =~ s/\%a/$self->{arch}/g;
 	$path =~ s/\%t/$self->{starttime}/g;
 	$path =~ s/\%d/$self->startdate/ge;
-	$path =~ s/\%f/$self->{distdir}/g;
+	$path =~ s/\%f/$self->{realdistdir}/g;
 	return $path;
 }
 
@@ -211,7 +221,7 @@ sub fullrepo
 
 sub distdir
 {
-	return shift->{distdir};
+	return shift->{realdistdir};
 }
 
 sub localarch

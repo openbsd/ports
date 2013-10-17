@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.65 2013/10/07 20:36:27 espie Exp $
+# $OpenBSD: Core.pm,v 1.66 2013/10/17 12:48:10 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -96,6 +96,16 @@ sub shellclass
 	} else {
 		return "DPB::Shell::Local";
 	}
+}
+
+sub getshell
+{
+	my ($class, $chroot) = @_;
+	my $h = bless { prop => {}}, $class;
+	if ($chroot) {
+		$h->{prop}{chroot} = $chroot;
+	}
+	return $h->shellclass->new($h);
 }
 
 # here, a "core" is an entity responsible for scheduling cpu, such as
@@ -905,11 +915,13 @@ sub exec
 	if ($self->{dir}) {
 		$cmd = "cd $self->{dir} && $cmd";
 	}
-	my $umask = $self->prop->{umask};
-	$cmd = "umask $umask && $cmd";
+	if (defined $self->prop->{umask}) {
+		my $umask = $self->prop->{umask};
+		$cmd = "umask $umask && $cmd";
+	}
 	if ($chroot) {
 		my @cmd2 = (OpenBSD::Paths->sudo, "-E", "chroot");
-		if (!$self->{sudo}) {
+		if (!$self->{sudo} && defined $self->prop->{chroot_user}) {
 			push(@cmd2, "-u", $self->prop->{chroot_user});
 		}
 		$self->_run(@cmd2, $chroot, "/bin/sh", "-c", $self->quote($cmd));
