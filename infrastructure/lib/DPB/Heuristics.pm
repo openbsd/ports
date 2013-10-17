@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.30 2013/10/13 18:31:50 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.31 2013/10/17 08:12:28 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -136,11 +136,13 @@ my $max_sf;
 
 sub calibrate
 {
-	my ($self, $core) = @_;
-	$sf_per_host->{$core->fullhostname} = $core->sf;
-	$max_sf //= $core->sf;
-	if ($core->sf > $max_sf) {
-		$max_sf = $core->sf;
+	my ($self, @cores) = @_;
+	for my $core (@cores) {
+		$sf_per_host->{$core->fullhostname} = $core->sf;
+		$max_sf //= $core->sf;
+		if ($core->sf > $max_sf) {
+			$max_sf = $core->sf;
+		}
 	}
 }
 

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.18 2013/10/14 12:14:33 espie Exp $
+# $OpenBSD: Config.pm,v 1.19 2013/10/17 08:12:28 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -65,7 +65,13 @@ sub parse_command_line
     "[-I pathlist] [-J p] [-j n] [-p parallel] [-P pathlist] [-h hosts]",
     "[-L logdir] [-l lockdir] [-b log] [-M threshold] [-X pathlist]",
     "[pathlist ...]");
-    	$state->{fullrepo} = join("/", $state->{repo}, $state->arch, "all");
+	($state->{ports}, $state->{portspath}, $state->{repo}, $state->{localarch},
+	    $state->{distdir}, $state->{localbase}) =
+		DPB::Vars->get(DPB::Shell::Local->new, $state->make,
+		"PORTSDIR", "PORTSDIR_PATH", "PACKAGE_REPOSITORY", 
+		"MACHINE_ARCH", "DISTDIR", "LOCALBASE");
+	$state->{arch} //= $state->{localarch};
+	$state->{portspath} = [ split(/:/, $state->{portspath}) ];
 	$state->{logdir} = $state->{flogdir} // $ENV{LOGDIR} // '%p/logs/%a';
 	$state->{lockdir} //= $state->{flockdir} // "%L/locks";
 	if (defined $state->{opt}{F}) {
@@ -91,7 +97,6 @@ sub parse_command_line
 	}
 
 	$state->{logdir} = $state->expand_path($state->{logdir});
-	$state->{size_log} = "%f/build-stats/%a-size";
 
 	# keep cmdline subst values
 	my %cmdline = %{$state->{subst}};
@@ -100,6 +105,8 @@ sub parse_command_line
 	while (my ($k, $v) = each %cmdline) {
 		$state->{subst}->{$k} = $v;
 	}
+
+	$state->{size_log} = "%f/build-stats/%a-size";
 
 	if ($state->define_present("STARTUP")) {
 		$state->{startup_script} = $state->{subst}->value("STARTUP");
@@ -195,6 +202,7 @@ sub parse_command_line
 	} else {
 		$state->{mirror} = $state->{fetch_only};
 	}
+    	$state->{fullrepo} = join("/", $state->{repo}, $state->arch, "all");
 }
 
 sub command_line_overrides
@@ -305,8 +313,7 @@ sub parse_hosts_file
 			next;
 		}
 		$prop->add_overrides($override);
-		$state->heuristics->calibrate(DPB::Core::Init->new($host,
-		    $prop));
+		DPB::Core::Init->new($host, $prop);
 	}
 }
 

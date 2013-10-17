@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.13 2013/10/14 07:38:36 espie Exp $
+# $OpenBSD: Init.pm,v 1.14 2013/10/17 08:12:28 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -143,6 +143,10 @@ sub changed_hosts
 
 DPB::Core->register_report(\&alive_hosts, \&changed_hosts);
 
+sub cores
+{
+	return values %$init;
+}
 
 sub init_cores
 {
