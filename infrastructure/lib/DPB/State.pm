@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.3 2013/10/13 18:31:51 espie Exp $
+# $OpenBSD: State.pm,v 1.4 2013/10/17 08:31:45 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -46,13 +46,6 @@ sub init
 	$self->{no_exports} = 1;
 	$self->{heuristics} = DPB::Heuristics->new($self);
 	$self->{make} = $ENV{MAKE} || OpenBSD::Paths->make;
-	($self->{ports}, $self->{portspath}, $self->{repo}, $self->{localarch},
-	    $self->{distdir}, $self->{localbase}) =
-		DPB::Vars->get(DPB::Shell::Local->new, $self->make,
-		"PORTSDIR", "PORTSDIR_PATH", "PACKAGE_REPOSITORY", 
-		"MACHINE_ARCH", "DISTDIR", "LOCALBASE");
-	$self->{arch} = $self->{localarch};
-	$self->{portspath} = [ split(/:/, $self->{portspath}) ];
 	$self->{starttime} = time();
 
 	return $self;
@@ -310,6 +303,7 @@ sub handle_build_files
 	for my $file (@{$state->{build_files}}) {
 		$state->parse_build_file($file);
 	}
+	$state->heuristics->calibrate(DPB::Core::Init->cores);
 	$state->add_build_info($state->heuristics, "DPB::Job::Port");
 	print "zapping old stuff...";
 	$state->rewrite_build_info($state->{permanent_log});
