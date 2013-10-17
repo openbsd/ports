@@ -1,6 +1,0 @@
-Pilot is a simple, display-oriented file system browser based on the
-Alpine message system composer.  As with Alpine, commands are displayed
-at the bottom of the screen, and context-sensitive help is provided.
-
-This package is built using the re-alpine source, the continuation of
-the Alpine email client from University of Washington.

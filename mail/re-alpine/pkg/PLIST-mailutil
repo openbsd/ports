@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST-mailutil,v 1.1.1.1 2012/09/27 15:09:53 ajacoutot Exp $
-@pkgpath mail/imap-uw,-mailutil,plaintext
-@bin bin/mailutil
-@man man/man1/mailutil.1

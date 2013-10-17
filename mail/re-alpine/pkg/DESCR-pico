@@ -1,7 +1,0 @@
-Pico is a simple, display-oriented text editor based on the Alpine
-message system composer.  As with Alpine, commands are displayed at the
-bottom of the screen, and context-sensitive help is provided.  As
-characters are typed they are immediately inserted into the text.
-
-This package is built using the re-alpine source, the continuation of
-the Alpine email client from University of Washington.
