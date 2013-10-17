@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2013/07/18 08:51:32 giovanni Exp $
+# $OpenBSD: Makefile,v 1.90 2013/10/17 09:44:30 landry Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
@@ -87,6 +87,7 @@ CONFIGURE_ARGS+=	--disable-workarounds-for-imap-client-bugs
 
 MULTI_PACKAGES=		-main -pop3
 
+BUILD_DEPENDS=		devel/pcre
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			databases/gdbm
 RUN_DEPENDS-pop3=	mail/courier-imap,-main
