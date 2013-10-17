@@ -1,0 +1,16 @@
+$OpenBSD: patch-panels_common_cc-common-language_c,v 1.1 2013/10/17 17:20:52 stsp Exp $
+--- panels/common/cc-common-language.c.orig	Thu Oct 17 18:09:54 2013
++++ panels/common/cc-common-language.c	Thu Oct 17 18:24:50 2013
+@@ -601,11 +601,7 @@ insert_language (GHashTable *ht,
+ 
+         g_debug ("We have translations for %s", lang);
+ 
+-        if (g_str_has_suffix (lang, ".utf8"))
+-                key = g_strdup (lang);
+-        else
+-                key = g_strdup_printf ("%s.utf8", lang);
+-
++        key = g_strdup (lang);
+         label_own_lang = gnome_get_language_from_locale (key, key);
+         label_current_lang = gnome_get_language_from_locale (key, NULL);
+         label_untranslated = gnome_get_language_from_locale (key, "C");
