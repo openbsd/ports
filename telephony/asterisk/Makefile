@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.185 2013/08/28 09:46:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.186 2013/10/17 09:11:35 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,6 +7,8 @@ COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 VER=			11.5.1
 DISTNAME=		asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}
+
+REVISION-main=		0
 
 CATEGORIES=		telephony
 
@@ -126,7 +128,7 @@ FLAVORS=		imap
 CONFIGURE_ARGS+=	--with-imap=yes
 MAKE_FLAGS+=		MENUSELECT_OPTS_app_voicemail=IMAP_STORAGE
 CPPFLAGS+=		-I${LOCALBASE}/include/c-client
-LIB_DEPENDS-main+=	mail/re-alpine,-c-client
+LIB_DEPENDS-main+=	mail/alpine,-c-client
 WANTLIB-main+=		c-client gssapi krb5
 .else
 CONFIGURE_ARGS+=	--with-imap=no
