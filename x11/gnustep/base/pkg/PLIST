@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2013/04/25 16:14:27 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.17 2013/10/17 09:30:38 sebastia Exp $
 @conflict swi-prolog-<=5.6.27p5
 @bin bin/HTMLLinker
 @bin bin/autogsdoc
@@ -67,6 +67,7 @@ include/Foundation/NSHost.h
 include/Foundation/NSIndexPath.h
 include/Foundation/NSIndexSet.h
 include/Foundation/NSInvocation.h
+include/Foundation/NSInvocationOperation.h
 include/Foundation/NSJSONSerialization.h
 include/Foundation/NSKeyValueCoding.h
 include/Foundation/NSKeyValueObserving.h
