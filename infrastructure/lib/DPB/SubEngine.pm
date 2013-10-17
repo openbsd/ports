@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SubEngine.pm,v 1.16 2013/10/14 12:14:33 espie Exp $
+# $OpenBSD: SubEngine.pm,v 1.17 2013/10/17 08:32:37 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -122,19 +122,16 @@ sub use_core
 		if ($self->is_done($v)) {
 			$self->already_done($v);
 			$self->done($v);
-			next;
-		}
 		# ... and stuff that's related to other stuff building
-		if ($self->{doing}{$self->key_for_doing($v)}) {
+		} elsif ($self->{doing}{$self->key_for_doing($v)}) {
 			$self->remove($v);
 			$self->{later}{$v} = $v;
 			$self->log('^', $v);
-			next;
-		}
 		# if there's no external lock, we can build
-		if ($self->can_start_build($v, $core)) {
+		} elsif ($self->can_start_build($v, $core)) {
 			return 1;
 		}
+		delete $v->{yakayo};
 	}
 	if ($self->recheck_mismatches($core)) {
 		return 1;
@@ -267,4 +264,5 @@ sub is_done
 {
 	return 0;
 }
+
 1;
