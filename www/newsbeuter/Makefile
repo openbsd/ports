@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/10/16 18:05:25 abieber Exp $
+# $OpenBSD: Makefile,v 1.2 2013/10/17 07:46:12 ajacoutot Exp $
 
 COMMENT =		open-source RSS/Atom feed reader for text terminals
 DISTNAME =		newsbeuter-2.7
@@ -23,6 +23,7 @@ LIB_DEPENDS =		devel/stfl \
 			textproc/libxml	\
 			net/curl
 
+MAKE_FLAGS =		CXX="${CXX}"
 FAKE_FLAGS =		mandir=${PREFIX}/man
 
 USE_GMAKE =		Yes
