@@ -1,4 +1,5 @@
-$OpenBSD: patch-ipc_chromium_src_base_debug_util_posix_cc,v 1.3 2013/09/25 23:39:54 sthen Exp $
+$OpenBSD: patch-ipc_chromium_src_base_debug_util_posix_cc,v 1.4 2013/10/17 11:02:37 landry Exp $
+https://bugzilla.mozilla.org/show_bug.cgi?id=927810
 --- ipc/chromium/src/base/debug_util_posix.cc.orig	Wed Sep 25 11:07:49 2013
 +++ ipc/chromium/src/base/debug_util_posix.cc	Wed Sep 25 12:33:02 2013
 @@ -50,6 +50,9 @@
