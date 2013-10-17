@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2013/10/09 07:33:41 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2013/10/17 20:58:28 jca Exp $
+
+BROKEN-arm =		erratic runtime behaviour
 
 COMMENT =		mobile shell
 
