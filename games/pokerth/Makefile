@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2013/07/19 16:57:32 landry Exp $
+# $OpenBSD: Makefile,v 1.25 2013/10/17 12:41:03 jasper Exp $
 
 COMMENT=	texas hold'em poker game with online capabilities
 BROKEN-hppa =	needs atomic ops
+BROKEN-mips64 =	needs atomic ops
 
 V=		1.0
 DISTNAME=	PokerTH-${V}-src
