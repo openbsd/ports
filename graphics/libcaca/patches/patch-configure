@@ -1,6 +1,11 @@
-$OpenBSD: patch-configure,v 1.1 2013/10/10 16:00:34 espie Exp $
---- configure.orig	Thu Oct 10 17:59:11 2013
-+++ configure	Thu Oct 10 17:59:22 2013
+$OpenBSD: patch-configure,v 1.2 2013/10/17 14:31:52 naddy Exp $
+
+1. Disable detection of pangoft2.
+
+2. Disable detection of cppunit.  (--disable-cppunit is a NOP.)
+
+--- configure.orig	Mon Feb  8 14:46:58 2010
++++ configure	Thu Oct 17 15:56:49 2013
 @@ -17655,7 +17655,7 @@ fi
  
  # Build development tools?
@@ -9,4 +14,13 @@ $OpenBSD: patch-configure,v 1.1 2013/10/10 16:00:34 espie Exp $
 +pkg_failed=yes
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for PANGOFT2" >&5
  $as_echo_n "checking for PANGOFT2... " >&6; }
+ 
+@@ -17946,7 +17946,7 @@ fi
+ 
+ # Use cppunit for unit tests?
+ 
+-pkg_failed=no
++pkg_failed=yes
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for CPPUNIT" >&5
+ $as_echo_n "checking for CPPUNIT... " >&6; }
  
