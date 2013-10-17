@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Affinity.pm,v 1.7 2013/10/13 18:24:24 espie Exp $
+# $OpenBSD: Affinity.pm,v 1.8 2013/10/17 08:34:03 espie Exp $
 #
 # Copyright (c) 2012-2013 Marc Espie <espie@openbsd.org>
 #
@@ -138,8 +138,18 @@ sub sorted
 	my ($self, $queue, $core) = @_;
 	# okay, we know we have affinity stuff in the queue (maybe, so we want to do something special here
 	# maybe...
-#	if ($queued->{$core->hostname}) {
-#	}
+	my $n = $core->hostname;
+	if ($queued->{$n}) {
+		# XXX for now, look directly inside the queue
+		my @l = grep 
+		    { defined($_->{affinity}) && $_->{affinity} eq $n } 
+		    values %{$queue->{o}};
+		if (@l == 0) {
+			delete $queued->{$n};
+		} else {
+			return DPB::AffinityQueue->new(\@l, $queue, $core);
+		}
+	}
 	return $queue->sorted($core);
 }
 
@@ -147,8 +157,30 @@ sub has_in_queue
 {
 	my ($self, $v) = @_;
 	if (defined $v->{affinity}) {
-		$queued->{$v} = 1;
+		$queued->{$v->{affinity}} = 1;
 	}
+}
+
+package DPB::AffinityQueue;
+sub new
+{
+	my ($class, $l, $queue, $core) = @_;
+	bless { l => $l, 
+	    queue => $queue, 
+	    core => $core}, $class;
+}
+
+sub next
+{
+	my $self = shift;
+	if (@{$self->{l}} > 0) {
+		return pop @{$self->{l}};
+	}
+	if (!defined $self->{sorted}) {
+		$self->{sorted} = 
+		    $self->{queue}->sorted($self->{core});
+	}
+	return $self->{sorted}->next;
 }
 
 1;
