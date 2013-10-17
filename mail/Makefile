@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.299 2013/09/25 08:04:54 landry Exp $
+# $OpenBSD: Makefile,v 1.300 2013/10/17 09:13:24 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += abook
      SUBDIR += adcomplain
      SUBDIR += akpop3d
+     SUBDIR += alpine
      SUBDIR += altermime
      SUBDIR += amavisd-new
      SUBDIR += archivemail
@@ -177,7 +178,6 @@
      SUBDIR += rcube-contextmenu
      SUBDIR += rcube-sieverules
      SUBDIR += rcube-yubikey-plugin
-     SUBDIR += re-alpine
      SUBDIR += relaydb
      SUBDIR += roundcubemail
      SUBDIR += rss2email
