@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.56 2013/10/13 18:31:50 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.57 2013/10/17 14:02:11 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -39,6 +39,7 @@ sub new
 	    fetch => $state->opt('f'),
 	    wantsize => $state->{wantsize},
 	    fullrepo => $state->fullrepo,
+	    realfullrepo => $state->anchor($state->fullrepo),
 	    sizer => $state->sizer,
 	    heuristics => $state->heuristics}, $class;
 	if ($state->opt('u') || $state->opt('U')) {
@@ -111,7 +112,7 @@ sub make_args
 sub init
 {
 	my $self = shift;
-	File::Path::make_path($self->{fullrepo});
+	File::Path::make_path($self->{realfullrepo});
 	$self->{global} = $self->logger->open("build");
 	$self->{lockperf} = 
 	    DPB::Util->make_hot($self->logger->open("awaiting-locks"));
@@ -129,7 +130,7 @@ sub pkgfile
 {
 	my ($self, $v) = @_;
 	my $name = $v->fullpkgname;
-	return "$self->{fullrepo}/$name.tgz";
+	return "$self->{realfullrepo}/$name.tgz";
 }
 
 sub check
