@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.66 2013/10/17 12:48:10 espie Exp $
+# $OpenBSD: Core.pm,v 1.67 2013/10/17 14:20:44 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -797,6 +797,11 @@ sub may_unsquiggle
 sub can_be_swallowed
 {
 	return 0;
+}
+
+sub shell
+{
+	return DPB::Shell::Local->new;
 }
 
 package DPB::Core::Clock;

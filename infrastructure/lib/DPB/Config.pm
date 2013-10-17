@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.20 2013/10/17 12:48:09 espie Exp $
+# $OpenBSD: Config.pm,v 1.21 2013/10/17 14:20:44 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -206,7 +206,7 @@ sub parse_command_line
 	} else {
 		$state->{mirror} = $state->{fetch_only};
 	}
-    	$state->{fullrepo} = $state->anchor(join("/", $state->{repo}, $state->arch, "all"));
+    	$state->{fullrepo} = join("/", $state->{repo}, $state->arch, "all");
 }
 
 sub command_line_overrides
