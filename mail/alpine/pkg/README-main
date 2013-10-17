@@ -1,0 +1,73 @@
+$OpenBSD: README-main,v 1.4 2013/10/17 09:08:15 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Below is a quick start guide to show how to set up Alpine to use IMAP or
+POP3 for accessing your email and SMTP for sending email.
+
+IMAP
+====
+
+1. Make sure your email provider has IMAP support enabled (some
+providers require you to explicitly enable IMAP support).
+
+2. From alpine's main screen enter (S)etup, collection(L)ists, and
+press (A) to add a new collection
+
+3. Fill in the fields as follows:
+
+    Nickname: Example
+    Server:   imap.example.com/qualifier/user=user@example.com
+
+where:
+    - imap.example.com is the fully qualified server name
+    - qualifier is something like ssl or tls (add /novalidate-cert when
+      using a self-signed certificate)
+    - user@example.com is your email address
+
+As a concrete example, here's how this would look for gmail:
+    imap.gmail.com/ssl/user=yourname@gmail.com
+
+4. Press Ctrl-X to exit and save, enter your password when prompted and
+(E)xit back to the main screen.
+
+POP3
+====
+
+1. Follow the same instructions as above for IMAP, except for step 3
+Use the following:
+
+    Nickname: Example
+    Server:   pop.example.com:port/qualifier/user=username@example.com
+
+where:
+    - pop.example.com is the fully qualified server name
+    - qualifier is something like pop3, ssl... (add /novalidate-cert
+      when using a self-signed certificate)
+    - user@example.com is your email address
+
+As a concrete example, here's how this would look for gmail:
+    pop.gmail.com:995/novalidate-cert/user=yourname@gmail.com/pop3/ssl
+
+SMTP
+====
+
+1. Make sure you are back at alpine's main screen.
+
+2. Enter (S)etup, (C)onfig
+
+3. Modify the setting for "SMTP Server (for sending)" as follows:
+
+    smtp.example.com:port/qualifier/user=user@example.com
+
+where:
+    - smtp.example.com is the fully qualified server name
+    - port is the smtp server port
+    - qualifier is something like ssl or tls (add /novalidate-cert when
+      using a self-signed certificate)
+    - user@example.com is your email address
+
+  As a concrete example, here's how this would look for gmail:
+       smtp.gmail.com:587/tls/user=yourname@gmail.com

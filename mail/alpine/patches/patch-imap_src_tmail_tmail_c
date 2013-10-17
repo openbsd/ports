@@ -1,0 +1,11 @@
+$OpenBSD: patch-imap_src_tmail_tmail_c,v 1.1 2013/10/17 09:08:09 ajacoutot Exp $
+--- imap/src/tmail/tmail.c.orig	Sat Oct  2 10:37:57 2010
++++ imap/src/tmail/tmail.c	Sun Sep 23 11:28:47 2012
+@@ -227,7 +227,6 @@ int main (int argc,char *argv[])
+       while ((c = getchar ()) != EOF) putc (c,f);
+     }
+     else {
+-      mm_log ("tmail called with LF-only newlines",WARN);
+       if ((tmp[0] != 'F') || (tmp[1] != 'r') || (tmp[2] != 'o') ||
+ 	  (tmp[3] != 'm') || (tmp[4] != ' ')) {
+ 	*s++ = '\015';		/* overwrite NL with CRLF */

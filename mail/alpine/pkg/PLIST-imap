@@ -1,0 +1,47 @@
+@comment $OpenBSD: PLIST-imap,v 1.1 2013/10/17 09:08:13 ajacoutot Exp $
+@conflict courier-imap-*
+@conflict courier-pop3-*
+@pkgpath mail/imap-uw,-server,plaintext
+@pkgpath mail/imap-uw,-server
+@pkgpath mail/re-alpine,-imap
+@bin bin/dmail
+@bin bin/tmail
+@bin libexec/imapd
+@bin libexec/ipop2d
+@bin libexec/ipop3d
+@group smmsp
+@bin libexec/mlock
+@group
+@man man/man1/dmail.1
+@man man/man1/tmail.1
+@man man/man8/imapd.8
+@man man/man8/ipopd.8
+share/doc/imap-uw/
+share/doc/imap-uw/BUILD
+share/doc/imap-uw/CONFIG
+share/doc/imap-uw/FAQ.html
+share/doc/imap-uw/FAQ.txt
+share/doc/imap-uw/IPv6.txt
+share/doc/imap-uw/README.rfc
+share/doc/imap-uw/RELNOTES
+share/doc/imap-uw/SSLBUILD
+share/doc/imap-uw/Y2K
+share/doc/imap-uw/bugs.txt
+share/doc/imap-uw/calendar.txt
+share/doc/imap-uw/commndmt.txt
+share/doc/imap-uw/draft/
+share/doc/imap-uw/draft/README
+share/doc/imap-uw/draft/i18n.txt
+share/doc/imap-uw/draft/sort.txt
+share/doc/imap-uw/drivers.txt
+share/doc/imap-uw/formats.txt
+share/doc/imap-uw/imaprc.txt
+share/doc/imap-uw/internal.txt
+share/doc/imap-uw/locking.txt
+share/doc/imap-uw/md5.txt
+share/doc/imap-uw/mixfmt.txt
+share/doc/imap-uw/naming.txt
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/imap-uw/
+share/examples/imap-uw/c-client.cf
+@sample ${SYSCONFDIR}/c-client.cf
