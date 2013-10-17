@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.67 2013/10/17 14:20:44 espie Exp $
+# $OpenBSD: Core.pm,v 1.68 2013/10/17 18:09:41 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -799,11 +799,6 @@ sub can_be_swallowed
 	return 0;
 }
 
-sub shell
-{
-	return DPB::Shell::Local->new;
-}
-
 package DPB::Core::Clock;
 our @ISA = qw(DPB::Core::Special);
 
@@ -867,6 +862,13 @@ sub sudo
 	return $self;
 }
 
+sub nochroot
+{
+	my $self = shift;
+	$self->{nochroot} = 1;
+	return $self;
+}
+
 package DPB::Shell::Local;
 our @ISA = qw(DPB::Shell::Abstract);
 
@@ -906,6 +908,9 @@ sub exec
 {
 	my ($self, @argv) = @_;
 	my $chroot = $self->prop->{chroot};
+	if ($self->{nochroot}) {
+		undef $chroot;
+	}
 	unshift @argv, 'exec' unless $self->{sudo} && !$chroot;
 	if ($self->{env}) {
 		while (my ($k, $v) = each %{$self->{env}}) {
@@ -952,6 +957,12 @@ sub quote
 sub is_alive
 {
 	return 1;
+}
+
+sub nochroot
+{
+	my $self = shift;
+	bless $self, 'DPB::Shell::Local';
 }
 
 1;

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.137 2013/10/13 19:57:07 espie Exp $
+# $OpenBSD: Port.pm,v 1.138 2013/10/17 18:09:42 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -654,7 +654,7 @@ sub run
 	print join(' ', @cmd, $v->fullpkgname, "\n");
 	my $path = $job->{builder}->{fullrepo}.'/';
 	$ENV{PKG_PATH} = $path;
-	$core->shell->env(PKG_PATH => $path)->sudo
+	$core->shell->nochroot->env(PKG_PATH => $path)->sudo
 	    ->exec(@cmd, $v->fullpkgname);
 	exit(1);
 }
