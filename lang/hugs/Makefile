@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/10/18 15:44:52 miod Exp $
 
 COMMENT =	Haskell 98 interpreter
 
@@ -14,7 +14,7 @@ MASTER_SITES0 =	http://openbsd.dead-parrot.de/distfiles/
 
 DISTFILES +=	${DISTNAME}.tar.gz ${DISTNAME}-tests.tar.gz:0
 
-.if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
+.if ${MACHINE_ARCH} != "vax"
 CFLAGS +=	-fPIC
 .endif
 

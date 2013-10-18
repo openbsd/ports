@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:35:57 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/10/18 15:44:52 miod Exp $
 
 COMMENT=		stub DNS resolver library
 
@@ -18,7 +18,7 @@ MASTER_SITES=		http://www.corpit.ru/mjt/udns/ \
 
 WANTLIB += c
 
-.if ${MACHINE_ARCH} != "vax" && ${MACHINE_ARCH} != "m88k"
+.if ${MACHINE_ARCH} != "vax"
 ALL_TARGET=		sharedlib shared staticlib
 MAKE_FLAGS=		SOVER=${LIBudns_VERSION}
 .else
@@ -34,7 +34,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/dnsget.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/rblcheck.1 ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/libudns.a ${PREFIX}/lib
-.if ${MACHINE_ARCH} != "vax" && ${MACHINE_ARCH} != "m88k"
+.if ${MACHINE_ARCH} != "vax"
 	${INSTALL_PROGRAM} ${WRKSRC}/dnsget_s ${PREFIX}/bin/dnsget
 	${INSTALL_PROGRAM} ${WRKSRC}/rblcheck_s ${PREFIX}/bin/rblcheck
 	${INSTALL_DATA} ${WRKSRC}/libudns.so.${LIBudns_VERSION} ${PREFIX}/lib
