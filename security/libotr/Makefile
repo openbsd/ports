@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/08/15 16:33:22 stsp Exp $
+# $OpenBSD: Makefile,v 1.24 2013/10/18 11:29:42 naddy Exp $
 
 # WARNING: When trying to update this port to 4.x.x, please be
 # aware that the following ports need adjustments for the new
@@ -32,7 +32,6 @@ LIB_DEPENDS=	security/libgcrypt
 # non-shared does not inherit LIB_DEPENDS
 LIB_DEPENDS +=	security/libgpg-error
 
-USE_GROFF =		Yes
 USE_LIBTOOL = 		gnu
 
 AUTOCONF_VERSION = 	2.65

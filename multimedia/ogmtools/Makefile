@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:35:44 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/10/18 11:29:42 naddy Exp $
 
 COMMENT=		ogg mux/demuxer
 DISTNAME=		ogmtools-1.5
@@ -14,7 +14,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c m stdc++ ogg dvdread vorbis vorbisenc
 
 USE_GMAKE=		Yes
-USE_GROFF=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-dvdread-includes=${LOCALBASE} \
 			--with-dvdread-libs=${LOCALBASE}

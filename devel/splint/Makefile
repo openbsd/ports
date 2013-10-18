@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 10:50:31 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/10/18 11:29:42 naddy Exp $
 
 COMMENT =	advanced lint: statically check C programs
 DISTNAME =	splint-3.1.2
@@ -20,7 +20,6 @@ BUILD_DEPENDS =	devel/bison
 
 USE_GMAKE =	Yes
 CONFIGURE_STYLE = gnu
-USE_GROFF =	Yes
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}/config
 
 pre-build:
