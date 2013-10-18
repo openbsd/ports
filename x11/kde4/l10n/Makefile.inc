@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.4 2013/10/12 12:50:51 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2013/10/18 21:42:56 zhuk Exp $
 
 IGNORE_SILENT =		Yes
 COMMENT =		K Desktop Environment, language localization pack
 DISTNAME =		kde-l10n-${KDE_L10N_LANG}-${MODKDE4_VERSION}
 REVISION ?=		1
 
-MODULES =		devel/gettext
 MODKDE4_RESOURCES =	Yes
 MODKDE4_USE =		libs
 
@@ -15,7 +14,7 @@ MODKDE4_USE =		libs
 SUPDISTFILES +=	kde-l10n-${L}-${MODKDE4_VERSION}${EXTRACT_SUFX}
 .endfor
 
-RUN_DEPENDS =	x11/gtk+2,-guic
+RUN_DEPENDS +=	x11/gtk+2,-guic
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/${MODKDE4_VERSION}/src/kde-l10n/}
 
@@ -29,12 +28,14 @@ PLIST =		${PKGDIR}/PLIST-${KDE_L10N_LANG}
 CHECKSUM_FILE =	${.CURDIR}/../distinfo
 PKG_ARGS =	-f ${PKGDIR}/PFRAG.conflict
 
-MODULES =	devel/gettext
+MODULES +=	devel/gettext
 NO_TEST =	Yes
 CONFIGURE_ENV =	CFLAGS=-I${PREFIX}/include \
 		LDFLAGS="-L${PREFIX}/lib -liconv -lintl"
 
 MODKDE4_FIX_GETTEXT =	Yes
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0014=OLD
 
 post-install:
 	rm -Rf ${PREFIX}/man/${KDE_L10N_LANG}/
