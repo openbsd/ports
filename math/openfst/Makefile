@@ -1,6 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/21 08:46:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2013/10/18 14:29:17 miod Exp $
 
 COMMENT =		weighted finite-state transducers library
+
+# requires C++ tr1 headers
+NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
 DISTNAME =		openfst-1.3.1
 

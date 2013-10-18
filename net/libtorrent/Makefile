@@ -1,6 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2013/03/21 08:46:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2013/10/18 14:29:16 miod Exp $
 
 COMMENT=		BitTorrent library written in C++
+
+# requires C++ tr1 headers
+NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
 DISTNAME=		libtorrent-0.12.9
 REVISION=		2
