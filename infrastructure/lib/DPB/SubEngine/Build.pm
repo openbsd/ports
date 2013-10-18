@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Build.pm,v 1.7 2013/10/13 18:31:51 espie Exp $
+# $OpenBSD: Build.pm,v 1.8 2013/10/18 19:21:04 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -227,12 +227,6 @@ sub is_done_quick
 	} else {
 		return 0;
 	}
-}
-
-sub get_core
-{
-	my $self = shift;
-	return $self->{builder}->get;
 }
 
 sub key_for_doing

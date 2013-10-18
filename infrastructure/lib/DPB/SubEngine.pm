@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: SubEngine.pm,v 1.17 2013/10/17 08:32:37 espie Exp $
+# $OpenBSD: SubEngine.pm,v 1.18 2013/10/18 19:21:04 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -238,6 +238,12 @@ sub new
 	my $o = $class->SUPER::new($engine, $builder);
 	$o->{builder} = $builder;
 	return $o;
+}
+
+sub get_core
+{
+	my $self = shift;
+	return $self->{builder}->get;
 }
 
 # for fetch-only, the engine is *very* abreviated
