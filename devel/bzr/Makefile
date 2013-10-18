@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 10:50:01 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/10/18 21:24:09 schwarze Exp $
 
 COMMENT =	distributed version control system by Canonical
 
@@ -16,7 +16,6 @@ MASTER_SITES =	http://launchpad.net/bzr/${MODPY_EGG_VERSION:C/..$//}/${MODPY_EGG
 WANTLIB=	${MODPY_WANTLIB}
 
 MODULES =	lang/python
-USE_GROFF =	Yes
 
 RUN_DEPENDS +=	net/py-curl \
 		security/py-paramiko \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/09/27 17:49:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2013/10/18 21:24:09 schwarze Exp $
 
 COMMENT =		graphical network monitor
 
@@ -40,7 +40,5 @@ RUN_DEPENDS =		devel/desktop-file-utils
 LIB_DEPENDS =		x11/gtk+2 \
 			devel/libglade2 \
 			x11/gnome/libgnomeui
-
-USE_GROFF =		Yes
 
 .include <bsd.port.mk>
