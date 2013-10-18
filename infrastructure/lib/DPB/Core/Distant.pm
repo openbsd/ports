@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.17 2013/10/08 07:35:10 espie Exp $
+# $OpenBSD: Distant.pm,v 1.18 2013/10/18 07:34:05 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -83,6 +83,14 @@ sub stringize_master_pid
 sub _run
 {
 	my ($self, @cmd) = @_;
+	my $try = 0;
+	while (!-e $self->socket) {
+		sleep(1);
+		$try++;
+		if ($try >= 60) {
+			exit(1);
+		}
+	}
 	exec {OpenBSD::Paths->ssh}
 	    ($self->ssh($self->socket), $self->hostname, join(' ', @cmd));
 }
