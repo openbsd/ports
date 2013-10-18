@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.102 2013/10/13 18:31:50 espie Exp $
+# $OpenBSD: dpb,v 1.103 2013/10/18 07:45:41 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -203,12 +203,9 @@ if (!$state->{fetch_only} &&
 my $dump = DPB::Util->make_hot($state->logger->open('dump'));
 my $debug = DPB::Util->make_hot($state->logger->open('debug'));
 
-my $last_time = time() - $state->{display_timeout};
-
 sub handle_non_waiting_jobs
 {
-	my $need_clock = shift;
-	my $checked = !$need_clock; # XXX
+	my $checked = 0;
 	my $force_report = 0;
 	my $reaped = DPB::Core->reap;
 	$keep_going = !-e $state->logdir."/stop";
@@ -246,24 +243,15 @@ sub handle_non_waiting_jobs
 			last;
 		}
 	}
-	my $current = time();
-	DPB::Core->log_concurrency($current, $state->{concurrent});
-	if ($need_clock) {
-		if ($current >= $last_time + $state->{display_timeout} ||
-		    $reaped) {
-			$reporter->report($force_report);
-			$last_time = $current;
-		}
-	} else {
-		$reporter->report($force_report);
-	}
+	DPB::Core->log_concurrency(time(), $state->{concurrent});
+	$reporter->report($force_report);
 }
 
 sub main_loop
 {
 	while (1) {
 		while (1) {
-			handle_non_waiting_jobs(0);
+			handle_non_waiting_jobs();
 			if (!DPB::Core->running) {
 				last if !$keep_going;
 				if (!$state->engine->can_build) {
@@ -292,8 +280,7 @@ sub main_loop
 	}
 }
 
-$state->{grabber} = DPB::Grabber->new($state,
-    sub { handle_non_waiting_jobs(1) });
+$state->{grabber} = DPB::Grabber->new($state, \&handle_non_waiting_jobs);
 
 if ($state->{all} && !$state->{random}) {
 	# when restarting interrupted dpb,
