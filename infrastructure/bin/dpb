@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.103 2013/10/18 07:45:41 espie Exp $
+# $OpenBSD: dpb,v 1.104 2013/10/18 07:48:09 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -58,7 +58,7 @@ BEGIN {
 		return $msg;
 	}
 
-	my $trace = 0;
+	my $trace = 1;
 	if ($trace) {
 		$SIG{__WARN__} = sub {
 			my $_ = pop @_;
