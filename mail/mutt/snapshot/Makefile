@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.78 2013/08/23 16:40:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.79 2013/10/18 21:08:57 sthen Exp $
 
 COMMENT=	tty-based e-mail client, development version
 
-DISTNAME=	mutt-1.5.21
+DISTNAME=	mutt-1.5.22
 EPOCH=		0
-REVISION=	5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mutt/} \
 		${MASTER_SITES_MUTT:=devel/}
 
@@ -29,11 +28,11 @@ WANTLIB+=	sasl2
 
 MUTTRCDIR=	doc/
 
-DIST_COMPRESSED=compressed-5302767aa6aa.gz:2
-DIST_SIDEBAR=	sidebar-5302767aa6aa.gz:2
+DIST_COMPRESSED=compressed-1.5.22.diff0.gz:2
+DIST_SIDEBAR=	sidebar-1.5.22.diff0.gz:2
 
 # http://cedricduval.free.fr/mutt/patches/
-PATCHFILES+=	trashfolder-5302767aa6aa.gz:2
+PATCHFILES+=	trashfolder-1.5.22.diff0.gz:2
 
 .if ${FLAVOR:Msidebar}
 PATCHFILES+=		${DIST_SIDEBAR}
@@ -43,7 +42,6 @@ SUPDISTFILES+=		${DIST_SIDEBAR}
 
 AUTOMAKE_VERSION= 1.9
 CONFIGURE_STYLE= gnu
-USE_GROFF =	Yes
 BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 post-patch:
