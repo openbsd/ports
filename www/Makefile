@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.629 2013/10/16 18:06:33 abieber Exp $
+# $OpenBSD: Makefile,v 1.630 2013/10/18 17:09:10 stsp Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -121,7 +121,6 @@
      SUBDIR += mod_auth_pgsql
      SUBDIR += mod_auth_radius
      SUBDIR += mod_bandwidth
-     SUBDIR += mod_dav
      SUBDIR += mod_encoding
      SUBDIR += mod_fastcgi
      SUBDIR += mod_geoip
