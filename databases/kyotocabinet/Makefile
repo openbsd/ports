@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 02:52:05 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/10/18 14:46:59 miod Exp $
 
 BROKEN-hppa=	undefined reference to `__sync_fetch_and_add_8'
 BROKEN-mips64=	undefined reference to `__sync_fetch_and_add_8'
 BROKEN-powerpc=	undefined reference to `__sync_fetch_and_add_8'
+
+# requires C++ tr1 headers
+NOT_FOR_ARCHS=		${GCC3_ARCHS}
 
 COMMENT=	straightforward implementation of DBM
 
