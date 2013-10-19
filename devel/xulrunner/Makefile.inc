@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.25 2013/03/11 10:50:32 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.26 2013/10/19 16:26:55 landry Exp $
 
 COMMENT-main =		standalone XUL/XPCOM runtime environment
 COMMENT-devel =		devel files for Gecko
@@ -17,18 +17,11 @@ MULTI_PACKAGES +=	-main -devel
 PERMIT_PACKAGE_CDROM=	Yes
 
 # lots of logic in mozilla.port.mk
-MODULES =		www/mozilla devel/gettext lang/python
+MODULES +=		www/mozilla devel/gettext lang/python
 MODPY_RUNDEP =		No
 
 LIB_DEPENDS-main =	${LIB_DEPENDS}
 WANTLIB-main =		${WANTLIB}
-
-LIB_DEPENDS-devel =	${MODGETTEXT_LIB_DEPENDS} \
-			devel/libIDL \
-			${PKGNAME-main}:${BASE_PKGPATH},-main
-WANTLIB-devel +=	${MODGETTEXT_WANTLIB} \
-			c glib-2.0 gobject-2.0 m pthread stdc++ \
-			IDL-2 nspr4 plc4 plds4
 
 MODGNU_CONFIG_GUESS_DIRS +=	${WRKSRC}/build/autoconf
 
