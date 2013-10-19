@@ -1,21 +1,22 @@
-$OpenBSD: patch-src_makefile,v 1.10 2013/09/18 07:23:32 benoit Exp $
---- src/makefile.orig	Thu Jun 27 22:36:48 2013
-+++ src/makefile	Wed Sep 18 09:06:34 2013
-@@ -12,11 +12,11 @@
+$OpenBSD: patch-src_makefile,v 1.11 2013/10/19 07:07:35 benoit Exp $
+--- src/makefile.orig	Tue Sep 24 22:24:04 2013
++++ src/makefile	Sat Oct 19 08:45:05 2013
+@@ -12,12 +12,12 @@
  
  # See src/gui-qt/highlight.pro for the Qt GUI compilation options
  
 -CXX=c++
 +#CXX=c++
  
- QMAKE=qmake
+ # Added -qt4 because of Arch Linux Qt5 migration
+ QMAKE=qmake-qt4
  
 -CFLAGS:=-Wall -O2 ${CFLAGS} -DNDEBUG
 +#CFLAGS:=-Wall -O2 ${CFLAGS} -DNDEBUG
  #CFLAGS:=-ggdb ${CFLAGS}
  
  CFLAGS_DILU=-fno-strict-aliasing
-@@ -37,10 +37,10 @@
+@@ -38,10 +38,10 @@
  # - remove -DUSE_LUA52
  # - use lua5.1 in the pkg-config calls
  
@@ -28,7 +29,7 @@ $OpenBSD: patch-src_makefile,v 1.10 2013/09/18 07:23:32 benoit Exp $
  
  # luajit lib
  # LUA_LIBS=$(shell pkg-config --libs luajit)
-@@ -51,10 +51,10 @@
+@@ -52,10 +52,10 @@
  DILU_DIR=${CORE_DIR}Diluculum/
  
  ifndef HL_CONFIG_DIR
