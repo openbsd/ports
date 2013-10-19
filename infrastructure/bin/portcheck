@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.38 2013/10/13 16:54:24 zhuk Exp $
+# $OpenBSD: portcheck,v 1.39 2013/10/19 20:06:14 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -696,7 +696,10 @@ sub_checks() {
 #   * If package installs system-wide icons, it should have the
 #     x11/gtk+2,-guic dependency and @exec/@unexec-delete with
 #     %D/bin/gtk-update-icon-cache -q -t %D/share/icons/$theme
-#     for each icon theme used in package.
+#     for each icon theme used in package. If there is an
+#     index.theme provided, then, instead of gtk-update-icon-cache,
+#     @unexec-delete should contain the following command:
+#     rm -f %D/share/icons/$theme/icon-theme.cache
 #
 #   * If package adds a MIME type handler, it should have the
 #     devel/desktop-file-utils dependency and @exec/@unexec-delete with
@@ -745,6 +748,9 @@ check_plist() {
 	# @file, @exec and @unexec lines, accordingly.
 	local icon_themes= exec_icon_themes= unexec_icon_themes=
 
+	# List of icon themes that remove cache file
+	local rm_cache_themes=
+
 	local gettext_dep=false
 	local translation_found=false
 
@@ -772,6 +778,11 @@ check_plist() {
 			# wrap with the '/' characters to avoid erroneous matching
 			echo "$icon_themes" | fgrep -q "/$theme/" ||
 				icon_themes="$icon_themes /$theme/"
+			if [[ "$l" = "share/icons/$theme/index.theme" ]]; then
+				echo "$rm_cache_themes" | fgrep -q "/$theme/" ||
+					err "missing @unexec-delete rm -f" \
+					    "%D/share/icons/$theme/icon-theme.cache"
+			fi
 			;;
 		share/icons/*(*/))
 			# Do not match intermediate directories to avoid false
@@ -792,16 +803,14 @@ check_plist() {
 			varname=$(echo "$theme" | sed -e 's/[^a-zA-Z_]/_/g')
 			((++guic_exec_cnt))
 			eval "((++guic_exec_cnt_$varname))"
-			echo "$exec_icon_themes" | fgrep -q "/$theme/" ||
-				exec_icon_themes="$exec_icon_themes /$theme/"
+			exec_icon_themes="$exec_icon_themes /$theme/"
 			;;
 		"@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/"*)
 			theme=${l##*/}
 			varname=$(echo "$theme" | sed -e 's/[^a-zA-Z_]/_/g')
 			((++guic_unexec_cnt))
 			eval "((++guic_unexec_cnt_$varname))"
-			echo "$unexec_icon_themes" | fgrep -q "/$theme/" ||
-				unexec_icon_themes="$unexec_icon_themes /$theme/"
+			unexec_icon_themes="$unexec_icon_themes /$theme/"
 			;;
 		"@unexec-delete rm -f "%D/share/icons/*/icon-theme.cache)
 			# as an alternative, port could zap the theme entirely
@@ -810,8 +819,14 @@ check_plist() {
 			varname=$(echo "$theme" | sed -e 's/[^a-zA-Z_]/_/g')
 			((++guic_unexec_cnt))
 			eval "((++guic_unexec_cnt_$varname))"
-			echo "$unexec_icon_themes" | fgrep -q "/$theme/" ||
-				unexec_icon_themes="$unexec_icon_themes /$theme/"
+			unexec_icon_themes="$unexec_icon_themes /$theme/"
+			rm_cache_themes="$rm_cache_themes /$theme/"
+			if echo "$icon_themes" | fgrep -q "/$theme/"; then
+				err "the @unexec-delete line removing" \
+				    "%D/share/icons/$theme/icon-theme.cache" \
+				    "does not preceed all of the icon theme" \
+				    "$theme files"
+			fi
 			;;
 		@?(un)exec?(-delete|-update)" %D/bin/gtk-update-icon-cache"*)
 			err "${portref}incorrect gtk-update-icon-cache" \
