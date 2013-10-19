@@ -1,12 +1,12 @@
-$OpenBSD: patch-doc_user_README,v 1.1 2011/04/23 21:49:27 kili Exp $
---- doc/user/README.orig	Tue Sep 21 04:57:27 2010
-+++ doc/user/README	Sun Jan  2 12:19:14 2011
-@@ -4,7 +4,7 @@ This directory contains the Lout source files for the 
- to the Lout Document Formatting System.  To produce the Guide,
- type the command
+$OpenBSD: patch-doc_user_README,v 1.2 2013/10/19 10:35:00 jung Exp $
+--- doc/user/README.orig	Wed Jun 26 01:43:24 2013
++++ doc/user/README	Wed Jun 26 13:39:48 2013
+@@ -6,7 +6,7 @@ final PostScript output file (A4 paper size) is stored
+ "ftp://ftp.it.usyd.edu.au/jeff/lout/lout-3.40.user.ps.gz".
+ To produce the Guide yourself, type the command
  
--    lout -r6 all > user.ps
-+    lout -U -r6 all > user.ps
+-    lout -r5 all > user.ps
++    lout -U -r5 all > user.ps
  
- in this directory.  The -r6 flag causes Lout to run over the
- document six times.  This is needed to completely resolve all
+ in this directory.  The -r5 flag causes Lout to run over the
+ document five times.  This is needed to completely resolve all
