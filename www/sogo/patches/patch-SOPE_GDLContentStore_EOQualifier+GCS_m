@@ -1,0 +1,12 @@
+$OpenBSD: patch-SOPE_GDLContentStore_EOQualifier+GCS_m,v 1.1 2013/10/19 09:49:16 sebastia Exp $
+--- SOPE/GDLContentStore/EOQualifier+GCS.m.orig	Sun Oct 13 18:35:24 2013
++++ SOPE/GDLContentStore/EOQualifier+GCS.m	Sun Oct 13 18:35:46 2013
+@@ -27,7 +27,7 @@
+ 
+ #import "EOQualifier+GCS.h"
+ 
+-#if __GNU_LIBOBJC__ >= 20100911
++#if (defined(__GNU_LIBOBJC__) && (__GNU_LIBOBJC__ >= 20100911)) || defined(APPLE_RUNTIME) || defined(__GNUSTEP_RUNTIME__)
+ #  define sel_eq(__A__,__B__) sel_isEqual(__A__,__B__)
+ #endif
+ 
