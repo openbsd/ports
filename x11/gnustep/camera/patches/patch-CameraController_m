@@ -1,0 +1,30 @@
+$OpenBSD: patch-CameraController_m,v 1.1.1.1 2013/10/19 14:19:33 sebastia Exp $
+--- CameraController.m.orig	Wed Mar 31 23:44:24 2004
++++ CameraController.m	Thu Oct 17 18:56:07 2013
+@@ -367,7 +367,7 @@ static BOOL WithThumbnails;
+                    [file filename], index, total];
+    
+    [progressInfoMsg setStringValue: msg];
+-   NSLog(msg);
++   NSLog(@"%@", msg);
+ 
+    if (thumbnail)
+    {
+@@ -392,7 +392,7 @@ static BOOL WithThumbnails;
+                    [file filename], index, total];
+    
+    [progressInfoMsg setStringValue: msg];
+-   NSLog(msg);
++   NSLog(@"%@", msg);
+ 
+    [progressBar setDoubleValue: (total + (index * 0.25))];
+ }
+@@ -545,7 +545,7 @@ static BOOL WithThumbnails;
+    if (useTimestampDir)
+    {
+       now = [NSCalendarDate calendarDate];
+-      timestampDir = [NSString stringWithFormat: @"%4d%2d%2d",
++      timestampDir = [NSString stringWithFormat: @"%4"PRIiPTR"%2"PRIiPTR"%2"PRIiPTR,
+                                [now yearOfCommonEra],
+                                [now monthOfYear],
+                                [now dayOfMonth]];

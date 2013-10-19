@@ -1,0 +1,12 @@
+$OpenBSD: patch-GNUmakefile,v 1.1.1.1 2013/10/19 14:19:33 sebastia Exp $
+--- GNUmakefile.orig	Thu Oct 17 19:01:45 2013
++++ GNUmakefile	Thu Oct 17 19:01:54 2013
+@@ -34,7 +34,7 @@ include $(GNUSTEP_MAKEFILES)/common.make
+ PACKAGE_NAME=Camera
+ APP_NAME=Camera
+ GNUSTEP_INSTALLATION_DIR=$(GNUSTEP_LOCAL_ROOT)/
+-Camera_APPLICATION_ICON=Camera.png
++Camera_APPLICATION_ICON=Camera.tif
+ Camera_MAIN_MODEL_FILE=Camera.gorm
+ 
+ 
