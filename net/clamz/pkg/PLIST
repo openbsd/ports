@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/19 16:33:52 jturner Exp $
+@bin bin/clamz
+@man man/man1/clamz.1
+share/applications/clamz.desktop
+share/doc/clamz/
+share/doc/clamz/COPYING
+share/doc/clamz/README
+share/mime/packages/clamz.xml
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
