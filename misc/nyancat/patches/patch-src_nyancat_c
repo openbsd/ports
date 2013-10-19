@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_nyancat_c,v 1.1.1.1 2012/11/05 22:20:37 sthen Exp $
---- src/nyancat.c.orig	Sun Oct  7 19:41:43 2012
-+++ src/nyancat.c	Mon Nov  5 22:12:33 2012
-@@ -545,6 +545,8 @@ int main(int argc, char ** argv) {
+$OpenBSD: patch-src_nyancat_c,v 1.2 2013/10/19 16:37:25 jung Exp $
+--- src/nyancat.c.orig	Sat Oct 19 15:25:00 2013
++++ src/nyancat.c	Sat Oct 19 15:26:25 2013
+@@ -550,6 +550,8 @@ int main(int argc, char ** argv) {
  		ttype = 6; /* No color support */
  	} else if (strstr(term, "fallback")) {
  		ttype = 4; /* Unicode fallback */

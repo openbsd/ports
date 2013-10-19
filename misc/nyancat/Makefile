@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:23:57 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/10/19 16:37:24 jung Exp $
 
 COMMENT=	nyancat in your terminal
 
-DISTNAME=	nyancat-20121007
+V=		1.2.1
+DISTNAME=	${V}
+DIST_SUBDIR=	nyancat
+PKGNAME=	nyancat-${V}
 
 CATEGORIES=	misc
 
@@ -13,11 +16,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c
 
-MASTER_SITES=	http://spacehopper.org/mirrors/
+MASTER_SITES=	${HOMEPAGE}/archive/
 
 NO_TEST=	Yes
 
-WRKDIST=	${WRKDIR}/nyancat-master
+WRKDIST=	${WRKDIR}/${PKGNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/nyancat ${PREFIX}/bin
