@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.817 2013/10/04 09:26:28 giovanni Exp $
+# $OpenBSD: Makefile,v 1.818 2013/10/19 16:35:24 jturner Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -47,6 +47,7 @@
      SUBDIR += cgo
      SUBDIR += charm
      SUBDIR += cjc
+     SUBDIR += clamz
      SUBDIR += climm
      SUBDIR += clive
      SUBDIR += clog
