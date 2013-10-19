@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.60 2013/09/19 13:06:44 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.61 2013/10/19 16:27:37 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -35,6 +35,7 @@ MODMOZ_LIB_DEPENDS =	x11/gtk+2
 # special case the long-term maintained mozillas
 .if ${MOZILLA_PROJECT} == "firefox" || \
 	${MOZILLA_PROJECT} == "thunderbird" || \
+	${MOZILLA_PROJECT} == "xulrunner" || \
 	${MOZILLA_PROJECT} == "seamonkey"
 MODMOZ_LIB_DEPENDS +=	devel/nspr>=4.10 \
 			security/nss>=3.15
@@ -153,7 +154,7 @@ INSTALL_STRIP =
 CONFIGURE_ARGS +=--enable-application=${MOZILLA_CODENAME}
 
 .if ${MOZILLA_PROJECT} == "firefox" || \
-	${MOZILLA_PROJECT} == "firefox36" || \
+	${MOZILLA_PROJECT} == "xulrunner" || \
 	${MOZILLA_PROJECT} == "fennec" || \
 	${MOZILLA_PROJECT} == "xulrunner1.9"
 WRKDIST ?=	${WRKDIR}/mozilla-${MOZILLA_BRANCH}
