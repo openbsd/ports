@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/10/19 16:37:24 jung Exp $
+# $OpenBSD: Makefile,v 1.4 2013/10/19 19:22:25 sthen Exp $
 
 COMMENT=	nyancat in your terminal
 
 V=		1.2.1
+EPOCH=		0
 DISTNAME=	${V}
 DIST_SUBDIR=	nyancat
 PKGNAME=	nyancat-${V}
