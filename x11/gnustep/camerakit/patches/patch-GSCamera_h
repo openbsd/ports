@@ -1,0 +1,12 @@
+$OpenBSD: patch-GSCamera_h,v 1.1.1.1 2013/10/19 14:17:52 sebastia Exp $
+--- GSCamera.h.orig	Sun Oct  6 17:30:20 2013
++++ GSCamera.h	Sun Oct  6 17:30:34 2013
+@@ -1,7 +1,7 @@
+ #ifndef _GSCAMERA_H_
+ #define _GSCAMERA_H_
+ 
+-#include <gphoto2.h>
++#include <gphoto2/gphoto2.h>
+ #include <Foundation/Foundation.h>
+ 
+ @interface GSCamera: NSObject

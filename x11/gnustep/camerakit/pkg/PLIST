@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/19 14:17:52 sebastia Exp $
+include/CameraKit
+lib/GNUstep/Frameworks/
+lib/GNUstep/Frameworks/CameraKit.framework/
+lib/GNUstep/Frameworks/CameraKit.framework/CameraKit
+lib/GNUstep/Frameworks/CameraKit.framework/Headers
+lib/GNUstep/Frameworks/CameraKit.framework/Resources
+lib/GNUstep/Frameworks/CameraKit.framework/Versions/
+lib/GNUstep/Frameworks/CameraKit.framework/Versions/0.0/
+lib/GNUstep/Frameworks/CameraKit.framework/Versions/0.0/CameraKit
+lib/GNUstep/Frameworks/CameraKit.framework/Versions/0.0/Headers/
+lib/GNUstep/Frameworks/CameraKit.framework/Versions/0.0/Headers/GSCamera.h
+lib/GNUstep/Frameworks/CameraKit.framework/Versions/0.0/Headers/GSGPhoto2.h
+lib/GNUstep/Frameworks/CameraKit.framework/Versions/0.0/Resources/
+lib/GNUstep/Frameworks/CameraKit.framework/Versions/0.0/Resources/Info-gnustep.plist
+@lib lib/GNUstep/Frameworks/CameraKit.framework/Versions/0.0/libCameraKit.so.${LIBCameraKit_VERSION}
+lib/GNUstep/Frameworks/CameraKit.framework/Versions/Current
+@lib lib/GNUstep/Frameworks/CameraKit.framework/libCameraKit.so.${LIBCameraKit_VERSION}
+@lib lib/libCameraKit.so.${LIBCameraKit_VERSION}
