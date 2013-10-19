@@ -1,0 +1,15 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2013/10/19 09:51:11 sebastia Exp $
+--- CMakeLists.txt.orig	Thu Jun 27 13:30:41 2013
++++ CMakeLists.txt	Sat Oct  5 09:07:26 2013
+@@ -291,6 +291,11 @@ else ()
+ 	set(DEFAULT_INSTALL_TYPE "NONE")
+ endif ()
+ 
++if (NOT CMAKE_INSTALL_LIBDIR)
++	set(CMAKE_INSTALL_LIBDIR lib)
++endif ()
++
++
+ set(GNUSTEP_INSTALL_TYPE ${DEFAULT_INSTALL_TYPE} CACHE STRING
+ 	"GNUstep installation type.  Options are NONE, SYSTEM, NETWORK or LOCAL.")
+ if (${GNUSTEP_INSTALL_TYPE} STREQUAL "NONE")
