@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.100 2013/10/19 09:07:49 espie Exp $
+# $OpenBSD: Engine.pm,v 1.101 2013/10/19 09:33:52 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -449,9 +449,7 @@ sub rebuild_info
 	$self->{requeued} = [];
 	my %subdirs = map {($_->pkgpath_and_flavors, 1)} @l;
 	for my $v (@l) {
-		if (!defined $v->{tmpname}) {
-			$v->{tmpname} = $v->fullpkgname;
-		}
+		$v->ensure_fullpkgname;
 	}
 
 	for my $v (@l) {

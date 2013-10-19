@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.43 2013/10/19 09:07:49 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.44 2013/10/19 09:33:52 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -83,6 +83,14 @@ sub fullpkgname
 			say STDERR Data::Dumper::Dumper($self->{info});
 		}
 		die;
+	}
+}
+
+sub ensure_fullpkgname
+{
+	my $self = shift;
+	if (!defined $self->{tmpname} && $self->has_fullpkgname) {
+		$self->{tmpname} = $self->fullpkgname;
 	}
 }
 
