@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2013/10/19 14:20:19 sebastia Exp $
+# $OpenBSD: Makefile,v 1.40 2013/10/19 14:33:40 sebastia Exp $
 
      SUBDIR =
      SUBDIR += aclock
@@ -14,6 +14,7 @@
      SUBDIR += cynthiune
      SUBDIR += databasin
      SUBDIR += dbuskit
+     SUBDIR += displaycalibrator
      SUBDIR += edenmath
      SUBDIR += examples
      SUBDIR += fisicalab
