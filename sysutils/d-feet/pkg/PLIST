@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2013/09/26 08:22:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2013/10/19 08:00:00 ajacoutot Exp $
 bin/d-feet
 lib/python${MODPY_VERSION}/site-packages/dfeet/
 lib/python${MODPY_VERSION}/site-packages/dfeet/__init__.py
@@ -37,10 +37,13 @@ lib/python${MODPY_VERSION}/site-packages/dfeet/window.pyo
 lib/python${MODPY_VERSION}/site-packages/dfeet/wnck_utils.py
 lib/python${MODPY_VERSION}/site-packages/dfeet/wnck_utils.pyc
 lib/python${MODPY_VERSION}/site-packages/dfeet/wnck_utils.pyo
+share/appdata/
+share/appdata/d-feet.appdata.xml
 share/applications/d-feet.desktop
 share/d-feet/
 share/d-feet/ui/
 share/d-feet/ui/addconnectiondialog.ui
+share/d-feet/ui/app-menu.ui
 share/d-feet/ui/bus.ui
 share/d-feet/ui/executedialog.ui
 share/d-feet/ui/introspection.ui
@@ -77,9 +80,12 @@ share/locale/el/LC_MESSAGES/d-feet.mo
 share/locale/es/LC_MESSAGES/d-feet.mo
 share/locale/gl/LC_MESSAGES/d-feet.mo
 share/locale/hu/LC_MESSAGES/d-feet.mo
+share/locale/lv/LC_MESSAGES/d-feet.mo
 share/locale/pl/LC_MESSAGES/d-feet.mo
 share/locale/pt_BR/LC_MESSAGES/d-feet.mo
 share/locale/sl/LC_MESSAGES/d-feet.mo
+share/locale/sr/LC_MESSAGES/d-feet.mo
+share/locale/sr@latin/LC_MESSAGES/d-feet.mo
 share/locale/zh_CN/LC_MESSAGES/d-feet.mo
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast

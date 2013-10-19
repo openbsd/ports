@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_dfeet_bus_watch_py,v 1.2 2013/09/26 08:22:01 ajacoutot Exp $
---- src/dfeet/bus_watch.py.orig	Sun Sep  1 07:59:33 2013
-+++ src/dfeet/bus_watch.py	Wed Sep 25 20:39:49 2013
+$OpenBSD: patch-src_dfeet_bus_watch_py,v 1.3 2013/10/19 08:00:00 ajacoutot Exp $
+--- src/dfeet/bus_watch.py.orig	Thu Oct 17 20:50:38 2013
++++ src/dfeet/bus_watch.py	Sat Oct 19 09:55:35 2013
 @@ -1,6 +1,7 @@
  # -*- coding: utf-8 -*-
  from __future__ import print_function
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_dfeet_bus_watch_py,v 1.2 2013/09/26 08:22:01 ajacoutot Exp $
  from gi.repository import GObject, Gtk, Gio
  
  from dfeet.uiloader import UILoader
-@@ -71,9 +72,7 @@ class BusNameBox(Gtk.VBox):
+@@ -72,9 +73,7 @@ class BusNameBox(Gtk.VBox):
      def __update_command_line(self):
          """get the command line of process-id is available"""
          if self.__process_id > 0:
