@@ -1,0 +1,16 @@
+$OpenBSD: patch-main_m,v 1.1.1.1 2013/10/19 14:33:03 sebastia Exp $
+--- main.m.orig	Tue Jul 13 09:50:54 2004
++++ main.m	Sat Oct 19 16:24:37 2013
+@@ -1,10 +1,6 @@
+ #include <AppKit/AppKit.h>
+ 
+-int main(int argc, char **argv)
++int main(int argc, const char *argv[])
+ {
+-	CREATE_AUTORELEASE_POOL(pool);
+-	[NSApplication sharedApplication];
+-	[NSApp run];
+-	DESTROY(pool);
+-	return 0;
++	return NSApplicationMain (argc, argv);
+ }

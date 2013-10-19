@@ -1,0 +1,12 @@
+$OpenBSD: patch-AppController_m,v 1.1.1.1 2013/10/19 14:33:03 sebastia Exp $
+--- AppController.m.orig	Sat Oct 19 16:25:11 2013
++++ AppController.m	Sat Oct 19 16:26:08 2013
+@@ -29,7 +29,7 @@
+     sscanf(buffer,"%f %f %f",&r,&g,&b);
+     /* printf("%f %f %f\n",r,g,b); */
+ 
+-    if (f=fopen(XCONF,"rw")) {
++    if ((f=fopen(XCONF,"rw")) != NULL) {
+ 	fclose(f);
+ 	[button setEnabled:YES];
+     }

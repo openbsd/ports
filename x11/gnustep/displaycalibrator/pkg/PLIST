@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/19 14:33:03 sebastia Exp $
+bin/DisplayCalibrator
+libexec/GNUstep/DisplayCalibrator.app/
+@bin libexec/GNUstep/DisplayCalibrator.app/DisplayCalibrator
+libexec/GNUstep/DisplayCalibrator.app/Resources/
+libexec/GNUstep/DisplayCalibrator.app/Resources/DisplayCalibrator.desktop
+libexec/GNUstep/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm/
+libexec/GNUstep/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm/GammaControl.png
+libexec/GNUstep/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm/GammaCorrect.png
+libexec/GNUstep/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm/data.classes
+libexec/GNUstep/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm/data.info
+libexec/GNUstep/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm/objects.gorm
+libexec/GNUstep/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm/white-black.png
+libexec/GNUstep/DisplayCalibrator.app/Resources/Info-gnustep.plist
+libexec/GNUstep/DisplayCalibrator.app/Resources/gammascrew.png
+libexec/GNUstep/DisplayCalibrator.app/stamp.make
