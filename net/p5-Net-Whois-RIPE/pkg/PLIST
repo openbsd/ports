@@ -1,56 +1,163 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/01/12 14:14:53 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/10/19 09:48:08 benoit Exp $
 ${P5SITE}/Net/
 ${P5SITE}/Net/Whois/
+${P5SITE}/Net/Whois/Generic.pm
 ${P5SITE}/Net/Whois/Object/
 ${P5SITE}/Net/Whois/Object.pm
+${P5SITE}/Net/Whois/Object/AsBlock/
 ${P5SITE}/Net/Whois/Object/AsBlock.pm
+${P5SITE}/Net/Whois/Object/AsBlock/AFRINIC.pm
+${P5SITE}/Net/Whois/Object/AsBlock/APNIC.pm
+${P5SITE}/Net/Whois/Object/AsSet/
 ${P5SITE}/Net/Whois/Object/AsSet.pm
+${P5SITE}/Net/Whois/Object/AsSet/AFRINIC.pm
+${P5SITE}/Net/Whois/Object/AsSet/APNIC.pm
+${P5SITE}/Net/Whois/Object/AutNum/
 ${P5SITE}/Net/Whois/Object/AutNum.pm
+${P5SITE}/Net/Whois/Object/AutNum/AFRINIC.pm
+${P5SITE}/Net/Whois/Object/AutNum/APNIC.pm
+${P5SITE}/Net/Whois/Object/Domain/
 ${P5SITE}/Net/Whois/Object/Domain.pm
+${P5SITE}/Net/Whois/Object/Domain/AFRINIC.pm
+${P5SITE}/Net/Whois/Object/Domain/APNIC.pm
+${P5SITE}/Net/Whois/Object/FilterSet/
 ${P5SITE}/Net/Whois/Object/FilterSet.pm
+${P5SITE}/Net/Whois/Object/FilterSet/AFRINIC.pm
+${P5SITE}/Net/Whois/Object/FilterSet/APNIC.pm
+${P5SITE}/Net/Whois/Object/Inet6Num/
 ${P5SITE}/Net/Whois/Object/Inet6Num.pm
+${P5SITE}/Net/Whois/Object/Inet6Num/AFRINIC.pm
+${P5SITE}/Net/Whois/Object/Inet6Num/APNIC.pm
+${P5SITE}/Net/Whois/Object/InetNum/
 ${P5SITE}/Net/Whois/Object/InetNum.pm
+${P5SITE}/Net/Whois/Object/InetNum/AFRINIC.pm
+${P5SITE}/Net/Whois/Object/InetNum/APNIC.pm
+${P5SITE}/Net/Whois/Object/InetRtr/
 ${P5SITE}/Net/Whois/Object/InetRtr.pm
+${P5SITE}/Net/Whois/Object/InetRtr/AFRINIC.pm
+${P5SITE}/Net/Whois/Object/Information/
 ${P5SITE}/Net/Whois/Object/Information.pm
+${P5SITE}/Net/Whois/Object/Information/AFRINIC.pm
+${P5SITE}/Net/Whois/Object/Irt/
 ${P5SITE}/Net/Whois/Object/Irt.pm
+${P5SITE}/Net/Whois/Object/Irt/AFRINIC.pm
+${P5SITE}/Net/Whois/Object/Irt/APNIC.pm
+${P5SITE}/Net/Whois/Object/KeyCert/
 ${P5SITE}/Net/Whois/Object/KeyCert.pm
+${P5SITE}/Net/Whois/Object/KeyCert/AFRINIC.pm
+${P5SITE}/Net/Whois/Object/KeyCert/APNIC.pm
+${P5SITE}/Net/Whois/Object/Limerick/
 ${P5SITE}/Net/Whois/Object/Limerick.pm
+${P5SITE}/Net/Whois/Object/Limerick/AFRINIC.pm
+${P5SITE}/Net/Whois/Object/Mntner/
 ${P5SITE}/Net/Whois/Object/Mntner.pm
+${P5SITE}/Net/Whois/Object/Mntner/AFRINIC.pm
+${P5SITE}/Net/Whois/Object/Mntner/APNIC.pm
+${P5SITE}/Net/Whois/Object/Organisation/
 ${P5SITE}/Net/Whois/Object/Organisation.pm
+${P5SITE}/Net/Whois/Object/Organisation/AFRINIC.pm
+${P5SITE}/Net/Whois/Object/Organisation/APNIC.pm
+${P5SITE}/Net/Whois/Object/PeeringSet/
 ${P5SITE}/Net/Whois/Object/PeeringSet.pm
+${P5SITE}/Net/Whois/Object/PeeringSet/AFRINIC.pm
+${P5SITE}/Net/Whois/Object/PeeringSet/APNIC.pm
+${P5SITE}/Net/Whois/Object/Person/
 ${P5SITE}/Net/Whois/Object/Person.pm
+${P5SITE}/Net/Whois/Object/Person/AFRINIC.pm
+${P5SITE}/Net/Whois/Object/Person/APNIC.pm
+${P5SITE}/Net/Whois/Object/Poem/
 ${P5SITE}/Net/Whois/Object/Poem.pm
+${P5SITE}/Net/Whois/Object/Poem/APNIC.pm
+${P5SITE}/Net/Whois/Object/PoeticForm/
 ${P5SITE}/Net/Whois/Object/PoeticForm.pm
+${P5SITE}/Net/Whois/Object/PoeticForm/APNIC.pm
 ${P5SITE}/Net/Whois/Object/Response.pm
+${P5SITE}/Net/Whois/Object/Role/
 ${P5SITE}/Net/Whois/Object/Role.pm
+${P5SITE}/Net/Whois/Object/Role/AFRINIC.pm
+${P5SITE}/Net/Whois/Object/Role/APNIC.pm
+${P5SITE}/Net/Whois/Object/Route/
 ${P5SITE}/Net/Whois/Object/Route.pm
+${P5SITE}/Net/Whois/Object/Route/AFRINIC.pm
+${P5SITE}/Net/Whois/Object/Route/APNIC.pm
+${P5SITE}/Net/Whois/Object/Route6/
 ${P5SITE}/Net/Whois/Object/Route6.pm
+${P5SITE}/Net/Whois/Object/Route6/AFRINIC.pm
+${P5SITE}/Net/Whois/Object/Route6/APNIC.pm
+${P5SITE}/Net/Whois/Object/RouteSet/
 ${P5SITE}/Net/Whois/Object/RouteSet.pm
+${P5SITE}/Net/Whois/Object/RouteSet/AFRINIC.pm
+${P5SITE}/Net/Whois/Object/RouteSet/APNIC.pm
+${P5SITE}/Net/Whois/Object/RtrSet/
 ${P5SITE}/Net/Whois/Object/RtrSet.pm
+${P5SITE}/Net/Whois/Object/RtrSet/AFRINIC.pm
+${P5SITE}/Net/Whois/Object/RtrSet/APNIC.pm
 ${P5SITE}/Net/Whois/RIPE.pm
+@man man/man3p/Net::Whois::Generic.3p
 @man man/man3p/Net::Whois::Object.3p
 @man man/man3p/Net::Whois::Object::AsBlock.3p
+@man man/man3p/Net::Whois::Object::AsBlock::AFRINIC.3p
+@man man/man3p/Net::Whois::Object::AsBlock::APNIC.3p
 @man man/man3p/Net::Whois::Object::AsSet.3p
+@man man/man3p/Net::Whois::Object::AsSet::AFRINIC.3p
+@man man/man3p/Net::Whois::Object::AsSet::APNIC.3p
 @man man/man3p/Net::Whois::Object::AutNum.3p
+@man man/man3p/Net::Whois::Object::AutNum::AFRINIC.3p
+@man man/man3p/Net::Whois::Object::AutNum::APNIC.3p
 @man man/man3p/Net::Whois::Object::Domain.3p
+@man man/man3p/Net::Whois::Object::Domain::AFRINIC.3p
+@man man/man3p/Net::Whois::Object::Domain::APNIC.3p
 @man man/man3p/Net::Whois::Object::FilterSet.3p
+@man man/man3p/Net::Whois::Object::FilterSet::AFRINIC.3p
+@man man/man3p/Net::Whois::Object::FilterSet::APNIC.3p
 @man man/man3p/Net::Whois::Object::Inet6Num.3p
+@man man/man3p/Net::Whois::Object::Inet6Num::AFRINIC.3p
+@man man/man3p/Net::Whois::Object::Inet6Num::APNIC.3p
 @man man/man3p/Net::Whois::Object::InetNum.3p
+@man man/man3p/Net::Whois::Object::InetNum::AFRINIC.3p
+@man man/man3p/Net::Whois::Object::InetNum::APNIC.3p
 @man man/man3p/Net::Whois::Object::InetRtr.3p
+@man man/man3p/Net::Whois::Object::InetRtr::AFRINIC.3p
 @man man/man3p/Net::Whois::Object::Information.3p
+@man man/man3p/Net::Whois::Object::Information::AFRINIC.3p
 @man man/man3p/Net::Whois::Object::Irt.3p
+@man man/man3p/Net::Whois::Object::Irt::AFRINIC.3p
+@man man/man3p/Net::Whois::Object::Irt::APNIC.3p
 @man man/man3p/Net::Whois::Object::KeyCert.3p
+@man man/man3p/Net::Whois::Object::KeyCert::AFRINIC.3p
+@man man/man3p/Net::Whois::Object::KeyCert::APNIC.3p
 @man man/man3p/Net::Whois::Object::Limerick.3p
+@man man/man3p/Net::Whois::Object::Limerick::AFRINIC.3p
 @man man/man3p/Net::Whois::Object::Mntner.3p
+@man man/man3p/Net::Whois::Object::Mntner::AFRINIC.3p
+@man man/man3p/Net::Whois::Object::Mntner::APNIC.3p
 @man man/man3p/Net::Whois::Object::Organisation.3p
+@man man/man3p/Net::Whois::Object::Organisation::AFRINIC.3p
+@man man/man3p/Net::Whois::Object::Organisation::APNIC.3p
 @man man/man3p/Net::Whois::Object::PeeringSet.3p
+@man man/man3p/Net::Whois::Object::PeeringSet::AFRINIC.3p
+@man man/man3p/Net::Whois::Object::PeeringSet::APNIC.3p
 @man man/man3p/Net::Whois::Object::Person.3p
+@man man/man3p/Net::Whois::Object::Person::AFRINIC.3p
+@man man/man3p/Net::Whois::Object::Person::APNIC.3p
 @man man/man3p/Net::Whois::Object::Poem.3p
+@man man/man3p/Net::Whois::Object::Poem::APNIC.3p
 @man man/man3p/Net::Whois::Object::PoeticForm.3p
+@man man/man3p/Net::Whois::Object::PoeticForm::APNIC.3p
 @man man/man3p/Net::Whois::Object::Response.3p
 @man man/man3p/Net::Whois::Object::Role.3p
+@man man/man3p/Net::Whois::Object::Role::AFRINIC.3p
+@man man/man3p/Net::Whois::Object::Role::APNIC.3p
 @man man/man3p/Net::Whois::Object::Route.3p
 @man man/man3p/Net::Whois::Object::Route6.3p
+@man man/man3p/Net::Whois::Object::Route6::AFRINIC.3p
+@man man/man3p/Net::Whois::Object::Route6::APNIC.3p
+@man man/man3p/Net::Whois::Object::Route::AFRINIC.3p
+@man man/man3p/Net::Whois::Object::Route::APNIC.3p
 @man man/man3p/Net::Whois::Object::RouteSet.3p
+@man man/man3p/Net::Whois::Object::RouteSet::AFRINIC.3p
+@man man/man3p/Net::Whois::Object::RouteSet::APNIC.3p
 @man man/man3p/Net::Whois::Object::RtrSet.3p
+@man man/man3p/Net::Whois::Object::RtrSet::AFRINIC.3p
+@man man/man3p/Net::Whois::Object::RtrSet::APNIC.3p
 @man man/man3p/Net::Whois::RIPE.3p
