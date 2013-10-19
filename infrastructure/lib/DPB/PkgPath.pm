@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.42 2013/10/06 13:33:33 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.43 2013/10/19 09:07:49 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -71,7 +71,10 @@ sub fullpkgname
 {
 	my $self = shift;
 	if (defined $self->{info} && defined $self->{info}{FULLPKGNAME}) {
+		delete $self->{tmpname};
 		return ${$self->{info}{FULLPKGNAME}};
+	} elsif (defined $self->{tmpname}) {
+		return $self->{tmpname};
 	} else {
 		say STDERR $self->fullpkgpath, " has no associated fullpkgname\n";
 		if (defined $self->{info}) {
