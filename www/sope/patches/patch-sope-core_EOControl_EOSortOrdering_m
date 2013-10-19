@@ -1,0 +1,30 @@
+$OpenBSD: patch-sope-core_EOControl_EOSortOrdering_m,v 1.1 2013/10/19 09:48:23 sebastia Exp $
+
+fix build with libobjc2-1.7
+
+--- sope-core/EOControl/EOSortOrdering.m.orig	Sun Oct 13 15:43:30 2013
++++ sope-core/EOControl/EOSortOrdering.m	Sun Oct 13 15:43:55 2013
+@@ -28,14 +28,6 @@
+ #  include <objc/objc.h>
+ #endif
+ 
+-#ifndef SEL_EQ
+-#  if GNU_RUNTIME
+-#    define SEL_EQ(sel1,sel2) sel_eq(sel1,sel2)
+-#  else
+-#    define SEL_EQ(sel1,sel2) (sel1 == sel2)
+-#  endif
+-#endif
+-
+ @implementation EOSortOrdering
+ /*"
+   This class specifies a sort-ordering as used with
+@@ -83,7 +75,7 @@
+ /* equality */
+ 
+ - (BOOL)isEqualToSortOrdering:(EOSortOrdering *)_sortOrdering {
+-  if (!SEL_EQ([_sortOrdering selector], [self selector]))
++  if (!sel_eq([_sortOrdering selector], [self selector]))
+     return NO;
+   if (![[_sortOrdering key] isEqualToString:[self key]])
+     return NO;

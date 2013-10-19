@@ -1,0 +1,18 @@
+$OpenBSD: patch-sope-appserver_NGObjWeb_DynamicElements_WOComponentContent_m,v 1.1 2013/10/19 09:48:22 sebastia Exp $
+
+fix build with libobjc2-1.7
+
+--- sope-appserver/NGObjWeb/DynamicElements/WOComponentContent.m.orig	Sun Oct 13 16:59:47 2013
++++ sope-appserver/NGObjWeb/DynamicElements/WOComponentContent.m	Sun Oct 13 17:00:20 2013
+@@ -75,11 +75,7 @@ static Class NSDateClass = Nil;
+         printf("  ");
+       printf("content: [%s %s]: %0.3fs\n",
+              [[component name] cString], 
+-#if (defined(__GNU_LIBOBJC__) && (__GNU_LIBOBJC__ >= 20100911)) || defined(APPLE_RUNTIME) || defined(__GNUSTEP_RUNTIME__)
+-	     sel_getName(_cmd), 
+-#else
+ 	     sel_get_name(_cmd), 
+-#endif
+ 	     diff);
+     }
+     

@@ -1,0 +1,17 @@
+$OpenBSD: patch-sope-appserver_NGObjWeb_DynamicElements_decommon_h,v 1.1 2013/10/19 09:48:22 sebastia Exp $
+
+fix build with libobjc2-1.7
+
+--- sope-appserver/NGObjWeb/DynamicElements/decommon.h.orig	Mon Jul 22 15:03:07 2013
++++ sope-appserver/NGObjWeb/DynamicElements/decommon.h	Sun Oct 13 17:48:51 2013
+@@ -35,6 +35,10 @@
+ @end
+ #endif
+ 
++#if (defined(__GNU_LIBOBJC__) && (__GNU_LIBOBJC__ >= 20100911)) || defined(APPLE_RUNTIME) || defined(__GNUSTEP_RUNTIME__)
++#  define sel_get_name(__XXX__) sel_getName(__XXX__)
++#endif
++
+ #include <NGExtensions/NGExtensions.h>
+ #include "WOResponse+private.h"
+ #include <NGObjWeb/WOContext.h>

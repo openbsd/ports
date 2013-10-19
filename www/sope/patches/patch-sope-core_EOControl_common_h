@@ -1,0 +1,19 @@
+$OpenBSD: patch-sope-core_EOControl_common_h,v 1.1 2013/10/19 09:48:23 sebastia Exp $
+
+fix build with libobjc2-1.7
+
+--- sope-core/EOControl/common.h.orig	Sun Oct 13 15:55:39 2013
++++ sope-core/EOControl/common.h	Sun Oct 13 15:55:43 2013
+@@ -39,10 +39,11 @@
+ #  endif
+ #endif
+ 
+-#if __GNU_LIBOBJC__ >= 20100911
++#if (defined(__GNU_LIBOBJC__) && (__GNU_LIBOBJC__ >= 20100911)) || defined(APPLE_RUNTIME) || defined(__GNUSTEP_RUNTIME__)
+ #  ifndef sel_eq
+ #    define sel_eq(__A__,__B__) sel_isEqual(__A__,__B__)
+ #  endif
++#  define sel_get_any_uid(__XXX__) sel_getUid(__XXX__)
+ #endif
+ 
+ #ifndef ASSIGN

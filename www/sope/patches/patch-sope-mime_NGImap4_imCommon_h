@@ -1,0 +1,22 @@
+$OpenBSD: patch-sope-mime_NGImap4_imCommon_h,v 1.1 2013/10/19 09:48:23 sebastia Exp $
+
+fix build with libobjc2-1.7
+
+--- sope-mime/NGImap4/imCommon.h.orig	Sun Oct 13 16:21:42 2013
++++ sope-mime/NGImap4/imCommon.h	Sun Oct 13 16:22:35 2013
+@@ -37,13 +37,13 @@
+ #include <NGMime/NGMime.h>
+ #include <NGMail/NGMail.h>
+ 
+-#if NeXT_RUNTIME || APPLE_RUNTIME
++#if NeXT_RUNTIME
+ #  ifndef sel_eq
+ #    define sel_eq(__A__,__B__) (__A__==__B__)
+ #  endif
+ #endif
+ 
+-#if __GNU_LIBOBJC__ >= 20100911
++#if (defined(__GNU_LIBOBJC__) && (__GNU_LIBOBJC__ >= 20100911)) || defined(APPLE_RUNTIME) || defined(__GNUSTEP_RUNTIME__)
+ #  ifndef sel_eq
+ #    define sel_eq(__A__,__B__) sel_isEqual(__A__,__B__)
+ #  endif

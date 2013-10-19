@@ -1,0 +1,17 @@
+$OpenBSD: patch-sope-core_EOControl_EOValidation_m,v 1.1 2013/10/19 09:48:23 sebastia Exp $
+
+fix build with libobjc2-1.7
+
+--- sope-core/EOControl/EOValidation.m.orig	Sun Oct 13 15:44:43 2013
++++ sope-core/EOControl/EOValidation.m	Sun Oct 13 15:45:01 2013
+@@ -24,10 +24,6 @@
+ #include "EONull.h"
+ #include "common.h"
+ 
+-#if __GNU_LIBOBJC__ >= 20100911
+-#  define sel_get_any_uid sel_getUid
+-#endif
+-
+ #if !LIB_FOUNDATION_LIBRARY
+ 
+ @interface NSException(UsedSetUI) /* does Jaguar allow -setUserInfo: ? */

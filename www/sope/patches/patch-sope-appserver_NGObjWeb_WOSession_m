@@ -1,0 +1,17 @@
+$OpenBSD: patch-sope-appserver_NGObjWeb_WOSession_m,v 1.1 2013/10/19 09:48:23 sebastia Exp $
+
+fix build with libobc2-1.7
+
+--- sope-appserver/NGObjWeb/WOSession.m.orig	Sun Oct 13 16:36:40 2013
++++ sope-appserver/NGObjWeb/WOSession.m	Sun Oct 13 16:36:51 2013
+@@ -33,10 +33,6 @@
+ #include "common.h"
+ #include <string.h>
+ 
+-#if !defined(sel_get_name) && ((defined(__GNU_LIBOBJC__) && (__GNU_LIBOBJC__ >= 20100911)) || defined(APPLE_RUNTIME) || defined(__GNUSTEP_RUNTIME__))
+-#  define sel_get_name sel_getName
+-#endif
+-
+ #if APPLE_FOUNDATION_LIBRARY || NeXT_Foundation_LIBRARY
+ @interface NSObject(Miss)
+ - (id)notImplemented:(SEL)cmd;
