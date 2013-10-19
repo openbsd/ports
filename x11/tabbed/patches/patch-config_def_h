@@ -1,20 +1,21 @@
-$OpenBSD: patch-config_def_h,v 1.1.1.1 2012/07/09 08:42:53 zinke Exp $
---- config.def.h.orig	Sat Jul  7 22:51:05 2012
-+++ config.def.h	Sun Jul  8 15:05:06 2012
-@@ -1,11 +1,11 @@
+$OpenBSD: patch-config_def_h,v 1.2 2013/10/19 10:48:29 jung Exp $
+--- config.def.h.orig	Fri Oct 18 18:58:44 2013
++++ config.def.h	Fri Oct 18 18:59:41 2013
+@@ -1,11 +1,12 @@
  /* See LICENSE file for copyright and license details. */
  
  /* appearance */
--static const char font[]        = "-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*";
+-static const char font[]        = "-*-*-medium-*-*-*-14-*-*-*-*-*-*-*";
 -static const char normbgcolor[] = "#222222";
--static const char normfgcolor[] = "#bbbbbb";
--static const char selbgcolor[]  = "#005577";
--static const char selfgcolor[]  = "#eeeeee";
+-static const char normfgcolor[] = "#cccccc";
+-static const char selbgcolor[]  = "#555555";
+-static const char selfgcolor[]  = "#ffffff";
 +static const char font[]        = "-*-terminus-medium-*-*-*-*-*-*-*-*-*-*-*";
 +static const char normbgcolor[] = "#202020";
 +static const char normfgcolor[] = "#c0c0c0";
 +static const char selbgcolor[]  = "#404040";
 +static const char selfgcolor[]  = "#f0f0f0";
++
  static const char before[]      = "<";
  static const char after[]       = ">";
  static const int  tabwidth      = 200;

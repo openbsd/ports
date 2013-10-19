@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2013/07/17 03:27:01 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2013/10/19 10:48:28 jung Exp $
 
 COMMENT=		simple generic tabbed frontend
 
-DISTNAME=		tabbed-0.4.1
-REVISION =		0
+DISTNAME=		tabbed-0.5
 
 CATEGORIES=		x11
 

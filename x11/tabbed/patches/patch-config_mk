@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_mk,v 1.2 2012/10/30 17:09:55 zinke Exp $
---- config.mk.orig	Mon Aug 20 09:15:07 2012
-+++ config.mk	Sun Oct 28 19:21:28 2012
-@@ -4,21 +4,24 @@ VERSION = 0.4.1
+$OpenBSD: patch-config_mk,v 1.3 2013/10/19 10:48:29 jung Exp $
+--- config.mk.orig	Mon May  6 20:28:25 2013
++++ config.mk	Fri Oct 18 19:14:02 2013
+@@ -4,22 +4,25 @@ VERSION = 0.5
  # Customize below to fit your system
  
  # paths
@@ -20,11 +20,11 @@ $OpenBSD: patch-config_mk,v 1.2 2012/10/30 17:09:55 zinke Exp $
 +LIBS = -L${X11LIB} -lX11
  
  # flags
--CPPFLAGS = -DVERSION=\"${VERSION}\"
--CFLAGS = -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
--LDFLAGS = -s ${LIBS}
-+CPPFLAGS += -DVERSION=\"${VERSION}\"
-+CFLAGS += -std=c99 -pedantic -Wall ${INCS} ${CPPFLAGS}
+-CPPFLAGS = -DVERSION=\"${VERSION}\" -D_BSD_SOURCE
+-CFLAGS = -g -std=c99 -pedantic -Wall -O0 ${INCS} ${CPPFLAGS}
+-LDFLAGS = -g ${LIBS}
++CPPFLAGS += -DVERSION=\"${VERSION}\" -D_BSD_SOURCE
++CFLAGS += -std=c99 -pedantic -Wall -O0 ${INCS} ${CPPFLAGS}
 +LDFLAGS += ${LIBS}
  
  # Solaris
@@ -34,3 +34,4 @@ $OpenBSD: patch-config_mk,v 1.2 2012/10/30 17:09:55 zinke Exp $
  # compiler and linker
 -CC = cc
 +CC ?= cc
+ 
