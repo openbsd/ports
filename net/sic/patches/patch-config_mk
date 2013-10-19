@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_mk,v 1.1.1.1 2012/07/10 14:03:18 zinke Exp $
---- config.mk.orig	Tue May 25 18:05:48 2010
-+++ config.mk	Mon Jul  9 13:12:46 2012
-@@ -4,17 +4,17 @@ VERSION = 1.1
+$OpenBSD: patch-config_mk,v 1.2 2013/10/19 09:49:51 jung Exp $
+--- config.mk.orig	Sun Jun 16 08:03:32 2013
++++ config.mk	Fri Aug 23 08:30:57 2013
+@@ -4,17 +4,17 @@ VERSION = 1.2
  # Customize below to fit your system
  
  # paths

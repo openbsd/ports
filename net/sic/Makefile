@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2013/07/17 03:27:01 bentley Exp $
+# $OpenBSD: Makefile,v 1.5 2013/10/19 09:49:51 jung Exp $
 
 COMMENT=		simple irc client
 
-DISTNAME=		sic-1.1
-REVISION =		1
+DISTNAME=		sic-1.2
 
 CATEGORIES=		net
 
