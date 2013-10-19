@@ -1,0 +1,20 @@
+$OpenBSD: patch-uniname_1,v 1.1 2013/10/19 20:57:20 schwarze Exp $
+The order of lines got mixed up, making the text incomprehensible.
+While here, fix the case of the .PP macro or it won't work
+and remove a .br that has no effect.
+--- uniname.1.orig	Wed Feb 18 08:37:58 2009
++++ uniname.1	Fri Oct 18 00:15:00 2013
+@@ -29,11 +29,10 @@ the Nelson number is supplied.
+ .PP
+ By default, input is expected to be UTF-8. Native order UTF-32 
+ may be specified via the command line flag
+-.pp
+-If invalid UTF8 is encountered, an explanation is printed as to why it is invalid.
+ .I -q.
++.PP
++If invalid UTF8 is encountered, an explanation is printed as to why it is invalid.
+ .SH COMMAND LINE FLAGS
+-.br
+ .IP "-A"
+ Skip ASCII whitespace characters.
+ .IP "-a"
