@@ -1,0 +1,28 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2013/10/19 16:37:19 landry Exp $
+
+MOZILLA_VERSION =	24.0
+MOZILLA_BRANCH =	release
+MOZILLA_PROJECT =	xulrunner
+
+SO_VERSION =		0.0
+MOZILLA_LIBS =		mozgnome mozalloc xul
+
+# necessary glue to build with the correct compiler after fx 17
+MODULES +=		gcc4 lang/clang
+MODGCC4_ARCHS =		powerpc sparc64 alpha
+MODGCC4_LANGS =		c c++
+MODCLANG_ARCHS =	amd64 i386
+MODCLANG_LANGS =	c c++
+
+# to be able to link when building with clang on i386 or gcc on ppc
+.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
+CONFIGURE_ARGS +=	--disable-debug-symbols
+.endif
+
+CONFIGURE_ENV +=	MOZ_OFFICIAL_BRANDING_DIRECTORY=browser/branding
+
+post-install:
+	#otherwise libxul.so ends up being 1Go in sdk/lib
+	${STRIP} ${PREFIX}/lib/${MOZILLA_PROJECT}-devel-${MOZILLA_VERSION}/sdk/lib/lib*.{so*,a}
+
+.include <bsd.port.mk>

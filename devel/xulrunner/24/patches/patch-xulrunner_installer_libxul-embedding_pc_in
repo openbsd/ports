@@ -1,0 +1,11 @@
+$OpenBSD: patch-xulrunner_installer_libxul-embedding_pc_in,v 1.1.1.1 2013/10/19 16:37:31 landry Exp $
+no libdl on OpenBSD
+--- xulrunner/installer/libxul-embedding.pc.in.orig	Sun Feb 20 21:50:47 2011
++++ xulrunner/installer/libxul-embedding.pc.in	Sun Feb 20 21:50:52 2011
+@@ -6,5 +6,5 @@ idldir=%idldir%
+ Name: libxul-embedding
+ Description: Static library for version-independent embedding of the Mozilla runtime
+ Version: %MOZILLA_VERSION%
+-Libs: -L${sdkdir}/lib -lxpcomglue -ldl
++Libs: -L${sdkdir}/lib -lxpcomglue
+ Cflags: -DXPCOM_GLUE -I${includedir} %WCHAR_CFLAGS%
