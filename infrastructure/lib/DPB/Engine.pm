@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.98 2013/10/13 19:59:06 espie Exp $
+# $OpenBSD: Engine.pm,v 1.99 2013/10/19 08:41:29 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -457,7 +457,6 @@ sub rebuild_info
 		delete $v->{info};
 	}
 	$self->{state}->grabber->grab_subdirs($core, \%subdirs);
-	$core->mark_ready;
 }
 
 sub start_new_job
