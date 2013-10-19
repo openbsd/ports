@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2013/09/01 13:04:09 sebastia Exp $
+# $OpenBSD: Makefile,v 1.22 2013/10/19 13:24:58 sebastia Exp $
 
 COMMENT=	GNUstep example applications
 
 DISTNAME=	gnustep-examples-1.4.0
+REVISION =	0
 
 CATEGORIES=	misc
 

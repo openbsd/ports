@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2013/04/25 16:40:12 sebastia Exp $
+# $OpenBSD: Makefile,v 1.7 2013/10/19 13:25:05 sebastia Exp $
 
 COMMENT =	GNUstep webserver framework
 
 VERSION =	1.4.6
 DISTNAME =	WebServer-${VERSION}
-REVISION =	2
+REVISION =	3
 PKGNAME =	gnustep-webserver-${VERSION}
 
 SHARED_LIBS +=  WebServer	1.1

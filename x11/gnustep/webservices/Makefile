@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2013/04/25 16:34:06 sebastia Exp $
+# $OpenBSD: Makefile,v 1.12 2013/10/19 13:25:05 sebastia Exp $
 
 COMMENT =	GNUstep webservices framework
 
 VERSION =	0.5.10
+REVISION =	0
 DISTNAME =	WebServices-${VERSION}
 PKGNAME =	gnustep-webservices-${VERSION}
 CATEGORIES =	www

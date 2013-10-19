@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2013/04/25 16:40:11 sebastia Exp $
+# $OpenBSD: Makefile,v 1.6 2013/10/19 13:24:58 sebastia Exp $
 
 COMMENT =	GNUstep mastermind game
 
 DISTNAME =	GMastermind-0.6
-REVISION =	2
+REVISION =	3
 CATEGORIES =	games
 
 HOMEPAGE =      http://gap.nongnu.org/gmastermind/

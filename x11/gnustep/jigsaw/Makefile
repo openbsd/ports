@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2013/04/25 21:11:57 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2013/10/19 13:25:01 sebastia Exp $
 
 COMMENT =	GNUstep jigsaw puzzle
 
 DISTNAME =	Jigsaw-0.8
-REVISION =	2
+REVISION =	3
 CATEGORIES =	games
 
 HOMEPAGE =	http://gap.nongnu.org/jigsaw/

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2013/10/19 12:01:24 sebastia Exp $
+# $OpenBSD: Makefile,v 1.35 2013/10/19 13:25:00 sebastia Exp $
 
 COMMENT=	GNUstep gui library
 
 DISTNAME =	gnustep-gui-0.23.1
-REVISION =	3
+REVISION =	4
 
 CATEGORIES=	devel
 

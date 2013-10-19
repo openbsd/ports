@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/04/25 16:40:12 sebastia Exp $
+# $OpenBSD: Makefile,v 1.8 2013/10/19 13:25:05 sebastia Exp $
 
 COMMENT=	CPU load monitor
 
 DISTNAME=	TimeMon-4.1
-REVISION =	3
+REVISION =	4
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://gap.nongnu.org/timemon/

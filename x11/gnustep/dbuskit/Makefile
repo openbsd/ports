@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2013/04/25 16:28:52 sebastia Exp $
+# $OpenBSD: Makefile,v 1.5 2013/10/19 13:24:57 sebastia Exp $
 
 COMMENT =	GNUstep dbus interface
 
 CATEGORIES +=   x11/gnustep devel
 VERSION =	0.1.1
+REVISION =	0
 DISTNAME =	dbuskit-${VERSION}
 PKGNAME =	gnustep-dbuskit-${VERSION}
 
