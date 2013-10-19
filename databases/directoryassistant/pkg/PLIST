@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/01 12:35:54 alek Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/10/19 10:02:12 jung Exp $
 bin/directoryassistant
 @man man/man1/directoryassistant.1
 share/directoryassistant/
-share/directoryassistant/decoration.png
 share/directoryassistant/directoryassistant.png
+share/directoryassistant/logo.png
