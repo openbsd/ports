@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2013/09/16 06:22:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2013/10/20 15:55:25 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -6,12 +6,12 @@ COMMENT-main=	MIME messages creation and parsing library
 COMMENT-mono=	mono bindings for gmime
 
 GNOME_PROJECT=	gmime
-GNOME_VERSION=	2.6.18
+GNOME_VERSION=	2.6.19
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-mono=	gmime-sharp-${GNOME_VERSION}
 
-SHARED_LIBS +=  gmime-2.6            0.1    # 600.13
+SHARED_LIBS +=  gmime-2.6            0.1      # 619.0
 
 CATEGORIES=	mail devel
 
