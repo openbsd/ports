@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:35:55 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/10/20 13:14:21 benoit Exp $
 
 COMMENT=	SNMP framework for Python
 
-MODPY_EGG_VERSION = 4.2.4
+MODPY_EGG_VERSION = 4.2.5
 DISTNAME=	pysnmp-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:S/py/py-/}
 CATEGORIES=	net
