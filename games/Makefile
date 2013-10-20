@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.276 2013/10/13 20:40:57 bcallah Exp $
+# $OpenBSD: Makefile,v 1.277 2013/10/20 17:38:54 bentley Exp $
 
      SUBDIR =
      SUBDIR += abuse
@@ -215,6 +215,7 @@
      SUBDIR += valyriatear
      SUBDIR += vectoroids
      SUBDIR += vitetris
+     SUBDIR += vms-empire
      SUBDIR += vodovod
      SUBDIR += wanderer
      SUBDIR += warmux
@@ -244,6 +245,7 @@
      SUBDIR += xdeblock
      SUBDIR += xdino
      SUBDIR += xevil
+     SUBDIR += xgalaga-sdl
      SUBDIR += xgolgo
      SUBDIR += xinvaders
      SUBDIR += xjewel
