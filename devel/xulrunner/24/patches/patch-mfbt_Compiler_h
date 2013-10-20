@@ -1,0 +1,13 @@
+$OpenBSD: patch-mfbt_Compiler_h,v 1.1 2013/10/20 09:21:27 landry Exp $
+We dont want to enforce xulrunner users to build with gcc >= 4.4.
+--- mfbt/Compiler.h.orig	Sun Oct 20 11:17:08 2013
++++ mfbt/Compiler.h	Sun Oct 20 11:17:17 2013
+@@ -19,7 +19,7 @@
+      ((__GNUC__ * 10000 + __GNUC_MINOR__ * 100 + __GNUC_PATCHLEVEL__) \
+       >= ((major) * 10000 + (minor) * 100 + (patchlevel)))
+ #if !MOZ_GCC_VERSION_AT_LEAST(4, 4, 0)
+-#  error "mfbt (and Gecko) require at least gcc 4.4 to build."
++#  warning "mfbt (and Gecko) require at least gcc 4.4 to build."
+ #endif
+ 
+ #else
