@@ -1,13 +1,13 @@
-$OpenBSD: README-server,v 1.1 2012/07/01 10:26:35 sthen Exp $
+$OpenBSD: README-server,v 1.2 2013/10/20 21:01:20 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
 By default, the _dovecot user, and so the Dovecot processes run in
-the login(1) class of "daemon". On a busy server, it may be advisable
-to put the _dovecot user and processes in their own login(1) class
-with tuned resources, such as more open file descriptors etc.
+the login(1) class of "daemon". The default limits on file descriptors
+are insufficient to run Dovecot; instead you should put the _dovecot
+user and processes in their own login(1) class with tuned resources.
 
 For example, add this to the login.conf(5) file:
 
