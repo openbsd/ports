@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/19 14:19:33 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/10/21 08:51:36 sebastia Exp $
 bin/Camera
 libexec/GNUstep/Camera.app/
 @bin libexec/GNUstep/Camera.app/Camera
@@ -8,7 +8,6 @@ libexec/GNUstep/Camera.app/Resources/Camera.gorm/
 libexec/GNUstep/Camera.app/Resources/Camera.gorm/data.classes
 libexec/GNUstep/Camera.app/Resources/Camera.gorm/objects.gorm
 libexec/GNUstep/Camera.app/Resources/Camera.png
-libexec/GNUstep/Camera.app/Resources/Camera.tif
 libexec/GNUstep/Camera.app/Resources/CameraInfo.plist
 libexec/GNUstep/Camera.app/Resources/Info-gnustep.plist
 libexec/GNUstep/Camera.app/Resources/no_thumbnail.jpg
