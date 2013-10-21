@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2013/09/20 10:10:04 stu Exp $
+# $OpenBSD: Makefile,v 1.34 2013/10/21 19:14:55 naddy Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
 DISTNAME =		tk8.5.15
 PKGNAME =		tk-8.5.15
+REVISION =		0
 SHARED_LIBS =		tk85 0.12
 CATEGORIES =		x11 x11/tk
 HOMEPAGE =		http://www.tcl.tk/
@@ -26,9 +27,6 @@ FAKE_FLAGS =		INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
 			INSTALL_DATA="${INSTALL_DATA}" \
 			INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 			CONFIG_INSTALL_DIR='$$(SCRIPT_INSTALL_DIR)' \
-			MAN1_INSTALL_DIR='$$(MAN_INSTALL_DIR)/cat1' \
-			MAN3_INSTALL_DIR='$$(MAN_INSTALL_DIR)/cat3' \
-			MANN_INSTALL_DIR='$$(MAN_INSTALL_DIR)/catn' \
 			DEMO_INSTALL_DIR="${WRKINST}${TRUEPREFIX}/share/examples/tk8.5" \
 			TK_PKG_DIR='tcl/tk$$(VERSION)'
 

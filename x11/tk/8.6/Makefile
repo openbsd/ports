@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2013/09/22 10:35:44 stu Exp $
+# $OpenBSD: Makefile,v 1.6 2013/10/21 19:14:56 naddy Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
 DISTNAME =		tk8.6.1
 PKGNAME =		tk-8.6.1
+REVISION =		0
 SHARED_LIBS =		tk86 0.1
 CATEGORIES =		x11 x11/tk
 HOMEPAGE =		http://www.tcl.tk/
@@ -27,9 +28,6 @@ FAKE_FLAGS =		INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
 			INSTALL_DATA="${INSTALL_DATA}" \
 			INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 			CONFIG_INSTALL_DIR='$$(SCRIPT_INSTALL_DIR)' \
-			MAN1_INSTALL_DIR='$$(MAN_INSTALL_DIR)/cat1' \
-			MAN3_INSTALL_DIR='$$(MAN_INSTALL_DIR)/cat3' \
-			MANN_INSTALL_DIR='$$(MAN_INSTALL_DIR)/catn' \
 			DEMO_INSTALL_DIR="${WRKINST}${TRUEPREFIX}/share/examples/tk8.6" \
 			TK_PKG_DIR='tcl/tk$$(VERSION)'
 

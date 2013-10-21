@@ -1,7 +1,6 @@
-$OpenBSD: patch-unix_installManPage,v 1.2 2013/07/09 16:14:20 stu Exp $
+$OpenBSD: patch-unix_installManPage,v 1.3 2013/10/21 19:14:55 naddy Exp $
 
 Don't misrename manpages. Tcl bug 3604346.
-Cat'd pages look better.
 
 --- unix/installManPage.orig	Wed Dec 19 10:40:38 2012
 +++ unix/installManPage	Tue Jul  9 11:49:35 2013
@@ -14,22 +13,3 @@ Cat'd pages look better.
  #                               print the result and exit
  	p;q
      }' $ManPage`
-@@ -94,6 +94,9 @@ esac
- 
- SrcDir=`dirname $ManPage`
- 
-+Section=0
-+Cat='${LOCALBASE}/bin/groff -Tascii -mandoc -Wall -mtty-char -P -c -- -'
-+
- ########################################################################
- ### Process Page to Create Target Pages
- ###
-@@ -105,7 +108,7 @@ for Target in $Names; do
-     if test -z "$First" ; then
- 	First=$Target
- 	sed -e "/man\.macros/r $SrcDir/man.macros" -e "/man\.macros/d" \
--	    $ManPage > $Dir/$First
-+	    $ManPage | $Cat > $Dir/$First
- 	chmod 444 $Dir/$First
- 	$Gzip $Dir/$First
-     else

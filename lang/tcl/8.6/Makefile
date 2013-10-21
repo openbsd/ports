@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2013/09/22 10:33:12 stu Exp $
+# $OpenBSD: Makefile,v 1.8 2013/10/21 19:14:55 naddy Exp $
 
 COMMENT =		Tool Command Language
 
 DISTNAME =		tcl8.6.1
 PKGNAME =		tcl-8.6.1
+REVISION =		0
 SHARED_LIBS =		tcl86 0.1
 CATEGORIES =		lang lang/tcl
 HOMEPAGE =		http://www.tcl.tk/
@@ -21,10 +22,7 @@ MAKE_FLAGS +=		TCL_PACKAGE_PATH='$$(prefix)/lib/tcl' \
 			TCL_LIBRARY='$$(prefix)/lib/tcl/tcl$$(VERSION)'
 
 FAKE_FLAGS =		INSTALL_PACKAGE_TARGETS='' \
-			CONFIG_INSTALL_DIR='$$(SCRIPT_INSTALL_DIR)' \
-			MAN1_INSTALL_DIR='$$(MAN_INSTALL_DIR)/cat1' \
-			MAN3_INSTALL_DIR='$$(MAN_INSTALL_DIR)/cat3' \
-			MANN_INSTALL_DIR='$$(MAN_INSTALL_DIR)/catn'
+			CONFIG_INSTALL_DIR='$$(SCRIPT_INSTALL_DIR)'
 
 TEST_FLAGS =		HOME=${TESTHOME} TESTFLAGS="${TESTFLAGS}"
 SEPARATE_BUILD =	Yes
