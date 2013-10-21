@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.220 2013/09/30 13:30:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.221 2013/10/21 15:08:48 jasper Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -40,7 +40,6 @@
      SUBDIR += gedit-plugins
      SUBDIR += ghex
      SUBDIR += gjs
-     SUBDIR += gnote
      SUBDIR += grilo
      SUBDIR += grilo-plugins
      SUBDIR += gucharmap
