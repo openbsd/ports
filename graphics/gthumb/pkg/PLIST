@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2013/10/06 15:32:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2013/10/21 17:42:07 jasper Exp $
 @bin bin/gthumb
 include/gthumb-${API_V}/
 include/gthumb-${API_V}/gthumb/
@@ -295,6 +295,7 @@ share/gthumb/icons/hicolor/16x16/actions/site-flickr.png
 share/gthumb/icons/hicolor/16x16/actions/site-photobucket.png
 share/gthumb/icons/hicolor/16x16/actions/site-picasaweb.png
 share/gthumb/icons/hicolor/16x16/actions/site-twentythree.png
+share/gthumb/icons/hicolor/16x16/actions/tag.png
 share/gthumb/icons/hicolor/16x16/actions/tool-adjust-colors.png
 share/gthumb/icons/hicolor/16x16/actions/tool-adjust-contrast.png
 share/gthumb/icons/hicolor/16x16/actions/tool-crop.png
@@ -332,6 +333,7 @@ share/gthumb/icons/hicolor/22x22/actions/tool-sharpen.png
 share/gthumb/icons/hicolor/22x22/actions/zoom-fit-width.png
 share/gthumb/icons/hicolor/24x24/
 share/gthumb/icons/hicolor/24x24/actions/
+share/gthumb/icons/hicolor/24x24/actions/browser-mode.png
 share/gthumb/icons/hicolor/24x24/actions/zoom-fit-height.png
 share/gthumb/icons/hicolor/24x24/actions/zoom-fit-width.png
 share/gthumb/icons/hicolor/48x48/
