@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/21 11:09:38 sebastia Exp $
+@bin bin/ImpersonatorToolKit

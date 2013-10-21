@@ -1,0 +1,3 @@
+The ImpersonatorToolKit is sniffing ethernet traffic for web cookies, storing
+them into a sqlite3 database. Using the proxy interface in a browser will set
+the sniffed cookies into the browser.
