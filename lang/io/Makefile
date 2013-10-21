@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/06/21 22:37:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2013/10/21 15:29:37 jeremy Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS =i386 amd64
@@ -7,7 +7,7 @@ COMMENT =	embeddable prototype-based language
 
 DISTNAME =	stevedekorte-io-2011.09.12-106-g02f9800
 PKGNAME =	io-20110905
-REVISION =	6
+REVISION =	7
 
 CATEGORIES =	lang
 
@@ -35,6 +35,7 @@ WANTLIB += yajl z
 
 LIB_DEPENDS =	archivers/lzo2 \
 		audio/libsndfile \
+		databases/libdbi \
 		databases/mysql \
 		databases/qdbm \
 		devel/atk \

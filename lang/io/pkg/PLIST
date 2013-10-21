@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/12/17 23:55:29 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/10/21 15:29:37 jeremy Exp $
 @bin bin/io
 @bin bin/io_static
 include/io/
@@ -281,6 +281,37 @@ lib/io/addons/ContinuedFraction/samples/
 lib/io/addons/ContinuedFraction/samples/Sample.io
 lib/io/addons/ContinuedFraction/source/
 lib/io/addons/ContinuedFraction/source/IoContinuedFractionInit.c
+lib/io/addons/DBI/
+lib/io/addons/DBI/CMakeLists.txt
+lib/io/addons/DBI/_build/
+lib/io/addons/DBI/_build/binaries/
+lib/io/addons/DBI/_build/dll/
+lib/io/addons/DBI/_build/dll/libIoDBI.so
+lib/io/addons/DBI/_build/headers/
+lib/io/addons/DBI/_build/lib/
+lib/io/addons/DBI/_build/objs/
+lib/io/addons/DBI/depends
+lib/io/addons/DBI/io/
+lib/io/addons/DBI/io/DBIConn.io
+lib/io/addons/DBI/io/DBIRecord.io
+lib/io/addons/DBI/protos
+lib/io/addons/DBI/samples/
+lib/io/addons/DBI/samples/Person.io
+lib/io/addons/DBI/samples/benchmark.io
+lib/io/addons/DBI/samples/dbi_init.io
+lib/io/addons/DBI/samples/driver_info.io
+lib/io/addons/DBI/samples/dummydata.io
+lib/io/addons/DBI/samples/fetchobj.io
+lib/io/addons/DBI/samples/queryOne.io
+lib/io/addons/DBI/samples/simple.io
+lib/io/addons/DBI/source/
+lib/io/addons/DBI/source/IoDBI.c
+lib/io/addons/DBI/source/IoDBI.h
+lib/io/addons/DBI/source/IoDBIConn.c
+lib/io/addons/DBI/source/IoDBIConn.h
+lib/io/addons/DBI/source/IoDBIInit.c
+lib/io/addons/DBI/source/IoDBIResult.c
+lib/io/addons/DBI/source/IoDBIResult.h
 lib/io/addons/DistributedObjects/
 lib/io/addons/DistributedObjects/CMakeLists.txt
 lib/io/addons/DistributedObjects/_build/
