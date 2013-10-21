@@ -1,0 +1,11 @@
+$OpenBSD: patch-cmake_OpenCVFindLibsVideo_cmake,v 1.1 2013/10/21 22:46:27 zhuk Exp $
+--- cmake/OpenCVFindLibsVideo.cmake.orig	Fri Jun 28 19:47:30 2013
++++ cmake/OpenCVFindLibsVideo.cmake	Sat Jul 27 21:43:25 2013
+@@ -121,7 +121,6 @@ ocv_clear_vars(HAVE_LIBV4L HAVE_CAMV4L HAVE_CAMV4L2 HA
+ if(WITH_V4L)
+   CHECK_MODULE(libv4l1 HAVE_LIBV4L)
+   CHECK_INCLUDE_FILE(linux/videodev.h HAVE_CAMV4L)
+-  CHECK_INCLUDE_FILE(linux/videodev2.h HAVE_CAMV4L2)
+   CHECK_INCLUDE_FILE(sys/videoio.h HAVE_VIDEOIO)
+ endif(WITH_V4L)
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-cmake_OpenCVPCHSupport_cmake,v 1.1 2013/10/21 22:46:27 zhuk Exp $
+--- cmake/OpenCVPCHSupport.cmake.orig	Sun May 12 20:38:56 2013
++++ cmake/OpenCVPCHSupport.cmake	Sun May 12 20:39:31 2013
+@@ -20,7 +20,7 @@ IF(CMAKE_COMPILER_IS_GNUCXX)
+         OUTPUT_VARIABLE gcc_compiler_version)
+     #MESSAGE("GCC Version: ${gcc_compiler_version}")
+     IF(gcc_compiler_version VERSION_GREATER "4.2.-1")
+-        SET(PCHSupport_FOUND TRUE)
++        SET(PCHSupport_FOUND FALSE)
+     ENDIF()
+ 
+     SET(_PCH_include_prefix "-I")

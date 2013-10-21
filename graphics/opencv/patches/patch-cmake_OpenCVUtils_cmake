@@ -1,0 +1,40 @@
+$OpenBSD: patch-cmake_OpenCVUtils_cmake,v 1.1 2013/10/21 22:46:27 zhuk Exp $
+--- cmake/OpenCVUtils.cmake.orig	Fri Jun 28 19:47:30 2013
++++ cmake/OpenCVUtils.cmake	Sat Jul 27 21:43:25 2013
+@@ -227,11 +227,31 @@ macro(CHECK_MODULE module_name define)
+         endif()
+       endforeach()
+ 
+-      foreach(P "${ALIAS_LIBRARY_DIRS}")
+-        if(${P})
+-          list(APPEND HIGHGUI_LIBRARY_DIRS ${${P}})
+-        endif()
+-      endforeach()
++      # Find exact libraries to allow building OpenCV when another
++      # version is installed.
++      set(LL)
++      set(LDIRS)
++      foreach(L ${${ALIAS_LIBRARIES}})
++        set("${ALIAS}_LIBRARY_${L}")
++        find_library("${ALIAS}_LIBRARY_${L}" NAMES ${L}
++          HINTS ${${ALIAS_LIBRARY_DIRS}}
++          )
++        if(${ALIAS}_LIBRARY_${L})
++          list(APPEND LL "${${ALIAS}_LIBRARY_${L}}")
++        else(${ALIAS}_LIBRARY_${L})
++          list(APPEND LL "${L}")
++          set(LDIRS ${${ALIAS_LIBRARY_DIRS}})
++        endif(${ALIAS}_LIBRARY_${L})
++      endforeach(L ${ALIAS_LIBRARIES})
++      set(${ALIAS_LIBRARIES} ${LL}
++        CACHE INTERNAL "Libraries to link to ${module_name}")
++      set(${ALIAS_LIBRARY_DIRS} ${LDIRS}
++        CACHE INTERNAL "Library directories to use when linking to ${module_name}")
++      if(${ALIAS_LIBRARY_DIRS})
++        message("-- Adding ${${ALIAS_LIBRARY_DIRS}} to link_directories for ${module_name}.")
++        message("   This could break build if OpenCV is already installed!")
++        link_directories(${${ALIAS_LIBRARY_DIRS}})
++      endif(${ALIAS_LIBRARY_DIRS})
+ 
+       list(APPEND HIGHGUI_LIBRARIES ${${ALIAS_LIBRARIES}})
+     endif()

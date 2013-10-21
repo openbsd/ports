@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2011/06/24 09:30:22 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2013/10/21 22:46:29 zhuk Exp $
 @bin bin/opencv_createsamples
 @bin bin/opencv_haartraining
 @bin bin/opencv_performance
@@ -20,12 +20,21 @@ include/opencv2/calib3d/
 include/opencv2/calib3d/calib3d.hpp
 include/opencv2/contrib/
 include/opencv2/contrib/contrib.hpp
+include/opencv2/contrib/detection_based_tracker.hpp
+include/opencv2/contrib/hybridtracker.hpp
+include/opencv2/contrib/openfabmap.hpp
+include/opencv2/contrib/retina.hpp
 include/opencv2/core/
 include/opencv2/core/core.hpp
 include/opencv2/core/core_c.h
+include/opencv2/core/cuda_devptrs.hpp
+include/opencv2/core/devmem2d.hpp
 include/opencv2/core/eigen.hpp
+include/opencv2/core/gpumat.hpp
 include/opencv2/core/internal.hpp
 include/opencv2/core/mat.hpp
+include/opencv2/core/opengl_interop.hpp
+include/opencv2/core/opengl_interop_deprecated.hpp
 include/opencv2/core/operations.hpp
 include/opencv2/core/types_c.h
 include/opencv2/core/version.hpp
@@ -35,23 +44,34 @@ include/opencv2/features2d/features2d.hpp
 include/opencv2/flann/
 include/opencv2/flann/all_indices.h
 include/opencv2/flann/allocator.h
+include/opencv2/flann/any.h
 include/opencv2/flann/autotuned_index.h
 include/opencv2/flann/composite_index.h
+include/opencv2/flann/config.h
+include/opencv2/flann/defines.h
 include/opencv2/flann/dist.h
+include/opencv2/flann/dummy.h
+include/opencv2/flann/dynamic_bitset.h
 include/opencv2/flann/flann.hpp
 include/opencv2/flann/flann_base.hpp
 include/opencv2/flann/general.h
 include/opencv2/flann/ground_truth.h
 include/opencv2/flann/hdf5.h
 include/opencv2/flann/heap.h
+include/opencv2/flann/hierarchical_clustering_index.h
 include/opencv2/flann/index_testing.h
 include/opencv2/flann/kdtree_index.h
+include/opencv2/flann/kdtree_single_index.h
 include/opencv2/flann/kmeans_index.h
 include/opencv2/flann/linear_index.h
 include/opencv2/flann/logger.h
+include/opencv2/flann/lsh_index.h
+include/opencv2/flann/lsh_table.h
 include/opencv2/flann/matrix.h
+include/opencv2/flann/miniflann.hpp
 include/opencv2/flann/nn_index.h
 include/opencv2/flann/object_factory.h
+include/opencv2/flann/params.h
 include/opencv2/flann/random.h
 include/opencv2/flann/result_set.h
 include/opencv2/flann/sampling.h
@@ -59,13 +79,48 @@ include/opencv2/flann/saving.h
 include/opencv2/flann/simplex_downhill.h
 include/opencv2/flann/timer.h
 include/opencv2/gpu/
+include/opencv2/gpu/device/
+include/opencv2/gpu/device/block.hpp
+include/opencv2/gpu/device/border_interpolate.hpp
+include/opencv2/gpu/device/color.hpp
+include/opencv2/gpu/device/common.hpp
+include/opencv2/gpu/device/datamov_utils.hpp
+include/opencv2/gpu/device/detail/
+include/opencv2/gpu/device/detail/color_detail.hpp
+include/opencv2/gpu/device/detail/reduce.hpp
+include/opencv2/gpu/device/detail/reduce_key_val.hpp
+include/opencv2/gpu/device/detail/transform_detail.hpp
+include/opencv2/gpu/device/detail/type_traits_detail.hpp
+include/opencv2/gpu/device/detail/vec_distance_detail.hpp
+include/opencv2/gpu/device/dynamic_smem.hpp
+include/opencv2/gpu/device/emulation.hpp
+include/opencv2/gpu/device/filters.hpp
+include/opencv2/gpu/device/funcattrib.hpp
+include/opencv2/gpu/device/functional.hpp
+include/opencv2/gpu/device/limits.hpp
+include/opencv2/gpu/device/reduce.hpp
+include/opencv2/gpu/device/saturate_cast.hpp
+include/opencv2/gpu/device/scan.hpp
+include/opencv2/gpu/device/simd_functions.hpp
+include/opencv2/gpu/device/static_check.hpp
+include/opencv2/gpu/device/transform.hpp
+include/opencv2/gpu/device/type_traits.hpp
+include/opencv2/gpu/device/utility.hpp
+include/opencv2/gpu/device/vec_distance.hpp
+include/opencv2/gpu/device/vec_math.hpp
+include/opencv2/gpu/device/vec_traits.hpp
+include/opencv2/gpu/device/warp.hpp
+include/opencv2/gpu/device/warp_reduce.hpp
+include/opencv2/gpu/device/warp_shuffle.hpp
 include/opencv2/gpu/devmem2d.hpp
 include/opencv2/gpu/gpu.hpp
-include/opencv2/gpu/matrix_operations.hpp
+include/opencv2/gpu/gpumat.hpp
 include/opencv2/gpu/stream_accessor.hpp
 include/opencv2/highgui/
+include/opencv2/highgui/cap_ios.h
 include/opencv2/highgui/highgui.hpp
 include/opencv2/highgui/highgui_c.h
+include/opencv2/highgui/ios.h
 include/opencv2/imgproc/
 include/opencv2/imgproc/imgproc.hpp
 include/opencv2/imgproc/imgproc_c.h
@@ -77,12 +132,58 @@ include/opencv2/legacy/legacy.hpp
 include/opencv2/legacy/streams.hpp
 include/opencv2/ml/
 include/opencv2/ml/ml.hpp
+include/opencv2/nonfree/
+include/opencv2/nonfree/features2d.hpp
+include/opencv2/nonfree/gpu.hpp
+include/opencv2/nonfree/nonfree.hpp
+include/opencv2/nonfree/ocl.hpp
 include/opencv2/objdetect/
 include/opencv2/objdetect/objdetect.hpp
 include/opencv2/opencv.hpp
+include/opencv2/opencv_modules.hpp
+include/opencv2/photo/
+include/opencv2/photo/photo.hpp
+include/opencv2/photo/photo_c.h
+include/opencv2/stitching/
+include/opencv2/stitching/detail/
+include/opencv2/stitching/detail/autocalib.hpp
+include/opencv2/stitching/detail/blenders.hpp
+include/opencv2/stitching/detail/camera.hpp
+include/opencv2/stitching/detail/exposure_compensate.hpp
+include/opencv2/stitching/detail/matchers.hpp
+include/opencv2/stitching/detail/motion_estimators.hpp
+include/opencv2/stitching/detail/seam_finders.hpp
+include/opencv2/stitching/detail/util.hpp
+include/opencv2/stitching/detail/util_inl.hpp
+include/opencv2/stitching/detail/warpers.hpp
+include/opencv2/stitching/detail/warpers_inl.hpp
+include/opencv2/stitching/stitcher.hpp
+include/opencv2/stitching/warpers.hpp
+include/opencv2/superres/
+include/opencv2/superres/optical_flow.hpp
+include/opencv2/superres/superres.hpp
+include/opencv2/ts/
+include/opencv2/ts/gpu_perf.hpp
+include/opencv2/ts/gpu_test.hpp
+include/opencv2/ts/ts.hpp
+include/opencv2/ts/ts_gtest.h
+include/opencv2/ts/ts_perf.hpp
 include/opencv2/video/
 include/opencv2/video/background_segm.hpp
 include/opencv2/video/tracking.hpp
+include/opencv2/video/video.hpp
+include/opencv2/videostab/
+include/opencv2/videostab/deblurring.hpp
+include/opencv2/videostab/fast_marching.hpp
+include/opencv2/videostab/fast_marching_inl.hpp
+include/opencv2/videostab/frame_source.hpp
+include/opencv2/videostab/global_motion.hpp
+include/opencv2/videostab/inpainting.hpp
+include/opencv2/videostab/log.hpp
+include/opencv2/videostab/motion_stabilizing.hpp
+include/opencv2/videostab/optical_flow.hpp
+include/opencv2/videostab/stabilizer.hpp
+include/opencv2/videostab/videostab.hpp
 @lib lib/libopencv_calib3d.so.${LIBopencv_calib3d_VERSION}
 @lib lib/libopencv_contrib.so.${LIBopencv_contrib_VERSION}
 @lib lib/libopencv_core.so.${LIBopencv_core_VERSION}
@@ -93,31 +194,45 @@ include/opencv2/video/tracking.hpp
 @lib lib/libopencv_imgproc.so.${LIBopencv_imgproc_VERSION}
 @lib lib/libopencv_legacy.so.${LIBopencv_legacy_VERSION}
 @lib lib/libopencv_ml.so.${LIBopencv_ml_VERSION}
+@lib lib/libopencv_nonfree.so.${LIBopencv_nonfree_VERSION}
 @lib lib/libopencv_objdetect.so.${LIBopencv_objdetect_VERSION}
+@lib lib/libopencv_photo.so.${LIBopencv_photo_VERSION}
+@lib lib/libopencv_stitching.so.${LIBopencv_stitching_VERSION}
+@lib lib/libopencv_superres.so.${LIBopencv_superres_VERSION}
+@lib lib/libopencv_ts.so.${LIBopencv_ts_VERSION}
 @lib lib/libopencv_video.so.${LIBopencv_video_VERSION}
+@lib lib/libopencv_videostab.so.${LIBopencv_videostab_VERSION}
 lib/pkgconfig/opencv.pc
-lib/python${MODPY_VERSION}/site-packages/cv.so
-share/opencv/
-share/opencv/OpenCVConfig.cmake
-share/opencv/haarcascades/
-share/opencv/haarcascades/haarcascade_eye.xml
-share/opencv/haarcascades/haarcascade_eye_tree_eyeglasses.xml
-share/opencv/haarcascades/haarcascade_frontalface_alt.xml
-share/opencv/haarcascades/haarcascade_frontalface_alt2.xml
-share/opencv/haarcascades/haarcascade_frontalface_alt_tree.xml
-share/opencv/haarcascades/haarcascade_frontalface_default.xml
-share/opencv/haarcascades/haarcascade_fullbody.xml
-share/opencv/haarcascades/haarcascade_lefteye_2splits.xml
-share/opencv/haarcascades/haarcascade_lowerbody.xml
-share/opencv/haarcascades/haarcascade_mcs_eyepair_big.xml
-share/opencv/haarcascades/haarcascade_mcs_eyepair_small.xml
-share/opencv/haarcascades/haarcascade_mcs_lefteye.xml
-share/opencv/haarcascades/haarcascade_mcs_mouth.xml
-share/opencv/haarcascades/haarcascade_mcs_nose.xml
-share/opencv/haarcascades/haarcascade_mcs_righteye.xml
-share/opencv/haarcascades/haarcascade_mcs_upperbody.xml
-share/opencv/haarcascades/haarcascade_profileface.xml
-share/opencv/haarcascades/haarcascade_righteye_2splits.xml
-share/opencv/haarcascades/haarcascade_upperbody.xml
-share/opencv/lbpcascades/
-share/opencv/lbpcascades/lbpcascade_frontalface.xml
+lib/python${MODPY_VERSION}/site-packages/cv.py
+lib/python${MODPY_VERSION}/site-packages/cv.pyc
+lib/python${MODPY_VERSION}/site-packages/cv2.so
+share/OpenCV/
+share/OpenCV/OpenCVConfig-version.cmake
+share/OpenCV/OpenCVConfig.cmake
+share/OpenCV/haarcascades/
+share/OpenCV/haarcascades/haarcascade_eye.xml
+share/OpenCV/haarcascades/haarcascade_eye_tree_eyeglasses.xml
+share/OpenCV/haarcascades/haarcascade_frontalface_alt.xml
+share/OpenCV/haarcascades/haarcascade_frontalface_alt2.xml
+share/OpenCV/haarcascades/haarcascade_frontalface_alt_tree.xml
+share/OpenCV/haarcascades/haarcascade_frontalface_default.xml
+share/OpenCV/haarcascades/haarcascade_fullbody.xml
+share/OpenCV/haarcascades/haarcascade_lefteye_2splits.xml
+share/OpenCV/haarcascades/haarcascade_lowerbody.xml
+share/OpenCV/haarcascades/haarcascade_mcs_eyepair_big.xml
+share/OpenCV/haarcascades/haarcascade_mcs_eyepair_small.xml
+share/OpenCV/haarcascades/haarcascade_mcs_leftear.xml
+share/OpenCV/haarcascades/haarcascade_mcs_lefteye.xml
+share/OpenCV/haarcascades/haarcascade_mcs_mouth.xml
+share/OpenCV/haarcascades/haarcascade_mcs_nose.xml
+share/OpenCV/haarcascades/haarcascade_mcs_rightear.xml
+share/OpenCV/haarcascades/haarcascade_mcs_righteye.xml
+share/OpenCV/haarcascades/haarcascade_mcs_upperbody.xml
+share/OpenCV/haarcascades/haarcascade_profileface.xml
+share/OpenCV/haarcascades/haarcascade_righteye_2splits.xml
+share/OpenCV/haarcascades/haarcascade_smile.xml
+share/OpenCV/haarcascades/haarcascade_upperbody.xml
+share/OpenCV/lbpcascades/
+share/OpenCV/lbpcascades/lbpcascade_frontalface.xml
+share/OpenCV/lbpcascades/lbpcascade_profileface.xml
+share/OpenCV/lbpcascades/lbpcascade_silverware.xml

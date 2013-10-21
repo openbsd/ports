@@ -1,0 +1,14 @@
+$OpenBSD: patch-modules_java_CMakeLists_txt,v 1.1 2013/10/21 22:46:28 zhuk Exp $
+JNI shared object is installed in the same directory, so this should
+be under lib/.
+--- modules/java/CMakeLists.txt.orig	Sat Jul 27 23:22:08 2013
++++ modules/java/CMakeLists.txt	Sat Jul 27 23:28:22 2013
+@@ -263,7 +263,7 @@ else(ANDROID)
+   if(WIN32)
+     set(JAR_INSTALL_DIR java)
+   else(WIN32)
+-    set(JAR_INSTALL_DIR share/OpenCV/java)
++    set(JAR_INSTALL_DIR lib/OpenCV/java)
+   endif(WIN32)
+   install(FILES ${JAR_FILE} DESTINATION ${JAR_INSTALL_DIR} COMPONENT main)
+ endif(ANDROID)
