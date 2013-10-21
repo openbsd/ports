@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2013/05/17 09:40:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.72 2013/10/21 09:34:42 landry Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
@@ -18,7 +18,7 @@ REVISION-swt=		5
 PKGNAME-gnome=		swt-gnome-${ECLIPSE_VER}
 REVISION-gnome=		5
 PKGNAME-browser=	swt-browser-${ECLIPSE_VER}
-REVISION-browser=	8
+REVISION-browser=	9
 SHARED_LIBS=		swt-atk-gtk-3236	4.0 \
 			swt-awt-gtk-3236	4.0 \
 			swt-gtk-3236		4.0 \
@@ -54,7 +54,7 @@ VMEM_WARNING=		Yes
 MODULES=		java devel/gettext
 MODJAVA_VER=		1.6+
 
-BUILD_DEPENDS=		devel/xulrunner/1.9,-devel>=1.9 \
+BUILD_DEPENDS=		devel/xulrunner/1.9,-devel \
 			devel/apache-ant>=1.6.1
 
 USE_GMAKE=		Yes
@@ -85,7 +85,7 @@ LIB_DEPENDS-gnome=	x11/gnome/libgnomeui
 WANTLIB-gnome=		gnome-2 gnomevfs-2 gnomeui-2
 
 RUN_DEPENDS-browser=	swt-${ECLIPSE_VER}:devel/eclipse/sdk,-swt
-LIB_DEPENDS-browser=	devel/xulrunner/1.9>=1.9
+LIB_DEPENDS-browser=	devel/xulrunner/1.9
 WANTLIB-browser=	xulrunner1.9/xpcom xulrunner1.9/xul c nspr4 plc4 plds4 m stdc++
 
 MOZILLA_HOME=		${LOCALBASE}/xulrunner1.9
