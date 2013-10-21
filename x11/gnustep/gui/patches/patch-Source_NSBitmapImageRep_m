@@ -1,0 +1,17 @@
+$OpenBSD: patch-Source_NSBitmapImageRep_m,v 1.1 2013/10/21 08:49:09 sebastia Exp $
+
+Fix 16Bit png images, from upstream
+
+--- Source/NSBitmapImageRep.m.orig	Fri Feb 22 16:39:29 2013
++++ Source/NSBitmapImageRep.m	Mon Oct 21 10:41:06 2013
+@@ -834,8 +834,8 @@ _set_bit_value(unsigned char *base, long msb_off, int 
+   all = ((1<<bit_width)-1) << shift;
+ 
+   if (byte1 != byte2)
+-    base[byte1] = (value >> 8) | (base[byte1] ^ (all >> 8));
+-  base[byte2] = (value & 255) | (base[byte2] ^ (all & 255));
++    base[byte1] = (value >> 8) | (base[byte1] & ~(all >> 8));
++  base[byte2] = (value & 255) | (base[byte2] & ~(all & 255));
+ }
+ 
+ /**
