@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/09/26 13:25:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/10/21 17:02:52 jasper Exp $
 include/goa-1.0/
 include/goa-1.0/goa/
 include/goa-1.0/goa/goa-generated.h
@@ -198,6 +198,9 @@ share/icons/hicolor/scalable/apps/im-silc.svg
 share/icons/hicolor/scalable/apps/im-sip.svg
 share/icons/hicolor/scalable/apps/im-yahoo.svg
 share/icons/hicolor/scalable/apps/im-zephyr.svg
+share/locale/af/
+share/locale/af/LC_MESSAGES/
+share/locale/af/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/an/
 share/locale/an/LC_MESSAGES/
 share/locale/an/LC_MESSAGES/gnome-online-accounts-tpaw.mo
