@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2013/09/28 08:51:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2013/10/21 17:28:40 jasper Exp $
 
 COMMENT=		contacts manager for GNOME
 
 GNOME_PROJECT=		gnome-contacts
-GNOME_VERSION=		3.10
-REVISION=		0
+GNOME_VERSION=		3.10.1
 
 CATEGORIES=		productivity
 
