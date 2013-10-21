@@ -1,0 +1,2 @@
+PcapKit is a simple Objective-C wrapper around libpcap, supporting a
+large part of its functionality.
