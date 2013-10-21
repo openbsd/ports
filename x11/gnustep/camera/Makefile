@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/10/19 14:19:33 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2013/10/21 08:16:00 sebastia Exp $
 
 COMMENT =	GNUstep frontent to libgphoto2
 
@@ -11,7 +11,7 @@ MASTER_SITES =	http://download.gna.org/gsimageapps/
 
 MODULES =	x11/gnustep
 WANTLIB =	c m pthread gphoto2 gphoto2_port
-LIB_DEPENDS =	x11/gnustep/camerakit
+LIB_DEPENDS =	graphics/libgphoto2
 
 WRKDIST = 	${WRKDIR}/Camera
 
