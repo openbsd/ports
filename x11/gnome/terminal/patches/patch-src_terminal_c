@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_terminal_c,v 1.6 2013/08/27 16:53:10 ajacoutot Exp $
+$OpenBSD: patch-src_terminal_c,v 1.7 2013/10/21 15:31:50 jasper Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=705902
 
---- src/terminal.c.orig	Mon Apr 15 15:51:46 2013
-+++ src/terminal.c	Mon Apr 15 20:55:57 2013
-@@ -230,7 +230,11 @@ main (int argc, char **argv)
+--- src/terminal.c.orig	Tue Oct  8 22:17:46 2013
++++ src/terminal.c	Mon Oct 21 17:25:39 2013
+@@ -233,7 +233,11 @@ main (int argc, char **argv)
     * because we want to use the value from PWD (if it is correct).
     * See bug 502146.
     */
