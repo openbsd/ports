@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2013/10/19 14:33:40 sebastia Exp $
+# $OpenBSD: Makefile,v 1.41 2013/10/21 11:10:50 sebastia Exp $
 
      SUBDIR =
      SUBDIR += aclock
@@ -33,6 +33,7 @@
      SUBDIR += gworkspace
      SUBDIR += highlighterkit
      SUBDIR += imageviewer
+     SUBDIR += impersonatortoolkit
      SUBDIR += jigsaw
      SUBDIR += lapispuzzle
      SUBDIR += laternamagica
@@ -44,6 +45,7 @@
      SUBDIR += netclasses
      SUBDIR += paje
      SUBDIR += pantomime
+     SUBDIR += pcapkit
      SUBDIR += pdfkit
      SUBDIR += performance
      SUBDIR += price
