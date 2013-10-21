@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2013/09/26 09:33:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.17 2013/10/21 15:25:02 jasper Exp $
 @conflict gnome-applets2-<=2.22.0
 include/libgweather-3.0/
 include/libgweather-3.0/libgweather/
@@ -30,15 +30,12 @@ share/gtk-doc/html/libgweather-3.0/ch01.html
 share/gtk-doc/html/libgweather-3.0/home.png
 share/gtk-doc/html/libgweather-3.0/index.html
 share/gtk-doc/html/libgweather-3.0/index.sgml
-share/gtk-doc/html/libgweather-3.0/left-insensitive.png
 share/gtk-doc/html/libgweather-3.0/left.png
 share/gtk-doc/html/libgweather-3.0/libgweather-3.0.devhelp2
 share/gtk-doc/html/libgweather-3.0/libgweather-GWeatherInfo.html
 share/gtk-doc/html/libgweather-3.0/object-tree.html
-share/gtk-doc/html/libgweather-3.0/right-insensitive.png
 share/gtk-doc/html/libgweather-3.0/right.png
 share/gtk-doc/html/libgweather-3.0/style.css
-share/gtk-doc/html/libgweather-3.0/up-insensitive.png
 share/gtk-doc/html/libgweather-3.0/up.png
 share/icons/gnome/16x16/status/weather-clear-night-000.png
 share/icons/gnome/16x16/status/weather-clear-night-010.png
