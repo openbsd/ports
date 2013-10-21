@@ -1,19 +1,22 @@
-# $OpenBSD: Makefile,v 1.7 2013/10/05 06:48:19 sebastia Exp $
+# $OpenBSD: Makefile,v 1.8 2013/10/21 09:07:27 sebastia Exp $
 
 COMMENT =	GNUstep desktop meta-package
 
 VERSION =	0.9.2
-REVISION =	1
+REVISION =	2
 PKGNAME =	gnustep-desktop-${VERSION}
 
 RUN_DEPENDS += \
 		x11/gnustep/aclock \
 		x11/gnustep/affiche \
 		x11/gnustep/batmon \
+		x11/gnustep/camera \
+		x11/gnustep/camerakit \
 		x11/gnustep/corebase \
 		x11/gnustep/cdplayer \
 		x11/gnustep/cynthiune \
 		x11/gnustep/databasin \
+		x11/gnustep/displaycalibrator \
 		x11/gnustep/edenmath \
 		x11/gnustep/examples \
 		x11/gnustep/fisicalab \
