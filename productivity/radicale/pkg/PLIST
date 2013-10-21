@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/03/08 10:38:01 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/10/21 09:47:19 jung Exp $
 @newgroup _radicale:672
 @newuser _radicale:672:_radicale:daemon:radicale user:/nonexistent:/sbin/nologin
 bin/radicale
@@ -8,28 +8,41 @@ lib/python${MODPY_VERSION}/site-packages/radicale/__init__.py
 lib/python${MODPY_VERSION}/site-packages/radicale/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/radicale/__main__.py
 lib/python${MODPY_VERSION}/site-packages/radicale/__main__.pyc
-lib/python${MODPY_VERSION}/site-packages/radicale/acl/
-lib/python${MODPY_VERSION}/site-packages/radicale/acl/IMAP.py
-lib/python${MODPY_VERSION}/site-packages/radicale/acl/IMAP.pyc
-lib/python${MODPY_VERSION}/site-packages/radicale/acl/LDAP.py
-lib/python${MODPY_VERSION}/site-packages/radicale/acl/LDAP.pyc
-lib/python${MODPY_VERSION}/site-packages/radicale/acl/PAM.py
-lib/python${MODPY_VERSION}/site-packages/radicale/acl/PAM.pyc
-lib/python${MODPY_VERSION}/site-packages/radicale/acl/__init__.py
-lib/python${MODPY_VERSION}/site-packages/radicale/acl/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/radicale/acl/courier.py
-lib/python${MODPY_VERSION}/site-packages/radicale/acl/courier.pyc
-lib/python${MODPY_VERSION}/site-packages/radicale/acl/htpasswd.py
-lib/python${MODPY_VERSION}/site-packages/radicale/acl/htpasswd.pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/auth/
+lib/python${MODPY_VERSION}/site-packages/radicale/auth/IMAP.py
+lib/python${MODPY_VERSION}/site-packages/radicale/auth/IMAP.pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/auth/LDAP.py
+lib/python${MODPY_VERSION}/site-packages/radicale/auth/LDAP.pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/auth/PAM.py
+lib/python${MODPY_VERSION}/site-packages/radicale/auth/PAM.pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/auth/__init__.py
+lib/python${MODPY_VERSION}/site-packages/radicale/auth/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/auth/courier.py
+lib/python${MODPY_VERSION}/site-packages/radicale/auth/courier.pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/auth/htpasswd.py
+lib/python${MODPY_VERSION}/site-packages/radicale/auth/htpasswd.pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/auth/http.py
+lib/python${MODPY_VERSION}/site-packages/radicale/auth/http.pyc
 lib/python${MODPY_VERSION}/site-packages/radicale/config.py
 lib/python${MODPY_VERSION}/site-packages/radicale/config.pyc
 lib/python${MODPY_VERSION}/site-packages/radicale/ical.py
 lib/python${MODPY_VERSION}/site-packages/radicale/ical.pyc
 lib/python${MODPY_VERSION}/site-packages/radicale/log.py
 lib/python${MODPY_VERSION}/site-packages/radicale/log.pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/rights/
+lib/python${MODPY_VERSION}/site-packages/radicale/rights/__init__.py
+lib/python${MODPY_VERSION}/site-packages/radicale/rights/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/rights/from_file.py
+lib/python${MODPY_VERSION}/site-packages/radicale/rights/from_file.pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/rights/owner_only.py
+lib/python${MODPY_VERSION}/site-packages/radicale/rights/owner_only.pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/rights/owner_write.py
+lib/python${MODPY_VERSION}/site-packages/radicale/rights/owner_write.pyc
 lib/python${MODPY_VERSION}/site-packages/radicale/storage/
 lib/python${MODPY_VERSION}/site-packages/radicale/storage/__init__.py
 lib/python${MODPY_VERSION}/site-packages/radicale/storage/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/storage/database.py
+lib/python${MODPY_VERSION}/site-packages/radicale/storage/database.pyc
 lib/python${MODPY_VERSION}/site-packages/radicale/storage/filesystem.py
 lib/python${MODPY_VERSION}/site-packages/radicale/storage/filesystem.pyc
 lib/python${MODPY_VERSION}/site-packages/radicale/xmlutils.py

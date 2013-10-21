@@ -1,6 +1,6 @@
-$OpenBSD: patch-radicale_config_py,v 1.6 2013/03/08 10:38:01 jasper Exp $
---- radicale/config.py.orig	Fri Aug  3 14:04:39 2012
-+++ radicale/config.py	Sun Feb 24 17:39:19 2013
+$OpenBSD: patch-radicale_config_py,v 1.7 2013/10/21 09:47:19 jung Exp $
+--- radicale/config.py.orig	Fri Jun 28 16:35:07 2013
++++ radicale/config.py	Sun Oct 20 14:46:24 2013
 @@ -43,8 +43,8 @@ INITIAL_CONFIG = {
          "daemon": "False",
          "pid": "",
@@ -9,35 +9,33 @@ $OpenBSD: patch-radicale_config_py,v 1.6 2013/03/08 10:38:01 jasper Exp $
 -        "key": "/etc/apache2/ssl/server.key",
 +        "certificate": "${SYSCONFDIR}/radicale/server.crt",
 +        "key": "${SYSCONFDIR}/radicale/private/server.key",
-         "dns_lookup": "True"},
-     "encoding": {
-         "request": "utf-8",
-@@ -53,7 +53,7 @@ INITIAL_CONFIG = {
+         "dns_lookup": "True",
+         "base_prefix": "/",
+         "realm": "Radicale - Password Required"},
+@@ -55,7 +55,7 @@ INITIAL_CONFIG = {
          "type": "None",
          "public_users": "public",
          "private_users": "private",
 -        "htpasswd_filename": "/etc/radicale/users",
 +        "htpasswd_filename": "${SYSCONFDIR}/radicale/users",
          "htpasswd_encryption": "crypt",
-         "imap_auth_host_name": "localhost",
-         "imap_auth_host_port": "143",
-@@ -68,12 +68,10 @@ INITIAL_CONFIG = {
-         "courier_socket": ""},
+         "imap_hostname": "localhost",
+         "imap_port": "143",
+@@ -77,11 +77,10 @@ INITIAL_CONFIG = {
+         "file": ""},
      "storage": {
          "type": "filesystem",
 -        "filesystem_folder": os.path.expanduser(
 -            "~/.config/radicale/collections"),
--        "git_folder": os.path.expanduser(
--            "~/.config/radicale/collections")},
-+        "filesystem_folder": "/var/db//radicale/calendars",
-+        "git_folder": "/var/db/radicale/calendars"},
++        "filesystem_folder": "/var/db/radicale/calendars",
+         "database_url": ""},
      "logging": {
 -        "config": "/etc/radicale/logging",
 +        "config": "${SYSCONFDIR}/radicale/logging",
          "debug": "False",
          "full_environment": "False"}}
  
-@@ -85,7 +83,7 @@ for section, values in INITIAL_CONFIG.items():
+@@ -93,7 +92,7 @@ for section, values in INITIAL_CONFIG.items():
      for key, value in values.items():
          _CONFIG_PARSER.set(section, key, value)
  

@@ -1,6 +1,6 @@
-$OpenBSD: patch-config,v 1.5 2012/05/23 18:02:09 sthen Exp $
---- config.orig	Tue Mar 13 13:45:35 2012
-+++ config	Wed May 23 19:20:15 2012
+$OpenBSD: patch-config,v 1.6 2013/10/21 09:47:19 jung Exp $
+--- config.orig	Fri Jun 28 16:37:37 2013
++++ config	Fri Oct 18 17:39:40 2013
 @@ -22,9 +22,9 @@ pid =
  # SSL flag, enable HTTPS protocol
  ssl = False
@@ -12,8 +12,8 @@ $OpenBSD: patch-config,v 1.5 2012/05/23 18:02:09 sthen Exp $
 +key = ${SYSCONFDIR}/radicale/private/server.key
  # Reverse DNS to resolve client address in logs
  dns_lookup = True
- 
-@@ -47,10 +47,10 @@ public_users = public
+ # Root URL of Radicale (starting and ending with a slash)
+@@ -51,10 +51,10 @@ public_users = public
  private_users = private
  
  # Htpasswd filename
@@ -26,16 +26,25 @@ $OpenBSD: patch-config,v 1.5 2012/05/23 18:02:09 sthen Exp $
  
  # LDAP server URL, with protocol and port
  ldap_url = ldap://localhost:389/
-@@ -83,15 +83,14 @@ courier_socket =
+@@ -100,7 +100,7 @@ http_password_parameter =
+ type = None
+ 
+ # File for rights management from_file
+-file = ~/.config/radicale/rights
++file = ${SYSCONFDIR}/config/radicale/rights
+ 
+ 
+ [storage]
+@@ -109,7 +109,7 @@ file = ~/.config/radicale/rights
  type = filesystem
  
  # Folder for storing local collections, created if not present
 -filesystem_folder = ~/.config/radicale/collections
 +filesystem_folder = /var/db/radicale/calendars
  
--
- [logging]
- # Logging configuration file
+ # Database URL for SQLAlchemy
+ # dialect+driver://user:password@host/dbname[?key=value..]
+@@ -123,7 +123,7 @@ database_url =
  # If no config is given, simple information is printed on the standard output
  # For more information about the syntax of the configuration file, see:
  # http://docs.python.org/library/logging.config.html
