@@ -1,10 +1,10 @@
-$OpenBSD: patch-tests_Makefile_in,v 1.1 2013/05/30 17:57:21 jasper Exp $
+$OpenBSD: patch-tests_Makefile_in,v 1.2 2013/10/21 17:32:15 jasper Exp $
 
 cc1: error: unrecognized command line option "-Wno-unused-parameters"
 
---- tests/Makefile.in.orig	Thu May 30 21:48:43 2013
-+++ tests/Makefile.in	Thu May 30 21:48:50 2013
-@@ -323,7 +323,7 @@ top_srcdir = @top_srcdir@
+--- tests/Makefile.in.orig	Wed Oct 16 14:42:32 2013
++++ tests/Makefile.in	Mon Oct 21 19:29:40 2013
+@@ -583,7 +583,7 @@ top_srcdir = @top_srcdir@
  SUBDIRS = gtest
  common_cflags = \
  	$(LIBGUPNP_CFLAGS) \
