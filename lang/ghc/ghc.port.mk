@@ -1,4 +1,4 @@
-# $OpenBSD: ghc.port.mk,v 1.30 2013/07/18 21:43:23 kili Exp $
+# $OpenBSD: ghc.port.mk,v 1.31 2013/10/22 20:03:21 kili Exp $
 # Module for Glasgow Haskell Compiler
 
 # Not yet ported to other architectures
@@ -40,7 +40,7 @@ CATEGORIES +=		lang/ghc
 MODGHC_HACKAGE_NAME =		${DISTNAME:C,-[0-9.]*$,,}
 MODGHC_HACKAGE_VERSION =	${DISTNAME:C,.*-([0-9.]*)$,\1,}
 HOMEPAGE ?=			http://hackage.haskell.org/package/${MODGHC_HACKAGE_NAME}
-MASTER_SITES =			http://hackage.haskell.org/packages/archive/${MODGHC_HACKAGE_NAME}/${MODGHC_HACKAGE_VERSION}/
+MASTER_SITES =			http://hackage.haskell.org/package/${DISTNAME}/
 SUBST_VARS +=			DISTNAME MODGHC_HACKAGE_VERSION
 DIST_SUBDIR ?=			ghc
 . endif
