@@ -1,7 +1,16 @@
-$OpenBSD: patch-Configure,v 1.16 2012/03/29 06:19:12 ajacoutot Exp $
+$OpenBSD: patch-Configure,v 1.17 2013/10/22 19:48:49 jca Exp $
 --- Configure.orig	Sun Sep 11 16:28:07 2011
-+++ Configure	Thu Mar 29 08:10:00 2012
-@@ -358,7 +358,7 @@ d_open3=''
++++ Configure	Tue Oct 22 18:56:16 2013
+@@ -307,6 +307,8 @@ nofile=''
+ tablesize=''
+ d_access=''
+ d_arc4random=''
++d_arc4random_addrandom=''
++d_arc4random_stir=''
+ d_attribut=''
+ d_backtrace=''
+ d_bcopy=''
+@@ -358,7 +360,7 @@ d_open3=''
  d_pause=''
  d_poll=''
  d_popen=''
@@ -10,7 +19,7 @@ $OpenBSD: patch-Configure,v 1.16 2012/03/29 06:19:12 ajacoutot Exp $
  d_posix_fadvise=''
  d_posix_memalign=''
  d_pread=''
-@@ -1182,7 +1182,7 @@ for file in $*; do
+@@ -1182,7 +1184,7 @@ for file in $*; do
  			dir=`expr X$file : 'X\(.*\)/'`
  			file=`expr X$file : 'X.*/\(.*\)'`
  			./mkdirp $dir
@@ -19,7 +28,47 @@ $OpenBSD: patch-Configure,v 1.16 2012/03/29 06:19:12 ajacoutot Exp $
  			;;
  		*)
  			sh <"$SRC/$file"
-@@ -4580,7 +4580,7 @@ case "$d_dbus" in
+@@ -4441,6 +4443,39 @@ cyn=arc4random
+ set d_arc4random
+ eval $trylink
+ 
++: see if arc4random_addrandom exists
++$cat >try.c <<EOC
++#$i_stdlib I_STDLIB
++#ifdef I_STDLIB
++#include <stdlib.h>
++#endif
++int main(void)
++{
++	int a = 0;
++	arc4random_addrandom(&a, sizeof(a));
++	return 0;
++}
++EOC
++cyn=arc4random_addrandom
++set d_arc4random_addrandom
++eval $trylink
++
++: see if arc4random_stir exists
++$cat >try.c <<EOC
++#$i_stdlib I_STDLIB
++#ifdef I_STDLIB
++#include <stdlib.h>
++#endif
++int main(void)
++{
++	arc4random_stir();
++	return 0;
++}
++EOC
++cyn=arc4random_stir
++set d_arc4random_stir
++eval $trylink
++
+ : Look for GNU-cc style attribute checking
+ $cat >try.c <<'EOCP'
+ #include <stdio.h>
+@@ -4580,7 +4615,7 @@ case "$d_dbus" in
  		echo "(I'll use '$dbusconfig' to gather that information.)" >&4
  
  		: Make sure we have a good enough version
@@ -28,7 +77,16 @@ $OpenBSD: patch-Configure,v 1.16 2012/03/29 06:19:12 ajacoutot Exp $
  		case "$version" in
  		'') ;;
  		*)
-@@ -10341,15 +10341,6 @@ If you'd like to make any changes to the config.sh fil
+@@ -9921,6 +9956,8 @@ cppstdin='$cppstdin'
+ csh='$csh'
+ d_access='$d_access'
+ d_arc4random='$d_arc4random'
++d_arc4random_addrandom='$d_arc4random_addrandom'
++d_arc4random_stir='$d_arc4random_stir'
+ d_archlib='$d_archlib'
+ d_attribut='$d_attribut'
+ d_backtrace='$d_backtrace'
+@@ -10341,15 +10378,6 @@ If you'd like to make any changes to the config.sh fil
  to configure things, do it as a shell escape now (e.g. !vi config.sh).
  
  EOM

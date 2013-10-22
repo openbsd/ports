@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_lib_arc4random_h,v 1.1 2013/10/22 19:48:49 jca Exp $
+OpenBSD does not need nor provide arc4random_(addrandom|stir)
+--- src/lib/arc4random.h.orig	Sun Sep 11 16:28:28 2011
++++ src/lib/arc4random.h	Tue Oct 22 19:04:07 2013
+@@ -37,9 +37,21 @@
+ #include "common.h"
+ 
+ #ifndef HAS_ARC4RANDOM
++
+ guint32 arc4random(void);
+ void arc4random_stir(void);
+ void arc4random_addrandom(const unsigned char *dat, int datlen);
++
++#else
++
++#ifndef HAS_ARC4RANDOM_ADDRANDOM
++#define arc4random_addrandom(a, b)
++#endif
++
++#ifndef HAS_ARC4RANDOM_STIR
++#define arc4random_stir()
++#endif
++
+ #endif
+ 
+ #endif /* _arc4random_h_ */
