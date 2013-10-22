@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.66 2013/08/15 09:47:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2013/10/22 19:53:35 jca Exp $
 
 COMMENT=	small, easy to set up, fast and very secure FTP server
 
 DISTNAME=	pure-ftpd-1.0.36
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://download.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \

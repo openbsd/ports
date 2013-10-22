@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_alt_arc4random_h,v 1.1 2013/10/22 19:53:35 jca Exp $
+--- src/alt_arc4random.h.orig	Tue Oct 22 17:42:57 2013
++++ src/alt_arc4random.h	Tue Oct 22 17:44:51 2013
+@@ -7,8 +7,8 @@
+ #ifdef __OpenBSD__
+ 
+ #define alt_arc4random() arc4random()
+-#define alt_arc4random_stir() arc4random_stir()
+-#define alt_arc4random_addrandom(A, B) arc4random_addrandom(A, B)
++#define alt_arc4random_stir()
++#define alt_arc4random_addrandom(A, B)
+ #define alt_arc4random_uniform(A) arc4random_uniform(A)
+ #define alt_arc4random_buf(A, B) arc4random_buf(A, B)
+ 
