@@ -1,0 +1,45 @@
+$OpenBSD: patch-evutil_rand_c,v 1.1 2013/10/22 19:55:11 jca Exp $
+OpenBSD does not need nor provide arc4random_addrandom anymore.
+--- evutil_rand.c.orig	Thu Aug  2 17:36:53 2012
++++ evutil_rand.c	Tue Oct 22 18:18:59 2013
+@@ -95,6 +95,14 @@ ev_arc4random_buf(void *buf, size_t n)
+ #endif
+ }
+ 
++void
++evutil_secure_rng_add_bytes(const char *buf, size_t n)
++{
++#ifdef _EVENT_HAVE_ARC4RANDOM_ADDRANDOM
++	arc4random_addrandom(buf, n);
++#endif
++}
++
+ #else /* !_EVENT_HAVE_ARC4RANDOM { */
+ 
+ #ifdef _EVENT_ssize_t
+@@ -142,18 +150,19 @@ ev_arc4random_buf(void *buf, size_t n)
+ 	arc4random_buf(buf, n);
+ }
+ 
+-#endif /* } !_EVENT_HAVE_ARC4RANDOM */
+ 
+ void
+-evutil_secure_rng_get_bytes(void *buf, size_t n)
++evutil_secure_rng_add_bytes(const char *buf, size_t n)
+ {
+-	ev_arc4random_buf(buf, n);
++	arc4_addrandom((unsigned char*)buf,
++	    n>(size_t)INT_MAX ? INT_MAX : (int)n);
+ }
+ 
++#endif /* } !_EVENT_HAVE_ARC4RANDOM */
++
+ void
+-evutil_secure_rng_add_bytes(const char *buf, size_t n)
++evutil_secure_rng_get_bytes(void *buf, size_t n)
+ {
+-	arc4random_addrandom((unsigned char*)buf,
+-	    n>(size_t)INT_MAX ? INT_MAX : (int)n);
++	ev_arc4random_buf(buf, n);
+ }
+ 

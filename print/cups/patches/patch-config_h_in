@@ -1,0 +1,17 @@
+$OpenBSD: patch-config_h_in,v 1.4 2013/10/22 19:59:18 jca Exp $
+Use arc4random_stir only if present
+--- config.h.in.orig	Tue Oct 22 06:38:36 2013
++++ config.h.in	Tue Oct 22 06:43:28 2013
+@@ -648,7 +648,11 @@
+ 
+ #ifdef HAVE_ARC4RANDOM
+ #  define CUPS_RAND() arc4random()
+-#  define CUPS_SRAND(v) arc4random_stir()
++#  ifdef HAVE_ARC4RANDOM_STIR
++#    define CUPS_SRAND(v) arc4random_stir()
++#  else
++#    define CUPS_SRAND(v)
++#  endif
+ #elif defined(HAVE_RANDOM)
+ #  define CUPS_RAND() random()
+ #  define CUPS_SRAND(v) srandom(v)

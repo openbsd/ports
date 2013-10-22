@@ -1,9 +1,10 @@
-$OpenBSD: patch-config-scripts_cups-common_m4,v 1.10 2013/03/19 08:49:14 ajacoutot Exp $
+$OpenBSD: patch-config-scripts_cups-common_m4,v 1.11 2013/10/22 19:59:18 jca Exp $
 
-Our <sys/ucred.h> does not provide xucred.
+- Our <sys/ucred.h> does not provide xucred.
+- check for add4random_stir, since OpenBSD doesn't provide it anymore.
 
---- config-scripts/cups-common.m4.orig	Mon Mar 18 18:23:09 2013
-+++ config-scripts/cups-common.m4	Tue Mar 19 08:15:45 2013
+--- config-scripts/cups-common.m4.orig	Tue Sep 24 18:25:31 2013
++++ config-scripts/cups-common.m4	Tue Oct 22 06:40:54 2013
 @@ -137,7 +137,6 @@ AC_CHECK_HEADER(bstring.h,AC_DEFINE(HAVE_BSTRING_H))
  AC_CHECK_HEADER(usersec.h,AC_DEFINE(HAVE_USERSEC_H))
  AC_CHECK_HEADER(sys/ioctl.h,AC_DEFINE(HAVE_SYS_IOCTL_H))
@@ -12,3 +13,12 @@ Our <sys/ucred.h> does not provide xucred.
  AC_CHECK_HEADER(scsi/sg.h,AC_DEFINE(HAVE_SCSI_SG_H))
  
  dnl Checks for iconv.h and iconv_open
+@@ -175,7 +174,7 @@ else
+ fi
+ 
+ dnl Check for random number functions...
+-AC_CHECK_FUNCS(random lrand48 arc4random)
++AC_CHECK_FUNCS(random lrand48 arc4random arc4random_stir)
+ 
+ dnl Check for geteuid function.
+ AC_CHECK_FUNCS(geteuid)

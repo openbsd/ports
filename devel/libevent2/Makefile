@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/21 08:45:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/10/22 19:55:11 jca Exp $
 
 COMMENT=	event notification library
 
 V=		2.0.21
 DISTNAME=	libevent-$V-stable
 PKGNAME=	libevent-$V
+REVISION=	0
 CATEGORIES=	devel
 HOMEPAGE=	http://monkey.org/~provos/libevent/
 
@@ -20,7 +21,8 @@ MASTER_SITES=	https://github.com/downloads/libevent/libevent/
 
 WANTLIB=	crypto pthread ssl
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=autoconf
+AUTOCONF_VERSION= 2.68
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 MAKE_FLAGS=	RELEASE=""

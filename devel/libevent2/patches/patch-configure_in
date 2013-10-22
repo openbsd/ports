@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_in,v 1.1 2013/10/22 19:55:11 jca Exp $
+--- configure.in.orig	Tue Oct 22 18:15:43 2013
++++ configure.in	Tue Oct 22 18:15:55 2013
+@@ -285,7 +285,7 @@ AC_HEADER_TIME
+ 
+ dnl Checks for library functions.
+ AC_CHECK_FUNCS([gettimeofday vasprintf fcntl clock_gettime strtok_r strsep])
+-AC_CHECK_FUNCS([getnameinfo strlcpy inet_ntop inet_pton signal sigaction strtoll inet_aton pipe eventfd sendfile mmap splice arc4random arc4random_buf issetugid geteuid getegid getprotobynumber setenv unsetenv putenv sysctl])
++AC_CHECK_FUNCS([getnameinfo strlcpy inet_ntop inet_pton signal sigaction strtoll inet_aton pipe eventfd sendfile mmap splice arc4random arc4random_buf arc4random_addrandom issetugid geteuid getegid getprotobynumber setenv unsetenv putenv sysctl])
+ AC_CHECK_FUNCS([umask])
+ 
+ AC_CACHE_CHECK(
