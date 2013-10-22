@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2013/09/15 16:34:00 jca Exp $
+# $OpenBSD: Makefile,v 1.21 2013/10/22 19:44:15 jca Exp $
 
 # not yet ported to other arches
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
 COMMENT=		compiler and runtime system for ANSI Common Lisp
 
-V =			1.1.8
-REVISION=		0
+V =			1.1.12
 DISTNAME=		sbcl-${V}-source
 PKGNAME=		sbcl-${V}
 WRKDIST=		${WRKDIR}/sbcl-${V}
@@ -36,6 +35,7 @@ BOOTSTRAP_CMD=		${LOCALBASE}/bin/sbcl \
 BUILD_DEPENDS +=	lang/clisp
 BOOTSTRAP_CMD =		${LOCALBASE}/bin/clisp -q -norc
 .endif
+TEST_DEPENDS =		devel/gmp
 
 .for arch in amd64 i386 powerpc
 . if ${MACHINE_ARCH} == ${arch}
