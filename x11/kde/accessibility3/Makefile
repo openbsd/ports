@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2013/10/05 07:34:37 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2013/10/22 11:33:56 zhuk Exp $
 
 COMMENT = 		X11 toolkit, accessibility aids
 CATEGORIES =		x11 x11/kde
@@ -12,11 +12,11 @@ MODULES =	x11/kde devel/gettext
 
 RUN_DEPENDS +=	devel/desktop-file-utils \
 		x11/gtk+2,-guic
-LIB_DEPENDS =	x11/kde/libs3 
+LIB_DEPENDS =	x11/kde/libs3
 
 SEPARATE_BUILD =	flavored
 
-REVISION =	14
+REVISION =	15
 
 WANTLIB =	GL FLAC ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi
 WANTLIB +=	Xinerama Xmu Xrandr Xrender Xt Xtst Xxf86vm art_lgpl_2
@@ -32,6 +32,6 @@ WANTLIB +=	pthread-stubs qtmcop sndio soundserver_idl stdc++ util
 WANTLIB +=	vorbis vorbisenc vorbisfile xcb z
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
+	${INSTALL_DATA_DIR} ${PREFIX}/${MODKDE_HTML_SUBDIR}/en/common
 
 .include <bsd.port.mk>

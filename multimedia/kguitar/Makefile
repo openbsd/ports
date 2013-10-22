@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2013/10/05 07:34:35 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/10/22 11:34:22 zhuk Exp $
 
 COMMENT =		guitar tab editor
 
 DISTNAME =		kguitar-0.5.1
-REVISION=		5
+REVISION=		6
 
 CATEGORIES =		multimedia kde
 
@@ -37,7 +37,7 @@ CONFIGURE_ARGS +=	--disable-midisupport \
 			--with-extra-libs="${LOCALBASE}/lib" \
 			--with-extra-includes="${LOCALBASE}/include"
 
-CONFIGURE_ENV =		KDEDIR=${LOCALBASE}
+CONFIGURE_ENV =		${MODKDE_CONFIGURE_ENV}
 
 PORTHOME=		${WRKDIR}
 

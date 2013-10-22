@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-sane,v 1.10 2013/01/14 12:09:59 zhuk Exp $
+@comment $OpenBSD: PLIST-sane,v 1.11 2013/10/22 11:34:00 zhuk Exp $
 @conflict kdegraphics-<3.5.10p17
 @bin bin/kooka
 lib/libkscan.la
@@ -7,24 +7,24 @@ lib/libkscan.la
 ${KDE}/kview_scannerplugin.la
 ${KDE}/kview_scannerplugin.so
 share/applications/kde/kooka.desktop
-share/apps/kooka/
-share/apps/kooka/kookaui.rc
-share/apps/kooka/pics/
-share/apps/kooka/pics/gocr.png
-share/apps/kooka/pics/lockzoom.png
-share/apps/kooka/pics/mirror-both.png
-share/apps/kooka/pics/mirror-horiz.png
-share/apps/kooka/pics/mirror-vert.png
-share/apps/kooka/pics/newfromselect.png
-share/apps/kooka/pics/ocr-select.png
-share/apps/kooka/pics/ocr.png
-share/apps/kooka/pics/ocrad.png
-share/apps/kooka/pics/scaleorig.png
-share/apps/kooka/pics/scaletoheight.png
-share/apps/kooka/pics/scaletowidth.png
-share/apps/kooka/pics/thumbviewtile.png
-share/apps/kview/kpartplugins/kviewscanner.desktop
-share/apps/kview/kpartplugins/kviewscanner.rc
+share/apps.kde3/kooka/
+share/apps.kde3/kooka/kookaui.rc
+share/apps.kde3/kooka/pics/
+share/apps.kde3/kooka/pics/gocr.png
+share/apps.kde3/kooka/pics/lockzoom.png
+share/apps.kde3/kooka/pics/mirror-both.png
+share/apps.kde3/kooka/pics/mirror-horiz.png
+share/apps.kde3/kooka/pics/mirror-vert.png
+share/apps.kde3/kooka/pics/newfromselect.png
+share/apps.kde3/kooka/pics/ocr-select.png
+share/apps.kde3/kooka/pics/ocr.png
+share/apps.kde3/kooka/pics/ocrad.png
+share/apps.kde3/kooka/pics/scaleorig.png
+share/apps.kde3/kooka/pics/scaletoheight.png
+share/apps.kde3/kooka/pics/scaletowidth.png
+share/apps.kde3/kooka/pics/thumbviewtile.png
+share/apps.kde3/kview/kpartplugins/kviewscanner.desktop
+share/apps.kde3/kview/kpartplugins/kviewscanner.rc
 share/config/kookarc
 share/icons/crystalsvg/16x16/actions/palette_color.png
 share/icons/crystalsvg/16x16/actions/palette_gray.png

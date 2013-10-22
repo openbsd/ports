@@ -1,31 +1,31 @@
-@comment $OpenBSD: PLIST-ro,v 1.14 2012/01/16 22:11:00 espie Exp $
+@comment $OpenBSD: PLIST-ro,v 1.15 2013/10/22 11:34:03 zhuk Exp $
 @pkgpath x11/kde/i18n3,ro
 @conflict kde-i18n-de-<3.4
-share/apps/ktuberling/
-share/apps/ktuberling/sounds/
-share/apps/ktuberling/sounds/ro/
-share/apps/ktuberling/sounds/ro/ceas.wav
-share/apps/ktuberling/sounds/ro/cercel.wav
-share/apps/ktuberling/sounds/ro/colier.wav
-share/apps/ktuberling/sounds/ro/corn.wav
-share/apps/ktuberling/sounds/ro/cravata.wav
-share/apps/ktuberling/sounds/ro/domnul-cartof.wav
-share/apps/ktuberling/sounds/ro/fular.wav
-share/apps/ktuberling/sounds/ro/gura.wav
-share/apps/ktuberling/sounds/ro/insigna.wav
-share/apps/ktuberling/sounds/ro/mustata.wav
-share/apps/ktuberling/sounds/ro/nas.wav
-share/apps/ktuberling/sounds/ro/ochelari-de-soare.wav
-share/apps/ktuberling/sounds/ro/ochelari.wav
-share/apps/ktuberling/sounds/ro/ochi.wav
-share/apps/ktuberling/sounds/ro/palarie.wav
-share/apps/ktuberling/sounds/ro/papion.wav
-share/apps/ktuberling/sounds/ro/par.wav
-share/apps/ktuberling/sounds/ro/pinguin.wav
-share/apps/ktuberling/sounds/ro/sprinceana.wav
-share/apps/ktuberling/sounds/ro/tigara.wav
-share/apps/ktuberling/sounds/ro/ureche.wav
-share/doc/HTML/ro/
+share/apps.kde3/ktuberling/
+share/apps.kde3/ktuberling/sounds/
+share/apps.kde3/ktuberling/sounds/ro/
+share/apps.kde3/ktuberling/sounds/ro/ceas.wav
+share/apps.kde3/ktuberling/sounds/ro/cercel.wav
+share/apps.kde3/ktuberling/sounds/ro/colier.wav
+share/apps.kde3/ktuberling/sounds/ro/corn.wav
+share/apps.kde3/ktuberling/sounds/ro/cravata.wav
+share/apps.kde3/ktuberling/sounds/ro/domnul-cartof.wav
+share/apps.kde3/ktuberling/sounds/ro/fular.wav
+share/apps.kde3/ktuberling/sounds/ro/gura.wav
+share/apps.kde3/ktuberling/sounds/ro/insigna.wav
+share/apps.kde3/ktuberling/sounds/ro/mustata.wav
+share/apps.kde3/ktuberling/sounds/ro/nas.wav
+share/apps.kde3/ktuberling/sounds/ro/ochelari-de-soare.wav
+share/apps.kde3/ktuberling/sounds/ro/ochelari.wav
+share/apps.kde3/ktuberling/sounds/ro/ochi.wav
+share/apps.kde3/ktuberling/sounds/ro/palarie.wav
+share/apps.kde3/ktuberling/sounds/ro/papion.wav
+share/apps.kde3/ktuberling/sounds/ro/par.wav
+share/apps.kde3/ktuberling/sounds/ro/pinguin.wav
+share/apps.kde3/ktuberling/sounds/ro/sprinceana.wav
+share/apps.kde3/ktuberling/sounds/ro/tigara.wav
+share/apps.kde3/ktuberling/sounds/ro/ureche.wav
+share/doc/HTML.kde3/ro/
 ${DOC}common/
 ${DOC}common/1.png
 ${DOC}common/10.png

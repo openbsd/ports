@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/05/21 09:05:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/10/22 11:34:25 zhuk Exp $
 ${KDE}/kstyle_qinx_config.la
 ${KDE}/kstyle_qinx_config.so
 ${KDE}/kwin3_qinx.la
@@ -7,7 +7,7 @@ ${KDE}/kwin_qinx_config.la
 ${KDE}/kwin_qinx_config.so
 ${KDE}/plugins/styles/qinx.la
 ${KDE}/plugins/styles/qinx.so
-share/apps/kdisplay/color-schemes/qinx.kcsrc
-share/apps/kdisplay/color-schemes/qinxmodern.kcsrc
-share/apps/kstyle/themes/qinx.themerc
-share/apps/kwin/qinx.desktop
+share/apps.kde3/kdisplay/color-schemes/qinx.kcsrc
+share/apps.kde3/kdisplay/color-schemes/qinxmodern.kcsrc
+share/apps.kde3/kstyle/themes/qinx.themerc
+share/apps.kde3/kwin/qinx.desktop

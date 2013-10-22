@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2013/10/05 07:34:30 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2013/10/22 11:34:13 zhuk Exp $
 
 SHARED_ONLY=	Yes
 COMMENT= 	logic circuit simulator for KDE
 
 DISTNAME=	klogic-1.6
-REVISION=	9
+REVISION=	10
 CATEGORIES=	cad education x11 x11/kde
 
 MASTER_SITES=	http://distfiles.nl/
@@ -23,6 +23,7 @@ LIB_DEPENDS=	x11/kde/libs3
 
 MODULES=	x11/kde devel/gettext
 MODKDE_VERSION=	3.1
+MODKDE_FIXUP_DATADIR=	Yes
 
 PORTHOME=	${WRKDIR}
 

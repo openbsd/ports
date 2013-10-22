@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2013/10/05 07:34:40 espie Exp $
+# $OpenBSD: Makefile,v 1.76 2013/10/22 11:34:06 zhuk Exp $
 
 COMMENT = 		K Desktop Environment, network applications
 CATEGORIES =		x11 x11/kde
@@ -24,7 +24,7 @@ RUN_DEPENDS +=	security/qca-tls
 
 SEPARATE_BUILD =	flavored
 
-REVISION = 	10
+REVISION = 	11
 WANTLIB = GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi Xinerama \
 	Xmu Xrandr Xrender Xss Xt Xtst Xxf86vm art_lgpl_2 c crypto drm expat \
 	fam fontconfig freetype gdk glib glib-2.0 gmodule gmodule-2.0 gtk idn \
@@ -36,12 +36,16 @@ WANTLIB = GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi Xinerama \
 	lib/kde3/vcard m meanwhile mng pcre pcreposix png pthread \
 	pthread-stubs ssl stdc++ util xcb xml2 xmms xslt z
 
+CONFIGURE_ARGS =	--disable-jingle \
+			--disable-ortp \
+			--disable-slp \
+			--without-wifi
 
 post-configure:
 	@touch ${WRKSRC}/Makefile.in
 	@touch ${WRKBUILD}/Makefile
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
+	${INSTALL_DATA_DIR} ${PREFIX}/${MODKDE_HTML_SUBDIR}/en/common
 
 .include <bsd.port.mk>

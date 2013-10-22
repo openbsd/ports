@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-nl,v 1.5 2012/01/17 18:08:22 espie Exp $
+@comment $OpenBSD: PLIST-nl,v 1.6 2013/10/22 11:34:07 zhuk Exp $
 @pkgpath x11/kde/office-i18n3,nl
-share/doc/HTML/nl/
+share/doc/HTML.kde3/nl/
 ${DOC}karbon/
 ${DOC}karbon/common
 ${DOC}karbon/${C}

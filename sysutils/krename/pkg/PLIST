@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/06/24 15:53:39 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/10/22 11:34:24 zhuk Exp $
 @bin bin/krename
 share/applications/kde/krename.desktop
-share/apps/konqueror/servicemenus/krename_dir.desktop
-share/apps/konqueror/servicemenus/krenameservicemenu.desktop
-share/apps/krename/
-share/apps/krename/krename_system_default_tabbed.xml
-share/apps/krename/krename_system_default_wizard.xml
-share/apps/krename/logo.png
-share/doc/HTML/en/krename/
-share/doc/HTML/en/krename/index.html
+share/apps.kde3/konqueror/servicemenus/krename_dir.desktop
+share/apps.kde3/konqueror/servicemenus/krenameservicemenu.desktop
+share/apps.kde3/krename/
+share/apps.kde3/krename/krename_system_default_tabbed.xml
+share/apps.kde3/krename/krename_system_default_wizard.xml
+share/apps.kde3/krename/logo.png
+share/doc/HTML.kde3/en/krename/
+share/doc/HTML.kde3/en/krename/index.html
 share/doc/krename/
 share/doc/krename/krename-3.0.12.pdf
 share/doc/krename/krename-3.0.3-de.pdf

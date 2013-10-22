@@ -1,7 +1,21 @@
-$OpenBSD: patch-acinclude_m4,v 1.5 2004/12/12 11:33:25 espie Exp $
---- acinclude.m4.orig	Tue Nov 30 15:40:08 2004
-+++ acinclude.m4	Mon Dec  6 11:54:55 2004
-@@ -6208,6 +6208,19 @@ AC_CACHE_VAL([lt_cv_sys_max_cmd_len], [d
+$OpenBSD: patch-acinclude_m4,v 1.6 2013/10/22 11:34:10 zhuk Exp $
+--- acinclude.m4.orig	Mon Mar 28 22:15:15 2005
++++ acinclude.m4	Wed Oct  9 18:21:36 2013
+@@ -580,11 +580,11 @@ AC_DEFUN([KDE_SUBST_PROGRAMS],
+         if test -n "$MEINPROC" && test ! "$MEINPROC" = "compiled"; then  
+  	    kde_sharedirs="/usr/share/kde /usr/local/share /usr/share /opt/kde3/share /opt/kde/share $prefix/share"
+             test -n "$KDEDIR" && kde_sharedirs="$KDEDIR/share $kde_sharedirs"
+-            AC_FIND_FILE(apps/ksgmltools2/customization/kde-chunk.xsl, $kde_sharedirs, KDE_XSL_STYLESHEET)
++            AC_FIND_FILE(apps.kde3/ksgmltools2/customization/kde-chunk.xsl, $kde_sharedirs, KDE_XSL_STYLESHEET)
+ 	    if test "$KDE_XSL_STYLESHEET" = "NO"; then
+ 		KDE_XSL_STYLESHEET=""
+ 	    else
+-                KDE_XSL_STYLESHEET="$KDE_XSL_STYLESHEET/apps/ksgmltools2/customization/kde-chunk.xsl"
++                KDE_XSL_STYLESHEET="$KDE_XSL_STYLESHEET/apps.kde3/ksgmltools2/customization/kde-chunk.xsl"
+ 	    fi
+         fi
+ 
+@@ -6025,6 +6025,19 @@ AC_CACHE_VAL([lt_cv_sys_max_cmd_len], [dnl
      lt_cv_sys_max_cmd_len=8192;
      ;;
  
@@ -21,7 +35,7 @@ $OpenBSD: patch-acinclude_m4,v 1.5 2004/12/12 11:33:25 espie Exp $
   *)
      # If test is not a shell built-in, we'll probably end up computing a
      # maximum length that is only half of the actual maximum length, but
-@@ -7748,13 +7761,7 @@ nto-qnx*)
+@@ -7561,13 +7574,7 @@ nto-qnx*)
    ;;
  
  openbsd*)
@@ -36,7 +50,7 @@ $OpenBSD: patch-acinclude_m4,v 1.5 2004/12/12 11:33:25 espie Exp $
    ;;
  
  osf3* | osf4* | osf5*)
-@@ -8706,6 +8713,22 @@ case $host_os in
+@@ -8519,6 +8526,22 @@ case $host_os in
      # Workaround some broken pre-1.5 toolchains
      output_verbose_link_cmd='$CC -shared $CFLAGS -v conftest.$objext 2>&1 | grep conftest.$objext | $SED -e "s:-lgcc -lc -lgcc::"'
      ;;
@@ -59,7 +73,7 @@ $OpenBSD: patch-acinclude_m4,v 1.5 2004/12/12 11:33:25 espie Exp $
    osf3*)
      case $cc_basename in
        KCC)
-@@ -11023,6 +11046,7 @@ EOF
+@@ -10836,6 +10859,7 @@ EOF
        _LT_AC_TAGVAR(hardcode_shlibpath_var, $1)=no
        if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
  	_LT_AC_TAGVAR(archive_cmds, $1)='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'

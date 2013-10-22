@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-ru,v 1.6 2012/01/17 18:08:22 espie Exp $
+@comment $OpenBSD: PLIST-ru,v 1.7 2013/10/22 11:34:08 zhuk Exp $
 @pkgpath x11/kde/office-i18n3,ru
-share/doc/HTML/ru/
+share/doc/HTML.kde3/ru/
 ${DOC}kchart/
 ${DOC}kchart/common
 ${DOC}kchart/${C}

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2013/10/05 07:34:43 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2013/10/22 11:34:26 zhuk Exp $
 
 COMMENT=	organizer for book/dvd/music collections
 
 DISTNAME=	tellico-1.3.6
-REVISION=	9
+REVISION=	10
 
 CATEGORIES=	x11 databases
 
@@ -36,8 +36,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV}
 CONFIGURE_ARGS=	${MODKDE_CONFIGURE_ARGS} \
 		${CONFIGURE_SHARED} \
-		--disable-libsuffix \
-		--enable-final
+		--disable-libsuffix
 
 MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}
 
@@ -56,5 +55,9 @@ LIB_DEPENDS=	${MODQT_LIB_DEPENDS} \
 		net/yaz
 
 NO_TEST=	Yes
+
+post-patch:
+	find ${WRKSRC}/doc -name '*.docbook' | \
+		xargs perl -pi.kde3 -e 's@share/apps/@share/apps.kde3/@g'
 
 .include <bsd.port.mk>

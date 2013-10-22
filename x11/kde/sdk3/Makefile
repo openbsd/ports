@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2013/10/10 09:55:48 stsp Exp $
+# $OpenBSD: Makefile,v 1.67 2013/10/22 11:34:10 zhuk Exp $
 
 COMMENT-main = 		K Desktop Environment, developer extensions
 COMMENT-svn = 		K Desktop Environment, svn extensions
@@ -8,9 +8,9 @@ DISTNAME =		kdesdk-${VERSION}
 
 PKGNAME-main =		${DISTNAME}
 PKGSPEC-main =		kdesdk->=3,<4
-REVISION-main =		15
+REVISION-main =		16
 PKGNAME-svn =		kdesvn-${VERSION}
-REVISION-svn =		15
+REVISION-svn =		16
 
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	cvsservice           1.0      # .0.1
@@ -74,6 +74,6 @@ post-patch:
 
 post-install:
 	cd ${PREFIX}/bin && mv cvscheck kcvscheck
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
+	${INSTALL_DATA_DIR} ${PREFIX}/${MODKDE_HTML_SUBDIR}/en/common
 
 .include <bsd.port.mk>

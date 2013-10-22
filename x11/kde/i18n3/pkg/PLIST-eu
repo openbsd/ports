@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-eu,v 1.12 2012/01/16 22:11:00 espie Exp $
+@comment $OpenBSD: PLIST-eu,v 1.13 2013/10/22 11:34:01 zhuk Exp $
 @pkgpath x11/kde/i18n3,eu
-share/doc/HTML/eu/
+share/doc/HTML.kde3/eu/
 ${DOC}common/
 ${DOC}common/1.png
 ${DOC}common/10.png

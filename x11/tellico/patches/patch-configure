@@ -1,0 +1,27 @@
+$OpenBSD: patch-configure,v 1.1 2013/10/22 11:34:26 zhuk Exp $
+--- configure.orig	Sat Sep 26 22:10:17 2009
++++ configure	Wed Oct  9 17:45:47 2013
+@@ -32676,12 +32676,12 @@ $as_echo "$kde_cv_path" >&6; }
+ KDE_XSL_STYLESHEET=NO
+ for i in $kde_sharedirs;
+ do
+-  for j in apps/ksgmltools2/customization/kde-chunk.xsl;
++  for j in apps.kde3/ksgmltools2/customization/kde-chunk.xsl apps/ksgmltools2/customization/kde-chunk.xsl;
+   do
+     echo "configure: 32681: $i/$j" >&5
+     if test -r "$i/$j"; then
+       echo "taking that" >&5
+-      KDE_XSL_STYLESHEET=$i
++      KDE_XSL_STYLESHEET=$i/$j
+       break 2
+     fi
+   done
+@@ -32689,8 +32689,6 @@ done
+ 
+ 	    if test "$KDE_XSL_STYLESHEET" = "NO"; then
+ 		KDE_XSL_STYLESHEET=""
+-	    else
+-                KDE_XSL_STYLESHEET="$KDE_XSL_STYLESHEET/apps/ksgmltools2/customization/kde-chunk.xsl"
+ 	    fi
+         fi
+ 

@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST-svn,v 1.6 2013/08/20 22:06:01 zhuk Exp $
+@comment $OpenBSD: PLIST-svn,v 1.7 2013/10/22 11:34:11 zhuk Exp $
 @bin bin/kio_svn_helper
 ${KDE}/kded_ksvnd.la
 ${KDE}/kded_ksvnd.so
 ${KDE}/kio_svn.la
 ${KDE}/kio_svn.so
-share/apps/konqueror/
-share/apps/konqueror/servicemenus/
-share/apps/konqueror/servicemenus/subversion.desktop
-share/apps/konqueror/servicemenus/subversion_toplevel.desktop
+share/apps.kde3/konqueror/
+share/apps.kde3/konqueror/servicemenus/
+share/apps.kde3/konqueror/servicemenus/subversion.desktop
+share/apps.kde3/konqueror/servicemenus/subversion_toplevel.desktop
 share/icons/crystalsvg/128x128/actions/svn_add.png
 share/icons/crystalsvg/128x128/actions/svn_branch.png
 share/icons/crystalsvg/128x128/actions/svn_merge.png

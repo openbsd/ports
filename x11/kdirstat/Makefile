@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2013/10/05 07:34:42 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2013/10/22 11:34:24 zhuk Exp $
 
 COMMENT=	graphical disk usage utility for KDE
 
 DISTNAME=	kdirstat-2.4.0
-REVISION=	8
+REVISION=	9
 
 CATEGORIES=	x11
 
@@ -44,5 +44,6 @@ MODGNU_CONFIG_GUESS_DIRS=	${MODKDE_CONFIG_GUESS_DIRS}
 CONFIGURE_ARGS=	 ${MODKDE_CONFIGURE_ARGS}
 CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV}
 MODKDE_VERSION=	3.1
+MODKDE_FIXUP_DATADIR=	Yes
 
 .include <bsd.port.mk>

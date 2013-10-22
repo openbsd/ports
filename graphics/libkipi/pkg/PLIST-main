@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2013/08/11 17:57:42 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2013/10/22 11:34:19 zhuk Exp $
 @pkgpath graphics/libkipi
+@option no-default-conflict
+@conflict libkipi-<1
 include/kde/libkipi/
 include/kde/libkipi/batchprogressdialog.h
 include/kde/libkipi/imagecollection.h
@@ -18,9 +20,9 @@ include/kde/libkipi/version.h
 lib/libkipi.la
 @lib lib/libkipi.so.${LIBkipi_VERSION}
 lib/pkgconfig/libkipi.pc
-@comment share/doc/HTML/en/libkipi-${V}-apidocs/
-@comment share/doc/HTML/en/libkipi-${V}-apidocs/libkipi/
-@comment share/doc/HTML/en/libkipi-${V}-apidocs/libkipi/html/
+@comment share/doc/HTML.kde3/en/libkipi-${V}-apidocs/
+@comment share/doc/HTML.kde3/en/libkipi-${V}-apidocs/libkipi/
+@comment share/doc/HTML.kde3/en/libkipi-${V}-apidocs/libkipi/html/
 share/locale/ar/LC_MESSAGES/libkipi.mo
 share/locale/br/LC_MESSAGES/libkipi.mo
 share/locale/ca/LC_MESSAGES/libkipi.mo

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.81 2013/10/05 07:34:41 espie Exp $
+# $OpenBSD: Makefile,v 1.82 2013/10/22 11:34:10 zhuk Exp $
 
 COMMENT = 		KDE personal information applications
 CATEGORIES =		x11 x11/kde productivity
 VERSION =		3.5.10
 DISTNAME =		kdepim-${VERSION}
 PKGSPEC =		kdepim->=3,<4
-REVISION =		16
+REVISION =		17
 
 MODKDE_VERSION =	3.5.8
 
@@ -99,6 +99,6 @@ SEPARATE_BUILD = flavored
 CONFIGURE_ARGS += --disable-final
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
+	${INSTALL_DATA_DIR} ${PREFIX}/${MODKDE_HTML_SUBDIR}/en/common
 
 .include <bsd.port.mk>

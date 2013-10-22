@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-nn,v 1.4 2012/01/17 18:08:22 espie Exp $
+@comment $OpenBSD: PLIST-nn,v 1.5 2013/10/22 11:34:08 zhuk Exp $
 @pkgpath x11/kde/office-i18n3,nn
-share/apps/koffice/
-share/apps/koffice/autocorrect/
-share/apps/koffice/autocorrect/nn.xml
+share/apps.kde3/koffice/
+share/apps.kde3/koffice/autocorrect/
+share/apps.kde3/koffice/autocorrect/nn.xml
 ${LOC}desktop_koffice.mo
 ${LOC}example.mo
 ${LOC}karbon.mo

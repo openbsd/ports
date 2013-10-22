@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2013/06/03 20:07:39 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.29 2013/10/22 11:33:58 zhuk Exp $
 @bin bin/embedjs
 @bin bin/jsaccess
 bin/kdepyuic
@@ -123,14 +123,14 @@ ${P5ARCH}/auto/DCOP/DCOP.so
 @man man/man3p/DCOP.3p
 share/applications/kde/kjscmd.desktop
 share/applnk/Utilities/embedjs.desktop
-share/apps/embedjs/
-share/apps/embedjs/embedjsui.rc
-share/apps/kate/scripts/
-share/apps/kate/scripts/swaptabs.desktop
-share/apps/kate/scripts/swaptabs.js
-share/apps/kate/scripts/swaptabs.ui
-share/apps/kjsembed/
-share/apps/kjsembed/cmdline.js
+share/apps.kde3/embedjs/
+share/apps.kde3/embedjs/embedjsui.rc
+share/apps.kde3/kate/scripts/
+share/apps.kde3/kate/scripts/swaptabs.desktop
+share/apps.kde3/kate/scripts/swaptabs.js
+share/apps.kde3/kate/scripts/swaptabs.ui
+share/apps.kde3/kjsembed/
+share/apps.kde3/kjsembed/cmdline.js
 share/icons/hicolor/16x16/apps/embedjs.png
 share/icons/hicolor/32x32/apps/embedjs.png
 share/services/customobject_plugin.desktop

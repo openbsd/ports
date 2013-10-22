@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.75 2013/10/05 07:34:41 espie Exp $
+# $OpenBSD: Makefile,v 1.76 2013/10/22 11:34:11 zhuk Exp $
 
 COMMENT = 		K Desktop Environment, utilities
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdeutils-${VERSION}
 MODKDE_VERSION =	3.5.8
-REVISION =		14
+REVISION =		15
 
 SHARED_LIBS +=	khexeditcommon       1.0      # .0.0
 SHARED_LIBS +=	kcmlaptop            1.0      # .0.0
@@ -37,6 +37,6 @@ WANTLIB +=	lib/kde3/kwalletclient lib/kde3/vcard m mng netsnmp png
 WANTLIB +=	pthread pthread-stubs stdc++ util xcb xmms z ${MODPY_WANTLIB}
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
+	${INSTALL_DATA_DIR} ${PREFIX}/${MODKDE_HTML_SUBDIR}/en/common
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-hr,v 1.10 2012/01/16 22:11:00 espie Exp $
+@comment $OpenBSD: PLIST-hr,v 1.11 2013/10/22 11:34:02 zhuk Exp $
 @pkgpath x11/kde/i18n3,hr
-share/doc/HTML/hr/
+share/doc/HTML.kde3/hr/
 ${DOC}common/
 ${DOC}common/1.png
 ${DOC}common/10.png

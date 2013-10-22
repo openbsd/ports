@@ -1,6 +1,20 @@
-$OpenBSD: patch-acinclude_m4,v 1.4 2013/06/03 20:07:39 zhuk Exp $
---- acinclude.m4.orig	Wed Aug 20 19:52:36 2008
-+++ acinclude.m4	Fri May  3 12:21:11 2013
+$OpenBSD: patch-acinclude_m4,v 1.5 2013/10/22 11:34:10 zhuk Exp $
+--- acinclude.m4.orig	Wed Aug 20 20:05:01 2008
++++ acinclude.m4	Wed Oct  9 18:12:08 2013
+@@ -614,11 +614,11 @@ AC_DEFUN([KDE_SUBST_PROGRAMS],
+         if test -n "$MEINPROC" -a "$MEINPROC" != "compiled"; then
+  	    kde_sharedirs="/usr/share/kde /usr/local/share /usr/share /opt/kde3/share /opt/kde/share $prefix/share"
+             test -n "$KDEDIR" && kde_sharedirs="$KDEDIR/share $kde_sharedirs"
+-            AC_FIND_FILE(apps/ksgmltools2/customization/kde-chunk.xsl, $kde_sharedirs, KDE_XSL_STYLESHEET)
++            AC_FIND_FILE(apps.kde3/ksgmltools2/customization/kde-chunk.xsl, $kde_sharedirs, KDE_XSL_STYLESHEET)
+ 	    if test "$KDE_XSL_STYLESHEET" = "NO"; then
+ 		KDE_XSL_STYLESHEET=""
+ 	    else
+-                KDE_XSL_STYLESHEET="$KDE_XSL_STYLESHEET/apps/ksgmltools2/customization/kde-chunk.xsl"
++                KDE_XSL_STYLESHEET="$KDE_XSL_STYLESHEET/apps.kde3/ksgmltools2/customization/kde-chunk.xsl"
+ 	    fi
+         fi
+ 
 @@ -1809,7 +1809,7 @@ AC_CACHE_VAL(ac_cv_have_kde,
  
  if test "$kde_qtver" = 1; then

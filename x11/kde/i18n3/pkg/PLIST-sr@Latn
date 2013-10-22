@@ -1,41 +1,41 @@
-@comment $OpenBSD: PLIST-sr@Latn,v 1.12 2012/01/16 22:11:00 espie Exp $
+@comment $OpenBSD: PLIST-sr@Latn,v 1.13 2013/10/22 11:34:04 zhuk Exp $
 @pkgpath x11/kde/i18n3,sr@latn
 @conflict kdeedu-<3.4
-share/apps/katepart/syntax/logohighlightstyle.sr@Latn.xml
-share/apps/khangman/
-share/apps/khangman/data/
-share/apps/khangman/data/sr@Latn/
-share/apps/khangman/data/sr@Latn/animals.kvtml
-share/apps/khangman/data/sr@Latn/easy.kvtml
-share/apps/khangman/data/sr@Latn/hard.kvtml
-share/apps/khangman/data/sr@Latn/medium.kvtml
-share/apps/khangman/sr@Latn.txt
-@comment share/apps/ktuberling/
-@comment share/apps/ktuberling/sounds/
-share/apps/ktuberling/sounds/sr@Latn/
-share/apps/ktuberling/sounds/sr@Latn/brkovi.wav
-share/apps/ktuberling/sounds/sr@Latn/cigara.wav
-share/apps/ktuberling/sounds/sr@Latn/krompirko.wav
-share/apps/ktuberling/sounds/sr@Latn/masna.wav
-share/apps/ktuberling/sounds/sr@Latn/mindjusa.wav
-share/apps/ktuberling/sounds/sr@Latn/naocare.wav
-share/apps/ktuberling/sounds/sr@Latn/naocare_za_sunce.wav
-share/apps/ktuberling/sounds/sr@Latn/nos.wav
-share/apps/ktuberling/sounds/sr@Latn/obrva.wav
-share/apps/ktuberling/sounds/sr@Latn/oko.wav
-share/apps/ktuberling/sounds/sr@Latn/sat.wav
-share/apps/ktuberling/sounds/sr@Latn/sesir.wav
-share/apps/ktuberling/sounds/sr@Latn/usta.wav
-share/apps/ktuberling/sounds/sr@Latn/uvo.wav
-share/apps/ktuberling/sounds/sr@Latn/znacka.wav
-share/apps/kturtle/
-share/apps/kturtle/data/
-share/apps/kturtle/data/logokeywords.sr@Latn.xml
-share/apps/kturtle/examples/
-share/apps/kturtle/examples/sr@Latn/
-share/apps/kturtle/examples/sr@Latn/curly.logo
-share/apps/kturtle/examples/sr@Latn/square.logo
-share/apps/kturtle/examples/sr@Latn/triangle.logo
+share/apps.kde3/katepart/syntax/logohighlightstyle.sr@Latn.xml
+share/apps.kde3/khangman/
+share/apps.kde3/khangman/data/
+share/apps.kde3/khangman/data/sr@Latn/
+share/apps.kde3/khangman/data/sr@Latn/animals.kvtml
+share/apps.kde3/khangman/data/sr@Latn/easy.kvtml
+share/apps.kde3/khangman/data/sr@Latn/hard.kvtml
+share/apps.kde3/khangman/data/sr@Latn/medium.kvtml
+share/apps.kde3/khangman/sr@Latn.txt
+@comment share/apps.kde3/ktuberling/
+@comment share/apps.kde3/ktuberling/sounds/
+share/apps.kde3/ktuberling/sounds/sr@Latn/
+share/apps.kde3/ktuberling/sounds/sr@Latn/brkovi.wav
+share/apps.kde3/ktuberling/sounds/sr@Latn/cigara.wav
+share/apps.kde3/ktuberling/sounds/sr@Latn/krompirko.wav
+share/apps.kde3/ktuberling/sounds/sr@Latn/masna.wav
+share/apps.kde3/ktuberling/sounds/sr@Latn/mindjusa.wav
+share/apps.kde3/ktuberling/sounds/sr@Latn/naocare.wav
+share/apps.kde3/ktuberling/sounds/sr@Latn/naocare_za_sunce.wav
+share/apps.kde3/ktuberling/sounds/sr@Latn/nos.wav
+share/apps.kde3/ktuberling/sounds/sr@Latn/obrva.wav
+share/apps.kde3/ktuberling/sounds/sr@Latn/oko.wav
+share/apps.kde3/ktuberling/sounds/sr@Latn/sat.wav
+share/apps.kde3/ktuberling/sounds/sr@Latn/sesir.wav
+share/apps.kde3/ktuberling/sounds/sr@Latn/usta.wav
+share/apps.kde3/ktuberling/sounds/sr@Latn/uvo.wav
+share/apps.kde3/ktuberling/sounds/sr@Latn/znacka.wav
+share/apps.kde3/kturtle/
+share/apps.kde3/kturtle/data/
+share/apps.kde3/kturtle/data/logokeywords.sr@Latn.xml
+share/apps.kde3/kturtle/examples/
+share/apps.kde3/kturtle/examples/sr@Latn/
+share/apps.kde3/kturtle/examples/sr@Latn/curly.logo
+share/apps.kde3/kturtle/examples/sr@Latn/square.logo
+share/apps.kde3/kturtle/examples/sr@Latn/triangle.logo
 ${LOC}akregator.mo
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo

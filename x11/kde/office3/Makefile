@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.86 2013/10/05 07:34:40 espie Exp $
+# $OpenBSD: Makefile,v 1.87 2013/10/22 11:34:08 zhuk Exp $
 
 COMMENT=		office suite for KDE
 
 VERSION=		1.6.3
-REVISION =		32
+REVISION =		33
 CATEGORIES=		x11 x11/kde productivity
 VMEM_WARNING=		Yes
 MASTER_SITES?=		${MASTER_SITE_KDE:S@$@stable/koffice-${VERSION}/src/@}
@@ -121,7 +121,10 @@ CONFIGURE_ARGS+= --with-pgsqlincdir=${LOCALBASE}/include/postgresql
 CONFIGURE_ENV +=	ac_cv_header_paper_h=no \
 			ac_cv_lib_paper_paperinit=no
 
+post-patch:
+	find ${WRKSRC} -name Makefile.in | xargs perl -pi -e 's@share/apps/@${MODKDE_DATA_SUBDIR}/@'
+
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
+	${INSTALL_DATA_DIR} ${PREFIX}/${MODKDE_HTML_SUBDIR}/en/common
 
 .include <bsd.port.mk>

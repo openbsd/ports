@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2013/10/05 07:34:38 espie Exp $
+# $OpenBSD: Makefile,v 1.69 2013/10/22 11:33:59 zhuk Exp $
 
 COMMENT =		K Desktop Environment, edutainment
 CATEGORIES =		x11 x11/kde
@@ -19,9 +19,11 @@ RUN_DEPENDS +=	devel/desktop-file-utils \
 LIB_DEPENDS = 	x11/kde/libs3
 SEPARATE_BUILD =	flavored
 
-CONFIGURE_ARGS +=	--disable-kig-python-scripting
+# XXX Probably OCaml support could be added?
+CONFIGURE_ARGS +=	--disable-kig-python-scripting \
+			--disable-ocamlsolver
 
-REVISION =	10
+REVISION =	11
 WANTLIB = GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi Xinerama \
 	Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 artsflow artsflow_idl artskde \
 	audiofile c drm expat fam fontconfig freetype glib-2.0>=800 \
@@ -35,6 +37,6 @@ WANTLIB = GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi Xinerama \
 	soundserver_idl stdc++ util vorbis vorbisenc vorbisfile xcb z
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
+	${INSTALL_DATA_DIR} ${PREFIX}/${MODKDE_HTML_SUBDIR}/en/common
 
 .include <bsd.port.mk>

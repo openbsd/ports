@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2013/10/05 07:34:38 espie Exp $
+# $OpenBSD: Makefile,v 1.120 2013/10/22 11:33:58 zhuk Exp $
 
 COMMENT-main = 		K Desktop Environment, basic applications
 COMMENT-samba =		K Desktop Environment, samba support
@@ -48,7 +48,7 @@ LIB_DEPENDS-samba = ${LIB_DEPENDS} \
 		net/samba>=3
 
 
-REVISION-main =		26
+REVISION-main =		28
 WANTLIB-main = ${WANTLIB} GL GLU Half Iex IlmImf IlmThread Imath Xcomposite \
 	Xcursor Xdamage Xdamage Xfixes Xfixes Xft Xi Xinerama Xmu Xrandr Xss \
 	Xt Xtst Xxf86misc Xxf86vm Xxf86vm asn1 audiofile c com_err crypto drm \
@@ -64,26 +64,14 @@ WANTLIB-main = ${WANTLIB} GL GLU Half Iex IlmImf IlmThread Imath Xcomposite \
 	FLAC avahi-client avahi-common dbus-1 dns_sd heimbase \
 	roken wind
 
-REVISION-samba =	8
+REVISION-samba =	10
 WANTLIB-samba = ${WANTLIB} execinfo lib/samba/smbclient pthread talloc tdb \
 	wbclient Xfixes Xt expat fontconfig freetype
 
 SEPARATE_BUILD =	flavored
-EXTRA_CONFIG =	xdg/menus/kde-settings.menu \
-		xdg/menus/kde-information.menu \
-		xdg/menus/kde-screensavers.menu \
-		xdg/menus/applications-merged/kde-essential.menu \
-		ksysguarddrc
-
-
-SAMPLECONFDIR = ${PREFIX}/share/apps/kde-conf-sample
-
-SUBST_VARS = EXTRA_CONFIG SAMPLECONFDIR
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/kdesurc ${PREFIX}/share/config
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
-
-FAKE_FLAGS =	sysconfdir=${SAMPLECONFDIR}
+	${INSTALL_DATA_DIR} ${PREFIX}/${MODKDE_HTML_SUBDIR}/en/common
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST-es,v 1.9 2012/01/17 18:08:22 espie Exp $
+@comment $OpenBSD: PLIST-es,v 1.10 2013/10/22 11:34:07 zhuk Exp $
 @pkgpath x11/kde/office-i18n3,es
-share/apps/koffice/
-share/apps/koffice/autocorrect/
-share/apps/koffice/autocorrect/es.xml
-share/doc/HTML/es/
+share/apps.kde3/koffice/
+share/apps.kde3/koffice/autocorrect/
+share/apps.kde3/koffice/autocorrect/es.xml
+share/doc/HTML.kde3/es/
 ${DOC}karbon/
 ${DOC}karbon/common
 ${DOC}karbon/${C}

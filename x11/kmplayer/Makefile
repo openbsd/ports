@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2013/10/05 07:34:42 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/10/22 11:34:24 zhuk Exp $
 
 COMMENT=	front-end/embeddable KPart for MPlayer
 CATEGORIES=	x11 x11/kde
 DISTNAME=	kmplayer-0.6.4
 EXTRACT_SUFX=	.tar.bz2
 
-REVISION=	5
+REVISION=	6
 
 SHARED_LIBS=	kparts_kmplayer  0.0 \
 		kdeinit_kmplayer 0.0
@@ -17,6 +17,9 @@ MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 MODKDE_VERSION=	3.1
 MODULES=	x11/kde devel/gettext
+
+MODKDE_FIXUP_DATADIR=	Yes
+
 MODGNU_CONFIG_GUESS_DIRS=	${MODKDE_CONFIG_GUESS_DIRS}
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.52

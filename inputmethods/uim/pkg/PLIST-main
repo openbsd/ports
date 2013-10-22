@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2011/09/13 06:42:50 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2013/10/22 11:34:19 zhuk Exp $
 @pkgpath inputmethods/uim
 @pkgpath inputmethods/uim,-gnome
 @bin bin/uim-el-agent
@@ -25,7 +25,6 @@ include/uim/uim.h
 lib/gtk-2.0/
 lib/gtk-2.0/2.10.0/
 lib/gtk-2.0/2.10.0/immodules/
-lib/kde3/
 lib/libgcroots.a
 lib/libgcroots.la
 @lib lib/libgcroots.so.${LIBgcroots_VERSION}
@@ -61,7 +60,6 @@ lib/uim/plugin/libuim-skk.so
 @bin libexec/uim-helper-server
 @man man/man1/uim-xim.1
 share/applications/uim.desktop
-share/apps/
 share/doc/sigscheme/
 share/emacs/site-lisp/uim-el/
 share/emacs/site-lisp/uim-el/uim-candidate.el

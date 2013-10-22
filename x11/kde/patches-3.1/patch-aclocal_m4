@@ -1,6 +1,20 @@
-$OpenBSD: patch-aclocal_m4,v 1.4 2003/12/07 20:19:15 espie Exp $
---- aclocal.m4.orig	2003-09-10 04:43:36.000000000 +0200
-+++ aclocal.m4	2003-12-04 23:42:51.000000000 +0100
+$OpenBSD: patch-aclocal_m4,v 1.5 2013/10/22 11:34:09 zhuk Exp $
+--- aclocal.m4.orig	Wed Nov 26 22:24:01 2003
++++ aclocal.m4	Wed Oct  9 20:59:32 2013
+@@ -556,11 +556,11 @@ AC_DEFUN(KDE_SUBST_PROGRAMS,
+         if test -n "$MEINPROC" && test ! "$MEINPROC" = "compiled"; then  
+  	    kde_sharedirs="/usr/share/kde /usr/local/share /usr/share /opt/kde3/share /opt/kde/share $prefix/share"
+             test -n "$KDEDIR" && kde_sharedirs="$KDEDIR/share $kde_sharedirs"
+-            AC_FIND_FILE(apps/ksgmltools2/customization/kde-chunk.xsl, $kde_sharedirs, KDE_XSL_STYLESHEET)
++            AC_FIND_FILE(apps.kde3/ksgmltools2/customization/kde-chunk.xsl, $kde_sharedirs, KDE_XSL_STYLESHEET)
+ 	    if test "$KDE_XSL_STYLESHEET" = "NO"; then
+ 		KDE_XSL_STYLESHEET=""
+ 	    else
+-                KDE_XSL_STYLESHEET="$KDE_XSL_STYLESHEET/apps/ksgmltools2/customization/kde-chunk.xsl"
++                KDE_XSL_STYLESHEET="$KDE_XSL_STYLESHEET/apps.kde3/ksgmltools2/customization/kde-chunk.xsl"
+ 	    fi
+         fi
+ 
 @@ -6722,8 +6722,8 @@ nto-qnx)
  
  openbsd*)

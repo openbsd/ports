@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.79 2013/10/05 07:34:39 espie Exp $
+# $OpenBSD: Makefile,v 1.80 2013/10/22 11:34:05 zhuk Exp $
 
 COMMENT =		K Desktop Environment, multimedia applications
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
-REVISION =		14
+REVISION =		15
 DISTNAME =		kdemultimedia-${VERSION}
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	artsbuilder          1.0      # .0.0
@@ -49,10 +49,6 @@ LIB_DEPENDS =	x11/kde/libs3 \
 		audio/akode \
 		multimedia/xine-lib
 
-EXTRA_CONFIG =	xdg/menus/applications-merged/kde-multimedia-music.menu 
-SAMPLECONFDIR =	${PREFIX}/share/apps/kde-conf-sample
-
-FAKE_FLAGS =	sysconfdir=${SAMPLECONFDIR}
 RUN_DEPENDS =	graphics/xanim \
 		devel/desktop-file-utils \
 		x11/gtk+2,-guic
@@ -82,6 +78,6 @@ post-extract:
 	cp ${FILESDIR}/audioIO_sndio.cpp ${WRKSRC}/mpeglib/lib/util/audio
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
+	${INSTALL_DATA_DIR} ${PREFIX}/${MODKDE_HTML_SUBDIR}/en/common
 
 .include <bsd.port.mk>

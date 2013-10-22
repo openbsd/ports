@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/08/20 22:06:00 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/10/22 11:34:23 zhuk Exp $
 @bin bin/filelight
 ${KDE}/libfilelight.la
 ${KDE}/libfilelight.so
 share/applications/kde/filelight.desktop
-share/apps/filelight/
-share/apps/filelight/filelight_partui.rc
-share/apps/filelight/filelightui.rc
+share/apps.kde3/filelight/
+share/apps.kde3/filelight/filelight_partui.rc
+share/apps.kde3/filelight/filelightui.rc
 share/config/filelightrc
 share/icons/crystalsvg/32x32/actions/view_filelight.png
 share/icons/hicolor/16x16/apps/filelight.png

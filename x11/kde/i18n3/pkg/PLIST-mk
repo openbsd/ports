@@ -1,23 +1,23 @@
-@comment $OpenBSD: PLIST-mk,v 1.13 2012/01/16 22:11:00 espie Exp $
+@comment $OpenBSD: PLIST-mk,v 1.14 2013/10/22 11:34:02 zhuk Exp $
 @pkgpath x11/kde/i18n3,mk
-share/apps/katepart/syntax/logohighlightstyle.mk.xml
-share/apps/kturtle/
-share/apps/kturtle/data/
-share/apps/kturtle/data/logokeywords.mk.xml
-share/apps/kturtle/examples/
-share/apps/kturtle/examples/mk/
-share/apps/kturtle/examples/mk/boiplatno.logo
-share/apps/kturtle/examples/mk/cvekje.logo
-share/apps/kturtle/examples/mk/izvitkano.logo
-share/apps/kturtle/examples/mk/kde.logo
-share/apps/kturtle/examples/mk/kvadrat.logo
-share/apps/kturtle/examples/mk/kvadratii.logo
-share/apps/kturtle/examples/mk/reklama.logo
-share/apps/kturtle/examples/mk/slucajnoime.logo
-share/apps/kturtle/examples/mk/strelka.logo
-share/apps/kturtle/examples/mk/tablicamnozenje.logo
-share/apps/kturtle/examples/mk/triagolnicii.logo
-share/apps/kturtle/examples/mk/triagolnik.logo
+share/apps.kde3/katepart/syntax/logohighlightstyle.mk.xml
+share/apps.kde3/kturtle/
+share/apps.kde3/kturtle/data/
+share/apps.kde3/kturtle/data/logokeywords.mk.xml
+share/apps.kde3/kturtle/examples/
+share/apps.kde3/kturtle/examples/mk/
+share/apps.kde3/kturtle/examples/mk/boiplatno.logo
+share/apps.kde3/kturtle/examples/mk/cvekje.logo
+share/apps.kde3/kturtle/examples/mk/izvitkano.logo
+share/apps.kde3/kturtle/examples/mk/kde.logo
+share/apps.kde3/kturtle/examples/mk/kvadrat.logo
+share/apps.kde3/kturtle/examples/mk/kvadratii.logo
+share/apps.kde3/kturtle/examples/mk/reklama.logo
+share/apps.kde3/kturtle/examples/mk/slucajnoime.logo
+share/apps.kde3/kturtle/examples/mk/strelka.logo
+share/apps.kde3/kturtle/examples/mk/tablicamnozenje.logo
+share/apps.kde3/kturtle/examples/mk/triagolnicii.logo
+share/apps.kde3/kturtle/examples/mk/triagolnik.logo
 ${LOC}akregator.mo
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo

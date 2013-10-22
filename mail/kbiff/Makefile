@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2013/10/05 07:34:34 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2013/10/22 11:34:20 zhuk Exp $
 
 COMMENT=		new mail notification utility for KDE
 
 DISTNAME=		kbiff-3.8
-REVISION =		7
+REVISION =		8
 SHARED_LIBS=		kbiff 2.0
 CATEGORIES=		mail
 EXTRACT_SUFX=		.tar.bz2
@@ -27,6 +27,7 @@ RUN_DEPENDS=		x11/gtk+2,-guic
 LIB_DEPENDS=		x11/kde/libs3
 
 MODULES=        	x11/kde devel/gettext
+MODKDE_FIXUP_DATADIR =	Yes
 
 MAKE_ENV=		KDEDIR="${LOCALBASE}"
 MAKE_FLAGS=		${MODKDE_MAKE_FLAGS}

@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST-tr,v 1.11 2012/01/16 22:11:00 espie Exp $
+@comment $OpenBSD: PLIST-tr,v 1.12 2013/10/22 11:34:04 zhuk Exp $
 @pkgpath x11/kde/i18n3,tr
-share/apps/khangman/
-share/apps/khangman/data/
-share/apps/khangman/data/tr/
-share/apps/khangman/data/tr/animals.kvtml
-share/apps/khangman/data/tr/easy.kvtml
-share/apps/khangman/data/tr/hard.kvtml
-share/apps/khangman/data/tr/medium.kvtml
-share/apps/khangman/tr.txt
-share/doc/HTML/tr/
+share/apps.kde3/khangman/
+share/apps.kde3/khangman/data/
+share/apps.kde3/khangman/data/tr/
+share/apps.kde3/khangman/data/tr/animals.kvtml
+share/apps.kde3/khangman/data/tr/easy.kvtml
+share/apps.kde3/khangman/data/tr/hard.kvtml
+share/apps.kde3/khangman/data/tr/medium.kvtml
+share/apps.kde3/khangman/tr.txt
+share/doc/HTML.kde3/tr/
 ${DOC}common/
 ${DOC}common/1.png
 ${DOC}common/10.png

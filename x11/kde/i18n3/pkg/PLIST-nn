@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST-nn,v 1.9 2012/01/16 22:11:00 espie Exp $
+@comment $OpenBSD: PLIST-nn,v 1.10 2013/10/22 11:34:03 zhuk Exp $
 @pkgpath x11/kde/i18n3,nn
-share/apps/khangman/
-share/apps/khangman/data/
-share/apps/khangman/data/nn/
-share/apps/khangman/data/nn/animals.kvtml
-share/apps/khangman/data/nn/easy.kvtml
-share/apps/khangman/data/nn/hard.kvtml
-share/apps/khangman/data/nn/medium.kvtml
-share/apps/khangman/nn.txt
+share/apps.kde3/khangman/
+share/apps.kde3/khangman/data/
+share/apps.kde3/khangman/data/nn/
+share/apps.kde3/khangman/data/nn/animals.kvtml
+share/apps.kde3/khangman/data/nn/easy.kvtml
+share/apps.kde3/khangman/data/nn/hard.kvtml
+share/apps.kde3/khangman/data/nn/medium.kvtml
+share/apps.kde3/khangman/nn.txt
 ${LOC}akregator.mo
 ${LOC}amor.mo
 ${LOC}appletproxy.mo

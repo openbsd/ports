@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2013/10/05 07:34:43 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/10/22 11:34:26 zhuk Exp $
 
 COMMENT=	terminal application that embeds Konsole for KDE
 
 DISTNAME=	quadkonsole-2.0
-REVISION=	10
+REVISION=	11
 CATEGORIES=	x11 x11/kde
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
@@ -33,5 +33,7 @@ CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.59
 CONFIGURE_ARGS+=${MODKDE_CONFIGURE_ARGS}
 CONFIGURE_ENV+=	${MODKDE_CONFIGURE_ENV}
+
+PORTHOME=	${WRKDIR}
 
 .include <bsd.port.mk>

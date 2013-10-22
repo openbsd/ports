@@ -1,15 +1,15 @@
-@comment $OpenBSD: PLIST-fi,v 1.16 2012/01/16 22:11:00 espie Exp $
+@comment $OpenBSD: PLIST-fi,v 1.17 2013/10/22 11:34:01 zhuk Exp $
 @pkgpath x11/kde/i18n3,fi
 @conflict kdeedu-<3.4
-share/apps/khangman/
-share/apps/khangman/data/
-share/apps/khangman/data/fi/
-share/apps/khangman/data/fi/animals.kvtml
-share/apps/khangman/data/fi/easy.kvtml
-share/apps/khangman/data/fi/hard.kvtml
-share/apps/khangman/data/fi/medium.kvtml
-share/apps/khangman/fi.txt
-share/doc/HTML/fi/
+share/apps.kde3/khangman/
+share/apps.kde3/khangman/data/
+share/apps.kde3/khangman/data/fi/
+share/apps.kde3/khangman/data/fi/animals.kvtml
+share/apps.kde3/khangman/data/fi/easy.kvtml
+share/apps.kde3/khangman/data/fi/hard.kvtml
+share/apps.kde3/khangman/data/fi/medium.kvtml
+share/apps.kde3/khangman/fi.txt
+share/doc/HTML.kde3/fi/
 ${DOC}common/
 ${DOC}common/1.png
 ${DOC}common/10.png

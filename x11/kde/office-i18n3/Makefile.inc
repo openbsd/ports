@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.2 2013/10/05 07:34:40 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2013/10/22 11:34:06 zhuk Exp $
 
 LANGS= ca cs cy da de el en_GB es et eu fi fr \
 	hu it ja lv ms nb nl pl pt pt_BR ru sk sl sr sr@Latn \
 	sv tr uk zh_CN zh_TW
 
-REVISION =	3
+REVISION =	4
 
 .for i in ${LANGS}
 SUPDISTFILES += koffice-l10n-$i-${VERSION}.tar.bz2
@@ -14,7 +14,7 @@ DISTFILES = koffice-l10n-$L-${VERSION}.tar.bz2
 WRKDIST = ${WRKDIR}/koffice-l10n-$L-${VERSION}
 DISTNAME = koffice-i18n-$L-${VERSION:S/-//g}
 COMMENT = $L translations for KDE
-DOC=share/doc/HTML/$L/
+DOC=${MODKDE_HTML_SUBDIR}/$L/
 LOC=share/locale/$L/LC_MESSAGES/
 I=index.docbook
 C=index.cache.bz2

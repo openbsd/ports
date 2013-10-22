@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/01/17 11:35:43 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/10/22 11:34:25 zhuk Exp $
 @bin bin/kmplayer
 ${KDE}/kparts_kmplayer.la
 @lib ${KDE}/libkparts_kmplayer.so.${LIBkparts_kmplayer_VERSION}
@@ -9,14 +9,14 @@ share/applnk/Multimedia/
 share/applnk/Multimedia/More/
 share/applnk/Multimedia/More/kmplayer.desktop
 share/applnk/Multimedia/kmplayer.desktop
-share/apps/kmplayer/
-share/apps/kmplayer/kmplayerpartui.rc
-share/apps/kmplayer/kmplayerui.rc
+share/apps.kde3/kmplayer/
+share/apps.kde3/kmplayer/kmplayerpartui.rc
+share/apps.kde3/kmplayer/kmplayerui.rc
 share/config/kmplayerrc
-share/doc/HTML/en/kmplayer/
-share/doc/HTML/en/kmplayer/common
-share/doc/HTML/en/kmplayer/index.cache.bz2
-share/doc/HTML/en/kmplayer/index.docbook
+share/doc/HTML.kde3/en/kmplayer/
+share/doc/HTML.kde3/en/kmplayer/common
+share/doc/HTML.kde3/en/kmplayer/index.cache.bz2
+share/doc/HTML.kde3/en/kmplayer/index.docbook
 share/locale/hu/LC_MESSAGES/kmplayer.mo
 @comment share/mimelnk/application/x-applix.desktop
 @comment share/mimelnk/application/x-mplayer2.desktop

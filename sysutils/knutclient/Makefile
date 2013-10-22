@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2013/10/05 07:34:36 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/10/22 11:34:23 zhuk Exp $
 
 COMMENT=		KDE UPS monitoring tool
 
 RELEASE=		0.6.0
 DISTNAME=		knutclient-${RELEASE}
-REVISION =		7
+REVISION =		8
 CATEGORIES=		sysutils x11 x11/kde
 
 HOMEPAGE=		http://www.alo.cz/knutclient-pop-en.html

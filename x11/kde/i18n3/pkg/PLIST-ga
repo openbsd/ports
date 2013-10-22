@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST-ga,v 1.6 2012/01/16 22:11:00 espie Exp $
+@comment $OpenBSD: PLIST-ga,v 1.7 2013/10/22 11:34:02 zhuk Exp $
 @pkgpath x11/kde/i18n3,ga
-share/apps/khangman/
-share/apps/khangman/data/
-share/apps/khangman/data/ga/
-share/apps/khangman/data/ga/animals.kvtml
-share/apps/khangman/data/ga/easy.kvtml
-share/apps/khangman/data/ga/hard.kvtml
-share/apps/khangman/data/ga/medium.kvtml
-share/apps/khangman/ga.txt
+share/apps.kde3/khangman/
+share/apps.kde3/khangman/data/
+share/apps.kde3/khangman/data/ga/
+share/apps.kde3/khangman/data/ga/animals.kvtml
+share/apps.kde3/khangman/data/ga/easy.kvtml
+share/apps.kde3/khangman/data/ga/hard.kvtml
+share/apps.kde3/khangman/data/ga/medium.kvtml
+share/apps.kde3/khangman/ga.txt
 ${LOC}akregator.mo
 ${LOC}akregator_konqplugin.mo
 ${LOC}alsaplayerui.mo

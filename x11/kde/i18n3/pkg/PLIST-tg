@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST-tg,v 1.10 2012/01/16 22:11:00 espie Exp $
+@comment $OpenBSD: PLIST-tg,v 1.11 2013/10/22 11:34:04 zhuk Exp $
 @pkgpath x11/kde/i18n3,tg
 @conflict kdeedu-<3.4
-share/apps/khangman/
-share/apps/khangman/data/
-share/apps/khangman/data/tg/
-share/apps/khangman/data/tg/animals.kvtml
-share/apps/khangman/data/tg/easy.kvtml
-share/apps/khangman/data/tg/hard.kvtml
-share/apps/khangman/data/tg/medium.kvtml
-share/apps/khangman/tg.txt
+share/apps.kde3/khangman/
+share/apps.kde3/khangman/data/
+share/apps.kde3/khangman/data/tg/
+share/apps.kde3/khangman/data/tg/animals.kvtml
+share/apps.kde3/khangman/data/tg/easy.kvtml
+share/apps.kde3/khangman/data/tg/hard.kvtml
+share/apps.kde3/khangman/data/tg/medium.kvtml
+share/apps.kde3/khangman/tg.txt
 share/locale/tg/
 share/locale/tg/LC_MESSAGES/
 ${LOC}alsaplayerui.mo

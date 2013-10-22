@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2013/10/05 07:34:39 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2013/10/22 11:34:00 zhuk Exp $
 
 LANGS = af ar az be bg bn br bs ca cs csb cy da de el en_GB eo es et eu fa \
 	fi fr fy ga gl he hi hr hu is it ja kk km ko lt lv mk mn ms nb nds \
@@ -6,7 +6,7 @@ LANGS = af ar az be bg bn br bs ca cs csb cy da de el en_GB eo es et eu fa \
 	tr uk uz uz@cyrillic vi wa zh_CN zh_TW
 
 
-REVISION = 2
+REVISION = 3
 
 .for i in ${LANGS}
 SUPDISTFILES += kde-i18n-$i-${VERSION}.tar.bz2
@@ -16,7 +16,7 @@ DISTFILES = kde-i18n-$L-${VERSION}.tar.bz2
 WRKDIST = ${WRKDIR}/kde-i18n-$L-${VERSION}
 DISTNAME = kde-i18n-$L-${VERSION}
 COMMENT = $L translations for KDE
-DOC = share/doc/HTML/$L/
+DOC = ${MODKDE_HTML_SUBDIR}/$L/
 LOC = share/locale/$L/LC_MESSAGES/
 I = index.docbook
 C = index.cache.bz2

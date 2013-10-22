@@ -1,4 +1,4 @@
-# $OpenBSD: kde.port.mk,v 1.41 2013/10/05 07:34:37 espie Exp $
+# $OpenBSD: kde.port.mk,v 1.42 2013/10/22 11:33:55 zhuk Exp $
 
 SHARED_ONLY ?=	Yes
 
@@ -33,10 +33,15 @@ MODKDE_CONFIG_GUESS_DIRS =	${WRKSRC} ${WRKSRC}/admin
 MODKDE_CONFIGURE_ENV =		UIC_PATH="${MODQT_UIC}" UIC="${MODQT_UIC}"
 MODKDE_CONFIGURE_ENV +=		RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
 MODKDE_CONFIGURE_ENV +=		PTHREAD_LIBS=-pthread
+MODKDE_CONFIGURE_ENV +=		kde_datadir='\$${datadir}/apps.kde3'
+MODKDE_CONFIGURE_ENV +=		kde_htmldir='\$${datadir}/doc/HTML.kde3'
 MODKDE_MAKE_FLAGS =		CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
 MODKDE_MAKE_FLAGS +=		LIBRESOLV=
 
 MODKDE_post-patch =	find ${WRKDIST} -name Makefile.am -exec touch {}.in \;
+
+MODKDE_DATA_SUBDIR =	share/apps.kde3
+MODKDE_HTML_SUBDIR =	share/doc/HTML.kde3
 
 KDE =		lib/kde3
 SUBST_VARS +=	KDE
@@ -94,4 +99,12 @@ MODKDE_post-install += ; test -e ../lib$l.so.$v && \
 KDE3_ONLY ?= Yes
 .if ${KDE3_ONLY:L} == "yes"
 DPB_PROPERTIES += tag:kde3
+.endif
+
+MODKDE_FIXUP_DATADIR ?=	No
+.if ${MODKDE_FIXUP_DATADIR:L} == "yes"
+MODKDE_post-patch = find ${WRKSRC} -name Makefile.in -or -name Makefile.am | \
+	xargs perl -pi.datadir \
+	  -e 's!^datadir\s*=\s*\$$\(kde_datadir\)(.*)$$!datadir = ${PREFIX}/${MODKDE_DATA_SUBDIR}$$1!;' \
+	  -e 's!^datadir\s*=\s*\$$\(kde_htmldir\)(.*)$$!datadir = ${PREFIX}/${MODKDE_HTML_SUBDIR}$$1!;'
 .endif

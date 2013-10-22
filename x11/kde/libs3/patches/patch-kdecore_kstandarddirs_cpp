@@ -1,0 +1,42 @@
+$OpenBSD: patch-kdecore_kstandarddirs_cpp,v 1.3 2013/10/22 11:34:05 zhuk Exp $
+--- kdecore/kstandarddirs.cpp.orig	Wed Feb 13 12:41:08 2008
++++ kdecore/kstandarddirs.cpp	Sat Oct 12 15:46:22 2013
+@@ -274,6 +274,15 @@ bool KStandardDirs::addResourceType( const char *type,
+     if (copy.at(copy.length() - 1) != '/')
+ 	copy += '/';
+     if (!rels->contains(copy)) {
++	// OpenBSD specifics: always add fallback directory for
++	// backward compatibility.
++	QString datadef = kde_default("data");
++	if (copy.left(datadef.length()) == datadef) {
++	    QString fallback = "share/apps/" + copy.mid(datadef.length(), copy.length());
++	    kdDebug() << "Adding fallback OpenBSD resource for type " << type << ": " << fallback << endl;
++	    addResourceType(type, fallback, priority);
++	}
++
+         if (priority)
+ 	    rels->prepend(copy);
+ 	else
+@@ -1019,9 +1028,9 @@ static int tokenize( QStringList& tokens, const QStrin
+ 
+ QString KStandardDirs::kde_default(const char *type) {
+     if (!strcmp(type, "data"))
+-	return "share/apps/";
++	return "share/apps.kde3/";
+     if (!strcmp(type, "html"))
+-	return "share/doc/HTML/";
++	return "share/doc/HTML.kde3/";
+     if (!strcmp(type, "icon"))
+ 	return "share/icons/";
+     if (!strcmp(type, "config"))
+@@ -1423,6 +1432,10 @@ void KStandardDirs::addKDEDefaults()
+ 	addResourceType(types[index], kde_default(types[index]));
+ 	index++;
+     }
++
++    // OpenBSD specific
++    addResourceType("data", "share/apps");
++    addResourceType("html", "share/doc/HTML");
+ 
+     addResourceDir("home", QDir::homeDirPath());
+ }

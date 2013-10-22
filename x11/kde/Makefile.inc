@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.43 2013/07/08 14:03:29 zhuk Exp $
+# $OpenBSD: Makefile.inc,v 1.44 2013/10/22 11:33:55 zhuk Exp $
 DIST_SUBDIR ?=	kde
 HOMEPAGE ?=	http://www.kde.org
 
@@ -29,12 +29,15 @@ CONFIGURE_ARGS +=	${MODKDE_CONFIGURE_ARGS}
 USE_GMAKE ?=		Yes
 
 PORTHOME ?=		${WRKDIR}
+SAMPLECONFDIR =		${TRUEPREFIX}/share/apps.kde3/kde-conf-sample
 
 CONFIGURE_ENV +=	${MODKDE_CONFIGURE_ENV}
 MAKE_ENV =		${CONFIGURE_ENV}
 
 MAKE_FLAGS +=		${MODKDE_MAKE_FLAGS}
 FAKE_FLAGS ?=		TAR=tar 
+FAKE_FLAGS +=		sysconfdir=${SAMPLECONFDIR}
+
 # GPL
 PERMIT_DISTFILES_FTP ?=		Yes
 PERMIT_PACKAGE_CDROM ?=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2013/10/16 16:35:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.132 2013/10/22 11:34:05 zhuk Exp $
 
 BROKEN-alpha =		.got subsegment exceeds 64K
 BROKEN-mips64 =		.got subsegment exceeds 64K
@@ -13,7 +13,9 @@ MASTER_SITES0 =  	ftp://ftp.kde.org/pub/kde/security_patches/
 PKGNAME-main =		${DISTNAME}
 PKGSPEC-main =		kdelibs->=3,<4
 PKGNAME-cups =		kdecups-${VERSION}
-MODKDE_VERSION =		3.5.8
+
+MODKDE_VERSION =	3.5.8
+
 SHARED_LIBS +=	DCOP                 7.0      # .6.0
 SHARED_LIBS +=	kdefx                7.0      # .6.0
 SHARED_LIBS +=	kdefakes             7.0      # .6.0
@@ -97,8 +99,8 @@ LIB_DEPENDS-cups = \
 	print/cups,-libs
 
 
-REVISION-main = 24
-REVISION-cups = 12
+REVISION-main = 25
+REVISION-cups = 13
 
 WANTLIB-main =	${WANTLIB} 
 WANTLIB-main +=	GL Half Iex IlmImf>=4 IlmThread Imath Xcursor Xdamage Xfixes
@@ -118,10 +120,6 @@ WANTLIB-cups += DCOP cups lib/kde3/kdecore>=6 lib/kde3/kdefakes \
 
 
 SEPARATE_BUILD =	flavored
-SAMPLECONFDIR =		${TRUEPREFIX}/share/apps/kde-conf-sample
-EXTRA_CONFIG =		xdg/menus/applications.menu
-
-FAKE_FLAGS =		sysconfdir=${SAMPLECONFDIR}
 
 pre-configure:
 	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' \

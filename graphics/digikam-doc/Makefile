@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2013/10/05 07:34:32 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/10/22 11:34:16 zhuk Exp $
 
 COMMENT=		documentation for digikam
 CATEGORIES=		graphics x11 x11/kde
 V=			0.9.3
 DISTNAME=		digikam-doc-$V
-REVISION=		1
+REVISION=		2
 PKGNAME=		digikam-doc-0.9.3
 HOMEPAGE=		http://www.digikam.org/
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=digikam/}

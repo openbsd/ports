@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.44 2013/10/05 07:34:41 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2013/10/22 11:34:12 zhuk Exp $
 
 COMMENT = 		web development tool
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdewebdev-${VERSION}
+REVISION =		11
 MODKDE_VERSION =	3.5.8
 PKGSPEC =		kdewebdev->=3,<4
+
 SHARED_LIBS +=	kommanderplugin      1.0      # .0.0
 SHARED_LIBS +=	kommanderwidget      1.0      # .0.0
 SHARED_LIBS +=	kommanderwidgets     1.0      # .0.0
-
-REVISION =	10
 
 MODULES =	x11/kde devel/gettext
 
@@ -43,6 +43,6 @@ WANTLIB +=	stdc++ util xcb xml2 xslt z
 CONFIGURE_ENV=		TAR=tar
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/HTML/en/common
+	${INSTALL_DATA_DIR} ${PREFIX}/${MODKDE_HTML_SUBDIR}/en/common
 
 .include <bsd.port.mk>
