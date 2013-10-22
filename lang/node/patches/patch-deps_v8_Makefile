@@ -1,0 +1,20 @@
+$OpenBSD: patch-deps_v8_Makefile,v 1.1 2013/10/22 15:29:14 abieber Exp $
+--- deps/v8/Makefile.orig	Mon Sep 30 14:52:48 2013
++++ deps/v8/Makefile	Tue Oct  8 09:25:06 2013
+@@ -254,14 +254,14 @@ clean: $(addsuffix .clean, $(ARCHES) $(ANDROID_ARCHES)
+ OUT_MAKEFILES = $(addprefix $(OUTDIR)/Makefile.,$(ARCHES))
+ $(OUT_MAKEFILES): $(GYPFILES) $(ENVFILE)
+ 	GYP_GENERATORS=make \
+-	build/gyp/gyp --generator-output="$(OUTDIR)" build/all.gyp \
++	gyp --generator-output="$(OUTDIR)" build/all.gyp \
+ 	              -Ibuild/standalone.gypi --depth=. \
+ 	              -Dv8_target_arch=$(subst .,,$(suffix $@)) \
+ 	              -S.$(subst .,,$(suffix $@)) $(GYPFLAGS)
+ 
+ $(OUTDIR)/Makefile.native: $(GYPFILES) $(ENVFILE)
+ 	GYP_GENERATORS=make \
+-	build/gyp/gyp --generator-output="$(OUTDIR)" build/all.gyp \
++	gyp --generator-output="$(OUTDIR)" build/all.gyp \
+ 	              -Ibuild/standalone.gypi --depth=. -S.native $(GYPFLAGS)
+ 
+ must-set-ANDROID_NDK_ROOT_OR_TOOLCHAIN:

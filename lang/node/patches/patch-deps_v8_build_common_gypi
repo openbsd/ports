@@ -1,0 +1,22 @@
+$OpenBSD: patch-deps_v8_build_common_gypi,v 1.1 2013/10/22 15:29:14 abieber Exp $
+--- deps/v8/build/common.gypi.orig	Mon Sep 30 14:52:48 2013
++++ deps/v8/build/common.gypi	Tue Oct  8 09:25:17 2013
+@@ -92,7 +92,7 @@
+     'v8_use_snapshot%': 'true',
+     'host_os%': '<(OS)',
+     'v8_use_liveobjectlist%': 'false',
+-    'werror%': '-Werror',
++    'werror%': '',
+ 
+     # With post mortem support enabled, metadata is embedded into libv8 that
+     # describes various parameters of the VM for use by debuggers. See
+@@ -324,6 +324,9 @@
+       }],
+       ['OS=="freebsd" or OS=="openbsd"', {
+         'cflags': [ '-I/usr/local/include' ],
++         'libraries': [                                            
++            '-L/usr/local/lib -lexecinfo',
++          ]
+       }],
+       ['OS=="netbsd"', {
+         'cflags': [ '-I/usr/pkg/include' ],

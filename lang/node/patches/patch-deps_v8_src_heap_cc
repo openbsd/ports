@@ -1,0 +1,33 @@
+$OpenBSD: patch-deps_v8_src_heap_cc,v 1.4 2013/10/22 15:29:14 abieber Exp $
+--- deps/v8/src/heap.cc.orig	Mon Sep 30 14:52:48 2013
++++ deps/v8/src/heap.cc	Tue Oct  8 09:25:37 2013
+@@ -5888,6 +5888,29 @@ bool Heap::ConfigureHeap(int max_semispace_size,
+   initial_semispace_size_ = Min(initial_semispace_size_, max_semispace_size_);
+   external_allocation_limit_ = 16 * max_semispace_size_;
+ 
++  intptr_t max_virtual = OS::MaxVirtualMemory();
++
++  if (max_virtual > 0) {
++    intptr_t half = max_virtual >> 1;
++    intptr_t quarter = max_virtual >> 2;
++    // If we have limits on the amount of virtual memory we can use then we may
++    // be forced to lower the allocation limits.  We reserve one quarter of the
++    // memory for young space and off-heap data.  The rest is distributed as
++    // described below.
++    if (code_range_size_ > 0) {
++      // Reserve a quarter of the memory for the code range.  The old space
++      // heap gets the remaining half.  There is some unavoidable double
++      // counting going on here since the heap size is measured in committed
++      // virtual memory and the code range is only reserved virtual memory.
++      code_range_size_ = Min(code_range_size_, quarter);
++      max_old_generation_size_ = Min(max_old_generation_size_, half);
++    } else {
++      // Reserve three quarters of the memory for the old space heap including
++      // the executable code.
++      max_old_generation_size_ = Min(max_old_generation_size_, half + quarter);
++    }
++  }
++
+   // The old generation is paged and needs at least one page for each space.
+   int paged_space_count = LAST_PAGED_SPACE - FIRST_PAGED_SPACE + 1;
+   max_old_generation_size_ = Max(static_cast<intptr_t>(paged_space_count *

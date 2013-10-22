@@ -1,0 +1,14 @@
+$OpenBSD: patch-deps_v8_tools_gyp_v8_gyp,v 1.1 2013/10/22 15:29:14 abieber Exp $
+--- deps/v8/tools/gyp/v8.gyp.orig	Mon Sep 30 14:52:48 2013
++++ deps/v8/tools/gyp/v8.gyp	Tue Oct  8 09:25:50 2013
+@@ -74,8 +74,8 @@
+                     'OTHER_LDFLAGS': ['-dynamiclib', '-all_load']
+                   },
+                 }],
+-                ['soname_version!=""', {
+-                  'product_extension': 'so.<(soname_version)',
++                ['soname_version!="-1"', {
++                  'product_extension': 'so.${LIBv8_VERSION}',
+                 }],
+               ],
+             },

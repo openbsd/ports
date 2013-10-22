@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/08/11 17:12:13 abieber Exp $
+# $OpenBSD: Makefile,v 1.22 2013/10/22 15:29:13 abieber Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -8,8 +8,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	V8 JavaScript for clients and servers
 
-NODE_VERSION=	v0.10.12
-REVISION=	0
+NODE_VERSION=	v0.10.20
 
 DISTNAME=	node-${NODE_VERSION}
 PKGNAME=	${DISTNAME:S/v//g}
@@ -29,10 +28,9 @@ MODULES=	lang/python
 
 VMEM_WARNING=	Yes
 
-WANTLIB +=	c crypto execinfo kvm m pthread ssl stdc++ util v8 z
+WANTLIB +=	c crypto execinfo kvm m pthread ssl stdc++ util z
 
-LIB_DEPENDS=	devel/libexecinfo \
-		lang/libv8
+LIB_DEPENDS=	devel/libexecinfo
 
 USE_GMAKE=	Yes
 
@@ -46,8 +44,7 @@ RUN_DEPENDS=	devel/gmake \
 TEST_TARGET= test
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS= --openssl-use-sys \
-		--shared-zlib \
-		--shared-v8
+		--shared-zlib
 
 SUBST_VARS+=	CFLAGS
 SUBST_VARS+= 	PREFIX
