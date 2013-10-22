@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.49 2013/03/11 11:44:42 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2013/10/22 16:50:39 bcallah Exp $
 
 COMMENT=	graphics and text browser
 
-VER=		2.7
+VER=		2.8
 DISTNAME=	links-${VER}
 PKGNAME=	links+-${VER}
 
@@ -10,12 +10,14 @@ CATEGORIES=	www
 
 HOMEPAGE=	http://links.twibright.com/
 
+MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
+
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	bz2>=10 c crypto lzma m ssl z
 
-MASTER_SITES=	${HOMEPAGE}download/
+MASTER_SITES=	http://links.twibright.com/download/
 
 LIB_DEPENDS=	archivers/bzip2 \
 		archivers/xz
@@ -33,7 +35,7 @@ LIB_DEPENDS+=	graphics/jpeg \
 		graphics/png \
 		graphics/tiff
 CONFIGURE_ARGS+= --with-x --enable-graphics
-WANTLIB+=	X11 jpeg>=62 png>=2 pthread-stubs tiff>=35 xcb
+WANTLIB+=	X11 jpeg>=62 png>=2 tiff>=35
 MESSAGE=	${PKGDIR}/MESSAGE.x11
 .endif
 
