@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.179 2013/10/15 02:18:16 jeremy Exp $
+# $OpenBSD: Makefile,v 1.180 2013/10/22 06:26:09 kili Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
 COMMENT-docs=	PostgreSQL RDBMS documentation
 COMMENT-contrib=PostgreSQL RDBMS contributions
 COMMENT-plpython=Python procedural language for PostgreSQL
+
+# DO NOT FORGET to also change the @ask-update entry in pkg/PLIST-server
+# in case a dump before / restore after pkg_add -u is required!
 
 VERSION=	9.3.0
 DISTNAME=	postgresql-${VERSION}
@@ -13,6 +16,8 @@ PKGNAME-server=	postgresql-server-${VERSION}
 PKGNAME-docs=	postgresql-docs-${VERSION}
 PKGNAME-contrib=postgresql-contrib-${VERSION}
 PKGNAME-plpython=postgresql-plpython-${VERSION}
+
+REVISION-server=	0
 
 CATEGORIES=	databases
 SHARED_LIBS=	ecpg		7.5 \

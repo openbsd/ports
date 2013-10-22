@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST-server,v 1.23 2013/10/15 02:18:19 jeremy Exp $
+@comment $OpenBSD: PLIST-server,v 1.24 2013/10/22 06:26:09 kili Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-clients-*
 @conflict postgresql-server-*
 @conflict postgresql-*
-@ask-update postgresql-server-<9.2 Make sure your existing database is backed up
+@ask-update postgresql-server-<9.3 Make sure your existing database is backed up
 @newgroup _postgresql:503
 @newuser _postgresql:503:_postgresql:daemon:PostgreSQL Manager:/var/postgresql:/bin/sh
 @bin bin/initdb
