@@ -1,31 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/08/20 22:05:55 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/10/22 00:15:01 edd Exp $
 @bin bin/inkscape
 @bin bin/inkview
-man/fr/
-man/fr/man1/
-@man man/fr/man1/inkscape.1
 @man man/man1/inkscape.1
 @man man/man1/inkview.1
 share/applications/inkscape.desktop
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/inkscape.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/inkscape.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/inkscape.png
-share/icons/hicolor/256x256/
-share/icons/hicolor/256x256/apps/
 share/icons/hicolor/256x256/apps/inkscape.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/inkscape.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/inkscape.png
 share/inkscape/
 share/inkscape/clipart/
@@ -442,6 +425,7 @@ share/inkscape/extensions/txt2svg.pl
 share/inkscape/extensions/uniconv-ext.py
 share/inkscape/extensions/uniconv_output.py
 share/inkscape/extensions/voronoi.py
+share/inkscape/extensions/voronoi2svg.py
 share/inkscape/extensions/web-set-att.inx
 share/inkscape/extensions/web-set-att.py
 share/inkscape/extensions/web-transmit-att.inx

@@ -1,17 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2013/10/01 09:07:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2013/10/22 00:14:59 edd Exp $
 
 COMMENT=	SVG vector drawing application
 
-DISTNAME=	inkscape-0.48.2
-REVISION=	8
+DISTNAME=	inkscape-0.48.4
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=inkscape/}
-
-# error: #error "Only <glib.h> can be included directly."
-# (patch from Fedora)
-PATCHFILES=	inkscape-glib-2.32.patch:0
-PATCH_DIST_STRIP=-p1
-MASTER_SITES0=	https://distfiles.bsdfrog.org/
 
 HOMEPAGE=	http://www.inkscape.org/
 
@@ -23,7 +16,7 @@ WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender aspell atk-1.0
 WANTLIB += atkmm-1.6 c cairo cairomm-1.0 fontconfig freetype gc
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gdkmm-2.4 gio-2.0 giomm-2.4
 WANTLIB += glib-2.0 glibmm-2.4 gobject-2.0 gsl gslcblas gthread-2.0
-WANTLIB += gtk-x11-2.0 gtkmm-2.4 gtkspell lcms m pango-1.0 pangocairo-1.0
+WANTLIB += gtk-x11-2.0 gtkmm-2.4 gtkspell lcms2 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pangomm-1.4 png poppler poppler-glib popt
 WANTLIB += pthread sigc-2.0 stdc++ xml2 xslt z
 
@@ -35,7 +28,7 @@ LIB_DEPENDS=	devel/boehm-gc \
 		devel/gsl \
 		devel/popt \
 		graphics/ImageMagick \
-		graphics/lcms \
+		graphics/lcms2 \
 		graphics/png \
 		print/poppler \
 		textproc/aspell/core \
@@ -47,14 +40,23 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+2,-guic
 
 USE_GMAKE=	Yes
-USE_GROFF=	Yes
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.68
+AUTOCONF_VERSION= 2.69
 CONFIGURE_ARGS=	--without-gnome-vfs
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/ImageMagick \
 			  -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 NO_TEST=	Yes
+
+# As discussed on the ports mailing list, remove internationalised manual
+# pages, as our mandoc implementation does not yet deal with them properly.
+RM_MANS=	man/el man/fr man/ja man/man1/inkscape.*.1 \
+		man/sk man/zh_TW
+
+post-install:
+.for i in ${RM_MANS}
+	rm -Rf ${PREFIX}/${i}
+.endfor
 
 .include <bsd.port.mk>
