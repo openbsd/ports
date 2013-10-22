@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:44:42 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/10/22 09:03:30 sthen Exp $
 
 COMMENT=	web proxy with antivirus filter
 
@@ -6,7 +6,7 @@ DISTNAME=	havp-0.92a
 CATEGORIES=	www
 MASTER_SITES=	${HOMEPAGE}/download/
 
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	http://www.server-side.de/
 
