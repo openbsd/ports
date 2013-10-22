@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2013/06/29 15:56:10 jeremy Exp $
+# $OpenBSD: Makefile,v 1.67 2013/10/22 18:15:38 espie Exp $
 
     SUBDIR =
     SUBDIR += base64
@@ -17,6 +17,7 @@
     SUBDIR += luastruct,lua52
     SUBDIR += mimepp
     SUBDIR += mpack
+    SUBDIR += otf2bdf
     SUBDIR += p5-Calendar-Simple
     SUBDIR += p5-Catalyst-Plugin-Charsets-Japanese
     SUBDIR += p5-Catalyst-View-JSON
