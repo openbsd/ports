@@ -1,0 +1,13 @@
+$OpenBSD: patch-html_pg_stats_reporter_pg_stats_reporter_php,v 1.1.1.1 2013/10/23 22:05:02 landry Exp $
+workaround the fact that we dont have the php intl extension yet
+--- html/pg_stats_reporter/pg_stats_reporter.php.orig	Thu Oct 17 13:29:04 2013
++++ html/pg_stats_reporter/pg_stats_reporter.php	Thu Oct 17 13:30:49 2013
+@@ -113,7 +113,7 @@ if ($target_info['language'] == 'auto')
+ 	$target_locale = locale_accept_from_http($_SERVER['HTTP_ACCEPT_LANGUAGE']);
+ else
+ 	$target_locale = $target_info['language'];
+-$msg_file = MESSAGE_PATH.MESSAGE_PREFIX.locale_lookup($locale_list, $target_locale, false, "en").MESSAGE_SUFFIX;
++$msg_file = MESSAGE_PATH.MESSAGE_PREFIX."en".MESSAGE_SUFFIX;
+ readMessageFile($msg_file, $help_message, $error_message);
+ 
+ /* レポートページ作成 */
