@@ -1,5 +1,8 @@
-$OpenBSD: patch-config_h_in,v 1.4 2013/10/22 19:59:18 jca Exp $
-Use arc4random_stir only if present
+$OpenBSD: patch-config_h_in,v 1.5 2013/10/23 05:41:18 ajacoutot Exp $
+
+XXX push upstream
+Use arc4random_stir only if present.
+
 --- config.h.in.orig	Tue Oct 22 06:38:36 2013
 +++ config.h.in	Tue Oct 22 06:43:28 2013
 @@ -648,7 +648,11 @@
