@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/22 06:48:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/10/23 08:15:17 jasper Exp $
 bin/gitolite
 libexec/gitolite/
 libexec/gitolite/VERSION
@@ -86,6 +86,7 @@ libexec/gitolite/triggers/post-compile/update-git-daemon-access-list
 libexec/gitolite/triggers/post-compile/update-gitweb-access-list
 libexec/gitolite/triggers/post-compile/update-gitweb-daemon-from-options
 libexec/gitolite/triggers/renice
+libexec/gitolite/triggers/repo-specific-hooks
 libexec/gitolite/triggers/set-default-roles
 libexec/gitolite/triggers/upstream
 share/doc/pkg-readmes/${FULLPKGNAME}

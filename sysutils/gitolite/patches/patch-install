@@ -1,16 +1,20 @@
-$OpenBSD: patch-install,v 1.1.1.1 2013/04/22 06:48:25 jasper Exp $
---- install.orig	Wed Mar 27 23:22:56 2013
-+++ install	Mon Apr 22 08:46:21 2013
-@@ -61,11 +61,11 @@ for my $d ($ln, $to) {
+$OpenBSD: patch-install,v 1.2 2013/10/23 08:15:17 jasper Exp $
+--- install.orig	Wed Oct 23 10:11:42 2013
++++ install	Wed Oct 23 10:12:34 2013
+@@ -61,7 +61,7 @@ for my $d ($ln, $to) {
  }
  
  chdir($ENV{GL_BINDIR});
--my $version = `git describe --tags --long --dirty=-dt`;
+-my $version = `git describe --tags --long --dirty=-dt 2>/dev/null`;
 +my $version = "${VERSION}";
+ unless ($version =~ /^v\d/) {
+     print STDERR "git describe failed; cannot deduce version number\n";
+     $version = "(unknown)";
+@@ -69,7 +69,7 @@ unless ($version =~ /^v\d/) {
  
  if ($to) {
      _mkdir($to);
--    system("cp -a * $to");
+-    system("cp -RpP * $to");
 +    system("umask 022 && pax -rw . $to");
      _print( "$to/VERSION", $version );
  } elsif ($ln) {
