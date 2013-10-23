@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/10/23 12:07:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2013/10/23 17:50:38 sthen Exp $
 
 COMMENT=	library for network communications and cryptography
 
@@ -20,6 +20,7 @@ WANTLIB += m
 MASTER_SITES=	https://download.libsodium.org/libsodium/releases/
 
 SEPARATE_BUILD=	Yes
+# If built with OpenBSD libtool, net/dnscrypt-proxy fails
 USE_LIBTOOL=	gnu
 
 CONFIGURE_STYLE=	gnu
