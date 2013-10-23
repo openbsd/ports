@@ -1,26 +1,25 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2012/07/08 18:19:18 lteo Exp $
---- Makefile.orig	Sat May 29 00:39:52 2010
-+++ Makefile	Sun Jul  8 15:45:36 2012
-@@ -1,17 +1,13 @@
--
-+OBJS := picocom.o term.o
- VERSION=1.6
+$OpenBSD: patch-Makefile,v 1.2 2013/10/23 03:22:02 lteo Exp $
+
+--- Makefile.orig	Fri Sep 13 19:18:11 2013
++++ Makefile	Fri Sep 13 19:22:09 2013
+@@ -5,16 +5,17 @@ UUCP_LOCK_DIR=/var/lock
  
  # CC = gcc
--CPPFLAGS=-DVERSION_STR=\"$(VERSION)\" -DUUCP_LOCK_DIR=\"/var/lock\" \
+ CPPFLAGS=-DVERSION_STR=\"$(VERSION)\" \
+-         -DUUCP_LOCK_DIR=\"$(UUCP_LOCK_DIR)\" \
 -         -DHIGH_BAUD
--CFLAGS = -Wall -g
-+CPPFLAGS=-DVERSION_STR=\"$(VERSION)\" -DUUCP_LOCK_DIR=\"/var/spool/lock\"
++         -DUUCP_LOCK_DIR=\"$(UUCP_LOCK_DIR)\"
+ CFLAGS = -Wall -g
  
--# LD = gcc
--LDFLAGS = -g
--LDLIBS =
-+all : picocom
+ # LD = gcc
+ LDFLAGS = -g
+ LDLIBS =
  
--picocom : picocom.o term.o
++all: picocom
++
+ picocom : picocom.o term.o
 -#	$(LD) $(LDFLAGS) -o $@ $+ $(LDLIBS)
-+picocom : $(OBJS)
-+	$(CC) $(LDFLAGS) -o picocom $(OBJS)
++	$(CC) $(LDFLAGS) -o $@ picocom.o term.o $(LDLIBS)
  
  picocom.o : picocom.c term.h
  term.o : term.c term.h

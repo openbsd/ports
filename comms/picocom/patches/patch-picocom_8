@@ -1,0 +1,26 @@
+$OpenBSD: patch-picocom_8,v 1.1 2013/10/23 03:22:02 lteo Exp $
+
+--- picocom.8.orig	Tue Feb 21 09:53:42 2012
++++ picocom.8	Sun Sep 15 22:34:20 2013
+@@ -123,8 +123,8 @@ picocom --send-cmd "sz -vv" --receive-cmd "rz -vv"
+ .br
+ .sp 0.6v
+ During the picocom session, if you key the "send" or "receive" commands (e.g. by pressing C-a, C-s, or C-a, C-r) you will be prompted for a filename. At this prompt you can enter one or more file-names, and any additional arguments to the transmission or reception program. After that, picocom will start the the external program as specified by the "--send-cmd", or "--receive-cmd" option, and with any filenames and additional arguments you may have supplied. The standard input and output of the external program will be connected to the serial port. The standard error of the external program will be connected to the terminal which---while the program is running---will revert to canonical mode. Pressing 'C-c' while the external program is running will prematurely terminate it, and return control to
+-.B picocom
+-. Pressing 'C-c' at any other time, has no special effect; the character is normally passed to the serial port.
++.BR picocom .
++Pressing 'C-c' at any other time, has no special effect; the character is normally passed to the serial port.
+ .br
+ .sp 0.6v
+ .SH INPUT, OUTPUT, AND ECHO MAPPING
+@@ -227,8 +227,8 @@ to already-connected modems, or already configured por
+ If given,
+ .B picocom
+ will not *reset* the serial port when exiting. It will just close the filedes and do nothing more. This is useful, for example, for leaving modems connected when exiting
+-.B picocom
+-. Regardless whether the "--noreset" option is given the user can exit
++.BR picocom .
++Regardless whether the "--noreset" option is given the user can exit
+ .B picocom
+ using the "Quit" command (instead of "Exit"), which never resets the serial port. If "--noreset" is given then "Quit" and "Exit" behave essentially the same.
+ .TP 3
