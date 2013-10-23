@@ -1,0 +1,19 @@
+$OpenBSD: README-main,v 1.1 2013/10/23 12:42:20 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+In order to perform queries over DNSCrypt, using OpenDNS as a
+resolver, the easiest way is change your /etc/resolv.conf file to:
+
+nameserver 127.0.0.1
+lookup file bind
+options edns0
+
+But DNSCrypt does _not_ cache queries. So the recommended way to use
+it is as a forwarder for a DNS cache like Unbound.
+Both can safely run on the same host.
+
+A list of non-OpenDNS resolvers providing DNSCrypt service is available
+at http://dnscrypt.org/.

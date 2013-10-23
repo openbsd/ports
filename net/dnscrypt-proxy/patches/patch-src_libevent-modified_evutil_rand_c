@@ -1,7 +1,10 @@
-$OpenBSD: patch-src_libevent_evutil_rand_c,v 1.1 2013/10/22 19:51:59 jca Exp $
-OpenBSD does not need nor provide arc4random_addrandom anymore.
---- src/libevent/evutil_rand.c.orig	Thu Oct 11 17:51:58 2012
-+++ src/libevent/evutil_rand.c	Tue Oct 22 19:12:13 2013
+$OpenBSD: patch-src_libevent-modified_evutil_rand_c,v 1.1 2013/10/23 12:42:20 sthen Exp $
+
+OpenBSD has not needed arc4random_addrandom since 2003, and no longer
+provides it.
+
+--- src/libevent-modified/evutil_rand.c.orig	Tue Aug 13 03:32:00 2013
++++ src/libevent-modified/evutil_rand.c	Wed Oct 23 13:10:29 2013
 @@ -97,6 +97,11 @@ ev_arc4random_buf(void *buf, size_t n)
  #endif
  }

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2012/10/12 15:20:00 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2013/10/23 12:42:20 sthen Exp $
 @newgroup _dnscrypt-proxy:688
 @newuser _dnscrypt-proxy:688:_dnscrypt-proxy:daemon:dnscrypt-proxy user:/var/empty:/sbin/nologin
 @bin bin/hostip
@@ -13,4 +13,5 @@ share/doc/dnscrypt-proxy/
 share/doc/dnscrypt-proxy/README-PLUGINS.markdown
 share/doc/dnscrypt-proxy/README.markdown
 share/doc/dnscrypt-proxy/TECHNOTES
+share/doc/pkg-readmes/${FULLPKGNAME}
 @rcscript ${RCDIR}/dnscrypt_proxy
