@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/10/21 22:46:27 zhuk Exp $
+# $OpenBSD: Makefile,v 1.21 2013/10/23 17:06:51 zhuk Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 ONLY_FOR_ARCHS-java =	i386 amd64
@@ -114,6 +114,7 @@ CONFIGURE_ARGS =	-DBUILD_opencv_nonfree:Bool=On \
 .if ${BUILD_PACKAGES:M-java}
 MODULES +=		java
 MODJAVA_VER =		1.6+
+BUILD_DEPENDS +=	devel/apache-ant
 .else
 # Safe: Java will be detected, if present, but won't be used
 CONFIGURE_ARGS +=	-DBUILD_opencv_java:Bool=Off
