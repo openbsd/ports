@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2013/10/23 12:42:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2013/10/23 13:14:07 sthen Exp $
 
 COMMENT-main=		secure communications between a DNS client and resolver
 COMMENT-plugins=	example plugins for dnscrypt-proxy
 
 V=			1.3.3
+REVISION=		0
 
 DISTNAME=		dnscrypt-proxy-${V}
 CATEGORIES=		net
@@ -52,6 +53,15 @@ NO_TEST=		Yes
 DOCS=			README-PLUGINS.markdown \
 			README.markdown \
 			TECHNOTES
+
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.14
+BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
+post-patch:
+	cd ${WRKSRC}/src/libevent-modified; \
+	    AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} sh ./autogen.sh
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dnscrypt-proxy
