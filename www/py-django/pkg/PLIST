@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.18 2013/05/13 08:59:25 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.19 2013/10/23 08:19:52 sthen Exp $
 bin/${LNAME}-admin.py
 lib/python${MODPY_VERSION}/site-packages/Django-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/__init__.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/bin/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/bin/__init__.py
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/bin/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/bin/daily_cleanup.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/bin/daily_cleanup.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/bin/${LNAME}-2to3.py
@@ -605,6 +603,7 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/locale/zh_TW/formats.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/locale/zh_TW/formats.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/project_template/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/project_template/manage.py
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/project_template/manage.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/project_template/project_name/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/project_template/project_name/__init__.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/conf/project_template/project_name/__init__.pyc
@@ -635,6 +634,7 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/actions.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/actions.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/bin/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/bin/compress.py
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/bin/compress.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/filters.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/filters.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/forms.py
@@ -6008,6 +6008,8 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/middleware.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/middleware.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/models.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/models.pyc
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/serializers.py
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/serializers.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/tests.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sessions/tests.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/sitemaps/
@@ -7074,7 +7076,10 @@ share/doc/${LNAME}/howto/jython.txt
 share/doc/${LNAME}/howto/legacy-databases.txt
 share/doc/${LNAME}/howto/outputting-csv.txt
 share/doc/${LNAME}/howto/outputting-pdf.txt
-share/doc/${LNAME}/howto/static-files.txt
+share/doc/${LNAME}/howto/static-files/
+share/doc/${LNAME}/howto/static-files/deployment.txt
+share/doc/${LNAME}/howto/static-files/index.txt
+share/doc/${LNAME}/howto/upgrade-version.txt
 share/doc/${LNAME}/index.txt
 share/doc/${LNAME}/internals/
 share/doc/${LNAME}/internals/_images/
@@ -7136,6 +7141,7 @@ share/doc/${LNAME}/intro/tutorial02.txt
 share/doc/${LNAME}/intro/tutorial03.txt
 share/doc/${LNAME}/intro/tutorial04.txt
 share/doc/${LNAME}/intro/tutorial05.txt
+share/doc/${LNAME}/intro/tutorial06.txt
 share/doc/${LNAME}/intro/whatsnext.txt
 share/doc/${LNAME}/make.bat
 share/doc/${LNAME}/man/
@@ -7268,6 +7274,7 @@ share/doc/${LNAME}/ref/urlresolvers.txt
 share/doc/${LNAME}/ref/urls.txt
 share/doc/${LNAME}/ref/utils.txt
 share/doc/${LNAME}/ref/validators.txt
+share/doc/${LNAME}/ref/views.txt
 share/doc/${LNAME}/releases/
 share/doc/${LNAME}/releases/0.95.txt
 share/doc/${LNAME}/releases/0.96.txt
@@ -7301,14 +7308,28 @@ share/doc/${LNAME}/releases/1.3-alpha-1.txt
 share/doc/${LNAME}/releases/1.3-beta-1.txt
 share/doc/${LNAME}/releases/1.3.1.txt
 share/doc/${LNAME}/releases/1.3.2.txt
+share/doc/${LNAME}/releases/1.3.3.txt
+share/doc/${LNAME}/releases/1.3.4.txt
+share/doc/${LNAME}/releases/1.3.5.txt
+share/doc/${LNAME}/releases/1.3.6.txt
+share/doc/${LNAME}/releases/1.3.7.txt
 share/doc/${LNAME}/releases/1.3.txt
 share/doc/${LNAME}/releases/1.4-alpha-1.txt
 share/doc/${LNAME}/releases/1.4-beta-1.txt
 share/doc/${LNAME}/releases/1.4.1.txt
 share/doc/${LNAME}/releases/1.4.2.txt
+share/doc/${LNAME}/releases/1.4.3.txt
+share/doc/${LNAME}/releases/1.4.4.txt
+share/doc/${LNAME}/releases/1.4.5.txt
+share/doc/${LNAME}/releases/1.4.6.txt
+share/doc/${LNAME}/releases/1.4.7.txt
+share/doc/${LNAME}/releases/1.4.8.txt
 share/doc/${LNAME}/releases/1.4.txt
 share/doc/${LNAME}/releases/1.5-alpha-1.txt
 share/doc/${LNAME}/releases/1.5-beta-1.txt
+share/doc/${LNAME}/releases/1.5.1.txt
+share/doc/${LNAME}/releases/1.5.2.txt
+share/doc/${LNAME}/releases/1.5.3.txt
 share/doc/${LNAME}/releases/${MODPY_EGG_VERSION}.txt
 share/doc/${LNAME}/releases/1.5.txt
 share/doc/${LNAME}/releases/index.txt

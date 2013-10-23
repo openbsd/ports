@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2013/05/13 08:59:22 benoit Exp $
+# $OpenBSD: Makefile,v 1.29 2013/10/23 08:19:52 sthen Exp $
 
 COMMENT =	high-level Python web framework
 
-MODPY_EGG_VERSION =	1.5.1
+MODPY_EGG_VERSION =	1.5.4
 LNAME =			django
 DISTNAME =		Django-${MODPY_EGG_VERSION}
 PKGNAME =		py-${LNAME}-${MODPY_EGG_VERSION}
