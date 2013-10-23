@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:42:45 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/10/23 08:25:56 bentley Exp $
 
 COMMENT=	pdf swiss army knife
-VERSION=	1.44
-REVISION=	1
+VERSION=	2.02
 DISTNAME=	pdftk-$(VERSION)
 EXTRACT_SUFX=	-src.zip
 CATEGORIES=	textproc
 
 MAINTAINER=	Christopher Zimmermann <madroach@zakweb.de>
 
-# GPLv2+
+# GPLv2+ (main program), see ${WRKDIST}/license_gpl_pdftk/ for libraries
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${MODGCC4_GCJWANTLIB} c m pthread z
 
-MASTER_SITES=	http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
+HOMEPAGE =	http://www.pdflabs.com/tools/pdftk-server/
+
+MASTER_SITES =	http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
 
 MODULES=	converters/libiconv gcc4
 MODGCC4_ARCHS=	*
