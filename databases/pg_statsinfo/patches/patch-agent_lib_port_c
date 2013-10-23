@@ -1,0 +1,15 @@
+$OpenBSD: patch-agent_lib_port_c,v 1.1.1.1 2013/10/23 22:00:19 landry Exp $
+--- agent/lib/port.c.orig	Sat Aug 10 19:29:04 2013
++++ agent/lib/port.c	Sat Aug 10 19:30:16 2013
+@@ -8,7 +8,11 @@
+ 
+ #ifndef WIN32
+ 
++#if defined(__OpenBSD__)
++#include <sys/mount.h>
++#else
+ #include <sys/statfs.h>
++#endif
+ #include <unistd.h>
+ 
+ bool

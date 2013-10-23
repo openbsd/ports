@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/23 22:00:19 landry Exp $
+bin/archive_pglog.sh
+@bin bin/pg_statsinfo
+@bin bin/pg_statsinfod
+lib/postgresql/
+lib/postgresql/pg_statsinfo.so
+share/postgresql/
+share/postgresql/contrib/
+share/postgresql/contrib/pg_statsinfo.sql
+share/postgresql/contrib/pg_statsrepo83.sql
+share/postgresql/contrib/pg_statsrepo_alert.sql
+share/postgresql/contrib/pg_statsrepo_partition.sql
+share/postgresql/contrib/uninstall_pg_statsinfo.sql
+share/postgresql/contrib/uninstall_pg_statsrepo.sql
