@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2012/12/27 20:33:59 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.17 2013/10/23 19:15:15 naddy Exp $
 @bin bin/audacious
 @bin bin/audtool
 include/audacious/
@@ -65,10 +65,14 @@ share/icons/hicolor/48x48/apps/audacious.png
 share/icons/hicolor/scalable/apps/audacious.svg
 share/locale/ast/LC_MESSAGES/audacious.mo
 share/locale/be/LC_MESSAGES/audacious.mo
+share/locale/bg/LC_MESSAGES/audacious.mo
 share/locale/ca/LC_MESSAGES/audacious.mo
 share/locale/cs/LC_MESSAGES/audacious.mo
+share/locale/da/LC_MESSAGES/audacious.mo
 share/locale/de/LC_MESSAGES/audacious.mo
 share/locale/el/LC_MESSAGES/audacious.mo
+share/locale/en_GB/LC_MESSAGES/audacious.mo
+share/locale/eo/LC_MESSAGES/audacious.mo
 share/locale/es/LC_MESSAGES/audacious.mo
 share/locale/es_AR/
 share/locale/es_AR/LC_MESSAGES/
@@ -82,7 +86,6 @@ share/locale/fa_IR/LC_MESSAGES/audacious.mo
 share/locale/fi/LC_MESSAGES/audacious.mo
 share/locale/fr/LC_MESSAGES/audacious.mo
 share/locale/gl/LC_MESSAGES/audacious.mo
-share/locale/he/LC_MESSAGES/audacious.mo
 share/locale/hu/LC_MESSAGES/audacious.mo
 share/locale/id_ID/
 share/locale/id_ID/LC_MESSAGES/
@@ -93,6 +96,7 @@ share/locale/ko/LC_MESSAGES/audacious.mo
 share/locale/ky/LC_MESSAGES/audacious.mo
 share/locale/lt/LC_MESSAGES/audacious.mo
 share/locale/lv/LC_MESSAGES/audacious.mo
+share/locale/ms/LC_MESSAGES/audacious.mo
 share/locale/nl/LC_MESSAGES/audacious.mo
 share/locale/pl/LC_MESSAGES/audacious.mo
 share/locale/pt_BR/LC_MESSAGES/audacious.mo
@@ -101,9 +105,12 @@ share/locale/pt_PT/LC_MESSAGES/
 share/locale/pt_PT/LC_MESSAGES/audacious.mo
 share/locale/ro/LC_MESSAGES/audacious.mo
 share/locale/ru/LC_MESSAGES/audacious.mo
+share/locale/si/LC_MESSAGES/audacious.mo
 share/locale/sk/LC_MESSAGES/audacious.mo
+share/locale/sq/LC_MESSAGES/audacious.mo
 share/locale/sr/LC_MESSAGES/audacious.mo
 share/locale/sr@latin/LC_MESSAGES/audacious.mo
+share/locale/ta/LC_MESSAGES/audacious.mo
 share/locale/tr/LC_MESSAGES/audacious.mo
 share/locale/uk/LC_MESSAGES/audacious.mo
 share/locale/vi/LC_MESSAGES/audacious.mo

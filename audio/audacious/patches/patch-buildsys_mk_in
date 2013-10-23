@@ -1,19 +1,7 @@
-$OpenBSD: patch-buildsys_mk_in,v 1.5 2012/08/25 11:30:19 dcoppa Exp $
---- buildsys.mk.in.orig	Sat Aug 11 22:11:00 2012
-+++ buildsys.mk.in	Thu Aug 16 13:13:37 2012
-@@ -36,9 +36,9 @@ LD = ${CC}
- RANLIB = @RANLIB@
- PYTHON = @PYTHON@
- ASFLAGS = @ASFLAGS@
--CFLAGS = @CFLAGS@
-+CFLAGS = -I.. @CFLAGS@
- CXXFLAGS = @CXXFLAGS@
--CPPFLAGS = @CPPFLAGS@
-+CPPFLAGS = -I.. @CPPFLAGS@
- DFLAGS = @DFLAGS@
- ERLCFLAGS = @ERLCFLAGS@
- OBJCFLAGS = @OBJCFLAGS@
-@@ -101,7 +101,7 @@ PLUGIN_OBJS = ${OBJS:.o=.plugin.o}
+$OpenBSD: patch-buildsys_mk_in,v 1.6 2013/10/23 19:15:15 naddy Exp $
+--- buildsys.mk.in.orig	Mon Sep  2 21:01:58 2013
++++ buildsys.mk.in	Mon Oct 21 00:13:00 2013
+@@ -102,7 +102,7 @@ PLUGIN_OBJS = ${OBJS:.o=.plugin.o}
  
  MO_FILES = ${LOCALES:.po=.mo}
  

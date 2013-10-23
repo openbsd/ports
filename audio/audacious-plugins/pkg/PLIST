@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/01/14 02:26:20 brad Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/10/23 19:15:15 naddy Exp $
 @pkgpath audio/audacious-plugins,-main
 lib/audacious/
 lib/audacious/Container/
@@ -16,6 +16,7 @@ lib/audacious/Effect/echo.so
 lib/audacious/Effect/ladspa.so
 lib/audacious/Effect/mixer.so
 lib/audacious/Effect/resample.so
+lib/audacious/Effect/sox-resampler.so
 lib/audacious/Effect/speed-pitch.so
 lib/audacious/Effect/stereo.so
 lib/audacious/Effect/voice_removal.so
@@ -63,6 +64,7 @@ lib/audacious/Transport/unix-io.so
 lib/audacious/Visualization/
 lib/audacious/Visualization/blur_scope.so
 lib/audacious/Visualization/cairo-spectrum.so
+lib/audacious/Visualization/gl-spectrum.so
 share/audacious/Skins/
 share/audacious/Skins/Classic/
 share/audacious/Skins/Classic/balance.png
@@ -197,13 +199,16 @@ share/audacious/ui/playlist.ui
 share/locale/be/LC_MESSAGES/audacious-plugins.mo
 share/locale/ca/LC_MESSAGES/audacious-plugins.mo
 share/locale/cs/LC_MESSAGES/audacious-plugins.mo
+share/locale/da/LC_MESSAGES/audacious-plugins.mo
 share/locale/de/LC_MESSAGES/audacious-plugins.mo
 share/locale/el/LC_MESSAGES/audacious-plugins.mo
+share/locale/en_GB/LC_MESSAGES/audacious-plugins.mo
 share/locale/es/LC_MESSAGES/audacious-plugins.mo
 share/locale/es_AR/LC_MESSAGES/audacious-plugins.mo
 share/locale/es_MX/LC_MESSAGES/audacious-plugins.mo
 share/locale/et/LC_MESSAGES/audacious-plugins.mo
 share/locale/eu/LC_MESSAGES/audacious-plugins.mo
+share/locale/fi/LC_MESSAGES/audacious-plugins.mo
 share/locale/fr/LC_MESSAGES/audacious-plugins.mo
 share/locale/gl/LC_MESSAGES/audacious-plugins.mo
 share/locale/hu/LC_MESSAGES/audacious-plugins.mo
@@ -218,10 +223,12 @@ share/locale/pl/LC_MESSAGES/audacious-plugins.mo
 share/locale/pt_BR/LC_MESSAGES/audacious-plugins.mo
 share/locale/pt_PT/LC_MESSAGES/audacious-plugins.mo
 share/locale/ru/LC_MESSAGES/audacious-plugins.mo
+share/locale/si/LC_MESSAGES/audacious-plugins.mo
 share/locale/sk/LC_MESSAGES/audacious-plugins.mo
 share/locale/sr_RS/
 share/locale/sr_RS/LC_MESSAGES/
 share/locale/sr_RS/LC_MESSAGES/audacious-plugins.mo
+share/locale/ta/LC_MESSAGES/audacious-plugins.mo
 share/locale/uk/LC_MESSAGES/audacious-plugins.mo
 share/locale/zh_CN/LC_MESSAGES/audacious-plugins.mo
 share/locale/zh_TW/LC_MESSAGES/audacious-plugins.mo
