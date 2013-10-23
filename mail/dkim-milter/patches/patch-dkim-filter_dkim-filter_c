@@ -1,7 +1,28 @@
-$OpenBSD: patch-dkim-filter_dkim-filter_c,v 1.10 2009/01/23 06:43:07 jasper Exp $
---- dkim-filter/dkim-filter.c.orig	Tue Jan  6 19:39:08 2009
-+++ dkim-filter/dkim-filter.c	Thu Jan 22 23:28:54 2009
-@@ -8906,7 +8906,7 @@ main(int argc, char **argv)
+$OpenBSD: patch-dkim-filter_dkim-filter_c,v 1.11 2013/10/23 16:33:21 jca Exp $
+- key_data should be NUL-terminated (dkim_sign calls strlen)
+- fix double free at reload time
+- set unprivileged _dkim-milter user
+--- dkim-filter/dkim-filter.c.orig	Wed May 27 18:34:05 2009
++++ dkim-filter/dkim-filter.c	Mon Oct 14 01:13:06 2013
+@@ -4872,7 +4872,7 @@ dkimf_loadkeys(char *file, struct dkimf_config *conf)
+ 				return -1;
+ 			}
+ 
+-			new->key_data = malloc(s.st_size);
++			new->key_data = calloc(1, s.st_size + 1);
+ 			if (new->key_data == NULL)
+ 			{
+ 				fprintf(stderr, "%s: malloc(): %s\n",
+@@ -4950,7 +4950,7 @@ dkimf_freekeys(struct dkimf_config *conf)
+ 		if (cur->key_domain != NULL)
+ 			free(cur->key_domain);
+ 		if (cur->key_data != NULL)
+-			free(cur->key_domain);
++			free(cur->key_data);
+ 		regfree(&cur->key_re);
+ 
+ 		free(cur);
+@@ -9044,7 +9044,7 @@ main(int argc, char **argv)
  	unsigned long tmpl;
  	const char *args = CMDLINEOPTS;
  	FILE *f;
