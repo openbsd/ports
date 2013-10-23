@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.31 2013/03/11 11:41:28 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2013/10/23 10:10:56 sthen Exp $
 
-DISTNAME=	scanlogd-2.2.6
-REVISION =	5
-CATEGORIES=	security
 COMMENT=	TCP port scan detection tool
+
+DISTNAME=	scanlogd-2.2.7
+CATEGORIES=	security
 
 HOMEPAGE=	http://www.openwall.com/scanlogd/
 
-MASTER_SITES=	ftp://ftp.openwall.com/pub/projects/scanlogd/ \
-		${HOMEPAGE}
-
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c pcap lib/libnet-1.0/net=0
+
+WANTLIB += c pcap lib/libnet-1.0/net=0
+
+MASTER_SITES=	${HOMEPAGE} \
+		ftp://ftp.openwall.com/pub/projects/scanlogd/
 
 BUILD_DEPENDS=	net/libnids
 LIB_DEPENDS=	net/libnet/1.0
@@ -20,7 +21,6 @@ LIB_DEPENDS=	net/libnet/1.0
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 ALL_TARGET=	libnids
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 do-install:
