@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2013/04/03 21:06:01 brad Exp $
+# $OpenBSD: Makefile,v 1.33 2013/10/23 13:44:11 jca Exp $
 
 COMMENT-main=	ISC DHCP Server
 COMMENT-client=	ISC DHCP Client
 COMMENT-omapi=	ISC DHCP OMAPI
 
 VERSION=	4.2.5-P1
+REVISION=	0
 DISTNAME=	isc-dhcp-${VERSION}
 PKGNAME=	isc-dhcp-${VERSION:S/-P/./}
 PKGNAME-main=	isc-dhcp-server-${VERSION:S/-P/./}
@@ -38,6 +39,12 @@ CONFIGURE_ARGS+= 	--enable-early-chroot \
 NO_TEST=		Yes
 
 EXAMPLEDIR=		share/examples/isc-dhcp
+
+# XXX hack, adapt when updating
+post-extract:
+	cd ${WRKSRC}/bind; tar xzf bind.tar.gz; \
+	perl -pi -e 's,(.*arc4random_addrandom.*),/* $$1 */,' \
+	    ${WRKSRC}/bind/bind-*/lib/isc/random.c
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${EXAMPLEDIR}
