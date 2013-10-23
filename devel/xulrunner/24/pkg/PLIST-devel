@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-devel,v 1.1.1.1 2013/10/19 16:37:31 landry Exp $
+@comment $OpenBSD: PLIST-devel,v 1.2 2013/10/23 20:25:30 landry Exp $
 @option no-default-conflict
 @conflict xulrunner-devel->=24.0,<31.0
 include/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/
@@ -1442,7 +1442,7 @@ include/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/mozilla/storage/Variant.h
 include/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/mozilla/storage/Variant_inl.h
 include/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/mozilla/threads/
 include/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/mozilla/threads/nsThreadIDs.h
-include/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/mozilla/throw_gcc.h
+@comment include/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/mozilla/throw_gcc.h
 include/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/mozilla/unused.h
 include/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/mozpngconf.h
 include/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/necko-config.h
