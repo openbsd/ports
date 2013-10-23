@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.323 2013/09/23 11:50:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.324 2013/10/23 12:08:08 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -98,6 +98,7 @@
      SUBDIR += libotr
      SUBDIR += libperseus
      SUBDIR += libpwquality
+     SUBDIR += libsodium
      SUBDIR += libsrtp
      SUBDIR += libssh
      SUBDIR += libssh2
