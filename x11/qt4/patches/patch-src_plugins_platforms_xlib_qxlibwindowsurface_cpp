@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_plugins_platforms_xlib_qxlibwindowsurface_cpp,v 1.1 2013/10/24 08:39:14 sthen Exp $
+
+Partially revert fix for CVE-2013-0254 which does not work with our
+privilege-separated X.
+
+--- src/plugins/platforms/xlib/qxlibwindowsurface.cpp.orig	Fri Jun  7 07:17:00 2013
++++ src/plugins/platforms/xlib/qxlibwindowsurface.cpp	Thu Oct 10 16:37:14 2013
+@@ -99,7 +99,7 @@ void QXlibWindowSurface::resizeShmImage(int width, int
+ 
+ 
+     image_info->shminfo.shmid = shmget (IPC_PRIVATE,
+-          image->bytes_per_line * image->height, IPC_CREAT|0700);
++          image->bytes_per_line * image->height, IPC_CREAT|0777);
+ 
+     image_info->shminfo.shmaddr = image->data = (char*)shmat (image_info->shminfo.shmid, 0, 0);
+     image_info->shminfo.readOnly = False;

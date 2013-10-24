@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_plugins_platforms_xcb_qxcbwindowsurface_cpp,v 1.1 2013/10/24 08:39:14 sthen Exp $
+
+Partially revert fix for CVE-2013-0254 which does not work with our
+privilege-separated X.
+
+--- src/plugins/platforms/xcb/qxcbwindowsurface.cpp.orig	Fri Jun  7 07:17:00 2013
++++ src/plugins/platforms/xcb/qxcbwindowsurface.cpp	Thu Oct 10 16:36:27 2013
+@@ -98,7 +98,7 @@ QXcbShmImage::QXcbShmImage(QXcbScreen *screen, const Q
+                                           0);
+ 
+     m_shm_info.shmid = shmget (IPC_PRIVATE,
+-          m_xcb_image->stride * m_xcb_image->height, IPC_CREAT|0600);
++          m_xcb_image->stride * m_xcb_image->height, IPC_CREAT|0666);
+ 
+     m_shm_info.shmaddr = m_xcb_image->data = (quint8 *)shmat (m_shm_info.shmid, 0, 0);
+     m_shm_info.shmseg = xcb_generate_id(xcb_connection());

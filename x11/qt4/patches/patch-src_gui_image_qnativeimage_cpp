@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_gui_image_qnativeimage_cpp,v 1.1 2013/10/24 08:39:14 sthen Exp $
+
+Partially revert fix for CVE-2013-0254 which does not work with our
+privilege-separated X.
+
+--- src/gui/image/qnativeimage.cpp.orig	Thu Oct 10 22:18:28 2013
++++ src/gui/image/qnativeimage.cpp	Thu Oct 10 22:18:55 2013
+@@ -176,7 +176,7 @@ QNativeImage::QNativeImage(int width, int height, QIma
+ 
+     bool ok;
+     xshminfo.shmid = shmget(IPC_PRIVATE, xshmimg->bytes_per_line * xshmimg->height,
+-                            IPC_CREAT | 0700);
++                            IPC_CREAT | 0777);
+     ok = xshminfo.shmid != -1;
+     if (ok) {
+         xshmimg->data = (char*)shmat(xshminfo.shmid, 0, 0);
