@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:42:46 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/10/24 15:32:03 benoit Exp $
 
 COMMENT=		Python PDF toolkit
 
-MODPY_EGG_VERSION=	1.12
+MODPY_EGG_VERSION =	1.13
 DISTNAME=		pyPdf-${MODPY_EGG_VERSION}
 PKGNAME=		${DISTNAME:L:S/^py/py-/}
-REVISION=		2
 CATEGORIES=		textproc devel
 
 HOMEPAGE=		http://pybrary.net/pyPdf/
