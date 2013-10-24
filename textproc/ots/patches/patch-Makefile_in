@@ -1,14 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2004/12/15 07:59:13 jolan Exp $
---- Makefile.in.orig	Sun Nov 30 07:30:07 2003
-+++ Makefile.in	Wed Dec 15 01:45:22 2004
-@@ -100,8 +100,8 @@ am__quote = @am__quote@
- install_sh = @install_sh@
- AUTOMAKE_OPTIONS = gnu 1.4
+$OpenBSD: patch-Makefile_in,v 1.2 2013/10/24 15:32:09 ajacoutot Exp $
+--- Makefile.in.orig	Sun Apr  8 20:17:23 2007
++++ Makefile.in	Thu Oct 24 17:10:03 2013
+@@ -100,7 +100,7 @@ STRIP = @STRIP@
+ VERSION = @VERSION@
+ VERSION_INFO = @VERSION_INFO@
  
--DIST_SUBDIRS = src articles dic doc
 -SUBDIRS = src dic doc
-+DIST_SUBDIRS = src articles dic
-+SUBDIRS = src dic
++SUBDIRS = src dic 
+ DIST_SUBDIRS = src articles dic doc
  
  pkgconfigdir = $(libdir)/pkgconfig
- pkgconfig_DATA = libots-1.pc

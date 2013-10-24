@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2005/12/25 16:14:45 steven Exp $
-@lib lib/libots-1.so.${LIBots-1_VERSION}
