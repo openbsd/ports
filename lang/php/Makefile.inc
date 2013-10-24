@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.48 2013/10/17 09:11:34 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.49 2013/10/24 18:20:39 landry Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -157,6 +157,14 @@ CONFIGURE_ARGS+=	--with-gmp=shared,${LOCALBASE}
 LIB_DEPENDS-gmp=	devel/gmp
 WANTLIB-gmp=		gmp>=4 pthread
 
+# intl
+MULTI_PACKAGES+=	-intl
+COMMENT-intl=		intl library support for php5
+CONFIGURE_ARGS+=	--enable-intl=shared \
+			--with-icu-dir=${LOCALBASE}
+LIB_DEPENDS-intl=	textproc/icu4c
+WANTLIB-intl=		icudata icui18n icuio icuuc m pthread
+
 # imap
 MULTI_PACKAGES+=	-imap
 COMMENT-imap=		imap, pop3 and nntp extensions for php5
@@ -200,6 +208,7 @@ COMMENT-odbc=		odbc database access extensions for php5
 CONFIGURE_ARGS+=        --with-iodbc=shared,${LOCALBASE}
 LIB_DEPENDS-odbc=	databases/iodbc
 WANTLIB-odbc=		iodbc>=2 pthread
+# php 5.4/5.5 : WANTLIB-odbc+=iodbcinst
 
 # pdo-mysql
 MULTI_PACKAGES+=	-pdo_mysql
@@ -305,6 +314,7 @@ MODULES=		converters/libiconv devel/gettext
 WANTLIB-main=		c crypto ssl z pthread gssapi krb5 xml2>=8 \
 			m asn1 com_err heimbase roken \
 			wind ${MODGETTEXT_WANTLIB}
+# php 5.4/5.5 : WANTLIB-main += stdc++
 WANTLIB-fastcgi=	${WANTLIB-main}
 LIB_DEPENDS-main=	textproc/libxml
 RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \

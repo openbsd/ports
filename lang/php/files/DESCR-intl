@@ -1,0 +1,27 @@
+Internationalization extension (further is referred as Intl) is a
+wrapper for ICU library, enabling PHP programmers to perform
+UCA-conformant collation and date/time/number/currency formatting in
+their scripts.
+
+It tends to closely follow ICU APIs, so that people having experience
+working with ICU in either C/C++ or Java could easily use the PHP API.
+Also, this way ICU documentation would be useful to understand various
+ICU functions.
+
+Intl consists of several modules, each of them exposes the corresponding
+ICU API:
+
+* Collator: provides string comparison capability with support for
+  appropriate locale-sensitive sort orderings.
+* Number Formatter: allows to display number according to the localized
+  format or given pattern or set of rules, and to parse strings into
+  numbers.
+* Message Formatter: allows to create messages incorporating data (such
+  as numbers or dates) formatted according to given pattern and locale
+  rules, and parse messages extracting data from them.
+* Normalizer: provides a function to transform text into one of the
+  Unicode normalization forms, and provides a routine to test if a given
+  string is already normalized.
+* Locale: provides interaction with locale identifiers in the form of
+  functions to get subtags from locale identifier; parse, compose,
+  match(lookup and filter) locale identifiers.
