@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2013/10/22 00:14:59 edd Exp $
+# $OpenBSD: Makefile,v 1.38 2013/10/24 23:28:21 edd Exp $
 
 COMMENT=	SVG vector drawing application
 
 DISTNAME=	inkscape-0.48.4
+REVISION =	0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=inkscape/}
 
@@ -21,7 +22,18 @@ WANTLIB += pangoft2-1.0 pangomm-1.4 png poppler poppler-glib popt
 WANTLIB += pthread sigc-2.0 stdc++ xml2 xslt z
 
 MODULES=	devel/gettext \
-		textproc/intltool
+		textproc/intltool \
+		lang/python \
+		lang/ruby
+
+# We are just substituting paths at build time
+MODPY_BUILDDEP =	No
+MODRUBY_BUILDDEP =	No
+
+# There are no (enabled) ruby extensions yet, but users may like
+# to write their own extensions. Add Ruby as a soft dependency.
+# Note that Python is already pulled in indirectly by py-lxml.
+MODRUBY_RUNDEP =	No
 
 BUILD_DEPENDS=	devel/boost
 LIB_DEPENDS=	devel/boehm-gc \
@@ -53,6 +65,10 @@ NO_TEST=	Yes
 # pages, as our mandoc implementation does not yet deal with them properly.
 RM_MANS=	man/el man/fr man/ja man/man1/inkscape.*.1 \
 		man/sk man/zh_TW
+
+SUBST_VARS +=	RUBY MODRUBY_REV
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/src/extension/implementation/script.cpp
 
 post-install:
 .for i in ${RM_MANS}

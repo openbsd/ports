@@ -1,0 +1,23 @@
+$OpenBSD: README,v 1.1 2013/10/24 23:28:21 edd Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Ruby Extensions
+===============
+
+Although there are currently no ruby extension scripts shipped with
+Inkscape, users are free to write their own. If you wish to write ruby
+extensions, then please install Ruby ${MODRUBY_REV}.
+
+Icon Bug
+========
+
+Inkscape is not very resilient to missing icon sets and can crash (for
+example when opening file->"document properties"). If you specify a custom
+icon theme in your ~/.gtkrc-2.0, then make sure that this icon set is
+actually installed.
+
+This bug has been reported:
+https://bugs.launchpad.net/inkscape/+bug/1238142

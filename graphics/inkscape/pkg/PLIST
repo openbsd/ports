@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/10/22 00:15:01 edd Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/10/24 23:28:21 edd Exp $
 @bin bin/inkscape
 @bin bin/inkview
 @man man/man1/inkscape.1
 @man man/man1/inkview.1
 share/applications/inkscape.desktop
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/icons/hicolor/16x16/apps/inkscape.png
 share/icons/hicolor/22x22/apps/inkscape.png
 share/icons/hicolor/24x24/apps/inkscape.png

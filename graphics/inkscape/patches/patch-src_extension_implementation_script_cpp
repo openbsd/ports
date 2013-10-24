@@ -1,12 +1,33 @@
-$OpenBSD: patch-src_extension_implementation_script_cpp,v 1.2 2013/10/22 00:15:00 edd Exp $
+$OpenBSD: patch-src_extension_implementation_script_cpp,v 1.3 2013/10/24 23:28:21 edd Exp $
 
 Security fix for CVE-2012-6076 inkscape: Reads .eps files from /tmp instead of current working directory
 
 Patch taken from Debian:
 http://patch-tracker.debian.org/patch/series/view/inkscape/0.48.3.1-1.3/04-fix-LP911146.diff
 
+Also patch in correct interpreter paths.
+
 --- src/extension/implementation/script.cpp.orig	Thu Dec 13 17:00:46 2012
-+++ src/extension/implementation/script.cpp	Thu Oct 10 14:50:24 2013
++++ src/extension/implementation/script.cpp	Tue Oct 22 13:02:20 2013
+@@ -85,14 +85,14 @@ void Script::pump_events (void) {
+     the given interpreter to a custom one per user.
+ */
+ Script::interpreter_t const Script::interpreterTab[] = {
+-        {"perl",   "perl-interpreter",   "perl"   },
++        {"perl",   "perl-interpreter",   "/usr/bin/perl"   },
+ #ifdef WIN32
+         {"python", "python-interpreter", "pythonw" },
+ #else
+-        {"python", "python-interpreter", "python" },
++        {"python", "python-interpreter", "${MODPY_BIN}" },
+ #endif
+-        {"ruby",   "ruby-interpreter",   "ruby"   },
+-        {"shell",  "shell-interpreter",  "sh"     },
++        {"ruby",   "ruby-interpreter",   "${RUBY}"   },
++        {"shell",  "shell-interpreter",  "/bin/sh"     },
+         { NULL,    NULL,                  NULL    }
+ };
+ 
 @@ -956,7 +956,14 @@ int Script::execute (const std::list<std::string> &in_
      // assemble the rest of argv
      std::copy(in_params.begin(), in_params.end(), std::back_inserter(argv));
