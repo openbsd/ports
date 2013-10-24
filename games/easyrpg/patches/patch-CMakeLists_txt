@@ -1,27 +1,22 @@
-$OpenBSD: patch-builds_cmake_CMakeLists_txt,v 1.4 2013/10/14 13:52:46 dcoppa Exp $
-
-We don't need Git because we're using releases.
-
---- builds/cmake/CMakeLists.txt.orig	Sat Apr 20 19:12:11 2013
-+++ builds/cmake/CMakeLists.txt	Mon Oct 14 15:38:37 2013
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2013/10/24 12:51:30 bcallah Exp $
+--- CMakeLists.txt.orig	Mon Oct 14 15:30:54 2013
++++ CMakeLists.txt	Sun Oct 20 12:35:11 2013
 @@ -9,12 +9,6 @@ set(DEFAULT_EASYRPG_READERS_PATH "${CMAKE_CURRENT_SOUR
  if(NOT EASYRPG_READERS_PATH)
    set(EASYRPG_READERS_PATH "${DEFAULT_EASYRPG_READERS_PATH}")
  endif()
 -find_package(Git REQUIRED)
 -if(NOT EXISTS ${EASYRPG_READERS_PATH})
--  execute_process(COMMAND ${GIT_EXECUTABLE} clone
+-  execute_process(COMMAND ${GIT_EXECUTABLE} clone "--depth=1"
 -    "https://github.com/EasyRPG/Readers.git"
 -    "${EASYRPG_READERS_PATH}")
 -endif()
  add_subdirectory(
    ${EASYRPG_READERS_PATH}/builds/cmake
-   ${CMAKE_CURRENT_BINARY_DIR}/CMakeFiles/${EASYRPG_READERS_PATH}/builds/cmake)
-@@ -27,14 +21,10 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_
- 
- add_definitions(
+   ${CMAKE_CURRENT_BINARY_DIR}/CMakeFiles/EasyRPG_Readers)
+@@ -31,12 +25,9 @@ add_definitions(
    ${PNG_DEFINITIONS}
--
+ 
    -D UNIX=1
 -  -D USE_SDL=1)
 +  -D USE_SDL=1
@@ -34,8 +29,8 @@ We don't need Git because we're using releases.
  # wine checking
  find_program(WINE_EXECUTABLE wine)
  if(EXISTS ${WINE_EXECUTABLE})
-@@ -45,7 +35,7 @@ endif()
- set(SHINONOME_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../lib/shinonome")
+@@ -47,7 +38,7 @@ endif()
+ set(SHINONOME_PATH "${CMAKE_CURRENT_SOURCE_DIR}/lib/shinonome")
  set(SHINONOME_SRCS "${SHINONOME_PATH}/gothic.cxx" "${SHINONOME_PATH}/mincho.cxx")
  include_directories(${SHINONOME_PATH})
 -find_package(Ruby)
@@ -43,7 +38,7 @@ We don't need Git because we're using releases.
  if(RUBY_FOUND)
    set(SHINONOME_GENERATOR "${SHINONOME_PATH}/generate_cxx_font.rb")
    add_custom_command(
-@@ -132,7 +122,7 @@ endif()
+@@ -118,7 +109,7 @@ endif()
  add_library(${PROJECT_NAME}_Static STATIC ${SRCS})
  
  # RTP Table
@@ -51,4 +46,4 @@ We don't need Git because we're using releases.
 +find_package(Ruby 1.8)
  if(RUBY_FOUND)
    add_custom_command(
-     OUTPUT "${CMAKE_CURRENT_SOURCE_DIR}/../../src/rtp_table_bom.h"
+     OUTPUT "${CMAKE_CURRENT_SOURCE_DIR}/src/rtp_table_bom.h"
