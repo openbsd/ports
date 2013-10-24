@@ -1,0 +1,21 @@
+$OpenBSD: patch-openbsd-compat_openbsd-compat_h,v 1.1 2013/10/24 10:52:27 jca Exp $
+OpenBSD does not need nor provide arc4random_stir.
+--- openbsd-compat/openbsd-compat.h.orig	Wed Oct 23 17:23:42 2013
++++ openbsd-compat/openbsd-compat.h	Wed Oct 23 17:27:05 2013
+@@ -146,10 +146,14 @@ int writev(int, struct iovec *, int);
+ int getpeereid(int , uid_t *, gid_t *);
+ #endif 
+ 
+-#ifndef HAVE_ARC4RANDOM
++#ifdef HAVE_ARC4RANDOM
++# ifndef HAVE_ARC4RANDOM_STIR
++#  define arc4random_stir()
++# endif
++#else
+ unsigned int arc4random(void);
+ void arc4random_stir(void);
+-#endif /* !HAVE_ARC4RANDOM */
++#endif /* HAVE_ARC4RANDOM */
+ 
+ #ifndef HAVE_ASPRINTF
+ int asprintf(char **, const char *, ...);
