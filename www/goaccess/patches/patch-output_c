@@ -1,0 +1,12 @@
+$OpenBSD: patch-output_c,v 1.1.1.1 2013/10/24 01:59:44 william Exp $
+--- output.c.orig	Thu Sep 19 08:18:33 2013
++++ output.c	Thu Sep 19 08:18:35 2013
+@@ -760,7 +760,7 @@ print_html_summary (FILE * fp, GLog * logger)
+    fprintf (fp, "</td>");
+ 
+    fprintf (fp, "<td class=\"d1\">");
+-   fprintf (fp, "<span class=\"d1\">%lu</span>", ((int) end_proc - start_proc));
++   fprintf (fp, "<span class=\"d1\">%llu</span>", ((time_t) end_proc - start_proc));
+    fprintf (fp, "</td>");
+ 
+    print_html_summary_field (fp, g_hash_table_size (ht_requests_static),
