@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2013/10/17 09:44:30 landry Exp $
+# $OpenBSD: Makefile,v 1.91 2013/10/24 15:18:00 ajacoutot Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
@@ -9,6 +9,9 @@ REVISION=		0
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-pop3=	courier-pop3-${V}
 FULLPKGPATH-pop3=	mail/courier-imap,-pop3
+
+REVISION-main=		0
+REVISION-pop3=		0
 
 CATEGORIES=		mail
 
@@ -93,7 +96,6 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 RUN_DEPENDS-pop3=	mail/courier-imap,-main
 
 WANTLIB-main=		${WANTLIB} ssl crypto
-MODULES=		converters/libiconv \
 			devel/gettext
 
 CNFFILES=		etc/courier/imapd-ssl.dist etc/courier/imapd.dist \

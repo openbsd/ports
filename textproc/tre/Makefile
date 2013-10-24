@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/21 08:48:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2013/10/24 15:18:00 ajacoutot Exp $
 
 COMMENT=	lightweight regexp matching library with additional features
 
 DISTNAME=		tre-0.8.0
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		textproc
+REVISION=		0
 
 HOMEPAGE=		http://laurikari.net/tre/
 
@@ -19,7 +20,7 @@ SHARED_LIBS +=	tre                  7.0      # 5.0
 
 WANTLIB=		c
 
-MODULES=		devel/gettext converters/libiconv
+MODULES=		devel/gettext
 
 USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu

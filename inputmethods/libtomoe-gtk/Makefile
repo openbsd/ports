@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/21 08:46:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2013/10/24 15:18:00 ajacoutot Exp $
 
 COMMENT=	japanese handwriting input widget
 
 DISTNAME=	libtomoe-gtk-0.1.0
-REVISION=	8
+REVISION=	9
 
 HOMEPAGE= 	http://tomoe.sourceforge.jp/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=tomoe/17171/}
@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=tomoe/17171/}
 CATEGORIES=	inputmethods japanese
 
 SHARED_LIBS=	tomoe-gtk	0.0
-MODULES=	converters/libiconv devel/gettext
+MODULES=	devel/gettext
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.72 2013/10/10 16:34:57 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.73 2013/10/24 15:18:00 ajacoutot Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
 DISTNAME =	i3-4.6
-REVISION =	3
+REVISION =	4
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
@@ -20,8 +20,7 @@ WANTLIB =	X11 Xcursor c>=68.3 cairo ev fontconfig freetype \
 		xcb-atom xcb-aux xcb-event xcb-icccm xcb-keysyms \
 		xcb-property xcb-randr xcb-xinerama yajl z
 
-MODULES =	converters/libiconv \
-		devel/gettext
+MODULES =	devel/gettext
 
 LIB_DEPENDS =	devel/libev \
 		devel/libyajl>=2.0.0 \

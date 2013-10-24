@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/21 08:48:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2013/10/24 15:18:00 ajacoutot Exp $
 
 COMMENT=	open source tool for summarizing texts
 DISTNAME=	ots-0.4.2
-REVISION=	5
+REVISION=	6
 SHARED_LIBS=	ots-1	4.2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libots/}
@@ -12,8 +12,7 @@ HOMEPAGE=	http://libots.sourceforge.net/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=	converters/libiconv \
-		devel/gettext
+MODULES=	devel/gettext
 
 LIB_DEPENDS=	devel/glib2 \
 		devel/popt \

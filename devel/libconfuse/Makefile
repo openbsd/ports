@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/21 08:45:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2013/10/24 15:18:00 ajacoutot Exp $
 
 COMMENT=		configuration file parser library
 DISTNAME=		confuse-2.7
 PKGNAME=		lib${DISTNAME}
-REVISION=		0
+REVISION=		1
 SHARED_LIBS=		confuse 1.0	# .0.0
 CATEGORIES=		devel
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SAVANNAH:=confuse/}
 
-MODULES=		devel/gettext \
-			converters/libiconv
+MODULES=		devel/gettext
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib"

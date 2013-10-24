@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:35:45 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/10/24 15:18:00 ajacoutot Exp $
 
 COMMENT=	Atmel/NWN wireless access point configuration tools
 
 DISTNAME=	ap-utils-1.5
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
 EXTRACT_SUFX=	.tar.bz2
 
@@ -16,7 +16,7 @@ WANTLIB += c ncurses menu
 
 MASTER_SITES=	ftp://linux.zhitomir.net/ap-utils/
 
-MODULES=	devel/gettext converters/libiconv
+MODULES=	devel/gettext
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+=	--without-included-gettext \

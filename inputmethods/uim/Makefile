@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2013/10/22 11:34:19 zhuk Exp $
+# $OpenBSD: Makefile,v 1.47 2013/10/24 15:18:00 ajacoutot Exp $
 
 COMMENT-main=	multilingual input method library
 COMMENT-gtk=	uim for GTK
@@ -17,10 +17,10 @@ PKGNAME-gtk=	uim-gtk-$V
 PKGNAME-qt=	uim-qt-$V
 PKGNAME-kde=	uim-kde-$V
 
-REVISION-main=	10
-REVISION-gtk=	12
-REVISION-qt=	6
-REVISION-kde=	9
+REVISION-main=	11
+REVISION-gtk=	13
+REVISION-qt=	7
+REVISION-kde=	10
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -34,8 +34,7 @@ MULTI_PACKAGES=	-main -gtk -qt -kde
 
 CONFIGURE_STYLE=	autoconf
 
-MODULES=	converters/libiconv \
-		devel/gettext \
+MODULES=	devel/gettext \
 		x11/qt3 \
 		textproc/intltool
 DPB_PROPERTIES =	tag:kde3
@@ -46,13 +45,12 @@ SUBST_VARS=	MODQT_PLUGINS
 
 Wcommon =	X11 Xext c m xcb \
 		Xrender fontconfig freetype expat z \
-		${MODGETTEXT_WANTLIB} ${MODLIBICONV_WANTLIB}
+		${MODGETTEXT_WANTLIB}
 
 
 RUN_DEPENDS-main=${RUN_DEPENDS} \
 		devel/desktop-file-utils
 LIB_DEPENDS-main =	inputmethods/anthy \
-			${MODLIBICONV_LIB_DEPENDS} \
 			${MODGETTEXT_LIB_DEPENDS}
 WANTLIB-main=	${Wcommon} curses \
 		util Xft stdc++ anthy anthydic \
@@ -64,7 +62,6 @@ Wx =	GL Xinerama Xrandr Xcursor Xdamage Xfixes Xi Xxf86vm drm
 
 LIB_DEPENDS-qt=		${MODQT_LIB_DEPENDS} \
 			${uim_LIB_DEPENDS} \
-			${MODLIBICONV_LIB_DEPENDS} \
 			${MODGETTEXT_LIB_DEPENDS}
 
 #common to -qt and -kde
@@ -75,7 +72,6 @@ Wqt =		${Wcommon} ${Wx} ${MODQT_WANTLIB} \
 WANTLIB-qt =	${Wqt} uim-custom pthread
 
 LIB_DEPENDS-kde	=	inputmethods/uim \
-			${MODLIBICONV_LIB_DEPENDS} \
 			${MODGETTEXT_LIB_DEPENDS} \
 			x11/kde/libs3
 WANTLIB-kde =	${Wqt} idn util art_lgpl_2 lib/kde3/DCOP \

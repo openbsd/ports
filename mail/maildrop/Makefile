@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2013/10/13 20:18:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.47 2013/10/24 15:18:00 ajacoutot Exp $
 
 COMMENT-main=		mail delivery agent with filtering abilities
 COMMENT-utils=		quota tools for the Courier mail suite
@@ -9,6 +9,9 @@ PKGNAME-main=		maildrop-${V}
 FULLPKGNAME-utils=	courier-utils-$V
 FULLPKGPATH-utils=	mail/maildrop,-utils
 CATEGORIES=		mail
+
+REVISION-main=		0
+REVISION-utils=		0
 
 HOMEPAGE=		http://www.courier-mta.org/maildrop/
 
@@ -73,8 +76,7 @@ CONFIGURE_ARGS+=	--enable-trusted-users="root _courier"
 CONFIGURE_ARGS+=	--enable-trusted-groups="wheel _courier"
 .endif
 
-MODULES=		converters/libiconv \
-			devel/gettext
+MODULES=		devel/gettext
 
 LIB_DEPENDS=		devel/libidn
 
