@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2013/10/23 17:06:51 zhuk Exp $
+# $OpenBSD: Makefile,v 1.22 2013/10/24 08:44:36 zhuk Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
-ONLY_FOR_ARCHS-java =	i386 amd64
+# do not include i386 here until JDK 1.6 issues there are solved
+ONLY_FOR_ARCHS-java =	amd64
 SHARED_ONLY =		Yes
 VMEM_WARNING =		Yes
 
