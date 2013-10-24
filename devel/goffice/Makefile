@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2013/10/08 09:19:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2013/10/24 16:20:15 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,6 +9,7 @@ GNOME_VERSION=	0.10.8
 
 # NOTE: when GNOME_VERSION changes, increment GOFFICE_VERSION and
 # GOFFICE_API_VERSION accordingly and bump:
+# editors/abiword
 # math/gnumeric
 GOFFICE_API_VERSION=	${GNOME_VERSION:R}
 SUBST_VARS=		GNOME_VERSION GOFFICE_API_VERSION
