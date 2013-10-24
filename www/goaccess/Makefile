@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/10/24 01:59:44 william Exp $
+# $OpenBSD: Makefile,v 1.2 2013/10/24 11:48:49 kirby Exp $
 
 COMMENT =		realtime console web log analyzer
 
 DISTNAME =		goaccess-0.6
+REVISION = 		0
 
 CATEGORIES =		www
 HOMEPAGE =		http://goaccess.prosoftcorp.com/
