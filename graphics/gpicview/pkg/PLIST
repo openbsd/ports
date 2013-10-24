@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/08/17 23:13:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/10/24 20:48:07 naddy Exp $
 @bin bin/gpicview
 share/applications/gpicview.desktop
 share/gpicview/
@@ -9,6 +9,7 @@ share/gpicview/pixmaps/object-rotate-left.png
 share/gpicview/pixmaps/object-rotate-right.png
 share/gpicview/ui/
 share/gpicview/ui/pref-dlg.ui
+share/icons/hicolor/48x48/apps/gpicview.png
 share/locale/af/
 share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/gpicview.mo
@@ -86,7 +87,7 @@ share/locale/ur_PK/LC_MESSAGES/gpicview.mo
 share/locale/vi/LC_MESSAGES/gpicview.mo
 share/locale/zh_CN/LC_MESSAGES/gpicview.mo
 share/locale/zh_TW/LC_MESSAGES/gpicview.mo
-share/pixmaps/
-share/pixmaps/gpicview.png
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
