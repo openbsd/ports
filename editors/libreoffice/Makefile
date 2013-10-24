@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2013/10/13 08:11:21 espie Exp $
+# $OpenBSD: Makefile,v 1.94 2013/10/24 07:58:05 sthen Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -100,15 +100,16 @@ DIST_SUBDIR=	libreoffice
 
 PERMIT_PACKAGE_CDROM=	Yes
 
-MULTI_PACKAGES=		-main -kde
+MULTI_PACKAGES=		-main -java -kde
 
 PSEUDO_FLAVORS=	parallel no_lang
 FLAVORS=	debug no_java
 FLAVOR?=
 
-.if !${FLAVOR:Mno_java}
-MULTI_PACKAGES+=	-java
-.endif
+# jdk is unreliable on i386.
+NOT_FOR_ARCHS-java = i386
+
+.include <bsd.port.arch.mk>
 
 .if !${FLAVOR:Mno_lang}
 LANGS=			ar bg ca de es fa fi fr hu it \
@@ -206,7 +207,7 @@ WANTLIB-kde=		${MODQT_WANTLIB} \
 			lib/kde3/kdecore \
 			lib/kde3/kdeui lib/kde3/kio
 
-.if !${FLAVOR:Mno_java}
+.if ${BUILD_PACKAGES:M-java}
 MODULES+=		java
 MODJAVA_VER=		1.6
 MODJAVA_JRERUN=		Yes
@@ -298,7 +299,7 @@ CONFIGURE_ARGS+=\
 		--without-system-servlet-api \
 		--without-unix-wrapper
 
-.if !${FLAVOR:Mno_java}
+.if ${BUILD_PACKAGES:M-java}
 BUILD_DEPENDS+=	devel/apache-ant
 
 CONFIGURE_ARGS+=--enable-ext-wiki-publisher \
