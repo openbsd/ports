@@ -1,10 +1,15 @@
-$OpenBSD: patch-configure_ac,v 1.4 2013/08/15 09:47:28 sthen Exp $
+$OpenBSD: patch-configure_ac,v 1.5 2013/10/25 23:45:55 sthen Exp $
 
 We do PIE by default on arch where it works; don't force it to avoid
 problems on arch where it's broken e.g. arm.
 
---- configure.ac.orig	Thu Aug 15 11:00:58 2013
-+++ configure.ac	Thu Aug 15 11:01:09 2013
+From 6e9ec67ae461938caa2c641f7ca617298d5cca08 Mon Sep 17 00:00:00 2001
+From: Frank Denis <github@pureftpd.org>
+Date: Tue, 22 Oct 2013 13:10:31 -0700
+Subject: [PATCH] Check for arc4random_stir and arc4random_addrandom presence
+
+--- configure.ac.orig	Fri Mar 16 05:28:21 2012
++++ configure.ac	Wed Oct 23 14:39:09 2013
 @@ -21,12 +21,6 @@ AM_PROG_CC_C_O
  AC_USE_SYSTEM_EXTENSIONS
  AC_SEARCH_LIBS([strerror],[cposix])
@@ -26,3 +31,12 @@ problems on arch where it's broken e.g. arm.
  AX_CHECK_LINK_FLAG([-z relro], [LDFLAGS="$LDFLAGS -z relro"])
  AX_CHECK_LINK_FLAG([-z now], [LDFLAGS="$LDFLAGS -z now"])
  
+@@ -961,7 +954,7 @@ AC_CHECK_FUNCS(getaddrinfo getnameinfo inet_ntop inet_
+ AC_CHECK_FUNCS(setusershell setgroups snprintf vsnprintf vfprintf gethostname)
+ AC_CHECK_FUNCS(setlocale timegm)
+ AC_CHECK_FUNCS(tzset utime utimes mknod mkfifo)
+-AC_CHECK_FUNCS(random srandomdev arc4random)
++AC_CHECK_FUNCS(random srandomdev arc4random arc4random_stir arc4random_addrandom)
+ AC_CHECK_FUNCS(closefrom)
+ 
+ AC_MSG_CHECKING([whether statvfs64() is defined])

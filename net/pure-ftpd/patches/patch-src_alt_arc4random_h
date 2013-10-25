@@ -1,14 +1,28 @@
-$OpenBSD: patch-src_alt_arc4random_h,v 1.1 2013/10/22 19:53:35 jca Exp $
---- src/alt_arc4random.h.orig	Tue Oct 22 17:42:57 2013
-+++ src/alt_arc4random.h	Tue Oct 22 17:44:51 2013
-@@ -7,8 +7,8 @@
+$OpenBSD: patch-src_alt_arc4random_h,v 1.2 2013/10/25 23:45:55 sthen Exp $
+
+From 6e9ec67ae461938caa2c641f7ca617298d5cca08 Mon Sep 17 00:00:00 2001
+From: Frank Denis <github@pureftpd.org>
+Date: Tue, 22 Oct 2013 13:10:31 -0700
+Subject: [PATCH] Check for arc4random_stir and arc4random_addrandom presence
+
+--- src/alt_arc4random.h.orig	Fri Mar 16 01:01:37 2012
++++ src/alt_arc4random.h	Wed Oct 23 14:37:49 2013
+@@ -7,8 +7,16 @@
  #ifdef __OpenBSD__
  
  #define alt_arc4random() arc4random()
 -#define alt_arc4random_stir() arc4random_stir()
 -#define alt_arc4random_addrandom(A, B) arc4random_addrandom(A, B)
-+#define alt_arc4random_stir()
-+#define alt_arc4random_addrandom(A, B)
++#ifdef HAVE_ARC4RANDOM_STIR
++# define alt_arc4random_stir() arc4random_stir()
++#else
++# define alt_arc4random_stir() (void) 0
++#endif
++#ifdef HAVE_ARC4RANDOM_ADDRANDOM
++# define alt_arc4random_addrandom(A, B) arc4random_addrandom(A, B)
++#else
++# define alt_arc4random_addrandom(A, B) (void) 0
++#endif
  #define alt_arc4random_uniform(A) arc4random_uniform(A)
  #define alt_arc4random_buf(A, B) arc4random_buf(A, B)
  
