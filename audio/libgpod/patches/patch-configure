@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.1 2013/10/25 19:12:07 naddy Exp $
+
+Do not pick up TagLib, which is only used by test-rebuild-db.
+
+--- configure.orig	Tue Oct 12 13:59:23 2010
++++ configure	Fri Oct 25 21:08:25 2013
+@@ -16900,7 +16900,7 @@ _ACEOF
+ 
+ 
+ 
+-pkg_failed=no
++pkg_failed=yes
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for TAGLIB" >&5
+ $as_echo_n "checking for TAGLIB... " >&6; }
+ 
