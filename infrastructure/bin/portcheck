@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.39 2013/10/19 20:06:14 zhuk Exp $
+# $OpenBSD: portcheck,v 1.40 2013/10/25 23:32:08 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -662,7 +662,7 @@ sub_checks() {
 	local dir=$1; shift
 	local subpkg=$1; shift
 	local fullpkgname=$1; shift
-	local flavor
+	local flavor pkg_arch
 	for flavor in "$@"; do
 		# avoid extra noise
 		[[ ${flavor#no_} != ${flavor} &&
@@ -674,10 +674,15 @@ sub_checks() {
 			portref=$(portref "$dir" "$subpkg" "$flavor" "$*")
 			export SUBPACKAGE="$subpkg" FLAVOR="$flavor"
 
-			make "${make_args[@]}" show="MODULES WANTLIB$subpkg" | {
+			make "${make_args[@]}" show="MODULES PKG_ARCH$subpkg WANTLIB$subpkg" | {
 				local modules wantlib
 				read -r modules
+				read -r pkg_arch
 				read -r wantlib
+				if [[ $pkg_arch = "*" && -n $wantlib ]]; then
+					err "non-empty WANTLIB$subpkg for" \
+					    "arch-independent package"
+				fi
 				check_wantlib "$portref" "$modules" $wantlib
 			} || error=true
 
