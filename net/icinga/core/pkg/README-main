@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.13 2013/05/07 15:34:47 sthen Exp $
+$OpenBSD: README-main,v 1.14 2013/10/25 16:16:23 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -47,7 +47,8 @@ ${TRUEPREFIX}/bin/idomod.o to ${TRUEPREFIX}/lib/idomod.so in 1.7.0.
 
 If upgrading from an earlier version of icinga-web (the PHP API-based
 web interface), you will need to apply updates to the icinga_web database
-schema from /var/www/icinga-web/etc/schema/updates.
+schema from /var/www/icinga-web/etc/schema/updates. You should also clear
+the cache by running "/var/www/icinga-web/bin/clearcache.sh".
 
 
 Chroot Considerations

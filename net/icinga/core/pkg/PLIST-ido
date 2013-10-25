@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ido,v 1.11 2013/05/07 15:34:47 sthen Exp $
+@comment $OpenBSD: PLIST-ido,v 1.12 2013/10/25 16:16:23 sthen Exp $
 @bin bin/ido2db
 @bin bin/log2ido
 lib/idomod.so
@@ -14,6 +14,7 @@ share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.0.2.sql
 share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.0.3.sql
 share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.0.sql
 share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.0rc.sql
+share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.10.0.sql
 share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.3.0.sql
 share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.4.0.sql
 share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.5.0.sql
@@ -33,6 +34,7 @@ share/examples/icinga/db/oracle/upgrade/
 share/examples/icinga/db/oracle/upgrade/oracle-upgrade-1.0.1.sql
 share/examples/icinga/db/oracle/upgrade/oracle-upgrade-1.0.2-fix-object-relations.sql
 share/examples/icinga/db/oracle/upgrade/oracle-upgrade-1.0.3.sql
+share/examples/icinga/db/oracle/upgrade/oracle-upgrade-1.10.0.sql
 share/examples/icinga/db/oracle/upgrade/oracle-upgrade-1.3.0.sql
 share/examples/icinga/db/oracle/upgrade/oracle-upgrade-1.4.0.sql
 share/examples/icinga/db/oracle/upgrade/oracle-upgrade-1.5.0.sql
@@ -50,6 +52,7 @@ share/examples/icinga/db/pgsql/pgsql.sql
 share/examples/icinga/db/pgsql/upgrade/
 share/examples/icinga/db/pgsql/upgrade/pgsql-upgrade-1.0.1.sql
 share/examples/icinga/db/pgsql/upgrade/pgsql-upgrade-1.0.3.sql
+share/examples/icinga/db/pgsql/upgrade/pgsql-upgrade-1.10.0.sql
 share/examples/icinga/db/pgsql/upgrade/pgsql-upgrade-1.3.0.sql
 share/examples/icinga/db/pgsql/upgrade/pgsql-upgrade-1.4.0.sql
 share/examples/icinga/db/pgsql/upgrade/pgsql-upgrade-1.5.0.sql
@@ -89,8 +92,6 @@ share/examples/icinga/db/queries/service_status.sql
 share/examples/icinga/db/queries/servicegroup_membership.sql
 share/examples/icinga/db/queries/services.sql
 share/examples/icinga/db/queries/state_history.sql
-share/examples/icinga/db/queries/timed_event_queue.sql
-share/examples/icinga/db/queries/timed_events.sql
 share/examples/icinga/db/scripts/
 share/examples/icinga/db/scripts/create_mysqldb.sh
 share/examples/icinga/db/scripts/create_oracledb.sh

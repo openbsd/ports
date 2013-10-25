@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.50 2013/07/12 16:07:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2013/10/25 16:16:23 sthen Exp $
 
-V =			1.9.3
+V =			1.10.0
 
 COMMENT-main =		network monitoring system (improved fork of Nagios)
 COMMENT-cgi =		cgi scripts for Icinga (classic Nagios-style UI)
@@ -29,6 +29,7 @@ RUN_DEPENDS-ido =	${BASE_PKGPATH},-main \
 			libdbi-drivers-mysql-*|libdbi-drivers-pgsql-*:databases/libdbi-drivers,-main
 
 MODULES =		lang/php
+USE_GMAKE =		Yes
 
 # the cgi binaries are linked -static to simplify use in chroot,
 # but listed as dependency anyway to help pkg_add -u find updates.

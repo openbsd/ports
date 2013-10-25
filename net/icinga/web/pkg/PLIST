@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/09/12 22:31:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/10/25 16:16:23 sthen Exp $
 @conflict icinga-api-*
 @pkgpath net/icinga/core,-api
 app/
@@ -672,6 +672,7 @@ app/modules/AppKit/lib/js/utils/AppKitServertime.js
 app/modules/AppKit/lib/js/utils/Ext.ux.AutoComboBox.js
 app/modules/AppKit/lib/js/utils/HttpStateProvider.js
 app/modules/AppKit/lib/js/utils/LogoutMachine.js
+app/modules/AppKit/lib/js/utils/PieChart.js
 app/modules/AppKit/lib/js/ux/
 app/modules/AppKit/lib/js/ux/DDTabPanel.js
 app/modules/AppKit/lib/js/ux/EllipsisColumn.js
@@ -752,6 +753,7 @@ app/modules/AppKit/models/RoleAdminModel.class.php
 app/modules/AppKit/models/SquishFileContainerModel.class.php
 app/modules/AppKit/models/Tasks/
 app/modules/AppKit/models/Tasks/ClearCacheModel.class.php
+app/modules/AppKit/models/Tasks/ClearUserDataModel.class.php
 app/modules/AppKit/models/UserAdminModel.class.php
 app/modules/AppKit/templates/
 app/modules/AppKit/templates/Admin/
@@ -964,6 +966,9 @@ app/modules/Cronks/data/xml/extensions/
 app/modules/Cronks/data/xml/extensions/.keep
 app/modules/Cronks/data/xml/grid/
 app/modules/Cronks/data/xml/grid/example-host-template.xml
+app/modules/Cronks/data/xml/grid/icinga-all-host-problems.xml
+app/modules/Cronks/data/xml/grid/icinga-all-problems-template.xml
+app/modules/Cronks/data/xml/grid/icinga-all-service-problems.xml
 app/modules/Cronks/data/xml/grid/icinga-downtime-history-template.xml
 app/modules/Cronks/data/xml/grid/icinga-downtime-template.xml
 app/modules/Cronks/data/xml/grid/icinga-host-history-template.xml
@@ -1504,6 +1509,7 @@ bin/testdeps.php
 bin/write_copy.py
 doc/
 doc/AUTHORS
+doc/CHANGELOG-1.10
 doc/CHANGELOG-1.6
 doc/CHANGELOG-1.7
 doc/CHANGELOG-1.8
@@ -1514,6 +1520,7 @@ doc/INSTALL
 doc/LICENSE
 doc/LICENSE_INLINE.txt
 doc/README.RHEL
+doc/README.SUSE
 doc/RELEASEDATE
 doc/THANKS
 doc/TODO
@@ -1556,6 +1563,8 @@ etc/conf.d/translation.xml.dist
 @sample etc/conf.d/translation.xml
 etc/conf.d/userpreferences.xml.dist
 @sample etc/conf.d/userpreferences.xml
+etc/conf.d/views.xml.dist
+@sample etc/conf.d/views.xml
 etc/icinga-web.conf
 @sample /var/www/conf/modules.sample/icinga-web.conf
 etc/lib/
@@ -1594,6 +1603,7 @@ etc/schema/updates/mysql/mysql_v1-8-0_to_v-1-8-1.sql
 etc/schema/updates/mysql/mysql_v1-8-1_to_v1-8-3.sql
 etc/schema/updates/mysql/mysql_v1-8-3_to_v1-9.sql
 etc/schema/updates/mysql/mysql_v1-9-0_to_1-9-1.sql
+etc/schema/updates/mysql/mysql_v1-9-1_to_1-10-0.sql
 etc/schema/updates/oracle/
 etc/schema/updates/oracle/oracle_v1-0-3_to_v1-2.sql
 etc/schema/updates/oracle/oracle_v1-2_to_1-3.sql
@@ -1608,6 +1618,7 @@ etc/schema/updates/oracle/oracle_v1-7-2_to_v1-8-0.sql
 etc/schema/updates/oracle/oracle_v1-8-0_to_v1-8-3.sql
 etc/schema/updates/oracle/oracle_v1-8-3_to_v1-9.sql
 etc/schema/updates/oracle/oracle_v1-9-0_to_v1-9-1.sql
+etc/schema/updates/oracle/oracle_v1-9-1_to_v1-10-0.sql
 etc/schema/updates/pgsql/
 etc/schema/updates/pgsql/pgsql_v1-0-3_to_v1-2.sql
 etc/schema/updates/pgsql/pgsql_v1-2_to_v1-3.sql
@@ -1623,6 +1634,7 @@ etc/schema/updates/pgsql/pgsql_v1-8-0_to_v-1-8-1.sql
 etc/schema/updates/pgsql/pgsql_v1-8-1_to_v1-8-3.sql
 etc/schema/updates/pgsql/pgsql_v1-8-3_to_v1-9.sql
 etc/schema/updates/pgsql/pgsql_v1-9-0_to_v1-9-1.sql
+etc/schema/updates/pgsql/pgsql_v1-9-1_to_v1-10-0.sql
 lib/
 lib/agavi/
 lib/agavi/src/
@@ -3422,7 +3434,6 @@ lib/ext3/examples/ux/ux-all.js
 lib/ext3/ext-all-debug.js
 lib/ext3/ext-all.js
 lib/ext3/resources/
-lib/ext3/resources/charts.swf
 lib/ext3/resources/css/
 lib/ext3/resources/css/README.txt
 lib/ext3/resources/css/debug.css
@@ -4440,6 +4451,10 @@ lib/phpseclib/PHP/Compat/Function/
 lib/phpseclib/PHP/Compat/Function/array_fill.php
 lib/phpseclib/PHP/Compat/Function/bcpowmod.php
 lib/phpseclib/PHP/Compat/Function/str_split.php
+lib/raphael/
+lib/raphael/g.pie-min.js
+lib/raphael/g.raphael-min.js
+lib/raphael/raphael-min.js
 lib/resources/
 @mode 775
 @group www
