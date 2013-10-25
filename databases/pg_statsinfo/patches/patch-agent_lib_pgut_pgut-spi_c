@@ -1,0 +1,11 @@
+$OpenBSD: patch-agent_lib_pgut_pgut-spi_c,v 1.1 2013/10/25 21:44:48 landry Exp $
+--- agent/lib/pgut/pgut-spi.c.orig	Fri Oct 25 23:40:06 2013
++++ agent/lib/pgut/pgut-spi.c	Fri Oct 25 23:41:08 2013
+@@ -9,6 +9,7 @@
+ 
+ #include "postgres.h"
+ #include "pgut-spi.h"
++#include "lib/stringinfo.h"
+ 
+ #define EXEC_FAILED(ret, expected) \
+ 	(((expected) > 0 && (ret) != (expected)) || (ret) < 0)

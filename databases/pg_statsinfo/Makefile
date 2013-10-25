@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2013/10/24 21:24:51 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2013/10/25 21:44:48 landry Exp $
 
 COMMENT =	monitor PostgreSQL activity & statistics
 SHARED_ONLY =	Yes
 
-BROKEN =	needs fix for pg 9.3
 DISTNAME =	pg_statsinfo-2.4.1
 CATEGORIES =	databases
+REVISION =	0
 
 HOMEPAGE =	http://pgstatsinfo.projects.pgfoundry.org/
 

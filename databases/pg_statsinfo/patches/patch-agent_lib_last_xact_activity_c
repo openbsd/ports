@@ -1,0 +1,58 @@
+$OpenBSD: patch-agent_lib_last_xact_activity_c,v 1.1 2013/10/25 21:44:48 landry Exp $
+Adapt to new API in PostgreSQL 9.3
+Shoehorned from unrelated https://github.com/dimitri/pgextwlist/pull/4/files and
+https://github.com/psoo/pg_stat_plans/commit/289ed7efefbffc72f42eb9651fc253a6cbae2ff6
+--- agent/lib/last_xact_activity.c.orig	Fri Oct 25 23:25:19 2013
++++ agent/lib/last_xact_activity.c	Fri Oct 25 23:25:26 2013
+@@ -99,10 +99,10 @@ static statEntry *get_snapshot_entry(int beid);
+ static Size buffer_size(int nbackends);
+ #if PG_VERSION_NUM >= 90000
+ static void myProcessUtility(Node *parsetree,
+-			   const char *queryString, ParamListInfo params, bool isTopLevel,
++			   const char *queryString, ProcessUtilityContext context, ParamListInfo params,
+ 			   DestReceiver *dest, char *completionTag);
+ static void myProcessUtility0(Node *parsetree,
+-			   const char *queryString, ParamListInfo params, bool isTopLevel,
++			   const char *queryString, ProcessUtilityContext context, ParamListInfo params,
+ 			   DestReceiver *dest, char *completionTag);
+ #endif
+ #endif
+@@ -331,23 +331,23 @@ exit_transaction_if_needed()
+  */
+ static void
+ myProcessUtility(Node *parsetree, const char *queryString,
+-				 ParamListInfo params, bool isTopLevel,
++				 ProcessUtilityContext context, ParamListInfo params,
+ 				 DestReceiver *dest, char *completionTag)
+ {
+ 	/*
+ 	 * Do my process before other hook runs.
+ 	 */
+-	myProcessUtility0(parsetree, queryString, params, isTopLevel, dest,
++	myProcessUtility0(parsetree, queryString, context, params, dest,
+ 					  completionTag);
+ 
+ 	PG_TRY();
+ 	{
+ 		if (prev_ProcessUtility_hook)
+-			prev_ProcessUtility_hook(parsetree, queryString, params,
+-									 isTopLevel, dest, completionTag);
++			prev_ProcessUtility_hook(parsetree, queryString, context, params,
++									 dest, completionTag);
+ 		else
+-			standard_ProcessUtility(parsetree, queryString, params,
+-									isTopLevel, dest, completionTag);
++			standard_ProcessUtility(parsetree, queryString, context, params,
++									 dest, completionTag);
+ 	}
+ 	PG_CATCH();
+ 	{
+@@ -361,7 +361,7 @@ myProcessUtility(Node *parsetree, const char *queryStr
+ 
+ static void
+ myProcessUtility0(Node *parsetree, const char *queryString,
+-					ParamListInfo params, bool isTopLevel,
++					ProcessUtilityContext context, ParamListInfo params,
+ 					DestReceiver *dest, char *completionTag)
+ {
+ 	statEntry *entry;
