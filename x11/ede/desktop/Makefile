@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/07/15 12:05:26 pascal Exp $
+# $OpenBSD: Makefile,v 1.4 2013/10/25 20:43:23 landry Exp $
 
 COMMENT =		Equinox desktop environment
 
 DISTNAME =		ede-${V}
-REVISION =		0
+REVISION =		1
 
 WANTLIB += X11 Xau Xdmcp Xext Xft Xinerama Xpm c crypto
 WANTLIB += curl dbus-1 edelib edelib_dbus edelib_gui fltk fltk_images
@@ -11,7 +11,8 @@ WANTLIB += fontconfig idn jpeg m png pthread ssl startup-notification-1
 WANTLIB += stdc++ xkbfile z
 
 MODULES =		lang/python
-BUILD_DEPENDS =		devel/jam
+BUILD_DEPENDS =		devel/jam \
+			misc/shared-mime-info
 LIB_DEPENDS =		devel/startup-notification \
 			graphics/jpeg \
 			graphics/png \

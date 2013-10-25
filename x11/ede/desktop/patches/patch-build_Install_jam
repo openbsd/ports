@@ -1,0 +1,12 @@
+$OpenBSD: patch-build_Install_jam,v 1.1 2013/10/25 20:43:23 landry Exp $
+Donc call update-mime-database
+--- build/Install.jam.orig	Fri Oct 25 22:40:30 2013
++++ build/Install.jam	Fri Oct 25 22:40:40 2013
+@@ -150,7 +150,6 @@ rule InstallEdeMimeFiles
+ 
+ 		# Call update-mime-database after install/uninstall
+ 		# Just hoping this will be executed after files are copied/removed...
+-		MimeUpdater install : $(EDE_MIME_DIR) ;
+ 		MimeUpdater uninstall : $(EDE_MIME_DIR) ;
+ 	}
+ }
