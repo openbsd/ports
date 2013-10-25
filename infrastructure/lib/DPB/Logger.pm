@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Logger.pm,v 1.11 2013/10/06 13:33:32 espie Exp $
+# $OpenBSD: Logger.pm,v 1.12 2013/10/25 16:54:27 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -22,6 +22,7 @@ package DPB::Logger;
 use File::Path;
 use File::Basename;
 use IO::File;
+use Fcntl;
 
 sub new
 {
@@ -42,6 +43,8 @@ sub _open
 	my ($self, $mode, $name) = @_;
 	my $log = $self->logfile($name);
 	my $fh = IO::File->new($log, $mode) or die "Can't write to $log: $!\n";
+	my $flags = $fh->fcntl(F_GETFL, 0);
+	$fh->fcntl(F_SETFL, $flags | FD_CLOEXEC);
 	return $fh;
 }
 

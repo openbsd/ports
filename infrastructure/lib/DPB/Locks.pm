@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.25 2013/10/08 17:40:41 espie Exp $
+# $OpenBSD: Locks.pm,v 1.26 2013/10/25 16:54:27 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -22,6 +22,7 @@ package DPB::Locks;
 
 use File::Path;
 use Fcntl;
+require 'fcntl.ph';
 
 sub new
 {
@@ -127,7 +128,7 @@ sub lockname
 sub dolock
 {
 	my ($self, $name, $v) = @_;
-	if (sysopen my $fh, $name, O_CREAT|O_EXCL|O_WRONLY, 0666) {
+	if (sysopen my $fh, $name, O_CREAT|O_EXCL|O_WRONLY|O_CLOEXEC(), 0666) {
 		DPB::Util->make_hot($fh);
 		print $fh "locked=", $v->logname, "\n";
 		print $fh "dpb=", $self->{dpb_pid}, " on ", 
