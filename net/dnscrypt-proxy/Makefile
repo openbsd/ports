@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/10/23 13:14:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2013/10/25 21:01:50 sthen Exp $
 
 COMMENT-main=		secure communications between a DNS client and resolver
 COMMENT-plugins=	example plugins for dnscrypt-proxy
@@ -35,8 +35,9 @@ LIB_DEPENDS-main=	${commonLIB_DEPENDS} \
 			devel/libtool,-ltdl
 LIB_DEPENDS-plugins=	${commonLIB_DEPENDS} \
 			net/ldns/libldns
-
-BUILD_DEPENDS=		devel/libtool
+BUILD_DEPENDS=		devel/libtool \
+			${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		CPPFLAGS=-I${LOCALBASE}/include \
@@ -56,8 +57,7 @@ DOCS=			README-PLUGINS.markdown \
 
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.14
-BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
+
 post-patch:
 	cd ${WRKSRC}/src/libevent-modified; \
 	    AUTOCONF_VERSION=${AUTOCONF_VERSION} \
