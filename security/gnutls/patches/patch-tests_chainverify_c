@@ -1,6 +1,10 @@
-$OpenBSD: patch-tests_chainverify_c,v 1.1 2013/10/24 15:43:57 jca Exp $
+$OpenBSD: patch-tests_chainverify_c,v 1.2 2013/10/25 13:49:52 jca Exp $
+
+Committed upstream.
+https://gitorious.org/gnutls/gnutls/commit/6842a2ae042ab939d428248f8a7ef75aaf93e1c0
+
 --- tests/chainverify.c.orig	Thu Oct 24 16:52:57 2013
-+++ tests/chainverify.c	Thu Oct 24 16:58:22 2013
++++ tests/chainverify.c	Thu Oct 24 17:52:58 2013
 @@ -26,7 +26,6 @@
  
  #include <stdio.h>
@@ -14,9 +18,10 @@ $OpenBSD: patch-tests_chainverify_c,v 1.1 2013/10/24 15:43:57 jca Exp $
            ret = gnutls_x509_crt_init (&certs[j]);
            if (ret < 0)
 -            error (EXIT_FAILURE, 0, "gnutls_x509_crt_init[%d,%d]: %s",
+-                   (int) i, (int) j, gnutls_strerror (ret));
 +	    {
 +	      fprintf (stderr, "gnutls_x509_crt_init[%d,%d]: %s",
-                    (int) i, (int) j, gnutls_strerror (ret));
++		       (int) i, (int) j, gnutls_strerror (ret));
 +	      exit (EXIT_FAILURE);
 +	    }
  
@@ -27,9 +32,10 @@ $OpenBSD: patch-tests_chainverify_c,v 1.1 2013/10/24 15:43:57 jca Exp $
              printf ("done\n");
            if (ret < 0)
 -            error (EXIT_FAILURE, 0, "gnutls_x509_crt_import[%d,%d]: %s",
+-                   (int) i, (int) j, gnutls_strerror (ret));
 +	    {
 +	      fprintf (stderr, "gnutls_x509_crt_import[%d,%d]: %s",
-                    (int) i, (int) j, gnutls_strerror (ret));
++		       (int) i, (int) j, gnutls_strerror (ret));
 +	      exit (EXIT_FAILURE);
 +	    }
  
@@ -40,11 +46,12 @@ $OpenBSD: patch-tests_chainverify_c,v 1.1 2013/10/24 15:43:57 jca Exp $
        ret = gnutls_x509_crt_init (&ca);
        if (ret < 0)
 -        error (EXIT_FAILURE, 0, "gnutls_x509_crt_init: %s",
-+	{
-+	  fprintf (stderr, "gnutls_x509_crt_init: %s",
-                gnutls_strerror (ret));
-+	  exit (EXIT_FAILURE);
-+	}
+-               gnutls_strerror (ret));
++      {
++	fprintf (stderr, "gnutls_x509_crt_init: %s",
++		 gnutls_strerror (ret));
++	exit (EXIT_FAILURE);
++      }
  
        tmp.data = (unsigned char *) *chains[i].ca;
        tmp.size = strlen (*chains[i].ca);
@@ -52,9 +59,10 @@ $OpenBSD: patch-tests_chainverify_c,v 1.1 2013/10/24 15:43:57 jca Exp $
        ret = gnutls_x509_crt_import (ca, &tmp, GNUTLS_X509_FMT_PEM);
        if (ret < 0)
 -        error (EXIT_FAILURE, 0, "gnutls_x509_crt_import: %s",
+-               gnutls_strerror (ret));
 +	{
 +	  fprintf (stderr, "gnutls_x509_crt_import: %s",
-                gnutls_strerror (ret));
++		   gnutls_strerror (ret));
 +	  exit (EXIT_FAILURE);
 +	}
  
@@ -65,9 +73,10 @@ $OpenBSD: patch-tests_chainverify_c,v 1.1 2013/10/24 15:43:57 jca Exp $
                                           &verify_status);
        if (ret < 0)
 -        error (EXIT_FAILURE, 0, "gnutls_x509_crt_list_verify[%d,%d]: %s",
+-               (int) i, (int) j, gnutls_strerror (ret));
 +	{
 +	  fprintf (stderr, "gnutls_x509_crt_list_verify[%d,%d]: %s",
-                (int) i, (int) j, gnutls_strerror (ret));
++		   (int) i, (int) j, gnutls_strerror (ret));
 +	  exit (EXIT_FAILURE);
 +	}
  
