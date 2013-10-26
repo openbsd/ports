@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 02:52:08 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/10/26 23:55:35 jeremy Exp $
 
 COMMENT=		Redis-backed library to create jobs and place them on queues
 
 DISTNAME=		resque-1.23.0
+REVISION =		0
 CATEGORIES=		databases www
 
 HOMEPAGE=		https://github.com/defunkt/resque

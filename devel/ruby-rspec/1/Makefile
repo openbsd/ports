@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/04/23 07:22:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2013/10/26 23:55:36 jeremy Exp $
 
 COMMENT =		ruby framework for Behaviour Driven Development
 DISTNAME =		rspec-1.3.2
-REVISION =		2
+REVISION =		3
 SUBST_VARS =            MODRUBY_FLAVOR MODRUBY_PREFIX
 
 HOMEPAGE =		http://old.rspec.info/

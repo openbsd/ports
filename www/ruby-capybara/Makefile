@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:44:49 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/10/26 23:55:38 jeremy Exp $
 
 COMMENT =	integration testing tool for rack based web applications
 
 DISTNAME =	capybara-1.1.2
+REVISION =	0
 CATEGORIES =	www
 
 HOMEPAGE=	https://github.com/jnicklas/capybara

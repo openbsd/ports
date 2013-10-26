@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 10:50:29 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/10/26 23:55:35 jeremy Exp $
 
 COMMENT=	ruby library to provide colorspace support
 
 DISTNAME=	color-tools-1.3.0
-REVISION=	6
+REVISION=	7
 CATEGORIES=	devel
 
 # mit

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/08/07 21:58:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2013/10/26 23:55:37 jeremy Exp $
 
 COMMENT=	fast process spawning
 
 DISTNAME=	posix-spawn-0.3.6
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	sysutils
 

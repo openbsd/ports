@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2013/06/26 14:03:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2013/10/26 23:55:38 jeremy Exp $
 
 COMMENT =	simple REST client for Ruby
 
 DISTNAME =	rest-client-1.6.7
-REVISION =	0
+REVISION =	1
 CATEGORIES =	www
 
 HOMEPAGE =	https://github.com/rest-client/rest-client

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:30 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/10/26 23:55:36 jeremy Exp $
 
 COMMENT =	provides read/write access to OLE2 structured storage files
 
 DISTNAME =	ruby-ole-1.2.11.4
 PKGNAME =	${DISTNAME:S/ruby-//}
+REVISION =	0
 CATEGORIES =	devel
 
 # MIT

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/05/08 06:13:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/10/26 23:55:35 jeremy Exp $
 
 COMMENT =		complete solution for Ruby command-line executables
 
 DISTNAME =		commander-4.1.3
+REVISION =		0
 CATEGORIES =		devel
 
 HOMEPAGE =		http://visionmedia.github.com/commander

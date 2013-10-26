@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/08/07 21:58:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2013/10/26 23:55:37 jeremy Exp $
 
 COMMENT=		fast Porter stemmer for ruby
 
 DISTNAME=		fast-stemmer-1.0.0
-REVISION=		3
+REVISION=		4
 CATEGORIES=		textproc
 
 HOMEPAGE=		https://github.com/romanbsd/fast-stemmer

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 10:50:29 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/10/26 23:55:35 jeremy Exp $
 
 COMMENT =	small and fast replacement for test/unit
 
 DISTNAME =	minitest-2.2.2
-REVISION =	2
+REVISION =	3
 CATEGORIES =	devel
 
 # MIT

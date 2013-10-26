@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2013/07/03 06:55:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2013/10/26 23:55:36 jeremy Exp $
 
 COMMENT =	sexp helper library for parsetree
 
 DISTNAME =	sexp_processor-3.2.0
+REVISION =	0
 CATEGORIES =	devel
 
 # MIT

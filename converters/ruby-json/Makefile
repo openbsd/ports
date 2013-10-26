@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 01:30:28 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/10/26 23:55:34 jeremy Exp $
 
 COMMENT=		JSON implementation for Ruby
 
 DISTNAME=		json-1.7.7
+REVISION =		0
 CATEGORIES=		converters
 
 HOMEPAGE=		http://json.rubyforge.org/

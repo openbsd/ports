@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 10:50:29 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2013/10/26 23:55:35 jeremy Exp $
 
 COMMENT=	simple rake/rubygems helper for project Rakefiles
 
 DISTNAME=	hoe-2.12.3
-REVISION =	0
+REVISION =	1
 CATEGORIES=	devel
 
 # MIT

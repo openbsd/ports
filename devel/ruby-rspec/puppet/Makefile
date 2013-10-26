@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/04/26 14:14:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2013/10/26 23:55:36 jeremy Exp $
 
 COMMENT=	RSpec tests for Puppet manifests
 DISTNAME=	rspec-puppet-0.1.6
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://rspec-puppet.com/
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2013/06/28 16:07:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2013/10/26 23:55:37 jeremy Exp $
 
 COMMENT =		pure-Ruby implementation of the SCP protocol
 
 DISTNAME =		net-scp-1.0.4
+REVISION =		0
 CATEGORIES =		net
 
 # MIT

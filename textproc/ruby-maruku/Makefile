@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2013/05/05 18:58:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2013/10/26 23:55:37 jeremy Exp $
 
 COMMENT =	Ruby markdown interpreter
 
 DISTNAME =	maruku-0.6.1
+REVISION =	0
 CATEGORIES =	textproc
 
 HOMEPAGE =	http://maruku.rubyforge.org/

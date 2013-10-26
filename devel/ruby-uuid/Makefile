@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/18 20:17:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/10/26 23:55:36 jeremy Exp $
 
 COMMENT=		UUID generator
 
 DISTNAME=		uuid-2.3.7
+REVISION =		0
 CATEGORIES=		devel
 
 HOMEPAGE=		https://github.com/assaf/uuid

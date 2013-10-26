@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/05/26 09:30:55 kirby Exp $
+# $OpenBSD: Makefile,v 1.9 2013/10/26 23:55:37 jeremy Exp $
 
 COMMENT =	safe, customer facing template language
 
 DISTNAME =	liquid-2.4.1
-REVISION = 	0
+REVISION = 	1
 CATEGORIES =	textproc
 
 HOMEPAGE =	 http://wiki.shopify.com/Liquid

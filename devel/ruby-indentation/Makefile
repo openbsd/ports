@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:29 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/10/26 23:55:35 jeremy Exp $
 
 COMMENT=	indentation and manipulation of (Arrays of) Strings
 
 DISTNAME=	indentation-0.0.7
+REVISION =	0
 
 CATEGORIES=	devel
 

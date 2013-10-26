@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 10:50:29 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/10/26 23:55:35 jeremy Exp $
 
 COMMENT =		robust daemon management
 
 DISTNAME =		daemon_controller-0.2.6
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/FooBarWidget/daemon_controller

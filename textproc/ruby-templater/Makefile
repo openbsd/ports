@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:42:47 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/10/26 23:55:38 jeremy Exp $
 
 COMMENT =	system for generating files
 
 DISTNAME =	templater-1.0.0
-REVISION =	2
+REVISION =	3
 CATEGORIES =	textproc
 
 HOMEPAGE =	http://templater.rubyforge.org/

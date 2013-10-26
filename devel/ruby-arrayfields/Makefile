@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:27 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/10/26 23:55:35 jeremy Exp $
 
 COMMENT=		allow keyword access to array instances
 
 DISTNAME=		arrayfields-4.7.4
 CATEGORIES=		devel
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		http://codeforpeople.com/lib/ruby/arrayfields/
 

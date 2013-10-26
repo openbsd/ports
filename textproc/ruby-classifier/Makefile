@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:42:46 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/10/26 23:55:37 jeremy Exp $
 
 COMMENT =	module to allow Bayesian and other types of classifications
 
 DISTNAME =	classifier-1.3.3
-REVISION=	1
+REVISION=	2
 CATEGORIES =	textproc
 
 HOMEPAGE =	http://classifier.rubyforge.org/

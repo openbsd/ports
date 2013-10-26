@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2013/06/12 20:36:33 brad Exp $
+# $OpenBSD: Makefile,v 1.14 2013/10/26 23:55:34 jeremy Exp $
 
 COMMENT=		ruby-data_objects driver for MySQL
 
 V=			0.10.12
 DISTNAME=		do_mysql-${V}
-REVISION=		1
+REVISION=		2
 CATEGORIES=		databases
 
 # MIT

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/05/05 19:02:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2013/10/26 23:55:35 jeremy Exp $
 
 COMMENT=	Ruby-FFI-based binding to the GObjectIntrospection API
 
 DISTNAME=	gir_ffi-0.5.2
+REVISION =	0
 
 CATEGORIES=	devel
 

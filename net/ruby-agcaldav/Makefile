@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/18 21:45:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2013/10/26 23:55:36 jeremy Exp $
 
 COMMENT=		Ruby client for CalDAV calendars
 
 DISTNAME=		agcaldav-0.2.5.3
-REVISION=		0
+REVISION=		1
 CATEGORIES=		net
 
 HOMEPAGE=		https://github.com/agilastic/agcaldav

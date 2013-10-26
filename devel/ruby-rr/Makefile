@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/07/03 06:52:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/10/26 23:55:36 jeremy Exp $
 
 COMMENT=		test double framework with a succint syntax
 
 DISTNAME=		rr-1.1.1
+REVISION =		0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://rr.github.io/rr/

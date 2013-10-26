@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2013/08/06 18:14:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2013/10/26 23:55:36 jeremy Exp $
 
 COMMENT =		ruby framework for Behaviour Driven Development
 V =			2.14.1
 DISTNAME =		rspec-$V
+REVISION =		0
 
 BUILD_DEPENDS = 	${RUN_DEPENDS}
 RUN_DEPENDS = 		devel/ruby-rspec/core,${MODRUBY_FLAVOR}>=$V \
