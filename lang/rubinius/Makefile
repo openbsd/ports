@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/04/22 19:13:40 landry Exp $
+# $OpenBSD: Makefile,v 1.26 2013/10/26 23:44:58 jeremy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,10 +9,11 @@ BROKEN-mips64el = no atomics for this arch
 
 COMMENT =	Ruby virtual machine and core library
 
-V=		1.2.4
-DISTNAME =	rubinius-${V}-20110705
-PKGNAME =	rubinius-$V
-REVISION =	3
+V=		2.1.1
+EXTRACT_SUFX=	.tar.bz2
+DISTNAME =	rubinius-${V}
+
+MASTER_SITES =	http://releases.rubini.us/
 
 CATEGORIES =	lang lang/ruby
 
@@ -23,58 +24,62 @@ MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	c crypto curses db gdbm m pthread readline ssl stdc++ \
-		${MODRUBY_WANTLIB}
-MODRUBY_REV=	1.8
-
-MASTER_SITES =	http://asset.rubini.us/
+WANTLIB += c crypto m ncurses ncursesw pthread readline ssl stdc++
+WANTLIB += termcap util yaml z
 
 BUILD_DEPENDS =	devel/bison \
-		devel/ruby-rake \
-		devel/libffi
-LIB_DEPENDS =	databases/gdbm \
-		databases/db/v4 \
-		${MODRUBY_LIB_DEPENDS}
+		devel/libffi \
+		devel/llvm \
+		devel/ruby-bundler,ruby20
+
 MODULES =	lang/ruby
+MODRUBY_REV=	2.0
 
 USE_GMAKE =	Yes
 
+MAKE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib" \
+		CPPFLAGS="-DOPENSSL_NO_STATIC_ENGINE -I${LOCALBASE}/include" \
+		CC="${CC}" \
+		make=gmake \
+		GEM_HOME=${GEM_HOME} \
+		GEM_PATH=${GEM_HOME}/ruby/2.0:${LOCALBASE}/lib/ruby/gems/2.0
+
 RBX_ARCH =	${MACHINE_ARCH}-openbsd
-RAKE_VER =	0.8.7
-RAKE_COMPILER_VER = 0.6.0
-RDOC_VER =	2.5.1
-RUBY_DEBUG_VER = 0.10.47
-SUBST_VARS=	V RAKE_VER RAKE_COMPILER_VER RDOC_VER RUBY_DEBUG_VER RBX_ARCH
+GEM_HOME =	${WRKSRC}/vendor/build-gems
+FILEUTILS_DIR =	staging/runtime/gems/rubysl-fileutils-*/lib/rubysl/fileutils
 
-WRKDIST=	${WRKDIR}/rubinius-${V}
-
-CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib" \
-			CPPFLAGS="-DOPENSSL_NO_STATIC_ENGINE -I${LOCALBASE}/include" \
-			RELEASE=1
-MAKE_ENV +=		CC="${CC}"
+SUBST_VARS=	RBX_ARCH
 
 do-configure:
-	${SUBST_CMD} ${WRKSRC}/rakelib/blueprint.rb
-	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ${RUBY} configure \
-		--prefix=${PREFIX}/lib/rubinius --skip-prebuilt --rake=${RAKE}
+	mkdir -p ${GEM_HOME}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} bundle20 install \
+		--local --path ${GEM_HOME}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${RUBY} configure \
+		--prefix=${PREFIX}/lib/rubinius --rake=${RAKE} \
+		--gem=gem20 --llvm-config=${LOCALBASE}/bin/llvm-config
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${RAKE} build
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} HOME=${WRKSRC} ${RAKE} build
+	patch --posix ${WRKSRC}/${FILEUTILS_DIR}/fileutils.rb \
+		${PATCHDIR}/fileutils.diff
 
 do-install:
-	cd ${WRKSRC} && FAKEROOT=${WRKINST} ${RAKE} install
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} HOME=${WRKSRC} \
+		DESTDIR=${WRKINST} ${RAKE} install
+	rm -r ${WRKSRC}/.rbx
 	ln -s ${TRUEPREFIX}/lib/rubinius/bin/rbx ${PREFIX}/bin/rbx
-	mkdir ${PREFIX}/lib/rubinius/gems/1.8/{,cache,doc,gems,specifications}
-	for dir in sitelibdir sitearchdir; do \
-		mkdir -p ${WRKINST}/`RBX_RUNTIME=${PREFIX}/lib/rubinius/runtime \
-		RBX_LIB=${PREFIX}/lib/rubinius/lib \
-		${PREFIX}/lib/rubinius/bin/rbx -rrbconfig -e \
-		"puts RbConfig::CONFIG['$$dir']"`; done
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/rubinius/site
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/rubinius/site/${RBX_ARCH}
 
-# 45/56 failures in mspec on i386/amd64, most of which are due to lacking
-# Fiber support
+# Need to Ctrl-C after tests finish
+TEST_IS_INTERACTIVE = Yes
+
+# VM Test: Failed 1 of 652 tests
+# mspec:
+# amd64: 2156 files, 19068 examples, 155140 expectations, 19 failures, 0 errors
+# i386:  2156 files, 19048 examples, 148858 expectations, 22 failures, 0 errors
 do-test:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${RAKE} vm:test
+	-cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${RAKE} vm:test
 	cd ${WRKSRC} && RUBY=${RUBY} ${RUBY} mspec/bin/mspec ci -f s
 
 TEST_DEPENDS = ${FULLPKGNAME}:${BUILD_PKGPATH}

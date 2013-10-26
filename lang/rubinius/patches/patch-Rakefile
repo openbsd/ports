@@ -1,0 +1,12 @@
+$OpenBSD: patch-Rakefile,v 1.1 2013/10/26 23:44:58 jeremy Exp $
+
+We run rake with bundler exec, so we don't need bundler/setup.
+
+--- Rakefile.orig	Mon Oct 21 14:10:14 2013
++++ Rakefile	Mon Oct 21 14:10:18 2013
+@@ -1,4 +1,4 @@
+-require 'bundler/setup'
++#require 'bundler/setup'
+ require 'redcard'
+ require './rakelib/configure'
+ 

@@ -1,9 +1,0 @@
-$OpenBSD: patch-spec_ruby_core_thread_wakeup_spec_rb,v 1.1 2011/11/14 11:40:54 jeremy Exp $
---- spec/ruby/core/thread/wakeup_spec.rb.orig	Sun Nov 13 17:11:53 2011
-+++ spec/ruby/core/thread/wakeup_spec.rb	Sun Nov 13 17:12:09 2011
-@@ -4,4 +4,4 @@ require File.expand_path('../shared/wakeup', __FILE__)
- 
- describe "Thread#wakeup" do
-   it_behaves_like :thread_wakeup, :wakeup
--end
-+end if false

@@ -1,0 +1,12 @@
+$OpenBSD: patch-spec_ruby_core_file_open_spec_rb,v 1.1 2013/10/26 23:44:58 jeremy Exp $
+--- spec/ruby/core/file/open_spec.rb.orig	Thu Oct 24 14:13:54 2013
++++ spec/ruby/core/file/open_spec.rb	Thu Oct 24 14:13:55 2013
+@@ -551,7 +551,7 @@ describe "File.open" do
+ 
+             written_length.should == 5
+             read_bytes.should == 'hello'
+-          end
++          end if false
+         end
+       end
+     end
