@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.67 2013/10/06 17:40:30 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.68 2013/10/26 23:47:23 jeremy Exp $
 
 # ruby module
 
@@ -123,7 +123,7 @@ MODRUBY_LIBREV =	1.9
 
 MODRUBY_FLAVOR =	jruby
 .elif ${MODRUBY_REV} == rbx
-MODRUBY_LIBREV =	1.8
+MODRUBY_LIBREV =	2.1
 #.poison MODRUBY_BINREV
 #.poison MODRUBY_WANTLIB
 MODRUBY_FLAVOR =	rbx
@@ -191,9 +191,9 @@ MODRUBY_RUN_DEPENDS=	lang/rubinius
 .else
 MODRUBY_WANTLIB=	ruby${MODRUBY_BINREV}
 MODRUBY_RUN_DEPENDS=	lang/ruby/${MODRUBY_REV}
+MODRUBY_LIB_DEPENDS=	${MODRUBY_RUN_DEPENDS}
 .endif
 
-MODRUBY_LIB_DEPENDS=	${MODRUBY_RUN_DEPENDS}
 MODRUBY_BUILD_DEPENDS=	${MODRUBY_RUN_DEPENDS}
 
 .if ${MODRUBY_REV} == 1.8
@@ -289,12 +289,6 @@ WANTLIB+=	m
 WANTLIB+=	pthread
 .  endif
 LIB_DEPENDS+=	${MODRUBY_LIB_DEPENDS}
-
-.  if ${MODRUBY_REV} == rbx
-# Tighten dependency on rubinius when a C extension is used.  Rubinius
-# does not maintain binary compatibility across minor versions.
-MODRUBY_RUN_DEPENDS =	lang/rubinius>=1.2,<1.3
-.  endif
 .endif
 
 .if ${CONFIGURE_STYLE:L:Mextconf}
@@ -314,7 +308,7 @@ BUILD_DEPENDS+=	lang/ruby/1.9>=1.9.3.0
 .  elif ${MODRUBY_REV} == jruby
 BUILD_DEPENDS+=	lang/jruby>=1.6.5
 .  elif ${MODRUBY_REV} == rbx
-BUILD_DEPENDS+=	lang/rubinius>=1.2.4p2
+BUILD_DEPENDS+=	lang/rubinius>=2.1.1
 .  endif
 
 # Just like all ruby C extensions should set SHARED_ONLY,
@@ -341,7 +335,7 @@ GEM_BASE_LIB=	${GEM_BASE}/jruby/${MODRUBY_LIBREV}
 GEM=		${RUBY} -S gem
 GEM_BASE_LIB=	${GEM_BASE}/rbx/${MODRUBY_LIBREV}
 GEM_BIN =	lib/rubinius/gems/bin
-GEM_LIB =	lib/rubinius/gems/${MODRUBY_LIBREV}
+GEM_LIB =	lib/rubinius/gems
 .  else
 GEM=		${LOCALBASE}/bin/gem${MODRUBY_BINREV}
 GEM_BIN =	bin
@@ -360,6 +354,13 @@ GEM_FLAGS+=	--local --no-rdoc --no-ri --no-force --verbose --backtrace \
 _GEM_CONTENT=	${WRKDIR}/gem-content
 _GEM_DATAFILE=	${_GEM_CONTENT}/data.tar.gz
 _GEM_PATCHED=	${DISTNAME}${EXTRACT_SUFX}
+
+.if ${MODRUBY_REV} == rbx
+# V=1 for rbx results in gems not building
+_GEM_MAKE=	"make"
+.else
+_GEM_MAKE=	"make V=1"
+.endif
 
 # Unpack the gem into WRKDIST so it can be patched.  Include the gem metadata
 # under WRKDIST so it can be patched easily to remove or change dependencies.
@@ -385,7 +386,7 @@ MODRUBY_BUILD_TARGET = \
     cd ${_GEM_CONTENT} && tar -cf ${WRKDIR}/${_GEM_PATCHED} *.gz; \
     mkdir -p ${GEM_BASE}; \
     env -i ${MAKE_ENV} HOME=`dirname ${GEM_BASE}` GEM_HOME=${GEM_BASE} \
-	    make="make V=1" \
+	    make=${_GEM_MAKE} \
 	    ${GEM} install ${GEM_FLAGS} ${WRKDIR}/${_GEM_PATCHED} \
 	    -- ${CONFIGURE_ARGS}
 
