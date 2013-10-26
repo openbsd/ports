@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1165 2013/10/04 06:03:00 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.1166 2013/10/26 00:12:10 schwarze Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -947,7 +947,9 @@
      SUBDIR += p5-Switch
      SUBDIR += p5-Sys-SigAction
      SUBDIR += p5-System-Command
+     SUBDIR += p5-TAP-Formatter-JUnit
      SUBDIR += p5-TAP-Harness-Archive
+     SUBDIR += p5-TAP-Harness-JUnit
      SUBDIR += p5-TAP-Harness-Multiple
      SUBDIR += p5-TAP-Parser
      SUBDIR += p5-Taint-Runtime
