@@ -1,26 +1,41 @@
-# $OpenBSD: Makefile,v 1.14 2013/08/24 17:33:35 zhuk Exp $
+# $OpenBSD: Makefile,v 1.15 2013/10/26 23:18:15 zhuk Exp $
 
-COMMENT =	KDE graphics, styles and icon themes
-DISTNAME =	kdeartwork-${MODKDE4_VERSION}
-REVISION =	0
+COMMENT-main =		KDE graphics, styles and screensavers
+COMMENT-mono =		one-colour KDE icon theme
+COMMENT-nuvola =	KDE icon theme
+DISTNAME =		kdeartwork-${MODKDE4_VERSION}
+PKGNAME-main =		${DISTNAME}
+PKGNAME-mono =		mono-icon-theme-${MODKDE4_VERSION}
+PKGNAME-nuvola =	nuvola-icon-theme-${MODKDE4_VERSION}
+PKG_ARCH-mono =		*
+PKG_ARCH-nuvola =	*
+REVISION-main =		1
 
-MODKDE4_USE =	workspace
+MODKDE4_USE =		workspace
 
-WANTLIB =  c m pthread stdc++
-WANTLIB += GL GLU ICE SM X11 Xext Xt
-WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
-WANTLIB += lib/qt4/QtOpenGL lib/qt4/QtSvg lib/qt4/QtXml
-WANTLIB += ${KDE4LIB}/kdecorations ${KDE4LIB}/kdeui ${KDE4LIB}/kexiv2
-WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kparts ${KDE4LIB}/kscreensaver
-WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
-WANTLIB += soprano
+WANTLIB-mono =
+WANTLIB-nuvola =
+WANTLIB-main =  ${WANTLIB} c m pthread stdc++
+WANTLIB-main += GL GLU ICE SM X11 Xext Xt
+WANTLIB-main += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
+WANTLIB-main += lib/qt4/QtOpenGL lib/qt4/QtSvg lib/qt4/QtXml
+WANTLIB-main += ${KDE4LIB}/kdecorations ${KDE4LIB}/kdeui ${KDE4LIB}/kexiv2
+WANTLIB-main += ${KDE4LIB}/kio ${KDE4LIB}/kparts ${KDE4LIB}/kscreensaver
+WANTLIB-main += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
+WANTLIB-main += soprano
 
-BUILD_DEPENDS =	math/eigen2 \
-		x11/xscreensaver
+MULTI_PACKAGES =	-main -mono -nuvola
 
-RUN_DEPENDS =	x11/gtk+2,-guic \
-		x11/xscreensaver
+BUILD_DEPENDS =		math/eigen2 \
+			x11/xscreensaver
 
-LIB_DEPENDS =	${MODKDE4_DEP_DIR}/libkexiv2>=${MODKDE4_DEP_VERSION}
+RUN_DEPENDS-mono =	x11/gtk+2,-guic
+RUN_DEPENDS-nuvola =	x11/gtk+2,-guic
+RUN_DEPENDS-main =	x11/xscreensaver
+
+LIB_DEPENDS-mono =
+LIB_DEPENDS-nuvola =
+LIB_DEPENDS-main =	${LIB_DEPENDS} \
+			${MODKDE4_DEP_DIR}/libkexiv2>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>

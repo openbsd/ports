@@ -2,3 +2,6 @@ KDE Accessibility aids:
 * kmag, screen magnifier
 * kmousetool, using mouse under difficult conditions
 * kmouth, voice synthesizer
+
+The "mono" icon theme from original kdeaccessbility package lives
+in a separate package called mono-icon-theme.
