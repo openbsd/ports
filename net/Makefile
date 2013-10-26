@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.818 2013/10/19 16:35:24 jturner Exp $
+# $OpenBSD: Makefile,v 1.819 2013/10/26 10:44:44 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -197,7 +197,6 @@
      SUBDIR += librsync
      SUBDIR += libshout
      SUBDIR += libsmi
-     SUBDIR += libsocialweb
      SUBDIR += libst
      SUBDIR += libtorrent
      SUBDIR += libupnp
