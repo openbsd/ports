@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2013/10/15 02:36:21 jeremy Exp $
+# $OpenBSD: Makefile,v 1.40 2013/10/26 23:41:04 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	pure-Java implementation of the Ruby language
 
-V =		1.7.5
+V =		1.7.6
 DISTNAME =	jruby-bin-${V}
 PKGNAME =	jruby-${V}
 CATEGORIES =	lang lang/ruby
@@ -100,7 +100,8 @@ ANT_TEST_CMD =	${SETENV} ${MAKE_ENV} HOME=${WRKBUILD} \
 			PATH=${JAVA_HOME}/bin:${PATH} \
 			ANT_OPTS="-Xms512m -Xmx512m" \
 			${LOCALBASE}/bin/ant
-TEST_DEPENDS =	devel/ruby-rspec/rspec,jruby
+TEST_DEPENDS =	devel/ruby-rspec/rspec,jruby \
+		devel/maven
 # Tests run: 363, Failures: 7, Errors: 11, Skipped: 0
 do-test:
 	-cd ${WRKSRC} && ${ANT_TEST_CMD} test

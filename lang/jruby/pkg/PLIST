@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2013/10/15 02:36:22 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.20 2013/10/26 23:41:04 jeremy Exp $
 bin/jruby
 jruby/
 jruby/bin/
@@ -19,6 +19,7 @@ jruby/lib/jni/${JFFI_ARCH}/libjffi-1.2.so
 jruby/lib/jruby.jar
 jruby/lib/ruby/
 jruby/lib/ruby/1.8/
+jruby/lib/ruby/1.8/.document
 jruby/lib/ruby/1.8/English.rb
 jruby/lib/ruby/1.8/Env.rb
 jruby/lib/ruby/1.8/README
@@ -34,6 +35,7 @@ jruby/lib/ruby/1.8/bigdecimal/util.rb
 jruby/lib/ruby/1.8/cgi/
 jruby/lib/ruby/1.8/cgi-lib.rb
 jruby/lib/ruby/1.8/cgi.rb
+jruby/lib/ruby/1.8/cgi/.document
 jruby/lib/ruby/1.8/cgi/session/
 jruby/lib/ruby/1.8/cgi/session.rb
 jruby/lib/ruby/1.8/cgi/session/pstore.rb
@@ -192,6 +194,7 @@ jruby/lib/ruby/1.8/rdoc/generators/template/xml/rdf.rb
 jruby/lib/ruby/1.8/rdoc/generators/template/xml/xml.rb
 jruby/lib/ruby/1.8/rdoc/generators/xml_generator.rb
 jruby/lib/ruby/1.8/rdoc/markup/
+jruby/lib/ruby/1.8/rdoc/markup/.document
 jruby/lib/ruby/1.8/rdoc/markup/sample/
 jruby/lib/ruby/1.8/rdoc/markup/sample/rdoc2latex.rb
 jruby/lib/ruby/1.8/rdoc/markup/sample/sample.rb
@@ -576,6 +579,7 @@ jruby/lib/ruby/1.8/wsdl/xmlSchema/simpleType.rb
 jruby/lib/ruby/1.8/wsdl/xmlSchema/unique.rb
 jruby/lib/ruby/1.8/wsdl/xmlSchema/xsd2ruby.rb
 jruby/lib/ruby/1.8/xmlrpc/
+jruby/lib/ruby/1.8/xmlrpc/.document
 jruby/lib/ruby/1.8/xmlrpc/README.txt
 jruby/lib/ruby/1.8/xmlrpc/base64.rb
 jruby/lib/ruby/1.8/xmlrpc/client.rb
@@ -795,6 +799,7 @@ jruby/lib/ruby/1.9/minitest/unit.rb
 jruby/lib/ruby/1.9/monitor.rb
 jruby/lib/ruby/1.9/mutex_m.rb
 jruby/lib/ruby/1.9/net/
+jruby/lib/ruby/1.9/net/.document
 jruby/lib/ruby/1.9/net/ftp.rb
 jruby/lib/ruby/1.9/net/http.rb
 jruby/lib/ruby/1.9/net/https.rb
@@ -884,6 +889,7 @@ jruby/lib/ruby/1.9/rake/version.rb
 jruby/lib/ruby/1.9/rake/win32.rb
 jruby/lib/ruby/1.9/rational.rb
 jruby/lib/ruby/1.9/rbconfig/
+jruby/lib/ruby/1.9/rbconfig/.document
 jruby/lib/ruby/1.9/rbconfig/datadir.rb
 jruby/lib/ruby/1.9/rbconfig/obsolete.rb
 jruby/lib/ruby/1.9/rdoc/
@@ -913,6 +919,7 @@ jruby/lib/ruby/1.9/rdoc/generator/markup.rb
 jruby/lib/ruby/1.9/rdoc/generator/ri.rb
 jruby/lib/ruby/1.9/rdoc/generator/template/
 jruby/lib/ruby/1.9/rdoc/generator/template/darkfish/
+jruby/lib/ruby/1.9/rdoc/generator/template/darkfish/.document
 jruby/lib/ruby/1.9/rdoc/generator/template/darkfish/_footer.rhtml
 jruby/lib/ruby/1.9/rdoc/generator/template/darkfish/_head.rhtml
 jruby/lib/ruby/1.9/rdoc/generator/template/darkfish/_sidebar_VCS_info.rhtml
@@ -966,6 +973,7 @@ jruby/lib/ruby/1.9/rdoc/generator/template/darkfish/servlet_not_found.rhtml
 jruby/lib/ruby/1.9/rdoc/generator/template/darkfish/servlet_root.rhtml
 jruby/lib/ruby/1.9/rdoc/generator/template/darkfish/table_of_contents.rhtml
 jruby/lib/ruby/1.9/rdoc/generator/template/json_index/
+jruby/lib/ruby/1.9/rdoc/generator/template/json_index/.document
 jruby/lib/ruby/1.9/rdoc/generator/template/json_index/js/
 jruby/lib/ruby/1.9/rdoc/generator/template/json_index/js/navigation.js
 jruby/lib/ruby/1.9/rdoc/generator/template/json_index/js/searcher.js
@@ -1331,6 +1339,7 @@ jruby/lib/ruby/2.0/irb/init.rb
 jruby/lib/ruby/2.0/irb/input-method.rb
 jruby/lib/ruby/2.0/irb/inspector.rb
 jruby/lib/ruby/2.0/irb/lc/
+jruby/lib/ruby/2.0/irb/lc/.document
 jruby/lib/ruby/2.0/irb/lc/error.rb
 jruby/lib/ruby/2.0/irb/lc/help-message
 jruby/lib/ruby/2.0/irb/lc/ja/
@@ -1354,6 +1363,7 @@ jruby/lib/ruby/2.0/matrix.rb
 jruby/lib/ruby/2.0/matrix/eigenvalue_decomposition.rb
 jruby/lib/ruby/2.0/matrix/lup_decomposition.rb
 jruby/lib/ruby/2.0/minitest/
+jruby/lib/ruby/2.0/minitest/.document
 jruby/lib/ruby/2.0/minitest/README.txt
 jruby/lib/ruby/2.0/minitest/autorun.rb
 jruby/lib/ruby/2.0/minitest/benchmark.rb
@@ -1446,6 +1456,7 @@ jruby/lib/ruby/2.0/rake/gempackagetask.rb
 jruby/lib/ruby/2.0/rake/invocation_chain.rb
 jruby/lib/ruby/2.0/rake/invocation_exception_mixin.rb
 jruby/lib/ruby/2.0/rake/lib/
+jruby/lib/ruby/2.0/rake/lib/.document
 jruby/lib/ruby/2.0/rake/lib/project.rake
 jruby/lib/ruby/2.0/rake/loaders/
 jruby/lib/ruby/2.0/rake/loaders/makefile.rb
@@ -1475,6 +1486,7 @@ jruby/lib/ruby/2.0/rake/trace_output.rb
 jruby/lib/ruby/2.0/rake/version.rb
 jruby/lib/ruby/2.0/rake/win32.rb
 jruby/lib/ruby/2.0/rbconfig/
+jruby/lib/ruby/2.0/rbconfig/.document
 jruby/lib/ruby/2.0/rbconfig/datadir.rb
 jruby/lib/ruby/2.0/rbconfig/obsolete.rb
 jruby/lib/ruby/2.0/rdoc/
@@ -1504,6 +1516,7 @@ jruby/lib/ruby/2.0/rdoc/generator/markup.rb
 jruby/lib/ruby/2.0/rdoc/generator/ri.rb
 jruby/lib/ruby/2.0/rdoc/generator/template/
 jruby/lib/ruby/2.0/rdoc/generator/template/darkfish/
+jruby/lib/ruby/2.0/rdoc/generator/template/darkfish/.document
 jruby/lib/ruby/2.0/rdoc/generator/template/darkfish/_footer.rhtml
 jruby/lib/ruby/2.0/rdoc/generator/template/darkfish/_head.rhtml
 jruby/lib/ruby/2.0/rdoc/generator/template/darkfish/_sidebar_VCS_info.rhtml
@@ -1557,6 +1570,7 @@ jruby/lib/ruby/2.0/rdoc/generator/template/darkfish/servlet_not_found.rhtml
 jruby/lib/ruby/2.0/rdoc/generator/template/darkfish/servlet_root.rhtml
 jruby/lib/ruby/2.0/rdoc/generator/template/darkfish/table_of_contents.rhtml
 jruby/lib/ruby/2.0/rdoc/generator/template/json_index/
+jruby/lib/ruby/2.0/rdoc/generator/template/json_index/.document
 jruby/lib/ruby/2.0/rdoc/generator/template/json_index/js/
 jruby/lib/ruby/2.0/rdoc/generator/template/json_index/js/navigation.js
 jruby/lib/ruby/2.0/rdoc/generator/template/json_index/js/searcher.js
@@ -2006,7 +2020,20 @@ jruby/lib/ruby/gems/1.8/gems/rake-${RAKE_V}/test/test_rake_top_level_functions.r
 jruby/lib/ruby/gems/1.8/gems/rake-${RAKE_V}/test/test_rake_win32.rb
 jruby/lib/ruby/gems/1.8/gems/rake-${RAKE_V}/test/test_thread_history_display.rb
 jruby/lib/ruby/gems/1.8/gems/rake-${RAKE_V}/test/test_trace_output.rb
+jruby/lib/ruby/gems/1.8/gems/rdoc-4.0.1/
+jruby/lib/ruby/gems/1.8/gems/rdoc-4.0.1/bin/
+jruby/lib/ruby/gems/1.8/gems/rdoc-4.0.1/bin/rdoc
+jruby/lib/ruby/gems/1.8/gems/rdoc-4.0.1/bin/ri
 jruby/lib/ruby/gems/1.8/specifications/
+jruby/lib/ruby/gems/1.8/specifications/default/
+jruby/lib/ruby/gems/1.8/specifications/default/bouncy-castle-java-1.5.0147.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/jruby-openssl-0.9.3.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/json-1.8.0-java.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/krypt-0.0.1.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/krypt-core-0.0.1-universal-java.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/krypt-provider-jdk-0.0.1.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/rake-${RAKE_V}.gemspec
+jruby/lib/ruby/gems/1.8/specifications/default/rdoc-4.0.1.gemspec
 jruby/lib/ruby/gems/1.8/specifications/rake-${RAKE_V}.gemspec
 jruby/lib/ruby/gems/shared
 jruby/lib/ruby/shared/
@@ -2280,6 +2307,7 @@ jruby/lib/ruby/shared/rbconfig/
 jruby/lib/ruby/shared/rbconfig/datadir.rb
 jruby/lib/ruby/shared/readline/
 jruby/lib/ruby/shared/readline.rb
+jruby/lib/ruby/shared/readline/.keep
 jruby/lib/ruby/shared/readline/jline-2.11.jar
 jruby/lib/ruby/shared/readline/readline.jar
 jruby/lib/ruby/shared/ripper.jar
@@ -2408,7 +2436,10 @@ jruby/lib/ruby/shared/rubygems/spec_fetcher.rb
 jruby/lib/ruby/shared/rubygems/specification.rb
 jruby/lib/ruby/shared/rubygems/ssl_certs/
 jruby/lib/ruby/shared/rubygems/ssl_certs/AddTrustExternalCARoot.pem
+jruby/lib/ruby/shared/rubygems/ssl_certs/Class3PublicPrimaryCertificationAuthority.pem
 jruby/lib/ruby/shared/rubygems/ssl_certs/Entrust_net-Secure-Server-Certification-Authority.pem
+jruby/lib/ruby/shared/rubygems/ssl_certs/EntrustnetSecureServerCertificationAuthority.pem
+jruby/lib/ruby/shared/rubygems/ssl_certs/GeoTrustGlobalCA.pem
 jruby/lib/ruby/shared/rubygems/ssl_certs/GeoTrust_Global_CA.pem
 jruby/lib/ruby/shared/rubygems/ssl_certs/VerisignClass3PublicPrimaryCertificationAuthority-G2.pem
 jruby/lib/ruby/shared/rubygems/stub_specification.rb
