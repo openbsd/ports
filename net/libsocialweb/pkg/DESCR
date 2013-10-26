@@ -1,5 +1,0 @@
-Social data server which will fetch data from the "social web", such as
-blog posts and photos, upcoming events, recently played tracks, and
-pending auctions. It also provides a service to update status on
-supported web services such as Facebook and Twitter. Libsocialweb can be
-accessed via D-Bus, or with a custom socialweb client.
