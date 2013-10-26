@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.20 2013/09/26 08:17:59 ajacoutot Exp $
-@pkgpath devel/libsoup
+@comment $OpenBSD: PLIST,v 1.15 2013/10/26 08:02:09 ajacoutot Exp $
+@conflict libsoup-gnome-*
+@pkgpath devel/libsoup,-main
+@pkgpath devel/libsoup,-gnome
 @pkgpath devel/libsoup,ssl
 include/libsoup-${API_VERSION}/
 include/libsoup-${API_VERSION}/libsoup/
@@ -52,12 +54,23 @@ include/libsoup-${API_VERSION}/libsoup/soup-value-utils.h
 include/libsoup-${API_VERSION}/libsoup/soup-version.h
 include/libsoup-${API_VERSION}/libsoup/soup-xmlrpc.h
 include/libsoup-${API_VERSION}/libsoup/soup.h
+include/libsoup-gnome-${API_VERSION}/
+include/libsoup-gnome-${API_VERSION}/libsoup/
+include/libsoup-gnome-${API_VERSION}/libsoup/soup-cookie-jar-sqlite.h
+include/libsoup-gnome-${API_VERSION}/libsoup/soup-gnome-features.h
+include/libsoup-gnome-${API_VERSION}/libsoup/soup-gnome.h
 lib/girepository-1.0/Soup-${API_VERSION}.typelib
+lib/girepository-1.0/SoupGNOME-${API_VERSION}.typelib
 lib/libsoup-${API_VERSION}.a
 lib/libsoup-${API_VERSION}.la
 @lib lib/libsoup-${API_VERSION}.so.${LIBsoup-2.4_VERSION}
+lib/libsoup-gnome-${API_VERSION}.a
+lib/libsoup-gnome-${API_VERSION}.la
+@lib lib/libsoup-gnome-${API_VERSION}.so.${LIBsoup-gnome-2.4_VERSION}
 lib/pkgconfig/libsoup-${API_VERSION}.pc
+lib/pkgconfig/libsoup-gnome-${API_VERSION}.pc
 share/gir-1.0/Soup-${API_VERSION}.gir
+share/gir-1.0/SoupGNOME-${API_VERSION}.gir
 share/gtk-doc/html/libsoup-${API_VERSION}/
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupAddress.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupAuth.html
