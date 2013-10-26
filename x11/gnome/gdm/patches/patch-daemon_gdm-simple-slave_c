@@ -1,0 +1,12 @@
+$OpenBSD: patch-daemon_gdm-simple-slave_c,v 1.4 2013/10/26 09:08:08 ajacoutot Exp $
+--- daemon/gdm-simple-slave.c.orig	Sat Oct 26 11:04:34 2013
++++ daemon/gdm-simple-slave.c	Sat Oct 26 11:04:40 2013
+@@ -64,7 +64,7 @@
+ #define MAX_CONNECT_ATTEMPTS  10
+ #define DEFAULT_PING_INTERVAL 15
+ 
+-#define INITIAL_SETUP_USERNAME "gnome-initial-setup"
++#define INITIAL_SETUP_USERNAME "_gnome-initial-setup"
+ #define GNOME_SESSION_SESSIONS_PATH DATADIR "/gnome-session/sessions"
+ 
+ struct GdmSimpleSlavePrivate
