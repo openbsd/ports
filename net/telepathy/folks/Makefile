@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2013/09/27 12:27:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.61 2013/10/26 10:45:05 ajacoutot Exp $
 
 COMMENT=		people aggregation library
 
@@ -7,18 +7,15 @@ GNOME_VERSION=		0.9.5
 # MODULE_VERSION in config.h
 API_V=			41
 
+REVISION=		0
+
 SHARED_LIBS +=  folks-telepathy           5.0 # 39.0
 SHARED_LIBS +=  folks                     5.2 # 39.0
 SHARED_LIBS +=  folks-eds                 1.1 # 39.0
-SHARED_LIBS +=  folks-libsocialweb        0.0 # 39.0
 
 SUBST_VARS=		API_V
 
 HOMEPAGE=		${HOMEPAGE_TP:=Folks}
-
-MODULES=		devel/dconf \
-			devel/gettext \
-			x11/gnome
 
 WANTLIB += asn1 c camel-1.2 com_err crypto db dbus-1 dbus-glib-1
 WANTLIB += ebackend-1.2 ebook-1.2 ebook-contacts-1.2 edata-book-1.2
@@ -26,13 +23,16 @@ WANTLIB += edataserver-1.2 ffi gck-1 gcr-base-3 gcrypt gee-0.8
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
 WANTLIB += gssapi gthread-2.0 heimbase krb5 m ncurses nspr4 nss3
 WANTLIB += nssutil3 p11-kit pcre plc4 plds4 pthread readline roken
-WANTLIB += secret-1 smime3 socialweb-client softokn3 soup-2.4
-WANTLIB += sqlite3 ssl3 telepathy-glib wind xml2 z zeitgeist-2.0
+WANTLIB += secret-1 smime3 softokn3 soup-2.4 sqlite3 ssl3 telepathy-glib
+WANTLIB += wind xml2 z zeitgeist-2.0
+
+MODULES=		devel/dconf \
+			devel/gettext \
+			x11/gnome
 
 LIB_DEPENDS=	databases/evolution-data-server \
 		devel/libgee \
 		net/telepathy/telepathy-glib \
-		net/libsocialweb \
 		productivity/zeitgeist>=0.9.14v0
 
 # needed at runtime by the telepathy backend (AccountManager)
