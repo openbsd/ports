@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.175 2013/10/26 09:08:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.176 2013/10/26 09:12:20 ajacoutot Exp $
 
 # XXX configuring GDM from gnome-cc does not work
 
@@ -34,6 +34,9 @@ BUILD_DEPENDS=		devel/check
 # cyclic dependency, see pkg/DESCR
 # bring _all_ runtime dependencies (including consolekit and zenity)
 #RUN_DEPENDS +=		x11/gnome/session
+
+# gnome-initial-setup is an opt-in handled in meta/gnome
+#RUN_DEPENDS +=		x11/gnome/initial-setup
 
 # orca-autostart.desktop
 RUN_DEPENDS +=		x11/gnome/orca
