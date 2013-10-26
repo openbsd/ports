@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/30 09:40:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2013/10/26 08:02:57 ajacoutot Exp $
 
 COMMENT=		modular geoinformation service on top of D-Bus
 
 DISTNAME=		geoclue-0.12.99
-REVISION=		1
+REVISION=		2
 SHARED_LIBS +=  geoclue              1.1      # .0.0
 CATEGORIES=		geo devel
 
@@ -22,7 +22,7 @@ MODULES=		devel/dconf \
 			devel/gettext
 
 BUILD_DEPENDS =		textproc/libxslt
-LIB_DEPENDS =		devel/libsoup,-gnome \
+LIB_DEPENDS =		devel/libsoup \
 			misc/gpsd \
 			x11/dbus-glib
 

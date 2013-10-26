@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2013/09/26 07:44:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2013/10/26 08:02:57 ajacoutot Exp $
 
 COMMENT =	access web services that claim to be RESTful
 
 GNOME_VERSION =	0.7.90
 GNOME_PROJECT =	rest
 PKGNAME =	lib${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	net devel
 
@@ -28,7 +28,7 @@ MODULES =		devel/gettext \
 			x11/gnome
 MODGNOME_TOOLS= 	gi
 
-LIB_DEPENDS =		devel/libsoup,-gnome
+LIB_DEPENDS =		devel/libsoup
 
 CONFIGURE_STYLE =	gnu
 

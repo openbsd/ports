@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/21 08:45:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2013/10/26 08:02:57 ajacoutot Exp $
 
 COMMENT=		Gtk+ Widget for Displaying OpenStreetMap tiles
 
 DISTNAME=		osm-gps-map-0.5.0
-REVISION=		4
+REVISION=		5
 SHARED_LIBS +=  osmgpsmap 0.0 # .0.0
 CATEGORIES=		geo x11
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2013/10/03 12:36:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.102 2013/10/26 08:02:57 ajacoutot Exp $
 
 COMMENT-main=	GNOME Virtual File System
 COMMENT-smb=	GVFS mount module for samba
@@ -10,6 +10,8 @@ GNOME_VERSION=	1.18.2
 PKGNAME-main=	${DISTNAME}
 PKGNAME-smb=	${GNOME_PROJECT}-smb-${GNOME_VERSION}
 PKGNAME-goa=	${GNOME_PROJECT}-goa-${GNOME_VERSION}
+
+REVISION-main=	0
 
 SHARED_LIBS +=  gvfscommon           4.0      # unknown
 
@@ -48,7 +50,7 @@ BUILD_DEPENDS += textproc/docbook-xsl
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		archivers/libarchive \
-		devel/libsoup,-gnome \
+		devel/libsoup \
 		net/avahi \
 		x11/gnome/libsecret \
 		x11/gtk+3

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2013/10/20 13:24:29 landry Exp $
+# $OpenBSD: Makefile,v 1.100 2013/10/26 08:02:57 ajacoutot Exp $
 
 COMMENT =	open source web browser engine for Gtk+
 
@@ -9,6 +9,7 @@ EPOCH =		0
 CATEGORIES =	www
 DPB_PROPERTIES =parallel
 EXTRACT_SUFX =	.tar.xz
+REVISION=	0
 
 HOMEPAGE =	http://webkitgtk.org/
 MASTER_SITES =	${HOMEPAGE}/releases/

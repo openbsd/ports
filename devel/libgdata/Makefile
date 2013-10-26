@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2013/09/28 08:50:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2013/10/26 08:02:57 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		Google Data API based Glib client library
 
 GNOME_PROJECT=		libgdata
 GNOME_VERSION=		0.14.0
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gdata                16.1     # 18.2
 
@@ -30,7 +30,7 @@ MODULES=		devel/gettext \
 # needed for demos/scrapbook
 BUILD_DEPENDS=		x11/gtk+3
 
-LIB_DEPENDS=		devel/libsoup,-gnome \
+LIB_DEPENDS=		devel/libsoup \
 			net/liboauth \
 			x11/gnome/gcr \
 			x11/gnome/online-accounts

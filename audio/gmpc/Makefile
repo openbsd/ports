@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.51 2013/09/20 05:32:57 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.52 2013/10/26 08:02:57 ajacoutot Exp $
 
 COMMENT=		GNOME music player client
 
 VERSION=		11.8.16
 DISTNAME=		gmpc-${VERSION}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES=		audio
 
@@ -51,6 +51,6 @@ CONFIGURE_ARGS+=	--enable-appindicator=no
 LIB_DEPENDS=		audio/libmpd>=11.8.17 \
 			x11/gtk+2 \
 			devel/libunique \
-			devel/libsoup,-main
+			devel/libsoup
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2013/10/06 09:08:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2013/10/26 08:02:57 ajacoutot Exp $
 
 EVO_VERSION=		3.10
 SUBST_VARS +=		EVO_VERSION
@@ -9,7 +9,7 @@ COMMENT=		RSS reader plugin for evolution
 
 GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.3.94
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		mail
 
@@ -47,8 +47,7 @@ MODULES=		devel/gettext \
 			devel/dconf \
 			x11/gnome
 
-LIB_DEPENDS=		devel/libsoup,-gnome \
-			www/webkit,gtk3
+LIB_DEPENDS=		www/webkit,gtk3
 
 # XXX should be a LIB_DEPENDS+WANTLIB but check-lib-depends(1) does not
 # work with unversioned solibs (LOCALBASE/lib/evolution/*/*.so).

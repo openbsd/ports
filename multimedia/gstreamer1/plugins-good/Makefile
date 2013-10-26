@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/10/06 09:08:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2013/10/26 08:02:57 ajacoutot Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # x11/xfce4/xfce4-mixer
@@ -12,7 +12,7 @@ PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-good-${V}
 PKGNAME-main=		${PKGNAME}
 PKGNAME-pulse=		${GST_PKGNAME_PREFIX}-plugins-pulse-${V}
 
-REVISION-main=		1
+REVISION-main=		2
 REVISION-pulse=		0
 
 WANTLIB += ffi glib-2.0 gmodule-2.0 gobject-2.0 gstaudio-1.0 gstbase-1.0

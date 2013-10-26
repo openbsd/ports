@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2013/09/12 22:26:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2013/10/26 08:02:57 ajacoutot Exp $
 
 # requires SSE
 ONLY_FOR_ARCHS=	i386 amd64
@@ -12,6 +12,7 @@ CFLAGS += -march=i586 -fomit-frame-pointer
 COMMENT=	virtual lighttable and darkroom for photographers
 DISTNAME=	darktable-1.2.3
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 SHARED_ONLY=	Yes
 
