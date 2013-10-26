@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/26 00:07:29 schwarze Exp $
+bin/tap2junit
+${P5SITE}/TAP/
+${P5SITE}/TAP/Formatter/
+${P5SITE}/TAP/Formatter/JUnit/
+${P5SITE}/TAP/Formatter/JUnit.pm
+${P5SITE}/TAP/Formatter/JUnit/Result.pm
+${P5SITE}/TAP/Formatter/JUnit/Session.pm
+@man man/man1/tap2junit.1
+@man man/man3p/TAP::Formatter::JUnit.3p
+@man man/man3p/TAP::Formatter::JUnit::Result.3p
+@man man/man3p/TAP::Formatter::JUnit::Session.3p
