@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/04/14 20:21:15 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/10/26 20:42:57 benoit Exp $
 @newgroup _hiawatha:579
 @newuser _hiawatha:579:579:daemon:Hiawatha HTTP Server:/nonexistent:/sbin/nologin
-%%SHARED%%
+@lib lib/hiawatha/libpolarssl.so.${LIBpolarssl_VERSION}
 @bin bin/ssi-cgi
 @man man/man1/cgi-wrapper.1
 @man man/man1/hiawatha.1

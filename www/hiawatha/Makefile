@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2013/05/14 21:35:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2013/10/26 20:42:57 benoit Exp $
 
-SHARED_LIBS=	polarssl 0.0
+SHARED_LIBS=	polarssl 1.0
 
 COMMENT=	secure webserver
-DISTNAME=	hiawatha-9.1
-REVISION=	0
+DISTNAME =	hiawatha-9.2
 CATEGORIES=	www net
 
 HOMEPAGE=	http://www.hiawatha-webserver.org/
