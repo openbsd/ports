@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_Makefile_in,v 1.2 2010/05/10 12:31:52 ajacoutot Exp $
---- src/Makefile.in.orig	Wed Apr 14 23:51:20 2010
-+++ src/Makefile.in	Mon May 10 08:37:44 2010
-@@ -500,7 +500,7 @@ libabiword_2_8_la_CPPFLAGS = \
- 	$(WP_CPPFLAGS) \
+$OpenBSD: patch-src_Makefile_in,v 1.3 2013/10/26 11:27:21 ajacoutot Exp $
+--- src/Makefile.in.orig	Sun Oct 13 21:02:29 2013
++++ src/Makefile.in	Wed Oct 23 18:22:04 2013
+@@ -654,7 +654,7 @@ libabiword_@ABIWORD_SERIES@_la_CPPFLAGS = \
  	-DABIWORD_DATADIR="\"$(ABIWORD_DATADIR)\""
  
--libabiword_2_8_la_LDFLAGS = $(DEPS_LIBS) --no-undefined -avoid-version \
-+libabiword_2_8_la_LDFLAGS = $(DEPS_LIBS) --no-undefined \
- 	-export-dynamic $(am__append_6)
- libabiword_2_8_la_LIBADD = $(opt_libs) plugins/libplugins.la \
+ libabiword_@ABIWORD_SERIES@_la_LDFLAGS = $(DEPS_LIBS) \
+-	$(CHAMPLAIN_LIBS) -no-undefined -avoid-version -export-dynamic \
++	$(CHAMPLAIN_LIBS) -no-undefined -export-dynamic \
+ 	$(am__append_7)
+ libabiword_@ABIWORD_SERIES@_la_LIBADD = plugins/libplugins.la \
  	text/fmt/xp/libxp.la text/ptbl/xp/libxp.la \
