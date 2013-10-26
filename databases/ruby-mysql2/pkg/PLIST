@@ -1,25 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/12/13 18:06:20 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/10/26 23:48:40 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/.gitignore
-${GEM_LIB}/gems/${DISTNAME}/.rspec
-${GEM_LIB}/gems/${DISTNAME}/.rvmrc
-${GEM_LIB}/gems/${DISTNAME}/.travis.yml
-${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
-${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/MIT-LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.md
-${GEM_LIB}/gems/${DISTNAME}/Rakefile
-${GEM_LIB}/gems/${DISTNAME}/benchmark/
-${GEM_LIB}/gems/${DISTNAME}/benchmark/active_record.rb
-${GEM_LIB}/gems/${DISTNAME}/benchmark/active_record_threaded.rb
-${GEM_LIB}/gems/${DISTNAME}/benchmark/allocations.rb
-${GEM_LIB}/gems/${DISTNAME}/benchmark/escape.rb
-${GEM_LIB}/gems/${DISTNAME}/benchmark/query_with_mysql_casting.rb
-${GEM_LIB}/gems/${DISTNAME}/benchmark/query_without_mysql_casting.rb
-${GEM_LIB}/gems/${DISTNAME}/benchmark/sequel.rb
-${GEM_LIB}/gems/${DISTNAME}/benchmark/setup_db.rb
-${GEM_LIB}/gems/${DISTNAME}/benchmark/threaded.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/
 ${GEM_LIB}/gems/${DISTNAME}/examples/eventmachine.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/threaded.rb
@@ -35,6 +18,8 @@ ${GEM_LIB}/gems/${DISTNAME}/ext/mysql2/mysql2.so
 ${GEM_LIB}/gems/${DISTNAME}/ext/mysql2/mysql2_ext.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/mysql2/mysql2_ext.h
 ${GEM_LIB}/gems/${DISTNAME}/ext/mysql2/mysql2_ext.o
+${GEM_LIB}/gems/${DISTNAME}/ext/mysql2/mysql_enc_name_to_ruby.h
+${GEM_LIB}/gems/${DISTNAME}/ext/mysql2/mysql_enc_to_ruby.h
 ${GEM_LIB}/gems/${DISTNAME}/ext/mysql2/result.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/mysql2/result.h
 ${GEM_LIB}/gems/${DISTNAME}/ext/mysql2/result.o
@@ -43,13 +28,14 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/mysql2/
 ${GEM_LIB}/gems/${DISTNAME}/lib/mysql2.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mysql2/client.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mysql2/console.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mysql2/em.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mysql2/error.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mysql2/mysql2.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/mysql2/result.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mysql2/version.rb
-${GEM_LIB}/gems/${DISTNAME}/mysql2.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/spec/
+${GEM_LIB}/gems/${DISTNAME}/spec/configuration.yml.example
 ${GEM_LIB}/gems/${DISTNAME}/spec/em/
 ${GEM_LIB}/gems/${DISTNAME}/spec/em/em_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/mysql2/
@@ -58,9 +44,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/mysql2/error_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/mysql2/result_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rcov.opts
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
-${GEM_LIB}/gems/${DISTNAME}/tasks/
-${GEM_LIB}/gems/${DISTNAME}/tasks/benchmarks.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/compile.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/rspec.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/vendor_mysql.rake
+${GEM_LIB}/gems/${DISTNAME}/support/
+${GEM_LIB}/gems/${DISTNAME}/support/mysql_enc_to_ruby.rb
+${GEM_LIB}/gems/${DISTNAME}/support/ruby_enc_to_mysql.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
