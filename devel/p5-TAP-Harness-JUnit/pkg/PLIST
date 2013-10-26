@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/26 00:02:52 schwarze Exp $
+${P5SITE}/TAP/
+${P5SITE}/TAP/Harness/
+${P5SITE}/TAP/Harness/JUnit.pm
+@man man/man3p/TAP::Harness::JUnit.3p

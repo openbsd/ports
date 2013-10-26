@@ -1,0 +1,4 @@
+This module is a direct subclass of TAP::Harness adding the optional
+agruments "xmlfile", "package", and "namemangle" that cause the output
+to be formatted into XML in a format similar to the one that is produced
+by the JUnit testing framework.
