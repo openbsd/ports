@@ -1,0 +1,19 @@
+Binwalk is a firmware analysis tool designed to assist in the analysis,
+extraction, and reverse engineering of firmware images and other binary
+blobs. It is simple to use, fully scriptable, and can be easily extended
+via custom signatures, extraction rules, and plugin modules.
+
+Binwalk supports various types of analysis useful for inspecting and
+reverse engineering firmware, including:
+
+    Embedded file identification and extraction
+    Executable code identification
+    Type casting
+    Entropy analysis and graphing
+    Heuristic data analysis
+    "Smart" strings analysis
+
+Binwalk's file signatures are (mostly) compatible with the magic signatures
+used by the Unix file utility, and include customized/improved signatures
+for files that are commonly found in firmware images such as compressed
+files, firmware headers, kernels, bootloaders, filesystems, etc.

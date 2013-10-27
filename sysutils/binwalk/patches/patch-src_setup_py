@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_setup_py,v 1.1.1.1 2013/10/27 09:58:41 sthen Exp $
+--- src/setup.py.orig	Wed Oct 23 22:11:30 2013
++++ src/setup.py	Sat Oct 26 23:52:50 2013
+@@ -36,10 +36,6 @@ if "--no-prereq-checks" not in sys.argv:
+ 		print "Pre-requisite check warning:", str(e)
+ 		print "To take advantage of this tool's entropy plotting capabilities, please install the python-matplotlib module."
+ 		print "*" * WIDTH, "\n"
+-	
+-		if raw_input('Continue installation without this module (Y/n)? ').lower().startswith('n'):
+-			print 'Quitting...\n'
+-			sys.exit(1)
+ else:
+ 	# This is super hacky.
+ 	sys.argv.pop(sys.argv.index("--no-prereq-checks"))
