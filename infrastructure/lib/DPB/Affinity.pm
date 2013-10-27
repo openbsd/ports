@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Affinity.pm,v 1.8 2013/10/17 08:34:03 espie Exp $
+# $OpenBSD: Affinity.pm,v 1.9 2013/10/27 09:21:38 espie Exp $
 #
 # Copyright (c) 2012-2013 Marc Espie <espie@openbsd.org>
 #
@@ -60,6 +60,7 @@ sub start
 		print $fh "path=", $w->fullpkgpath, "\n";
 		if ($core->{inmem}) {
 			print $fh "mem=$core->{inmem}\n";
+			$w->{mem_affinity} = $core->{inmem};
 		}
 		close $fh;
 	}
