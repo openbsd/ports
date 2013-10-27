@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.6 2013/08/21 13:36:10 ajacoutot Exp $
+$OpenBSD: README-main,v 1.7 2013/10/27 08:50:17 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -143,4 +143,4 @@ Note: the fields and values encoded in the TXT record replicate those
 that would appear in the mDNS announcement for the CUPS shared printer 
 - these can be determined for example with Tim Fontaine's 
 'airprint-generate' script. Using "URF=DM3" appears to provide the best
-support for Apple iOS6 clients such as the iPad.
+support for Apple iOS clients such as the iPad.

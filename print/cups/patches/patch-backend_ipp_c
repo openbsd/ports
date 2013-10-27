@@ -1,25 +1,25 @@
-$OpenBSD: patch-backend_ipp_c,v 1.5 2013/07/12 07:19:38 ajacoutot Exp $
+$OpenBSD: patch-backend_ipp_c,v 1.6 2013/10/27 08:50:17 ajacoutot Exp $
 
 Increase timeout for the PPD file to be copied so that it doesn't fail
 on low-end configurations.
 
---- backend/ipp.c.orig	Fri Jun  7 03:12:52 2013
-+++ backend/ipp.c	Fri Jul 12 07:35:41 2013
-@@ -666,7 +666,7 @@ main(int  argc,				/* I - Number of command-line args 
-   }
+--- backend/ipp.c.orig	Wed Oct 23 21:53:08 2013
++++ backend/ipp.c	Sun Oct 27 09:02:01 2013
+@@ -677,7 +677,7 @@ main(int  argc,				/* I - Number of command-line args 
  
-   http = _httpCreate(hostname, port, addrlist, cupsEncryption(), AF_UNSPEC);
+   http = httpConnect2(hostname, port, addrlist, AF_UNSPEC, cupsEncryption(), 1,
+                       0, NULL);
 -  httpSetTimeout(http, 30.0, timeout_cb, NULL);
 +  httpSetTimeout(http, 90.0, timeout_cb, NULL);
  
   /*
    * See if the printer supports SNMP...
-@@ -2208,7 +2208,7 @@ monitor_printer(
+@@ -2249,7 +2249,7 @@ monitor_printer(
  
-   http = _httpCreate(monitor->hostname, monitor->port, NULL, monitor->encryption,
-                      AF_UNSPEC);
+   http = httpConnect2(monitor->hostname, monitor->port, NULL, AF_UNSPEC,
+                       monitor->encryption, 1, 0, NULL);
 -  httpSetTimeout(http, 30.0, timeout_cb, NULL);
 +  httpSetTimeout(http, 90.0, timeout_cb, NULL);
    if (username[0])
      cupsSetUser(username);
-   cupsSetPasswordCB2((cups_password_cb2_t)password_cb, &password_tries);
+ 

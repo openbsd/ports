@@ -1,7 +1,7 @@
-$OpenBSD: patch-cgi-bin_Makefile,v 1.1 2010/03/31 16:20:02 ajacoutot Exp $
---- cgi-bin/Makefile.orig	Wed May 27 01:27:06 2009
-+++ cgi-bin/Makefile	Sun Aug 30 17:17:24 2009
-@@ -143,10 +143,6 @@ install-libs: $(INSTALLSTATIC)
+$OpenBSD: patch-cgi-bin_Makefile,v 1.2 2013/10/27 08:50:17 ajacoutot Exp $
+--- cgi-bin/Makefile.orig	Wed May 29 13:51:34 2013
++++ cgi-bin/Makefile	Sun Oct 27 09:01:11 2013
+@@ -144,10 +144,6 @@ install-libs: $(INSTALLSTATIC)
  	echo Installing libraries in $(LIBDIR)...
  	$(INSTALL_DIR) -m 755 $(LIBDIR)
  	$(INSTALL_LIB) $(LIBCUPSCGI) $(LIBDIR)
@@ -12,7 +12,7 @@ $OpenBSD: patch-cgi-bin_Makefile,v 1.1 2010/03/31 16:20:02 ajacoutot Exp $
  	if test $(LIBCUPSCGI) = "libcupscgi.1.dylib"; then \
  		$(RM) $(LIBDIR)/libcupscgi.dylib; \
  		$(LN) $(LIBCUPSCGI) $(LIBDIR)/libcupscgi.dylib; \
-@@ -179,7 +175,7 @@ uninstall:
+@@ -181,7 +177,7 @@ uninstall:
  	$(RM) $(LIBDIR)/libcupscgi.sl
  	$(RM) $(LIBDIR)/libcupscgi.sl.1
  	$(RM) $(LIBDIR)/libcupscgi.so
@@ -21,7 +21,7 @@ $OpenBSD: patch-cgi-bin_Makefile,v 1.1 2010/03/31 16:20:02 ajacoutot Exp $
  	-$(RMDIR) $(LIBDIR)
  	$(RM) $(INCLUDEDIR)/cups/cgi.h
  	$(RM) $(INCLUDEDIR)/cups/help-index.h
-@@ -209,14 +205,12 @@ framedhelp:
+@@ -211,14 +207,12 @@ framedhelp:
  
  
  #

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.165 2013/10/22 19:59:18 jca Exp $
+# $OpenBSD: Makefile,v 1.166 2013/10/27 08:50:17 ajacoutot Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
 
-VERSION=		1.6.4
-REVISION=		0
+VERSION=		1.7.0
 DISTNAME=		cups-${VERSION}-source
 EXTRACT_SUFX=		.tar.bz2
 
@@ -13,11 +12,12 @@ PKGNAME-libs=		cups-libs-${VERSION}
 
 CATEGORIES=		print sysutils
 
-SHARED_LIBS+=	cupsimage	5.0
-SHARED_LIBS+=	cups		6.1
-SHARED_LIBS+=	cupscgi		1.0
-SHARED_LIBS+=	cupsmime	1.0
-SHARED_LIBS+=	cupsppdc	1.0
+# config-scripts/cups-sharedlibs.m4
+SHARED_LIBS+=	cupsimage	5.0 # so.2
+SHARED_LIBS+=	cups		6.1 # so.2
+SHARED_LIBS+=	cupscgi		1.0 # so.1
+SHARED_LIBS+=	cupsmime	1.0 # so.1
+SHARED_LIBS+=	cupsppdc	1.0 # so.1
 
 HOMEPAGE=		http://www.cups.org/
 

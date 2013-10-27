@@ -1,11 +1,11 @@
-$OpenBSD: patch-config_h_in,v 1.5 2013/10/23 05:41:18 ajacoutot Exp $
+$OpenBSD: patch-config_h_in,v 1.6 2013/10/27 08:50:17 ajacoutot Exp $
 
 XXX push upstream
 Use arc4random_stir only if present.
 
---- config.h.in.orig	Tue Oct 22 06:38:36 2013
-+++ config.h.in	Tue Oct 22 06:43:28 2013
-@@ -648,7 +648,11 @@
+--- config.h.in.orig	Wed May 29 13:51:34 2013
++++ config.h.in	Sun Oct 27 09:01:11 2013
+@@ -611,7 +611,11 @@
  
  #ifdef HAVE_ARC4RANDOM
  #  define CUPS_RAND() arc4random()

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2013/09/25 08:39:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2013/10/27 08:50:17 ajacoutot Exp $
 @conflict LPRng-*
 @pkgpath print/cups
 @pkgpath print/cups,ldap
@@ -6,6 +6,7 @@
 @bin bin/cancel
 @bin bin/cupstestdsc
 @bin bin/cupstestppd
+@bin bin/ippfind
 @bin bin/ipptool
 @bin bin/lp
 @bin bin/lpoptions
@@ -58,6 +59,7 @@ libexec/cups/notifier/
 @man man/man1/cancel.1
 @man man/man1/cupstestdsc.1
 @man man/man1/cupstestppd.1
+@man man/man1/ippfind.1
 @man man/man1/ipptool.1
 @man man/man1/lp.1
 @man man/man1/lpoptions.1
@@ -140,24 +142,30 @@ share/cups/ipptool/document-letter.pdf
 share/cups/ipptool/document-letter.ps
 share/cups/ipptool/get-completed-jobs.test
 share/cups/ipptool/get-jobs.test
+share/cups/ipptool/get-notifications.test
 share/cups/ipptool/get-printer-attributes.test
+share/cups/ipptool/get-subscriptions.test
 share/cups/ipptool/gray.jpg
 share/cups/ipptool/ipp-1.1.test
 share/cups/ipptool/ipp-2.0.test
 share/cups/ipptool/ipp-2.1.test
 share/cups/ipptool/ipp-2.2.test
+share/cups/ipptool/ipp-everywhere.test
 share/cups/ipptool/onepage-a4.pdf
 share/cups/ipptool/onepage-a4.ps
 share/cups/ipptool/onepage-letter.pdf
 share/cups/ipptool/onepage-letter.ps
+share/cups/ipptool/print-job-deflate.test
+share/cups/ipptool/print-job-gzip.test
+share/cups/ipptool/print-job.test
 share/cups/ipptool/testfile.jpg
 share/cups/ipptool/testfile.pcl
 share/cups/ipptool/testfile.pdf
 share/cups/ipptool/testfile.ps
 share/cups/ipptool/testfile.txt
+share/cups/ipptool/validate-job.test
 share/cups/mime/mime.convs
 share/cups/mime/mime.types
-share/cups/ppdc/
 share/cups/ppdc/epson.h
 share/cups/ppdc/font.defs
 share/cups/ppdc/hp.h
@@ -475,6 +483,77 @@ share/cups/templates/header.tmpl
 share/cups/templates/help-header.tmpl
 share/cups/templates/help-printable.tmpl
 share/cups/templates/help-trailer.tmpl
+share/cups/templates/it/
+share/cups/templates/it/add-class.tmpl
+share/cups/templates/it/add-printer.tmpl
+share/cups/templates/it/add-rss-subscription.tmpl
+share/cups/templates/it/admin.tmpl
+share/cups/templates/it/choose-device.tmpl
+share/cups/templates/it/choose-make.tmpl
+share/cups/templates/it/choose-model.tmpl
+share/cups/templates/it/choose-serial.tmpl
+share/cups/templates/it/choose-uri.tmpl
+share/cups/templates/it/class-added.tmpl
+share/cups/templates/it/class-confirm.tmpl
+share/cups/templates/it/class-deleted.tmpl
+share/cups/templates/it/class-jobs-header.tmpl
+share/cups/templates/it/class-modified.tmpl
+share/cups/templates/it/class.tmpl
+share/cups/templates/it/classes-header.tmpl
+share/cups/templates/it/classes.tmpl
+share/cups/templates/it/command.tmpl
+share/cups/templates/it/edit-config.tmpl
+share/cups/templates/it/error-op.tmpl
+share/cups/templates/it/error.tmpl
+share/cups/templates/it/header.tmpl
+share/cups/templates/it/help-header.tmpl
+share/cups/templates/it/help-printable.tmpl
+share/cups/templates/it/help-trailer.tmpl
+share/cups/templates/it/job-cancel.tmpl
+share/cups/templates/it/job-hold.tmpl
+share/cups/templates/it/job-move.tmpl
+share/cups/templates/it/job-moved.tmpl
+share/cups/templates/it/job-release.tmpl
+share/cups/templates/it/job-restart.tmpl
+share/cups/templates/it/jobs-header.tmpl
+share/cups/templates/it/jobs.tmpl
+share/cups/templates/it/list-available-printers.tmpl
+share/cups/templates/it/modify-class.tmpl
+share/cups/templates/it/modify-printer.tmpl
+share/cups/templates/it/norestart.tmpl
+share/cups/templates/it/option-boolean.tmpl
+share/cups/templates/it/option-conflict.tmpl
+share/cups/templates/it/option-header.tmpl
+share/cups/templates/it/option-pickmany.tmpl
+share/cups/templates/it/option-pickone.tmpl
+share/cups/templates/it/option-trailer.tmpl
+share/cups/templates/it/pager.tmpl
+share/cups/templates/it/printer-accept.tmpl
+share/cups/templates/it/printer-added.tmpl
+share/cups/templates/it/printer-configured.tmpl
+share/cups/templates/it/printer-confirm.tmpl
+share/cups/templates/it/printer-default.tmpl
+share/cups/templates/it/printer-deleted.tmpl
+share/cups/templates/it/printer-jobs-header.tmpl
+share/cups/templates/it/printer-modified.tmpl
+share/cups/templates/it/printer-purge.tmpl
+share/cups/templates/it/printer-reject.tmpl
+share/cups/templates/it/printer-start.tmpl
+share/cups/templates/it/printer-stop.tmpl
+share/cups/templates/it/printer.tmpl
+share/cups/templates/it/printers-header.tmpl
+share/cups/templates/it/printers.tmpl
+share/cups/templates/it/restart.tmpl
+share/cups/templates/it/samba-export.tmpl
+share/cups/templates/it/samba-exported.tmpl
+share/cups/templates/it/search.tmpl
+share/cups/templates/it/set-printer-options-header.tmpl
+share/cups/templates/it/set-printer-options-trailer.tmpl
+share/cups/templates/it/subscription-added.tmpl
+share/cups/templates/it/subscription-canceled.tmpl
+share/cups/templates/it/test-page.tmpl
+share/cups/templates/it/trailer.tmpl
+share/cups/templates/it/users.tmpl
 share/cups/templates/ja/
 share/cups/templates/ja/add-class.tmpl
 share/cups/templates/ja/add-printer.tmpl
@@ -748,7 +827,6 @@ share/doc/cups/help/ref-subscriptions-conf.html
 share/doc/cups/help/security.html
 share/doc/cups/help/sharing.html
 share/doc/cups/help/spec-banner.html
-share/doc/cups/help/spec-browsing.html
 share/doc/cups/help/spec-cmp.html
 share/doc/cups/help/spec-command.html
 share/doc/cups/help/spec-design.html
@@ -758,7 +836,6 @@ share/doc/cups/help/spec-postscript.html
 share/doc/cups/help/spec-ppd.html
 share/doc/cups/help/spec-raster.html
 share/doc/cups/help/spec-stp.html
-share/doc/cups/help/standard.html
 share/doc/cups/help/translation.html
 share/doc/cups/help/whatsnew.html
 share/doc/cups/images/
@@ -779,6 +856,8 @@ share/doc/cups/images/smiley.jpg
 share/doc/cups/images/unsel.gif
 share/doc/cups/images/wait.gif
 share/doc/cups/index.html
+share/doc/cups/it/
+share/doc/cups/it/index.html
 share/doc/cups/ja/
 share/doc/cups/ja/index.html
 share/doc/cups/robots.txt
@@ -833,6 +912,7 @@ share/locale/ca/cups_ca.po
 share/locale/cs/cups_cs.po
 share/locale/es/cups_es.po
 share/locale/fr/cups_fr.po
+share/locale/it/cups_it.po
 share/locale/ja/cups_ja.po
 share/locale/ru/cups_ru.po
 @exec-update rm -f /var/cache/cups/* 2>/dev/null || true
