@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_rpc_virnetsocket_c,v 1.5 2013/04/03 06:37:10 jasper Exp $
+$OpenBSD: patch-src_rpc_virnetsocket_c,v 1.6 2013/10/27 19:40:43 jasper Exp $
 
 Use sockpeercred on OpenBSD.
 
---- src/rpc/virnetsocket.c.orig	Thu Mar 21 08:42:49 2013
-+++ src/rpc/virnetsocket.c	Tue Apr  2 23:02:13 2013
-@@ -1105,7 +1105,11 @@ int virNetSocketGetUNIXIdentity(virNetSocketPtr sock,
-                                 gid_t *gid,
-                                 pid_t *pid)
+--- src/rpc/virnetsocket.c.orig	Sun Sep 29 12:23:06 2013
++++ src/rpc/virnetsocket.c	Sun Oct 27 15:17:00 2013
+@@ -1122,7 +1122,11 @@ int virNetSocketGetUNIXIdentity(virNetSocketPtr sock,
+                                 pid_t *pid,
+                                 unsigned long long *timestamp)
  {
 +#if defined (__OpenBSD__)
 +    struct sockpeercred cr;
@@ -14,5 +14,5 @@ Use sockpeercred on OpenBSD.
      struct ucred cr;
 +#endif
      socklen_t cr_len = sizeof(cr);
-     virObjectLock(sock);
+     int ret = -1;
  

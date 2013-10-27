@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/07/12 06:19:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/10/27 19:40:43 jasper Exp $
 @bin bin/virsh
 @bin bin/virt-host-validate
 bin/virt-pki-validate
@@ -37,6 +37,8 @@ share/doc/libvirt/
 share/doc/libvirt/html/
 share/doc/libvirt/html/32favicon.png
 share/doc/libvirt/html/404.html
+share/doc/libvirt/html/acl.html
+share/doc/libvirt/html/aclpolkit.html
 share/doc/libvirt/html/api.html
 share/doc/libvirt/html/api_extension.html
 share/doc/libvirt/html/apps.html
@@ -133,6 +135,7 @@ share/doc/libvirt/html/php.html
 share/doc/libvirt/html/python.html
 share/doc/libvirt/html/relatedlinks.html
 share/doc/libvirt/html/remote.html
+share/doc/libvirt/html/securityprocess.html
 share/doc/libvirt/html/sitemap.html
 share/doc/libvirt/html/storage.html
 share/doc/libvirt/html/testapi.html
@@ -142,14 +145,6 @@ share/doc/libvirt/html/todo.html
 share/doc/libvirt/html/uri.html
 share/doc/libvirt/html/virshcmdref.html
 share/doc/libvirt/html/windows.html
-share/doc/libvirt/python/
-share/doc/libvirt/python/TODO
-share/doc/libvirt/python/examples/
-share/doc/libvirt/python/examples/basic.py
-share/doc/libvirt/python/examples/create.py
-share/doc/libvirt/python/examples/error.py
-share/doc/libvirt/python/examples/node.py
-share/doc/libvirt/python/examples/uuid.py
 share/examples/libvirt/
 @sample ${SYSCONFDIR}/libvirt/
 share/examples/libvirt/libvirt.conf
@@ -185,6 +180,7 @@ share/libvirt/schemas/nodedev.rng
 share/libvirt/schemas/nwfilter.rng
 share/libvirt/schemas/secret.rng
 share/libvirt/schemas/storageencryption.rng
+share/libvirt/schemas/storagefilefeatures.rng
 share/libvirt/schemas/storagepool.rng
 share/libvirt/schemas/storagevol.rng
 share/locale/af/LC_MESSAGES/libvirt.mo
