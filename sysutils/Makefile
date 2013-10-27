@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.302 2013/10/08 17:27:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.303 2013/10/27 09:59:04 sthen Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -15,6 +15,7 @@
      SUBDIR += bacula,pgsql
      SUBDIR += bacula,sqlite3
      SUBDIR += bchunk
+     SUBDIR += binwalk
      SUBDIR += bubblemon-dockapp
      SUBDIR += cdrtools
      SUBDIR += cfengine
