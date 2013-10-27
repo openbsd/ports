@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.21 2013/10/17 14:20:44 espie Exp $
+# $OpenBSD: Config.pm,v 1.22 2013/10/27 09:26:01 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -66,9 +66,16 @@ sub parse_command_line
     "[-L logdir] [-l lockdir] [-b log] [-M threshold] [-X pathlist]",
     "[pathlist ...]");
     	$state->{chroot} = $state->opt('B');
+	if (my ($l, $p, $uid, $gid) = getpwuid $<) {
+		$state->{user} = $l;
+		$state->{uid} = $uid;
+		$state->{gid} = $gid;
+	} else {
+		$state->usage("Can't figure out who I am");
+	}
 	($state->{ports}, $state->{portspath}, $state->{repo}, $state->{localarch},
 	    $state->{distdir}, $state->{localbase}) =
-		DPB::Vars->get(DPB::Host::Localhost->getshell($state->{chroot}), 
+		DPB::Vars->get(DPB::Host::Localhost->getshell($state), 
 		$state->make,
 		"PORTSDIR", "PORTSDIR_PATH", "PACKAGE_REPOSITORY", 
 		"MACHINE_ARCH", "DISTDIR", "LOCALBASE");
@@ -215,6 +222,11 @@ sub command_line_overrides
 
 	my $override_prop = DPB::HostProperties->new;
 
+	for my $k (qw(user uid gid)) {
+		if (defined $state->{$k}) {
+			$override_prop->{$k} = $state->{$k};
+		}
+	}
 	if ($state->opt('j')) {
 		$override_prop->{jobs} = $state->opt('j');
 	}
@@ -373,12 +385,8 @@ sub finalize
 			delete $prop->{chroot};
 		} else {
 			if (!defined $prop->{chroot_user}) {
-				if (!defined $default_user) {
-					$default_user = `whoami`;
-					chomp($default_user);
-				}
+				$prop->{chroot_user} = $prop->{user};
 			}
-			$prop->{chroot_user} = $default_user;
 		}
 	}
 	if (defined $prop->{memory}) {
