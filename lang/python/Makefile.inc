@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.103 2013/06/04 08:02:20 fgsch Exp $
+# $OpenBSD: Makefile.inc,v 1.104 2013/10/27 18:32:55 fgsch Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -7,13 +7,13 @@
 
 SHARED_ONLY=	Yes
 
-COMMENT-main=	interpreted object-oriented programming language
-COMMENT-bsddb=	Berkeley db module for Python
-COMMENT-gdbm=	GNU dbm module for Python
-COMMENT-idle=	IDE for Python
-COMMENT-tests=	Python test suite
-COMMENT-tkinter=tk GUI module for Python
-COMMENT-tools=	extra tools for Python
+COMMENT-main =	interpreted object-oriented programming language
+COMMENT-bsddb =	Berkeley db module for Python
+COMMENT-gdbm =	GNU dbm module for Python
+COMMENT-idle =	IDE for Python
+COMMENT-tests =	Python test suite
+COMMENT-tkinter = tk GUI module for Python
+COMMENT-tools =	extra tools for Python
 
 DISTNAME =	Python-${VERSION}${PATCHLEVEL}
 PKGNAME-main =	python-${VERSION}${PATCHLEVEL}
@@ -31,26 +31,26 @@ PKGSPEC-tkinter = python-tkinter-${VERSION_SPEC}
 PKGNAME-tools =	python-tools-${VERSION}${PATCHLEVEL}
 PKGSPEC-tools =	python-tools-${VERSION_SPEC}
 
-CATEGORIES=	lang
-MASTER_SITES=	http://www.python.org/ftp/${PSUBDIR}/ \
+CATEGORIES =	lang
+MASTER_SITES =	http://www.python.org/ftp/${PSUBDIR}/ \
 		http://sunsite.informatik.rwth-aachen.de/python/ftp/${PSUBDIR}/
-PSUBDIR?=	python/${VERSION}${PATCHLEVEL}
-EXTRACT_SUFX=	.tgz
+PSUBDIR ?=	python/${VERSION}${PATCHLEVEL}
+EXTRACT_SUFX =	.tgz
 
-HOMEPAGE=	http://www.python.org/
+HOMEPAGE =	http://www.python.org/
 
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
 # PSF license <http://www.python.org/${VERSION}/license.html>
 # A summary of changes to Python is required to be distributed
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
 .if ${VERSION} == "2.7"
 LIB_SUFX =	
-MULTI_PACKAGES=	-main -tests -tools -gdbm -idle -tkinter -bsddb
+MULTI_PACKAGES =	-main -tests -tools -gdbm -idle -tkinter -bsddb
 .else
-LIB_SUFX =	m
-MULTI_PACKAGES=	-main -tests -gdbm -idle -tkinter
+LIB_SUFX =		m
+MULTI_PACKAGES =	-main -tests -gdbm -idle -tkinter
 .endif
 
 # Python 2.7 lists BSD db 4.6.x as unstable on most architectures (see
@@ -63,13 +63,14 @@ MODULES +=		devel/gettext
 
 # All subpackages depend on the main python package.
 
-RUN_DEPENDS=		${FULLPKGNAME-main}:lang/python/${VERSION},-main
-LIB_DEPENDS=
+RUN_DEPENDS =		${FULLPKGNAME-main}:lang/python/${VERSION},-main
+LIB_DEPENDS =
 
 LIB_DEPENDS-main =	archivers/bzip2 \
+			devel/libffi \
 			${MODGETTEXT_LIB_DEPENDS}
 RUN_DEPENDS-main =
-WANTLIB-main =		bz2 c crypto expat m ncursesw panelw pthread \
+WANTLIB-main =		bz2 c crypto expat ffi m ncursesw panelw pthread \
 			readline sqlite3 ssl stdc++ util z \
 			${MODGETTEXT_WANTLIB}
 .if ${VERSION} == "2.7"
@@ -107,33 +108,28 @@ LIB_DEPENDS-tkinter =	lang/python/${VERSION},-main \
 WANTLIB-tkinter =	X11 pthread python${VERSION}${LIB_SUFX} \
 			${MODTK_WANTLIB}
 
-# The ctypes module depends of devel/libffi, not supported on all platforms
-.if ${MACHINE_ARCH:Marm}
-PKG_ARGS+=	-Dctypes=0
-.else
-PKG_ARGS+=	-Dctypes=1
-LIB_DEPENDS-main += devel/libffi
-CONFIGURE_ARGS +=	--with-system-ffi
-WANTLIB-main +=	ffi
-.endif
-
 USE_GROFF =	Yes
 
 AUTOCONF_VERSION =	2.69
 
-CONFIGURE_STYLE=	autoconf
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
+CONFIGURE_STYLE =	autoconf
+CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 # --srcdir is needed for systrace to work correctly
-CONFIGURE_ARGS+=	--with-fpectl --with-threads --srcdir=${WRKSRC}
-CONFIGURE_ARGS+=	--enable-ipv6
+CONFIGURE_ARGS +=	--srcdir=${WRKSRC} \
+			--with-fpectl \
+			--with-threads \
+			--enable-ipv6 \
+			--with-cxx_main \
+			--with-system-expat \
+			--with-system-ffi
 
-CONFIGURE_ENV+= OPT='${CFLAGS} -fPIC' \
+CONFIGURE_ENV += OPT='${CFLAGS} -fPIC' \
 		LDFLAGS='-L${LOCALBASE}/lib/' SVNVERSION=no \
 		LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
-MAKE_ENV+=	LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
-MAKE_FLAGS+=	LD_LIBRARY_PATH=${WRKSRC} PATH="${WRKDIST}:${PORTPATH}"
-MAKE_FLAGS+=	LDFLAGS='-L${WRKSRC}'
-FAKE_FLAGS+=	RANLIB=:
+MAKE_ENV +=	LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
+MAKE_FLAGS +=	LD_LIBRARY_PATH=${WRKSRC} PATH="${WRKDIST}:${PORTPATH}"
+MAKE_FLAGS +=	LDFLAGS='-L${WRKSRC}'
+FAKE_FLAGS +=	RANLIB=:
 
 ALL_TARGET =	all ./Lib/plat-openbsd5
 
