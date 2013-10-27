@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/08/22 08:03:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/10/27 08:45:27 ajacoutot Exp $
 @conflict cups-<1.6.0
 @conflict ghostscript-<9.06p3
 @bin bin/ttfread
@@ -20,10 +20,8 @@ lib/libfontembed.la
 @lib lib/libfontembed.so.${LIBfontembed_VERSION}
 lib/pkgconfig/libcupsfilters.pc
 lib/pkgconfig/libfontembed.pc
-libexec/cups/
 @bin libexec/cups/backend/parallel
 @bin libexec/cups/backend/serial
-libexec/cups/filter/
 @bin libexec/cups/filter/bannertopdf
 @bin libexec/cups/filter/commandtoescpx
 @bin libexec/cups/filter/commandtopclx
@@ -49,28 +47,21 @@ libexec/cups/filter/texttops
 @man man/man5/cups-browsed.conf.5
 @man man/man8/cups-browsed.8
 @bin sbin/cups-browsed
-share/cups/
-share/cups/banners/
 share/cups/banners/classified
 share/cups/banners/confidential
 share/cups/banners/secret
 share/cups/banners/standard
 share/cups/banners/topsecret
 share/cups/banners/unclassified
-share/cups/charsets/
 share/cups/charsets/pdf.utf-8
 share/cups/charsets/pdf.utf-8.heavy
 share/cups/charsets/pdf.utf-8.simple
-share/cups/data/
 share/cups/data/default-testpage.pdf
 share/cups/data/default.pdf
 share/cups/data/testprint
-share/cups/drv/
 share/cups/drv/cupsfilters.drv
-share/cups/mime/
 share/cups/mime/cupsfilters.convs
 share/cups/mime/cupsfilters.types
-share/cups/ppdc/
 share/cups/ppdc/escp.h
 share/cups/ppdc/pcl.h
 share/doc/cups-filters/
