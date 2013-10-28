@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2013/10/23 08:19:52 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.20 2013/10/28 14:37:53 benoit Exp $
 bin/${LNAME}-admin.py
 lib/python${MODPY_VERSION}/site-packages/Django-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/
@@ -7324,15 +7324,18 @@ share/doc/${LNAME}/releases/1.4.5.txt
 share/doc/${LNAME}/releases/1.4.6.txt
 share/doc/${LNAME}/releases/1.4.7.txt
 share/doc/${LNAME}/releases/1.4.8.txt
+share/doc/${LNAME}/releases/1.4.9.txt
 share/doc/${LNAME}/releases/1.4.txt
 share/doc/${LNAME}/releases/1.5-alpha-1.txt
 share/doc/${LNAME}/releases/1.5-beta-1.txt
 share/doc/${LNAME}/releases/1.5.1.txt
 share/doc/${LNAME}/releases/1.5.2.txt
 share/doc/${LNAME}/releases/1.5.3.txt
+share/doc/${LNAME}/releases/1.5.4.txt
 share/doc/${LNAME}/releases/${MODPY_EGG_VERSION}.txt
 share/doc/${LNAME}/releases/1.5.txt
 share/doc/${LNAME}/releases/index.txt
+share/doc/${LNAME}/releases/security.txt
 share/doc/${LNAME}/topics/
 share/doc/${LNAME}/topics/auth/
 share/doc/${LNAME}/topics/auth/customizing.txt

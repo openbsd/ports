@@ -1,6 +1,6 @@
-$OpenBSD: patch-django_core_servers_basehttp_py,v 1.4 2013/10/23 08:19:52 sthen Exp $
---- django/core/servers/basehttp.py.orig	Sat Aug 31 20:17:28 2013
-+++ django/core/servers/basehttp.py	Sat Aug 31 20:26:35 2013
+$OpenBSD: patch-django_core_servers_basehttp_py,v 1.5 2013/10/28 14:37:53 benoit Exp $
+--- django/core/servers/basehttp.py.orig	Sun Oct 27 11:35:05 2013
++++ django/core/servers/basehttp.py	Sun Oct 27 11:38:56 2013
 @@ -10,6 +10,7 @@ been reviewed for security issues. DON'T USE IT FOR PR
  from __future__ import unicode_literals
  
@@ -9,12 +9,13 @@ $OpenBSD: patch-django_core_servers_basehttp_py,v 1.4 2013/10/23 08:19:52 sthen 
  import socket
  import sys
  import traceback
-@@ -190,4 +191,11 @@ def run(addr, port, wsgi_handler, ipv6=False, threadin
+@@ -183,4 +184,12 @@ def run(addr, port, wsgi_handler, ipv6=False, threadin
          httpd_cls = WSGIServer
      httpd = httpd_cls(server_address, WSGIRequestHandler, ipv6=ipv6)
      httpd.set_app(wsgi_handler)
 -    httpd.serve_forever()
-+    try:    
++    
++    try:
 +        httpd.serve_forever()
 +    except select.error as (errno, msg):
 +        # catch Interrupted system call exceptions
