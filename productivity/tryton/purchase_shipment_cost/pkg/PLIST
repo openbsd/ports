@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/05/19 10:49:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/10/28 07:29:02 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_shipment_cost/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_shipment_cost/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_shipment_cost/__init__.pyc
@@ -16,6 +16,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_shipment_cost/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_shipment_cost/locale/fr_FR.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_shipment_cost/locale/nl_NL.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_shipment_cost/locale/ru_RU.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_shipment_cost/locale/sl_SI.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_shipment_cost/stock.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_shipment_cost/stock.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase_shipment_cost/stock.xml

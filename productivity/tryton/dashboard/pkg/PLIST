@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/05/19 10:49:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/10/28 07:29:02 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/dashboard/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/dashboard/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/dashboard/__init__.pyc
@@ -19,6 +19,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/dashboard/locale/es_ES.
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/dashboard/locale/fr_FR.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/dashboard/locale/nl_NL.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/dashboard/locale/ru_RU.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/dashboard/locale/sl_SI.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/dashboard/res.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/dashboard/res.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/dashboard/res.xml

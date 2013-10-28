@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/10/28 10:42:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/10/28 07:29:02 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party_vcarddav/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party_vcarddav/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party_vcarddav/__init__.pyc
@@ -15,6 +15,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/party_vcarddav/locale/e
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party_vcarddav/locale/fr_FR.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party_vcarddav/locale/nl_NL.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party_vcarddav/locale/ru_RU.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party_vcarddav/locale/sl_SI.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party_vcarddav/party.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party_vcarddav/party.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party_vcarddav/party.xml

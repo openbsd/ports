@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/05/20 09:13:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/10/28 07:29:02 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/project_invoice/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/project_invoice/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/project_invoice/__init__.pyc
@@ -8,6 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/project_invoice/locale/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/project_invoice/locale/es_AR.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/project_invoice/locale/es_ES.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/project_invoice/locale/fr_FR.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/project_invoice/locale/sl_SI.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/project_invoice/project.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/project_invoice/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/project_invoice/tests/__init__.py
@@ -16,6 +17,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/project_invoice/tests/t
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/project_invoice/tests/test_project_invoice.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/project_invoice/timesheet.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/project_invoice/timesheet.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/project_invoice/timesheet.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/project_invoice/tryton.cfg
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/project_invoice/view/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/project_invoice/view/work_form.xml

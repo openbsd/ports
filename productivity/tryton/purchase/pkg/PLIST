@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/05/19 10:49:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/10/28 07:29:02 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/__init__.pyc
@@ -18,7 +18,10 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/locale/es_ES.p
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/locale/fr_FR.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/locale/nl_NL.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/locale/ru_RU.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/locale/sl_SI.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/party.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/product.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/product.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/product.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/purchase.odt
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/purchase.py
@@ -30,6 +33,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/stock.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/tests/scenario_purchase.rst
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/tests/test_purchase.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/tests/test_purchase.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/tryton.cfg

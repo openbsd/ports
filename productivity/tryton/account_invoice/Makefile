@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/08/10 19:00:25 ajacoutot Exp $
-
-MODPY_EGG_VERSION=	2.8.2
+# $OpenBSD: Makefile,v 1.8 2013/10/28 07:29:01 ajacoutot Exp $
 
 TRYTOND_MODULE =	account_invoice
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/05/19 10:49:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/10/28 07:29:02 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production/__init__.pyc
@@ -19,6 +19,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/production/locale/es_ES
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production/locale/fr_FR.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production/locale/nl_NL.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production/locale/ru_RU.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/production/locale/sl_SI.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production/product.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production/product.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production/product.xml
@@ -52,6 +53,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/production/view/product
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production/view/product_bom_list.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production/view/product_bom_list_sequence.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production/view/product_form.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/production/view/production_calendar.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production/view/production_form.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/production/view/production_list.xml
 lib/python${MODPY_VERSION}/site-packages/trytond_production-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/05/19 10:49:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/10/28 07:29:02 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/company_work_time/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/company_work_time/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/company_work_time/__init__.pyc
@@ -16,6 +16,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/company_work_time/local
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/company_work_time/locale/fr_FR.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/company_work_time/locale/nl_NL.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/company_work_time/locale/ru_RU.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/company_work_time/locale/sl_SI.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/company_work_time/res.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/company_work_time/res.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/company_work_time/tests/

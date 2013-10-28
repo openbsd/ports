@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/05/19 10:49:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/10/28 07:29:01 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_weight/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_weight/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_weight/__init__.pyc
@@ -16,6 +16,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_weight/locale/e
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_weight/locale/fr_FR.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_weight/locale/nl_NL.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_weight/locale/ru_RU.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_weight/locale/sl_SI.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_weight/sale.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_weight/sale.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/carrier_weight/stock.py

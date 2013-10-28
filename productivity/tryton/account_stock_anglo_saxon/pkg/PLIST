@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/05/19 10:49:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/10/28 07:29:01 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/__init__.pyc
@@ -16,6 +16,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_sax
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/locale/fr_FR.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/locale/nl_NL.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/locale/ru_RU.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/locale/sl_SI.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/product.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/product.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/product.xml
@@ -25,6 +26,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_sax
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/tests/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/tests/scenario_account_stock_anglo_saxon.rst
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/tests/scenario_account_stock_anglo_saxon_with_drop_shipment.rst
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/tests/test_account_stock_anglo_saxon.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/tests/test_account_stock_anglo_saxon.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/tryton.cfg

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/05/19 10:49:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/10/28 07:29:01 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/__init__.pyc
@@ -18,6 +18,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/locale/es_ES.p
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/locale/fr_FR.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/locale/nl_NL.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/locale/ru_RU.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/locale/sl_SI.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/res.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/res.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/tests/

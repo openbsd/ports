@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/05/19 10:49:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/10/28 07:29:01 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_continental/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_continental/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_continental/__init__.pyc
@@ -16,6 +16,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_continent
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_continental/locale/fr_FR.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_continental/locale/nl_NL.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_continental/locale/ru_RU.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_continental/locale/sl_SI.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_continental/product.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_continental/product.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_continental/product.xml

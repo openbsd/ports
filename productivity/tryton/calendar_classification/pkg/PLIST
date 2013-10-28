@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/10/28 10:42:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/10/28 07:29:01 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_classification/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_classification/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_classification/__init__.pyc
@@ -15,6 +15,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_classification
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_classification/locale/fr_FR.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_classification/locale/nl_NL.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_classification/locale/ru_RU.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_classification/locale/sl_SI.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_classification/tryton.cfg
 lib/python${MODPY_VERSION}/site-packages/trytond_calendar_classification-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/trytond_calendar_classification-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
