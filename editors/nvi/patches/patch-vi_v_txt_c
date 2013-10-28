@@ -1,4 +1,8 @@
-$OpenBSD: patch-vi_v_txt_c,v 1.1 2013/05/21 17:47:37 bentley Exp $
+$OpenBSD: patch-vi_v_txt_c,v 1.2 2013/10/28 08:53:52 bentley Exp $
+
+Fix incorrect wide buffer length.
+From upstream;
+https://github.com/lichray/nvi2/commit/849414e20b488de402157d415cdc8ba598b0e7f2
 
 Fix out of bounds buffer access.
 Original commit message in base nvi by millert@:
@@ -10,8 +14,18 @@ accessed at 'tp->cno' - 1.  Also remove dead (and incorrect) code
 in the TXT_ALTWERASE case.  From Arto Jonsson; OK martynas@
 
 --- vi/v_txt.c.orig	Sun Oct  7 08:15:31 2012
-+++ vi/v_txt.c	Sun May 19 17:37:48 2013
-@@ -1106,12 +1106,12 @@ leftmargin:		tp->lb[tp->cno - 1] = ' ';
++++ vi/v_txt.c	Sat Oct 26 00:31:49 2013
+@@ -295,7 +295,8 @@ v_txt(
+ 	tiqh = sp->tiq;
+ 	if (!TAILQ_EMPTY(tiqh)) {
+ 		tp = TAILQ_FIRST(tiqh);
+-		if (TAILQ_NEXT(tp, q) != NULL || tp->lb_len < len + 32) {
++		if (TAILQ_NEXT(tp, q) != NULL ||
++		    tp->lb_len < (len + 32) * sizeof(CHAR_T)) {
+ 			text_lfree(tiqh);
+ 			goto newtp;
+ 		}
+@@ -1106,12 +1107,12 @@ leftmargin:		tp->lb[tp->cno - 1] = ' ';
  		 */
  		if (LF_ISSET(TXT_TTYWERASE))
  			while (tp->cno > max) {
@@ -26,7 +40,7 @@ in the TXT_ALTWERASE case.  From Arto Jonsson; OK martynas@
  			}
  		else {
  			if (LF_ISSET(TXT_ALTWERASE)) {
-@@ -1119,19 +1119,17 @@ leftmargin:		tp->lb[tp->cno - 1] = ' ';
+@@ -1119,19 +1120,17 @@ leftmargin:		tp->lb[tp->cno - 1] = ' ';
  				++tp->owrite;
  				if (FL_ISSET(is_flags, IS_RUNNING))
  					tp->lb[tp->cno] = ' ';
