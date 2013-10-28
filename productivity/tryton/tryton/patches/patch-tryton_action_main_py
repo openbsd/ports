@@ -1,0 +1,17 @@
+$OpenBSD: patch-tryton_action_main_py,v 1.1 2013/10/28 08:17:52 ajacoutot Exp $
+
+Sanitize the file extension received from the server.
+https://bugs.tryton.org/issue3446
+
+--- tryton/action/main.py.orig	Mon Oct 28 09:15:23 2013
++++ tryton/action/main.py	Mon Oct 28 09:15:45 2013
+@@ -42,7 +42,8 @@ class Action(object):
+         dtemp = tempfile.mkdtemp(prefix='tryton_')
+         fp_name = os.path.join(dtemp,
+             name.replace(os.sep, '_').replace(os.altsep or os.sep, '_')
+-            + os.extsep + type)
++            + os.extsep
++            + type.replace(os.sep, '_').replace(os.altsep or os.sep, '_'))
+         with open(fp_name, 'wb') as file_d:
+             file_d.write(data)
+         if email_print:
