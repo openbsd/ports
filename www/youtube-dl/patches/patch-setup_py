@@ -1,9 +1,9 @@
-$OpenBSD: patch-setup_py,v 1.3 2013/07/10 10:57:23 pirofti Exp $
---- setup.py.orig	Tue Jul  2 08:36:14 2013
-+++ setup.py	Sun Jul  7 12:49:07 2013
-@@ -45,9 +45,8 @@ else:
+$OpenBSD: patch-setup_py,v 1.4 2013/10/28 15:30:08 dcoppa Exp $
+--- setup.py.orig	Mon Oct 28 10:44:13 2013
++++ setup.py	Mon Oct 28 16:26:11 2013
+@@ -45,9 +45,8 @@ if len(sys.argv) >= 2 and sys.argv[1] == 'py2exe':
+ else:
      params = {
-         'scripts': ['bin/youtube-dl'],
          'data_files': [  # Installing system-wide would require sudo...
 -            ('etc/bash_completion.d', ['youtube-dl.bash-completion']),
              ('share/doc/youtube_dl', ['README.txt']),
@@ -11,4 +11,4 @@ $OpenBSD: patch-setup_py,v 1.3 2013/07/10 10:57:23 pirofti Exp $
 +            ('man/man1/', ['youtube-dl.1'])
          ]
      }
- 
+     if setuptools_available:

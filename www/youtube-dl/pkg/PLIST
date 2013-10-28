@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.11 2013/10/21 16:19:38 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.12 2013/10/28 15:30:08 dcoppa Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/FileDownloader.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/FileDownloader.pyc
@@ -141,6 +142,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/kankan.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/kankan.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/keek.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/keek.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/keezmovies.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/keezmovies.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/kickstarter.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/kickstarter.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/liveleak.py
@@ -183,6 +186,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/pbs.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/pbs.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/photobucket.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/photobucket.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/pornhub.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/pornhub.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/pornotube.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/pornotube.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rbmaradio.py
@@ -213,6 +218,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/soundcloud.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/soundcloud.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/southparkstudios.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/southparkstudios.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/spankwire.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/spankwire.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/spiegel.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/spiegel.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/stanfordoc.py
@@ -239,6 +246,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/traileraddict.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/traileraddict.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/trilulilu.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/trilulilu.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tube8.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tube8.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tudou.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tudou.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tumblr.py
