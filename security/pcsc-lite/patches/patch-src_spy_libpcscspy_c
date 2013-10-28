@@ -1,10 +1,6 @@
-$OpenBSD: patch-src_spy_libpcscspy_c,v 1.2 2013/02/04 09:25:20 dcoppa Exp $
-
-Explicitly ignore the result of write(2): even if write(2) fails,
-the show must go on (upstream svn revision 6511)
-
---- src/spy/libpcscspy.c.orig	Sun Aug  5 10:37:37 2012
-+++ src/spy/libpcscspy.c	Mon Feb  4 09:53:46 2013
+$OpenBSD: patch-src_spy_libpcscspy_c,v 1.3 2013/10/28 15:10:25 dcoppa Exp $
+--- src/spy/libpcscspy.c.orig	Mon Oct 28 15:54:51 2013
++++ src/spy/libpcscspy.c	Mon Oct 28 15:56:33 2013
 @@ -28,6 +28,7 @@
  #include <unistd.h>
  #include <sys/time.h>
@@ -13,35 +9,21 @@ the show must go on (upstream svn revision 6511)
  
  #include "misc.h"
  #include <winscard.h>
-@@ -168,11 +169,11 @@ static void spy_line_direct(char *line)
+@@ -169,7 +170,7 @@ static void spy_line_direct(char *line)
  	if (Log_fd < 0)
  		return;
  
 -	snprintf(threadid, sizeof threadid, "%lX@", pthread_self());
 +	snprintf(threadid, sizeof threadid, "%" PRIXPTR "@", (uintptr_t)pthread_self());
  	pthread_mutex_lock(&Log_fd_mutex);
--	write(Log_fd, threadid, strlen(threadid));
--	write(Log_fd, line, strlen(line));
--	write(Log_fd, "\n", 1);
-+	(void)write(Log_fd, threadid, strlen(threadid));
-+	(void)write(Log_fd, line, strlen(line));
-+	(void)write(Log_fd, "\n", 1);
- 	pthread_mutex_unlock(&Log_fd_mutex);
- }
- 
-@@ -195,11 +196,11 @@ static void spy_line(const char *fmt, ...)
+ 	r = write(Log_fd, threadid, strlen(threadid));
+ 	r = write(Log_fd, line, strlen(line));
+@@ -198,7 +199,7 @@ static void spy_line(const char *fmt, ...)
  		printf("libpcsc-spy: Buffer is too small!\n");
  		return;
  	}
 -	snprintf(threadid, sizeof threadid, "%lX@", pthread_self());
 +	snprintf(threadid, sizeof threadid, "%" PRIXPTR "@", (uintptr_t)pthread_self());
  	pthread_mutex_lock(&Log_fd_mutex);
--	write(Log_fd, threadid, strlen(threadid));
--	write(Log_fd, line, size);
--	write(Log_fd, "\n", 1);
-+	(void)write(Log_fd, threadid, strlen(threadid));
-+	(void)write(Log_fd, line, size);
-+	(void)write(Log_fd, "\n", 1);
- 	pthread_mutex_unlock(&Log_fd_mutex);
- }
- 
+ 	r = write(Log_fd, threadid, strlen(threadid));
+ 	r = write(Log_fd, line, size);
