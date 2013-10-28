@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.17 2013/10/28 08:07:27 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.18 2013/10/28 08:58:02 ajacoutot Exp $
 
 REVISION ?=		0
 
@@ -35,6 +35,6 @@ DISTNAME ?=		trytond_${TRYTOND_MODULE}-${MODPY_EGG_VERSION}
 PKGNAME ?=		trytond-module-${TRYTOND_MODULE}-${MODPY_EGG_VERSION}
 DESCR ?=		${.CURDIR}/../DESCR-module
 RUN_DEPENDS +=		productivity/tryton/trytond
-#TEST_DEPENDS +=		productivity/tryton/proteus
+TEST_DEPENDS +=		productivity/tryton/proteus
 SUBST_VARS +=		^TRYTOND_MODULE
 .endif
