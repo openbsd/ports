@@ -1,6 +1,6 @@
-$OpenBSD: patch-etc_trytond_conf,v 1.3 2012/05/02 06:57:01 ajacoutot Exp $
---- etc/trytond.conf.orig	Tue Apr 24 12:02:15 2012
-+++ etc/trytond.conf	Wed May  2 08:01:56 2012
+$OpenBSD: patch-etc_trytond_conf,v 1.4 2013/10/28 07:27:38 ajacoutot Exp $
+--- etc/trytond.conf.orig	Sun Oct 20 01:52:51 2013
++++ etc/trytond.conf	Mon Oct 28 08:04:30 2013
 @@ -1,5 +1,3 @@
 -#This file is part of Tryton.  The COPYRIGHT file at the top level of
 -#this repository contains the full copyright notices and license terms.
@@ -38,7 +38,7 @@ $OpenBSD: patch-etc_trytond_conf,v 1.3 2012/05/02 06:57:01 ajacoutot Exp $
  #db_minconn = 1
  #db_maxconn = 64
  
-@@ -42,25 +40,26 @@ jsonrpc = localhost:8000
+@@ -42,11 +40,12 @@ jsonrpc = localhost:8000
  #pg_path = None
  
  # Configure the Tryton server password
@@ -52,20 +52,12 @@ $OpenBSD: patch-etc_trytond_conf,v 1.3 2012/05/02 06:57:01 ajacoutot Exp $
  
  #privatekey = server.pem
  #certificate = server.pem
- 
- # Configure the SMTP connection
--#smtp_server = localhost
--#smtp_port = 25
-+smtp_server = localhost
-+smtp_port = 25
- #smtp_ssl = False
- #smtp_tls = False
- #smtp_password = False
- #smtp_user = False
+@@ -61,7 +60,7 @@ jsonrpc = localhost:8000
+ #smtp_default_from_email = False
  
  # Configure the path to store attachments and sqlite database
 -#data_path = /var/lib/trytond
-+data_path = /var/db/trytond
++#data_path = /var/db/trytond
  
  # Allow to run more than one instance of trytond
  #multi_server = False
