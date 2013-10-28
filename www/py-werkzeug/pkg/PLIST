@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/05/02 20:08:15 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/10/28 19:56:51 fgsch Exp $
 lib/python${MODPY_VERSION}/site-packages/Werkzeug-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Werkzeug-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Werkzeug-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -8,6 +8,8 @@ lib/python${MODPY_VERSION}/site-packages/Werkzeug-${MODPY_EGG_VERSION}-py${MODPY
 lib/python${MODPY_VERSION}/site-packages/werkzeug/
 lib/python${MODPY_VERSION}/site-packages/werkzeug/__init__.py
 lib/python${MODPY_VERSION}/site-packages/werkzeug/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/werkzeug/_compat.py
+lib/python${MODPY_VERSION}/site-packages/werkzeug/_compat.pyc
 lib/python${MODPY_VERSION}/site-packages/werkzeug/_internal.py
 lib/python${MODPY_VERSION}/site-packages/werkzeug/_internal.pyc
 lib/python${MODPY_VERSION}/site-packages/werkzeug/contrib/
@@ -23,8 +25,6 @@ lib/python${MODPY_VERSION}/site-packages/werkzeug/contrib/iterio.py
 lib/python${MODPY_VERSION}/site-packages/werkzeug/contrib/iterio.pyc
 lib/python${MODPY_VERSION}/site-packages/werkzeug/contrib/jsrouting.py
 lib/python${MODPY_VERSION}/site-packages/werkzeug/contrib/jsrouting.pyc
-lib/python${MODPY_VERSION}/site-packages/werkzeug/contrib/kickstart.py
-lib/python${MODPY_VERSION}/site-packages/werkzeug/contrib/kickstart.pyc
 lib/python${MODPY_VERSION}/site-packages/werkzeug/contrib/limiter.py
 lib/python${MODPY_VERSION}/site-packages/werkzeug/contrib/limiter.pyc
 lib/python${MODPY_VERSION}/site-packages/werkzeug/contrib/lint.py
@@ -78,8 +78,6 @@ lib/python${MODPY_VERSION}/site-packages/werkzeug/security.py
 lib/python${MODPY_VERSION}/site-packages/werkzeug/security.pyc
 lib/python${MODPY_VERSION}/site-packages/werkzeug/serving.py
 lib/python${MODPY_VERSION}/site-packages/werkzeug/serving.pyc
-lib/python${MODPY_VERSION}/site-packages/werkzeug/templates.py
-lib/python${MODPY_VERSION}/site-packages/werkzeug/templates.pyc
 lib/python${MODPY_VERSION}/site-packages/werkzeug/test.py
 lib/python${MODPY_VERSION}/site-packages/werkzeug/test.pyc
 lib/python${MODPY_VERSION}/site-packages/werkzeug/testapp.py
@@ -243,14 +241,13 @@ share/doc/${MODPY_PY_PREFIX}werkzeug/local.html
 share/doc/${MODPY_PY_PREFIX}werkzeug/middlewares.html
 share/doc/${MODPY_PY_PREFIX}werkzeug/objects.inv
 share/doc/${MODPY_PY_PREFIX}werkzeug/py-modindex.html
+share/doc/${MODPY_PY_PREFIX}werkzeug/python3.html
 share/doc/${MODPY_PY_PREFIX}werkzeug/quickstart.html
 share/doc/${MODPY_PY_PREFIX}werkzeug/request_data.html
 share/doc/${MODPY_PY_PREFIX}werkzeug/routing.html
-share/doc/${MODPY_PY_PREFIX}werkzeug/script.html
 share/doc/${MODPY_PY_PREFIX}werkzeug/search.html
 share/doc/${MODPY_PY_PREFIX}werkzeug/searchindex.js
 share/doc/${MODPY_PY_PREFIX}werkzeug/serving.html
-share/doc/${MODPY_PY_PREFIX}werkzeug/templates.html
 share/doc/${MODPY_PY_PREFIX}werkzeug/terms.html
 share/doc/${MODPY_PY_PREFIX}werkzeug/test.html
 share/doc/${MODPY_PY_PREFIX}werkzeug/transition.html
