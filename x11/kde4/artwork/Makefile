@@ -1,20 +1,24 @@
-# $OpenBSD: Makefile,v 1.16 2013/10/28 00:28:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.17 2013/10/28 12:16:22 zhuk Exp $
 
 COMMENT-main =		KDE graphics, styles and screensavers
+COMMENT-emoticons =	KDE emoticons
 COMMENT-mono =		one-colour KDE icon theme
 COMMENT-nuvola =	KDE icon theme
 DISTNAME =		kdeartwork-${MODKDE4_VERSION}
 PKGNAME-main =		${DISTNAME}
+PKGNAME-emoticons =	kde-emoticons-${MODKDE4_VERSION}
 PKGNAME-mono =		mono-icon-theme-${MODKDE4_VERSION}
 PKGNAME-nuvola =	nuvola-icon-theme-${MODKDE4_VERSION}
+PKG_ARCH-emoticons =	*
 PKG_ARCH-mono =		*
 PKG_ARCH-nuvola =	*
-REVISION-main =		1
+REVISION-main =		2
 REVISION-mono =		0
 REVISION-nuvola =	0
 
 MODKDE4_USE =		workspace
 
+WANTLIB-emoticons =
 WANTLIB-mono =
 WANTLIB-nuvola =
 WANTLIB-main =  ${WANTLIB} c m pthread stdc++
@@ -26,15 +30,17 @@ WANTLIB-main += ${KDE4LIB}/kio ${KDE4LIB}/kparts ${KDE4LIB}/kscreensaver
 WANTLIB-main += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
 WANTLIB-main += soprano
 
-MULTI_PACKAGES =	-main -mono -nuvola
+MULTI_PACKAGES =	-main -mono -nuvola -emoticons
 
 BUILD_DEPENDS =		math/eigen2 \
 			x11/xscreensaver
 
+RUN_DEPENDS-emoticons =
 RUN_DEPENDS-mono =	x11/gtk+2,-guic
 RUN_DEPENDS-nuvola =	x11/gtk+2,-guic
 RUN_DEPENDS-main =	x11/xscreensaver
 
+LIB_DEPENDS-emoticons =
 LIB_DEPENDS-mono =
 LIB_DEPENDS-nuvola =
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
