@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/09/01 09:29:45 pascal Exp $
+# $OpenBSD: Makefile,v 1.28 2013/10/28 18:11:06 landry Exp $
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
@@ -23,6 +23,7 @@ WANTLIB = c expat kvm m ncurses pthread ${MODPY_WANTLIB} util z
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--program-transform-name=s,^,e, \
 		--disable-nls \
+		--without-lzma \
 	 	--enable-target=all \
 		--with-python=${MODPY_BIN}
 
