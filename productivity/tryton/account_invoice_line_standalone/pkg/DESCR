@@ -1,5 +1,0 @@
-This is the "account_invoice_line_standalone" module for the Tryton
-application platform.
-It allow sto create standalone invoice lines and add them later to a
-draft invoice. The invoice will only accept invoice lines with the same
-type, company, currency and party.

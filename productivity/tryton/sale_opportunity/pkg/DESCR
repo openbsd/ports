@@ -1,7 +1,0 @@
-This is the "sale_opportunity" module for the Tryton application
-platform.
-It provides:
-    - Leads
-    - Leads to Opportunities conversion
-    - Record of lost leads
-    - Opportunities to sale orders

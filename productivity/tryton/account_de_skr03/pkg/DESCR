@@ -1,7 +1,0 @@
-This is the "account_de_skr03" module for the Tryton application
-platform.
-It provides a financial and accounting module for Germany with:
-    - chart of accounts SKR03
-    - account structure like balance and income statement
-    - taxes, tax groups, tax rules
-    - tax codes for german tax report (UStVA)

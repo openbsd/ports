@@ -1,6 +1,0 @@
-This is the "product_cost_fifo" module for the Tryton application
-platform.
-It adds FIFO cost method on the product form.
-Once installed, the price of the stock moves from a supplier or to a
-customer will update automatically the cost price of the related
-product (if the cost price method is FIFO).

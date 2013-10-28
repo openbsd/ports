@@ -1,4 +1,0 @@
-This is the "account_product" module of the Tryton application platform.
-It adds accounting properties on product and category like:
-    - account for expense / revenue
-    - taxes for customer / supplier

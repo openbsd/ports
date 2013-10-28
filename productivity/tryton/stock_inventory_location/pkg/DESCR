@@ -1,4 +1,0 @@
-This is the "stock_inventory_location" module of the Tryton application
-platform.
-It adds a wizard that allows to create inventories automatically for a
-given list of locations.

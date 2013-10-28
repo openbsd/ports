@@ -1,5 +1,0 @@
-This is the "product_cost_history" module for the Tryton application
-platform.
-It adds historize to the product cost.
-This module adds a button on the product form which opens the list of
-all the past values of the cost price for the current product.

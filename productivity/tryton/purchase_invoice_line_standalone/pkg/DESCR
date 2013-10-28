@@ -1,5 +1,0 @@
-This is the "account_purchase_line_standalone" module of the Tryton
-application platform.
-It changes the purchase order behaviour to create standalone invoice
-lines instead of a complete invoice. This allows to compose invoices
-with lines originating from differents purchases.

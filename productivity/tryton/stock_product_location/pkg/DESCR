@@ -1,5 +1,0 @@
-This is the "stock_product_location" module for the Tryton application
-platform.
-It defines default storage location by warehouse on product. Theses
-locations will be used by the supplier shipment for generating inventory
-moves.

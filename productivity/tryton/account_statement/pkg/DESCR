@@ -1,5 +1,0 @@
-This is the "account_statement" module for the Tryton application
-platform.
-It provides financial and accounting modules with:
-    - Statement
-    - Statement journal

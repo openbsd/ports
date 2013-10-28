@@ -1,8 +1,0 @@
-This is the "stock_forecast" module for the Tryton application platform.
-It provides the "Forecast" model in Inventory Management.
-The Forecast form allow to define the expected stock movement towards
-customers in any period of time in the future. A wizard allows to
-compute the expected quantities with respect to a period in the past.
-Once the form is confirmed, the corresponding moves are created and
-spreaded homogeneously across the period. Those moves will allow other
-processes to take forecasts into account.

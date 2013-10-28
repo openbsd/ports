@@ -1,5 +1,0 @@
-This is the "timesheet" module for the Tryton application platform.
-It adds timesheets for work and line and the following reports:
-    - hours per work
-    - hours per employee per week
-    - hours per employee per month

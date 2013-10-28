@@ -1,7 +1,0 @@
-This is the "company" module for the Tryton application platform.
-It defines company and employee.
-Adds main and current company on users preferences:
-    - adds company on properties
-    - defines new report parser for report with company header
-    - adds letter template on party
-    - makes the scheduler run on each companies

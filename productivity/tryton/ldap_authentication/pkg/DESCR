@@ -1,3 +1,0 @@
-This is the "ldap_authentication" module for the Tryton application
-platform.
-It allows to authenticate users against an LDAP server.

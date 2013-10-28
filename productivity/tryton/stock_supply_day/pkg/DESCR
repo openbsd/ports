@@ -1,4 +1,0 @@
-This is the "stock_supply_day" module for the Tryton application
-platform.
-It defines the delivery days of the week by suppliers. It impacts supply
-dates computations.

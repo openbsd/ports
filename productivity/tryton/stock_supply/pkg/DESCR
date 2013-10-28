@@ -1,8 +1,0 @@
-This is the "stock_supply" module for the Tryton application platform.
-It provides the supply management module with:
-    - Order point
-    - Purchase Request
-
-With schedulers:
-    - to generate purchase requests based on order points
-    - to generate internal shipments based on order points
