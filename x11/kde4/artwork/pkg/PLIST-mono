@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-mono,v 1.1 2013/10/26 23:18:15 zhuk Exp $
-@conflict kdeartwork-<4.10.5p1
-@conflict kdeaccessibility3-<3.5.10p16
+@comment $OpenBSD: PLIST-mono,v 1.2 2013/10/28 00:28:38 zhuk Exp $
+@conflict kdeartwork->=4,<4.10.5p1
+@conflict kdeaccessibility3->=3,<3.5.10p16
 @pkgpath x11/kde/accessibility3,-mono
 @unexec-delete rm -f %D/share/icons/mono/icon-theme.cache
 share/icons/mono/
