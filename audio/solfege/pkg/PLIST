@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/07/11 18:16:06 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/10/28 15:36:03 bcallah Exp $
 bin/solfege
 @man man/man1/solfege.1
 share/applications/solfege.desktop
@@ -2492,6 +2492,8 @@ share/solfege/solfege/soundcard/oss_sequencer.py
 share/solfege/solfege/soundcard/oss_sequencer.pyc
 share/solfege/solfege/soundcard/oss_sequencer2.py
 share/solfege/solfege/soundcard/oss_sequencer2.pyc
+share/solfege/solfege/soundcard/solfege_c_midi.py
+share/solfege/solfege/soundcard/solfege_c_midi.pyc
 share/solfege/solfege/soundcard/soundcardexceptions.py
 share/solfege/solfege/soundcard/soundcardexceptions.pyc
 share/solfege/solfege/soundcard/synth_common.py

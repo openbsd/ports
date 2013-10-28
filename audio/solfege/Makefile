@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2013/09/23 18:25:04 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2013/10/28 15:36:03 bcallah Exp $
 
 COMMENT =	solfege and ear training program
-DISTNAME =	solfege-3.22.1
+DISTNAME =	solfege-3.22.2
 CATEGORIES =	audio x11
 
 HOMEPAGE =	http://www.solfege.org/
@@ -33,8 +33,6 @@ USE_GMAKE =	Yes
 
 FAKE_FLAGS =	sysconfdir=${LOCALBASE}/share/examples/solfege
 
-NO_TEST =	Yes
-
 post-patch:
 	perl -pi -e "s,cp,${LOCALBASE}/bin/gcp,g" ${WRKSRC}/Makefile.in
 
@@ -42,5 +40,8 @@ pre-configure:
 	cd ${WRKSRC} && ${SUBST_CMD} default.config run-solfege.py.in system.rc && \
 		perl -pi -e "s,/bin/bash,/bin/sh,g" \
 		${WRKSRC}/exercises/standard/lesson-files/bin/csound-play-harmonic-interval.sh
+
+do-test:
+	cd ${WRKSRC} && ${MODPY_BIN} ./test.py
 
 .include <bsd.port.mk>
