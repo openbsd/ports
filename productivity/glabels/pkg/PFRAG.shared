@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2011/05/17 17:05:38 ajacoutot Exp $
-@lib lib/libglabels-3.0.so.${LIBglabels-3.0_VERSION}
-@lib lib/libglbarcode-3.0.so.${LIBglbarcode-3.0_VERSION}
