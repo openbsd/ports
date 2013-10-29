@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/06/02 19:09:09 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/10/29 16:30:16 naddy Exp $
 cgi-bin/cvsweb
 conf/cvsweb/
 conf/cvsweb/cvsweb.conf-freebsd.dist
@@ -7,13 +7,13 @@ conf/cvsweb/cvsweb.conf-openbsd.dist
 conf/cvsweb/cvsweb.conf-ruby.dist
 conf/cvsweb/cvsweb.conf.dist
 @sample ${CONFDIR}/cvsweb/cvsweb.conf
-htdocs/icons/
-htdocs/icons/cvsweb/
-htdocs/icons/cvsweb/back.gif
-htdocs/icons/cvsweb/dir.gif
-htdocs/icons/cvsweb/miniback.gif
-htdocs/icons/cvsweb/minidir.gif
-htdocs/icons/cvsweb/minitext.gif
-htdocs/icons/cvsweb/text.gif
+htdocs/cvsweb/
+htdocs/cvsweb/icons/
+htdocs/cvsweb/icons/back.gif
+htdocs/cvsweb/icons/dir.gif
+htdocs/cvsweb/icons/miniback.gif
+htdocs/cvsweb/icons/minidir.gif
+htdocs/cvsweb/icons/minitext.gif
+htdocs/cvsweb/icons/text.gif
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
 ${FULLPKGNAME}
