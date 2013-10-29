@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2013/10/29 07:42:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2013/10/29 09:27:50 ajacoutot Exp $
 
 COMMENT =	labels and business card designer
 
 GNOME_PROJECT =	glabels
 GNOME_VERSION =	3.2.0
+REVISION =	0
 
 CATEGORIES =	productivity graphics
 
@@ -24,10 +25,11 @@ WANTLIB += edata-book-1.2 edataserver-1.2 expat ffi fontconfig
 WANTLIB += freetype gck-1 gcr-base-3 gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
 WANTLIB += graphite2 gssapi gthread-2.0 gtk-3 harfbuzz heimbase
-WANTLIB += krb5 m nspr4 nss3 nssutil3 p11-kit pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread pthread-stubs
-WANTLIB += qrencode roken rsvg-2 secret-1 smime3 softokn3 soup-2.4
-WANTLIB += sqlite3 ssl3 wind xcb xcb-render xcb-shm xml2 z zint
+WANTLIB += iec16022 krb5 m nspr4 nss3 nssutil3 p11-kit pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
+WANTLIB += png popt pthread pthread-stubs qrencode roken rsvg-2
+WANTLIB += secret-1 smime3 softokn3 soup-2.4 sqlite3 ssl3 wind
+WANTLIB += xcb xcb-render xcb-shm xml2 z zint
 
 MODULES =	devel/gettext \
 		x11/gnome \
@@ -36,6 +38,7 @@ MODULES =	devel/gettext \
 BUILD_DEPENDS =	graphics/barcode
 
 LIB_DEPENDS =	databases/evolution-data-server \
+		graphics/iec16022 \
 		graphics/libqrencode \
 		graphics/zint \
 		x11/gnome/librsvg \
