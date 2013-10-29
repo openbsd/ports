@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.357 2013/10/29 00:02:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.358 2013/10/29 09:27:15 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -95,6 +95,7 @@
      SUBDIR += hs-OpenGLRaw
      SUBDIR += hs-cairo
      SUBDIR += hugin
+     SUBDIR += iec16022
      SUBDIR += ilmbase
      SUBDIR += imlib
      SUBDIR += imlib2
