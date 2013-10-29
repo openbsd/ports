@@ -33,10 +33,12 @@ plugin_init (GstPlugin * plugin)
 {
   GST_DEBUG_CATEGORY_INIT (gst_sndio_debug, "sndio", 0, "sndio plugins");
 
-  if (!gst_element_register (plugin, "sndiosrc", GST_RANK_PRIMARY,
+  /* prefer sndiosrc over pulsesrc (GST_RANK_PRIMARY + 10) */
+  if (!gst_element_register (plugin, "sndiosrc", GST_RANK_PRIMARY + 20,
           gst_sndiosrc_get_type()))
     return FALSE;
-  if (!gst_element_register (plugin, "sndiosink", GST_RANK_PRIMARY,
+  /* prefer sndiosink over pulsesink (GST_RANK_PRIMARY + 10) */
+  if (!gst_element_register (plugin, "sndiosink", GST_RANK_PRIMARY + 20,
           gst_sndiosink_get_type()))
     return FALSE;
   return TRUE;
@@ -198,7 +200,7 @@ gst_sndio_open (struct gstsndio *sio, gint mode)
 
   gst_caps_append_structure (caps, s);
   sio->cur_caps = caps;
-  fprintf(stderr, "caps are %s\n", gst_caps_to_string(caps));
+  GST_DEBUG ("caps are %s", gst_caps_to_string(caps));
   return TRUE;
 }
 
@@ -302,11 +304,11 @@ gst_sndio_prepare (struct gstsndio *sio, GstAudioRingBufferSpec *spec)
       return FALSE;
   }
 #if 0
-  fprintf(stderr, "format = %s, "
+  GST_DEBUG ("format = %s, "
          "requested: sig = %d, bits = %d, bps = %d, le = %d, msb = %d, "
 	 "rate = %d, pchan = %d, round = %d, appbufsz = %d; "
 	 "returned: sig = %d, bits = %d, bps = %d, le = %d, msb = %d, "
-	 "rate = %d, pchan = %d, round = %d, appbufsz = %d, bufsz = %d\n",
+	 "rate = %d, pchan = %d, round = %d, appbufsz = %d, bufsz = %d",
 	 GST_AUDIO_INFO_NAME(&spec->info),
 	 par.sig, par.bits, par.bps, par.le, par.msb,
 	 par.rate, par.pchan, par.round, par.appbufsz,
