@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makerules,v 1.7 2013/03/21 01:26:03 sthen Exp $
---- Makerules.orig	Wed Feb 13 14:25:07 2013
-+++ Makerules	Thu Mar 21 01:01:34 2013
-@@ -5,6 +5,7 @@ OS := $(OS:MINGW%=MINGW)
+$OpenBSD: patch-Makerules,v 1.8 2013/10/29 22:08:59 sthen Exp $
+--- Makerules.orig	Wed Aug 14 13:41:20 2013
++++ Makerules	Tue Oct 29 21:29:54 2013
+@@ -6,6 +6,7 @@ OS := $(OS:Windows_NT=MINGW)
  
  CFLAGS += -Wall
  
@@ -9,25 +9,30 @@ $OpenBSD: patch-Makerules,v 1.7 2013/03/21 01:26:03 sthen Exp $
  ifeq "$(build)" "debug"
  CFLAGS += -pipe -g -DDEBUG
  else ifeq "$(build)" "profile"
-@@ -22,6 +23,7 @@ CFLAGS += -pipe -g -DMEMENTO -DDEBUG
+@@ -23,6 +24,7 @@ CFLAGS += -pipe -g -DMEMENTO -DDEBUG
  else
  $(error unknown build setting: '$(build)')
  endif
 +endif
  
- ifeq "$(OS)" "Linux"
- SYS_FREETYPE_INC := `pkg-config --cflags freetype2`
-@@ -39,6 +41,13 @@ ifeq "$(OS)" "SunOS"
- SYS_FREETYPE_INC := `pkg-config --cflags freetype2`
- LDFLAGS += -L/usr/local/lib
- X11_LIBS := -lX11 -lXext
-+endif
-+
-+ifeq "$(OS)" "OpenBSD"
-+SYS_FREETYPE_INC := `pkg-config --cflags freetype2`
-+CFLAGS += -I${LOCALBASE}/include
-+LDFLAGS += `pkg-config --libs freetype2` -L${LOCALBASE}/lib
-+X11_LIBS = -lX11 -lXext
+ # Windows (MINGW) build doesn't use system libraries.
+ ifeq "$(OS)" "MINGW"
+@@ -55,15 +57,15 @@ SYS_OPENSSL_CFLAGS = -DHAVE_OPENSSL $(shell pkg-config
+ SYS_OPENSSL_LIBS = $(shell pkg-config --libs libcrypto)
  endif
  
- # Mac OS X build depends on some thirdparty libs
+-SYS_CURL_DEPS = -lpthread -lrt
++SYS_CURL_DEPS = $(shell pkg-config --libs libcurl)
+ 
+ SYS_X11_CFLAGS = $(shell pkg-config --cflags x11 xext)
+ SYS_X11_LIBS = $(shell pkg-config --libs x11 xext)
+ 
+ SYS_FREETYPE_CFLAGS = $(shell pkg-config --cflags freetype2)
+ SYS_FREETYPE_LIBS = $(shell pkg-config --libs freetype2)
+-SYS_OPENJPEG_CFLAGS = $(shell pkg-config --cflags libopenjpeg1)
+-SYS_OPENJPEG_LIBS = $(shell pkg-config --libs libopenjpeg1)
++SYS_OPENJPEG_CFLAGS = -I${LOCALBASE}/include/openjp2 -I${LOCALBASE}/include
++SYS_OPENJPEG_LIBS = -L${LOCALBASE}/lib -lopenjp2
+ SYS_JBIG2DEC_LIBS = -ljbig2dec
+ SYS_JPEG_LIBS = -ljpeg
+ SYS_ZLIB_LIBS = -lz

@@ -13,7 +13,7 @@ We don't support interactive features such as form filling, javascript
 and transitions. MuPDF is written modularly, so such features can be
 added on by integrators if they so desire.
 
-The mubusy command line tool supports multiple arguments, including
+The mutool command line tool supports multiple arguments, including
 "show" to print and examine objects in a PDF file, "clean" to decompress
 and pretty-print the streams and objects in PDF files and also to
 extract individual pages, "info" to display information about objects,
