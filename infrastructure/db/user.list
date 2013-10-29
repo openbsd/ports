@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.217 2013/10/10 08:40:34 ajacoutot Exp $
+$OpenBSD: user.list,v 1.218 2013/10/29 06:12:13 sebastia Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -233,3 +233,4 @@ id  user		group		port options
 722 _salt-master	_salt		sysutils/salt
 723 _barman		_barman		databases/barman
 724 _gnome-initial-setup _gnome-initial-setup	x11/gnome/initial-setup
+725 _opengroupware	_opengroupware	www/opengroupware
