@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//GNUstep//DTD plist 0.9//EN" "http://www.gnustep.org/plist-0_9.xml">
+<plist version="0.9">
+<dict>
+    <key>EnableSSSortingForStringAttributes</key>
+    <string>YES</string>
+    <key>EnableSieveFilter</key>
+    <string>YES</string>
+    <key>LDAPInitialBindSpecific</key>
+    <string>YES</string>
+    <key>LDAPLoginAttributeName</key>
+    <string>uid</string>
+    <key>LSAttachmentPath</key>
+    <string>/var/opengroupware/documents</string>
+    <key>LSAuthLDAPServer</key>
+    <string>127.0.0.1</string>
+    <key>LSAuthLDAPServerPort</key>
+    <string>389</string>
+    <key>LSAuthLDAPServerRoot</key>
+    <string>ou=People,dc=my-domain.de</string>
+    <key>LSConnectionDictionary</key>
+    <dict>
+	<key>databaseName</key>
+	<string>opengroupware</string>
+	<key>hostName</key>
+	<string>127.0.0.1</string>
+	<key>password</key>
+	<string></string>
+	<key>port</key>
+	<string>5432</string>
+	<key>userName</key>
+	<string>_opengroupware</string>
+    </dict>
+    <key>LSNewsImagesPath</key>
+    <string>/var/www/htdocs/NewsImages</string>
+    <key>LSNewsImagesUrl</key>
+    <string>/NewsImages</string>
+    <key>NGUseUTF8AsURLEncoding</key>
+    <string>YES</string>
+    <key>UseSkyrixLoginForImap</key>
+    <string>YES</string>
+    <key>WOMessageUseUTF8</key>
+    <string>YES</string>
+    <key>WOParsersUseUTF8</key>
+    <string>YES</string>
+    <key>imap_host</key>
+    <string>127.0.0.1</string>
+    <key>tar</key>
+    <string>${TRUEPREFIX}/bin/gtar</string>
+    <key>unzip</key>
+    <string>${TRUEPREFIX}/bin/unzip</string>
+    <key>zip</key>
+    <string>${TRUEPREFIX}/bin/zip</string>
+    <key>zipinfo</key>
+    <string>${TRUEPREFIX}/bin/zipinfo</string>
+</dict>
+</plist>

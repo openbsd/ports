@@ -1,0 +1,4 @@
+OpenGroupware is a full-featured groupware system developed in
+Objective-C on SOPE using a WebObject paradigm.  Besides the standard
+groupware features as webmail, contacts, appointment and task
+management, it also provides a project and document management facility.

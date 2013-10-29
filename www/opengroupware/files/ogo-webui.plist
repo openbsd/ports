@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//GNUstep//DTD plist 0.9//EN" "http://www.gnustep.org/plist-0_9.xml">
+<plist version="0.9">
+<dict>
+    <key>WOLogFile</key>
+    <string>/var/log/opengroupware/ogo-webui.log</string>
+    <key>WOPidFile</key>
+    <string>/var/opengroupware/ogo-webui.pid</string>
+    <key>WOPort</key>
+    <string>20000</string>
+</dict>
+</plist>

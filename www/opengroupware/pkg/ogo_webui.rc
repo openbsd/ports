@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $OpenBSD: ogo_webui.rc,v 1.1.1.1 2013/10/29 06:16:26 sebastia Exp $
+
+daemon="${TRUEPREFIX}/sbin/ogo-webui"
+daemon_user="_opengroupware"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1

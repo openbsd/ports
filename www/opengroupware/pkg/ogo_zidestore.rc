@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $OpenBSD: ogo_zidestore.rc,v 1.1.1.1 2013/10/29 06:16:37 sebastia Exp $
+
+daemon="${TRUEPREFIX}/sbin/ogo-zidestore"
+daemon_user="_opengroupware"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1

@@ -1,0 +1,9 @@
+To completely deinstall the opengroupware package you
+need to perform these steps as root:
+
+	rm -f /var/www/conf/modules/owncloud.conf
+        and edit /var/www/conf/httpd.conf
+        remove the line: LoadModule ngobjweb_module
+
+Do not do this if you plan on re-installing the opengroupware
+package at some future time.

@@ -1,0 +1,66 @@
+# $OpenBSD: README,v 1.1.1.1 2013/10/29 06:16:37 sebastia Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+The OpenGroupware system user
+=============================
+
+The system user and group intended to run the OpenGroupware application server
+is called _opengroupware. The users home directory is /var/opengroupware.
+
+OpenGroupware with httpd from OpenBSD base
+==========================================
+
+Since the httpd 1.3 configuration is slightly different than the Apache 2
+configuration explained in the OGo WIKI, here is an example. It's assumed
+that the httpd and OGo run on the same host. The httpd listens on port 80,
+and OGo is listening on its default port 20000.
+
+The OpenBSD httpd runs in a chroot environment, therefore you have to
+copy some files into the server's chroot environment:
+
+$ sudo mkdir -p /var/www/htdocs/OpenGroupware55.woa
+$ sudo cp -R ${TRUEPREFIX}/share/opengroupware/www \
+	/var/www/htdocs/OpenGroupware55.woa/WebServerResources
+
+OpenGroupware needs the ngobjweb Apache module loaded. Enable it
+by running:
+
+$ sudo ${TRUEPREFIX}/sbin/mod_ngobjweb-enable
+
+A sample configuration is installed as example
+$ sudo cp ${TRUEPREFIX}/share/examples/opengroupware/opengroupware.conf /var/www/conf/modules
+$ sudo /etc/rc.d/httpd restart
+
+OpenGroupware configuration example
+===================================
+
+Example configuration files for a simple setup are installed with the package.
+In order to use them, copy the files as user _opengroupware
+to the users Defaults directory:
+
+$ cp ${TRUEPREFIX}/share/examples/opengroupware/*.plist ~/GNUstep/Defaults/
+
+The example assumes you have all the services necessary to run OpenGroupware
+on the localhost. These are an LDAP server, an IMAP server, and a PostgreSQL
+database.
+
+You can edit the OpenGroupware configuration files manually with your
+favourite text editor, but doing so is discouraged. Better use the GNUstep
+defaults(1) tool. See the manual page for advice how to use it.
+
+Initializing the database
+=========================
+
+Change to the _postgresql user, and create the database:
+
+# su - _postgresql
+$ createuser _opengroupware
+$ createdb -O _opengroupware -E UTF-8 -t template0 opengroupware
+$ psql -U _opengroupware opengroupware < \
+	${TRUEPREFIX}/lib/opengroupware/commands/OGo.model/Resources/pg-build-schema.psql
+
+You may have to edit the pg_hba.conf to grant access for the
+_opengroupware user.
