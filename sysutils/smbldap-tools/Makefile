@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:41:32 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/10/29 15:16:56 landry Exp $
 
 COMMENT=	tools for managing samba ldap
 
 DISTNAME=	smbldap-tools-0.9.2a
-REVISION =	2
+REVISION =	3
 CATEGORIES=	sysutils
 EXTRACT_SUFX=	.tgz
 
-HOMEPAGE=	http://samba.idealx.org/
+HOMEPAGE=	http://gna.org/projects/smbldap-tools/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

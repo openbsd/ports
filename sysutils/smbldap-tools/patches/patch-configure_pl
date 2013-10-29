@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_pl,v 1.1.1.1 2007/01/29 08:32:50 msf Exp $
---- configure.pl.orig	Mon Jan 29 15:00:14 2007
-+++ configure.pl	Mon Jan 29 15:02:36 2007
+$OpenBSD: patch-configure_pl,v 1.2 2013/10/29 15:16:56 landry Exp $
+--- configure.pl.orig	Tue Jan  3 11:57:41 2006
++++ configure.pl	Tue Oct 29 16:14:28 2013
 @@ -49,7 +49,7 @@ Before starting, check
  print "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n";
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_pl,v 1.1.1.1 2007/01/29 08:32:50 msf Exp $
  chomp($test_smb);
  die "\nSamba need to be started first !\n" if ($test_smb eq "" || not defined $test_smb);
  
-@@ -57,8 +57,8 @@ print "Looking for configuration files..
+@@ -57,8 +57,8 @@ print "Looking for configuration files...\n\n";
  my $smb_conf="";
  if (-e "/etc/samba/smb.conf") {
    $smb_conf="/etc/samba/smb.conf";
@@ -36,6 +36,17 @@ $OpenBSD: patch-configure_pl,v 1.1.1.1 2007/01/29 08:32:50 msf Exp $
  }
  
  print "\nThe default directory in which the smbldap configuration files are stored is shown.\n";
+@@ -312,8 +312,8 @@ my $mailDomain=read_entry(". default domain name to ap
+ 
+ print "-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n";
+ my $template_smbldap="
+-# \$Source: /home/cvs/ports/sysutils/smbldap-tools/patches/patch-configure_pl,v $
+-# \$Id: patch-configure_pl,v 1.2 2013/10/29 15:16:56 landry Exp $
++# \$Source: /home/cvs/ports/sysutils/smbldap-tools/patches/patch-configure_pl,v $
++# \$Id: patch-configure_pl,v 1.2 2013/10/29 15:16:56 landry Exp $
+ #
+ # smbldap-tools.conf : Q & D configuration file for smbldap-tools
+ 
 @@ -528,12 +528,12 @@ mailDomain=\"$mailDomain\"
  # Allows not to use smbpasswd (if with_smbpasswd == 0 in smbldap_conf.pm) but
  # prefer Crypt::SmbHash library
