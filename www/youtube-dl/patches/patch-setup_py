@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.4 2013/10/28 15:30:08 dcoppa Exp $
---- setup.py.orig	Mon Oct 28 10:44:13 2013
-+++ setup.py	Mon Oct 28 16:26:11 2013
-@@ -45,9 +45,8 @@ if len(sys.argv) >= 2 and sys.argv[1] == 'py2exe':
+$OpenBSD: patch-setup_py,v 1.5 2013/10/29 09:18:43 dcoppa Exp $
+--- setup.py.orig	Mon Oct 28 23:16:28 2013
++++ setup.py	Tue Oct 29 10:15:26 2013
+@@ -46,9 +46,8 @@ if len(sys.argv) >= 2 and sys.argv[1] == 'py2exe':
  else:
      params = {
          'data_files': [  # Installing system-wide would require sudo...
