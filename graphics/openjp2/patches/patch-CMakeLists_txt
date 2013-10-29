@@ -1,0 +1,15 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2013/10/29 00:01:50 sthen Exp $
+--- CMakeLists.txt.orig	Tue Apr  2 18:03:46 2013
++++ CMakeLists.txt	Tue Apr  2 18:04:07 2013
+@@ -95,7 +95,10 @@ endif()
+ # Install directories
+ 
+ string(TOLOWER ${PROJECT_NAME} projectname)
+-set(OPENJPEG_INSTALL_SUBDIR "${projectname}-${OPENJPEG_VERSION_MAJOR}.${OPENJPEG_VERSION_MINOR}")
++
++if(NOT OPENJPEG_INSTALL_SUBDIR)
++  set(OPENJPEG_INSTALL_SUBDIR "${projectname}-${OPENJPEG_VERSION_MAJOR}.${OPENJPEG_VERSION_MINOR}")
++endif()
+ 
+ if(NOT OPENJPEG_INSTALL_BIN_DIR)
+   set(OPENJPEG_INSTALL_BIN_DIR "bin")

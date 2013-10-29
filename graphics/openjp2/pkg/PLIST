@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/29 00:01:50 sthen Exp $
+@bin bin/opj_compress
+@bin bin/opj_decompress
+@bin bin/opj_dump
+include/openjp2/
+include/openjp2/openjpeg.h
+include/openjp2/opj_config.h
+include/openjp2/opj_stdint.h
+@lib lib/libopenjp2.so.${LIBopenjp2_VERSION}
+lib/openjp2/
+lib/openjp2/OpenJPEGConfig.cmake
+lib/openjp2/OpenJPEGTargets-noconfig.cmake
+lib/openjp2/OpenJPEGTargets.cmake
+@man man/man1/opj_compress.1
+@man man/man1/opj_decompress.1
+@man man/man1/opj_dump.1
+@man man/man3/libopenjp2.3
+share/doc/openjp2/
+share/doc/openjp2/CHANGES
+share/doc/openjp2/LICENSE

@@ -1,0 +1,7 @@
+The OpenJPEG library is an open-source JPEG 2000 codec written in the C
+language. It has been developed in order to promote the use of the JPEG 2000
+still-image compression standard from the Joint Photographic Experts Group
+(JPEG).
+
+This package provides the 2.x library, it is separate from the 1.5 library
+due to major API differences.
