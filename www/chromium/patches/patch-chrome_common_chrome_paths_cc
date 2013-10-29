@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_common_chrome_paths_cc,v 1.17 2013/09/29 19:04:02 robert Exp $
---- chrome/common/chrome_paths.cc.orig.port	Wed Sep 18 10:14:02 2013
-+++ chrome/common/chrome_paths.cc	Sun Sep 22 16:09:42 2013
-@@ -412,7 +412,7 @@ bool PathProvider(int key, base::FilePath* result) {
-       if (!file_util::PathExists(cur))  // We don't want to create this
+$OpenBSD: patch-chrome_common_chrome_paths_cc,v 1.18 2013/10/29 06:51:34 robert Exp $
+--- chrome/common/chrome_paths.cc.orig.port	Fri Oct 11 19:29:57 2013
++++ chrome/common/chrome_paths.cc	Fri Oct 18 20:47:20 2013
+@@ -430,7 +430,7 @@ bool PathProvider(int key, base::FilePath* result) {
+       if (!base::PathExists(cur))  // We don't want to create this
          return false;
        break;
 -#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)

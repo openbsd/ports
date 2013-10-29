@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_WebKit_Source_web_web_gyp,v 1.1 2013/10/29 06:51:34 robert Exp $
+--- third_party/WebKit/Source/web/web.gyp.orig.port	Sat Oct 19 15:04:56 2013
++++ third_party/WebKit/Source/web/web.gyp	Sat Oct 19 15:05:07 2013
+@@ -138,7 +138,7 @@
+                       },
+                     },
+                 }],
+-                ['OS == "linux"', {
++                ['OS == "linux" or os_bsd == 1', {
+                     'dependencies': [
+                         '<(DEPTH)/build/linux/system.gyp:fontconfig',
+                     ],

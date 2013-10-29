@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_app_chrome_main_delegate_h,v 1.1 2013/10/29 06:51:34 robert Exp $
+--- chrome/app/chrome_main_delegate.h.orig.port	Sun Oct 20 20:48:19 2013
++++ chrome/app/chrome_main_delegate.h	Sun Oct 20 20:48:25 2013
+@@ -31,7 +31,7 @@ class ChromeMainDelegate : public content::ContentMain
+   virtual bool ShouldSendMachPort(const std::string& process_type) OVERRIDE;
+   virtual bool DelaySandboxInitialization(
+       const std::string& process_type) OVERRIDE;
+-#elif defined(OS_POSIX) && !defined(OS_ANDROID)
++#elif defined(OS_POSIX) && !defined(OS_ANDROID) && !defined(OS_BSD)
+   virtual content::ZygoteForkDelegate* ZygoteStarting() OVERRIDE;
+   virtual void ZygoteForked() OVERRIDE;
+ #endif

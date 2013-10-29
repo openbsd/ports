@@ -1,0 +1,39 @@
+$OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.1 2013/10/29 06:51:34 robert Exp $
+--- chrome/browser/browser_process_impl.cc.orig.port	Fri Oct 11 19:29:35 2013
++++ chrome/browser/browser_process_impl.cc	Sat Oct 19 17:37:32 2013
+@@ -244,7 +244,7 @@ void BrowserProcessImpl::StartTearDown() {
+ 
+   ExtensionRendererState::GetInstance()->Shutdown();
+ 
+-#if !defined(OS_ANDROID) && !defined(OS_IOS)
++#if !defined(OS_ANDROID) && !defined(OS_IOS) && !defined(OS_BSD)
+   media_file_system_registry_.reset();
+   // Delete |storage_monitor_| now. Otherwise the FILE thread would be gone
+   // when we try to release it in the dtor and Valgrind would report a
+@@ -618,7 +618,7 @@ BookmarkPromptController* BrowserProcessImpl::bookmark
+ }
+ 
+ chrome::StorageMonitor* BrowserProcessImpl::storage_monitor() {
+-#if defined(OS_ANDROID) || defined(OS_IOS)
++#if defined(OS_ANDROID) || defined(OS_IOS) || defined(OS_BSD)
+   return NULL;
+ #else
+   return storage_monitor_.get();
+@@ -627,7 +627,7 @@ chrome::StorageMonitor* BrowserProcessImpl::storage_mo
+ 
+ void BrowserProcessImpl::set_storage_monitor_for_test(
+     scoped_ptr<chrome::StorageMonitor> monitor) {
+-#if !defined(OS_ANDROID) && !defined(OS_IOS)
++#if !defined(OS_ANDROID) && !defined(OS_IOS) && !defined(OS_BSD)
+   storage_monitor_ = monitor.Pass();
+ #endif
+ }
+@@ -923,7 +923,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
+   }
+ #endif
+ 
+-#if !defined(OS_ANDROID) && !defined(OS_IOS)
++#if !defined(OS_ANDROID) && !defined(OS_IOS) && !defined(OS_BSD)
+   storage_monitor_.reset(chrome::StorageMonitor::Create());
+ #endif
+ 

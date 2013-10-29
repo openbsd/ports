@@ -1,0 +1,13 @@
+$OpenBSD: patch-chrome_browser_ui_webui_options_browser_options_handler_h,v 1.1 2013/10/29 06:51:34 robert Exp $
+--- chrome/browser/ui/webui/options/browser_options_handler.h.orig.port	Fri Oct 11 19:29:26 2013
++++ chrome/browser/ui/webui/options/browser_options_handler.h	Sun Oct 20 11:40:38 2013
+@@ -193,7 +193,8 @@ class BrowserOptionsHandler
+ 
+   void ObserveThemeChanged();
+   void ThemesReset(const base::ListValue* args);
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if defined(OS_POSIX) && !defined(OS_CHROMEOS) && !defined(OS_MACOSX) && \
++    !defined(OS_ANDROID)
+   void ThemesSetNative(const base::ListValue* args);
+ #endif
+ 

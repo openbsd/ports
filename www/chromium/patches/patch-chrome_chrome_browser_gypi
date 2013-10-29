@@ -1,51 +1,7 @@
-$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.22 2013/09/29 19:04:01 robert Exp $
---- chrome/chrome_browser.gypi.orig.port	Wed Sep 18 10:14:02 2013
-+++ chrome/chrome_browser.gypi	Sat Sep 28 20:14:07 2013
-@@ -1902,7 +1902,6 @@
-         'browser/speech/tts_controller.h',
-         'browser/speech/tts_extension_loader_chromeos.cc',
-         'browser/speech/tts_extension_loader_chromeos.h',
--        'browser/speech/tts_linux.cc',
-         'browser/speech/tts_mac.mm',
-         'browser/speech/tts_platform.cc',
-         'browser/speech/tts_platform.h',
-@@ -1967,8 +1966,6 @@
-         'browser/storage_monitor/media_storage_util.h',
-         'browser/storage_monitor/media_transfer_protocol_device_observer_linux.cc',
-         'browser/storage_monitor/media_transfer_protocol_device_observer_linux.h',
--        'browser/storage_monitor/mtab_watcher_linux.cc',
--        'browser/storage_monitor/mtab_watcher_linux.h',
-         'browser/storage_monitor/portable_device_watcher_win.cc',
-         'browser/storage_monitor/portable_device_watcher_win.h',
-         'browser/storage_monitor/removable_device_constants.cc',
-@@ -1978,8 +1975,6 @@
-         'browser/storage_monitor/storage_info.h',
-         'browser/storage_monitor/storage_monitor_chromeos.cc',
-         'browser/storage_monitor/storage_monitor_chromeos.h',
--        'browser/storage_monitor/storage_monitor_linux.cc',
--        'browser/storage_monitor/storage_monitor_linux.h',
-         'browser/storage_monitor/storage_monitor_mac.h',
-         'browser/storage_monitor/storage_monitor_mac.mm',
-         'browser/storage_monitor/storage_monitor_win.cc',
-@@ -1987,8 +1982,6 @@
-         'browser/storage_monitor/storage_monitor.cc',
-         'browser/storage_monitor/storage_monitor.h',
-         # TODO(thestig) Refactor StorageMonitor so these are test-only.
--        'browser/storage_monitor/test_media_transfer_protocol_manager_linux.cc',
--        'browser/storage_monitor/test_media_transfer_protocol_manager_linux.h',
-         'browser/storage_monitor/transient_device_ids.cc',
-         'browser/storage_monitor/transient_device_ids.h',
-         'browser/storage_monitor/udev_util_linux.cc',
-@@ -2456,7 +2449,7 @@
-             'xcode_settings': {'OTHER_LDFLAGS': ['-weak_framework CoreImage']},
-           },
-         }],
--        ['OS=="mac" or OS=="win" or OS=="linux" or chromeos==1', {
-+        ['OS=="mac" or OS=="win" or OS=="linux" or chromeos==1 or os_bsd==1', {
-           'sources': [
-             'browser/media_galleries/fileapi/device_media_async_file_util.cc',
-             'browser/media_galleries/fileapi/device_media_async_file_util.h',
-@@ -2640,7 +2633,7 @@
+$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.23 2013/10/29 06:51:34 robert Exp $
+--- chrome/chrome_browser.gypi.orig.port	Fri Oct 11 19:30:07 2013
++++ chrome/chrome_browser.gypi	Fri Oct 18 20:56:51 2013
+@@ -2739,7 +2739,7 @@
              '../device/media_transfer_protocol/media_transfer_protocol.gyp:device_media_transfer_protocol',
            ],
          }],
@@ -54,15 +10,16 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.22 2013/09/29 19:04:01 robert Exp
            'dependencies': [
              '../build/linux/system.gyp:libspeechd',
            ],
-@@ -2690,7 +2683,6 @@
-             'browser/screensaver_window_finder_x11.cc',
-             'browser/screensaver_window_finder_x11.h',
-             'browser/signin/signin_manager.cc',
--            'browser/speech/tts_linux.cc',
-             'browser/storage_monitor/mtab_watcher_linux.cc',
-             'browser/storage_monitor/mtab_watcher_linux.h',
-             'browser/storage_monitor/storage_monitor_linux.cc',
-@@ -2994,6 +2986,25 @@
+@@ -2863,7 +2863,7 @@
+             ],
+           },
+         }],
+-        ['os_posix == 1 and OS != "mac" and OS != "ios"', {
++        ['os_posix == 1 and OS != "mac" and OS != "ios" and os_bsd != 1', {
+           'sources': [
+             'app/breakpad_linux.cc',
+             'app/breakpad_linux.h',
+@@ -3106,6 +3106,25 @@
              ['exclude', '^browser/sync/glue/extension_'],
              ['exclude', '^browser/sync/glue/theme_'],
              ['exclude', '^browser/usb/'],

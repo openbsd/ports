@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_gpu_gl_string_manager_cc,v 1.1 2013/10/29 06:51:34 robert Exp $
+--- chrome/browser/gpu/gl_string_manager.cc.orig.port	Sun Oct 20 17:01:50 2013
++++ chrome/browser/gpu/gl_string_manager.cc	Sun Oct 20 17:02:02 2013
+@@ -25,7 +25,7 @@ GLStringManager::~GLStringManager() {
+ 
+ void GLStringManager::Initialize() {
+   // On MacOSX or Windows, preliminary GPUInfo is enough.
+-#if defined(OS_LINUX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
+   // We never remove this observer from GpuDataManager.
+   content::GpuDataManager::GetInstance()->AddObserver(this);
+ 

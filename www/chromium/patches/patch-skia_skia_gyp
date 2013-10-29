@@ -1,17 +1,14 @@
-$OpenBSD: patch-skia_skia_gyp,v 1.12 2013/09/29 19:04:04 robert Exp $
---- skia/skia.gyp.orig.port	Wed Sep 18 10:14:37 2013
-+++ skia/skia.gyp	Sun Sep 22 16:09:42 2013
-@@ -679,7 +679,7 @@
-             'SK_BUILD_FOR_ANDROID',
+$OpenBSD: patch-skia_skia_gyp,v 1.13 2013/10/29 06:51:34 robert Exp $
+--- skia/skia.gyp.orig.port	Fri Oct 11 19:29:07 2013
++++ skia/skia.gyp	Fri Oct 18 20:47:20 2013
+@@ -106,12 +106,12 @@
+             '-msse2',
            ],
          }],
 -        [ 'target_arch != "arm" and target_arch != "mipsel"', {
 +        [ 'target_arch != "arm" and target_arch != "mipsel" or disable_sse2 != 1', {
            'sources': [
-             '../third_party/skia/src/opts/SkBitmapProcState_opts_SSE2.cpp',
-             '../third_party/skia/src/opts/SkBlitRect_opts_SSE2.cpp',
-@@ -755,7 +755,7 @@
-             '../third_party/skia/src/opts/opts_check_arm.cpp',
+             'ext/convolver_SSE2.cc',
            ],
          }],
 -        [ 'target_arch == "mipsel"',{

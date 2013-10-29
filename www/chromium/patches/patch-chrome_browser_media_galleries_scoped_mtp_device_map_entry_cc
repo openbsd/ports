@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_media_galleries_scoped_mtp_device_map_entry_cc,v 1.1 2013/09/29 19:04:01 robert Exp $
---- chrome/browser/media_galleries/scoped_mtp_device_map_entry.cc.orig.port	Sat Sep 28 20:05:46 2013
-+++ chrome/browser/media_galleries/scoped_mtp_device_map_entry.cc	Sat Sep 28 20:11:02 2013
-@@ -56,6 +56,7 @@ ScopedMTPDeviceMapEntry::ScopedMTPDeviceMapEntry(
+$OpenBSD: patch-chrome_browser_media_galleries_scoped_mtp_device_map_entry_cc,v 1.2 2013/10/29 06:51:34 robert Exp $
+--- chrome/browser/media_galleries/scoped_mtp_device_map_entry.cc.orig.port	Fri Oct 11 19:29:31 2013
++++ chrome/browser/media_galleries/scoped_mtp_device_map_entry.cc	Fri Oct 18 20:47:20 2013
+@@ -39,6 +39,7 @@ ScopedMTPDeviceMapEntry::ScopedMTPDeviceMapEntry(
  }
  
  void ScopedMTPDeviceMapEntry::Init() {
@@ -9,7 +9,7 @@ $OpenBSD: patch-chrome_browser_media_galleries_scoped_mtp_device_map_entry_cc,v 
    CreateMTPDeviceAsyncDelegateCallback callback =
        base::Bind(&ScopedMTPDeviceMapEntry::OnMTPDeviceAsyncDelegateCreated,
                   this);
-@@ -65,6 +66,7 @@ void ScopedMTPDeviceMapEntry::Init() {
+@@ -48,6 +49,7 @@ void ScopedMTPDeviceMapEntry::Init() {
        base::Bind(&CreateMTPDeviceAsyncDelegate,
                   device_location_,
                   callback));

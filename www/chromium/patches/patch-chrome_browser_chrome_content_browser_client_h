@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_h,v 1.1 2013/10/29 06:51:34 robert Exp $
+--- chrome/browser/chrome_content_browser_client.h.orig.port	Sat Oct 19 18:27:39 2013
++++ chrome/browser/chrome_content_browser_client.h	Sat Oct 19 18:27:46 2013
+@@ -248,7 +248,7 @@ class ChromeContentBrowserClient : public content::Con
+       const base::FilePath& storage_partition_path,
+       ScopedVector<fileapi::FileSystemBackend>* additional_backends) OVERRIDE;
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
+   virtual void GetAdditionalMappedFilesForChildProcess(
+       const CommandLine& command_line,
+       int child_process_id,

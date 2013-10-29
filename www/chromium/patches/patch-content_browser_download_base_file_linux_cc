@@ -1,0 +1,13 @@
+$OpenBSD: patch-content_browser_download_base_file_linux_cc,v 1.1 2013/10/29 06:51:34 robert Exp $
+--- content/browser/download/base_file_linux.cc.orig.port	Sun Oct 20 18:58:57 2013
++++ content/browser/download/base_file_linux.cc	Sun Oct 20 18:59:06 2013
+@@ -13,7 +13,9 @@ DownloadInterruptReason BaseFile::AnnotateWithSourceIn
+   DCHECK(BrowserThread::CurrentlyOn(BrowserThread::FILE));
+   DCHECK(!detached_);
+ 
++#if !defined(OS_BSD)
+   AddOriginMetadataToFile(full_path_, source_url_, referrer_url_);
++#endif
+   return DOWNLOAD_INTERRUPT_REASON_NONE;
+ }
+ 

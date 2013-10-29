@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_WebKit_Source_core_core_gyp,v 1.1 2013/09/29 19:04:04 robert Exp $
---- third_party/WebKit/Source/core/core.gyp.orig.port	Sun Sep 22 16:28:49 2013
-+++ third_party/WebKit/Source/core/core.gyp	Sun Sep 22 16:29:47 2013
+$OpenBSD: patch-third_party_WebKit_Source_core_core_gyp,v 1.2 2013/10/29 06:51:34 robert Exp $
+--- third_party/WebKit/Source/core/core.gyp.orig.port	Fri Oct 11 19:38:34 2013
++++ third_party/WebKit/Source/core/core.gyp	Fri Oct 18 20:47:20 2013
 @@ -644,7 +644,7 @@
-             ['exclude', 'platform/chromium/ScrollbarThemeChromiumDefault.h'],
-           ],
+             ['exclude', 'platform/chromium/ScrollbarThemeChromiumOverlay.h'],
+           ]
          }],
 -        ['OS=="linux" or OS=="android"', {
 +        ['OS=="linux" or OS=="android" or OS=="openbsd"', {
@@ -19,7 +19,7 @@ $OpenBSD: patch-third_party_WebKit_Source_core_core_gyp,v 1.1 2013/09/29 19:04:0
            'sources/': [
              ['exclude', 'Linux\\.cpp$'],
            ],
-@@ -775,7 +775,7 @@
+@@ -777,7 +777,7 @@
              ['exclude', 'platform/graphics/FontPlatformData\\.cpp$'],
            ],
          }],
@@ -28,7 +28,7 @@ $OpenBSD: patch-third_party_WebKit_Source_core_core_gyp,v 1.1 2013/09/29 19:04:0
            'sources/': [
              ['exclude', 'VDMX[^/]+\\.(cpp|h)$'],
            ],
-@@ -946,7 +946,7 @@
+@@ -951,7 +951,7 @@
            # Due to a bug in gcc 4.6 in android NDK, we get warnings about uninitialized variable.
            'cflags': ['-Wno-uninitialized'],
          }],
@@ -37,7 +37,7 @@ $OpenBSD: patch-third_party_WebKit_Source_core_core_gyp,v 1.1 2013/09/29 19:04:0
            'sources/': [
              ['exclude', 'Linux\\.cpp$'],
            ],
-@@ -991,7 +991,7 @@
+@@ -995,7 +995,7 @@
          ['OS=="win" and buildtype=="Official"', {
            'msvs_shard': 19,
          }],

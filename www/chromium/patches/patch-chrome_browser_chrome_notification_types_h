@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_common_chrome_notification_types_h,v 1.4 2013/04/03 08:19:10 robert Exp $
---- chrome/common/chrome_notification_types.h.orig.port	Fri Mar 22 02:14:32 2013
-+++ chrome/common/chrome_notification_types.h	Tue Apr  2 21:05:17 2013
+$OpenBSD: patch-chrome_browser_chrome_notification_types_h,v 1.1 2013/10/29 06:51:34 robert Exp $
+--- chrome/browser/chrome_notification_types.h.orig.port	Fri Oct 18 20:57:10 2013
++++ chrome/browser/chrome_notification_types.h	Fri Oct 18 20:57:22 2013
 @@ -47,7 +47,7 @@ enum NotificationType {
    // that was closed, no details are expected.
    NOTIFICATION_WINDOW_CLOSED,

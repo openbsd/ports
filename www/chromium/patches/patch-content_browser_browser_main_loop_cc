@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.13 2013/09/29 19:04:03 robert Exp $
---- content/browser/browser_main_loop.cc.orig.port	Wed Sep 18 10:13:03 2013
-+++ content/browser/browser_main_loop.cc	Sun Sep 22 16:09:42 2013
-@@ -89,7 +89,7 @@
+$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.14 2013/10/29 06:51:34 robert Exp $
+--- content/browser/browser_main_loop.cc.orig.port	Fri Oct 11 19:30:27 2013
++++ content/browser/browser_main_loop.cc	Fri Oct 18 20:47:20 2013
+@@ -94,7 +94,7 @@
  #include "ui/gfx/gtk_util.h"
  #endif
  
@@ -9,8 +9,8 @@ $OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.13 2013/09/29 19:04:03 
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
  #include <sys/stat.h>
  
- #include "base/process_util.h"
-@@ -109,7 +109,7 @@
+ #include "content/browser/renderer_host/render_sandbox_host_linux.h"
+@@ -117,7 +117,7 @@
  namespace content {
  namespace {
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.13 2013/09/29 19:04:03 
  void SetupSandbox(const CommandLine& parsed_command_line) {
    TRACE_EVENT0("startup", "SetupSandbox");
    // TODO(evanm): move this into SandboxWrapper; I'm just trying to move this
-@@ -340,7 +340,7 @@ void BrowserMainLoop::EarlyInitialization() {
+@@ -355,7 +355,7 @@ void BrowserMainLoop::EarlyInitialization() {
    crypto::EnsureNSPRInit();
  #endif  // !defined(USE_OPENSSL)
  

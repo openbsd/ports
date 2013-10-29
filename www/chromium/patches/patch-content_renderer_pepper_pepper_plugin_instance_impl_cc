@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_renderer_pepper_pepper_plugin_instance_impl_cc,v 1.1 2013/10/29 06:51:34 robert Exp $
+--- content/renderer/pepper/pepper_plugin_instance_impl.cc.orig.port	Sun Oct 20 17:06:29 2013
++++ content/renderer/pepper/pepper_plugin_instance_impl.cc	Sun Oct 20 17:06:46 2013
+@@ -1723,7 +1723,7 @@ bool PepperPluginInstanceImpl::PrintPDFOutput(PP_Resou
+ #endif  // defined(OS_WIN)
+ 
+   bool ret = false;
+-#if defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_ANDROID)
+   // On Linux we just set the final bits in the native metafile
+   // (NativeMetafile and PreviewMetafile must have compatible formats,
+   // i.e. both PDF for this to work).

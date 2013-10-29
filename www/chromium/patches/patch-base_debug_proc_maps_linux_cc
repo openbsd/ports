@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_debug_proc_maps_linux_cc,v 1.1 2013/10/29 06:51:34 robert Exp $
+--- base/debug/proc_maps_linux.cc.orig.port	Fri Oct 18 23:37:16 2013
++++ base/debug/proc_maps_linux.cc	Fri Oct 18 23:37:25 2013
+@@ -11,7 +11,7 @@
+ #include "base/file_util.h"
+ #include "base/strings/string_split.h"
+ 
+-#if defined(OS_ANDROID)
++#if defined(OS_ANDROID) || defined(OS_BSD)
+ // Bionic's inttypes.h defines PRI/SCNxPTR as an unsigned long int, which
+ // is incompatible with Bionic's stdint.h defining uintptr_t as a unsigned int:
+ // https://code.google.com/p/android/issues/detail?id=57218

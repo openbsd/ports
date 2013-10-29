@@ -1,30 +1,21 @@
-$OpenBSD: patch-third_party_WebKit_Source_core_features_gypi,v 1.2 2013/09/29 19:04:05 robert Exp $
---- third_party/WebKit/Source/core/features.gypi.orig.port	Wed Sep 18 10:23:20 2013
-+++ third_party/WebKit/Source/core/features.gypi	Sun Sep 22 16:09:42 2013
-@@ -88,7 +88,7 @@
-           'ENABLE_WEB_AUDIO=1',
-         ],
-       }],
--      ['OS=="linux" or OS=="mac" or OS=="android"', {
-+      ['OS=="linux" or OS=="mac" or OS=="android" or OS=="openbsd"', {
-         'feature_defines': [
-           # 8Bit text runs should be enabled for all platforms webkit.org/b/111348
-           'ENABLE_8BIT_TEXTRUN=1',
-@@ -108,7 +108,7 @@
+$OpenBSD: patch-third_party_WebKit_Source_core_features_gypi,v 1.3 2013/10/29 06:51:34 robert Exp $
+--- third_party/WebKit/Source/core/features.gypi.orig.port	Fri Oct 11 19:38:34 2013
++++ third_party/WebKit/Source/core/features.gypi	Sat Oct 19 15:04:33 2013
+@@ -94,7 +94,7 @@
            'ENABLE_WEB_AUDIO=1',
          ],
        }],
 -      ['OS=="win" or OS=="android" or OS=="linux"', {
-+      ['OS=="win" or OS=="android" or OS=="linux" or OS=="openbsd"', {
++      ['OS=="win" or OS=="android" or OS=="linux" or os_bsd==1', {
          'feature_defines': [
            'ENABLE_OPENTYPE_VERTICAL=1',
          ],
-@@ -123,7 +123,7 @@
+@@ -104,7 +104,7 @@
            'ENABLE_RUBBER_BANDING=1',
          ],
        }],
 -      ['OS=="linux" or OS=="android"', {
-+      ['OS=="linux" or OS=="android" or OS=="openbsd"', {
++      ['OS=="linux" or OS=="android" or os_bsd==1', {
          'feature_defines': [
            'WTF_USE_HARFBUZZ=1',
          ],

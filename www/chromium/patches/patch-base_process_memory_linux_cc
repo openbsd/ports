@@ -1,0 +1,21 @@
+$OpenBSD: patch-base_process_memory_linux_cc,v 1.1 2013/10/29 06:51:34 robert Exp $
+--- base/process/memory_linux.cc.orig.port	Fri Oct 18 21:50:37 2013
++++ base/process/memory_linux.cc	Fri Oct 18 23:26:38 2013
+@@ -143,6 +143,7 @@ void EnableTerminationOnOutOfMemory() {
+ // the setuid sandbox (in process_util_linux.c, in the sandbox source)
+ // also has its own C version.
+ bool AdjustOOMScore(ProcessId process, int score) {
++#if defined(OS_LINUX)
+   if (score < 0 || score > kMaxOomScore)
+     return false;
+ 
+@@ -178,6 +179,9 @@ bool AdjustOOMScore(ProcessId process, int score) {
+   }
+ 
+   return false;
++#else
++  return true;
++#endif
+ }
+ 
+ }  // namespace base

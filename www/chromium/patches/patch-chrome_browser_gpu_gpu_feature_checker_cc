@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_gpu_gpu_feature_checker_cc,v 1.1 2013/10/29 06:51:34 robert Exp $
+--- chrome/browser/gpu/gpu_feature_checker.cc.orig.port	Sun Oct 20 17:02:12 2013
++++ chrome/browser/gpu/gpu_feature_checker.cc	Sun Oct 20 17:02:21 2013
+@@ -33,7 +33,7 @@ void GPUFeatureChecker::CheckGPUFeatureAvailability() 
+   CHECK(content::BrowserThread::CurrentlyOn(content::BrowserThread::UI));
+ 
+   bool finalized = true;
+-#if defined(OS_LINUX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
+   // On Windows and Mac, so far we can always make the final WebGL blacklisting
+   // decision based on partial GPU info; on Linux, we need to launch the GPU
+   // process to collect full GPU info and make the final decision.

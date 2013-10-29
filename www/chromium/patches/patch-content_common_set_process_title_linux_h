@@ -1,0 +1,21 @@
+$OpenBSD: patch-content_common_set_process_title_linux_h,v 1.1 2013/10/29 06:51:34 robert Exp $
+--- content/common/set_process_title_linux.h.orig.port	Sun Oct 20 19:00:29 2013
++++ content/common/set_process_title_linux.h	Sun Oct 20 19:00:48 2013
+@@ -5,6 +5,9 @@
+ #ifndef CONTENT_COMMON_SET_PROCESS_TITLE_LINUX_H_
+ #define CONTENT_COMMON_SET_PROCESS_TITLE_LINUX_H_
+ 
++#include "build/build_config.h"
++
++#if !defined(OS_BSD)
+ // Set the process title that will show in "ps" and similar tools. Takes
+ // printf-style format string and arguments. After calling setproctitle()
+ // the original main() argv[] array should not be used. By default, the
+@@ -14,6 +17,7 @@
+ // This signature and naming is to be compatible with most other Unix
+ // implementations of setproctitle().
+ void setproctitle(const char* fmt, ...);
++#endif
+ 
+ // Initialize state needed for setproctitle() on Linux. Pass the argv pointer
+ // from main() to setproctitle_init() before calling setproctitle().

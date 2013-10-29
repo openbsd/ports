@@ -1,42 +1,20 @@
-$OpenBSD: patch-base_base_gypi,v 1.21 2013/09/29 19:03:59 robert Exp $
---- base/base.gypi.orig.port	Wed Sep 18 10:13:10 2013
-+++ base/base.gypi	Sun Sep 22 17:28:31 2013
-@@ -176,7 +176,6 @@
-           'files/file_path_constants.cc',
-           'files/file_path_watcher.cc',
-           'files/file_path_watcher.h',
--          'files/file_path_watcher_kqueue.cc',
-           'files/file_path_watcher_linux.cc',
-           'files/file_path_watcher_stub.cc',
-           'files/file_path_watcher_win.cc',
-@@ -398,14 +397,12 @@
-           'process/process_iterator.cc',
-           'process/process_iterator.h',
-           'process/process_iterator_freebsd.cc',
--          'process/process_iterator_linux.cc',
-           'process/process_iterator_mac.cc',
-           'process/process_iterator_openbsd.cc',
-           'process/process_iterator_win.cc',
-           'process/process_metrics.h',
-           'process/process_metrics_freebsd.cc',
-           'process/process_metrics_ios.cc',
--          'process/process_metrics_linux.cc',
-           'process/process_metrics_mac.cc',
-           'process/process_metrics_openbsd.cc',
-           'process/process_metrics_posix.cc',
-@@ -514,7 +511,6 @@
-           'threading/non_thread_safe_impl.h',
-           'threading/platform_thread.h',
-           'threading/platform_thread_android.cc',
--          'threading/platform_thread_linux.cc',
-           'threading/platform_thread_mac.mm',
-           'threading/platform_thread_posix.cc',
-           'threading/platform_thread_win.cc',
-@@ -833,7 +829,6 @@
-           ['<(os_bsd)==1 and >(nacl_untrusted_build)==0', {
+$OpenBSD: patch-base_base_gypi,v 1.22 2013/10/29 06:51:34 robert Exp $
+--- base/base.gypi.orig.port	Fri Oct 11 19:29:19 2013
++++ base/base.gypi	Tue Oct 29 07:27:58 2013
+@@ -872,11 +872,15 @@
+               'process/memory_stubs.cc',
+             ],
              'sources/': [
++              ['exclude', '^debug/proc_maps_linux\\.cc$'],
                ['exclude', '^files/file_path_watcher_linux\\.cc$'],
 -              ['exclude', '^files/file_path_watcher_stub\\.cc$'],
++              ['exclude', '^files/file_path_watcher_kqueue\\.cc$'],
                ['exclude', '^file_util_linux\\.cc$'],
-               ['exclude', '^process_linux\\.cc$'],
-               ['exclude', '^process_util_linux\\.cc$'],
++              ['exclude', '^process/memory_linux\\.cc$'],
+               ['exclude', '^process/process_linux\\.cc$'],
+               ['exclude', '^sys_info_linux\\.cc$'],
++              ['exclude', '^process/process_iterator_linux\\.cc$'],
++              ['exclude', '^process/process_metrics_linux\\.cc$'],
+             ],
+           }],
+           ['<(chromeos)!=1 or >(nacl_untrusted_build)==1', {

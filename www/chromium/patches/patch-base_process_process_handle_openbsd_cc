@@ -1,26 +1,16 @@
-$OpenBSD: patch-base_process_util_openbsd_cc,v 1.12 2013/09/29 19:04:00 robert Exp $
---- base/process_util_openbsd.cc.orig.port	Sun Sep 22 16:13:07 2013
-+++ base/process_util_openbsd.cc	Sun Sep 22 16:16:16 2013
-@@ -10,6 +10,7 @@
- #include <errno.h>
- #include <fcntl.h>
- #include <sys/param.h>
+$OpenBSD: patch-base_process_process_handle_openbsd_cc,v 1.1 2013/10/29 06:51:34 robert Exp $
+--- base/process/process_handle_openbsd.cc.orig.port	Fri Oct 18 20:52:30 2013
++++ base/process/process_handle_openbsd.cc	Fri Oct 18 23:28:42 2013
+@@ -4,6 +4,8 @@
+ 
+ #include "base/process/process_handle.h"
+ 
++#include <sys/param.h>
 +#include <sys/proc.h>
  #include <sys/sysctl.h>
- #include <sys/time.h>
  #include <sys/types.h>
-@@ -19,9 +20,9 @@
  #include <unistd.h>
- 
- #include "base/logging.h"
--#include "base/string_tokenizer.h"
- #include "base/strings/string_number_conversions.h"
- #include "base/strings/string_split.h"
-+#include "base/strings/string_tokenizer.h"
- #include "base/strings/string_util.h"
- #include "base/sys_info.h"
- #include "base/threading/thread_restrictions.h"
-@@ -29,39 +30,59 @@
+@@ -11,39 +13,64 @@
  namespace base {
  
  ProcessId GetParentProcessId(ProcessHandle process) {
@@ -34,18 +24,23 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.12 2013/09/29 19:04:00 robert E
    if (sysctl(mib, arraysize(mib), NULL, &length, NULL, 0) < 0)
      return -1;
  
+-  mib[5] = (length / sizeof(struct kinfo_proc));
 +  info = (struct kinfo_proc *)malloc(length);
-+
-   mib[5] = (length / sizeof(struct kinfo_proc));
  
 -  if (sysctl(mib, arraysize(mib), &info, &length, NULL, 0) < 0)
--    return -1;
++  if (sysctl(mib, arraysize(mib), NULL, &length, NULL, 0) < 0)
+     return -1;
+ 
+-  return info.p_ppid;
++  info = (struct kinfo_proc *)malloc(length);
++
++  mib[5] = (length / sizeof(struct kinfo_proc));
++
 +  if (sysctl(mib, arraysize(mib), info, &length, NULL, 0) < 0) {
 +    ppid = -1;
 +    goto out;
 +  }
- 
--  return info.p_ppid;
++
 +  ppid = info->p_ppid;
 +
 +out:
@@ -94,4 +89,4 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.12 2013/09/29 19:04:00 robert E
 +  return FilePath(path);
  }
  
- void EnableTerminationOnOutOfMemory() {
+ }  // namespace base

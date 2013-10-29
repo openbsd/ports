@@ -1,0 +1,30 @@
+$OpenBSD: patch-chrome_app_policy_policy_templates_json,v 1.1 2013/10/29 06:51:34 robert Exp $
+--- chrome/app/policy/policy_templates.json.orig.port	Fri Oct 11 19:30:05 2013
++++ chrome/app/policy/policy_templates.json	Sat Oct 19 11:20:59 2013
+@@ -1365,7 +1365,7 @@
+           'name': 'GSSAPILibraryName',
+           'type': 'string',
+           'schema': { 'type': 'string' },
+-          'supported_on': ['chrome.linux:9-'],
++          'supported_on': ['chrome.linux:9-', 'chrome.openbsd:9-'],
+           'features': {
+             'dynamic_refresh': False,
+             'per_profile': False,
+@@ -3251,7 +3251,7 @@
+       'name': 'RequireOnlineRevocationChecksForLocalAnchors',
+       'type': 'main',
+       'schema': { 'type': 'boolean' },
+-      'supported_on': ['chrome_os:0.30-', 'chrome.linux:30-', 'chrome.win:30-'],
++      'supported_on': ['chrome_os:0.30-', 'chrome.linux:30-', 'chrome.openbsd:30-', 'chrome.win:30-'],
+       'features': {
+         'dynamic_refresh': True,
+         'per_profile': False,
+@@ -3766,7 +3766,7 @@
+       'name': 'BackgroundModeEnabled',
+       'type': 'main',
+       'schema': { 'type': 'boolean' },
+-      'supported_on': ['chrome.win:19-', 'chrome.linux:19-'],
++      'supported_on': ['chrome.win:19-', 'chrome.linux:19-', 'chrome.openbsd:19-'],
+       'features': {
+         'can_be_recommended': True,
+         'dynamic_refresh': True,

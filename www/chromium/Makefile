@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.155 2013/10/16 15:04:08 bluhm Exp $
+# $OpenBSD: Makefile,v 1.156 2013/10/29 06:51:34 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			29.0.1547.76
+V=			30.0.1599.101
 DISTNAME=		chromium-${V}
-REVISION=		3
 
 CATEGORIES=		www
 
@@ -106,12 +105,14 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Dlinux_breakpad=0 \
 		-Dlinux_use_tcmalloc=0 \
 		-Dlinux_strip_binary=1 \
+		-Dlinux_use_heapchecker=0 \
 		-Denable_webrtc=0 \
 		-Denable_one_click_signin=1 \
 		-Duse_kerberos=0 \
 		-Duse_sndio=1 \
 		-Dclang=1 \
 		-Dclang_use_chrome_plugins=0 \
+		-Dno_gc_sections=1 \
 		-DOS=openbsd
 
 # Note: these keys are for OpenBSD use ONLY. For your own distribution,
@@ -128,7 +129,7 @@ GYP_DEFS+=	-Dffmpeg_branding=Chrome \
 MODPY_ADJ_FILES=build/linux/unbundle/replace_gyp_files.py
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/webkit/plugins/npapi/plugin_list_posix.cc
+	${SUBST_CMD} ${WRKSRC}/content/common/plugin_list_posix.cc
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 .for _arch in x64 ia32
 	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/libavutil \

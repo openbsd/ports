@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2013/09/29 19:04:08 robert Exp $
+@comment $OpenBSD: PLIST,v 1.28 2013/10/29 06:51:34 robert Exp $
 bin/chrome
 chrome/
 @bin chrome/chrome
@@ -171,8 +171,6 @@ chrome/resources/inspector/Images/timelinePillOrange.png
 chrome/resources/inspector/Images/timelinePillPurple.png
 chrome/resources/inspector/Images/timelinePillRed.png
 chrome/resources/inspector/Images/timelinePillYellow.png
-chrome/resources/inspector/Images/toolbarIcons.png
-chrome/resources/inspector/Images/toolbarIconsSmall.png
 chrome/resources/inspector/Images/toolbarItemSelected.png
 chrome/resources/inspector/Images/trackHoriz.png
 chrome/resources/inspector/Images/trackVert.png
@@ -202,7 +200,6 @@ chrome/resources/inspector/indexedDBViews.css
 chrome/resources/inspector/inspector.css
 chrome/resources/inspector/inspector.js
 chrome/resources/inspector/inspectorCommon.css
-chrome/resources/inspector/nativeMemoryProfiler.css
 chrome/resources/inspector/navigatorView.css
 chrome/resources/inspector/networkLogView.css
 chrome/resources/inspector/networkPanel.css
@@ -212,12 +209,10 @@ chrome/resources/inspector/resourceView.css
 chrome/resources/inspector/resourcesPanel.css
 chrome/resources/inspector/revisionHistory.css
 chrome/resources/inspector/scriptsPanel.css
-chrome/resources/inspector/showhint.css
 chrome/resources/inspector/sidebarPane.css
 chrome/resources/inspector/spectrum.css
 chrome/resources/inspector/splitView.css
 chrome/resources/inspector/tabbedPane.css
-chrome/resources/inspector/textEditor.css
 chrome/resources/inspector/textPrompt.css
 chrome/resources/inspector/timelinePanel.css
 @man man/man1/chrome.1
