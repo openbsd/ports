@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.4 2013/04/29 11:35:07 dcoppa Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2013/10/30 15:35:22 dcoppa Exp $
 
-COMMENT-main =	Java servlet 2.5 and Java server pages 2.1 server
+COMMENT-main ?=	Java servlet and Java server pages server
 COMMENT-examples =example applications and full documentation
 
 VER =		${MAJ_VER}.${MIN_VER}.${MICRO_VER}

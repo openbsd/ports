@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2013/05/17 12:42:35 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2013/10/30 15:35:22 dcoppa Exp $
 @conflict jakarta-tomcat-*
 @pkgpath www/tomcat/v7
 @newgroup _tomcat:526
@@ -108,6 +108,8 @@ tomcat/lib/tomcat-i18n-fr.jar
 tomcat/lib/tomcat-i18n-ja.jar
 tomcat/lib/tomcat-jdbc.jar
 tomcat/lib/tomcat-util.jar
+tomcat/lib/tomcat7-websocket.jar
+tomcat/lib/websocket-api.jar
 tomcat/webapps/
 tomcat/webapps/host-manager/
 tomcat/webapps/host-manager/META-INF/
