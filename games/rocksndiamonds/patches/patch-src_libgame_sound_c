@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_libgame_sound_c,v 1.1 2008/09/07 07:54:57 ajacoutot Exp $
---- src/libgame/sound.c.orig	Wed Sep 12 21:52:33 2007
-+++ src/libgame/sound.c	Sat Sep  6 17:05:11 2008
-@@ -27,6 +27,8 @@
+$OpenBSD: patch-src_libgame_sound_c,v 1.2 2013/10/30 08:25:20 benoit Exp $
+--- src/libgame/sound.c.orig	Thu Oct 10 00:46:36 2013
++++ src/libgame/sound.c	Wed Oct 30 08:32:11 2013
+@@ -28,6 +28,8 @@
  #include <linux/soundcard.h>
  #elif defined(PLATFORM_FREEBSD)
  #include <machine/soundcard.h>
