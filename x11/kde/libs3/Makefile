@@ -1,18 +1,15 @@
-# $OpenBSD: Makefile,v 1.132 2013/10/22 11:34:05 zhuk Exp $
+# $OpenBSD: Makefile,v 1.133 2013/10/30 21:02:30 zhuk Exp $
 
 BROKEN-alpha =		.got subsegment exceeds 64K
 BROKEN-mips64 =		.got subsegment exceeds 64K
 
 COMMENT-main =		K Desktop Environment, libraries
-COMMENT-cups =		K Desktop Environment, cups support
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdelibs-${VERSION}
-MASTER_SITES0 =  	ftp://ftp.kde.org/pub/kde/security_patches/
-
 PKGNAME-main =		${DISTNAME}
 PKGSPEC-main =		kdelibs->=3,<4
-PKGNAME-cups =		kdecups-${VERSION}
+REVISION-main =		26
 
 MODKDE_VERSION =	3.5.8
 
@@ -58,51 +55,10 @@ SHARED_LIBS +=	katepartinterfaces   1.0      # .0.0
 
 VMEM_WARNING =	Yes
 
-
-MULTI_PACKAGES =	-main # -cups
-# broken with cups>=1.6.0
-CONFIGURE_ARGS += 	--disable-cups \
-			--without-lua
-
-MODULES =	x11/kde devel/gettext
-
-LIB_DEPENDS =	graphics/libart \
-		devel/libidn \
-		sysutils/gamin 
-
-WANTLIB =	asn1 crypto gssapi util jpeg krb5 m FLAC X11 \
-		ICE Xrender c SM pthread stdc++ Xext z png \
-		Xau Xdmcp pthread-stubs xcb art_lgpl_2 idn \
-		fam>=1
-
-LIB_DEPENDS-main =	\
-	${LIB_DEPENDS} \
-	x11/kde/arts3 \
-	devel/pcre \
-	textproc/libxslt>=1.0.10 \
-	archivers/bzip2 \
-	graphics/tiff \
-	graphics/jasper \
-	graphics/openexr \
-	textproc/aspell/core \
-	net/avahi
-
-
-RUN_DEPENDS-main = \
-	${RUN_DEPENDS} \
-	x11/gtk+2,-guic \
-	devel/desktop-file-utils
-
-LIB_DEPENDS-cups = \
-	${LIB_DEPENDS} \
-	x11/kde/libs3 \
-	print/cups,-libs
-
-
-REVISION-main = 25
-REVISION-cups = 13
-
-WANTLIB-main =	${WANTLIB} 
+WANTLIB-main =  asn1 crypto gssapi util jpeg krb5 m FLAC X11
+WANTLIB-main += ICE Xrender c SM pthread stdc++ Xext z png
+WANTLIB-main += Xau Xdmcp pthread-stubs xcb art_lgpl_2 idn
+WANTLIB-main += fam>=1
 WANTLIB-main +=	GL Half Iex IlmImf>=4 IlmThread Imath Xcursor Xdamage Xfixes
 WANTLIB-main +=	Xft Xi Xinerama Xmu Xrandr Xt Xxf86vm artsflow>=1
 WANTLIB-main +=	artsflow_idl aspell audiofile avahi-client avahi-common bz2
@@ -112,19 +68,38 @@ WANTLIB-main +=	ogg pcre pcreposix qtmcop sndio soundserver_idl tiff>=35
 WANTLIB-main +=	vorbis vorbisenc vorbisfile xml2 xslt>=1.10
 WANTLIB-main += com_err heimbase roken wind
 
-WANTLIB-cups = ${WANTLIB}
-WANTLIB-cups += DCOP cups lib/kde3/kdecore>=6 lib/kde3/kdefakes \
-	lib/kde3/kdefx lib/kde3/kdeprint lib/kde3/kdeprint_management \
-	lib/kde3/kdesu lib/kde3/kdeui lib/kde3/kio lib/kde3/kparts \
-	lib/kde3/kwalletclient ssl
+MULTI_PACKAGES =	-main
 
+MODULES =		x11/kde devel/gettext
+
+RUN_DEPENDS-main =	${RUN_DEPENDS} \
+			devel/desktop-file-utils \
+			x11/gtk+2,-guic
+
+LIB_DEPENDS-main =	${LIB_DEPENDS} \
+			archivers/bzip2 \
+			devel/libidn \
+			devel/pcre \
+			graphics/jasper \
+			graphics/libart \
+			graphics/openexr \
+			graphics/tiff \
+			net/avahi \
+			sysutils/gamin \
+			textproc/aspell/core \
+			textproc/libxslt>=1.0.10 \
+			x11/kde/arts3
 
 SEPARATE_BUILD =	flavored
+
+# broken with cups>=1.6.0
+CONFIGURE_ARGS =	--disable-cups \
+			--without-lua
+
+MODGNU_AUTOCONF_FILES +=	dcop/dcop-path.h.in
 
 pre-configure:
 	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' \
 		${WRKSRC}/kdeprint/cups/kmcupsmanager.cpp
 
 .include <bsd.port.mk>
-
-MODGNU_AUTOCONF_FILES +=	dcop/dcop-path.h.in
