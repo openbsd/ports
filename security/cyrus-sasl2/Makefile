@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.79 2013/06/20 09:48:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2013/10/30 15:06:46 ajacoutot Exp $
 
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
 DISTNAME=	cyrus-sasl-2.1.26
-REVISION=	8
+REVISION=	9
 
 SHARED_LIBS += sasl2           3.0 # 3.0
 
@@ -20,9 +20,6 @@ MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-sasl/
 
 WANTLIB += asn1 c com_err crypto gssapi heimbase
 WANTLIB += krb5 roken wind
-
-# uses nroff(1)
-USE_GROFF=	Yes
 
 CFLAGS +=	-fPIC
 
@@ -113,12 +110,14 @@ pre-configure:
 		${WRKSRC}/saslauthd/saslauthd.mdoc \
 		${WRKSRC}/saslauthd/LDAP_SASLAUTHD
 	perl -pi -e 's,-lresolv,,g' ${WRKSRC}/{,saslauthd}/configure
+	perl -pi -e 's,nroff,mandoc,g' ${WRKSRC}/saslauthd/Makefile.in
 
 post-install:
 	rm ${PREFIX}/lib/sasl2/*.a
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/cyrus-sasl
 	${INSTALL_DATA} ${WRKSRC}/doc/{*.html,*.txt} ${PREFIX}/share/doc/cyrus-sasl
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/cyrus-sasl
+	mv ${PREFIX}/man/man8/saslauthd.8 ${PREFIX}/man/cat8/saslauthd.0
 .if ${FLAVOR:Mmysql} || ${FLAVOR:Mpgsql} || ${FLAVOR:Msqlite3}
 	${INSTALL_DATA} ${FILESDIR}/Sendmail.conf-sql \
 		${PREFIX}/share/examples/cyrus-sasl
