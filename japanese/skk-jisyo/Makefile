@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/10/01 09:07:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2013/10/30 20:21:11 fgsch Exp $
 
 COMMENT =	large dictionary for the SKK system
 
-DISTNAME =	skk-jisyo-20120901
+DISTNAME =	skk-jisyo-20131026
 
 CATEGORIES =	japanese
 
