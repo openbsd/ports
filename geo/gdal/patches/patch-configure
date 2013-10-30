@@ -1,0 +1,24 @@
+$OpenBSD: patch-configure,v 1.7 2013/10/30 15:22:33 landry Exp $
+--- configure.orig	Tue Oct 29 23:24:34 2013
++++ configure	Tue Oct 29 23:25:28 2013
+@@ -21882,9 +21882,9 @@ $as_echo "$as_me: OpenJPEG (JPEG2000) support disabled
+ 
+ elif test "$with_openjpeg" = "yes" -o "$with_openjpeg" = "" ; then
+ 
+-  for ac_header in openjpeg-2.0/openjpeg.h
++  for ac_header in openjp2/openjpeg.h
+ do :
+-  ac_fn_c_check_header_mongrel "$LINENO" "openjpeg-2.0/openjpeg.h" "ac_cv_header_openjpeg_2_0_openjpeg_h" "$ac_includes_default"
++  ac_fn_c_check_header_mongrel "$LINENO" "openjp2/openjpeg.h" "ac_cv_header_openjpeg_2_0_openjpeg_h" "$ac_includes_default"
+ if test "x$ac_cv_header_openjpeg_2_0_openjpeg_h" = xyes; then :
+   cat >>confdefs.h <<_ACEOF
+ #define HAVE_OPENJPEG_2_0_OPENJPEG_H 1
+@@ -21944,7 +21944,7 @@ fi
+ else
+ 
+   HAVE_OPENJPEG=yes
+-  if test -r $with_openjpeg/include/openjpeg-2.0/openjpeg.h ; then
++  if test -r $with_openjpeg/include/openjp2/openjpeg.h ; then
+     EXTRA_INCLUDES="-I$with_openjpeg/include $EXTRA_INCLUDES"
+   else
+     as_fn_error $? "openjpeg.h not found in $with_openjpeg/include/openjpeg-2.0" "$LINENO" 5

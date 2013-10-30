@@ -1,0 +1,12 @@
+$OpenBSD: patch-frmts_openjpeg_openjpegdataset_cpp,v 1.1 2013/10/30 15:22:33 landry Exp $
+--- frmts/openjpeg/openjpegdataset.cpp.orig	Wed Oct 30 07:59:03 2013
++++ frmts/openjpeg/openjpegdataset.cpp	Wed Oct 30 07:59:13 2013
+@@ -30,7 +30,7 @@
+ /* This file is to be used with openjpeg 2.0 */
+ 
+ #include <stdio.h> /* openjpeg.h needs FILE* */
+-#include <openjpeg-2.0/openjpeg.h>
++#include <openjp2/openjpeg.h>
+ #include <vector>
+ 
+ #include "gdal_pam.h"
