@@ -1,0 +1,96 @@
+$OpenBSD: patch-bus_signals_c,v 1.1 2013/10/30 15:41:58 ajacoutot Exp $
+
+From cdff3bc41bb97ef16f6959d3135f5d4a03e90cd8 Mon Sep 17 00:00:00 2001
+From: Simon McVittie <simon.mcvittie@collabora.co.uk>
+Date: Wed, 23 Oct 2013 14:19:13 +0000
+Subject: path_namespace='/' should match everything
+
+--- bus/signals.c.orig	Wed Jun  6 12:45:55 2012
++++ bus/signals.c	Wed Oct 30 16:36:55 2013
+@@ -1836,8 +1836,11 @@ match_rule_matches (BusMatchRule    *rule,
+        * namespace, rather than just starting with that string,
+        * by checking that the matched prefix is followed by a '/'
+        * or the end of the path.
++       *
++       * Special case: the only valid path of length 1, "/",
++       * matches everything.
+        */
+-      if (path[len] != '\0' && path[len] != '/')
++      if (len > 1 && path[len] != '\0' && path[len] != '/')
+         return FALSE;
+     }
+ 
+@@ -2719,6 +2722,7 @@ test_path_matching (void)
+ 
+ static const char*
+ path_namespace_should_match_message_1[] = {
++  "type='signal',path_namespace='/'",
+   "type='signal',path_namespace='/foo'",
+   "type='signal',path_namespace='/foo/TheObjectManager'",
+   NULL
+@@ -2733,6 +2737,7 @@ path_namespace_should_not_match_message_1[] = {
+ 
+ static const char*
+ path_namespace_should_match_message_2[] = {
++  "type='signal',path_namespace='/'",
+   "type='signal',path_namespace='/foo/TheObjectManager'",
+   NULL
+ };
+@@ -2744,6 +2749,7 @@ path_namespace_should_not_match_message_2[] = {
+ 
+ static const char*
+ path_namespace_should_match_message_3[] = {
++  "type='signal',path_namespace='/'",
+   NULL
+ };
+ 
+@@ -2753,12 +2759,25 @@ path_namespace_should_not_match_message_3[] = {
+   NULL
+ };
+ 
++static const char*
++path_namespace_should_match_message_4[] = {
++  "type='signal',path_namespace='/'",
++  NULL
++};
++
++static const char*
++path_namespace_should_not_match_message_4[] = {
++  "type='signal',path_namespace='/foo/TheObjectManager'",
++  NULL
++};
++
+ static void
+ test_matching_path_namespace (void)
+ {
+   DBusMessage *message1;
+   DBusMessage *message2;
+   DBusMessage *message3;
++  DBusMessage *message4;
+ 
+   message1 = dbus_message_new (DBUS_MESSAGE_TYPE_SIGNAL);
+   _dbus_assert (message1 != NULL);
+@@ -2775,6 +2794,11 @@ test_matching_path_namespace (void)
+   if (!dbus_message_set_path (message3, "/foo/TheObjectManagerOther"))
+     _dbus_assert_not_reached ("oom");
+ 
++  message4 = dbus_message_new (DBUS_MESSAGE_TYPE_SIGNAL);
++  _dbus_assert (message4 != NULL);
++  if (!dbus_message_set_path (message4, "/"))
++    _dbus_assert_not_reached ("oom");
++
+   check_matching (message1, 1,
+                   path_namespace_should_match_message_1,
+                   path_namespace_should_not_match_message_1);
+@@ -2784,7 +2808,11 @@ test_matching_path_namespace (void)
+   check_matching (message3, 3,
+                   path_namespace_should_match_message_3,
+                   path_namespace_should_not_match_message_3);
++  check_matching (message4, 4,
++                  path_namespace_should_match_message_4,
++                  path_namespace_should_not_match_message_4);
+ 
++  dbus_message_unref (message4);
+   dbus_message_unref (message3);
+   dbus_message_unref (message2);
+   dbus_message_unref (message1);
