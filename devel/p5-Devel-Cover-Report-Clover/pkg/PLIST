@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/30 09:50:30 schwarze Exp $
+${P5SITE}/Devel/Cover/
+${P5SITE}/Devel/Cover/Report/
+${P5SITE}/Devel/Cover/Report/Clover/
+${P5SITE}/Devel/Cover/Report/Clover.pm
+${P5SITE}/Devel/Cover/Report/Clover/Builder.pm
+${P5SITE}/Devel/Cover/Report/Clover/Class.pm
+${P5SITE}/Devel/Cover/Report/Clover/File.pm
+${P5SITE}/Devel/Cover/Report/Clover/FileRegistry.pm
+${P5SITE}/Devel/Cover/Report/Clover/Package.pm
+${P5SITE}/Devel/Cover/Report/Clover/Project.pm
+${P5SITE}/Devel/Cover/Report/Clover/Reportable.pm
+${P5SITE}/Devel/Cover/Report/Clover/clover.tt
+@man man/man3p/Devel::Cover::Report::Clover.3p

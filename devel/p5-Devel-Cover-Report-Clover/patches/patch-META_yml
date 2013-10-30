@@ -1,0 +1,15 @@
+$OpenBSD: patch-META_yml,v 1.1.1.1 2013/10/30 09:50:30 schwarze Exp $
+There is no good reason to require Module::Build 0.40; the version
+we have in base works just fine.  Probably, the author simply
+required what he happened to have installed.
+--- META.yml.orig	Mon Mar 12 10:26:55 2012
++++ META.yml	Mon Oct 28 20:54:37 2013
+@@ -13,7 +13,7 @@ build_requires:
+   Test::MockObject: 0
+   Test::More: 0
+ configure_requires:
+-  Module::Build: 0.4
++  Module::Build: 0.39
+ dynamic_config: 1
+ generated_by: 'Module::Build version 0.4, CPAN::Meta::Converter version 2.120530'
+ license: perl

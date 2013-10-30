@@ -1,0 +1,4 @@
+This module generates Clover compatible coverage XML files which
+can be used in various continuous integration software systems.
+It is designed to be called from the cover(1) program distributed
+in the p5-Devel-Cover package.
