@@ -1,0 +1,11 @@
+$OpenBSD: patch-SDL2_image_pc_in,v 1.1.1.1 2013/10/30 23:03:07 bcallah Exp $
+--- SDL2_image.pc.in.orig	Sat Oct 12 15:38:13 2013
++++ SDL2_image.pc.in	Sat Oct 12 15:38:30 2013
+@@ -7,6 +7,6 @@ Name: @PACKAGE@
+ Description: image loading library for Simple DirectMedia Layer
+ Version: @VERSION@
+ Requires: sdl2 >= @SDL_VERSION@
+-Libs: -L${libdir} -lSDL2_image
++Libs: -L${libdir} -lSDL2_image @IMG_LIBS@
+ Cflags: -I${includedir}/SDL2
+ 

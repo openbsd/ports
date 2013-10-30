@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2013/10/30 23:03:07 bcallah Exp $
+--- configure.orig	Sat Oct 12 15:39:40 2013
++++ configure	Sat Oct 12 15:41:29 2013
+@@ -12937,7 +12937,7 @@ if ${ac_cv_lib_tiff_TIFFClientOpen+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ltiff -lz $LIBS"
++LIBS="-ltiff -ljpeg -lz $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -13259,7 +13259,7 @@ _ACEOF
+             # Disable dynamic jpeg since we're linking it explicitly
+             jpg_lib=''
+         fi
+-        IMG_LIBS="-ltiff -lz $IMG_LIBS"
++        IMG_LIBS="-ltiff -ljpeg -lz $IMG_LIBS"
+     fi
+ fi
+ if test x$enable_jpg = xyes -a x$have_jpg_hdr = xyes -a x$have_jpg_lib = xyes; then
