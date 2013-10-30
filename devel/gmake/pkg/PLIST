@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.15 2011/04/20 20:51:41 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.16 2013/10/30 23:08:56 brad Exp $
 @bin bin/gmake
+include/gnumake.h
 @info info/make.info
 @man man/man1/gmake.1
 share/locale/be/LC_MESSAGES/make.mo
+share/locale/cs/LC_MESSAGES/make.mo
 share/locale/da/LC_MESSAGES/make.mo
 share/locale/de/LC_MESSAGES/make.mo
 share/locale/es/LC_MESSAGES/make.mo
