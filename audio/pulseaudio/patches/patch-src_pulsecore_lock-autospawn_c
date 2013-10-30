@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_pulsecore_lock-autospawn_c,v 1.1 2013/10/30 10:49:31 stsp Exp $
+--- src/pulsecore/lock-autospawn.c.orig	Wed Oct 30 10:21:47 2013
++++ src/pulsecore/lock-autospawn.c	Wed Oct 30 10:59:58 2013
+@@ -114,8 +114,13 @@ static void unref(pa_bool_t after_fork) {
+     if (n_ref > 0)
+         return;
+ 
++    /* Call pa_thread_free() only in the process the thread was created in
++     * to avoid undefined behaviour.
++     * POSIX.1-2008 XSH 2.9.2 Thread IDs: "applications should only assume
++     * that thread IDs are usable and unique within a single process." */
+     if (thread) {
+-        pa_thread_free(thread);
++        if (!after_fork)
++            pa_thread_free(thread);
+         thread = NULL;
+     }
+ 
