@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.259 2013/10/23 22:06:11 landry Exp $
+# $OpenBSD: Makefile,v 1.260 2013/10/30 10:45:42 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -175,6 +175,7 @@
      SUBDIR += py-psycopg2
      SUBDIR += py-pygresql
      SUBDIR += py-redis
+     SUBDIR += py-sql
      SUBDIR += py-sqlalchemy
      SUBDIR += py-sqlalchemy-migrate
      SUBDIR += py-sqlite
