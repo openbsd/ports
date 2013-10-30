@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1168 2013/10/30 09:53:13 schwarze Exp $
+# $OpenBSD: Makefile,v 1.1169 2013/10/30 18:11:34 bcallah Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1343,6 +1343,7 @@
      SUBDIR += sdl-pango
      SUBDIR += sdl-sound
      SUBDIR += sdl-ttf
+     SUBDIR += sdl2
      SUBDIR += sdlmm
      SUBDIR += sfio
      SUBDIR += shapelib
