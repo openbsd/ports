@@ -1,0 +1,16 @@
+$OpenBSD: patch-sdl2-config_in,v 1.1.1.1 2013/10/30 18:11:11 bcallah Exp $
+--- sdl2-config.in.orig	Sat Aug 10 15:37:09 2013
++++ sdl2-config.in	Sat Aug 10 15:38:41 2013
+@@ -42,10 +42,10 @@ while test $# -gt 0; do
+       echo @SDL_VERSION@
+       ;;
+     --cflags)
+-      echo -I@includedir@/SDL2 @SDL_CFLAGS@
++      echo -I@includedir@ -I@includedir@/SDL2 @SDL_CFLAGS@ @X_CFLAGS@
+       ;;
+ @ENABLE_SHARED_TRUE@    --libs)
+-@ENABLE_SHARED_TRUE@      echo -L@libdir@ @SDL_RLD_FLAGS@ @SDL_LIBS@
++@ENABLE_SHARED_TRUE@      echo -L@libdir@ @SDL_RLD_FLAGS@ @SDL_LIBS@ @X_LIBS@
+ @ENABLE_SHARED_TRUE@      ;;
+ @ENABLE_STATIC_TRUE@@ENABLE_SHARED_TRUE@    --static-libs)
+ @ENABLE_STATIC_TRUE@@ENABLE_SHARED_FALSE@    --libs|--static-libs)

@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2013/10/30 18:11:11 bcallah Exp $
+--- Makefile.in.orig	Thu Oct 24 00:05:29 2013
++++ Makefile.in	Tue Oct 29 23:06:17 2013
+@@ -100,7 +100,7 @@ LT_AGE      = @LT_AGE@
+ LT_CURRENT  = @LT_CURRENT@
+ LT_RELEASE  = @LT_RELEASE@
+ LT_REVISION = @LT_REVISION@
+-LT_LDFLAGS  = -no-undefined -rpath $(DESTDIR)$(libdir) -release $(LT_RELEASE) -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++LT_LDFLAGS  = -no-undefined -rpath $(DESTDIR)$(libdir) -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ 
+ all: $(srcdir)/configure Makefile $(objects) $(objects)/$(TARGET) $(objects)/$(SDLMAIN_TARGET) $(objects)/$(SDLTEST_TARGET)
+ 

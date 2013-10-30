@@ -1,0 +1,12 @@
+$OpenBSD: patch-sdl2_pc_in,v 1.1.1.1 2013/10/30 18:11:11 bcallah Exp $
+--- sdl2.pc.in.orig	Sat Aug 10 15:39:01 2013
++++ sdl2.pc.in	Sat Aug 10 15:40:09 2013
+@@ -10,6 +10,5 @@ Description: Simple DirectMedia Layer is a cross-platf
+ Version: @SDL_VERSION@
+ Requires:
+ Conflicts:
+-Libs: -L${libdir} @SDL_RLD_FLAGS@ @SDL_LIBS@
+-Libs.private: @SDL_STATIC_LIBS@
+-Cflags: -I${includedir}/SDL2 @SDL_CFLAGS@
++Libs: -L${libdir} @SDL_RLD_FLAGS@ @SDL_LIBS@ @X_LIBS@
++Cflags: -I${includedir}/SDL2 @SDL_CFLAGS@ @X_CFLAGS@
