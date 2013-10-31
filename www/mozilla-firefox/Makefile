@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.240 2013/10/31 07:58:25 landry Exp $
+# $OpenBSD: Makefile,v 1.241 2013/10/31 19:47:10 landry Exp $
 
 COMMENT =	Mozilla web browser
 
@@ -52,6 +52,7 @@ CONFIGURE_ARGS +=	--enable-gstreamer
 #WANTLIB += gmodule-2.0 gstapp-0.10 gstbase-0.10 gstreamer-0.10
 #WANTLIB += gstvideo-0.10 xml2
 
+BUILD_DEPENDS +=	multimedia/gstreamer-0.10/plugins-base
 RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-good
 
 # needs 3.0.10 when not using gcc
