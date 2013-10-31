@@ -1,0 +1,13 @@
+$OpenBSD: patch-README,v 1.1.1.1 2013/10/31 18:54:40 bcallah Exp $
+--- README.orig	Wed Oct 30 23:05:24 2013
++++ README	Wed Oct 30 23:06:41 2013
+@@ -20,6 +20,9 @@
+    for GTK+ (Gnome) colors, add the taskrc-gtk+ configuration strings to your ~/.taskrc
+    xterm -geom 100x40 +sb -e /usr/local/bin/vit -titlebar &
+ 
++ Notes:
++   the screen will be blank unless there is at least one open task
++
+  Downloads:
+    http://www.hep.wisc.edu/~rader/vit/
+ 

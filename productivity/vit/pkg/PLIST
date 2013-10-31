@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/31 18:54:40 bcallah Exp $
+bin/vit
+share/doc/vit/
+share/doc/vit/README
+share/vit/
+share/vit/commands

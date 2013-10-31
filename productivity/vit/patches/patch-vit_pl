@@ -1,0 +1,14 @@
+$OpenBSD: patch-vit_pl,v 1.1.1.1 2013/10/31 18:54:40 bcallah Exp $
+
+List of keybindings doesn't belong under /etc.
+--- vit.pl.orig	Wed Oct 30 22:31:36 2013
++++ vit.pl	Wed Oct 30 22:34:04 2013
+@@ -9,7 +9,7 @@ use strict;
+ use Curses;
+ use Time::HiRes qw(usleep);
+ 
+-our $commands_file = '%prefix%/etc/vit-commands';
++our $commands_file = '%prefix%/share/vit/commands';
+ our $task = '%TASK%';
+ our $clear = '%CLEAR%';
+ if ( $commands_file =~ /^%/ ) { $commands_file = "./commands"; }
