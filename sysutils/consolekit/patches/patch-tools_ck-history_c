@@ -1,4 +1,6 @@
-$OpenBSD: patch-tools_ck-history_c,v 1.3 2013/10/09 16:43:13 ajacoutot Exp $
+$OpenBSD: patch-tools_ck-history_c,v 1.4 2013/10/31 08:29:36 ajacoutot Exp $
+
+Fix uninitialised variable.
 
 64-bit time_t
 GLib's struct GTimeVal declares tv_sec as glong (will break around 2038).
@@ -6,12 +8,16 @@ Our struct timeval declares tv_sec as time_t...
 warning: passing argument 1 of 'ctime' from incompatible pointer type
 
 --- tools/ck-history.c.orig	Fri Jul 19 06:15:28 2013
-+++ tools/ck-history.c	Wed Oct  9 18:19:43 2013
-@@ -514,6 +514,7 @@ print_last_report_record (GList      *list,
-         CkLogSeatSessionAddedEvent *e;
++++ tools/ck-history.c	Thu Oct 31 09:24:51 2013
+@@ -511,9 +511,10 @@ print_last_report_record (GList      *list,
+         char                       *session_type;
+         char                       *session_id;
+         char                       *seat_id;
+-        CkLogSeatSessionAddedEvent *e;
++        CkLogSeatSessionAddedEvent *e = NULL;
          CkLogEvent                 *remove_event;
          RecordStatus                status;
-+        time_t                     added_t, removed_t;
++        time_t                      added_t, removed_t;
  
          if (event->type != CK_LOG_EVENT_SEAT_SESSION_ADDED
              && event->type != CK_LOG_EVENT_SYSTEM_START) {
