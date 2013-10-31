@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/09/28 08:51:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2013/10/31 09:51:29 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		personal file-sharing service for GNOME
 
 GNOME_PROJECT=		gnome-user-share
 GNOME_VERSION=		3.10.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		www sysutils
 
@@ -45,7 +45,7 @@ CONFIGURE_ARGS=		--disable-static \
 			--with-modules-path=${LOCALBASE}/lib/apache2
 
 # needs gnome-bluetooth
-CONFIGURE_ARGS=		--disable-bluetooth
+CONFIGURE_ARGS +=	--disable-bluetooth
 
 pre-configure:
 	perl -pi -e 's,/usr/share,${TRUEPREFIX}/share,g' \
