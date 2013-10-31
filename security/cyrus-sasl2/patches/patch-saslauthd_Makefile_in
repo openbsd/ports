@@ -1,5 +1,7 @@
-$OpenBSD: patch-saslauthd_Makefile_in,v 1.13 2013/10/31 19:42:45 schwarze Exp $
+$OpenBSD: patch-saslauthd_Makefile_in,v 1.14 2013/10/31 20:07:59 ajacoutot Exp $
+
 Remove hand-rolled formatting, just install mdoc(7) source manual.
+
 --- saslauthd/Makefile.in.orig	Tue Nov  6 20:21:45 2012
 +++ saslauthd/Makefile.in	Thu Oct 31 02:59:28 2013
 @@ -714,15 +714,9 @@ uninstall-am: uninstall-sbinPROGRAMS
