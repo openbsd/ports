@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-enigmail,v 1.10 2013/07/11 16:23:40 landry Exp $
+@comment $OpenBSD: PLIST-enigmail,v 1.11 2013/10/31 08:01:32 landry Exp $
 @conflict enigmail-seamonkey-<=1.2
 @pkgpath mail/enigmail/seamonkey
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/
@@ -8,7 +8,6 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-00
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/components/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/components/enigMsgCompFields.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/components/enigmail.js
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/components/enigmail.xpt
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/components/enigprefs-service.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/components/mimeDecrypt.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/components/mimeEncrypt.js
@@ -19,6 +18,8 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-00
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/commonFuncs.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/enigmailCommon.jsm
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/gpgAgentHandler.jsm
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/installGnuPG.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/keyManagement.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/mimeVerify.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/pipeConsole.jsm
