@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_ircd_c,v 1.1.1.1 2009/02/09 09:41:54 simon Exp $
---- src/ircd.c.orig	Sun Feb  8 23:12:35 2009
-+++ src/ircd.c	Sun Feb  8 23:15:04 2009
+$OpenBSD: patch-src_ircd_c,v 1.2 2013/10/31 01:25:07 brad Exp $
+--- src/ircd.c.orig	Sun May 27 09:09:42 2012
++++ src/ircd.c	Wed Oct 30 20:46:50 2013
 @@ -242,7 +242,6 @@ make_daemon(void)
  	}
  	else if(pid > 0)
@@ -23,7 +23,7 @@ $OpenBSD: patch-src_ircd_c,v 1.1.1.1 2009/02/09 09:41:54 simon Exp $
 +		}
 +
 +		if (setusercontext(NULL, pw, pw->pw_uid, LOGIN_SETALL) < 0) {
-+			fprintf(stderr, "Can's set user context to %s!\n", IRCD_USER);
++			fprintf(stderr, "Can't set user context to %s!\n", IRCD_USER);
 +			exit(EXIT_FAILURE);
 +		}
  	}
