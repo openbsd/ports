@@ -1,4 +1,4 @@
-$OpenBSD: patch-slim_conf,v 1.6 2012/09/02 09:22:59 landry Exp $
+$OpenBSD: patch-slim_conf,v 1.7 2013/10/31 09:03:33 dcoppa Exp $
 --- slim.conf.orig	Tue Jun 26 10:20:14 2012
 +++ slim.conf	Sat Sep  1 23:15:35 2012
 @@ -1,17 +1,17 @@
@@ -7,7 +7,7 @@ $OpenBSD: patch-slim_conf,v 1.6 2012/09/02 09:22:59 landry Exp $
 -default_path        /bin:/usr/bin:/usr/local/bin
 -default_xserver     /usr/bin/X
 -#xserver_arguments   -dpi 75
-+default_path        :/bin:/usr/bin:${LOCALBASE}/bin:${X11BASE}/bin
++default_path        /bin:/usr/bin:${LOCALBASE}/bin:${X11BASE}/bin
 +default_xserver     ${X11BASE}/bin/X
 +xserver_arguments   vt05
  

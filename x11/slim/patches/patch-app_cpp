@@ -1,9 +1,9 @@
-$OpenBSD: patch-app_cpp,v 1.5 2013/04/18 12:00:45 gonzalo Exp $
+$OpenBSD: patch-app_cpp,v 1.6 2013/10/31 09:03:33 dcoppa Exp $
 add support for bsd_auth/auth_userokay on OpenBSD
 only call the consolekit stuff if the ck session is okay
 don't exit if the ck session fails to start
---- app.cpp.orig	Mon Dec 31 10:03:42 2012
-+++ app.cpp	Wed Apr 17 13:09:39 2013
+--- app.cpp.orig	Wed Oct  2 00:38:05 2013
++++ app.cpp	Wed Oct 30 08:30:31 2013
 @@ -30,6 +30,11 @@
  #include <shadow.h>
  #endif
@@ -16,7 +16,7 @@ don't exit if the ck session fails to start
  using namespace std;
  
  #ifdef USE_PAM
-@@ -462,6 +467,12 @@ bool App::AuthenticateUser(bool focuspass){
+@@ -472,6 +477,12 @@ bool App::AuthenticateUser(bool focuspass){
  	if(pw == 0)
  		return false;
  
@@ -29,7 +29,7 @@ don't exit if the ck session fails to start
  #ifdef HAVE_SHADOW
  	struct spwd *sp = getspnam(pw->pw_name);
  	endspent();
-@@ -565,7 +576,6 @@ void App::Login() {
+@@ -575,7 +586,6 @@ void App::Login() {
  	}
  	catch(Ck::Exception &e) {
  		logStream << APPNAME << ": " << e << endl;
@@ -37,7 +37,7 @@ don't exit if the ck session fails to start
  	}
  #endif
  
-@@ -578,6 +588,7 @@ void App::Login() {
+@@ -588,6 +598,7 @@ void App::Login() {
  		char** child_env = pam.getenvlist();
  
  # ifdef USE_CONSOLEKIT
@@ -45,7 +45,7 @@ don't exit if the ck session fails to start
  		char** old_env = child_env;
  
  		/* Grow the copy of the environment for the session cookie */
-@@ -590,6 +601,7 @@ void App::Login() {
+@@ -600,6 +611,7 @@ void App::Login() {
  		memcpy(child_env, old_env, sizeof(char*)*n+1);
  		child_env[n - 1] = StrConcat("XDG_SESSION_COOKIE=", ck.get_xdg_session_cookie());
  		child_env[n] = NULL;
@@ -53,7 +53,7 @@ don't exit if the ck session fails to start
  # endif /* USE_CONSOLEKIT */
  #else
  
-@@ -611,6 +623,7 @@ void App::Login() {
+@@ -621,6 +633,7 @@ void App::Login() {
  		child_env[n++]=StrConcat("MAIL=", maildir.c_str());
  		child_env[n++]=StrConcat("XAUTHORITY=", xauthority.c_str());
  # ifdef USE_CONSOLEKIT
@@ -61,7 +61,7 @@ don't exit if the ck session fails to start
  		child_env[n++]=StrConcat("XDG_SESSION_COOKIE=", ck.get_xdg_session_cookie());
  # endif /* USE_CONSOLEKIT */
  		child_env[n++]=0;
-@@ -657,6 +670,7 @@ void App::Login() {
+@@ -667,6 +680,7 @@ void App::Login() {
  
  #ifdef USE_CONSOLEKIT
  	try {

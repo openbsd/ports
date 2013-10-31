@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.24 2013/09/25 07:12:54 rpointel Exp $
+# $OpenBSD: Makefile,v 1.25 2013/10/31 09:03:33 dcoppa Exp $
+
+SHARED_ONLY=	Yes
 
 COMMENT=	simple login manager
 
-DISTNAME=	slim-1.3.5
-REVISION=	0
+DISTNAME=	slim-1.3.6
+
+SHARED_LIBS=	slim	0.0 # 1.3
 
 CATEGORIES=	x11
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
@@ -20,10 +23,10 @@ LIB_DEPENDS=	graphics/jpeg \
 		x11/dbus \
 		graphics/png
 
-WANTLIB += X11 Xft Xmu Xrender c ck-connector dbus-1 fontconfig
-WANTLIB += freetype jpeg m png pthread stdc++ z
+WANTLIB += X11 Xft Xmu Xrandr Xrender c ck-connector dbus-1
+WANTLIB += fontconfig freetype jpeg m png pthread stdc++ z
 
-CONFIGURE_ARGS= -DUSE_CONSOLEKIT="yes"
+CONFIGURE_ARGS= -DUSE_CONSOLEKIT:Bool=Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/slim.1 ${WRKSRC}/slim.conf

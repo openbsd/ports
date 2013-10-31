@@ -1,26 +1,26 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2013/04/18 12:00:45 gonzalo Exp $
---- CMakeLists.txt.orig	Mon Dec 31 10:03:42 2012
-+++ CMakeLists.txt	Wed Apr 17 11:38:56 2013
-@@ -24,7 +24,7 @@ set(SLIM_VERSION "${SLIM_VERSION_MAJOR}.${SLIM_VERSION
- set(CMAKE_INSTALL_PREFIX "/usr/local" CACHE PATH "Installation Directory")
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2013/10/31 09:03:33 dcoppa Exp $
+--- CMakeLists.txt.orig	Wed Oct  2 00:38:05 2013
++++ CMakeLists.txt	Wed Oct 30 09:16:53 2013
+@@ -25,7 +25,7 @@ set(CMAKE_INSTALL_PREFIX "/usr/local" CACHE PATH "Inst
  set(PKGDATADIR "${CMAKE_INSTALL_PREFIX}/share/slim")
  set(SYSCONFDIR "/etc")
+ set(LIBDIR "/lib")
 -set(MANDIR "${CMAKE_INSTALL_PREFIX}/share/man")
 +set(MANDIR "${CMAKE_INSTALL_PREFIX}/man")
  
  set(SLIM_DEFINITIONS)
  if(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD" OR
-@@ -132,8 +132,6 @@ endif(USE_CONSOLEKIT)
+@@ -158,8 +158,6 @@ endif(USE_CONSOLEKIT)
  
  # system librarys
  find_library(M_LIB m)
 -find_library(RT_LIB rt)
 -find_library(CRYPTO_LIB crypt)
+ find_package(Threads)
  
  add_definitions(${SLIM_DEFINITIONS})
- 
-@@ -152,8 +150,6 @@ include_directories(
- #Set up library with all found packages
+@@ -185,8 +183,6 @@ target_link_libraries(libslim
+ #Set up library with all found packages for slim
  target_link_libraries(${PROJECT_NAME}
  	${M_LIB}
 -	${RT_LIB}
@@ -28,14 +28,35 @@ $OpenBSD: patch-CMakeLists_txt,v 1.2 2013/04/18 12:00:45 gonzalo Exp $
  	${X11_X11_LIB}
  	${X11_Xft_LIB}
  	${X11_Xrender_LIB}
-@@ -169,8 +165,8 @@ install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bi
+@@ -202,8 +198,6 @@ if(BUILD_SLIMLOCK)
+     #Set up library with all found packages for slimlock
+     target_link_libraries(slimlock
+         ${M_LIB}
+-        ${RT_LIB}
+-        ${CRYPTO_LIB}
+         ${X11_X11_LIB}
+         ${X11_Xft_LIB}
+         ${X11_Xrender_LIB}
+@@ -221,7 +215,9 @@ endif(BUILD_SLIMLOCK)
+ ####### install
+ # slim
+ install(TARGETS slim RUNTIME DESTINATION bin)
++if(BUILD_SLIMLOCK)
+ install(TARGETS slimlock RUNTIME DESTINATION bin)
++endif(BUILD_SLIMLOCK)
+ 
+ if (BUILD_SHARED_LIBS)
+ 	set_target_properties(libslim PROPERTIES
+@@ -236,9 +232,11 @@ endif (BUILD_SHARED_LIBS)
+ 
  # man file
  install(FILES slim.1 DESTINATION ${MANDIR}/man1/)
++if(BUILD_SLIMLOCK)
+ install(FILES slimlock.1 DESTINATION ${MANDIR}/man1/)
++endif(BUILD_SLIMLOCK)
  # configure
 -install(FILES slim.conf DESTINATION ${SYSCONFDIR})
 +install(FILES slim.conf DESTINATION ${CMAKE_INSTALL_PREFIX}/share/examples/slim/)
  # systemd service file
--install(FILES slim.service DESTINATION usr/lib/systemd/system)
-+#install(FILES slim.service DESTINATION usr/lib/systemd/system)
- # themes directory
- subdirs(themes)
+ if (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+ 	install(FILES slim.service DESTINATION ${LIBDIR}/systemd/system)
