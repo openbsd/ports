@@ -1,7 +1,7 @@
-$OpenBSD: patch-browser_app_profile_firefox_js,v 1.24 2013/09/19 13:19:16 landry Exp $
---- browser/app/profile/firefox.js.orig	Wed Aug  7 06:23:14 2013
-+++ browser/app/profile/firefox.js	Thu Aug  8 14:51:37 2013
-@@ -748,8 +748,8 @@ pref("gecko.handlerService.schemes.ircs.3.uriTemplate"
+$OpenBSD: patch-browser_app_profile_firefox_js,v 1.25 2013/10/31 07:58:25 landry Exp $
+--- browser/app/profile/firefox.js.orig	Tue Oct  1 11:51:51 2013
++++ browser/app/profile/firefox.js	Sun Oct  6 18:18:53 2013
+@@ -759,8 +759,8 @@ pref("gecko.handlerService.schemes.ircs.3.uriTemplate"
  pref("gecko.handlerService.allowRegisterFromDifferentHost", false);
  
  #ifdef MOZ_SAFE_BROWSING

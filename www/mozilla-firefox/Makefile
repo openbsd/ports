@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.239 2013/09/25 23:39:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.240 2013/10/31 07:58:25 landry Exp $
 
 COMMENT =	Mozilla web browser
 
 # Don't forget to bump www/firefox-i18n after updates.
 # Don't forget to update devel/xulrunner/2.0 if patches changes.
 
-MOZILLA_VERSION =	24.0
-REVISION =		0
+MOZILLA_VERSION =	25.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
-#MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/
-SO_VERSION =	43.0
+#MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build2/source/
+SO_VERSION =	44.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	browsercomps mozalloc mozgnome xul
@@ -34,7 +33,6 @@ MODGCC4_LANGS =		c c++
 MODCLANG_ARCHS =	amd64 i386
 MODCLANG_LANGS =	c c++
 
-USE_GROFF =	Yes
 # Regression tests are too hard to adapt to run here
 NO_TEST =	Yes
 
@@ -47,10 +45,12 @@ CONFIGURE_ARGS +=	--disable-debug-symbols
 .endif
 
 CONFIGURE_ARGS +=	--enable-gstreamer
-LIB_DEPENDS +=	multimedia/gstreamer-0.10/plugins-base
 
-WANTLIB += gmodule-2.0 gstapp-0.10 gstbase-0.10 gstreamer-0.10
-WANTLIB += gstvideo-0.10 xml2
+# libxul doesnt link directly with gst but dlopens it at runtime
+# see content/media/gstreamer/GStreamerLoader.cpp
+#LIB_DEPENDS +=	multimedia/gstreamer-0.10/plugins-base
+#WANTLIB += gmodule-2.0 gstapp-0.10 gstbase-0.10 gstreamer-0.10
+#WANTLIB += gstvideo-0.10 xml2
 
 RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-good
 

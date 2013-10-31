@@ -1,4 +1,6 @@
-$OpenBSD: patch-ipc_chromium_src_base_dir_reader_bsd_h,v 1.3 2013/08/16 10:25:31 sthen Exp $
+$OpenBSD: patch-ipc_chromium_src_base_dir_reader_bsd_h,v 1.4 2013/10/31 07:58:25 landry Exp $
+https://hg.mozilla.org/integration/mozilla-inbound/rev/66991961691d
+Remove in 26
 --- ipc/chromium/src/base/dir_reader_bsd.h.orig	Tue Jul 30 12:40:58 2013
 +++ ipc/chromium/src/base/dir_reader_bsd.h	Wed Aug 14 15:46:21 2013
 @@ -59,19 +59,11 @@ class DirReaderBSD {
