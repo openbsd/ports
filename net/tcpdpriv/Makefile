@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:35:57 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/10/31 17:47:14 naddy Exp $
 
 COMMENT=	removes sensitive information from a tcpdump -w file
 
 DISTNAME=	tcpdpriv-1.1.10
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net security
 
 HOMEPAGE=	http://ita.ee.lbl.gov/html/contrib/tcpdpriv.html
@@ -16,7 +16,7 @@ WANTLIB=		c pcap
 MASTER_SITES=		ftp://ita.ee.lbl.gov/software/
 EXTRACT_SUFX=		.tar.Z
 
-MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}"
+MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS} -DARC4RANDOM"
 
 CONFIGURE_STYLE=	simple
 USE_GROFF =		Yes

@@ -1,6 +1,6 @@
-$OpenBSD: patch-tcpdpriv_1,v 1.1 2011/06/23 22:50:28 naddy Exp $
---- tcpdpriv.1.orig	Tue Jun 21 07:57:51 2011
-+++ tcpdpriv.1	Tue Jun 21 07:59:49 2011
+$OpenBSD: patch-tcpdpriv_1,v 1.2 2013/10/31 17:47:14 naddy Exp $
+--- tcpdpriv.1.orig	Fri Jul 26 00:06:12 1996
++++ tcpdpriv.1	Thu Oct 31 18:25:37 2013
 @@ -217,6 +217,7 @@ will be deleted).  See the
  .Xr tcpdump 1
  man page for details on the format of
@@ -9,13 +9,15 @@ $OpenBSD: patch-tcpdpriv_1,v 1.1 2011/06/23 22:50:28 naddy Exp $
  .Sh SEE ALSO
  .Xr netstat 1 ,
  .Xr tcpdump 1 ,
-@@ -273,9 +274,6 @@ could retain subnet broadcast information.
+@@ -272,10 +273,7 @@ It would be nice if
+ could retain subnet broadcast information.
  .Pp
  .Nm Tcpdpriv
- supports only SLIP, PPP, Ethernet, FDDI, and the NULL data links.
+-supports only SLIP, PPP, Ethernet, FDDI, and the NULL data links.
 -.Pp
 -FDDI is only supported on systems that have the include file
 -<netinet/if_fddi.h>.
++supports only SLIP, PPP, Ethernet, and the NULL data links.
  .Pp
  There should be some way to allow the various pre-defined multicast
  addresses (such as "all-nodes", etc.) to be passed through unchanged.
