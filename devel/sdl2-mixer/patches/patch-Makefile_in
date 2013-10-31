@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2013/10/31 15:30:07 bcallah Exp $
+--- Makefile.in.orig	Sat Oct 12 16:47:33 2013
++++ Makefile.in	Sat Oct 12 16:48:01 2013
+@@ -45,7 +45,7 @@ LT_AGE      = @LT_AGE@
+ LT_CURRENT  = @LT_CURRENT@
+ LT_RELEASE  = @LT_RELEASE@
+ LT_REVISION = @LT_REVISION@
+-LT_LDFLAGS  = -no-undefined -rpath $(libdir) -release $(LT_RELEASE) -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++LT_LDFLAGS  = -no-undefined -rpath $(libdir) -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ 
+ all: $(srcdir)/configure Makefile $(objects) $(objects)/$(TARGET) $(objects)/playwave$(EXE) $(objects)/playmus$(EXE)
+ 

@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/31 15:30:07 bcallah Exp $
+@bin bin/play2mus
+@bin bin/play2wave
+include/SDL2/
+include/SDL2/SDL_mixer.h
+lib/libSDL2_mixer.a
+lib/libSDL2_mixer.la
+@lib lib/libSDL2_mixer.so.${LIBSDL2_mixer_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/SDL2_mixer.pc
