@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2013/10/11 23:50:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2013/10/31 21:12:13 sthen Exp $
 
 COMMENT=	full screen visualization of network traffic
 
 DISTNAME=	trafshow-3.1
+REVISION=	0
 CATEGORIES=	net
 
 MASTER_SITES=	http://spacehopper.org/mirrors/ \

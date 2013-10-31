@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2013/10/16 15:04:08 bluhm Exp $
+# $OpenBSD: Makefile,v 1.30 2013/10/31 21:12:13 sthen Exp $
 
 COMMENT-main=	eXtensible Open Router Platform
 
 VERSION=	1.6
 DISTNAME=	xorp-${VERSION}
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	3
+REVISION-main=	4
 CATEGORIES=	net
 HOMEPAGE=	http://www.xorp.org/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2013/10/22 11:33:58 zhuk Exp $
+# $OpenBSD: Makefile,v 1.121 2013/10/31 21:12:12 sthen Exp $
 
 COMMENT-main = 		K Desktop Environment, basic applications
 COMMENT-samba =		K Desktop Environment, samba support
@@ -48,7 +48,7 @@ LIB_DEPENDS-samba = ${LIB_DEPENDS} \
 		net/samba>=3
 
 
-REVISION-main =		28
+REVISION-main =		29
 WANTLIB-main = ${WANTLIB} GL GLU Half Iex IlmImf IlmThread Imath Xcomposite \
 	Xcursor Xdamage Xdamage Xfixes Xfixes Xft Xi Xinerama Xmu Xrandr Xss \
 	Xt Xtst Xxf86misc Xxf86vm Xxf86vm asn1 audiofile c com_err crypto drm \

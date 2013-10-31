@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.140 2013/06/20 08:26:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.141 2013/10/31 21:12:12 sthen Exp $
 
 COMMENT=	mail retrieval utility for POP2, POP3, KPOP, IMAP and more
 
 DISTNAME=	fetchmail-6.3.24
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=fetchmail/}
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	http://www.fetchmail.info/
 
@@ -30,7 +30,8 @@ CONFIGURE_ENV=		PYTHON=: YACC="bison -y"
 CONFIGURE_ARGS=		--with-ssl \
 			--with-kerberos5 \
 			--enable-NTLM
-USE_GROFF =		Yes
+
+USE_GROFF=		Yes# uses www.tmac for .URL tags
 
 EXTRACT_SUFX=		.tar.bz2
 

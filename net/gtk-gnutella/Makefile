@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.57 2013/10/22 19:48:49 jca Exp $
+# $OpenBSD: Makefile,v 1.58 2013/10/31 21:12:12 sthen Exp $
 
 COMMENT=		Gtk-based GUI client for the Gnutella Network
 
 DISTNAME=		gtk-gnutella-0.97.1
 EPOCH=			0
 CATEGORIES=     	net
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		http://gtk-gnutella.sourceforge.net/
 
@@ -51,7 +51,6 @@ MAKE_FLAGS=	GNUTLS_LDFLAGS= GNUTLS_CFLAGS=
 DESTDIRNAME=	INSTALL_PREFIX
 INSTALL_TARGET=	install install.man
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 .include <bsd.port.mk>
