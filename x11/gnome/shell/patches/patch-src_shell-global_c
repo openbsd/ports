@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_shell-global_c,v 1.1 2013/10/07 14:27:15 ajacoutot Exp $
+$OpenBSD: patch-src_shell-global_c,v 1.2 2013/10/31 10:49:12 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=709571
+From 15ff426be8e76af7c038feb3b754fbfde4056e5d Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Thu, 31 Oct 2013 10:46:59 +0000
+Subject: shell_global_reexec_self: add support for OpenBSD
 
 --- src/shell-global.c.orig	Mon Oct  7 16:06:32 2013
 +++ src/shell-global.c	Mon Oct  7 16:06:00 2013
