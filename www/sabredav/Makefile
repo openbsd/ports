@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2013/08/12 04:11:22 robert Exp $
+# $OpenBSD: Makefile,v 1.13 2013/10/31 07:07:14 benoit Exp $
 
 COMMENT =	php5 WebDAV server
-DISTNAME =	SabreDAV-1.8.6
+DISTNAME =	SabreDAV-1.8.7
 PKGNAME =	${DISTNAME:L}
-REVISION =	0
 PKG_ARCH =	*
 EXTRACT_SUFX =	.zip
 CATEGORIES =	www
