@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2013/10/15 13:31:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2013/10/31 06:38:44 ajacoutot Exp $
 
 COMMENT=	framework for defining and tracking users
 
 DISTNAME=	ConsoleKit-0.4.6
 EXTRACT_SUFX=	.tar.xz
 PKGNAME=	${DISTNAME:L}
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	sysutils	
 

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.15 2013/10/15 13:31:15 ajacoutot Exp $
---- src/ck-sysdeps-openbsd.c.orig	Tue Oct 15 15:24:12 2013
-+++ src/ck-sysdeps-openbsd.c	Tue Oct 15 15:27:37 2013
-@@ -0,0 +1,465 @@
+$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.16 2013/10/31 06:38:44 ajacoutot Exp $
+--- src/ck-sysdeps-openbsd.c.orig	Wed Oct 30 17:41:39 2013
++++ src/ck-sysdeps-openbsd.c	Wed Oct 30 18:48:47 2013
+@@ -0,0 +1,463 @@
 +/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
 + *
 + * Copyright (C) 2006 William Jon McCann <mccann@jhu.edu>
@@ -280,8 +280,6 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.15 2013/10/15 13:31:15 ajacoutot Ex
 +
 +        for (i = 0; penv[i] != NULL; i++) {
 +                char **vals;
-+
-+                if (!penv[i][0]) continue;
 +
 +                vals = g_strsplit (penv[i], "=", 2);
 +                if (vals != NULL) {
