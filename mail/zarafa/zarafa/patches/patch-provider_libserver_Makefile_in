@@ -1,7 +1,7 @@
-$OpenBSD: patch-provider_libserver_Makefile_in,v 1.1 2012/08/30 14:28:22 ajacoutot Exp $
---- provider/libserver/Makefile.in.orig	Thu Aug 30 13:30:11 2012
-+++ provider/libserver/Makefile.in	Thu Aug 30 13:30:28 2012
-@@ -376,6 +376,8 @@ libserver_la_SOURCES = \
+$OpenBSD: patch-provider_libserver_Makefile_in,v 1.2 2013/11/01 11:20:20 robert Exp $
+--- provider/libserver/Makefile.in.orig	Sat Sep 28 00:00:06 2013
++++ provider/libserver/Makefile.in	Wed Oct 30 14:32:59 2013
+@@ -379,6 +379,8 @@ libserver_la_SOURCES = \
  	ZarafaCmdUtil.cpp ZarafaCmdUtil.h \
  	ECLockManager.cpp ECLockManager.h
  

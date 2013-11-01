@@ -1,6 +1,6 @@
-$OpenBSD: patch-spooler_DAgent_cpp,v 1.21 2012/08/30 14:28:22 ajacoutot Exp $
---- spooler/DAgent.cpp.orig	Wed Aug  8 17:14:59 2012
-+++ spooler/DAgent.cpp	Mon Aug 27 10:27:05 2012
+$OpenBSD: patch-spooler_DAgent_cpp,v 1.22 2013/11/01 11:20:20 robert Exp $
+--- spooler/DAgent.cpp.orig	Sat Sep 28 00:58:29 2013
++++ spooler/DAgent.cpp	Wed Oct 30 14:32:59 2013
 @@ -97,6 +97,11 @@
  #include <sys/mman.h>
  #include <pwd.h>
@@ -13,7 +13,7 @@ $OpenBSD: patch-spooler_DAgent_cpp,v 1.21 2012/08/30 14:28:22 ajacoutot Exp $
  /*
    This is actually from sysexits.h
    but since those windows lamers don't have it ..
-@@ -3375,7 +3380,7 @@ int main(int argc, char *argv[]) {
+@@ -3412,7 +3417,7 @@ int main(int argc, char *argv[]) {
  
  	DeliveryArgs sDeliveryArgs;
  	sDeliveryArgs.strPath = "";
@@ -22,7 +22,7 @@ $OpenBSD: patch-spooler_DAgent_cpp,v 1.21 2012/08/30 14:28:22 ajacoutot Exp $
  	sDeliveryArgs.bCreateFolder = false;
  	sDeliveryArgs.strDeliveryFolder.clear();
  	sDeliveryArgs.szPathSeperator = '\\';
-@@ -3437,10 +3442,10 @@ int main(int argc, char *argv[]) {
+@@ -3476,10 +3481,10 @@ int main(int argc, char *argv[]) {
  		{ "log_raw_message", "no", CONFIGSETTING_RELOADABLE },
  		{ "log_raw_message_path", "/tmp", CONFIGSETTING_RELOADABLE },
  		{ "archive_on_delivery", "no", CONFIGSETTING_RELOADABLE },
@@ -34,5 +34,5 @@ $OpenBSD: patch-spooler_DAgent_cpp,v 1.21 2012/08/30 14:28:22 ajacoutot Exp $
 +		{ "plugin_path", "/var/db/zarafa/dagent/plugins" },
 +		{ "plugin_manager_path", "${PREFIX}/share/zarafa-dagent/python" },
  		{ "set_rule_headers", "yes", CONFIGSETTING_RELOADABLE },
+ 		{ "no_double_forward", "no", CONFIGSETTING_RELOADABLE },
  		{ NULL, NULL },
- 	};

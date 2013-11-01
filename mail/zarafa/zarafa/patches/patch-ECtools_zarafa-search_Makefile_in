@@ -1,7 +1,7 @@
-$OpenBSD: patch-ECtools_zarafa-search_Makefile_in,v 1.1 2013/02/04 18:22:57 robert Exp $
---- ECtools/zarafa-search/Makefile.in.orig	Mon Feb  4 19:12:06 2013
-+++ ECtools/zarafa-search/Makefile.in	Mon Feb  4 19:12:43 2013
-@@ -354,7 +354,10 @@ zarafa_search_SOURCES = \
+$OpenBSD: patch-ECtools_zarafa-search_Makefile_in,v 1.2 2013/11/01 11:20:20 robert Exp $
+--- ECtools/zarafa-search/Makefile.in.orig	Sat Sep 28 00:00:05 2013
++++ ECtools/zarafa-search/Makefile.in	Wed Oct 30 14:32:59 2013
+@@ -357,7 +357,10 @@ zarafa_search_SOURCES = \
  
  dump_index_SOURCES = dump-index.cpp
  dump_index_LDADD = \

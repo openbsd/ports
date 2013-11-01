@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_gateway_cfg,v 1.10 2012/07/06 16:25:56 ajacoutot Exp $
---- installer/linux/gateway.cfg.orig	Wed Dec 21 20:17:06 2011
-+++ installer/linux/gateway.cfg	Thu Jan  5 12:07:15 2012
+$OpenBSD: patch-installer_linux_gateway_cfg,v 1.11 2013/11/01 11:20:20 robert Exp $
+--- installer/linux/gateway.cfg.orig	Fri Sep 27 23:59:41 2013
++++ installer/linux/gateway.cfg	Wed Oct 30 14:32:59 2013
 @@ -14,16 +14,16 @@ server_hostname = 
  server_hostname_greeting = no
  
@@ -22,8 +22,8 @@ $OpenBSD: patch-installer_linux_gateway_cfg,v 1.10 2012/07/06 16:25:56 ajacoutot
  
  # enable/disable POP3, and POP3 listen port
  pop3_enable	=	yes
-@@ -63,10 +63,10 @@ imap_expunge_on_delete = no
- imap_store_rfc822 = yes
+@@ -66,10 +66,10 @@ imap_store_rfc822 = yes
+ imap_max_fail_commands = 10
  
  # File with RSA key for SSL
 -ssl_private_key_file	=	/etc/zarafa/gateway/privkey.pem
