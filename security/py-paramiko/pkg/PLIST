@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2013/08/11 10:20:03 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.20 2013/11/01 07:28:15 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/paramiko/
 lib/python${MODPY_VERSION}/site-packages/paramiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/paramiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -30,6 +30,8 @@ lib/python${MODPY_VERSION}/site-packages/paramiko/config.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/config.pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/dsskey.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/dsskey.pyc
+lib/python${MODPY_VERSION}/site-packages/paramiko/ecdsakey.py
+lib/python${MODPY_VERSION}/site-packages/paramiko/ecdsakey.pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/file.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/file.pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/hostkeys.py
@@ -173,6 +175,9 @@ share/doc/${MODPY_PY_PREFIX}paramiko/paramiko.config-pysrc.html
 share/doc/${MODPY_PY_PREFIX}paramiko/paramiko.config.LazyFqdn-class.html
 share/doc/${MODPY_PY_PREFIX}paramiko/paramiko.dsskey-module.html
 share/doc/${MODPY_PY_PREFIX}paramiko/paramiko.dsskey-pysrc.html
+share/doc/${MODPY_PY_PREFIX}paramiko/paramiko.ecdsakey-module.html
+share/doc/${MODPY_PY_PREFIX}paramiko/paramiko.ecdsakey-pysrc.html
+share/doc/${MODPY_PY_PREFIX}paramiko/paramiko.ecdsakey.ECDSAKey-class.html
 share/doc/${MODPY_PY_PREFIX}paramiko/paramiko.file-module.html
 share/doc/${MODPY_PY_PREFIX}paramiko/paramiko.file-pysrc.html
 share/doc/${MODPY_PY_PREFIX}paramiko/paramiko.hostkeys-module.html
@@ -257,6 +262,7 @@ share/doc/${MODPY_PY_PREFIX}paramiko/toc-paramiko.common-module.html
 share/doc/${MODPY_PY_PREFIX}paramiko/toc-paramiko.compress-module.html
 share/doc/${MODPY_PY_PREFIX}paramiko/toc-paramiko.config-module.html
 share/doc/${MODPY_PY_PREFIX}paramiko/toc-paramiko.dsskey-module.html
+share/doc/${MODPY_PY_PREFIX}paramiko/toc-paramiko.ecdsakey-module.html
 share/doc/${MODPY_PY_PREFIX}paramiko/toc-paramiko.file-module.html
 share/doc/${MODPY_PY_PREFIX}paramiko/toc-paramiko.hostkeys-module.html
 share/doc/${MODPY_PY_PREFIX}paramiko/toc-paramiko.kex_gex-module.html
