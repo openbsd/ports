@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 10:50:26 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/11/01 17:19:05 benoit Exp $
 
 COMMENT =		Python parsing module
 
@@ -6,10 +6,9 @@ MODPY_EGG_VERSION =	1.5.7
 DISTNAME =		pyparsing-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
+REVISION =		0
 
 HOMEPAGE =		http://pyparsing.wikispaces.com/
-
-MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
