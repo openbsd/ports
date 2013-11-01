@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.303 2013/10/27 09:59:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.304 2013/11/01 14:18:34 syl Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -118,6 +118,7 @@
      SUBDIR += node-rmdir
      SUBDIR += node-syslog
      SUBDIR += ns4
+     SUBDIR += ntfs-3g
      SUBDIR += nut
      SUBDIR += openpoppassd
      SUBDIR += p5-Capture-Tiny
@@ -195,6 +196,7 @@
      SUBDIR += snapdl
      SUBDIR += socket
      SUBDIR += socklog
+     SUBDIR += sshfs-fuse
      SUBDIR += stan
      SUBDIR += stow
      SUBDIR += stress
