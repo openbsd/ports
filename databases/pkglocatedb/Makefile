@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/10/21 09:04:47 bentley Exp $
+# $OpenBSD: Makefile,v 1.25 2013/11/01 14:54:49 espie Exp $
 
 # NOTE for FLAVOR=src
 # - you can have up-to-date ${BSDSRCDIR}/distrib/sets/lists 
@@ -61,7 +61,7 @@ BUILD_DEPENDS = databases/pkglocatedb
 do-build:
 
 .else
-BUILD_DEPENDS =	databases/sqlports,-compact>=2.3
+BUILD_DEPENDS =	databases/sqlports,-list
 
 ARGS = -a -p ${PORTSDIR}
 
@@ -88,13 +88,11 @@ NO_TEST =		Yes
 # XXX cheat a bit to avoid having two makefiles
 do-build: ${WRKBUILD}/pkglocatedb
 
-${WRKBUILD}/subdirlist:
-	sqlite3 ${LOCALBASE}/share/sqlports-compact 'select min(paths.fullpkgpath) from paths join ports on paths.id=ports.fullpkgpath where ports.static_plist=1 group by fullpkgname order by paths.fullpkgpath' >$@
 .if ${FLAVOR:Msrc}
 ${WRKBUILD}/pkglocatedb:
 	${LOCALBASE}/bin/pkg_locate : | \
 		${SUDO} pkg_mklocatedb ${ARGS} >$@.tmp && mv $@.tmp $@
 .else
-${WRKBUILD}/pkglocatedb: ${WRKBUILD}/subdirlist
-	unset REPORT_PROBLEM; SUBDIRLIST=${WRKBUILD}/subdirlist REPORT_PROBLEM_LOGFILE=${WRKBUILD}/ouch ${SUDO} pkg_mklocatedb ${ARGS} > $@.tmp && mv $@.tmp $@
+${WRKBUILD}/pkglocatedb:
+	unset REPORT_PROBLEM; SUBDIRLIST=${LOCALBASE}/share/sqlports.list REPORT_PROBLEM_LOGFILE=${WRKBUILD}/ouch ${SUDO} pkg_mklocatedb ${ARGS} > $@.tmp && mv $@.tmp $@
 .endif
