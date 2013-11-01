@@ -1,0 +1,188 @@
+#! /usr/bin/perl
+# $OpenBSD: mkdblite,v 1.1 2013/11/01 14:52:47 espie Exp $
+#
+# Copyright (c) 2013 Marc Espie <espie@openbsd.org>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+# reuse the treewalker to just build a list of pkgpaths/pkgnames
+# "poor man's" db, for use on vax.
+
+use strict;
+use warnings;
+use FindBin;
+use lib $FindBin::Bin;
+use Getopt::Std;
+use PkgPath;
+use Info;
+use Var;
+use TreeWalker;
+
+package AnyVar;
+sub handle
+{
+}
+
+package FullpkgnameVar;
+sub handle
+{
+	my ($self, $walk) = @_;
+	$walk->{t}{$walk->{currentpath}}{FULLPKGNAME} = $self->value;
+}
+
+package StaticPlistVar;
+sub handle
+{
+	my ($self, $walk) = @_;
+	if (!$self->find_value) {
+		$walk->{t}{$walk->{currentpath}}{STATIC_PLIST} = 0;
+	}
+}
+
+
+package DependsVar;
+sub handle
+{
+	my ($self, $walk) = @_;
+	for my $depends ($self->words) {
+		$depends =~ s/^\:+//;
+		my ($pkgspec, $pkgpath2, $rest) = split(/\:/, $depends);
+		if ($pkgspec =~ m/\//) {
+			($pkgspec, $pkgpath2, $rest) = 
+			    ('', $pkgspec, $pkgpath2);
+		}
+		if (!defined $pkgpath2) {
+			print STDERR "Wrong depends $depends\n";
+			return;
+		}
+		my $p = PkgPath->new($pkgpath2);
+		$p->{want} = 1;
+	}
+}
+
+package MyTreeWalker;
+our @ISA = (qw(TreeWalker));
+
+sub new
+{
+	my ($class) = @_;
+	bless {t => {} }, $class;
+}
+
+sub handle_value
+{
+	my ($self, $o, $var, $value, $arch) = @_;
+	$o->{info} //= Info->new($o);
+	$o->{info}->create($var, $value, $arch, $o);
+}
+
+sub parse_dump
+{
+	my ($self, $fd, $subdirs) = @_;
+	$self->SUPER::parse_dump($fd, $subdirs);
+}
+
+sub create_missing_vars
+{
+	my ($self, $o) = @_;
+	for my $name (qw(SHARED_LIBS TARGETS)) {
+		if (!defined $o->{info}->{vars}{$name}) {
+			$o->{info}->create($name, '', undef, $o);
+		}
+	}
+}
+
+sub handle_var
+{
+	my ($self, $var) = @_;
+	$var->handle($self);
+}
+
+sub handle_path
+{
+	my ($self, $pkgpath) = @_;
+	$self->create_missing_vars($pkgpath);
+	my $key = $pkgpath->fullpkgpath;
+	if ($pkgpath->{info}{done}) {
+		print "--- $key (already done)\n";
+		return;
+	}
+	$self->setpath($pkgpath);
+	print "+++ $key\n";
+	for my $var ($pkgpath->{info}->variables) {
+		$self->handle_var($var);
+	}
+	$pkgpath->{info}->reclaim;
+	$pkgpath->{info}{done} = 1;
+	$pkgpath->{info}{canonical} = $pkgpath;
+	$pkgpath->{done} = 1;
+}
+
+sub setpath
+{
+	my ($self, $path) = @_;
+	$self->{currentpath} = $path->fullpkgpath;
+}
+package main;
+
+our ($opt_v, $opt_q, $opt_p);
+
+getopts('vq:p:');
+my $dbname;
+if (@ARGV > 0) {
+	$dbname = shift;
+} else {
+	$dbname = 'portslist';
+}
+
+if ($opt_p) {
+	$ENV{'REPORT_PROBLEM_LOGFILE'}= $opt_p;
+}
+
+my $walker = MyTreeWalker->new();
+$walker->dump_all_dirs;
+
+print "Aliases\n";
+for my $v (PkgPath->seen) {
+	next unless defined $v->{needalias};
+	my $alias = $v->{info}{canonical};
+	if (defined $alias) {
+		print $v->fullpkgpath, "->", $alias->fullpkgpath, "\n";
+	} else {
+		print "!!! Can't figure out alias for ", $v->fullpkgpath, "\n";
+	}
+}
+
+while (my ($k, $v) = each %$Info::unknown) {
+	print STDERR "Unknown variable $k in ", $v->fullpkgpath, "\n";
+}
+
+if (defined $opt_q) {
+	open(my $log, ">", $opt_q) or die $!;
+} else {
+}
+
+open(my $fh, ">", "$dbname.list") or die;
+my $seen = {};
+for my $k (sort keys %{$walker->{t}}) {
+	my $name = $walker->{t}{$k}{FULLPKGNAME};
+	if ($seen->{$name}) {
+		next;
+	}
+	if (defined $walker->{t}{$k}{STATIC_PLIST}) {
+		next;
+	}
+	print $fh $k, "\n";
+	$seen->{$name} = 1;
+}
+close($fh);
