@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/03/04 17:45:46 robert Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/11/01 11:20:54 robert Exp $
 zarafa-webapp/
 zarafa-webapp/.htaccess
 zarafa-webapp/client/
@@ -512,7 +512,8 @@ zarafa-webapp/client/resources/icons/icon_remove.gif
 zarafa-webapp/client/resources/icons/icon_renamefolder.gif
 zarafa-webapp/client/resources/icons/icon_reply.gif
 zarafa-webapp/client/resources/icons/icon_replyall.gif
-zarafa-webapp/client/resources/icons/icon_restore.gif
+zarafa-webapp/client/resources/icons/icon_restore.png
+zarafa-webapp/client/resources/icons/icon_restore_old.gif
 zarafa-webapp/client/resources/icons/icon_rules.gif
 zarafa-webapp/client/resources/icons/icon_save.png
 zarafa-webapp/client/resources/icons/icon_search.gif
@@ -625,6 +626,8 @@ zarafa-webapp/client/resources/icons/new/distlist.png
 zarafa-webapp/client/resources/icons/new/download.png
 zarafa-webapp/client/resources/icons/new/drafts.png
 zarafa-webapp/client/resources/icons/new/edit_recipient.png
+zarafa-webapp/client/resources/icons/new/embed_attachment.png
+zarafa-webapp/client/resources/icons/new/embed_attachment_box.png
 zarafa-webapp/client/resources/icons/new/envelope.png
 zarafa-webapp/client/resources/icons/new/floppy.png
 zarafa-webapp/client/resources/icons/new/folder.png
@@ -673,6 +676,7 @@ zarafa-webapp/client/resources/icons/new/note_yellow.png
 zarafa-webapp/client/resources/icons/new/note_yellow_large.png
 zarafa-webapp/client/resources/icons/new/oof.png
 zarafa-webapp/client/resources/icons/new/paperclip.png
+zarafa-webapp/client/resources/icons/new/paperclip_box.png
 zarafa-webapp/client/resources/icons/new/plug.png
 zarafa-webapp/client/resources/icons/new/preview.png
 zarafa-webapp/client/resources/icons/new/print_email.png
@@ -683,6 +687,7 @@ zarafa-webapp/client/resources/icons/new/reply_all.png
 zarafa-webapp/client/resources/icons/new/right_preview.png
 zarafa-webapp/client/resources/icons/new/rss.png
 zarafa-webapp/client/resources/icons/new/seal.png
+zarafa-webapp/client/resources/icons/new/shortcuts.png
 zarafa-webapp/client/resources/icons/new/signature.png
 zarafa-webapp/client/resources/icons/new/spanner.png
 zarafa-webapp/client/resources/icons/new/stub.png
@@ -1126,11 +1131,14 @@ zarafa-webapp/plugins/clockwidget/resources/
 zarafa-webapp/plugins/clockwidget/resources/images/
 zarafa-webapp/plugins/clockwidget/resources/images/clock.png
 zarafa-webapp/plugins/extbox/
+zarafa-webapp/plugins/extbox/config.php
 zarafa-webapp/plugins/extbox/js/
 zarafa-webapp/plugins/extbox/js/extbox.js
 zarafa-webapp/plugins/extbox/lightbox/
 zarafa-webapp/plugins/extbox/lightbox/lightbox.js
 zarafa-webapp/plugins/extbox/manifest.xml
+zarafa-webapp/plugins/extbox/php/
+zarafa-webapp/plugins/extbox/php/plugin.extbox.php
 zarafa-webapp/plugins/extbox/resources/
 zarafa-webapp/plugins/extbox/resources/css/
 zarafa-webapp/plugins/extbox/resources/css/lightbox.css
@@ -1148,6 +1156,7 @@ zarafa-webapp/plugins/facebookwidget/resources/
 zarafa-webapp/plugins/facebookwidget/resources/images/
 zarafa-webapp/plugins/facebookwidget/resources/images/facebook.png
 zarafa-webapp/plugins/feedback/
+zarafa-webapp/plugins/feedback/config.php
 zarafa-webapp/plugins/feedback/js/
 zarafa-webapp/plugins/feedback/js/feedback.js
 zarafa-webapp/plugins/feedback/manifest.xml
@@ -1172,6 +1181,7 @@ zarafa-webapp/plugins/oauthlib/php/OAuth2.inc
 zarafa-webapp/plugins/oauthlib/php/OAuth2Client.inc
 zarafa-webapp/plugins/oauthlib/php/OAuth2Exception.inc
 zarafa-webapp/plugins/pdfbox/
+zarafa-webapp/plugins/pdfbox/config.php
 zarafa-webapp/plugins/pdfbox/js/
 zarafa-webapp/plugins/pdfbox/js/pdfbox.js
 zarafa-webapp/plugins/pdfbox/manifest.xml
@@ -1180,6 +1190,8 @@ zarafa-webapp/plugins/pdfbox/pdfbox/pdfbox.js
 zarafa-webapp/plugins/pdfbox/pdfjs/
 zarafa-webapp/plugins/pdfbox/pdfjs/compatibility.js
 zarafa-webapp/plugins/pdfbox/pdfjs/pdf.js
+zarafa-webapp/plugins/pdfbox/php/
+zarafa-webapp/plugins/pdfbox/php/plugin.pdfbox.php
 zarafa-webapp/plugins/pdfbox/resources/
 zarafa-webapp/plugins/pdfbox/resources/css/
 zarafa-webapp/plugins/pdfbox/resources/css/pdfbox.css
@@ -1229,6 +1241,23 @@ zarafa-webapp/plugins/webappmanual/js/webappmanual.js
 zarafa-webapp/plugins/webappmanual/manifest.xml
 zarafa-webapp/plugins/webappmanual/php/
 zarafa-webapp/plugins/webappmanual/php/plugin.webappmanual.php
+zarafa-webapp/plugins/webodf/
+zarafa-webapp/plugins/webodf/config.php
+zarafa-webapp/plugins/webodf/js/
+zarafa-webapp/plugins/webodf/js/webodf.js
+zarafa-webapp/plugins/webodf/lib/
+zarafa-webapp/plugins/webodf/lib/webodf.js
+zarafa-webapp/plugins/webodf/manifest.xml
+zarafa-webapp/plugins/webodf/php/
+zarafa-webapp/plugins/webodf/php/plugin.webodfbox.php
+zarafa-webapp/plugins/webodf/resources/
+zarafa-webapp/plugins/webodf/resources/css/
+zarafa-webapp/plugins/webodf/resources/css/webodf.css
+zarafa-webapp/plugins/webodf/resources/images/
+zarafa-webapp/plugins/webodf/resources/images/close.png
+zarafa-webapp/plugins/webodf/resources/images/close_over.png
+zarafa-webapp/plugins/webodf/resources/images/lb-next.png
+zarafa-webapp/plugins/webodf/resources/images/lb-prev.png
 zarafa-webapp/plugins/xmpp/
 zarafa-webapp/plugins/xmpp/config.php.dist
 @sample zarafa-webapp/plugins/xmpp/config.php
