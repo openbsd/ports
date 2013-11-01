@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_themes_theme_service_factory_cc,v 1.1 2013/11/01 14:09:19 robert Exp $
+--- chrome/browser/themes/theme_service_factory.cc.orig.port	Fri Nov  1 14:58:39 2013
++++ chrome/browser/themes/theme_service_factory.cc	Fri Nov  1 14:59:20 2013
+@@ -68,7 +68,7 @@ BrowserContextKeyedService* ThemeServiceFactory::Build
+ 
+ void ThemeServiceFactory::RegisterProfilePrefs(
+     user_prefs::PrefRegistrySyncable* registry) {
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+   bool default_uses_system_theme = false;
+ 
+ #if defined(TOOLKIT_GTK)
