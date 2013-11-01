@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/11/01 08:11:41 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2013/11/01 08:23:06 landry Exp $
 
 COMMENT=	tools for managing samba ldap
 
@@ -41,8 +41,8 @@ pre-configure:
 		perl -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/$$f; \
 		perl -pi -e 's|%%SYSCONFDIR%%|${SYSCONFDIR}|g' ${WRKSRC}/$$f; \
 	done
-	perl -pi -e 's|\$$Source: /home/cvs/ports/sysutils/smbldap-tools/Makefile,v $$||' ${WRKSRC}/configure.pl
-	perl -pi -e 's|\$$Id: Makefile,v 1.10 2013/11/01 08:11:41 landry Exp $$||' ${WRKSRC}/configure.pl
+	perl -pi -e 's|^# ..Source: .*$$||' ${WRKSRC}/configure.pl
+	perl -pi -e 's|^# ..Id: .*$$||' ${WRKSRC}/configure.pl
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/smbldap-tools/
