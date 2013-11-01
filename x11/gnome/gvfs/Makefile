@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2013/10/26 08:02:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.103 2013/11/01 14:08:26 ajacoutot Exp $
 
 COMMENT-main=	GNOME Virtual File System
 COMMENT-smb=	GVFS mount module for samba
@@ -73,6 +73,8 @@ CONFIGURE_ARGS=	--disable-cdda \
 		--disable-gudev \
 		--disable-udev \
 		--disable-gdu
+
+CONFIGURE_ARGS += --disable-fuse
 
 MULTI_PACKAGES=		-main -smb -goa
 
