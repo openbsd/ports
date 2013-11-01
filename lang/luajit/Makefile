@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2013/10/05 15:51:08 abieber Exp $
+# $OpenBSD: Makefile,v 1.10 2013/11/01 12:21:04 jasper Exp $
 
-ONLY_FOR_ARCHS = powerpc arm i386 amd64
+ONLY_FOR_ARCHS = powerpc i386 amd64
+# arm needs EABI/aapcs
 # for mips64* gcc 4.6 is needed, but that doesn't build on this arch (yet)
 
 SHARED_ONLY =	Yes
