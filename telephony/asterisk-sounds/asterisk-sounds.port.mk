@@ -1,4 +1,4 @@
-# $OpenBSD: asterisk-sounds.port.mk,v 1.6 2013/05/16 21:53:31 sthen Exp $
+# $OpenBSD: asterisk-sounds.port.mk,v 1.7 2013/11/01 10:20:00 sthen Exp $
 
 # sync with asterisk-sounds/Makefile and asterisk-sounds/*sounds/Makefile
 MODAS_CODECS ?=	gsm alaw ulaw g722 g729 wav # sln16 siren7 siren14
@@ -10,14 +10,14 @@ MASTER_SITES ?= http://downloads.asterisk.org/pub/telephony/sounds/releases/
 HOMEPAGE =	http://www.asterisk.org/
 COMMENT =	${MODAS_DESC}
 
-NO_BUILD=	Yes
-NO_TEST=	Yes
-PKG_ARCH=	*
+NO_BUILD =	Yes
+NO_TEST =	Yes
+PKG_ARCH =	*
 
 # strictly speaking not, as they are just sound files, but packaging
-# these on !shared arch is just a total waste of cycles as asterisk itself
-# is SHARED_ONLY.
-SHARED_ONLY =	Yes
+# these on arch which don't build asterisk is a waste of cycles on build
+# machines and disk space on mirrors
+BUILD_DEPENDS =	telephony/asterisk
 
 _LN-en_AU =	Australian English
 _LN-en =	English
