@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.10 2013/06/23 08:58:07 espie Exp $
+# $OpenBSD: Info.pm,v 1.11 2013/11/01 14:50:11 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -42,7 +42,7 @@ our $vars = {
     DIST_SUBDIR => 'DefinedVar',
     EPOCH => 'AnyVar',
     FLAVORS => 'FlavorsVar',
-    FULLPKGNAME => 'AnyVar',
+    FULLPKGNAME => 'FullpkgnameVar',
     HOMEPAGE => 'AnyVar',
     IGNORE => 'DefinedVar',
     IS_INTERACTIVE => 'AnyVar',
@@ -82,7 +82,7 @@ our $vars = {
     SEPARATE_BUILD => 'YesKeyVar',
     SHARED_LIBS => 'SharedLibsVar',
     SHARED_ONLY => 'YesNoVar',
-    STATIC_PLIST => 'YesNoVar',
+    STATIC_PLIST => 'StaticPlistVar',
     SUBPACKAGE => 'DefinedVar',
     SUPDISTFILES => 'AnyVar',
     TARGETS => 'TargetsVar',

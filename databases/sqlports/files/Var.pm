@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.21 2013/06/23 08:58:07 espie Exp $
+# $OpenBSD: Var.pm,v 1.22 2013/11/01 14:50:11 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -112,6 +112,10 @@ sub normal_insert
 	my $ins = shift;
     	$ins->insert($self->table, $ins->ref, @_);
 }
+
+# for distinction later
+package FullpkgnameVar;
+our @ISA = qw(AnyVar);
 
 # for variables we want to know about, but not register in the db
 package IgnoredVar;
@@ -236,6 +240,9 @@ sub values
 		no => undef 
 	};
 }
+
+package StaticPlistVar;
+our @ISA = qw(YesNoVar);
 
 package YesNoGnuVar;
 our @ISA = qw(ValuedVar);
