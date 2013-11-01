@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.27 2013/03/30 17:06:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.28 2013/11/01 18:32:51 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 %%SHARED%%
 @bin bin/gvfs-cat
@@ -35,6 +35,7 @@ lib/libgvfscommon.la
 @bin libexec/gvfsd-dav
 @bin libexec/gvfsd-dnssd
 @bin libexec/gvfsd-ftp
+@bin libexec/gvfsd-fuse
 @bin libexec/gvfsd-http
 @bin libexec/gvfsd-localtest
 @bin libexec/gvfsd-metadata

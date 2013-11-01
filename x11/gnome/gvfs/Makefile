@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2013/11/01 14:08:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.104 2013/11/01 18:32:51 ajacoutot Exp $
 
 COMMENT-main=	GNOME Virtual File System
 COMMENT-smb=	GVFS mount module for samba
@@ -11,7 +11,7 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-smb=	${GNOME_PROJECT}-smb-${GNOME_VERSION}
 PKGNAME-goa=	${GNOME_PROJECT}-goa-${GNOME_VERSION}
 
-REVISION-main=	0
+REVISION-main=	1
 
 SHARED_LIBS +=  gvfscommon           4.0      # unknown
 
@@ -30,8 +30,8 @@ WANTLIB-main += ICE SM X11 Xcomposite Xcursor Xdamage xcb-shm
 WANTLIB-main += Xext Xfixes Xi Xinerama Xrandr Xrender graphite2 xml2
 WANTLIB-main += atk-1.0 atk-bridge-2.0 atspi avahi-client avahi-common
 WANTLIB-main += avahi-glib bz2 cairo cairo-gobject dbus-1 expat
-WANTLIB-main += fontconfig freetype gdk-3 gdk_pixbuf-2.0 xml2 archive
-WANTLIB-main += gtk-3 harfbuzz lzma m pango-1.0
+WANTLIB-main += fontconfig freetype fuse gdk-3 gdk_pixbuf-2.0 xml2
+WANTLIB-main += archive gtk-3 harfbuzz lzma m pango-1.0
 WANTLIB-main += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread-stubs
 WANTLIB-main += soup-2.4 soup-gnome-2.4 sqlite3 gthread-2.0 xcb xcb-render
 WANTLIB-main += gcrypt gpg-error secret-1
@@ -73,8 +73,6 @@ CONFIGURE_ARGS=	--disable-cdda \
 		--disable-gudev \
 		--disable-udev \
 		--disable-gdu
-
-CONFIGURE_ARGS += --disable-fuse
 
 MULTI_PACKAGES=		-main -smb -goa
 
