@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2013/06/04 18:41:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2013/11/01 16:03:52 benoit Exp $
 
 COMMENT =	medical image conversion
 
-DISTNAME =	xmedcon-0.12.0
-SHARED_LIBS =	mdc	2.2	# .2.1
+DISTNAME =	xmedcon-0.13.0
+SHARED_LIBS =	mdc	2.3	# .2.1
 CATEGORIES =	graphics
-REVISION =	0
 
 HOMEPAGE =	http://xmedcon.sourceforge.net
 
