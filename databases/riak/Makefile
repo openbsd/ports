@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/10/27 11:24:05 jmatthew Exp $
+# $OpenBSD: Makefile,v 1.9 2013/11/01 12:37:46 jmatthew Exp $
 
 COMMENT=			distributed data store
 DISTNAME=			riak-1.4.2
@@ -74,7 +74,8 @@ TOOLS_V         2.6.8 \
 WEBMACHINE_V    1.10.4-0-gfcff795 \
 WEBTOOL_V       0.8.9.1 \
 WX_V            0.99.2 \
-XMERL_V         1.3.2
+XMERL_V         1.3.2 \
+SNAPPY_V	1.0.4
 
 .for _n _v in ${RIAK_VERSIONS}
 ${_n}=${_v}
@@ -86,10 +87,10 @@ MAKE_ENV =			MAKE=${MAKE_PROGRAM}
 MAKE_FLAGS =			rel
 
 # configure bundled snappy correctly
-SNAPPY_V = 1.0.4
 WRKCONF = ${WRKSRC}/deps/eleveldb/c_src/snappy-${SNAPPY_V}
 MODGNU_CONFIG_GUESS_DIRS = ${WRKCONF}
 CONFIGURE_STYLE = gnu
+CONFIGURE_ARGS += --with-pic
 
 WANTLIB = c crypto m ncurses pthread ssl stdc++ util mozjs nspr4
 LIB_DEPENDS = lang/erlang>=15b.02 lang/spidermonkey
@@ -122,5 +123,3 @@ do-install:
 .endfor
 
 .include <bsd.port.mk>
-
-CONFIGURE_ARGS = --with-pic --prefix=${WRKSRC}/deps/eleveldb/c_src/system

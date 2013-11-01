@@ -1,0 +1,25 @@
+$OpenBSD: patch-deps_eleveldb_c_src_build_deps_sh,v 1.1 2013/11/01 12:37:46 jmatthew Exp $
+
+Don't try to install libsnappy.  Instead, find the headers in the source
+tree and get the static library from where it's built.
+
+--- deps/eleveldb/c_src/build_deps.sh.orig	Fri Aug 30 07:03:04 2013
++++ deps/eleveldb/c_src/build_deps.sh	Tue Oct 29 07:18:53 2013
+@@ -65,12 +65,12 @@
+             (cd snappy-$SNAPPY_VSN && ./configure --prefix=$BASEDIR/system --with-pic)
+         fi
+ 
+-        (cd snappy-$SNAPPY_VSN && $MAKE && $MAKE install)
++        (cd snappy-$SNAPPY_VSN && $MAKE)
+ 
+-        export CFLAGS="$CFLAGS -I $BASEDIR/system/include"
+-        export CXXFLAGS="$CXXFLAGS -I $BASEDIR/system/include"
+-        export LDFLAGS="$LDFLAGS -L$BASEDIR/system/lib"
+-        export LD_LIBRARY_PATH="$BASEDIR/system/lib:$LD_LIBRARY_PATH"
++        export CFLAGS="$CFLAGS -I $BASEDIR/snappy-$SNAPPY_VSN"
++        export CXXFLAGS="$CXXFLAGS -I $BASEDIR/snappy-$SNAPPY_VSN"
++        export LDFLAGS="$LDFLAGS -L$BASEDIR/snappy-$SNAPPY_VSN/.libs"
++        export LD_LIBRARY_PATH="$BASEDIR/snappy-$SNAPPY_VSN/.libs:$LD_LIBRARY_PATH"
+ 
+         if [ ! -d leveldb ]; then
+             git clone git://github.com/basho/leveldb

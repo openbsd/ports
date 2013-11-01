@@ -1,0 +1,16 @@
+$OpenBSD: patch-deps_eleveldb_rebar_config,v 1.4 2013/11/01 12:37:46 jmatthew Exp $
+
+link in libsnappy from its build tree rather than the installed location,
+since running make install is problematic.
+
+--- deps/eleveldb/rebar.config.orig	Tue Oct 29 07:30:07 2013
++++ deps/eleveldb/rebar.config	Tue Oct 29 07:29:52 2013
+@@ -8,7 +8,7 @@
+              {"CFLAGS", "$CFLAGS -Wall -O3 -fPIC"},
+              {"CXXFLAGS", "$CXXFLAGS -Wall -O3 -fPIC"},
+              {"DRV_CFLAGS", "$DRV_CFLAGS -O3 -Wall -I c_src/leveldb/include"},
+-             {"DRV_LDFLAGS", "$DRV_LDFLAGS c_src/leveldb/libleveldb.a c_src/system/lib/libsnappy.a -lstdc++"}
++             {"DRV_LDFLAGS", "$DRV_LDFLAGS c_src/leveldb/libleveldb.a c_src/snappy-${SNAPPY_V}/.libs/libsnappy.a -lstdc++"}
+              ]}.
+ 
+ {pre_hooks, [{'get-deps', "c_src/build_deps.sh get-deps"},
