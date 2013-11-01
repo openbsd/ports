@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.53 2013/11/01 14:52:47 espie Exp $
+# $OpenBSD: Makefile,v 1.54 2013/11/01 17:19:18 espie Exp $
 
 CATEGORIES =		databases
-V =			2.9
+V =			3.0
 DISTNAME =		sqlports-$V
 DISTFILES =
 COMMENT =		sqlite database of ports
@@ -11,6 +11,7 @@ COMMENT-list =		full list of pkgpaths in ports
 MAINTAINER =		Marc Espie <espie@openbsd.org>
 PKGNAME-compact =	sqlports-compact-$V
 PKGNAME-main =		sqlports-$V
+PKGNAME-list =		portslist-$V
 
 
 PERMIT_PACKAGE_CDROM =	Yes
