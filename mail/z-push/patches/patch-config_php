@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_php,v 1.6 2012/06/24 18:47:20 ajacoutot Exp $
---- config.php.orig	Sat Jun  2 18:24:39 2012
-+++ config.php	Thu Jun 21 19:13:05 2012
-@@ -60,7 +60,7 @@
+$OpenBSD: patch-config_php,v 1.7 2013/11/01 14:02:50 robert Exp $
+--- config.php.orig	Fri Nov  1 12:02:53 2013
++++ config.php	Fri Nov  1 12:03:14 2013
+@@ -66,7 +66,7 @@
  /**********************************************************************************
   *  Default FileStateMachine settings
   */
@@ -10,13 +10,10 @@ $OpenBSD: patch-config_php,v 1.6 2012/06/24 18:47:20 ajacoutot Exp $
  
  
  /**********************************************************************************
-@@ -129,7 +129,8 @@
-     //  BackendZarafa settings
-     // ************************
-     // Defines the server to which we want to connect
--    define('MAPI_SERVER', 'file:///var/run/zarafa');
-+    #define('MAPI_SERVER', 'file:///var/run/zarafa');
-+    define('MAPI_SERVER', 'http://localhost:236/zarafa');
+@@ -255,4 +255,4 @@
+ */
+     );
  
- 
-     // ************************
+-?>
+\ No newline at end of file
++?>

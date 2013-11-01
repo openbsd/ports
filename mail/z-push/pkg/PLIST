@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2013/01/27 13:08:53 robert Exp $
+@comment $OpenBSD: PLIST,v 1.12 2013/11/01 14:02:50 robert Exp $
 @extraunexec rm -rf /var/www/var/db/z-push/*
 @extraunexec rm -rf /var/www/var/log/z-push/*
 @unexec-delete rm -f /var/www/conf/modules/z-push.conf
@@ -11,13 +11,20 @@ z-push/backend/combined/combined.php
 z-push/backend/combined/config.php
 z-push/backend/combined/exporter.php
 z-push/backend/combined/importer.php
-z-push/backend/imap.php
-z-push/backend/maildir.php
+z-push/backend/imap/
+z-push/backend/imap/config.php
+z-push/backend/imap/imap.php
+z-push/backend/maildir/
+z-push/backend/maildir/config.php
+z-push/backend/maildir/maildir.php
 z-push/backend/searchldap/
 z-push/backend/searchldap/config.php
 z-push/backend/searchldap/searchldap.php
-z-push/backend/vcarddir.php
+z-push/backend/vcarddir/
+z-push/backend/vcarddir/config.php
+z-push/backend/vcarddir/vcarddir.php
 z-push/backend/zarafa/
+z-push/backend/zarafa/config.php
 z-push/backend/zarafa/exporter.php
 z-push/backend/zarafa/icalparser.php
 z-push/backend/zarafa/importer.php
@@ -121,10 +128,12 @@ z-push/lib/request/ping.php
 z-push/lib/request/provisioning.php
 z-push/lib/request/request.php
 z-push/lib/request/requestprocessor.php
+z-push/lib/request/resolverecipients.php
 z-push/lib/request/search.php
 z-push/lib/request/sendmail.php
 z-push/lib/request/settings.php
 z-push/lib/request/sync.php
+z-push/lib/request/validatecert.php
 z-push/lib/syncobjects/
 z-push/lib/syncobjects/syncappointment.php
 z-push/lib/syncobjects/syncappointmentexception.php
@@ -147,11 +156,18 @@ z-push/lib/syncobjects/syncoof.php
 z-push/lib/syncobjects/syncoofmessage.php
 z-push/lib/syncobjects/syncprovisioning.php
 z-push/lib/syncobjects/syncrecurrence.php
+z-push/lib/syncobjects/syncresolverecipient.php
+z-push/lib/syncobjects/syncresolverecipients.php
+z-push/lib/syncobjects/syncresolverecipientsavailability.php
+z-push/lib/syncobjects/syncresolverecipientscertificates.php
+z-push/lib/syncobjects/syncresolverecipientsoptions.php
+z-push/lib/syncobjects/syncresolverecipientspicture.php
 z-push/lib/syncobjects/syncsendmail.php
 z-push/lib/syncobjects/syncsendmailsource.php
 z-push/lib/syncobjects/synctask.php
 z-push/lib/syncobjects/synctaskrecurrence.php
 z-push/lib/syncobjects/syncuserinformation.php
+z-push/lib/syncobjects/syncvalidatecert.php
 z-push/lib/utils/
 z-push/lib/utils/compat.php
 z-push/lib/utils/timezoneutil.php
@@ -164,6 +180,8 @@ z-push/lib/wbxml/wbxmlencoder.php
 z-push/lib/webservice/
 z-push/lib/webservice/webservice.php
 z-push/lib/webservice/webservicedevice.php
+z-push/tools/
+z-push/tools/migrate-2.0.x-2.1.0.php
 z-push/version.php
 z-push/z-push-admin.php
 z-push/z-push-top.php

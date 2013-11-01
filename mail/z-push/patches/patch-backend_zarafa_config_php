@@ -1,0 +1,14 @@
+$OpenBSD: patch-backend_zarafa_config_php,v 1.1 2013/11/01 14:02:50 robert Exp $
+--- backend/zarafa/config.php.orig	Fri Nov  1 12:03:34 2013
++++ backend/zarafa/config.php	Fri Nov  1 12:03:49 2013
+@@ -46,6 +46,7 @@
+ // ************************
+ 
+ // Defines the server to which we want to connect
+-define('MAPI_SERVER', 'file:///var/run/zarafa');
++// define('MAPI_SERVER', 'file:///var/run/zarafa');
++define('MAPI_SERVER', 'http://localhost:236/zarafa');
+ 
+-?>
+\ No newline at end of file
++?>
