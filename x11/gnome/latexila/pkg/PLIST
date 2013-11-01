@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/05/07 06:09:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/11/01 14:58:12 ajacoutot Exp $
 @bin bin/latexila
 @man man/man1/latexila.1
+share/appdata/
+share/appdata/latexila.appdata.xml
 share/applications/latexila.desktop
 share/glib-2.0/schemas/org.gnome.latexila.gschema.xml
 share/help/
@@ -67,6 +69,15 @@ share/help/gl/latexila/projects.page
 share/help/gl/latexila/spell_checking.page
 share/help/gl/latexila/structure.page
 share/help/gl/latexila/synctex.page
+share/help/pt_BR/
+share/help/pt_BR/latexila/
+share/help/pt_BR/latexila/build_tools.page
+share/help/pt_BR/latexila/completion.page
+share/help/pt_BR/latexila/index.page
+share/help/pt_BR/latexila/projects.page
+share/help/pt_BR/latexila/spell_checking.page
+share/help/pt_BR/latexila/structure.page
+share/help/pt_BR/latexila/synctex.page
 share/help/ru/
 share/help/ru/latexila/
 share/help/ru/latexila/build_tools.page
@@ -110,6 +121,7 @@ share/locale/fr/LC_MESSAGES/latexila.mo
 share/locale/gl/LC_MESSAGES/latexila.mo
 share/locale/id/LC_MESSAGES/latexila.mo
 share/locale/it/LC_MESSAGES/latexila.mo
+share/locale/lt/LC_MESSAGES/latexila.mo
 share/locale/lv/LC_MESSAGES/latexila.mo
 share/locale/nb/LC_MESSAGES/latexila.mo
 share/locale/pt_BR/LC_MESSAGES/latexila.mo
