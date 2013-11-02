@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.634 2013/11/02 11:49:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.635 2013/11/02 12:17:06 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -432,7 +432,6 @@
      SUBDIR += raggle
      SUBDIR += ratproxy
      SUBDIR += rawdog
-     SUBDIR += reportmagic
      SUBDIR += retawq
      SUBDIR += rt
      SUBDIR += ruby-addressable
