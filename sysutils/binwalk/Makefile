@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/10/27 09:58:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2013/11/02 20:32:49 sthen Exp $
 
 COMMENT=	tool for reverse-engineering and analysing firmware blobs
 
-MODPY_EGG_VERSION = 1.2.2
-DISTNAME=	binwalk-1.2.2
+MODPY_EGG_VERSION = 1.2.2_1
+DISTNAME=	binwalk-1.2.2-1
+PKGNAME=	binwalk-1.2.2.1
 
 CATEGORIES=	sysutils
 
