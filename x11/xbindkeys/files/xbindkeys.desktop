@@ -7,3 +7,4 @@ Categories=Utility;
 StartupNotify=false
 Terminal=false
 Type=Application
+NoDisplay=true
