@@ -1,0 +1,9 @@
+[Desktop Entry]
+Comment=bind keys or mouse buttons to shell commands
+Exec=xbindkeys
+GenericName=xbindkeys
+Name=xbindkeys
+Categories=Utility;
+StartupNotify=false
+Terminal=false
+Type=Application

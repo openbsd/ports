@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:46:17 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/11/02 00:38:16 edd Exp $
 
 COMMENT =	bind keys or mouse buttons to shell commands under X11
 DISTNAME =	xbindkeys-1.8.5
 CATEGORIES =	x11
+REVISION =	0
 
 HOMEPAGE =	http://www.nongnu.org/xbindkeys/xbindkeys.html
 
@@ -15,7 +16,8 @@ WANTLIB =	X11 c
 MASTER_SITES =	${HOMEPAGE:=/../}
 
 MODULES =	x11/tk
-RUN_DEPENDS =	${MODTK_RUN_DEPENDS}
+RUN_DEPENDS =	${MODTK_RUN_DEPENDS} \
+		devel/desktop-file-utils
 SEPARATE_BUILD =Yes
 
 CONFIGURE_STYLE=gnu
@@ -25,5 +27,10 @@ NO_TEST =	Yes
 
 pre-configure:
 	${MODTCL_WISH_ADJ} ${WRKSRC}/xbindkeys_show
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${FILESDIR}/xbindkeys.desktop \
+		${PREFIX}/share/applications/
 
 .include <bsd.port.mk>

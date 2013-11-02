@@ -1,5 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/02/02 10:28:41 pea Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/11/02 00:38:16 edd Exp $
 @bin bin/xbindkeys
 bin/xbindkeys_show
 @man man/man1/xbindkeys.1
 @man man/man1/xbindkeys_show.1
+share/applications/xbindkeys.desktop
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
