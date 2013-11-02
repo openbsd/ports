@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2013/09/18 21:05:11 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.25 2013/11/02 13:33:34 merdely Exp $
 @pkgpath www/wordpress-mu
 wordpress/
 wordpress/index.php
@@ -57,6 +57,9 @@ wordpress/wp-admin/edit.php
 wordpress/wp-admin/export.php
 wordpress/wp-admin/freedoms.php
 wordpress/wp-admin/images/
+wordpress/wp-admin/images/about-globe-2x.png
+wordpress/wp-admin/images/about-search-2x.png
+wordpress/wp-admin/images/about-updates-2x.png
 wordpress/wp-admin/images/align-center-2x.png
 wordpress/wp-admin/images/align-center.png
 wordpress/wp-admin/images/align-left-2x.png
@@ -171,6 +174,7 @@ wordpress/wp-admin/includes/class-wp-posts-list-table.php
 wordpress/wp-admin/includes/class-wp-terms-list-table.php
 wordpress/wp-admin/includes/class-wp-theme-install-list-table.php
 wordpress/wp-admin/includes/class-wp-themes-list-table.php
+wordpress/wp-admin/includes/class-wp-upgrader-skins.php
 wordpress/wp-admin/includes/class-wp-upgrader.php
 wordpress/wp-admin/includes/class-wp-users-list-table.php
 wordpress/wp-admin/includes/comment.php
@@ -209,10 +213,10 @@ wordpress/wp-admin/index.php
 wordpress/wp-admin/install-helper.php
 wordpress/wp-admin/install.php
 wordpress/wp-admin/js/
+wordpress/wp-admin/js/about.js
+wordpress/wp-admin/js/about.min.js
 wordpress/wp-admin/js/accordion.js
 wordpress/wp-admin/js/accordion.min.js
-wordpress/wp-admin/js/cat.js
-wordpress/wp-admin/js/cat.min.js
 wordpress/wp-admin/js/color-picker.js
 wordpress/wp-admin/js/color-picker.min.js
 wordpress/wp-admin/js/comment.js
@@ -592,6 +596,8 @@ wordpress/wp-includes/canonical.php
 wordpress/wp-includes/capabilities.php
 wordpress/wp-includes/category-template.php
 wordpress/wp-includes/category.php
+wordpress/wp-includes/certificates/
+wordpress/wp-includes/certificates/ca-bundle.crt
 wordpress/wp-includes/class-IXR.php
 wordpress/wp-includes/class-feed.php
 wordpress/wp-includes/class-http.php
@@ -646,6 +652,7 @@ wordpress/wp-includes/css/wp-auth-check.css
 wordpress/wp-includes/css/wp-auth-check.min.css
 wordpress/wp-includes/css/wp-pointer.css
 wordpress/wp-includes/css/wp-pointer.min.css
+wordpress/wp-includes/date.php
 wordpress/wp-includes/default-constants.php
 wordpress/wp-includes/default-filters.php
 wordpress/wp-includes/default-widgets.php
@@ -976,7 +983,6 @@ wordpress/wp-includes/js/tinymce/plugins/wpeditimage/img/image-2x.png
 wordpress/wp-includes/js/tinymce/plugins/wpeditimage/img/image.png
 wordpress/wp-includes/js/tinymce/plugins/wpeditimage/js/
 wordpress/wp-includes/js/tinymce/plugins/wpeditimage/js/editimage.js
-wordpress/wp-includes/js/tinymce/plugins/wpeditimage/js/editimage.min.js
 wordpress/wp-includes/js/tinymce/plugins/wpfullscreen/
 wordpress/wp-includes/js/tinymce/plugins/wpfullscreen/css/
 wordpress/wp-includes/js/tinymce/plugins/wpfullscreen/css/wp-fullscreen.css
@@ -1097,6 +1103,9 @@ wordpress/wp-includes/js/wp-util.js
 wordpress/wp-includes/js/wp-util.min.js
 wordpress/wp-includes/js/wplink.js
 wordpress/wp-includes/js/wplink.min.js
+wordpress/wp-includes/js/zxcvbn-async.js
+wordpress/wp-includes/js/zxcvbn-async.min.js
+wordpress/wp-includes/js/zxcvbn.min.js
 wordpress/wp-includes/kses.php
 wordpress/wp-includes/l10n.php
 wordpress/wp-includes/link-template.php
