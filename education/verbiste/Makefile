@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2013/07/01 20:49:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2013/11/02 16:04:09 naddy Exp $
 
 COMMENT=	French and Italian conjugation system
 
-DISTNAME=	verbiste-0.1.38
+DISTNAME=	verbiste-0.1.40
 SHARED_LIBS=	verbiste-0.1	5.0	# .0.0
 CATEGORIES=	education
 HOMEPAGE=	http://sarrazip.com/dev/verbiste.html
@@ -19,6 +19,7 @@ MODULES=	devel/gettext
 BUILD_DEPENDS=	textproc/p5-XML-Parser
 LIB_DEPENDS=	x11/gtk+2 \
 		textproc/libxml
+RUN_DEPENDS=	x11/gtk+2,-guic
 
 WANTLIB=	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama \
 		Xrandr Xrender atk-1.0 c cairo expat ffi fontconfig \
@@ -31,6 +32,7 @@ WANTLIB=	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama \
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static \
+		--without-gnome-app \
 		--with-gtk-app
 
 MAKE_FLAGS=	INTLLIBS='$$(LTLIBINTL)'

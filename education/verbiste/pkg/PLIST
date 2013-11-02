@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/04/21 11:17:29 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/11/02 16:04:09 naddy Exp $
 @bin bin/french-conjugator
 @bin bin/french-deconjugator
 @bin bin/verbiste-gtk
@@ -23,12 +23,20 @@ man/fr/man3/
 @man man/man1/french-conjugator.1
 @man man/man1/french-deconjugator.1
 @man man/man3/verbiste.3
+share/icons/hicolor/128x128/apps/verbiste.png
+share/icons/hicolor/16x16/apps/verbiste.png
+share/icons/hicolor/256x256/apps/verbiste.png
+share/icons/hicolor/32x32/apps/verbiste.png
+share/icons/hicolor/48x48/apps/verbiste.png
+share/icons/hicolor/512x512/
+share/icons/hicolor/512x512/apps/
+share/icons/hicolor/512x512/apps/verbiste.png
+share/icons/hicolor/64x64/apps/verbiste.png
+share/icons/hicolor/scalable/apps/verbiste.svg
 share/locale/da/LC_MESSAGES/verbiste.mo
 share/locale/de/LC_MESSAGES/verbiste.mo
 share/locale/el/LC_MESSAGES/verbiste.mo
 share/locale/fr/LC_MESSAGES/verbiste.mo
-share/pixmaps/
-share/pixmaps/verbiste.png
 share/texmf/
 share/texmf/tex/
 share/texmf/tex/latex/
@@ -43,3 +51,5 @@ share/verbiste-0.1/conjugation-it.xml
 share/verbiste-0.1/verbs-el.xml
 share/verbiste-0.1/verbs-fr.xml
 share/verbiste-0.1/verbs-it.xml
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
