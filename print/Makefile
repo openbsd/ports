@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.106 2013/05/21 17:20:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.107 2013/11/02 08:42:16 ajacoutot Exp $
 
     SUBDIR =
     SUBDIR += a2ps
-    SUBDIR += a2ps,a4
     SUBDIR += acroread
     SUBDIR += afm
     SUBDIR += apsfilter
@@ -55,7 +54,6 @@
     SUBDIR += pscal
     SUBDIR += psdim
     SUBDIR += psutils
-    SUBDIR += psutils,a4
     SUBDIR += ptouch-driver
     SUBDIR += py-poppler
     SUBDIR += py-relatorio
