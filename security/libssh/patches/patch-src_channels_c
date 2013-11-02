@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_channels_c,v 1.3 2012/11/22 20:54:12 sthen Exp $
---- src/channels.c.orig	Tue Nov 20 11:42:02 2012
-+++ src/channels.c	Thu Nov 22 11:29:05 2012
-@@ -679,21 +679,21 @@ SSH_PACKET_CALLBACK(channel_rcv_request) {
+$OpenBSD: patch-src_channels_c,v 1.4 2013/11/02 10:43:04 ajacoutot Exp $
+--- src/channels.c.orig	Fri Jul 26 08:42:26 2013
++++ src/channels.c	Sat Nov  2 11:36:51 2013
+@@ -683,21 +683,21 @@ SSH_PACKET_CALLBACK(channel_rcv_request) {
  	}
  
  	if (strcmp(request,"signal") == 0) {

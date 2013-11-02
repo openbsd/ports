@@ -1,17 +1,13 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2011/09/05 14:56:24 naddy Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2013/11/02 10:43:04 ajacoutot Exp $
 
 Check for compiler flags not available with gcc < 4.
 
---- CMakeLists.txt.orig	Fri Aug 26 13:53:40 2011
-+++ CMakeLists.txt	Fri Aug 26 13:57:43 2011
-@@ -54,9 +54,18 @@ ELSE (WIN32)
+--- CMakeLists.txt.orig	Tue Dec 20 01:23:22 2011
++++ CMakeLists.txt	Sat Nov  2 11:38:51 2013
+@@ -54,9 +54,14 @@ ELSE (WIN32)
      IF(HAVE_GCC_VISIBILITY)
        SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fvisibility=hidden")
      ENDIF(HAVE_GCC_VISIBILITY)
-+    CHECK_C_COMPILER_FLAG(-Wextra HAVE_GCC_WEXTRA)
-+    IF(HAVE_GCC_WEXTRA)
-+      SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wextra")
-+    ENDIF(HAVE_GCC_WEXTRA)
 +    CHECK_C_COMPILER_FLAG(-Wold-style-definition HAVE_GCC_WOLDSTYLE)
 +    IF(HAVE_GCC_WOLDSTYLE)
 +      SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wold-style-definition")
@@ -19,7 +15,7 @@ Check for compiler flags not available with gcc < 4.
    ENDIF(CMAKE_COMPILER_IS_GNUCC)
    SET(CMAKE_C_FLAGS
 -      "${CMAKE_C_FLAGS} -std=c99 -pedantic -Wpointer-arith -Wno-format-y2k -Wstrict-prototypes -Wmissing-declarations -Wnested-externs -Wextra	-Wundef -Wwrite-strings -Wold-style-definition -Wredundant-decls -Wno-unused-parameter -Wno-sign-compare -Wmissing-prototypes")
-+      "${CMAKE_C_FLAGS} -std=c99 -pedantic -Wpointer-arith -Wno-format-y2k -Wstrict-prototypes -Wmissing-declarations -Wnested-externs -Wundef -Wwrite-strings -Wredundant-decls -Wno-unused-parameter -Wno-sign-compare -Wmissing-prototypes")
++      "${CMAKE_C_FLAGS} -std=c99 -pedantic -Wpointer-arith -Wno-format-y2k -Wstrict-prototypes -Wmissing-declarations -Wnested-externs -Wextra -Wundef -Wwrite-strings -Wredundant-decls -Wno-unused-parameter -Wno-sign-compare -Wmissing-prototypes")
 +  
  
    SET(CMAKE_C_FLAGS_DEBUG "-DDEBUG -g")
