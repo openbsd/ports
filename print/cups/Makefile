@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.167 2013/10/30 08:35:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.168 2013/11/02 01:17:47 ajacoutot Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
@@ -10,7 +10,7 @@ EXTRACT_SUFX=		.tar.bz2
 PKGNAME-main=		cups-${VERSION}
 PKGNAME-libs=		cups-libs-${VERSION}
 
-REVISION-main=		0
+REVISION-main=		1
 
 CATEGORIES=		print sysutils
 
@@ -98,7 +98,6 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-openssl \
 			--disable-cdsassl \
 			--disable-gnutls \
-			--disable-libpaper \
 			--disable-pam \
 			--without-java \
 			--without-php \
