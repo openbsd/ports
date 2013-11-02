@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/02/16 22:13:45 ajacoutot Exp $
-@pkgpath print/mpage,legal
-@pkgpath print/mpage,letter
+@comment $OpenBSD: PLIST,v 1.8 2013/11/02 08:51:22 ajacoutot Exp $
+@pkgpath print/mpage[,a4][,legal][,letter]
 @bin bin/mpage
 @man man/man1/mpage.1
 share/mpage/
