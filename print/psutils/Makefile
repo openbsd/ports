@@ -1,43 +1,30 @@
-# $OpenBSD: Makefile,v 1.37 2013/03/11 11:37:54 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2013/11/02 08:38:58 ajacoutot Exp $
 
 COMMENT=	utilities for manipulating PostScript documents
 
-MINV=		17
-DISTNAME=	psutils-p${MINV}
-PKGNAME=	psutils-1.${MINV}
-REVISION =	4
+# tarball from Fedora SRPM
+DISTNAME=	psutils-1.21
+EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	print
 
-MASTER_SITES=	${MASTER_SITE_TEX_CTAN:=support/psutils/}
-
-HOMEPAGE=	http://gershwin.ens.fr/vdaniel/Doc-Locale/Outils-Gnu-Linux/PsUtils/
+HOMEPAGE=	https://github.com/rrthomas/psutils
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# see LICENSE in WRKSRC
-# Apple copyrighted files have been removed from the package
+# BSD-like (${WRKSRC}/LICENSE)
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB +=	c
+WANTLIB += c paper
 
-WRKDIST=	${WRKDIR}/psutils
-USE_GROFF =	Yes
+MASTER_SITES=	https://distfiles.bsdfrog.org/
 
-FLAVORS=	a4
-FLAVOR?=
+LIB_DEPENDS=	print/libpaper
 
-.if ${FLAVOR} == a4
-PAPERSIZE=	a4
-.else
-PAPERSIZE=	letter
-.endif
+USE_GMAKE=	Yes
 
-MAKE_FLAGS=	PAPER=${PAPERSIZE}
-FAKE_FLAGS=	PAPER=${PAPERSIZE}
-
-MAKE_FILE=	Makefile.unix
-
-NO_TEST=	Yes
+CONFIGURE_STYLE=gnu
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.no-a4,v 1.1 2012/04/28 12:16:29 espie Exp $
-@pkgpath print/psutils[,a3][,a5][,b5][,b4][,letter][,legal][,ledger]
-@pkgpath print/psutils[,tabloid][,statement][,executive][,folio]
-@pkgpath print/psutils[,quarto][,s10x14]

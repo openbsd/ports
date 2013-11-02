@@ -1,7 +1,2 @@
-This package contains some utilities for manipulating PostScript
-documents. Page selection and rearrangement are supported, including
-arrangement into signatures for booklet printing, and page merging for
-n-up printing.
-
-Available flavor(s):
-    a4	- set the default paper size to A4 (default is letter)
+PSUtils is a suite of utilities for manipulating PostScript documents
+produced according to the Document Structuring Conventions.
