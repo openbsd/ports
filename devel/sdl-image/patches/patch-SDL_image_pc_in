@@ -1,11 +1,10 @@
-$OpenBSD: patch-SDL_image_pc_in,v 1.1 2010/07/09 09:20:53 sthen Exp $
---- SDL_image.pc.in.orig	Sun Jun 20 20:05:49 2010
-+++ SDL_image.pc.in	Sun Jun 20 20:07:26 2010
-@@ -7,6 +7,6 @@ Name: SDL_image
- Description: image loading library for Simple DirectMedia Layer
+$OpenBSD: patch-SDL_image_pc_in,v 1.2 2013/11/02 18:00:05 brad Exp $
+--- SDL_image.pc.in.orig	Fri Jan 20 20:51:33 2012
++++ SDL_image.pc.in	Sun Sep  2 22:47:17 2012
+@@ -8,5 +8,6 @@ Description: image loading library for Simple DirectMe
  Version: @VERSION@
  Requires: sdl >= @SDL_VERSION@
--Libs: -L${libdir} -lSDL_image
-+Libs: -L${libdir} -lSDL_image @IMG_LIBS@
+ Libs: -L${libdir} -lSDL_image
++Libs.private: @IMG_LIBS@
  Cflags: -I${includedir}/SDL
  
