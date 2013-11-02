@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/09 21:14:27 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/11/02 14:30:56 benoit Exp $
+${P5SITE}/Test/
 ${P5SITE}/Test/NoTabs.pm
 @man man/man3p/Test::NoTabs.3p
