@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/10/27 11:24:06 jmatthew Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/11/02 23:07:49 jmatthew Exp $
 @comment riak uses sudo(8): homedir must exist and user must have a valid shell
 @newgroup _riak:702
 @newuser _riak:702:_riak:daemon:Riak daemon:/var/riak:/bin/sh
@@ -794,22 +794,6 @@ lib/riak/lib/lucene_parser-${LUCENE_PARSER_V}/ebin/lucene_scan.beam
 lib/riak/lib/lucene_parser-${LUCENE_PARSER_V}/ebin/lucene_scan_test.beam
 lib/riak/lib/lucene_parser-${LUCENE_PARSER_V}/include/
 lib/riak/lib/lucene_parser-${LUCENE_PARSER_V}/include/lucene_parser.hrl
-lib/riak/lib/meck-${MECK_V}/
-lib/riak/lib/meck-${MECK_V}/ebin/
-lib/riak/lib/meck-${MECK_V}/ebin/meck.app
-lib/riak/lib/meck-${MECK_V}/ebin/meck.beam
-lib/riak/lib/meck-${MECK_V}/ebin/meck_args_matcher.beam
-lib/riak/lib/meck-${MECK_V}/ebin/meck_code.beam
-lib/riak/lib/meck-${MECK_V}/ebin/meck_code_gen.beam
-lib/riak/lib/meck-${MECK_V}/ebin/meck_cover.beam
-lib/riak/lib/meck-${MECK_V}/ebin/meck_expect.beam
-lib/riak/lib/meck-${MECK_V}/ebin/meck_history.beam
-lib/riak/lib/meck-${MECK_V}/ebin/meck_matcher.beam
-lib/riak/lib/meck-${MECK_V}/ebin/meck_proc.beam
-lib/riak/lib/meck-${MECK_V}/ebin/meck_ret_spec.beam
-lib/riak/lib/meck-${MECK_V}/ebin/meck_util.beam
-lib/riak/lib/meck-${MECK_V}/priv/
-lib/riak/lib/meck-${MECK_V}/priv/vsn.git
 lib/riak/lib/merge_index-${MERGE_INDEX_V}/
 lib/riak/lib/merge_index-${MERGE_INDEX_V}/ebin/
 lib/riak/lib/merge_index-${MERGE_INDEX_V}/ebin/merge_index.app
