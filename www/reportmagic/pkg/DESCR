@@ -1,5 +1,0 @@
-This program is an add-on for Analog, which produces nice looking
-reports from the analysis of your logfiles. It does not require
-Analog to be installed, merely the output from analog to be available
-
-For more details, see Readme.html in ${PREFIX}/share/doc/reportmagic/ .
