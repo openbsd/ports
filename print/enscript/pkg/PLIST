@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.10 2005/02/11 21:18:00 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/11/02 09:02:56 ajacoutot Exp $
+@pkgpath print/enscript,a4
 bin/diffpp
-bin/enscript
-bin/mkafmmap
+@bin bin/enscript
+@bin bin/mkafmmap
 bin/over
 bin/sliceprint
-bin/states
+@bin bin/states
 @info info/enscript.info
 @man man/man1/diffpp.1
 @man man/man1/enscript.1
