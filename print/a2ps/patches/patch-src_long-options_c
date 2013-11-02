@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_long-options_c,v 1.1 2013/11/02 08:44:19 ajacoutot Exp $
+--- src/long-options.c.orig	Sat Nov  2 09:01:46 2013
++++ src/long-options.c	Sat Nov  2 09:03:50 2013
+@@ -21,6 +21,10 @@
+ # include <config.h>
+ #endif
+ 
++#if HAVE_STDLIB_H
++#include <stdlib.h> /* exit(3) */
++#endif
++
+ #include <stdio.h>
+ #include <getopt.h>
+ #include "closeout.h"

@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_argmatch_c,v 1.1 2013/11/02 08:44:19 ajacoutot Exp $
+--- lib/argmatch.c.orig	Sat Nov  2 09:01:28 2013
++++ lib/argmatch.c	Sat Nov  2 09:01:37 2013
+@@ -20,6 +20,14 @@
+ 
+ #include "argmatch.h"
+ 
++#if HAVE_CONFIG_H
++# include <config.h>
++#endif
++
++#if HAVE_STDLIB_H
++#include <stdlib.h> /* exit(3) */
++#endif
++
+ #include <stdio.h>
+ #ifdef STDC_HEADERS
+ # include <string.h>

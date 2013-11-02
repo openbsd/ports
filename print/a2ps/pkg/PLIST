@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.19 2012/11/11 09:12:55 ajacoutot Exp $
-@pkgpath print/a2ps,a4dj
-@pkgpath print/a2ps,letter
-@pkgpath print/a2ps,letterdj
+@comment $OpenBSD: PLIST,v 1.20 2013/11/02 08:44:19 ajacoutot Exp $
+@pkgpath print/a2ps[,a4][,a4dj][,letter][,letterdj]
 @bin bin/a2ps
 bin/card
 bin/composeglyphs
@@ -18,6 +16,7 @@ include/liba2ps.h
 @info info/regex.info
 lib/liba2ps.a
 lib/liba2ps.la
+@lib lib/liba2ps.so.${LIBa2ps_VERSION}
 @man man/man1/a2ps.1
 @man man/man1/card.1
 @man man/man1/fixps.1
@@ -87,11 +86,6 @@ share/a2ps/encoding/koi8.edf
 share/a2ps/encoding/mac.edf
 share/a2ps/encoding/ms-cp1250.edf
 share/a2ps/encoding/ms-cp1251.edf
-share/a2ps/etc/
-share/a2ps/etc/a2ps-site.cfg
-@sample ${SYSCONFDIR}/a2ps-site.cfg
-share/a2ps/etc/a2ps.cfg
-@sample ${SYSCONFDIR}/a2ps.cfg
 share/a2ps/fonts/
 share/a2ps/fonts/pcfont.pfa
 share/a2ps/ppd/
@@ -228,6 +222,11 @@ share/a2ps/sheets/xs.ssh
 share/a2ps/sheets/yacc.ssh
 share/a2ps/sheets/zsh.ssh
 share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/a2ps/
+share/examples/a2ps/a2ps-site.cfg
+@sample ${SYSCONFDIR}/a2ps-site.cfg
+share/examples/a2ps/a2ps.cfg
+@sample ${SYSCONFDIR}/a2ps.cfg
 share/locale/ca/LC_MESSAGES/a2ps.mo
 share/locale/cs/LC_MESSAGES/a2ps.mo
 share/locale/da/LC_MESSAGES/a2ps.mo
@@ -304,4 +303,3 @@ share/ogonkify/ptmb-o.ps
 share/ogonkify/ptmbi-o.ps
 share/ogonkify/ptmr-o.ps
 share/ogonkify/ptmri-o.ps
-%%SHARED%%

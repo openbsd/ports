@@ -1,13 +1,18 @@
-$OpenBSD: patch-lib_obstack_c,v 1.1 2009/01/07 17:51:16 jasper Exp $
---- lib/obstack.c.orig	Wed Jan  7 18:35:58 2009
-+++ lib/obstack.c	Wed Jan  7 18:36:48 2009
-@@ -43,6 +43,9 @@
- #endif
- #endif
+$OpenBSD: patch-lib_obstack_c,v 1.2 2013/11/02 08:44:19 ajacoutot Exp $
+--- lib/obstack.c.orig	Sat Dec 29 02:37:54 2007
++++ lib/obstack.c	Sat Nov  2 09:04:48 2013
+@@ -21,6 +21,14 @@
  
+ #include "obstack.h"
+ 
++#if HAVE_CONFIG_H
++# include <config.h>
++#endif
++
 +#if HAVE_STDLIB_H
 +# include <stdlib.h>
 +#endif
- 
- #ifndef ELIDE_CODE
- 
++
+ /* NOTE BEFORE MODIFYING THIS FILE: This version number must be
+    incremented whenever callers compiled using an old obstack.h can no
+    longer properly call the functions in this obstack.c.  */
