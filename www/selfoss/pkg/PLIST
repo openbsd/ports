@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/08/10 08:22:45 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/11/02 15:17:41 rpe Exp $
 @extraunexec rm -rf %D/selfoss/data/*/*
 selfoss/
 @comment selfoss/.gitignore
@@ -171,8 +171,6 @@ selfoss/libs/twitteroauth/twitteroauth.php
 selfoss/public/
 @mode
 @group
-selfoss/public/all.css
-selfoss/public/all.js
 selfoss/public/apple-touch-icon.png
 selfoss/public/css/
 selfoss/public/css/fonts.css
@@ -275,6 +273,7 @@ selfoss/public/lang/ru.ini
 selfoss/public/lang/se.ini
 selfoss/public/lang/tr.ini
 selfoss/public/lang/tw.ini
+selfoss/public/lang/uk.ini
 selfoss/run.php
 selfoss/selfoss.conf.dist
 @sample /var/www/conf/modules.sample/selfoss.conf
@@ -285,6 +284,8 @@ selfoss/spouts/deviantart/user.php
 selfoss/spouts/deviantart/usersfavs.php
 selfoss/spouts/facebook/
 selfoss/spouts/facebook/page.php
+selfoss/spouts/github/
+selfoss/spouts/github/commits.php
 selfoss/spouts/reddit/
 selfoss/spouts/reddit/reddit2.php
 selfoss/spouts/rss/

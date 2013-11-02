@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/08/12 04:11:22 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2013/11/02 15:17:41 rpe Exp $
 
 COMMENT=		rss reader, live stream, mashup, aggregation webapp
 
-DISTNAME=		selfoss-2.8
-REVISION=		0
+DISTNAME=		selfoss-2.9
 CATEGORIES=		www
 
 HOMEPAGE=		http://selfoss.aditu.de/
@@ -24,7 +23,7 @@ NO_BUILD=		Yes
 NO_TEST=		Yes
 PKG_ARCH=		*
 
-PREFIX=		${VARBASE}/www
+PREFIX=			${VARBASE}/www
 INSTDIR=		${PREFIX}/selfoss
 TINSTDIR=		${TRUEPREFIX}/selfoss
 SUBST_VARS=		INSTDIR MODPHP_VERSION TINSTDIR
