@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2013/10/11 23:51:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2013/11/02 13:03:33 merdely Exp $
 
 COMMENT =		simple background setter
 
 VERSION =		0.5
 DISTNAME =		bgs-${VERSION}
-REVISION=		2
+REVISION=		3
 CATEGORIES =		x11 graphics
 
 MAINTAINER =		Michael Erdely <merdely@openbsd.org>
-HOMEPAGE =		http://s01.de/~tox/index.cgi/proj_bgs
-MASTER_SITES =		http://s01.de/~tox/files/bgs/
+HOMEPAGE =		https://github.com/Gottox/bgs
+MASTER_SITES =		https://github.com/downloads/Gottox/bgs/
 
 # MIT/X
 PERMIT_PACKAGE_CDROM =	Yes
