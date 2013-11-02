@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/10/02 10:46:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2013/11/02 15:55:53 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ V=		3.10.11
 DISTNAME=	opal-${V}
 EXTRACT_SUFX=	.tar.bz2
 SUBST_VARS=	V
+REVISION=	0
 
 SHARED_LIBS=	opal	3.1	# 3.10.11
 
@@ -21,12 +22,12 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c celt0 crypto gsm m pt spandsp speex speexdsp stdc++
-WANTLIB += theora tiff x264
+WANTLIB += theora tiff x264 avutil
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=opalvoip/}
 
 LIB_DEPENDS=	audio/celt \
-		devel/ptlib>=2.10.11 \
+		devel/ptlib \
 		telephony/spandsp
 
 # dlopen(3) libavcodec.so.X.Y; shows as "Extra:" in check-lib-depends

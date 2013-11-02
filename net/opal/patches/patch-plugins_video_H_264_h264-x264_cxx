@@ -1,30 +1,21 @@
-$OpenBSD: patch-plugins_video_H_264_h264-x264_cxx,v 1.7 2013/10/02 10:46:37 ajacoutot Exp $
+$OpenBSD: patch-plugins_video_H_264_h264-x264_cxx,v 1.8 2013/11/02 15:55:53 ajacoutot Exp $
 
 LOCALBASE/include/libavutil/common.h:170: error: 'UINT64_C' was not declared in this scope,
 so move headers so that __STDC_CONSTANT_MACROS is defined at the right time.
 
 --- plugins/video/H.264/h264-x264.cxx.orig	Thu Aug 15 01:22:47 2013
-+++ plugins/video/H.264/h264-x264.cxx	Tue Oct  1 18:33:36 2013
-@@ -36,15 +36,15 @@
-  * $Date: 2013/10/02 10:46:37 $
-  */
- 
-+#include "../common/ffmpeg.h"
-+#include "../common/dyna.h"
-+
- #ifndef PLUGIN_CODEC_DLL_EXPORTS
++++ plugins/video/H.264/h264-x264.cxx	Sat Nov  2 16:28:49 2013
+@@ -40,6 +40,9 @@
  #include "plugin-config.h"
  #endif
  
++#define FF_IDCT_H264 11
++#define CODEC_FLAG2_SKIP_RD 0x00004000
++
  #include <codec/opalplugin.hpp>
  
--#include "../common/ffmpeg.h"
--#include "../common/dyna.h"
--
- #include "shared/h264frame.h"
- #include "shared/x264wrap.h"
- 
-@@ -1071,13 +1071,10 @@ class MyDecoder : public PluginCodec<MY_CODEC>
+ #include "../common/ffmpeg.h"
+@@ -1071,13 +1074,10 @@ class MyDecoder : public PluginCodec<MY_CODEC>
          return false;
  
        m_context->workaround_bugs = FF_BUG_AUTODETECT;

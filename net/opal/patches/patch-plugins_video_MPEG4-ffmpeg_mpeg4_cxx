@@ -1,20 +1,19 @@
-$OpenBSD: patch-plugins_video_MPEG4-ffmpeg_mpeg4_cxx,v 1.1 2013/03/19 22:06:44 landry Exp $
-fix with ffmpeg 1.1
-https://projects.archlinux.org/svntogit/packages.git/commit/?h=packages/opal&id=278c8f93262ee8372b05c650a2e6456ad2d04950
---- plugins/video/MPEG4-ffmpeg/mpeg4.cxx.orig	Wed Feb 20 03:18:07 2013
-+++ plugins/video/MPEG4-ffmpeg/mpeg4.cxx	Tue Mar 19 22:57:12 2013
-@@ -100,9 +100,9 @@ extern "C" {
- #include <libavutil/intreadwrite.h>
- #include <libavutil/bswap.h>
- #include <libavcodec/mpegvideo.h>
--
+$OpenBSD: patch-plugins_video_MPEG4-ffmpeg_mpeg4_cxx,v 1.2 2013/11/02 15:55:53 ajacoutot Exp $
+
+Fix compilation/runtime with ffmpeg 0.11 (Arch Linux):
+https://projects.archlinux.org/svntogit/packages.git/tree/trunk/opal-ffmpeg.patch?h=packages/opal
+
+--- plugins/video/MPEG4-ffmpeg/mpeg4.cxx.orig	Thu Aug 15 01:22:47 2013
++++ plugins/video/MPEG4-ffmpeg/mpeg4.cxx	Sat Nov  2 16:28:49 2013
+@@ -103,6 +103,7 @@ extern "C" {
+ 
  #else /* LIBAVCODEC_HAVE_SOURCE_DIR */
  #include "../common/ffmpeg.h"
 +#include <libavutil/opt.h>
  #endif /* LIBAVCODEC_HAVE_SOURCE_DIR */
  }
  
-@@ -589,17 +589,17 @@ void MPEG4EncoderContext::SetStaticEncodingParams(){
+@@ -589,17 +590,17 @@ void MPEG4EncoderContext::SetStaticEncodingParams(){
      m_avpicture->quality = m_videoQMin;
  
  #ifdef USE_ORIG
@@ -35,7 +34,7 @@ https://projects.archlinux.org/svntogit/packages.git/commit/?h=packages/opal&id=
  #endif
      m_avcontext->opaque = this;              // for use in RTP callback
  }
-@@ -804,7 +804,7 @@ int MPEG4EncoderContext::EncodeFrames(const BYTE * src
+@@ -804,7 +805,7 @@ int MPEG4EncoderContext::EncodeFrames(const BYTE * src
          // Should the next frame be an I-Frame?
          if ((flags & PluginCodec_CoderForceIFrame) || (m_frameNum == 0))
          {
@@ -44,7 +43,7 @@ https://projects.archlinux.org/svntogit/packages.git/commit/?h=packages/opal&id=
          }
          else // No IFrame requested, let avcodec decide what to do
          {
-@@ -1325,7 +1325,7 @@ void MPEG4DecoderContext::SetFrameHeight(int height) {
+@@ -1325,7 +1326,7 @@ void MPEG4DecoderContext::SetFrameHeight(int height) {
  
  void MPEG4DecoderContext::SetStaticDecodingParams() {
      m_avcontext->flags |= CODEC_FLAG_4MV; 
