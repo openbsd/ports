@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.7 2012/11/27 08:15:12 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.8 2013/11/02 11:13:19 ajacoutot Exp $
 --- configure.orig	Mon Nov 26 20:52:20 2012
 +++ configure	Tue Nov 27 08:46:11 2012
 @@ -16536,8 +16536,8 @@ fi
@@ -7,8 +7,8 @@ $OpenBSD: patch-configure,v 1.7 2012/11/27 08:15:12 ajacoutot Exp $
  if test ".$ac_cv_c_compiler_gnu" = .yes; then
 -   CFLAGS="$CFLAGS -Wall -Wextra -Winit-self -Wswitch-default -Wswitch-enum -Wstrict-aliasing=2 -Wfloat-equal -Wshadow"
 -   CXXFLAGS="$CXXFLAGS -Wall -Wextra -Winit-self -Wswitch-default -Wswitch-enum -Wstrict-aliasing=2 -Wfloat-equal -Wshadow"
-+   CFLAGS="$CFLAGS -Wall -Wswitch-default -Wswitch-enum -Wfloat-equal -Wshadow"
-+   CXXFLAGS="$CXXFLAGS -Wall -Wswitch-default -Wswitch-enum -Wfloat-equal -Wshadow"
++   CFLAGS="$CFLAGS -Wall -Wextra -Wswitch-default -Wswitch-enum -Wfloat-equal -Wshadow"
++   CXXFLAGS="$CXXFLAGS -Wall -Wextra -Wswitch-default -Wswitch-enum -Wfloat-equal -Wshadow"
  fi
  
  case $host in

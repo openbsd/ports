@@ -1,10 +1,10 @@
-$OpenBSD: patch-examples_Makefile_am,v 1.1.1.1 2010/06/06 13:43:19 sthen Exp $
---- examples/Makefile.am.orig	Sat Nov 14 13:48:58 2009
-+++ examples/Makefile.am	Sat Nov 14 13:49:12 2009
+$OpenBSD: patch-examples_Makefile_am,v 1.2 2013/11/02 11:13:19 ajacoutot Exp $
+--- examples/Makefile.am.orig	Fri Apr  4 17:04:18 2008
++++ examples/Makefile.am	Sat Nov  2 12:02:56 2013
 @@ -1,5 +1,5 @@
  AM_CPPFLAGS = -I$(top_srcdir)/include
 -AM_CFLAGS = -Wall -Wextra -Wno-unused-parameter
-+AM_CFLAGS = -Wall -Wno-unused-parameter
++AM_CFLAGS = -Wall -Wextra
  
  noinst_PROGRAMS = simplegrab
  

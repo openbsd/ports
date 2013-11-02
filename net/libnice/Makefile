@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/06/21 22:38:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2013/11/02 11:13:19 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -40,12 +40,11 @@ USE_GMAKE =		Yes
 LIBTOOL_FLAGS =		--tag=disable-static
 
 pre-configure:
-	perl -pi -e 's,-Wextra,,g;' \
-		-e 's,-Wno-missing-field-initializers,,g;' \
-	${WRKSRC}/Makefile.in ${WRKSRC}/agent/Makefile.in \
-	${WRKSRC}/nice/Makefile.in ${WRKSRC}/random/Makefile.in \
-	${WRKSRC}/socket/Makefile.in ${WRKSRC}/stun/Makefile.in \
-	${WRKSRC}/stun/tests/Makefile.in ${WRKSRC}/stun/tools/Makefile.in \
-	${WRKSRC}/tests/Makefile.in
+	perl -pi -e 's,-Wno-missing-field-initializers,,g' \
+		${WRKSRC}/Makefile.in ${WRKSRC}/agent/Makefile.in \
+		${WRKSRC}/nice/Makefile.in ${WRKSRC}/random/Makefile.in \
+		${WRKSRC}/socket/Makefile.in ${WRKSRC}/stun/Makefile.in \
+		${WRKSRC}/stun/tests/Makefile.in ${WRKSRC}/stun/tools/Makefile.in \
+		${WRKSRC}/tests/Makefile.in
 
 .include <bsd.port.mk>

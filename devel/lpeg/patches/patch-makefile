@@ -1,6 +1,6 @@
-$OpenBSD: patch-makefile,v 1.7 2012/07/10 15:22:44 jasper Exp $
+$OpenBSD: patch-makefile,v 1.8 2013/11/02 11:13:19 ajacoutot Exp $
 --- makefile.orig	Wed Feb 16 16:03:25 2011
-+++ makefile	Sat Jul  7 15:02:14 2012
++++ makefile	Sat Nov  2 11:48:11 2013
 @@ -1,14 +1,13 @@
  LIBNAME = lpeg
 -LUADIR = /usr/include/lua5.1/
@@ -9,8 +9,7 @@ $OpenBSD: patch-makefile,v 1.7 2012/07/10 15:22:44 jasper Exp $
 -COPT = -O2 -DNDEBUG
 +COPT = -O2 -DNDEBUG -fPIC -shared
  
--CWARNS = -Wall -Wextra -pedantic \
-+CWARNS = -Wall -pedantic \
+ CWARNS = -Wall -Wextra -pedantic \
          -Waggregate-return \
  	-Wbad-function-cast \
          -Wcast-align \

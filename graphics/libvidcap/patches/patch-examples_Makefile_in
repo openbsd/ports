@@ -1,12 +1,12 @@
-$OpenBSD: patch-examples_Makefile_in,v 1.1.1.1 2010/06/06 13:43:19 sthen Exp $
+$OpenBSD: patch-examples_Makefile_in,v 1.2 2013/11/02 11:13:19 ajacoutot Exp $
 --- examples/Makefile.in.orig	Fri Apr  4 17:22:20 2008
-+++ examples/Makefile.in	Wed May 19 17:23:22 2010
++++ examples/Makefile.in	Sat Nov  2 12:03:13 2013
 @@ -195,7 +195,7 @@ target_alias = @target_alias@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  AM_CPPFLAGS = -I$(top_srcdir)/include
 -AM_CFLAGS = -Wall -Wextra -Wno-unused-parameter
-+AM_CFLAGS = -Wall 
++AM_CFLAGS = -Wall -Wextra
  simplegrab_LDADD = $(PTHREAD_LIBS) $(top_builddir)/src/libvidcap.la
  simplegrab_CFLAGS = $(PTHREAD_CFLAGS)
  AM_LDFLAGS = $(PTHREAD_CFLAGS) $(am__append_1)

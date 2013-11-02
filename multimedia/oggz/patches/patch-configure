@@ -1,24 +1,15 @@
-$OpenBSD: patch-configure,v 1.1 2011/08/24 15:36:38 naddy Exp $
+$OpenBSD: patch-configure,v 1.2 2013/11/02 11:13:19 ajacoutot Exp $
 
 Remove compiler options not available with gcc < 4.
 
---- configure.orig	Tue Aug 23 21:52:22 2011
-+++ configure	Tue Aug 23 21:52:33 2011
-@@ -11257,7 +11257,7 @@ fi
- $as_echo_n "checking if $CC allows signed enums... " >&6; }
- 
- ac_save_CFLAGS="$CFLAGS"
--CFLAGS="$CFLAGS -Wall -Wextra -Werror"
-+CFLAGS="$CFLAGS -Wall -Werror"
- cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
- 
+--- configure.orig	Thu Apr 29 03:39:45 2010
++++ configure	Sat Nov  2 12:05:59 2013
 @@ -12730,7 +12730,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
  # Checks for typedefs, structures, and compiler characteristics.
  
  if test "x$ac_cv_c_compiler_gnu" = xyes ; then
 -  CFLAGS="$CFLAGS -Wall -Wextra -g -std=gnu99 -Wdeclaration-after-statement -Wno-unused"
-+  CFLAGS="$CFLAGS -Wall -g -std=gnu99 -Wno-unused"
++  CFLAGS="$CFLAGS -Wall -Wextra -g -std=gnu99 -Wno-unused"
  fi
  
  
