@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2013/11/02 08:42:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.108 2013/11/02 08:53:36 ajacoutot Exp $
 
     SUBDIR =
     SUBDIR += a2ps
@@ -43,7 +43,6 @@
     SUBDIR += lss
     SUBDIR += lyx
     SUBDIR += mpage
-    SUBDIR += mpage,a4
     SUBDIR += openclipart
     SUBDIR += p5-PostScript-MailLabels
     SUBDIR += pdflib
