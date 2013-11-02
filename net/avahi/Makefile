@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2013/10/31 21:12:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.97 2013/11/02 21:47:56 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -7,6 +7,7 @@ COMMENT-gtk=	gtk+2 avahi-ui libraries
 COMMENT-gtk3=	gtk+3 avahi-ui libraries
 COMMENT-gui=	GUI client utilities for avahi
 COMMENT-mono=	mono (.NET) bindings for avahi
+COMMENT-python=	python bindings for avahi
 COMMENT-qt3=	qt3 bindings for avahi
 COMMENT-qt4=	qt4 bindings for avahi
 COMMENT-ui=	common avahi-ui header for gtk+2 and gtk+3
@@ -20,16 +21,17 @@ PKGNAME-gtk=	avahi-gtk-${V}
 PKGNAME-gtk3=	avahi-gtk3-${V}
 PKGNAME-gui=	avahi-gui-${V}
 PKGNAME-mono=	mono-avahi-${V}
+PKGNAME-python=	py-avahi-${V}
 PKGNAME-qt3=	avahi-qt3-${V}
 PKGNAME-qt4=	avahi-qt4-${V}
 PKGNAME-ui=	avahi-ui-${V}
 
-REVISION-main=	11
+REVISION-main=	12
 REVISION-gtk=	5
 REVISION-gtk3=	5
-REVISION-gui=	6
+REVISION-gui=	7
 REVISION-mono=	2
-REVISION-qt3=	2
+REVISION-qt3=	3
 REVISION-qt4=	3
 REVISION-ui=	3
 
@@ -53,7 +55,7 @@ MASTER_SITES=	${HOMEPAGE}/download/
 PSEUDO_FLAVORS=	no_gui no_mono no_qt3 no_qt4 bootstrap
 FLAVOR?=	no_gui no_mono no_qt3 no_qt4 bootstrap
 
-MULTI_PACKAGES=	-main -mono -qt3 -qt4 -gui -gtk -gtk3 -ui
+MULTI_PACKAGES=	-main -mono -qt3 -qt4 -gui -gtk -gtk3 -python -ui
 
 MODULES=	devel/gettext \
 		textproc/intltool
@@ -67,14 +69,14 @@ WANTLIB-main=	c expat glib-2.0 gobject-2.0 pcre pthread \
 LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		devel/glib2 \
 		databases/gdbm \
-		devel/libdaemon>=0.14 \
+		devel/libdaemon \
 		x11/dbus
 
 .include <bsd.port.arch.mk>
 
 .if !${BUILD_PACKAGES:M-gui}
 # all these vanish together
-BUILD_PACKAGES := ${BUILD_PACKAGES:N-mono:N-gtk:N-gtk3:N-ui}
+BUILD_PACKAGES := ${BUILD_PACKAGES:N-mono:N-gtk:N-gtk3:N-python:N-ui}
 .endif
 
 .if ${BUILD_PACKAGES:M-mono}
@@ -138,9 +140,8 @@ LIB_DEPENDS-gui= ${MODGETTEXT_LIB_DEPENDS} \
 		${BUILD_PKGPATH},-gtk3
 RUN_DEPENDS-gui= ${MODGETTEXT_RUN_DEPENDS} \
 		${MODPY_RUN_DEPENDS} \
-		lang/python/${MODPY_VERSION},-gdbm \
+		${BUILD_PKGPATH},-python \
 		x11/py-gtk2 \
-		x11/dbus-python \
 		devel/py-twisted/web \
 		devel/desktop-file-utils
 WANTLIB-gui += X11 Xcomposite Xcursor Xdamage Xext Xfixes
@@ -154,6 +155,14 @@ WANTLIB-gui += pthread-stubs xcb xcb-render xcb-shm z ffi
 WANTLIB-gui += ICE SM atk-bridge-2.0 atspi harfbuzz
 WANTLIB-gui += graphite2
 WANTLIB-gui += ${MODGETTEXT_WANTLIB}
+
+### -python
+LIB_DEPENDS-python= # empty
+RUN_DEPENDS-python= ${BUILD_PKGPATH} \
+		${MODPY_RUN_DEPENDS} \
+		lang/python/${MODPY_VERSION},-gdbm \
+		x11/dbus-python
+WANTLIB-python= # empty
 
 ### -ui
 LIB_DEPENDS-ui= # empty
@@ -174,10 +183,12 @@ MODULES+=	x11/qt3
 LIB_DEPENDS-qt3= ${MODGETTEXT_LIB_DEPENDS} \
 		${MODQT3_LIB_DEPENDS} \
 		${BUILD_PKGPATH}
+		
 WANTLIB-qt3=	GL ICE SM X11 Xcursor Xext Xfixes Xft Xi \
 		Xinerama Xmu Xrandr Xrender Xt expat fontconfig \
 		freetype jpeg lcms m mng png pthread xcb z \
 		avahi-common stdc++ ${MODQT3_WANTLIB} ${MODGETTEXT_WANTLIB} \
+		X11-xcb Xau Xdmcp glapi xcb-dri2 xcb-glx \
 		Xdamage Xxf86vm drm pthread-stubs
 .else
 CONFIGURE_ARGS+= --disable-qt3
@@ -256,8 +267,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
 	mv ${WRKINST}${SYSCONFDIR}/dbus-1 ${PREFIX}/share/examples/
 	mv ${WRKINST}${SYSCONFDIR}/avahi ${PREFIX}/share/examples/
-	# Install the dbus system-service, some applications needs it to
-	# know that avahi-daemon is running.
 	${INSTALL_DATA_DIR} ${PREFIX}/share/dbus-1/system-services
 	${INSTALL_DATA} ${WRKBUILD}/avahi-daemon/org.freedesktop.Avahi.service \
 		${PREFIX}/share/dbus-1/system-services
