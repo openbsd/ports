@@ -1,23 +1,30 @@
-$OpenBSD: patch-config_bsd_Makedefs,v 1.2 2013/06/01 14:28:28 ajacoutot Exp $
---- config/bsd/Makedefs.orig	Thu Jun 16 17:55:17 2005
-+++ config/bsd/Makedefs	Sat Jun  1 16:25:09 2013
-@@ -8,12 +8,14 @@
- #  XPMDEFS  definitions for building XPM library
+$OpenBSD: patch-config_bsd_Makedefs,v 1.3 2013/11/03 14:32:21 espie Exp $
+--- config/bsd/Makedefs.orig	Thu May 30 19:13:45 2013
++++ config/bsd/Makedefs	Sun Nov  3 12:01:30 2013
+@@ -1,6 +1,7 @@
+ #  locations of X11 found in different BSD distributions
+ X=/usr/X11R6
+ L=/usr/local
++OPTIMIZE=-O2
+ 
+ #  CC       C compiler
+ #  CFLAGS   flags for building C files
+@@ -13,11 +14,13 @@ L=/usr/local
  #  GDIR     directory of graphics helper library
  
-+X11BASE=/usr/X11R6
-+OPTIMIZE=-O2
  CC = cc
--CFLAGS = -O -I/usr/X11R6/include
-+CFLAGS = $(OPTIMIZE) -I$(X11BASE)/include
+-CFLAGS = -O -I$X/include -I$L/include
++XINCLUDE=-I$X/include
++CFLAGS = $(OPTIMIZE) $(XINCLUDE)
  CFDYN = -fPIC
 -RLINK = -Wl,-E
 +RLINK = 
  RLIBS = -lm
  TLIBS = -lpthread
--XLIBS = -Wl,-R/usr/X11R6/lib -L/usr/X11R6/lib -lX11
--XPMDEFS = -DZPIPE -I/usr/X11R6/include
+-XLIBS = -Wl,-R$X/lib -Wl,-R$L/lib -L$X/lib -L$L/lib -lX11
+-XPMDEFS = -DZPIPE
 -GDIR = xpm
-+XLIBS = -L$(X11BASE)/lib -lXpm -lX11
-+XPMDEFS = -DZPIPE -I$(X11BASE)/include
-+GDIR = 
++XLIBS = -L$X/lib -lXpm -lX11
++XPMDEFS = -DZPIPE $(XINCLUDE)
++# we cheat, so that Xpm is not rebuilt
++GDIR = identify.o

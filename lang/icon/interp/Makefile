@@ -1,49 +1,40 @@
-# $OpenBSD: Makefile,v 1.28 2013/10/11 23:49:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2013/11/03 14:32:21 espie Exp $
 
-COMMENT-main=		programming language with generators, X11 and more
-COMMENT-main-no_x11=	programming language with generators
-COMMENT-compiler=	icon compiler
+COMMENT-main =		programming language with generators, X11 and more
+COMMENT-main-no_x11 =	programming language with generators
 
-VERSION=	9.4.3
-DISTNAME=	icon.v943src
-CATEGORIES=	lang
-MASTER_SITES= 	http://www.cs.arizona.edu/icon/ftp/packages/unix/
-#DIST_SUBDIR=	icon/${VERSION}
-DISTFILES=	icon.v943src.tgz
+VERSION =	9.5.1
+DISTNAME =	icon-v951src
+CATEGORIES =	lang
+MASTER_SITES = 	http://www.cs.arizona.edu/icon/ftp/packages/unix/
+DISTFILES =	icon-v951src.tgz
 
-MULTI_PACKAGES=		-main -compiler
+MULTI_PACKAGES =	-main #-compiler
 
-PKGNAME-main=		icon-interp-${VERSION}
-REVISION-main =		3
-REVISION-compiler =	0
-PKGNAME-compiler= 	icon-compiler-${VERSION}
+PKGNAME-main =		icon-interp-${VERSION}
 
 # Public domain
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-HOMEPAGE=	http://www.cs.arizona.edu/icon/
+HOMEPAGE =	http://www.cs.arizona.edu/icon/
 
-MAINTAINER=	Marc Espie <espie@openbsd.org>
+MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-#WRKDIST=	${WRKDIR}
+FLAVORS =	no_x11
+FLAVOR ?=	
 
-FLAVORS=	no_x11
-FLAVOR?=	
+MAKE_ENV =	ARCH="${MACHINE_ARCH}"
+ALL_TARGET =	Icont
 
-MAKE_ENV=	ARCH="${MACHINE_ARCH}"
-CONF_DIR=	${WRKSRC}/config/unix/openbsd
-ALL_TARGET=	Icont Iconc
+LIBDIR =	${TRUEPREFIX}/lib/icon
 
-LIBDIR=${TRUEPREFIX}/lib/icon
-
-WANTLIB-compiler=	c
-WANTLIB-main=		c m pthread
+WANTLIB-main =		c m pthread
 
 .if ${FLAVOR:Mno_x11}
-CONFIGURE_TARGET=	Configure
+CONFIGURE_TARGET =	Configure
 .else
-CONFIGURE_TARGET=	X-Configure
-WANTLIB-main+=		X11 Xpm pthread-stubs xcb
+CONFIGURE_TARGET =	X-Configure
+WANTLIB-main +=		X11 Xpm
 .endif
 
 .include <bsd.port.arch.mk>
@@ -52,6 +43,11 @@ do-configure:
 	cd ${WRKSRC} && ${MAKE} ${CONFIGURE_TARGET} name=bsd
 .if ${PROPERTIES:Mno_shared}
 	echo "#undef LoadFunc" >>${WRKSRC}/src/h/define.h
+.else
+	echo "RLINK=-rdynamic" >>${WRKSRC}/Makedefs
+.endif
+.if ${FLAVOR:Mno_x11}
+	echo "XINCLUDE=" >>${WRKSRC}/Makedefs
 .endif
 
 post-build:
@@ -65,31 +61,22 @@ post-build:
 # with the package. Ludicrous to get through a ftp connexion for such
 # a small file...
 do-install:
-	sed -e 's,@PREFIX@,${TRUEPREFIX},' \
-	    ${FILESDIR}/icont.template >${WRKBUILD}/icont
+	${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} -c \
+		${FILESDIR}/icont.template ${PREFIX}/bin/icont
 	${INSTALL_DATA_DIR} ${WRKINST}${LIBDIR}
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/icont ${WRKINST}${LIBDIR}
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/iconx ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKBUILD}/bin/iconc ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKBUILD}/bin/rtt ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKBUILD}/icont ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/man1/icont.1 ${PREFIX}/man/man1/icont.1
 	cd ${PREFIX}/man/man1 && ln -f icont.1 iconx.1
-	cd ${PREFIX}/man/man1 && ln -f icont.1 iconc.1
-	# Yes, this is only used by generated code !
-	${INSTALL_DATA} ${WRKBUILD}/bin/rt.h ${WRKINST}${LIBDIR}
-	${INSTALL_DATA} ${WRKBUILD}/bin/rt.a ${WRKINST}${LIBDIR}
-	${INSTALL_DATA} ${WRKBUILD}/bin/rt.db ${WRKINST}${LIBDIR}
-	${INSTALL_DATA} ${WRKBUILD}/bin/dlrgint.o ${WRKINST}${LIBDIR}
 .if !${PROPERTIES:Mno_shared}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/ipl/ucode
 	${INSTALL_DATA} ${WRKBUILD}/ipl/cfuncs/cfunc.u?  ${PREFIX}/share/ipl/ucode
 	${INSTALL_DATA} ${WRKBUILD}/ipl/cfuncs/libcfunc.so ${PREFIX}/lib
 .endif
 
-TEST_FLAGS=	HOME=/
+TEST_FLAGS =	HOME=/
 
-# Iconc does not pass quite a few tests currently...
-TEST_TARGET=	Test-icont #Test-iconc
+TEST_TARGET =	Test-icont
+TEST_DEPENDS =	lang/icon/lib
 
 .include <bsd.port.mk>

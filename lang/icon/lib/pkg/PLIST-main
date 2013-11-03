@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2006/10/16 10:01:55 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2013/11/03 14:32:21 espie Exp $
 @conflict unicon-*
 share/ipl/bin/
 share/ipl/bin/adlcheck
@@ -131,6 +131,7 @@ share/ipl/bin/ipower
 share/ipl/bin/ipp
 share/ipl/bin/iprint
 share/ipl/bin/iprofile
+share/ipl/bin/iprofl
 share/ipl/bin/ipsort
 share/ipl/bin/ipsplit
 share/ipl/bin/ipxref
@@ -373,6 +374,8 @@ share/ipl/ucode/divide.u1
 share/ipl/ucode/divide.u2
 share/ipl/ucode/ebcdic.u1
 share/ipl/ucode/ebcdic.u2
+share/ipl/ucode/echo.u1
+share/ipl/ucode/echo.u2
 share/ipl/ucode/empgsup.u1
 share/ipl/ucode/empgsup.u2
 share/ipl/ucode/emptygen.u1
@@ -503,6 +506,8 @@ share/ipl/ucode/lastname.u1
 share/ipl/ucode/lastname.u2
 share/ipl/ucode/lcseval.u1
 share/ipl/ucode/lcseval.u2
+share/ipl/ucode/levensht.u1
+share/ipl/ucode/levensht.u2
 share/ipl/ucode/lindgen.u1
 share/ipl/ucode/lindgen.u2
 share/ipl/ucode/lindstrp.u1
@@ -777,4 +782,3 @@ share/ipl/ucode/xrotate.u1
 share/ipl/ucode/xrotate.u2
 share/ipl/ucode/zipread.u1
 share/ipl/ucode/zipread.u2
-!%%no_x11%%

@@ -1,67 +1,66 @@
 # Icon library port
-# $OpenBSD: Makefile,v 1.26 2013/10/11 23:49:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2013/11/03 14:32:21 espie Exp $
 
-COMMENT=	useful and interesting programs for Icon
+COMMENT-main =	useful and interesting programs for Icon
+COMMENT-x11 =	useful and interesting graphics program for Icon
 
-VERSION=9.4.3
-DISTNAME=	icon.v943src
-REVISION=		0
-PKGNAME=	icon-lib-${VERSION}
-#DIST_SUBDIR=icon/${VERSION}
-DISTFILES=	icon.v943src.tgz
+VERSION	=	9.5.1
+DISTNAME =	icon-v951src
+PKGNAME =	icon-lib-${VERSION}
+PKGNAME-x11 =	icon-xlib-${VERSION}
+DISTFILES =	icon-v951src.tgz
 
-CATEGORIES=lang
+CATEGORIES =	lang
 
-MAINTAINER=	Marc Espie <espie@openbsd.org>
-# PD
-PERMIT_PACKAGE_CDROM=Yes
+MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-WRKDIST=${WRKDIR}/${DISTNAME}/ipl
-# if you really want, the ipl.tgz file holds precompiled u1/u2 files
-# however, you will still have to grab the source for the necessary
-# includes, especially for the graphics API.
-# Anyway, since source is available, using pre-compiled binaries is not
-# OpenBSD policy...
+# Public domain
+PERMIT_PACKAGE_CDROM =	Yes
 
-#MASTER_SITES=ftp://ftp.cs.arizona.edu/icon/library/
-#DISTFILES=bipl.tgz info.tgz
-#SUPDISTFILES=gipl.tgz
-#WRKDIST=	${WRKDIR}
+WRKDIST =	${WRKDIR}/${DISTNAME}/ipl
 
-BUILD_DEPENDS=lang/icon/interp
-RUN_DEPENDS=lang/icon/interp
+BUILD_DEPENDS =	${INTERP}
+RUN_DEPENDS-main =	${INTERP}
+RUN_DEPENDS-x11 =	icon-interp-*-!no_x11:lang/icon/interp
+
 
 # temporary values for building programs
-IPATH=${WRKSRC}/gprocs:${WRKSRC}/procs:${LOCALBASE}/share/ipl/ucode
-LPATH=${WRKSRC}/gincl:${WRKSRC}/incl
-BUILDENV=IPATH="${IPATH}"  LPATH="${LPATH}"; export IPATH LPATH;
+IPATH =		${WRKSRC}/gprocs:${WRKSRC}/procs:${LOCALBASE}/share/ipl/ucode
+LPATH =		${WRKSRC}/gincl:${WRKSRC}/incl
+BUILDENV =	IPATH="${IPATH}"  LPATH="${LPATH}"; export IPATH LPATH;
 
-IPL=${PREFIX}/share/ipl
-FLAVORS=	no_x11
-FLAVOR?=
+IPL =		${PREFIX}/share/ipl
+MULTI_PACKAGES =	-main -x11
+PSEUDO_FLAVORS =	no_x11
+FLAVOR ?=
 
-.if ${FLAVOR:Mno_x11}
-PATCH_LIST=patch-progs*
+.include <bsd.port.arch.mk>
+
+.if ${BUILD_PACKAGES:M-x11}
+INTERP =	lang/icon/interp>=${VERSION}
+.else
+INTERP =	lang/icon/interp,no_x11>=${VERSION}
 .endif
+
+NO_TEST =	Yes
 
 do-build:
 # first build library
 	${BUILDENV} cd ${WRKSRC}/procs && icont -usc *.icn
-.if empty(FLAVOR:Mno_x11)
+.if ${BUILD_PACKAGES:M-x11}
 	${BUILDENV} cd ${WRKSRC}/gprocs && icont -usc *.icn
 .endif
 # then build programs using library
 	${BUILDENV} cd ${WRKSRC}/progs && for i in *.icn; do icont -us $$i; done
-.if empty(FLAVOR:Mno_x11)
+.if ${BUILD_PACKAGES:M-x11}
 	${BUILDENV} cd ${WRKSRC}/gprogs && for i in *.icn; do icont -us $$i; done
 .endif
 # finally build some supplementary packages
-.if empty(FLAVOR:Mno_x11)
+.if ${BUILD_PACKAGES:M-x11}
 	${BUILDENV} cd ${WRKSRC}/gpacks/vib && ${MAKE}
 	${BUILDENV} cd ${WRKSRC}/gpacks/xtiles && icont -s xtiles.icn
 .endif
 
-NO_TEST=	Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${IPL}/ucode
@@ -69,7 +68,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${IPL}/incl
 	${INSTALL_DATA} ${WRKSRC}/incl/* ${IPL}/incl
 	${INSTALL_PROGRAM_DIR} ${IPL}/bin
-.if empty(FLAVOR:Mno_x11)
+.if ${BUILD_PACKAGES:M-x11}
 	${INSTALL_DATA} ${WRKSRC}/gprocs/*.u[12] ${IPL}/ucode
 	${INSTALL_DATA_DIR} ${IPL}/gincl
 	${INSTALL_DATA} ${WRKSRC}/gincl/* ${IPL}/gincl

@@ -1,5 +1,5 @@
 #!/bin/sh
-: ${PREFIX:=@PREFIX@}
+: ${PREFIX:=${TRUEPREFIX}}
 IPATH="${IPATH-} $PREFIX/share/ipl/ucode"
 LPATH="${LPATH-} $PREFIX/share/ipl/ginclude $PREFIX/share/ipl/include"
 export IPATH LPATH

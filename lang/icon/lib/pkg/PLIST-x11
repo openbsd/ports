@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.6 2006/10/16 10:01:55 espie Exp $
+@comment $OpenBSD: PLIST-x11,v 1.1 2013/11/03 14:32:21 espie Exp $
 bin/vib
 bin/xtiles
 @man man/man6/xtiles.6
@@ -97,12 +97,14 @@ share/ipl/bin/lsys
 share/ipl/bin/mandala
 share/ipl/bin/mandel1
 share/ipl/bin/mandel2
+share/ipl/bin/mandel3
 share/ipl/bin/mercator
 share/ipl/bin/mirroror
 share/ipl/bin/moire
 share/ipl/bin/mover
 share/ipl/bin/offtiler
 share/ipl/bin/orbit
+share/ipl/bin/othello
 share/ipl/bin/painterc
 share/ipl/bin/palcheck
 share/ipl/bin/palette
@@ -153,12 +155,14 @@ share/ipl/bin/subdemo
 share/ipl/bin/sym4mm
 share/ipl/bin/symdraw
 share/ipl/bin/sympmm
+share/ipl/bin/tess
 share/ipl/bin/testpatt
 share/ipl/bin/textures
 share/ipl/bin/tgdemo
 share/ipl/bin/tilescan
 share/ipl/bin/travels
 share/ipl/bin/trkvu
+share/ipl/bin/tron
 share/ipl/bin/trycolor
 share/ipl/bin/tryfont
 share/ipl/bin/uix
