@@ -1,16 +1,16 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2013/11/03 00:00:32 espie Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.2 2013/11/03 10:11:35 espie Exp $
 --- src/Makefile.in.orig	Sun Jun 16 03:17:19 2013
-+++ src/Makefile.in	Sat Nov  2 16:22:55 2013
-@@ -2177,7 +2180,7 @@ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
++++ src/Makefile.in	Sun Nov  3 10:11:16 2013
+@@ -2177,7 +2177,7 @@ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
  LDFLAGS = @LDFLAGS@
  LIBICONV = @LIBICONV@
  LIBOBJS = @LIBOBJS@
 -LIBS = @LIBS@ -lpthread -lrt
-+LIBS = @LIBS@ -lpthread -liconv -lsndio
++LIBS = @LIBS@ -lpthread -liconv
  LTLIBICONV = @LTLIBICONV@
  LTLIBOBJS = @LTLIBOBJS@
  MAINT = @MAINT@
-@@ -2716,7 +2721,7 @@ main_SOURCES = $(PNG) $(Screens) $(DataStructures) $(F
+@@ -2716,7 +2716,7 @@ main_SOURCES = $(PNG) $(Screens) $(DataStructures) $(F
  	$(StepMania) $(Arch) $(ActorsInGameplayAndMenus) \
  	$(ActorsInMenus) $(ActorsInGameplay) $(Rage) $(Actors) \
  	$(GlobalSingletons) $(am__append_24)
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2013/11/03 00:00:32 espie Exp $
  		$(VIDEO_LIBS) \
  		$(AUDIO_LIBS) \
  		$(XLIBS) \
-@@ -15047,7 +15067,7 @@ all: increment_version
+@@ -15047,7 +15047,7 @@ all: increment_version
  
  increment_version:
  	if test -e ver.cpp; then \

@@ -1,0 +1,12 @@
+$OpenBSD: patch-extern_lua-5_1_src_loadlib_c,v 1.1 2013/11/03 10:11:35 espie Exp $
+--- extern/lua-5.1/src/loadlib.c.orig	Sun Nov  3 10:38:18 2013
++++ extern/lua-5.1/src/loadlib.c	Sun Nov  3 10:38:33 2013
+@@ -66,7 +66,7 @@ static void ll_unloadlib (void *lib) {
+ 
+ 
+ static void *ll_load (lua_State *L, const char *path) {
+-  void *lib = dlopen(path, RTLD_NOW);
++  void *lib = dlopen(path, RTLD_NOW|RTLD_GLOBAL);
+   if (lib == NULL) lua_pushstring(L, dlerror());
+   return lib;
+ }

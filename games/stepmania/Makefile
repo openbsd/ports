@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/11/03 00:46:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2013/11/03 10:11:35 espie Exp $
 
 COMMENT = 	dance music game
 CATEGORIES = 	games emulators
@@ -6,6 +6,7 @@ SHARED_ONLY =	Yes
 
 DISTNAME = 	stepmania-5.0b2a
 PKGNAME =	stepmania-5.0beta2a
+REVISION =	0
 EXTRACT_SUFX = 	-src.tar.bz2
 HOMEPAGE =	http://www.stepmania.com
 MASTER_SITES = 	${MASTER_SITE_SOURCEFORGE:=stepmania/}
@@ -31,8 +32,9 @@ LIB_DEPENDS =	audio/libvorbis \
 		audio/pulseaudio \
 		x11/gtk+2
 
-# there's a lua copy inside stepmania, TODO not compile it, but
-# there are some extra functions in there !
+# stepmania comes with its own copy of lua-5.1 with a supplementary function
+# luaL_pushtype AND a supplementary keyword "cmd"  :(
+
 WANTLIB += GL GLU X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xtst c fontconfig freetype
 WANTLIB += m pthread sndio stdc++ z
@@ -46,7 +48,8 @@ D = 	Announcers BGAnimations BackgroundEffects BackgroundTransitions \
 	Characters Courses Data NoteSkins Scripts Songs Themes
 
 SUBST_VARS = DATADIR
- 
+
+
 # just so we can start the game directly to test.
 post-build:
 	cd ${WRKBUILD} && ln -sf src/stepmania && ln -sf src/GtkModule.so
