@@ -1,26 +1,34 @@
-$OpenBSD: patch-configure_in,v 1.3 2013/01/18 07:56:17 brad Exp $
-
-- Remove over-the-top optimization
-- Remove gnome-vfs2 dependency.
-
---- configure.in.orig	Wed Dec  9 01:34:33 2009
-+++ configure.in	Wed May 18 20:41:16 2011
-@@ -45,8 +45,8 @@ dnl the library paths with strings that have longer le
- case "$host_os" in
- darwin*) 	CFLAGS="-g -O2 -Wall"
- 		LDFLAGS="-headerpad_max_install_names";;
--*)		CFLAGS="-g -O6 -Wall"
--		CXXFLAGS="-g -O6 -Wall";;
-+*)		CFLAGS="${CFLAGS} -Wall"
-+		CXXFLAGS="${CXXFLAGS} -Wall";;
- esac
+--- configure.in.orig	Fri Oct  5 00:17:23 2012
++++ configure.in	Mon May 20 12:05:41 2013
+@@ -53,7 +53,7 @@
+ dnl specify optimization level, added 2010.02.20
+ OPTIMIZATION_LEVEL="-O3"
+ echo "setting optimization level to $OPTIMIZATION_LEVEL"
+-CFLAGS="$CFLAGS $OPTIMIZATION_LEVEL"
++CFLAGS="${CFLAGS}"
  
  if test $CC = "gcc"; then
-@@ -286,7 +286,6 @@ PKG_CHECK_MODULES(AMIDE_GTK,[
- ## gconf stuff is encapsulated in amide_gconf.c
- if (test $native_win32 = no); then
-    PKG_CHECK_MODULES(AMIDE_GTK_EXTRA,[
+    echo -n "checking version of gcc... "
+@@ -101,7 +101,7 @@
+ dnl switch to C++ for DCMTK library stuff - also, if pthread is on the platform, probably need that
+ dnl autoconf doesn't have a nice macro for checking for c++ libraries, therefore the below:
+ AC_CHECK_LIB(pthread, pthread_mutex_init, THREAD_LIBS="-lpthread", THREAD_LIBS="")
+-AMIDE_LIBDCMDATA_LIBS="-L/usr/local/dicom/lib -L/usr/lib64/dcmtk -L/usr/lib/dcmtk -ldcmdata -loflog -lofstd -lz $THREAD_LIBS"
++AMIDE_LIBDCMDATA_LIBS=""
+ AMIDE_LIBDCMDATA_CFLAGS="-I/usr/local/dicom/include"
+ dnl 2010.02.20	AMIDE_LIBDCMDATA_CFLAGS="-I/usr/local/dicom/include/dcmtk/dcmdata -I/usr/local/dicom/include/dcmtk/ofstd -I/usr/local/dicom/include -I/usr/include/dcmtk/dcmdata -I/usr/local/include/dcmtk/ofstd -I/sw/include/dcmtk/dcmdata -I/sw/include/dcmtk/ofstd -I/sw/include/dcmtk"
+ saved_libs="${LIBS}"
+@@ -348,11 +348,8 @@
+ ## add in gnome-vfs if not on win32 or gtk-osx
+ ## gnome-vfs is only used by amide_gnome.c and only on unix
+ if (test $native_win32 = no) && (test $enable_native_gtk_osx = no); then
+-   PKG_CHECK_MODULES(AMIDE_GTK_EXTRA_GVFS,[
 -		gnome-vfs-2.0   >= 2.16.0
- 		gconf-2.0	>= 2.14.0
-    ])
-    AMIDE_GTK_LIBS="$AMIDE_GTK_LIBS $AMIDE_GTK_EXTRA_LIBS"
+-   ])
+-   AMIDE_GTK_LIBS="$AMIDE_GTK_LIBS $AMIDE_GTK_EXTRA_GVFS_LIBS"
+-   AMIDE_GTK_CFLAGS="$AMIDE_GTK_CFLAGS $AMIDE_GTK_EXTRA_GVFS_CFLAGS"
++   AMIDE_GTK_LIBS="$AMIDE_GTK_LIBS"
++   AMIDE_GTK_CFLAGS="$AMIDE_GTK_CFLAGS"
+ fi
+  
+ AC_SUBST(AMIDE_GTK_LIBS)
