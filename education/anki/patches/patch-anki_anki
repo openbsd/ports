@@ -1,10 +1,7 @@
-$OpenBSD: patch-anki_anki,v 1.1 2013/01/19 20:42:26 fgsch Exp $
+$OpenBSD: patch-anki_anki,v 1.2 2013/11/03 00:02:56 fgsch Exp $
 --- anki/anki.orig	Sat Dec 22 00:12:33 2012
 +++ anki/anki	Thu Jan 10 21:44:12 2013
-@@ -1,15 +1,4 @@
--#!/usr/bin/env python
-+#!/usr/local/bin/python2.7
- 
+@@ -2,13 +2,2 @@
 -import os, sys
 -# system-wide install
 -sys.path.insert(0, "/usr/share/anki")

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2013/05/18 05:54:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/11/03 00:02:55 fgsch Exp $
 
 COMMENT	=	spaced learning system
 
-DISTNAME =	anki-2.0.8
+DISTNAME =	anki-2.0.16
 
 CATEGORIES =	education
 
@@ -23,6 +23,7 @@ MODPY_ADJ_FILES = anki/anki
 
 RUN_DEPENDS =	audio/py-audio \
 		devel/desktop-file-utils \
+		devel/py-send2trash \
 		www/py-beautifulsoup \
 		www/py-httplib2>=0.7.7 \
 		x11/mplayer \
@@ -37,7 +38,7 @@ do-build:
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/anki/anki ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/anki/anki ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/anki.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications

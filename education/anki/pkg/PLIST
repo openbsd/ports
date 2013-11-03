@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/03/05 00:13:53 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/11/03 00:02:56 fgsch Exp $
 bin/anki
 lib/python${MODPY_VERSION}/site-packages/anki/
 lib/python${MODPY_VERSION}/site-packages/anki/__init__.py
@@ -40,6 +40,8 @@ lib/python${MODPY_VERSION}/site-packages/anki/importing/mnemo.py
 lib/python${MODPY_VERSION}/site-packages/anki/importing/mnemo.pyc
 lib/python${MODPY_VERSION}/site-packages/anki/importing/noteimp.py
 lib/python${MODPY_VERSION}/site-packages/anki/importing/noteimp.pyc
+lib/python${MODPY_VERSION}/site-packages/anki/importing/pauker.py
+lib/python${MODPY_VERSION}/site-packages/anki/importing/pauker.pyc
 lib/python${MODPY_VERSION}/site-packages/anki/importing/supermemo_xml.py
 lib/python${MODPY_VERSION}/site-packages/anki/importing/supermemo_xml.pyc
 lib/python${MODPY_VERSION}/site-packages/anki/js.py
@@ -103,6 +105,9 @@ lib/python${MODPY_VERSION}/site-packages/anki/locale/fi/LC_MESSAGES/anki.mo
 lib/python${MODPY_VERSION}/site-packages/anki/locale/fr/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/fr/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/fr/LC_MESSAGES/anki.mo
+lib/python${MODPY_VERSION}/site-packages/anki/locale/gl/
+lib/python${MODPY_VERSION}/site-packages/anki/locale/gl/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/anki/locale/gl/LC_MESSAGES/anki.mo
 lib/python${MODPY_VERSION}/site-packages/anki/locale/gu/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/gu/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/gu/LC_MESSAGES/anki.mo
@@ -121,6 +126,9 @@ lib/python${MODPY_VERSION}/site-packages/anki/locale/it/LC_MESSAGES/anki.mo
 lib/python${MODPY_VERSION}/site-packages/anki/locale/ja/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/ja/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/ja/LC_MESSAGES/anki.mo
+lib/python${MODPY_VERSION}/site-packages/anki/locale/km/
+lib/python${MODPY_VERSION}/site-packages/anki/locale/km/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/anki/locale/km/LC_MESSAGES/anki.mo
 lib/python${MODPY_VERSION}/site-packages/anki/locale/ko/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/ko/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/ko/LC_MESSAGES/anki.mo
@@ -188,9 +196,15 @@ lib/python${MODPY_VERSION}/site-packages/anki/locale/ro/LC_MESSAGES/anki.mo
 lib/python${MODPY_VERSION}/site-packages/anki/locale/ru/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/ru/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/ru/LC_MESSAGES/anki.mo
+lib/python${MODPY_VERSION}/site-packages/anki/locale/sk/
+lib/python${MODPY_VERSION}/site-packages/anki/locale/sk/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/anki/locale/sk/LC_MESSAGES/anki.mo
 lib/python${MODPY_VERSION}/site-packages/anki/locale/sl/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/sl/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/sl/LC_MESSAGES/anki.mo
+lib/python${MODPY_VERSION}/site-packages/anki/locale/sr/
+lib/python${MODPY_VERSION}/site-packages/anki/locale/sr/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/anki/locale/sr/LC_MESSAGES/anki.mo
 lib/python${MODPY_VERSION}/site-packages/anki/locale/sv/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/sv/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/sv/LC_MESSAGES/anki.mo
@@ -209,6 +223,9 @@ lib/python${MODPY_VERSION}/site-packages/anki/locale/uk/LC_MESSAGES/anki.mo
 lib/python${MODPY_VERSION}/site-packages/anki/locale/vi/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/vi/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/vi/LC_MESSAGES/anki.mo
+lib/python${MODPY_VERSION}/site-packages/anki/locale/wo/
+lib/python${MODPY_VERSION}/site-packages/anki/locale/wo/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/anki/locale/wo/LC_MESSAGES/anki.mo
 lib/python${MODPY_VERSION}/site-packages/anki/locale/zh_CN/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/zh_CN/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/anki/locale/zh_CN/LC_MESSAGES/anki.mo
