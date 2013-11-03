@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:21 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/11/03 07:52:01 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 COMMENT =		Simple DirectMedia Layer for Perl
@@ -8,7 +8,7 @@ MODULES =		cpan
 VER =			2.1.3
 DISTNAME =		SDL_Perl-${VER}
 PKGNAME =		p5-SDL-${VER}
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel graphics
 CPAN_AUTHOR =		DGOEHRIG
 

@@ -1,14 +1,6 @@
-$OpenBSD: patch-Build_PL,v 1.1.1.1 2009/06/02 21:57:38 sthen Exp $
+$OpenBSD: patch-Build_PL,v 1.2 2013/11/03 07:52:02 ajacoutot Exp $
 --- Build.PL.orig	Wed Oct  5 02:25:49 2005
 +++ Build.PL	Mon May 25 14:22:30 2009
-@@ -13,6 +13,7 @@ use YAML;
- 
- my $sdl_compile_flags = `sdl-config --cflags`;
- my $sdl_link_flags    = `sdl-config --libs`;
-+$sdl_link_flags =~ s{-pthread}{-lpthread};
- 
- if ($? >> 8)
- {
 @@ -35,7 +36,7 @@ my %subsystems =
  	SDL => {
  		file      => {

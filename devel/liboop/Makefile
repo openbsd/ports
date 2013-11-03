@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/21 08:45:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2013/11/03 07:52:01 ajacoutot Exp $
 
 COMMENT=		low-level event loop management library
 
 DISTNAME=		liboop-1.0
-REVISION =		1
+REVISION =		2
 SHARED_LIBS=		oop		4.1
 CATEGORIES=		devel
 

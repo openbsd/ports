@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.9 2012/04/28 09:48:20 stsp Exp $
+$OpenBSD: patch-configure,v 1.10 2013/11/03 07:52:01 ajacoutot Exp $
 --- configure.orig	Wed Feb  8 00:17:57 2012
 +++ configure	Fri Apr 27 09:51:08 2012
 @@ -6633,6 +6633,11 @@ if test "x$apr_preload_done" != "xyes" ; then
@@ -22,24 +22,6 @@ $OpenBSD: patch-configure,v 1.9 2012/04/28 09:48:20 stsp Exp $
  
  
  
-@@ -19343,7 +19348,7 @@ if ${apr_cv_pthreads_lib+:} false; then :
- else
- 
-   apr_ptc_libs=$LIBS
--  for lib in -lpthread -lpthreads -lc_r; do
-+  for lib in -pthread -lpthread -lpthreads -lc_r; do
-     LIBS="$apr_ptc_libs $lib"
- 
- if test "$cross_compiling" = yes; then :
-@@ -19591,7 +19596,7 @@ if ${apr_cv_pthreads_lib+:} false; then :
- else
- 
-   apr_ptc_libs=$LIBS
--  for lib in -lpthread -lpthreads -lc_r; do
-+  for lib in -pthread -lpthread -lpthreads -lc_r; do
-     LIBS="$apr_ptc_libs $lib"
- 
- if test "$cross_compiling" = yes; then :
 @@ -25452,7 +25457,7 @@ for ac_spec in func:semget func:semctl define:SEM_UNDO
  done
  if test ".$ac_rc" = .yes; then

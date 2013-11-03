@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.4 2009/08/11 21:17:21 sthen Exp $
+$OpenBSD: patch-configure_ac,v 1.5 2013/11/03 07:52:02 ajacoutot Exp $
 --- configure.ac.orig	Fri Aug  7 07:51:30 2009
 +++ configure.ac	Tue Aug 11 14:46:10 2009
 @@ -97,9 +97,6 @@ AM_CONDITIONAL(SILC_X86_64, test x$cpu_x86_64 = xtrue)
@@ -73,21 +73,3 @@ $OpenBSD: patch-configure_ac,v 1.4 2009/08/11 21:17:21 sthen Exp $
  #
  # Workaround a bug in GCC 2.x which causes memory exhaustion
  # when compiling sha1 with optimizations on UltraSPARC.
-@@ -1013,7 +960,7 @@ if test x$check_threads = xtrue; then
-   AC_MSG_RESULT(yes)
-   AC_CHECK_HEADERS(pthread.h,
-     [
--      LIBS="$LIBS -lpthread"
-+      LIBS="$LIBS -pthread"
-       AC_CHECK_LIB(pthread, pthread_attr_init, has_threads=true,
-         [
-           # FreeBSD
-@@ -1047,7 +994,7 @@ if test x$check_threads = xtrue; then
- 
-           AC_CHECK_HEADERS(pthread.h,
-             [
--              LIBS="$LIBS -lpthread"
-+              LIBS="$LIBS -pthread"
-               AC_CHECK_LIB(pthread, pthread_attr_init, has_threads=true,
-                 [
-                   has_threads=false

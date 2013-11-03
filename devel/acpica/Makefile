@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:00 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/11/03 07:52:01 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -7,6 +7,7 @@ V =			20111123
 DISTNAME =		acpica-unix-$V
 PKGNAME =		acpica-$V
 CATEGORIES =		devel
+REVISION =		0
 
 HOMEPAGE =		http://www.acpica.org/
 MASTER_SITES =		${HOMEPAGE}download/

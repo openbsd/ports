@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.5 2007/12/11 10:57:25 jakemsr Exp $
+$OpenBSD: patch-configure,v 1.6 2013/11/03 07:52:01 ajacoutot Exp $
 --- configure.orig	Thu Mar 15 07:44:01 2001
 +++ configure	Sun Oct 21 01:39:52 2007
 @@ -4385,6 +4385,13 @@ else
@@ -23,7 +23,7 @@ $OpenBSD: patch-configure,v 1.5 2007/12/11 10:57:25 jakemsr Exp $
 +		G_THREAD_CFLAGS="$G_THREAD_CFLAGS -D_THREAD_SAFE"
 +		  if test "x$G_THREAD_LIBS" = "x-lc_r" -o \
 +			"x$G_THREAD_LIBS" = "x-lpthread" ; then
-+		    G_THREAD_LIBS="-pthread"
++		    G_THREAD_LIBS="-lpthread"
 +		  fi
 +		;;
      esac

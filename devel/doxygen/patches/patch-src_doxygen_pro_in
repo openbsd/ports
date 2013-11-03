@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_doxygen_pro_in,v 1.3 2010/11/04 20:13:10 sthen Exp $
+$OpenBSD: patch-src_doxygen_pro_in,v 1.4 2013/11/03 07:52:01 ajacoutot Exp $
 --- src/doxygen.pro.in.orig	Sat May  8 09:57:08 2010
 +++ src/doxygen.pro.in	Thu Sep 16 12:12:56 2010
 @@ -18,7 +18,7 @@ TEMPLATE     =	app.t
@@ -6,7 +6,7 @@ $OpenBSD: patch-src_doxygen_pro_in,v 1.3 2010/11/04 20:13:10 sthen Exp $
  HEADERS      =	doxygen.h 
  SOURCES      =	main.cpp 
 -unix:LIBS                  += -L../lib -ldoxygen -ldoxycfg -lqtools -lmd5 -lpthread
-+unix:LIBS                  += -L../lib -L$(LOCALBASE)/lib -ldoxygen -ldoxycfg -lqtools -lmd5 -pthread -liconv -lz
++unix:LIBS                  += -L../lib -L$(LOCALBASE)/lib -ldoxygen -ldoxycfg -lqtools -lmd5 -lpthread -liconv -lz
  win32:INCLUDEPATH          += .
  win32-mingw:LIBS           += -L../lib -ldoxygen -ldoxycfg -lqtools -lmd5 -lpthread
  win32-msvc:LIBS            += qtools.lib md5.lib doxygen.lib doxycfg.lib shell32.lib iconv.lib

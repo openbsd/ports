@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.3 2011/07/11 05:25:31 dcoppa Exp $
+$OpenBSD: patch-configure,v 1.4 2013/11/03 07:52:02 ajacoutot Exp $
 --- configure.orig	Sat Apr 30 19:24:59 2011
 +++ configure	Sat Jul  9 02:36:18 2011
 @@ -904,7 +904,6 @@ CXX
@@ -18,24 +18,6 @@ $OpenBSD: patch-configure,v 1.3 2011/07/11 05:25:31 dcoppa Exp $
  	LIBS="$PTHREAD_LIBS $LIBS"
  	CC="$PTHREAD_CC"
  
-@@ -15649,7 +15648,7 @@ $as_echo "no" >&6; }
- 	if test x"$done" = xno; then
- 	   { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether -lpthread fixes that" >&5
- $as_echo_n "checking whether -lpthread fixes that... " >&6; }
--	   LIBS="-lpthread $PTHREAD_LIBS $save_LIBS"
-+	   LIBS="-pthread $PTHREAD_LIBS $save_LIBS"
- 	   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
- #include <pthread.h>
-@@ -15672,7 +15671,7 @@ rm -f core conftest.err conftest.$ac_objext \
- 	   if test "x$done" = xyes; then
- 	      { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
- $as_echo "yes" >&6; }
--	      PTHREAD_LIBS="-lpthread $PTHREAD_LIBS"
-+	      PTHREAD_LIBS="-pthread $PTHREAD_LIBS"
- 	   else
- 	      { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
- $as_echo "no" >&6; }
 @@ -15947,14 +15946,6 @@ $as_echo "$as_me: WARNING: could not find an STL hash_
     fi
  

@@ -1,19 +1,9 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2011/07/08 08:58:02 dcoppa Exp $
+$OpenBSD: patch-configure,v 1.2 2013/11/03 07:52:02 ajacoutot Exp $
 
-Fix libpthread linkage
 Fix endianess test
 
 --- configure.orig	Thu Mar 10 20:12:02 2011
 +++ configure	Thu Jul  7 14:53:37 2011
-@@ -16686,7 +16686,7 @@ fi
- 
- 
-   pbc_savelibs="$LIBS"
--  LIBS="$LIBS -lprotoc -lprotobuf -lpthread"
-+  LIBS="$LIBS -lprotoc -lprotobuf -pthread"
-   cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
 @@ -17004,7 +17004,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
  
      # ------------------ try <mach/endian.h>  ------------------
