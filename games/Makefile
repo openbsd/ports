@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.277 2013/10/20 17:38:54 bentley Exp $
+# $OpenBSD: Makefile,v 1.278 2013/11/03 00:02:27 espie Exp $
 
      SUBDIR =
      SUBDIR += abuse
@@ -193,6 +193,7 @@
      SUBDIR += speyes
      SUBDIR += spider
      SUBDIR += starlanes
+     SUBDIR += stepmania
      SUBDIR += stone-soup
      SUBDIR += stone-soup,no_x11
      SUBDIR += sudognu
