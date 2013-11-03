@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.8 2013/03/11 12:27:54 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2013/11/03 22:04:44 landry Exp $
 
 VERSION =	1.0.7
 CATEGORIES =	multimedia x11
@@ -33,7 +33,7 @@ RUN_DEPENDS +=	audio/libgpod,-python \
 		multimedia/gstreamer-0.10/plugins-ffmpeg \
 		multimedia/gstreamer-0.10/plugins-good \
 		multimedia/gstreamer-0.10/plugins-ugly \
-		net/avahi,-gtk,no_mono,no_qt3,no_qt4 \
+		net/avahi,-python,no_mono,no_qt3,no_qt4 \
 		textproc/py-cssutils \
 		www/twill \
 		x11/dbus-python \

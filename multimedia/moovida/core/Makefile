@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2013/09/10 13:26:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2013/11/03 22:04:44 landry Exp $
 
 COMMENT =	Moovida media center software
 DISTNAME =	moovida-${VERSION}
-REVISION =	10
+REVISION =	11
 EPOCH = 	0
 
 BUILD_DEPENDS =	devel/py-twisted/web
