@@ -1,5 +1,5 @@
 # Icon library port
-# $OpenBSD: Makefile,v 1.27 2013/11/03 14:32:21 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/11/03 14:33:54 espie Exp $
 
 COMMENT-main =	useful and interesting programs for Icon
 COMMENT-x11 =	useful and interesting graphics program for Icon
@@ -7,6 +7,7 @@ COMMENT-x11 =	useful and interesting graphics program for Icon
 VERSION	=	9.5.1
 DISTNAME =	icon-v951src
 PKGNAME =	icon-lib-${VERSION}
+PKGNAME-main =	${PKGNAME}
 PKGNAME-x11 =	icon-xlib-${VERSION}
 DISTFILES =	icon-v951src.tgz
 
