@@ -1,5 +1,5 @@
 # Icon library port
-# $OpenBSD: Makefile,v 1.28 2013/11/03 14:33:54 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2013/11/03 14:42:36 espie Exp $
 
 COMMENT-main =	useful and interesting programs for Icon
 COMMENT-x11 =	useful and interesting graphics program for Icon
@@ -20,9 +20,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WRKDIST =	${WRKDIR}/${DISTNAME}/ipl
 
-BUILD_DEPENDS =	${INTERP}
-RUN_DEPENDS-main =	${INTERP}
-RUN_DEPENDS-x11 =	icon-interp-*-!no_x11:lang/icon/interp
+RUN_DEPENDS-main =	lang/icon/interp>=${VERSION}
+RUN_DEPENDS-x11 =	icon-interp->=${VERSION}-!no_x11:lang/icon/interp
 
 
 # temporary values for building programs
@@ -36,11 +35,10 @@ PSEUDO_FLAVORS =	no_x11
 FLAVOR ?=
 
 .include <bsd.port.arch.mk>
-
 .if ${BUILD_PACKAGES:M-x11}
-INTERP =	lang/icon/interp>=${VERSION}
+BUILD_DEPENDS =	icon-interp->=${VERSION}-!no_x11:lang/icon/interp
 .else
-INTERP =	lang/icon/interp,no_x11>=${VERSION}
+BUILD_DEPENDS =	lang/icon/interp
 .endif
 
 NO_TEST =	Yes
