@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/11/03 00:06:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2013/11/03 00:46:23 ajacoutot Exp $
 
 COMMENT = 	dance music game
 CATEGORIES = 	games emulators
@@ -20,6 +20,7 @@ CONFIGURE_ARGS += 	--disable-lua-binaries
 CONFIGURE_ENV += 	CPPFLAGS=-I${LOCALBASE}/include  \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 NO_TESTS =	Yes
+VMEM_WARNING =	Yes
 
 MODULES =	devel/gettext
 
