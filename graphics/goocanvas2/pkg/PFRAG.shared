@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/09/12 14:07:11 ajacoutot Exp $
-@lib lib/libgoocanvas-2.0.so.${LIBgoocanvas-2.0_VERSION}

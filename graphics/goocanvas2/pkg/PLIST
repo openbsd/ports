@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/10/10 08:14:46 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2013/11/03 20:00:43 jasper Exp $
 include/goocanvas-2.0/
 include/goocanvas-2.0/goocanvas.h
 include/goocanvas-2.0/goocanvasellipse.h
@@ -22,6 +21,7 @@ include/goocanvas-2.0/goocanvaswidget.h
 lib/girepository-1.0/GooCanvas-2.0.typelib
 lib/libgoocanvas-2.0.a
 lib/libgoocanvas-2.0.la
+@lib lib/libgoocanvas-2.0.so.${LIBgoocanvas-2.0_VERSION}
 lib/pkgconfig/goocanvas-2.0.pc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/GooCanvas.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/GooCanvas.pyc
@@ -70,9 +70,12 @@ share/gtk-doc/html/goocanvas2/goocanvas2.devhelp2
 share/gtk-doc/html/goocanvas2/home.png
 share/gtk-doc/html/goocanvas2/index.html
 share/gtk-doc/html/goocanvas2/index.sgml
+share/gtk-doc/html/goocanvas2/left-insensitive.png
 share/gtk-doc/html/goocanvas2/left.png
+share/gtk-doc/html/goocanvas2/right-insensitive.png
 share/gtk-doc/html/goocanvas2/right.png
 share/gtk-doc/html/goocanvas2/style.css
+share/gtk-doc/html/goocanvas2/up-insensitive.png
 share/gtk-doc/html/goocanvas2/up.png
 share/locale/en_GB/LC_MESSAGES/goocanvas2.mo
 share/locale/es/LC_MESSAGES/goocanvas2.mo
