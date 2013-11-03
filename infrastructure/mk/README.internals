@@ -1,5 +1,5 @@
-$OpenBSD: README.internals,v 1.9 2011/11/25 15:05:56 espie Exp $
-Copyright (C) 2011 Marc Espie <espie@openbsd.org>
+$OpenBSD: README.internals,v 1.10 2013/11/03 15:45:01 espie Exp $
+Copyright (C) 2011-2012 Marc Espie <espie@openbsd.org>
 
  Permission to use, copy, modify, and distribute this software for any
  purpose with or without fee is hereby granted, provided that the above
@@ -402,7 +402,7 @@ _README_DIR: location for the pkg-readmes, no user serviceable parts inside.
 _MASTER: dependencies may be confusing, so set _MASTER to know where we come
 from when patching/configuring only.
 
-_SOLVING_DEP: pkg_add -a to avoid manually installed packages.
+_DEPENDENCY_STACK: pkg_add -a to avoid manually installed packages.
 
 _CHECK_DEPENDS: save all depends prior to tweaking them, just in case.
 

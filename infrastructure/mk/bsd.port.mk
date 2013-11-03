@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1245 2013/08/07 07:20:24 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1246 2013/11/03 15:45:00 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -554,7 +554,7 @@ _PKG_ARGS += -DUSE_GROFF=1
 PKGNAME ?= ${DISTNAME}
 FULLPKGNAME ?= ${PKGNAME}${FLAVOR_EXT}
 _MASTER ?=
-_SOLVING_DEP ?= No
+_DEPENDENCY_STACK ?= 
 
 .if ${MULTI_PACKAGES} == "-"
 # XXX "parse" FULLPKGNAME: is there a flavor after the version number
@@ -932,7 +932,7 @@ SUBST_VARS += MACHINE_ARCH ARCH HOMEPAGE ^PREFIX ^SYSCONFDIR FLAVOR_EXT \
 _tmpvars =
 
 _PKG_ADD_AUTO ?=
-.if ${_SOLVING_DEP:L} != "no"
+.if !empty(_DEPENDENCY_STACK)
 _PKG_ADD_AUTO += -a
 .endif
 
@@ -2027,10 +2027,7 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 			exit 1;; \
 		esac; \
 		${_complete_pkgspec}; \
-		case X"$$dir" in \
-			X${PKGPATH}) toset="$$toset _SOLVING_DEP=self";; \
-			*) toset="$$toset _SOLVING_DEP=Yes";; \
-		esac; \
+		toset="$$toset _DEPENDENCY_STACK='${_DEPENDENCY_STACK} ${PKGPATH}'"; \
 		h="===> ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} depends on: $$pkg -"; \
 		for second_pass in false true; do \
 			if $$check_installed; then \
@@ -2401,9 +2398,18 @@ subpackage:
 
 _internal-package: 
 	@${_cache_fragment}; cd ${.CURDIR} && ${MAKE} _internal-package-only
-.if ${BULK_${PKGPATH}:L} == "yes" || (${BULK_${PKGPATH}:L} == "auto" && ${_SOLVING_DEP:L} == "yes")
+# XXX loop needed for M to work
+.for p in ${PKGPATH}
+.  if ${BULK_$p:L} == "yes" 
 	@${_MAKE} ${_BULK_COOKIE}
-.endif
+.  elif ${BULK_$p:L} == "auto"
+.    if !empty(_DEPENDENCY_STACK)
+.      if !${_DEPENDENCY_STACK:M$p}
+	@${_MAKE} ${_BULK_COOKIE}
+.      endif
+.    endif
+.  endif
+.endfor
 
 
 ${_BULK_COOKIE}:
