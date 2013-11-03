@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2010/02/01 17:00:13 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/11/03 18:28:21 espie Exp $
 
 SUBDIR =
 SUBDIR += interp
 SUBDIR += lib
 SUBDIR += interp,no_x11
-SUBDIR += lib,no_x11
 SUBDIR += book
 SUBDIR += book,two_sided
 SUBDIR += devel-book
