@@ -1,4 +1,0 @@
-This package installed a setuid root executable in
-${PREFIX}/bin/uum.  This code has not been checked for errors
-and you are advised to avoid using it as it presents a potential
-security risk for your system.
