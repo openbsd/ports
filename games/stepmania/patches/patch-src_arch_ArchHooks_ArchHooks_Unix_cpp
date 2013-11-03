@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_arch_ArchHooks_ArchHooks_Unix_cpp,v 1.1.1.1 2013/11/03 00:00:32 espie Exp $
+--- src/arch/ArchHooks/ArchHooks_Unix.cpp.orig	Mon Jun 10 21:55:40 2013
++++ src/arch/ArchHooks/ArchHooks_Unix.cpp	Thu Oct 31 22:12:46 2013
+@@ -12,6 +12,7 @@
+ #include "archutils/Unix/AssertionHandler.h"
+ #include <unistd.h>
+ #include <sys/time.h>
++#include <sys/wait.h>
+ 
+ #if defined(CRASH_HANDLER)
+ #include "archutils/Unix/CrashHandler.h"
+@@ -260,7 +261,7 @@ void ArchHooks_Unix::SetTime( tm newtime )
+ static LocalizedString COULDNT_FIND_SONGS( "ArchHooks_Unix", "Couldn't find 'Songs'" );
+ void ArchHooks::MountInitialFilesystems( const RString &sDirOfExecutable )
+ {
+-#if defined(UNIX)
++#if 0
+ 	/* Mount the root filesystem, so we can read files in /proc, /etc, and so on.
+ 	 * This is /rootfs, not /root, to avoid confusion with root's home directory. */
+ 	FILEMAN->Mount( "dir", "/", "/rootfs" );

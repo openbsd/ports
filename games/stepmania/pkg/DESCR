@@ -1,0 +1,17 @@
+stepmania is a Dance-Dance-Revolution/Pump-it-up/In-the-groove
+emulator.
+
+Those three games are "classic" dancing games, with a pad where
+you step on arrows.
+
+The game comes with a few Songs, but more songs are available on
+the Internet.
+
+The current version of the port requires a running pulseaudio, e.g.,
+something like
+
+sudo /etc/rc.d/dbus start
+eval `dbus-launch`
+start-pulseaudio-x11
+
+before starting stepmania
