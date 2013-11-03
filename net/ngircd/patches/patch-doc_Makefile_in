@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.2 2013/01/19 20:40:56 fgsch Exp $
---- doc/Makefile.in.orig	Fri Jan 18 01:32:04 2013
-+++ doc/Makefile.in	Fri Jan 18 01:32:49 2013
-@@ -584,16 +584,13 @@ maintainer-clean-local:
+$OpenBSD: patch-doc_Makefile_in,v 1.3 2013/11/03 23:29:28 fgsch Exp $
+--- doc/Makefile.in.orig	Wed Oct 30 21:21:47 2013
++++ doc/Makefile.in	Wed Oct 30 22:14:16 2013
+@@ -586,16 +586,13 @@ maintainer-clean-local:
  all: $(generated_docs)
  
  install-data-hook: $(static_docs) $(toplevel_docs) $(generated_docs)

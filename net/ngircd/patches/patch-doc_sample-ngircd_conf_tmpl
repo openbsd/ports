@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_sample-ngircd_conf_tmpl,v 1.2 2013/01/19 20:40:57 fgsch Exp $
---- doc/sample-ngircd.conf.tmpl.orig	Tue Jan  1 18:22:11 2013
-+++ doc/sample-ngircd.conf.tmpl	Fri Jan 18 01:31:56 2013
-@@ -67,14 +67,14 @@
+$OpenBSD: patch-doc_sample-ngircd_conf_tmpl,v 1.3 2013/11/03 23:29:28 fgsch Exp $
+--- doc/sample-ngircd.conf.tmpl.orig	Wed Sep 18 22:12:44 2013
++++ doc/sample-ngircd.conf.tmpl	Wed Oct 30 22:36:03 2013
+@@ -71,14 +71,14 @@
  	# Group ID under which the ngIRCd should run; you can use the name
  	# of the group or the numerical ID. ATTENTION: For this to work the
  	# server must have been started with root privileges!
@@ -18,7 +18,7 @@ $OpenBSD: patch-doc_sample-ngircd_conf_tmpl,v 1.2 2013/01/19 20:40:57 fgsch Exp 
  
  [Limits]
  	# Define some limits and timeouts for this ngIRCd instance. Default
-@@ -126,7 +126,7 @@
+@@ -143,7 +143,7 @@
  	# binary. By default ngIRCd won't use the chroot() feature.
  	# ATTENTION: For this to work the server must have been started
  	# with root privileges!
@@ -27,3 +27,25 @@ $OpenBSD: patch-doc_sample-ngircd_conf_tmpl,v 1.2 2013/01/19 20:40:57 fgsch Exp 
  
  	# Set this hostname for every client instead of the real one.
  	# Use %x to add the hashed value of the original hostname.
+@@ -246,7 +246,7 @@
+ 	# So don't forget to remove the ";" above if this is the case ...
+ 
+ 	# SSL Server Key Certificate
+-	;CertFile = :ETCDIR:/ssl/server-cert.pem
++	;CertFile = :ETCDIR:/server-cert.pem
+ 
+ 	# Select cipher suites allowed for SSL/TLS connections. This defaults
+ 	# to HIGH:!aNULL:@STRENGTH (OpenSSL) or SECURE128 (GnuTLS).
+@@ -258,10 +258,10 @@
+ 	;CipherList = SECURE128
+ 
+ 	# Diffie-Hellman parameters
+-	;DHFile = :ETCDIR:/ssl/dhparams.pem
++	;DHFile = :ETCDIR:/dhparams.pem
+ 
+ 	# SSL Server Key
+-	;KeyFile = :ETCDIR:/ssl/server-key.pem
++	;KeyFile = :ETCDIR:/server-key.pem
+ 
+ 	# password to decrypt SSLKeyFile (OpenSSL only)
+ 	;KeyFilePassword = secret

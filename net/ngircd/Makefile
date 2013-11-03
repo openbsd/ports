@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2013/08/28 11:53:16 fgsch Exp $
+# $OpenBSD: Makefile,v 1.8 2013/11/03 23:29:28 fgsch Exp $
 
 COMMENT =	lightweight irc server
 
-DISTNAME =	ngircd-20.3
+DISTNAME =	ngircd-21
 
 CATEGORIES =	net
 
@@ -18,11 +18,15 @@ WANTLIB =	c crypto ssl z
 MASTER_SITES =	ftp://ftp.berlios.de/pub/ngircd/ \
 		http://ngircd.barton.de/pub/ngircd/
 
-TEST_DEPENDS = lang/expect \
-		  ${BASE_PKGPATH}
+MODULES =	converters/libiconv
+TEST_DEPENDS =	lang/expect \
+		${BASE_PKGPATH}
+
+SYSCONFDIR =	${BASESYSCONFDIR}/ngircd
 
 CONFIGURE_STYLE = gnu
-CONFIGURE_ARGS += --with-openssl \
+CONFIGURE_ARGS += --with-iconv=${LOCALBASE} \
+		  --with-openssl \
 		  --enable-ipv6
 
 .include <bsd.port.mk>
