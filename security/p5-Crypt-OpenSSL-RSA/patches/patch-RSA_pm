@@ -1,0 +1,12 @@
+diff -u RSA.pm.orig RSA.pm
+--- RSA.pm.orig	Sun Nov 22 15:36:07 2009
++++ RSA.pm	Sun Nov  3 04:22:17 2013
+@@ -6,7 +6,7 @@ use Carp;
+ use vars qw ($VERSION @ISA @EXPORT @EXPORT_OK $AUTOLOAD);
+ 
+ require DynaLoader;
+-require AutoLoader;
++use AutoLoader 'AUTOLOAD';
+ 
+ @ISA = qw(DynaLoader);
+ 
