@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/11/03 00:00:32 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2013/11/03 00:06:21 ajacoutot Exp $
 
 COMMENT = 	dance music game
 CATEGORIES = 	games emulators
@@ -21,6 +21,8 @@ CONFIGURE_ENV += 	CPPFLAGS=-I${LOCALBASE}/include  \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 NO_TESTS =	Yes
 
+MODULES =	devel/gettext
+
 LIB_DEPENDS =	audio/libvorbis \
 		audio/libmad \
 		graphics/ffmpeg \
@@ -34,11 +36,9 @@ WANTLIB += GL GLU X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xtst c fontconfig freetype
 WANTLIB += m pthread sndio stdc++ z
 WANTLIB += GLEW avcodec avformat avutil bz2 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += iconv intl mad ogg pulse swscale vorbis vorbisfile
+WANTLIB += mad ogg pulse swscale vorbis vorbisfile
 WANTLIB += atk-1.0 cairo gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
 WANTLIB += jpeg pango-1.0 pangocairo-1.0 pangoft2-1.0 png
-
-
 
 DATADIR = libdata/stepmania
 D = 	Announcers BGAnimations BackgroundEffects BackgroundTransitions \

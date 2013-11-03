@@ -10,8 +10,8 @@ the Internet.
 The current version of the port requires a running pulseaudio, e.g.,
 something like
 
-sudo /etc/rc.d/dbus start
-eval `dbus-launch`
+sudo ${RCDIR}/dbus_daemon start
+eval `dbus-launch --sh-syntax --exit-with-session`
 start-pulseaudio-x11
 
-before starting stepmania
+before starting stepmania.
