@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2013/03/10 22:55:02 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2013/11/03 14:09:23 sthen Exp $
 
 V?=		1.95
 PKGNAME?=	${DISTNAME}-20040804
@@ -27,3 +27,5 @@ ARCTIC_US_DEPS?=audio/festival/festlex/festlex_CMU \
 WRKDIST?=	${WRKDIR}/festival
 ARC_PRE?=	${PREFIX}/lib/festival/voices
 ARC_WRK?=	${WRKDIST}/lib/voices
+
+BUILD_DEPENDS+=	audio/festival/core

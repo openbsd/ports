@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2013/03/10 22:55:02 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2013/11/03 14:09:23 sthen Exp $
 
 V?=		1.95
 PKGNAME?=	${DISTNAME}-20040804
@@ -15,6 +15,8 @@ DIST_SUBDIR?=	festival/${PKGNAME}
 PERMIT_DISTFILES_FTP?=	Yes
 PERMIT_PACKAGE_CDROM?=	Yes
 PERMIT_PACKAGE_FTP?=	Yes
+
+BUILD_DEPENDS?=	audio/festival/core# useless on arch without festival/core
 
 NO_BUILD?=	Yes
 NO_TEST?=	Yes
