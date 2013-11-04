@@ -1,66 +1,66 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2013/09/19 13:37:54 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2013/11/04 21:21:51 landry Exp $
 @conflict mozilla-thunderbird-<=3.1.11
 @pkgpath mail/mozilla-thunderbird
 bin/${MOZILLA_PROJECT}
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/application.ini
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/blocklist.xml
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome.manifest
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/default16.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/default22.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/default24.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/default256.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/default32.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/default48.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/components.manifest
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/libmozgnome.so.${LIBmozgnome_VERSION}
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/defaults/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/defaults/messenger/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/defaults/messenger/mailViews.dat
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/defaults/pref/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/defaults/pref/channel-prefs.js
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/dependentlibs.list
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/dictionaries/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/dictionaries/en-US.aff
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/dictionaries/en-US.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/icon.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/preview.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/isp/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/isp/Bogofilter.sfd
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/isp/DSPAM.sfd
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/isp/POPFile.sfd
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/isp/SpamAssassin.sfd
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/isp/SpamPal.sfd
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/isp/movemail.rdf
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/isp/rss.rdf
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libldap60.so.${LIBldap60_VERSION}
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libldif60.so.${LIBldif60_VERSION}
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libmozalloc.so.${LIBmozalloc_VERSION}
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libprldap60.so.${LIBprldap60_VERSION}
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libxul.so.${LIBxul_VERSION}
-@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/mozilla-xremote-client
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/omni.ja
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/platform.ini
-@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/plugin-container
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/removed-files
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/run-mozilla.sh
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/searchplugins/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/searchplugins/amazondotcom.xml
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/searchplugins/aol-web-search.xml
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/searchplugins/bing.xml
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/searchplugins/eBay.xml
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/searchplugins/twitter.xml
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/searchplugins/wikipedia.xml
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/searchplugins/yahoo.xml
-@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/${MOZILLA_PROJECT}
-@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/${MOZILLA_PROJECT}-bin
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/application.ini
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/blocklist.xml
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome.manifest
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/default16.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/default22.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/default24.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/default256.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/default32.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/default48.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/components/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/components/components.manifest
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/components/libmozgnome.so.${LIBmozgnome_VERSION}
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/messenger/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/messenger/mailViews.dat
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/pref/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/pref/channel-prefs.js
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dependentlibs.list
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dictionaries/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dictionaries/en-US.aff
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dictionaries/en-US.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/icon.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/preview.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/Bogofilter.sfd
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/DSPAM.sfd
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/POPFile.sfd
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/SpamAssassin.sfd
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/SpamPal.sfd
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/movemail.rdf
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/isp/rss.rdf
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libldap60.so.${LIBldap60_VERSION}
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libldif60.so.${LIBldif60_VERSION}
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libmozalloc.so.${LIBmozalloc_VERSION}
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libprldap60.so.${LIBprldap60_VERSION}
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libxul.so.${LIBxul_VERSION}
+@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/mozilla-xremote-client
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/omni.ja
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/platform.ini
+@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/plugin-container
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/removed-files
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/run-mozilla.sh
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/searchplugins/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/searchplugins/amazondotcom.xml
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/searchplugins/aol-web-search.xml
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/searchplugins/bing.xml
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/searchplugins/eBay.xml
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/searchplugins/twitter.xml
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/searchplugins/wikipedia.xml
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/searchplugins/yahoo.xml
+@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/${MOZILLA_PROJECT}
+@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/${MOZILLA_PROJECT}-bin
 share/applications/${MOZILLA_PROJECT}.desktop
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/pixmaps/
