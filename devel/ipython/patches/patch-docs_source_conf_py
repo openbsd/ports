@@ -1,0 +1,16 @@
+$OpenBSD: patch-docs_source_conf_py,v 1.1 2013/11/04 11:31:12 edd Exp $
+
+Inheritance diagrams have non-deterministic filenames therefore cannot
+appear in a PLIST. Disable them.
+
+--- docs/source/conf.py.orig	Mon Oct 21 22:14:12 2013
++++ docs/source/conf.py	Mon Oct 21 22:14:15 2013
+@@ -45,7 +45,7 @@ extensions = [
+     'matplotlib.sphinxext.plot_directive',
+     'sphinx.ext.autodoc',
+     'sphinx.ext.doctest',
+-    'sphinx.ext.inheritance_diagram',
++    #'sphinx.ext.inheritance_diagram',
+     'IPython.sphinxext.ipython_console_highlighting',
+     'IPython.sphinxext.ipython_directive',
+     'numpydoc',  # to preprocess docstrings

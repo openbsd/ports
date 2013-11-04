@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2013/10/15 07:37:51 schwarze Exp $
+# $OpenBSD: Makefile,v 1.24 2013/11/04 11:31:12 edd Exp $
 
 COMMENT=		enhanced interactive Python shell
 
-MODPY_EGG_VERSION=	0.13.2
+MODPY_EGG_VERSION =	1.1.0
 DISTNAME=		ipython-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
-REVISION=		1
 
 HOMEPAGE=		http://ipython.org/
 
@@ -21,7 +20,8 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			net/py-zmq \
 			graphics/py-matplotlib>=1.2.0 \
 			textproc/py-pygments \
-			www/py-tornado
+			www/py-tornado \
+			www/py-jinja2
 TEST_DEPENDS =		devel/py-nose
 BUILD_DEPENDS =		textproc/py-sphinx \
 			graphics/py-matplotlib>=1.2.0 \
@@ -55,18 +55,27 @@ DOCS_DIR =	${PREFIX}/share/doc/ipython/
 #EXAMPLES_DIR =	${PREFIX}/share/examples/ipython/
 EXAMPLES_DIR =	${PREFIX}/share/examples/ipython-examples/
 post-install:
-	# desktop files
+	${INSTALL_DATA_DIR} ${EXAMPLES_DIR}
 	${INSTALL_DATA_DIR} ${APPS_DIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/examples/core/*.desktop ${APPS_DIR}
-	# emacs stuff
+
+	cp -r ${WRKSRC}/examples/* ${EXAMPLES_DIR}
+	chown -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLES_DIR}/*
 	${INSTALL_DATA} ${WRKSRC}/docs/emacs/ipython.el ${EXAMPLES_DIR}
-	# html docs
+	mv ${EXAMPLES_DIR}/core/*.desktop ${APPS_DIR}
+
 	cp -r ${WRKSRC}/docs/build/html ${DOCS_DIR}/html
 	chown -R ${SHAREOWN}:${SHAREGRP} ${DOCS_DIR}
+
 	# empty dir i dont want in the PLIST
 	rmdir ${DOCS_DIR}/extensions
 
+pre-build:
+	${SUBST_CMD} ${WRKBUILD}/IPython/core/tests/test_interactiveshell.py
+
+# Oddly enough, Ipython installs the test suite, so we can run it right out
+# of ${LOCALBASE}.
+TEST_DEPENDS =	${FULLPKGNAME}:devel/ipython
 do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} ${MODPY_SETUP} check
+	PYTHONIOENCODING='utf-8' ${LOCALBASE}/bin/iptest -vvs
 
 .include <bsd.port.mk>

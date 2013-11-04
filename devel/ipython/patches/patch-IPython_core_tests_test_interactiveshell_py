@@ -1,0 +1,12 @@
+$OpenBSD: patch-IPython_core_tests_test_interactiveshell_py,v 1.1 2013/11/04 11:31:12 edd Exp $
+--- IPython/core/tests/test_interactiveshell.py.orig	Sun Nov  3 15:43:31 2013
++++ IPython/core/tests/test_interactiveshell.py	Sun Nov  3 15:43:44 2013
+@@ -431,7 +431,7 @@ class TestSystemRaw(unittest.TestCase):
+     def test_1(self):
+         """Test system_raw with non-ascii cmd
+         """
+-        cmd = ur'''python -c "'åäö'"   '''
++        cmd = ur'''${MODPY_BIN} -c "'åäö'"   '''
+         ip.system_raw(cmd)
+     
+     def test_exit_code(self):
