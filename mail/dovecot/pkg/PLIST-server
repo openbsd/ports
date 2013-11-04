@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.41 2013/09/27 01:35:52 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.42 2013/11/04 06:24:10 brad Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -156,6 +156,7 @@ include/dovecot/imap-fetch.h
 include/dovecot/imap-id.h
 include/dovecot/imap-list.h
 include/dovecot/imap-match.h
+include/dovecot/imap-metadata.h
 include/dovecot/imap-msgpart-url.h
 include/dovecot/imap-msgpart.h
 include/dovecot/imap-notify.h
