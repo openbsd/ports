@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.14 2013/10/11 23:50:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2013/11/04 12:47:13 jca Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	routines for accessing the OpenSSL prng
 
 MODULES=	cpan
-DISTNAME=	Crypt-OpenSSL-Random-0.04
-REVISION=	2
+DISTNAME=	Crypt-OpenSSL-Random-0.06
 CATEGORIES=	security
-HOMEPAGE=	http://perl-openssl.sourceforge.net/
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c crypto ssl
+
+CPAN_AUTHOR=	RURBAN
 
 .include <bsd.port.mk>
