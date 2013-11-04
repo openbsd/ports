@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.134 2013/10/15 09:43:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.135 2013/11/04 16:33:17 ajacoutot Exp $
 
 COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
-GNOME_VERSION=		3.10.0
-REVISION=		1
+GNOME_VERSION=		3.10.1
 
 SHARED_LIBS +=  nautilus-extension   3.0      # 5.0
 
@@ -18,10 +17,9 @@ WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += c cairo cairo-gobject dbus-1 exempi exif expat ffi
 WANTLIB += fontconfig freetype gailutil-3 gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz
-WANTLIB += m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
-WANTLIB += xcb-shm xkbfile xml2 z
+WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz m notify pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += pthread-stubs xcb xcb-render xcb-shm xkbfile xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome \
