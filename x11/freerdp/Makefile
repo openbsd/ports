@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/11/04 14:42:36 merdely Exp $
 
 SHARED_ONLY =		Yes
 
+V =			1.0.2
 COMMENT =		open source client for Windows Terminal Server
-DISTNAME =		freerdp-1.0.1
+DISTNAME =		freerdp-$V
+DISTFILES =		${DISTNAME}.tar.gz{$V.tar.gz}
+WRKDIST =		${WRKDIR}/FreeRDP-$V
 CATEGORIES =		x11 net
-REVISION =		0
 
 SHARED_LIBS +=  freerdp-cache             0.0 # 1.0
 SHARED_LIBS +=  freerdp-channels          0.0 # 1.0
@@ -24,9 +26,9 @@ MAINTAINER =		Michael Erdely <merdely@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += X11 Xcursor Xext Xinerama Xv avcodec avutil c crypto
-WANTLIB += pthread ssl xkbfile z cups
+WANTLIB += pcsclite pthread ssl xkbfile z cups
 
-MASTER_SITES =		https://github.com/downloads/FreeRDP/FreeRDP/ \
+MASTER_SITES =		https://github.com/FreeRDP/FreeRDP/archive/ \
 			http://spacehopper.org/mirrors/
 
 MODULES =		devel/cmake
@@ -35,9 +37,11 @@ BUILD_DEPENDS =		textproc/docbook \
 			textproc/xmlto
 
 LIB_DEPENDS =		graphics/ffmpeg \
-			print/cups,-libs
+			print/cups,-libs \
+			security/pcsc-lite
 
-CONFIGURE_ARGS +=	-DWITH_ALSA=Off
+CONFIGURE_ARGS +=	-DWITH_ALSA=Off \
+			-DWITH_PCSC=On
 
 post-patch:
 	perl -pi -e 's,/usr/local,${LOCALBASE},g; s,/usr/X11R6,${X11BASE},g;' \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/08/04 14:47:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/11/04 14:42:36 merdely Exp $
 @pkgpath x11/freerdp,no_cups
 @bin bin/xfreerdp
 include/freerdp/
@@ -106,6 +106,7 @@ lib/freerdp/rail.so
 lib/freerdp/rdpdbg.so
 lib/freerdp/rdpdr.so
 lib/freerdp/rdpsnd.so
+lib/freerdp/scard.so
 lib/freerdp/serial.so
 lib/freerdp/tsmf.so
 lib/freerdp/tsmf_ffmpeg.so
