@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.52 2013/09/19 13:44:13 landry Exp $
+@comment $OpenBSD: PLIST,v 1.53 2013/11/04 21:15:42 landry Exp $
 @conflict firefox3-*
 @conflict firefox35-*
 @conflict firefox36-*
@@ -11,61 +11,61 @@
 @pkgpath www/mozilla-firefox,-main
 bin/${MOZILLA_PROJECT}
 bin/mozilla-${MOZILLA_PROJECT}
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/application.ini
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/browser/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/browser/blocklist.xml
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/browser/chrome/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/browser/chrome.manifest
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/browser/chrome/icons/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/browser/chrome/icons/default/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/browser/chrome/icons/default/default.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/browser/chrome/icons/default/default16.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/browser/chrome/icons/default/default32.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/browser/chrome/icons/default/default48.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/browser/components/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/browser/components/components.manifest
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/browser/components/libbrowsercomps.so.${LIBbrowsercomps_VERSION}
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/browser/extensions/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/icon.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/browser/icons/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/browser/icons/mozicon128.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/browser/omni.ja
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/browser/searchplugins/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/browser/searchplugins/amazondotcom.xml
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/browser/searchplugins/bing.xml
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/browser/searchplugins/eBay.xml
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/browser/searchplugins/google.xml
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/browser/searchplugins/twitter.xml
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/browser/searchplugins/wikipedia.xml
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/browser/searchplugins/yahoo.xml
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome.manifest
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/components.manifest
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/libmozgnome.so.${LIBmozgnome_VERSION}
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/defaults/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/defaults/pref/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/defaults/pref/channel-prefs.js
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/dependentlibs.list
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/dictionaries/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/dictionaries/en-US.aff
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/dictionaries/en-US.dic
-@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/${MOZILLA_PROJECT}
-@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/${MOZILLA_PROJECT}-bin
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libmozalloc.so.${LIBmozalloc_VERSION}
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libxul.so.${LIBxul_VERSION}
-@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/mozilla-xremote-client
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/omni.ja
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/platform.ini
-@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/plugin-container
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/removed-files
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/run-mozilla.sh
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/webapprt/
-@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/webapprt-stub
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/webapprt/omni.ja
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/webapprt/webapprt.ini
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/application.ini
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/blocklist.xml
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/chrome/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/chrome.manifest
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/chrome/icons/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/chrome/icons/default/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/chrome/icons/default/default.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/chrome/icons/default/default16.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/chrome/icons/default/default32.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/chrome/icons/default/default48.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/components/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/components/components.manifest
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/components/libbrowsercomps.so.${LIBbrowsercomps_VERSION}
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/extensions/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/icon.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/icons/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/icons/mozicon128.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/omni.ja
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/searchplugins/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/searchplugins/amazondotcom.xml
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/searchplugins/bing.xml
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/searchplugins/eBay.xml
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/searchplugins/google.xml
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/searchplugins/twitter.xml
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/searchplugins/wikipedia.xml
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/searchplugins/yahoo.xml
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome.manifest
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/components/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/components/components.manifest
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/components/libmozgnome.so.${LIBmozgnome_VERSION}
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/pref/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/pref/channel-prefs.js
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dependentlibs.list
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dictionaries/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dictionaries/en-US.aff
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dictionaries/en-US.dic
+@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/${MOZILLA_PROJECT}
+@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/${MOZILLA_PROJECT}-bin
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libmozalloc.so.${LIBmozalloc_VERSION}
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libxul.so.${LIBxul_VERSION}
+@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/mozilla-xremote-client
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/omni.ja
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/platform.ini
+@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/plugin-container
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/removed-files
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/run-mozilla.sh
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/webapprt/
+@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/webapprt-stub
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/webapprt/omni.ja
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/webapprt/webapprt.ini
 @man man/man1/${MOZILLA_PROJECT}.1
 @man man/man1/mozilla-${MOZILLA_PROJECT}.1
 share/applications/${MOZILLA_PROJECT}.desktop

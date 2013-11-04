@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.242 2013/11/03 11:30:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.243 2013/11/04 21:15:42 landry Exp $
 
 COMMENT =	Mozilla web browser
 
@@ -78,10 +78,6 @@ post-install:
 		${PREFIX}/share/pixmaps/firefox.png
 
 	# link default48.png to default.png to be used by default by non-icccm compliant wm
-	ln ${PREFIX}/lib/firefox-${MOZILLA_VERSION:C/b.//}/browser/chrome/icons/default/default{48,}.png
-
-	# cleanup useless dirs from #798450 (fx 18?)
-#	rm -Rf ${PREFIX}/lib/firefox-${MOZILLA_VERSION:C/b.//}/modules
-
+	ln ${PREFIX}/lib/firefox-${MOZILLA_VER}/browser/chrome/icons/default/default{48,}.png
 
 .include <bsd.port.mk>
