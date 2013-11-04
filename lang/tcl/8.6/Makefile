@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2013/10/21 19:14:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2013/11/04 16:30:46 stu Exp $
 
 COMMENT =		Tool Command Language
 
 DISTNAME =		tcl8.6.1
 PKGNAME =		tcl-8.6.1
-REVISION =		0
+REVISION =		1
 SHARED_LIBS =		tcl86 0.1
 CATEGORIES =		lang lang/tcl
 HOMEPAGE =		http://www.tcl.tk/
