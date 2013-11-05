@@ -1,0 +1,11 @@
+$OpenBSD: patch-services_virus_scan_clamd_mod_c,v 1.1 2013/11/05 15:05:04 sthen Exp $
+--- services/virus_scan/clamd_mod.c.orig	Tue Nov  5 14:35:15 2013
++++ services/virus_scan/clamd_mod.c	Tue Nov  5 14:35:01 2013
+@@ -8,6 +8,7 @@
+ 
+ #include <assert.h>
+ #include <sys/socket.h>
++#include <sys/uio.h>
+ #include <sys/un.h>
+ #include <errno.h>
+ 

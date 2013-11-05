@@ -1,6 +1,6 @@
-$OpenBSD: patch-docs_man_c-icap_8_in,v 1.1.1.1 2013/04/16 09:59:35 sthen Exp $
---- docs/man/c-icap.8.in.orig	Wed Apr 10 14:44:52 2013
-+++ docs/man/c-icap.8.in	Wed Apr 10 14:45:44 2013
+$OpenBSD: patch-docs_man_c-icap_8_in,v 1.2 2013/11/05 15:05:04 sthen Exp $
+--- docs/man/c-icap.8.in.orig	Fri Oct 25 15:59:55 2013
++++ docs/man/c-icap.8.in	Tue Nov  5 14:58:05 2013
 @@ -36,11 +36,11 @@ The main configuration file
  .RS
   In this file defined the types of files and the groups of file types.

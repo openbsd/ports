@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2013/04/16 09:59:35 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2013/11/05 15:05:04 sthen Exp $
+lib/c_icap/clamav_mod.so
+lib/c_icap/clamd_mod.so
 lib/c_icap/virus_scan.so
 share/c_icap/
 share/c_icap/templates/
@@ -9,6 +11,9 @@ share/c_icap/templates/virus_scan/en/VIR_MODE_HEAD
 share/c_icap/templates/virus_scan/en/VIR_MODE_PROGRESS
 share/c_icap/templates/virus_scan/en/VIR_MODE_TAIL
 share/c_icap/templates/virus_scan/en/VIR_MODE_VIRUS_FOUND
+share/examples/c-icap/clamav_mod.conf
+@sample ${SYSCONFDIR}/clamav_mod.conf
+share/examples/c-icap/clamd_mod.conf
+@sample ${SYSCONFDIR}/clamd_mod.conf
 share/examples/c-icap/virus_scan.conf
 @sample ${SYSCONFDIR}/virus_scan.conf
-@comment share/examples/c-icap/virus_scan.conf.default
