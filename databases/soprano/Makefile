@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.11 2013/08/20 22:05:49 zhuk Exp $
+# $OpenBSD: Makefile,v 1.12 2013/11/05 13:29:38 zhuk Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	RDF framework
 CATEGORIES =	databases devel textproc sysutils
 HOMEPAGE =	http://soprano.sourceforge.net/
-DISTNAME =	soprano-2.9.0
-REVISION =	0
+DISTNAME =	soprano-2.9.4
 
-SHARED_LIBS =	soprano                   2.0
-SHARED_LIBS +=	sopranoclient             2.0
-SHARED_LIBS +=	sopranoindex              2.0
-SHARED_LIBS +=	sopranoserver             2.0
+SHARED_LIBS =	soprano                   2.1
+SHARED_LIBS +=	sopranoclient             2.1
+SHARED_LIBS +=	sopranoindex              2.1
+SHARED_LIBS +=	sopranoserver             2.1
 
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=soprano/}
@@ -30,7 +29,7 @@ LIB_DEPENDS = 	textproc/clucene \
 
 WANTLIB =  c m stdc++
 WANTLIB += lib/qt4/QtCore lib/qt4/QtDBus lib/qt4/QtNetwork lib/qt4/QtXml
-WANTLIB += clucene-core iodbc raptor2 rdf
+WANTLIB += clucene-core clucene-shared iodbc raptor2 rdf
 
 # No Java, thanks
 CONFIGURE_ARGS =	-DSOPRANO_DISABLE_SESAME2_BACKEND:Bool=Yes \
