@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.70 2013/10/15 09:28:40 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.71 2013/11/05 07:33:33 dcoppa Exp $
 
 COMMENT=		highly configurable framework window manager
 
 DISTNAME=		awesome-3.5.2
+REVISION=		0
 EXTRACT_SUFX=		.tar.xz
 CATEGORIES=		x11
 
