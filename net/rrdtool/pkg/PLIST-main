@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2013/11/05 17:49:01 sthen Exp $
-@newgroup _rrdcached:725
-@newuser _rrdcached:725:_rrdcached:daemon:rrdcached user:/nonexistent:/sbin/nologin
+@comment $OpenBSD: PLIST-main,v 1.4 2013/11/05 17:56:30 sthen Exp $
+@newgroup _rrdcached:726
+@newuser _rrdcached:726:_rrdcached:daemon:rrdcached user:/nonexistent:/sbin/nologin
 @conflict p5-RRD-*
 @extraunexec rm -f /var/db/rrd/*.rrd /var/db/rrd/journal/*
 @pkgpath net/rrdtool,-perl

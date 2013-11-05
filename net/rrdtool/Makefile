@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2013/11/05 17:49:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2013/11/05 17:56:30 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,6 +9,7 @@ COMMENT-ruby=	ruby interface to librrd
 
 MODPY_EGG_VERSION= 0.2.2
 VERSION=	1.4.8
+REVISION-main=	0
 DISTNAME=	rrdtool-${VERSION}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-update=	rrdupdate-${VERSION}
