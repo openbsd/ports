@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2013/08/24 17:33:50 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2013/11/05 14:03:19 zhuk Exp $
 
 COMMENT =	KDE Nepomuk core libraries
 DISTNAME =	nepomuk-core-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 DPB_PROPERTIES =	parallel
 
