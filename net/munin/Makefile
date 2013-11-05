@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2013/06/03 19:45:31 kirby Exp $
+# $OpenBSD: Makefile,v 1.33 2013/11/05 17:49:33 sthen Exp $
 
 COMMENT-main =	flexible network host monitoring, client
 COMMENT-server =flexible network host monitoring, server
 
 V =		2.0.14
+REVISION-server = 0
 DISTNAME =	munin-$V
 PKGNAME-main =	munin-node-$V
 PKGNAME-server =munin-server-$V
@@ -36,7 +37,7 @@ RUN_DEPENDS-main =	logtail-*|logsentry-*:sysutils/logtail \
 RUN_DEPENDS-server +=	converters/p5-DateManip \
 			devel/p5-File-Copy-Recursive \
 			net/p5-IO-Socket-INET6 \
-			net/rrdtool,-perl \
+			net/rrdtool \
 			www/fcgi \
 			www/p5-HTML-Template \
 			www/p5-URI \

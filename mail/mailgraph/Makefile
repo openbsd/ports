@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:23:51 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2013/11/05 17:49:33 sthen Exp $
 
 COMMENT=	RRDtool frontend for Postfix statistics
 
 DISTNAME=	mailgraph-1.14
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net mail
 
 MASTER_SITES=	${HOMEPAGE}/pub/ \
@@ -16,7 +16,7 @@ MAINTAINER=     Stuart Henderson <sthen@openbsd.org>
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-RUN_DEPENDS=	net/rrdtool,-perl \
+RUN_DEPENDS=	net/rrdtool \
 		devel/p5-File-Tail
 
 NO_TEST=	Yes

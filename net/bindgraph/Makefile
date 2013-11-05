@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:35:45 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/11/05 17:49:33 sthen Exp $
 
 COMMENT=	rrdtool frontend for Bind installation
 
 DISTNAME=	bindgraph-0.2
+REVISION=	0
 CATEGORIES=	net www
 
 HOMEPAGE=	http://www.linux.it/~md/software/
@@ -16,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 EXTRACT_SUFX= 	.tgz
 
-RUN_DEPENDS=	net/rrdtool,-perl \
+RUN_DEPENDS=	net/rrdtool \
 		devel/p5-File-Tail
 
 NO_TEST=	Yes
