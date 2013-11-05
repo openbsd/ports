@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/05 17:30:07 bcallah Exp $
+include/SDL2/
+include/SDL2/SDL_ttf.h
+lib/libSDL2_ttf.a
+lib/libSDL2_ttf.la
+@lib lib/libSDL2_ttf.so.${LIBSDL2_ttf_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/SDL2_ttf.pc
