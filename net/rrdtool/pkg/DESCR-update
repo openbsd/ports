@@ -5,4 +5,6 @@ perl, python, ruby, lua or tcl applications. It stores the data in a
 very compact way that will not expand over time, and it presents useful
 graphs by processing the data to enforce a certain data density.
 
-This package includes the main software and perl bindings.
+This package includes the standalone rrdupdate/rrdinfo/rrdcreate tools,
+which are packaged separately for those only needing to update RRDs
+(but not draw graphs) without pulling in a big dependency chain.

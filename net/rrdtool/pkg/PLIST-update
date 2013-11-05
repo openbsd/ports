@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST-update,v 1.1 2013/11/05 17:49:01 sthen Exp $
+@conflict rrdtool-<=1.4
+bin/rrdcreate
+bin/rrdinfo
+@bin bin/rrdupdate
+@man man/man1/rrdcreate.1
+@man man/man1/rrdinfo.1
+@man man/man1/rrdupdate.1

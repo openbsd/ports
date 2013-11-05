@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# $OpenBSD: rrdcached.rc,v 1.1 2013/11/05 17:49:01 sthen Exp $
+
+daemon="${TRUEPREFIX}/bin/rrdcached"
+daemon_flags="-b /var/db/rrd -l unix:/var/run/rrd/rrdcached.sock -j /var/db/rrd/journal -p /var/run/rrd/rrdcached.pid"
+daemon_user="_rrdcached"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_pre() {
+	install -d -o _rrdcached -g _rrdcached -m 750 /var/run/rrd
+}
+
+rc_cmd $1

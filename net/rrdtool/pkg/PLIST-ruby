@@ -1,6 +1,2 @@
-@comment $OpenBSD: PLIST-ruby,v 1.4 2011/07/19 18:00:16 jeremy Exp $
-lib/ruby/
-lib/ruby/site_ruby/
-${MODRUBY_SITEDIR}/
-${MODRUBY_SITEARCHDIR}/
+@comment $OpenBSD: PLIST-ruby,v 1.5 2013/11/05 17:49:01 sthen Exp $
 ${MODRUBY_SITEARCHDIR}/RRD.so

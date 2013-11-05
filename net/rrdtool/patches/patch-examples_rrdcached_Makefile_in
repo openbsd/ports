@@ -1,0 +1,12 @@
+$OpenBSD: patch-examples_rrdcached_Makefile_in,v 1.1 2013/11/05 17:49:01 sthen Exp $
+--- examples/rrdcached/Makefile.in.orig	Thu May 23 08:55:21 2013
++++ examples/rrdcached/Makefile.in	Thu May 23 19:34:50 2013
+@@ -292,7 +292,7 @@ target_vendor = @target_vendor@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-examplesdir = $(pkgdatadir)/examples/rrdcached
++examplesdir = $(datadir)/examples/rrdtool/rrdcached
+ examples_SCRIPTS = RRDCached.pm rrdcached-size.pl
+ EXTRA_DIST = RRDCached.pm rrdcached-size.pl
+ all: all-am

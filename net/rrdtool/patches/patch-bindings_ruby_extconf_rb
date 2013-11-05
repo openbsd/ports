@@ -1,7 +1,6 @@
-$OpenBSD: patch-bindings_ruby_extconf_rb,v 1.2 2010/07/03 01:55:24 espie Exp $
-doesnt find the lib it just created for whatever reason...
---- bindings/ruby/extconf.rb.orig	Mon Jan 19 15:29:14 2009
-+++ bindings/ruby/extconf.rb	Sat Jul  3 03:44:44 2010
+$OpenBSD: patch-bindings_ruby_extconf_rb,v 1.3 2013/11/05 17:49:01 sthen Exp $
+--- bindings/ruby/extconf.rb.orig	Thu May 23 08:55:07 2013
++++ bindings/ruby/extconf.rb	Thu May 23 20:20:56 2013
 @@ -14,5 +14,5 @@ elsif /aix/ =~ RUBY_PLATFORM
  end
  

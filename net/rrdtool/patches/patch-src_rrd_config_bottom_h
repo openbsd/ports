@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_rrd_config_bottom_h,v 1.1 2013/11/05 17:49:01 sthen Exp $
+--- src/rrd_config_bottom.h.orig	Thu May 23 08:55:07 2013
++++ src/rrd_config_bottom.h	Thu May 23 19:34:50 2013
+@@ -15,12 +15,21 @@
+ #endif
+ 
+ /* FreeBSD 4.8 wants this included BEFORE sys/types.h */
++#ifdef FreeBSD
+ #ifdef HAVE_SYS_MMAN_H
+ # include <sys/mman.h>
+ #endif
++#endif
+ 
+ #ifdef HAVE_SYS_TYPES_H
+ # include <sys/types.h>
++#endif
++
++/* ... but OpenBSD must have it included AFTER sys/types.h */
++#ifndef FreeBSD
++#ifdef HAVE_SYS_MMAN_H
++# include <sys/mman.h>
++#endif
+ #endif
+ 
+ #ifdef HAVE_SYS_PARAM_H

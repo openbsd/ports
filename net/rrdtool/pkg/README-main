@@ -1,0 +1,19 @@
+$OpenBSD: README-main,v 1.1 2013/11/05 17:49:01 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Use within a chroot jail
+========================
+
+Under OpenBSD, the default Apache runs chrooted under /var/www.
+To use the rrdtool(1) binary from within this chroot (for example, as
+needed by some CGI/PHP scripts), we will need to copy it into the chroot
+along with the required libraries and configuration.
+To do so, run the following command:
+
+    # ${TRUEPREFIX}/share/examples/rrdtool/rrdtool-chroot
+
+Note that you will have to run this command again when the rrdtool
+package is updated.
