@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 09:05:59 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/11/05 07:55:21 zhuk Exp $
 @pkgpath x11/kde4/akonadi
 @bin bin/akonadi_agent_launcher
 @bin bin/akonadi_agent_server
@@ -6,6 +6,7 @@
 @bin bin/akonadi_rds
 @bin bin/akonadictl
 @bin bin/akonadiserver
+@bin bin/asapcat
 include/kde4/
 include/kde4/akonadi/
 include/kde4/akonadi/private/
@@ -14,6 +15,7 @@ include/kde4/akonadi/private/capabilities_p.h
 include/kde4/akonadi/private/imapparser_p.h
 include/kde4/akonadi/private/imapset_p.h
 include/kde4/akonadi/private/notificationmessage_p.h
+include/kde4/akonadi/private/notificationmessagev2_p.h
 include/kde4/akonadi/private/protocol_p.h
 include/kde4/akonadi/private/xdgbasedirs_p.h
 lib/cmake/
