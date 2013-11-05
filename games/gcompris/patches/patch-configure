@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.12 2012/11/24 08:54:01 ajacoutot Exp $
---- configure.orig	Mon Nov 19 01:37:56 2012
-+++ configure	Sat Nov 24 08:25:46 2012
-@@ -16405,7 +16405,7 @@ _ACEOF
+$OpenBSD: patch-configure,v 1.13 2013/11/05 17:15:54 ajacoutot Exp $
+--- configure.orig	Mon Nov  4 00:56:10 2013
++++ configure	Tue Nov  5 14:41:03 2013
+@@ -16382,7 +16382,7 @@ _ACEOF
  
      CFLAGS="$CFLAGS $OSX_CFLAGS -Wall -g"
  else
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.12 2012/11/24 08:54:01 ajacoutot Exp $
  fi
  
  # Check whether --enable-disable-activation-code was given.
-@@ -17303,7 +17303,7 @@ if test  "x$PYTHON_LIBS" = "x" ; then
+@@ -17209,7 +17209,7 @@ if test  "x$PYTHON_LIBS" = "x" ; then
  
     python_libdir=`$PYTHON -c "import distutils.sysconfig ; print distutils.sysconfig.get_config_var(\"LIBDIR\")"`
  
