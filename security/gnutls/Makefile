@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.84 2013/11/03 00:31:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.85 2013/11/05 15:46:07 ajacoutot Exp $
 
 COMMENT=	GNU Transport Layer Security library
 
 V=		3.2.6
 DISTNAME=	gnutls-${V}
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 CATEGORIES=	security
 
@@ -27,8 +28,7 @@ MASTER_SITES=	ftp://ftp.gnutls.org/gcrypt/gnutls/v${V:R}/
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	devel/libffi \
-		security/libtasn1 \
+LIB_DEPENDS=	security/libtasn1 \
 		security/libnettle \
 		security/p11-kit
 
