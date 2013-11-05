@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/03/25 21:07:00 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/11/05 07:27:07 zhuk Exp $
 
 CATEGORIES =	productivity
 COMMENT =	collaboration services library for KDE
-DISTNAME =	attica-0.4.0
+DISTNAME =	attica-0.4.2
 
-SHARED_LIBS =	attica		0.0
+SHARED_LIBS =	attica		1.0
 EXTRACT_SUFX =	.tar.bz2
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/attica/}
