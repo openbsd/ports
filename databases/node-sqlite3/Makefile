@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2013/08/13 21:19:52 abieber Exp $
+# $OpenBSD: Makefile,v 1.11 2013/11/05 16:24:14 abieber Exp $
 
 COMMENT =	sqlite3 bindings for Node.js
 
 NPM_VERSION =	2.1.7
 NPM_NAME =	sqlite3
 
-REVISION = 1
+REVISION = 2
 
 CATEGORIES =	databases
 
