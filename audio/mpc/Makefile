@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2013/09/24 14:30:33 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.16 2013/11/05 07:49:54 jasper Exp $
 
 COMMENT=		command line client for mpd
 
-VER=			0.23
+VER=			0.24
 DISTNAME=		mpc-${VER}
 CATEGORIES=		audio
 
