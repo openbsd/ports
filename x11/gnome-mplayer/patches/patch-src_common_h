@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_common_h,v 1.11 2013/11/06 07:29:30 dcoppa Exp $
+--- src/common.h.orig	Tue Jul 23 22:36:58 2013
++++ src/common.h	Wed Nov  6 08:15:39 2013
+@@ -317,7 +317,6 @@ gboolean softvol;
+ gboolean remember_softvol;
+ gdouble volume_softvol;
+ gint volume_gain;
+-gint pref_volume;
+ gint verbose;
+ gint autostart;
+ //gint actual_x, actual_y;
