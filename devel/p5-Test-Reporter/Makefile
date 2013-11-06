@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/23 11:33:38 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2013/11/06 16:51:06 benoit Exp $
 
 COMMENT= 	sends test results to cpan-testers@perl.org
 
 MODULES=	cpan
-DISTNAME =	Test-Reporter-1.58
+DISTNAME =	Test-Reporter-1.59
 CATEGORIES=	devel
 
 EPOCH =		0
