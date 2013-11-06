@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/16 10:00:46 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/11/06 13:07:43 sthen Exp $
+@comment lib/c_icap/squidclamav.a
 lib/c_icap/squidclamav.so
 libexec/squidclamav/
 libexec/squidclamav/clwarn.cgi
@@ -8,6 +9,7 @@ libexec/squidclamav/clwarn.cgi.fr_FR
 libexec/squidclamav/clwarn.cgi.pt_BR
 libexec/squidclamav/clwarn.cgi.ru_RU
 @man man/man1/squidclamav.1
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/squidclamav/
 share/doc/squidclamav/README
 share/examples/squidclamav/

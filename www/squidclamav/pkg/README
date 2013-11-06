@@ -1,0 +1,40 @@
+$OpenBSD: README,v 1.1 2013/11/06 13:07:43 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+squidclamav is not a standalone daemon, it is a module to use with the
+c-icap service container.
+
+To enable it, edit ${SYSCONFDIR}/c-icap/c-icap.conf and add this line:
+
+	Service squidclamav squidclamav.so
+
+Review the other settings in c-icap's configuration file and
+${SYSCONFDIR}/squidclamav.conf and make any changes needed (in particular
+check the clamd socket location matches clamd's configuration).
+When happy, start c-icap (and add to "pkg_scripts" in rc.conf.local(5)
+if wanted):
+
+	/etc/rc.d/c_icap start
+
+To make use of this from Squid, your configuration should have lines
+like this (adapted from http://squidclamav.darold.net/installv6.html):
+
+	icap_enable on
+	icap_send_client_ip on
+	icap_send_client_username on
+	icap_client_username_encode off
+	icap_client_username_header X-Authenticated-User
+	icap_preview_enable on
+	icap_preview_size 1024
+	icap_service service_req reqmod_precache bypass=1 \
+	    icap://127.0.0.1:1344/squidclamav
+	adaptation_access service_req allow all
+	icap_service service_resp respmod_precache bypass=1 \
+	    icap://127.0.0.1:1344/squidclamav
+	adaptation_access service_resp allow all
+
+The "icap_service" lines are split for this README, but should be
+entered on one line.
