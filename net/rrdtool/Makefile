@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2013/11/06 20:25:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.75 2013/11/06 21:04:13 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,7 +10,7 @@ COMMENT-ruby=	ruby interface to librrd
 MODPY_EGG_VERSION= 0.2.2
 VERSION=	1.4.8
 REVISION-main=	0
-REVISION-ruby=	0
+REVISION-ruby=	1
 DISTNAME=	rrdtool-${VERSION}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-update=	rrdupdate-${VERSION}
@@ -37,7 +37,7 @@ PSEUDO_FLAVORS=	no_ruby no_python
 MULTI_PACKAGES= -main -python -ruby -update
 
 MODULES=	lang/python lang/ruby
-MODRUBY_REV=	1.9# XXX ruby 2.0 works too, but doesn't build on sparc64 et al
+MODRUBY_REV=	1.8# XXX ruby 1.9/2.0 work too, but don't build on sparc64 et al
 
 CONFIGURE_STYLE= gnu
 CPPFLAGS+=	-I${X11BASE}/include/ \
@@ -56,20 +56,24 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 CONFIGURE_ARGS+= --enable-ruby-site-install
 .else
 CONFIGURE_ARGS+= --disable-ruby
+CONFIGURE_ENV+=	RUBY="${RUBY}"
+MODRUBY_BUILDDEP= No
+MODRUBY_RUNDEP=   No
 .endif
 
 .if ${BUILD_PACKAGES:M-python}
 CONFIGURE_ARGS+= --enable-python
 .else
 CONFIGURE_ARGS+= --disable-python
+MODPY_BUILDDEP= No
+MODPY_RUNDEP=   No
 .endif
 
 # needs checking before enabling mmap; is it safe without UBC?
 CONFIGURE_ARGS+= --disable-mmap
 
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}" \
-		RUBY="${RUBY}"
+		LDFLAGS="${LDFLAGS}"
 # autoconf insists on these, but the docs are pre-formatted in the distfile,
 # so they aren't needed.
 CONFIGURE_ENV+=	NROFF="/usr/bin/true" \
