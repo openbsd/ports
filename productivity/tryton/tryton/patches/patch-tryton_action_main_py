@@ -1,6 +1,6 @@
-$OpenBSD: patch-tryton_action_main_py,v 1.1 2013/10/28 08:17:52 ajacoutot Exp $
+$OpenBSD: patch-tryton_action_main_py,v 1.2 2013/11/06 08:46:04 jasper Exp $
 
-Sanitize the file extension received from the server.
+Security fix for CVE-2013-4510, Tryton client input sanitization flaw
 https://bugs.tryton.org/issue3446
 
 --- tryton/action/main.py.orig	Mon Oct 28 09:15:23 2013
