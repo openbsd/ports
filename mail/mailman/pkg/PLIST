@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2012/02/16 22:27:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2013/11/06 17:26:08 okan Exp $
 @newgroup _mailman:504
 @newuser _mailman:504:_mailman:daemon:Mailing List Manager:${PREFIX}/lib/mailman:/sbin/nologin
 @extraunexec rm -fr /var/spool/mailman/*
@@ -66,6 +66,8 @@ lib/mailman/Mailman/Bouncers/Yale.py
 lib/mailman/Mailman/Bouncers/Yale.pyc
 lib/mailman/Mailman/Bouncers/__init__.py
 lib/mailman/Mailman/Bouncers/__init__.pyc
+lib/mailman/Mailman/CSRFcheck.py
+lib/mailman/Mailman/CSRFcheck.pyc
 @mode 775
 lib/mailman/Mailman/Cgi/
 @mode
@@ -228,6 +230,8 @@ lib/mailman/Mailman/Handlers/ToOutgoing.py
 lib/mailman/Mailman/Handlers/ToOutgoing.pyc
 lib/mailman/Mailman/Handlers/ToUsenet.py
 lib/mailman/Mailman/Handlers/ToUsenet.pyc
+lib/mailman/Mailman/Handlers/WrapMessage.py
+lib/mailman/Mailman/Handlers/WrapMessage.pyc
 lib/mailman/Mailman/Handlers/__init__.py
 lib/mailman/Mailman/Handlers/__init__.pyc
 lib/mailman/Mailman/ListAdmin.py
@@ -406,6 +410,8 @@ lib/mailman/icons/PythonPowered.png
 lib/mailman/icons/gnu-head-tiny.jpg
 lib/mailman/icons/mailman-large.jpg
 lib/mailman/icons/mailman.jpg
+lib/mailman/icons/mm-icon-large.ico
+lib/mailman/icons/mm-icon.ico
 lib/mailman/icons/mm-icon.png
 @mode 775
 lib/mailman/mail/
@@ -447,6 +453,10 @@ lib/mailman/messages/de/LC_MESSAGES/
 lib/mailman/messages/de/LC_MESSAGES/mailman.mo
 lib/mailman/messages/de/LC_MESSAGES/mailman.po
 lib/mailman/messages/de/README.de
+lib/mailman/messages/el/
+lib/mailman/messages/el/LC_MESSAGES/
+lib/mailman/messages/el/LC_MESSAGES/mailman.mo
+lib/mailman/messages/el/LC_MESSAGES/mailman.po
 @mode 775
 lib/mailman/messages/es/
 lib/mailman/messages/es/LC_MESSAGES/
@@ -467,6 +477,10 @@ lib/mailman/messages/eu/LC_MESSAGES/
 lib/mailman/messages/eu/LC_MESSAGES/mailman.mo
 lib/mailman/messages/eu/LC_MESSAGES/mailman.po
 lib/mailman/messages/eu/README.eu
+lib/mailman/messages/fa/
+lib/mailman/messages/fa/LC_MESSAGES/
+lib/mailman/messages/fa/LC_MESSAGES/mailman.mo
+lib/mailman/messages/fa/LC_MESSAGES/mailman.po
 @mode 775
 lib/mailman/messages/fi/
 lib/mailman/messages/fi/LC_MESSAGES/
@@ -894,31 +908,88 @@ lib/mailman/templates/de/adminsubscribeack.txt
 lib/mailman/templates/de/adminunsubscribeack.txt
 lib/mailman/templates/de/admlogin.html
 lib/mailman/templates/de/approve.txt
+lib/mailman/templates/de/archidxentry.html
+lib/mailman/templates/de/archidxfoot.html
+lib/mailman/templates/de/archidxhead.html
+lib/mailman/templates/de/archlistend.html
+lib/mailman/templates/de/archliststart.html
+lib/mailman/templates/de/archtoc.html
+lib/mailman/templates/de/archtocentry.html
+lib/mailman/templates/de/archtocnombox.html
 lib/mailman/templates/de/article.html
 lib/mailman/templates/de/bounce.txt
 lib/mailman/templates/de/checkdbs.txt
 lib/mailman/templates/de/convert.txt
 lib/mailman/templates/de/cronpass.txt
 lib/mailman/templates/de/disabled.txt
+lib/mailman/templates/de/emptyarchive.html
 lib/mailman/templates/de/headfoot.html
 lib/mailman/templates/de/help.txt
 lib/mailman/templates/de/invite.txt
 lib/mailman/templates/de/listinfo.html
 lib/mailman/templates/de/masthead.txt
 lib/mailman/templates/de/newlist.txt
+lib/mailman/templates/de/nomoretoday.txt
 lib/mailman/templates/de/options.html
 lib/mailman/templates/de/postack.txt
 lib/mailman/templates/de/postauth.txt
 lib/mailman/templates/de/postheld.txt
 lib/mailman/templates/de/private.html
+lib/mailman/templates/de/probe.txt
 lib/mailman/templates/de/refuse.txt
 lib/mailman/templates/de/roster.html
 lib/mailman/templates/de/subauth.txt
 lib/mailman/templates/de/subscribe.html
 lib/mailman/templates/de/subscribeack.txt
 lib/mailman/templates/de/unsub.txt
+lib/mailman/templates/de/unsubauth.txt
 lib/mailman/templates/de/userpass.txt
 lib/mailman/templates/de/verify.txt
+lib/mailman/templates/el/
+lib/mailman/templates/el/admindbdetails.html
+lib/mailman/templates/el/admindbpreamble.html
+lib/mailman/templates/el/admindbsummary.html
+lib/mailman/templates/el/adminsubscribeack.txt
+lib/mailman/templates/el/adminunsubscribeack.txt
+lib/mailman/templates/el/admlogin.html
+lib/mailman/templates/el/approve.txt
+lib/mailman/templates/el/archidxentry.html
+lib/mailman/templates/el/archidxfoot.html
+lib/mailman/templates/el/archidxhead.html
+lib/mailman/templates/el/archlistend.html
+lib/mailman/templates/el/archliststart.html
+lib/mailman/templates/el/archtoc.html
+lib/mailman/templates/el/archtocentry.html
+lib/mailman/templates/el/archtocnombox.html
+lib/mailman/templates/el/article.html
+lib/mailman/templates/el/bounce.txt
+lib/mailman/templates/el/checkdbs.txt
+lib/mailman/templates/el/convert.txt
+lib/mailman/templates/el/cronpass.txt
+lib/mailman/templates/el/disabled.txt
+lib/mailman/templates/el/emptyarchive.html
+lib/mailman/templates/el/headfoot.html
+lib/mailman/templates/el/help.txt
+lib/mailman/templates/el/invite.txt
+lib/mailman/templates/el/listinfo.html
+lib/mailman/templates/el/masthead.txt
+lib/mailman/templates/el/newlist.txt
+lib/mailman/templates/el/nomoretoday.txt
+lib/mailman/templates/el/options.html
+lib/mailman/templates/el/postack.txt
+lib/mailman/templates/el/postauth.txt
+lib/mailman/templates/el/postheld.txt
+lib/mailman/templates/el/private.html
+lib/mailman/templates/el/probe.txt
+lib/mailman/templates/el/refuse.txt
+lib/mailman/templates/el/roster.html
+lib/mailman/templates/el/subauth.txt
+lib/mailman/templates/el/subscribe.html
+lib/mailman/templates/el/subscribeack.txt
+lib/mailman/templates/el/unsub.txt
+lib/mailman/templates/el/unsubauth.txt
+lib/mailman/templates/el/userpass.txt
+lib/mailman/templates/el/verify.txt
 @mode 775
 lib/mailman/templates/en/
 @mode
@@ -1096,6 +1167,45 @@ lib/mailman/templates/eu/unsub.txt
 lib/mailman/templates/eu/unsubauth.txt
 lib/mailman/templates/eu/userpass.txt
 lib/mailman/templates/eu/verify.txt
+@mode 775
+lib/mailman/templates/fa/
+@mode
+lib/mailman/templates/fa/adminsubscribeack.txt
+lib/mailman/templates/fa/adminunsubscribeack.txt
+lib/mailman/templates/fa/admlogin.html
+lib/mailman/templates/fa/approve.txt
+lib/mailman/templates/fa/archidxfoot.html
+lib/mailman/templates/fa/archidxhead.html
+lib/mailman/templates/fa/archliststart.html
+lib/mailman/templates/fa/archtoc.html
+lib/mailman/templates/fa/archtocentry.html
+lib/mailman/templates/fa/archtocnombox.html
+lib/mailman/templates/fa/article.html
+lib/mailman/templates/fa/bounce.txt
+lib/mailman/templates/fa/checkdbs.txt
+lib/mailman/templates/fa/convert.txt
+lib/mailman/templates/fa/cronpass.txt
+lib/mailman/templates/fa/disabled.txt
+lib/mailman/templates/fa/emptyarchive.html
+lib/mailman/templates/fa/help.txt
+lib/mailman/templates/fa/invite.txt
+lib/mailman/templates/fa/listinfo.html
+lib/mailman/templates/fa/masthead.txt
+lib/mailman/templates/fa/nomoretoday.txt
+lib/mailman/templates/fa/options.html
+lib/mailman/templates/fa/postack.txt
+lib/mailman/templates/fa/postauth.txt
+lib/mailman/templates/fa/postheld.txt
+lib/mailman/templates/fa/private.html
+lib/mailman/templates/fa/refuse.txt
+lib/mailman/templates/fa/roster.html
+lib/mailman/templates/fa/subauth.txt
+lib/mailman/templates/fa/subscribe.html
+lib/mailman/templates/fa/subscribeack.txt
+lib/mailman/templates/fa/unsub.txt
+lib/mailman/templates/fa/unsubauth.txt
+lib/mailman/templates/fa/userpass.txt
+lib/mailman/templates/fa/verify.txt
 @mode 775
 lib/mailman/templates/fi/
 @mode
@@ -2349,6 +2459,8 @@ lib/mailman/tests/bounces/qmail_03.txt
 lib/mailman/tests/bounces/qmail_04.txt
 lib/mailman/tests/bounces/qmail_05.txt
 lib/mailman/tests/bounces/qmail_06.txt
+lib/mailman/tests/bounces/qmail_07.txt
+lib/mailman/tests/bounces/qmail_08.txt
 lib/mailman/tests/bounces/sendmail_01.txt
 lib/mailman/tests/bounces/simple_01.txt
 lib/mailman/tests/bounces/simple_02.txt
@@ -2387,6 +2499,8 @@ lib/mailman/tests/bounces/simple_34.txt
 lib/mailman/tests/bounces/simple_35.txt
 lib/mailman/tests/bounces/simple_36.txt
 lib/mailman/tests/bounces/simple_37.txt
+lib/mailman/tests/bounces/simple_38.txt
+lib/mailman/tests/bounces/simple_39.txt
 lib/mailman/tests/bounces/sina_01.txt
 lib/mailman/tests/bounces/smtp32_01.txt
 lib/mailman/tests/bounces/smtp32_02.txt
@@ -2405,6 +2519,7 @@ lib/mailman/tests/bounces/yahoo_07.txt
 lib/mailman/tests/bounces/yahoo_08.txt
 lib/mailman/tests/bounces/yahoo_09.txt
 lib/mailman/tests/bounces/yahoo_10.txt
+lib/mailman/tests/bounces/yahoo_11.txt
 lib/mailman/tests/bounces/yale_01.txt
 lib/mailman/tests/fblast.py
 @mode 775
