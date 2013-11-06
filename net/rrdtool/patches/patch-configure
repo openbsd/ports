@@ -1,0 +1,19 @@
+$OpenBSD: patch-configure,v 1.8 2013/11/06 22:35:20 sthen Exp $
+--- configure.orig	Wed Nov  6 22:33:46 2013
++++ configure	Wed Nov  6 22:34:28 2013
+@@ -23869,15 +23869,10 @@ $as_echo_n "checking in... " >&6; }
+ $as_echo "and out again" >&6; }
+ 
+ echo $ECHO_N "ordering CD from http://tobi.oetiker.ch/wish $ECHO_C" 1>&6
+-sleep 1
+ echo $ECHO_N ".$ECHO_C" 1>&6
+-sleep 1
+ echo $ECHO_N ".$ECHO_C" 1>&6
+-sleep 1
+ echo $ECHO_N ".$ECHO_C" 1>&6
+-sleep 1
+ echo $ECHO_N ".$ECHO_C" 1>&6
+-sleep 1
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result:  just kidding ;-)" >&5
+ $as_echo " just kidding ;-)" >&6; }
+ echo
