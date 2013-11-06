@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2013/10/24 07:58:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.95 2013/11/06 20:52:01 sthen Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -109,8 +109,6 @@ FLAVOR?=
 # jdk is unreliable on i386.
 NOT_FOR_ARCHS-java = i386
 
-.include <bsd.port.arch.mk>
-
 .if !${FLAVOR:Mno_lang}
 LANGS=			ar bg ca de es fa fi fr hu it \
 			lt lv nl pl pt-BR ru sl sv
@@ -206,6 +204,8 @@ WANTLIB-kde=		${MODQT_WANTLIB} \
 			X11 c estdc++ m pthread \
 			lib/kde3/kdecore \
 			lib/kde3/kdeui lib/kde3/kio
+
+.include <bsd.port.arch.mk>
 
 .if ${BUILD_PACKAGES:M-java}
 MODULES+=		java
