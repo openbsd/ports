@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2013/11/05 17:56:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.74 2013/11/06 20:25:33 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,6 +10,7 @@ COMMENT-ruby=	ruby interface to librrd
 MODPY_EGG_VERSION= 0.2.2
 VERSION=	1.4.8
 REVISION-main=	0
+REVISION-ruby=	0
 DISTNAME=	rrdtool-${VERSION}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-update=	rrdupdate-${VERSION}
@@ -32,9 +33,11 @@ PERMIT_PACKAGE_CDROM=	 Yes
 
 USE_GMAKE=	Yes
 
+PSEUDO_FLAVORS=	no_ruby no_python
 MULTI_PACKAGES= -main -python -ruby -update
 
 MODULES=	lang/python lang/ruby
+MODRUBY_REV=	1.9# XXX ruby 2.0 works too, but doesn't build on sparc64 et al
 
 CONFIGURE_STYLE= gnu
 CPPFLAGS+=	-I${X11BASE}/include/ \
@@ -45,9 +48,22 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-libdbi \
 		--disable-lua \
 		--disable-tcl \
-		--enable-perl-site-install \
-		--enable-python \
-		--enable-ruby-site-install
+		--enable-perl-site-install
+
+.include <bsd.port.arch.mk>
+
+.if ${BUILD_PACKAGES:M-ruby}
+CONFIGURE_ARGS+= --enable-ruby-site-install
+.else
+CONFIGURE_ARGS+= --disable-ruby
+.endif
+
+.if ${BUILD_PACKAGES:M-python}
+CONFIGURE_ARGS+= --enable-python
+.else
+CONFIGURE_ARGS+= --disable-python
+.endif
+
 # needs checking before enabling mmap; is it safe without UBC?
 CONFIGURE_ARGS+= --disable-mmap
 
