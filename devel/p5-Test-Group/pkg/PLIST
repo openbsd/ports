@@ -1,4 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/16 09:24:46 simon Exp $
-${P5SITE}/Test/
+@comment $OpenBSD: PLIST,v 1.2 2013/11/06 17:10:06 benoit Exp $
+${P5SITE}/Test/Group/
 ${P5SITE}/Test/Group.pm
+${P5SITE}/Test/Group/Extending.pod
+${P5SITE}/Test/Group/NoWarnings.pm
+${P5SITE}/Test/Group/Plan.pm
+${P5SITE}/Test/Group/Tester.pm
 @man man/man3p/Test::Group.3p
+@man man/man3p/Test::Group::Extending.3p
+@man man/man3p/Test::Group::NoWarnings.3p
+@man man/man3p/Test::Group::Plan.3p
+@man man/man3p/Test::Group::Tester.3p
