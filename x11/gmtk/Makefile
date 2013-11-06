@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2013/10/07 10:20:28 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.22 2013/11/06 07:28:25 dcoppa Exp $
 
 COMMENT =	gnome-mplayer toolkit
 DISTNAME =	gmtk-1.0.9a
 PKGNAME =	gmtk-1.0.9alpha
+REVISION =	0
 
 SHARED_LIBS =	gmlib	2.0 \
 		gmtk	2.0
