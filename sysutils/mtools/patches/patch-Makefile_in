@@ -1,52 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2003/05/26 02:02:08 fgsch Exp $
---- Makefile.in.orig	Sun Feb 16 18:55:16 2003
-+++ Makefile.in	Sun May 25 22:26:02 2003
-@@ -26,7 +26,7 @@ top_srcdir=@top_srcdir@
- srcdir=@srcdir@
- VPATH=@srcdir@
- 
--prefix      = @prefix@
-+prefix      = ${PREFIX}
- exec_prefix = @exec_prefix@
- bindir      = @bindir@
- infodir     = @infodir@
-@@ -47,10 +47,11 @@ SHLIB       = @SHLIB@
- MACHDEPLIBS = @MACHDEPLIBS@	
- LN_S        = @LN_S@
- 
--INSTALL         = @INSTALL@
--INSTALL_PROGRAM = @INSTALL_PROGRAM@
--INSTALL_DATA    = @INSTALL_DATA@
--INSTALL_INFO	= @INSTALL_INFO@
-+INSTALL_PROGRAM = ${BSD_INSTALL_PROGRAM}
-+INSTALL_DATA    = ${BSD_INSTALL_DATA}
-+INSTALL_SCRIPT  = ${BSD_INSTALL_SCRIPT}
-+INSTALL_MAN     = ${BSD_INSTALL_MAN}
-+INSTALL_INFO    = @INSTALL_INFO@
- 
- .SUFFIXES:
- .SUFFIXES: .o .c
-@@ -257,7 +258,7 @@ install-links: $(bindir)/mtools
- install-scripts: $(bindir)/mtools
- 	@$(top_srcdir)/mkinstalldirs $(bindir)
+$OpenBSD: patch-Makefile_in,v 1.3 2013/11/06 15:06:53 sthen Exp $
+--- Makefile.in.orig	Sun Oct 17 16:41:09 2010
++++ Makefile.in	Wed Nov  6 14:31:40 2013
+@@ -277,7 +277,7 @@ install-links: $(DESTDIR)$(bindir)/mtools
+ install-scripts: $(DESTDIR)$(bindir)/mtools
+ 	@$(top_srcdir)/mkinstalldirs $(DESTDIR)$(bindir)
  	@for j in $(SCRIPTS) ; do \
--		$(INSTALL_PROGRAM) $(srcdir)/scripts/$$j $(bindir)/$$j ; \
-+		$(INSTALL_SCRIPT) $(srcdir)/scripts/$$j $(bindir)/$$j ; \
- 		echo $(bindir)/$$j ; \
+-		$(INSTALL_PROGRAM) $(srcdir)/scripts/$$j $(DESTDIR)$(bindir)/$$j ; \
++		$(BSD_INSTALL_SCRIPT) $(srcdir)/scripts/$$j $(DESTDIR)$(bindir)/$$j ; \
+ 		echo $(DESTDIR)$(bindir)/$$j ; \
  	done
- 	rm -f $(bindir)/lz
-@@ -266,12 +267,12 @@ install-scripts: $(bindir)/mtools
- install-man:
- 	@$(top_srcdir)/mkinstalldirs $(MAN1DIR)
- 	@for j in $(MAN1); do \
--		$(INSTALL_DATA) $(srcdir)/$$j $(MAN1DIR)/$$j ; \
-+		$(INSTALL_MAN) $(srcdir)/$$j $(MAN1DIR)/$$j ; \
- 		echo $(MAN1DIR)/$$j ; \
- 	done
- 	@$(top_srcdir)/mkinstalldirs $(MAN5DIR)
- 	@for j in $(MAN5); do \
--		$(INSTALL_DATA) $(srcdir)/$$j $(MAN5DIR)/$$j ; \
-+		$(INSTALL_MAN) $(srcdir)/$$j $(MAN5DIR)/$$j ; \
- 		echo $(MAN5DIR)/$$j ; \
- 	done
- 
+ 	rm -f $(DESTDIR)$(bindir)/lz

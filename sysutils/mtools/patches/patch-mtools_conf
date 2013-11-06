@@ -1,0 +1,13 @@
+$OpenBSD: patch-mtools_conf,v 1.1 2013/11/06 15:06:53 sthen Exp $
+--- mtools.conf.orig	Wed Nov  6 14:50:50 2013
++++ mtools.conf	Wed Nov  6 14:50:59 2013
+@@ -15,8 +15,7 @@
+ # along with Mtools.  If not, see <http://www.gnu.org/licenses/>.
+ 
+ # Example mtools.conf files.  Uncomment the lines which correspond to
+-# your architecture and comment out the "SAMPLE FILE" line below
+-SAMPLE FILE
++# your architecture.
+ 
+ # # Linux floppy drives
+ # drive a: file="/dev/fd0" exclusive

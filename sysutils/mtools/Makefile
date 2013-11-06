@@ -1,41 +1,37 @@
-# $OpenBSD: Makefile,v 1.57 2013/03/11 11:41:31 espie Exp $
+# $OpenBSD: Makefile,v 1.58 2013/11/06 15:06:53 sthen Exp $
 
 COMMENT=	read/write/list/format DOS disks under Unix
+DISTNAME=	mtools-4.0.18
 
-DATE=		20050317
-DISTNAME=	mtools-3.9.10
-PKGNAME=	${DISTNAME}.${DATE}
-REVISION =	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.tux.org/pub/knaff/mtools/ \
-		${HOMEPAGE}
-
-PATCHFILES=	${DISTNAME}-${DATE}.diff.gz
 
 HOMEPAGE=	http://mtools.linux.lu/
 
+# GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c
+
+WANTLIB += c
+
+MASTER_SITES=	${MASTER_SITE_GNU:=mtools/}
 
 USE_GMAKE=		Yes
 
-CONFIGURE_STYLE=	gnu dest
+CONFIGURE_STYLE=	gnu
 SEPARATE_BUILD=		Yes
-USE_GROFF =	Yes
 
 FLAVORS=	no_x11
 FLAVOR?=
 
+FAKE_FLAGS=	INSTALL_PROGRAM="${INSTALL_PROGRAM}"
+
 .if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS=		--with-x=no
 .else
-WANTLIB+=		ICE SM X11 Xau pthread-stubs xcb
+WANTLIB+=		X11 Xau
 .endif
 
-pre-patch:
-	@ln -s . ${WRKSRC}/mtools
-
-post-patch:
-	@rm ${WRKSRC}/mtools
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mtools/
+	${INSTALL_DATA} ${WRKSRC}/mtools.conf ${PREFIX}/share/examples/mtools/
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2005/04/15 19:06:56 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/11/06 15:06:53 sthen Exp $
 !%%no_x11%%
 bin/amuFormat.sh
 bin/lz
@@ -16,7 +16,7 @@ bin/mdir
 bin/mdu
 bin/mformat
 bin/minfo
-bin/mkmanifest
+@bin bin/mkmanifest
 bin/mlabel
 bin/mmd
 bin/mmount
@@ -24,8 +24,9 @@ bin/mmove
 bin/mpartition
 bin/mrd
 bin/mren
+bin/mshortname
 bin/mshowfat
-bin/mtools
+@bin bin/mtools
 bin/mtoolstest
 bin/mtype
 bin/mxtar
@@ -53,9 +54,13 @@ bin/uz
 @man man/man1/mpartition.1
 @man man/man1/mrd.1
 @man man/man1/mren.1
+@man man/man1/mshortname.1
 @man man/man1/mshowfat.1
 @man man/man1/mtools.1
 @man man/man1/mtoolstest.1
 @man man/man1/mtype.1
 @man man/man1/mzip.1
 @man man/man5/mtools.5
+share/examples/mtools/
+share/examples/mtools/mtools.conf
+@sample ${SYSCONFDIR}/mtools.conf

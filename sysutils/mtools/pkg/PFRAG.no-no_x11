@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.1 2005/04/15 19:06:56 fgsch Exp $
-bin/floppyd
-bin/floppyd_installtest
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.2 2013/11/06 15:06:53 sthen Exp $
+@bin bin/floppyd
+@bin bin/floppyd_installtest
 @man man/man1/floppyd.1
 @man man/man1/floppyd_installtest.1
