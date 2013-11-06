@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2013/10/14 21:59:36 bcallah Exp $
+# $OpenBSD: Makefile,v 1.6 2013/11/06 03:08:43 bcallah Exp $
 
-# Fails for me on macppc, sgi, and sparc64.
-NOT_FOR_ARCHS =	${BE_ARCHS}
+# XXX: These should be fixed in a future update.
+BROKEN-alpha:	Bad executables (longjmp botch in chkexc). Abort trap (core dumped)
+BROKEN-sparc64:	gmake *** [../prg/s7c] Illegal instruction (core dumped)
 
-V =		20131013
+V =		20131027
 COMMENT =	high-level, extensible programming language
 DISTNAME =	seed7_05_${V}
 PKGNAME =	seed7-${V}
@@ -53,6 +54,6 @@ do-install:
 
 # chkexc fails with our make; use gmake
 do-test:
-	cd ${WRKSRC} && gmake test
+	cd ${WRKSRC} && ${MAKE_PROGRAM} ${TEST_TARGET}
 
 .include <bsd.port.mk>
