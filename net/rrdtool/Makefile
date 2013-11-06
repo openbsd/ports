@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2013/11/06 21:04:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.76 2013/11/06 22:32:56 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -54,9 +54,9 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 
 .if ${BUILD_PACKAGES:M-ruby}
 CONFIGURE_ARGS+= --enable-ruby-site-install
+CONFIGURE_ENV+=	RUBY="${RUBY}"
 .else
 CONFIGURE_ARGS+= --disable-ruby
-CONFIGURE_ENV+=	RUBY="${RUBY}"
 MODRUBY_BUILDDEP= No
 MODRUBY_RUNDEP=   No
 .endif
