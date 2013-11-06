@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/06/12 20:36:34 brad Exp $
+# $OpenBSD: Makefile,v 1.20 2013/11/06 20:45:48 kili Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -17,8 +17,8 @@ CATEGORIES =		sysutils
 
 REVISION-main=		3
 REVISION-mysql =	3
-REVISION-pgsql =	1
-REVISION-rrdtool =	1
+REVISION-pgsql =	2
+REVISION-rrdtool =	2
 REVISION-snmp =		1
 
 HOMEPAGE =		http://www.collectd.org/
@@ -38,11 +38,17 @@ WANTLIB-mysql =		crypto m ssl z mysqlclient pthread
 LIB_DEPENDS-mysql =	databases/mysql
 RUN_DEPENDS-mysql =	collectd-$V:${BASE_PKGPATH},-main
 
-WANTLIB-pgsql =		pq com_err crypto pthread ssl
+WANTLIB-pgsql =		asn1 com_err crypto heimbase krb5 pq pthread \
+			roken ssl wind
 LIB_DEPENDS-pgsql =	databases/postgresql
 RUN_DEPENDS-pgsql =	collectd-$V:${BASE_PKGPATH},-main
 
-WANTLIB-rrdtool =	art_lgpl_2 freetype m png z rrd_th pthread
+WANTLIB-rrdtool =	X11 Xext Xrender cairo expat ffi fontconfig \
+			freetype glib-2.0 gmodule-2.0 gobject-2.0 \
+			graphite2 gthread-2.0 harfbuzz iconv intl m \
+			pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
+			pixman-1 png pthread pthread-stubs rrd_th xcb \
+			xcb-render xcb-shm xml2 z
 LIB_DEPENDS-rrdtool =	net/rrdtool
 RUN_DEPENDS-rrdtool =	collectd-$V:${BASE_PKGPATH},-main
 
