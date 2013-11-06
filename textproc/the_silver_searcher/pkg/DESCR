@@ -3,3 +3,12 @@ similar to grep or ack. It performs faster than ack, yet is also aware
 of ignore files of git and mercurial repositories and does not search
 files listed in ignore files. It further utilises threads and advanced
 features of PCRE to further improve performance.
+
+* Searching for literals (no regex) uses Boyer-Moore-Horspool strstr.
+* Files are mmap()ed instead of read into a buffer.
+* Regex searches use PCRE 8.21+'s JIT compiler.
+* Ag calls pcre_study() before executing the regex on a jillion files.
+* Instead of calling fnmatch() on every pattern in your ignore files,
+  non-regex patterns are loaded into an array and binary searched.
+* Ag uses Pthreads to take advantage of multiple CPU cores and search
+  files in parallel.
