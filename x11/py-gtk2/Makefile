@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.57 2013/10/16 16:35:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.58 2013/11/07 16:01:55 bcallah Exp $
 
 SHARED_ONLY=	Yes
 BROKEN-alpha=	.got subsegment exceeds 64K
-BROKEN-mips64=	.got subsegment exceeds 64K
 
 COMMENT=	GTK+2 Python bindings
 
@@ -39,6 +38,10 @@ RUN_DEPENDS=	graphics/py-cairo>=1.2 \
 		math/py-numpy
 
 USE_GMAKE=	No
+
+.if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
+PATCH_LIST=	patch-* sup-mips64-*
+.endif
 
 LIBTOOL_FLAGS+=	--tag=disable-static
 CONFIGURE_STYLE=gnu

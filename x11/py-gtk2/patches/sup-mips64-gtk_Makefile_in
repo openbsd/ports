@@ -1,0 +1,15 @@
+$OpenBSD: sup-mips64-gtk_Makefile_in,v 1.1 2013/11/07 16:01:55 bcallah Exp $
+
+Work around "relocation truncated to fit: R_MIPS_CALL16" on mips64.
+
+--- gtk/Makefile.in.orig	Fri Apr  1 12:41:04 2011
++++ gtk/Makefile.in	Sun Oct 27 21:50:49 2013
+@@ -442,7 +442,7 @@ GTK_OVERRIDES = \
+ 	gtkwidget.override 	\
+ 	gtkwindow.override
+ 
+-_gtk_la_CFLAGS = $(PYCAIRO_CFLAGS) $(GTK_CFLAGS) $(am__append_33)
++_gtk_la_CFLAGS = $(PYCAIRO_CFLAGS) $(GTK_CFLAGS) -mxgot $(am__append_33)
+ _gtk_la_LDFLAGS = $(common_ldflags) -export-symbols-regex init_gtk
+ _gtk_la_LIBADD = $(GTK_LIBS)
+ _gtk_la_SOURCES = \
