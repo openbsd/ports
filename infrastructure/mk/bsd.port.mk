@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1246 2013/11/03 15:45:00 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1247 2013/11/07 01:23:19 juanfra Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1192,11 +1192,15 @@ _USE_ZIP ?= Yes
 .if !empty(EXTRACT_ONLY:M*.tar.xz)
 _USE_XZ ?= Yes
 .endif
+.if !empty(EXTRACT_ONLY:M*.tar.lz)
+_USE_LZIP ?= Yes
+.endif
 .if !empty(EXTRACT_ONLY:M*.tar.bz2) || !empty(EXTRACT_ONLY:M*.tbz2) || !empty(EXTRACT_ONLY:M*.tbz) || \
 	(defined(PATCHFILES) && !empty(_LIST_PATCHFILES:M*.bz2))
 _USE_BZIP2 ?= Yes
 .endif
 _USE_XZ ?= No
+_USE_LZIP ?= No
 _USE_ZIP ?= No
 _USE_BZIP2 ?= No
 
@@ -1209,6 +1213,11 @@ _PERL_FIX_SHAR ?= perl -ne 'print if $$s || ($$s = m:^\#(\!\s*/bin/sh\s*| This i
 BUILD_DEPENDS += archivers/xz
 EXTRACT_CASES += *.tar.xz) \
 	xzcat ${FULLDISTDIR}/$$archive| ${TAR} xf -;;
+.endif
+.if ${_USE_LZIP:L} != "no"
+BUILD_DEPENDS += archivers/lzip/lunzip
+EXTRACT_CASES += *.tar.lz) \
+	lunzip -c ${FULLDISTDIR}/$$archive| ${TAR} xf -;;
 .endif
 .if ${_USE_ZIP:L} != "no"
 BUILD_DEPENDS += archivers/unzip
@@ -1237,6 +1246,10 @@ PATCH_CASES ?=
 .if ${_USE_BZIP2:L} != "no"
 PATCH_CASES += *.bz2) \
 	${BZIP2} -dc $$patchfile | ${PATCH} ${PATCH_DIST_ARGS};;
+.endif
+.if ${_USE_LZIP:L} != "no"
+PATCH_CASES += *.lz) \
+	lunzip -c $$patchfile | ${PATCH} ${PATCH_DIST_ARGS};;
 .endif
 PATCH_CASES += *.Z|*.gz) \
 	${GZCAT} $$patchfile | ${PATCH} ${PATCH_DIST_ARGS};;
