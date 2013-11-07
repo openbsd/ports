@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/07/03 08:30:01 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.4 2013/11/07 19:35:04 brad Exp $
 @bin bin/sndfile-resample
 include/samplerate.h
 lib/libsamplerate.a
 lib/libsamplerate.la
+@lib lib/libsamplerate.so.${LIBsamplerate_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/samplerate.pc
 share/doc/libsamplerate/
@@ -22,3 +22,20 @@ share/doc/libsamplerate/license.html
 share/doc/libsamplerate/lists.html
 share/doc/libsamplerate/quality.html
 share/doc/libsamplerate/win32.html
+share/doc/libsamplerate0-dev/
+share/doc/libsamplerate0-dev/html/
+share/doc/libsamplerate0-dev/html/SRC.css
+share/doc/libsamplerate0-dev/html/SRC.png
+share/doc/libsamplerate0-dev/html/api.html
+share/doc/libsamplerate0-dev/html/api_callback.html
+share/doc/libsamplerate0-dev/html/api_full.html
+share/doc/libsamplerate0-dev/html/api_misc.html
+share/doc/libsamplerate0-dev/html/api_simple.html
+share/doc/libsamplerate0-dev/html/download.html
+share/doc/libsamplerate0-dev/html/faq.html
+share/doc/libsamplerate0-dev/html/history.html
+share/doc/libsamplerate0-dev/html/index.html
+share/doc/libsamplerate0-dev/html/license.html
+share/doc/libsamplerate0-dev/html/lists.html
+share/doc/libsamplerate0-dev/html/quality.html
+share/doc/libsamplerate0-dev/html/win32.html
