@@ -1,0 +1,21 @@
+$OpenBSD: patch-include_config_h_in,v 1.1 2013/11/07 11:23:00 sthen Exp $
+
+From: Michael Friedrich <michael.friedrich@netways.de>
+Date: Thu, 7 Nov 2013 11:13:43 +0000 (+0100)
+Subject: Fix stdint.h inclusion for OpenBSD (thx Stuart Henderson)
+X-Git-Url: https://git.icinga.org/?p=icinga-core.git;a=commitdiff_plain;h=23db4a8692a5ab1fff262a47a3195ba15879e3d1
+
+--- include/config.h.in.orig	Thu Nov  7 10:52:00 2013
++++ include/config.h.in	Thu Nov  7 10:52:02 2013
+@@ -198,6 +198,11 @@
+ #include <stdarg.h>
+ #endif
+ 
++#undef HAVE_STDINT_H
++#ifdef HAVE_STDINT_H
++#include <stdint.h>
++#endif
++
+ #undef HAVE_SYS_TYPES_H
+ #ifdef HAVE_SYS_TYPES_H
+ #include <sys/types.h>
