@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.1 2013/11/05 17:49:01 sthen Exp $
+$OpenBSD: README-main,v 1.2 2013/11/07 01:02:12 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -13,7 +13,7 @@ needed by some CGI/PHP scripts), we will need to copy it into the chroot
 along with the required libraries and configuration.
 To do so, run the following command:
 
-    # ${TRUEPREFIX}/share/examples/rrdtool/rrdtool-chroot
+    # ${TRUEPREFIX}/share/examples/rrdtool/rrdtool-chroot enable
 
 Note that you will have to run this command again when the rrdtool
 package is updated.
