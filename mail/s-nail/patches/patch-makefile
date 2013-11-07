@@ -1,0 +1,16 @@
+$OpenBSD: patch-makefile,v 1.1 2013/11/07 03:34:58 william Exp $
+
+Upstream commit a8c1b0
+
+
+--- makefile.orig	Sat Oct 12 18:52:19 2013
++++ makefile	Sat Oct 12 18:53:21 2013
+@@ -9,7 +9,7 @@ all:
+ install:
+ 	@$(_prego) && $(MAKE) -f mk.mk install
+ packager-install:
+-	@@(_prestop) && $(MAKE) -f mk.mk install
++	@$(_prestop) && $(MAKE) -f mk.mk install
+ uninstall:
+ 	@$(_prestop) && $(MAKE) -f mk.mk uninstall
+ clean:

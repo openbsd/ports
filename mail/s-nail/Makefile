@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2013/06/25 02:44:16 william Exp $
+# $OpenBSD: Makefile,v 1.7 2013/11/07 03:34:58 william Exp $
 
 COMMENT=		enhanced, MIME capable Berkeley Mail
 
-DISTNAME=		s-nail-14.3.2
+DISTNAME=		s-nail-14.4.4
 DISTFILES=		${DISTNAME:S/./_/g}.tar.gz
 CATEGORIES=		mail
 HOMEPAGE=		http://sdaoden.users.sourceforge.net/code.html#s-nail
-REVISION=		2
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,13 +18,18 @@ MAINTAINER=		William Yodlowsky <william@openbsd.org>
 
 MODULES=		converters/libiconv
 
-MAKE_FLAGS=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-                        LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
-			SYSCONFDIR=${SYSCONFDIR} \
-			CONFIG=CUSTOM
+MAKE_FILE=		makefile
+MAKE_FLAGS=		CFLAGS="${CFLAGS}" \
+			C_INCLUDE_PATH="${LOCALBASE}/include" \
+			LDFLAGS="${LDFLAGS}" \
+			LD_LIBRARY_PATH=${LOCALBASE}/lib \
+			SYSCONFDIR="${SYSCONFDIR}" \
+			WANT_EDITLINE=1 \
+			WANT_GSSAPI=1
 
 LIB_DEPENDS=		devel/libidn
 
+INSTALL_TARGET=		packager-install
 NO_TEST=		Yes
 
 post-install:

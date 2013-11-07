@@ -1,8 +1,8 @@
-$OpenBSD: patch-nail_rc,v 1.1.1.1 2013/03/29 03:54:34 william Exp $
+$OpenBSD: patch-nail_rc,v 1.2 2013/11/07 03:34:58 william Exp $
 
---- nail.rc.orig	Fri Mar  3 19:01:19 2006
-+++ nail.rc	Mon Apr 24 10:44:06 2006
-@@ -17,6 +17,9 @@ set append
+--- nail.rc.orig	Thu Oct  3 09:42:46 2013
++++ nail.rc	Sat Oct 12 18:35:29 2013
+@@ -14,6 +14,9 @@ set append
  # Ask for a message subject.
  set ask
  
