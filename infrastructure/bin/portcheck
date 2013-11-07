@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.41 2013/11/01 10:43:40 zhuk Exp $
+# $OpenBSD: portcheck,v 1.42 2013/11/07 08:18:16 ajacoutot Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1188,11 +1188,11 @@ check_patches_dir() {
 
 # Checks made:
 #   * Directory is not empty and consist only of plain files with fixed names.
-#   * PFRAG, PLIST, README, SECURITY and .rc files contain appropriate
-#     OpenBSD RCS tags; other files should NOT contain OpenBSD RCS tag.
+#   * PFRAG, PLIST, README and .rc files contain appropriate OpenBSD RCS
+#     tags; other files should NOT contain OpenBSD RCS tag.
 #   * PFRAG.shared should be merged in PLIST if it contains @lib items only.
-#   * No trailing whitespace for DESCR, MESSAGE, README, SECURITY, UNMESSAGE
-#     and .rc files (PLIST and PFRAG are better checked with "make package").
+#   * No trailing whitespace for DESCR, MESSAGE, README, UNMESSAGE and
+#     .rc files (PLIST and PFRAG are better checked with "make package").
 #   * See also check_plist_file().
 check_pkg_dir() {
 	$debugging && echo "CALLED: check_pkg_dir($*)" >&2
@@ -1248,7 +1248,7 @@ check_pkg_dir() {
 		check_plist_file "$F"
 		;;
 
-	README?(-*)|SECURITY?(-*))
+	README?(-*))
 		[[ -f $F ]] ||
 			err "$F is not a file"
 		[[ -n $subst_cmd ]] && check_subst_vars "$F" "$subst_cmd"
