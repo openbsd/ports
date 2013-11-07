@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.27 2013/04/11 17:58:42 brad Exp $
---- configure.ac.orig	Sun Apr  7 14:42:04 2013
-+++ configure.ac	Mon Apr  8 12:00:21 2013
+$OpenBSD: patch-configure_ac,v 1.28 2013/11/07 00:30:07 brad Exp $
+--- configure.ac.orig	Mon Oct 14 12:46:55 2013
++++ configure.ac	Sat Oct 26 21:43:55 2013
 @@ -122,10 +122,6 @@ case "${host_os}" in
      ;;
    openbsd*)
@@ -12,7 +12,7 @@ $OpenBSD: patch-configure_ac,v 1.27 2013/04/11 17:58:42 brad Exp $
      ;;
    netbsd*)
      SYS=netbsd
-@@ -964,33 +960,6 @@ dnl Check for various optimization flags
+@@ -961,33 +957,6 @@ dnl Check for various optimization flags
  AS_IF([test "${enable_optimizations}" != "no"], [
  
    C_O=""
@@ -46,7 +46,7 @@ $OpenBSD: patch-configure_ac,v 1.27 2013/04/11 17:58:42 brad Exp $
    VLC_RESTORE_FLAGS
    CFLAGS="${CFLAGS} ${C_O}"
    CXXFLAGS="${CXXFLAGS} ${C_O}"
-@@ -1736,7 +1705,7 @@ AS_IF([test "${enable_live555}" != "no" -a -n "${CXX}"
+@@ -1733,7 +1702,7 @@ AS_IF([test "${enable_live555}" != "no" -a -n "${CXX}"
    AC_LANG_PUSH(C++)
    CPPFLAGS_save="${CPPFLAGS}"
    AS_IF([test -z "${CONTRIB_DIR}"], [
@@ -55,7 +55,7 @@ $OpenBSD: patch-configure_ac,v 1.27 2013/04/11 17:58:42 brad Exp $
    ], [
      CPPFLAGS_live555="-I${CONTRIB_DIR}/include/liveMedia -I${CONTRIB_DIR}/include/groupsock -I${CONTRIB_DIR}/include/BasicUsageEnvironment -I${CONTRIB_DIR}/include/UsageEnvironment"
    ])
-@@ -3519,6 +3488,24 @@ AS_IF([test "$enable_oss" != "no"], [
+@@ -3516,6 +3485,24 @@ AS_IF([test "$enable_oss" != "no"], [
  ])
  AC_SUBST(OSS_LIBS)
  AM_CONDITIONAL([HAVE_OSS], [test "${have_oss}" = "yes"])

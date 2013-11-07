@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.175 2013/08/19 10:00:15 brad Exp $
+# $OpenBSD: Makefile,v 1.176 2013/11/07 00:30:07 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
 
-V=		2.0.8a
+V=		2.0.9
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
 CATEGORIES=	x11
-MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V:S/a//}/
+MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
 
 SHARED_LIBS=	vlc	2.0 \
@@ -178,8 +178,6 @@ PKG_ARGS+=-Di386=1
 .else
 PKG_ARGS+=-Di386=0
 .endif
-
-WRKDIST=	${WRKDIR}/${DISTNAME:S/a//}
 
 pre-configure:
 	@cp ${FILESDIR}/sndio.c ${WRKSRC}/modules/audio_output
