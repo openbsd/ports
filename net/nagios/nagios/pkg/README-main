@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.1 2013/05/05 22:13:48 rpe Exp $
+$OpenBSD: README-main,v 1.2 2013/11/07 10:31:38 rpe Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -8,7 +8,7 @@ Getting Started
 ===============
 
 The main documentation for Nagios is provided online at
-http://nagios.sourceforge.net/docs/nagioscore/3/en/.
+http://nagios.sourceforge.net/docs/nagioscore/4/en/.
 
 The included sample configuration carries out some simple checks
 on the local machine; these should work as-is.

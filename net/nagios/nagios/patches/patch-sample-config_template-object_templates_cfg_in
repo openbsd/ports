@@ -1,7 +1,7 @@
-$OpenBSD: patch-sample-config_template-object_templates_cfg_in,v 1.1 2008/03/18 20:25:11 sturm Exp $
---- sample-config/template-object/templates.cfg.in.orig	Sat Sep  1 10:21:28 2007
-+++ sample-config/template-object/templates.cfg.in	Sat Sep  1 10:22:01 2007
-@@ -63,17 +63,17 @@ define host{
+$OpenBSD: patch-sample-config_template-object_templates_cfg_in,v 1.2 2013/11/07 10:31:38 rpe Exp $
+--- sample-config/template-object/templates.cfg.in.orig	Wed Oct 16 01:36:42 2013
++++ sample-config/template-object/templates.cfg.in	Fri Nov  1 17:45:15 2013
+@@ -61,17 +61,17 @@ define host{
          }
  
  

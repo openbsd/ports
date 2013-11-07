@@ -1,7 +1,7 @@
-$OpenBSD: patch-sample-config_template-object_localhost_cfg_in,v 1.1 2008/03/18 20:25:11 sturm Exp $
---- sample-config/template-object/localhost.cfg.in.orig	Sat Sep  1 10:20:47 2007
-+++ sample-config/template-object/localhost.cfg.in	Sat Sep  1 10:21:21 2007
-@@ -5,7 +5,7 @@
+$OpenBSD: patch-sample-config_template-object_localhost_cfg_in,v 1.2 2013/11/07 10:31:38 rpe Exp $
+--- sample-config/template-object/localhost.cfg.in.orig	Wed Oct 16 01:36:42 2013
++++ sample-config/template-object/localhost.cfg.in	Fri Nov  1 17:45:15 2013
+@@ -4,7 +4,7 @@
  #
  # NOTE: This config file is intended to serve as an *extremely* simple 
  #       example of how you can create configuration entries to monitor
@@ -10,7 +10,7 @@ $OpenBSD: patch-sample-config_template-object_localhost_cfg_in,v 1.1 2008/03/18 
  #
  ###############################################################################
  
-@@ -23,9 +23,9 @@
+@@ -22,9 +22,9 @@
  # Define a host for the local machine
  
  define host{
@@ -22,7 +22,7 @@ $OpenBSD: patch-sample-config_template-object_localhost_cfg_in,v 1.1 2008/03/18 
          host_name               localhost
          alias                   localhost
          address                 127.0.0.1
-@@ -41,11 +41,11 @@ define host{
+@@ -40,11 +40,11 @@ define host{
  ###############################################################################
  ###############################################################################
  

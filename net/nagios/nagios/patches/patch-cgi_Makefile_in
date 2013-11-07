@@ -1,7 +1,7 @@
-$OpenBSD: patch-cgi_Makefile_in,v 1.5 2011/09/05 14:56:46 sthen Exp $
---- cgi/Makefile.in.orig	Sat Oct 23 11:00:59 2010
-+++ cgi/Makefile.in	Tue Jul 26 13:58:39 2011
-@@ -201,9 +201,9 @@ install-unstripped:
+$OpenBSD: patch-cgi_Makefile_in,v 1.6 2013/11/07 10:31:38 rpe Exp $
+--- cgi/Makefile.in.orig	Wed Oct 16 01:36:42 2013
++++ cgi/Makefile.in	Fri Nov  1 17:45:15 2013
+@@ -182,9 +182,9 @@ install-unstripped:
  	$(MAKE) install-basic
  
  install-basic:

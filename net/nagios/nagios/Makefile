@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.62 2013/08/14 11:29:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2013/11/07 10:31:38 rpe Exp $
 
 COMMENT-main=	host and service monitor
 COMMENT-web=	cgis and webpages for nagios
 
-V=		3.5.0
+V=		4.0.1
 DISTNAME=	nagios-$V
 PKGNAME-main=	nagios-$V
 PKGNAME-web=	nagios-web-$V
-WRKDIST=	${WRKDIR}/nagios
 CATEGORIES=	net
-REVISION-main=	1
-REVISION-web=	0
 
 HOMEPAGE=	http://www.nagios.org/
 
@@ -28,6 +25,8 @@ LIB_DEPENDS=	devel/libtool,-ltdl
 RUN_DEPENDS-main= net/nagios/plugins
 
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/nagios
+
+USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--datadir=${PREFIX-web}/nagios \
@@ -65,14 +64,16 @@ PREFIX-web=	${VARBASE}/www
 .if ${FLAVOR:Mchroot}
 WANTLIB-web=
 LIB_DEPENDS-web=
-RUN_DEPENDS-web= nagios-${V}-chroot:net/nagios/nagios,chroot
+RUN_DEPENDS-web= nagios-${V}-chroot:net/nagios/nagios,chroot \
+		 lang/php/${MODPHP_VERSION},-gd
 .else
 WANTLIB-web=	${WANTLIB} fontconfig freetype gd jpeg png z
 LIB_DEPENDS-web= graphics/gd
-RUN_DEPENDS-web= nagios-${V}-!chroot:net/nagios/nagios
+RUN_DEPENDS-web= nagios-${V}-!chroot:net/nagios/nagios \
+		 lang/php/${MODPHP_VERSION},-gd
 .endif
 
-WANTLIB-main=	${WANTLIB} ltdl>=4 pthread
+WANTLIB-main=	${WANTLIB} ltdl>=4
 
 NO_TEST=	Yes
 

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.14 2013/06/01 14:18:40 ajacoutot Exp $
---- configure.orig	Fri Mar 15 12:14:02 2013
-+++ configure	Mon May  6 00:05:06 2013
-@@ -572,7 +572,7 @@ do
+$OpenBSD: patch-configure,v 1.15 2013/11/07 10:31:38 rpe Exp $
+--- configure.orig	Wed Oct 16 01:36:42 2013
++++ configure	Fri Nov  1 17:47:13 2013
+@@ -1077,7 +1077,7 @@ do
      ac_prev=sysconfdir ;;
    -sysconfdir=* | --sysconfdir=* | --sysconfdi=* | --sysconfd=* | --sysconf=* \
    | --syscon=* | --sysco=* | --sysc=* | --sys=* | --sy=*)
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.14 2013/06/01 14:18:40 ajacoutot Exp $
  
    -target | --target | --targe | --targ | --tar | --ta | --t)
      ac_prev=target_alias ;;
-@@ -5666,7 +5666,7 @@ cat >>confdefs.h <<_ACEOF
+@@ -4633,7 +4633,7 @@ cat >>confdefs.h <<_ACEOF
  #define DEFAULT_NAGIOS_GROUP "$nagios_grp"
  _ACEOF
  
@@ -19,25 +19,25 @@ $OpenBSD: patch-configure,v 1.14 2013/06/01 14:18:40 ajacoutot Exp $
  
  
  
-@@ -6047,7 +6047,7 @@ echo $ECHO_N "checking for gdImagePng in -lgd (order 1
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+@@ -4890,7 +4890,7 @@ $as_echo_n "checking for gdImagePng in -lgd (order 1).
+   $as_echo_n "(cached) " >&6
  else
    ac_save_LIBS="$LIBS"
 -	LIBS="-lgd -lttf -lpng -ljpeg -lz -lm $LIBS"
 +	LIBS="-lgd -lfontconfig -lfreetype -lpng -ljpeg -lz -lm $LIBS"
- 	cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -6106,7 +6106,7 @@ fi
- echo "${ECHO_T}yes" >&6
+ 	cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 	/* Override any gcc2 internal prototype to avoid an error.  */
+@@ -4921,7 +4921,7 @@ fi
+ $as_echo "yes" >&6; }
  
  			GDLIBFOUND=yep
 -			GDLIBS="-lgd -lttf -lpng -ljpeg -lz -lm"
 +			GDLIBS="-lgd -lfontconfig -lfreetype -lpng -ljpeg -lz -lm"
  
  	else
- 	  echo "$as_me:$LINENO: result: no" >&5
-@@ -7119,9 +7119,9 @@ echo $ECHO_N "checking for linker flags for loadable m
+ 	  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+@@ -5432,9 +5432,9 @@ $as_echo_n "checking for linker flags for loadable mod
  			MOD_LDFLAGS="-shared"
  			MOD_CFLAGS="-fPIC"
  		;;

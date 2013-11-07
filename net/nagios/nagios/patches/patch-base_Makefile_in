@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_Makefile_in,v 1.5 2011/09/05 14:56:46 sthen Exp $
---- base/Makefile.in.orig	Sat Oct 23 11:00:59 2010
-+++ base/Makefile.in	Tue Jul 26 13:58:39 2011
-@@ -204,9 +204,8 @@ install-unstripped:
+$OpenBSD: patch-base_Makefile_in,v 1.6 2013/11/07 10:31:38 rpe Exp $
+--- base/Makefile.in.orig	Wed Oct 16 01:36:42 2013
++++ base/Makefile.in	Fri Nov  1 17:45:15 2013
+@@ -180,9 +180,8 @@ install-unstripped:
  	$(MAKE) install-basic
  
  install-basic:
