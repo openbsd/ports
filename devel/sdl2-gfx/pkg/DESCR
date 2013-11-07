@@ -1,0 +1,6 @@
+SDL2_gfx is a port of SDL_gfx to SDL2.
+
+The SDL_gfx library evolved out of the SDL_gfxPrimitives code which
+provided basic drawing routines such as lines, circles or polygons, and
+SDL_rotozoom which implemented a interpolating rotozoomer for SDL
+surfaces.

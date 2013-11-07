@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/07 16:27:38 bcallah Exp $
+include/SDL2/
+include/SDL2/SDL2_framerate.h
+include/SDL2/SDL2_gfxPrimitives.h
+include/SDL2/SDL2_imageFilter.h
+include/SDL2/SDL2_rotozoom.h
+lib/libSDL2_gfx.a
+lib/libSDL2_gfx.la
+@lib lib/libSDL2_gfx.so.${LIBSDL2_gfx_VERSION}
