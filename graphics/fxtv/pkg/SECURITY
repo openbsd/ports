@@ -1,4 +1,0 @@
-tempnam() usage:
-The audio/video encoding feature of fxtv creates its temporary/output
-files in the working directory (or whatever you enter in the dialog),
-not /tmp.

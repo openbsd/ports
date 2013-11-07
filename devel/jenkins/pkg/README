@@ -1,8 +1,27 @@
-$OpenBSD: README,v 1.6 2013/02/04 16:26:59 jasper Exp $
+$OpenBSD: README,v 1.7 2013/11/07 07:08:59 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
+
+SECURITY NOTES
+==============
+
+Jenkins runs external processes such as CVS, Ant, Make and so on, whose
+path is configurable from the web menu system.
+
+Please make very sure to enable login restriction under Manage Jenkins
+-> Configure Global Security if your server is reachable from any
+(untrusted) network! If you only run it on localhost, be sure to block
+access to the HTTP port using pf(8).
+
+Take these steps before you start the server the first time!
+
+See more information at
+http://wiki.jenkins-ci.org/display/JENKINS/Securing+Jenkins
+
+Post-installation
+=================
 
 To arrange for the standalone Jenkins server to run automatically
 on reboot, add "jenkins" to "pkg_scripts" in /etc/rc.conf.local, e.g.:

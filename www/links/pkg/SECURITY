@@ -1,6 +1,0 @@
-$OpenBSD: SECURITY,v 1.1.1.1 2000/03/09 02:12:54 espie Exp $
-get_temp_name() calls tempnam() in session.c
-It is only used in continue_download, which use the temporary name in
-create_download_file, with safe == 1 (even though it sets safe to 1 in
-a particularly funky way).
-so this ends in an open(..., O_CREAT|O_TRUNC|O_EXCL, 0600), which is safe.

@@ -1,6 +1,0 @@
-$OpenBSD: SECURITY,v 1.2 2003/04/10 16:51:21 sturm Exp $
-
-Temporary file handling has improved in this version, but still needs
-work. It now uses mkstemp(), but because there is no way to create an
-ofstream object from a file descriptor there are still race conditions.
-Similarly for passing temp file names to gnuplot.

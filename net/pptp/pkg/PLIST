@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/03/08 21:57:24 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/11/07 07:09:00 ajacoutot Exp $
 @man man/man8/pptp.8
 @bin sbin/pptp
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/pptp/
 share/doc/pptp/PROTOCOL-SECURITY

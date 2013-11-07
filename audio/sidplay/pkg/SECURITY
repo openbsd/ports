@@ -1,5 +1,0 @@
-sidcon.cpp:
-  tmpname() in handleFile()
-  This is only used with rename() which appears safe.
-
-$OpenBSD: SECURITY,v 1.1.1.1 2002/05/22 22:44:16 naddy Exp $

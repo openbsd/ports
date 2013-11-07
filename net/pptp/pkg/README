@@ -1,0 +1,10 @@
+$OpenBSD: README,v 1.1 2013/11/07 07:09:00 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+PPTP IS NOT SECURE, for more information see:
+	${TRUEPREFIX}/share/doc/pptp/PROTOCOL-SECURITY
+	http://www.schneier.com/pptp.html
+	http://www.counterpane.com/pptp.html

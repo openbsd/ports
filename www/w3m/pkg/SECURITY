@@ -1,7 +1,0 @@
-This code is a total nightmare.
-
-A pain to read, and lots of strcpy/strcat/sprintf's which actually
-turn out to be okay, after adding a die-when-out-of-memory callback
-for the boehm garbage collector.
-
-There are undoubtedly other issues with this code.  Caveat user.

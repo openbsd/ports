@@ -1,9 +1,0 @@
-$OpenBSD: SECURITY,v 1.2 2002/06/14 17:43:51 fgsch Exp $
-
-Note: in ${WRKDIR}/muttlib.c the function mutt_adv_mktemp
-uses mktemp(3), but the resulting name is used much later in
-a procedure that does an open with O_CREAT | O_EXCL.  If the
-open fails an error is reported and the user can try again.
-If the open succeeds the fd is used in fdopen to get a FILE.
-
-This use is actually correct.

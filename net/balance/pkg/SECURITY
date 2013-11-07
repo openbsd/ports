@@ -1,5 +1,0 @@
-$OpenBSD: SECURITY,v 1.1.1.1 2001/06/25 23:05:45 lebel Exp $
-
-Fixed several strcpy/sprintf issues.
-
-
