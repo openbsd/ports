@@ -1,0 +1,12 @@
+$OpenBSD: patch-SDL_net_h,v 1.1.1.1 2013/11/07 16:25:22 bcallah Exp $
+--- SDL_net.h.orig	Sat Oct 12 17:26:39 2013
++++ SDL_net.h	Sat Oct 12 17:28:26 2013
+@@ -365,7 +365,7 @@ extern DECLSPEC const char * SDLCALL SDLNet_GetError(v
+ /***********************************************************************/
+ 
+ /* Warning, some systems have data access alignment restrictions */
+-#if defined(sparc) || defined(mips) || defined(__arm__)
++#if defined(__STRICT_ALIGNMENT)
+ #define SDL_DATA_ALIGNED    1
+ #endif
+ #ifndef SDL_DATA_ALIGNED
