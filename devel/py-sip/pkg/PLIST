@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/04/12 20:06:50 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/11/08 22:37:17 sthen Exp $
 @bin bin/sip
 include/python${MODPY_VERSION}/sip.h
 lib/python${MODPY_VERSION}/site-packages/sip.so
@@ -6,19 +6,19 @@ lib/python${MODPY_VERSION}/site-packages/sipconfig.py
 lib/python${MODPY_VERSION}/site-packages/sipconfig.pyc
 lib/python${MODPY_VERSION}/site-packages/sipdistutils.py
 lib/python${MODPY_VERSION}/site-packages/sipdistutils.pyc
-share/doc/py-sip/
-share/doc/py-sip/annotations.txt
-share/doc/py-sip/build_system.txt
-share/doc/py-sip/builtin.txt
-share/doc/py-sip/c_api.txt
-share/doc/py-sip/command_line.txt
-share/doc/py-sip/directives.txt
-share/doc/py-sip/distutils.txt
-share/doc/py-sip/embedding.txt
-share/doc/py-sip/incompatibilities.txt
-share/doc/py-sip/index.txt
-share/doc/py-sip/installation.txt
-share/doc/py-sip/introduction.txt
-share/doc/py-sip/python_api.txt
-share/doc/py-sip/specification_files.txt
-share/doc/py-sip/using.txt
+share/doc/${MODPY_PY_PREFIX}sip/
+share/doc/${MODPY_PY_PREFIX}sip/annotations.txt
+share/doc/${MODPY_PY_PREFIX}sip/build_system.txt
+share/doc/${MODPY_PY_PREFIX}sip/builtin.txt
+share/doc/${MODPY_PY_PREFIX}sip/c_api.txt
+share/doc/${MODPY_PY_PREFIX}sip/command_line.txt
+share/doc/${MODPY_PY_PREFIX}sip/directives.txt
+share/doc/${MODPY_PY_PREFIX}sip/distutils.txt
+share/doc/${MODPY_PY_PREFIX}sip/embedding.txt
+share/doc/${MODPY_PY_PREFIX}sip/incompatibilities.txt
+share/doc/${MODPY_PY_PREFIX}sip/index.txt
+share/doc/${MODPY_PY_PREFIX}sip/installation.txt
+share/doc/${MODPY_PY_PREFIX}sip/introduction.txt
+share/doc/${MODPY_PY_PREFIX}sip/python_api.txt
+share/doc/${MODPY_PY_PREFIX}sip/specification_files.txt
+share/doc/${MODPY_PY_PREFIX}sip/using.txt
