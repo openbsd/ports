@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.22 2013/08/15 18:42:03 kili Exp $
+# $OpenBSD: Makefile,v 1.23 2013/11/08 22:41:29 sthen Exp $
+
+BROKEN = temporarily broken, py-qt4 update
 
 COMMENT =		ebook management application
 
