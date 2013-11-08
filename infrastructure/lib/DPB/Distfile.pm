@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distfile.pm,v 1.1 2013/10/25 13:40:42 espie Exp $
+# $OpenBSD: Distfile.pm,v 1.2 2013/11/08 10:48:27 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -104,6 +104,10 @@ sub simple_lockname
 sub fullpkgpath
 {
 	return shift->{path}->fullpkgpath;
+}
+
+sub ensure_fullpkgname
+{
 }
 
 sub print_parent
