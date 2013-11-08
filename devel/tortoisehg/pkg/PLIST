@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/07/09 10:00:36 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/11/08 11:45:26 rpointel Exp $
 bin/thg
 lib/nautilus/
 lib/nautilus/extensions-3.0/
@@ -30,6 +30,8 @@ lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/chunks.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/chunks.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/clone.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/clone.pyc
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/cmdcore.py
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/cmdcore.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/cmdui.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/cmdui.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/commit.py
@@ -44,8 +46,6 @@ lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/customtools.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/customtools.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/decorators.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/decorators.pyc
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/dnd.py
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/dnd.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/docklog.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/docklog.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/filectxactions.py
@@ -130,18 +130,14 @@ lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qdelete.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qdelete.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qfold.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qfold.pyc
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qqueue.py
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qqueue.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qrename.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qrename.pyc
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qreorder.py
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qreorder.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qscilib.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qscilib.pyc
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qtapp.py
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qtapp.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qtlib.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/qtlib.pyc
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/quickbar.py
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/quickbar.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/quickop.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/quickop.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/rebase.py
@@ -188,6 +184,8 @@ lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/shellconf.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/shellconf.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/shelve.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/shelve.pyc
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/sign.py
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/sign.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/status.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/status.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/sync.py
@@ -208,6 +206,8 @@ lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/visdiff.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/visdiff.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/wctxactions.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/wctxactions.pyc
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/wctxcleaner.py
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/wctxcleaner.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/webconf.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/webconf.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/webconf_ui.py
@@ -231,6 +231,8 @@ lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/debugthg.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/debugthg.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/editor.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/editor.pyc
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/gpg.py
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/gpg.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/hglib.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/hglib.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/hgversion.py
@@ -239,6 +241,8 @@ lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/i18n.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/i18n.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/menuthg.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/menuthg.pyc
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/obsoleteutil.py
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/obsoleteutil.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/patchctx.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/patchctx.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/paths.py
@@ -296,6 +300,7 @@ share/pixmaps/tortoisehg/
 share/pixmaps/tortoisehg/icons/
 share/pixmaps/tortoisehg/icons/16x16/
 share/pixmaps/tortoisehg/icons/16x16/apps/
+share/pixmaps/tortoisehg/icons/16x16/apps/gnupg.png
 share/pixmaps/tortoisehg/icons/16x16/apps/kiln.png
 share/pixmaps/tortoisehg/icons/16x16/apps/reviewboard.png
 share/pixmaps/tortoisehg/icons/22x22/
@@ -310,6 +315,7 @@ share/pixmaps/tortoisehg/icons/24x24/actions/hg-push.png
 share/pixmaps/tortoisehg/icons/32x32/
 share/pixmaps/tortoisehg/icons/32x32/actions/
 share/pixmaps/tortoisehg/icons/32x32/actions/hg-bookmarks.png
+share/pixmaps/tortoisehg/icons/32x32/actions/hg-sign.png
 share/pixmaps/tortoisehg/icons/README.txt
 share/pixmaps/tortoisehg/icons/TortoiseMerge.ico
 share/pixmaps/tortoisehg/icons/branch.ico
@@ -395,7 +401,6 @@ share/pixmaps/tortoisehg/icons/scalable/actions/hg-qpop-all.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-qpop.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-qpush-all.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-qpush.svg
-share/pixmaps/tortoisehg/icons/scalable/actions/hg-qreorder.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-rebase.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-recover.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-remove.svg
@@ -453,12 +458,17 @@ share/pixmaps/tortoisehg/icons/scalable/apps/tools-hooks.svg
 share/pixmaps/tortoisehg/icons/scalable/apps/tools-spanner-hammer.svg
 share/pixmaps/tortoisehg/icons/scalable/apps/utilities-terminal.svg
 share/pixmaps/tortoisehg/icons/scalable/status/
+share/pixmaps/tortoisehg/icons/scalable/status/hg-patch-applied.svg
+share/pixmaps/tortoisehg/icons/scalable/status/hg-patch-guarded.svg
+share/pixmaps/tortoisehg/icons/scalable/status/hg-patch-unguarded.svg
+share/pixmaps/tortoisehg/icons/scalable/status/thg-added-subrepo.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-error.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-file-merged.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-file-p0.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-file-p1.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-git-subrepo.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-remote-repo.svg
+share/pixmaps/tortoisehg/icons/scalable/status/thg-removed-subrepo.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-subrepo.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-success.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-svn-subrepo.svg
