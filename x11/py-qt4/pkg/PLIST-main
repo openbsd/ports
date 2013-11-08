@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2012/11/01 22:54:19 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2013/11/08 22:37:43 sthen Exp $
 @bin bin/pylupdate4
 @bin bin/pyrcc4
 bin/pyuic4
@@ -92,7 +92,10 @@ lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/qtdeclarative.
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/qtwebkit.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/uic/widget-plugins/qtwebkit.pyc
 lib/python${MODPY_VERSION}/site-packages/dbus/mainloop/qt.so
-lib/qt4/plugins/designer/libpythonplugin.so
+lib/qt4/
+lib/qt4/plugins/
+lib/qt4/plugins/designer/
+lib/qt4/plugins/designer/libpyqt4.so
 share/sip/
 share/sip/Qt/
 share/sip/Qt/Qtmod.sip
@@ -102,6 +105,7 @@ share/sip/QtCore/qabstractanimation.sip
 share/sip/QtCore/qabstracteventdispatcher.sip
 share/sip/QtCore/qabstractfileengine.sip
 share/sip/QtCore/qabstractitemmodel.sip
+share/sip/QtCore/qabstractnativeeventfilter.sip
 share/sip/QtCore/qabstractstate.sip
 share/sip/QtCore/qabstracttransition.sip
 share/sip/QtCore/qanimationgroup.sip
@@ -186,11 +190,13 @@ share/sip/QtCore/qtimeline.sip
 share/sip/QtCore/qtimer.sip
 share/sip/QtCore/qtranslator.sip
 share/sip/QtCore/qurl.sip
+share/sip/QtCore/qurlquery.sip
 share/sip/QtCore/quuid.sip
 share/sip/QtCore/qvariant.sip
 share/sip/QtCore/qvariantanimation.sip
 share/sip/QtCore/qvector.sip
 share/sip/QtCore/qwaitcondition.sip
+share/sip/QtCore/qwineventnotifier.sip
 share/sip/QtCore/qxmlstream.sip
 share/sip/QtDBus/
 share/sip/QtDBus/QtDBusmod.sip
@@ -393,6 +399,7 @@ share/sip/QtGui/qrawfont.sip
 share/sip/QtGui/qregion.sip
 share/sip/QtGui/qrgb.sip
 share/sip/QtGui/qrubberband.sip
+share/sip/QtGui/qscreen.sip
 share/sip/QtGui/qscrollarea.sip
 share/sip/QtGui/qscrollbar.sip
 share/sip/QtGui/qsessionmanager.sip
@@ -573,6 +580,7 @@ share/sip/QtWebKit/qwebframe.sip
 share/sip/QtWebKit/qwebhistory.sip
 share/sip/QtWebKit/qwebhistoryinterface.sip
 share/sip/QtWebKit/qwebinspector.sip
+share/sip/QtWebKit/qwebkitglobal.sip
 share/sip/QtWebKit/qwebkitversion.sip
 share/sip/QtWebKit/qwebpage.sip
 share/sip/QtWebKit/qwebpluginfactory.sip

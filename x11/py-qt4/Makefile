@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.40 2013/09/10 13:26:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2013/11/08 22:37:43 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	python Qt4 bindings
 COMMENT-docs=	py-qt4 documentation
 
-V=		4.9.5
+V=		4.10.3
 DISTNAME=	PyQt-x11-gpl-${V}
 PKGNAME=	py-qt4-${V}
 PKGNAME-main=	py-qt4-${V}
 PKGNAME-docs=	py-qt4-docs-${V}
 EPOCH=		0
-
-REVISION-main=	0
 
 CATEGORIES=	x11 devel
 

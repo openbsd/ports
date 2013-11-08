@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_py,v 1.11 2012/11/01 22:54:18 sthen Exp $
---- configure.py.orig	Sat Sep 29 12:34:33 2012
-+++ configure.py	Tue Oct 30 21:17:41 2012
-@@ -1191,6 +1191,17 @@ def run_command(cmd, envvars=None):
+$OpenBSD: patch-configure_py,v 1.12 2013/11/08 22:37:43 sthen Exp $
+--- configure.py.orig	Wed Aug 21 06:50:47 2013
++++ configure.py	Fri Nov  8 08:58:17 2013
+@@ -1159,6 +1159,17 @@ def run_command(cmd, envvars=None):
  
      cmd is the command to run.
      """
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure_py,v 1.11 2012/11/01 22:54:18 sthen Exp $
      if opts.verbose:
          sys.stdout.write(cmd + "\n")
  
-@@ -1858,7 +1869,7 @@ Type 'no' to decline the terms of the license.
+@@ -1841,7 +1852,7 @@ Type 'no' to decline the terms of the license.
              sys.stdout.flush()
  
              try:
