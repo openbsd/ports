@@ -1,0 +1,28 @@
+$OpenBSD: patch-config_mk,v 1.1.1.1 2013/11/08 18:17:14 jung Exp $
+--- config.mk.orig	Sat Oct 19 16:51:43 2013
++++ config.mk	Sat Oct 19 16:53:29 2013
+@@ -4,17 +4,16 @@ VERSION = 0.5
+ # Customize below to fit your system
+ 
+ # paths
+-TARGET = sltar
+-PREFIX = /usr/local
+-MANPREFIX = ${PREFIX}/share/man
++PREFIX ?= /usr/local
++MANPREFIX = ${PREFIX}/man
+ 
+ # includes and libs
+-INCS = -I. -I/usr/include
+-LIBS = -L/usr/lib -lc
++INCS = -I${PREFIX}/include
++LIBS = -L${PREFIX}/lib
+ 
+ # flags
+-CFLAGS = -static -Os -g -Wall -Werror ${INCS} -DVERSION=\"${VERSION}\"
+-LDFLAGS = -g ${LIBS}
++CFLAGS += -O0 -Wall -Werror ${INCS} -DVERSION=\"${VERSION}\"
++LDFLAGS += ${LIBS}
+ 
+ # compiler and linker
+-CC = cc
++CC ?= cc
