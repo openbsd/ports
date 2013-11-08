@@ -1,12 +1,12 @@
-$OpenBSD: patch-mk-mk_in,v 1.1 2013/11/07 03:34:58 william Exp $
---- mk-mk.in.orig	Sat Oct 12 18:39:56 2013
-+++ mk-mk.in	Sat Oct 12 18:40:02 2013
+$OpenBSD: patch-mk-mk_in,v 1.2 2013/11/08 01:31:34 william Exp $
+--- mk-mk.in.orig	Sat Oct 19 16:19:39 2013
++++ mk-mk.in	Thu Nov  7 07:16:49 2013
 @@ -16,7 +16,7 @@ EXT_CFLAGS = -std=c89 -O2 -g \
  
  .SUFFIXES: .o .c .y
  .c.o:
--	@echo CC $<; $(CC) $(CFLAGS) $(INCLUDES) -c $<
-+	$(CC) $(CFLAGS) $(INCLUDES) -c $<
+-	@echo CC $(<); $(CC) $(CFLAGS) $(INCLUDES) -c $(<)
++	$(CC) $(CFLAGS) $(INCLUDES) -c $(<)
  .c .y: ;
  
  all: echoes $(UAGENT)
