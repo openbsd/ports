@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/03/27 18:16:23 rpointel Exp $
-lib/python${MODPY_VERSION}/site-packages/PyQt4/
+@comment $OpenBSD: PLIST,v 1.2 2013/11/08 22:38:14 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/PyQt4/Qsci.so
-lib/qt4/qsci/api/python/QScintilla2.api
-share/sip/
+lib/qt4/api/
+lib/qt4/api/python/
+lib/qt4/api/python/QScintilla2.api
 share/sip/Qsci/
 share/sip/Qsci/qsciabstractapis.sip
 share/sip/Qsci/qsciapis.sip
@@ -47,6 +47,7 @@ share/sip/Qsci/qscilexeryaml.sip
 share/sip/Qsci/qscimacro.sip
 share/sip/Qsci/qscimod3.sip
 share/sip/Qsci/qscimod4.sip
+share/sip/Qsci/qscimod5.sip
 share/sip/Qsci/qscimodcommon.sip
 share/sip/Qsci/qsciprinter.sip
 share/sip/Qsci/qsciscintilla.sip
