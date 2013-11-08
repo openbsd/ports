@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2013/10/14 21:23:32 juanfra Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2013/11/08 20:34:32 juanfra Exp $
 
 # This directory contain every lzip project.
 # lzd isn't included due to the educational purpose of this and the author
@@ -10,10 +10,12 @@ MAINTAINER =		Juan Francisco Cantero Hurtado <iam@juanfra.info>
 
 MASTER_SITES ?=		${MASTER_SITE_SAVANNAH:=lzip/} \
 			${MASTER_SITE_SAVANNAH:=lzip/old/}
+# Upstream also releases the tarballs compressed with gz but to use the
+# lz version of the tarballs for the lzip project give us a quick and simple
+# test to detect problems with the lzip format on every OpenBSD platform.
+EXTRACT_SUFX ?=		.tar.lz
 
 DIST_SUBDIR =		lzip
-
-USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	CC="${CC}" CXX="${CXX}" \
@@ -23,5 +25,9 @@ CONFIGURE_ARGS +=	CC="${CC}" CXX="${CXX}" \
 			--prefix=${PREFIX} \
 			--infodir=${PREFIX}/info \
 			--mandir=${PREFIX}/man
+
+.ifndef DEBUG
+INSTALL_TARGET ?=	install-strip
+.endif
 
 TEST_TARGET =		check

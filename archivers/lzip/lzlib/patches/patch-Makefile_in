@@ -1,10 +1,55 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2013/10/14 21:23:34 juanfra Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2013/11/08 20:34:32 juanfra Exp $
 
-Backport from lzlib-1.6-pre1.
+ldconfig changes backported from lzlib-1.6-pre1.
 
---- Makefile.in.orig	Sun Sep 15 01:22:37 2013
-+++ Makefile.in	Tue Oct  8 18:04:59 2013
-@@ -93,9 +93,8 @@ install-bin : all
+--- Makefile.in.orig	Sat Sep 14 19:22:37 2013
++++ Makefile.in	Thu Nov  7 00:38:42 2013
+@@ -7,6 +7,7 @@ INSTALL_DATA = $(INSTALL) -p -m 644
+ INSTALL_DIR = $(INSTALL) -d -m 755
+ LDCONFIG = /sbin/ldconfig
+ SHELL = /bin/sh
++disable_ldconfig = yes
+ 
+ objs = carg_parser.o main.o
+ 
+@@ -20,14 +21,14 @@ all : $(progname) $(progname_shared)
+ lib$(libname).a : lzlib.o
+ 	$(AR) -rcs $@ $<
+ 
+-lib$(libname).so.$(pkgversion) : lzlib_sh.o
+-	$(CC) -shared -Wl,--soname=lib$(libname).so.$(soversion) -o $@ $<
++lib$(libname).so.$(LIBlz_VERSION) : lzlib_sh.o
++	$(CC) -shared -fPIC -o $@ $<
+ 
+ $(progname) : $(objs) lib$(libname).a
+ 	$(CC) $(LDFLAGS) -o $@ $(objs) lib$(libname).a
+ 
+-$(progname)_shared : $(objs) lib$(libname).so.$(pkgversion)
+-	$(CC) $(LDFLAGS) -o $@ $(objs) lib$(libname).so.$(pkgversion)
++$(progname)_shared : $(objs) lib$(libname).so.$(LIBlz_VERSION)
++	$(CC) $(LDFLAGS) -o $@ $(objs) lib$(libname).so.$(LIBlz_VERSION)
+ 
+ $(progname)_profiled : $(objs) lib$(libname).a
+ 	$(CC) $(LDFLAGS) -pg -o $@ $(objs) lib$(libname).a
+@@ -45,7 +46,7 @@ main.o : main.c
+ 	$(CC) $(CPPFLAGS) $(CFLAGS) -c -o $@ $<
+ 
+ lzlib_sh.o : lzlib.c
+-	$(CC) -fpic -fPIC $(CPPFLAGS) $(CFLAGS) -c -o $@ $<
++	$(CC) -fPIC $(CPPFLAGS) $(CFLAGS) -c -o $@ $<
+ 
+ lzdeps = lzlib.h lzip.h cbuffer.c decoder.h decoder.c encoder.h encoder.c
+ 
+@@ -84,7 +85,7 @@ install-bin : all
+ 	$(INSTALL_DATA) $(VPATH)/$(libname)lib.h "$(DESTDIR)$(includedir)/$(libname)lib.h"
+ 	$(INSTALL_DATA) ./lib$(libname).a "$(DESTDIR)$(libdir)/lib$(libname).a"
+ 	if [ -n "$(progname_shared)" ] ; then \
+-	  $(INSTALL_PROGRAM) ./lib$(libname).so.$(pkgversion) "$(DESTDIR)$(libdir)/lib$(libname).so.$(pkgversion)" ; \
++	  $(INSTALL_PROGRAM) ./lib$(libname).so.$(LIBlz_VERSION) "$(DESTDIR)$(libdir)/lib$(libname).so.$(LIBlz_VERSION)" ; \
+ 	  if [ -e "$(DESTDIR)$(libdir)/lib$(libname).so.$(soversion)" ] ; then \
+ 	    rm -f "$(DESTDIR)$(libdir)/lib$(libname).so.$(soversion)" ; \
+ 	    run_ldconfig=no ; \
+@@ -93,9 +94,8 @@ install-bin : all
  	  if [ -e "$(DESTDIR)$(libdir)/lib$(libname).so" ] ; then \
  	    rm -f "$(DESTDIR)$(libdir)/lib$(libname).so" ; \
  	  fi ; \
@@ -16,3 +61,12 @@ Backport from lzlib-1.6-pre1.
  	fi
  
  install-info :
+@@ -124,7 +124,7 @@ uninstall-bin :
+ 	-rm -f "$(DESTDIR)$(libdir)/lib$(libname).a"
+ 	-rm -f "$(DESTDIR)$(libdir)/lib$(libname).so"
+ 	-rm -f "$(DESTDIR)$(libdir)/lib$(libname).so.$(soversion)"
+-	-rm -f "$(DESTDIR)$(libdir)/lib$(libname).so.$(pkgversion)"
++	-rm -f "$(DESTDIR)$(libdir)/lib$(libname).so.$(LIBlz_VERSION)"
+ 
+ uninstall-info :
+ 	-install-info --info-dir="$(DESTDIR)$(infodir)" --remove "$(DESTDIR)$(infodir)/$(pkgname).info"
