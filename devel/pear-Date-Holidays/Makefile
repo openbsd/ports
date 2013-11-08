@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/06/12 13:35:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2013/11/08 02:13:08 sthen Exp $
 
 SUBDIR += pear-Date-Holidays
 SUBDIR += Australia
@@ -20,6 +20,7 @@ SUBDIR += Norway
 SUBDIR += PHPdotNet
 SUBDIR += Portugal
 SUBDIR += Romania
+SUBDIR += Russia
 SUBDIR += SanMarino
 SUBDIR += Serbia
 SUBDIR += Slovenia
