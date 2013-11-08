@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/10/01 00:48:22 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/11/08 22:49:44 bcallah Exp $
 bin/livestreamer
 lib/python${MODPY_VERSION}/site-packages/livestreamer/
 lib/python${MODPY_VERSION}/site-packages/livestreamer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -63,12 +63,16 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer/plugin/plugin.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/__init__.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/afreecatv.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/afreecatv.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/alieztv.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/alieztv.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/azubutv.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/azubutv.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/cast3d.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/cast3d.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/common_swf.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/common_swf.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/dailymotion.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/dailymotion.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/euronews.py
@@ -130,6 +134,8 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/hds.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/hds.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/hls.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/hls.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/hls_playlist.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/hls_playlist.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/http.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/http.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/playlist.py
