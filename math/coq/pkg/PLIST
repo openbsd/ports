@@ -1,20 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/01/04 11:07:29 chrisz Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/11/08 23:11:48 sthen Exp $
 %%SHARED%%
 %%native%%
-bin/coq-tex
-bin/coq_makefile
-bin/coqc
+@bin bin/coq-tex
+@bin bin/coq_makefile
+@bin bin/coqc
 bin/coqchk
 bin/coqchk.byte
-bin/coqdep
-bin/coqdoc
+@bin bin/coqdep
+@bin bin/coqdoc
 bin/coqide
 bin/coqide.byte
-bin/coqmktop
+@bin bin/coqmktop
 bin/coqtop
 bin/coqtop.byte
-bin/coqwc
-bin/gallina
+@bin bin/coqwc
+@bin bin/gallina
 lib/coq/
 lib/coq/config/
 lib/coq/config/coq_config.cmi
@@ -269,7 +269,7 @@ lib/coq/plugins/micromega/ZCoeff.vo
 lib/coq/plugins/micromega/ZMicromega.vo
 lib/coq/plugins/micromega/certificate.cmi
 lib/coq/plugins/micromega/coq_micromega.cmi
-lib/coq/plugins/micromega/csdpcert
+@bin lib/coq/plugins/micromega/csdpcert
 lib/coq/plugins/micromega/g_micromega.cmi
 lib/coq/plugins/micromega/mfourier.cmi
 lib/coq/plugins/micromega/micromega.cmi

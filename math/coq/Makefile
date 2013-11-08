@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2013/05/16 09:16:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2013/11/08 23:11:48 sthen Exp $
 
 COMMENT=		proof assistant based on a typed lambda calculus
 
-V=			8.4pl1
+V=			8.4pl2
 DISTNAME=		coq-$V
-REVISION=		0
+
 CATEGORIES=		math
 HOMEPAGE=		http://coq.inria.fr/
 

@@ -1,6 +1,19 @@
-$OpenBSD: patch-Makefile_build,v 1.2 2013/02/07 09:43:15 chrisz Exp $
---- Makefile.build.orig	Mon Oct 29 15:46:37 2012
-+++ Makefile.build	Sat Feb  2 18:06:08 2013
+$OpenBSD: patch-Makefile_build,v 1.3 2013/11/08 23:11:48 sthen Exp $
+
+Remove the -silent flag to see what the validation suite is doing as it
+runs for eons.
+
+--- Makefile.build.orig	Mon Oct 29 10:46:37 2012
++++ Makefile.build	Sun Apr  7 14:14:26 2013
+@@ -381,7 +381,7 @@ install-ide-info:
+ 
+ .PHONY: validate check test-suite $(ALLSTDLIB).v
+ 
+-VALIDOPTS=-silent -o -m
++VALIDOPTS=-o -m
+ 
+ validate:: $(BESTCHICKEN) $(ALLVO)
+ 	$(SHOW)'COQCHK <theories & plugins>'
 @@ -612,7 +612,7 @@ install-binaries:: install-$(BEST)  install-tools
  
  install-byte::
