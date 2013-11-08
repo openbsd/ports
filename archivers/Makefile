@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2013/10/14 21:29:11 juanfra Exp $
+# $OpenBSD: Makefile,v 1.63 2013/11/08 18:19:54 jung Exp $
 
      SUBDIR =
      SUBDIR += arc
@@ -47,6 +47,7 @@
      SUBDIR += ripole
      SUBDIR += ruby-archive-tar-minitar
      SUBDIR += rzip
+     SUBDIR += sltar
      SUBDIR += star
      SUBDIR += star,static
      SUBDIR += ucl
