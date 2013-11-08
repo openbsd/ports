@@ -1,0 +1,23 @@
+$OpenBSD: patch-sip_kdeui_highlighter_sip,v 1.1 2013/11/08 22:40:10 sthen Exp $
+
+From 63a75c5131b44d4a1af6771fab119574e06fb8a0 Mon Sep 17 00:00:00 2001
+From: Simon Edwards <simon@simonzone.com>
+Date: Sun, 8 Sep 2013 20:45:57 +0200
+Subject: [PATCH] Make it work on the latest SIP and PyQt versions.
+
+https://bugs.kde.org/show_bug.cgi?id=323899
+
+--- sip/kdeui/highlighter.sip.orig	Fri Jun 28 18:16:04 2013
++++ sip/kdeui/highlighter.sip	Fri Nov  8 11:31:46 2013
+@@ -70,6 +70,11 @@ signals: (private)
+ public:
+     ~Highlighter ();
+     bool                    checkerEnabledByDefault () const;
++//force
++private:
++        virtual void connectNotify(const char* signal);
++        virtual void disconnectNotify(const char* signal);
++//end
+ };
+ // Highlighter
+ 

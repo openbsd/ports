@@ -1,12 +1,36 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2013/04/24 18:42:20 zhuk Exp $
---- CMakeLists.txt.orig	Wed Dec 19 18:37:32 2012
-+++ CMakeLists.txt	Wed Dec 19 18:39:07 2012
-@@ -8,6 +8,8 @@ include(KDE4Defaults)
- include(MacroLibrary)
- include(PythonMacros)
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2013/11/08 22:40:10 sthen Exp $
+--- CMakeLists.txt.orig	Fri Nov  8 11:31:54 2013
++++ CMakeLists.txt	Fri Nov  8 11:31:46 2013
+@@ -18,6 +18,8 @@ include(FeatureSummary)
+ 
+ option(PYKDEUIC4_ALTINSTALL "Enable parallel-installation of the PyKDE4 tools" FALSE)
  
 +set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${KDE4_ENABLE_EXCEPTIONS}")
 +
  set(CMAKE_MODULE_PATH ${pykde4_SOURCE_DIR}/cmake/modules ${CMAKE_MODULE_PATH})
  
- macro_log_feature(KDE4_FOUND "KDE libraries" "The KDE Development Platform" "kdelibs"
+ find_package(PythonLibrary)
+@@ -114,20 +116,20 @@ set(SIP_DISABLE_FEATURES VendorID PyQt_NoPrintRangeBug
+ if (PYTHON_VERSION_MAJOR GREATER 2)
+     if(PYQT4_VERSION STRGREATER "040904")
+ 	    # Disable for newer PyQt
+-	    set(SIP_EXTRA_OPTIONS -g -x PyKDE_QVector)
++	    set(SIP_EXTRA_OPTIONS -P -g -x PyKDE_QVector)
+     else ()
+ 	    set(SIP_EXTRA_OPTIONS -g)
+     endif()
+ else (PYTHON_VERSION_MAJOR GREATER 2)
+     if(PYQT4_VERSION STRGREATER "040904")
+ 	# Disable for newer PyQt
+-    	set(SIP_EXTRA_OPTIONS -g -x PyKDE_QVector -x Py_v3)
++    	set(SIP_EXTRA_OPTIONS -P -g -x PyKDE_QVector -x Py_v3)
+     else ()
+ 	    set(SIP_EXTRA_OPTIONS -g -x Py_v3)
+     endif()
+ endif ()
+ 
+-add_definitions(-D_REENTRANT -DQT_CORE_LIB -DQT_GUI_LIB -DUSING_SOPRANO_NRLMODEL_UNSTABLE_API)
++add_definitions(-D_REENTRANT -DQT_CORE_LIB -DQT_GUI_LIB -DUSING_SOPRANO_NRLMODEL_UNSTABLE_API -DSIP_PROTECTED_IS_PUBLIC -Dprotected=public)
+ 
+ file(GLOB kdecore_files_sip sip/kdecore/*.sip)
+ set(SIP_EXTRA_FILES_DEPEND ${kdecore_files_sip})

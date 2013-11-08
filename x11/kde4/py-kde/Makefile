@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2013/07/04 00:46:56 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2013/11/08 22:40:10 sthen Exp $
 
 COMMENT =	KDE 4 bindings for Python
 DISTNAME =	pykde4-${MODKDE4_VERSION}
 PKGNAME =	py-kde-${MODKDE4_VERSION}
+REVISION =	0
 
 MODULES =	lang/python
 
@@ -44,5 +45,8 @@ LIB_DEPENDS = 	databases/soprano>=${MIN_SOPRANO_VERSION}
 # for Polkit-Qt, is probably the one who said that
 # 640 kilobytes ought to be enough for everybody.
 CONFIGURE_ARGS =	-DWITH_PolkitQt:Bool=FALSE
+
+post-install:
+	find ${PREFIX} -name '*.orig' -exec rm {} +
 
 .include <bsd.port.mk>
