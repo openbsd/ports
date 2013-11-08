@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_py,v 1.1 2013/11/08 22:54:29 sthen Exp $
+
+>>> print apsw.sqlite3_sourceid()
+OpenBSD
+
+--- tests.py.orig	Fri Nov  8 22:50:49 2013
++++ tests.py	Fri Nov  8 22:50:51 2013
+@@ -402,7 +402,7 @@ class APSW(unittest.TestCase):
+         apsw.SQLITE_FCNTL_SIZE_HINT
+         apsw.mapping_file_control["SQLITE_FCNTL_SIZE_HINT"]==apsw.SQLITE_FCNTL_SIZE_HINT
+         apsw.URIFilename
+-        self.assertTrue(len(apsw.sqlite3_sourceid())>10)
++        self.assertTrue(len(apsw.sqlite3_sourceid())>=7)
+ 
+     def testConnection(self):
+         "Test connection opening"
