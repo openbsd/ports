@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_Crypto_Hash___init___py,v 1.5 2012/05/25 12:13:01 jasper Exp $
+$OpenBSD: patch-lib_Crypto_Hash___init___py,v 1.6 2013/11/08 15:26:05 ajacoutot Exp $
 
-(Patch with reduced context as otherwise $Id: patch-lib_Crypto_Hash___init___py,v 1.5 2012/05/25 12:13:01 jasper Exp $ would get expanded.)
+Patch with reduced context as otherwise CVS Id would get expanded.
 
 *** lib/Crypto/Hash/__init__.py.orig	Thu May 24 14:55:30 2012
 --- lib/Crypto/Hash/__init__.py	Fri May 25 14:09:50 2012
