@@ -1,0 +1,37 @@
+$OpenBSD: patch-src_configfile_c,v 1.5 2013/11/08 21:39:43 brad Exp $
+
+Fix SNI handling; only use key+cert from SNI specific config. CVE-2013-4508
+
+--- src/configfile.c.orig	Fri Aug 30 08:19:54 2013
++++ src/configfile.c	Fri Nov  8 16:17:55 2013
+@@ -339,9 +339,13 @@ int config_setup_connection(server *srv, connection *c
+ 
+ 	PATCH(ssl_pemfile);
+ #ifdef USE_OPENSSL
+-	PATCH(ssl_ctx);
++	PATCH(ssl_pemfile_x509);
++	PATCH(ssl_pemfile_pkey);
+ #endif
+ 	PATCH(ssl_ca_file);
++#ifdef USE_OPENSSL
++	PATCH(ssl_ca_file_cert_names);
++#endif
+ 	PATCH(ssl_cipher_list);
+ 	PATCH(ssl_dh_file);
+ 	PATCH(ssl_ec_curve);
+@@ -409,10 +413,14 @@ int config_patch_connection(server *srv, connection *c
+ 			} else if (buffer_is_equal_string(du->key, CONST_STR_LEN("ssl.pemfile"))) {
+ 				PATCH(ssl_pemfile);
+ #ifdef USE_OPENSSL
+-				PATCH(ssl_ctx);
++				PATCH(ssl_pemfile_x509);
++				PATCH(ssl_pemfile_pkey);
+ #endif
+ 			} else if (buffer_is_equal_string(du->key, CONST_STR_LEN("ssl.ca-file"))) {
+ 				PATCH(ssl_ca_file);
++#ifdef USE_OPENSSL
++				PATCH(ssl_ca_file_cert_names);
++#endif
+ 			} else if (buffer_is_equal_string(du->key, CONST_STR_LEN("ssl.honor-cipher-order"))) {
+ 				PATCH(ssl_honor_cipher_order);
+ 			} else if (buffer_is_equal_string(du->key, CONST_STR_LEN("ssl.empty-fragments"))) {
