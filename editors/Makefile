@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2013/11/09 13:54:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.104 2013/11/09 14:09:38 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += abiword
@@ -67,7 +67,6 @@
      SUBDIR += xemacs21
      SUBDIR += xemacs21-sumo
      SUBDIR += xemacs21-sumo,mule
-     SUBDIR += xinha
      SUBDIR += xwpe
      SUBDIR += zile
 
