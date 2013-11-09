@@ -1,0 +1,29 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2013/11/09 01:43:12 bcallah Exp $
+
+COMMENT =	terminal wrapper for creating drop-down consoles
+
+DISTNAME =	yeahconsole-0.3.4
+CATEGORIES =	x11
+
+HOMEPAGE =	http://phrat.de/yeahtools.html
+MAINTAINER =	Kent R. Spillner <kspillner@acm.org>
+
+# GPLv2+
+PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB += c X11
+
+MASTER_SITES =	http://phrat.de/
+NO_TEST =	Yes
+ALL_TARGET =	yeahconsole
+
+MAKE_FLAGS +=	CC="${CC}" FLAGS="${CFLAGS}" \
+		INCLUDES="-I${X11BASE}/include" \
+		LIB_DIRS="-L${X11BASE}/lib"
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/yeahconsole ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/yeahconsole
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/yeahconsole/
+
+.include <bsd.port.mk>
