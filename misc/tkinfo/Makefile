@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2013/10/11 23:50:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2013/11/09 18:22:02 zhuk Exp $
 
 COMMENT =	read and display GNU info files in Tk
 
 DISTNAME =	tkinfo-2.8
-REVISION =	1
+REVISION =	2
 CATEGORIES =	misc 
 HOMEPAGE =	http://math-www.uni-paderborn.de/~axel/tkinfo/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>

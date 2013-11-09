@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/11/09 18:22:02 zhuk Exp $
 
 COMMENT =		high-level widget set for Tcl/Tk
 
@@ -17,6 +17,7 @@ TEST_FLAGS +=	TCLLIBPATH="${WRKSRC}"
 TEST_IS_INTERACTIVE =X11
 NO_BUILD =		Yes
 PKG_ARCH =		*
+REVISION =		0
 
 BW_LIB_DIR =		${PREFIX}/lib/tcl/bwidget
 BW_DOC_DIR =		${PREFIX}/share/doc/bwidget

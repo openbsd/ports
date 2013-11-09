@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:23:57 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/11/09 18:22:02 zhuk Exp $
 
 COMMENT=	publishing and presentation tool
 
 VERSION=	1.1b9
 DISTNAME=	impress-${VERSION}
-REVISION=	0
+REVISION=	1
 DISTFILES=	imp${VERSION}.tar.gz
 CATEGORIES=	misc
 

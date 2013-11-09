@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 10:50:31 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/11/09 18:22:02 zhuk Exp $
 
 COMMENT =	Tcl Standard Library
 
@@ -17,6 +17,7 @@ RUN_DEPENDS =	${MODTCL_RUN_DEPENDS}
 USE_GROFF =	Yes
 NO_BUILD =	Yes
 PKG_ARCH =	*
+REVISION =	0
 
 SCRIPTS_TCLSH_APPS = \
 	dtplite page nns nnsd nnslog tcldocstrip

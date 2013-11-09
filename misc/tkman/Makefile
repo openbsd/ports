@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/11 11:23:58 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2013/11/09 18:22:02 zhuk Exp $
 
 COMMENT =	Tcl/Tk-based manual browser
 
 DISTNAME =	tkman-2.2
+REVISION =	0
 CATEGORIES =	misc 
 HOMEPAGE =	http://www.sourceforge.net/projects/tkman
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>

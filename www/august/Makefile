@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/13 21:44:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2013/11/09 18:22:02 zhuk Exp $
 
 COMMENT=	html editor designed for the experienced web designer
 
 DISTNAME=	august0.63b.src
 PKGNAME=	august-0.63b
-REVISION=	1
+REVISION=	2
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.erjobe.info/index.php?n=Main.August

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:35:45 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/11/09 18:22:02 zhuk Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		XMPP client with whiteboard
 
-REVISION =		3
+REVISION =		4
 DISTNAME =		Coccinella-0.96.20Binfree
 PKGNAME =		${DISTNAME:S/Binfree$//:L}
 CATEGORIES =		net

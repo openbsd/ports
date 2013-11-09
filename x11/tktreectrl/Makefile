@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/11/09 18:22:03 zhuk Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		tree widget extension for Tk
 DISTNAME =		tktreectrl-2.4.1
+REVISION =		0
 EPOCH =			0
 SHARED_LIBS =		treectrl24 0.0
 CATEGORIES =		x11

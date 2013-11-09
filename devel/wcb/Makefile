@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:31 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/11/09 18:22:02 zhuk Exp $
 
 COMMENT =	widget callback package for Tcl/Tk
 
@@ -18,6 +18,7 @@ RUN_DEPENDS =	${MODTK_RUN_DEPENDS}
 NO_BUILD =	Yes
 NO_TEST =	Yes
 PKG_ARCH =	*
+REVISION =	0
 SUBST_VARS =	TK_EXA_DIR
 
 TK_EXA_DIR =	${LOCALBASE}/share/examples/tk${MODTK_VERSION}

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/16 13:25:21 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2013/11/09 18:22:02 zhuk Exp $
 
 COMMENT =	substantially more useful ls
 DISTNAME =	sl-ls-1.1.2
+REVISION =	0
 CATEGORIES =	productivity sysutils
 
 HOMEPAGE =	http://practicalthought.com/sl/
@@ -21,8 +22,7 @@ NO_BUILD =	Yes
 NO_TEST =	Yes
 
 pre-configure:
-# XXX: Use ${MODTCL_TCLSH_ADJ} someday
-	perl -pi -e s,/usr/bin/tclsh,${PREFIX}/bin/tclsh${MODTCL_VERSION},g ${WRKSRC}/sl
+	${MODTCL_TCLSH_ADJ} ${WRKSRC}/sl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/sl ${PREFIX}/bin

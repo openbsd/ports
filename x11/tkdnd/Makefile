@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/11/09 18:22:02 zhuk Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	drag n drop extension for Tk
 
-REVISION =	1
+REVISION =	2
 DISTNAME =	tkdnd-1.0a2
 SHARED_LIBS =	tkdnd 0.0
 CATEGORIES =	x11

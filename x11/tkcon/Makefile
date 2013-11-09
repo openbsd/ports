@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/11/09 18:22:02 zhuk Exp $
 
 COMMENT =		enhanced Tk console
 
 DISTNAME =		tkcon-2.5
-REVISION =		0
+REVISION =		1
 CATEGORIES =		x11 x11/tk
 HOMEPAGE =		http://sourceforge.net/projects/tkcon/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>

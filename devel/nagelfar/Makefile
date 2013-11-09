@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:12 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/11/09 18:22:02 zhuk Exp $
 
 COMMENT =	syntax analysis tool for Tcl
 
@@ -18,6 +18,7 @@ RUN_DEPENDS =	${MODTK_RUN_DEPENDS}
 NO_BUILD =	Yes
 NO_TEST =	Yes
 PKG_ARCH =	*
+REVISION =	0
 
 NF_LIB_DIR =	${PREFIX}/libdata/nagelfar
 NF_DOC_DIR =	${PREFIX}/share/doc/nagelfar

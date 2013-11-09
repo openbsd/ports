@@ -1,4 +1,4 @@
-# $OpenBSD: tcl.port.mk,v 1.14 2013/02/02 11:15:33 stu Exp $
+# $OpenBSD: tcl.port.mk,v 1.15 2013/11/09 18:22:02 zhuk Exp $
 
 CATEGORIES +=		lang/tcl
 
@@ -33,14 +33,15 @@ MODTCL_WANTLIB ?= 	${MODTCL_LIB}
 # See http://wiki.tcl.tk/812 for more information.
 
 # Set 'tclsh' for executable scripts (in-place modification).
+# Do not convert (tcl|wi)sh to (tclsh|wish), or the MODTCL_WISH_ADJ
+# macro below will be broken.
 MODTCL_TCLSH_ADJ =	perl -pi \
-			-e '$$. == 1 && s!env (tclsh|wish).*$$!env tclsh${MODTCL_VERSION}!;' \
-			-e '$$. >= 3 && $$. <= 30 && s!exec (tclsh|wish).*$$!exec tclsh${MODTCL_VERSION} "\$$0" \$${1+"\$$@"}!;' \
-			-e 'close ARGV if eof;'
+	-e '$$. == 1 && s!/\S*(?:/env\s+|bin/)(?:tcl|wi)sh\S*(\s+.+)?$$!${MODTCL_BIN}$$1!;' \
+	-e '$$. >= 3 && $$. <= 30 && s!exec\s+(?:tcl|wi)sh.*$$!exec ${MODTCL_BIN} "\$$0" \$${1+"\$$@"}!;' \
+	-e 'close ARGV if eof;'
 
-# Set 'wish' for executable scripts (in-place modification).
-MODTCL_WISH_ADJ =	${MODTCL_TCLSH_ADJ:S/tclsh${MODTCL_VERSION}/wish${MODTCL_VERSION}/}
 
+# Same for 'wish'. Note the 'g' modifier.
+MODTCL_WISH_ADJ =	${MODTCL_TCLSH_ADJ:S/tclsh/wish/}
 
 SUBST_VARS +=		MODTCL_VERSION MODTCL_BIN
-

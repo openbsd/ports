@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:10:51 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/11/09 18:22:02 zhuk Exp $
 
 COMMENT =	tool for exploring the color space and relations
 
 DISTNAME =	ColorExplorer-1.8
-REVISION =	1
+REVISION =	2
 CATEGORIES =	graphics
 HOMEPAGE =	http://billposer.org/Software/ColorExplorer.html
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>

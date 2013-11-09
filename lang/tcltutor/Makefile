@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2013/11/09 18:22:02 zhuk Exp $
 
 COMMENT =	learn Tcl interactively
 
@@ -18,6 +18,7 @@ NO_BUILD =	Yes
 NO_TEST =	Yes
 WRKDIST =	${WRKDIR}/TclTutor
 PKG_ARCH =	*
+REVISION =	0
 SUBST_VARS +=	TT_LIB_DIR TT_LSN_DIR
 
 TT_LIB_DIR =	${PREFIX}/libdata/tcltutor

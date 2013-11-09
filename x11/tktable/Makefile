@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/11 11:46:16 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/11/09 18:22:03 zhuk Exp $
 
 COMMENT =		table/matrix widget extension to Tcl/Tk
 
@@ -6,7 +6,7 @@ DOTVER =		2.10
 VER =			${DOTVER:S/.//}
 DISTNAME =		Tktable${DOTVER}
 PKGNAME =		Tktable-${DOTVER}
-REVISION =		1
+REVISION =		2
 SHARED_LIBS =		Tktable${VER} 0.0
 CATEGORIES =		x11
 HOMEPAGE =		http://tktable.sourceforge.net/

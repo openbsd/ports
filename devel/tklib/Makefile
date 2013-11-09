@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2013/07/19 15:18:09 stu Exp $
+# $OpenBSD: Makefile,v 1.10 2013/11/09 18:22:02 zhuk Exp $
 
 COMMENT =	Tk Standard Library
 
 DISTNAME =	tklib-0.5
-REVISION =	1
+REVISION =	2
 CATEGORIES =	devel x11/tk
 HOMEPAGE =	http://sourceforge.net/projects/tcllib/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>

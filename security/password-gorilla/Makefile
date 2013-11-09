@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2013/08/07 21:58:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2013/11/09 18:22:02 zhuk Exp $
 
 COMMENT =	cross-platform password manager
 
 V =		1.5.3.6.3
-REVISION =	0
+REVISION =	1
 DISTNAME =	zdia-gorilla-v${V}-0-gfc80d95
 PKGNAME =	password-gorilla-${V}
 CATEGORIES =	security

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:11 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/11/09 18:22:02 zhuk Exp $
 
 COMMENT =	multi-entry widget package for Tcl/Tk
 
@@ -18,6 +18,7 @@ RUN_DEPENDS =	devel/wcb
 NO_BUILD =	Yes
 NO_TEST =	Yes
 PKG_ARCH =	*
+REVISION =	0
 
 MT_LIB_DIR =	${PREFIX}/lib/tcl/$N
 MT_DOC_DIR =	${PREFIX}/share/doc/$N
