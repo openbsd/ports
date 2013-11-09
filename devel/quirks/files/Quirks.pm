@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.99 2013/09/25 07:57:38 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.100 2013/11/09 16:17:49 brad Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -324,7 +324,6 @@ my $stem_extensions = {
 	'php-sqlite' => 'php',
 	'thttpd' => 'sthttpd',
 	'pecl-fileinfo' => 'php',
-	'thttpd' => 'sthttpd',
 	'dbus-python' => 'py-dbus',
 	'libungif' => 'giflib',
 };
