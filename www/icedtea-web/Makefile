@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2013/10/07 18:55:48 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2013/11/09 08:33:17 landry Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	Java web browser plugin
 DISTNAME =	icedtea-web-1.4.1
 CATEGORIES =	www
+REVISION =	0
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
@@ -17,8 +18,6 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-jdk-home=${LOCALBASE}/jdk-1.7.0 \
 			--disable-docs \
 			--libdir=${TRUEPREFIX}/lib/mozilla/plugins
-CONFIGURE_ENV =		MOZILLA_CFLAGS="`pkg-config --cflags xulrunner-plugin`" \
-			MOZILLA_LIBS="`pkg-config --libs xulrunner-plugin`"
 
 MODULES =	java \
 		devel/gettext
@@ -26,7 +25,7 @@ MODULES =	java \
 MODJAVA_VER=	1.7+
 
 BUILD_DEPENDS =	archivers/zip \
-		devel/xulrunner/1.9,-devel
+		devel/xulrunner/24,-devel
 
 USE_GMAKE =	Yes
 LIB_DEPENDS =	devel/glib2
