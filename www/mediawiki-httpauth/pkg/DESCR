@@ -1,4 +1,0 @@
-This extension works with MediaWiki instances setup behind HTTP
-authentication. It pulls usernames from $_SERVER['PHP_AUTH_USER'].
-The extension will then either log the user on to MediaWiki if the
-user name exists in the database or create a new user if it does not.

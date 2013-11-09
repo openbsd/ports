@@ -1,4 +1,0 @@
-edit LocalSettings.php and add:
-
-$wgUseAjax = true;
-require_once( 'extensions/CategoryTree/CategoryTree.php' );
