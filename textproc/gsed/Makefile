@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:42:41 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/11/09 23:19:03 naddy Exp $
 
 COMMENT=		GNU stream editor
 
 DISTNAME=		sed-4.2.2
 PKGNAME=		g${DISTNAME}
+REVISION=		0
 CATEGORIES=		textproc
 MASTER_SITES=		${MASTER_SITE_GNU:=sed/}
 EXTRACT_SUFX=		.tar.bz2
 
-HOMEPAGE=		http://www.gnu.org/software/sed/
+HOMEPAGE=		https://www.gnu.org/software/sed/
 
 MAINTAINER=		Armin Wolfermann <armin@wolfermann.org>
 

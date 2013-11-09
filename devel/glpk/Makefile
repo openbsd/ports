@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/21 08:45:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2013/11/09 23:19:02 naddy Exp $
 
 COMMENT=	GNU Linear Programming Kit
 
 DISTNAME=	glpk-4.44
+REVISION=	0
 SHARED_LIBS=	glpk		6.0	# 29.0
 
 CATEGORIES=	devel
-HOMEPAGE=	http://www.gnu.org/software/glpk/index.html
+HOMEPAGE=	https://www.gnu.org/software/glpk/index.html
 MASTER_SITES=	${MASTER_SITE_GNU:=glpk/}
 
 MAINTAINER=	Okan Demirmen <okan@openbsd.org>

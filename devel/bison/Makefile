@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.49 2013/07/06 03:29:57 brad Exp $
+# $OpenBSD: Makefile,v 1.50 2013/11/09 23:19:02 naddy Exp $
 
 COMMENT=	GNU parser generator
 
 DISTNAME=	bison-2.3
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=bison/}
 
-HOMEPAGE=	http://www.gnu.org/software/bison/
+HOMEPAGE=	https://www.gnu.org/software/bison/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/21 08:45:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2013/11/09 23:19:03 naddy Exp $
 
 COMMENT=	GNU portable threads
 
 DISTNAME=	pth-2.0.7
+REVISION=	0
 SHARED_LIBS=	pth 20.25
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=pth/}
 
-HOMEPAGE=	http://www.gnu.org/software/pth/
+HOMEPAGE=	https://www.gnu.org/software/pth/
 
 PERMIT_PACKAGE_CDROM=	Yes
 

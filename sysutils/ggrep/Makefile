@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:41:30 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2013/11/09 23:19:03 naddy Exp $
 
 COMMENT=	GNU versions of grep pattern matching utilities
 
 DISTNAME=	grep-2.14
 PKGNAME=	g${DISTNAME}
+REVISION=	0
 CATEGORIES=	sysutils
-HOMEPAGE=	http://www.gnu.org/software/grep/grep.html
+HOMEPAGE=	https://www.gnu.org/software/grep/grep.html
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 

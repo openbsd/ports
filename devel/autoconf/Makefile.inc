@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2013/03/11 10:50:01 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2013/11/09 23:19:02 naddy Exp $
 
 # most parts common to all autoconfs actually
 COMMENT ?=	automatically configure source code on many Un*x platforms
@@ -6,7 +6,7 @@ DISTNAME ?=	autoconf-${VERSION}
 CATEGORIES +=	devel
 MASTER_SITES ?=	${MASTER_SITE_GNU:=autoconf/}
 
-HOMEPAGE ?=	http://www.gnu.org/software/autoconf/
+HOMEPAGE ?=	https://www.gnu.org/software/autoconf/
 MAINTAINER ?=	Marc Espie <espie@openbsd.org>
 
 # GPL

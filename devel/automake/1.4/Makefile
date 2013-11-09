@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 10:50:01 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/11/09 23:19:02 naddy Exp $
 
 VERSION=	1.4
 DISTNAME=	automake-${VERSION}-p6
 PKGNAME=	automake-1.4.6
-REVISION=	2
+REVISION=	3
 PKGSPEC=	automake->=${VERSION},<1.5
 
 CONFIGURE_STYLE=gnu

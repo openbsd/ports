@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.32 2013/03/21 08:45:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2013/11/09 23:19:02 naddy Exp $
 
 COMMENT=		GNU dbm
 
 VERSION=		1.10
 DISTNAME=		gdbm-${VERSION}
+REVISION=		0
 CATEGORIES=		databases
 
 SHARED_LIBS +=	gdbm                 4.0      # 4.0
 
-HOMEPAGE=		http://www.gnu.org/software/gdbm/
+HOMEPAGE=		https://www.gnu.org/software/gdbm/
 
 MASTER_SITES=		${MASTER_SITE_GNU:=gdbm/}
 

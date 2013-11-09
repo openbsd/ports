@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/05/02 13:21:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2013/11/09 23:19:03 naddy Exp $
 
 COMMENT=	GNU versions of the diff utilities
 
@@ -6,8 +6,9 @@ VERSION=	3.3
 EXTRACT_SUFX=	.tar.xz
 DISTNAME=	diffutils-${VERSION}
 PKGNAME=	gdiff-${VERSION}
+REVISION=	0
 CATEGORIES=	textproc
-HOMEPAGE=	http://www.gnu.org/software/diffutils/
+HOMEPAGE=	https://www.gnu.org/software/diffutils/
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes

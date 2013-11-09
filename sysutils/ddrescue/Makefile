@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/17 22:00:42 benoit Exp $
+# $OpenBSD: Makefile,v 1.9 2013/11/09 23:19:03 naddy Exp $
 
 COMMENT =		data recovery tool
 
 DISTNAME =		ddrescue-1.16
+REVISION =		0
 
 CATEGORIES =		sysutils
 
-HOMEPAGE =		http://www.gnu.org/software/ddrescue/ddrescue.html
+HOMEPAGE =		https://www.gnu.org/software/ddrescue/ddrescue.html
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes

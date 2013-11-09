@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.16 2013/10/10 02:08:21 brad Exp $
+# $OpenBSD: Makefile,v 1.17 2013/11/09 23:19:02 naddy Exp $
 
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers' GNU gdb
 
 VER=		6.8
 DISTNAME=	gdb-${VER}
 PKGNAME=	avr-gdb-${VER}
-REVISION=	7
+REVISION=	8
 
-HOMEPAGE=	http://www.gnu.org/software/gdb/gdb.html
+HOMEPAGE=	https://www.gnu.org/software/gdb/gdb.html
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=   Yes

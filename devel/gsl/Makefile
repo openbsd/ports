@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.33 2013/09/21 15:57:28 sebastia Exp $
+# $OpenBSD: Makefile,v 1.34 2013/11/09 23:19:02 naddy Exp $
 
 COMMENT=	GNU Scientific Library
 BROKEN-vax =	missing ieeefp.h
 
 DISTNAME=	gsl-1.15
-REVISION=	0
+REVISION=	1
 SHARED_LIBS +=	gslcblas             1.0      # .0.0
 SHARED_LIBS +=	gsl                  12.0     # .16.0
 
 CATEGORIES=	devel
 
-HOMEPAGE=	http://www.gnu.org/software/gsl/
+HOMEPAGE=	https://www.gnu.org/software/gsl/
 
 MAINTAINER=	Can Erkin Acar <canacar@openbsd.org>
 

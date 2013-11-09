@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/21 08:45:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2013/11/09 23:19:03 naddy Exp $
 
 COMMENT =		library for rasterizing 2-D vector graphics
 
 DISTNAME =		libxmi-1.2
+REVISION =		0
 
 SHARED_LIBS +=		xmi	0.0
 
 CATEGORIES =		graphics
 
-HOMEPAGE =		http://www.gnu.org/software/libxmi/
+HOMEPAGE =		https://www.gnu.org/software/libxmi/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes

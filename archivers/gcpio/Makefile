@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/10 22:28:04 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2013/11/09 23:19:01 naddy Exp $
 
 COMMENT=	GNU copy-in/out (cpio)
 
 DISTNAME=	cpio-2.11
 PKGNAME=	g${DISTNAME}
+REVISION=	0
 CATEGORIES=	archivers
 
-HOMEPAGE=	http://www.gnu.org/software/cpio/
+HOMEPAGE=	https://www.gnu.org/software/cpio/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes

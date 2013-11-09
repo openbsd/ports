@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.55 2013/11/02 08:44:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2013/11/09 23:19:03 naddy Exp $
 
 COMMENT=	format files for printing on PostScript printers
 
 DISTNAME=	a2ps-4.14
-REVISION=	7
+REVISION=	8
 
 SHARED_LIBS +=  a2ps                 2.0      # 2.0
 
 CATEGORIES=	print
 
-HOMEPAGE=	http://www.gnu.org/software/a2ps/
+HOMEPAGE=	https://www.gnu.org/software/a2ps/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 

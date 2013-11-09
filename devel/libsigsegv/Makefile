@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/21 08:45:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2013/11/09 23:19:02 naddy Exp $
 
 ONLY_FOR_ARCHS = 	alpha amd64 arm i386 hppa m68k m88k mips64 mips64el powerpc sparc64 sparc sh vax
 
 COMMENT =		library for handling page faults in user mode
 
 DISTNAME =		libsigsegv-2.10
+REVISION =		0
 SHARED_LIBS =		sigsegv 1.0
 CATEGORIES =		devel
 
-HOMEPAGE =		http://www.gnu.org/software/libsigsegv/
+HOMEPAGE =		https://www.gnu.org/software/libsigsegv/
 
 MAINTAINER =		Scott Vokes <vokes.s@gmail.com>
 

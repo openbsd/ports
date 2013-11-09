@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2013/03/21 08:46:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2013/11/09 23:19:03 naddy Exp $
 
 COMMENT=	GNU's Ubiquitous Intelligent Language for Extension
 
 VERSION=	1.8.8
 DISTNAME=	guile-${VERSION}
-REVISION=	0
+REVISION=	1
 SHARED_LIBS=	guile 20.0 \
 		guile-srfi-srfi-1-v-3 3.2 \
 		guile-srfi-srfi-13-14-v-3 3.1 \
@@ -14,7 +14,7 @@ SHARED_LIBS=	guile 20.0 \
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU:=guile/}
 
-HOMEPAGE=	http://www.gnu.org/software/guile/
+HOMEPAGE=	https://www.gnu.org/software/guile/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes

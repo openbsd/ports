@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/16 08:25:55 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2013/11/09 23:19:02 naddy Exp $
 
 COMMENT=		GNU patch
 
 VERSION=		2.7
 DISTNAME=		patch-${VERSION}
 PKGNAME=		gpatch-${VERSION}
+REVISION=		0
 CATEGORIES=		devel
 
-HOMEPAGE=		http://www.gnu.org/software/patch/
+HOMEPAGE=		https://www.gnu.org/software/patch/
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes

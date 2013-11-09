@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 01:30:27 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/11/09 23:19:02 naddy Exp $
 
 COMMENT =		manipulate Unicode strings
 
 DISTNAME =		libunistring-0.9.3
+REVISION =		0
 
 SHARED_LIBS +=		unistring                 0.0 # 1.2
 
 CATEGORIES =		converters
 
-HOMEPAGE =		http://www.gnu.org/software/libunistring/
+HOMEPAGE =		https://www.gnu.org/software/libunistring/
 
 MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 

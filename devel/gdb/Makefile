@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.28 2013/10/28 18:11:06 landry Exp $
+# $OpenBSD: Makefile,v 1.29 2013/11/09 23:19:02 naddy Exp $
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
 
 DISTNAME=	gdb-7.6.1
+REVISION=	0
 
-HOMEPAGE=	http://www.gnu.org/software/gdb/
+HOMEPAGE=	https://www.gnu.org/software/gdb/
 
 MAINTAINER=	Pascal Stumpf <Pascal.Stumpf@cubes.de>
 

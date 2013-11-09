@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.65 2013/03/11 11:23:58 espie Exp $
+# $OpenBSD: Makefile,v 1.66 2013/11/09 23:19:03 naddy Exp $
 # Please adjust www/faq/faq15.html if updating.
 
 COMMENT=	multi-screen window manager
 
 VERSION=	4.0.3
 DISTNAME=	screen-${VERSION}
-REVISION=	3
+REVISION=	4
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU:=screen/}
 
-HOMEPAGE=	http://www.gnu.org/software/screen/
+HOMEPAGE=	https://www.gnu.org/software/screen/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

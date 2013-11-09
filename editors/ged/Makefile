@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2013/06/09 22:19:41 jca Exp $
+# $OpenBSD: Makefile,v 1.5 2013/11/09 23:19:03 naddy Exp $
 
 COMMENT =		GNU version of standard text editor
 
 V =			1.8
 DISTNAME =		ed-${V}
 PKGNAME =		ged-${V}
+REVISION =		0
 
 CATEGORIES =		editors
 
-HOMEPAGE =		http://www.gnu.org/software/ed/
+HOMEPAGE =		https://www.gnu.org/software/ed/
 
 MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 

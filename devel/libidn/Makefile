@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.20 2013/08/06 19:07:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2013/11/09 23:19:02 naddy Exp $
 
 COMMENT=		internationalized string handling
 
 DISTNAME=		libidn-1.28
+REVISION=		0
 
 SHARED_LIBS +=  idn                  17.0     # 17.10
 
 CATEGORIES=		devel
-HOMEPAGE=		http://www.gnu.org/software/libidn/
+HOMEPAGE=		https://www.gnu.org/software/libidn/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/11 11:07:39 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2013/11/09 23:19:03 naddy Exp $
 
 COMMENT =	GNU version of Go
 
 DISTNAME =	gnugo-3.8
+REVISION =	0
 CATEGORIES =	games
 
-HOMEPAGE =	http://www.gnu.org/software/gnugo/
+HOMEPAGE =	https://www.gnu.org/software/gnugo/
 
 PERMIT_PACKAGE_CDROM =	Yes
 

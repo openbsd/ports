@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.39 2013/10/11 23:50:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.40 2013/11/09 23:19:03 naddy Exp $
 
 COMMENT= 	PostScript and PDF previewer
 
 DISTNAME=	gv-3.7.1
-REVISION=	0
+REVISION=	1
 CATEGORIES=	print
 
-HOMEPAGE=	http://www.gnu.org/software/gv/
+HOMEPAGE=	https://www.gnu.org/software/gv/
 
 MASTER_SITES=	${MASTER_SITE_GNU:=gv/}
 

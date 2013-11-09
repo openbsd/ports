@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile.inc,v 1.2 2013/03/11 10:50:01 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2013/11/09 23:19:02 naddy Exp $
 
 COMMENT ?=	GNU Standards-compliant Makefile generator
-HOMEPAGE ?=	http://www.gnu.org/software/automake/
+HOMEPAGE ?=	https://www.gnu.org/software/automake/
 MASTER_SITES ?=	${MASTER_SITE_GNU:=automake/}
 
 SUFFIX ?=	-${VERSION}

@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:41:31 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/11/09 23:19:03 naddy Exp $
 
 COMMENT =		execute jobs in parallel
 
 DISTNAME =		parallel-20130222
+REVISION =		0
 
 CATEGORIES =		sysutils
 
-HOMEPAGE =		http://www.gnu.org/software/parallel/
+HOMEPAGE =		https://www.gnu.org/software/parallel/
 
 MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 

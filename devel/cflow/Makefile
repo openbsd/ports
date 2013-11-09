@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:02 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2013/11/09 23:19:02 naddy Exp $
 
 COMMENT =	analyze C source files and print a call graph
 
 DISTNAME =	cflow-1.4
+REVISION =	0
 CATEGORIES =	devel
 
-HOMEPAGE =	http://www.gnu.org/software/cflow/
+HOMEPAGE =	https://www.gnu.org/software/cflow/
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 

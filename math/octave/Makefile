@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2013/07/07 21:25:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.65 2013/11/09 23:19:03 naddy Exp $
 
 # vax:   no IEEE arithmetic
 # sparc: fPIC version of libgcc.a needed but not available
@@ -8,14 +8,14 @@ COMMENT =	high-level language for numerical computations
 
 VERSION =	3.0.5
 DISTNAME =	octave-${VERSION}
-REVISION =	11
+REVISION =	12
 CATEGORIES =	math
 
 SHARED_LIBS =	cruft		5.0 \
 		octave		5.0 \
 		octinterp	4.0
 
-HOMEPAGE =	http://www.gnu.org/software/octave/
+HOMEPAGE =	https://www.gnu.org/software/octave/
 
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 

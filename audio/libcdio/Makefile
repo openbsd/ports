@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/21 08:45:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2013/11/09 23:19:01 naddy Exp $
 
 COMMENT=	compact disk input and control library
 
 DISTNAME=	libcdio-0.80
-REVISION=	5
+REVISION=	6
 CATEGORIES=	audio devel
 MASTER_SITES=	${MASTER_SITE_GNU:=libcdio/}
 
@@ -15,7 +15,7 @@ SHARED_LIBS=	cdio		0.1 \
 		iso9660++	0.1 \
 		udf		0.1
 
-HOMEPAGE=	http://www.gnu.org/software/libcdio/
+HOMEPAGE=	https://www.gnu.org/software/libcdio/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

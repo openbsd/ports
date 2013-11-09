@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/16 08:25:55 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2013/11/09 23:19:02 naddy Exp $
 
 COMMENT=	generates simple manual pages from program output
 
 DISTNAME=	help2man-1.41.1
+REVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=help2man/}
 
-HOMEPAGE=	http://www.gnu.org/software/help2man/
+HOMEPAGE=	https://www.gnu.org/software/help2man/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:37:53 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/11/09 23:19:03 naddy Exp $
 
 COMMENT=	extensible emacs interface for TeX
 
 DISTNAME=	auctex-11.14
-REVISION=	4
+REVISION=	5
 CATEGORIES=	print
 
-HOMEPAGE=	http://www.gnu.org/software/auctex/
+HOMEPAGE=	https://www.gnu.org/software/auctex/
 
 MAINTAINER=	Rich Cannings <cannings@openbsd.org>
 

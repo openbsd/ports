@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.68 2013/07/20 20:15:56 espie Exp $
+# $OpenBSD: Makefile,v 1.69 2013/11/09 23:19:02 naddy Exp $
 
 COMMENT=	GNU gettext
 
 DISTNAME=	gettext-0.18.2
-REVISION=	3
+REVISION=	4
 SHARED_LIBS +=  intl                 6.0      # .9.2
 SHARED_LIBS +=  asprintf             1.0      # .0.0
 SHARED_LIBS +=  gettextlib           3.1      # .0.0
@@ -15,7 +15,7 @@ CATEGORIES=	devel
 
 MASTER_SITES=	${MASTER_SITE_GNU:=gettext/}
 
-HOMEPAGE=	http://www.gnu.org/software/gettext/
+HOMEPAGE=	https://www.gnu.org/software/gettext/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 

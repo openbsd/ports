@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.29 2013/04/27 15:44:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2013/11/09 23:19:02 naddy Exp $
 
 COMMENT=	GNU Problem Report Management System
 
 DISTNAME=	gnats-3.113.1
-REVISION=	10
+REVISION=	11
 CATEGORIES=	databases devel
 MASTER_SITES=	${MASTER_SITE_GNU:=gnats/}
 
-HOMEPAGE=	http://www.gnu.org/software/gnats/
+HOMEPAGE=	https://www.gnu.org/software/gnats/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes

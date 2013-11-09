@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.64 2013/08/20 22:05:49 zhuk Exp $
+# $OpenBSD: Makefile,v 1.65 2013/11/09 23:19:02 naddy Exp $
 
 COMMENT=	Data Display Debugger, graphical front-end for GDB, etc
 
 DISTNAME=	ddd-3.3.12
-REVISION=	5
+REVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=ddd/}
 
-HOMEPAGE=	http://www.gnu.org/software/ddd/
+HOMEPAGE=	https://www.gnu.org/software/ddd/
 
 # GPLv2 / LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes

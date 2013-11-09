@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.36 2013/05/15 09:47:23 sebastia Exp $
+# $OpenBSD: Makefile,v 1.37 2013/11/09 23:19:02 naddy Exp $
 
 COMMENT=	framework to test programs
 
 DISTNAME=	dejagnu-1.5
-REVISION =	0
+REVISION =	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=dejagnu/}
 
-HOMEPAGE=	http://www.gnu.org/software/dejagnu/
+HOMEPAGE=	https://www.gnu.org/software/dejagnu/
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes

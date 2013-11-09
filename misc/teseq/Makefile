@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2013/06/14 15:37:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2013/11/09 23:19:03 naddy Exp $
 
 COMMENT=	analyze terminal control sequences
 
 DISTNAME=	teseq-1.1
+REVISION=	0
 CATEGORIES=	misc
-HOMEPAGE=	http://www.gnu.org/software/teseq/
+HOMEPAGE=	https://www.gnu.org/software/teseq/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2013/06/10 15:46:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2013/11/09 23:19:03 naddy Exp $
 
 COMMENT=	interactive typing tutor
 
 DISTNAME=	gtypist-2.9.3
+REVISION=	0
 CATEGORIES=	education
-HOMEPAGE=	http://www.gnu.org/software/gtypist/
+HOMEPAGE=	https://www.gnu.org/software/gtypist/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
