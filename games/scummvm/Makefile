@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.58 2013/07/07 02:46:26 jsg Exp $
+# $OpenBSD: Makefile,v 1.59 2013/11/09 14:03:05 landry Exp $
 
 COMMENT=	graphical adventure game interpreter
 DISTNAME=	scummvm-1.6.0
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
+REVISION=	0
 
 HOMEPAGE=	http://scummvm.sourceforge.net/
 
@@ -12,7 +13,7 @@ MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += FLAC SDL c faad freetype m mad pthread sndio stdc++
+WANTLIB += FLAC SDL c faad freetype m mad png pthread sndio stdc++
 WANTLIB += theoradec z
 
 .if ${MACHINE_ARCH} == "i386"
@@ -24,6 +25,7 @@ LIB_DEPENDS=	audio/libmad \
 		audio/flac \
 		audio/faad>=2.7 \
 		devel/sdl \
+		graphics/png \
 		multimedia/libtheora
 
 CONFIGURE_STYLE=simple
