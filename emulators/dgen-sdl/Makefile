@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/23 02:12:21 edd Exp $
+# $OpenBSD: Makefile,v 1.8 2013/11/09 14:12:28 landry Exp $
 
+BROKEN-alpha =		OOM or ICE on hqx/src/hq4x_32.c
 COMMENT =		Sega Megadrive/Genesis emulator
 DISTNAME =		dgen-sdl-1.32
 CATEGORIES =		emulators games
