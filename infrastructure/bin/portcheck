@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.42 2013/11/07 08:18:16 ajacoutot Exp $
+# $OpenBSD: portcheck,v 1.43 2013/11/09 23:27:30 naddy Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1297,13 +1297,10 @@ check_long_lines() {
 	local max_width=$1; shift;
 	local file=$1; shift
 
-	local n=$(cat -- "$file" |
-                  awk '/[[:space:]]/ && length($0) > 72' |
-		  wc -l)
-	if (($n > 0 )); then
-		# do not print $n inside quotes, it could contain extra spaces
+	local n=$(awk <"$file" -v max="$max_width" \
+		  '/[[:space:]]/ && length > max { n++ } END { print n+0 }')
+	(($n > 0 )) &&
 		err "$n line(-s) longer than $max_width chars in $file"
-	fi
 }
 
 # Checks made:
