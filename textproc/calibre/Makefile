@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2013/11/08 22:41:29 sthen Exp $
-
-BROKEN = temporarily broken, py-qt4 update
+# $OpenBSD: Makefile,v 1.24 2013/11/09 15:02:14 sthen Exp $
 
 COMMENT =		ebook management application
 
-DISTNAME =		calibre-0.8.20
+DISTNAME =		calibre-1.10.0
 CATEGORIES =		textproc
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calibre/}
-REVISION =		8
+EXTRACT_SUFX =		.tar.xz
 
 HOMEPAGE =		http://calibre-ebook.com/
 
@@ -17,16 +15,15 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES =		lang/python \
 			x11/qt4
 
-WANTLIB +=		ICE MagickCore MagickWand QtGui SM X11 Xext
-WANTLIB +=		Xi Xinerama Xrender c chm fontconfig freetype
-WANTLIB +=		icudata icui18n icuio icuuc m png poppler
-WANTLIB +=		stdc++ pthread
-WANTLIB +=		${MODPY_WANTLIB}
+WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += ICE MagickCore MagickWand QtDBus QtGui QtSvg QtXml
+WANTLIB += SM X11 Xext Xi Xinerama Xrender chm fontconfig freetype
+WANTLIB += icudata icui18n icuio icuuc m mtp pthread stdc++ usb-1.0 z
 
 LIB_DEPENDS=		devel/chmlib \
+			devel/libmtp \
+			devel/libusb1 \
 			graphics/ImageMagick \
-			graphics/png \
-			print/poppler, \
 			textproc/icu4c
 
 COMMON_DEPENDS =	devel/py-dateutil \
@@ -35,8 +32,11 @@ COMMON_DEPENDS =	devel/py-dateutil \
 			graphics/libwmf \
 			graphics/py-Imaging \
 			net/py-dnspython \
+			graphics/png \
+			print/poppler, \
 			print/poppler,,-qt4 \
-			textproc/py-cssutils>=0.9.7 \
+			textproc/py-cssselect \
+			textproc/py-cssutils>=0.9.9 \
 			textproc/py-lxml>=2.2.8 \
 			textproc/py-pdf \
 			www/py-beautifulsoup \
@@ -47,19 +47,26 @@ COMMON_DEPENDS =	devel/py-dateutil \
 
 BUILD_DEPENDS =		${COMMON_DEPENDS}
 
+# This is a disgusting workaround for calibre depending on private Qt4
+# interfaces that are not intended for external use. Upstream is fairly
+# hostile towards packagers and would prefer people directly run a file
+# from his website as root without any verification.
+BUILD_DEPENDS +=	x11/qt4:patch
+UPSTREAM_CLUE_LEVEL =	0 # https://bugs.launchpad.net/calibre/+bug/1094719
+
+SUBST_VARS =		WRKDIR
+
 RUN_DEPENDS =		${COMMON_DEPENDS} \
+			databases/py-apsw \
 			devel/desktop-file-utils \
 			misc/shared-mime-info \
 			print/poppler,-utils
 
-CFLAGS +=		"-I${LOCALBASE}/include"
-LDFLAGS +=		"-L${LOCALBASE}/lib"
-MAKE_ENV +=		QMAKE="${LOCALBASE}/bin/qmake4" \
-			LDFLAGS="${LDFLAGS}" \
-			FC_INC_DIR="${X11BASE}/include" \
-			FC_LIB_DIR="${X11BASE}/lib" \
-			PNG_INC_DIR="`pkg-config --cflags libpng`" \
-			PNG_LIB_DIR="`pkg-config --libs libpng`"
+#CFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include
+LDFLAGS +=		-L${LOCALBASE}/lib
+MAKE_ENV +=		QMAKE="${LOCALBASE}/bin/qmake4"
+MAKE_ENV +=		LDFLAGS="${LDFLAGS}"
+MAKE_ENV +=		FT_LIB_DIR="${X11BASE}/lib"
 
 # Requires /sys filesystem for HW detection
 MAKE_ENV +=		WITH_USB=no
@@ -80,10 +87,12 @@ pre-configure:
 	cd ${WRKSRC} && (rm -rf src/cherrypy src/pyPdf ; \
 		find . -name '*.py' -print0 | xargs -0 perl -pi -e \
 		's,#!/usr/bin/env python(2)?,#!${MODPY_BIN},' )
+	cd ${WRKDIR}; ln -s x11/qt4/qt-everywhere-opensource-src-*/include
+	cd ${WRKSRC}/setup && ${SUBST_CMD} extensions.py build_environment.py
 
 do-install:
 	${MODPY_CMD} ${MODPY_DISTUTILS_INSTALL} ${MODPY_DISTUTILS_INSTALLARGS}
-	chmod 755 ${PREFIX}/bin/calibre-mount-helper
+	rm -rf ${WRKDIR}/.config # to unbreak 'make clean'; created as root
 	${INSTALL_DATA_DIR} ${PREFIX}/share/calibre/recipes
 	cd ${WRKSRC}/recipes && find . -type f -exec \
 	    ${INSTALL_DATA} {} ${PREFIX}/share/calibre/recipes/ \;
@@ -93,6 +102,5 @@ post-install:
 		${PREFIX}/lib/calibre
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/share/calibre
-
 
 .include <bsd.port.mk>

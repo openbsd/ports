@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_install_py,v 1.1.1.1 2011/04/17 18:39:21 phessler Exp $
---- setup/install.py.orig	Thu Jan 27 09:50:17 2011
-+++ setup/install.py	Thu Jan 27 09:50:20 2011
-@@ -269,7 +269,7 @@ class Install(Develop):
+$OpenBSD: patch-setup_install_py,v 1.2 2013/11/09 15:02:14 sthen Exp $
+--- setup/install.py.orig	Fri Nov  8 03:44:31 2013
++++ setup/install.py	Sat Nov  9 14:24:16 2013
+@@ -243,7 +243,7 @@ class Install(Develop):
              reldir = os.path.relpath(x[0], self.SRC)
              destdir = os.path.join(dest, reldir)
              for f in x[-1]:

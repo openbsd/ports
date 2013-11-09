@@ -1,23 +1,83 @@
-$OpenBSD: patch-setup_extensions_py,v 1.2 2011/09/05 12:38:36 jasper Exp $
---- setup/extensions.py.orig	Fri Jun 24 20:01:27 2011
-+++ setup/extensions.py	Tue Jun 28 23:45:46 2011
-@@ -111,8 +111,8 @@ extensions = [
-                 reflow_sources,
-                 headers=reflow_headers,
-                 libraries=poppler_libs+magick_libs+png_libs+ft_libs+jpg_libs+pdfreflow_libs,
--                lib_dirs=poppler_lib_dirs+magick_lib_dirs+png_lib_dirs+ft_lib_dirs+jpg_lib_dirs,
--                inc_dirs=poppler_inc_dirs+magick_inc_dirs+png_inc_dirs,
-+                lib_dirs=poppler_lib_dirs+magick_lib_dirs+png_lib_dirs+ft_lib_dirs+jpg_lib_dirs+[fc_lib],
-+                inc_dirs=poppler_inc_dirs+magick_inc_dirs+png_inc_dirs+[fc_inc],
-                 error=reflow_error,
-                 cflags=['-DPNG_SKIP_SETJMP_CHECK'] if islinux else []
-                 ),
-@@ -191,7 +191,7 @@ if isunix:
-     cc = os.environ.get('CC', 'gcc')
-     cxx = os.environ.get('CXX', 'g++')
-     cflags = os.environ.get('OVERRIDE_CFLAGS',
--        '-O3 -Wall -DNDEBUG -fno-strict-aliasing -pipe')
-+        '-Wall -DNDEBUG -fno-strict-aliasing -pipe')
-     cflags = shlex.split(cflags) + ['-fPIC']
-     ldflags = os.environ.get('OVERRIDE_LDFLAGS', '-Wall')
-     ldflags = shlex.split(ldflags)
+$OpenBSD: patch-setup_extensions_py,v 1.3 2013/11/09 15:02:14 sthen Exp $
+
+- make podofo optional
+- fix various header search paths
+- don't override compiler optimizer levels
+- build with libmtp/libusb1 on OpenBSD (possibly useless as it
+may need /sys/ access to actually detect devices..)
+
+if updating patches, watch out for X11BASE -> /usr/X11R6 in last chunk
+
+--- setup/extensions.py.orig	Fri Nov  8 03:44:31 2013
++++ setup/extensions.py	Sat Nov  9 14:24:16 2013
+@@ -12,7 +12,7 @@ from multiprocessing import cpu_count
+ 
+ from PyQt4.pyqtconfig import QtGuiModuleMakefile
+ 
+-from setup import Command, islinux, isbsd, isosx, SRC, iswindows
++from setup import Command, islinux, isbsd, isosx, SRC, iswindows, isopenbsd
+ from setup.build_environment import (chmlib_inc_dirs,
+         podofo_inc, podofo_lib, podofo_error, pyqt, OSX_SDK, NMAKE, QMAKE,
+         msvc, MT, win_inc, win_lib, win_ddk, magick_inc_dirs, magick_lib_dirs,
+@@ -47,13 +47,6 @@ class Extension(object):
+         self.ldflags = kwargs.get('ldflags', [])
+         self.optional = kwargs.get('optional', False)
+         self.needs_ddk = kwargs.get('needs_ddk', False)
+-        of = kwargs.get('optimize_level', None)
+-        if of is None:
+-            of = '/Ox' if iswindows else '-O3'
+-        else:
+-            flag = '/O%d' if iswindows else '-O%d'
+-            of = flag % of
+-        self.cflags.insert(0, of)
+ 
+     def preflight(self, obj_dir, compiler, linker, builder, cflags, ldflags):
+         pass
+@@ -167,6 +160,7 @@ extensions = [
+                     libraries=['podofo'],
+                     lib_dirs=[podofo_lib],
+                     inc_dirs=[podofo_inc, os.path.dirname(podofo_inc)],
++                    optional=1,
+                     error=podofo_error),
+ 
+     Extension('pictureflow',
+@@ -247,9 +241,10 @@ if isosx:
+                 ldflags=['-framework', 'CoreServices', '-framework', 'IOKit'])
+             )
+ 
+-if islinux or isosx:
++if islinux or isosx or isopenbsd:
+     extensions.append(Extension('libusb',
+         ['calibre/devices/libusb/libusb.c'],
++        inc_dirs=[os.path.join(sysconfig.PREFIX, 'include')],
+         libraries=['usb-1.0']
+     ))
+ 
+@@ -263,6 +258,7 @@ if islinux or isosx:
+         'calibre/devices/mtp/unix/upstream/music-players.h',
+         'calibre/devices/mtp/unix/upstream/device-flags.h',
+         ],
++        inc_dirs=[os.path.join(sysconfig.PREFIX, 'include')],
+         libraries=['mtp']
+     ))
+ 
+@@ -289,9 +285,9 @@ if isbsd:
+     cflags.append('-pthread')
+     ldflags.append('-shared')
+     cflags.append('-I'+sysconfig.get_python_inc())
++    ldflags.append('-L'+os.path.join(sysconfig.PREFIX))
+     ldflags.append('-lpython'+sysconfig.get_python_version())
+ 
+-
+ if isosx:
+     x, p = ('i386', 'x86_64')
+     archs = ['-arch', x, '-arch', p, '-isysroot',
+@@ -498,7 +494,7 @@ class Build(Command):
+         DESTDIR = .
+         TARGET = calibre
+         QT *= svg
+-        INCLUDEPATH *= {conf} {inc}
++        INCLUDEPATH *= "/usr/X11R6/include" {conf} {inc}
+         win32-msvc*:DEFINES *= _CRT_SECURE_NO_WARNINGS
+ 
+         # Force C++ language

@@ -1,0 +1,13 @@
+$OpenBSD: patch-setup___init___py,v 1.1 2013/11/09 15:02:14 sthen Exp $
+--- setup/__init__.py.orig	Fri Nov  8 03:44:31 2013
++++ setup/__init__.py	Sat Nov  9 14:24:16 2013
+@@ -13,7 +13,8 @@ iswindows = re.search('win(32|64)', sys.platform)
+ isosx = 'darwin' in sys.platform
+ isfreebsd = 'freebsd' in sys.platform
+ isnetbsd = 'netbsd' in sys.platform
+-isbsd = isnetbsd or isfreebsd
++isopenbsd = 'openbsd' in sys.platform
++isbsd = isnetbsd or isfreebsd or isopenbsd
+ islinux = not isosx and not iswindows and not isbsd
+ SRC = os.path.abspath('src')
+ sys.path.insert(0, SRC)
