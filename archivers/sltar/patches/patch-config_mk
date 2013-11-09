@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_mk,v 1.1.1.1 2013/11/08 18:17:14 jung Exp $
---- config.mk.orig	Sat Oct 19 16:51:43 2013
-+++ config.mk	Sat Oct 19 16:53:29 2013
+$OpenBSD: patch-config_mk,v 1.2 2013/11/09 09:51:50 jung Exp $
+--- config.mk.orig	Tue May 28 23:47:33 2013
++++ config.mk	Sat Nov  9 10:19:13 2013
 @@ -4,17 +4,16 @@ VERSION = 0.5
  # Customize below to fit your system
  
@@ -20,7 +20,7 @@ $OpenBSD: patch-config_mk,v 1.1.1.1 2013/11/08 18:17:14 jung Exp $
  # flags
 -CFLAGS = -static -Os -g -Wall -Werror ${INCS} -DVERSION=\"${VERSION}\"
 -LDFLAGS = -g ${LIBS}
-+CFLAGS += -O0 -Wall -Werror ${INCS} -DVERSION=\"${VERSION}\"
++CFLAGS += -Wall -Werror ${INCS} -DVERSION=\"${VERSION}\"
 +LDFLAGS += ${LIBS}
  
  # compiler and linker

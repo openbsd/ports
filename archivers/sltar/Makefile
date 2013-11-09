@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/11/08 18:17:14 jung Exp $
+# $OpenBSD: Makefile,v 1.2 2013/11/09 09:51:50 jung Exp $
 
 COMMENT=		simple tar implementation
 
 DISTNAME=		sltar-0.5
+REVISION=		0
 
 CATEGORIES=		archivers
 
