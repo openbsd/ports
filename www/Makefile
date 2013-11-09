@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.638 2013/11/04 11:24:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.639 2013/11/09 08:37:52 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -52,7 +52,6 @@
      SUBDIR += fennec
      SUBDIR += ffproxy
      SUBDIR += firefox-i18n
-     SUBDIR += flyspray
      SUBDIR += gcap
      SUBDIR += gecko-mediaplayer
      SUBDIR += gitlist
@@ -105,9 +104,6 @@
      SUBDIR += llgal
      SUBDIR += luakit
      SUBDIR += man2web
-     SUBDIR += mediawiki
-     SUBDIR += mediawiki-CategoryTree
-     SUBDIR += mediawiki-httpauth
      SUBDIR += mhonarc
      SUBDIR += midori
      SUBDIR += midori,gtk3
@@ -143,8 +139,6 @@
      SUBDIR += mozilla-firefox
      SUBDIR += mozilla-sync
      SUBDIR += mozplugger
-     SUBDIR += mycalendar
-     SUBDIR += myreview
      SUBDIR += netsurf
      SUBDIR += newsbeuter
      SUBDIR += nginx
@@ -367,7 +361,6 @@
      SUBDIR += php-markdown
      SUBDIR += php-openid
      SUBDIR += php-predis
-     SUBDIR += phpicalendar
      SUBDIR += phpldapadmin
      SUBDIR += phpmyadmin
      SUBDIR += phppgadmin
@@ -423,7 +416,6 @@
      SUBDIR += py-webtest
      SUBDIR += py-werkzeug
      SUBDIR += py-wsgiproxy
-     SUBDIR += pyblosxom
      SUBDIR += rackmonkey
      SUBDIR += racktables
      SUBDIR += raggle
