@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:06:05 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/11/10 15:01:24 naddy Exp $
 
 PKG_ARCH=	*
 
 COMMENT=	TrueType fonts for Indic scripts
 
-VERSION=	2.5.0
+VERSION=	2.5.3
 PKGNAME=	lohit-fonts-${VERSION}
 CATEGORIES=	fonts x11
 HOMEPAGE=	https://fedorahosted.org/lohit/
@@ -15,8 +15,9 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	https://fedorahosted.org/releases/l/o/lohit/
-.for s in	assamese bengali devanagari gujarati kannada \
-		malayalam oriya punjabi tamil telugu
+DIST_SUBDIR=	lohit
+.for s in	assamese bengali devanagari gujarati kannada malayalam \
+		marathi nepali oriya punjabi tamil tamil-classical telugu
 DISTFILES+=	lohit-$s-ttf-${VERSION}.tar.gz
 .endfor
 
