@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2013/10/10 02:08:23 brad Exp $
+# $OpenBSD: Makefile,v 1.57 2013/11/10 12:12:26 espie Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
@@ -36,21 +36,23 @@ CONFIGURE_ARGS+=	--disable-ntpshm \
 PSEUDO_FLAVORS =	no_x11
 FLAVOR?=
 
-MULTI_PACKAGES=		-main -php
+MULTI_PACKAGES=		-main -php -x11
 
 BUILD_DEPENDS=		textproc/docbook-xsl
 
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS}
 LIB_DEPENDS-main=	devel/libusb1
 
-.if ${FLAVOR:Mno_x11}
-CONFIGURE_ARGS+=	--without-x
-CONFIGURE_ENV +=	LDFLAGS="-lm -pthread -lutil"
-.else
-MULTI_PACKAGES +=	-x11
 RUN_DEPENDS-x11 =	${BASE_PKGPATH}
+
+.include <bsd.port.arch.mk>
+
+.if ${BUILD_PACKAGES:M-x11}
 CONFIGURE_ENV+=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lm -pthread -lutil"
+.else
+CONFIGURE_ARGS+=	--without-x
+CONFIGURE_ENV +=	LDFLAGS="-lm -pthread -lutil"
 .endif
 
 WANTLIB-main=		m ncurses c pthread stdc++ usb-1.0 util ${MODPY_WANTLIB}
