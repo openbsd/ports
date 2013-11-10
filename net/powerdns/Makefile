@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/06/20 06:54:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2013/11/10 12:38:34 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -22,7 +22,7 @@ REVISION-mysql=		3
 REVISION-pgsql=		1
 REVISION-ldap=		1
 
-MULTI_PACKAGES=		-main
+MULTI_PACKAGES=		-main -mysql -pgsql -ldap
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -36,50 +36,52 @@ NO_TEST=		Yes
 
 BUILD_DEPENDS=		devel/boost
 
-PSEUDO_FLAVORS+=	no_mysql no_pgsql
+PSEUDO_FLAVORS+=	no_mysql no_pgsql no_ldap
 FLAVOR?=
 
 BACKENDS=		gsqlite3
 
+.include <bsd.port.arch.mk>
+
 # MySQL
-.if ${FLAVOR:Mno_mysql}
-CONFIGURE_ARGS+=	--without-mysql
-.else
-MULTI_PACKAGES+=	-mysql
+.if ${BUILD_PACKAGES:M-mysql}
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
+BACKENDS+=		gmysql
+.else
+CONFIGURE_ARGS+=	--without-mysql
+.endif
 LIB_DEPENDS-mysql=	databases/mysql
 RUN_DEPENDS-mysql=	${FULLPKGNAME-main}:net/powerdns
 WANTLIB-mysql+=		crypto lib/mysql/mysqlclient>=10 ssl ${WANTLIB}
-BACKENDS+=		gmysql
-.endif
 
 # PostgreSQL
-.if ${FLAVOR:Mno_pgsql}
-CONFIGURE_ARGS+=	--without-pgsql
-.else
-MULTI_PACKAGES+=	-pgsql
+.if ${BUILD_PACKAGES:M-pgsql}
 CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE} \
 			--with-pgsql-includes=${LOCALBASE}/include/postgresql
+BACKENDS+=		gpgsql
+.else
+CONFIGURE_ARGS+=	--without-pgsql
+.endif
 LIB_DEPENDS-pgsql=	databases/postgresql,-main
 RUN_DEPENDS-pgsql=	${FULLPKGNAME-main}:net/powerdns
 WANTLIB-pgsql=		com_err crypto pq>=2 ssl asn1 heimbase krb5 \
 			roken wind ${WANTLIB}
-BACKENDS+=		gpgsql
-.endif
+
 
 # LDAP
-.if ${FLAVOR:Mno_ldap}
-CONFIGURE_ARGS+=	--without-ldap
-.else
-MULTI_PACKAGES+=	-ldap
-LIB_DEPENDS-ldap=	databases/openldap
-RUN_DEPENDS-ldap=	${FULLPKGNAME-main}:net/powerdns
+.if ${BUILD_PACKAGES:M-ldap}
 CONFIGURE_ARGS+=	--with-ldap=${LOCALBASE} \
 			--with-ldap-includes=${LOCALBASE}/include
+BACKENDS+=		ldap
+.else
+CONFIGURE_ARGS+=	--without-ldap
+.endif
+
+LIB_DEPENDS-ldap=	databases/openldap
+RUN_DEPENDS-ldap=	${FULLPKGNAME-main}:net/powerdns
 WANTLIB-ldap+=		asn1 com_err crypto gssapi krb5 lber-2.4 ldap_r-2.4 \
 			heimbase roken wind sasl2 ssl ${WANTLIB}
-BACKENDS+=		ldap
-.endif
+
 
 BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS}
 
