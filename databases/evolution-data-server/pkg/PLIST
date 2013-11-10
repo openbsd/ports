@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2013/10/13 16:38:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.38 2013/11/10 16:09:36 ajacoutot Exp $
 include/evolution-data-server/
 include/evolution-data-server/camel/
 include/evolution-data-server/camel/camel-address.h
@@ -351,6 +351,7 @@ lib/pkgconfig/libedataserver-1.2.pc
 @mode
 @bin libexec/evolution-addressbook-factory
 @bin libexec/evolution-calendar-factory
+@bin libexec/evolution-scan-gconf-tree-xml
 @bin libexec/evolution-source-registry
 @bin libexec/evolution-user-prompter
 share/GConf/gsettings/evolution-data-server.convert
