@@ -1,5 +1,5 @@
 sqlitemanager is a simple graphical interface to manage simple aspects
-of sqlite database: queries, table views, simple modifications, 
+of sqlite database: queries, table views, simple modifications,
 indexes and trigger creation.
 
 Compared to sqlitebrowser, it's a bit more heavy-handed. Features, among

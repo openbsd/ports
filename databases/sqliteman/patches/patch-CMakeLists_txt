@@ -1,0 +1,11 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2013/11/10 22:28:59 sthen Exp $
+--- CMakeLists.txt.orig	Sun Nov 10 22:25:08 2013
++++ CMakeLists.txt	Sun Nov 10 22:25:32 2013
+@@ -154,6 +154,6 @@ ELSE (WIN32)
+     )
+     INSTALL(FILES
+         sqliteman/icons/sqliteman.png
+-        DESTINATION "${CMAKE_INSTALL_PREFIX}/share/icons/hicolor"
++        DESTINATION "${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/32x32/apps"
+     )
+ ENDIF (WIN32)
