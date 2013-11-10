@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2013/06/20 06:54:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2013/11/10 12:20:29 espie Exp $
 
 SHARED_ONLY=	Yes
 SHARED_LIBS +=  freeradius-radius    4.1      # .0.0
@@ -66,7 +66,7 @@ TEST_TARGET=	tests
 TEST_DEPENDS=freeradius-$V:net/freeradius
 TEST_IS_INTERACTIVE=Yes # doesn't exit properly
 
-MULTI_PACKAGES=	-main
+MULTI_PACKAGES=	-main -ldap -mysql -pgsql -iodbc
 SUBST_VARS+=	V
 
 USE_GMAKE=	Yes
@@ -86,46 +86,47 @@ WANTLIB-main=		${WANTLIB} c com_err krb5 pcap pthread readline \
 PSEUDO_FLAVORS=	no_ldap no_mysql no_pgsql no_iodbc
 FLAVOR?=		
 
-.if ${FLAVOR:Mno_iodbc}
-CONFIGURE_ARGS+=	--without-rlm_sql_iodbc
-.else
-MULTI_PACKAGES+=	-iodbc
+.include <bsd.port.arch.mk>
+
+.if ${BUILD_PACKAGES:M-iodbc}
 CONFIGURE_ARGS+=	--with-rlm_sql_iodbc
+.else
+CONFIGURE_ARGS+=	--without-rlm_sql_iodbc
+.endif
+
 LIB_DEPENDS-iodbc=	databases/iodbc
 WANTLIB-iodbc=		iodbc>=2 pthread
 RUN_DEPENDS-iodbc=	#empty
+
+
+.if !${BUILD_PACKAGES:M-ldap}
+CONFIGURE_ARGS+=	--without-rlm_ldap
 .endif
 
-.if ${FLAVOR:Mno_ldap}
-CONFIGURE_ARGS+=	--without-rlm_ldap
-.else
-MULTI_PACKAGES+=	-ldap
 LIB_DEPENDS-ldap=	databases/openldap \
 			${BASE_PKGPATH}
 WANTLIB-ldap=		crypto ssl sasl2 asn1 com_err gssapi krb5 \
 			lber>=8 ldap_r>=8 freeradius-radius>=1 pthread \
 			heimbase roken wind
 RUN_DEPENDS-ldap=	#empty
+
+.if !${BUILD_PACKAGES:M-mysql}
+CONFIGURE_ARGS+=	--without-rlm_sql_mysql
 .endif
 
-.if ${FLAVOR:Mno_mysql}
-CONFIGURE_ARGS+=	--without-rlm_sql_mysql
-.else
-MULTI_PACKAGES+=	-mysql
 LIB_DEPENDS-mysql=	databases/mysql
 WANTLIB-mysql=		crypto ssl m pthread z mysqlclient_r>=16
 RUN_DEPENDS-mysql=	#empty
+
+.if ${BUILD_PACKAGES:M-pgsql}
+CONFIGURE_ARGS+=	--with-rlm-sql-postgresql-include-dir=${LOCALBASE}/include/postgresql
+.else
+CONFIGURE_ARGS+=	--without-rlm_sql_postgresql
 .endif
 
-.if ${FLAVOR:Mno_pgsql}
-CONFIGURE_ARGS+=	--without-rlm_sql_postgresql
-.else
-MULTI_PACKAGES+=	-pgsql
-CONFIGURE_ARGS+=	--with-rlm-sql-postgresql-include-dir=${LOCALBASE}/include/postgresql
 LIB_DEPENDS-pgsql=	databases/postgresql
 WANTLIB-pgsql=		pq>=2
 RUN_DEPENDS-pgsql=	#empty
-.endif
 
 .for i in ${MULTI_PACKAGES:N-main}
 RUN_DEPENDS$i +=	freeradius-$V:net/freeradius
