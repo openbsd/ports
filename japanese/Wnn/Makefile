@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2013/11/03 15:11:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2013/11/10 10:45:26 espie Exp $
 
 COMMENT-main = 		Japanese input method
 COMMENT-dict =		dictionaries for Japanese Wnn
@@ -12,9 +12,6 @@ COMMENT-xwnmo =		X11 input method for Wnn
 DISTNAME =	Wnn4.2
 
 CATEGORIES =	japanese
-
-# If you are building this manually, you can override MULTI_PACKAGES
-# on the command line, and thus avoid building all three languages
 
 MULTI_PACKAGES =	-main -dict -zh -zhdict -ko -kodict -xwnmo -data
 
