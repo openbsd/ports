@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.215 2013/11/04 06:24:09 brad Exp $
+# $OpenBSD: Makefile,v 1.216 2013/11/10 11:59:44 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -69,20 +69,8 @@ FLAVOR?=
 FLAVOR+=	no_ldap no_mysql no_postgresql
 .endif
 
-MULTI_PACKAGES= -server
+MULTI_PACKAGES= -server -ldap -mysql -postgresql
 SUBPACKAGE?=	-server
-
-.if !${FLAVOR:Mno_ldap}
-MULTI_PACKAGES+=-ldap
-.endif
-
-.if !${FLAVOR:Mno_mysql}
-MULTI_PACKAGES+=-mysql
-.endif
-
-.if !${FLAVOR:Mno_postgresql}
-MULTI_PACKAGES+=-postgresql
-.endif
 
 .include <bsd.port.arch.mk>
 
