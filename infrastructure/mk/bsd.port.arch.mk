@@ -1,4 +1,4 @@
-# $OpenBSD: bsd.port.arch.mk,v 1.10 2011/12/08 08:15:36 espie Exp $
+# $OpenBSD: bsd.port.arch.mk,v 1.11 2013/11/10 12:27:50 espie Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -51,14 +51,6 @@ FLAVOR := ${FLAVOR:N$f}
 .      endif
 .    endfor
 .  endif
-
-.  for _S in ${MULTI_PACKAGES}
-.    for _T in ${_S:S/^-/no_/}
-.      if ${FLAVOR:M${_T}}
-MULTI_PACKAGES := ${MULTI_PACKAGES:N${_S}}
-.      endif
-.    endfor
-.  endfor
 .endif
 
 # build the actual list of subpackages we want
@@ -77,6 +69,11 @@ NOT_FOR_ARCHS${_s} ?= ${NOT_FOR_ARCHS}
 
 IGNORE${_s} ?=
 IGNORE${_s} += ${IGNORE}
+.  for _T in ${_s:S/^-/no_/}
+.    if defined(FLAVOR) && ${FLAVOR:M${_T}}
+IGNORE${_s} += "Ignored as FLAVOR contains ${FLAVOR:M${_T}}"
+.    endif
+.  endfor
 
 # compute _ARCH_OK for ignore
 .  if defined(ONLY_FOR_ARCHS${_s})
