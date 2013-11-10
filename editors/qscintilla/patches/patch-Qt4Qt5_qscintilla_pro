@@ -1,0 +1,12 @@
+$OpenBSD: patch-Qt4Qt5_qscintilla_pro,v 1.1 2013/11/10 21:44:02 sthen Exp $
+--- Qt4Qt5/qscintilla.pro.orig	Sat Dec  8 09:25:28 2012
++++ Qt4Qt5/qscintilla.pro	Fri Dec 21 13:33:49 2012
+@@ -42,7 +42,7 @@ greaterThan(QT_MAJOR_VERSION, 4) {
+ #DEFINES += SCI_NAMESPACE
+ 
+ # Handle both Qt v4 and v3.
+-target.path = $$[QT_INSTALL_LIBS]
++target.path = ${LOCALBASE}/lib
+ isEmpty(target.path) {
+ 	target.path = $(QTDIR)/lib
+ }
