@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.43 2013/11/09 23:27:30 naddy Exp $
+# $OpenBSD: portcheck,v 1.44 2013/11/10 14:56:41 naddy Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -113,12 +113,12 @@ shift $(($OPTIND - 1))
 (($# == 0)) && set -- .
 
 ############################################################
-# Detect path to root of directory tree of current port(-s) and put it
+# Detect path to root of directory tree of current port(s) and put it
 # in $portsdir, unless it was set by user above. As a last resort, we
 # use some heuristics based on the commonly used names.
 #
 # We also have a $pkgpath variable, that represents subdirectory under
-# root ports directory where the port(-s) will be imported. In case we
+# root ports directory where the port(s) will be imported. In case we
 # use heuristics for determining $portsdir, we'll set up $pkgpath, too,
 # since we would get this info anyway.
 #
@@ -339,7 +339,7 @@ check_port_hier() {
 	local plist_exists=false
 	ls $dir/pkg/PLIST* >/dev/null 2>&1 && plist_exists=true
 	$plist_lives_upper && $plist_exists &&
-		err_duplicated "packing list(-s)" "$dir"
+		err_duplicated "packing list(s)" "$dir"
 
 	$distinfo_lives_upper && distinfo_exists=true
 	$plist_lives_upper && plist_exists=true
@@ -494,7 +494,7 @@ check_port_dir() {
 				ls "$F"/PLIST* >/dev/null 2>&1 &&
 					plist_exists=true
 				$plist_lives_upper && $plist_exists &&
-					err_duplicated "packing list(-s)" "$dir"
+					err_duplicated "packing list(s)" "$dir"
 			else
 				err "$F" is not a directory
 			fi
@@ -996,7 +996,7 @@ check_plist() {
 	# gettext
 	$translation_found && ! $gettext_dep && ! $is_static &&
 		[[ $fullpkgname != gettext-* ]] &&
-		err "${portref}translation file(-s) found without" \
+		err "${portref}translation file(s) found without" \
 		    "devel/gettext dependency"
 
 	# Python modules
@@ -1300,7 +1300,7 @@ check_long_lines() {
 	local n=$(awk <"$file" -v max="$max_width" \
 		  '/[[:space:]]/ && length > max { n++ } END { print n+0 }')
 	(($n > 0 )) &&
-		err "$n line(-s) longer than $max_width chars in $file"
+		err "$n line(s) longer than $max_width chars in $file"
 }
 
 # Checks made:
@@ -1321,7 +1321,7 @@ check_plist_file() {
 	#    ${FULLPKGNAME}
 	egrep -v '^(share/doc/pkg-readmes/\$\{FULLPKGNAME\}|@comment .*)$' "$1" |
 		egrep '.\$\{FULLPKGNAME\}|\$\{FULLPKGNAME\}.' >&2 &&
-		err "$1 contains item(-s) with \${FULLPKGNAME} in it, see above"
+		err "$1 contains item(s) with \${FULLPKGNAME} in it, see above"
 }
 
 # Checks made:
