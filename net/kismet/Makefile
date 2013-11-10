@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/11 11:35:48 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2013/11/10 12:25:14 espie Exp $
 # Much help came from Alexandre Anriot, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
 
@@ -48,7 +48,7 @@ NO_TEST=		Yes
 PSEUDO_FLAVORS=         no_gpsmap
 FLAVOR?=
 
-MULTI_PACKAGES=		-main
+MULTI_PACKAGES=		-main -gpsmap
 
 WANTLIB-main=		c m ncurses panel pcap stdc++
 WANTLIB-gpsmap=		c expat m pthread stdc++ z \
@@ -56,9 +56,9 @@ WANTLIB-gpsmap=		c expat m pthread stdc++ z \
 LIB_DEPENDS-gpsmap=	graphics/ImageMagick \
 			devel/gmp
 
-.if !${FLAVOR:Mno_gpsmap}
-MULTI_PACKAGES+=	-gpsmap
-.else
+.include <bsd.port.arch.mk>
+
+.if !${BUILD_PACKAGES:M-gpsmap}
 CONFIGURE_ARGS+=	--disable-gpsmap
 .endif
 
