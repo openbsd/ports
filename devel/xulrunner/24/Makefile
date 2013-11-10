@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/11/09 07:49:03 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2013/11/10 07:30:17 landry Exp $
 
 MOZILLA_VERSION =	24.0
 MOZILLA_BRANCH =	release
@@ -30,5 +30,11 @@ post-install:
 	${STRIP} ${PREFIX}/lib/${MOZILLA_PROJECT}-devel-${MOZILLA_VERSION}/sdk/lib/lib*.{so*,a}
 	#avoid conflict with lang/spidermonkey
 	mv ${PREFIX}/lib/pkgconfig/{mozilla,libxul}-js.pc
+	# MOZ_ENABLE_SKIA_GPU is false on ppc (see configure.in:8041 / bug 849253)
+	# manually install the header to avoir packaging hacks
+.if ${MACHINE_ARCH} == "powerpc"
+	${INSTALL_DATA} ${WRKSRC}/gfx/gl/GLContextSkia.h \
+		${PREFIX}/include/${MOZILLA_PROJECT}-${MOZILLA_VERSION}
+.endif
 
 .include <bsd.port.mk>
