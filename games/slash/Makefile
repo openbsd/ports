@@ -1,50 +1,50 @@
-# $OpenBSD: Makefile,v 1.43 2013/03/11 11:07:40 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2013/11/10 11:28:19 espie Exp $
 
-COMMENT=	dungeon explorin', hackin' game, but harder than nethack
+COMMENT =	dungeon explorin', hackin' game, but harder than nethack
 
-DISTNAME=	slash-e8
-PKGNAME=	slash-3.2.2.e8
+DISTNAME =	slash-e8
+PKGNAME =	slash-3.2.2.e8
 REVISION =	2
-CATEGORIES=	games
+CATEGORIES =	games
 
-MASTER_SITES=   ftp://ftp.nethack.org/pub/nethack/oldver/3.2.2/src/ \
-                ftp://ftp.uu.net/pub/games/nethack/sources/ \
-                ${MASTER_SITE_GNU:=nethack/}
+MASTER_SITES =	ftp://ftp.nethack.org/pub/nethack/oldver/3.2.2/src/ \
+		ftp://ftp.uu.net/pub/games/nethack/sources/ \
+		${MASTER_SITE_GNU:=nethack/}
 
-MASTER_SITES0=  ftp://ftp.nethack.org/pub/nethack/oldver/3.2.3/src/
-MASTER_SITES1=	http://www.rz.tu-ilmenau.de/~wi019/Slash/
+MASTER_SITES0 =	ftp://ftp.nethack.org/pub/nethack/oldver/3.2.3/src/
+MASTER_SITES1 =	http://www.rz.tu-ilmenau.de/~wi019/Slash/
 
-DISTFILES=	nethack-3.2.2.tar.gz Slash-Unix.tar.gz:1 
-PATCHFILES=nh-3.2.2-3.2.3.diff:0
+DISTFILES =	nethack-3.2.2.tar.gz Slash-Unix.tar.gz:1 
+PATCHFILES =	nh-3.2.2-3.2.3.diff:0
 
 
-MAINTAINER=	Marc Espie <espie@openbsd.org>
+MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 #	GPL
-PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c termlib
+PERMIT_PACKAGE_CDROM =	Yes
+WANTLIB =		c termlib
 
-FAKE_FLAGS=PREFIX=${PREFIX}
+FAKE_FLAGS =	PREFIX=${PREFIX}
 
-GAMEDIR=lib/slashdir
-NHDIR=	${PREFIX}/${GAMEDIR}
-MAKE_ENV+= NHDIR=${NHDIR} NETHACKCONFIG=${NETHACKCONFIG}
-SUBST_VARS=GAMEDIR
+GAMEDIR =	lib/slashdir
+NHDIR =		${PREFIX}/${GAMEDIR}
+MAKE_ENV += 	NHDIR=${NHDIR} NETHACKCONFIG=${NETHACKCONFIG}
+SUBST_VARS =	GAMEDIR
 USE_GROFF =	Yes
 
-FLAVORS=no_x11
-FLAVOR?=
+FLAVORS =	no_x11
+FLAVOR ?=
 
 .if ${FLAVOR} == "no_x11"
-NETHACKCONFIG=${FILESDIR}/simple-config
+NETHACKCONFIG =	${FILESDIR}/simple-config
 .else
-NETHACKCONFIG=${FILESDIR}/x-config
-WANTLIB+=	X11 Xaw Xext Xmu Xpm Xt pthread-stubs xcb
+NETHACKCONFIG =	${FILESDIR}/x-config
+WANTLIB +=	X11 Xaw Xext Xmu Xpm Xt pthread-stubs xcb
 .endif
 
-RUN_DEPENDS=games/hackdata
+RUN_DEPENDS =	games/hackdata
 
-NO_TEST=	Yes
+NO_TEST	=	Yes
 
 post-extract:
 	@cd ${WRKDIR} && mv nethack-3.2.2 ${DISTNAME}
