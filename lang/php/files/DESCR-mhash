@@ -1,5 +1,0 @@
-This is an interface to the mhash library. mhash supports a wide
-variety of hash algorithms such as MD5, SHA1, GOST, and many others.
-
-Mhash can be used to create checksums, message digests, message
-authentication codes, and more.
