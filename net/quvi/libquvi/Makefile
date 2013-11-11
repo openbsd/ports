@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2013/09/26 15:53:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/11/11 14:56:58 ajacoutot Exp $
 
 COMMENT=	library to parse flash media stream URLs
 
-DISTNAME=	libquvi-0.9.3
+DISTNAME=	libquvi-0.9.4
 
 SHARED_LIBS +=  quvi-0.9             0.0      # 8.0
 
@@ -23,8 +23,5 @@ MODLUA_SA=	Yes
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-manual
-
-# only needed for tests we don't install
-CONFIGURE_ARGS+=--disable-soup
 
 .include <bsd.port.mk>
