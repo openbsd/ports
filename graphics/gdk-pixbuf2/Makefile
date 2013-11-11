@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2013/10/15 09:48:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2013/11/11 16:08:49 ajacoutot Exp $
 
 COMMENT=		graphic library for gtk+2
 
 GNOME_PROJECT=		gdk-pixbuf
-GNOME_VERSION=		2.30.0
-REVISION=		0
+GNOME_VERSION=		2.30.1
 
 CATEGORIES=		graphics
 
@@ -24,7 +23,7 @@ WANTLIB += jasper jpeg m pcre png pthread tiff xcb z
 MODULES=		devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		devel/glib2>=2.38.0 \
+LIB_DEPENDS=		devel/glib2 \
 			graphics/jasper \
 			graphics/png \
 			graphics/tiff
