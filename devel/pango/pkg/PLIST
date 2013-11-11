@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2013/09/25 12:39:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.32 2013/11/11 16:52:46 ajacoutot Exp $
 @unexec-delete rm -f ${SYSCONFDIR}/pango/pango.modules
 @bin bin/pango-querymodules
 @bin bin/pango-view
@@ -74,6 +74,7 @@ share/gtk-doc/html/pango/PangoFcDecoder.html
 share/gtk-doc/html/pango/PangoFcFont.html
 share/gtk-doc/html/pango/PangoFcFontMap.html
 share/gtk-doc/html/pango/PangoMarkupFormat.html
+share/gtk-doc/html/pango/PangoRenderer.html
 share/gtk-doc/html/pango/annotation-glossary.html
 share/gtk-doc/html/pango/api-index-1-10.html
 share/gtk-doc/html/pango/api-index-1-12.html
@@ -85,9 +86,11 @@ share/gtk-doc/html/pango/api-index-1-20.html
 share/gtk-doc/html/pango/api-index-1-22.html
 share/gtk-doc/html/pango/api-index-1-24.html
 share/gtk-doc/html/pango/api-index-1-26.html
-share/gtk-doc/html/pango/api-index-1-28.html
 share/gtk-doc/html/pango/api-index-1-30.html
+share/gtk-doc/html/pango/api-index-1-31-0.html
+share/gtk-doc/html/pango/api-index-1-32-4.html
 share/gtk-doc/html/pango/api-index-1-32.html
+share/gtk-doc/html/pango/api-index-1-34.html
 share/gtk-doc/html/pango/api-index-1-4.html
 share/gtk-doc/html/pango/api-index-1-6.html
 share/gtk-doc/html/pango/api-index-1-8.html
@@ -97,7 +100,6 @@ share/gtk-doc/html/pango/home.png
 share/gtk-doc/html/pango/index.html
 share/gtk-doc/html/pango/index.sgml
 share/gtk-doc/html/pango/layout.gif
-share/gtk-doc/html/pango/left-insensitive.png
 share/gtk-doc/html/pango/left.png
 share/gtk-doc/html/pango/lowlevel.html
 share/gtk-doc/html/pango/pango-Bidirectional-Text.html
@@ -121,17 +123,14 @@ share/gtk-doc/html/pango/pango-Vertical-Text.html
 share/gtk-doc/html/pango/pango-Win32-Fonts-and-Rendering.html
 share/gtk-doc/html/pango/pango-Xft-Fonts-and-Rendering.html
 share/gtk-doc/html/pango/pango-hierarchy.html
-share/gtk-doc/html/pango/pango-pango-renderer.html
 share/gtk-doc/html/pango/pango-querymodules.html
 share/gtk-doc/html/pango/pango.devhelp2
 share/gtk-doc/html/pango/pango.html
 share/gtk-doc/html/pango/rendering.html
-share/gtk-doc/html/pango/right-insensitive.png
 share/gtk-doc/html/pango/right.png
 share/gtk-doc/html/pango/rotated-text.png
 share/gtk-doc/html/pango/style.css
 share/gtk-doc/html/pango/tools.html
-share/gtk-doc/html/pango/up-insensitive.png
 share/gtk-doc/html/pango/up.png
 @sample ${SYSCONFDIR}/pango/
 @exec %D/bin/pango-querymodules > ${SYSCONFDIR}/pango/pango.modules
