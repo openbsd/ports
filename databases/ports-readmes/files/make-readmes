@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: make-readmes,v 1.4 2012/06/01 13:21:26 espie Exp $
+# $OpenBSD: make-readmes,v 1.5 2013/11/11 15:00:51 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -189,11 +189,11 @@ while ($info_req->fetch) {
 		push @{$e->{category}},
 		    {
 		    	name => $category, 
-			url => relative_url($category, $e->{path})
+			url => relative_url("cat/$category", "path/$e->{path}")
 		    };
 		$cat->{$category}{$e->{fullpkgname}} = $e->{path};
 	}
-	$template->process('port.tt2', $e, "$e->{path}.html") or die;
+	$template->process('port.tt2', $e, "path/$e->{path}.html") or die;
 }
 
 print "Generating category indexes\n";
@@ -204,10 +204,10 @@ while (my ($c, $h) = each %$cat) {
 		push @{$e->{ports}},
 		    {
 			name => $pkgname,
-			url => relative_url($p, $c)
+			url => relative_url("path/$p", "cat/$c")
 		    };
 	}
-	$template->process('category.tt2', $e, "$c.html") or die;
+	$template->process('category.tt2', $e, "cat/$c.html") or die;
 }
 
 print "Generating main index\n";
@@ -216,7 +216,7 @@ for my $c (sort keys %$cat) {
 	push @{$e->{categories}},
 	    {
 	    	name => $c,
-		url => "$c.html"
+		url => "cat/$c.html"
 	    };
 }
 $template->process('main.tt2', $e, "index.html") or die;
