@@ -1,12 +1,21 @@
-$OpenBSD: patch-tmac_doc-common,v 1.5 2013/07/13 07:39:00 schwarze Exp $
-chunk 1: Keep traditional OpenBSD page headers (local change).
-chunk 2: default value for the .Os macro (local change).
-chunk 3: More OpenBSD release versions (to be submitted upstream).
-chunk 4: Handle .Dd Mdocdate (local change).
-chunk 5: Do not use an ugly double dash in the NAME line (local change).
+$OpenBSD: patch-tmac_doc-common,v 1.6 2013/11/11 06:41:02 schwarze Exp $
+chunk 1: Implement .%C (accepted and committed upstream).
+chunk 2: Keep traditional OpenBSD page headers (local change).
+chunk 3: Default value for the .Os macro (local change).
+chunk 4: More OpenBSD release versions (to be submitted upstream).
+chunk 5: Handle .Dd Mdocdate (local change).
+chunk 6: Do not use an ugly double dash in the NAME line (local change).
 --- tmac/doc-common.orig	Thu Feb  7 13:06:08 2013
-+++ tmac/doc-common	Mon Jul  8 07:09:20 2013
-@@ -231,17 +231,17 @@
++++ tmac/doc-common	Wed Jul 24 23:28:04 2013
+@@ -37,6 +37,7 @@
+ .
+ .nr %A 1
+ .nr %B 1
++.nr %C 1
+ .nr %D 1
+ .nr %I 1
+ .nr %J 1
+@@ -231,17 +232,17 @@
  .
  .\" an alternative, more detailed scheme for naming the manual sections
  .\"
@@ -33,7 +42,7 @@ chunk 5: Do not use an ugly double dash in the NAME line (local change).
  .
  .ds doc-volume-ds-USD   User's Supplementary Documents
  .ds doc-volume-ds-PS1   Programmer's Supplementary Documents
-@@ -399,7 +399,7 @@
+@@ -399,7 +400,7 @@
  .\" NS
  .\" NS override this in `mdoc.local', if necessary
  .
@@ -42,7 +51,7 @@ chunk 5: Do not use an ugly double dash in the NAME line (local change).
  .
  .
  .\" NS doc-operating-system global string
-@@ -517,6 +517,10 @@
+@@ -517,6 +518,10 @@
  .ds doc-operating-system-OpenBSD-4.8  4.8
  .ds doc-operating-system-OpenBSD-4.9  4.9
  .ds doc-operating-system-OpenBSD-5.0  5.0
@@ -53,7 +62,7 @@ chunk 5: Do not use an ugly double dash in the NAME line (local change).
  .
  .ds doc-operating-system-FreeBSD-1.0     1.0
  .ds doc-operating-system-FreeBSD-1.1     1.1
-@@ -732,7 +736,9 @@
+@@ -732,7 +737,9 @@
  .  ds doc-command-name
  .
  .  ie \n[.$] \{\
@@ -64,7 +73,7 @@ chunk 5: Do not use an ugly double dash in the NAME line (local change).
  .      ds doc-date-string \$1\~\$2 \$3
  .    el \{\
  .      ds doc-date-string "\*[doc-date-\n[mo]]
-@@ -906,7 +912,7 @@
+@@ -906,7 +913,7 @@
  .\" NS width register `Nd' set above
  .
  .de Nd
