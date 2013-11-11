@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2013/09/13 14:23:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2013/11/11 15:52:40 ajacoutot Exp $
 
 COMMENT=	device color profile management daemon
 
-V=		1.0.3
+V=		1.0.4
 DISTNAME=	colord-${V}
 EXTRACT_SUFX=	.tar.xz
 
