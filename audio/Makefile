@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.312 2013/10/01 10:33:07 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.313 2013/11/11 14:13:05 steven Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -129,6 +129,7 @@
      SUBDIR += mpd,tremor
      SUBDIR += mpd-add-similar
      SUBDIR += mpdBrowser
+     SUBDIR += mpdscribble
      SUBDIR += mpegaudio
      SUBDIR += mpg123
      SUBDIR += mpg321
