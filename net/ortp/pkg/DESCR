@@ -1,0 +1,17 @@
+oRTP - a Real-time Transport Protocol (RFC3550) stack under LGPL.
+It implements the RFC3550 (RTP) with a easy to use API with high and
+low level access and features:
+  * Support for multiples profiles, AV profile (RFC3551) being
+    the one by default.
+  * A packet scheduler for sending and recieving "on time", according
+    to their timestamp. Scheduling is optionnal, RTP sessions can remain
+    not scheduled.
+  * Mutiplexing I/O, so that hundreds of RTP sessions can be scheduled
+    by a single thread.
+  * Adaptive jitter algorithm for a receiver to adapt to the clockrate
+    of the sender.
+  * Supports part of RFC2833 for telephone events over RTP.
+  * The API is well documented using doxygen.
+  * RTCP messages sent periodically since 0.7.0 (compound packet
+    including sender report or receiver report + SDES).
+  * An API to parse incoming RTCP packets.
