@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2013/09/28 08:50:43 ajacoutot Exp $
-
-# Don't pull in x11/py-gtk2 on these archs; build fails with binutils 2.15
-NOT_FOR_ARCHS-python=	mips64 mips64el
+# $OpenBSD: Makefile,v 1.109 2013/11/11 16:05:28 bcallah Exp $
 
 COMMENT-main=		terminal emulation library
 COMMENT-python= 	python bindings for vte
@@ -14,8 +11,8 @@ SHARED_LIBS+=	vte	14.1    # 2609.0
 FULLPKGNAME-main=	vte-${GNOME_VERSION}
 FULLPKGNAME-python= 	py-${DISTNAME}
 
-REVISION-main =		11
-REVISION-python = 	8
+REVISION-main =		12
+REVISION-python = 	9
 
 CATEGORIES=		devel
 
@@ -40,6 +37,8 @@ WANTLIB += harfbuzz gdk-x11-2.0 gtk-x11-2.0
 MODPY_RUNDEP=		No
 MULTI_PACKAGES= 	-main -python
 
+BUILD_DEPENDS=		x11/py-gtk2
+
 WANTLIB-python= 	${WANTLIB} vte
 LIB_DEPENDS-python=	${LIB_DEPENDS-main} \
 			${BASE_PKGPATH}
@@ -50,22 +49,18 @@ LIB_DEPENDS-main+=	${LIB_DEPENDS} \
 			x11/gtk+2
 WANTLIB-main=		${WANTLIB} c
 
-. if ! ${MACHINE_ARCH:Mmips64*}
-BUILD_DEPENDS+=		x11/py-gtk2
-CONFIGURE_ARGS+=	--enable-python
-
-post-install:
-	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gtk-2.0/*.{a,la}
-. endif
-
 MODGNOME_TOOLS= 	gi
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-gnome-pty-helper \
 			--with-gtk=2.0 \
+			--enable-python \
 			--program-suffix=2
 
 # error: -Bsymbolic requested but not supported by ld
 CONFIGURE_ARGS +=	--disable-Bsymbolic
+
+post-install:
+	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gtk-2.0/*.{a,la}
 
 .include <bsd.port.mk>
