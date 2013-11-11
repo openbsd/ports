@@ -1,4 +1,4 @@
-# $OpenBSD: kde4.port.mk,v 1.12 2013/10/10 11:53:24 zhuk Exp $
+# $OpenBSD: kde4.port.mk,v 1.13 2013/11/11 14:13:29 zhuk Exp $
 
 # The version of KDE SC in x11/kde4
 _MODKDE4_STABLE =	4.10.5
@@ -259,9 +259,10 @@ MODKDE4_CONFIGURE_ENV +=	QTDIR=${MODQT_LIBDIR}
 .endif
 
 
+.if "${NO_BUILD:L}" != "yes"
 BUILD_DEPENDS +=	${MODKDE4_BUILD_DEPENDS}
-
 LIB_DEPENDS +=		${MODKDE4_LIB_DEPENDS}
+.endif
 
 RUN_DEPENDS +=		${MODKDE4_RUN_DEPENDS}
 WANTLIB +=		${MODKDE4_WANTLIB}
