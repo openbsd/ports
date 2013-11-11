@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.30 2013/10/14 11:24:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2013/11/11 15:16:12 ajacoutot Exp $
 
 COMMENT-main=		Python bindings for GLib and GObject
 COMMENT-common=		common files for py-gobject3
 
 GNOME_PROJECT=		pygobject
-GNOME_VERSION=		3.10.1
+GNOME_VERSION=		3.10.2
 MODPY_EGG_VERSION=	${GNOME_VERSION}
 
 PKGNAME-main=		py-gobject3-${GNOME_VERSION}
 FULLPKGNAME-common=	py-gobject3-common-${GNOME_VERSION}
 FULLPKGPATH-common=	devel/py-gobject3,-common
+
+SUBST_VARS=		OSREV
 
 CATEGORIES=		devel
 
@@ -57,8 +59,6 @@ RUN_DEPENDS-main +=	graphics/py3-cairo
 BUILD_DEPENDS +=	graphics/py-cairo
 RUN_DEPENDS-main +=	graphics/py-cairo
 .endif
-
-SUBST_VARS=		OSREV
 
 CONFIGURE_STYLE=	gnu
 
