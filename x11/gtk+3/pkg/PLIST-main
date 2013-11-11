@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.24 2013/10/11 16:27:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.25 2013/11/11 16:06:01 ajacoutot Exp $
 @conflict gtk+3-docs-*
 @pkgpath x11/gtk+3,-docs
 @unexec-delete rm -f %D/lib/gtk-3.0/3.0.0/immodules.cache
@@ -420,13 +420,10 @@ share/gtk-doc/html/gail-libgail-util3/gail-libgail-util3.devhelp2
 share/gtk-doc/html/gail-libgail-util3/home.png
 share/gtk-doc/html/gail-libgail-util3/index.html
 share/gtk-doc/html/gail-libgail-util3/index.sgml
-share/gtk-doc/html/gail-libgail-util3/left-insensitive.png
 share/gtk-doc/html/gail-libgail-util3/left.png
 share/gtk-doc/html/gail-libgail-util3/libgail-util-main.html
-share/gtk-doc/html/gail-libgail-util3/right-insensitive.png
 share/gtk-doc/html/gail-libgail-util3/right.png
 share/gtk-doc/html/gail-libgail-util3/style.css
-share/gtk-doc/html/gail-libgail-util3/up-insensitive.png
 share/gtk-doc/html/gail-libgail-util3/up.png
 share/gtk-doc/html/gdk3/
 share/gtk-doc/html/gdk3/GdkDevice.html
@@ -504,7 +501,6 @@ share/gtk-doc/html/gdk3/icon.png
 share/gtk-doc/html/gdk3/index.html
 share/gtk-doc/html/gdk3/index.sgml
 share/gtk-doc/html/gdk3/iron_cross.png
-share/gtk-doc/html/gdk3/left-insensitive.png
 share/gtk-doc/html/gdk3/left.png
 share/gtk-doc/html/gdk3/left_ptr.png
 share/gtk-doc/html/gdk3/left_side.png
@@ -520,7 +516,6 @@ share/gtk-doc/html/gdk3/pirate.png
 share/gtk-doc/html/gdk3/plus.png
 share/gtk-doc/html/gdk3/question_arrow.png
 share/gtk-doc/html/gdk3/reference.html
-share/gtk-doc/html/gdk3/right-insensitive.png
 share/gtk-doc/html/gdk3/right.png
 share/gtk-doc/html/gdk3/right_ptr.png
 share/gtk-doc/html/gdk3/right_side.png
@@ -551,7 +546,6 @@ share/gtk-doc/html/gdk3/top_tee.png
 share/gtk-doc/html/gdk3/trek.png
 share/gtk-doc/html/gdk3/ul_angle.png
 share/gtk-doc/html/gdk3/umbrella.png
-share/gtk-doc/html/gdk3/up-insensitive.png
 share/gtk-doc/html/gdk3/up.png
 share/gtk-doc/html/gdk3/ur_angle.png
 share/gtk-doc/html/gdk3/watch.png
@@ -1014,7 +1008,6 @@ share/gtk-doc/html/gtk3/layout-tblr.png
 share/gtk-doc/html/gtk3/layout-tbrl.png
 share/gtk-doc/html/gtk3/left-center.png
 share/gtk-doc/html/gtk3/left-end.png
-share/gtk-doc/html/gtk3/left-insensitive.png
 share/gtk-doc/html/gtk3/left-start.png
 share/gtk-doc/html/gtk3/left.png
 share/gtk-doc/html/gtk3/levelbar.png
@@ -1070,7 +1063,6 @@ share/gtk-doc/html/gtk3/radio-group.png
 share/gtk-doc/html/gtk3/recentchooserdialog.png
 share/gtk-doc/html/gtk3/right-center.png
 share/gtk-doc/html/gtk3/right-end.png
-share/gtk-doc/html/gtk3/right-insensitive.png
 share/gtk-doc/html/gtk3/right-start.png
 share/gtk-doc/html/gtk3/right.png
 share/gtk-doc/html/gtk3/scales.png
@@ -1097,7 +1089,6 @@ share/gtk-doc/html/gtk3/tools-check-spelling.png
 share/gtk-doc/html/gtk3/tree-view-coordinates.png
 share/gtk-doc/html/gtk3/up-center.png
 share/gtk-doc/html/gtk3/up-end.png
-share/gtk-doc/html/gtk3/up-insensitive.png
 share/gtk-doc/html/gtk3/up-start.png
 share/gtk-doc/html/gtk3/up.png
 share/gtk-doc/html/gtk3/view-fullscreen.png
