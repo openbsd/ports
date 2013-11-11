@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/08/21 16:26:18 jasper Exp $
-@lib lib/liboauth.so.${LIBoauth_VERSION}

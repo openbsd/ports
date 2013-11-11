@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/08/21 16:26:18 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2013/11/11 11:53:37 ajacoutot Exp $
 include/oauth.h
 lib/liboauth.a
 lib/liboauth.la
+@lib lib/liboauth.so.${LIBoauth_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/oauth.pc
 @man man/man3/oauth.3
