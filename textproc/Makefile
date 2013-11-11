@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.396 2013/11/09 13:58:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.397 2013/11/11 13:37:35 zhuk Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -95,6 +95,7 @@
      SUBDIR += libxml++
      SUBDIR += libxmlsd
      SUBDIR += libxslt
+     SUBDIR += link-grammar
      SUBDIR += linuxdoc
      SUBDIR += lq-sp
      SUBDIR += luaexpat
