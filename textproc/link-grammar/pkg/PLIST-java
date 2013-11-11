@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-java,v 1.1.1.1 2013/11/11 09:20:43 zhuk Exp $
+lib/liblink-grammar-java.a
+lib/liblink-grammar-java.la
+@lib lib/liblink-grammar-java.so.${LIBlink-grammar-java_VERSION}
+share/java/
+share/java/linkgrammar-4.8.0.jar
+share/java/linkgrammar.jar
