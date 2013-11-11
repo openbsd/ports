@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.77 2013/10/06 15:05:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2013/11/11 16:14:08 ajacoutot Exp $
 
 COMMENT=	API documentation browser for GNOME
 
 GNOME_PROJECT=	devhelp
-GNOME_VERSION=	3.10.0
+GNOME_VERSION=	3.10.2
 
 SHARED_LIBS +=  devhelp-3                 0.0 # 0.0
 
@@ -31,7 +31,7 @@ MODULES=	devel/dconf \
 		x11/gnome
 
 BUILD_DEPENDS=	x11/gnome/doc-utils
-LIB_DEPENDS=	www/webkit,gtk3>=2.2.0v0
+LIB_DEPENDS=	www/webkit,gtk3
 
 # for convenience
 RUN_DEPENDS +=	x11/gnome/devel-docs
