@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.214 2013/10/16 07:40:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.215 2013/11/12 16:17:58 ajacoutot Exp $
 
 COMMENT=		general-purpose utility library
 
 GNOME_PROJECT=		glib
-GNOME_VERSION=		2.38.1
+GNOME_VERSION=		2.38.2
 PKGNAME=		${DISTNAME:S/glib/glib2/}
 
 CATEGORIES=		devel
@@ -12,11 +12,11 @@ HOMEPAGE=		http://www.gtk.org/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-SHARED_LIBS +=  glib-2.0             3800.0   # 3800.1
-SHARED_LIBS +=  gmodule-2.0          3800.0   # 3800.1
-SHARED_LIBS +=  gthread-2.0          3800.0   # 3800.1
-SHARED_LIBS +=  gobject-2.0          3800.0   # 3800.1
-SHARED_LIBS +=  gio-2.0              3800.0   # 3800.1
+SHARED_LIBS +=  glib-2.0             3800.0   # 3800.2
+SHARED_LIBS +=  gmodule-2.0          3800.0   # 3800.2
+SHARED_LIBS +=  gthread-2.0          3800.0   # 3800.2
+SHARED_LIBS +=  gobject-2.0          3800.0   # 3800.2
+SHARED_LIBS +=  gio-2.0              3800.0   # 3800.2
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
