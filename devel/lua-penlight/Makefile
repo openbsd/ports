@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2013/09/30 13:04:06 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.6 2013/11/12 15:00:25 sthen Exp $
 
 COMMENT =	pure Lua libraries focusing on input data handling
 
-VER =		1.3.1
-DISTNAME =	Penlight-${VER}
-PKGNAME =	lua-penlight-${VER}
+GH_VER =	1.3.1
+DISTNAME =	Penlight-${GH_VER}
+PKGNAME =	lua-penlight-${GH_VER}
 CATEGORIES =	devel
 
 HOMEPAGE =	http://stevedonovan.github.io/Penlight/
@@ -16,7 +16,8 @@ PERMIT_PACKAGE_CDROM =Yes
 
 MODULES =	lang/lua
 
-MASTER_SITES =	https://github.com/stevedonovan/Penlight/archive/${VER}.tar.gz?bleh=/
+MASTER_SITES =	https://github.com/stevedonovan/Penlight/archive/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{${GH_VER}${EXTRACT_SUFX}}
 
 MODLUA_RUN_DEPENDS =	devel/luafs
 
