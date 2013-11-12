@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/11/06 03:08:43 bcallah Exp $
+# $OpenBSD: Makefile,v 1.7 2013/11/12 19:03:10 bcallah Exp $
 
 # XXX: These should be fixed in a future update.
 BROKEN-alpha:	Bad executables (longjmp botch in chkexc). Abort trap (core dumped)
-BROKEN-sparc64:	gmake *** [../prg/s7c] Illegal instruction (core dumped)
 
-V =		20131027
+V =		20131110
 COMMENT =	high-level, extensible programming language
 DISTNAME =	seed7_05_${V}
 PKGNAME =	seed7-${V}
