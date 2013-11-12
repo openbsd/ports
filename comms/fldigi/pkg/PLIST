@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/05/13 18:23:51 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/11/12 08:22:38 sthen Exp $
 @bin bin/flarq
 @bin bin/fldigi
 bin/fldigi-shell
@@ -9,6 +9,10 @@ share/applications/flarq.desktop
 share/applications/fldigi.desktop
 share/fldigi/
 share/fldigi/NAVTEX_Stations.csv
+share/fldigi/ToR-Stats-SHIP.csv
+share/fldigi/nsd_bbsss.txt
+share/fldigi/station_table.txt
+share/locale/de/LC_MESSAGES/fldigi.mo
 share/locale/es/LC_MESSAGES/fldigi.mo
 share/locale/fr/LC_MESSAGES/fldigi.mo
 share/locale/it/LC_MESSAGES/fldigi.mo
