@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.86 2013/10/26 08:02:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2013/11/12 07:37:24 ajacoutot Exp $
 
 COMMENT =		SOAP implementation in C
 
 GNOME_PROJECT =		libsoup
-GNOME_VERSION =		2.44.1
-
-REVISION =		0
+GNOME_VERSION =		2.44.2
 
 SHARED_LIBS +=  soup-2.4             8.0      # 8.0
 SHARED_LIBS +=  soup-gnome-2.4       8.0      # 8.0
@@ -40,6 +38,7 @@ LIB_DEPENDS =		devel/glib2 \
 			textproc/libxml
 
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	--with-ntlm-auth=${LOCALBASE}/bin/ntlm_auth
 
 # checking Apache version... 1.3.29 (Unix) (ignoring)
 # But this prevents needing apache2 for certain regress tests.
