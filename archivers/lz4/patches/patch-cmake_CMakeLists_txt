@@ -1,0 +1,23 @@
+$OpenBSD: patch-cmake_CMakeLists_txt,v 1.1.1.1 2013/11/12 20:00:50 sthen Exp $
+--- cmake/CMakeLists.txt.orig	Tue Nov 12 17:15:04 2013
++++ cmake/CMakeLists.txt	Tue Nov 12 17:17:13 2013
+@@ -25,9 +25,7 @@ else(BUILD_SHARED_LIBS)
+ endif(BUILD_SHARED_LIBS)
+ 
+ if(UNIX AND BUILD_SHARED_LIBS)
+-    if(CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64")
+-        add_definitions(-fPIC)
+-    endif(CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64")
++    add_definitions(-fPIC)
+ endif()
+ 
+ set(SRC_DIR ../)
+@@ -99,7 +97,7 @@ ADD_DEFINITIONS("-W")
+ ADD_DEFINITIONS("-Wundef")
+ ADD_DEFINITIONS("-Wcast-align")
+ ADD_DEFINITIONS("-Wno-implicit-function-declaration")
+-ADD_DEFINITIONS("-Os -march=native -std=c99")
++ADD_DEFINITIONS("-std=c99")
+ INCLUDE_DIRECTORIES (${SRC_DIR})
+ 
+ 

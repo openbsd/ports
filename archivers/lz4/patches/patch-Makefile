@@ -1,0 +1,54 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2013/11/12 20:00:50 sthen Exp $
+
+The Makefile isn't currently used in the port, but it's included here
+to make it easier for anyone who wants to build the fuzzer/benchmark.
+
+--- Makefile.orig	Tue Nov 12 16:00:43 2013
++++ Makefile	Tue Nov 12 17:09:48 2013
+@@ -37,7 +37,7 @@ BINDIR=$(PREFIX)/bin
+ MANDIR=$(PREFIX)/share/man/man1
+ DISTRIBNAME=lz4-$(RELEASE).tar.gz
+ CC=gcc
+-CFLAGS=-I. -std=c99 -Wall -W -Wundef
++CFLAGS+=-I. -std=c99 -Wall -W -Wundef
+ 
+ # Define *.exe as extension for Windows systems
+ # ifeq ($(OS),Windows_NT)
+@@ -59,29 +59,29 @@ SOURCES = $(TEXT) $(NONTEXT)
+ 
+ default: lz4 lz4c
+ 
+-all: lz4 lz4c lz4c32 fuzzer fuzzer32 fullbench fullbench32
++all: lz4 lz4c fuzzer fullbench
+ 
+ lz4: lz4.c lz4hc.c bench.c xxhash.c lz4cli.c
+-	$(CC)      -O3 $(CFLAGS) -DDISABLE_LZ4C_LEGACY_OPTIONS $^ -o $@$(EXT)
++	$(CC)      $(CFLAGS) -DDISABLE_LZ4C_LEGACY_OPTIONS $^ -o $@$(EXT)
+ 
+ lz4c  : lz4.c lz4hc.c bench.c xxhash.c lz4cli.c
+-	$(CC)      -O3 $(CFLAGS) $^ -o $@$(EXT)
++	$(CC)      $(CFLAGS) $^ -o $@$(EXT)
+ 
+ lz4c32: lz4.c lz4hc.c bench.c xxhash.c lz4cli.c
+-	$(CC) -m32 -O3 $(CFLAGS) $^ -o $@$(EXT)
++	$(CC) -m32 $(CFLAGS) $^ -o $@$(EXT)
+ 
+ fuzzer  : lz4.c lz4hc.c fuzzer.c
+ 	@echo fuzzer is a test tool to check lz4 integrity on target platform
+-	$(CC)      -O3 $(CFLAGS) $^ -o $@$(EXT)
++	$(CC)      $(CFLAGS) $^ -lcompat -o $@$(EXT)
+ 
+ fuzzer32: lz4.c lz4hc.c fuzzer.c
+-	$(CC) -m32 -O3 $(CFLAGS) $^ -o $@$(EXT)
++	$(CC) -m32 $(CFLAGS) $^ -o $@$(EXT)
+ 
+ fullbench  : lz4.c lz4hc.c xxhash.c fullbench.c
+-	$(CC)      -O3 $(CFLAGS) $^ -o $@$(EXT)
++	$(CC)      $(CFLAGS) $^ -o $@$(EXT)
+ 
+ fullbench32: lz4.c lz4hc.c xxhash.c fullbench.c
+-	$(CC) -m32 -O3 $(CFLAGS) $^ -o $@$(EXT)
++	$(CC) -m32 $(CFLAGS) $^ -o $@$(EXT)
+ 
+ clean:
+ 	@rm -f core *.o lz4$(EXT) lz4c$(EXT) lz4c32$(EXT) \

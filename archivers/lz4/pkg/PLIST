@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/12 20:00:50 sthen Exp $
+@bin bin/lz4c
+include/lz4.h
+include/lz4hc.h
+lib/liblz4.a
+@lib lib/liblz4.so.${LIBlz4_VERSION}
+@man man/man1/lz4c.1
