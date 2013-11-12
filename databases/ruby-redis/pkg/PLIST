@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/06/28 12:47:48 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/11/12 08:10:32 dcoppa Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.order
@@ -90,6 +90,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/persistence_control_commands_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/pipelining_commands_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/publish_subscribe_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/remote_server_control_commands_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/scanning_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/scripting_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/sorting_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/support/
