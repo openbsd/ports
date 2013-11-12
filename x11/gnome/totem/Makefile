@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2013/10/06 09:08:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.113 2013/11/12 13:44:48 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -36,7 +36,7 @@ MODULES=		devel/dconf \
 BUILD_DEPENDS=	 	devel/gsettings-desktop-schemas \
 			devel/py-gobject3 \
 			multimedia/gstreamer1/plugins-good \
-			multimedia/gstreamer1/plugins-bad #soundtouch
+			multimedia/gstreamer1/plugins-bad #scaletempo
 
 # needed for make check
 BUILD_DEPENDS +=	devel/pylint
@@ -60,7 +60,7 @@ LIB_DEPENDS=		x11/gnome/totem-pl-parser \
 # point in using a media player that can't play most modern media files
 RUN_DEPENDS +=		multimedia/gstreamer1/plugins-good \
 			multimedia/gstreamer1/plugins-libav \
-			multimedia/gstreamer1/plugins-bad #soundtouch
+			multimedia/gstreamer1/plugins-bad #scaletempo
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
