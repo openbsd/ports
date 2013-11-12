@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/10/25 20:55:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/11/12 18:53:03 stu Exp $
 @conflict cppunit-<1.12
-%%SHARED%%
 @bin bin/baud_test
 @bin bin/bitbang
 @bin bin/bitbang2
@@ -8,10 +7,11 @@
 @bin bin/bitbang_ft2232
 @bin bin/find_all
 bin/libftdi-config
-@bin bin/serial_read
+@bin bin/serial_test
 @bin bin/simple
 include/ftdi.h
 lib/libftdi.a
 lib/libftdi.la
+@lib lib/libftdi.so.${LIBftdi_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/libftdi.pc

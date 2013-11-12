@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/21 08:45:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2013/11/12 18:53:03 stu Exp $
 
 COMMENT =	libftdi, interface to ftdi debug device
 
 CATEGORIES =	devel
 
-DISTNAME =	libftdi-0.18
-REVISION =	1
+DISTNAME =	libftdi-0.20
 
-SHARED_LIBS =	ftdi		15.1	# 19.0
+SHARED_LIBS =	ftdi		15.1	# 21.0
 
 HOMEPAGE =	http://www.intra2net.com/en/developer/libftdi/
 

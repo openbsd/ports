@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_ftdi_c,v 1.1 2011/11/13 13:54:04 ajacoutot Exp $
---- src/ftdi.c.orig	Sat Nov 12 23:30:50 2011
-+++ src/ftdi.c	Sat Nov 12 23:31:17 2011
-@@ -45,6 +45,10 @@
+$OpenBSD: patch-src_ftdi_c,v 1.2 2013/11/12 18:53:03 stu Exp $
+--- src/ftdi.c.orig	Thu Mar 15 05:58:44 2012
++++ src/ftdi.c	Sat Nov  9 19:47:18 2013
+@@ -44,6 +44,10 @@
  #include <linux/usbdevice_fs.h>
  #endif
  
