@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.29 2013/10/06 13:33:34 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.30 2013/11/12 22:11:50 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -216,7 +216,6 @@ sub new
 			} else {
 				my $info = DPB::PkgPath->new($_);
 				$info->{parent} //= $parent;
-				$info->{wantbuild} = 1;
 				$r->{$info} = $info;
 			}
 		}
@@ -250,7 +249,6 @@ sub add
 	my ($class, $key, $self, $value, $parent) = @_;
 	$self->{$key} //= bless {}, $class;
 	my $path = DPB::PkgPath->new($value);
-	$path->{wantinfo} = 1;
 	$path->{parent} //= $parent;
 	$self->{$key}{$path} = $path;
 	return $self;

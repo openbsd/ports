@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.44 2013/10/19 09:33:52 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.45 2013/11/12 22:11:50 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -183,33 +183,77 @@ sub equates
 	DPB::Heuristics->equates($h);
 }
 
-# we're always called from values corresponding to the same subdir.
-sub merge_depends
+# in the MULTI_PACKAGES case, some stuff may need to be forcibly removed
+sub fix_multi
 {
 	my ($class, $h) = @_;
-	my $global = bless {}, "AddDepends";
-	my $global2 = bless {}, "AddDepends";
-	my $global3 = bless {}, "AddDepends";
-	my $global4 = bless {}, "AddDepends";
+
 	my $multi;
-	my $extra;
+	my $may_vanish;
 	my $path;
 	for my $v (values %$h) {
 		$path //= $v; # one for later
 		my $info = $v->{info};
-		if (defined $info->{DIST} && !defined $info->{DISTIGNORE}) {
-			for my $f (values %{$info->{DIST}}) {
-				$info->{FDEPENDS}{$f} = $f;
-				bless $info->{FDEPENDS}, "AddDepends";
-			}
-		}
 		# share !
 		if (defined $info->{BUILD_PACKAGES}) {
 			$multi = $info->{BUILD_PACKAGES};
 		}
 		# and this one is special
 		if (defined $info->{MULTI_PACKAGES}) {
-			$extra = $info->{MULTI_PACKAGES};
+			$may_vanish = $info->{MULTI_PACKAGES};
+		}
+	}
+	# in case BUILD_PACKAGES "erases" some multi, we need to
+	# stub out the correspond paths, so that dependent ports
+	# will vanish
+	if (defined $may_vanish) {
+		for my $m (keys %$may_vanish) {
+			# okay those are actually present
+			next if exists $multi->{$m};
+
+			# make a dummy path that will get ignored
+			my $stem = $path->pkgpath_and_flavors;
+			my $w = DPB::PkgPath->new("$stem,$m");
+			if (!defined $w->{info}) {
+				$w->{info} = DPB::PortInfo->new($w);
+				$w->{info}->stub_name;
+			}
+			#delete $w->{info}->{IGNORE};
+			if (!defined $w->{info}->{IGNORE}) {
+				$w->{info}->add('IGNORE', 
+				    "vanishes from BUILD_PACKAGES");
+			}
+			$h->{$w} = $w;
+		}
+	}
+	if (defined $multi) {
+		for my $v (values %$h) {
+			$v->{info}{BUILD_PACKAGES} = $multi;
+		}
+	}
+}
+
+# we're always called from values corresponding to the same subdir.
+sub merge_depends
+{
+	my ($class, $h) = @_;
+
+	$class->fix_multi($h);
+
+	my $global = bless {}, "AddDepends";
+	my $global2 = bless {}, "AddDepends";
+	my $global3 = bless {}, "AddDepends";
+	my $global4 = bless {}, "AddDepends";
+	for my $v (values %$h) {
+		my $info = $v->{info};
+
+		# let's allow doing that even for ignore'd stuff so
+		# that dpb -F will work
+		if (defined $info->{DIST} && !defined $info->{DISTIGNORE}) {
+			for my $f (values %{$info->{DIST}}) {
+				$info->{FDEPENDS}{$f} = $f;
+				bless $info->{FDEPENDS}, "AddDepends";
+			}
 		}
 		# XXX don't grab dependencies for IGNOREd stuff
 		next if defined $info->{IGNORE};
@@ -220,6 +264,7 @@ sub merge_depends
 					# filter these out like during build
 					# simpler to figure out logs from 
 					# depends stage that way.
+					$d->{wantbuild} = 1;
 					next if $d->pkgpath_and_flavors eq 
 					    $v->pkgpath_and_flavors;
 					$global->{$d} = $d;
@@ -229,6 +274,7 @@ sub merge_depends
 		for my $k (qw(LIB_DEPENDS RUN_DEPENDS)) {
 			if (defined $info->{$k}) {
 				for my $d (values %{$info->{$k}}) {
+					$d->{wantbuild} = 1;
 					$info->{RDEPENDS}{$d} = $d;
 					bless $info->{RDEPENDS}, "AddDepends";
 				}
@@ -237,6 +283,7 @@ sub merge_depends
 		if (defined $info->{EXTRA}) {
 			for my $d (values %{$info->{EXTRA}}) {
 				$global3->{$d} = $d;
+				$d->{wantinfo} = 1;
 			}
 	    	}
 			
@@ -258,34 +305,6 @@ sub merge_depends
 		for my $v (values %$h) {
 			$v->{info}{EXTRA} = $global3;
 			$v->{info}{BEXTRA} = $global4;
-		}
-	}
-	if (defined $multi) {
-		for my $v (values %$h) {
-			$v->{info}{BUILD_PACKAGES} = $multi;
-		}
-	}
-	# in case BUILD_PACKAGES "erases" some multi, we need to
-	# stub out the correspond paths, so that dependent ports
-	# will vanish
-	if (defined $extra) {
-		for my $m (keys %$extra) {
-			# okay those are present
-
-			next if exists $multi->{$m};
-			# make a dummy path that will get ignored
-			my $stem = $path->pkgpath_and_flavors;
-			my $w = DPB::PkgPath->new("$stem,$m");
-			if (!defined $w->{info}) {
-				$w->{info} = DPB::PortInfo->new($w);
-				$w->{info}->stub_name;
-			}
-			delete $w->{info}->{IGNORE};
-			if (!defined $w->{info}->{IGNORE}) {
-				$w->{info}->add('IGNORE', 
-				    "vanishes from BUILD_PACKAGES");
-			}
-			$h->{$w} = $w;
 		}
 	}
 }
