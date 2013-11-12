@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2013/10/15 17:41:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2013/11/12 07:17:16 ajacoutot Exp $
 @conflict gnome2-user-docs-*
 @pkgpath x11/gnome/users-guide
 share/help/
@@ -60,7 +60,6 @@ share/help/C/gnome-help/color-missingvcgt.page
 share/help/C/gnome-help/color-notifications.page
 share/help/C/gnome-help/color-notspecifiededid.page
 share/help/C/gnome-help/color-testing.page
-share/help/C/gnome-help/color-virtualdevice.page
 share/help/C/gnome-help/color-whatisprofile.page
 share/help/C/gnome-help/color-whatisspace.page
 share/help/C/gnome-help/color-why-calibrate.page
@@ -126,8 +125,8 @@ share/help/C/gnome-help/figures/go-down.png
 share/help/C/gnome-help/figures/input-keyboard-symbolic.png
 share/help/C/gnome-help/figures/input-methods-switcher.png
 share/help/C/gnome-help/figures/keyboard-key-menu.svg
+share/help/C/gnome-help/figures/nautilus-3-10.png
 share/help/C/gnome-help/figures/nautilus-icons.png
-share/help/C/gnome-help/figures/nautilus.png
 share/help/C/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/C/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/C/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -288,7 +287,6 @@ share/help/C/gnome-help/net-wireless-adhoc.page
 share/help/C/gnome-help/net-wireless-airplane.page
 share/help/C/gnome-help/net-wireless-connect.page
 share/help/C/gnome-help/net-wireless-disconnecting.page
-share/help/C/gnome-help/net-wireless-edit-connection.page
 share/help/C/gnome-help/net-wireless-find.page
 share/help/C/gnome-help/net-wireless-hidden.page
 share/help/C/gnome-help/net-wireless-noconnection.page
@@ -383,7 +381,6 @@ share/help/C/gnome-help/tips.page
 share/help/C/gnome-help/translate.page
 share/help/C/gnome-help/user-accounts.page
 share/help/C/gnome-help/user-add.page
-share/help/C/gnome-help/user-addguest.page
 share/help/C/gnome-help/user-admin-change.page
 share/help/C/gnome-help/user-admin-explain.page
 share/help/C/gnome-help/user-admin-problems.page
@@ -486,7 +483,6 @@ share/help/as/gnome-help/color-missingvcgt.page
 share/help/as/gnome-help/color-notifications.page
 share/help/as/gnome-help/color-notspecifiededid.page
 share/help/as/gnome-help/color-testing.page
-share/help/as/gnome-help/color-virtualdevice.page
 share/help/as/gnome-help/color-whatisprofile.page
 share/help/as/gnome-help/color-whatisspace.page
 share/help/as/gnome-help/color-why-calibrate.page
@@ -552,8 +548,8 @@ share/help/as/gnome-help/figures/go-down.png
 share/help/as/gnome-help/figures/input-keyboard-symbolic.png
 share/help/as/gnome-help/figures/input-methods-switcher.png
 share/help/as/gnome-help/figures/keyboard-key-menu.svg
+share/help/as/gnome-help/figures/nautilus-3-10.png
 share/help/as/gnome-help/figures/nautilus-icons.png
-share/help/as/gnome-help/figures/nautilus.png
 share/help/as/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/as/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/as/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -714,7 +710,6 @@ share/help/as/gnome-help/net-wireless-adhoc.page
 share/help/as/gnome-help/net-wireless-airplane.page
 share/help/as/gnome-help/net-wireless-connect.page
 share/help/as/gnome-help/net-wireless-disconnecting.page
-share/help/as/gnome-help/net-wireless-edit-connection.page
 share/help/as/gnome-help/net-wireless-find.page
 share/help/as/gnome-help/net-wireless-hidden.page
 share/help/as/gnome-help/net-wireless-noconnection.page
@@ -809,7 +804,6 @@ share/help/as/gnome-help/tips.page
 share/help/as/gnome-help/translate.page
 share/help/as/gnome-help/user-accounts.page
 share/help/as/gnome-help/user-add.page
-share/help/as/gnome-help/user-addguest.page
 share/help/as/gnome-help/user-admin-change.page
 share/help/as/gnome-help/user-admin-explain.page
 share/help/as/gnome-help/user-admin-problems.page
@@ -883,7 +877,6 @@ share/help/ca/gnome-help/color-missingvcgt.page
 share/help/ca/gnome-help/color-notifications.page
 share/help/ca/gnome-help/color-notspecifiededid.page
 share/help/ca/gnome-help/color-testing.page
-share/help/ca/gnome-help/color-virtualdevice.page
 share/help/ca/gnome-help/color-whatisprofile.page
 share/help/ca/gnome-help/color-whatisspace.page
 share/help/ca/gnome-help/color-why-calibrate.page
@@ -949,8 +942,8 @@ share/help/ca/gnome-help/figures/go-down.png
 share/help/ca/gnome-help/figures/input-keyboard-symbolic.png
 share/help/ca/gnome-help/figures/input-methods-switcher.png
 share/help/ca/gnome-help/figures/keyboard-key-menu.svg
+share/help/ca/gnome-help/figures/nautilus-3-10.png
 share/help/ca/gnome-help/figures/nautilus-icons.png
-share/help/ca/gnome-help/figures/nautilus.png
 share/help/ca/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/ca/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/ca/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -1111,7 +1104,6 @@ share/help/ca/gnome-help/net-wireless-adhoc.page
 share/help/ca/gnome-help/net-wireless-airplane.page
 share/help/ca/gnome-help/net-wireless-connect.page
 share/help/ca/gnome-help/net-wireless-disconnecting.page
-share/help/ca/gnome-help/net-wireless-edit-connection.page
 share/help/ca/gnome-help/net-wireless-find.page
 share/help/ca/gnome-help/net-wireless-hidden.page
 share/help/ca/gnome-help/net-wireless-noconnection.page
@@ -1206,7 +1198,6 @@ share/help/ca/gnome-help/tips.page
 share/help/ca/gnome-help/translate.page
 share/help/ca/gnome-help/user-accounts.page
 share/help/ca/gnome-help/user-add.page
-share/help/ca/gnome-help/user-addguest.page
 share/help/ca/gnome-help/user-admin-change.page
 share/help/ca/gnome-help/user-admin-explain.page
 share/help/ca/gnome-help/user-admin-problems.page
@@ -1280,7 +1271,6 @@ share/help/cs/gnome-help/color-missingvcgt.page
 share/help/cs/gnome-help/color-notifications.page
 share/help/cs/gnome-help/color-notspecifiededid.page
 share/help/cs/gnome-help/color-testing.page
-share/help/cs/gnome-help/color-virtualdevice.page
 share/help/cs/gnome-help/color-whatisprofile.page
 share/help/cs/gnome-help/color-whatisspace.page
 share/help/cs/gnome-help/color-why-calibrate.page
@@ -1346,8 +1336,8 @@ share/help/cs/gnome-help/figures/go-down.png
 share/help/cs/gnome-help/figures/input-keyboard-symbolic.png
 share/help/cs/gnome-help/figures/input-methods-switcher.png
 share/help/cs/gnome-help/figures/keyboard-key-menu.svg
+share/help/cs/gnome-help/figures/nautilus-3-10.png
 share/help/cs/gnome-help/figures/nautilus-icons.png
-share/help/cs/gnome-help/figures/nautilus.png
 share/help/cs/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/cs/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/cs/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -1508,7 +1498,6 @@ share/help/cs/gnome-help/net-wireless-adhoc.page
 share/help/cs/gnome-help/net-wireless-airplane.page
 share/help/cs/gnome-help/net-wireless-connect.page
 share/help/cs/gnome-help/net-wireless-disconnecting.page
-share/help/cs/gnome-help/net-wireless-edit-connection.page
 share/help/cs/gnome-help/net-wireless-find.page
 share/help/cs/gnome-help/net-wireless-hidden.page
 share/help/cs/gnome-help/net-wireless-noconnection.page
@@ -1603,7 +1592,6 @@ share/help/cs/gnome-help/tips.page
 share/help/cs/gnome-help/translate.page
 share/help/cs/gnome-help/user-accounts.page
 share/help/cs/gnome-help/user-add.page
-share/help/cs/gnome-help/user-addguest.page
 share/help/cs/gnome-help/user-admin-change.page
 share/help/cs/gnome-help/user-admin-explain.page
 share/help/cs/gnome-help/user-admin-problems.page
@@ -1677,7 +1665,6 @@ share/help/de/gnome-help/color-missingvcgt.page
 share/help/de/gnome-help/color-notifications.page
 share/help/de/gnome-help/color-notspecifiededid.page
 share/help/de/gnome-help/color-testing.page
-share/help/de/gnome-help/color-virtualdevice.page
 share/help/de/gnome-help/color-whatisprofile.page
 share/help/de/gnome-help/color-whatisspace.page
 share/help/de/gnome-help/color-why-calibrate.page
@@ -1743,8 +1730,8 @@ share/help/de/gnome-help/figures/go-down.png
 share/help/de/gnome-help/figures/input-keyboard-symbolic.png
 share/help/de/gnome-help/figures/input-methods-switcher.png
 share/help/de/gnome-help/figures/keyboard-key-menu.svg
+share/help/de/gnome-help/figures/nautilus-3-10.png
 share/help/de/gnome-help/figures/nautilus-icons.png
-share/help/de/gnome-help/figures/nautilus.png
 share/help/de/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/de/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/de/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -1905,7 +1892,6 @@ share/help/de/gnome-help/net-wireless-adhoc.page
 share/help/de/gnome-help/net-wireless-airplane.page
 share/help/de/gnome-help/net-wireless-connect.page
 share/help/de/gnome-help/net-wireless-disconnecting.page
-share/help/de/gnome-help/net-wireless-edit-connection.page
 share/help/de/gnome-help/net-wireless-find.page
 share/help/de/gnome-help/net-wireless-hidden.page
 share/help/de/gnome-help/net-wireless-noconnection.page
@@ -2000,7 +1986,6 @@ share/help/de/gnome-help/tips.page
 share/help/de/gnome-help/translate.page
 share/help/de/gnome-help/user-accounts.page
 share/help/de/gnome-help/user-add.page
-share/help/de/gnome-help/user-addguest.page
 share/help/de/gnome-help/user-admin-change.page
 share/help/de/gnome-help/user-admin-explain.page
 share/help/de/gnome-help/user-admin-problems.page
@@ -2074,7 +2059,6 @@ share/help/el/gnome-help/color-missingvcgt.page
 share/help/el/gnome-help/color-notifications.page
 share/help/el/gnome-help/color-notspecifiededid.page
 share/help/el/gnome-help/color-testing.page
-share/help/el/gnome-help/color-virtualdevice.page
 share/help/el/gnome-help/color-whatisprofile.page
 share/help/el/gnome-help/color-whatisspace.page
 share/help/el/gnome-help/color-why-calibrate.page
@@ -2140,8 +2124,8 @@ share/help/el/gnome-help/figures/go-down.png
 share/help/el/gnome-help/figures/input-keyboard-symbolic.png
 share/help/el/gnome-help/figures/input-methods-switcher.png
 share/help/el/gnome-help/figures/keyboard-key-menu.svg
+share/help/el/gnome-help/figures/nautilus-3-10.png
 share/help/el/gnome-help/figures/nautilus-icons.png
-share/help/el/gnome-help/figures/nautilus.png
 share/help/el/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/el/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/el/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -2302,7 +2286,6 @@ share/help/el/gnome-help/net-wireless-adhoc.page
 share/help/el/gnome-help/net-wireless-airplane.page
 share/help/el/gnome-help/net-wireless-connect.page
 share/help/el/gnome-help/net-wireless-disconnecting.page
-share/help/el/gnome-help/net-wireless-edit-connection.page
 share/help/el/gnome-help/net-wireless-find.page
 share/help/el/gnome-help/net-wireless-hidden.page
 share/help/el/gnome-help/net-wireless-noconnection.page
@@ -2397,7 +2380,6 @@ share/help/el/gnome-help/tips.page
 share/help/el/gnome-help/translate.page
 share/help/el/gnome-help/user-accounts.page
 share/help/el/gnome-help/user-add.page
-share/help/el/gnome-help/user-addguest.page
 share/help/el/gnome-help/user-admin-change.page
 share/help/el/gnome-help/user-admin-explain.page
 share/help/el/gnome-help/user-admin-problems.page
@@ -2471,7 +2453,6 @@ share/help/es/gnome-help/color-missingvcgt.page
 share/help/es/gnome-help/color-notifications.page
 share/help/es/gnome-help/color-notspecifiededid.page
 share/help/es/gnome-help/color-testing.page
-share/help/es/gnome-help/color-virtualdevice.page
 share/help/es/gnome-help/color-whatisprofile.page
 share/help/es/gnome-help/color-whatisspace.page
 share/help/es/gnome-help/color-why-calibrate.page
@@ -2537,8 +2518,8 @@ share/help/es/gnome-help/figures/go-down.png
 share/help/es/gnome-help/figures/input-keyboard-symbolic.png
 share/help/es/gnome-help/figures/input-methods-switcher.png
 share/help/es/gnome-help/figures/keyboard-key-menu.svg
+share/help/es/gnome-help/figures/nautilus-3-10.png
 share/help/es/gnome-help/figures/nautilus-icons.png
-share/help/es/gnome-help/figures/nautilus.png
 share/help/es/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/es/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/es/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -2699,7 +2680,6 @@ share/help/es/gnome-help/net-wireless-adhoc.page
 share/help/es/gnome-help/net-wireless-airplane.page
 share/help/es/gnome-help/net-wireless-connect.page
 share/help/es/gnome-help/net-wireless-disconnecting.page
-share/help/es/gnome-help/net-wireless-edit-connection.page
 share/help/es/gnome-help/net-wireless-find.page
 share/help/es/gnome-help/net-wireless-hidden.page
 share/help/es/gnome-help/net-wireless-noconnection.page
@@ -2794,7 +2774,6 @@ share/help/es/gnome-help/tips.page
 share/help/es/gnome-help/translate.page
 share/help/es/gnome-help/user-accounts.page
 share/help/es/gnome-help/user-add.page
-share/help/es/gnome-help/user-addguest.page
 share/help/es/gnome-help/user-admin-change.page
 share/help/es/gnome-help/user-admin-explain.page
 share/help/es/gnome-help/user-admin-problems.page
@@ -2868,7 +2847,6 @@ share/help/fi/gnome-help/color-missingvcgt.page
 share/help/fi/gnome-help/color-notifications.page
 share/help/fi/gnome-help/color-notspecifiededid.page
 share/help/fi/gnome-help/color-testing.page
-share/help/fi/gnome-help/color-virtualdevice.page
 share/help/fi/gnome-help/color-whatisprofile.page
 share/help/fi/gnome-help/color-whatisspace.page
 share/help/fi/gnome-help/color-why-calibrate.page
@@ -2934,8 +2912,8 @@ share/help/fi/gnome-help/figures/go-down.png
 share/help/fi/gnome-help/figures/input-keyboard-symbolic.png
 share/help/fi/gnome-help/figures/input-methods-switcher.png
 share/help/fi/gnome-help/figures/keyboard-key-menu.svg
+share/help/fi/gnome-help/figures/nautilus-3-10.png
 share/help/fi/gnome-help/figures/nautilus-icons.png
-share/help/fi/gnome-help/figures/nautilus.png
 share/help/fi/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/fi/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/fi/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -3096,7 +3074,6 @@ share/help/fi/gnome-help/net-wireless-adhoc.page
 share/help/fi/gnome-help/net-wireless-airplane.page
 share/help/fi/gnome-help/net-wireless-connect.page
 share/help/fi/gnome-help/net-wireless-disconnecting.page
-share/help/fi/gnome-help/net-wireless-edit-connection.page
 share/help/fi/gnome-help/net-wireless-find.page
 share/help/fi/gnome-help/net-wireless-hidden.page
 share/help/fi/gnome-help/net-wireless-noconnection.page
@@ -3191,7 +3168,6 @@ share/help/fi/gnome-help/tips.page
 share/help/fi/gnome-help/translate.page
 share/help/fi/gnome-help/user-accounts.page
 share/help/fi/gnome-help/user-add.page
-share/help/fi/gnome-help/user-addguest.page
 share/help/fi/gnome-help/user-admin-change.page
 share/help/fi/gnome-help/user-admin-explain.page
 share/help/fi/gnome-help/user-admin-problems.page
@@ -3265,7 +3241,6 @@ share/help/fr/gnome-help/color-missingvcgt.page
 share/help/fr/gnome-help/color-notifications.page
 share/help/fr/gnome-help/color-notspecifiededid.page
 share/help/fr/gnome-help/color-testing.page
-share/help/fr/gnome-help/color-virtualdevice.page
 share/help/fr/gnome-help/color-whatisprofile.page
 share/help/fr/gnome-help/color-whatisspace.page
 share/help/fr/gnome-help/color-why-calibrate.page
@@ -3331,8 +3306,8 @@ share/help/fr/gnome-help/figures/go-down.png
 share/help/fr/gnome-help/figures/input-keyboard-symbolic.png
 share/help/fr/gnome-help/figures/input-methods-switcher.png
 share/help/fr/gnome-help/figures/keyboard-key-menu.svg
+share/help/fr/gnome-help/figures/nautilus-3-10.png
 share/help/fr/gnome-help/figures/nautilus-icons.png
-share/help/fr/gnome-help/figures/nautilus.png
 share/help/fr/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/fr/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/fr/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -3493,7 +3468,6 @@ share/help/fr/gnome-help/net-wireless-adhoc.page
 share/help/fr/gnome-help/net-wireless-airplane.page
 share/help/fr/gnome-help/net-wireless-connect.page
 share/help/fr/gnome-help/net-wireless-disconnecting.page
-share/help/fr/gnome-help/net-wireless-edit-connection.page
 share/help/fr/gnome-help/net-wireless-find.page
 share/help/fr/gnome-help/net-wireless-hidden.page
 share/help/fr/gnome-help/net-wireless-noconnection.page
@@ -3588,7 +3562,6 @@ share/help/fr/gnome-help/tips.page
 share/help/fr/gnome-help/translate.page
 share/help/fr/gnome-help/user-accounts.page
 share/help/fr/gnome-help/user-add.page
-share/help/fr/gnome-help/user-addguest.page
 share/help/fr/gnome-help/user-admin-change.page
 share/help/fr/gnome-help/user-admin-explain.page
 share/help/fr/gnome-help/user-admin-problems.page
@@ -3662,7 +3635,6 @@ share/help/gl/gnome-help/color-missingvcgt.page
 share/help/gl/gnome-help/color-notifications.page
 share/help/gl/gnome-help/color-notspecifiededid.page
 share/help/gl/gnome-help/color-testing.page
-share/help/gl/gnome-help/color-virtualdevice.page
 share/help/gl/gnome-help/color-whatisprofile.page
 share/help/gl/gnome-help/color-whatisspace.page
 share/help/gl/gnome-help/color-why-calibrate.page
@@ -3728,8 +3700,8 @@ share/help/gl/gnome-help/figures/go-down.png
 share/help/gl/gnome-help/figures/input-keyboard-symbolic.png
 share/help/gl/gnome-help/figures/input-methods-switcher.png
 share/help/gl/gnome-help/figures/keyboard-key-menu.svg
+share/help/gl/gnome-help/figures/nautilus-3-10.png
 share/help/gl/gnome-help/figures/nautilus-icons.png
-share/help/gl/gnome-help/figures/nautilus.png
 share/help/gl/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/gl/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/gl/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -3890,7 +3862,6 @@ share/help/gl/gnome-help/net-wireless-adhoc.page
 share/help/gl/gnome-help/net-wireless-airplane.page
 share/help/gl/gnome-help/net-wireless-connect.page
 share/help/gl/gnome-help/net-wireless-disconnecting.page
-share/help/gl/gnome-help/net-wireless-edit-connection.page
 share/help/gl/gnome-help/net-wireless-find.page
 share/help/gl/gnome-help/net-wireless-hidden.page
 share/help/gl/gnome-help/net-wireless-noconnection.page
@@ -3985,7 +3956,6 @@ share/help/gl/gnome-help/tips.page
 share/help/gl/gnome-help/translate.page
 share/help/gl/gnome-help/user-accounts.page
 share/help/gl/gnome-help/user-add.page
-share/help/gl/gnome-help/user-addguest.page
 share/help/gl/gnome-help/user-admin-change.page
 share/help/gl/gnome-help/user-admin-explain.page
 share/help/gl/gnome-help/user-admin-problems.page
@@ -4059,7 +4029,6 @@ share/help/gu/gnome-help/color-missingvcgt.page
 share/help/gu/gnome-help/color-notifications.page
 share/help/gu/gnome-help/color-notspecifiededid.page
 share/help/gu/gnome-help/color-testing.page
-share/help/gu/gnome-help/color-virtualdevice.page
 share/help/gu/gnome-help/color-whatisprofile.page
 share/help/gu/gnome-help/color-whatisspace.page
 share/help/gu/gnome-help/color-why-calibrate.page
@@ -4125,8 +4094,8 @@ share/help/gu/gnome-help/figures/go-down.png
 share/help/gu/gnome-help/figures/input-keyboard-symbolic.png
 share/help/gu/gnome-help/figures/input-methods-switcher.png
 share/help/gu/gnome-help/figures/keyboard-key-menu.svg
+share/help/gu/gnome-help/figures/nautilus-3-10.png
 share/help/gu/gnome-help/figures/nautilus-icons.png
-share/help/gu/gnome-help/figures/nautilus.png
 share/help/gu/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/gu/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/gu/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -4287,7 +4256,6 @@ share/help/gu/gnome-help/net-wireless-adhoc.page
 share/help/gu/gnome-help/net-wireless-airplane.page
 share/help/gu/gnome-help/net-wireless-connect.page
 share/help/gu/gnome-help/net-wireless-disconnecting.page
-share/help/gu/gnome-help/net-wireless-edit-connection.page
 share/help/gu/gnome-help/net-wireless-find.page
 share/help/gu/gnome-help/net-wireless-hidden.page
 share/help/gu/gnome-help/net-wireless-noconnection.page
@@ -4382,7 +4350,6 @@ share/help/gu/gnome-help/tips.page
 share/help/gu/gnome-help/translate.page
 share/help/gu/gnome-help/user-accounts.page
 share/help/gu/gnome-help/user-add.page
-share/help/gu/gnome-help/user-addguest.page
 share/help/gu/gnome-help/user-admin-change.page
 share/help/gu/gnome-help/user-admin-explain.page
 share/help/gu/gnome-help/user-admin-problems.page
@@ -4456,7 +4423,6 @@ share/help/hi/gnome-help/color-missingvcgt.page
 share/help/hi/gnome-help/color-notifications.page
 share/help/hi/gnome-help/color-notspecifiededid.page
 share/help/hi/gnome-help/color-testing.page
-share/help/hi/gnome-help/color-virtualdevice.page
 share/help/hi/gnome-help/color-whatisprofile.page
 share/help/hi/gnome-help/color-whatisspace.page
 share/help/hi/gnome-help/color-why-calibrate.page
@@ -4522,8 +4488,8 @@ share/help/hi/gnome-help/figures/go-down.png
 share/help/hi/gnome-help/figures/input-keyboard-symbolic.png
 share/help/hi/gnome-help/figures/input-methods-switcher.png
 share/help/hi/gnome-help/figures/keyboard-key-menu.svg
+share/help/hi/gnome-help/figures/nautilus-3-10.png
 share/help/hi/gnome-help/figures/nautilus-icons.png
-share/help/hi/gnome-help/figures/nautilus.png
 share/help/hi/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/hi/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/hi/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -4684,7 +4650,6 @@ share/help/hi/gnome-help/net-wireless-adhoc.page
 share/help/hi/gnome-help/net-wireless-airplane.page
 share/help/hi/gnome-help/net-wireless-connect.page
 share/help/hi/gnome-help/net-wireless-disconnecting.page
-share/help/hi/gnome-help/net-wireless-edit-connection.page
 share/help/hi/gnome-help/net-wireless-find.page
 share/help/hi/gnome-help/net-wireless-hidden.page
 share/help/hi/gnome-help/net-wireless-noconnection.page
@@ -4779,7 +4744,6 @@ share/help/hi/gnome-help/tips.page
 share/help/hi/gnome-help/translate.page
 share/help/hi/gnome-help/user-accounts.page
 share/help/hi/gnome-help/user-add.page
-share/help/hi/gnome-help/user-addguest.page
 share/help/hi/gnome-help/user-admin-change.page
 share/help/hi/gnome-help/user-admin-explain.page
 share/help/hi/gnome-help/user-admin-problems.page
@@ -4853,7 +4817,6 @@ share/help/hu/gnome-help/color-missingvcgt.page
 share/help/hu/gnome-help/color-notifications.page
 share/help/hu/gnome-help/color-notspecifiededid.page
 share/help/hu/gnome-help/color-testing.page
-share/help/hu/gnome-help/color-virtualdevice.page
 share/help/hu/gnome-help/color-whatisprofile.page
 share/help/hu/gnome-help/color-whatisspace.page
 share/help/hu/gnome-help/color-why-calibrate.page
@@ -4919,8 +4882,8 @@ share/help/hu/gnome-help/figures/go-down.png
 share/help/hu/gnome-help/figures/input-keyboard-symbolic.png
 share/help/hu/gnome-help/figures/input-methods-switcher.png
 share/help/hu/gnome-help/figures/keyboard-key-menu.svg
+share/help/hu/gnome-help/figures/nautilus-3-10.png
 share/help/hu/gnome-help/figures/nautilus-icons.png
-share/help/hu/gnome-help/figures/nautilus.png
 share/help/hu/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/hu/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/hu/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -5081,7 +5044,6 @@ share/help/hu/gnome-help/net-wireless-adhoc.page
 share/help/hu/gnome-help/net-wireless-airplane.page
 share/help/hu/gnome-help/net-wireless-connect.page
 share/help/hu/gnome-help/net-wireless-disconnecting.page
-share/help/hu/gnome-help/net-wireless-edit-connection.page
 share/help/hu/gnome-help/net-wireless-find.page
 share/help/hu/gnome-help/net-wireless-hidden.page
 share/help/hu/gnome-help/net-wireless-noconnection.page
@@ -5176,7 +5138,6 @@ share/help/hu/gnome-help/tips.page
 share/help/hu/gnome-help/translate.page
 share/help/hu/gnome-help/user-accounts.page
 share/help/hu/gnome-help/user-add.page
-share/help/hu/gnome-help/user-addguest.page
 share/help/hu/gnome-help/user-admin-change.page
 share/help/hu/gnome-help/user-admin-explain.page
 share/help/hu/gnome-help/user-admin-problems.page
@@ -5250,7 +5211,6 @@ share/help/id/gnome-help/color-missingvcgt.page
 share/help/id/gnome-help/color-notifications.page
 share/help/id/gnome-help/color-notspecifiededid.page
 share/help/id/gnome-help/color-testing.page
-share/help/id/gnome-help/color-virtualdevice.page
 share/help/id/gnome-help/color-whatisprofile.page
 share/help/id/gnome-help/color-whatisspace.page
 share/help/id/gnome-help/color-why-calibrate.page
@@ -5316,8 +5276,8 @@ share/help/id/gnome-help/figures/go-down.png
 share/help/id/gnome-help/figures/input-keyboard-symbolic.png
 share/help/id/gnome-help/figures/input-methods-switcher.png
 share/help/id/gnome-help/figures/keyboard-key-menu.svg
+share/help/id/gnome-help/figures/nautilus-3-10.png
 share/help/id/gnome-help/figures/nautilus-icons.png
-share/help/id/gnome-help/figures/nautilus.png
 share/help/id/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/id/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/id/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -5478,7 +5438,6 @@ share/help/id/gnome-help/net-wireless-adhoc.page
 share/help/id/gnome-help/net-wireless-airplane.page
 share/help/id/gnome-help/net-wireless-connect.page
 share/help/id/gnome-help/net-wireless-disconnecting.page
-share/help/id/gnome-help/net-wireless-edit-connection.page
 share/help/id/gnome-help/net-wireless-find.page
 share/help/id/gnome-help/net-wireless-hidden.page
 share/help/id/gnome-help/net-wireless-noconnection.page
@@ -5573,7 +5532,6 @@ share/help/id/gnome-help/tips.page
 share/help/id/gnome-help/translate.page
 share/help/id/gnome-help/user-accounts.page
 share/help/id/gnome-help/user-add.page
-share/help/id/gnome-help/user-addguest.page
 share/help/id/gnome-help/user-admin-change.page
 share/help/id/gnome-help/user-admin-explain.page
 share/help/id/gnome-help/user-admin-problems.page
@@ -5647,7 +5605,6 @@ share/help/it/gnome-help/color-missingvcgt.page
 share/help/it/gnome-help/color-notifications.page
 share/help/it/gnome-help/color-notspecifiededid.page
 share/help/it/gnome-help/color-testing.page
-share/help/it/gnome-help/color-virtualdevice.page
 share/help/it/gnome-help/color-whatisprofile.page
 share/help/it/gnome-help/color-whatisspace.page
 share/help/it/gnome-help/color-why-calibrate.page
@@ -5713,8 +5670,8 @@ share/help/it/gnome-help/figures/go-down.png
 share/help/it/gnome-help/figures/input-keyboard-symbolic.png
 share/help/it/gnome-help/figures/input-methods-switcher.png
 share/help/it/gnome-help/figures/keyboard-key-menu.svg
+share/help/it/gnome-help/figures/nautilus-3-10.png
 share/help/it/gnome-help/figures/nautilus-icons.png
-share/help/it/gnome-help/figures/nautilus.png
 share/help/it/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/it/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/it/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -5875,7 +5832,6 @@ share/help/it/gnome-help/net-wireless-adhoc.page
 share/help/it/gnome-help/net-wireless-airplane.page
 share/help/it/gnome-help/net-wireless-connect.page
 share/help/it/gnome-help/net-wireless-disconnecting.page
-share/help/it/gnome-help/net-wireless-edit-connection.page
 share/help/it/gnome-help/net-wireless-find.page
 share/help/it/gnome-help/net-wireless-hidden.page
 share/help/it/gnome-help/net-wireless-noconnection.page
@@ -5970,7 +5926,6 @@ share/help/it/gnome-help/tips.page
 share/help/it/gnome-help/translate.page
 share/help/it/gnome-help/user-accounts.page
 share/help/it/gnome-help/user-add.page
-share/help/it/gnome-help/user-addguest.page
 share/help/it/gnome-help/user-admin-change.page
 share/help/it/gnome-help/user-admin-explain.page
 share/help/it/gnome-help/user-admin-problems.page
@@ -6044,7 +5999,6 @@ share/help/ja/gnome-help/color-missingvcgt.page
 share/help/ja/gnome-help/color-notifications.page
 share/help/ja/gnome-help/color-notspecifiededid.page
 share/help/ja/gnome-help/color-testing.page
-share/help/ja/gnome-help/color-virtualdevice.page
 share/help/ja/gnome-help/color-whatisprofile.page
 share/help/ja/gnome-help/color-whatisspace.page
 share/help/ja/gnome-help/color-why-calibrate.page
@@ -6110,8 +6064,8 @@ share/help/ja/gnome-help/figures/go-down.png
 share/help/ja/gnome-help/figures/input-keyboard-symbolic.png
 share/help/ja/gnome-help/figures/input-methods-switcher.png
 share/help/ja/gnome-help/figures/keyboard-key-menu.svg
+share/help/ja/gnome-help/figures/nautilus-3-10.png
 share/help/ja/gnome-help/figures/nautilus-icons.png
-share/help/ja/gnome-help/figures/nautilus.png
 share/help/ja/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/ja/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/ja/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -6272,7 +6226,6 @@ share/help/ja/gnome-help/net-wireless-adhoc.page
 share/help/ja/gnome-help/net-wireless-airplane.page
 share/help/ja/gnome-help/net-wireless-connect.page
 share/help/ja/gnome-help/net-wireless-disconnecting.page
-share/help/ja/gnome-help/net-wireless-edit-connection.page
 share/help/ja/gnome-help/net-wireless-find.page
 share/help/ja/gnome-help/net-wireless-hidden.page
 share/help/ja/gnome-help/net-wireless-noconnection.page
@@ -6367,7 +6320,6 @@ share/help/ja/gnome-help/tips.page
 share/help/ja/gnome-help/translate.page
 share/help/ja/gnome-help/user-accounts.page
 share/help/ja/gnome-help/user-add.page
-share/help/ja/gnome-help/user-addguest.page
 share/help/ja/gnome-help/user-admin-change.page
 share/help/ja/gnome-help/user-admin-explain.page
 share/help/ja/gnome-help/user-admin-problems.page
@@ -6441,7 +6393,6 @@ share/help/kn/gnome-help/color-missingvcgt.page
 share/help/kn/gnome-help/color-notifications.page
 share/help/kn/gnome-help/color-notspecifiededid.page
 share/help/kn/gnome-help/color-testing.page
-share/help/kn/gnome-help/color-virtualdevice.page
 share/help/kn/gnome-help/color-whatisprofile.page
 share/help/kn/gnome-help/color-whatisspace.page
 share/help/kn/gnome-help/color-why-calibrate.page
@@ -6507,8 +6458,8 @@ share/help/kn/gnome-help/figures/go-down.png
 share/help/kn/gnome-help/figures/input-keyboard-symbolic.png
 share/help/kn/gnome-help/figures/input-methods-switcher.png
 share/help/kn/gnome-help/figures/keyboard-key-menu.svg
+share/help/kn/gnome-help/figures/nautilus-3-10.png
 share/help/kn/gnome-help/figures/nautilus-icons.png
-share/help/kn/gnome-help/figures/nautilus.png
 share/help/kn/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/kn/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/kn/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -6669,7 +6620,6 @@ share/help/kn/gnome-help/net-wireless-adhoc.page
 share/help/kn/gnome-help/net-wireless-airplane.page
 share/help/kn/gnome-help/net-wireless-connect.page
 share/help/kn/gnome-help/net-wireless-disconnecting.page
-share/help/kn/gnome-help/net-wireless-edit-connection.page
 share/help/kn/gnome-help/net-wireless-find.page
 share/help/kn/gnome-help/net-wireless-hidden.page
 share/help/kn/gnome-help/net-wireless-noconnection.page
@@ -6764,7 +6714,6 @@ share/help/kn/gnome-help/tips.page
 share/help/kn/gnome-help/translate.page
 share/help/kn/gnome-help/user-accounts.page
 share/help/kn/gnome-help/user-add.page
-share/help/kn/gnome-help/user-addguest.page
 share/help/kn/gnome-help/user-admin-change.page
 share/help/kn/gnome-help/user-admin-explain.page
 share/help/kn/gnome-help/user-admin-problems.page
@@ -6838,7 +6787,6 @@ share/help/lv/gnome-help/color-missingvcgt.page
 share/help/lv/gnome-help/color-notifications.page
 share/help/lv/gnome-help/color-notspecifiededid.page
 share/help/lv/gnome-help/color-testing.page
-share/help/lv/gnome-help/color-virtualdevice.page
 share/help/lv/gnome-help/color-whatisprofile.page
 share/help/lv/gnome-help/color-whatisspace.page
 share/help/lv/gnome-help/color-why-calibrate.page
@@ -6904,8 +6852,8 @@ share/help/lv/gnome-help/figures/go-down.png
 share/help/lv/gnome-help/figures/input-keyboard-symbolic.png
 share/help/lv/gnome-help/figures/input-methods-switcher.png
 share/help/lv/gnome-help/figures/keyboard-key-menu.svg
+share/help/lv/gnome-help/figures/nautilus-3-10.png
 share/help/lv/gnome-help/figures/nautilus-icons.png
-share/help/lv/gnome-help/figures/nautilus.png
 share/help/lv/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/lv/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/lv/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -7066,7 +7014,6 @@ share/help/lv/gnome-help/net-wireless-adhoc.page
 share/help/lv/gnome-help/net-wireless-airplane.page
 share/help/lv/gnome-help/net-wireless-connect.page
 share/help/lv/gnome-help/net-wireless-disconnecting.page
-share/help/lv/gnome-help/net-wireless-edit-connection.page
 share/help/lv/gnome-help/net-wireless-find.page
 share/help/lv/gnome-help/net-wireless-hidden.page
 share/help/lv/gnome-help/net-wireless-noconnection.page
@@ -7161,7 +7108,6 @@ share/help/lv/gnome-help/tips.page
 share/help/lv/gnome-help/translate.page
 share/help/lv/gnome-help/user-accounts.page
 share/help/lv/gnome-help/user-add.page
-share/help/lv/gnome-help/user-addguest.page
 share/help/lv/gnome-help/user-admin-change.page
 share/help/lv/gnome-help/user-admin-explain.page
 share/help/lv/gnome-help/user-admin-problems.page
@@ -7235,7 +7181,6 @@ share/help/nl/gnome-help/color-missingvcgt.page
 share/help/nl/gnome-help/color-notifications.page
 share/help/nl/gnome-help/color-notspecifiededid.page
 share/help/nl/gnome-help/color-testing.page
-share/help/nl/gnome-help/color-virtualdevice.page
 share/help/nl/gnome-help/color-whatisprofile.page
 share/help/nl/gnome-help/color-whatisspace.page
 share/help/nl/gnome-help/color-why-calibrate.page
@@ -7301,8 +7246,8 @@ share/help/nl/gnome-help/figures/go-down.png
 share/help/nl/gnome-help/figures/input-keyboard-symbolic.png
 share/help/nl/gnome-help/figures/input-methods-switcher.png
 share/help/nl/gnome-help/figures/keyboard-key-menu.svg
+share/help/nl/gnome-help/figures/nautilus-3-10.png
 share/help/nl/gnome-help/figures/nautilus-icons.png
-share/help/nl/gnome-help/figures/nautilus.png
 share/help/nl/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/nl/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/nl/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -7463,7 +7408,6 @@ share/help/nl/gnome-help/net-wireless-adhoc.page
 share/help/nl/gnome-help/net-wireless-airplane.page
 share/help/nl/gnome-help/net-wireless-connect.page
 share/help/nl/gnome-help/net-wireless-disconnecting.page
-share/help/nl/gnome-help/net-wireless-edit-connection.page
 share/help/nl/gnome-help/net-wireless-find.page
 share/help/nl/gnome-help/net-wireless-hidden.page
 share/help/nl/gnome-help/net-wireless-noconnection.page
@@ -7558,7 +7502,6 @@ share/help/nl/gnome-help/tips.page
 share/help/nl/gnome-help/translate.page
 share/help/nl/gnome-help/user-accounts.page
 share/help/nl/gnome-help/user-add.page
-share/help/nl/gnome-help/user-addguest.page
 share/help/nl/gnome-help/user-admin-change.page
 share/help/nl/gnome-help/user-admin-explain.page
 share/help/nl/gnome-help/user-admin-problems.page
@@ -7632,7 +7575,6 @@ share/help/pa/gnome-help/color-missingvcgt.page
 share/help/pa/gnome-help/color-notifications.page
 share/help/pa/gnome-help/color-notspecifiededid.page
 share/help/pa/gnome-help/color-testing.page
-share/help/pa/gnome-help/color-virtualdevice.page
 share/help/pa/gnome-help/color-whatisprofile.page
 share/help/pa/gnome-help/color-whatisspace.page
 share/help/pa/gnome-help/color-why-calibrate.page
@@ -7698,8 +7640,8 @@ share/help/pa/gnome-help/figures/go-down.png
 share/help/pa/gnome-help/figures/input-keyboard-symbolic.png
 share/help/pa/gnome-help/figures/input-methods-switcher.png
 share/help/pa/gnome-help/figures/keyboard-key-menu.svg
+share/help/pa/gnome-help/figures/nautilus-3-10.png
 share/help/pa/gnome-help/figures/nautilus-icons.png
-share/help/pa/gnome-help/figures/nautilus.png
 share/help/pa/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/pa/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/pa/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -7860,7 +7802,6 @@ share/help/pa/gnome-help/net-wireless-adhoc.page
 share/help/pa/gnome-help/net-wireless-airplane.page
 share/help/pa/gnome-help/net-wireless-connect.page
 share/help/pa/gnome-help/net-wireless-disconnecting.page
-share/help/pa/gnome-help/net-wireless-edit-connection.page
 share/help/pa/gnome-help/net-wireless-find.page
 share/help/pa/gnome-help/net-wireless-hidden.page
 share/help/pa/gnome-help/net-wireless-noconnection.page
@@ -7955,7 +7896,6 @@ share/help/pa/gnome-help/tips.page
 share/help/pa/gnome-help/translate.page
 share/help/pa/gnome-help/user-accounts.page
 share/help/pa/gnome-help/user-add.page
-share/help/pa/gnome-help/user-addguest.page
 share/help/pa/gnome-help/user-admin-change.page
 share/help/pa/gnome-help/user-admin-explain.page
 share/help/pa/gnome-help/user-admin-problems.page
@@ -8029,7 +7969,6 @@ share/help/pt_BR/gnome-help/color-missingvcgt.page
 share/help/pt_BR/gnome-help/color-notifications.page
 share/help/pt_BR/gnome-help/color-notspecifiededid.page
 share/help/pt_BR/gnome-help/color-testing.page
-share/help/pt_BR/gnome-help/color-virtualdevice.page
 share/help/pt_BR/gnome-help/color-whatisprofile.page
 share/help/pt_BR/gnome-help/color-whatisspace.page
 share/help/pt_BR/gnome-help/color-why-calibrate.page
@@ -8095,8 +8034,8 @@ share/help/pt_BR/gnome-help/figures/go-down.png
 share/help/pt_BR/gnome-help/figures/input-keyboard-symbolic.png
 share/help/pt_BR/gnome-help/figures/input-methods-switcher.png
 share/help/pt_BR/gnome-help/figures/keyboard-key-menu.svg
+share/help/pt_BR/gnome-help/figures/nautilus-3-10.png
 share/help/pt_BR/gnome-help/figures/nautilus-icons.png
-share/help/pt_BR/gnome-help/figures/nautilus.png
 share/help/pt_BR/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/pt_BR/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/pt_BR/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -8257,7 +8196,6 @@ share/help/pt_BR/gnome-help/net-wireless-adhoc.page
 share/help/pt_BR/gnome-help/net-wireless-airplane.page
 share/help/pt_BR/gnome-help/net-wireless-connect.page
 share/help/pt_BR/gnome-help/net-wireless-disconnecting.page
-share/help/pt_BR/gnome-help/net-wireless-edit-connection.page
 share/help/pt_BR/gnome-help/net-wireless-find.page
 share/help/pt_BR/gnome-help/net-wireless-hidden.page
 share/help/pt_BR/gnome-help/net-wireless-noconnection.page
@@ -8352,7 +8290,6 @@ share/help/pt_BR/gnome-help/tips.page
 share/help/pt_BR/gnome-help/translate.page
 share/help/pt_BR/gnome-help/user-accounts.page
 share/help/pt_BR/gnome-help/user-add.page
-share/help/pt_BR/gnome-help/user-addguest.page
 share/help/pt_BR/gnome-help/user-admin-change.page
 share/help/pt_BR/gnome-help/user-admin-explain.page
 share/help/pt_BR/gnome-help/user-admin-problems.page
@@ -8426,7 +8363,6 @@ share/help/ru/gnome-help/color-missingvcgt.page
 share/help/ru/gnome-help/color-notifications.page
 share/help/ru/gnome-help/color-notspecifiededid.page
 share/help/ru/gnome-help/color-testing.page
-share/help/ru/gnome-help/color-virtualdevice.page
 share/help/ru/gnome-help/color-whatisprofile.page
 share/help/ru/gnome-help/color-whatisspace.page
 share/help/ru/gnome-help/color-why-calibrate.page
@@ -8492,8 +8428,8 @@ share/help/ru/gnome-help/figures/go-down.png
 share/help/ru/gnome-help/figures/input-keyboard-symbolic.png
 share/help/ru/gnome-help/figures/input-methods-switcher.png
 share/help/ru/gnome-help/figures/keyboard-key-menu.svg
+share/help/ru/gnome-help/figures/nautilus-3-10.png
 share/help/ru/gnome-help/figures/nautilus-icons.png
-share/help/ru/gnome-help/figures/nautilus.png
 share/help/ru/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/ru/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/ru/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -8654,7 +8590,6 @@ share/help/ru/gnome-help/net-wireless-adhoc.page
 share/help/ru/gnome-help/net-wireless-airplane.page
 share/help/ru/gnome-help/net-wireless-connect.page
 share/help/ru/gnome-help/net-wireless-disconnecting.page
-share/help/ru/gnome-help/net-wireless-edit-connection.page
 share/help/ru/gnome-help/net-wireless-find.page
 share/help/ru/gnome-help/net-wireless-hidden.page
 share/help/ru/gnome-help/net-wireless-noconnection.page
@@ -8749,7 +8684,6 @@ share/help/ru/gnome-help/tips.page
 share/help/ru/gnome-help/translate.page
 share/help/ru/gnome-help/user-accounts.page
 share/help/ru/gnome-help/user-add.page
-share/help/ru/gnome-help/user-addguest.page
 share/help/ru/gnome-help/user-admin-change.page
 share/help/ru/gnome-help/user-admin-explain.page
 share/help/ru/gnome-help/user-admin-problems.page
@@ -8823,7 +8757,6 @@ share/help/sl/gnome-help/color-missingvcgt.page
 share/help/sl/gnome-help/color-notifications.page
 share/help/sl/gnome-help/color-notspecifiededid.page
 share/help/sl/gnome-help/color-testing.page
-share/help/sl/gnome-help/color-virtualdevice.page
 share/help/sl/gnome-help/color-whatisprofile.page
 share/help/sl/gnome-help/color-whatisspace.page
 share/help/sl/gnome-help/color-why-calibrate.page
@@ -8889,8 +8822,8 @@ share/help/sl/gnome-help/figures/go-down.png
 share/help/sl/gnome-help/figures/input-keyboard-symbolic.png
 share/help/sl/gnome-help/figures/input-methods-switcher.png
 share/help/sl/gnome-help/figures/keyboard-key-menu.svg
+share/help/sl/gnome-help/figures/nautilus-3-10.png
 share/help/sl/gnome-help/figures/nautilus-icons.png
-share/help/sl/gnome-help/figures/nautilus.png
 share/help/sl/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/sl/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/sl/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -9051,7 +8984,6 @@ share/help/sl/gnome-help/net-wireless-adhoc.page
 share/help/sl/gnome-help/net-wireless-airplane.page
 share/help/sl/gnome-help/net-wireless-connect.page
 share/help/sl/gnome-help/net-wireless-disconnecting.page
-share/help/sl/gnome-help/net-wireless-edit-connection.page
 share/help/sl/gnome-help/net-wireless-find.page
 share/help/sl/gnome-help/net-wireless-hidden.page
 share/help/sl/gnome-help/net-wireless-noconnection.page
@@ -9146,7 +9078,6 @@ share/help/sl/gnome-help/tips.page
 share/help/sl/gnome-help/translate.page
 share/help/sl/gnome-help/user-accounts.page
 share/help/sl/gnome-help/user-add.page
-share/help/sl/gnome-help/user-addguest.page
 share/help/sl/gnome-help/user-admin-change.page
 share/help/sl/gnome-help/user-admin-explain.page
 share/help/sl/gnome-help/user-admin-problems.page
@@ -9220,7 +9151,6 @@ share/help/sr/gnome-help/color-missingvcgt.page
 share/help/sr/gnome-help/color-notifications.page
 share/help/sr/gnome-help/color-notspecifiededid.page
 share/help/sr/gnome-help/color-testing.page
-share/help/sr/gnome-help/color-virtualdevice.page
 share/help/sr/gnome-help/color-whatisprofile.page
 share/help/sr/gnome-help/color-whatisspace.page
 share/help/sr/gnome-help/color-why-calibrate.page
@@ -9286,8 +9216,8 @@ share/help/sr/gnome-help/figures/go-down.png
 share/help/sr/gnome-help/figures/input-keyboard-symbolic.png
 share/help/sr/gnome-help/figures/input-methods-switcher.png
 share/help/sr/gnome-help/figures/keyboard-key-menu.svg
+share/help/sr/gnome-help/figures/nautilus-3-10.png
 share/help/sr/gnome-help/figures/nautilus-icons.png
-share/help/sr/gnome-help/figures/nautilus.png
 share/help/sr/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/sr/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/sr/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -9448,7 +9378,6 @@ share/help/sr/gnome-help/net-wireless-adhoc.page
 share/help/sr/gnome-help/net-wireless-airplane.page
 share/help/sr/gnome-help/net-wireless-connect.page
 share/help/sr/gnome-help/net-wireless-disconnecting.page
-share/help/sr/gnome-help/net-wireless-edit-connection.page
 share/help/sr/gnome-help/net-wireless-find.page
 share/help/sr/gnome-help/net-wireless-hidden.page
 share/help/sr/gnome-help/net-wireless-noconnection.page
@@ -9543,7 +9472,6 @@ share/help/sr/gnome-help/tips.page
 share/help/sr/gnome-help/translate.page
 share/help/sr/gnome-help/user-accounts.page
 share/help/sr/gnome-help/user-add.page
-share/help/sr/gnome-help/user-addguest.page
 share/help/sr/gnome-help/user-admin-change.page
 share/help/sr/gnome-help/user-admin-explain.page
 share/help/sr/gnome-help/user-admin-problems.page
@@ -9617,7 +9545,6 @@ share/help/sr@latin/gnome-help/color-missingvcgt.page
 share/help/sr@latin/gnome-help/color-notifications.page
 share/help/sr@latin/gnome-help/color-notspecifiededid.page
 share/help/sr@latin/gnome-help/color-testing.page
-share/help/sr@latin/gnome-help/color-virtualdevice.page
 share/help/sr@latin/gnome-help/color-whatisprofile.page
 share/help/sr@latin/gnome-help/color-whatisspace.page
 share/help/sr@latin/gnome-help/color-why-calibrate.page
@@ -9683,8 +9610,8 @@ share/help/sr@latin/gnome-help/figures/go-down.png
 share/help/sr@latin/gnome-help/figures/input-keyboard-symbolic.png
 share/help/sr@latin/gnome-help/figures/input-methods-switcher.png
 share/help/sr@latin/gnome-help/figures/keyboard-key-menu.svg
+share/help/sr@latin/gnome-help/figures/nautilus-3-10.png
 share/help/sr@latin/gnome-help/figures/nautilus-icons.png
-share/help/sr@latin/gnome-help/figures/nautilus.png
 share/help/sr@latin/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/sr@latin/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/sr@latin/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -9845,7 +9772,6 @@ share/help/sr@latin/gnome-help/net-wireless-adhoc.page
 share/help/sr@latin/gnome-help/net-wireless-airplane.page
 share/help/sr@latin/gnome-help/net-wireless-connect.page
 share/help/sr@latin/gnome-help/net-wireless-disconnecting.page
-share/help/sr@latin/gnome-help/net-wireless-edit-connection.page
 share/help/sr@latin/gnome-help/net-wireless-find.page
 share/help/sr@latin/gnome-help/net-wireless-hidden.page
 share/help/sr@latin/gnome-help/net-wireless-noconnection.page
@@ -9940,7 +9866,6 @@ share/help/sr@latin/gnome-help/tips.page
 share/help/sr@latin/gnome-help/translate.page
 share/help/sr@latin/gnome-help/user-accounts.page
 share/help/sr@latin/gnome-help/user-add.page
-share/help/sr@latin/gnome-help/user-addguest.page
 share/help/sr@latin/gnome-help/user-admin-change.page
 share/help/sr@latin/gnome-help/user-admin-explain.page
 share/help/sr@latin/gnome-help/user-admin-problems.page
@@ -10014,7 +9939,6 @@ share/help/sv/gnome-help/color-missingvcgt.page
 share/help/sv/gnome-help/color-notifications.page
 share/help/sv/gnome-help/color-notspecifiededid.page
 share/help/sv/gnome-help/color-testing.page
-share/help/sv/gnome-help/color-virtualdevice.page
 share/help/sv/gnome-help/color-whatisprofile.page
 share/help/sv/gnome-help/color-whatisspace.page
 share/help/sv/gnome-help/color-why-calibrate.page
@@ -10080,8 +10004,8 @@ share/help/sv/gnome-help/figures/go-down.png
 share/help/sv/gnome-help/figures/input-keyboard-symbolic.png
 share/help/sv/gnome-help/figures/input-methods-switcher.png
 share/help/sv/gnome-help/figures/keyboard-key-menu.svg
+share/help/sv/gnome-help/figures/nautilus-3-10.png
 share/help/sv/gnome-help/figures/nautilus-icons.png
-share/help/sv/gnome-help/figures/nautilus.png
 share/help/sv/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/sv/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/sv/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -10242,7 +10166,6 @@ share/help/sv/gnome-help/net-wireless-adhoc.page
 share/help/sv/gnome-help/net-wireless-airplane.page
 share/help/sv/gnome-help/net-wireless-connect.page
 share/help/sv/gnome-help/net-wireless-disconnecting.page
-share/help/sv/gnome-help/net-wireless-edit-connection.page
 share/help/sv/gnome-help/net-wireless-find.page
 share/help/sv/gnome-help/net-wireless-hidden.page
 share/help/sv/gnome-help/net-wireless-noconnection.page
@@ -10337,7 +10260,6 @@ share/help/sv/gnome-help/tips.page
 share/help/sv/gnome-help/translate.page
 share/help/sv/gnome-help/user-accounts.page
 share/help/sv/gnome-help/user-add.page
-share/help/sv/gnome-help/user-addguest.page
 share/help/sv/gnome-help/user-admin-change.page
 share/help/sv/gnome-help/user-admin-explain.page
 share/help/sv/gnome-help/user-admin-problems.page
@@ -10411,7 +10333,6 @@ share/help/ta/gnome-help/color-missingvcgt.page
 share/help/ta/gnome-help/color-notifications.page
 share/help/ta/gnome-help/color-notspecifiededid.page
 share/help/ta/gnome-help/color-testing.page
-share/help/ta/gnome-help/color-virtualdevice.page
 share/help/ta/gnome-help/color-whatisprofile.page
 share/help/ta/gnome-help/color-whatisspace.page
 share/help/ta/gnome-help/color-why-calibrate.page
@@ -10477,8 +10398,8 @@ share/help/ta/gnome-help/figures/go-down.png
 share/help/ta/gnome-help/figures/input-keyboard-symbolic.png
 share/help/ta/gnome-help/figures/input-methods-switcher.png
 share/help/ta/gnome-help/figures/keyboard-key-menu.svg
+share/help/ta/gnome-help/figures/nautilus-3-10.png
 share/help/ta/gnome-help/figures/nautilus-icons.png
-share/help/ta/gnome-help/figures/nautilus.png
 share/help/ta/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/ta/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/ta/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -10639,7 +10560,6 @@ share/help/ta/gnome-help/net-wireless-adhoc.page
 share/help/ta/gnome-help/net-wireless-airplane.page
 share/help/ta/gnome-help/net-wireless-connect.page
 share/help/ta/gnome-help/net-wireless-disconnecting.page
-share/help/ta/gnome-help/net-wireless-edit-connection.page
 share/help/ta/gnome-help/net-wireless-find.page
 share/help/ta/gnome-help/net-wireless-hidden.page
 share/help/ta/gnome-help/net-wireless-noconnection.page
@@ -10734,7 +10654,6 @@ share/help/ta/gnome-help/tips.page
 share/help/ta/gnome-help/translate.page
 share/help/ta/gnome-help/user-accounts.page
 share/help/ta/gnome-help/user-add.page
-share/help/ta/gnome-help/user-addguest.page
 share/help/ta/gnome-help/user-admin-change.page
 share/help/ta/gnome-help/user-admin-explain.page
 share/help/ta/gnome-help/user-admin-problems.page
@@ -10808,7 +10727,6 @@ share/help/te/gnome-help/color-missingvcgt.page
 share/help/te/gnome-help/color-notifications.page
 share/help/te/gnome-help/color-notspecifiededid.page
 share/help/te/gnome-help/color-testing.page
-share/help/te/gnome-help/color-virtualdevice.page
 share/help/te/gnome-help/color-whatisprofile.page
 share/help/te/gnome-help/color-whatisspace.page
 share/help/te/gnome-help/color-why-calibrate.page
@@ -10874,8 +10792,8 @@ share/help/te/gnome-help/figures/go-down.png
 share/help/te/gnome-help/figures/input-keyboard-symbolic.png
 share/help/te/gnome-help/figures/input-methods-switcher.png
 share/help/te/gnome-help/figures/keyboard-key-menu.svg
+share/help/te/gnome-help/figures/nautilus-3-10.png
 share/help/te/gnome-help/figures/nautilus-icons.png
-share/help/te/gnome-help/figures/nautilus.png
 share/help/te/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/te/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/te/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -11036,7 +10954,6 @@ share/help/te/gnome-help/net-wireless-adhoc.page
 share/help/te/gnome-help/net-wireless-airplane.page
 share/help/te/gnome-help/net-wireless-connect.page
 share/help/te/gnome-help/net-wireless-disconnecting.page
-share/help/te/gnome-help/net-wireless-edit-connection.page
 share/help/te/gnome-help/net-wireless-find.page
 share/help/te/gnome-help/net-wireless-hidden.page
 share/help/te/gnome-help/net-wireless-noconnection.page
@@ -11131,7 +11048,6 @@ share/help/te/gnome-help/tips.page
 share/help/te/gnome-help/translate.page
 share/help/te/gnome-help/user-accounts.page
 share/help/te/gnome-help/user-add.page
-share/help/te/gnome-help/user-addguest.page
 share/help/te/gnome-help/user-admin-change.page
 share/help/te/gnome-help/user-admin-explain.page
 share/help/te/gnome-help/user-admin-problems.page
@@ -11205,7 +11121,6 @@ share/help/vi/gnome-help/color-missingvcgt.page
 share/help/vi/gnome-help/color-notifications.page
 share/help/vi/gnome-help/color-notspecifiededid.page
 share/help/vi/gnome-help/color-testing.page
-share/help/vi/gnome-help/color-virtualdevice.page
 share/help/vi/gnome-help/color-whatisprofile.page
 share/help/vi/gnome-help/color-whatisspace.page
 share/help/vi/gnome-help/color-why-calibrate.page
@@ -11271,8 +11186,8 @@ share/help/vi/gnome-help/figures/go-down.png
 share/help/vi/gnome-help/figures/input-keyboard-symbolic.png
 share/help/vi/gnome-help/figures/input-methods-switcher.png
 share/help/vi/gnome-help/figures/keyboard-key-menu.svg
+share/help/vi/gnome-help/figures/nautilus-3-10.png
 share/help/vi/gnome-help/figures/nautilus-icons.png
-share/help/vi/gnome-help/figures/nautilus.png
 share/help/vi/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/vi/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/vi/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -11433,7 +11348,6 @@ share/help/vi/gnome-help/net-wireless-adhoc.page
 share/help/vi/gnome-help/net-wireless-airplane.page
 share/help/vi/gnome-help/net-wireless-connect.page
 share/help/vi/gnome-help/net-wireless-disconnecting.page
-share/help/vi/gnome-help/net-wireless-edit-connection.page
 share/help/vi/gnome-help/net-wireless-find.page
 share/help/vi/gnome-help/net-wireless-hidden.page
 share/help/vi/gnome-help/net-wireless-noconnection.page
@@ -11528,7 +11442,6 @@ share/help/vi/gnome-help/tips.page
 share/help/vi/gnome-help/translate.page
 share/help/vi/gnome-help/user-accounts.page
 share/help/vi/gnome-help/user-add.page
-share/help/vi/gnome-help/user-addguest.page
 share/help/vi/gnome-help/user-admin-change.page
 share/help/vi/gnome-help/user-admin-explain.page
 share/help/vi/gnome-help/user-admin-problems.page
@@ -11602,7 +11515,6 @@ share/help/zh_CN/gnome-help/color-missingvcgt.page
 share/help/zh_CN/gnome-help/color-notifications.page
 share/help/zh_CN/gnome-help/color-notspecifiededid.page
 share/help/zh_CN/gnome-help/color-testing.page
-share/help/zh_CN/gnome-help/color-virtualdevice.page
 share/help/zh_CN/gnome-help/color-whatisprofile.page
 share/help/zh_CN/gnome-help/color-whatisspace.page
 share/help/zh_CN/gnome-help/color-why-calibrate.page
@@ -11668,8 +11580,8 @@ share/help/zh_CN/gnome-help/figures/go-down.png
 share/help/zh_CN/gnome-help/figures/input-keyboard-symbolic.png
 share/help/zh_CN/gnome-help/figures/input-methods-switcher.png
 share/help/zh_CN/gnome-help/figures/keyboard-key-menu.svg
+share/help/zh_CN/gnome-help/figures/nautilus-3-10.png
 share/help/zh_CN/gnome-help/figures/nautilus-icons.png
-share/help/zh_CN/gnome-help/figures/nautilus.png
 share/help/zh_CN/gnome-help/figures/network-cellular-3g-symbolic.svg
 share/help/zh_CN/gnome-help/figures/network-cellular-4g-symbolic.svg
 share/help/zh_CN/gnome-help/figures/network-cellular-acquiring-symbolic.svg
@@ -11830,7 +11742,6 @@ share/help/zh_CN/gnome-help/net-wireless-adhoc.page
 share/help/zh_CN/gnome-help/net-wireless-airplane.page
 share/help/zh_CN/gnome-help/net-wireless-connect.page
 share/help/zh_CN/gnome-help/net-wireless-disconnecting.page
-share/help/zh_CN/gnome-help/net-wireless-edit-connection.page
 share/help/zh_CN/gnome-help/net-wireless-find.page
 share/help/zh_CN/gnome-help/net-wireless-hidden.page
 share/help/zh_CN/gnome-help/net-wireless-noconnection.page
@@ -11925,7 +11836,6 @@ share/help/zh_CN/gnome-help/tips.page
 share/help/zh_CN/gnome-help/translate.page
 share/help/zh_CN/gnome-help/user-accounts.page
 share/help/zh_CN/gnome-help/user-add.page
-share/help/zh_CN/gnome-help/user-addguest.page
 share/help/zh_CN/gnome-help/user-admin-change.page
 share/help/zh_CN/gnome-help/user-admin-explain.page
 share/help/zh_CN/gnome-help/user-admin-problems.page
