@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.44 2013/11/10 14:56:41 naddy Exp $
+# $OpenBSD: portcheck,v 1.45 2013/11/12 11:24:21 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -192,10 +192,6 @@ err_duplicated() {
 	err "both $2 and some of its parents has $1"
 }
 
-err_core_found() {
-	err "file or directory \"$1\" found, CVS will ignore it"
-}
-
 err_coredump_found() {
 	err "core dump file found: $1"
 }
@@ -241,8 +237,6 @@ handle_extra_file() {
 		if ! $ignore_cvs || [[ ${1##*/} != CVS ]]; then
 			err "VCS item detected: $1"
 		fi
-	elif [[ ${1##*/} == core ]]; then
-		$existing_port || err_core_found "${1%/*}"
 	elif [[ -f $1 && $1 == *.core ]]; then
 		err_coredump_found "$1"
 	elif [[ -d $1 ]]; then
@@ -354,9 +348,6 @@ check_port_hier() {
 	for F in "$dir"/* "$dir"/.*; do
 		F=${F#./}
 		ignoring "$F" && continue
-
-		[[ ${F##*/} == core ]] && ! $existing_port &&
-			err_core_found "$F"
 
 		if is_vcs_item "$F"; then
 			if ! $ignore_cvs || [[ ${F##*/} != CVS ]]; then
@@ -1130,7 +1121,6 @@ check_wantlib() {
 # Checks made:
 #   * Directory is not empty
 #   * No '*.core' files present
-#   * No 'core' files present (until updating)
 check_files_dir() {
 	$debugging && echo "CALLED: check_files_dir($*)" >&2
 
@@ -1145,8 +1135,6 @@ check_files_dir() {
 			empty=false
 			[[ $F == *.core ]] &&
 				err_coredump_found "$F"
-			[[ ${F##*/} == core ]] && ! $existing_port &&
-				err_core_found "$F"
 		done
 		$empty && "there are no files, please remove the $1 directory"
 		! $error
