@@ -1,12 +1,12 @@
 #!/bin/sh
 #
-# $OpenBSD: puppetd.rc,v 1.5 2013/03/13 14:35:39 ajacoutot Exp $
+# $OpenBSD: puppetd.rc,v 1.6 2013/11/12 08:28:29 robert Exp $
 
 daemon="${TRUEPREFIX}/bin/puppet agent"
 
 . /etc/rc.d/rc.subr
 
-pexp="${RUBY} ${daemon}${daemon_flags:+ ${daemon_flags}}"
+pexp="${RUBY} ${daemon}${daemon_flags:+ ${daemon_flags}}$"
 rc_reload=NO
 
 # XXX can't stop within a fair amount of time when puppetmasterd is unreachable;
