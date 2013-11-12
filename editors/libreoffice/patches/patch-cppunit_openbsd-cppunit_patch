@@ -1,8 +1,8 @@
-$OpenBSD: patch-cppunit_openbsd-cppunit_patch,v 1.1 2013/06/04 14:36:31 robert Exp $
---- cppunit/openbsd-cppunit.patch.orig.port	Tue Jun  4 16:31:40 2013
-+++ cppunit/openbsd-cppunit.patch	Tue Jun  4 16:32:52 2013
+$OpenBSD: patch-cppunit_openbsd-cppunit_patch,v 1.2 2013/11/12 07:57:23 robert Exp $
+--- cppunit/openbsd-cppunit.patch.orig.port	Sat Nov  2 16:06:36 2013
++++ cppunit/openbsd-cppunit.patch	Sun Nov  3 13:26:21 2013
 @@ -0,0 +1,11 @@
-+--- misc/build/cppunit-1.13.1/Makefile.in	Tue Jun  4 16:25:03 2013
++--- misc/cppunit-1.13.1/Makefile.in	Tue Jun  4 16:25:03 2013
 ++++ misc/build/cppunit-1.13.1/Makefile.in	Tue Jun  4 16:25:11 2013
 +@@ -331,7 +331,7 @@
 + top_srcdir = @top_srcdir@

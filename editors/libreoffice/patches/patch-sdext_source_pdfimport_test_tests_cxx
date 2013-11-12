@@ -1,7 +1,7 @@
-$OpenBSD: patch-sdext_source_pdfimport_test_tests_cxx,v 1.2 2013/05/31 14:50:15 robert Exp $
---- sdext/source/pdfimport/test/tests.cxx.orig.port	Thu May  2 17:55:29 2013
-+++ sdext/source/pdfimport/test/tests.cxx	Sun May 12 12:52:22 2013
-@@ -91,12 +91,14 @@ namespace
+$OpenBSD: patch-sdext_source_pdfimport_test_tests_cxx,v 1.3 2013/11/12 07:57:23 robert Exp $
+--- sdext/source/pdfimport/test/tests.cxx.orig.port	Sat Nov  2 19:45:43 2013
++++ sdext/source/pdfimport/test/tests.cxx	Sat Nov  2 19:45:52 2013
+@@ -88,12 +88,14 @@ namespace
              CPPUNIT_ASSERT_DOUBLES_EQUAL_MESSAGE( "A4 page size (in 100th of points): Height" , m_aPageSize.Height, 59500, 0.0000001 );
              CPPUNIT_ASSERT_MESSAGE( "endPage() called", m_bPageEnded );
              CPPUNIT_ASSERT_EQUAL_MESSAGE( "Num pages equal one", m_nNumPages, (sal_Int32) 1 );
@@ -11,7 +11,7 @@ $OpenBSD: patch-sdext_source_pdfimport_test_tests_cxx,v 1.2 2013/05/31 14:50:15 
                                      rtl::math::approxEqual(m_aHyperlinkBounds.Y1,386.0) &&
                                      rtl::math::approxEqual(m_aHyperlinkBounds.X2,166.7) &&
                                      rtl::math::approxEqual(m_aHyperlinkBounds.Y2,406.2) );
-             CPPUNIT_ASSERT_EQUAL_MESSAGE( "Correct hyperlink URI", m_aURI, ::rtl::OUString("http://download.openoffice.org/") );
+             CPPUNIT_ASSERT_EQUAL_MESSAGE( "Correct hyperlink URI", m_aURI, OUString("http://download.openoffice.org/") );
 +#endif
  
              const char* sText = " \n \nThis is a testtext\nNew paragraph,\nnew line\n"

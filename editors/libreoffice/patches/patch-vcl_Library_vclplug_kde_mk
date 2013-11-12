@@ -1,0 +1,11 @@
+$OpenBSD: patch-vcl_Library_vclplug_kde_mk,v 1.1 2013/11/12 07:57:23 robert Exp $
+--- vcl/Library_vclplug_kde.mk.orig.port	Mon Nov 11 08:36:43 2013
++++ vcl/Library_vclplug_kde.mk	Mon Nov 11 08:36:51 2013
+@@ -53,6 +53,7 @@ $(eval $(call gb_Library_use_externals,vclplug_kde,\
+ 	icule \
+ 	icuuc \
+ 	kde \
++	Xrender \
+ ))
+ 
+ $(eval $(call gb_Library_add_libs,vclplug_kde,\

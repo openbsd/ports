@@ -1,5 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_java-i18n-fa,v 1.7 2013/05/31 14:50:18 robert Exp $
-lib/libreoffice/share/extensions/report-builder/description-fa.txt
+@comment $OpenBSD: PFRAG.no-no_java-i18n-fa,v 1.8 2013/11/12 07:57:23 robert Exp $
 lib/libreoffice/share/extensions/wiki-publisher/description-fa.txt
 lib/libreoffice/share/extensions/wiki-publisher/help/fa/
 lib/libreoffice/share/extensions/wiki-publisher/help/fa/help.db_

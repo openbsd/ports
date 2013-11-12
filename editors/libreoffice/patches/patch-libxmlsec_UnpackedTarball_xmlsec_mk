@@ -1,0 +1,14 @@
+$OpenBSD: patch-libxmlsec_UnpackedTarball_xmlsec_mk,v 1.1 2013/11/12 07:57:23 robert Exp $
+--- libxmlsec/UnpackedTarball_xmlsec.mk.orig.port	Sun Nov  3 19:43:40 2013
++++ libxmlsec/UnpackedTarball_xmlsec.mk	Sun Nov  3 19:43:56 2013
+@@ -42,4 +42,10 @@ $(eval $(call gb_UnpackedTarball_add_patches,xmlsec,\
+ ))
+ endif
+ 
++ifeq ($(OS),OPENBSD)
++$(eval $(call gb_UnpackedTarball_add_patches,xmlsec,\
++	libxmlsec/openbsd.patch \
++))
++endif
++
+ # vim: set noet sw=4 ts=4:

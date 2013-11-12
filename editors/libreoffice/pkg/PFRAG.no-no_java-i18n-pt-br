@@ -1,31 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_java-i18n-pt-br,v 1.6 2013/05/31 14:50:19 robert Exp $
-lib/libreoffice/help/pt-BR/sbasic.idxl/_0.cfs
-lib/libreoffice/help/pt-BR/sbasic.idxl/segments.gen
-lib/libreoffice/help/pt-BR/sbasic.idxl/segments_3
-lib/libreoffice/help/pt-BR/scalc.idxl/_0.cfs
-lib/libreoffice/help/pt-BR/scalc.idxl/segments.gen
-lib/libreoffice/help/pt-BR/scalc.idxl/segments_3
-lib/libreoffice/help/pt-BR/schart.idxl/_0.cfs
-lib/libreoffice/help/pt-BR/schart.idxl/segments.gen
-lib/libreoffice/help/pt-BR/schart.idxl/segments_3
-lib/libreoffice/help/pt-BR/sdatabase.idxl/_0.cfs
-lib/libreoffice/help/pt-BR/sdatabase.idxl/segments.gen
-lib/libreoffice/help/pt-BR/sdatabase.idxl/segments_3
-lib/libreoffice/help/pt-BR/sdraw.idxl/_0.cfs
-lib/libreoffice/help/pt-BR/sdraw.idxl/segments.gen
-lib/libreoffice/help/pt-BR/sdraw.idxl/segments_3
-lib/libreoffice/help/pt-BR/shared.idxl/segments.gen
-lib/libreoffice/help/pt-BR/shared.idxl/segments_1
-lib/libreoffice/help/pt-BR/simpress.idxl/_0.cfs
-lib/libreoffice/help/pt-BR/simpress.idxl/segments.gen
-lib/libreoffice/help/pt-BR/simpress.idxl/segments_3
-lib/libreoffice/help/pt-BR/smath.idxl/_0.cfs
-lib/libreoffice/help/pt-BR/smath.idxl/segments.gen
-lib/libreoffice/help/pt-BR/smath.idxl/segments_3
-lib/libreoffice/help/pt-BR/swriter.idxl/_0.cfs
-lib/libreoffice/help/pt-BR/swriter.idxl/segments.gen
-lib/libreoffice/help/pt-BR/swriter.idxl/segments_3
-lib/libreoffice/share/extensions/report-builder/description-pt-BR.txt
+@comment $OpenBSD: PFRAG.no-no_java-i18n-pt-br,v 1.7 2013/11/12 07:57:23 robert Exp $
 lib/libreoffice/share/extensions/wiki-publisher/description-pt-BR.txt
 lib/libreoffice/share/extensions/wiki-publisher/help/pt-BR/
 lib/libreoffice/share/extensions/wiki-publisher/help/pt-BR/help.db_

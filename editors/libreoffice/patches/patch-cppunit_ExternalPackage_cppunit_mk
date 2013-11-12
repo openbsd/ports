@@ -1,0 +1,14 @@
+$OpenBSD: patch-cppunit_ExternalPackage_cppunit_mk,v 1.1 2013/11/12 07:57:23 robert Exp $
+--- cppunit/ExternalPackage_cppunit.mk.orig.port	Sun Nov  3 13:52:20 2013
++++ cppunit/ExternalPackage_cppunit.mk	Sun Nov  3 13:52:49 2013
+@@ -34,8 +34,8 @@ $(eval $(call gb_ExternalPackage_add_file,cppunit,lib/
+ else ifeq ($(OS),AIX)
+ $(eval $(call gb_ExternalPackage_add_file,cppunit,lib/libcppunit-1.13.a,src/cppunit/.libs/libcppunit-1.13.a))
+ else ifeq ($(OS),OPENBSD)
+-$(eval $(call gb_ExternalPackage_add_file,cppunit,lib/libcppunit-1.13.so.0.0,src/cppunit/.libs/libcppunit-1.13.so.0.0))
+-$(eval $(call gb_ExternalPackage_add_file,cppunit,lib/libcppunit.so,src/cppunit/.libs/libcppunit-1.13.so.0.0))
++$(eval $(call gb_ExternalPackage_add_file,cppunit,lib/libcppunit-1.13.so.0.1,src/cppunit/.libs/libcppunit-1.13.so.0.1))
++$(eval $(call gb_ExternalPackage_add_file,cppunit,lib/libcppunit.so,src/cppunit/.libs/libcppunit-1.13.so.0.1))
+ else ifeq ($(DISABLE_DYNLOADING),TRUE)
+ $(eval $(call gb_ExternalPackage_add_file,cppunit,lib/libcppunit.a,src/cppunit/.libs/libcppunit.a))
+ else ifeq ($(OS),ANDROID)

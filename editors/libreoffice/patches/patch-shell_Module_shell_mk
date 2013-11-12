@@ -1,7 +1,7 @@
-$OpenBSD: patch-shell_Module_shell_mk,v 1.1 2013/05/31 14:50:15 robert Exp $
---- shell/Module_shell.mk.orig.port	Sun May 19 20:23:43 2013
-+++ shell/Module_shell.mk	Sun May 19 20:23:50 2013
-@@ -32,7 +32,7 @@ $(eval $(call gb_Module_add_targets,shell,\
+$OpenBSD: patch-shell_Module_shell_mk,v 1.2 2013/11/12 07:57:23 robert Exp $
+--- shell/Module_shell.mk.orig.port	Tue Oct 22 19:49:23 2013
++++ shell/Module_shell.mk	Sat Nov  2 16:06:36 2013
+@@ -14,7 +14,7 @@ $(eval $(call gb_Module_add_targets,shell,\
  	Library_localebe \
  ))
  

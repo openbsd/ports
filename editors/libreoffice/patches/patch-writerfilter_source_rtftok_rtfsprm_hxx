@@ -1,7 +1,7 @@
-$OpenBSD: patch-writerfilter_source_rtftok_rtfsprm_hxx,v 1.1 2013/05/31 14:50:17 robert Exp $
---- writerfilter/source/rtftok/rtfsprm.hxx.orig.port	Tue May 14 20:06:26 2013
-+++ writerfilter/source/rtftok/rtfsprm.hxx	Tue May 14 22:41:56 2013
-@@ -29,6 +29,7 @@
+$OpenBSD: patch-writerfilter_source_rtftok_rtfsprm_hxx,v 1.2 2013/11/12 07:57:23 robert Exp $
+--- writerfilter/source/rtftok/rtfsprm.hxx.orig.port	Tue Oct 22 19:49:23 2013
++++ writerfilter/source/rtftok/rtfsprm.hxx	Sat Nov  2 16:06:36 2013
+@@ -10,6 +10,7 @@
  #ifndef _RTFSPRM_HXX_
  #define _RTFSPRM_HXX_
  

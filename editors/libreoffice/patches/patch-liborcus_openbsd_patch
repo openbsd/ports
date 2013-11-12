@@ -1,0 +1,23 @@
+$OpenBSD: patch-liborcus_openbsd_patch,v 1.1 2013/11/12 07:57:23 robert Exp $
+--- liborcus/openbsd.patch.orig.port	Sun Nov  3 19:11:09 2013
++++ liborcus/openbsd.patch	Sun Nov  3 19:11:12 2013
+@@ -0,0 +1,19 @@
++--- ./src/Makefile.in.orig.port	Sun Nov  3 19:10:23 2013
+++++ ./src/Makefile.in	Sun Nov  3 19:10:46 2013
++@@ -103,7 +103,6 @@
++ @BUILD_SPREADSHEET_MODEL_TRUE@@WITH_XLSX_FILTER_TRUE@am__EXEEXT_6 = orcus-xlsx$(EXEEXT)
++ @BUILD_SPREADSHEET_MODEL_TRUE@@WITH_GNUMERIC_FILTER_TRUE@am__EXEEXT_7 = orcus-gnumeric$(EXEEXT)
++ am__installdirs = "$(DESTDIR)$(bindir)"
++-PROGRAMS = $(bin_PROGRAMS)
++ am__orcus_csv_SOURCES_DIST = orcus_csv_main.cpp
++ @BUILD_SPREADSHEET_MODEL_TRUE@am_orcus_csv_OBJECTS = orcus_csv-orcus_csv_main.$(OBJEXT)
++ orcus_csv_OBJECTS = $(am_orcus_csv_OBJECTS)
++@@ -620,7 +619,7 @@
++ $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
++ 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
++ $(am__aclocal_m4_deps):
++-install-binPROGRAMS: $(bin_PROGRAMS)
+++install-binPROGRAMS:
++ 	@$(NORMAL_INSTALL)
++ 	test -z "$(bindir)" || $(MKDIR_P) "$(DESTDIR)$(bindir)"
++ 	@list='$(bin_PROGRAMS)'; test -n "$(bindir)" || list=; \

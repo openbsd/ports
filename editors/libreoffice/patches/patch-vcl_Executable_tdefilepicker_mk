@@ -1,0 +1,14 @@
+$OpenBSD: patch-vcl_Executable_tdefilepicker_mk,v 1.1 2013/11/12 07:57:23 robert Exp $
+--- vcl/Executable_tdefilepicker.mk.orig.port	Mon Nov 11 08:35:35 2013
++++ vcl/Executable_tdefilepicker.mk	Mon Nov 11 08:35:50 2013
+@@ -31,6 +31,10 @@ $(eval $(call gb_Executable_add_libs,tdefilepicker,\
+ 	-ltdeio -lX11 \
+ ))
+ 
++$(eval $(call gb_Executable_use_externals,tdefilepicker,\
++	Xrender \
++))
++
+ $(eval $(call gb_Executable_add_exception_objects,tdefilepicker,\
+ 	vcl/unx/kde/fpicker/kdecommandthread \
+ 	vcl/unx/kde/fpicker/kdefilepicker \

@@ -1,7 +1,7 @@
-$OpenBSD: patch-solenv_bin_ooinstall,v 1.2 2013/05/31 14:50:15 robert Exp $
---- solenv/bin/ooinstall.orig.port	Thu May  2 17:55:29 2013
-+++ solenv/bin/ooinstall	Sun May 12 12:52:22 2013
-@@ -111,10 +111,12 @@ if ($is_windows) {
+$OpenBSD: patch-solenv_bin_ooinstall,v 1.3 2013/11/12 07:57:23 robert Exp $
+--- solenv/bin/ooinstall.orig.port	Tue Oct 22 19:49:23 2013
++++ solenv/bin/ooinstall	Sat Nov  2 16:06:36 2013
+@@ -94,10 +94,12 @@ if ($is_windows) {
  # make distro-pack-install shufle with the SDK installation to make it LSB compliant
  # it creates symlinks from the orignal path to /usr/share; they are not valid with $DESTDIR
  # and potential second ooinstall call fails with strange error messages if the old tree is still there
@@ -17,4 +17,4 @@ $OpenBSD: patch-solenv_bin_ooinstall,v 1.2 2013/05/31 14:50:15 robert Exp $
 +#######################
  
  print "Running LibreOffice installer\n";
- system ("cd $ENV{SRC_ROOT}/instsetoo_native/util ; " .
+ 

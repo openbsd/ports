@@ -1,0 +1,12 @@
+$OpenBSD: patch-bridges_Library_cpp_uno_mk,v 1.1 2013/11/12 07:57:23 robert Exp $
+--- bridges/Library_cpp_uno.mk.orig.port	Sat Nov  2 19:41:43 2013
++++ bridges/Library_cpp_uno.mk	Sat Nov  2 19:41:56 2013
+@@ -188,7 +188,7 @@ $(eval $(call gb_Library_add_cxxflags,gcc3_uno,\
+ 	$(if $(filter TRUE,$(HAVE_GCC_AVX)),-mno-avx) \
+ ))
+ 
+-ifeq ($(filter ANDROID WNT,$(OS)),)
++ifeq ($(filter ANDROID WNT OPENBSD,$(OS)),)
+ $(eval $(call gb_Library_add_libs,gcc3_uno,\
+ 	-ldl \
+ ))

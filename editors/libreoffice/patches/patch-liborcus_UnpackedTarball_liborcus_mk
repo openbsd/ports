@@ -1,0 +1,15 @@
+$OpenBSD: patch-liborcus_UnpackedTarball_liborcus_mk,v 1.1 2013/11/12 07:57:23 robert Exp $
+--- liborcus/UnpackedTarball_liborcus.mk.orig.port	Sun Nov  3 19:11:19 2013
++++ liborcus/UnpackedTarball_liborcus.mk	Sun Nov  3 19:17:35 2013
+@@ -21,9 +21,10 @@ liborcus_patches += liborcus_0.1.0-configure.patch
+ # don't use dllimport
+ liborcus_patches += liborcus_0.1.0-dllimport.patch
+ 
+-ifeq ($(OS),MACOSX)
++ifeq ($(OS),OPENBSD)
+ # no "tac" command on OS X, but "tail -r"
+ liborcus_patches += liborcus_0.1.0-tac.patch
++liborcus_patches += openbsd.patch
+ endif
+ 
+ # <https://gitorious.org/orcus/orcus/merge_requests/2#

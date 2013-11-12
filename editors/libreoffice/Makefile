@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2013/11/06 20:52:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.96 2013/11/12 07:57:22 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -6,8 +6,8 @@ COMMENT-main=	multi-platform productivity suite
 COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
-BV=		4.0
-VERSION=	4.0.4.2
+BV=		4.1
+VERSION=	4.1.3.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -17,8 +17,6 @@ PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde3
 
-REVISION-main=	0
-REVISION-kde =	0
 EPOCH=		0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -55,7 +53,7 @@ DISTFILES+=	${EDISTFILES} \
 		1f24ab1d39f4a51faf22244c94a6203f-xmlsec1-1.2.14.tar.gz:0 \
 		26b3e95ddf3d9c077c480ea45874b3b8-lp_solve_5.5.tar.gz:0 \
 		2a177023f9ea8ec8bd00837605c5df1b-jakarta-tomcat-5.0.30-src.tar.gz:0 \
-		2ae988b339daec234019a7066f96733e-commons-lang-2.3-src.tar.gz:0 \
+		625ff5f2f968dd908bca43c9469d6e6b-commons-lang-2.4-src.tar.gz:0 \
 		2c9b0f83ed5890af02c0df1c1776f39b-commons-httpclient-3.1-src.tar.gz:0 \
 		3404ab6b1792ae5f16bbd603bd1e1d03-libformula-1.1.7.zip:0 \
 		35c94d2df8893241173de1d16b6034c0-swingExSrc.zip:0 \
@@ -64,37 +62,40 @@ DISTFILES+=	${EDISTFILES} \
 		3bdf40c0d199af31923e900d082ca2dd-libfonts-1.1.6.zip:0 \
 		3c219630e4302863a9a83d0efde889db-commons-logging-1.1.1-src.tar.gz:0 \
 		46e92b68e31e858512b680b3b61dc4c1-mythes-1.2.3.tar.gz:0 \
-		54e578c91b1b68e69c72be22adcb2195-liblangtag-0.4.0.tar.bz2:0 \
+		36271d3fa0d9dec1632029b6d7aac925-liblangtag-0.5.1.tar.bz2:0 \
 		5c781723a0d9ed6188960defba8e91cf-liberation-fonts-ttf-2.00.1.tar.gz:0 \
 		798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip:0 \
 		7a15edea7d415ac5150ea403e27401fd-open-sans-font-ttf-1.10.tar.gz:0 \
-		8755aac23317494a9028569374dc87b2-liborcus_0.3.0.tar.bz2:0 \
+		ea2acaf140ae40a87a952caa75184f4d-liborcus-0.5.1.tar.bz2:0 \
 		8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip:0 \
 		97b2d4dba862397f446b217e2b623e71-libloader-1.1.6.zip:0 \
-		9d283e02441d8cebdcd1e5d9df227d67-libwpg-0.2.1.tar.bz2:0 \
-		9f9e15966b5624834157fe3d748312bc-mdds_0.6.1.tar.bz2:0 \
+		b85436266b2ac91d351ab5684b181151-libwpg-0.2.2.tar.bz2:0 \
+		08c85a6d6d793daee14e10e22eefdc4b-mdds_0.8.1.tar.bz2:0 \
 		a2f6010987e1c601274ab5d63b72c944-hyphen-2.8.4.tar.gz:0 \
 		a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip:0 \
 		ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip:0 \
-		af3c3acf618de6108d65fcdc92b492e1-commons-codec-1.3-src.tar.gz:0 \
+		2e482c7567908d334785ce7d69ddfff7-commons-codec-1.6-src.tar.gz:0 \
 		ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip:0 \
 		b2371dc7cf4811c9d32146eec913d296-libcmis-0.3.0.tar.gz:0 \
 		c3c1a8ba7452950636e871d25020ce0d-pt-serif-font-1.0000W.tar.gz:0 \
-		d197bd6211669a2fa4ca648faf04bcb1-libwps-0.2.7.tar.bz2:0 \
+		46eb0e7f213ad61bd5dee0c494132cb0-libwps-0.2.9.tar.bz2:0 \
 		db60e4fde8dd6d6807523deb71ee34dc-liblayout-0.2.10.zip:0 \
 		dc3d21a3921931096d6e80f6701f6763-libexttextcat-3.4.0.tar.bz2:0 \
 		d8bd5eed178db6e2b18eeed243f85aa8-flute-1.1.6.zip:0 \
 		e7a384790b13c29113e22e596ade9687-LinLibertineG-20120116.zip:0 \
-		972afb8fdf02d9e7517e258b7fa7f0eb-libwpd-0.9.8.tar.bz2:0 \
+		a3dcac551fae5ebbec16e844810828c4-libwpd-0.9.9.tar.bz2:0 \
 		ea570af93c284aa9e5621cd563f54f4d-bsh-2.0b1-src.tar.gz:0 \
 		ea91f2fb4212a21d708aced277e6e85a-vigra1.4.0.tar.gz:0 \
 		eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:0 \
-		fa9aa839145cdf860bf596532bb8af97-cppunit-1.13.1.tar.gz:0 \
+		ac4781e01619be13461bb2d562b94a7b-cppunit-1.13.1.tar.gz:0 \
 		f872f4ac066433d8ff92f5e316b36ff9-dejavu-fonts-ttf-2.33.zip:0 \
 		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:0 \
+		c48827713e93539dc7285f9e86ffbdc5-harfbuzz-0.9.17.tar.bz2:0 \
+		8473296c671b6e3dd8197f4145e0854b-libodfgen-0.0.2.tar.bz2:0 \
 		libcdr-0.0.14.tar.bz2:0 \
 		libmspub-0.0.6.tar.bz2:0 \
-		libvisio-0.0.28.tar.bz2:0
+		libmwaw-0.1.11.tar.bz2:0 \
+		libvisio-0.0.31.tar.bz2:0
 
 DIST_SUBDIR=	libreoffice
 
@@ -163,6 +164,7 @@ LIB_DEPENDS-main=x11/gtk+2 \
 		graphics/lcms2 \
 		${MODGCC4_CPPLIBDEP} \
 		textproc/libxslt \
+		textproc/raptor \
 		net/curl \
 		net/neon \
 		textproc/icu4c \
@@ -186,7 +188,8 @@ WANTLIB-main+=	idn
 WANTLIB-main+=	${MODPY_WANTLIB}
 WANTLIB-main+=	Xt clucene-contribs-lib clucene-core clucene-shared
 WANTLIB-main+=	cups exslt gcrypt gpg-error icudata lcms2
-WANTLIB-main+=	nspr4 nss3 nssutil3 plc4 plds4 smime3 softokn3 ssl3
+WANTLIB-main+=	nspr4 nss3 plc4 plds4 smime3 softokn3 ssl3
+WANTLIB-main+=	png raptor2
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
 			devel/libexecinfo \
@@ -204,6 +207,7 @@ WANTLIB-kde=		${MODQT_WANTLIB} \
 			X11 c estdc++ m pthread \
 			lib/kde3/kdecore \
 			lib/kde3/kdeui lib/kde3/kio
+WANTLIB-kde+=		ICE SM Xext icule icuuc
 
 .include <bsd.port.arch.mk>
 
@@ -253,13 +257,12 @@ CONFIGURE_ARGS+=\
 		--disable-odk \
 		--disable-opengl \
 		--disable-randr-link \
-		--disable-unix-qstart-libpng \
 		--enable-gio \
 		--enable-gstreamer \
 		--enable-kde \
 		--enable-ext-presenter-minimizer \
-		--enable-ext-report-builder \
 		--enable-systray \
+		--enable-release-build \
 		--with-alloc=system \
 		--with-compat-oowrappers \
 		--with-external-tar=${DISTDIR}/libreoffice \
@@ -276,6 +279,7 @@ CONFIGURE_ARGS+=\
 		--with-system-jars \
 		--with-system-jpeg \
 		--with-system-lcms2 \
+		--with-system-libpng \
 		--with-system-mesa-headers \
 		--with-system-neon \
 		--with-system-nss \
@@ -295,9 +299,7 @@ CONFIGURE_ARGS+=\
 		--without-system-hsqldb \
 		--without-system-jfreereport \
 		--without-system-libwpd \
-		--without-system-mozilla \
-		--without-system-servlet-api \
-		--without-unix-wrapper
+		--without-system-servlet-api
 
 .if ${BUILD_PACKAGES:M-java}
 BUILD_DEPENDS+=	devel/apache-ant
@@ -371,7 +373,7 @@ post-install:
 	for _f in `find ${PREFIX}/share/icons/*/*/apps -type f`; \
 		do mv $${_f} `echo $${_f} | sed "s,apps/,apps/libreoffice-,g"`; done
 
-	${INSTALL_DATA} ${WRKSRC}/sysui/unxobsd.pro/misc/libreoffice/openoffice.org.xml \
+	${INSTALL_DATA} ${WRKSRC}/workdir/unxobsd.pro/CustomTarget/sysui/share/libreoffice/openoffice.org.xml \
 		${PREFIX}/share/mime/packages
 
 .include <bsd.port.mk>

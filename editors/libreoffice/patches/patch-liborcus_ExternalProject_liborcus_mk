@@ -1,13 +1,13 @@
-$OpenBSD: patch-liborcus_ExternalProject_liborcus_mk,v 1.1 2013/05/31 14:50:13 robert Exp $
---- liborcus/ExternalProject_liborcus.mk.orig.port	Thu May  2 17:55:29 2013
-+++ liborcus/ExternalProject_liborcus.mk	Sun May 19 19:54:37 2013
-@@ -52,7 +52,9 @@ $(call gb_ExternalProject_get_state_target,liborcus,bu
- 		--disable-debug \
- 		--disable-spreadsheet-model \
- 		--disable-werror \
-+		--with-boost-system=boost_system \
- 		$(if $(filter LINUX FREEBSD OPENBSD NETBSD DRAGONFLY ANDROID,$(OS)),$(if $(gb_ENABLE_DBGUTIL),CPPFLAGS=-D_GLIBCXX_DEBUG)) \
-+		$(if $(filter OPENBSD,$(OS)),LDFLAGS=-lpthread CPPFLAGS='-DBOOST_SYSTEM_NO_DEPRECATED -pthread') \
- 		$(if $(filter NO,$(SYSTEM_BOOST)),CXXFLAGS=-I$(OUTDIR)/inc/external) \
- 		$(if $(filter YES,$(CROSS_COMPILING)),--build=$(BUILD_PLATFORM) --host=$(HOST_PLATFORM)) \
- 	&& $(MAKE) \
+$OpenBSD: patch-liborcus_ExternalProject_liborcus_mk,v 1.2 2013/11/12 07:57:23 robert Exp $
+--- liborcus/ExternalProject_liborcus.mk.orig.port	Sat Nov  2 19:45:01 2013
++++ liborcus/ExternalProject_liborcus.mk	Sun Nov  3 16:33:51 2013
+@@ -88,7 +88,9 @@ $(call gb_ExternalProject_get_state_target,liborcus,bu
+ 			--disable-debug \
+ 			--disable-spreadsheet-model \
+ 			--disable-werror \
++			--with-boost-system=boost_system  \
+ 			$(if $(filter YES,$(CROSS_COMPILING)),--build=$(BUILD_PLATFORM) --host=$(HOST_PLATFORM)) \
++			$(if $(filter OPENBSD,$(OS)),LDFLAGS=-lpthread CPPFLAGS='-DBOOST_SYSTEM_NO_DEPRECATED -pthread') \
+ 		&& $(MAKE) \
+ 	)
+ 

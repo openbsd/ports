@@ -1,0 +1,11 @@
+$OpenBSD: patch-autogen_sh,v 1.1 2013/11/12 07:57:23 robert Exp $
+--- autogen.sh.orig.port	Sat Nov  2 19:53:39 2013
++++ autogen.sh	Sat Nov  2 19:53:45 2013
+@@ -201,7 +201,6 @@ if (defined $ENV{NOCONFIGURE}) {
+         }
+     }
+     push @args, "--srcdir=$src_path";
+-    push @args, "--enable-option-checking=fatal";
+ 
+     print "Running ./configure with '" . join ("' '", @args), "'\n";
+     system ("./configure", @args) && die "Error running configure";

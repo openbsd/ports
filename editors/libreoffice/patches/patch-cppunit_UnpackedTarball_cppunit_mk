@@ -1,0 +1,14 @@
+$OpenBSD: patch-cppunit_UnpackedTarball_cppunit_mk,v 1.1 2013/11/12 07:57:23 robert Exp $
+--- cppunit/UnpackedTarball_cppunit.mk.orig.port	Sat Nov  2 19:43:30 2013
++++ cppunit/UnpackedTarball_cppunit.mk	Sat Nov  2 19:44:09 2013
+@@ -24,6 +24,10 @@ else ifeq ($(OS),IOS)
+ $(eval $(call gb_UnpackedTarball_add_patches,cppunit,\
+ 	cppunit/ios.patch \
+ ))
++else ifeq ($(OS),OPENBSD)
++$(eval $(call gb_UnpackedTarball_add_patches,cppunit,\
++	cppunit/openbsd-cppunit.patch \
++))
+ endif
+ ifeq ($(DISABLE_DYNLOADING),TRUE)
+ $(eval $(call gb_UnpackedTarball_add_patches,cppunit,\

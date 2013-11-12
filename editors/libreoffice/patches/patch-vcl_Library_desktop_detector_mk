@@ -1,0 +1,11 @@
+$OpenBSD: patch-vcl_Library_desktop_detector_mk,v 1.1 2013/11/12 07:57:23 robert Exp $
+--- vcl/Library_desktop_detector.mk.orig.port	Mon Nov 11 08:31:47 2013
++++ vcl/Library_desktop_detector.mk	Mon Nov 11 08:31:55 2013
+@@ -51,6 +51,7 @@ $(eval $(call gb_Library_use_externals,desktop_detecto
+ 	boost_headers \
+ 	icule \
+ 	icuuc \
++	Xrender \
+ ))
+ 
+ $(eval $(call gb_Library_add_libs,desktop_detector,\
