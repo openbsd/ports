@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2013/05/16 17:20:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2013/11/12 20:12:02 stu Exp $
 
-COMMENT =		visual programming environment and toolkit
+COMMENT =	visual programming environment and toolkit
 
-DISTNAME =		${PKGNAME}.src
-PKGNAME =		scratch-1.4.0.7
-REVISION =		0
-CATEGORIES =		graphics
-HOMEPAGE =		http://scratch.mit.edu/
-
-MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
+DISTNAME =	${PKGNAME}.src
+PKGNAME =	scratch-1.4.0.7
+REVISION =	0
+CATEGORIES =	graphics
+HOMEPAGE =	http://scratch.mit.edu/
+MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # GPLv2 / MIT / Creative Commons (CC BY-SA 3.0)
 PERMIT_PACKAGE_CDROM =	Yes
@@ -18,26 +17,25 @@ WANTLIB =	X11 Xau Xdmcp Xext Xrender cairo expat fontconfig freetype \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
 		png pthread pthread-stubs xcb xcb-render xcb-shm z
 
-MASTER_SITES =		http://download.scratch.mit.edu/
-
-MODULES =		devel/gettext
-LIB_DEPENDS=		devel/pango
+MASTER_SITES =	http://download.scratch.mit.edu/
+MODULES =	devel/gettext
 
 # not actually needed to build, but avoid wasting time on !squeak arches.
-BUILD_DEPENDS =		lang/squeak/vm
-RUN_DEPENDS =		lang/squeak/vm \
-			devel/desktop-file-utils \
-			devel/xdg-utils \
-			misc/shared-mime-info \
-			x11/gtk+2,-guic
+BUILD_DEPENDS =	lang/squeak/vm
 
-SEPARATE_BUILD =	Yes
-NO_TEST =		Yes
+RUN_DEPENDS =	lang/squeak/vm \
+		devel/desktop-file-utils \
+		devel/xdg-utils \
+		misc/shared-mime-info \
+		x11/gtk+2,-guic
 
-CFLAGS +=		-Wall -fPIC -shared
-SUBST_VARS =		SC_DIR
+LIB_DEPENDS =	devel/pango
+SEPARATE_BUILD = Yes
+NO_TEST =	Yes
+CFLAGS +=	-Wall -fPIC -shared
+SUBST_VARS =	SC_DIR
 
-SC_DIR =		${PREFIX}/share/scratch
+SC_DIR =	${PREFIX}/share/scratch
 
 post-extract:
 	gunzip -o ${WRKSRC}/src/man/scratch.1 ${WRKSRC}/src/man/scratch.1.gz
