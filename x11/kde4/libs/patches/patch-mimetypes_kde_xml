@@ -1,0 +1,41 @@
+$OpenBSD: patch-mimetypes_kde_xml,v 1.1 2013/11/12 11:18:38 ajacoutot Exp $
+
+https://bugs.kde.org/show_bug.cgi?id=250924
+
+--- mimetypes/kde.xml.orig     Sat Nov  2 23:12:20 2013
++++ mimetypes/kde.xml  Sat Nov  2 23:13:03 2013
+@@ -174,34 +174,6 @@ Notes:
+     <glob pattern="*.abc"/>
+   </mime-type>
+ 
+-  <!-- all/ fake mime types -->
+-  <mime-type type="all/all">
+-    <comment>all files and folders</comment>
+-  </mime-type>
+-  <mime-type type="all/allfiles">
+-    <comment>all files</comment>
+-  </mime-type>
+-
+-  <!-- uri/ fake mime types -->
+-  <mime-type type="uri/mms">
+-    <comment>mms: URIs</comment>
+-  </mime-type>
+-  <mime-type type="uri/mmst">
+-    <comment>mmst: URIs</comment>
+-  </mime-type>
+-  <mime-type type="uri/mmsu">
+-    <comment>mmsu: URIs</comment>
+-  </mime-type>
+-  <mime-type type="uri/pnm">
+-    <comment>pnm: URIs</comment>
+-  </mime-type>
+-  <mime-type type="uri/rtspt">
+-    <comment>rtspt: URIs</comment>
+-  </mime-type>
+-  <mime-type type="uri/rtspu">
+-    <comment>rtspu: URIs</comment>
+-  </mime-type>
+-
+   <mime-type type="application/vnd.kde.fontspackage">
+     <sub-class-of type="application/zip"/>
+     <comment>fonts package</comment>
