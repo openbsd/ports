@@ -1,0 +1,19 @@
+$OpenBSD: patch-libsn_sn-monitor_h,v 1.1 2013/11/12 17:55:11 fgsch Exp $
+--- libsn/sn-monitor.h.orig	Tue Nov  5 17:53:25 2013
++++ libsn/sn-monitor.h	Tue Nov  5 17:53:53 2013
+@@ -77,11 +77,11 @@ const char* sn_startup_sequence_get_application_id    
+ int         sn_startup_sequence_get_screen                (SnStartupSequence *sequence);
+ 
+ void        sn_startup_sequence_get_initiated_time        (SnStartupSequence *sequence,
+-                                                           long              *tv_sec,
+-                                                           long              *tv_usec);
++                                                           time_t            *tv_sec,
++                                                           suseconds_t       *tv_usec);
+ void        sn_startup_sequence_get_last_active_time      (SnStartupSequence *sequence,
+-                                                           long              *tv_sec,
+-                                                           long              *tv_usec);
++                                                           time_t            *tv_sec,
++                                                           suseconds_t       *tv_usec);
+ 
+ void        sn_startup_sequence_complete                  (SnStartupSequence *sequence);
+ 
