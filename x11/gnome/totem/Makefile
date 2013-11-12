@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2013/11/12 13:44:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.114 2013/11/12 17:10:43 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		official media player for GNOME
 
 GNOME_PROJECT=		totem
 GNOME_VERSION=		3.10.1
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  totem                0.0      # unknown
 
@@ -35,8 +35,7 @@ MODULES=		devel/dconf \
 
 BUILD_DEPENDS=	 	devel/gsettings-desktop-schemas \
 			devel/py-gobject3 \
-			multimedia/gstreamer1/plugins-good \
-			multimedia/gstreamer1/plugins-bad #scaletempo
+			multimedia/gstreamer1/plugins-good
 
 # needed for make check
 BUILD_DEPENDS +=	devel/pylint
@@ -59,8 +58,7 @@ LIB_DEPENDS=		x11/gnome/totem-pl-parser \
 # while the following are not "required" for totem to run, there's no
 # point in using a media player that can't play most modern media files
 RUN_DEPENDS +=		multimedia/gstreamer1/plugins-good \
-			multimedia/gstreamer1/plugins-libav \
-			multimedia/gstreamer1/plugins-bad #scaletempo
+			multimedia/gstreamer1/plugins-libav
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
