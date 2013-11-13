@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.35 2013/10/18 21:52:17 benoit Exp $
+# $OpenBSD: Makefile,v 1.36 2013/11/13 19:48:59 benoit Exp $
 
 COMMENT =		tar-like secure remote deduplicating archiver
 
-DISTNAME =		cyphertite-1.6.6
+DISTNAME =		cyphertite-1.6.7
 CATEGORIES =		sysutils archivers security
 
 HOMEPAGE =		https://www.cyphertite.com/
@@ -22,7 +22,7 @@ LIB_DEPENDS =		archivers/libshrink>=0.5.0	\
 			devel/libevent2			\
 			devel/libexude>=0.7.0		\
 			net/curl			\
-			security/assl>=1.3.0		\
+			security/assl>=1.5.0		\
 			textproc/libxmlsd>=0.9.0
 
 .include <bsd.port.mk>
