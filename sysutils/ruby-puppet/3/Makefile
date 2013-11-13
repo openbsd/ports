@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.32 2013/11/12 08:28:29 robert Exp $
+# $OpenBSD: Makefile,v 1.33 2013/11/13 14:32:18 jasper Exp $
 
 VERSION=	3.3.1
-REVISION=	2
+REVISION=	3
 
 RUN_DEPENDS+=	archivers/gtar \
 		devel/ruby-rgen,${MODRUBY_FLAVOR}

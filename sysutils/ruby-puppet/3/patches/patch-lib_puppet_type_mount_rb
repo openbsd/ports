@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_puppet_type_mount_rb,v 1.1 2013/11/13 14:32:18 jasper Exp $
+
+OpenBSD mount(8) does not support '-o remount'.
+
+--- lib/puppet/type/mount.rb.orig	Wed Nov 13 15:29:35 2013
++++ lib/puppet/type/mount.rb	Wed Nov 13 15:29:48 2013
+@@ -249,7 +249,7 @@ module Puppet
+       newvalues(:true, :false)
+       defaultto do
+         case Facter.value(:operatingsystem)
+-        when "FreeBSD", "Darwin", "AIX", "DragonFly"
++        when "FreeBSD", "Darwin", "AIX", "DragonFly", "OpenBSD"
+           false
+         else
+           true
