@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/11/12 20:13:21 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2013/11/13 00:19:28 bcallah Exp $
 
 COMMENT =	console-based 52-card solitare game
 DISTNAME =	bluemoon-2.11
+REVISION =	0
 CATEGORIES =	games
 
 HOMEPAGE =	http://www.catb.org/~esr/bluemoon/

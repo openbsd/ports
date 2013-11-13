@@ -1,4 +1,4 @@
-$OpenBSD: patch-bluemoon_c,v 1.1.1.1 2013/11/12 20:13:21 bcallah Exp $
+$OpenBSD: patch-bluemoon_c,v 1.2 2013/11/13 00:19:28 bcallah Exp $
 --- bluemoon.c.orig	Mon Oct  7 21:45:08 2013
 +++ bluemoon.c	Mon Oct  7 21:45:23 2013
 @@ -399,7 +399,7 @@ main(int argc, char *argv[])
@@ -6,7 +6,7 @@ $OpenBSD: patch-bluemoon_c,v 1.1.1.1 2013/11/12 20:13:21 bcallah Exp $
  	srand(seed = atoi(argv[1]));
      else
 -	srand(seed = (int)time((long *)0));
-+	srand(seed = (int)time((long long *)0));
++	srand(seed = (int)time((time_t *)0));
  
      init_vars();
  
