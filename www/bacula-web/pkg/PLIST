@@ -1,7 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/04/12 10:47:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/11/13 14:08:38 ajacoutot Exp $
 @extraunexec rm -rf %D/bacula-web/application/view/cache/*
 @unexec-delete rm -f /var/www/conf/modules/bacula-web.conf
 bacula-web/
+bacula-web/DOCS/
+bacula-web/DOCS/COPYING
+bacula-web/DOCS/Changelog
+bacula-web/DOCS/INSTALL
+bacula-web/DOCS/README
 bacula-web/application/
 bacula-web/application/config/
 bacula-web/application/config/.htaccess
@@ -229,14 +234,9 @@ bacula-web/core/i18n/
 bacula-web/core/i18n/ctranslation.class.php
 bacula-web/core/utils/
 bacula-web/core/utils/chttprequest.class.php
-bacula-web/core/utils/ctimeutils.class.php
 bacula-web/core/utils/cutils.class.php
+bacula-web/core/utils/datetimeutil.class.php
 bacula-web/core/utils/file.class.php
-bacula-web/docs/
-bacula-web/docs/COPYING
-bacula-web/docs/Changelog
-bacula-web/docs/INSTALL
-bacula-web/docs/README
 bacula-web/index.php
 bacula-web/joblogs.php
 bacula-web/jobs.php
