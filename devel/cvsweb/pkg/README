@@ -1,4 +1,4 @@
-# $OpenBSD: README,v 1.7 2013/08/13 16:47:27 naddy Exp $
+# $OpenBSD: README,v 1.8 2013/11/13 19:53:08 naddy Exp $
 # 
 # +-----------------------------------------------------------------------
 # | Running ${FULLPKGNAME} on OpenBSD
@@ -44,8 +44,7 @@ cp -p /usr/bin/{co,cvs,diff,perl,rcsdiff,rlog,uname} .
 # lurking around (for example, from an upgrade):
 
 cd /var/www/usr/lib
-cp -p /usr/lib/lib{c,crypto,m,perl,pthread,util,z}.so* .
-cp -p /usr/lib/lib{asn1,com_err,gssapi,heimbase,krb5,roken,wind}.so* .
+cp -p /usr/lib/lib{c,m,perl,pthread,util,z}.so* .
 
 # Now, the run-time link-editor:
 
