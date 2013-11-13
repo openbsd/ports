@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/11/12 19:03:10 bcallah Exp $
-
-# XXX: These should be fixed in a future update.
-BROKEN-alpha:	Bad executables (longjmp botch in chkexc). Abort trap (core dumped)
+# $OpenBSD: Makefile,v 1.8 2013/11/13 03:30:26 bcallah Exp $
 
 V =		20131110
 COMMENT =	high-level, extensible programming language
