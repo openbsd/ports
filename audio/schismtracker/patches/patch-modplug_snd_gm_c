@@ -1,0 +1,22 @@
+$OpenBSD: patch-modplug_snd_gm_c,v 1.1.1.1 2013/11/13 01:09:51 bcallah Exp $
+
+Taken from FreeBSD.
+
+--- modplug/snd_gm.c.orig	Sun Nov 10 15:37:40 2013
++++ modplug/snd_gm.c	Sun Nov 10 15:37:58 2013
+@@ -10,13 +10,14 @@
+ #include "mplink.h" // for 'mp', which we shouldn't need
+ #include "snd_gm.h"
+ 
++/*
+ #if !defined(HAVE_LOG2) && !defined(__USE_ISOC99) && !defined(log2)
+ static double log2(double d)
+ {
+         return log(d) / log(2.0);
+ }
+ #endif
+-
++*/
+ 
+ #define LinearMidivol 1
+ #define PitchBendCenter 0x2000

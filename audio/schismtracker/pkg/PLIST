@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/13 01:09:51 bcallah Exp $
+@bin bin/schismtracker
