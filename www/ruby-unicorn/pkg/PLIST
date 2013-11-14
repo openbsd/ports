@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/10/13 10:49:49 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/11/14 17:04:37 jeremy Exp $
 ${GEM_BIN}/unicorn${GEM_BIN_SUFFIX}
 ${GEM_BIN}/unicorn_rails${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -93,6 +93,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/stream_input.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/tee_input.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/tmpio.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/util.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/worker.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn_http.so
 ${GEM_LIB}/gems/${DISTNAME}/local.mk.sample
@@ -107,11 +108,12 @@ ${GEM_LIB}/gems/${DISTNAME}/t/bin/
 ${GEM_LIB}/gems/${DISTNAME}/t/bin/content-md5-put
 ${GEM_LIB}/gems/${DISTNAME}/t/bin/sha1sum.rb
 ${GEM_LIB}/gems/${DISTNAME}/t/bin/unused_listen
-${GEM_LIB}/gems/${DISTNAME}/t/bin/utee
 ${GEM_LIB}/gems/${DISTNAME}/t/broken-app.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/detach.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/env.ru
+${GEM_LIB}/gems/${DISTNAME}/t/fails-rack-lint.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/heartbeat-timeout.ru
+${GEM_LIB}/gems/${DISTNAME}/t/hijack.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/listener_names.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/my-tap-lib.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/oob_gc.ru
@@ -152,6 +154,8 @@ ${GEM_LIB}/gems/${DISTNAME}/t/t0022-listener_names-preload_app.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0100-rack-input-tests.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0116-client_body_buffer_size.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0116.ru
+${GEM_LIB}/gems/${DISTNAME}/t/t0200-rack-hijack.sh
+${GEM_LIB}/gems/${DISTNAME}/t/t0300-no-default-middleware.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0600-https-server-basic.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t9000-preread-input.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t9001-oob_gc.sh
