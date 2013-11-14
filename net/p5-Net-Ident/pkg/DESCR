@@ -1,0 +1,3 @@
+Net::Ident is a module that looks up the username on the remote
+side of a TCP/IP connection through the ident (auth/tap) protocol
+described in RFC1413 (which supersedes RFC931).

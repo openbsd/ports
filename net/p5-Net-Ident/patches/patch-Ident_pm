@@ -1,0 +1,165 @@
+$OpenBSD: patch-Ident_pm,v 1.1.1.1 2013/11/14 10:09:52 dlg Exp $
+--- Ident.pm.orig	Wed Nov 13 15:30:45 2013
++++ Ident.pm	Wed Nov 13 17:06:01 2013
+@@ -2,6 +2,7 @@ package Net::Ident;
+ 
+ use strict;
+ use Socket;
++use Socket::GetAddrInfo qw( getaddrinfo getnameinfo :constants );
+ use Fcntl;
+ use FileHandle;
+ use Carp;
+@@ -50,11 +51,6 @@ sub _set_debug {
+     print STDDBG "Debugging turned to level $DEBUG\n";
+ }
+ 
+-# protocol number for tcp.
+-my $tcpproto = (getprotobyname('tcp'))[2] || 6;
+-# get identd port (default to 113).
+-my $identport = (getservbyname('ident', 'tcp'))[2] || 113;
+-
+ # what to use to make nonblocking sockets
+ my $NONBLOCK = eval "&$Config{o_nonblock}";
+ 
+@@ -138,49 +134,81 @@ sub newFromInAddr {
+     my($class, $localaddr, $remoteaddr, $timeout) = @_;
+     my $self = {};
+ 
+-    print STDDBG "Net::Ident::newFromInAddr localaddr=",
+-	sub { inet_ntoa($_[1]) . ":$_[0]" }->(sockaddr_in($localaddr)),
+-	", remoteaddr=",
+-	sub { inet_ntoa($_[1]) . ":$_[0]" }->(sockaddr_in($remoteaddr)),
+-	", timeout=", 
+-        defined $timeout ? $timeout : "<undef>",
+-	"\n"
+-	if $DEBUG > 1;
++    if ($DEBUG > 1) {
++	my ($err, $lip, $lport, $rip, $rport);
++	($err, $lip, $lport) = getnameinfo($localaddr, NI_NUMERICHOST|NI_NUMERICSERV, 0);
++	($err, $rip, $rport) = getnameinfo($remoteaddr, NI_NUMERICHOST|NI_NUMERICSERV, 0);
++	printf STDDBG "Net::Ident::newFromInAddr localaddr=%s port %s remoteaddr=%s port %s defined timeout=%s\n",
++	    $lip, $lport, $rip, $rport, defined $timeout ? $timeout : "<undef>";
++    }
+ 
+     eval {
+     	# unpack addresses and store in
+-    	my($localip, $remoteip);
+-    	($self->{localport}, $localip) = sockaddr_in($localaddr);
+-    	($self->{remoteport}, $remoteip) = sockaddr_in($remoteaddr);
+-    
+-    	# create a local binding port. We cannot bind to INADDR_ANY, it has
+-    	# to be bind (bound?) to the same IP address as the connection we're
+-    	# interested in on machines with multiple IP addresses
+-    	my $localbind = sockaddr_in(0, $localip);
+-    
++    	my($family, $err, $localip, $remoteip, @res);
++	$family = sockaddr_family($localaddr);
++	if ($family != sockaddr_family($remoteaddr)) {
++		die "= local and remote address family mismatch\n";
++	}
++
++	($err, $localip, $self->{localport}) = getnameinfo($localaddr,
++	    NI_NUMERICHOST | NI_NUMERICSERV);
++	if ($err) {
++		die "= local getnameinfo failed: $err\n";
++	}
++
++	($err, $remoteip, $self->{remoteport}) = getnameinfo($remoteaddr,
++	    NI_NUMERICHOST | NI_NUMERICSERV);
++	if ($err) {
++		die "= remote getnameinfo failed: $err\n";
++	}
++
+     	# store max time
+     	$self->{maxtime} = defined($timeout) ? time + $timeout : undef;
+-    
+-    	# create a remote connect point
+-    	my $identbind = sockaddr_in($identport, $remoteip);
+-    
+-    	# create a new FileHandle
+-    	$self->{fh} = new FileHandle;
+-    
+-    	# create a stream socket.
+-    	socket($self->{fh}, PF_INET, SOCK_STREAM, $tcpproto) or
+-    	    die "= socket failed: $!\n";
+-    
+-    	# bind it to the same IP number as the local end of THESOCK
+-    	bind($self->{fh}, $localbind) or die "= bind failed: $!\n";
+-    
+-    	# make it a non-blocking socket
+-    	fcntl($self->{fh}, F_SETFL, $NONBLOCK) or die "= fcntl failed: $!\n";
+-    
+-    	# connect it to the remote identd port, this can return EINPROGRESS.
+-    	# for some reason, reading $! twice doesn't work as it should
+-    	connect($self->{fh}, $identbind) or $!{EINPROGRESS} or
+-    	  die "= connect failed: $!\n";
++  
++	# create a local binding port.
++	($err, @res) = getaddrinfo($localip, 0, {
++	    flags => AI_PASSIVE|AI_NUMERICHOST,
++	    family => $family,
++	    socktype => SOCK_STREAM
++	});
++	if ($err) {
++		die "= local getaddrinfo failed: $err\n";
++	}
++
++	for my $ai ( @res ) {
++		my $fh = new FileHandle;
++		socket($fh, $ai->{family}, $ai->{socktype}, $ai->{protocol})
++		    or next;
++
++		# bind it to the same IP number as the local end of THESOCK
++		bind($fh, $ai->{addr})
++		    or next;
++
++		# make it a non-blocking socket
++		fcntl($fh, F_SETFL, $NONBLOCK) or die "= fcntl failed: $!\n";
++
++		$self->{fh} = $fh;
++		last;
++	}
++	if (!defined($self->{fh})) {
++		die "= unable to bind to $localaddr: $!\n";
++	}
++
++	# create a remote connect point
++	($err, @res) = getaddrinfo($remoteip, 'ident', {
++	    flags => AI_NUMERICHOST,
++	    family => $family,
++	    socktype => SOCK_STREAM
++	});
++	if ($err) {
++		die "= remote getaddrinfo failed: $err\n";
++	}
++
++	for my $ai ( @res ) {
++	    	connect($self->{fh}, $ai->{addr}) or $!{EINPROGRESS} or
++	    	  die "= connect failed: $!\n";
++		last;
++	}
+     };
+     if ( $@ =~ /^= (.*)/ ) {
+     	# here's the catch of the throw
+@@ -479,14 +507,13 @@ sub lookup ($;$) {
+ sub lookupFromInAddr ($$;$) {
+     my($localaddr, $remoteaddr, $timeout) = @_;
+ 
+-    print STDDBG "Net::Ident::lookupFromInAddr localaddr=",
+-	sub { inet_ntoa($_[1]) . ":$_[0]" }->(sockaddr_in($localaddr)),
+-	", remoteaddr=",
+-	sub { inet_ntoa($_[1]) . ":$_[0]" }->(sockaddr_in($remoteaddr)),
+-	", timeout=", 
+-        defined $timeout ? $timeout : "<undef>",
+-	"\n"
+-	if $DEBUG > 1;
++    if ($DEBUG > 1) {
++	my ($err, $lip, $lport, $rip, $rport);
++	($err, $lip, $lport) = getnameinfo($localaddr, NI_NUMERICHOST|NI_NUMERICSERV);
++	($err, $rip, $rport) = getnameinfo($remoteaddr, NI_NUMERICHOST|NI_NUMERICSERV);
++	printf STDDBG "Net::Ident::lookupFromInAddr localaddr=%s port %s, remoteaddr=%s port %s, timeout=%s\n",
++	    $lip, $lport, $rip, $rport, defined $timeout ? $timeout : "<undef>";
++    }
+ 
+     Net::Ident->newFromInAddr($localaddr, $remoteaddr, $timeout)->username;
+ }
