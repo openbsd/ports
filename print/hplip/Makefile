@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2013/10/15 14:20:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.102 2013/11/14 14:58:51 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ COMMENT-hpcups=		HP native CUPS driver
 COMMENT-hpijs=		HP ghostscript driver (spooler independent)
 COMMENT-gui=		HPLIP graphical tools
 
-V=			3.13.10
+V=			3.13.11
 DISTNAME=		hplip-${V}
 SUBST_VARS=		V
 
