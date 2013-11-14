@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.213 2013/11/10 16:10:00 ajacoutot Exp $
-
-# XXX textproc/highlight
+# $OpenBSD: Makefile,v 1.214 2013/11/14 12:58:16 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
