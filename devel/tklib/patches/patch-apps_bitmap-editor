@@ -1,0 +1,14 @@
+$OpenBSD: patch-apps_bitmap-editor,v 1.1 2013/11/14 09:43:09 stu Exp $
+
+Bug fix.
+
+--- apps/bitmap-editor.orig	Wed Oct 30 14:44:52 2013
++++ apps/bitmap-editor	Fri Nov  8 11:55:42 2013
+@@ -404,6 +404,7 @@ proc ParseBMP {raw} {
+ #
+ 
+ proc OpenBMP {} {
++    global S
+     set types { {{BMP Files} {.bmp}} {{All Files} * }}
+     set fname [tk_getOpenFile -defaultextension ".bmp" -initialfile $S(fname) \
+                    -filetypes $types]

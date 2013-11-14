@@ -1,0 +1,12 @@
+$OpenBSD: patch-support_installation_modules_tcl,v 1.1 2013/11/14 09:43:09 stu Exp $
+--- support/installation/modules.tcl.orig	Wed Oct 30 14:44:52 2013
++++ support/installation/modules.tcl	Wed Nov  6 21:47:52 2013
+@@ -32,7 +32,7 @@ array set guide {}
+ 
+ #      name           pkg   doc   example
+ Module autoscroll    _tcl  _man  _null
+-Module canvas        _tcl  _man  _null
++Module canvas        _tcl  _man  _exa
+ Module chatwidget    _tcl  _man  _null
+ Module controlwidget _tcl  _man  _exa
+ Module ctext         _ctxt _man  _null

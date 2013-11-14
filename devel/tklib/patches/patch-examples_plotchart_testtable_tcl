@@ -1,0 +1,15 @@
+$OpenBSD: patch-examples_plotchart_testtable_tcl,v 1.1 2013/11/14 09:43:09 stu Exp $
+
+Windowsism.
+
+--- examples/plotchart/testtable.tcl.orig	Sun Oct 27 20:52:18 2013
++++ examples/plotchart/testtable.tcl	Sun Oct 27 20:52:30 2013
+@@ -33,7 +33,7 @@ proc setColor {table widget row col value} {
+ # Command must already exist ...
+ $t formatcommand setColor
+ 
+-console show
++catch { console show }
+ $t title "Demonstration of table charts"
+ $t separator
+ 

@@ -1,0 +1,115 @@
+$OpenBSD: patch-support_installation_actions_tcl,v 1.1 2013/11/14 09:43:09 stu Exp $
+
+Retrieve module info from man pages.
+Perform shebang adjustments.
+
+--- support/installation/actions.tcl.orig	Wed Oct 30 14:44:52 2013
++++ support/installation/actions.tcl	Fri Nov  8 15:05:31 2013
+@@ -108,15 +108,98 @@ proc _tci {module libdir} {
+     return
+ }
+ 
++proc _manfile {fn dfn} {
++    global modinfos
++    if {[file tail $dfn] ni {tk_getString.n}} {
++	set dfn [file join [file dirname $dfn] [string map {_ ::} [file tail $dfn]]]
++    }
++    log "Installing $fn to $dfn"
++    set f [open $fn]
++    chan configure $f -buffersize 100000
++    set d [read -nonewline $f]
++    close $f
++    if {[regexp {\n\.SH NAME\n(.*?) \\- (.*?)\n} $d -> shname shtitle] && [regexp -line {^\.TH.*$} $d th]} {
++	lappend modinfos [list $shname [lindex $th 3] [lindex $th 5] $shtitle]
++    }
++    set f [open $dfn w]
++    puts -nonewline $f $d
++    close $f
++    file attributes $dfn -owner root -group bin -permissions 0o444
++}
+ 
+-proc _manfile {f format ext docdir} { return }
+-proc _man {module format ext docdir} { return }
++proc _man {module srcdir dstdir} {
++    foreach fn [glob -nocomplain -dir [file join $srcdir $module] *] {
++	if {[file extension $fn] eq ".n"} {
++	    _manfile $fn [file join $dstdir [file tail $fn]]
++	} else {
++	    xcopyfile $fn $dstdir
++	}
++    }
++}
+ 
+-proc _exa {module exadir} {
+-    global distribution
+-    xcopy \
+-	    [file join $distribution examples $module] \
+-	    [file join $exadir $module] \
+-	    1
+-    return
++proc _exafile {fn dfn tclsh} {
++    set f [open $fn]
++    set d [read $f 2]
++    if {$d ne "#!"} {
++	close $f
++	xcopyfile $fn [file dirname $dfn]
++	return
++    }
++    chan configure $f -buffersize 100000
++    append d [read -nonewline $f]
++    close $f
++    log "Installing $fn to $dfn"
++    set execreplace "exec $tclsh "; append execreplace {"$0" ${1+"$@"}}
++    set envreplace "#! $tclsh"
++    set perms 0o444
++    set l [split $d \n]
++    set l2 [string trim [lindex $l 2]]
++    if {
++	[string match {#!*/*} [lindex $l 0]] &&
++	[string match {#*\\} [lindex $l 1]] && 
++	([string match {exec*tclsh*} $l2] ||
++	 [string match {exec*wish*} $l2])
++    } {
++	if {[string match {exec*wish*} $l2]} {
++	    set execreplace [string map {tclsh wish} $execreplace]
++	}
++	lset l 2 $execreplace
++	set perms 0o555
++    } elseif {[string match {#!*/env*tclsh*} [lindex $l 0]]} {
++	lset l 0 $envreplace
++	set perms 0o555
++    }
++    set f [open $dfn w]
++    puts $f [join $l \n]
++    close $f
++    file attributes $dfn -owner root -group bin -permissions $perms
++}
++
++proc _exa {module srcdir dstdir tclsh} {
++    _exax $module $module $srcdir $dstdir $tclsh
++}
++
++proc _exax {actual module srcdir dstdir tclsh} {
++    set dstdir [file join $dstdir $module]
++    if {![file exists $dstdir]} {
++	log "Making directory $dstdir"
++	file mkdir $dstdir
++	file attributes $dstdir -owner root -group bin -permissions 0o755
++    }
++    foreach fn [glob -nocomplain -dir [file join $srcdir $actual] *] {
++	if {[file isdirectory $fn]} {
++	    set m [file tail $fn] 
++	    _exax $m $m [file dirname $fn] $dstdir $tclsh
++	    continue
++	}
++	set t [file tail $fn]
++	set e [file extension $fn]
++	if {$t eq "ChangeLog" || $e in {.orig .beforesubst}} { continue }
++	if {$t in {run.tcl}} { continue }
++	if {$e in {.tcl ""}} {
++	    _exafile $fn [file join $dstdir $t] $tclsh
++	} else {
++	    xcopyfile $fn $dstdir
++	}
++    }
+ }

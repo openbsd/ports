@@ -1,14 +1,38 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/01/05 16:37:10 stu Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/11/14 09:43:09 stu Exp $
+@conflict mentry-*
+@conflict wcb-*
+@pkgpath devel/mentry
+@pkgpath devel/wcb
 lib/tcl/autoscroll/
 lib/tcl/autoscroll/autoscroll.tcl
 lib/tcl/autoscroll/pkgIndex.tcl
 lib/tcl/canvas/
+lib/tcl/canvas/canvas_drag.tcl
+lib/tcl/canvas/canvas_epoints.tcl
+lib/tcl/canvas/canvas_epolyline.tcl
+lib/tcl/canvas/canvas_equad.tcl
+lib/tcl/canvas/canvas_gradient.tcl
+lib/tcl/canvas/canvas_highlight.tcl
+lib/tcl/canvas/canvas_mvg.tcl
+lib/tcl/canvas/canvas_snap.tcl
 lib/tcl/canvas/canvas_sqmap.tcl
+lib/tcl/canvas/canvas_tags.tcl
+lib/tcl/canvas/canvas_trlines.tcl
 lib/tcl/canvas/canvas_zoom.tcl
 lib/tcl/canvas/pkgIndex.tcl
 lib/tcl/chatwidget/
 lib/tcl/chatwidget/chatwidget.tcl
 lib/tcl/chatwidget/pkgIndex.tcl
+lib/tcl/controlwidget/
+lib/tcl/controlwidget/bindDown.tcl
+lib/tcl/controlwidget/controlwidget.tcl
+lib/tcl/controlwidget/led.tcl
+lib/tcl/controlwidget/pkgIndex.tcl
+lib/tcl/controlwidget/radioMatrix.tcl
+lib/tcl/controlwidget/rdial.tcl
+lib/tcl/controlwidget/tachometer.tcl
+lib/tcl/controlwidget/vertical_meter.tcl
+lib/tcl/controlwidget/voltmeter.tcl
 lib/tcl/crosshair/
 lib/tcl/crosshair/crosshair.tcl
 lib/tcl/crosshair/pkgIndex.tcl
@@ -22,8 +46,16 @@ lib/tcl/datefield/
 lib/tcl/datefield/datefield.tcl
 lib/tcl/datefield/pkgIndex.tcl
 lib/tcl/diagrams/
-lib/tcl/diagrams/draw_diagram.tcl
+lib/tcl/diagrams/application.tcl
+lib/tcl/diagrams/attributes.tcl
+lib/tcl/diagrams/basic.tcl
+lib/tcl/diagrams/core.tcl
+lib/tcl/diagrams/diagram.tcl
+lib/tcl/diagrams/direction.tcl
+lib/tcl/diagrams/element.tcl
+lib/tcl/diagrams/navigation.tcl
 lib/tcl/diagrams/pkgIndex.tcl
+lib/tcl/diagrams/point.tcl
 lib/tcl/getstring/
 lib/tcl/getstring/pkgIndex.tcl
 lib/tcl/getstring/tk_getString.tcl
@@ -49,22 +81,50 @@ lib/tcl/khim/pkgIndex.tcl
 lib/tcl/khim/pl.msg
 lib/tcl/khim/ru.msg
 lib/tcl/khim/uk.msg
+lib/tcl/mentry/
+lib/tcl/mentry/mentry.tcl
+lib/tcl/mentry/mentryPublic.tcl
+lib/tcl/mentry/mentry_tile.tcl
+lib/tcl/mentry/pkgIndex.tcl
+lib/tcl/mentry/scripts/
+lib/tcl/mentry/scripts/mentryDateTime.tcl
+lib/tcl/mentry/scripts/mentryFixedPoint.tcl
+lib/tcl/mentry/scripts/mentryIPAddr.tcl
+lib/tcl/mentry/scripts/mentryIPv6Addr.tcl
+lib/tcl/mentry/scripts/mentryThemes.tcl
+lib/tcl/mentry/scripts/mentryWidget.tcl
+lib/tcl/mentry/scripts/mwutil.tcl
+lib/tcl/mentry/scripts/tclIndex
+lib/tcl/menubar/
+lib/tcl/menubar/debug.tcl
+lib/tcl/menubar/menubar.tcl
+lib/tcl/menubar/node.tcl
+lib/tcl/menubar/pkgIndex.tcl
+lib/tcl/menubar/tree.tcl
 lib/tcl/ntext/
 lib/tcl/ntext/ntext.tcl
 lib/tcl/ntext/pkgIndex.tcl
 lib/tcl/plotchart/
 lib/tcl/plotchart/pkgIndex.tcl
 lib/tcl/plotchart/plot3d.tcl
+lib/tcl/plotchart/plotanim.tcl
 lib/tcl/plotchart/plotannot.tcl
 lib/tcl/plotchart/plotaxis.tcl
+lib/tcl/plotchart/plotbind.tcl
 lib/tcl/plotchart/plotbusiness.tcl
 lib/tcl/plotchart/plotchart.tcl
+lib/tcl/plotchart/plotcombined.tcl
 lib/tcl/plotchart/plotconfig.tcl
 lib/tcl/plotchart/plotcontour.tcl
 lib/tcl/plotchart/plotgantt.tcl
+lib/tcl/plotchart/plotobject.tcl
 lib/tcl/plotchart/plotpack.tcl
 lib/tcl/plotchart/plotpriv.tcl
+lib/tcl/plotchart/plotscada.tcl
+lib/tcl/plotchart/plotspecial.tcl
+lib/tcl/plotchart/plottable.tcl
 lib/tcl/plotchart/scaling.tcl
+lib/tcl/plotchart/xyplot.tcl
 lib/tcl/style/
 lib/tcl/style/as.tcl
 lib/tcl/style/lobster.tcl
@@ -79,9 +139,9 @@ lib/tcl/tablelist/scripts/
 lib/tcl/tablelist/scripts/mwutil.tcl
 lib/tcl/tablelist/scripts/repair.tcl
 lib/tcl/tablelist/scripts/tablelistBind.tcl
-lib/tcl/tablelist/scripts/tablelistBitmaps.tcl
 lib/tcl/tablelist/scripts/tablelistConfig.tcl
 lib/tcl/tablelist/scripts/tablelistEdit.tcl
+lib/tcl/tablelist/scripts/tablelistImages.tcl
 lib/tcl/tablelist/scripts/tablelistMove.tcl
 lib/tcl/tablelist/scripts/tablelistSort.tcl
 lib/tcl/tablelist/scripts/tablelistThemes.tcl
@@ -108,7 +168,18 @@ lib/tcl/tooltip/
 lib/tcl/tooltip/pkgIndex.tcl
 lib/tcl/tooltip/tipstack.tcl
 lib/tcl/tooltip/tooltip.tcl
+lib/tcl/wcb/
+lib/tcl/wcb/pkgIndex.tcl
+lib/tcl/wcb/scripts/
+lib/tcl/wcb/scripts/tclIndex
+lib/tcl/wcb/scripts/wcbCommon.tcl
+lib/tcl/wcb/scripts/wcbEntry.tcl
+lib/tcl/wcb/scripts/wcbListbox.tcl
+lib/tcl/wcb/scripts/wcbTablelist.tcl
+lib/tcl/wcb/scripts/wcbText.tcl
+lib/tcl/wcb/wcb.tcl
 lib/tcl/widget/
+lib/tcl/widget/arrowb.tcl
 lib/tcl/widget/calendar.tcl
 lib/tcl/widget/dateentry.tcl
 lib/tcl/widget/dialog.tcl
@@ -122,19 +193,40 @@ lib/tcl/widget/stext.tcl
 lib/tcl/widget/superframe.tcl
 lib/tcl/widget/toolbar.tcl
 lib/tcl/widget/widget.tcl
+lib/tcl/widgetl/
+lib/tcl/widgetl/listentry.tcl
+lib/tcl/widgetl/listsimple.tcl
+lib/tcl/widgetl/pkgIndex.tcl
+lib/tcl/widgetv/
+lib/tcl/widgetv/pkgIndex.tcl
+lib/tcl/widgetv/validator.tcl
 @man man/mann/autoscroll.n
-@man man/mann/canvas_sqmap.n
-@man man/mann/canvas_zoom.n
+@man man/mann/bitmap-editor.n
+@man man/mann/canvas::drag.n
+@man man/mann/canvas::epoints.n
+@man man/mann/canvas::epolyline.n
+@man man/mann/canvas::equad.n
+@man man/mann/canvas::gradient.n
+@man man/mann/canvas::highlight.n
+@man man/mann/canvas::mvg.n
+@man man/mann/canvas::snap.n
+@man man/mann/canvas::sqmap.n
+@man man/mann/canvas::tags.n
+@man man/mann/canvas::trlines.n
+@man man/mann/canvas::zoom.n
 @man man/mann/canvaslabel.n
 @man man/mann/chatwidget.n
+@man man/mann/controlwidget.n
 @man man/mann/crosshair.n
 @man man/mann/ctext.n
 @man man/mann/cursor.n
 @man man/mann/datefield.n
-@man man/mann/draw_diagram.n
+@man man/mann/diagram-viewer.n
+@man man/mann/diagram.n
 @man man/mann/ico.n
 @man man/mann/ipentry.n
 @man man/mann/khim.n
+@man man/mann/menubar.n
 @man man/mann/ntext.n
 @man man/mann/ntextBindings.n
 @man man/mann/ntextIndent.n
@@ -146,26 +238,151 @@ lib/tcl/widget/widget.tcl
 @man man/mann/swaplist.n
 @man man/mann/tk_getString.n
 @man man/mann/tklib.n
-@man man/mann/tklib_history.n
+@man man/mann/tklib::history.n
 @man man/mann/tooltip.n
 @man man/mann/widget.n
-@man man/mann/widget_calendar.n
-@man man/mann/widget_toolbar.n
+@man man/mann/widget::calendar.n
+@man man/mann/widget::dateentry.n
+@man man/mann/widget::listentry.n
+@man man/mann/widget::listsimple.n
+@man man/mann/widget::toolbar.n
+@man man/mann/widget::validator.n
+share/doc/mentry/
+share/doc/mentry/CHANGES.txt
+share/doc/mentry/COPYRIGHT.txt
+share/doc/mentry/README.txt
+share/doc/mentry/datetime1.png
+share/doc/mentry/datetime2.png
+share/doc/mentry/ethernetaddr.png
+share/doc/mentry/index.html
+share/doc/mentry/mentry.html
+share/doc/mentry/mentryDateTime.html
+share/doc/mentry/mentryFixedPoint.html
+share/doc/mentry/mentryIPAddr.html
+share/doc/mentry/mentryIPv6Addr.html
+share/doc/mentry/mentryThemes.html
+share/doc/mentry/mentryWidget.html
+share/doc/mentry/phonenumber.png
+share/doc/mentry/phonenumber_tile.png
+share/doc/mentry/wcbRef.html
+share/doc/tablelist/
+share/doc/tablelist/CHANGES.txt
+share/doc/tablelist/COPYRIGHT.txt
+share/doc/tablelist/README.txt
+share/doc/tablelist/adwaita.png
+share/doc/tablelist/ambiance.png
+share/doc/tablelist/aqua.png
+share/doc/tablelist/arrowStyles.png
+share/doc/tablelist/baghira.png
+share/doc/tablelist/browse.png
+share/doc/tablelist/browseTree.png
+share/doc/tablelist/bwidget.png
+share/doc/tablelist/config.png
+share/doc/tablelist/dirViewer.png
+share/doc/tablelist/dust.png
+share/doc/tablelist/dustSand.png
+share/doc/tablelist/embeddedWindows.png
+share/doc/tablelist/embeddedWindows_tile.png
+share/doc/tablelist/gtk.png
+share/doc/tablelist/index.html
+share/doc/tablelist/klearlooks.png
+share/doc/tablelist/mint.png
+share/doc/tablelist/newWave.png
+share/doc/tablelist/oxygen1.png
+share/doc/tablelist/oxygen2.png
+share/doc/tablelist/phase.png
+share/doc/tablelist/plastik.png
+share/doc/tablelist/plastique.png
+share/doc/tablelist/radiance.png
+share/doc/tablelist/styles.png
+share/doc/tablelist/tablelist.html
+share/doc/tablelist/tablelistBWidget.html
+share/doc/tablelist/tablelistBinding.html
+share/doc/tablelist/tablelistColSort.html
+share/doc/tablelist/tablelistCombobox.html
+share/doc/tablelist/tablelistCtext.html
+share/doc/tablelist/tablelistIwidgets.html
+share/doc/tablelist/tablelistMentry.html
+share/doc/tablelist/tablelistThemes.html
+share/doc/tablelist/tablelistTile.html
+share/doc/tablelist/tablelistTkCore.html
+share/doc/tablelist/tablelistWidget.html
+share/doc/tablelist/tileWidgets.png
+share/doc/tablelist/ubuntu.png
+share/doc/tablelist/vistaAero.png
+share/doc/tablelist/vistaClassic.png
+share/doc/tablelist/win7Aero.png
+share/doc/tablelist/win7Classic.png
+share/doc/tablelist/winnative.png
+share/doc/tablelist/winxpBlue.png
+share/doc/tablelist/winxpOlive.png
+share/doc/tablelist/winxpSilver.png
+share/doc/wcb/
+share/doc/wcb/CHANGES.txt
+share/doc/wcb/COPYRIGHT.txt
+share/doc/wcb/README.txt
+share/doc/wcb/entrytest.png
+share/doc/wcb/index.html
+share/doc/wcb/listboxtest1.png
+share/doc/wcb/listboxtest2.png
+share/doc/wcb/texttest1.png
+share/doc/wcb/texttest2.png
+share/doc/wcb/wcb.html
+share/doc/wcb/wcbRef.html
 share/examples/tklib/
+share/examples/tklib/apps/
+share/examples/tklib/apps/bitmap-editor
+share/examples/tklib/apps/diagram-viewer
 share/examples/tklib/canvas/
 share/examples/tklib/canvas/city.tcl
 share/examples/tklib/canvas/citygrid.tcl
+share/examples/tklib/canvas/crosshairs_for_axes.tcl
+share/examples/tklib/canvas/crosshairs_for_multixyplot.tcl
+share/examples/tklib/canvas/crosshairs_scaled.tcl
+share/examples/tklib/canvas/demo_draghigh.tcl
+share/examples/tklib/canvas/demo_editpoints.tcl
+share/examples/tklib/canvas/demo_editpoly.tcl
+share/examples/tklib/canvas/demo_editquad.tcl
+share/examples/tklib/canvas/demo_editquadconvex.tcl
 share/examples/tklib/canvas/locationmarks.gps
 share/examples/tklib/canvas/morgens.jpg
 share/examples/tklib/canvas/osm.tcl
 share/examples/tklib/canvas/puzzle.tcl
 share/examples/tklib/canvas/seawalk.gps
+share/examples/tklib/controlwidget/
+share/examples/tklib/controlwidget/demo-meters.tcl
+share/examples/tklib/controlwidget/demo-rdial.tcl
+share/examples/tklib/controlwidget/demo-tachometer.tcl
+share/examples/tklib/controlwidget/demo-voltmeter.tcl
+share/examples/tklib/mentry/
+share/examples/tklib/mentry/datetime1.tcl
+share/examples/tklib/mentry/datetime1_tile.tcl
+share/examples/tklib/mentry/datetime2.tcl
+share/examples/tklib/mentry/datetime2_tile.tcl
+share/examples/tklib/mentry/ethernetaddr.tcl
+share/examples/tklib/mentry/ethernetaddr_tile.tcl
+share/examples/tklib/mentry/option.tcl
+share/examples/tklib/mentry/option_tile.tcl
+share/examples/tklib/mentry/phonenumber.tcl
+share/examples/tklib/mentry/phonenumber_tile.tcl
+share/examples/tklib/menubar/
+share/examples/tklib/menubar/demo.tcl
 share/examples/tklib/ntext/
 share/examples/tklib/ntext/ntextDemoBindings.tcl
 share/examples/tklib/ntext/ntextDemoIndent.tcl
 share/examples/tklib/ntext/ntextExample.tcl
 share/examples/tklib/plotchart/
+share/examples/tklib/plotchart/demo.tcl
+share/examples/tklib/plotchart/editgraph.tcl
 share/examples/tklib/plotchart/plotdemos1.tcl
+share/examples/tklib/plotchart/plotdemos10.tcl
+share/examples/tklib/plotchart/plotdemos11.tcl
+share/examples/tklib/plotchart/plotdemos12.tcl
+share/examples/tklib/plotchart/plotdemos13.tcl
+share/examples/tklib/plotchart/plotdemos14.tcl
+share/examples/tklib/plotchart/plotdemos15.tcl
+share/examples/tklib/plotchart/plotdemos16.tcl
+share/examples/tklib/plotchart/plotdemos17.tcl
 share/examples/tklib/plotchart/plotdemos2.tcl
 share/examples/tklib/plotchart/plotdemos3.tcl
 share/examples/tklib/plotchart/plotdemos4.tcl
@@ -173,24 +390,55 @@ share/examples/tklib/plotchart/plotdemos5.tcl
 share/examples/tklib/plotchart/plotdemos6.tcl
 share/examples/tklib/plotchart/plotdemos7.tcl
 share/examples/tklib/plotchart/plotdemos8.tcl
+share/examples/tklib/plotchart/plotdemos9.tcl
+share/examples/tklib/plotchart/plothist.tcl
+share/examples/tklib/plotchart/rosenbrock.tcl
+share/examples/tklib/plotchart/scope.tcl
+share/examples/tklib/plotchart/slidercnv.tcl
 share/examples/tklib/plotchart/tcllogo.gif
+share/examples/tklib/plotchart/test-convex.tcl
+share/examples/tklib/plotchart/test-histogram.tcl
+share/examples/tklib/plotchart/test-spiralpie.tcl
+share/examples/tklib/plotchart/test_legend.tcl
+share/examples/tklib/plotchart/test_stripchart.tcl
+share/examples/tklib/plotchart/test_ternary.tcl
+share/examples/tklib/plotchart/testdots.tcl
+share/examples/tklib/plotchart/testfunc.tcl
+share/examples/tklib/plotchart/testmask.tcl
+share/examples/tklib/plotchart/testmultiplexy.tcl
+share/examples/tklib/plotchart/testmultixy.tcl
+share/examples/tklib/plotchart/testneedle.tcl
+share/examples/tklib/plotchart/testshadexy.tcl
+share/examples/tklib/plotchart/testtable.tcl
+share/examples/tklib/plotchart/testtxplot.tcl
+share/examples/tklib/plotchart/testxypie.tcl
+share/examples/tklib/plotchart/timeinxyplot.tcl
+share/examples/tklib/plotchart/xyplot_demo.tcl
 share/examples/tklib/tablelist/
 share/examples/tklib/tablelist/browse.tcl
+share/examples/tklib/tablelist/browseTree.tcl
+share/examples/tklib/tablelist/browseTree_tile.tcl
 share/examples/tklib/tablelist/browse_tile.tcl
 share/examples/tklib/tablelist/bwidget.tcl
 share/examples/tklib/tablelist/bwidget_tile.tcl
 share/examples/tklib/tablelist/checked.gif
+share/examples/tklib/tablelist/clsdFolder.gif
 share/examples/tklib/tablelist/comp.xbm
 share/examples/tklib/tablelist/config.tcl
 share/examples/tklib/tablelist/config_tile.tcl
+share/examples/tklib/tablelist/dirViewer.tcl
+share/examples/tklib/tablelist/dirViewer_tile.tcl
 share/examples/tklib/tablelist/embeddedWindows.tcl
 share/examples/tklib/tablelist/embeddedWindows_tile.tcl
+share/examples/tklib/tablelist/file.gif
+share/examples/tklib/tablelist/images.tcl
 share/examples/tklib/tablelist/iwidgets.tcl
 share/examples/tklib/tablelist/iwidgets_tile.tcl
 share/examples/tklib/tablelist/leaf.xbm
 share/examples/tklib/tablelist/miscWidgets.tcl
 share/examples/tklib/tablelist/miscWidgets_tile.tcl
 share/examples/tklib/tablelist/open.gif
+share/examples/tklib/tablelist/openFolder.gif
 share/examples/tklib/tablelist/option.tcl
 share/examples/tklib/tablelist/option_tile.tcl
 share/examples/tklib/tablelist/styles.tcl
@@ -199,5 +447,12 @@ share/examples/tklib/tablelist/tileWidgets.tcl
 share/examples/tklib/tablelist/unchecked.gif
 share/examples/tklib/tkpiechart/
 share/examples/tklib/tkpiechart/demo.tcl
+share/examples/tklib/wcb/
+share/examples/tklib/wcb/entrytest.tcl
+share/examples/tklib/wcb/listboxtest1.tcl
+share/examples/tklib/wcb/listboxtest2.tcl
+share/examples/tklib/wcb/option.tcl
+share/examples/tklib/wcb/texttest1.tcl
+share/examples/tklib/wcb/texttest2.tcl
 share/examples/tklib/widget/
 share/examples/tklib/widget/screenruler.tcl
