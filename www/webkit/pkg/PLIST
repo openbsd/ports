@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2013/10/06 14:03:45 landry Exp $
+@comment $OpenBSD: PLIST,v 1.21 2013/11/14 16:47:00 ajacoutot Exp $
 %%gtk3%%
 !%%gtk3%%
 include/webkitgtk-${WEBKIT_API_VERSION}/
@@ -412,9 +412,12 @@ share/gtk-doc/html/webkitgtk-${WEBKIT_API_VERSION}/index-all.html
 share/gtk-doc/html/webkitgtk-${WEBKIT_API_VERSION}/index-deprecated.html
 share/gtk-doc/html/webkitgtk-${WEBKIT_API_VERSION}/index.html
 share/gtk-doc/html/webkitgtk-${WEBKIT_API_VERSION}/index.sgml
+share/gtk-doc/html/webkitgtk-${WEBKIT_API_VERSION}/left-insensitive.png
 share/gtk-doc/html/webkitgtk-${WEBKIT_API_VERSION}/left.png
+share/gtk-doc/html/webkitgtk-${WEBKIT_API_VERSION}/right-insensitive.png
 share/gtk-doc/html/webkitgtk-${WEBKIT_API_VERSION}/right.png
 share/gtk-doc/html/webkitgtk-${WEBKIT_API_VERSION}/style.css
+share/gtk-doc/html/webkitgtk-${WEBKIT_API_VERSION}/up-insensitive.png
 share/gtk-doc/html/webkitgtk-${WEBKIT_API_VERSION}/up.png
 share/gtk-doc/html/webkitgtk-${WEBKIT_API_VERSION}/webkit-environment.html
 share/gtk-doc/html/webkitgtk-${WEBKIT_API_VERSION}/webkitgtk-Global-functions.html

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.gtk3,v 1.4 2013/10/06 14:03:45 landry Exp $
+@comment $OpenBSD: PFRAG.gtk3,v 1.5 2013/11/14 16:47:00 ajacoutot Exp $
 @bin bin/GtkLauncher-3
 @bin bin/MiniBrowser
 @bin bin/jsc-3
@@ -59,9 +59,12 @@ share/gtk-doc/html/webkit2gtk/home.png
 share/gtk-doc/html/webkit2gtk/index-all.html
 share/gtk-doc/html/webkit2gtk/index.html
 share/gtk-doc/html/webkit2gtk/index.sgml
+share/gtk-doc/html/webkit2gtk/left-insensitive.png
 share/gtk-doc/html/webkit2gtk/left.png
+share/gtk-doc/html/webkit2gtk/right-insensitive.png
 share/gtk-doc/html/webkit2gtk/right.png
 share/gtk-doc/html/webkit2gtk/style.css
+share/gtk-doc/html/webkit2gtk/up-insensitive.png
 share/gtk-doc/html/webkit2gtk/up.png
 share/gtk-doc/html/webkit2gtk/webkit2gtk-WebKitError.html
 share/gtk-doc/html/webkit2gtk/webkit2gtk-WebKitVersion.html
