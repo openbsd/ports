@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/11/12 15:00:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2013/11/14 15:10:16 naddy Exp $
 
 COMMENT=		webbased rss reader with standalone look and feel
 
@@ -27,8 +27,6 @@ MODULES=		lang/php
 RUN_DEPENDS=		lang/php/${MODPHP_VERSION},-pgsql \
 			lang/php/${MODPHP_VERSION},-curl \
 			lang/php/${MODPHP_VERSION},-xmlrpc
-
-WRKDIST=		${WRKDIR}/Tiny-Tiny-RSS-$V
 
 do-install:
 	find ${WRKDIST}/lib/ -name '*.js.uncompressed.js' -exec rm {} +
