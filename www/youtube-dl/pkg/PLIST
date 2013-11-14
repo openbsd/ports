@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/11/12 06:43:36 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/11/14 08:19:07 pirofti Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -110,6 +110,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/freesound.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/freesound.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/funnyordie.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/funnyordie.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/gamekings.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/gamekings.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/gamespot.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/gamespot.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/gametrailers.py
@@ -266,6 +268,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tumblr.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tumblr.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tutv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tutv.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tvp.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tvp.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/unistra.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/unistra.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ustream.py
