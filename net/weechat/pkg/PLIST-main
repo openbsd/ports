@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2013/06/03 20:35:23 sthen Exp $
-@bin bin/weechat-curses
+@comment $OpenBSD: PLIST-main,v 1.4 2013/11/14 22:30:30 fgsch Exp $
+@bin bin/weechat
+bin/weechat-curses
 include/weechat/
 include/weechat/weechat-plugin.h
 lib/pkgconfig/weechat.pc
@@ -15,7 +16,7 @@ lib/weechat/plugins/relay.so
 lib/weechat/plugins/rmodifier.so
 lib/weechat/plugins/script.so
 lib/weechat/plugins/xfer.so
-@man man/man1/weechat-curses.1
+@man man/man1/weechat.1
 share/doc/weechat/
 share/doc/weechat/weechat_dev.en.txt
 share/doc/weechat/weechat_faq.en.txt
@@ -25,6 +26,10 @@ share/doc/weechat/weechat_relay_protocol.en.txt
 share/doc/weechat/weechat_scripting.en.txt
 share/doc/weechat/weechat_tester.en.txt
 share/doc/weechat/weechat_user.en.txt
+@comment share/icons/
+@comment share/icons/hicolor/
+@comment share/icons/hicolor/32x32/
+@comment share/icons/hicolor/32x32/apps/
 @comment share/icons/hicolor/32x32/apps/weechat.png
 share/locale/cs/LC_MESSAGES/weechat.mo
 share/locale/de/LC_MESSAGES/weechat.mo
@@ -36,3 +41,4 @@ share/locale/ja/LC_MESSAGES/weechat.mo
 share/locale/pl/LC_MESSAGES/weechat.mo
 share/locale/pt_BR/LC_MESSAGES/weechat.mo
 share/locale/ru/LC_MESSAGES/weechat.mo
+share/locale/tr/LC_MESSAGES/weechat.mo

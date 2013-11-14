@@ -1,0 +1,24 @@
+$OpenBSD: patch-doc_CMakeLists_txt,v 1.3 2013/11/14 22:30:29 fgsch Exp $
+--- doc/CMakeLists.txt.orig	Thu Nov 14 16:25:14 2013
++++ doc/CMakeLists.txt	Thu Nov 14 16:25:16 2013
+@@ -24,13 +24,13 @@ IF(ENABLE_MAN OR ENABLE_DOC)
+   FIND_PACKAGE(Asciidoc)
+   IF(ASCIIDOC_FOUND)
+     ADD_SUBDIRECTORY( en )
+-    ADD_SUBDIRECTORY( fr )
+-    ADD_SUBDIRECTORY( it )
+-    ADD_SUBDIRECTORY( de )
+-    ADD_SUBDIRECTORY( pl )
+-    ADD_SUBDIRECTORY( es )
+-    ADD_SUBDIRECTORY( ru )
+-    ADD_SUBDIRECTORY( ja )
++  #  ADD_SUBDIRECTORY( fr )
++  #  ADD_SUBDIRECTORY( it )
++  #  ADD_SUBDIRECTORY( de )
++  #  ADD_SUBDIRECTORY( pl )
++  #  ADD_SUBDIRECTORY( es )
++  #  ADD_SUBDIRECTORY( ru )
++  #  ADD_SUBDIRECTORY( ja )
+   ENDIF(ASCIIDOC_FOUND)
+ 
+ ENDIF(ENABLE_MAN OR ENABLE_DOC)
