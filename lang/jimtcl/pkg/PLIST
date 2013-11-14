@@ -1,13 +1,35 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/03/08 10:24:47 jasper Exp $
-bin/build-jim-ext
+@comment $OpenBSD: PLIST,v 1.3 2013/11/14 09:11:21 stu Exp $
 @bin bin/jimsh
-include/jim-config.h
-include/jim-eventloop.h
-include/jim-signal.h
-include/jim-subcmd.h
-include/jim-win32compat.h
-include/jim.h
+include/jim/
+include/jim/jim-config.h
+include/jim/jim-eventloop.h
+include/jim/jim-signal.h
+include/jim/jim-subcmd.h
+include/jim/jim-win32compat.h
+include/jim/jim.h
+lib/jim/
+lib/jim/sqlite3.so
 @lib lib/libjim.so.${LIBjim_VERSION}
 share/doc/jim/
 share/doc/jim/README.extensions
 share/doc/jim/Tcl.html
+share/examples/jim/
+share/examples/jim/build-jim-ext
+share/examples/jim/client-server.tcl
+share/examples/jim/dns.tcl
+share/examples/jim/dnstest.tcl
+share/examples/jim/jtclsh.tcl
+share/examples/jim/metakit.tcl
+share/examples/jim/ootest.tcl
+share/examples/jim/parray.tcl
+share/examples/jim/pipe.tcl
+share/examples/jim/popen.tcl
+share/examples/jim/sqlite3test.tcl
+share/examples/jim/tcp.client
+share/examples/jim/tcp.server
+share/examples/jim/timedread.tcl
+share/examples/jim/udp.client
+share/examples/jim/udp.server
+share/examples/jim/udp2.client
+share/examples/jim/udp6.client
+share/examples/jim/udp6.server

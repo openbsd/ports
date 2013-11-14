@@ -1,47 +1,63 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2013/03/08 10:24:47 jasper Exp $
+$OpenBSD: patch-Makefile_in,v 1.4 2013/11/14 09:11:21 stu Exp $
 
-- Install docs into the right directory.
-- Add shared library versioning to libjim.
+Install everything nicely.
 
---- Makefile.in.orig	Tue Feb 12 23:02:49 2013
-+++ Makefile.in	Tue Feb 12 23:04:36 2013
-@@ -33,6 +33,8 @@ VPATH := @srcdir@
- @if JIM_STATICLIB
- LIBJIM := libjim.a
- @else
-+SONAME_MAJOR?=0
-+SONAME_MINOR?=0
- LIBJIM := libjim.@LIBSOEXT@
- SH_LIBJIM := $(LIBJIM)
- CC += $(SH_CFLAGS)
-@@ -67,15 +69,14 @@ $(JIMSH): $(LIBJIM) jimsh.o initjimsh.o
+--- Makefile.in.orig	Sat Nov  9 00:49:42 2013
++++ Makefile.in	Sat Nov  9 10:04:48 2013
+@@ -54,6 +54,12 @@ OBJS := _load-static-exts.o jim-subcmd.o jim-interacti
  
- @if JIM_INSTALL
- install: all docs @TCL_EXTS@ install-exec
--	mkdir -p $(DESTDIR)$(prefix)/lib/jim
--	cp $(LIBJIM) $(DESTDIR)$(prefix)/lib
--	cp @srcdir@/README.extensions @C_EXT_SHOBJS@ @TCL_EXTS@ $(DESTDIR)$(prefix)/lib/jim
-+	mkdir -p $(DESTDIR)$(prefix)/share/doc/jim
-+	cp $(LIBJIM).$(SONAME_MAJOR).$(SONAME_MINOR) $(DESTDIR)$(prefix)/lib
-+	cp @srcdir@/README.extensions @C_EXT_SHOBJS@ @TCL_EXTS@ $(DESTDIR)$(prefix)/share/doc/jim/
- 	mkdir -p $(DESTDIR)$(prefix)/include
- 	cp @srcdir@/jim.h @srcdir@/jim-eventloop.h @srcdir@/jim-signal.h \
- 		@srcdir@/jim-subcmd.h @srcdir@/jim-win32compat.h $(DESTDIR)$(prefix)/include
- 	cp jim-config.h $(DESTDIR)$(prefix)/include
+ JIMSH := jimsh@EXEEXT@
+ 
++@if JIM_INSTALL
++INSTALL_DATA_DIR ?= mkdir -p
++INSTALL_DATA ?= cp
++INSTALL_PROGRAM ?= cp
++@endif
++
+ all: $(JIMSH) @C_EXT_SHOBJS@
+ 
+ # Create C extensions from pure Tcl extensions
+@@ -66,8 +72,8 @@ docs: Tcl.html
+ 
+ @if JIM_DOCS
+ install-docs: docs
 -	mkdir -p $(DESTDIR)$(prefix)/doc/jim
 -	cp Tcl.html $(DESTDIR)$(prefix)/doc/jim
-+	cp Tcl.html $(DESTDIR)$(prefix)/share/doc/jim
- 	mkdir -p $(DESTDIR)$(prefix)/bin
- 	cp build-jim-ext $(DESTDIR)$(prefix)/bin
- 
-@@ -117,7 +118,9 @@ $(LIBJIM): $(OBJS)
- 	$(RANLIB) $@
++	$(INSTALL_DATA_DIR) $(DESTDIR)@datadir@/doc/jim
++	$(INSTALL_DATA) @srcdir@/README.extensions Tcl.html $(DESTDIR)@datadir@/doc/jim
  @else
- $(LIBJIM): $(OBJS)
--	$(CC) $(CFLAGS) $(LDFLAGS) $(SH_LDFLAGS) -o $@ $(OBJS) $(LDLIBS)
-+	$(CC) -shared -Wl,-soname -Wl,$@.$(SONAME_MAJOR).$(SONAME_MINOR) $(OBJS) $(SH_LDFLAGS) $(CFLAGS) $(LDLIBS) -o $@.$(SONAME_MAJOR).$(SONAME_MINOR)
-+	ln -s $@.$(SONAME_MAJOR).$(SONAME_MINOR) $@.$(SONAME_MAJOR)
-+	ln -s $@.$(SONAME_MAJOR).$(SONAME_MINOR) $@
+ install-docs:
  @endif
+@@ -77,20 +83,21 @@ $(JIMSH): $(LIBJIM) jimsh.o initjimsh.o
  
- # Note that $> $^ is for compatibility with both GNU make and BSD make
+ @if JIM_INSTALL
+ install: all @TCL_EXTS@ install-exec install-docs
+-	mkdir -p $(DESTDIR)@libdir@/jim
+-	cp $(LIBJIM) $(DESTDIR)@libdir@
+-	cp @srcdir@/README.extensions @C_EXT_SHOBJS@ $(DESTDIR)@libdir@/jim
+-	for i in @TCL_EXTS@; do cp @srcdir@/$$i $(DESTDIR)@libdir@/jim; done
+-	mkdir -p $(DESTDIR)@includedir@
+-	cp @srcdir@/jim.h @srcdir@/jim-eventloop.h @srcdir@/jim-signal.h \
++	$(INSTALL_DATA) $(LIBJIM) $(DESTDIR)@libdir@
++	$(INSTALL_DATA_DIR) $(DESTDIR)@libdir@/jim
++	$(INSTALL_DATA) @C_EXT_SHOBJS@ $(DESTDIR)@libdir@/jim
++	for i in @TCL_EXTS@; do $(INSTALL_DATA) @srcdir@/$$i $(DESTDIR)@libdir@/jim; done
++	$(INSTALL_DATA_DIR) $(DESTDIR)@includedir@
++	$(INSTALL_DATA) @srcdir@/jim.h @srcdir@/jim-eventloop.h @srcdir@/jim-signal.h \
+ 		@srcdir@/jim-subcmd.h @srcdir@/jim-win32compat.h $(DESTDIR)@includedir@
+-	cp jim-config.h $(DESTDIR)@includedir@
+-	mkdir -p $(DESTDIR)@bindir@
+-	cp build-jim-ext $(DESTDIR)@bindir@
++	$(INSTALL_DATA) jim-config.h $(DESTDIR)@includedir@
++	$(INSTALL_DATA_DIR) $(DESTDIR)@bindir@
++	$(INSTALL_DATA_DIR) $(DESTDIR)@datadir@/examples/jim
++	$(INSTALL_DATA) build-jim-ext @srcdir@/examples/* $(DESTDIR)@datadir@/examples/jim
+ 
+ install-exec: all
+-	mkdir -p $(DESTDIR)@bindir@
+-	cp $(JIMSH) $(DESTDIR)@bindir@
++	$(INSTALL_DATA_DIR) $(DESTDIR)@bindir@
++	$(INSTALL_PROGRAM) $(JIMSH) $(DESTDIR)@bindir@
+ 
+ uninstall:
+ 	rm -f $(DESTDIR)@bindir@/$(JIMSH)
