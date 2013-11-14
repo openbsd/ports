@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.43 2013/09/27 14:03:45 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.44 2013/11/14 14:24:38 jasper Exp $
 @bin bin/empathy
 @bin bin/empathy-accounts
 @bin bin/empathy-debugger
@@ -55,6 +55,7 @@ share/adium/message-styles/PlanetGNOME.AdiumMessageStyle/Contents/Resources/Inco
 share/adium/message-styles/PlanetGNOME.AdiumMessageStyle/Contents/Resources/Incoming/NextContent.html
 share/adium/message-styles/PlanetGNOME.AdiumMessageStyle/Contents/Resources/Status.html
 share/adium/message-styles/PlanetGNOME.AdiumMessageStyle/Contents/Resources/main.css
+share/appdata/empathy.appdata.xml
 share/applications/empathy.desktop
 share/dbus-1/services/org.freedesktop.Telepathy.Client.Empathy.Auth.service
 share/dbus-1/services/org.freedesktop.Telepathy.Client.Empathy.Call.service
