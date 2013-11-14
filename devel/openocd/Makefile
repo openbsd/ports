@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/21 08:45:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2013/11/14 09:12:29 stu Exp $
 
 COMMENT =	Open On-Chip Debugging
 
 DISTNAME =	openocd-0.6.1
+REVISION =	0
 CATEGORIES =	devel
 
 SHARED_LIBS +=  openocd		1.0 # unknown
@@ -35,11 +36,11 @@ CONFIGURE_ARGS = --disable-werror \
 		--enable-buspirate \
 		--disable-internal-jimtcl
 
-CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include " \
+CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/jim" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
-LIB_DEPENDS =	devel/libftdi \
-		lang/jimtcl
+LIB_DEPENDS =	devel/libftdi>=0.20 \
+		lang/jimtcl>=0.75
 
 USE_GMAKE =	Yes
 NO_TEST =	Yes
