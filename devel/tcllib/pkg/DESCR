@@ -1,5 +1,5 @@
 A collection of pure-Tcl utility modules for Tcl that provide a wide
 variety of functionality, from implementations of standard data
-structures to implementations of common networking protocols.  The
-intent is to collect commonly used functions into a single library,
-which users can rely on to be available and stable.
+structures to implementations of common networking protocols.
+The intent is to collect commonly used functions into a single
+library which users can rely on to be available and stable.

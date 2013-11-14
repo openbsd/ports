@@ -1,0 +1,44 @@
+$OpenBSD: patch-support_installation_modules_tcl,v 1.5 2013/11/14 09:21:18 stu Exp $
+--- support/installation/modules.tcl.orig	Wed Nov  6 04:44:56 2013
++++ support/installation/modules.tcl	Wed Nov  6 04:45:00 2013
+@@ -40,7 +40,7 @@ Module  asn         _tcl  _man  _null
+ Module  base32      _tcl  _man  _null
+ Module  base64      _tcl  _man  _null
+ Module  bee         _tcl  _man  _null
+-Module  bench       _tcl _null  _null
++Module  bench       _tcl  _man  _null
+ Module  bibtex      _tcl  _man  _exa
+ Module  blowfish    _tcl  _man  _null
+ Module  cache       _tcl  _man  _null
+@@ -49,11 +49,11 @@ Module  clock       _tcl  _man _null
+ Module  cmdline     _tcl  _man  _null
+ Module  comm        _tcl  _man  _null
+ Module  control      _tci _man  _null
+-Module  coroutine   _tcl _null  _null
++Module  coroutine   _tcl  _man  _null
+ Module  counter     _tcl  _man  _null
+ Module  crc         _tcl  _man  _null
+ Module  csv         _tcl  _man _exa
+-Module  debug       _tcl _null  _null
++Module  debug       _tcl  _man  _null
+ Module  des         _tcl  _man  _null
+ Module  dns          _msg _man _exa
+ Module  docstrip    _tcl  _man  _null
+@@ -68,7 +68,7 @@ Module  ftp         _tcl  _man _exa
+ Module  ftpd        _tcl  _man _exa
+ Module  fumagic     _tcl  _man  _null
+ Module  generator   _tcl  _man  _null
+-Module  gpx         _tcl _null  _null
++Module  gpx         _tcl  _man  _null
+ Module  grammar_aycock _tcl _man _null
+ Module  grammar_fa  _tcl  _man  _null
+ Module  grammar_me  _tcl  _man  _null
+@@ -140,7 +140,7 @@ Module  uev         _tcl  _man  _null
+ Module  units       _tcl  _man  _null
+ Module  uri         _tcl  _man  _null
+ Module  uuid        _tcl  _man  _null
+-Module  valtype     _tcl _null  _null
++Module  valtype     _tcl  _man  _null
+ Module  virtchannel_base       _tcl _man  _null
+ Module  virtchannel_core       _tcl _man  _null
+ Module  virtchannel_transform  _tcl _man  _null
