@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2013/05/08 13:46:53 giovanni Exp $
+# $OpenBSD: Makefile,v 1.13 2013/11/14 09:01:11 giovanni Exp $
 
 COMMENT =	MySQL Percona tools
 
-V =		2.2.2
+V =		2.2.5
 DISTNAME =	percona-toolkit-${V}
 EPOCH =		0
 CATEGORIES =	databases perl5
