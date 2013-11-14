@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.69 2013/10/27 09:26:01 espie Exp $
+# $OpenBSD: Core.pm,v 1.70 2013/11/14 09:35:01 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -110,6 +110,11 @@ sub getshell
 
 # here, a "core" is an entity responsible for scheduling cpu, such as
 # running a job, which is a collection of tasks.
+#
+# in DPB terms, to run something AND WAIT FOR IT in an asynchronous way,
+# you must schedule it on a core, which gives you a process id that's
+# registered
+#
 # the "abstract core" part only sees about registering/unregistering cores,
 # and having a global event handler that gets run whenever possible.
 package DPB::Core::Abstract;
