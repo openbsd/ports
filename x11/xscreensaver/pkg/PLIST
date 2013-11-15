@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2013/08/06 19:12:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.32 2013/11/15 15:37:57 sthen Exp $
 @conflict xscreensaver-data-*
 @conflict xscreensaver-gle-*
 @conflict xscreensaver-<5.07p3-no_gle
@@ -87,6 +87,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/fuzzyflakes
 @bin libexec/xscreensaver/galaxy
 @bin libexec/xscreensaver/gears
+@bin libexec/xscreensaver/geodesic
 @bin libexec/xscreensaver/gflux
 @bin libexec/xscreensaver/glblur
 @bin libexec/xscreensaver/glcells
@@ -299,6 +300,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/fuzzyflakes.6
 @man man/man6/galaxy.6
 @man man/man6/gears.6
+@man man/man6/geodesic.6
 @man man/man6/gflux.6
 @man man/man6/glblur.6
 @man man/man6/glcells.6
@@ -509,6 +511,7 @@ share/applications/screensavers/forest.desktop
 share/applications/screensavers/fuzzyflakes.desktop
 share/applications/screensavers/galaxy.desktop
 share/applications/screensavers/gears.desktop
+share/applications/screensavers/geodesic.desktop
 share/applications/screensavers/gflux.desktop
 share/applications/screensavers/glblur.desktop
 share/applications/screensavers/glcells.desktop
@@ -761,6 +764,7 @@ share/xscreensaver/config/fontglide.xml
 share/xscreensaver/config/fuzzyflakes.xml
 share/xscreensaver/config/galaxy.xml
 share/xscreensaver/config/gears.xml
+share/xscreensaver/config/geodesic.xml
 share/xscreensaver/config/gflux.xml
 share/xscreensaver/config/glblur.xml
 share/xscreensaver/config/glcells.xml
