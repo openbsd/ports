@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.157 2013/11/01 14:09:19 robert Exp $
+# $OpenBSD: Makefile,v 1.158 2013/11/15 07:44:49 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -8,7 +8,7 @@ COMMENT=		Chromium browser
 V=			30.0.1599.101
 DISTNAME=		chromium-${V}
 
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		www
 
@@ -181,7 +181,7 @@ do-install:
 		${PREFIX}/share/icons/hicolor/${s}x${s}/apps/chrome.png
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${FILESDIR}/chrome.desktop \
-		${PREFIX}/share/applications/chrome.desktop
+	${INSTALL_DATA} ${FILESDIR}/chromium-browser.desktop \
+		${PREFIX}/share/applications/chromium-browser.desktop
 
 .include <bsd.port.mk>

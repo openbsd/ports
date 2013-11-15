@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2013/10/29 06:51:34 robert Exp $
+@comment $OpenBSD: PLIST,v 1.29 2013/11/15 07:44:49 ajacoutot Exp $
 bin/chrome
 chrome/
 @bin chrome/chrome
@@ -216,7 +216,7 @@ chrome/resources/inspector/tabbedPane.css
 chrome/resources/inspector/textPrompt.css
 chrome/resources/inspector/timelinePanel.css
 @man man/man1/chrome.1
-share/applications/chrome.desktop
+share/applications/chromium-browser.desktop
 share/icons/hicolor/128x128/apps/chrome.png
 share/icons/hicolor/22x22/apps/chrome.png
 share/icons/hicolor/24x24/apps/chrome.png
