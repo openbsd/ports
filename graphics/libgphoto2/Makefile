@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/10/11 23:49:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2013/11/15 10:21:29 ajacoutot Exp $
 
 COMMENT =	digital camera library
 CATEGORIES =	graphics devel
@@ -48,5 +48,6 @@ post-install:
 	rm -rf ${PREFIX}/lib/udev
 	mv ${PREFIX}/share/doc/libgphoto2_port \
 		${PREFIX}/share/doc/libgphoto2
+	rm ${PREFIX}/share/doc/libgphoto2/{ABOUT-NLS,AUTHORS,COPYING,ChangeLog,NEWS,README.packaging}
 
 .include <bsd.port.mk>
