@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2013/08/23 19:04:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2013/11/15 00:53:36 juanfra Exp $
 
 COMMENT=		grep like tool, aimed at programmers
 
 MODULES=		cpan
-DISTNAME=		ack-2.08
+DISTNAME=		ack-2.10
 CPAN_AUTHOR=		PETDANCE
 CATEGORIES=		textproc
 
