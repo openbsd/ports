@@ -1,6 +1,11 @@
-$OpenBSD: patch-src_eog-jobs_h,v 1.1 2013/09/27 09:53:07 jasper Exp $
+$OpenBSD: patch-src_eog-jobs_h,v 1.2 2013/11/15 21:14:24 jasper Exp $
 
-Prevent redeclaration of EogJob
+From aae3be0031991749d60631080867c403a7fd7348 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Fri, 15 Nov 2013 08:01:49 +0000
+Subject: Prevent redeclaration of typedef 'EogJob'.
+
+https://bugzilla.gnome.org/show_bug.cgi?id=712354
 
 --- src/eog-jobs.h.orig	Fri Sep 27 11:40:07 2013
 +++ src/eog-jobs.h	Fri Sep 27 11:42:06 2013
