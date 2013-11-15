@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/06/18 09:27:37 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/11/15 11:00:37 dcoppa Exp $
 %%SHARED%%
 %%native%%
 bin/gdk_pixbuf_mlsource
@@ -273,6 +273,7 @@ lib/ocaml/lablgtk2/varcc
 lib/ocaml/lablgtk2/win32.h
 lib/ocaml/lablgtk2/wrappers.h
 lib/ocaml/lablgtk2/xml_lexer.mli
+@comment lib/ocaml/ld.conf
 lib/ocaml/site-lib/
 lib/ocaml/site-lib/lablgtk2/
 lib/ocaml/site-lib/lablgtk2/META
