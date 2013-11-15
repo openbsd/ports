@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_libtracker-miner_tracker-monitor_c,v 1.11 2013/11/15 05:26:06 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=712349
+
+--- src/libtracker-miner/tracker-monitor.c.orig	Fri Nov 15 06:09:07 2013
++++ src/libtracker-miner/tracker-monitor.c	Thu Nov 14 20:59:24 2013
+@@ -420,7 +420,13 @@ get_kqueue_limit (void)
+ 
+ #ifdef TRACKER_MONITOR_KQUEUE
+ 	struct rlimit rl;
+-	if (getrlimit (RLIMIT_NOFILE, &rl) == 0)
++	if (getrlimit (RLIMIT_NOFILE, &rl) == 0) {
++		rl.rlim_cur = rl.rlim_max;
++	} else {
++		return limit;
++	}
++
++	if (setrlimit(RLIMIT_NOFILE, &rl) == 0)
+ 		limit = (rl.rlim_cur * 90) / 100;
+ #endif /* TRACKER_MONITOR_KQUEUE */
+ 
