@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2013/10/05 08:18:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2013/11/15 10:50:40 ajacoutot Exp $
 @extra owncloud/config/config.php
 owncloud/
 owncloud/.htaccess.dist
@@ -2440,6 +2440,7 @@ owncloud/apps/files_sharing/
 owncloud/apps/files_sharing/appinfo/
 owncloud/apps/files_sharing/appinfo/app.php
 owncloud/apps/files_sharing/appinfo/info.xml
+owncloud/apps/files_sharing/appinfo/routes.php
 owncloud/apps/files_sharing/appinfo/update.php
 owncloud/apps/files_sharing/appinfo/version
 owncloud/apps/files_sharing/css/
@@ -2505,6 +2506,7 @@ owncloud/apps/files_sharing/l10n/zh_CN.GB2312.php
 owncloud/apps/files_sharing/l10n/zh_CN.php
 owncloud/apps/files_sharing/l10n/zh_TW.php
 owncloud/apps/files_sharing/lib/
+owncloud/apps/files_sharing/lib/api.php
 owncloud/apps/files_sharing/lib/cache.php
 owncloud/apps/files_sharing/lib/permissions.php
 owncloud/apps/files_sharing/lib/share/
@@ -2517,6 +2519,8 @@ owncloud/apps/files_sharing/public.php
 owncloud/apps/files_sharing/templates/
 owncloud/apps/files_sharing/templates/authenticate.php
 owncloud/apps/files_sharing/templates/public.php
+owncloud/apps/files_sharing/tests/
+owncloud/apps/files_sharing/tests/api.php
 owncloud/apps/files_texteditor/
 owncloud/apps/files_texteditor/ajax/
 owncloud/apps/files_texteditor/ajax/loadfile.php
@@ -4376,12 +4380,18 @@ owncloud/core/doc/admin/_sources/maintenance/index.txt
 owncloud/core/doc/admin/_sources/maintenance/migrating.txt
 owncloud/core/doc/admin/_sources/maintenance/update.txt
 owncloud/core/doc/admin/_static/
+owncloud/core/doc/admin/_static/ajax-loader.gif
 owncloud/core/doc/admin/_static/basic.css
 owncloud/core/doc/admin/_static/bootstrap-responsive.css
 owncloud/core/doc/admin/_static/bootstrap-sphinx.css
 owncloud/core/doc/admin/_static/bootstrap.css
 owncloud/core/doc/admin/_static/bootstrap.js
+owncloud/core/doc/admin/_static/comment-bright.png
+owncloud/core/doc/admin/_static/comment-close.png
+owncloud/core/doc/admin/_static/comment.png
 owncloud/core/doc/admin/_static/doctools.js
+owncloud/core/doc/admin/_static/down-pressed.png
+owncloud/core/doc/admin/_static/down.png
 owncloud/core/doc/admin/_static/file.png
 owncloud/core/doc/admin/_static/img/
 owncloud/core/doc/admin/_static/img/glyphicons-halflings-white.png
@@ -4397,6 +4407,9 @@ owncloud/core/doc/admin/_static/pygments.css
 owncloud/core/doc/admin/_static/searchtools.js
 owncloud/core/doc/admin/_static/style.css
 owncloud/core/doc/admin/_static/underscore.js
+owncloud/core/doc/admin/_static/up-pressed.png
+owncloud/core/doc/admin/_static/up.png
+owncloud/core/doc/admin/_static/websupport.js
 owncloud/core/doc/admin/configuration/
 owncloud/core/doc/admin/configuration/auth_ldap.html
 owncloud/core/doc/admin/configuration/background_jobs.html
@@ -4502,12 +4515,18 @@ owncloud/core/doc/user/_sources/pim/sync_thunderbird.txt
 owncloud/core/doc/user/_sources/pim/troubleshooting.txt
 owncloud/core/doc/user/_sources/webinterface.txt
 owncloud/core/doc/user/_static/
+owncloud/core/doc/user/_static/ajax-loader.gif
 owncloud/core/doc/user/_static/basic.css
 owncloud/core/doc/user/_static/bootstrap-responsive.css
 owncloud/core/doc/user/_static/bootstrap-sphinx.css
 owncloud/core/doc/user/_static/bootstrap.css
 owncloud/core/doc/user/_static/bootstrap.js
+owncloud/core/doc/user/_static/comment-bright.png
+owncloud/core/doc/user/_static/comment-close.png
+owncloud/core/doc/user/_static/comment.png
 owncloud/core/doc/user/_static/doctools.js
+owncloud/core/doc/user/_static/down-pressed.png
+owncloud/core/doc/user/_static/down.png
 owncloud/core/doc/user/_static/file.png
 owncloud/core/doc/user/_static/img/
 owncloud/core/doc/user/_static/img/glyphicons-halflings-white.png
@@ -4523,6 +4542,9 @@ owncloud/core/doc/user/_static/pygments.css
 owncloud/core/doc/user/_static/searchtools.js
 owncloud/core/doc/user/_static/style.css
 owncloud/core/doc/user/_static/underscore.js
+owncloud/core/doc/user/_static/up-pressed.png
+owncloud/core/doc/user/_static/up.png
+owncloud/core/doc/user/_static/websupport.js
 owncloud/core/doc/user/bookmarks.html
 owncloud/core/doc/user/contents.html
 owncloud/core/doc/user/files/
@@ -5876,6 +5898,7 @@ owncloud/lib/files/mount.php
 owncloud/lib/files/storage/
 owncloud/lib/files/storage/common.php
 owncloud/lib/files/storage/commontest.php
+owncloud/lib/files/storage/home.php
 owncloud/lib/files/storage/local.php
 owncloud/lib/files/storage/mappedlocal.php
 owncloud/lib/files/storage/storage.php
