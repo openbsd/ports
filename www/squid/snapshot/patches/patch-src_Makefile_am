@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_Makefile_am,v 1.1 2013/11/15 19:09:17 sthen Exp $
+--- src/Makefile.am.orig	Thu Oct  3 13:32:47 2013
++++ src/Makefile.am	Mon Oct 21 13:49:36 2013
+@@ -652,6 +652,7 @@ squid_LDADD = \
+ 	$(MINGW_LIBS) \
+ 	$(KRB5LIBS) \
+ 	$(COMPAT_LIB) \
++	$(BACKTRACE_LIB) \
+ 	$(XTRA_LIBS)
+ squid_DEPENDENCIES = \
+ 	$(DISK_LIBS) \

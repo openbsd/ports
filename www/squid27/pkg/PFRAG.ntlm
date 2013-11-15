@@ -1,6 +1,0 @@
-@comment $OpenBSD: PFRAG.ntlm,v 1.1.1.1 2013/01/02 10:12:02 sthen Exp $
-@bin libexec/fakeauth_auth
-@bin libexec/ntlm_auth
-@bin libexec/smb_auth
-libexec/smb_auth.sh
-libexec/wbinfo_group.pl
