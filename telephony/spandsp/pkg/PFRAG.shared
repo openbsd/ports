@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2008/04/29 11:55:18 sthen Exp $
-@lib lib/libspandsp.so.${LIBspandsp_VERSION}

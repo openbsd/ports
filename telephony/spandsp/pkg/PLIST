@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/03/10 09:36:43 sthen Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.6 2013/11/15 23:01:20 sthen Exp $
 include/spandsp/
 include/spandsp.h
 include/spandsp/adsi.h
@@ -147,6 +146,7 @@ include/spandsp/vector_int.h
 include/spandsp/version.h
 lib/libspandsp.a
 lib/libspandsp.la
+@lib lib/libspandsp.so.${LIBspandsp_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/spandsp.pc
 share/doc/spandsp/
