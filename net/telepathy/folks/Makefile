@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.61 2013/10/26 10:45:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2013/11/15 08:26:59 jasper Exp $
 
 COMMENT=		people aggregation library
 
 GNOME_PROJECT=		folks
-GNOME_VERSION=		0.9.5
+GNOME_VERSION=		0.9.6
 # MODULE_VERSION in config.h
 API_V=			41
 
-REVISION=		0
-
-SHARED_LIBS +=  folks-telepathy           5.0 # 39.0
-SHARED_LIBS +=  folks                     5.2 # 39.0
-SHARED_LIBS +=  folks-eds                 1.1 # 39.0
+SHARED_LIBS +=  folks-telepathy           5.1 # 41.1
+SHARED_LIBS +=  folks                     5.4 # 41.1
+SHARED_LIBS +=  folks-eds                 1.1 # 41.1
 
 SUBST_VARS=		API_V
 
@@ -44,6 +42,9 @@ MODGNOME_TOOLS= 	gi vala
 
 # libofono isn't ported yet
 CONFIGURE_ARGS += 	--disable-ofono-backend
+
+# no Bluez stack on OpenBSD
+CONFIGURE_ARGS +=	--disable-bluez
 
 # https://git.gnome.org/browse/folks/commit/Makefile.am?id=8ebe13c457660de380521874a006425083151741
 CONFIGURE_ARGS += --disable-fatal-warnings
