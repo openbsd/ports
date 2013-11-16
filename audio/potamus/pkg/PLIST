@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/16 17:58:34 bcallah Exp $
+@bin bin/potamus
+share/applications/potamus.desktop
+share/icons/hicolor/48x48/apps/potamus.png
+share/icons/hicolor/scalable/apps/potamus.svg
+share/potamus/
+share/potamus/potamus-clear.png
+share/potamus/potamus-next.png
+share/potamus/potamus-pause.png
+share/potamus/potamus-play.png
+share/potamus/potamus-playing.png
+share/potamus/potamus-previous.png
+share/potamus/potamus-shuffle.png
+share/potamus/potamus-stop.png
+share/potamus/potamus.glade
+share/potamus/potamus.png
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
