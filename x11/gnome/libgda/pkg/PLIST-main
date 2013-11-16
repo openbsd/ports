@@ -1,11 +1,14 @@
-@comment $OpenBSD: PLIST-main,v 1.32 2013/10/16 10:26:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.33 2013/11/16 15:22:16 ajacoutot Exp $
 @conflict libgda-db4-*
 @conflict libgda-ldap-<4.2.8p0v0
 @conflict libgda-ui-<5.1.1
 @pkgpath x11/gnome/libgda,-mdb
 @pkgpath x11/gnome/libgda,-odbc
+bin/gda-list-config
 @bin bin/gda-list-config-${GDA_MAJOR}
+bin/gda-list-server-op
 @bin bin/gda-list-server-op-${GDA_MAJOR}
+bin/gda-sql
 @bin bin/gda-sql-${GDA_MAJOR}
 @bin bin/gda-test-connection-${GDA_MAJOR}
 include/libgda-${GDA_MAJOR}/
@@ -43,7 +46,6 @@ include/libgda-${GDA_MAJOR}/libgda/gda-data-model.h
 include/libgda-${GDA_MAJOR}/libgda/gda-data-pivot.h
 include/libgda-${GDA_MAJOR}/libgda/gda-data-proxy.h
 include/libgda-${GDA_MAJOR}/libgda/gda-data-select.h
-include/libgda-${GDA_MAJOR}/libgda/gda-debug-macros.h
 include/libgda-${GDA_MAJOR}/libgda/gda-decl.h
 include/libgda-${GDA_MAJOR}/libgda/gda-enum-types.h
 include/libgda-${GDA_MAJOR}/libgda/gda-enums.h
@@ -142,6 +144,7 @@ lib/pkgconfig/libgda-sqlite-${GDA_MAJOR}.pc
 lib/pkgconfig/libgda-web-${GDA_MAJOR}.pc
 lib/pkgconfig/libgda-xslt-${GDA_MAJOR}.pc
 @man man/man1/gda-sql-${GDA_MAJOR}.1
+@man man/man1/gda-sql.1
 share/examples/libgda/
 @sample ${SYSCONFDIR}/libgda-${GDA_MAJOR}/
 share/examples/libgda/config
@@ -431,6 +434,7 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/part_tools.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/parts.png
 share/gtk-doc/html/libgda-${GDA_MAJOR}/prov-metadata.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/provider-notes.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/provider_notes_jdbc.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/provider_notes_ldap.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/provider_notes_sqlcipher.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/provider_notes_sqlite.html
@@ -556,6 +560,7 @@ share/locale/it/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/ja/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/ko/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/lt/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
+share/locale/lv/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/mk/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/ml/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/ms/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
@@ -576,7 +581,9 @@ share/locale/sr/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/sr@Latn/
 share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
+share/locale/sr@latin/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/sv/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
+share/locale/tg/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/tr/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/uk/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/vi/LC_MESSAGES/libgda-${GDA_MAJOR}.mo

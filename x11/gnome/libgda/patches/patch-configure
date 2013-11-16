@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.27 2013/03/16 21:56:37 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.28 2013/11/16 15:22:16 ajacoutot Exp $
 
 Our libdb does not follow upstream naming (libdb.so.XX versus
 libdb-5.0.so).
 
---- configure.orig	Fri Jan 25 08:57:56 2013
-+++ configure	Sat Mar 16 21:15:00 2013
-@@ -21803,9 +21803,9 @@ $as_echo_n "checking for Berkeley DB files in $d... " 
+--- configure.orig	Mon Nov 11 18:41:12 2013
++++ configure	Sat Nov 16 15:24:40 2013
+@@ -22047,9 +22047,9 @@ $as_echo_n "checking for Berkeley DB files in $d... " 
  		        db_libfile="$d/$bdb_loclibdir/libdb$sversion$bdb_libext"
          	        try_headers="db.h db$version/db.h db$sversion/db.h"
  		    else
