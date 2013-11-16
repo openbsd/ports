@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.820 2013/11/11 13:35:52 zhuk Exp $
+# $OpenBSD: Makefile,v 1.821 2013/11/16 13:24:14 jca Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -183,7 +183,6 @@
      SUBDIR += libbgpdump
      SUBDIR += libcares
      SUBDIR += libdnet
-     SUBDIR += libdnsres
      SUBDIR += libepc
      SUBDIR += libgadu
      SUBDIR += libircclient
