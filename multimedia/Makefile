@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2013/09/25 07:06:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.72 2013/11/16 15:10:22 merdely Exp $
 
      SUBDIR =
      SUBDIR += atomicparsley
@@ -51,6 +51,7 @@
      SUBDIR += ogmtools
      SUBDIR += p5-AMF-Connection
      SUBDIR += p5-Data-AMF
+     SUBDIR += p5-Mac-iTunes-Library
      SUBDIR += p5-Storable-AMF
      SUBDIR += phonon
      SUBDIR += phonon-backend
