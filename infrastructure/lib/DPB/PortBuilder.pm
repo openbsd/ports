@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.57 2013/10/17 14:02:11 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.58 2013/11/16 13:06:00 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -175,8 +175,8 @@ sub report
 	} else {
 		print $log  "\n";
 		open my $fh, '>>', $self->{state}{permanent_log};
-		print $fh join(' ', $pkgpath, $host, $job->totaltime, $sz),
-		    "\n";
+		print $fh join(' ', $pkgpath, $host, $job->totaltime, $sz, 
+		    CORE::time()), "\n";
 	}
 }
 

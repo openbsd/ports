@@ -1,6 +1,6 @@
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Size.pm,v 1.1 2013/10/13 18:23:35 espie Exp $
+# $OpenBSD: Size.pm,v 1.2 2013/11/16 13:06:00 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -104,7 +104,7 @@ sub parse_size_file
 	while (<$fh>) {
 		chomp;
 		my $pkgname;
-		my ($pkgpath, $sz, $sz2) = split(/\s+/, $_);
+		my ($pkgpath, $sz, $ts) = split(/\s+/, $_);
 		my $i = " $sz";
 		if ($pkgpath =~ m/^(.*)\((.*)\)$/) {
 			($pkgpath, $pkgname) = ($1, $2);
@@ -114,9 +114,8 @@ sub parse_size_file
 				$i ="($pkgname) $sz";
 			}
 		}
-		if (defined $sz2) {
-			$sz += $sz2;
-			$i .=" $sz2";
+		if (defined $ts) {
+			$i .=" $ts";
 		}
 		$rewrite->{$pkgpath} = $i;
 		my $o = DPB::PkgPath->new($pkgpath);

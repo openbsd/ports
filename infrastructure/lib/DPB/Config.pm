@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.22 2013/10/27 09:26:01 espie Exp $
+# $OpenBSD: Config.pm,v 1.23 2013/11/16 13:06:00 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -121,6 +121,8 @@ sub parse_command_line
 
 	if ($state->define_present("STARTUP")) {
 		$state->{startup_script} = $state->{subst}->value("STARTUP");
+	} elsif ($state->define_present("CLEANUP")) {
+		$state->{startup_script} = $state->{subst}->value("CLEANUP");
 	}
 	if ($state->define_present('LOGDIR')) {
 		$state->{logdir} = $state->subst->value('LOGDIR');

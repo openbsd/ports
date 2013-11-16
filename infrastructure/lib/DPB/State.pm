@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.5 2013/10/17 12:48:10 espie Exp $
+# $OpenBSD: State.pm,v 1.6 2013/11/16 13:06:00 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -263,7 +263,11 @@ sub parse_build_file
 		my ($pkgpath, $host, $time, $sz, @rest) = parse_build_line($_);
 		next if !defined $sz;
 		my $o = DPB::PkgPath->new($pkgpath);
-		push(@{$o->{stats}}, {host => $host, time => $time, sz => $sz});
+		my $s = {host => $host, time => $time, sz => $sz};
+		if (@rest > 0 && $rest[0] =~ m/^\d+$/) {
+			$s->{ts} = $rest[0];
+		}
+		push(@{$o->{stats}}, $s);
 	}
 }
 
@@ -295,8 +299,12 @@ sub rewrite_build_info
 		next unless defined $p->{stats};
 		shift @{$p->{stats}} while @{$p->{stats}} > 10;
 		for my $s (@{$p->{stats}}) {
-			print $f join(' ', $p->fullpkgpath, $s->{host},
-			    $s->{time}, $s->{sz}), "\n";
+			my @l = ($p->fullpkgpath, $s->{host}, $s->{time},
+			    $s->{sz});
+			if ($s->{ts}) {
+				push(@l, $s->{ts});
+			}
+			print $f join(' ', @l), "\n";
 		}
 		delete $p->{stats};
 	}
