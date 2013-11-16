@@ -1,6 +1,6 @@
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Size.pm,v 1.2 2013/11/16 13:06:00 espie Exp $
+# $OpenBSD: Size.pm,v 1.3 2013/11/16 16:39:28 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -22,6 +22,8 @@ use warnings;
 # and using tmpfs accordingly
 package DPB::Heuristics::Size;
 my (%wrkdir, %pkgname);
+
+use DPB::Serialize;
 
 sub new
 {
@@ -99,33 +101,20 @@ sub parse_size_file
 	print "Reading size stats...";
 	File::Path::mkpath(File::Basename::dirname($state->{size_log}));
 
-	my $rewrite = {};
+	my @rewrite = ();
 	my $_;
 	while (<$fh>) {
 		chomp;
-		my $pkgname;
-		my ($pkgpath, $sz, $ts) = split(/\s+/, $_);
-		my $i = " $sz";
-		if ($pkgpath =~ m/^(.*)\((.*)\)$/) {
-			($pkgpath, $pkgname) = ($1, $2);
-			if ($state->opt('S')) {
-				undef $pkgname;
-			} else {
-				$i ="($pkgname) $sz";
-			}
-		}
-		if (defined $ts) {
-			$i .=" $ts";
-		}
-		$rewrite->{$pkgpath} = $i;
-		my $o = DPB::PkgPath->new($pkgpath);
-		$self->add_size_info($o, $pkgname, $sz);
+		my $s = DPB::Serialize::Size->read($_);
+		push(@rewrite, $s);
+		$self->add_size_info(DPB::PkgPath->new($s->{pkgpath}), 
+		    $s->{pkgname}, $s->{size});
 	}
 	close $fh;
 	print "zapping old stuff...";
 	open $fh, '>', $state->{size_log}.'.part' or return;
-	for my $p (sort keys %$rewrite) {
-		print $fh "$p$rewrite->{$p}\n";
+	for my $p (sort {$a->{pkgpath} cmp $b->{pkgpath}} @rewrite) {
+		print $fh DPB::Serialize::Size->write($p), "\n";
 	}
 	close $fh;
 	print "Done\n";

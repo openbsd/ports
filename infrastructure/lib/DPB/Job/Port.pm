@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.139 2013/11/16 13:06:00 espie Exp $
+# $OpenBSD: Port.pm,v 1.140 2013/11/16 16:39:28 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -613,14 +613,18 @@ sub finalize
 		if ($line =~ m/^\s*(\d+)\s+/) {
 			my $sz = $1;
 			my $job = $core->job;
-			my $info = $job->{path}."(".$job->{v}->fullpkgname.") $sz ".CORE::time()."\n";
-			print {$job->{builder}{logsize}} $info;
+			my $info = DPB::Serialize::Size->write({
+			    pkgpath => $job->{path},
+			    pkname => $job->{v}->fullpkgname,
+			    size => $sz,
+			    ts => CORE::time });
+			print {$job->{builder}{logsize}} $info, "\n";
 			# XXX the rolling log might be shared with other dpb
 			# so it can be rewritten and sorted
 			# don't keep a handle on it, so that we always
 			# append new information to the correct filename
 		    	open(my $fh2, '>>', $job->{builder}{state}{size_log});
-			print $fh2 $info;
+			print $fh2 $info."\n";
 		}
 	}
 	close($fh);

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.58 2013/11/16 13:06:00 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.59 2013/11/16 16:39:28 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -24,6 +24,7 @@ package DPB::PortBuilder;
 use File::Path;
 use DPB::Util;
 use DPB::Job::Port;
+use DPB::Serialize;
 
 sub new
 {
@@ -175,8 +176,12 @@ sub report
 	} else {
 		print $log  "\n";
 		open my $fh, '>>', $self->{state}{permanent_log};
-		print $fh join(' ', $pkgpath, $host, $job->totaltime, $sz, 
-		    CORE::time()), "\n";
+		print $fh DPB::Serialize::Build->write({
+		    pkgpath => $pkgpath, 
+		    host => $host, 
+		    time => $job->totaltime, 
+		    size => $sz, 
+		    ts => CORE::time }), "\n";
 	}
 }
 
