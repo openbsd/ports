@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/06/23 09:03:37 ajacoutot Exp $
-@lib lib/libass.so.${LIBass_VERSION}

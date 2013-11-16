@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/23 09:03:37 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2013/11/16 00:49:57 brad Exp $
 include/ass/
 include/ass/ass.h
 include/ass/ass_types.h
 lib/libass.a
-@comment lib/libass.la
+lib/libass.la
+@lib lib/libass.so.${LIBass_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/libass.pc
