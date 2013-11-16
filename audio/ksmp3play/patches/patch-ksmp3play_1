@@ -1,0 +1,20 @@
+$OpenBSD: patch-ksmp3play_1,v 1.1 2013/11/16 12:10:14 naddy Exp $
+--- ksmp3play.1.orig	Sun Aug 19 19:35:42 2001
++++ ksmp3play.1	Sat Nov 16 13:02:26 2013
+@@ -34,13 +34,13 @@ Show summary of options.
+ .B \-v, \-\-version
+ Show version of program.
+ .SH BUGS
+-Please report any bugs you find to Karl Söderström <ks@xanadunet.net>.
++Please report any bugs you find to Karl S\(:oderstr\(:om <ks@xanadunet.net>.
+ .SH LICENCE
+ .B ksmp3play
+ is covered by the GNU General Public License (GPL).
+ .SH AUTHOR
+-Karl Söderström <ks@xanadunet.net>
++Karl S\(:oderstr\(:om <ks@xanadunet.net>
+ .PP
+ This manual page was written by Uwe Hermann <uh1763@hermann-uwe.de>,
+ for the Debian GNU/Linux system (but may be used by others). Modified by
+-Karl Söderström <ks@xanadunet.net>. 
++Karl S\(:oderstr\(:om <ks@xanadunet.net>. 

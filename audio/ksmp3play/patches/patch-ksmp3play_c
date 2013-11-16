@@ -1,0 +1,11 @@
+$OpenBSD: patch-ksmp3play_c,v 1.1 2013/11/16 12:10:14 naddy Exp $
+--- ksmp3play.c.orig	Sun Aug 19 21:43:37 2001
++++ ksmp3play.c	Sat Nov 16 13:05:04 2013
+@@ -26,6 +26,7 @@
+ #include <string.h>
+ #include <ctype.h>
+ #include <stdio.h>
++#include <unistd.h>
+ #ifdef HAVE_CONFIG_H
+ #include <config.h>
+ #endif

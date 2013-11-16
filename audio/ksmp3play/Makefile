@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2013/03/10 22:55:03 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2013/11/16 12:10:13 naddy Exp $
 
 COMMENT=	curses-based mp3 player
 
 DISTNAME=	ksmp3play-0.5.1
-REVISION=	3
+REVISION=	4
 CATEGORIES=    	audio
 
 MAINTAINER=	Peter Valchev <pvalchev@openbsd.org>
@@ -17,7 +17,6 @@ LIB_DEPENDS=	devel/sdl \
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ksmp3play/}
 
-USE_GROFF =	Yes
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
