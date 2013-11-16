@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.90 2013/08/06 19:28:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.91 2013/11/16 20:29:00 jca Exp $
 
 COMMENT=	GNU privacy guard - a free PGP replacement
 
-DISTNAME=	gnupg-1.4.13
-REVISION=	1
+DISTNAME=	gnupg-1.4.15
 CATEGORIES=	security
 
 # restrict, not compatible with gnupg-2.
@@ -24,11 +23,9 @@ WANTLIB=	c z readline termcap ssl crypto idn bz2>=10 curl>=3
 # XXX give it a chance on vax
 LIB_DEPENDS += devel/libidn
 
-CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.69
+CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/scripts
 CONFIGURE_ARGS+= --disable-gnupg-iconv
-USE_GROFF =	Yes
 .if ${MACHINE_ARCH} == "m68k"
 CONFIGURE_ARGS+= --disable-asm
 .endif
