@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.314 2013/11/13 01:10:15 bcallah Exp $
+# $OpenBSD: Makefile,v 1.315 2013/11/16 17:58:56 bcallah Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -180,6 +180,7 @@
      SUBDIR += picard
      SUBDIR += pms
      SUBDIR += portaudio-svn
+     SUBDIR += potamus
      SUBDIR += pulseaudio
      SUBDIR += py-ao
      SUBDIR += py-audio
