@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.30 2013/11/14 15:05:43 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.31 2013/11/16 21:00:43 jasper Exp $
 @conflict evince-djvu-*
 @pkgpath graphics/evince
 @pkgpath graphics/evince,-djvu
@@ -178,11 +178,14 @@ share/gtk-doc/html/evince/evince.devhelp2
 share/gtk-doc/html/evince/home.png
 share/gtk-doc/html/evince/index.html
 share/gtk-doc/html/evince/index.sgml
+share/gtk-doc/html/evince/left-insensitive.png
 share/gtk-doc/html/evince/left.png
 share/gtk-doc/html/evince/licence.html
 share/gtk-doc/html/evince/object-tree.html
+share/gtk-doc/html/evince/right-insensitive.png
 share/gtk-doc/html/evince/right.png
 share/gtk-doc/html/evince/style.css
+share/gtk-doc/html/evince/up-insensitive.png
 share/gtk-doc/html/evince/up.png
 share/gtk-doc/html/libevdocument-${MAJ_V}/
 share/gtk-doc/html/libevdocument-${MAJ_V}/EvAnnotation.html
@@ -222,6 +225,7 @@ share/gtk-doc/html/libevdocument-${MAJ_V}/document-interfaces.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/home.png
 share/gtk-doc/html/libevdocument-${MAJ_V}/index.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/index.sgml
+share/gtk-doc/html/libevdocument-${MAJ_V}/left-insensitive.png
 share/gtk-doc/html/libevdocument-${MAJ_V}/left.png
 share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-${MAJ_V}.devhelp2
 share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-EvDocumentMisc.html
@@ -237,12 +241,13 @@ share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-ev-mapping.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-ev-transition-effect.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/licence.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/object-tree.html
+share/gtk-doc/html/libevdocument-${MAJ_V}/right-insensitive.png
 share/gtk-doc/html/libevdocument-${MAJ_V}/right.png
 share/gtk-doc/html/libevdocument-${MAJ_V}/style.css
+share/gtk-doc/html/libevdocument-${MAJ_V}/up-insensitive.png
 share/gtk-doc/html/libevdocument-${MAJ_V}/up.png
 share/gtk-doc/html/libevview-${MAJ_V}/
 share/gtk-doc/html/libevview-${MAJ_V}/EvJob.html
-share/gtk-doc/html/libevview-${MAJ_V}/annotation-glossary.html
 share/gtk-doc/html/libevview-${MAJ_V}/api-index-3-10.html
 share/gtk-doc/html/libevview-${MAJ_V}/api-index-3-6.html
 share/gtk-doc/html/libevview-${MAJ_V}/api-index-3-8.html
@@ -251,6 +256,7 @@ share/gtk-doc/html/libevview-${MAJ_V}/api-index-full.html
 share/gtk-doc/html/libevview-${MAJ_V}/home.png
 share/gtk-doc/html/libevview-${MAJ_V}/index.html
 share/gtk-doc/html/libevview-${MAJ_V}/index.sgml
+share/gtk-doc/html/libevview-${MAJ_V}/left-insensitive.png
 share/gtk-doc/html/libevview-${MAJ_V}/left.png
 share/gtk-doc/html/libevview-${MAJ_V}/libevview-${MAJ_V}.devhelp2
 share/gtk-doc/html/libevview-${MAJ_V}/libevview-ev-annotation-window.html
@@ -264,8 +270,10 @@ share/gtk-doc/html/libevview-${MAJ_V}/libevview-ev-view-presentation.html
 share/gtk-doc/html/libevview-${MAJ_V}/libevview-ev-view.html
 share/gtk-doc/html/libevview-${MAJ_V}/licence.html
 share/gtk-doc/html/libevview-${MAJ_V}/object-tree.html
+share/gtk-doc/html/libevview-${MAJ_V}/right-insensitive.png
 share/gtk-doc/html/libevview-${MAJ_V}/right.png
 share/gtk-doc/html/libevview-${MAJ_V}/style.css
+share/gtk-doc/html/libevview-${MAJ_V}/up-insensitive.png
 share/gtk-doc/html/libevview-${MAJ_V}/up.png
 share/gtk-doc/html/libevview-${MAJ_V}/view-view.html
 share/help/
