@@ -1,0 +1,5 @@
+gnome-code-assistance is a project which aims to provide common code
+assistance services for code editors (simple editors as well as IDEs).
+It is an effort to provide a centralized code-assistance as a service
+for the GNOME platform instead of having every editor implement their
+own solution.
