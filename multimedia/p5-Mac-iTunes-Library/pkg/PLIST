@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/16 15:09:02 merdely Exp $
+${P5SITE}/Mac/
+${P5SITE}/Mac/iTunes/
+${P5SITE}/Mac/iTunes/Library/
+${P5SITE}/Mac/iTunes/Library.pm
+${P5SITE}/Mac/iTunes/Library/Item.pm
+${P5SITE}/Mac/iTunes/Library/Playlist.pm
+${P5SITE}/Mac/iTunes/Library/XML.pm
+@man man/man3p/Mac::iTunes::Library.3p
+@man man/man3p/Mac::iTunes::Library::Item.3p
+@man man/man3p/Mac::iTunes::Library::Playlist.3p
+@man man/man3p/Mac::iTunes::Library::XML.3p
+share/examples/p5-Mac-iTunes-Library/
+share/examples/p5-Mac-iTunes-Library/iTunesStats.pl
+share/examples/p5-Mac-iTunes-Library/scan.pl

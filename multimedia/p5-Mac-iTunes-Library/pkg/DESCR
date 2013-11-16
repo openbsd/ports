@@ -1,0 +1,4 @@
+This modules provides a data structure for representing a item (song,
+URL, video) within an iTunes library and a collection of items to make a
+library. It provides methods for parsing an iTunes XML formatted
+library.
