@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:35:51 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/11/17 04:02:58 merdely Exp $
 
 COMMENT= 	fast lookup of country codes by IP address
 
 MODULES=	cpan
-DISTNAME=	IP-Country-2.27
-REVISION=	0
+DISTNAME=	IP-Country-2.28
 CATEGORIES=	net
-USE_GROFF =	Yes
 
 MAINTAINER=	Michael Erdely <merdely@openbsd.org>
 
