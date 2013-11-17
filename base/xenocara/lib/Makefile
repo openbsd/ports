@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/11/01 09:58:05 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2013/11/17 09:45:50 espie Exp $
 SUBDIR =
 SUBDIR += fontconfig
 SUBDIR += freetype
@@ -38,6 +38,7 @@ SUBDIR += libXxf86vm
 SUBDIR += libdmx
 SUBDIR += libdrm
 SUBDIR += libfontenc
+SUBDIR += libglapi
 SUBDIR += libpciaccess
 SUBDIR += libpthread-stubs
 SUBDIR += libxcb
