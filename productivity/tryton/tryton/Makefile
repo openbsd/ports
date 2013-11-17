@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2013/10/28 08:17:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2013/11/17 08:41:58 ajacoutot Exp $
+
+MODPY_EGG_VERSION=	3.0.1
+REVISION=		#empty
 
 COMMENT=		client of the Tryton application platform
 
 DISTNAME=		tryton-${MODPY_EGG_VERSION}
-REVISION=		1
 
 CATEGORIES=		x11
 
