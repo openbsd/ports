@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/10/29 14:09:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2013/11/17 11:45:17 ajacoutot Exp $
 
 COMMENT=		base elements for GStreamer
 
@@ -41,6 +41,7 @@ LIB_DEPENDS=		${P}/core=${V} \
 			multimedia/libtheora
 
 # needed for the gio plugin
+BUILD_DEPENDS +=	x11/gnome/gvfs #needed at build time g-ir-compiler(1)
 RUN_DEPENDS +=		x11/gnome/gvfs
 
 CONFIGURE_ARGS=		--enable-sndio \
