@@ -1,8 +1,8 @@
-$OpenBSD: patch-bindings_metadata_WebKit-3_0_metadata,v 1.1 2013/11/17 10:26:27 landry Exp $
+$OpenBSD: patch-bindings_metadata_webkitgtk-2_2_WebKit-3_0_metadata,v 1.1 2013/11/17 11:21:39 landry Exp $
 http://redmine.yorba.org/projects/geary/repository/revisions/eed221bf3a3b49685f77ab15ce9233d716a347a9/diff/bindings/metadata/webkitgtk-2.2/WebKit-3.0.metadata
---- bindings/metadata/WebKit-3.0.metadata.orig	Sun Nov 17 11:17:23 2013
-+++ bindings/metadata/WebKit-3.0.metadata	Sun Nov 17 11:17:49 2013
-@@ -9,3 +9,14 @@ WebView.leaving_fullscreen#signal name="leaving_fullsc
+--- bindings/metadata/webkitgtk-2.2/WebKit-3.0.metadata.orig	Sun Nov 17 11:34:13 2013
++++ bindings/metadata/webkitgtk-2.2/WebKit-3.0.metadata	Sun Nov 17 11:34:30 2013
+@@ -11,3 +11,14 @@ WebView.leaving_fullscreen#signal name="leaving_fullsc
  WebView.move_cursor#virtual_method name="leaving_fullscreen_method"
  WebSettings.enable_default_context_menu#property deprecated=false
  

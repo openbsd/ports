@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2013/09/24 15:59:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2013/11/17 11:21:38 landry Exp $
 
 COMMENT =	lightweight mail user agent
 
-DISTNAME =	geary-0.3.1
-REVISION =	0
+DISTNAME =	geary-0.4.1
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 CATEGORIES =	mail
@@ -25,21 +24,18 @@ CONFIGURE_ARGS =-DGSETTINGS_COMPILE=OFF \
 		-DICON_UPDATE=OFF \
 		-DDESKTOP_UPDATE=OFF
 
-RUN_DEPENDS =	x11/gnome/keyring
-
 LIB_DEPENDS =	mail/gmime \
 		www/webkit,gtk3 \
 		audio/libcanberra \
 		devel/libnotify \
 		devel/libunique3 \
-		devel/libgee06 \
-		x11/gnome/libgnome-keyring
+		devel/libgee
 
 WANTLIB += atk-1.0 c cairo cairo-gobject sqlite3
 WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gnome-keyring gobject-2.0 gthread-2.0 gtk-3
+WANTLIB += gobject-2.0 gthread-2.0 gtk-3
 WANTLIB += javascriptcoregtk-3.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += soup-2.4 webkitgtk-3.0 gee
+WANTLIB += soup-2.4 webkitgtk-3.0 gee-0.8 secret-1 xml2
 WANTLIB += z canberra gmime-2.6 notify unique-3.0
 
 pre-configure:
