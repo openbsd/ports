@@ -1,3 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/11/01 09:58:05 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2013/11/17 09:29:20 espie Exp $
 COMPONENT = lib/libGLU
+XDEPS = lib/libGL
 .include <bsd.port.mk>
