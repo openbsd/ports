@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2013/11/14 22:30:30 fgsch Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2013/11/17 00:05:51 fgsch Exp $
 @bin bin/weechat
-bin/weechat-curses
 include/weechat/
 include/weechat/weechat-plugin.h
 lib/pkgconfig/weechat.pc
