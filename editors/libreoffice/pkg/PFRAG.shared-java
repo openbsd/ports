@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-java,v 1.6 2013/11/12 07:57:23 robert Exp $
+@comment $OpenBSD: PFRAG.shared-java,v 1.7 2013/11/17 11:45:52 robert Exp $
 lib/libreoffice/program/libhsqldb.so
 lib/libreoffice/program/libjdbclo.so
 lib/libreoffice/program/libofficebean.so
@@ -8,4 +8,6 @@ lib/libreoffice/ure/lib/libjavavmlo.so
 lib/libreoffice/ure/lib/libjpipe.so
 lib/libreoffice/ure/lib/libjuh.so
 lib/libreoffice/ure/lib/libjuhx.so
+lib/libreoffice/ure/lib/libjvmaccesslo.so
+lib/libreoffice/ure/lib/libjvmfwklo.so
 lib/libreoffice/ure/lib/libsunjavapluginlo.so
