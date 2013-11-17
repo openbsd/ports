@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/09/20 13:20:02 fgsch Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2013/11/17 11:32:10 ajacoutot Exp $
 @bin bin/skk
 include/libskk/
 include/libskk/libskk.h
@@ -7,6 +6,7 @@ lib/girepository-1.0/
 lib/girepository-1.0/Skk-1.0.typelib
 lib/libskk.a
 lib/libskk.la
+@lib lib/libskk.so.${LIBskk_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/libskk.pc
 @man man/man1/skk.1
@@ -28,6 +28,7 @@ share/libskk/rules/act/rom-kana/
 share/libskk/rules/act/rom-kana/default.json
 share/libskk/rules/azik/
 share/libskk/rules/azik/keymap/
+share/libskk/rules/azik/keymap/common.json
 share/libskk/rules/azik/keymap/default.json
 share/libskk/rules/azik/keymap/hankaku-katakana.json
 share/libskk/rules/azik/keymap/hiragana.json
