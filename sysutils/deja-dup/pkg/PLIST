@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2013/01/21 08:23:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2013/11/17 09:48:27 ajacoutot Exp $
 @bin bin/deja-dup
 @bin bin/deja-dup-preferences
 lib/deja-dup/
@@ -922,8 +922,6 @@ share/locale/fi/LC_MESSAGES/deja-dup.mo
 share/locale/fo/LC_MESSAGES/deja-dup.mo
 share/locale/fr/LC_MESSAGES/deja-dup.mo
 share/locale/fy/LC_MESSAGES/deja-dup.mo
-share/locale/gd/
-share/locale/gd/LC_MESSAGES/
 share/locale/gd/LC_MESSAGES/deja-dup.mo
 share/locale/gl/LC_MESSAGES/deja-dup.mo
 share/locale/he/LC_MESSAGES/deja-dup.mo

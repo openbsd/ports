@@ -1,0 +1,15 @@
+$OpenBSD: patch-widgets_WidgetUtils_vala,v 1.1 2013/11/17 09:48:27 ajacoutot Exp $
+
+Fix build with vala >=0.22.1.
+
+--- widgets/WidgetUtils.vala.orig	Sun Nov 17 10:26:59 2013
++++ widgets/WidgetUtils.vala	Sun Nov 17 10:38:52 2013
+@@ -60,7 +60,7 @@ public ShellEnv get_shell()
+       // Use Legacy unless we detect a different shell.
+       shell = ShellEnv.LEGACY;
+       // Next check for Shell by notification capabilities
+-      unowned List<string> caps = Notify.get_server_caps();
++      List<string> caps = Notify.get_server_caps();
+       bool persistence = false, actions = false;
+       foreach (string cap in caps) {
+         if (cap == "persistence")
