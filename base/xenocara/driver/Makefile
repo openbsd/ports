@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/11/01 09:58:05 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2013/11/17 10:42:37 espie Exp $
 
 SUBDIR =
 SUBDIR += xf86-input-acecad
@@ -28,6 +28,7 @@ SUBDIR += xf86-video-i740
 SUBDIR += xf86-video-intel
 SUBDIR += xf86-video-mach64
 SUBDIR += xf86-video-mga
+SUBDIR += xf86-video-modesetting
 SUBDIR += xf86-video-neomagic
 SUBDIR += xf86-video-nv
 SUBDIR += xf86-video-openchrome
