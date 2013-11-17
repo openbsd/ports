@@ -1,4 +1,4 @@
-# $OpenBSD: tcl.port.mk,v 1.15 2013/11/09 18:22:02 zhuk Exp $
+# $OpenBSD: tcl.port.mk,v 1.16 2013/11/17 11:08:03 zhuk Exp $
 
 CATEGORIES +=		lang/tcl
 
@@ -40,8 +40,7 @@ MODTCL_TCLSH_ADJ =	perl -pi \
 	-e '$$. >= 3 && $$. <= 30 && s!exec\s+(?:tcl|wi)sh.*$$!exec ${MODTCL_BIN} "\$$0" \$${1+"\$$@"}!;' \
 	-e 'close ARGV if eof;'
 
-
-# Same for 'wish'. Note the 'g' modifier.
+# Same for 'wish'.
 MODTCL_WISH_ADJ =	${MODTCL_TCLSH_ADJ:S/tclsh/wish/}
 
 SUBST_VARS +=		MODTCL_VERSION MODTCL_BIN
