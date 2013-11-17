@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.74 2013/10/16 10:28:25 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.75 2013/11/17 09:41:00 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -96,7 +96,7 @@ MODGNOME_CONFIGURE_ARGS_vala=--disable-vala --disable-vala-bindings
 
 .   if ${MODGNOME_TOOLS:Mvala}
         MODGNOME_CONFIGURE_ARGS_vala=--enable-vala --enable-vala-bindings
-        MODGNOME_BUILD_DEPENDS+=lang/vala>=0.22.0
+        MODGNOME_BUILD_DEPENDS+=lang/vala>=0.22.1
 .   endif
 
 .   if ${MODGNOME_TOOLS:Myelp}
