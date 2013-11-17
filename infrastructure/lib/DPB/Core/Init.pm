@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.14 2013/10/17 08:12:28 espie Exp $
+# $OpenBSD: Init.pm,v 1.15 2013/11/17 09:43:09 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -50,10 +50,10 @@ use DPB::Signature;
 
 sub new
 {
-	my ($class, $logger) = @_;
+	my ($class, $logger, $xenocara) = @_;
 	my $o = $class->SUPER::new('init');
 	$o->{logger} = $logger;
-	DPB::Signature->add_tasks($o);
+	DPB::Signature->add_tasks($xenocara, $o);
 	return $o;
 }
 
@@ -157,7 +157,7 @@ sub init_cores
 	my $stale = $state->stalelocks;
 	DPB::Core->set_logdir($logger->{logdir});
 	for my $core (values %$init) {
-		my $job = DPB::Job::Init->new($logger);
+		my $job = DPB::Job::Init->new($logger, $state->{xenocara});
 		if (!defined $core->prop->{jobs}) {
 			$job->add_tasks(DPB::Task::Ncpu->new);
 		}

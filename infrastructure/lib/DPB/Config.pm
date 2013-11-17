@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.23 2013/11/16 13:06:00 espie Exp $
+# $OpenBSD: Config.pm,v 1.24 2013/11/17 09:43:09 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -74,11 +74,20 @@ sub parse_command_line
 		$state->usage("Can't figure out who I am");
 	}
 	($state->{ports}, $state->{portspath}, $state->{repo}, $state->{localarch},
-	    $state->{distdir}, $state->{localbase}) =
+	    $state->{distdir}, $state->{localbase}, $state->{xenocara}) =
 		DPB::Vars->get(DPB::Host::Localhost->getshell($state), 
 		$state->make,
 		"PORTSDIR", "PORTSDIR_PATH", "PACKAGE_REPOSITORY", 
-		"MACHINE_ARCH", "DISTDIR", "LOCALBASE");
+		"MACHINE_ARCH", "DISTDIR", "LOCALBASE", 
+		"PORTS_BUILD_XENOCARA_TOO");
+    	if (!defined $state->{portspath}) {
+		$state->usage("Can't obtain vital information from the ports tree");
+	}
+	if ($state->{xenocara} =~ m/Yes/i) {
+		$state->{xenocara} = 1;
+	} else {
+		$state->{xenocara} = 0;
+	}
 	$state->{arch} //= $state->{localarch};
 	$state->{portspath} = [ map {$state->anchor($_)} split(/:/, $state->{portspath}) ];
 	$state->{realdistdir} = $state->anchor($state->{distdir});

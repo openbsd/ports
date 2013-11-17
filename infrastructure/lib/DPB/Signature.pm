@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Signature.pm,v 1.6 2013/10/06 13:33:34 espie Exp $
+# $OpenBSD: Signature.pm,v 1.7 2013/11/17 09:43:09 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -136,15 +136,25 @@ sub process
 package DPB::Signature;
 sub new
 {
-	my $class = shift;
-	bless {}, $class;
+	my ($class, $xenocara) = @_;
+	bless {xenocara => $xenocara}, $class;
+}
+
+sub library_dirs
+{
+	my $self = shift;
+	if ($self->{xenocara}) {
+		return ("/usr");
+	} else {
+		return OpenBSD::Paths->library_dirs;
+	}
 }
 
 sub add_tasks
 {
-	my ($class, $job) = @_;
-	$job->{signature} = $class->new;
-	for my $base (OpenBSD::Paths->library_dirs) {
+	my ($class, $xenocara, $job) = @_;
+	$job->{signature} = $class->new($xenocara);
+	for my $base ($job->{signature}->library_dirs) {
 		$job->add_tasks(
 		    DPB::Signature::Task->new($job->{signature}, $base));
 	}
@@ -154,7 +164,7 @@ sub compare
 {
 	my ($s1, $s2) = @_;
 	my $r = '';
-	for my $dir (OpenBSD::Paths->library_dirs) {
+	for my $dir ($s1->library_dirs) {
 		$r .= $s1->{$dir}->compare($s2->{$dir},
 		    $s1->{host}, $s2->{host});
 	}
@@ -193,7 +203,7 @@ sub print_out
 {
 	my ($self, $core, $logger) = @_;
 	my $log = $logger->create($core->hostname.".sig");
-	for my $dir (OpenBSD::Paths->library_dirs) {
+	for my $dir ($self->library_dirs) {
 		print $log "$dir: \n";
 		$self->{$dir}->print_out("$dir/lib", $log);
 	}
