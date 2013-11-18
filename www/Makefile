@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.641 2013/11/15 19:09:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.642 2013/11/18 16:49:58 merdely Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -321,6 +321,7 @@
      SUBDIR += p5-WWW-Google-SiteMap
      SUBDIR += p5-WWW-IndexParser
      SUBDIR += p5-WWW-Mechanize
+     SUBDIR += p5-WWW-Mechanize-GZip
      SUBDIR += p5-WWW-Mechanize-TreeBuilder
      SUBDIR += p5-WWW-Robot
      SUBDIR += p5-WWW-Search
