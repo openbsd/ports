@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.79 2013/10/18 21:08:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.80 2013/11/18 16:34:05 sthen Exp $
 
 COMMENT=	tty-based e-mail client, development version
 
 DISTNAME=	mutt-1.5.22
 EPOCH=		0
+REVISION=	0
+# http://prefix.gentooexperimental.org:8000/mutt-patches is useful
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mutt/} \
 		${MASTER_SITES_MUTT:=devel/}
 
@@ -29,7 +31,7 @@ WANTLIB+=	sasl2
 MUTTRCDIR=	doc/
 
 DIST_COMPRESSED=compressed-1.5.22.diff0.gz:2
-DIST_SIDEBAR=	sidebar-1.5.22.diff0.gz:2
+DIST_SIDEBAR=	sidebar-1.5.22.diff1.gz:2
 
 # http://cedricduval.free.fr/mutt/patches/
 PATCHFILES+=	trashfolder-1.5.22.diff0.gz:2
