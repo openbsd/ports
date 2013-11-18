@@ -1,0 +1,59 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/18 21:51:11 edd Exp $
+bin/arandr
+bin/unxrandr
+lib/python${MODPY_VERSION}/site-packages/arandr-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/screenlayout/
+lib/python${MODPY_VERSION}/site-packages/screenlayout/__init__.py
+lib/python${MODPY_VERSION}/site-packages/screenlayout/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/screenlayout/auxiliary.py
+lib/python${MODPY_VERSION}/site-packages/screenlayout/auxiliary.pyc
+lib/python${MODPY_VERSION}/site-packages/screenlayout/data/
+lib/python${MODPY_VERSION}/site-packages/screenlayout/data/gpl-3.txt
+lib/python${MODPY_VERSION}/site-packages/screenlayout/demo.py
+lib/python${MODPY_VERSION}/site-packages/screenlayout/demo.pyc
+lib/python${MODPY_VERSION}/site-packages/screenlayout/gui.py
+lib/python${MODPY_VERSION}/site-packages/screenlayout/gui.pyc
+lib/python${MODPY_VERSION}/site-packages/screenlayout/meta.py
+lib/python${MODPY_VERSION}/site-packages/screenlayout/meta.pyc
+lib/python${MODPY_VERSION}/site-packages/screenlayout/metacity.py
+lib/python${MODPY_VERSION}/site-packages/screenlayout/metacity.pyc
+lib/python${MODPY_VERSION}/site-packages/screenlayout/snap.py
+lib/python${MODPY_VERSION}/site-packages/screenlayout/snap.pyc
+lib/python${MODPY_VERSION}/site-packages/screenlayout/widget.py
+lib/python${MODPY_VERSION}/site-packages/screenlayout/widget.pyc
+lib/python${MODPY_VERSION}/site-packages/screenlayout/xrandr.py
+lib/python${MODPY_VERSION}/site-packages/screenlayout/xrandr.pyc
+@man man/man1/arandr.1
+@man man/man1/unxrandr.1
+share/applications/arandr.desktop
+share/locale/ar/LC_MESSAGES/arandr.mo
+share/locale/br/LC_MESSAGES/arandr.mo
+share/locale/bs/LC_MESSAGES/arandr.mo
+share/locale/ca/LC_MESSAGES/arandr.mo
+share/locale/da/LC_MESSAGES/arandr.mo
+share/locale/de/LC_MESSAGES/arandr.mo
+share/locale/el/LC_MESSAGES/arandr.mo
+share/locale/es/LC_MESSAGES/arandr.mo
+share/locale/fa/LC_MESSAGES/arandr.mo
+share/locale/fr/LC_MESSAGES/arandr.mo
+share/locale/gl/LC_MESSAGES/arandr.mo
+share/locale/hu/LC_MESSAGES/arandr.mo
+share/locale/it/LC_MESSAGES/arandr.mo
+share/locale/ja/LC_MESSAGES/arandr.mo
+share/locale/kn/LC_MESSAGES/arandr.mo
+share/locale/ko_KR/
+share/locale/ko_KR/LC_MESSAGES/
+share/locale/ko_KR/LC_MESSAGES/arandr.mo
+share/locale/lt/LC_MESSAGES/arandr.mo
+share/locale/nl/LC_MESSAGES/arandr.mo
+share/locale/pl/LC_MESSAGES/arandr.mo
+share/locale/pt_BR/LC_MESSAGES/arandr.mo
+share/locale/ro/LC_MESSAGES/arandr.mo
+share/locale/ru/LC_MESSAGES/arandr.mo
+share/locale/sk/LC_MESSAGES/arandr.mo
+share/locale/sv/LC_MESSAGES/arandr.mo
+share/locale/tr/LC_MESSAGES/arandr.mo
+share/locale/uk/LC_MESSAGES/arandr.mo
+share/locale/zh_CN/LC_MESSAGES/arandr.mo
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

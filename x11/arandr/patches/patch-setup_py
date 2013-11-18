@@ -1,0 +1,60 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2013/11/18 21:51:11 edd Exp $
+
+Do not compress manual pages and install them in the right place.
+
+--- setup.py.orig	Mon Mar  4 17:22:25 2013
++++ setup.py	Mon Nov 18 20:56:56 2013
+@@ -20,7 +20,6 @@ import os
+ import operator
+ import subprocess
+ import glob
+-import gzip
+ 
+ import docutils.core
+ import docutils.writers.manpage
+@@ -99,20 +98,19 @@ class build_man(NoOptionCommand):
+     def run(self):
+         self.mkpath('build')
+ 
+-        for (sourcefile, gzfile) in [
+-                ('data/arandr.1.txt', os.path.join('build', 'arandr.1.gz')),
+-                ('data/unxrandr.1.txt', os.path.join('build', 'unxrandr.1.gz')),
++        for (sourcefile, manfile) in [
++                ('data/arandr.1.txt', os.path.join('build', 'arandr.1')),
++                ('data/unxrandr.1.txt', os.path.join('build', 'unxrandr.1')),
+                 ]:
+ 
+-            if newer(sourcefile, gzfile):
++            if newer(sourcefile, manfile):
+                 rst_source = open(sourcefile).read()
+                 manpage = docutils.core.publish_string(rst_source, writer=docutils.writers.manpage.Writer())
+-                info('compressing man page to %s', gzfile)
++                info('writing man page to %s', manfile)
+ 
+                 if not self.dry_run:
+-                    compressed = gzip.open(gzfile, 'w', 9)
+-                    compressed.write(manpage)
+-                    compressed.close()
++                    with open(manfile, 'w') as fh:
++                        fh.write(manpage)
+ 
+ class build(_build):
+     sub_commands = _build.sub_commands + [('build_trans', None), ('build_man', None)]
+@@ -137,7 +135,7 @@ class clean(_clean):
+     def run(self):
+         if self.all:
+             dirs = ['build/locale']
+-            files = ['build/arandr.1.gz', 'build/unxrandr.1.gz']
++            files = ['build/arandr.1', 'build/unxrandr.1']
+             for directory in dirs:
+                 if os.path.exists(directory):
+                     remove_tree(directory, dry_run=self.dry_run)
+@@ -177,7 +175,7 @@ setup(name = PACKAGENAME,
+             },
+         data_files = [
+             ('share/applications', ['data/arandr.desktop']), # FIXME: use desktop-file-install?
+-            ('share/man/man1', ['build/arandr.1.gz', 'build/unxrandr.1.gz']),
++            ('man/man1', ['build/arandr.1', 'build/unxrandr.1']),
+             ],
+         scripts = ['arandr', 'unxrandr'],
+ )
