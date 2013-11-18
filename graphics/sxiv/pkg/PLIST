@@ -1,3 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/02/27 08:45:50 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/11/18 17:01:11 jung Exp $
 @bin bin/sxiv
 @man man/man1/sxiv.1
+share/examples/sxiv/
+share/examples/sxiv/image-info

@@ -1,14 +1,19 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:10:55 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/11/18 17:01:11 jung Exp $
 
 COMMENT =	simple (or small or suckless) X Image Viewer
 
-DISTNAME =	sxiv-1.0
+V=		1.1.1
+DISTNAME=	v${V}
+DIST_SUBDIR=	sxiv
+PKGNAME=	sxiv-${V}
 
 CATEGORIES =	graphics
 
 HOMEPAGE =	https://github.com/muennich/sxiv
 
 MAINTAINER =	Matthew Via <via@matthewvia.info>
+
+MASTER_SITES=	${HOMEPAGE}/archive/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =		Yes
@@ -21,8 +26,8 @@ MAKE_FLAGS =	CC=${CC} MANPREFIX=${PREFIX}/man \
 		CFLAGS="${CFLAGS} -I${X11BASE}/include -I${PREFIX}/include" \
 		LDFLAGS="-L${PREFIX}/lib -L${X11BASE}/lib -lX11 -lImlib2"
 
-MASTER_SITES =	https://github.com/muennich/sxiv/downloads/
-
 NO_TEST =	Yes
+
+WRKDIST=	${WRKDIR}/${PKGNAME}
 
 .include <bsd.port.mk>
