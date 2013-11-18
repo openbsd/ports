@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/18 16:49:14 merdely Exp $
+${P5SITE}/WWW/
+${P5SITE}/WWW/Mechanize/
+${P5SITE}/WWW/Mechanize/GZip.pm
+@man man/man3p/WWW::Mechanize::GZip.3p
