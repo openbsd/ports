@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_lib_ipc_CIpcClientProxy_cpp,v 1.4 2013/07/04 14:49:26 landry Exp $
+$OpenBSD: patch-src_lib_ipc_CIpcClientProxy_cpp,v 1.5 2013/11/18 23:56:35 bcallah Exp $
 
 On loongson/sparc64/hppa:
 Same as CIpcServerProxy.cpp
 
---- src/lib/ipc/CIpcClientProxy.cpp.orig	Mon Sep  3 22:09:56 2012
-+++ src/lib/ipc/CIpcClientProxy.cpp	Thu Apr 18 10:50:31 2013
-@@ -144,7 +144,11 @@ CIpcClientProxy::send(const CIpcMessage& message)
+--- src/lib/ipc/CIpcClientProxy.cpp.orig	Sat Jun 29 10:17:49 2013
++++ src/lib/ipc/CIpcClientProxy.cpp	Sun Nov 17 15:00:17 2013
+@@ -146,7 +146,11 @@ CIpcClientProxy::send(const CIpcMessage& message)
  	case kIpcLogLine: {
  		const CIpcLogLineMessage& llm = static_cast<const CIpcLogLineMessage&>(message);
  		CString logLine = llm.logLine();

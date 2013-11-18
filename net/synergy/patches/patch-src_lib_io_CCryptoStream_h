@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_lib_synergy_CCryptoStream_h,v 1.1 2013/05/17 18:53:24 dcoppa Exp $
---- src/lib/synergy/CCryptoStream.h.orig	Fri May 17 14:10:14 2013
-+++ src/lib/synergy/CCryptoStream.h	Fri May 17 14:10:46 2013
+$OpenBSD: patch-src_lib_io_CCryptoStream_h,v 1.1 2013/11/18 23:56:35 bcallah Exp $
+--- src/lib/io/CCryptoStream.h.orig	Sun Nov 17 15:04:03 2013
++++ src/lib/io/CCryptoStream.h	Sun Nov 17 15:04:14 2013
 @@ -20,8 +20,8 @@
  #include "BasicTypes.h"
  #include "CStreamFilter.h"

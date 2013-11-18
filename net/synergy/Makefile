@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2013/08/07 21:32:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2013/11/18 23:56:35 bcallah Exp $
 
 COMMENT=		mouse and keyboard sharing utility
 
-V=			1.4.12
+V=			1.4.15
 DISTNAME=		synergy-${V}-Source
 PKGNAME=		synergy-${V}
-REVISION=		1
 CATEGORIES=		net x11
 
 MAINTAINER=		Brian Callahan <bcallah@openbsd.org>

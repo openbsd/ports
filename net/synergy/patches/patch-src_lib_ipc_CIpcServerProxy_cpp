@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_lib_ipc_CIpcServerProxy_cpp,v 1.4 2013/07/04 14:49:26 landry Exp $
+$OpenBSD: patch-src_lib_ipc_CIpcServerProxy_cpp,v 1.5 2013/11/18 23:56:35 bcallah Exp $
 
 On loongson/sparc64/hppa:
 CIpcServerProxy.cpp: In member function 'void CIpcServerProxy::send(const CIpcMessage&)':
@@ -10,9 +10,9 @@ CIpcServerProxy.cpp:93: error: within this context
 
 gcc bug fixed in 4.3.3
 
---- src/lib/ipc/CIpcServerProxy.cpp.orig	Mon Sep  3 22:09:56 2012
-+++ src/lib/ipc/CIpcServerProxy.cpp	Thu Apr 18 10:50:31 2013
-@@ -91,7 +91,11 @@ CIpcServerProxy::send(const CIpcMessage& message)
+--- src/lib/ipc/CIpcServerProxy.cpp.orig	Sat Jun 29 10:17:49 2013
++++ src/lib/ipc/CIpcServerProxy.cpp	Sun Nov 17 15:00:17 2013
+@@ -94,7 +94,11 @@ CIpcServerProxy::send(const CIpcMessage& message)
  	case kIpcCommand: {
  		const CIpcCommandMessage& cm = static_cast<const CIpcCommandMessage&>(message);
  		CString command = cm.command();

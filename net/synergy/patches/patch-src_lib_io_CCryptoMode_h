@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_lib_synergy_CCryptoMode_h,v 1.1 2013/05/17 18:53:24 dcoppa Exp $
---- src/lib/synergy/CCryptoMode.h.orig	Fri May 17 14:10:03 2013
-+++ src/lib/synergy/CCryptoMode.h	Fri May 17 14:10:34 2013
+$OpenBSD: patch-src_lib_io_CCryptoMode_h,v 1.1 2013/11/18 23:56:35 bcallah Exp $
+--- src/lib/io/CCryptoMode.h.orig	Sun Nov 17 15:03:30 2013
++++ src/lib/io/CCryptoMode.h	Sun Nov 17 15:03:44 2013
 @@ -17,9 +17,9 @@
  
  #pragma once
