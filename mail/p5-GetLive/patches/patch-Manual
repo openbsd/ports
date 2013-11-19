@@ -1,7 +1,7 @@
-$OpenBSD: patch-Manual,v 1.4 2010/07/21 02:21:52 merdely Exp $
---- Manual.orig	Tue Jul 20 22:15:44 2010
-+++ Manual	Tue Jul 20 22:16:11 2010
-@@ -51,7 +51,7 @@ Following are the possible options :
+$OpenBSD: patch-Manual,v 1.5 2013/11/19 15:47:33 merdely Exp $
+--- Manual.orig	Tue Apr  2 17:10:46 2013
++++ Manual	Sat Nov 16 22:22:20 2013
+@@ -44,7 +44,7 @@ Following are the possible options :
                          web page via curl (the webpage fetcher behind the 
                          scenes)
        CurlBin         = CommandForCurl ('curl -k' by default).
