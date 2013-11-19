@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/09/26 14:56:13 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/11/19 17:29:18 jasper Exp $
 @conflict cogl-<1.8.0
 include/clutter-${API_VERSION}/
 include/clutter-${API_VERSION}/cally/
@@ -392,6 +392,7 @@ share/locale/fr/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/gl/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/he/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/hi/LC_MESSAGES/clutter-${API_VERSION}.mo
+share/locale/hu/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/id/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/it/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/ja/LC_MESSAGES/clutter-${API_VERSION}.mo
