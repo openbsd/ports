@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2013/10/16 15:04:07 bluhm Exp $
+# $OpenBSD: Makefile,v 1.106 2013/11/19 07:30:58 robert Exp $
 
 # XXX fix procmap (Memory Writable column in gnome-system-monitor); remove lsof hack
 
@@ -7,7 +7,7 @@ COMMENT=		portable library for obtaining system information
 GNOME_VERSION=		2.28.5
 GNOME_PROJECT=		libgtop
 PKGNAME=		libgtop2-${VERSION}
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS=		gtop-2.0	9.0	# .9.0
 
