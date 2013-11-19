@@ -1,0 +1,22 @@
+$OpenBSD: patch-report_c,v 1.1 2013/11/19 16:39:26 sthen Exp $
+
+From 57f2d65e8fd5b00ae80cf74ed60eb5a8647c4658 Mon Sep 17 00:00:00 2001
+From: Roger Wolff <R.E.Wolff@BitWizard.nl>
+Date: Thu, 4 Jul 2013 12:37:39 +0200
+Subject: [PATCH] fix for NetBSD: 64bit time_t -- Thomas Klausner
+
+--- report.c.orig	Mon May 13 11:22:54 2013
++++ report.c	Sun Nov 17 16:45:59 2013
+@@ -343,10 +343,10 @@ void csv_close(time_t now)
+     if(!ipinfo_no) {
+       char* fmtinfo = fmt_ipinfo(addr);
+       if (fmtinfo != NULL) fmtinfo = trim(fmtinfo);
+-      printf("MTR.%s;%lu;%s;%s;%d;%s;%s;%d", MTR_VERSION, now, "OK", Hostname,
++      printf("MTR.%s;%lld;%s;%s;%d;%s;%s;%d", MTR_VERSION, (long long)now, "OK", Hostname,
+              at+1, name, fmtinfo, last);
+     } else {
+-      printf("MTR.%s;%lu;%s;%s;%d;%s;%d", MTR_VERSION, now, "OK", Hostname,
++      printf("MTR.%s;%lld;%s;%s;%d;%s;%d", MTR_VERSION, (long long)now, "OK", Hostname,
+              at+1, name, last);
+     }
+ 
