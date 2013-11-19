@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/06/04 23:46:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2013/11/19 17:59:29 sthen Exp $
 
      SUBDIR =
      SUBDIR += blogbench
@@ -16,6 +16,7 @@
      SUBDIR += randread
      SUBDIR += siege
      SUBDIR += smtp-benchmark
+     SUBDIR += speedtest-cli
      SUBDIR += sysbench
      SUBDIR += sysbench,mysql
      SUBDIR += sysbench,pgsql
