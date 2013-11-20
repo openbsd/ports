@@ -1,0 +1,60 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/20 20:57:29 landry Exp $
+bin/${MOZILLA_PROJECT}-esr
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/application.ini
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/blocklist.xml
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/chrome/
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/chrome.manifest
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/chrome/icons/
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/chrome/icons/default/
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/chrome/icons/default/default.png
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/chrome/icons/default/default16.png
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/chrome/icons/default/default32.png
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/chrome/icons/default/default48.png
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/components/
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/components/components.manifest
+@lib lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/components/libbrowsercomps.so.${LIBbrowsercomps_VERSION}
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/extensions/
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/icon.png
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/icons/
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/icons/mozicon128.png
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/omni.ja
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/searchplugins/
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/searchplugins/amazondotcom.xml
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/searchplugins/bing.xml
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/searchplugins/eBay.xml
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/searchplugins/google.xml
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/searchplugins/twitter.xml
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/searchplugins/wikipedia.xml
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/searchplugins/yahoo.xml
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/chrome.manifest
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/components/
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/components/components.manifest
+@lib lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/components/libmozgnome.so.${LIBmozgnome_VERSION}
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/defaults/
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/defaults/pref/
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/defaults/pref/channel-prefs.js
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/dependentlibs.list
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/dictionaries/
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/dictionaries/en-US.aff
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/dictionaries/en-US.dic
+@bin lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/${MOZILLA_PROJECT}-esr
+@bin lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/${MOZILLA_PROJECT}-esr-bin
+@lib lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/libmozalloc.so.${LIBmozalloc_VERSION}
+@lib lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/libxul.so.${LIBxul_VERSION}
+@bin lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/mozilla-xremote-client
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/omni.ja
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/platform.ini
+@bin lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/plugin-container
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/removed-files
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/run-mozilla.sh
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/webapprt/
+@bin lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/webapprt-stub
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/webapprt/omni.ja
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/webapprt/webapprt.ini
+share/applications/${MOZILLA_PROJECT}-esr.desktop
+share/pixmaps/
+share/pixmaps/${MOZILLA_PROJECT}-esr.png

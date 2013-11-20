@@ -1,0 +1,19 @@
+$OpenBSD: patch-storage_src_mozStorageConnection_cpp,v 1.1.1.1 2013/11/20 20:57:29 landry Exp $
+set secure_delete PRAGMA on by default, instead of using internal sqlite copy
+https://bugzilla.mozilla.org/show_bug.cgi?id=546162
+--- storage/src/mozStorageConnection.cpp.orig	Wed Nov 13 01:09:34 2013
++++ storage/src/mozStorageConnection.cpp	Wed Nov 20 20:51:13 2013
+@@ -602,6 +602,13 @@ Connection::initializeInternal(nsIFile* aDatabaseFile)
+     return convertResultCode(srv);
+   }
+ 
++  srv = ::sqlite3_exec(mDBConn, "PRAGMA secure_delete = ON", NULL, NULL, NULL);
++  if (srv != SQLITE_OK) {
++    ::sqlite3_close(mDBConn);
++    mDBConn = nullptr;
++    return convertResultCode(srv);
++  }
++
+   // Set the synchronous PRAGMA, according to the preference.
+   switch (Service::getSynchronousPref()) {
+     case 2:
