@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/20 20:58:42 landry Exp $
+lib/firefox-esr-${V}/browser/extensions/langpack-${L}@firefox.mozilla.org.xpi
