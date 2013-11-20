@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.64 2013/11/20 15:57:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2013/11/20 15:58:31 sthen Exp $
 
 COMMENT =	sophisticated scripter based on Tcl/Tk
 
 VERSION =	5.45
 DISTNAME =	expect${VERSION}
 PKGNAME =	expect-${VERSION}
-REVISION =	0
+REVISION =	1
 SHARED_LIBS =	expect545 0.0
 CATEGORIES =	lang
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=expect/}
@@ -33,5 +33,8 @@ CONFIGURE_ENV +=	SHLIB_VERSION=${LIBexpect545_VERSION} \
 
 FAKE_FLAGS =		PKG_DIR=expect
 TEST_TARGET =		test
+
+post-configure:
+	${MODTCL_TCLSH_ADJ} ${WRKSRC}/example/*
 
 .include <bsd.port.mk>
