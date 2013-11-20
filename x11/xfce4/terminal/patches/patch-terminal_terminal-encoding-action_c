@@ -1,0 +1,40 @@
+$OpenBSD: patch-terminal_terminal-encoding-action_c,v 1.1 2013/11/20 15:48:57 landry Exp $
+https://bugzilla.xfce.org/show_bug.cgi?id=10395
+https://bugzilla.xfce.org/attachment.cgi?id=5186
+--- terminal/terminal-encoding-action.c.orig	Sun May  5 20:59:59 2013
++++ terminal/terminal-encoding-action.c	Wed Nov 20 16:44:35 2013
+@@ -253,7 +253,7 @@ terminal_encoding_action_menu_shown (GtkWidget        
+   /* action to reset to the default */
+   default_label = g_strdup_printf (_("Default (%s)"), default_charset);
+   item = gtk_radio_menu_item_new_with_label (groups, default_label);
+-  groups = g_slist_prepend (groups, item);
++  groups = gtk_radio_menu_item_get_group (GTK_RADIO_MENU_ITEM (item));
+   gtk_menu_shell_append (GTK_MENU_SHELL (menu), item);
+   gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (item), found);
+   g_signal_connect (G_OBJECT (item), "activate",
+@@ -267,7 +267,6 @@ terminal_encoding_action_menu_shown (GtkWidget        
+       /* category item */
+       item = gtk_menu_item_new_with_label (_(terminal_encodings_names[n]));
+       gtk_menu_shell_append (GTK_MENU_SHELL (menu), item);
+-      groups = g_slist_prepend (groups, item);
+       gtk_widget_show (item);
+ 
+       submenu = gtk_menu_new ();
+@@ -281,7 +280,7 @@ terminal_encoding_action_menu_shown (GtkWidget        
+             break;
+ 
+           item2 = gtk_radio_menu_item_new_with_label (groups, charset);
+-          groups = g_slist_prepend (groups, item2);
++          groups = gtk_radio_menu_item_get_group (GTK_RADIO_MENU_ITEM (item2));
+           gtk_menu_shell_append (GTK_MENU_SHELL (submenu), item2);
+           g_object_set_qdata (G_OBJECT (item2), encoding_action_quark, (gchar *) charset);
+           gtk_widget_show (item2);
+@@ -304,7 +303,7 @@ terminal_encoding_action_menu_shown (GtkWidget        
+     {
+       /* add an action with the unknown charset */
+       item2 = gtk_radio_menu_item_new_with_label (groups, action->current);
+-      groups = g_slist_prepend (groups, item2);
++      groups = gtk_radio_menu_item_get_group (GTK_RADIO_MENU_ITEM (item2));
+       g_object_set_qdata_full (G_OBJECT (item2), encoding_action_quark,
+                                g_strdup (action->current), g_free);
+       gtk_menu_shell_append (GTK_MENU_SHELL (submenu), item2);
