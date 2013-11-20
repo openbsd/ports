@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.9 2013/10/28 08:53:52 bentley Exp $
+# $OpenBSD: Makefile,v 1.10 2013/11/20 03:43:05 bentley Exp $
 
 COMMENT=	ex/vi text editor with wide character support
 
-# commit 5394b0b0eb611d07c07cdb3552b247b9f11dc30e
-DISTNAME=	nvi-2.1.1
+V =		2.1.2
+DISTNAME =	nvi-${V}
 CATEGORIES=	editors
 HOMEPAGE=	https://github.com/lichray/nvi2
-REVISION=	2
 
 MAINTAINER =	Anthony J. Bentley <anthony@cathet.us>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	http://shell.uugrn.org/~naddy/
+MASTER_SITES =	https://github.com/bentley/nvi2/releases/download/v${V}/
 
 WANTLIB=	c ncursesw util
 

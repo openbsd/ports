@@ -1,17 +1,31 @@
-$OpenBSD: patch-build_CMakeLists_txt,v 1.2 2012/10/13 08:13:51 dcoppa Exp $
---- build/CMakeLists.txt.orig	Mon Oct  8 12:43:04 2012
-+++ build/CMakeLists.txt	Mon Oct  8 12:45:53 2012
-@@ -28,10 +28,10 @@ if(DEBUG)
- 		"-fstack-protector -Wstack-protector"
- 		"-fstrict-aliasing -Wstrict-aliasing")
+$OpenBSD: patch-build_CMakeLists_txt,v 1.3 2013/11/20 03:43:05 bentley Exp $
+--- build/CMakeLists.txt.orig	Sat Nov 16 23:27:11 2013
++++ build/CMakeLists.txt	Sat Nov 16 23:27:18 2013
+@@ -29,17 +29,17 @@ if(DEBUG)
+ 		"-Wstack-protector -fstack-protector"
+ 		"-Wstrict-aliasing -fstrict-aliasing")
  	join("${_arg_str}" CMAKE_C_FLAGS)
 -else(DEBUG)
 -	set(_arg_str "${CMAKE_C_FLAGS} -ansi -O2"
--		"-Wuninitialized")
+-		"-Wuninitialized"
+-		"-Wstack-protector -fstack-protector")
+-	if("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
+-		set(_arg_str "${_arg_str}"
+-			"-Wno-dangling-else"
+-			# avoid the "argument unused" error in clang
+-			"-Qunused-arguments")
+-	endif()
 -	join("${_arg_str}" CMAKE_C_FLAGS)
 +#else(DEBUG)
 +#	set(_arg_str "${CMAKE_C_FLAGS} -ansi -O2"
-+#		"-Wuninitialized")
++#		"-Wuninitialized"
++#		"-Wstack-protector -fstack-protector")
++#	if("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
++#		set(_arg_str "${_arg_str}"
++#			"-Wno-dangling-else"
++#			# avoid the "argument unused" error in clang
++#			"-Qunused-arguments")
++#	endif()
 +#	join("${_arg_str}" CMAKE_C_FLAGS)
  endif(DEBUG)
  
