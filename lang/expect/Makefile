@@ -1,39 +1,37 @@
-# $OpenBSD: Makefile,v 1.63 2013/06/26 04:56:43 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.64 2013/11/20 15:57:42 sthen Exp $
 
-COMMENT=	sophisticated scripter based on Tcl/Tk
+COMMENT =	sophisticated scripter based on Tcl/Tk
 
 VERSION =	5.45
-DISTNAME=	expect${VERSION}
+DISTNAME =	expect${VERSION}
 PKGNAME =	expect-${VERSION}
 REVISION =	0
-SHARED_LIBS=	expect545 0.0
-CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=expect/}
+SHARED_LIBS =	expect545 0.0
+CATEGORIES =	lang
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=expect/}
 
-HOMEPAGE=	http://expect.nist.gov/
-MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
+HOMEPAGE =	http://expect.nist.gov/
+MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # PD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES=	lang/tcl
-WANTLIB +=	${MODTCL_WANTLIB}
-WANTLIB += 	c util m
-LIB_DEPENDS +=	${MODTCL_LIB_DEPENDS}
+WANTLIB += c util m ${MODTCL_WANTLIB}
 
-SEPARATE_BUILD=	Yes
-AUTOCONF_VERSION = 2.59
-CONFIGURE_STYLE=autoconf no-autoheader
-CONFIGURE_ARGS+=${CONFIGURE_SHARED}
+MODULES =		lang/tcl
+LIB_DEPENDS +=		${MODTCL_LIB_DEPENDS}
 
-CONFIGURE_ARGS+=--with-tclconfig="${MODTCL_LIBDIR}" \
-		--with-tclinclude="${MODTCL_INCDIR}"
-CONFIGURE_ENV+=	SHLIB_VERSION=${LIBexpect545_VERSION} \
-		CFLAGS="-I${MODTCL_INCDIR}"
+SEPARATE_BUILD =	Yes
+AUTOCONF_VERSION =	2.59
+CONFIGURE_STYLE =	autoconf no-autoheader
+CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
+			--libdir=${MODTCL_TCLDIR} \
+			--with-tclconfig="${MODTCL_LIBDIR}" \
+			--with-tclinclude="${MODTCL_INCDIR}"
+CONFIGURE_ENV +=	SHLIB_VERSION=${LIBexpect545_VERSION} \
+			CFLAGS="-I${MODTCL_INCDIR}"
 
-CONFIGURE_ARGS+=--libdir=${MODTCL_TCLDIR}
-
-FAKE_FLAGS =		PKG_DIR=expect	
-TEST_TARGET =	test
+FAKE_FLAGS =		PKG_DIR=expect
+TEST_TARGET =		test
 
 .include <bsd.port.mk>
