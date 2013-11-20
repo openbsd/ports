@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2013/10/26 08:02:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.94 2013/11/20 08:53:06 ajacoutot Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # audio/pulseaudio and x11/xfce4/xfce4-mixer
@@ -18,7 +18,7 @@ PKGNAME-dv=		gstreamer-dv-${V}
 PKGNAME-caca=		gstreamer-libcaca-${V}
 EPOCH-main=		0
 
-REVISION-main=		9
+REVISION-main=		10
 REVISION-aalib=		4
 REVISION-dv=		4
 REVISION-caca=		4
@@ -35,7 +35,7 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 pthread
 WANTLIB += pcre xml2 m z gstreamer-0.10 gstbase-0.10 ffi
 
 WANTLIB-main += ${WANTLIB} ${MODGCONF2_WANTLIB}
-WANTLIB-main += FLAC ICE SM X11 Xau Xdamage Xext Xfixes Xrender
+WANTLIB-main += FLAC ICE SM X11 Xdamage Xext Xfixes Xrender
 WANTLIB-main += Xv bz2 cairo cairo-gobject dbus-1 dbus-glib-1
 WANTLIB-main += expat fontconfig freetype gdk_pixbuf-2.0
 WANTLIB-main += gio-2.0 gstaudio-0.10 gstcontroller-0.10 xcb-shm

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2013/04/28 18:07:33 shadchin Exp $
+# $OpenBSD: Makefile,v 1.56 2013/11/20 08:53:06 ajacoutot Exp $
 
 COMMENT=		base elements for GStreamer
 
@@ -6,7 +6,7 @@ V=			0.10.36
 DISTNAME=		gst-plugins-base-${V}
 PKGNAME=		gstreamer-plugins-base-${V}
 
-REVISION=		6
+REVISION=		7
 
 SHARED_LIBS +=  gstinterfaces-0.10   2.6      # .25.0
 SHARED_LIBS +=  gsttag-0.10          2.6      # .25.0
@@ -22,15 +22,14 @@ SHARED_LIBS +=  gstcdda-0.10         2.6      # .25.0
 SHARED_LIBS +=  gstriff-0.10         2.6      # .25.0
 SHARED_LIBS +=  gstrtsp-0.10         2.6      # .25.0
 
-WANTLIB += GL ICE SM X11 Xau Xdamage Xdmcp Xext Xfixes Xrender
-WANTLIB += Xv Xxf86vm c cairo cdda_interface cdda_paranoia drm
+WANTLIB += ICE SM X11 Xext Xrender Xv c cairo cdda_interface cdda_paranoia
 WANTLIB += expat ffi fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gstbase-0.10 gstcontroller-0.10 gstdataprotocol-0.10
-WANTLIB += gstreamer-0.10 gthread-2.0 m ogg orc-0.4 orc-test-0.4
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs stdc++ theoradec theoraenc
-WANTLIB += vorbis vorbisenc vorbisidec xcb xcb-render xcb-shm
-WANTLIB += xml2 z
+WANTLIB += gobject-2.0 graphite2 gstbase-0.10 gstcontroller-0.10
+WANTLIB += gstdataprotocol-0.10 gstreamer-0.10 gthread-2.0 harfbuzz
+WANTLIB += m ogg orc-0.4 orc-test-0.4 pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += theoradec theoraenc vorbis vorbisenc vorbisidec xcb
+WANTLIB += xcb-render xcb-shm xml2 z
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-base/}
 
