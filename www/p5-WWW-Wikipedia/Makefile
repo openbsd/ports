@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:44:47 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/11/21 20:40:46 gsoares Exp $
 
 COMMENT=		automated interface to the Wikipedia encyclopedia
 
-DISTNAME=		WWW-Wikipedia-2.00
+DISTNAME=		WWW-Wikipedia-2.01
 CATEGORIES=		www
 
 MAINTAINER=		Gleydson Soares <gsoares@openbsd.org>
