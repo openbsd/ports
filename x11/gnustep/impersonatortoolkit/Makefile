@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/10/21 11:09:38 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2013/11/21 16:05:49 sebastia Exp $
 
 COMMENT =	web cookies sniffer and providing proxy
 
 ONLY_FOR_ARCHS =	${MODCLANG_ARCHS}
 
-DISTNAME =	ImpersonatorToolKit-0.1
+DISTNAME =	ImpersonatorToolKit-0.2
 CATEGORIES =	net security
 
 HOMEPAGE =	http://gna.org/projects/gnustep-nonfsf
-MASTER_SITES =	https://www.l00-bugdead-prods.de/distfiles/
+MASTER_SITES =	http://download.gna.org/gnustep-nonfsf/
 
 MODULES =	x11/gnustep
 WANTLIB +=	pthread PcapKit
