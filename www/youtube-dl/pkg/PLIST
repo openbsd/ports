@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2013/11/14 08:19:07 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.16 2013/11/21 13:46:06 dcoppa Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -26,6 +26,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/__init__.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/addanime.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/addanime.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/anitube.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/anitube.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/appletrailers.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/appletrailers.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/archiveorg.py
@@ -70,6 +72,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/criterion.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/criterion.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cspan.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cspan.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/d8.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/d8.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/dailymotion.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/dailymotion.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/daum.py
@@ -256,6 +260,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tf1.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/tf1.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/thisav.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/thisav.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/toutv.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/toutv.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/traileraddict.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/traileraddict.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/trilulilu.py
