@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/10/23 05:25:12 sebastia Exp $
+# $OpenBSD: Makefile,v 1.3 2013/11/21 16:04:05 sebastia Exp $
 
 COMMENT =	GNUstep wrapper around libpcap
 
-V =		0.1
-REVISION =	0
+V =		0.2
 DISTNAME =	PcapKit-${V}
 PKGNAME =	gnustep-pcapkit-${V}
 CATEGORIES =	net
@@ -11,7 +10,7 @@ CATEGORIES =	net
 SHARED_LIBS =	PcapKit 0.0
 
 HOMEPAGE =	http://gna.org/projects/gnustep-nonfsf
-MASTER_SITES =	https://www.l00-bugdead-prods.de/distfiles/
+MASTER_SITES =	http://download.gna.org/gnustep-nonfsf/
 
 MODULES =	x11/gnustep
 WANTLIB =	pthread pcap
