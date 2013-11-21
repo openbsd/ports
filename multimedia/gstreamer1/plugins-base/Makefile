@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.20 2013/11/17 11:45:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2013/11/21 16:59:59 ajacoutot Exp $
 
 COMMENT=		base elements for GStreamer
 
 DISTNAME=		gst-plugins-base-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-base-${V}
-REVISION=		1
 
-SHARED_LIBS +=  gsttag-1.0           1.0      # 200.0
-SHARED_LIBS +=  gstaudio-1.0         1.0      # 200.0
-SHARED_LIBS +=  gstfft-1.0           1.0      # 200.0
-SHARED_LIBS +=  gstrtp-1.0           1.0      # 200.0
-SHARED_LIBS +=  gstsdp-1.0           1.0      # 200.0
-SHARED_LIBS +=  gstvideo-1.0         1.0      # 200.0
-SHARED_LIBS +=  gstapp-1.0           1.0      # 200.0
-SHARED_LIBS +=  gstrtsp-1.0          1.0      # 200.0
-SHARED_LIBS +=  gstpbutils-1.0       1.0      # 200.0
-SHARED_LIBS +=  gstriff-1.0          1.0      # 200.0
-SHARED_LIBS +=  gstallocators-1.0    0.0      # 200.0
+SHARED_LIBS +=  gsttag-1.0           1.0      # 201.0
+SHARED_LIBS +=  gstaudio-1.0         1.0      # 201.0
+SHARED_LIBS +=  gstfft-1.0           1.0      # 201.0
+SHARED_LIBS +=  gstrtp-1.0           1.0      # 201.0
+SHARED_LIBS +=  gstsdp-1.0           1.0      # 201.0
+SHARED_LIBS +=  gstvideo-1.0         1.0      # 201.0
+SHARED_LIBS +=  gstapp-1.0           1.0      # 201.0
+SHARED_LIBS +=  gstrtsp-1.0          1.0      # 201.0
+SHARED_LIBS +=  gstpbutils-1.0       1.0      # 201.0
+SHARED_LIBS +=  gstriff-1.0          1.0      # 201.0
+SHARED_LIBS +=  gstallocators-1.0    0.0      # 201.0
 
 WANTLIB += ICE SM X11 Xext Xrender Xv c cairo cdda_interface cdda_paranoia
 WANTLIB += expat ffi fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
@@ -41,7 +40,6 @@ LIB_DEPENDS=		${P}/core=${V} \
 			multimedia/libtheora
 
 # needed for the gio plugin
-BUILD_DEPENDS +=	x11/gnome/gvfs #needed at build time g-ir-compiler(1)
 RUN_DEPENDS +=		x11/gnome/gvfs
 
 CONFIGURE_ARGS=		--enable-sndio \
