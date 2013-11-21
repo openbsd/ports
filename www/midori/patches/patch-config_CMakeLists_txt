@@ -1,0 +1,17 @@
+$OpenBSD: patch-config_CMakeLists_txt,v 1.1 2013/11/21 16:10:46 landry Exp $
+--- config/CMakeLists.txt.orig	Wed Nov 20 02:26:52 2013
++++ config/CMakeLists.txt	Thu Nov 21 16:11:48 2013
+@@ -1,10 +1,12 @@
+ # Copyright (C) 2013 Olivier Duchateau
+ 
+ set (SYSCONFDIR ${CMAKE_INSTALL_FULL_SYSCONFDIR})
+-set (XDG_CONFIG_DIR "xdg/${CMAKE_PROJECT_NAME}")
++set (XDG_CONFIG_DIR "examples/${CMAKE_PROJECT_NAME}")
++set(CMAKE_INSTALL_SYSCONFDIR "${CMAKE_INSTALL_PREFIX}/share")
+ 
+ file (GLOB_RECURSE CONFIG_FILES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *)
+ list (REMOVE_ITEM CONFIG_FILES "CMakeLists.txt")
++list (REMOVE_ITEM CONFIG_FILES "CMakeLists.txt.orig")
+ 
+ if (${CMAKE_INSTALL_PREFIX} STREQUAL "/usr")
+     set(CMAKE_INSTALL_SYSCONFDIR "/etc")
