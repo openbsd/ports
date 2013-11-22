@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 10:50:26 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/11/22 15:40:22 sthen Exp $
 
 COMMENT=	specific Python bindings for OpenBSD
 
 V=		0.1.2
 DISTNAME=	pyopenbsd-${V}
 PKGNAME=	py-openbsd-${V}
-REVISION=	11
+REVISION=	12
 CATEGORIES=	devel
 
 HOMEPAGE=	http://dev.nullcube.com/
