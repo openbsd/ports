@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_m4_texinfo,v 1.5 2012/01/06 23:08:01 sthen Exp $
---- doc/m4.texinfo.orig	Mon Feb 28 09:42:52 2011
-+++ doc/m4.texinfo	Wed Jan  4 18:53:24 2012
+$OpenBSD: patch-doc_m4_texi,v 1.1 2013/11/22 19:53:46 brad Exp $
+--- doc/m4.texi.orig	Thu Nov 21 01:49:41 2013
++++ doc/m4.texi	Thu Nov 21 01:50:33 2013
 @@ -4,6 +4,7 @@
  @setfilename m4.info
  @include version.texi
