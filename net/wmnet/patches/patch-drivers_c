@@ -1,7 +1,7 @@
-$OpenBSD: patch-drivers_c,v 1.4 2013/11/22 15:35:22 sthen Exp $
---- drivers.c.orig	Fri May  5 01:34:29 2000
-+++ drivers.c	Fri Nov 22 15:32:16 2013
-@@ -9,35 +9,40 @@
+$OpenBSD: patch-drivers_c,v 1.5 2013/11/22 15:38:30 sthen Exp $
+--- drivers.c.orig	Thu May  4 18:34:29 2000
++++ drivers.c	Fri Nov 22 08:34:50 2013
+@@ -9,35 +9,41 @@
   *  great, but please send me the diff.  
   */
  
@@ -39,6 +39,7 @@ $OpenBSD: patch-drivers_c,v 1.4 2013/11/22 15:35:22 sthen Exp $
 -#include<kvm.h>
 -#include<nlist.h>
 +#include <net/if.h>
++#include <net/if_var.h>
 +#include <kvm.h>
 +#include <nlist.h>
  
@@ -59,7 +60,7 @@ $OpenBSD: patch-drivers_c,v 1.4 2013/11/22 15:35:22 sthen Exp $
  #ifdef USE_LINUX_PPP
  #include<net/ppp_defs.h>
  
-@@ -57,18 +62,6 @@ static struct ifpppstatsreq ppp_stats_req;
+@@ -57,18 +63,6 @@ static struct ifpppstatsreq ppp_stats_req;
  #define ACCOUNT_IN_FOUND        1
  #define ACCOUNT_OUT_FOUND       2
  
@@ -78,7 +79,7 @@ $OpenBSD: patch-drivers_c,v 1.4 2013/11/22 15:35:22 sthen Exp $
  #ifdef USE_IPFWADM
  int updateStats_ipfwadm(void);
  int ipfwadm_test(void);
-@@ -82,10 +75,8 @@ int updateStats_dev(void);
+@@ -82,10 +76,8 @@ int updateStats_dev(void);
  int dev_test(void);
  #endif
  
@@ -90,7 +91,7 @@ $OpenBSD: patch-drivers_c,v 1.4 2013/11/22 15:35:22 sthen Exp $
   parser_func function;
   parser_func test;
  } drivers[] = {
-@@ -102,12 +93,13 @@ static struct drivers_struct {
+@@ -102,12 +94,13 @@ static struct drivers_struct {
   {"pppstats",updateStats_ppp, ppp_test},
  #endif
  #ifdef USE_KVM
@@ -106,7 +107,7 @@ $OpenBSD: patch-drivers_c,v 1.4 2013/11/22 15:35:22 sthen Exp $
   int ind = 0;
   int len = 0;
   char *string, *ptr;
-@@ -127,14 +119,12 @@ char* available_drivers(void) {
+@@ -127,14 +120,12 @@ char* available_drivers(void) {
   *(--string) = '\0';
   return ptr; 
  } 
@@ -124,7 +125,7 @@ $OpenBSD: patch-drivers_c,v 1.4 2013/11/22 15:35:22 sthen Exp $
    }
    ind++;
   }
-@@ -143,12 +133,13 @@ parser_func find_driver(void) {
+@@ -143,12 +134,13 @@ parser_func find_driver(void) {
  }
  
  
@@ -141,7 +142,7 @@ $OpenBSD: patch-drivers_c,v 1.4 2013/11/22 15:35:22 sthen Exp $
      fprintf(stderr, "wmnet: driver %s not appropriate for this machine\n", parser_name);
      exit(18);
    }
-@@ -157,10 +148,7 @@ parser_func setup_driver(char * parser_name) {
+@@ -157,10 +149,7 @@ parser_func setup_driver(char * parser_name) {
   fprintf(stderr, "wmnet: no driver %s\n", parser_name);
   exit(18);
  }
@@ -152,7 +153,7 @@ $OpenBSD: patch-drivers_c,v 1.4 2013/11/22 15:35:22 sthen Exp $
  #ifdef linux
  /* All the data gathering is done in here. 
   * Return True if no change to tx/rx.
-@@ -441,48 +429,60 @@ int updateStats_ppp(void) {
+@@ -441,48 +430,60 @@ int updateStats_ppp(void) {
  #endif /* linux */
  
  #ifdef USE_KVM
@@ -237,7 +238,7 @@ $OpenBSD: patch-drivers_c,v 1.4 2013/11/22 15:35:22 sthen Exp $
          }
          flag = (ACCOUNT_IN_FOUND|ACCOUNT_OUT_FOUND);
  
-@@ -498,12 +498,8 @@ int kvm_updateStats(void) {
+@@ -498,12 +499,8 @@ int kvm_updateStats(void) {
  /* return True if no change to tx/rx
   * return False if display will need to be updated
   */	 
