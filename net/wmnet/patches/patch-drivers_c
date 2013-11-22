@@ -1,6 +1,6 @@
-$OpenBSD: patch-drivers_c,v 1.3 2010/03/23 08:53:32 sthen Exp $
---- drivers.c.orig	Fri May  5 06:34:29 2000
-+++ drivers.c	Mon Mar 24 19:34:43 2003
+$OpenBSD: patch-drivers_c,v 1.4 2013/11/22 15:35:22 sthen Exp $
+--- drivers.c.orig	Fri May  5 01:34:29 2000
++++ drivers.c	Fri Nov 22 15:32:16 2013
 @@ -9,35 +9,40 @@
   *  great, but please send me the diff.  
   */
@@ -18,21 +18,21 @@ $OpenBSD: patch-drivers_c,v 1.3 2010/03/23 08:53:32 sthen Exp $
 +#include <sys/types.h>
 +#include <sys/socket.h>
 +#include <sys/stat.h>
-+
+ 
 +#include <X11/Xlib.h>
-+
+ 
 +#include <err.h>
 +#include <fcntl.h>
 +#include <stdio.h>
 +#include <stdlib.h>
 +#include <string.h>
 +#include <unistd.h>
- 
++
 +#include "config.h"
 +#include "wmnet.h"
 +
 +static char buffer[512];
- 
++
  /* For FreeBSD */
  #ifdef USE_KVM
 -#include<net/if.h>
@@ -59,7 +59,7 @@ $OpenBSD: patch-drivers_c,v 1.3 2010/03/23 08:53:32 sthen Exp $
  #ifdef USE_LINUX_PPP
  #include<net/ppp_defs.h>
  
-@@ -57,18 +62,6 @@ static struct ifpppstatsreq ppp_stats_re
+@@ -57,18 +62,6 @@ static struct ifpppstatsreq ppp_stats_req;
  #define ACCOUNT_IN_FOUND        1
  #define ACCOUNT_OUT_FOUND       2
  
@@ -111,8 +111,8 @@ $OpenBSD: patch-drivers_c,v 1.3 2010/03/23 08:53:32 sthen Exp $
   return ptr; 
  } 
 -   
--
  
+-
 -parser_func find_driver(void) {
 +parser_func find_driver(struct if_data_t *id) {
   int ind = 0;
@@ -141,16 +141,17 @@ $OpenBSD: patch-drivers_c,v 1.3 2010/03/23 08:53:32 sthen Exp $
      fprintf(stderr, "wmnet: driver %s not appropriate for this machine\n", parser_name);
      exit(18);
    }
-@@ -157,9 +148,6 @@ parser_func setup_driver(char * parser_n
+@@ -157,10 +148,7 @@ parser_func setup_driver(char * parser_name) {
   fprintf(stderr, "wmnet: no driver %s\n", parser_name);
   exit(18);
  }
 -  
--
--
  
+-
+-
  #ifdef linux
  /* All the data gathering is done in here. 
+  * Return True if no change to tx/rx.
 @@ -441,48 +429,60 @@ int updateStats_ppp(void) {
  #endif /* linux */
  
@@ -203,8 +204,7 @@ $OpenBSD: patch-drivers_c,v 1.3 2010/03/23 08:53:32 sthen Exp $
 -                lastpackets_in = totalpackets_in;
 -                lastbytes_in = totalbytes_in;
 -                rx = True;
--        }
- 
++
 +   /* we found our struct */
 +  if(!strncmp(devname, id->device, strlen(id->device))) {
 +        tp_in =ifnet->if_ipackets;
@@ -215,8 +215,9 @@ $OpenBSD: patch-drivers_c,v 1.3 2010/03/23 08:53:32 sthen Exp $
 +                lp_in = tp_in;
 +                lb_in = tb_in;
 +                id->rx = True;
-+        }
+         }
  
+-
 -        totalpackets_out = ifnet->if_opackets;
 -        if (totalpackets_out != lastpackets_out) {
 -                totalbytes_out =ifnet->if_obytes;
@@ -236,7 +237,7 @@ $OpenBSD: patch-drivers_c,v 1.3 2010/03/23 08:53:32 sthen Exp $
          }
          flag = (ACCOUNT_IN_FOUND|ACCOUNT_OUT_FOUND);
  
-@@ -498,12 +496,8 @@ int kvm_updateStats(void) {
+@@ -498,12 +498,8 @@ int kvm_updateStats(void) {
  /* return True if no change to tx/rx
   * return False if display will need to be updated
   */	 

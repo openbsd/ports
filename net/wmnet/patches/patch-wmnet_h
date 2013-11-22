@@ -1,6 +1,6 @@
-$OpenBSD: patch-wmnet_h,v 1.1 2002/10/01 06:18:24 pvalchev Exp $
---- wmnet.h.orig	Fri May  5 07:02:26 2000
-+++ wmnet.h	Thu Sep 12 04:12:27 2002
+$OpenBSD: patch-wmnet_h,v 1.2 2013/11/22 15:35:22 sthen Exp $
+--- wmnet.h.orig	Fri May  5 02:02:26 2000
++++ wmnet.h	Fri Nov 22 15:32:16 2013
 @@ -12,6 +12,8 @@
   *
   */
@@ -18,7 +18,7 @@ $OpenBSD: patch-wmnet_h,v 1.1 2002/10/01 06:18:24 pvalchev Exp $
  /* Label area box */
  #define LABEL_X              (GRAPHBOX_X_LEFT)
  #define LABEL_Y              (GRAPHBOX_Y_BOTTOM + 1)
-@@ -52,39 +53,26 @@
+@@ -52,40 +53,27 @@
  #define LABEL_Y_TOP          (LABEL_Y)
  #define LABEL_Y_BOTTOM       (LABEL_Y + LABEL_HEIGHT - 1)
  
@@ -42,7 +42,8 @@ $OpenBSD: patch-wmnet_h,v 1.1 2002/10/01 06:18:24 pvalchev Exp $
  
 +setup_func setup_driver(char *, struct if_data_t *);
  
--
++char *available_drivers(void);
+ 
 -/* X Stuff */
 -Display *dpy;
 -Window root_window, main_window, icon_window, *visible_window;
@@ -67,11 +68,11 @@ $OpenBSD: patch-wmnet_h,v 1.1 2002/10/01 06:18:24 pvalchev Exp $
 -parser_func stat_gather;
 -	
 -
-+char *available_drivers(void);
- 
+-
  void exit_func(void);
  void got_signal(int x); 
-@@ -98,6 +86,4 @@ int updateSpeedometer(int rxRate, int tx
+ void setup_wmnet(int argc, char **argv);
+@@ -98,6 +86,4 @@ int updateSpeedometer(int rxRate, int txRate);
  void drawColoredLine(int y1, int y2, unsigned long *shadecolor); 
  void shadesOf(XColor *shade, unsigned long *returnarray);
  
