@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.61 2013/10/19 16:27:37 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.62 2013/11/22 12:26:06 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -168,8 +168,8 @@ MOZ =		${PREFIX}/${MOZILLA_PROJECT}
 # source for installation
 MOB =		${WRKSRC}/${_MOZDIR}/dist/bin
 
-# needed for PLIST and config/autoconf.mk.in
-MOZILLA_VER =	${MOZILLA_VERSION:C/b.$//}
+# needed for PLIST
+MOZILLA_VER =	${MOZILLA_VERSION:C/b.$//:C/esr//}
 SUBST_VARS +=	MOZILLA_PROJECT MOZILLA_VER MOZILLA_VERSION 
 
 MAKE_ENV +=	MOZ_CO_PROJECT=${MOZILLA_CODENAME} \
