@@ -1,6 +1,14 @@
-$OpenBSD: patch-src_events_c,v 1.4 2012/12/31 12:03:09 dcoppa Exp $
---- src/events.c.orig	Mon Dec 24 15:47:25 2012
-+++ src/events.c	Mon Dec 31 12:57:08 2012
+$OpenBSD: patch-src_events_c,v 1.5 2013/11/22 10:42:12 dcoppa Exp $
+
+commit 2f09bf037a9e02de6a0df68625f139173495699a
+Author: Daniel Friesel <derf@finalrewind.org>
+Date:   Wed Nov 20 20:53:18 2013 +0100
+
+events.c: fix off-by-one pixel error when warping the pointer in
+the bottom/right window border
+
+--- src/events.c.orig	Tue Jun 11 08:28:26 2013
++++ src/events.c	Fri Nov 22 11:32:19 2013
 @@ -124,7 +124,7 @@ void init_buttonbindings(void)
  
  	free(confpath);
@@ -10,3 +18,49 @@ $OpenBSD: patch-src_events_c,v 1.4 2012/12/31 12:03:09 dcoppa Exp $
  		return;
  
  	while (fgets(line, sizeof(line), conf)) {
+@@ -578,36 +578,36 @@ static void feh_event_handle_MotionNotify(XEvent * ev)
+ 
+ 			winwidget_sanitise_offsets(winwid);
+ 
+-			D(("im_x %d, im_w %d, off %d, mx %d\n", winwid->im_x,
+-				winwid->im_w, winwid->click_offset_x, ev->xmotion.x));
++			D(("im_x %d, im_w %d, off %d, mx %d, my %d\n", winwid->im_x,
++				winwid->im_w, winwid->click_offset_x, ev->xmotion.x,
++				ev->xmotion.y));
+ 
+ 			/* XWarpPointer generates a MotionNotify event which we will
+ 			 * parse. Since that event would undo the effect of the pointer
+ 			 * warp, we need to change the click_offset to compensate this.
+ 			 */
+-			if ((winwid->w - ev->xmotion.x <= 1)
+-					&& (winwid->click_offset_x >= winwid->w - 4))
++			if ((winwid->w - ev->xmotion.x <= 1) && (winwid->im_x < 0))
+ 			{
+ 				XWarpPointer(disp, None, winwid->win, 0, 0, 0, 0, 3,
+ 					ev->xmotion.y);
+ 				winwid->click_offset_x -= winwid->w - 4;
+ 			}
+-			else if ((ev->xmotion.x <= 1) && (winwid->click_offset_x
+-					<= (winwid->im_w * winwid->zoom) - winwid->w - 3))
++			else if ((ev->xmotion.x <= 1) && (winwid->w <
++					(winwid->im_x + winwid->im_w * winwid->zoom)))
+ 			{
+ 				XWarpPointer(disp, None, winwid->win, 0, 0, 0, 0,
+ 					winwid->w - 4, ev->xmotion.y);
+ 				winwid->click_offset_x += winwid->w - 4;
+ 			}
+ 			else if ((winwid->h - ev->xmotion.y <= 1)
+-					&& (winwid->click_offset_y >= winwid->h - 4))
++					&& (winwid->im_y < 0))
+ 			{
+ 				XWarpPointer(disp, None, winwid->win, 0, 0, 0, 0,
+ 					ev->xmotion.x, 3);
+ 				winwid->click_offset_y -= winwid->h - 4;
+ 			}
+-			else if ((ev->xmotion.y <= 1) && (winwid->click_offset_y
+-					<= (winwid->im_h * winwid->zoom) - winwid->h - 3))
++			else if ((ev->xmotion.y <= 1) && (winwid->h <
++					(winwid->im_y + winwid->im_h * winwid->zoom)))
+ 			{
+ 				XWarpPointer(disp, None, winwid->win, 0, 0, 0, 0,
+ 					ev->xmotion.x, winwid->h - 4);
