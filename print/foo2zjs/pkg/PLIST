@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/08/24 09:17:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/11/22 08:01:48 ajacoutot Exp $
 @conflict foomatic-db-<4.0.20091207p1
 @conflict foo2zjs-cup-*
 @pkgpath print/foo2zjs,-cups
@@ -197,6 +197,7 @@ share/foomatic/db/source/PPD/foo2zjs/Oki-C5500.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Oki-C5600.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Oki-C5650.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Oki-C5800.ppd.gz
+share/foomatic/db/source/PPD/foo2zjs/Oki-C810.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Olivetti-d-Color_P160W.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Samsung-CLP-300.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Samsung-CLP-310.ppd.gz
@@ -371,6 +372,7 @@ share/foomatic/db/source/printer/Oki-C5500.xml
 share/foomatic/db/source/printer/Oki-C5600.xml
 share/foomatic/db/source/printer/Oki-C5650.xml
 share/foomatic/db/source/printer/Oki-C5800.xml
+share/foomatic/db/source/printer/Oki-C810.xml
 share/foomatic/db/source/printer/Olivetti-d-Color_P160W.xml
 share/foomatic/db/source/printer/Samsung-CLP-300.xml
 share/foomatic/db/source/printer/Samsung-CLP-310.xml
