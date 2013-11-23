@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2013/11/01 18:28:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2013/11/23 10:23:16 ajacoutot Exp $
 @conflict evolution-meta-tracker-*
 @conflict nautilus-meta-tracker-*
 @pkgpath x11/gnome/tracker,-evolution
@@ -137,6 +137,7 @@ share/gtk-doc/html/libtracker-extract/ch03.html
 share/gtk-doc/html/libtracker-extract/home.png
 share/gtk-doc/html/libtracker-extract/index.html
 share/gtk-doc/html/libtracker-extract/index.sgml
+share/gtk-doc/html/libtracker-extract/left-insensitive.png
 share/gtk-doc/html/libtracker-extract/left.png
 share/gtk-doc/html/libtracker-extract/libtracker-extract-Data-utilities.html
 share/gtk-doc/html/libtracker-extract/libtracker-extract-Exif.html
@@ -146,10 +147,12 @@ share/gtk-doc/html/libtracker-extract/libtracker-extract-TrackerExtractInfo.html
 share/gtk-doc/html/libtracker-extract/libtracker-extract-XMP.html
 share/gtk-doc/html/libtracker-extract/libtracker-extract-reference.html
 share/gtk-doc/html/libtracker-extract/libtracker-extract.devhelp2
+share/gtk-doc/html/libtracker-extract/right-insensitive.png
 share/gtk-doc/html/libtracker-extract/right.png
 share/gtk-doc/html/libtracker-extract/style.css
 share/gtk-doc/html/libtracker-extract/tracker-overview-compiling.html
 share/gtk-doc/html/libtracker-extract/tracker-overview.html
+share/gtk-doc/html/libtracker-extract/up-insensitive.png
 share/gtk-doc/html/libtracker-extract/up.png
 share/gtk-doc/html/libtracker-miner/
 share/gtk-doc/html/libtracker-miner/TrackerIndexingTree.html
@@ -165,6 +168,7 @@ share/gtk-doc/html/libtracker-miner/ch06.html
 share/gtk-doc/html/libtracker-miner/home.png
 share/gtk-doc/html/libtracker-miner/index.html
 share/gtk-doc/html/libtracker-miner/index.sgml
+share/gtk-doc/html/libtracker-miner/left-insensitive.png
 share/gtk-doc/html/libtracker-miner/left.png
 share/gtk-doc/html/libtracker-miner/libtracker-miner-Enumerations.html
 share/gtk-doc/html/libtracker-miner/libtracker-miner-Media-art-management.html
@@ -175,10 +179,12 @@ share/gtk-doc/html/libtracker-miner/libtracker-miner-TrackerPasswordProvider.htm
 share/gtk-doc/html/libtracker-miner/libtracker-miner-TrackerStorage.html
 share/gtk-doc/html/libtracker-miner/libtracker-miner-reference.html
 share/gtk-doc/html/libtracker-miner/libtracker-miner.devhelp2
+share/gtk-doc/html/libtracker-miner/right-insensitive.png
 share/gtk-doc/html/libtracker-miner/right.png
 share/gtk-doc/html/libtracker-miner/style.css
 share/gtk-doc/html/libtracker-miner/tracker-overview-compiling.html
 share/gtk-doc/html/libtracker-miner/tracker-overview.html
+share/gtk-doc/html/libtracker-miner/up-insensitive.png
 share/gtk-doc/html/libtracker-miner/up.png
 share/gtk-doc/html/libtracker-sparql/
 share/gtk-doc/html/libtracker-sparql/TrackerSparqlBuilder.html
@@ -187,11 +193,13 @@ share/gtk-doc/html/libtracker-sparql/TrackerSparqlCursor.html
 share/gtk-doc/html/libtracker-sparql/home.png
 share/gtk-doc/html/libtracker-sparql/index.html
 share/gtk-doc/html/libtracker-sparql/index.sgml
+share/gtk-doc/html/libtracker-sparql/left-insensitive.png
 share/gtk-doc/html/libtracker-sparql/left.png
 share/gtk-doc/html/libtracker-sparql/libtracker-sparql-Utilities.html
 share/gtk-doc/html/libtracker-sparql/libtracker-sparql-Version-Information.html
 share/gtk-doc/html/libtracker-sparql/libtracker-sparql-reference.html
 share/gtk-doc/html/libtracker-sparql/libtracker-sparql.devhelp2
+share/gtk-doc/html/libtracker-sparql/right-insensitive.png
 share/gtk-doc/html/libtracker-sparql/right.png
 share/gtk-doc/html/libtracker-sparql/style.css
 share/gtk-doc/html/libtracker-sparql/tracker-examples-builder.html
@@ -203,6 +211,7 @@ share/gtk-doc/html/libtracker-sparql/tracker-overview-compiling.html
 share/gtk-doc/html/libtracker-sparql/tracker-overview-connection-methods.html
 share/gtk-doc/html/libtracker-sparql/tracker-overview-environment-variables.html
 share/gtk-doc/html/libtracker-sparql/tracker-overview.html
+share/gtk-doc/html/libtracker-sparql/up-insensitive.png
 share/gtk-doc/html/libtracker-sparql/up.png
 share/icons/hicolor/16x16/apps/tracker.png
 share/icons/hicolor/22x22/apps/tracker.png
