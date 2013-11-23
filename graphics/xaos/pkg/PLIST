@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/14 07:02:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/11/23 16:11:11 pascal Exp $
 @bin bin/xaos
 @info info/xaos.info
 @man man/man6/xaos.6
@@ -53,6 +53,7 @@ share/XaoS/examples/beatle2.xpf
 share/XaoS/examples/bolygo.xpf
 share/XaoS/examples/brown.xpf
 share/XaoS/examples/burnship.xpf
+share/XaoS/examples/butterfly-langston.xpf
 share/XaoS/examples/butterfly.xpf
 share/XaoS/examples/checker.xpf
 share/XaoS/examples/circle.xpf
@@ -61,6 +62,7 @@ share/XaoS/examples/csiga2.xpf
 share/XaoS/examples/csiga3.xpf
 share/XaoS/examples/csiga4.xpf
 share/XaoS/examples/csiga5.xpf
+share/XaoS/examples/dark.xpf
 share/XaoS/examples/dblspira.xpf
 share/XaoS/examples/dragons.xpf
 share/XaoS/examples/dragons2.xpf
@@ -118,6 +120,7 @@ share/XaoS/examples/kovzsi8.xpf
 share/XaoS/examples/kovzsi9.2.xpf
 share/XaoS/examples/kovzsi9.xpf
 share/XaoS/examples/lemon.xpf
+share/XaoS/examples/light-kovzsi.xpf
 share/XaoS/examples/light.xpf
 share/XaoS/examples/lighting.xpf
 share/XaoS/examples/magnet.xpf

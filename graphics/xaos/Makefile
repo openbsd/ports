@@ -2,12 +2,12 @@
 
 COMMENT =		interactive fractal zoomer and morpher
 
-VERSION =		3.5
+VERSION =		3.6
 DISTNAME =		xaos-${VERSION}
 
 CATEGORIES =		graphics
 
-HOMEPAGE =		http://wmi.math.u-szeged.hu/xaos/doku.php
+HOMEPAGE =		http://matek.hu/xaos/doku.php
 
 MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
