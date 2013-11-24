@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2013/09/04 18:15:19 landry Exp $
+# $OpenBSD: Makefile,v 1.40 2013/11/24 02:24:35 jeremy Exp $
 
 BROKEN-sparc64 =	doesnt reliably build, and depending ports randomly fail to build
 BROKEN-alpha =		miniruby abort trap when generating rdoc
@@ -10,7 +10,7 @@ COMMENT-tk =		tk interface for ruby
 COMMENT-ri_docs =	ri documentation files for ruby
 
 VERSION =		1.9.3
-PATCHLEVEL =		448
+PATCHLEVEL =		484
 RUBYLIBREV =		1.9.1
 
 SHARED_LIBS =		ruby19 1.1
