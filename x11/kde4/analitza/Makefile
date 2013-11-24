@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/14 09:16:25 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/11/24 19:56:30 zhuk Exp $
 
 COMMENT =	KDE math features
 DISTNAME =	analitza-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	analitza		50.0	# 4.7
 SHARED_LIBS +=	analitzagui		50.0	# 4.7

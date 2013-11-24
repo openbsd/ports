@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2013/10/15 07:19:36 zhuk Exp $
+# $OpenBSD: Makefile,v 1.15 2013/11/24 19:56:33 zhuk Exp $
 
 COMMENT =	KDE software development kit
 DISTNAME =	kdesdk-${MODKDE4_VERSION}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	komparedialogpages	50.0 # 4.7
 SHARED_LIBS +=	komparediff2		50.0 # 4.7

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2013/08/24 17:33:48 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2013/11/24 19:56:32 zhuk Exp $
 
 COMMENT =	common library for KDE-based games
 DISTNAME =	libkdegames-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	kdegames		50.0
 SHARED_LIBS +=	kdegamesprivate		50.0

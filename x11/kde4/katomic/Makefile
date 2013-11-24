@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 11:53:55 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/11/24 19:56:31 zhuk Exp $
 
 COMMENT =	molecular geometry educational game for KDE
 DISTNAME =	katomic-${MODKDE4_VERSION}
+REVISION =	0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg

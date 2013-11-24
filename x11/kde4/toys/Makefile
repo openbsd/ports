@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2013/06/06 08:36:49 zhuk Exp $
+# $OpenBSD: Makefile,v 1.12 2013/11/24 19:56:33 zhuk Exp $
 
 COMMENT =	small and funny applications for KDE
 DISTNAME =	kdetoys-${MODKDE4_VERSION}
+REVISION =	0
 
 # Amor misses OpenBSD mascot. Who'd like to fix this major issue?
 

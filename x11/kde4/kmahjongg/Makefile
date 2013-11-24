@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 12:10:37 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/11/24 19:56:31 zhuk Exp $
 
 COMMENT =	Mah Jongg solitare board game for KDE
 DISTNAME =	kmahjongg-${MODKDE4_VERSION}
+REVISION =	0
 
 MODKDE4_USE =	games
 

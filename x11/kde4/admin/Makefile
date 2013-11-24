@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2013/08/24 17:33:35 zhuk Exp $
+# $OpenBSD: Makefile,v 1.11 2013/11/24 19:56:30 zhuk Exp $
 
 COMMENT =	KDE local system administration tools
 DISTNAME =	kdeadmin-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 # From configure:
 # -- rpm and deb file plugins necessary in system != UNIX ?

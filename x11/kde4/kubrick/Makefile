@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 18:20:52 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/11/24 19:56:32 zhuk Exp $
 
 COMMENT =	Rubik's cube simulator for KDE
 DISTNAME =	kubrick-${MODKDE4_VERSION}
+REVISION =	0
 
 WANTLIB =  c m pthread stdc++ GL GLU
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork

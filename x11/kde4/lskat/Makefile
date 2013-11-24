@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 18:29:21 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/11/24 19:56:32 zhuk Exp $
 
 COMMENT =	card game for KDE
 DISTNAME =	lskat-${MODKDE4_VERSION}
+REVISION =	0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2013/08/24 17:33:52 zhuk Exp $
+# $OpenBSD: Makefile,v 1.13 2013/11/24 19:56:32 zhuk Exp $
 
 COMMENT =	KDE personal information management
 DISTNAME =	kdepim-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	akonadi_next			50.0
 SHARED_LIBS +=	akregatorinterfaces		50.0

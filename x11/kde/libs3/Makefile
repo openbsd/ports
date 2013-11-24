@@ -1,15 +1,18 @@
-# $OpenBSD: Makefile,v 1.133 2013/10/30 21:02:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.134 2013/11/24 19:56:30 zhuk Exp $
 
 BROKEN-alpha =		.got subsegment exceeds 64K
 BROKEN-mips64 =		.got subsegment exceeds 64K
 
 COMMENT-main =		K Desktop Environment, libraries
+COMMENT-langlist =	list of languages supported by KDE
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdelibs-${VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGSPEC-main =		kdelibs->=3,<4
-REVISION-main =		26
+PKGNAME-langlist =	kde3-langlist-${VERSION}
+PKG_ARCH-langlist =	*
+REVISION-main =		27
 
 MODKDE_VERSION =	3.5.8
 
@@ -67,15 +70,19 @@ WANTLIB-main +=	gmodule-2.0 gthread-2.0 jasper kmedia2_idl lcms mad mcop mng
 WANTLIB-main +=	ogg pcre pcreposix qtmcop sndio soundserver_idl tiff>=35
 WANTLIB-main +=	vorbis vorbisenc vorbisfile xml2 xslt>=1.10
 WANTLIB-main += com_err heimbase roken wind
+WANTLIB-langlist =
 
-MULTI_PACKAGES =	-main
+MULTI_PACKAGES =	-main -langlist
 
 MODULES =		x11/kde devel/gettext
 
+RUN_DEPENDS-langlist =
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
+			kde3-langlist-*|kde4-langlist-*:${BUILD_PKGPATH},-langlist \
 			devel/desktop-file-utils \
 			x11/gtk+2,-guic
 
+LIB_DEPENDS-langlist =
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			archivers/bzip2 \
 			devel/libidn \

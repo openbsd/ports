@@ -1,8 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2013/08/24 17:33:53 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2013/11/24 19:56:30 zhuk Exp $
 
-COMMENT =	KDE core run-time components
-DISTNAME =	kde-runtime-${MODKDE4_VERSION}
-REVISION =	1
+COMMENT-main =		KDE core run-time components
+COMMENT-locale =	KDE locale data files
+DISTNAME =		kde-runtime-${MODKDE4_VERSION}
+PKGNAME-main =		${DISTNAME}
+PKGNAME-locale =	kde4-locale-${MODKDE4_VERSION}
+PKG_ARCH-locale =	*
+REVISION-main =		2
 
 DPB_PROPERTIES =	parallel
 
@@ -15,46 +19,55 @@ SHARED_LIBS +=	kdeinit4_khelpcenter	51.0
 SHARED_LIBS +=	kdeinit4_kuiserver 	51.0
 SHARED_LIBS +=	kdeinit4_kwalletd 	51.0
 
-WANTLIB =  c m pthread stdc++ util
-WANTLIB += Half ICE Iex IlmImf IlmThread Imath SM X11 Xcursor Xext
-WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
-WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSvg
-WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml
-WANTLIB += ${KDE4LIB}/kactivities ${KDE4LIB}/kcmutils ${KDE4LIB}/kdeclarative
-WANTLIB += ${KDE4LIB}/kdesu ${KDE4LIB}/kdeui ${KDE4LIB}/kdewebkit
-WANTLIB += ${KDE4LIB}/kdnssd ${KDE4LIB}/kemoticons ${KDE4LIB}/kfile
-WANTLIB += ${KDE4LIB}/khtml ${KDE4LIB}/kio ${KDE4LIB}/kjs
-WANTLIB += ${KDE4LIB}/kmediaplayer ${KDE4LIB}/knewstuff3
-WANTLIB += ${KDE4LIB}/knotifyconfig ${KDE4LIB}/kparts ${KDE4LIB}/kpty
-WANTLIB += ${KDE4LIB}/kxmlrpcclient ${KDE4LIB}/nepomuk
-WANTLIB += ${KDE4LIB}/nepomukcore ${KDE4LIB}/nepomukutils ${KDE4LIB}/plasma
-WANTLIB += ${KDE4LIB}/solid
-WANTLIB += attica canberra exiv2 glib-2.0 jpeg pulse
-WANTLIB += pulse-mainloop-glib smbclient ssh soprano
+WANTLIB-main =  ${WANTLIB} c m pthread stdc++ util
+WANTLIB-main += Half ICE Iex IlmImf IlmThread Imath SM X11 Xcursor Xext
+WANTLIB-main += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
+WANTLIB-main += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSvg
+WANTLIB-main += lib/qt4/QtWebKit lib/qt4/QtXml
+WANTLIB-main += ${KDE4LIB}/kactivities ${KDE4LIB}/kcmutils
+WANTLIB-main += ${KDE4LIB}/kdeclarative
+WANTLIB-main += ${KDE4LIB}/kdesu ${KDE4LIB}/kdeui ${KDE4LIB}/kdewebkit
+WANTLIB-main += ${KDE4LIB}/kdnssd ${KDE4LIB}/kemoticons ${KDE4LIB}/kfile
+WANTLIB-main += ${KDE4LIB}/khtml ${KDE4LIB}/kio ${KDE4LIB}/kjs
+WANTLIB-main += ${KDE4LIB}/kmediaplayer ${KDE4LIB}/knewstuff3
+WANTLIB-main += ${KDE4LIB}/knotifyconfig ${KDE4LIB}/kparts ${KDE4LIB}/kpty
+WANTLIB-main += ${KDE4LIB}/kxmlrpcclient ${KDE4LIB}/nepomuk
+WANTLIB-main += ${KDE4LIB}/nepomukcore ${KDE4LIB}/nepomukutils
+WANTLIB-main += ${KDE4LIB}/plasma ${KDE4LIB}/solid
+WANTLIB-main += attica canberra exiv2 glib-2.0 jpeg pulse
+WANTLIB-main += pulse-mainloop-glib smbclient ssh soprano
+WANTLIB-locale =
+
+MULTI_PACKAGES =	-main -locale
 
 MODULES =	multimedia/phonon
 MODKDE4_USE =	pim libs
 
-BUILD_DEPENDS =	archivers/bzip2 \
-		archivers/xz \
-		devel/doxygen
+BUILD_DEPENDS =		archivers/bzip2 \
+			archivers/xz \
+			devel/doxygen
 
-RUN_DEPENDS =	archivers/bzip2 \
-		archivers/xz \
-		devel/desktop-file-utils \
-		misc/shared-mime-info \
-		x11/gtk+2,-guic
+RUN_DEPENDS-locale =
+RUN_DEPENDS-main =	${RUN_DEPENDS} \
+			archivers/bzip2 \
+			archivers/xz \
+			devel/desktop-file-utils \
+			misc/shared-mime-info \
+			x11/gtk+2,-guic \
+			${BUILD_PKGPATH},-locale>=${MODKDE4_DEP_VERSION}
 
-LIB_DEPENDS =	audio/libcanberra \
-		audio/pulseaudio \
-		databases/soprano \
-		graphics/openexr \
-		graphics/exiv2 \
-		net/samba \
-		productivity/attica \
-		security/libssh \
-		${MODKDE4_DEP_DIR}/kactivities>=${MODKDE4_DEP_VERSION} \
-		${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION}
+LIB_DEPENDS-locale =
+LIB_DEPENDS-main =	${LIB_DEPENDS} \
+			audio/libcanberra \
+			audio/pulseaudio \
+			databases/soprano \
+			graphics/openexr \
+			graphics/exiv2 \
+			net/samba \
+			productivity/attica \
+			security/libssh \
+			${MODKDE4_DEP_DIR}/kactivities>=${MODKDE4_DEP_VERSION} \
+			${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION}
 
 # QNtrack depends on libnl, Linux-specific library.
 CONFIGURE_ARGS =	-DWITH_ALSA:Bool=FALSE \

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/08/24 17:33:37 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/11/24 19:56:30 zhuk Exp $
 
 COMMENT =	bomberman clone game for KDE
 DISTNAME =	granatier-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg lib/qt4/QtXml

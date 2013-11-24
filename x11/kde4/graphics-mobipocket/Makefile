@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2013/10/15 07:59:25 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2013/11/24 19:56:30 zhuk Exp $
 
 COMMENT =	KDE mobipocket plugins for Strigi, Okular and thumbnails
 DISTNAME =	kdegraphics-mobipocket-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 WANTLIB =  m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg

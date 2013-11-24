@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.13 2013/08/12 01:29:03 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2013/11/24 19:56:30 zhuk Exp $
 @option no-default-conflict
 @conflict kdelibs->=4
 @conflict kdebase-<4
 @conflict kdebindings-<4
+@pkgpath x11/kde4/libs
 bin/checkXML4
 @bin bin/kbuildsycoca4
 @bin bin/kcookiejar4
@@ -3672,9 +3673,6 @@ share/kde4/servicetypes/plasma-wallpaper.desktop
 share/kde4/servicetypes/qimageio_plugin.desktop
 share/kde4/servicetypes/renamedialogplugin.desktop
 share/kde4/servicetypes/sonnetspeller.desktop
-share/locale/all_languages
-share/locale/en_US/
-share/locale/en_US/entry.desktop
 share/mime/packages/kde.xml
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

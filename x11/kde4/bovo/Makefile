@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 11:30:16 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/11/24 19:56:30 zhuk Exp $
 
 COMMENT =	Gomoku-like game for two players for KDE
 DISTNAME =	bovo-${MODKDE4_VERSION}
+REVISION =	0
 
 WANTLIB =	c m pthread stdc++
 WANTLIB +=	lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtSvg

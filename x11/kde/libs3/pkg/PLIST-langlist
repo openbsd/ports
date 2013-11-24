@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-langlist,v 1.1 2013/11/24 19:56:30 zhuk Exp $
+@conflict kdelibs-<3.5.10p27
+@conflict kdelibs->=4,<4.10.5p5
+@conflict kde4-langlist-*
+@pkgpath x11/kde4/libs,-langlist
+share/locale/all_languages

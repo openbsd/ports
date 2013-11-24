@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2013/08/24 17:33:47 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2013/11/24 19:56:32 zhuk Exp $
 
 COMMENT =	KDE RAW picture decoding C++ library
 DISTNAME =	libkdcraw-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	kdcraw			50.0	# 20.0
 

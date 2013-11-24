@@ -1,9 +1,16 @@
-# $OpenBSD: Makefile,v 1.35 2013/11/12 11:18:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2013/11/24 19:56:30 zhuk Exp $
 
-COMMENT =	KDE core libraries
-DISTNAME =	kdelibs-${MODKDE4_VERSION}
-PKGSPEC =	kdelibs->=4
-REVISION =	6
+COMMENT-main =		KDE core libraries
+COMMENT-en_US =		KDE en_US locale data
+COMMENT-langlist =	list of languages supported by KDE
+DISTNAME =		kdelibs-${MODKDE4_VERSION}
+PKGNAME-main =		${DISTNAME}
+PKGNAME-en_US =		kde4-locale-en_US-${MODKDE4_VERSION}
+PKGNAME-langlist =	kde4-langlist-${MODKDE4_VERSION}
+PKG_ARCH-en_US =	*
+PKG_ARCH-langlist =	*
+PKGSPEC-main =		kdelibs->=4
+REVISION-main =		7
 
 DPB_PROPERTIES =	parallel tag:kde4
 
@@ -57,53 +64,65 @@ SHARED_LIBS +=	kdeinit4_kded4			50.1
 SHARED_LIBS +=	kdeinit4_kio_http_cache_cleaner	50.1
 SHARED_LIBS +=	kdeinit4_klauncher		50.1
 
-WANTLIB =  c com_err crypto krb5 m pthread stdc++ util z
-WANTLIB += Half ICE Iex IlmImf IlmThread Imath SM X11 Xau Xcursor Xdmcp
-WANTLIB += Xext Xfixes Xft Xpm Xrender Xss Xtst
-WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDeclarative
-WANTLIB += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtOpenGL
-WANTLIB += lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg
-WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml
-WANTLIB += asn1 aspell attica bz2 dbusmenu-qt enchant exslt fam
-WANTLIB += gif gssapi jasper jpeg lzma pcre pcreposix
-WANTLIB += png polkit-qt-core-1 qca2 soprano sopranoclient
-WANTLIB += streamanalyzer streams xml2 xslt
-WANTLIB += heimbase roken wind
+WANTLIB-en_US =
+WANTLIB-langlist =
+WANTLIB-main += ${WANTLIB} c com_err crypto krb5 m pthread stdc++ util z
+WANTLIB-main += Half ICE Iex IlmImf IlmThread Imath SM X11 Xau Xcursor Xdmcp
+WANTLIB-main += Xext Xfixes Xft Xpm Xrender Xss Xtst
+WANTLIB-main += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtDeclarative
+WANTLIB-main += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtOpenGL
+WANTLIB-main += lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg
+WANTLIB-main += lib/qt4/QtWebKit lib/qt4/QtXml
+WANTLIB-main += asn1 aspell attica bz2 dbusmenu-qt enchant exslt fam
+WANTLIB-main += gif gssapi jasper jpeg lzma pcre pcreposix
+WANTLIB-main += png polkit-qt-core-1 qca2 soprano sopranoclient
+WANTLIB-main += streamanalyzer streams xml2 xslt
+WANTLIB-main += heimbase roken wind
 
-MODULES =	devel/gettext multimedia/phonon
+MULTI_PACKAGES =	-main -langlist -en_US
+
+MODULES =		devel/gettext multimedia/phonon
 MODKDE4_USE =
 
-BUILD_DEPENDS =	misc/shared-desktop-ontologies>=0.10 \
-		misc/shared-mime-info \
-		net/avahi \
-		x11/grantlee
+BUILD_DEPENDS =		misc/shared-desktop-ontologies>=0.10 \
+			misc/shared-mime-info \
+			net/avahi \
+			x11/grantlee
 
-RUN_DEPENDS =	devel/desktop-file-utils \
-		misc/shared-mime-info \
-		misc/shared-desktop-ontologies \
-		net/cagibi \
-		sysutils/gamin \
-		x11/dbus \
-		x11/grantlee \
-		x11/gtk+2,-guic \
-		${MODKDE4_DEP_DIR}/oxygen-icons>=${MODKDE4_DEP_VERSION}
+RUN_DEPENDS-en_US =	
+RUN_DEPENDS-langlist =	
+RUN_DEPENDS-main =	${RUN_DEPENDS} \
+			devel/desktop-file-utils \
+			misc/shared-mime-info \
+			misc/shared-desktop-ontologies \
+			net/cagibi \
+			sysutils/gamin \
+			x11/dbus \
+			x11/grantlee \
+			x11/gtk+2,-guic \
+			${MODKDE4_DEP_DIR}/oxygen-icons>=${MODKDE4_DEP_VERSION} \
+			${BUILD_PKGPATH},-langlist>=${MODKDE4_DEP_VERSION} \
+			${BUILD_PKGPATH},-en_US>=${MODKDE4_DEP_VERSION}
 
-LIB_DEPENDS =	archivers/bzip2 \
-		archivers/xz \
-		databases/soprano>=${MIN_SOPRANO_VERSION} \
-		databases/strigi \
-		devel/pcre \
-		graphics/giflib \
-		graphics/jasper \
-		graphics/openexr \
-		security/qca2 \
-		sysutils/gamin \
-		textproc/aspell/core \
-		textproc/enchant \
-		textproc/libxslt \
-		productivity/attica \
-		x11/dbusmenu-qt \
-		x11/polkit-qt4
+LIB_DEPENDS-en_US =
+LIB_DEPENDS-langlist =
+LIB_DEPENDS-main =	${LIB_DEPENDS} \
+			archivers/bzip2 \
+			archivers/xz \
+			databases/soprano>=${MIN_SOPRANO_VERSION} \
+			databases/strigi \
+			devel/pcre \
+			graphics/giflib \
+			graphics/jasper \
+			graphics/openexr \
+			security/qca2 \
+			sysutils/gamin \
+			textproc/aspell/core \
+			textproc/enchant \
+			textproc/libxslt \
+			productivity/attica \
+			x11/dbusmenu-qt \
+			x11/polkit-qt4
 
 # and do not have this stuff at all
 CONFIGURE_ARGS +=	-DWITH_ACL:Bool=FALSE \

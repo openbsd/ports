@@ -1,0 +1,4 @@
+Contains locale support files for KDE. This way KDE does not depend
+on actual locale implementation in the underlying OS.
+
+It's separated to make KDE3 and KDE4 co-exist easily.

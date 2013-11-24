@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.20 2013/10/22 11:34:05 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.21 2013/11/24 19:56:30 zhuk Exp $
 @conflict kdebase-<3.5
 @conflict kdeartwork-<3.4
 @conflict kdeaddons-<3.4
@@ -5287,7 +5287,6 @@ share/icons/crystalsvg/scalable/mimetypes/wordprocessing.svgz
 share/icons/crystalsvg/scalable/mimetypes/zip.svgz
 share/icons/default.kde
 @comment share/icons/hicolor/index.theme
-share/locale/all_languages
 share/mimelnk/
 share/mimelnk/all/
 share/mimelnk/all/all.desktop

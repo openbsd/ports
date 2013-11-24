@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/04/24 18:19:02 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/11/24 19:56:32 zhuk Exp $
 
 COMMENT =	sudoku game for KDE
 DISTNAME =	ksudoku-${MODKDE4_VERSION}
+REVISION =	0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += GL GLU ICE SM X11 Xext

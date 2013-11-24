@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2013/05/14 12:04:55 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/11/24 19:56:33 zhuk Exp $
 
 CATEGORIES =	www
 COMMENT =	Webkit-based KPart for KDE
 HOMEPAGE =	https://projects.kde.org/projects/extragear/base/kwebkitpart
 DISTNAME =	kwebkitpart-1.2
-REVISION =	0
+REVISION =	1
 
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	ftp://3ps.if.ua/pub/OpenBSD/distfiles/ \
