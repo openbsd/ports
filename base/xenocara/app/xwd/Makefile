@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/11/01 09:58:05 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2013/11/24 16:56:01 espie Exp $
 COMPONENT = app/xwd
-XDEPS = lib/libX11 proto/x11proto lib/libXt
+XDEPS = lib/libX11 proto/x11proto lib/libXt lib/libxkbfile
+
+REVISION = 0
 
 
 .include <bsd.port.mk>

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/17 13:32:21 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/11/24 16:56:01 espie Exp $
 
 CATEGORIES = base xenocara
 COMMENT = Xenocara meta package for building
-V = 3
+V = 4
 DISTNAME = xenocara-meta-$V
 DISTFILES =
 
@@ -37,6 +37,7 @@ proto/xf86vidmodeproto \
 proto/xineramaproto \
 lib/fontconfig \
 lib/freetype \
+lib/libEGL \
 lib/libFS \
 lib/libGL \
 lib/libGLU \
