@@ -1,0 +1,16 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2013/11/24 21:58:24 pascal Exp $
+--- CMakeLists.txt.orig	Wed Jul 24 16:11:55 2013
++++ CMakeLists.txt	Sat Nov 23 12:56:13 2013
+@@ -686,12 +686,6 @@ IF(CYGWIN)
+   SET(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -D_DEBUG")
+ ENDIF()
+ 
+-IF(UNIX AND NOT WIN32 AND NOT APPLE)
+-  IF(CMAKE_SIZEOF_VOID_P MATCHES "8")
+-      SET(LIB_POSTFIX "64" CACHE STRING "suffix for 32/64 dir placement")
+-      MARK_AS_ADVANCED(LIB_POSTFIX)
+-  ENDIF()
+-ENDIF()
+ IF(NOT DEFINED LIB_POSTFIX)
+     SET(LIB_POSTFIX "")
+ ENDIF()

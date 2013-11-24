@@ -1,0 +1,12 @@
+$OpenBSD: patch-applications_present3D_Cluster_cpp,v 1.1.1.1 2013/11/24 21:58:24 pascal Exp $
+--- applications/present3D/Cluster.cpp.orig	Fri Jun 21 11:17:28 2013
++++ applications/present3D/Cluster.cpp	Sat Nov 23 12:57:06 2013
+@@ -33,7 +33,7 @@
+ #if defined(__linux)
+     #include <unistd.h>
+     #include <linux/sockios.h>
+-#elif defined(__FreeBSD__) || defined(__DragonFly__)
++#elif defined(__FreeBSD__) || defined(__DragonFly__) || defined(__OpenBSD__)
+     #include <unistd.h>
+     #include <sys/sockio.h>
+ #elif defined(__sgi)
