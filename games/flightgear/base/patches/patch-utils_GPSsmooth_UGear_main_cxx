@@ -1,0 +1,11 @@
+$OpenBSD: patch-utils_GPSsmooth_UGear_main_cxx,v 1.1.1.1 2013/11/24 22:04:08 pascal Exp $
+--- utils/GPSsmooth/UGear_main.cxx.orig	Wed Aug 31 16:53:32 2011
++++ utils/GPSsmooth/UGear_main.cxx	Wed Aug 31 16:53:50 2011
+@@ -5,6 +5,7 @@
+ #ifdef HAVE_WINDOWS_H
+ #  include <windows.h>
+ #else
++#  include <arpa/inet.h>
+ #  include <netinet/in.h>       // htonl() ntohl()
+ #endif
+ 

@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/24 22:04:08 pascal Exp $
+@bin bin/GPSsmooth
+@bin bin/MIDGsmooth
+@bin bin/UGsmooth
+@bin bin/fgadmin
+@bin bin/fgelev
+@bin bin/fgfs
+@bin bin/fgjs
+@bin bin/fgpanel
+@bin bin/fgviewer
+@bin bin/js_demo
+@bin bin/metar
+@bin bin/terrasync
+@bin bin/yasim
+@bin bin/yasim-proptest
+@man man/man1/fgfs.1
+@man man/man1/fgjs.1
+@man man/man1/fgpanel.1
+@man man/man1/gl-info.1
+@man man/man1/js_demo.1
+@man man/man1/terrasync.1

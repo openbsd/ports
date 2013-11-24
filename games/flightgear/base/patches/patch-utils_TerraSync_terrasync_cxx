@@ -1,0 +1,12 @@
+$OpenBSD: patch-utils_TerraSync_terrasync_cxx,v 1.1.1.1 2013/11/24 22:04:08 pascal Exp $
+--- utils/TerraSync/terrasync.cxx.orig	Mon Sep 16 20:49:01 2013
++++ utils/TerraSync/terrasync.cxx	Sat Nov 23 16:36:01 2013
+@@ -56,7 +56,7 @@
+ 
+ #if defined(_MSC_VER) || defined(__MINGW32__)
+     typedef void (__cdecl * sighandler_t)(int);
+-#elif defined( __APPLE__ ) || defined (__FreeBSD__)
++#elif defined( __APPLE__ ) || defined (__FreeBSD__) || defined(__OpenBSD__)
+     typedef sig_t sighandler_t;
+ #endif
+ 
