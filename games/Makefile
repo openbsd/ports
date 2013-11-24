@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.279 2013/11/12 20:13:49 bcallah Exp $
+# $OpenBSD: Makefile,v 1.280 2013/11/24 22:07:36 pascal Exp $
 
      SUBDIR =
      SUBDIR += abuse
@@ -74,6 +74,7 @@
      SUBDIR += falconseye
      SUBDIR += fire
      SUBDIR += flare
+     SUBDIR += flightgear
      SUBDIR += foobillard
      SUBDIR += forcedattack
      SUBDIR += fotaq

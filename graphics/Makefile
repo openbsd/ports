@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.358 2013/10/29 09:27:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.359 2013/11/24 22:06:34 pascal Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -172,6 +172,7 @@
      SUBDIR += openimageio
      SUBDIR += openjpeg
      SUBDIR += openjp2
+     SUBDIR += openscenegraph
      SUBDIR += optipng
      SUBDIR += p5-Cairo
      SUBDIR += p5-Captcha-reCAPTCHA
@@ -238,6 +239,7 @@
      SUBDIR += scrot
      SUBDIR += shared-color-targets
      SUBDIR += shotwell
+     SUBDIR += simgear
      SUBDIR += simple-scan
      SUBDIR += sketch
      SUBDIR += smpeg-xmms
