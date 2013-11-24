@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.821 2013/11/16 13:24:14 jca Exp $
+# $OpenBSD: Makefile,v 1.822 2013/11/24 18:28:37 naddy Exp $
 
      SUBDIR =
-     SUBDIR += BitTorrent
      SUBDIR += GeoIP
      SUBDIR += adns
      SUBDIR += adsuck
