@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/09/04 18:15:19 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2013/11/24 02:25:26 jeremy Exp $
 
 BROKEN-sparc64	=	segfaults during build
 BROKEN-hppa =		miniruby abort trap when generating rdoc
@@ -10,7 +10,7 @@ COMMENT-tk =		tk interface for ruby
 COMMENT-ri_docs =	ri documentation files for ruby
 
 VERSION =		2.0.0
-PATCHLEVEL =		247
+PATCHLEVEL =		353
 RUBYLIBREV =		2.0
 DISTNAME =		ruby-${VERSION}-p${PATCHLEVEL}
 

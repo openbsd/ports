@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2013/05/17 20:11:43 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2013/11/24 02:25:26 jeremy Exp $
 @option no-default-conflict
 @conflict ruby->=2.0,<2.1
 bin/erb20
@@ -854,11 +854,10 @@ lib/ruby/${RUBYLIBREV}/rubygems/source_specific_file.rb
 lib/ruby/${RUBYLIBREV}/rubygems/spec_fetcher.rb
 lib/ruby/${RUBYLIBREV}/rubygems/specification.rb
 lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/
-lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/AddTrustExternalCARoot.pem
-lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/Entrust_net-Secure-Server-Certification-Authority.pem
-lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/GeoTrust_Global_CA.pem
-lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/VerisignClass3PublicPrimaryCertificationAuthority-G2.pem
-lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/ca-bundle.pem
+lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/Class3PublicPrimaryCertificationAuthority.pem
+lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/DigiCertHighAssuranceEVRootCA.pem
+lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/EntrustnetSecureServerCertificationAuthority.pem
+lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/GeoTrustGlobalCA.pem
 lib/ruby/${RUBYLIBREV}/rubygems/syck_hack.rb
 lib/ruby/${RUBYLIBREV}/rubygems/test_case.rb
 lib/ruby/${RUBYLIBREV}/rubygems/test_utilities.rb
