@@ -1,0 +1,20 @@
+$OpenBSD: patch-IMG_webp_c,v 1.1 2013/11/24 18:13:26 landry Exp $
+Fix BE archs
+http://hg.libsdl.org/SDL_image/rev/f0b623bb5570
+--- IMG_webp.c.orig	Sun Nov 24 11:09:51 2013
++++ IMG_webp.c	Sun Nov 24 11:10:58 2013
+@@ -242,11 +242,13 @@ SDL_Surface *IMG_LoadWEBP_RW(SDL_RWops *src)
+     Bmask = 0x00FF0000;
+     Amask = (features.has_alpha) ? 0xFF000000 : 0;
+ #else
+-    s = (features.has_alpha) ? 0 : 8;
++    {
++    int s = (features.has_alpha) ? 0 : 8;
+     Rmask = 0xFF000000 >> s;
+     Gmask = 0x00FF0000 >> s;
+     Bmask = 0x0000FF00 >> s;
+     Amask = 0x000000FF >> s;
++    }
+ #endif
+ 
+     surface = SDL_CreateRGBSurface(SDL_SWSURFACE,
