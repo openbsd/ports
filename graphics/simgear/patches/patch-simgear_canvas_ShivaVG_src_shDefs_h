@@ -1,0 +1,12 @@
+$OpenBSD: patch-simgear_canvas_ShivaVG_src_shDefs_h,v 1.1.1.1 2013/11/24 21:59:15 pascal Exp $
+--- simgear/canvas/ShivaVG/src/shDefs.h.orig	Fri Jul  5 11:24:09 2013
++++ simgear/canvas/ShivaVG/src/shDefs.h	Fri Jul  5 11:24:31 2013
+@@ -34,7 +34,7 @@
+ #include <math.h>
+ #include <float.h>
+ 
+-#ifndef VG_API_MACOSX
++#if !defined(VG_API_MACOSX) && !defined(VG_API_FREEBSD)
+ #  include <malloc.h>
+ #endif
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-simgear_sound_sample_group_cxx,v 1.1.1.1 2013/11/24 21:59:15 pascal Exp $
+--- simgear/sound/sample_group.cxx.orig	Mon Sep 16 19:56:31 2013
++++ simgear/sound/sample_group.cxx	Sat Nov 23 15:59:44 2013
+@@ -40,7 +40,7 @@ using std::isnan;
+ #endif
+ 
+ bool isNaN(float *v) {
+-   return (isnan(v[0]) || isnan(v[1]) || isnan(v[2]));
++   return (std::isnan(v[0]) || std::isnan(v[1]) || std::isnan(v[2]));
+ }
+ 
+ SGSampleGroup::SGSampleGroup () :

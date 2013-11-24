@@ -1,0 +1,12 @@
+$OpenBSD: patch-simgear_canvas_ShivaVG_src_shConfig_h,v 1.1.1.1 2013/11/24 21:59:15 pascal Exp $
+--- simgear/canvas/ShivaVG/src/shConfig.h.orig	Fri Jul  5 11:23:31 2013
++++ simgear/canvas/ShivaVG/src/shConfig.h	Fri Jul  5 11:23:57 2013
+@@ -26,7 +26,7 @@
+     // MacOS
+     #define VG_API_MACOSX
+ 
+-#elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
++#elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__OpenBSD__)
+ 
+     // FreeBSD
+     #define VG_API_FREEBSD
