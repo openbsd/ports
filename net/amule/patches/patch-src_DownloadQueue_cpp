@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_DownloadQueue_cpp,v 1.3 2013/11/25 11:55:13 dcoppa Exp $
+
+commit f8f0eca00153b508831fce03c385fb2fb1c8ae66
+Author: upstream svn <svn@amule.org>
+Date:   Sun Oct 13 20:26:01 2013 +0000
+
+Fix pre-allocation in CDownloadQueue::CopyFileList
+
+--- src/DownloadQueue.cpp.orig	Mon Jun 13 10:50:25 2011
++++ src/DownloadQueue.cpp	Mon Nov 25 11:50:03 2013
+@@ -185,8 +185,11 @@ uint16 CDownloadQueue::GetFileCount() const
+ void CDownloadQueue::CopyFileList(std::vector<CPartFile*>& out_list, bool includeCompleted) const
+ {
+ 	wxMutexLocker lock(m_mutex);
+-
+-	out_list.reserve(m_filelist.size() + includeCompleted ? m_completedDownloads.size() : 0);
++	uint32 reserve = m_filelist.size();
++	if (includeCompleted) {
++		reserve += m_completedDownloads.size();
++	}
++	out_list.reserve(reserve);
+ 	for (FileQueue::const_iterator it = m_filelist.begin(); it != m_filelist.end(); ++it) {
+ 		out_list.push_back(*it);
+ 	}

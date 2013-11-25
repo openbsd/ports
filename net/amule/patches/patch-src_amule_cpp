@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_amule_cpp,v 1.3 2011/11/28 15:28:49 dcoppa Exp $
+$OpenBSD: patch-src_amule_cpp,v 1.4 2013/11/25 11:55:13 dcoppa Exp $
 
 Disable checking for new versions at startup: it's useless and was
 causing a crash with amuled on sparc64.
@@ -6,8 +6,15 @@ causing a crash with amuled on sparc64.
 Ok() is just an undocumented alias for IsOk()
 (upstream git commit 740c0298147a614806f1676f77a89908074b5574)
 
+commit f9b504a11ba7fabde6c7a63184edeeeb15ec7f66
+Author: upstream svn <svn@amule.org>
+Date:   Thu Nov 7 21:50:55 2013 +0000
+
+Less writing of known files list during hashing (every 3000MB instead of 300)
+Files have become larger and hashing faster.
+
 --- src/amule.cpp.orig	Sun Sep 18 13:01:52 2011
-+++ src/amule.cpp	Mon Nov 28 10:35:00 2011
++++ src/amule.cpp	Mon Nov 25 11:55:53 2013
 @@ -521,6 +521,7 @@ bool CamuleApp::OnInit()
  		AddLogLineNS(msg);
  	}
@@ -33,3 +40,14 @@ Ok() is just an undocumented alias for IsOk()
  		listensocket->StartListening();
  	} else {
  		// If we wern't able to start listening, we need to warn the user
+@@ -1276,8 +1278,8 @@ void CamuleApp::OnFinishedHashing(CHashingEvent& evt)
+ 			sharedfiles->SafeAddKFile(result);
+ 
+ 			bytecount += result->GetFileSize();
+-			// If we have added files with a total size of ~300mb
+-			if (bytecount >= 314572800) {
++			// If we have added files with a total size of ~3000mb
++			if (bytecount >= 3145728000) {
+ 				AddDebugLogLineN(logKnownFiles, wxT("Failsafe for crash on file hashing creation"));
+ 				if ( m_app_state != APP_STATE_SHUTTINGDOWN ) {
+ 					knownfiles->Save();

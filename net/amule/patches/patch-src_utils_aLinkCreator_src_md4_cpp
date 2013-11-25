@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_utils_aLinkCreator_src_md4_cpp,v 1.1 2013/11/25 11:55:13 dcoppa Exp $
+
+commit 1b7eaffdb26e624bd0fbf85d2251fee63aebcb69
+Author: upstream svn <svn@amule.org>
+Date:   Fri Oct 18 21:14:53 2013 +0000
+
+Good catch, gcc 4.8 !
+
+--- src/utils/aLinkCreator/src/md4.cpp.orig	Mon Jun 13 10:50:25 2011
++++ src/utils/aLinkCreator/src/md4.cpp	Mon Nov 25 11:52:26 2013
+@@ -176,7 +176,7 @@ void MD4::MD4Final(struct MD4Context *ctx, unsigned ch
+     {
+       memcpy(digest, ctx->buf, 16);
+     }
+-  memset(ctx, 0, sizeof(ctx));	// In case it's sensitive
++  memset(ctx, 0, sizeof(*ctx));	// In case it's sensitive
+ }
+ 
+ /// The three core functions

@@ -1,10 +1,13 @@
-$OpenBSD: patch-src_Statistics_cpp,v 1.1 2012/02/22 07:54:26 dcoppa Exp $
+$OpenBSD: patch-src_Statistics_cpp,v 1.2 2013/11/25 11:55:13 dcoppa Exp $
 
 Fix crash on truncated statistics.dat
 (upstream git commit 5e3682f7efed13eb52e4358a2d91b0e381334120)
 
+Don't log a critical line on startup if statistics.dat is missing
+(upstream git commit 2de1d5fa97de56625459362cc6ccfd94dbf1c044)
+
 --- src/Statistics.cpp.orig	Mon Jun 13 10:50:25 2011
-+++ src/Statistics.cpp	Tue Feb 21 17:15:40 2012
++++ src/Statistics.cpp	Mon Nov 25 11:53:49 2013
 @@ -25,6 +25,7 @@
  //
  
@@ -13,7 +16,7 @@ Fix crash on truncated statistics.dat
  
  #include <protocol/ed2k/ClientSoftware.h>
  
-@@ -311,12 +312,16 @@ void CStatistics::Load()
+@@ -311,12 +312,17 @@ void CStatistics::Load()
  
  	s_totalSent = 0;
  	s_totalReceived = 0;
@@ -23,7 +26,8 @@ Fix crash on truncated statistics.dat
 -			s_totalSent = f.ReadUInt64();
 -			s_totalReceived = f.ReadUInt64();
 +	try {
-+		if (f.Open(JoinPaths(theApp->ConfigDir, wxT("statistics.dat")))) {
++		CPath path(JoinPaths(theApp->ConfigDir, wxT("statistics.dat")));
++		if (path.FileExists() && f.Open(path)) {
 +			uint8_t version = f.ReadUInt8();
 +			if (version == 0) {
 +				s_totalSent = f.ReadUInt64();
