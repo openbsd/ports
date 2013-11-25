@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_drivers_driver_openbsd_c,v 1.1 2013/11/25 22:23:18 sthen Exp $
+--- src/drivers/driver_openbsd.c.orig	Mon Nov 25 15:21:13 2013
++++ src/drivers/driver_openbsd.c	Mon Nov 25 15:21:21 2013
+@@ -10,6 +10,7 @@
+ #include <sys/ioctl.h>
+ 
+ #include <net/if.h>
++#include <net/if_var.h>
+ #include <net80211/ieee80211.h>
+ #include <net80211/ieee80211_crypto.h>
+ #include <net80211/ieee80211_ioctl.h>
