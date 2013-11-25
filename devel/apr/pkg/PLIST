@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/04/28 09:48:20 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/11/25 11:37:15 sthen Exp $
 @conflict apr-mt-*
 @pkgpath devel/apr,mt
-%%SHARED%%
 bin/apr-1-config
 include/apr-1/
 include/apr-1/apr.h
@@ -48,5 +47,6 @@ lib/apr-1/mkdir.sh
 @comment lib/apr.exp
 lib/libapr-1.a
 lib/libapr-1.la
+@lib lib/libapr-1.so.${LIBapr-1_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/apr-1.pc
