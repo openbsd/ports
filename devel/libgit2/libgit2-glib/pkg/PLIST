@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/09/27 12:17:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/11/25 12:59:23 jasper Exp $
 include/libgit2-glib-1.0/
 include/libgit2-glib-1.0/libgit2-glib/
 include/libgit2-glib-1.0/libgit2-glib/ggit-blob-output-stream.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-blob.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-branch-enumerator.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-branch.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-clone-options.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-commit.h
@@ -12,10 +13,11 @@ include/libgit2-glib-1.0/libgit2-glib/ggit-cred-plaintext.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-cred.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-diff-delta.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-diff-file.h
-include/libgit2-glib-1.0/libgit2-glib/ggit-diff-list.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-diff-hunk.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-diff-line.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-diff-options.h
-include/libgit2-glib-1.0/libgit2-glib/ggit-diff-patch.h
-include/libgit2-glib-1.0/libgit2-glib/ggit-diff-range.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-diff-similarity-metric.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-diff.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-enum-types.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-error.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-index-entry-resolve-undo.h
@@ -29,11 +31,13 @@ include/libgit2-glib-1.0/libgit2-glib/ggit-object-factory-base.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-object-factory.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-object.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-oid.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-patch.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-push.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-ref-spec.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-ref.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-reflog-entry.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-reflog.h
+include/libgit2-glib-1.0/libgit2-glib/ggit-remote-callbacks.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-remote.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-repository.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-revision-walker.h
@@ -47,22 +51,15 @@ include/libgit2-glib-1.0/libgit2-glib/ggit-tree-entry.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-tree.h
 include/libgit2-glib-1.0/libgit2-glib/ggit-types.h
 include/libgit2-glib-1.0/libgit2-glib/ggit.h
-lib/girepository-1.0/
 lib/girepository-1.0/Ggit-1.0.typelib
 lib/libgit2-glib-1.0.a
 lib/libgit2-glib-1.0.la
 @lib lib/libgit2-glib-1.0.so.${LIBgit2-glib-1.0_VERSION}
 lib/pkgconfig/libgit2-glib-1.0.pc
-lib/python${MODPY_VERSION}/site-packages/gi/
-lib/python${MODPY_VERSION}/site-packages/gi/overrides/
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Ggit.py
-lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Ggit.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Ggit.${MODPY_PYC_MAGIC_TAG}pyo
-share/gir-1.0/
 share/gir-1.0/Ggit-1.0.gir
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/libgit2-glib-1.0/
 share/gtk-doc/html/libgit2-glib-1.0/GgitBlob.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitBlobOutputStream.html
@@ -73,12 +70,12 @@ share/gtk-doc/html/libgit2-glib-1.0/GgitConfig.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitConfigEntry.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitCred.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitCredPlaintext.html
+share/gtk-doc/html/libgit2-glib-1.0/GgitDiff.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitDiffDelta.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitDiffFile.html
-share/gtk-doc/html/libgit2-glib-1.0/GgitDiffList.html
+share/gtk-doc/html/libgit2-glib-1.0/GgitDiffHunk.html
+share/gtk-doc/html/libgit2-glib-1.0/GgitDiffLine.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitDiffOptions.html
-share/gtk-doc/html/libgit2-glib-1.0/GgitDiffPatch.html
-share/gtk-doc/html/libgit2-glib-1.0/GgitDiffRange.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitError.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitIndex.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitIndexEntry.html
@@ -89,6 +86,7 @@ share/gtk-doc/html/libgit2-glib-1.0/GgitOId.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitObject.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitObjectFactory.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitObjectFactoryBase.html
+share/gtk-doc/html/libgit2-glib-1.0/GgitPatch.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitPush.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitRef.html
 share/gtk-doc/html/libgit2-glib-1.0/GgitRefSpec.html
@@ -110,12 +108,15 @@ share/gtk-doc/html/libgit2-glib-1.0/api-index-full.html
 share/gtk-doc/html/libgit2-glib-1.0/home.png
 share/gtk-doc/html/libgit2-glib-1.0/index.html
 share/gtk-doc/html/libgit2-glib-1.0/index.sgml
+share/gtk-doc/html/libgit2-glib-1.0/left-insensitive.png
 share/gtk-doc/html/libgit2-glib-1.0/left.png
 share/gtk-doc/html/libgit2-glib-1.0/libgit2-glib-1.0-Ggit-Main.html
 share/gtk-doc/html/libgit2-glib-1.0/libgit2-glib-1.0-GgitMessage.html
 share/gtk-doc/html/libgit2-glib-1.0/libgit2-glib-1.0-GgitStatusOptions.html
 share/gtk-doc/html/libgit2-glib-1.0/libgit2-glib-1.0.devhelp2
+share/gtk-doc/html/libgit2-glib-1.0/right-insensitive.png
 share/gtk-doc/html/libgit2-glib-1.0/right.png
 share/gtk-doc/html/libgit2-glib-1.0/rn01.html
 share/gtk-doc/html/libgit2-glib-1.0/style.css
+share/gtk-doc/html/libgit2-glib-1.0/up-insensitive.png
 share/gtk-doc/html/libgit2-glib-1.0/up.png
