@@ -1,9 +1,11 @@
-@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2012/08/19 00:27:50 avsm Exp $
+@comment $OpenBSD: PFRAG.native,v 1.2 2013/11/25 14:35:26 dcoppa Exp $
 %%dynlink%%
 lib/ocaml/lwt/lwt-extra.a
 lib/ocaml/lwt/lwt-extra.cmxa
 lib/ocaml/lwt/lwt-glib.a
 lib/ocaml/lwt/lwt-glib.cmxa
+lib/ocaml/lwt/lwt-log.a
+lib/ocaml/lwt/lwt-log.cmxa
 lib/ocaml/lwt/lwt-preemptive.a
 lib/ocaml/lwt/lwt-preemptive.cmxa
 lib/ocaml/lwt/lwt-react.a
@@ -35,6 +37,7 @@ lib/ocaml/lwt/lwt_io.cmx
 lib/ocaml/lwt/lwt_lib.cmx
 lib/ocaml/lwt/lwt_list.cmx
 lib/ocaml/lwt/lwt_log.cmx
+lib/ocaml/lwt/lwt_log_core.cmx
 lib/ocaml/lwt/lwt_log_rules.cmx
 lib/ocaml/lwt/lwt_main.cmx
 lib/ocaml/lwt/lwt_mutex.cmx

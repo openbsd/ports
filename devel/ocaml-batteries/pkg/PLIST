@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/01/08 21:50:17 chrisz Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/11/25 14:35:26 dcoppa Exp $
 %%native%%
 lib/ocaml/batteries/
 lib/ocaml/batteries/META
@@ -430,6 +430,7 @@ share/doc/ocaml-batteries/html/api/BatScanf.html
 share/doc/ocaml-batteries/html/api/BatSeq.Exceptionless.html
 share/doc/ocaml-batteries/html/api/BatSeq.Infix.html
 share/doc/ocaml-batteries/html/api/BatSeq.html
+share/doc/ocaml-batteries/html/api/BatSet.Incubator.html
 share/doc/ocaml-batteries/html/api/BatSet.Make.html
 share/doc/ocaml-batteries/html/api/BatSet.OrderedType.html
 share/doc/ocaml-batteries/html/api/BatSet.PSet.html
@@ -888,6 +889,7 @@ share/doc/ocaml-batteries/html/api/type_BatScanf.html
 share/doc/ocaml-batteries/html/api/type_BatSeq.Exceptionless.html
 share/doc/ocaml-batteries/html/api/type_BatSeq.Infix.html
 share/doc/ocaml-batteries/html/api/type_BatSeq.html
+share/doc/ocaml-batteries/html/api/type_BatSet.Incubator.html
 share/doc/ocaml-batteries/html/api/type_BatSet.Make.html
 share/doc/ocaml-batteries/html/api/type_BatSet.OrderedType.html
 share/doc/ocaml-batteries/html/api/type_BatSet.PSet.html

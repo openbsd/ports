@@ -1,6 +1,7 @@
-@comment $OpenBSD: PFRAG.dynlink-native,v 1.1.1.1 2012/08/19 00:27:50 avsm Exp $
+@comment $OpenBSD: PFRAG.dynlink-native,v 1.2 2013/11/25 14:35:26 dcoppa Exp $
 @bin lib/ocaml/lwt/lwt-extra.cmxs
 @bin lib/ocaml/lwt/lwt-glib.cmxs
+@bin lib/ocaml/lwt/lwt-log.cmxs
 @bin lib/ocaml/lwt/lwt-preemptive.cmxs
 @bin lib/ocaml/lwt/lwt-react.cmxs
 @bin lib/ocaml/lwt/lwt-simple-top.cmxs
