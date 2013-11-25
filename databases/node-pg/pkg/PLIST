@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/05/19 15:22:51 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/11/25 23:27:02 abieber Exp $
 lib/node_modules/pg/
 lib/node_modules/pg/.jshintrc
 lib/node_modules/pg/.npmignore
@@ -14,7 +14,7 @@ lib/node_modules/pg/benchmark/index.js
 lib/node_modules/pg/benchmark/prepared-statement-parsing.js
 lib/node_modules/pg/benchmark/simple-query-parsing.js
 lib/node_modules/pg/binding.gyp
-lib/node_modules/pg/binding.gyp.beforesubst
+@comment lib/node_modules/pg/binding.gyp.beforesubst
 lib/node_modules/pg/build/
 lib/node_modules/pg/build/Makefile
 lib/node_modules/pg/build/Release/
@@ -60,6 +60,7 @@ lib/node_modules/pg/script/
 lib/node_modules/pg/script/create-test-tables.js
 lib/node_modules/pg/script/dump-db-types.js
 lib/node_modules/pg/script/list-db-types.js
+lib/node_modules/pg/script/setup-bench-data.js
 lib/node_modules/pg/script/test-connection.js
 lib/node_modules/pg/script/travis-pg-9.2-install.sh
 lib/node_modules/pg/src/
@@ -77,14 +78,22 @@ lib/node_modules/pg/test/integration/client/configuration-tests.js
 lib/node_modules/pg/test/integration/client/copy-tests.js
 lib/node_modules/pg/test/integration/client/empty-query-tests.js
 lib/node_modules/pg/test/integration/client/error-handling-tests.js
+lib/node_modules/pg/test/integration/client/escape-tests.js
+lib/node_modules/pg/test/integration/client/force-native-with-envvar-tests.js
+lib/node_modules/pg/test/integration/client/heroku-ssl-tests.js
 lib/node_modules/pg/test/integration/client/huge-numeric-tests.js
 lib/node_modules/pg/test/integration/client/json-type-parsing-tests.js
 lib/node_modules/pg/test/integration/client/no-data-tests.js
+lib/node_modules/pg/test/integration/client/no-row-result-tests.js
 lib/node_modules/pg/test/integration/client/notice-tests.js
+lib/node_modules/pg/test/integration/client/parse-int-8-tests.js
 lib/node_modules/pg/test/integration/client/prepared-statement-tests.js
 lib/node_modules/pg/test/integration/client/query-callback-error-tests.js
 lib/node_modules/pg/test/integration/client/query-error-handling-tests.js
+lib/node_modules/pg/test/integration/client/quick-disconnect-tests.js
 lib/node_modules/pg/test/integration/client/result-metadata-tests.js
+lib/node_modules/pg/test/integration/client/results-as-array-tests.js
+lib/node_modules/pg/test/integration/client/row-description-on-results-tests.js
 lib/node_modules/pg/test/integration/client/simple-query-tests.js
 lib/node_modules/pg/test/integration/client/ssl-tests.js
 lib/node_modules/pg/test/integration/client/test-helper.js
@@ -126,6 +135,7 @@ lib/node_modules/pg/test/unit/client/
 lib/node_modules/pg/test/unit/client/cleartext-password-tests.js
 lib/node_modules/pg/test/unit/client/configuration-tests.js
 lib/node_modules/pg/test/unit/client/connection-string-tests.js
+lib/node_modules/pg/test/unit/client/escape-tests.js
 lib/node_modules/pg/test/unit/client/md5-password-tests.js
 lib/node_modules/pg/test/unit/client/notification-tests.js
 lib/node_modules/pg/test/unit/client/prepared-statement-tests.js
@@ -153,5 +163,4 @@ lib/node_modules/pg/test/unit/pool/basic-tests.js
 lib/node_modules/pg/test/unit/pool/timeout-tests.js
 lib/node_modules/pg/test/unit/test-helper.js
 lib/node_modules/pg/test/unit/utils-tests.js
-lib/node_modules/pg/v8.log
 lib/node_modules/pg/wscript

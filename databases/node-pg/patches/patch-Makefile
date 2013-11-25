@@ -1,0 +1,76 @@
+$OpenBSD: patch-Makefile,v 1.1 2013/11/25 23:27:02 abieber Exp $
+--- Makefile.orig	Fri Sep  6 00:14:17 2013
++++ Makefile	Thu Sep 12 12:32:08 2013
+@@ -1,9 +1,12 @@
+ SHELL := /bin/sh
+ 
+-connectionString=postgres://
++connectionString=postgres://postgres:1234@localhost:5432/postgres
+ 
+ params := $(connectionString)
+ 
++MODULES := $(WRKDIR)/node_modules
++PG := $(MODULES)/pg
++
+ node-command := xargs -n 1 -I file node file $(params)
+ 
+ .PHONY : test test-connection test-integration bench test-native \
+@@ -21,7 +24,7 @@ help:
+ 
+ test: test-unit
+ 
+-test-all: jshint test-unit test-integration test-native test-binary
++test-all: jshint prepare-test-db test-unit test-integration test-native test-binary
+ 
+ test-travis: test-all upgrade-pg
+ 	@make test-all connectionString=postgres://postgres@localhost:5433/postgres
+@@ -37,36 +40,38 @@ build/default/binding.node:
+ 	@node-gyp rebuild
+ 
+ test-unit:
+-	@find test/unit -name "*-tests.js" | $(node-command)
++	@find $(PG)/test/unit -name "*-tests.js" | $(node-command)
+ 
+ test-connection:
+ 	@echo "***Testing connection***"
+-	@node script/test-connection.js $(params)
++	@node $(PG)/script/test-connection.js $(params)
+ 
+ test-connection-binary:
+ 	@echo "***Testing binary connection***"
+-	@node script/test-connection.js $(params) binary
++	@node $(PG)/script/test-connection.js $(params) binary
+ 
+-test-native: build/default/binding.node
++test-native:
+ 	@echo "***Testing native bindings***"
+-	@find test/native -name "*-tests.js" | $(node-command)
+-	@find test/integration -name "*-tests.js" | $(node-command) native
++	@find $(PG)/test/native -name "*-tests.js" | $(node-command)
++	@find $(PG)/test/integration -name "*-tests.js" | $(node-command) native
+ 
+-test-integration: test-connection build/default/binding.node
++test-integration: test-connection
+ 	@echo "***Testing Pure Javascript***"
+-	@find test/integration -name "*-tests.js" | $(node-command)
++	@find $(PG)/test/integration -name "*-tests.js" | $(node-command)
+ 
+ test-binary: test-connection-binary
+ 	@echo "***Testing Pure Javascript (binary)***"
+-	@find test/integration -name "*-tests.js" | $(node-command) binary
++	@find $(PG)/test/integration -name "*-tests.js" | $(node-command) binary
+ 
+ prepare-test-db:
+ 	@echo "***Preparing the database for tests***"
+-	@find script/create-test-tables.js  | $(node-command)
++	@find $(PG)/script/create-test-tables.js | $(node-command) down
++	@find $(PG)/script/create-test-tables.js  | $(node-command)
+ 
+ jshint:
++	@test -s $(MODULES)/jshint/bin/jshint || { echo "Please run: 'cd \`make show=WRKDIR\`; npm install jshint; cd -'"; exit 1; }
+ 	@echo "***Starting jshint***"
+-	@./node_modules/.bin/jshint lib
++	@$(MODULES)/jshint/bin/jshint $(PG)/lib
+ 
+ publish:
+ 	@rm -r build || (exit 0)
