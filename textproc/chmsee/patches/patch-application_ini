@@ -1,0 +1,9 @@
+$OpenBSD: patch-application_ini,v 1.1 2013/11/25 21:49:24 landry Exp $
+--- application.ini.orig	Mon Nov 25 21:48:37 2013
++++ application.ini	Mon Nov 25 21:48:41 2013
+@@ -25,4 +25,4 @@ ID={f48601d0-39a1-11e0-a013-00241d8cf371}
+ 
+ [Gecko]
+ MinVersion=22.0
+-MaxVersion=23.*
++MaxVersion=24.*
