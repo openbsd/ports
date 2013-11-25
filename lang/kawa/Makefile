@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2013/11/09 23:19:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2013/11/25 14:16:23 sthen Exp $
+
+BROKEN-i386= java
 
 COMMENT=		Scheme and language framework for the Java platform
 
@@ -15,8 +17,6 @@ MASTER_SITES=		${MASTER_SITE_GNU:=kawa/}
 
 MODULES=		java
 MODJAVA_VER=		1.6+
-
-VMEM_WARNING=		Yes
 
 USE_GMAKE=		Yes
 USE_GROFF=		Yes

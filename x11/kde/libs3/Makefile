@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2013/11/24 19:56:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.135 2013/11/25 14:16:23 sthen Exp $
 
 BROKEN-alpha =		.got subsegment exceeds 64K
 BROKEN-mips64 =		.got subsegment exceeds 64K
@@ -55,8 +55,6 @@ SHARED_LIBS +=	kscript              1.0      # .0.0
 SHARED_LIBS +=	kmediaplayer         1.0      # .0.0
 SHARED_LIBS +=	kimproxy             1.0      # .0.0
 SHARED_LIBS +=	katepartinterfaces   1.0      # .0.0
-
-VMEM_WARNING =	Yes
 
 WANTLIB-main =  asn1 crypto gssapi util jpeg krb5 m FLAC X11
 WANTLIB-main += ICE Xrender c SM pthread stdc++ Xext z png

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2013/03/11 11:06:04 espie Exp $
+# $OpenBSD: Makefile,v 1.77 2013/11/25 14:16:22 sthen Exp $
 
 COMMENT=		PDP, IBM 1401, Nova and other CPUs simulator
 
@@ -28,7 +28,6 @@ MAKE_FILE=		makefile
 MAKE_FLAGS=		GCC="${CC}" USE_NETWORK=1
 
 NO_TEST=		Yes
-VMEM_WARNING=		Yes
 
 pre-build:
 	@mkdir -p ${WRKBUILD}/BIN

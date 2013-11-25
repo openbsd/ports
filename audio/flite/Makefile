@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/10 22:55:02 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2013/11/25 14:16:22 sthen Exp $
 
 BROKEN-mips64=	GCC hangs compiling cmu_us_kal_diphone.c
 BROKEN-mips64el= GCC hangs compiling cmu_us_kal_diphone.c
@@ -37,7 +37,6 @@ CONFIGURE_ARGS= ${CONFIGURE_SHARED} --with-audio=sndio
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes
-VMEM_WARNING=	Yes
 
 post-extract:
 	cp ${FILESDIR}/au_sndio.c ${WRKSRC}/src/audio

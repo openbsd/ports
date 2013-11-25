@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2013/10/21 09:34:42 landry Exp $
+# $OpenBSD: Makefile,v 1.73 2013/11/25 14:16:22 sthen Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
@@ -48,8 +48,6 @@ MASTER_SITE_ECLIPSE+=	\
  
 MASTER_SITES=		${MASTER_SITE_ECLIPSE:=R-3.2.2-200702121330/}
 EXTRACT_SUFX=		.zip
-
-VMEM_WARNING=		Yes
 
 MODULES=		java devel/gettext
 MODJAVA_VER=		1.6+

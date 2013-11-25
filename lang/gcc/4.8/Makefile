@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/11/22 19:58:40 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2013/11/25 14:16:23 sthen Exp $
 
 ONLY_FOR_ARCHS = alpha amd64 i386 powerpc sparc64
 
@@ -103,7 +103,6 @@ LANGS := ${LANGS},java
 DISTFILES +=		${ECJ}:1
 BUILD_DEPENDS +=	archivers/zip>=2.3p0
 CONFIGURE_ARGS +=	--enable-libgcj --without-jar
-VMEM_WARNING =		Yes
 .endif
 .if ${BUILD_PACKAGES:M-ada}
 LANGS := ${LANGS},ada

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:07:40 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/11/25 14:16:22 sthen Exp $
 
 COMMENT =		open source reimplementation of the original X-Com
 DISTNAME =		openxcom-20120217
@@ -25,7 +25,6 @@ LIB_DEPENDS =		devel/sdl-gfx \
 CONFIGURE_ARGS =	-DDEV_BUILD=Off
 
 NO_TEST =		Yes
-VMEM_WARNING =		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/Engine/CrossPlatform.cpp

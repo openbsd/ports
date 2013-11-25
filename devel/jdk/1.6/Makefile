@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2013/10/16 14:12:21 bluhm Exp $
+# $OpenBSD: Makefile,v 1.50 2013/11/25 14:16:22 sthen Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	amd64 i386
@@ -67,7 +67,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 USE_GROFF=	Yes
 NO_TEST=	Yes
 
-VMEM_WARNING=	Yes
 BUILD_DEPENDS=	archivers/zip \
 		archivers/unzip \
 		print/cups,-libs \

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2013/10/24 08:44:36 zhuk Exp $
+# $OpenBSD: Makefile,v 1.23 2013/11/25 14:16:23 sthen Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 # do not include i386 here until JDK 1.6 issues there are solved
 ONLY_FOR_ARCHS-java =	amd64
 SHARED_ONLY =		Yes
-VMEM_WARNING =		Yes
 
 CATEGORIES =		graphics devel
 COMMENT-docs =		OpenCV documentation and examples

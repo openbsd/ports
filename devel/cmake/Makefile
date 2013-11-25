@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.93 2013/11/11 07:23:32 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.94 2013/11/25 14:16:22 sthen Exp $
 
-VMEM_WARNING =	Yes
 DPB_PROPERTIES =parallel
 
 # avoid segfaults from binaries compiled and then used during the build

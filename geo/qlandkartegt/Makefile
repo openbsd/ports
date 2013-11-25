@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.14 2013/10/19 16:51:29 sebastia Exp $
+# $OpenBSD: Makefile,v 1.15 2013/11/25 14:16:22 sthen Exp $
 
-VMEM_WARNING =	yes
 COMMENT =	garmin gps map management tool
 
 DISTNAME =	qlandkartegt-1.7.5

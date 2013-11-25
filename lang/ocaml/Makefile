@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2013/11/25 14:16:23 sthen Exp $
 
 NOT_FOR_ARCHS=	hppa
 
@@ -30,7 +30,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES+= lang/tcl x11/tk
 
-VMEM_WARNING=	Yes
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=-tkdefs '-I${MODTCL_INCDIR} -I${MODTK_INCDIR}'
 CONFIGURE_ARGS+=-tklibs -L${LOCALBASE}/lib

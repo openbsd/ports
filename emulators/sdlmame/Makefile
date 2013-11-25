@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2013/09/29 19:36:09 bcallah Exp $
+# $OpenBSD: Makefile,v 1.38 2013/11/25 14:16:22 sthen Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -65,7 +65,6 @@ CONFIGURE_STYLE =	none
 MAKE_FILE =		makefile
 
 NO_TEST =		Yes
-VMEM_WARNING =		Yes
 
 post-extract:
 	@${UNZIP} -oq ${WRKDIR}/mame.zip -d ${WRKSRC}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/11/10 12:31:45 shadchin Exp $
+# $OpenBSD: Makefile,v 1.26 2013/11/25 14:16:22 sthen Exp $
 
 COMMENT=		LaTeX development environment
 DISTNAME=		texmaker-4.1
@@ -27,7 +27,6 @@ LIB_DEPENDS=		textproc/hunspell \
 			print/poppler,,-qt4
 
 NO_TEST=		Yes
-VMEM_WARNING=		Yes
 
 FAKE_FLAGS=		INSTALL_ROOT=${WRKINST}
 

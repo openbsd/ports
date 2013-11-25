@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2013/10/30 15:23:32 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.67 2013/11/25 14:16:22 sthen Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -58,7 +58,6 @@ BUILD_DEPENDS+=	jdk->=1.6,<1.7:devel/jdk/1.6
 ALT_BOOTDIR=	${LOCALBASE}/jdk-1.6.0
 .endif
 
-VMEM_WARNING=	Yes
 BUILD_DEPENDS+=	devel/apache-ant>=1.8.2 \
 		archivers/zip \
 		archivers/unzip \

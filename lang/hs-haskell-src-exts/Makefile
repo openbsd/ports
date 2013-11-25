@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/11/25 14:16:23 sthen Exp $
 
 COMMENT=		abstract syntax, lexer, parser and pretty printer
 
@@ -17,7 +17,6 @@ BUILD_DEPENDS=		${RUN_DEPENDS} \
 			devel/happy
 RUN_DEPENDS=		devel/cpphs,-lib>=1.3
 
-VMEM_WARNING=		Yes
 NO_TEST=		Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/06/28 13:09:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2013/11/25 14:16:22 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 SHARED_ONLY =		Yes
@@ -33,7 +33,6 @@ EXTRACT_SUFX =		.tar.bz2
 MODULES =		devel/gettext \
 			devel/scons
 
-VMEM_WARNING =	Yes
 NO_TEST=	Yes
 
 MODSCONS_ENV=	CC="${CC}" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2013/11/11 20:46:30 kili Exp $
+# $OpenBSD: Makefile,v 1.106 2013/11/25 14:16:23 sthen Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -49,9 +49,6 @@ MASTER_SITES =		${HOMEPAGE}dist/${MODGHC_VER}/ \
 MASTER_SITES0 =		http://openbsd.dead-parrot.de/distfiles/
 
 DIST_SUBDIR =		ghc
-
-# Haddock needs about 2.5 GB for processing the ghc library.
-VMEM_WARNING =		Yes
 
 BINDISTFILE =		${BINDISTFILE-${MACHINE_ARCH}}
 

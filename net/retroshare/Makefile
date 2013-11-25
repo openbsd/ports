@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/08/15 21:55:20 stsp Exp $
+# $OpenBSD: Makefile,v 1.2 2013/11/25 14:16:23 sthen Exp $
 
 SHARED_ONLY =		Yes
 COMMENT =		secure decentralised communication platform
@@ -32,7 +32,6 @@ LIB_DEPENDS =		audio/speex \
 NO_TEST =		Yes
 WRKDIST =		${WRKDIR}/retroshare-${V:S/e$//}
 WRKSRC =		${WRKDIST}/src
-VMEM_WARNING = 		Yes
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/libretroshare/src/libretroshare.pro \

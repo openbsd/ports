@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/10/01 10:28:43 dcoppa Exp $
-
-VMEM_WARNING =		Yes
+# $OpenBSD: Makefile,v 1.2 2013/11/25 14:16:22 sthen Exp $
 
 SHARED_ONLY =		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/10/17 12:41:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2013/11/25 14:16:22 sthen Exp $
 
 COMMENT=	texas hold'em poker game with online capabilities
 BROKEN-hppa =	needs atomic ops
@@ -48,7 +48,6 @@ FAKE_FLAGS=	INSTALL_ROOT=${DESTDIR}
 
 SEPARATE_BUILD=	Yes
 
-VMEM_WARNING=	Yes
 NO_TEST=	Yes
 USE_GMAKE=	Yes
 

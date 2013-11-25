@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/10/10 02:08:22 brad Exp $
+# $OpenBSD: Makefile,v 1.15 2013/11/25 14:16:22 sthen Exp $
 
 COMMENT-main=		GPS processing toolkit
 COMMENT-devel=		GPStk development libraries and headers
@@ -34,7 +34,6 @@ AUTOMAKE_VERSION=	1.9
 CONFIGURE_STYLE=	gnu
 
 NO_TEST=		Yes
-VMEM_WARNING=		Yes
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
 # way faster than -O0, a bit slower than -O2, but doesn't need 800M to compile
 CFLAGS+=		-O1 -g

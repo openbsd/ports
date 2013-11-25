@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2013/06/12 20:36:34 brad Exp $
+# $OpenBSD: Makefile,v 1.110 2013/11/25 14:16:24 sthen Exp $
 
 COMMENT-main=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt3
@@ -195,7 +195,6 @@ DOCS=	FAQ LICENSE.GPL README README-QT.TXT \
 	changes-3* \
 	README.immodule changes.immodule
 
-VMEM_WARNING=	Yes
 NO_TEST=	Yes
 
 PROGRAMS3=designer findtr moc qt20fix qtrename140 uic

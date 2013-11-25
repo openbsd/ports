@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/11/09 14:12:28 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2013/11/25 14:16:22 sthen Exp $
 
 BROKEN-alpha =		OOM or ICE on hqx/src/hq4x_32.c
 COMMENT =		Sega Megadrive/Genesis emulator
@@ -31,10 +31,6 @@ BUILD_DEPENDS =		devel/sdl
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS +=        devel/nasm
 .endif
-
-# when building hq4x.o:
-# cc1: out of memory allocating 4072 bytes after a total of 0 bytes
-VMEM_WARNING = Yes
 
 LIB_DEPENDS =		devel/sdl \
 			archivers/libarchive

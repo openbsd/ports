@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/07/19 07:10:25 kili Exp $
-
-# ghc: out of memory (requested 1048576 bytes)
-VMEM_WARNING =	Yes
+# $OpenBSD: Makefile,v 1.27 2013/11/25 14:16:23 sthen Exp $
 
 COMMENT =		third party xmonad extensions
 
@@ -28,7 +25,5 @@ RUN_DEPENDS =		devel/hs-extensible-exceptions \
 			x11/xmonad,-lib>=0.11,<0.12
 
 NO_TEST =		Yes
-
-VMEM_WARNING =		Yes
 
 .include <bsd.port.mk>

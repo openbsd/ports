@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/11/03 07:52:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2013/11/25 14:16:22 sthen Exp $
 
 # Memory hog, stuck for days on the same file during build.
 # XXX check with different optimizer level? see doc/install.doc
@@ -69,6 +69,5 @@ FAKE_FLAGS+=	DESTDIR=
 WRKDIST=	${WRKDIR}/doxygen-${VERSION}
 
 NO_TEST=	Yes
-VMEM_WARNING=	Yes
 
 .include <bsd.port.mk>

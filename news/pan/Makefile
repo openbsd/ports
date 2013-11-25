@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2013/03/11 11:35:58 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2013/11/25 14:16:23 sthen Exp $
 
 COMMENT=	powerful Gtk+2 newsreader
 
@@ -32,8 +32,6 @@ LIB_DEPENDS=	devel/libnotify \
 		x11/gnome/libgnome-keyring \
 		x11/gtk+3
 RUN_DEPENDS=	devel/desktop-file-utils
-
-VMEM_WARNING=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

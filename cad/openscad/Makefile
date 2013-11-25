@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/10 23:04:45 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2013/11/25 14:16:22 sthen Exp $
 
 COMMENT =		the programmer's solid 3D CAD modeller
 
@@ -6,8 +6,6 @@ V =			2013.01
 DISTNAME =		openscad-${V}
 
 CATEGORIES =		cad
-
-VMEM_WARNING =		Yes
 
 HOMEPAGE =		http://www.openscad.org/
 

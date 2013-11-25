@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2013/11/09 23:19:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.66 2013/11/25 14:16:22 sthen Exp $
 
 COMMENT=	Data Display Debugger, graphical front-end for GDB, etc
 
@@ -23,9 +23,8 @@ LIB_DEPENDS=	x11/openmotif
 
 TEST_IS_INTERACTIVE=x11
 
-VMEM_WARNING=	Yes
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 AUTOCONF_VERSION=2.61
 CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \

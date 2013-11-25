@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2013/11/14 16:47:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.102 2013/11/25 14:16:23 sthen Exp $
 
 COMMENT =	open source web browser engine for Gtk+
 
@@ -33,7 +33,6 @@ MODGCC4_LANGS =		c++
 MAKE_FILE =		GNUmakefile
 PORTHOME =		${WRKDIST}
 SUBST_VARS =		WEBKIT_API_VERSION GTK_API_VERSION
-VMEM_WARNING =		Yes
 
 MODPY_RUNDEP =		No
 MODRUBY_RUNDEP =	No

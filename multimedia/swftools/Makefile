@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/09/25 07:58:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2013/11/25 14:16:23 sthen Exp $
 
 COMMENT=	SWF manipulation and generation utilities
 
@@ -18,8 +18,6 @@ LIB_DEPENDS=	audio/lame \
 		graphics/jpeg \
 		graphics/giflib \
 		math/fftw3
-
-VMEM_WARNING=	Yes
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu

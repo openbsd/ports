@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2013/06/04 18:41:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.43 2013/11/25 14:16:23 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -39,8 +39,6 @@ LIB_DEPENDS=	audio/faad \
 		multimedia/schroedinger \
 		multimedia/x264 \
 		x11/gtk+2
-
-VMEM_WARNING=	Yes
 
 MAKE_ENV=	DOXYGEN_ENCODE_PATH_STRIP=${WRKSRC}
 

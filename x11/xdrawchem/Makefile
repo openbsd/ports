@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/21 08:48:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2013/11/25 14:16:24 sthen Exp $
 
 COMMENT=	two-dimensional molecule drawing program
 
@@ -21,8 +21,6 @@ MODULES=	x11/qt3
 
 LIB_DEPENDS =	misc/openbabel>=2.2.0
 WANTLIB +=	openbabel>=4
-
-VMEM_WARNING=	Yes
 
 USE_GMAKE=	Yes
 

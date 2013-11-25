@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/04/29 11:35:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2013/11/25 14:16:22 sthen Exp $
 
 BROKEN-sparc64=	SIGBUS on sparc64 when starting
 
@@ -18,8 +18,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ivan/}
 WANTLIB=	X11 Xext c m pthread pthread-stubs stdc++ usbhid xcb SDL>=6
 
 LIB_DEPENDS=	devel/sdl
-
-VMEM_WARNING=	Yes
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu

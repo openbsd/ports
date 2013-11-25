@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/08/07 21:32:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2013/11/25 14:16:23 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -26,8 +26,6 @@ MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	http://deftly.net/
-
-VMEM_WARNING=	Yes
 
 BUILD_DEPENDS= devel/gyp
 

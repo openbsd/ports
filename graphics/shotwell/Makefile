@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2013/10/10 15:40:39 ajacoutot Exp $
-
-# needs to allocate 512M
-VMEM_WARNING =	Yes
+# $OpenBSD: Makefile,v 1.36 2013/11/25 14:16:23 sthen Exp $
 
 COMMENT =	digital photo organizer
 

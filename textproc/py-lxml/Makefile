@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:42:46 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/11/25 14:16:23 sthen Exp $
 
 COMMENT=	Python binding for the libxml2 and libxslt libraries
 
@@ -22,8 +22,6 @@ MODULES=	lang/python
 LIB_DEPENDS=	textproc/libxslt
 
 MODPY_SETUPTOOLS=Yes
-
-VMEM_WARNING=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-lxml

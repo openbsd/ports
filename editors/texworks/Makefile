@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/08/07 21:31:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2013/11/25 14:16:22 sthen Exp $
 
 COMMENT-main =		easy to use LaTeX and ConTeXt editor
 COMMENT-python =	Python scripting for TeXworks
@@ -65,7 +65,6 @@ MODLUA_SA =		Yes
 
 USE_GMAKE =		Yes
 NO_TEST =		Yes
-VMEM_WARNING = 		Yes
 
 SUBST_VARS +=		WRKINST
 

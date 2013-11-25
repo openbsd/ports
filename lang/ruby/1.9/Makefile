@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2013/11/24 02:24:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.41 2013/11/25 14:16:23 sthen Exp $
 
 BROKEN-sparc64 =	doesnt reliably build, and depending ports randomly fail to build
 BROKEN-alpha =		miniruby abort trap when generating rdoc
@@ -82,7 +82,6 @@ RUN_DEPENDS-tk =
 MULTI_PACKAGES +=	-ri_docs
 ALL_TARGET +=		rdoc
 INSTALL_TARGET +=	install-doc
-VMEM_WARNING =		Yes
 .endif
 
 SUBST_VARS +=		RUBYLIBREV

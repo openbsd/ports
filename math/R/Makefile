@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2013/06/03 10:46:45 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.57 2013/11/25 14:16:23 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -98,8 +98,6 @@ FAKE_FLAGS=	PREFIX=${PREFIX} \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 
 SEPARATE_BUILD=	Yes
-
-VMEM_WARNING=	Yes
 
 post-install:
 	@perl -i -pe 's:^R_HOME_DIR=.*:R_HOME_DIR=${TRUEPREFIX}/lib/R:' \

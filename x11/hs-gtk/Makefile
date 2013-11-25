@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/07/19 06:55:09 kili Exp $
+# $OpenBSD: Makefile,v 1.14 2013/11/25 14:16:23 sthen Exp $
 
 COMMENT =		Haskell bindings to gtk+2
 
@@ -24,9 +24,6 @@ RUN_DEPENDS =		devel/hs-gio>=0.12.0,<0.13 \
 			devel/hs-mtl \
 			devel/hs-pango>=0.12.0,<0.13 \
 			graphics/hs-cairo>=0.12.0,<0.13
-
-# tiny 2 GB are enough on amd64.... we need a BLOAT_WARNING
-VMEM_WARNING =		Yes
 
 # This is much simpler than fiddling with MODGHC_SETUP_CONF_ARGS:
 post-install:

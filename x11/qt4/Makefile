@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2013/11/15 10:52:24 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.118 2013/11/25 14:16:24 sthen Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 SHARED_ONLY =		Yes
@@ -257,7 +257,6 @@ QT_PKGCFGDIR =	${QT_BASEDIR}/pkgconfig
 
 DOCS =	README
 
-VMEM_WARNING =	Yes
 NO_TEST =	Yes
 
 PROGRAMS4 =	assistant designer findtr linguist lrelease lupdate moc qmake \

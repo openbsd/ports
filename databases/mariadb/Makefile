@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/09/22 14:28:13 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.7 2013/11/25 14:16:22 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -43,8 +43,6 @@ RUN_DEPENDS-server=	${BASE_PKGPATH}>=5.5,<5.6 \
 			devel/p5-Term-ReadKey
 LIB_DEPENDS-server=	${BASE_PKGPATH}>=5.5,<5.6
 LIB_DEPENDS-tests=	${BASE_PKGPATH}>=5.5,<5.6
-
-VMEM_WARNING=	Yes
 
 USE_GROFF=	Yes
 

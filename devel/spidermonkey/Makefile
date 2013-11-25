@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/09/27 17:32:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2013/11/25 14:16:22 sthen Exp $
 
 SHARED_ONLY=	Yes
 # based on ffx 17 engine
@@ -28,8 +28,6 @@ MASTER_SITES =	http://ftp.mozilla.org/pub/mozilla.org/js/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c m pthread readline nspr4 ncurses plc4 plds4 stdc++ z
-
-VMEM_WARNING =	Yes
 
 MODULES =	lang/python
 MODPY_RUNDEP =	No

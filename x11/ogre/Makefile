@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/07/09 10:41:36 pascal Exp $
+# $OpenBSD: Makefile,v 1.10 2013/11/25 14:16:24 sthen Exp $
 
 BROKEN-mips64 =		missing atomic ops
 BROKEN-mips64el =	missing atomic ops
@@ -46,8 +46,6 @@ EXTRACT_SUFX =		.tar.bz2
 
 CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE:STRING=Release \
 			-DOGRE_INSTALL_SAMPLES=1
-
-VMEM_WARNING =		Yes
 
 MODULES =		devel/cmake
 LIB_DEPENDS =		graphics/freeimage \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/06/04 18:41:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2013/11/25 14:16:22 sthen Exp $
 
 COMMENT=		Z-code interpreter for X11
 
@@ -24,8 +24,6 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
-
-VMEM_WARNING=		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/zoom

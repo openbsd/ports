@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/11/25 12:56:49 nigel Exp $
+# $OpenBSD: Makefile,v 1.7 2013/11/25 14:16:24 sthen Exp $
 
 COMMENT =	KDE 4 bindings for Python
 DISTNAME =	pykde4-${MODKDE4_VERSION}
@@ -25,8 +25,6 @@ WANTLIB += ${KDE4LIB}/nepomukutils ${KDE4LIB}/phonon_s ${KDE4LIB}/plasma
 WANTLIB += ${KDE4LIB}/solid
 WANTLIB += ${KDE4LIB}/akonadi-kde ${KDE4LIB}/akonadi-kmime
 WANTLIB += ${MODPY_WANTLIB} soprano sopranoclient sopranoserver
-
-VMEM_WARNING =  Yes
 
 MODKDE4_USE =	libs pim
 

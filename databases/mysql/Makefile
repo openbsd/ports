@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.221 2013/10/04 07:09:17 giovanni Exp $
+# $OpenBSD: Makefile,v 1.222 2013/11/25 14:16:22 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -40,8 +40,6 @@ MULTI_PACKAGES=		-main -server -tests
 # high load servers otherwise MySQL will crash.
 CXX=		${CC}
 CXXFLAGS=	${CFLAGS} -felide-constructors -fno-exceptions -fno-rtti
-
-VMEM_WARNING=	Yes
 
 USE_GROFF=	Yes
 CONFIGURE_STYLE= autoconf

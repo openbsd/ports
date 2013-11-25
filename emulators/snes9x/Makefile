@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/08/07 21:31:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2013/11/25 14:16:22 sthen Exp $
 
 COMMENT =	emulates the Super Nintendo Entertainment System
 
@@ -39,8 +39,6 @@ BUILD_DEPENDS =  devel/nasm
 
 MODULES =	devel/gettext \
 		textproc/intltool
-
-VMEM_WARNING =	Yes
 
 USE_GMAKE =	Yes
 

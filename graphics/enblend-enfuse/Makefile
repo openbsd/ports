@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.21 2013/06/04 18:41:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2013/11/25 14:16:22 sthen Exp $
 
-VMEM_WARNING =	Yes
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
 .if (${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "amd64")
 # likely to bump into MAXDSIZ on arch other than the above

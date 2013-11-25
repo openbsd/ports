@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2013/06/04 18:41:50 naddy Exp $
-
-VMEM_WARNING=	Yes
+# $OpenBSD: Makefile,v 1.46 2013/11/25 14:16:23 sthen Exp $
 
 COMMENT=	Python charting and plotting API
 

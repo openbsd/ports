@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/01/20 18:05:02 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2013/11/25 14:16:23 sthen Exp $
 
 COMMENT=		language front-end and interpreter for the Feldspar DSL
 
@@ -18,9 +18,6 @@ RUN_DEPENDS=		devel/hs-QuickAnnotate>=0.6,<0.7 \
 			devel/hs-tagged>=0.4,<0.5 \
 			devel/hs-tuple>=0.2,<0.3 \
 			lang/hs-syntactic>=1.4,<1.5
-
-# On amd64, ghc needs almost 2GB to build this.
-VMEM_WARNING=		Yes
 
 # Note that some of the examples depend on feldspar-compiler.
 post-install:

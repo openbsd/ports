@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2013/10/31 21:12:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2013/11/25 14:16:22 sthen Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -34,8 +34,6 @@ MODULES =	devel/cmake \
 
 TEST_DEPENDS = devel/dejagnu
 BUILD_DEPENDS +=	textproc/py-sphinx
-
-VMEM_WARNING =	Yes
 
 MAKE_FLAGS =	OPTIMIZE_OPTION="${CFLAGS}" \
 		VERBOSE=Yes \

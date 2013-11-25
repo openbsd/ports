@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/10/18 14:29:17 miod Exp $
+# $OpenBSD: Makefile,v 1.5 2013/11/25 14:16:23 sthen Exp $
 
 COMMENT =		weighted finite-state transducers library
 
@@ -22,7 +22,5 @@ WANTLIB +=		c m stdc++
 MASTER_SITES =		http://www.openfst.org/twiki/pub/FST/FstDownload/
 
 CONFIGURE_STYLE =	gnu
-
-VMEM_WARNING =		Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/06/02 14:03:19 pascal Exp $
+# $OpenBSD: Makefile,v 1.19 2013/11/25 14:16:23 sthen Exp $
 
 # Memory hog, stuck for days on the same file during build.
 NOT_FOR_ARCHS =		sh
@@ -28,8 +28,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB = 		c gmp icudata icuuc m ncurses parrot pthread
 WANTLIB += 		readline stdc++ util ffi
-
-VMEM_WARNING =		Yes
 
 MASTER_SITES =		${HOMEPAGE}/downloads/star/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2013/11/17 11:45:52 robert Exp $
+# $OpenBSD: Makefile,v 1.98 2013/11/25 14:16:22 sthen Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -228,7 +228,6 @@ WANTLIB-java=		c estdc++ m pthread
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes
-VMEM_WARNING=	Yes
 
 PATCHORIG=	.orig.port
 

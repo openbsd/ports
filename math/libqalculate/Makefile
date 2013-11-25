@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.2 2013/04/11 13:46:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2013/11/25 14:16:23 sthen Exp $
 
-VMEM_WARNING =	Yes
 COMMENT =	applied math library
 CATEGORIES =	math devel
 DISTNAME =	libqalculate-0.9.7

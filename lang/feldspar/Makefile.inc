@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2013/11/25 14:16:23 sthen Exp $
 
 CATEGORIES?=		lang
 
@@ -17,5 +17,3 @@ MODULES+=		lang/ghc
 MODGHC_BUILD?=		cabal hackage haddock register
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
-
-VMEM_WARNING?=		Yes

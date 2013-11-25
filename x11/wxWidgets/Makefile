@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2013/09/30 12:37:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2013/11/25 14:16:24 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -70,8 +70,6 @@ LIB_DEPENDS-media = ${LIB_DEPENDS} \
 WANTLIB-media += ${WANTLIB} gconf-2 gstinterfaces-0.10 \
 		 gstreamer-0.10 wx_base wx_gtk2_core xml2 \
 		 gmodule-2.0
-
-VMEM_WARNING =	Yes
 
 MAKE_FLAGS =	WXUNICODEFLAG=""
 .for _l _v in ${SHARED_LIBS}

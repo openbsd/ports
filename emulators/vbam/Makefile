@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/11/09 14:12:28 landry Exp $
+# $OpenBSD: Makefile,v 1.12 2013/11/25 14:16:22 sthen Exp $
 
 COMMENT =		emulator for Nintendo Game Boy (Color/Advance)
 BROKEN-alpha =		ICE or OOM on hq_implementation.cpp
@@ -42,8 +42,6 @@ WRKDIST =		${WRKDIR}/${DISTNAME:S/-src//}
 
 # requires posix_openpt
 CONFIGURE_ARGS +=	-DENABLE_WX=OFF -DENABLE_FFMPEG=OFF
-
-VMEM_WARNING =		Yes
 
 pre-fake:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/vbam

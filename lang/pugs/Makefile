@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/07/19 07:08:22 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2013/11/25 14:16:23 sthen Exp $
 
 COMMENT =		Perl 6 Implementation
 
@@ -8,8 +8,6 @@ HOMEPAGE =		http://pugscode.org/
 
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes
-
-VMEM_WARNING =		Yes
 
 WANTLIB =		c m ncursesw perl pthread util
 

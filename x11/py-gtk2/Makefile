@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2013/11/07 16:01:55 bcallah Exp $
+# $OpenBSD: Makefile,v 1.59 2013/11/25 14:16:24 sthen Exp $
 
 SHARED_ONLY=	Yes
 BROKEN-alpha=	.got subsegment exceeds 64K
@@ -51,8 +51,6 @@ CONFIGURE_ARGS=	--disable-static
 MODGNOME_LDFLAGS=-lintl -liconv
 
 TEST_IS_INTERACTIVE= x11
-
-VMEM_WARNING=	Yes
 
 pre-configure:
 	@find ${WRKDIST} -name \*.py | \

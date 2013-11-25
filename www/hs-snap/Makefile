@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/07/19 07:00:37 kili Exp $
+# $OpenBSD: Makefile,v 1.14 2013/11/25 14:16:23 sthen Exp $
 
 COMMENT =		Snap project starter and glue code library
 
@@ -58,9 +58,6 @@ RUN_DEPENDS +=		www/hs-snap-loader-dynamic \
 			www/hs-snap-loader-static
 
 BUILD_DEPENDS +=	${RUN_DEPENDS}
-
-# Haddock is a memory pig on this port.
-VMEM_WARNING =		Yes
 
 # Reuse snaps minimal Setup.hs in the project templates to allow
 # building a snap project with something like

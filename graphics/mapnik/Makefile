@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/07/15 17:09:16 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2013/11/25 14:16:23 sthen Exp $
 
 COMMENT =	toolkit for developing mapping applications
 
@@ -20,7 +20,6 @@ MASTER_SITES =	http://mapnik.s3.amazonaws.com/dist/v2.2.0/
 MODULES =	devel/scons \
 		lang/python
 
-VMEM_WARNING =	Yes
 TEST_DEPENDS =	devel/py-nose \
 		${BUILD_PKGPATH}
 

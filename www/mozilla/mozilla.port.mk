@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.62 2013/11/22 12:26:06 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.63 2013/11/25 14:16:23 sthen Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -104,7 +104,6 @@ BUILD_DEPENDS +=${MODMOZ_BUILD_DEPENDS}
 LIB_DEPENDS +=	${MODMOZ_LIB_DEPENDS}
 RUN_DEPENDS +=	${MODMOZ_RUN_DEPENDS}
 
-VMEM_WARNING ?=	Yes
 USE_GMAKE ?=	Yes
 
 AUTOCONF_VERSION =	2.13

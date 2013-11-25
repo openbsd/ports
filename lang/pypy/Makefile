@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/09/19 08:39:30 sthen Exp $
-
-VMEM_WARNING =		Yes
+# $OpenBSD: Makefile,v 1.9 2013/11/25 14:16:23 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64
 

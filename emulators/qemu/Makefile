@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2013/10/30 19:53:29 brad Exp $
+# $OpenBSD: Makefile,v 1.112 2013/11/25 14:16:22 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64
 
@@ -48,8 +48,6 @@ EXTRA_LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 EXTRA_CFLAGS+=	-Wno-redundant-decls
 
 EXTRA_CFLAGS+=	-DTIME_MAX=LLONG_MAX
-
-VMEM_WARNING=	Yes
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=simple

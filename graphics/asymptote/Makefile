@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 23:01:31 fgsch Exp $
+# $OpenBSD: Makefile,v 1.14 2013/11/25 14:16:22 sthen Exp $
 
 COMMENT=		powerful descriptive vector graphics language
 
@@ -33,7 +33,6 @@ LIB_DEPENDS=		devel/boehm-gc \
 
 USE_GMAKE=		Yes
 USE_GROFF =		Yes
-VMEM_WARNING=		Yes
 
 # XXX eats all memory
 .if ${MACHINE_ARCH:Msparc64}
