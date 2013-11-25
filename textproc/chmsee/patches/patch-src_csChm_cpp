@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_csChm_cpp,v 1.1 2013/11/25 21:48:53 landry Exp $
+--- src/csChm.cpp.orig	Fri Jun 28 09:24:24 2013
++++ src/csChm.cpp	Mon Nov 25 21:48:34 2013
+@@ -30,6 +30,16 @@
+ #include "csChm.h"
+ #include "csChmfile.h"
+ 
++/* don't ask. no, really, don't */
++void*
++nsMemory::Clone(const void* ptr, size_t size)
++{
++    void* newPtr = NS_Alloc(size);
++    if (newPtr)
++        memcpy(newPtr, ptr, size);
++    return newPtr;
++}
++
+ csChm::csChm()
+ {
+         /* member initializers and constructor code */

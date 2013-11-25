@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_Makefile_netbsd,v 1.1 2013/11/25 21:48:53 landry Exp $
+--- src/Makefile.netbsd.orig	Fri Jun 28 09:24:24 2013
++++ src/Makefile.netbsd	Fri Oct 18 23:42:10 2013
+@@ -2,16 +2,16 @@
+ 
+ LIBXUL_SDK = $(shell pkg-config --variable=sdkdir libxul)
+ 
+-NSPR_INCLUDES = -I/usr/pkg/include/nspr
+-NSPR_LIBS = -Wl,-R/usr/pkg/lib/nspr -pthread -L/usr/pkg/lib/nspr -lplds4 -lplc4 -lnspr4
++NSPR_INCLUDES = $(shell pkg-config --cflags nspr)
++NSPR_LIBS = $(shell pkg-config --libs nspr)
+ 
+-CHMLIB_INCLUDES = -I/usr/pkg/include
+-CHMLIB_LIBS = -Wl,-R/usr/pkg/lib -L/usr/pkg/lib -lchm
++CHMLIB_INCLUDES = -I${LOCALBASE}/include
++CHMLIB_LIBS = -Wl,-R${LOCALBASE}/lib -L${LOCALBASE}/lib -lchm
+ 
+-PYTHON2 = /usr/pkg/bin/python2.7
++PYTHON2 = ${MODPY_BIN}
+ XPCOMCHM = libxpcomchm.so
+ 
+ DEFINES = -pthread
+-LDFLAGS = -Wl,-soname,${TARGET} -Wl,-R${LIBXUL_SDK}/bin -L${LIBXUL_SDK}/bin -lpthread
++LDFLAGS = -Wl,-soname,${TARGET} -Wl,-R${LIBXUL_SDK}/lib -L${LIBXUL_SDK}/lib -lpthread
+ 
+ include ./common.mk
