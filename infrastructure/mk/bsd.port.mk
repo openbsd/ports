@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1247 2013/11/07 01:23:19 juanfra Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1248 2013/11/25 14:13:33 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -135,7 +135,7 @@ _ALL_VARIABLES += HOMEPAGE DISTNAME \
 	CONFIGURE_STYLE USE_LIBTOOL SEPARATE_BUILD \
 	SHARED_LIBS TARGETS PSEUDO_FLAVOR \
 	MAINTAINER AUTOCONF_VERSION AUTOMAKE_VERSION CONFIGURE_ARGS \
-	VMEM_WARNING PKG_ARCH 
+	PKG_ARCH
 _ALL_VARIABLES_PER_ARCH += BROKEN
 # and stuff needing to be MULTI_PACKAGE'd
 _ALL_VARIABLES_INDEXED += COMMENT PKGNAME \
@@ -1526,8 +1526,6 @@ MODSIMPLE_configure = \
 		YACC="${YACC}" \
 		${CONFIGURE_ENV} ${_CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
 
-VMEM_WARNING ?= No
-
 FAKE_SETUP = TRUEPREFIX=${PREFIX} PREFIX=${WRKINST}${PREFIX} \
 	${DESTDIRNAME}=${WRKINST}
 
@@ -2649,19 +2647,6 @@ ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 ${_BUILD_COOKIE}: ${_CONFIGURE_COOKIE}
 .if ${NO_BUILD:L} == "no"
 	@${ECHO_MSG} "===>  Building for ${FULLPKGNAME}${_MASTER}"
-.  if ${VMEM_WARNING:L} == "yes"
-	@echo ""; \
-	echo "*** WARNING: you may see an error such as"; \
-	echo "***       virtual memory exhausted"; \
-	echo "*** when building this package.  If you do you must increase"; \
-	echo "*** your limits.  See the man page for your shell and look"; \
-	echo "*** for the 'limit' or 'ulimit' command. You may also want to"; \
-	echo "*** see the login.conf(5) manual page."; \
-	echo "*** Some examples are: "; \
-	echo "*** 	csh(1) and tcsh(1): limit datasize <kbytes of memory>"; \
-	echo "***	ksh(1), zsh(1) and bash(1): ulimit -d <kbytes of memory>"; \
-	echo ""
-.  endif
 .  if target(pre-build)
 	@${_MAKESYS} pre-build
 .  endif
