@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/11/25 15:27:56 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.26 2013/11/25 16:12:58 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,8 +23,11 @@ USE_GMAKE=	Yes
 
 MAKE_FILE=	makefile
 
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/makefile
+MAKE_FLAGS=	CC_linux=${CC} \
+		LD_linux=${CC} \
+		CFLAGS_linux="${CFLAGS} -I${MODLUA_INCL_DIR} -fPIC \
+			      -DPIC -DUNIX_HAS_SUN_LEN" \
+		LDFLAGS_linux="${LDFLAGS} -shared -fPIC -o "
 
 do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_DATADIR}/socket ${MODLUA_DATADIR}/mime
