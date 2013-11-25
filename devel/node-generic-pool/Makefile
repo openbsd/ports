@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2013/05/24 18:31:48 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2013/11/25 23:24:14 abieber Exp $
 
 COMMENT =	generic resource pool for Node.js
 
-NPM_VERSION =	2.0.2
+NPM_VERSION =	2.0.3
 NPM_NAME =	generic-pool
 CATEGORIES =	devel
-REVISION =	0
 
 HOMEPAGE =	https://github.com/coopernurse/node-pool
 
