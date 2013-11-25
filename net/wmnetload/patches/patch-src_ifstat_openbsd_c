@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_ifstat_openbsd_c,v 1.1 2013/11/25 22:06:40 sthen Exp $
+--- src/ifstat_openbsd.c.orig	Mon Nov 25 15:05:36 2013
++++ src/ifstat_openbsd.c	Mon Nov 25 15:06:02 2013
+@@ -27,6 +27,7 @@
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <net/if.h>
++#include <net/if_var.h>
+ #include <fcntl.h>
+ #include <kvm.h>
+ #include <limits.h>
