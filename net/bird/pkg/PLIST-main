@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2011/05/02 10:49:46 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2013/11/25 14:58:32 sthen Exp $
 @bin sbin/bird${SIX}
 @bin sbin/birdc${SIX}
+@bin sbin/birdcl${SIX}
 share/examples/bird/bird${SIX}.conf
 @sample ${SYSCONFDIR}/bird${SIX}.conf
 @rcscript ${RCDIR}/bird${SIX}
