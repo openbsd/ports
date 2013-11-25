@@ -1,15 +1,19 @@
-$OpenBSD: patch-samples_xmobar_config,v 1.5 2013/07/12 13:48:39 dcoppa Exp $
---- samples/xmobar.config.orig	Wed Jun  5 00:37:16 2013
-+++ samples/xmobar.config	Fri Jul 12 10:43:19 2013
-@@ -4,18 +4,17 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
+$OpenBSD: patch-samples_xmobar_config,v 1.6 2013/11/25 10:31:04 dcoppa Exp $
+--- samples/xmobar.config.orig	Mon Nov 25 10:01:53 2013
++++ samples/xmobar.config	Mon Nov 25 10:06:36 2013
+@@ -1,22 +1,20 @@
+-Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
++Config { font = "fixed"
+        , borderColor = "black"
+        , border = TopB
         , bgColor = "black"
         , fgColor = "grey"
         , position = Top
 +       , allDesktops = True
-+       , hideOnStart = False
         , lowerOnStart = True
 +       , overrideRedirect = True
         , persistent = False
+        , hideOnStart = False
         , commands = [ Run Weather "EGPF" ["-t","<station>: <tempC>C","-L","18","-H","25","--normal","green","--high","red","--low","lightblue"] 36000
 -                    , Run Network "eth0" ["-L","0","-H","32","--normal","green","--high","red"] 10
 -                    , Run Network "eth1" ["-L","0","-H","32","--normal","green","--high","red"] 10

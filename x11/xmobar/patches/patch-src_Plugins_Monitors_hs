@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Plugins_Monitors_hs,v 1.4 2013/01/25 08:37:17 dcoppa Exp $
---- src/Plugins/Monitors.hs.orig	Wed Jan 23 17:48:00 2013
-+++ src/Plugins/Monitors.hs	Wed Jan 23 17:54:33 2013
+$OpenBSD: patch-src_Plugins_Monitors_hs,v 1.5 2013/11/25 10:31:04 dcoppa Exp $
+--- src/Plugins/Monitors.hs.orig	Mon Nov 25 09:48:32 2013
++++ src/Plugins/Monitors.hs	Mon Nov 25 09:59:43 2013
 @@ -21,20 +21,20 @@ import Plugins
  
  import Plugins.Monitors.Common (runM)
@@ -35,13 +35,19 @@ $OpenBSD: patch-src_Plugins_Monitors_hs,v 1.4 2013/01/25 08:37:17 dcoppa Exp $
  #ifdef IWLIB
  import Plugins.Monitors.Wireless
  #endif
-@@ -50,24 +50,24 @@ import Plugins.Monitors.Mpris
+@@ -50,25 +50,25 @@ import Plugins.Monitors.Mpris
  #endif
  
  data Monitors = Weather      Station     Args Rate
 -              | Network      Interface   Args Rate
 -              | DynNetwork               Args Rate
--              | BatteryP     [String]    Args Rate
+-              | BatteryP     Args        Args Rate
+-              | BatteryN     Args        Args Rate Alias
++--            | Network      Interface   Args Rate
++--            | DynNetwork               Args Rate
++--            | BatteryP     Args        Args Rate
++--            | BatteryN     Args        Args Rate Alias
+               | Battery      Args        Rate
 -              | DiskU        DiskSpec    Args Rate
 -              | DiskIO       DiskSpec    Args Rate
 -              | Thermal      Zone        Args Rate
@@ -50,9 +56,12 @@ $OpenBSD: patch-src_Plugins_Monitors_hs,v 1.4 2013/01/25 08:37:17 dcoppa Exp $
 -              | Swap         Args        Rate
 -              | Cpu          Args        Rate
 -              | MultiCpu     Args        Rate
-+--            | Network      Interface   Args Rate
-+--            | DynNetwork               Args Rate
-+--            | BatteryP     [String]    Args Rate
+-              | Brightness   Args        Rate
+-              | CpuFreq      Args        Rate
+-              | CoreTemp     Args        Rate
+-              | TopProc      Args        Rate
+-              | TopMem       Args        Rate
+-              | Uptime       Args        Rate
 +--            | DiskU        DiskSpec    Args Rate
 +--            | DiskIO       DiskSpec    Args Rate
 +--            | Thermal      Zone        Args Rate
@@ -61,13 +70,6 @@ $OpenBSD: patch-src_Plugins_Monitors_hs,v 1.4 2013/01/25 08:37:17 dcoppa Exp $
 +--            | Swap         Args        Rate
 +--            | Cpu          Args        Rate
 +--            | MultiCpu     Args        Rate
-               | Battery      Args        Rate
--              | Brightness   Args        Rate
--              | CpuFreq      Args        Rate
--              | CoreTemp     Args        Rate
--              | TopProc      Args        Rate
--              | TopMem       Args        Rate
--              | Uptime       Args        Rate
 +--            | Brightness   Args        Rate
 +--            | CpuFreq      Args        Rate
 +--            | CoreTemp     Args        Rate
@@ -77,7 +79,7 @@ $OpenBSD: patch-src_Plugins_Monitors_hs,v 1.4 2013/01/25 08:37:17 dcoppa Exp $
  #ifdef IWLIB
                | Wireless Interface  Args Rate
  #endif
-@@ -96,24 +96,24 @@ type DiskSpec  = [(String, String)]
+@@ -97,25 +97,25 @@ type DiskSpec  = [(String, String)]
  
  instance Exec Monitors where
      alias (Weather s _ _) = s
@@ -99,6 +101,7 @@ $OpenBSD: patch-src_Plugins_Monitors_hs,v 1.4 2013/01/25 08:37:17 dcoppa Exp $
 +--  alias (MultiCpu _ _) = "multicpu"
      alias (Battery _ _) = "battery"
 -    alias (BatteryP _ _ _)= "battery"
+-    alias (BatteryN _ _ _ a)= a
 -    alias (Brightness _ _) = "bright"
 -    alias (CpuFreq _ _) = "cpufreq"
 -    alias (TopProc _ _) = "top"
@@ -108,6 +111,7 @@ $OpenBSD: patch-src_Plugins_Monitors_hs,v 1.4 2013/01/25 08:37:17 dcoppa Exp $
 -    alias (DiskIO _ _ _) = "diskio"
 -    alias (Uptime _ _) = "uptime"
 +--  alias (BatteryP _ _ _)= "battery"
++--  alias (BatteryN _ _ _ a)= a
 +--  alias (Brightness _ _) = "bright"
 +--  alias (CpuFreq _ _) = "cpufreq"
 +--  alias (TopProc _ _) = "top"
@@ -119,7 +123,7 @@ $OpenBSD: patch-src_Plugins_Monitors_hs,v 1.4 2013/01/25 08:37:17 dcoppa Exp $
  #ifdef IWLIB
      alias (Wireless i _ _) = i ++ "wi"
  #endif
-@@ -128,26 +128,26 @@ instance Exec Monitors where
+@@ -130,27 +130,27 @@ instance Exec Monitors where
      alias (Mpris1 _ _ _) = "mpris1"
      alias (Mpris2 _ _ _) = "mpris2"
  #endif
@@ -148,6 +152,7 @@ $OpenBSD: patch-src_Plugins_Monitors_hs,v 1.4 2013/01/25 08:37:17 dcoppa Exp $
 +--  start (Swap a r) = runM a swapConfig runSwap r
      start (Battery a r) = runM a battConfig runBatt r
 -    start (BatteryP s a r) = runM a battConfig (runBatt' s) r
+-    start (BatteryN s a r _) = runM a battConfig (runBatt' s) r
 -    start (Brightness a r) = runM a brightConfig runBright r
 -    start (CpuFreq a r) = runM a cpuFreqConfig runCpuFreq r
 -    start (CoreTemp a r) = runM a coreTempConfig runCoreTemp r
@@ -155,6 +160,7 @@ $OpenBSD: patch-src_Plugins_Monitors_hs,v 1.4 2013/01/25 08:37:17 dcoppa Exp $
 -    start (DiskIO s a r) = startDiskIO s a r
 -    start (Uptime a r) = runM a uptimeConfig runUptime r
 +--  start (BatteryP s a r) = runM a battConfig (runBatt' s) r
++--  start (BatteryN s a r _) = runM a battConfig (runBatt' s) r
 +--  start (Brightness a r) = runM a brightConfig runBright r
 +--  start (CpuFreq a r) = runM a cpuFreqConfig runCpuFreq r
 +--  start (CoreTemp a r) = runM a coreTempConfig runCoreTemp r

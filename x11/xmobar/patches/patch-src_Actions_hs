@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_Actions_hs,v 1.1 2013/07/12 13:48:39 dcoppa Exp $
+$OpenBSD: patch-src_Actions_hs,v 1.2 2013/11/25 10:31:04 dcoppa Exp $
 
 Due to our regex(3) library not supporting GNU extensions, xmobar
 immediately fails at startup:
@@ -28,7 +28,7 @@ Code contributed by Alexander Polakov, thanks!
  
  stripActions :: String -> String
 -stripActions s = subRegex actionRegex s "[action=\1]\2[action]"
--  where actionRegex = mkRegex "<action=([^>])*>(.+?)</action>"
+-  where actionRegex = mkRegex "<action=([^>])*>(.+)</action>"
 +stripActions s = subRegex actionRegex s "[action=\\1]\\2[action]"
 +  where actionRegex = makeRegex "<action=([^>]*)>(.+?)</action>"
 +
