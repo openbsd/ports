@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/25 05:23:27 bentley Exp $
+@bin bin/xnp2
+@man man/man1/xnp2.1
+@comment @man man/man1/xnp2.1j
+share/xnp2/
+share/xnp2/fddseek.wav
+share/xnp2/fddseek1.wav
+share/xnp2/np2tool.d88
