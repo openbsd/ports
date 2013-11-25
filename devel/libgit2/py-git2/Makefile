@@ -1,21 +1,20 @@
-# $OpenBSD: Makefile,v 1.9 2013/07/09 10:04:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2013/11/25 12:59:14 jasper Exp $
 
 COMMENT=		libgit2 bindings in Python
 
-# git clone of 534d98b6b2398d053003b3a626fde666acf4417c
-V=			0.18.1.1
+GH_VER=			v0.20.0
+V=			${GH_VER:S/v//}
 PROJECT=		pygit2
 PKGNAME=		py-git2-$V
 
-# XXX: Remove when there's a real release supporting libgit 0.19.0
-MASTER_SITES=		http://distfiles.nl/
-###
+MASTER_SITES=		https://github.com/libgit2/${PROJECT}/archive/
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX}{${GH_VER}${EXTRACT_SUFX}}
 
 MODULES=		lang/python
 
 WANTLIB += 		git2 pthread ${MODPY_WANTLIB}
 
-LIB_DEPENDS=		devel/libgit2/libgit2>=0.18.0
+LIB_DEPENDS=		devel/libgit2/libgit2>=0.20.0
 
 do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} setup.py test
