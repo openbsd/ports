@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.10 2013/08/07 21:32:51 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2013/11/25 04:34:27 william Exp $
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
@@ -7,7 +7,7 @@ CATEGORIES=	www
 
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES0=	http://dropbox.eait.uq.edu.au/uqdgwynn/distfiles/
-MASTER_SITES1 =	https://naxsi.googlecode.com/files/
+MASTER_SITES1=	https://github.com/nbs-system/naxsi/archive/
 
 HOMEPAGE=	http://nginx.org/
 
@@ -28,8 +28,8 @@ FLAVOR?=
 
 # must be first option on configure line ?
 .if ${FLAVOR:Mnaxsi}
-DISTFILES +=		${NAXSIDISTFILES}
-CONFIGURE_ARGS =	--add-module=${WRKSRC}/../naxsi-core-0.49/naxsi_src/
+DISTFILES+=		${NAXSIDISTFILES}
+CONFIGURE_ARGS=		--add-module=${WRKSRC}/naxsi/naxsi_src/
 .else
 SUPDISTFILES+=		${NAXSIDISTFILES}
 .endif
@@ -65,7 +65,7 @@ LUAV=			0.8.1
 LUADISTFILES+=		simpl-ngx_devel_kit-v0.2.17-0-gbc97eea.tar.gz:0
 LUADISTFILES+=		lua-nginx-module-${LUAV}.tar.gz:0
 SUBSTFILES=		conf/nginx.conf
-NAXSIDISTFILES +=	naxsi-core-0.49.tgz:1
+NAXSIDISTFILES+=	naxsi-0.53-1.tar.gz{0.53-1.tar.gz}:1
 
 DISTNAME0=		nginx_upstream_check_module-20130212.tar.gz
 DISTFILES+=		${DISTNAME0}:0
@@ -96,6 +96,13 @@ SUPDISTFILES+=		${LUADISTFILES}
 
 NO_TEST=		Yes
 ALL_TARGET=
+
+.if ${FLAVOR:Mnaxsi}
+pre-patch:
+	cd ${WRKSRC} && \
+	    mv ../naxsi-* naxsi
+
+.endif
 
 .if ${FLAVOR:Mlua}
 pre-patch:

@@ -1,5 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2013/05/22 02:53:09 william Exp $
+# $OpenBSD: Makefile,v 1.6 2013/11/25 04:34:27 william Exp $
 
-VERSION=	1.5.0
+VERSION=	1.5.7
+
+CONFIGURE_ARGS+= --with-http_auth_request_module
 
 .include <bsd.port.mk>
