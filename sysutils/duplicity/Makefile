@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2013/10/29 10:28:57 stsp Exp $
+# $OpenBSD: Makefile,v 1.26 2013/11/25 14:14:43 giovanni Exp $
 
 COMMENT =	encrypted backup using rsync algorithm
 
-MODPY_EGG_VERSION = 0.6.21
+MODPY_EGG_VERSION = 0.6.22
 DISTNAME =	duplicity-${MODPY_EGG_VERSION}
-REVISION = 	0
 
 CATEGORIES =	sysutils
 
@@ -30,6 +29,7 @@ RUN_DEPENDS +=	net/py-boto \
 
 MAKE_ENV +=	LIBRSYNC_DIR=${LOCALBASE}
 
+# Tests in ${WRKSRC}/testing directory require bash to run and they all fail
 NO_TEST =	Yes
 
 # XXX 600 mode prevents from reading the man page;

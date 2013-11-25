@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2013/03/13 02:51:42 brad Exp $
+@comment $OpenBSD: PLIST,v 1.12 2013/11/25 14:14:43 giovanni Exp $
 bin/duplicity
 bin/rdiffdir
 lib/python${MODPY_VERSION}/site-packages/duplicity/
@@ -25,6 +25,8 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/backends/botobackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/botobackend.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/cloudfilesbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/cloudfilesbackend.pyc
+@comment lib/python${MODPY_VERSION}/site-packages/duplicity/backends/dpbxbackend.py
+@comment lib/python${MODPY_VERSION}/site-packages/duplicity/backends/dpbxbackend.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/ftpbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/ftpbackend.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/ftpsbackend.py
@@ -39,10 +41,14 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/backends/imapbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/imapbackend.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/localbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/localbackend.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/megabackend.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/megabackend.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/rsyncbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/rsyncbackend.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/sshbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/sshbackend.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/swiftbackend.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/swiftbackend.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/tahoebackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/tahoebackend.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/u1backend.py
@@ -93,6 +99,8 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/path.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/path.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/pexpect.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/pexpect.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/progress.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/progress.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/robust.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/robust.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/selection.py
