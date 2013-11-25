@@ -1,4 +1,4 @@
-# $OpenBSD: kde4.port.mk,v 1.13 2013/11/11 14:13:29 zhuk Exp $
+# $OpenBSD: kde4.port.mk,v 1.14 2013/11/25 16:26:08 zhuk Exp $
 
 # The version of KDE SC in x11/kde4
 _MODKDE4_STABLE =	4.10.5
@@ -28,7 +28,7 @@ ERRORS += "Fatal: cannot use more than one kde4* FLAVOR\n"
 
 .      for _v in ${_MODKDE4_OTHERS}
 .         if "kde${_v:S/.//g}" == "${_f}"
-MODKDE4_VERSION =	${_v}
+MODKDE4_VERSION ?=	${_v}
 MODKDE4_DEP_VERSION ?=	${_v}
 .         endif
 .      endfor
