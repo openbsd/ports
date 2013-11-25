@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/07/09 10:03:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/11/25 12:58:58 jasper Exp $
 include/git2/
 include/git2.h
 include/git2/attr.h
+include/git2/blame.h
 include/git2/blob.h
 include/git2/branch.h
+include/git2/buffer.h
 include/git2/checkout.h
 include/git2/clone.h
 include/git2/commit.h
@@ -12,6 +14,7 @@ include/git2/config.h
 include/git2/cred_helpers.h
 include/git2/diff.h
 include/git2/errors.h
+include/git2/filter.h
 include/git2/graph.h
 include/git2/ignore.h
 include/git2/index.h
@@ -26,6 +29,8 @@ include/git2/odb.h
 include/git2/odb_backend.h
 include/git2/oid.h
 include/git2/pack.h
+include/git2/patch.h
+include/git2/pathspec.h
 include/git2/push.h
 include/git2/refdb.h
 include/git2/reflog.h
@@ -45,9 +50,11 @@ include/git2/submodule.h
 include/git2/sys/
 include/git2/sys/commit.h
 include/git2/sys/config.h
+include/git2/sys/filter.h
 include/git2/sys/index.h
 include/git2/sys/odb_backend.h
 include/git2/sys/refdb_backend.h
+include/git2/sys/reflog.h
 include/git2/sys/refs.h
 include/git2/sys/repository.h
 include/git2/tag.h
@@ -58,5 +65,4 @@ include/git2/tree.h
 include/git2/types.h
 include/git2/version.h
 @lib lib/libgit2.so.${LIBgit2_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/libgit2.pc
