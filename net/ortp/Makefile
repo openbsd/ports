@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/11/11 09:23:09 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/11/25 17:12:43 zhuk Exp $
 COMMENT =		RTP (RFC3550) library
 DISTNAME =		ortp-0.22.0
+REVISION =		0
 
 SHARED_LIBS =		ortp		0.0
 
 CATEGORIES =		net multimedia
 HOMEPAGE =		http://www.linphone.org/eng/documentation/dev/ortp.html
+MAINTAINER =		Vadim Zhukov <zhuk@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
@@ -18,7 +20,10 @@ BUILD_DEPENDS =		devel/doxygen \
 			security/libsrtp
 
 SEPARATE_BUILD =	Yes
-CONFIGURE_STYLE =	gnu
+
+# TODO: remove "autoconf" when arc4random() patches get accepted upstream
+CONFIGURE_STYLE =	gnu autoconf
+AUTOCONF_VERSION =	2.68
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--disable-zrtp \
 			--enable-ssl-hmac \
