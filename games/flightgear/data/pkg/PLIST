@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/24 22:05:18 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/11/25 21:09:40 pascal Exp $
 share/flightgear/
-share/flightgear/.gitignore
+@comment share/flightgear/.gitignore
 share/flightgear/AI/
 share/flightgear/AI/Aircraft/
 share/flightgear/AI/Aircraft/717/
