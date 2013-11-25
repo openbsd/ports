@@ -1,12 +1,60 @@
-$OpenBSD: patch-src_makefile,v 1.3 2009/09/06 13:46:58 jolan Exp $
---- src/makefile.orig	Sun Oct 14 23:21:05 2007
-+++ src/makefile	Sun Sep  6 08:27:43 2009
-@@ -47,7 +47,7 @@ UNIX_OBJS:=\
- 	usocket.o \
- 	unix.o
+$OpenBSD: patch-src_makefile,v 1.4 2013/11/25 15:27:56 dcoppa Exp $
+--- src/makefile.orig	Fri Jun 14 13:27:32 2013
++++ src/makefile	Fri Nov 15 11:17:12 2013
+@@ -47,7 +47,7 @@ LDIR_macosx?=share/lua/$(LUAV)
+ # /usr/local/include/lua$(LUAV)
+ # where lua headers are found for linux builds
+ LUAINC_linux_base?=/usr/include
+-LUAINC_linux?=$(LUAINC_linux_base)/lua/$(LUAV)
++LUAINC_linux?=${MODLUA_INCL_DIR}
+ LUAPREFIX_linux?=/usr/local
+ CDIR_linux?=lib/lua/$(LUAV)
+ LDIR_linux?=share/lua/$(LUAV)
+@@ -144,15 +144,14 @@ SOCKET_macosx=usocket.o
+ # for Linux
+ SO_linux=so
+ O_linux=o
+-CC_linux=gcc
++CC_linux=cc
+ DEF_linux=-DLUASOCKET_$(DEBUG) -DLUA_$(COMPAT)_MODULE \
+ 	-DLUASOCKET_API='__attribute__((visibility("default")))' \
+ 	-DUNIX_API='__attribute__((visibility("default")))' \
+ 	-DMIME_API='__attribute__((visibility("default")))'
+-CFLAGS_linux= -I$(LUAINC) $(DEF) -pedantic -Wall -Wshadow -Wextra \
+-	-Wimplicit -O2 -ggdb3 -fpic -fvisibility=hidden
+-LDFLAGS_linux=-O -shared -fpic -o 
+-LD_linux=gcc
++CFLAGS_linux= -I$(LUAINC) -fPIC -DPIC -DUNIX_HAS_SUN_LEN
++LDFLAGS_linux=-shared -fPIC -o 
++LD_linux=cc
+ SOCKET_linux=usocket.o
  
--all: $(SOCKET_SO) $(MIME_SO) 
+ #------
+@@ -202,12 +201,12 @@ SOCKET_win32=wsocket.obj
+ #
+ SO=$(SO_$(PLAT))
+ O=$(O_$(PLAT))
+-SOCKET_V=3.0-rc1
+-MIME_V=1.0.3
+-SOCKET_SO=socket.$(SO).$(SOCKET_V)
+-MIME_SO=mime.$(SO).$(MIME_V)
+-UNIX_SO=unix.$(SO)
+-SERIAL_SO=serial.$(SO)
++SOCKET_V=3.0
++MIME_V=1.0
++SOCKET_SO=socket.so
++MIME_SO=mime.so
++UNIX_SO=unix.so
++SERIAL_SO=serial.so
+ SOCKET=$(SOCKET_$(PLAT))
+ 
+ #------
+@@ -307,7 +306,7 @@ none:
+ 	@echo "where PLATFORM is one of these:"
+ 	@echo "   $(PLATS)"
+ 
+-all: $(SOCKET_SO) $(MIME_SO)
 +all: $(SOCKET_SO) $(MIME_SO) $(UNIX_SO)
  
  $(SOCKET_SO): $(SOCKET_OBJS)
- 	$(LD) $(LDFLAGS) -o $@ $(SOCKET_OBJS)
+ 	$(LD) $(SOCKET_OBJS) $(LDFLAGS)$@

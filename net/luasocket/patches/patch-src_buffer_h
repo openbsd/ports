@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_buffer_h,v 1.1 2009/08/22 20:28:40 robert Exp $
---- src/buffer.h.orig	Thu Apr 27 05:23:22 2006
-+++ src/buffer.h	Sat Aug 22 22:19:02 2009
-@@ -36,12 +36,12 @@ typedef struct t_buffer_ {
+$OpenBSD: patch-src_buffer_h,v 1.2 2013/11/25 15:27:56 dcoppa Exp $
+--- src/buffer.h.orig	Fri Jun 14 13:27:32 2013
++++ src/buffer.h	Fri Nov 15 10:48:31 2013
+@@ -34,12 +34,12 @@ typedef struct t_buffer_ {
  } t_buffer;
  typedef t_buffer *p_buffer;
  

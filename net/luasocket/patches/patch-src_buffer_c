@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_buffer_c,v 1.3 2009/09/06 13:46:58 jolan Exp $
---- src/buffer.c.orig	Sun Oct 14 23:21:05 2007
-+++ src/buffer.c	Sun Sep  6 08:17:20 2009
-@@ -33,7 +33,7 @@ static int sendraw(p_buffer buf, const char *data, siz
+$OpenBSD: patch-src_buffer_c,v 1.4 2013/11/25 15:27:56 dcoppa Exp $
+--- src/buffer.c.orig	Fri Nov 15 10:51:53 2013
++++ src/buffer.c	Fri Nov 15 10:54:02 2013
+@@ -31,7 +31,7 @@ static int sendraw(p_buffer buf, const char *data, siz
  /*-------------------------------------------------------------------------*\
  * Initializes module
  \*-------------------------------------------------------------------------*/
@@ -10,34 +10,34 @@ $OpenBSD: patch-src_buffer_c,v 1.3 2009/09/06 13:46:58 jolan Exp $
      (void) L;
      return 0;
  }
-@@ -41,7 +41,7 @@ int buffer_open(lua_State *L) {
+@@ -39,7 +39,7 @@ int buffer_open(lua_State *L) {
  /*-------------------------------------------------------------------------*\
  * Initializes C structure 
  \*-------------------------------------------------------------------------*/
 -void buffer_init(p_buffer buf, p_io io, p_timeout tm) {
 +void ls_buffer_init(p_buffer buf, p_io io, p_timeout tm) {
- 	buf->first = buf->last = 0;
+     buf->first = buf->last = 0;
      buf->io = io;
      buf->tm = tm;
-@@ -52,7 +52,7 @@ void buffer_init(p_buffer buf, p_io io, p_timeout tm) 
+@@ -50,7 +50,7 @@ void buffer_init(p_buffer buf, p_io io, p_timeout tm) 
  /*-------------------------------------------------------------------------*\
  * object:getstats() interface
  \*-------------------------------------------------------------------------*/
 -int buffer_meth_getstats(lua_State *L, p_buffer buf) {
 +int ls_buffer_meth_getstats(lua_State *L, p_buffer buf) {
-     lua_pushnumber(L, buf->received);
-     lua_pushnumber(L, buf->sent);
+     lua_pushnumber(L, (lua_Number) buf->received);
+     lua_pushnumber(L, (lua_Number) buf->sent);
      lua_pushnumber(L, timeout_gettime() - buf->birthday);
-@@ -62,7 +62,7 @@ int buffer_meth_getstats(lua_State *L, p_buffer buf) {
+@@ -60,7 +60,7 @@ int buffer_meth_getstats(lua_State *L, p_buffer buf) {
  /*-------------------------------------------------------------------------*\
  * object:setstats() interface
  \*-------------------------------------------------------------------------*/
 -int buffer_meth_setstats(lua_State *L, p_buffer buf) {
 +int ls_buffer_meth_setstats(lua_State *L, p_buffer buf) {
-     buf->received = (long) luaL_optnumber(L, 2, buf->received); 
-     buf->sent = (long) luaL_optnumber(L, 3, buf->sent); 
+     buf->received = (long) luaL_optnumber(L, 2, (lua_Number) buf->received); 
+     buf->sent = (long) luaL_optnumber(L, 3, (lua_Number) buf->sent); 
      if (lua_isnumber(L, 4)) buf->birthday = timeout_gettime() - lua_tonumber(L, 4);
-@@ -73,7 +73,7 @@ int buffer_meth_setstats(lua_State *L, p_buffer buf) {
+@@ -71,7 +71,7 @@ int buffer_meth_setstats(lua_State *L, p_buffer buf) {
  /*-------------------------------------------------------------------------*\
  * object:send() interface
  \*-------------------------------------------------------------------------*/
@@ -55,7 +55,7 @@ $OpenBSD: patch-src_buffer_c,v 1.3 2009/09/06 13:46:58 jolan Exp $
      int err = IO_DONE, top = lua_gettop(L);
      luaL_Buffer b;
      size_t size;
-@@ -149,7 +149,7 @@ int buffer_meth_receive(lua_State *L, p_buffer buf) {
+@@ -157,7 +157,7 @@ int buffer_meth_receive(lua_State *L, p_buffer buf) {
  /*-------------------------------------------------------------------------*\
  * Determines if there is any data in the read buffer
  \*-------------------------------------------------------------------------*/
@@ -64,7 +64,7 @@ $OpenBSD: patch-src_buffer_c,v 1.3 2009/09/06 13:46:58 jolan Exp $
      return buf->first >= buf->last;
  }
  
-@@ -244,7 +244,7 @@ static int recvline(p_buffer buf, luaL_Buffer *b) {
+@@ -252,7 +252,7 @@ static int recvline(p_buffer buf, luaL_Buffer *b) {
  static void buffer_skip(p_buffer buf, size_t count) {
      buf->received += count;
      buf->first += count;
@@ -73,7 +73,7 @@ $OpenBSD: patch-src_buffer_c,v 1.3 2009/09/06 13:46:58 jolan Exp $
          buf->first = buf->last = 0;
  }
  
-@@ -256,7 +256,7 @@ static int buffer_get(p_buffer buf, const char **data,
+@@ -264,7 +264,7 @@ static int buffer_get(p_buffer buf, const char **data,
      int err = IO_DONE;
      p_io io = buf->io;
      p_timeout tm = buf->tm;

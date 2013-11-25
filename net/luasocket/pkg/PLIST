@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/05/15 20:36:28 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/11/25 15:27:56 dcoppa Exp $
 lib/lua/${MODLUA_VERSION}/mime/
 lib/lua/${MODLUA_VERSION}/mime/core.so
 lib/lua/${MODLUA_VERSION}/socket/
@@ -12,6 +12,7 @@ share/doc/${FULLPKGNAME}/index.html
 share/doc/${FULLPKGNAME}/installation.html
 share/doc/${FULLPKGNAME}/introduction.html
 share/doc/${FULLPKGNAME}/ltn12.html
+share/doc/${FULLPKGNAME}/lua05.ppt
 share/doc/${FULLPKGNAME}/luasocket.png
 share/doc/${FULLPKGNAME}/mime.html
 share/doc/${FULLPKGNAME}/reference.css
@@ -29,6 +30,8 @@ share/examples/${FULLPKGNAME}/echoclnt.lua
 share/examples/${FULLPKGNAME}/echosrvr.lua
 share/examples/${FULLPKGNAME}/listener.lua
 share/examples/${FULLPKGNAME}/lpr.lua
+share/examples/${FULLPKGNAME}/mclisten.lua
+share/examples/${FULLPKGNAME}/mcsend.lua
 share/examples/${FULLPKGNAME}/talker.lua
 share/examples/${FULLPKGNAME}/tinyirc.lua
 share/lua/${MODLUA_VERSION}/ltn12.lua

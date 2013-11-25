@@ -1,14 +1,17 @@
-# $OpenBSD: Makefile,v 1.24 2013/05/30 16:17:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2013/11/25 15:27:56 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	network support for the lua language
-DISTNAME=	luasocket-2.0.2
-REVISION=	3
+GH_VER=		v3.0-rc1
+DISTNAME=	luasocket-${GH_VER:S/v//}
+PKGNAME=	${DISTNAME:S/-rc/rc/}
 CATEGORIES=	net
 
-MASTER_SITES=	http://luaforge.net/frs/download.php/2664/
-HOMEPAGE=	http://www.tecgraf.puc-rio.br/~diego/professional/luasocket/
+MASTER_SITES=	https://github.com/diegonehab/luasocket/archive/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{${GH_VER}${EXTRACT_SUFX}}
+
+HOMEPAGE=	http://w3.impa.br/~diego/software/luasocket/
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,12 +19,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=	lang/lua
 NO_TEST=	Yes
 
+USE_GMAKE=	Yes
+
 MAKE_FILE=	makefile
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/config
-	# Prevent patching every single file..
-	perl -pi -e 's,luaL_reg,luaL_Reg,g' ${WRKSRC}/src/*.[ch]
+	${SUBST_CMD} ${WRKSRC}/src/makefile
 
 do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_DATADIR}/socket ${MODLUA_DATADIR}/mime
