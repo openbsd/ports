@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2013/11/25 14:16:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2013/11/25 14:40:15 dcoppa Exp $
 
 NOT_FOR_ARCHS=	hppa
 
@@ -7,7 +7,7 @@ COMMENT =	ML language based on complete class-based objective system
 # XXX Don't even think of updating ocaml alone.
 # Do check that the ports that depend on it still work, or repair them. 
 # Don't forget to bump version in ocaml.port.mk, too!
-VERSION=4.00.1
+VERSION=4.01.0
 
 DISTNAME =	ocaml-${VERSION}
 

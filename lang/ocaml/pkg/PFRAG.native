@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.native,v 1.14 2012/11/30 19:38:09 chrisz Exp $
+@comment $OpenBSD: PFRAG.native,v 1.15 2013/11/25 14:40:15 dcoppa Exp $
 %%dynlink%%
 @bin bin/camlp4o.opt
 @bin bin/camlp4of.opt
@@ -303,6 +303,7 @@ lib/ocaml/ocamlbuild/ocamlbuild.cmx
 lib/ocaml/ocamlbuild/ocamlbuild.o
 lib/ocaml/ocamlbuild/ocamlbuild_executor.cmx
 lib/ocaml/ocamlbuild/ocamlbuild_executor.o
+lib/ocaml/ocamlbuild/ocamlbuild_plugin.cmx
 lib/ocaml/ocamlbuild/ocamlbuild_unix_plugin.cmx
 lib/ocaml/ocamlbuild/ocamlbuild_unix_plugin.o
 lib/ocaml/ocamlbuild/ocamlbuildlib.a

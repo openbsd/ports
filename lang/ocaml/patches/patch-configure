@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.16 2012/11/01 07:57:26 avsm Exp $
---- configure.orig	Tue Jun 26 16:33:50 2012
-+++ configure	Thu Nov  1 01:28:40 2012
-@@ -641,11 +641,11 @@ if test $withsharedlibs = "yes"; then
+$OpenBSD: patch-configure,v 1.17 2013/11/25 14:40:15 dcoppa Exp $
+--- configure.orig	Wed Nov 13 16:47:53 2013
++++ configure	Wed Nov 13 16:55:03 2013
+@@ -649,11 +649,11 @@ if test $withsharedlibs = "yes"; then
      sparc*-*-linux*)              natdynlink=true;;
      i686-*-kfreebsd*)             natdynlink=true;;
      x86_64-*-kfreebsd*)           natdynlink=true;;
@@ -16,21 +16,16 @@ $OpenBSD: patch-configure,v 1.16 2012/11/01 07:57:26 avsm Exp $
      x86_64-*-netbsd*)             natdynlink=true;;
      i386-*-gnu0.3)                natdynlink=true;;
      arm*-*-linux*)                natdynlink=true;;
-@@ -688,10 +688,13 @@ case "$host" in
-   i[3456]86-*-gnu*)             arch=i386; system=gnu;;
-   powerpc*-*-linux*)            arch=power; model=ppc; system=elf;;
-   powerpc-*-netbsd*)            arch=power; model=ppc; system=elf;;
-+  powerpc-*-openbsd*)           arch=power; model=ppc; system=bsd;;
-   powerpc-*-rhapsody*)          arch=power; model=ppc; system=rhapsody;;
-   powerpc-*-darwin*)            arch=power; system=rhapsody
-                                 if $arch64; then model=ppc64; else model=ppc; fi;;
+@@ -702,6 +702,8 @@ case "$host" in
+                                 if $arch64;then model=ppc64;else model=ppc;fi;;
+   armv6*-*-linux-gnueabihf)     arch=arm; model=armv6; system=linux_eabihf;;
    arm*-*-linux-gnueabihf)       arch=arm; system=linux_eabihf;;
 +  arm*-*-openbsd*)              arch=arm; system=bsd;;
 +  zaurus*-*-openbsd*)           arch=arm; system=bsd;;
    armv7*-*-linux-gnueabi)       arch=arm; model=armv7; system=linux_eabi;;
    armv6t2*-*-linux-gnueabi)     arch=arm; model=armv6t2; system=linux_eabi;;
    armv6*-*-linux-gnueabi)       arch=arm; model=armv6; system=linux_eabi;;
-@@ -780,10 +783,14 @@ case "$arch,$model,$system" in
+@@ -797,10 +799,14 @@ case "$arch,$model,$system" in
    i386,*,bsd_elf) profiling='prof';;
    amd64,*,macosx) profiling='prof';;
    i386,*,macosx) profiling='prof';;
@@ -45,7 +40,7 @@ $OpenBSD: patch-configure,v 1.16 2012/11/01 07:57:26 avsm Exp $
    amd64,*,gnu) profiling='prof';;
    arm,*,linux*) profiling='prof';;
    *) profiling='noprof';;
-@@ -1543,11 +1550,11 @@ fi
+@@ -1563,11 +1569,11 @@ fi
  
  # Look for BFD library
  
