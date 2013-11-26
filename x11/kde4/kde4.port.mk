@@ -1,4 +1,4 @@
-# $OpenBSD: kde4.port.mk,v 1.14 2013/11/25 16:26:08 zhuk Exp $
+# $OpenBSD: kde4.port.mk,v 1.15 2013/11/26 09:30:20 zhuk Exp $
 
 # The version of KDE SC in x11/kde4
 _MODKDE4_STABLE =	4.10.5
@@ -120,8 +120,7 @@ MODKDE4_USE +=		runtime
 
 # Force CMake which has merged KDE modules.
 # Almost all KDE ports use docbook.
-MODKDE4_BUILD_DEPENDS =	STEM->=2.8.9:devel/cmake \
-			textproc/docbook \
+MODKDE4_BUILD_DEPENDS =	textproc/docbook \
 			textproc/docbook-xsl
 MODKDE4_LIB_DEPENDS =
 MODKDE4_RUN_DEPENDS =
