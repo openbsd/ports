@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_mainwindow_cpp,v 1.1 2013/11/26 14:53:33 bcallah Exp $
+
+Fix "Info" icon
+
+--- src/mainwindow.cpp.orig	Tue Nov 26 10:51:54 2013
++++ src/mainwindow.cpp	Tue Nov 26 10:52:32 2013
+@@ -190,12 +190,7 @@ void MainWindow::createActions() {
+     actions->insert("back", backAct);
+     connect(backAct, SIGNAL(triggered()), SLOT(goBack()));
+ 
+-    QIcon icon = Utils::icon("gtk-info");
+-#ifdef Q_WS_X11
+-    if (icon.isNull()) {
+-        icon = Utils::icon("help-about");
+-    }
+-#endif
++    QIcon icon = Utils::icon("help-about");
+     contextualAct = new QAction(icon, tr("&Info"), this);
+     contextualAct->setStatusTip(tr("Show information about the current track"));
+     contextualAct->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_I));

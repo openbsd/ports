@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/19 14:43:50 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/11/26 14:53:33 bcallah Exp $
 @bin bin/musique
 share/applications/musique.desktop
 share/icons/hicolor/128x128/apps/musique.png
@@ -15,7 +15,10 @@ share/icons/hicolor/scalable/apps/musique.svg
 share/musique/
 share/musique/locale/
 share/musique/locale/ast.qm
+share/musique/locale/be.qm
+share/musique/locale/bg.qm
 share/musique/locale/ca.qm
+share/musique/locale/ca_ES.qm
 share/musique/locale/cs_CZ.qm
 share/musique/locale/da.qm
 share/musique/locale/de.qm
@@ -23,12 +26,16 @@ share/musique/locale/el.qm
 share/musique/locale/en.qm
 share/musique/locale/es.qm
 share/musique/locale/es_ES.qm
+share/musique/locale/es_MX.qm
+share/musique/locale/fa_IR.qm
 share/musique/locale/fi_FI.qm
 share/musique/locale/fr.qm
+share/musique/locale/gl.qm
 share/musique/locale/hu_HU.qm
 share/musique/locale/ia.qm
 share/musique/locale/it.qm
-share/musique/locale/lv.qm
+share/musique/locale/ky.qm
+share/musique/locale/ms_MY.qm
 share/musique/locale/nb.qm
 share/musique/locale/nl.qm
 share/musique/locale/pl.qm
@@ -38,11 +45,12 @@ share/musique/locale/ro.qm
 share/musique/locale/ru.qm
 share/musique/locale/sk.qm
 share/musique/locale/sr.qm
-share/musique/locale/te.qm
 share/musique/locale/tr.qm
 share/musique/locale/tt.qm
 share/musique/locale/uk.qm
+share/musique/locale/vi.qm
 share/musique/locale/zh_CN.qm
+share/musique/locale/zh_TW.qm
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database

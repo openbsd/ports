@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_utils_cpp,v 1.1 2013/05/28 00:12:22 bcallah Exp $
+$OpenBSD: patch-src_utils_cpp,v 1.2 2013/11/26 14:53:33 bcallah Exp $
 
 Use the gnome icon theme unconditionally: fixes a problem with
 musique GUI not having icons when executed outside of a Desktop
@@ -7,13 +7,13 @@ Environment.
 This fix is identical to the one in www/minitube, which is by
 the same author.
 
---- src/utils.cpp.orig	Sun May 26 12:21:35 2013
-+++ src/utils.cpp	Sun May 26 12:22:32 2013
-@@ -5,6 +5,7 @@
+--- src/utils.cpp.orig	Fri Oct 11 03:42:11 2013
++++ src/utils.cpp	Mon Nov 25 17:07:58 2013
+@@ -24,6 +24,7 @@ $END_LICENSE */
+ #endif
  
- QIcon getIcon(const QString &name) {
- #ifdef Q_WS_X11
+ QIcon Utils::themeIcon(const QString &name) {
 +    QIcon::setThemeName("gnome");
-     return QIcon::fromTheme(name);
- #else
-     return Extra::getIcon(name);
+     if (QIcon::hasThemeIcon(name))
+         return QIcon::fromTheme(name);
+     else

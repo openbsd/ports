@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/05/28 00:12:22 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2013/11/26 14:53:33 bcallah Exp $
 
 COMMENT =	graphical music player focused on a clean ui
-DISTNAME =	musique-1.2.1
+DISTNAME =	musique-1.3
 CATEGORIES =	audio
-REVISION =	1
 
 HOMEPAGE =	http://flavio.tordini.org/musique/
 
@@ -28,6 +27,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+2,-guic
 
 WRKDIST =	${WRKDIR}/musique
+MAKE_FLAGS =	CXX="${CXX}"
 FAKE_FLAGS =	INSTALL_ROOT=${WRKINST}
 NO_TEST =	Yes
 
