@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/10/12 19:15:01 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/11/26 20:27:23 bcallah Exp $
 @conflict tmw-*
 @conflict tmw-music-*
 @pkgpath games/tmw
 @pkgpath games/tmw,-music
+@bin bin/dyecmd
 @bin bin/manaplus
 @man man/man6/manaplus.6
 @man man/man6/manaplustest.6
@@ -294,6 +295,7 @@ share/manaplus/data/themes/jewelry/dropdown.xml
 share/manaplus/data/themes/jewelry/dropdown_background.xml
 share/manaplus/data/themes/jewelry/dropdown_pressed.xml
 share/manaplus/data/themes/jewelry/drops.xml
+share/manaplus/data/themes/jewelry/edit.xml
 share/manaplus/data/themes/jewelry/emotes.xml
 share/manaplus/data/themes/jewelry/emotetabs.xml
 share/manaplus/data/themes/jewelry/equipment.xml

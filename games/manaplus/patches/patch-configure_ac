@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure_ac,v 1.3 2013/11/26 20:27:23 bcallah Exp $
+
+Commmited upstream.
+
+--- configure.ac.orig	Sat Nov  9 15:25:15 2013
++++ configure.ac	Sat Nov  9 15:25:29 2013
+@@ -138,7 +138,7 @@ if test "x$with_internalsdlgfx" == "xno"; then
+ 
+     AC_CHECK_LIB(SDL2_gfx, rotozoomSurfaceXY, ,
+     AC_MSG_ERROR([ *** Unable to find SDL2_gfx library (http://www.ferzkopp.net/joomla/software-mainmenu-14/4-ferzkopps-linux-software/19-sdlgfx)]))
+-    AC_CHECK_HEADERS(SDL_rotozoom.h, ,)
++    AC_CHECK_HEADERS(SDL2_rotozoom.h, ,)
+ else
+     with_internalsdlgfx=yes
+     AC_DEFINE(USE_INTERNALSDLGFX, 1, [Defines if ManaPlus should use internal sdlgfx2])

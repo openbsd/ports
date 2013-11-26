@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2013/10/28 17:32:31 bcallah Exp $
+# $OpenBSD: Makefile,v 1.27 2013/11/26 20:27:23 bcallah Exp $
 
 COMMENT =	extended client for The Mana World
 
-V =		1.3.10.27
-DISTNAME =	manaplus-${V}.2
+V =		1.3.11.10
+DISTNAME =	manaplus-${V}
 EXTRACT_SUFX =	.tar.xz
 
 CATEGORIES =	games x11
@@ -15,29 +15,45 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL SDL SDL_gfx SDL_image SDL_mixer SDL_net SDL_ttf
-WANTLIB += X11 c crypto curl guichan guichan_sdl idn m physfs
-WANTLIB += png pthread ssl stdc++ xml2 z
+WANTLIB += GL X11 c crypto curl idn m physfs png pthread ssl stdc++ xml2 z
 
 MASTER_SITES =	http://download.evolonline.org/manaplus/download/${V}/
 
+FLAVORS =	sdl2
+FLAVOR ?=
+
 MODULES =	devel/gettext
-RUN_DEPENDS=	devel/desktop-file-utils
-LIB_DEPENDS =	devel/sdl-image \
-		devel/sdl-gfx \
-		devel/sdl-mixer \
-		devel/sdl-net \
-		devel/sdl-ttf \
-		devel/guichan \
-		devel/physfs \
+RUN_DEPENDS =	devel/desktop-file-utils
+LIB_DEPENDS =	devel/physfs \
 		net/curl \
 		textproc/libxml
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--without-librt --without-internalguichan
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ARGS =	--without-librt
 
-BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
+BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS}
+
+.if ${FLAVOR:Msdl2}
+WANTLIB += SDL2 SDL2_gfx SDL2_image SDL2_mixer SDL2_net SDL2_ttf
+
+LIB_DEPENDS +=	devel/sdl2-gfx \
+		devel/sdl2-image \
+		devel/sdl2-mixer \
+		devel/sdl2-net \
+		devel/sdl2-ttf
+
+CONFIGURE_ARGS +=	--with-sdl2 --without-internalsdlgfx
+.else
+WANTLIB += SDL SDL_gfx SDL_image SDL_mixer SDL_net SDL_ttf
+
+LIB_DEPENDS +=	devel/sdl-gfx \
+		devel/sdl-image \
+		devel/sdl-mixer \
+		devel/sdl-net \
+		devel/sdl-ttf
+.endif
 
 FAKE_FLAGS +=		desktopdir=${PREFIX}/share/applications/
 
