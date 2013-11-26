@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2013/11/25 14:16:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2013/11/26 08:25:57 ajacoutot Exp $
 
 COMMENT =	digital photo organizer
 
-V =		0.15.0
+V =		0.15.1
 DISTNAME =	shotwell-${V}
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	graphics
