@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/11/25 21:09:40 pascal Exp $
+# $OpenBSD: Makefile,v 1.3 2013/11/26 15:52:40 pascal Exp $
 
 COMMENT =		data files for flightgear
 
@@ -12,6 +12,8 @@ MASTER_SITES =	http://ftp.igh.cnrs.fr/pub/flightgear/ftp/Shared/ \
 
 EXTRACT_SUFX =	.tar.bz
 EXTRACT_CASES += *.tar.bz) ${BZIP2} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
+
+BUILD_DEPENDS =		archivers/bzip2
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
