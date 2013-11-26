@@ -1,7 +1,23 @@
-$OpenBSD: patch-server_getmac_c,v 1.1 2013/05/10 09:56:45 sthen Exp $
---- server/getmac.c.orig	Thu Sep 11 02:27:06 1997
-+++ server/getmac.c	Fri May 10 10:49:50 2013
-@@ -85,14 +85,20 @@ getmac(ifname, result)
+$OpenBSD: patch-server_getmac_c,v 1.2 2013/11/26 09:39:41 jca Exp $
+--- server/getmac.c.orig	Thu Sep 11 03:27:06 1997
++++ server/getmac.c	Tue Nov 26 00:40:06 2013
+@@ -50,10 +50,15 @@ static char rcsid[] =
+ #include <net/if_var.h>
+ #endif
+ #endif
++#if defined(__OpenBSD__)
++#include <net/if_var.h>
++#endif
+ 
+ #include <netinet/in.h>
++#define _KERNEL
+ #include <netinet/in_var.h>
+ #include <netinet/if_ether.h>
++#undef _KERNEL
+ #include <arpa/inet.h>
+ 
+ /* Cast a struct sockaddr to a sockaddr_in */
+@@ -85,14 +90,20 @@ getmac(ifname, result)
      struct in_ifaddr in;
    } ifaddr;
    u_long addr = 0;
@@ -22,7 +38,7 @@ $OpenBSD: patch-server_getmac_c,v 1.1 2013/05/10 09:56:45 sthen Exp $
  
    /* Open kernel memory for reading */
    kd = kvm_open(0, 0, 0, O_RDONLY, "kvm_open");
-@@ -110,7 +116,7 @@ getmac(ifname, result)
+@@ -110,7 +121,7 @@ getmac(ifname, result)
  
    ac = &arpcom;
    ifp = &arpcom.ac_if;
@@ -31,7 +47,7 @@ $OpenBSD: patch-server_getmac_c,v 1.1 2013/05/10 09:56:45 sthen Exp $
    ep = arpcom.ac_enaddr;
  #else
    ep = arpcom.ac_enaddr.ether_addr_octet;
-@@ -124,7 +130,11 @@ getmac(ifname, result)
+@@ -124,7 +135,11 @@ getmac(ifname, result)
      kvm_close(kd);
      return(-1);
    }
@@ -43,7 +59,7 @@ $OpenBSD: patch-server_getmac_c,v 1.1 2013/05/10 09:56:45 sthen Exp $
      if (kvm_read(kd, addr, (char *)ac, sizeof(*ac)) != sizeof(*ac)) {
        syslog(LOG_ERR, "kvm_read() error in getmac(): %m");
        kvm_close(kd);
-@@ -135,6 +145,10 @@ getmac(ifname, result)
+@@ -135,6 +150,10 @@ getmac(ifname, result)
        continue;
  
      /* Only look at the specified interface */
@@ -54,7 +70,7 @@ $OpenBSD: patch-server_getmac_c,v 1.1 2013/05/10 09:56:45 sthen Exp $
      if (kvm_read(kd, (u_long)ifp->if_name, (char *)name, sizeof(name)) !=
                   sizeof(name)) {
        syslog(LOG_ERR, "kvm_read() error in getmac(): %m");
-@@ -145,6 +159,7 @@ getmac(ifname, result)
+@@ -145,6 +164,7 @@ getmac(ifname, result)
      sprintf(fullname, "%s%d", name, ifp->if_unit);
      if (strcmp(fullname, ifname) != 0)
        continue;
