@@ -1,0 +1,17 @@
+$OpenBSD: patch-plugins_screenshot_c,v 1.1 2013/11/26 11:59:32 fgsch Exp $
+--- plugins/screenshot.c.orig	Mon Apr  1 19:46:19 2013
++++ plugins/screenshot.c	Mon Apr  1 19:47:21 2013
+@@ -179,11 +179,9 @@ shotFilter (const struct dirent *d)
+ }
+ 
+ static int
+-shotSort (const void *_a,
+-	  const void *_b)
++shotSort (const struct dirent **a,
++	  const struct dirent **b)
+ {
+-    struct dirent **a = (struct dirent **) _a;
+-    struct dirent **b = (struct dirent **) _b;
+     int		  al = strlen ((*a)->d_name);
+     int		  bl = strlen ((*b)->d_name);
+ 

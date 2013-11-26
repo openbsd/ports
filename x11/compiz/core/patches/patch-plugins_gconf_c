@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_gconf_c,v 1.1 2013/11/26 11:59:32 fgsch Exp $
+--- plugins/gconf.c.orig	Mon Apr  1 19:45:59 2013
++++ plugins/gconf.c	Mon Apr  1 19:46:01 2013
+@@ -725,8 +725,6 @@ gconfInitCore (CompPlugin *p,
+     if (!gc)
+ 	return FALSE;
+ 
+-    g_type_init ();
+-
+     gc->client = gconf_client_get_default ();
+ 
+     gconf_client_add_dir (gc->client, "/apps/" APP_NAME,

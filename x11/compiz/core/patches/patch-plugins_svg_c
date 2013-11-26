@@ -1,0 +1,74 @@
+$OpenBSD: patch-plugins_svg_c,v 1.1 2013/11/26 11:59:32 fgsch Exp $
+--- plugins/svg.c.orig	Fri May 21 12:18:14 2010
++++ plugins/svg.c	Mon Apr  1 20:32:28 2013
+@@ -28,7 +28,6 @@
+ 
+ #include <cairo/cairo-xlib.h>
+ #include <librsvg/rsvg.h>
+-#include <librsvg/rsvg-cairo.h>
+ 
+ #include <X11/Xatom.h>
+ #include <X11/extensions/shape.h>
+@@ -514,7 +513,7 @@ svgSet (CompDisplay     *d,
+ 
+ 	if (sw->source)
+ 	{
+-	    rsvg_handle_free (sw->source->svg);
++	    g_object_unref (sw->source->svg);
+ 	    sw->source->svg = svg;
+ 	}
+ 	else
+@@ -538,7 +537,7 @@ svgSet (CompDisplay     *d,
+ 	else
+ 	{
+ 	    if (svg)
+-		rsvg_handle_free (svg);
++		g_object_unref (svg);
+ 
+ 	    if (sw->source)
+ 	    {
+@@ -669,7 +668,7 @@ readSvgFileToImage (char *file,
+     *data = malloc (svgDimension.width * svgDimension.height * 4);
+     if (!*data)
+     {
+-	rsvg_handle_free (svgHandle);
++	g_object_unref (svgHandle);
+ 	return FALSE;
+     }
+ 
+@@ -694,7 +693,7 @@ readSvgFileToImage (char *file,
+ 	cairo_surface_destroy (surface);
+     }
+ 
+-    rsvg_handle_free (svgHandle);
++    g_object_unref (svgHandle);
+ 
+     return TRUE;
+ }
+@@ -925,7 +924,7 @@ svgFiniWindow (CompPlugin *p,
+ 
+     if (sw->source)
+     {
+-	rsvg_handle_free (sw->source->svg);
++	g_object_unref (sw->source->svg);
+ 	free (sw->source);
+     }
+ 
+@@ -1013,8 +1012,6 @@ svgInit (CompPlugin *p)
+ 	return FALSE;
+     }
+ 
+-    rsvg_init ();
+-
+     compAddMetadataFromFile (&svgMetadata, p->vTable->name);
+ 
+     return TRUE;
+@@ -1025,8 +1022,6 @@ svgFini (CompPlugin *p)
+ {
+     freeDisplayPrivateIndex (displayPrivateIndex);
+     compFiniMetadata (&svgMetadata);
+-
+-    rsvg_term ();
+ }
+ 
+ static CompMetadata *

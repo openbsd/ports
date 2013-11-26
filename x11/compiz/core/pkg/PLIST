@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/02/06 14:23:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/11/26 11:59:32 fgsch Exp $
 @bin bin/compiz
 @bin bin/gtk-window-decorator
 include/compiz/
@@ -10,59 +10,33 @@ include/compiz/compiz-scale.h
 include/compiz/compiz.h
 include/compiz/decoration.h
 lib/compiz/
-@comment lib/compiz/libannotate.la
 lib/compiz/libannotate.so
-@comment lib/compiz/libblur.la
 lib/compiz/libblur.so
-@comment lib/compiz/libclone.la
 lib/compiz/libclone.so
-@comment lib/compiz/libcommands.la
 lib/compiz/libcommands.so
-@comment lib/compiz/libcube.la
 lib/compiz/libcube.so
-@comment lib/compiz/libdbus.la
 lib/compiz/libdbus.so
-@comment lib/compiz/libdecoration.la
 lib/compiz/libdecoration.so
-@comment lib/compiz/libfade.la
 lib/compiz/libfade.so
-@comment lib/compiz/libgconf.la
 lib/compiz/libgconf.so
-@comment lib/compiz/libglib.la
 lib/compiz/libglib.so
-@comment lib/compiz/libgnomecompat.la
 lib/compiz/libgnomecompat.so
-@comment lib/compiz/libini.la
 lib/compiz/libini.so
-@comment lib/compiz/libminimize.la
 lib/compiz/libminimize.so
-@comment lib/compiz/libmove.la
 lib/compiz/libmove.so
-@comment lib/compiz/libobs.la
 lib/compiz/libobs.so
-@comment lib/compiz/libplace.la
 lib/compiz/libplace.so
-@comment lib/compiz/libpng.la
 lib/compiz/libpng.so
-@comment lib/compiz/libregex.la
 lib/compiz/libregex.so
-@comment lib/compiz/libresize.la
 lib/compiz/libresize.so
-@comment lib/compiz/librotate.la
 lib/compiz/librotate.so
-@comment lib/compiz/libscale.la
 lib/compiz/libscale.so
-@comment lib/compiz/libscreenshot.la
 lib/compiz/libscreenshot.so
-@comment lib/compiz/libswitcher.la
+lib/compiz/libsvg.so
 lib/compiz/libswitcher.so
-@comment lib/compiz/libvideo.la
 lib/compiz/libvideo.so
-@comment lib/compiz/libwater.la
 lib/compiz/libwater.so
-@comment lib/compiz/libwobbly.la
 lib/compiz/libwobbly.so
-@comment lib/compiz/libzoom.la
 lib/compiz/libzoom.so
 lib/libdecoration.la
 @lib lib/libdecoration.so.${LIBdecoration_VERSION}
@@ -139,8 +113,6 @@ share/locale/id/LC_MESSAGES/compiz.mo
 share/locale/it/LC_MESSAGES/compiz.mo
 share/locale/ja/LC_MESSAGES/compiz.mo
 share/locale/ka/LC_MESSAGES/compiz.mo
-share/locale/km/
-share/locale/km/LC_MESSAGES/
 share/locale/km/LC_MESSAGES/compiz.mo
 share/locale/ko/LC_MESSAGES/compiz.mo
 share/locale/lo/
@@ -169,8 +141,6 @@ share/locale/vi/LC_MESSAGES/compiz.mo
 share/locale/xh/LC_MESSAGES/compiz.mo
 share/locale/zh_CN/LC_MESSAGES/compiz.mo
 share/locale/zh_TW/LC_MESSAGES/compiz.mo
-share/locale/zu/
-share/locale/zu/LC_MESSAGES/
 share/locale/zu/LC_MESSAGES/compiz.mo
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas >/dev/null 2>&1
 ${SCHEMAS_INSTDIR}/
