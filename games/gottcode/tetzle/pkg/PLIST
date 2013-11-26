@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/06/26 18:52:30 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/11/26 14:54:18 bcallah Exp $
 @bin bin/tetzle
 share/applications/tetzle.desktop
 share/icons/hicolor/128x128/apps/tetzle.png
@@ -11,14 +11,18 @@ share/pixmaps/
 share/pixmaps/tetzle.xpm
 share/tetzle/
 share/tetzle/translations/
+share/tetzle/translations/tetzle_cs.qm
 share/tetzle/translations/tetzle_de.qm
 share/tetzle/translations/tetzle_en.qm
 share/tetzle/translations/tetzle_eo.qm
 share/tetzle/translations/tetzle_fr.qm
 share/tetzle/translations/tetzle_he.qm
 share/tetzle/translations/tetzle_lv.qm
+share/tetzle/translations/tetzle_ms.qm
+share/tetzle/translations/tetzle_pl.qm
 share/tetzle/translations/tetzle_ro.qm
 share/tetzle/translations/tetzle_ru.qm
+share/tetzle/translations/tetzle_tr.qm
 share/tetzle/translations/tetzle_uk.qm
 share/tetzle/translations/tetzle_uk_UA.qm
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
