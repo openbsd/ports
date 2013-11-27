@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2013/06/19 20:26:05 steven Exp $
+# $OpenBSD: Makefile,v 1.38 2013/11/27 07:52:54 ajacoutot Exp $
 
 COMMENT=	syslogd replacement
 
@@ -7,6 +7,7 @@ SHARED_ONLY =	Yes
 V =		3.3.11
 DISTNAME =	syslog-ng-$V
 CATEGORIES =	sysutils
+REVISION =	0
 
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 
