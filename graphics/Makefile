@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.359 2013/11/24 22:06:34 pascal Exp $
+# $OpenBSD: Makefile,v 1.360 2013/11/27 09:49:44 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -185,6 +185,7 @@
      SUBDIR += p5-GD-SVG
      SUBDIR += p5-GD-SecurityImage
      SUBDIR += p5-GD-TextUtil
+     SUBDIR += p5-Goo-Canvas
      SUBDIR += p5-Graphics-ColorNames
      SUBDIR += p5-Graphics-ColorNames-WWW
      SUBDIR += p5-Image-BioChrome
@@ -199,6 +200,7 @@
      SUBDIR += p5-Imager-QRCode
      SUBDIR += p5-SVG
      SUBDIR += p5-SVG-Graph
+     SUBDIR += p5-Sane
      SUBDIR += pdfmod
      SUBDIR += pecl-imagick
      SUBDIR += pigment
