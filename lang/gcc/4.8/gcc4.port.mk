@@ -1,4 +1,4 @@
-# $OpenBSD: gcc4.port.mk,v 1.1.1.1 2013/04/08 08:20:19 pascal Exp $
+# $OpenBSD: gcc4.port.mk,v 1.2 2013/11/27 20:42:08 zhuk Exp $
 
 MODGCC4_ARCHS ?=
 MODGCC4_LANGS ?=
@@ -35,6 +35,9 @@ _MODGCC4_LINKS =
 .  if ${MODGCC4_LANGS:L:Mc}
 BUILD_DEPENDS += lang/gcc/4.8>=4.8,<4.9
 _MODGCC4_LINKS += egcc gcc egcc cc
+
+# not supported
+NO_CCACHE =	Yes
 .  endif
 
 .  if ${MODGCC4_LANGS:L:Mc++}
@@ -45,6 +48,9 @@ LIB_DEPENDS += ${MODGCC4_CPPLIBDEP}
 MODGCC4_CPPWANTLIB = estdc++>=16
 WANTLIB += ${MODGCC4_CPPWANTLIB}
 _MODGCC4_LINKS += eg++ g++ eg++ c++
+
+# not supported
+NO_CCACHE =	Yes
 .  endif
 
 .  if ${MODGCC4_LANGS:L:Mfortran}

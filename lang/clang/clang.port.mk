@@ -1,4 +1,4 @@
-# $OpenBSD: clang.port.mk,v 1.5 2013/06/21 23:00:30 brad Exp $
+# $OpenBSD: clang.port.mk,v 1.6 2013/11/27 20:42:08 zhuk Exp $
 
 MODCLANG_VERSION=	3.3
 
@@ -29,6 +29,8 @@ _MODCLANG_ARCH_USES = Yes
 
 _MODCLANG_LINKS =
 .if ${_MODCLANG_ARCH_USES:L} == "yes"
+# not supported for all languages Clang supports
+NO_CCACHE =	Yes
 
 BUILD_DEPENDS += devel/llvm>=${MODCLANG_VERSION}
 _MODCLANG_LINKS = clang gcc clang cc
