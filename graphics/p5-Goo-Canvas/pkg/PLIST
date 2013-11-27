@@ -1,0 +1,86 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/27 09:47:51 ajacoutot Exp $
+bin/perlmine.pl
+bin/perltetris.pl
+${P5ARCH}/Goo/
+${P5ARCH}/Goo/Cairo/
+${P5ARCH}/Goo/Cairo/Matrix.pod
+${P5ARCH}/Goo/Cairo/Pattern.pod
+${P5ARCH}/Goo/Canvas/
+${P5ARCH}/Goo/Canvas.pm
+${P5ARCH}/Goo/Canvas.pod
+${P5ARCH}/Goo/Canvas/Bounds.pod
+${P5ARCH}/Goo/Canvas/Ellipse.pod
+${P5ARCH}/Goo/Canvas/EllipseModel.pod
+${P5ARCH}/Goo/Canvas/Group.pod
+${P5ARCH}/Goo/Canvas/GroupModel.pod
+${P5ARCH}/Goo/Canvas/Image.pod
+${P5ARCH}/Goo/Canvas/ImageModel.pod
+${P5ARCH}/Goo/Canvas/Install/
+${P5ARCH}/Goo/Canvas/Install/Files.pm
+${P5ARCH}/Goo/Canvas/Install/goocanvas-perl-autogen.h
+${P5ARCH}/Goo/Canvas/Install/goocanvas-perl-version.h
+${P5ARCH}/Goo/Canvas/Install/goocanvas-perl.h
+${P5ARCH}/Goo/Canvas/Install/goocanvas-perl.typemap
+${P5ARCH}/Goo/Canvas/Install/goocanvas.typemap
+${P5ARCH}/Goo/Canvas/Item.pod
+${P5ARCH}/Goo/Canvas/ItemModel.pod
+${P5ARCH}/Goo/Canvas/ItemSimple.pod
+${P5ARCH}/Goo/Canvas/LineDash.pod
+${P5ARCH}/Goo/Canvas/Path.pod
+${P5ARCH}/Goo/Canvas/PathModel.pod
+${P5ARCH}/Goo/Canvas/Points.pod
+${P5ARCH}/Goo/Canvas/Polyline.pod
+${P5ARCH}/Goo/Canvas/PolylineModel.pod
+${P5ARCH}/Goo/Canvas/Rect.pod
+${P5ARCH}/Goo/Canvas/RectModel.pod
+${P5ARCH}/Goo/Canvas/Style.pod
+${P5ARCH}/Goo/Canvas/Table.pod
+${P5ARCH}/Goo/Canvas/TableModel.pod
+${P5ARCH}/Goo/Canvas/Text.pod
+${P5ARCH}/Goo/Canvas/TextModel.pod
+${P5ARCH}/Goo/Canvas/Widget.pod
+${P5ARCH}/Goo/Canvas/index.pod
+${P5ARCH}/auto/Goo/
+${P5ARCH}/auto/Goo/Canvas/
+${P5ARCH}/auto/Goo/Canvas/Canvas.bs
+${P5ARCH}/auto/Goo/Canvas/Canvas.so
+@man man/man1/perlmine.pl.1
+@man man/man1/perltetris.pl.1
+@man man/man3p/Goo::Cairo::Matrix.3p
+@man man/man3p/Goo::Cairo::Pattern.3p
+@man man/man3p/Goo::Canvas.3p
+@man man/man3p/Goo::Canvas::Bounds.3p
+@man man/man3p/Goo::Canvas::Ellipse.3p
+@man man/man3p/Goo::Canvas::EllipseModel.3p
+@man man/man3p/Goo::Canvas::Group.3p
+@man man/man3p/Goo::Canvas::GroupModel.3p
+@man man/man3p/Goo::Canvas::Image.3p
+@man man/man3p/Goo::Canvas::ImageModel.3p
+@man man/man3p/Goo::Canvas::Item.3p
+@man man/man3p/Goo::Canvas::ItemModel.3p
+@man man/man3p/Goo::Canvas::ItemSimple.3p
+@man man/man3p/Goo::Canvas::LineDash.3p
+@man man/man3p/Goo::Canvas::Path.3p
+@man man/man3p/Goo::Canvas::PathModel.3p
+@man man/man3p/Goo::Canvas::Points.3p
+@man man/man3p/Goo::Canvas::Polyline.3p
+@man man/man3p/Goo::Canvas::PolylineModel.3p
+@man man/man3p/Goo::Canvas::Rect.3p
+@man man/man3p/Goo::Canvas::RectModel.3p
+@man man/man3p/Goo::Canvas::Style.3p
+@man man/man3p/Goo::Canvas::Table.3p
+@man man/man3p/Goo::Canvas::TableModel.3p
+@man man/man3p/Goo::Canvas::Text.3p
+@man man/man3p/Goo::Canvas::TextModel.3p
+@man man/man3p/Goo::Canvas::Widget.3p
+@man man/man3p/Goo::Canvas::index.3p
+share/examples/p5-Goo-Canvas/
+share/examples/p5-Goo-Canvas/demo.pl
+share/examples/p5-Goo-Canvas/flower.png
+share/examples/p5-Goo-Canvas/mv-demo.pl
+share/examples/p5-Goo-Canvas/mv-simple.pl
+share/examples/p5-Goo-Canvas/scalablity.pl
+share/examples/p5-Goo-Canvas/simple.pl
+share/examples/p5-Goo-Canvas/table.pl
+share/examples/p5-Goo-Canvas/toroid.png
+share/examples/p5-Goo-Canvas/unit-demo.pl
