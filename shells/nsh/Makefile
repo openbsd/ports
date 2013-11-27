@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2013/10/31 21:12:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2013/11/27 14:14:22 jca Exp $
 
 COMMENT =		network switch style shell
 
 DISTNAME =		nsh-1.0
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		shells net
 HOMEPAGE =		http://www.nmedia.net/nsh/

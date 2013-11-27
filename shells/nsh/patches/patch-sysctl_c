@@ -1,0 +1,12 @@
+$OpenBSD: patch-sysctl_c,v 1.1 2013/11/27 14:14:22 jca Exp $
+--- sysctl.c.orig	Tue Nov 26 16:32:26 2013
++++ sysctl.c	Tue Nov 26 16:32:47 2013
+@@ -39,6 +39,8 @@
+ 
+ #define	MIB_STOP	INT_MAX
+ 
++#define IFQ_MAXLEN	256
++
+ void conf_sysctl(FILE *, char *, struct ipsysctl *);
+ 
+ /*
