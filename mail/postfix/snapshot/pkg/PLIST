@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.62 2012/05/16 14:40:08 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.63 2013/11/27 04:28:30 brad Exp $
 @conflict postfix-*
 @pkgpath mail/postfix/snapshot,sqlite
 @newgroup _postfix:507
@@ -70,6 +70,7 @@ libexec/postfix/postmulti-script
 @man man/man5/generic.5
 @man man/man5/header_checks.5
 @man man/man5/ldap_table.5
+@man man/man5/lmdb_table.5
 @man man/man5/master.5
 @man man/man5/memcache_table.5
 @man man/man5/mysql_table.5
@@ -80,6 +81,7 @@ libexec/postfix/postmulti-script
 @man man/man5/postfix-wrapper.5
 @man man/man5/regexp_table.5
 @man man/man5/relocated.5
+@man man/man5/socketmap_table.5
 @man man/man5/sqlite_table.5
 @man man/man5/tcp_table.5
 @man man/man5/transport.5
