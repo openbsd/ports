@@ -1,11 +1,10 @@
-$OpenBSD: patch-SDL2_mixer_pc_in,v 1.1.1.1 2013/10/31 15:30:07 bcallah Exp $
---- SDL2_mixer.pc.in.orig	Sat Oct 12 16:48:34 2013
-+++ SDL2_mixer.pc.in	Sat Oct 12 16:49:13 2013
-@@ -7,6 +7,6 @@ Name: SDL2_mixer
- Description: mixer library for Simple DirectMedia Layer
+$OpenBSD: patch-SDL2_mixer_pc_in,v 1.2 2013/11/27 05:14:13 brad Exp $
+--- SDL2_mixer.pc.in.orig	Sat Aug 10 13:39:54 2013
++++ SDL2_mixer.pc.in	Fri Nov 15 19:01:58 2013
+@@ -8,5 +8,6 @@ Description: mixer library for Simple DirectMedia Laye
  Version: @VERSION@
  Requires: sdl2 >= @SDL_VERSION@
--Libs: -L${libdir} -lSDL2_mixer
-+Libs: -L${libdir} -lSDL2_mixer -lmikmod -lvorbisfile -lvorbis -lFLAC -logg -lsmpeg -lm
+ Libs: -L${libdir} -lSDL2_mixer
++Libs.private: -lmikmod -lvorbisfile -lvorbis -lFLAC -logg -lm
  Cflags: -I${includedir}/SDL2
  
