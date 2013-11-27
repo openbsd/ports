@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.90 2013/11/11 16:06:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.91 2013/11/27 07:34:41 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-cups=		gtk+3 CUPS print backend
 
-GNOME_VERSION=		3.10.3
+GNOME_VERSION=		3.10.5
 GNOME_PROJECT=		gtk+
 
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
@@ -44,9 +44,9 @@ BUILD_DEPENDS +=	textproc/docbook-xsl
 RUN_DEPENDS=		x11/hicolor-icon-theme
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			devel/pango>=1.36.0 \
-			graphics/gdk-pixbuf2>=2.30.0 \
-			x11/gnome/at-spi2-atk>=2.10.0
+			devel/pango \
+			graphics/gdk-pixbuf2 \
+			x11/gnome/at-spi2-atk
 
 RUN_DEPENDS-main=	${RUN_DEPENDS}
 
