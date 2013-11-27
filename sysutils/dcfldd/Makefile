@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2013/10/11 23:50:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2013/11/27 22:44:46 jca Exp $
 
 COMMENT=		GNU dd with added forensic/security features
 
 DISTNAME=		dcfldd-1.3.4-1
 PKGNAME=		dcfldd-1.3.4.1
+REVISION=		0
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://dcfldd.sourceforge.net/
-
-MAINTAINER=		Brad Tilley <brad@16systems.com>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
