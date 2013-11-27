@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2013/06/26 21:52:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2013/11/27 18:49:29 landry Exp $
+
+BROKEN-hppa =	-Werror + sip-csta.c:707: warning: cast increases required alignment of target type
 
 SHARED_ONLY =		Yes
 
