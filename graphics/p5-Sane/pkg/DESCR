@@ -1,0 +1,2 @@
+This module allows you to access SANE-compatible scanners in a Perlish
+and object-oriented way.
