@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1176 2013/11/14 09:45:19 stu Exp $
+# $OpenBSD: Makefile,v 1.1177 2013/11/27 02:42:23 bcallah Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -156,7 +156,6 @@
      SUBDIR += gtest
      SUBDIR += gtk2hs-buildtools
      SUBDIR += gtkparasite
-     SUBDIR += guichan
      SUBDIR += guilib
      SUBDIR += gwenhywfar
      SUBDIR += gyp
