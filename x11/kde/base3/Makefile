@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2013/11/24 19:56:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.123 2013/11/27 21:42:00 kili Exp $
 
 COMMENT-main = 		K Desktop Environment, basic applications
 COMMENT-samba =		K Desktop Environment, samba support
@@ -15,6 +15,8 @@ PKG_ARCH-en_US =	*
 PKG_ARCH-locale =	*
 REVISION-main =		30
 REVISION-samba =	10
+REVISION-en_US =	0
+REVISION-locale =	0
 
 MODKDE_VERSION =	3.5.8
 

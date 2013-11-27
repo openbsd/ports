@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-en_US,v 1.1 2013/11/24 19:56:30 zhuk Exp $
-@conflict kdebase-<3.5.10p29
+@comment $OpenBSD: PLIST-en_US,v 1.2 2013/11/27 21:42:00 kili Exp $
+@conflict kdebase-<3.5.10p30
 @conflict kdelibs->=4,<4.10.5p5
 @conflict kde4-locale-en_US-*
 @pkgpath x11/kde4/libs,-en_US
