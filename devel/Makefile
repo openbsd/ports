@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1177 2013/11/27 02:42:23 bcallah Exp $
+# $OpenBSD: Makefile,v 1.1178 2013/11/27 04:48:36 brad Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1357,6 +1357,7 @@
      SUBDIR += slib-guile
      SUBDIR += smarty
      SUBDIR += smpeg
+     SUBDIR += smpeg2
      SUBDIR += sparsehash
      SUBDIR += spe
      SUBDIR += spice-protocol
