@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.42 2013/11/04 06:24:10 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.43 2013/11/27 22:02:18 brad Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -221,6 +221,7 @@ include/dovecot/istream-chain.h
 include/dovecot/istream-concat.h
 include/dovecot/istream-crlf.h
 include/dovecot/istream-dot.h
+include/dovecot/istream-fs-file.h
 include/dovecot/istream-hash.h
 include/dovecot/istream-header-filter.h
 include/dovecot/istream-jsonstr.h
@@ -458,6 +459,7 @@ lib/dovecot/lib02_imap_acl_plugin.so
 lib/dovecot/lib02_lazy_expunge_plugin.so
 lib/dovecot/lib05_pop3_migration_plugin.so
 lib/dovecot/lib05_snarf_plugin.so
+lib/dovecot/lib10_mail_filter_plugin.so
 lib/dovecot/lib10_quota_plugin.so
 lib/dovecot/lib11_imap_quota_plugin.so
 lib/dovecot/lib11_trash_plugin.so
@@ -521,7 +523,9 @@ libexec/dovecot/deliver
 @comment @man man/man1/deliver.1
 @man man/man1/doveadm-altmove.1
 @man man/man1/doveadm-auth.1
+@man man/man1/doveadm-batch.1
 @man man/man1/doveadm-config.1
+@man man/man1/doveadm-copy.1
 @man man/man1/doveadm-deduplicate.1
 @man man/man1/doveadm-director.1
 @man man/man1/doveadm-dump.1
@@ -736,6 +740,7 @@ share/doc/dovecot/wiki/Plugins.FTS.Squat.txt
 share/doc/dovecot/wiki/Plugins.FTS.txt
 share/doc/dovecot/wiki/Plugins.Lazyexpunge.txt
 share/doc/dovecot/wiki/Plugins.Listescape.txt
+share/doc/dovecot/wiki/Plugins.MailFilter.txt
 share/doc/dovecot/wiki/Plugins.MailLog.txt
 share/doc/dovecot/wiki/Plugins.MailboxAlias.txt
 share/doc/dovecot/wiki/Plugins.Notify.txt

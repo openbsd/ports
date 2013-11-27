@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.216 2013/11/10 11:59:44 espie Exp $
+# $OpenBSD: Makefile,v 1.217 2013/11/27 22:02:18 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ COMMENT-postgresql= PostgreSQL authentication / dictionary support for Dovecot
 
 # Bump dovecot-pigeonhole every time you update to a new Dovecot version.
 V_MAJOR=	2.2
-V_DOVECOT=	2.2.7
+V_DOVECOT=	2.2.9
 
 DISTNAME=	dovecot-${V_DOVECOT}
 PKGNAME=	dovecot-${V_DOVECOT}
@@ -34,15 +34,16 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # LGPLv2.1 and MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB-server=	asn1 bz2 c com_err crypto gssapi heimbase krb5 \
-		roken sqlite3 ssl wind z ${MODLIBICONV_WANTLIB}
-WANTLIB-ldap=	asn1 com_err crypto gssapi heimbase krb5 lber \
-		ldap roken sasl2 ssl wind
+WANTLIB-server=	asn1 bz2 c com_err crypto gssapi heimbase krb5 lzma roken \
+		sqlite3 ssl wind z ${MODLIBICONV_WANTLIB}
+WANTLIB-ldap=	asn1 com_err crypto gssapi heimbase krb5 lber-2.4 ldap-2.4 \
+		roken sasl2 ssl wind
 WANTLIB-mysql=	crypto m lib/mysql/mysqlclient>=10 ssl z
-WANTLIB-postgresql= pq>=4
+WANTLIB-postgresql= asn1 com_err crypto heimbase krb5 pq>=4 roken ssl wind
 
 MODULES=	converters/libiconv
-LIB_DEPENDS+=	archivers/bzip2
+LIB_DEPENDS+=	archivers/bzip2 \
+		archivers/xz
 LIB_DEPENDS-ldap= databases/openldap
 RUN_DEPENDS-ldap= ${BASE_PKGPATH}=${V_DOVECOT}
 LIB_DEPENDS-mysql= databases/mysql
