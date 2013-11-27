@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2013/11/25 14:16:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2013/11/27 18:22:42 landry Exp $
 
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
 .if (${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "amd64")
@@ -7,6 +7,7 @@ MAKE_ENV +=	CXXNOOPT=-O0
 .endif
 
 BROKEN-hppa =	linking fails with 'cannot handle R_PARISC_PCREL17F'
+BROKEN-alpha =	enblend-enblend.o: .got subsegment exceeds 64K (size 77816)
 
 COMMENT =	blend seams in panoramic image mosaics
 
