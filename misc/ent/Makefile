@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:23:57 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/11/27 22:51:55 jca Exp $
 # Original from: John Walker http://www.fourmilab.ch/random/
 
 CATEGORIES=		misc
 COMMENT=		pseudo random number sequence test program
 
-DISTNAME=	  	ent-1.0
+DISTNAME=		ent-1.0
+REVISION=		0
 EXTRACT_SUFX=		.zip
 
 HOMEPAGE=		http://www.fourmilab.ch/random/
-MAINTAINER=		Brad Tilley <brad@16systems.com>
-MASTER_SITES=		http://16s.us/ent/
+MASTER_SITES=		http://spacehopper.org/mirrors/
 
 WRKSRC=			${WRKDIR}
 ALL_TARGET=		ent
@@ -21,7 +21,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c m
 
-USE_GROFF =		Yes
 NO_TEST=		Yes
 
 do-install:
