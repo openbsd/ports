@@ -1,0 +1,10 @@
+SMPEG is a free MPEG-1 video player library with sound support.  Video
+playback is based on the ubiquitous Berkeley MPEG player, mpeg_play v2.2.
+SMPEG support MPEG audio (MP3), based on mpg123's source, MPEG-1 video,
+and MPEG system streams.
+
+plaympeg2 is a simple video player provided to test the library.
+
+This is a work in progress. Only 16 bit colour depth is supported.  The
+player will dynamically convert to other colour depths, but playback will
+be much faster if your display is already set to 16 bit colour depth.

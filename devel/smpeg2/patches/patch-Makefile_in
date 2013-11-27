@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2013/11/27 04:46:56 brad Exp $
+--- Makefile.in.orig	Wed Oct 30 22:19:30 2013
++++ Makefile.in	Wed Oct 30 22:19:45 2013
+@@ -432,7 +432,6 @@ libsmpeg2include_HEADERS = \
+ 	smpeg.h
+ 
+ libsmpeg2_la_LDFLAGS = \
+-        -release $(LT_RELEASE)	\
+ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ 
+ EXTRA_DIST = \

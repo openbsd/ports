@@ -1,0 +1,39 @@
+$OpenBSD: patch-audio_MPEGaudio_cpp,v 1.1.1.1 2013/11/27 04:46:56 brad Exp $
+--- audio/MPEGaudio.cpp.orig	Wed Oct 30 22:24:56 2013
++++ audio/MPEGaudio.cpp	Wed Oct 30 22:28:52 2013
+@@ -68,10 +68,16 @@ MPEGaudio:: MPEGaudio(MPEGstream *stream, bool initSDL
+         if ( sdl_audio ) {
+             /* Open the audio, get actual audio hardware format and convert */
+             bool audio_active;
++#ifdef DISABLE_SDL_CONVERSIONS
+             SDL_AudioSpec actual;
+             audio_active = (SDL_OpenAudio(&wanted, &actual) == 0);
+             if ( audio_active ) {
+                 ActualSpec(&actual);
++#else
++            audio_active = (SDL_OpenAudio(&wanted, NULL) == 0);
++            if ( audio_active ) {
++                ActualSpec(&wanted);
++#endif
+                 valid_stream = true;
+             } else {
+                 SetError(SDL_GetError());
+@@ -126,6 +132,8 @@ MPEGaudio:: WantedSpec(SDL_AudioSpec *wanted)
+ void
+ MPEGaudio:: ActualSpec(const SDL_AudioSpec *actual)
+ {
++#ifdef DISABLE_SDL_CONVERSIONS
++
+     /* Splay can optimize some of the conversion */
+     if ( actual->channels == 1 && outputstereo ) {
+         forcetomonoflag = true;
+@@ -145,6 +153,9 @@ MPEGaudio:: ActualSpec(const SDL_AudioSpec *actual)
+ 	;
+ #endif
+     }
++
++#endif  /* DISABLE_SDL_CONVERSIONS */
++
+     if ( actual->format != AUDIO_S16SYS )
+     {
+         if ( (actual->format^0x1000) == AUDIO_S16SYS ) {

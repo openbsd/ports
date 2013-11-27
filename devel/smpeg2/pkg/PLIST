@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/27 04:46:56 brad Exp $
+@bin bin/plaympeg2
+bin/smpeg2-config
+include/smpeg2/
+include/smpeg2/MPEG.h
+include/smpeg2/MPEGaction.h
+include/smpeg2/MPEGaudio.h
+include/smpeg2/MPEGerror.h
+include/smpeg2/MPEGframe.h
+include/smpeg2/MPEGlist.h
+include/smpeg2/MPEGring.h
+include/smpeg2/MPEGstream.h
+include/smpeg2/MPEGsystem.h
+include/smpeg2/MPEGvideo.h
+include/smpeg2/smpeg.h
+lib/libsmpeg2.a
+lib/libsmpeg2.la
+@lib lib/libsmpeg2.so.${LIBsmpeg2_VERSION}
+@man man/man1/plaympeg2.1
+share/aclocal/
+share/aclocal/smpeg2.m4
