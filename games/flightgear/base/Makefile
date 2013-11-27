@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/11/24 22:04:08 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2013/11/27 12:51:02 sthen Exp $
 
 COMMENT =		modern, open-source flight simulator
 
@@ -14,7 +14,8 @@ MASTER_SITES =	ftp://ftp.de.flightgear.org/pub/fgfs/Source/ \
 		http://ftp.igh.cnrs.fr/pub/flightgear/ftp/Source/
 
 MODULES =	devel/cmake
-BUILD_DEPENDS =	devel/plib
+BUILD_DEPENDS =	devel/boost \
+		devel/plib
 LIB_DEPENDS =	graphics/freeglut \
 		x11/fltk \
 		graphics/simgear>=$V
