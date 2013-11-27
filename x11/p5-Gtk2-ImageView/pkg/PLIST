@@ -1,0 +1,38 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/27 09:51:00 ajacoutot Exp $
+${P5ARCH}/Gtk2/Gdk/Pixbuf/
+${P5ARCH}/Gtk2/Gdk/Pixbuf/Draw/
+${P5ARCH}/Gtk2/Gdk/Pixbuf/Draw/Cache.pod
+${P5ARCH}/Gtk2/ImageView/
+${P5ARCH}/Gtk2/ImageView.pm
+${P5ARCH}/Gtk2/ImageView.pod
+${P5ARCH}/Gtk2/ImageView/Anim.pod
+${P5ARCH}/Gtk2/ImageView/Install/
+${P5ARCH}/Gtk2/ImageView/Install/Files.pm
+${P5ARCH}/Gtk2/ImageView/Install/gtkimageviewperl-autogen.h
+${P5ARCH}/Gtk2/ImageView/Install/gtkimageviewperl.h
+${P5ARCH}/Gtk2/ImageView/Install/gtkimageviewperl.typemap
+${P5ARCH}/Gtk2/ImageView/Nav.pod
+${P5ARCH}/Gtk2/ImageView/ScrollWin.pod
+${P5ARCH}/Gtk2/ImageView/Tool/
+${P5ARCH}/Gtk2/ImageView/Tool.pod
+${P5ARCH}/Gtk2/ImageView/Tool/Dragger.pod
+${P5ARCH}/Gtk2/ImageView/Tool/Painter.pod
+${P5ARCH}/Gtk2/ImageView/Tool/Selector.pod
+${P5ARCH}/Gtk2/ImageView/Zoom.pod
+${P5ARCH}/Gtk2/ImageView/index.pod
+${P5ARCH}/auto/Gtk2/ImageView/
+${P5ARCH}/auto/Gtk2/ImageView/ImageView.bs
+${P5ARCH}/auto/Gtk2/ImageView/ImageView.so
+@man man/man3p/Gtk2::Gdk::Pixbuf::Draw::Cache.3p
+@man man/man3p/Gtk2::ImageView.3p
+@man man/man3p/Gtk2::ImageView::Anim.3p
+@man man/man3p/Gtk2::ImageView::Nav.3p
+@man man/man3p/Gtk2::ImageView::ScrollWin.3p
+@man man/man3p/Gtk2::ImageView::Tool.3p
+@man man/man3p/Gtk2::ImageView::Tool::Dragger.3p
+@man man/man3p/Gtk2::ImageView::Tool::Painter.3p
+@man man/man3p/Gtk2::ImageView::Tool::Selector.3p
+@man man/man3p/Gtk2::ImageView::Zoom.3p
+@man man/man3p/Gtk2::ImageView::index.3p
+share/examples/p5-Gtk2-ImageView/
+share/examples/p5-Gtk2-ImageView/interactive.pl
