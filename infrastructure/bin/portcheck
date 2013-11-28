@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.45 2013/11/12 11:24:21 zhuk Exp $
+# $OpenBSD: portcheck,v 1.46 2013/11/28 13:38:01 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -671,7 +671,7 @@ sub_checks() {
 				read -r pkg_arch
 				read -r wantlib
 				if [[ $pkg_arch = "*" && -n $wantlib ]]; then
-					err "non-empty WANTLIB$subpkg for" \
+					err "${portref}non-empty WANTLIB$subpkg for" \
 					    "arch-independent package"
 				fi
 				check_wantlib "$portref" "$modules" $wantlib
@@ -776,7 +776,7 @@ check_plist() {
 				icon_themes="$icon_themes /$theme/"
 			if [[ "$l" = "share/icons/$theme/index.theme" ]]; then
 				echo "$rm_cache_themes" | fgrep -q "/$theme/" ||
-					err "missing @unexec-delete rm -f" \
+					err "${portref}:missing @unexec-delete rm -f" \
 					    "%D/share/icons/$theme/icon-theme.cache"
 			fi
 			;;
@@ -818,7 +818,7 @@ check_plist() {
 			unexec_icon_themes="$unexec_icon_themes /$theme/"
 			rm_cache_themes="$rm_cache_themes /$theme/"
 			if echo "$icon_themes" | fgrep -q "/$theme/"; then
-				err "the @unexec-delete line removing" \
+				err "${portref}the @unexec-delete line removing" \
 				    "%D/share/icons/$theme/icon-theme.cache" \
 				    "does not preceed all of the icon theme" \
 				    "$theme files"
