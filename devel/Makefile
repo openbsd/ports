@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1178 2013/11/27 04:48:36 brad Exp $
+# $OpenBSD: Makefile,v 1.1179 2013/11/28 18:58:32 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -311,7 +311,6 @@
      SUBDIR += ipython
      SUBDIR += iso-codes
      SUBDIR += itcl
-     SUBDIR += ivy
      SUBDIR += jakarta-servletapi
      SUBDIR += jam
      SUBDIR += jdk
