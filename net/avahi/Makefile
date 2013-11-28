@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2013/11/03 15:55:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.99 2013/11/28 10:53:28 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -29,11 +29,12 @@ PKGNAME-ui=		avahi-ui-${V}
 REVISION-main=		12
 REVISION-gtk=		5
 REVISION-gtk3=		5
-REVISION-gui=		7
+REVISION-gui=		8
 REVISION-mono=		2
 REVISION-qt3=		3
 REVISION-qt4=		3
 REVISION-ui=		3
+REVISION-python=	0
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -142,6 +143,7 @@ LIB_DEPENDS-gui=	${MODGETTEXT_LIB_DEPENDS} \
 RUN_DEPENDS-gui=	${MODGETTEXT_RUN_DEPENDS} \
 			${MODPY_RUN_DEPENDS} \
 			${BUILD_PKGPATH},-python \
+			x11/dbus-python \
 			x11/py-gtk2 \
 			devel/py-twisted/web \
 			devel/desktop-file-utils
@@ -162,8 +164,7 @@ WANTLIB-gui += ${MODGETTEXT_WANTLIB}
 LIB_DEPENDS-python=	#empty
 RUN_DEPENDS-python=	${BUILD_PKGPATH} \
 			${MODPY_RUN_DEPENDS} \
-			lang/python/${MODPY_VERSION},-gdbm \
-			x11/dbus-python
+			lang/python/${MODPY_VERSION},-gdbm
 WANTLIB-python += 	#empty
 
 ### -ui
