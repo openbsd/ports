@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.46 2013/11/28 13:38:01 zhuk Exp $
+# $OpenBSD: portcheck,v 1.47 2013/11/28 15:48:29 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -776,7 +776,7 @@ check_plist() {
 				icon_themes="$icon_themes /$theme/"
 			if [[ "$l" = "share/icons/$theme/index.theme" ]]; then
 				echo "$rm_cache_themes" | fgrep -q "/$theme/" ||
-					err "${portref}:missing @unexec-delete rm -f" \
+					err "${portref}missing @unexec-delete rm -f" \
 					    "%D/share/icons/$theme/icon-theme.cache"
 			fi
 			;;
