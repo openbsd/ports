@@ -1,23 +1,21 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:41:25 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2013/11/28 10:54:09 kirby Exp $
 
 COMMENT=	logfile auditing tool
 
-DISTNAME=	logsentry-1.1.1
-REVISION =	4
+DISTNAME=	logcheck-1.1.1
+PKGNAME=	logsentry-1.1.1
+REVISION = 	5
 CATEGORIES=	security
 
 MAINTAINER=	Srebrenko Sehic <haver@insecure.dk>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=  	Yes
 WANTLIB=		c
 
-MASTER_SITES=	http://www.insecure.dk/distfiles/ \
-		ftp://sensimilia.eu.org/pub/software/sys/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sentrytools/}
 
 NO_TEST=	Yes
-
-WRKDIST=	${WRKDIR}/${DISTNAME:S/logsentry/logcheck/}
 
 DOC_DIR=	${PREFIX}/share/doc/logsentry
 DOC_FILES=	CREDITS INSTALL README README.how.to.interpret README.keywords
@@ -26,6 +24,11 @@ CFG_FILES=	logcheck.sh logcheck.hacking logcheck.ignore \
 		logcheck.violations logcheck.violations.ignore
 
 SUBST_VARS+=	DOC_DIR
+
+do-configure:
+	@perl -pi -e 's,logcheck,logsentry,g' ${WRKSRC}/INSTALL
+	@perl -pi -e 's,Logcheck,Logsentry,g' ${WRKSRC}/INSTALL
+	@perl -pi -e 's,/usr/local/etc,${SYSCONFDIR},g' ${WRKSRC}/INSTALL
 
 do-build:
 	${CC} ${CFLAGS} -o ${WRKSRC}/src/logtail ${WRKSRC}/src/logtail.c

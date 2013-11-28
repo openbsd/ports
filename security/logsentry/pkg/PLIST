@@ -1,14 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/05/11 03:35:03 william Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/11/28 10:54:09 kirby Exp $
 @conflict logcheck-1.1.1
 @conflict logtail-*
 @extraunexec rm -rf /var/tmp/logsentry/*
-bin/logtail
+@bin bin/logtail
 share/doc/logsentry/
 share/doc/logsentry/CREDITS
 share/doc/logsentry/INSTALL
 share/doc/logsentry/README
 share/doc/logsentry/README.how.to.interpret
 share/doc/logsentry/README.keywords
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/logsentry/
 @mode 600
 @sample ${SYSCONFDIR}/logsentry/

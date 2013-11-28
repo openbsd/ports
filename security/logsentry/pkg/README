@@ -1,0 +1,20 @@
+$OpenBSD: README,v 1.1 2013/11/28 10:54:09 kirby Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+You need to configure your crontab as indicated by
+${DOC_DIR}/INSTALL so that logsentry is run
+regularly.
+
+By default logcheck will parse the following files:
+
+/var/log/messages
+/var/log/maillog
+/var/log/authlog
+/var/log/secure
+/var/log/daemon
+/var/log/xferlog
+
+Edit ${SYSCONFDIR}/logsentry/logsentry.sh if you want to add more files.
