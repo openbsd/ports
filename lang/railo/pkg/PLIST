@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/03/07 10:18:01 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/11/28 22:41:09 sthen Exp $
 @extraunexec rm -rf %D/railo/server-config/* %D/railo/web-config/*
 @extraunexec rm -rf %D/webapps/ROOT/WEB-INF/flex
 conf/
@@ -111,11 +111,11 @@ lib/openamf-astranslator.jar
 lib/openamf.jar
 lib/postgresql.jar
 lib/railo-inst.jar
-lib/railo-sl4j.jar
 lib/railo.jar
 lib/resolver.jar
 lib/serializer.jar
 lib/slf4j-api.jar
+lib/slf4j-nop.jar
 lib/ss_css2.jar
 lib/stax-api.jar
 lib/sun-activation.jar

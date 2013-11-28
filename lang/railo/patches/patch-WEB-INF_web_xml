@@ -1,4 +1,4 @@
-$OpenBSD: patch-WEB-INF_web_xml,v 1.3 2013/03/19 22:32:28 sthen Exp $
+$OpenBSD: patch-WEB-INF_web_xml,v 1.4 2013/11/28 22:41:09 sthen Exp $
 
 - Strip anything outside of <web-app> tag so this file can be used
 directly as an include in the main tomcat web.xml <web-app> section.
@@ -14,8 +14,8 @@ a single host.
 http://jamiekrug.com/blog/index.cfm/2009/4/1/railo-jars-on-jboss-or-tomcat-tips-and-tricks
 
 
---- WEB-INF/web.xml.orig	Tue Mar 19 18:06:10 2013
-+++ WEB-INF/web.xml	Tue Mar 19 18:06:10 2013
+--- WEB-INF/web.xml.orig	Thu Nov 28 21:44:04 2013
++++ WEB-INF/web.xml	Thu Nov 28 22:31:27 2013
 @@ -1,9 +1,3 @@
 -<?xml version="1.0" encoding="ISO-8859-1"?>
 -<web-app xmlns="http://java.sun.com/xml/ns/javaee"
@@ -32,7 +32,7 @@ http://jamiekrug.com/blog/index.cfm/2009/4/1/railo-jars-on-jboss-or-tomcat-tips-
      <!-- write permissions to that folder.  leave commented for defaults.    -->
 -    <!--
      <init-param>
-       <param-name>railo-server-root</param-name>
+       <param-name>railo-server-directory</param-name>
 -      <param-value>/var/Railo/config/server/</param-value>
 +      <param-value>/var/tomcat/railo/server-config/</param-value>
        <description>Railo Server configuration directory (for Server-wide configurations, settings, and libraries)</description>
