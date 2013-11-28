@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.219 2013/11/05 17:55:43 sthen Exp $
+$OpenBSD: user.list,v 1.220 2013/11/28 16:48:09 sthen Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -235,3 +235,4 @@ id  user		group		port options
 724 _gnome-initial-setup _gnome-initial-setup	x11/gnome/initial-setup
 725 _opengroupware	_opengroupware	www/opengroupware
 726 _rrdcached		_rrdcached	net/rrdtool
+727 _sslsplit		_sslsplit	security/sslsplit
