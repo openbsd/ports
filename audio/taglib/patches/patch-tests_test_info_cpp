@@ -1,0 +1,25 @@
+$OpenBSD: patch-tests_test_info_cpp,v 1.1 2013/11/28 15:49:25 dcoppa Exp $
+
+Fix namespace collisions
+
+--- tests/test_info.cpp.orig	Tue Nov 26 11:34:06 2013
++++ tests/test_info.cpp	Tue Nov 26 11:34:29 2013
+@@ -34,14 +34,14 @@ class TestInfoTag : public CppUnit::TestFixture (publi
+   {
+     RIFF::Info::Tag tag;
+ 
+-    CPPUNIT_ASSERT_EQUAL((uint)0, tag.track());
++    CPPUNIT_ASSERT_EQUAL((TagLib::uint)0, tag.track());
+     tag.setTrack(1234);
+-    CPPUNIT_ASSERT_EQUAL((uint)1234, tag.track());
++    CPPUNIT_ASSERT_EQUAL((TagLib::uint)1234, tag.track());
+     CPPUNIT_ASSERT_EQUAL(String("1234"), tag.fieldText("IPRT"));
+ 
+-    CPPUNIT_ASSERT_EQUAL((uint)0, tag.year());
++    CPPUNIT_ASSERT_EQUAL((TagLib::uint)0, tag.year());
+     tag.setYear(1234);
+-    CPPUNIT_ASSERT_EQUAL((uint)1234, tag.year());
++    CPPUNIT_ASSERT_EQUAL((TagLib::uint)1234, tag.year());
+     CPPUNIT_ASSERT_EQUAL(String("1234"), tag.fieldText("ICRD"));
+   }
+ };

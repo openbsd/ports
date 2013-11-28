@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.31 2013/03/10 22:55:06 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2013/11/28 15:49:25 dcoppa Exp $
 
 COMMENT=	managing meta-data of audio formats
-DISTNAME=	taglib-1.8
-REVISION=	5
+DISTNAME=	taglib-1.9.1
 CATEGORIES=	audio devel
 
-MASTER_SITES=	https://github.com/downloads/taglib/taglib/
+MASTER_SITES=	http://taglib.github.io/releases/
 
-SHARED_LIBS +=	tag	10.0	# 1.8.0
+SHARED_LIBS +=	tag	11.0	# 1.9.1
 SHARED_LIBS +=	tag_c	2.1	# 0.0.0
 
-HOMEPAGE= 	http://taglib.github.com/
+HOMEPAGE= 	http://taglib.github.io/
 
 # LGPLv2.1 / MPLv1.1
 PERMIT_PACKAGE_CDROM=	Yes

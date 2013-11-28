@@ -1,0 +1,19 @@
+$OpenBSD: patch-tests_test_string_cpp,v 1.1 2013/11/28 15:49:25 dcoppa Exp $
+
+Fix namespace collisions
+
+--- tests/test_string.cpp.orig	Tue Nov 26 11:27:23 2013
++++ tests/test_string.cpp	Tue Nov 26 11:27:41 2013
+@@ -218,9 +218,9 @@ class TestString : public CppUnit::TestFixture (public
+     ByteVector lf("abc\x0axyz", 7);
+     ByteVector crlf("abc\x0d\x0axyz", 8);
+ 
+-    CPPUNIT_ASSERT_EQUAL(uint(7), String(cr).size());
+-    CPPUNIT_ASSERT_EQUAL(uint(7), String(lf).size());
+-    CPPUNIT_ASSERT_EQUAL(uint(8), String(crlf).size());
++    CPPUNIT_ASSERT_EQUAL(TagLib::uint(7), String(cr).size());
++    CPPUNIT_ASSERT_EQUAL(TagLib::uint(7), String(lf).size());
++    CPPUNIT_ASSERT_EQUAL(TagLib::uint(8), String(crlf).size());
+ 
+     CPPUNIT_ASSERT_EQUAL(L'\x0d', String(cr)[3]);
+     CPPUNIT_ASSERT_EQUAL(L'\x0a', String(lf)[3]);
