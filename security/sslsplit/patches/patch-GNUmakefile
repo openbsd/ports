@@ -1,0 +1,23 @@
+$OpenBSD: patch-GNUmakefile,v 1.1.1.1 2013/11/28 16:49:10 sthen Exp $
+
+enable HAVE_IPFW for divert-to
+
+--- GNUmakefile.orig	Tue Jul  2 15:06:16 2013
++++ GNUmakefile	Thu Nov 28 15:22:53 2013
+@@ -46,6 +46,7 @@ DEBUG_CFLAGS?=	-g
+ # Autodetect pf
+ ifneq ($(wildcard /usr/include/net/pfvar.h),)
+ FEATURES+=	-DHAVE_PF
++FEATURES+=	-DHAVE_IPFW
+ endif
+ 
+ # Autodetect ipfw
+@@ -292,7 +293,7 @@ install: $(TARGET)
+ 	test -d $(PREFIX)/share/man/man1 || \
+ 		$(MKDIR) -p $(PREFIX)/share/man/man1
+ 	$(INSTALL) -o 0 -g 0 -m 0755 $(TARGET) $(PREFIX)/bin/
+-	$(INSTALL) -o 0 -g 0 -m 0644 $(TARGET).1 $(PREFIX)/share/man/man1/
++	$(INSTALL) -o 0 -g 0 -m 0644 $(TARGET).1 $(PREFIX)/man/man1/
+ 
+ deinstall:
+ 	$(RM) -f $(PREFIX)/bin/$(TARGET) $(PREFIX)/share/man/man1/$(TARGET).1

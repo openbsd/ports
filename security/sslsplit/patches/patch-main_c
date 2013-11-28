@@ -1,0 +1,21 @@
+$OpenBSD: patch-main_c,v 1.1.1.1 2013/11/28 16:49:10 sthen Exp $
+--- main.c.orig	Thu Nov 28 15:30:57 2013
++++ main.c	Thu Nov 28 15:31:07 2013
+@@ -128,7 +128,7 @@ main_usage(void)
+ "  -s ciphers  use the given OpenSSL cipher suite spec (default: ALL:-aNULL)\n"
+ "  -e engine   specify default NAT engine to use (default: %s)\n"
+ "  -E          list available NAT engines and exit\n"
+-"  -u user     drop privileges to user (default if run as root: nobody)\n"
++"  -u user     drop privileges to user (default if run as root: _sslsplit)\n"
+ "  -j jaildir  chroot() to jaildir (default if run as root: /var/empty)\n"
+ "  -p pidfile  write pid to pidfile (default: no pid file)\n"
+ "  -l logfile  connect log: log one line summary per connection to logfile\n"
+@@ -522,7 +522,7 @@ main(int argc, char *argv[])
+ 	}
+ 	if (!opts->dropuser && !geteuid() && !getuid() &&
+ 	    !opts->contentlogdir) {
+-		opts->dropuser = strdup("nobody");
++		opts->dropuser = strdup("_sslsplit");
+ 	}
+ 	if (opts_has_ssl_spec(opts) && opts->cakey && !opts->key) {
+ 		opts->key = ssl_key_genrsa(1024);
