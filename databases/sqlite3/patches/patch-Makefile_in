@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.22 2013/03/18 10:58:16 espie Exp $
---- Makefile.in.orig	Wed Jan  9 14:51:48 2013
-+++ Makefile.in	Mon Mar 18 11:53:00 2013
-@@ -187,7 +187,7 @@ LIBOBJS1 = sqlite3.lo
+$OpenBSD: patch-Makefile_in,v 1.23 2013/11/28 15:25:51 stu Exp $
+--- Makefile.in.orig	Tue Sep  3 13:26:17 2013
++++ Makefile.in	Wed Nov 27 23:14:02 2013
+@@ -188,7 +188,7 @@ LIBOBJS1 = sqlite3.lo
  
  # Determine the real value of LIBOBJ based on the 'configure' script
  #
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile_in,v 1.22 2013/03/18 10:58:16 espie Exp $
  
  
  # All of the source code files.
-@@ -282,6 +282,8 @@ SRC = \
+@@ -283,6 +283,8 @@ SRC = \
    $(TOP)/src/walker.c \
    $(TOP)/src/where.c
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-Makefile_in,v 1.22 2013/03/18 10:58:16 espie Exp $
  # Source code for extensions
  #
  SRC += \
-@@ -476,7 +478,7 @@ EXTHDR += \
+@@ -491,7 +493,7 @@ EXTHDR += \
  # This is the default Makefile target.  The objects listed here
  # are what get build when you type just "make" with no arguments.
  #
@@ -28,7 +28,7 @@ $OpenBSD: patch-Makefile_in,v 1.22 2013/03/18 10:58:16 espie Exp $
  
  Makefile: $(TOP)/Makefile.in
  	./config.status
-@@ -488,9 +490,9 @@ libsqlite3.la:	$(LIBOBJ)
+@@ -503,9 +505,9 @@ libsqlite3.la:	$(LIBOBJ)
  	$(LTLINK) -o $@ $(LIBOBJ) $(TLIBS) \
  		${ALLOWRELEASE} -rpath "$(libdir)" -version-info "8:6:8"
  
@@ -40,7 +40,7 @@ $OpenBSD: patch-Makefile_in,v 1.22 2013/03/18 10:58:16 espie Exp $
  		-rpath "$(TCLLIBDIR)" \
  		-version-info "8:6:8" \
  		-avoid-version
-@@ -772,6 +774,9 @@ tclsqlite3$(TEXE):	tclsqlite-shell.lo libsqlite3.la
+@@ -793,6 +795,9 @@ tclsqlite3$(TEXE):	tclsqlite-shell.lo libsqlite3.la
  	$(LTLINK) -o $@ tclsqlite-shell.lo \
  		 libsqlite3.la $(LIBTCL)
  
@@ -50,7 +50,7 @@ $OpenBSD: patch-Makefile_in,v 1.22 2013/03/18 10:58:16 espie Exp $
  # Rules to build opcodes.c and opcodes.h
  #
  opcodes.c:	opcodes.h $(TOP)/mkopcodec.awk
-@@ -792,8 +797,12 @@ parse.c:	$(TOP)/src/parse.y lemon$(BEXE) $(TOP)/addopc
+@@ -813,8 +818,12 @@ parse.c:	$(TOP)/src/parse.y lemon$(BEXE) $(TOP)/addopc
  	$(NAWK) -f $(TOP)/addopcodes.awk parse.h.temp >parse.h
  
  sqlite3.h:	$(TOP)/src/sqlite.h.in $(TOP)/manifest.uuid $(TOP)/VERSION
@@ -65,16 +65,16 @@ $OpenBSD: patch-Makefile_in,v 1.22 2013/03/18 10:58:16 espie Exp $
  keywordhash.h:	$(TOP)/tool/mkkeywordhash.c
  	$(BCC) -o mkkeywordhash$(BEXE) $(OPT_FEATURE_FLAGS) $(OPTS) $(TOP)/tool/mkkeywordhash.c
  	./mkkeywordhash$(BEXE) >keywordhash.h
-@@ -875,7 +884,7 @@ TESTFIXTURE_FLAGS += -DSQLITE_SERVER=1 -DSQLITE_PRIVAT
+@@ -899,7 +908,7 @@ TESTFIXTURE_FLAGS += -DSQLITE_SERVER=1 -DSQLITE_PRIVAT
  TESTFIXTURE_FLAGS += -DBUILD_sqlite
  
  TESTFIXTURE_SRC0 = $(TESTSRC2) libsqlite3.la
 -TESTFIXTURE_SRC1 = sqlite3.c
 +TESTFIXTURE_SRC1 = sqlite3.c $(TOP)/src/pthread_stub.c
- TESTFIXTURE_SRC = $(TESTSRC) $(TOP)/src/tclsqlite.c $(TESTFIXTURE_SRC$(USE_AMALGAMATION))
+ TESTFIXTURE_SRC = $(TESTSRC) $(TOP)/src/tclsqlite.c
+ TESTFIXTURE_SRC += $(TESTFIXTURE_SRC$(USE_AMALGAMATION))
  
- testfixture$(TEXE):	$(TESTFIXTURE_SRC)
-@@ -912,18 +921,12 @@ lib_install:	libsqlite3.la
+@@ -937,18 +946,12 @@ lib_install:	libsqlite3.la
  	$(INSTALL) -d $(DESTDIR)$(libdir)
  	$(LTINSTALL) libsqlite3.la $(DESTDIR)$(libdir)
  	
@@ -96,7 +96,7 @@ $OpenBSD: patch-Makefile_in,v 1.22 2013/03/18 10:58:16 espie Exp $
  	$(INSTALL) -d $(DESTDIR)$(TCLLIBDIR)
  	$(LTINSTALL) libtclsqlite3.la $(DESTDIR)$(TCLLIBDIR)
  	rm -f $(DESTDIR)$(TCLLIBDIR)/libtclsqlite3.la $(DESTDIR)$(TCLLIBDIR)/libtclsqlite3.a
-@@ -947,6 +950,8 @@ clean:	
+@@ -975,6 +978,8 @@ clean:	
  
  distclean:	clean
  	rm -f config.log config.status libtool Makefile sqlite3.pc
