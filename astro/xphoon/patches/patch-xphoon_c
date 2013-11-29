@@ -1,3 +1,4 @@
+$OpenBSD: patch-xphoon_c,v 1.4 2013/11/29 20:48:35 naddy Exp $
 --- xphoon.c.orig	Tue Jun 13 22:50:16 2000
 +++ xphoon.c	Tue Feb 15 21:13:26 2011
 @@ -65,7 +65,7 @@ main( argc, argv )
