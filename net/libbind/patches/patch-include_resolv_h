@@ -1,0 +1,13 @@
+$OpenBSD: patch-include_resolv_h,v 1.1 2013/11/29 11:45:26 sthen Exp $
+--- include/resolv.h.orig	Fri Nov 29 11:08:39 2013
++++ include/resolv.h	Fri Nov 29 11:09:22 2013
+@@ -336,6 +336,9 @@ int		res_sendsigned __P((const u_char *, int, ns_tsig_
+ __END_DECLS
+ #endif
+ 
++#define __p_class_syms __LB__p_class_syms
++#define __p_type_syms __LB__p_type_syms
++
+ #if !defined(SHARED_LIBBIND) || defined(LIB)
+ /*
+  * If libbind is a shared object (well, DLL anyway)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/07/13 11:53:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2013/11/29 11:45:26 sthen Exp $
 
 COMMENT=	BIND stub resolver library
 
@@ -7,7 +7,7 @@ DISTNAME=	libbind-6.0
 EPOCH=		0
 REVISION=	0
 
-SHARED_LIBS +=	bind                      3.0 # 6.1
+SHARED_LIBS +=	bind                      4.0 # 6.1
 
 CATEGORIES=	net
 
