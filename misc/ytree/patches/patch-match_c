@@ -1,0 +1,21 @@
+$OpenBSD: patch-match_c,v 1.4 2013/11/29 15:56:44 naddy Exp $
+--- match.c.orig	Sun Jan  9 13:31:13 2011
++++ match.c	Thu Nov 28 13:27:59 2013
+@@ -9,7 +9,7 @@
+ 
+ #include "ytree.h"
+ 
+-#if defined( sun ) || defined( linux ) || defined( __NeXT__ ) || defined( OSF1 ) ||  defined( __OpenBSD__ ) || defined(__NetBSD__) || defined( __FreeBSD__ ) || defined( __GNU__ )
++#if defined( sun ) || defined( linux ) || defined( __NeXT__ ) || defined( OSF1 ) || defined(__NetBSD__) || defined( __FreeBSD__ ) || defined( __GNU__ )
+ #define HAS_REGEX
+ #endif
+ 
+@@ -19,7 +19,7 @@
+ #define _REGEX_RE_COMP
+ #endif
+ 
+-#if defined( hpux ) || defined ( __APPLE__ )
++#if defined( hpux ) || defined ( __APPLE__ ) || defined( __OpenBSD__ )
+ #define HAS_REGCOMP
+ #endif
+ 

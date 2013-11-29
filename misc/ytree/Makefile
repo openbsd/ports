@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:23:59 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2013/11/29 15:56:44 naddy Exp $
 
 COMMENT=	DOS-XTREE(tm) look-a-like file manager
 
 DISTNAME=	ytree-1.97
+REVISION=	0
 CATEGORIES=	misc
 
 HOMEPAGE=	http://www.han.de/~werner/ytree.html
@@ -20,7 +21,7 @@ USE_GROFF =	Yes
 NO_TEST=	Yes
 
 CFLAGS+=	-DCOLOR_SUPPORT -DREADLINE_SUPPORT
-LDFLAGS+=	-lcompat -lreadline -lcurses
+LDFLAGS+=	-lreadline -lcurses
 MAKE_FLAGS+=	CC=${CC} CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 do-install:
