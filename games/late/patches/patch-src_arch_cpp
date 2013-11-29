@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_arch_cpp,v 1.1 2013/11/29 22:34:25 naddy Exp $
+--- src/arch.cpp.orig	Sun Aug 17 14:27:48 2003
++++ src/arch.cpp	Fri Nov 29 22:47:37 2013
+@@ -85,6 +85,7 @@ void conffile(char * output)
+ 
+ string username()
+ {
+-  char temp[200];
+-  return string(cuserid(temp));
++  char *temp;
++  temp = getlogin();
++  return string(temp == NULL ? "" : temp);
+ }
