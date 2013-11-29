@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:07:40 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/11/29 13:21:09 pascal Exp $
 
 COMMENT =		kart racing game with OSS mascots
 
-V =			0.8
+V =			0.8.1
 BASENAME =		supertuxkart-${V}
 DISTNAME =		${BASENAME}-src
 PKGNAME =		${BASENAME}
@@ -16,8 +16,10 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL GLU ICE SM X11 Xext Xxf86vm c curl fribidi
-WANTLIB += m ogg openal pthread stdc++ vorbis vorbisfile
+WANTLIB += BulletCollision BulletDynamics BulletSoftBody GL GLU
+WANTLIB += ICE LinearMath SM X11 Xext Xxf86vm bz2 c curl enet
+WANTLIB += jpeg m ogg openal png pthread stdc++ vorbis vorbisfile
+WANTLIB += z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=supertuxkart/SuperTuxKart/}
 EXTRACT_SUFX =		.tar.bz2
@@ -27,24 +29,20 @@ MODULES =		devel/cmake
 RUN_DEPENDS =		devel/desktop-file-utils
 LIB_DEPENDS =		audio/openal>=0.0.8p7 \
 			audio/libvorbis \
-			devel/fribidi \
-			net/curl
+			net/curl \
+			net/enet \
+			graphics/png \
+			graphics/jpeg \
+			devel/bullet
 
-USE_GMAKE =		Yes
+CONFIGURE_ARGS +=	-DUSE_WIIUSE=OFF \
+			-DUSE_FRIBIDI=OFF \
+			-DUSE_IRR_INTERNAL_LIBS=OFF \
+			-DUSE_INTERNAL_ENET=OFF \
+			-DUSE_INTERNAL_BULLET=OFF
 
 WRKDIST =		${WRKDIR}/SuperTuxKart-${V}
 
 NO_TEST =		Yes
-
-# now needs a modified, internal version of Irrlicht.  glorious.
-pre-build:
-	cd ${WRKSRC}/lib/irrlicht/source/Irrlicht && env -i \
-		CC="${CC}" \
-		CFLAGS="${CFLAGS}" \
-		CXX="${CXX}" \
-		CXXFLAGS="${CXXFLAGS}" \
-		NDEBUG=1 \
-		CPPFLAGS="-DNO_IRR_COMPILE_WITH_JOYSTICK_EVENTS_" \
-		${MAKE_PROGRAM}
 
 .include <bsd.port.mk>

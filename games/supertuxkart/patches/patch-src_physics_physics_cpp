@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_physics_physics_cpp,v 1.1 2013/11/29 13:21:09 pascal Exp $
+--- src/physics/physics.cpp.orig	Thu Nov 28 13:50:26 2013
++++ src/physics/physics.cpp	Thu Nov 28 13:52:26 2013
+@@ -450,10 +450,10 @@ btScalar Physics::solveGroup(btCollisionObject** bodie
+         btPersistentManifold* contact_manifold =
+             m_dynamics_world->getDispatcher()->getManifoldByIndexInternal(i);
+ 
+-        btCollisionObject* objA =
+-            static_cast<btCollisionObject*>(contact_manifold->getBody0());
+-        btCollisionObject* objB =
+-            static_cast<btCollisionObject*>(contact_manifold->getBody1());
++        const btCollisionObject* objA =
++            static_cast<const btCollisionObject*>(contact_manifold->getBody0());
++        const btCollisionObject* objB =
++            static_cast<const btCollisionObject*>(contact_manifold->getBody1());
+ 
+         unsigned int num_contacts = contact_manifold->getNumContacts();
+         if(!num_contacts) continue;   // no real collision
