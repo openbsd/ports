@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2013/10/26 11:27:21 ajacoutot Exp $
-
-GOFFICE_API_VERSION=	0.10
-GOFFICE_VERSION=	0.10.8
+# $OpenBSD: Makefile,v 1.94 2013/11/29 08:51:52 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,6 +6,7 @@ COMMENT=	free cross-platform WYSIWYG word processor
 
 VERSION=	3.0.0
 DISTNAME=	abiword-${VERSION}
+REVISION=	0
 
 MAJORVER=	${VERSION:C/..$//}
 SUBST_VARS=	MAJORVER
@@ -56,7 +54,7 @@ RUN_DEPENDS=	devel/desktop-file-utils
 
 LIB_DEPENDS=	devel/fribidi \
 		converters/wv \
-		devel/goffice=${GOFFICE_VERSION} \
+		devel/goffice \
 		textproc/enchant \
 		textproc/redland
 
