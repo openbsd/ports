@@ -1,12 +1,32 @@
-$OpenBSD: patch-configure,v 1.37 2013/10/30 19:53:29 brad Exp $
---- configure.orig	Wed Oct  9 15:20:32 2013
-+++ configure	Wed Oct  9 19:35:53 2013
-@@ -3397,8 +3397,6 @@ fi
+$OpenBSD: patch-configure,v 1.38 2013/11/29 21:21:38 brad Exp $
+--- configure.orig	Tue Nov 26 12:47:18 2013
++++ configure	Wed Nov 27 00:04:27 2013
+@@ -1345,6 +1345,10 @@ EOF
+   if compile_prog "-fPIE -DPIE" "-pie"; then
+     QEMU_CFLAGS="-fPIE -DPIE $QEMU_CFLAGS"
+     LDFLAGS="-pie $LDFLAGS"
++    if test "$targetos" = OpenBSD; then
++      CC_NOPIE="-fno-pie"
++      LD_NOPIE="-nopie"
++    fi
+     pie="yes"
+     if compile_prog "" "-Wl,-z,relro -Wl,-z,now" ; then
+       LDFLAGS="-Wl,-z,relro -Wl,-z,now $LDFLAGS"
+@@ -3549,8 +3553,6 @@ fi
  if test "$gcov" = "yes" ; then
    CFLAGS="-fprofile-arcs -ftest-coverage -g $CFLAGS"
    LDFLAGS="-fprofile-arcs -ftest-coverage $LDFLAGS"
 -elif test "$debug" = "no" ; then
--  CFLAGS="-O2 -D_FORTIFY_SOURCE=2 $CFLAGS"
+-  CFLAGS="-O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 $CFLAGS"
  fi
  
  
+@@ -4312,6 +4314,8 @@ if test "$gcov" = "yes" ; then
+   echo "CONFIG_GCOV=y" >> $config_host_mak
+   echo "GCOV=$gcov_tool" >> $config_host_mak
+ fi
++echo "CC_NOPIE=$CC_NOPIE" >> $config_host_mak
++echo "LD_NOPIE=$LD_NOPIE" >> $config_host_mak
+ 
+ # use included Linux headers
+ if test "$linux" = "yes" ; then

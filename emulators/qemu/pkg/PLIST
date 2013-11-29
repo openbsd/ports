@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2013/09/08 14:15:01 brad Exp $
+@comment $OpenBSD: PLIST,v 1.28 2013/11/29 21:21:38 brad Exp $
 @conflict kqemu-*
 @conflict qemu-*
 @pkgpath emulators/kqemu
@@ -64,6 +64,7 @@ share/locale/hu/LC_MESSAGES/qemu.mo
 share/locale/it/LC_MESSAGES/qemu.mo
 share/locale/tr/LC_MESSAGES/qemu.mo
 share/qemu/
+share/qemu/QEMU,tcx.bin
 share/qemu/acpi-dsdt.aml
 share/qemu/bamboo.dtb
 share/qemu/bios.bin
@@ -77,6 +78,7 @@ share/qemu/keymaps/
 share/qemu/keymaps/ar
 share/qemu/keymaps/bepo
 share/qemu/keymaps/common
+share/qemu/keymaps/cz
 share/qemu/keymaps/da
 share/qemu/keymaps/de
 share/qemu/keymaps/de-ch
