@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_mkreleasehdr_sh,v 1.2 2013/03/14 09:00:39 dcoppa Exp $
---- src/mkreleasehdr.sh.orig	Mon Mar 11 19:51:10 2013
-+++ src/mkreleasehdr.sh	Thu Mar 14 09:31:02 2013
+$OpenBSD: patch-src_mkreleasehdr_sh,v 1.3 2013/11/29 08:32:24 dcoppa Exp $
+--- src/mkreleasehdr.sh.orig	Wed Nov 27 15:20:37 2013
++++ src/mkreleasehdr.sh	Wed Nov 27 15:21:03 2013
 @@ -1,6 +1,6 @@
  #!/bin/sh
 -GIT_SHA1=`(git show-ref --head --hash=8 2> /dev/null || echo 00000000) | head -n1`
 -GIT_DIRTY=`git diff --no-ext-diff 2> /dev/null | wc -l`
 +GIT_SHA1=00000000
 +GIT_DIRTY=0
+ BUILD_ID=`uname -n`"-"`date +%s`
  test -f release.h || touch release.h
  (cat release.h | grep SHA1 | grep $GIT_SHA1) && \
- (cat release.h | grep DIRTY | grep $GIT_DIRTY) && exit 0 # Already up-to-date

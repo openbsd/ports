@@ -1,12 +1,14 @@
 #!/bin/sh
 #
-# $OpenBSD: redis.rc,v 1.1 2011/11/29 16:07:23 dcoppa Exp $
+# $OpenBSD: redis.rc,v 1.2 2013/11/29 08:32:24 dcoppa Exp $
 
 daemon="${TRUEPREFIX}/bin/redis-server"
 daemon_flags="${SYSCONFDIR}/redis/redis.conf"
 daemon_user="_redis"
 
 . /etc/rc.d/rc.subr
+
+pexp="redis-server: ${daemon}.*"
 
 rc_reload=NO
 

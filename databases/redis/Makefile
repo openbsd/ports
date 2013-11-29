@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.57 2013/09/02 12:14:20 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.58 2013/11/29 08:32:24 dcoppa Exp $
 
 COMMENT =		persistent key-value database
-DISTNAME =		redis-2.6.16
+DISTNAME =		redis-2.8.1
 CATEGORIES =		databases
 HOMEPAGE =		http://redis.io/
 
@@ -28,9 +28,8 @@ USE_GMAKE =		Yes
 
 # Warning: running the test suite can take a long time and will
 # consume a lot of cpu cycles
-TEST_DEPENDS =       ${MODTCL_BUILD_DEPENDS}
+TEST_DEPENDS =		${MODTCL_BUILD_DEPENDS}
 TEST_FLAGS =		TCL_BIN="${MODTCL_BIN}"
-TEST_TARGET =	test
 
 DBDIR =			/var/redis
 SUBST_VARS +=		DBDIR
@@ -39,7 +38,7 @@ pre-configure:
 	cp ${WRKSRC}/deps/lua/src/strbuf.? ${WRKSRC}/src/
 	cp ${WRKSRC}/deps/lua/src/lua_*.c ${WRKSRC}/src/
 	${SUBST_CMD} ${WRKSRC}/src/Makefile \
-		${WRKSRC}/src/redis.c
+		${WRKSRC}/src/redis.h
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/src/redis-sentinel ${PREFIX}/bin/
