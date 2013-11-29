@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2013/11/26 20:27:23 bcallah Exp $
+# $OpenBSD: Makefile,v 1.28 2013/11/29 04:40:29 bcallah Exp $
 
 COMMENT =	extended client for The Mana World
 
-V =		1.3.11.10
+V =		1.3.11.24
 DISTNAME =	manaplus-${V}
 EXTRACT_SUFX =	.tar.xz
 

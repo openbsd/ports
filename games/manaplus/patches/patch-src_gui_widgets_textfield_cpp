@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_gui_widgets_textfield_cpp,v 1.1 2013/11/29 04:40:29 bcallah Exp $
+
+Fixed upstream.
+
+--- src/gui/widgets/textfield.cpp.orig	Wed Nov 27 01:37:34 2013
++++ src/gui/widgets/textfield.cpp	Wed Nov 27 01:39:04 2013
+@@ -31,6 +31,8 @@
+ #include "input/keydata.h"
+ #include "input/keyevent.h"
+ 
++#include "gui/sdlinput.h"
++
+ #include "gui/viewport.h"
+ 
+ #include "gui/popups/popupmenu.h"
