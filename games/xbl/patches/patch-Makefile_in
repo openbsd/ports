@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2011/07/08 11:42:09 jasper Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2013/11/29 17:55:18 naddy Exp $
 --- Makefile.in.orig	Sun Jan 28 19:22:32 2007
-+++ Makefile.in	Fri Jul  8 13:37:31 2011
++++ Makefile.in	Fri Nov 29 18:53:58 2013
 @@ -11,11 +11,10 @@
  
  # If xbl must NOT run with SGID bit (for protect scores files) then
@@ -47,12 +47,9 @@ $OpenBSD: patch-Makefile_in,v 1.1 2011/07/08 11:42:09 jasper Exp $
  
  ###########################################################################
  # Some values defined in imakefiles
-@@ -83,9 +78,9 @@ LINTFLAGS=-Zf1000 -Zn4096 -Zt10000
- 
- # For linking (configure script will modify this line)
+@@ -85,7 +80,7 @@ LINTFLAGS=-Zf1000 -Zn4096 -Zt10000
  # xmkmf et imake informations are take into account.
--LIBS = @LIBS@ -lm
-+LIBS = @LIBS@ -lm -lcompat
+ LIBS = @LIBS@ -lm
  
 -all:demo
 +all:bl
