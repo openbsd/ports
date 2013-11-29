@@ -1,0 +1,45 @@
+$OpenBSD: patch-ltcl_c,v 1.1.1.1 2013/11/29 18:41:52 stu Exp $
+
+Fix vars not initialized.
+
+--- ltcl.c.orig	Fri Nov 15 10:12:40 2013
++++ ltcl.c	Fri Nov 15 10:17:02 2013
+@@ -715,7 +715,8 @@ static int ltcl_eval(lua_State *L)
+ 	lTcl *interp = ltcl_checkTclInterp(L, 1);
+ 	Tcl_Interp *tcli = interp->interp;
+ 	const char *cmd;
+-	int flags, base = 2;
++	int flags = 0;
++	int base = 2;
+ 	size_t cmdlen;
+ 
+ 	/* flags are at the second position, but optional. */
+@@ -770,7 +771,8 @@ static int ltcl_call(lua_State *L)
+ 	lTcl *interp = ltcl_checkTclInterp(L, 1);
+ 	Tcl_Interp *tcli = interp->interp;
+ 	Tcl_Obj *o;
+-	int flags, base = 2;
++	int flags = 0;
++	int base = 2;
+ 	int nargs = lua_gettop(L) - 1;
+ 	lTclPtrList *args = _ltcl_ptrlistnew();
+ 	int i, res;
+@@ -836,7 +838,8 @@ static int ltcl_callt(lua_State *L)
+ {
+ 	lTcl *interp = ltcl_checkTclInterp(L, 1);
+ 	Tcl_Interp *tcli = interp->interp;
+-	int flags, base = 2;
++	int flags = 0;
++	int base = 2;
+ 	lTclPtrList *args = _ltcl_ptrlistnew();
+ 	Tcl_Obj *o;
+ 	int i, tlen, res;
+@@ -1375,7 +1378,7 @@ static char *ltcl_tracewrapper(ClientData cdata, Tcl_I
+ 	char *saveresult;
+ 	Tcl_FreeProc *saveproc;
+ 	char *traceres = NULL;
+-	const char *s;
++	const char *s = NULL;
+ 	size_t l;
+ 
+ 	if (flags & TCL_INTERP_DESTROYED)

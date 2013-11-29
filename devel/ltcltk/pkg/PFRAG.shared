@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2013/11/29 18:41:52 stu Exp $
+lib/lua/${MODLUA_VERSION}/ltcl.so

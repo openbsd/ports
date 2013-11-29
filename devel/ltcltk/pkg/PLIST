@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/29 18:41:52 stu Exp $
+%%SHARED%%
+share/doc/ltcltk/
+share/doc/ltcltk/LICENSE
+share/doc/ltcltk/README
+share/doc/ltcltk/README_ltcl
+share/doc/ltcltk/README_ltk
+share/examples/ltcltk/
+share/examples/ltcltk/ltcltest.lua
+share/examples/ltcltk/ltkaddwidget.lua
+share/examples/ltcltk/ltkcheckers.lua
+share/examples/ltcltk/ltkfuncplotter.lua
+share/examples/ltcltk/ltkhello.lua
+share/examples/ltcltk/ltkhtext.lua
+share/examples/ltcltk/ltkimage.lua
+share/examples/ltcltk/ltkoptionmenu.lua
+share/examples/ltcltk/renumbertests.lua
+share/examples/ltcltk/tkbrowse.lua
+share/examples/ltcltk/tkhello.lua
+share/examples/ltcltk/tktcolor.lua
+share/lua/${MODLUA_VERSION}/ltk.lua

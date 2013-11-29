@@ -1,0 +1,3 @@
+A binding of the Tcl interpreter to Lua. It allows for calls into Tcl,
+setting and reading variables from Tcl and registering of Lua functions
+for use from Tcl.  Also, a binding to the Tk toolit is included.
