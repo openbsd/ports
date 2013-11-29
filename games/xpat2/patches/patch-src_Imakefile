@@ -1,15 +1,15 @@
-$OpenBSD: patch-src_Imakefile,v 1.4 2010/10/23 18:24:14 naddy Exp $
+$OpenBSD: patch-src_Imakefile,v 1.5 2013/11/29 22:23:54 naddy Exp $
 --- src/Imakefile.orig	Sun Nov  5 20:05:10 2000
-+++ src/Imakefile	Sat Oct 23 20:18:07 2010
-@@ -188,7 +188,7 @@ STDOBJS		= rules.o commands.o messages.o hints.o layou
- 		  r_Calculatio.o r_Michaels.o r_Royal.o r_Canfield.o \
- 		  r_mdCanfield.o r_Bakers.o r_Oonsoo.o r_BlueMoon.o
- 
--OBJS		= $(STDOBJS) $(XOBJS) $(KIT_OBJS)
-+OBJS		= $(STDOBJS) $(XOBJS) $(KIT_OBJS) -lcompat
- 
- 
++++ src/Imakefile	Fri Nov 29 23:16:04 2013
+@@ -194,7 +194,7 @@ OBJS		= $(STDOBJS) $(XOBJS) $(KIT_OBJS)
  MYPROG		= xpat2
+ LANGUAGES	= italian german russian french de_DE fr_FR it_IT
+ DEFINES		= $(LOAD_OPTION) $(HELP_OPTION) $(KIT_OPTION) $(ROUND_OPTION) \
+-		  $(SOUND_OPTION) $(XPM_OPTION) $(GFX_OPTION) \
++		  $(SOUND_OPTION) $(XPM_OPTION) $(GFX_OPTION) -DNO_CUSERID \
+ 		  -DSCOREFILE=\"$(SCOREFILE)\" -DLIBDIR=\"$(XPATLIBDIR)\"
+ 
+ XCOMM Dependencies:
 @@ -205,23 +205,20 @@ XCOMM X-widget.c additionally requires TableauP.h
  all::		$(MYPROG)
  
