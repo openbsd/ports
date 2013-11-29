@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2013/11/25 15:05:54 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.18 2013/11/29 08:17:27 dcoppa Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -60,6 +60,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cinemassacre.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cinemassacre.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/clipfish.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/clipfish.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/clipsyndicate.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/clipsyndicate.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cnn.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cnn.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/collegehumor.py
@@ -138,6 +140,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/hypem.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/hypem.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ign.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ign.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/imdb.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/imdb.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ina.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ina.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/infoq.py
@@ -206,6 +210,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/pbs.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/pbs.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/photobucket.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/photobucket.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/podomatic.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/podomatic.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/pornhub.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/pornhub.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/pornotube.py
