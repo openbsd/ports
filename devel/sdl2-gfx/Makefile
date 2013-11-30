@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/11/07 16:27:38 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2013/11/30 03:16:04 brad Exp $
 
 V =		1.0.0
 COMMENT =	primitives drawing/other support functions for SDL2
 DISTNAME =	SDL2_gfx-${V}
 PKGNAME =	sdl2-gfx-${V}
+REVISION =	0
 CATEGORIES =	devel graphics x11
 
 SHARED_LIBS +=	SDL2_gfx		0.0 # 0.0
@@ -23,7 +24,7 @@ LIB_DEPENDS =	devel/sdl2
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 
-.if ${MACHINE_ARCH} != "i386"
+.if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "i386"
 CONFIGURE_ARGS +=	--disable-mmx
 .endif
 
