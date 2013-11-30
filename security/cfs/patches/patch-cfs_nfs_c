@@ -1,6 +1,6 @@
 --- cfs_nfs.c.orig	Mon Dec 25 07:24:31 1995
-+++ cfs_nfs.c	Sun Mar 13 16:57:45 2005
-@@ -51,7 +51,7 @@
++++ cfs_nfs.c	Sat Nov 30 21:44:13 2013
+@@ -51,7 +51,7 @@ pfh(fh)
  
  	ret[0]='\0';
  	for (i=0; i<NFS_FHSIZE; i++) {

@@ -1,6 +1,6 @@
 --- cpasswd.c.orig	Sat Dec 13 23:50:36 1997
-+++ cpasswd.c	Sun Mar 13 14:07:27 2005
-@@ -50,7 +50,8 @@
++++ cpasswd.c	Sat Nov 30 21:44:13 2013
+@@ -50,7 +50,8 @@ main(argc,argv)
  	int ciph=CFS_STD_DES;
  	int cfmt=1;
  	unsigned char ekey[128];
@@ -10,7 +10,7 @@
  	while (--argc && (**++argv == '-')) {
  		for (flg= ++*argv; *flg; ++flg)
  			switch (*flg) {
-@@ -68,13 +69,25 @@
+@@ -68,13 +69,25 @@ main(argc,argv)
  			fprintf(stderr,"Can't stat current directory\n");
  			exit(1);
  		}
@@ -43,7 +43,7 @@
  	if (chdir(lname) >= 0)
  		strcpy(dir,lname);
  	else if (chdir(dir)<0) {
-@@ -82,8 +95,12 @@
+@@ -82,8 +95,12 @@ main(argc,argv)
  		exit(1);
  	}
  
@@ -58,7 +58,7 @@
  	if ((fp=fopen(cname,"r")) == NULL) {
  		fprintf(stderr,"Can only change passphrase on new format CFS directories\n");
  		exit(1);
-@@ -113,7 +130,7 @@
+@@ -113,7 +130,7 @@ main(argc,argv)
  		exit(1);
  	}
  	if (smsize != LARGESMSIZE)
@@ -67,7 +67,7 @@
  	if (new_pwcrunch(pw,&oldkey)!=0) {
  		fprintf(stderr,"Invalid key\n");
  		exit(1);
-@@ -144,7 +161,7 @@
+@@ -144,7 +161,7 @@ main(argc,argv)
  		exit(1);
  	}
  	if (smsize != LARGESMSIZE)
@@ -76,7 +76,7 @@
  	if (new_pwcrunch(pw,&newkey)!=0) {
  		fprintf(stderr,"Invalid key\n");
  		exit(1);
-@@ -182,9 +199,12 @@
+@@ -182,9 +199,12 @@ checkkey(path,ak)
  	char fn[1024];
  	char buf[9];
  	cfskey k;

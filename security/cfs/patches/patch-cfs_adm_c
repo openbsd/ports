@@ -1,6 +1,6 @@
 --- cfs_adm.c.orig	Mon Dec 25 10:41:30 1995
-+++ cfs_adm.c	Sat Mar 12 21:31:43 2005
-@@ -49,6 +49,7 @@
++++ cfs_adm.c	Sat Nov 30 21:44:12 2013
+@@ -49,6 +49,7 @@ admproc_attach_2(ap,rp)
  	int i;
  	cfskey tk;
  	instance *ins;
@@ -8,7 +8,7 @@
  
  #ifdef DEBUG
  	printf("attach: %s %s %d\n",ap->dirname, ap->name, ap->anon);
-@@ -86,12 +87,17 @@
+@@ -86,12 +87,17 @@ admproc_attach_2(ap,rp)
  		ret=CFSERR_IFULL;
  		return &ret;
  	}
@@ -28,7 +28,7 @@
  	if ((ins->key.primask=(char*) malloc(ins->key.smsize)) == NULL) {
  		free(ins);
  		ret = CFSERR_IFULL;
-@@ -104,8 +110,6 @@
+@@ -104,8 +110,6 @@ admproc_attach_2(ap,rp)
  		return &ret;
  	}
  	ins->anon=ap->anon;
@@ -37,7 +37,7 @@
  	copykey(&ap->key,&ins->key);
  	genmasks(&ins->key);
  	ins->uid=ap->uid;
-@@ -121,6 +125,8 @@
+@@ -121,6 +125,8 @@ admproc_attach_2(ap,rp)
  	bzero((char *)ins->check,8);
  	bcopy((char *)&roottime,(char *)ins->check,sizeof(roottime));
  	cipher(&ins->key,ins->check,0);
@@ -46,7 +46,7 @@
  	ret=CFS_OK;
  	return &ret;
  }
-@@ -144,10 +150,10 @@
+@@ -144,10 +150,10 @@ genmasks(k)
  	FILE *fp;
  
  	for (i=0; i < k->smsize; i+=CFSBLOCK) {
@@ -59,7 +59,7 @@
  		bcopy(start,&k->secmask[i],CFSBLOCK);
  		mask_cipher(k,&k->secmask[i],0);
  	}
-@@ -215,10 +221,13 @@
+@@ -215,10 +221,13 @@ verify(path,k)
       cfs_admkey *k;
  {
  	FILE *fp;

@@ -1,5 +1,5 @@
 --- cmkdir.c.orig	Sun Dec 14 22:54:50 1997
-+++ cmkdir.c	Sun Mar 13 13:32:28 2005
++++ cmkdir.c	Sat Nov 30 21:44:13 2013
 @@ -18,9 +18,14 @@
  /*
   * client cfs mkdir - 1.4.0
@@ -15,7 +15,7 @@
  #include "nfsproto.h"
  #include "admproto.h"
  #include "cfs.h"
-@@ -48,8 +53,9 @@
+@@ -48,8 +53,9 @@ main(argc,argv)
  	int smsize=LARGESMSIZE;
  	unsigned char ekey[128];
  	unsigned char ek1[128];
@@ -26,7 +26,7 @@
  	
  	while (--argc && (**++argv == '-')) {
  		for (flg= ++*argv; *flg; ++flg)
-@@ -102,7 +108,7 @@
+@@ -102,7 +108,7 @@ main(argc,argv)
  			fprintf(stderr,"Can't get key\n");
  			exit(1);
  		}
@@ -35,7 +35,7 @@
  		if (strlen(pw)<16) {
  			fprintf(stderr,"Key must be at least 16 chars.\n");
  			exit(1);
-@@ -116,6 +122,7 @@
+@@ -116,6 +122,7 @@ main(argc,argv)
  			"Keys don't match; drink some coffee and try again\n");
  		     exit(1);
  		}
@@ -43,7 +43,7 @@
  	}
  	else { /* just accept key from stdio */
  		if (fgets(pword,256,stdin) == NULL) {
-@@ -129,8 +136,13 @@
+@@ -129,8 +136,13 @@ main(argc,argv)
  			pw[n-1] = '\0';
  	}
  	if (smsize != LARGESMSIZE)
@@ -58,7 +58,7 @@
  	if (cfmt==0) { 
  		if (old_pwcrunch(pw,&k)!=0) {
  			fprintf(stderr,"Invalid key\n");
-@@ -145,7 +157,13 @@
+@@ -145,7 +157,13 @@ main(argc,argv)
  		/* now we xor in some truerand bytes for good measure */
  		bcopy(&k,ekey,32);  /* assumes key material < 32 bytes */
  		for (i=0; i<32; i++) {
@@ -73,7 +73,7 @@
  		}
  		encrypt_key(&k,ekey);
  		bcopy(ekey,ek1,32);
-@@ -156,10 +174,22 @@
+@@ -156,10 +174,22 @@ main(argc,argv)
  		perror("cmkdir");
  		exit(1);
  	}
@@ -98,7 +98,7 @@
  	for (i=0; i<4; i++)
  		str[i+4]=(r<<(i*8))&0377;
  	copykey(&k,&kt);
-@@ -172,14 +202,14 @@
+@@ -172,14 +202,14 @@ main(argc,argv)
  	}
  	fwrite(str,8,1,fp);
  	fclose(fp);
@@ -115,7 +115,7 @@
  	if ((fp=fopen(path,"w")) == NULL) {
  		perror("cmkdir");
  		exit(1);
-@@ -187,7 +217,7 @@
+@@ -187,7 +217,7 @@ main(argc,argv)
  	fprintf(fp,"%d\n",smsize);
  	fclose(fp);
  	if (cfmt) {

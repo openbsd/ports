@@ -1,6 +1,6 @@
 --- cfs_fh.c.orig	Thu May  3 20:24:59 2001
-+++ cfs_fh.c	Sat Mar 12 20:21:46 2005
-@@ -177,6 +177,13 @@
++++ cfs_fh.c	Sat Nov 30 21:44:12 2013
+@@ -177,6 +177,13 @@ writeblock(blk,fd,offset,len,key,vect)
  		perror("write");
  		return -1;
  	}
@@ -14,7 +14,7 @@
  	/* iolen may contain CFSBLOCK extra chars */
  	return(dtov(iolen)-fronterr);
  }
-@@ -195,30 +202,39 @@
+@@ -195,30 +202,39 @@ encryptname(key,s)
       char *s;
  {
  	static char cryptname[NFS_MAXNAMLEN+1];
@@ -60,7 +60,7 @@
   */
  chksum(s,l)
       char *s;
-@@ -229,17 +245,47 @@
+@@ -229,17 +245,47 @@ chksum(s,l)
  	u_char bits[8];
  
  	acc=0;
@@ -111,7 +111,7 @@
  /*
   * decrypt path component
   *  leaving "." and ".."
-@@ -279,9 +325,7 @@
+@@ -279,9 +325,7 @@ decryptname(key,s)
  	if (l%CFSBLOCK)
  		return NULL;
  	dodecrypt(key,clearstring,l,10241,zerovect);
@@ -122,7 +122,7 @@
  	return clearstring;
  }
  
-@@ -359,11 +403,11 @@
+@@ -359,11 +403,11 @@ isbndry(d)
  
  
  static fh_u roothandle;
@@ -136,7 +136,7 @@
  /* something else!  Otherwise your FS and CFS can't both run... */
  /* static u_char magictest[8]={0x01,0x23,0x45,0x67,0x89,0xab,0xcd,0xef}; */
  static u_char magictest[8]="M.Blaze";
-@@ -514,10 +558,44 @@
+@@ -514,10 +558,44 @@ fhuid(f,u)
  cfsno(err)
       int err;
  {
@@ -183,7 +183,7 @@
  }
  
  
-@@ -732,12 +810,17 @@
+@@ -732,12 +810,17 @@ fhmkdirent(p,comp,h)
  {
  	char path[NFS_MAXPATHLEN+1];
  	struct stat sb;
@@ -202,7 +202,7 @@
  	if (mkdir(path,0)<0)
  		return -1;
  	if (stat(path,&sb)<0)
-@@ -766,12 +849,22 @@
+@@ -766,12 +849,22 @@ fhmkfileent(p,comp,h)
  		u_long i[2];
  	} buf;
  	char linkname[NFS_MAXPATHLEN+1];
@@ -226,7 +226,7 @@
  
  	if ((fd=open(path,O_CREAT|O_WRONLY|O_EXCL,0))<0) {
  		if (errno==EEXIST) {
-@@ -785,7 +878,6 @@
+@@ -785,7 +878,6 @@ fhmkfileent(p,comp,h)
  	if (fstat(fd,&sb)<0)
  		return -1;
  	close(fd);
@@ -234,7 +234,7 @@
  	if (!rs) {
  	   if (p->ins->highsec) {	/* create new pert file iff highsec */
  		/* note that there's a race condition here until the simlink */
-@@ -800,8 +892,8 @@
+@@ -800,8 +892,8 @@ fhmkfileent(p,comp,h)
  		/* hash. but this doesn't really matter since collisions */
  		/* are rare.  we could save all 64 bits, but the encoding */
  		/* of the link would get messy and large */
@@ -245,7 +245,7 @@
  		if (symlink(vect,linkname) != 0) {
  			strcpy(linkname,"/NOWHERE/null");
  			bcopy((char *)zerovect,(char *)vect,8);
-@@ -839,6 +931,7 @@
+@@ -839,6 +931,7 @@ fhlook(p,comp,h)
  	char linkname[NFS_MAXPATHLEN+1];
  	char vect[NFS_MAXPATHLEN+1];
  	struct stat sb;
@@ -253,7 +253,7 @@
  	
  	if (p==NULL) {
  		cfserrno=NFSERR_STALE;
-@@ -852,12 +945,20 @@
+@@ -852,12 +945,20 @@ fhlook(p,comp,h)
  	}
  	if ((p->parent==0) && (!strcmp(comp,"..")))
  		return fhrootlook(p->ins->name,h);
@@ -276,7 +276,7 @@
  	if (readlink(linkname,vect,9) != 8) {
  		bcopy((char *)zerovect,(char *)vect,8);
  		strcpy(linkname,"/NOWHERE/null");
-@@ -980,13 +1081,22 @@
+@@ -980,13 +1081,22 @@ fhdelete(f,s)
  	char path[NFS_MAXPATHLEN+1];
  	char linkname[NFS_MAXPATHLEN+1];
  	int ret;
@@ -301,7 +301,7 @@
  	/* note that we don't bother to check and see if there's a
  	   handle allocated for this - just wait for the inode to be
  	   reclaimed */
-@@ -1001,13 +1111,21 @@
+@@ -1001,13 +1111,21 @@ fhdeletedir(f,s)
       char *s;
  {
  	char path[NFS_MAXPATHLEN+1];
@@ -325,7 +325,7 @@
  }
  
  DIR *
-@@ -1055,15 +1173,24 @@
+@@ -1055,15 +1173,24 @@ fhdohardlink(f,t,n)
  	char linkname[NFS_MAXPATHLEN+1];
  	char vectval[9];
  	int ret;
@@ -352,7 +352,7 @@
  	unlink(linkname);
  	if (readlink(f->vectname,vectval,9) == 8) {
  		vectval[8]='\0';
-@@ -1079,12 +1206,17 @@
+@@ -1079,12 +1206,17 @@ fhdosymlink(f,n,t)
       char *t;
  {
  	char buf[NFS_MAXPATHLEN+1];
@@ -371,7 +371,7 @@
  	return (symlink(t,buf));
  }
  
-@@ -1100,15 +1232,32 @@
+@@ -1100,15 +1232,32 @@ fhrename(f,fn,t,tn)
  	char fblink[NFS_MAXPATHLEN+1];
  	char tblink[NFS_MAXPATHLEN+1];
  	char vectval[9];
@@ -408,7 +408,7 @@
  	if (rename(fb,tb)==0) { /* now we have to do a lookup */
  		unlink(tblink);	/* may be a quick race cndtn here */
  		if (readlink(fblink,vectval,9)==8) {
-@@ -1160,7 +1309,8 @@
+@@ -1160,7 +1309,8 @@ rootrd(cookie)
  	} else while (cookie<(NINSTANCES+2)) {
  		if (instances[cookie-2] != NULL) {
  			if (instances[cookie-2]->anon)

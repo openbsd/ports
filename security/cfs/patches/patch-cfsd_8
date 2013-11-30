@@ -1,7 +1,7 @@
-$OpenBSD: patch-cfsd_8,v 1.2 2004/06/15 18:32:22 sturm Exp $
---- cfsd.8.orig	2004-06-10 11:20:23.000000000 +0200
-+++ cfsd.8	2004-06-10 11:23:30.000000000 +0200
-@@ -13,8 +13,8 @@ The main function of \fBcfsd\fP is to ma
+$OpenBSD: patch-cfsd_8,v 1.3 2013/11/30 20:47:49 jca Exp $
+--- cfsd.8.orig	Thu Oct 26 20:17:43 1995
++++ cfsd.8	Sat Nov 30 21:44:13 2013
+@@ -13,8 +13,8 @@ The main function of \fBcfsd\fP is to manage the keys 
  attached encrypted directories, presenting them in clear form under
  the CFS mount point (typically "/crypt").
  .LP
@@ -12,7 +12,7 @@ $OpenBSD: patch-cfsd_8,v 1.2 2004/06/15 18:32:22 sturm Exp $
  \fBmountd\fP(8) daemon with least one file system exported to
  localhost; note that cfsd itself does not handle the mount protocol.
  Once a mountd is running, the mount(8) command should be invoked to
-@@ -22,11 +22,11 @@ mount the exported file system from the 
+@@ -22,11 +22,11 @@ mount the exported file system from the localhost inte
  port=3049.
  .SH EXAMPLES
  .TP

@@ -1,6 +1,6 @@
 --- cattach.c.orig	Fri Dec 19 01:32:57 1997
-+++ cattach.c	Sun Mar 13 14:05:19 2005
-@@ -100,6 +100,7 @@
++++ cattach.c	Sat Nov 30 21:44:12 2013
+@@ -100,6 +100,7 @@ main(argc,argv)
  	char *dirarg=NULL;
  	char *namearg=NULL;
  	int keycheck=1;
@@ -8,7 +8,7 @@
  
  	ap.highsec=1;
  	while (--argc) if (**++argv == '-') {
-@@ -164,17 +165,35 @@
+@@ -164,17 +165,35 @@ main(argc,argv)
  			fprintf(stderr,"Can't stat current directory\n");
  			exit(1);
  		}
@@ -49,7 +49,7 @@
  #ifdef irix
  /* or (I hope) more or less any system with the 4 parameter statfs */
      if ((statfs(".",&sfb,sizeof sfb,0)<0) || (sfb.f_blocks==0)) {
-@@ -188,7 +207,10 @@
+@@ -188,7 +207,10 @@ main(argc,argv)
  	}
  #endif
  	ap.dirname=dir;
@@ -61,7 +61,7 @@
  	*namearg='\0'; /* weak attempt to hide .instance in ps output */
  	ap.name=ins;
  	if (keycheck) {
-@@ -207,8 +229,6 @@
+@@ -207,8 +229,6 @@ main(argc,argv)
  		if ((n>0) && (pw[n-1] == '\n'))
  			pw[n-1] = '\0';
  	}
@@ -70,7 +70,7 @@
  	if ((fp=fopen(cname,"r")) == NULL) {
  		ciph=CFS_STD_DES;
  	} else {
-@@ -237,7 +257,7 @@
+@@ -237,7 +257,7 @@ main(argc,argv)
  	ap.expire = timeout;
  	ap.key.cipher=ciph;
  	if (smsize != LARGESMSIZE)
