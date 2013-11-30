@@ -1,7 +1,12 @@
-# $OpenBSD: mozilla.port.mk,v 1.63 2013/11/25 14:16:23 sthen Exp $
+# $OpenBSD: mozilla.port.mk,v 1.64 2013/11/30 12:03:44 landry Exp $
 
 SHARED_ONLY =	Yes
-ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
+ONLY_FOR_ARCHS=	amd64 arm i386 powerpc sparc64
+# gcc does ICE on alpha at some particular spots:
+# thunderbird-24.0/comm-esr24/mozilla/js/src/vm/Debugger.cpp:3246
+# firefox-24.0/mozilla-release/js/src/frontend/BytecodeEmitter.cpp:1488
+# seamonkey-2.22/comm-release/mozilla/js/src/vm/Interpreter.cpp:743
+# firefox-25.0/mozilla-release/js/src/builtin/MapObject.cpp:1119
 
 DPB_PROPERTIES =	parallel
 
