@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/11 11:23:51 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2013/11/30 15:13:06 jca Exp $
 
 COMMENT=	MIME implementation
 
 DISTNAME=	mm2.7
 PKGNAME=	metamail-2.7
-REVISION=	3
+REVISION=	4
 CATEGORIES=	mail
 
 MASTER_SITES=	http://www.guppylake.com/~nsb/metamail/
@@ -17,7 +17,7 @@ WANTLIB=	c termcap
 USE_X11 =	Yes
 
 WRKSRC=		${WRKDIST}/src
-MAKE_FLAGS=	CC="${CC}"
+MAKE_FLAGS=	CC="${CC}" CFLAGS="-DHAVE_TCGETATTR ${CFLAGS}"
 NO_TEST=	Yes
 
 post-configure:

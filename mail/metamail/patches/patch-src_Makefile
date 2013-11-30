@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile,v 1.1 2012/03/17 10:57:23 sthen Exp $
---- src/Makefile.orig	Wed Jan 26 17:32:33 1994
-+++ src/Makefile	Sat Mar 17 10:51:52 2012
+$OpenBSD: patch-src_Makefile,v 1.2 2013/11/30 15:13:06 jca Exp $
+--- src/Makefile.orig	Wed Jan 26 18:32:33 1994
++++ src/Makefile	Fri Nov 29 23:29:41 2013
 @@ -38,7 +38,7 @@ FOOBAR-sun4=-Bstatic
  
  STATICFLAG=FOOBAR${HOST_ARCH}
@@ -10,18 +10,6 @@ $OpenBSD: patch-src_Makefile,v 1.1 2012/03/17 10:57:23 sthen Exp $
  # The following is better if you want to make sure you run with SYSV defined
  # CFLAGS = -g -I.  ${$(STATICFLAG)}  -DSYSV
  # Also, for SGI Irix, compile in K&R mode
-@@ -49,9 +49,9 @@ CFLAGS = -g -I.  ${$(STATICFLAG)} 
- # LDLIBS variable.
- #
- # For Sun and BSD systems, the following should work...
--LDLIBS =
-+# LDLIBS =
- # On BSD 4.4 systems, you will need the following
--# LDLIBS = -lcompat
-+LDLIBS = -s -lcompat
- # On SGI machines, we need -lsun for getpw...(), and -lc_s saves some space.
- # LDLIBS = -lsun -lc_s
- # ISC SysVr3.2.2 has a shared C library and requires libinet.a to resolve
 @@ -72,10 +72,10 @@ CONFIGDIR = .
  #	install -s -c $(LOCALBINDIR) $$file
  #

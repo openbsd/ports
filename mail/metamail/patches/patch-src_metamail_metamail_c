@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_metamail_metamail_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
---- src/metamail/metamail.c.orig	Thu Feb 17 01:57:19 1994
-+++ src/metamail/metamail.c	Sat Mar 17 10:51:52 2012
+$OpenBSD: patch-src_metamail_metamail_c,v 1.2 2013/11/30 15:13:06 jca Exp $
+--- src/metamail/metamail.c.orig	Thu Feb 17 02:57:19 1994
++++ src/metamail/metamail.c	Sat Nov 30 14:33:18 2013
 @@ -20,6 +20,8 @@ WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.
  
   ******************************************************* */
@@ -19,7 +19,25 @@ $OpenBSD: patch-src_metamail_metamail_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
  #define WRITE_BINARY	"w"
  #else /* BORLAND */
  #ifdef MICROSOFT
-@@ -100,13 +102,6 @@ extern char **environ, *gets();
+@@ -46,12 +48,14 @@ extern char *mktemp(char *);
+ #include <signal.h>
+ 
+ #ifndef AMIGA
+-#ifdef SYSV
++#if defined(HAVE_TCGETATTR)
++#include <termios.h>
++#elif defined(SYSV)
+ #include <termio.h>
+ #include <unistd.h>
+-#else /* SYSV */
++#else
+ #include <sgtty.h>
+-#endif /* SYSV */
++#endif
+ #endif /* AMIGA */
+ #endif /* MICROSOFT */
+ #endif /* BORLAND */
+@@ -100,13 +104,6 @@ extern char **environ, *gets();
  #define CMDSIZE 1200 /* Maximum size of command to execute */
  
  #define LINE_BUF_SIZE       2000
@@ -33,7 +51,7 @@ $OpenBSD: patch-src_metamail_metamail_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
  char fileToDelete[MAX_FILE_NAME_SIZE];
  
  char *FindParam();
-@@ -302,24 +297,6 @@ char **argv;
+@@ -302,24 +299,6 @@ char **argv;
      int retcode;
  
      modpath(AUXPATH);
@@ -58,7 +76,16 @@ $OpenBSD: patch-src_metamail_metamail_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
      tmproot = getenv("METAMAIL_TMPDIR");
      if (!tmproot) tmproot="/tmp";
      mailheaders = getenv("MM_HEADERS");
-@@ -1202,9 +1179,9 @@ char *SquirrelFile;
+@@ -579,7 +558,7 @@ int nestingdepth;
+                                 int overwriteans = -1;
+                                 do {
+                                     printf("File %s exists.  Do you want to overwrite it (y/n) ?\n", Fname);
+-                                    s = gets(AnsBuf);
++                                    s = fgets(AnsBuf, sizeof(AnsBuf), stdin);
+                                     if (!s) {
+                                         overwriteans = 0;
+                                     } else {
+@@ -1202,9 +1181,9 @@ char *SquirrelFile;
      fprintf(outfp, "Content-type: %s", ContentType);
      for (j=0; j<CParamsUsed; ++j) {
          fprintf(outfp, " ; ");
@@ -70,7 +97,16 @@ $OpenBSD: patch-src_metamail_metamail_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
      }
      fprintf(outfp, "\n\n"); 
      TranslateInputToOutput(InputFP, outfp, EncodingCode, ContentType);
-@@ -2022,7 +1999,7 @@ int ShowLeadingWhitespace;
+@@ -1823,7 +1802,7 @@ char *ctype, *progname, *label;
+         } else {
+             printf("This message contains '%s'-format data.\nDo you want to view it using the '%s' command (y/n) [y] ? ", ctype, ShortCommand(progname));
+         }
+-        s = gets(AnsBuf);
++        s = fgets(AnsBuf, sizeof(AnsBuf), stdin);
+         if (!s) return(0); /* EOF */
+ 	while (s && *s && isspace((unsigned char) *s)) ++s;
+ 	if (*s == 'y' || *s == 'Y' || !*s || *s == '\n') return(1);
+@@ -2022,7 +2001,7 @@ int ShowLeadingWhitespace;
      if (lc2strcmp(charset, PrevCharset)) {
          char *s2, *charsetinuse;
  
@@ -79,7 +115,7 @@ $OpenBSD: patch-src_metamail_metamail_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
          for (s2=PrevCharset; *s2; ++s2) {
              if (isupper((unsigned char) *s2)) *s2 = tolower((unsigned char) *s2);
          }
-@@ -2032,7 +2009,7 @@ int ShowLeadingWhitespace;
+@@ -2032,7 +2011,7 @@ int ShowLeadingWhitespace;
          }
      }
      if (ecode == ENCODING_NONE) {
@@ -88,7 +124,47 @@ $OpenBSD: patch-src_metamail_metamail_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
      } else {
          /* What follows is REALLY bogus, but all my encoding stuff is pipe-oriented right now... */
          MkTmpFileName(TmpFile);
-@@ -2489,14 +2466,14 @@ char *name;
+@@ -2374,8 +2353,11 @@ char *Prefix;
+ }
+ 
+ int HasSavedTtyState=0;
++
+ #if !defined(AMIGA) && !defined(MSDOS)
+-#ifdef SYSV
++#if defined(HAVE_TCGETATTR)
++static struct termios MyTtyStateIn, MyTtyStateOut;
++#elif defined(SYSV)
+ static struct termio MyTtyStateIn, MyTtyStateOut;
+ #else
+ static struct sgttyb MyTtyStateIn, MyTtyStateOut;
+@@ -2385,7 +2367,10 @@ static struct sgttyb MyTtyStateIn, MyTtyStateOut;
+ SaveTtyState() {
+     /* Bogus -- would like a good portable way to reset the terminal state here */
+ #if !defined(AMIGA) && !defined(MSDOS)
+-#ifdef SYSV
++#if defined(HAVE_TCGETATTR)
++    tcgetattr(fileno(stdin), &MyTtyStateIn);
++    tcgetattr(fileno(stdout), &MyTtyStateOut);
++#elif defined(SYSV)
+     ioctl(fileno(stdin), TCGETA, &MyTtyStateIn);
+     ioctl(fileno(stdout), TCGETA, &MyTtyStateOut);
+ #else
+@@ -2398,8 +2383,13 @@ SaveTtyState() {
+ 
+ RestoreTtyState() {
+ #if !defined(AMIGA) && !defined(MSDOS)
+-#ifdef SYSV
++#if defined(HAVE_TCGETATTR)
+     if (HasSavedTtyState) {
++        tcsetattr(fileno(stdin), TCSANOW, &MyTtyStateIn);
++        tcsetattr(fileno(stdout), TCSANOW, &MyTtyStateOut);
++    }
++#elif defined(SYSV)
++    if (HasSavedTtyState) {
+         ioctl(fileno(stdout), TCSETA, &MyTtyStateOut);
+         ioctl(fileno(stdin), TCSETA, &MyTtyStateIn);
+     }
+@@ -2489,14 +2479,14 @@ char *name;
  {
  #ifdef AMIGA
      strcpy(name, "T:mmXXXXXX");
@@ -106,3 +182,21 @@ $OpenBSD: patch-src_metamail_metamail_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
           name[0] = 0;
       else
           if (DoDebug) printf("temp name = \"%s\"\n", name);
+@@ -2681,7 +2671,16 @@ PauseForUser() {
+ 
+ StartRawStdin() {
+ #if !defined(AMIGA) && !defined(MSDOS)
+-#ifdef SYSV
++#if defined(HAVE_TCGETATTR)
++    struct termios term;
++
++    if (tcgetattr(0, &term) == -1) /* get current (i.e. cooked) termio */
++        return -1;
++    term.c_lflag &= ~ICANON;    /* clear ICANON giving raw mode */
++    term.c_cc[VMIN] = 1;	/* set MIN char count to 1 */
++    term.c_cc[VTIME] = 0;	/* set NO time limit */
++    return tcsetattr(0, TCSADRAIN, &term);
++#elif defined(SYSV)
+     struct termio   orterm, fterm;
+     ioctl(0, TCGETA, &orterm);	/* get current (i.e. cooked) termio */
+     fterm = orterm;		/* get termio to modify */
