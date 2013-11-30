@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_network_c,v 1.8 2013/11/08 21:39:43 brad Exp $
+$OpenBSD: patch-src_network_c,v 1.9 2013/11/30 20:35:44 brad Exp $
 
 Fix SNI handling; only use key+cert from SNI specific config. CVE-2013-4508
 
 --- src/network.c.orig	Fri Aug 30 07:07:05 2013
-+++ src/network.c	Fri Nov  8 16:17:55 2013
++++ src/network.c	Fri Nov 29 20:41:46 2013
 @@ -112,20 +112,46 @@ static int network_ssl_servername_callback(SSL *ssl, i
  	config_patch_connection(srv, con, COMP_HTTP_SCHEME);
  	config_patch_connection(srv, con, COMP_HTTP_HOST);
@@ -181,7 +181,7 @@ Fix SNI handling; only use key+cert from SNI specific config. CVE-2013-4508
  		if (srv->ssl_is_init == 0) {
  			SSL_load_error_strings();
  			SSL_library_init();
-@@ -607,6 +713,29 @@ int network_init(server *srv) {
+@@ -607,12 +713,43 @@ int network_init(server *srv) {
  			}
  		}
  
@@ -211,7 +211,21 @@ Fix SNI handling; only use key+cert from SNI specific config. CVE-2013-4508
  		if (NULL == (s->ssl_ctx = SSL_CTX_new(SSLv23_server_method()))) {
  			log_error_write(srv, __FILE__, __LINE__, "ss", "SSL:",
  					ERR_error_string(ERR_get_error(), NULL));
-@@ -722,45 +851,42 @@ int network_init(server *srv) {
+ 			return -1;
+ 		}
+ 
++		/* completely useless identifier; required for client cert verification to work with sessions */
++		if (0 == SSL_CTX_set_session_id_context(s->ssl_ctx, (const unsigned char*) CONST_STR_LEN("lighttpd"))) {
++			log_error_write(srv, __FILE__, __LINE__, "ss:s", "SSL:",
++				"failed to set session context",
++				ERR_error_string(ERR_get_error(), NULL));
++			return -1;
++		}
++
+ 		if (s->ssl_empty_fragments) {
+ #ifdef SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS
+ 			ssloptions &= ~SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS;
+@@ -722,45 +859,42 @@ int network_init(server *srv) {
  #endif
  #endif
  
@@ -280,7 +294,7 @@ Fix SNI handling; only use key+cert from SNI specific config. CVE-2013-4508
  			log_error_write(srv, __FILE__, __LINE__, "ssb", "SSL:",
  					ERR_error_string(ERR_get_error(), NULL), s->ssl_pemfile);
  			return -1;
-@@ -857,7 +983,6 @@ int network_init(server *srv) {
+@@ -857,7 +991,6 @@ int network_init(server *srv) {
  	for (i = 1; i < srv->config_context->used; i++) {
  		data_config *dc = (data_config *)srv->config_context->data[i];
  		specific_config *s = srv->config_storage[i];
