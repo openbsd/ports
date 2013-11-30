@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/07/19 06:47:04 kili Exp $
+# $OpenBSD: Makefile,v 1.27 2013/11/30 20:00:23 naddy Exp $
 
 COMMENT=		interface generator for Haskell to C bindings
 
@@ -19,8 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c m pthread util
 
 BUILD_DEPENDS=		devel/hs-language-c>=0.3.1.1,<0.4.0 \
-			textproc/docbook-xsl \
-			textproc/sgmlformat
+			textproc/docbook-xsl
 
 USE_GMAKE=		Yes
 
