@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.280 2013/11/24 22:07:36 pascal Exp $
+# $OpenBSD: Makefile,v 1.281 2013/11/30 18:39:59 bcallah Exp $
 
      SUBDIR =
      SUBDIR += abuse
@@ -206,6 +206,7 @@
      SUBDIR += taxipilot
      SUBDIR += teeworlds
      SUBDIR += tetrinetx
+     SUBDIR += tong
      SUBDIR += toppler
      SUBDIR += tornado
      SUBDIR += tutris
