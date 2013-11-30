@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1248 2013/11/25 14:13:33 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1249 2013/11/30 16:06:56 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2110,6 +2110,9 @@ ${WRKDIR}/.libm-check:
 
 show-prepare-results: prepare
 	@sort -u ${_DEPBUILD_COOKIES} ${_DEPBUILDLIB_COOKIES} /dev/null
+
+show-prepare-test-results: prepare test-depends
+	@sort -u ${_DEPBUILD_COOKIES} ${_DEPBUILDLIB_COOKIES} ${_DEPTEST_COOKIES} /dev/null
 
 _internal-build-depends: ${_DEPBUILD_COOKIES}
 _internal-run-depends: ${_DEPRUN_COOKIES}
