@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.17 2013/06/15 22:58:23 brad Exp $
---- configure.ac.orig	Tue Sep  4 21:02:11 2012
-+++ configure.ac	Wed May 29 13:35:39 2013
+$OpenBSD: patch-configure_ac,v 1.18 2013/11/30 22:13:37 brad Exp $
+--- configure.ac.orig	Fri Sep 20 09:04:44 2013
++++ configure.ac	Wed Nov 20 16:57:34 2013
 @@ -811,9 +811,7 @@ AC_ARG_ENABLE([optimizations],
                [AS_HELP_STRING([--disable-optimizations], [Don't try to guess what optimization to enable])],
                [], [test x"$enable_debug" != x"no" && enable_optimizations="no"])
@@ -32,4 +32,4 @@ $OpenBSD: patch-configure_ac,v 1.17 2013/06/15 22:58:23 brad Exp $
 +x_lib_location="`ls -1 "${x_libraries:-/usr/local/lib}/libXv.$acl_cv_shlibext"*  "${x_libraries:-/usr/lib}/libXv.$acl_cv_shlibext"*  2>/dev/null | sed 1q`"
  AC_DEFINE_UNQUOTED([LIBXV_SO],  "${x_lib_location:-libXv.$acl_cv_shlibext}",  [The soname of libXv, needed for dlopen()])
  
- dnl _FILE_OFFSET_BITS   (AC_SYS_LARGEFILE; ac_cv_sys_file_offset_bits)
+ dnl Does X11 need XLockDisplay () to prevent deadlocks?
