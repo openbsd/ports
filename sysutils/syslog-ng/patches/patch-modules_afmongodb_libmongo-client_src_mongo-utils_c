@@ -1,0 +1,13 @@
+$OpenBSD: patch-modules_afmongodb_libmongo-client_src_mongo-utils_c,v 1.1 2013/11/30 10:02:12 steven Exp $
+--- modules/afmongodb/libmongo-client/src/mongo-utils.c.orig	Fri Jun 14 08:00:37 2013
++++ modules/afmongodb/libmongo-client/src/mongo-utils.c	Tue Sep 24 01:44:07 2013
+@@ -38,8 +38,7 @@ mongo_util_oid_init (gint32 mid)
+ 
+   if (mid == 0)
+     {
+-      srand (time (NULL));
+-      machine_id = rand ();
++      machine_id = arc4random();
+     }
+   else
+     machine_id = mid;

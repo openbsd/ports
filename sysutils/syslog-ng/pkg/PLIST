@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.13 2013/06/19 20:26:05 steven Exp $
+@comment $OpenBSD: PLIST,v 1.14 2013/11/30 10:02:12 steven Exp $
+@bin bin/loggen
 @bin bin/pdbtool
 bin/update-patterndb
 include/syslog-ng/
@@ -7,18 +8,20 @@ include/syslog-ng/alarms.h
 include/syslog-ng/apphook.h
 include/syslog-ng/atomic.h
 include/syslog-ng/block-ref-parser.h
-include/syslog-ng/center.h
+include/syslog-ng/cfg-args.h
 include/syslog-ng/cfg-grammar.h
+include/syslog-ng/cfg-lexer-subst.h
 include/syslog-ng/cfg-lexer.h
 include/syslog-ng/cfg-parser.h
+include/syslog-ng/cfg-tree.h
 include/syslog-ng/cfg.h
 include/syslog-ng/children.h
 include/syslog-ng/compat.h
 include/syslog-ng/control.h
 include/syslog-ng/crypto.h
-include/syslog-ng/dgroup.h
 include/syslog-ng/dnscache.h
 include/syslog-ng/driver.h
+include/syslog-ng/file-perms.h
 include/syslog-ng/filter-expr-parser.h
 include/syslog-ng/filter.h
 include/syslog-ng/gprocess.h
@@ -29,7 +32,16 @@ include/syslog-ng/logmpx.h
 include/syslog-ng/logmsg.h
 include/syslog-ng/logparser.h
 include/syslog-ng/logpipe.h
-include/syslog-ng/logprocess.h
+include/syslog-ng/logproto-buffered-server.h
+include/syslog-ng/logproto-builtins.h
+include/syslog-ng/logproto-client.h
+include/syslog-ng/logproto-dgram-server.h
+include/syslog-ng/logproto-framed-client.h
+include/syslog-ng/logproto-framed-server.h
+include/syslog-ng/logproto-record-server.h
+include/syslog-ng/logproto-server.h
+include/syslog-ng/logproto-text-client.h
+include/syslog-ng/logproto-text-server.h
 include/syslog-ng/logproto.h
 include/syslog-ng/logqueue-fifo.h
 include/syslog-ng/logqueue.h
@@ -43,6 +55,7 @@ include/syslog-ng/mainloop.h
 include/syslog-ng/memtrace.h
 include/syslog-ng/messages.h
 include/syslog-ng/misc.h
+include/syslog-ng/ml-batched-timer.h
 include/syslog-ng/msg-format.h
 include/syslog-ng/nvtable.h
 include/syslog-ng/parser-expr-parser.h
@@ -52,7 +65,6 @@ include/syslog-ng/pragma-parser.h
 include/syslog-ng/rewrite-expr-parser.h
 include/syslog-ng/scratch-buffers.h
 include/syslog-ng/serialize.h
-include/syslog-ng/sgroup.h
 include/syslog-ng/stats.h
 include/syslog-ng/str-format.h
 include/syslog-ng/syslog-names.h
@@ -64,44 +76,32 @@ include/syslog-ng/tls-support.h
 include/syslog-ng/tlscontext.h
 include/syslog-ng/tlstransport.h
 include/syslog-ng/utils.h
+include/syslog-ng/uuid.h
 include/syslog-ng/value-pairs.h
-@lib lib/libsyslog-ng-3.3.11.so.${LIBsyslog-ng-3.3.11_VERSION}
+include/syslog-ng/versioning.h
+include/syslog-ng/vptransform.h
+@lib lib/libsyslog-ng-3.4.6.so.${LIBsyslog-ng-3.4.6_VERSION}
 lib/libsyslog-ng-crypto.so
 lib/libsyslog-ng.la
 @lib lib/libsyslog-ng.so.${LIBsyslog-ng_VERSION}
 lib/pkgconfig/syslog-ng.pc
 lib/syslog-ng/
-lib/syslog-ng/libaffile.la
 lib/syslog-ng/libaffile.so
-lib/syslog-ng/libafprog.la
 lib/syslog-ng/libafprog.so
-lib/syslog-ng/libafsocket-notls.la
 lib/syslog-ng/libafsocket-notls.so
-lib/syslog-ng/libafsocket-tls.la
 lib/syslog-ng/libafsocket-tls.so
 lib/syslog-ng/libafsocket.so
-lib/syslog-ng/libafsql.la
 lib/syslog-ng/libafsql.so
-lib/syslog-ng/libafuser.la
 lib/syslog-ng/libafuser.so
-lib/syslog-ng/libbasicfuncs.la
 lib/syslog-ng/libbasicfuncs.so
-lib/syslog-ng/libconfgen.la
 lib/syslog-ng/libconfgen.so
-lib/syslog-ng/libconvertfuncs.la
-lib/syslog-ng/libconvertfuncs.so
-lib/syslog-ng/libcsvparser.la
+lib/syslog-ng/libcryptofuncs.so
 lib/syslog-ng/libcsvparser.so
-lib/syslog-ng/libdbparser.la
 lib/syslog-ng/libdbparser.so
-lib/syslog-ng/libdummy.la
-lib/syslog-ng/libdummy.so
-lib/syslog-ng/libsyslog-ng-crypto.la
+lib/syslog-ng/libjson-plugin.so
 lib/syslog-ng/libsyslog-ng-crypto.so
-lib/syslog-ng/libsyslogformat.la
 lib/syslog-ng/libsyslogformat.so
-lib/syslog-ng/libtfjson.la
-lib/syslog-ng/libtfjson.so
+lib/syslog-ng/libsystem-source.so
 @man man/man1/loggen.1
 @man man/man1/pdbtool.1
 @man man/man1/syslog-ng-ctl.1
