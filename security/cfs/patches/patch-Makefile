@@ -1,5 +1,5 @@
 --- Makefile.orig	Thu May  3 20:29:21 2001
-+++ Makefile	Sat Mar 12 20:30:36 2005
++++ Makefile	Sat Nov 30 02:22:13 2013
 @@ -74,8 +74,8 @@
  #CC=cc
  #COPT=-O -DNOT_ANSI_C -DPROTOTYPES=0
@@ -11,7 +11,7 @@
  
  #1B: paths:
  #some peple like /usr/local/sbin instead of /usr/local/etc
-@@ -199,6 +199,14 @@
+@@ -199,6 +199,14 @@ RINCLUDES=/usr/mab/rsaref/source
  #COMPAT=-lcompat
  #RPCOPTS=
   
@@ -20,13 +20,13 @@
 +#      mount -o port=3049,nfsv2,intr localhost:/null /crypt
 +CFLAGS=$(COPT) -DBSD44 -DANYPORT
 +LIBS=
-+COMPAT=-lcompat
++COMPAT=
 +RPCOPTS=
 +
  ##Use these for NetBSD i386 1.0 (John Kohl)
  ## For mounting, you need to use a command like:
  ##	mount -o -P,-c localhost:/null /crypt
-@@ -253,7 +261,7 @@
+@@ -253,7 +261,7 @@ OBJS= cfs.o nfsproto_xdr.o nfsproto_svr.o admproto_xdr
  EOBJS=dhparams.o truerand.o esm_gen.o esm.o esm_cipher.o
  COBJS=admproto_clnt.o cfs_des.o cfs_cipher.o cattach.o getpass.o cmkdir.o \
    cdetach.o ver.o cname.o ccat.o mcgsbox.o mcgsbox.o mcg.o shs.o cpasswd.o \
@@ -35,7 +35,7 @@
  OTHERS = nfsproto.h nfsproto_svr.c nfsproto_xdr.c admproto.h admproto_svr.c \
    admproto_xdr.c admproto_clnt.c ver.c
  
-@@ -277,16 +285,16 @@
+@@ -277,16 +285,16 @@ cdetach: cdetach.o admproto_clnt.o admproto_xdr.o adm.
  	   ver.o $(LIBS) -o cdetach
  
  cmkdir: getpass.o adm.o cfs_des.o cfs_cipher.o cmkdir.o ver.o mcg.o \

@@ -1,6 +1,24 @@
---- getpass.c.orig	Sun Mar 13 13:59:43 2005
-+++ getpass.c	Sun Mar 13 14:00:06 2005
-@@ -64,7 +64,7 @@
+--- getpass.c.orig	Wed Dec  3 22:51:34 1997
++++ getpass.c	Sat Nov 30 20:37:29 2013
+@@ -35,7 +35,7 @@
+ 
+ #include <stdio.h>
+ #include <signal.h>
+-#ifndef linux
++#if !defined(linux) && !defined(__OpenBSD__)
+ #include <sgtty.h>
+ #endif
+ #include <sys/types.h>
+@@ -45,7 +45,7 @@
+ #include "cfs.h"
+ #include "shs.h"
+ 
+-#if defined(irix) || defined(linux)
++#if defined(irix) || defined(linux) || defined(__OpenBSD__)
+ /* hacks to use POSIX style termios instead of old BSD style sgttyb */
+ #include <termios.h>
+ #define sgttyb termios
+@@ -64,7 +64,7 @@ char *prompt;
  	register char *p;
  	register c;
  	FILE *fi;

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2013/03/11 11:41:24 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2013/11/30 20:31:49 jca Exp $
 
 NOT_FOR_ARCHS=	${LP64_ARCHS}
 
 COMMENT=	cryptographic file system (user-space NFS server)
 
 DISTNAME=	cfs-1.4.1
-REVISION =	3
+REVISION =	4
 CATEGORIES=	security
 
 HOMEPAGE=	http://www.crypto.com/software/
@@ -20,7 +20,6 @@ MASTER_SITES=	${HOMEPAGE} \
 do-build:
 	@cd ${WRKSRC} && env CCTMP="${CC}" CFLAGS="${CFLAGS}" sh netbsd_make_with_bad_rpcgen cfs
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 # ccat and cname only work on old-style cfs < 1.3
