@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2013/11/25 17:00:47 stsp Exp $
+# $OpenBSD: Makefile,v 1.42 2013/12/01 02:58:30 brad Exp $
 
 COMMENT=	apache HTTP server
 
@@ -10,7 +10,7 @@ CATEGORIES=	www net
 
 HOMEPAGE=	http://httpd.apache.org/
 
-# Apache
+# Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 
 SHARED_ONLY=		Yes
