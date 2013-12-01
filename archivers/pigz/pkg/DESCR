@@ -1,2 +1,2 @@
-A parallel implementation of gzip for modern multi-processor, multi-core
+Parallel implementation of gzip for modern multi-processor, multi-core
 machines.
