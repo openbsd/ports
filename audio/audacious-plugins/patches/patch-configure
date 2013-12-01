@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.6 2013/10/23 19:15:15 naddy Exp $
+$OpenBSD: patch-configure,v 1.7 2013/12/01 22:37:36 brad Exp $
 
 Set AUDACIOUS_{CFLAGS,LIBS} only after the end of all plugin checks.
 This fixes some of the autoconf checks as the LIBS variable is being
 polluted very early on, breaking most of the checks using AC_CHECK_LIB.
 
---- configure.orig	Mon Sep  2 21:04:55 2013
-+++ configure	Mon Oct 21 22:20:14 2013
-@@ -8800,8 +8800,6 @@ $as_echo "yes" >&6; }
+--- configure.orig	Fri Nov  1 15:19:49 2013
++++ configure	Fri Nov 29 20:15:57 2013
+@@ -8802,8 +8802,6 @@ $as_echo "yes" >&6; }
  
  fi
  
@@ -15,7 +15,7 @@ polluted very early on, breaking most of the checks using AC_CHECK_LIB.
  
  
  INPUT_PLUGINS="tonegen metronom vtx"
-@@ -13171,6 +13169,8 @@ fi
+@@ -13319,6 +13317,8 @@ fi
  
  fi
  

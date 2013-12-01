@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/10/23 19:15:15 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/12/01 22:37:36 brad Exp $
 @pkgpath audio/audacious-plugins,-main
 lib/audacious/
 lib/audacious/Container/
@@ -54,7 +54,6 @@ lib/audacious/Input/wavpack.so
 lib/audacious/Input/xsf.so
 lib/audacious/Output/
 lib/audacious/Output/filewriter.so
-lib/audacious/Output/sdlout.so
 lib/audacious/Output/sndio.so
 lib/audacious/Transport/
 lib/audacious/Transport/gio.so
@@ -197,6 +196,7 @@ share/audacious/ui/equalizer.ui
 share/audacious/ui/mainwin.ui
 share/audacious/ui/playlist.ui
 share/locale/be/LC_MESSAGES/audacious-plugins.mo
+share/locale/bg/LC_MESSAGES/audacious-plugins.mo
 share/locale/ca/LC_MESSAGES/audacious-plugins.mo
 share/locale/cs/LC_MESSAGES/audacious-plugins.mo
 share/locale/da/LC_MESSAGES/audacious-plugins.mo
@@ -219,6 +219,7 @@ share/locale/ko/LC_MESSAGES/audacious-plugins.mo
 share/locale/ky/LC_MESSAGES/audacious-plugins.mo
 share/locale/lt/LC_MESSAGES/audacious-plugins.mo
 share/locale/lv/LC_MESSAGES/audacious-plugins.mo
+share/locale/ml_IN/LC_MESSAGES/audacious-plugins.mo
 share/locale/pl/LC_MESSAGES/audacious-plugins.mo
 share/locale/pt_BR/LC_MESSAGES/audacious-plugins.mo
 share/locale/pt_PT/LC_MESSAGES/audacious-plugins.mo
@@ -229,6 +230,7 @@ share/locale/sr_RS/
 share/locale/sr_RS/LC_MESSAGES/
 share/locale/sr_RS/LC_MESSAGES/audacious-plugins.mo
 share/locale/ta/LC_MESSAGES/audacious-plugins.mo
+share/locale/tr/LC_MESSAGES/audacious-plugins.mo
 share/locale/uk/LC_MESSAGES/audacious-plugins.mo
 share/locale/zh_CN/LC_MESSAGES/audacious-plugins.mo
 share/locale/zh_TW/LC_MESSAGES/audacious-plugins.mo

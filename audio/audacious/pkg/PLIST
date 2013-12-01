@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2013/10/23 19:15:15 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.18 2013/12/01 22:37:35 brad Exp $
 @bin bin/audacious
 @bin bin/audtool
 include/audacious/
@@ -96,6 +96,9 @@ share/locale/ko/LC_MESSAGES/audacious.mo
 share/locale/ky/LC_MESSAGES/audacious.mo
 share/locale/lt/LC_MESSAGES/audacious.mo
 share/locale/lv/LC_MESSAGES/audacious.mo
+share/locale/ml_IN/
+share/locale/ml_IN/LC_MESSAGES/
+share/locale/ml_IN/LC_MESSAGES/audacious.mo
 share/locale/ms/LC_MESSAGES/audacious.mo
 share/locale/nl/LC_MESSAGES/audacious.mo
 share/locale/pl/LC_MESSAGES/audacious.mo

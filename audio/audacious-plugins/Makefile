@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.61 2013/10/23 19:15:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.62 2013/12/01 22:37:36 brad Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		input and output plugins for Audacious
 
-V =			3.4.1
+V =			3.4.2
 
 DISTNAME =		audacious-plugins-$V
 CATEGORIES =		audio multimedia
@@ -14,7 +14,7 @@ HOMEPAGE =		http://audacious-media-player.org/
 # BSD / GPL
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += FLAC GL SDL X11 Xcomposite Xrender atk-1.0 audcore audgui
+WANTLIB += FLAC GL X11 Xcomposite Xrender atk-1.0 audcore audgui
 WANTLIB += audtag avcodec avformat avutil c cairo cairo-gobject
 WANTLIB += cddb cdio cdio_cdda cue curl dbus-1 dbus-glib-1
 WANTLIB += faad fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0
@@ -48,7 +48,6 @@ LIB_DEPENDS =		audio/faad>=2.7 \
 			audio/mpg123 \
 			audio/wavpack \
 			devel/libnotify>=0.7.2 \
-			devel/sdl \
 			graphics/ffmpeg>=20121026 \
 			multimedia/libmms \
 			net/curl \
@@ -68,6 +67,7 @@ CONFIGURE_ARGS +=	--disable-adplug \
 			--disable-lirc \
 			--disable-oss4 \
 			--disable-pulse \
+			--disable-sdlout \
 			--disable-sid
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
