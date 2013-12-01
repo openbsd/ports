@@ -1,4 +1,4 @@
-# $OpenBSD: gcc4.port.mk,v 1.10 2013/11/27 20:42:08 zhuk Exp $
+# $OpenBSD: gcc4.port.mk,v 1.11 2013/12/01 20:05:41 zhuk Exp $
 
 MODGCC4_ARCHS ?=
 MODGCC4_LANGS ?=
@@ -35,9 +35,6 @@ _MODGCC4_LINKS =
 .  if ${MODGCC4_LANGS:L:Mc}
 BUILD_DEPENDS += lang/gcc/4.6>=4.6,<4.7
 _MODGCC4_LINKS += egcc gcc egcc cc
-
-# not supported
-NO_CCACHE =	Yes
 .  endif
 
 .  if ${MODGCC4_LANGS:L:Mc++}
@@ -48,9 +45,6 @@ LIB_DEPENDS += ${MODGCC4_CPPLIBDEP}
 MODGCC4_CPPWANTLIB = estdc++>=14
 WANTLIB += ${MODGCC4_CPPWANTLIB}
 _MODGCC4_LINKS += eg++ g++ eg++ c++
-
-# not supported
-NO_CCACHE =	Yes
 .  endif
 
 .  if ${MODGCC4_LANGS:L:Mfortran}
@@ -76,8 +70,18 @@ _MODGCC4_LINKS += egccgo gccgo
 .endif
 
 .if !empty(_MODGCC4_LINKS)
-.  for _src _dest in ${_MODGCC4_LINKS}
+.  if "${USE_CCACHE:L}" == "yes" && "${NO_CCACHE:L}" != "yes"
+.    for _src _dest in ${_MODGCC4_LINKS}
+MODGCC4_post-patch +=	rm -f ${WRKDIR}/bin/${_dest};
+MODGCC4_post-patch +=	echo '\#!/bin/sh' >${WRKDIR}/bin/${_dest};
+MODGCC4_post-patch +=	echo exec ccache ${LOCALBASE}/bin/${_src} \"\$$@\"
+MODGCC4_post-patch +=	>>${WRKDIR}/bin/${_dest};
+MODGCC4_post-patch +=	chmod +x ${WRKDIR}/bin/${_dest};
+.    endfor
+.  else
+.    for _src _dest in ${_MODGCC4_LINKS}
 MODGCC4_post-patch += ln -sf ${LOCALBASE}/bin/${_src} ${WRKDIR}/bin/${_dest};
-.  endfor
+.    endfor
+.  endif
 .endif
 

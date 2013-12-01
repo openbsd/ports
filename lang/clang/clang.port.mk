@@ -1,4 +1,4 @@
-# $OpenBSD: clang.port.mk,v 1.6 2013/11/27 20:42:08 zhuk Exp $
+# $OpenBSD: clang.port.mk,v 1.7 2013/12/01 20:05:41 zhuk Exp $
 
 MODCLANG_VERSION=	3.3
 
@@ -29,21 +29,29 @@ _MODCLANG_ARCH_USES = Yes
 
 _MODCLANG_LINKS =
 .if ${_MODCLANG_ARCH_USES:L} == "yes"
-# not supported for all languages Clang supports
-NO_CCACHE =	Yes
 
 BUILD_DEPENDS += devel/llvm>=${MODCLANG_VERSION}
 _MODCLANG_LINKS = clang gcc clang cc
 
-.if ${MODCLANG_LANGS:L:Mc++}
+.  if ${MODCLANG_LANGS:L:Mc++}
 _MODCLANG_LINKS += clang++ g++ clang++ c++
-.endif
+.  endif
 .endif
 
 .if !empty(_MODCLANG_LINKS)
-.  for _src _dest in ${_MODCLANG_LINKS}
+.  if "${USE_CCACHE:L}" == "yes" && "${NO_CCACHE:L}" != "yes"
+.    for _src _dest in ${_MODCLANG_LINKS}
+MODCLANG_post-patch +=	rm -f ${WRKDIR}/bin/${_dest};
+MODCLANG_post-patch +=	echo '\#!/bin/sh' >${WRKDIR}/bin/${_dest};
+MODCLANG_post-patch +=	echo exec ccache ${LOCALBASE}/bin/${_src} \"\$$@\"
+MODCLANG_post-patch +=	>>${WRKDIR}/bin/${_dest};
+MODCLANG_post-patch +=	chmod +x ${WRKDIR}/bin/${_dest};
+.    endfor
+.  else
+.    for _src _dest in ${_MODCLANG_LINKS}
 MODCLANG_post-patch += ln -sf ${LOCALBASE}/bin/${_src} ${WRKDIR}/bin/${_dest};
-.  endfor
+.    endfor
+.  endif
 .endif
 
 SUBST_VARS+=	MODCLANG_VERSION
