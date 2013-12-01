@@ -1,0 +1,73 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/01 23:16:42 bcallah Exp $
+bin/nfoview
+lib/python${MODPY_VERSION}/site-packages/nfoview/
+lib/python${MODPY_VERSION}/site-packages/nfoview-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/nfoview/__init__.py
+lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}about.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}actions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}builder.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}deco.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}export.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}main.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}open.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}paths.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}preferences.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}schemes.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}unittest.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}view.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nfoview/${MODPY_PYCACHE}window.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nfoview/about.py
+lib/python${MODPY_VERSION}/site-packages/nfoview/actions.py
+lib/python${MODPY_VERSION}/site-packages/nfoview/builder.py
+lib/python${MODPY_VERSION}/site-packages/nfoview/config.py
+lib/python${MODPY_VERSION}/site-packages/nfoview/deco.py
+lib/python${MODPY_VERSION}/site-packages/nfoview/errors.py
+lib/python${MODPY_VERSION}/site-packages/nfoview/export.py
+lib/python${MODPY_VERSION}/site-packages/nfoview/i18n.py
+lib/python${MODPY_VERSION}/site-packages/nfoview/main.py
+lib/python${MODPY_VERSION}/site-packages/nfoview/open.py
+lib/python${MODPY_VERSION}/site-packages/nfoview/paths.py
+lib/python${MODPY_VERSION}/site-packages/nfoview/preferences.py
+lib/python${MODPY_VERSION}/site-packages/nfoview/schemes.py
+lib/python${MODPY_VERSION}/site-packages/nfoview/unittest.py
+lib/python${MODPY_VERSION}/site-packages/nfoview/util.py
+lib/python${MODPY_VERSION}/site-packages/nfoview/view.py
+lib/python${MODPY_VERSION}/site-packages/nfoview/window.py
+@man man/man1/nfoview.1
+share/appdata/
+share/appdata/nfoview.appdata.xml
+share/applications/nfoview.desktop
+share/icons/hicolor/16x16/apps/nfoview.png
+share/icons/hicolor/22x22/apps/nfoview.png
+share/icons/hicolor/24x24/apps/nfoview.png
+share/icons/hicolor/256x256/apps/nfoview.png
+share/icons/hicolor/32x32/apps/nfoview.png
+share/icons/hicolor/48x48/apps/nfoview.png
+share/locale/bg/LC_MESSAGES/nfoview.mo
+share/locale/de/LC_MESSAGES/nfoview.mo
+share/locale/de_CH/
+share/locale/de_CH/LC_MESSAGES/
+share/locale/de_CH/LC_MESSAGES/nfoview.mo
+share/locale/fi/LC_MESSAGES/nfoview.mo
+share/locale/fr/LC_MESSAGES/nfoview.mo
+share/locale/he/LC_MESSAGES/nfoview.mo
+share/locale/hu/LC_MESSAGES/nfoview.mo
+share/locale/it/LC_MESSAGES/nfoview.mo
+share/locale/pl/LC_MESSAGES/nfoview.mo
+share/locale/ru/LC_MESSAGES/nfoview.mo
+share/locale/sr/LC_MESSAGES/nfoview.mo
+share/locale/tr/LC_MESSAGES/nfoview.mo
+share/locale/zh_CN/LC_MESSAGES/nfoview.mo
+share/nfoview/
+share/nfoview/preferences-dialog.ui
+share/nfoview/ui.xml
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
