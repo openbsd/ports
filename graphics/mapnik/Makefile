@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/11/25 14:16:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2013/12/01 12:30:56 espie Exp $
 
 COMMENT =	toolkit for developing mapping applications
 
@@ -12,6 +12,7 @@ CATEGORIES =	graphics geo
 
 HOMEPAGE =	http://mapnik.org/
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
+DPB_PROPERTIES = nojunk
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
