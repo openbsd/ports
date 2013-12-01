@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2013/11/12 20:01:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2013/12/01 03:20:20 brad Exp $
 
      SUBDIR =
      SUBDIR += arc
@@ -43,6 +43,7 @@
      SUBDIR += par2cmdline
      SUBDIR += pecl-lzf
      SUBDIR += pecl-rar
+     SUBDIR += pigz
      SUBDIR += py-lzo
      SUBDIR += quazip
      SUBDIR += ripole
