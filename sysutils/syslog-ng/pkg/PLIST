@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/11/30 10:02:12 steven Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/12/01 12:09:48 steven Exp $
 @bin bin/loggen
 @bin bin/pdbtool
 bin/update-patterndb
@@ -82,6 +82,7 @@ include/syslog-ng/versioning.h
 include/syslog-ng/vptransform.h
 @lib lib/libsyslog-ng-3.4.6.so.${LIBsyslog-ng-3.4.6_VERSION}
 lib/libsyslog-ng-crypto.so
+lib/libsyslog-ng.a
 lib/libsyslog-ng.la
 @lib lib/libsyslog-ng.so.${LIBsyslog-ng_VERSION}
 lib/pkgconfig/syslog-ng.pc
@@ -111,6 +112,9 @@ lib/syslog-ng/libsystem-source.so
 @bin sbin/syslog-ng-ctl
 share/examples/syslog-ng/
 @sample ${SYSCONFDIR}/syslog-ng/
-share/examples/syslog-ng/syslog-ng.conf.sample
+share/examples/syslog-ng/patterndb.d/
+share/examples/syslog-ng/scl.conf
+share/examples/syslog-ng/syslog-ng.conf
+share/examples/syslog-ng/syslog-ng.conf.openbsd
 @sample ${SYSCONFDIR}/syslog-ng/syslog-ng.conf
 @rcscript ${RCDIR}/syslog_ng

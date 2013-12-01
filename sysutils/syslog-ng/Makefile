@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2013/11/30 10:02:12 steven Exp $
+# $OpenBSD: Makefile,v 1.40 2013/12/01 12:09:48 steven Exp $
 
 COMMENT=	syslogd replacement
 
 SHARED_ONLY =	Yes
 
 V =		3.4.6
+REVISION =	0
 DISTNAME =	syslog-ng-$V
 CATEGORIES =	sysutils
 
@@ -37,6 +38,7 @@ CONFIGURE_ARGS +=	--enable-tcp-wrapper \
 			--with-pidfile-dir=/var/run \
 			--enable-json \
 			--with-libmongo-client=no \
+			--with-librabbitmq-client=no \
 			--disable-mongodb \
 			--disable-amqp \
 			--without-libnet \
@@ -60,10 +62,11 @@ pre-install:
 	cd ${WRKSRC}/doc/man && perl -pi -e 's@/opt/syslog\\-ng/etc/syslog\\-ng/@${SYSCONFDIR:S/-/\\-/g}/@g' *.[158]
  
 post-install:
-	${INSTALL_DATA_DIR} ${EXAMPLES}
+	mv ${WRKINST}/etc/syslog-ng ${EXAMPLES}
 	${INSTALL_DATA} ${FILESDIR}/syslog-ng.conf \
-		${EXAMPLES}/syslog-ng.conf.sample
+		${EXAMPLES}/syslog-ng.conf.openbsd
 	rm -rf ${PREFIX}/share/{include,tools,xsd}
+	rm -f ${PREFIX}/lib/syslog-ng/*.{a,la}
 # XXX hack for libtool dropping -rpath
 	ln -s syslog-ng/libsyslog-ng-crypto.so ${PREFIX}/lib/libsyslog-ng-crypto.so
 
