@@ -1,0 +1,40 @@
+$OpenBSD: patch-src_blkdev_cdimage_cpp,v 1.1 2013/12/02 16:32:12 naddy Exp $
+
+Replace ftime() by gettimeofday().
+
+--- src/blkdev_cdimage.cpp.orig	Tue Jun 25 21:21:17 2013
++++ src/blkdev_cdimage.cpp	Sun Dec  1 23:41:31 2013
+@@ -13,7 +13,7 @@
+ #include "sysconfig.h"
+ #include "sysdeps.h"
+ 
+-#include <sys/timeb.h>
++#include <sys/time.h>
+ 
+ #include "options.h"
+ #include "blkdev.h"
+@@ -375,11 +375,11 @@ static void *cdda_play_func (void *v)
+ 		if (oldplay != cdu->cdda_play) {
+ 			struct cdtoc *t;
+ 			int sector, diff;
+-			struct _timeb tb1, tb2;
++			struct timeval tb1, tb2;
+ 
+ 			idleframes = 0;
+ 			foundsub = false;
+-			_ftime (&tb1);
++			gettimeofday (&tb1, NULL);
+ 			cdda_pos = cdu->cdda_start;
+ 			oldplay = cdu->cdda_play;
+ 			sector = cdu->cd_last_pos = cdda_pos;
+@@ -434,8 +434,8 @@ static void *cdda_play_func (void *v)
+ 			}
+ 			cdda_pos -= idleframes;
+ 
+-			_ftime (&tb2);
+-			diff = (tb2.time * (uae_s64)1000 + tb2.millitm) - (tb1.time * (uae_s64)1000 + tb1.millitm);
++			gettimeofday (&tb2, NULL);
++			diff = (tb2.tv_sec * (uae_s64)1000 + tb2.tv_usec / 1000) - (tb1.tv_sec * (uae_s64)1000 + tb1.tv_usec / 1000);
+ 			diff -= cdu->cdda_delay;
+ 			if (idleframes >= 0 && diff < 0 && cdu->cdda_play > 0)
+ 				Sleep (-diff);
