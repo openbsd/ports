@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/12/02 15:35:49 jsing Exp $
+# $OpenBSD: Makefile,v 1.16 2013/12/02 20:07:38 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -60,6 +60,8 @@ do-configure:
 
 do-build:
 	@cd ${WRKSRC} && \
+		CC="${CC}" \
+		CXX="${CXX}" \
 		GOROOT=${WRKDIST} \
 		GOBIN=${WRKDIST}/bin \
 		GOROOT_FINAL=${GOROOT} ./make.bash --no-banner
