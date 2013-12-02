@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1250 2013/12/02 08:23:16 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1251 2013/12/02 21:47:37 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1167,7 +1167,7 @@ _PATH_$v += $f
 _FULL_$v += ${DIST_SUBDIR}/$f $f $m $u
 _PATH_$v += ${DIST_SUBDIR}/$f
 .          endif
-_LIST_$v += $f$r
+_LIST_$v += $f
 .        endif
 .      endfor
 .    endfor
