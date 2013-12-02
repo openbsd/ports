@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/12/01 23:16:42 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2013/12/02 08:23:42 ajacoutot Exp $
 
 COMMENT =	simple viewer for NFO files
 MODPY_EGG_VERSION =	1.13.1
@@ -18,16 +18,16 @@ MASTER_SITES =	http://download.gna.org/nfoview/1.13/
 MODULES =	devel/gettext \
 		lang/python \
 		textproc/intltool
-MODPY_VERSION =	3.3
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		devel/py-gobject3,python3 \
+		devel/py-gobject3${MODPY_FLAVOR} \
 		fonts/terminus-font \
 		x11/gtk+2,-guic \
 		x11/gtk+3
 
-TEST_DEPENDS =	devel/py-test,python3 \
-		devel/py-gobject3,python3
+TEST_DEPENDS =	devel/py-test${MODPY_FLAVOR} \
+		devel/py-gobject3${MODPY_FLAVOR}
 
 post-patch:
 	perl -pi -e "s,share/man,man,g" ${WRKSRC}/setup.py
