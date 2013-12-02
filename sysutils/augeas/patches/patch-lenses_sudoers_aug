@@ -1,0 +1,15 @@
+$OpenBSD: patch-lenses_sudoers_aug,v 1.1 2013/12/02 16:08:14 jasper Exp $
+
+Recognize these valid keywords.
+
+--- lenses/sudoers.aug.orig	Mon Dec  2 14:55:53 2013
++++ lenses/sudoers.aug	Mon Dec  2 14:56:00 2013
+@@ -307,7 +307,7 @@ let parameter_flag_kw    = "always_set_home" | "authen
+                          | "tty_tickets" | "visiblepw" | "closefrom_override"
+                          | "closefrom_override" | "compress_io" | "fast_glob"
+                          | "log_input" | "log_output" | "pwfeedback"
+-                         | "umask_override" | "use_pty"
++                         | "umask_override" | "use_pty" | "insults" | "lecture"
+ 
+ let parameter_flag       = [ del_negate . negate_node?
+                                . key parameter_flag_kw ]
