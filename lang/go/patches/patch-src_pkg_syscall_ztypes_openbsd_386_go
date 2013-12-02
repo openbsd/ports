@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_pkg_syscall_ztypes_openbsd_386_go,v 1.1 2013/08/25 11:57:27 jsing Exp $
---- src/pkg/syscall/ztypes_openbsd_386.go.orig	Sun Aug 18 17:53:34 2013
-+++ src/pkg/syscall/ztypes_openbsd_386.go	Sun Aug 18 17:53:55 2013
+$OpenBSD: patch-src_pkg_syscall_ztypes_openbsd_386_go,v 1.2 2013/12/02 15:35:49 jsing Exp $
+--- src/pkg/syscall/ztypes_openbsd_386.go.orig	Fri Oct 18 16:13:11 2013
++++ src/pkg/syscall/ztypes_openbsd_386.go	Sat Nov  2 00:29:24 2013
 @@ -19,12 +19,12 @@ type (
  )
  
@@ -77,32 +77,7 @@ $OpenBSD: patch-src_pkg_syscall_ztypes_openbsd_386_go,v 1.1 2013/08/25 11:57:27 
  }
  
  type Fsid struct {
-@@ -226,6 +226,15 @@ type Inet6Pktinfo struct {
- 	Ifindex uint32
- }
- 
-+type IPv6MTUInfo struct {
-+	Addr RawSockaddrInet6
-+	Mtu  uint32
-+}
-+
-+type ICMPv6Filter struct {
-+	Filt [8]uint32
-+}
-+
- const (
- 	SizeofSockaddrInet4    = 0x10
- 	SizeofSockaddrInet6    = 0x1c
-@@ -238,6 +247,8 @@ const (
- 	SizeofMsghdr           = 0x1c
- 	SizeofCmsghdr          = 0xc
- 	SizeofInet6Pktinfo     = 0x14
-+	SizeofIPv6MTUInfo      = 0x20
-+	SizeofICMPv6Filter     = 0x20
- )
- 
- const (
-@@ -251,7 +262,7 @@ type Kevent_t struct {
+@@ -262,21 +262,21 @@ type Kevent_t struct {
  	Filter int16
  	Flags  uint16
  	Fflags uint32
@@ -111,7 +86,9 @@ $OpenBSD: patch-src_pkg_syscall_ztypes_openbsd_386_go,v 1.1 2013/08/25 11:57:27 
  	Udata  *byte
  }
  
-@@ -260,8 +271,8 @@ type FdSet struct {
+ type FdSet struct {
+-	Bits [32]int32
++	Bits [32]uint32
  }
  
  const (
@@ -121,4 +98,29 @@ $OpenBSD: patch-src_pkg_syscall_ztypes_openbsd_386_go,v 1.1 2013/08/25 11:57:27 
 +	SizeofIfData           = 0xd4
  	SizeofIfaMsghdr        = 0x18
  	SizeofIfAnnounceMsghdr = 0x1a
- 	SizeofRtMsghdr         = 0x58
+-	SizeofRtMsghdr         = 0x58
+-	SizeofRtMetrics        = 0x30
++	SizeofRtMsghdr         = 0x60
++	SizeofRtMetrics        = 0x38
+ )
+ 
+ type IfMsghdr struct {
+@@ -364,9 +364,9 @@ type RtMsghdr struct {
+ 
+ type RtMetrics struct {
+ 	Pksent   uint64
++	Expire   int64
+ 	Locks    uint32
+ 	Mtu      uint32
+-	Expire   uint32
+ 	Refcnt   uint32
+ 	Hopcount uint32
+ 	Recvpipe uint32
+@@ -374,6 +374,7 @@ type RtMetrics struct {
+ 	Ssthresh uint32
+ 	Rtt      uint32
+ 	Rttvar   uint32
++	Pad      uint32
+ }
+ 
+ type Mclpool struct {

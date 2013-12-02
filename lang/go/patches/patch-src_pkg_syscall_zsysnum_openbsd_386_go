@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_pkg_syscall_zsysnum_openbsd_386_go,v 1.1 2013/08/25 11:57:27 jsing Exp $
+$OpenBSD: patch-src_pkg_syscall_zsysnum_openbsd_386_go,v 1.2 2013/12/02 15:35:49 jsing Exp $
 --- src/pkg/syscall/zsysnum_openbsd_386.go.orig	Sun Aug 18 17:53:34 2013
 +++ src/pkg/syscall/zsysnum_openbsd_386.go	Sun Aug 18 17:53:55 2013
 @@ -10,10 +10,10 @@ const (

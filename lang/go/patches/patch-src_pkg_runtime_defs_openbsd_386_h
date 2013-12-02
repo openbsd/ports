@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_pkg_runtime_defs_openbsd_386_h,v 1.1 2013/08/25 11:57:27 jsing Exp $
---- src/pkg/runtime/defs_openbsd_386.h.orig	Sun Aug 18 14:12:09 2013
-+++ src/pkg/runtime/defs_openbsd_386.h	Sun Aug 18 14:15:02 2013
-@@ -112,7 +112,7 @@ struct Sigcontext {
+$OpenBSD: patch-src_pkg_runtime_defs_openbsd_386_h,v 1.2 2013/12/02 15:35:49 jsing Exp $
+--- src/pkg/runtime/defs_openbsd_386.h.orig	Fri Oct 18 16:13:10 2013
++++ src/pkg/runtime/defs_openbsd_386.h	Sat Nov  2 01:00:11 2013
+@@ -121,7 +121,7 @@ struct Sigcontext {
  	int32	sc_eflags;
  	int32	sc_esp;
  	int32	sc_ss;
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_pkg_runtime_defs_openbsd_386_h,v 1.1 2013/08/25 11:57:27 jsi
  	int32	sc_mask;
  	int32	sc_trapno;
  	int32	sc_err;
-@@ -134,11 +134,11 @@ struct StackT {
+@@ -143,11 +143,11 @@ struct StackT {
  };
  
  struct Timespec {
@@ -24,3 +24,12 @@ $OpenBSD: patch-src_pkg_runtime_defs_openbsd_386_h,v 1.1 2013/08/25 11:57:27 jsi
  	int32	tv_usec;
  };
  struct Itimerval {
+@@ -160,7 +160,7 @@ struct Kevent {
+ 	int16	filter;
+ 	uint16	flags;
+ 	uint32	fflags;
+-	int32	data;
++	int64	data;
+ 	byte	*udata;
+ };
+ 

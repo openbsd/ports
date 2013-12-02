@@ -1,12 +1,14 @@
-@comment $OpenBSD: PFRAG.amd64,v 1.2 2013/05/15 12:10:15 jsing Exp $
+@comment $OpenBSD: PFRAG.amd64,v 1.3 2013/12/02 15:35:49 jsing Exp $
 go/src/cmd/6l/enam.c
 go/src/pkg/runtime/zasm_openbsd_amd64.h
 go/src/pkg/runtime/zgoarch_amd64.go
 go/src/pkg/runtime/zmalloc_openbsd_amd64.c
 go/src/pkg/runtime/zmprof_openbsd_amd64.c
+go/src/pkg/runtime/znetpoll_openbsd_amd64.c
 go/src/pkg/runtime/zruntime1_openbsd_amd64.c
 go/src/pkg/runtime/zruntime_defs_openbsd_amd64.go
 go/src/pkg/runtime/zsema_openbsd_amd64.c
 go/src/pkg/runtime/zsigqueue_openbsd_amd64.c
 go/src/pkg/runtime/zstring_openbsd_amd64.c
+go/src/pkg/runtime/zsys_openbsd_amd64.s
 go/src/pkg/runtime/ztime_openbsd_amd64.c

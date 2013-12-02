@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_pkg_runtime_sys_openbsd_386_s,v 1.5 2013/08/25 11:57:27 jsing Exp $
---- src/pkg/runtime/sys_openbsd_386.s.orig	Sun Aug 18 14:12:32 2013
-+++ src/pkg/runtime/sys_openbsd_386.s	Sun Aug 18 14:38:13 2013
-@@ -44,21 +44,22 @@ TEXT runtime·write(SB),7,$-4
+$OpenBSD: patch-src_pkg_runtime_sys_openbsd_386_s,v 1.6 2013/12/02 15:35:49 jsing Exp $
+--- src/pkg/runtime/sys_openbsd_386.s.orig	Fri Oct 18 16:13:10 2013
++++ src/pkg/runtime/sys_openbsd_386.s	Sun Aug 25 07:26:46 2013
+@@ -45,21 +45,22 @@ TEXT runtime·write(SB),NOSPLIT,$-4
  	INT	$0x80
  	RET
  
--TEXT runtime·usleep(SB),7,$20
-+TEXT runtime·usleep(SB),7,$24
+-TEXT runtime·usleep(SB),NOSPLIT,$20
++TEXT runtime·usleep(SB),NOSPLIT,$24
  	MOVL	$0, DX
  	MOVL	usec+0(FP), AX
  	MOVL	$1000000, CX
@@ -28,17 +28,17 @@ $OpenBSD: patch-src_pkg_runtime_sys_openbsd_386_s,v 1.5 2013/08/25 11:57:27 jsin
  	INT	$0x80
  	RET
  
-@@ -106,43 +107,46 @@ TEXT runtime·madvise(SB),7,$-4
+@@ -107,43 +108,46 @@ TEXT runtime·madvise(SB),NOSPLIT,$-4
  	RET
  
- TEXT runtime·setitimer(SB),7,$-4
+ TEXT runtime·setitimer(SB),NOSPLIT,$-4
 -	MOVL	$83, AX
 +	MOVL	$69, AX
  	INT	$0x80
  	RET
  
  // func now() (sec int64, nsec int32)
- TEXT time·now(SB), 7, $32
+ TEXT time·now(SB), NOSPLIT, $32
 -	MOVL	$232, AX
  	LEAL	12(SP), BX
 -	MOVL	$0, 4(SP)
@@ -63,7 +63,7 @@ $OpenBSD: patch-src_pkg_runtime_sys_openbsd_386_s,v 1.5 2013/08/25 11:57:27 jsin
  
  // int64 nanotime(void) so really
  // void nanotime(int64 *nsec)
- TEXT runtime·nanotime(SB),7,$32
+ TEXT runtime·nanotime(SB),NOSPLIT,$32
 -	MOVL	$232, AX
  	LEAL	12(SP), BX
 -	MOVL	$0, 4(SP)
@@ -93,12 +93,21 @@ $OpenBSD: patch-src_pkg_runtime_sys_openbsd_386_s,v 1.5 2013/08/25 11:57:27 jsin
  
  	MOVL	ret+0(FP), DI
  	MOVL	AX, 0(DI)
-@@ -322,7 +326,7 @@ TEXT runtime·osyield(SB),7,$-4
+@@ -325,7 +329,7 @@ TEXT runtime·osyield(SB),NOSPLIT,$-4
  	RET
  
- TEXT runtime·thrsleep(SB),7,$-4
+ TEXT runtime·thrsleep(SB),NOSPLIT,$-4
 -	MOVL	$300, AX		// sys___thrsleep
 +	MOVL	$94, AX			// sys___thrsleep
  	INT	$0x80
  	RET
  
+@@ -362,7 +366,7 @@ TEXT runtime·kqueue(SB),NOSPLIT,$0
+ 
+ // int32 runtime·kevent(int kq, Kevent *changelist, int nchanges, Kevent *eventlist, int nevents, Timespec *timeout);
+ TEXT runtime·kevent(SB),NOSPLIT,$0
+-	MOVL	$270, AX
++	MOVL	$72, AX
+ 	INT	$0x80
+ 	JAE	2(PC)
+ 	NEGL	AX

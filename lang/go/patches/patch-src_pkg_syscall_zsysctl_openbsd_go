@@ -1,7 +1,17 @@
-$OpenBSD: patch-src_pkg_syscall_zsysctl_openbsd_go,v 1.1 2013/08/25 11:57:27 jsing Exp $
---- src/pkg/syscall/zsysctl_openbsd.go.orig	Sun Aug 18 17:53:34 2013
-+++ src/pkg/syscall/zsysctl_openbsd.go	Sun Aug 18 17:53:55 2013
-@@ -87,7 +87,6 @@ var sysctlMib = []mibentry{
+$OpenBSD: patch-src_pkg_syscall_zsysctl_openbsd_go,v 1.2 2013/12/02 15:35:49 jsing Exp $
+--- src/pkg/syscall/zsysctl_openbsd.go.orig	Fri Oct 18 16:13:11 2013
++++ src/pkg/syscall/zsysctl_openbsd.go	Sat Nov  2 00:29:24 2013
+@@ -48,8 +48,7 @@ var sysctlMib = []mibentry{
+ 	{"kern.cp_time2", []_C_int{1, 71}},
+ 	{"kern.cryptodevallowsoft", []_C_int{1, 53}},
+ 	{"kern.domainname", []_C_int{1, 22}},
+-	{"kern.file", []_C_int{1, 15}},
+-	{"kern.file2", []_C_int{1, 73}},
++	{"kern.file", []_C_int{1, 73}},
+ 	{"kern.forkstat", []_C_int{1, 42}},
+ 	{"kern.fscale", []_C_int{1, 46}},
+ 	{"kern.fsync", []_C_int{1, 33}},
+@@ -87,7 +86,6 @@ var sysctlMib = []mibentry{
  	{"kern.proc", []_C_int{1, 66}},
  	{"kern.random", []_C_int{1, 31}},
  	{"kern.rawpartition", []_C_int{1, 24}},
@@ -9,15 +19,25 @@ $OpenBSD: patch-src_pkg_syscall_zsysctl_openbsd_go,v 1.1 2013/08/25 11:57:27 jsi
  	{"kern.saved_ids", []_C_int{1, 20}},
  	{"kern.securelevel", []_C_int{1, 9}},
  	{"kern.seminfo", []_C_int{1, 61}},
-@@ -227,7 +226,6 @@ var sysctlMib = []mibentry{
+@@ -226,8 +224,6 @@ var sysctlMib = []mibentry{
+ 	{"net.inet6.ip6.forwsrcrt", []_C_int{4, 24, 17, 5}},
  	{"net.inet6.ip6.hdrnestlimit", []_C_int{4, 24, 17, 15}},
  	{"net.inet6.ip6.hlim", []_C_int{4, 24, 17, 3}},
- 	{"net.inet6.ip6.kame_version", []_C_int{4, 24, 17, 20}},
+-	{"net.inet6.ip6.kame_version", []_C_int{4, 24, 17, 20}},
 -	{"net.inet6.ip6.keepfaith", []_C_int{4, 24, 17, 13}},
  	{"net.inet6.ip6.log_interval", []_C_int{4, 24, 17, 14}},
  	{"net.inet6.ip6.maxdynroutes", []_C_int{4, 24, 17, 48}},
  	{"net.inet6.ip6.maxfragpackets", []_C_int{4, 24, 17, 9}},
-@@ -258,26 +256,6 @@ var sysctlMib = []mibentry{
+@@ -236,7 +232,7 @@ var sysctlMib = []mibentry{
+ 	{"net.inet6.ip6.maxifprefixes", []_C_int{4, 24, 17, 46}},
+ 	{"net.inet6.ip6.mforwarding", []_C_int{4, 24, 17, 42}},
+ 	{"net.inet6.ip6.mrtproto", []_C_int{4, 24, 17, 8}},
+-	{"net.inet6.ip6.mtu", []_C_int{4, 24, 17, 4}},
++	{"net.inet6.ip6.mtudisctimeout", []_C_int{4, 24, 17, 50}},
+ 	{"net.inet6.ip6.multicast_mtudisc", []_C_int{4, 24, 17, 44}},
+ 	{"net.inet6.ip6.multipath", []_C_int{4, 24, 17, 43}},
+ 	{"net.inet6.ip6.neighborgcthresh", []_C_int{4, 24, 17, 45}},
+@@ -258,26 +254,6 @@ var sysctlMib = []mibentry{
  	{"net.mpls.ttl", []_C_int{4, 33, 2}},
  	{"net.pflow.stats", []_C_int{4, 34, 1}},
  	{"net.pipex.enable", []_C_int{4, 35, 1}},
