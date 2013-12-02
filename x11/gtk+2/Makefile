@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.178 2013/10/11 15:07:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.179 2013/12/02 09:25:26 ajacoutot Exp $
 
 # XXX remove '@exec ... gtk-2.0/gtk.immodules' after OPENBSD_5_5 is branched
 
@@ -10,6 +10,8 @@ GNOME_PROJECT=		gtk+
 
 PKGNAME-main=		gtk+2-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
+
+REVISION-main=		0
 
 CATEGORIES=		x11 devel
 
