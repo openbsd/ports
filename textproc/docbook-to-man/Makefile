@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:42:41 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2013/12/02 18:19:59 zhuk Exp $
 
 COMMENT=	convert docbook to man
 CATEGORIES=	textproc converters
@@ -9,7 +9,7 @@ MASTER_SITES= 	http://www.oasis-open.org/docbook/tools/dtm/
 DIST_SUBDIR=	${DISTNAME}-${VERSION}
 DISTNAME=	docbook-to-man
 PKGNAME=	docbook-to-man-${VERSION}
-REVISION =	1
+REVISION =	2
 WANTLIB=	c
 
 # basic in debian
