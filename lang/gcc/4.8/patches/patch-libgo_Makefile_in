@@ -1,7 +1,7 @@
-$OpenBSD: patch-libgo_Makefile_in,v 1.1.1.1 2013/04/08 08:20:26 pascal Exp $
---- libgo/Makefile.in.orig	Wed Feb 20 21:04:36 2013
-+++ libgo/Makefile.in	Tue Mar  5 19:45:42 2013
-@@ -2090,13 +2090,14 @@ libgo_la_LIBADD = \
+$OpenBSD: patch-libgo_Makefile_in,v 1.2 2013/12/02 22:34:55 pascal Exp $
+--- libgo/Makefile.in.orig	Fri Sep 27 23:34:43 2013
++++ libgo/Makefile.in	Wed Oct 16 18:56:50 2013
+@@ -1997,13 +1997,14 @@ libgo_la_LIBADD = \
  libgobegin_a_SOURCES = \
  	runtime/go-main.c
  

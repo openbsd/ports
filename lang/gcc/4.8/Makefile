@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.22 2013/11/25 14:16:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2013/12/02 22:34:55 pascal Exp $
 
 ONLY_FOR_ARCHS = alpha amd64 i386 powerpc sparc64
 
-V = 4.8.1
+V = 4.8.2
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 
-ADASTRAP_LIBC-i386 = 70.0
+ADASTRAP_LIBC-i386 = 71.0
 ADASTRAP_LIBM-i386 = 9.0
-ADASTRAP-i386 = adastrap-i386-$V-3.tar.xz
-ADASTRAP_LIBC-amd64 = 70.0
+ADASTRAP-i386 = adastrap-i386-$V-0.tar.xz
+ADASTRAP_LIBC-amd64 = 71.0
 ADASTRAP_LIBM-amd64 = 9.0
-ADASTRAP-amd64 = adastrap-amd64-$V-3.tar.xz
-ADASTRAP_LIBC-sparc64 = 70.0
+ADASTRAP-amd64 = adastrap-amd64-$V-0.tar.xz
+ADASTRAP_LIBC-sparc64 = 71.0
 ADASTRAP_LIBM-sparc64 = 9.0
-ADASTRAP-sparc64 = adastrap-sparc64-$V-3.tar.xz
+ADASTRAP-sparc64 = adastrap-sparc64-$V-0.tar.xz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}
 PKGNAME-c++ =   g++-${FULL_PKGVERSION}
@@ -26,15 +26,6 @@ PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 # needs [gs]etcontext
 #PKGNAME-go =	gccgo-${FULL_PKGVERSION}
 PKGSPEC-main = gcc->=4.8,<4.9
-
-REVISION-main	= 6
-REVISION-c++	= 2
-#REVISION-estdc	=
-REVISION-f95	= 1
-REVISION-java	= 1
-REVISION-objc	= 1
-REVISION-ada	= 3
-#REVISION-go	=
 
 SHARED_LIBS =	estdc++		16.0 \
 		gfortran	5.0 \

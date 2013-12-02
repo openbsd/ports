@@ -1,6 +1,6 @@
-$OpenBSD: patch-libgcc_config_host,v 1.1.1.1 2013/04/08 08:20:25 pascal Exp $
---- libgcc/config.host.orig	Mon Feb  4 20:06:20 2013
-+++ libgcc/config.host	Tue Mar  5 19:45:42 2013
+$OpenBSD: patch-libgcc_config_host,v 1.2 2013/12/02 22:34:55 pascal Exp $
+--- libgcc/config.host.orig	Tue Jul  9 23:35:57 2013
++++ libgcc/config.host	Wed Oct 16 18:56:50 2013
 @@ -833,6 +833,9 @@ powerpc*-*-freebsd*)
  powerpc-*-netbsd*)
  	tmake_file="$tmake_file rs6000/t-netbsd rs6000/t-crtstuff"
@@ -9,5 +9,5 @@ $OpenBSD: patch-libgcc_config_host,v 1.1.1.1 2013/04/08 08:20:25 pascal Exp $
 +	tmake_file="$tmake_file rs6000/t-crtstuff"
 +	;;
  powerpc-*-eabispe*)
- 	tmake_file="${tmake_file} rs6000/t-ppccomm rs6000/t-savresfgpr rs6000/t-crtstuff t-crtstuff-pic"
+ 	tmake_file="${tmake_file} rs6000/t-ppccomm rs6000/t-savresfgpr rs6000/t-crtstuff t-crtstuff-pic t-fdpbit"
  	extra_parts="$extra_parts crtbegin.o crtend.o crtbeginS.o crtendS.o crtbeginT.o ecrti.o ecrtn.o ncrti.o ncrtn.o"

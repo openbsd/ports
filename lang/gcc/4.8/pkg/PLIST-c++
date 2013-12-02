@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-c++,v 1.1.1.1 2013/04/08 08:20:21 pascal Exp $
+@comment $OpenBSD: PLIST-c++,v 1.2 2013/12/02 22:34:55 pascal Exp $
 @conflict libstdc++->=4.9
 @bin bin/ec++
 @bin bin/eg++
@@ -63,7 +63,6 @@ include/c++/${V}/bits/mask_array.h
 include/c++/${V}/bits/memoryfwd.h
 include/c++/${V}/bits/move.h
 include/c++/${V}/bits/nested_exception.h
-include/c++/${V}/bits/opt_random.h
 include/c++/${V}/bits/ostream.tcc
 include/c++/${V}/bits/ostream_insert.h
 include/c++/${V}/bits/postypes.h
@@ -211,7 +210,6 @@ include/c++/${V}/ext/mt_allocator.h
 include/c++/${V}/ext/new_allocator.h
 include/c++/${V}/ext/numeric
 include/c++/${V}/ext/numeric_traits.h
-include/c++/${V}/ext/opt_random.h
 include/c++/${V}/ext/pb_ds/
 include/c++/${V}/ext/pb_ds/assoc_container.hpp
 include/c++/${V}/ext/pb_ds/detail/
@@ -525,10 +523,13 @@ include/c++/${V}/${CONFIG}/bits/gthr-posix.h
 include/c++/${V}/${CONFIG}/bits/gthr-single.h
 include/c++/${V}/${CONFIG}/bits/gthr.h
 include/c++/${V}/${CONFIG}/bits/messages_members.h
+include/c++/${V}/${CONFIG}/bits/opt_random.h
 include/c++/${V}/${CONFIG}/bits/os_defines.h
 include/c++/${V}/${CONFIG}/bits/stdc++.h
 include/c++/${V}/${CONFIG}/bits/stdtr1c++.h
 include/c++/${V}/${CONFIG}/bits/time_members.h
+include/c++/${V}/${CONFIG}/ext/
+include/c++/${V}/${CONFIG}/ext/opt_random.h
 include/c++/${V}/initializer_list
 include/c++/${V}/iomanip
 include/c++/${V}/ios
