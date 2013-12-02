@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2013/03/10 23:04:45 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2013/12/02 15:29:29 naddy Exp $
 
 COMMENT=	Simulation Program for Integrated Circuit Electronics
 
 V=			3f5
 DISTNAME=		spice${V}
 PKGNAME=		spice-${V}
-REVISION=		6
+REVISION=		7
 CATEGORIES=     	cad
 
 # BSD

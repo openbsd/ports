@@ -1,13 +1,44 @@
-$OpenBSD: patch-src_lib_mfb_mfbgnc_c,v 1.1 2001/08/02 23:54:56 pvalchev Exp $
---- src/lib/mfb/mfbgnc.c.orig	Tue Apr  9 20:08:26 1991
-+++ src/lib/mfb/mfbgnc.c	Thu Aug  2 17:06:58 2001
-@@ -25,7 +25,9 @@ Author: -C- 1982 Giles C. Billingsley
- 
- /* Library routines */
+$OpenBSD: patch-src_lib_mfb_mfbgnc_c,v 1.2 2013/12/02 15:29:29 naddy Exp $
+--- src/lib/mfb/mfbgnc.c.orig	Wed Apr 10 04:08:26 1991
++++ src/lib/mfb/mfbgnc.c	Sun Dec  1 22:15:12 2013
+@@ -103,10 +103,15 @@ extern void ftime();
+ MFBGenCode(PM)
+     char *PM;
+     {
++#ifdef HAS_GETTIMEOFDAY
++    struct timeval time1, time2;
++    float reftime, elapsedtime;
++#else
  #ifdef HAS_FTIME
-+#ifndef __OpenBSD__
- extern void ftime();
-+#endif /*__OpenBSD__*/
+     struct timeb time1, time2;
+     float reftime, elapsedtime;
  #endif
- 
- /*
++#endif
+     static char result[512];    /* 512 chars maximum per transfer */
+     char hexadec();         /* return a hexadecimal character */
+     char octal();           /* return an octal character */
+@@ -146,6 +151,16 @@ MFBGenCode(PM)
+         mfbarg(cp, Reg, reg, tmp);
+         if(*cp++ != '>')
+             continue;
++#ifdef HAS_GETTIMEOFDAY
++        gettimeofday(&time1, NULL);
++        reftime = (float)(time1.tv_sec * 1000 + time1.tv_usec / 1000);
++        while(tmp > 0){
++            gettimeofday(&time2, NULL);
++            elapsedtime = (float)(time2.tv_sec * 1000 + time2.tv_usec / 1000) - reftime;
++            if(elapsedtime > (float)tmp)
++            break;
++            }
++#else
+ #ifdef HAS_FTIME
+         ftime(&time1);
+         reftime = (float)(time1.time * 1000 + time1.millitm);
+@@ -157,6 +172,7 @@ MFBGenCode(PM)
+             }
+ #else
+ 	sleep((tmp + 999) / 1000);	/* Yuk; have to round up to seconds */
++#endif
+ #endif
+         dp = result;
+         }

@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_include_os_bsd_h,v 1.1 2013/12/02 15:29:29 naddy Exp $
+--- src/include/os_bsd.h.orig	Sun Apr 25 01:09:46 1993
++++ src/include/os_bsd.h	Sun Dec  1 22:04:25 2013
+@@ -10,13 +10,15 @@ Copyright 1990 Regents of the University of California
+ 
+ #define HAS_NO_ATRIGH_DECL	/* if asinh( ) is not in math.h		*/
+ #define HAS_ATRIGH		/* acosh( ), asinh( ), atanh( )         */
+-#define HAS_FTIME		/* ftime( ), <times.h>			*/
++#define HAS_GETTIMEOFDAY	/* gettimeofday()			*/
+ #define HAS_TERMCAP		/* tgetxxx( )				*/
+ #define HAS_VFORK		/* BSD-ism, should not be necessary	*/
+ #define HAS_INDEX		/* index( ) instead of strchr( )	*/
+ #define HAS_BCOPY		/* bcopy( ), bzero( )			*/
+ #define HAS_BSDRANDOM		/* srandom( ) and random( )		*/
++#ifndef __OpenBSD__
+ #define HAS_BSDTTY		/* <sgtty.h>				*/
++#endif
+ #define HAS_BSDDIRS		/* <sys/dir.h>				*/
+ #define HAS_BSDRUSAGE		/* getrusage( )				*/
+ #define HAS_BSDRLIMIT		/* getrlimit( )				*/
