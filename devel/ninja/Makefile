@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/11/12 15:00:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2013/12/02 16:25:08 espie Exp $
 
 COMMENT =		small build system with a focus on speed
 GH_VER =		v1.4.0
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =		c>=68.1 m stdc++
 
 MASTER_SITES =		https://github.com/martine/ninja/archive/
-DISTFILES =		${DISTNAME}${EXTRACT_SUFX}{${GH_VER}${EXTRACT_SUFX}}
+DISTFILES =		${DISTNAME}{${GH_VER}}${EXTRACT_SUFX}
 
 MODULES =		lang/python
 

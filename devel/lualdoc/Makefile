@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/11/12 15:00:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2013/12/02 16:25:08 espie Exp $
 
 COMMENT =	LuaDoc-compatible documentation generation system
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM =Yes
 MODULES =	lang/lua
 
 MASTER_SITES =	https://github.com/stevedonovan/ldoc/archive/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}{${GH_VER}${EXTRACT_SUFX}}
+DISTFILES=	${DISTNAME}{${GH_VER}}${EXTRACT_SUFX}
 
 MODLUA_RUN_DEPENDS =	devel/lua-penlight
 

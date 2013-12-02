@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/08/07 08:02:48 jsg Exp $
+# $OpenBSD: Makefile,v 1.5 2013/12/02 16:25:08 espie Exp $
 
 COMMENT =	infinite-world block sandbox game
 V =		0.4.7
@@ -12,8 +12,8 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 MASTER_SITES=	https://github.com/minetest/
 
-DISTFILES =	minetest-${V}${EXTRACT_SUFX}{minetest/archive/${V}${EXTRACT_SUFX}} \
-		minetest-game-${V}${EXTRACT_SUFX}{minetest_game/archive/${V}${EXTRACT_SUFX}}
+DISTFILES =	minetest-{minetest/archive/}${V}${EXTRACT_SUFX} \
+		minetest-game-{minetest_game/archive/}${V}${EXTRACT_SUFX}
 
 MODULES =	devel/cmake \
 		devel/gettext

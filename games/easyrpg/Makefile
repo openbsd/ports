@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/10/24 12:51:30 bcallah Exp $
+# $OpenBSD: Makefile,v 1.8 2013/12/02 16:25:08 espie Exp $
 
 V =		0.1.2
 COMMENT =	free interpreter for RPG Maker 2000/2003 and EasyRPG games
-DISTFILES =	easyrpg-player-${V}.tar.gz{${V}.tar.gz}:0 \
-		easyrpg-readers-${V}.tar.gz{${V}.tar.gz}:1
+DISTFILES =	easyrpg-player-{}${V}.tar.gz:0 \
+		easyrpg-readers-{}${V}.tar.gz:1
 PKGNAME =	easyrpg-${V}
 CATEGORIES =	games x11
 

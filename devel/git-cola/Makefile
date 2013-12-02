@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2013/11/08 11:17:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2013/12/02 16:25:08 espie Exp $
 
 COMMENT =	python powered git gui
 
 MODPY_EGG_VERSION=	1.9.1
 DISTNAME =	git-cola-${MODPY_EGG_VERSION}
-DISTFILES =	${DISTNAME}.tar.gz{v${MODPY_EGG_VERSION}.tar.gz}
+DISTFILES =	${DISTNAME}{v${MODPY_EGG_VERSION}}.tar.gz
 CATEGORIES =	devel x11
 
 HOMEPAGE =	http://cola.tuxfamily.org/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/11/25 12:58:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2013/12/02 16:25:08 espie Exp $
 
 COMMENT=		the Git library, take 2
 
@@ -8,7 +8,7 @@ PROJECT=		libgit2
 SHARED_LIBS +=  git2                      5.0 # 0.20
 
 MASTER_SITES=		https://github.com/libgit2/${PROJECT}/archive/
-DISTFILES=		${DISTNAME}${EXTRACT_SUFX}{${GH_VER}${EXTRACT_SUFX}}
+DISTFILES=		${DISTNAME}{${GH_VER}}${EXTRACT_SUFX}
 
 MODULES=		devel/cmake \
 			lang/python
