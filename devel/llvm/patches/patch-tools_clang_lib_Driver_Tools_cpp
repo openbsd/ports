@@ -1,21 +1,25 @@
-$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.16 2013/06/21 22:09:12 brad Exp $
+$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.17 2013/12/02 22:14:29 brad Exp $
 --- tools/clang/lib/Driver/Tools.cpp.orig	Thu May 30 14:01:30 2013
-+++ tools/clang/lib/Driver/Tools.cpp	Tue Jun  4 23:43:06 2013
-@@ -5071,6 +5071,36 @@ void openbsd::Assemble::ConstructJob(Compilation &C, c
++++ tools/clang/lib/Driver/Tools.cpp	Wed Nov 27 23:09:47 2013
+@@ -5071,6 +5071,40 @@ void openbsd::Assemble::ConstructJob(Compilation &C, c
                                       const char *LinkingOutput) const {
    ArgStringList CmdArgs;
  
-+  if (getToolChain().getArch() == llvm::Triple::mips64 ||
-+      getToolChain().getArch() == llvm::Triple::mips64el) {
++  // When building 32-bit code on OpenBSD/amd64, we have to explicitly
++  // instruct as in the base system to assemble 32-bit code.
++  if (getToolChain().getArch() == llvm::Triple::x86)
++    CmdArgs.push_back("--32");
++  else if (getToolChain().getArch() == llvm::Triple::ppc) {
++    CmdArgs.push_back("-mppc");
++    CmdArgs.push_back("-many");
++  } else if (getToolChain().getArch() == llvm::Triple::mips64 ||
++             getToolChain().getArch() == llvm::Triple::mips64el) {
 +    StringRef CPUName;
 +    StringRef ABIName;
 +    getMipsCPUAndABI(Args, getToolChain(), CPUName, ABIName);
 +
-+    // Convert ABI name to the GNU tools acceptable variant.
-+    ABIName = "64";
-+
 +    CmdArgs.push_back("-mabi");
-+    CmdArgs.push_back(ABIName.data());
++    CmdArgs.push_back(getGnuCompatibleMipsABIName(ABIName).data());
 +
 +    if (getToolChain().getArch() == llvm::Triple::mips64)
 +      CmdArgs.push_back("-EB");
@@ -38,7 +42,7 @@ $OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.16 2013/06/21 22:09:12 brad
    Args.AddAllArgValues(CmdArgs, options::OPT_Wa_COMMA,
                         options::OPT_Xassembler);
  
-@@ -5104,6 +5134,11 @@ void openbsd::Link::ConstructJob(Compilation &C, const
+@@ -5104,6 +5138,11 @@ void openbsd::Link::ConstructJob(Compilation &C, const
    // handled somewhere else.
    Args.ClaimAllArgs(options::OPT_w);
  
@@ -50,7 +54,7 @@ $OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.16 2013/06/21 22:09:12 brad
    if ((!Args.hasArg(options::OPT_nostdlib)) &&
        (!Args.hasArg(options::OPT_shared))) {
      CmdArgs.push_back("-e");
-@@ -5124,6 +5159,9 @@ void openbsd::Link::ConstructJob(Compilation &C, const
+@@ -5124,6 +5163,9 @@ void openbsd::Link::ConstructJob(Compilation &C, const
        CmdArgs.push_back("/usr/libexec/ld.so");
      }
    }

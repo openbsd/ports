@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2013/11/25 14:16:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2013/12/02 22:14:29 brad Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -9,7 +9,7 @@ DPB_PROPERTIES = parallel
 COMMENT =	modular, fast C/C++/ObjC compiler, static analyzer and tools
 
 LLVM_V =	3.3
-REVISION =	1
+REVISION =	2
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME =	llvm-${LLVM_V}
 CATEGORIES =	devel
@@ -34,10 +34,6 @@ MODULES =	devel/cmake \
 
 TEST_DEPENDS = devel/dejagnu
 BUILD_DEPENDS +=	textproc/py-sphinx
-
-MAKE_FLAGS =	OPTIMIZE_OPTION="${CFLAGS}" \
-		VERBOSE=Yes \
-		INSTALL="install -c"
 
 TEST_FLAGS =	RUNTESTFLAGS=
 
