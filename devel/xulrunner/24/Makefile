@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/11/10 07:30:17 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2013/12/03 16:08:21 landry Exp $
 
 MOZILLA_VERSION =	24.0
 MOZILLA_BRANCH =	release
@@ -22,6 +22,8 @@ MODCLANG_LANGS =	c c++
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
 CONFIGURE_ARGS +=	--disable-debug-symbols
 .endif
+
+RUN_DEPENDS-devel =	${PKGNAME-main}:${BASE_PKGPATH},-main
 
 CONFIGURE_ENV +=	MOZ_OFFICIAL_BRANDING_DIRECTORY=browser/branding
 
