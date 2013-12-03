@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.5 2013/06/03 19:45:32 kirby Exp $
---- Makefile.orig	Fri May 10 22:59:50 2013
-+++ Makefile	Sun May 26 22:02:43 2013
+$OpenBSD: patch-Makefile,v 1.6 2013/12/03 10:21:01 kirby Exp $
+--- Makefile.orig	Wed Nov 13 00:13:23 2013
++++ Makefile	Mon Dec  2 19:27:58 2013
 @@ -72,7 +72,6 @@ install-pre: Makefile Makefile.config
  	mkdir -p $(STATEDIR)
  	mkdir -p $(SPOOLDIR)
@@ -45,7 +45,16 @@ $OpenBSD: patch-Makefile,v 1.5 2013/06/03 19:45:32 kirby Exp $
  	$(CHMOD) 0755 $(CONFDIR)/plugin-conf.d
  
  	for p in build/plugins/node.d/* build/plugins/node.d.$(OSTYPE)/* ; do \
-@@ -423,7 +422,7 @@ install-%: %/Build
+@@ -213,7 +212,7 @@ install-doc: build-doc
+ # Dummy rule to enable parallel building
+ infiles: $(INFILES)
+ 
+-build: infiles build-master build-common-prime build-node build-plugins $(JAVA_BUILD) build-man substitue-confvar-inline
++build: infiles build-master build-common-prime build-node build-plugins $(JAVA_BUILD) build-man #substitue-confvar-inline
+ 
+ build/%: %.in
+ 	@echo "$< -> $@"
+@@ -466,7 +465,7 @@ install-%: %/Build
              --install_path script=$(BINDIR)		\
              --install_path sbin=$(SBINDIR)		\
              --install_path bindoc=$(MANDIR)/man1	\
