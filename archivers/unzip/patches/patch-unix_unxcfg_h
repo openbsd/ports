@@ -1,0 +1,14 @@
+$OpenBSD: patch-unix_unxcfg_h,v 1.1 2013/12/03 21:18:50 naddy Exp $
+--- unix/unxcfg.h.orig	Thu Apr 16 20:36:12 2009
++++ unix/unxcfg.h	Tue Dec  3 22:06:23 2013
+@@ -111,7 +111,9 @@ typedef struct stat z_stat;
+ 
+ #ifdef BSD
+ #  include <sys/time.h>
+-#  include <sys/timeb.h>
++#  ifndef BSD4_4
++#    include <sys/timeb.h>
++#  endif
+ #  if (defined(_AIX) || defined(__GLIBC__) || defined(__GNU__))
+ #    include <time.h>
+ #  endif
