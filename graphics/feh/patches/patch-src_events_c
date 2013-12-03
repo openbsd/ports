@@ -1,4 +1,10 @@
-$OpenBSD: patch-src_events_c,v 1.5 2013/11/22 10:42:12 dcoppa Exp $
+$OpenBSD: patch-src_events_c,v 1.6 2013/12/03 07:37:44 dcoppa Exp $
+
+commit c0649c4b2a7c824abc743fa59457221e2bc3ab21
+Author: Daniel Friesel <derf@finalrewind.org>
+Date:   Sun Nov 24 23:29:15 2013 +0100
+
+thumbnail mode: if --action is set, run it instead of opening images
 
 commit 2f09bf037a9e02de6a0df68625f139173495699a
 Author: Daniel Friesel <derf@finalrewind.org>
@@ -8,7 +14,7 @@ events.c: fix off-by-one pixel error when warping the pointer in
 the bottom/right window border
 
 --- src/events.c.orig	Tue Jun 11 08:28:26 2013
-+++ src/events.c	Fri Nov 22 11:32:19 2013
++++ src/events.c	Tue Dec  3 08:38:16 2013
 @@ -124,7 +124,7 @@ void init_buttonbindings(void)
  
  	free(confpath);
@@ -18,7 +24,22 @@ the bottom/right window border
  		return;
  
  	while (fgets(line, sizeof(line), conf)) {
-@@ -578,36 +578,36 @@ static void feh_event_handle_MotionNotify(XEvent * ev)
+@@ -378,8 +378,12 @@ static void feh_event_handle_ButtonRelease(XEvent * ev
+ 				x /= winwid->zoom;
+ 				y /= winwid->zoom;
+ 				thumbfile = feh_thumbnail_get_file_from_coords(x, y);
+-				if (thumbfile)
+-					feh_thumbnail_show_fullsize(thumbfile);
++				if (thumbfile) {
++					if (opt.actions[0])
++						feh_action_run(thumbfile, opt.actions[0]);
++					else
++						feh_thumbnail_show_fullsize(thumbfile);
++				}
+ 			}
+ 		} else {
+ 			opt.mode = MODE_NORMAL;
+@@ -578,36 +582,36 @@ static void feh_event_handle_MotionNotify(XEvent * ev)
  
  			winwidget_sanitise_offsets(winwid);
  
