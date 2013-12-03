@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_Makefile,v 1.5 2013/12/03 07:15:45 dcoppa Exp $
+--- src/Makefile.orig	Thu Aug 23 12:37:48 2012
++++ src/Makefile	Fri Aug 24 12:06:15 2012
+@@ -48,7 +48,7 @@ CUSTOM = -custom
+ #MLLINK += -cclib -lcamlrund
+ MLBYTEFLAGS = -g -dtypes
+ else
+-CFLAGS = -DG_DISABLE_ASSERT -DG_DISABLE_CAST_CHECKS $(GTKCFLAGS)
++CFLAGS += -DG_DISABLE_ASSERT -DG_DISABLE_CAST_CHECKS $(GTKCFLAGS)
+ ifneq ($(TOOLCHAIN),msvc)
+ CFLAGS += -O
+ endif
+@@ -63,7 +63,7 @@ endif
+ THLINK = unix.cma threads.cma
+ 
+ ifdef USE_CC
+-CCOMPILER = $(CC) -c -I"$(LIBDIR)" $(CFLAGS)
++CCOMPILER = $(CC) -c -I"$(LIBDIR)" $(CFLAGS) -fPIC
+ else
+ CCOMPILER = $(CAMLC) -c -ccopt '$(CFLAGS)' -verbose
+ endif
