@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_bcop_in,v 1.1 2013/12/03 00:47:07 fgsch Exp $
+--- src/bcop.in.orig	Thu Apr 21 11:03:19 2011
++++ src/bcop.in	Wed Nov  6 14:19:12 2013
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ #
+ # 
+ #  Compiz option code generator
+@@ -34,8 +34,7 @@ function usage
+ srcfile=
+ hdrfile=
+ 
+-set -- `getopt -quo "hv" -l "help,version,source:,header:" -- "$@"`
+-[ $# -lt 2 ] && usage
++set -- "$@"
+ 
+ while [ $# -gt 0 ]
+ do
+@@ -44,14 +43,16 @@ do
+         --help)     usage;;
+         -v)         echo "@PACKAGE_STRING@"; exit 0;;
+         --version)  echo "@PACKAGE_STRING@"; exit 0;;
+-        --source)   srcfile="$2"; shift;;
+-        --header)   hdrfile="$2"; shift;;
++        --source)   [ $# -lt 2 ] && usage; srcfile="$2"; shift;;
++        --header)   [ $# -lt 2 ] && usage; hdrfile="$2"; shift;;
+         --)         shift; break;;
+         -*)         usage;;
+         *)          break;;         # terminate while loop
+     esac
+     shift
+ done
++
++[ $# -lt 1 ] && usage
+ 
+ xmlfile="$1"
+ 
