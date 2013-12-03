@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/10/01 10:09:50 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.2 2013/12/03 18:23:09 landry Exp $
 
 # Warning: CELT is experimental software. Neither the API/ABI, nor
 # the bit-stream are stable. Compatibility between different releases
 # (even minor ones) is not preserved.
 
+BROKEN-hppa =	celt.c:1540: internal compiler error: in delete_output_reload, at reload1.c:7926
 COMMENT =	experimental ultra-low delay audio codec (0.7 API)
 
 V =		0.7.1
