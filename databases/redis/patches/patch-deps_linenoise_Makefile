@@ -1,11 +1,10 @@
-$OpenBSD: patch-deps_linenoise_Makefile,v 1.5 2013/01/16 13:13:03 dcoppa Exp $
---- deps/linenoise/Makefile.orig	Thu Jan 10 17:15:16 2013
-+++ deps/linenoise/Makefile	Wed Jan 16 13:13:27 2013
+$OpenBSD: patch-deps_linenoise_Makefile,v 1.6 2013/12/03 06:50:17 dcoppa Exp $
+--- deps/linenoise/Makefile.orig	Mon Dec  2 16:07:46 2013
++++ deps/linenoise/Makefile	Tue Dec  3 07:52:03 2013
 @@ -1,10 +1,10 @@
  STD=
--WARN= -Wall
+ WARN= -Wall
 -OPT= -Os
-+# WARN= -Wall
 +# OPT= -Os
  
  R_CFLAGS= $(STD) $(WARN) $(OPT) $(DEBUG) $(CFLAGS)
