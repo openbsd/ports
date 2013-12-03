@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.23 2013/12/02 22:34:55 pascal Exp $
+# $OpenBSD: Makefile,v 1.24 2013/12/03 10:38:52 sthen Exp $
 
 ONLY_FOR_ARCHS = alpha amd64 i386 powerpc sparc64
+DPB_PROPERTIES = parallel
 
 V = 4.8.2
 FULL_VERSION = $V
