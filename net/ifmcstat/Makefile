@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2013/10/16 15:04:07 bluhm Exp $
+# $OpenBSD: Makefile,v 1.8 2013/12/03 20:51:06 naddy Exp $
+
+BROKEN=		multicast address handling in the kernel has changed
 
 COMMENT =		show Ethernet Multicast memberships
 
