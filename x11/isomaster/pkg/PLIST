@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/12/21 20:46:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/12/03 14:21:37 giovanni Exp $
 @bin bin/isomaster
 @man man/man1/isomaster.1
 share/applications/isomaster.desktop
@@ -34,6 +34,10 @@ share/locale/hr/LC_MESSAGES/isomaster.mo
 share/locale/hu/LC_MESSAGES/isomaster.mo
 share/locale/id/LC_MESSAGES/isomaster.mo
 share/locale/it/LC_MESSAGES/isomaster.mo
+share/locale/ja/LC_MESSAGES/isomaster.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
+share/locale/lt/LC_MESSAGES/isomaster.mo
 share/locale/lv/LC_MESSAGES/isomaster.mo
 share/locale/nb/LC_MESSAGES/isomaster.mo
 share/locale/nl/LC_MESSAGES/isomaster.mo
@@ -58,6 +62,9 @@ share/locale/sr@latin/LC_MESSAGES/isomaster.mo
 share/locale/sv/LC_MESSAGES/isomaster.mo
 share/locale/tr/LC_MESSAGES/isomaster.mo
 share/locale/uk/LC_MESSAGES/isomaster.mo
+share/locale/ur_PK/
+share/locale/ur_PK/LC_MESSAGES/
+share/locale/ur_PK/LC_MESSAGES/isomaster.mo
 share/locale/zh_CN/LC_MESSAGES/isomaster.mo
 share/locale/zh_TW/LC_MESSAGES/isomaster.mo
 @exec %D/bin/update-desktop-database

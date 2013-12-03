@@ -1,0 +1,21 @@
+$OpenBSD: patch-editfile_c,v 1.1 2013/12/03 14:21:37 giovanni Exp $
+--- editfile.c.orig	Wed Dec  5 00:31:55 2007
++++ editfile.c	Fri Nov 29 09:09:36 2013
+@@ -508,6 +508,9 @@ char* makeRandomFilename(const char* sourceName)
+         char oneRandomChar;
+         bool gotGoodChar;
+         
++#ifdef HAVE_ARC4RANDOM
++        oneRandomChar = arc4random_uniform('Z'-'A'+1) + 'A';
++#else
+         gotGoodChar = false;
+         while(!gotGoodChar)
+         {
+@@ -517,6 +520,7 @@ char* makeRandomFilename(const char* sourceName)
+                 gotGoodChar = true;
+             }
+         }
++#endif
+         
+         randomStr[numRandomCharsFilled] = oneRandomChar;
+         
