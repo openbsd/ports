@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.98 2013/11/25 14:16:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.99 2013/12/03 10:15:17 sthen Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
+BROKEN-i386=	undefined symbol _ZN5boost6system15system_categoryEv in libscfiltlo.so (CppunitTest_sc_filters_test)
 
 COMMENT-main=	multi-platform productivity suite
 COMMENT-kde=	optional integration of LibreOffice to the KDE environment
