@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1 2013/12/03 00:49:44 fgsch Exp $
+include/compizconfig/
+include/compizconfig/ccs-backend.h
+include/compizconfig/ccs.h
+lib/compiz/libccp.so
+lib/compizconfig/
+lib/compizconfig/backends/
+lib/compizconfig/backends/libini.so
+lib/libcompizconfig.la
+@lib lib/libcompizconfig.so.${LIBcompizconfig_VERSION}
+lib/pkgconfig/libcompizconfig.pc
+share/compiz/ccp.xml
+share/compiz/compizconfig/
+share/compiz/compizconfig/config

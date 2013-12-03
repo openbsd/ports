@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_main_c,v 1.1 2013/12/03 00:49:44 fgsch Exp $
+--- src/main.c.orig	Sun Feb 24 13:57:42 2013
++++ src/main.c	Sun Feb 24 13:58:15 2013
+@@ -27,13 +27,19 @@
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <string.h>
++#ifdef HAVE_MALLOC_H
+ #include <malloc.h>
++#endif
+ #include <libintl.h>
+ #include <dlfcn.h>
+ #include <dirent.h>
+ #include <math.h>
+ 
+ #include <ccs.h>
++
++#ifndef RTLD_NODELETE
++#define RTLD_NODELETE	0
++#endif
+ 
+ #include "ccs-private.h"
+ #include "iniparser.h"
