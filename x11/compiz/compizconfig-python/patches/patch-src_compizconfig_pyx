@@ -1,0 +1,57 @@
+$OpenBSD: patch-src_compizconfig_pyx,v 1.1 2013/12/03 00:51:19 fgsch Exp $
+--- src/compizconfig.pyx.orig	Mon Feb 25 00:32:45 2013
++++ src/compizconfig.pyx	Mon Feb 25 00:33:08 2013
+@@ -583,7 +583,7 @@ cdef class Setting:
+     cdef object extendedStrRestrictions
+     cdef object baseStrRestrictions
+ 
+-    def __new__ (self, Plugin plugin, name, isScreen, screenNum = 0):
++    def __cinit__ (self, Plugin plugin, name, isScreen, screenNum = 0):
+         cdef CCSSettingType t
+         cdef CCSSettingInfo * i
+ 
+@@ -689,7 +689,7 @@ cdef class SSGroup:
+     cdef object display
+     cdef object screens
+ 
+-    def __new__ (self, disp, screen):
++    def __cinit__ (self, disp, screen):
+         self.display = disp
+         self.screens = screen
+ 
+@@ -715,7 +715,7 @@ cdef class Plugin:
+     cdef object ranking
+     cdef object hasExtendedString
+     
+-    def __new__ (self, Context context, name):
++    def __cinit__ (self, Context context, name):
+         self.ccsPlugin = ccsFindPlugin (context.ccsContext, name)
+         self.context = context
+         self.screens = []
+@@ -1056,7 +1056,7 @@ cdef class Profile:
+     cdef Context context
+     cdef char * name
+ 
+-    def __new__ (self, Context context, name):
++    def __cinit__ (self, Context context, name):
+         self.context = context
+         self.name = strdup (name)
+ 
+@@ -1078,7 +1078,7 @@ cdef class Backend:
+     cdef Bool profileSupport
+     cdef Bool integrationSupport
+ 
+-    def __new__ (self, Context context, info):
++    def __cinit__ (self, Context context, info):
+         self.context = context
+         self.name = strdup (info[0])
+         self.shortDesc = strdup (info[1])
+@@ -1122,7 +1122,7 @@ cdef class Context:
+     cdef int nScreens
+     cdef Bool integration
+ 
+-    def __new__ (self, screens = [0], plugins = [], basic_metadata = False):
++    def __cinit__ (self, screens = [0], plugins = [], basic_metadata = False):
+         cdef CCSPlugin * pl
+         cdef CCSList * pll
+         if basic_metadata:
