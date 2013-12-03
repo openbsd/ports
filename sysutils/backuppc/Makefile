@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:41:29 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2013/12/03 22:02:53 landry Exp $
 
 COMMENT =	remote backup software system
 
-DISTNAME =	BackupPC-3.2.1
+DISTNAME =	BackupPC-3.3.0
 PKGNAME =	${DISTNAME:L}
-REVISION =	2
 
 CATEGORIES =	sysutils
 
@@ -15,7 +14,7 @@ HOMEPAGE =	http://backuppc.sourceforge.net
 
 #ftp: Too many redirections requested
 #MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=BackupPC/}
-MASTER_SITES=	http://freefr.dl.sourceforge.net/project/backuppc/backuppc/3.2.1/
+MASTER_SITES=	http://freefr.dl.sourceforge.net/project/backuppc/backuppc/3.3.0/
 
 NO_BUILD =	Yes
 

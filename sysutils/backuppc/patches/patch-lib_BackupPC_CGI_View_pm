@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_BackupPC_CGI_View_pm,v 1.2 2011/10/28 21:56:57 jasper Exp $
+$OpenBSD: patch-lib_BackupPC_CGI_View_pm,v 1.3 2013/12/03 22:02:54 landry Exp $
 
 First chunk:
 Security fix for SA46615
@@ -6,8 +6,8 @@ BackupPC "num" Cross-Site Scripting Vulnerability
 
 From http://patches.ubuntu.com/b/backuppc/backuppc_3.2.1-1ubuntu2.patch
 
---- lib/BackupPC/CGI/View.pm.orig	Mon Apr 25 05:31:55 2011
-+++ lib/BackupPC/CGI/View.pm	Fri Oct 28 23:54:56 2011
+--- lib/BackupPC/CGI/View.pm.orig	Sun Apr 14 22:43:32 2013
++++ lib/BackupPC/CGI/View.pm	Tue Dec  3 22:53:53 2013
 @@ -46,7 +46,7 @@ sub action
      my $compress = 0;
      my $fh;
@@ -17,7 +17,7 @@ From http://patches.ubuntu.com/b/backuppc/backuppc_3.2.1-1ubuntu2.patch
      my $type = $In{type};
      my $linkHosts = 0;
      my($file, $comment);
-@@ -86,7 +86,7 @@ sub action
+@@ -89,7 +89,7 @@ sub action
          $file = $bpc->ConfDir() . "/hosts";
          $linkHosts = 1;
      } elsif ( $type eq "docs" ) {
