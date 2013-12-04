@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2013/12/04 07:13:31 steven Exp $
+do not pick up libuuid
+--- configure.orig	Wed Nov 27 16:40:28 2013
++++ configure	Wed Dec  4 07:53:40 2013
+@@ -15379,6 +15379,7 @@ fi
+  else
+     pkg_failed=untried
+ fi
++pkg_failed=yes
+ 
+ 
+ 
