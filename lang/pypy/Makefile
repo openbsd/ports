@@ -1,24 +1,34 @@
-# $OpenBSD: Makefile,v 1.9 2013/11/25 14:16:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2013/12/04 21:56:21 edd Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		fast implementation of the Python language
 
-V =			2.1
+# To update PyPy to a new version:
+#   * Bump ${V} but set ${BOOTSTRAP_V} to the old ${V}
+#   * FLAVOR=no_bootstrap make makesum
+#   * FLAVOR=no_bootstrap make plist (fix anything along the way)
+#   * FLAVOR=no_bootstrap make package
+#   * Set BOOTSTRAP_V back to ${V} in the port Makefile
+#   * make bootstrap && make makesum (note, FLAVOR no longer set)
+#   * Try the build using the bootstrap
+V =			2.2.1
+BOOTSTRAP_V =		${V}
 DISTNAME =		pypy-${V}-src
 PKGNAME =		pypy-${V}
-BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-$V-2.tar.xz
+BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-${BOOTSTRAP_V}.tar.xz
 
 CATEGORIES =		lang
 
 HOMEPAGE =		http://pypy.org/
 
-MAINTAINER =		Laurence Tratt <laurie@tratt.net>
+MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # PyPy is MIT; the Python libs it comes with have the same license as Python
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB +=		bz2 c crypto curses expat ffi m pthread ssl util z
+WANTLIB +=		bz2 c crypto curses expat ffi m ncurses panel
+WANTLIB +=		pthread sqlite3 ssl ${MODTCL_LIB} ${MODTK_LIB} util z
 
 MASTER_SITES =		https://bitbucket.org/pypy/pypy/downloads/
 MASTER_SITES0 =		http://spacehopper.org/mirrors/
@@ -38,7 +48,7 @@ SUPDISTFILES =		${BOOTSTRAP-amd64}:0
 MODULES +=		devel/gettext lang/python gcc4 lang/tcl x11/tk
 MODPY_VERSION =		2.7
 MODGCC4_ARCHS =		*
-MODGCC4_LANGS =		c c++
+MODGCC4_LANGS =		c
 
 USE_GMAKE =		Yes
 BUILD_DEPENDS =		textproc/py-sphinx ${MODTK_BUILD_DEPENDS}
@@ -56,15 +66,12 @@ post-extract:
 	chmod +x ${WRKDIR}/bin/pypy
 .endif
 
-SUBST_VARS +=	MODTK_INCDIR MODTCL_INCDIR
+SUBST_VARS +=	MODTK_INCDIR MODTCL_INCDIR MODTK_LIB MODTCL_LIB
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/lib_pypy/_tkinter/tklib.py
 	# prevent crap in the plist
-	rm ${WRKSRC}/lib_pypy/_tkinter/tklib.py${PATCHORIG} \
-		${WRKSRC}/lib_pypy/_tkinter/tklib.py.beforesubst \
-		${WRKSRC}/lib_pypy/_tkinter/__init__.py${PATCHORIG} \
-		${WRKSRC}/lib_pypy/_tkinter/app.py${PATCHORIG}
+	rm ${WRKSRC}/lib_pypy/_tkinter/tklib.py.beforesubst
 
 # When updating the port, see pypy/tool/release/package.py and check for
 # new modules which require a cffi cache.
