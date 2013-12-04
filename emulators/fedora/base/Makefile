@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2012/11/12 15:03:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2013/12/04 15:53:33 ajacoutot Exp $
 
 COMMENT=	Linux compatibility package based on Fedora Core ${FEDORA_V}
 
 PKGNAME=	fedora_base-${FEDORA_V}.0
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=  cap                       2.10
 SHARED_LIBS +=  blkid                     1.0
@@ -71,8 +71,8 @@ RPMS=		basesystem-10.0-1.noarch.rpm \
 		libXxf86misc-1.0.1-6.fc10.i386.rpm \
 		libXxf86vm-1.0.2-1.fc10.i386.rpm
 
-REMOVE_DIRS=	boot dev etc/fonts home initrd media root tmp var/log var/run var/tmp \
-		usr/local usr/tmp usr/share/fonts etc/fonts
+REMOVE_DIRS=	boot dev home initrd media root tmp var/log var/run var/tmp \
+		usr/local usr/tmp usr/share/fonts
 
 REMOVE_FILES=	bin/df bin/su etc/exports etc/group etc/localtime \
 		etc/motd etc/passwd etc/printcap etc/services \
@@ -81,8 +81,12 @@ REMOVE_FILES=	bin/df bin/su etc/exports etc/group etc/localtime \
 ADD_DIRS=	usr/X11R6/share usr/X11R6/man usr/X11R6/lib/tls \
 		usr/X11R6/include usr/X11R6/bin
 
+PATCH_LIST=
+
 post-install:
-	ln -s ${SYSCONFDIR}/fonts ${FEDORADIR}/etc/fonts
+# fix fontconfig search path and cache directory
+	cd ${FEDORADIR}/etc/fonts && ${PATCH} -p0 -s --posix < \
+		${PATCHDIR}/patch-etc_fonts_fonts_conf
 	mkdir ${FEDORADIR}/dev; \
 		ln -s /dev/console ${FEDORADIR}/dev/tty0; \
 		ln -s /dev/ttyC0 ${FEDORADIR}/dev/tty1; \

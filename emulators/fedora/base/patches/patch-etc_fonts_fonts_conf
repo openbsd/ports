@@ -1,0 +1,31 @@
+$OpenBSD: patch-etc_fonts_fonts_conf,v 1.3 2013/12/04 15:53:33 ajacoutot Exp $
+
+Sync font directory list with base system.
+
+Put the user font cache directory under:
+XDG_CACHE_HOME/.cache/fontconfig-compat_linux
+to make it clear it is used by the Linux compatibility layer.
+(fontconfig in Fedora 10 does not support the "xdg" prefix for cachedir)
+
+--- fonts.conf.orig	Wed Dec  4 16:20:56 2013
++++ fonts.conf	Wed Dec  4 16:22:17 2013
+@@ -23,8 +23,8 @@
+ 
+ <!-- Font directory list -->
+ 
+-	<dir>/usr/share/fonts</dir>
+-	<dir>/usr/share/X11/fonts/Type1</dir> <dir>/usr/share/X11/fonts/TTF</dir> <dir>/usr/local/share/fonts</dir>
++	<dir>/usr/X11R6/lib/X11/fonts</dir>
++	<dir>/usr/local/lib/X11/fonts</dir>
+ 	<dir>~/.fonts</dir>
+ 
+ <!--
+@@ -71,7 +71,7 @@
+ <!-- Font cache directory list -->
+ 
+ 	<cachedir>/var/cache/fontconfig</cachedir>
+-	<cachedir>~/.fontconfig</cachedir>
++	<cachedir>~/.cache/fontconfig-compat_linux</cachedir>
+ 
+ 	<config>
+ <!--
