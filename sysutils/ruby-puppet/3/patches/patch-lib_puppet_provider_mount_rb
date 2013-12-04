@@ -1,0 +1,21 @@
+$OpenBSD: patch-lib_puppet_provider_mount_rb,v 1.1 2013/12/04 09:20:56 jasper Exp $
+
+(#23141) Rework 'remounts' for BSDs
+https://github.com/puppetlabs/puppet/pull/2062
+
+--- lib/puppet/provider/mount.rb.orig	Wed Dec  4 09:40:01 2013
++++ lib/puppet/provider/mount.rb	Wed Dec  4 09:43:14 2013
+@@ -26,7 +26,12 @@ module Puppet::Provider::Mount
+   def remount
+     info "Remounting"
+     if resource[:remounts] == :true
+-      mountcmd "-o", "remount", resource[:name]
++      if self.options && !self.options.empty?
++        options = self.options + ",update"
++      else
++       options = "update"
++      end
++      mountcmd "-o", options, resource[:name]
+     else
+       unmount
+       mount

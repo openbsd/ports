@@ -1,6 +1,7 @@
-$OpenBSD: patch-lib_puppet_type_mount_rb,v 1.1 2013/11/13 14:32:18 jasper Exp $
+$OpenBSD: patch-lib_puppet_type_mount_rb,v 1.2 2013/12/04 09:20:56 jasper Exp $
 
-OpenBSD mount(8) does not support '-o remount'.
+(#23141) Rework 'remounts' for BSDs
+https://github.com/puppetlabs/puppet/pull/2062
 
 --- lib/puppet/type/mount.rb.orig	Wed Nov 13 15:29:35 2013
 +++ lib/puppet/type/mount.rb	Wed Nov 13 15:29:48 2013
