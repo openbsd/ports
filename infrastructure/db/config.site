@@ -1,4 +1,4 @@
-# $OpenBSD: config.site,v 1.24 2013/06/30 20:37:46 espie Exp $
+# $OpenBSD: config.site,v 1.25 2013/12/04 22:05:47 naddy Exp $
 # Quick start macros for autoconf.
 # XXX kludge for a function we don't actually have.
 #ac_cv_func_getservbyname_r=${ac_cv_func_getservbyname_r=no}
@@ -430,7 +430,7 @@ ac_cv_func_raise=${ac_cv_func_raise=yes}
 ac_cv_func_rand=${ac_cv_func_rand=yes}
 ac_cv_func_rand_r=${ac_cv_func_rand_r=yes}	
 ac_cv_func_random=${ac_cv_func_random=yes}
-ac_cv_func_re_comp=${ac_cv_func_re_comp=yes}	
+ac_cv_func_re_comp=${ac_cv_func_re_comp=no}	
 ac_cv_func_read=${ac_cv_func_read=yes}	
 ac_cv_func_readdir=${ac_cv_func_readdir=yes}	
 ac_cv_func_readdir_r=${ac_cv_func_readdir_r=yes}
@@ -754,7 +754,7 @@ ac_cv_header_rpcsvc_ypclnt_h=${ac_cv_header_rpcsvc_ypclnt_h=yes}
 ac_cv_header_search_h=${ac_cv_header_search_h=yes}
 ac_cv_header_semaphore_h=${ac_cv_header_semaphore_h=yes}
 ac_cv_header_setjmp_h=${ac_cv_header_setjmp_h=yes}
-ac_cv_header_sgtty_h=${ac_cv_header_sgtty_h=yes}
+ac_cv_header_sgtty_h=${ac_cv_header_sgtty_h=no}
 ac_cv_header_signal_h=${ac_cv_header_signal_h=yes}
 ac_cv_header_soundcard_h=${ac_cv_header_soundcard_h=yes}
 ac_cv_header_stat_h=${ac_cv_header_stat_h=no}
@@ -812,7 +812,7 @@ ac_cv_header_utmp_h=${ac_cv_header_utmp_h=yes}
 ac_cv_header_values_h=${ac_cv_header_values_h=no}
 ac_cv_header_zlib_h=${ac_cv_header_zlib_h=yes}
 ac_cv_labels_as_values=${ac_cv_labels_as_values=yes}
-ac_cv_lib_compat_main=${ac_cv_lib_compat_main=yes}
+ac_cv_lib_compat_main=${ac_cv_lib_compat_main=no}
 ac_cv_lib_cposix_strerror=${ac_cv_lib_cposix_strerror=no}
 ac_cv_lib_dir_opendir=${ac_cv_lib_dir_opendir=no}
 ac_cv_lib_fl_yywrap=${ac_cv_lib_fl_yywrap=yes}
