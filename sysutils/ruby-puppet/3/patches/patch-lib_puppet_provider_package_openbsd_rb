@@ -1,6 +1,10 @@
-$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.6 2013/11/26 09:59:02 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.7 2013/12/04 09:23:39 jasper Exp $
+
+(#23078) Implement feature :upgradeable for OpenBSD package provider.
+https://github.com/puppetlabs/puppet/pull/2033
+
 --- lib/puppet/provider/package/openbsd.rb.orig	Thu Nov  7 22:33:46 2013
-+++ lib/puppet/provider/package/openbsd.rb	Tue Nov 26 10:46:20 2013
++++ lib/puppet/provider/package/openbsd.rb	Wed Dec  4 10:21:37 2013
 @@ -12,6 +12,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
    has_feature :versionable
    has_feature :install_options
@@ -90,7 +94,7 @@ $OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.6 2013/11/26 09:59:02
 +          # may be a single package, which happens to be flavored.
            version = match.captures[1]
 +          flavor = match.captures[2]
-+          if flavor
++          if !flavor.empty?
 +            version = "#{version}-#{flavor}"
 +          end
 +
