@@ -1,0 +1,14 @@
+$OpenBSD: patch-zunzip_h,v 1.1 2013/12/04 21:10:32 naddy Exp $
+--- zunzip.h.orig	Sat Jan  6 21:07:43 1996
++++ zunzip.h	Wed Dec  4 22:08:05 2013
+@@ -51,7 +51,9 @@
+ #    include <time.h>
+ #  else   /* BSD */
+ #    include <sys/time.h>
+-#    include <sys/timeb.h>
++#    ifndef BSD4_4
++#      include <sys/timeb.h>
++#    endif
+ #  endif
+ 
+ #else   /* !UNIX */
