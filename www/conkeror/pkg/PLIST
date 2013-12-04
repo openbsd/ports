@@ -1,11 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/21 20:47:48 joshe Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/12/04 04:40:39 joshe Exp $
 bin/conkeror
 lib/conkeror/
 lib/conkeror/application.ini
 lib/conkeror/branding/
 lib/conkeror/branding/brand.dtd
 lib/conkeror/branding/brand.properties
+lib/conkeror/branding/content/
+lib/conkeror/branding/content/about.png
 lib/conkeror/chrome/
+lib/conkeror/chrome.manifest
 lib/conkeror/chrome/chrome.manifest
 lib/conkeror/components/
 lib/conkeror/components/.autoreg
@@ -17,11 +20,14 @@ lib/conkeror/components/download_manager_ui.js
 @bin lib/conkeror/conkeror
 @bin lib/conkeror/conkeror-spawn-helper
 lib/conkeror/content/
+lib/conkeror/content-policy.manifest
+lib/conkeror/content/annotated-textbox.xml
 lib/conkeror/content/blank.html
 lib/conkeror/content/conkeror.xul
 lib/conkeror/content/downloads.css
 lib/conkeror/content/help.css
 lib/conkeror/content/hints.css
+lib/conkeror/content/minibuffer-annotation.css
 lib/conkeror/content/minibuffer.css
 lib/conkeror/content/minibuffer.xul
 lib/conkeror/defaults/
@@ -29,6 +35,7 @@ lib/conkeror/defaults/preferences/
 lib/conkeror/defaults/preferences/debug.js
 lib/conkeror/defaults/preferences/default-modules.js
 lib/conkeror/defaults/preferences/download-manager.js
+lib/conkeror/defaults/preferences/gui.js
 lib/conkeror/defaults/preferences/history-frecency.js
 lib/conkeror/defaults/preferences/javascript-restrictions.js
 lib/conkeror/defaults/preferences/prefs.js
@@ -41,10 +48,10 @@ lib/conkeror/help/tutorial.html
 lib/conkeror/locale/
 lib/conkeror/locale/en-US/
 lib/conkeror/locale/en-US/gui_context_menu.properties
-lib/conkeror/locale/en-US/netError.dtd
+lib/conkeror/locale/en-US/netErrorApp.dtd
 lib/conkeror/locale/sv-SE/
 lib/conkeror/locale/sv-SE/gui_context_menu.properties
-lib/conkeror/locale/sv-SE/netError.dtd
+lib/conkeror/locale/sv-SE/netErrorApp.dtd
 lib/conkeror/modules/
 lib/conkeror/modules/array.js
 lib/conkeror/modules/bindings/
@@ -81,8 +88,9 @@ lib/conkeror/modules/buffer.js
 lib/conkeror/modules/builtin-commands.js
 lib/conkeror/modules/cache.js
 lib/conkeror/modules/caret.js
-lib/conkeror/modules/casual-spelling.js
+lib/conkeror/modules/casual-spelling.jsx
 lib/conkeror/modules/clicks-in-new-buffer.js
+lib/conkeror/modules/client-redirect.jsx
 lib/conkeror/modules/command-line.js
 lib/conkeror/modules/commands.js
 lib/conkeror/modules/conkeror.js
@@ -94,6 +102,7 @@ lib/conkeror/modules/cookie.js
 lib/conkeror/modules/coroutine.js
 lib/conkeror/modules/daemon.js
 lib/conkeror/modules/debug.js
+lib/conkeror/modules/dom.js
 lib/conkeror/modules/download-manager.js
 lib/conkeror/modules/element.js
 lib/conkeror/modules/env.js
@@ -121,6 +130,7 @@ lib/conkeror/modules/keymap.js
 lib/conkeror/modules/keywords.js
 lib/conkeror/modules/labels.js
 lib/conkeror/modules/load-spec.js
+lib/conkeror/modules/login.js
 lib/conkeror/modules/media.js
 lib/conkeror/modules/mime-type-override.js
 lib/conkeror/modules/mime.js
@@ -136,6 +146,10 @@ lib/conkeror/modules/new-tabs.js
 lib/conkeror/modules/opensearch.js
 lib/conkeror/modules/page-modes/
 lib/conkeror/modules/page-modes/dailymotion.js
+lib/conkeror/modules/page-modes/duckduckgo.js
+lib/conkeror/modules/page-modes/facebook.js
+lib/conkeror/modules/page-modes/feedly.js
+lib/conkeror/modules/page-modes/github.js
 lib/conkeror/modules/page-modes/gmail.js
 lib/conkeror/modules/page-modes/gmane.js
 lib/conkeror/modules/page-modes/google-calendar.js
@@ -146,11 +160,16 @@ lib/conkeror/modules/page-modes/google-reader.js
 lib/conkeror/modules/page-modes/google-search-results.js
 lib/conkeror/modules/page-modes/google-video.js
 lib/conkeror/modules/page-modes/google-voice.js
+lib/conkeror/modules/page-modes/grooveshark.js
+lib/conkeror/modules/page-modes/key-kill.js
+lib/conkeror/modules/page-modes/newsblur.js
 lib/conkeror/modules/page-modes/reddit.js
+lib/conkeror/modules/page-modes/smbc.js
 lib/conkeror/modules/page-modes/stackexchange.js
 lib/conkeror/modules/page-modes/twitter.js
 lib/conkeror/modules/page-modes/wikipedia.js
 lib/conkeror/modules/page-modes/xkcd.js
+lib/conkeror/modules/page-modes/youtube-player.js
 lib/conkeror/modules/page-modes/youtube.js
 lib/conkeror/modules/permission-manager.js
 lib/conkeror/modules/pref.js
@@ -184,6 +203,7 @@ lib/conkeror/modules/zoom.js
 lib/conkeror/search-engines/
 lib/conkeror/search-engines/answers.xml
 lib/conkeror/search-engines/creativecommons.xml
+lib/conkeror/search-engines/duckduckgo.xml
 lib/conkeror/search-engines/eBay.xml
 lib/conkeror/search-engines/google.xml
 lib/conkeror/search-engines/mozilla-bugzilla.xml
@@ -194,12 +214,21 @@ lib/conkeror/style/
 lib/conkeror/style/default/
 lib/conkeror/style/default/content-buffer-input.css
 lib/conkeror/style/default/eye-guide.css
-lib/conkeror/style/default/hints--url-panel.css
 lib/conkeror/style/default/minibuffer.css
 lib/conkeror/style/default/mode-line.css
 lib/conkeror/style/default/new-tabs.css
 lib/conkeror/style/default/tab-bar.css
 lib/conkeror/style/default/theme.json
+lib/conkeror/style/default/window--panel.css
+lib/conkeror/style/gesso/
+lib/conkeror/style/gesso/mode-line--gesso.css
+lib/conkeror/style/gesso/new-tabs--gesso.css
+lib/conkeror/style/gesso/tab-bar--gesso.css
+lib/conkeror/style/gesso/theme.json
+lib/conkeror/style/mono/
+lib/conkeror/style/mono/conkeror--mono.css
+lib/conkeror/style/mono/theme.json
+lib/conkeror/xulrunner
 @man man/man1/conkeror.1
 share/doc/conkeror/
 share/doc/conkeror/COPYING

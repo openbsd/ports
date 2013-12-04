@@ -1,12 +1,12 @@
-$OpenBSD: patch-contrib_build_sh,v 1.1.1.1 2010/12/21 20:47:48 joshe Exp $
---- contrib/build.sh.orig	Wed Dec 15 19:19:52 2010
-+++ contrib/build.sh	Sun Dec 19 20:02:32 2010
+$OpenBSD: patch-contrib_build_sh,v 1.2 2013/12/04 04:40:39 joshe Exp $
+--- contrib/build.sh.orig	Thu Nov  7 20:29:47 2013
++++ contrib/build.sh	Mon Dec  2 22:39:12 2013
 @@ -7,7 +7,7 @@
  # Use, modification, and distribution are subject to the terms specified in the
  # COPYING file.
  
 -SDK_DIR="/usr/lib/xulrunner"
-+SDK_DIR="${LOCALBASE}/${XULRUNNER}"
++SDK_DIR="${LOCALBASE}/lib/xulrunner-$(${XULRUNNER} --gre-version)"
  
  XPIDL="${SDK_DIR}/xpidl"
  XPIDL_INCLUDE="${SDK_DIR}/idl"
@@ -19,12 +19,31 @@ $OpenBSD: patch-contrib_build_sh,v 1.1.1.1 2010/12/21 20:47:48 joshe Exp $
  SHORT_VERSION="$VERSION"
  
  case "$TARGET" in
-@@ -193,7 +193,7 @@ function do_target_xulapp () {
+@@ -179,7 +179,7 @@ function do_target_xulapp () {
+ 
+     get_scratch
+     mkdir -p "$SCRATCH/chrome"
+-    cp application.ini "$SCRATCH"
++    cp application.ini *.manifest "$SCRATCH"
+     if [ -n "$CONKEROR_APP_NAME" ]; then
+         sed -i -e "s/Name=conkeror/Name=${CONKEROR_APP_NAME}/" "${SCRATCH}/application.ini"
+     fi
+@@ -193,7 +193,8 @@ function do_target_xulapp () {
              "${XPIDL}" -w -v -m typelib -I "${XPIDL_INCLUDE}" -e "$SCRATCH/components/${name%.idl}.xpt" "$x"
          done
      fi
 -    BUILD_ID=$(git rev-parse HEAD 2> /dev/null)
++    ln -s "${SDK_DIR}" "${SCRATCH}/xulrunner"
 +    BUILD_ID="${CONKEROR_GITREV}"
      if [ "$?" != 0 ]; then
          BUILD_ID="git"
      fi
+@@ -203,7 +204,7 @@ function do_target_xulapp () {
+     perl -pi -e 's/BuildID=git/BuildID='${BUILD_ID}'/g' application.ini
+     ##
+     ## end preprocessing
+-    zip -r ../conkeror.xulapp * > /dev/null
++    zip -y -r ../conkeror.xulapp * > /dev/null
+     popd > /dev/null
+     do_cleanup
+     echo ok

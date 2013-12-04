@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:44:41 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2013/12/04 04:40:39 joshe Exp $
 
 COMMENT =		keyboard-oriented Mozilla-based browser
 
-DATE =			20101215
-GITREV =		d81cecae9ec9bde209e2cfa0cd4d98a97428d380
-DISTNAME =		conkeror-0.9.3.${DATE}
-REVISION=	0
+DATE =			20131108
+GITREV =		38b6279c2053854c2e8f24e70facb5328d9f170c
+DISTNAME =		conkeror-1.0pre.${DATE}
+DISTFILES =		conkeror-${DATE}-${GITREV}${EXTRACT_SUFX}
+WRKDIST =		${WRKDIR}/conkeror
 
 CATEGORIES =		www
 
@@ -20,19 +21,23 @@ WANTLIB =		c m pthread stdc++
 
 MASTER_SITES =		http://www.elsasser.org/openbsd/distfiles/
 
-BUILD_DEPENDS =		devel/xulrunner/1.9,-devel \
+BUILD_DEPENDS =		devel/xulrunner/24,-devel \
 			shells/bash \
 			archivers/zip
-RUN_DEPENDS =		devel/xulrunner/1.9
+RUN_DEPENDS =		devel/xulrunner/24
 
 MAKE_ENV =		CONKEROR_DATE=${DATE} \
 			CONKEROR_GITREV=${GITREV} \
-			XULRUNNER=xulrunner1.9
+			XULRUNNER=xulrunner
 
 NO_TEST =		Yes
 
+# Used to fetch a new snapshot when updating the port. Note that this
+# tarball does not have a constant checksum, and so must be mirrored.
+snapshot-fetch:
+	ftp -o ${DISTFILES} 'http://repo.or.cz/w/conkeror.git?a=snapshot;h=${GITREV};sf=tgz'
+
 pre-configure:
-	@${SUBST_CMD} ${WRKSRC}/contrib/man/conkeror.1
 	@${SUBST_CMD} -c ${FILESDIR}/conkeror ${WRKSRC}/conkeror-wrapper.sh
 
 do-build:
