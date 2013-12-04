@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2013/10/22 15:29:14 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.17 2013/12/04 20:20:52 abieber Exp $
 @pkgpath www/node
 @bin bin/node
 bin/node-gyp
@@ -17,15 +17,13 @@ lib/node_modules/abbrev/package.json
 lib/node_modules/ansi/
 lib/node_modules/ansi/.npmignore
 lib/node_modules/ansi/README.md
+lib/node_modules/ansi/color-spaces.pl
 lib/node_modules/ansi/examples/
 lib/node_modules/ansi/examples/beep/
 lib/node_modules/ansi/examples/beep/index.js
 lib/node_modules/ansi/examples/clear/
 lib/node_modules/ansi/examples/clear/index.js
 lib/node_modules/ansi/examples/cursorPosition.js
-lib/node_modules/ansi/examples/imgcat/
-lib/node_modules/ansi/examples/imgcat/index.js
-lib/node_modules/ansi/examples/imgcat/yoshi.png
 lib/node_modules/ansi/examples/progress/
 lib/node_modules/ansi/examples/progress/index.js
 lib/node_modules/ansi/examples/starwars.js
@@ -63,11 +61,13 @@ lib/node_modules/chownr/chownr.js
 lib/node_modules/chownr/package.json
 lib/node_modules/cmd-shim/
 lib/node_modules/cmd-shim/.npmignore
+lib/node_modules/cmd-shim/.travis.yml
 lib/node_modules/cmd-shim/LICENSE
 lib/node_modules/cmd-shim/README.md
 lib/node_modules/cmd-shim/index.js
 lib/node_modules/cmd-shim/package.json
 lib/node_modules/editor/
+lib/node_modules/editor/LICENSE
 lib/node_modules/editor/README.markdown
 lib/node_modules/editor/example/
 lib/node_modules/editor/example/beep.json
@@ -131,6 +131,13 @@ lib/node_modules/github-url-from-git/Readme.md
 lib/node_modules/github-url-from-git/index.js
 lib/node_modules/github-url-from-git/package.json
 lib/node_modules/github-url-from-git/test.js
+lib/node_modules/github-url-from-username-repo/
+lib/node_modules/github-url-from-username-repo/.npmignore
+lib/node_modules/github-url-from-username-repo/.travis.yml
+lib/node_modules/github-url-from-username-repo/LICENSE
+lib/node_modules/github-url-from-username-repo/README.md
+lib/node_modules/github-url-from-username-repo/index.js
+lib/node_modules/github-url-from-username-repo/package.json
 lib/node_modules/glob/
 lib/node_modules/glob/.npmignore
 lib/node_modules/glob/.travis.yml
@@ -671,6 +678,7 @@ lib/node_modules/npm/lib/view.js
 lib/node_modules/npm/lib/visnup.js
 lib/node_modules/npm/lib/whoami.js
 lib/node_modules/npm/lib/xmas.js
+lib/node_modules/npm/make.bat
 @mandir lib/node_modules/npm/man/
 lib/node_modules/npm/man/man1/
 @man lib/node_modules/npm/man/man1/npm-README.1
@@ -791,6 +799,7 @@ lib/node_modules/npm/node_modules/editor
 lib/node_modules/npm/node_modules/fstream
 lib/node_modules/npm/node_modules/fstream-npm
 lib/node_modules/npm/node_modules/github-url-from-git
+lib/node_modules/npm/node_modules/github-url-from-username-repo
 lib/node_modules/npm/node_modules/glob
 lib/node_modules/npm/node_modules/graceful-fs
 lib/node_modules/npm/node_modules/inherits
@@ -887,6 +896,7 @@ lib/node_modules/read-package-json/node_modules/normalize-package-data/AUTHORS
 lib/node_modules/read-package-json/node_modules/normalize-package-data/LICENSE
 lib/node_modules/read-package-json/node_modules/normalize-package-data/README.md
 lib/node_modules/read-package-json/node_modules/normalize-package-data/lib/
+lib/node_modules/read-package-json/node_modules/normalize-package-data/lib/core_module_names.json
 lib/node_modules/read-package-json/node_modules/normalize-package-data/lib/extract_description.js
 lib/node_modules/read-package-json/node_modules/normalize-package-data/lib/fixer.js
 lib/node_modules/read-package-json/node_modules/normalize-package-data/lib/normalize.js
