@@ -1,0 +1,12 @@
+$OpenBSD: patch-support_stdio_c,v 1.1 2013/12/04 21:31:13 naddy Exp $
+--- support/stdio.c.orig	Tue Nov 15 18:22:44 2011
++++ support/stdio.c	Wed Dec  4 21:39:35 2013
+@@ -26,7 +26,7 @@ Mono_Posix_Syscall_L_ctermid (void)
+ gint32
+ Mono_Posix_Syscall_L_cuserid (void)
+ {
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__OpenBSD__)
+ 	return -1;
+ #else
+ 	return L_cuserid;
