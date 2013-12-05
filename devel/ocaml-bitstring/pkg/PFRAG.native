@@ -1,0 +1,10 @@
+@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2013/12/05 14:38:18 jca Exp $
+lib/ocaml/bitstring/bitmatch.cmx
+lib/ocaml/bitstring/bitstring.a
+lib/ocaml/bitstring/bitstring.cmx
+lib/ocaml/bitstring/bitstring.cmxa
+lib/ocaml/bitstring/bitstring_config.cmx
+lib/ocaml/bitstring/bitstring_persistent.a
+lib/ocaml/bitstring/bitstring_persistent.cmx
+lib/ocaml/bitstring/bitstring_persistent.cmxa
+lib/ocaml/bitstring/bitstring_types.cmx

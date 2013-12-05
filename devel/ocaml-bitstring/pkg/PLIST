@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/05 14:38:18 jca Exp $
+%%native%%
+%%SHARED%%
+lib/ocaml/bitstring/
+lib/ocaml/bitstring/META
+lib/ocaml/bitstring/bitstring.cma
+lib/ocaml/bitstring/bitstring.cmi
+lib/ocaml/bitstring/bitstring.mli
+lib/ocaml/bitstring/bitstring_persistent.cma
+lib/ocaml/bitstring/bitstring_persistent.cmi
+lib/ocaml/bitstring/bitstring_persistent.mli
+lib/ocaml/bitstring/libbitstring.a
+lib/ocaml/bitstring/pa_bitstring.cmo

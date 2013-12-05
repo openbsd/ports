@@ -1,0 +1,112 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2013/12/05 14:38:18 jca Exp $
+
+- first hunk: Allow this to compile as per:
+  https://code.google.com/p/bitstring/issues/detail?id=20
+- second hunk: don't attempt to build the cil tools
+  https://groups.google.com/d/msg/bitstring/EIw9u0E_OQ0/rs7cwnvzgmsJ
+- other hunks: compile (and test) native output when NATIVE == "native"
+
+--- Makefile.in.orig	Tue May 14 17:42:32 2013
++++ Makefile.in	Thu Dec  5 00:58:55 2013
+@@ -32,6 +32,7 @@ BISECT_REPORT	= @BISECT_REPORT@
+ BYTESWAP_H	= @BYTESWAP_H@
+ 
+ OCAMLLIB	= @OCAMLLIB@
++srcdir		= @srcdir@
+ top_srcdir	= @top_srcdir@
+ 
+ pkg_cil		= @OCAML_PKG_cil@
+@@ -66,7 +67,7 @@ export LD_LIBRARY_PATH
+ SUBDIRS		=
+ ifneq ($(pkg_cil),no)
+ ifneq ($(pkg_extlib),no)
+-SUBDIRS		+= cil-tools
++#SUBDIRS		+= cil-tools
+ endif
+ endif
+ 
+@@ -76,13 +77,18 @@ TESTS		= $(patsubst %.ml,%,$(wildcard tests/*.ml))
+ 
+ BENCHMARKS	= $(patsubst %.ml,%,$(wildcard benchmarks/*.ml))
+ 
++NATIVE ?= native
++
+ all:	$(BYTESWAP_H) \
+ 	bitstring.cma bitstring_persistent.cma \
+-	bitstring.cmxa bitstring_persistent.cmxa \
+ 	pa_bitstring.cmo \
++	$(NATIVE) \
+ 	bitstring-objinfo
+ 	@for d in $(SUBDIRS); do $(MAKE) -C $$d $@; done
+ 
++native: $(BYTESWAP_H) \
++	bitstring.cmxa bitstring_persistent.cmxa
++
+ bitstring.cma: bitstring_types.cmo bitstring_config.cmo \
+ 	  bitstring_c.o bitstring.cmo bitmatch.cmo
+ 	$(OCAMLMKLIB) -o bitstring $^
+@@ -136,22 +142,34 @@ else
+ PP	= -pp 'camlp4o $(OCAMLLIB)/bisect/bisect.cma bitstring.cma bitstring_persistent.cma pa_bitstring.cmo'
+ endif
+ 
+-check: test
++check: test test-native
+ 
+-test: pa_bitstring.cmo \
+-	bitstring.cma bitstring_persistent.cma \
+-	bitstring.cmxa bitstring_persistent.cmxa \
++test: all \
+ 	tests/test.bmpp
+ 	@for f in $(TESTS); do \
+-	  echo Building $$f; \
++	  echo "Building $$f (bytecode)"; \
++	  $(OCAMLFIND) ocamlc $(OCAMLCFLAGS) $(PP) -package unix $(OCAMLCLIBS) -I . bitstring.cma $$f.ml -o $$f.byte; \
++	  if [ $$? -ne 0 ]; then exit 1; fi; \
++	  echo "Running $$f (bytecode)"; \
++	  $$f.byte; \
++	  if [ $$? -ne 0 ]; then exit 1; fi; \
++	done
++	@for d in $(SUBDIRS); do $(MAKE) -C $$d $@; done
++
++test-native: all \
++	tests/test.bmpp
++ifeq ($(NATIVE), native)
++	@for f in $(TESTS); do \
++	  echo "Building $$f (native)"; \
+ 	  $(OCAMLFIND) ocamlopt $(OCAMLOPTFLAGS) $(PP) -package unix $(OCAMLOPTLIBS) -I . bitstring.cmxa $$f.ml -o $$f.opt; \
+ 	  if [ $$? -ne 0 ]; then exit 1; fi; \
+-	  echo Running $$f; \
++	  echo "Running $$f (native)"; \
+ 	  $$f.opt; \
+ 	  if [ $$? -ne 0 ]; then exit 1; fi; \
+ 	done
+-	@for d in $(SUBDIRS); do $(MAKE) -C $$d $@; done
++endif
+ 
++
+ tests/test.bmpp: create_test_pattern
+ 	./$< $@.new
+ 	mv $@.new $@
+@@ -271,10 +289,11 @@ endif
+ # Install.
+ 
+ install:
+-	ocamlfind install bitstring META *.mli *.cmx *.cma *.cmxa *.a *.so \
++	ocamlfind install bitstring META *.mli *.cma *.a *.so \
+ 		bitstring.cmi \
+ 		bitstring_persistent.cmi \
+-		pa_bitstring.cmo
++		pa_bitstring.cmo \
++		-optional *.cmx *.cmxa
+ 	@for d in $(SUBDIRS); do $(MAKE) -C $$d $@; done
+ 
+ uninstall: 
+@@ -337,6 +356,7 @@ check-manifest:
+ 	exit $$rv
+ 
+ .PHONY: depend dist check-manifest dpkg doc \
+-	print-examples print-tests examples test benchmarks
++	print-examples print-tests examples test benchmarks native \
++	test-native
+ 
+ .SUFFIXES:      .cmo .cmi .cmx .ml .mli .mll
