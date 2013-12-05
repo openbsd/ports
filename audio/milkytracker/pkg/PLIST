@@ -1,5 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/05/11 07:09:03 jakemsr Exp $
-bin/milkytracker
+@comment $OpenBSD: PLIST,v 1.2 2013/12/05 23:44:01 edd Exp $
+@bin bin/milkytracker
+share/applications/milkytracker.desktop
 share/doc/milkytracker/
 share/doc/milkytracker/FAQ.html
 share/doc/milkytracker/MilkyTracker.html
+share/examples/milkytracker/
+share/examples/milkytracker/milky.xm
+share/examples/milkytracker/slumberjack.xm
+share/examples/milkytracker/sv_ttt.xm
+share/examples/milkytracker/theday.xm
+share/examples/milkytracker/universalnetwork2_real.xm
+share/icons/hicolor/128x128/apps/milkytracker.png
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
