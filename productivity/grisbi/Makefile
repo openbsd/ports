@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2013/10/11 23:50:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2013/12/05 21:41:08 landry Exp $
 
 COMMENT=	personal accounting application
 SHARED_ONLY =	Yes
 
 DISTNAME=	grisbi-0.8.9
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	productivity x11
 
