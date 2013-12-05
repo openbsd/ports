@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2013/10/18 17:10:06 bcallah Exp $
+# $OpenBSD: Makefile,v 1.5 2013/12/05 17:37:54 bcallah Exp $
 
-V =		1.1.0
+V =		1.1.1
 COMMENT =	open-source Zelda-like 2D game engine
 DISTNAME =	solarus-${V}-src
 PKGNAME =	solarus-${V}

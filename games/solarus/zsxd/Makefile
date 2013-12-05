@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2013/10/18 17:12:29 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2013/12/05 17:37:54 bcallah Exp $
 
-V =		1.7.0
+V =		1.7.1
 COMMENT =	fan made parody Zelda game for Solarus engine
 DISTNAME =	zsxd-${V}
 
