@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.188 2013/10/06 22:00:48 brad Exp $
+# $OpenBSD: Makefile,v 1.189 2013/12/05 13:08:50 nigel Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ DISTNAME=		samba-3.6.15
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 FULLPKGPATH-docs=	net/samba,-docs
-REVISION-main=		2
+REVISION-main=		3
 
 SHARED_LIBS=		smbclient	3.0 \
 			smbsharemodes	1.0 \
@@ -33,8 +33,7 @@ MASTER_SITES=	http://ftp.samba.org/pub/samba/stable/ \
 
 MODULES=	converters/libiconv
 
-BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
-		sysutils/e2fsprogs
+BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS}
 LIB_DEPENDS=	databases/tdb>=1.2.7 \
 		devel/iniparser \
 		devel/libexecinfo \
@@ -110,9 +109,10 @@ CONFIGURE_ARGS+=	--with-krb5="${WRKDIR}/usr"
 #CONFIGURE_ARGS+=	--enable-merged-build
 #MODULES+=		lang/python
 #MODPY_RUNDEP=		No
+LIB_DEPENDS += 		sysutils/e2fsprogs
 
 WANTLIB += asn1 crypto gssapi heimbase krb5 roken
-WANTLIB += wind com_err
+WANTLIB += wind com_err uuid
 .else
 CONFIGURE_ARGS+=	--without-ads
 .endif
