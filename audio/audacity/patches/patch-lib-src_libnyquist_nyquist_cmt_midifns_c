@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib-src_libnyquist_nyquist_cmt_midifns_c,v 1.1 2013/12/05 21:58:50 naddy Exp $
+--- lib-src/libnyquist/nyquist/cmt/midifns.c.orig	Mon Aug 31 12:45:45 2009
++++ lib-src/libnyquist/nyquist/cmt/midifns.c	Thu Dec  5 22:41:35 2013
+@@ -117,7 +117,6 @@
+ #ifdef UNIX
+ #ifndef UNIX_IRIX
+ #include "sys/time.h"
+-#include "sys/timeb.h"
+ #include "cmtio.h"
+ #else
+ #include <sys/types.h>
