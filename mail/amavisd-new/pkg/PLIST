@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2012/03/14 09:17:09 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.16 2013/12/05 10:21:49 sthen Exp $
 @newgroup _vscan:530
 @newuser _vscan:530:_vscan:daemon:Amavisd-new Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -fr /var/amavisd/*
@@ -50,6 +50,7 @@ share/doc/amavisd-new/README.sql-mysql
 share/doc/amavisd-new/README.sql-pg
 share/doc/amavisd-new/RELEASE_NOTES
 share/examples/amavisd-new/
+share/examples/amavisd-new/amavisd-custom.conf
 share/examples/amavisd-new/amavisd.conf
 @sample ${SYSCONFDIR}/amavisd.conf
 share/examples/amavisd-new/amavisd.conf-default

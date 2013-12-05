@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2013/07/02 09:35:57 giovanni Exp $
+# $OpenBSD: Makefile,v 1.33 2013/12/05 10:21:49 sthen Exp $
 
 COMMENT=		interface between mailer MTA and content checkers
 
 DISTNAME=		amavisd-new-2.8.1
+REVISION=		0
 CATEGORIES=		mail security
 
 HOMEPAGE=		http://www.amavis.org/
@@ -52,39 +53,19 @@ pre-configure:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/amavisd ${PREFIX}/sbin/amavisd
-	${INSTALL_SCRIPT} ${WRKSRC}/amavisd-agent \
-			${PREFIX}/bin/amavisd-agent
-	${INSTALL_SCRIPT} ${WRKSRC}/amavisd-nanny \
-			${PREFIX}/bin/amavisd-nanny
-	${INSTALL_SCRIPT} ${WRKSRC}/amavisd-release \
-			${PREFIX}/bin/amavisd-release
-	${INSTALL_SCRIPT} ${WRKSRC}/amavisd-signer \
-			${PREFIX}/bin/amavisd-signer
-	${INSTALL_SCRIPT} ${WRKSRC}/amavisd-snmp-subagent \
-			${PREFIX}/bin/amavisd-snmp-subagent
-	${INSTALL_SCRIPT} ${WRKSRC}/amavisd-submit \
-			${PREFIX}/bin/amavisd-submit
-	${INSTALL_SCRIPT} ${WRKSRC}/p0f-analyzer.pl \
-			${PREFIX}/bin/p0f-analyzer.pl
+	cd ${WRKSRC}; ${INSTALL_SCRIPT} amavisd-agent amavisd-nanny \
+		amavisd-release amavisd-signer amavisd-snmp-subagent \
+		amavisd-submit p0f-analyzer.pl ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/JpegTester.pm \
 			${PREFIX}/libdata/perl5/site_perl/JpegTester.pm
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/amavisd-new
-	${INSTALL_DATA} ${WRKSRC}/AAAREADME.first \
-			${PREFIX}/share/doc/amavisd-new
+	cd ${WRKSRC}; ${INSTALL_DATA} AAAREADME.first INSTALL LDAP.schema \
+		LDAP.ldif LICENSE MANIFEST README_FILES/README.* RELEASE_NOTES \
+		${PREFIX}/share/doc/amavisd-new/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/snmp/mibs
 	${INSTALL_DATA} ${WRKSRC}/AMAVIS-MIB.txt ${PREFIX}/share/snmp/mibs
-	${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/share/doc/amavisd-new
-	${INSTALL_DATA} ${WRKSRC}/LDAP.schema ${PREFIX}/share/doc/amavisd-new
-	${INSTALL_DATA} ${WRKSRC}/LDAP.ldif ${PREFIX}/share/doc/amavisd-new
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/amavisd-new
-	${INSTALL_DATA} ${WRKSRC}/MANIFEST ${PREFIX}/share/doc/amavisd-new
-	${INSTALL_DATA} ${WRKSRC}/README_FILES/README.* \
-			${PREFIX}/share/doc/amavisd-new
-	${INSTALL_DATA} ${WRKSRC}/RELEASE_NOTES ${PREFIX}/share/doc/amavisd-new
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/amavisd-new
-	${INSTALL_DATA} ${WRKSRC}/amavisd.conf \
-			${PREFIX}/share/examples/amavisd-new/amavisd.conf
-	${INSTALL_DATA} ${WRKSRC}/amavisd.conf-default \
-			${PREFIX}/share/examples/amavisd-new/amavisd.conf-default
+	cd ${WRKSRC}; ${INSTALL_DATA} amavisd*.conf amavisd.conf-default \
+		${PREFIX}/share/examples/amavisd-new/
 
 .include <bsd.port.mk>
