@@ -1,7 +1,15 @@
-$OpenBSD: patch-src_libnet_link_bpf_c,v 1.1 2008/11/08 22:17:41 sthen Exp $
---- src/libnet_link_bpf.c.orig	Sat Nov  8 21:55:03 2008
-+++ src/libnet_link_bpf.c	Sat Nov  8 21:56:56 2008
-@@ -43,6 +43,7 @@
+$OpenBSD: patch-src_libnet_link_bpf_c,v 1.2 2013/12/05 18:34:48 naddy Exp $
+--- src/libnet_link_bpf.c.orig	Wed Jan 28 20:45:00 2004
++++ src/libnet_link_bpf.c	Thu Dec  5 19:25:50 2013
+@@ -28,7 +28,6 @@
+  */
+ 
+ #include <sys/param.h>  /* optionally get BSD define */
+-#include <sys/timeb.h>
+ #include <sys/file.h>
+ #include <sys/ioctl.h>
+ 
+@@ -43,6 +42,7 @@
  #include <sys/sysctl.h>
  #include <net/route.h>
  #include <net/if_dl.h>
@@ -9,7 +17,7 @@ $OpenBSD: patch-src_libnet_link_bpf_c,v 1.1 2008/11/08 22:17:41 sthen Exp $
  #include "../include/gnuc.h"
  #include "../include/bpf.h"
  
-@@ -308,9 +309,13 @@ libnet_get_hwaddr(libnet_t *l)
+@@ -308,9 +308,13 @@ libnet_get_hwaddr(libnet_t *l)
      for (next = buf ; next < end ; next += ifm->ifm_msglen)
      {
          ifm = (struct if_msghdr *)next;
