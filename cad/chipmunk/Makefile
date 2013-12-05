@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2013/04/03 15:35:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2013/12/05 12:19:00 naddy Exp $
 
 COMMENT=	electronic CAD system
 BROKEN-sparc64 =	Assembler messages: Error: Illegal operands
 
 PKGNAME=	chipmunk-1.57
-REVISION=	4
+REVISION=	5
 DISTNAME=	psys-1.57
 DISTFILES=	psys-1.57.tar.gz webdoc1.46.tar.gz log-5.61.tar.gz \
 		view-1.13.tar.gz until-1.13.tar.gz wol-1.13.tar.gz \
