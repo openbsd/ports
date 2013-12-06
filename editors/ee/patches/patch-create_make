@@ -1,6 +1,6 @@
-$OpenBSD: patch-create_make,v 1.2 2006/01/15 01:01:29 brad Exp $
+$OpenBSD: patch-create_make,v 1.3 2013/12/06 15:46:31 bcallah Exp $
 --- create.make.orig	Mon Sep 23 00:18:30 2002
-+++ create.make	Sat Jan 14 19:47:28 2006
++++ create.make	Fri Dec  6 10:02:58 2013
 @@ -11,6 +11,11 @@
  
  name_string="`uname`"
@@ -27,7 +27,7 @@ $OpenBSD: patch-create_make,v 1.2 2006/01/15 01:01:29 brad Exp $
  
  curses :	ee.c
 -	cc ee.c -o ee \$(CFLAGS) -lcurses 
-+	\$(CC) ee.c -o ee \$(CFLAGS) -lcurses 
++	\$(CC) ee.c -o ee \$(DEFINES) \$(CFLAGS) -lcurses 
  
  ee :	ee.o new_curse.o
 -	cc -o ee ee.o new_curse.o \$(CFLAGS) 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2013/05/17 13:13:51 bcallah Exp $
+# $OpenBSD: Makefile,v 1.14 2013/12/06 15:46:31 bcallah Exp $
 
 COMMENT=		easy to use text editor
 
 VERSION=		1.5.2
 DISTNAME=		ee-${VERSION}.src
 PKGNAME=		ee-${VERSION}
+REVISION=		0
 EPOCH=			0
 CATEGORIES=		editors
 
@@ -14,7 +15,7 @@ MAINTAINER=		Brian Callahan <bcallah@openbsd.org>
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c
+WANTLIB=		c curses
 
 MASTER_SITES=		http://devio.us/~bcallah/source/
 EXTRACT_SUFX=		.tgz
