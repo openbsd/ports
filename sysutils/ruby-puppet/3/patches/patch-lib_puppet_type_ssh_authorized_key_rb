@@ -1,6 +1,7 @@
-$OpenBSD: patch-lib_puppet_type_ssh_authorized_key_rb,v 1.1 2013/12/06 21:07:03 jasper Exp $
+$OpenBSD: patch-lib_puppet_type_ssh_authorized_key_rb,v 1.2 2013/12/06 21:33:28 jasper Exp $
 
-Recognize ssh-ed25519 as a valid SSH key type.
+(#23376) Add support for ssh-ed25519 keys to ssh_authorized_key type
+https://github.com/puppetlabs/puppet/pull/2132
 
 --- lib/puppet/type/ssh_authorized_key.rb.orig	Fri Dec  6 22:00:34 2013
 +++ lib/puppet/type/ssh_authorized_key.rb	Fri Dec  6 22:01:35 2013
