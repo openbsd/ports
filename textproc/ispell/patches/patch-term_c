@@ -1,0 +1,155 @@
+$OpenBSD: patch-term_c,v 1.1 2013/12/06 15:37:42 naddy Exp $
+--- term.c.orig	Wed Jul 25 23:51:46 2001
++++ term.c	Thu Dec  5 21:13:57 2013
+@@ -80,7 +80,9 @@ static char Rcs_Id[] =
+ #include "ispell.h"
+ #include "proto.h"
+ #include "msgs.h"
+-#ifdef USG
++#if defined(TERMIOS)
++#include <termios.h>
++#elif defined(USG)
+ #include <termio.h>
+ #else
+ #include <sgtty.h>
+@@ -151,7 +153,10 @@ static int putch (c)
+     return putchar (c);
+     }
+ 
+-#ifdef USG
++#if defined(TERMIOS)
++static struct termios	sbuf;
++static struct termios	osbuf;
++#elif defined(USG)
+ static struct termio	sbuf;
+ static struct termio	osbuf;
+ #else
+@@ -257,12 +262,32 @@ retry:
+ #endif /* SIGTSTP */
+ #endif /* TIOCPGRP */
+ 
+-#ifdef USG
++#if defined(TERMIOS)
+     if (!isatty (0))
+ 	{
+ 	(void) fprintf (stderr, TERM_C_NO_BATCH);
+ 	exit (1);
+ 	}
++    (void) tcgetattr (0, &osbuf);
++    termchanged = 1;
++
++    sbuf = osbuf;
++    sbuf.c_lflag &= ~(ECHO | ECHOK | ECHONL | ICANON);
++    sbuf.c_oflag &= ~(OPOST);
++    sbuf.c_iflag &= ~(INLCR | IGNCR | ICRNL);
++    sbuf.c_cc[VMIN] = 1;
++    sbuf.c_cc[VTIME] = 1;
++    (void) tcsetattr (0, TCSADRAIN, &sbuf);
++
++    uerasechar = osbuf.c_cc[VERASE];
++    ukillchar = osbuf.c_cc[VKILL];
++
++#elif defined(USG)
++    if (!isatty (0))
++	{
++	(void) fprintf (stderr, TERM_C_NO_BATCH);
++	exit (1);
++	}
+     (void) ioctl (0, TCGETA, (char *) &osbuf);
+     termchanged = 1;
+ 
+@@ -306,7 +331,7 @@ retry:
+ #endif
+ #endif
+ 
+-#ifndef USG
++#if !defined(TERMIOS) && !defined(USG)
+     (void) ioctl (0, TIOCGETP, (char *) &osbuf);
+ #ifdef TIOCGLTC
+     (void) ioctl (0, TIOCGLTC, (char *) &oltc);
+@@ -327,7 +352,7 @@ retry:
+     (void) ioctl (0, TIOCSLTC, (char *) &ltc);
+ #endif
+ 
+-#endif /* USG */
++#endif /* TERMIOS && USG */
+ 
+     if ((oldint = signal (SIGINT, SIG_IGN)) != SIG_IGN)
+ 	(void) signal (SIGINT, done);
+@@ -359,7 +384,9 @@ SIGNAL_TYPE done (signo)
+ 	{
+ 	if (te)
+ 	    tputs (te, 1, putch);
+-#ifdef USG
++#if defined(TERMIOS)
++	(void) tcsetattr (0, TCSADRAIN, &osbuf);
++#elif defined(USG)
+ 	(void) ioctl (0, TCSETAW, (char *) &osbuf);
+ #else
+ 	(void) ioctl (0, TIOCSETP, (char *) &osbuf);
+@@ -375,7 +402,9 @@ SIGNAL_TYPE done (signo)
+ static SIGNAL_TYPE onstop (signo)
+     int		signo;
+     {
+-#ifdef USG
++#if defined(TERMIOS)
++    (void) tcsetattr (0, TCSADRAIN, &osbuf);
++#elif defined(USG)
+     (void) ioctl (0, TCSETAW, (char *) &osbuf);
+ #else
+     (void) ioctl (0, TIOCSETP, (char *) &osbuf);
+@@ -390,7 +419,9 @@ static SIGNAL_TYPE onstop (signo)
+     (void) kill (0, signo);
+     /* stop here until continued */
+     (void) signal (signo, onstop);
+-#ifdef USG
++#if defined(TERMIOS)
++    (void) tcsetattr (0, TCSADRAIN, &sbuf);
++#elif defined(USG)
+     (void) ioctl (0, TCSETAW, (char *) &sbuf);
+ #else
+     (void) ioctl (0, TIOCSETP, (char *) &sbuf);
+@@ -450,7 +481,9 @@ int shellescape	(buf)
+ 	}
+     argv[i] = NULL;
+ 
+-#ifdef USG
++#if defined(TERMIOS)
++    (void) tcsetattr (0, TCSADRAIN, &osbuf);
++#elif defined(USG)
+     (void) ioctl (0, TCSETAW, (char *) &osbuf);
+ #else
+     (void) ioctl (0, TIOCSETP, (char *) &osbuf);
+@@ -496,7 +529,9 @@ int shellescape	(buf)
+ 	(void) signal (SIGTSTP, onstop);
+ #endif
+ 
+-#ifdef USG
++#if defined(TERMIOS)
++    (void) tcsetattr (0, TCSADRAIN, &sbuf);
++#elif defined(USG)
+     (void) ioctl (0, TCSETAW, (char *) &sbuf);
+ #else
+     (void) ioctl (0, TIOCSETP, (char *) &sbuf);
+@@ -529,7 +564,9 @@ void shescape (buf)
+     int		ch;
+ #endif
+ 
+-#ifdef USG
++#if defined(TERMIOS)
++    (void) tcsetattr (0, TCSADRAIN, &osbuf);
++#elif defined(USG)
+     (void) ioctl (0, TCSETAW, (char *) &osbuf);
+ #else
+     (void) ioctl (0, TIOCSETP, (char *) &osbuf);
+@@ -561,7 +598,9 @@ void shescape (buf)
+ 	(void) signal (SIGTSTP, onstop);
+ #endif
+ 
+-#ifdef USG
++#if defined(TERMIOS)
++    (void) tcsetattr (0, TCSADRAIN, &sbuf);
++#elif defined(USG)
+     (void) ioctl (0, TCSETAW, (char *) &sbuf);
+ #else
+     (void) ioctl (0, TIOCSETP, (char *) &sbuf);

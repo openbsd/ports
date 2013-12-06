@@ -1,0 +1,14 @@
+$OpenBSD: patch-config_X,v 1.1 2013/12/06 15:37:42 naddy Exp $
+--- config.X.orig	Wed Jul 25 23:51:45 2001
++++ config.X	Thu Dec  5 21:27:28 2013
+@@ -172,6 +172,10 @@
+ #include <sys/dir.h>
+ #endif /* USG */
+ 
++#ifndef TERMIOS
++#define TERMIOS 1	/* POSIX termios.h */
++#endif /* TERMIOS */
++
+ /*
+ ** Things that normally go in a Makefile.  Define these just like you
+ ** might in the Makefile, except you should use #define instead of
