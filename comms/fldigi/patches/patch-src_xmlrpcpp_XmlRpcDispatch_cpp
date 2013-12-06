@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_xmlrpcpp_XmlRpcDispatch_cpp,v 1.1 2013/12/06 12:51:02 jca Exp $
+--- src/xmlrpcpp/XmlRpcDispatch.cpp.orig	Fri Dec  6 13:49:34 2013
++++ src/xmlrpcpp/XmlRpcDispatch.cpp	Fri Dec  6 13:34:44 2013
+@@ -11,7 +11,7 @@
+ #include <errno.h>
+ #include <math.h>
+ 
+-#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #	ifdef USE_FTIME
+ #		include <sys/timeb.h>
+ #	endif
