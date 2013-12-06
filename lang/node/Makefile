@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/12/04 20:20:52 abieber Exp $
+# $OpenBSD: Makefile,v 1.26 2013/12/06 15:14:16 abieber Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -32,7 +32,8 @@ LIB_DEPENDS=	devel/libexecinfo
 
 USE_GMAKE=	Yes
 
-BUILD_DEPENDS=	sysutils/flock
+BUILD_DEPENDS=	devel/gyp \
+		sysutils/flock
 
 # node-gyp uses it at runtime
 RUN_DEPENDS=	devel/gmake \
