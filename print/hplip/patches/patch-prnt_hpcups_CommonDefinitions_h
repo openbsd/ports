@@ -1,0 +1,14 @@
+$OpenBSD: patch-prnt_hpcups_CommonDefinitions_h,v 1.1 2013/12/06 07:27:44 ajacoutot Exp $
+
+Remove prehistorical header which is not even used.
+
+--- prnt/hpcups/CommonDefinitions.h.orig	Fri Dec  6 08:17:25 2013
++++ prnt/hpcups/CommonDefinitions.h	Fri Dec  6 08:17:30 2013
+@@ -48,7 +48,6 @@
+ #include <syslog.h>
+ #include <assert.h>
+ #include <time.h>
+-#include <sys/timeb.h>
+ #include <string.h>
+ 
+ #ifndef _GNU_SOURCE
