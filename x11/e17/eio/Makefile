@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2013/05/09 17:03:55 rpe Exp $
+# $OpenBSD: Makefile,v 1.11 2013/12/06 13:16:45 dlg Exp $
 
 COMMENT =		async i/o library
 
-DISTNAME =		eio-1.7.6
+DISTNAME =		eio-1.7.9
 
 SHARED_LIBS +=	eio                  1.0      # 8.6
 
@@ -14,7 +14,7 @@ WANTLIB += ssl z
 
 MODULES =		devel/gettext
 
-LIB_DEPENDS =		x11/e17/ecore>=1.7.6v2
+LIB_DEPENDS =		x11/e17/ecore>=1.7.9v2
 
 CONFIGURE_ARGS =	--disable-doc
 

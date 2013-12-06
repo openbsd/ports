@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/02/03 12:09:27 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/12/06 13:16:45 dlg Exp $
+@bin bin/evas_cserve
+@bin bin/evas_cserve_tool
 include/evas-1/
 include/evas-1/Evas.h
 include/evas-1/Evas_Engine_Buffer.h

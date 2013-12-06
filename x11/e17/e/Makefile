@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.52 2013/07/07 21:25:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.53 2013/12/06 13:16:45 dlg Exp $
 
 COMMENT =		the enlightened window manager
 
-VERSION = 		0.17.2.1
+VERSION = 		0.17.5
 DISTNAME =		enlightenment-${VERSION}
-REVISION =		1
 
 EPOCH =			1
 
@@ -17,8 +16,8 @@ WANTLIB += curl dbus-1 ecore ecore_con ecore_evas ecore_file ecore_imf
 WANTLIB += ecore_imf_evas ecore_input ecore_input_evas ecore_ipc
 WANTLIB += ecore_x edbus edje eet efreet efreet_mime efreet_trash
 WANTLIB += ehal eina eio elementary embryo emotion enotify ethumb
-WANTLIB += ethumb_client eukit evas execinfo exif expat ffi fontconfig
-WANTLIB += freetype graphite2 fribidi glib-2.0 gobject-2.0 harfbuzz
+WANTLIB += ethumb_client eukit evas execinfo exif expat fontconfig
+WANTLIB += freetype graphite2 fribidi glib-2.0 harfbuzz
 WANTLIB += idn jpeg m pcre pthread pthread-stubs
 WANTLIB += ssl xcb xcb-keysyms xcb-shape z ${MODLUA_WANTLIB}
 
@@ -29,7 +28,7 @@ MODULES +=		devel/gettext \
 MODE17_DESKTOP_FILE =	Yes
 MODE17_PURGE_LA =	lib/enlightenment/modules
 
-LIB_DEPENDS =		x11/e17/elementary>=1.7.6 \
+LIB_DEPENDS =		x11/e17/elementary>=1.7.9 \
 			devel/libexecinfo
 
 CONFIGURE_ARGS +=	--disable-doc \

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2013/09/24 19:02:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2013/12/06 13:16:45 dlg Exp $
 
 COMMENT =		video (and audio) codec playback library
 
-DISTNAME =		emotion-1.7.6
-REVISION =		4
+DISTNAME =		emotion-1.7.9
 
 SHARED_LIBS +=	emotion                   1.0 # 8.6
 
@@ -28,9 +27,9 @@ MODE17_PURGE_LA =	lib/edje/modules/emotion
 
 LIB_DEPENDS =		devel/orc \
 			multimedia/gstreamer-0.10/plugins-base \
-			x11/e17/ecore>=1.7.6v2 \
-			x11/e17/edje>=1.7.6v2 \
-			x11/e17/embryo>=1.7.6v2
+			x11/e17/ecore>=1.7.9v2 \
+			x11/e17/edje>=1.7.9v2 \
+			x11/e17/embryo>=1.7.9v2
 
 CONFIGURE_ARGS +=	--disable-doc \
 			--disable-xine \

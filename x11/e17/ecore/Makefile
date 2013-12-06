@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2013/05/31 15:34:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2013/12/06 13:16:45 dlg Exp $
 
 COMMENT =		core event/X abstraction layer
 
-DISTNAME =		ecore-1.7.6
+DISTNAME =		ecore-1.7.9
 EPOCH =			2
-REVISION =		0
 
 SO_VERSION =		3.1		# 8.6
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -32,7 +31,7 @@ LIB_DEPENDS =		devel/glib2 \
 			inputmethods/ibus \
 			net/curl \
 			net/libcares \
-			x11/e17/evas>=1.7.6.1v2
+			x11/e17/evas>=1.7.9v2
 
 CONFIGURE_ARGS +=	--disable-doc \
 			--disable-gnutls \
