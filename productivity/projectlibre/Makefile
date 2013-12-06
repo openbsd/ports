@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:37:55 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/12/06 20:36:05 jasper Exp $
 
 COMMENT=		open source alternative to Microsoft Project
 
-DISTNAME=		projectlibre-1.5.1
+DISTNAME=		projectlibre-1.5.7
 CATEGORIES=		productivity
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -21,7 +21,7 @@ MODJAVA_JRERUN=	Yes
 RUN_DEPENDS=	java/javaPathHelper
 
 NO_BUILD=       Yes
-NO_TEST=     Yes
+NO_TEST=	Yes
 
 PKG_ARCH=       *
 
