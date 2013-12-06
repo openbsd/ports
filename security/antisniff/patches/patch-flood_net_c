@@ -1,7 +1,7 @@
-$OpenBSD: patch-flood_net_c,v 1.2 2005/04/03 19:32:29 naddy Exp $
+$OpenBSD: patch-flood_net_c,v 1.3 2013/12/06 11:53:05 jca Exp $
 --- flood_net.c.orig	Tue Apr 18 02:52:21 2000
-+++ flood_net.c	Sun Apr  3 21:21:24 2005
-@@ -107,7 +107,7 @@ make_tcppack(int *len, char *srcAddr, ch
++++ flood_net.c	Fri Dec  6 12:47:52 2013
+@@ -107,7 +107,7 @@ make_tcppack(int *len, char *srcAddr, char *dstAddr, u
    char *pkt;
    struct ether_header *eth;
    struct ip iph;
@@ -10,7 +10,7 @@ $OpenBSD: patch-flood_net_c,v 1.2 2005/04/03 19:32:29 naddy Exp $
    struct pseudo_header pheader;
    struct in_addr addr;
  
-@@ -241,7 +241,7 @@ char *make_tcp_target(char *target, int 
+@@ -241,7 +241,7 @@ char *make_tcp_target(char *target, int *len){
  
    iph->ip_len = htons(40);
    iph->ip_id = htons(0xcafe);
