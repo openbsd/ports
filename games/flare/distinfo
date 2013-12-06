@@ -1,2 +1,4 @@
-SHA256 (flare-0.18.tar.gz) = nZmqAQ2Swk23LTwMtOe/z0sSE3C8rZKFFpTWLxu1mbk=
-SIZE (flare-0.18.tar.gz) = 177594730
+SHA256 (flare-engine.0.19.tar.gz) = aYERM7IsLJXKfzXw225jtpPmRqQzhDwPHFCi1/TVgeE=
+SHA256 (flare-game.0.19.tar.gz) = G0J7vy4STLbfQLlADeHSWqrbawzPdkz3uNafltMAizQ=
+SIZE (flare-engine.0.19.tar.gz) = 545167
+SIZE (flare-game.0.19.tar.gz) = 177779024
