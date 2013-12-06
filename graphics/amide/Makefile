@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2013/11/03 10:31:01 benoit Exp $
+# $OpenBSD: Makefile,v 1.32 2013/12/06 08:09:14 benoit Exp $
 
 COMMENT =	Amide a Medical Imaging Data Examiner
 
 DISTNAME =	amide-1.0.4
 CATEGORIES =	graphics
+REVISION =	0
 
 HOMEPAGE =	http://amide.sourceforge.net/
 
