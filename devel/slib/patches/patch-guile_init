@@ -1,16 +1,16 @@
-$OpenBSD: patch-guile_init,v 1.2 2009/01/21 18:28:22 kili Exp $
---- guile.init.orig	Mon Dec 24 05:33:08 2007
-+++ guile.init	Wed Jan 21 19:10:57 2009
-@@ -68,7 +68,7 @@
-             (and path (substring path 0 (- (string-length path) 10))))
+$OpenBSD: patch-guile_init,v 1.3 2013/12/06 14:29:26 espie Exp $
+--- guile.init.orig	Fri Jan 18 04:27:26 2013
++++ guile.init	Fri Dec  6 13:38:10 2013
+@@ -229,7 +229,7 @@
+ 	    (and path (substring path 0 (- (string-length path) 10))))
  	  ;; Use this path if your scheme does not support GETENV
  	  ;; or if SCHEME_LIBRARY_PATH is not set.
--	  "/usr/lib/slib/"
-+	  "${LOCALBASE}/share/slib/"
- 	  (in-vicinity (implementation-vicinity) "slib/"))))
+-	  "/usr/share/slib/")))
++	  "${LOCALBASE}/share/slib/")))
      (lambda () library-path)))
  
-@@ -131,7 +131,8 @@
+ ;;; (home-vicinity) should return the vicinity of the user's HOME
+@@ -291,7 +291,8 @@
  		   ((nosve) ".")
  		   ((macos thinkc) ":")
  		   ((ms-dos windows atarist os/2) "\\")

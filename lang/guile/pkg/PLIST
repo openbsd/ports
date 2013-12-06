@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2012/07/07 10:15:24 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2013/12/06 14:29:26 espie Exp $
 %%SHARED%%
 @bin bin/guile
 bin/guile-config
@@ -303,3 +303,7 @@ share/guile/${V}/srfi/srfi-8.scm
 share/guile/${V}/srfi/srfi-88.scm
 share/guile/${V}/srfi/srfi-9.scm
 share/guile/slib
+@comment force the creation of slibcat
+@exec guile -c "(use-modules (ice-9 slib)) (require 'printf)"
+@unexec rm %D/share/guile/${V}/slibcat
+

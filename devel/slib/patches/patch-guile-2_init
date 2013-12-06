@@ -1,0 +1,12 @@
+$OpenBSD: patch-guile-2_init,v 1.1 2013/12/06 14:29:26 espie Exp $
+--- guile-2.init.orig	Fri Dec  6 14:44:27 2013
++++ guile-2.init	Fri Dec  6 14:44:41 2013
+@@ -209,7 +209,7 @@
+              (string-append (canonicalize-path (dirname (current-filename)))
+                             "/")
+              ;; A fallback; normally shouldn't be reached.
+-             "/usr/share/slib/")))
++             "${LOCALBASE}/share/slib/")))
+     (lambda () library-path)))
+ 
+ ;;; (home-vicinity) should return the vicinity of the user's HOME

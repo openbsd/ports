@@ -1,36 +1,34 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 10:50:31 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2013/12/06 14:29:25 espie Exp $
 
-COMMENT=	scheme r5 library
+COMMENT =	scheme r5 library
 
-CATEGORIES=	devel
+CATEGORIES =	devel
 
-DISTNAME=	slib-3b1
+DISTNAME =	slib-3b4
 
-HOMEPAGE=	http://people.csail.mit.edu/jaffer/SLIB
+HOMEPAGE =	http://people.csail.mit.edu/jaffer/SLIB
 
-MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/ \
+MASTER_SITES =	http://groups.csail.mit.edu/mac/ftpdir/scm/ \
 		http://groups.csail.mit.edu/mac/ftpdir/scm/OLD/
 
-MAINTAINER=	Marc Espie <espie@openbsd.org>
-
-WRKDIST=	${WRKDIR}/slib
+MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 # BSD-like without modify
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-NO_BUILD=	Yes
-NO_TEST=	Yes
-PKG_ARCH=	*
+NO_BUILD =	Yes
+NO_TEST =	Yes
+PKG_ARCH =	*
 
 do-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/slib
-	${INSTALL_DATA} ${WRKDIR}/slib/*.scm ${PREFIX}/share/slib
-	${INSTALL_DATA} ${WRKDIR}/slib/{ANNOUNCE,README,FAQ} ${PREFIX}/share/slib
+	${INSTALL_DATA} ${WRKDIST}/*.scm ${PREFIX}/share/slib
+	${INSTALL_DATA} ${WRKDIST}/{ANNOUNCE,README,FAQ} ${PREFIX}/share/slib
 	# install init files for Unix implementations as well
-	${SUBST_CMD} ${WRKDIR}/slib/guile.init
-	${INSTALL_DATA} ${WRKDIR}/slib/*.init ${PREFIX}/share/slib
+	${SUBST_CMD} ${WRKDIST}/guile*.init
+	${INSTALL_DATA} ${WRKDIST}/*.init ${PREFIX}/share/slib
 	# Those are not Unix-like
 	rm ${PREFIX}/share/slib/{macscheme.init,pscheme.init}
-	${INSTALL_DATA} ${WRKDIR}/slib/slib.info ${PREFIX}/info
+	${INSTALL_DATA} ${WRKDIST}/slib.info ${PREFIX}/info
 
 .include <bsd.port.mk>

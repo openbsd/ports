@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure,v 1.1 2013/12/06 14:29:26 espie Exp $
+--- configure.orig	Fri Dec  6 15:23:12 2013
++++ configure	Fri Dec  6 15:23:25 2013
+@@ -124,6 +124,7 @@ do
+   -version | --version | -V)
+     ac_init_version=: ;;
+ 
++  --disable-silent-rules) ;;
+   -bindir | --bindir)
+     ac_prev=bindir ;;
+   -bindir=* | --bindir=*)

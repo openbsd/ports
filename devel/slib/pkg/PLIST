@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/01/21 18:28:22 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/12/06 14:29:26 espie Exp $
 @info info/slib.info
 share/slib/
 share/slib/ANNOUNCE
@@ -52,6 +52,7 @@ share/slib/dynwind.scm
 share/slib/elk.init
 share/slib/eval.scm
 share/slib/factor.scm
+share/slib/fluid-let.scm
 share/slib/fluidlet.scm
 share/slib/format.scm
 share/slib/formatst.scm
@@ -61,6 +62,7 @@ share/slib/getopt.scm
 share/slib/getparam.scm
 share/slib/glob.scm
 share/slib/grapheps.scm
+share/slib/guile-2.init
 share/slib/guile.init
 share/slib/hash.scm
 share/slib/hashtab.scm
@@ -120,6 +122,7 @@ share/slib/record.scm
 share/slib/repl.scm
 share/slib/require.scm
 share/slib/root.scm
+share/slib/s7.init
 share/slib/sc2.scm
 share/slib/sc4opt.scm
 share/slib/sc4sc3.scm
@@ -146,6 +149,7 @@ share/slib/srfi-1.scm
 share/slib/srfi-11.scm
 share/slib/srfi-2.scm
 share/slib/srfi-23.scm
+share/slib/srfi-39.scm
 share/slib/srfi-61.scm
 share/slib/srfi-8.scm
 share/slib/srfi-9.scm
@@ -175,7 +179,7 @@ share/slib/values.scm
 share/slib/vet.scm
 share/slib/vscm.init
 share/slib/withfile.scm
-share/slib/wttest.scm
+share/slib/wttree-test.scm
 share/slib/wttree.scm
 share/slib/xml-parse.scm
 share/slib/yasyn.scm

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2013/07/06 15:55:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2013/12/06 14:29:26 espie Exp $
 # losely based on the FreeBSD port
 
 .for m in alpha powerpc vax sparc sparc64
@@ -9,9 +9,8 @@ COMMENT=	scheme r5 interpreter
 
 CATEGORIES=	lang
 
-V=5e5
+V=5f1
 DISTNAME=	scm-$V
-REVISION=	1
 EXTRACT_SUFX=	.zip
 
 HOMEPAGE=	http://people.csail.mit.edu/jaffer/SCM
@@ -89,6 +88,7 @@ ALL_TARGET=	scmlit
 #CFLAGS+=	-Dunix
 MAKE_FLAGS=	CFLAGS='${CFLAGS}' LD='${CC}'
 MAKE_ENV=	SCHEME_LIBRARY_PATH=${LOCALBASE}/share/slib/
+CONFIGURE_STYLE =	gnu
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/scm	${PREFIX}/bin

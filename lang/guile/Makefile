@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2013/11/09 23:19:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2013/12/06 14:29:26 espie Exp $
 
 COMMENT=	GNU's Ubiquitous Intelligent Language for Extension
 
 VERSION=	1.8.8
 DISTNAME=	guile-${VERSION}
-REVISION=	1
+REVISION=	2
 SHARED_LIBS=	guile 20.0 \
 		guile-srfi-srfi-1-v-3 3.2 \
 		guile-srfi-srfi-13-14-v-3 3.1 \
@@ -22,7 +22,7 @@ WANTLIB=		c gmp>=6 ltdl m ncurses pthread readline
 
 LIB_DEPENDS=	devel/gmp>=4.1 \
 		devel/libtool,-ltdl
-RUN_DEPENDS=	devel/slib
+RUN_DEPENDS=	devel/slib>=3b4
 
 MODULES=	devel/gettext
 
