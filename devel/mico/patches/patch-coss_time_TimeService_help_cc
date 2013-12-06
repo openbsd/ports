@@ -1,0 +1,13 @@
+$OpenBSD: patch-coss_time_TimeService_help_cc,v 1.4 2013/12/06 15:33:22 jca Exp $
+--- coss/time/TimeService_help.cc.orig	Fri Dec  6 14:34:42 2013
++++ coss/time/TimeService_help.cc	Fri Dec  6 14:35:04 2013
+@@ -32,7 +32,9 @@
+ #include <coss/CosNaming.h>
+ #include <mico/util.h>
+ #include <time.h>
++#ifdef HAVE_FTIME
+ #include <sys/timeb.h>
++#endif
+ 
+ //
+ //Helper functions, mainly wrappers around the time function

@@ -1,7 +1,15 @@
-$OpenBSD: patch-hdhomerun_os_posix_h,v 1.1 2010/04/08 05:46:53 jolan Exp $
---- hdhomerun_os_posix.h.orig	Sun Jan 31 01:25:33 2010
-+++ hdhomerun_os_posix.h	Wed Apr  7 19:41:58 2010
-@@ -50,7 +50,6 @@
+$OpenBSD: patch-hdhomerun_os_posix_h,v 1.2 2013/12/06 15:32:01 jca Exp $
+--- hdhomerun_os_posix.h.orig	Sun Aug 22 07:39:26 2010
++++ hdhomerun_os_posix.h	Fri Dec  6 16:30:40 2013
+@@ -42,7 +42,6 @@
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <sys/time.h>
+-#include <sys/timeb.h>
+ #include <sys/wait.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+@@ -50,7 +49,6 @@
  #include <pthread.h>
  
  typedef int bool_t;
