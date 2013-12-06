@@ -1,6 +1,6 @@
-$OpenBSD: patch-term_c,v 1.1.1.1 2006/06/01 05:58:15 jolan Exp $
---- term.c.orig	Fri Jul 22 18:15:32 2005
-+++ term.c	Sun May 28 23:54:50 2006
+$OpenBSD: patch-term_c,v 1.2 2013/12/06 16:06:50 jca Exp $
+--- term.c.orig	Sat Jul 23 01:15:32 2005
++++ term.c	Fri Dec  6 03:30:13 2013
 @@ -19,6 +19,9 @@
   *
   */
@@ -11,3 +11,102 @@ $OpenBSD: patch-term_c,v 1.1.1.1 2006/06/01 05:58:15 jolan Exp $
  #include "logo.h"
  #include "globals.h"
  
+@@ -30,6 +33,9 @@
+ #include <console.h>
+ #endif
+ 
++#ifdef HAVE_TERMIOS_H
++#include <termios.h>
++#else
+ #ifdef HAVE_TERMIO_H
+ #include <termio.h>
+ #else
+@@ -37,6 +43,7 @@
+ #include <sgtty.h>
+ #endif
+ #endif
++#endif
+ 
+ #undef TRUE
+ #undef FALSE
+@@ -71,6 +78,9 @@ char cm_arr[40];
+ char so_arr[40];
+ char se_arr[40];
+ 
++#ifdef HAVE_TERMIOS_H
++struct termios tty_cooked, tty_cbreak;
++#else
+ #ifdef HAVE_TERMIO_H
+ struct termio tty_cooked, tty_cbreak;
+ #else
+@@ -78,6 +88,7 @@ struct termio tty_cooked, tty_cbreak;
+ struct sgttyb tty_cooked, tty_cbreak;
+ #endif
+ #endif
++#endif
+ 
+ int interactive, tty_charmode;
+ 
+@@ -85,7 +96,7 @@ extern char **environ, *tgoto(), *tgetstr();
+ 
+ char *termcap_ptr;
+ 
+-int termcap_putter(char ch) {
++int termcap_putter(int ch) {
+     *termcap_ptr++ = ch;
+     return 0;
+ }
+@@ -125,6 +136,13 @@ void term_init(void) {
+ #endif /* WIN32 */
+ #else
+     if (interactive) {
++#ifdef HAVE_TERMIOS_H
++	tcgetattr(0, &tty_cooked);
++	tty_cbreak = tty_cooked;
++	tty_cbreak.c_cc[VMIN] = '\01';
++	tty_cbreak.c_cc[VTIME] = '\0';
++	tty_cbreak.c_lflag &= ~(ECHO|ICANON);
++#else
+ #ifdef HAVE_TERMIO_H
+ 	ioctl(0,TCGETA,(char *)(&tty_cooked));
+ 	tty_cbreak = tty_cooked;
+@@ -137,6 +155,7 @@ void term_init(void) {
+ 	tty_cbreak.sg_flags |= CBREAK;
+ 	tty_cbreak.sg_flags &= ~ECHO;
+ #endif
++#endif
+     }
+     tty_charmode = 0;
+     tgetent(bp, getenv("TERM"));
+@@ -181,11 +200,15 @@ void term_init(void) {
+ void charmode_on() {
+ #ifdef unix
+     if ((readstream == stdin) && interactive && !tty_charmode) {
++#ifdef HAVE_TERMIOS_H
++	tcsetattr(0, TCSANOW, &tty_cbreak);
++#else /* !HAVE_TERMIOS_H */
+ #ifdef HAVE_TERMIO_H
+ 	ioctl(0,TCSETA,(char *)(&tty_cbreak));
+ #else /* !HAVE_TERMIO_H */
+ 	ioctl(0,TIOCSETP,(char *)(&tty_cbreak));
+ #endif /* HAVE_TERMIO_H */
++#endif /* HAVE_TERMIOS_H */
+ 	tty_charmode++;
+     }
+ #endif /* unix */
+@@ -197,11 +220,15 @@ void charmode_on() {
+ void charmode_off() {
+ #ifdef unix
+     if (tty_charmode) {
++#ifdef HAVE_TERMIOS_H
++	tcsetattr(0, TCSANOW, &tty_cooked);
++#else /* !HAVE_TERMIOS_H */
+ #ifdef HAVE_TERMIO_H
+ 	ioctl(0,TCSETA,(char *)(&tty_cooked));
+ #else /* !HAVE_TERMIO_H */
+ 	ioctl(0,TIOCSETP,(char *)(&tty_cooked));
+ #endif /* HAVE_TERMIO_H */
++#endif /* HAVE_TERMIOS_H */
+ 	tty_charmode = 0;
+     }
+ #endif /* unix */

@@ -1,0 +1,13 @@
+$OpenBSD: patch-config_h_in,v 1.1 2013/12/06 16:06:50 jca Exp $
+--- config.h.in.orig	Thu Dec  5 23:17:01 2013
++++ config.h.in	Thu Dec  5 23:17:30 2013
+@@ -39,6 +39,9 @@
+ /* Define if you have the <sgtty.h> header file.  */
+ #undef HAVE_SGTTY_H
+ 
++/* Define if you have the <termios.h> header file.  */
++#undef HAVE_TERMIOS_H
++  
+ /* Define if you have the <termio.h> header file.  */
+ #undef HAVE_TERMIO_H
+   

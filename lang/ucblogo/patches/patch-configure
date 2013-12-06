@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2013/12/06 16:06:50 jca Exp $
+--- configure.orig	Thu Dec  5 23:13:36 2013
++++ configure	Thu Dec  5 23:13:51 2013
+@@ -1582,7 +1582,7 @@ EOF
+ 
+ fi
+ 
+-for ac_hdr in sgtty.h termio.h unistd.h string.h
++for ac_hdr in sgtty.h termios.h termio.h unistd.h string.h
+ do
+ ac_safe=`echo "$ac_hdr" | tr './\055' '___'`
+ echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
