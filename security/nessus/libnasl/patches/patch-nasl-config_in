@@ -1,12 +1,12 @@
-$OpenBSD: patch-nasl-config_in,v 1.1.1.1 2005/05/16 16:02:56 sturm Exp $
---- nasl-config.in.orig	Sun May  8 12:34:11 2005
-+++ nasl-config.in	Sun May  8 12:33:54 2005
+$OpenBSD: patch-nasl-config_in,v 1.2 2013/12/06 19:32:53 naddy Exp $
+--- nasl-config.in.orig	Tue Jan 21 15:27:54 2003
++++ nasl-config.in	Fri Dec  6 19:51:49 2013
 @@ -40,7 +40,7 @@ while test $# -gt 0; do
  		exit 0
  		;;
  	--libs)
 -		echo $Xn "-L$DESTDIR$LIBDIR -lnasl $Xc"
-+		echo $Xn "-L$DESTDIR$LIBDIR -lnasl -L/usr/lib -lrpcsvc -lcompat $Xc"
++		echo $Xn "-L$DESTDIR$LIBDIR -lnasl -L/usr/lib -lrpcsvc $Xc"
  		;;
  	--cflags)
  		echo $Xn "-I$DESTDIR$INCLUDEDIR/nessus $Xc"
