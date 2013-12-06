@@ -1,69 +1,70 @@
-# $OpenBSD: Makefile,v 1.35 2013/12/06 14:29:26 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2013/12/06 14:47:56 espie Exp $
 # losely based on the FreeBSD port
 
 .for m in alpha powerpc vax sparc sparc64
-BROKEN-$m=	segfaults in longjump return while testing continuations
+BROKEN-$m =	segfaults in longjump return while testing continuations
 .endfor
 
-COMMENT=	scheme r5 interpreter
+COMMENT =	scheme r5 interpreter
+REVISION =	0
 
-CATEGORIES=	lang
+CATEGORIES =	lang
 
-V=5f1
-DISTNAME=	scm-$V
-EXTRACT_SUFX=	.zip
+V = 5f1
+DISTNAME =	scm-$V
+EXTRACT_SUFX =	.zip
 
-HOMEPAGE=	http://people.csail.mit.edu/jaffer/SCM
+HOMEPAGE =	http://people.csail.mit.edu/jaffer/SCM
 
-MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/ \
+MASTER_SITES =	http://groups.csail.mit.edu/mac/ftpdir/scm/ \
 		http://groups.csail.mit.edu/mac/ftpdir/scm/OLD/
 
-MAINTAINER=	Marc Espie <espie@openbsd.org>
+MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-WRKDIST=	${WRKDIR}/scm
+WRKDIST =	${WRKDIR}/scm
 
 # LGPLv3
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB=		c curses termcap m readline
+WANTLIB =		c curses termcap m readline
 
-FLAVORS=no_x11
+FLAVORS =	no_x11
 
-FLAVOR?=
+FLAVOR ?=
 
-SUBST_VARS=	V
+SUBST_VARS =	V
 USE_GROFF =	Yes
 
-SCM_DATA=	COPYING Idiffer.scm Iedline.scm Init${V}.scm Link.scm \
+SCM_DATA =	COPYING Idiffer.scm Iedline.scm Init${V}.scm Link.scm \
 		Macexp.scm Macro.scm Transcen.scm Tscript.scm \
 		build build.scm compile.scm hobbit.scm mkimpcat.scm \
 		r4rstest.scm scmhob.scm \
 		disarm.scm split.scm
 
-SCM_INFO=	scm.info hobbit.info
-SCM_INCLUDES=	scmflags.h scmfig.h patchlvl.h scmhob.h
+SCM_INFO =	scm.info hobbit.info
+SCM_INCLUDES =	scmflags.h scmfig.h patchlvl.h scmhob.h
 .if !${FLAVOR:Mno_x11}
-SCM_DATA+=	keysymdef.scm x11.scm xatoms.scm xevent.scm
-SCM_INFO+=	Xlibscm.info
+SCM_DATA +=	keysymdef.scm x11.scm xatoms.scm xevent.scm
+SCM_INFO +=	Xlibscm.info
 .endif
 
-FEATURES=arrays bignums cautious edit-line curses posix socket unix \
-dynamic-linking i/o-extensions inexact regex
+FEATURES =	arrays bignums cautious edit-line curses posix socket unix \
+		dynamic-linking i/o-extensions inexact regex
 
 .if !${FLAVOR:Mno_x11}
-FEATURES+=x
-OPTIONS+=--compiler-options=-I${X11BASE}/include --compiler-options=-O2
-OPTIONS+=--linker-options=-L${X11BASE}/lib
-SCM_DATA+=	x11.scm xevent.scm
-WANTLIB+=	X11 pthread-stubs xcb
+FEATURES +=	x
+OPTIONS +=	--compiler-options=-I${X11BASE}/include --compiler-options=-O2
+OPTIONS +=	--linker-options=-L${X11BASE}/lib
+SCM_DATA +=	x11.scm xevent.scm
+WANTLIB +=	X11 pthread-stubs xcb
 .endif
 
-BUILD_DEPENDS=devel/slib
-RUN_DEPENDS=devel/slib
+BUILD_DEPENDS =	devel/slib
+RUN_DEPENDS =	devel/slib
 
-FEATURE_LIST=
+FEATURE_LIST =
 .for f in ${FEATURES}
-FEATURE_LIST+=-F $f
+FEATURE_LIST +=	-F $f
 .endfor
 
 pre-build:
@@ -83,11 +84,11 @@ post-build:
 	    -o scm-sicp \
 	    -s "${PREFIX}/share/scm/"
 
-ALL_TARGET=	scmlit
+ALL_TARGET =	scmlit
 
 #CFLAGS+=	-Dunix
-MAKE_FLAGS=	CFLAGS='${CFLAGS}' LD='${CC}'
-MAKE_ENV=	SCHEME_LIBRARY_PATH=${LOCALBASE}/share/slib/
+MAKE_FLAGS =	CFLAGS='${CFLAGS}' LD='${CC}'
+MAKE_ENV =	SCHEME_LIBRARY_PATH=${LOCALBASE}/share/slib/
 CONFIGURE_STYLE =	gnu
 
 do-install:
@@ -110,7 +111,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/info
 .endfor
 
-FAKE_FLAGS=exec_prefix=${WRKINST}${TRUEPREFIX}/
-TEST_TARGET=	check
+FAKE_FLAGS = 	exec_prefix=${WRKINST}${TRUEPREFIX}/
+TEST_TARGET =	check
 
 .include <bsd.port.mk>
