@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_puppet_type_ssh_authorized_key_rb,v 1.1 2013/12/06 21:07:03 jasper Exp $
+
+Recognize ssh-ed25519 as a valid SSH key type.
+
+--- lib/puppet/type/ssh_authorized_key.rb.orig	Fri Dec  6 22:00:34 2013
++++ lib/puppet/type/ssh_authorized_key.rb	Fri Dec  6 22:01:35 2013
+@@ -20,9 +20,10 @@ module Puppet
+     newproperty(:type) do
+       desc "The encryption type used: ssh-dss or ssh-rsa."
+ 
+-      newvalues :'ssh-dss', :'ssh-rsa', :'ecdsa-sha2-nistp256', :'ecdsa-sha2-nistp384', :'ecdsa-sha2-nistp521'
++      newvalues :'ssh-dss', :'ssh-rsa', :'ecdsa-sha2-nistp256', :'ecdsa-sha2-nistp384', :'ecdsa-sha2-nistp521', :'ssh-ed25519'
+ 
+       aliasvalue(:dsa, :'ssh-dss')
++      aliasvalue(:ed25519, :'ssh-ed25519')
+       aliasvalue(:rsa, :'ssh-rsa')
+     end
+ 
