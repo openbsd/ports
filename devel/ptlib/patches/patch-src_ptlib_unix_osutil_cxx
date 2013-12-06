@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_ptlib_unix_osutil_cxx,v 1.1 2013/12/06 08:03:57 ajacoutot Exp $
+
+Remove prehistorical header which is not even used.
+
+--- src/ptlib/unix/osutil.cxx.orig	Fri Dec  6 08:42:21 2013
++++ src/ptlib/unix/osutil.cxx	Fri Dec  6 08:42:37 2013
+@@ -85,7 +85,6 @@
+ 
+ #include <sys/param.h>
+ #include <sys/mount.h>
+-#include <sys/timeb.h>
+ 
+ #if defined(P_NETBSD)
+ #include <sys/statvfs.h>
