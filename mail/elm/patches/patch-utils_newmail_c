@@ -1,7 +1,18 @@
-$OpenBSD: patch-utils_newmail_c,v 1.1 2007/10/26 21:50:35 ajacoutot Exp $
+$OpenBSD: patch-utils_newmail_c,v 1.2 2013/12/07 23:28:39 jca Exp $
 --- utils/newmail.c.orig	Tue Nov  9 20:42:42 1999
-+++ utils/newmail.c	Fri Oct 26 23:46:56 2007
-@@ -144,7 +144,7 @@ int  parent_pid;		/* See if sucide should be attempt  
++++ utils/newmail.c	Sat Dec  7 23:55:41 2013
+@@ -66,10 +66,6 @@ static char rcsid[] = "@(#)$Id: newmail.c,v 1.6.2.1 19
+ #endif
+ #include <sys/stat.h>
+ 
+-#ifdef BSD_TYPE
+-#  include <sys/timeb.h>
+-#endif
+-
+ #ifdef I_UTIME
+ #  include <utime.h>
+ #endif
+@@ -144,7 +140,7 @@ int  parent_pid;		/* See if sucide should be attempt  
  extern int errno;
  
  
@@ -10,7 +21,7 @@ $OpenBSD: patch-utils_newmail_c,v 1.1 2007/10/26 21:50:35 ajacoutot Exp $
          time_t utime_buffer[2];         /* utime command */
  
  #else
-@@ -329,7 +329,7 @@ char *argv[];
+@@ -329,7 +325,7 @@ char *argv[];
  	      /* try to set the file access times back, ignore
  		 failures */
  
@@ -19,7 +30,7 @@ $OpenBSD: patch-utils_newmail_c,v 1.1 2007/10/26 21:50:35 ajacoutot Exp $
  	      utime(cur_folder->foldername, utime_buffer);
  #else
                utime(cur_folder->foldername, &utime_buffer);
-@@ -697,7 +697,7 @@ char *name;
+@@ -697,7 +693,7 @@ char *name;
  	
  	/* retain the access times for later use */
  

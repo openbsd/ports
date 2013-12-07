@@ -1,6 +1,6 @@
-$OpenBSD: patch-Configure,v 1.1 2001/02/13 13:02:55 naddy Exp $
---- Configure.orig	Tue Feb 13 13:39:54 2001
-+++ Configure	Tue Feb 13 13:40:18 2001
+$OpenBSD: patch-Configure,v 1.2 2013/12/07 23:28:39 jca Exp $
+--- Configure.orig	Tue Nov  9 20:43:04 1999
++++ Configure	Sun Dec  8 00:09:33 2013
 @@ -15,10 +15,10 @@
  PATH=".:$PATH:/bin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/ucb:/usr/local:/usr/lbin:/etc:/usr/new:/usr/new/bin:/usr/nbin"
  export PATH || (echo "OOPS, this isn't sh.  Desperation time.  I will feed myself to sh."; sh $0; kill $$)
@@ -16,3 +16,13 @@ $OpenBSD: patch-Configure,v 1.1 2001/02/13 13:02:55 naddy Exp $
  
  (alias) >/dev/null 2>&1 && \
      echo "(I see you are using the Korn shell.  Some ksh's blow up on Configure," && \
+@@ -4402,9 +4402,6 @@ case "$d_utimbuf" in
+ #endif
+ #ifdef I_SYSTIME
+ #  include <sys/time.h>
+-#endif
+-#ifdef BSD_TYPE
+-#  include <sys/timeb.h>
+ #endif
+ #ifdef I_UTIME
+ #  include <utime.h>
