@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1251 2013/12/02 21:47:37 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1252 2013/12/07 15:41:47 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2846,7 +2846,7 @@ ${DISTDIR}/$p:
 		file=$@.part; \
 		${ECHO_MSG} ">> Fetch $${site}$u"; \
 		if ${FETCH_CMD} -o $$file $${site}$u; then \
-				ck=`${_size_fragment} $$file $f`; \
+				ck=`${_size_fragment} $$file $p`; \
 				if [ ! -f ${CHECKSUM_FILE} ]; then \
 					${ECHO_MSG} ">> Checksum file does not exist"; \
 					mv $$file $@; \
@@ -2855,11 +2855,11 @@ ${DISTDIR}/$p:
 					mv $$file $@; \
 					exit 0; \
 				else \
-					if grep -q "SIZE ($f)" ${CHECKSUM_FILE}; then \
-						${ECHO_MSG} ">> Size does not match for $f"; \
+					if grep -q "SIZE ($p)" ${CHECKSUM_FILE}; then \
+						${ECHO_MSG} ">> Size does not match for $p"; \
 						rm -f $$file; \
 					else \
-						${ECHO_MSG} ">> No size recorded for $f"; \
+						${ECHO_MSG} ">> No size recorded for $p"; \
 						mv $$file $@; \
 						exit 0; \
 					fi; \
