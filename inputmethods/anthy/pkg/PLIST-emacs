@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-emacs,v 1.1.1.1 2006/10/18 23:13:34 espie Exp $
+@comment $OpenBSD: PLIST-emacs,v 1.2 2013/12/07 23:42:04 yasuoka Exp $
 share/emacs/
 share/emacs/site-lisp/
 share/emacs/site-lisp/anthy/
@@ -15,4 +15,5 @@ share/emacs/site-lisp/anthy/anthy-kyuri.elc
 share/emacs/site-lisp/anthy/anthy.el
 share/emacs/site-lisp/anthy/anthy.elc
 share/emacs/site-lisp/anthy/leim-list.el
-share/emacs/site-lisp/anthy/leim-list.elc
+@comment Leave leim-list.elc as a comment.  It's not created by emacs 24.
+@comment share/emacs/site-lisp/anthy/leim-list.elc

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src-util_anthy_el,v 1.1 2013/12/07 23:42:04 yasuoka Exp $
+--- src-util/anthy.el.orig	Sat Nov 30 10:40:43 2013
++++ src-util/anthy.el	Sat Nov 30 10:40:55 2013
+@@ -892,7 +892,7 @@
+ 	 ((event-matches-key-specifier-p event 'backspace) 8)
+ 	 (t
+ 	  (char-to-int (event-to-character event)))))
+-    last-command-char))
++    last-command-event))
+ 
+ ;;
+ ;;

@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2010/08/17 20:27:04 fgsch Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2013/12/07 23:42:04 yasuoka Exp $
 @pkgpath inputmethods/anthy
-%%SHARED%%
 @bin bin/anthy-agent
 @bin bin/anthy-dic-tool
 @bin bin/anthy-morphological-analyzer
@@ -10,10 +9,13 @@ include/anthy/dicutil.h
 include/anthy/input.h
 lib/libanthy.a
 lib/libanthy.la
+@lib lib/libanthy.so.${LIBanthy_VERSION}
 lib/libanthydic.a
 lib/libanthydic.la
+@lib lib/libanthydic.so.${LIBanthydic_VERSION}
 lib/libanthyinput.a
 lib/libanthyinput.la
+@lib lib/libanthyinput.so.${LIBanthyinput_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/anthy.pc
 share/anthy/
