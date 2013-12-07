@@ -1,6 +1,6 @@
-$OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_PI_gtk_library_build_sh,v 1.7 2012/04/07 13:11:27 landry Exp $
---- plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh.orig	Thu Sep 21 10:57:18 2006
-+++ plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh	Wed Dec 13 22:33:39 2006
+$OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_PI_gtk_library_build_sh,v 1.8 2013/12/07 12:03:27 landry Exp $
+--- plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh.orig	Mon Feb 12 19:46:52 2007
++++ plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/build.sh	Sat Dec  7 11:49:21 2013
 @@ -27,6 +27,10 @@ if [ "${OS}" = "" ]; then
  	OS=`uname -s`
  fi
@@ -40,20 +40,26 @@ $OpenBSD: patch-plugins_org_eclipse_swt_Eclipse_SWT_PI_gtk_library_build_sh,v 1.
  	SWT_PTR_CFLAGS=-DSWT_PTR_SIZE_64
  	export SWT_PTR_CFLAGS
  	if [ -d /lib64 ]; then
-@@ -87,9 +91,9 @@ else
+@@ -87,16 +91,8 @@ else
  fi
  
  if [ -z "${GECKO_INCLUDES}" -a -z "${GECKO_LIBS}" ]; then
 -	if [ x`pkg-config --exists mozilla-xpcom && echo YES` = "xYES" ]; then
 -		GECKO_INCLUDES=`pkg-config --cflags mozilla-xpcom`
 -		GECKO_LIBS=`pkg-config --libs mozilla-xpcom`
-+	if [ x`pkg-config --exists libxul19 && echo YES` = "xYES" ]; then
-+		GECKO_INCLUDES="`pkg-config --cflags libxul19`"
-+		GECKO_LIBS="`pkg-config --libs libxul19` "
- 		export GECKO_INCLUDES
- 		export GECKO_LIBS
- 		MAKE_MOZILLA=make_mozilla
-@@ -124,7 +128,7 @@ if [ "x${OUTPUT_DIR}" = "x" ]; then
+-		export GECKO_INCLUDES
+-		export GECKO_LIBS
+-		MAKE_MOZILLA=make_mozilla
+-	else
+-		echo "Mozilla/XPCOM libraries not found:"
+-		echo "    *** Mozilla embedding support will not be compiled."
+-	fi
++	echo "Mozilla/XPCOM libraries not found:"
++	echo "    *** Mozilla embedding support will not be compiled."
+ fi
+ 
+ # Find AWT if available
+@@ -124,7 +120,7 @@ if [ "x${OUTPUT_DIR}" = "x" ]; then
  fi
  
  if [ "x${1}" = "xclean" ]; then

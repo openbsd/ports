@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2013/11/25 14:16:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.74 2013/12/07 12:03:27 landry Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
@@ -6,26 +6,22 @@ ONLY_FOR_ARCHS=		amd64 i386
 COMMENT-main=		general-purpose, extensible IDE for Java & other langs
 COMMENT-swt=		widget toolkit for Java
 COMMENT-gnome=		GNOME integration library for swt/eclipse
-COMMENT-browser=	HTML Browser Widget library for swt/eclipse
 
 ECLIPSE_VER=		3.2.2
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
 PKGNAME=		eclipse-sdk-${ECLIPSE_VER}
 PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}
-REVISION-main=		20
+REVISION-main=		21
 PKGNAME-swt=		swt-${ECLIPSE_VER}
 REVISION-swt=		5
 PKGNAME-gnome=		swt-gnome-${ECLIPSE_VER}
 REVISION-gnome=		5
-PKGNAME-browser=	swt-browser-${ECLIPSE_VER}
-REVISION-browser=	9
 SHARED_LIBS=		swt-atk-gtk-3236	4.0 \
 			swt-awt-gtk-3236	4.0 \
 			swt-gtk-3236		4.0 \
 			swt-pi-gtk-3236		4.0 \
 			swt-cairo-gtk-3236	4.0 \
 			swt-gnome-gtk-3236	4.0 \
-			swt-mozilla-gtk-3236	4.0 \
 			swt-glx-gtk-3236	4.0
 
 CATEGORIES=		devel
@@ -57,11 +53,10 @@ BUILD_DEPENDS=		devel/xulrunner/1.9,-devel \
 
 USE_GMAKE=		Yes
 
-MULTI_PACKAGES=		-main -swt -gnome -browser
+MULTI_PACKAGES=		-main -swt -gnome
 
 RUN_DEPENDS-main=	java/javaPathHelper \
 			${MODJAVA_RUN_DEPENDS} \
-			swt-browser-${ECLIPSE_VER}:devel/eclipse/sdk,-browser \
 			devel/desktop-file-utils
 LIB_DEPENDS-main=	x11/gtk+2
 
@@ -82,11 +77,6 @@ RUN_DEPENDS-gnome=	swt-${ECLIPSE_VER}:devel/eclipse/sdk,-swt
 LIB_DEPENDS-gnome=	x11/gnome/libgnomeui
 WANTLIB-gnome=		gnome-2 gnomevfs-2 gnomeui-2
 
-RUN_DEPENDS-browser=	swt-${ECLIPSE_VER}:devel/eclipse/sdk,-swt
-LIB_DEPENDS-browser=	devel/xulrunner/1.9
-WANTLIB-browser=	xulrunner1.9/xpcom xulrunner1.9/xul c nspr4 plc4 plds4 m stdc++
-
-MOZILLA_HOME=		${LOCALBASE}/xulrunner1.9
 ECLIPSE_WS=		gtk
 ECLIPSE_BUILD=		3236
 ECLIPSE_OS=		openbsd
@@ -101,7 +91,6 @@ MAKE_ENV=		ECLIPSE_BUILD=${ECLIPSE_BUILD} \
 			ECLIPSE_OS=${ECLIPSE_OS} \
 			ECLIPSE_WS=${ECLIPSE_WS} \
 			JAVA_HOME=${JAVA_HOME} \
-			MOZILLA_HOME=${MOZILLA_HOME} \
 			CC="${CC}" CXX="${CXX}" \
 			LIBswt_atk_gtk_VERSION=${LIBswt-atk-gtk-3236_VERSION} \
 			LIBswt_awt_gtk_VERSION=${LIBswt-awt-gtk-3236_VERSION} \
@@ -109,7 +98,6 @@ MAKE_ENV=		ECLIPSE_BUILD=${ECLIPSE_BUILD} \
 			LIBswt_pi_gtk_VERSION=${LIBswt-pi-gtk-3236_VERSION} \
 			LIBswt_cairo_gtk_VERSION=${LIBswt-cairo-gtk-3236_VERSION} \
 			LIBswt_gnome_gtk_VERSION=${LIBswt-gnome-gtk-3236_VERSION} \
-			LIBswt_mozilla_gtk_VERSION=${LIBswt-mozilla-gtk-3236_VERSION} \
 			LIBswt_glx_gtk_VERSION=${LIBswt-glx-gtk-3236_VERSION}
 
 FAKE_FLAGS=		${MAKE_ENV}
@@ -133,7 +121,6 @@ do-install:
 	@tar xzf ${WRKBUILD}/result/openbsd-gtk-${ECLIPSE_ARCH}-sdk.tar.gz \
 		-C ${PREFIX}
 	@sed -e "s+%%ECLIPSE_HOME%%+${TRUEPREFIX}/eclipse+g" \
-		-e "s+%%MOZILLA_FIVE_HOME%%+${TRUEPREFIX}/xulrunner1.9+g" \
 		${WRKBUILD}/eclipse.in > ${WRKBUILD}/eclipse.tmp
 	${INSTALL_SCRIPT} ${WRKBUILD}/eclipse.tmp ${PREFIX}/bin/eclipse
 	${INSTALL_PROGRAM} ${WRKBUILD}/launchertmp/eclipse ${PREFIX}/eclipse/eclipse
