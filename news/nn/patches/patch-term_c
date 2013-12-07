@@ -1,6 +1,6 @@
-$OpenBSD: patch-term_c,v 1.1.1.1 2008/11/17 08:42:13 jasper Exp $
---- term.c.orig	Sun Jul 20 16:39:03 2008
-+++ term.c	Sun Jul 20 16:39:38 2008
+$OpenBSD: patch-term_c,v 1.2 2013/12/07 23:47:18 jca Exp $
+--- term.c.orig	Wed Jun 29 23:40:27 2005
++++ term.c	Sat Dec  7 23:50:52 2013
 @@ -25,7 +25,7 @@
  #include "regexp.h"
  #include "nn_term.h"
@@ -10,3 +10,15 @@ $OpenBSD: patch-term_c,v 1.1.1.1 2008/11/17 08:42:13 jasper Exp $
  #include <stropts.h>
  #else
  #include <sys/ioctl.h>
+@@ -74,9 +74,9 @@ extern int      s_resized;
+ 
+ #else
+ 
+-#ifndef __FreeBSD__
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+ #include <sgtty.h>
+-#endif				/* __FreeBSD__ */
++#endif
+ 
+ #endif
+ 
