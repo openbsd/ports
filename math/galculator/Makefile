@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2013/08/20 22:05:56 zhuk Exp $
+# $OpenBSD: Makefile,v 1.50 2013/12/07 19:59:13 brad Exp $
 
 COMMENT=	GTK-based scientific calculator
 
@@ -35,6 +35,7 @@ SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		ac_cv_lib_quadmath_sinhq=no
 
 .include <bsd.port.mk>
