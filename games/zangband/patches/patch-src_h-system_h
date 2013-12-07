@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_h-system_h,v 1.1 2013/12/07 22:36:55 naddy Exp $
+--- src/h-system.h.orig	Sat Aug 18 10:07:46 2001
++++ src/h-system.h	Sat Dec  7 23:32:21 2013
+@@ -40,10 +40,6 @@
+ #  include <sys/time.h>
+ # endif
+ 
+-# if !defined(SGI) && !defined(ULTRIX)
+-#  include <sys/timeb.h>
+-# endif
+-
+ #endif /* SET_UID */
+ 
+ 
