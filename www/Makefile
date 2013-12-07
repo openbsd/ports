@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.643 2013/11/20 20:59:33 landry Exp $
+# $OpenBSD: Makefile,v 1.644 2013/12/07 12:50:15 landry Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -48,7 +48,6 @@
      SUBDIR += erl-webmachine
      SUBDIR += fcgi
      SUBDIR += fcgi-cgi
-     SUBDIR += fennec
      SUBDIR += ffproxy
      SUBDIR += firefox-esr
      SUBDIR += firefox-esr-i18n

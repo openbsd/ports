@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.amd64-devel,v 1.3 2010/07/09 16:38:58 landry Exp $
-${MOZILLA_PROJECT}/include/NativeX64.h
