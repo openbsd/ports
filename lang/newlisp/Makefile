@@ -1,19 +1,18 @@
-#       $OpenBSD: Makefile,v 1.11 2013/08/06 18:12:00 jasper Exp $
+#       $OpenBSD: Makefile,v 1.12 2013/12/07 19:35:22 bcallah Exp $
 
 COMMENT=	newLISP is a LISP like, general purpose scripting language
 
-V=		10.5.3
+V=		10.5.4
 DISTNAME=	newlisp-$V
 CATEGORIES=	lang
 HOMEPAGE=	http://newlisp.org/
-MAINTAINER=	Ted Walther <ted@reactor-core.org>
 
-# GPLv3
+# GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c m ncurses readline
 
-MASTER_SITES=		${HOMEPAGE}/downloads/
+MASTER_SITES=		http://newlisp.org/downloads/
 EXTRACT_SUFX=		.tgz
 
 RUN_DEPENDS=		devel/xdg-utils
