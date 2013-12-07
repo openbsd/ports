@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_wmglobe_h,v 1.1 2013/12/07 22:25:31 naddy Exp $
+--- src/wmglobe.h.orig	Sun Aug 12 17:41:22 2001
++++ src/wmglobe.h	Sat Dec  7 23:22:42 2013
+@@ -34,7 +34,6 @@
+ #include <ctype.h>		/*toupper */
+ #include <stdarg.h>
+ #include <time.h>
+-#include <sys/timeb.h>
+ #include <sys/time.h>
+ #include <sys/types.h>
+ #include <X11/Xlib.h>
