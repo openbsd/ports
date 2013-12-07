@@ -3,7 +3,7 @@ and toolchain technologies. Despite its name, LLVM has little to
 do with traditional virtual machines, though it does provide helpful
 libraries that can be used to build them.
 
-This package includes the LLVM Core and the CLang compiler suite.
+This package includes the LLVM Core and the Clang compiler suite.
 
 The LLVM Core libraries provide a modern source- and target-independent
 optimizer, along with code generation support for various popular CPUs

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2013/08/06 23:33:44 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.20 2013/12/07 10:30:39 brad Exp $
 @bin bin/bugpoint
 bin/c++-analyzer
 bin/ccc-analyzer
@@ -1242,6 +1242,7 @@ lib/libprofile_rt.so
 @man man/man1/llvm-stress.1
 @man man/man1/llvm-symbolizer.1
 @man man/man1/opt.1
+@man man/man1/scan-build.1
 @man man/man1/tblgen.1
 share/llvm/
 share/llvm/cmake/
