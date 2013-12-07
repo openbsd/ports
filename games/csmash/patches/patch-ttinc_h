@@ -1,20 +1,29 @@
-$OpenBSD: patch-ttinc_h,v 1.1.1.1 2008/07/06 20:43:20 jdixon Exp $
---- ttinc.h.orig	Sun Aug 10 05:55:00 2003
-+++ ttinc.h	Fri Jul  4 22:09:54 2008
-@@ -204,12 +204,12 @@ typedef int socklen_t;		/* mimic Penguin's socklen typ
- #include <GL/gl.h>
- #include <GL/glu.h>
+$OpenBSD: patch-ttinc_h,v 1.2 2013/12/07 22:35:29 naddy Exp $
+--- ttinc.h.orig	Sun Aug 10 11:55:00 2003
++++ ttinc.h	Fri Dec  6 21:04:59 2013
+@@ -174,7 +174,6 @@ enum mode  {GAME_5PTS, GAME_11PTS, GAME_21PTS};
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <sys/types.h>
+-#include <sys/timeb.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
+ #include <string.h>
+@@ -216,6 +215,17 @@ typedef int socklen_t;		/* mimic Penguin's socklen typ
+ #define  gettext_noop(String)  (String)
+ #define _(String) gettext (String)
+ #define N_(String) gettext_noop (String)
++
++#ifdef WIN32
++#include <sys/timeb.h>
++#else
++struct timeb {
++	time_t	time;			/* seconds since the Epoch */
++	unsigned short millitm;		/* + milliseconds since the Epoch */
++	short	timezone;		/* minutes west of UTC */
++	short	dstflag;		/* DST == non-zero */
++};
++#endif
  
--#include <SDL/SDL.h>
--#include <SDL/SDL_image.h>
--#include <SDL/SDL_thread.h>
-+#include <SDL.h>
-+#include <SDL_image.h>
-+#include <SDL_thread.h>
+ #endif /* MKDEP_IGN_SYSINC */
  
- #ifdef HAVE_LIBSDL_MIXER
--#include <SDL/SDL_mixer.h>
-+#include <SDL_mixer.h>
- #endif
- 
- #include <libintl.h>

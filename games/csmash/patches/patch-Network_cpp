@@ -1,7 +1,7 @@
-$OpenBSD: patch-Network_cpp,v 1.1.1.1 2008/07/06 20:43:20 jdixon Exp $
---- Network.cpp.orig	Sun Aug 17 07:43:03 2003
-+++ Network.cpp	Fri Jul  4 22:09:25 2008
-@@ -169,7 +171,6 @@ ReadTime( int sd, struct timeb* tb ) {
+$OpenBSD: patch-Network_cpp,v 1.2 2013/12/07 22:35:29 naddy Exp $
+--- Network.cpp.orig	Sun Aug 17 13:43:03 2003
++++ Network.cpp	Fri Dec  6 20:49:25 2013
+@@ -169,7 +169,6 @@ ReadTime( int sd, struct timeb* tb ) {
  
    char *b = buf;
    long millitm;
