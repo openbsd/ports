@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.1 2013/10/25 13:40:42 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.2 2013/12/07 15:45:15 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -102,6 +102,7 @@ sub run
 	my $job = $core->job;
 	my $shell = $core->shell;
 	my $site = $self->{site};
+	$site =~ s/^\"(.*)\"$/$1/;
 	$self->redirect($job->{log});
 	if ($job->{file}{sz} == 0) {
 		print STDERR "No size in distinfo\n";
