@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 17:54:16 espie Exp $
-bin/mshell
-lib/menus/
-lib/menus/menulogin
-lib/menus/sample.men
-@man man/man1/mshell.1
