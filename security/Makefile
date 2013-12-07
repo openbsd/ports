@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.326 2013/11/28 16:49:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.327 2013/12/07 19:55:34 naddy Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -194,7 +194,6 @@
      SUBDIR += p5-POE-Component-SSLify
      SUBDIR += p5-Text-Password-Pronounceable
      SUBDIR += p5-Tie-EncryptedHash
-     SUBDIR += parse
      SUBDIR += passwdqc
      SUBDIR += password-gorilla
      SUBDIR += pcsc-lite
