@@ -1,74 +1,40 @@
-@comment $OpenBSD: PLIST,v 1.27 2012/09/04 16:06:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2013/12/07 09:18:36 ajacoutot Exp $
 @pkgpath graphics/dia,gnome
 @bin bin/dia
 lib/dia/
-@comment lib/dia/libaadl_objects.la
 lib/dia/libaadl_objects.so
-@comment lib/dia/libart_filter.la
 lib/dia/libart_filter.so
-@comment lib/dia/libcairo_filter.la
 lib/dia/libcairo_filter.so
-@comment lib/dia/libcgm_filter.la
 lib/dia/libcgm_filter.so
-@comment lib/dia/libchronogram_objects.la
 lib/dia/libchronogram_objects.so
-@comment lib/dia/libcustom_lines_objects.la
 lib/dia/libcustom_lines_objects.so
-@comment lib/dia/libcustom_objects.la
 lib/dia/libcustom_objects.so
-@comment lib/dia/libdb_objects.la
 lib/dia/libdb_objects.so
-@comment lib/dia/libdia.la
 lib/dia/libdia.so
-@comment lib/dia/libdxf_filter.la
 lib/dia/libdxf_filter.so
-@comment lib/dia/liber_objects.la
 lib/dia/liber_objects.so
-@comment lib/dia/libflowchart_objects.la
 lib/dia/libflowchart_objects.so
-@comment lib/dia/libfs_objects.la
 lib/dia/libfs_objects.so
-@comment lib/dia/libgrafcet_objects.la
 lib/dia/libgrafcet_objects.so
-@comment lib/dia/libhpgl_filter.la
 lib/dia/libhpgl_filter.so
-@comment lib/dia/libistar_objects.la
 lib/dia/libistar_objects.so
-@comment lib/dia/libjackson_objects.la
 lib/dia/libjackson_objects.so
-@comment lib/dia/libkaos_objects.la
 lib/dia/libkaos_objects.so
-@comment lib/dia/libmetapost_filter.la
 lib/dia/libmetapost_filter.so
-@comment lib/dia/libmisc_objects.la
 lib/dia/libmisc_objects.so
-@comment lib/dia/libnetwork_objects.la
 lib/dia/libnetwork_objects.so
-@comment lib/dia/libpgf_filter.la
 lib/dia/libpgf_filter.so
-@comment lib/dia/libpixbuf_filter.la
 lib/dia/libpixbuf_filter.so
-@comment lib/dia/libpostscript_filter.la
 lib/dia/libpostscript_filter.so
-@comment lib/dia/libpstricks_filter.la
 lib/dia/libpstricks_filter.so
-@comment lib/dia/libsadt_objects.la
 lib/dia/libsadt_objects.so
-@comment lib/dia/libshape_filter.la
 lib/dia/libshape_filter.so
-@comment lib/dia/libstandard_objects.la
 lib/dia/libstandard_objects.so
-@comment lib/dia/libsvg_filter.la
 lib/dia/libsvg_filter.so
-@comment lib/dia/libuml_objects.la
 lib/dia/libuml_objects.so
-@comment lib/dia/libvdx_filter.la
 lib/dia/libvdx_filter.so
-@comment lib/dia/libwpg_filter.la
 lib/dia/libwpg_filter.so
-@comment lib/dia/libxfig_filter.la
 lib/dia/libxfig_filter.so
-@comment lib/dia/libxslt_filter.la
 lib/dia/libxslt_filter.so
 man/fr/
 man/fr/man1/
