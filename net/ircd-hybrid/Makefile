@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2013/11/09 01:22:57 brad Exp $
+# $OpenBSD: Makefile,v 1.29 2013/12/07 10:29:03 brad Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	Internet Relay Chat server
 
-DISTNAME =	ircd-hybrid-8.1.9
+DISTNAME =	ircd-hybrid-8.1.11
 CATEGORIES =	net
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=ircd-hybrid/}
 EXTRACT_SUFX =	.tgz
@@ -18,7 +18,6 @@ WANTLIB =	c crypto ltdl ssl
 
 LIB_DEPENDS =	devel/libtool,-ltdl
 
-USE_GROFF =	Yes
 LIBTOOL_FLAGS =	--tag=disable-static
 CONFIGURE_STYLE = gnu
 CONFIGURE_ARGS = --disable-libgeoip
