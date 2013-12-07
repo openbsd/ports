@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:25 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2013/12/07 00:15:26 fgsch Exp $
 
 COMMENT =	fast, simple object-to-object and broadcast signaling
 
-MODPY_EGG_VERSION = 1.2
+MODPY_EGG_VERSION = 1.3
 DISTNAME =	blinker-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
 CATEGORIES =	devel
 
-HOMEPAGE =	http://discorporate.us/projects/Blinker/
+HOMEPAGE =	http://pythonhosted.org/blinker/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
@@ -24,7 +24,6 @@ post-install:
 	cd ${WRKSRC}/docs/html && pax -rw * ${PREFIX}/share/doc/py-blinker
 
 do-test:
-	cd ${WRKSRC} && for t in ${WRKSRC}/tests/*; do \
-	    PYTHONPATH=. ${MODPY_BIN} $${t}; done
+	cd ${WRKSRC} && nosetests tests
 
 .include <bsd.port.mk>

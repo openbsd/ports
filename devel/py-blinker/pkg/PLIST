@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/12/29 15:09:15 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/12/07 00:15:26 fgsch Exp $
 lib/python${MODPY_VERSION}/site-packages/blinker/
 lib/python${MODPY_VERSION}/site-packages/blinker-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/blinker/__init__.py
@@ -16,15 +16,24 @@ share/doc/${MODPY_PY_PREFIX}blinker/_sources/index.txt
 share/doc/${MODPY_PY_PREFIX}blinker/_sources/signals.txt
 share/doc/${MODPY_PY_PREFIX}blinker/_static/
 share/doc/${MODPY_PY_PREFIX}blinker/_static/basic.css
+share/doc/${MODPY_PY_PREFIX}blinker/_static/comment-bright.png
+share/doc/${MODPY_PY_PREFIX}blinker/_static/comment-close.png
+share/doc/${MODPY_PY_PREFIX}blinker/_static/comment.png
 share/doc/${MODPY_PY_PREFIX}blinker/_static/default.css
 share/doc/${MODPY_PY_PREFIX}blinker/_static/doctools.js
+share/doc/${MODPY_PY_PREFIX}blinker/_static/down-pressed.png
+share/doc/${MODPY_PY_PREFIX}blinker/_static/down.png
 share/doc/${MODPY_PY_PREFIX}blinker/_static/file.png
 share/doc/${MODPY_PY_PREFIX}blinker/_static/jquery.js
 share/doc/${MODPY_PY_PREFIX}blinker/_static/minus.png
 share/doc/${MODPY_PY_PREFIX}blinker/_static/plus.png
 share/doc/${MODPY_PY_PREFIX}blinker/_static/pygments.css
 share/doc/${MODPY_PY_PREFIX}blinker/_static/searchtools.js
+share/doc/${MODPY_PY_PREFIX}blinker/_static/sidebar.js
 share/doc/${MODPY_PY_PREFIX}blinker/_static/underscore.js
+share/doc/${MODPY_PY_PREFIX}blinker/_static/up-pressed.png
+share/doc/${MODPY_PY_PREFIX}blinker/_static/up.png
+share/doc/${MODPY_PY_PREFIX}blinker/_static/websupport.js
 share/doc/${MODPY_PY_PREFIX}blinker/api.html
 share/doc/${MODPY_PY_PREFIX}blinker/genindex.html
 share/doc/${MODPY_PY_PREFIX}blinker/index.html
