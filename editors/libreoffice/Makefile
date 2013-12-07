@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2013/12/03 10:15:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.100 2013/12/07 19:42:40 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 BROKEN-i386=	undefined symbol _ZN5boost6system15system_categoryEv in libscfiltlo.so (CppunitTest_sc_filters_test)
@@ -18,8 +18,8 @@ PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde3
 
-REVISION-main=	0
-REVISION-java=	0
+REVISION-main=	1
+REVISION-java=	1
 
 EPOCH=		0
 
@@ -378,5 +378,18 @@ post-install:
 
 	${INSTALL_DATA} ${WRKSRC}/workdir/unxobsd.pro/CustomTarget/sysui/share/libreoffice/openoffice.org.xml \
 		${PREFIX}/share/mime/packages
+
+# If the -java package does not get build use stub libraries for
+# libjvmaccesslo.so and libjvmfwklo.so so that they can get included
+# in the -main package because they are needed even if the -java
+# subpackage is not installed.
+.if !${BUILD_PACKAGES:M-java}
+	echo "int main(void) { return 0; }" > ${WRKSRC}/stub.c
+	${CC} -shared -o ${WRKBUILD}/stub.o ${WRKSRC}/stub.c
+.  for i in jvmaccess jvmfwk
+	${INSTALL_PROGRAM} ${WRKBUILD}/stub.o \
+		${PREFIX}/lib/libreoffice/ure/lib/lib${i}lo.so
+.  endfor
+.endif
 
 .include <bsd.port.mk>
