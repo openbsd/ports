@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2013/11/21 11:34:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2013/12/07 08:04:25 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (base installation)
 COMMENT-extra=		GNOME desktop meta-package (full installation)
@@ -9,10 +9,16 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extra=		gnome-extra-${V}
 
+REVISION-main=		0
+
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 MULTI_PACKAGES=		-main -extra
+
+# remove when we don't use gtk+2 apps in GNOME
+# Gtk-Message: Failed to load module "canberra-gtk-module"
+RUN_DEPENDS-main +=	audio/libcanberra,-gtk
 
 # sync with gnome-desktop version
 RUN_DEPENDS-main +=	x11/gnome/desktop=${V}
