@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.140 2013/11/16 16:39:28 espie Exp $
+# $OpenBSD: Port.pm,v 1.141 2013/12/07 16:03:03 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -739,12 +739,32 @@ sub finalize
 	$self->SUPER::finalize($core);
 }
 
+package DPB::Task::Test;
+our @ISA = qw(DPB::Task::BasePort);
+
+# to put test results elsewhere
+#sub redirect_output
+#{
+#}
+
+sub finalize
+{
+	my ($self, $core) = @_;
+	$self->SUPER::finalize($core);
+	# we always make as though we succeeded
+	return 1;
+}
+
+package DPB::Task::PrepareTestResults;
+our @ISA = qw(DPB::Task::PrepareResults);
+
 package DPB::Port::TaskFactory;
 my $repo = {
 	default => 'DPB::Task::Port',
 	checksum => 'DPB::Task::Port::Checksum',
 	clean => 'DPB::Task::Port::Clean',
 	'show-prepare-results' => 'DPB::Task::Port::PrepareResults',
+	'show-prepare-test-results' => 'DPB::Task::Port::PrepareResults',
 	fetch => 'DPB::Task::Port::Fetch',
 	depends => 'DPB::Task::Port::Depends',
 	'show-size' => 'DPB::Task::Port::ShowSize',
@@ -760,7 +780,7 @@ sub create
 	$fw->new($k);
 }
 
-package DPB::Job::Port;
+package DPB::Job::BasePort;
 our @ISA = qw(DPB::Job::Normal);
 
 use Time::HiRes qw(time);
@@ -784,28 +804,6 @@ sub new
 		close($job->{logfh}); 
 		&$endcode; };
 
-	my $prop = $core->prop;
-	if ($prop->{parallel} =~ m/^\/(\d+)$/) {
-		if ($prop->{jobs} == 1) {
-			$prop->{parallel} = 0;
-		} else {
-			$prop->{parallel} = int($prop->{jobs}/$1);
-			if ($prop->{parallel} < 2) {
-				$prop->{parallel} = 2;
-			}
-		}
-	}
-	if ($prop->{parallel} && $v->{info}->has_property('parallel')) {
-		$job->{parallel} = $prop->{parallel};
-	}
-
-	if ($builder->checks_rebuild($v)) {
-		push(@{$job->{tasks}},
-		    DPB::Task::Port::Signature->new('signature'));
-	} else {
-		$job->add_normal_tasks($builder->{dontclean}{$v->pkgpath},
-		    $core);
-	}
 	return $job;
 }
 
@@ -840,8 +838,8 @@ sub save_depends
 
 sub need_depends
 {
-	my ($self, $core) = @_;
-	my $dep = $self->{v}{info}->solve_depends;
+	my ($self, $core, $with_tests) = @_;
+	my $dep = $self->{v}{info}->solve_depends($with_tests);
 	return 0 unless %$dep;
 	# XXX we are running this synchronously with other jobs on the
 	# same host, so we know exactly which live_depends we can reuse.
@@ -879,72 +877,6 @@ sub add_build_info
 	$times->{$pkgpath} = $time;
 }
 
-sub add_normal_tasks
-{
-	my ($self, $dontclean, $core) = @_;
-
-	my @todo;
-	my $builder = $self->{builder};
-	my $hostprop = $core->prop;
-	my $small = 0;
-	if (defined $times->{$self->{v}} && 
-	    $times->{$self->{v}} < $hostprop->{small_timeout}) {
-		$small = 1;
-	}
-	if ($builder->{clean}) {
-		$self->insert_tasks(DPB::Task::Port::BaseClean->new('clean'));
-	}
-	$hostprop->{junk_count} //= 0;
-	$hostprop->{depends_count} //= 0;
-	$hostprop->{ports_count} //= 0;
-	my $c = $self->need_depends($core);
-	$hostprop->{ports_count}++;
-	$hostprop->{depends_count} += $c;
-	my $junk = DPB::Junk->want($core, $self);
-	if ($junk == 2) {
-		push(@todo, 'junk');
-		my $fh = $self->{builder}->logger->open("junk");
-		print $fh "$$@", CORE::time(), ": ", $core->hostname,
-		    ": forced junking -> $self->{path}\n";
-	}
-	if ($c) {
-		$hostprop->{junk_count}++;
-		push(@todo, qw(depends show-prepare-results));
-	}
-	# gc stuff we will no longer need
-	delete $self->{v}{info}{solved};
-	if ($junk == 1) {
-		my $fh = $self->{builder}->logger->open("junk");
-		print $fh "$$@", CORE::time(), ": ", $core->hostname,
-		    ": depends=$hostprop->{depends_count} ",
-		    " ports=$hostprop->{ports_count} ",
-		    " junk=$hostprop->{junk_count} -> $self->{path}\n";
-		push(@todo, 'junk');
-	}
-	if ($builder->{fetch}) {
-		push(@todo, qw(checksum));
-	} else {
-		push(@todo, qw(fetch));
-	}
-
-	push(@todo, qw(inbetween));
-	if (!$small) {
-		push(@todo, qw(patch configure));
-	}
-	push(@todo, qw(build));
-
-	if (!$small) {
-		push(@todo, qw(fake));
-	}
-	push(@todo, qw(package));
-	if ($builder->want_size($self->{v}, $core)) {
-		push @todo, 'show-size';
-	}
-	if (!$dontclean) {
-		push @todo, 'clean';
-	}
-	$self->add_tasks(map {DPB::Port::TaskFactory->create($_)} @todo);
-}
 
 sub current_task
 {
@@ -1074,8 +1006,145 @@ sub really_watch
 	return 0;
 }
 
+
+package DPB::Job::Port;
+our @ISA = qw(DPB::Job::BasePort);
+
+sub new
+{
+	my $class = shift;
+	my ($log, $fh, $v, $lock, $builder, $special, $core, 
+	    $endcode) = @_;
+
+	my $job = $class->SUPER::new(@_);
+
+	my $prop = $core->prop;
+	if ($prop->{parallel} =~ m/^\/(\d+)$/) {
+		if ($prop->{jobs} == 1) {
+			$prop->{parallel} = 0;
+		} else {
+			$prop->{parallel} = int($prop->{jobs}/$1);
+			if ($prop->{parallel} < 2) {
+				$prop->{parallel} = 2;
+			}
+		}
+	}
+	if ($prop->{parallel} && $v->{info}->has_property('parallel')) {
+		$job->{parallel} = $prop->{parallel};
+	}
+
+	if ($builder->checks_rebuild($v)) {
+		push(@{$job->{tasks}},
+		    DPB::Task::Port::Signature->new('signature'));
+	} else {
+		$job->add_normal_tasks($builder->{dontclean}{$v->pkgpath},
+		    $core);
+	}
+	return $job;
+}
+
+sub add_normal_tasks
+{
+	my ($self, $dontclean, $core) = @_;
+
+	my @todo;
+	my $builder = $self->{builder};
+	my $hostprop = $core->prop;
+	my $small = 0;
+	if (defined $times->{$self->{v}} && 
+	    $times->{$self->{v}} < $hostprop->{small_timeout}) {
+		$small = 1;
+	}
+	if ($builder->{clean}) {
+		$self->insert_tasks(DPB::Task::Port::BaseClean->new('clean'));
+	}
+	$hostprop->{junk_count} //= 0;
+	$hostprop->{depends_count} //= 0;
+	$hostprop->{ports_count} //= 0;
+	my $c = $self->need_depends($core, 0);
+	$hostprop->{ports_count}++;
+	$hostprop->{depends_count} += $c;
+	my $junk = DPB::Junk->want($core, $self);
+	if ($junk == 2) {
+		push(@todo, 'junk');
+		my $fh = $self->{builder}->logger->open("junk");
+		print $fh "$$@", CORE::time(), ": ", $core->hostname,
+		    ": forced junking -> $self->{path}\n";
+	}
+	if ($c) {
+		$hostprop->{junk_count}++;
+		push(@todo, qw(depends show-prepare-results));
+	}
+	# gc stuff we will no longer need
+	delete $self->{v}{info}{solved};
+	if ($junk == 1) {
+		my $fh = $self->{builder}->logger->open("junk");
+		print $fh "$$@", CORE::time(), ": ", $core->hostname,
+		    ": depends=$hostprop->{depends_count} ",
+		    " ports=$hostprop->{ports_count} ",
+		    " junk=$hostprop->{junk_count} -> $self->{path}\n";
+		push(@todo, 'junk');
+	}
+	if ($builder->{fetch}) {
+		push(@todo, qw(checksum));
+	} else {
+		push(@todo, qw(fetch));
+	}
+
+	push(@todo, qw(inbetween));
+	if (!$small) {
+		push(@todo, qw(patch configure));
+	}
+	push(@todo, qw(build));
+
+	if (!$small) {
+		push(@todo, qw(fake));
+	}
+	push(@todo, qw(package));
+	if ($builder->want_size($self->{v}, $core)) {
+		push @todo, 'show-size';
+	}
+	if ($self->{v}{info}->want_tests) {
+		$dontclean = 1;
+	}
+	if (!$dontclean) {
+		push @todo, 'clean';
+	}
+	$self->add_tasks(map {DPB::Port::TaskFactory->create($_)} @todo);
+}
+
+package DPB::Job::Port::Test;
+our @ISA = qw(DPB::Job::BasePort);
+sub new
+{
+	my $class = shift;
+	my ($log, $fh, $v, $lock, $builder, $special, $core, 
+	    $endcode) = @_;
+
+	my $job = $class->SUPER::new(@_);
+
+	$job->add_test_tasks($core);
+
+	return $job;
+}
+
+sub add_test_tasks
+{
+	my ($self, $core) = @_;
+	my @todo;
+
+	my $c = $self->need_depends($core, 1);
+	if ($c) {
+		push(@todo, qw(depends show-prepare-test-results));
+	}
+	delete $self->{v}{info}{solved};
+	push(@todo, qw(test clean));
+
+	$self->add_tasks(map {DPB::Port::TaskFactory->create($_)} @todo);
+}
+
 package DPB::Job::Port::Install;
-our @ISA = qw(DPB::Job::Port);
+our @ISA = qw(DPB::Job::BasePort);
 
 sub new
 {
@@ -1096,4 +1165,3 @@ sub new
 }
 
 1;
-

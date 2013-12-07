@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.30 2013/11/12 22:11:50 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.31 2013/12/07 16:03:03 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -289,7 +289,7 @@ my %adder = (
 	PERMIT_DISTFILES_CDROM => 'AddNegative',
 # not yet used, provision for regression tests
 	TEST_DEPENDS => "AddTestDepends",
-	NO_TEST => "AddYesNo",
+	NO_TEST => "AddNegative",
 	TEST_IS_INTERACTIVE => "AddYesNo",
 # extra stuff we're generating
 	DEPENDS => "AddDepends",	# all BUILD_DEPENDS/LIB_DEPENDS
@@ -384,12 +384,26 @@ sub has_property
 	    $self->{DPB_PROPERTIES}{$name};
 }
 
+sub want_tests
+{
+	my ($self, $name) = @_;
+	if (defined $self->{NO_TESTS} && $self->{NO_TESTS} == 0) {
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
 sub solve_depends
 {
-	my $self = shift;
+	my ($self, $withtest) = @_;
 	if (!defined $self->{solved}) {
 		my $dep = {};
-		for my $k (qw(DEPENDS BDEPENDS)) {
+		my @todo = (qw(DEPENDS BDEPENDS));
+		if ($withtest) {
+			push(@todo, qw(TDEPENDS));
+		}
+		for my $k (@todo) {
 		
 			if (exists $self->{$k}) {
 				for my $d (values %{$self->{$k}}) {

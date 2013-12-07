@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.59 2013/11/16 16:39:28 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.60 2013/12/07 16:03:03 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -238,6 +238,42 @@ sub build
 	    "pid=$core->{pid}\n",
 	    "start=$start (", DPB::Util->time2string($start), ")\n";
 	$job->set_watch($self->logger, $v);
+}
+
+sub test
+{
+	my ($self, $v, $core, $lock, $final_sub) = @_;
+	my $start = time();
+	my $log = $self->logger->make_test_logs($v);
+	my $memsize = $self->{sizer}->build_in_memory($core, $v);
+
+	open my $fh, ">>", $log or die "can't open $log: $!";
+	if ($memsize) {
+		print $lock "mem=$memsize\n";
+		print $fh ">>> Building in memory under ";
+		$core->{inmem} = $memsize;
+	} else {
+		print $fh ">>> Building under ";
+		$core->{inmem} = 0;
+	}
+	if ($v->{info}->has_property('tag')) {
+		print $lock "tag=".$v->{info}->has_property('tag')."\n";
+	}
+	$v->quick_dump($fh);
+
+	my $job;
+	$job = DPB::Job::Port::Test->new($log, $fh, $v, $lock, $self, 
+	    $memsize, $core,
+	    sub {
+	    	close($fh); 
+		$self->end_lock($lock, $core, $job); 
+		$self->report($v, $job, $core); 
+		&$final_sub($job->{failed});
+	    });
+	$core->start_job($job, $v);
+	print $lock "host=", $core->hostname, "\n",
+	    "pid=$core->{pid}\n",
+	    "start=$start (", DPB::Util->time2string($start), ")\n";
 }
 
 sub install
