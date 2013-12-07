@@ -1,0 +1,39 @@
+$OpenBSD: patch-lpsolve_lp_solve-timeb_patch,v 1.1 2013/12/07 20:43:00 naddy Exp $
+--- lpsolve/lp_solve-timeb.patch.orig.port	Fri Dec  6 12:46:26 2013
++++ lpsolve/lp_solve-timeb.patch	Fri Dec  6 14:48:55 2013
+@@ -0,0 +1,35 @@
++--- misc/build/lp_solve_5.5/lp_utils.c.orig	Sun Jan 14 19:31:36 2007
+++++ misc/build/lp_solve_5.5/lp_utils.c	Fri Dec  6 13:05:55 2013
++@@ -5,7 +5,6 @@
++ #include "lp_lib.h"
++ #include "lp_utils.h"
++ #include <time.h>
++-#include <sys/timeb.h>
++ 
++ #ifdef FORTIFY
++ # include "lp_fortify.h"
++--- misc/build/lp_solve_5.5/shared/commonlib.c.orig	Fri Dec  6 13:05:55 2013
+++++ misc/build/lp_solve_5.5/shared/commonlib.c	Fri Dec  6 14:44:30 2013
++@@ -4,7 +4,7 @@
++ #ifdef INTEGERTIME
++ # include <time.h>
++ #else
++-# include <sys/timeb.h>
+++# include <sys/time.h>
++ #endif
++ 
++ #include <stdlib.h>
++@@ -700,10 +700,10 @@
++ #elif defined CLOCKTIME
++   return((double)clock()/CLOCKS_PER_SEC /* CLK_TCK */);
++ #else
++-  struct timeb buf;
+++  struct timeval buf;
++ 
++-  ftime(&buf);
++-  return((double)buf.time+((double) buf.millitm)/1000.0);
+++  gettimeofday(&buf, NULL);
+++  return((double)buf.tv_sec+((double) buf.tv_usec)/1000000.0);
++ #endif
++ }
++ 

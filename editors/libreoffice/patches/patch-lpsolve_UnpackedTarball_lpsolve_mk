@@ -1,0 +1,11 @@
+$OpenBSD: patch-lpsolve_UnpackedTarball_lpsolve_mk,v 1.1 2013/12/07 20:43:00 naddy Exp $
+--- lpsolve/UnpackedTarball_lpsolve.mk.orig.port	Tue Oct 22 19:49:23 2013
++++ lpsolve/UnpackedTarball_lpsolve.mk	Fri Dec  6 12:34:30 2013
+@@ -25,6 +25,7 @@ else
+ $(eval $(call gb_UnpackedTarball_add_patches,lpsolve,\
+ 	lpsolve/lp_solve-aix.patch \
+ 	lpsolve/lp_solve-fixed-warn.patch \
++	lpsolve/lp_solve-timeb.patch \
+ 	lpsolve/lp_solve_5.5.patch \
+ ))
+ 

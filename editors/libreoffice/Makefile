@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2013/12/07 19:42:40 robert Exp $
+# $OpenBSD: Makefile,v 1.101 2013/12/07 20:43:00 naddy Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 BROKEN-i386=	undefined symbol _ZN5boost6system15system_categoryEv in libscfiltlo.so (CppunitTest_sc_filters_test)
@@ -18,7 +18,7 @@ PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde3
 
-REVISION-main=	1
+REVISION-main=	2
 REVISION-java=	1
 
 EPOCH=		0
