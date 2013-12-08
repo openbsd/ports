@@ -1,0 +1,18 @@
+$OpenBSD: patch-libempathy-gtk_empathy-individual-menu_c,v 1.1 2013/12/08 10:44:55 ajacoutot Exp $
+
+From 96f2a474e0cdc5f8fe8a482d14a1a97c519def3a Mon Sep 17 00:00:00 2001
+From: Philip Withnall <philip.withnall@collabora.co.uk>
+Date: Thu, 21 Nov 2013 18:09:16 +0000
+Subject: libempathy: Remove empathy_create_individual_from_tp_contact()
+
+--- libempathy-gtk/empathy-individual-menu.c.orig	Thu Oct 31 13:23:06 2013
++++ libempathy-gtk/empathy-individual-menu.c	Sun Dec  8 10:00:01 2013
+@@ -164,7 +164,7 @@ individual_menu_add_personas (EmpathyIndividualMenu *s
+         goto while_finish;
+ 
+       contact = empathy_contact_dup_from_tp_contact (tp_contact);
+-      single_individual = empathy_create_individual_from_tp_contact (
++      single_individual = empathy_ensure_individual_from_tp_contact (
+           tp_contact);
+ 
+       /* Pretty hacky. Creating single_individual had a side effect to change

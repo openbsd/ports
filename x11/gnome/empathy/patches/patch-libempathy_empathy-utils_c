@@ -1,0 +1,36 @@
+$OpenBSD: patch-libempathy_empathy-utils_c,v 1.3 2013/12/08 10:44:55 ajacoutot Exp $
+
+From 96f2a474e0cdc5f8fe8a482d14a1a97c519def3a Mon Sep 17 00:00:00 2001
+From: Philip Withnall <philip.withnall@collabora.co.uk>
+Date: Thu, 21 Nov 2013 18:09:16 +0000
+Subject: libempathy: Remove empathy_create_individual_from_tp_contact()
+
+--- libempathy/empathy-utils.c.orig	Thu Oct 31 13:23:06 2013
++++ libempathy/empathy-utils.c	Sun Dec  8 10:00:01 2013
+@@ -946,26 +946,6 @@ create_individual_from_persona (FolksPersona *persona)
+   return individual;
+ }
+ 
+-FolksIndividual *
+-empathy_create_individual_from_tp_contact (TpContact *contact)
+-{
+-  TpfPersona *persona;
+-  FolksIndividual *individual;
+-
+-  persona = tpf_persona_dup_for_contact (contact);
+-  if (persona == NULL)
+-    {
+-      DEBUG ("Failed to get a persona for %s",
+-          tp_contact_get_identifier (contact));
+-      return NULL;
+-    }
+-
+-  individual = create_individual_from_persona (FOLKS_PERSONA (persona));
+-
+-  g_object_unref (persona);
+-  return individual;
+-}
+-
+ /* Look for a FolksIndividual containing @contact as one of his persona
+  * and create one if needed */
+ FolksIndividual *
