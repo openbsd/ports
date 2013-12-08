@@ -1,0 +1,12 @@
+$OpenBSD: patch-po_thumbnailer_CMakeLists_txt,v 1.1.1.1 2013/12/08 18:21:31 zhuk Exp $
+--- po_thumbnailer/CMakeLists.txt.orig	Sun Nov 10 12:42:25 2013
++++ po_thumbnailer/CMakeLists.txt	Sun Nov 10 12:43:33 2013
+@@ -7,7 +7,7 @@ find_package(GettextPO REQUIRED)
+ include(KDE4Defaults)
+ 
+ add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+-include_directories(${QT_INCLUDES} ${KDE4_INCLUDES})
++include_directories(${GETTEXTPO_INCLUDE_DIR} ${QT_INCLUDES} ${KDE4_INCLUDES})
+ 
+ set(pothumbnail_SRCS pocreator.cpp)
+ 
