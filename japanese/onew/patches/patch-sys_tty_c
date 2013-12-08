@@ -1,0 +1,21 @@
+$OpenBSD: patch-sys_tty_c,v 1.1 2013/12/08 15:09:15 espie Exp $
+--- sys/tty.c.orig	Sun Dec  8 16:06:46 2013
++++ sys/tty.c	Sun Dec  8 16:07:22 2013
+@@ -76,8 +76,16 @@ Onew_ttyIcanon(on)
+ 	if( on )
+ 		buf.c_lflag |= (ECHO|ICANON);
+ 	else	buf.c_lflag &= ~(ECHO|ICANON);
++	if( on ){
++		buf.c_cc[VMIN]  = 1;
++		buf.c_cc[VTIME] = 0;
++		buf.c_lflag &= ~ICANON;
++	}else{
++		buf.c_cc[VMIN]  = 0;
++		buf.c_cc[VTIME] = ('D'-0x40);
++		buf.c_lflag |=  ICANON;
++	}
+ 	tcsetattr(fd, TCSADRAIN, &buf);
+-	set_cbreak(fd,!on);
+ 	close(fd);
+ }
+ #endif

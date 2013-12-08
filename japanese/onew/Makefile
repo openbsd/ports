@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 12:17:51 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2013/12/08 15:09:15 espie Exp $
 
 COMMENT=	library for Japanese Input Method Wnn4
 
@@ -8,7 +8,7 @@ COMMENT-wnn4-canna=	library for Japanese Input Method canna or wnn4
 FULLPKGNAME=		ja-onew${FLAVOR_EXT}-2.2.10
 
 DISTNAME=	jvim2.0r+onew2.2.10
-REVISION=	1
+REVISION=	2
 CATEGORIES=	japanese
 
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Japan/onew/ \

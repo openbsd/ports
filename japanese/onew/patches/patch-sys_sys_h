@@ -1,16 +1,19 @@
-$OpenBSD: patch-sys_sys_h,v 1.1.1.1 2001/03/28 15:17:35 espie Exp $
+$OpenBSD: patch-sys_sys_h,v 1.2 2013/12/08 15:09:15 espie Exp $
 --- sys/sys.h.orig	Fri Jun 30 06:56:38 1995
-+++ sys/sys.h	Wed Mar 28 03:58:57 2001
-@@ -30,7 +30,7 @@
-  || defined(MACH) \
-  || defined(NeXT) \
-  || defined(bsdi) \
-- || defined(__FreeBSD__)
-+ || defined(__FreeBSD__) || defined(__OpenBSD__)
- #define USE_SGTTY
- #define HAS_SELECT
- #endif
-@@ -69,7 +69,7 @@
++++ sys/sys.h	Sun Dec  8 15:57:59 2013
+@@ -23,6 +23,11 @@
+  *   terminal control: {USE_SGTTY,  USE_TERMIO, USE_TERMIOS}
+  */
+ 
++#if defined(__OpenBSD__)
++#define USE_TERMIOS
++#define HAS_POLL
++#endif
++
+ #if defined(sunos) \
+  || defined(pureBSD43) \
+  || defined(ultrix) \
+@@ -69,7 +74,7 @@
  #define READYCC(fp)	(fp->_egptr - fp->_gptr)
  #endif
  #else
