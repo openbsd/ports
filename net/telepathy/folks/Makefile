@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2013/11/15 08:26:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.63 2013/12/08 10:43:21 ajacoutot Exp $
 
 COMMENT=		people aggregation library
 
@@ -6,6 +6,7 @@ GNOME_PROJECT=		folks
 GNOME_VERSION=		0.9.6
 # MODULE_VERSION in config.h
 API_V=			41
+REVISION=		0
 
 SHARED_LIBS +=  folks-telepathy           5.1 # 41.1
 SHARED_LIBS +=  folks                     5.4 # 41.1
