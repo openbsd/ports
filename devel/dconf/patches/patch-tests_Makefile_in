@@ -1,6 +1,9 @@
-$OpenBSD: patch-tests_Makefile_in,v 1.5 2013/09/26 07:05:05 ajacoutot Exp $
+$OpenBSD: patch-tests_Makefile_in,v 1.6 2013/12/08 18:25:25 ajacoutot Exp $
 
-XXX fix and push upstream
+From c8603e6d3673f06f84dc2b0ff0f96ede4ad881a8 Mon Sep 17 00:00:00 2001
+From: Ryan Lortie <desrt@desrt.ca>
+Date: Sun, 08 Dec 2013 17:58:49 +0000
+Subject: portability: only link to -ldl if needed
 
 --- tests/Makefile.in.orig	Mon Sep 23 23:29:29 2013
 +++ tests/Makefile.in	Thu Sep 26 08:51:37 2013
