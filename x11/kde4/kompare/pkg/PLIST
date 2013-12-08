@@ -1,0 +1,43 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/08 18:08:20 zhuk Exp $
+@conflict kdesdk-<4.11
+@bin bin/kompare
+include/kde4/kompare/
+include/kde4/kompare/kompareinterface.h
+lib/kde4/komparenavtreepart.so
+lib/kde4/komparepart.so
+@lib ${KDE4LIB}/libkomparedialogpages.so.${LIBkomparedialogpages_VERSION}
+@lib ${KDE4LIB}/libkomparediff2.so.${LIBkomparediff2_VERSION}
+@lib ${KDE4LIB}/libkompareinterface.so.${LIBkompareinterface_VERSION}
+@lib lib/libkomparedialogpages.so.${LIBkomparedialogpages_VERSION}
+@lib lib/libkomparediff2.so.${LIBkomparediff2_VERSION}
+@lib lib/libkompareinterface.so.${LIBkompareinterface_VERSION}
+share/applications/kde4/kompare.desktop
+share/apps/kompare/
+share/apps/kompare/komparepartui.rc
+share/apps/kompare/kompareui.rc
+share/doc/HTML/en/kompare/
+share/doc/HTML/en/kompare/common
+share/doc/HTML/en/kompare/dock.png
+share/doc/HTML/en/kompare/index.cache.bz2
+share/doc/HTML/en/kompare/index.docbook
+share/doc/HTML/en/kompare/settings-diff1.png
+share/doc/HTML/en/kompare/settings-diff2.png
+share/doc/HTML/en/kompare/settings-diff3.png
+share/doc/HTML/en/kompare/settings-diff4.png
+share/doc/HTML/en/kompare/settings-view1.png
+share/doc/HTML/en/kompare/settings-view2.png
+share/doc/HTML/en/kompare/undock.png
+share/icons/hicolor/128x128/apps/kompare.png
+share/icons/hicolor/16x16/apps/kompare.png
+share/icons/hicolor/22x22/apps/kompare.png
+share/icons/hicolor/32x32/apps/kompare.png
+share/icons/hicolor/48x48/apps/kompare.png
+share/icons/hicolor/scalable/apps/kompare.svgz
+share/kde4/services/komparenavtreepart.desktop
+share/kde4/services/komparepart.desktop
+share/kde4/servicetypes/komparenavigationpart.desktop
+share/kde4/servicetypes/kompareviewpart.desktop
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
