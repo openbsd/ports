@@ -1,0 +1,17 @@
+$OpenBSD: patch-Xwnmo_xjutil_jhlp_c,v 1.1 2013/12/08 16:42:24 espie Exp $
+--- Xwnmo/xjutil/jhlp.c.orig	Sun Dec  8 17:39:32 2013
++++ Xwnmo/xjutil/jhlp.c	Sun Dec  8 17:40:05 2013
+@@ -92,13 +92,6 @@ static char rcs_id[] = "$Id: jhlp.c,v 1.9 1992/09/25 0
+ 
+ struct passwd *getpwuid();
+ 
+-#ifdef	BSD42
+-#include <sgtty.h>
+-#endif	/* BSD42 */
+-#ifdef SYSVR2
+-#include <termio.h>
+-#endif /* SYSVR2 */
+-
+ extern char *optarg;
+ extern int optind;
+ 
