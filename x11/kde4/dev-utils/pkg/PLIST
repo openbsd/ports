@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/08 18:02:49 zhuk Exp $
+@conflict kdesdk-<4.11
+@bin bin/kpartloader
+@bin bin/kstartperf
+@bin bin/kuiviewer
+include/kde4/kprofilemethod.h
+lib/kde4/kstartperf.so
+lib/kde4/kuiviewerpart.so
+lib/kde4/quithumbnail.so
+share/applications/kde4/kuiviewer.desktop
+share/apps/kpartloader/
+share/apps/kpartloader/kpartloaderui.rc
+share/apps/kuiviewer/
+share/apps/kuiviewer/kuiviewerui.rc
+share/apps/kuiviewerpart/
+share/apps/kuiviewerpart/kuiviewer_part.rc
+share/icons/hicolor/16x16/apps/kuiviewer.png
+share/icons/hicolor/32x32/apps/kuiviewer.png
+share/icons/hicolor/48x48/apps/kuiviewer.png
+share/kde4/services/designerthumbnail.desktop
+share/kde4/services/kuiviewer_part.desktop
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

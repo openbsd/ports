@@ -1,0 +1,19 @@
+$OpenBSD: patch-kstartperf_CMakeLists_txt,v 1.1.1.1 2013/12/08 18:02:49 zhuk Exp $
+--- kstartperf/CMakeLists.txt.orig	Sat Nov  9 13:54:45 2013
++++ kstartperf/CMakeLists.txt	Sat Nov  9 13:57:08 2013
+@@ -8,11 +8,13 @@ include_directories (${CMAKE_SOURCE_DIR} ${CMAKE_BINAR
+ 
+ 
+ # By default in kde3 kstartpref was not compiled, but well, if it compiles...
+-check_include_file(ltdl.h HAVE_LTDL_H)
+-if(HAVE_LTDL_H AND NOT APPLE AND NOT WIN32)
++find_path(LTDL_INCLUDE_DIR ltdl.h)
++if(LTDL_INCLUDE_DIR AND NOT APPLE AND NOT WIN32)
++message(STATUS "Using ltdl.h from ${LTDL_INCLUDE_DIR}")
+ ########### next target ###############
+ 
+ set(kstartperf_LIB_SRCS libkstartperf.c )
++include_directories(${LTDL_INCLUDE_DIR})
+ 
+ 
+ kde4_add_plugin(kstartperf ${kstartperf_LIB_SRCS})
