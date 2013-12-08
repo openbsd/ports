@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/08 18:05:31 zhuk Exp $
+@conflict kdesdk-<4.11
+bin/dprof2calltree
+bin/hotshot2calltree
+@bin bin/kcachegrind
+bin/memprof2calltree
+bin/op2calltree
+bin/pprof2calltree
+share/applications/kde4/kcachegrind.desktop
+share/apps/kcachegrind/
+share/apps/kcachegrind/icons/
+share/apps/kcachegrind/icons/hicolor/
+share/apps/kcachegrind/icons/hicolor/16x16/
+share/apps/kcachegrind/icons/hicolor/16x16/actions/
+share/apps/kcachegrind/icons/hicolor/16x16/actions/move.png
+share/apps/kcachegrind/icons/hicolor/16x16/actions/percent.png
+share/apps/kcachegrind/icons/hicolor/22x22/
+share/apps/kcachegrind/icons/hicolor/22x22/actions/
+share/apps/kcachegrind/icons/hicolor/22x22/actions/hidetemplates.png
+share/apps/kcachegrind/icons/hicolor/22x22/actions/move.png
+share/apps/kcachegrind/icons/hicolor/22x22/actions/percent.png
+share/apps/kcachegrind/icons/hicolor/32x32/
+share/apps/kcachegrind/icons/hicolor/32x32/actions/
+share/apps/kcachegrind/icons/hicolor/32x32/actions/percent.png
+share/apps/kcachegrind/kcachegrindui.rc
+share/apps/kcachegrind/tips
+share/doc/HTML/en/kcachegrind/
+share/doc/HTML/en/kcachegrind/common
+share/doc/HTML/en/kcachegrind/index.cache.bz2
+share/doc/HTML/en/kcachegrind/index.docbook
+share/icons/hicolor/32x32/apps/kcachegrind.png
+share/icons/hicolor/48x48/apps/kcachegrind.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
