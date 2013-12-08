@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/06/01 17:53:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/12/08 15:06:34 ajacoutot Exp $
 @bin bin/nemiver
 include/nemiver/
 include/nemiver/common/
@@ -271,6 +271,25 @@ share/help/oc/nemiver/figures/set-breakpoint-dialog.png
 share/help/oc/nemiver/figures/variable-inspector.png
 share/help/oc/nemiver/index.docbook
 share/help/oc/nemiver/legal.xml
+share/help/pt_BR/
+share/help/pt_BR/nemiver/
+share/help/pt_BR/nemiver/figures/
+share/help/pt_BR/nemiver/figures/attach-dialog.png
+share/help/pt_BR/nemiver/figures/connect-remote-dialog.png
+share/help/pt_BR/nemiver/figures/disabled-breakpoint.png
+share/help/pt_BR/nemiver/figures/enabled-breakpoint.png
+share/help/pt_BR/nemiver/figures/execute-dialog.png
+share/help/pt_BR/nemiver/figures/global-variables-dialog.png
+share/help/pt_BR/nemiver/figures/load-core-dialog.png
+share/help/pt_BR/nemiver/figures/main-window.png
+share/help/pt_BR/nemiver/figures/memory-view.png
+share/help/pt_BR/nemiver/figures/open-files-target.png
+share/help/pt_BR/nemiver/figures/registers-view.png
+share/help/pt_BR/nemiver/figures/sessions-dialog.png
+share/help/pt_BR/nemiver/figures/set-breakpoint-dialog.png
+share/help/pt_BR/nemiver/figures/variable-inspector.png
+share/help/pt_BR/nemiver/index.docbook
+share/help/pt_BR/nemiver/legal.xml
 share/help/sl/nemiver/
 share/help/sl/nemiver/figures/
 share/help/sl/nemiver/figures/attach-dialog.png
@@ -325,6 +344,11 @@ share/help/zh_CN/nemiver/figures/set-breakpoint-dialog.png
 share/help/zh_CN/nemiver/figures/variable-inspector.png
 share/help/zh_CN/nemiver/index.docbook
 share/help/zh_CN/nemiver/legal.xml
+share/icons/HighContrast/16x16/apps/nemiver.png
+share/icons/HighContrast/22x22/apps/nemiver.png
+share/icons/HighContrast/24x24/apps/nemiver.png
+share/icons/HighContrast/32x32/apps/nemiver.png
+share/icons/HighContrast/48x48/apps/nemiver.png
 share/icons/hicolor/16x16/apps/nemiver.png
 share/icons/hicolor/22x22/apps/nemiver.png
 share/icons/hicolor/24x24/apps/nemiver.png
@@ -348,10 +372,12 @@ share/locale/gl/LC_MESSAGES/nemiver.mo
 share/locale/hi/LC_MESSAGES/nemiver.mo
 share/locale/hu/LC_MESSAGES/nemiver.mo
 share/locale/id/LC_MESSAGES/nemiver.mo
+share/locale/it/LC_MESSAGES/nemiver.mo
 share/locale/ja/LC_MESSAGES/nemiver.mo
 share/locale/ko/LC_MESSAGES/nemiver.mo
 share/locale/lt/LC_MESSAGES/nemiver.mo
 share/locale/lv/LC_MESSAGES/nemiver.mo
+share/locale/ml/LC_MESSAGES/nemiver.mo
 share/locale/nb/LC_MESSAGES/nemiver.mo
 share/locale/nl/LC_MESSAGES/nemiver.mo
 share/locale/oc/LC_MESSAGES/nemiver.mo
@@ -365,7 +391,9 @@ share/locale/sl/LC_MESSAGES/nemiver.mo
 share/locale/sr/LC_MESSAGES/nemiver.mo
 share/locale/sr@latin/LC_MESSAGES/nemiver.mo
 share/locale/sv/LC_MESSAGES/nemiver.mo
+share/locale/tg/LC_MESSAGES/nemiver.mo
 share/locale/th/LC_MESSAGES/nemiver.mo
+share/locale/tr/LC_MESSAGES/nemiver.mo
 share/locale/ug/LC_MESSAGES/nemiver.mo
 share/locale/zh_CN/LC_MESSAGES/nemiver.mo
 share/locale/zh_HK/LC_MESSAGES/nemiver.mo
@@ -376,6 +404,8 @@ share/nemiver/menus/menubar.xml
 share/nemiver/ui/
 share/nemiver/ui/locatefiledialog.ui
 share/nemiver/ui/workbench.ui
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

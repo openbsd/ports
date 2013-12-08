@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/09/28 08:51:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2013/12/08 15:06:34 ajacoutot Exp $
 
 BROKEN=		runtime issue (threads related?)
 
@@ -7,8 +7,7 @@ SHARED_ONLY=	Yes
 COMMENT=	C/C++ debugger for GNOME
 
 GNOME_PROJECT=	nemiver
-GNOME_VERSION=	0.9.4
-REVISION=	1
+GNOME_VERSION=	0.9.5
 
 CATEGORIES=	devel
 
@@ -31,7 +30,8 @@ MODULES=	devel/dconf \
 		devel/gettext \
 		x11/gnome
 
-BUILD_DEPENDS=	devel/gsettings-desktop-schemas
+BUILD_DEPENDS=	devel/boost \
+		devel/gsettings-desktop-schemas
 RUN_DEPENDS=	devel/gsettings-desktop-schemas \
 		devel/gdb
 LIB_DEPENDS=	devel/libgtop2 \
