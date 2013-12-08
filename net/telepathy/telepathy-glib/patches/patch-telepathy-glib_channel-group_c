@@ -1,0 +1,18 @@
+$OpenBSD: patch-telepathy-glib_channel-group_c,v 1.1 2013/12/08 10:43:57 ajacoutot Exp $
+
+From d4388c7c1fedb1e91b99075cd6b15b5cf573a302 Mon Sep 17 00:00:00 2001
+From: Guillaume Desmottes <guillaume.desmottes@collabora.co.uk>
+Date: Thu, 24 Oct 2013 12:38:45 +0000
+Subject: channel-group: don't crash if no message has been provided
+
+--- telepathy-glib/channel-group.c.orig	Thu Sep 26 16:17:46 2013
++++ telepathy-glib/channel-group.c	Sun Dec  8 10:31:25 2013
+@@ -1096,7 +1096,7 @@ handle_members_changed (TpChannel *self,
+           const gchar *debug_message = tp_asv_get_string (details,
+               "debug-message");
+ 
+-          if (debug_message == NULL && message[0] != '\0')
++          if (debug_message == NULL && !tp_str_empty (message))
+             debug_message = message;
+ 
+           if (debug_message == NULL && error_detail != NULL)
