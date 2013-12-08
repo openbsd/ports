@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.103 2013/12/08 12:33:46 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.104 2013/12/08 12:35:32 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -370,8 +370,9 @@ sub is_base_system
 	}
 }
 
-# ->filter_obsolete(@list)
-# explicitly mark packages as no longer there
+# ->filter_obsolete(\@list)
+# explicitly mark packages as no longer there. Remove them from the
+# list of "normal" stuff.
 
 sub filter_obsolete
 {
