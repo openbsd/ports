@@ -1,0 +1,20 @@
+$OpenBSD: patch-samba_filepropertiesplugin_sambausershareplugin_cpp,v 1.1.1.1 2013/12/08 18:16:12 zhuk Exp $
+Unbreak build.
+--- samba/filepropertiesplugin/sambausershareplugin.cpp.orig	Fri Nov  8 17:08:05 2013
++++ samba/filepropertiesplugin/sambausershareplugin.cpp	Fri Nov  8 17:08:41 2013
+@@ -115,6 +115,7 @@ SambaUserSharePlugin::~SambaUserSharePlugin()
+ {
+ }
+ 
++#ifdef SAMBA_INSTALL
+ void SambaUserSharePlugin::installSamba()
+ {
+     unsigned int xid = 0;
+@@ -131,6 +132,7 @@ void SambaUserSharePlugin::installSamba()
+     }
+     QDBusReply<int> reply = device.call("InstallPackageNames", xid, packages, interaction);
+ }
++#endif
+ 
+ void SambaUserSharePlugin::setupModel()
+ {
