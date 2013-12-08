@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/08 18:17:07 zhuk Exp $
+@conflict kdenetwork->=4,<4.11
+lib/strigi/strigita_torrent_analyzer.so
