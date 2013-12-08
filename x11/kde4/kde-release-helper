@@ -361,16 +361,16 @@ build_deps_list() {
 	for P in `list_local_ports; list_l10n_ports_dirs`; do
 		# normalize build dependencies list by removing all but pkgpath
 		BDEPS=$(cd $P && make show="BUILD_DEPENDS LIB_DEPENDS" |
-		    sed -Ee 's@[^[:space:]]+:@@g')
+		    sed -E -e 's@[^[:space:]]+:@@g' -e 's@[<>=].*@@')
 
 		# take care of KDE SC dependencies only
 		for DEP2 in $BDEPS; do
 			echo "$DEP2"
 		done |
 		fgrep "x11/${KDEDIR}/" |
-		sed -e "s%x11/${KDEDIR}/%%" -e "s%\$% ${P}%"
-	done >"$T"
-	mv "$T" "$DEPS_LIST"
+		sed -e "s%x11/${KDEDIR}/%%" -e 's%,.*%%' -e "s%\$% ${P}%"
+	done | sort -u >"$T"
+	mv -- "$T" "$DEPS_LIST"
 	CLEANUP_ITEMS="$OCLEANUP_ITEMS"
 }
 
@@ -410,7 +410,7 @@ new_port() {
 	    <template/Makefile \
 	    >"$NEW_P"/Makefile
 	echo "Now run:" >&2
-	echo "cd $NEW_P && ${VISUAL:-${EDITOR:-vi}} Makefile" >&2
+	exec ${VISUAL:-${EDITOR:-vi}} $NEW_P/Makefile
 }
 
 merge_back() {
