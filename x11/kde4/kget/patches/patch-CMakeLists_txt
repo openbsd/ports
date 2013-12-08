@@ -1,0 +1,12 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2013/12/08 18:07:43 zhuk Exp $
+--- CMakeLists.txt.orig	Fri Nov  8 13:46:44 2013
++++ CMakeLists.txt	Fri Nov  8 13:48:05 2013
+@@ -95,6 +95,8 @@ if(QGPGME_FOUND)
+     )
+ endif(QGPGME_FOUND)
+ 
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${KDE4_ENABLE_EXCEPTIONS}")
++
+ add_subdirectory(conf)
+ add_subdirectory(core)
+ add_subdirectory(ui)
