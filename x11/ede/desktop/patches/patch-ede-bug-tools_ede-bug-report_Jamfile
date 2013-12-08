@@ -1,0 +1,12 @@
+$OpenBSD: patch-ede-bug-tools_ede-bug-report_Jamfile,v 1.1 2013/12/08 10:22:47 pascal Exp $
+--- ede-bug-tools/ede-bug-report/Jamfile.orig	Fri May 18 14:51:50 2012
++++ ede-bug-tools/ede-bug-report/Jamfile	Sun Dec  8 03:28:28 2013
+@@ -99,7 +99,7 @@ if $(CURL_CFLAGS) || $(CURL_LIBS) {
+ 		curlmulti.c 
+ 		lock_pthread.c ;
+ 
+-	ObjectCcFlags $(CURL_TRANSPORT_SRC) : $(CURL_CFLAGS) ;
++	ObjectCcFlags $(CURL_TRANSPORT_SRC) : $(XMLRPC_C_FLAGS) $(CURL_CFLAGS) ;
+ 
+ 	UTIL_SRC = 
+ 		casprintf.c 
