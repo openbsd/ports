@@ -1,0 +1,9 @@
+$OpenBSD: patch-draw_lib_dependencies,v 1.1.1.1 2013/12/08 18:01:35 zhuk Exp $
+--- draw_lib_dependencies.orig	Sun Nov 10 13:57:28 2013
++++ draw_lib_dependencies	Sun Nov 10 14:04:25 2013
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # Copyright 2013 Dominik Seichter <domseichter@googlemail.com>
+ # 
