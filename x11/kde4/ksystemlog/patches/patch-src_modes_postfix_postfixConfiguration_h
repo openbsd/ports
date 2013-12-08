@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_modes_postfix_postfixConfiguration_h,v 1.1.1.1 2013/12/08 18:12:26 zhuk Exp $
+--- src/modes/postfix/postfixConfiguration.h.orig	Mon Sep 27 23:52:10 2010
++++ src/modes/postfix/postfixConfiguration.h	Fri Nov  4 02:47:54 2011
+@@ -39,8 +39,13 @@ class PostfixConfiguration : public GenericLogModeConf
+ 		PostfixConfiguration() :
+ 			GenericLogModeConfiguration(
+ 					QLatin1String( POSTFIX_LOG_MODE_ID ),
++#if defined(__OpenBSD__)
++					QStringList() << QLatin1String( "/var/log/maillog" ),
++					QList<int>() << INFORMATION_LOG_LEVEL_ID
++#else
+ 					QStringList() << QLatin1String( "/var/log/mail.log" ) << QLatin1String( "/var/log/mail.info" ) << QLatin1String( "/var/log/mail.warn" ) << QLatin1String( "/var/log/mail.err" ),
+ 					QList<int>() << NOTICE_LOG_LEVEL_ID << INFORMATION_LOG_LEVEL_ID << WARNING_LOG_LEVEL_ID << ERROR_LOG_LEVEL_ID
++#endif
+ 			) {
+ 
+ 		}

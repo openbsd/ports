@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_modes_system_systemConfiguration_h,v 1.1.1.1 2013/12/08 18:12:26 zhuk Exp $
+--- src/modes/system/systemConfiguration.h.orig	Mon Sep 27 23:52:09 2010
++++ src/modes/system/systemConfiguration.h	Fri Nov  4 02:49:06 2011
+@@ -39,7 +39,11 @@ class SystemConfiguration : public GenericLogModeConfi
+ 		SystemConfiguration() :
+ 			GenericLogModeConfiguration(
+ 					QLatin1String( SYSTEM_LOG_MODE_ID ),
++#if defined(__OpenBSD__)
++					QStringList() << QLatin1String( "/var/log/messages" ),
++#else
+ 					QStringList() << QLatin1String( "/var/log/syslog" ),
++#endif
+ 					QList<int>() << INFORMATION_LOG_LEVEL_ID
+ 			) {
+ 

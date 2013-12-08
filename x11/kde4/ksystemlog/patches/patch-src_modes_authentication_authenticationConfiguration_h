@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_modes_authentication_authenticationConfiguration_h,v 1.1.1.1 2013/12/08 18:12:26 zhuk Exp $
+--- src/modes/authentication/authenticationConfiguration.h.orig	Mon Sep 27 23:52:08 2010
++++ src/modes/authentication/authenticationConfiguration.h	Fri Nov  4 02:36:32 2011
+@@ -51,7 +51,11 @@ class AuthenticationConfiguration : public LogModeConf
+ 
+ 			configuration->setCurrentGroup(QLatin1String( "AuthenticationLogMode" ));
+ 
++#if defined(__OpenBSD__)
++			QString defaultAuthenticationPath(QLatin1String( "/var/log/authlog" ));
++#else
+ 			QString defaultAuthenticationPath(QLatin1String( "/var/log/auth.log" ));
++#endif
+ 			configuration->addItemString(QLatin1String( "LogFilePath" ), d->authenticationPath, defaultAuthenticationPath, QLatin1String( "LogFilePath" ));
+ 
+ 			QStringList defaultWarningKeywords;

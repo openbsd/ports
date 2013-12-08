@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_modes_postfix_postfixLogMode_cpp,v 1.1.1.1 2013/12/08 18:12:26 zhuk Exp $
+--- src/modes/postfix/postfixLogMode.cpp.orig	Fri Nov  4 02:59:19 2011
++++ src/modes/postfix/postfixLogMode.cpp	Fri Nov  4 03:02:06 2011
+@@ -36,7 +36,7 @@
+ #include "logModeItemBuilder.h"
+ 
+ PostfixLogMode::PostfixLogMode() :
+-	LogMode(QLatin1String( POSTFIX_LOG_MODE_ID ), i18n("Postfix Log"),QLatin1String( POSTFIX_MODE_ICON )) {
++	LogMode(QLatin1String( POSTFIX_LOG_MODE_ID ), i18n("Mail Log"),QLatin1String( POSTFIX_MODE_ICON )) {
+ 
+ 	d->logModeConfiguration = new PostfixConfiguration();
+ 
+@@ -45,8 +45,8 @@ PostfixLogMode::PostfixLogMode() :
+ 	d->itemBuilder = new LogModeItemBuilder();
+ 
+ 	d->action = createDefaultAction();
+-	d->action->setToolTip(i18n("Display the Postfix log."));
+-	d->action->setWhatsThis(i18n("Displays the Postfix log in the current tab. Postfix is the most known and used mail server in the Linux world."));
++	d->action->setToolTip(i18n("Display mail log."));
++	d->action->setWhatsThis(i18n("Displays summary log of mail daemons in the current tab."));
+ 
+ }
+ 
