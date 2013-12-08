@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/12/06 14:29:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/12/08 11:23:47 espie Exp $
 @info info/slib.info
 share/slib/
 share/slib/ANNOUNCE
@@ -86,6 +86,7 @@ share/slib/minimize.scm
 share/slib/mitscheme.init
 share/slib/mkclrnam.scm
 share/slib/mklibcat.scm
+share/slib/mklibcat
 share/slib/mkpltcat.scm
 share/slib/modular.scm
 share/slib/mulapply.scm

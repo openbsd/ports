@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2013/09/27 17:49:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2013/12/08 11:23:47 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -8,7 +8,7 @@ GNOME_PROJECT =	gnucash
 GNOME_VERSION =	2.4.13
 DOC_VERSION = 	2.4.2
 EXTRACT_SUFX =	.tar.bz2
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  gnc-qof              1.4      # 1.4
 SHARED_LIBS +=  gnc-core-utils       0.0      # unknown
@@ -54,8 +54,6 @@ MODGNOME_ICON_CACHE =	Yes
 MODGCONF2_SCHEMAS_DIR = gnucash
 MODGNOME_TOOLS = 	yelp
 
-BUILD_DEPENDS =	devel/slib-guile
-RUN_DEPENDS =	devel/slib-guile
 LIB_DEPENDS =	databases/libdbi \
 		devel/goffice08 \
 		lang/guile \

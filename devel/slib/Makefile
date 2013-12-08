@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2013/12/06 14:29:25 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2013/12/08 11:23:47 espie Exp $
 
 COMMENT =	scheme r5 library
 
 CATEGORIES =	devel
+REVISION =	0
 
 DISTNAME =	slib-3b4
 
@@ -30,5 +31,6 @@ do-install:
 	# Those are not Unix-like
 	rm ${PREFIX}/share/slib/{macscheme.init,pscheme.init}
 	${INSTALL_DATA} ${WRKDIST}/slib.info ${PREFIX}/info
+	cd ${PREFIX}/share/slib && ln -s mklibcat.scm mklibcat
 
 .include <bsd.port.mk>
