@@ -1,0 +1,19 @@
+$OpenBSD: patch-base_runtime_objs_mk_x86-openbsd,v 1.1 2013/12/08 13:23:47 jasper Exp $
+
+Honor CC/CFLAGS.
+
+--- base/runtime/objs/mk.x86-openbsd.orig	Sun Dec  8 14:19:27 2013
++++ base/runtime/objs/mk.x86-openbsd	Sun Dec  8 14:19:57 2013
+@@ -8,9 +8,9 @@ SHELL =		/bin/sh
+ MAKE =		gmake
+ 
+ ARFLAGS =	Trcv
+-CC =		gcc -ansi
+-CFLAGS =	-O2
+-CPP =		gcc -x assembler-with-cpp -E -P
++CC ?=		gcc -ansi
++CFLAGS ?=	-O2
++CPP ?=		gcc -x assembler-with-cpp -E -P
+ #CPP =		/usr/bin/cpp -P
+ 
+ XOBJS =
