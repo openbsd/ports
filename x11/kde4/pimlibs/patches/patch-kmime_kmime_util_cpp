@@ -1,0 +1,43 @@
+$OpenBSD: patch-kmime_kmime_util_cpp,v 1.1 2013/12/08 19:13:33 zhuk Exp $
+MINOR SECURITY FIX. Remove erroneous bikeshedding.
+--- kmime/kmime_util.cpp.orig	Wed Aug 28 21:06:13 2013
++++ kmime/kmime_util.cpp	Mon Nov 25 23:04:48 2013
+@@ -38,6 +38,7 @@
+ #include <kcharsets.h>
+ #include <kcodecs.h>
+ #include <kdebug.h>
++#include <krandom.h>
+ 
+ #include <QtCore/QList>
+ #include <QtCore/QString>
+@@ -541,29 +542,7 @@ QString decodeRFC2231String( const QByteArray &src )
+ 
+ QByteArray uniqueString()
+ {
+-  static char chars[] = "0123456789abcdefghijklmnopqrstuvxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+-  time_t now;
+-  char p[11];
+-  int pos, ran;
+-  unsigned int timeval;
+-
+-  p[10] = '\0';
+-  now = time( 0 );
+-  ran = 1 + (int)( 1000.0 * rand() / ( RAND_MAX + 1.0 ) );
+-    timeval = ( now / ran ) + getpid();
+-
+-  for ( int i = 0; i < 10; i++ ) {
+-    pos = (int) ( 61.0 * rand() / ( RAND_MAX + 1.0 ) );
+-    //kDebug() << pos;
+-    p[i] = chars[pos];
+-  }
+-
+-  QByteArray ret;
+-  ret.setNum( timeval );
+-  ret += '.';
+-  ret += p;
+-
+-  return ret;
++  return KRandom::randomString(32).toLatin1();
+ }
+ 
+ QByteArray multiPartBoundary()

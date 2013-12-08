@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/07/04 00:44:29 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/12/08 19:13:29 zhuk Exp $
 @conflict kdeaddons-<4
 @conflict kdebase-<4
 @newgroup _kdesud:583
@@ -155,12 +155,12 @@ share/apps/khtml/kpartplugins/minitoolsplugin.desktop
 share/apps/khtml/kpartplugins/minitoolsplugin.rc
 share/apps/khtml/kpartplugins/plugin_adblock.desktop
 share/apps/khtml/kpartplugins/plugin_adblock.rc
-share/apps/khtml/kpartplugins/plugin_babelfish.desktop
 share/apps/khtml/kpartplugins/plugin_babelfish.rc
 share/apps/khtml/kpartplugins/plugin_domtreeviewer.desktop
 share/apps/khtml/kpartplugins/plugin_domtreeviewer.rc
 share/apps/khtml/kpartplugins/plugin_rellinks.desktop
 share/apps/khtml/kpartplugins/plugin_rellinks.rc
+share/apps/khtml/kpartplugins/plugin_translator.desktop
 share/apps/khtml/kpartplugins/plugin_validators.desktop
 share/apps/khtml/kpartplugins/plugin_validators.rc
 share/apps/khtml/kpartplugins/plugin_webarchiver.desktop
@@ -257,8 +257,8 @@ share/apps/kwebkitpart/kpartplugins/khtmlkttsd.desktop
 share/apps/kwebkitpart/kpartplugins/khtmlkttsd.rc
 share/apps/kwebkitpart/kpartplugins/khtmlsettingsplugin.desktop
 share/apps/kwebkitpart/kpartplugins/khtmlsettingsplugin.rc
-share/apps/kwebkitpart/kpartplugins/plugin_babelfish.desktop
 share/apps/kwebkitpart/kpartplugins/plugin_babelfish.rc
+share/apps/kwebkitpart/kpartplugins/plugin_translator.desktop
 share/apps/kwebkitpart/kpartplugins/plugin_validators.desktop
 share/apps/kwebkitpart/kpartplugins/plugin_validators.rc
 share/apps/kwebkitpart/kpartplugins/uachangerplugin.desktop
@@ -322,38 +322,24 @@ share/doc/HTML/en/kfind/index.cache.bz2
 share/doc/HTML/en/kfind/index.docbook
 share/doc/HTML/en/kfind/man-kfind.1.docbook
 share/doc/HTML/en/konqueror/
-share/doc/HTML/en/konqueror/basics.docbook
-share/doc/HTML/en/konqueror/bookmarks.docbook
-share/doc/HTML/en/konqueror/browser.docbook
 share/doc/HTML/en/konqueror/cmndline.png
-share/doc/HTML/en/konqueror/commands.docbook
 share/doc/HTML/en/konqueror/common
-share/doc/HTML/en/konqueror/config.docbook
-share/doc/HTML/en/konqueror/credits.docbook
 share/doc/HTML/en/konqueror/dirtree.png
 share/doc/HTML/en/konqueror/dragdrop.png
-share/doc/HTML/en/konqueror/faq.docbook
-share/doc/HTML/en/konqueror/filemanager.docbook
 share/doc/HTML/en/konqueror/folders.png
 share/doc/HTML/en/konqueror/format-font-size-less.png
 share/doc/HTML/en/konqueror/format-font-size-more.png
 share/doc/HTML/en/konqueror/grouping-view.png
 share/doc/HTML/en/konqueror/index.cache.bz2
 share/doc/HTML/en/konqueror/index.docbook
-share/doc/HTML/en/konqueror/introduction.docbook
 share/doc/HTML/en/konqueror/konqorg.png
 share/doc/HTML/en/konqueror/look.png
 share/doc/HTML/en/konqueror/man-kbookmarkmerger.1.docbook
 share/doc/HTML/en/konqueror/parts.png
-share/doc/HTML/en/konqueror/path-complete.docbook
-share/doc/HTML/en/konqueror/plugins.docbook
 share/doc/HTML/en/konqueror/reset.png
-share/doc/HTML/en/konqueror/save-settings.docbook
 share/doc/HTML/en/konqueror/shortcut1.png
 share/doc/HTML/en/konqueror/shortcut2.png
-share/doc/HTML/en/konqueror/sidebar.docbook
 share/doc/HTML/en/konqueror/thumbnails.png
-share/doc/HTML/en/konqueror/view-extensions.docbook
 share/doc/HTML/en/konqueror/viewproperties-dialog.png
 share/icons/hicolor/128x128/apps/konqueror.png
 share/icons/hicolor/16x16/apps/kfind.png

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/11/24 19:56:32 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2013/12/08 19:13:32 zhuk Exp $
 
 COMMENT =	KDE RAW picture decoding C++ library
+CATEGORIES =	graphics devel
 DISTNAME =	libkdcraw-${MODKDE4_VERSION}
-REVISION =	1
 
 SHARED_LIBS =	kdcraw			50.0	# 20.0
 
@@ -15,9 +15,10 @@ WANTLIB += raw_r
 
 MODKDE4_USE =	libs
 
-RUN_DEPENDS =	x11/gtk+2,-guic
-
 LIB_DEPENDS = 	graphics/libraw
+
+# Share same icons, avoid conflict
+RUN_DEPENDS =	graphics/libkdcraw,-icons
 
 post-extract:
 	cp ${FILESDIR}/*.cmake ${WRKSRC}/cmake/modules/

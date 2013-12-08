@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2013/11/24 19:56:32 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2013/12/08 19:13:34 zhuk Exp $
 
 COMMENT =	extra KDE plasmoids
 DISTNAME =	kdeplasma-addons-${MODKDE4_VERSION}
-REVISION =	0
 
-SHARED_LIBS =	lancelot-datamodels		50.0 # 1.7
-SHARED_LIBS +=	lancelot			50.0 # 1.9
-SHARED_LIBS +=	plasma_groupingcontainment	50.0 # 4.7
-SHARED_LIBS +=	plasmacomicprovidercore		50.0 # 1.0
-SHARED_LIBS +=	plasmapotdprovidercore		50.0 # 1.0
-SHARED_LIBS +=	plasmaweather			50.0 # 4.7
-SHARED_LIBS +=	rtm				50.0 # 4.7
+SHARED_LIBS =	lancelot-datamodels		51.0 # 1.7
+SHARED_LIBS +=	lancelot			51.0 # 1.9
+SHARED_LIBS +=	plasma_groupingcontainment	51.0 # 4.7
+SHARED_LIBS +=	plasmacomicprovidercore		51.0 # 1.0
+SHARED_LIBS +=	plasmapotdprovidercore		51.0 # 1.0
+SHARED_LIBS +=	plasmaweather			51.0 # 4.7
+SHARED_LIBS +=	rtm				51.0 # 4.7
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += ICE SM X11 Xext Xrender Xtst
@@ -20,10 +19,12 @@ WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/akonadi-contact ${KDE4LIB}/akonadi-kde
 WANTLIB += ${KDE4LIB}/kabc ${KDE4LIB}/kcalcore
 WANTLIB += ${KDE4LIB}/kcmutils ${KDE4LIB}/kdeclarative ${KDE4LIB}/kdeui
-WANTLIB += ${KDE4LIB}/kdewebkit ${KDE4LIB}/kexiv2 ${KDE4LIB}/kio
+WANTLIB += ${KDE4LIB}/kdewebkit ${KDE4LIB}/kemoticons ${KDE4LIB}/kexiv2
+WANTLIB += ${KDE4LIB}/kidletime ${KDE4LIB}/kio
 WANTLIB += ${KDE4LIB}/kfile ${KDE4LIB}/kmime ${KDE4LIB}/knewstuff3
-WANTLIB += ${KDE4LIB}/kparts ${KDE4LIB}/kpimutils ${KDE4LIB}/kresources
-WANTLIB += ${KDE4LIB}/krosscore ${KDE4LIB}/kunitconversion
+WANTLIB += ${KDE4LIB}/kparts ${KDE4LIB}/kpimutils ${KDE4LIB}/kprintutils
+WANTLIB += ${KDE4LIB}/kresources
+WANTLIB += ${KDE4LIB}/krosscore ${KDE4LIB}/kunitconversion ${KDE4LIB}/kutils
 WANTLIB += ${KDE4LIB}/kworkspace ${KDE4LIB}/marblewidget ${KDE4LIB}/nepomuk
 WANTLIB += ${KDE4LIB}/nepomukcore ${KDE4LIB}/nepomukutils ${KDE4LIB}/plasma
 WANTLIB += ${KDE4LIB}/plasmaclock ${KDE4LIB}/solid

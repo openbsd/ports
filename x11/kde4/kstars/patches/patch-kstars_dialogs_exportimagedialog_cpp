@@ -1,0 +1,17 @@
+$OpenBSD: patch-kstars_dialogs_exportimagedialog_cpp,v 1.1 2013/12/08 19:13:31 zhuk Exp $
+Unbreak compilation.
+--- kstars/dialogs/exportimagedialog.cpp.orig	Fri Nov  8 19:51:29 2013
++++ kstars/dialogs/exportimagedialog.cpp	Fri Nov  8 19:56:16 2013
+@@ -63,10 +63,10 @@ void ExportImageDialog::switchLegendEnabled(bool enabl
+ void ExportImageDialog::previewImage()
+ {
+     updateLegendSettings();
+-    const Legend *legend = m_ImageExporter->getLegend();
++    const Legend &legend = *(m_ImageExporter->getLegend());
+ 
+     // Preview current legend settings on sky map
+-    m_KStars->map()->setLegend( Legend( *legend ) );
++    m_KStars->map()->setLegend( legend );
+     m_KStars->map()->setPreviewLegend(true);
+ 
+     // Update sky map

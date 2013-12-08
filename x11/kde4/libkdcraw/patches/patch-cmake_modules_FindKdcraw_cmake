@@ -1,0 +1,72 @@
+$OpenBSD: patch-cmake_modules_FindKdcraw_cmake,v 1.1 2013/12/08 19:13:32 zhuk Exp $
+Allow to find libkdcraw without pkg-config.
+--- cmake/modules/FindKdcraw.cmake.orig	Tue Aug  6 20:24:55 2013
++++ cmake/modules/FindKdcraw.cmake	Wed Aug  7 01:18:23 2013
+@@ -77,44 +77,34 @@ else (KDCRAW_INCLUDE_DIR AND KDCRAW_LIBRARIES AND KDCR
+       # in the find_path() and find_library() calls
+       include(FindPkgConfig)
+ 
+-      pkg_check_modules(PC_KDCRAW libkdcraw)
++      pkg_check_modules(PC_KDCRAW libkdcraw>=0.2.0)
+ 
+       if (PC_KDCRAW_FOUND)
+-        # make sure the version is >= 0.2.0
+-        # TODO: WHY?
+-        if (PC_KDCRAW_VERSION VERSION_LESS 0.2.0)
+-          message(STATUS "Found libkdcraw release < 0.2.0, too old")
+-          set(KDCRAW_VERSION_GOOD_FOUND FALSE)
+-          set(KDCRAW_FOUND FALSE)
+-        else (PC_KDCRAW_VERSION VERSION_LESS 0.2.0)
+-          set(KDCRAW_VERSION "${PC_KDCRAW_VERSION}")
+-          if (NOT Kdcraw_FIND_QUIETLY)
+-            message(STATUS "Found libkdcraw release ${KDCRAW_VERSION}")
+-          endif (NOT Kdcraw_FIND_QUIETLY)
+-          set(KDCRAW_VERSION_GOOD_FOUND TRUE)
+-        endif (PC_KDCRAW_VERSION VERSION_LESS 0.2.0)
+-      else (PC_KDCRAW_FOUND)
+-        set(KDCRAW_VERSION_GOOD_FOUND FALSE)
++        set(KDCRAW_VERSION "${PC_KDCRAW_VERSION}")
++        if (NOT Kdcraw_FIND_QUIETLY)
++          message(STATUS "Found libkdcraw release ${KDCRAW_VERSION}")
++        endif (NOT Kdcraw_FIND_QUIETLY)
+       endif (PC_KDCRAW_FOUND)
+-    else (NOT WIN32)
+-      # TODO: Why do we just assume the version is good?
+-      set(KDCRAW_VERSION_GOOD_FOUND TRUE)
+     endif (NOT WIN32)
+ 
+-    if (KDCRAW_VERSION_GOOD_FOUND)
+-      set(KDCRAW_DEFINITIONS "${PC_KDCRAW_CFLAGS_OTHER}")
++    find_path(KDCRAW_INCLUDE_DIR libkdcraw/version.h HINTS ${PC_KDCRAW_INCLUDE_DIRS})
++    find_library(KDCRAW_LIBRARY NAMES kdcraw HINTS ${PC_KDCRAW_LIBRARY_DIRS})
+ 
+-      find_path(KDCRAW_INCLUDE_DIR libkdcraw/version.h ${PC_KDCRAW_INCLUDE_DIRS})
++    if (KDCRAW_INCLUDE_DIR AND KDCRAW_LIBRARY)
++      if (PC_KDCRAW_FOUND)
++        set(KDCRAW_DEFINITIONS "${PC_KDCRAW_CFLAGS_OTHER}")
++      endif (PC_KDCRAW_FOUND)
++
+       set(kdcraw_version_h_filename "${KDCRAW_INCLUDE_DIR}/libkdcraw/version.h")
+ 
+-      find_library(KDCRAW_LIBRARIES NAMES kdcraw HINTS ${PC_KDCRAW_LIBRARY_DIRS})
++      set(KDCRAW_LIBRARIES ${KDCRAW_LIBRARY})
+ 
+       if (KDCRAW_INCLUDE_DIR AND KDCRAW_LIBRARIES)
+         set(KDCRAW_FOUND TRUE)
+       else (KDCRAW_INCLUDE_DIR AND KDCRAW_LIBRARIES)
+         set(KDCRAW_FOUND FALSE)
+       endif (KDCRAW_INCLUDE_DIR AND KDCRAW_LIBRARIES)
+-    endif (KDCRAW_VERSION_GOOD_FOUND)
++    endif (KDCRAW_INCLUDE_DIR AND KDCRAW_LIBRARY)
+ 
+     if (KDCRAW_FOUND)
+       if (NOT Kdcraw_FIND_QUIETLY)
+@@ -145,7 +135,7 @@ else (KDCRAW_INCLUDE_DIR AND KDCRAW_LIBRARIES AND KDCR
+   endif (KDCRAW_FOUND)
+ 
+   if (KDCRAW_FOUND)
+-    mark_as_advanced(KDCRAW_INCLUDE_DIR KDCRAW_LIBRARIES KDCRAW_DEFINITIONS KDCRAW_VERSION KDCRAW_FOUND)
++    mark_as_advanced(KDCRAW_INCLUDE_DIR KDCRAW_LIBRARY KDCRAW_DEFINITIONS KDCRAW_VERSION KDCRAW_FOUND)
+   else (KDCRAW_FOUND)
+     # The library was not found, reset all related variables.
+     unset(KDCRAW_INCLUDE_DIR)

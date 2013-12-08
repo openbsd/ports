@@ -1,12 +1,12 @@
-$OpenBSD: patch-libkdcraw_CMakeLists_txt,v 1.1.1.1 2013/04/24 18:25:07 zhuk Exp $
+$OpenBSD: patch-libkdcraw_CMakeLists_txt,v 1.2 2013/12/08 19:13:32 zhuk Exp $
 Allow building with external libraw, too.
---- libkdcraw/CMakeLists.txt.orig	Tue Feb 19 15:27:06 2013
-+++ libkdcraw/CMakeLists.txt	Tue Feb 19 15:29:35 2013
+--- libkdcraw/CMakeLists.txt.orig	Wed Aug 28 21:07:26 2013
++++ libkdcraw/CMakeLists.txt	Wed Nov  6 23:55:42 2013
 @@ -22,7 +22,7 @@
  #
  # ============================================================
  
--INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/../libraw)
+-INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR}/../libraw/libraw)
 +INCLUDE_DIRECTORIES(${LIBRAW_INCLUDE_DIRS})
  
  CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/version.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/version.h)

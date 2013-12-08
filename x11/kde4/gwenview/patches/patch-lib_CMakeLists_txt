@@ -1,17 +1,14 @@
-$OpenBSD: patch-lib_CMakeLists_txt,v 1.1 2013/04/26 10:32:19 zhuk Exp $
+$OpenBSD: patch-lib_CMakeLists_txt,v 1.2 2013/12/08 19:13:29 zhuk Exp $
 Make it compile with libjpeg-9.0. This will not allow to operate on some
 JPEG images, but with libjpeg-8 it wasn't able, too, anyway.
---- lib/CMakeLists.txt.orig	Fri Apr 26 13:52:19 2013
-+++ lib/CMakeLists.txt	Fri Apr 26 14:03:25 2013
-@@ -28,9 +28,9 @@ if ("${jpeglib_version}" LESS 80)
+--- lib/CMakeLists.txt.orig	Wed Aug 28 21:06:41 2013
++++ lib/CMakeLists.txt	Sat Nov 23 22:48:40 2013
+@@ -28,7 +28,7 @@ if ("${jpeglib_version}" LESS 80)
      set(GV_JPEG_DIR libjpeg-62)
- endif ("${jpeglib_version}" LESS 80)
+ endif()
  
 -if ("${jpeglib_version}" EQUAL 80)
 +if ("${jpeglib_version}" EQUAL 80 OR "${jpeglib_version}" EQUAL 90)
      set(GV_JPEG_DIR libjpeg-80)
--endif ("${jpeglib_version}" EQUAL 80)
-+endif ("${jpeglib_version}" EQUAL 80 OR "${jpeglib_version}" EQUAL 90)
+ endif()
  
- if ("${GV_JPEG_DIR}" STREQUAL "")
-     message(FATAL_ERROR "Unknown libjpeg version: ${jpeglib_version}")

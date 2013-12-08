@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/07/06 09:46:29 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2013/12/08 19:13:34 zhuk Exp $
 
 CATEGORIES =	devel x11/kde4
 COMMENT =	programming language wrapper generator
 DISTNAME =	smokegen-${MODKDE4_VERSION}
-REVISION =	1
 
 # https://bugs.kde.org/show_bug.cgi?id=283677
 
@@ -16,5 +15,7 @@ WANTLIB += lib/qt4/QtXml
 MODKDE4_USE =
 
 NO_TEST =	Yes
+
+CONFIGURE_ARGS =	-DSMOKE_LIBRARY_PREFIX:Path=${PREFIX}/${MODKDE4_LIB_DIR}
 
 .include <bsd.port.mk>

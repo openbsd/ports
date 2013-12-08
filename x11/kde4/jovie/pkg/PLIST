@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/08/24 17:33:39 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/12/08 19:13:29 zhuk Exp $
 @conflict kdeaccessibility-<4
 @bin bin/jovie
 lib/kde4/jovie_stringreplacerplugin.so
@@ -25,9 +25,8 @@ share/apps/jovie/talkerchooser/female_notifications_rc
 share/apps/jovie/xmltransformer/
 share/apps/jovie/xmltransformer/xhtml2ssml.xsl
 share/apps/jovie/xmltransformer/xhtml2ssml_simple.xsl
-share/apps/kttsd/
-share/apps/kttsd/xslt/
-share/apps/kttsd/xslt/SSMLtoPlainText.xsl
+share/apps/jovie/xslt/
+share/apps/jovie/xslt/SSMLtoPlainText.xsl
 share/doc/HTML/en/jovie/
 share/doc/HTML/en/jovie/addtalker.png
 share/doc/HTML/en/jovie/common

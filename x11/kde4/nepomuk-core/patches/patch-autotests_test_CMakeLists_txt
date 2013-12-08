@@ -1,0 +1,162 @@
+$OpenBSD: patch-autotests_test_CMakeLists_txt,v 1.1 2013/12/08 19:13:33 zhuk Exp $
+Fix linking.
+--- autotests/test/CMakeLists.txt.orig	Tue Nov  5 18:55:51 2013
++++ autotests/test/CMakeLists.txt	Tue Nov  5 19:15:17 2013
+@@ -13,14 +13,14 @@ add_definitions(-DNEPOMUKTEST_EXPORT=)
+ kde4_add_executable(resourcetest ${RESOURCE_TESTS_SRC})
+ 
+ target_link_libraries(resourcetest
+-  ${QT_QTCORE_LIBRARY}
+-  ${QT_QTDBUS_LIBRARY}
+-  ${QT_QTTEST_LIBRARY}
+-  ${QT_QTGUI_LIBRARY}
+-  ${SOPRANO_LIBRARIES}
+-  ${KDE4_KDECORE_LIBS}
+-  nepomukcore
+   nepomuktestlib
++  nepomukcore
++  ${KDE4_KDECORE_LIBS}
++  ${SOPRANO_LIBRARIES}
++  ${QT_QTGUI_LIBRARY}
++  ${QT_QTTEST_LIBRARY}
++  ${QT_QTDBUS_LIBRARY}
++  ${QT_QTCORE_LIBRARY}
+ )
+ 
+ add_nepomuk_test(NepomukResourceTest ${CMAKE_CURRENT_BINARY_DIR}/resourcetest)
+@@ -34,14 +34,14 @@ set( QUERY_TESTS_SRC querytests.cpp )
+ kde4_add_executable(querytests ${QUERY_TESTS_SRC})
+ 
+ target_link_libraries(querytests
+-  ${QT_QTCORE_LIBRARY}
+-  ${QT_QTDBUS_LIBRARY}
+-  ${QT_QTTEST_LIBRARY}
+-  ${QT_QTGUI_LIBRARY}
+-  ${SOPRANO_LIBRARIES}
+-  ${KDE4_KDECORE_LIBS}
+-  nepomukcore
+   nepomuktestlib
++  nepomukcore
++  ${KDE4_KDECORE_LIBS}
++  ${SOPRANO_LIBRARIES}
++  ${QT_QTGUI_LIBRARY}
++  ${QT_QTTEST_LIBRARY}
++  ${QT_QTDBUS_LIBRARY}
++  ${QT_QTCORE_LIBRARY}
+ )
+ 
+ add_nepomuk_test(QueryTests ${CMAKE_CURRENT_BINARY_DIR}/querytests)
+@@ -56,14 +56,14 @@ set( QUERY_SERVICE_TESTS_SRC queryservicetest.cpp )
+ kde4_add_executable(queryservicetest ${QUERY_SERVICE_TESTS_SRC})
+ 
+ target_link_libraries(queryservicetest
+-  ${QT_QTCORE_LIBRARY}
+-  ${QT_QTDBUS_LIBRARY}
++  nepomukcore
++  nepomuktestlib
++  ${KDE4_KDECORE_LIBS}
++  ${SOPRANO_LIBRARIES}
+   ${QT_QTTEST_LIBRARY}
++  ${QT_QTDBUS_LIBRARY}
+   ${QT_QTGUI_LIBRARY}
+-  ${SOPRANO_LIBRARIES}
+-  ${KDE4_KDECORE_LIBS}
+-  nepomuktestlib
+-  nepomukcore
++  ${QT_QTCORE_LIBRARY}
+ )
+ 
+ add_nepomuk_test(QueryServiceTest ${CMAKE_CURRENT_BINARY_DIR}/queryservicetest)
+@@ -88,14 +88,14 @@ qt4_add_dbus_interface( BACKUP_TESTS_SRC
+ kde4_add_executable(backuptests ${BACKUP_TESTS_SRC})
+ 
+ target_link_libraries(backuptests
+-  ${QT_QTCORE_LIBRARY}
+-  ${QT_QTDBUS_LIBRARY}
+-  ${QT_QTTEST_LIBRARY}
+-  ${QT_QTGUI_LIBRARY}
+-  ${SOPRANO_LIBRARIES}
+-  ${KDE4_KDECORE_LIBS}
+   nepomuktestlib
+   nepomukcore
++  ${KDE4_KDECORE_LIBS}
++  ${SOPRANO_LIBRARIES}
++  ${QT_QTTEST_LIBRARY}
++  ${QT_QTDBUS_LIBRARY}
++  ${QT_QTGUI_LIBRARY}
++  ${QT_QTCORE_LIBRARY}
+ )
+ 
+ add_nepomuk_test(BackupTests ${CMAKE_CURRENT_BINARY_DIR}/backuptests)
+@@ -108,13 +108,13 @@ kde4_add_executable(asyncclientapitest 
+ )
+ 
+ target_link_libraries(asyncclientapitest
+-  ${QT_QTCORE_LIBRARY}
+-  ${QT_QTDBUS_LIBRARY}
+-  ${QT_QTTEST_LIBRARY}
+-  ${SOPRANO_LIBRARIES}
+-  ${KDE4_KDECORE_LIBS}
+   nepomuktestlib
+   nepomukcore
++  ${KDE4_KDECORE_LIBS}
++  ${SOPRANO_LIBRARIES}
++  ${QT_QTTEST_LIBRARY}
++  ${QT_QTDBUS_LIBRARY}
++  ${QT_QTCORE_LIBRARY}
+ )
+ 
+ add_nepomuk_test(AsyncClientApiTest ${CMAKE_CURRENT_BINARY_DIR}/asyncclientapitest)
+@@ -128,25 +128,25 @@ add_nepomuk_test(AsyncClientApiTest ${CMAKE_CURRENT_BI
+ set(queryparsertest_SRC queryparsertest.cpp)
+ kde4_add_unit_test(queryparsertest TESTNAME nepomuk-queryparsertest NOGUI ${queryparsertest_SRC})
+ target_link_libraries(queryparsertest nepomukcore
+-  ${QT_QTTEST_LIBRARY}
+-  ${SOPRANO_LIBRARIES}
+   ${KDE4_KDECORE_LIBS}
++  ${SOPRANO_LIBRARIES}
++  ${QT_QTTEST_LIBRARY}
+ )
+ 
+ set(querylibtest_SRC querylibtest.cpp)
+ kde4_add_unit_test(querylibtest TESTNAME nepomuk-querylibtest NOGUI ${querylibtest_SRC})
+ target_link_libraries(querylibtest nepomukcore
+-  ${QT_QTTEST_LIBRARY}
+-  ${SOPRANO_LIBRARIES}
+   ${KDE4_KDECORE_LIBS}
++  ${SOPRANO_LIBRARIES}
++  ${QT_QTTEST_LIBRARY}
+ )
+ 
+ set(queryserializertest_SRC queryserializertest.cpp)
+ kde4_add_unit_test(queryserializertest TESTNAME nepomuk-queryserializertest NOGUI ${queryserializertest_SRC})
+ target_link_libraries(queryserializertest nepomukcore
+-  ${QT_QTTEST_LIBRARY}
+-  ${SOPRANO_LIBRARIES}
+   ${KDE4_KDECORE_LIBS}
++  ${SOPRANO_LIBRARIES}
++  ${QT_QTTEST_LIBRARY}
+ )
+ 
+ # DMS Tests
+@@ -170,14 +170,14 @@ set( STORE_RESOURCES_BENCHMARK_SRC storeresourcesbench
+ kde4_add_executable(storeresourcesbenchmark ${STORE_RESOURCES_BENCHMARK_SRC})
+ 
+ target_link_libraries(storeresourcesbenchmark
+-  ${QT_QTCORE_LIBRARY}
+-  ${QT_QTDBUS_LIBRARY}
++  nepomuktestlib
++  nepomukcore
++  ${KDE4_KDECORE_LIBS}
++  ${SOPRANO_LIBRARIES}
+   ${QT_QTTEST_LIBRARY}
+   ${QT_QTGUI_LIBRARY}
+-  ${SOPRANO_LIBRARIES}
+-  ${KDE4_KDECORE_LIBS}
+-  nepomukcore
+-  nepomuktestlib
++  ${QT_QTDBUS_LIBRARY}
++  ${QT_QTCORE_LIBRARY}
+ )
+ 
+ add_nepomuk_test(StoreResourcesBenchmark ${CMAKE_CURRENT_BINARY_DIR}/storeresourcesbenchmark)

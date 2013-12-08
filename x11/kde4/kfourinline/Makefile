@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2013/11/24 19:56:31 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/12/08 19:13:30 zhuk Exp $
 
 COMMENT =	Connect-Four-like game for KDE
 DISTNAME =	kfourinline-${MODKDE4_VERSION}
-REVISION =	0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
-WANTLIB += ${KDE4LIB}/kdegamesprivate ${KDE4LIB}/kdeui ${KDE4LIB}/kio
+WANTLIB += ${KDE4LIB}/kdnssd ${KDE4LIB}/kdegamesprivate
+WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio
 
 MODKDE4_USE =	games
 

@@ -1,0 +1,13 @@
+$OpenBSD: patch-plugins_clilhaplugin_CMakeLists_txt,v 1.1 2013/12/08 19:13:29 zhuk Exp $
+Fix linking.
+--- plugins/clilhaplugin/CMakeLists.txt.orig	Thu Nov  7 00:05:41 2013
++++ plugins/clilhaplugin/CMakeLists.txt	Thu Nov  7 00:05:59 2013
+@@ -6,7 +6,7 @@ set(kerfuffle_cli_SRCS cliplugin.cpp)
+ 
+ kde4_add_plugin(kerfuffle_clilha ${kerfuffle_cli_SRCS})
+ 
+-target_link_libraries(kerfuffle_clilha  ${KDE4_KDECORE_LIBS} ${KDE4_KIO_LIBS} kerfuffle )
++target_link_libraries(kerfuffle_clilha  kerfuffle ${KDE4_KDECORE_LIBS} ${KDE4_KIO_LIBS} )
+ 
+ configure_file(
+             ${CMAKE_CURRENT_SOURCE_DIR}/kerfuffle_clilha.desktop.cmake

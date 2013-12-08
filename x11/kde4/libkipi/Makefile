@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2013/11/24 19:56:32 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2013/12/08 19:13:32 zhuk Exp $
 
 COMMENT =	KDE image plugins infrastructure
+CATEGORIES =	graphics devel
 DISTNAME =	libkipi-${MODKDE4_VERSION}
-REVISION =	1
 
-SHARED_LIBS =	kipi		50.0
+SHARED_LIBS =	kipi		50.1
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
@@ -15,7 +15,8 @@ WANTLIB += soprano
 
 MODKDE4_USE =	libs
 
-RUN_DEPENDS =	x11/gtk+2,-guic
+RUN_DEPENDS =	graphics/libkipi,-icons \
+		x11/gtk+2,-guic
 
 post-patch:
 	cd ${WRKSRC}; \

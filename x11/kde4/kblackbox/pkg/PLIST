@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:44:48 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/12/08 19:13:30 zhuk Exp $
 @conflict kdegames-<4
 @bin bin/kblackbox
 share/applications/kde4/kblackbox.desktop
@@ -8,6 +8,7 @@ share/apps/kblackbox/pics/
 share/apps/kblackbox/pics/kblackbox.svgz
 share/doc/HTML/en/kblackbox/
 share/doc/HTML/en/kblackbox/common
+share/doc/HTML/en/kblackbox/gameboard.png
 share/doc/HTML/en/kblackbox/index.cache.bz2
 share/doc/HTML/en/kblackbox/index.docbook
 share/icons/hicolor/128x128/apps/kblackbox.png

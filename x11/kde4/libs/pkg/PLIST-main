@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2013/11/24 19:56:30 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2013/12/08 19:13:32 zhuk Exp $
 @option no-default-conflict
 @conflict kdelibs->=4
 @conflict kdebase-<4
@@ -1686,6 +1686,7 @@ include/kde4/ktexteditor/highlightinterface.h
 include/kde4/ktexteditor/ktexteditor_export.h
 include/kde4/ktexteditor/loadsavefiltercheckplugin.h
 include/kde4/ktexteditor/markinterface.h
+include/kde4/ktexteditor/messageinterface.h
 include/kde4/ktexteditor/modeinterface.h
 include/kde4/ktexteditor/modificationinterface.h
 include/kde4/ktexteditor/movingcursor.h
@@ -2161,7 +2162,6 @@ libexec/fileshareset
 @man man/man1/checkXML.1
 @man man/man1/kconfig_compiler.1
 @man man/man1/kde4-config.1
-@man man/man1/kdecmake.1
 @man man/man1/kjs.1
 @man man/man1/kjscmd.1
 @man man/man1/kross.1

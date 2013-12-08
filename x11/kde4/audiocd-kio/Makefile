@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2013/11/24 19:56:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2013/12/08 19:13:29 zhuk Exp $
 
 COMMENT =	KDE KIOslave for accessing audio CDs
 DISTNAME =	audiocd-kio-${MODKDE4_VERSION}
-REVISION =	1
 
 SHARED_LIBS =	audiocdplugins		50.0
 
@@ -19,5 +18,7 @@ LIB_DEPENDS =	audio/cdparanoia \
 		audio/libvorbis \
 		${MODKDE4_DEP_DIR}/libkcddb>=${MODKDE4_DEP_VERSION} \
 		${MODKDE4_DEP_DIR}/libkcompactdisc>=${MODKDE4_DEP_VERSION}
+
+CONFIGURE_ARGS =	-DHAVE_LIBVORBISENC2:Bool=Yes
 
 .include <bsd.port.mk>

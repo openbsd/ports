@@ -1,9 +1,9 @@
-$OpenBSD: patch-mimetypes_kde_xml,v 1.1 2013/11/12 11:18:38 ajacoutot Exp $
+$OpenBSD: patch-mimetypes_kde_xml,v 1.2 2013/12/08 19:13:32 zhuk Exp $
 
 https://bugs.kde.org/show_bug.cgi?id=250924
 
---- mimetypes/kde.xml.orig     Sat Nov  2 23:12:20 2013
-+++ mimetypes/kde.xml  Sat Nov  2 23:13:03 2013
+--- mimetypes/kde.xml.orig	Thu Sep 26 23:17:55 2013
++++ mimetypes/kde.xml	Sun Dec  1 17:31:23 2013
 @@ -174,34 +174,6 @@ Notes:
      <glob pattern="*.abc"/>
    </mime-type>

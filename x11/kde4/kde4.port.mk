@@ -1,7 +1,7 @@
-# $OpenBSD: kde4.port.mk,v 1.16 2013/11/26 21:22:36 zhuk Exp $
+# $OpenBSD: kde4.port.mk,v 1.17 2013/12/08 19:13:29 zhuk Exp $
 
 # The version of KDE SC in x11/kde4
-_MODKDE4_STABLE =	4.10.5
+_MODKDE4_STABLE =	4.11.4
 
 # List of currently supported KDE SC versions, except "stable"
 _MODKDE4_OTHERS =
@@ -155,7 +155,7 @@ MODKDE4_NO_QT ?=	Yes	# resources usually don't need Qt
 MODKDE4_BUILD_DEPENDS +=	${MODKDE4_DEP_DIR}/workspace>=${MODKDE4_DEP_VERSION}
 .   endif
 .   if ${MODKDE4_USE:L:Mlibs}
-MODKDE4_BUILD_DEPENDS +=	${MODKDE4_DEP_DIR}/libs>=${MODKDE4_DEP_VERSION}
+MODKDE4_BUILD_DEPENDS +=	${MODKDE4_DEP_DIR}/libs,-main>=${MODKDE4_DEP_VERSION}
 .   endif
 .else
 MODKDE4_NO_QT ?=	No
@@ -164,7 +164,7 @@ MODKDE4_NO_QT ?=	No
 ERRORS +=	"Fatal: KDE libraries require Qt."
 .       endif
 
-MODKDE4_LIB_DEPENDS +=		${MODKDE4_DEP_DIR}/libs>=${MODKDE4_DEP_VERSION}
+MODKDE4_LIB_DEPENDS +=		${MODKDE4_DEP_DIR}/libs,-main>=${MODKDE4_DEP_VERSION}
 MODKDE4_WANTLIB +=		${MODKDE4_LIB_DIR}/kdecore>=8
 .       if ${MODKDE4_USE:L:Mpim}
 MODKDE4_LIB_DEPENDS +=		${MODKDE4_DEP_DIR}/pimlibs>=${MODKDE4_DEP_VERSION}
@@ -177,7 +177,7 @@ MODKDE4_WANTLIB +=		${MODKDE4_LIB_DIR}/kdegames
 .       endif
 
 .       if ${MODKDE4_USE:L:Mruntime}
-MODKDE4_RUN_DEPENDS +=		${MODKDE4_DEP_DIR}/runtime>=${MODKDE4_DEP_VERSION}
+MODKDE4_RUN_DEPENDS +=		${MODKDE4_DEP_DIR}/runtime,-main>=${MODKDE4_DEP_VERSION}
 .           if ${MODKDE4_USE:L:Mpim}
 MODKDE4_RUN_DEPENDS +=		${MODKDE4_DEP_DIR}/pim-runtime>=${MODKDE4_DEP_VERSION}
 .           endif
@@ -243,6 +243,9 @@ MODKDE4_CONF_ARGS +=	-DINCLUDE_INSTALL_DIR:Path=${MODKDE4_INCLUDE_DIR} \
 # Make sure that KDE4-specific places are searched first
 MODKDE4_CONF_ARGS +=	-DCMAKE_INCLUDE_PATH=${LOCALBASE}/${MODKDE4_INCLUDE_DIR} \
 			-DCMAKE_LIBRARY_PATH=${LOCALBASE}/${MODKDE4_LIB_DIR}
+
+# KDE 4.11 doesn't play well with NEW CMP0022
+MODKDE4_CONF_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0022=OLD
 .endif
 
 # FIXME

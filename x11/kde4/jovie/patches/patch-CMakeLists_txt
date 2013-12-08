@@ -1,0 +1,12 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2013/12/08 19:13:29 zhuk Exp $
+--- CMakeLists.txt.orig	Fri Nov  8 13:02:28 2013
++++ CMakeLists.txt	Fri Nov  8 13:02:36 2013
+@@ -6,7 +6,7 @@ find_package(KDE4 REQUIRED)
+ include (KDE4Defaults)
+ include (MacroLibrary)
+ 
+-find_package( Qt4 REQUIRED QT_USE_QT* )
++find_package( Qt4 REQUIRED )
+ include( ${QT_USE_FILE} )
+ 
+ enable_testing()

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 18:35:58 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/12/08 19:13:33 zhuk Exp $
 @bin bin/pairs
 @bin bin/pairseditor
 share/applications/kde4/pairs.desktop
@@ -50,6 +50,18 @@ share/apps/pairs/themes/wrong.ogg
 share/apps/pairseditor/
 share/apps/pairseditor/pairseditorui.rc
 share/config/pairs.knsrc
+share/doc/HTML/en/pairseditor/
+share/doc/HTML/en/pairseditor/Icon-list-add.png
+share/doc/HTML/en/pairseditor/common
+share/doc/HTML/en/pairseditor/index.cache.bz2
+share/doc/HTML/en/pairseditor/index.docbook
+share/doc/HTML/en/pairseditor/pairseditor.png
+share/doc/HTML/en/pairseditor/pairseditor1.png
+share/doc/HTML/en/pairseditor/pairseditor2.png
+share/doc/HTML/en/pairseditor/pairseditor3.png
+share/doc/HTML/en/pairseditor/pairseditor4.png
+share/doc/HTML/en/pairseditor/pairseditor5.png
+share/doc/HTML/en/pairseditor/pairseditor6.png
 share/icons/hicolor/128x128/apps/pairs.png
 share/icons/hicolor/128x128/apps/pairseditor.png
 share/icons/hicolor/16x16/apps/pairs.png

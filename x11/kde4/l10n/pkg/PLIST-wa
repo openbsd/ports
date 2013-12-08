@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-wa,v 1.2 2013/07/04 00:46:21 zhuk Exp $
+@comment $OpenBSD: PLIST-wa,v 1.3 2013/12/08 19:13:32 zhuk Exp $
 share/apps/
 share/apps/ktuberling/
 share/apps/ktuberling/sounds/
@@ -132,7 +132,6 @@ share/locale/wa/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/wa/LC_MESSAGES/kcm_pci.mo
 share/locale/wa/LC_MESSAGES/kcm_phonon.mo
 share/locale/wa/LC_MESSAGES/kcm_platform.mo
-share/locale/wa/LC_MESSAGES/kcm_solid.mo
 share/locale/wa/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/wa/LC_MESSAGES/kcm_standard_actions.mo
 share/locale/wa/LC_MESSAGES/kcmaccess.mo
@@ -313,9 +312,7 @@ share/locale/wa/LC_MESSAGES/lokalize.mo
 share/locale/wa/LC_MESSAGES/marble.mo
 share/locale/wa/LC_MESSAGES/marble_qt.mo
 share/locale/wa/LC_MESSAGES/nepomukbackup.mo
-share/locale/wa/LC_MESSAGES/nepomukcontroller.mo
 share/locale/wa/LC_MESSAGES/nepomukfileindexer.mo
-share/locale/wa/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/wa/LC_MESSAGES/nepomukserver.mo
 share/locale/wa/LC_MESSAGES/nepomukservicestub.mo
 share/locale/wa/LC_MESSAGES/nepomukstorage.mo
@@ -400,7 +397,6 @@ share/locale/wa/LC_MESSAGES/plasma_containmentactions_contextmenu.mo
 share/locale/wa/LC_MESSAGES/plasma_containmentactions_switchactivity.mo
 share/locale/wa/LC_MESSAGES/plasma_containmentactions_switchdesktop.mo
 share/locale/wa/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
-share/locale/wa/LC_MESSAGES/plasma_engine_calendar.mo
 share/locale/wa/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/wa/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/wa/LC_MESSAGES/plasma_engine_metadata.mo
@@ -446,8 +442,6 @@ share/locale/wa/LC_MESSAGES/processui.mo
 share/locale/wa/LC_MESSAGES/randrmonitor.mo
 share/locale/wa/LC_MESSAGES/rellinks.mo
 share/locale/wa/LC_MESSAGES/solid-hardware.mo
-share/locale/wa/LC_MESSAGES/solid-network.mo
-share/locale/wa/LC_MESSAGES/solidcontrol.mo
 share/locale/wa/LC_MESSAGES/soliduiserver.mo
 share/locale/wa/LC_MESSAGES/svgpart.mo
 share/locale/wa/LC_MESSAGES/systemsettings.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/08/24 17:33:40 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/12/08 19:13:30 zhuk Exp $
 @conflict kdelibs-<4
 @conflict kdebase-<4
 @conflict kdeaddons-<4
@@ -16,6 +16,7 @@ include/kde4/kate_export.h
 lib/kde4/kate_kttsd.so
 lib/kde4/katebacktracebrowserplugin.so
 lib/kde4/katebuildplugin.so
+lib/kde4/katecloseexceptplugin.so
 lib/kde4/katectagsplugin.so
 lib/kde4/katefilebrowserplugin.so
 lib/kde4/katefiletemplates.so
@@ -25,6 +26,7 @@ lib/kde4/katekonsoleplugin.so
 lib/kde4/katemailfilesplugin.so
 lib/kde4/kateopenheaderplugin.so
 lib/kde4/katepart.so
+lib/kde4/katepateplugin.so
 lib/kde4/kateprojectplugin.so
 lib/kde4/katesearchplugin.so
 lib/kde4/katesnippetsplugin.so
@@ -42,7 +44,6 @@ lib/kde4/ktexteditor_iconinserter.so
 lib/kde4/ktexteditor_insertfile.so
 @lib ${KDE4LIB}/libkateinterfaces.so.${LIBkateinterfaces_VERSION}
 @lib ${KDE4LIB}/libkatepartinterfaces.so.${LIBkatepartinterfaces_VERSION}
-lib/kde4/pateplugin.so
 lib/kde4/plasma_applet_katesession.so
 @lib lib/libkateinterfaces.so.${LIBkateinterfaces_VERSION}
 @lib lib/libkatepartinterfaces.so.${LIBkatepartinterfaces_VERSION}
@@ -60,7 +61,6 @@ share/apps/kate/icons/
 share/apps/kate/icons/hicolor/
 share/apps/kate/icons/hicolor/16x16/
 share/apps/kate/icons/hicolor/16x16/actions/
-share/apps/kate/icons/hicolor/16x16/actions/null.png
 share/apps/kate/icons/hicolor/16x16/actions/sql-field-pk.png
 share/apps/kate/icons/hicolor/16x16/actions/sql-field-red.png
 share/apps/kate/icons/hicolor/16x16/actions/sql-field.png
@@ -69,13 +69,50 @@ share/apps/kate/icons/hicolor/16x16/actions/sql-view.png
 share/apps/kate/kateui.rc
 share/apps/kate/pate/
 share/apps/kate/pate/block.py
-share/apps/kate/pate/close_tag.py
+share/apps/kate/pate/block.pyc
+share/apps/kate/pate/cmake_utils/
+share/apps/kate/pate/cmake_utils/__init__.py
+share/apps/kate/pate/cmake_utils/__init__.pyc
+share/apps/kate/pate/cmake_utils/cmake_help_parser.py
+share/apps/kate/pate/cmake_utils/cmake_help_parser.pyc
+share/apps/kate/pate/cmake_utils/cmake_utils.py
+share/apps/kate/pate/cmake_utils/cmake_utils.pyc
+share/apps/kate/pate/cmake_utils/cmake_utils_settings.py
+share/apps/kate/pate/cmake_utils/cmake_utils_settings.pyc
+share/apps/kate/pate/cmake_utils/cmake_utils_settings.ui
+share/apps/kate/pate/cmake_utils/cmake_utils_toolview_cacheview_page.ui
+share/apps/kate/pate/cmake_utils/cmake_utils_toolview_help_page.ui
+share/apps/kate/pate/cmake_utils/cmake_utils_toolview_settings_page.ui
+share/apps/kate/pate/cmake_utils/command_completers/
+share/apps/kate/pate/cmake_utils/command_completers/__init__.py
+share/apps/kate/pate/cmake_utils/command_completers/__init__.pyc
+share/apps/kate/pate/cmake_utils/command_completers/cmake_policy_cc.py
+share/apps/kate/pate/cmake_utils/command_completers/cmake_policy_cc.pyc
+share/apps/kate/pate/cmake_utils/command_completers/cond_cc.py
+share/apps/kate/pate/cmake_utils/command_completers/cond_cc.pyc
+share/apps/kate/pate/cmake_utils/command_completers/param_types.py
+share/apps/kate/pate/cmake_utils/command_completers/param_types.pyc
+share/apps/kate/pate/cmake_utils/command_completers/syntax_cc.py
+share/apps/kate/pate/cmake_utils/command_completers/syntax_cc.pyc
+share/apps/kate/pate/color_tools.py
+share/apps/kate/pate/color_tools.pyc
+share/apps/kate/pate/color_tools_toolview.ui
 share/apps/kate/pate/commentar.py
-share/apps/kate/pate/console/
-share/apps/kate/pate/console/config.ui
-share/apps/kate/pate/console/console.py
+share/apps/kate/pate/commentar.pyc
+share/apps/kate/pate/commentar_config.ui
+share/apps/kate/pate/django_utils/
+share/apps/kate/pate/django_utils/django_settings.py
+share/apps/kate/pate/django_utils/django_settings.pyc
+share/apps/kate/pate/django_utils/django_snippets.py
+share/apps/kate/pate/django_utils/django_snippets.pyc
+share/apps/kate/pate/django_utils/django_template.py
+share/apps/kate/pate/django_utils/django_template.pyc
+share/apps/kate/pate/django_utils/django_utils.py
+share/apps/kate/pate/django_utils/django_utils.pyc
+share/apps/kate/pate/django_utils/django_utils.ui
 share/apps/kate/pate/expand/
 share/apps/kate/pate/expand.py
+share/apps/kate/pate/expand.pyc
 share/apps/kate/pate/expand/all.expand
 share/apps/kate/pate/expand/text_css.expand
 share/apps/kate/pate/expand/text_html.expand
@@ -84,19 +121,95 @@ share/apps/kate/pate/expand/text_x-c++src.expand
 share/apps/kate/pate/expand/text_x-chdr.expand
 share/apps/kate/pate/expand/text_x-python.expand
 share/apps/kate/pate/format.py
+share/apps/kate/pate/format.pyc
 share/apps/kate/pate/gid/
 share/apps/kate/pate/gid/config.ui
 share/apps/kate/pate/gid/gid.py
+share/apps/kate/pate/gid/gid.pyc
 share/apps/kate/pate/gid/idutils.py
+share/apps/kate/pate/gid/idutils.pyc
 share/apps/kate/pate/gid/tool.ui
+share/apps/kate/pate/js_utils/
+share/apps/kate/pate/js_utils/jquery_autocomplete.json
+share/apps/kate/pate/js_utils/js_autocomplete.json
+share/apps/kate/pate/js_utils/js_autocomplete.py
+share/apps/kate/pate/js_utils/js_autocomplete.pyc
+share/apps/kate/pate/js_utils/js_settings.py
+share/apps/kate/pate/js_utils/js_settings.pyc
+share/apps/kate/pate/js_utils/js_snippets.py
+share/apps/kate/pate/js_utils/js_snippets.pyc
+share/apps/kate/pate/js_utils/js_utils.py
+share/apps/kate/pate/js_utils/js_utils.pyc
+share/apps/kate/pate/js_utils/js_utils.ui
+share/apps/kate/pate/js_utils/jslint.py
+share/apps/kate/pate/js_utils/jslint.pyc
+share/apps/kate/pate/js_utils/json_pretty.py
+share/apps/kate/pate/js_utils/json_pretty.pyc
 share/apps/kate/pate/libkatepate/
 share/apps/kate/pate/libkatepate/__init__.py
+share/apps/kate/pate/libkatepate/__init__.pyc
+share/apps/kate/pate/libkatepate/autocomplete.py
+share/apps/kate/pate/libkatepate/autocomplete.pyc
 share/apps/kate/pate/libkatepate/common.py
+share/apps/kate/pate/libkatepate/common.pyc
+share/apps/kate/pate/libkatepate/compat.py
+share/apps/kate/pate/libkatepate/compat.pyc
+share/apps/kate/pate/libkatepate/debug.py
+share/apps/kate/pate/libkatepate/debug.pyc
 share/apps/kate/pate/libkatepate/decorators.py
+share/apps/kate/pate/libkatepate/decorators.pyc
+share/apps/kate/pate/libkatepate/errors.py
+share/apps/kate/pate/libkatepate/errors.pyc
+share/apps/kate/pate/libkatepate/menu.py
+share/apps/kate/pate/libkatepate/menu.pyc
 share/apps/kate/pate/libkatepate/pred.py
+share/apps/kate/pate/libkatepate/pred.pyc
+share/apps/kate/pate/libkatepate/project_utils.py
+share/apps/kate/pate/libkatepate/project_utils.pyc
 share/apps/kate/pate/libkatepate/selection.py
+share/apps/kate/pate/libkatepate/selection.pyc
+share/apps/kate/pate/libkatepate/text.py
+share/apps/kate/pate/libkatepate/text.pyc
 share/apps/kate/pate/libkatepate/ui.py
-share/apps/kate/pate/tools.py
+share/apps/kate/pate/libkatepate/ui.pyc
+share/apps/kate/pate/python_autocomplete/
+share/apps/kate/pate/python_autocomplete/python_autocomplete.py
+share/apps/kate/pate/python_autocomplete/python_autocomplete.pyc
+share/apps/kate/pate/python_autocomplete/python_autocomplete_parse.py
+share/apps/kate/pate/python_autocomplete/python_autocomplete_parse.pyc
+share/apps/kate/pate/python_console_classic/
+share/apps/kate/pate/python_console_classic/config.ui
+share/apps/kate/pate/python_console_classic/python_console_classic.py
+share/apps/kate/pate/python_console_classic/python_console_classic.pyc
+share/apps/kate/pate/python_console_ipython/
+share/apps/kate/pate/python_console_ipython/python_console_ipython.css
+share/apps/kate/pate/python_console_ipython/python_console_ipython.py
+share/apps/kate/pate/python_console_ipython/python_console_ipython.pyc
+share/apps/kate/pate/python_console_ipython/python_console_ipython.ui
+share/apps/kate/pate/python_utils/
+share/apps/kate/pate/python_utils/python_checkers/
+share/apps/kate/pate/python_utils/python_checkers/__init__.py
+share/apps/kate/pate/python_utils/python_checkers/__init__.pyc
+share/apps/kate/pate/python_utils/python_checkers/all_checker.py
+share/apps/kate/pate/python_utils/python_checkers/all_checker.pyc
+share/apps/kate/pate/python_utils/python_checkers/parse_checker.py
+share/apps/kate/pate/python_utils/python_checkers/parse_checker.pyc
+share/apps/kate/pate/python_utils/python_checkers/pep8_checker.py
+share/apps/kate/pate/python_utils/python_checkers/pep8_checker.pyc
+share/apps/kate/pate/python_utils/python_checkers/pyflakes_checker.py
+share/apps/kate/pate/python_utils/python_checkers/pyflakes_checker.pyc
+share/apps/kate/pate/python_utils/python_checkers/utils.py
+share/apps/kate/pate/python_utils/python_checkers/utils.pyc
+share/apps/kate/pate/python_utils/python_settings.py
+share/apps/kate/pate/python_utils/python_settings.pyc
+share/apps/kate/pate/python_utils/python_snippets.py
+share/apps/kate/pate/python_utils/python_snippets.pyc
+share/apps/kate/pate/python_utils/python_utils.py
+share/apps/kate/pate/python_utils/python_utils.pyc
+share/apps/kate/pate/python_utils/python_utils.ui
+share/apps/kate/pate/xml_pretty.py
+share/apps/kate/pate/xml_pretty.pyc
+share/apps/kate/pate/xml_pretty.ui
 share/apps/kate/plugins/
 share/apps/kate/plugins/filetree/
 share/apps/kate/plugins/filetree/ui.rc
@@ -104,10 +217,13 @@ share/apps/kate/plugins/kate_kttsd/
 share/apps/kate/plugins/kate_kttsd/ui.rc
 share/apps/kate/plugins/katebuild/
 share/apps/kate/plugins/katebuild/ui.rc
+share/apps/kate/plugins/katecloseexceptplugin/
+share/apps/kate/plugins/katecloseexceptplugin/ui.rc
 share/apps/kate/plugins/katectags/
 share/apps/kate/plugins/katectags/ui.rc
 share/apps/kate/plugins/katefiletemplates/
 share/apps/kate/plugins/katefiletemplates/templates/
+share/apps/kate/plugins/katefiletemplates/templates/FindXXX.cmake.katetemplate
 share/apps/kate/plugins/katefiletemplates/templates/cppgpl.cpp.katetemplate
 share/apps/kate/plugins/katefiletemplates/templates/cppgpl.hh.katetemplate
 share/apps/kate/plugins/katefiletemplates/templates/cpplgpl.cpp.katetemplate
@@ -143,7 +259,9 @@ share/apps/kate/plugins/katexmltools/ui.rc
 share/apps/kate/plugins/pate/
 share/apps/kate/plugins/pate/kate/
 share/apps/kate/plugins/pate/kate/__init__.py
+share/apps/kate/plugins/pate/kate/__init__.pyc
 share/apps/kate/plugins/pate/kate/gui.py
+share/apps/kate/plugins/pate/kate/gui.pyc
 share/apps/kate/plugins/project/
 share/apps/kate/plugins/project/ui.rc
 share/apps/kate/tips
@@ -173,6 +291,7 @@ share/apps/katepart/script/indentation/ruby.js
 share/apps/katepart/script/indentation/xml.js
 share/apps/katepart/script/libraries/
 share/apps/katepart/script/libraries/cursor.js
+share/apps/katepart/script/libraries/documentcursor.js
 share/apps/katepart/script/libraries/emmet/
 share/apps/katepart/script/libraries/emmet/editor_interface.js
 share/apps/katepart/script/libraries/emmet/lib.js
@@ -219,6 +338,7 @@ share/apps/katepart/syntax/coffee.xml
 share/apps/katepart/syntax/coldfusion.xml
 share/apps/katepart/syntax/commonlisp.xml
 share/apps/katepart/syntax/component-pascal.xml
+share/apps/katepart/syntax/context.xml
 share/apps/katepart/syntax/cpp.xml
 share/apps/katepart/syntax/cpp11.xml
 share/apps/katepart/syntax/crk.xml
@@ -227,6 +347,7 @@ share/apps/katepart/syntax/css-php.xml
 share/apps/katepart/syntax/css.xml
 share/apps/katepart/syntax/cubescript.xml
 share/apps/katepart/syntax/cue.xml
+share/apps/katepart/syntax/curry.xml
 share/apps/katepart/syntax/d.xml
 share/apps/katepart/syntax/debianchangelog.xml
 share/apps/katepart/syntax/debiancontrol.xml
@@ -276,9 +397,11 @@ share/apps/katepart/syntax/java.xml
 share/apps/katepart/syntax/javadoc.xml
 share/apps/katepart/syntax/javascript-php.xml
 share/apps/katepart/syntax/javascript.xml
+share/apps/katepart/syntax/jira.xml
 share/apps/katepart/syntax/json.xml
 share/apps/katepart/syntax/jsp.xml
 share/apps/katepart/syntax/julia.xml
+share/apps/katepart/syntax/k.xml
 share/apps/katepart/syntax/katetemplate.xml
 share/apps/katepart/syntax/kbasic.xml
 share/apps/katepart/syntax/language.dtd
@@ -288,6 +411,7 @@ share/apps/katepart/syntax/ldif.xml
 share/apps/katepart/syntax/less.xml
 share/apps/katepart/syntax/lex.xml
 share/apps/katepart/syntax/lilypond.xml
+share/apps/katepart/syntax/literate-curry.xml
 share/apps/katepart/syntax/literate-haskell.xml
 share/apps/katepart/syntax/logtalk.xml
 share/apps/katepart/syntax/lpc.xml
@@ -323,6 +447,7 @@ share/apps/katepart/syntax/ocaml.xml
 share/apps/katepart/syntax/octave.xml
 share/apps/katepart/syntax/oors.xml
 share/apps/katepart/syntax/opal.xml
+share/apps/katepart/syntax/opencl.xml
 share/apps/katepart/syntax/pango.xml
 share/apps/katepart/syntax/pascal.xml
 share/apps/katepart/syntax/perl.xml
@@ -338,6 +463,7 @@ share/apps/katepart/syntax/progress.xml
 share/apps/katepart/syntax/prolog.xml
 share/apps/katepart/syntax/purebasic.xml
 share/apps/katepart/syntax/python.xml
+share/apps/katepart/syntax/q.xml
 share/apps/katepart/syntax/qmake.xml
 share/apps/katepart/syntax/qml.xml
 share/apps/katepart/syntax/qt4.xml
@@ -384,6 +510,7 @@ share/apps/katepart/syntax/uscript.xml
 share/apps/katepart/syntax/vala.xml
 share/apps/katepart/syntax/valgrind-suppression.xml
 share/apps/katepart/syntax/varnish.xml
+share/apps/katepart/syntax/varnishtest.xml
 share/apps/katepart/syntax/vcard.xml
 share/apps/katepart/syntax/velocity.xml
 share/apps/katepart/syntax/vera.xml
@@ -437,6 +564,7 @@ share/doc/HTML/en/kate/common
 share/doc/HTML/en/kate/configdialog01.png
 share/doc/HTML/en/kate/configuring-part.docbook
 share/doc/HTML/en/kate/configuring.docbook
+share/doc/HTML/en/kate/development.docbook
 share/doc/HTML/en/kate/fundamentals.docbook
 share/doc/HTML/en/kate/gdb-call-stack.png
 share/doc/HTML/en/kate/gdb-io.png
@@ -450,7 +578,6 @@ share/doc/HTML/en/kate/index.docbook
 share/doc/HTML/en/kate/kate.png
 share/doc/HTML/en/kate/line-modification-system.png
 share/doc/HTML/en/kate/man-kate.1.docbook
-share/doc/HTML/en/kate/mdi.docbook
 share/doc/HTML/en/kate/menus.docbook
 share/doc/HTML/en/kate/minimap.png
 share/doc/HTML/en/kate/part.docbook
@@ -471,16 +598,17 @@ share/doc/HTML/en/kwrite/index.docbook
 share/doc/HTML/en/kwrite/menus.docbook
 share/icons/hicolor/128x128/apps/kate.png
 share/icons/hicolor/16x16/apps/kate.png
+share/icons/hicolor/22x22/actions/debug-kategdb.png
 share/icons/hicolor/22x22/apps/kate.png
 share/icons/hicolor/32x32/apps/kate.png
 share/icons/hicolor/48x48/apps/kate.png
 share/icons/hicolor/64x64/apps/kate.png
 share/icons/hicolor/scalable/apps/kate.svgz
 share/icons/hicolor/scalable/apps/ktexteditorautobrace.svgz
-share/icons/oxygen/16x16/actions/debug.png
 share/kde4/services/kate_kttsd.desktop
 share/kde4/services/katebacktracebrowserplugin.desktop
 share/kde4/services/katebuildplugin.desktop
+share/kde4/services/katecloseexceptplugin.desktop
 share/kde4/services/katectagsplugin.desktop
 share/kde4/services/katefilebrowserplugin.desktop
 share/kde4/services/katefiletemplates.desktop
@@ -513,5 +641,3 @@ share/kde4/servicetypes/kateplugin.desktop
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen

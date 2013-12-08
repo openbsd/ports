@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2013/11/25 14:16:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2013/12/08 19:13:34 zhuk Exp $
 
 COMMENT =	KDE 4 bindings for Python
 DISTNAME =	pykde4-${MODKDE4_VERSION}
 PKGNAME =	py-kde-${MODKDE4_VERSION}
-REVISION =	1
 
 MODULES =	lang/python
 
@@ -26,7 +25,7 @@ WANTLIB += ${KDE4LIB}/solid
 WANTLIB += ${KDE4LIB}/akonadi-kde ${KDE4LIB}/akonadi-kmime
 WANTLIB += ${MODPY_WANTLIB} soprano sopranoclient sopranoserver
 
-MODKDE4_USE =	libs pim
+MODKDE4_USE =	pim libs
 
 BUILD_DEPENDS =	${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION} \
 		devel/py-sip>=4.14.1 \

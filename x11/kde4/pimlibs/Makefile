@@ -1,46 +1,45 @@
-# $OpenBSD: Makefile,v 1.23 2013/11/24 19:56:32 zhuk Exp $
+# $OpenBSD: Makefile,v 1.24 2013/12/08 19:13:33 zhuk Exp $
 
 COMMENT =	libraries for KDE PIM services
 DISTNAME =	kdepimlibs-${MODKDE4_VERSION}
-REVISION =	1
 
 DPB_PROPERTIES =	parallel
 
-SHARED_LIBS =	kabc                 50.1      # .4.0
-SHARED_LIBS +=	kabc_file_core       50.1      # .4.0
-SHARED_LIBS +=	kalarmcal	     50.1      # 2.7
-SHARED_LIBS +=	kcal                 50.1      # .4.0
-SHARED_LIBS +=	kldap                50.1      # .4.0
-SHARED_LIBS +=	kmime                50.1      # .4.0
-SHARED_LIBS +=	kresources           50.1      # .4.0
-SHARED_LIBS +=	ktnef                50.1      # .4.0
-SHARED_LIBS +=	kxmlrpcclient        50.1      # .4.0
-SHARED_LIBS +=	syndication          50.1      # .1.0
-SHARED_LIBS +=	gpgme++              50.1      # .1.0
-SHARED_LIBS +=	gpgme++-pthread      50.1      # .1.0
-SHARED_LIBS +=	kblog                50.1      # .4.0
-SHARED_LIBS +=	kimap                50.1      # .4.0
-SHARED_LIBS +=	kpimidentities       50.1      # .4.0
-SHARED_LIBS +=	kpimutils            50.1      # .4.0
-SHARED_LIBS +=	mailtransport        50.1      # .4.0
-SHARED_LIBS +=	qgpgme               50.1      # .1.0
-SHARED_LIBS +=	akonadi-contact	     50.1      # .4.4
-SHARED_LIBS +=	akonadi-kabc	     50.1      # .4.4
-SHARED_LIBS +=	akonadi-kcal	     50.1      # .4.4
-SHARED_LIBS +=	akonadi-kde	     50.1      # .4.4
-SHARED_LIBS +=	akonadi-kmime	     50.1      # .4.4
-SHARED_LIBS +=	akonadi-notes	     50.1      # 4.7
-SHARED_LIBS +=	kholidays	     50.1      # .4.4
-SHARED_LIBS +=	kontactinterface     50.1      # .4.4
-SHARED_LIBS +=	kpimtextedit	     50.1      # .4.4
-SHARED_LIBS +=	microblog	     50.1      # .4.4
+SHARED_LIBS =	kabc                 51.0      # .4.0
+SHARED_LIBS +=	kabc_file_core       51.0      # .4.0
+SHARED_LIBS +=	kalarmcal	     51.0      # 2.7
+SHARED_LIBS +=	kcal                 51.0      # .4.0
+SHARED_LIBS +=	kldap                51.0      # .4.0
+SHARED_LIBS +=	kmime                51.0      # .4.0
+SHARED_LIBS +=	kresources           51.0      # .4.0
+SHARED_LIBS +=	ktnef                51.0      # .4.0
+SHARED_LIBS +=	kxmlrpcclient        51.0      # .4.0
+SHARED_LIBS +=	syndication          51.0      # .1.0
+SHARED_LIBS +=	gpgme++              51.0      # .1.0
+SHARED_LIBS +=	gpgme++-pthread      51.0      # .1.0
+SHARED_LIBS +=	kblog                51.0      # .4.0
+SHARED_LIBS +=	kimap                51.0      # .4.0
+SHARED_LIBS +=	kpimidentities       51.0      # .4.0
+SHARED_LIBS +=	kpimutils            51.0      # .4.0
+SHARED_LIBS +=	mailtransport        51.0      # .4.0
+SHARED_LIBS +=	qgpgme               51.0      # .1.0
+SHARED_LIBS +=	akonadi-contact	     51.0      # .4.4
+SHARED_LIBS +=	akonadi-kabc	     51.0      # .4.4
+SHARED_LIBS +=	akonadi-kcal	     51.0      # .4.4
+SHARED_LIBS +=	akonadi-kde	     51.0      # .4.4
+SHARED_LIBS +=	akonadi-kmime	     51.0      # .4.4
+SHARED_LIBS +=	akonadi-notes	     51.0      # 4.7
+SHARED_LIBS +=	kholidays	     51.0      # .4.4
+SHARED_LIBS +=	kontactinterface     51.0      # .4.4
+SHARED_LIBS +=	kpimtextedit	     51.0      # .4.4
+SHARED_LIBS +=	microblog	     51.0      # .4.4
 
-SHARED_LIBS +=  akonadi-calendar	50.1 # 4.7
-SHARED_LIBS +=  kcalcore		50.1 # 4.7
-SHARED_LIBS +=  kcalutils		50.1 # 4.7
-SHARED_LIBS +=  kmbox			50.1 # 4.7
+SHARED_LIBS +=  akonadi-calendar	51.0 # 4.7
+SHARED_LIBS +=  kcalcore		51.0 # 4.7
+SHARED_LIBS +=  kcalutils		51.0 # 4.7
+SHARED_LIBS +=  kmbox			51.0 # 4.7
 
-SHARED_LIBS +=  akonadi-socialutils	50.1 # 4.10
+SHARED_LIBS +=  akonadi-socialutils	51.0 # 4.10
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSql

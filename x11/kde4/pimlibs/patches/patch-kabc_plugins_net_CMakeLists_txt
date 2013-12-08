@@ -1,0 +1,13 @@
+$OpenBSD: patch-kabc_plugins_net_CMakeLists_txt,v 1.1 2013/12/08 19:13:33 zhuk Exp $
+Fix linking.
+--- kabc/plugins/net/CMakeLists.txt.orig	Wed Nov  6 10:21:39 2013
++++ kabc/plugins/net/CMakeLists.txt	Wed Nov  6 10:21:50 2013
+@@ -7,7 +7,7 @@ set(kabc_net_SRCS resourcenetplugin.cpp resourcenet.cp
+ 
+ kde4_add_plugin(kabc_net ${kabc_net_SRCS})
+ 
+-target_link_libraries(kabc_net ${KDE4_KIO_LIBS} kabc kresources)
++target_link_libraries(kabc_net kabc kresources ${KDE4_KIO_LIBS})
+ 
+ install(TARGETS kabc_net DESTINATION ${PLUGIN_INSTALL_DIR})
+ 

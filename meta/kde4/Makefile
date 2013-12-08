@@ -1,31 +1,31 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/11/25 20:42:17 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/12/08 19:13:28 zhuk Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
 COMMENT-minimal =	KDE4 desktop meta-package (minimal installation)
 COMMENT-main =		KDE4 desktop meta-package (full installation)
 COMMENT-extras =	non-SC KDE4 applications
-#COMMENT-admin =		KDE SC system administrator tools
+COMMENT-admin =		KDE SC system administrator tools
 COMMENT-games =		KDE SC games
-#COMMENT-network =	KDE SC network applications
-#COMMENT-sdk =		KDE SC development applications
-#COMMENT-toys =		KDE SC small funny applications
+COMMENT-network =	KDE SC network applications
+COMMENT-sdk =		KDE SC development applications
+COMMENT-toys =		KDE SC small funny applications
 
 PKGNAME-minimal =	kde4-minimal-${MODKDE4_VERSION}
 PKGNAME-main =		kde4-${MODKDE4_VERSION}
 PKGNAME-extras =	kde4-extras-${MODKDE4_VERSION}
-#PKGNAME-admin =		kdeadmin-${MODKDE4_VERSION}
+PKGNAME-admin =		kdeadmin-${MODKDE4_VERSION}
 PKGNAME-games =		kdegames-${MODKDE4_VERSION}
-#PKGNAME-network =	kdenetwork-${MODKDE4_VERSION}
-#PKGNAME-sdk =		kdesdk-${MODKDE4_VERSION}
-#PKGNAME-toys =		kdetoys-${MODKDE4_VERSION}
+PKGNAME-network =	kdenetwork-${MODKDE4_VERSION}
+PKGNAME-sdk =		kdesdk-${MODKDE4_VERSION}
+PKGNAME-toys =		kdetoys-${MODKDE4_VERSION}
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
 MULTI_PACKAGES +=	-main -minimal -games
 
 # after KDE 4.11
-#MULTI_PACKAGES +=	-admin -network -sdk -toys
+MULTI_PACKAGES +=	-admin -network -sdk -toys
 
 # not ready
 #MULTI_PACKAGES +=	-extras
@@ -206,23 +206,23 @@ RUN_DEPENDS-minimal = \
 
 RUN_DEPENDS-main = \
 	${BUILD_PKGPATH},-minimal=${MODKDE4_VERSION} \
+	${BUILD_PKGPATH},-admin=${MODKDE4_VERSION} \
 	${BUILD_PKGPATH},-games=${MODKDE4_VERSION} \
+	${BUILD_PKGPATH},-network=${MODKDE4_VERSION} \
+	${BUILD_PKGPATH},-sdk=${MODKDE4_VERSION} \
+	${BUILD_PKGPATH},-toys=${MODKDE4_VERSION} \
 	${KDE4-accessibility}		\
 	${KDE4-edu}			\
 	${KDE4-graphics}		\
 	${KDE4-multimedia}		\
 	${KDE4-utils}			\
-	${MODKDE4_DEP_DIR}/admin	\
 	${MODKDE4_DEP_DIR}/artwork	\
 	${MODKDE4_DEP_DIR}/base-artwork	\
 	${MODKDE4_DEP_DIR}/kate		\
 	${MODKDE4_DEP_DIR}/kgpg		\
 	${MODKDE4_DEP_DIR}/konsole	\
 	${MODKDE4_DEP_DIR}/kwallet	\
-	${MODKDE4_DEP_DIR}/network	\
 	${MODKDE4_DEP_DIR}/pim		\
-	${MODKDE4_DEP_DIR}/sdk		\
-	${MODKDE4_DEP_DIR}/toys		\
 	${MODKDE4_DEP_DIR}/wallpapers	\
 	${MODKDE4_DEP_DIR}/workspace
 

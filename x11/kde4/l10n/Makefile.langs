@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile.langs,v 1.1.1.1 2013/04/24 18:23:39 zhuk Exp $
+# $OpenBSD: Makefile.langs,v 1.2 2013/12/08 19:13:32 zhuk Exp $
 
 ALL_LANGS =
 
 # List of language packs not being built currently due to missing distfiles.
 # Should be reviewed at least on each KDE version update.
-#ALL_LANGS +=	as ast fy gu hi id ka kn mai mk ml ms se sq ta tt
+#ALL_LANGS +=	as ast fy gu id ka kn mai mk ml ms se si sq ta th tt
 
 # List of language packs having distfiles.
 ALL_LANGS +=	ar bg bs ca ca@valencia cs da de el en_GB es et eu fa fi fr ga
 ALL_LANGS +=	gl he hi hr hu ia is it ja kk km ko lt lv mr nb nds nl nn pa pl
-ALL_LANGS +=	pt pt_BR ro ru si sk sl sr sv tg th tr ug uk vi wa zh_CN zh_TW
+ALL_LANGS +=	pt pt_BR ro ru sk sl sr sv tg tr ug uk vi wa zh_CN zh_TW

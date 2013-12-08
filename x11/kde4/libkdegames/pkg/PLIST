@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/08/24 17:33:48 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/12/08 19:13:32 zhuk Exp $
 @conflict kdegames-<4.10
 include/kde4/KDE/KExtHighscore
 include/kde4/KDE/KGameClock
@@ -11,6 +11,7 @@ include/kde4/KDE/KHighscore
 include/kde4/KDE/KScoreDialog
 include/kde4/KDE/KStandardGameAction
 include/kde4/KDE/KgAudioScene
+include/kde4/KDE/KgDeclarativeView
 include/kde4/KDE/KgDifficulty
 include/kde4/KDE/KgSound
 include/kde4/KDE/KgTheme
@@ -28,6 +29,7 @@ include/kde4/kgamerenderedobjectitem.h
 include/kde4/kgamerenderer.h
 include/kde4/kgamerendererclient.h
 include/kde4/kgaudioscene.h
+include/kde4/kgdeclarativeview.h
 include/kde4/kgdifficulty.h
 include/kde4/kgsound.h
 include/kde4/kgtheme.h
@@ -37,27 +39,17 @@ include/kde4/kstandardgameaction.h
 include/kde4/libkdegames_capabilities.h
 include/kde4/libkdegames_export.h
 include/kde4/libkdegamesprivate/
-include/kde4/libkdegamesprivate/kchat.h
 include/kde4/libkdegamesprivate/kchatbase.h
 include/kde4/libkdegamesprivate/kchatbaseitemdelegate.h
 include/kde4/libkdegamesprivate/kchatbasemodel.h
-include/kde4/libkdegamesprivate/kchatdialog.h
 include/kde4/libkdegamesprivate/kgame/
-include/kde4/libkdegamesprivate/kgame/dialogs/
-include/kde4/libkdegamesprivate/kgame/dialogs/kgameconnectdialog.h
-include/kde4/libkdegamesprivate/kgame/dialogs/kgamedebugdialog.h
-include/kde4/libkdegamesprivate/kgame/dialogs/kgamedialog.h
-include/kde4/libkdegamesprivate/kgame/dialogs/kgamedialogconfig.h
-include/kde4/libkdegamesprivate/kgame/dialogs/kgameerrordialog.h
 include/kde4/libkdegamesprivate/kgame/kgame.h
 include/kde4/libkdegamesprivate/kgame/kgamechat.h
 include/kde4/libkdegamesprivate/kgame/kgameerror.h
 include/kde4/libkdegamesprivate/kgame/kgameio.h
 include/kde4/libkdegamesprivate/kgame/kgamemessage.h
 include/kde4/libkdegamesprivate/kgame/kgamenetwork.h
-include/kde4/libkdegamesprivate/kgame/kgameprocess.h
 include/kde4/libkdegamesprivate/kgame/kgameproperty.h
-include/kde4/libkdegamesprivate/kgame/kgamepropertyarray.h
 include/kde4/libkdegamesprivate/kgame/kgamepropertyhandler.h
 include/kde4/libkdegamesprivate/kgame/kgamesequence.h
 include/kde4/libkdegamesprivate/kgame/kgameversion.h
@@ -76,6 +68,14 @@ lib/cmake/KDEGames/KDEGamesConfig.cmake
 lib/cmake/KDEGames/KDEGamesConfigVersion.cmake
 lib/cmake/KDEGames/KDEGamesLibraryDepends${MODKDE4_CMAKE_PREFIX}.cmake
 lib/cmake/KDEGames/KDEGamesLibraryDepends.cmake
+lib/kde4/imports/
+lib/kde4/imports/org/
+lib/kde4/imports/org/kde/
+lib/kde4/imports/org/kde/games/
+lib/kde4/imports/org/kde/games/core/
+lib/kde4/imports/org/kde/games/core/KgItem.qml
+lib/kde4/imports/org/kde/games/core/libcorebindingsplugin.so
+lib/kde4/imports/org/kde/games/core/qmldir
 @lib ${KDE4LIB}/libkdegames.so.${LIBkdegames_VERSION}
 @lib ${KDE4LIB}/libkdegamesprivate.so.${LIBkdegamesprivate_VERSION}
 @lib lib/libkdegames.so.${LIBkdegames_VERSION}

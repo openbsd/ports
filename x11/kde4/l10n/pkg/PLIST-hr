@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hr,v 1.3 2013/07/04 00:46:09 zhuk Exp $
+@comment $OpenBSD: PLIST-hr,v 1.4 2013/12/08 19:13:32 zhuk Exp $
 share/locale/hr/LC_MESSAGES/adblock.mo
 share/locale/hr/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/hr/LC_MESSAGES/akonadi_contacts_resource.mo
@@ -63,7 +63,6 @@ share/locale/hr/LC_MESSAGES/katetextfilter.mo
 share/locale/hr/LC_MESSAGES/katexmlcheck.mo
 share/locale/hr/LC_MESSAGES/katexmltools.mo
 share/locale/hr/LC_MESSAGES/katomic.mo
-share/locale/hr/LC_MESSAGES/kbattleship.mo
 share/locale/hr/LC_MESSAGES/kblackbox.mo
 share/locale/hr/LC_MESSAGES/kblankscrn.mo
 share/locale/hr/LC_MESSAGES/kblocks.mo
@@ -90,7 +89,6 @@ share/locale/hr/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/hr/LC_MESSAGES/kcm_pci.mo
 share/locale/hr/LC_MESSAGES/kcm_phonon.mo
 share/locale/hr/LC_MESSAGES/kcm_platform.mo
-share/locale/hr/LC_MESSAGES/kcm_solid.mo
 share/locale/hr/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/hr/LC_MESSAGES/kcm_standard_actions.mo
 share/locale/hr/LC_MESSAGES/kcmaccess.mo
@@ -249,6 +247,7 @@ share/locale/hr/LC_MESSAGES/kmix.mo
 share/locale/hr/LC_MESSAGES/kmousetool.mo
 share/locale/hr/LC_MESSAGES/kmouth.mo
 share/locale/hr/LC_MESSAGES/kmplot.mo
+share/locale/hr/LC_MESSAGES/knavalbattle.mo
 share/locale/hr/LC_MESSAGES/knetattach.mo
 share/locale/hr/LC_MESSAGES/knetwalk.mo
 share/locale/hr/LC_MESSAGES/knode.mo
@@ -345,6 +344,7 @@ share/locale/hr/LC_MESSAGES/libkdepim.mo
 share/locale/hr/LC_MESSAGES/libkexiv2.mo
 share/locale/hr/LC_MESSAGES/libkleopatra.mo
 share/locale/hr/LC_MESSAGES/libkmahjongg.mo
+share/locale/hr/LC_MESSAGES/libkomparediff2.mo
 share/locale/hr/LC_MESSAGES/libkonq.mo
 share/locale/hr/LC_MESSAGES/libkpgp.mo
 share/locale/hr/LC_MESSAGES/libksane.mo
@@ -374,7 +374,6 @@ share/locale/hr/LC_MESSAGES/mplayerthumbs.mo
 share/locale/hr/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/hr/LC_MESSAGES/nepomukbackup.mo
 share/locale/hr/LC_MESSAGES/nepomukfileindexer.mo
-share/locale/hr/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/hr/LC_MESSAGES/nepomukserver.mo
 share/locale/hr/LC_MESSAGES/nepomukservicestub.mo
 share/locale/hr/LC_MESSAGES/nepomukstorage.mo
@@ -486,7 +485,6 @@ share/locale/hr/LC_MESSAGES/plasma_containmentactions_contextmenu.mo
 share/locale/hr/LC_MESSAGES/plasma_containmentactions_switchactivity.mo
 share/locale/hr/LC_MESSAGES/plasma_containmentactions_switchdesktop.mo
 share/locale/hr/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
-share/locale/hr/LC_MESSAGES/plasma_engine_calendar.mo
 share/locale/hr/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/hr/LC_MESSAGES/plasma_engine_kdeobservatory.mo
 share/locale/hr/LC_MESSAGES/plasma_engine_keystate.mo
@@ -553,9 +551,7 @@ share/locale/hr/LC_MESSAGES/rocscore.mo
 share/locale/hr/LC_MESSAGES/rocsvisualeditor.mo
 share/locale/hr/LC_MESSAGES/searchbarplugin.mo
 share/locale/hr/LC_MESSAGES/solid-hardware.mo
-share/locale/hr/LC_MESSAGES/solid-network.mo
 share/locale/hr/LC_MESSAGES/solid_qt.mo
-share/locale/hr/LC_MESSAGES/solidcontrol.mo
 share/locale/hr/LC_MESSAGES/soliduiserver.mo
 share/locale/hr/LC_MESSAGES/step.mo
 share/locale/hr/LC_MESSAGES/step_qt.mo

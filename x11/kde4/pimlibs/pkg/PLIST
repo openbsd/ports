@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/08/24 17:33:52 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/12/08 19:13:33 zhuk Exp $
 @conflict kdelibs-<4
 @conflict kdepim-<4
 @bin bin/akonadi_benchmarker
@@ -20,7 +20,18 @@ include/kde4/KDE/Akonadi/Attribute
 include/kde4/KDE/Akonadi/AttributeFactory
 include/kde4/KDE/Akonadi/CachePolicy
 include/kde4/KDE/Akonadi/Calendar/
+include/kde4/KDE/Akonadi/Calendar/BlockAlarmsAttribute
+include/kde4/KDE/Akonadi/Calendar/CalendarBase
+include/kde4/KDE/Akonadi/Calendar/CalendarClipboard
+include/kde4/KDE/Akonadi/Calendar/CalendarSettings
+include/kde4/KDE/Akonadi/Calendar/ETMCalendar
+include/kde4/KDE/Akonadi/Calendar/FetchJobCalendar
+include/kde4/KDE/Akonadi/Calendar/FreeBusyManager
 include/kde4/KDE/Akonadi/Calendar/FreeBusyProviderBase
+include/kde4/KDE/Akonadi/Calendar/History
+include/kde4/KDE/Akonadi/Calendar/ITIPHandler
+include/kde4/KDE/Akonadi/Calendar/IncidenceChanger
+include/kde4/KDE/Akonadi/Calendar/PublishDialog
 include/kde4/KDE/Akonadi/Calendar/StandardCalendarActionManager
 include/kde4/KDE/Akonadi/ChangeRecorder
 include/kde4/KDE/Akonadi/Collection
@@ -110,10 +121,13 @@ include/kde4/KDE/Akonadi/KMime/MessageThreaderProxyModel
 include/kde4/KDE/Akonadi/KMime/MessageThreadingAttribute
 include/kde4/KDE/Akonadi/KMime/RemoveDuplicatesJob
 include/kde4/KDE/Akonadi/KMime/SpecialMailCollections
+include/kde4/KDE/Akonadi/KMime/SpecialMailCollectionsDiscoveryJob
 include/kde4/KDE/Akonadi/KMime/SpecialMailCollectionsRequestJob
 include/kde4/KDE/Akonadi/LinkJob
 include/kde4/KDE/Akonadi/MimeTypeChecker
 include/kde4/KDE/Akonadi/Monitor
+include/kde4/KDE/Akonadi/Notes/
+include/kde4/KDE/Akonadi/Notes/NoteUtils
 include/kde4/KDE/Akonadi/PreprocessorBase
 include/kde4/KDE/Akonadi/RecursiveCollectionFilterProxyModel
 include/kde4/KDE/Akonadi/RecursiveItemFetchJob
@@ -265,6 +279,7 @@ include/kde4/KDE/KCalCore/Incidence
 include/kde4/KDE/KCalCore/IncidenceBase
 include/kde4/KDE/KCalCore/Journal
 include/kde4/KDE/KCalCore/MemoryCalendar
+include/kde4/KDE/KCalCore/OccurrenceIterator
 include/kde4/KDE/KCalCore/Period
 include/kde4/KDE/KCalCore/Person
 include/kde4/KDE/KCalCore/Recurrence
@@ -374,6 +389,8 @@ include/kde4/KDE/KPIMTextEdit/InsertImageDialog
 include/kde4/KDE/KPIMTextEdit/InsertImageWidget
 include/kde4/KDE/KPIMTextEdit/InsertTableDialog
 include/kde4/KDE/KPIMTextEdit/InsertTableWidget
+include/kde4/KDE/KPIMTextEdit/SelectSpecialChar
+include/kde4/KDE/KPIMTextEdit/TableCellFormatDialog
 include/kde4/KDE/KPIMTextEdit/TableFormatDialog
 include/kde4/KDE/KPIMTextEdit/TextEdit
 include/kde4/KDE/KPIMUtils/
@@ -470,7 +487,18 @@ include/kde4/akonadi/cachepolicy.h
 include/kde4/akonadi/cachepolicypage.h
 include/kde4/akonadi/calendar/
 include/kde4/akonadi/calendar/akonadi-calendar_export.h
+include/kde4/akonadi/calendar/blockalarmsattribute.h
+include/kde4/akonadi/calendar/calendarbase.h
+include/kde4/akonadi/calendar/calendarclipboard.h
+include/kde4/akonadi/calendar/calendarsettings.h
+include/kde4/akonadi/calendar/etmcalendar.h
+include/kde4/akonadi/calendar/fetchjobcalendar.h
+include/kde4/akonadi/calendar/freebusymanager.h
 include/kde4/akonadi/calendar/freebusyproviderbase.h
+include/kde4/akonadi/calendar/history.h
+include/kde4/akonadi/calendar/incidencechanger.h
+include/kde4/akonadi/calendar/itiphandler.h
+include/kde4/akonadi/calendar/publishdialog.h
 include/kde4/akonadi/calendar/standardcalendaractionmanager.h
 include/kde4/akonadi/changerecorder.h
 include/kde4/akonadi/collection.h
@@ -575,6 +603,7 @@ include/kde4/akonadi/kmime/messagethreaderproxymodel.h
 include/kde4/akonadi/kmime/messagethreadingattribute.h
 include/kde4/akonadi/kmime/removeduplicatesjob.h
 include/kde4/akonadi/kmime/specialmailcollections.h
+include/kde4/akonadi/kmime/specialmailcollectionsdiscoveryjob.h
 include/kde4/akonadi/kmime/specialmailcollectionsrequestjob.h
 include/kde4/akonadi/kmime/standardmailactionmanager.h
 include/kde4/akonadi/linkjob.h
@@ -604,6 +633,7 @@ include/kde4/akonadi/socialutils/libakonadisocialutils_export.h
 include/kde4/akonadi/socialutils/socialfeeditem.h
 include/kde4/akonadi/socialutils/socialnetworkattributes.h
 include/kde4/akonadi/specialcollections.h
+include/kde4/akonadi/specialcollectionsdiscoveryjob.h
 include/kde4/akonadi/specialcollectionsrequestjob.h
 include/kde4/akonadi/standardactionmanager.h
 include/kde4/akonadi/statisticsproxymodel.h
@@ -796,6 +826,7 @@ include/kde4/kcalcore/incidencebase.h
 include/kde4/kcalcore/journal.h
 include/kde4/kcalcore/kcalcore_export.h
 include/kde4/kcalcore/memorycalendar.h
+include/kde4/kcalcore/occurrenceiterator.h
 include/kde4/kcalcore/period.h
 include/kde4/kcalcore/person.h
 include/kde4/kcalcore/recurrence.h
@@ -928,6 +959,8 @@ include/kde4/kpimtextedit/insertimagedialog.h
 include/kde4/kpimtextedit/insertimagewidget.h
 include/kde4/kpimtextedit/inserttabledialog.h
 include/kde4/kpimtextedit/kpimtextedit_export.h
+include/kde4/kpimtextedit/selectspecialchar.h
+include/kde4/kpimtextedit/tablecellformatdialog.h
 include/kde4/kpimtextedit/tableformatdialog.h
 include/kde4/kpimtextedit/textedit.h
 include/kde4/kpimtextedit/textutils.h
@@ -939,6 +972,7 @@ include/kde4/kpimutils/kpimutils_export.h
 include/kde4/kpimutils/linklocator.h
 include/kde4/kpimutils/networkaccesshelper.h
 include/kde4/kpimutils/processes.h
+include/kde4/kpimutils/progressindicatorwidget.h
 include/kde4/kpimutils/spellingfilter.h
 include/kde4/kpimutils/supertrait.h
 include/kde4/kresources/
@@ -1123,6 +1157,7 @@ lib/kde4/kio_smtp.so
 @lib ${KDE4LIB}/libmicroblog.so.${LIBmicroblog_VERSION}
 @lib ${KDE4LIB}/libqgpgme.so.${LIBqgpgme_VERSION}
 @lib ${KDE4LIB}/libsyndication.so.${LIBsyndication_VERSION}
+lib/kde4/plugins/designer/akonadiwidgets.so
 lib/kde4/plugins/designer/kholidayswidgets.so
 @lib lib/libakonadi-calendar.so.${LIBakonadi-calendar_VERSION}
 @lib lib/libakonadi-contact.so.${LIBakonadi-contact_VERSION}
@@ -1210,6 +1245,10 @@ share/apps/libkholidays/plan2/holiday_au-sa_en-gb
 share/apps/libkholidays/plan2/holiday_au-tas_en-gb
 share/apps/libkholidays/plan2/holiday_au-vic_en-gb
 share/apps/libkholidays/plan2/holiday_au-wa_en-gb
+share/apps/libkholidays/plan2/holiday_ba-srp_sr
+share/apps/libkholidays/plan2/holiday_ba-srp_sr@ijekavian
+share/apps/libkholidays/plan2/holiday_ba-srp_sr@ijekavianlatin
+share/apps/libkholidays/plan2/holiday_ba-srp_sr@latin
 share/apps/libkholidays/plan2/holiday_be_fr
 share/apps/libkholidays/plan2/holiday_be_nl
 share/apps/libkholidays/plan2/holiday_be_wa
@@ -1291,6 +1330,9 @@ share/apps/libkholidays/plan2/holiday_py_es
 share/apps/libkholidays/plan2/holiday_re_fr
 share/apps/libkholidays/plan2/holiday_ro_ro
 share/apps/libkholidays/plan2/holiday_rs_sr
+share/apps/libkholidays/plan2/holiday_rs_sr@ijekavian
+share/apps/libkholidays/plan2/holiday_rs_sr@ijekavianlatin
+share/apps/libkholidays/plan2/holiday_rs_sr@latin
 share/apps/libkholidays/plan2/holiday_ru_ru
 share/apps/libkholidays/plan2/holiday_se_sv
 share/apps/libkholidays/plan2/holiday_sg_en-gb

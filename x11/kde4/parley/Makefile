@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2013/11/24 19:56:32 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2013/12/08 19:13:33 zhuk Exp $
 
 COMMENT =	vocabulary trainer for KDE
 DISTNAME =	parley-${MODKDE4_VERSION}
-REVISION =	1
 
 # XXX Sometimes crashes, possibly due KHotNewStuff bugs.
 
@@ -17,7 +16,7 @@ WANTLIB += ${KDE4LIB}/krossui ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
 WANTLIB += ${KDE4LIB}/plasma
 WANTLIB += soprano xml2 xslt
 
-MODULES =	multimedia/phonon
+MODULES =	multimedia/phonon lang/python
 
 LIB_DEPENDS = 	textproc/libxml \
 		textproc/libxslt \
@@ -38,5 +37,8 @@ post-patch:
 .for _f in ${KROSS_SCRIPTS}
 	perl -pi -e '$$. == 1 and s@.*@#!${LOCALBASE}/bin/kross@' ${WRKSRC}/${_f}
 .endfor
+
+post-install:
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/share/apps/parley/plugins/
 
 .include <bsd.port.mk>

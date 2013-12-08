@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:45:31 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/12/08 19:13:31 zhuk Exp $
 @conflict kdebase-<4
 @bin bin/konsole
 bin/konsoleprofile
@@ -12,6 +12,7 @@ share/apps/kconf_update/konsole-2.10.0-remove-menuindex-from-profiles.sh
 share/apps/kconf_update/konsole-2.9.0-colorscheme-bold-key.sh
 share/apps/kconf_update/konsole-2.9.0-global-options.sh
 share/apps/kconf_update/konsole.upd
+share/apps/kconf_update/konsole_remove_background_mode.upd
 share/apps/konsole/
 share/apps/konsole/BlackOnLightYellow.colorscheme
 share/apps/konsole/BlackOnRandomLight.colorscheme
@@ -34,6 +35,7 @@ share/apps/konsole/sessionui.rc
 share/apps/konsole/solaris.keytab
 share/doc/HTML/en/konsole/
 share/doc/HTML/en/konsole/common
+share/doc/HTML/en/konsole/draganddrop-contextmenu.png
 share/doc/HTML/en/konsole/index.cache.bz2
 share/doc/HTML/en/konsole/index.docbook
 share/kde4/services/ServiceMenus/konsolehere.desktop

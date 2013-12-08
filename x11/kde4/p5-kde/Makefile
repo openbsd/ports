@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2013/11/24 19:56:32 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2013/12/08 19:13:33 zhuk Exp $
 
 COMMENT =	KDE bindings for Perl
 DISTNAME =	perlkde-${MODKDE4_VERSION}
 PKGNAME =	p5-kde-${MODKDE4_VERSION}
-REVISION =	1
+
+# for perl module
+SHARED_ONLY =	Yes
 
 WANTLIB =  c m perl pthread stdc++ util
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
@@ -21,6 +23,7 @@ WANTLIB += ${KDE4LIB}/smokesolid ${KDE4LIB}/smokesoprano
 WANTLIB += ${KDE4LIB}/smokesopranoclient ${KDE4LIB}/smokesopranoserver
 WANTLIB += ${KDE4LIB}/smokeakonadi
 
+MODULES =	perl
 MODKDE4_USE =	libs
 
 BUILD_DEPENDS =	${MODKDE4_DEP_DIR}/okular>=${MODKDE4_DEP_VERSION} \
@@ -31,7 +34,8 @@ RUN_DEPENDS =	${MODKDE4_DEP_DIR}/p5-qt>=${MODKDE4_DEP_VERSION}
 
 LIB_DEPENDS = 	${MODKDE4_DEP_DIR}/smokekde>=${MODKDE4_DEP_VERSION}
 
-CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_LibAttica=Yes
+CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_LibAttica=Yes \
+			-DCUSTOM_PERL_SITE_ARCH_DIR=${LOCALBASE}/${P5ARCH}
 
 # Avoid clashing Perl do_open and do_close with GCC's locale_facets.h
 post-patch:

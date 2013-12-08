@@ -1,0 +1,13 @@
+$OpenBSD: patch-konqueror_sidebar_places_module_CMakeLists_txt,v 1.1 2013/12/08 19:13:29 zhuk Exp $
+Fix linking.
+--- konqueror/sidebar/places_module/CMakeLists.txt.orig	Wed Nov  6 20:35:09 2013
++++ konqueror/sidebar/places_module/CMakeLists.txt	Wed Nov  6 20:35:19 2013
+@@ -6,7 +6,7 @@ set(konqsidebar_places_SRCS
+ 
+ kde4_add_plugin(konqsidebar_places ${konqsidebar_places_SRCS})
+ 
+-target_link_libraries(konqsidebar_places ${KDE4_KFILE_LIBS} ${KDE4_KPARTS_LIBRARY} konqsidebarplugin)
++target_link_libraries(konqsidebar_places konqsidebarplugin ${KDE4_KFILE_LIBS} ${KDE4_KPARTS_LIBRARY})
+ 
+ install(TARGETS konqsidebar_places DESTINATION ${PLUGIN_INSTALL_DIR})
+ 

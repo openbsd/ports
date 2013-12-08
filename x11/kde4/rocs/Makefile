@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2013/11/24 19:56:33 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2013/12/08 19:13:34 zhuk Exp $
 
 COMMENT =	graph theory IDE for KDE
 DISTNAME =	rocs-${MODKDE4_VERSION}
-REVISION =	0
 
 # XXX Crashes sometimes.
 
@@ -13,17 +12,19 @@ SHARED_LIBS +=	rocsvisualeditor	50.0 # 4.10
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtScript lib/qt4/QtScriptTools lib/qt4/QtSvg
-WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml
+WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml lib/qt4/QtXmlPatterns
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/knewstuff3
 WANTLIB += ${KDE4LIB}/kparts ${KDE4LIB}/krosscore ${KDE4LIB}/krossui
 WANTLIB += ${KDE4LIB}/ktexteditor ${KDE4LIB}/nepomuk
 WANTLIB += ${KDE4LIB}/nepomukutils ${KDE4LIB}/plasma
-WANTLIB += soprano
+WANTLIB += grantlee_core soprano
 
 BUILD_DEPENDS =	devel/boost>=1.49
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+2,-guic
+
+LIB_DEPENDS =	x11/grantlee
 
 # XXX Ugly hack until CMake or rocs, whatever, could be fixed.
 LOST_LIBS =	rocs_GraphStructure rocs_ListStructure

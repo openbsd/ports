@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/11/24 19:56:31 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2013/12/08 19:13:30 zhuk Exp $
 
 COMMENT =	Mah Jongg four players board game for KDE
 DISTNAME =	kajongg-${MODKDE4_VERSION}
 HOMEPAGE =	http://www.kde.org/applications/games/kajongg/
-REVISION =	1
 
 MODULES =	lang/python
 
@@ -13,7 +12,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/py-twisted/core \
 		x11/gtk+2,-guic \
 		${MODKDE4_DEP_DIR}/libkmahjongg>=${MODKDE4_VERSION} \
-		${MODKDE4_DEP_DIR}/py-kde
+		${MODKDE4_DEP_DIR}/py-kde>=${MODKDE4_VERSION}
 
 # Avoid extra BUILD_DEPENDS
 CONFIGURE_ARGS =	-DINSTALL_KAJONGG:Bool=TRUE

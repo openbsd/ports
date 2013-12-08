@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:45:01 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/12/08 19:13:30 zhuk Exp $
 @conflict kdeedu-<4
 @bin bin/kgeography
 share/applications/kde4/kgeography.desktop
@@ -950,6 +950,8 @@ share/apps/kgeography/switzerland.kgm
 share/apps/kgeography/switzerland.png
 share/apps/kgeography/tajikistan.kgm
 share/apps/kgeography/tajikistan.png
+share/apps/kgeography/tamilnadu.kgm
+share/apps/kgeography/tamilnadu.png
 share/apps/kgeography/thailand.kgm
 share/apps/kgeography/thailand.png
 share/apps/kgeography/tripura.kgm

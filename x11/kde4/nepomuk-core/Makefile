@@ -1,36 +1,39 @@
-# $OpenBSD: Makefile,v 1.6 2013/11/24 19:56:32 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2013/12/08 19:13:33 zhuk Exp $
 
 COMMENT =	KDE Nepomuk core libraries
 DISTNAME =	nepomuk-core-${MODKDE4_VERSION}
-REVISION =	2
 
 DPB_PROPERTIES =	parallel
 
-SHARED_LIBS =	nepomukcore		51.0 # 4.9
+SHARED_LIBS =	nepomukcore		52.0 # 4.9
 #SHARED_LIBS +=	nepomuksync		0.0 # 4.9
-SHARED_LIBS +=	nepomukcommon		51.0 # 4.10
-SHARED_LIBS +=	kdeinit4_nepomukserver	51.0 # 4.10
-SHARED_LIBS +=	nepomukextractor	51.0
+SHARED_LIBS +=	nepomukcommon		52.0 # 4.10
+SHARED_LIBS +=	kdeinit4_nepomukserver	52.0 # 4.10
+SHARED_LIBS +=	nepomukextractor	52.0
+SHARED_LIBS +=	nepomukcleaner		0.0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
 WANTLIB += lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kidletime ${KDE4LIB}/kio
 WANTLIB += ${KDE4LIB}/solid
-WANTLIB += avcodec avformat avutil exiv2 poppler-qt4 soprano sopranoclient
+WANTLIB += avcodec avformat avutil epub exiv2 poppler-qt4 soprano
 WANTLIB += sopranoserver tag
 
 MODKDE4_USE =	libs
 
-BUILD_DEPENDS =	devel/doxygen
+BUILD_DEPENDS =	devel/doxygen \
+		misc/shared-desktop-ontologies>=0.10.51
 
-RUN_DEPENDS =	devel/desktop-file-utils
+RUN_DEPENDS =	devel/desktop-file-utils \
+		misc/shared-desktop-ontologies>=0.10.51
 
 LIB_DEPENDS =	audio/taglib \
-		databases/soprano \
+		databases/soprano>=2.9.3 \
 		graphics/exiv2 \
 		graphics/ffmpeg \
-		print/poppler,,-qt4
+		print/poppler,,-qt4 \
+		textproc/ebook-tools
 
 # turns on indexing, let user make decision, default=no by GNOME & KDE
 #RUN_DEPENDS +=	databases/virtuoso

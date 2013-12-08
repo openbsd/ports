@@ -1,0 +1,45 @@
+$OpenBSD: patch-kdecore_util_kshareddatacache_cpp,v 1.1 2013/12/08 19:13:32 zhuk Exp $
+More correct implementation of random() & Co., using arc4random().
+--- kdecore/util/kshareddatacache.cpp.orig	Wed Aug 28 20:57:06 2013
++++ kdecore/util/kshareddatacache.cpp	Tue Nov  5 11:05:21 2013
+@@ -451,19 +451,13 @@ struct SharedMemory
+             return false;
+         }
+ 
+-        bool isProcessShared = false;
+         QSharedPointer<KSDCLock> tempLock(createLockFromId(shmLock.type, shmLock));
+ 
+-        if (!tempLock->initialize(isProcessShared)) {
++        if (!tempLock->initialize()) {
+             kError(ksdcArea()) << "Unable to initialize the lock for the cache!";
+             return false;
+         }
+ 
+-        if (!isProcessShared) {
+-            kWarning(ksdcArea()) << "Cache initialized, but does not support being"
+-                          << "shared across processes.";
+-        }
+-
+         // These must be updated to make some of our auxiliary functions
+         // work right since their values will be based on the cache size.
+         cacheSize = _cacheSize;
+@@ -1178,9 +1172,8 @@ class KSharedDataCache::Private
+ 
+         m_expectedType = shm->shmLock.type;
+         m_lock = QSharedPointer<KSDCLock>(createLockFromId(m_expectedType, shm->shmLock));
+-        bool isProcessSharingSupported = false;
+ 
+-        if (!m_lock->initialize(isProcessSharingSupported)) {
++        if (!m_lock->initialize()) {
+             kError(ksdcArea()) << "Unable to setup shared cache lock, although it worked when created.";
+             detachFromSharedMemory();
+         }
+@@ -1500,7 +1493,7 @@ bool KSharedDataCache::insert(const QString &key, cons
+         }
+         else if (loadFactor > startCullPoint) {
+             const int tripWireValue = RAND_MAX * (loadFactor - startCullPoint) / (mustCullPoint - startCullPoint);
+-            if (KRandom::random() >= tripWireValue) {
++            if ((int)KRandom::uniform(RAND_MAX) >= tripWireValue) {
+                 cullCollisions = true;
+             }
+         }

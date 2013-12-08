@@ -1,0 +1,13 @@
+$OpenBSD: patch-kabc_formats_CMakeLists_txt,v 1.1 2013/12/08 19:13:33 zhuk Exp $
+Fix linking.
+--- kabc/formats/CMakeLists.txt.orig	Wed Nov  6 10:41:21 2013
++++ kabc/formats/CMakeLists.txt	Wed Nov  6 10:41:30 2013
+@@ -7,7 +7,7 @@ set(kabcformat_binary_PART_SRCS binaryformat.cpp)
+ 
+ kde4_add_plugin(kabcformat_binary ${kabcformat_binary_PART_SRCS})
+ 
+-target_link_libraries(kabcformat_binary ${KDE4_KDECORE_LIBS} kabc)
++target_link_libraries(kabcformat_binary kabc ${KDE4_KDECORE_LIBS})
+ 
+ install(TARGETS kabcformat_binary DESTINATION ${PLUGIN_INSTALL_DIR})
+ 

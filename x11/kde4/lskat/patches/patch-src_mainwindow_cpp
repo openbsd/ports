@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_mainwindow_cpp,v 1.1 2013/12/08 19:13:33 zhuk Exp $
+--- src/mainwindow.cpp.orig	Thu Oct 17 18:57:04 2013
++++ src/mainwindow.cpp	Thu Oct 17 18:57:26 2013
+@@ -139,7 +139,7 @@ Mainwindow::Mainwindow(QWidget* parent)
+ 
+ 
+   // Get the card deck
+-  long seed = KRandom::random();
++  long seed = (long)KRandom::random32();
+   if (global_debug > 0) kDebug() << "Random seed" << seed;
+   mDeck = new Deck(seed, this);
+ 

@@ -1,0 +1,40 @@
+$OpenBSD: patch-kdecore_util_krandom_h,v 1.1 2013/12/08 19:13:32 zhuk Exp $
+More correct implementation of random() & Co., using arc4random().
+--- kdecore/util/krandom.h.orig	Fri Jun 28 21:03:40 2013
++++ kdecore/util/krandom.h	Wed Oct 16 21:59:30 2013
+@@ -22,6 +22,8 @@
+ #ifndef KRANDOM_H
+ #define KRANDOM_H
+ 
++#include <sys/types.h>
++
+ #include <kdecore_export.h>
+ 
+ #include <QtCore/QString>
+@@ -36,10 +38,24 @@
+ namespace KRandom {
+     /**
+      * Generates a uniform random number.
+-     * @return A random number in the range [0, RAND_MAX). The RNG is seeded
+-     *   on first use.
++     * @return A random integer number in the range [0, RAND_MAX - 1].
++     *   The RNG is seeded on first use.
+      */
+     KDECORE_EXPORT int random();
++
++    /**
++     * Generates a uniform 32-bit random number.
++     * @return A random number in the range [0, 2^32 - 1].
++     *   The RNG is seeded on first use.
++     */
++    KDECORE_EXPORT uint32_t random32();
++
++    /**
++     * Generates a uniform 32-bit random number.
++     * @return A random number in the range [0, upperBound].
++     *   The RNG is seeded on first use.
++     */
++    KDECORE_EXPORT uint32_t uniform(uint32_t upperBound);
+ 
+     /**
+      * Generates a random string.  It operates in the range [A-Za-z0-9]

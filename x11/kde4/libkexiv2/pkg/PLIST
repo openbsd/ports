@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 18:26:44 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/12/08 19:13:32 zhuk Exp $
 include/kde4/libkexiv2/
 include/kde4/libkexiv2/altlangstredit.h
 include/kde4/libkexiv2/countryselector.h
@@ -10,6 +10,9 @@ include/kde4/libkexiv2/msgtextedit.h
 include/kde4/libkexiv2/rotationmatrix.h
 include/kde4/libkexiv2/subjectwidget.h
 include/kde4/libkexiv2/version.h
+lib/cmake/Kexiv2/
+lib/cmake/Kexiv2/Kexiv2Config.cmake
+lib/cmake/Kexiv2/Kexiv2ConfigVersion.cmake
 @lib ${KDE4LIB}/libkexiv2.so.${LIBkexiv2_VERSION}
 @lib lib/libkexiv2.so.${LIBkexiv2_VERSION}
 lib/pkgconfig/libkexiv2.pc

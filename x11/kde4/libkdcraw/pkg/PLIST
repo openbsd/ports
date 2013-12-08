@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 18:25:07 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/12/08 19:13:32 zhuk Exp $
 @conflict kdelibs-<4.9.0p2
 include/kde4/libkdcraw/
 include/kde4/libkdcraw/dcrawinfocontainer.h
@@ -15,7 +15,7 @@ include/kde4/libkdcraw/squeezedcombobox.h
 include/kde4/libkdcraw/version.h
 @lib ${KDE4LIB}/libkdcraw.so.${LIBkdcraw_VERSION}
 @lib lib/libkdcraw.so.${LIBkdcraw_VERSION}
-lib/pkgconfig/libkdcraw.pc
+@comment lib/pkgconfig/libkdcraw.pc
 share/apps/cmake/modules/FindKdcraw.cmake
 share/apps/libkdcraw/
 share/apps/libkdcraw/profiles/
@@ -25,9 +25,7 @@ share/apps/libkdcraw/profiles/prophoto.icm
 share/apps/libkdcraw/profiles/srgb-d65.icm
 share/apps/libkdcraw/profiles/srgb.icm
 share/apps/libkdcraw/profiles/widegamut.icm
-share/icons/hicolor/128x128/apps/kdcraw.png
-share/icons/hicolor/32x32/apps/kdcraw.png
-share/icons/hicolor/48x48/apps/kdcraw.png
-share/icons/hicolor/64x64/apps/kdcraw.png
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@comment share/icons/hicolor/128x128/apps/kdcraw.png
+@comment share/icons/hicolor/32x32/apps/kdcraw.png
+@comment share/icons/hicolor/48x48/apps/kdcraw.png
+@comment share/icons/hicolor/64x64/apps/kdcraw.png

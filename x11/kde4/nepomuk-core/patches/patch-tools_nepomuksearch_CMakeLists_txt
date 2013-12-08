@@ -1,0 +1,15 @@
+$OpenBSD: patch-tools_nepomuksearch_CMakeLists_txt,v 1.1 2013/12/08 19:13:33 zhuk Exp $
+Fix linking.
+--- tools/nepomuksearch/CMakeLists.txt.orig	Tue Nov  5 18:55:51 2013
++++ tools/nepomuksearch/CMakeLists.txt	Tue Nov  5 19:11:18 2013
+@@ -15,9 +15,9 @@ set( SRCS
+ kde4_add_executable(nepomuksearch ${SRCS})
+ 
+ target_link_libraries(nepomuksearch
++  nepomukcore
+   ${KDE4_KDECORE_LIBS}
+   ${SOPRANO_LIBRARIES}
+-  nepomukcore
+   )
+ 
+ install(TARGETS nepomuksearch

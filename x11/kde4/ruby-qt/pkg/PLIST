@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/10/15 18:15:45 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/12/08 19:13:34 zhuk Exp $
 @conflict kdebindings-<4
 @conflict ruby19-qt4-*
 @conflict ruby20-qt4-*
@@ -24,6 +24,15 @@ ${MODRUBY_SITEDIR}/Qt/active_table_model.rb
 ${MODRUBY_SITEDIR}/Qt/qtruby4.rb
 ${MODRUBY_SITEDIR}/Qt3.rb
 ${MODRUBY_SITEDIR}/Qt4.rb
+${MODRUBY_SITEARCHDIR}/phonon.so
+${MODRUBY_SITEARCHDIR}/qscintilla.so
+${MODRUBY_SITEARCHDIR}/qtdeclarative.so
+${MODRUBY_SITEARCHDIR}/qtruby4.so
+${MODRUBY_SITEARCHDIR}/qtscript.so
+${MODRUBY_SITEARCHDIR}/qttest.so
+${MODRUBY_SITEARCHDIR}/qtuitools.so
+${MODRUBY_SITEARCHDIR}/qtwebkit.so
+${MODRUBY_SITEARCHDIR}/qwt.so
 ${MODRUBY_SITEDIR}/phonon/
 ${MODRUBY_SITEDIR}/phonon/phonon.rb
 ${MODRUBY_SITEDIR}/qscintilla/
@@ -40,15 +49,6 @@ ${MODRUBY_SITEDIR}/qtwebkit/
 ${MODRUBY_SITEDIR}/qtwebkit/qtwebkit.rb
 ${MODRUBY_SITEDIR}/qwt/
 ${MODRUBY_SITEDIR}/qwt/qwt.rb
-${MODRUBY_SITEARCHDIR}/phonon.so
-${MODRUBY_SITEARCHDIR}/qscintilla.so
-${MODRUBY_SITEARCHDIR}/qtdeclarative.so
-${MODRUBY_SITEARCHDIR}/qtruby4.so
-${MODRUBY_SITEARCHDIR}/qtscript.so
-${MODRUBY_SITEARCHDIR}/qttest.so
-${MODRUBY_SITEARCHDIR}/qtuitools.so
-${MODRUBY_SITEARCHDIR}/qtwebkit.so
-${MODRUBY_SITEARCHDIR}/qwt.so
 share/qtruby4/
 share/qtruby4/cmake/
 share/qtruby4/cmake/QtRuby4Config.cmake

@@ -1,0 +1,13 @@
+$OpenBSD: patch-konqueror_sidebar_trees_bookmark_module_CMakeLists_txt,v 1.1 2013/12/08 19:13:29 zhuk Exp $
+Fix linking.
+--- konqueror/sidebar/trees/bookmark_module/CMakeLists.txt.orig	Wed Nov  6 22:59:47 2013
++++ konqueror/sidebar/trees/bookmark_module/CMakeLists.txt	Wed Nov  6 22:59:58 2013
+@@ -8,7 +8,7 @@ set(konq_sidebartree_bookmarks_SRCS bookmark_module.cp
+ 
+ kde4_add_plugin(konq_sidebartree_bookmarks ${konq_sidebartree_bookmarks_SRCS})
+ 
+-target_link_libraries(konq_sidebartree_bookmarks  ${KDE4_KDEUI_LIBS} ${KDE4_KPARTS_LIBS} konqsidebarplugin konq ${KDE4_KDE3SUPPORT_LIBS})
++target_link_libraries(konq_sidebartree_bookmarks  konqsidebarplugin konq ${KDE4_KDEUI_LIBS} ${KDE4_KPARTS_LIBS} ${KDE4_KDE3SUPPORT_LIBS})
+ 
+ install(TARGETS konq_sidebartree_bookmarks  DESTINATION ${PLUGIN_INSTALL_DIR} )
+ 

@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2013/11/24 19:56:31 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2013/12/08 19:13:29 zhuk Exp $
 
 COMMENT =	KDE Activity rooms management
 DISTNAME =	kactivities-${MODKDE4_VERSION}
-REVISION =	0
 
 SHARED_LIBS =	kactivities		50.0 # 6.0
 SHARED_LIBS +=	kactivities-models	50.0
@@ -23,5 +22,7 @@ MODGCC4_LANGS =		c c++
 BUILD_DEPENDS =		misc/shared-desktop-ontologies
 
 LIB_DEPENDS =		${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION}
+
+CONFIGURE_ARGS =	-DBUILD_activityranking=No
 
 .include <bsd.port.mk>

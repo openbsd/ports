@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/07/04 00:45:48 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/12/08 19:13:31 zhuk Exp $
 @conflict kdeedu-<4
 @bin bin/kstars
 lib/libhtmesh.a
 share/applications/kde4/kstars.desktop
 share/apps/kstars/
 share/apps/kstars/Cities.dat
+share/apps/kstars/Interesting.dat
+share/apps/kstars/PlanetFacts.dat
 share/apps/kstars/TZrules.dat
 share/apps/kstars/advinterface.dat
 share/apps/kstars/asteroids.dat
@@ -289,6 +291,16 @@ share/apps/kstars/textures/sun.png
 share/apps/kstars/textures/uranus.png
 share/apps/kstars/textures/venus.png
 share/apps/kstars/tips
+share/apps/kstars/tools/
+share/apps/kstars/tools/whatsinteresting/
+share/apps/kstars/tools/whatsinteresting/qml/
+share/apps/kstars/tools/whatsinteresting/qml/ScrollBar.qml
+share/apps/kstars/tools/whatsinteresting/qml/leftArrow.png
+share/apps/kstars/tools/whatsinteresting/qml/next.png
+share/apps/kstars/tools/whatsinteresting/qml/previous.png
+share/apps/kstars/tools/whatsinteresting/qml/reloadIcon.png
+share/apps/kstars/tools/whatsinteresting/qml/settingsIcon.png
+share/apps/kstars/tools/whatsinteresting/qml/wiview.qml
 share/apps/kstars/unnamedstars.dat
 share/apps/kstars/uranus.B0.vsop
 share/apps/kstars/uranus.B1.vsop

@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_plugins_runner_kml_CMakeLists_txt,v 1.1 2013/12/08 19:13:33 zhuk Exp $
+--- src/plugins/runner/kml/CMakeLists.txt.ports.orig	Thu Nov  7 17:48:16 2013
++++ src/plugins/runner/kml/CMakeLists.txt	Thu Nov  7 17:49:14 2013
+@@ -15,6 +15,7 @@ marble_set_package_properties( quazip PROPERTIES DESCR
+ marble_set_package_properties( quazip PROPERTIES URL "http://quazip.sourceforge.net/" )
+ marble_set_package_properties( quazip PROPERTIES TYPE OPTIONAL PURPOSE "reading and displaying .kmz files" )
+ if( QUAZIP_FOUND )
++  include_directories( ${QUAZIP_INCLUDE_DIR} )
+   add_definitions( -DMARBLE_HAVE_QUAZIP )
+   set( kml_SRCS ${kml_SRCS} KmzHandler.cpp )
+   set( KmlPlugin_LIBS ${QUAZIP_LIBRARIES} )

@@ -1,12 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/06/06 22:56:44 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/12/08 19:13:34 zhuk Exp $
 @bin bin/rocs
 include/kde4/rocs/
+include/kde4/rocs/ConsoleModule.h
 include/kde4/rocs/CoreTypes.h
 include/kde4/rocs/Data.h
 include/kde4/rocs/DataItem.h
 include/kde4/rocs/DataStructure.h
+include/kde4/rocs/DataStructureBackendInterface.h
 include/kde4/rocs/DataStructureBackendManager.h
-include/kde4/rocs/DataStructurePluginInterface.h
 include/kde4/rocs/Document.h
 include/kde4/rocs/GraphFileBackendManager.h
 include/kde4/rocs/GraphFilePluginInterface.h
@@ -32,6 +33,16 @@ lib/kde4/rocs_transformedgesplugin.so
 @lib lib/librocsvisualeditor.so.${LIBrocsvisualeditor_VERSION}
 share/applications/kde4/rocs.desktop
 share/apps/rocs/
+share/apps/rocs/engineapi/
+share/apps/rocs/engineapi/Console.xml
+share/apps/rocs/engineapi/Data.xml
+share/apps/rocs/engineapi/DataStructure.xml
+share/apps/rocs/engineapi/GraphEdge.xml
+share/apps/rocs/engineapi/GraphNode.xml
+share/apps/rocs/engineapi/GraphStructure.xml
+share/apps/rocs/engineapi/ListNode.xml
+share/apps/rocs/engineapi/ListStructure.xml
+share/apps/rocs/engineapi/Pointer.xml
 share/apps/rocs/examples/
 share/apps/rocs/examples/AdjustProjection.js
 share/apps/rocs/examples/NameAndNodes.js
@@ -110,6 +121,7 @@ share/apps/rocs/icons/hicolor/64x64/actions/rocsselectmove.png
 share/apps/rocs/icons/hicolor/scalable/
 share/apps/rocs/icons/hicolor/scalable/actions/
 share/apps/rocs/icons/hicolor/scalable/actions/rocsadddata.svgz
+share/apps/rocs/icons/hicolor/scalable/actions/rocsadvancedsetup.svgz
 share/apps/rocs/icons/hicolor/scalable/actions/rocsdelete.svgz
 share/apps/rocs/icons/hicolor/scalable/actions/rocsdeletedata.svgz
 share/apps/rocs/icons/hicolor/scalable/actions/rocsdeletegrey.svgz
@@ -117,12 +129,26 @@ share/apps/rocs/icons/hicolor/scalable/actions/rocseyeblack.svgz
 share/apps/rocs/icons/hicolor/scalable/actions/rocsnew.svgz
 share/apps/rocs/icons/hicolor/scalable/actions/rocstexticon.svgz
 share/apps/rocs/icons/hicolor/scalable/actions/rocsvalueicon.svgz
+share/apps/rocs/plugin/
+share/apps/rocs/plugin/apidoc/
+share/apps/rocs/plugin/apidoc/bootstrap-apiview.css
+share/apps/rocs/plugin/apidoc/bootstrap.css
+share/apps/rocs/plugin/apidoc/objectApi.html
+share/apps/rocs/plugin/apidoc/overview.html
 share/apps/rocs/rocsui.rc
+share/apps/rocs/schemes/
+share/apps/rocs/schemes/engineApi.xsd
 share/apps/rocs_rootedtree/
 share/apps/rocs_rootedtree/RootedTreeui.rc
 share/config.kcfg/rocs.kcfg
 share/config/rocs.knsrc
 share/doc/HTML/en/rocs/
+share/doc/HTML/en/rocs/apiConsole.docbook
+share/doc/HTML/en/rocs/apiDatastructure.docbook
+share/doc/HTML/en/rocs/apiGraphstructure.docbook
+share/doc/HTML/en/rocs/apiLinkedListstructure.docbook
+share/doc/HTML/en/rocs/apiRootedTreestructure.docbook
+share/doc/HTML/en/rocs/chapterImportExport.docbook
 share/doc/HTML/en/rocs/common
 share/doc/HTML/en/rocs/document-selector.png
 share/doc/HTML/en/rocs/hi22-action-rocsadddata.png
@@ -154,6 +180,8 @@ share/doc/HTML/en/rocs/rocs-toolbar-main.png
 share/icons/hicolor/16x16/apps/rocs.png
 share/icons/hicolor/32x32/apps/rocs.png
 share/icons/hicolor/48x48/apps/rocs.png
+share/icons/hicolor/64x64/apps/rocs.png
+share/icons/hicolor/scalable/apps/rocs.svgz
 share/kde4/services/rocs_GraphStructure.desktop
 share/kde4/services/rocs_ListStructure.desktop
 share/kde4/services/rocs_RootedTreeStructure.desktop

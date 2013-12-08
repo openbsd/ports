@@ -1,6 +1,7 @@
-$OpenBSD: patch-kdecore_CMakeLists_txt,v 1.1 2013/04/24 19:45:29 zhuk Exp $
---- kdecore/CMakeLists.txt.orig	Fri Aug 17 11:37:02 2012
-+++ kdecore/CMakeLists.txt	Fri Aug 17 11:49:29 2012
+$OpenBSD: patch-kdecore_CMakeLists_txt,v 1.2 2013/12/08 19:13:32 zhuk Exp $
+Add some CMake checks, prodding upstream slowly.
+--- kdecore/CMakeLists.txt.orig	Wed Aug 28 20:57:06 2013
++++ kdecore/CMakeLists.txt	Tue Nov  5 11:05:21 2013
 @@ -38,6 +38,11 @@ include_directories( ${CMAKE_CURRENT_BINARY_DIR}/compr
  include(auth/ConfigureChecks.cmake)
  include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/auth/ )
@@ -12,4 +13,13 @@ $OpenBSD: patch-kdecore_CMakeLists_txt,v 1.1 2013/04/24 19:45:29 zhuk Exp $
 +
  # Configure a small file to tell BackendsManager what to use
  configure_file(auth/BackendsConfig.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/BackendsConfig.h)
+ 
+@@ -453,7 +458,7 @@ set_target_properties(kdecore PROPERTIES
+                               VERSION ${KDE_NON_GENERIC_LIB_VERSION}
+                               SOVERSION ${KDE_NON_GENERIC_LIB_SOVERSION}
+                      )
+-
++#set_target_properties( kdecore PROPERTIES COMPILE_FLAGS "--coverage" LINK_FLAGS "--coverage" )
+ 
+ install(TARGETS kdecore EXPORT kdelibsLibraryTargets ${INSTALL_TARGETS_DEFAULT_ARGS})
  

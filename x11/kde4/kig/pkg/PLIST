@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:45:08 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/12/08 19:13:30 zhuk Exp $
 @conflict kdeedu-<4
 @bin bin/kig
 bin/pykig.py
@@ -85,6 +85,7 @@ share/apps/kig/icons/hicolor/22x22/actions/pointOnLine.png
 share/apps/kig/icons/hicolor/22x22/actions/pointxy.png
 share/apps/kig/icons/hicolor/22x22/actions/polygonsides.png
 share/apps/kig/icons/hicolor/22x22/actions/polygonvertices.png
+share/apps/kig/icons/hicolor/22x22/actions/projection.png
 share/apps/kig/icons/hicolor/22x22/actions/python.png
 share/apps/kig/icons/hicolor/22x22/actions/radicalline.png
 share/apps/kig/icons/hicolor/22x22/actions/ray.png
@@ -178,6 +179,7 @@ share/apps/kig/icons/hicolor/32x32/actions/pointOnLine.png
 share/apps/kig/icons/hicolor/32x32/actions/pointxy.png
 share/apps/kig/icons/hicolor/32x32/actions/polygonsides.png
 share/apps/kig/icons/hicolor/32x32/actions/polygonvertices.png
+share/apps/kig/icons/hicolor/32x32/actions/projection.png
 share/apps/kig/icons/hicolor/32x32/actions/python.png
 share/apps/kig/icons/hicolor/32x32/actions/radicalline.png
 share/apps/kig/icons/hicolor/32x32/actions/ray.png
@@ -270,6 +272,7 @@ share/apps/kig/icons/hicolor/scalable/actions/pointOnLine.svgz
 share/apps/kig/icons/hicolor/scalable/actions/pointxy.svgz
 share/apps/kig/icons/hicolor/scalable/actions/polygonsides.svgz
 share/apps/kig/icons/hicolor/scalable/actions/polygonvertices.svgz
+share/apps/kig/icons/hicolor/scalable/actions/projection.svgz
 share/apps/kig/icons/hicolor/scalable/actions/python.svgz
 share/apps/kig/icons/hicolor/scalable/actions/radicalline.svgz
 share/apps/kig/icons/hicolor/scalable/actions/ray.svgz

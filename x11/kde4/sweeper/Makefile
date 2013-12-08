@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2013/11/24 19:56:33 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/12/08 19:13:34 zhuk Exp $
 
 COMMENT =	KDE tool for sweeping unwanted traces from system
 DISTNAME =	sweeper-${MODKDE4_VERSION}
-REVISION =	0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg

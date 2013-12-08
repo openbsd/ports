@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 11:42:15 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/12/08 19:13:30 zhuk Exp $
 @bin bin/kalgebra
 @bin bin/kalgebramobile
 lib/kde4/imports/org/kde/analitza/
@@ -52,6 +52,7 @@ share/doc/HTML/en/kalgebra/kalgebra-3dgraph-window.png
 share/doc/HTML/en/kalgebra/kalgebra-console-window.png
 share/doc/HTML/en/kalgebra/kalgebra-dictionary-window.png
 share/doc/HTML/en/kalgebra/kalgebra-main-window.png
+share/doc/HTML/en/kalgebra/view-fullscreen.png
 share/icons/hicolor/128x128/apps/kalgebra.png
 share/icons/hicolor/16x16/apps/kalgebra.png
 share/icons/hicolor/32x32/apps/kalgebra.png

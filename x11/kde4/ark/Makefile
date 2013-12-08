@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2013/11/24 19:56:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2013/12/08 19:13:29 zhuk Exp $
 
 COMMENT =	KDE file archiver
 DISTNAME =	ark-${MODKDE4_VERSION}
-REVISION =	1
 
-SHARED_LIBS =	kerfuffle	50.0 # 4.7
+SHARED_LIBS =	kerfuffle	51.0 # 4.7
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg
@@ -17,13 +16,14 @@ WANTLIB += archive soprano
 MODULES =	multimedia/phonon
 
 BUILD_DEPENDS =	archivers/bzip2 \
-		archivers/xz
+		archivers/xz \
+		devel/qjson
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+2,-guic
 
 LIB_DEPENDS =	archivers/libarchive \
-		${MODKDE4_DEP_DIR}/baseapps
+		${MODKDE4_DEP_DIR}/baseapps>=${MODKDE4_DEP_VERSION}
 
 TEST_DEPENDS =	devel/qjson
 

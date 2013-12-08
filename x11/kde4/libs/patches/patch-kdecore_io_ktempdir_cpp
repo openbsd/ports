@@ -1,0 +1,21 @@
+$OpenBSD: patch-kdecore_io_ktempdir_cpp,v 1.1 2013/12/08 19:13:32 zhuk Exp $
+More correct implementation of random() & Co., using arc4random().
+--- kdecore/io/ktempdir.cpp.orig	Tue Oct 15 20:17:08 2013
++++ kdecore/io/ktempdir.cpp	Tue Oct 15 20:17:39 2013
+@@ -44,7 +44,6 @@
+ #include <QtCore/QDir>
+ 
+ #include "kglobal.h"
+-#include "krandom.h"
+ #include "kcomponentdata.h"
+ #include "kstandarddirs.h"
+ #include <kdebug.h>
+@@ -84,8 +83,6 @@ KTempDir::KTempDir(const QString &directoryPrefix, int
+ 
+ bool KTempDir::create(const QString &directoryPrefix, int mode)
+ {
+-   (void) KRandom::random();
+-
+ #ifdef Q_WS_WIN
+    const QString nme = directoryPrefix + QLatin1String("XXXXXX");
+    const QString realName = mkdtemp_QString(nme);

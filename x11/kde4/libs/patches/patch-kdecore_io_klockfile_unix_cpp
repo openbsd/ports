@@ -1,0 +1,13 @@
+$OpenBSD: patch-kdecore_io_klockfile_unix_cpp,v 1.1 2013/12/08 19:13:32 zhuk Exp $
+More correct implementation of random() & Co., using arc4random().
+--- kdecore/io/klockfile_unix.cpp.orig	Sun Aug  4 21:59:04 2013
++++ kdecore/io/klockfile_unix.cpp	Sun Aug  4 21:59:07 2013
+@@ -468,7 +468,7 @@ KLockFile::LockResult KLockFile::lock(LockFlags option
+ 
+      struct timeval tv;
+      tv.tv_sec = 0;
+-     tv.tv_usec = n*((KRandom::random() % 200)+100);
++     tv.tv_usec = n*((KRandom::uniform(200))+100);
+      if (n < 2000)
+         n = n * 2;
+ 

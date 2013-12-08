@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/11/24 19:56:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2013/12/08 19:13:29 zhuk Exp $
 
 COMMENT =	KDE FFmpeg-based thumbnail generator for video files
 CATEGORIES =	multimedia
 DISTNAME =	ffmpegthumbs-${MODKDE4_VERSION}
-REVISION =	0
 
 WANTLIB =  m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg

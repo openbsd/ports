@@ -1,0 +1,30 @@
+$OpenBSD: patch-kjs_math_object_cpp,v 1.4 2013/12/08 19:13:32 zhuk Exp $
+More correct implementation of random() & Co., using arc4random().
+--- kjs/math_object.cpp.orig	Wed Oct 16 15:52:18 2013
++++ kjs/math_object.cpp	Wed Oct 16 16:04:57 2013
+@@ -109,7 +109,9 @@ JSValue *MathObjectImp::getValueProperty(ExecState *, 
+ 
+ // ------------------------------ MathObjectImp --------------------------------
+ 
++#if !HAVE_ARC4RANDOM
+ static bool randomSeeded = false;
++#endif
+ 
+ MathFuncImp::MathFuncImp(ExecState* exec, int i, int l, const Identifier& name)
+   : InternalFunctionImp(static_cast<FunctionPrototype*>(exec->lexicalInterpreter()->builtinFunctionPrototype()), name)
+@@ -199,11 +201,15 @@ JSValue *MathFuncImp::callAsFunction(ExecState *exec, 
+       result = ::pow(arg, arg2);
+     break;
+   case MathObjectImp::Random:
++#if HAVE_ARC4RANDOM
++      result = (double)arc4random() / (double)0xFFFFFFFF;
++#else
+       if (!randomSeeded) {
+           srand(static_cast<unsigned>(time(0)));
+           randomSeeded = true;
+       }
+       result = (double)rand() / RAND_MAX;
++#endif
+       break;
+   case MathObjectImp::Round:
+     if (signbit(arg) && arg >= -0.5)

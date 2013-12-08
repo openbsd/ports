@@ -1,0 +1,13 @@
+$OpenBSD: patch-konqueror_sidebar_web_module_CMakeLists_txt,v 1.1 2013/12/08 19:13:29 zhuk Exp $
+Fix linking.
+--- konqueror/sidebar/web_module/CMakeLists.txt.orig	Wed Nov  6 20:21:09 2013
++++ konqueror/sidebar/web_module/CMakeLists.txt	Wed Nov  6 20:21:22 2013
+@@ -6,7 +6,7 @@ qt4_add_dbus_interface(konqsidebar_web_PART_SRCS ${CMA
+ 
+ kde4_add_plugin(konqsidebar_web ${konqsidebar_web_PART_SRCS})
+ 
+-target_link_libraries(konqsidebar_web  ${KDE4_KHTML_LIBS} konqsidebarplugin konq )
++target_link_libraries(konqsidebar_web  konqsidebarplugin konq ${KDE4_KHTML_LIBS} )
+ 
+ install(TARGETS konqsidebar_web  DESTINATION ${PLUGIN_INSTALL_DIR} )
+ 

@@ -1,6 +1,6 @@
-$OpenBSD: patch-KigConfigureChecks_cmake,v 1.1 2013/07/04 00:45:07 zhuk Exp $
---- KigConfigureChecks.cmake.orig	Sat Jun  8 14:53:09 2013
-+++ KigConfigureChecks.cmake	Sat Jun  8 14:53:25 2013
+$OpenBSD: patch-KigConfigureChecks_cmake,v 1.2 2013/12/08 19:13:30 zhuk Exp $
+--- KigConfigureChecks.cmake.orig	Fri Nov  8 17:51:31 2013
++++ KigConfigureChecks.cmake	Fri Nov  8 17:51:44 2013
 @@ -18,7 +18,7 @@ configure_file(
  )
  

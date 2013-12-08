@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/05/19 15:04:06 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/12/08 19:13:29 zhuk Exp $
 include/kde4/KDE/KActivities/
 include/kde4/KDE/KActivities/Consumer
 include/kde4/KDE/KActivities/Controller
@@ -7,6 +7,7 @@ include/kde4/KDE/KActivities/Models/
 include/kde4/KDE/KActivities/Models/ActivityModel
 include/kde4/KDE/KActivities/Models/ResourceModel
 include/kde4/KDE/KActivities/ResourceInstance
+include/kde4/KDE/KActivities/Version
 include/kde4/kactivities/
 include/kde4/kactivities-models/
 include/kde4/kactivities-models/activitymodel.h
@@ -17,6 +18,7 @@ include/kde4/kactivities/controller.h
 include/kde4/kactivities/info.h
 include/kde4/kactivities/kactivities_export.h
 include/kde4/kactivities/resourceinstance.h
+include/kde4/kactivities/version.h
 lib/cmake/KActivities/
 lib/cmake/KActivities-Models/
 lib/cmake/KActivities-Models/KActivities-ModelsConfig.cmake

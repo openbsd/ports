@@ -5,12 +5,14 @@ include(CheckIncludeFile)
 include(CheckFunctionExists)
 include(CMakePushCheckState)
 
-check_include_file("sys/mman.h"        HAVE_SYS_MMAN_H)
+check_include_file("sys/mman.h"                 HAVE_SYS_MMAN_H)
 
-check_function_exists(flock            HAVE_FLOCK)
-check_function_exists(lockf            HAVE_LOCKF)
-check_function_exists(msync            HAVE_MSYNC)
-check_function_exists(posix_fallocate  HAVE_POSIX_FALLOCATE)
+check_function_exists(flock                     HAVE_FLOCK)
+check_function_exists(lockf                     HAVE_LOCKF)
+check_function_exists(msync                     HAVE_MSYNC)
+check_function_exists(posix_fallocate           HAVE_POSIX_FALLOCATE)
+check_function_exists(arc4random                HAVE_ARC4RANDOM)
+check_function_exists(arc4random_uniform        HAVE_ARC4RANDOM_UNIFORM)
 
 # Check we're able to use monotonic time
 check_c_source_runs("

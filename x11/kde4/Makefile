@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.33 2013/10/06 18:47:35 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2013/12/08 19:13:29 zhuk Exp $
 
 # Build dependency tree of main building blocks:
-# OUTSIDE: akonadi, attica, automoc, cagibi, qimageblitz
-# HERE:
+# OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz
 #
 # smokegen
 # +-> smokeqt
@@ -33,15 +32,16 @@
 #     |   +-> kactivities -->--+------->-+               | |||
 #     |   +-> runtime <--+---<-+         |               | |||
 #     |   +-> pimlibs ->-+               |               | |||
+#     |       +-> libkfbapi              |               | |||
 #     |       +-> libkgapi               |               | |||
 #     |       +-> pim-runtime            |               | |||
 #     |       +-> pim                    |               | |||
 #     |       +-> py-kde                 |               | |||
 #     |           +-> some games         |               | |||
 #     |           +-> workspace <------<-+               | |||
-#     |           |   +-> admin          |               | |||
+#     |           |   +-> former admin   |               | |||
 #     |           |   +-> artwork        |               | |||
-#     |           |   +-> network        |               | |||
+#     |           |   +-> former network |               | |||
 #     |           |                      |               | |||
 #     |           | +-<----------------<-+               | |||
 #     |           | |                                    | |||
@@ -65,7 +65,9 @@
 #     |   +-> former kdegraphics
 #     |   +-> former kdemultimedia
 #     |
-#     +-> former accessibility
+#     +-> former kdeaccessibility
+#     +-> former kdesdk
+#     +-> former kdetoys
 #     +-> former kdeutils
 
 SUBDIR =
@@ -102,11 +104,7 @@ SUBDIR += korundum
 SUBDIR += kimono
 
 # fat packages
-SUBDIR += admin
-SUBDIR += network
 SUBDIR += pim
-SUBDIR += sdk
-SUBDIR += toys
 SUBDIR += webdev
 
 # former kdeaccessibility
@@ -228,6 +226,41 @@ SUBDIR += kscd
 SUBDIR += libkcddb
 SUBDIR += libkcompactdisc
 SUBDIR += mplayerthumbs
+
+# former kdeadmin
+SUBDIR += kcron
+SUBDIR += ksystemlog
+SUBDIR += kuser
+
+# former kdenetwork
+SUBDIR += kdnssd
+SUBDIR += kget
+SUBDIR += kopete
+SUBDIR += kppp
+SUBDIR += krdc
+SUBDIR += krfb
+SUBDIR += network-filesharing
+SUBDIR += network-strigi-analyzer
+
+# former kdesdk
+SUBDIR += cervisia
+SUBDIR += dev-scripts
+SUBDIR += dev-utils
+SUBDIR += dolphin-plugins
+SUBDIR += kapptemplate
+SUBDIR += kcachegrind
+SUBDIR += kompare
+SUBDIR += lokalize
+SUBDIR += okteta
+SUBDIR += sdk-kioslaves
+SUBDIR += sdk-strigi-analyzers
+SUBDIR += sdk-thumbnailers
+SUBDIR += umbrello
+
+# former kdetoys
+SUBDIR += amor
+SUBDIR += ktux
+SUBDIR += kteatime
 
 # additional resources
 SUBDIR += artwork

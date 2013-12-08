@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:46:47 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/12/08 19:13:33 zhuk Exp $
 @conflict kdeedu-<4
 @bin bin/parley
 lib/kde4/plasma_applet_parley.so
@@ -97,32 +97,57 @@ share/apps/parley/parleyui.rc
 share/apps/parley/plugins/
 share/apps/parley/plugins/example.desktop
 share/apps/parley/plugins/example.py
+share/apps/parley/plugins/example.pyc
 share/apps/parley/plugins/google_dictionary.desktop
 share/apps/parley/plugins/google_dictionary.py
+share/apps/parley/plugins/google_dictionary.pyc
 share/apps/parley/plugins/google_images.desktop
 share/apps/parley/plugins/google_images.py
+share/apps/parley/plugins/google_images.pyc
 share/apps/parley/plugins/google_images.ui
 share/apps/parley/plugins/leo-dict.desktop
 share/apps/parley/plugins/leo-dict.py
+share/apps/parley/plugins/leo-dict.pyc
 share/apps/parley/plugins/mwclient/
 share/apps/parley/plugins/mwclient/README.txt
 share/apps/parley/plugins/mwclient/__init__.py
+share/apps/parley/plugins/mwclient/__init__.pyc
 share/apps/parley/plugins/mwclient/client.py
+share/apps/parley/plugins/mwclient/client.pyc
 share/apps/parley/plugins/mwclient/compatibility.py
+share/apps/parley/plugins/mwclient/compatibility.pyc
 share/apps/parley/plugins/mwclient/errors.py
+share/apps/parley/plugins/mwclient/errors.pyc
 share/apps/parley/plugins/mwclient/ex.py
+share/apps/parley/plugins/mwclient/ex.pyc
 share/apps/parley/plugins/mwclient/http.py
+share/apps/parley/plugins/mwclient/http.pyc
 share/apps/parley/plugins/mwclient/listing.py
+share/apps/parley/plugins/mwclient/listing.pyc
 share/apps/parley/plugins/mwclient/page.py
+share/apps/parley/plugins/mwclient/page.pyc
 share/apps/parley/plugins/mwclient/page_nowriteapi.py
+share/apps/parley/plugins/mwclient/page_nowriteapi.pyc
 share/apps/parley/plugins/mwclient/simplejson/
 share/apps/parley/plugins/mwclient/simplejson/__init__.py
+share/apps/parley/plugins/mwclient/simplejson/__init__.pyc
 share/apps/parley/plugins/mwclient/simplejson/decoder.py
+share/apps/parley/plugins/mwclient/simplejson/decoder.pyc
 share/apps/parley/plugins/mwclient/simplejson/encoder.py
+share/apps/parley/plugins/mwclient/simplejson/encoder.pyc
 share/apps/parley/plugins/mwclient/simplejson/jsonfilter.py
+share/apps/parley/plugins/mwclient/simplejson/jsonfilter.pyc
+share/apps/parley/plugins/mwclient/simplejson/ordered_dict.py
+share/apps/parley/plugins/mwclient/simplejson/ordered_dict.pyc
 share/apps/parley/plugins/mwclient/simplejson/scanner.py
+share/apps/parley/plugins/mwclient/simplejson/scanner.pyc
+share/apps/parley/plugins/mwclient/simplejson/tool.py
+share/apps/parley/plugins/mwclient/simplejson/tool.pyc
+share/apps/parley/plugins/mwclient/upload.py
+share/apps/parley/plugins/mwclient/upload.pyc
 share/apps/parley/plugins/wiktionary_sound.desktop
 share/apps/parley/plugins/wiktionary_sound.py
+share/apps/parley/plugins/wiktionary_sound.pyc
 share/apps/parley/practicesummaryui.rc
 share/apps/parley/practiceui.rc
 share/apps/parley/statisticsui.rc
@@ -167,7 +192,6 @@ share/doc/HTML/en/parley/Parley_create_new_exercise_collective_names7.png
 share/doc/HTML/en/parley/Parley_create_new_exercise_collective_names8.png
 share/doc/HTML/en/parley/Parley_document_properties.png
 share/doc/HTML/en/parley/Parley_edit_comparison_form_1.png
-share/doc/HTML/en/parley/Parley_edit_comparison_form_2.png
 share/doc/HTML/en/parley/Parley_edit_comparison_form_3.png
 share/doc/HTML/en/parley/Parley_edit_conjugation_1.png
 share/doc/HTML/en/parley/Parley_edit_conjugation_2.png

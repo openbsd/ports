@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/08/24 17:33:51 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/12/08 19:13:33 zhuk Exp $
+@unexec-delete rm -f %D/share/icons/oxygen/icon-theme.cache
 share/icons/oxygen/
 share/icons/oxygen/128x128/
 share/icons/oxygen/128x128/actions/
@@ -2483,7 +2484,6 @@ share/icons/oxygen/22x22/actions/view-calendar-wedding-anniversary.png
 share/icons/oxygen/22x22/actions/view-calendar-week.png
 share/icons/oxygen/22x22/actions/view-calendar-whatsnext.png
 share/icons/oxygen/22x22/actions/view-calendar-workweek.png
-share/icons/oxygen/22x22/actions/view-calendar.png
 share/icons/oxygen/22x22/actions/view-certificate-add.png
 share/icons/oxygen/22x22/actions/view-certificate-export-secret.png
 share/icons/oxygen/22x22/actions/view-certificate-export-server.png
@@ -3298,7 +3298,6 @@ share/icons/oxygen/256x256/actions/tools-media-optical-copy.png
 share/icons/oxygen/256x256/actions/tools-media-optical-erase.png
 share/icons/oxygen/256x256/actions/tools-media-optical-format.png
 share/icons/oxygen/256x256/actions/tools-rip-audio-cd.png
-share/icons/oxygen/256x256/actions/tools-rip-video-cd.png
 share/icons/oxygen/256x256/actions/tools-rip-video-dvd.png
 share/icons/oxygen/256x256/apps/
 share/icons/oxygen/256x256/apps/Charm.png
@@ -4465,7 +4464,6 @@ share/icons/oxygen/32x32/apps/utilities-terminal.png
 share/icons/oxygen/32x32/apps/wine.png
 share/icons/oxygen/32x32/apps/xorg.png
 share/icons/oxygen/32x32/apps/yakuake.png
-share/icons/oxygen/32x32/apps/zanshin.png
 share/icons/oxygen/32x32/categories/
 share/icons/oxygen/32x32/categories/applications-accessories.png
 share/icons/oxygen/32x32/categories/applications-development-translation.png
@@ -5718,6 +5716,7 @@ share/icons/oxygen/48x48/apps/utilities-terminal.png
 share/icons/oxygen/48x48/apps/wine.png
 share/icons/oxygen/48x48/apps/xorg.png
 share/icons/oxygen/48x48/apps/yakuake.png
+share/icons/oxygen/48x48/apps/zanshin.png
 share/icons/oxygen/48x48/categories/
 share/icons/oxygen/48x48/categories/applications-accessories.png
 share/icons/oxygen/48x48/categories/applications-development-translation.png
@@ -6823,7 +6822,6 @@ share/icons/oxygen/64x64/places/bookmarks.png
 share/icons/oxygen/64x64/places/certificate-server.png
 share/icons/oxygen/64x64/places/document-multiple.png
 share/icons/oxygen/64x64/places/favorites.png
-share/icons/oxygen/64x64/places/folder-activities.png
 share/icons/oxygen/64x64/places/folder-black.png
 share/icons/oxygen/64x64/places/folder-blue.png
 share/icons/oxygen/64x64/places/folder-bookmark.png
@@ -6934,6 +6932,7 @@ share/icons/oxygen/8x8/emblems/vcs-locally-modified.png
 share/icons/oxygen/8x8/emblems/vcs-normal.png
 share/icons/oxygen/8x8/emblems/vcs-removed.png
 share/icons/oxygen/8x8/emblems/vcs-update-required.png
+share/icons/oxygen/8x8/places/
+share/icons/oxygen/8x8/places/folder-activities.png
 share/icons/oxygen/index.theme
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
-@unexec-delete rm -f %D/share/icons/oxygen/icon-theme.cache

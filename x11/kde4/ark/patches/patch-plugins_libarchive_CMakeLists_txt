@@ -1,0 +1,13 @@
+$OpenBSD: patch-plugins_libarchive_CMakeLists_txt,v 1.1 2013/12/08 19:13:29 zhuk Exp $
+Fix linking.
+--- plugins/libarchive/CMakeLists.txt.orig	Thu Nov  7 00:04:53 2013
++++ plugins/libarchive/CMakeLists.txt	Thu Nov  7 00:05:13 2013
+@@ -28,7 +28,7 @@ set(kerfuffle_libarchive_SRCS libarchivehandler.cpp)
+ 
+ kde4_add_plugin(kerfuffle_libarchive ${kerfuffle_libarchive_SRCS})
+ 
+-target_link_libraries(kerfuffle_libarchive  ${KDE4_KIO_LIBS} ${KDE4_KDECORE_LIBS} ${LIBARCHIVE_LIBRARY} kerfuffle )
++target_link_libraries(kerfuffle_libarchive  kerfuffle ${KDE4_KIO_LIBS} ${KDE4_KDECORE_LIBS} ${LIBARCHIVE_LIBRARY} )
+ 
+ install(TARGETS kerfuffle_libarchive  DESTINATION ${PLUGIN_INSTALL_DIR} )
+ 

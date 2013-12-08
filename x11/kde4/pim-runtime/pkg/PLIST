@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/07/04 00:46:51 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/12/08 19:13:33 zhuk Exp $
 @conflict kdepim-<4
 @bin bin/accountwizard
 @bin bin/akonadi2xml
 @bin bin/akonadi_birthdays_resource
 @bin bin/akonadi_davgroupware_resource
+@bin bin/akonadi_facebook_resource
 @bin bin/akonadi_googlecalendar_resource
 @bin bin/akonadi_googlecontacts_resource
 @bin bin/akonadi_icaldir_resource
@@ -19,6 +20,7 @@
 @bin bin/akonadi_mixedmaildir_resource
 @bin bin/akonadi_nepomuk_feeder
 @bin bin/akonadi_nepomuktag_resource
+@bin bin/akonadi_newmailnotifier_agent
 @bin bin/akonadi_nntp_resource
 @bin bin/akonadi_openxchange_resource
 @bin bin/akonadi_pop3_resource
@@ -51,6 +53,7 @@ lib/kde4/akonadi_serializer_kcal.so
 lib/kde4/akonadi_serializer_kcalcore.so
 lib/kde4/akonadi_serializer_mail.so
 lib/kde4/akonadi_serializer_microblog.so
+lib/kde4/akonadi_serializer_socialnotification.so
 lib/kde4/akonadi_vcard_resource.so
 lib/kde4/imports/org/kde/BreadcrumbNavigationView.qml
 lib/kde4/imports/org/kde/Dialog.qml
@@ -104,6 +107,7 @@ share/akonadi/agents/akonotesresource.desktop
 share/akonadi/agents/birthdaysresource.desktop
 share/akonadi/agents/contactsresource.desktop
 share/akonadi/agents/davgroupwareresource.desktop
+share/akonadi/agents/facebookresource.desktop
 share/akonadi/agents/googlecalendarresource.desktop
 share/akonadi/agents/googlecontactsresource.desktop
 share/akonadi/agents/icaldirresource.desktop
@@ -124,6 +128,7 @@ share/akonadi/agents/microblog.desktop
 share/akonadi/agents/mixedmaildirresource.desktop
 share/akonadi/agents/mtdummyresource.desktop
 share/akonadi/agents/nepomuktagresource.desktop
+share/akonadi/agents/newmailnotifieragent.desktop
 share/akonadi/agents/nntpresource.desktop
 share/akonadi/agents/notesresource.desktop
 share/akonadi/agents/openxchangeresource.desktop
@@ -174,12 +179,16 @@ share/apps/akonadi/plugins/serializer/akonadi_serializer_kcal.desktop
 share/apps/akonadi/plugins/serializer/akonadi_serializer_kcalcore.desktop
 share/apps/akonadi/plugins/serializer/akonadi_serializer_mail.desktop
 share/apps/akonadi/plugins/serializer/akonadi_serializer_microblog.desktop
+share/apps/akonadi/plugins/serializer/akonadi_serializer_socialnotification.desktop
+share/apps/akonadi_facebook_resource/
+share/apps/akonadi_facebook_resource/akonadi_facebook_resource.notifyrc
 share/apps/akonadi_knut_resource/
 share/apps/akonadi_knut_resource/knut-template.xml
 share/apps/akonadi_maildispatcher_agent/
 share/apps/akonadi_maildispatcher_agent/akonadi_maildispatcher_agent.notifyrc
-share/apps/akonadi_nepomuk_feeder/
-share/apps/akonadi_nepomuk_feeder/akonadi_nepomuk_feeder.notifyrc
+share/apps/akonadi_newmailnotifier_agent/
+share/apps/akonadi_newmailnotifier_agent/akonadi_newmailnotifier_agent.notifyrc
+share/apps/kconf_update/newmailnotifier.upd
 share/apps/nepomukpimindexerutility/
 share/apps/nepomukpimindexerutility/nepomukpimindexerutility.rc
 share/autostart/kaddressbookmigrator.desktop
@@ -190,10 +199,14 @@ share/dbus-1/interfaces/org.kde.Akonadi.Maildir.Settings.xml
 share/dbus-1/interfaces/org.kde.Akonadi.MixedMaildir.Settings.xml
 share/icons/hicolor/128x128/apps/akonaditray.png
 share/icons/hicolor/128x128/apps/ox.png
+share/icons/hicolor/16x16/apps/facebookresource.png
 share/icons/hicolor/16x16/apps/ox.png
 share/icons/hicolor/22x22/apps/akonaditray.png
+share/icons/hicolor/22x22/apps/facebookresource.png
 share/icons/hicolor/32x32/apps/akonaditray.png
+share/icons/hicolor/32x32/apps/facebookresource.png
 share/icons/hicolor/32x32/apps/ox.png
+share/icons/hicolor/48x48/apps/facebookresource.png
 share/icons/hicolor/48x48/apps/ox.png
 share/icons/hicolor/64x64/apps/akonaditray.png
 share/icons/hicolor/64x64/apps/ox.png
@@ -204,6 +217,7 @@ share/kde4/services/akonadi/davgroupware-providers/citadel.desktop
 share/kde4/services/akonadi/davgroupware-providers/davical.desktop
 share/kde4/services/akonadi/davgroupware-providers/egroupware.desktop
 share/kde4/services/akonadi/davgroupware-providers/opengroupware.desktop
+share/kde4/services/akonadi/davgroupware-providers/owncloud-pre5.desktop
 share/kde4/services/akonadi/davgroupware-providers/owncloud.desktop
 share/kde4/services/akonadi/davgroupware-providers/scalix.desktop
 share/kde4/services/akonadi/davgroupware-providers/sogo.desktop
@@ -227,6 +241,7 @@ share/mime/packages/kdepim-mime.xml
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
+share/mime/packages/x-vnd.akonadi.socialnotification.xml
 share/ontology/kde/aneo.ontology
 share/ontology/kde/aneo.trig
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

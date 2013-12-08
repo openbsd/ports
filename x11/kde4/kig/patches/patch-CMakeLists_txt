@@ -1,14 +1,12 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.3 2013/07/04 00:45:06 zhuk Exp $
---- CMakeLists.txt.orig	Sat Jun  8 14:49:01 2013
-+++ CMakeLists.txt	Sat Jun  8 14:52:54 2013
-@@ -44,16 +44,15 @@ add_subdirectory( macros )
+$OpenBSD: patch-CMakeLists_txt,v 1.4 2013/12/08 19:13:30 zhuk Exp $
+--- CMakeLists.txt.orig	Fri Nov  8 17:50:31 2013
++++ CMakeLists.txt	Fri Nov  8 17:51:16 2013
+@@ -40,16 +40,16 @@ add_subdirectory( macros )
  #add_subdirectory( kfile )
  add_subdirectory( data )
  add_subdirectory( pykig )
 -if(BOOST_PYTHON_FOUND)
-+
 +if(BoostPython_FOUND)
-+  include_directories( ${BoostPython_INCLUDE_DIRS} )
    add_subdirectory( scripting )
 -endif(BOOST_PYTHON_FOUND)
 +endif(BoostPython_FOUND)
@@ -19,10 +17,13 @@ $OpenBSD: patch-CMakeLists_txt,v 1.3 2013/07/04 00:45:06 zhuk Exp $
 -if(BOOST_PYTHON_FOUND)
 -  include_directories(${BOOST_PYTHON_INCLUDES})
 -endif(BOOST_PYTHON_FOUND)
++if(BoostPython_FOUND)
++  include_directories(${BoostPython_INCLUDE_DIRS})
++endif(BoostPython_FOUND)
  
  # kigpart
  
-@@ -182,7 +181,7 @@ kde4_add_ui_files(kigpart_PART_SRCS
+@@ -178,7 +178,7 @@ kde4_add_ui_files(kigpart_PART_SRCS
     misc/kigcoordinateprecisiondialog.ui
  )
  
@@ -31,7 +32,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.3 2013/07/04 00:45:06 zhuk Exp $
    set(kigpart_PART_SRCS ${kigpart_PART_SRCS}
       modes/popup/scriptactionsprovider.cc
       scripting/newscriptwizard.cc
-@@ -193,15 +192,15 @@ if(BOOST_PYTHON_FOUND)
+@@ -189,15 +189,15 @@ if(BOOST_PYTHON_FOUND)
    )
  
    set_source_files_properties(scripting/python_scripter.cc PROPERTIES COMPILE_FLAGS "${KDE4_ENABLE_EXCEPTIONS}")

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/11/24 19:56:32 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2013/12/08 19:13:33 zhuk Exp $
 
 COMMENT =	KDE document viewer
 DISTNAME =	okular-${MODKDE4_VERSION}
-REVISION =	2
 
-SHARED_LIBS =	okularcore		50.0	# 1.7
+SHARED_LIBS =	okularcore		51.0	# 1.7
 
 WANTLIB =  c m pthread stdc++ z
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui

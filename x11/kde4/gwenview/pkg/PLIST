@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 11:37:22 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/12/08 19:13:29 zhuk Exp $
 @conflict gwenview4-*
 @bin bin/gwenview
 @bin bin/gwenview_importer
@@ -23,10 +23,13 @@ share/apps/solid/actions/gwenview_importer_camera.desktop
 share/doc/HTML/en/gwenview/
 share/doc/HTML/en/gwenview/browse_mode.png
 share/doc/HTML/en/gwenview/common
-share/doc/HTML/en/gwenview/fullscreen_mode.png
+share/doc/HTML/en/gwenview/fullscreen-browse.png
+share/doc/HTML/en/gwenview/fullscreen-view.png
+share/doc/HTML/en/gwenview/importer-picking-root-folder.png
 share/doc/HTML/en/gwenview/importer.png
 share/doc/HTML/en/gwenview/index.cache.bz2
 share/doc/HTML/en/gwenview/index.docbook
+share/doc/HTML/en/gwenview/start-page.png
 share/doc/HTML/en/gwenview/view_mode.png
 share/icons/hicolor/128x128/actions/document-share.png
 share/icons/hicolor/128x128/apps/gwenview.png

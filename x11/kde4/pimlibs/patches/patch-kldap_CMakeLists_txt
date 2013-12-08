@@ -1,0 +1,18 @@
+$OpenBSD: patch-kldap_CMakeLists_txt,v 1.1 2013/12/08 19:13:33 zhuk Exp $
+Fix linking.
+--- kldap/CMakeLists.txt.orig	Wed Nov  6 10:13:31 2013
++++ kldap/CMakeLists.txt	Wed Nov  6 10:13:50 2013
+@@ -90,11 +90,11 @@ include_directories(
+ )
+ 
+ target_link_libraries(kldap
++  kabc
++  ${kldap_EXTRA_LIBS}
+   ${KDE4_KIO_LIBS}
+   ${KDE4_KCMUTILS_LIBS}
+   ${KDE4_KDECORE_LIBS}
+-  ${kldap_EXTRA_LIBS}
+-  kabc
+ )
+ 
+ set_target_properties(kldap PROPERTIES

@@ -1,0 +1,21 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2013/12/08 19:13:32 zhuk Exp $
+--- CMakeLists.txt.orig	Sun Aug 11 18:39:21 2013
++++ CMakeLists.txt	Sun Aug 11 18:42:22 2013
+@@ -115,3 +115,17 @@ IF (EXIV2_FOUND)
+ ENDIF (EXIV2_FOUND)
+ 
+ MACRO_DISPLAY_FEATURE_LOG()
++
++
++INCLUDE(CMakePackageConfigHelpers)
++
++CONFIGURE_PACKAGE_CONFIG_FILE(Kexiv2Config.cmake.in ${CMAKE_CURRENT_BINARY_DIR}/Kexiv2Config.cmake
++                              INSTALL_DESTINATION ${LIB_INSTALL_DIR}/cmake/Kexiv2
++                              PATH_VARS INCLUDE_INSTALL_DIR)
++
++WRITE_BASIC_PACKAGE_VERSION_FILE(${CMAKE_CURRENT_BINARY_DIR}/Kexiv2ConfigVersion.cmake
++                                 VERSION "${KEXIV2_LIB_VERSION_STRING}"
++                                 COMPATIBILITY SameMajorVersion )
++
++INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/Kexiv2Config.cmake ${CMAKE_CURRENT_BINARY_DIR}/Kexiv2ConfigVersion.cmake
++        DESTINATION ${LIB_INSTALL_DIR}/cmake/Kexiv2 )

@@ -1,0 +1,13 @@
+$OpenBSD: patch-konqueror_sidebar_trees_CMakeLists_txt,v 1.1 2013/12/08 19:13:29 zhuk Exp $
+Fix linking.
+--- konqueror/sidebar/trees/CMakeLists.txt.orig	Wed Nov  6 20:28:06 2013
++++ konqueror/sidebar/trees/CMakeLists.txt	Wed Nov  6 20:28:42 2013
+@@ -17,7 +17,7 @@ set(konqsidebar_tree_PART_SRCS konqsidebar_oldtreemodu
+ 
+ kde4_add_plugin(konqsidebar_tree ${konqsidebar_tree_PART_SRCS})
+ 
+-target_link_libraries(konqsidebar_tree ${KDE4_KDE3SUPPORT_LIBS} ${KDE4_KPARTS_LIBS} ${KDE4_KFILE_LIBS} konq konqsidebarplugin )
++target_link_libraries(konqsidebar_tree konqsidebarplugin konq ${KDE4_KDE3SUPPORT_LIBS} ${KDE4_KPARTS_LIBS} ${KDE4_KFILE_LIBS} )
+ 
+ install(TARGETS konqsidebar_tree DESTINATION ${PLUGIN_INSTALL_DIR} )
+ 

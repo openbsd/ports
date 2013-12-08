@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/04/24 20:07:20 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/12/08 19:13:34 zhuk Exp $
 @bin bin/kfilereplace
 @bin bin/kimagemapeditor
 @bin bin/klinkstatus
@@ -28,16 +28,16 @@ share/apps/kfilereplace/
 share/apps/kfilereplace/kfilereplaceui.rc
 share/apps/kfilereplacepart/
 share/apps/kfilereplacepart/icons/
-share/apps/kfilereplacepart/icons/crystalsvg/
-share/apps/kfilereplacepart/icons/crystalsvg/22x22/
-share/apps/kfilereplacepart/icons/crystalsvg/22x22/actions/
-share/apps/kfilereplacepart/icons/crystalsvg/22x22/actions/backup_option.png
-share/apps/kfilereplacepart/icons/crystalsvg/22x22/actions/casesensitive_option.png
-share/apps/kfilereplacepart/icons/crystalsvg/22x22/actions/command_option.png
-share/apps/kfilereplacepart/icons/crystalsvg/22x22/actions/filesimulate.png
-share/apps/kfilereplacepart/icons/crystalsvg/22x22/actions/invert.png
-share/apps/kfilereplacepart/icons/crystalsvg/22x22/actions/recursive_option.png
-share/apps/kfilereplacepart/icons/crystalsvg/22x22/actions/regularexpression_option.png
+share/apps/kfilereplacepart/icons/hicolor/
+share/apps/kfilereplacepart/icons/hicolor/22x22/
+share/apps/kfilereplacepart/icons/hicolor/22x22/actions/
+share/apps/kfilereplacepart/icons/hicolor/22x22/actions/backup_option.png
+share/apps/kfilereplacepart/icons/hicolor/22x22/actions/casesensitive_option.png
+share/apps/kfilereplacepart/icons/hicolor/22x22/actions/command_option.png
+share/apps/kfilereplacepart/icons/hicolor/22x22/actions/filesimulate.png
+share/apps/kfilereplacepart/icons/hicolor/22x22/actions/invert.png
+share/apps/kfilereplacepart/icons/hicolor/22x22/actions/recursive_option.png
+share/apps/kfilereplacepart/icons/hicolor/22x22/actions/regularexpression_option.png
 share/apps/kfilereplacepart/kfilereplacepartui.rc
 share/apps/kimagemapeditor/
 share/apps/kimagemapeditor/addpointcursor.png

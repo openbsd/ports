@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2013/11/24 19:56:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2013/12/08 19:13:29 zhuk Exp $
 
 COMMENT =	KDE base applications
 DISTNAME =	kde-baseapps-${MODKDE4_VERSION}
-REVISION =	1
 
-SHARED_LIBS =	konq			50.1	# 6.0
-SHARED_LIBS +=	konqsidebarplugin	50.1	# 4.0
-SHARED_LIBS +=	dolphinprivate		50.1	# 1.0
-SHARED_LIBS +=	konquerorprivate	50.1	# 4.0
-SHARED_LIBS +=	kbookmarkmodel_private	50.1	# 4.7
+SHARED_LIBS =	konq			51.0	# 6.0
+SHARED_LIBS +=	konqsidebarplugin	51.0	# 4.0
+SHARED_LIBS +=	dolphinprivate		51.0	# 1.0
+SHARED_LIBS +=	konquerorprivate	51.0	# 4.0
+SHARED_LIBS +=	kbookmarkmodel_private	51.0	# 4.7
 
 WANTLIB =  c m pthread stdc++ z
 WANTLIB += ICE SM X11 Xext Xt Xrender
@@ -28,14 +27,13 @@ MODULES =	multimedia/phonon
 # KJS is broken, so allow KDE browsers to work out of the box
 # using QtWebKit.
 RUN_DEPENDS =	devel/desktop-file-utils \
-		www/kwebkitpart \
+		www/kwebkitpart,${MODKDE4_FLAVOR} \
 		x11/gtk+2,-guic
 
 LIB_DEPENDS =	devel/glib2 \
-		${MODKDE4_DEP_DIR}/kactivities \
-		${MODKDE4_DEP_DIR}/libs>=4.10.2 \
-		${MODKDE4_DEP_DIR}/nepomuk-core \
-		${MODKDE4_DEP_DIR}/nepomuk-widgets \
-		www/tidyp
+		www/tidyp \
+		${MODKDE4_DEP_DIR}/kactivities>=${MODKDE4_DEP_VERSION} \
+		${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_VERSION} \
+		${MODKDE4_DEP_DIR}/nepomuk-widgets>=${MODKDE4_DEP_VERSION}
 
 .include <bsd.port.mk>

@@ -1,0 +1,16 @@
+$OpenBSD: patch-kmbox_CMakeLists_txt,v 1.1 2013/12/08 19:13:33 zhuk Exp $
+Fix linking.
+--- kmbox/CMakeLists.txt.orig	Wed Nov  6 10:15:40 2013
++++ kmbox/CMakeLists.txt	Wed Nov  6 10:15:56 2013
+@@ -11,9 +11,9 @@ add_subdirectory(tests)
+ kde4_add_library(kmbox ${LIBRARY_TYPE} ${kmbox_LIB_SRCS})
+ 
+ target_link_libraries(kmbox
+-  ${KDE4_KDECORE_LIBS}
+-  kmime
+   kpimutils
++  kmime
++  ${KDE4_KDECORE_LIBS}
+ )
+ 
+ set_target_properties(kmbox PROPERTIES

@@ -1,0 +1,13 @@
+$OpenBSD: patch-kstars_skyobjects_starobject_cpp,v 1.1 2013/12/08 19:13:31 zhuk Exp $
+Unbreak compilation.
+--- kstars/skyobjects/starobject.cpp.orig	Wed Aug 28 21:03:16 2013
++++ kstars/skyobjects/starobject.cpp	Sat Nov  9 00:46:40 2013
+@@ -282,7 +282,7 @@ void StarObject::getIndexCoords( KSNumbers *num, doubl
+ 
+     pmms = pmMagnitudeSquared();
+ 
+-    if( isnan( pmms ) || pmms * num->julianMillenia() * num->julianMillenia() < 1. ) {
++    if( std::isnan( pmms ) || pmms * num->julianMillenia() * num->julianMillenia() < 1. ) {
+         // Ignore corrections
+         *ra = ra0().Degrees();
+         *dec = dec0().Degrees();

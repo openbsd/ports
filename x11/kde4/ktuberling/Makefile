@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2013/11/24 19:56:32 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/12/08 19:13:31 zhuk Exp $
 
 COMMENT =	potato guy kid game for KDE
 DISTNAME =	ktuberling-${MODKDE4_VERSION}
-REVISION =	0
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSvg

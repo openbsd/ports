@@ -1,0 +1,13 @@
+$OpenBSD: patch-konq-plugins_fsview_CMakeLists_txt,v 1.1 2013/12/08 19:13:29 zhuk Exp $
+Fix linking.
+--- konq-plugins/fsview/CMakeLists.txt.orig	Wed Nov  6 23:14:57 2013
++++ konq-plugins/fsview/CMakeLists.txt	Wed Nov  6 23:15:45 2013
+@@ -28,7 +28,7 @@ set(fsviewpart_PART_SRCS fsview_part.cpp ${libfsview_S
+ 
+ kde4_add_plugin(fsviewpart  ${fsviewpart_PART_SRCS})
+ 
+-target_link_libraries(fsviewpart  ${KDE4_KPARTS_LIBS}  konq )
++target_link_libraries(fsviewpart  konq ${KDE4_KPARTS_LIBS})
+ 
+ install(TARGETS fsviewpart  DESTINATION ${PLUGIN_INSTALL_DIR} )
+ 

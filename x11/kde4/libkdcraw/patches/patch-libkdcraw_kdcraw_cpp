@@ -1,0 +1,12 @@
+$OpenBSD: patch-libkdcraw_kdcraw_cpp,v 1.1 2013/12/08 19:13:32 zhuk Exp $
+--- libkdcraw/kdcraw.cpp.orig	Thu Nov  7 00:03:08 2013
++++ libkdcraw/kdcraw.cpp	Thu Nov  7 00:03:18 2013
+@@ -38,7 +38,7 @@
+ 
+ // LibRaw includes
+ 
+-#include <libraw_version.h>
++#include <libraw/libraw_version.h>
+ 
+ // Local includes
+ 

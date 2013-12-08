@@ -1,0 +1,13 @@
+$OpenBSD: patch-kdecore_tests_krandomsequencetest_cpp,v 1.1 2013/12/08 19:13:32 zhuk Exp $
+More correct implementation of random() & Co., using arc4random().
+--- kdecore/tests/krandomsequencetest.cpp.orig	Wed Oct 16 10:54:06 2013
++++ kdecore/tests/krandomsequencetest.cpp	Wed Oct 16 10:54:21 2013
+@@ -61,7 +61,7 @@ main( /*int argc, char *argv[]*/ )
+       printf("%3ld ", seq.getLong(100));
+    printf("\n");
+ 
+-   seq.setSeed(KRandom::random());
++   seq.setSeed(KRandom::random32());
+ 
+    QList<QString> list;
+    list.append(QString("A"));

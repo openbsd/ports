@@ -1,0 +1,13 @@
+$OpenBSD: patch-ConfigureChecks_cmake,v 1.1 2013/12/08 19:13:32 zhuk Exp $
+More correct implementation of random() & Co., using arc4random().
+--- ConfigureChecks.cmake.orig	Wed Oct 16 10:58:02 2013
++++ ConfigureChecks.cmake	Wed Oct 16 15:49:38 2013
+@@ -206,6 +206,8 @@ endif (UNIX)
+ #check_function_exists(crypt "" HAVE_CRYPT)
+ #set(CMAKE_REQUIRED_LIBRARIES)
+ 
++check_function_exists(arc4random         HAVE_ARC4RANDOM)           # kdecore, kjs
++check_function_exists(arc4random_uniform HAVE_ARC4RANDOM_UNIFORM)   # kdecore, kjs
+ check_function_exists(getmntinfo HAVE_GETMNTINFO)        # kdecore, kio
+ check_function_exists(initgroups HAVE_INITGROUPS)        # kde3support/k3process, kdesu
+ check_function_exists(mkstemps   HAVE_MKSTEMPS)          # dcop, kdecore/fakes.c

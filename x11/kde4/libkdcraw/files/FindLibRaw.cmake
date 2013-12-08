@@ -1,6 +1,6 @@
 # - try to find LibRaw
 #
-# The following variables could be set before search:
+# The following variables could be set by user before search:
 #  LIBRAW_USE_THREADS  - if true, threads-aware library will be looked up
 #
 # If found, the following variables will be set:
@@ -36,9 +36,11 @@ endif(LIBRAW_USE_THREADS)
 
 find_path(LIBRAW_INCLUDE_DIR NAMES libraw/libraw.h)
 
-find_package_handle_standard_args(Libraw DEFAULT_MSG LIBRAW_LIBRARY LIBRAW_INCLUDE_DIR)
-if(LIBRAW_FOUND)
-	set(LIBRAW_LIBRARIES "${LIBRAW_LIBRARY}")
-	set(LIBRAW_INCLUDE_DIRS "${LIBRAW_INCLUDE_DIR}")
-endif(LIBRAW_FOUND)
+if(LIBRAW_LIBRARY AND LIBRAW_INCLUDE_DIR)
+	set(LIBRAW_LIBRARIES ${LIBRAW_LIBRARY})
+	set(LIBRAW_INCLUDE_DIRS ${LIBRAW_INCLUDE_DIR})
+endif(LIBRAW_LIBRARY AND LIBRAW_INCLUDE_DIR)
+
+find_package_handle_standard_args(LibRaw DEFAULT_MSG LIBRAW_LIBRARIES LIBRAW_INCLUDE_DIRS)
+
 mark_as_advanced(LIBRAW_INCLUDE_DIR LIBRAW_LIBRARY)

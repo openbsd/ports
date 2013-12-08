@@ -1,0 +1,13 @@
+$OpenBSD: patch-kdeui_kernel_kapplication_h,v 1.1 2013/12/08 19:13:32 zhuk Exp $
+More correct implementation of random() & Co., using arc4random().
+--- kdeui/kernel/kapplication.h.orig	Wed Oct 16 10:54:48 2013
++++ kdeui/kernel/kapplication.h	Wed Oct 16 10:55:04 2013
+@@ -305,7 +305,7 @@ class KDEUI_EXPORT KApplication : public QApplication 
+    * @return A truly unpredictable number in the range [0, RAND_MAX)
+    * @deprecated Use KRandom::random()
+    */
+-  static inline KDE_DEPRECATED int random() { return KRandom::random(); }
++  static inline KDE_DEPRECATED int random() { return (int)KRandom::random32(); }
+ 
+   /**
+    * Generates a random string.  It operates in the range [A-Za-z0-9]

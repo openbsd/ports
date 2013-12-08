@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/11/24 19:56:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2013/12/08 19:13:34 zhuk Exp $
 
 COMMENT-main =		KDE core run-time components
 COMMENT-locale =	KDE locale data files
@@ -6,7 +6,6 @@ DISTNAME =		kde-runtime-${MODKDE4_VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-locale =	kde4-locale-${MODKDE4_VERSION}
 PKG_ARCH-locale =	*
-REVISION-main =		2
 
 DPB_PROPERTIES =	parallel
 
@@ -35,7 +34,7 @@ WANTLIB-main += ${KDE4LIB}/kxmlrpcclient ${KDE4LIB}/nepomuk
 WANTLIB-main += ${KDE4LIB}/nepomukcore ${KDE4LIB}/nepomukutils
 WANTLIB-main += ${KDE4LIB}/plasma ${KDE4LIB}/solid
 WANTLIB-main += attica canberra exiv2 glib-2.0 jpeg pulse
-WANTLIB-main += pulse-mainloop-glib smbclient ssh soprano
+WANTLIB-main += pulse-mainloop-glib smbclient ssh soprano webp
 WANTLIB-locale =
 
 MULTI_PACKAGES =	-main -locale
@@ -56,11 +55,15 @@ RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			x11/gtk+2,-guic \
 			${BUILD_PKGPATH},-locale>=${MODKDE4_DEP_VERSION}
 
+# QCA2 is useless without this
+RUN_DEPENDS-main =	security/qca-ossl
+
 LIB_DEPENDS-locale =
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			audio/libcanberra \
 			audio/pulseaudio \
 			databases/soprano \
+			graphics/libwebp \
 			graphics/openexr \
 			graphics/exiv2 \
 			net/samba \
@@ -76,5 +79,8 @@ CONFIGURE_ARGS =	-DWITH_ALSA:Bool=FALSE \
 
 MODKDE4_SYSCONF_FILES =	dbus-1	share/examples \
 			xdg	share/examples
+
+post-extract:
+	cp ${FILESDIR}/*.cmake ${WRKSRC}/cmake/modules/
 
 .include <bsd.port.mk>

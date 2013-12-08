@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2013/11/24 19:56:30 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2013/12/08 19:13:34 zhuk Exp $
 @conflict kdebase-<4
 @conflict kdesamba-<4
 @pkgpath x11/kde4/runtime
@@ -29,7 +29,6 @@ bin/kde4
 @bin bin/kuiserver
 @bin bin/kwalletd
 @bin bin/kwriteconfig
-@bin bin/nepomukcontroller
 @bin bin/plasma-remote-helper
 @bin bin/plasmapkg
 @bin bin/solid-hardware
@@ -47,6 +46,9 @@ lib/kde4/exrthumbnail.so
 lib/kde4/fixhosturifilter.so
 lib/kde4/htmlthumbnail.so
 lib/kde4/imagethumbnail.so
+lib/kde4/imports/org/kde/dirmodel/
+lib/kde4/imports/org/kde/dirmodel/libdirmodelplugin.so
+lib/kde4/imports/org/kde/dirmodel/qmldir
 lib/kde4/imports/org/kde/draganddrop/
 lib/kde4/imports/org/kde/draganddrop/libdraganddropplugin.so
 lib/kde4/imports/org/kde/draganddrop/qmldir
@@ -269,6 +271,7 @@ lib/kde4/platformimports/touch/org/kde/plasma/components/private/TabBarLayout.qm
 lib/kde4/platformimports/touch/org/kde/plasma/components/private/TabGroup.js
 lib/kde4/platformimports/touch/org/kde/plasma/components/private/TextFieldFocus.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/qmldir
+lib/kde4/plugins/imageformats/kimg_webp.so
 lib/kde4/plugins/phonon_platform/
 lib/kde4/plugins/phonon_platform/kde.so
 lib/kde4/svgthumbnail.so
@@ -304,7 +307,6 @@ libexec/khc_mansearch.pl
 @man man/man8/nepomukservicestub.8
 share/applications/kde4/Help.desktop
 share/applications/kde4/knetattach.desktop
-share/applications/kde4/nepomukcontroller.desktop
 share/apps/cmake/modules/FindCLucene.cmake
 share/apps/cmake/modules/FindSLP.cmake
 share/apps/desktoptheme/
@@ -489,6 +491,7 @@ share/apps/kcmlocale/
 share/apps/kcmlocale/pics/
 share/apps/kcmlocale/pics/background.png
 share/apps/kconf_update/devicepreference.upd
+share/apps/kconf_update/drkonqi-rename-config-section.upd
 share/apps/kconf_update/kuriikwsfilter.upd
 share/apps/kde/
 share/apps/kde/kde.notifyrc
@@ -567,7 +570,6 @@ share/apps/phonon/phonon.notifyrc
 share/apps/remoteview/
 share/apps/remoteview/network.desktop
 share/apps/remoteview/smb-network.desktop
-share/autostart/nepomukcontroller.desktop
 share/config.kcfg/jpegcreatorsettings.kcfg
 share/config.kcfg/khelpcenter.kcfg
 share/config/emoticons.knsrc
@@ -649,6 +651,40 @@ share/doc/HTML/en/fundamentals/tasks.docbook
 share/doc/HTML/en/fundamentals/toolbars-configure.png
 share/doc/HTML/en/fundamentals/toolbars-toolbar.png
 share/doc/HTML/en/fundamentals/ui.docbook
+share/doc/HTML/en/fundamentals/visualdict-breadcrumb.png
+share/doc/HTML/en/fundamentals/visualdict-button.png
+share/doc/HTML/en/fundamentals/visualdict-central-widget.png
+share/doc/HTML/en/fundamentals/visualdict-check-box.png
+share/doc/HTML/en/fundamentals/visualdict-color-selector.png
+share/doc/HTML/en/fundamentals/visualdict-combo-box.png
+share/doc/HTML/en/fundamentals/visualdict-context-menu.png
+share/doc/HTML/en/fundamentals/visualdict-dialog-box.png
+share/doc/HTML/en/fundamentals/visualdict-drop-down-box.png
+share/doc/HTML/en/fundamentals/visualdict-gui1.png
+share/doc/HTML/en/fundamentals/visualdict-gui2.png
+share/doc/HTML/en/fundamentals/visualdict-gui3.png
+share/doc/HTML/en/fundamentals/visualdict-gui4.png
+share/doc/HTML/en/fundamentals/visualdict-icon-list.png
+share/doc/HTML/en/fundamentals/visualdict-icon.png
+share/doc/HTML/en/fundamentals/visualdict-list-box.png
+share/doc/HTML/en/fundamentals/visualdict-menu-button.png
+share/doc/HTML/en/fundamentals/visualdict-menu.png
+share/doc/HTML/en/fundamentals/visualdict-menubar.png
+share/doc/HTML/en/fundamentals/visualdict-panel.png
+share/doc/HTML/en/fundamentals/visualdict-progress-bar.png
+share/doc/HTML/en/fundamentals/visualdict-radio-button.png
+share/doc/HTML/en/fundamentals/visualdict-scrollbar.png
+share/doc/HTML/en/fundamentals/visualdict-slider.png
+share/doc/HTML/en/fundamentals/visualdict-spin-box.png
+share/doc/HTML/en/fundamentals/visualdict-statusbar.png
+share/doc/HTML/en/fundamentals/visualdict-tab.png
+share/doc/HTML/en/fundamentals/visualdict-text-area.png
+share/doc/HTML/en/fundamentals/visualdict-text-box.png
+share/doc/HTML/en/fundamentals/visualdict-titlebar.png
+share/doc/HTML/en/fundamentals/visualdict-toolbar.png
+share/doc/HTML/en/fundamentals/visualdict-tree-view.png
+share/doc/HTML/en/fundamentals/visualdict-window.png
+share/doc/HTML/en/fundamentals/visualdict-window2.png
 share/doc/HTML/en/kcontrol/attica/
 share/doc/HTML/en/kcontrol/attica/common
 share/doc/HTML/en/kcontrol/attica/index.cache.bz2
@@ -973,6 +1009,7 @@ share/kde4/services/cgi.protocol
 share/kde4/services/comicbookthumbnail.desktop
 share/kde4/services/componentchooser.desktop
 share/kde4/services/cursorthumbnail.desktop
+share/kde4/services/desktop-search.desktop
 share/kde4/services/desktop.protocol
 share/kde4/services/desktopthumbnail.desktop
 share/kde4/services/device_automounter_kcm.desktop
@@ -1036,6 +1073,7 @@ share/kde4/services/plasma-scriptengine-applet-simple-javascript.desktop
 share/kde4/services/plasma-scriptengine-dataengine-javascript.desktop
 share/kde4/services/plasma-scriptengine-runner-javascript.desktop
 share/kde4/services/programs.protocol
+share/kde4/services/qimageioplugins/webp.desktop
 share/kde4/services/recentdocuments.protocol
 share/kde4/services/remote.protocol
 share/kde4/services/renaudiodlg.desktop
@@ -1043,11 +1081,9 @@ share/kde4/services/renimagedlg.desktop
 share/kde4/services/searchproviders/
 share/kde4/services/searchproviders/7digital.desktop
 share/kde4/services/searchproviders/acronym.desktop
-share/kde4/services/searchproviders/altavista.desktop
 share/kde4/services/searchproviders/amazon.desktop
 share/kde4/services/searchproviders/amazon_mp3.desktop
 share/kde4/services/searchproviders/amg.desktop
-share/kde4/services/searchproviders/austronaut.desktop
 share/kde4/services/searchproviders/backports.desktop
 share/kde4/services/searchproviders/baidu.desktop
 share/kde4/services/searchproviders/beolingus.desktop
@@ -1086,9 +1122,8 @@ share/kde4/services/searchproviders/flickrcc.desktop
 share/kde4/services/searchproviders/foldoc.desktop
 share/kde4/services/searchproviders/fr2de.desktop
 share/kde4/services/searchproviders/fr2en.desktop
+share/kde4/services/searchproviders/freecode.desktop
 share/kde4/services/searchproviders/freedb.desktop
-share/kde4/services/searchproviders/freshmeat.desktop
-share/kde4/services/searchproviders/froogle.desktop
 share/kde4/services/searchproviders/fsd.desktop
 share/kde4/services/searchproviders/github.desktop
 share/kde4/services/searchproviders/gitorious.desktop
@@ -1101,7 +1136,7 @@ share/kde4/services/searchproviders/google_lucky.desktop
 share/kde4/services/searchproviders/google_maps.desktop
 share/kde4/services/searchproviders/google_movie.desktop
 share/kde4/services/searchproviders/google_news.desktop
-share/kde4/services/searchproviders/gracenote.desktop
+share/kde4/services/searchproviders/google_shopping.desktop
 share/kde4/services/searchproviders/grec.desktop
 share/kde4/services/searchproviders/hyperdictionary.desktop
 share/kde4/services/searchproviders/hyperdictionary_thesaurus.desktop
@@ -1113,14 +1148,13 @@ share/kde4/services/searchproviders/imdb.desktop
 share/kde4/services/searchproviders/it2en.desktop
 share/kde4/services/searchproviders/jamendo.desktop
 share/kde4/services/searchproviders/jeeves.desktop
-share/kde4/services/searchproviders/katatudo.desktop
 share/kde4/services/searchproviders/kde.desktop
 share/kde4/services/searchproviders/kde_apps.desktop
 share/kde4/services/searchproviders/kde_forums.desktop
 share/kde4/services/searchproviders/kde_look.desktop
+share/kde4/services/searchproviders/kde_projects.desktop
 share/kde4/services/searchproviders/kde_techbase.desktop
 share/kde4/services/searchproviders/kde_userbase.desktop
-share/kde4/services/searchproviders/kde_websvn.desktop
 share/kde4/services/searchproviders/leo.desktop
 share/kde4/services/searchproviders/magnatune.desktop
 share/kde4/services/searchproviders/metacrawler.desktop
@@ -1139,7 +1173,7 @@ share/kde4/services/searchproviders/pgpkeys.desktop
 share/kde4/services/searchproviders/php.desktop
 share/kde4/services/searchproviders/python.desktop
 share/kde4/services/searchproviders/qt.desktop
-share/kde4/services/searchproviders/qt3.desktop
+share/kde4/services/searchproviders/qt4.desktop
 share/kde4/services/searchproviders/rae.desktop
 share/kde4/services/searchproviders/rfc.desktop
 share/kde4/services/searchproviders/rpmfind.desktop
@@ -1152,7 +1186,6 @@ share/kde4/services/searchproviders/tvtome.desktop
 share/kde4/services/searchproviders/urbandictionary.desktop
 share/kde4/services/searchproviders/uspto.desktop
 share/kde4/services/searchproviders/vimeo.desktop
-share/kde4/services/searchproviders/vivisimo.desktop
 share/kde4/services/searchproviders/voila.desktop
 share/kde4/services/searchproviders/webster.desktop
 share/kde4/services/searchproviders/wikia.desktop
@@ -1394,6 +1427,7 @@ share/locale/currency/zmk.desktop
 share/locale/currency/zwd.desktop
 share/locale/currency/zwl.desktop
 share/mime/packages/network.xml
+share/mime/packages/webp.xml
 share/polkit-1/actions/org.kde.kcontrol.kcmremotewidgets.policy
 share/sounds/KDE-Im-Cant-Connect.ogg
 share/sounds/KDE-Im-Connection-Lost.ogg

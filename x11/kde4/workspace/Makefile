@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2013/11/24 19:56:33 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2013/12/08 19:13:34 zhuk Exp $
 
 COMMENT =	KDE workspace
 DISTNAME =	kde-workspace-${MODKDE4_VERSION}
-REVISION =	3
 
 # TODO:
 # Port ksysguard to OpenBSD (sensors framework, lsof(1) call replace and others).
@@ -14,47 +13,54 @@ REVISION =	3
 # env, filters: 233, syscall: native-setlogin(50), args: 4
 # -- Performing Test HAVE_SETLOGIN - Success
 
-SHARED_LIBS =	kdecorations			50.1 # 4.7
-SHARED_LIBS +=	kephal				50.1 # 4.7
-SHARED_LIBS +=	kfontinst			50.1 # 4.7
-SHARED_LIBS +=	kfontinstui			50.1 # 4.7
-SHARED_LIBS +=	khotkeysprivate			50.1 # 4.7
-SHARED_LIBS +=	kickoff				50.1
-SHARED_LIBS +=	kscreensaver			50.1 # 5.0
-SHARED_LIBS +=	ksgrd				50.1 # 4.7
-SHARED_LIBS +=	ksignalplotter			50.1 # 4.7
-SHARED_LIBS +=	kwineffects			50.1 # 1.0
-SHARED_LIBS +=	kwinnvidiahack			50.1 # 4.7
-SHARED_LIBS +=  kwinglutils			50.1 # 1.0
-SHARED_LIBS +=	kworkspace			50.1 # 4.7
-SHARED_LIBS +=	lsofui				50.1 # 4.7
-SHARED_LIBS +=	oxygenstyle			50.1 # 4.7
-SHARED_LIBS +=	oxygenstyleconfig		50.1 # 4.7
-SHARED_LIBS +=	plasma-geolocation-interface	50.1 # 4.7
-SHARED_LIBS +=	plasma_applet-system-monitor	50.1 # 4.7
-SHARED_LIBS +=	plasmaclock			50.1 # 4.7
-SHARED_LIBS +=	plasmagenericshell		50.1 # 4.7
-SHARED_LIBS +=	powerdevilconfigcommonprivate	50.1 # 0.1
-SHARED_LIBS +=	powerdevilcore			50.1 # 0.1
-SHARED_LIBS +=	powerdevilui			50.1
-SHARED_LIBS +=	processcore			50.1 # 4.7
-SHARED_LIBS +=	processui			50.1 # 4.7
-SHARED_LIBS +=	solidcontrol			50.1 # 4.7
-SHARED_LIBS +=	solidcontrolifaces		50.1 # 4.7
-SHARED_LIBS +=	systemsettingsview		50.1
-SHARED_LIBS +=	taskmanager			50.1 # 4.7
-SHARED_LIBS +=	weather_ion			50.1 # 6.0
+SHARED_LIBS =	kdecorations			51.0 # 4.7
+SHARED_LIBS +=	kephal				51.0 # 4.7
+SHARED_LIBS +=	kfontinst			51.0 # 4.7
+SHARED_LIBS +=	kfontinstui			51.0 # 4.7
+SHARED_LIBS +=	khotkeysprivate			51.0 # 4.7
+SHARED_LIBS +=	kickoff				51.0
+SHARED_LIBS +=	kscreensaver			51.0 # 5.0
+SHARED_LIBS +=	ksgrd				51.0 # 4.7
+SHARED_LIBS +=	ksignalplotter			51.0 # 4.7
+SHARED_LIBS +=	kwineffects			51.0 # 1.0
+SHARED_LIBS +=	kwinnvidiahack			1.0 # 4.7
+SHARED_LIBS +=  kwinglutils			51.0 # 1.0
+SHARED_LIBS +=	kworkspace			51.0 # 4.7
+SHARED_LIBS +=	lsofui				51.0 # 4.7
+SHARED_LIBS +=	oxygenstyle			51.0 # 4.7
+SHARED_LIBS +=	oxygenstyleconfig		51.0 # 4.7
+SHARED_LIBS +=	plasma-geolocation-interface	51.0 # 4.7
+SHARED_LIBS +=	plasma_applet-system-monitor	51.0 # 4.7
+SHARED_LIBS +=	plasmaclock			51.0 # 4.7
+SHARED_LIBS +=	plasmagenericshell		51.0 # 4.7
+SHARED_LIBS +=	powerdevilconfigcommonprivate	51.0 # 0.1
+SHARED_LIBS +=	powerdevilcore			51.0 # 0.1
+SHARED_LIBS +=	powerdevilui			51.0
+SHARED_LIBS +=	processcore			51.0 # 4.7
+SHARED_LIBS +=	processui			51.0 # 4.7
+SHARED_LIBS +=	solidcontrol			1.0 # 4.7
+SHARED_LIBS +=	solidcontrolifaces		1.0 # 4.7
+SHARED_LIBS +=	systemsettingsview		51.0
+SHARED_LIBS +=	taskmanager			51.0 # 4.7
+SHARED_LIBS +=	weather_ion			51.0 # 6.0
 
-WANTLIB =  c m pthread stdc++ util z
+SHARED_LIBS +=	kwinnvidiahack			0.0
+SHARED_LIBS +=	solidcontrol			0.0
+SHARED_LIBS +=	solidcontrolifaces		0.0
+
+WANTLIB =  c m pthread util z
 WANTLIB += GL GLU ICE SM X11 X11-xcb XRes Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xft Xi Xinerama Xrandr Xrender Xss Xtst Xxf86vm
-WANTLIB += fontconfig freetype xcb xcb-damage xcb-xfixes xkbfile
+WANTLIB += fontconfig freetype xkbfile
+WANTLIB += xcb xcb-composite xcb-damage xcb-image xcb-keysyms
+WANTLIB += xcb-randr xcb-render xcb-shape xcb-sync xcb-xfixes
 
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative
 WANTLIB += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtOpenGL
 WANTLIB += lib/qt4/QtScript lib/qt4/QtSql lib/qt4/QtSvg lib/qt4/QtTest
 WANTLIB += lib/qt4/QtWebKit lib/qt4/QtXml lib/qt4/QtXmlPatterns
 
+WANTLIB += ${KDE4LIB}/akonadi-calendar
 WANTLIB += ${KDE4LIB}/akonadi-kcal ${KDE4LIB}/akonadi-kde
 WANTLIB += ${KDE4LIB}/akonadi-kmime ${KDE4LIB}/kabc ${KDE4LIB}/kactivities
 WANTLIB += ${KDE4LIB}/kcalcore ${KDE4LIB}/kcalutils ${KDE4LIB}/kcmutils
@@ -73,10 +79,12 @@ WANTLIB += ${KDE4LIB}/syndication
 
 WANTLIB += ck-connector cln dbus-1 dbusmenu-qt glib-2.0 gps jpeg png
 WANTLIB += prison qalculate qimageblitz qjson soprano streamanalyzer
-WANTLIB += strigiqtdbusclient usb xml2 xmms
+WANTLIB += usb xml2 xmms
 
-MODULES =	devel/gettext multimedia/phonon lang/python lang/ruby
+MODULES =	devel/gettext multimedia/phonon lang/python lang/ruby gcc4
 MODKDE4_USE =	pim
+MODGCC4_LANGS =		c c++
+MODGCC4_ARCHS =		*
 
 MODRUBY_REV =		1.9
 MODRUBY_BUILDDEP =	No
@@ -101,16 +109,21 @@ LIB_DEPENDS =	audio/xmms \
 		x11/dbusmenu-qt \
 		${MODKDE4_DEP_DIR}/kactivities>=${MODKDE4_DEP_VERSION}
 
-CONFIGURE_ARGS =	-DWITH_Googlegadgets:Bool=False \
-			-DWITH_NetworkManager:Bool=False \
-			-DWITH_OpenGLES:Bool=False \
+CONFIGURE_ARGS =	-DWITH_OpenGLES:Bool=False \
 			-DWITH_PAM:Bool=False \
 			-DWITH_PCIUTILS:Bool=False \
 			-DWITH_RAW1394:Bool=False \
-			-DWITH_Sensors:Bool=False
+			-DWITH_Sensors:Bool=False \
+			-DWITH_UDev:Bool=False \
+			-DWITH_Wayland:Bool=False
 
 MODKDE4_SYSCONF_FILES =	dbus-1		share/examples \
 			ksysguarddrc	share/examples/kde
+
+LOCALSTATEDIR =		${BASELOCALSTATEDIR}/kdm
+KDM_FACES_DIR =		${PREFIX}/share/apps/kdm/faces
+
+SUBST_VARS =		LOCALSTATEDIR
 
 # Note: struct ucred check results are not used, do not look there.
 
@@ -119,5 +132,8 @@ post-extract:
 
 post-install:
 	rm -f ${PREFIX}/share/config/kdm/*.bak
+	${INSTALL_DATA_DIR} ${WRKINST}${LOCALSTATEDIR}/faces
+	rm -Rf ${KDM_FACES_DIR}
+	ln -s ${LOCALSTATEDIR}/faces ${KDM_FACES_DIR}
 
 .include <bsd.port.mk>

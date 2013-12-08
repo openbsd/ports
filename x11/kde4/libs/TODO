@@ -21,6 +21,16 @@ Localized documentation incorrectly encodes names in the documentation tree.
 
 Fix kjs/collector.cpp (see current patch), KJS asserts at startup otherwise. We're using Webkit by default now, instead of KHTML, to make Konqueror and other browsers usable.
 
+In file included from /usr/obj/p/kdelibs-4.10.5/kdelibs-4.10.5/kdecore/network/k3socketbase.cpp:32:
+/usr/obj/p/kdelibs-4.10.5/kdelibs-4.10.5/kdecore/network/k3socketbase.h:701: warning: 'virtual qint64 KNetwork::KActiveSocketBase::readData(
+char*, qint64)' was hidden
+/usr/obj/p/kdelibs-4.10.5/kdelibs-4.10.5/kdecore/network/k3socketdevice.h:265: warning:   by 'virtual qint64 KNetwork::KSocketDevice::readDa
+ta(char*, qint64, KNetwork::KSocketAddress*)'
+/usr/obj/p/kdelibs-4.10.5/kdelibs-4.10.5/kdecore/network/k3socketbase.h:736: warning: 'virtual qint64 KNetwork::KActiveSocketBase::writeData
+(const char*, qint64)' was hidden
+/usr/obj/p/kdelibs-4.10.5/kdelibs-4.10.5/kdecore/network/k3socketdevice.h:276: warning:   by 'virtual qint64 KNetwork::KSocketDevice::writeD
+ata(const char*, qint64, const KNetwork::KSocketAddress*)'
+
 49% tests passed, 80 tests failed out of 156
 
 Total Test time (real) = 2787.44 sec

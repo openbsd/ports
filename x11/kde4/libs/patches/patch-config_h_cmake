@@ -1,0 +1,11 @@
+$OpenBSD: patch-config_h_cmake,v 1.1 2013/12/08 19:13:32 zhuk Exp $
+More correct implementation of random() & Co., using arc4random().
+--- config.h.cmake.orig	Wed Oct 16 15:51:07 2013
++++ config.h.cmake	Wed Oct 16 15:51:34 2013
+@@ -138,3 +138,6 @@ int snprintf(char *str, size_t n, char const *fmt, ...
+ #cmakedefine HAVE_DIRENT_D_TYPE 1
+ 
+ #include "kdecore/kdefakes.h"
++
++#cmakedefine01 HAVE_ARC4RANDOM
++#cmakedefine01 HAVE_ARC4RANDOM_UNIFORM

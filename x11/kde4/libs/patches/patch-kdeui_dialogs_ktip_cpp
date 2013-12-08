@@ -1,0 +1,31 @@
+$OpenBSD: patch-kdeui_dialogs_ktip_cpp,v 1.1 2013/12/08 19:13:32 zhuk Exp $
+More correct implementation of random() & Co., using arc4random().
+--- kdeui/dialogs/ktip.cpp.orig	Sun Aug  4 22:03:49 2013
++++ kdeui/dialogs/ktip.cpp	Sun Aug  4 22:03:51 2013
+@@ -123,7 +123,7 @@ KTipDatabase::KTipDatabase( const QString &_tipFile )
+   d->loadTips( tipFile );
+ 
+   if ( !d->tips.isEmpty() )
+-    d->currentTip = KRandom::random() % d->tips.count();
++    d->currentTip = KRandom::uniform(d->tips.count());
+ }
+ 
+ KTipDatabase::KTipDatabase( const QStringList& tipsFiles )
+@@ -137,7 +137,7 @@ KTipDatabase::KTipDatabase( const QStringList& tipsFil
+   }
+ 
+   if ( !d->tips.isEmpty() )
+-    d->currentTip = KRandom::random() % d->tips.count();
++    d->currentTip = KRandom::uniform(d->tips.count());
+ }
+ 
+ KTipDatabase::~KTipDatabase()
+@@ -366,7 +366,7 @@ void KTipDialog::showMultiTip( QWidget *parent, const 
+       QDateTime lastShown = configGroup.readEntry( "TipLastShown", QDateTime() );
+ 
+       // Show tip roughly once a week
+-      if ( lastShown.secsTo( QDateTime::currentDateTime() ) < (oneDay + (KRandom::random() % (10 * oneDay))) )
++      if ( lastShown.secsTo( QDateTime::currentDateTime() ) < (oneDay + (KRandom::uniform(10 * oneDay))) )
+         return;
+     }
+ 

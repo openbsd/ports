@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/04/24 12:09:19 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/12/08 19:13:31 zhuk Exp $
 @conflict kdegames-<4.10
 @bin bin/klickety
 share/applications/kde4/klickety.desktop
@@ -31,7 +31,6 @@ share/doc/HTML/en/klickety/index.cache.bz2
 share/doc/HTML/en/klickety/index.docbook
 share/doc/HTML/en/klickety/ksamemode.png
 share/doc/HTML/en/klickety/numbered.png
-share/doc/HTML/en/klickety/shortcuts.png
 share/icons/hicolor/128x128/apps/klickety.png
 share/icons/hicolor/128x128/apps/ksame.png
 share/icons/hicolor/16x16/apps/klickety.png

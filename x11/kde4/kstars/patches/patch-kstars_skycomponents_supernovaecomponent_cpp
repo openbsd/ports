@@ -1,12 +1,12 @@
-$OpenBSD: patch-kstars_skycomponents_supernovaecomponent_cpp,v 1.1.1.1 2013/04/24 12:46:13 zhuk Exp $
---- kstars/skycomponents/supernovaecomponent.cpp.orig	Sun Apr  7 01:19:57 2013
-+++ kstars/skycomponents/supernovaecomponent.cpp	Sun Apr  7 01:21:26 2013
-@@ -217,7 +217,7 @@ void SupernovaeComponent::updateDataFile()
-     KProcess *parser=new KProcess;
-     QString filename= KStandardDirs::locate("appdata","scripts/supernova_updates_parser.py") ;
+$OpenBSD: patch-kstars_skycomponents_supernovaecomponent_cpp,v 1.2 2013/12/08 19:13:31 zhuk Exp $
+--- kstars/skycomponents/supernovaecomponent.cpp.orig	Fri Nov  1 19:48:13 2013
++++ kstars/skycomponents/supernovaecomponent.cpp	Fri Nov  8 21:33:06 2013
+@@ -230,7 +230,7 @@ void SupernovaeComponent::slotTriggerDataFileUpdate()
      kDebug()<<filename;
--    int execstatus=parser->execute("python",QStringList(filename));
-+    int execstatus=parser->execute("${MODPY_BIN}",QStringList(filename));
-     if ( execstatus!=0 ) {
-         QString errmsg;
-         switch (execstatus) {
+     m_Parser = new QProcess;
+     connect( m_Parser, SIGNAL( finished( int, QProcess::ExitStatus ) ), this, SLOT( slotDataFileUpdateFinished( int, QProcess::ExitStatus ) ) );
+-    m_Parser->start("python2", QStringList( filename ));
++    m_Parser->start("${MODPY_BIN}", QStringList( filename ));
+ }
+ 
+ void SupernovaeComponent::slotDataFileUpdateFinished( int exitCode, QProcess::ExitStatus exitStatus )

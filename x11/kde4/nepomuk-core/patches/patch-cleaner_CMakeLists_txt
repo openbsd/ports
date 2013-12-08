@@ -1,0 +1,27 @@
+$OpenBSD: patch-cleaner_CMakeLists_txt,v 1.1 2013/12/08 19:13:33 zhuk Exp $
+Fix linking.
+--- cleaner/CMakeLists.txt.orig	Tue Nov  5 18:47:14 2013
++++ cleaner/CMakeLists.txt	Tue Nov  5 18:47:48 2013
+@@ -10,9 +10,9 @@ set_target_properties(nepomukcleaner PROPERTIES
+ )
+ 
+ target_link_libraries(nepomukcleaner
++  nepomukcore
+   ${KDE4_KDECORE_LIBS}
+   ${SOPRANO_LIBRARIES}
+-  nepomukcore
+   )
+ 
+ set( cleaner_SRCS
+@@ -29,10 +29,10 @@ SET_TARGET_PROPERTIES(nepomukcleaner-bin
+ 
+ target_link_libraries( nepomukcleaner-bin
+   nepomukcleaner
++  nepomukcore
+   ${KDE4_KDEUI_LIBS}
+   ${KDE4_KIO_LIBS}
+   ${SOPRANO_LIBRARIES}
+-  nepomukcore
+   )
+ 
+ install(TARGETS nepomukcleaner
