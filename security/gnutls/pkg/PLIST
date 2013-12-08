@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2013/11/03 00:31:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.32 2013/12/08 08:31:45 ajacoutot Exp $
 @bin bin/certtool
 @bin bin/danetool
 @bin bin/gnutls-cli
@@ -80,6 +80,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_certificate_activation_time_peers.3
 @man man/man3/gnutls_certificate_allocate_credentials.3
 @man man/man3/gnutls_certificate_client_get_request_status.3
+@man man/man3/gnutls_certificate_client_set_retrieve_function.3
 @man man/man3/gnutls_certificate_expiration_time_peers.3
 @man man/man3/gnutls_certificate_free_ca_names.3
 @man man/man3/gnutls_certificate_free_cas.3
@@ -93,6 +94,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_certificate_get_peers_subkey_id.3
 @man man/man3/gnutls_certificate_send_x509_rdn_sequence.3
 @man man/man3/gnutls_certificate_server_set_request.3
+@man man/man3/gnutls_certificate_server_set_retrieve_function.3
 @man man/man3/gnutls_certificate_set_dh_params.3
 @man man/man3/gnutls_certificate_set_key.3
 @man man/man3/gnutls_certificate_set_ocsp_status_request_file.3
@@ -353,6 +355,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_openpgp_privkey_get_revoked_status.3
 @man man/man3/gnutls_openpgp_privkey_get_subkey_count.3
 @man man/man3/gnutls_openpgp_privkey_get_subkey_creation_time.3
+@man man/man3/gnutls_openpgp_privkey_get_subkey_expiration_time.3
 @man man/man3/gnutls_openpgp_privkey_get_subkey_fingerprint.3
 @man man/man3/gnutls_openpgp_privkey_get_subkey_id.3
 @man man/man3/gnutls_openpgp_privkey_get_subkey_idx.3
@@ -389,10 +392,12 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_pkcs11_deinit.3
 @man man/man3/gnutls_pkcs11_delete_url.3
 @man man/man3/gnutls_pkcs11_get_pin_function.3
+@man man/man3/gnutls_pkcs11_get_raw_issuer.3
 @man man/man3/gnutls_pkcs11_init.3
 @man man/man3/gnutls_pkcs11_obj_deinit.3
 @man man/man3/gnutls_pkcs11_obj_export.3
 @man man/man3/gnutls_pkcs11_obj_export2.3
+@man man/man3/gnutls_pkcs11_obj_export3.3
 @man man/man3/gnutls_pkcs11_obj_export_url.3
 @man man/man3/gnutls_pkcs11_obj_get_info.3
 @man man/man3/gnutls_pkcs11_obj_get_type.3
@@ -912,6 +917,18 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_x509_trust_list_remove_trust_mem.3
 @man man/man3/gnutls_x509_trust_list_verify_crt.3
 @man man/man3/gnutls_x509_trust_list_verify_named_crt.3
+@man man/man3/xssl_client_init.3
+@man man/man3/xssl_cred_deinit.3
+@man man/man3/xssl_cred_init.3
+@man man/man3/xssl_deinit.3
+@man man/man3/xssl_flush.3
+@man man/man3/xssl_get_session.3
+@man man/man3/xssl_getdelim.3
+@man man/man3/xssl_printf.3
+@man man/man3/xssl_read.3
+@man man/man3/xssl_server_init.3
+@man man/man3/xssl_sinit.3
+@man man/man3/xssl_write.3
 share/doc/gnutls/
 share/doc/gnutls/README
 share/examples/gnutls/
