@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.102 2013/12/08 12:03:14 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.103 2013/12/08 12:33:46 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -382,7 +382,7 @@ sub filter_obsolete
 		my $stem = OpenBSD::PackageName::splitstem($pkgname);
 		my $reason = $obsolete_reason->{$stem};
 		if (defined $reason) {
-			$state->say("Obsolete package: #1 (#2)", $stem, 
+			$state->say("Obsolete package: #1 (#2)", $pkgname, 
 			    $msg[$reason]);
 		} else {
 			push(@$list, $pkgname);
