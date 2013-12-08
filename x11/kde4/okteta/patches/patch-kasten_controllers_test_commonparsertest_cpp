@@ -1,0 +1,22 @@
+$OpenBSD: patch-kasten_controllers_test_commonparsertest_cpp,v 1.1.1.1 2013/12/08 18:17:49 zhuk Exp $
+Unbreak compilation.
+--- kasten/controllers/test/commonparsertest.cpp.orig	Sat Nov  9 01:44:39 2013
++++ kasten/controllers/test/commonparsertest.cpp	Sat Nov  9 01:45:04 2013
+@@ -173,7 +173,7 @@ void CommonParserTest::testIntFromScriptValue_data()
+     QTest::newRow("min string") << QScriptValue(QLatin1String("-2147483648")) << true << minInt;
+     QTest::newRow("min hex string") << QScriptValue(QLatin1String("-0x80000000")) << true << minInt;
+     QTest::newRow("min-1") << QScriptValue(double(minInt) - 1) << false;
+-    QTest::newRow("large number") << QScriptValue(double(0x123456789a)) << false;
++    QTest::newRow("large number") << QScriptValue(double(0x123456789aLL)) << false;
+ 
+ }
+ 
+@@ -230,7 +230,7 @@ void CommonParserTest::testUIntFromScriptValue_data()
+     QTest::newRow("max+1") << QScriptValue(double(maxInt) + 1) << false;
+     QTest::newRow("max+1 string") << QScriptValue(QLatin1String("4294967296")) << false;
+     QTest::newRow("max+1 hex string") << QScriptValue(QLatin1String("0x100000000")) << false;
+-    QTest::newRow("large number") << QScriptValue(double(0x123456789a)) << false;
++    QTest::newRow("large number") << QScriptValue(double(0x123456789aLL)) << false;
+ }
+ 
+ void CommonParserTest::testUIntFromScriptValue()
