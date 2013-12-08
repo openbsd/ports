@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/11/25 00:23:49 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/12/08 21:23:40 bcallah Exp $
 @bin bin/s7
 @bin bin/s7c
 lib/seed7/
@@ -95,6 +95,7 @@ lib/seed7/lib/pixmap_file.s7i
 lib/seed7/lib/pixmapfont.s7i
 lib/seed7/lib/pkcs1.s7i
 lib/seed7/lib/poll.s7i
+lib/seed7/lib/process.s7i
 lib/seed7/lib/progs.s7i
 lib/seed7/lib/propertyfile.s7i
 lib/seed7/lib/rational.s7i
