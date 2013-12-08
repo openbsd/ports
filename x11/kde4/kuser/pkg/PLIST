@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/08 18:14:44 zhuk Exp $
+@conflict kdeadmin-<4.11
+@bin bin/kuser
+share/applications/kde4/kuser.desktop
+share/apps/kuser/
+share/apps/kuser/icons/
+share/apps/kuser/icons/hicolor/
+share/apps/kuser/icons/hicolor/22x22/
+share/apps/kuser/icons/hicolor/22x22/actions/
+share/apps/kuser/icons/hicolor/22x22/actions/user-group-delete.png
+share/apps/kuser/icons/hicolor/22x22/actions/user-group-properties.png
+share/apps/kuser/kuserui.rc
+share/apps/kuser/pics/
+share/apps/kuser/pics/group.png
+share/apps/kuser/pics/user.png
+share/config.kcfg/kuser.kcfg
+share/doc/HTML/en/kuser/
+share/doc/HTML/en/kuser/common
+share/doc/HTML/en/kuser/index.cache.bz2
+share/doc/HTML/en/kuser/index.docbook
+share/doc/HTML/en/kuser/kuser.png
+share/icons/hicolor/128x128/apps/kuser.png
+share/icons/hicolor/16x16/apps/kuser.png
+share/icons/hicolor/22x22/apps/kuser.png
+share/icons/hicolor/32x32/apps/kuser.png
+share/icons/hicolor/48x48/apps/kuser.png
+share/icons/hicolor/64x64/apps/kuser.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
