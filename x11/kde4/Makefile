@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2013/12/08 19:13:29 zhuk Exp $
+# $OpenBSD: Makefile,v 1.35 2013/12/08 21:16:59 zhuk Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz
@@ -240,7 +240,7 @@ SUBDIR += kppp
 SUBDIR += krdc
 SUBDIR += krfb
 SUBDIR += network-filesharing
-SUBDIR += network-strigi-analyzer
+SUBDIR += network-strigi-analyzers
 
 # former kdesdk
 SUBDIR += cervisia
