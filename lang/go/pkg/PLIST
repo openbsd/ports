@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/12/02 15:35:49 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/12/08 15:09:15 jsing Exp $
 %%amd64%%
 %%i386%%
 @bin bin/go
@@ -37,6 +37,7 @@ go/doc/articles/wiki/test_Test.txt.good
 go/doc/articles/wiki/test_edit.good
 go/doc/articles/wiki/test_view.good
 go/doc/articles/wiki/view.html
+go/doc/asm.html
 go/doc/cmd.html
 go/doc/code.html
 go/doc/codewalk/
@@ -301,6 +302,7 @@ go/misc/cgo/testasan/main.go
 go/misc/cgo/testcdefs/
 go/misc/cgo/testcdefs/cdefstest.c
 go/misc/cgo/testcdefs/cdefstest.go
+go/misc/cgo/testcdefs/main.c
 go/misc/cgo/testcdefs/main.go
 go/misc/cgo/testcdefs/test.bash
 go/misc/cgo/testso/
