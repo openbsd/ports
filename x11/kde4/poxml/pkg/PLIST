@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/08 18:19:38 zhuk Exp $
+@conflict kdesdk-<4.11
+@bin bin/split2po
+@bin bin/xml2pot
+@man man/man1/po2xml.1
+@man man/man1/split2po.1
+@man man/man1/swappo.1
+@man man/man1/xml2pot.1

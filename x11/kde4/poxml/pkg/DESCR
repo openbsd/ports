@@ -1,0 +1,9 @@
+split2po is a command-line tool that takes the two given DocBook
+XML files and produces a gettext message file (PO-file) that
+represents the changes between them.
+
+xml2pot is a command-line tool that produces a gettext message
+template file from the DocBook XML file original-XML.
+
+Some utilities from original package were not ported due
+to lack of C runtime for Antlr 2 in our ports.
