@@ -1,0 +1,26 @@
+$OpenBSD: patch-base_runtime_mach-dep_signal-sysdep_h,v 1.1 2013/12/08 22:24:01 jasper Exp $
+
+Add support for OpenBSD/powerpc.
+
+--- base/runtime/mach-dep/signal-sysdep.h.orig	Sun Dec  8 15:10:20 2013
++++ base/runtime/mach-dep/signal-sysdep.h	Sun Dec  8 21:15:48 2013
+@@ -331,6 +331,19 @@ extern void SetFSR();
+ #    define SIG_ResetFPE(scp)           { (scp)->regs->gpr[PT_FPSCR] = 0x0; }
+      typedef void SigReturn_t;
+ 
++#  elif defined(OPSYS_OPENBSD)
++   /** PPC, OpenBSD **/
++
++#   define SIG_FAULT1		SIGTRAP
++#   define INT_DIVZERO(s, c)	((s) == SIGTRAP)
++#   define INT_OVFLW(s, c)	((s) == SIGTRAP)
++#    define SIG_GetPC(scp)              ((scp)->sc_frame.srr0)
++#    define SIG_SetPC(scp, addr)        { (scp)->sc_frame.srr0 = (long)(addr); }
++#    define SIG_ZeroLimitPtr(scp)       { ((scp)->sc_frame.fixreg[15] = 0); } /* limitptr = 15 (see src/runtime/mach-dep/PPC.prim.asm) */
++#    define SIG_GetCode(info,scp)       (info)
++
++    typedef void SigReturn_t;
++
+ #  endif /* HOST_RS6000/HOST_PPC */
+ 
+ #elif defined(HOST_HPPA)

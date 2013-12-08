@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2013/12/08 13:15:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2013/12/08 22:24:01 jasper Exp $
 
-ONLY_FOR_ARCHS=i386
+ONLY_FOR_ARCHS=i386 powerpc
 
 COMMENT=	New Jersey Standard ML
 
@@ -20,7 +20,16 @@ WANTLIB=		c m
 MASTER_SITES= 	http://smlnj.cs.uchicago.edu/dist/working/$V/
 DIST_SUBDIR=	smlnj-$V
 
+.if ${MACHINE_ARCH} == "i386"
+_SMLNJ_ARCH=	x86
+.elif ${MACHINE_ARCH} == "powerpc"
+_SMLNJ_ARCH=	ppc
+.endif
+
+SUBST_VARS+=	_SMLNJ_ARCH
+
 DISTFILES=	MLRISC.tgz \
+		boot.ppc-unix.tgz \
 		boot.x86-unix.tgz \
 		ckit.tgz cm.tgz cml.tgz \
 		compiler.tgz config.tgz \

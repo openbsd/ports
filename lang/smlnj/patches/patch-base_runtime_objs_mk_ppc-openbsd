@@ -1,0 +1,33 @@
+$OpenBSD: patch-base_runtime_objs_mk_ppc-openbsd,v 1.1 2013/12/08 22:24:01 jasper Exp $
+
+Add support for OpenBSD/powerpc.
+
+--- base/runtime/objs/mk.ppc-openbsd.orig	Sun Dec  8 15:06:37 2013
++++ base/runtime/objs/mk.ppc-openbsd	Sun Dec  8 21:32:46 2013
+@@ -0,0 +1,26 @@
++# mk.ppc-openbsd
++#
++# makefile for OpenBSD (version 4.x), which is a BSD 4.4 clone.
++#
++
++SHELL =		/bin/sh
++
++MAKE =		gmake
++
++ARFLAGS =	Trcv
++CC ?=		gcc -ansi
++CFLAGS ?=	-O2
++CPP =		gcc -x assembler-with-cpp -E -P
++#CPP =		/usr/bin/cpp -P
++
++XOBJS =
++XLIBS =		../c-libs/dl/libunix-dynload.a
++LD_LIBS =
++BASE_DEFS =	
++DEFS =          $(XDEFS) $(BASE_DEFS) -DHOST_PPC -DTARGET_PPC -DOPSYS_UNIX -DOPSYS_OPENBSD -DDLOPEN
++TARGET =	PPC
++VERSION =	v-ppc-openbsd
++RUNTIME =	run.ppc-openbsd
++
++all:
++	($(MAKE) RUNTIME="$(RUNTIME)" VERSION="$(VERSION)" MAKE="$(MAKE)" CC="$(CC)" CFLAGS="$(CFLAGS)" CPP="$(CPP)" TARGET=$(TARGET) DEFS="$(DEFS)" XOBJS="$(XOBJS)" XLIBS="$(XLIBS)" LD_LIBS="$(LD_LIBS)" $(RUNTIME))

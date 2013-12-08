@@ -1,4 +1,5 @@
 SHA256 (smlnj-110.76/MLRISC.tgz) = nZRN6k6AqO8swB5+Fq5yyygPLk3A1mSMm8JxVsz8wQI=
+SHA256 (smlnj-110.76/boot.ppc-unix.tgz) = g5BTMpEPDwmTmWdtx39CLsdKqw5lFDfGjw3/IGk6rbM=
 SHA256 (smlnj-110.76/boot.x86-unix.tgz) = 3RZWn7aZHWc+Ztrlf16bNy1aTjBfkql1YALkuylsm2E=
 SHA256 (smlnj-110.76/ckit.tgz) = xFNObn+RDr7jFGzI7SFKHVouqQr715wikM79x4TuDbs=
 SHA256 (smlnj-110.76/cm.tgz) = U56BmXZKgD9Ibb9cDss/o7InemtSzLvzULvcwjG+wZM=
@@ -19,6 +20,7 @@ SHA256 (smlnj-110.76/smlnj-lib.tgz) = gemUoH18iXmyjEkRJy3jw37sZI5YwDqdwey5u7rcod
 SHA256 (smlnj-110.76/system.tgz) = j2oUPbIqnQJeKCCJnJzMvw5mxnmpqmjD3NG+xoAD2jc=
 SHA256 (smlnj-110.76/trace-debug-profile.tgz) = N2nh0lHQTJW0wbdZ878hZEvLMTVATQNG6P80VTrnBN8=
 SIZE (smlnj-110.76/MLRISC.tgz) = 1434516
+SIZE (smlnj-110.76/boot.ppc-unix.tgz) = 5816618
 SIZE (smlnj-110.76/boot.x86-unix.tgz) = 5890950
 SIZE (smlnj-110.76/ckit.tgz) = 194486
 SIZE (smlnj-110.76/cm.tgz) = 200425

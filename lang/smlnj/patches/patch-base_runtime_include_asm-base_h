@@ -1,0 +1,24 @@
+$OpenBSD: patch-base_runtime_include_asm-base_h,v 1.1 2013/12/08 22:24:01 jasper Exp $
+
+Add support for OpenBSD/powerpc.
+
+--- base/runtime/include/asm-base.h.orig	Sun Dec  8 20:52:21 2013
++++ base/runtime/include/asm-base.h	Sun Dec  8 21:13:52 2013
+@@ -126,6 +126,17 @@
+ #    define DOUBLE(V)	.double V
+ #    define LABEL(ID)	ID:
+ #    define __SC__      @
++
++#  elif (defined(OPSYS_OPENBSD) && defined(TARGET_PPC))
++#    define CFUNSYM(ID) CSYM(ID)
++#    define CGLOBAL(ID)  .globl  CSYM(ID)
++#    define TEXT        .text
++#    define DATA        .data
++#    define RO_DATA     .data
++#    define ALIGN4      .align 2
++#    define ALIGN8	.align 3
++#    define DOUBLE(V)	.double V
++#    define LABEL(ID)	ID:
+ #  endif
+ 
+ #  define CENTRY(ID)		\

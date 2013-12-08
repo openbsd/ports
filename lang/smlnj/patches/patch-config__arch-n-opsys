@@ -1,9 +1,23 @@
-$OpenBSD: patch-config__arch-n-opsys,v 1.4 2013/02/15 12:06:11 sthen Exp $
---- config/_arch-n-opsys.orig	Sat Jul 28 07:32:38 2012
-+++ config/_arch-n-opsys	Tue Feb 12 23:18:58 2013
+$OpenBSD: patch-config__arch-n-opsys,v 1.5 2013/12/08 22:24:01 jasper Exp $
+
+Add support for OpenBSD/powerpc.
+
+--- config/_arch-n-opsys.orig	Sun Dec  8 15:00:53 2013
++++ config/_arch-n-opsys	Sun Dec  8 15:05:32 2013
 @@ -1,4 +1,5 @@
  #!@SHELL@
 +[ -z "$SMLNJ_HOME" ] && SMLNJ_HOME=${TRUEPREFIX}/smlnj
  #
  # .arch-n-opsys  -- get architecture and system info
  #
+@@ -104,8 +105,9 @@ case `uname -s` in
+   OpenBSD)
+     OPSYS=openbsd
+     HEAP_OPSYS=bsd
+-    case `uname -m` in
++    case `uname -p` in
+       *86) ARCH=x86;;
++      powerpc) ARCH=ppc;;
+       *) exit 1;;
+     esac
+     ;;
