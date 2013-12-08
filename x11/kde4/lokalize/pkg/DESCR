@@ -1,0 +1,6 @@
+Lokalize is a computer-aided translation system that focuses on
+productivity and quality assurance.  It has components usually
+included in CAT tools like translation memory, glossary, and also
+a unique translation merging (synchronization) capability.  It is
+targeted for software translation and also integrates external
+conversion tools for freelance office document translation.
