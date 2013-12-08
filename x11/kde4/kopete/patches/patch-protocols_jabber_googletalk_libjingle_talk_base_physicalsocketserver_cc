@@ -1,0 +1,22 @@
+$OpenBSD: patch-protocols_jabber_googletalk_libjingle_talk_base_physicalsocketserver_cc,v 1.1.1.1 2013/12/08 18:39:44 zhuk Exp $
+Fix build.
+--- protocols/jabber/googletalk/libjingle/talk/base/physicalsocketserver.cc.orig	Tue Dec  3 21:41:11 2013
++++ protocols/jabber/googletalk/libjingle/talk/base/physicalsocketserver.cc	Tue Dec  3 21:41:59 2013
+@@ -251,7 +251,7 @@ class PhysicalSocket : public AsyncSocket, public sigs
+     socklen_t optlen = sizeof(*value);
+     int ret = ::getsockopt(s_, slevel, sopt, (SockOptArg)value, &optlen);
+     if (ret != -1 && opt == OPT_DONTFRAGMENT) {
+-#ifdef LINUX
++#if defined(LINUX) && !defined(OPENBSD)
+       *value = (*value != IP_PMTUDISC_DONT) ? 1 : 0;
+ #endif
+     }
+@@ -264,7 +264,7 @@ class PhysicalSocket : public AsyncSocket, public sigs
+     if (TranslateOption(opt, &slevel, &sopt) == -1)
+       return -1;
+     if (opt == OPT_DONTFRAGMENT) {
+-#ifdef LINUX
++#if defined(LINUX) && !defined(OPENBSD)
+       value = (value) ? IP_PMTUDISC_DO : IP_PMTUDISC_DONT;
+ #endif
+     }

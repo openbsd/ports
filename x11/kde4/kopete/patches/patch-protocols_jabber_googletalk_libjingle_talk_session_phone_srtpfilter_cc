@@ -1,0 +1,15 @@
+$OpenBSD: patch-protocols_jabber_googletalk_libjingle_talk_session_phone_srtpfilter_cc,v 1.1.1.1 2013/12/08 18:39:44 zhuk Exp $
+Fix build, those structure members are absent.
+--- protocols/jabber/googletalk/libjingle/talk/session/phone/srtpfilter.cc.orig	Tue Dec  3 21:27:46 2013
++++ protocols/jabber/googletalk/libjingle/talk/session/phone/srtpfilter.cc	Tue Dec  3 21:27:56 2013
+@@ -524,8 +524,10 @@ bool SrtpSession::SetKey(int type, const std::string& 
+   policy.ssrc.value = 0;
+   policy.key = const_cast<uint8*>(key);
+   // TODO parse window size from WSH session-param
++#if 0
+   policy.window_size = 1024;
+   policy.allow_repeat_tx = 1;
++#endif
+   policy.next = NULL;
+ 
+   int err = srtp_create(&session_, &policy);

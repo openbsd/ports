@@ -1,0 +1,85 @@
+$OpenBSD: patch-protocols_jabber_googletalk_libjingle_talk_base_nethelpers_cc,v 1.1.1.1 2013/12/08 18:39:44 zhuk Exp $
+Rewrite OpenBSD support using getaddrinfo() and "proper" OS check.
+--- protocols/jabber/googletalk/libjingle/talk/base/nethelpers.cc.orig	Tue Dec  3 22:30:39 2013
++++ protocols/jabber/googletalk/libjingle/talk/base/nethelpers.cc	Thu Dec  5 01:21:12 2013
+@@ -37,6 +37,13 @@ static const size_t kInitHostentLen = 1024;
+ static const size_t kMaxHostentLen = kInitHostentLen * 8;
+ #endif
+ 
++#ifdef OPENBSD
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
++#include <netdb.h>
++#endif
++
+ // AsyncResolver
+ 
+ AsyncResolver::AsyncResolver() : result_(NULL), error_(0) {
+@@ -57,7 +64,7 @@ void AsyncResolver::OnWorkDone() {
+   }
+ }
+ 
+-#if defined(WIN32) || defined(ANDROID) || defined(OPENBSD)
++#if defined(WIN32) || defined(ANDROID)
+ static hostent* DeepCopyHostent(const hostent* ent) {
+   // Get the total number of bytes we need to copy, and allocate our buffer.
+   int num_aliases = 0, num_addrs = 0;
+@@ -127,6 +134,32 @@ hostent* SafeGetHostByName(const char* hostname, int* 
+   }
+   result = DeepCopyHostent(ent);
+   *herrno = 0;
++#elif defined(OPENBSD)
++  struct addrinfo hints, *res, *res0;
++  int i, count;
++  char *buf;
++  
++  memset(&hints, 0, sizeof(hints));
++  hints.ai_family = PF_INET;    // XXX this class does support IPv4 only anyway
++  // hints.ai_flags = AI_CANONNAME;
++  *herrno = getaddrinfo(hostname, NULL, &hints, &res0);
++  if (*herrno)
++    return NULL;
++  result = new hostent;
++  if (res0->ai_canonname != NULL)
++    result->h_name = strdup(res0->ai_canonname);    // No memory? - not a big deal here
++  for (res = res0, count = 0; res; res = res->ai_next)
++    count++;
++  buf = new char[count * 4];    // Here and below: 4 for PF_INET address size
++  result->h_addrtype = PF_INET;
++  result->h_length = 4;
++  result->h_addr_list = new char*[count + 1];
++  for (res = res0, i = 0; res; res = res->ai_next) {
++    result->h_addr_list[i] = buf + (i * 4);
++    memcpy(result->h_addr_list[i], &((const struct sockaddr_in*)res->ai_addr)->sin_addr.s_addr, 4);
++  }
++  freeaddrinfo(res0);
++  *herrno = 0;
+ #elif defined(LINUX) || defined(ANDROID)
+   // gethostbyname() is not thread safe, so we need to call gethostbyname_r()
+   // which is a reentrant version of gethostbyname().
+@@ -168,13 +201,6 @@ hostent* SafeGetHostByName(const char* hostname, int* 
+ #elif defined(OSX) || defined(IOS) || defined(FREEBSD)
+   // Mac OS returns an object with everything allocated.
+   result = getipnodebyname(hostname, AF_INET, AI_DEFAULT, herrno);
+-#elif defined(OPENBSD)
+-  hostent* ent = gethostbyname(hostname);
+-  if (!ent) {
+-    return NULL;
+-  }
+-  result = DeepCopyHostent(ent);
+-  *herrno = 0;
+ #else
+ #error "I don't know how to do gethostbyname safely on your system."
+ #endif
+@@ -186,6 +212,10 @@ hostent* SafeGetHostByName(const char* hostname, int* 
+ void FreeHostEnt(hostent* host) {
+ #if defined(OSX) || defined(IOS) || defined(FREEBSD)
+   freehostent(host);
++#elif defined(OPENBSD)
++  delete host->h_addr_list[0];
++  delete host->h_addr_list;
++  delete host;
+ #elif defined(WIN32) || defined(POSIX)
+   free(host);
+ #else

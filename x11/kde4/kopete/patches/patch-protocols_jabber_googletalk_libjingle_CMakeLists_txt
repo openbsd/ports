@@ -1,0 +1,102 @@
+$OpenBSD: patch-protocols_jabber_googletalk_libjingle_CMakeLists_txt,v 1.1.1.1 2013/12/08 18:39:44 zhuk Exp $
+Rework oRTP library detection, make libjingle compile and work on OpenBSD.
+--- protocols/jabber/googletalk/libjingle/CMakeLists.txt.orig	Wed Aug 28 21:16:17 2013
++++ protocols/jabber/googletalk/libjingle/CMakeLists.txt	Thu Dec  5 19:18:50 2013
+@@ -1,5 +1,7 @@
+ # Copyright (c) 2009-2013 Pali Rohár <pali.rohar@gmail.com>
+ 
++include(CheckCXXCompilerFlag)
++
+ ########### next target ###############
+ 
+ add_definitions (
+@@ -28,9 +30,16 @@ if ( NOT WIN32 )
+ 	endif ( NOT APPLE )
+ endif ( NOT WIN32 )
+ 
++add_definitions (-DOPENBSD -DBSD)
++
+ set ( CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-undef -Wno-unused-parameter" )
+-set ( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-undef -Wno-unused-parameter -Wno-non-virtual-dtor -Wno-delete-non-virtual-dtor" )
++set ( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-undef -Wno-unused-parameter -Wno-non-virtual-dtor" )
+ 
++check_cxx_compiler_flag(-Wno-delete-non-virtual-dtor W_NO_DELETE_NON_VIRTUAL_DTOR_SUPPORTED)
++if ( W_NO_DELETE_NON_VIRTUAL_DTOR_SUPPORTED )
++	set ( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-delete-non-virtual-dtor" )
++endif ()
++
+ ########### next target ###############
+ 
+ include_directories (
+@@ -38,7 +47,7 @@ include_directories (
+ 	${CMAKE_CURRENT_SOURCE_DIR}/talk/third_party/libudev
+ 	${EXPAT_INCLUDE_DIR}
+ 	${MEDIASTREAMER_INCLUDE_DIR}
+-	${LIBORTP_INCLUDE_DIR}
++	${LIBORTP_INCLUDE_DIRS}
+ 	${SRTP_INCLUDE_DIR}
+ 	${JSONCPP_INCLUDE_DIR}
+ )
+@@ -52,10 +61,6 @@ set ( call_SRCS
+ 	talk/base/libdbusglibsymboltable.cc
+ 	talk/session/phone/libudevsymboltable.cc
+ 	talk/session/phone/linuxdevicemanager.cc
+-	talk/session/phone/v4llookup.cc
+-	talk/sound/alsasoundsystem.cc
+-	talk/sound/alsasymboltable.cc
+-	talk/sound/linuxsoundsystem.cc
+ 	talk/sound/pulseaudiosoundsystem.cc
+ 	talk/sound/pulseaudiosymboltable.cc
+ 	talk/base/unixfilesystem.cc
+@@ -201,6 +206,7 @@ set ( call_SRCS
+ 	talk/session/phone/videocapturer.cc
+ 	talk/session/phone/videocommon.cc
+ 	talk/session/phone/videoframe.cc
++	talk/sound/linuxsoundsystem.cc
+ 	talk/sound/nullsoundsystem.cc
+ 	talk/sound/nullsoundsystemfactory.cc
+ 	talk/sound/platformsoundsystem.cc
+@@ -248,23 +254,40 @@ set ( call_SRCS
+ 	talk/examples/login/xmppsocket.cc
+ )
+ 
++find_package( LibV4L2 )
++if ( LIBV4L2_FOUND )
++	set( call_SRCS ${call_SRCS}
++		talk/session/phone/v4llookup.cc
++	)
++endif ()
++
++find_package( ALSA )
++if ( ALSA_FOUND )
++	set ( call_SRCS ${call_SRCS}
++		talk/sound/alsasoundsystem.cc
++		talk/sound/alsasymboltable.cc
++	)
++endif ()
++
+ set ( call_LIBS
+ 	${SRTP_LIBRARY}
+ 	${JSONCPP_LIBRARY}
+ 	${EXPAT_LIBRARY}
+ 	${MEDIASTREAMER_LIBRARIES}
+-	${LIBORTP_LIBRARY}
++	${LIBORTP_LIBRARIES}
+ 	${CMAKE_DL_LIBS}
+ )
+ 
+ if ( NOT WIN32 )
+ 	#timeutils calls CLOCK_MONOLITHIC stuff, so we need the rt library
+-	FIND_LIBRARY(RT_LIBRARY NAMES rt)
+ 	set ( call_LIBS ${call_LIBS}
+ 		${SSL_LIBRARY}
+ 		${CRYPTO_LIBRARY}
+-		${RT_LIBRARY}
+ 	)
++	FIND_LIBRARY(RT_LIBRARY NAMES rt)
++	if ( RT_LIBRARY )
++		set ( call_LIBS ${call_LIBS} ${RT_LIBRARY} )
++	endif ()
+ endif ( NOT WIN32 )
+ 
+ add_executable ( call ${call_SRCS} )

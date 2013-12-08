@@ -1,0 +1,24 @@
+$OpenBSD: patch-protocols_jabber_googletalk_libjingle_talk_sound_linuxsoundsystem_cc,v 1.1.1.1 2013/12/08 18:39:44 zhuk Exp $
+Quick hack to unbreak build, not all systems have ALSA (surprise!).
+--- protocols/jabber/googletalk/libjingle/talk/sound/linuxsoundsystem.cc.orig	Thu Dec  5 01:54:17 2013
++++ protocols/jabber/googletalk/libjingle/talk/sound/linuxsoundsystem.cc	Thu Dec  5 01:58:26 2013
+@@ -27,7 +27,9 @@
+ 
+ #include "talk/sound/linuxsoundsystem.h"
+ 
++#ifdef __linux__
+ #include "talk/sound/alsasoundsystem.h"
++#endif
+ #include "talk/sound/pulseaudiosoundsystem.h"
+ 
+ namespace cricket {
+@@ -36,7 +38,9 @@ const SoundSystemCreator kLinuxSoundSystemCreators[] =
+ #ifdef HAVE_LIBPULSE
+   &PulseAudioSoundSystem::Create,
+ #endif
++#ifdef __linux__
+   &AlsaSoundSystem::Create,
++#endif
+ };
+ 
+ }  // namespace cricket

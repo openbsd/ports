@@ -1,0 +1,49 @@
+$OpenBSD: patch-protocols_jabber_googletalk_libjingle_talk_session_phone_linuxdevicemanager_cc,v 1.1.1.1 2013/12/08 18:39:44 zhuk Exp $
+Quick hack to make it compile on OpenBSD. No V4L support, sorry.
+--- protocols/jabber/googletalk/libjingle/talk/session/phone/linuxdevicemanager.cc.orig	Thu Dec  5 02:01:35 2013
++++ protocols/jabber/googletalk/libjingle/talk/session/phone/linuxdevicemanager.cc	Thu Dec  5 02:03:59 2013
+@@ -39,7 +39,9 @@
+ #include "talk/base/thread.h"
+ #include "talk/session/phone/libudevsymboltable.h"
+ #include "talk/session/phone/mediacommon.h"
++#ifndef __OpenBSD__
+ #include "talk/session/phone/v4llookup.h"
++#endif
+ #include "talk/sound/platformsoundsystem.h"
+ #include "talk/sound/platformsoundsystemfactory.h"
+ #include "talk/sound/sounddevicelocator.h"
+@@ -146,10 +148,12 @@ static void ScanDeviceDirectory(const std::string& dev
+       std::string filename = directoryIterator->Name();
+       std::string device_name = devdir + filename;
+       if (!directoryIterator->IsDots()) {
++#ifndef __OpenBSD__
+         if (filename.find("video") == 0 &&
+             V4LLookup::IsV4L2Device(device_name)) {
+           devices->push_back(Device(device_name, device_name));
+         }
++#endif
+       }
+     } while (directoryIterator->Next());
+   }
+@@ -241,6 +245,7 @@ static std::string GetVideoDeviceName(MetaType meta,
+   return Trim(device_name);
+ }
+ 
++#ifndef __OpenBSD__
+ static void ScanV4L2Devices(std::vector<Device>* devices) {
+   LOG(LS_INFO) << ("Enumerating V4L2 devices");
+ 
+@@ -287,10 +292,13 @@ static void ScanV4L2Devices(std::vector<Device>* devic
+ 
+   LOG(LS_INFO) << "Total V4L2 devices found : " << devices->size();
+ }
++#endif    // __OpenBSD__
+ 
+ bool LinuxDeviceManager::GetVideoCaptureDevices(std::vector<Device>* devices) {
+   devices->clear();
++#ifndef __OpenBSD__
+   ScanV4L2Devices(devices);
++#endif
+   return FilterDevices(devices, kFilteredVideoDevicesName);
+ }
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-protocols_jabber_libiris_iris_xmpp_xmpp-core_securestream_h,v 1.1.1.1 2013/12/08 18:39:44 zhuk Exp $
+--- protocols/jabber/libiris/src/xmpp/xmpp-core/securestream.h.orig	Wed Jun 23 13:39:50 2010
++++ protocols/jabber/libiris/src/xmpp/xmpp-core/securestream.h	Wed Jun 23 13:39:56 2010
+@@ -21,7 +21,7 @@
+ #ifndef SECURESTREAM_H
+ #define SECURESTREAM_H
+ 
+-#include <qca.h>
++#include <QtCrypto/qca.h>
+ #include "bytestream.h"
+ 
+ #define USE_TLSHANDLER

@@ -1,0 +1,52 @@
+$OpenBSD: patch-protocols_jabber_libiris_iris_jdns_jdns_sys_c,v 1.1.1.1 2013/12/08 18:39:44 zhuk Exp $
+Make this stuff compile and work on OpenBSD.
+Partly from net/psi port.
+--- protocols/jabber/libiris/src/jdns/jdns_sys.c.orig	Wed Aug 28 21:16:17 2013
++++ protocols/jabber/libiris/src/jdns/jdns_sys.c	Sun Dec  8 15:01:22 2013
+@@ -727,7 +727,7 @@ static int my_res_init()
+ /*    specify the platforms that have __res_state_ext */
+ /* #ifdef __res_state_ext */
+ #if defined(JDNS_OS_MAC) || defined(JDNS_OS_FREEBSD) || \
+-    defined(JDNS_OS_NETBSD) || defined (JDNS_OS_SOLARIS)
++    defined(JDNS_OS_NETBSD) || defined(JDNS_OS_OPENBSD) || defined (JDNS_OS_SOLARIS)
+ # define USE_EXTEXT
+ #endif
+ 
+@@ -753,12 +753,18 @@ static jdns_dnsparams_t *dnsparams_get_unixsys()
+ 		return params;
+ 
+ 	/*  nameservers - ipv6 */
++#if defined(JDNS_OS_OPENBSD)
++	for(n = 0; n < MAXNS && n < RESVAR.nscount; ++n)
++#else
+ 	for(n = 0; n < MAXNS && n < RESVAR._u._ext.nscount; ++n)
++#endif
+ 	{
+ 		jdns_address_t *addr;
+ 		struct sockaddr_in6 *sa6;
+ 
+-#ifdef USE_EXTEXT
++#if defined(JDNS_OS_OPENBSD)
++               sa6 = (struct sockaddr_in6 *)(_res_ext.nsaddr_list + n);
++#elif defined(USE_EXTEXT)
+ 		/*  seems _ext.ext can be null in some cases... */
+ 		if(RESVAR._u._ext.ext == NULL)
+ 			break;
+@@ -829,6 +835,9 @@ static jdns_dnsparams_t *dnsparams_get_unix()
+ {
+ 	jdns_dnsparams_t *params;
+ 
++#ifdef JDNS_OS_OPENBSD
++	params = dnsparams_get_unixfiles();
++#else
+ 	/*  prefer system calls over files */
+ 	params = dnsparams_get_unixsys();
+ 	if(params->nameservers->count == 0)
+@@ -836,6 +845,7 @@ static jdns_dnsparams_t *dnsparams_get_unix()
+ 		jdns_dnsparams_delete(params);
+ 		params = dnsparams_get_unixfiles();
+ 	}
++#endif
+ 
+ 	apply_hosts_file(params, "/etc/hosts");
+ 

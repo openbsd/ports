@@ -1,0 +1,17 @@
+$OpenBSD: patch-protocols_jabber_googletalk_libjingle_talk_base_socketaddress_cc,v 1.1.1.1 2013/12/08 18:39:44 zhuk Exp $
+--- protocols/jabber/googletalk/libjingle/talk/base/socketaddress.cc.orig	Tue Dec  3 21:23:10 2013
++++ protocols/jabber/googletalk/libjingle/talk/base/socketaddress.cc	Tue Dec  3 21:36:38 2013
+@@ -30,11 +30,10 @@
+ #ifdef POSIX
+ #include <sys/types.h>
+ #include <sys/socket.h>
++#ifndef OPENBSD
+ #include <netinet/in.h>
+-#if defined(OPENBSD)
+-#include <netinet/in_systm.h>
+-#endif
+ #include <netinet/ip.h>
++#endif
+ #include <arpa/inet.h>
+ #include <netdb.h>
+ #include <unistd.h>

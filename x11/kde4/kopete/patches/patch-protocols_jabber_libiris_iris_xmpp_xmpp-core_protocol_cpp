@@ -1,0 +1,12 @@
+$OpenBSD: patch-protocols_jabber_libiris_iris_xmpp_xmpp-core_protocol_cpp,v 1.1.1.1 2013/12/08 18:39:44 zhuk Exp $
+--- protocols/jabber/libiris/src/xmpp/xmpp-core/protocol.cpp.orig	Wed Jun 23 13:40:33 2010
++++ protocols/jabber/libiris/src/xmpp/xmpp-core/protocol.cpp	Wed Jun 23 13:40:43 2010
+@@ -25,7 +25,7 @@
+ 
+ #include "protocol.h"
+ 
+-#include <qca.h>
++#include <QtCrypto/qca.h>
+ #include <QList>
+ #include <QByteArray>
+ #include <QtCrypto>

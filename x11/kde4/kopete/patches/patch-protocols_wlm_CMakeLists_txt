@@ -1,0 +1,15 @@
+$OpenBSD: patch-protocols_wlm_CMakeLists_txt,v 1.1.1.1 2013/12/08 18:39:44 zhuk Exp $
+Rework oRTP library detection.
+--- protocols/wlm/CMakeLists.txt.orig	Mon Dec  2 17:26:44 2013
++++ protocols/wlm/CMakeLists.txt	Mon Dec  2 17:27:17 2013
+@@ -55,8 +55,8 @@ set(kopete_wlm_link_LIBS
+ )
+ 
+ if(BUILD_WLM_MEDIASTREAMER)
+-    set(kopete_wlm_link_LIBS ${kopete_wlm_link_LIBS} ${MEDIASTREAMER_LIBRARIES} ${LIBORTP_LIBRARY})
+-    set(kopete_wlm_include_DIRS ${kopete_wlm_include_DIRS} ${MEDIASTREAMER_INCLUDE_DIR})
++    set(kopete_wlm_link_LIBS ${kopete_wlm_link_LIBS} ${MEDIASTREAMER_LIBRARIES} ${LIBORTP_LIBRARIES})
++    set(kopete_wlm_include_DIRS ${kopete_wlm_include_DIRS} ${MEDIASTREAMER_INCLUDE_DIR} ${LIBORTP_INCLUDE_DIRS})
+     add_definitions(-DHAVE_MEDIASTREAMER)
+ endif(BUILD_WLM_MEDIASTREAMER)
+ 
