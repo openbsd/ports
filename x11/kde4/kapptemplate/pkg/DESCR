@@ -1,0 +1,5 @@
+KAppTemplate generates KDE templates to help you start easily KDE
+programming.
+
+KAppTemplate offers you a few basic templates projects and also
+picks up KDevelop templates if some are installed on your machine.
