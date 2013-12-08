@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.101 2013/11/14 09:44:34 stu Exp $
+# $OpenBSD: Quirks.pm,v 1.102 2013/12/08 12:03:14 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -330,6 +330,17 @@ my $stem_extensions = {
 	'wcb' =>'tklib',
 };
 
+# reasons for obsolete packages
+my @msg = (
+	"ancient software that doesn't work", #0
+	"web application with no benefit being packaged", #1
+	"no longer maintained and full of security holes", #2
+);
+
+my $obsolete_reason = {
+	'parse' => 0,
+};
+
 # ->is_base_system($handle, $state):
 #	checks whether an existing handle is now part of the base system
 #	and thus no longer needed.
@@ -358,6 +369,27 @@ sub is_base_system
 		return 0;
 	}
 }
+
+# ->filter_obsolete(@list)
+# explicitly mark packages as no longer there
+
+sub filter_obsolete
+{
+	my ($self, $list, $state) = @_;
+	my @in = @$list;
+	@$list = ();
+	for my $pkgname (@in) {
+		my $stem = OpenBSD::PackageName::splitstem($pkgname);
+		my $reason = $obsolete_reason->{$stem};
+		if (defined $reason) {
+			$state->say("Obsolete package: #1 (#2)", $stem, 
+			    $msg[$reason]);
+		} else {
+			push(@$list, $pkgname);
+	    	}
+	}
+}
+
 
 # ->tweak_search(\@s, $handle, $state):
 #	tweaks the normal search for a given handle, in case (for instance)
