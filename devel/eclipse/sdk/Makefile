@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2013/12/07 12:03:27 landry Exp $
+# $OpenBSD: Makefile,v 1.75 2013/12/08 08:01:00 landry Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
@@ -48,8 +48,7 @@ EXTRACT_SUFX=		.zip
 MODULES=		java devel/gettext
 MODJAVA_VER=		1.6+
 
-BUILD_DEPENDS=		devel/xulrunner/1.9,-devel \
-			devel/apache-ant>=1.6.1
+BUILD_DEPENDS=		devel/apache-ant>=1.6.1
 
 USE_GMAKE=		Yes
 
