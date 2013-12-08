@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.13 2013/12/06 14:29:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.14 2013/12/08 12:21:09 espie Exp $
+@conflict slib-guile-*
+@pkgpath devel/slib-guile
 %%SHARED%%
 @bin bin/guile
 bin/guile-config
@@ -306,4 +308,3 @@ share/guile/slib
 @comment force the creation of slibcat
 @exec guile -c "(use-modules (ice-9 slib)) (require 'printf)"
 @unexec rm %D/share/guile/${V}/slibcat
-
