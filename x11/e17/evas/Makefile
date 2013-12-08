@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2013/12/06 13:16:45 dlg Exp $
+# $OpenBSD: Makefile,v 1.40 2013/12/08 21:20:19 naddy Exp $
 
 COMMENT =		canvas API for X
 
@@ -22,8 +22,6 @@ MODULES=		devel/gettext \
 			x11/e17
 
 MODE17_PURGE_LA =	lib/evas/modules
-
-VMEM_WARNING =		Yes
 
 LIB_DEPENDS =		x11/e17/eet>=1.7.9v2 \
 			graphics/giflib \
