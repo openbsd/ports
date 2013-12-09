@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2013/11/10 16:10:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2013/12/09 08:56:54 ajacoutot Exp $
 
 EVO_VERSION=		3.10
 SUBST_VARS +=		EVO_VERSION
@@ -8,7 +8,7 @@ SHARED_ONLY=		Yes
 COMMENT=		evolution connector for MS Exchange via EWS
 
 GNOME_PROJECT=		evolution-ews
-GNOME_VERSION=		3.10.2
+GNOME_VERSION=		3.10.3
 
 CATEGORIES=		mail
 
@@ -34,12 +34,12 @@ WANTLIB += gstbase-1.0 gstfft-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 gtkhtml-4.0
 WANTLIB += gtkhtml-editor-4.0 harfbuzz harfbuzz-icu heimbase ical
 WANTLIB += icalss icalvcal icudata icui18n icuuc javascriptcoregtk-3.0
-WANTLIB += jpeg krb5 ltdl m mspack nspr4 nss3 nssutil3 ogg p11-kit
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += plc4 plds4 png pthread pthread-stubs roken secret-1
-WANTLIB += smime3 softokn3 soup-2.4 soup-gnome-2.4 sqlite3 ssl3
-WANTLIB += stdc++ vorbis vorbisfile webkitgtk-3.0 webp wind xcb
-WANTLIB += xcb-render xcb-shm xkbfile xml2 xslt z orc-0.4
+WANTLIB += jpeg krb5 ltdl m mspack nspr4 nss3 nssutil3 ogg orc-0.4
+WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs roken
+WANTLIB += secret-1 smime3 softokn3 soup-2.4 soup-gnome-2.4 sqlite3
+WANTLIB += ssl3 stdc++ vorbis vorbisfile webkitgtk-3.0 webp wind
+WANTLIB += xcb xcb-render xcb-shm xkbfile xml2 xslt z
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -49,7 +49,7 @@ MODULES=		devel/gettext \
 BUILD_DEPENDS +=	mail/evolution,-main
 RUN_DEPENDS +=		mail/evolution,-main
 
-LIB_DEPENDS=		archivers/libmspack>=0.4alphav0
+LIB_DEPENDS=		archivers/libmspack
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
