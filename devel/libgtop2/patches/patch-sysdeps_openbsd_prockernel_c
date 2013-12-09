@@ -1,12 +1,16 @@
-$OpenBSD: patch-sysdeps_openbsd_prockernel_c,v 1.8 2013/11/19 07:30:58 robert Exp $
---- sysdeps/openbsd/prockernel.c.orig	Mon Nov 18 20:57:25 2013
-+++ sysdeps/openbsd/prockernel.c	Mon Nov 18 20:57:37 2013
-@@ -79,7 +79,7 @@ glibtop_get_proc_kernel_p (glibtop *server,
+$OpenBSD: patch-sysdeps_openbsd_prockernel_c,v 1.9 2013/12/09 14:26:56 robert Exp $
+--- sysdeps/openbsd/prockernel.c.orig	Sat Jul 27 14:40:23 2013
++++ sysdeps/openbsd/prockernel.c	Mon Dec  9 14:54:24 2013
+@@ -78,9 +78,9 @@ glibtop_get_proc_kernel_p (glibtop *server,
+ 		return;
  	}
  
- 	if (pinfo->p_wmesg[0])
+-	if (pinfo->p_wmesg[0])
 -		g_strlcpy(buf->wchan, pinfo->p_wmesg[0], sizeof(buf->wchan));
+-	
++	if (pinfo->p_wmesg)
 +		g_strlcpy(buf->wchan, pinfo->p_wmesg, sizeof(buf->wchan));
- 	
++
  	buf->min_flt = pinfo[0].p_uru_minflt;
  	buf->maj_flt = pinfo[0].p_uru_majflt;
+ 

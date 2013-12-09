@@ -1,0 +1,17 @@
+$OpenBSD: patch-sysdeps_openbsd_procmap_c,v 1.12 2013/12/09 14:26:56 robert Exp $
+--- sysdeps/openbsd/procmap.c.orig	Mon Dec  9 15:06:15 2013
++++ sysdeps/openbsd/procmap.c	Mon Dec  9 15:11:07 2013
+@@ -193,8 +193,11 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_
+ 
+ 	if (kvm_read (server->machine.kd,
+ 		      (unsigned long) pinfo [0].p_vmspace,
+-		      (char *) &vmspace, sizeof (vmspace)) != sizeof (vmspace))
+-		glibtop_error_io_r (server, "kvm_read (vmspace)");
++		      (char *) &vmspace, sizeof (vmspace)) != sizeof (vmspace)) {
++			glibtop_warn_io_r (server, "kvm_read (vmspace)");
++			glibtop_suid_leave (server);
++			return NULL;
++	}
+ 
+ 	RB_INIT(&root);
+ 	nentries = load_vmmap_entries(server,
