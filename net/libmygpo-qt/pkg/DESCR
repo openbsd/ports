@@ -1,0 +1,4 @@
+libmygpo-qt is a Qt/C++ library wrapping the gpodder.net Webservice.
+It is currently used in Amarok 2 and Clementine to retrieve a
+directory of podcasts and to synchronize podcast subscriptions with
+gpodder.net.

@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/09 21:26:32 zhuk Exp $
+include/mygpo-qt/
+include/mygpo-qt/AddRemoveResult.h
+include/mygpo-qt/ApiRequest.h
+include/mygpo-qt/Config.h
+include/mygpo-qt/Device.h
+include/mygpo-qt/DeviceList.h
+include/mygpo-qt/DeviceSyncResult.h
+include/mygpo-qt/DeviceUpdates.h
+include/mygpo-qt/Episode.h
+include/mygpo-qt/EpisodeAction.h
+include/mygpo-qt/EpisodeActionList.h
+include/mygpo-qt/EpisodeList.h
+include/mygpo-qt/Podcast.h
+include/mygpo-qt/PodcastList.h
+include/mygpo-qt/Settings.h
+include/mygpo-qt/Tag.h
+include/mygpo-qt/TagList.h
+include/mygpo-qt/mygpo_export.h
+lib/cmake/
+lib/cmake/mygpo-qt/
+lib/cmake/mygpo-qt/Mygpo-qtConfig.cmake
+lib/cmake/mygpo-qt/Mygpo-qtConfigVersion.cmake
+lib/cmake/mygpo-qt/Mygpo-qtTargets-noconfig.cmake
+lib/cmake/mygpo-qt/Mygpo-qtTargets.cmake
+@lib lib/libmygpo-qt.so.${LIBmygpo-qt_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/libmygpo-qt.pc
+share/examples/mygpo-qt/
+share/examples/mygpo-qt/Makefile
+share/examples/mygpo-qt/src/
+share/examples/mygpo-qt/src/main.cpp
