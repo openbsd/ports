@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_prefsdialog_cpp,v 1.1 2013/12/09 08:59:16 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=720091
+
+--- src/prefsdialog.cpp.orig	Mon Dec  9 09:35:51 2013
++++ src/prefsdialog.cpp	Mon Dec  9 09:31:37 2013
+@@ -9,6 +9,7 @@
+ 
+ #include "cgroups.h"
+ #include "proctable.h"
++#include "selinux.h"
+ #include "settings-keys.h"
+ #include "util.h"
+ 
+@@ -182,6 +183,8 @@ create_field_page(GtkBuilder* builder, GtkWidget *tree
+ 
+         column_id = gtk_tree_view_column_get_sort_column_id(column);
+         if ((column_id == COL_CGROUP) && (!cgroups_enabled()))
++            continue;
++        if ((column_id == COL_SECURITYCONTEXT) && (!can_show_security_context_column ()))
+             continue;
+ 
+         if ((column_id == COL_UNIT ||
