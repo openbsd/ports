@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_prefsdialog_cpp,v 1.1 2013/12/09 08:59:16 ajacoutot Exp $
+$OpenBSD: patch-src_prefsdialog_cpp,v 1.2 2013/12/09 10:46:32 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=720091
+From d5584bb655e4ba9dd38b340f29812a5b9159c01c Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Mon, 09 Dec 2013 08:44:17 +0000
+Subject: preferences: don't display the selinux column if it's not enabled/supported
 
 --- src/prefsdialog.cpp.orig	Mon Dec  9 09:35:51 2013
 +++ src/prefsdialog.cpp	Mon Dec  9 09:31:37 2013
