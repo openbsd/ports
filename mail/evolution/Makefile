@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.214 2013/11/14 12:58:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.215 2013/12/09 08:41:58 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		3.10.2
+GNOME_VERSION=		3.10.3
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
