@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/12/08 19:13:34 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/12/09 16:53:18 zhuk Exp $
 @conflict kdelibs-<4
 @conflict kdebase-<4
 @newgroup _kdesud:583
@@ -2502,7 +2502,7 @@ share/polkit-1/actions/org.kde.fontinst.policy
 share/polkit-1/actions/org.kde.kcontrol.kcmclock.policy
 share/polkit-1/actions/org.kde.kcontrol.kcmkdm.policy
 share/polkit-1/actions/org.kde.ksysguard.processlisthelper.policy
-share/sounds/pop.wav
+share/sounds/pop-kde4.wav
 share/wallpapers/
 share/wallpapers/stripes.png
 share/wallpapers/stripes.png.desktop

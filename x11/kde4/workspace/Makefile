@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2013/12/08 19:13:34 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2013/12/09 16:53:18 zhuk Exp $
 
 COMMENT =	KDE workspace
 DISTNAME =	kde-workspace-${MODKDE4_VERSION}
+REVISION =	0
 
 # TODO:
 # Port ksysguard to OpenBSD (sensors framework, lsof(1) call replace and others).
@@ -135,5 +136,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}${LOCALSTATEDIR}/faces
 	rm -Rf ${KDM_FACES_DIR}
 	ln -s ${LOCALSTATEDIR}/faces ${KDM_FACES_DIR}
+	mv ${PREFIX}/share/sounds/pop{,-kde4}.wav
 
 .include <bsd.port.mk>
