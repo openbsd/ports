@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/12/08 18:39:44 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/12/09 12:13:37 zhuk Exp $
 
 COMMENT =	multi-protocol instant messenger for KDE
 DISTNAME =	kopete-${MODKDE4_VERSION}
+REVISION =	0
 
 CATEGORIES =	network
 HOMEPAGE =	http://kopete.kde.org/
@@ -37,6 +38,7 @@ WANTLIB += gadu glib-2.0 idn jasper jpeg meanwhile otr qca2
 WANTLIB += qimageblitz soprano xml2 xmms xslt
 
 MODULES =	multimedia/phonon
+MODKDE4_USE =	pim
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+2,-guic
@@ -50,7 +52,6 @@ LIB_DEPENDS =	audio/xmms \
 		security/qca2
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_LibV4L2:Bool=Yes \
-			-DWITH_LibVNCServer:Bool=No \
 			-DWITH_Libmsn:Bool=No \
 			-DWITH_LiboRTP:Bool=No \
 			-DWITH_Mediastreamer:Bool=No
