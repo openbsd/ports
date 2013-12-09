@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_procproperties_cpp,v 1.9 2013/12/09 14:58:26 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=720105
+
+--- src/procproperties.cpp.orig	Mon Dec  9 15:51:08 2013
++++ src/procproperties.cpp	Mon Dec  9 15:50:40 2013
+@@ -98,10 +98,10 @@ fill_proc_properties (GtkWidget *tree, ProcInfo *info)
+         { N_("Nice"), g_strdup_printf("%d", info->nice)},
+         { N_("Priority"), g_strdup_printf("%s", procman::get_nice_level(info->nice)) },
+         { N_("ID"), g_strdup_printf("%d", info->pid)},
+-        { N_("Security Context"), g_strdup_printf("%s", info->security_context)},
++        { N_("Security Context"), info->security_context?g_strdup_printf("%s", info->security_context):g_strdup(_("N/A"))},
+         { N_("Command Line"), g_strdup_printf("%s", info->arguments)},
+         { N_("Waiting Channel"), g_strdup_printf("%s", info->wchan)},
+-        { N_("Control Group"), info->cgroup_name?g_strdup_printf("%s", info->cgroup_name):g_strdup("")},
++        { N_("Control Group"), info->cgroup_name?g_strdup_printf("%s", info->cgroup_name):g_strdup(_("N/A"))},
+         { NULL, NULL}
+     };
+ 
