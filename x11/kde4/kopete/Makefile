@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/12/09 12:13:37 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2013/12/09 17:21:07 zhuk Exp $
 
 COMMENT =	multi-protocol instant messenger for KDE
 DISTNAME =	kopete-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	network
 HOMEPAGE =	http://kopete.kde.org/

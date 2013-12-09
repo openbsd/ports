@@ -1,0 +1,31 @@
+$OpenBSD: patch-kopete_chatwindow_CMakeLists_txt,v 1.1 2013/12/09 17:21:07 zhuk Exp $
+Fix linking.
+--- kopete/chatwindow/CMakeLists.txt.orig	Mon Dec  9 15:20:57 2013
++++ kopete/chatwindow/CMakeLists.txt	Mon Dec  9 15:25:00 2013
+@@ -34,7 +34,7 @@ set(chattexteditpart_PART_SRCS chattexteditpart.cpp )
+ kde4_add_plugin(chattexteditpart WITH_PREFIX ${chattexteditpart_PART_SRCS})
+ 
+ 
+-target_link_libraries(chattexteditpart kopete kopetechatwindow_shared ${KDE4_KPARTS_LIBS} )
++target_link_libraries(chattexteditpart kopetechatwindow_shared kopete ${KDE4_KPARTS_LIBS} )
+ 
+ set_target_properties(chattexteditpart PROPERTIES COMPILE_FLAGS -DKOPETECHATWINDOW_SHARED_EXPORT="")
+ 
+@@ -49,7 +49,7 @@ set(kopete_chatwindow_PART_SRCS chatview.cpp kopetecha
+ kde4_add_plugin(kopete_chatwindow ${kopete_chatwindow_PART_SRCS})
+ 
+ 
+-target_link_libraries(kopete_chatwindow  ${KDE4_KDEUI_LIBS} kopete kopetechatwindow_shared ${KDE4_KHTML_LIBS} ${QT_QT3SUPPORT_LIBRARY})
++target_link_libraries(kopete_chatwindow  kopete kopetechatwindow_shared ${KDE4_KHTML_LIBS} ${KDE4_KDEUI_LIBS} ${QT_QT3SUPPORT_LIBRARY})
+ 
+ install(TARGETS kopete_chatwindow  DESTINATION ${PLUGIN_INSTALL_DIR})
+ 
+@@ -62,7 +62,7 @@ set(kopete_emailwindow_PART_SRCS kopeteemailwindow.cpp
+ kde4_add_plugin(kopete_emailwindow ${kopete_emailwindow_PART_SRCS})
+ 
+ 
+-target_link_libraries(kopete_emailwindow  ${KDE4_KDEUI_LIBS} ${KDE4_KPARTS_LIBS} ${KDE4_KHTML_LIBS} kopete kopetechatwindow_shared)
++target_link_libraries(kopete_emailwindow  kopete kopetechatwindow_shared ${KDE4_KDEUI_LIBS} ${KDE4_KPARTS_LIBS} ${KDE4_KHTML_LIBS})
+ 
+ install(TARGETS kopete_emailwindow  DESTINATION ${PLUGIN_INSTALL_DIR})
+ 
