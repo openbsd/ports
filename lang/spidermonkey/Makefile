@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/08/10 12:42:23 landry Exp $
+# $OpenBSD: Makefile,v 1.25 2013/12/09 16:31:59 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -35,9 +35,6 @@ HOMEPAGE =	http://www.mozilla.org/js/spidermonkey/
 MASTER_SITES =	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${FFX_VERSION}/source/
 EXTRACT_SUFX =	.tar.bz2
 
-# use patches from www/firefox36
-PATCHDIR =		${PORTSDIR}/www/firefox36/patches
-PATCH_LIST =	patch-js_src*
 PATCH_STRIP =	-p2
 
 MODULES =	lang/python
