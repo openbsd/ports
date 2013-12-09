@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/11/11 14:56:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/12/09 04:17:37 bentley Exp $
 lib/pkgconfig/libquvi-scripts-0.9.pc
 @man man/man7/libquvi-scripts.7
 @man man/man7/quvi-modules-3rdparty.7
@@ -29,9 +29,12 @@ share/libquvi-scripts/${V}/media/ardmediathek.lua
 share/libquvi-scripts/${V}/media/arte.lua
 share/libquvi-scripts/${V}/media/audioboo.lua
 share/libquvi-scripts/${V}/media/bikeradar.lua
+share/libquvi-scripts/${V}/media/canalplus.lua
 share/libquvi-scripts/${V}/media/cbsnews.lua
 share/libquvi-scripts/${V}/media/clipfish.lua
+share/libquvi-scripts/${V}/media/collegehumor.lua
 share/libquvi-scripts/${V}/media/dailymotion.lua
+share/libquvi-scripts/${V}/media/dorkly.lua
 share/libquvi-scripts/${V}/media/funnyordie.lua
 share/libquvi-scripts/${V}/media/gaskrank.lua
 share/libquvi-scripts/${V}/media/guardian.lua
@@ -54,6 +57,7 @@ share/libquvi-scripts/${V}/media/theonion.lua
 share/libquvi-scripts/${V}/media/tvlux.lua
 share/libquvi-scripts/${V}/media/videa.lua
 share/libquvi-scripts/${V}/media/videobash.lua
+share/libquvi-scripts/${V}/media/vimeo.lua
 share/libquvi-scripts/${V}/media/vzaar.lua
 share/libquvi-scripts/${V}/media/youtube.lua
 share/libquvi-scripts/${V}/playlist/
