@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.106 2013/12/10 22:10:39 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.107 2013/12/10 22:19:53 jca Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -341,6 +341,7 @@ my $obsolete_reason = {
 	'sgmlformat' => 0,
 	'parse' => 0,
 	'spice' => 0,
+	'mshell' => 0,
 };
 
 # ->is_base_system($handle, $state):
