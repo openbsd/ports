@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.108 2013/12/10 23:34:41 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.109 2013/12/10 23:49:12 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -338,6 +338,8 @@ my @msg = (
 );
 
 my $obsolete_reason = {
+	'BitTorrent' => 0,
+	'BitTorrent-gui' => 0,
 	'sgmlformat' => 0,
 	'parse' => 0,
 	'spice' => 0,
