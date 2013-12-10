@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:07:42 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2013/12/10 22:26:21 landry Exp $
 
 COMMENT=		OpenStreetMap map editor
 
-SVN_REV=		5485
+SVN_REV=		6388
 DISTNAME=		josm-snapshot-${SVN_REV}
 EXTRACT_SUFX =		.jar
 EXTRACT_CASES+=		*.jar) unzip -qa ${FULLDISTDIR}/$$archive -d ${WRKDIST};;
@@ -15,7 +15,7 @@ CATEGORIES=		geo
 HOMEPAGE=		http://josm.openstreetmap.de/
 MASTER_SITES=		${HOMEPAGE}/download/
 
-MAINTAINER=		Ian Darwin <ian@openbsd.org>
+MAINTAINER=		Holger Mikolon <holger@mikolon.com>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
