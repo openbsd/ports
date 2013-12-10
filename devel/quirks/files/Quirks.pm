@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.104 2013/12/08 12:35:32 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.105 2013/12/10 21:57:12 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -339,6 +339,7 @@ my @msg = (
 
 my $obsolete_reason = {
 	'parse' => 0,
+	'spice' => 0,
 };
 
 # ->is_base_system($handle, $state):

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/09/15 15:20:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2013/12/10 21:57:12 naddy Exp $
 
      SUBDIR =
      SUBDIR += chipmunk
@@ -16,7 +16,6 @@
      SUBDIR += pcb
      SUBDIR += qcad
      SUBDIR += qucs
-     SUBDIR += spice
      SUBDIR += xcircuit
      SUBDIR += xnecview
      SUBDIR += xtrkcad
