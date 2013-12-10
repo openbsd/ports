@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2013/08/07 21:31:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2013/12/10 12:26:46 sthen Exp $
 
 COMMENT=		open-source JPEG 2000 codec library
 
-DISTNAME=		openjpeg-1.5.0
-REVISION=		6
+DISTNAME=		openjpeg-1.5.1
 
 SHARED_LIBS +=	openjpeg             5.0      # 6.0
 

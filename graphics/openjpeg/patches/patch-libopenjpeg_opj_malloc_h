@@ -1,18 +1,16 @@
-$OpenBSD: patch-libopenjpeg_opj_malloc_h,v 1.3 2012/03/30 07:09:26 sthen Exp $
+$OpenBSD: patch-libopenjpeg_opj_malloc_h,v 1.4 2013/12/10 12:26:47 sthen Exp $
 
 Required for !amd64. We could use posix_memalign() instead, but no point
 as our malloc() already aligns to 16 bytes.
 
---- libopenjpeg/opj_malloc.h.orig	Fri Mar 30 08:01:51 2012
-+++ libopenjpeg/opj_malloc.h	Fri Mar 30 08:02:32 2012
-@@ -83,8 +83,8 @@ Allocate memory aligned to a 16 byte boundry
- #else /* Not _WIN32 */
- 	#if defined(__sun)
- 		#define HAVE_MEMALIGN
--	/* Linux x86_64 and OSX always align allocations to 16 bytes */
--	#elif !defined(__amd64__) && !defined(__APPLE__)
-+	/* Linux x86_64, OSX, OpenBSD always align allocations to 16 bytes */
-+	#elif !defined(__amd64__) && !defined(__APPLE__) && !defined(__OpenBSD__)
+--- libopenjpeg/opj_malloc.h.orig	Fri Dec  6 14:56:48 2013
++++ libopenjpeg/opj_malloc.h	Fri Dec  6 14:57:45 2013
+@@ -86,7 +86,7 @@ Allocate memory aligned to a 16 byte boundry
+   #elif defined(__FreeBSD__)
+     #define HAVE_POSIX_MEMALIGN
+ 	/* Linux x86_64 and OSX always align allocations to 16 bytes */
+-	#elif !defined(__amd64__) && !defined(__APPLE__) && !defined(_AIX)
++	#elif !defined(__amd64__) && !defined(__APPLE__) && !defined(_AIX) && !defined(__OpenBSD__)
  		#define HAVE_MEMALIGN
  		#include <malloc.h>
  	#endif

@@ -1,13 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/03/29 15:45:43 sthen Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2013/12/10 12:26:47 sthen Exp $
 @bin bin/image_to_j2k
 @bin bin/j2k_dump
 @bin bin/j2k_to_image
 include/openjpeg-1.5/
 include/openjpeg-1.5/openjpeg.h
-include/openjpeg.h
 lib/libopenjpeg.a
 lib/libopenjpeg.la
+@lib lib/libopenjpeg.so.${LIBopenjpeg_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/libopenjpeg.pc
 lib/pkgconfig/libopenjpeg1.pc
@@ -19,5 +18,4 @@ lib/pkgconfig/libopenjpeg1.pc
 @man man/man3/jpwl_libopenjpeg.3
 @man man/man3/libopenjpeg.3
 share/doc/openjpeg/
-share/doc/openjpeg/CHANGES
 share/doc/openjpeg/LICENSE
