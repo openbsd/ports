@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.158 2013/12/07 23:11:46 jca Exp $
+# $OpenBSD: Makefile,v 1.159 2013/12/10 23:34:41 naddy Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -90,7 +90,6 @@
      SUBDIR += shared-desktop-ontologies
      SUBDIR += shared-mime-info
      SUBDIR += spdrs60
-     SUBDIR += splitvt
      SUBDIR += srcpd
      SUBDIR += supercat
      SUBDIR += tapclean
