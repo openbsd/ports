@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.47 2013/11/28 15:48:29 zhuk Exp $
+# $OpenBSD: portcheck,v 1.48 2013/12/10 19:08:49 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1054,17 +1054,22 @@ check_wantlib() {
 
 	local iconv_wantlib=false
 	local intl_wantlib=false
+	local phonon_s_wantlib=false
+
 	local gettext_module=false
 	local iconv_module=false
 	local qt3_module=false
 	local qt4_module=false
 	local kde3_module=false
 	local kde4_module=false
+	local phonon_module=false
+
 	local v
 
 	for v in $modules; do case $v in
 		devel/gettext)		gettext_module=true;;
 		converters/libiconv)	iconv_module=true;;
+		multimedia/phonon)	phonon_module=true;;
 		x11/qt3)		qt3_module=true;;
 		x11/qt4)		qt4_module=true;;
 		x11/kde)		kde3_module=true;;
@@ -1078,6 +1083,10 @@ check_wantlib() {
 
 		intl?(?(">")=+([0-9])))
 			intl_wantlib=true
+			;;
+
+		phonon_s?(?(">")=+([0-9])))
+			phonon_s_wantlib=true
 			;;
 
 		@(Qt+([A-Za-z0-9])|phonon)?(?('>')=+([0-9])))
@@ -1113,6 +1122,10 @@ check_wantlib() {
 		err "${portref}missing devel/gettext in MODULES"
 	elif $iconv_wantlib && ! $gettext_module && ! $iconv_module; then
 		err "${portref}missing converters/libiconv in MODULES"
+	fi
+
+	if $phonon_s_wantlib && ! $phonon_module; then
+		err "${portref}missing multimedia/phonon in MODULES"
 	fi
 
 	! $error
