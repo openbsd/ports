@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/04/25 16:40:11 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.5 2013/12/10 16:19:38 sebastia Exp $
 bin/MPDCon
 libexec/GNUstep/MPDCon.app/
 @bin libexec/GNUstep/MPDCon.app/MPDCon
@@ -8,6 +8,10 @@ libexec/GNUstep/MPDCon.app/Resources/Collection.gorm/
 libexec/GNUstep/MPDCon.app/Resources/Collection.gorm/data.classes
 libexec/GNUstep/MPDCon.app/Resources/Collection.gorm/data.info
 libexec/GNUstep/MPDCon.app/Resources/Collection.gorm/objects.gorm
+libexec/GNUstep/MPDCon.app/Resources/CollectionBrowser.gorm/
+libexec/GNUstep/MPDCon.app/Resources/CollectionBrowser.gorm/data.classes
+libexec/GNUstep/MPDCon.app/Resources/CollectionBrowser.gorm/data.info
+libexec/GNUstep/MPDCon.app/Resources/CollectionBrowser.gorm/objects.gorm
 libexec/GNUstep/MPDCon.app/Resources/Crossfade.tiff
 libexec/GNUstep/MPDCon.app/Resources/CrossfadeView.gorm/
 libexec/GNUstep/MPDCon.app/Resources/CrossfadeView.gorm/data.classes
