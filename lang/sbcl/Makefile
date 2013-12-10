@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2013/10/22 19:44:15 jca Exp $
+# $OpenBSD: Makefile,v 1.22 2013/12/10 17:37:54 joshe Exp $
 
 # not yet ported to other arches
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
 COMMENT=		compiler and runtime system for ANSI Common Lisp
 
-V =			1.1.12
+V =			1.1.14
 DISTNAME=		sbcl-${V}-source
 PKGNAME=		sbcl-${V}
 WRKDIST=		${WRKDIR}/sbcl-${V}
@@ -37,14 +37,6 @@ BOOTSTRAP_CMD =		${LOCALBASE}/bin/clisp -q -norc
 .endif
 TEST_DEPENDS =		devel/gmp
 
-.for arch in amd64 i386 powerpc
-. if ${MACHINE_ARCH} == ${arch}
-PKG_ARGS +=		-D${arch}=1
-. else
-PKG_ARGS +=		-D${arch}=0
-. endif
-.endfor
-
 USE_GMAKE=		Yes
 PORTHOME=		${TMPDIR}
 MAKE_ENV=		GNUMAKE=${GMAKE} INSTALL_ROOT=${PREFIX} \
@@ -67,8 +59,8 @@ pre-configure:
 	mv ${VERSION_FILE}.new ${VERSION_FILE}
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} /bin/sh make.sh \
-		--prefix=${PREFIX} --xc-host="${BOOTSTRAP_CMD}"
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} SBCL_CONTRIB_TARGET=all \
+		/bin/sh make.sh --prefix=${PREFIX} --xc-host="${BOOTSTRAP_CMD}"
 	cd ${WRKSRC}/doc/manual && touch sbcl.texinfo && \
 		${SETENV} ${MAKE_ENV} ${GMAKE} asdf.info sbcl.info html
 
@@ -79,7 +71,7 @@ post-install:
 	chown -R 0:0 ${PREFIX}/lib/sbcl
 
 do-test:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} RUN_CONTRIB_TESTS=1 \
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} DONT_CLEAN_SBCL_CONTRIB=1 \
 	    /bin/sh make-target-contrib.sh
 	cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} /bin/sh run-tests.sh
 

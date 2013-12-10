@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.powerpc,v 1.1 2010/08/24 12:20:43 jasper Exp $
-lib/sbcl/sb-rotate-byte/ppc-vm.fasl
