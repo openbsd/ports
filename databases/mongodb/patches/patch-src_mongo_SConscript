@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_mongo_SConscript,v 1.1 2013/12/10 17:30:41 joshe Exp $
+--- src/mongo/SConscript.orig	Thu Oct 17 11:37:56 2013
++++ src/mongo/SConscript	Wed Oct 30 07:47:28 2013
+@@ -767,7 +767,7 @@ def installBinary( e, name ):
+     if enforce_glibc:
+         e.AddPostAction( name, checkGlibc )
+ 
+-    if (solaris or linux) and (not has_option("nostrip")):
++    if not has_option("nostrip"):
+         name = e.Command('stripped/%s' % name, name, Copy('$TARGET', '$SOURCE'))[0]
+         e.AddPostAction(name, 'strip $TARGET')
+ 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 02:52:05 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2013/12/10 17:30:40 joshe Exp $
 
 BROKEN =	broken after rthreads switch
 
@@ -7,11 +7,10 @@ ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =	scalable, high-performance document-oriented database
 
-DISTNAME =	mongodb-src-r2.0.1
+DISTNAME =	mongodb-src-r2.4.7
 PKGNAME =	${DISTNAME:S/src-r//}
-REVISION =	0
 
-SHARED_LIBS =	mongoclient	1.0
+SHARED_LIBS =	mongoclient	2.0
 
 CATEGORIES =	databases
 
@@ -21,27 +20,30 @@ HOMEPAGE =	http://www.mongodb.org/
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =	boost_filesystem-mt boost_program_options-mt boost_system-mt \
-		boost_thread-mt c execinfo mozjs m pcap pcre pcrecpp pthread \
-		stdc++
+		boost_thread-mt c execinfo m pcap pcre pcrecpp pthread \
+		stdc++ v8
 
 MASTER_SITES =	http://downloads.mongodb.org/src/
 
 MODULES =	devel/scons
 MODSCONS_FLAGS = --prefix="${PREFIX}" \
 		 --cpppath="${LOCALBASE}/include/nspr" \
-		 --extralib="mozjs,pcrecpp" \
-		 --usesm \
+		 --extralib="pcrecpp" \
+		 --usev8 \
 		 --sharedclient \
-		 --full 
+		 --full \
+		 --use-system-pcre \
+		 --use-system-boost \
+		 --use-system-v8
 
 MAKE_ENV +=	HOME="${HOME}" \
 		TERM="${TERM}" \
-		CXXFLAGS="$(CXXFLAGS) -DXULRUNNER -I${LOCALBASE}/include/js" \
+		CXXFLAGS="$(CXXFLAGS)" \
 		LIBmongoclient_VERSION="${LIBmongoclient_VERSION}"
 LIB_DEPENDS =	devel/boost \
 		devel/libexecinfo \
 		devel/pcre \
-		lang/spidermonkey
+		lang/libv8
 
 pre-configure:
 	rm -f ${WRKSRC}/third_party/{pcre,sm}.py

@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_third_party_s2_base_port_h,v 1.1 2013/12/10 17:30:41 joshe Exp $
+--- src/third_party/s2/base/port.h.orig	Thu Oct 17 11:37:56 2013
++++ src/third_party/s2/base/port.h	Mon Oct 28 20:57:58 2013
+@@ -100,6 +100,14 @@ typedef uint16_t u_int16_t;
+ #define __LITTLE_ENDIAN LITTLE_ENDIAN
+ #define __BIG_ENDIAN BIG_ENDIAN
+ 
++#elif defined __OpenBSD__
++
++#include <sys/endian.h>
++/* Let's try and follow the Linux convention */
++#define __BYTE_ORDER  BYTE_ORDER
++#define __LITTLE_ENDIAN LITTLE_ENDIAN
++#define __BIG_ENDIAN BIG_ENDIAN
++
+ #endif
+ 
+ #if defined __sunos__ || defined __freebsd__
+@@ -134,6 +142,11 @@ typedef uint16_t u_int16_t;
+ #define bswap_16(x) bswap16(x)
+ #define bswap_32(x) bswap32(x)
+ #define bswap_64(x) bswap64(x)
++#elif defined __OpenBSD__
++#include <sys/endian.h>
++#define bswap_16(x) swap16(x)
++#define bswap_32(x) swap32(x)
++#define bswap_64(x) swap64(x)
+ #else
+ #include <byteswap.h>
+ #endif

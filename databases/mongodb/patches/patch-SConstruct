@@ -1,52 +1,33 @@
-$OpenBSD: patch-SConstruct,v 1.2 2011/10/03 16:38:21 fgsch Exp $
---- SConstruct.orig	Sun Sep 11 15:09:34 2011
-+++ SConstruct	Sun Sep 18 21:38:08 2011
-@@ -670,7 +670,7 @@ if nix:
-         env["CXX"] = "distcc " + env["CXX"]
-         
-     # -Winvalid-pch Warn if a precompiled header (see Precompiled Headers) is found in the search path but can't be used. 
--    env.Append( CPPFLAGS="-fPIC -fno-strict-aliasing -ggdb -pthread -Wall -Wsign-compare -Wno-unknown-pragmas -Winvalid-pch" )
-+    env.Append( CPPFLAGS="-fPIC -fno-strict-aliasing -pthread -Wall -Wsign-compare -Wno-unknown-pragmas -Winvalid-pch" )
-     # env.Append( " -Wconversion" ) TODO: this doesn't really work yet
-     if linux:
-         env.Append( CPPFLAGS=" -Werror " )
-@@ -679,6 +679,7 @@ if nix:
+$OpenBSD: patch-SConstruct,v 1.3 2013/12/10 17:30:41 joshe Exp $
+--- SConstruct.orig	Thu Oct 17 11:37:56 2013
++++ SConstruct	Mon Oct 28 20:07:16 2013
+@@ -702,7 +702,6 @@ if nix:
+     # -Winvalid-pch Warn if a precompiled header (see Precompiled Headers) is found in the search path but can't be used.
+     env.Append( CCFLAGS=["-fPIC",
+                          "-fno-strict-aliasing",
+-                         "-ggdb",
+                          "-pthread",
+                          "-Wall",
+                          "-Wsign-compare",
+@@ -716,6 +715,7 @@ if nix:
  
-     env.Append( CPPDEFINES="_FILE_OFFSET_BITS=64" )
-     env.Append( CXXFLAGS=" -Wnon-virtual-dtor " )
+     env.Append( CPPDEFINES=["_FILE_OFFSET_BITS=64"] )
+     env.Append( CXXFLAGS=["-Wnon-virtual-dtor", "-Woverloaded-virtual"] )
 +    env.Append( CXXFLAGS=os.environ['CXXFLAGS'] )
-     env.Append( LINKFLAGS=" -fPIC -pthread -rdynamic" )
+     env.Append( LINKFLAGS=["-fPIC", "-pthread",  "-rdynamic"] )
      env.Append( LIBS=[] )
  
-@@ -690,10 +691,10 @@ if nix:
-         env.Append( LINKFLAGS=" -Wl,--as-needed -Wl,-zdefs " )
+@@ -731,10 +731,10 @@ if nix:
+         env.Append( LINKFLAGS=" -fprofile-arcs -ftest-coverage " )
  
      if debugBuild:
--        env.Append( CPPFLAGS=" -O0 -fstack-protector " );
-+        env.Append( CPPFLAGS=" -O0 -fstack-protector -ggdb " );
+-        env.Append( CCFLAGS=["-O0", "-fstack-protector"] )
++        env.Append( CCFLAGS=["-O0", "-fstack-protector", "-ggdb"] )
          env['ENV']['GLIBCXX_FORCE_NEW'] = 1; # play nice with valgrind
 -    else:
--        env.Append( CPPFLAGS=" -O3 " )
+-        env.Append( CCFLAGS=["-O3"] )
 +    #else:
-+        #env.Append( CPPFLAGS=" -O3 " )
-         #env.Append( CPPFLAGS=" -fprofile-generate" )
-         #env.Append( LINKFLAGS=" -fprofile-generate" )
-         # then:
-@@ -1096,7 +1097,7 @@ mongos = env.Program( "mongos" , commonFiles + coreDbF
- # c++ library
- clientLibName = str( env.Library( "mongoclient" , allClientFiles )[0] )
- if has_option( "sharedclient" ):
--    sharedClientLibName = str( env.SharedLibrary( "mongoclient" , allClientFiles )[0] )
-+    sharedClientLibName = str( env.SharedLibrary( "mongoclient" , allClientFiles, SHLIBSUFFIX=".so.%s" % os.environ["LIBmongoclient_VERSION"] )[0] )
- env.Library( "mongotestfiles" , commonFiles + coreDbFiles + coreServerFiles + serverOnlyFiles + ["client/gridfs.cpp"])
- env.Library( "mongoshellfiles" , allClientFiles + coreServerFiles )
++        #env.Append( CCFLAGS=["-O3"] )
  
-@@ -1428,7 +1429,7 @@ def installBinary( e , name ):
-     fullInstallName = installDir + "/bin/" + name
- 
-     allBinaries += [ name ]
--    if (solaris or linux) and (not has_option("nostrip")):
-+    if (solaris or linux or openbsd) and (not has_option("nostrip")):
-         e.AddPostAction( inst, e.Action( 'strip ' + fullInstallName ) )
- 
-     if linux and len( COMMAND_LINE_TARGETS ) == 1 and str( COMMAND_LINE_TARGETS[0] ) == "s3dist":
+     if debugLogging:
+         env.Append( CPPDEFINES=["_DEBUG"] );

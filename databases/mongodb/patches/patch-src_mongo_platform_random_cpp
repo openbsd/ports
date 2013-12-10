@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_mongo_platform_random_cpp,v 1.1 2013/12/10 17:30:41 joshe Exp $
+--- src/mongo/platform/random.cpp.orig	Thu Oct 17 11:37:56 2013
++++ src/mongo/platform/random.cpp	Mon Oct 28 20:21:29 2013
+@@ -138,6 +138,21 @@ namespace mongo {
+         return new InputStreamSecureRandom( "/dev/urandom" );
+     }
+ 
++#elif defined(__OpenBSD__)
++
++    class ARC4SecureRandom : public SecureRandom {
++    public:
++        int64_t nextInt64() {
++            int64_t n;
++            arc4random_buf(&n, sizeof(n));
++            return n;
++        }
++    };
++
++    SecureRandom* SecureRandom::create() {
++        return new ARC4SecureRandom();
++    }
++
+ #else
+     class SRandSecureRandom : public SecureRandom {
+     public:
