@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2013/08/15 20:28:55 gsoares Exp $
+# $OpenBSD: Makefile,v 1.17 2013/12/10 15:31:28 sthen Exp $
 
 COMMENT =	ARP scanning and fingerprinting tool
 DISTNAME =	arp-scan-1.9
+REVISION =	0
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.nta-monitor.com/tools-resources/security-tools/arp-scan
@@ -10,7 +11,7 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 MASTER_SITES =	http://www.nta-monitor.com/files/arp-scan/
 MASTER_SITES0 =	http://spacehopper.org/mirrors/
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
-		oui-iab-20130814.tar.bz2:0
+		oui-iab-20131210.tar.bz2:0
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
