@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2013/10/26 08:02:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2013/12/10 12:20:47 sthen Exp $
 
 # requires SSE
 ONLY_FOR_ARCHS=	i386 amd64
@@ -12,7 +12,7 @@ CFLAGS += -march=i586 -fomit-frame-pointer
 COMMENT=	virtual lighttable and darkroom for photographers
 DISTNAME=	darktable-1.2.3
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
+REVISION=	1
 
 SHARED_ONLY=	Yes
 
@@ -66,6 +66,7 @@ USE_GROFF=	Yes
 
 CONFIGURE_STYLE= cmake
 CONFIGURE_ARGS=	-DCMAKE_BUILD_TYPE=Release \
+		-DOPENJPEG_INCLUDE_DIR=${PREFIX}/include/openjpeg-1.5 \
 		-DBINARY_PACKAGE_BUILD=1
 
 # enable workaround for mutex problems
