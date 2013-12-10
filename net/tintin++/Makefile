@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:35:57 espie Exp $ 
+# $OpenBSD: Makefile,v 1.18 2013/12/10 23:42:29 jca Exp $ 
 
 COMMENT=	client program to help playing muds
 
 DISTNAME=       tintin++v1.5pl6
 PKGNAME=	tintin-1.5.6
-REVISION=	0
+REVISION=	1
 CATEGORIES=     net games
 
 MASTER_SITES=	http://ftp.kiae.su/pub/unix/games/
