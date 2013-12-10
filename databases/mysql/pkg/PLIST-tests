@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.56 2013/10/04 07:09:18 giovanni Exp $
+@comment $OpenBSD: PLIST-tests,v 1.57 2013/12/10 22:15:46 brad Exp $
 @conflict mariadb-tests-*
 @pkgpath databases/mariadb,-tests
 @man man/man1/mysql-stress-test.pl.1
@@ -275,6 +275,7 @@ share/mysql-test/include/have_gb2312.inc
 share/mysql-test/include/have_gbk.inc
 share/mysql-test/include/have_geometry.inc
 share/mysql-test/include/have_innodb.inc
+share/mysql-test/include/have_innodb_change_buffering.inc
 share/mysql-test/include/have_innodb_plugin.inc
 share/mysql-test/include/have_koi8r.inc
 share/mysql-test/include/have_latin2_ch.inc
@@ -397,6 +398,7 @@ share/mysql-test/include/rpl_udf.inc
 share/mysql-test/include/running_event_scheduler.inc
 share/mysql-test/include/safe_set_to_maybe_ro_var.inc
 share/mysql-test/include/save_master_pos.inc
+share/mysql-test/include/search_pattern_in_file.inc
 share/mysql-test/include/select_ndb_apply_status.inc
 share/mysql-test/include/set_binlog_format_mixed.sql
 share/mysql-test/include/set_binlog_format_row.sql
@@ -3824,6 +3826,7 @@ share/mysql-test/suite/rpl/r/rpl_drop_db.result
 share/mysql-test/suite/rpl/r/rpl_drop_temp.result
 share/mysql-test/suite/rpl/r/rpl_drop_view.result
 share/mysql-test/suite/rpl/r/rpl_dual_pos_advance.result
+share/mysql-test/suite/rpl/r/rpl_dump_events_twice_bug.result
 share/mysql-test/suite/rpl/r/rpl_empty_master_crash.result
 share/mysql-test/suite/rpl/r/rpl_err_ignoredtable.result
 share/mysql-test/suite/rpl/r/rpl_events.result
@@ -3878,6 +3881,7 @@ share/mysql-test/suite/rpl/r/rpl_loaddatalocal.result
 share/mysql-test/suite/rpl/r/rpl_loadfile.result
 share/mysql-test/suite/rpl/r/rpl_locale.result
 share/mysql-test/suite/rpl/r/rpl_log_pos.result
+share/mysql-test/suite/rpl/r/rpl_lost_events_on_rotate.result
 share/mysql-test/suite/rpl/r/rpl_manual_change_index_file.result
 share/mysql-test/suite/rpl/r/rpl_many_optimize.result
 share/mysql-test/suite/rpl/r/rpl_master_pos_wait.result
@@ -4102,6 +4106,7 @@ share/mysql-test/suite/rpl/t/rpl_drop_temp.test
 share/mysql-test/suite/rpl/t/rpl_drop_view.test
 share/mysql-test/suite/rpl/t/rpl_dual_pos_advance-master.opt
 share/mysql-test/suite/rpl/t/rpl_dual_pos_advance.test
+share/mysql-test/suite/rpl/t/rpl_dump_events_twice_bug.test
 share/mysql-test/suite/rpl/t/rpl_empty_master_crash-master.opt
 share/mysql-test/suite/rpl/t/rpl_empty_master_crash.test
 share/mysql-test/suite/rpl/t/rpl_err_ignoredtable-slave.opt
@@ -4186,6 +4191,7 @@ share/mysql-test/suite/rpl/t/rpl_loaddatalocal.test
 share/mysql-test/suite/rpl/t/rpl_loadfile.test
 share/mysql-test/suite/rpl/t/rpl_locale.test
 share/mysql-test/suite/rpl/t/rpl_log_pos.test
+share/mysql-test/suite/rpl/t/rpl_lost_events_on_rotate.test
 share/mysql-test/suite/rpl/t/rpl_manual_change_index_file.test
 share/mysql-test/suite/rpl/t/rpl_many_optimize.test
 share/mysql-test/suite/rpl/t/rpl_master_pos_wait.test
