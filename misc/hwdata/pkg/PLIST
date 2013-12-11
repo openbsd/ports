@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/11 14:25:13 ajacoutot Exp $
+share/hwdata/
+share/hwdata/oui.txt
+share/hwdata/pci.ids
+share/hwdata/pnp.ids
+share/hwdata/usb.ids
