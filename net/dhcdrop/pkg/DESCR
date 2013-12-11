@@ -1,0 +1,8 @@
+dhcdrop is a tool to either reduce the impact of a rogue DHCP server
+on a network, or as a stress-test tool for use when configuring
+or developing DHCP servers.
+
+It works by flooding the server or attempting to starve it of leasable
+addresses; it can be used interactively, or it can be configured with
+the MAC addresses of any legitimate DHCP servers, and will attempt to
+disrupt any others it sees.
