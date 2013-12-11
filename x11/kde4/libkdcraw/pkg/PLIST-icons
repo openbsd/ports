@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-icons,v 1.1 2013/12/11 11:51:31 zhuk Exp $
-@conflict kdelibs-<4.9.0p2
+@comment $OpenBSD: PLIST-icons,v 1.2 2013/12/11 12:26:12 zhuk Exp $
+@conflict kdelibs->=4,<4.9.0p2
 @conflict libkdcraw-<0.1.9p6
 @conflict libkdcraw->=4,<4.11.4p0
 @conflict libkdcraw-icons-*
