@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2013/11/21 11:34:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.42 2013/12/11 14:30:25 ajacoutot Exp $
 include/gnome-desktop-3.0/
 include/gnome-desktop-3.0/libgnome-desktop/
 include/gnome-desktop-3.0/libgnome-desktop/gnome-bg-crossfade.h
@@ -200,8 +200,6 @@ share/help/zh_CN/gpl/
 share/help/zh_CN/gpl/index.docbook
 share/help/zh_CN/lgpl/
 share/help/zh_CN/lgpl/index.docbook
-share/libgnome-desktop-3.0/
-share/libgnome-desktop-3.0/pnp.ids
 share/locale/af/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/am/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/an/LC_MESSAGES/gnome-desktop-3.0.mo
