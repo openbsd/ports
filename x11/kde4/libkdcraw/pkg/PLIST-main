@@ -1,5 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/12/08 19:13:32 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2013/12/11 11:51:31 zhuk Exp $
+@option no-default-conflict
 @conflict kdelibs-<4.9.0p2
+@conflict libkdcraw-<0.1.9p6
+@conflict libkdcraw->=4
 include/kde4/libkdcraw/
 include/kde4/libkdcraw/dcrawinfocontainer.h
 include/kde4/libkdcraw/dcrawsettingswidget.h
@@ -25,7 +28,3 @@ share/apps/libkdcraw/profiles/prophoto.icm
 share/apps/libkdcraw/profiles/srgb-d65.icm
 share/apps/libkdcraw/profiles/srgb.icm
 share/apps/libkdcraw/profiles/widegamut.icm
-@comment share/icons/hicolor/128x128/apps/kdcraw.png
-@comment share/icons/hicolor/32x32/apps/kdcraw.png
-@comment share/icons/hicolor/48x48/apps/kdcraw.png
-@comment share/icons/hicolor/64x64/apps/kdcraw.png

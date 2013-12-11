@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST-icons,v 1.1 2013/12/11 11:51:31 zhuk Exp $
+@conflict kdelibs-<4.9.0p2
+@conflict libkdcraw-<0.1.9p6
+@conflict libkdcraw->=4,<4.11.4p0
+@conflict libkdcraw-icons-*
+@pkgpath graphics/libkdcraw,-icons
+share/icons/hicolor/128x128/apps/kdcraw.png
+share/icons/hicolor/32x32/apps/kdcraw.png
+share/icons/hicolor/48x48/apps/kdcraw.png
+share/icons/hicolor/64x64/apps/kdcraw.png
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

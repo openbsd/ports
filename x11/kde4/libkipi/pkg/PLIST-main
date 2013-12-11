@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/12/08 19:13:32 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2013/12/11 11:51:31 zhuk Exp $
+@option no-default-conflict
+@conflict libkipi-<0.1.6p9
+@conflict libkipi->=4
 @bin bin/kxmlkipicmd
 include/kde4/libkipi/
 include/kde4/libkipi/configwidget.h
@@ -16,7 +19,7 @@ include/kde4/libkipi/version.h
 lib/kde4/kipiplugin_kxmlhelloworld.so
 @lib ${KDE4LIB}/libkipi.so.${LIBkipi_VERSION}
 @lib lib/libkipi.so.${LIBkipi_VERSION}
-lib/pkgconfig/libkipi.pc
+@comment lib/pkgconfig/libkipi.pc
 share/apps/kipi/
 share/apps/kipi/data/
 share/apps/kipi/data/kipi-icon.svg
@@ -26,10 +29,5 @@ share/apps/kipi/kipiplugin_kxmlhelloworldui.rc
 share/apps/kxmlkipicmd/
 share/apps/kxmlkipicmd/kxmlkipicmd_defaultui.rc
 share/apps/kxmlkipicmd/kxmlkipicmd_gwenviewui.rc
-@comment share/icons/hicolor/128x128/apps/kipi.png
-@comment share/icons/hicolor/16x16/apps/kipi.png
-@comment share/icons/hicolor/22x22/apps/kipi.png
-@comment share/icons/hicolor/32x32/apps/kipi.png
-@comment share/icons/hicolor/48x48/apps/kipi.png
 share/kde4/services/kipiplugin_kxmlhelloworld.desktop
 share/kde4/servicetypes/kipiplugin.desktop

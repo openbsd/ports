@@ -1,24 +1,34 @@
-# $OpenBSD: Makefile,v 1.6 2013/12/08 19:13:32 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2013/12/11 11:51:31 zhuk Exp $
 
-COMMENT =	KDE RAW picture decoding C++ library
+COMMENT-main =	KDE RAW picture decoding C++ library
+COMMENT-icons =	icons for libkdcraw
 CATEGORIES =	graphics devel
 DISTNAME =	libkdcraw-${MODKDE4_VERSION}
+PKGNAME-main =	${DISTNAME}
+PKGNAME-icons =	kde4-libkdcraw-icons-${MODKDE4_VERSION}
+REVISION-main =	0
 
 SHARED_LIBS =	kdcraw			50.0	# 20.0
 
-WANTLIB =  m pthread stdc++
-WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
-WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
-WANTLIB += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/solid
-WANTLIB += ${KDE4LIB}/threadweaver
-WANTLIB += raw_r
+WANTLIB-icons =
+WANTLIB-main =  m pthread stdc++
+WANTLIB-main += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
+WANTLIB-main += lib/qt4/QtSvg lib/qt4/QtXml
+WANTLIB-main += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/solid
+WANTLIB-main += ${KDE4LIB}/threadweaver
+WANTLIB-main += raw_r
 
-MODKDE4_USE =	libs
+MULTI_PACKAGES =	-main -icons
 
-LIB_DEPENDS = 	graphics/libraw
+MODKDE4_USE =		libs
 
-# Share same icons, avoid conflict
-RUN_DEPENDS =	graphics/libkdcraw,-icons
+LIB_DEPENDS-icons =
+LIB_DEPENDS-main = 	${LIB_DEPENDS} \
+			graphics/libraw
+
+RUN_DEPENDS-icons =	x11/gtk+2,-guic
+RUN_DEPENDS-main =	${RUN_DEPENDS} \
+			${BUILD_PKGPATH},-icons
 
 post-extract:
 	cp ${FILESDIR}/*.cmake ${WRKSRC}/cmake/modules/
