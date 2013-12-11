@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.159 2013/12/10 23:34:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.160 2013/12/11 14:25:51 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -38,6 +38,7 @@
      SUBDIR += gtk3mm-documentation
      SUBDIR += gutenpy
      SUBDIR += hfsplus
+     SUBDIR += hwdata
      SUBDIR += impress
      SUBDIR += jive
      SUBDIR += ktimeclock
