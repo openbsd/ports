@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.50 2013/12/11 15:53:07 zhuk Exp $
+# $OpenBSD: portcheck,v 1.51 2013/12/11 15:54:03 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -516,10 +516,10 @@ check_port_dir() {
 	local show_items="$show_items MASTER_SITES MULTI_PACKAGES PKGPATH"
 	local show_items="$show_items PSEUDO_FLAVOR PSEUDO_FLAVORS"
 	local show_items="$show_items SHARED_LIBS SUBST_CMD"
+	local read_ok=false
 
 	local read_failed=false
 	(cd -- "$dir"; make "${make_args[@]}" show="$show_items" || true) </dev/null |&
-	read_ok=false
 	read -pr dist_subdir &&
 	read -pr distfiles &&
 	read -pr flavor &&
@@ -536,6 +536,7 @@ check_port_dir() {
 	if $read_ok; then
 		exec 3<&p
 		exec 3<&-
+		wait
 	else
 		error=true
 		return
@@ -681,11 +682,13 @@ sub_checks() {
 				(make "${make_args[@]}" print-plist-with-depends ||
 				    true) </dev/null |&
 				check_plist "$portref" "$fullpkgname" "$flavor"
+				wait
 			fi
 
 			! $error
 		) || error=true
 	done
+	wait
 }
 
 # Checks made:
