@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2013/11/09 23:19:03 naddy Exp $
-
-BROKEN-hppa =		Invalid function: "DEAD"
+# $OpenBSD: Makefile,v 1.43 2013/12/11 12:36:02 juanfra Exp $
 
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
