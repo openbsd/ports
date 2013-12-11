@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_util_c,v 1.12 2013/05/30 18:07:43 ajacoutot Exp $
+$OpenBSD: patch-src_util_c,v 1.13 2013/12/11 16:11:19 ajacoutot Exp $
 
 We don't use /proc on OpenBSD.
 
@@ -61,7 +61,7 @@ We don't use /proc on OpenBSD.
  static void
  setup_loginuid (gpointer data)
  {
-+#ifndef __OpenBSD
++#ifndef __OpenBSD__
          const char *id = data;
          int fd;
  
