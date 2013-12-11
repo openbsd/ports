@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2013/12/11 14:38:44 jca Exp $
+--- Makefile.orig	Tue Sep  3 16:05:52 2013
++++ Makefile	Wed Dec 11 12:56:38 2013
+@@ -2,7 +2,7 @@ CFLAGS=-O3
+ CROSS=
+ DESTDIR=
+ GTK_VERSION=0
+-PQIV_WARNING_FLAGS=-Wall -Wextra -Wfloat-equal -Wpointer-arith -Wcast-align -Wstrict-overflow=5 -Wwrite-strings -Waggregate-return -Wunreachable-code -Werror -Wno-unused-parameter
++PQIV_WARNING_FLAGS=-Wall -Wextra -Wfloat-equal -Wpointer-arith -Wcast-align -Wstrict-overflow=5 -Wwrite-strings -Waggregate-return -Wunreachable-code -Wno-unused-parameter
+ PREFIX=/usr
+ EXECUTABLE_EXTENSION=
+ 
