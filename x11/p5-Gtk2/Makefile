@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2013/09/30 07:03:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2013/12/11 08:00:49 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	set of modules to use Gtk+2 libraries from Perl
 
-DISTNAME=	Gtk2-1.248
+DISTNAME=	Gtk2-1.249
 
 CATEGORIES=	x11
 
@@ -25,9 +25,9 @@ BUILD_DEPENDS=	devel/p5-ExtUtils-Depends \
 		devel/p5-ExtUtils-PkgConfig \
 		${RUN_DEPENDS}
 
-RUN_DEPENDS=	devel/p5-Glib2>=1.280 \
-		devel/p5-Pango>=1.222 \
-		graphics/p5-Cairo>=1.101
+RUN_DEPENDS=	devel/p5-Glib2 \
+		devel/p5-Pango \
+		graphics/p5-Cairo
 		
 TEST_IS_INTERACTIVE= x11
 
