@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.49 2013/12/11 13:55:34 zhuk Exp $
+# $OpenBSD: portcheck,v 1.50 2013/12/11 15:53:07 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -641,7 +641,7 @@ check_master_sites() {
 		esac
 		[[ -n $name ]] && err "$portref$name does not hold real" \
 			"releases, please host the distfiles somewhere" \
-			"somewhere else or ask someone to do this for you"
+			"else or ask someone to do this for you"
 		shift
 	done
 }
