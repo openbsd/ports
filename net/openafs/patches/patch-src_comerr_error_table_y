@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_comerr_error_table_y,v 1.1 2013/12/11 22:22:14 sthen Exp $
+--- src/comerr/error_table.y.orig	Wed Dec 11 15:19:25 2013
++++ src/comerr/error_table.y	Wed Dec 11 15:19:30 2013
+@@ -22,7 +22,6 @@ RCSID("$Header: /cvs/openafs/src/comerr/error_table.y,
+ #else
+ #include <sys/time.h>
+ #endif
+-#include <sys/timeb.h>
+ #include "error_table.h"
+ #include "mit-sipb-cr.h"
+ 
