@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2013/12/11 11:51:31 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2013/12/11 12:06:43 zhuk Exp $
 @option no-default-conflict
 @conflict libkipi-<0.1.6p9
 @conflict libkipi->=4
+@pkgpath x11/kde4/libkipi
 @bin bin/kxmlkipicmd
 include/kde4/libkipi/
 include/kde4/libkipi/configwidget.h
