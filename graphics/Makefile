@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.360 2013/11/27 09:49:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.361 2013/12/11 14:40:39 jca Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -209,6 +209,7 @@
      SUBDIR += pngcrush
      SUBDIR += potrace
      SUBDIR += povray
+     SUBDIR += pqiv
      SUBDIR += prison
      SUBDIR += pstoedit
      SUBDIR += py-Imaging
