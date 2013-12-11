@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portimport,v 1.2 2013/04/11 15:18:00 zhuk Exp $
+# $OpenBSD: portimport,v 1.3 2013/12/11 16:11:09 zhuk Exp $
 # Copyright (c) 2013 Robert Peichaer
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -18,52 +18,54 @@
 # Based on Marc Espie's portimport.
 # sthen: Modified to handle imports from mystuff/ and do a dry run first.
 # rpe:   rewrite based on sthen@'s version
+# zhuk:  checks and detection of pkgpath moved to portcheck(1)
 
 set -e
+set -u
 
 usage() {
-	echo "usage: $(basename $0) [-u username]" >&2
+	echo "usage: $(basename $0) [-U] [-p portsdir] [-u username]" >&2
 	exit 1
 }
 
 user=$(id -un)
+portsdir=
+portcheck_args=
+unset portcheck_args[0]
 
-while getopts "u:" OPT; do
+while getopts "p:Uu:" OPT; do
 	case $OPT in
-	u)	user="$OPTARG";;
+	p)	portsdir="$OPTARG"
+		portcheck_args[${#portcheck_args[@]}]="-p$portsdir";;
+	U)	portcheck_args[${#portcheck_args[@]}]="-U";;
+	u)	user=$OPTARG;;
 	*)	usage;;
 	esac
 done
 
-cvsroot=$user@cvs.openbsd.org:/cvs
+shift $(($OPTIND - 1))
+(($# > 0)) && usage
+
 error=false
-fulldir=$(pwd)
-importname="ports/${fulldir##*/ports/*(mystuff/|openbsd-wip/|p5-ports-wip/)}"
+pkgpath=$(portcheck "${portcheck_args[@]:---}") || error=true
+if $error; then
+	read ans?'Do you want to continue after those errors? [y/N] '
+	[[ $ans == +(y|Y) ]] || exit
+fi
+
+portsdir=${portsdir:-${PWD%"/$pkgpath"}}
 timestamp=$(date '+%Y%m%d')
-
-err() { echo "$*"; error=true; }
-
-[[ -f Makefile && -f distinfo && -f pkg/DESCR  && -f pkg/PLIST ]] || err "No ports files?"
-find . -name .git          -print|read i && err "You git!"
-find . -name .\*.swp       -print|read i && err "Found vim swap file"
-find . -name \*.orig       -print|read i && err "Found .orig file, ouch"
-find . -name typescript    -print|read i && err "Found typescript file, ouch"
-find . -path ./w-\*        -print|read i && err "Please wipe out work directory before importing"
-find . -type d -name core  -print|read i && err "directory named core found, cvs will ignore it"
-find . -type f -name .todo -print|read i && err "devtodo file found"
-find . -type d -name CVS   -print|read i && err "Some CVS stuff already in there, very funky"
-$error && exit 1
+cvsroot=$user@cvs.openbsd.org:/cvs
 
 echo -n "Import would go into: "
-cvs -n -d$cvsroot import $importname $user ${user}_$timestamp 2>/dev/null | \
+cvs -n -d$cvsroot import ports/$pkgpath $user ${user}_$timestamp 2>/dev/null | \
 	grep Makefile | head -1 | awk '{print $2}' | xargs dirname
 
-read ans?'Correct path? [y/n] '
+read ans?'Does this look correct? [y/n] '
 if [[ $ans == +(y|Y) ]]; then
-	cvs -d$cvsroot import $importname $user ${user}_$timestamp
-	cd /usr/$importname/../
-	cvs -d$cvsroot update -AdP ${fulldir##*/}
-	echo "Don't forget to commit the category Makefile when you're done!"
-	cd /usr/$importname/../
+	cvs -d$cvsroot import ports/$pkgpath $user ${user}_$timestamp
+	cd "$portsdir/${pkgpath%/*}"
+	cvs -d$cvsroot update -AdP ${pkgpath##*/}
+	echo "Don't forget to commit the ${pkgpath%/*}/Makefile when you're done!"
 	pwd
 fi
