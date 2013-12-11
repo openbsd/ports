@@ -1,4 +1,4 @@
-.\"     $OpenBSD: portimport.1,v 1.2 2013/04/11 15:18:00 zhuk Exp $
+.\"     $OpenBSD: portimport.1,v 1.3 2013/12/11 13:55:34 zhuk Exp $
 .\"
 .\" Copyright (c) 2013 Robert Peichaer
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: April 11 2013 $
+.Dd $Mdocdate: December 11 2013 $
 .Dt PORTIMPORT 1
 .Os
 .Sh NAME
@@ -22,6 +22,8 @@
 .Nd import a new port to the ports cvs repository
 .Sh SYNOPSIS
 .Nm
+.Op Fl U
+.Op Fl p Ar portsdir
 .Op Fl u Ar username
 .Sh DESCRIPTION
 .Nm
@@ -33,8 +35,13 @@ repository, avoiding common mistakes.
 It has to be executed from within the new port's directory.
 .Pp
 .Nm
-verifies that a minimal directory and file structure for a port is in
-place and that no bogus files exist.
+calls the
+.Xr portcheck 1
+internally to verify that directory and file structure for a port is in
+place and that no bogus files exist, and also to detect the
+.Ev PKGPATH
+for a port.
+.Pp
 The import is done in two steps.
 In the first step, the
 .Fl n
@@ -49,6 +56,15 @@ of the local ports tree.
 .Pp
 The following options are available:
 .Bl -tag -width Ds
+.It Fl p Ar portsdir
+Forces the given directory to be treated as ports root directory.
+Passed through to
+.Xr portcheck 1 .
+.It Fl U
+Skip checks not useful for already committed stuff when, e.g., when
+moving stuff around the tree.
+Passed through to
+.Xr portcheck 1 .
 .It Fl u Ar username
 Set the username used for
 .Xr ssh 1 ,
@@ -57,9 +73,12 @@ Defaults to the local username.
 .El
 .Sh SEE ALSO
 .Xr cvs 1
+.Xr portcheck 1
 .Sh HISTORY
 This command is based on the portimport script of Marc Espie, lightly
 modified by Stuart Henderson and rewritten by Robert Peichaer.
+Later, actual checks were moved to a separate utility,
+.Xr portcheck 1 .
 .Sh CAVEATS
 The
 .Ev CVSROOT
