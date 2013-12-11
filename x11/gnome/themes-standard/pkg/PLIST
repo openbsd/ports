@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.24 2013/09/27 11:31:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2013/12/11 16:47:27 ajacoutot Exp $
 @conflict gnome-themes-<2.32.1p3
-@unexec-delete rm -f %D/share/icons/Adwaita/icon-theme.cache
 @unexec-delete rm -f %D/share/icons/HighContrast/icon-theme.cache
 lib/gtk-2.0/2.10.0/engines/libadwaita.so
 lib/gtk-3.0/3.0.0/theming-engines/
@@ -3215,5 +3214,4 @@ share/themes/HighContrast/gtk-3.0/settings.ini
 share/themes/HighContrast/index.theme
 share/themes/HighContrast/metacity-1/
 share/themes/HighContrast/metacity-1/metacity-theme-3.xml
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Adwaita
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
