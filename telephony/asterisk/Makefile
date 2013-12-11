@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.187 2013/10/21 23:38:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.188 2013/12/11 16:00:43 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,6 +7,7 @@ COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 VER=			11.6.0
 DISTNAME=		asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}
+REVISION-main=		0
 
 CATEGORIES=		telephony
 
@@ -21,11 +22,10 @@ MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	patent licensing clauses
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB-main +=	c crypto curl execinfo gsm idn iksemel
-WANTLIB-main += m ogg pthread spandsp sqlite3 ssl stdc++ termcap
-WANTLIB-main += tiff vorbis vorbisenc vorbisfile xml2 z uuid
-WANTLIB-main += avcodec avformat avutil opencore-amrnb swscale
-WANTLIB-main += ${MODGETTEXT_WANTLIB}
+WANTLIB-main += avcodec avformat avutil c crypto curl execinfo gsm idn
+WANTLIB-main += iksemel m ogg opencore-amrnb portaudio pthread spandsp
+WANTLIB-main += sqlite3 ssl stdc++ swscale termcap tiff uuid vorbis
+WANTLIB-main += vorbisenc vorbisfile xml2 z ${MODGETTEXT_WANTLIB}
 
 SHARED_LIBS=		asteriskssl 0.0		# 1
 
@@ -40,6 +40,7 @@ LIB_DEPENDS-main=	audio/gsm \
 			audio/libogg \
 			audio/libvorbis \
 			audio/opencore-amr \
+			audio/portaudio-svn \
 			devel/libexecinfo \
 			graphics/ffmpeg \
 			graphics/tiff \
@@ -95,6 +96,7 @@ CONFIGURE_ARGS+=	--with-asound=no \
 			--with-newt=no \
 			--with-osptk=no \
 			--with-oss=no \
+			--with-portaudio=${LOCALBASE} \
 			--with-pri=no \
 			--with-pwlib=no \
 			--with-SDL_image=no \
@@ -108,7 +110,6 @@ CONFIGURE_ARGS+=	--with-asound=no \
 
 CONFIGURE_ARGS+=	--with-jack=no \
 			--with-lua=no \
-			--with-portaudio=no \
 			--with-radius=no \
 			--with-resample=no
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.50 2013/10/21 23:38:45 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.51 2013/12/11 16:00:43 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -246,6 +246,7 @@ lib/asterisk/modules/cel_manager.so
 lib/asterisk/modules/cel_sqlite3_custom.so
 lib/asterisk/modules/chan_agent.so
 lib/asterisk/modules/chan_bridge.so
+lib/asterisk/modules/chan_console.so
 lib/asterisk/modules/chan_iax2.so
 lib/asterisk/modules/chan_local.so
 lib/asterisk/modules/chan_mgcp.so
@@ -469,6 +470,7 @@ share/examples/asterisk/default/codecs.conf
 share/examples/asterisk/default/confbridge.conf
 share/examples/asterisk/default/config_test.conf
 share/examples/asterisk/default/console.conf
+@sample ${SYSCONFDIR}/asterisk/console.conf
 share/examples/asterisk/default/dbsep.conf
 share/examples/asterisk/default/dnsmgr.conf
 share/examples/asterisk/default/dsp.conf
