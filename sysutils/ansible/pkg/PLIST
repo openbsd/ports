@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/09/18 18:40:32 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/12/11 20:27:01 rpe Exp $
 bin/ansible
 bin/ansible-doc
 bin/ansible-playbook
@@ -42,6 +42,13 @@ lib/python${MODPY_VERSION}/site-packages/ansible/inventory/vars_plugins/group_va
 lib/python${MODPY_VERSION}/site-packages/ansible/inventory/vars_plugins/group_vars.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/module_common.py
 lib/python${MODPY_VERSION}/site-packages/ansible/module_common.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/basic.py
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/basic.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/ec2.py
+lib/python${MODPY_VERSION}/site-packages/ansible/module_utils/ec2.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ansible/playbook/__init__.pyc
@@ -57,6 +64,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/__init__.
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/add_host.py
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/add_host.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/assemble.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/assemble.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/async.py
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/async.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/copy.py
@@ -69,6 +78,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/fetch.py
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/fetch.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/group_by.py
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/group_by.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/include_vars.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/include_vars.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/normal.py
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/normal.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/pause.py
@@ -79,8 +90,12 @@ lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/script.py
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/script.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/set_fact.py
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/set_fact.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/synchronize.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/synchronize.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/template.py
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/template.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/unarchive.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/action_plugins/unarchive.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection.py
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection_plugins/
@@ -92,6 +107,10 @@ lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection_plugins/chroo
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection_plugins/chroot.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection_plugins/fireball.py
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection_plugins/fireball.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection_plugins/funcd.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection_plugins/funcd.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection_plugins/jail.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection_plugins/jail.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection_plugins/local.py
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection_plugins/local.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/connection_plugins/paramiko_ssh.py
@@ -110,6 +129,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/dnstxt.py
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/dnstxt.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/env.py
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/env.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/etcd.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/etcd.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/file.py
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/file.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/fileglob.py
@@ -138,6 +159,8 @@ lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/redis_kv.
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/redis_kv.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/sequence.py
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/sequence.pyc
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/subelements.py
+lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/subelements.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/template.py
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/template.pyc
 lib/python${MODPY_VERSION}/site-packages/ansible/runner/lookup_plugins/together.py
@@ -160,6 +183,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/utils/template.pyc
 @man man/man1/ansible-pull.1
 @man man/man1/ansible.1
 @man man/man3/ansible.accelerate.3
+@man man/man3/ansible.acl.3
 @man man/man3/ansible.add_host.3
 @man man/man3/ansible.airbrake_deployment.3
 @man man/man3/ansible.apt.3
@@ -172,7 +196,11 @@ lib/python${MODPY_VERSION}/site-packages/ansible/utils/template.pyc
 @man man/man3/ansible.assemble.3
 @man man/man3/ansible.async_status.3
 @man man/man3/ansible.authorized_key.3
+@man man/man3/ansible.bigip_monitor_http.3
+@man man/man3/ansible.bigip_monitor_tcp.3
+@man man/man3/ansible.bigip_node.3
 @man man/man3/ansible.bigip_pool.3
+@man man/man3/ansible.bigip_pool_member.3
 @man man/man3/ansible.boundary_meter.3
 @man man/man3/ansible.bzr.3
 @man man/man3/ansible.campfire.3
@@ -185,34 +213,51 @@ lib/python${MODPY_VERSION}/site-packages/ansible/utils/template.pyc
 @man man/man3/ansible.digital_ocean.3
 @man man/man3/ansible.django_manage.3
 @man man/man3/ansible.dnsmadeeasy.3
+@man man/man3/ansible.docker.3
 @man man/man3/ansible.easy_install.3
 @man man/man3/ansible.ec2.3
 @man man/man3/ansible.ec2_ami.3
+@man man/man3/ansible.ec2_eip.3
 @man man/man3/ansible.ec2_elb.3
 @man man/man3/ansible.ec2_facts.3
 @man man/man3/ansible.ec2_group.3
 @man man/man3/ansible.ec2_tag.3
 @man man/man3/ansible.ec2_vol.3
+@man man/man3/ansible.ec2_vpc.3
+@man man/man3/ansible.ejabberd_user.3
+@man man/man3/ansible.elasticache.3
 @man man/man3/ansible.facter.3
 @man man/man3/ansible.fail.3
 @man man/man3/ansible.fetch.3
 @man man/man3/ansible.file.3
 @man man/man3/ansible.filesystem.3
 @man man/man3/ansible.fireball.3
+@man man/man3/ansible.firewalld.3
 @man man/man3/ansible.flowdock.3
+@man man/man3/ansible.gc_storage.3
+@man man/man3/ansible.gce.3
+@man man/man3/ansible.gce_lb.3
+@man man/man3/ansible.gce_net.3
+@man man/man3/ansible.gce_pd.3
 @man man/man3/ansible.gem.3
 @man man/man3/ansible.get_url.3
 @man man/man3/ansible.git.3
+@man man/man3/ansible.github_hooks.3
 @man man/man3/ansible.glance_image.3
 @man man/man3/ansible.group.3
 @man man/man3/ansible.group_by.3
+@man man/man3/ansible.grove.3
 @man man/man3/ansible.hg.3
 @man man/man3/ansible.hipchat.3
 @man man/man3/ansible.homebrew.3
+@man man/man3/ansible.hostname.3
 @man man/man3/ansible.htpasswd.3
+@man man/man3/ansible.include_vars.3
 @man man/man3/ansible.ini_file.3
 @man man/man3/ansible.irc.3
 @man man/man3/ansible.jabber.3
+@man man/man3/ansible.jboss.3
+@man man/man3/ansible.kernel_blacklist.3
 @man man/man3/ansible.keystone_user.3
 @man man/man3/ansible.lineinfile.3
 @man man/man3/ansible.linode.3
@@ -220,6 +265,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/utils/template.pyc
 @man man/man3/ansible.lvol.3
 @man man/man3/ansible.macports.3
 @man man/man3/ansible.mail.3
+@man man/man3/ansible.modprobe.3
 @man man/man3/ansible.mongodb_user.3
 @man man/man3/ansible.monit.3
 @man man/man3/ansible.mount.3
@@ -235,9 +281,13 @@ lib/python${MODPY_VERSION}/site-packages/ansible/utils/template.pyc
 @man man/man3/ansible.nova_keypair.3
 @man man/man3/ansible.npm.3
 @man man/man3/ansible.ohai.3
+@man man/man3/ansible.open_iscsi.3
 @man man/man3/ansible.openbsd_pkg.3
+@man man/man3/ansible.openvswitch_bridge.3
+@man man/man3/ansible.openvswitch_port.3
 @man man/man3/ansible.opkg.3
 @man man/man3/ansible.osx_say.3
+@man man/man3/ansible.ovirt.3
 @man man/man3/ansible.pacman.3
 @man man/man3/ansible.pagerduty.3
 @man man/man3/ansible.pause.3
@@ -247,6 +297,7 @@ lib/python${MODPY_VERSION}/site-packages/ansible/utils/template.pyc
 @man man/man3/ansible.pkgin.3
 @man man/man3/ansible.pkgng.3
 @man man/man3/ansible.pkgutil.3
+@man man/man3/ansible.portinstall.3
 @man man/man3/ansible.postgresql_db.3
 @man man/man3/ansible.postgresql_privs.3
 @man man/man3/ansible.postgresql_user.3
@@ -263,6 +314,10 @@ lib/python${MODPY_VERSION}/site-packages/ansible/utils/template.pyc
 @man man/man3/ansible.rabbitmq_vhost.3
 @man man/man3/ansible.raw.3
 @man man/man3/ansible.rax.3
+@man man/man3/ansible.rax_clb.3
+@man man/man3/ansible.rax_clb_nodes.3
+@man man/man3/ansible.rax_facts.3
+@man man/man3/ansible.rax_network.3
 @man man/man3/ansible.rds.3
 @man man/man3/ansible.redhat_subscription.3
 @man man/man3/ansible.redis.3
@@ -284,9 +339,13 @@ lib/python${MODPY_VERSION}/site-packages/ansible/utils/template.pyc
 @man man/man3/ansible.subversion.3
 @man man/man3/ansible.supervisorctl.3
 @man man/man3/ansible.svr4pkg.3
+@man man/man3/ansible.swdepot.3
+@man man/man3/ansible.synchronize.3
 @man man/man3/ansible.sysctl.3
 @man man/man3/ansible.template.3
+@man man/man3/ansible.unarchive.3
 @man man/man3/ansible.uri.3
+@man man/man3/ansible.urpmi.3
 @man man/man3/ansible.user.3
 @man man/man3/ansible.virt.3
 @man man/man3/ansible.wait_for.3
@@ -294,22 +353,33 @@ lib/python${MODPY_VERSION}/site-packages/ansible/utils/template.pyc
 @man man/man3/ansible.yum.3
 @man man/man3/ansible.zfs.3
 @man man/man3/ansible.zypper.3
+@man man/man3/ansible.zypper_repository.3
 share/ansible/
 share/ansible/cloud/
 share/ansible/cloud/cloudformation
 share/ansible/cloud/digital_ocean
+share/ansible/cloud/docker
 share/ansible/cloud/ec2
 share/ansible/cloud/ec2_ami
+share/ansible/cloud/ec2_eip
 share/ansible/cloud/ec2_elb
 share/ansible/cloud/ec2_facts
 share/ansible/cloud/ec2_group
 share/ansible/cloud/ec2_tag
 share/ansible/cloud/ec2_vol
+share/ansible/cloud/ec2_vpc
+share/ansible/cloud/elasticache
+share/ansible/cloud/gc_storage
+share/ansible/cloud/gce
+share/ansible/cloud/gce_lb
+share/ansible/cloud/gce_net
+share/ansible/cloud/gce_pd
 share/ansible/cloud/glance_image
 share/ansible/cloud/keystone_user
 share/ansible/cloud/linode
 share/ansible/cloud/nova_compute
 share/ansible/cloud/nova_keypair
+share/ansible/cloud/ovirt
 share/ansible/cloud/quantum_floating_ip
 share/ansible/cloud/quantum_floating_ip_associate
 share/ansible/cloud/quantum_network
@@ -318,6 +388,10 @@ share/ansible/cloud/quantum_router_gateway
 share/ansible/cloud/quantum_router_interface
 share/ansible/cloud/quantum_subnet
 share/ansible/cloud/rax
+share/ansible/cloud/rax_clb
+share/ansible/cloud/rax_clb_nodes
+share/ansible/cloud/rax_facts
+share/ansible/cloud/rax_network
 share/ansible/cloud/rds
 share/ansible/cloud/route53
 share/ansible/cloud/s3
@@ -339,6 +413,7 @@ share/ansible/database/postgresql_user
 share/ansible/database/redis
 share/ansible/database/riak
 share/ansible/files/
+share/ansible/files/acl
 share/ansible/files/assemble
 share/ansible/files/copy
 share/ansible/files/fetch
@@ -346,7 +421,9 @@ share/ansible/files/file
 share/ansible/files/ini_file
 share/ansible/files/lineinfile
 share/ansible/files/stat
+share/ansible/files/synchronize
 share/ansible/files/template
+share/ansible/files/unarchive
 share/ansible/files/xattr
 share/ansible/internal/
 share/ansible/internal/async_status
@@ -373,9 +450,15 @@ share/ansible/net_infrastructure/arista_interface
 share/ansible/net_infrastructure/arista_l2interface
 share/ansible/net_infrastructure/arista_lag
 share/ansible/net_infrastructure/arista_vlan
+share/ansible/net_infrastructure/bigip_monitor_http
+share/ansible/net_infrastructure/bigip_monitor_tcp
+share/ansible/net_infrastructure/bigip_node
 share/ansible/net_infrastructure/bigip_pool
+share/ansible/net_infrastructure/bigip_pool_member
 share/ansible/net_infrastructure/dnsmadeeasy
 share/ansible/net_infrastructure/netscaler
+share/ansible/net_infrastructure/openvswitch_bridge
+share/ansible/net_infrastructure/openvswitch_port
 share/ansible/network/
 share/ansible/network/get_url
 share/ansible/network/slurp
@@ -383,6 +466,7 @@ share/ansible/network/uri
 share/ansible/notification/
 share/ansible/notification/campfire
 share/ansible/notification/flowdock
+share/ansible/notification/grove
 share/ansible/notification/hipchat
 share/ansible/notification/irc
 share/ansible/notification/jabber
@@ -405,16 +489,21 @@ share/ansible/packaging/pip
 share/ansible/packaging/pkgin
 share/ansible/packaging/pkgng
 share/ansible/packaging/pkgutil
+share/ansible/packaging/portinstall
 share/ansible/packaging/redhat_subscription
 share/ansible/packaging/rhn_channel
 share/ansible/packaging/rhn_register
 share/ansible/packaging/rpm_key
 share/ansible/packaging/svr4pkg
+share/ansible/packaging/swdepot
+share/ansible/packaging/urpmi
 share/ansible/packaging/yum
 share/ansible/packaging/zypper
+share/ansible/packaging/zypper_repository
 share/ansible/source_control/
 share/ansible/source_control/bzr
 share/ansible/source_control/git
+share/ansible/source_control/github_hooks
 share/ansible/source_control/hg
 share/ansible/source_control/subversion
 share/ansible/system/
@@ -422,11 +511,16 @@ share/ansible/system/authorized_key
 share/ansible/system/cron
 share/ansible/system/facter
 share/ansible/system/filesystem
+share/ansible/system/firewalld
 share/ansible/system/group
+share/ansible/system/hostname
+share/ansible/system/kernel_blacklist
 share/ansible/system/lvg
 share/ansible/system/lvol
+share/ansible/system/modprobe
 share/ansible/system/mount
 share/ansible/system/ohai
+share/ansible/system/open_iscsi
 share/ansible/system/ping
 share/ansible/system/seboolean
 share/ansible/system/selinux
@@ -440,12 +534,15 @@ share/ansible/utilities/accelerate
 share/ansible/utilities/debug
 share/ansible/utilities/fail
 share/ansible/utilities/fireball
+share/ansible/utilities/include_vars
 share/ansible/utilities/pause
 share/ansible/utilities/set_fact
 share/ansible/utilities/wait_for
 share/ansible/web_infrastructure/
 share/ansible/web_infrastructure/django_manage
+share/ansible/web_infrastructure/ejabberd_user
 share/ansible/web_infrastructure/htpasswd
+share/ansible/web_infrastructure/jboss
 share/ansible/web_infrastructure/supervisorctl
 share/doc/ansible/
 share/doc/ansible/COPYING
