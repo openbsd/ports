@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.823 2013/12/03 21:50:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.824 2013/12/11 19:32:30 kirby Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -61,6 +61,7 @@
      SUBDIR += darkstat
      SUBDIR += dclib
      SUBDIR += ddclient
+     SUBDIR += dhcdrop
      SUBDIR += dhcping
      SUBDIR += dictd
      SUBDIR += dlint
