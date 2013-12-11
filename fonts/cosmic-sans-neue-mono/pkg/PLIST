@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/11 18:45:25 bcallah Exp $
+lib/X11/fonts/
+@fontdir lib/X11/fonts/CosmicSansNeueMono/
+lib/X11/fonts/CosmicSansNeueMono/CosmicSansNeueMono.otf
+lib/X11/fonts/CosmicSansNeueMono/CosmicSansNeueMonoBold.otf
+share/doc/cosmic-sans-neue-mono/
+share/doc/cosmic-sans-neue-mono/README.md
