@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/09/16 21:53:02 abieber Exp $
+# $OpenBSD: Makefile,v 1.13 2013/12/11 18:45:57 bcallah Exp $
 
      SUBDIR =
      SUBDIR += acrofonts
@@ -8,6 +8,7 @@
      SUBDIR += arabeyes-ttf
      SUBDIR += artwiz-aleczapka
      SUBDIR += cantarell-fonts
+     SUBDIR += cosmic-sans-neue-mono
      SUBDIR += dina-fonts
      SUBDIR += droid-fonts
      SUBDIR += ecoliercourt-fonts
