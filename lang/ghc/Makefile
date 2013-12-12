@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2013/11/25 14:16:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.107 2013/12/12 22:13:37 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -13,6 +13,7 @@ DISTNAME =		ghc-${MODGHC_VER}
 PKGNAME-main =		ghc-${MODGHC_VER}
 REVISION-main =		1
 PKGNAME-doc =		ghc-doc-${MODGHC_VER}
+REVISION-doc =		0
 CATEGORIES =		lang devel
 HOMEPAGE =		http://www.haskell.org/ghc/
 
@@ -79,16 +80,14 @@ CONFIGURE_ENV +=	CONF_CC_OPTS_STAGE0="-fno-pie -nopie" \
 
 MAKE_FLAGS +=		StripLibraries=YES \
 			INSTALL_BIN_OPTS=-s \
-			HSCOLOUR_SRCS=NO
+			HSCOLOUR_SRCS=NO \
+			BUILD_DOCBOOK_PDF=NO \
+			BUILD_DOCBOOK_PS=NO
 
 .if ${FLAVOR:Mno_doc}
 MAKE_FLAGS +=		HADDOCK_DOCS=NO \
 			LATEX_DOCS=NO \
-			BUILD_DOCBOOK_HTML=NO \
-			BUILD_DOCBOOK_PDF=NO \
-			BUILD_DOCBOOK_PS=NO
-.else
-BUILD_DEPENDS +=	textproc/dblatex
+			BUILD_DOCBOOK_HTML=NO
 .endif
 
 # Thank god that they're only building compilers and no nuclear

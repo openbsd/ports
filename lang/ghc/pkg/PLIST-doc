@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST-doc,v 1.18 2013/07/18 21:43:24 kili Exp $
+@comment $OpenBSD: PLIST-doc,v 1.19 2013/12/12 22:13:37 kili Exp $
 share/doc/ghc/
-share/doc/ghc/haddock.pdf
-share/doc/ghc/haddock.ps
 share/doc/ghc/html/
 share/doc/ghc/html/haddock/
 share/doc/ghc/html/haddock/ch01s03.html
@@ -2535,5 +2533,3 @@ share/doc/ghc/html/users_guide/win32-dlls.html
 share/doc/ghc/html/users_guide/win32.html
 share/doc/ghc/html/users_guide/wrong-compilee.html
 share/doc/ghc/html/users_guide/wrong.html
-share/doc/ghc/users_guide.pdf
-share/doc/ghc/users_guide.ps
