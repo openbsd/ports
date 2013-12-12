@@ -1,10 +1,12 @@
-$OpenBSD: patch-lib_puppet_type_mount_rb,v 1.2 2013/12/04 09:20:56 jasper Exp $
+$OpenBSD: patch-lib_puppet_type_mount_rb,v 1.3 2013/12/12 21:12:38 jasper Exp $
 
-(#23141) Rework 'remounts' for BSDs
-https://github.com/puppetlabs/puppet/pull/2062
+From c6c2c744b9eb44af605d96fa3f3a14723588bfa7 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Wed, 13 Nov 2013 15:45:10 +0100
+Subject: [PATCH] (#23141) Add OpenBSD to the exclusion list for 'remounts' in mount type
 
---- lib/puppet/type/mount.rb.orig	Wed Nov 13 15:29:35 2013
-+++ lib/puppet/type/mount.rb	Wed Nov 13 15:29:48 2013
+--- lib/puppet/type/mount.rb.orig	Thu Dec 12 10:06:22 2013
++++ lib/puppet/type/mount.rb	Thu Dec 12 10:06:51 2013
 @@ -249,7 +249,7 @@ module Puppet
        newvalues(:true, :false)
        defaultto do
