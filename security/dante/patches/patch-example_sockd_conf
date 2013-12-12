@@ -1,0 +1,28 @@
+$OpenBSD: patch-example_sockd_conf,v 1.1 2013/12/12 14:11:36 dcoppa Exp $
+--- example/sockd.conf.orig	Wed May 18 13:27:32 2011
++++ example/sockd.conf	Thu Nov 14 13:58:29 2013
+@@ -40,7 +40,7 @@
+ 
+ # the server will log both via syslog, to stdout and to /var/log/sockd.log
+ #logoutput: syslog stdout /var/log/sockd.log
+-logoutput: stderr
++logoutput: syslog/user
+ 
+ # The server will bind to the address 10.1.1.1, port 1080 and will only
+ # accept connections going to that address.
+@@ -76,11 +76,11 @@ logoutput: stderr
+ #
+ 
+ # when doing something that can require privilege, it will use the
+-# userid "sockd".
+-#user.privileged: sockd
++# userid "root".
++#user.privileged: root
+ 
+-# when running as usual, it will use the unprivileged userid of "sockd".
+-#user.unprivileged: sockd
++# when running as usual, it will use the unprivileged userid of "_sockd".
++#user.unprivileged: _sockd
+ 
+ # If you compiled with libwrap support, what userid should it use
+ # when executing your libwrap commands?  "libwrap".

@@ -1,12 +1,12 @@
-$OpenBSD: patch-bin_socksify_in,v 1.1 2005/05/21 06:51:55 jakob Exp $
---- bin/socksify.in.orig	Mon Jan 24 02:24:18 2005
-+++ bin/socksify.in	Fri May 20 19:26:06 2005
-@@ -52,7 +52,7 @@ SOCKSIFY_PRELOAD_LIBS="@SOCKSIFY_PRELOAD
- LIBDIR="@LIBRARY_PREFIX@"
+$OpenBSD: patch-bin_socksify_in,v 1.2 2013/12/12 14:11:36 dcoppa Exp $
+--- bin/socksify.in.orig	Sun Oct 27 16:24:41 2013
++++ bin/socksify.in	Thu Dec 12 13:40:08 2013
+@@ -72,7 +72,7 @@ fi
  
- #XXX shared library name should be generated too (possibly including version)
--LIBRARY="${SOCKS_LIBRARY-${LIBDIR}/libdsocks.@SOLIB_POSTFIX@}"
-+LIBRARY="${SOCKS_LIBRARY-${LIBDIR}/libdsocks.@SOLIB_POSTFIX@.1.0}"
+ #dlib/Makefile.am libtool flags should produce a predictable library name
+ #(ending in SOLIB_POSTFIX).
+-LIBRARY="${SOCKS_LIBRARY:-${FULLPATH}libdsocks.@SOLIB_POSTFIX@}"
++LIBRARY="${SOCKS_LIBRARY:-${FULLPATH}libdsocks.@SOLIB_POSTFIX@.${LIBdsocks_VERSION}}"
  
+ #platform dependent LD_PRELOAD-variant format
  PRELOAD_SEPERATOR="@PRELOAD_SEPERATOR@"
- PRELOAD_POSTFIX="@PRELOAD_POSTFIX@"

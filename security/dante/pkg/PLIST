@@ -1,28 +1,35 @@
-@comment $OpenBSD: PLIST,v 1.14 2006/01/21 11:14:44 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.15 2013/12/12 14:11:36 dcoppa Exp $
+@conflict dsocks-*
 @conflict socks5-*
+@newgroup _sockd:728
+@newuser _sockd:728:_sockd:daemon:sockd daemon:/nonexistent:/sbin/nologin
 bin/socksify
 include/socks.h
-lib/libdsocks.a
 lib/libdsocks.la
+@lib lib/libdsocks.so.${LIBdsocks_VERSION}
 lib/libsocks.a
 lib/libsocks.la
+@lib lib/libsocks.so.${LIBsocks_VERSION}
+@man man/man1/socksify.1
 @man man/man5/sockd.conf.5
 @man man/man5/socks.conf.5
 @man man/man8/sockd.8
-sbin/sockd
+@bin sbin/sockd
 share/doc/dante/
 share/doc/dante/README.socksify
 share/doc/dante/README.survey
 share/doc/dante/README.usage
 share/doc/dante/SOCKS4.protocol
-share/doc/dante/faq.ps
 share/doc/dante/rfc1928.txt
 share/doc/dante/rfc1929.txt
+share/doc/dante/rfc1961.txt
 share/examples/dante/
 share/examples/dante/sockd-basic.conf
+@sample ${SYSCONFDIR}/sockd.conf
 share/examples/dante/sockd-chaining.conf
 share/examples/dante/sockd.conf
 share/examples/dante/socks-simple-withoutnameserver.conf
 share/examples/dante/socks-simple.conf
+@sample ${SYSCONFDIR}/socks.conf
 share/examples/dante/socks.conf
-%%SHARED%%
+@rcscript ${RCDIR}/sockd
