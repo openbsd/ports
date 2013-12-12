@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2013/12/04 23:59:27 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2013/12/12 19:53:51 landry Exp $
 
 MOZILLA_VERSION =	24.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	xulrunner
 PKGSPEC-devel =		xulrunner-devel->=24.0,<31.0
 PKGSPEC-main =		xulrunner->=24.0,<31.0
-REVISION =		0
-REVISION-devel =	3
+REVISION =		1
+REVISION-devel =	4
 
 SO_VERSION =		0.0
 MOZILLA_LIBS =		mozgnome mozalloc xul
