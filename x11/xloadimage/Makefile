@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.50 2013/06/04 18:42:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.51 2013/12/12 13:22:41 naddy Exp $
 
 COMMENT=	graphics file viewer for X11
 
 VERSION=	4.1
 # Debian
-REV=		17
+REV=		22
 
 DISTNAME=	xloadimage.${VERSION}
 PKGNAME=	xloadimage-${VERSION}.${REV}
@@ -13,7 +13,7 @@ CATEGORIES=	x11 graphics
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
-# BSD
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_R5CONTRIB}
@@ -33,8 +33,12 @@ NO_TEST=	Yes
 
 PATCH_DIST_STRIP= -p1
 
+# superseded by 30_libtiff5.patch
+pre-patch:
+	@rm -f ${WRKDIR}/debian/patches/24_libtiff5.patch
+
 do-distpatch:
-	@for p in ${WRKDIR}/debian/patches/*.dpatch; do \
+	@for p in ${WRKDIR}/debian/patches/*.patch; do \
 		${PATCH} ${PATCH_DIST_ARGS} < $$p; \
 	done
 

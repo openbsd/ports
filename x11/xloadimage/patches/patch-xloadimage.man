@@ -1,12 +1,12 @@
-$OpenBSD: patch-xloadimage.man,v 1.4 2003/04/06 02:59:48 naddy Exp $
---- xloadimage.man.orig	Sun Apr  6 04:12:12 2003
-+++ xloadimage.man	Sun Apr  6 04:19:17 2003
+$OpenBSD: patch-xloadimage.man,v 1.5 2013/12/12 13:22:41 naddy Exp $
+--- xloadimage.man.orig	Wed Dec 11 23:44:28 2013
++++ xloadimage.man	Wed Dec 11 23:45:46 2013
 @@ -633,7 +633,7 @@ distribution.
- xloadimage              - the image loader and viewer
- xsetbg                  - pseudonym which quietly sets the background
- xview                   - pseudonym which views in a window
--/etc/X11/Xloadimage     - default system-wide configuration file
-+%%SYSCONFDIR%%/xloadimagerc       - default system-wide configuration file
- ~/.xloadimagerc         - user's personal configuration file
+ xloadimage              \- the image loader and viewer
+ xsetbg                  \- pseudonym which quietly sets the background
+ xview                   \- pseudonym which views in a window
+-/etc/X11/Xloadimage     \- default system-wide configuration file
++%%SYSCONFDIR%%/xloadimagerc       \- default system-wide configuration file
+ ~/.xloadimagerc         \- user's personal configuration file
  .in -5
  .fi
