@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2013/06/20 06:54:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2013/12/12 14:53:11 ajacoutot Exp $
 
 COMMENT=		high quality print drivers for foomatic and CUPS
 
 V=			5.2.9
 DISTNAME=		gutenprint-${V}
 
-REVISION=		3
+REVISION=		4
 
 MAJOR_V=		${V:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=		MAJOR_V
@@ -36,11 +36,8 @@ BUILD_DEPENDS=		print/foomatic-db-engine
 LIB_DEPENDS=		print/cups,-libs \
 			print/ijs
 
-# gutenprint with foomatic needs xml drivers information from foomatic-db
-RUN_DEPENDS +=		print/foomatic-db
-
-# share/foomatic/db/source/*/*.xml
-RUN_DEPENDS +=		print/foomatic-db-engine
+# foomatic-rip(1), foomatic-db(-engine)
+RUN_DEPENDS +=		print/cups-filters
 
 USE_GMAKE=		Yes
 
