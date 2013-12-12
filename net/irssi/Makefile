@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.55 2013/03/21 08:46:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2013/12/12 14:10:13 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	modular IRC client with many features (ipv6,socks,proxy)
 
 DISTNAME=	irssi-0.8.15
-REVISION=	3
+REVISION=	4
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.irssi.org/
@@ -17,7 +17,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=   ${HOMEPAGE}files/
 
-WANTLIB=	c crypto m ncurses perl ssl util pcre glib-2.0 gmodule-2.0
+WANTLIB=	c crypto m ncurses perl pthread ssl util \
+		pcre glib-2.0 gmodule-2.0
 
 MODULES=	devel/gettext
 
@@ -35,8 +36,11 @@ FLAVORS=	socks
 FLAVOR?=
 
 .if ${FLAVOR:Msocks}
+CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--with-socks
-BUILD_DEPENDS+=		security/dante
+LIB_DEPENDS+=		security/dante
+WANTLIB+=		socks
 .endif
 
 MAKE_FLAGS=	scriptdir="${SYSCONFDIR}/irssi/scripts" \
