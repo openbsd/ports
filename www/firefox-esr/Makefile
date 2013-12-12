@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/11/20 20:57:29 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2013/12/12 20:00:15 landry Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 
-MOZILLA_VERSION =	24.1.1esr
+MOZILLA_VERSION =	24.2.0esr
 MOZILLA_BRANCH =	esr24
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
@@ -32,7 +32,6 @@ MODCLANG_LANGS =	c c++
 NO_TEST =	Yes
 
 CONFIGURE_STYLE =	autoconf no-autoheader
-WANTLIB +=	kvm
 
 # to be able to link when building with clang on i386 or gcc on ppc
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
