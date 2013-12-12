@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.315 2013/11/16 17:58:56 bcallah Exp $
+# $OpenBSD: Makefile,v 1.316 2013/12/12 14:53:00 sthen Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -25,6 +25,7 @@
      SUBDIR += celt
      SUBDIR += celt051
      SUBDIR += celt07
+     SUBDIR += checkmate
      SUBDIR += chromaprint
      SUBDIR += clementine
      SUBDIR += cmixer
