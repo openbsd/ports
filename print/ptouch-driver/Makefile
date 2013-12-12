@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:37:54 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2013/12/12 14:54:29 ajacoutot Exp $
 
 COMMENT=	Brother P-touch CUPS driver
 
 DISTNAME=	ptouch-driver-1.3
 CATEGORIES=	print
-
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	http://www.diku.dk/hjemmesider/ansatte/panic/P-touch/
 
@@ -20,8 +19,8 @@ MASTER_SITES=	${HOMEPAGE}
 
 LIB_DEPENDS=	print/cups,-libs
 
-# share/foomatic/db/source/*/*.xml
-RUN_DEPENDS +=	print/foomatic-db-engine
+# foomatic-rip(1), foomatic-db(-engine)
+RUN_DEPENDS +=	print/cups-filters
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
