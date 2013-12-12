@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.71 2013/09/06 23:14:40 brad Exp $
+$OpenBSD: patch-configure,v 1.72 2013/12/12 21:41:54 brad Exp $
 --- configure.orig	Mon Aug 19 10:49:15 2013
-+++ configure	Tue Aug 20 02:49:06 2013
++++ configure	Wed Dec 11 22:26:11 2013
 @@ -523,6 +523,7 @@ Audio output:
    --disable-nas          disable NAS audio output [autodetect]
    --disable-sgiaudio     disable SGI audio output [autodetect]
@@ -92,15 +92,6 @@ $OpenBSD: patch-configure,v 1.71 2013/09/06 23:14:40 brad Exp $
  list_subparts() {
    pattern="s/^[^#]*${1}.*([^ ,]*, *\([^ ,)]*\).*/\1_${2}/p"
    sed -n "$pattern" ffmpeg/libav${3} | toupper
-@@ -1696,7 +1700,7 @@ if test -z "$_target" ; then
-       sh3|sh4|sh4a) host_arch=sh ;;
-       s390) host_arch=s390 ;;
-       s390x) host_arch=s390x ;;
--      *mips*) host_arch=mips ;;
-+      sgi|mips*|loongson) host_arch=mips ;;
-       vax) host_arch=vax ;;
-       xtensa*) host_arch=xtensa ;;
-       *) host_arch=UNKNOWN ;;
 @@ -2349,7 +2353,7 @@ case "$host_arch" in
      arch='sparc'
      iproc='sparc'

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.227 2013/09/25 07:58:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.228 2013/12/12 21:41:54 brad Exp $
 
 SHARED_ONLY=		Yes
 
@@ -74,13 +74,21 @@ BUILD_DEPENDS += devel/yasm
 
 CONFDIR =	${SYSCONFDIR}/mplayer
 
+.if ${MACHINE_ARCH:Marm}
+# uses ARM EABI
+MPLAYER_ARCH=	generic
+.else
+MPLAYER_ARCH=	${MACHINE_ARCH}
+.endif
+
 USE_GMAKE =	Yes
 USE_GROFF =	Yes
 MAKE_ENV =	V=1 	# turn on verbose FFmpeg build
 CONFIGURE_STYLE = simple
 
 # CONFIGURE_ARGS for misc stuff
-CONFIGURE_ARGS += --confdir=${CONFDIR} \
+CONFIGURE_ARGS += --target="${MPLAYER_ARCH}-openbsd" \
+		--confdir=${CONFDIR} \
 		--mandir=${LOCALBASE}/man \
 		--extra-cflags="-I${LOCALBASE}/include" \
 		--extra-ldflags="-L${LOCALBASE}/lib" \
@@ -168,8 +176,6 @@ CONFIGURE_ARGS += --disable-decoder=mp3on4float \
 		--disable-decoder=mp3float \
 		--disable-decoder=mp2float \
 		--disable-decoder=vorbis
-# ARM native target code wants eABI ABI
-CONFIGURE_ARGS += --target=generic-openbsd
 .endif
 
 FLAVORS =	debug aa jack
