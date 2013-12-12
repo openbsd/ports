@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-lightning,v 1.18 2013/11/04 21:18:33 landry Exp $
+@comment $OpenBSD: PLIST-lightning,v 1.19 2013/12/12 19:58:39 landry Exp $
 @conflict lightning-seamonkey-<=1.0b1
 @pkgpath productivity/sunbird,-seamonkey
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/
@@ -22,6 +22,7 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/chrome/gdata-provider/skin/gdata-event-dialog-reminder.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/chrome/gdata-provider/skin/reminder-action-sms.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/components/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/components/.mkdir.done
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/components/calGoogleCalendarModule.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/components/calGoogleCalendarModule.manifest
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/components/gdata.xpt
@@ -323,6 +324,7 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/lightning/skin/lightning/mode-switch-icons.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/lightning/skin/lightning/suite-accountCentral.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/.mkdir.done
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/calBackendLoader.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/calBackendLoader.manifest
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/components/calCompositeCalendar.js

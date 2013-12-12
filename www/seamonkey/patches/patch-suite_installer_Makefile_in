@@ -1,7 +1,7 @@
-$OpenBSD: patch-suite_installer_Makefile_in,v 1.7 2013/08/08 07:02:38 landry Exp $
+$OpenBSD: patch-suite_installer_Makefile_in,v 1.8 2013/12/12 19:58:39 landry Exp $
 Don't install the sdk
---- suite/installer/Makefile.in.orig	Mon Jul  8 09:41:30 2013
-+++ suite/installer/Makefile.in	Fri Jul 12 19:29:09 2013
+--- suite/installer/Makefile.in.orig	Sat Dec  7 15:56:58 2013
++++ suite/installer/Makefile.in	Sun Dec  8 11:10:45 2013
 @@ -138,10 +138,6 @@ NON_OMNIJAR_FILES = \
  	defaults/profile/panels.rdf \
  	$(NULL)
@@ -10,6 +10,6 @@ Don't install the sdk
 -INSTALL_SDK = 1
 -endif
 - 
- GENERATE_CACHE=1
- 
  include $(MOZILLA_SRCDIR)/toolkit/mozapps/installer/packager.mk
+ 
+ ifeq (Darwin, $(OS_ARCH))

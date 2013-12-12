@@ -1,21 +1,22 @@
-# $OpenBSD: Makefile,v 1.148 2013/11/03 11:30:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.149 2013/12/12 19:58:39 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 COMMENT-enigmail =	Mozilla Seamonkey GnuPG extension
 
-MOZILLA_VERSION =	2.22
+MOZILLA_VERSION =	2.23
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
 
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-2.7beta1
+PKGNAME-lightning =	lightning-seamonkey-2.8beta1
 ENIG_V =		1.6
 PKGNAME-enigmail =	enigmail-seamonkey-${ENIG_V}
 EPOCH-lightning =	0
 EPOCH-enigmail =	0
+REVISION-enigmail =	0
 
 HOMEPAGE =	http://www.seamonkey-project.org/
 #MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/
@@ -24,7 +25,7 @@ DISTFILES +=	${MOZILLA_PROJECT}-${MOZILLA_VERSION}.source.tar.bz2 \
 		enigmail-${ENIG_V}.tar.gz:0
 EXTRACT_CASES =	enigmail-*.tar.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | tar -C comm-${MOZILLA_BRANCH}/mailnews/extensions/ -xf -;;
 
-SO_VERSION =	34.0
+SO_VERSION =	35.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
@@ -68,9 +69,8 @@ CONFIGURE_ARGS +=	--enable-calendar
 CONFIGURE_ARGS +=	--disable-debug-symbols
 .endif
 
-# XXX remove in 24
-CONFIGURE_ENV+=	TERM=xterm
-MAKE_ENV+=	TERM=xterm
+# relies on pulseaudio for sound and broken at runtime
+CONFIGURE_ARGS +=	--disable-webrtc
 
 ALL_TARGET =	default
 
