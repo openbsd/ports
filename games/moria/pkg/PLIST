@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/11/03 14:45:09 niallo Exp $
-@group games
+@comment $OpenBSD: PLIST,v 1.8 2013/12/12 21:39:08 jca Exp $
 @mode g+s
-bin/moria
+@group games
+@bin bin/moria
 @mode
 share/moria/
 share/moria/hours
