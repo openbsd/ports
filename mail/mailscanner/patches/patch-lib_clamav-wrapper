@@ -1,7 +1,15 @@
-$OpenBSD: patch-lib_clamav-wrapper,v 1.3 2011/08/21 11:03:26 sthen Exp $
+$OpenBSD: patch-lib_clamav-wrapper,v 1.4 2013/12/12 21:56:19 brad Exp $
 --- lib/clamav-wrapper.orig	Sat Aug 20 08:32:02 2011
-+++ lib/clamav-wrapper	Sat Aug 20 21:38:21 2011
-@@ -99,23 +99,23 @@ ExtraScanOptions=""
++++ lib/clamav-wrapper	Wed Dec 11 18:30:49 2013
+@@ -52,7 +52,6 @@
+ # You may want to check this script for bash-isms
+ 
+ #TempDir="/tmp/clamav.$$"
+-TempDir=$(mktemp) || { echo "$0: Cannot make name for temporary dir" >&2; exit 1; }
+ ClamUser="clamav"
+ ClamGroup="clamav"
+ 
+@@ -99,23 +98,23 @@ ExtraScanOptions=""
  # LESS COMMON unpackers, which probably aren't installed by default
  # (hence disabled)
  # Uncomment ONE of the following lines if you have unrar installed
@@ -30,3 +38,19 @@ $OpenBSD: patch-lib_clamav-wrapper,v 1.3 2011/08/21 11:03:26 sthen Exp $
  #ExtraScanOptions="$ExtraScanOptions --zoo=/path/to/unzoo" 
  
  # Now increase the allowed expansion size of zip files
+@@ -140,14 +139,10 @@ fi
+ PATH=$PATH:/usr/ucb
+ export PATH
+ 
+-# Check if the tmpdir exists, if so delete so we start with a clean slate
+-if [ -x "${TempDir}" ]; then
+-	rm -rf ${TempDir} >/dev/null 2>&1
+-fi
+ 
+ # Make the Temp dir
+ umask 0077
+-mkdir "${TempDir}" >/dev/null 2>&1
++TempDir=$(mktemp -d) || { echo "$0: Cannot create temporary dir" >&2; exit 1; }
+ 
+ # In case we get interupted....
+ trap "rm -rf ${TempDir}" EXIT

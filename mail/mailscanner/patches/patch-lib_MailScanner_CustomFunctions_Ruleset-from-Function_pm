@@ -1,0 +1,21 @@
+$OpenBSD: patch-lib_MailScanner_CustomFunctions_Ruleset-from-Function_pm,v 1.1 2013/12/12 21:56:19 brad Exp $
+--- lib/MailScanner/CustomFunctions/Ruleset-from-Function.pm.orig	Wed Dec 11 18:35:48 2013
++++ lib/MailScanner/CustomFunctions/Ruleset-from-Function.pm	Wed Dec 11 18:36:34 2013
+@@ -31,7 +31,6 @@ $VERSION = substr q$Revision: 1.1 $, 10;
+ 
+ my $Debug = 0; # Set to 1 to enable debug output to STDERR
+ #my $tmpfilename = "/tmp/MailScanner.$$.conf"; # Temp MS.conf file
+-my($tmpfh, $tmpfilename) = tempfile("MailScanner.XXXXXX", TMPDIR => 1, UNLINK => 0);
+ 
+ 
+ 
+@@ -60,8 +59,7 @@ sub InitVirusScanning {
+   my $option = 'virusscanning'; # External (MailScanner.conf-version)
+ 
+   # Make the temporary 1-line MailScanner.conf file, use it and delete it
+-  my $fh = new FileHandle;
+-  $fh->open("> $tmpfilename") or die "$!";
++  my($fh, $tmpfilename) = tempfile("MailScanner.XXXXXX", TMPDIR => 1, UNLINK => 0);
+   print $fh $option . " = $ruleset\n";
+   $fh->close;
+ 

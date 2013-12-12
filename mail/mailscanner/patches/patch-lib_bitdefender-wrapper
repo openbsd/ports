@@ -1,0 +1,20 @@
+$OpenBSD: patch-lib_bitdefender-wrapper,v 1.1 2013/12/12 21:56:19 brad Exp $
+--- lib/bitdefender-wrapper.orig	Wed Dec 11 18:29:16 2013
++++ lib/bitdefender-wrapper	Wed Dec 11 18:29:38 2013
+@@ -34,7 +34,6 @@ prog=bdc
+ extras=''
+ 
+ #LogFile=/tmp/log.bdc.$$
+-LogFile=$(mktemp) || { echo "$0: Cannot create temporary file" >&2; exit 1; }
+ 
+ if [ -x ${PackageDir}/bdscan ]; then
+   # Version 7.5 is installed
+@@ -60,7 +59,7 @@ if [ "x$1" = "x-IsItInstalled" ]; then
+ fi
+ 
+ umask 077
+-rm -f $LogFile
++LogFile=$(mktemp) || { echo "$0: Cannot create temporary file" >&2; exit 1; }
+ ${PackageDir}/$prog --log=$LogFile $extras "$@" >/dev/null 2>&1
+ cat $LogFile
+ rm -f $LogFile

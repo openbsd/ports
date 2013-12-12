@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_trend-autoupdate,v 1.1 2013/12/12 21:56:19 brad Exp $
+--- lib/trend-autoupdate.orig	Wed Dec 11 18:22:26 2013
++++ lib/trend-autoupdate	Wed Dec 11 18:22:40 2013
+@@ -16,7 +16,7 @@ shift
+ shift
+ 
+ #TEMPDIR=/tmp/trend-update.$$
+-TEMPDIR=$(mktemp) || { echo "$0: Cannot create temporary file" >&2; exit 1; }
++TEMPDIR=$(mktemp -d) || { echo "$0: Cannot create temporary file" >&2; exit 1; }
+ # In case it's a link
+ rm -f $TEMPDIR >/dev/null 2>&1
+ # In case it's a dir
