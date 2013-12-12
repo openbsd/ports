@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/10/11 11:26:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2013/12/12 20:21:45 landry Exp $
 
 COMMENT-main=	schematic and PCB editing software
 COMMENT-docs=	documentation for the kicad library of components
@@ -31,6 +31,10 @@ MULTI_PACKAGES=	-main -docs
 
 MODULES=	devel/cmake \
 		devel/gettext
+
+# kicad includes some boost headers, but somehow
+# randomly fails if boost is present then junked
+BUILD_DEPENDS =	devel/boost
 
 RUN_DEPENDS-main=	cad/kicad-library \
 			devel/desktop-file-utils \
