@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.7 2013/10/27 08:50:17 ajacoutot Exp $
+$OpenBSD: README-main,v 1.8 2013/12/12 14:48:31 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -58,7 +58,8 @@ Printer Sharing using mDNS
 Browsing for shared printers can be done with multicast DNS (mDNS) using
 the avahi daemon.
 
-On the client side, "avahi-daemon" and "cups-browsed" must be running by
+On the client side, "avahi-daemon" (from the avahi package) and
+"cups-browsed" (from the cups-filters package) must be running by
 adding "avahi_daemon" and "cups_browsed" to the pkg_scripts variable in
 rc.conf.local(5).
 

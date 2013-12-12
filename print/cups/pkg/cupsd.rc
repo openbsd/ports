@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: cupsd.rc,v 1.15 2013/02/04 14:46:24 ajacoutot Exp $
+# $OpenBSD: cupsd.rc,v 1.16 2013/12/12 14:48:31 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/cupsd"
 
@@ -15,8 +15,9 @@ _lpfiles="/usr/bin/lpq /usr/bin/lpr /usr/bin/lprm /usr/sbin/lpc \
 
 rc_pre() {
 	${daemon} -t || return 1
-	[ -e /dev/ulpt0 ] && chown _cups /dev/ulpt[0-1]
 	[ -e /dev/lpt0 ] && chown _cups /dev/lp[a,t][0-2]
+	# XXX cups-driverd(8) can crash when foomatic DB sources are added/removed
+	rm -f /var/cache/cups/*
 
 	if [ -e /usr/sbin/lpd.pre-cups -a ! -f /usr/sbin/lpd -a -L /usr/sbin/lpc ]; then
 		return
@@ -63,7 +64,6 @@ rc_post() {
 	fi
 
 	[ -e /dev/lpt0 ] && chown root /dev/lp[a,t][0-2]
-	[ -e /dev/ulpt0 ] && chown root /dev/ulpt[0-1]
 }
 
 rc_cmd $1
