@@ -1,12 +1,47 @@
-$OpenBSD: patch-tcap_c,v 1.2 2010/05/22 15:05:29 espie Exp $
---- tcap.c.orig	Sat Dec 13 09:34:59 1997
-+++ tcap.c	Sat May 22 16:56:49 2010
-@@ -39,7 +39,7 @@ char *UP, PC, *CM, *CE, *CL, *SO, *SE, *TI, *TE;	/* DR
+$OpenBSD: patch-tcap_c,v 1.3 2013/12/12 21:59:57 naddy Exp $
+--- tcap.c.orig	Thu Dec 12 17:12:17 2013
++++ tcap.c	Thu Dec 12 17:14:22 2013
+@@ -41,11 +41,12 @@ char *UP, PC, *CM, *CE, *CL, *SO, *SE, *TI, *TE;	/* DR
  
  #ifdef BSD
  #include <sys/ioctl.h>
--struct winsize ttysize;
-+struct ttysize ttysize;
- #endif /* BSD */
- #ifdef ULTRIX
++#ifdef TIOCGWINSZ
  struct winsize ttysize;
+-#endif /* BSD */
+-#ifdef ULTRIX
+-struct winsize ttysize;
++#else
++struct ttysize ttysize;
+ #endif
++#endif /* BSD */
+ 
+ void
+ putpad (str)
+@@ -62,9 +63,6 @@ tcapopen ()
+     char tcbuf[1024];
+     char *tv_stype;
+     char err_str[NCOL];
+-#ifdef ULTRIX
+-    struct winsize ttysize;
+-#endif
+ 
+     nrow = NROW;
+ 
+@@ -89,7 +87,7 @@ tcapopen ()
+ 
+ 
+ #ifdef BSD
+-#ifdef ULTRIX
++#ifdef TIOCGWINSZ
+     if (ioctl (0, TIOCGWINSZ, &ttysize) == 0
+ 	&& ttysize.ws_row > 0)
+     {
+@@ -103,7 +101,7 @@ tcapopen ()
+ 	nrow = ttysize.ts_lines;
+     }
+     else
+-#endif /* ULTRIX */
++#endif /* TIOCGWINSZ */
+ #endif /* BSD */
+ 
+ #ifndef OS2

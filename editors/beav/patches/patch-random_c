@@ -1,7 +1,7 @@
-$OpenBSD: patch-random_c,v 1.1 2010/05/22 15:05:29 espie Exp $
---- random.c.orig	Sat May 22 17:01:30 2010
-+++ random.c	Sat May 22 17:01:47 2010
-@@ -72,7 +72,6 @@ extern bool read_pat_mode;
+$OpenBSD: patch-random_c,v 1.2 2013/12/12 21:59:57 naddy Exp $
+--- random.c.orig	Wed Dec 11 20:07:15 2013
++++ random.c	Wed Dec 11 20:07:15 2013
+@@ -73,7 +73,6 @@ extern bool read_pat_mode;
  extern bool dont_repeat;
  extern BUFFER sav_buf;
  

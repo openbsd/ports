@@ -1,7 +1,7 @@
-$OpenBSD: patch-file_c,v 1.1 2010/05/22 15:05:29 espie Exp $
---- file.c.orig	Sat May 22 17:01:04 2010
-+++ file.c	Sat May 22 17:01:12 2010
-@@ -9,7 +9,6 @@
+$OpenBSD: patch-file_c,v 1.2 2013/12/12 21:59:57 naddy Exp $
+--- file.c.orig	Wed Dec 11 20:07:15 2013
++++ file.c	Wed Dec 11 20:07:15 2013
+@@ -10,7 +10,6 @@
  char load_file ();
  char readin ();
  void makename ();

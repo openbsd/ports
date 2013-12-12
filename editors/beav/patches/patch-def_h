@@ -1,32 +1,12 @@
-$OpenBSD: patch-def_h,v 1.2 2010/05/22 15:05:29 espie Exp $
---- def.h.orig	Sat Dec 13 09:34:59 1997
-+++ def.h	Sat May 22 16:59:41 2010
-@@ -12,10 +12,12 @@
- #ifndef DEF_DEF
+$OpenBSD: patch-def_h,v 1.3 2013/12/12 21:59:57 naddy Exp $
+--- def.h.orig	Wed Dec 11 17:22:35 2013
++++ def.h	Wed Dec 11 17:23:14 2013
+@@ -13,6 +13,8 @@
  #define DEF_DEF
  #define LINT_ARGS   1		/* enable lint type checking */
--#include        "stdio.h"
-+#include        <stdio.h>
+ #include        <stdio.h>
++#include        <stdlib.h>
 +#include        <string.h>
-+#include	<stdlib.h>
  
  #ifdef UNIX
--#include        "sys/types.h"
-+#include        <sys/types.h>
- #endif /* UNIX */
- 
- #define BACKUP  1		/* Make backup file.            */
-@@ -562,13 +564,6 @@ extern int auto_update;
- extern int flush_count;
- extern int rowb;
- extern char file_off_bad;
--
--/*
-- * Standard I/O.
-- */
--extern char *malloc ();
--extern char *strcpy ();
--extern char *strcat ();
- 
- #ifndef NOPROTO
- #include "prototyp.h"
+ #include        <sys/types.h>

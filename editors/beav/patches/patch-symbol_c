@@ -1,15 +1,15 @@
-$OpenBSD: patch-symbol_c,v 1.2 2010/05/22 15:05:29 espie Exp $
---- symbol.c.orig	Sat Dec 13 09:34:59 1997
-+++ symbol.c	Sat May 22 17:02:25 2010
-@@ -6,7 +6,6 @@
- */
+$OpenBSD: patch-symbol_c,v 1.3 2013/12/12 21:59:57 naddy Exp $
+--- symbol.c.orig	Wed Dec 11 20:07:15 2013
++++ symbol.c	Wed Dec 11 20:07:15 2013
+@@ -8,7 +8,6 @@
+ #include		<string.h>
  #include		"def.h"
  
 -void keyadd ();
  void keydup ();
  
  
-@@ -219,7 +218,6 @@ extern char save_region ();	/* Save region in named bu
+@@ -221,7 +220,6 @@ extern char save_region ();	/* Save region in named bu
  * Defined by "spawn.c".
  */
  extern char spawncli ();	/* Run CLI in a subjob.	 */
