@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2013/10/04 18:12:09 bcallah Exp $
+# $OpenBSD: Makefile,v 1.5 2013/12/12 07:53:03 brad Exp $
 
 V =		0.6.0
 COMMENT =	free J-RPG game
 DISTNAME =	ValyriaTear-${V}
 PKGNAME =	valyriatear-${V}
+REVISION =	0
 CATEGORIES =	games x11
 
 HOMEPAGE =	http://valyriatear.blogspot.com/
@@ -16,19 +17,15 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # For specific details, see the LICENSES file.
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL GLU ICE SDL SDL_image SDL_ttf SM X11 Xext c
-WANTLIB += m ogg openal png pthread vorbis vorbisfile z
-WANTLIB += ${MODLUA_WANTLIB}
+WANTLIB += GL GLU ICE SDL SDL_image SDL_ttf SM X11 Xext c m
+WANTLIB += ogg openal png pthread stdc++ vorbis vorbisfile
+WANTLIB += z ${MODLUA_WANTLIB}
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=valyriatear/}
 
 MODULES =	devel/cmake \
 		devel/gettext \
-		gcc4 \
 		lang/lua
-
-MODGCC4_ARCHS =	*
-MODGCC4_LANGS =	c c++
 
 BUILD_DEPENDS =	devel/boost>=1.52
 
@@ -40,6 +37,10 @@ LIB_DEPENDS =	audio/libogg \
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+2,-guic
+
+# PCH (Precompiled Headers) are known to be broken so disable
+# the use of PCH.
+CONFIGURE_ARGS+= -DUSE_PCH_COMPILATION=Off
 
 WRKDIST =	${WRKDIR}/ValyriaTear-${V}
 WRKSRC =	${WRKDIST}
