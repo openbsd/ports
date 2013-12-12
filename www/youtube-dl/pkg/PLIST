@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2013/12/09 16:59:29 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.20 2013/12/12 09:35:36 dcoppa Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -194,6 +194,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nba.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nba.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nbc.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nbc.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ndtv.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ndtv.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/newgrounds.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/newgrounds.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nhl.py
