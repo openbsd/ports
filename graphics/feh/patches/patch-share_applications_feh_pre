@@ -1,0 +1,16 @@
+$OpenBSD: patch-share_applications_feh_pre,v 1.1 2013/12/12 09:20:52 dcoppa Exp $
+
+Use '%F' since feh supports multiple files
+(upstream git commit 865a78510ff53db952ec5de98c934b60bfc664c8)
+
+--- share/applications/feh.pre.orig	Thu Dec 12 10:02:32 2013
++++ share/applications/feh.pre	Thu Dec 12 10:02:49 2013
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Name=Feh
+ Comment=Fast Imlib2-based Image Viewer
+-Exec=feh %f
++Exec=feh %F
+ Terminal=false
+ Type=Application
+ Icon=$IMAGEDIR$/feh.png
