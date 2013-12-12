@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.110 2013/12/11 10:13:53 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.111 2013/12/12 14:54:55 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -328,6 +328,7 @@ my $stem_extensions = {
 	'libungif' => 'giflib',
 	'mentry' =>'tklib',
 	'wcb' =>'tklib',
+	'foomatic-filters' =>'cups-filters',
 };
 
 # reasons for obsolete packages
