@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.220 2013/11/28 16:48:09 sthen Exp $
+$OpenBSD: user.list,v 1.221 2013/12/12 14:02:15 dcoppa Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -236,3 +236,4 @@ id  user		group		port options
 725 _opengroupware	_opengroupware	www/opengroupware
 726 _rrdcached		_rrdcached	net/rrdtool
 727 _sslsplit		_sslsplit	security/sslsplit
+728 _sockd		_sockd		security/dante
