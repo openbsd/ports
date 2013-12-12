@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2013/08/07 21:31:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2013/12/12 11:13:39 zhuk Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	Qt4-based featureful music player
 
-DISTNAME =	clementine-1.1.1
-REVISION =	3
+DISTNAME =	clementine-1.2.1
 CATEGORIES =	audio x11
 
 HOMEPAGE =	http://clementine-player.org/
@@ -16,20 +15,22 @@ MASTER_SITES =	https://clementine-player.googlecode.com/files/
 # GPLv2/LGPLv2/GFDL
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB =  c m pthread stdc++ z
+WANTLIB =  c m pthread z
 WANTLIB += GL GLU GLEW ICE SM X11 Xext
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtOpenGL lib/qt4/QtSql lib/qt4/QtWebKit
 WANTLIB += lib/qt4/QtXml lib/qt4/QtXmlPatterns
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gstapp-0.10 gstbase-0.10 gstcdda-0.10 gstreamer-0.10
 WANTLIB += gsttag-0.10
-WANTLIB += cdio chromaprint execinfo fftw3 lastfm mtp protobuf-lite qca2
-WANTLIB += qjson tag>=5.0 usb-1.0 xml2
+WANTLIB += cdio chromaprint gpod execinfo fftw3 lastfm mtp mygpo-qt
+WANTLIB += protobuf qca2 qjson tag>=5.0 usb-1.0 xml2
 # those are dlopen'ed
 WANTLIB += plist
 
-MODULES =		devel/cmake devel/gettext x11/qt4
+MODULES =		gcc4 devel/cmake devel/gettext x11/qt4
+MODGCC4_LANGS =		c c++
+MODGCC4_ARCHS =		${GCC4_ARCHS}
 
 BUILD_DEPENDS =		devel/boost \
 			devel/cmake>=2.8.10.2p3 \
@@ -40,10 +41,11 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+2,-guic
 
 LIB_DEPENDS =		audio/chromaprint \
-			audio/taglib>=1.4 \
 			audio/libcdio \
-			devel/libexecinfo \
+			audio/libgpod \
 			audio/liblastfm \
+			audio/taglib>=1.4 \
+			devel/libexecinfo \
 			devel/libmtp \
 			devel/libplist \
 			devel/libusb1 \
@@ -53,17 +55,22 @@ LIB_DEPENDS =		audio/chromaprint \
 			math/fftw3 \
 			multimedia/gstreamer-0.10/core \
 			multimedia/gstreamer-0.10/plugins-base \
+			net/libmygpo-qt \
 			security/qca2
 
-# Requires audio/libgpod update, disable to avoid picking by accident
-CONFIGURE_ARGS =	-DENABLE_LIBGPOD:Bool=No \
-			-DENABLE_IMOBILEDEVICE:Bool=No
-
-# Crash reporting
-CONFIGURE_ARGS +=	-DENABLE_BREAKPAD:Bool=No
+TEST_DEPENDS =		${MODPY_BUILD_DEPENDS}
 
 # Unported stuff
-CONFIGURE_ARGS +=	-DENABLE_SOUNDMENU:Bool=No
+CONFIGURE_ARGS =	-DENABLE_SOUNDMENU:Bool=Off \
+			-DENABLE_SPOTIFY_BLOB:Bool=Off
+
+# It's advised by Google to use bundled GTest and GMock
+CONFIGURE_ARGS +=	-DFORCE_BUNDLED_GMOCK=Yes
+
+# Use system SQLite
+CONFIGURE_ARGS +=	-DSTATIC_SQLITE:Bool=No \
+			-DI_HATE_MY_USERS:Bool=Yes \
+			-DMY_USERS_WILL_SUFFER_BECAUSE_OF_ME:Bool=Yes
 
 # XXX Builds tend to sometimes omit projectM presets when this option
 # is missing. To be investigated.

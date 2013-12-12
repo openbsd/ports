@@ -1,8 +1,13 @@
-$OpenBSD: patch-ext_libclementine-common_core_logging_cpp,v 1.3 2013/03/21 16:05:00 zhuk Exp $
-backtrace() is probably present on GNU and Solaris only.
---- ext/libclementine-common/core/logging.cpp.orig	Thu Oct 11 15:16:39 2012
-+++ ext/libclementine-common/core/logging.cpp	Thu Feb  7 17:55:23 2013
-@@ -21,9 +21,6 @@
+$OpenBSD: patch-ext_libclementine-common_core_logging_cpp,v 1.4 2013/12/12 11:13:39 zhuk Exp $
+Use shiny CMake FindBacktrace module.
+--- ext/libclementine-common/core/logging.cpp.orig	Sun Oct 13 04:27:04 2013
++++ ext/libclementine-common/core/logging.cpp	Sun Oct 20 05:28:07 2013
+@@ -18,12 +18,11 @@
+ // it is used by the Spotify blob which links against libspotify and is not GPL
+ // compatible.
+ 
++#include <config.h>
++
  #include <QtGlobal>
  
  #include <cxxabi.h>
@@ -12,29 +17,21 @@ backtrace() is probably present on GNU and Solaris only.
  
  #include <QCoreApplication>
  #include <QDateTime>
-@@ -31,6 +28,7 @@
- 
- #include <glib.h>
- 
-+#include "config.h"
- #include "logging.h"
- 
- 
-@@ -224,7 +222,7 @@ QString DemangleSymbol(const QString& symbol) {
+@@ -230,7 +229,7 @@ QString DemangleSymbol(const QString& symbol) {
  }
  
  void DumpStackTrace() {
 -#ifdef Q_OS_UNIX
-+#if HAVE_BACKTRACE
++#if Backtrace_FOUND
    void* callstack[128];
    int callstack_size = backtrace(reinterpret_cast<void**>(&callstack), sizeof(callstack));
    char** symbols = backtrace_symbols(reinterpret_cast<void**>(&callstack), callstack_size);
-@@ -234,7 +232,7 @@ void DumpStackTrace() {
+@@ -240,7 +239,7 @@ void DumpStackTrace() {
    }
    free(symbols);
  #else
 -  qLog(Debug) << "FIXME: Implement printing stack traces on this platform";
-+  qLog(Debug) << "FIXME: Implement printing stack traces on this platform or provide separate execinfo library";
++  qLog(Debug) << "FIXME: Implement printing stack traces on this platform, or port backtrace library";
  #endif
  }
  

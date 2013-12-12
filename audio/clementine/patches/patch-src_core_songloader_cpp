@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_core_songloader_cpp,v 1.1 2013/12/12 11:13:39 zhuk Exp $
+--- src/core/songloader.cpp.orig	Sun Oct 20 18:59:00 2013
++++ src/core/songloader.cpp	Sun Oct 20 19:08:05 2013
+@@ -88,7 +88,7 @@ SongLoader::Result SongLoader::Load(const QUrl& url) {
+   url_ = url;
+ 
+   if (url_.scheme() == "file") {
+-    return LoadLocal(url_.toLocalFile());
++    return LoadLocal(url_.toEncoded(QUrl::RemoveScheme|QUrl::RemoveAuthority));
+   }
+ 
+   if (sRawUriSchemes.contains(url_.scheme())) {

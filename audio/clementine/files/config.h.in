@@ -1,6 +1,6 @@
 
-#cmakedefine01	HAVE_BACKTRACE
+#cmakedefine01	Backtrace_FOUND
 
-#if HAVE_BACKTRACE
-#include <${BACKTRACE_INCLUDES}>
+#if Backtrace_FOUND
+#include <${Backtrace_HEADER}>
 #endif

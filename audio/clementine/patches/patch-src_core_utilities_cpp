@@ -1,9 +1,11 @@
-$OpenBSD: patch-src_core_utilities_cpp,v 1.1.1.1 2013/02/05 14:00:16 zhuk Exp $
-Add support for OpenBSD sensors framework when checking if this PC is a laptop.
---- src/core/utilities.cpp.orig	Wed Nov 28 19:53:29 2012
-+++ src/core/utilities.cpp	Wed Nov 28 20:07:07 2012
-@@ -59,6 +59,14 @@
- #  include "IOKit/ps/IOPSKeys.h"
+$OpenBSD: patch-src_core_utilities_cpp,v 1.2 2013/12/12 11:13:39 zhuk Exp $
+1. Add support for OpenBSD sensors framework when checking if this PC
+   is a laptop.
+2. Make Clementine use system SHA-2 implementation.
+--- src/core/utilities.cpp.orig	Sun Oct 13 04:27:04 2013
++++ src/core/utilities.cpp	Wed Oct 30 16:23:55 2013
+@@ -66,6 +66,14 @@
+ #  include <QProcess>
  #endif
  
 +#ifdef Q_OS_OPENBSD
@@ -14,31 +16,44 @@ Add support for OpenBSD sensors framework when checking if this PC is a laptop.
 +#  include <string.h>
 +#endif
 +
- #include <boost/scoped_array.hpp>
- 
  namespace Utilities {
-@@ -538,6 +546,24 @@ bool IsLaptop() {
+ 
+ static QString tr(const char* str) {
+@@ -436,6 +444,13 @@ QByteArray HmacSha1(const QByteArray& key, const QByte
+   return Hmac(key, data, Sha1_Algo);
+ }
+ 
++#if !HAVE_SHA2_UNDERSCORED
++# define SHA256_CTX           SHA2_CTX
++# define SHA256_Init(x)       SHA256Init((x))
++# define SHA256_Update(x,y,z)     SHA256Update((x) , (y) , (z))
++# define SHA256_Final(x,y)      SHA256Final((x) , (y))
++#endif   // !HAVE_SHA2_UNDERSCORED
++
+ QByteArray Sha256(const QByteArray& data) {
+   SHA256_CTX context;
+   SHA256_Init(&context);
+@@ -592,6 +607,23 @@ bool IsLaptop() {
      if (CFDictionaryContainsKey(description, CFSTR(kIOPSBatteryHealthKey))) {
        return true;
      }
 +  }
 +  return false;
-+#endif
-+
-+#ifdef Q_OS_OPENBSD
++#elif defined(Q_OS_OPENBSD)
 +  struct sensordev snsrdev;
 +  size_t sdlen = sizeof(snsrdev);
 +  int mib[3] = { CTL_HW, HW_SENSORS, 0 };
 +  for (int i = 0; ; ++i) {
 +    mib[2] = i;
 +    if (::sysctl(mib, 3, &snsrdev, &sdlen, NULL, 0) == -1) {
-+      if (errno == ENXIO)
-+        continue;
 +      if (errno == ENOENT)
 +        break;
++      if (errno == EAGAIN)
++        i--;
++      continue;
 +    }
 +    if (::memcmp("acpibat", snsrdev.xname, 7) == 0)
 +      return true;
    }
    return false;
- #endif
+ #else

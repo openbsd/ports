@@ -1,0 +1,61 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2013/12/12 11:13:39 zhuk Exp $
+1. Force using bundled GTest and GMock, as it's better this way.
+2. Make Clementine use system SHA-2 implementation.
+--- CMakeLists.txt.orig	Tue Nov 26 01:16:24 2013
++++ CMakeLists.txt	Thu Dec 12 12:40:20 2013
+@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 2.6)
+ cmake_policy(SET CMP0011 OLD)
+ 
+ include(CheckCXXCompilerFlag)
++include(CheckFunctionExists)
+ include(FindPkgConfig)
+ include(cmake/Summary.cmake)
+ include(cmake/Version.cmake)
+@@ -380,11 +381,12 @@ if(NOT ECHONEST_INCLUDE_DIRS OR NOT ECHONEST_LIBRARIES
+   set(ECHONEST_LIBRARIES echonest)
+ endif(NOT ECHONEST_INCLUDE_DIRS OR NOT ECHONEST_LIBRARIES)
+ 
+-# Use system gmock if it's available
++# Use system gmock if it's available and desired thing to do
++option(FORCE_BUNDLED_GMOCK OFF)
+ # We need to look for both gmock and gtest
+ find_path(GMOCK_INCLUDE_DIRS gmock/gmock.h)
+ find_library(GMOCK_LIBRARIES gmock)
+-if(GMOCK_INCLUDE_DIRS)
++if(NOT FORCE_BUNDLED_GMOCK AND GMOCK_INCLUDE_DIRS)
+   find_path(GTEST_INCLUDE_DIRS gtest/gtest.h)
+   find_library(GTEST_LIBRARIES gtest)
+   if(GTEST_INCLUDE_DIRS)
+@@ -395,12 +397,29 @@ endif(GMOCK_INCLUDE_DIRS)
+ 
+ # Use system sha2 if it's available
+ find_path(SHA2_INCLUDE_DIRS sha2.h)
+-find_library(SHA2_LIBRARIES sha2)
+-if(NOT SHA2_INCLUDE_DIRS OR NOT SHA2_LIBRARIES)
++find_library(SHA2_LIBRARY sha2)
++if (SHA2_LIBRARY)
++  set(SHA2_LIBRARIES ${SHA2_LIBRARY})
++else (SHA2_LIBRARY)
++  # some OSes have it in libc
++  set(SHA2_LIBRARIES c)
++endif (SHA2_LIBRARY)
++set(CMAKE_REQUIRED_FLAGS)
++set(CMAKE_REQUIRED_INCLUDES ${SHA2_INCLUDE_DIRS})
++set(CMAKE_REQUIRED_DEFINITIONS)
++set(CMAKE_REQUIRED_LIBRARIES ${SHA2_LIBRARIES})
++check_function_exists(SHA256_Update HAVE_SHA2_UNDERSCORED)
++check_function_exists(SHA256Update HAVE_SHA2_NO_UNDERSCORE)
++if (HAVE_SHA2_UNDERSCORED OR HAVE_SHA2_NO_UNDERSCORE)
++  set(HAVE_SHA2 1)
++endif (HAVE_SHA2_UNDERSCORED OR HAVE_SHA2_NO_UNDERSCORE)
++
++if(NOT SHA2_INCLUDE_DIRS AND NOT HAVE_SHA2)
+   add_subdirectory(3rdparty/sha2)
+   set(SHA2_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/sha2)
+   set(SHA2_LIBRARIES sha2)
+-endif(NOT SHA2_INCLUDE_DIRS OR NOT SHA2_LIBRARIES)
++  set(HAVE_SHA2_UNDERSCORED 1)
++endif(NOT SHA2_INCLUDE_DIRS AND NOT HAVE_SHA2)
+ 
+ # Use our 3rdparty chromaprint if a system one wasn't found
+ if(NOT CHROMAPRINT_FOUND)

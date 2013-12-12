@@ -1,14 +1,15 @@
-$OpenBSD: patch-ext_libclementine-common_CMakeLists_txt,v 1.3 2013/03/21 16:05:00 zhuk Exp $
---- ext/libclementine-common/CMakeLists.txt.orig	Sun Nov 18 12:51:26 2012
-+++ ext/libclementine-common/CMakeLists.txt	Thu Mar 21 19:34:21 2013
-@@ -41,3 +41,10 @@ target_link_libraries(libclementine-common
-   chardet
+$OpenBSD: patch-ext_libclementine-common_CMakeLists_txt,v 1.4 2013/12/12 11:13:39 zhuk Exp $
+--- ext/libclementine-common/CMakeLists.txt.orig	Sun Oct 20 05:37:02 2013
++++ ext/libclementine-common/CMakeLists.txt	Sun Oct 20 05:38:11 2013
+@@ -33,3 +33,11 @@ target_link_libraries(libclementine-common
+   ${TAGLIB_LIBRARIES}
+   ${CMAKE_THREAD_LIBS_INIT}
  )
- 
++
 +find_package(Backtrace)
 +configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config.h.in
 +               ${CMAKE_CURRENT_BINARY_DIR}/config.h)
-+if(BACKTRACE_FOUND)
-+  include_directories(${BACKTRACE_INCLUDE_DIRS})
-+  target_link_libraries(libclementine-common ${BACKTRACE_LIBRARIES})
-+endif(BACKTRACE_FOUND)
++if(Backtrace_FOUND)
++  include_directories(${Backtrace_INCLUDE_DIRS})
++  target_link_libraries(libclementine-common ${Backtrace_LIBRARIES})
++endif(Backtrace_FOUND)
