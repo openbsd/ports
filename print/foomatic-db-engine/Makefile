@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2013/05/30 17:58:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2013/12/12 14:52:23 ajacoutot Exp $
 
 COMMENT=		Foomatic PPD generator
 
 DISTNAME=		foomatic-db-engine-4.0.9
 CATEGORIES=		print
+REVISION=		0
 
 HOMEPAGE=		http://www.linux-foundation.org/en/OpenPrinting/Database/Foomatic
 
@@ -12,15 +13,18 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += c m xml2 z
+
 MASTER_SITES=		http://www.openprinting.org/download/foomatic/
 
 MODULES=		converters/libiconv
 
 LIB_DEPENDS=		textproc/libxml
-RUN_DEPENDS=		print/foomatic-filters \
-			databases/p5-DBI \
+RUN_DEPENDS=		databases/p5-DBI \
 			curl-*|wget-*:net/curl
-WANTLIB=		c m xml2>=8 z
+
+# Cannot read file /usr/local/share/foomatic/db/oldprinterids!
+RUN_DEPENDS +=		print/foomatic-db
 
 USE_GMAKE=		Yes
 USE_GROFF =		Yes
@@ -31,7 +35,7 @@ CONFIGURE_ARGS=		--disable-gscheck
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			LIBDIR="${LOCALBASE}/share/foomatic" \
-			FOOMATIC_RIP="${LOCALBASE}/bin/foomatic-rip" \
+			FOOMATIC_RIP="${LOCALBASE}/libexec/cups/filter/foomatic-rip" \
 			GS="${LOCALBASE}/bin/gs" \
 			A2PS="${LOCALBASE}/bin/a2ps" \
 			GS="${LOCALBASE}/bin/gs" \
@@ -75,7 +79,7 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/foomatic-combo-xml.c \
 		${WRKSRC}/Makefile.in ${WRKSRC}/configure
 
-# make CUPS generate Foomatic PPDs on demand 
+# make CUPS generate Foomatic PPDs on demand (see patch-Makefile_in)
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/libexec/cups/driver
 	ln -sf ${TRUEPREFIX}/bin/foomatic-ppdfile \

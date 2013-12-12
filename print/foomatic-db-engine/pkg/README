@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.6 2012/10/19 09:27:09 ajacoutot Exp $
+$OpenBSD: README,v 1.7 2013/12/12 14:52:23 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -10,8 +10,8 @@ particular package, can be generated using the foomatic-ppdfile(1)
 command.
 Drivers availability depends on which Foomatic DB(s) package(s) is/are
 installed on the system:
-e.g. (non-exhaustive list) foomatic-db, hplip/hpijs, foo2zjs, splix,
-gutenprint...
+e.g. (non-exhaustive list) foomatic-db, hplip (and/or hpijs), foo2zjs,
+splix, gutenprint...
 
 PPD generation example for a Samsung ML-2850D
 =============================================
@@ -20,4 +20,4 @@ Samsung ML-2850D Id='Samsung-ML-2850D' Driver='Postscript' CompatibleDrivers='Po
 $ foomatic-ppdfile -p 'Samsung-ML-2850D' -d 'Postscript' > samsung-ml2850d.ppd
 
 "samsung-ml2850d.ppd" can then be used as an input filter with CUPS or
-lpd(8) and foomatic-rip(1) from the foomatic-filters package.
+for direct printing using foomatic-rip(1) from the cups-filters package.
