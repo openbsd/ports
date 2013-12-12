@@ -1,0 +1,11 @@
+$OpenBSD: patch-third_party_WebKit_Source_core_rendering_RenderingNodeProxy_cpp,v 1.1 2013/12/12 10:43:18 robert Exp $
+--- third_party/WebKit/Source/core/rendering/RenderingNodeProxy.cpp.orig.port	Tue Dec 10 13:26:14 2013
++++ third_party/WebKit/Source/core/rendering/RenderingNodeProxy.cpp	Tue Dec 10 13:26:24 2013
+@@ -31,6 +31,7 @@
+ #include "config.h"
+ #include "core/rendering/RenderingNodeProxy.h"
+ 
++#include "core/dom/Element.h"
+ #include "core/dom/Node.h"
+ 
+ namespace WebCore {

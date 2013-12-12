@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2013/11/15 07:44:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2013/12/12 10:43:18 robert Exp $
 bin/chrome
 chrome/
 @bin chrome/chrome
@@ -105,6 +105,8 @@ chrome/resources/inspector/Images/indexedDBIndex.png
 chrome/resources/inspector/Images/indexedDBObjectStore.png
 chrome/resources/inspector/Images/localStorage.png
 chrome/resources/inspector/Images/namedFlowOverflow.png
+chrome/resources/inspector/Images/navigationControls.png
+chrome/resources/inspector/Images/navigationControls_2x.png
 chrome/resources/inspector/Images/paneAddButtons.png
 chrome/resources/inspector/Images/paneElementStateButtons.png
 chrome/resources/inspector/Images/paneFilterButtons.png
@@ -174,11 +176,12 @@ chrome/resources/inspector/Images/timelinePillYellow.png
 chrome/resources/inspector/Images/toolbarItemSelected.png
 chrome/resources/inspector/Images/trackHoriz.png
 chrome/resources/inspector/Images/trackVert.png
+chrome/resources/inspector/LayersPanel.js
 chrome/resources/inspector/NetworkPanel.js
 chrome/resources/inspector/ProfilesPanel.js
 chrome/resources/inspector/ResourcesPanel.js
 chrome/resources/inspector/ScriptFormatterWorker.js
-chrome/resources/inspector/ScriptsPanel.js
+chrome/resources/inspector/SourcesPanel.js
 chrome/resources/inspector/TimelinePanel.js
 chrome/resources/inspector/auditsPanel.css
 chrome/resources/inspector/breadcrumbList.css
@@ -200,6 +203,7 @@ chrome/resources/inspector/indexedDBViews.css
 chrome/resources/inspector/inspector.css
 chrome/resources/inspector/inspector.js
 chrome/resources/inspector/inspectorCommon.css
+chrome/resources/inspector/layersPanel.css
 chrome/resources/inspector/navigatorView.css
 chrome/resources/inspector/networkLogView.css
 chrome/resources/inspector/networkPanel.css
@@ -208,8 +212,9 @@ chrome/resources/inspector/profilesPanel.css
 chrome/resources/inspector/resourceView.css
 chrome/resources/inspector/resourcesPanel.css
 chrome/resources/inspector/revisionHistory.css
-chrome/resources/inspector/scriptsPanel.css
+chrome/resources/inspector/screencastView.css
 chrome/resources/inspector/sidebarPane.css
+chrome/resources/inspector/sourcesPanel.css
 chrome/resources/inspector/spectrum.css
 chrome/resources/inspector/splitView.css
 chrome/resources/inspector/tabbedPane.css

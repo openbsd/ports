@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_test_perf_perf_test_cc,v 1.4 2013/07/15 14:59:30 robert Exp $
---- chrome/test/perf/perf_test.cc.orig.port	Sun Jul  7 15:56:12 2013
-+++ chrome/test/perf/perf_test.cc	Sun Jul  7 15:56:23 2013
-@@ -494,7 +494,7 @@ std::string MemoryUsageInfoToString(const std::string&
+$OpenBSD: patch-chrome_test_perf_perf_test_cc,v 1.5 2013/12/12 10:43:18 robert Exp $
+--- chrome/test/perf/perf_test.cc.orig.port	Wed Dec  4 21:55:17 2013
++++ chrome/test/perf/perf_test.cc	Thu Dec  5 15:32:45 2013
+@@ -352,7 +352,7 @@ std::string MemoryUsageInfoToString(const std::string&
    AppendResult(output, "ws_final_t", "", "ws_f_t" + trace_name,
                 total_working_set_size, "bytes",
                 false /* not important */);

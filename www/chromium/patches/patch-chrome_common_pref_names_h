@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_common_pref_names_h,v 1.2 2013/10/29 06:51:34 robert Exp $
---- chrome/common/pref_names.h.orig.port	Fri Oct 11 19:29:57 2013
-+++ chrome/common/pref_names.h	Fri Oct 18 20:47:20 2013
-@@ -349,7 +349,7 @@ extern const char kAllowDeletingBrowserHistory[];
+$OpenBSD: patch-chrome_common_pref_names_h,v 1.3 2013/12/12 10:43:18 robert Exp $
+--- chrome/common/pref_names.h.orig.port	Wed Dec  4 21:55:23 2013
++++ chrome/common/pref_names.h	Thu Dec  5 15:32:45 2013
+@@ -312,7 +312,7 @@ extern const char kAllowDeletingBrowserHistory[];
  extern const char kForceSafeSearch[];
  extern const char kDeleteTimePeriod[];
  extern const char kLastClearBrowsingDataTime[];

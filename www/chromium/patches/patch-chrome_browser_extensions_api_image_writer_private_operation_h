@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_extensions_api_image_writer_private_operation_h,v 1.1 2013/12/12 10:43:18 robert Exp $
+--- chrome/browser/extensions/api/image_writer_private/operation.h.orig.port	Tue Dec 10 12:47:31 2013
++++ chrome/browser/extensions/api/image_writer_private/operation.h	Tue Dec 10 12:47:55 2013
+@@ -107,7 +107,7 @@ class Operation
+   friend class base::RefCountedThreadSafe<Operation>;
+ 
+   // TODO(haven): Clean up these switches. http://crbug.com/292956
+-#if defined(OS_LINUX) && !defined(CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_OPENBSD)) && !defined(CHROMEOS)
+   void WriteRun();
+   void WriteChunk(scoped_ptr<image_writer_utils::ImageReader> reader,
+                   scoped_ptr<image_writer_utils::ImageWriter> writer,

@@ -1,12 +1,12 @@
-$OpenBSD: patch-media_media_gyp,v 1.23 2013/10/29 06:51:34 robert Exp $
---- media/media.gyp.orig.port	Fri Oct 11 19:30:14 2013
-+++ media/media.gyp	Fri Oct 18 20:47:20 2013
+$OpenBSD: patch-media_media_gyp,v 1.24 2013/12/12 10:43:18 robert Exp $
+--- media/media.gyp.orig.port	Thu Dec  5 15:42:54 2013
++++ media/media.gyp	Tue Dec 10 13:18:58 2013
 @@ -27,11 +27,15 @@
        }, {
          'use_alsa%': 0,
        }],
--      ['os_posix==1 and OS!="mac" and OS!="ios" and OS!="android" and chromeos!=1', {
-+      ['os_posix==1 and OS!="mac" and OS!="ios" and OS!="android" and chromeos!=1 and os_bsd != 1', {
+-      ['os_posix==1 and OS!="mac" and OS!="android" and chromeos!=1', {
++      ['os_posix==1 and OS!="mac" and OS!="android" and chromeos!=1 and os_bsd != 1', {
          'use_pulseaudio%': 1,
        }, {
          'use_pulseaudio%': 0,
@@ -17,22 +17,20 @@ $OpenBSD: patch-media_media_gyp,v 1.23 2013/10/29 06:51:34 robert Exp $
 +      }],
      ],
    },
-   'targets': [
-@@ -155,6 +159,8 @@
-         'audio/pulse/audio_manager_pulse.h',
+   'includes': [
+@@ -156,6 +160,8 @@
+         'audio/pulse/pulse_input.h',
          'audio/pulse/pulse_output.cc',
          'audio/pulse/pulse_output.h',
 +        'audio/sndio/sndio_output.cc',
 +        'audio/sndio/sndio_output.h',
-         'audio/pulse/pulse_input.cc',
-         'audio/pulse/pulse_input.h',
          'audio/pulse/pulse_unified.cc',
-@@ -586,6 +592,21 @@
-             'webm/chromeos/ebml_writer.h',
-             'webm/chromeos/webm_encoder.cc',
+         'audio/pulse/pulse_unified.h',
+         'audio/pulse/pulse_util.cc',
+@@ -547,6 +553,21 @@
              'webm/chromeos/webm_encoder.h',
-+          ],
-+        }],
+           ],
+         }],
 +        ['use_sndio == 1', {
 +          'link_settings': {
 +            'libraries': [
@@ -46,6 +44,26 @@ $OpenBSD: patch-media_media_gyp,v 1.23 2013/10/29 06:51:34 robert Exp $
 +          'sources!': [
 +            'audio/sndio/sndio_output.cc',
 +            'audio/sndio/sndio_output.h',
++          ],
++        }],
+         ['use_alsa==1', {
+           'link_settings': {
+             'libraries': [
+@@ -563,7 +584,7 @@
+             'audio/openbsd/audio_manager_openbsd.h',
            ],
          }],
-         ['use_alsa==1', {
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="openbsd"', {
+           'variables': {
+             'conditions': [
+               ['sysroot!=""', {
+@@ -836,7 +857,7 @@
+             'ENABLE_EAC3_PLAYBACK',
+           ],
+         }],
+-        ['OS!="linux" and OS!="win"', {
++        ['OS!="linux" and OS!="win" and OS!="openbsd"', {
+           'sources!': [
+             'base/keyboard_event_counter.cc',
+             'base/keyboard_event_counter.h',

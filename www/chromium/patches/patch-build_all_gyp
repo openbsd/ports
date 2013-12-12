@@ -1,11 +1,11 @@
-$OpenBSD: patch-build_all_gyp,v 1.11 2013/10/29 06:51:34 robert Exp $
---- build/all.gyp.orig.port	Fri Oct 11 19:29:16 2013
-+++ build/all.gyp	Fri Oct 18 20:47:20 2013
-@@ -234,7 +234,6 @@
-             '../jingle/jingle.gyp:jingle_unittests',
+$OpenBSD: patch-build_all_gyp,v 1.12 2013/12/12 10:43:18 robert Exp $
+--- build/all.gyp.orig.port	Wed Dec  4 21:56:09 2013
++++ build/all.gyp	Thu Dec  5 15:53:46 2013
+@@ -235,7 +235,6 @@
+             '../media/media.gyp:media_unittests',
              '../ppapi/ppapi_internal.gyp:ppapi_unittests',
              '../printing/printing.gyp:printing_unittests',
 -            '../remoting/remoting.gyp:remoting_unittests',
              '../sync/sync.gyp:sync_unit_tests',
+             '../third_party/WebKit/public/all.gyp:all_blink',
              '../third_party/cacheinvalidation/cacheinvalidation.gyp:cacheinvalidation_unittests',
-             '../third_party/libphonenumber/libphonenumber.gyp:libphonenumber_unittests',

@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_storage_monitor_storage_monitor_cc,v 1.1 2013/10/29 06:51:34 robert Exp $
---- chrome/browser/storage_monitor/storage_monitor.cc.orig.port	Sun Oct 20 15:03:49 2013
-+++ chrome/browser/storage_monitor/storage_monitor.cc	Sun Oct 20 15:13:09 2013
-@@ -65,6 +65,7 @@ std::vector<StorageInfo> StorageMonitor::GetAllAvailab
+$OpenBSD: patch-chrome_browser_storage_monitor_storage_monitor_cc,v 1.2 2013/12/12 10:43:18 robert Exp $
+--- chrome/browser/storage_monitor/storage_monitor.cc.orig.port	Wed Dec  4 21:55:34 2013
++++ chrome/browser/storage_monitor/storage_monitor.cc	Thu Dec  5 15:32:45 2013
+@@ -63,6 +63,7 @@ std::vector<StorageInfo> StorageMonitor::GetAllAvailab
  
  void StorageMonitor::EnsureInitialized(base::Closure callback) {
    DCHECK(thread_checker_.CalledOnValidThread());
@@ -9,7 +9,7 @@ $OpenBSD: patch-chrome_browser_storage_monitor_storage_monitor_cc,v 1.1 2013/10/
    if (initialized_) {
      if (!callback.is_null())
        callback.Run();
-@@ -80,6 +81,7 @@ void StorageMonitor::EnsureInitialized(base::Closure c
+@@ -78,6 +79,7 @@ void StorageMonitor::EnsureInitialized(base::Closure c
  
    initializing_ = true;
    Init();

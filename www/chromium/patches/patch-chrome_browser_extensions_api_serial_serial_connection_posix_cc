@@ -1,12 +1,12 @@
-$OpenBSD: patch-chrome_browser_extensions_api_serial_serial_connection_posix_cc,v 1.1 2013/05/30 18:42:18 robert Exp $
---- chrome/browser/extensions/api/serial/serial_connection_posix.cc.orig.port	Thu May 30 19:40:17 2013
-+++ chrome/browser/extensions/api/serial/serial_connection_posix.cc	Thu May 30 19:40:36 2013
-@@ -67,7 +67,7 @@ bool SerialConnection::PostOpen() {
+$OpenBSD: patch-chrome_browser_extensions_api_serial_serial_connection_posix_cc,v 1.2 2013/12/12 10:43:18 robert Exp $
+--- chrome/browser/extensions/api/serial/serial_connection_posix.cc.orig.port	Thu Dec  5 15:38:17 2013
++++ chrome/browser/extensions/api/serial/serial_connection_posix.cc	Thu Dec  5 15:38:29 2013
+@@ -44,7 +44,7 @@ namespace {
+         return B19200;
        case 38400:
-         bitrate_opt_ = B38400;
-         break;
+         return B38400;
 -#if defined(OS_POSIX) && !defined(OS_MACOSX)
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
        case 57600:
-         bitrate_opt_ = B57600;
-         break;
+         return B57600;
+       case 115200:

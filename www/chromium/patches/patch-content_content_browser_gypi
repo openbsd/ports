@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_content_browser_gypi,v 1.20 2013/10/29 06:51:34 robert Exp $
---- content/content_browser.gypi.orig.port	Fri Oct 11 19:30:32 2013
-+++ content/content_browser.gypi	Sun Oct 20 19:01:38 2013
-@@ -1425,9 +1425,18 @@
+$OpenBSD: patch-content_content_browser_gypi,v 1.21 2013/12/12 10:43:18 robert Exp $
+--- content/content_browser.gypi.orig.port	Wed Dec  4 21:54:53 2013
++++ content/content_browser.gypi	Thu Dec  5 15:32:45 2013
+@@ -1474,9 +1474,18 @@
        ],
      }],
      ['os_bsd==1', {

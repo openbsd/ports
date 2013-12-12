@@ -1,0 +1,15 @@
+$OpenBSD: patch-chrome_chrome_browser_extensions_gypi,v 1.7 2013/12/12 10:43:18 robert Exp $
+--- chrome/chrome_browser_extensions.gypi.orig.port	Tue Dec 10 13:12:34 2013
++++ chrome/chrome_browser_extensions.gypi	Tue Dec 10 13:13:19 2013
+@@ -854,6 +854,11 @@
+         'browser/extensions/window_controller_list_observer.h',
+       ],
+       'conditions': [
++        ['os_bsd==1', {
++          'sources/': [
++            ['exclude', '^browser/extensions/api/image_writer_private/removable_storage_provider_linux.cc'],
++          ],
++        }],
+         ['chromeos==1', {
+           'dependencies': [
+             '../build/linux/system.gyp:dbus',

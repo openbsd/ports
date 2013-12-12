@@ -1,16 +1,7 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.6 2013/10/29 06:51:34 robert Exp $
---- chrome/browser/chrome_content_browser_client.cc.orig.port	Fri Oct 11 19:29:36 2013
-+++ chrome/browser/chrome_content_browser_client.cc	Sat Oct 19 18:06:29 2013
-@@ -166,7 +166,7 @@
- #include "chrome/browser/chrome_browser_main_posix.h"
- #endif
- 
--#if defined(OS_LINUX) || defined(OS_OPENBSD) || defined(OS_ANDROID)
-+#if defined(OS_LINUX) || defined(OS_ANDROID)
- #include "base/linux_util.h"
- #include "chrome/browser/crash_handler_host_linux.h"
- #endif
-@@ -480,7 +480,7 @@ void FillFontFamilyMap(const PrefService* prefs,
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.7 2013/12/12 10:43:18 robert Exp $
+--- chrome/browser/chrome_content_browser_client.cc.orig.port	Thu Dec  5 15:35:47 2013
++++ chrome/browser/chrome_content_browser_client.cc	Thu Dec  5 15:37:49 2013
+@@ -479,7 +479,7 @@ void FillFontFamilyMap(const PrefService* prefs,
    }
  }
  
@@ -19,7 +10,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.6 2013/10/29
  int GetCrashSignalFD(const CommandLine& command_line) {
    if (command_line.HasSwitch(switches::kExtensionProcess)) {
      ExtensionCrashHandlerHostLinux* crash_handler =
-@@ -505,7 +505,7 @@ int GetCrashSignalFD(const CommandLine& command_line) 
+@@ -504,7 +504,7 @@ int GetCrashSignalFD(const CommandLine& command_line) 
  
    return -1;
  }
@@ -28,7 +19,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.6 2013/10/29
  
  #if !defined(OS_CHROMEOS)
  GURL GetEffectiveURLForSignin(const GURL& url) {
-@@ -1346,7 +1346,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+@@ -1319,7 +1319,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
      command_line->AppendSwitchASCII(switches::kEnableCrashReporter,
                                      child_process_logging::GetClientId());
    }
@@ -37,8 +28,8 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.6 2013/10/29
    if (IsCrashReporterEnabled()) {
      command_line->AppendSwitchASCII(switches::kEnableCrashReporter,
          child_process_logging::GetClientId() + "," + base::GetLinuxDistro());
-@@ -2461,7 +2461,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
-   additional_backends->push_back(new sync_file_system::SyncFileSystemBackend());
+@@ -2432,7 +2432,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+           Profile::FromBrowserContext(browser_context)));
  }
  
 -#if defined(OS_POSIX) && !defined(OS_MACOSX)
@@ -46,12 +37,3 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.6 2013/10/29
  void ChromeContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
      const CommandLine& command_line,
      int child_process_id,
-@@ -2521,7 +2521,7 @@ void ChromeContentBrowserClient::GetAdditionalMappedFi
-   }
- #endif  // defined(OS_ANDROID)
- }
--#endif  // defined(OS_POSIX) && !defined(OS_MACOSX)
-+#endif  // defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
- 
- #if defined(OS_WIN)
- const wchar_t* ChromeContentBrowserClient::GetResourceDllName() {

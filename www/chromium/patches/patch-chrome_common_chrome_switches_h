@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_common_chrome_switches_h,v 1.7 2013/12/12 10:43:18 robert Exp $
+--- chrome/common/chrome_switches.h.orig.port	Thu Dec  5 17:09:45 2013
++++ chrome/common/chrome_switches.h	Thu Dec  5 17:10:15 2013
+@@ -435,7 +435,7 @@ extern const char kPasswordStore[];
+ #endif
+ #endif
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ extern const char kMigrateDataDirForSxS[];
+ #endif
+ 

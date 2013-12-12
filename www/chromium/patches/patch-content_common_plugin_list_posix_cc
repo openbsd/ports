@@ -1,12 +1,12 @@
-$OpenBSD: patch-content_common_plugin_list_posix_cc,v 1.2 2013/11/01 14:09:19 robert Exp $
---- content/common/plugin_list_posix.cc.orig.port	Fri Oct 11 19:30:32 2013
-+++ content/common/plugin_list_posix.cc	Sun Oct 20 21:55:47 2013
+$OpenBSD: patch-content_common_plugin_list_posix_cc,v 1.3 2013/12/12 10:43:18 robert Exp $
+--- content/common/plugin_list_posix.cc.orig.port	Wed Dec  4 21:54:46 2013
++++ content/common/plugin_list_posix.cc	Tue Dec 10 13:19:01 2013
 @@ -471,11 +471,11 @@ void PluginList::GetPluginDirectories(std::vector<base
    // 3) NS_SYSTEM_PLUGINS_DIR:
    // This varies across different browsers and versions, so check 'em all.
    plugin_dirs->push_back(base::FilePath("/usr/lib/browser-plugins"));
 -  plugin_dirs->push_back(base::FilePath("/usr/lib/mozilla/plugins"));
-+  plugin_dirs->push_back(base::FilePath("${LOCALBASE}/lib/mozilla/plugins"));
++  plugin_dirs->push_back(base::FilePath("/usr/local/lib/mozilla/plugins"));
    plugin_dirs->push_back(base::FilePath("/usr/lib/firefox/plugins"));
    plugin_dirs->push_back(base::FilePath("/usr/lib/xulrunner-addons/plugins"));
  

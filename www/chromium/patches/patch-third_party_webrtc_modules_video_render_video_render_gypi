@@ -1,8 +1,8 @@
-$OpenBSD: patch-third_party_webrtc_modules_video_render_video_render_gypi,v 1.1 2013/07/15 14:59:30 robert Exp $
---- third_party/webrtc/modules/video_render/video_render.gypi.orig.port	Sun Jul 14 01:01:21 2013
-+++ third_party/webrtc/modules/video_render/video_render.gypi	Sun Jul 14 01:03:49 2013
-@@ -88,7 +88,7 @@
-             'android/video_render_opengles20.cc',
+$OpenBSD: patch-third_party_webrtc_modules_video_render_video_render_gypi,v 1.2 2013/12/12 10:43:18 robert Exp $
+--- third_party/webrtc/modules/video_render/video_render.gypi.orig.port	Wed Dec  4 21:57:13 2013
++++ third_party/webrtc/modules/video_render/video_render.gypi	Thu Dec  5 15:32:45 2013
+@@ -113,7 +113,7 @@
+             'ios/video_render_ios_view.mm',
            ],
          }],
 -        ['OS!="linux" or include_internal_video_render==0', {
@@ -10,7 +10,7 @@ $OpenBSD: patch-third_party_webrtc_modules_video_render_video_render_gypi,v 1.1 
            'sources!': [
              'linux/video_render_linux_impl.h',
              'linux/video_x11_channel.h',
-@@ -175,7 +175,7 @@
+@@ -211,7 +211,7 @@
              'test/testAPI/testAPI_mac.mm',
            ],
            'conditions': [
@@ -19,7 +19,7 @@ $OpenBSD: patch-third_party_webrtc_modules_video_render_video_render_gypi,v 1.1 
                'cflags': [
                  '-Wno-write-strings',
                ],
-@@ -183,9 +183,8 @@
+@@ -219,9 +219,8 @@
                  '-lpthread -lm',
                ],
              }],

@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_base_gypi,v 1.22 2013/10/29 06:51:34 robert Exp $
---- base/base.gypi.orig.port	Fri Oct 11 19:29:19 2013
-+++ base/base.gypi	Tue Oct 29 07:27:58 2013
-@@ -872,11 +872,15 @@
+$OpenBSD: patch-base_base_gypi,v 1.23 2013/12/12 10:43:18 robert Exp $
+--- base/base.gypi.orig.port	Wed Dec  4 21:54:55 2013
++++ base/base.gypi	Thu Dec  5 15:32:45 2013
+@@ -881,11 +881,15 @@
                'process/memory_stubs.cc',
              ],
              'sources/': [

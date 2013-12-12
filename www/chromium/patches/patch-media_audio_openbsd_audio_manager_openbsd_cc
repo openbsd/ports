@@ -1,6 +1,6 @@
-$OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.17 2013/09/29 19:04:03 robert Exp $
---- media/audio/openbsd/audio_manager_openbsd.cc.orig.port	Sun Sep 22 16:22:11 2013
-+++ media/audio/openbsd/audio_manager_openbsd.cc	Sat Sep 28 10:48:23 2013
+$OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.18 2013/12/12 10:43:18 robert Exp $
+--- media/audio/openbsd/audio_manager_openbsd.cc.orig.port	Thu Dec  5 15:40:48 2013
++++ media/audio/openbsd/audio_manager_openbsd.cc	Thu Dec  5 15:42:49 2013
 @@ -4,56 +4,26 @@
  
  #include "media/audio/openbsd/audio_manager_openbsd.h"
@@ -83,7 +83,7 @@ $OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.17 2013/09/29 1
  }
  
  AudioManagerOpenBSD::~AudioManagerOpenBSD() {
-@@ -86,34 +45,34 @@ AudioManagerOpenBSD::~AudioManagerOpenBSD() {
+@@ -86,7 +45,7 @@ AudioManagerOpenBSD::~AudioManagerOpenBSD() {
  
  AudioOutputStream* AudioManagerOpenBSD::MakeLinearOutputStream(
      const AudioParameters& params) {
@@ -92,9 +92,10 @@ $OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.17 2013/09/29 1
    return MakeOutputStream(params);
  }
  
- AudioOutputStream* AudioManagerOpenBSD::MakeLowLatencyOutputStream(
-     const AudioParameters& params,
+@@ -95,20 +54,20 @@ AudioOutputStream* AudioManagerOpenBSD::MakeLowLatency
+     const std::string& device_id,
      const std::string& input_device_id) {
+   DLOG_IF(ERROR, !device_id.empty()) << "Not implemented!";
 -  DCHECK_EQ(AudioParameters::AUDIO_PCM_LOW_LATENCY, params.format);
 +  DCHECK_EQ(AudioParameters::AUDIO_PCM_LOW_LATENCY, params.format());
    return MakeOutputStream(params);
@@ -115,15 +116,16 @@ $OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.17 2013/09/29 1
    NOTIMPLEMENTED();
    return NULL;
  }
- 
- AudioParameters AudioManagerOpenBSD::GetPreferredOutputStreamParameters(
+@@ -118,7 +77,7 @@ AudioParameters AudioManagerOpenBSD::GetPreferredOutpu
      const AudioParameters& input_params) {
+   // TODO(tommi): Support |output_device_id|.
+   DLOG_IF(ERROR, !output_device_id.empty()) << "Not implemented!";
 -  static const int kDefaultOutputBufferSize = 512;
 +  static const int kDefaultOutputBufferSize = 2048;
  
    ChannelLayout channel_layout = CHANNEL_LAYOUT_STEREO;
    int sample_rate = kDefaultSampleRate;
-@@ -139,10 +98,7 @@ AudioParameters AudioManagerOpenBSD::GetPreferredOutpu
+@@ -144,10 +103,7 @@ AudioParameters AudioManagerOpenBSD::GetPreferredOutpu
  
  AudioOutputStream* AudioManagerOpenBSD::MakeOutputStream(
      const AudioParameters& params) {

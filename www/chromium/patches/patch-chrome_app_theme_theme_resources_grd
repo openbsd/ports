@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_app_theme_theme_resources_grd,v 1.1 2013/10/29 06:51:34 robert Exp $
---- chrome/app/theme/theme_resources.grd.orig.port	Sun Oct 20 11:54:28 2013
-+++ chrome/app/theme/theme_resources.grd	Sun Oct 20 11:55:03 2013
-@@ -512,7 +512,7 @@
-       <if expr="pp_ifdef('chromeos')">
+$OpenBSD: patch-chrome_app_theme_theme_resources_grd,v 1.2 2013/12/12 10:43:18 robert Exp $
+--- chrome/app/theme/theme_resources.grd.orig.port	Thu Dec  5 15:33:42 2013
++++ chrome/app/theme/theme_resources.grd	Thu Dec  5 15:34:13 2013
+@@ -507,7 +507,7 @@
+         <structure type="chrome_scaled_image" name="IDR_NOTIFICATION_ALERT" file="cros/notification_alert.png" />
          <structure type="chrome_scaled_image" name="IDR_NOTIFICATION_PERIPHERAL_BATTERY_LOW" file="cros/notification_peripheral_battery_low.png" />
        </if>
 -      <if expr="is_win or is_linux">
@@ -10,12 +10,3 @@ $OpenBSD: patch-chrome_app_theme_theme_resources_grd,v 1.1 2013/10/29 06:51:34 r
          <structure type="chrome_scaled_image" name="IDR_NOTIFICATION_TRAY_DO_NOT_DISTURB_ATTENTION" file="common/notification_tray_do_not_disturb_attention.png" />
          <structure type="chrome_scaled_image" name="IDR_NOTIFICATION_TRAY_DO_NOT_DISTURB_EMPTY" file="common/notification_tray_do_not_disturb_empty.png" />
          <structure type="chrome_scaled_image" name="IDR_NOTIFICATION_TRAY_ATTENTION" file="common/notification_tray_attention.png" />
-@@ -751,7 +751,7 @@
-       <structure type="chrome_scaled_image" name="IDR_SPEECH_INPUT_MIC_MASK" file="common/speech_input_mic_mask.png" />
-       <structure type="chrome_scaled_image" name="IDR_SPEECH_INPUT_MIC_NOISE" file="common/speech_input_mic_noise.png" />
-       <structure type="chrome_scaled_image" name="IDR_SPEECH_INPUT_SPINNER" file="common/speech_input_spinner.png" />
--      <if expr="is_linux or pp_ifdef('chromeos')">
-+      <if expr="is_linux or pp_ifdef('chromeos') or is_posix">
-         <structure type="chrome_scaled_image" name="IDR_SPEECH_INPUT_TRAY_MIC_EMPTY" file="speech_input_tray_linux_mic_empty.png" />
-         <structure type="chrome_scaled_image" name="IDR_SPEECH_INPUT_TRAY_MIC_FULL" file="speech_input_tray_linux_mic_full.png" />
-       </if>

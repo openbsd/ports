@@ -1,7 +1,7 @@
-$OpenBSD: patch-skia_skia_library_gypi,v 1.1 2013/10/29 06:51:34 robert Exp $
---- skia/skia_library.gypi.orig.port	Sun Oct 20 17:07:47 2013
-+++ skia/skia_library.gypi	Sun Oct 20 17:08:18 2013
-@@ -214,7 +214,7 @@
+$OpenBSD: patch-skia_skia_library_gypi,v 1.2 2013/12/12 10:43:18 robert Exp $
+--- skia/skia_library.gypi.orig.port	Wed Dec  4 21:56:17 2013
++++ skia/skia_library.gypi	Thu Dec  5 15:32:45 2013
+@@ -196,7 +196,7 @@
      }],
  
      #Settings for text blitting, chosen to approximate the system browser.
@@ -10,7 +10,7 @@ $OpenBSD: patch-skia_skia_library_gypi,v 1.1 2013/10/29 06:51:34 robert Exp $
        'defines': [
          'SK_GAMMA_EXPONENT=1.2',
          'SK_GAMMA_CONTRAST=0.2',
-@@ -242,7 +242,7 @@
+@@ -224,7 +224,7 @@
  
      # For POSIX platforms, prefer the Mutex implementation provided by Skia
      # since it does not generate static initializers.

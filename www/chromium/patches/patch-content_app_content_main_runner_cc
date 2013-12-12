@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_app_content_main_runner_cc,v 1.11 2013/10/29 06:51:34 robert Exp $
---- content/app/content_main_runner.cc.orig.port	Fri Oct 11 19:30:25 2013
-+++ content/app/content_main_runner.cc	Fri Oct 18 20:47:20 2013
-@@ -80,10 +80,10 @@
+$OpenBSD: patch-content_app_content_main_runner_cc,v 1.12 2013/12/12 10:43:18 robert Exp $
+--- content/app/content_main_runner.cc.orig.port	Wed Dec  4 21:54:46 2013
++++ content/app/content_main_runner.cc	Thu Dec  5 15:32:45 2013
+@@ -86,10 +86,10 @@
  #include "base/posix/global_descriptors.h"
  #include "content/public/common/content_descriptors.h"
  
@@ -14,7 +14,7 @@ $OpenBSD: patch-content_app_content_main_runner_cc,v 1.11 2013/10/29 06:51:34 ro
  #include "content/zygote/zygote_main.h"
  #endif
  
-@@ -331,7 +331,7 @@ struct MainFunction {
+@@ -337,7 +337,7 @@ struct MainFunction {
    int (*function)(const MainFunctionParams&);
  };
  
@@ -23,7 +23,7 @@ $OpenBSD: patch-content_app_content_main_runner_cc,v 1.11 2013/10/29 06:51:34 ro
  // On platforms that use the zygote, we have a special subset of
  // subprocesses that are launched via the zygote.  This function
  // fills in some process-launching bits around ZygoteMain().
-@@ -444,7 +444,7 @@ int RunNamedProcessTypeMain(
+@@ -459,7 +459,7 @@ int RunNamedProcessTypeMain(
      }
    }
  

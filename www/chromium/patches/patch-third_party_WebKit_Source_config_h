@@ -1,0 +1,11 @@
+$OpenBSD: patch-third_party_WebKit_Source_config_h,v 1.1 2013/12/12 10:43:18 robert Exp $
+--- third_party/WebKit/Source/config.h.orig.port	Thu Dec  5 15:46:10 2013
++++ third_party/WebKit/Source/config.h	Thu Dec  5 15:46:30 2013
+@@ -181,6 +181,6 @@
+ #define __STDC_FORMAT_MACROS 1
+ #endif
+ 
+-#if OS(LINUX) || OS(ANDROID)
++#if OS(LINUX) || OS(ANDROID) || OS(OPENBSD)
+ #define WTF_USE_HARFBUZZ 1
+ #endif

@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_renderer_renderer_webkitplatformsupport_impl_cc,v 1.1 2013/10/29 06:51:34 robert Exp $
---- content/renderer/renderer_webkitplatformsupport_impl.cc.orig.port	Sun Oct 20 19:03:34 2013
-+++ content/renderer/renderer_webkitplatformsupport_impl.cc	Sun Oct 20 19:04:19 2013
+$OpenBSD: patch-content_renderer_renderer_webkitplatformsupport_impl_cc,v 1.2 2013/12/12 10:43:18 robert Exp $
+--- content/renderer/renderer_webkitplatformsupport_impl.cc.orig.port	Wed Dec  4 21:54:50 2013
++++ content/renderer/renderer_webkitplatformsupport_impl.cc	Thu Dec  5 15:32:45 2013
 @@ -83,7 +83,7 @@
  #include "third_party/WebKit/public/platform/mac/WebSandboxSupport.h"
  #endif
@@ -19,7 +19,7 @@ $OpenBSD: patch-content_renderer_renderer_webkitplatformsupport_impl_cc,v 1.1 20
  // WebKit doesn't use WebSandboxSupport on android so we don't need to
  // implement anything here.
  class RendererWebKitPlatformSupportImpl::SandboxSupport {
-@@ -251,7 +251,7 @@ RendererWebKitPlatformSupportImpl::fileUtilities() {
+@@ -252,7 +252,7 @@ RendererWebKitPlatformSupportImpl::fileUtilities() {
  }
  
  WebKit::WebSandboxSupport* RendererWebKitPlatformSupportImpl::sandboxSupport() {
@@ -28,7 +28,7 @@ $OpenBSD: patch-content_renderer_renderer_webkitplatformsupport_impl_cc,v 1.1 20
    // WebKit doesn't use WebSandboxSupport on android.
    return NULL;
  #else
-@@ -567,7 +567,7 @@ bool RendererWebKitPlatformSupportImpl::SandboxSupport
+@@ -547,7 +547,7 @@ bool RendererWebKitPlatformSupportImpl::SandboxSupport
    return FontLoader::CGFontRefFromBuffer(font_data, font_data_size, out);
  }
  
