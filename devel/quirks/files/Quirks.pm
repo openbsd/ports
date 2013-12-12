@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.111 2013/12/12 14:54:55 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.112 2013/12/12 21:40:37 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -350,6 +350,8 @@ my $obsolete_reason = {
 	'xinha' => 1,
 	'py-cups' => 0,
 	'system-config-printer' => 0,
+	'ruby-postgres' => 2,
+	'metasploit' => 2,
 };
 
 # ->is_base_system($handle, $state):
