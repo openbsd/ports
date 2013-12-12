@@ -1,4 +1,4 @@
-$OpenBSD: README-common,v 1.3 2013/08/26 14:55:45 ajacoutot Exp $
+$OpenBSD: README-common,v 1.4 2013/12/12 14:53:43 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -50,7 +50,8 @@ to use a direct connection.
 e.g. with CUPS, socket://192.168.255.14:9100
 
 Alternatively, the printer can be configured to use the foomatic print
-framework using the hpijs package (useful with lpd(8)).
+framework using the hpijs package (useful for direct printing without
+CUPS).
 
 Scanning
 ========
