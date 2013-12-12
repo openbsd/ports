@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.243 2013/11/04 21:15:42 landry Exp $
+# $OpenBSD: Makefile,v 1.244 2013/12/12 19:53:19 landry Exp $
 
 COMMENT =	Mozilla web browser
 
 # Don't forget to bump www/firefox-i18n after updates.
 # Don't forget to update devel/xulrunner/2.0 if patches changes.
 
-MOZILLA_VERSION =	25.0
+MOZILLA_VERSION =	26.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
 #MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build2/source/
-SO_VERSION =	44.0
+SO_VERSION =	45.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	browsercomps mozalloc mozgnome xul
@@ -37,12 +37,14 @@ MODCLANG_LANGS =	c c++
 NO_TEST =	Yes
 
 CONFIGURE_STYLE =	autoconf no-autoheader
-WANTLIB +=	kvm
 
 # to be able to link when building with clang on i386 or gcc on ppc
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "powerpc"
 CONFIGURE_ARGS +=	--disable-debug-symbols
 .endif
+
+# relies on pulseaudio for sound and broken at runtime
+CONFIGURE_ARGS +=	--disable-webrtc
 
 CONFIGURE_ARGS +=	--enable-gstreamer
 
@@ -54,12 +56,6 @@ CONFIGURE_ARGS +=	--enable-gstreamer
 
 BUILD_DEPENDS +=	multimedia/gstreamer-0.10/plugins-base
 RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-good
-
-# needs 3.0.10 when not using gcc
-# CONFIGURE_ARGS += --with-system-ffi
-
-# --with-system-png=${LOCALBASE}
-# no system png : apng support not bundled in
 
 MOZILLA_AUTOCONF_DIRS +=	js/src
 

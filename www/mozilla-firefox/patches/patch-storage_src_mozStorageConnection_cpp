@@ -1,9 +1,9 @@
-$OpenBSD: patch-storage_src_mozStorageConnection_cpp,v 1.21 2013/10/31 07:58:25 landry Exp $
+$OpenBSD: patch-storage_src_mozStorageConnection_cpp,v 1.22 2013/12/12 19:53:19 landry Exp $
 set secure_delete PRAGMA on by default, instead of using internal sqlite copy
 https://bugzilla.mozilla.org/show_bug.cgi?id=546162
---- storage/src/mozStorageConnection.cpp.orig	Tue Oct  1 11:53:41 2013
-+++ storage/src/mozStorageConnection.cpp	Sun Oct  6 18:18:54 2013
-@@ -687,6 +687,13 @@ Connection::initializeInternal(nsIFile* aDatabaseFile)
+--- storage/src/mozStorageConnection.cpp.orig	Tue Oct 29 07:05:37 2013
++++ storage/src/mozStorageConnection.cpp	Fri Nov  1 10:23:12 2013
+@@ -677,6 +677,13 @@ Connection::initializeInternal(nsIFile* aDatabaseFile)
      return convertResultCode(srv);
    }
  

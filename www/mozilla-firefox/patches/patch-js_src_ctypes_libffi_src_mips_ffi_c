@@ -1,7 +1,9 @@
-$OpenBSD: patch-js_src_ctypes_libffi_src_mips_ffi_c,v 1.1 2011/04/15 08:31:48 jasper Exp $
+$OpenBSD: patch-js_src_ctypes_libffi_src_mips_ffi_c,v 1.2 2013/12/12 19:53:19 landry Exp $
 
 Allow building this on OpenBSD, where we don't provide the ICACHE related
 defines in cachectl.h, but in sysarch.h.
+https://hg.mozilla.org/integration/mozilla-inbound/rev/a434e4fc3482
+Remove in 28
 
 --- js/src/ctypes/libffi/src/mips/ffi.c.orig	Fri Apr 15 10:03:18 2011
 +++ js/src/ctypes/libffi/src/mips/ffi.c	Fri Apr 15 10:03:36 2011
