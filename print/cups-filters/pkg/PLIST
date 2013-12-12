@@ -1,8 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.10 2013/11/03 15:47:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/12/12 14:46:53 ajacoutot Exp $
 @conflict cups-<1.6.0
 @conflict ghostscript-<9.06p3
+@conflict foomatic-filters-*
+@pkgpath print/foomatic-filters
+bin/foomatic-rip
 @bin bin/ttfread
 include/cupsfilters/
+include/cupsfilters/colord.h
 include/cupsfilters/driver.h
 include/cupsfilters/image.h
 include/cupsfilters/raster.h
@@ -20,13 +24,13 @@ lib/libfontembed.la
 @lib lib/libfontembed.so.${LIBfontembed_VERSION}
 lib/pkgconfig/libcupsfilters.pc
 lib/pkgconfig/libfontembed.pc
-libexec/cups/
 @bin libexec/cups/backend/parallel
 @bin libexec/cups/backend/serial
 libexec/cups/filter/
 @bin libexec/cups/filter/bannertopdf
 @bin libexec/cups/filter/commandtoescpx
 @bin libexec/cups/filter/commandtopclx
+@bin libexec/cups/filter/foomatic-rip
 libexec/cups/filter/gstopxl
 @bin libexec/cups/filter/gstoraster
 @bin libexec/cups/filter/imagetopdf
@@ -47,6 +51,7 @@ libexec/cups/filter/textonly
 @bin libexec/cups/filter/texttopdf
 libexec/cups/filter/texttops
 @bin libexec/cups/filter/urftopdf
+@man man/man1/foomatic-rip.1
 @man man/man5/cups-browsed.conf.5
 @man man/man8/cups-browsed.8
 @bin sbin/cups-browsed
@@ -80,6 +85,7 @@ share/doc/cups-filters/COPYING
 share/doc/cups-filters/INSTALL
 share/doc/cups-filters/NEWS
 share/doc/cups-filters/README
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/cups-filters/
 share/examples/cups-filters/99pdftoopvp.conf
 @sample ${SYSCONFDIR}/fonts/conf.d/99-pdftoopvp.conf

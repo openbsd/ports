@@ -1,0 +1,24 @@
+$OpenBSD: patch-filter_foomatic-rip_foomaticrip_c,v 1.1 2013/12/12 14:46:53 ajacoutot Exp $
+
+XXX from pkgsrc (foomatic-filters).
+Prevent bogus 'Job does not start with "%!", is it PostScript?' errors.
+
+--- filter/foomatic-rip/foomaticrip.c.orig	Wed Nov  6 20:34:56 2013
++++ filter/foomatic-rip/foomaticrip.c	Thu Dec 12 11:14:42 2013
+@@ -169,7 +169,7 @@ char cupsfilterpath[PATH_MAX] = "/usr/local/lib/cups/f
+                                 "/opt/cups/filter:"
+                                 "/usr/lib/cups/filter";
+ 
+-char modern_shell[64] = "/bin/bash";
++char modern_shell[64] = "/bin/ksh";
+ 
+ void config_set_option(const char *key, const char *value)
+ {
+@@ -633,6 +633,7 @@ int print_file(const char *filename, int convert)
+                 if (dup2(fileno(out), fileno(stdin)) < 0)
+                     rip_die(EXIT_PRNERR_NORETRY_BAD_SETTINGS,
+                             "Couldn't dup stdout of pdf-to-ps\n");
++                rewind(stdin);
+ 
+                 ret = print_file("<STDIN>", 0);
+ 

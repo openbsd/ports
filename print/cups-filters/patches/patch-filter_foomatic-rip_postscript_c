@@ -1,0 +1,17 @@
+$OpenBSD: patch-filter_foomatic-rip_postscript_c,v 1.1 2013/12/12 14:46:53 ajacoutot Exp $
+
+XXX from pkgsrc (foomatic-filters).
+Prevent bogus 'Job does not start with "%!", is it PostScript?' errors.
+
+--- filter/foomatic-rip/postscript.c.orig	Thu Dec 12 11:14:55 2013
++++ filter/foomatic-rip/postscript.c	Thu Dec 12 11:15:25 2013
+@@ -177,6 +177,9 @@ int print_ps(FILE *file, const char *alreadyread, size
+         return 0;
+     }
+ 
++    if (file != stdin)
++       rewind(stdin);
++
+     stream.pos = 0;
+     stream.file = stdin;
+     stream.alreadyread = alreadyread;

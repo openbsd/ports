@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2013/11/03 15:47:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2013/12/12 14:46:53 ajacoutot Exp $
 
 BROKEN-alpha=	ICE in cupsfilters/image-jpeg.c:316
 
 COMMENT=	OpenPrinting CUPS filters
 
-DISTNAME=	cups-filters-1.0.41
+DISTNAME=	cups-filters-1.0.42
 CATEGORIES=	print
 
 SHARED_LIBS +=  cupsfilters               0.0 # 1.0
@@ -38,9 +38,15 @@ LIB_DEPENDS=	print/cups,-libs \
 		print/poppler \
 		print/qpdf
 
-# make it easier for users: bring in foomatic-filters, ghostscript and
-# allow the regeneration of PPD files from share/foomatic/db/source/*/*.xml
+# make it easier for users: bring in foomatic-db and allow the
+# regeneration of PPD files from share/foomatic/db/source/*/*.xml
 RUN_DEPENDS +=	print/foomatic-db-engine
+
+# ghostscript cups driver
+RUN_DEPENDS +=	print/ghostscript/gnu
+
+# don't enforce dependency on colord; it'll be used only if found
+#RUN_DEPENDS +=	graphics/colord
 
 USE_GMAKE=	Yes
 
@@ -52,7 +58,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-browseremoteprotocols=DNSSD,CUPS \
 		--with-test-font-path=${X11BASE}/lib/X11/fonts/TTF/DejaVuSans.ttf \
 		--with-acroread-path=${LOCALBASE}/bin/acroread \
 		--with-gs-path=${LOCALBASE}/bin/gs \
@@ -61,16 +66,24 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 # prefer pdftops over gs -- see README under ${WRKSRC}
 CONFIGURE_ARGS +=	--with-pdftops=pdftops
 BUILD_DEPENDS +=	print/poppler,-utils
-RUN_DEPENDS +=		print/poppler,-utils #print/ghostscript/gnu
+RUN_DEPENDS +=		print/poppler,-utils
 
 pre-configure:
 	perl -pi -e 's,/usr/share/cups,${LOCALBASE}/share/cups,g;' \
 		-e 's,/usr/bin,${LOCALBASE}/bin,g' \
 		${WRKSRC}/filter/{gstoraster.c,gstopxl}
+	perl -pi -e 's,/etc/cups,${SYSCONFDIR}/cups,g' \
+		${WRKSRC}/filter/foomatic-rip/spooler.c
+	perl -pi -e 's,/usr/local,${LOCALBASE},g' \
+		${WRKSRC}/filter/foomatic-rip/foomaticrip.c
 
 post-install:
 	rm -rf ${WRKINST}/rc?.d
+# handle old filters looking for these
 	cd ${PREFIX}/libexec/cups/filter && ln -s gstopxl pstopxl
 	cd ${PREFIX}/libexec/cups/filter && ln -s gstoraster pstoraster
+# put in default PATH for direct printing
+	ln -sf ${TRUEPREFIX}/libexec/cups/filter/foomatic-rip \
+		${PREFIX}/bin/foomatic-rip
 
 .include <bsd.port.mk>

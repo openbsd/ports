@@ -1,0 +1,87 @@
+$OpenBSD: README,v 1.1 2013/12/12 14:46:53 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Direct printing with foomatic-rip(1)
+====================================
+
+The Foomatic framework supports direct printing which does not rely on
+CUPS (nor any spooler) and can thus be used with lpd(8) or directly on
+the command line.
+
+Complete documentation can be found at:
+    http://www.linuxfoundation.org/collaborate/workgroups/openprinting/database/nospoolerdocumentation
+
+Configuration
+-------------
+A specific PPD file must be created for each printer. Refer to the
+documentation that comes with the foomatic-db-engine package to learn
+how to generate PPD files
+(cf. ${LOCALBASE}/share/doc/pkg-readmes/foomatic-db-engine-*).
+
+# mkdir -p /etc/foomatic/direct
+# foomatic-ppdfile -p 'Samsung-ML-2850D' -d 'Postscript' > /etc/foomatic/direct/samsung-ml2850d.ppd
+
+The following line must be added to the top of the PPD file (preferably
+just after the '*PPD-Adobe: "4.3"' line):
+*FoomaticRIPPostPipe: "| /usr/bin/nc -w 1 $HOST $PORT"
+
+Replace $HOST with the hostname (or IP address) of the printer and $PORT
+with its listening raw print port (usually 9100).
+
+For local printers, the following needs to be used instead:
+- parallel:
+*FoomaticRIPPostPipe: "| cat &gt; /dev/lpt0"
+- USB:
+*FoomaticRIPPostPipe: "| cat &gt; /dev/ulpt0"
+
+Direct printing test
+--------------------
+Everything should now be set up for printing postscript files:
+$ foomatic-rip -P samsung-ml2850d /path/to/postscript_file
+
+A default printer can be setup so that the PPD file needs not to be
+specified ("-P samsung-ml2850d"). It is setup with one line in:
+	${SYSCONFDIR}/foomatic/direct/.config
+e.g
+default: samsung-ml2850d
+
+Additional options can be passed to foomatic-rip(1).
+e.g.
+- to print in duplex mode: -o duplex
+- to set the page size to letter: -o pagesize=letter
+
+Non-postscript files can be printed after having been pre-processed and
+converted. Several packages can be used for that, a2ps being the most
+complete.
+e.g.
+$ cat /path/to/file | \
+	${LOCALBASE}/bin/a2ps -BRq --columns=1 -o - | \
+	${PREFIX}/bin/foomatic-rip -P samsung-ml2850d
+
+a2ps(1) requires external helper tools for converting files, they can be
+configured under ${SYSCONFDIR}/a2ps{,-site}.cfg.
+By default, converting images requires the ImageMagick package.
+
+lpd(8)
+------
+Putting it all together, it is now possible to hook it up with lpd(8) by
+creating a script similar to this one:
+
+---8<-------------------------------------------------------------------
+#!/bin/sh
+
+${LOCALBASE}/bin/a2ps -BRq --columns=1 -o - | \
+	${PREFIX}/bin/foomatic-rip -P samsung-ml2850d
+---8<-------------------------------------------------------------------
+
+Then adding the following printcap(5) entry:
+
+lp|samsung|Samsung-ML-2850D:\
+	:lp=/dev/null:\
+	:if=/path/to/printfilter:\
+	:sd=/var/spool/output:\
+	:lf=/var/log/lpd-errs:\
+	:sh:
