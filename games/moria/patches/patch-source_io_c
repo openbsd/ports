@@ -1,34 +1,103 @@
-$OpenBSD: patch-source_io_c,v 1.1.1.1 2001/07/04 16:57:50 lebel Exp $
---- source/io.c.orig	Wed Jul  4 12:25:44 2001
-+++ source/io.c	Wed Jul  4 12:25:53 2001
-@@ -60,7 +60,8 @@ long wgetch();
+$OpenBSD: patch-source_io_c,v 1.2 2013/12/12 21:32:48 jca Exp $
+--- source/io.c.orig	Fri Jul 22 03:47:26 1994
++++ source/io.c	Thu Dec 12 14:55:49 2013
+@@ -60,6 +60,10 @@ long wgetch();
  char *getenv();
  #endif
  
--
-+#include <sys/ioctl_compat.h>
-+#include <curses.h>
++#ifdef __OpenBSD__
++#define USG
++#define USE_TERMIOS
++#endif
+ 
  #include <ctype.h>
  
- #if defined(SYS_V) && defined(lint)
-@@ -245,7 +246,6 @@ int suspend()
+@@ -109,6 +113,14 @@ typedef struct { int stuff; } fpvmach;
+ /* Needs termio.h because curses.h doesn't include it */
+ #include <termio.h>
+ #endif
++#ifdef USE_TERMIOS
++# include <termios.h>
++#else
++# define termios termio
++# define tcgetattr(a, b) ioctl((a), TCGETA, (char *)(b))
++# define tcsetattr(a, b, c) ioctl((a), (b), (char *)(c))
++# define TCSANOW TCSETA
++#endif
+ #else /* ! USG */
+ #include <strings.h>
+ #if defined(atarist) && defined(__GNUC__)
+@@ -201,12 +213,8 @@ void sleep();
+ #if !defined(MAC) && !defined(MSDOS) && !defined(ATARI_ST) && !defined(VMS)
+ #ifndef AMIGA
+ #ifdef USG
+-#ifdef __linux__
+ static struct termios save_termio;
+ #else
+-static struct termio save_termio;
+-#endif
+-#else
+ static struct ltchars save_special_chars;
+ static struct sgttyb save_ttyb;
+ static struct tchars save_tchars;
+@@ -237,32 +245,45 @@ static WINDOW *tempscr;		/* Spare window for VMS CTRL(
+    restored.  */
+ int suspend()
+ {
+-#ifdef USG
++#if defined(USG) && !defined(__OpenBSD__)
+   /* for USG systems with BSDisms that have SIGTSTP defined, but don't
+      actually implement it */
+ #else
++#ifdef USE_TERMIOS
++  struct termios tbuf;
++#else
+   struct sgttyb tbuf;
    struct ltchars lcbuf;
    struct tchars cbuf;
    int lbuf;
 -  long time();
++#endif
  
    py.misc.male |= 2;
++#ifdef USE_TERMIOS
++  (void) tcgetattr(0, &tbuf);
++#else
    (void) ioctl(0, TIOCGETP, (char *)&tbuf);
-@@ -316,7 +316,7 @@ void init_curses()
- #if defined(USG) && !defined(PC_CURSES) && !defined(AMIGA)
-   if (initscr() == NULL)
- #else
--  if (initscr() == ERR)
-+  if (initscr() == NULL)
+   (void) ioctl(0, TIOCGETC, (char *)&cbuf);
+   (void) ioctl(0, TIOCGLTC, (char *)&lcbuf);
+ #if !defined(atarist) && !defined(__GNUC__)
+   (void) ioctl(0, TIOCLGET, (char *)&lbuf);
  #endif
-     {
-       (void) printf("Error allocating screen in curses package.\n");
-@@ -334,7 +334,7 @@ void init_curses()
++#endif
++
+   restore_term();
+   (void) kill(0, SIGSTOP);
+   curses_on = TRUE;
++
++#ifdef USE_TERMIOS
++  (void) tcsetattr(0, TCSANOW, &tbuf);
++#else
+   (void) ioctl(0, TIOCSETP, (char *)&tbuf);
+   (void) ioctl(0, TIOCSETC, (char *)&cbuf);
+   (void) ioctl(0, TIOCSLTC, (char *)&lcbuf);
+ #if !defined(atarist) && !defined(__GNUC__)
+   (void) ioctl(0, TIOCLSET, (char *)&lbuf);
+ #endif
++#endif
+   (void) wrefresh(curscr);
+   py.misc.male &= ~2;
+ #endif
+@@ -307,7 +328,7 @@ void init_curses()
+ #else
+ #if !defined(VMS) && !defined(MSDOS) && !defined(ATARI_ST)
+ #ifndef AMIGA
+-  (void) ioctl(0, TCGETA, (char *)&save_termio);
++  (void) tcgetattr(0, &save_termio);
+ #endif
+ #endif
+ #endif
+@@ -334,7 +355,7 @@ void init_curses()
  #ifdef  __386BSD__
    (void) signal (SIGTSTP, (sig_t)suspend);
  #else
@@ -37,12 +106,83 @@ $OpenBSD: patch-source_io_c,v 1.1.1.1 2001/07/04 16:57:50 lebel Exp $
  #endif
  #endif
  #endif
-@@ -760,7 +760,7 @@ void shell_out()
- #if defined(USG) || defined(__386BSD__)
-   (void) wait((int *) 0);
+@@ -385,12 +406,8 @@ void moriaterm()
+ #if !defined(MSDOS) && !defined(ATARI_ST) && !defined(VMS)
+ #ifndef AMIGA
+ #ifdef USG
+-#ifdef __linux__
+   struct termios tbuf;
  #else
--  (void) wait((union wait *) 0);
-+  (void) wait((int *) 0);
+-  struct termio tbuf;
+-#endif
+-#else
+   struct ltchars lbuf;
+   struct tchars buf;
  #endif
- #endif /* ATARI_ST */
- #endif		 /* MSDOS }*/
+@@ -420,7 +437,7 @@ void moriaterm()
+ #else
+ #if !defined(ATARI_ST) && !defined(VMS)
+ #ifdef USG
+-  (void) ioctl(0, TCGETA, (char *)&tbuf);
++  (void) tcgetattr(0, &tbuf);
+   /* disable all of the normal special control characters */
+   tbuf.c_cc[VINTR] = (char)3; /* control-C */
+   tbuf.c_cc[VQUIT] = (char)-1;
+@@ -438,7 +455,7 @@ void moriaterm()
+   tbuf.c_cc[VMIN] = 1;  /* Input should wait for at least 1 char */
+   tbuf.c_cc[VTIME] = 0; /* no matter how long that takes. */
+ 
+-  (void) ioctl(0, TCSETA, (char *)&tbuf);
++  (void) tcgetattr(0, &tbuf);
+ #else
+   /* disable all of the special characters except the suspend char, interrupt
+      char, and the control flow start/stop characters */
+@@ -552,7 +569,7 @@ void restore_term()
+ #ifdef USG
+ #if !defined(MSDOS) && !defined(ATARI_ST) && !defined(VMS)
+ #ifndef AMIGA
+-  (void) ioctl(0, TCSETA, (char *)&save_termio);
++  (void) tcsetattr(0, TCSANOW, &save_termio);
+ #endif
+ #endif
+ #else
+@@ -646,12 +663,8 @@ void shell_out()
+ {
+ #ifdef USG
+ #if !defined(MSDOS) && !defined(ATARI_ST) && !defined(AMIGA)
+-#ifdef __linux__
+   struct termios tbuf;
+-#else
+-  struct termio tbuf;
+ #endif
+-#endif
+ #else
+   struct sgttyb tbuf;
+   struct ltchars lcbuf;
+@@ -683,7 +696,7 @@ void shell_out()
+ 
+ #ifdef USG
+ #if !defined(MSDOS) && !defined(ATARI_ST) && !defined(AMIGA)
+-  (void) ioctl(0, TCGETA, (char *)&tbuf);
++  (void) tcgetattr(0, &tbuf);
+ #endif
+ #else
+   (void) ioctl(0, TIOCGETP, (char *)&tbuf);
+@@ -725,7 +738,7 @@ void shell_out()
+       default_signals();
+ #ifdef USG
+ #if !defined(MSDOS) && !defined(ATARI_ST) && !defined(AMIGA)
+-      (void) ioctl(0, TCSETA, (char *)&save_termio);
++      (void) tcsetattr(0, TCSANOW, &save_termio);
+ #endif
+ #else
+       (void) ioctl(0, TIOCSLTC, (char *)&save_special_chars);
+@@ -785,7 +798,7 @@ void shell_out()
+   /* have to disable ^Y for tunneling */
+ #ifdef USG
+ #if !defined(MSDOS) && !defined(ATARI_ST)
+-  (void) ioctl(0, TCSETA, (char *)&tbuf);
++  (void) tcsetattr(0, TCSANOW, &tbuf);
+ #endif
+ #else
+   (void) ioctl(0, TIOCSLTC, (char *)&lcbuf);
