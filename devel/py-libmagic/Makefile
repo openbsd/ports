@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/10/27 09:57:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2013/12/12 17:59:35 nigel Exp $
 
 COMMENT=	Python bindings to libmagic
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION = 0.2
 V=		5.15
 DISTNAME=	file-${V}
 PKGNAME=	py-libmagic-${V}
+REVISION =	0
 
 CATEGORIES=	sysutils devel
 
