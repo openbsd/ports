@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2013/10/22 11:34:18 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2013/12/13 09:40:03 zhuk Exp $
 @pkgpath graphics/kipi-plugins,beta2
 @pkgpath graphics/kipi-plugins
 bin/images2mpg
@@ -177,8 +177,8 @@ share/apps.kde3/kipiplugin_viewer/icons/hicolor/16x16/actions/ogl.png
 share/apps.kde3/kipiplugin_viewer/icons/hicolor/32x32/
 share/apps.kde3/kipiplugin_viewer/icons/hicolor/32x32/actions/
 share/apps.kde3/kipiplugin_viewer/icons/hicolor/32x32/actions/ogl.png
-share/config.kcfg/
-share/config.kcfg/htmlexportconfig.kcfg
+share/config.kcfg.kde3/
+share/config.kcfg.kde3/htmlexportconfig.kcfg
 share/doc/HTML.kde3/de/
 share/doc/HTML.kde3/de/kipi-plugins/
 share/doc/HTML.kde3/de/kipi-plugins/acquire-savetargetpreview.png
