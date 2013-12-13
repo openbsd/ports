@@ -1,0 +1,34 @@
+$OpenBSD: patch-extconf_rb,v 1.1.1.1 2013/12/13 07:50:53 jasper Exp $
+
+From d8c613cdb17edf9628fa10569ba31562fae67fcf Mon Sep 17 00:00:00 2001
+From: Adam Palmblad <adam.palmblad@teampages.com>
+Date: Fri, 15 Nov 2013 09:46:05 -0800
+Subject: [PATCH] Attempt to resolve BSD make issues.
+
+Add OpenBSD support.
+
+--- extconf.rb.orig	Thu Jan  1 01:00:00 1970
++++ extconf.rb	Thu Dec 12 21:42:09 2013
+@@ -16,7 +16,7 @@ $CFLAGS = case RUBY_VERSION
+ implementation = case CONFIG['host_os']
+                  when /linux/i; 'shadow'
+                  when /sunos|solaris/i; 'shadow'
+-                 when /freebsd/i; 'pwd'
++                 when /freebsd|openbsd/i; 'pwd'
+                  when /darwin/i; 'pwd'
+                  else; nil
+                    "This library works on OS X, FreeBSD, Solaris and Linux."
+@@ -59,8 +59,11 @@ else
+   ok = false
+ end
+ 
++have_header( "ruby/io.h")
++
+ if ok
++
+   create_makefile("shadow", implementation)
+ else
+   raise "You are missing some of the required functions from either shadow.h on Linux/Solaris, or pwd.h on FreeBSD/OS X."
+-end
+\ No newline at end of file
++end

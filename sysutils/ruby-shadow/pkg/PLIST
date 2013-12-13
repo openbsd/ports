@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/13 07:50:53 jasper Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/HISTORY
+${GEM_LIB}/gems/${DISTNAME}/LICENSE
+${GEM_LIB}/gems/${DISTNAME}/MANIFEST
+${GEM_LIB}/gems/${DISTNAME}/Makefile
+${GEM_LIB}/gems/${DISTNAME}/README
+${GEM_LIB}/gems/${DISTNAME}/README.euc
+${GEM_LIB}/gems/${DISTNAME}/extconf.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/shadow.so
+${GEM_LIB}/gems/${DISTNAME}/mkmf.log
+${GEM_LIB}/gems/${DISTNAME}/pwd/
+${GEM_LIB}/gems/${DISTNAME}/pwd/depend
+${GEM_LIB}/gems/${DISTNAME}/pwd/shadow.c
+${GEM_LIB}/gems/${DISTNAME}/ruby-shadow.gemspec
+${GEM_LIB}/gems/${DISTNAME}/shadow/
+${GEM_LIB}/gems/${DISTNAME}/shadow.o
+${GEM_LIB}/gems/${DISTNAME}/shadow.so
+${GEM_LIB}/gems/${DISTNAME}/shadow/depend
+${GEM_LIB}/gems/${DISTNAME}/shadow/shadow.c
+${GEM_LIB}/specifications/${DISTNAME}.gemspec

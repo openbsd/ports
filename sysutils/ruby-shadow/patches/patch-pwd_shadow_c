@@ -1,0 +1,20 @@
+$OpenBSD: patch-pwd_shadow_c,v 1.1.1.1 2013/12/13 07:50:53 jasper Exp $
+
+From d8c613cdb17edf9628fa10569ba31562fae67fcf Mon Sep 17 00:00:00 2001
+From: Adam Palmblad <adam.palmblad@teampages.com>
+Date: Fri, 15 Nov 2013 09:46:05 -0800
+Subject: [PATCH] Attempt to resolve BSD make issues.
+
+--- pwd/shadow.c.orig	Thu Jan  1 01:00:00 1970
++++ pwd/shadow.c	Thu Dec 12 21:41:53 2013
+@@ -17,8 +17,8 @@
+ #define PWTYPE  struct passwd
+ 
+ #include "ruby.h"
+-#ifdef RUBY19
+-#include <ruby/io.h>
++#ifdef HAVE_RUBY_IO_H
++#include "ruby/io.h"
+ #else
+ #include "rubyio.h"
+ #endif
