@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2013/12/13 15:33:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2013/12/13 16:26:06 ajacoutot Exp $
 @extra owncloud/config/config.php
 owncloud/
 owncloud/.htaccess.dist
@@ -6357,8 +6357,8 @@ owncloud/apps/files_external/3rdparty/aws-sdk-php/Symfony/Component/ClassLoader/
 owncloud/apps/files_external/3rdparty/aws-sdk-php/Symfony/Component/ClassLoader/Tests/Fixtures/fallback/Pearlike2/FooBar.php
 owncloud/apps/files_external/3rdparty/aws-sdk-php/Symfony/Component/ClassLoader/Tests/Fixtures/includepath/
 owncloud/apps/files_external/3rdparty/aws-sdk-php/Symfony/Component/ClassLoader/Tests/Fixtures/includepath/Foo.php
-owncloud/apps/files_external/3rdparty/aws-sdk-php/Symfony/Component/ClassLoader/Tests/Fixtures/php${MODPHP_VERSION}/
-owncloud/apps/files_external/3rdparty/aws-sdk-php/Symfony/Component/ClassLoader/Tests/Fixtures/php${MODPHP_VERSION}/traits.php
+owncloud/apps/files_external/3rdparty/aws-sdk-php/Symfony/Component/ClassLoader/Tests/Fixtures/php5.4/
+owncloud/apps/files_external/3rdparty/aws-sdk-php/Symfony/Component/ClassLoader/Tests/Fixtures/php5.4/traits.php
 owncloud/apps/files_external/3rdparty/aws-sdk-php/Symfony/Component/ClassLoader/Tests/UniversalClassLoaderTest.php
 owncloud/apps/files_external/3rdparty/aws-sdk-php/Symfony/Component/ClassLoader/UniversalClassLoader.php
 owncloud/apps/files_external/3rdparty/aws-sdk-php/Symfony/Component/ClassLoader/WinCacheClassLoader.php
