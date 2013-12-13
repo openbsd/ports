@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.19 2013/10/22 11:34:18 zhuk Exp $
+# $OpenBSD: Makefile,v 1.20 2013/12/13 09:38:49 zhuk Exp $
 
 COMMENT-main =	grab raw data from digital cameras
-COMMENT-icons =	common icons for all libkdcraw versions
+COMMENT-icons =	icons for libkdcraw
 
 CATEGORIES =	graphics devel
 V =		0.1.9
 DISTNAME =	libkdcraw-${V}
 PKGNAME-main =	${PKGNAME}
 PKGNAME-icons =	libkdcraw-icons-${V}
-REVISION-main =	8
-REVISION-icons =0
+REVISION-main =	9
+REVISION-icons =1
 
 PKGSPEC-main =	libkdcraw-<0.2.0
 
@@ -18,6 +18,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=kipi/}
 EXTRACT_SUFX =	.tar.bz2
 
 SHARED_LIBS +=		kdcraw               2.0      # .3.0
+
 MODULES =		devel/gettext \
 			x11/kde
 MODKDE_VERSION =	3.5.8
@@ -37,15 +38,16 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			x11/kde/libs3
 LIB_DEPENDS-icons =
 
-RUN_DEPENDS-main =	graphics/dcraw \
-			${BUILD_PKGPATH},-icons
+RUN_DEPENDS-main =	${RUN_DEPENDS} \
+			graphics/dcraw \
+			STEM-*|kde4-libkdcraw-icons-*:${BUILD_PKGPATH},-icons
 RUN_DEPENDS-icons =	x11/gtk+2,-guic
 
 WANTLIB-main =  ${WANTLIB}
 WANTLIB-main += GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama
 WANTLIB-main += Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 drm expat fam
 WANTLIB-main += fontconfig freetype idn jpeg lcms m mng png pthread
-WANTLIB-main += pthread-stubs stdc++ util xcb z 
+WANTLIB-main += pthread-stubs stdc++ util xcb z
 WANTLIB-main += ${KDE}/DCOP ${KDE}/kdecore ${KDE}/kdefx ${KDE}/kdesu
 WANTLIB-main += ${KDE}/kdeui ${KDE}/kio ${KDE}/kwalletclient
 WANTLIB-icons =

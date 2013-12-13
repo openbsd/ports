@@ -1,2 +1,2 @@
-This package contains icons shared by different versions of libkdcraw (from
-KDE 3 and 4) that could be installed simultaneously.
+This package contains shareable icons for libkdcraw, used
+to allow KDE 3 and 4 to be installed simultaneously.

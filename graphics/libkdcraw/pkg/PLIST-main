@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2013/10/22 11:34:18 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2013/12/13 09:38:49 zhuk Exp $
 @option no-default-conflict
 @conflict libkdcraw-<0.2.0
+@conflict libkdcraw->=4,<4.11.4p0
 @pkgpath graphics/libkdcraw
 include/kde/libkdcraw/
 include/kde/libkdcraw/dcrawinfocontainer.h

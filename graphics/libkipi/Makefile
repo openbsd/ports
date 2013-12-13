@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.30 2013/10/22 11:34:19 zhuk Exp $
+# $OpenBSD: Makefile,v 1.31 2013/12/13 09:38:49 zhuk Exp $
 
 COMMENT-main =		KDE image plugins API
-COMMENT-icons =		libkipi icons
+COMMENT-icons =		icons for libkipi
 CATEGORIES =		graphics devel x11 x11/kde
 V =			0.1.6
 DISTNAME =		libkipi-$V
 PKGNAME-main =		${PKGNAME}
 PKGNAME-icons =		libkipi-icons-$V
 PKGSPEC-main =		libkipi-<1
-REVISION-main =		9
-REVISION-icons =	1
+REVISION-main =		10
+REVISION-icons =	2
 
 SHARED_LIBS +=	kipi                 1.4      # .2.0
 
@@ -22,13 +22,14 @@ SHARED_ONLY =		Yes
 LIB_DEPENDS =		x11/kde/libs3
 LIB_DEPENDS-icons =
 
-RUN_DEPENDS-main =	${BUILD_PKGPATH},-icons
+RUN_DEPENDS-main =	${RUN_DEPENDS} \
+			STEM-*|kde4-libkipi-icons-*:${BUILD_PKGPATH},-icons
 RUN_DEPENDS-icons =	x11/gtk+2,-guic
 
 WANTLIB =  GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama
 WANTLIB += Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 drm expat fam
 WANTLIB += fontconfig freetype idn jpeg lcms lib/qt3/qt-mt>=3.33 m mng
-WANTLIB += png pthread pthread-stubs stdc++ util xcb z 
+WANTLIB += png pthread pthread-stubs stdc++ util xcb z
 WANTLIB += ${KDE}/DCOP ${KDE}/kdecore>=6 ${KDE}/kdefx ${KDE}/kdesu
 WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kwalletclient
 WANTLIB-icons =
