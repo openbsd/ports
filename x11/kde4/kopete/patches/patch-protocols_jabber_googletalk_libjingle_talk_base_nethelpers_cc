@@ -1,7 +1,7 @@
-$OpenBSD: patch-protocols_jabber_googletalk_libjingle_talk_base_nethelpers_cc,v 1.1.1.1 2013/12/08 18:39:44 zhuk Exp $
+$OpenBSD: patch-protocols_jabber_googletalk_libjingle_talk_base_nethelpers_cc,v 1.2 2013/12/13 11:34:48 zhuk Exp $
 Rewrite OpenBSD support using getaddrinfo() and "proper" OS check.
---- protocols/jabber/googletalk/libjingle/talk/base/nethelpers.cc.orig	Tue Dec  3 22:30:39 2013
-+++ protocols/jabber/googletalk/libjingle/talk/base/nethelpers.cc	Thu Dec  5 01:21:12 2013
+--- protocols/jabber/googletalk/libjingle/talk/base/nethelpers.cc.orig	Wed Aug 28 21:16:17 2013
++++ protocols/jabber/googletalk/libjingle/talk/base/nethelpers.cc	Mon Dec  9 15:51:49 2013
 @@ -37,6 +37,13 @@ static const size_t kInitHostentLen = 1024;
  static const size_t kMaxHostentLen = kInitHostentLen * 8;
  #endif
@@ -72,14 +72,19 @@ Rewrite OpenBSD support using getaddrinfo() and "proper" OS check.
  #else
  #error "I don't know how to do gethostbyname safely on your system."
  #endif
-@@ -186,6 +212,10 @@ hostent* SafeGetHostByName(const char* hostname, int* 
+@@ -186,6 +212,15 @@ hostent* SafeGetHostByName(const char* hostname, int* 
  void FreeHostEnt(hostent* host) {
  #if defined(OSX) || defined(IOS) || defined(FREEBSD)
    freehostent(host);
 +#elif defined(OPENBSD)
-+  delete host->h_addr_list[0];
-+  delete host->h_addr_list;
-+  delete host;
++  if (host != NULL) {
++    // we may be sure that at least one element is there,
++    // getaddrinfo(3) always returns at least one address
++    // on success.
++    delete host->h_addr_list[0];
++    delete host->h_addr_list;
++    delete host;
++  }
  #elif defined(WIN32) || defined(POSIX)
    free(host);
  #else
