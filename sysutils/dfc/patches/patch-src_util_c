@@ -1,0 +1,50 @@
+$OpenBSD: patch-src_util_c,v 1.1 2013/12/13 16:42:35 naddy Exp $
+--- src/util.c.orig	Thu Oct  3 15:23:34 2013
++++ src/util.c	Fri Dec 13 17:36:45 2013
+@@ -167,35 +167,29 @@ sanitizestr(const char *str)
+  * Get the width of tty and return it.
+  * Return 0 if stdout is not a tty.
+  */
++
++#if !defined(TIOCGWINSZ) && defined(TIOCGSIZE)
++#define TIOCGWINSZ	TIOCGSIZE
++#define winsize		ttysize
++#define ws_col		ts_cols
++#endif
++
+ int
+ getttywidth(void)
+ {
+ 	int width = 0;
+-#ifdef TIOCGSIZE
+-	struct ttysize win;
+-#elif defined(TIOCGWINSZ)
++#if defined(TIOCGWINSZ)
+ 	struct winsize win;
+-#endif /* TIOCGSIZE */
++#endif /* TIOCGWINSZ */
+ 
+ 	if (!isatty(STDOUT_FILENO))
+ 		return 0;
+ 		/* NOTREACHED */
+ 
+-#ifdef TIOCGSIZE
+-	if (ioctl(STDOUT_FILENO, TIOCGSIZE, &win) == 0)
+-#if defined(__APPLE__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__DragonFly__)
+-		width = win.ts_cols;
+-#else
+-		width = win.ws_col;
+-#endif /* __APPLE__ || __NetBSD__ || __OpenBSD__ || __DragonFly__ */
+-#elif defined(TIOCGWINSZ)
++#if defined(TIOCGWINSZ)
+ 	if (ioctl(STDOUT_FILENO, TIOCGWINSZ, &win) == 0)
+-#if defined(__APPLE__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__DragonFly__)
+-		width = win.ts_cols;
+-#else
+ 		width = win.ws_col;
+-#endif /* __APPLE__ || __NetBSD__ || __OpenBSD__ || __DragonFly__ */
+-#endif /* TIOCGSIZE */
++#endif /* TIOCGWINSZ */
+ 	return width == 0 ? 80 : width;
+ 	/* NOTREACHED */
+ }
