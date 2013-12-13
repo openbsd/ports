@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.304 2013/11/01 14:18:34 syl Exp $
+# $OpenBSD: Makefile,v 1.305 2013/12/13 07:52:14 jasper Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -178,6 +178,9 @@
      SUBDIR += ruby-puppet
      SUBDIR += ruby-puppet-lint
      SUBDIR += ruby-puppet-lint,ruby18
+     SUBDIR += ruby-shadow
+     SUBDIR += ruby-shadow,ruby19
+     SUBDIR += ruby-shadow,ruby20
      SUBDIR += ruby-vlad
      SUBDIR += runit
      SUBDIR += safecat
