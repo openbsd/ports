@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/08 18:39:44 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/12/13 16:25:31 zhuk Exp $
 @conflict kdenetwork-<4.11
 @bin bin/kopete
 bin/kopete_latexconvert.sh
@@ -155,9 +155,9 @@ lib/kde4/plugins/accessible/chatwindowaccessiblewidgetfactory.so
 @lib lib/libkyahoo.so.${LIBkyahoo_VERSION}
 @lib lib/liboscar.so.${LIBoscar_VERSION}
 @lib lib/libqgroupwise.so.${LIBqgroupwise_VERSION}
-netscape/
-netscape/plugins/
-netscape/plugins/skypebuttons.so
+lib/mozilla/
+lib/mozilla/plugins/
+lib/mozilla/plugins/skypebuttons.so
 share/applications/kde4/kopete.desktop
 share/apps/kconf_update/kopete-account-0.10.pl
 share/apps/kconf_update/kopete-account-kconf_update.sh

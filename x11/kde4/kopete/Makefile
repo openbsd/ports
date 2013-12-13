@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/12/09 17:21:07 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2013/12/13 16:25:31 zhuk Exp $
 
 COMMENT =	multi-protocol instant messenger for KDE
 DISTNAME =	kopete-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	network
 HOMEPAGE =	http://kopete.kde.org/
@@ -52,6 +52,7 @@ LIB_DEPENDS =	audio/xmms \
 		security/qca2
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_LibV4L2:Bool=Yes \
+			-DMOZPLUGIN_INSTALL_DIR=${LOCALBASE}/lib/mozilla/plugins \
 			-DWITH_Libmsn:Bool=No \
 			-DWITH_LiboRTP:Bool=No \
 			-DWITH_Mediastreamer:Bool=No
