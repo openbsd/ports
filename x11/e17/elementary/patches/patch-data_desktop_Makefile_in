@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_desktop_Makefile_in,v 1.1 2013/12/13 17:49:50 rpe Exp $
+--- data/desktop/Makefile.in.orig	Thu Dec 12 12:05:54 2013
++++ data/desktop/Makefile.in	Thu Dec 12 12:08:23 2013
+@@ -363,7 +363,7 @@ version_info = @version_info@
+ MAINTAINERCLEANFILES = Makefile.in
+ desktopdir = $(datadir)/applications
+ desktop_DATA = elementary_test.desktop elementary_config.desktop
+-icondir = $(datadir)/icons
++icondir = $(datadir)/elementary/icons
+ icon_DATA = elementary.png
+ EXTRA_DIST = $(desktop_DATA) $(icon_DATA)
+ all: all-am

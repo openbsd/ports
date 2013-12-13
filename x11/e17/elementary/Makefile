@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2013/12/06 13:16:45 dlg Exp $
+# $OpenBSD: Makefile,v 1.14 2013/12/13 17:49:50 rpe Exp $
 
 COMMENT =		basic widget set, based on EFL
 
 VERSION =		1.7.9
 DISTNAME =		elementary-${VERSION}
+REVISION = 		0
 
 SHARED_LIBS +=	elementary                0.0 # 8.6
 
@@ -25,7 +26,6 @@ MODULES =		devel/gettext \
 			x11/e17
 
 MODE17_DESKTOP_FILE =	Yes
-MODE17_ICON_CACHE =	Yes
 MODE17_PURGE_LA =	lib/edje/modules lib/elementary/modules
 
 USE_GMAKE =		Yes
