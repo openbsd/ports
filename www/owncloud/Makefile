@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.56 2013/11/15 10:50:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2013/12/13 15:33:18 ajacoutot Exp $
 
 COMMENT=	easy and universal access to shared and/or personnal files
 
-V=		5.0.13
+V=		6.0.0
 DISTNAME=	owncloud-${V}
 EXTRACT_SUFX=	.tar.bz2
 
@@ -43,11 +43,10 @@ RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-curl \
 
 do-install:
 	cp -Rp ${WRKSRC} ${INSTDIR}
-	find ${INSTDIR} -name '*.orig' -print0 | xargs -r0 rm
 	${SUBST_CMD} -c ${FILESDIR}/owncloud.conf \
 		${INSTDIR}/owncloud.conf.dist
 	mv ${INSTDIR}/.htaccess ${INSTDIR}/.htaccess.dist
-	find ${INSTDIR} -name '*.orig' -exec rm {} \;
+	find ${INSTDIR} -name '*.orig' -print0 | xargs -r0 rm
 	chown -R ${BINOWN}:${BINGRP} ${INSTDIR}
 
 .include <bsd.port.mk>
