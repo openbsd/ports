@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/04/05 11:39:29 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.6 2013/12/13 06:53:21 brad Exp $
 include/SDL/
 include/SDL/SDL_framerate.h
 include/SDL/SDL_gfxBlitFunc.h
@@ -9,5 +8,6 @@ include/SDL/SDL_imageFilter.h
 include/SDL/SDL_rotozoom.h
 lib/libSDL_gfx.a
 lib/libSDL_gfx.la
+@lib lib/libSDL_gfx.so.${LIBSDL_gfx_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/SDL_gfx.pc
