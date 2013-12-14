@@ -1,5 +1,6 @@
-$OpenBSD: patch-giscanner_utils_py,v 1.6 2013/09/26 06:27:49 jasper Exp $
+$OpenBSD: patch-giscanner_utils_py,v 1.7 2013/12/14 09:16:49 ajacoutot Exp $
 
+XXX rework and push upstream.
 Make sure try to compile/link with the right libtool,
 this overrides the --libtool option to girscanner.
 

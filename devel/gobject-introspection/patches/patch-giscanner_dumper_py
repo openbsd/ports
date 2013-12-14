@@ -1,21 +1,18 @@
-$OpenBSD: patch-giscanner_dumper_py,v 1.7 2013/09/26 06:27:49 jasper Exp $
+$OpenBSD: patch-giscanner_dumper_py,v 1.8 2013/12/14 09:16:49 ajacoutot Exp $
+
+From d355a386f8f03bdfacf6b48a8fccb0a4218cc4fa Mon Sep 17 00:00:00 2001
+From: Ryan Lortie <desrt@desrt.ca>
+Date: Sun, 08 Dec 2013 17:01:43 +0000
+Subject: dumper: use 'cc' as the default C compiler
+
 --- giscanner/dumper.py.orig	Tue Sep 24 15:41:09 2013
-+++ giscanner/dumper.py	Wed Sep 25 09:24:11 2013
++++ giscanner/dumper.py	Sat Dec 14 09:28:37 2013
 @@ -82,7 +82,7 @@ class DumpCompiler(object):
          self._get_type_functions = get_type_functions
          self._error_quark_functions = error_quark_functions
  
 -        self._compiler_cmd = os.environ.get('CC', 'gcc')
-+        self._compiler_cmd = os.environ.get('CC', '${CC}')
++        self._compiler_cmd = os.environ.get('CC', 'cc')
          self._linker_cmd = os.environ.get('CC', self._compiler_cmd)
          self._pkgconfig_cmd = os.environ.get('PKG_CONFIG', 'pkg-config')
          self._pkgconfig_msvc_flags = ''
-@@ -205,7 +205,7 @@ class DumpCompiler(object):
-         args = self._compiler_cmd.split()
-         # Do not add -Wall when using init code as we do not include any
-         # header of the library being introspected
--        if self._compiler_cmd == 'gcc' and not self._options.init_sections:
-+        if self._compiler_cmd == 'cc' and not self._options.init_sections:
-             args.append('-Wall')
-         # The Microsoft compiler uses different option flags for
-         # silencing warnings on deprecated function usage
