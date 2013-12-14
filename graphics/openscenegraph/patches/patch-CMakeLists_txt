@@ -1,7 +1,17 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2013/11/24 21:58:24 pascal Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2013/12/14 17:17:13 espie Exp $
 --- CMakeLists.txt.orig	Wed Jul 24 16:11:55 2013
-+++ CMakeLists.txt	Sat Nov 23 12:56:13 2013
-@@ -686,12 +686,6 @@ IF(CYGWIN)
++++ CMakeLists.txt	Sat Dec 14 16:14:31 2013
+@@ -519,7 +519,8 @@ ELSE()
+     FIND_PACKAGE(COLLADA)
+     FIND_PACKAGE(FBX)
+     FIND_PACKAGE(ZLIB)
+-    FIND_PACKAGE(Xine)
++#    FIND_PACKAGE(Xine)
++    SET(XINE_FOUND "NO")
+     FIND_PACKAGE(OpenVRML)
+     FIND_PACKAGE(Performer)
+     FIND_PACKAGE(GDAL)
+@@ -686,12 +687,6 @@ IF(CYGWIN)
    SET(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -D_DEBUG")
  ENDIF()
  
