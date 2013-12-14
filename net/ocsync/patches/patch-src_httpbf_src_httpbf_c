@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_httpbf_src_httpbf_c,v 1.1 2013/12/14 12:46:33 ajacoutot Exp $
+
+Remove useless header.
+
+--- src/httpbf/src/httpbf.c.orig	Sat Dec 14 13:44:21 2013
++++ src/httpbf/src/httpbf.c	Sat Dec 14 13:44:27 2013
+@@ -26,7 +26,6 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <errno.h>
+-#include <sys/timeb.h>
+ #include <sys/time.h>
+ #include <inttypes.h>
+ 
