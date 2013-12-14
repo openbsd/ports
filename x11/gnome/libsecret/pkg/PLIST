@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/08/26 16:15:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/12/14 08:17:50 ajacoutot Exp $
 @bin bin/secret-tool
 include/libsecret-1/
 include/libsecret-1/libsecret/
@@ -28,8 +28,6 @@ lib/pkgconfig/libsecret-unstable.pc
 share/gir-1.0/
 share/gir-1.0/Secret-1.gir
 share/gir-1.0/SecretUnstable-0.gir
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/libsecret-1/
 share/gtk-doc/html/libsecret-1/SecretCollection.html
 share/gtk-doc/html/libsecret-1/SecretError.html
@@ -91,8 +89,6 @@ share/locale/da/LC_MESSAGES/libsecret.mo
 share/locale/de/LC_MESSAGES/libsecret.mo
 share/locale/es/LC_MESSAGES/libsecret.mo
 share/locale/fr/LC_MESSAGES/libsecret.mo
-share/locale/fur/
-share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/libsecret.mo
 share/locale/gl/LC_MESSAGES/libsecret.mo
 share/locale/he/LC_MESSAGES/libsecret.mo
@@ -100,8 +96,6 @@ share/locale/hu/LC_MESSAGES/libsecret.mo
 share/locale/id/LC_MESSAGES/libsecret.mo
 share/locale/it/LC_MESSAGES/libsecret.mo
 share/locale/ja/LC_MESSAGES/libsecret.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/libsecret.mo
 share/locale/nb/LC_MESSAGES/libsecret.mo
 share/locale/pa/LC_MESSAGES/libsecret.mo
@@ -111,13 +105,9 @@ share/locale/ru/LC_MESSAGES/libsecret.mo
 share/locale/sk/LC_MESSAGES/libsecret.mo
 share/locale/sl/LC_MESSAGES/libsecret.mo
 share/locale/sr/LC_MESSAGES/libsecret.mo
-share/locale/sr@latin/
-share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/libsecret.mo
 share/locale/zh_HK/LC_MESSAGES/libsecret.mo
 share/locale/zh_TW/LC_MESSAGES/libsecret.mo
-share/vala/
-share/vala/vapi/
 share/vala/vapi/libsecret-1.deps
 share/vala/vapi/libsecret-1.vapi
 share/vala/vapi/libsecret-unstable.deps
