@@ -1,20 +1,22 @@
-$OpenBSD: patch-configure_ac,v 1.14 2013/10/12 14:39:37 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.15 2013/12/14 09:53:18 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=669495
 http://sources.debian.net/src/gnome-shell/3.8.4-3/debian/patches/10-make-NetworkManager-optional.patch
 http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/gnome-base/gnome-shell/files/gnome-shell-3.8.3-networkmanager-flag.patch
 
---- configure.ac.orig	Fri Oct 11 13:36:49 2013
-+++ configure.ac	Fri Oct 11 13:37:49 2013
-@@ -91,8 +91,6 @@ SHARED_PCS="gio-unix-2.0 >= $GIO_MIN_VERSION
+--- configure.ac.orig	Fri Nov 15 14:27:07 2013
++++ configure.ac	Sat Dec 14 10:49:34 2013
+@@ -91,9 +91,7 @@ SHARED_PCS="gio-unix-2.0 >= $GIO_MIN_VERSION
              libcanberra libcanberra-gtk3
              telepathy-glib >= $TELEPATHY_GLIB_MIN_VERSION
              polkit-agent-1 >= $POLKIT_MIN_VERSION
 -            libnm-glib libnm-util >= $NETWORKMANAGER_MIN_VERSION
 -            libnm-gtk >= $NETWORKMANAGER_MIN_VERSION
-             libsecret-unstable gcr-base-3 >= $GCR_MIN_VERSION"
+-            libsecret-unstable gcr-base-3 >= $GCR_MIN_VERSION"
++            gcr-base-3 >= $GCR_MIN_VERSION"
  
  PKG_CHECK_MODULES(GNOME_SHELL, $SHARED_PCS)
+ PKG_CHECK_MODULES(MUTTER, libmutter >= $MUTTER_MIN_VERSION)
 @@ -162,6 +160,38 @@ if test "$langinfo_ok" = "yes"; then
              [Define if _NL_TIME_FIRST_WEEKDAY is available])
  fi
@@ -26,10 +28,10 @@ http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/gnome-base/gnome-shell/f
 +
 +if test "x$enable_networkmanager" != "xno"; then
 +   PKG_CHECK_MODULES(NETWORKMANAGER,
-+                     [libnm-glib 
++                     [libnm-glib
 +                     libnm-util >= $NETWORKMANAGER_MIN_VERSION
-+                     libnm-gtk >= $NETWORKMANAGER_MIN_VERSION 
-+                     gnome-keyring-1],
++                     libnm-gtk >= $NETWORKMANAGER_MIN_VERSION
++                     libsecret-unstable],
 +                     [have_networkmanager=yes],
 +                     [have_networkmanager=no])
 +
