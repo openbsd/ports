@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2013/11/21 09:00:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2013/12/14 08:43:30 landry Exp $
 
 COMMENT =	lightweight mail user agent
 
-DISTNAME =	geary-0.4.2
+GNOME_PROJECT =	geary
+GNOME_VERSION =	0.4.3
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 CATEGORIES =	mail
@@ -10,9 +11,7 @@ CATEGORIES =	mail
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-HOMEPAGE =	http://yorba.org/geary/
-MASTER_SITES =	http://yorba.org/download/geary/stable/
-EXTRACT_SUFX =	.tar.xz
+HOMEPAGE =	http://yorba.org/projects/geary/
 MODULES =	devel/cmake devel/dconf x11/gnome devel/gettext
 
 MODGNOME_TOOLS =	gi yelp vala
