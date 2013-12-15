@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.93 2013/08/07 15:37:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.94 2013/12/15 01:57:55 brad Exp $
 
 COMMENT=	cross-platform multimedia library
 
 VERSION=	1.2.15
 DISTNAME=	SDL-${VERSION}
 PKGNAME=	${DISTNAME:L}
-REVISION=	3
+REVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	${HOMEPAGE}release/
 
@@ -16,9 +16,12 @@ HOMEPAGE=	http://www.libsdl.org/
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB=	m sndio usbhid
+WANTLIB=	m pthread sndio usbhid
 
 MODULES=	converters/libiconv
+
+AUTOCONF_VERSION= 2.61
+BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS}
 
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+=	devel/nasm
@@ -38,8 +41,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		 --disable-oss \
 		 --disable-pulseaudio
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		WITH_SNDIO="Yes"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 # in case devel/usb is installed, don't pick it up.
 CONFIGURE_ENV+= ac_cv_lib_usb_hid_init=no \
@@ -64,7 +66,8 @@ WANTLIB+=	X11 Xau Xdmcp Xext Xrandr Xrender pthread-stubs xcb
 NO_TEST=	Yes
 
 pre-configure:
-	@mkdir -p ${WRKSRC}/src/audio/libsndio
-	@cp ${FILESDIR}/SDL_libsndioaudio.{c,h} ${WRKSRC}/src/audio/libsndio
+	@mkdir -p ${WRKSRC}/src/audio/sndio
+	@cp ${FILESDIR}/SDL_sndioaudio.{c,h} ${WRKSRC}/src/audio/sndio
+	@cd ${WRKSRC}; env AUTOCONF_VERSION=${AUTOCONF_VERSION} ./autogen.sh
 
 .include <bsd.port.mk>

@@ -14,11 +14,10 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-
 #include "SDL_config.h"
 
-#ifndef _SDL_libsndioaudio_h
-#define _SDL_libsndioaudio_h
+#ifndef _SDL_sndioaudio_h
+#define _SDL_sndioaudio_h
 
 #include <sndio.h>
 
@@ -47,5 +46,5 @@ struct SDL_PrivateAudioData {
 #define mixlen			(this->hidden->mixlen)
 #define hdl			(this->hidden->hdl)
 
-#endif /* _SDL_libsaaudio_h */
+#endif /* _SDL_sndioaudio_h */
 

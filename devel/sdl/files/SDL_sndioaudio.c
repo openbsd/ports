@@ -14,7 +14,6 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
-
 #include "SDL_config.h"
 
 /* Allow access to a raw mixing buffer */
@@ -29,9 +28,9 @@
 #include "../SDL_audiomem.h"
 #include "../SDL_audio_c.h"
 #include "../SDL_audiodev_c.h"
-#include "SDL_libsndioaudio.h"
+#include "SDL_sndioaudio.h"
 
-/* The tag name used by libsndio audio */
+/* The tag name used by sndio audio */
 #define SNDIO_DRIVER_NAME         "sndio"
 
 /* Audio driver functions */

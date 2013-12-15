@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.12 2005/12/24 17:40:01 pvalchev Exp $
-@lib lib/libSDL.so.${LIBSDL_VERSION}
