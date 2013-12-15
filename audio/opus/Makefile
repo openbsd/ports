@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/07/15 19:47:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2013/12/15 20:15:44 naddy Exp $
 
 COMMENT=	IETF audio codec
 
-DISTNAME=	opus-1.0.3
-SHARED_LIBS=	opus		0.2	# 4.0
+DISTNAME=	opus-1.1
+SHARED_LIBS=	opus		1.0	# 5.0
 CATEGORIES=	audio
 
 HOMEPAGE=	http://opus-codec.org/
@@ -18,6 +18,7 @@ MASTER_SITES=	http://downloads.xiph.org/releases/opus/ \
 
 WANTLIB=	m
 
+USE_GMAKE=	Yes
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
