@@ -1,0 +1,49 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/15 19:24:15 bcallah Exp $
+@bin bin/xye
+share/applications/xye.desktop
+share/pixmaps/
+share/pixmaps/xye.png
+share/xye/
+share/xye/AUTHORS
+share/xye/ChangeLog
+share/xye/NEWS
+share/xye/ReadMe.html
+share/xye/levels/
+share/xye/levels/5levels.xye
+share/xye/levels/Mic4.xye
+share/xye/levels/Phipps.xye
+share/xye/levels/SuperJustin.xye
+share/xye/levels/cracked.xye
+share/xye/levels/levels.xye
+share/xye/levels/logo.xye
+share/xye/levels/microban.xsb
+share/xye/levels/oldtutorials.xye
+share/xye/levels/pxlevels.xye
+share/xye/levels/sphinx.xye
+share/xye/levels/tutorials.xye
+share/xye/levels/xyester.xye
+share/xye/res/
+share/xye/res/DejaVuSans-Bold.ttf
+share/xye/res/DejaVuSans.ttf
+share/xye/res/clean40.png
+share/xye/res/clean40.xml
+share/xye/res/clean40_luminosity.png
+share/xye/res/default.xml
+share/xye/res/default_icon.png
+share/xye/res/detailed.png
+share/xye/res/detailed.xml
+share/xye/res/detailed20.png
+share/xye/res/detailed20.xml
+share/xye/res/detailed30.png
+share/xye/res/detailed30.xml
+share/xye/res/detailed_COPYING
+share/xye/res/detailed_L.png
+share/xye/res/detailed_L20.png
+share/xye/res/detailed_L30.png
+share/xye/res/detailed_icon.png
+share/xye/res/fon.bmp
+share/xye/res/fon_bold.bmp
+share/xye/res/xye.png
+share/xye/res/xye_luminosity.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
