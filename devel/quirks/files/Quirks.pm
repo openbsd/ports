@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.113 2013/12/15 10:43:29 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.114 2013/12/15 19:50:44 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -329,6 +329,7 @@ my $stem_extensions = {
 	'mentry' =>'tklib',
 	'wcb' =>'tklib',
 	'foomatic-filters' =>'cups-filters',
+	'faad-xmms' => 'xmms-faad',
 };
 
 # reasons for obsolete packages
