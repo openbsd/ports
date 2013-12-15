@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2010/09/30 17:34:57 ajacoutot Exp $
-@lib lib/libSDLmm.so.${LIBSDLmm_VERSION}

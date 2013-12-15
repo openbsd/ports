@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/09/30 17:34:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/12/15 03:56:34 brad Exp $
 @conflict sdlmm-doc-*
 @pkgpath devel/sdlmm,-main
 @pkgpath devel/sdlmm,-docs
-%%SHARED%%
 bin/sdlmm-config
 include/SDLmm/
 include/SDLmm/sdlmm.h
@@ -25,6 +24,7 @@ include/SDLmm/sdlmm_timer.h
 include/SDLmm/sdlmm_videoinfo.h
 lib/libSDLmm.a
 lib/libSDLmm.la
+@lib lib/libSDLmm.so.${LIBSDLmm_VERSION}
 @man man/man3/SDLmm.3
 @man man/man3/SDLmm_Audio.3
 @man man/man3/SDLmm_BaseSurface.3
