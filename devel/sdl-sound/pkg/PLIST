@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/07/25 02:11:14 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/12/15 03:10:18 brad Exp $
 @bin bin/playsound
 @bin bin/playsound_simple
 include/SDL/
 include/SDL/SDL_sound.h
 lib/libSDL_sound.a
 lib/libSDL_sound.la
-%%SHARED%%
+@lib lib/libSDL_sound.so.${LIBSDL_sound_VERSION}

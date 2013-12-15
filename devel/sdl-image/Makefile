@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2013/11/02 18:00:05 brad Exp $
+# $OpenBSD: Makefile,v 1.37 2013/12/15 03:10:18 brad Exp $
 
 COMMENT=	SDL image library
 
 DISTNAME=	SDL_image-1.2.12
 PKGNAME=	${DISTNAME:L:S/_/-/}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel graphics
 MASTER_SITES=	${HOMEPAGE}release/
 
@@ -15,7 +15,7 @@ HOMEPAGE=	http://www.libsdl.org/projects/SDL_image/
 # Zlib
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB=	SDL jpeg m png sndio tiff usbhid webp z
+WANTLIB=	SDL jpeg m png pthread sndio tiff usbhid webp z
 
 MODULES=	converters/libiconv
 LIB_DEPENDS=	devel/sdl \

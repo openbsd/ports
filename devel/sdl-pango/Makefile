@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/21 08:45:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2013/12/15 03:10:18 brad Exp $
 
 COMMENT=	SDL wrapper around the Pango library
 
 V=		0.1.2
 DISTNAME=	SDL_Pango-${V}
 PKGNAME=	sdl-pango-${V}
+REVISION=	8
 CATEGORIES=	devel x11
-
-REVISION=	7
-
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sdlpango/}
 MASTER_SITES0=	http://zarb.org/~gc/t/
 
@@ -21,9 +19,9 @@ HOMEPAGE=	http://sdlpango.sourceforge.net/
 # LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	SDL X11 Xau Xdmcp expat fontconfig freetype glib-2.0 \
-		gmodule-2.0 gobject-2.0 gthread-2.0 m pango-1.0 \
-		pangoft2-1.0 pcre pthread-stubs sndio usbhid xcb z
+WANTLIB=	SDL expat ffi fontconfig freetype glib-2.0 gmodule-2.0 \
+		gobject-2.0 graphite2 gthread-2.0 harfbuzz m pango-1.0 \
+		pangoft2-1.0 pcre pthread-stubs pthread sndio usbhid z
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	devel/pango \

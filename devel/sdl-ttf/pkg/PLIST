@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/04/05 11:42:49 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.9 2013/12/15 03:10:18 brad Exp $
 include/SDL/
 include/SDL/SDL_ttf.h
 lib/libSDL_ttf.a
 lib/libSDL_ttf.la
+@lib lib/libSDL_ttf.so.${LIBSDL_ttf_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/SDL_ttf.pc

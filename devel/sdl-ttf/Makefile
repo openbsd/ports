@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.41 2013/03/21 08:45:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2013/12/15 03:10:18 brad Exp $
 
 COMMENT=	SDL TrueType fonts library
 
 V=		2.0.11
 DISTNAME=	SDL_ttf-${V}
 PKGNAME=	sdl-ttf-${V}
+REVISION=	0
 CATEGORIES=	devel graphics fonts
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_ttf/release/
 
@@ -15,7 +16,7 @@ HOMEPAGE=	http://www.libsdl.org/projects/SDL_ttf/
 # Zlib
 PERMIT_PACKAGE_CDROM=   Yes
 
-WANTLIB=	SDL freetype m sndio usbhid z
+WANTLIB=	SDL freetype m pthread sndio usbhid z
 
 MODULES=	converters/libiconv
 LIB_DEPENDS=	devel/sdl

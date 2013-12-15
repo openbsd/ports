@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/07/09 09:20:53 sthen Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.7 2013/12/15 03:10:18 brad Exp $
 include/SDL/
 include/SDL/SDL_image.h
 lib/libSDL_image.a
 lib/libSDL_image.la
+@lib lib/libSDL_image.so.${LIBSDL_image_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/SDL_image.pc
