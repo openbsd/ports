@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.281 2013/11/30 18:39:59 bcallah Exp $
+# $OpenBSD: Makefile,v 1.282 2013/12/15 19:24:41 bcallah Exp $
 
      SUBDIR =
      SUBDIR += abuse
@@ -278,6 +278,7 @@
      SUBDIR += xteddy
      SUBDIR += xwelltris
      SUBDIR += xwelltris,no_sdl
+     SUBDIR += xye
      SUBDIR += xzip
      SUBDIR += zangband
      SUBDIR += zangband,no_x11
