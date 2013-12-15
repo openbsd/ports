@@ -1,9 +1,22 @@
-$OpenBSD: patch-tmac_an-old_tmac,v 1.3 2013/07/13 07:39:00 schwarze Exp $
-chunk 1: Keep traditional OpenBSD page headers (local change).
-chunk 2: Correct right margin after double .TP (submitted upstream).
+$OpenBSD: patch-tmac_an-old_tmac,v 1.4 2013/12/15 15:19:50 schwarze Exp $
+chunks 1,3-5: Fix indentation after RE without RS (approved upstream).
+chunk 2: Keep traditional OpenBSD page headers (local change).
+chunk 6: Correct right margin after double .TP (accepted & committed upstream).
 --- tmac/an-old.tmac.orig	Thu Feb  7 13:06:08 2013
-+++ tmac/an-old.tmac	Mon Jul  8 07:42:25 2013
-@@ -145,18 +145,17 @@
++++ tmac/an-old.tmac	Sat Dec 14 21:24:58 2013
+@@ -122,7 +122,11 @@
+ .\}
+ .
+ .de set-an-margin
++.  nr an-level 1
+ .  nr an-margin \\n[IN]
++.  nr an-saved-margin1 \\n[IN]
++.  nr an-prevailing-indent \\n[IN]
++.  nr an-saved-prevailing-indent1 \\n[IN]
+ ..
+ .
+ .ds an-extra1
+@@ -145,16 +149,16 @@
  .    el                  .ds an-extra2 \"Sun Release 4.0
  .
  .    ie (\\n[.$] > 4)    .ds an-extra3 "\\$5\"
@@ -17,22 +30,50 @@ chunk 2: Correct right margin after double .TP (submitted upstream).
 -.    el \{ .ie '\\$2'7'  .ds an-extra3 Miscellaneous Information Manual
 -.    el \{ .ie '\\$2'8'  .ds an-extra3 System Manager's Manual
 -.    el \{ .ie '\\$2'9'  .ds an-extra3 Kernel Developer's Manual
-+.    el .ie '\\$2'1'     .ds an-extra3 OpenBSD Reference Manual
-+.    el .ie '\\$2'2'     .ds an-extra3 OpenBSD Programmer's Manual
-+.    el .ie '\\$2'3'     .ds an-extra3 OpenBSD Programmer's Manual
-+.    el .ie '\\$2'3p'    .ds an-extra3 Perl Programmers Reference Guide
-+.    el .ie '\\$2'4'     .ds an-extra3 OpenBSD Programmer's Manual
-+.    el .ie '\\$2'5'     .ds an-extra3 OpenBSD Programmer's Manual
-+.    el .ie '\\$2'6'     .ds an-extra3 OpenBSD Reference Manual
-+.    el .ie '\\$2'7'     .ds an-extra3 OpenBSD Reference Manual
-+.    el .ie '\\$2'8'     .ds an-extra3 OpenBSD System Manager's Manual
-+.    el .ie '\\$2'9'     .ds an-extra3 OpenBSD Kernel Manual
++.    el \{ .ie '\\$2'1'  .ds an-extra3 OpenBSD Reference Manual
++.    el \{ .ie '\\$2'2'  .ds an-extra3 OpenBSD Programmer's Manual
++.    el \{ .ie '\\$2'3'  .ds an-extra3 OpenBSD Programmer's Manual
++.    el \{ .ie '\\$2'3p' .ds an-extra3 Perl Programmers Reference Guide
++.    el \{ .ie '\\$2'4'  .ds an-extra3 OpenBSD Programmer's Manual
++.    el \{ .ie '\\$2'5'  .ds an-extra3 OpenBSD Programmer's Manual
++.    el \{ .ie '\\$2'6'  .ds an-extra3 OpenBSD Reference Manual
++.    el \{ .ie '\\$2'7'  .ds an-extra3 OpenBSD Reference Manual
++.    el \{ .ie '\\$2'8'  .ds an-extra3 OpenBSD System Manager's Manual
++.    el \{ .ie '\\$2'9'  .ds an-extra3 OpenBSD Kernel Manual
  .    el                  .ds an-extra3
--.    \}\}\}\}\}\}\}\}\}\}
+ .    \}\}\}\}\}\}\}\}\}\}
  .    ds an-init
- \\..
+@@ -198,9 +202,7 @@
+ .  PD
+ .  if !r SN \
+ .    nr SN 3n \" the indentation of sub-sub-headings relative to sub-headings
+-.  nr an-level 1
+ .  set-an-margin
+-.  nr an-prevailing-indent \\n[IN]
+ .  nr an-tag-sep 1n
  .
-@@ -406,8 +405,10 @@
+ .  nr an-no-space-flag 0
+@@ -342,9 +344,7 @@
+ .
+ .de1 SH
+ .  sp \\n[PD]u
+-.  nr an-level 1
+ .  set-an-margin
+-.  nr an-prevailing-indent \\n[IN]
+ .  fi
+ .  in \\n[an-margin]u
+ .  ti 0
+@@ -361,9 +361,7 @@
+ .
+ .de1 SS
+ .  sp \\n[PD]u
+-.  nr an-level 1
+ .  set-an-margin
+-.  nr an-prevailing-indent \\n[IN]
+ .  fi
+ .  in \\n[IN]u
+ .  ti \\n[SN]u
+@@ -406,8 +404,10 @@
  .  if \\n[.$] .nr an-prevailing-indent (n;\\$1)
  .  it 1 an-trap
  .  in 0
