@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2013/12/13 16:26:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.31 2013/12/15 08:07:42 ajacoutot Exp $
 @extra owncloud/config/config.php
 owncloud/
 owncloud/.htaccess.dist
@@ -1686,16 +1686,6 @@ owncloud/3rdparty/fontawesome/font/fontawesome-webfont.eot
 owncloud/3rdparty/fontawesome/font/fontawesome-webfont.svg
 owncloud/3rdparty/fontawesome/font/fontawesome-webfont.ttf
 owncloud/3rdparty/fontawesome/font/fontawesome-webfont.woff
-owncloud/3rdparty/fullcalendar/
-owncloud/3rdparty/fullcalendar/GPL-LICENSE.txt
-owncloud/3rdparty/fullcalendar/MIT-LICENSE.txt
-owncloud/3rdparty/fullcalendar/css/
-owncloud/3rdparty/fullcalendar/css/fullcalendar.css
-owncloud/3rdparty/fullcalendar/css/fullcalendar.print.css
-owncloud/3rdparty/fullcalendar/js/
-owncloud/3rdparty/fullcalendar/js/fullcalendar.js
-owncloud/3rdparty/fullcalendar/js/fullcalendar.min.js
-owncloud/3rdparty/fullcalendar/js/gcal.js
 owncloud/3rdparty/getid3/
 owncloud/3rdparty/getid3/extension.cache.dbm.php
 owncloud/3rdparty/getid3/extension.cache.mysql.php
@@ -1797,9 +1787,6 @@ owncloud/3rdparty/miniColors/css/jquery.miniColors.css
 owncloud/3rdparty/miniColors/js/
 owncloud/3rdparty/miniColors/js/jquery.miniColors.js
 owncloud/3rdparty/miniColors/js/jquery.miniColors.min.js
-owncloud/3rdparty/openid/
-owncloud/3rdparty/openid/class.openid.v3.php
-owncloud/3rdparty/openid/phpmyid.php
 owncloud/3rdparty/phpass/
 owncloud/3rdparty/phpass/PasswordHash.php
 owncloud/3rdparty/phpass/c/
@@ -2647,8 +2634,6 @@ owncloud/3rdparty/phpdocx/templates/xmls/settings.xml
 owncloud/3rdparty/phpdocx/templates/xmls/styles.xml
 owncloud/3rdparty/phpdocx/xsl/
 owncloud/3rdparty/phpdocx/xsl/docx2html.xsl
-owncloud/3rdparty/smb4php/
-owncloud/3rdparty/smb4php/smb.php
 owncloud/3rdparty/symfony/
 owncloud/3rdparty/symfony/console/
 owncloud/3rdparty/symfony/console/Symfony/
@@ -8132,6 +8117,7 @@ owncloud/apps/search_lucene/appinfo/
 owncloud/apps/search_lucene/appinfo/app.php
 owncloud/apps/search_lucene/appinfo/database.xml
 owncloud/apps/search_lucene/appinfo/info.xml
+owncloud/apps/search_lucene/appinfo/preupdate.php
 owncloud/apps/search_lucene/appinfo/update.php
 owncloud/apps/search_lucene/appinfo/version
 owncloud/apps/search_lucene/css/
@@ -8627,14 +8613,17 @@ owncloud/core/doc/admin/_images/custom_mount_config_gui-1.png
 owncloud/core/doc/admin/_images/custom_mount_config_gui-2.png
 owncloud/core/doc/admin/_images/custom_mount_config_gui-3.png
 owncloud/core/doc/admin/_images/custom_mount_config_gui-4.png
-owncloud/core/doc/admin/_images/ldap-advanced-settings-connection-settings-oc5.png
-owncloud/core/doc/admin/_images/ldap-advanced-settings-directory-settings-oc5.png
-owncloud/core/doc/admin/_images/ldap-advanced-settings-oc5.png
-owncloud/core/doc/admin/_images/ldap-advanced-settings-special-attributes-oc5.png
-owncloud/core/doc/admin/_images/ldap-basic-settings-oc5.png
-owncloud/core/doc/admin/_images/ldap-expert-settings-oc5.png
+owncloud/core/doc/admin/_images/ldap-advanced-1-connection.png
+owncloud/core/doc/admin/_images/ldap-advanced-2-directory.png
+owncloud/core/doc/admin/_images/ldap-advanced-3-attributes.png
+owncloud/core/doc/admin/_images/ldap-expert.png
+owncloud/core/doc/admin/_images/ldap-fetched-avatar.png
 owncloud/core/doc/admin/_images/ldap-settings-invalid-oc45.png
 owncloud/core/doc/admin/_images/ldap-settings-valid-oc45.png
+owncloud/core/doc/admin/_images/ldap-wizard-1-server.png
+owncloud/core/doc/admin/_images/ldap-wizard-2-user.png
+owncloud/core/doc/admin/_images/ldap-wizard-3-login.png
+owncloud/core/doc/admin/_images/ldap-wizard-4-group.png
 owncloud/core/doc/admin/_images/ucs-app-center-install.png
 owncloud/core/doc/admin/_images/ucs-app-center-module.png
 owncloud/core/doc/admin/_images/ucsint.png
