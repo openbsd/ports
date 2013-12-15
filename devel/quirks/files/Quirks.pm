@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.112 2013/12/12 21:40:37 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.113 2013/12/15 10:43:29 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -336,6 +336,7 @@ my @msg = (
 	"ancient software that doesn't work", #0
 	"web application with no benefit being packaged", #1
 	"no longer maintained and full of security holes", #2
+	"no longer maintained upstream", #3
 );
 
 my $obsolete_reason = {
@@ -350,7 +351,7 @@ my $obsolete_reason = {
 	'xinha' => 1,
 	'py-cups' => 0,
 	'system-config-printer' => 0,
-	'ruby-postgres' => 2,
+	'ruby-postgres' => 3,
 	'metasploit' => 2,
 };
 
