@@ -1,6 +1,6 @@
-$OpenBSD: patch-configs_asterisk_conf_sample,v 1.4 2013/03/28 20:24:53 sthen Exp $
---- configs/asterisk.conf.sample.orig	Wed Apr 25 10:32:21 2012
-+++ configs/asterisk.conf.sample	Fri Oct 26 14:17:03 2012
+$OpenBSD: patch-configs_asterisk_conf_sample,v 1.5 2013/12/16 23:16:01 sthen Exp $
+--- configs/asterisk.conf.sample.orig	Mon Dec 16 19:21:00 2013
++++ configs/asterisk.conf.sample	Mon Dec 16 23:08:38 2013
 @@ -61,8 +61,8 @@ astsbindir => /usr/sbin
  				; not otherwise require one.
  ;transcode_via_sln = yes	; Build transcode paths via SLINEAR, instead of
@@ -12,8 +12,18 @@ $OpenBSD: patch-configs_asterisk_conf_sample,v 1.4 2013/03/28 20:24:53 sthen Exp
  ;lightbackground = yes		; If your terminal is set for a light-colored
  				; background.
  ;forceblackbackground = yes     ; Force the background of the terminal to be 
-@@ -85,11 +85,11 @@ documentation_language = en_US	; Set the language you 
+@@ -83,7 +83,8 @@ documentation_language = en_US	; Set the language you 
+ 				; gosub - Invoke the stdexten using a gosub as
+ 				;         documented in extensions.conf.sample.
  				; Default gosub.
+-;live_dangerously = no		; Enable the execution of 'dangerous' dialplan
++live_dangerously = no
++live_dangerously = yes		; Enable the execution of 'dangerous' dialplan
+ 				; functions from external sources (AMI,
+ 				; etc.) These functions (such as SHELL) are
+ 				; considered dangerous because they can allow
+@@ -91,11 +92,11 @@ documentation_language = en_US	; Set the language you 
+ 				; Default yes, for backward compatability.
  
  ; Changing the following lines may compromise your security.
 -;[files]
