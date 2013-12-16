@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/12/13 07:16:04 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2013/12/16 10:39:52 zhuk Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -22,6 +22,7 @@ PKGNAME-toys =		kdetoys-${MODKDE4_VERSION}
 
 REVISION-minimal =	0
 REVISION-main =		0
+REVISION-network =	0
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 

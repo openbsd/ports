@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/12/13 16:25:31 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2013/12/16 10:39:52 zhuk Exp $
 @conflict kdenetwork-<4.11
+@pkgpath x11/kde4/kopete
 @bin bin/kopete
 bin/kopete_latexconvert.sh
 bin/winpopup-install
@@ -919,10 +920,6 @@ share/kde4/services/xmpp.protocol
 share/kde4/servicetypes/kopeteplugin.desktop
 share/kde4/servicetypes/kopeteprotocol.desktop
 share/kde4/servicetypes/kopeteui.desktop
-share/sounds/Kopete_Event.ogg
-share/sounds/Kopete_Received.ogg
-share/sounds/Kopete_Sent.ogg
-share/sounds/Kopete_User_is_Online.ogg
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

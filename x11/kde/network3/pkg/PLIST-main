@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.45 2013/10/22 11:34:06 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2013/12/16 10:39:52 zhuk Exp $
 @conflict sirc-*
+@pkgpath x11/kde/network3
 bin/dsirc
 @bin bin/feedbrowser
 @bin bin/kdict
@@ -1916,10 +1917,6 @@ share/sounds/KGet_Added.ogg
 share/sounds/KGet_Finished.ogg
 share/sounds/KGet_Finished_All.ogg
 share/sounds/KGet_Started.ogg
-share/sounds/Kopete_Event.ogg
-share/sounds/Kopete_Received.ogg
-share/sounds/Kopete_Sent.ogg
-share/sounds/Kopete_User_is_Online.ogg
 share/sounds/ktalkd.wav
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
