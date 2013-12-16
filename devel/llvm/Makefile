@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2013/12/07 10:30:39 brad Exp $
+# $OpenBSD: Makefile,v 1.70 2013/12/16 20:34:46 brad Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -32,7 +32,8 @@ WRKDIST =	${WRKDIR}/llvm-${LLVM_V}.src
 MODULES =	devel/cmake \
 		lang/python
 
-TEST_DEPENDS = devel/dejagnu
+TEST_DEPENDS =	devel/dejagnu \
+		shells/bash
 BUILD_DEPENDS +=	textproc/py-sphinx
 
 SEPARATE_BUILD =	Yes
