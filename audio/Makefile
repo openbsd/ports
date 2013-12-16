@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.317 2013/12/16 15:46:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.318 2013/12/16 16:30:58 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -190,6 +190,8 @@
      SUBDIR += py-id3
      SUBDIR += py-last
      SUBDIR += py-mpd
+     SUBDIR += py-mpd2
+     SUBDIR += py-mpd2,python3
      SUBDIR += py-mutagen
      SUBDIR += py-ogg
      SUBDIR += py-tagger
