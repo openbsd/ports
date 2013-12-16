@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.101 2013/12/07 20:43:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.102 2013/12/16 23:07:06 stsp Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
-BROKEN-i386=	undefined symbol _ZN5boost6system15system_categoryEv in libscfiltlo.so (CppunitTest_sc_filters_test)
 
 COMMENT-main=	multi-platform productivity suite
 COMMENT-kde=	optional integration of LibreOffice to the KDE environment
@@ -18,7 +17,7 @@ PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde3
 
-REVISION-main=	2
+REVISION-main=	3
 REVISION-java=	1
 
 EPOCH=		0
@@ -110,9 +109,6 @@ MULTI_PACKAGES=		-main -java -kde
 PSEUDO_FLAVORS=	parallel no_lang
 FLAVORS=	debug no_java
 FLAVOR?=
-
-# jdk is unreliable on i386.
-NOT_FOR_ARCHS-java = i386
 
 .if !${FLAVOR:Mno_lang}
 LANGS=			ar bg ca de es fa fi fr hu it \
