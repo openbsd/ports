@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.316 2013/12/12 14:53:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.317 2013/12/16 15:46:46 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -194,6 +194,7 @@
      SUBDIR += py-ogg
      SUBDIR += py-tagger
      SUBDIR += py-tagpy
+     SUBDIR += py-tagpy,python3
      SUBDIR += py-vorbis
      SUBDIR += py-xmms
      SUBDIR += pykaraoke
