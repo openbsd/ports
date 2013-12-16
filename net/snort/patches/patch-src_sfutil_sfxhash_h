@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_sfutil_sfxhash_h,v 1.1 2013/12/16 03:32:39 lteo Exp $
+
+fix crashes on archs with strict memory alignment, at least sparc64
+
+patch from Bhagya Bantwal from Sourcefire, Thanks!
+
+--- src/sfutil/sfxhash.h.orig	Tue Dec  3 22:27:32 2013
++++ src/sfutil/sfxhash.h	Tue Dec  3 22:27:59 2013
+@@ -75,6 +75,7 @@ typedef struct _sfxhash
+   unsigned        count;     /// total # nodes in table
+ 
+   unsigned        crow;    /// findfirst/next row in table
++  unsigned        pad;
+   SFXHASH_NODE  * cnode;   /// findfirst/next node ptr
+   int             splay;   /// whether to splay nodes with same hash bucket
+ 
