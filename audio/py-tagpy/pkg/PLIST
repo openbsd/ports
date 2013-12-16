@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/15 08:30:01 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/12/16 15:45:53 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/_tagpy.so
 lib/python${MODPY_VERSION}/site-packages/tagpy/
 lib/python${MODPY_VERSION}/site-packages/tagpy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -7,23 +7,25 @@ lib/python${MODPY_VERSION}/site-packages/tagpy-${MODPY_EGG_VERSION}-py${MODPY_VE
 lib/python${MODPY_VERSION}/site-packages/tagpy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/tagpy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/tagpy/__init__.py
-lib/python${MODPY_VERSION}/site-packages/tagpy/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tagpy/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tagpy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tagpy/${MODPY_PYCACHE}ape.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tagpy/${MODPY_PYCACHE}flac.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tagpy/${MODPY_PYCACHE}id3v1.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tagpy/${MODPY_PYCACHE}id3v2.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tagpy/${MODPY_PYCACHE}mpc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tagpy/${MODPY_PYCACHE}mpeg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tagpy/ape.py
-lib/python${MODPY_VERSION}/site-packages/tagpy/ape.pyc
 lib/python${MODPY_VERSION}/site-packages/tagpy/flac.py
-lib/python${MODPY_VERSION}/site-packages/tagpy/flac.pyc
 lib/python${MODPY_VERSION}/site-packages/tagpy/id3v1.py
-lib/python${MODPY_VERSION}/site-packages/tagpy/id3v1.pyc
 lib/python${MODPY_VERSION}/site-packages/tagpy/id3v2.py
-lib/python${MODPY_VERSION}/site-packages/tagpy/id3v2.pyc
 lib/python${MODPY_VERSION}/site-packages/tagpy/mpc.py
-lib/python${MODPY_VERSION}/site-packages/tagpy/mpc.pyc
 lib/python${MODPY_VERSION}/site-packages/tagpy/mpeg.py
-lib/python${MODPY_VERSION}/site-packages/tagpy/mpeg.pyc
 lib/python${MODPY_VERSION}/site-packages/tagpy/ogg/
 lib/python${MODPY_VERSION}/site-packages/tagpy/ogg/__init__.py
-lib/python${MODPY_VERSION}/site-packages/tagpy/ogg/__init__.pyc
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tagpy/ogg/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tagpy/ogg/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tagpy/ogg/${MODPY_PYCACHE}flac.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tagpy/ogg/${MODPY_PYCACHE}vorbis.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tagpy/ogg/flac.py
-lib/python${MODPY_VERSION}/site-packages/tagpy/ogg/flac.pyc
 lib/python${MODPY_VERSION}/site-packages/tagpy/ogg/vorbis.py
-lib/python${MODPY_VERSION}/site-packages/tagpy/ogg/vorbis.pyc
