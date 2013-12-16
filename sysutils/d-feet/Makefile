@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/10/19 07:59:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2013/12/16 08:24:04 ajacoutot Exp $
 
 COMMENT=		dbus debugger
 
@@ -24,8 +24,10 @@ BUILD_DEPENDS=		x11/gtk+3
 # needed for tests
 BUILD_DEPENDS +=	devel/pep8
 
-RUN_DEPENDS=		devel/py-gobject3 \
-			x11/gtk+3
+RUN_DEPENDS=		devel/py-gobject3
+
+# pygobject introspection for gtk+3
+RUN_DEPENDS +=		x11/gtk+3
 
 # src/dfeet/wnck_utils.py
 RUN_DEPENDS +=		devel/libwnck3

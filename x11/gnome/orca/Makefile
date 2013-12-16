@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2013/11/12 07:55:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2013/12/16 08:24:04 ajacoutot Exp $
 
 # XXX could use brltty and brlapi (with python bindinds) -- not ported yet
 
@@ -18,12 +18,16 @@ MODULES=		lang/python \
 COMMON_DEPENDS= 	audio/speech-dispatcher \
 			devel/liblouis \
 			devel/py-gobject3${MODPY_FLAVOR} \
-			x11/gnome/py-atspi \
+			x11/gnome/py-atspi
+
+BUILD_DEPENDS=		${COMMON_DEPENDS} \
 			x11/gtk+3
 
-BUILD_DEPENDS=		${COMMON_DEPENDS}
 RUN_DEPENDS=		${COMMON_DEPENDS} \
 			devel/py-setproctitle${MODPY_FLAVOR}
+
+# pygobject introspection for gtk+3
+RUN_DEPENDS +=		x11/gtk+3
 
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODGNOME_DESKTOP_FILE=	Yes
