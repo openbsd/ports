@@ -1,0 +1,15 @@
+$OpenBSD: patch-cache_c,v 1.1.1.1 2013/12/17 15:39:42 jasper Exp $
+
+Fix a memory leak when cache is disabled. Debian #614347.
+
+--- cache.c.orig	Mon Dec 16 10:33:52 2013
++++ cache.c	Mon Dec 16 10:34:02 2013
+@@ -25,7 +25,7 @@ struct cache {
+     time_t last_cleaned;
+ };
+ 
+-static struct cache cache;
++struct cache cache;
+ 
+ struct node {
+     struct stat stat;

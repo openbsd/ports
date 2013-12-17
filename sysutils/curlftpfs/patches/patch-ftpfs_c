@@ -1,0 +1,59 @@
+$OpenBSD: patch-ftpfs_c,v 1.1.1.1 2013/12/17 15:39:42 jasper Exp $
+
+- Fix input/output errors; from RedHat #671204
+- Workaround for a working create.
+
+--- ftpfs.c.orig	Wed Apr 30 01:05:47 2008
++++ ftpfs.c	Tue Dec 17 16:23:06 2013
+@@ -503,7 +519,7 @@ static void *ftpfs_write_thread(void *data) {
+   
+   curl_easy_setopt_or_die(fh->write_conn, CURLOPT_URL, fh->full_path);
+   curl_easy_setopt_or_die(fh->write_conn, CURLOPT_UPLOAD, 1);
+-  curl_easy_setopt_or_die(fh->write_conn, CURLOPT_INFILESIZE, -1);
++  curl_easy_setopt_or_die(fh->write_conn, CURLOPT_INFILESIZE, (curl_off_t)-1);
+   curl_easy_setopt_or_die(fh->write_conn, CURLOPT_READFUNCTION, write_data_bg);
+   curl_easy_setopt_or_die(fh->write_conn, CURLOPT_READDATA, fh);
+   curl_easy_setopt_or_die(fh->write_conn, CURLOPT_LOW_SPEED_LIMIT, 1);
+@@ -611,10 +627,12 @@ static void free_ftpfs_file(struct ftpfs_file *fh) {
+     curl_easy_cleanup(fh->write_conn);
+   g_free(fh->full_path);
+   g_free(fh->open_path);
+-  sem_destroy(&fh->data_avail);
+-  sem_destroy(&fh->data_need);
+-  sem_destroy(&fh->data_written);
+-  sem_destroy(&fh->ready);
++  if (fh->data_avail) {
++    sem_destroy(&fh->data_avail);
++    sem_destroy(&fh->data_need);
++    sem_destroy(&fh->data_written);
++    sem_destroy(&fh->ready);
++  }
+   free(fh);
+ }
+ 
+@@ -813,12 +849,12 @@ static int ftpfs_open(const char* path, struct fuse_fi
+   return ftpfs_open_common(path, 0, fi);
+ }
+ 
+-#if FUSE_VERSION >= 25
+ static int ftpfs_create(const char* path, mode_t mode,
+                         struct fuse_file_info* fi) {
+-  return ftpfs_open_common(path, mode, fi);
++  fi->flags &= ~O_ACCMODE;
++  fi->flags |= O_RDONLY;
++  return ftpfs_open_common(path, (mode & ~O_ACCMODE) | O_RDONLY, fi);
+ }
+-#endif
+ 
+ static int ftpfs_read(const char* path, char* rbuf, size_t size, off_t offset,
+                       struct fuse_file_info* fi) {
+@@ -1380,8 +1420,8 @@ static struct fuse_cache_operations ftpfs_oper = {
+     .read       = ftpfs_read,
+     .write      = ftpfs_write,
+     .statfs     = ftpfs_statfs,
+-#if FUSE_VERSION >= 25
+     .create     = ftpfs_create,
++#if FUSE_VERSION >= 25
+     .ftruncate  = ftpfs_ftruncate,
+ //    .fgetattr   = ftpfs_fgetattr,
+ #endif

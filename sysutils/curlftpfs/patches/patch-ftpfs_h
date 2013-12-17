@@ -1,0 +1,15 @@
+$OpenBSD: patch-ftpfs_h,v 1.1.1.1 2013/12/17 15:39:42 jasper Exp $
+
+- Fix time_t format string.
+
+--- ftpfs.h.orig	Mon Dec 16 10:36:18 2013
++++ ftpfs.h	Mon Dec 16 10:46:13 2013
+@@ -75,7 +75,7 @@ extern struct ftpfs ftpfs;
+         do { if (level <= ftpfs.debug) {\
+                int i = 0; \
+                while (++i < level) fprintf(stderr, " "); \
+-               fprintf(stderr, "%ld ", time(NULL));\
++               fprintf(stderr, "%lld ", time(NULL));\
+                fprintf(stderr, __FILE__ ":%d ", __LINE__);\
+                fprintf(stderr, args);\
+              }\

@@ -1,0 +1,2 @@
+CurlFtpFS is a filesystem for acessing ftp hosts based on FUSE and
+libcurl.
