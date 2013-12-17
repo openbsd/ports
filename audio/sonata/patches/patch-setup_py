@@ -1,16 +1,14 @@
-$OpenBSD: patch-setup_py,v 1.5 2009/04/03 13:03:00 ajacoutot Exp $
---- setup.py.orig	Wed Mar 18 03:23:09 2009
-+++ setup.py	Fri Apr  3 14:29:44 2009
-@@ -77,10 +77,9 @@ setup(name='Sonata',
-         extra_link_args=capture("pkg-config --libs gtk+-2.0 pygtk-2.0").split()
-          ),],
-         scripts = ['sonata/sonata'],
--        data_files=[('share/sonata', ['README', 'CHANGELOG', 'TODO', 'TRANSLATORS']),
--                    ('share/applications', ['sonata.desktop']),
-+        data_files=[('share/applications', ['sonata.desktop']),
-                     ('share/pixmaps', glob.glob('sonata/pixmaps/*')),
--                    ('share/man/man1', ['sonata.1']),
-+                    ('man/man1', ['sonata.1']),
-                     ('share/locale/de/LC_MESSAGES', ['mo/de/sonata.mo']),
-                     ('share/locale/pl/LC_MESSAGES', ['mo/pl/sonata.mo']),
-                     ('share/locale/ru/LC_MESSAGES', ['mo/ru/sonata.mo']),
+$OpenBSD: patch-setup_py,v 1.6 2013/12/17 07:11:27 ajacoutot Exp $
+--- setup.py.orig	Tue Nov 26 11:54:49 2013
++++ setup.py	Tue Dec 17 08:07:28 2013
+@@ -48,9 +48,8 @@ versionfile.close()
+ 
+ 
+ data_files = [
+-    ('share/sonata', ['README.rst', 'CHANGELOG', 'TODO', 'TRANSLATORS']),
+     ('share/applications', ['sonata.desktop']),
+-    ('share/man/man1', ['sonata.1']),
++    ('man/man1', ['sonata.1']),
+ ] + generate_translation_files()
+ 
+ 
