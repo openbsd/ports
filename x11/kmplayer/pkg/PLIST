@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/10/22 11:34:25 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/12/17 11:55:59 zhuk Exp $
 @bin bin/kmplayer
 ${KDE}/kparts_kmplayer.la
 @lib ${KDE}/libkparts_kmplayer.so.${LIBkparts_kmplayer_VERSION}
@@ -23,5 +23,3 @@ share/locale/hu/LC_MESSAGES/kmplayer.mo
 @comment share/mimelnk/video/x-ms-asf.desktop
 @comment share/mimelnk/video/x-ms-wmv.desktop
 share/services/kmplayer_component.desktop
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
