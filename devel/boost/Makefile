@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2013/11/25 14:16:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2013/12/17 07:03:38 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -7,7 +7,7 @@ COMMENT=	free peer-reviewed portable C++ source libraries
 VERSION=	1.53.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME=	boost-${VERSION}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=boost/}
 EXTRACT_SUFX=	.tar.bz2
@@ -29,6 +29,7 @@ BOOST_LIBS=	boost_atomic-mt \
 		boost_prg_exec_monitor boost_prg_exec_monitor-mt \
 		boost_program_options boost_program_options-mt \
 		boost_python boost_python-mt \
+		boost_python3 boost_python3-mt \
 		boost_random boost_random-mt \
 		boost_regex boost_regex-mt \
 		boost_serialization boost_serialization-mt \
@@ -56,6 +57,8 @@ WANTLIB=	c m pthread stdc++ util z
 MODULES=	converters/libiconv \
 		lang/python
 MODPY_RUNDEP=	No
+
+BUILD_DEPENDS+=	lang/python/${MODPY_DEFAULT_VERSION_3}
 
 MAKE_ENV=	GCC="${CC}" GXX="${CXX}"
 
@@ -87,6 +90,7 @@ NO_TEST=	Yes
 SUBST_VARS+=	SO_VERSION
 
 do-configure:
+	echo "using python : ${MODPY_DEFAULT_VERSION_3} : ${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_3} : ${LOCALBASE}/include/python${MODPY_DEFAULT_VERSION_3}m : ${LOCALBASE}/lib ;" >> ${WRKSRC}/tools/build/v2/user-config.jam
 	@${SUBST_CMD} ${WRKSRC}/Jamroot
 	@cd ${WRKSRC}/libs/config && \
 	    ${SETENV} ${CONFIGURE_ENV} /bin/sh ./configure && \
