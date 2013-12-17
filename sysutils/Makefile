@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.305 2013/12/13 07:52:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.306 2013/12/17 15:41:21 jasper Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -33,6 +33,7 @@
      SUBDIR += consolekit
      SUBDIR += coreutils
      SUBDIR += crashme
+     SUBDIR += curlftpfs
      SUBDIR += cyphertite
      SUBDIR += d-feet
      SUBDIR += dcfldd
