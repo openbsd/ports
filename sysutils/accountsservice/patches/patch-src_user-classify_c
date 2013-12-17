@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_user-classify_c,v 1.1 2013/10/16 08:44:37 ajacoutot Exp $
+$OpenBSD: patch-src_user-classify_c,v 1.2 2013/12/17 08:20:04 ajacoutot Exp $
 
 Add all ports and system users that have a login shell.
 
---- src/user-classify.c.orig	Wed Oct 16 10:35:26 2013
-+++ src/user-classify.c	Wed Oct 16 10:36:36 2013
-@@ -54,7 +54,20 @@ static const char *default_excludes[] = {
+--- src/user-classify.c.orig	Tue Oct 15 22:25:19 2013
++++ src/user-classify.c	Tue Dec 17 09:19:06 2013
+@@ -54,11 +54,24 @@ static const char *default_excludes[] = {
          "man",
          "at",
          "gdm",
@@ -26,3 +26,8 @@ Add all ports and system users that have a login shell.
  };
  
  #define PATH_NOLOGIN "/sbin/nologin"
+-#define PATH_FALSE "/bin/false"
++#define PATH_FALSE "/usr/bin/false"
+ 
+ static gboolean
+ user_classify_is_excluded_by_heuristics (const gchar *username,
