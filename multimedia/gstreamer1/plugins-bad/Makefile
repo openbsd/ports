@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/12/09 20:07:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2013/12/17 14:15:24 ajacoutot Exp $
 
 COMMENT=		bad elements for GStreamer
 
@@ -91,6 +91,9 @@ CONFIGURE_ARGS +=	--disable-sndio
 
 # this add some build dependencies (e.g. gtk+2, gtk+3) for no real use
 CONFIGURE_ARGS +=	--disable-examples
+
+# XXX needed by g-ir-scanner(1)
+CFLAGS +=		-I${X11BASE}/include
 
 pre-configure:
 	perl -pi -e 's,/dev/dvd,/dev/rcd0c,g' \
