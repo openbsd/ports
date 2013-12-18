@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/05/16 10:10:35 kirby Exp $
+# $OpenBSD: Makefile,v 1.5 2013/12/18 18:35:55 naddy Exp $
 
 COMMENT =		UFO:AI data
 
@@ -15,15 +15,14 @@ BUILD_DEPENDS = 	archivers/unzip
 
 NO_BUILD =		Yes
 
-post-extract:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/unzip \*.pk3 -d ${WRKSRC}
-	rm ${WRKSRC}/*.pk3
+DATADIR =		${PREFIX}/share/ufoai/base
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/ufoai/base/
-	cd ${WRKSRC} && find * -type d -exec ${INSTALL_DATA_DIR} \
-		"${PREFIX}/share/ufoai/base/{}" \;
-	cd ${WRKSRC} && find * -type f -exec ${INSTALL_DATA} \
-		"{}" "${PREFIX}/share/ufoai/base/{}" \;
-	
+	${INSTALL_DATA_DIR} ${DATADIR}
+	cd ${DATADIR} && unzip ${WRKDIST}/\*.pk3
+	chown -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
+	find ${DATADIR} \
+	    -type f -exec chmod ${SHAREMODE} {} + -o \
+	    -type d -exec chmod ${DIRMODE} {} +
+
 .include <bsd.port.mk>
