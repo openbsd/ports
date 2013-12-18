@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/09/20 12:56:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/12/18 15:21:32 ajacoutot Exp $
 bin/itstool
 @man man/man1/itstool.1
 share/itstool/
 share/itstool/its/
 share/itstool/its/docbook.its
+share/itstool/its/docbook5.its
 share/itstool/its/its.its
 share/itstool/its/mallard.its
 share/itstool/its/ttml.its
