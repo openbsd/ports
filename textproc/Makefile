@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.399 2013/12/02 15:32:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.400 2013/12/18 22:11:27 jasper Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -340,6 +340,8 @@
      SUBDIR += ruby-hyperestraier,ruby19
      SUBDIR += ruby-hyperestraier,ruby20
      SUBDIR += ruby-icalendar
+     SUBDIR += ruby-icalendar,ruby19
+     SUBDIR += ruby-icalendar,ruby20
      SUBDIR += ruby-kramdown
      SUBDIR += ruby-liquid
      SUBDIR += ruby-markaby
