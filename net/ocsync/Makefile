@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2013/12/14 12:46:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2013/12/18 10:12:15 ajacoutot Exp $
+
+# XXX updating requires Thread Local Storage support
 
 SHARED_ONLY=	Yes
 
