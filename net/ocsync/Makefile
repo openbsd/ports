@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/12/18 10:12:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2013/12/18 12:02:56 kirby Exp $
 
 # XXX updating requires Thread Local Storage support
 
@@ -35,10 +35,6 @@ LIB_DEPENDS=	devel/iniparser \
 		net/neon \
 		net/samba \
 		security/libssh
-
-# XXX tar: Invalid header, starting valid header search.
-TAR=		${LOCALBASE}/bin/gtar
-BUILD_DEPENDS+=	archivers/gtar
 
 # csync_owncloud requires -pthread:
 #     dlopen: failed to open libpthread.so.XX.X
