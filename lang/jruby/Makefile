@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.40 2013/10/26 23:41:04 jeremy Exp $
+# $OpenBSD: Makefile,v 1.41 2013/12/19 21:39:50 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	pure-Java implementation of the Ruby language
 
-V =		1.7.6
+V =		1.7.9
 DISTNAME =	jruby-bin-${V}
 PKGNAME =	jruby-${V}
 CATEGORIES =	lang lang/ruby
 DISTFILES =	${DISTNAME}.tar.gz \
-		jruby-src-${V}.tar.gz \
 		jnr-jffi-1.2.2-0-g4c196bb.tar.gz:0 \
 		jnr-posix.20130822.tar.gz:1 \
 		${JRUBY_LAUNCHER_GEM}:2
@@ -50,9 +49,10 @@ ANT_CMD =	${SETENV} ${MAKE_ENV} PATH=${JAVA_HOME}/bin:${PATH} \
 JFFI_HOME =	${WRKDIST}/jffi
 JFFI_ARCH =	${MACHINE_ARCH:S/amd64/x86_64/}-OpenBSD
 FFI_ARCH =	${JFFI_ARCH:L}
-RAKE_V =		10.1.0
+RAKE_V =	10.1.0
+RDOC_V =	4.0.1	
 JRUBY_LAUNCHER_GEM = jruby-launcher-1.0.19-java.gem
-SUBST_VARS =	JRUBY_HOME JFFI_ARCH FFI_ARCH RAKE_V
+SUBST_VARS =	JRUBY_HOME JFFI_ARCH FFI_ARCH RAKE_V RDOC_V
 
 post-extract:
 	mv ${WRKDIR}/jnr-jffi* ${JFFI_HOME}
@@ -61,12 +61,16 @@ post-extract:
 	cd ${WRKSRC} && mkdir jruby-launcher \
 		&& cd jruby-launcher && tar zxf ../../data.tar.gz \
 		&& rm -f ../../data.tar.gz
+	cp ${WRKSRC}/lib/ruby/gems/shared/gems/*/bin/* ${WRKSRC}/bin/
 
 do-configure:
 	${SUBST_CMD} ${WRKSRC}/jruby-launcher/jrubyexe.cpp \
 		${WRKSRC}/jruby-launcher/unixlauncher.cpp
 	cd ${WRKSRC}/jruby-launcher/ && ${SET_ENV} ${MAKE_ENV} \
 		../bin/jruby extconf.rb
+	perl -pi -e '$$. == 1 && s|^.*env j?ruby.*$$|\#!${LOCALBASE}/bin/jruby|;' \
+                -e '$$. == 1 && s|^.*bin/j?ruby.*$$|\#!${LOCALBASE}/bin/jruby|;' \
+                -e 'close ARGV if eof;' ${WRKSRC}/bin/!(*.*)
 
 do-build:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/zip -r lib/jruby.jar jnr/posix/
@@ -96,14 +100,8 @@ do-install:
 	ln -s 1.8 ${JRUBY_HOME}/lib/ruby/gems/shared
 	chown -R ${SHAREOWN}:${SHAREGRP} ${JRUBY_HOME}/lib
 
-ANT_TEST_CMD =	${SETENV} ${MAKE_ENV} HOME=${WRKBUILD} \
-			PATH=${JAVA_HOME}/bin:${PATH} \
-			ANT_OPTS="-Xms512m -Xmx512m" \
-			${LOCALBASE}/bin/ant
-TEST_DEPENDS =	devel/ruby-rspec/rspec,jruby \
-		devel/maven
-# Tests run: 363, Failures: 7, Errors: 11, Skipped: 0
-do-test:
-	-cd ${WRKSRC} && ${ANT_TEST_CMD} test
+# JRuby doesn't ship tests in the binary distribution
+# Try running the database/ruby-sequel,jruby tests after an update
+NO_TEST =	Yes
 
 .include <bsd.port.mk>
