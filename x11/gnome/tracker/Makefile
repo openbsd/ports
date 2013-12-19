@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.159 2013/11/23 10:23:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.160 2013/12/19 18:06:58 ajacoutot Exp $
 
 EVO_VERSION=		3.8
 SUBST_VARS +=		EVO_VERSION
@@ -9,6 +9,7 @@ COMMENT=		powerful desktop search tool and indexer
 
 GNOME_PROJECT=		tracker
 GNOME_VERSION=		0.16.4
+REVISION=		0
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
@@ -41,29 +42,30 @@ WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 gsf-1 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
 WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz icudata icui18n
 WANTLIB += icuuc jpeg kvm lcms2 lzma m nautilus-extension openjpeg
-WANTLIB += orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png poppler poppler-glib pthread pthread-stubs
+WANTLIB += orc-0.4 osinfo-1.0 pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png poppler poppler-glib pthread pthread-stubs
 WANTLIB += secret-1 soup-2.4 sqlite3 stdc++ tag tag_c tiff totem-plparser
-WANTLIB += upower-glib uuid xcb xcb-render xcb-shm xml2 z
+WANTLIB += upower-glib uuid xcb xcb-render xcb-shm xml2 xslt z
 
 MODULES=		devel/gettext \
 			x11/gnome \
 			devel/dconf \
 			lang/python
 
-LIB_DEPENDS=		x11/gnome/totem-pl-parser \
-			print/poppler \
+LIB_DEPENDS=		audio/libcue \
+			audio/taglib \
+			converters/enca \
 			devel/libgsf \
+			graphics/giflib \
+			graphics/libexif \
+			misc/libosinfo \
+			multimedia/gstreamer1/plugins-base \
+			print/poppler \
+			sysutils/e2fsprogs>=1.42.7 \
 			sysutils/upower \
 			textproc/exempi \
-			sysutils/e2fsprogs>=1.42.7 \
-			graphics/libexif \
-			graphics/giflib \
-			audio/libcue \
-			converters/enca \
-			audio/taglib \
-			multimedia/gstreamer1/plugins-base \
-			x11/gnome/nautilus
+			x11/gnome/nautilus \
+			x11/gnome/totem-pl-parser
 
 # XXX should be a LIB_DEPENDS+WANTLIB but check-lib-depends(1) does not
 # work with unversioned solibs (LOCALBASE/lib/evolution/*/*.so).
@@ -92,9 +94,6 @@ CONFIGURE_ARGS=		--disable-static \
 
 # needs libgxps
 CONFIGURE_ARGS +=	--disable-libgxps
-
-# needs libosinfo
-CONFIGURE_ARGS +=	--disable-libosinfo
 
 # needs libgrss
 CONFIGURE_ARGS +=	--disable-miner-rss

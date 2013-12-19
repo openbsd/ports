@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2013/11/23 10:23:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2013/12/19 18:06:58 ajacoutot Exp $
 @conflict evolution-meta-tracker-*
 @conflict nautilus-meta-tracker-*
 @pkgpath x11/gnome/tracker,-evolution
@@ -67,6 +67,7 @@ lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-gif.so
 lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-gstreamer.so
 lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-html.so
 lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-icon.so
+lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-iso.so
 lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-jpeg.so
 lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-mp3.so
 lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-msoffice-xml.so
@@ -283,6 +284,7 @@ share/tracker/extract-rules/10-ps.rule
 share/tracker/extract-rules/10-svg.rule
 share/tracker/extract-rules/10-tiff.rule
 share/tracker/extract-rules/10-xmp.rule
+share/tracker/extract-rules/11-iso.rule
 share/tracker/extract-rules/11-msoffice-xml.rule
 share/tracker/extract-rules/15-gstreamer-guess.rule
 share/tracker/extract-rules/15-playlist.rule
