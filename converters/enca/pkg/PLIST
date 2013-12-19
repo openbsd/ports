@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/02/01 11:49:42 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/12/19 18:09:58 shadchin Exp $
 @bin bin/enca
 bin/enconv
 include/enca.h
@@ -16,14 +16,3 @@ libexec/enca/extconv/recode
 libexec/enca/extconv/umap
 @man man/man1/enca.1
 @man man/man1/enconv.1
-share/gtk-doc/
-share/gtk-doc/html/
-share/gtk-doc/html/libenca/
-share/gtk-doc/html/libenca/ch01.html
-share/gtk-doc/html/libenca/index.html
-share/gtk-doc/html/libenca/index.sgml
-share/gtk-doc/html/libenca/libenca-Analyser.html
-share/gtk-doc/html/libenca/libenca-Auxiliary-Functions.html
-share/gtk-doc/html/libenca/libenca-Charsets-and-Surfaces.html
-share/gtk-doc/html/libenca/libenca-Typedefs-and-Constants.html
-share/gtk-doc/html/libenca/libenca.devhelp

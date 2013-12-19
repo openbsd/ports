@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/21 08:45:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2013/12/19 18:09:58 shadchin Exp $
 
 COMMENT=	detect character set and encoding of text files
 
-DISTNAME=	enca-1.14
+DISTNAME=	enca-1.15
 SHARED_LIBS +=  enca                 0.0      # 5.1
 CATEGORIES=	converters textproc
 
-HOMEPAGE=	http://gitorious.org/enca/
+HOMEPAGE=	http://cihar.com/software/enca/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
