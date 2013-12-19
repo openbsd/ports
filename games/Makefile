@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.282 2013/12/15 19:24:41 bcallah Exp $
+# $OpenBSD: Makefile,v 1.283 2013/12/19 19:24:12 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += abuse
@@ -34,7 +34,6 @@
      SUBDIR += castle-combat
      SUBDIR += cgoban
      SUBDIR += childsplay
-     SUBDIR += childsplay-plugins
      SUBDIR += chocolate-doom
      SUBDIR += choria
      SUBDIR += chroma
