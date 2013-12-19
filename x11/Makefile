@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.525 2013/11/27 09:51:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.526 2013/12/19 16:45:50 bcallah Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -300,6 +300,7 @@
      SUBDIR += wmtz
      SUBDIR += wmweather
      SUBDIR += wmx
+     SUBDIR += worker
      SUBDIR += wterm
      SUBDIR += wxSVG
      SUBDIR += wxWidgets
