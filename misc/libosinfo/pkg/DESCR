@@ -1,0 +1,9 @@
+libosinfo is a GObject based library API for managing information about
+operating systems, hypervisors and the (virtual) hardware devices they
+can support. It includes a database containing device metadata and
+provides APIs to match/identify optimal devices for deploying an
+operating system on a hypervisor.
+
+Via the magic of GObject Introspection, the API is available in all
+common programming languages with demos for javascript (GJS/Seed) and
+python (PyGObject). Also provided are Vala bindings.
