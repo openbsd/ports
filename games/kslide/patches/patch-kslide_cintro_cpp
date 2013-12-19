@@ -1,0 +1,21 @@
+$OpenBSD: patch-kslide_cintro_cpp,v 1.1 2013/12/19 12:46:16 zhuk Exp $
+Avoid requiring -lcompat.
+--- kslide/cintro.cpp.orig	Fri Jun 28 00:19:31 2013
++++ kslide/cintro.cpp	Fri Jun 28 00:19:56 2013
+@@ -27,6 +27,7 @@
+ #include <klocale.h>
+ #include <kdebug.h>
+ #include <qmessagebox.h>
++#include <pwd.h>
+ #include <unistd.h>
+ 
+ CIntro::CIntro(){
+@@ -86,7 +87,7 @@ CIntro::CIntro(){
+   playername->hide();
+   KConfig *config = kapp->config();
+   config->setGroup("Player");
+-  playername->setText(config->readEntry("playername",QString(cuserid(NULL))));
++  playername->setText(config->readEntry("playername",QString(getpwuid(getuid())->pw_name)));
+   playername->selectAll();
+ 
+   setMouseTracking(true);

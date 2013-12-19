@@ -1,0 +1,23 @@
+$OpenBSD: patch-kslide_puzzle_cpp,v 1.1 2013/12/19 12:46:16 zhuk Exp $
+1. Avoid crash at start.
+2. Fix type mismatch.
+--- kslide/puzzle.cpp.orig	Fri Sep 15 20:02:11 2006
++++ kslide/puzzle.cpp	Thu Dec 19 15:57:48 2013
+@@ -322,7 +322,7 @@ void KSlidePuzzle::mouseMoveEvent(QMouseEvent *event)
+ {
+   if (event)  // event is 0 if called manually
+     puz.prevMousePos = event->pos();
+-  if (isComplete() || isGivingHint() || !isIdle())
++  if (isComplete() || isGivingHint() || !isIdle() || puz.size == 0)
+     return;
+   unsigned char c = cuNormal;
+   int x, y;
+@@ -769,7 +769,7 @@ void KSlidePuzzle::slotSaveGame(){
+ 			fprintf(stream, "%i %i ",puz.pos[i], puz.movesTo[i]);		
+ 		}
+     }
+-    fprintf(stream, "%i ",tilelist.count());
++    fprintf(stream, "%zi ", (size_t)tilelist.count());
+     for(i=0;i<tilelist.count();i++) {
+     	QPoint p=*tilelist.at(i);
+     	fprintf(stream, "%i %i", p.x(), p.y());

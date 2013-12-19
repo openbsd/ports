@@ -1,18 +1,13 @@
---- kslide/Makefile.in.orig	Sun Feb  3 18:41:03 2002
-+++ kslide/Makefile.in	Sat Jan 18 21:39:07 2003
-@@ -231,13 +231,13 @@ AUTOMAKE_OPTIONS = foreign
- APPSDIR = $(kde_appsdir)/Games
- INCLUDES = @all_includes@
- LIBS = @all_libraries@ 
--CPPFLAGS = -DSTDC_HEADERS -Wall -O3
-+CPPFLAGS = -DSTDC_HEADERS -Wall
- 
- bin_PROGRAMS = kslide
- kslide_SOURCES = puzzle.cpp puz_app.cpp kslide.cpp  cpreferences.cpp  playername.cpp score.cpp
- 
- kslide_LDFLAGS = @all_libraries@
--kslide_LDADD = -lkdeui -lkdecore -lqt -lX11 -lXext -lkfile
-+kslide_LDADD = -lkdeui -lkdecore -lqt-mt -lX11 -lXext -lkio
- 
- noinst_HEADERS = puz_app.h puzzle.h cursors.h icons.h  cpreferences.h  playername.h score.h
- 
+$OpenBSD: patch-kslide_Makefile_in,v 1.3 2013/12/19 12:46:16 zhuk Exp $
+Unbreak build that was relying on wrong make behaviour.
+--- kslide/Makefile.in.orig	Thu Dec 19 15:50:15 2013
++++ kslide/Makefile.in	Thu Dec 19 15:50:38 2013
+@@ -926,7 +926,7 @@ kslide.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/ci
+ 	echo "#define KDE_USE_FINAL 1" >> kslide.all_cpp.final; \
+ 	for file in cintro.cpp score.cpp puzzle.cpp puz_app.cpp playername.cpp cpreferences.cpp main.cpp playername.moc.cpp cpreferences.moc.cpp cintro.moc.cpp score.moc.cpp puzzle.moc.cpp puz_app.moc.cpp ; do \
+ 	  echo "#include \"$$file\"" >> kslide.all_cpp.files; \
+-	  test ! -f $(srcdir)/$$file || egrep '^#pragma +implementation' $(srcdir)/$$file >> kslide.all_cpp.final; \
++	  test ! -f $(srcdir)/$$file || egrep '^#pragma +implementation' $(srcdir)/$$file >> kslide.all_cpp.final || true; \
+ 	done; \
+ 	cat kslide.all_cpp.final kslide.all_cpp.files > kslide.all_cpp.cpp; \
+ 	rm -f kslide.all_cpp.final kslide.all_cpp.files

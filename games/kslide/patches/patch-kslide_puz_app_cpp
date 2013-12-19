@@ -1,0 +1,13 @@
+$OpenBSD: patch-kslide_puz_app_cpp,v 1.1 2013/12/19 12:46:16 zhuk Exp $
+Do not show the non-supported option.
+--- kslide/puz_app.cpp.orig	Thu Dec 19 16:36:22 2013
++++ kslide/puz_app.cpp	Thu Dec 19 16:36:01 2013
+@@ -204,7 +204,7 @@ void KSlideApp::initActions() {
+ /*        new KAction( i18n("Load image"), 0, this, SLOT(loadImage()), actionCollection(),"load_image");
+         new KAction( i18n("Default image"), 0, this, SLOT(defaultImage()), actionCollection(),"default_image");
+         new KAction( i18n("Random image"), 0, this, SLOT(toggleMissingTile()), actionCollection(),"random_file");*/
+-        new KAction( i18n("Use sound"), 0, this, SLOT(toggleSound()), actionCollection(),"sound");
++//        new KAction( i18n("Use sound"), 0, this, SLOT(toggleSound()), actionCollection(),"sound");
+         hint=new KAction( i18n("Give hint"), 0, puzzle, SLOT(slotGiveHint()), actionCollection(),"hint");
+         stophint=new KAction( i18n("Stop hint"), 0, puzzle, SLOT(slotStopHint()), actionCollection(),"stop_hint");
+         new KAction( i18n("Preferences"),"configure", 0, this, SLOT(slotPreferences()), actionCollection(),"preferences");

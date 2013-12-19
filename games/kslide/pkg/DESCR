@@ -1,5 +1,5 @@
-KSlide is a simple puzzle game compatible with the K Desktop Environment. 
-The playing principle of KSlide is very simple. From a square set of tiles,
-one is removed, allowing at least two adjacent tiles to be shifted. 
-This way, the puzzle is scrambled by the program, and the player's goal
-is to restore the original order.
+KSlide is a simple puzzle game compatible with the K Desktop
+Environment.  The playing principle of KSlide is very simple. From
+a square set of tiles, one is removed, allowing at least two adjacent
+tiles to be shifted.  This way, the puzzle is scrambled by the
+program, and the player's goal is to restore the original order.
