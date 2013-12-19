@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_gtx_curseswindows_c,v 1.1 2013/12/19 15:05:58 sthen Exp $
+--- src/gtx/curseswindows.c.orig	Thu Dec 19 08:04:27 2013
++++ src/gtx/curseswindows.c	Thu Dec 19 08:04:37 2013
+@@ -31,9 +31,6 @@ RCSID
+ #endif
+ #include <sys/types.h>
+ #include <sys/file.h>
+-#if !defined(AFS_SUN5_ENV) && !defined(AFS_LINUX20_ENV)
+-#include <sgtty.h>
+-#endif
+ #include <stdio.h>
+ #include <sys/time.h>
+ #include <errno.h>
