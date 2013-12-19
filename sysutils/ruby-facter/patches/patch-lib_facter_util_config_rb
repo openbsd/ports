@@ -1,12 +1,12 @@
-$OpenBSD: patch-lib_facter_util_config_rb,v 1.1 2013/04/26 14:13:12 jasper Exp $
---- lib/facter/util/config.rb.orig	Fri Apr 26 15:41:49 2013
-+++ lib/facter/util/config.rb	Fri Apr 26 15:42:40 2013
-@@ -32,7 +32,7 @@ module Facter::Util::Config
-   def self.external_facts_dirs
-     windows_dir = windows_data_dir
-     if windows_dir.nil? then
--      ["/etc/facter/facts.d", "/etc/puppetlabs/facter/facts.d"]
-+      ["${SYSCONFDIR}/facter/facts.d", "/etc/puppetlabs/facter/facts.d"]
-     else
-       [File.join(windows_dir, 'PuppetLabs', 'facter', 'facts.d')]
-     end
+$OpenBSD: patch-lib_facter_util_config_rb,v 1.2 2013/12/19 09:35:01 jasper Exp $
+--- lib/facter/util/config.rb.orig	Thu Dec 19 10:02:47 2013
++++ lib/facter/util/config.rb	Thu Dec 19 10:03:13 2013
+@@ -33,7 +33,7 @@ module Facter::Util::Config
+     if Facter::Util::Root.root?
+       windows_dir = windows_data_dir
+       if windows_dir.nil? then
+-        ["/etc/facter/facts.d", "/etc/puppetlabs/facter/facts.d"]
++        ["${SYSCONFDIR}/facter/facts.d", "/etc/puppetlabs/facter/facts.d"]
+       else
+         [File.join(windows_dir, 'PuppetLabs', 'facter', 'facts.d')]
+       end

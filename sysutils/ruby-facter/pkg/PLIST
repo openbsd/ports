@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2013/09/11 20:01:32 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2013/12/19 09:35:01 jasper Exp $
 bin/facter
 ${MODRUBY_SITEDIR}/facter/
 ${MODRUBY_SITEDIR}/facter.rb
@@ -57,6 +57,7 @@ ${MODRUBY_SITEDIR}/facter/uptime_days.rb
 ${MODRUBY_SITEDIR}/facter/uptime_hours.rb
 ${MODRUBY_SITEDIR}/facter/uptime_seconds.rb
 ${MODRUBY_SITEDIR}/facter/util/
+${MODRUBY_SITEDIR}/facter/util/architecture.rb
 ${MODRUBY_SITEDIR}/facter/util/cfpropertylist/
 ${MODRUBY_SITEDIR}/facter/util/cfpropertylist.rb
 ${MODRUBY_SITEDIR}/facter/util/cfpropertylist/LICENSE
@@ -97,10 +98,12 @@ ${MODRUBY_SITEDIR}/facter/util/processor.rb
 ${MODRUBY_SITEDIR}/facter/util/registry.rb
 ${MODRUBY_SITEDIR}/facter/util/resolution.rb
 ${MODRUBY_SITEDIR}/facter/util/solaris_zones.rb
+${MODRUBY_SITEDIR}/facter/util/unix_root.rb
 ${MODRUBY_SITEDIR}/facter/util/uptime.rb
 ${MODRUBY_SITEDIR}/facter/util/values.rb
 ${MODRUBY_SITEDIR}/facter/util/virtual.rb
 ${MODRUBY_SITEDIR}/facter/util/vlans.rb
+${MODRUBY_SITEDIR}/facter/util/windows_root.rb
 ${MODRUBY_SITEDIR}/facter/util/wmi.rb
 ${MODRUBY_SITEDIR}/facter/util/xendomains.rb
 ${MODRUBY_SITEDIR}/facter/version.rb
