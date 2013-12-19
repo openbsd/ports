@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2013/06/19 15:55:03 shadchin Exp $
---- Makefile.in.orig	Sun May 19 22:37:10 2013
-+++ Makefile.in	Mon May 20 12:20:46 2013
+$OpenBSD: patch-Makefile_in,v 1.2 2013/12/19 18:07:31 shadchin Exp $
+--- Makefile.in.orig	Mon Sep  2 04:14:50 2013
++++ Makefile.in	Tue Dec 10 00:02:45 2013
 @@ -33,7 +33,7 @@ DDIRS		= docs include src loaders prowiz depackers win
  V		= 0
  LIB		= libxmp.a
@@ -14,8 +14,8 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2013/06/19 15:55:03 shadchin Exp $
  
  lib/$(SHLIB): $(LOBJS)
  	@mkdir -p lib
--	@CMD='$(CC) -shared -Wl,-soname,$(SONAME) $(LD_VERSCRIPT) -o $@ $(LOBJS) $(LIBS)'; \
-+	@CMD='$(CC) -shared $(LD_VERSCRIPT) -o $@ $(LOBJS) $(LIBS)'; \
+-	@CMD='$(LD) $(LDFLAGS) -shared -Wl,-soname,$(SONAME) $(LD_VERSCRIPT) -o $@ $(LOBJS) $(LIBS)'; \
++	@CMD='$(LD) $(LDFLAGS) -shared $(LD_VERSCRIPT) -o $@ $(LOBJS) $(LIBS)'; \
  	if [ "$(V)" -gt 0 ]; then echo $$CMD; else echo LD $@ ; fi; \
  	eval $$CMD
  	ln -sf $(SHLIB) lib/$(SONAME)
