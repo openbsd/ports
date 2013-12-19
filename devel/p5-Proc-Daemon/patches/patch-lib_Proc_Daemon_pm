@@ -1,0 +1,36 @@
+$OpenBSD: patch-lib_Proc_Daemon_pm,v 1.1 2013/12/19 14:25:05 jca Exp $
+
+Fix for CVE-2013-7135.
+Upstream ticket: https://rt.cpan.org/Ticket/Display.html?id=91450
+
+--- lib/Proc/Daemon.pm.orig	Fri Jun  3 09:46:44 2011
++++ lib/Proc/Daemon.pm	Wed Dec 18 14:58:09 2013
+@@ -281,10 +281,13 @@ sub Init {
+             }
+             # ... the real 'pid_file'.
+             if ( $self->{pid_file} ) {
++		# Deny r/w access to others
++                my $umask = umask(0022);
+                 open( my $FH_PIDFILE, "+>", $self->{pid_file} ) ||
+                     die "Can not open pidfile (pid_file => '$self->{pid_file}'): $!";
+                 print $FH_PIDFILE $pid;
+                 close $FH_PIDFILE;
++		umask($umask);
+             }
+ 
+ 
+@@ -514,12 +517,14 @@ sub Kill_Daemon {
+     my $killed = kill( $signal, $pid );
+ 
+     if ( $killed && $pidfile ) {
++        my $umask = umask(0022);
+         # Set PID in pid file to '0'.
+         if ( open( my $FH_PIDFILE, "+>", $pidfile ) ) {
+             print $FH_PIDFILE '0';
+             close $FH_PIDFILE;
+         }
+         else { warn "Can not open pidfile (pid_file => '$pidfile'): $!" }
++	umask($umask);
+     }
+ 
+     return $killed;
