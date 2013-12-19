@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2013/10/22 11:34:20 zhuk Exp $
+# $OpenBSD: Makefile,v 1.41 2013/12/19 13:19:09 zhuk Exp $
 
 COMMENT=		new mail notification utility for KDE
 
@@ -40,5 +40,7 @@ AUTOCONF_VERSION=	2.59
 MODGNU_CONFIG_GUESS_DIRS= ${MODKDE_CONFIG_GUESS_DIRS}
 CONFIGURE_ARGS=		${MODKDE_CONFIGURE_ARGS}
 CONFIGURE_ENV=		${MODKDE_CONFIGURE_ENV}
+
+PORTHOME=		${WRKDIR}
 
 .include <bsd.port.mk>
