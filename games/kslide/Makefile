@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/12/19 12:46:15 zhuk Exp $
+# $OpenBSD: Makefile,v 1.28 2013/12/19 19:49:33 zhuk Exp $
 
 COMMENT=	puzzle game for KDE
 
@@ -19,7 +19,7 @@ WANTLIB += art_lgpl_2 fam idn jpeg lcms mng png
 WANTLIB += ${KDE}/DCOP ${KDE}/kdecore>=4 ${KDE}/kdefx ${KDE}/kdesu
 WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kwalletclient
 
-MASTER_SITES=	${MASTER_SITES_FREEBSD}
+MASTER_SITES=	${_MASTER_SITE_FREEBSD}
 EXTRACT_SUFX=	.tar.bz2
 
 RUN_DEPENDS=	x11/gtk+2,-guic
