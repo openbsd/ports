@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/11/26 15:52:40 pascal Exp $
+# $OpenBSD: Makefile,v 1.4 2013/12/19 13:08:42 naddy Exp $
 
 COMMENT =		data files for flightgear
 
@@ -11,7 +11,7 @@ MASTER_SITES =	http://ftp.igh.cnrs.fr/pub/flightgear/ftp/Shared/ \
 		ftp://ftp.kingmont.com/flightsims/flightgear/Shared/
 
 EXTRACT_SUFX =	.tar.bz
-EXTRACT_CASES += *.tar.bz) ${BZIP2} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
+EXTRACT_ONLY =
 
 BUILD_DEPENDS =		archivers/bzip2
 
@@ -21,7 +21,8 @@ NO_TEST =		Yes
 PKG_ARCH =		*
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/flightgear
-	cd ${WRKDIR}/fgdata && pax -rw . ${PREFIX}/share/flightgear
+	tar -xjf ${FULLDISTDIR}/${DISTFILES} \
+	    -C ${PREFIX}/share -s ',^fgdata,flightgear,'
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/flightgear
 
 .include <bsd.port.mk>
