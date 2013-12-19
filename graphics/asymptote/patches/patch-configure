@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.2 2011/05/30 11:04:14 shadchin Exp $
+$OpenBSD: patch-configure,v 1.3 2013/12/19 18:13:48 shadchin Exp $
 
 Remove $latexdir here, so it's possible to set it with kpsewhich(1), as intended.
 
---- configure.orig	Fri May 27 11:32:57 2011
-+++ configure	Sat May 28 18:08:32 2011
-@@ -3794,7 +3794,6 @@ $as_echo "$ac_res" >&6; }
+--- configure.orig	Mon May 20 14:14:35 2013
++++ configure	Fri Jun  7 23:06:56 2013
+@@ -3992,7 +3992,6 @@ $as_echo "$ac_res" >&6; }
  if eval test \"x\$"$as_ac_File"\" = x"yes"; then :
  
  else

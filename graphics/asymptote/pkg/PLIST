@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/08/01 11:35:34 edd Exp $
+@comment $OpenBSD: PLIST,v 1.4 2013/12/19 18:13:48 shadchin Exp $
 @bin bin/asy
 bin/xasy
 @info info/asy-faq.info
@@ -30,6 +30,7 @@ share/asymptote/asy-kate.sh
 share/asymptote/asy-keywords.el
 share/asymptote/asy-mode.el
 share/asymptote/asy.vim
+share/asymptote/asy_filetype.vim
 share/asymptote/asymptote.py
 share/asymptote/babel.asy
 share/asymptote/bezulate.asy
@@ -121,6 +122,7 @@ share/doc/asymptote/asy-faq.html/section7.html
 share/doc/asymptote/asy-faq.html/section8.html
 share/doc/asymptote/asy-faq.html/section9.html
 share/doc/asymptote/asy-latex.pdf
+share/doc/asymptote/asyRefCard.pdf
 share/doc/asymptote/asymptote.pdf
 share/examples/asymptote/
 share/examples/asymptote/100d.views
@@ -143,6 +145,7 @@ share/examples/asymptote/NURBSsphere.asy
 share/examples/asymptote/NURBSsurface.asy
 share/examples/asymptote/Pythagoras.asy
 share/examples/asymptote/PythagoreanTree.asy
+share/examples/asymptote/RiemannSphere.asy
 share/examples/asymptote/RiemannSurface.asy
 share/examples/asymptote/RiemannSurfaceRoot.asy
 share/examples/asymptote/Sierpinski.asy
@@ -185,6 +188,7 @@ share/examples/asymptote/cards.asy
 share/examples/asymptote/centroidfg.asy
 share/examples/asymptote/cheese.asy
 share/examples/asymptote/circles.asy
+share/examples/asymptote/circumcircle.asy
 share/examples/asymptote/clockarray.asy
 share/examples/asymptote/coag.asy
 share/examples/asymptote/colons.asy
@@ -342,6 +346,7 @@ share/examples/asymptote/poster.asy
 share/examples/asymptote/progrid.asy
 share/examples/asymptote/projectelevation.asy
 share/examples/asymptote/projectrevolution.asy
+share/examples/asymptote/pseudosphere.asy
 share/examples/asymptote/quartercircle.asy
 share/examples/asymptote/quilt.asy
 share/examples/asymptote/rainbow.asy
@@ -405,6 +410,7 @@ share/examples/asymptote/treetest.asy
 share/examples/asymptote/trefoilknot.asy
 share/examples/asymptote/triads.asy
 share/examples/asymptote/triangle.asy
+share/examples/asymptote/triangles.asy
 share/examples/asymptote/triangulate.asy
 share/examples/asymptote/triceratops.asy
 share/examples/asymptote/trumpet.asy
