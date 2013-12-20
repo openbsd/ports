@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2013/12/08 08:31:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2013/12/20 21:50:58 ajacoutot Exp $
 @bin bin/certtool
 @bin bin/danetool
 @bin bin/gnutls-cli
@@ -562,6 +562,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_random_art.3
 @man man/man3/gnutls_range_split.3
 @man man/man3/gnutls_record_can_use_length_hiding.3
+@man man/man3/gnutls_record_check_corked.3
 @man man/man3/gnutls_record_check_pending.3
 @man man/man3/gnutls_record_cork.3
 @man man/man3/gnutls_record_disable_padding.3
