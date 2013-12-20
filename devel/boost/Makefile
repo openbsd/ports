@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2013/12/20 16:37:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2013/12/20 16:42:34 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -7,7 +7,7 @@ COMMENT=	free peer-reviewed portable C++ source libraries
 VERSION=	1.53.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME=	boost-${VERSION}
-REVISION=	2
+REVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=boost/}
 EXTRACT_SUFX=	.tar.bz2
