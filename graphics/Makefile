@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.361 2013/12/11 14:40:39 jca Exp $
+# $OpenBSD: Makefile,v 1.362 2013/12/20 19:37:31 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -203,6 +203,7 @@
      SUBDIR += p5-Sane
      SUBDIR += pdfmod
      SUBDIR += pecl-imagick
+     SUBDIR += pho
      SUBDIR += pigment
      SUBDIR += png
      SUBDIR += png2ico
