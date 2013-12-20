@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/09/05 03:26:33 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2013/12/20 02:24:39 bentley Exp $
 
 COMMENT =		n64 emulator video plugin
 
@@ -15,7 +15,5 @@ LIB_DEPENDS =		graphics/glew \
 			devel/sdl
 
 MUPEN64PLUS_MOD = 	video-z64
-
-MASTER_SITES =		https://bitbucket.org/wahrhaft/mupen64plus-${MUPEN64PLUS_MOD}/downloads/
 
 .include <bsd.port.mk>

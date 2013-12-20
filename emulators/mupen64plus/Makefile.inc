@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.6 2013/09/05 03:26:29 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2013/12/20 02:24:39 bentley Exp $
 
 ONLY_FOR_ARCHS ?=	amd64 i386
 SHARED_ONLY = 		Yes
@@ -7,7 +7,7 @@ DISTNAME ?=		mupen64plus-${MUPEN64PLUS_MOD}-src-${VERSION}
 PKGNAME ?= 		mupen64plus-${MUPEN64PLUS_MOD}-${VERSION}
 HOMEPAGE ?=		https://code.google.com/p/mupen64plus/
 CATEGORIES ?=		emulators games
-MASTER_SITES ?=		https://bitbucket.org/richard42/mupen64plus-${MUPEN64PLUS_MOD}/downloads/
+MASTER_SITES ?=		https://github.com/mupen64plus/mupen64plus-${MUPEN64PLUS_MOD}/releases/download/${VERSION}/
 MAINTAINER ?=		Anthony J. Bentley <anthony@cathet.us>
 
 CONFIGURE_STYLE ?=	none
