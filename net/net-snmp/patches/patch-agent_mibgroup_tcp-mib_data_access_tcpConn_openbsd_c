@@ -1,0 +1,29 @@
+$OpenBSD: patch-agent_mibgroup_tcp-mib_data_access_tcpConn_openbsd_c,v 1.1 2013/12/20 02:20:00 krw Exp $
+--- agent/mibgroup/tcp-mib/data_access/tcpConn_openbsd.c.orig	Mon Nov 25 11:44:21 2013
++++ agent/mibgroup/tcp-mib/data_access/tcpConn_openbsd.c	Mon Nov 25 11:44:56 2013
+@@ -127,21 +127,21 @@ _load(netsnmp_container *container, u_int load_flags)
+ 	return -1;
+     }
+ 
+-    prev = (struct inpcb *)&CIRCLEQ_FIRST(&table.inpt_queue);
++    prev = (struct inpcb *)&TAILQ_FIRST(&table.inpt_queue);
+     prev = NULL;
+-    head = next = CIRCLEQ_FIRST(&table.inpt_queue);
++    head = next = TAILQ_FIRST(&table.inpt_queue);
+ 
+     while (next) {
+ 	if (!NETSNMP_KLOOKUP(next, (char *)&inpcb, sizeof(inpcb))) {
+ 	    DEBUGMSGTL(("tcp-mib/data_access/tcpConn", "klookup inpcb failed\n"));
+ 	    break;
+ 	}
+-	if (prev && CIRCLEQ_PREV(&inpcb, inp_queue) != prev) {
++	if (prev && TAILQ_PREV(&inpcb, inpthead, inp_queue) != prev) {
+ 	    snmp_log(LOG_ERR,"tcbtable link error\n");
+ 	    break;
+ 	}
+ 	prev = next;
+-	next = CIRCLEQ_NEXT(&inpcb, inp_queue);
++	next = TAILQ_NEXT(&inpcb, inp_queue);
+ 	if (!NETSNMP_KLOOKUP(inpcb.inp_ppcb, (char *)&tcpcb, sizeof(tcpcb))) {
+ 	    DEBUGMSGTL(("tcp-mib/data_access/tcpConn", "klookup tcpcb failed\n"));
+ 	    break;

@@ -1,0 +1,36 @@
+$OpenBSD: patch-agent_mibgroup_mibII_udpTable_c,v 1.4 2013/12/20 02:20:00 krw Exp $
+--- agent/mibgroup/mibII/udpTable.c.orig	Tue Oct  9 18:28:58 2012
++++ agent/mibgroup/mibII/udpTable.c	Fri Nov 29 14:52:47 2013
+@@ -65,7 +65,7 @@ struct netsnmp_udpEntry_s {
+ #define INP_NEXT_SYMBOL		inp_next
+ #endif
+ #ifdef openbsd4
+-#define INP_NEXT_SYMBOL		inp_queue.cqe_next	/* or set via <net-snmp/system/openbsd.h> */
++#define INP_NEXT_SYMBOL		inp_queue.tqe_next	/* or set via <net-snmp/system/openbsd.h> */
+ #endif
+ 
+ #if defined(freebsd4) || defined(darwin) || defined(osf5)
+@@ -705,7 +705,7 @@ udpTable_load(netsnmp_cache *cache, void *vmagic)
+     /*
+      *  Set up a linked list
+      */
+-    entry  = table.inpt_queue.cqh_first;
++    entry  = TAILQ_FIRST(&table.inpt_queue);
+     while (entry) {
+    
+         nnew = SNMP_MALLOC_TYPEDEF(struct inpcb);
+@@ -717,11 +717,11 @@ udpTable_load(netsnmp_cache *cache, void *vmagic)
+             break;
+         }
+ 
+-        entry    = nnew->inp_queue.cqe_next;	/* Next kernel entry */
+-	nnew->inp_queue.cqe_next = udp_head;
++        entry    = TAILQ_NEXT(nnew, inp_queue);	/* Next kernel entry */
++	nnew->inp_queue.tqe_next = udp_head;
+ 	udp_head = nnew;
+ 
+-        if (entry == table.inpt_queue.cqh_first)
++        if (entry == NULL)
+             break;
+     }
+ 

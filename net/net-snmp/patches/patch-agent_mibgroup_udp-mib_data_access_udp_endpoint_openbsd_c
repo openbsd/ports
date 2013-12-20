@@ -1,0 +1,26 @@
+$OpenBSD: patch-agent_mibgroup_udp-mib_data_access_udp_endpoint_openbsd_c,v 1.1 2013/12/20 02:20:00 krw Exp $
+--- agent/mibgroup/udp-mib/data_access/udp_endpoint_openbsd.c.orig	Mon Nov 25 11:45:18 2013
++++ agent/mibgroup/udp-mib/data_access/udp_endpoint_openbsd.c	Mon Nov 25 11:45:50 2013
+@@ -118,18 +118,18 @@ _load(netsnmp_container *container, u_int load_flags)
+ 	return -1;
+     }
+ 
+-    prev = (struct inpcb *)&CIRCLEQ_FIRST(&table.inpt_queue);
++    prev = (struct inpcb *)&TAILQ_FIRST(&table.inpt_queue);
+     prev = NULL;
+-    head = next = CIRCLEQ_FIRST(&table.inpt_queue);
++    head = next = TAILQ_FIRST(&table.inpt_queue);
+ 
+     while (next) {
+ 	NETSNMP_KLOOKUP(next, (char *)&inpcb, sizeof(inpcb));
+-	if (prev && CIRCLEQ_PREV(&inpcb, inp_queue) != prev) {
++	if (prev && TAILQ_PREV(&inpcb, inpthead, inp_queue) != prev) {
+ 	    snmp_log(LOG_ERR,"udbtable link error\n");
+ 	    break;
+ 	}
+ 	prev = next;
+-	next = CIRCLEQ_NEXT(&inpcb, inp_queue);
++	next = TAILQ_NEXT(&inpcb, inp_queue);
+ 
+ #if !defined(NETSNMP_ENABLE_IPV6)
+         if (inpcb.inp_flags & INP_IPV6)

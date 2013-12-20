@@ -1,0 +1,57 @@
+$OpenBSD: patch-agent_mibgroup_mibII_ipv6_c,v 1.1 2013/12/20 02:20:00 krw Exp $
+--- agent/mibgroup/mibII/ipv6.c.orig	Tue Oct  9 18:28:58 2012
++++ agent/mibgroup/mibII/ipv6.c	Sat Nov 30 08:25:29 2013
+@@ -1336,9 +1336,13 @@ var_udp6(register struct variable * vp,
+     DEBUGMSGOID(("mibII/ipv6", name, *length));
+     DEBUGMSG(("mibII/ipv6", " %d\n", exact));
+ 
+-#if defined(__NetBSD__) && __NetBSD_Version__ >= 106250000 || defined(openbsd4)	/*1.6Y*/
++#if defined(openbsd5)
+     if (!auto_nlist("udbtable", (char *) &udbtable, sizeof(udbtable)))
+         return NULL;
++    first = p = (caddr_t)TAILQ_FIRST(&udbtable.inpt_queue);
++#elif defined(__NetBSD__) && __NetBSD_Version__ >= 106250000	/*1.6Y*/
++    if (!auto_nlist("udbtable", (char *) &udbtable, sizeof(udbtable)))
++        return NULL;
+     first = p = (caddr_t)udbtable.inpt_queue.cqh_first;
+ #elif !defined(freebsd3) && !defined(darwin)
+     if (!auto_nlist("udb6", (char *) &udb6, sizeof(udb6)))
+@@ -1471,8 +1475,8 @@ var_udp6(register struct variable * vp,
+ 
+       skip:
+ #if defined(openbsd4)
+-        p = (caddr_t)in6pcb.inp_queue.cqe_next;
+-	if (p == first) break;
++        p = (caddr_t)TAILQ_NEXT(&in6pcb, inp_queue);
++	if (p == NULL) break;
+ #elif defined(__NetBSD__) && __NetBSD_Version__ >= 106250000	/*1.6Y*/
+         p = (caddr_t)in6pcb.in6p_queue.cqe_next;
+ 	if (p == first) break;
+@@ -1780,9 +1784,13 @@ var_tcp6(register struct variable * vp,
+     DEBUGMSGOID(("mibII/ipv6", name, *length));
+     DEBUGMSG(("mibII/ipv6", " %d\n", exact));
+ 
+-#if defined(__NetBSD__) && __NetBSD_Version__ >= 106250000 || defined(openbsd4)	/*1.6Y*/
++#if defined(openbsd4)
+     if (!auto_nlist("tcbtable", (char *) &tcbtable, sizeof(tcbtable)))
+         return NULL;
++    first = p = (caddr_t)TAILQ_FIRST(&tcbtable.inpt_queue);
++#elif defined(__NetBSD__) && __NetBSD_Version__ >= 106250000 /*1.6Y*/
++    if (!auto_nlist("tcbtable", (char *) &tcbtable, sizeof(tcbtable)))
++        return NULL;
+     first = p = (caddr_t)tcbtable.inpt_queue.cqh_first;
+ #elif !defined(freebsd3) && !defined(darwin)
+     if (!auto_nlist("tcb6", (char *) &tcb6, sizeof(tcb6)))
+@@ -1926,9 +1934,9 @@ var_tcp6(register struct variable * vp,
+ 
+       skip:
+ #if defined(openbsd4)
+-        p = (caddr_t)in6pcb.inp_queue.cqe_next;
+-	if (p == first) break;
+-#elif defined(__NetBSD__) && __NetBSD_Version__ >= 106250000 || defined(openbsd4)	/*1.6Y*/
++        p = (caddr_t)TAILQ_NEXT(&in6pcb, inp_queue);
++	if (p == NULL) break;
++#elif defined(__NetBSD__) && __NetBSD_Version__ >= 106250000	/*1.6Y*/
+         p = (caddr_t)in6pcb.in6p_queue.cqe_next;
+ 	if (p == first) break;
+ #elif !defined(freebsd3) && !defined(darwin)

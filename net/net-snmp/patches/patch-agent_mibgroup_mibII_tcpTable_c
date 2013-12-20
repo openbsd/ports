@@ -1,0 +1,21 @@
+$OpenBSD: patch-agent_mibgroup_mibII_tcpTable_c,v 1.8 2013/12/20 02:20:00 krw Exp $
+--- agent/mibgroup/mibII/tcpTable.c.orig	Tue Oct  9 18:28:58 2012
++++ agent/mibgroup/mibII/tcpTable.c	Fri Nov 29 14:52:27 2013
+@@ -946,7 +946,7 @@ tcpTable_load(netsnmp_cache *cache, void *vmagic)
+     /*
+      *  Set up a linked list
+      */
+-    entry  = table.inpt_queue.cqh_first;
++    entry  = TAILQ_FIRST(&table.inpt_queue);
+     while (entry) {
+    
+         nnew = SNMP_MALLOC_TYPEDEF(netsnmp_inpcb);
+@@ -970,7 +970,7 @@ tcpTable_load(netsnmp_cache *cache, void *vmagic)
+ 	nnew->inp_next = tcp_head;
+ 	tcp_head   = nnew;
+ 
+-        if (entry == table.inpt_queue.cqh_first)
++        if (entry == TAILQ_FIRST(&table.inpt_queue))
+             break;
+     }
+ 
