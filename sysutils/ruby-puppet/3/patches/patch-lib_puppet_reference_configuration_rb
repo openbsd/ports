@@ -1,8 +1,8 @@
-$OpenBSD: patch-lib_puppet_reference_configuration_rb,v 1.1 2013/03/08 16:12:47 ajacoutot Exp $
---- lib/puppet/reference/configuration.rb.orig	Sat Oct 20 06:57:51 2012
-+++ lib/puppet/reference/configuration.rb	Sun Oct 28 19:09:31 2012
-@@ -24,7 +24,7 @@ config = Puppet::Util::Reference.newreference(:configu
-     str << ""
+$OpenBSD: patch-lib_puppet_reference_configuration_rb,v 1.2 2013/12/20 14:10:41 jasper Exp $
+--- lib/puppet/reference/configuration.rb.orig	Thu Dec 19 19:53:07 2013
++++ lib/puppet/reference/configuration.rb	Fri Dec 20 14:48:12 2013
+@@ -23,7 +23,7 @@ config = Puppet::Util::Reference.newreference(:configu
+     # Now print the data about the item.
      val = object.default
      if name.to_s == "vardir"
 -      val = "/var/lib/puppet"

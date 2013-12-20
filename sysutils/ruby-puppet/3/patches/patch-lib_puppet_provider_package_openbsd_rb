@@ -1,10 +1,10 @@
-$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.7 2013/12/04 09:23:39 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.8 2013/12/20 14:10:41 jasper Exp $
 
 (#23078) Implement feature :upgradeable for OpenBSD package provider.
 https://github.com/puppetlabs/puppet/pull/2033
 
---- lib/puppet/provider/package/openbsd.rb.orig	Thu Nov  7 22:33:46 2013
-+++ lib/puppet/provider/package/openbsd.rb	Wed Dec  4 10:21:37 2013
+--- lib/puppet/provider/package/openbsd.rb.orig	Thu Dec 19 19:53:07 2013
++++ lib/puppet/provider/package/openbsd.rb	Fri Dec 20 14:48:12 2013
 @@ -12,6 +12,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
    has_feature :versionable
    has_feature :install_options
@@ -52,7 +52,7 @@ https://github.com/puppetlabs/puppet/pull/2033
 +
    def parse_pkgconf
      unless @resource[:source]
-       if File.exist?("/etc/pkg.conf")
+       if Puppet::FileSystem::File.exist?("/etc/pkg.conf")
 @@ -78,7 +112,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
      end
    end
