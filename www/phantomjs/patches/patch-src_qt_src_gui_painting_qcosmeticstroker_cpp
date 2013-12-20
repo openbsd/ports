@@ -1,0 +1,78 @@
+$OpenBSD: patch-src_qt_src_gui_painting_qcosmeticstroker_cpp,v 1.1.1.1 2013/12/20 00:54:06 sthen Exp $
+--- src/qt/src/gui/painting/qcosmeticstroker.cpp.orig	Thu Sep  5 23:36:02 2013
++++ src/qt/src/gui/painting/qcosmeticstroker.cpp	Mon Nov 25 18:32:38 2013
+@@ -133,10 +133,15 @@ struct NoDasher {
+ 
+ };
+ 
++/*
++ * The return value is the result of the clipLine() call performed at the start
++ * of each of the two functions, aka "false" means completely outside the devices
++ * rect.
++ */
+ template<DrawPixel drawPixel, class Dasher>
+-static void drawLine(QCosmeticStroker *stroker, qreal x1, qreal y1, qreal x2, qreal y2, int caps);
++static bool drawLine(QCosmeticStroker *stroker, qreal x1, qreal y1, qreal x2, qreal y2, int caps);
+ template<DrawPixel drawPixel, class Dasher>
+-static void drawLineAA(QCosmeticStroker *stroker, qreal x1, qreal y1, qreal x2, qreal y2, int caps);
++static bool drawLineAA(QCosmeticStroker *stroker, qreal x1, qreal y1, qreal x2, qreal y2, int caps);
+ 
+ inline void drawPixel(QCosmeticStroker *stroker, int x, int y, int coverage)
+ {
+@@ -702,10 +707,10 @@ static inline void capAdjust(int caps, int &x1, int &x
+   the drawing shifts from horizontal to vertical or back.
+   */
+ template<DrawPixel drawPixel, class Dasher>
+-static void drawLine(QCosmeticStroker *stroker, qreal rx1, qreal ry1, qreal rx2, qreal ry2, int caps)
++static bool drawLine(QCosmeticStroker *stroker, qreal rx1, qreal ry1, qreal rx2, qreal ry2, int caps)
+ {
+     if (stroker->clipLine(rx1, ry1, rx2, ry2))
+-        return;
++        return false;
+ 
+     static const int half = 31;
+     int x1 = toF26Dot6(rx1) + half;
+@@ -795,7 +800,7 @@ static void drawLine(QCosmeticStroker *stroker, qreal 
+     } else {
+         // horizontal
+         if (!dx)
+-            return;
++            return true;
+ 
+         QCosmeticStroker::Direction dir = QCosmeticStroker::LeftToRight;
+ 
+@@ -868,14 +873,15 @@ static void drawLine(QCosmeticStroker *stroker, qreal 
+         }
+     }
+     stroker->lastPixel = last;
++    return true;
+ }
+ 
+ 
+ template<DrawPixel drawPixel, class Dasher>
+-static void drawLineAA(QCosmeticStroker *stroker, qreal rx1, qreal ry1, qreal rx2, qreal ry2, int caps)
++static bool drawLineAA(QCosmeticStroker *stroker, qreal rx1, qreal ry1, qreal rx2, qreal ry2, int caps)
+ {
+     if (stroker->clipLine(rx1, ry1, rx2, ry2))
+-        return;
++        return false;
+ 
+     int x1 = toF26Dot6(rx1);
+     int y1 = toF26Dot6(ry1);
+@@ -949,7 +955,7 @@ static void drawLineAA(QCosmeticStroker *stroker, qrea
+     } else {
+         // horizontal
+         if (!dx)
+-            return;
++            return true;
+ 
+         int yinc = F16Dot16FixedDiv(dy, dx);
+ 
+@@ -1011,6 +1017,7 @@ static void drawLineAA(QCosmeticStroker *stroker, qrea
+             drawPixel(stroker, x, (y>>16) + 1, alpha * alphaEnd >> 6);
+         }
+     }
++    return true;
+ }
+ 
+ QT_END_NAMESPACE

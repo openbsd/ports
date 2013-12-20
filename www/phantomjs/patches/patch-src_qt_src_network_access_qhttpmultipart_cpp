@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_qt_src_network_access_qhttpmultipart_cpp,v 1.1.1.1 2013/12/20 00:54:06 sthen Exp $
+--- src/qt/src/network/access/qhttpmultipart.cpp.orig	Thu Sep  5 23:36:02 2013
++++ src/qt/src/network/access/qhttpmultipart.cpp	Mon Nov 25 18:33:26 2013
+@@ -487,7 +487,8 @@ qint64 QHttpMultiPartIODevice::readData(char *data, qi
+ 
+     // skip the parts we have already read
+     while (index < multiPart->parts.count() &&
+-           readPointer >= partOffsets.at(index) + multiPart->parts.at(index).d->size())
++           readPointer >= partOffsets.at(index) + multiPart->parts.at(index).d->size()
++           + multiPart->boundary.count() + 6) // 6 == 2 boundary dashes, \r\n after boundary, \r\n after multipart
+         index++;
+ 
+     // read the data

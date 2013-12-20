@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_qt_src_corelib_global_qglobal_h,v 1.1.1.1 2013/12/20 00:54:06 sthen Exp $
+--- src/qt/src/corelib/global/qglobal.h.orig	Thu Sep  5 23:36:02 2013
++++ src/qt/src/corelib/global/qglobal.h	Mon Nov 25 18:29:31 2013
+@@ -2357,7 +2357,7 @@ typedef uint Flags;
+ 
+ #endif /* Q_NO_TYPESAFE_FLAGS */
+ 
+-#if defined(Q_CC_GNU) && !defined(Q_CC_INTEL) && !defined(Q_CC_RVCT)
++#if defined(Q_CC_GNU) && !defined(Q_CC_INTEL) && !defined(Q_CC_RVCT) && !defined(Q_OS_OPENBSD)
+ /* make use of typeof-extension */
+ template <typename T>
+ class QForeachContainer {

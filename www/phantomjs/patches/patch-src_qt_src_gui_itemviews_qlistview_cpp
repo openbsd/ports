@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_qt_src_gui_itemviews_qlistview_cpp,v 1.1.1.1 2013/12/20 00:54:06 sthen Exp $
+--- src/qt/src/gui/itemviews/qlistview.cpp.orig	Thu Sep  5 23:36:02 2013
++++ src/qt/src/gui/itemviews/qlistview.cpp	Mon Nov 25 18:32:04 2013
+@@ -2921,7 +2921,8 @@ void QIconModeViewBase::doDynamicLayout(const QListVie
+     if (moved.count() != items.count())
+         moved.resize(items.count());
+ 
+-    QRect rect(QPoint(), topLeft);
++    QPoint a_point;
++    QRect rect(a_point, topLeft);
+     QListViewItem *item = 0;
+     for (int row = info.first; row <= info.last; ++row) {
+         item = &items[row];

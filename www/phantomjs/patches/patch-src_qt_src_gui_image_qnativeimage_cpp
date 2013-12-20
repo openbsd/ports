@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_qt_src_gui_image_qnativeimage_cpp,v 1.1.1.1 2013/12/20 00:54:06 sthen Exp $
+--- src/qt/src/gui/image/qnativeimage.cpp.orig	Thu Sep  5 23:36:02 2013
++++ src/qt/src/gui/image/qnativeimage.cpp	Mon Nov 25 18:31:22 2013
+@@ -176,7 +176,7 @@ QNativeImage::QNativeImage(int width, int height, QIma
+ 
+     bool ok;
+     xshminfo.shmid = shmget(IPC_PRIVATE, xshmimg->bytes_per_line * xshmimg->height,
+-                            IPC_CREAT | 0777);
++                            IPC_CREAT | 0700);
+     ok = xshminfo.shmid != -1;
+     if (ok) {
+         xshmimg->data = (char*)shmat(xshminfo.shmid, 0, 0);

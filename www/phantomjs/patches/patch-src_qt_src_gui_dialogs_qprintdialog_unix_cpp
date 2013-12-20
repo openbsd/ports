@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_qt_src_gui_dialogs_qprintdialog_unix_cpp,v 1.1.1.1 2013/12/20 00:54:06 sthen Exp $
+--- src/qt/src/gui/dialogs/qprintdialog_unix.cpp.orig	Thu Sep  5 23:36:02 2013
++++ src/qt/src/gui/dialogs/qprintdialog_unix.cpp	Mon Nov 25 18:30:30 2013
+@@ -579,6 +579,32 @@ void QPrintDialogPrivate::setTabs(const QList<QWidget*
+ void QPrintDialogPrivate::selectPrinter(QCUPSSupport *cups)
+ {
+     options.duplex->setEnabled(cups && cups->ppdOption("Duplex"));
++
++    if (cups) {
++        const ppd_option_t* duplex = cups->ppdOption("Duplex");
++        if (duplex) {
++            // copy default ppd duplex to qt dialog
++            if (qstrcmp(duplex->defchoice, "DuplexTumble") == 0)
++                options.duplexShort->setChecked(true);
++            else if (qstrcmp(duplex->defchoice, "DuplexNoTumble") == 0)
++                options.duplexLong->setChecked(true);
++            else
++                options.noDuplex->setChecked(true);
++        }
++
++        if (cups->currentPPD()) {
++            // set default color
++            if (cups->currentPPD()->color_device)
++                options.color->setChecked(true);
++            else
++                options.grayscale->setChecked(true);
++        }
++
++        // set collation
++        const ppd_option_t *collate = cups->ppdOption("Collate");
++        if (collate)
++            options.collate->setChecked(qstrcmp(collate->defchoice, "True")==0);
++    }
+ }
+ #endif
+ 

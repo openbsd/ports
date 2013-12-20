@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_phantomjs_pro,v 1.1.1.1 2013/12/20 00:54:06 sthen Exp $
+--- src/phantomjs.pro.orig	Mon Nov 25 17:29:58 2013
++++ src/phantomjs.pro	Mon Nov 25 17:30:20 2013
+@@ -60,7 +60,7 @@ include(mongoose/mongoose.pri)
+ include(linenoise/linenoise.pri)
+ include(qcommandline/qcommandline.pri)
+ 
+-linux*|mac {
++linux*|mac|openbsd* {
+     INCLUDEPATH += breakpad/src
+ 
+     SOURCES += breakpad/src/client/minidump_file_writer.cc \
+@@ -130,4 +130,8 @@ win32-msvc* {
+             qtwcodecs \
+             qico
+     }
++}
++
++openbsd* {
++    LIBS += -L/usr/X11R6/lib
+ }

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_qt_src_gui_painting_qcosmeticstroker_p_h,v 1.1.1.1 2013/12/20 00:54:06 sthen Exp $
+--- src/qt/src/gui/painting/qcosmeticstroker_p.h.orig	Thu Sep  5 23:36:02 2013
++++ src/qt/src/gui/painting/qcosmeticstroker_p.h	Mon Nov 25 18:32:58 2013
+@@ -56,7 +56,7 @@ QT_MODULE(Gui)
+ class QCosmeticStroker;
+ 
+ 
+-typedef void (*StrokeLine)(QCosmeticStroker *stroker, qreal x1, qreal y1, qreal x2, qreal y2, int caps);
++typedef bool (*StrokeLine)(QCosmeticStroker *stroker, qreal x1, qreal y1, qreal x2, qreal y2, int caps);
+ 
+ class QCosmeticStroker
+ {

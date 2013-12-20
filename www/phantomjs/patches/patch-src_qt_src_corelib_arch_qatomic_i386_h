@@ -1,0 +1,57 @@
+$OpenBSD: patch-src_qt_src_corelib_arch_qatomic_i386_h,v 1.1.1.1 2013/12/20 00:54:06 sthen Exp $
+--- src/qt/src/corelib/arch/qatomic_i386.h.orig	Thu Sep  5 23:36:02 2013
++++ src/qt/src/corelib/arch/qatomic_i386.h	Mon Nov 25 18:28:47 2013
+@@ -107,7 +107,52 @@ template <typename T>
+ Q_INLINE_TEMPLATE bool QBasicAtomicPointer<T>::isFetchAndAddWaitFree()
+ { return true; }
+ 
+-#if defined(Q_CC_GNU) || defined(Q_CC_INTEL)
++#if defined(QT_GCC4_ATOMICS)
++inline bool QBasicAtomicInt::ref()
++{
++	return __sync_add_and_fetch(&_q_value, 1) != 0;
++}
++
++inline bool QBasicAtomicInt::deref()
++{
++	return __sync_sub_and_fetch(&_q_value, 1) != 0;
++}
++
++inline bool QBasicAtomicInt::testAndSetOrdered(int expectedValue, int newValue)
++{
++    return __sync_bool_compare_and_swap(&_q_value, expectedValue, newValue);
++}
++
++inline int QBasicAtomicInt::fetchAndStoreOrdered(int newValue)
++{
++    return __sync_lock_test_and_set(&_q_value, newValue);
++}
++
++inline int QBasicAtomicInt::fetchAndAddOrdered(int valueToAdd)
++{
++    return __sync_fetch_and_add(&_q_value, valueToAdd);
++}
++
++template <typename T>
++Q_INLINE_TEMPLATE bool QBasicAtomicPointer<T>::testAndSetOrdered(T *expectedValue, T *newValue)
++{
++    return __sync_bool_compare_and_swap(&_q_value, expectedValue, newValue);
++}
++
++template <typename T>
++Q_INLINE_TEMPLATE T *QBasicAtomicPointer<T>::fetchAndStoreOrdered(T *newValue)
++{
++    return __sync_lock_test_and_set(&_q_value, newValue);
++}
++
++template <typename T>
++Q_INLINE_TEMPLATE T *QBasicAtomicPointer<T>::fetchAndAddOrdered(qptrdiff valueToAdd)
++{
++    return __sync_fetch_and_add(&_q_value, valueToAdd);
++}
++
++
++#elif defined(Q_CC_GNU) || defined(Q_CC_INTEL)
+ 
+ inline bool QBasicAtomicInt::ref()
+ {
