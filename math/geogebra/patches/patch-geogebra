@@ -1,0 +1,168 @@
+$OpenBSD: patch-geogebra,v 1.1 2013/12/20 07:58:09 ajacoutot Exp $
+--- geogebra.orig	Fri Oct  4 16:11:17 2013
++++ geogebra	Fri Dec 20 08:55:47 2013
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ #---------------------------------------------
+ # Script to start GeoGebra
+ #---------------------------------------------
+@@ -9,7 +9,7 @@
+ # GG_SCRIPTNAME=<name of originally called script to start GeoGebra> # If unset, name of this script will be used.
+ #
+ # GG_PATH=<path of directory containing geogebra.jar> # If unset, path of this script will be used.
+-# In this case if the path of script does not contain the geogebra.jar file, /usr/share/geogebra will be used.
++# In this case if the path of script does not contain the geogebra.jar file, ${TRUEPREFIX}/share/geogebra will be used.
+ #
+ # GG_SYS_CONFIG_PATH=<path of system directory containing geogebra.conf>
+ #
+@@ -19,7 +19,7 @@
+ #
+ # GG_XMS=<initial Java heap size> # If unset, 32m will be used.
+ #
+-# GG_XMX=<maximum Java heap size> # If unset, 1024m will be used.
++# GG_XMX=<maximum Java heap size> # If unset, 256m will be used.
+ #
+ # GG_DJAVA_LIBRARY_PATH=<native library path>
+ #
+@@ -45,19 +45,7 @@ fi
+ #---------------------------------------------
+ # If $GG_PATH not set, use path of this script.
+ 
+-if [ -z "$GG_PATH" ]; then
+-	GG_PATH="${BASH_SOURCE[0]}"
+-	if [ -h "${GG_PATH}" ]; then
+-		while [ -h "${GG_PATH}" ]; do
+-			GG_PATH=`readlink "${GG_PATH}"`
+-		done
+-	fi
+-	pushd . > /dev/null
+-	cd `dirname ${GG_PATH}` > /dev/null
+-	GG_PATH=`pwd`
+-	popd > /dev/null
+-	test -r "${GG_PATH}/geogebra_main.jar" || GG_PATH='/usr/share/geogebra'
+-fi
++GG_PATH='${TRUEPREFIX}/share/geogebra'
+ 
+ #---------------------------------------------
+ # If $GG_CONFIG_PATH not set, use $HOME.
+@@ -70,7 +58,7 @@ fi
+ # If $JAVACMD not set, use java.
+ 
+ if [ -z "$JAVACMD" ]; then
+-	JAVACMD='java'
++	JAVACMD=`javaPathHelper -c geogebra`
+ fi
+ 
+ #---------------------------------------------
+@@ -81,10 +69,10 @@ if [ -z "$GG_XMS" ]; then
+ fi
+ 
+ #---------------------------------------------
+-# If $GG_XMX not set, use 1024m.
++# If $GG_XMX not set, use 256m.
+ 
+ if [ -z "$GG_XMX" ]; then
+-	GG_XMX='1024m'
++	GG_XMX='256m'
+ fi
+ 
+ #---------------------------------------------
+@@ -193,7 +181,7 @@ if [ -w "$GG_CONFIG_FILE" ]; then
+ #
+ `if [ ! -n "$DEFAULT_GG_XMS" ]; then echo "#DEFAULT_GG_XMS='$GG_XMS'"; else echo "DEFAULT_GG_XMS='$DEFAULT_GG_XMS'"; fi`
+ 
+-# Set maximum Java heap size, e.g '512m'.
++# Set maximum Java heap size, e.g '256m'.
+ #
+ `if [ ! -n "$DEFAULT_GG_XMX" ]; then echo "#DEFAULT_GG_XMX='$GG_XMX'"; else echo "DEFAULT_GG_XMX='$DEFAULT_GG_XMX'"; fi`
+ 
+@@ -282,7 +270,7 @@ fi
+ #---------------------------------------------
+ # Define usage function.
+ 
+-function func_usage()
++func_usage()
+ {
+ 	cat << _USAGE
+ Usage: $GG_SCRIPTNAME [Java-options] [GeoGebra-options] [FILE]
+@@ -324,48 +312,48 @@ _USAGE
+ #---------------------------------------------
+ # Check for option --help and pass Java options to Java, others to GeoGebra.
+ 
+-GG_OPTS=()
++GG_OPTS=""
+ for i in "$@"; do
+ 	case "$i" in
+ 	--help | --hel | --he | --h )
+ 		func_usage; exit 0 ;;
+ 	esac
+-	if [ $(expr match "$i" '.*--') -ne 0 ]; then
+-		if [ $(expr match "$i" '.*--showSplash=') -ne 0 ]; then
++	if [ $(expr -- "$i" : '.*--') -ne 0 ]; then
++		if [ $(expr -- "$i" : '.*--showSplash=') -ne 0 ]; then
+ 			GG_SHOWSPLASH=${i:13}
+ 			shift $((1))
+-		elif [ $(expr match "$i" '.*--enableUndo=') -ne 0 ]; then
++		elif [ $(expr -- "$i" : '.*--enableUndo=') -ne 0 ]; then
+ 			GG_ENABLEUNDO=${i:13}
+ 			shift $((1))
+-		elif [ $(expr match "$i" '.*--antiAliasing=') -ne 0 ]; then
++		elif [ $(expr -- "$i" : '.*--antiAliasing=') -ne 0 ]; then
+ 			GG_ANTIALIASING=${i:15}
+ 			shift $((1))
+-		elif [ $(expr match "$i" '.*--versionCheckAllow=') -ne 0 ]; then
++		elif [ $(expr -- "$i" : '.*--versionCheckAllow=') -ne 0 ]; then
+ 			GG_VERSIONCHECKALLOW=${i:20}
+ 			shift $((1))
+-		elif [ $(expr match "$i" '.*--settingsfile=') -ne 0 ]; then
++		elif [ $(expr -- "$i" : '.*--settingsfile=') -ne 0 ]; then
+ 			GG_SETTINGS_FILE=${i:15}
+ 			shift $((1))
+ 		else
+ 			GG_OPTS[${#GG_OPTS[*]}]="$i"
+ 			shift $((1))
+ 		fi
+-	elif [ $(expr match "$i" '.*-Xms') -ne 0 ]; then
++	elif [ $(expr -- "$i" : '.*-Xms') -ne 0 ]; then
+ 		GG_XMS=${i:4}
+ 		shift $((1))
+-	elif [ $(expr match "$i" '.*-Xmx') -ne 0 ]; then
++	elif [ $(expr -- "$i" : '.*-Xmx') -ne 0 ]; then
+ 		GG_XMX=${i:4}
+ 		shift $((1))
+-	elif [ $(expr match "$i" '.*-Djava.library.path=') -ne 0 ]; then
++	elif [ $(expr -- "$i" : '.*-Djava.library.path=') -ne 0 ]; then
+ 		GG_DJAVA_LIBRARY_PATH=${i:20}
+ 		shift $((1))
+-	elif [ $(expr match "$i" '.*-Dsun.java2d.xrender=') -ne 0 ]; then
++	elif [ $(expr -- "$i" : '.*-Dsun.java2d.xrender=') -ne 0 ]; then
+ 		GG_DSUN_JAVA2D_XRENDER=${i:21}
+ 		shift $((1))
+-	elif [ $(expr match "$i" '.*-Dsun.java2d.opengl=') -ne 0 ]; then
++	elif [ $(expr -- "$i" : '.*-Dsun.java2d.opengl=') -ne 0 ]; then
+ 		GG_DSUN_JAVA2D_OPENGL=${i:20}
+ 		shift $((1))
+-	elif [ $(expr match "$i" '.*-JavaCMD=') -ne 0 ]; then
++	elif [ $(expr -- "$i" : '.*-JavaCMD=') -ne 0 ]; then
+ 		JAVACMD=${i:9}
+ 		shift $((1))
+ 	fi
+@@ -381,9 +369,9 @@ if [ -n "$GG_VERSIONCHECKALLOW" ]; then
+ 	GG_OPTS[${#GG_OPTS[*]}]="--versionCheckAllow=$GG_VERSIONCHECKALLOW"
+ fi
+ GG_OPTS[${#GG_OPTS[*]}]="--settingsfile=$GG_SETTINGS_FILE"
+-JAVA_OPTS=("-Xms$GG_XMS" "-Xmx$GG_XMX")
++JAVA_OPTS="-Xms$GG_XMS -Xmx$GG_XMX"
+ if [ -n "$GG_DJAVA_LIBRARY_PATH" ]; then
+-	JAVA_OPTS[${#JAVA_OPTS[*]}]="-Djava.library.path=$GG_DJAVA_LIBRARY_PATH"
++	JAVA_OPTS="-Djava.library.path=$GG_DJAVA_LIBRARY_PATH"
+ fi
+ if [ -n "$GG_DSUN_JAVA2D_XRENDER" ]; then
+ 	JAVA_OPTS[${#JAVA_OPTS[*]}]="-Dsun.java2d.xrender=$GG_DSUN_JAVA2D_XRENDER"
+@@ -395,4 +383,4 @@ fi
+ #---------------------------------------------
+ # Run
+ 
+-exec "$JAVACMD" "${JAVA_OPTS[@]}" -jar "$GG_PATH/geogebra.jar" "${GG_OPTS[@]}" "$@"
++exec $JAVACMD ${JAVA_OPTS[@]} -jar $GG_PATH/geogebra.jar ${GG_OPTS[@]} $@

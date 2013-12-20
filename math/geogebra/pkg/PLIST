@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/08/21 07:18:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/12/20 07:58:09 ajacoutot Exp $
 bin/geogebra
 share/applications/geogebra.desktop
 share/geogebra/
@@ -13,18 +13,6 @@ share/geogebra/geogebra_properties.jar
 share/geogebra/jlatexmath.jar
 share/geogebra/jlm_cyrillic.jar
 share/geogebra/jlm_greek.jar
-share/geogebra/unsigned/
-share/geogebra/unsigned/geogebra.jar
-share/geogebra/unsigned/geogebra_algos.jar
-share/geogebra/unsigned/geogebra_cas.jar
-share/geogebra/unsigned/geogebra_export.jar
-share/geogebra/unsigned/geogebra_gui.jar
-share/geogebra/unsigned/geogebra_javascript.jar
-share/geogebra/unsigned/geogebra_main.jar
-share/geogebra/unsigned/geogebra_properties.jar
-share/geogebra/unsigned/jlatexmath.jar
-share/geogebra/unsigned/jlm_cyrillic.jar
-share/geogebra/unsigned/jlm_greek.jar
 share/icons/hicolor/128x128/apps/geogebra.png
 share/icons/hicolor/128x128/mimetypes/application-vnd.geogebra.file.png
 share/icons/hicolor/128x128/mimetypes/application-vnd.geogebra.tool.png

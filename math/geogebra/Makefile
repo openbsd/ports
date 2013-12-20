@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/08/07 21:32:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2013/12/20 07:58:09 ajacoutot Exp $
 
 COMMENT=	educational mathematical software
 
-V=		4.0.38.0
+V=		4.2.60.0
 DISTNAME=	GeoGebra-Unixlike-Installer-${V}
 PKGNAME=	geogebra-${V}
 
@@ -10,11 +10,14 @@ CATEGORIES=	math java
 
 HOMEPAGE=	http://www.geogebra.org
 
-# GeoGebra Source: GPLv3
-# Language Files and Documentation:
-#   Creative Commons Attribution-Share Alike 3.0
+# Apache Software License
+# GPLv3, LGPLv3, BSD, Public Domain
+# GeoGebra Non-Commercial License
+# Creative Commons Attribution-Share Alike 3.0
 # See: http://www.geogebra.org/download/license.txt
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM=	No
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILE_FTP=	Yes
 
 MASTER_SITES=		https://geogebra.googlecode.com/files/
 
