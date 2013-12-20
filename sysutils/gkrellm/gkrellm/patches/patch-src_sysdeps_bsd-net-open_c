@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_sysdeps_bsd-net-open_c,v 1.6 2013/12/20 02:11:33 krw Exp $
+--- src/sysdeps/bsd-net-open.c.orig	Mon Dec  2 13:37:59 2013
++++ src/sysdeps/bsd-net-open.c	Mon Dec  2 13:47:00 2013
+@@ -67,7 +67,7 @@ gkrellm_sys_inet_read_tcp_data(void)
+    ActiveTCP tcp;
+    gint	tcp_status;
+    struct inpcbtable table;
+-   struct inpcb inpcb, *head, *next;
++   struct inpcb inpcb, *next;
+    struct tcpcb tcpcb;
+    static struct nlist nl[] = {
+ #define X_TCBTABLE    0
+@@ -84,11 +84,8 @@ gkrellm_sys_inet_read_tcp_data(void)
+ 		sizeof(struct inpcbtable)) != sizeof(struct inpcbtable))
+       return;
+ 
+-	head = (struct inpcb *)
+-		&((struct inpcbtable *)nl[X_TCBTABLE].n_value)->inpt_queue.cqh_first;
+-   next = (struct inpcb *)table.inpt_queue.cqh_first;
+-   while(next != NULL && next != head) {
+-      
++   next = TAILQ_FIRST(&table.inpt_queue);
++   while(next != NULL) {
+       if (kvm_read(kvmd, (u_long)next,
+ 		   (char *)&inpcb, sizeof(inpcb)) == sizeof(inpcb) &&
+ 	  kvm_read(kvmd, (u_long)inpcb.inp_ppcb,
+@@ -103,7 +100,7 @@ gkrellm_sys_inet_read_tcp_data(void)
+ 	    gkrellm_inet_log_tcp_port_data(&tcp);
+       }
+ 
+-      next = (struct inpcb *)inpcb.inp_queue.cqe_next;
++      next = TAILQ_NEXT(&inpcb, inp_queue);
+    }
+ }
+ #endif
