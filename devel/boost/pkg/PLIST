@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2013/12/17 07:03:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2013/12/20 16:37:16 ajacoutot Exp $
 @bin bin/bjam
 include/boost/
 include/boost/accumulators/
@@ -10154,10 +10154,6 @@ lib/libboost_python-mt.a
 @lib lib/libboost_python-mt.so.${LIBboost_python-mt_VERSION}
 lib/libboost_python.a
 @lib lib/libboost_python.so.${LIBboost_python_VERSION}
-lib/libboost_python3-mt.a
-@lib lib/libboost_python3-mt.so.${LIBboost_python3-mt_VERSION}
-lib/libboost_python3.a
-@lib lib/libboost_python3.so.${LIBboost_python3_VERSION}
 lib/libboost_random-mt.a
 @lib lib/libboost_random-mt.so.${LIBboost_random-mt_VERSION}
 lib/libboost_random.a
