@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2013/07/05 09:34:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2013/12/20 20:00:37 kirby Exp $
 
 COMMENT =		light and fast log analyzer for squid proxy
 
 DISTNAME =		lightsquid-1.8
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 
 HOMEPAGE =		http://lightsquid.sourceforge.net
 
-MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
+MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -20,7 +20,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=lightsquid/}
 NO_BUILD =		Yes
 RUN_DEPENDS = 		graphics/p5-GD
 
-PREFIX =	${VARBASE}/www
+PREFIX =		${VARBASE}/www
 INSTDIR =		${PREFIX}/htdocs/lightsquid
 SUBST_VARS = 		INSTDIR
 
