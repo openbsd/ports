@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_facter_ssh_rb,v 1.1 2013/12/21 20:52:21 jasper Exp $
+
+Add support for ssh-ed25519 keys
+https://github.com/puppetlabs/facter/pull/585
+
+--- lib/facter/ssh.rb.orig	Sat Dec 21 21:45:50 2013
++++ lib/facter/ssh.rb	Sat Dec 21 21:46:46 2013
+@@ -11,7 +11,7 @@
+ ## Facts related to SSH
+ ##
+ 
+-{"SSHDSAKey" => { :file => "ssh_host_dsa_key.pub", :sshfprrtype => 2 } , "SSHRSAKey" => { :file => "ssh_host_rsa_key.pub", :sshfprrtype => 1 }, "SSHECDSAKey" => { :file => "ssh_host_ecdsa_key.pub", :sshfprrtype => 3 } }.each do |name,key|
++{"SSHDSAKey" => { :file => "ssh_host_dsa_key.pub", :sshfprrtype => 2 } , "SSHRSAKey" => { :file => "ssh_host_rsa_key.pub", :sshfprrtype => 1 }, "SSHECDSAKey" => { :file => "ssh_host_ecdsa_key.pub", :sshfprrtype => 3 }, "SSHED25519Key" => { :file => "ssh_host_ed25519_key.pub", :sshfprrtype => 4 } }.each do |name,key|
+   
+   Facter.add(name) do
+     setcode do
