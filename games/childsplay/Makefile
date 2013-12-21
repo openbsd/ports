@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/12/19 19:22:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2013/12/21 10:41:40 ajacoutot Exp $
 
 COMMENT=	collection of educational activities for young children
 
@@ -23,7 +23,6 @@ RUN_DEPENDS=	databases/py-sqlalchemy \
 		x11/py-gtk2
 
 PKG_ARCH=	*
-NO_BUILD=	Yes
 NO_TEST=	Yes
 
 MODPY_ADJ_FILES=childsplay.py
