@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.63 2013/11/27 04:28:30 brad Exp $
+@comment $OpenBSD: PLIST,v 1.64 2013/12/21 23:23:27 brad Exp $
 @conflict postfix-*
 @pkgpath mail/postfix/snapshot,sqlite
 @newgroup _postfix:507
@@ -159,10 +159,12 @@ share/doc/postfix/html/DEBUG_README.html
 share/doc/postfix/html/DSN_README.html
 share/doc/postfix/html/ETRN_README.html
 share/doc/postfix/html/FILTER_README.html
+share/doc/postfix/html/FORWARD_SECRECY_README.html
 share/doc/postfix/html/INSTALL.html
 share/doc/postfix/html/IPV6_README.html
 share/doc/postfix/html/LDAP_README.html
 share/doc/postfix/html/LINUX_README.html
+share/doc/postfix/html/LMDB_README.html
 share/doc/postfix/html/LOCAL_RECIPIENT_README.html
 share/doc/postfix/html/MAILDROP_README.html
 share/doc/postfix/html/MILTER_README.html
@@ -281,10 +283,12 @@ share/doc/postfix/readme/DEBUG_README
 share/doc/postfix/readme/DSN_README
 share/doc/postfix/readme/ETRN_README
 share/doc/postfix/readme/FILTER_README
+share/doc/postfix/readme/FORWARD_SECRECY_README
 share/doc/postfix/readme/INSTALL
 share/doc/postfix/readme/IPV6_README
 share/doc/postfix/readme/LDAP_README
 share/doc/postfix/readme/LINUX_README
+share/doc/postfix/readme/LMDB_README
 share/doc/postfix/readme/LOCAL_RECIPIENT_README
 share/doc/postfix/readme/MAILDROP_README
 share/doc/postfix/readme/MEMCACHE_README
