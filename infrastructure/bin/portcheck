@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.53 2013/12/21 08:59:30 zhuk Exp $
+# $OpenBSD: portcheck,v 1.54 2013/12/21 11:47:20 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -561,7 +561,7 @@ check_port_dir() {
 	check_distfiles "$dir" "$dist_subdir" $distfiles
 	check_master_sites "$dir" $master_sites
 	$pkg_exists && check_pkg_dir "$dir"/pkg "$subst_cmd"
-	$existing_port || check_shlibs "$dir" $shared_libs
+	$existing_port || check_shlibs_versions "$dir" $shared_libs
 
 	for _s in $multi_packages; do
 		sub_checks "$dir" "$_s" "$fullpkgname" "${check_flavors[@]}"
@@ -585,8 +585,8 @@ check_newline_at_eof() {
 
 # Checks made:
 #   * Every library in SHARED_LIBS has 0.0 version.
-check_shlibs() {
-	$debugging && echo "CALLED: check_shlibs($*)" >&2
+check_shlibs_versions() {
+	$debugging && echo "CALLED: check_shlibs_versions($*)" >&2
 
 	local dir=$1; shift
 	local lib
@@ -1348,6 +1348,7 @@ check_subst_vars() {
 #   * Each REVISION mark presents only once.
 #   * BUILD_DEPENDS and MODULES are not defined in VAR-subpkg manner.
 #   * No trailing whitespace.
+#   * SHARED_LIBS are not defined inside ".if" statements.
 check_makefile() {
 	$debugging && echo "CALLED: check_makefile($*)" >&2
 
@@ -1360,6 +1361,7 @@ check_makefile() {
 
 	local l lnum=0 revs= t r
 	unset revs[0]
+	local tab="$(print '\t')"
 	while read -r l; do ((++lnum)); case $l in
 	*(" ")REVISION*)
 		$existing_port ||
@@ -1379,6 +1381,17 @@ check_makefile() {
 		;;
 	*(" ")@(BUILD_DEPENDS|MODULES)-*)
 		err "${l%%-*} is not a subpackageble variable, see $F:$lnum"
+		;;
+	*(" ").*(" "|"$tab")if*)
+		((++iflevel))
+		;;
+	*(" ").*(" "|"$tab")endif*)
+		((iflevel--))
+		;;
+	*(" ")SHARED_LIBS*(" "|"$tab")*(+|:|!)=*)
+		if ((iflevel > 0)); then
+			err "should not be inside .if block ($F:$lnum): $l"
+		fi
 		;;
 	esac; done <"$F"
 }
