@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_puppet_provider_ssh_authorized_key_parsed_rb,v 1.1 2013/12/21 21:34:33 jasper Exp $
+
+Allow the ssh_authorized_key provider to recognize ssh-ed25519 keys.
+
+--- lib/puppet/provider/ssh_authorized_key/parsed.rb.orig	Sat Dec 21 22:15:19 2013
++++ lib/puppet/provider/ssh_authorized_key/parsed.rb	Sat Dec 21 22:15:28 2013
+@@ -15,7 +15,7 @@ Puppet::Type.type(:ssh_authorized_key).provide(
+     :fields   => %w{options type key name},
+     :optional => %w{options},
+     :rts => /^\s+/,
+-    :match    => /^(?:(.+) )?(ssh-dss|ssh-rsa|ecdsa-sha2-nistp256|ecdsa-sha2-nistp384|ecdsa-sha2-nistp521) ([^ ]+) ?(.*)$/,
++    :match    => /^(?:(.+) )?(ssh-dss|ssh-ed25519|ssh-rsa|ecdsa-sha2-nistp256|ecdsa-sha2-nistp384|ecdsa-sha2-nistp521) ([^ ]+) ?(.*)$/,
+     :post_parse => proc { |h|
+       h[:name] = "" if h[:name] == :absent
+       h[:options] ||= [:absent]
