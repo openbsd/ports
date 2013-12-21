@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2013/12/12 14:46:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2013/12/21 08:57:41 ajacoutot Exp $
 @conflict cups-<1.6.0
 @conflict ghostscript-<9.06p3
 @conflict foomatic-filters-*
@@ -24,6 +24,8 @@ lib/libfontembed.la
 @lib lib/libfontembed.so.${LIBfontembed_VERSION}
 lib/pkgconfig/libcupsfilters.pc
 lib/pkgconfig/libfontembed.pc
+libexec/cups/
+libexec/cups/backend/
 @bin libexec/cups/backend/parallel
 @bin libexec/cups/backend/serial
 libexec/cups/filter/
