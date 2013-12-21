@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/06/10 14:37:27 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/12/21 10:28:47 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
@@ -50,6 +50,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rgen/instantiator/json_parser.y
 ${GEM_LIB}/gems/${DISTNAME}/lib/rgen/instantiator/nodebased_xml_instantiator.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rgen/instantiator/qualified_name_resolver.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rgen/instantiator/reference_resolver.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rgen/instantiator/resolution_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rgen/instantiator/xmi11_instantiator.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rgen/metamodel_builder/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rgen/metamodel_builder.rb
