@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/09/23 06:43:11 landry Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/12/21 07:32:42 ajacoutot Exp $
 tt-rss/
 tt-rss/LICENSE
 tt-rss/README.md
@@ -2346,6 +2346,10 @@ tt-rss/locale/sv_SE/
 tt-rss/locale/sv_SE/LC_MESSAGES/
 tt-rss/locale/sv_SE/LC_MESSAGES/messages.mo
 tt-rss/locale/sv_SE/LC_MESSAGES/messages.po
+tt-rss/locale/tr_TR/
+tt-rss/locale/tr_TR/LC_MESSAGES/
+tt-rss/locale/tr_TR/LC_MESSAGES/messages.mo
+tt-rss/locale/tr_TR/LC_MESSAGES/messages.po
 tt-rss/locale/zh_CN/
 tt-rss/locale/zh_CN/LC_MESSAGES/
 tt-rss/locale/zh_CN/LC_MESSAGES/messages.mo
@@ -2366,6 +2370,8 @@ tt-rss/plugins/af_dilbert/
 tt-rss/plugins/af_dilbert/init.php
 tt-rss/plugins/af_explosm/
 tt-rss/plugins/af_explosm/init.php
+tt-rss/plugins/af_fsckportal/
+tt-rss/plugins/af_fsckportal/init.php
 tt-rss/plugins/af_gocomics/
 tt-rss/plugins/af_gocomics/init.php
 tt-rss/plugins/af_natgeo/
@@ -2376,6 +2382,8 @@ tt-rss/plugins/af_redditimgur/
 tt-rss/plugins/af_redditimgur/init.php
 tt-rss/plugins/af_sciam/
 tt-rss/plugins/af_sciam/init.php
+tt-rss/plugins/af_threewordphrase/
+tt-rss/plugins/af_threewordphrase/init.php
 tt-rss/plugins/af_unburn/
 tt-rss/plugins/af_unburn/init.php
 tt-rss/plugins/af_whomp/
@@ -2423,6 +2431,9 @@ tt-rss/plugins/no_iframes/init.php
 tt-rss/plugins/no_title_counters/
 tt-rss/plugins/no_title_counters/init.js
 tt-rss/plugins/no_title_counters/init.php
+tt-rss/plugins/no_url_hashes/
+tt-rss/plugins/no_url_hashes/init.js
+tt-rss/plugins/no_url_hashes/init.php
 tt-rss/plugins/note/
 tt-rss/plugins/note/init.php
 tt-rss/plugins/note/note.js
