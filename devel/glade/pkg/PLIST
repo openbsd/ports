@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2013/09/27 10:43:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.22 2013/12/21 08:24:37 jasper Exp $
 @conflict glade3-<3.8.0p1
 @bin bin/glade
 @bin bin/glade-previewer
@@ -383,15 +383,12 @@ share/gtk-doc/html/gladeui-2/home.png
 share/gtk-doc/html/gladeui-2/index.html
 share/gtk-doc/html/gladeui-2/index.sgml
 share/gtk-doc/html/gladeui-2/ix01.html
-share/gtk-doc/html/gladeui-2/left-insensitive.png
 share/gtk-doc/html/gladeui-2/left.png
 share/gtk-doc/html/gladeui-2/misc.html
 share/gtk-doc/html/gladeui-2/properties.html
 share/gtk-doc/html/gladeui-2/pythonsupport.html
-share/gtk-doc/html/gladeui-2/right-insensitive.png
 share/gtk-doc/html/gladeui-2/right.png
 share/gtk-doc/html/gladeui-2/style.css
-share/gtk-doc/html/gladeui-2/up-insensitive.png
 share/gtk-doc/html/gladeui-2/up.png
 share/gtk-doc/html/gladeui-2/widgetclasses.html
 share/help/C/glade/
