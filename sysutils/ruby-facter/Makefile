@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2013/12/19 09:35:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2013/12/21 10:29:52 jasper Exp $
 
 COMMENT=	Ruby library for retrieving facts from operating systems
 
@@ -18,7 +18,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=	lang/ruby
 MODRUBY_REV=	1.9
 
-NO_BUILD=	Yes
 PKG_ARCH=	*
 
 #TEST_DEPENDS=	devel/ruby-mocha,${MODRUBY_FLAVOR}
