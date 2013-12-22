@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.45 2013/04/27 15:44:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2013/12/22 10:38:18 landry Exp $
+
+BROKEN-alpha=	internal compiler error: in extract_insn, at recog.c:2077
 
 COMMENT-main=	network-capable tape backup (client and tape server)
 COMMENT-client=	network-capable tape backup (client only)
