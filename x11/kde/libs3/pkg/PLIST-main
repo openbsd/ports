@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.22 2013/12/22 19:29:41 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.23 2013/12/22 19:34:05 zhuk Exp $
 @conflict kdebase-<3.5
 @conflict kdeartwork-<3.4
 @conflict kdeaddons-<3.4
@@ -3079,6 +3079,11 @@ share/apps.kde3/kde-conf-sample/xdg/menus/applications.menu
 @sample ${SYSCONFDIR}/xdg/menus/kde3-applications.menu
 share/autostart/
 share/autostart/kab2kabc.desktop
+share/config.kde3/colors/
+share/config.kde3/colors/40.colors
+share/config.kde3/colors/Rainbow.colors
+share/config.kde3/colors/Royal.colors
+share/config.kde3/colors/Web.colors
 share/config.kde3/ipv6blacklist
 share/config.kde3/katefiletyperc
 share/config.kde3/katesyntaxhighlightingrc
