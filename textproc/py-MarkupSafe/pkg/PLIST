@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/06/27 19:01:51 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/12/22 21:08:36 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/MarkupSafe-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/MarkupSafe-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/MarkupSafe-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -9,9 +9,11 @@ lib/python${MODPY_VERSION}/site-packages/markupsafe/
 lib/python${MODPY_VERSION}/site-packages/markupsafe/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/markupsafe/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/markupsafe/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/markupsafe/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markupsafe/${MODPY_PYCACHE}_constants.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markupsafe/${MODPY_PYCACHE}_native.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markupsafe/${MODPY_PYCACHE}tests.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/markupsafe/_compat.py
 lib/python${MODPY_VERSION}/site-packages/markupsafe/_constants.py
 lib/python${MODPY_VERSION}/site-packages/markupsafe/_native.py
 lib/python${MODPY_VERSION}/site-packages/markupsafe/_speedups.c
