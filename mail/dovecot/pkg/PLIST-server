@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.43 2013/11/27 22:02:18 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.44 2013/12/22 22:23:10 brad Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -592,6 +592,7 @@ share/doc/dovecot/wiki/Authentication.Mechanisms.Winbind.txt
 share/doc/dovecot/wiki/Authentication.Mechanisms.txt
 share/doc/dovecot/wiki/Authentication.MultipleDatabases.txt
 share/doc/dovecot/wiki/Authentication.PasswordSchemes.txt
+share/doc/dovecot/wiki/Authentication.Penalty.txt
 share/doc/dovecot/wiki/Authentication.RestrictAccess.txt
 share/doc/dovecot/wiki/Authentication.txt
 share/doc/dovecot/wiki/BasicConfiguration.txt

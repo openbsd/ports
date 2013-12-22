@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.217 2013/11/27 22:02:18 brad Exp $
+# $OpenBSD: Makefile,v 1.218 2013/12/22 22:23:10 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ COMMENT-postgresql= PostgreSQL authentication / dictionary support for Dovecot
 
 # Bump dovecot-pigeonhole every time you update to a new Dovecot version.
 V_MAJOR=	2.2
-V_DOVECOT=	2.2.9
+V_DOVECOT=	2.2.10
 
 DISTNAME=	dovecot-${V_DOVECOT}
 PKGNAME=	dovecot-${V_DOVECOT}
