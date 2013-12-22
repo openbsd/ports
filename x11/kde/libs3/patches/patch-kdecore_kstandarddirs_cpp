@@ -1,12 +1,16 @@
-$OpenBSD: patch-kdecore_kstandarddirs_cpp,v 1.3 2013/10/22 11:34:05 zhuk Exp $
+$OpenBSD: patch-kdecore_kstandarddirs_cpp,v 1.4 2013/12/22 19:29:41 zhuk Exp $
 --- kdecore/kstandarddirs.cpp.orig	Wed Feb 13 12:41:08 2008
-+++ kdecore/kstandarddirs.cpp	Sat Oct 12 15:46:22 2013
-@@ -274,6 +274,15 @@ bool KStandardDirs::addResourceType( const char *type,
++++ kdecore/kstandarddirs.cpp	Wed Dec 18 20:51:23 2013
+@@ -274,10 +274,21 @@ bool KStandardDirs::addResourceType( const char *type,
      if (copy.at(copy.length() - 1) != '/')
  	copy += '/';
      if (!rels->contains(copy)) {
++        if (!priority)
++	    rels->append(copy);
++
 +	// OpenBSD specifics: always add fallback directory for
-+	// backward compatibility.
++	// backward compatibility. Fallback should always be placed
++	// after "normal" dir.
 +	QString datadef = kde_default("data");
 +	if (copy.left(datadef.length()) == datadef) {
 +	    QString fallback = "share/apps/" + copy.mid(datadef.length(), copy.length());
@@ -16,8 +20,12 @@ $OpenBSD: patch-kdecore_kstandarddirs_cpp,v 1.3 2013/10/22 11:34:05 zhuk Exp $
 +
          if (priority)
  	    rels->prepend(copy);
- 	else
-@@ -1019,9 +1028,9 @@ static int tokenize( QStringList& tokens, const QStrin
+-	else
+-	    rels->append(copy);
+ 	dircache.remove(type); // clean the cache
+ 	return true;
+     }
+@@ -1019,13 +1030,13 @@ static int tokenize( QStringList& tokens, const QStrin
  
  QString KStandardDirs::kde_default(const char *type) {
      if (!strcmp(type, "data"))
@@ -29,14 +37,30 @@ $OpenBSD: patch-kdecore_kstandarddirs_cpp,v 1.3 2013/10/22 11:34:05 zhuk Exp $
      if (!strcmp(type, "icon"))
  	return "share/icons/";
      if (!strcmp(type, "config"))
-@@ -1423,6 +1432,10 @@ void KStandardDirs::addKDEDefaults()
+-	return "share/config/";
++	return "share/config.kde3/";
+     if (!strcmp(type, "pixmap"))
+ 	return "share/pixmaps/";
+     if (!strcmp(type, "apps"))
+@@ -1065,7 +1076,7 @@ QString KStandardDirs::kde_default(const char *type) {
+     if (!strcmp(type, "xdgconf-menu"))
+         return "menus/";
+     if (!strcmp(type, "kcfg"))
+-	return "share/config.kcfg";
++	return "share/config.kcfg.kde3";
+     if (!strcmp(type, "emoticons"))
+ 			return "share/emoticons";
+ 
+@@ -1423,6 +1434,12 @@ void KStandardDirs::addKDEDefaults()
  	addResourceType(types[index], kde_default(types[index]));
  	index++;
      }
 +
 +    // OpenBSD specific
++    addResourceType("config", "share/config");
 +    addResourceType("data", "share/apps");
 +    addResourceType("html", "share/doc/HTML");
++    addResourceType("kcfg", "share/config.kcfg");
  
      addResourceDir("home", QDir::homeDirPath());
  }

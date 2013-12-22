@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.21 2013/11/24 19:56:30 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.22 2013/12/22 19:29:41 zhuk Exp $
 @conflict kdebase-<3.5
 @conflict kdeartwork-<3.4
 @conflict kdeaddons-<3.4
@@ -3079,25 +3079,19 @@ share/apps.kde3/kde-conf-sample/xdg/menus/applications.menu
 @sample ${SYSCONFDIR}/xdg/menus/kde3-applications.menu
 share/autostart/
 share/autostart/kab2kabc.desktop
-share/config/
-share/config/colors/
-share/config/colors/40.colors
-share/config/colors/Rainbow.colors
-share/config/colors/Royal.colors
-share/config/colors/Web.colors
-share/config/ipv6blacklist
-share/config/katefiletyperc
-share/config/katesyntaxhighlightingrc
-share/config/kdebug.areas
-share/config/kdebugrc
-share/config/kdeprintrc
-share/config/khotnewstuffrc
-share/config/ksslcalist
-share/config/kthemestylerc
-share/config/language.codes
-share/config/ui/
-share/config/ui/kprintpreviewui.rc
-share/config/ui/ui_standards.rc
+share/config.kde3/ipv6blacklist
+share/config.kde3/katefiletyperc
+share/config.kde3/katesyntaxhighlightingrc
+share/config.kde3/kdebug.areas
+share/config.kde3/kdebugrc
+share/config.kde3/kdeprintrc
+share/config.kde3/khotnewstuffrc
+share/config.kde3/ksslcalist
+share/config.kde3/kthemestylerc
+share/config.kde3/language.codes
+share/config.kde3/ui/
+share/config.kde3/ui/kprintpreviewui.rc
+share/config.kde3/ui/ui_standards.rc
 share/doc/HTML.kde3/
 share/doc/HTML.kde3/en/
 share/doc/HTML.kde3/en/common/
