@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2013/10/22 11:34:09 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.36 2013/12/22 19:24:35 zhuk Exp $
 @bin bin/karbon
 @bin bin/kchart
 @bin bin/kexi
@@ -4312,12 +4312,12 @@ share/apps.kde3/xsltfilter/export/kword/
 share/apps.kde3/xsltfilter/export/kword/xslfo/
 share/apps.kde3/xsltfilter/export/kword/xslfo/kword2xslfo-table.xsl
 share/apps.kde3/xsltfilter/export/kword/xslfo/main.xsl
-share/config.kcfg/
-share/config.kcfg/kivio.kcfg
-share/config.kcfg/koshell.kcfg
-share/config/kexirc
-share/config/magic/
-share/config/magic/kexi.magic
+share/config.kcfg.kde3/
+share/config.kcfg.kde3/kivio.kcfg
+share/config.kcfg.kde3/koshell.kcfg
+share/config.kde3/kexirc
+share/config.kde3/magic/
+share/config.kde3/magic/kexi.magic
 share/doc/HTML.kde3/en/karbon/
 share/doc/HTML.kde3/en/karbon/common
 share/doc/HTML.kde3/en/karbon/index.cache.bz2

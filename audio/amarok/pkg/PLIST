@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2013/10/22 11:34:12 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.16 2013/12/22 19:24:34 zhuk Exp $
 @bin bin/amarok
 bin/amarok_daapserver.rb
 bin/amarok_proxy.rb
@@ -590,9 +590,9 @@ share/apps.kde3/konqueror/servicemenus/amarok_append.desktop
 share/apps.kde3/konqueror/servicemenus/amarok_play_audiocd.desktop
 share/apps.kde3/profiles/
 share/apps.kde3/profiles/amarok.profile.xml
-share/config.kcfg/amarok.kcfg
-share/config.kcfg/xinecfg.kcfg
-share/config/amarokrc
+share/config.kcfg.kde3/amarok.kcfg
+share/config.kcfg.kde3/xinecfg.kcfg
+share/config.kde3/amarokrc
 share/doc/HTML.kde3/da/
 share/doc/HTML.kde3/da/amarok/
 share/doc/HTML.kde3/da/amarok/advanced.docbook

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2013/10/22 11:33:59 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.39 2013/12/22 19:24:34 zhuk Exp $
 @bin bin/apmount
 @bin bin/blinken
 @bin bin/celestrongps
@@ -2134,34 +2134,34 @@ share/apps.kde3/kwordquiz/icons/hicolor/scalable/
 share/apps.kde3/kwordquiz/icons/hicolor/scalable/apps/
 share/apps.kde3/kwordquiz/icons/hicolor/scalable/apps/kwordquiz.svg
 share/apps.kde3/kwordquiz/kwordquizui.rc
-share/config.kcfg/
-share/config.kcfg/blinken.kcfg
-share/config.kcfg/kalzium.kcfg
-share/config.kcfg/kanagram.kcfg
-share/config.kcfg/kbruch.kcfg
-share/config.kcfg/keduca.kcfg
-share/config.kcfg/kgeography.kcfg
-share/config.kcfg/khangman.kcfg
-share/config.kcfg/kiten.kcfg
-share/config.kcfg/klatin.kcfg
-share/config.kcfg/klettres.kcfg
-share/config.kcfg/kmplot.kcfg
-share/config.kcfg/kstars.kcfg
-share/config.kcfg/ktouch.kcfg
-share/config.kcfg/kturtle.kcfg
-share/config.kcfg/kverbos.kcfg
-share/config.kcfg/kvoctrain.kcfg
-share/config.kcfg/kwordquiz.kcfg
-share/config.kcfg/languagesettings.kcfg
-share/config.kcfg/presettings.kcfg
-share/config/khangmanrc
-share/config/klettresrc
-share/config/kstarsrc
-share/config/kvoctrainrc
-share/config/kwordquizrc
-share/config/magic/
-share/config/magic/cabri.magic
-share/config/magic/drgeo.magic
+share/config.kcfg.kde3/
+share/config.kcfg.kde3/blinken.kcfg
+share/config.kcfg.kde3/kalzium.kcfg
+share/config.kcfg.kde3/kanagram.kcfg
+share/config.kcfg.kde3/kbruch.kcfg
+share/config.kcfg.kde3/keduca.kcfg
+share/config.kcfg.kde3/kgeography.kcfg
+share/config.kcfg.kde3/khangman.kcfg
+share/config.kcfg.kde3/kiten.kcfg
+share/config.kcfg.kde3/klatin.kcfg
+share/config.kcfg.kde3/klettres.kcfg
+share/config.kcfg.kde3/kmplot.kcfg
+share/config.kcfg.kde3/kstars.kcfg
+share/config.kcfg.kde3/ktouch.kcfg
+share/config.kcfg.kde3/kturtle.kcfg
+share/config.kcfg.kde3/kverbos.kcfg
+share/config.kcfg.kde3/kvoctrain.kcfg
+share/config.kcfg.kde3/kwordquiz.kcfg
+share/config.kcfg.kde3/languagesettings.kcfg
+share/config.kcfg.kde3/presettings.kcfg
+share/config.kde3/khangmanrc
+share/config.kde3/klettresrc
+share/config.kde3/kstarsrc
+share/config.kde3/kvoctrainrc
+share/config.kde3/kwordquizrc
+share/config.kde3/magic/
+share/config.kde3/magic/cabri.magic
+share/config.kde3/magic/drgeo.magic
 share/doc/HTML.kde3/en/blinken/
 share/doc/HTML.kde3/en/blinken/blinken1.png
 share/doc/HTML.kde3/en/blinken/blinken2.png

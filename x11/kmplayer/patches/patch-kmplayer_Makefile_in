@@ -1,0 +1,47 @@
+$OpenBSD: patch-kmplayer_Makefile_in,v 1.1 2013/12/22 19:24:35 zhuk Exp $
+--- kmplayer/Makefile.in.orig	Sun Feb  9 03:29:45 2003
++++ kmplayer/Makefile.in	Thu Dec 19 18:34:19 2013
+@@ -69,7 +69,7 @@ target_triplet = @target@
+ EXEEXT = @EXEEXT@
+ OBJEXT = @OBJEXT@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+-datadir = $(kde_datadir)/kmplayer
++datadir = @datadir@
+ AMTAR = @AMTAR@
+ ARTSCCONFIG = @ARTSCCONFIG@
+ AS = @AS@
+@@ -570,20 +570,20 @@ uninstall-confDATA:
+ dataDATA_INSTALL = $(INSTALL_DATA)
+ install-dataDATA: $(data_DATA)
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(datadir)
++	$(mkinstalldirs) $(DESTDIR)$(kde_datadir)/$(PACKAGE)
+ 	@list='$(data_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+-	  echo " $(dataDATA_INSTALL) $$d$$p $(DESTDIR)$(datadir)/$$f"; \
+-	  $(dataDATA_INSTALL) $$d$$p $(DESTDIR)$(datadir)/$$f; \
++	  echo " $(dataDATA_INSTALL) $$d$$p $(DESTDIR)$(kde_datadir)/$(PACKAGE)/$$f"; \
++	  $(dataDATA_INSTALL) $$d$$p $(DESTDIR)$(kde_datadir)/$(PACKAGE)/$$f; \
+ 	done
+ 
+ uninstall-dataDATA:
+ 	@$(NORMAL_UNINSTALL)
+ 	@list='$(data_DATA)'; for p in $$list; do \
+ 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+-	  echo " rm -f $(DESTDIR)$(datadir)/$$f"; \
+-	  rm -f $(DESTDIR)$(datadir)/$$f; \
++	  echo " rm -f $(DESTDIR)$(kde_datadir)/$(PACKAGE)/$$f"; \
++	  rm -f $(DESTDIR)$(kde_datadir)/$(PACKAGE)/$$f; \
+ 	done
+ kde_servicesDATA_INSTALL = $(INSTALL_DATA)
+ install-kde_servicesDATA: $(kde_services_DATA)
+@@ -750,7 +750,7 @@ install-binPROGRAMS: install-libLTLIBRARIES
+ 
+ installdirs: installdirs-recursive
+ installdirs-am:
+-	$(mkinstalldirs) $(DESTDIR)$(kde_moduledir) $(DESTDIR)$(libdir) $(DESTDIR)$(bindir) $(DESTDIR)$(applnkdir) $(DESTDIR)$(confdir) $(DESTDIR)$(datadir) $(DESTDIR)$(kde_servicesdir)
++	$(mkinstalldirs) $(DESTDIR)$(kde_moduledir) $(DESTDIR)$(libdir) $(DESTDIR)$(bindir) $(DESTDIR)$(applnkdir) $(DESTDIR)$(confdir) $(DESTDIR)$(kde_datadir) $(DESTDIR)$(kde_servicesdir)
+ 
+ install: install-recursive
+ install-exec: install-exec-recursive

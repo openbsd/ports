@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2013/10/22 11:34:06 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.40 2013/12/22 19:24:34 zhuk Exp $
 @bin bin/artsbuilder
 @bin bin/artscontrol
 @bin bin/juk
@@ -1041,13 +1041,13 @@ share/apps.kde3/videothumbnail/sprocket-large.png
 share/apps.kde3/videothumbnail/sprocket-medium.png
 share/apps.kde3/videothumbnail/sprocket-small.png
 share/autostart/restore_kmix_volumes.desktop
-share/config.kcfg/
-share/config.kcfg/audiocd_lame_encoder.kcfg
-share/config.kcfg/audiocd_vorbis_encoder.kcfg
-share/config.kcfg/kaudiocreator.kcfg
-share/config.kcfg/kaudiocreator_encoders.kcfg
-share/config.kcfg/kscd.kcfg
-share/config.kcfg/libkcddb.kcfg
+share/config.kcfg.kde3/
+share/config.kcfg.kde3/audiocd_lame_encoder.kcfg
+share/config.kcfg.kde3/audiocd_vorbis_encoder.kcfg
+share/config.kcfg.kde3/kaudiocreator.kcfg
+share/config.kcfg.kde3/kaudiocreator_encoders.kcfg
+share/config.kcfg.kde3/kscd.kcfg
+share/config.kcfg.kde3/libkcddb.kcfg
 share/desktop-directories/
 share/desktop-directories/kde-multimedia-music.directory
 share/doc/HTML.kde3/en/artsbuilder/

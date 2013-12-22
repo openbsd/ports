@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.82 2013/10/22 11:34:10 zhuk Exp $
+# $OpenBSD: Makefile,v 1.83 2013/12/22 19:24:35 zhuk Exp $
 
 COMMENT = 		KDE personal information applications
 CATEGORIES =		x11 x11/kde productivity
 VERSION =		3.5.10
 DISTNAME =		kdepim-${VERSION}
 PKGSPEC =		kdepim->=3,<4
-REVISION =		17
+REVISION =		18
 
 MODKDE_VERSION =	3.5.8
 

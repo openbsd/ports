@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2013/10/22 11:34:22 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/12/22 19:24:34 zhuk Exp $
 @bin bin/ktcachecheck
 @bin bin/ktorrent
 bin/ktshell
@@ -381,18 +381,18 @@ share/apps.kde3/ktorrent/www/mobile/settings.php
 share/apps.kde3/ktorrent/www/mobile/start.png
 share/apps.kde3/ktorrent/www/mobile/stop.png
 share/apps.kde3/ktorrent/www/mobile/torrent.php
-share/config.kcfg/
-share/config.kcfg/ktinfowidgetplugin.kcfg
-share/config.kcfg/ktipfilterplugin.kcfg
-share/config.kcfg/ktlogviewerplugin.kcfg
-share/config.kcfg/ktorrent.kcfg
-share/config.kcfg/ktrssfeedplugin.kcfg
-share/config.kcfg/ktscanfolderplugin.kcfg
-share/config.kcfg/ktschedulerplugin.kcfg
-share/config.kcfg/ktsearchplugin.kcfg
-share/config.kcfg/ktstatsplugin.kcfg
-share/config.kcfg/ktupnpplugin.kcfg
-share/config.kcfg/ktwebinterfaceplugin.kcfg
+share/config.kcfg.kde3/
+share/config.kcfg.kde3/ktinfowidgetplugin.kcfg
+share/config.kcfg.kde3/ktipfilterplugin.kcfg
+share/config.kcfg.kde3/ktlogviewerplugin.kcfg
+share/config.kcfg.kde3/ktorrent.kcfg
+share/config.kcfg.kde3/ktrssfeedplugin.kcfg
+share/config.kcfg.kde3/ktscanfolderplugin.kcfg
+share/config.kcfg.kde3/ktschedulerplugin.kcfg
+share/config.kcfg.kde3/ktsearchplugin.kcfg
+share/config.kcfg.kde3/ktstatsplugin.kcfg
+share/config.kcfg.kde3/ktupnpplugin.kcfg
+share/config.kcfg.kde3/ktwebinterfaceplugin.kcfg
 share/icons/hicolor/128x128/apps/ktorrent.png
 share/icons/hicolor/128x128/mimetypes/torrent.png
 share/icons/hicolor/16x16/apps/ktorrent.png
@@ -409,8 +409,6 @@ share/icons/hicolor/scalable/apps/ktorrent.svgz
 share/icons/hicolor/scalable/mimetypes/torrent.svgz
 share/locale/ar/LC_MESSAGES/ktorrent.mo
 share/locale/bg/LC_MESSAGES/ktorrent.mo
-share/locale/br/
-share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/ktorrent.mo
 share/locale/ca/LC_MESSAGES/ktorrent.mo
 share/locale/cs/LC_MESSAGES/ktorrent.mo
@@ -431,8 +429,6 @@ share/locale/ka/LC_MESSAGES/ktorrent.mo
 share/locale/lt/LC_MESSAGES/ktorrent.mo
 share/locale/ms/LC_MESSAGES/ktorrent.mo
 share/locale/nb/LC_MESSAGES/ktorrent.mo
-share/locale/nds/
-share/locale/nds/LC_MESSAGES/
 share/locale/nds/LC_MESSAGES/ktorrent.mo
 share/locale/nl/LC_MESSAGES/ktorrent.mo
 share/locale/pa/LC_MESSAGES/ktorrent.mo

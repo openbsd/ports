@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2013/10/22 11:34:00 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2013/12/22 19:24:34 zhuk Exp $
 @pkgpath x11/kde/graphics3
 @bin bin/kcolorchooser
 @bin bin/kcoloredit
@@ -600,12 +600,12 @@ share/apps.kde3/kviewviewer/kviewviewer.rc
 share/apps.kde3/kviewviewer/kviewviewer_ro.rc
 share/apps.kde3/photobook/
 share/apps.kde3/photobook/photobookui.rc
-share/config.kcfg/
-share/config.kcfg/djvumultipage.kcfg
-share/config.kcfg/kdvi.kcfg
-share/config.kcfg/kghostview.kcfg
-share/config.kcfg/kpdf.kcfg
-share/config.kcfg/kviewshell.kcfg
+share/config.kcfg.kde3/
+share/config.kcfg.kde3/djvumultipage.kcfg
+share/config.kcfg.kde3/kdvi.kcfg
+share/config.kcfg.kde3/kghostview.kcfg
+share/config.kcfg.kde3/kpdf.kcfg
+share/config.kcfg.kde3/kviewshell.kcfg
 share/doc/HTML.kde3/en/kcoloredit/
 share/doc/HTML.kde3/en/kcoloredit/common
 share/doc/HTML.kde3/en/kcoloredit/index.cache.bz2

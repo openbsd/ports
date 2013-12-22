@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/10/22 11:34:14 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/12/22 19:24:34 zhuk Exp $
 @bin bin/kile
 share/applications/kde/kile.desktop
 share/apps.kde3/katepart/syntax/bibtex-kile.xml
@@ -1358,7 +1358,7 @@ share/apps.kde3/kile/test/test_bib.tex
 share/apps.kde3/kile/test/test_index.tex
 share/apps.kde3/kile/test/test_plain.tex
 share/apps.kde3/kile/tips
-share/config.kcfg/kile.kcfg
+share/config.kcfg.kde3/kile.kcfg
 share/doc/HTML.kde3/da/
 share/doc/HTML.kde3/da/kile/
 share/doc/HTML.kde3/da/kile/common

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/10/22 11:34:27 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/12/22 19:24:35 zhuk Exp $
 @bin bin/yakuake
 share/applications/kde/yakuake.desktop
 share/apps.kde3/yakuake/
@@ -99,7 +99,7 @@ share/apps.kde3/yakuake/plastik_light/title/quit_down.png
 share/apps.kde3/yakuake/plastik_light/title/quit_over.png
 share/apps.kde3/yakuake/plastik_light/title/quit_up.png
 share/apps.kde3/yakuake/plastik_light/title/right.png
-share/config.kcfg/yakuake.kcfg
+share/config.kcfg.kde3/yakuake.kcfg
 share/icons/hicolor/16x16/apps/yakuake.png
 share/icons/hicolor/32x32/apps/yakuake.png
 share/locale/de/LC_MESSAGES/yakuake.mo

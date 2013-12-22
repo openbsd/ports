@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/10/22 11:34:25 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/12/22 19:24:35 zhuk Exp $
 @bin bin/krusader
 ${KDE}/kio_iso.la
 ${KDE}/kio_iso.so
@@ -122,7 +122,7 @@ share/apps.kde3/krusader/total_commander.color
 share/apps.kde3/krusader/total_commander.keymap
 share/apps.kde3/krusader/total_commander.keymap.info
 share/apps.kde3/krusader/useraction_examples.xml
-share/config/kio_isorc
+share/config.kde3/kio_isorc
 share/doc/HTML.kde3/en/krusader/
 share/doc/HTML.kde3/en/krusader/actionman.png
 share/doc/HTML.kde3/en/krusader/archives.docbook

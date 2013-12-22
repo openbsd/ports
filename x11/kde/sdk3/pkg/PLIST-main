@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2013/10/22 11:34:11 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2013/12/22 19:24:35 zhuk Exp $
 @pkgpath x11/kde/sdk3
 bin/adddebug
 bin/build-progress.sh
@@ -691,10 +691,10 @@ share/apps.kde3/umbrello/tips
 share/apps.kde3/umbrello/umbrelloui.rc
 share/apps.kde3/umbrello/xmi.css
 share/apps.kde3/umbrello/xmi2docbook.xsl
-share/config.kcfg/
-share/config.kcfg/cervisiapart.kcfg
-share/config.kcfg/kbabel.kcfg
-share/config.kcfg/kbprojectsettings.kcfg
+share/config.kcfg.kde3/
+share/config.kcfg.kde3/cervisiapart.kcfg
+share/config.kcfg.kde3/kbabel.kcfg
+share/config.kcfg.kde3/kbprojectsettings.kcfg
 share/doc/HTML.kde3/en/cervisia/
 share/doc/HTML.kde3/en/cervisia/annotate.png
 share/doc/HTML.kde3/en/cervisia/checkout.png

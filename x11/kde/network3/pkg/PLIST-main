@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2013/12/16 10:39:52 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2013/12/22 19:24:34 zhuk Exp $
 @conflict sirc-*
 @pkgpath x11/kde/network3
 bin/dsirc
@@ -1481,14 +1481,14 @@ share/apps.kde3/zeroconf/_nfs._tcp
 share/apps.kde3/zeroconf/_rfb._tcp
 share/apps.kde3/zeroconf/_ssh._tcp
 share/apps.kde3/zeroconf/_webdav._tcp
-share/config.kcfg/
-share/config.kcfg/historyconfig.kcfg
-share/config.kcfg/kopete.kcfg
-share/config.kcfg/kopeteidentityconfigpreferences.kcfg
-share/config.kcfg/latexconfig.kcfg
-share/config.kcfg/nowlisteningconfig.kcfg
-share/config/ksircrc
-share/config/ktalkdrc
+share/config.kcfg.kde3/
+share/config.kcfg.kde3/historyconfig.kcfg
+share/config.kcfg.kde3/kopete.kcfg
+share/config.kcfg.kde3/kopeteidentityconfigpreferences.kcfg
+share/config.kcfg.kde3/latexconfig.kcfg
+share/config.kcfg.kde3/nowlisteningconfig.kcfg
+share/config.kde3/ksircrc
+share/config.kde3/ktalkdrc
 share/doc/HTML.kde3/en/kcontrol/
 share/doc/HTML.kde3/en/kcontrol/kcmtalkd/
 share/doc/HTML.kde3/en/kcontrol/kcmtalkd/common

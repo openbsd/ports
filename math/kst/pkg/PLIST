@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/10/22 11:34:20 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.6 2013/12/22 19:24:34 zhuk Exp $
 @bin bin/d2asc
 @bin bin/kst
 @bin bin/kstcmd
@@ -208,50 +208,50 @@ share/apps.kde3/kst/tutorial/demo.kst
 share/apps.kde3/kst/tutorial/gyrodata.dat
 share/apps.kde3/kst/tutorial/maxima.dat
 share/apps.kde3/kst/tutorial/vsa.dat
-share/config/colors/IDL 00 BW-Linear
-share/config/colors/IDL 01 Blue-White
-share/config/colors/IDL 02 GRN-RED-BLU-WHT
-share/config/colors/IDL 03 RED-Temperature
-share/config/colors/IDL 04 BLU-GRN-RED-YEL
-share/config/colors/IDL 05 STD-Gamma-II
-share/config/colors/IDL 06 PRISM
-share/config/colors/IDL 07 RED-PURPLE
-share/config/colors/IDL 08 GRN-WHT-Linear
-share/config/colors/IDL 09 GRN-WHT-Exp
-share/config/colors/IDL 10 GRN-PINK
-share/config/colors/IDL 11 BLUE-RED
-share/config/colors/IDL 12 16-Level
-share/config/colors/IDL 13 RAINBOW
-share/config/colors/IDL 14 STEPS
-share/config/colors/IDL 15 STERN-Special
-share/config/colors/IDL 16 Haze
-share/config/colors/IDL 17 BLU-Pastel-RED
-share/config/colors/IDL 18 Pastels
-share/config/colors/IDL 19 Hue-Sat-Light1
-share/config/colors/IDL 20 Hue-Sat-Light2
-share/config/colors/IDL 21 Hue-Sat-Value1
-share/config/colors/IDL 22 Hue-Sat-Value2
-share/config/colors/IDL 23 Purple-Red-Stripe
-share/config/colors/IDL 24 Beach
-share/config/colors/IDL 25 Mac-Style
-share/config/colors/IDL 26 Eos-A
-share/config/colors/IDL 27 Eos-B
-share/config/colors/IDL 28 Hardcandy
-share/config/colors/IDL 29 Nature
-share/config/colors/IDL 30 Ocean
-share/config/colors/IDL 31 Peppermint
-share/config/colors/IDL 32 Plasma
-share/config/colors/IDL 33 Blue-Red
-share/config/colors/IDL 34 Rainbow
-share/config/colors/IDL 35 Blue-Waves
-share/config/colors/IDL 36 Volcano
-share/config/colors/IDL 37 Waves
-share/config/colors/IDL 38 Rainbow18
-share/config/colors/IDL 39 Rainbow-White
-share/config/colors/IDL 40 Rainbow-Black
-share/config/colors/Kst Colors
-share/config/colors/Kst Grayscale 256
-share/config/colors/Kst Spectrum 1021
+share/config.kde3/colors/IDL 00 BW-Linear
+share/config.kde3/colors/IDL 01 Blue-White
+share/config.kde3/colors/IDL 02 GRN-RED-BLU-WHT
+share/config.kde3/colors/IDL 03 RED-Temperature
+share/config.kde3/colors/IDL 04 BLU-GRN-RED-YEL
+share/config.kde3/colors/IDL 05 STD-Gamma-II
+share/config.kde3/colors/IDL 06 PRISM
+share/config.kde3/colors/IDL 07 RED-PURPLE
+share/config.kde3/colors/IDL 08 GRN-WHT-Linear
+share/config.kde3/colors/IDL 09 GRN-WHT-Exp
+share/config.kde3/colors/IDL 10 GRN-PINK
+share/config.kde3/colors/IDL 11 BLUE-RED
+share/config.kde3/colors/IDL 12 16-Level
+share/config.kde3/colors/IDL 13 RAINBOW
+share/config.kde3/colors/IDL 14 STEPS
+share/config.kde3/colors/IDL 15 STERN-Special
+share/config.kde3/colors/IDL 16 Haze
+share/config.kde3/colors/IDL 17 BLU-Pastel-RED
+share/config.kde3/colors/IDL 18 Pastels
+share/config.kde3/colors/IDL 19 Hue-Sat-Light1
+share/config.kde3/colors/IDL 20 Hue-Sat-Light2
+share/config.kde3/colors/IDL 21 Hue-Sat-Value1
+share/config.kde3/colors/IDL 22 Hue-Sat-Value2
+share/config.kde3/colors/IDL 23 Purple-Red-Stripe
+share/config.kde3/colors/IDL 24 Beach
+share/config.kde3/colors/IDL 25 Mac-Style
+share/config.kde3/colors/IDL 26 Eos-A
+share/config.kde3/colors/IDL 27 Eos-B
+share/config.kde3/colors/IDL 28 Hardcandy
+share/config.kde3/colors/IDL 29 Nature
+share/config.kde3/colors/IDL 30 Ocean
+share/config.kde3/colors/IDL 31 Peppermint
+share/config.kde3/colors/IDL 32 Plasma
+share/config.kde3/colors/IDL 33 Blue-Red
+share/config.kde3/colors/IDL 34 Rainbow
+share/config.kde3/colors/IDL 35 Blue-Waves
+share/config.kde3/colors/IDL 36 Volcano
+share/config.kde3/colors/IDL 37 Waves
+share/config.kde3/colors/IDL 38 Rainbow18
+share/config.kde3/colors/IDL 39 Rainbow-White
+share/config.kde3/colors/IDL 40 Rainbow-Black
+share/config.kde3/colors/Kst Colors
+share/config.kde3/colors/Kst Grayscale 256
+share/config.kde3/colors/Kst Spectrum 1021
 share/doc/HTML.kde3/da/
 share/doc/HTML.kde3/da/kst/
 share/doc/HTML.kde3/da/kst/additionalformats-chapter.docbook

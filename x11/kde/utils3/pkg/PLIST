@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2013/10/22 11:34:11 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.32 2013/12/22 19:24:35 zhuk Exp $
 @bin bin/ark
 @bin bin/irkick
 @bin bin/kcalc
@@ -352,13 +352,13 @@ share/apps.kde3/superkaramba/
 share/apps.kde3/superkaramba/superkarambaui.rc
 share/autostart/irkick.desktop
 share/autostart/kgpg.desktop
-share/config.kcfg/
-share/config.kcfg/ark.kcfg
-share/config.kcfg/kcalc.kcfg
-share/config.kcfg/kedit.kcfg
-share/config.kcfg/kgpg.kcfg
-share/config.kcfg/kjots.kcfg
-share/config/ksim_panelextensionrc
+share/config.kcfg.kde3/
+share/config.kcfg.kde3/ark.kcfg
+share/config.kcfg.kde3/kcalc.kcfg
+share/config.kcfg.kde3/kedit.kcfg
+share/config.kcfg.kde3/kgpg.kcfg
+share/config.kcfg.kde3/kjots.kcfg
+share/config.kde3/ksim_panelextensionrc
 share/doc/HTML.kde3/en/KRegExpEditor/
 share/doc/HTML.kde3/en/KRegExpEditor/altn.png
 share/doc/HTML.kde3/en/KRegExpEditor/altntool.png

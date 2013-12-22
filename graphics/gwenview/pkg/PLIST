@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2013/12/13 09:43:09 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.26 2013/12/22 19:24:34 zhuk Exp $
 @bin bin/gwenview
 ${KDE}/gwenview.la
 ${KDE}/gwenview.so
@@ -82,14 +82,14 @@ share/apps.kde3/kconf_update/gwenview_thumbnail_size.upd
 share/apps.kde3/konqueror/
 share/apps.kde3/konqueror/servicemenus/
 share/apps.kde3/konqueror/servicemenus/konqgwenview.desktop
-share/config.kcfg/
-share/config.kcfg/fileoperationconfig.kcfg
-share/config.kcfg/fileviewconfig.kcfg
-share/config.kcfg/fullscreenconfig.kcfg
-share/config.kcfg/gvdirpartconfig.kcfg
-share/config.kcfg/imageviewconfig.kcfg
-share/config.kcfg/miscconfig.kcfg
-share/config.kcfg/slideshowconfig.kcfg
+share/config.kcfg.kde3/
+share/config.kcfg.kde3/fileoperationconfig.kcfg
+share/config.kcfg.kde3/fileviewconfig.kcfg
+share/config.kcfg.kde3/fullscreenconfig.kcfg
+share/config.kcfg.kde3/gvdirpartconfig.kcfg
+share/config.kcfg.kde3/imageviewconfig.kcfg
+share/config.kcfg.kde3/miscconfig.kcfg
+share/config.kcfg.kde3/slideshowconfig.kcfg
 share/doc/HTML.kde3/en/gwenview/
 share/doc/HTML.kde3/en/gwenview/browse_mode.png
 share/doc/HTML.kde3/en/gwenview/common

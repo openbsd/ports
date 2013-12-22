@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2013/10/22 11:34:25 zhuk Exp $
+# $OpenBSD: Makefile,v 1.22 2013/12/22 19:24:35 zhuk Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	twin panel file manager for KDE
 
 DISTNAME=	krusader-1.80.0
-REVISION=	12
+REVISION=	13
 
 CATEGORIES=	x11 x11/kde
 

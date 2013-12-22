@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/10/22 11:34:26 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.10 2013/12/22 19:24:35 zhuk Exp $
 @bin bin/tellico
 share/applications/kde/tellico.desktop
 share/apps.kde3/kconf_update/tellico-1-3-update.pl
@@ -110,8 +110,8 @@ share/apps.kde3/tellico/welcome.html
 share/apps.kde3/tellico/xmp2tellico.xsl
 share/apps.kde3/tellico/yahoo2tellico.xsl
 share/apps.kde3/tellico/z3950-servers.cfg
-share/config.kcfg/tellico_config.kcfg
-share/config/tellicorc
+share/config.kcfg.kde3/tellico_config.kcfg
+share/config.kde3/tellicorc
 share/doc/HTML.kde3/en/tellico/
 share/doc/HTML.kde3/en/tellico/CMakeLists.txt
 share/doc/HTML.kde3/en/tellico/advanced.docbook

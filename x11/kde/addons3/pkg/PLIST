@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2013/10/22 11:33:56 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.34 2013/12/22 19:24:34 zhuk Exp $
 @bin bin/atlantikdesigner
 @bin bin/fsview
 bin/jpegorient
@@ -352,9 +352,9 @@ share/apps.kde3/noatun/tyler.plugin
 share/apps.kde3/noatun/tylerstates
 share/apps.kde3/noatun/wakeup.plugin
 share/apps.kde3/noatun/wavecapture.plugin
-share/config.kcfg/kbinaryclock.kcfg
-share/config.kcfg/konq_sidebarnews.kcfg
-share/config/translaterc
+share/config.kcfg.kde3/kbinaryclock.kcfg
+share/config.kcfg.kde3/konq_sidebarnews.kcfg
+share/config.kde3/translaterc
 share/doc/HTML.kde3/en/kate-plugins/
 share/doc/HTML.kde3/en/kate-plugins/common
 share/doc/HTML.kde3/en/kate-plugins/configure_insertcommand.png

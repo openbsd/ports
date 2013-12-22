@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2013/10/26 23:18:15 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2013/12/22 19:24:34 zhuk Exp $
 @pkgpath x11/kde/accessibility3
 @bin bin/kmag
 @bin bin/kmousetool
@@ -328,7 +328,7 @@ share/apps.kde3/kttsd/xmltransformer/xhtml2ssml.xsl
 share/apps.kde3/kttsd/xmltransformer/xhtml2ssml_simple.xsl
 share/apps.kde3/kttsd/xslt/
 share/apps.kde3/kttsd/xslt/SSMLtoPlainText.xsl
-share/config/kmouthrc
+share/config.kde3/kmouthrc
 share/doc/HTML.kde3/en/kmag/
 share/doc/HTML.kde3/en/kmag/common
 share/doc/HTML.kde3/en/kmag/index.cache.bz2

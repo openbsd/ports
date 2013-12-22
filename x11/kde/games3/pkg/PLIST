@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2013/10/22 11:33:59 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.31 2013/12/22 19:24:34 zhuk Exp $
 @bin bin/atlantik
 @bin bin/kasteroids
 @bin bin/katomic
@@ -2242,21 +2242,21 @@ share/apps.kde3/lskat/grafix/type3.png
 share/apps.kde3/lskat/lskatui.rc
 share/apps.kde3/zeroconf/
 share/apps.kde3/zeroconf/_kbattleship._tcp
-share/config.kcfg/
-share/config.kcfg/kasteroids.kcfg
-share/config.kcfg/kfouleggs.kcfg
-share/config.kcfg/kjumpingcube.kcfg
-share/config.kcfg/klines.kcfg
-share/config.kcfg/kmahjongg.kcfg
-share/config.kcfg/kreversi.kcfg
-share/config.kcfg/kshisen.kcfg
-share/config.kcfg/ksirtet.kcfg
-share/config.kcfg/ksnake.kcfg
-share/config.kcfg/kspaceduel.kcfg
-share/config.kcfg/ktron.kcfg
-share/config.kcfg/kwin4.kcfg
-share/config/magic/
-share/config/magic/kolf.magic
+share/config.kcfg.kde3/
+share/config.kcfg.kde3/kasteroids.kcfg
+share/config.kcfg.kde3/kfouleggs.kcfg
+share/config.kcfg.kde3/kjumpingcube.kcfg
+share/config.kcfg.kde3/klines.kcfg
+share/config.kcfg.kde3/kmahjongg.kcfg
+share/config.kcfg.kde3/kreversi.kcfg
+share/config.kcfg.kde3/kshisen.kcfg
+share/config.kcfg.kde3/ksirtet.kcfg
+share/config.kcfg.kde3/ksnake.kcfg
+share/config.kcfg.kde3/kspaceduel.kcfg
+share/config.kcfg.kde3/ktron.kcfg
+share/config.kcfg.kde3/kwin4.kcfg
+share/config.kde3/magic/
+share/config.kde3/magic/kolf.magic
 share/doc/HTML.kde3/en/atlantik/
 share/doc/HTML.kde3/en/atlantik/common
 share/doc/HTML.kde3/en/atlantik/index.cache.bz2

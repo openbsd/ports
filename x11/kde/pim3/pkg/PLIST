@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2013/10/22 11:34:10 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.41 2013/12/22 19:24:35 zhuk Exp $
 @conflict kdelibs-<3.4
 @conflict kdebase-<3.4
 @conflict kpilot-*
@@ -1736,38 +1736,38 @@ share/apps.kde3/libkleopatra/pics/key_unknown.png
 share/autostart/kalarm.tray.desktop
 share/autostart/kalarmd.autostart.desktop
 share/autostart/korgac.desktop
-share/config.kcfg/abbrowserconduit.kcfg
-share/config.kcfg/akregator.kcfg
-share/config.kcfg/custommimeheader.kcfg
-share/config.kcfg/customtemplates_kfg.kcfg
-share/config.kcfg/docconduit.kcfg
-share/config.kcfg/egroupware.kcfg
-share/config.kcfg/groupwise.kcfg
-share/config.kcfg/kandy.kcfg
-share/config.kcfg/kmail.kcfg
-share/config.kcfg/knoteconfig.kcfg
-share/config.kcfg/knotesconduit.kcfg
-share/config.kcfg/knotesglobalconfig.kcfg
-share/config.kcfg/kolab.kcfg
-share/config.kcfg/kontact.kcfg
-share/config.kcfg/korganizer.kcfg
-share/config.kcfg/kpalmdoc.kcfg
-share/config.kcfg/kpilot.kcfg
-share/config.kcfg/kpilotlib.kcfg
-share/config.kcfg/memofileconduit.kcfg
-share/config.kcfg/mk4config.kcfg
-share/config.kcfg/pimemoticons.kcfg
-share/config.kcfg/popmail.kcfg
-share/config.kcfg/replyphrases.kcfg
-share/config.kcfg/scalix.kcfg
-share/config.kcfg/slox.kcfg
-share/config.kcfg/sysinfoconduit.kcfg
-share/config.kcfg/templatesconfiguration_kfg.kcfg
-share/config.kcfg/timeconduit.kcfg
-share/config.kcfg/vcalconduitbase.kcfg
-share/config/kmail.antispamrc
-share/config/kmail.antivirusrc
-share/config/libkleopatrarc
+share/config.kcfg.kde3/abbrowserconduit.kcfg
+share/config.kcfg.kde3/akregator.kcfg
+share/config.kcfg.kde3/custommimeheader.kcfg
+share/config.kcfg.kde3/customtemplates_kfg.kcfg
+share/config.kcfg.kde3/docconduit.kcfg
+share/config.kcfg.kde3/egroupware.kcfg
+share/config.kcfg.kde3/groupwise.kcfg
+share/config.kcfg.kde3/kandy.kcfg
+share/config.kcfg.kde3/kmail.kcfg
+share/config.kcfg.kde3/knoteconfig.kcfg
+share/config.kcfg.kde3/knotesconduit.kcfg
+share/config.kcfg.kde3/knotesglobalconfig.kcfg
+share/config.kcfg.kde3/kolab.kcfg
+share/config.kcfg.kde3/kontact.kcfg
+share/config.kcfg.kde3/korganizer.kcfg
+share/config.kcfg.kde3/kpalmdoc.kcfg
+share/config.kcfg.kde3/kpilot.kcfg
+share/config.kcfg.kde3/kpilotlib.kcfg
+share/config.kcfg.kde3/memofileconduit.kcfg
+share/config.kcfg.kde3/mk4config.kcfg
+share/config.kcfg.kde3/pimemoticons.kcfg
+share/config.kcfg.kde3/popmail.kcfg
+share/config.kcfg.kde3/replyphrases.kcfg
+share/config.kcfg.kde3/scalix.kcfg
+share/config.kcfg.kde3/slox.kcfg
+share/config.kcfg.kde3/sysinfoconduit.kcfg
+share/config.kcfg.kde3/templatesconfiguration_kfg.kcfg
+share/config.kcfg.kde3/timeconduit.kcfg
+share/config.kcfg.kde3/vcalconduitbase.kcfg
+share/config.kde3/kmail.antispamrc
+share/config.kde3/kmail.antivirusrc
+share/config.kde3/libkleopatrarc
 share/doc/HTML.kde3/en/akregator/
 share/doc/HTML.kde3/en/akregator/add-feed.png
 share/doc/HTML.kde3/en/akregator/add-feed2.png

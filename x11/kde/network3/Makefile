@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2013/12/16 10:39:51 zhuk Exp $
+# $OpenBSD: Makefile,v 1.78 2013/12/22 19:24:34 zhuk Exp $
 
 COMMENT-main = 		K Desktop Environment, network applications
 COMMENT-kopsounds =	notification sounds for Kopete
@@ -10,7 +10,7 @@ PKGNAME-main =		${DISTNAME}
 PKGNAME-kopsounds =	kde3-kopete-sounds-${VERSION}
 PKGSPEC-main =		kdenetwork->=3,<4
 PKG_ARCH-kopsounds =	*
-REVISION-main = 	12
+REVISION-main = 	13
 
 SHARED_LIBS +=	kopete               2.0      # .1.0
 SHARED_LIBS +=	kopete_videodevice   1.0      # .0.0

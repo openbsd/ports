@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2013/12/17 11:55:59 zhuk Exp $
+# $OpenBSD: Makefile,v 1.20 2013/12/22 19:24:35 zhuk Exp $
 
 COMMENT=	front-end/embeddable KPart for MPlayer
 CATEGORIES=	x11 x11/kde
 DISTNAME=	kmplayer-0.6.4
 EXTRACT_SUFX=	.tar.bz2
 
-REVISION=	7
+REVISION=	8
 
 SHARED_LIBS=	kparts_kmplayer  0.0 \
 		kdeinit_kmplayer 0.0

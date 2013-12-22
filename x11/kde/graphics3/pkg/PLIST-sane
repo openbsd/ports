@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-sane,v 1.11 2013/10/22 11:34:00 zhuk Exp $
+@comment $OpenBSD: PLIST-sane,v 1.12 2013/12/22 19:24:34 zhuk Exp $
 @conflict kdegraphics-<3.5.10p17
 @bin bin/kooka
 lib/libkscan.la
@@ -25,7 +25,7 @@ share/apps.kde3/kooka/pics/scaletowidth.png
 share/apps.kde3/kooka/pics/thumbviewtile.png
 share/apps.kde3/kview/kpartplugins/kviewscanner.desktop
 share/apps.kde3/kview/kpartplugins/kviewscanner.rc
-share/config/kookarc
+share/config.kde3/kookarc
 share/icons/crystalsvg/16x16/actions/palette_color.png
 share/icons/crystalsvg/16x16/actions/palette_gray.png
 share/icons/crystalsvg/16x16/actions/palette_halftone.png

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2013/10/22 11:34:12 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.24 2013/12/22 19:24:35 zhuk Exp $
 @conflict quanta-*
 @pkgpath x11/kde/quanta
 @bin bin/kfilereplace
@@ -1560,7 +1560,7 @@ share/apps.kde3/quanta/toolbars/wml-1-2/tasks.toolbar.tgz
 share/apps.kde3/quanta/toolbars/wml-1-2/text.toolbar.tgz
 share/apps.kde3/quanta/toolbars/xml/
 share/apps.kde3/quanta/toolbars/xml/fonts.toolbar.tgz
-share/config.kcfg/klinkstatus.kcfg
+share/config.kcfg.kde3/klinkstatus.kcfg
 share/doc/HTML.kde3/en/kfilereplace/
 share/doc/HTML.kde3/en/kfilereplace/addstringsdialog_window.png
 share/doc/HTML.kde3/en/kfilereplace/backup_option.png

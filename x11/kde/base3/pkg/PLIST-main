@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2013/11/24 19:56:30 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2013/12/22 19:24:34 zhuk Exp $
 @conflict kdeartwork-<=3.4
 @conflict kdeedu-<3.4
 @pkgpath x11/kde/base3
@@ -2058,29 +2058,29 @@ share/autostart/klipper.desktop
 share/autostart/konqy_preload.desktop
 share/autostart/ktip.desktop
 share/autostart/panel.desktop
-share/config.kcfg/
-share/config.kcfg/kcm_useraccount.kcfg
-share/config.kcfg/kcm_useraccount_pass.kcfg
-share/config.kcfg/kdesktop.kcfg
-share/config.kcfg/keditbookmarks.kcfg
-share/config.kcfg/khelpcenter.kcfg
-share/config.kcfg/kickerSettings.kcfg
-share/config.kcfg/klaunch.kcfg
-share/config.kcfg/konq_listview.kcfg
-share/config.kcfg/konqueror.kcfg
-share/config.kcfg/kwebdesktop.kcfg
-share/config.kcfg/kwin.kcfg
-share/config.kcfg/launcherapplet.kcfg
-share/config.kcfg/mediamanagersettings.kcfg
-share/config.kcfg/taskbar.kcfg
-share/config/katerc
-share/config/kdesktop_custom_menu1
-share/config/kdesktop_custom_menu2
-share/config/kdesurc
-share/config/klipperrc
-share/config/konqsidebartng.rc
-share/config/kshorturifilterrc
-share/config/kxkb_groups
+share/config.kcfg.kde3/
+share/config.kcfg.kde3/kcm_useraccount.kcfg
+share/config.kcfg.kde3/kcm_useraccount_pass.kcfg
+share/config.kcfg.kde3/kdesktop.kcfg
+share/config.kcfg.kde3/keditbookmarks.kcfg
+share/config.kcfg.kde3/khelpcenter.kcfg
+share/config.kcfg.kde3/kickerSettings.kcfg
+share/config.kcfg.kde3/klaunch.kcfg
+share/config.kcfg.kde3/konq_listview.kcfg
+share/config.kcfg.kde3/konqueror.kcfg
+share/config.kcfg.kde3/kwebdesktop.kcfg
+share/config.kcfg.kde3/kwin.kcfg
+share/config.kcfg.kde3/launcherapplet.kcfg
+share/config.kcfg.kde3/mediamanagersettings.kcfg
+share/config.kcfg.kde3/taskbar.kcfg
+share/config.kde3/katerc
+share/config.kde3/kdesktop_custom_menu1
+share/config.kde3/kdesktop_custom_menu2
+share/config.kde3/kdesurc
+share/config.kde3/klipperrc
+share/config.kde3/konqsidebartng.rc
+share/config.kde3/kshorturifilterrc
+share/config.kde3/kxkb_groups
 share/desktop-directories/
 share/desktop-directories/kde-development-translation.directory
 share/desktop-directories/kde-development-webdevelopment.directory

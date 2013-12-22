@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2013/10/22 11:33:57 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.19 2013/12/22 19:24:34 zhuk Exp $
 @bin bin/kcron
 @bin bin/kpackage
 @bin bin/kuser
@@ -92,8 +92,8 @@ share/apps.kde3/kuser/kuserui.rc
 share/apps.kde3/kuser/pics/
 share/apps.kde3/kuser/pics/group.png
 share/apps.kde3/kuser/pics/user.png
-share/config.kcfg/
-share/config.kcfg/kuser.kcfg
+share/config.kcfg.kde3/
+share/config.kcfg.kde3/kuser.kcfg
 share/doc/HTML.kde3/en/kcron/
 share/doc/HTML.kde3/en/kcron/common
 share/doc/HTML.kde3/en/kcron/index.cache.bz2

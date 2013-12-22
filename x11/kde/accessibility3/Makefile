@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2013/10/26 23:18:15 zhuk Exp $
+# $OpenBSD: Makefile,v 1.54 2013/12/22 19:24:34 zhuk Exp $
 
 COMMENT-main = 		X11 toolkit, accessibility aids
 COMMENT-mono = 		one-colour KDE icon theme
@@ -26,7 +26,7 @@ LIB_DEPENDS-mono =
 
 SEPARATE_BUILD =	flavored
 
-REVISION-main =	16
+REVISION-main =	17
 
 WANTLIB =	GL FLAC ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi
 WANTLIB +=	Xinerama Xmu Xrandr Xrender Xt Xtst Xxf86vm art_lgpl_2

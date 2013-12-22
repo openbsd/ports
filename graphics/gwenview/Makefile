@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.61 2013/12/13 09:40:03 zhuk Exp $
+# $OpenBSD: Makefile,v 1.62 2013/12/22 19:24:34 zhuk Exp $
 
 COMMENT=	image viewer for KDE
 
 DISTNAME=	gwenview-1.4.2
 PKGSPEC=	gwenview-<4
-REVISION =	15
+REVISION =	16
 
 SHARED_LIBS +=	gwenviewcore         5.0      # .1.0
 CATEGORIES=	graphics x11 x11/kde

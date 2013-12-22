@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2013/10/22 11:34:12 zhuk Exp $
+# $OpenBSD: Makefile,v 1.46 2013/12/22 19:24:35 zhuk Exp $
 
 COMMENT = 		web development tool
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdewebdev-${VERSION}
-REVISION =		11
+REVISION =		12
 MODKDE_VERSION =	3.5.8
 PKGSPEC =		kdewebdev->=3,<4
 

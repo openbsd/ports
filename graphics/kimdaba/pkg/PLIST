@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/10/22 11:34:17 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.9 2013/12/22 19:24:34 zhuk Exp $
 @bin bin/kphotoalbum
 share/applications/kde/kphotoalbum-import.desktop
 share/applications/kde/kphotoalbum.desktop
@@ -97,7 +97,7 @@ share/apps.kde3/kphotoalbum/themes/rounded/upbar.png
 share/apps.kde3/kphotoalbum/themes/rounded/upleft.png
 share/apps.kde3/kphotoalbum/themes/rounded/upright.png
 share/apps.kde3/kphotoalbum/tips
-share/config/kphotoalbumrc
+share/config.kde3/kphotoalbumrc
 share/doc/HTML.kde3/da/
 share/doc/HTML.kde3/da/kphotoalbum/
 share/doc/HTML.kde3/da/kphotoalbum/browsing.docbook
