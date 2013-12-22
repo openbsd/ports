@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/12/21 06:30:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2013/12/22 09:33:54 ajacoutot Exp $
 
 COMMENT=		library for managing information about operating systems
 
@@ -26,7 +26,8 @@ MODULES=		devel/gettext \
 MODGNOME_TOOLS=		gi vala
 
 # needed for test
-BUILD_DEPENDS +=	devel/libsoup
+BUILD_DEPENDS +=	devel/check \
+			devel/libsoup
 
 LIB_DEPENDS=		devel/glib2 \
 			textproc/libxslt
