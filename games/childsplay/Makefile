@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/12/22 09:40:18 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2013/12/22 09:43:28 ajacoutot Exp $
 
 COMMENT=	collection of educational activities for young children
 
@@ -18,12 +18,13 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=childsplay/Childsplay/}
 
 MODULES=	lang/python
 
+# NO_BUILD=Yes but python(1) is used in do-install
+BUILD_DEPENDS=	${_MODPY_BUILD_DEPENDS}
+
 RUN_DEPENDS=	databases/py-sqlalchemy \
 		devel/pygame \
 		x11/py-gtk2
 
-# ${MODPY_BIN} used during do-install
-BUILD_DEPENDS+=	${MODPY_RUN_DEPENDS}
 PKG_ARCH=	*
 NO_TEST=	Yes
 NO_BUILD=	Yes
