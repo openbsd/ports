@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/12/21 10:41:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2013/12/22 09:40:18 landry Exp $
 
 COMMENT=	collection of educational activities for young children
 
@@ -22,8 +22,11 @@ RUN_DEPENDS=	databases/py-sqlalchemy \
 		devel/pygame \
 		x11/py-gtk2
 
+# ${MODPY_BIN} used during do-install
+BUILD_DEPENDS+=	${MODPY_RUN_DEPENDS}
 PKG_ARCH=	*
 NO_TEST=	Yes
+NO_BUILD=	Yes
 
 MODPY_ADJ_FILES=childsplay.py
 
