@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2013/09/30 06:48:48 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2013/12/22 01:00:35 bcallah Exp $
 
 COMMENT =	2D RTS space combat game
-DISTNAME =	spacezero-0.84.02
+DISTNAME =	spacezero-0.86.00
 CATEGORIES =	games x11
 
 HOMEPAGE =	http://spacezero.sourceforge.net/

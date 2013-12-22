@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/07/08 13:52:46 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/12/22 01:00:35 bcallah Exp $
 @bin bin/spacezero
 share/doc/spacezero/
 share/doc/spacezero/manual.html
@@ -18,6 +18,8 @@ share/doc/spacezero/manual_files/planet.png
 share/doc/spacezero/manual_files/planetlist.png
 share/doc/spacezero/manual_files/queen0.png
 share/doc/spacezero/manual_files/radar0.png
+share/doc/spacezero/manual_files/satellite.png
+share/doc/spacezero/manual_files/satellites.png
 share/doc/spacezero/manual_files/shiplist.png
 share/doc/spacezero/manual_files/space.ico
 share/doc/spacezero/manual_files/statistics.png
@@ -25,8 +27,12 @@ share/doc/spacezero/manual_files/target.png
 share/doc/spacezero/manual_files/terminal3.png
 share/doc/spacezero/manual_files/title.png
 share/doc/spacezero/manual_files/tower0.png
+share/doc/spacezero/manual_files/transport.png
 share/spacezero/
 share/spacezero/letterfrequencytable
+share/spacezero/locales/
+share/spacezero/locales/en.txt
+share/spacezero/locales/es.txt
 share/spacezero/sounds/
 share/spacezero/sounds/bfire.ogg
 share/spacezero/sounds/crash.ogg
