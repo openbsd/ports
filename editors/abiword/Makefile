@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.94 2013/11/29 08:51:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.95 2013/12/22 10:41:26 landry Exp $
+
+BROKEN-alpha=	gr_RenderInfo.cpp:426:1: internal compiler error: Segmentation fault
 
 SHARED_ONLY=	Yes
 
