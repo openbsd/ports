@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.1 2013/12/23 09:44:46 jasper Exp $
+$OpenBSD: README-main,v 1.2 2013/12/23 09:51:12 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -18,7 +18,8 @@ to setup SSL. First create an empty jetty.ini:
     touch ${SYSCONFDIR}/puppetdb/conf.d/jetty.ini
 
 As the Puppet Master need not to run on the same host as PuppetDB we will
-assume your configuration is stored in /etc/puppet/.
+assume your configuration is stored in ${SYSCONFDIR}/puppet/ on
+OpenBSD or /etc/puppet/ on most other operating systems.
 
 Now manually copy over the following .pem files from your Puppet Master into
 ${SYSCONFDIR}/puppetdb/ssl/ (relative to /etc/puppet/):
