@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/10 22:55:06 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2013/12/23 15:07:50 espie Exp $
 
 COMMENT =	MOD player
 DISTNAME =	tracker-5.3
-REVISION =	1
+REVISION =	2
 CATEGORIES =	audio
 
 MASTER_SITES =	ftp://ftp.uni-trier.de/pub/unix/audio/tracker/

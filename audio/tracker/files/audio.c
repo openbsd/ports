@@ -52,9 +52,11 @@ unsigned long open_audio(unsigned long f, int s)
 	sio_onmove(hdl, movecb, NULL);
 
 	sio_initpar(&par);
-	par.rate = f ? f : 22050;
+	if (f)
+		par.rate = f;
+	par.pchan = 2;
 	if (!sio_setpar(hdl, &par) || !sio_getpar(hdl, &par) || !sio_start(hdl) ||
-	    (par.bits != 8 && par.bits != 16))
+	    (par.bits != 8 && par.bits != 16) || par.pchan > 2)
 		end_all("Sorry, no audio format supported by this binary is available");
 
 	buf_max = par.appbufsz * par.bps * par.pchan;
