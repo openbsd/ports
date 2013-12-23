@@ -1,6 +1,6 @@
-$OpenBSD: patch-kdecore_kstandarddirs_cpp,v 1.4 2013/12/22 19:29:41 zhuk Exp $
+$OpenBSD: patch-kdecore_kstandarddirs_cpp,v 1.5 2013/12/23 19:23:01 zhuk Exp $
 --- kdecore/kstandarddirs.cpp.orig	Wed Feb 13 12:41:08 2008
-+++ kdecore/kstandarddirs.cpp	Wed Dec 18 20:51:23 2013
++++ kdecore/kstandarddirs.cpp	Mon Dec 23 16:40:27 2013
 @@ -274,10 +274,21 @@ bool KStandardDirs::addResourceType( const char *type,
      if (copy.at(copy.length() - 1) != '/')
  	copy += '/';
@@ -57,10 +57,10 @@ $OpenBSD: patch-kdecore_kstandarddirs_cpp,v 1.4 2013/12/22 19:29:41 zhuk Exp $
      }
 +
 +    // OpenBSD specific
-+    addResourceType("config", "share/config");
-+    addResourceType("data", "share/apps");
-+    addResourceType("html", "share/doc/HTML");
-+    addResourceType("kcfg", "share/config.kcfg");
++    addResourceType("config", "share/config", false);
++    addResourceType("data", "share/apps", false);
++    addResourceType("html", "share/doc/HTML", false);
++    addResourceType("kcfg", "share/config.kcfg", false);
  
      addResourceDir("home", QDir::homeDirPath());
  }
