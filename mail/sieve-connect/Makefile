@@ -1,15 +1,18 @@
-# $OpenBSD: Makefile,v 1.6 2013/04/16 10:22:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2013/12/23 13:24:17 jca Exp $
 
 COMMENT =	perl sieveshell-compatible ManageSieve client
 
-DISTNAME =	sieve-connect-0.85
+GH_VER =	v0.87
+V =		${GH_VER:S/v//}
+PROJECT =	sieve-connect
+DISTNAME =	${PROJECT}-${V}
 CATEGORIES =	mail
 PKG_ARCH =	*
 
 MAINTAINER =	LEVAI Daniel <leva@ecentrum.hu>
 
-HOMEPAGE =	http://people.spodhuis.org/phil.pennock/software/
-MASTER_SITES =	${HOMEPAGE}
+HOMEPAGE =	http://github.com/philpennock/${PROJECT}
+MASTER_SITES =	http://github.com/philpennock/${PROJECT}/releases/download/${GH_VER}/
 
 EXTRACT_SUFX =	.tar.bz2
 
