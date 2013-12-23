@@ -1,8 +1,7 @@
-$OpenBSD: patch-etc_client_cfg_dist,v 1.5 2013/03/18 13:48:18 ajacoutot Exp $
---- etc/client.cfg.dist.orig	Thu Jan 10 18:43:11 2013
-+++ etc/client.cfg.dist	Mon Mar 18 14:45:04 2013
-@@ -1,7 +1,7 @@
- topicprefix = /topic/
+$OpenBSD: patch-etc_client_cfg_dist,v 1.6 2013/12/23 17:08:19 jasper Exp $
+--- etc/client.cfg.dist.orig	Thu Nov  7 18:56:51 2013
++++ etc/client.cfg.dist	Mon Dec 23 17:13:29 2013
+@@ -1,6 +1,6 @@
  main_collective = mcollective
  collectives = mcollective
 -libdir = /usr/libexec/mcollective
@@ -10,9 +9,9 @@ $OpenBSD: patch-etc_client_cfg_dist,v 1.5 2013/03/18 13:48:18 ajacoutot Exp $
  logger_type = console
  loglevel = warn
  
-@@ -15,7 +15,20 @@ plugin.stomp.port = 61613
- plugin.stomp.user = mcollective
- plugin.stomp.password = secret
+@@ -15,7 +15,20 @@ plugin.activemq.pool.1.port = 6163
+ plugin.activemq.pool.1.user = mcollective
+ plugin.activemq.pool.1.password = marionette
  
 +# ActiveMQ connector
 +#connector = activemq
