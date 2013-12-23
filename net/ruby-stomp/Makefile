@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2013/10/26 23:55:37 jeremy Exp $
+# $OpenBSD: Makefile,v 1.13 2013/12/23 17:07:52 jasper Exp $
 
 COMMENT = 	Streaming Text Orientated Messaging Protocol (STOMP) client
 
-DISTNAME = 	stomp-1.2.9
-REVISION = 	0
+DISTNAME = 	stomp-1.3.2
 CATEGORIES = 	net
 
 HOMEPAGE =	https://github.com/stompgem/stomp
