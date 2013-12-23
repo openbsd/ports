@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.23 2013/12/22 19:34:05 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.24 2013/12/23 12:36:50 zhuk Exp $
 @conflict kdebase-<3.5
 @conflict kdeartwork-<3.4
 @conflict kdeaddons-<3.4
@@ -62,7 +62,7 @@ bin/kfmexec
 @bin bin/make_driver_db_lpr
 @bin bin/makekdewidgets
 @bin bin/meinproc
-bin/preparetips
+@comment bin/preparetips
 @bin bin/start_kdeinit
 @bin bin/start_kdeinit_wrapper
 include/kde/arts/artskde.h
