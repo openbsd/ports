@@ -1,0 +1,3 @@
+This library is a thin wrapper around the REST API providing some
+convinience functions and objects to request and hold data from
+PuppetDB.

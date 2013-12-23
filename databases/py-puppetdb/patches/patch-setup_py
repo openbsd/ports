@@ -1,0 +1,43 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2013/12/23 08:30:40 jasper Exp $
+
+Remove modules that are not ported (setuptools.command.test and Tox)
+
+--- setup.py.orig	Sun Dec 22 23:00:11 2013
++++ setup.py	Sun Dec 22 23:01:50 2013
+@@ -3,7 +3,6 @@ import os
+ import codecs
+ 
+ from setuptools import setup, find_packages
+-from setuptools.command.test import test as TestCommand
+ 
+ import pypuppetdb.package
+ 
+@@ -13,19 +12,6 @@ if sys.argv[-1] == 'publish':
+     sys.exit()
+ 
+ 
+-class Tox(TestCommand):
+-
+-    def finalize_options(self):
+-        TestCommand.finalize_options(self)
+-        self.test_args = []
+-        self.test_suite = True
+-
+-    def run_tests(self):
+-        #import here, cause outside the eggs aren't loaded
+-        import tox
+-        errno = tox.cmdline(self.test_args)
+-        sys.exit(errno)
+-
+ with codecs.open('README.rst', encoding='utf-8') as f:
+     README = f.read()
+ 
+@@ -46,8 +32,6 @@ setup(
+     description='Library for working with the PuppetDB REST API.',
+     long_description='\n'.join((README, CHANGELOG)),
+     keywords='puppet puppetdb',
+-    tests_require=['tox'],
+-    cmdclass={'test': Tox},
+     install_requires=[
+         "requests >= 1.2.3",
+         ],

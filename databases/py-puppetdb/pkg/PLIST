@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/23 08:30:40 jasper Exp $
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb-dev-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb-dev-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb-dev-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb-dev-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb-dev-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb-dev-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/api/
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/api/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/api/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/api/v2.py
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/api/v2.pyc
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/api/v3.py
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/api/v3.pyc
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/errors.py
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/errors.pyc
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/package.py
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/package.pyc
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/types.py
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/types.pyc
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/utils.py
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb/utils.pyc
