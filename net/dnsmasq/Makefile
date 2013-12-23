@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.34 2013/11/03 00:48:45 brad Exp $
+# $OpenBSD: Makefile,v 1.35 2013/12/23 21:13:39 brad Exp $
 
 COMMENT=	lightweight caching DNS forwarder, DHCP and TFTP server
 
-DISTNAME=	dnsmasq-2.67
+DISTNAME=	dnsmasq-2.68
 CATEGORIES=	net
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/
 EXTRACT_SUFX=	.tar.xz
@@ -18,18 +18,16 @@ WANTLIB=	c
 
 MAKE_ENV=	CC="${CC}"
 MAKE_FLAGS=	CFLAGS="${CFLAGS} -Wall -W"
+FAKE_FLAGS=	MANDIR="${PREFIX}/man"
 
 NO_TEST=	Yes
 
 pre-build:
-	@${SUBST_CMD} ${WRKSRC}/man/dnsmasq.8 \
-		${WRKSRC}/src/config.h \
-		${WRKSRC}/dnsmasq.conf.example
+	@${SUBST_CMD} ${WRKSRC}/man/dnsmasq.8 ${WRKSRC}/src/config.h \
+	    ${WRKSRC}/dnsmasq.conf.example
 
-do-install:
+post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dnsmasq
-	${INSTALL_PROGRAM} ${WRKSRC}/src/dnsmasq ${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/dnsmasq.conf.example ${PREFIX}/share/examples/dnsmasq
-	${INSTALL_MAN} ${WRKSRC}/man/dnsmasq.8 ${PREFIX}/man/man8
 
 .include <bsd.port.mk>
