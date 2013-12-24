@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2013/12/24 13:03:15 zhuk Exp $
+# $OpenBSD: Makefile,v 1.33 2013/12/24 21:08:25 zhuk Exp $
 
 COMMENT-main =		KDE image plugins API
 COMMENT-icons =		icons for libkipi
@@ -37,7 +37,6 @@ WANTLIB-icons =
 MULTI_PACKAGES =	-main -icons
 MODULES =		x11/kde devel/gettext
 
-LIBTOOL_FLAGS +=	--tag=disable-static
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.61
 MODKDE_VERSION =	3.5.7
