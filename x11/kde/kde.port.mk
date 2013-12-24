@@ -1,4 +1,4 @@
-# $OpenBSD: kde.port.mk,v 1.42 2013/10/22 11:33:55 zhuk Exp $
+# $OpenBSD: kde.port.mk,v 1.43 2013/12/24 10:38:48 zhuk Exp $
 
 SHARED_ONLY ?=	Yes
 
@@ -33,13 +33,16 @@ MODKDE_CONFIG_GUESS_DIRS =	${WRKSRC} ${WRKSRC}/admin
 MODKDE_CONFIGURE_ENV =		UIC_PATH="${MODQT_UIC}" UIC="${MODQT_UIC}"
 MODKDE_CONFIGURE_ENV +=		RUN_KAPPFINDER=no KDEDIR=${LOCALBASE}
 MODKDE_CONFIGURE_ENV +=		PTHREAD_LIBS=-pthread
+MODKDE_CONFIGURE_ENV +=		kde_confdir='\$${datadir}/config.kde3'
 MODKDE_CONFIGURE_ENV +=		kde_datadir='\$${datadir}/apps.kde3'
 MODKDE_CONFIGURE_ENV +=		kde_htmldir='\$${datadir}/doc/HTML.kde3'
+MODKDE_CONFIGURE_ENV +=		kde_kcfgdir='\$${datadir}/config.kcfg.kde3'
 MODKDE_MAKE_FLAGS =		CXXLD='--tag CXX ${CXX} -L${MODQT_LIBDIR}'
 MODKDE_MAKE_FLAGS +=		LIBRESOLV=
 
 MODKDE_post-patch =	find ${WRKDIST} -name Makefile.am -exec touch {}.in \;
 
+MODKDE_CONFIG_SUBDIR =	share/config.kde3
 MODKDE_DATA_SUBDIR =	share/apps.kde3
 MODKDE_HTML_SUBDIR =	share/doc/HTML.kde3
 
