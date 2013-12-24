@@ -1,9 +1,10 @@
-$OpenBSD: README,v 1.1 2013/01/25 11:09:20 jasper Exp $
+$OpenBSD: README,v 1.2 2013/12/24 12:56:19 jca Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-kc comes with a tiny and simple utility which can convert an exported pwsafe
-database to a kc compatible XML database (that can be imported to it later).
-It is installed under ${PREFIX}/share/kc/
+kc comes with a tiny and simple utility which can convert an exported
+pwsafe database to a kc compatible XML database (that can be imported to
+it later). It is installed under ${PREFIX}/share/kc/. Note that this
+script requires Perl modules provided by the p5-HTML-Parser package.
