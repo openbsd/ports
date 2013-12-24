@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2013/09/09 15:43:25 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2013/12/24 17:21:40 benoit Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	game of life simulator
 
-PKGNAME =	golly-2.5
+PKGNAME =	golly-2.6
 DISTNAME =	${PKGNAME}-src
 WRKSRC =	${WRKDIST}/gui-wx/configure
 CATEGORIES =	games math

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/09/09 15:43:25 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2013/12/24 17:21:40 benoit Exp $
 @bin bin/bgolly
 @bin bin/golly
 share/applications/golly.desktop
@@ -112,6 +112,7 @@ share/golly/Patterns/Generations/Steeplechase.mcl
 share/golly/Patterns/Generations/Transers.mcl
 share/golly/Patterns/Generations/What-a-mess.mcl
 share/golly/Patterns/HashLife/
+share/golly/Patterns/HashLife/Replicator-p237228340.mc.gz
 share/golly/Patterns/HashLife/broken-lines.mc
 share/golly/Patterns/HashLife/catacryst.mc
 share/golly/Patterns/HashLife/gotts-dots.mc
@@ -120,6 +121,7 @@ share/golly/Patterns/HashLife/hashlife-oddity2.mc
 share/golly/Patterns/HashLife/hexadecimal.mc.gz
 share/golly/Patterns/HashLife/jagged.mc
 share/golly/Patterns/HashLife/jagged2.mc
+share/golly/Patterns/HashLife/loafer-gun-p8388608-linear.mc.gz
 share/golly/Patterns/HashLife/logarithmic-width.mc
 share/golly/Patterns/HashLife/metacatacryst.mc
 share/golly/Patterns/HashLife/metapixel-galaxy.mc.gz
@@ -197,6 +199,8 @@ share/golly/Patterns/Life/Guns/7-in-a-row-Cordership-V-gun.rle
 share/golly/Patterns/Life/Guns/Cordership-gun-p784.rle
 share/golly/Patterns/Life/Guns/golly-ticker.rle
 share/golly/Patterns/Life/Guns/gun-p165mwss.rle
+share/golly/Patterns/Life/Guns/loafer-gun-p210.rle
+share/golly/Patterns/Life/Guns/p59-gun-with-Snark-reflectors.rle
 share/golly/Patterns/Life/Guns/p690-PT-Cordership-gun.rle
 share/golly/Patterns/Life/Guns/pseudo-p34-gun.rle
 share/golly/Patterns/Life/Guns/vacuum-cleaner.rle
