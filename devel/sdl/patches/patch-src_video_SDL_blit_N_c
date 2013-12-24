@@ -1,9 +1,10 @@
-$OpenBSD: patch-src_video_SDL_blit_N_c,v 1.1 2012/03/02 09:10:38 dcoppa Exp $
+$OpenBSD: patch-src_video_SDL_blit_N_c,v 1.2 2013/12/24 20:21:42 brad Exp $
 
-Fixed bug 1424 - Handling of alpha channel in Altivec accelerated blit functions
+- Fixed bug 1424 - Handling of alpha channel in Altivec accelerated blit functions
+- Use fast path for RGB 565 -> 32-bit XRGB 8888
 
---- src/video/SDL_blit_N.c.orig	Wed Feb 22 19:36:49 2012
-+++ src/video/SDL_blit_N.c	Wed Feb 22 19:38:46 2012
+--- src/video/SDL_blit_N.c.orig	Thu Jan 19 01:30:06 2012
++++ src/video/SDL_blit_N.c	Thu Oct 25 21:57:48 2012
 @@ -689,6 +689,8 @@ static void ConvertAltivec32to32_noprefetch(SDL_BlitIn
          while ((UNALIGNED_PTR(dst)) && (width)) {
              bits = *(src++);
@@ -40,3 +41,21 @@ Fixed bug 1424 - Handling of alpha channel in Altivec accelerated blit functions
              *(dst++) = MAKE8888(dstfmt, r, g, b, a);
              extrawidth--;
          }
+@@ -2299,13 +2307,13 @@ static const struct blit_table normal_blit_2[] = {
+       2, NULL, Blit_RGB555_32Altivec, NO_ALPHA | COPY_ALPHA | SET_ALPHA },
+ #endif
+     { 0x0000F800,0x000007E0,0x0000001F, 4, 0x00FF0000,0x0000FF00,0x000000FF,
+-      0, NULL, Blit_RGB565_ARGB8888, SET_ALPHA },
++      0, NULL, Blit_RGB565_ARGB8888, NO_ALPHA | COPY_ALPHA | SET_ALPHA },
+     { 0x0000F800,0x000007E0,0x0000001F, 4, 0x000000FF,0x0000FF00,0x00FF0000,
+-      0, NULL, Blit_RGB565_ABGR8888, SET_ALPHA },
++      0, NULL, Blit_RGB565_ABGR8888, NO_ALPHA | COPY_ALPHA | SET_ALPHA },
+     { 0x0000F800,0x000007E0,0x0000001F, 4, 0xFF000000,0x00FF0000,0x0000FF00,
+-      0, NULL, Blit_RGB565_RGBA8888, SET_ALPHA },
++      0, NULL, Blit_RGB565_RGBA8888, NO_ALPHA | COPY_ALPHA | SET_ALPHA },
+     { 0x0000F800,0x000007E0,0x0000001F, 4, 0x0000FF00,0x00FF0000,0xFF000000,
+-      0, NULL, Blit_RGB565_BGRA8888, SET_ALPHA },
++      0, NULL, Blit_RGB565_BGRA8888, NO_ALPHA | COPY_ALPHA | SET_ALPHA },
+ 
+     /* Default for 16-bit RGB source, used if no other blitter matches */
+     { 0,0,0, 0, 0,0,0, 0, NULL, BlitNtoN, 0 }
