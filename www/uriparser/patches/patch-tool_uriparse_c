@@ -1,0 +1,11 @@
+$OpenBSD: patch-tool_uriparse_c,v 1.1.1.1 2013/12/24 20:43:25 bentley Exp $
+--- tool/uriparse.c.orig	Mon Dec 23 08:36:39 2013
++++ tool/uriparse.c	Mon Dec 23 08:36:41 2013
+@@ -41,6 +41,7 @@
+ #include <uriparser/Uri.h>
+ #include <arpa/inet.h>
+ #include <netinet/in.h>
++#include <sys/socket.h>
+ 
+ 
+ #define RANGE(x)  (int)((x).afterLast-(x).first), ((x).first)
