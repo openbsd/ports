@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2013/08/22 08:02:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2013/12/24 15:18:38 kili Exp $
 @conflict gstoraster-*
 @pkgpath print/gstoraster
 @pkgpath print/ghostscript/afpl${FLAVOR_STRING}
@@ -17,7 +17,6 @@ bin/gsnd
 bin/lprsetup.sh
 bin/pdf2dsc
 bin/pdf2ps
-bin/pdfopt
 bin/pf2afm
 bin/pfbtopfa
 bin/pphs
@@ -554,7 +553,6 @@ share/ghostscript/${VERSION}/lib/necp2x6.upp
 share/ghostscript/${VERSION}/lib/packfile.ps
 share/ghostscript/${VERSION}/lib/pcharstr.ps
 share/ghostscript/${VERSION}/lib/pdf2dsc.ps
-share/ghostscript/${VERSION}/lib/pdfopt.ps
 share/ghostscript/${VERSION}/lib/pdfwrite.ps
 share/ghostscript/${VERSION}/lib/pf2afm.ps
 share/ghostscript/${VERSION}/lib/pfbtopfa.ps

@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_unix-gcc_mak,v 1.9 2013/08/22 09:14:32 ajacoutot Exp $
---- base/unix-gcc.mak.orig	Wed Aug  8 10:01:36 2012
-+++ base/unix-gcc.mak	Fri Aug 17 15:12:56 2012
+$OpenBSD: patch-base_unix-gcc_mak,v 1.10 2013/12/24 15:18:38 kili Exp $
+--- base/unix-gcc.mak.orig	Thu Feb 14 08:58:13 2013
++++ base/unix-gcc.mak	Tue Sep 17 20:59:54 2013
 @@ -32,6 +32,7 @@ PSLIBDIR=./lib
  PSRESDIR=./Resource
  PSGENDIR=./$(BUILDDIRPREFIX)obj
@@ -24,7 +24,7 @@ $OpenBSD: patch-base_unix-gcc_mak,v 1.9 2013/08/22 09:14:32 ajacoutot Exp $
  
  # Define whether or not searching for initialization files should always
  # look in the current directory first.  This leads to well-known security
-@@ -212,9 +213,17 @@ IJS_NAME=
+@@ -208,6 +209,9 @@ IJS_NAME=
  IJSSRCDIR=ijs
  IJSEXECTYPE=unix
  
@@ -34,15 +34,7 @@ $OpenBSD: patch-base_unix-gcc_mak,v 1.9 2013/08/22 09:14:32 ajacoutot Exp $
  # Define how to build the library archives.  (These are not used in any
  # standard configuration.)
  
-+JPX_LIB=jasper
-+JPXSRCDIR=jasper
-+SHARE_JPX=0
-+JPX_CFLAGS=-DJAS_CONFIGURE
-+
- AR=ar
- ARFLAGS=qc
- RANLIB=ranlib
-@@ -223,7 +232,7 @@ RANLIB=ranlib
+@@ -219,7 +223,7 @@ RANLIB=ranlib
  
  # Define the name of the C compiler.
  
@@ -51,7 +43,7 @@ $OpenBSD: patch-base_unix-gcc_mak,v 1.9 2013/08/22 09:14:32 ajacoutot Exp $
  
  # Define the name of the linker for the final link step.
  # Normally this is the same as the C compiler.
-@@ -235,7 +244,7 @@ CCLD=$(CC)
+@@ -231,7 +235,7 @@ CCLD=$(CC)
  # the 2.7.0-2.7.2 optimizer bug, either "-Dconst=" or
  # "-Wcast-qual -Wwrite-strings" is automatically included.
  
@@ -60,7 +52,16 @@ $OpenBSD: patch-base_unix-gcc_mak,v 1.9 2013/08/22 09:14:32 ajacoutot Exp $
  
  # Define the added flags for standard, debugging, profiling 
  # and shared object builds.
-@@ -375,8 +384,6 @@ DISPLAY_DEV=
+@@ -333,7 +337,7 @@ SOC_LOADER=dxmainc.c
+ 
+ # Choose the language feature(s) to include.  See gs.mak for details.
+ 
+-FEATURE_DEVS=$(PSD)psl3.dev $(PSD)pdf.dev $(PSD)dpsnext.dev $(PSD)ttfont.dev $(PSD)epsf.dev $(GLD)pipe.dev $(PSD)fapi.dev
++FEATURE_DEVS=$(PSD)psl3.dev $(PSD)pdf.dev $(PSD)dpsnext.dev $(PSD)ttfont.dev $(PSD)epsf.dev $(GLD)pipe.dev
+ #FEATURE_DEVS=$(PSD)psl3.dev $(PSD)pdf.dev
+ # The following is strictly for testing.
+ FEATURE_DEVS_ALL=$(PSD)psl3.dev $(PSD)pdf.dev $(PSD)dpsnext.dev $(PSD)ttfont.dev $(PSD)rasterop.dev $(PSD)double.dev $(PSD)trapping.dev $(PSD)stocht.dev $(GLD)pipe.dev
+@@ -371,8 +375,6 @@ DISPLAY_DEV=
  # Choose the device(s) to include.  See devs.mak for details,
  # devs.mak and contrib.mak for the list of available devices.
  
@@ -69,7 +70,7 @@ $OpenBSD: patch-base_unix-gcc_mak,v 1.9 2013/08/22 09:14:32 ajacoutot Exp $
  #DEVICE_DEVS1=
  #DEVICE_DEVS2=
  #DEVICE_DEVS3=
-@@ -398,36 +405,18 @@ DEVICE_DEVS=$(DISPLAY_DEV) $(DD)x11.dev $(DD)x11alpha.
+@@ -394,36 +396,18 @@ DEVICE_DEVS=$(DISPLAY_DEV) $(DD)x11.dev $(DD)x11alpha.
  #DEVICE_DEVS19=
  #DEVICE_DEVS20=
  
@@ -112,18 +113,16 @@ $OpenBSD: patch-base_unix-gcc_mak,v 1.9 2013/08/22 09:14:32 ajacoutot Exp $
  
  # ---------------------------- End of options --------------------------- #
  
-@@ -476,8 +465,9 @@ include $(GLSRCDIR)/zlib.mak
+@@ -472,7 +456,7 @@ include $(GLSRCDIR)/zlib.mak
  include $(GLSRCDIR)/png.mak
  include $(GLSRCDIR)/tiff.mak
  include $(GLSRCDIR)/jbig2.mak
-+include $(GLSRCDIR)/jasper.mak
- include $(GLSRCDIR)/icclib.mak
 -include $(GLSRCDIR)/lcms.mak
 +include $(GLSRCDIR)/lcms2.mak
  include $(GLSRCDIR)/ijs.mak
  include $(GLSRCDIR)/devs.mak
  include $(GLSRCDIR)/contrib.mak
-@@ -486,6 +476,8 @@ include $(GLSRCDIR)/unixlink.mak
+@@ -481,6 +465,8 @@ include $(GLSRCDIR)/unixlink.mak
  include $(GLSRCDIR)/unix-dll.mak
  include $(GLSRCDIR)/unix-end.mak
  include $(GLSRCDIR)/unixinst.mak

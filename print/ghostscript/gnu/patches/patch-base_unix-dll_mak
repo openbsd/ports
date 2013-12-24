@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_unix-dll_mak,v 1.5 2012/08/22 06:24:17 ajacoutot Exp $
---- base/unix-dll.mak.orig	Wed Aug  8 10:01:36 2012
-+++ base/unix-dll.mak	Fri Aug 17 15:12:56 2012
+$OpenBSD: patch-base_unix-dll_mak,v 1.6 2013/12/24 15:18:38 kili Exp $
+--- base/unix-dll.mak.orig	Thu Feb 14 08:58:13 2013
++++ base/unix-dll.mak	Tue Sep 17 20:11:00 2013
 @@ -24,10 +24,6 @@
  #  export LD_LIBRARY_PATH=/insert-path-here/sobin
  #  export GS_LIB=/insert-path-here/lib
@@ -71,7 +71,7 @@ $OpenBSD: patch-base_unix-dll_mak,v 1.5 2012/08/22 06:24:17 ajacoutot Exp $
  
  # ------------------------- Recursive make targets ------------------------- #
  
-@@ -100,6 +94,13 @@ SODEFS=\
+@@ -105,6 +99,13 @@ SODEFS_FINAL=\
   STDIO_IMPLEMENTATION=c\
   BUILDDIRPREFIX=$(BUILDDIRPREFIX)
  
@@ -85,7 +85,7 @@ $OpenBSD: patch-base_unix-dll_mak,v 1.5 2012/08/22 06:24:17 ajacoutot Exp $
  # This is a bit nasty; because of the directory name rewriting that happens
  # on a recursive build, we have to recurse twice before we are sure that
  # all the targets are correct.
-@@ -118,19 +119,27 @@ sodebug:
+@@ -123,19 +124,27 @@ sodebug:
  	fi
  	$(MAKE) so-subtarget$(FOR_MAC) GENOPT='-DDEBUG' BUILDDIRPREFIX=$(SODEBUGDIRPREFIX)
  
@@ -107,7 +107,7 @@ $OpenBSD: patch-base_unix-dll_mak,v 1.5 2012/08/22 06:24:17 ajacoutot Exp $
 +	@echo USE_GTK = $(USE_GTK)
 +	@echo GSSOC = $(GSSOC)
 +	@echo GSSOX = $(GSSOX)
- 	$(MAKE) $(SODEFS) GENOPT='$(GENOPT)' LDFLAGS='$(LDFLAGS)'\
+ 	$(MAKE) $(SODEFS_FINAL) GENOPT='$(GENOPT)' LDFLAGS='$(LDFLAGS)'\
  	 CFLAGS='$(CFLAGS_STANDARD) $(GCFLAGS) $(AC_CFLAGS) $(XCFLAGS)' prefix=$(prefix)\
 -	 $(GSSOC_XE) $(GSSOX_XE)
 +	 USE_GTK=$(USE_GTK) \
@@ -115,7 +115,7 @@ $OpenBSD: patch-base_unix-dll_mak,v 1.5 2012/08/22 06:24:17 ajacoutot Exp $
  
  # special so-subtarget for MAC OS X
  so-subtarget_1:
-@@ -162,13 +171,11 @@ install-so-subtarget: so-subtarget$(FOR_MAC)
+@@ -167,13 +176,11 @@ install-so-subtarget: so-subtarget$(FOR_MAC)
  	-mkdir -p $(DESTDIR)$(bindir)
  	-mkdir -p $(DESTDIR)$(libdir)
  	-mkdir -p $(DESTDIR)$(gsincludedir)
@@ -131,7 +131,7 @@ $OpenBSD: patch-base_unix-dll_mak,v 1.5 2012/08/22 06:24:17 ajacoutot Exp $
  	$(INSTALL_DATA) $(PSSRC)iapi.h $(DESTDIR)$(gsincludedir)iapi.h
  	$(INSTALL_DATA) $(PSSRC)ierrors.h $(DESTDIR)$(gsincludedir)ierrors.h
  	$(INSTALL_DATA) $(GLSRC)gdevdsp.h $(DESTDIR)$(gsincludedir)gdevdsp.h
-@@ -180,6 +187,8 @@ sodebuginstall:
+@@ -185,6 +192,8 @@ sodebuginstall:
  	$(MAKE) soinstall-subtarget GENOPT='-DDEBUG' BUILDDIRPREFIX=$(SODEBUGDIRPREFIX)
  
  soinstall-subtarget: install-so install-scripts install-data $(INSTALL_SHARED) $(INSTALL_CONTRIB)

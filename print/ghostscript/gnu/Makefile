@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.100 2013/08/22 09:14:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.101 2013/12/24 15:18:38 kili Exp $
 
 COMMENT=	GNU PostScript interpreter
 
-VERSION=	9.06
+VERSION=	9.07
 DISTNAME=	ghostscript-${VERSION}
 CATEGORIES=	print lang
 SHARED_LIBS=	gs	15.0
-REVISION=	4
 
 MASTER_SITES=	http://downloads.ghostscript.com/public/
 
@@ -150,7 +149,8 @@ post-extract:
 	find ${WRKDIST} -name '*.orig' -type f | xargs -r rm
 	ln -s base/unix-gcc.mak ${WRKDIST}/Makefile
 	cd ${WRKSRC} && mkdir junk && \
-		mv freetype ijs jasper jpeg libpng jbig2dec tiff zlib junk
+		mv expat freetype ijs jpeg lcms lcms2 libpng jbig2dec \
+			openjpeg tiff zlib junk
 
 pre-build:
 	mkdir -p ${WRKDIST}/obj
