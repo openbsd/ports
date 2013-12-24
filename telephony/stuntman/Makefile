@@ -1,9 +1,9 @@
-# $OpenBSD:
+# $OpenBSD: Makefile,v 1.4 2013/12/24 13:57:18 sthen Exp $
 
 COMMENT =	STUN server implementing RFCs 5389, 5769, and 5780
 NOT_FOR_ARCHS = hppa mips64 mips64el sparc64 # atomic ops
 
-VERSION =	1.2.3
+VERSION =	1.2.5
 DISTNAME =	stunserver-${VERSION}
 PKGNAME =	stuntman-${VERSION}
 CATEGORIES =	telephony net
@@ -23,7 +23,7 @@ WANTLIB +=	c crypto m pthread stdc++
 BUILD_DEPENDS =	devel/boost
 
 MAKE_FLAGS =	BOOST_INCLUDE='-I${LOCALBASE}/include' \
-		FLAVOR_FLAGS='${CXXFLAGS} -Wno-unknown-pragmas'
+		FLAVOR_FLAGS='${CXXFLAGS} -Wno-unknown-pragmas -DHAVE_ARC4RANDOM'
 
 USE_GMAKE =	Yes
 

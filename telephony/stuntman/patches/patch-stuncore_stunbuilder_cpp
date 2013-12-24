@@ -1,0 +1,36 @@
+$OpenBSD: patch-stuncore_stunbuilder_cpp,v 1.1 2013/12/24 13:57:18 sthen Exp $
+--- stuncore/stunbuilder.cpp.orig	Sun Jun 23 20:45:16 2013
++++ stuncore/stunbuilder.cpp	Sun Dec 22 14:27:53 2013
+@@ -88,6 +88,7 @@ HRESULT CStunMessageBuilder::AddRandomTransactionId(St
+     StunTransactionId transid;
+     uint32_t stun_cookie_nbo = htonl(STUN_COOKIE);
+ 
++#ifndef HAVE_ARC4RANDOM
+     uint32_t entropy=0;
+ 
+ 
+@@ -122,10 +123,11 @@ HRESULT CStunMessageBuilder::AddRandomTransactionId(St
+         entropy ^= AtomicIncrement(&g_sequence_number);
+     }
+ 
+-#endif
++#endif /* _WIN32 */
+ 
+ 
+     srand(entropy);
++#endif /* HAVE_ARC4RANDOM */
+ 
+ 
+     // the first four bytes of the transaction id is always the magic cookie
+@@ -133,7 +135,11 @@ HRESULT CStunMessageBuilder::AddRandomTransactionId(St
+     memcpy(transid.id, &stun_cookie_nbo, sizeof(stun_cookie_nbo));
+     for (int x = 4; x < (STUN_TRANSACTION_ID_LENGTH-4); x++)
+     {
++#ifdef HAVE_ARC4RANDOM
++        transid.id[x] = (uint8_t)(arc4random_uniform(256));
++#else
+         transid.id[x] = (uint8_t)(rand() % 256);
++#endif
+     }
+ 
+     if (pTransId)

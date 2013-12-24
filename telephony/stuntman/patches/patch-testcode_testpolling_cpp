@@ -1,0 +1,60 @@
+$OpenBSD: patch-testcode_testpolling_cpp,v 1.1 2013/12/24 13:57:18 sthen Exp $
+--- testcode/testpolling.cpp.orig	Sun Jun 23 20:45:16 2013
++++ testcode/testpolling.cpp	Sat Dec 21 15:13:23 2013
+@@ -257,7 +257,9 @@ HRESULT CTestPolling::Test1()
+     int fd;
+     int count = 0;
+     
++#ifndef HAVE_ARC4RANDOM
+     srand(100);
++#endif
+ 
+     ChkA(TestInit(10, 10));
+     
+@@ -269,8 +271,11 @@ HRESULT CTestPolling::Test1()
+     // one event at a time model
+     for (int index = 0; index < 100; index++)
+     {
+-
++#ifdef HAVE_ARC4RANDOM
++        size_t item = arc4random_uniform(size);
++#else
+         size_t item = rand() % size;
++#endif
+         
+         ChkA(WritePipe(&_pipes[item]));
+         
+@@ -303,7 +308,9 @@ HRESULT CTestPolling::Test2()
+     PollEvent event;  
+     const size_t c_maxSockets = 10;
+     
++#ifndef HAVE_ARC4RANDOM
+     srand(100);
++#endif
+ 
+     ChkA(TestInit(c_maxSockets, 0));
+     
+@@ -314,7 +321,11 @@ HRESULT CTestPolling::Test2()
+     
+     for (size_t index = 0; index < 1000; index++)
+     {
++#ifdef HAVE_ARC4RANDOM
++        int randresult = ::arc4random_uniform(4);
++#else
+         int randresult = ::rand() % 4;
++#endif
+         
+         switch (randresult)
+         {
+@@ -342,7 +353,11 @@ HRESULT CTestPolling::Test2()
+                     continue;
+                 }
+                 
++#ifdef HAVE_ARC4RANDOM
++                itemindex = arc4random_uniform(size);
++#else
+                 itemindex = rand() % size;
++#endif
+                 ChkA(WritePipe(&_pipes[itemindex]));
+                 
+                 break;
