@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/12/11 20:27:01 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.7 2013/12/24 18:53:37 rpe Exp $
 bin/ansible
 bin/ansible-doc
+bin/ansible-galaxy
 bin/ansible-playbook
 bin/ansible-pull
 lib/python${MODPY_VERSION}/site-packages/ansible/
