@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2013/04/08 17:06:56 brad Exp $
+@comment $OpenBSD: PLIST,v 1.26 2013/12/24 15:22:55 brad Exp $
 @bin bin/ffmpeg
 @bin bin/ffplay
 @bin bin/ffprobe
@@ -29,6 +29,9 @@ include/libavformat/
 include/libavformat/avformat.h
 include/libavformat/avio.h
 include/libavformat/version.h
+include/libavresample/
+include/libavresample/avresample.h
+include/libavresample/version.h
 include/libavutil/
 include/libavutil/adler32.h
 include/libavutil/aes.h
@@ -94,6 +97,8 @@ lib/libavfilter.a
 @lib lib/libavfilter.so.${LIBavfilter_VERSION}
 lib/libavformat.a
 @lib lib/libavformat.so.${LIBavformat_VERSION}
+lib/libavresample.a
+@bin lib/libavresample.so.${LIBavresample_VERSION}
 lib/libavutil.a
 @lib lib/libavutil.so.${LIBavutil_VERSION}
 lib/libpostproc.a
@@ -107,6 +112,7 @@ lib/pkgconfig/libavcodec.pc
 lib/pkgconfig/libavdevice.pc
 lib/pkgconfig/libavfilter.pc
 lib/pkgconfig/libavformat.pc
+lib/pkgconfig/libavresample.pc
 lib/pkgconfig/libavutil.pc
 lib/pkgconfig/libpostproc.pc
 lib/pkgconfig/libswresample.pc
