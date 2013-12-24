@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/17 14:34:26 jturner Exp $
+# $OpenBSD: Makefile,v 1.11 2013/12/24 14:39:56 brad Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
 COMMENT=	portable, easy to use, and efficient C++ crypto library
 
-DISTNAME=	Botan-1.10.5
+DISTNAME=	Botan-1.10.6
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	security
 MASTER_SITES=	${HOMEPAGE}files/
