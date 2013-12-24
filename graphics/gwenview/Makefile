@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.62 2013/12/22 19:24:34 zhuk Exp $
+# $OpenBSD: Makefile,v 1.63 2013/12/24 20:56:21 zhuk Exp $
 
 COMMENT=	image viewer for KDE
 
 DISTNAME=	gwenview-1.4.2
 PKGSPEC=	gwenview-<4
-REVISION =	16
+REVISION =	17
 
 SHARED_LIBS +=	gwenviewcore         5.0      # .1.0
 CATEGORIES=	graphics x11 x11/kde
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB =  GL ICE SM X11 Xcursor Xdamage Xext Xfixes Xft Xi Xinerama
 WANTLIB += Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 c drm expat exiv2
 WANTLIB += fam fontconfig freetype idn jpeg lcms m mng png pthread
-WANTLIB += stdc++ util xcb z
+WANTLIB += pthread-stubs stdc++ util xcb z
 WANTLIB += ${KDE}/kdecore>=6 ${KDE}/DCOP ${KDE}/kdefx ${KDE}/kdeprint
 WANTLIB += ${KDE}/kdesu ${KDE}/kparts ${KDE}/kdeui ${KDE}/kio
 WANTLIB += ${KDE}/kmediaplayer ${KDE}/kutils ${KDE}/kwalletclient
@@ -40,6 +40,7 @@ PORTHOME=	${WRKDIR}
 MAKE_ENV=	KDEDIR="${LOCALBASE}"
 MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}
 
+SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION=	2.61
@@ -48,5 +49,8 @@ MODGNU_CONFIG_GUESS_DIRS= ${MODKDE_CONFIG_GUESS_DIRS}
 CONFIGURE_ARGS=	${MODKDE_CONFIGURE_ARGS}
 CONFIGURE_ARGS+= --enable-kipi
 CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV}
+
+# picks up KDE4 libraries otherwise
+USE_LIBTOOL=	gnu
 
 .include <bsd.port.mk>
