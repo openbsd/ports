@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.307 2013/12/24 09:21:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.308 2013/12/24 13:08:55 jca Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -223,6 +223,7 @@
      SUBDIR += tphdisk
      SUBDIR += tray-app
      SUBDIR += tree
+     SUBDIR += ttyload
      SUBDIR += upower
      SUBDIR += upsd
      SUBDIR += uptimed
