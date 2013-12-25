@@ -1,0 +1,13 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2013/12/25 21:55:57 landry Exp $
+Ensure it uses our FindIconv.cmake module
+--- CMakeLists.txt.orig	Tue Sep 17 15:47:04 2013
++++ CMakeLists.txt	Wed Dec 25 22:07:23 2013
+@@ -324,7 +324,7 @@ if(WITH_FRIBIDI)
+ endif (WITH_FRIBIDI)
+ 
+ if(WITH_ICONV)
+-  find_package(ICONV)
++  find_package(Iconv)
+   if(ICONV_FOUND)
+     include_directories(${ICONV_INCLUDE_DIR})
+     ms_link_libraries( ${ICONV_LIBRARY})

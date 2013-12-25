@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST-php,v 1.4 2013/08/06 19:47:19 landry Exp $
-@comment lib/php-${MODPHP_VERSION}/modules/php_mapscript.la
+@comment $OpenBSD: PLIST-php,v 1.5 2013/12/25 21:55:57 landry Exp $
 lib/php-${MODPHP_VERSION}/modules/php_mapscript.so
 share/examples/php-${MODPHP_VERSION}/mapscript.ini
 @sample ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/mapscript.ini

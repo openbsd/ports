@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/09/25 07:56:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2013/12/25 21:55:57 landry Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl
 SHARED_ONLY=	Yes
@@ -8,15 +8,13 @@ COMMENT-utils=	mapserver utilities
 COMMENT-php=	PHP Mapscript extension
 COMMENT-perl=	Perl Mapscript binding
 
-V =		6.2.1
+V =		6.4.0
 DISTNAME=	mapserver-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-utils=	mapserver-utils-${V}
 PKGNAME-php=	php-mapscript-${V}
 PKGNAME-perl=	p5-mapscript-${V}
-SHARED_LIBS +=	mapserver 0.0# 0.0
-REVISION-php =	0
-REVISION-main =	0
+SHARED_LIBS +=	mapserver 1.0
 
 CATEGORIES=	geo www
 
@@ -28,71 +26,44 @@ MAINTAINER=	Landry Breuil <landry@openbsd.org>
 
 MASTER_SITES=	http://download.osgeo.org/mapserver/
 
-MODULES=	devel/gettext lang/php
+MODULES=	converters/libiconv lang/php devel/cmake
 MODPHP_RUNDEP=	No
+RUN_DEPENDS-php =	${MODPHP_RUN_DEPENDS}
+BUILD_DEPENDS +=	devel/swig
 
 LIB_DEPENDS=	devel/proj \
+		devel/fribidi \
 		graphics/cairo \
 		geo/gdal \
 		geo/geos \
-		graphics/gd \
 		graphics/giflib \
 		www/fcgi
 
-RUN_DEPENDS-php=	${MODPHP_RUN_DEPENDS}
+WANTLIB += curl freetype jpeg m png pq xml2 z proj
+WANTLIB += gdal geos_c cairo fribidi gif
 
-WANTLIB += crypto curl expat freetype idn jpeg m png pq ssl xml2 z proj
-WANTLIB += gdal geos_c stdc++ cairo fontconfig gd tiff spatialite
-WANTLIB += pixman-1 pthread-stubs xcb xcb-render xcb-shm sqlite3
-WANTLIB += X11 Xext Xrender freexl geos geotiff gif jasper pcre
+LIB_DEPENDS-utils =	STEM->=${V}:${BUILD_PKGPATH},-main
+LIB_DEPENDS-php =	STEM->=${V}:${BUILD_PKGPATH},-main
+LIB_DEPENDS-perl =	STEM->=${V}:${BUILD_PKGPATH},-main
+WANTLIB-main =	${WANTLIB} c fcgi pthread stdc++
+WANTLIB-utils =	${WANTLIB} c mapserver pthread
+WANTLIB-php =	${WANTLIB} mapserver
+WANTLIB-perl =	${WANTLIB} mapserver perl
 
-LIB_DEPENDS-utils = STEM->=${V}:${BUILD_PKGPATH},-main
-LIB_DEPENDS-php = STEM->=${V}:${BUILD_PKGPATH},-main
-LIB_DEPENDS-perl = STEM->=${V}:${BUILD_PKGPATH},-main
-WANTLIB-main=	${WANTLIB} fcgi pthread c gif
-WANTLIB-main += asn1 com_err heimbase krb5 roken wind
-WANTLIB-utils=	${WANTLIB} mapserver pthread c gif
-WANTLIB-php=	${WANTLIB} mapserver pthread
-WANTLIB-perl=	mapserver
-
-USE_GMAKE=	yes
-USE_LIBTOOL =	yes
-LIBTOOL_FLAGS =	--tag=disable-static
-CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--with-proj=${LOCALBASE} \
-		--with-png=${LOCALBASE} \
-		--with-fastcgi=${LOCALBASE} \
-		--with-freetype=${X11BASE}/bin \
-		--with-gdal=${LOCALBASE}/bin/gdal-config \
-		--with-gd=${LOCALBASE}/bin/gdlib-config \
-		--with-php=${LOCALBASE}/bin/php-config-${MODPHP_VERSION} \
-		--with-postgis=${LOCALBASE}/bin/pg_config \
-		--with-geos=${LOCALBASE}/bin/geos-config \
-		--with-ogr=${LOCALBASE}/bin/gdal-config \
-		--with-xml2-config=${LOCALBASE}/bin/xml2-config \
-		--with-curl-config=${LOCALBASE}/bin/curl-config \
-		--with-cairo \
-		--with-kml \
-		--with-wmsclient \
-		--with-wfsclient \
-		--with-wcs \
-		--with-wfs \
-		--with-sos
-
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -pthread"
-
-MAKE_ENV=	CFLAGS+=-fPIC
-
-UTILS=	shp2img legend shptree shptreevis shptreetst scalebar \
-	sortshp tile4ms msencrypt
+CONFIGURE_ARGS +=	-DPHP5_CONFIG_EXECUTABLE=${LOCALBASE}/bin/php-config-${MODPHP_VERSION} \
+			-DWITH_CLIENT_WFS=1 \
+			-DWITH_CLIENT_WMS=1 \
+			-DWITH_CURL=1 \
+			-DWITH_KML=1 \
+			-DWITH_PHP=1 \
+			-DWITH_PERL=1
 
 PREFIX-main=	${VARBASE}/www
 
 SUBST_VARS+=	PREFIX-main
 
-post-build:
-	cd ${WRKSRC}/mapscript/perl && perl Makefile.PL && ${MAKE}
+post-extract:
+	rm -f ${WRKSRC}/cmake/Find{PostgreSQL,ICONV}.cmake
 
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}/${PREFIX-main}/cgi-bin
@@ -106,7 +77,5 @@ post-install:
 
 	${INSTALL_DATA}	${WRKSRC}/mapscript/perl/examples/* \
 		${PREFIX}/share/examples/mapserver/perl
-
-	cd ${WRKSRC}/mapscript/perl && ${MAKE} install
 
 .include <bsd.port.mk>
