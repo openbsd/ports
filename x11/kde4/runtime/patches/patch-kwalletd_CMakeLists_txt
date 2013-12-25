@@ -1,0 +1,13 @@
+$OpenBSD: patch-kwalletd_CMakeLists_txt,v 1.1 2013/12/25 17:33:13 zhuk Exp $
+Fix linking.
+--- kwalletd/CMakeLists.txt.orig	Wed Dec 25 20:53:45 2013
++++ kwalletd/CMakeLists.txt	Wed Dec 25 20:54:04 2013
+@@ -32,7 +32,7 @@ qt4_add_dbus_adaptor( kwalletd_KDEINIT_SRCS ${kwallet_
+ 
+ kde4_add_kdeinit_executable( kwalletd NOGUI ${kwalletd_KDEINIT_SRCS} )
+ 
+-target_link_libraries(kdeinit_kwalletd  ${KDE4_KDEUI_LIBS} kwalletbackend )
++target_link_libraries(kdeinit_kwalletd  kwalletbackend ${KDE4_KDEUI_LIBS} )
+ install(TARGETS kdeinit_kwalletd  ${INSTALL_TARGETS_DEFAULT_ARGS})
+ 
+ target_link_libraries(kwalletd kdeinit_kwalletd)
