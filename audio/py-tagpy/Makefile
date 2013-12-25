@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2013/12/16 15:45:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2013/12/25 08:51:24 ajacoutot Exp $
 
 COMMENT=		Python bindings to TagLib audio file tag library
 
 MODPY_EGG_VERSION =	2013.1
 DISTNAME =		tagpy-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		audio devel
 
@@ -26,14 +26,19 @@ FLAVOR?=
 
 LIB_DEPENDS =		lang/python/${MODPY_VERSION} \
 			audio/taglib \
-			devel/boost
+			devel/boost>=1.53.0p5
 
-CONFIGURE_ARGS +=	--boost-python-libname=boost_python-mt \
-			--boost-compiler=gcc42 \
+CONFIGURE_ARGS +=	--boost-compiler=gcc42 \
 			--boost-lib-dir=${LOCALBASE}/lib \
 			--boost-inc-dir=${LOCALBASE}/include \
 			--taglib-lib-dir=${LOCALBASE}/lib \
 			--taglib-inc-dir=${LOCALBASE}/include/taglib \
+
+.if ${FLAVOR:Mpython3}
+CONFIGURE_ARGS +=	--boost-python-libname=boost_python${MODPY_MAJOR_VERSION}-mt
+.else
+CONFIGURE_ARGS +=	--boost-python-libname=boost_python-mt
+.endif
 
 do-configure:
 		cd ${WRKSRC} && env ${CONFIGURE_ENV} ${MODPY_BIN} ./configure.py ${CONFIGURE_ARGS}
