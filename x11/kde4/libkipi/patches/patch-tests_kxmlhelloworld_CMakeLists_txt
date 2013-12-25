@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_kxmlhelloworld_CMakeLists_txt,v 1.1 2013/12/25 14:26:52 zhuk Exp $
+Fix linking.
+--- tests/kxmlhelloworld/CMakeLists.txt.orig	Wed Dec 25 18:20:35 2013
++++ tests/kxmlhelloworld/CMakeLists.txt	Wed Dec 25 18:21:17 2013
+@@ -34,10 +34,9 @@ SET(kipiplugin_kxmlhelloworld_PART_SRCS
+ KDE4_ADD_PLUGIN(kipiplugin_kxmlhelloworld ${kipiplugin_kxmlhelloworld_PART_SRCS})
+ 
+ TARGET_LINK_LIBRARIES(kipiplugin_kxmlhelloworld
++                      kipi
+                       ${KDE4_KPARTS_LIBS}
+                       ${QT_AND_KDECORE_LIBS}
+-                      ${KIPI_LIBRARIES}
+-                      kipi
+                      )
+ 
+ CONFIGURE_FILE(plugin/kipiplugin_kxmlhelloworld.desktop.cmake ${CMAKE_CURRENT_BINARY_DIR}/plugin/kipiplugin_kxmlhelloworld.desktop)
