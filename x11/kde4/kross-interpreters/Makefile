@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/12/08 19:13:31 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2013/12/25 13:40:30 zhuk Exp $
 
 COMMENT-main =	KDE bindings for running interpreters
 COMMENT-java =	KDE Java bindings
@@ -42,11 +42,9 @@ MODJAVA_JRERUN =	Yes
 
 LIB_DEPENDS-main =	${LIB_DEPENDS}
 
-RUN_DEPENDS-main =	${RUN_DEPENDS-common} \
-			${MODPY_RUN_DEPENDS} \
+RUN_DEPENDS-main =	${MODPY_RUN_DEPENDS} \
 			${MODRUBY_RUN_DEPENDS}
 
-RUN_DEPENDS-java =	${RUN_DEPENDS-common} \
-			${MODJAVA_RUN_DEPENDS}
+RUN_DEPENDS-java =	${MODJAVA_RUN_DEPENDS}
 
 .include <bsd.port.mk>
