@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/08 18:20:31 zhuk Exp $
-@conflict kdesdk-<4.11
-@bin bin/kio_svn_helper
+@comment $OpenBSD: PLIST,v 1.2 2013/12/25 14:53:27 zhuk Exp $
+@bin bin/kio_svn_helper4
 lib/kde4/kded_ksvnd.so
 lib/kde4/kio_perldoc.so
 lib/kde4/kio_svn.so

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/12/08 18:20:31 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2013/12/25 14:53:27 zhuk Exp $
 
 COMMENT =	development-related KIO modules
 DISTNAME =	kdesdk-kioslaves-${MODKDE4_VERSION}
+REVISION =	0
 
 CATEGORIES =	devel
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdesdk/kdesdk-kioslaves
@@ -18,5 +19,9 @@ MODKDE4_USE =	libs
 RUN_DEPENDS =	x11/gtk+2,-guic
 
 LIB_DEPENDS =	devel/subversion
+
+post-patch:
+	perl -pi -e 's/kio_svn_helper/kio_svn_helper4/' \
+		${WRKSRC}/svn/svnhelper/*.desktop
 
 .include <bsd.port.mk>

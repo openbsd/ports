@@ -1,0 +1,13 @@
+$OpenBSD: patch-svn_svnhelper_CMakeLists_txt,v 1.1 2013/12/25 14:53:27 zhuk Exp $
+Deconflict with kdesdk-3.x.
+--- svn/svnhelper/CMakeLists.txt.orig	Wed Dec 25 18:49:46 2013
++++ svn/svnhelper/CMakeLists.txt	Wed Dec 25 18:51:06 2013
+@@ -10,6 +10,8 @@ set(kio_svn_helper_SRCS kio_svn_helper.cpp )
+ kde4_add_ui_files(kio_svn_helper_SRCS subversioncheckout.ui subversionswitch.ui subversionlog.ui subversiondiff.ui)
+ 
+ kde4_add_executable(kio_svn_helper ${kio_svn_helper_SRCS})
++set_target_properties(kio_svn_helper PROPERTIES
++	OUTPUT_NAME kio_svn_helper4)
+ 
+ target_link_libraries(kio_svn_helper  ${KDE4_KIO_LIBS})
+ 
