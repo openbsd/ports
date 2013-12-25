@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-icons,v 1.5 2013/12/24 13:03:15 zhuk Exp $
+@comment $OpenBSD: PLIST-icons,v 1.6 2013/12/25 15:38:08 zhuk Exp $
 @conflict libkipi-<0.1.6p7
+@conflict libkipi->=4,<4.11.4p0
 @conflict kde4-libkipi-icons-*
 @pkgpath x11/kde4/libkipi,-icons
 share/apps.kde3/
