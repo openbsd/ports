@@ -1,16 +1,32 @@
-# $OpenBSD: Makefile,v 1.70 2013/12/22 19:24:34 zhuk Exp $
+# $OpenBSD: Makefile,v 1.71 2013/12/25 16:32:22 zhuk Exp $
 
 COMMENT =		K Desktop Environment, edutainment
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdeedu-${VERSION}
-MODKDE_VERSION ?=	3.5.8
+MODKDE_VERSION =	3.5.8
+REVISION =		13
+
 SHARED_LIBS +=	kdeeducore           4.0      # .3.0
 SHARED_LIBS +=	kdeeduui             4.0      # .3.5
 SHARED_LIBS +=	kdeeduplot           4.0      # .3.0
 SHARED_LIBS +=	extdate              4.0      # .3.0
 SHARED_LIBS +=	kiten                2.0      # .1.0
 SHARED_LIBS +=	kvoctraincore        1.0      # .0.0
+
+WANTLIB =  c expat m pthread pthread-stubs sndio stdc++ util z
+WANTLIB += ICE SM X11 Xext Xfixes Xrender Xt fontconfig freetype xcb
+WANTLIB += ${KDE}/DCOP ${KDE}/artsflow ${KDE}/artsflow_idl
+WANTLIB += ${KDE}/artskde ${KDE}/kabc ${KDE}/katepartinterfaces
+WANTLIB += ${KDE}/kdecore ${KDE}/kdefx ${KDE}/kdeprint ${KDE}/kdesu
+WANTLIB += ${KDE}/kdeui ${KDE}/khtml ${KDE}/kio ${KDE}/kjs
+WANTLIB += ${KDE}/kmedia2_idl ${KDE}/knewstuff ${KDE}/kparts
+WANTLIB += ${KDE}/kresources ${KDE}/ktexteditor
+WANTLIB += ${KDE}/kutils ${KDE}/kwalletclient ${KDE}/mcop
+WANTLIB += ${KDE}/qtmcop ${KDE}/soundserver_idl ${KDE}/vcard
+WANTLIB += FLAC art_lgpl_2 audiofile fam glib-2.0 gmodule-2.0
+WANTLIB += gthread-2.0 idn jpeg mad ogg pcre pcreposix png vorbis
+WANTLIB += vorbisenc vorbisfile
 
 MODULES =	x11/kde devel/gettext
 
@@ -23,18 +39,8 @@ SEPARATE_BUILD =	flavored
 CONFIGURE_ARGS +=	--disable-kig-python-scripting \
 			--disable-ocamlsolver
 
-REVISION =	12
-WANTLIB = GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi Xinerama \
-	Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 artsflow artsflow_idl artskde \
-	audiofile c drm expat fam fontconfig freetype glib-2.0>=800 \
-	gmodule-2.0>=800 gthread-2.0>=800 idn jpeg katepartinterfaces \
-	kmedia2_idl knewstuff ktexteditor lcms lib/kde3/DCOP lib/kde3/kabc \
-	lib/kde3/kdecore>=6 lib/kde3/kdefx lib/kde3/kdeprint lib/kde3/kdesu \
-	lib/kde3/kdeui lib/kde3/khtml lib/kde3/kio lib/kde3/kjs \
-	lib/kde3/kparts lib/kde3/kresources lib/kde3/kutils \
-	lib/kde3/kwalletclient lib/kde3/vcard m mad mcop mng ogg pcre \
-	pcreposix png pthread pthread-stubs qtmcop sndio \
-	soundserver_idl stdc++ util vorbis vorbisenc vorbisfile xcb z
+# picks up KDE4 libraries otherwise
+USE_LIBTOOL =	gnu
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${MODKDE_HTML_SUBDIR}/en/common
