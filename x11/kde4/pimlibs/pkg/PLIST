@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.10 2013/12/08 19:13:33 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.11 2013/12/25 09:10:24 zhuk Exp $
 @conflict kdelibs-<4
 @conflict kdepim-<4
-@bin bin/akonadi_benchmarker
-@bin bin/akonaditest
 include/kde4/KDE/Akonadi/
 include/kde4/KDE/Akonadi/AgentBase
 include/kde4/KDE/Akonadi/AgentFactory
@@ -898,9 +896,6 @@ include/kde4/kimap/setquotajob.h
 include/kde4/kimap/storejob.h
 include/kde4/kimap/subscribejob.h
 include/kde4/kimap/unsubscribejob.h
-include/kde4/kimaptest/
-include/kde4/kimaptest/fakeserver.h
-include/kde4/kimaptest/mockjob.h
 include/kde4/kldap/
 include/kde4/kldap/ber.h
 include/kde4/kldap/kldap_export.h
@@ -1159,6 +1154,7 @@ lib/kde4/kio_smtp.so
 @lib ${KDE4LIB}/libsyndication.so.${LIBsyndication_VERSION}
 lib/kde4/plugins/designer/akonadiwidgets.so
 lib/kde4/plugins/designer/kholidayswidgets.so
+@comment lib/libkimaptest.a
 @lib lib/libakonadi-calendar.so.${LIBakonadi-calendar_VERSION}
 @lib lib/libakonadi-contact.so.${LIBakonadi-contact_VERSION}
 @lib lib/libakonadi-kabc.so.${LIBakonadi-kabc_VERSION}
@@ -1178,7 +1174,6 @@ lib/kde4/plugins/designer/kholidayswidgets.so
 @lib lib/libkcalutils.so.${LIBkcalutils_VERSION}
 @lib lib/libkholidays.so.${LIBkholidays_VERSION}
 @lib lib/libkimap.so.${LIBkimap_VERSION}
-@comment lib/libkimaptest.a
 @lib lib/libkldap.so.${LIBkldap_VERSION}
 @lib lib/libkmbox.so.${LIBkmbox_VERSION}
 @lib lib/libkmime.so.${LIBkmime_VERSION}
