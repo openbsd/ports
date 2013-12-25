@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-icons,v 1.1 2013/12/11 11:51:31 zhuk Exp $
+@comment $OpenBSD: PLIST-icons,v 1.2 2013/12/25 15:36:27 zhuk Exp $
 @conflict libkipi-<0.1.6p9
-@conflict libkipi-<4.11.4p0
+@conflict libkipi->=4,<4.11.4p0
 @conflict libkipi-icons-*
 @pkgpath graphics/libkipi,-icons
 share/icons/hicolor/128x128/apps/kipi.png
