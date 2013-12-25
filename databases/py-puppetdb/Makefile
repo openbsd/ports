@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/12/23 08:30:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/12/25 13:57:58 rpe Exp $
 
 COMMENT=		library for working with the PuppetDB API
 
@@ -18,6 +18,7 @@ MODPY_SETUPTOOLS=	Yes
 MASTER_SITES=		http://distfiles.nl/
 
 RUN_DEPENDS=		www/py-requests>=1.2.3
+BUILD_DEPENDS=		${RUN_DEPENDS}
 
 # Requires unported tox
 NO_TEST=		Yes
