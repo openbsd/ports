@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/08 18:04:27 zhuk Exp $
-@conflict kdesdk-<4.11
-@bin bin/kapptemplate
+@comment $OpenBSD: PLIST,v 1.2 2013/12/25 17:19:46 zhuk Exp $
+@conflict kdesdk->=4,<4.11
+@bin bin/kapptemplate4
 share/applications/kde4/kapptemplate.desktop
 share/apps/kdevappwizard/
 share/apps/kdevappwizard/template_previews/
