@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Rocks'n'Diamonds
+Exec=rocksndiamonds
+Icon=rocksndiamonds
+Categories=Application;Game;ArcadeGame
+StartupNotify=false
+Type=Application

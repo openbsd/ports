@@ -1,12 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/05/11 06:56:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2013/12/25 09:35:38 benoit Exp $
 @extraunexec rm -rf /var/games/rocksndiamonds/*
 @mode 2555
 @group games
 @bin bin/rocksndiamonds
 @mode
 @group
+share/applications/rocksndiamonds.desktop
 share/doc/rocksndiamonds/
 share/doc/rocksndiamonds/README
+share/pixmaps/
+share/pixmaps/rocksndiamonds.png
 share/rocksndiamonds/
 share/rocksndiamonds/graphics/
 share/rocksndiamonds/graphics/gfx_classic/
@@ -539,6 +542,8 @@ share/rocksndiamonds/sounds/snd_classic/soundsinfo.conf
 share/rocksndiamonds/sounds/snd_classic/zisch.wav
 share/rocksndiamonds/sounds/snd_classic/zonkdown.wav
 share/rocksndiamonds/sounds/snd_classic/zonkpush.wav
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
 @mode 775
 @group games
 @sample /var/games/rocksndiamonds/
