@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/10/22 11:34:23 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.8 2013/12/25 17:48:47 rpe Exp $
 @bin bin/TaskJugglerUI
 @bin bin/taskjuggler
 lib/libtaskjuggler.a
@@ -60,7 +60,7 @@ share/apps.kde3/taskjuggler/templates/en_US/Blank_Project.tjp
 share/apps.kde3/taskjuggler/templates/en_US/Large_Project.tjp
 share/apps.kde3/taskjuggler/templates/en_US/Simple_Project.tjp
 share/apps.kde3/taskjuggler/tips
-share/config/taskjugglerrc
+share/config.kde3/taskjugglerrc
 share/doc/HTML.kde3/en/taskjuggler/
 share/doc/HTML.kde3/en/taskjuggler/ChangeLog.xml
 share/doc/HTML.kde3/en/taskjuggler/Example.xml
