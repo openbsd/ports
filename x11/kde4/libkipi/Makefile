@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/12/11 12:06:43 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2013/12/25 14:07:21 zhuk Exp $
 
 COMMENT-main =	KDE image plugins infrastructure
 COMMENT-icons =	icons for libkipi
@@ -6,12 +6,12 @@ CATEGORIES =	graphics devel
 DISTNAME =	libkipi-${MODKDE4_VERSION}
 PKGNAME-main =	${DISTNAME}
 PKGNAME-icons =	kde4-libkipi-icons-${MODKDE4_VERSION}
-REVISION-main =	1
+REVISION-main =	2
 
 SHARED_LIBS =	kipi		50.1
 
 WANTLIB-icons =
-WANTLIB-main =  c m pthread stdc++
+WANTLIB-main =  ${WANTLIB} c m pthread stdc++
 WANTLIB-main += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB-main += lib/qt4/QtSvg lib/qt4/QtXml
 WANTLIB-main += ${KDE4LIB}/kdeui ${KDE4LIB}/kio ${KDE4LIB}/kfile
