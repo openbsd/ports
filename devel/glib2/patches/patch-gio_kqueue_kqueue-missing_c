@@ -1,6 +1,9 @@
-$OpenBSD: patch-gio_kqueue_kqueue-missing_c,v 1.1 2013/12/26 10:07:07 ajacoutot Exp $
+$OpenBSD: patch-gio_kqueue_kqueue-missing_c,v 1.2 2013/12/26 19:00:28 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=721074
+From fb21c8eaab64301591a0e179a42ef25cbd793a6e Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Thu, 26 Dec 2013 10:03:45 +0000
+Subject: kqueue: fix a potential deadlock
 
 --- gio/kqueue/kqueue-missing.c.orig	Fri Oct 25 17:58:38 2013
 +++ gio/kqueue/kqueue-missing.c	Thu Dec 26 10:51:17 2013
