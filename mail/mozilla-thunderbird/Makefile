@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.183 2013/12/12 19:55:32 landry Exp $
+# $OpenBSD: Makefile,v 1.184 2013/12/26 20:00:33 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -18,6 +18,7 @@ ENIG_V =		1.5.2
 PKGNAME-enigmail =	enigmail-${ENIG_V}
 EPOCH-lightning =	0
 EPOCH-enigmail =	0
+REVISION-main =		0
 REVISION-lightning =	4
 REVISION-enigmail =	4
 
