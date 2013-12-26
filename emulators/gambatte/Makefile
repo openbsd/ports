@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2013/09/21 05:48:48 bentley Exp $
+# $OpenBSD: Makefile,v 1.8 2013/12/26 06:22:58 bentley Exp $
 
 COMMENT =		highly accurate Game Boy Color emulator
 
-REV =			537
+REV =			550
 DISTNAME =		gambatte_src-r${REV}
 PKGNAME =		gambatte-0.5.0.${REV}
 
