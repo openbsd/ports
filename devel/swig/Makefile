@@ -1,32 +1,35 @@
-# $OpenBSD: Makefile,v 1.56 2013/03/20 19:13:50 jeremy Exp $
+# $OpenBSD: Makefile,v 1.57 2013/12/26 00:00:46 fgsch Exp $
 
-COMMENT=	simplified wrapper and interface generator
+COMMENT =	simplified wrapper and interface generator
 
-SUBST_VARS=	VERSION
-VERSION=	1.3.36
+SUBST_VARS =	VERSION
+VERSION =	2.0.11
 
-DISTNAME=	swig-${VERSION}
-REVISION=	6
-CATEGORIES=	devel
-MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=swig/}
+DISTNAME =	swig-${VERSION}
+CATEGORIES =	devel
 
-HOMEPAGE=       http://www.swig.org/
+HOMEPAGE =	http://www.swig.org/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c m stdc++
+PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES=	lang/python lang/tcl lang/ruby
-MODRUBY_RUNDEP=	No
-MODRUBY_REV=	1.8
-MODPY_RUNDEP=	No
-BUILD_DEPENDS=	${MODTCL_BUILD_DEPENDS} \
+WANTLIB =	c m pcre stdc++ z
+
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=swig/}
+
+MODULES =	lang/python \
+		lang/ruby \
+		lang/tcl
+MODRUBY_RUNDEP = No
+MODPY_RUNDEP =	No
+BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS} \
 		lang/guile
+LIB_DEPENDS =	devel/boost \
+		devel/pcre
 
-
-USE_GMAKE=	Yes
-CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= --with-tclincl=${MODTCL_INCDIR} \
+USE_GMAKE =	Yes
+CONFIGURE_STYLE = gnu
+CONFIGURE_ARGS += --with-tclincl=${MODTCL_INCDIR} \
 		 --with-tcllib=${MODTCL_LIBDIR} \
 		 --with-guilelib=${LOCALBASE}/lib \
 		 --with-python=${MODPY_BIN} \
@@ -34,17 +37,17 @@ CONFIGURE_ARGS+= --with-tclincl=${MODTCL_INCDIR} \
 		 --without-mzscheme \
 		 --without-php4 \
 		 --without-ocaml
-MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/Tools/config
+MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}/Tools/config
 
-ALL_TARGET=	swig
+ALL_TARGET =	swig
 
-SWIG_EXAMPLES=	${PREFIX}/share/examples/swig
-SWIG_DOCS=	${PREFIX}/share/doc/swig
+SWIG_EXAMPLES =	${PREFIX}/share/examples/swig
+SWIG_DOCS =	${PREFIX}/share/doc/swig
 
 post-install:
 	${INSTALL_DATA_DIR} ${SWIG_EXAMPLES}
 	${INSTALL_DATA_DIR} ${SWIG_DOCS}
 	cp -R ${WRKSRC}/Examples/* ${SWIG_EXAMPLES}
 	cp -R ${WRKSRC}/Doc/* ${SWIG_DOCS}
-	
+
 .include <bsd.port.mk>
