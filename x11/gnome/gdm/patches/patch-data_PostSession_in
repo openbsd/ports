@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_PostSession_in,v 1.1 2013/12/26 15:38:29 ajacoutot Exp $
+--- data/PostSession.in.orig	Thu Dec 26 16:30:16 2013
++++ data/PostSession.in	Thu Dec 26 16:31:15 2013
+@@ -1,3 +1,8 @@
+ #!/bin/sh
+ 
++# /etc/X11/xdm/TakeConsole, fbtab(5)
++if [ -c /dev/drm0 ]; then
++    /sbin/chown root /dev/drm0
++fi
++
+ exit 0

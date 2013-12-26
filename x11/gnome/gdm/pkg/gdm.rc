@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: gdm.rc,v 1.24 2013/12/01 17:54:13 ajacoutot Exp $
+# $OpenBSD: gdm.rc,v 1.25 2013/12/26 15:38:29 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/gdm"
 
@@ -21,7 +21,15 @@ rc_start() {
 
 rc_stop() {
 	pkill -f "^${pexp}"
-	pkill -u _gdm
+	# _gdm owned processed may already be gone... or not
+	pkill -u _gdm || return 0
+}
+
+# /etc/X11/xdm/TakeConsole, fbtab(5)
+rc_post() {
+	if [ -c /dev/drm0 ]; then
+		chown root /dev/drm0
+	fi
 }
 
 rc_cmd $1
