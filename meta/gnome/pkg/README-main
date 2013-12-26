@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.22 2013/09/27 16:30:03 ajacoutot Exp $
+$OpenBSD: README-main,v 1.23 2013/12/26 14:48:30 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -14,22 +14,6 @@ The "gnome" package is focused on generic usage to give the user the
 choice to install his favorite applications for daily usage (i.e. PIM,
 WWW browser, office and development applications have been left out on
 purpose).
-
-OpenGL and drm(4)
-=================
-GNOME requires a 3D accelerated display. By default, the drm(4) devices
-are only accessible by "root" and members of the "wheel" group. Both GDM
-(when used to login) and users need access to /dev/drmX which can be
-done by running the following command as root (note that there may be
-some security implications in doing this):
-    chmod 0666 /dev/drm0
-
-In case the machine has multiple video cards, it may be necessary to do
-the same with /dev/drm{1,2,3}.
-
-Another solution would be to create a new group (e.g. "video"), change
-the group ownership of /dev/drmX accordingly and put the users and
-"_gdm" into that group.
 
 Starting GNOME
 ==============
@@ -67,7 +51,6 @@ _after_ "dbus_daemon".
 
 Cheat sheet
 ===========
-# echo 'chmod 0666 /dev/drm*' >> /etc/rc.local
-# echo 'multicast_host=YES' >> /etc/rc.conf.local
-# echo 'pkg_scripts="${pkg_scripts} dbus_daemon avahi_daemon gdm"' >> /etc/rc.conf.local
+# echo 'multicast_host=YES' >>/etc/rc.conf.local
+# echo 'pkg_scripts="${pkg_scripts} dbus_daemon avahi_daemon gdm"' >>/etc/rc.conf.local
 # reboot
