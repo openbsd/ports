@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2013/11/22 08:01:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2013/12/27 09:59:48 ajacoutot Exp $
 @conflict foomatic-db-<4.0.20091207p1
 @conflict foo2zjs-cup-*
 @pkgpath print/foo2zjs,-cups
@@ -46,8 +46,6 @@ bin/printer-profile
 @bin bin/slxdecode
 @bin bin/xqxdecode
 @bin bin/zjsdecode
-libexec/cups/
-libexec/cups/filter/
 libexec/cups/filter/command2foo2lava-pjl
 @man man/man1/arm2hpdl.1
 @man man/man1/foo2hbpl2-wrapper.1
@@ -130,9 +128,6 @@ share/foo2zjs/firmware/
 share/foo2zjs/gamma-lookup.ps
 share/foo2zjs/gamma.ps
 share/foo2zjs/icm/
-share/foomatic/db/
-share/foomatic/db/source/
-share/foomatic/db/source/PPD/
 share/foomatic/db/source/PPD/foo2zjs/
 share/foomatic/db/source/PPD/foo2zjs/Dell-1355.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Fuji_Xerox-DocuPrint_CM205.ppd.gz
@@ -164,6 +159,7 @@ share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_P2014n.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_P2035.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_P2035n.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_Pro_CP1025nw.ppd.gz
+share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_Pro_M1212nf_MFP.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_Pro_P1102.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_Pro_P1102w.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_Pro_P1566.ppd.gz
@@ -215,8 +211,8 @@ share/foomatic/db/source/PPD/foo2zjs/Xerox-Phaser_6110.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Xerox-Phaser_6115MFP.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Xerox-Phaser_6121MFP.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Xerox-WorkCentre_6015.ppd.gz
-share/foomatic/db/source/driver/
 share/foomatic/db/source/driver/foo2hbpl2.xml
+share/foomatic/db/source/driver/foo2hiperc-z1.xml
 share/foomatic/db/source/driver/foo2hiperc.xml
 share/foomatic/db/source/driver/foo2hp.xml
 share/foomatic/db/source/driver/foo2lava.xml
@@ -229,7 +225,6 @@ share/foomatic/db/source/driver/foo2zjs-z1.xml
 share/foomatic/db/source/driver/foo2zjs-z2.xml
 share/foomatic/db/source/driver/foo2zjs-z3.xml
 share/foomatic/db/source/driver/foo2zjs.xml
-share/foomatic/db/source/opt/
 share/foomatic/db/source/opt/foo2hbpl2-ColorMode.xml
 share/foomatic/db/source/opt/foo2hbpl2-ICM.xml
 share/foomatic/db/source/opt/foo2hbpl2-MediaType.xml
@@ -308,7 +303,6 @@ share/foomatic/db/source/opt/foo2zjs-z2-MediaType.xml
 share/foomatic/db/source/opt/foo2zjs-z2-PageSize.xml
 share/foomatic/db/source/opt/foo2zjs-z3-MediaType.xml
 share/foomatic/db/source/opt/foo2zjs-z3-PageSize.xml
-share/foomatic/db/source/printer/
 share/foomatic/db/source/printer/Dell-1355.xml
 share/foomatic/db/source/printer/Fuji_Xerox-DocuPrint_CM205.xml
 share/foomatic/db/source/printer/Fuji_Xerox-DocuPrint_P205.xml
@@ -339,6 +333,7 @@ share/foomatic/db/source/printer/HP-LaserJet_P2014n.xml
 share/foomatic/db/source/printer/HP-LaserJet_P2035.xml
 share/foomatic/db/source/printer/HP-LaserJet_P2035n.xml
 share/foomatic/db/source/printer/HP-LaserJet_Pro_CP1025nw.xml
+share/foomatic/db/source/printer/HP-LaserJet_Pro_M1212nf_MFP.xml
 share/foomatic/db/source/printer/HP-LaserJet_Pro_P1102.xml
 share/foomatic/db/source/printer/HP-LaserJet_Pro_P1102w.xml
 share/foomatic/db/source/printer/HP-LaserJet_Pro_P1566.xml

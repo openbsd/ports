@@ -1,9 +1,9 @@
-$OpenBSD: patch-getweb_in,v 1.19 2013/11/22 08:01:48 ajacoutot Exp $
---- getweb.in.orig	Fri Nov 22 08:58:14 2013
-+++ getweb.in	Fri Nov 22 08:58:14 2013
+$OpenBSD: patch-getweb_in,v 1.20 2013/12/27 09:59:48 ajacoutot Exp $
+--- getweb.in.orig	Fri Dec 27 10:45:39 2013
++++ getweb.in	Fri Dec 27 10:45:39 2013
 @@ -11,7 +11,7 @@
  
- VERSION='20131118'
+ VERSION='20131225'
  
 -WGETOPTS="--passive-ftp -q"
 +WGETOPTS="-V"
@@ -69,7 +69,7 @@ $OpenBSD: patch-getweb_in,v 1.19 2013/11/22 08:01:48 ajacoutot Exp $
  		error "Couldn't dowload $URL"
  	done
  	;;
-@@ -437,7 +437,7 @@ getone() {
+@@ -438,7 +438,7 @@ getone() {
      update)
  	url=${URLZJS}
  	file=foo2zjs.tar.gz
