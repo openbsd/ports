@@ -1,0 +1,17 @@
+* dependencies
+** DONE UPDATE: www/py-flask (sent to fgsch)
+** DONE UPDATE: databases/py-flask-sqlalchemy (sent to fgsch)
+** DONE NEW: www/py-itsdangerous (sent to fgsch)
+** DONE NEW: www/py-wtforms (sent to fgsch)
+** DONE NEW: www/py-flask-wtf (sent to fgsch)
+** COMPLETED NEW: databases/py-puppetdb (sent to aja)
+
+* puppetboard
+** DONE NEW: www/puppetboard
+** TODO rename wsgi.py to puppetboard.py so we end up with a ps string like:
+   python2.7: gunicorn: worker [puppetboard:application] (python2.7)
+   instead of
+   python2.7: gunicorn: worker [wsgi:application] (python2.7)
+
+   this works better for the pexp in the rcscript
+** TODO puppetboard.rc

@@ -1,0 +1,5 @@
+Puppetboard is a web interface to PuppetDB aiming to replace the
+reporting functionality of Puppet Dashboard.
+
+Puppetboard relies on the pypuppetdb library to fetch data from PuppetDB
+and is built with the help of the Flask microframework.

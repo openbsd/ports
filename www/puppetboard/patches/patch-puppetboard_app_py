@@ -1,0 +1,16 @@
+$OpenBSD: patch-puppetboard_app_py,v 1.1.1.1 2013/12/27 09:41:59 jasper Exp $
+
+TypeError: connect() got an unexpected keyword argument 'ssl'
+
+--- puppetboard/app.py.orig	Mon Dec 23 09:49:58 2013
++++ puppetboard/app.py	Mon Dec 23 09:50:12 2013
+@@ -33,9 +33,6 @@ puppetdb = connect(
+     api_version=3,
+     host=app.config['PUPPETDB_HOST'],
+     port=app.config['PUPPETDB_PORT'],
+-    ssl=app.config['PUPPETDB_SSL'],
+-    ssl_key=app.config['PUPPETDB_KEY'],
+-    ssl_cert=app.config['PUPPETDB_CERT'],
+     timeout=app.config['PUPPETDB_TIMEOUT'],)
+ 
+ numeric_level = getattr(logging, app.config['LOGLEVEL'].upper(), None)
