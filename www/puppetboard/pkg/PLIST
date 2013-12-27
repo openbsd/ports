@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/27 09:41:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2013/12/27 11:06:33 jasper Exp $
 puppetboard/
 puppetboard/.gitignore
 puppetboard/CHANGELOG.rst
@@ -7,6 +7,7 @@ puppetboard/README.rst
 puppetboard/dev.py
 puppetboard/passenger_wsgi.py
 puppetboard/puppetboard/
+puppetboard/puppetboard_wsgi.py
 puppetboard/puppetboard/__init__.py
 puppetboard/puppetboard/app.py
 puppetboard/puppetboard/default_settings.py.dist
@@ -47,6 +48,6 @@ puppetboard/puppetboard/templates/reports_node.html
 puppetboard/puppetboard/tmp/
 puppetboard/puppetboard/utils.py
 puppetboard/requirements.txt
-puppetboard/wsgi.py
+@rcscript ${RCDIR}/puppetboard
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
 ${FULLPKGNAME}

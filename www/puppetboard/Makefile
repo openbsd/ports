@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/12/27 09:41:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/12/27 11:06:33 jasper Exp $
 
 COMMENT=		web interface to PuppetDB
 
 # git clone of eadcf8708ccdb6cfa7981f91bee425169d23234b
 DISTNAME=		puppetboard-0.0.1
+REVISION=		0
 CATEGORIES=		www
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -35,6 +36,7 @@ do-install:
 	mv ${INSTDIR}/puppetboard/default_settings.py \
 		${INSTDIR}/puppetboard/default_settings.py.dist
 	${INSTALL_DATA_DIR} ${INSTDIR}/puppetboard/{public,tmp}/
+	mv ${INSTDIR}/wsgi.py ${INSTDIR}/puppetboard_wsgi.py
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
 .include <bsd.port.mk>

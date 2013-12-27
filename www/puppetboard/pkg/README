@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2013/12/27 09:41:59 jasper Exp $
+$OpenBSD: README,v 1.2 2013/12/27 11:06:33 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -26,9 +26,6 @@ can be installed with:
 Starting puppetboard
 --------------------
 
-Puppetboard can be started by appending something along these lines to
-/etc/rc.local:
-
-    cd ${INSTDIR} && \
-    ${LOCALBASE}/bin/gunicorn --bind 127.0.0.1:80 --bind \[::1\]:80 \
-        --daemon --workers 4 wsgi:application
+By default Puppetboard will bind to 127.0.0.1:8000, to adjust this
+puppetboard_flags will need to be set in /etc/rc.conf.local. Please refer to the
+gunicorn documentation for the available options.

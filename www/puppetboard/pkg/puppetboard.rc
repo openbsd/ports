@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# $OpenBSD: puppetboard.rc,v 1.1 2013/12/27 11:06:33 jasper Exp $
+
+daemon="puppetboard_wsgi"
+daemon_flags="--workers 4"
+
+. /etc/rc.d/rc.subr
+
+pexp="python${MODPY_VERSION}:.*${daemon}:application"
+
+rc_start() {
+	${rcexec} "cd ${INSTDIR} && \
+		${LOCALBASE}/bin/gunicorn --daemon ${daemon_flags} ${daemon}:application"
+}
+
+rc_cmd $1
