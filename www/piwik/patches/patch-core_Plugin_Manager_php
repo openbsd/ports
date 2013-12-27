@@ -1,0 +1,19 @@
+$OpenBSD: patch-core_Plugin_Manager_php,v 1.1 2013/12/27 11:30:21 giovanni Exp $
+--- core/Plugin/Manager.php.orig	Fri Dec 20 13:35:41 2013
++++ core/Plugin/Manager.php	Fri Dec 27 12:09:54 2013
+@@ -48,7 +48,6 @@ class Manager extends Singleton
+     protected $doLoadAlwaysActivatedPlugins = true;
+     protected $pluginToAlwaysActivate = array(
+         'CoreHome',
+-        'CoreUpdater',
+         'CoreAdminHome',
+         'CoreConsole',
+         'CorePluginsAdmin',
+@@ -66,6 +65,7 @@ class Manager extends Singleton
+ 
+     protected $corePluginsDisabledByDefault = array(
+         'AnonymizeIP',
++        'CoreUpdater',
+         'CustomAlerts',
+         'DBStats',
+         'DevicesDetection',
