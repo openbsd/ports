@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2011/06/02 13:41:41 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2013/12/27 10:12:58 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,6 +9,3 @@ to the session script (note: gdm(1) does this automatically). e.g.
     ${PREFIX}/bin/ck-launch-session ${PREFIX}/bin/openbox-session
 
 Note that you need a system-wide DBus daemon running.
-
-The /var/log/ConsoleKit/history logfile can grow very large after some
-time. It is advised to use newsyslog(8) to rotate it.
