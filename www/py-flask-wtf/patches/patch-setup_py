@@ -1,0 +1,11 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2013/12/27 09:24:04 jasper Exp $
+--- setup.py.orig	Fri Dec 27 10:22:02 2013
++++ setup.py	Fri Dec 27 10:22:08 2013
+@@ -51,7 +51,6 @@ setup(
+     ],
+     tests_require=[
+         'nose',
+-        'Flask-Babel',
+     ],
+     classifiers=[
+         'Development Status :: 4 - Beta',
