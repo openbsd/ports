@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/05/06 16:16:30 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2013/12/27 09:12:50 jasper Exp $
+
+REVISION=0
 
 COMMENT =	sqlalchemy support for flask
 
-MODPY_EGG_VERSION = 0.16
+MODPY_EGG_VERSION = 1.0
 DISTNAME =	Flask-SQLAlchemy-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
 
@@ -36,6 +38,5 @@ post-install:
 	    ${PREFIX}/share/doc/${MODPY_PY_PREFIX}flask-sqlalchemy
 	cd ${WRKSRC}/docs/_build/html && \
 	    pax -rw * ${PREFIX}/share/doc/${MODPY_PY_PREFIX}flask-sqlalchemy
-	rm -rf ${PREFIX}/share/doc/${MODPY_PY_PREFIX}flask-sqlalchemy/_sources
 
 .include <bsd.port.mk>
