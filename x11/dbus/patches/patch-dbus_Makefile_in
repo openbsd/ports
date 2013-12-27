@@ -1,6 +1,9 @@
-$OpenBSD: patch-dbus_Makefile_in,v 1.17 2013/10/09 11:10:47 ajacoutot Exp $
---- dbus/Makefile.in.orig	Tue Oct  8 14:26:27 2013
-+++ dbus/Makefile.in	Wed Oct  9 12:43:49 2013
+$OpenBSD: patch-dbus_Makefile_in,v 1.18 2013/12/27 12:12:05 ajacoutot Exp $
+
+XXX -lkvm push upstream (cf. patch-dbus_dbus-sysdeps-util-unix_c)
+
+--- dbus/Makefile.in.orig	Fri Nov  1 17:24:42 2013
++++ dbus/Makefile.in	Fri Dec 27 12:48:18 2013
 @@ -644,7 +644,7 @@ AM_CPPFLAGS = \
  	$(SYSTEMD_CFLAGS) \
  	$(VALGRIND_CFLAGS) \
@@ -10,3 +13,12 @@ $OpenBSD: patch-dbus_Makefile_in,v 1.17 2013/10/09 11:10:47 ajacoutot Exp $
  	-DDBUS_SYSTEM_CONFIG_FILE=\""$(configdir)/system.conf"\" \
  	-DDBUS_SESSION_CONFIG_FILE=\""$(configdir)/session.conf"\" \
  	$(NULL)
+@@ -999,7 +999,7 @@ clean-noinstPROGRAMS:
+ 
+ dbus-test$(EXEEXT): $(dbus_test_OBJECTS) $(dbus_test_DEPENDENCIES) $(EXTRA_dbus_test_DEPENDENCIES) 
+ 	@rm -f dbus-test$(EXEEXT)
+-	$(AM_V_CCLD)$(LINK) $(dbus_test_OBJECTS) $(dbus_test_LDADD) $(LIBS)
++	$(AM_V_CCLD)$(LINK) $(dbus_test_OBJECTS) $(dbus_test_LDADD) $(LIBS) -lkvm
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT)
