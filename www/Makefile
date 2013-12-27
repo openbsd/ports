@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.649 2013/12/27 09:24:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.650 2013/12/27 09:42:49 jasper Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -373,6 +373,7 @@
      SUBDIR += pound
      SUBDIR += privoxy
      SUBDIR += puppet-dashboard
+     SUBDIR += puppetboard
      SUBDIR += py-CherryPy
      SUBDIR += py-beaker
      SUBDIR += py-beaker,python3
