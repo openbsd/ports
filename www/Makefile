@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.648 2013/12/25 18:41:04 fgsch Exp $
+# $OpenBSD: Makefile,v 1.649 2013/12/27 09:24:56 jasper Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -382,6 +382,7 @@
      SUBDIR += py-clientform
      SUBDIR += py-django
      SUBDIR += py-flask
+     SUBDIR += py-flask-wtf
      SUBDIR += py-flup
      SUBDIR += py-formencode
      SUBDIR += py-genshi
@@ -419,6 +420,7 @@
      SUBDIR += py-webpy
      SUBDIR += py-webtest
      SUBDIR += py-werkzeug
+     SUBDIR += py-wtforms
      SUBDIR += py-wsgiproxy
      SUBDIR += rackmonkey
      SUBDIR += racktables
