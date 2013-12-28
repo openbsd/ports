@@ -1,0 +1,42 @@
+$OpenBSD: patch-src_tcpconns_c,v 1.1 2013/12/28 20:44:21 krw Exp $
+--- src/tcpconns.c.orig	Fri Dec 27 11:33:41 2013
++++ src/tcpconns.c	Fri Dec 27 11:37:20 2013
+@@ -659,7 +659,6 @@ static int conn_init (void)
+ static int conn_read (void)
+ {
+   struct inpcbtable table;
+-  struct inpcb *head;
+   struct inpcb *next;
+   struct inpcb inpcb;
+   struct tcpcb tcpcb;
+@@ -672,18 +671,16 @@ static int conn_read (void)
+   if (status != 0)
+     return (-1);
+ 
+-  /* Get the `head' pcb */
+-  head = (struct inpcb *) &(inpcbtable_ptr->inpt_queue);
+   /* Get the first pcb */
+-  next = (struct inpcb *)CIRCLEQ_FIRST (&table.inpt_queue);
++  next = (struct inpcb *)TAILQ_FIRST (&table.inpt_queue);
+ 
+-  while (next != head)
++  while (next)
+   {
+     /* Read the pcb pointed to by `next' into `inpcb' */
+     kread ((u_long) next, &inpcb, sizeof (inpcb));
+ 
+     /* Advance `next' */
+-    next = (struct inpcb *)CIRCLEQ_NEXT (&inpcb, inp_queue);
++    next = (struct inpcb *)TAILQ_NEXT (&inpcb, inp_queue);
+ 
+     /* Ignore sockets, that are not connected. */
+ #ifdef __NetBSD__
+@@ -700,7 +697,7 @@ static int conn_read (void)
+ 
+     kread ((u_long) inpcb.inp_ppcb, &tcpcb, sizeof (tcpcb));
+     conn_handle_ports (ntohs(inpcb.inp_lport), ntohs(inpcb.inp_fport), tcpcb.t_state);
+-  } /* while (next != head) */
++  } /* while (next) */
+ 
+   conn_submit_all ();
+ 
