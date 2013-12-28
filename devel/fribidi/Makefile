@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/21 08:45:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2013/12/28 22:57:39 brad Exp $
 
 COMMENT=	library implementing the Unicode Bidirectional Algorithm
 
-DISTNAME=	fribidi-0.19.5
+DISTNAME=	fribidi-0.19.6
 CATEGORIES=	devel
 MASTER_SITES=	${HOMEPAGE}download/
 EXTRACT_SUFX=	.tar.bz2
