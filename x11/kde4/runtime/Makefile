@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/12/25 17:33:13 zhuk Exp $
+# $OpenBSD: Makefile,v 1.10 2013/12/28 21:33:26 zhuk Exp $
 
 COMMENT-main =		KDE core run-time components
 COMMENT-locale =	KDE locale data files
@@ -6,7 +6,7 @@ DISTNAME =		kde-runtime-${MODKDE4_VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-locale =	kde4-locale-${MODKDE4_VERSION}
 PKG_ARCH-locale =	*
-REVISION-main =		0
+REVISION-main =		1
 
 DPB_PROPERTIES =	parallel
 
@@ -57,7 +57,7 @@ RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			${BUILD_PKGPATH},-locale>=${MODKDE4_DEP_VERSION}
 
 # QCA2 is useless without this
-RUN_DEPENDS-main =	security/qca-ossl
+RUN_DEPENDS-main +=	security/qca-ossl
 
 LIB_DEPENDS-locale =
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
