@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2013/09/24 19:02:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2013/12/28 12:05:35 landry Exp $
 
 COMMENT =	Xfce4 media player
 
-XFCE_VERSION =	0.4.0
+XFCE_VERSION =	0.5.4
 XFCE_GOODIE =	parole
 CATEGORIES +=	audio
-REVISION =	2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -27,7 +26,7 @@ RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-good \
 		multimedia/gstreamer-0.10/plugins-ugly \
 		multimedia/gstreamer-0.10/plugins-ffmpeg
 
-WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1
 WANTLIB += dbus-glib-1 expat fontconfig freetype gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
@@ -37,7 +36,7 @@ WANTLIB += startup-notification-1 stdc++ xcb xcb-aux
 WANTLIB += xfce4util xml2 z notify tag tag_c xfce4ui-1
 WANTLIB += gstvideo-0.10 gstinterfaces-0.10 gstreamer-0.10 gstbase-0.10
 WANTLIB += gstaudio-0.10 gstpbutils-0.10 gsttag-0.10 xfconf-0
-WANTLIB += xcb-render GL Xxf86vm drm xcb-shm X11-xcb ffi
+WANTLIB += xcb-render xcb-shm X11-xcb ffi graphite2
 WANTLIB += harfbuzz orc-0.4
 
 .include <bsd.port.mk>
