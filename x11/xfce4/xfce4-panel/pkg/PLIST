@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.25 2013/05/31 19:18:22 landry Exp $
-@conflict xfce4-datetime-*
+@comment $OpenBSD: PLIST,v 1.26 2013/12/28 11:02:12 landry Exp $
+@conflict xfce4-datetime-<0.6.2
 @conflict xfce4-iconbox-*
 @conflict xfce4-showdesktop-*
 @conflict xfce4-systray-*
