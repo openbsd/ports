@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2013/12/24 15:22:55 brad Exp $
+@comment $OpenBSD: PLIST,v 1.27 2013/12/28 00:40:05 brad Exp $
 @bin bin/ffmpeg
 @bin bin/ffplay
 @bin bin/ffprobe
@@ -98,7 +98,7 @@ lib/libavfilter.a
 lib/libavformat.a
 @lib lib/libavformat.so.${LIBavformat_VERSION}
 lib/libavresample.a
-@bin lib/libavresample.so.${LIBavresample_VERSION}
+@lib lib/libavresample.so.${LIBavresample_VERSION}
 lib/libavutil.a
 @lib lib/libavutil.so.${LIBavutil_VERSION}
 lib/libpostproc.a
