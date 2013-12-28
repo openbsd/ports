@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.54 2013/12/21 11:47:20 zhuk Exp $
+# $OpenBSD: portcheck,v 1.55 2013/12/28 22:29:50 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1349,6 +1349,7 @@ check_subst_vars() {
 #   * BUILD_DEPENDS and MODULES are not defined in VAR-subpkg manner.
 #   * No trailing whitespace.
 #   * SHARED_LIBS are not defined inside ".if" statements.
+#   * Variables are not assigned via "=" twice outside of .if statemets.
 check_makefile() {
 	$debugging && echo "CALLED: check_makefile($*)" >&2
 
@@ -1359,41 +1360,60 @@ check_makefile() {
 		egrep -q '^#[[:space:]]*\$OpenBSD.*\$' ||
 		err "$F does not have \$OpenBSD\$ RCS tag at the top"
 
-	local l lnum=0 revs= t r
+	local iflevel=0 l lnum=0 revs= t r mkvars= var dupfound
+	# do not unset mkvars, having empty element(-s) is fine
 	unset revs[0]
 	local tab="$(print '\t')"
-	while read -r l; do ((++lnum)); case $l in
-	*(" ")REVISION*)
-		$existing_port ||
-			err "REVISION mark found at $F:$lnum"
+	while read -r l; do ((++lnum))
 		set -A t -- $l
-		t[0]=${t[0]%=}
-		if ((${#revs[@]} > 0)); then
-			for r in "${revs[@]}"; do
-				if [[ ${t[0]} == "$r" ]]; then
-					err "duplicated $r in $F"
-					# avoid dup error messages
+		dupfound=false
+
+		case $l in
+		*(" ")REVISION*)
+			$existing_port ||
+				err "REVISION mark found at $F:$lnum"
+			var=${t[0]%=}
+			if ((${#revs[@]} > 0)); then
+				for r in "${revs[@]}"; do
+					if [[ $var == "$r" ]]; then
+						err "duplicated $r in $F"
+						# avoid dup error messages
+						dupfound=true
+						break
+					fi
+				done
+			fi
+			revs[${#revs[@]}]=${t[0]}
+			;;
+		*(" ")@(BUILD_DEPENDS|MODULES)-*)
+			err "${l%%-*} is not a subpackageble variable, see $F:$lnum"
+			;;
+		*(" ").*(" "|"$tab")if*)
+			((++iflevel))
+			;;
+		*(" ").*(" "|"$tab")endif*)
+			((iflevel--))
+			;;
+		*(" ")SHARED_LIBS*(" "|"$tab")*(+|:|!)=*)
+			if ((iflevel > 0)); then
+				err "should not be inside .if block ($F:$lnum): $l"
+			fi
+			;;
+		esac
+
+		if [[ $l == *(" ")+([A-Za-z0-9_-])*(" "|"$tab")=* ]] &&
+		   ((iflevel == 0)) && ! $dupfound; then
+			var=${t[0]%=}
+			for v in "${mkvars[@]}"; do
+				if [[ $v == "$var" ]]; then
+					err "duplicated assignment of $v" \
+					    "at $F:$lnum"
 					break
 				fi
 			done
+			mkvars[${#mkvars[@]}]=$var
 		fi
-		revs[${#revs[@]}]=${t[0]}
-		;;
-	*(" ")@(BUILD_DEPENDS|MODULES)-*)
-		err "${l%%-*} is not a subpackageble variable, see $F:$lnum"
-		;;
-	*(" ").*(" "|"$tab")if*)
-		((++iflevel))
-		;;
-	*(" ").*(" "|"$tab")endif*)
-		((iflevel--))
-		;;
-	*(" ")SHARED_LIBS*(" "|"$tab")*(+|:|!)=*)
-		if ((iflevel > 0)); then
-			err "should not be inside .if block ($F:$lnum): $l"
-		fi
-		;;
-	esac; done <"$F"
+	done <"$F"
 }
 
 # Checks made:
