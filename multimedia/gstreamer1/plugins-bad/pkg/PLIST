@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2013/11/21 17:00:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2013/12/29 10:36:17 ajacoutot Exp $
 include/gstreamer-${API}/gst/basecamerabinsrc/
 include/gstreamer-${API}/gst/basecamerabinsrc/gstbasecamerasrc.h
 include/gstreamer-${API}/gst/basecamerabinsrc/gstcamerabin-enum.h
@@ -20,6 +20,7 @@ include/gstreamer-${API}/gst/mpegts/
 include/gstreamer-${API}/gst/mpegts/gst-atsc-section.h
 include/gstreamer-${API}/gst/mpegts/gst-dvb-descriptor.h
 include/gstreamer-${API}/gst/mpegts/gst-dvb-section.h
+include/gstreamer-${API}/gst/mpegts/gstmpegts-enumtypes.h
 include/gstreamer-${API}/gst/mpegts/gstmpegtsdescriptor.h
 include/gstreamer-${API}/gst/mpegts/gstmpegtssection.h
 include/gstreamer-${API}/gst/mpegts/mpegts.h
