@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/10/28 08:54:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2013/12/29 13:06:59 ajacoutot Exp $
+
+MODPY_EGG_VERSION=	3.0.1
+REVISION=		#empty
 
 TRYTOND_MODULE =	timesheet_cost
 
