@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_ck-sysdeps-unix_c,v 1.11 2013/10/09 16:43:13 ajacoutot Exp $
+$OpenBSD: patch-src_ck-sysdeps-unix_c,v 1.12 2013/12/29 18:47:37 ajacoutot Exp $
 --- src/ck-sysdeps-unix.c.orig	Fri Jul 19 06:15:28 2013
-+++ src/ck-sysdeps-unix.c	Wed Oct  9 18:31:11 2013
++++ src/ck-sysdeps-unix.c	Sun Dec 29 19:44:09 2013
 @@ -36,6 +36,10 @@
  #include <linux/kd.h>
  #endif
@@ -16,9 +16,8 @@ $OpenBSD: patch-src_ck-sysdeps-unix_c,v 1.11 2013/10/09 16:43:13 ajacoutot Exp $
          ret = FALSE;
  
  #ifdef SO_PEERCRED
--        struct ucred cr;
 +#ifndef __OpenBSD__
-+        struct uncred cr;
+         struct ucred cr;
 +#else
 +        struct sockpeercred cr;
 +#endif
