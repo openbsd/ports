@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.56 2013/12/29 07:07:25 zhuk Exp $
+# $OpenBSD: portcheck,v 1.57 2013/12/29 16:59:06 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1100,6 +1100,11 @@ check_wantlib() {
 
 		@(qt-mt|qui|qui-mt)?(?('>')=+([0-9])))
 			err "$portref$v instead of lib/qt3/$v" \
+			    "in WANTLIB"
+			;;
+
+		@(smbclient|wbclient)?(?('>')=+([0-9])))
+			err "$portref$v instead of lib/samba/$v" \
 			    "in WANTLIB"
 			;;
 
