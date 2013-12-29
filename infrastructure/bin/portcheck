@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.55 2013/12/28 22:29:50 zhuk Exp $
+# $OpenBSD: portcheck,v 1.56 2013/12/29 07:07:25 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -37,7 +37,7 @@ portsdir=
 rootrun=false
 debugging=false
 
-ignore_list=; unset ignorelist[0]
+ignore_list=; unset ignore_list[0]
 
 while getopts "ACdPp:Ux:" OPT; do
 	case $OPT in
@@ -216,6 +216,7 @@ has_subdirs_only() {
 }
 
 ignoring() {
+	((${#ignore_list[*]} > 0)) || return 1
 	local iglob
 	for iglob in "${ignore_list[@]}"; do
 		[[ ${1#./} == $iglob ]] && return 0
@@ -228,7 +229,7 @@ is_vcs_item() {
 }
 
 handle_extra_file() {
-	ignoring "$1" || return 0
+	ignoring "$1" && return 0
 
 	# avoid warning, e.g., about ".*"
 	test -e "$1" || return 0
