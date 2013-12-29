@@ -1,0 +1,2 @@
+This plugin can retrieve a value from a sysctl variable to be used in
+agents and discovery.
