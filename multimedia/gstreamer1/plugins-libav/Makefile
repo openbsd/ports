@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/11/21 17:00:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2013/12/29 10:36:44 ajacoutot Exp $
 
 COMMENT=		ffmpeg elements for GStreamer
 
@@ -38,9 +38,8 @@ libav_CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 			--disable-armv5te \
 			--disable-armv6 \
 			--disable-armv6t2 \
-			--disable-armvfp \
-			--disable-debug \
-			--disable-iwmmxt
+			--disable-vfp \
+			--disable-debug
 
 CONFIGURE_ARGS=		--with-libav-extra-configure="${libav_CONFIGURE_ARGS}"
 
