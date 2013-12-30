@@ -1,9 +1,9 @@
-$OpenBSD: patch-tests_Makefile,v 1.4 2013/03/08 10:26:26 jasper Exp $
+$OpenBSD: patch-tests_Makefile,v 1.5 2013/12/30 08:00:03 jasper Exp $
 
 - Ensure the libraries needed by libregress.so can also be located and are preloaded.
 
---- tests/Makefile.orig	Sat Feb 23 10:39:13 2013
-+++ tests/Makefile	Sat Feb 23 10:49:10 2013
+--- tests/Makefile.orig	Mon Dec 30 08:43:45 2013
++++ tests/Makefile	Mon Dec 30 08:45:06 2013
 @@ -24,7 +24,7 @@ endif
  endif
  
@@ -17,17 +17,17 @@ $OpenBSD: patch-tests_Makefile,v 1.4 2013/03/08 10:26:26 jasper Exp $
  	rm -f $(REGRESS) $(REGRESS_OBJS) Regress-1.0.gir Regress-1.0.typelib
  
  check : all
--	cd .. && LD_LIBRARY_PATH=tests:$$LD_LIBRARY_PATH GI_TYPELIB_PATH=tests:$$GI_TYPELIB_PATH $(LUA) tests/test.lua
-+	cd .. && LD_PRELOAD=/usr/lib/libpthread.so LD_LIBRARY_PATH=tests:$$LD_LIBRARY_PATH GI_TYPELIB_PATH=tests:$$GI_TYPELIB_PATH $(LUA) tests/test.lua
- 
- $(REGRESS) : regress.o
- 	$(CC) $(ALL_LDFLAGS) -o $@ regress.o $(LIBS)
-@@ -69,7 +69,7 @@ Regress-1.0.gir : $(REGRESS)
+-	cd .. && LD_LIBRARY_PATH=tests:$$LD_LIBRARY_PATH \
++	cd .. && LD_PRELOAD=/usr/lib/libpthread.so LD_LIBRARY_PATH=tests:$$LD_LIBRARY_PATH \
+ 	    GI_TYPELIB_PATH=tests:$$GI_TYPELIB_PATH \
+ 	    LUA_PATH=./?.lua\;`$(LUA) -e "print(package.path)"` \
+ 	    LUA_CPATH=./?.so\;`$(LUA) -e "print(package.cpath)"` \
+@@ -73,7 +73,7 @@ Regress-1.0.gir : $(REGRESS)
  	  --namespace=Regress --nsversion=1.0				\
  	  --include=cairo-1.0 --include=Gio-2.0				\
  	  --library-path=/usr/lib --library-path=/usr/X11R6/lib		\
 -	  --library-path=/usr/local/lib					\
-+	  --library-path=${LOCALBASE}/lib				\
++	  --library-path=${LOCALBASE}/lib					\
  	  $(GIDATADIR)/regress.c $(GIDATADIR)/regress.h			\
  	 -lregress
  

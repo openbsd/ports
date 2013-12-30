@@ -1,7 +1,7 @@
-$OpenBSD: patch-lgi_core_c,v 1.4 2013/05/21 07:50:28 dcoppa Exp $
---- lgi/core.c.orig	Mon May 20 14:17:38 2013
-+++ lgi/core.c	Mon May 20 14:18:14 2013
-@@ -607,7 +607,7 @@ set_resident (lua_State *L)
+$OpenBSD: patch-lgi_core_c,v 1.5 2013/12/30 08:00:03 jasper Exp $
+--- lgi/core.c.orig	Thu Sep 12 20:55:48 2013
++++ lgi/core.c	Mon Dec 30 08:45:13 2013
+@@ -620,7 +620,7 @@ set_resident (lua_State *L)
  }
  
  int
