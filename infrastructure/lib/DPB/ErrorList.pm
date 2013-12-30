@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: ErrorList.pm,v 1.2 2013/10/06 13:33:29 espie Exp $
+# $OpenBSD: ErrorList.pm,v 1.3 2013/12/30 17:32:26 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -127,7 +127,9 @@ sub unlock_early
 	my $sub = $engine->{buildable};
 	my $h = $sub->{nfs}{$v};
 	while (my ($k, $w) = each %$h) {
-		if ($sub->{builder}->end_check($w)) {
+		if ($sub->remove_stub($w)) {
+			delete $h->{$k};
+		} elsif ($sub->{builder}->end_check($w)) {
 			$sub->mark_as_done($w);
 			delete $h->{$k};
 		} else {

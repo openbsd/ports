@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Build.pm,v 1.8 2013/10/18 19:21:04 espie Exp $
+# $OpenBSD: Build.pm,v 1.9 2013/12/30 17:32:26 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -190,11 +190,25 @@ sub mark_as_done
 	$self->remove($v);
 }
 
+# special case: some of those paths can't be built
+sub remove_stub
+{
+	my ($self, $v) = @_;
+	if ($v->{info}->is_stub) {
+		$self->{engine}{affinity}->unmark($v);
+		delete $self->{engine}{tobuild}{$v};
+		$self->remove($v);
+		return 1;
+	}
+	return 0;
+}
+
 sub is_done_or_enqueue
 {
 	my ($self, $v) = @_;
 	my $okay = 1;
 	for my $w ($v->build_path_list) {
+		next if $self->remove_stub($w);
 		if ($self->{builder}->end_check($w)) {
 			$self->mark_as_done($w);
 		} else {
@@ -211,6 +225,7 @@ sub is_done
 	if ($self->{builder}->check($v)) {
 		for my $w ($v->build_path_list) {
 			next if $v eq $w;
+			next if $self->remove_stub($w);
 			next unless $self->{builder}->check($w);
 			$self->mark_as_done($w);
 		}

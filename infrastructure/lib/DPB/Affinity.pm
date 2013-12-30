@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Affinity.pm,v 1.9 2013/10/27 09:21:38 espie Exp $
+# $OpenBSD: Affinity.pm,v 1.10 2013/12/30 17:32:26 espie Exp $
 #
 # Copyright (c) 2012-2013 Marc Espie <espie@openbsd.org>
 #
@@ -54,6 +54,7 @@ sub start
 	my ($self, $v, $core) = @_;
 	my $host = $core->hostname;
 	for my $w ($v->build_path_list) {
+		next if $w->{info}->is_stub;
 		open(my $fh, '>', $self->affinity_marker($w)) or next;
 		$w->{affinity} = $host;
 		print $fh "host=$host\n";
