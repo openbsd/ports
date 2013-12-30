@@ -1,7 +1,19 @@
-$OpenBSD: patch-platforms_unix_vm_sqUnixMain_c,v 1.3 2008/07/23 11:17:22 espie Exp $
---- platforms/unix/vm/sqUnixMain.c.orig	Wed Jul 23 12:54:17 2008
-+++ platforms/unix/vm/sqUnixMain.c	Wed Jul 23 12:54:34 2008
-@@ -698,6 +698,7 @@ static struct moduleDescription moduleDescriptions[]=
+$OpenBSD: patch-platforms_unix_vm_sqUnixMain_c,v 1.4 2013/12/30 12:14:55 landry Exp $
+--- platforms/unix/vm/sqUnixMain.c.orig	Sat Mar 22 02:33:18 2008
++++ platforms/unix/vm/sqUnixMain.c	Mon Dec 30 04:30:27 2013
+@@ -54,11 +54,6 @@
+ #include <signal.h>
+ #include <fcntl.h>
+ 
+-#if defined(__alpha__)
+-# include <sys/sysinfo.h>
+-# include <sys/proc.h>
+-#endif
+-
+ #undef	DEBUG_MODULES
+ 
+ #undef	IMAGE_DUMP				/* define to enable SIGHUP and SIGQUIT handling */
+@@ -698,6 +693,7 @@ static struct moduleDescription moduleDescriptions[]=
    { &displayModule, "display", "custom" },	/*** NO DEFAULT ***/
    { &soundModule,   "sound",   "NAS"    },	/*** NO DEFAULT ***/
    { &soundModule,   "sound",   "OSS"    },
@@ -9,3 +21,21 @@ $OpenBSD: patch-platforms_unix_vm_sqUnixMain_c,v 1.3 2008/07/23 11:17:22 espie E
    { &soundModule,   "sound",   "custom" },	/*** NO DEFAULT ***/
    /* defaults */
    { &displayModule, "display", "Quartz" },
+@@ -1329,17 +1325,6 @@ int main(int argc, char **argv, char **envp)
+     outOfMemory();
+ 
+   signal(SIGSEGV, sigsegv);
+-
+-#if defined(__alpha__)
+-  /* disable printing of unaligned access exceptions */
+-  {
+-    int buf[2]= { SSIN_UACPROC, UAC_NOPRINT };
+-    if (setsysinfo(SSI_NVPAIRS, buf, 1, 0, 0, 0) < 0)
+-      {
+-	perror("setsysinfo(UAC_NOPRINT)");
+-      }
+-  }
+-#endif
+ 
+ #if defined(HAVE_TZSET)
+   tzset();	/* should _not_ be necessary! */

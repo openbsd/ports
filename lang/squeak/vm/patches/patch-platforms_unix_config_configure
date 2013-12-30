@@ -1,0 +1,25 @@
+$OpenBSD: patch-platforms_unix_config_configure,v 1.1 2013/12/30 12:14:55 landry Exp $
+fix build on alpha
+--- platforms/unix/config/configure.orig	Thu Apr 10 15:48:48 2008
++++ platforms/unix/config/configure	Mon Dec 30 04:20:56 2013
+@@ -26202,20 +26202,6 @@ cat >>confdefs.h <<_ACEOF
+ #define VM_MODULE_PREFIX "$mkfrags_lib_prefix"
+ _ACEOF
+ 
+-test "$ac_cv_module_prefix" = lib && mkfrags_lib_prefix=lib
+-{ echo "$as_me:$LINENO: checking for compiler flags to force 32-bit addresses" >&5
+-echo $ECHO_N "checking for compiler flags to force 32-bit addresses... $ECHO_C" >&6; }
+-case $host in
+-  alpha*)
+-    CFLAGS_32="-taso"
+-    test "$GCC" = "yes" && CC="\$(utldir)/decgcc"
+-    ;;
+-esac
+-{ echo "$as_me:$LINENO: result: $CFLAGS_32" >&5
+-echo "${ECHO_T}$CFLAGS_32" >&6; }
+-
+-CFLAGS="$CFLAGS_32 $CFLAGS"
+-
+ { echo "$as_me:$LINENO: checking whether byte ordering is bigendian" >&5
+ echo $ECHO_N "checking whether byte ordering is bigendian... $ECHO_C" >&6; }
+ if test "${ac_cv_c_bigendian+set}" = set; then
