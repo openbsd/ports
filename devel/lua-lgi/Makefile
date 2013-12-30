@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2013/05/21 07:50:28 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.19 2013/12/30 07:41:23 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	lua bindings to libraries using GObject-Introspection
 
-DISTNAME=	lgi-0.7.1
+GH_VER=		0.7.1
+DISTNAME=	lgi-${GH_VER}
 REVISION=	1
 PKGNAME=	lua-${DISTNAME}
 CATEGORIES=	devel
@@ -22,7 +23,8 @@ WANTLIB += pthread
 
 LIB_DEPENDS=	devel/gobject-introspection
 
-MASTER_SITES=	http://distfiles.nl/
+MASTER_SITES=	${HOMEPAGE}/archive/
+DISTFILES=	${DISTNAME}{${GH_VER}}${EXTRACT_SUFX}
 
 USE_GMAKE=	Yes
 MAKE_ENV=	MAKE=${MAKE_PROGRAM} LUA_CFLAGS="-I${MODLUA_INCL_DIR}" \
