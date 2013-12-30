@@ -1,0 +1,14 @@
+CuteMaze is a simple, top-down game in which mazes are randomly
+generated using one of a choice of several different algorithms. You
+move the character through the maze while hunting for targets (cheese,
+by default)-the game is won once all of these targets have been picked
+up.
+
+Features:
+* Showing the amount of time and steps it has taken to play the maze
+* "Bread crumb" trail to show you where you've already been (optional)
+* Flag system which allows you to mark and later un-mark any square on
+  the board
+* Hints that direct you to the closest target
+* Zooming out to see more of the maze
+* SVG themes (two themes come with the game)
