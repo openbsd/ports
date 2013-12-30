@@ -1,9 +1,9 @@
-$OpenBSD: patch-plasma_generic_runners_calculator_CMakeLists_txt,v 1.1.1.1 2013/04/24 19:17:42 zhuk Exp $
---- plasma/generic/runners/calculator/CMakeLists.txt.orig	Fri Nov 30 01:19:50 2012
-+++ plasma/generic/runners/calculator/CMakeLists.txt	Fri Nov 30 01:20:34 2012
-@@ -4,7 +4,7 @@
- macro_optional_find_package(Qalculate)
- macro_log_feature(QALCULATE_FOUND "Qalculate!" "Qalculate Library" "http://qalculate.sourceforge.net/" FALSE "" "Needed to enable advanced features of the calculator runner")
+$OpenBSD: patch-plasma_generic_runners_calculator_CMakeLists_txt,v 1.2 2013/12/30 14:11:48 zhuk Exp $
+--- plasma/generic/runners/calculator/CMakeLists.txt.orig	Wed Aug 28 20:59:38 2013
++++ plasma/generic/runners/calculator/CMakeLists.txt	Mon Dec  9 20:11:15 2013
+@@ -8,7 +8,7 @@ set_package_properties(Qalculate PROPERTIES DESCRIPTIO
+                        PURPOSE "Needed to enable advanced features of the calculator runner"
+                       )
  if ( QALCULATE_FOUND )
 -    add_definitions(-DENABLE_QALCULATE)
 +    add_definitions(-DENABLE_QALCULATE ${QALCULATE_CFLAGS})

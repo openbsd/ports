@@ -1,7 +1,7 @@
-$OpenBSD: patch-startkde_cmake,v 1.1.1.1 2013/04/24 19:17:42 zhuk Exp $
+$OpenBSD: patch-startkde_cmake,v 1.2 2013/12/30 14:11:48 zhuk Exp $
 Fix lnusertemp locate and make startkde work even without X started.
---- startkde.cmake.orig	Fri Sep 28 04:14:50 2012
-+++ startkde.cmake	Fri Oct 26 14:07:20 2012
+--- startkde.cmake.orig	Wed Aug 28 20:59:38 2013
++++ startkde.cmake	Mon Dec  9 20:11:15 2013
 @@ -3,6 +3,11 @@
  #  DEFAULT KDE STARTUP SCRIPT ( @KDE_VERSION_STRING@ )
  #
@@ -14,7 +14,7 @@ Fix lnusertemp locate and make startkde work even without X started.
  if test "x$1" = x--failsafe; then
      KDE_FAILSAFE=1 # General failsafe flag
      KWIN_COMPOSE=N # Disable KWin's compositing
-@@ -231,10 +236,10 @@ else
+@@ -228,10 +233,10 @@ else
      export GS_LIB
  fi
  
