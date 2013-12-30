@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1252 2013/12/07 15:41:47 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1253 2013/12/30 12:33:07 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -208,8 +208,15 @@ PKG_CREATE ?= /usr/sbin/pkg_create
 PKG_DELETE ?= /usr/sbin/pkg_delete
 
 _PKG_ADD = ${PKG_ADD} ${_PROGRESS} -I
-_PKG_CREATE = ${PKG_CREATE} ${_PROGRESS}
+_PKG_CREATE = ${PKG_CREATE} ${_PROGRESS} ${SIGNING_PARAMETERS}
+_PKG_ADD_LOCAL = PKG_PATH=${_PKG_REPO} ${_PKG_ADD} 
 _PKG_DELETE = ${PKG_DELETE} ${_PROGRESS}
+
+SIGNING_PARAMETERS ?=
+.if empty(SIGNING_PARAMETERS)
+_PKG_ADD_LOCAL += -Dunsigned
+.endif
+
 
 .if !defined(_ARCH_DEFINES_INCLUDED)
 _ARCH_DEFINES_INCLUDED = Done
@@ -1910,7 +1917,7 @@ ${_INSTALL_COOKIE${_S}}:
 	@if ${PKG_INFO} -e ${FULLPKGNAME${_S}}; then \
 		echo "Package ${FULLPKGNAME${_S}} is already installed"; \
 	else \
-		${SUDO} ${SETENV} ${_TERM_ENV} PKG_PATH=${_PKG_REPO} ${_PKG_ADD} ${_PKG_ADD_AUTO} ${PKGFILE${_S}}; \
+		${SUDO} ${SETENV} ${_TERM_ENV} ${_PKG_ADD_LOCAL} ${_PKG_ADD_AUTO} ${PKGFILE${_S}}; \
 	fi
 	@-${SUDO} ${_MAKE_COOKIE} $@
 
@@ -1931,7 +1938,7 @@ ${_UPDATE_COOKIE${_S}}:
 		     ${MAKE} _internal-run-depends _internal-runlib-depends \
 			   _internal-runwantlib-depends; \
 		   ${ECHO_MSG} "Upgrading from $$a"; \
-		   ${SUDO} ${SETENV} PKG_PATH=${_PKG_REPO} PKG_TMPDIR=${PKG_TMPDIR} ${_PKG_ADD} ${_PKG_ADD_AUTO} -r ${_PKG_ADD_FORCE} ${PKGFILE${_S}};; \
+		   ${SUDO} ${SETENV} ${_TERM_ ENV} ${_PKG_ADD_LOCAL} ${_PKG_ADD_AUTO} -r ${_PKG_ADD_FORCE} ${PKGFILE${_S}};; \
 	esac
 	@${_MAKE_COOKIE} $@
 
@@ -1946,7 +1953,7 @@ ${_FUPDATE_COOKIE${_S}}:
 	@mkdir -p ${UPDATE_COOKIES_DIR}
 .  endif
 	@${ECHO_MSG} "===> Updating/installing for ${FULLPKGNAME${_S}}"
-	@${SUDO} ${SETENV} ${_TERM_ENV} PKG_PATH=${_PKG_REPO} ${_PKG_ADD} ${_PKG_ADD_AUTO} -r ${_PKG_ADD_FORCE} ${PKGFILE${_S}}
+	@${SUDO} ${SETENV} ${_TERM_ENV} ${_PKG_ADD_LOCAL} ${_PKG_ADD_AUTO} -r ${_PKG_ADD_FORCE} ${PKGFILE${_S}}
 	@${_MAKE_COOKIE} $@
 .endfor
 
