@@ -1,80 +1,84 @@
-# $OpenBSD: Makefile,v 1.59 2013/12/08 11:23:47 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2013/12/30 12:23:45 ajacoutot Exp $
 
-SHARED_ONLY =	Yes
+SHARED_ONLY =		Yes
 
-COMMENT =	personal and small-business financial-accounting software
+COMMENT =		personal and small-business financial-accounting software
 
-GNOME_PROJECT =	gnucash
-GNOME_VERSION =	2.4.13
-DOC_VERSION = 	2.4.2
-EXTRACT_SUFX =	.tar.bz2
-REVISION=	1
+GNOME_PROJECT =		gnucash
+GNOME_VERSION =		2.6.0
+DOC_VERSION = 		2.6.0
+EXTRACT_SUFX =		.tar.bz2
 
-SHARED_LIBS +=  gnc-qof              1.4      # 1.4
+SHARED_LIBS +=  gnc-qof              2.0      # 1.4
 SHARED_LIBS +=  gnc-core-utils       0.0      # unknown
 SHARED_LIBS +=  gnc-module           0.0      # unknown
-SHARED_LIBS +=  gnc-backend-xml-utils 0.0      # unknown
+SHARED_LIBS +=  gnc-backend-xml-utils 0.0     # unknown
 SHARED_LIBS +=  gnc-backend-sql      0.0      # unknown
-SHARED_LIBS +=  gnc-business-ledger  0.0      # unknown
 SHARED_LIBS +=  gnc-gnome            0.0      # unknown
 SHARED_LIBS +=  gncmod-qif           0.0      # unknown
+SHARED_LIBS +=  gnc-business-ledger  0.0      # unknown
 
-CATEGORIES =	productivity
+CATEGORIES =		productivity
 
-HOMEPAGE =	http://www.gnucash.org/
+HOMEPAGE =		http://www.gnucash.org/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xcomposite Xcursor
-WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2
-WANTLIB += atk-1.0 bonobo-2 bonobo-activation bonoboui-2 bz2 c
-WANTLIB += cairo canberra crypto dbi dbus-1 dbus-glib-1 enchant
-WANTLIB += expat ffi fontconfig freetype gailutil gcrypt gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glade-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gmp gnome-2 gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2
-WANTLIB += gobject-2.0 goffice-0.8 gpg-error graphite2 gsf-1 gthread-2.0
-WANTLIB += gtk-x11-2.0 gtkhtml-3.14 guile harfbuzz ltdl m ogg
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png popt pthread pthread-stubs ssl stdc++ util vorbis
-WANTLIB += vorbisfile xcb xcb-render xcb-shm xml2 z
+WANTLIB += EGL GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xt art_lgpl_2 atk-1.0 bz2
+WANTLIB += c cairo dbi dbus-1 dbus-glib-1 enchant expat ffi fontconfig
+WANTLIB += freetype gailutil gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += geoclue gio-2.0 glib-2.0 gmodule-2.0 gmp gnome-keyring
+WANTLIB += gnomecanvas-2 gobject-2.0 goffice-0.8 gpg-error graphite2
+WANTLIB += gsf-1 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0
+WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
+WANTLIB += gthread-2.0 gtk-x11-2.0 guile harfbuzz harfbuzz-icu
+WANTLIB += icudata icui18n icuuc javascriptcoregtk-1.0 jpeg ltdl
+WANTLIB += m orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png pthread pthread-stubs secret-1 soup-2.4
+WANTLIB += sqlite3 stdc++ webkitgtk-1.0 webp xcb xcb-render xcb-shm
+WANTLIB += xml2 xslt z
 
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gnucash/} \
-		${HOMEPAGE}pub/gnucash/sources/stable/
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gnucash/}
 
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
-		gnucash-docs-${DOC_VERSION}.tar.gz
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
+			gnucash-docs-${DOC_VERSION}.tar.gz
 
-MODULES =	devel/gettext \
-		x11/gnome \
-		devel/gconf2
+MODULES =		devel/dconf \
+			devel/gettext \
+			x11/gnome
 
 MODGNOME_DESKTOP_FILE =	Yes
 MODGNOME_ICON_CACHE =	Yes
-MODGCONF2_SCHEMAS_DIR = gnucash
 MODGNOME_TOOLS = 	yelp
 
-LIB_DEPENDS =	databases/libdbi \
-		devel/goffice08 \
-		lang/guile \
-		www/gtkhtml3 \
-		x11/gnome/libgnomeui
+LIBTOOL_FLAGS =		--tag=disable-static
+
+BUILD_DEPENDS=		databases/libdbi-drivers,-sqlite3
+RUN_DEPENDS=		databases/libdbi-drivers,-sqlite3
+
+LIB_DEPENDS =		databases/libdbi \
+			devel/goffice08 \
+			lang/guile \
+			www/webkit \
+			x11/gnome/libgnome-keyring \
+			x11/gnome/libgnomecanvas
 
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS =	--disable-static \
+			--with-dbi-dbd-dir=${LOCALBASE}/lib/dbd \
+			--with-xdg-data-dirs=${LOCALBASE}/share
+
 # --disable-ofx until libofx/libsp is fixed to work with .so
 CONFIGURE_ARGS +=	--disable-doxygen \
 			--disable-ofx
+
 MODGNOME_CPPFLAGS =	-I${X11BASE}/include
-# configure checks for pthread_mutex_init(3)
-MODGNOME_LDFLAGS =	-pthread
 
-# see patch-src_core-utils_gnc-path_c
-CFLAGS +=	-DGCONFDIR='\"/var/db\"'
-
-FAKE_FLAGS =	sysconfdir=${PREFIX}/share/examples/
-
-# Steps to build the docs.
+FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/
 DOC_DIR =		${WRKDIR}/gnucash-docs-${DOC_VERSION}
+
 post-configure:
 	cd ${DOC_DIR} && ${SETENV} ${CONFIGURE_ENV} /bin/sh ./configure
 
@@ -84,5 +88,6 @@ post-build:
 post-install:
 	cd ${DOC_DIR} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} install
+	rm ${PREFIX}/lib/gnucash/*.la
 
 .include <bsd.port.mk>
