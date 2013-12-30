@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.825 2013/12/12 10:49:13 zhuk Exp $
+# $OpenBSD: Makefile,v 1.826 2013/12/30 23:20:36 landry Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -500,7 +500,6 @@
      SUBDIR += quvi
      SUBDIR += rabbitmq
      SUBDIR += radiusd-cistron
-     SUBDIR += radiusd-lucent
      SUBDIR += rbldnsd
      SUBDIR += retroshare
      SUBDIR += rrdtool
