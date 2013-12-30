@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.41 2013/12/29 18:47:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2013/12/30 08:52:08 ajacoutot Exp $
 
 COMMENT=	framework for defining and tracking users
 
 DISTNAME=	ConsoleKit-0.4.6
 EXTRACT_SUFX=	.tar.xz
 PKGNAME=	${DISTNAME:L}
-REVISION=	8
+REVISION=	9
 
 CATEGORIES=	sysutils	
 
@@ -46,10 +46,5 @@ pre-patch:
 	@cd ${WRKSRC}/tools && \
 		cp -R freebsd openbsd && \
 		perl -pi -e "s,freebsd,openbsd,g" openbsd/Makefile.in
-
-# from Slackware Linux
-post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/pam-foreground-compat.ck \
-		${PREFIX}/lib/ConsoleKit/run-session.d/pam-foreground-compat.ck
 
 .include <bsd.port.mk>
