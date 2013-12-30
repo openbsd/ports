@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.37 2013/10/06 13:33:35 espie Exp $
+# $OpenBSD: Vars.pm,v 1.38 2013/12/30 12:28:23 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -65,6 +65,7 @@ _MAKEFILE_INC_DONE=Yes
 ECHO_MSG=:
 .PHONY: print-data
 .include <bsd.port.mk>
+SIGNING_PARAMETERS ?=
 EOT
 		close $wh;
 		exit 0;
