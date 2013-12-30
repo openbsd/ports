@@ -1,0 +1,13 @@
+$OpenBSD: patch-panel-plugin_settings_cpp,v 1.1.1.1 2013/12/30 11:48:14 landry Exp $
+Dont show switchuser & menueditor by default since they wont work on openbsd
+--- panel-plugin/settings.cpp.orig	Fri Dec 13 17:25:30 2013
++++ panel-plugin/settings.cpp	Mon Dec 30 12:18:10 2013
+@@ -141,6 +141,8 @@ void Settings::load(char* file)
+ {
+ 	if (!file)
+ 	{
++		command[CommandSwitchUser]->set_shown(false);
++		command[CommandMenuEditor]->set_shown(false);
+ 		return;
+ 	}
+ 
