@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/12/27 11:06:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2013/12/30 07:37:55 jasper Exp $
 
 COMMENT=		web interface to PuppetDB
 
@@ -11,6 +11,8 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Apache2
 PERMIT_PACKAGE_CDROM=	Yes
+
+MASTER_SITES=		http://distfiles.nl/
 
 MODULES=		lang/python
 
