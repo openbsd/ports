@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/12/25 21:55:57 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2013/12/30 18:06:43 landry Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl
 SHARED_ONLY=	Yes
@@ -29,7 +29,7 @@ MASTER_SITES=	http://download.osgeo.org/mapserver/
 MODULES=	converters/libiconv lang/php devel/cmake
 MODPHP_RUNDEP=	No
 RUN_DEPENDS-php =	${MODPHP_RUN_DEPENDS}
-BUILD_DEPENDS +=	devel/swig
+BUILD_DEPENDS +=	devel/swig databases/postgresql,-server
 
 LIB_DEPENDS=	devel/proj \
 		devel/fribidi \
