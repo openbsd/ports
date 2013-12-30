@@ -1,4 +1,4 @@
-$OpenBSD: patch-configs_asterisk_conf_sample,v 1.5 2013/12/16 23:16:01 sthen Exp $
+$OpenBSD: patch-configs_asterisk_conf_sample,v 1.6 2013/12/30 23:04:49 sthen Exp $
 --- configs/asterisk.conf.sample.orig	Mon Dec 16 19:21:00 2013
 +++ configs/asterisk.conf.sample	Mon Dec 16 23:08:38 2013
 @@ -61,8 +61,8 @@ astsbindir => /usr/sbin
@@ -18,7 +18,7 @@ $OpenBSD: patch-configs_asterisk_conf_sample,v 1.5 2013/12/16 23:16:01 sthen Exp
  				; Default gosub.
 -;live_dangerously = no		; Enable the execution of 'dangerous' dialplan
 +live_dangerously = no
-+live_dangerously = yes		; Enable the execution of 'dangerous' dialplan
++;live_dangerously = yes		; Enable the execution of 'dangerous' dialplan
  				; functions from external sources (AMI,
  				; etc.) These functions (such as SHELL) are
  				; considered dangerous because they can allow
