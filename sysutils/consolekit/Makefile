@@ -1,4 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2013/12/30 08:52:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2013/12/31 16:14:53 ajacoutot Exp $
+
+# NOTE: spam in /var/log/authlog is "expected"
+# http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=678506
+# https://bugzilla.redhat.com/show_bug.cgi?id=810052#c8
+# https://bugzilla.redhat.com/show_bug.cgi?id=809213
 
 COMMENT=	framework for defining and tracking users
 
