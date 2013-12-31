@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2013/11/19 17:59:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2013/12/31 17:10:08 tobiasu Exp $
 
      SUBDIR =
      SUBDIR += blogbench
      SUBDIR += bonnie
      SUBDIR += bonnie++
      SUBDIR += bytebench
+     SUBDIR += fs_mark
      SUBDIR += httperf
      SUBDIR += iozone
      SUBDIR += lmbench
