@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/12/27 09:24:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/12/31 12:48:30 sthen Exp $
 
 COMMENT=	simple integration of Flask and WTForms
 
@@ -16,6 +16,7 @@ MASTER_SITES=		${MASTER_SITE_PYPI:=F/Flask-WTF/}
 
 MODPY_SETUPTOOLS=	Yes
 
+BUILD_DEPENDS=		textproc/py-sphinx
 RUN_DEPENDS=		www/py-flask \
 			www/py-wtforms
 

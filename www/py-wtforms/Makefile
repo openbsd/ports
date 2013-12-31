@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/12/27 09:20:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2013/12/31 12:49:13 sthen Exp $
 
 COMMENT=	flexible forms validation and rendering library
 
@@ -17,7 +17,8 @@ MODULES=		lang/python
 MASTER_SITES=		${MASTER_SITE_PYPI:=W/WTForms/}
 EXTRACT_SUFX=		.zip
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS} \
+			textproc/py-sphinx
 RUN_DEPENDS=		devel/py-dateutil
 
 MODPY_SETUPTOOLS=	Yes
