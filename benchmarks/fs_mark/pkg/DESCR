@@ -1,0 +1,3 @@
+The fs_mark program is meant to give a low level bashing to file
+systems. The write pattern that we concentrate on is heavily
+synchronous IO across mutiple directories, drives, etc.

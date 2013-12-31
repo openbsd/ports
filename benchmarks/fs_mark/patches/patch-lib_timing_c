@@ -1,0 +1,50 @@
+$OpenBSD: patch-lib_timing_c,v 1.1.1.1 2013/12/31 17:06:24 tobiasu Exp $
+ Subject: Re: Fwd: Re: ITP fsmark - bug 655224: License restriction for
+ lib_timing.c DFSG compliant?
+ Date: Wednesday, 11. January 2012, 11:59:10
+ From: Carl Staelin <…@google.com>
+ To:   Martin Steigerwald <ms@teamix.de>
+ Cc:   Larry McVoy <…@bitmover.com>, Ric Wheeler <…@redhat.com>
+ .
+ For the bits of lmbench that were used by fsmark - namely lib_timing.c -, we
+ are happy to give it a GPL 2 (or later) license without any additional
+ restrictions.
+ .
+ Cheers,
+ .
+ Carl
+--- lib_timing.c.orig	Mon Jul 11 20:49:09 2005
++++ lib_timing.c	Tue Dec 17 03:19:23 2013
+@@ -7,10 +7,20 @@
+  *
+  * Copyright (c) 2000 Carl Staelin.
+  * Copyright (c) 1994-1998 Larry McVoy.
+- * Distributed under the FSF GPL with
+- * additional restriction that results may published only if
+- * (1) the benchmark is unmodified, and
+- * (2) the version in the sccsid below is included in the report.
++ *
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License as published by
++ * the Free Software Foundation; either version 2 of the License, or
++ * (at your option) any later version.
++ *
++ * This program is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with this program; If not, see <http://www.gnu.org/licenses/>.
++ *
+  * Support for this development by Sun Microsystems is gratefully acknowledged.
+  */
+ 
+@@ -24,7 +34,6 @@
+ #include <unistd.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <linux/types.h>
+ 
+ #define	nz(x)	((x) == 0 ? 1 : (x))
+ 

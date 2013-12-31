@@ -1,0 +1,48 @@
+$OpenBSD: patch-fs_mark_c,v 1.1.1.1 2013/12/31 17:06:24 tobiasu Exp $
+--- fs_mark.c.orig	Fri Dec 13 02:16:07 2013
++++ fs_mark.c	Fri Dec 13 02:30:02 2013
+@@ -29,8 +29,9 @@ char *fs_mark_version = "3.3";
+ #include <sys/types.h>
+ #include <sys/wait.h>
+ #include <sys/stat.h>
+-#include <sys/vfs.h>
+ #include <sys/time.h>
++#include <sys/param.h>
++#include <sys/mount.h>
+ 
+ #include <fcntl.h>
+ #include <stdio.h>
+@@ -41,11 +42,8 @@ char *fs_mark_version = "3.3";
+ #include <dirent.h>
+ #include <ctype.h>
+ #include <time.h>
++#include <limits.h>
+ 
+-#include <linux/types.h>
+-#include <linux/limits.h>
+-#include <linux/unistd.h>
+-
+ #include "fs_mark.h"
+ 
+ void cleanup_exit(void)
+@@ -406,9 +404,9 @@ void setup_file_name(int file_index, pid_t my_pid)
+ 		 * Pick a random name, making sure that it is either a letter or digit
+ 		 */
+ 		do {
+-			long int val;
++			u_int32_t val;
+ 
+-			val = random();
++			val = arc4random_uniform(0x7f+1);
+ 			rand_name[j] = '0' + (val & 0x7f);
+ 		} while (!(isupper(rand_name[j]) || isdigit(rand_name[j])));
+ 	}
+@@ -446,7 +444,7 @@ void setup(pid_t pid)
+ 	 * Initialize the random functions for this program.
+ 	 */
+ 	(void)gettimeofday(&now, (struct timezone *)0);
+-	srandom((long)now.tv_usec);
++	/*srandom((long)now.tv_usec); */
+ 
+ 	if (num_subdirs > 0) {
+ 		/*
