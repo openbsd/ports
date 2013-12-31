@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/12/31 17:06:24 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.2 2013/12/31 17:23:57 ajacoutot Exp $
 
 COMMENT =		test synchronous write workloads
 DISTNAME =		fs_mark-3.3
+REVISION =		0
 CATEGORIES =		benchmarks
 HOMEPAGE =		http://sourceforge.net/projects/fsmark/
 MAINTAINER  =		Tobias Ulmer <tobiasu@tmux.org>

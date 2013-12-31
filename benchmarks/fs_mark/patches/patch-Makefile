@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2013/12/31 17:06:24 tobiasu Exp $
---- Makefile.orig	Fri Dec 13 02:49:41 2013
-+++ Makefile	Fri Dec 13 02:50:05 2013
+$OpenBSD: patch-Makefile,v 1.2 2013/12/31 17:23:57 ajacoutot Exp $
+--- Makefile.orig	Fri Dec  8 00:56:05 2006
++++ Makefile	Tue Dec 31 18:22:54 2013
 @@ -10,14 +10,14 @@ DIR1= /test/dir1
  DIR2= /test/dir2
  
  COBJS= fs_mark.o lib_timing.o
 -CFLAGS= -O2 -Wall -D_FILE_OFFSET_BITS=64
-+CFLAGS= -O2 -Wall
++CFLAGS += -Wall
  
  all: fs_mark 
  
