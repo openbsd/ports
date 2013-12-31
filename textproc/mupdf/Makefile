@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2013/10/29 22:08:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2013/12/31 16:58:44 bentley Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
 V =		1.3
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-${V:S/-rc/rc/}
+REVISION =	0
 
 CATEGORIES =	textproc x11
 
@@ -23,7 +24,8 @@ WANTLIB += openjp2 pthread ssl z
 # http://git.ghostscript.com/?p=mupdf.git;a=summary
 MASTER_SITES =	http://mupdf.googlecode.com/files/
 
-RUN_DEPENDS =	devel/desktop-file-utils
+RUN_DEPENDS =	devel/desktop-file-utils \
+		devel/xdg-utils
 LIB_DEPENDS =	graphics/jbig2dec \
 		graphics/jpeg \
 		graphics/openjp2 \
