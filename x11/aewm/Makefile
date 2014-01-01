@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2013/03/11 11:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2014/01/01 20:46:29 naddy Exp $
 
 COMMENT=	minimalistic window manager for X11
 
@@ -22,7 +22,6 @@ MASTER_SITES=	${HOMEPAGE}
 EXTRACT_SUFX=	.tar.bz2
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 MODULES=	devel/gettext
 LIB_DEPENDS=	x11/gtk+2
 NO_TEST=	Yes

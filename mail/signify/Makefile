@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:23:53 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2014/01/01 20:46:28 naddy Exp $
 
 COMMENT=	dynamic .signature generator
 
@@ -16,7 +16,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=signify/}
 
 NO_BUILD=	Yes
 NO_TEST=	Yes
-USE_GROFF =	Yes
 PKG_ARCH=	*
 
 WRKDIST=	${WRKDIR}/signify

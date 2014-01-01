@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/03/11 11:35:46 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2014/01/01 20:46:28 naddy Exp $
 
 COMMENT =	X11 over a low bandwidth link
 VERSION =	3.8.2
@@ -17,7 +17,6 @@ HOMEPAGE =		http://www.vigor.nu/dxpc/
 LIB_DEPENDS =		archivers/lzo
 WANTLIB =		c m stdc++ lzo
 
-USE_GROFF =		Yes
 USE_X11 = 		Yes
 
 CONFIGURE_STYLE =	gnu dest

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/04/24 09:33:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2014/01/01 20:46:28 naddy Exp $
 
 SHARED_LIBS =		rtmp 0.0
 
@@ -23,7 +23,6 @@ MASTER_SITES =		http://spacehopper.org/mirrors/
 MAKE_FLAGS =		CC="${CC}" XCFLAGS="${CFLAGS}" OPT= \
 			THREADLIB=-pthread SO_VERSION=${LIBrtmp_VERSION}
 
-USE_GROFF =		Yes
 NO_TEST =		Yes
 
 post-install:

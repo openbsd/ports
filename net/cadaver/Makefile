@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/06/20 06:54:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2014/01/01 20:46:28 naddy Exp $
 
 COMMENT=		command-line WebDAV client
 
@@ -27,6 +27,5 @@ CONFIGURE_ARGS=		--with-ssl \
 			--with-expat \
 			--with-neon="${LOCALBASE}"
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib"
-USE_GROFF =		Yes
 
 .include <bsd.port.mk>

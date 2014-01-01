@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:07:41 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2014/01/01 20:46:28 naddy Exp $
 
 COMMENT =		displays a cute cow and message on your desktop
 DISTNAME =		xcowsay-1.1
@@ -12,7 +12,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		http://www.nickg.me.uk/files/
 CONFIGURE_STYLE =	gnu
-USE_GROFF =		Yes
 
 MODULES =	devel/gettext
 LIB_DEPENDS =	x11/gtk+2

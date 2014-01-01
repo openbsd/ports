@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2014/01/01 20:46:28 naddy Exp $
 
 COMMENT=	stand-alone client/server 9P library
 
@@ -16,7 +16,6 @@ MASTER_SITES=	${HOMEPAGE}/download/
 WANTLIB=	c
 
 NO_TEST=	Yes
-USE_GROFF =	Yes
 
 pre-configure:
 	@perl -pi -e 's,!!CFLAGS!!,${CFLAGS},g;' \

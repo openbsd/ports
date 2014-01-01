@@ -3,7 +3,7 @@
 # Date created:         Thu Jan 18, 2000
 # Whom:                 Kevin Lo <kevlo@openbsd.org>
 #
-# $OpenBSD: Makefile,v 1.19 2013/03/11 01:30:26 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2014/01/01 20:46:28 naddy Exp $
 #
 
 COMMENT=	pager utility that speaks Chinese
@@ -21,7 +21,6 @@ WANTLIB=		c curses termcap
 
 CONFIGURE_STYLE= gnu dest old
 CFLAGS+=        -DHANZI # LDFLAGS=-s datadir=/usr/local/lib/less
-USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/README.CLESS ${PREFIX}/share/doc/cless

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/10/14 22:14:38 schwarze Exp $
+# $OpenBSD: Makefile,v 1.13 2014/01/01 20:46:28 naddy Exp $
 
 COMMENT=	debugging and tracing ultimate module
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	Carp-Datum-0.1.3
 REVISION=	3
 CATEGORIES=	devel perl5
-USE_GROFF =	Yes
 
 # Artistic License
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/11/09 23:19:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2014/01/01 20:46:29 naddy Exp $
 
 COMMENT=	manages software package installations with symlinks
 
@@ -16,6 +16,5 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	${MASTER_SITE_GNU:=stow/}
 
 CONFIGURE_STYLE=gnu
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

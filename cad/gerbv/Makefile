@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/07/01 10:39:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2014/01/01 20:46:27 naddy Exp $
 
 COMMENT=		viewer for Gerber (RS-274X) files
 DISTNAME=		gerbv-2.5.0
@@ -30,7 +30,6 @@ LIB_DEPENDS=		x11/gtk+2
 RUN_DEPENDS=		devel/desktop-file-utils \
 			x11/gtk+2,-guic
 
-USE_GROFF=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-update-desktop-database
 

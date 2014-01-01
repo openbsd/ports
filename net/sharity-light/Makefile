@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/11 11:35:56 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2014/01/01 20:46:28 naddy Exp $
 
 COMMENT=	userland smbfs --- SMB to NFS protocols converter
 
@@ -17,7 +17,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 MAKE_FLAGS=	ARCH="" THE_CC="${CC}" CFLAGS="${CFLAGS} -Wall"

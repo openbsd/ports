@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 11:42:41 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2014/01/01 20:46:29 naddy Exp $
 
 COMMENT=		grep wrapper with search highlighting
 
@@ -17,7 +17,6 @@ WANTLIB=		c termcap
 MASTER_SITES=		${HOMEPAGE}
 DISTFILES=		hgrep_04oct1999.tar.gz
 
-USE_GROFF =		Yes
 NO_TEST=		Yes
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS=""

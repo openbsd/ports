@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 10:50:00 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2014/01/01 20:46:28 naddy Exp $
 
 COMMENT=	library providing malloc debugging via VM protection
 
@@ -12,7 +12,6 @@ MAINTAINER=	Niklas Hallqvist <niklas@openbsd.org>
 # License: GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 do-install:

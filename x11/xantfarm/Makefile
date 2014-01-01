@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/10/11 20:39:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2014/01/01 20:46:29 naddy Exp $
 
 COMMENT=	ant hill simulation on X11 root window
 
@@ -17,7 +17,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext c
 
-USE_GROFF =	Yes
 CONFIGURE_STYLE=	imake
 
 NO_TEST=	Yes

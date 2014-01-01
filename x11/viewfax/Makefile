@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/10/11 20:39:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2014/01/01 20:46:29 naddy Exp $
 
 COMMENT=	display files containing g3 and/or g4 coded fax pages
 
@@ -15,7 +15,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	X11 Xau Xdmcp Xext c
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 pre-install:

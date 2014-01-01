@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/06/03 02:46:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2014/01/01 20:46:28 naddy Exp $
 
 COMMENT=	x bust a move clone
 
@@ -21,7 +21,6 @@ MODULES=		devel/gettext
 LIB_DEPENDS=		graphics/png
 
 USE_GMAKE=		Yes
-USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

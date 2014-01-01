@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/08/07 21:31:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2014/01/01 20:46:28 naddy Exp $
 
 DISTNAME =	ucpp-1.3.2
 REVISION =	0
@@ -12,7 +12,6 @@ WANTLIB =		c
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 MAKE_FLAGS =	FLAGS='${CFLAGS} -D_POSIX_SOURCE' CC='${CC}'
-USE_GROFF =	Yes
 NO_TEST =	Yes
 WRKDIST =	${WRKDIR}/ucpp
 

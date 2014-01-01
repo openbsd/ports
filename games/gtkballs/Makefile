@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2013/03/11 11:07:39 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2014/01/01 20:46:28 naddy Exp $
 
 COMMENT=	gtk+ clone of the lines ball logic game
 
@@ -28,7 +28,6 @@ LIB_DEPENDS=	x11/gtk+2
 
 NO_TEST=	Yes
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

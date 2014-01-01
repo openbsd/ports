@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:07:42 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2014/01/01 20:46:28 naddy Exp $
 
 COMMENT=	z-code interpreter for X11 (Infocom game format)
 
@@ -17,8 +17,6 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_FTP=	No
 WANTLIB=		X11 c pthread-stubs xcb
-
-USE_GROFF =	Yes
 
 MASTER_SITES=	http://www.eblong.com/zarf/ftp/
 EXTRACT_SUFX=	.tar.Z

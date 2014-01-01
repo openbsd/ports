@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/03/11 11:23:55 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2014/01/01 20:46:28 naddy Exp $
 
 COMMENT=		GPL computer algebra system based on DOE Macsyma
 
@@ -24,7 +24,6 @@ SUBST_VARS=		VERSION
 
 CONFIGURE_ARGS+=	--enable-ecl
 CONFIGURE_STYLE=	gnu
-USE_GROFF =		Yes
 
 FLAVORS=		no_x11
 FLAVOR?=

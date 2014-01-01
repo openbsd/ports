@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2013/03/11 20:59:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2014/01/01 20:46:28 naddy Exp $
 
 COMMENT=	big5/gb enhanced truetype font manager
 
@@ -17,7 +17,6 @@ MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS='${CFLAGS} `freetype-config --cflags`'
 
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 DOCS=	README USAGE

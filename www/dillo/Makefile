@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2013/06/04 18:41:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2014/01/01 20:46:29 naddy Exp $
 
 COMMENT =		fast and light graphical web browser
 
@@ -29,7 +29,6 @@ LIB_DEPENDS =	graphics/jpeg \
 RUN_DEPENDS =	net/wget
 
 USE_GMAKE =		Yes
-USE_GROFF =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-ipv6 \
 			--disable-threaded-dns \

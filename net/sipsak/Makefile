@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:35:56 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2014/01/01 20:46:28 naddy Exp $
 
 COMMENT =	SIP swiss army knife
 
@@ -25,6 +25,5 @@ CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ARGS =	--disable-gnutls \
 			LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

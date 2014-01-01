@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:35:46 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2014/01/01 20:46:28 naddy Exp $
 
 COMMENT=	test performance of a remote TCP service
 
@@ -16,7 +16,6 @@ MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c crypto m ssl
 
-USE_GROFF =		Yes
 NO_TEST=		Yes
 
 CONFIGURE_STYLE=	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/04/07 01:08:41 rpe Exp $
+# $OpenBSD: Makefile,v 1.19 2014/01/01 20:46:28 naddy Exp $
 
 COMMENT=		automated password generator
 
@@ -17,7 +17,6 @@ MASTER_SITES=		http://www.adel.nursat.kz/apg/download/
 MAKE_FLAGS=		CC="${CC}" FLAGS="${CFLAGS}" \
 			LIBS="" USE_SHA=APG_USE_SHA
 
-USE_GROFF =	 	Yes
 NO_TEST=		Yes
 
 do-install:
