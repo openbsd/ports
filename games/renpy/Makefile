@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2013/06/04 18:41:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2014/01/01 06:43:05 bentley Exp $
 
 COMMENT =		visual novel engine
 
-V =			6.14.1
-MODPY_EGG_VERSION =	${V}.366
+V =			6.16.5
+MODPY_EGG_VERSION =	${V}.525
 DISTNAME =		renpy-${V}-source
 PKGNAME =		${DISTNAME:S/-source//}
-REVISION =		1
 
 CATEGORIES =		games
 
@@ -15,8 +14,8 @@ HOMEPAGE =		http://www.renpy.org/
 # mostly MIT, some files LGPLv2.1+
 PERMIT_PACKAGE_CDROM =		Yes
 
-WANTLIB +=		GLEW SDL avcodec avformat avutil freetype fribidi m
-WANTLIB +=		png pthread ${MODPY_WANTLIB} swscale z
+WANTLIB +=		GLEW SDL avcodec avformat avresample avutil freetype fribidi
+WANTLIB +=		m png pthread swscale z ${MODPY_WANTLIB}
 
 MASTER_SITES =		http://www.renpy.org/dl/${V}/
 EXTRACT_SUFX =		.tar.bz2
@@ -26,7 +25,7 @@ BUILD_DEPENDS =		devel/pygame
 RUN_DEPENDS =		devel/pygame \
 			x11/gnome/zenity
 LIB_DEPENDS =		devel/fribidi \
-			graphics/ffmpeg \
+			graphics/ffmpeg>=20131216p0 \
 			graphics/glew
 
 MAKE_ENV =		RENPY_DEPS_INSTALL=/usr::${LOCALBASE}::${X11BASE}
@@ -38,10 +37,9 @@ WRKSRC =		${WRKDIST}/module
 MODPY_ADJ_FILES =	../renpy.py
 
 pre-install:
-	rm ${WRKDIST}/launcher/game/project.rpy.orig
 	${INSTALL_DATA_DIR} ${PREFIX}/share/renpy
 	cd ${WRKDIST} && \
-	cp -r launcher renpy common template the_question tutorial LICENSE.txt \
+	cp -r launcher renpy templates the_question tutorial LICENSE.txt \
 		${PREFIX}/share/renpy
 	${INSTALL_SCRIPT} ${WRKDIST}/renpy.py ${PREFIX}/share/renpy
 	${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} -c \
