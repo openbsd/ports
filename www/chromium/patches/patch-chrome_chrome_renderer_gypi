@@ -1,0 +1,11 @@
+$OpenBSD: patch-chrome_chrome_renderer_gypi,v 1.7 2014/01/01 18:03:57 espie Exp $
+--- chrome/chrome_renderer.gypi.orig.port	Wed Jan  1 15:27:04 2014
++++ chrome/chrome_renderer.gypi	Wed Jan  1 15:30:08 2014
+@@ -33,6 +33,7 @@
+         '../webkit/renderer/webkit_renderer.gyp:webkit_renderer',
+         '../webkit/support/webkit_support.gyp:glue',
+         '../webkit/webkit_resources.gyp:webkit_resources',
++	'../chrome/common/extensions/api/api.gyp:api',
+       ],
+       'include_dirs': [
+         '..',
