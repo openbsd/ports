@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.229 2013/12/24 15:22:55 brad Exp $
+# $OpenBSD: Makefile,v 1.230 2014/01/02 12:21:49 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ COMMENT =		movie player supporting many formats
 
 V =			20130819
 FFMPEG_V =		20131216
-REVISION =		1
+REVISION =		2
 
 SUBST_VARS += 		PREFIX CONFDIR
 
@@ -79,6 +79,11 @@ CONFDIR =	${SYSCONFDIR}/mplayer
 MPLAYER_ARCH=	generic
 .else
 MPLAYER_ARCH=	${MACHINE_ARCH}
+.endif
+
+# PIE doesn't leave sufficient registers
+.if ${MACHINE_ARCH:Mi386}
+CFLAGS += -fomit-frame-pointer
 .endif
 
 USE_GMAKE =	Yes

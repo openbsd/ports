@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2013/09/27 17:49:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2014/01/02 12:21:49 sthen Exp $
 
 COMMENT =	tool for working with RAW images
 
 DISTNAME =	rawstudio-1.2
-REVISION =	8
+REVISION =	9
 
 CATEGORIES =	graphics
 
@@ -38,5 +38,10 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk-engines2
 
 NO_TEST =	Yes
+
+# PIE doesn't leave sufficient registers
+.if ${MACHINE_ARCH:Mi386}
+CFLAGS += -fomit-frame-pointer
+.endif
 
 .include <bsd.port.mk>

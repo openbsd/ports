@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/11/09 14:12:28 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2014/01/02 12:21:49 sthen Exp $
 
 BROKEN-powerpc =CPUCore.cc:2347: error: insn does not satisfy its constraints
 BROKEN-hppa =	OOM when building src/cpu/CPUCore.cc
@@ -50,6 +50,11 @@ USE_GMAKE =	Yes
 
 MAKE_FLAGS =	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
 		CXXFLAGS="${CXXFLAGS}"
+
+# PIE doesn't leave sufficient registers
+.if ${MACHINE_ARCH:Mi386}
+CFLAGS += -fomit-frame-pointer
+.endif
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/build/python-search.sh
