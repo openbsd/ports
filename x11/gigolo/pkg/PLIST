@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/09/30 12:13:35 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/01/02 13:28:22 landry Exp $
 @bin bin/gigolo
 @man man/man1/gigolo.1
 share/applications/gigolo.desktop
@@ -38,6 +38,8 @@ share/locale/sv/LC_MESSAGES/gigolo.mo
 share/locale/tr/LC_MESSAGES/gigolo.mo
 share/locale/ug/LC_MESSAGES/gigolo.mo
 share/locale/uk/LC_MESSAGES/gigolo.mo
+share/locale/ur/
+share/locale/ur/LC_MESSAGES/
 share/locale/ur/LC_MESSAGES/gigolo.mo
 share/locale/ur_PK/
 share/locale/ur_PK/LC_MESSAGES/
