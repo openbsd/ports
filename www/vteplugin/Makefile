@@ -1,35 +1,35 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:44:50 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2014/01/02 14:01:53 landry Exp $
 
 COMMENT =	npapi vte-based terminal for web browsers
 
 DISTNAME =	vteplugin-0.1
-REVISION =	10
+REVISION =	11
 CATEGORIES =	www x11
 
 # WTFPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
-WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pixman-1 png pthread-stubs xcb z gdk_pixbuf-2.0
-WANTLIB += vte gdk-x11-2.0 gtk-x11-2.0
-WANTLIB += GL Xxf86vm drm gthread-2.0 xcb-render xcb-shm
-
 EXTRACT_SUFX=.tar.bz2
 
 MASTER_SITES =	http://blog.renevier.net/public/
-MODULES =	devel/gettext \
-		devel/waf
+MODULES =	devel/gettext
 
 LIB_DEPENDS =	devel/vte
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 cairo fontconfig freetype gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread vte
+WANTLIB += z
 
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/wscript
+do-build:
+	${CC} ${CFLAGS} `pkg-config --cflags vte` ${WRKSRC}/npunix.c -c -o ${WRKSRC}/npunix.o
+	${CC} ${CFLAGS} `pkg-config --cflags vte` ${WRKSRC}/vteplugin.c -c -o ${WRKSRC}/vteplugin.o
+	${CC}  -Wl,-Bdynamic -pthread ${WRKSRC}/npunix.o ${WRKSRC}/vteplugin.o -shared \
+		-o ${WRKSRC}/vteplugin.so `pkg-config --libs vte gtk+-2.0 gdk-2.0`
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/vteplugin
+do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/vteplugin ${PREFIX}/lib/mozilla/plugins/
+	${INSTALL_PROGRAM} ${WRKSRC}/vteplugin.so ${PREFIX}/lib/mozilla/plugins/vteplugin.so
 	${INSTALL_DATA} ${WRKSRC}/vteplugin.html ${PREFIX}/share/vteplugin/vteplugin.html
 
 .include <bsd.port.mk>
