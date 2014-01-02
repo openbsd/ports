@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_common_helpers_py,v 1.3 2014/01/02 11:35:18 jasper Exp $
+--- src/common/helpers.py.orig	Tue Dec 31 12:36:38 2013
++++ src/common/helpers.py	Tue Dec 31 12:37:26 2013
+@@ -809,7 +809,7 @@ def play_sound_file(path_to_soundfile):
+             def _oss_play():
+                 sndfile = wave.open(path_to_soundfile, 'rb')
+                 (nc, sw, fr, nf, comptype, compname) = sndfile.getparams()
+-                dev = oss.open('/dev/dsp', 'w')
++                dev = oss.open('/dev/audio', 'w')
+                 dev.setparameters(sw * 8, nc, fr)
+                 dev.write(sndfile.readframes(nf))
+                 sndfile.close()

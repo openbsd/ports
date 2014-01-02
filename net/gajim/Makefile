@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.64 2013/11/02 21:48:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2014/01/02 11:35:18 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	jabber client written in pygtk
-DISTNAME=	gajim-0.15.3
+DISTNAME=	gajim-0.15.4
 CATEGORIES=	net x11
-REVISION=	1
 
 MASTER_SITES=	${HOMEPAGE}/downloads/0.15/
 
@@ -41,6 +40,7 @@ BUILD_DEPENDS=	${COMMON_DEPENDS}
 
 RUN_DEPENDS=	${COMMON_DEPENDS} \
 		devel/desktop-file-utils \
+		devel/py-asn1 \
 		x11/gtk+2,-guic
 
 .include <bsd.port.mk>
