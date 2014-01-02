@@ -1,0 +1,20 @@
+$OpenBSD: patch-libzeitgeist_event_vala,v 1.1 2014/01/02 09:41:59 ajacoutot Exp $
+
+From 42f0f6b0f17a584b703981b8a392c3225c7a8e98 Mon Sep 17 00:00:00 2001
+From: Seif Lotfy <seif@lotfy.com>
+Date: Thu, 02 Jan 2014 07:09:01 +0000
+Subject: Fix unit-tests
+
+--- libzeitgeist/event.vala.orig	Mon Jun 17 08:40:08 2013
++++ libzeitgeist/event.vala	Thu Jan  2 10:29:24 2014
+@@ -292,8 +292,8 @@ public class Event : Object
+         }
+ 
+         Variant event_variant = vb.end ().get_normal_form ();
+-        Variant ret = optimize_variant_allocation (event_variant);
+-        return ret;
++        //Variant ret = optimize_variant_allocation (event_variant);
++        return event_variant;
+     }
+ 
+     private Variant optimize_variant_allocation (Variant event_variant) {
