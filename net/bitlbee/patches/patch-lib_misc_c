@@ -1,8 +1,8 @@
-$OpenBSD: patch-lib_misc_c,v 1.1 2013/03/13 21:42:58 landry Exp $
+$OpenBSD: patch-lib_misc_c,v 1.2 2014/01/02 13:04:34 landry Exp $
 http://bugs.bitlbee.org/bitlbee/ticket/421
 needed until ns_parse family of functions are added to lib/libc/asr
---- lib/misc.c.orig	Mon Jan  7 00:41:11 2013
-+++ lib/misc.c	Wed Mar  6 19:13:27 2013
+--- lib/misc.c.orig	Wed Nov 27 22:54:54 2013
++++ lib/misc.c	Tue Dec 31 21:52:54 2013
 @@ -44,7 +44,10 @@
  #ifdef HAVE_RESOLV_A
  #include <arpa/nameser.h>
@@ -20,29 +20,28 @@ needed until ns_parse family of functions are added to lib/libc/asr
  	const unsigned char *buf;
 +	int i, n, len, size;
 +#if defined (__OpenBSD__)
-+	char			uncomp[MAXDNAME];
-+	int			complen = -1;
-+	unsigned int		qdcount = 0, ancount = 0;
++	char                    uncomp[MAXDNAME];
++	int                     complen = -1;
++	unsigned int            qdcount = 0, ancount = 0;
 +
-+	const unsigned char	*comp = NULL;
-+	unsigned char		*end = NULL;
-+	HEADER			*head = NULL;
++	const unsigned char     *comp = NULL;
++	unsigned char           *end = NULL;
++	HEADER                  *head = NULL;
 +
-+	int			ns_c_in = C_IN, ns_t_srv = T_SRV;
-+	int			prio = -1, weight = -1, port = -1;
++	int                     ns_c_in = C_IN, ns_t_srv = T_SRV;
++	int                     prio = -1, weight = -1, port = -1;
 +#else
  	ns_msg nsh;
  	ns_rr rr;
 -	int i, n, len, size;
 +#endif
-+
  	
  	g_snprintf( name, sizeof( name ), "_%s._%s.%s", service, protocol, domain );
  	
  	if( ( size = res_query( name, ns_c_in, ns_t_srv, querybuf, sizeof( querybuf ) ) ) <= 0 )
  		return NULL;
- 	
-+	n = 0;
++
++       n = 0;
 +
 +#if defined (__OpenBSD__)
 +	head = (HEADER *)querybuf;
@@ -100,6 +99,7 @@ needed until ns_parse family of functions are added to lib/libc/asr
 +		ancount--;
 +	}
 +#else
+ 	
  	if( ns_initparse( querybuf, size, &nsh ) != 0 )
  		return NULL;
  	

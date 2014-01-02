@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.9 2013/03/13 21:42:58 landry Exp $
---- configure.orig	Mon Jan  7 00:41:11 2013
-+++ configure	Wed Mar  6 16:23:10 2013
-@@ -362,6 +362,23 @@ detect_resolv_dynamic()
+$OpenBSD: patch-configure,v 1.10 2014/01/02 13:04:34 landry Exp $
+--- configure.orig	Tue Dec 31 21:40:21 2013
++++ configure	Tue Dec 31 21:42:26 2013
+@@ -344,6 +344,24 @@ detect_resolv_dynamic()
  	FreeBSD )
  		# In FreeBSD res_* routines are present in libc.so
  		LIBRESOLV=;;
@@ -17,11 +17,12 @@ $OpenBSD: patch-configure,v 1.9 2013/03/13 21:42:58 landry Exp $
 +
 +int main()
 +{
-+	res_query( NULL, 0, 0, NULL, 0 );
-+	dn_expand( NULL, NULL, NULL, NULL, 0 );
++       res_query( NULL, 0, 0, NULL, 0 );
++       dn_expand( NULL, NULL, NULL, NULL, 0 );
 +}
 +'
 +;;
++
  	* )
  		LIBRESOLV=-lresolv;;
  	esac
