@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/01/03 01:36:39 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2014/01/03 10:21:01 landry Exp $
 
 GH_VER =	0.21
 COMMENT =	curses-based front-end for livestreamer
@@ -18,6 +18,8 @@ MASTER_SITES =	https://github.com/gapato/livestreamer-curses/archive/
 MODULES =	lang/python
 
 RUN_DEPENDS =	multimedia/livestreamer
+# NO_BUILD=Yes but python(1) is used in do-install
+BUILD_DEPENDS =	${_MODPY_BUILD_DEPENDS}
 
 SUBST_VARS +=	MODPY_SITEPKG
 
