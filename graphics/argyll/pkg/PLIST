@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/09/16 15:48:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/01/03 10:22:12 ajacoutot Exp $
 @conflict argyll-*
 @bin bin/applycal
 @bin bin/average
@@ -118,6 +118,7 @@ share/doc/argyllcms/CMP_Digital_Target-3.jpg
 share/doc/argyllcms/CRTspectrum.jpg
 share/doc/argyllcms/ChangesSummary.html
 share/doc/argyllcms/Chroma4.jpg
+share/doc/argyllcms/ColorHug.jpg
 share/doc/argyllcms/ColorManagement.html
 share/doc/argyllcms/ColorMunki.jpg
 share/doc/argyllcms/ColorMunkiCreate.jpg

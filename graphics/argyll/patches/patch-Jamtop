@@ -1,7 +1,7 @@
-$OpenBSD: patch-Jamtop,v 1.1 2013/09/16 15:48:29 ajacoutot Exp $
---- Jamtop.orig	Mon Aug 19 08:29:13 2013
-+++ Jamtop	Mon Sep 16 15:16:01 2013
-@@ -70,7 +70,9 @@ if $(UNIX) {
+$OpenBSD: patch-Jamtop,v 1.2 2014/01/03 10:22:12 ajacoutot Exp $
+--- Jamtop.orig	Mon Nov 18 23:13:20 2013
++++ Jamtop	Fri Jan  3 11:13:17 2014
+@@ -73,7 +73,9 @@ if $(UNIX) {
  			EXIT Unable to locate the X11 include files ;
  		}
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-Jamtop,v 1.1 2013/09/16 15:48:29 ajacoutot Exp $
  			if [ GLOB /usr/X11R6/lib : libX11.so ] {
  				LibWinD = /usr/X11R6/lib ;
  			} else if [ GLOB /usr/lib/x86_64-linux-gnu : libX11.so ] {
-@@ -97,6 +99,8 @@ if $(UNIX) {
+@@ -100,6 +102,8 @@ if $(UNIX) {
  		}
  		if $(OS) = FREEBSD {
  			LINKFLAGS += -L$(LibWinD) -g -lrt -lX11 -lXext -lXxf86vm -lXinerama -lXrandr -lXau -lXdmcp -lXss  -lusb ;

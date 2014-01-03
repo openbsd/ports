@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2013/09/16 15:48:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2014/01/03 10:22:12 ajacoutot Exp $
 
 COMMENT=	ICC compatible color management system
 
-V=		1.6.0
+V=		1.6.2
 DISTNAME=	Argyll_V${V}_src
 PKGNAME=	argyllcms-${V}
 EXTRACT_SUFX=	.zip
