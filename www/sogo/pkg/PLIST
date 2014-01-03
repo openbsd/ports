@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2013/08/24 11:16:05 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.19 2014/01/03 18:39:51 sebastia Exp $
 @newgroup _sogo:659
 @newuser _sogo:659:_sogo:daemon:SOGo user:/var/sogo:/bin/sh
 include/GDLContentStore/
@@ -88,6 +88,7 @@ ${SOGOLIBDIR}/Headers/SOGoCASSession.h
 ${SOGOLIBDIR}/Headers/SOGoCache.h
 ${SOGOLIBDIR}/Headers/SOGoConstants.h
 ${SOGOLIBDIR}/Headers/SOGoContentObject.h
+${SOGOLIBDIR}/Headers/SOGoCredentialsFile.h
 ${SOGOLIBDIR}/Headers/SOGoDAVAuthenticator.h
 ${SOGOLIBDIR}/Headers/SOGoDateFormatter.h
 ${SOGOLIBDIR}/Headers/SOGoFolder.h
@@ -102,6 +103,7 @@ ${SOGOLIBDIR}/Headers/SOGoProxyAuthenticator.h
 ${SOGOLIBDIR}/Headers/SOGoSession.h
 ${SOGOLIBDIR}/Headers/SOGoSieveManager.h
 ${SOGOLIBDIR}/Headers/SOGoStartupLogger.h
+${SOGOLIBDIR}/Headers/SOGoStaticAuthenticator.h
 ${SOGOLIBDIR}/Headers/SOGoUser.h
 ${SOGOLIBDIR}/Headers/SOGoUserFolder.h
 ${SOGOLIBDIR}/Headers/SOGoUserManager.h
@@ -931,6 +933,12 @@ lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailEnglishForward.wo/SOGoMailEnglish
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailEnglishReply.wo/
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailEnglishReply.wo/SOGoMailEnglishReply.html
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailEnglishReply.wo/SOGoMailEnglishReply.wod
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailFinnishForward.wo/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailFinnishForward.wo/SOGoMailFinnishForward.html
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailFinnishForward.wo/SOGoMailFinnishForward.wod
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailFinnishReply.wo/
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailFinnishReply.wo/SOGoMailFinnishReply.html
+lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailFinnishReply.wo/SOGoMailFinnishReply.wod
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailFrenchForward.wo/
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailFrenchForward.wo/SOGoMailFrenchForward.html
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/SOGoMailFrenchForward.wo/SOGoMailFrenchForward.wod
@@ -1613,6 +1621,8 @@ lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/about/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/about/dialogs/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/about/dialogs/about.js
+lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/about/dialogs/hidpi/
+lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/about/dialogs/hidpi/logo_ckeditor.png
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/about/dialogs/logo_ckeditor.png
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/clipboard/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/clipboard/dialogs/
@@ -1622,10 +1632,14 @@ lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/colordialog/dialogs/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/colordialog/dialogs/colordialog.js
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/dialog/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/dialog/dialogDefinition.js
+lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/div/
+lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/div/dialogs/
+lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/div/dialogs/div.js
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/fakeobjects/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/fakeobjects/images/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/fakeobjects/images/spacer.gif
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/icons.png
+lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/icons_hidpi.png
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/image/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/image/dialogs/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/image/dialogs/image.js
@@ -1637,13 +1651,22 @@ lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/link/dialogs/anchor.js
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/link/dialogs/link.js
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/link/images/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/link/images/anchor.png
+lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/link/images/hidpi/
+lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/link/images/hidpi/anchor.png
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/scayt/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/scayt/dialogs/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/scayt/dialogs/options.js
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/scayt/dialogs/toolbar.css
+lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/table/
+lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/table/dialogs/
+lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/table/dialogs/table.js
+lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/tabletools/
+lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/tabletools/dialogs/
+lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/tabletools/dialogs/tableCell.js
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/wsc/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/wsc/dialogs/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/wsc/dialogs/ciframe.html
+lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/wsc/dialogs/tmp.html
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/wsc/dialogs/tmpFrameset.html
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/wsc/dialogs/wsc.css
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/wsc/dialogs/wsc.js
@@ -1663,10 +1686,18 @@ lib/GNUstep/SOGo/WebServerResources/ckeditor/skins/moono/editor_ie7.css
 lib/GNUstep/SOGo/WebServerResources/ckeditor/skins/moono/editor_ie8.css
 lib/GNUstep/SOGo/WebServerResources/ckeditor/skins/moono/editor_iequirks.css
 lib/GNUstep/SOGo/WebServerResources/ckeditor/skins/moono/icons.png
+lib/GNUstep/SOGo/WebServerResources/ckeditor/skins/moono/icons_hidpi.png
 lib/GNUstep/SOGo/WebServerResources/ckeditor/skins/moono/images/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/skins/moono/images/arrow.png
 lib/GNUstep/SOGo/WebServerResources/ckeditor/skins/moono/images/close.png
-lib/GNUstep/SOGo/WebServerResources/ckeditor/skins/moono/images/mini.png
+lib/GNUstep/SOGo/WebServerResources/ckeditor/skins/moono/images/hidpi/
+lib/GNUstep/SOGo/WebServerResources/ckeditor/skins/moono/images/hidpi/close.png
+lib/GNUstep/SOGo/WebServerResources/ckeditor/skins/moono/images/hidpi/lock-open.png
+lib/GNUstep/SOGo/WebServerResources/ckeditor/skins/moono/images/hidpi/lock.png
+lib/GNUstep/SOGo/WebServerResources/ckeditor/skins/moono/images/hidpi/refresh.png
+lib/GNUstep/SOGo/WebServerResources/ckeditor/skins/moono/images/lock-open.png
+lib/GNUstep/SOGo/WebServerResources/ckeditor/skins/moono/images/lock.png
+lib/GNUstep/SOGo/WebServerResources/ckeditor/skins/moono/images/refresh.png
 lib/GNUstep/SOGo/WebServerResources/ckeditor/skins/moono/readme.md
 lib/GNUstep/SOGo/WebServerResources/ckeditor/styles.js
 lib/GNUstep/SOGo/WebServerResources/collapse.png
@@ -1708,7 +1739,6 @@ lib/GNUstep/SOGo/WebServerResources/input_bg.gif
 lib/GNUstep/SOGo/WebServerResources/inverse.png
 lib/GNUstep/SOGo/WebServerResources/jquery-ui.js
 lib/GNUstep/SOGo/WebServerResources/jquery.js
-lib/GNUstep/SOGo/WebServerResources/js_color_picker_v2.css
 lib/GNUstep/SOGo/WebServerResources/js_color_picker_v2.js
 lib/GNUstep/SOGo/WebServerResources/last.gif
 lib/GNUstep/SOGo/WebServerResources/layout2or3_xlib.js
@@ -1817,6 +1847,7 @@ lib/GNUstep/SOGo/WebServerResources/mime-gnome-fs-regular.png
 lib/GNUstep/SOGo/WebServerResources/mime-gnome-package.png
 lib/GNUstep/SOGo/WebServerResources/mime-gtk-file.png
 lib/GNUstep/SOGo/WebServerResources/mime-html.png
+lib/GNUstep/SOGo/WebServerResources/mime-image-pdf.png
 lib/GNUstep/SOGo/WebServerResources/mime-image-x-generic.png
 lib/GNUstep/SOGo/WebServerResources/mime-image.png
 lib/GNUstep/SOGo/WebServerResources/mime-kpresenter_kpr.png

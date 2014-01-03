@@ -1,4 +1,4 @@
-# $OpenBSD: README,v 1.9 2012/12/16 16:36:26 sebastia Exp $
+# $OpenBSD: README,v 1.10 2014/01/03 18:39:51 sebastia Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -233,3 +233,10 @@ will ask you for the database credentials.
 $ sudo -u _sogo ${TRUEPREFIX}/share/doc/sogo/sql-update-1.3.16_to_1.3.17-postgres.sh
 $ sudo -u _sogo ${TRUEPREFIX}/share/doc/sogo/sql-update-1.3.16_to_1.3.17-mysql.sh
 
+Upgrade SOGo from < 2.1.1
+=======================================
+With version 2.1.0, the WOPort default changed from listening on *:20000
+to 127.0.0.1:20000. To get back the old behaviour, run the following
+command:
+
+$ sudo -u _sogo defaults write sogod WOPort *:20000
