@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2013/04/25 16:16:28 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/01/03 18:55:36 sebastia Exp $
 bin/GSSpeechServer
 @bin bin/gclose
 @bin bin/gcloseall
@@ -70,6 +70,8 @@ include/AppKit/NSButtonCell.h
 include/AppKit/NSCachedImageRep.h
 include/AppKit/NSCell.h
 include/AppKit/NSClipView.h
+include/AppKit/NSCollectionView.h
+include/AppKit/NSCollectionViewItem.h
 include/AppKit/NSColor.h
 include/AppKit/NSColorList.h
 include/AppKit/NSColorPanel.h
@@ -138,6 +140,7 @@ include/AppKit/NSParagraphStyle.h
 include/AppKit/NSPasteboard.h
 include/AppKit/NSPopUpButton.h
 include/AppKit/NSPopUpButtonCell.h
+include/AppKit/NSPopover.h
 include/AppKit/NSPrintInfo.h
 include/AppKit/NSPrintOperation.h
 include/AppKit/NSPrintPanel.h
@@ -165,6 +168,8 @@ include/AppKit/NSSpellChecker.h
 include/AppKit/NSSpellProtocol.h
 include/AppKit/NSSpellServer.h
 include/AppKit/NSSplitView.h
+include/AppKit/NSStatusBar.h
+include/AppKit/NSStatusItem.h
 include/AppKit/NSStepper.h
 include/AppKit/NSStepperCell.h
 include/AppKit/NSStringDrawing.h
@@ -188,7 +193,9 @@ include/AppKit/NSTokenFieldCell.h
 include/AppKit/NSToolbar.h
 include/AppKit/NSToolbarItem.h
 include/AppKit/NSToolbarItemGroup.h
+include/AppKit/NSTrackingArea.h
 include/AppKit/NSTreeController.h
+include/AppKit/NSTreeNode.h
 include/AppKit/NSUserDefaultsController.h
 include/AppKit/NSUserInterfaceValidation.h
 include/AppKit/NSView.h
@@ -433,6 +440,10 @@ lib/GNUstep/Images/common_Root_Sparc.tiff
 lib/GNUstep/Images/common_Root_Sparc2.tiff
 lib/GNUstep/Images/common_SliderHoriz.tiff
 lib/GNUstep/Images/common_SliderVert.tiff
+lib/GNUstep/Images/common_StepperDown.tiff
+lib/GNUstep/Images/common_StepperDownHighlighted.tiff
+lib/GNUstep/Images/common_StepperUp.tiff
+lib/GNUstep/Images/common_StepperUpHighlighted.tiff
 lib/GNUstep/Images/common_SwitchOff.tiff
 lib/GNUstep/Images/common_SwitchOn.tiff
 lib/GNUstep/Images/common_TabDownSelectedLeft.tiff
@@ -445,10 +456,10 @@ lib/GNUstep/Images/common_TabDownUnSelectedToSelectedJunction.tiff
 lib/GNUstep/Images/common_TabSelectedLeft.tiff
 lib/GNUstep/Images/common_TabSelectedRight.tiff
 lib/GNUstep/Images/common_TabSelectedToUnSelectedJunction.tiff
-lib/GNUstep/Images/common_TabUnSelectToSelectedJunction.tiff
 lib/GNUstep/Images/common_TabUnSelectedJunction.tiff
 lib/GNUstep/Images/common_TabUnSelectedLeft.tiff
 lib/GNUstep/Images/common_TabUnSelectedRight.tiff
+lib/GNUstep/Images/common_TabUnSelectedToSelectedJunction.tiff
 lib/GNUstep/Images/common_Tile.tiff
 lib/GNUstep/Images/common_ToolbarClippedItemsMark.tiff
 lib/GNUstep/Images/common_ToolbarCustomizeToolbarItem.tiff
