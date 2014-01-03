@@ -1,0 +1,10 @@
+If you want to use this package as your default system ruby, as root
+create symbolic links like so (overwriting any previous default):
+ ln -sf ${PREFIX}/bin/ruby21 ${PREFIX}/bin/ruby
+ ln -sf ${PREFIX}/bin/erb21 ${PREFIX}/bin/erb
+ ln -sf ${PREFIX}/bin/irb21 ${PREFIX}/bin/irb
+ ln -sf ${PREFIX}/bin/rdoc21 ${PREFIX}/bin/rdoc
+ ln -sf ${PREFIX}/bin/ri21 ${PREFIX}/bin/ri
+ ln -sf ${PREFIX}/bin/rake21 ${PREFIX}/bin/rake
+ ln -sf ${PREFIX}/bin/gem21 ${PREFIX}/bin/gem
+ ln -sf ${PREFIX}/bin/testrb21 ${PREFIX}/bin/testrb

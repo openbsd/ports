@@ -1,0 +1,24 @@
+$OpenBSD: patch-common_mk,v 1.1.1.1 2014/01/03 17:51:52 jeremy Exp $
+
+Don't regenerate rdoc documentation during install.
+
+--- common.mk.orig	Sun Dec  8 03:33:59 2013
++++ common.mk	Thu Dec 26 19:47:03 2013
+@@ -177,7 +177,7 @@ $(EXTS_MK): $(MKFILES) all-incs $(PREP) $(RBCONFIG) $(
+ configure-ext: $(EXTS_MK)
+ 
+ build-ext: $(EXTS_MK)
+-	$(Q)$(MAKE) -f $(EXTS_MK) $(MFLAGS) $(EXTSTATIC) LIBRUBY_EXTS=$(LIBRUBY_EXTS) ENCOBJS="$(ENCOBJS)"
++	$(Q)$(MAKE) -f $(EXTS_MK) V=1 $(MFLAGS) $(EXTSTATIC) LIBRUBY_EXTS=$(LIBRUBY_EXTS) ENCOBJS="$(ENCOBJS)"
+ 
+ $(MKMAIN_CMD): $(MKFILES) all-incs $(PREP) $(RBCONFIG) $(LIBRUBY)
+ 	$(Q)$(MINIRUBY) $(srcdir)/ext/extmk.rb --make="$(MAKE)" --command-output=$@ $(EXTMK_ARGS)
+@@ -402,7 +402,7 @@ dont-install-man: $(PREP)
+ post-no-install-man::
+ 	@$(NULLCMD)
+ 
+-install-doc: rdoc pre-install-doc do-install-doc post-install-doc
++install-doc: pre-install-doc do-install-doc post-install-doc
+ pre-install-doc:: install-prereq
+ do-install-doc: $(PROGRAM)
+ 	$(INSTRUBY) --make="$(MAKE)" $(INSTRUBY_ARGS) --install=rdoc --rdoc-output="$(RDOCOUT)"

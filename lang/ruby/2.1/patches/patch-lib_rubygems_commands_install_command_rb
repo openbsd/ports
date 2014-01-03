@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_rubygems_commands_install_command_rb,v 1.1.1.1 2014/01/03 17:51:52 jeremy Exp $
+
+Make gem binaries on ruby 2.1 use a 21 suffix, so you can have both
+other versions of the same gem installed at the same time
+without conflicts.
+
+--- lib/rubygems/commands/install_command.rb.orig	Sun Dec 22 23:13:17 2013
++++ lib/rubygems/commands/install_command.rb	Thu Dec 26 19:20:07 2013
+@@ -20,7 +20,7 @@ class Gem::Commands::InstallCommand < Gem::Command
+ 
+   def initialize
+     defaults = Gem::DependencyInstaller::DEFAULT_OPTIONS.merge({
+-      :format_executable => false,
++      :format_executable => true,
+       :version           => Gem::Requirement.default,
+       :without_groups    => [],
+     })

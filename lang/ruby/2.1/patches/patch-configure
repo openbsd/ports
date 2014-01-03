@@ -1,0 +1,30 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2014/01/03 17:51:52 jeremy Exp $
+
+Fix so name, checking for DOT and DOXYGEN.
+
+Override the arch setting to remove OpenBSD version from it,
+so ports don't have to be bumped when OpenBSD version changes.
+
+--- configure.orig	Wed Dec 25 07:25:39 2013
++++ configure	Thu Dec 26 19:20:07 2013
+@@ -20817,7 +20817,7 @@ esac
+   openbsd*|mirbsd*) :
+ 
+ 	SOLIBS='$(LIBS)'
+-	LIBRUBY_SO='lib$(RUBY_SO_NAME).so.$(MAJOR).'`expr ${MINOR} \* 10 + ${TEENY}`
++	LIBRUBY_SO='lib$(RUBY_SO_NAME).so.'${LIBruby21_VERSION}
+ 	 ;; #(
+   solaris*) :
+ 
+@@ -21924,7 +21924,10 @@ _ACEOF
+ _ACEOF
+ 
+ else
+-    arch="${target_cpu}-${target_os}"
++    case "$target_os" in
++      openbsd*) arch="$target_cpu-openbsd" ;;
++      *) arch="${target_cpu}-${target_os}" ;;
++    esac
+     cat >>confdefs.h <<_ACEOF
+ #define RUBY_PLATFORM "${arch}"
+ _ACEOF
