@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/08/19 10:12:45 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/01/03 18:44:44 sebastia Exp $
 bin/debugapp
 bin/gnustep-config
 bin/gnustep-tests
@@ -59,6 +59,7 @@ share/GNUstep/Makefiles/Master/application.make
 share/GNUstep/Makefiles/Master/bundle.make
 share/GNUstep/Makefiles/Master/clibrary.make
 share/GNUstep/Makefiles/Master/ctool.make
+share/GNUstep/Makefiles/Master/deb.make
 share/GNUstep/Makefiles/Master/documentation.make
 share/GNUstep/Makefiles/Master/framework.make
 share/GNUstep/Makefiles/Master/gswapp.make
@@ -111,6 +112,7 @@ share/GNUstep/Makefiles/config.make
 share/GNUstep/Makefiles/config.sub
 share/GNUstep/Makefiles/cpu.sh
 share/GNUstep/Makefiles/ctool.make
+share/GNUstep/Makefiles/deb-equivs-control.template
 share/GNUstep/Makefiles/documentation.make
 share/GNUstep/Makefiles/empty.make
 share/GNUstep/Makefiles/executable.template
