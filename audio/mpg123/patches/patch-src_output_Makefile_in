@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_output_Makefile_in,v 1.4 2013/10/13 21:13:03 naddy Exp $
---- src/output/Makefile.in.orig	Sun Oct  6 23:51:06 2013
-+++ src/output/Makefile.in	Tue Oct  8 19:07:33 2013
-@@ -545,6 +545,7 @@ LIBMPG123_VERSION = @LIBMPG123_VERSION@
+$OpenBSD: patch-src_output_Makefile_in,v 1.5 2014/01/03 20:47:01 naddy Exp $
+--- src/output/Makefile.in.orig	Thu Dec 26 14:22:16 2013
++++ src/output/Makefile.in	Fri Jan  3 21:31:19 2014
+@@ -585,6 +585,7 @@ LIBMPG123_VERSION = @LIBMPG123_VERSION@
  LIBOBJS = @LIBOBJS@
  LIBS = @LIBS@
  LIBTOOL = @LIBTOOL@
