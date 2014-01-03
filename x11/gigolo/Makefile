@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/01/02 13:28:22 landry Exp $
+# $OpenBSD: Makefile,v 1.19 2014/01/03 23:11:20 espie Exp $
 
 COMMENT =	GVfs mountpoint manager
 
@@ -23,6 +23,7 @@ AUTOMAKE_VERSION =	1.11
 CONFIGURE_STYLE =	gnu
 RUN_DEPENDS +=	x11/gnome/gvfs
 LIB_DEPENDS =	x11/gtk+2
+BUILD_DEPENDS += ${MODGNU_AUTOCONF_DEPENDS} ${MODGNU_AUTOMAKE_DEPENDS}
 
 pre-configure:
 	# remove waf wrapper
