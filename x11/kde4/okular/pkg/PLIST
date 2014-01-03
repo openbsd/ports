@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/12/08 19:13:33 zhuk Exp $
-@conflict gwenview-<4.9.3
+@comment $OpenBSD: PLIST,v 1.3 2014/01/03 13:17:43 zhuk Exp $
+@conflict gwenview->=4,<4.9.3
 @bin bin/okular
 include/kde4/okular/
 include/kde4/okular/core/
