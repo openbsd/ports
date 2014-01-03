@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2013/11/16 15:10:22 merdely Exp $
+# $OpenBSD: Makefile,v 1.73 2014/01/03 01:37:03 bcallah Exp $
 
      SUBDIR =
      SUBDIR += atomicparsley
@@ -35,6 +35,7 @@
      SUBDIR += libvpx
      SUBDIR += lives
      SUBDIR += livestreamer
+     SUBDIR += livestreamer-curses
      SUBDIR += lsdvd
      SUBDIR += mediatomb
      SUBDIR += ming
