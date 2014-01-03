@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.18 2013/09/06 16:25:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2014/01/03 06:39:57 ajacoutot Exp $
 
 COMMENT=	error codes for GnuPG related software
 
 DISTNAME=	libgpg-error-1.12
 CATEGORIES=	security devel
+REVISION=	0
 
 SHARED_LIBS +=  gpg-error            3.2      # 9.0
 
-HOMEPAGE=	http://www.gnupg.org/related_software/libgpg-error.en.html
+HOMEPAGE=	http://www.gnupg.org/related_software/libgpg-error/
 
 # GPLv2 - LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
