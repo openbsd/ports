@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2013/10/02 10:47:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2014/01/03 06:21:04 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	H.323 gatekeeper
 
-V=		3.4
+V=		3.5
 DISTNAME=	gnugk-${V}
-REVISION=	3
 
 WRKDIST=	${WRKDIR}/gnugk-${V}
 
