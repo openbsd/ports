@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/07/08 14:44:12 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/01/03 21:47:33 gsoares Exp $
 @bin bin/gegrep
 @bin bin/gfgrep
 @bin bin/ggrep
@@ -40,8 +40,6 @@ share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/grep.mo
 share/locale/nb/LC_MESSAGES/grep.mo
 share/locale/nl/LC_MESSAGES/grep.mo
-share/locale/pa/
-share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/grep.mo
 share/locale/pl/LC_MESSAGES/grep.mo
 share/locale/pt/LC_MESSAGES/grep.mo
