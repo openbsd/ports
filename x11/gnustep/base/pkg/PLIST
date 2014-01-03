@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2013/10/17 09:30:38 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.18 2014/01/03 18:53:01 sebastia Exp $
 @conflict swi-prolog-<=5.6.27p5
 @bin bin/HTMLLinker
 @bin bin/autogsdoc
@@ -126,6 +126,7 @@ include/Foundation/NSURLProtectionSpace.h
 include/Foundation/NSURLProtocol.h
 include/Foundation/NSURLRequest.h
 include/Foundation/NSURLResponse.h
+include/Foundation/NSUUID.h
 include/Foundation/NSUndoManager.h
 include/Foundation/NSUserDefaults.h
 include/Foundation/NSUtilities.h
