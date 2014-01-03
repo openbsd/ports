@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/10/21 15:29:37 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2014/01/03 16:18:11 jeremy Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS =i386 amd64
@@ -7,7 +7,7 @@ COMMENT =	embeddable prototype-based language
 
 DISTNAME =	stevedekorte-io-2011.09.12-106-g02f9800
 PKGNAME =	io-20110905
-REVISION =	7
+REVISION =	8
 
 CATEGORIES =	lang
 
@@ -47,6 +47,7 @@ LIB_DEPENDS =	archivers/lzo2 \
 		devel/pcre \
 		graphics/cairo \
 		graphics/clutter/core \
+		graphics/freeglut \
 		graphics/jpeg \
 		graphics/png \
 		graphics/tiff \
