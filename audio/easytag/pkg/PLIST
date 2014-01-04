@@ -1,13 +1,39 @@
-@comment $OpenBSD: PLIST,v 1.12 2012/05/08 12:52:03 landry Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/01/04 12:50:12 ajacoutot Exp $
 @bin bin/easytag
 @man man/man1/easytag.1
 share/applications/easytag.desktop
-share/doc/easytag/
-share/doc/easytag/USERS-GUIDE
-share/easytag/
-share/easytag/ChangeLog
-share/easytag/EasyTAG_logo.xpm
+share/help/
+share/help/C/
+share/help/C/easytag/
+share/help/C/easytag/cddb-search.page
+share/help/C/easytag/file-rename.page
+share/help/C/easytag/file-select.page
+share/help/C/easytag/format-specifier.page
+share/help/C/easytag/image-delete.page
+share/help/C/easytag/image-export.page
+share/help/C/easytag/image.page
+share/help/C/easytag/index.page
+share/help/C/easytag/introduction.page
+share/help/C/easytag/keyboard-shortcuts.page
+share/help/C/easytag/legal.xml
+share/help/C/easytag/media/
+share/help/C/easytag/media/icon.png
+share/help/C/easytag/playlist-generate.page
+share/help/C/easytag/scanner.page
+share/help/C/easytag/starting.page
+share/help/C/easytag/tag-field.page
+share/help/C/easytag/tag.page
+share/icons/hicolor/128x128/apps/easytag.png
+share/icons/hicolor/16x16/apps/easytag.png
+share/icons/hicolor/22x22/apps/easytag.png
+share/icons/hicolor/24x24/apps/easytag.png
+share/icons/hicolor/256x256/apps/easytag.png
+share/icons/hicolor/32x32/apps/easytag.png
+share/icons/hicolor/48x48/apps/easytag.png
+share/icons/hicolor/64x64/apps/easytag.png
+share/icons/hicolor/scalable/apps/easytag.svg
 share/locale/bg/LC_MESSAGES/easytag.mo
+share/locale/ca/LC_MESSAGES/easytag.mo
 share/locale/cs/LC_MESSAGES/easytag.mo
 share/locale/da/LC_MESSAGES/easytag.mo
 share/locale/de/LC_MESSAGES/easytag.mo
@@ -18,20 +44,21 @@ share/locale/he/LC_MESSAGES/easytag.mo
 share/locale/hu/LC_MESSAGES/easytag.mo
 share/locale/it/LC_MESSAGES/easytag.mo
 share/locale/ja/LC_MESSAGES/easytag.mo
+share/locale/lt/LC_MESSAGES/easytag.mo
 share/locale/nl/LC_MESSAGES/easytag.mo
 share/locale/pl/LC_MESSAGES/easytag.mo
 share/locale/pt_BR/LC_MESSAGES/easytag.mo
 share/locale/ro/LC_MESSAGES/easytag.mo
 share/locale/ru/LC_MESSAGES/easytag.mo
+share/locale/sl/LC_MESSAGES/easytag.mo
 share/locale/sr/LC_MESSAGES/easytag.mo
-share/locale/sr@Latn/
-share/locale/sr@Latn/LC_MESSAGES/
-share/locale/sr@Latn/LC_MESSAGES/easytag.mo
+share/locale/sr@latin/LC_MESSAGES/easytag.mo
 share/locale/sv/LC_MESSAGES/easytag.mo
+share/locale/tr/LC_MESSAGES/easytag.mo
 share/locale/uk/LC_MESSAGES/easytag.mo
 share/locale/zh_CN/LC_MESSAGES/easytag.mo
 share/locale/zh_TW/LC_MESSAGES/easytag.mo
-share/pixmaps/
-share/pixmaps/EasyTAG_icon.xpm
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

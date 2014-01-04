@@ -1,48 +1,43 @@
-# $OpenBSD: Makefile,v 1.37 2013/05/31 15:34:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2014/01/04 12:50:12 ajacoutot Exp $
 
 COMMENT=		tag editor for various audio file formats
 
-DISTNAME=		easytag-2.1.7
-REVISION=		2
-CATEGORIES=		audio x11
+GNOME_PROJECT=		easytag
+GNOME_VERSION=		2.1.9
 
-HOMEPAGE=		http://projects.gnome.org/easytag/
+CATEGORIES=		audio
+
+HOMEPAGE=		https://wiki.gnome.org/Apps/EasyTAG
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=easytag/}
-EXTRACT_SUFX=		.tar.bz2
+WANTLIB += FLAC X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo fontconfig
+WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gobject-2.0 gtk-x11-2.0 id3 id3tag m ogg pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pthread speex stdc++ vorbis
+WANTLIB += vorbisfile wavpack z
 
-MODULES=		devel/gettext
+MODULES=		devel/gettext \
+			x11/gnome
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
-WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 m ogg
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
-WANTLIB += pthread-stubs stdc++ xcb z id3>=3 FLAC>=4 mp4v2 vorbis>=1
-WANTLIB += vorbisfile>=1 wavpack gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
-WANTLIB += gthread-2.0 pthread xcb-render GL Xxf86vm drm ffi xcb-shm
-WANTLIB += id3tag speex harfbuzz
 
-RUN_DEPENDS=		devel/desktop-file-utils
+MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
+MODGNOME_TOOLS=		yelp
+
+# man pages
+BUILD_DEPENDS += textproc/docbook-xsl
+
 LIB_DEPENDS=		audio/id3lib \
 			audio/libid3tag \
 			audio/speex \
 			audio/flac \
-			multimedia/libmp4v2>=1.9 \
 			audio/libvorbis \
 			audio/wavpack \
 			x11/gtk+2
 
-USE_GMAKE=		Yes
-
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/easytag
-	${INSTALL_DATA} ${WRKSRC}/USERS-GUIDE ${PREFIX}/share/doc/easytag
 
 .include <bsd.port.mk>
