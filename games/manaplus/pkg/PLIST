@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2013/12/21 20:32:03 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.17 2014/01/04 20:49:57 bcallah Exp $
 @conflict tmw-*
 @conflict tmw-music-*
 @pkgpath games/tmw
@@ -112,6 +112,7 @@ share/manaplus/data/graphics/gui/popup.xml
 share/manaplus/data/graphics/gui/popupbrowserbox.xml
 share/manaplus/data/graphics/gui/progress-indicator.png
 share/manaplus/data/graphics/gui/progressbar.xml
+share/manaplus/data/graphics/gui/progressbar_fill.xml
 share/manaplus/data/graphics/gui/quests.xml
 share/manaplus/data/graphics/gui/radio.xml
 share/manaplus/data/graphics/gui/resize.xml
