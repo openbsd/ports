@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.8 2013/12/26 22:33:35 espie Exp $
+# $OpenBSD: register-plist,v 1.9 2014/01/04 00:10:18 espie Exp $
 # Copyright (c) 2005,2012
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -49,6 +49,7 @@ sub forget_details
 	undef $self->{ OpenBSD::PackageInfo::COMMENT };
 	undef $self->{"digital-signature"};
 	undef $self->{vendor};
+	undef $self->{signer};
 
 	my $l = $self->{items};
 	if ($l->[@$l-1]->isa('OpenBSD::PackingElement::Cwd') &&
