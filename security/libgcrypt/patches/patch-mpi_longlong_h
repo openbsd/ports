@@ -1,9 +1,9 @@
-$OpenBSD: patch-mpi_longlong_h,v 1.4 2013/08/26 08:20:28 ajacoutot Exp $
+$OpenBSD: patch-mpi_longlong_h,v 1.5 2014/01/04 08:54:21 ajacoutot Exp $
 
 Fix build on sparc.
 
---- mpi/longlong.h.orig	Mon Feb 22 11:04:43 2010
-+++ mpi/longlong.h	Tue Jul 27 23:29:16 2010
+--- mpi/longlong.h.orig	Mon Dec  9 08:48:50 2013
++++ mpi/longlong.h	Fri Jan  3 07:40:15 2014
 @@ -170,6 +170,7 @@ MA 02111-1307, USA. */
      (pl) = __m0 * __m1; 						\
    } while (0)
@@ -20,7 +20,7 @@ Fix build on sparc.
  #endif /* __alpha */
  
  /***************************************
-@@ -1150,7 +1152,7 @@ typedef unsigned int UTItype __attribute__ ((mode (TI)
+@@ -1287,7 +1289,7 @@ typedef unsigned int UTItype __attribute__ ((mode (TI)
  	     "rJ" ((USItype)(al)),                                      \
  	     "rI" ((USItype)(bl))                                       \
  	   __CLOBBER_CC)
