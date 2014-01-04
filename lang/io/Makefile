@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2014/01/03 16:18:11 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2014/01/04 21:21:55 jasper Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS =i386 amd64
@@ -29,7 +29,7 @@ WANTLIB += X11 Xext Xrender atk-1.0 c cairo clutter-1.0 curses uuid
 WANTLIB += edit event_core event_extra expat fontconfig freetype
 WANTLIB += glib-2.0 gmp gobject-2.0 jpeg lzo2 m memcached
 WANTLIB += mysqlclient ogg pango-1.0 pcre pcreposix pixman-1 png
-WANTLIB += pthread pthread-stubs python2.7 qdbm readline sndfile
+WANTLIB += pthread pthread-stubs ${MODPY_WANTLIB} qdbm readline sndfile
 WANTLIB += sqlite3 theora tiff vorbis xcb xcb-render xcb-shm xml2
 WANTLIB += yajl z
 
