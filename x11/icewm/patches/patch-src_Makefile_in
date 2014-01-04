@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile_in,v 1.8 2010/12/12 19:13:01 jasper Exp $
---- src/Makefile.in.orig	Thu Dec  9 16:04:39 2010
-+++ src/Makefile.in	Thu Dec  9 16:06:41 2010
+$OpenBSD: patch-src_Makefile_in,v 1.9 2014/01/04 09:05:24 ajacoutot Exp $
+--- src/Makefile.in.orig	Sun Nov 17 17:54:39 2013
++++ src/Makefile.in	Sat Jan  4 09:34:02 2014
 @@ -32,7 +32,7 @@ DEFS =          @DEFS@ \
                  -DICEWMBGEXE='"icewmbg$(EXEEXT)"' \
                  -DICESMEXE='"icewm-session$(EXEEXT)"' \
@@ -9,8 +9,8 @@ $OpenBSD: patch-src_Makefile_in,v 1.8 2010/12/12 19:13:01 jasper Exp $
 +                -DICEHELPIDX='"$(DOCDIR)/icewm/icewm.html"'
  
  CXXFLAGS =      @CXXFLAGS@ $(DEBUG) $(DEFS) `pkg-config gdk-pixbuf-xlib-2.0 --cflags` \
- 	        @CORE_CFLAGS@ @IMAGE_CFLAGS@ @AUDIO_CFLAGS@ # `fc-config --cflags`
-@@ -207,11 +207,11 @@ clean:
+ 	        @CORE_CFLAGS@ @IMAGE_CFLAGS@ @AUDIO_CFLAGS@ `pkg-config fontconfig --cflags`
+@@ -203,11 +203,11 @@ clean:
  
  %.o: %.cc
  	@echo "  CXX     " $@

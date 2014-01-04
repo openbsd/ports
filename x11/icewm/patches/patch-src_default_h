@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_default_h,v 1.12 2010/12/12 19:13:01 jasper Exp $
---- src/default.h.orig	Sun Oct 31 15:09:36 2010
-+++ src/default.h	Thu Dec  9 16:07:57 2010
-@@ -161,8 +161,8 @@ XSV(const char *, acpiIgnoreBatteries,          0)
+$OpenBSD: patch-src_default_h,v 1.13 2014/01/04 09:05:24 ajacoutot Exp $
+--- src/default.h.orig	Sun Nov 17 17:54:39 2013
++++ src/default.h	Sat Jan  4 09:34:02 2014
+@@ -162,8 +162,8 @@ XSV(const char *, acpiIgnoreBatteries,          0)
  #endif
  
  XSV(const char *, mailBoxPath,                  0)

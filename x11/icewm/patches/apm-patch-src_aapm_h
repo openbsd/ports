@@ -1,10 +1,10 @@
-$OpenBSD: apm-patch-src_aapm_h,v 1.4 2010/12/12 19:13:01 jasper Exp $
---- src/aapm.h.orig	Thu Dec  9 16:02:17 2010
-+++ src/aapm.h	Thu Dec  9 16:02:41 2010
+$OpenBSD: apm-patch-src_aapm_h,v 1.5 2014/01/04 09:05:24 ajacoutot Exp $
+--- src/aapm.h.orig	Sun Nov 17 17:54:39 2013
++++ src/aapm.h	Sat Jan  4 09:35:12 2014
 @@ -1,5 +1,5 @@
  
--#if defined(linux) || (defined (__FreeBSD__)) || (defined(__NetBSD__) && defined(i386))
-+#if defined(linux) || (defined (__FreeBSD__)) || (defined(__NetBSD__) && defined(i386)) || defined(__OpenBSD__)
+-#if defined(linux) || (defined (__FreeBSD__)) || (defined (__FreeBSD_kernel__))  || (defined(__NetBSD__) && defined(i386))
++#if defined(linux) || (defined (__FreeBSD__)) || (defined (__FreeBSD_kernel__))  || (defined(__NetBSD__) && defined(i386)) || defined(__OpenBSD__)
  
  #include "ywindow.h"
  #include "ytimer.h"

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.12 2010/12/12 19:13:01 jasper Exp $
---- configure.orig	Thu Dec  9 16:07:00 2010
-+++ configure	Thu Dec  9 16:07:51 2010
-@@ -2624,7 +2624,7 @@ test -n "$target_alias" &&
+$OpenBSD: patch-configure,v 1.13 2014/01/04 09:05:24 ajacoutot Exp $
+--- configure.orig	Sun Nov 17 18:41:19 2013
++++ configure	Sat Jan  4 09:34:01 2014
+@@ -2664,7 +2664,7 @@ test -n "$target_alias" &&
      NONENONEs,x,x, &&
    program_prefix=${target_alias}-
  
@@ -9,8 +9,8 @@ $OpenBSD: patch-configure,v 1.12 2010/12/12 19:13:01 jasper Exp $
 +TARGETS='base docs'
  APPLICATIONS='icewm icewm-session icesh icewmhint icewmbg icewmtray'
  TESTCASES=`echo src/test*.cc | sed 's%src/\([^ ]*\)\.cc%\1%g'`
- TESTCASES="$TESTCASES iceview icesame iceicon icerun icelist" # iceclock
-@@ -4451,7 +4451,7 @@ if test "${ac_cv_lib_intl_strftime+set}" = set; then :
+ TESTCASES="$TESTCASES iceview icesame iceicon icerun icelist icebar" # iceclock
+@@ -4481,7 +4481,7 @@ if ${ac_cv_lib_intl_strftime+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.12 2010/12/12 19:13:01 jasper Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -5772,7 +5772,7 @@ if test "${ac_cv_lib_intl_bindtextdomain+set}" = set; 
+@@ -5799,7 +5799,7 @@ if ${ac_cv_lib_intl_bindtextdomain+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS

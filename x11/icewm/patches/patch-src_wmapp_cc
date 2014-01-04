@@ -1,16 +1,7 @@
-$OpenBSD: patch-src_wmapp_cc,v 1.8 2010/12/12 19:13:01 jasper Exp $
---- src/wmapp.cc.orig	Sun Oct 31 15:09:36 2010
-+++ src/wmapp.cc	Thu Dec  9 16:20:33 2010
-@@ -219,7 +219,7 @@ static void registerProtocols2(Window xid) {
-                     PropModeReplace, (unsigned char *)win_proto, i);
- #endif
- 
--    pid_t pid = getpid();
-+    long pid = long(getpid());
-     const char wmname[] = "IceWM "VERSION" ("HOSTOS"/"HOSTCPU")";
- 
- #ifdef GNOME1_HINTS
-@@ -337,7 +337,7 @@ static void initFontPath() {
+$OpenBSD: patch-src_wmapp_cc,v 1.9 2014/01/04 09:05:24 ajacoutot Exp $
+--- src/wmapp.cc.orig	Sun Nov 17 17:54:39 2013
++++ src/wmapp.cc	Sat Jan  4 09:34:02 2014
+@@ -338,7 +338,7 @@ static void initFontPath(IApp *app) {
              char ** fontPath(XGetFontPath(xapp->display(), &ndirs));
  
              char ** newFontPath = new char *[ndirs + 1];
