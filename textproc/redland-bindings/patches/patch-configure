@@ -1,7 +1,20 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2012/12/13 13:46:01 sthen Exp $
---- configure.orig	Mon Nov 14 09:30:48 2011
-+++ configure	Wed Oct 31 20:15:46 2012
-@@ -12331,7 +12331,7 @@ if test "X$with_php" != Xno ; then
+$OpenBSD: patch-configure,v 1.2 2014/01/04 09:09:28 landry Exp $
+--- configure.orig	Mon Nov 14 00:30:48 2011
++++ configure	Sat Jan  4 10:05:30 2014
+@@ -12003,11 +12003,7 @@ if test "X$PHP_CONFIG" != X ; then
+   PHP_INCLUDES=`$PHP_CONFIG --includes`
+   PHP_EXTENSION_DIR=`$PHP_CONFIG --extension-dir`
+ 
+-  if test $PHP_VERSION '>' 5.0.0; then
+-    PHP_SWIG="-php5"
+-  else
+-    PHP_SWIG="-php4"
+-  fi
++  PHP_SWIG="-php5"
+ 
+   # Configure these if PHP_SO_SUFFIX is missing
+   if test "X$PHP_SO_SUFFIX" = "X"; then
+@@ -12331,7 +12327,7 @@ if test "X$with_php" != Xno ; then
    with_php=yes
  fi
  
