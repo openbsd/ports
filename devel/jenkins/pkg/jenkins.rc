@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: jenkins.rc,v 1.3 2013/06/27 12:58:26 jasper Exp $
+# $OpenBSD: jenkins.rc,v 1.4 2014/01/05 18:37:51 jasper Exp $
 
 daemon=$(${LOCALBASE}/bin/javaPathHelper -c jenkins)
 daemon_flags="-jar ${TRUEPREFIX}/share/jenkins/jenkins.war --httpPort=8000 --httpsPort=-1 --ajp13Port=-1"
@@ -10,5 +10,9 @@ daemon_user="_jenkins"
 
 rc_bg=YES
 rc_reload=NO
+
+rc_stop {
+	pkill -9 -f "^${pexp}"	
+}
 
 rc_cmd $1
