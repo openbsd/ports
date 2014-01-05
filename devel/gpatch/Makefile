@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/11/09 23:19:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2014/01/05 22:56:09 jasper Exp $
 
 COMMENT=		GNU patch
 
@@ -27,7 +27,7 @@ TEST_DEPENDS=		shells/bash \
 			textproc/gdiff
 TEST_FLAGS=		SHELL=${LOCALBASE}/bin/bash
 
-pre-regress:
+pre-test:
 	@ln -fs ${LOCALBASE}/bin/gdiff ${WRKDIR}/bin/diff
 
 post-install:
