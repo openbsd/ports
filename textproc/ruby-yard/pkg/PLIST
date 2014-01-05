@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/02/02 15:58:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/01/05 13:50:07 jasper Exp $
 ${GEM_BIN}/yard${GEM_BIN_SUFFIX}
 ${GEM_BIN}/yardoc${GEM_BIN_SUFFIX}
 ${GEM_BIN}/yri${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.yardopts
-${GEM_LIB}/gems/${DISTNAME}/ChangeLog
 ${GEM_LIB}/gems/${DISTNAME}/LEGAL
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.md
@@ -73,11 +72,13 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/yard/cli/command.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/cli/command_parser.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/cli/config.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/cli/diff.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/yard/cli/display.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/cli/gems.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/cli/graph.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/cli/help.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/cli/i18n.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/cli/list.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/yard/cli/markup_types.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/cli/server.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/cli/stats.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/cli/yardoc.rb
@@ -171,6 +172,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/yard/i18n/
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/i18n/locale.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/i18n/message.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/i18n/messages.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/yard/i18n/po_parser.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/i18n/pot_generator.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/i18n/text.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/logging.rb
@@ -285,6 +287,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/yard/templates/helpers/filter_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/templates/helpers/html_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/templates/helpers/html_syntax_highlight_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/templates/helpers/markup/
+${GEM_LIB}/gems/${DISTNAME}/lib/yard/templates/helpers/markup/rdoc_markdown.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/templates/helpers/markup/rdoc_markup.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/templates/helpers/markup_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/yard/templates/helpers/method_helper.rb
@@ -302,11 +305,13 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/cli/command_parser_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/cli/command_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/cli/config_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/cli/diff_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/cli/display_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/cli/gems_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/cli/graph_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/cli/help_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/cli/i18n_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/cli/list_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/cli/markup_types_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/cli/server_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/cli/stats_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/cli/yardoc_spec.rb
@@ -628,6 +633,7 @@ ${GEM_LIB}/gems/${DISTNAME}/templates/default/module/text/setup.rb
 ${GEM_LIB}/gems/${DISTNAME}/templates/default/onefile/
 ${GEM_LIB}/gems/${DISTNAME}/templates/default/onefile/html/
 ${GEM_LIB}/gems/${DISTNAME}/templates/default/onefile/html/files.erb
+${GEM_LIB}/gems/${DISTNAME}/templates/default/onefile/html/headers.erb
 ${GEM_LIB}/gems/${DISTNAME}/templates/default/onefile/html/layout.erb
 ${GEM_LIB}/gems/${DISTNAME}/templates/default/onefile/html/readme.erb
 ${GEM_LIB}/gems/${DISTNAME}/templates/default/onefile/html/setup.rb
@@ -680,6 +686,11 @@ ${GEM_LIB}/gems/${DISTNAME}/templates/guide/module/html/
 ${GEM_LIB}/gems/${DISTNAME}/templates/guide/module/html/header.erb
 ${GEM_LIB}/gems/${DISTNAME}/templates/guide/module/html/method_list.erb
 ${GEM_LIB}/gems/${DISTNAME}/templates/guide/module/html/setup.rb
+${GEM_LIB}/gems/${DISTNAME}/templates/guide/onefile/
+${GEM_LIB}/gems/${DISTNAME}/templates/guide/onefile/html/
+${GEM_LIB}/gems/${DISTNAME}/templates/guide/onefile/html/files.erb
+${GEM_LIB}/gems/${DISTNAME}/templates/guide/onefile/html/setup.rb
+${GEM_LIB}/gems/${DISTNAME}/templates/guide/onefile/html/toc.erb
 ${GEM_LIB}/gems/${DISTNAME}/templates/guide/tags/
 ${GEM_LIB}/gems/${DISTNAME}/templates/guide/tags/html/
 ${GEM_LIB}/gems/${DISTNAME}/templates/guide/tags/html/setup.rb

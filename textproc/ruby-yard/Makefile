@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/10/26 23:55:38 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2014/01/05 13:50:06 jasper Exp $
 
 COMMENT=	Ruby documentation tool
 
-DISTNAME=	yard-0.8.3
-REVISION =	0
+DISTNAME=	yard-0.8.7.3
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://yardoc.org/
@@ -16,9 +15,9 @@ MODULES=	lang/ruby
 CONFIGURE_STYLE=ruby gem
 
 RUN_DEPENDS=	textproc/ruby-redcarpet,${MODRUBY_FLAVOR}
-TEST_DEPENDS=textproc/ruby-redcarpet,${MODRUBY_FLAVOR} \
+TEST_DEPENDS=	textproc/ruby-redcarpet,${MODRUBY_FLAVOR} \
 		www/ruby-rack,${MODRUBY_FLAVOR}
 
-MODRUBY_TEST=rspec
+MODRUBY_TEST=rspec2
 
 .include <bsd.port.mk>
