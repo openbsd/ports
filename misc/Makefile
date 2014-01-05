@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.161 2013/12/19 18:06:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.162 2014/01/05 18:43:48 bcallah Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
@@ -99,6 +99,7 @@
      SUBDIR += tkcron
      SUBDIR += tkinfo
      SUBDIR += tkman
+     SUBDIR += toilet
      SUBDIR += tpp
      SUBDIR += tpwireless
      SUBDIR += ttyrec
