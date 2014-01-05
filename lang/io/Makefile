@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/01/04 21:21:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2014/01/05 19:51:45 nigel Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS =i386 amd64
@@ -7,7 +7,7 @@ COMMENT =	embeddable prototype-based language
 
 DISTNAME =	stevedekorte-io-2011.09.12-106-g02f9800
 PKGNAME =	io-20110905
-REVISION =	8
+REVISION =	9
 
 CATEGORIES =	lang
 
@@ -25,13 +25,11 @@ MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xext Xrender atk-1.0 c cairo clutter-1.0 curses uuid
-WANTLIB += edit event_core event_extra expat fontconfig freetype
-WANTLIB += glib-2.0 gmp gobject-2.0 jpeg lzo2 m memcached
-WANTLIB += mysqlclient ogg pango-1.0 pcre pcreposix pixman-1 png
-WANTLIB += pthread pthread-stubs ${MODPY_WANTLIB} qdbm readline sndfile
-WANTLIB += sqlite3 theora tiff vorbis xcb xcb-render xcb-shm xml2
-WANTLIB += yajl z
+WANTLIB += GL GLU ICE SM X11 Xext Xi Xmu atk-1.0 c cairo clutter-1.0
+WANTLIB += curses dbi edit event_core event_extra freetype glib-2.0
+WANTLIB += glut gmp jpeg lzo2 m memcached mysqlclient ogg pango-1.0
+WANTLIB += pcre pcreposix png pthread ${MODPY_WANTLIB} qdbm readline
+WANTLIB += sndfile sqlite3 theora tiff uuid vorbis xml2 yajl z
 
 LIB_DEPENDS =	archivers/lzo2 \
 		audio/libsndfile \
@@ -57,7 +55,8 @@ LIB_DEPENDS =	archivers/lzo2 \
 		textproc/libxml,no_python
 
 MODULES =	devel/cmake \
-		devel/gettext
+		devel/gettext \
+		lang/python
 
 WRKDIST = ${WRKDIR}/stevedekorte-io-02f9800
 WRKBUILD = ${WRKSRC}/build
