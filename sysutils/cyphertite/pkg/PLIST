@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/01/23 07:47:58 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/01/05 09:11:52 benoit Exp $
 @bin bin/ct
 @bin bin/ctctl
 @bin bin/ctfb
@@ -14,6 +14,7 @@ include/cyphertite/ct_match.h
 include/cyphertite/ct_proto.h
 include/cyphertite/ct_sapi.h
 include/cyphertite/ct_socket.h
+include/cyphertite/ct_threads.h
 include/cyphertite/ct_types.h
 include/cyphertite/ct_version_tree.h
 include/cyphertite/ct_xml.h
