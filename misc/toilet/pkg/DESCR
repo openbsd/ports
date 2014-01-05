@@ -1,0 +1,15 @@
+TOIlet attempts to create a free replacement for the FIGlet utility.
+TOIlet stands for "The Other Implementation's letters," coined after
+FIGlet.
+
+TOIlet uses the libcaca library to achieve various text-based effects.
+TOIlet implements or plans to implement the following features:
+
+* The ability to load FIGlet fonts.
+* Support for Unicode input and output.
+* Support for color fonts.
+* Support for color output.
+* Support for various output formats: HTML, IRC, ANSI...
+
+TOIlet aims for full FIGlet compatibility. It is currently able to load
+FIGlet fonts and perform horizontal smushing.
