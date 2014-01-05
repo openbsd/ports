@@ -1,6 +1,6 @@
-$OpenBSD: patch-source3_configure_in,v 1.8 2013/03/28 15:26:48 brad Exp $
---- source3/configure.in.orig	Mon Mar 18 04:59:37 2013
-+++ source3/configure.in	Fri Mar 22 04:52:13 2013
+$OpenBSD: patch-source3_configure_in,v 1.9 2014/01/05 16:54:04 espie Exp $
+--- source3/configure.in.orig	Wed May  8 10:16:26 2013
++++ source3/configure.in	Sat Jan  4 13:31:08 2014
 @@ -1675,8 +1675,7 @@ DSO_EXPORTS=""
  			;;
  		*openbsd*)  BLDSHARED="true"
@@ -11,7 +11,17 @@ $OpenBSD: patch-source3_configure_in,v 1.8 2013/03/28 15:26:48 brad Exp $
  			PICFLAG="-fPIC"
  			AC_DEFINE(STAT_ST_BLOCKSIZE,512,[The size of a block])
  			AC_DEFINE(BROKEN_GETGRNAM,1,[Does getgrnam work correctly])
-@@ -6810,13 +6809,43 @@ fi
+@@ -4535,6 +4534,9 @@ if test x"$with_dnsupdate_support" != x"no"; then
+ 			with_dnsupdate_support=no
+ 		fi
+ 	fi
++fi
++
++if test x"$with_dnsupdate_support" != x"no"; then
+   ##################################################################
+   # then test for uuid.h (necessary to generate unique DNS keynames
+   # (uuid.h is required for this test)
+@@ -6810,13 +6812,43 @@ fi
  
  CFLAGS=$CFLAGS_SAVE
  
