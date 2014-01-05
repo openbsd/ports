@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.26 2013/10/17 14:31:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2014/01/05 18:39:05 bcallah Exp $
 
 COMMENT=		color ascii art library
 
-DISTNAME=		libcaca-0.99.beta17
-PKGNAME=		libcaca-0.99.17
-REVISION=		2
-SHARED_LIBS +=  caca           1.0               # .0.99
+DISTNAME=		libcaca-0.99.beta18
+PKGNAME=		libcaca-0.99.18
+SHARED_LIBS +=  caca           1.1               # .0.99
 CATEGORIES=		graphics
+
+HOMEPAGE=		http://caca.zoy.org/wiki/libcaca
+MAINTAINER=		Brian Callahan <bcallah@openbsd.org>
 
 # LGPLv2.1/Do What The Fuck You Want To Public License
 PERMIT_PACKAGE_CDROM=   Yes
 
 WANTLIB=		c ncursesw m z
 
-HOMEPAGE=		http://caca.zoy.org/wiki/libcaca
 MASTER_SITES=		http://caca.zoy.org/files/libcaca/ \
 			http://distfiles.nl/
 
@@ -37,5 +38,8 @@ CONFIGURE_ARGS+=	--disable-doc \
 			--disable-cxx \
 			--disable-zzuf \
 			--disable-cppunit
+
+# Tests are bogus: assume gmake, assume Windows.
+NO_TEST =		Yes
 
 .include <bsd.port.mk>
