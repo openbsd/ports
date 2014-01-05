@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/10/26 23:55:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2014/01/05 22:55:33 jasper Exp $
 
 COMMENT =	small, plain-text, DBMS written in Ruby
 
@@ -18,7 +18,7 @@ MODULES	=		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
 
-do-regress:
+do-test:
 	@cd ${WRKBUILD}/test && ${RUBY} ts_local.rb
 	
 .include <bsd.port.mk>
