@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2013/11/25 14:16:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2014/01/06 02:25:33 jeremy Exp $
 
 BROKEN-sparc64 =	doesnt reliably build, and depending ports randomly fail to build
 BROKEN-alpha =		miniruby abort trap when generating rdoc
@@ -22,6 +22,8 @@ PKGNAME-ri_docs =	ruby-ri_docs-${VERSION}.${PATCHLEVEL}
 
 PKG_ARCH-ri_docs =	*
 WANTLIB-ri_docs =	# empty
+
+REVISION-main =		0
 
 PKGSPEC-main =		ruby->=1.9,<1.10
 
