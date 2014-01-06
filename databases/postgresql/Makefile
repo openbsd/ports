@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.181 2013/11/01 21:07:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.182 2014/01/06 10:47:14 pea Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -9,7 +9,7 @@ COMMENT-plpython=Python procedural language for PostgreSQL
 # DO NOT FORGET to also change the @ask-update entry in pkg/PLIST-server
 # in case a dump before / restore after pkg_add -u is required!
 
-VERSION=	9.3.0
+VERSION=	9.3.2
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
 PKGNAME-server=	postgresql-server-${VERSION}
@@ -17,7 +17,6 @@ PKGNAME-docs=	postgresql-docs-${VERSION}
 PKGNAME-contrib=postgresql-contrib-${VERSION}
 PKGNAME-plpython=postgresql-plpython-${VERSION}
 
-REVISION-server=	1
 
 CATEGORIES=	databases
 SHARED_LIBS=	ecpg		7.5 \
@@ -110,7 +109,8 @@ LIB_DEPENDS-contrib= databases/postgresql=${VERSION} \
 WANTLIB-contrib=	${WANTLIB-main} pq>=4 ossp-uuid
 
 LIB_DEPENDS-plpython=	${MODPY_LIB_DEPENDS}
-WANTLIB-plpython =	c m pthread util ${MODPY_WANTLIB}
+WANTLIB-plpython =	c m pthread util com_err crypto asn1 \
+			heimbase krb5 roken wind ${MODPY_WANTLIB}
 RUN_DEPENDS-plpython=	databases/postgresql,-server=${VERSION}
 
 WANTLIB-docs=

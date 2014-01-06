@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-contrib,v 1.10 2013/10/15 02:18:18 jeremy Exp $
+@comment $OpenBSD: PLIST-contrib,v 1.11 2014/01/06 10:47:15 pea Exp $
 @conflict postgresql-uuid-*
 @conflict postgresql-server-<8.4.3
 @pkgpath devel/uuid,-pgsql
@@ -101,7 +101,8 @@ share/postgresql/extension/fuzzystrmatch--1.0.sql
 share/postgresql/extension/fuzzystrmatch--unpackaged--1.0.sql
 share/postgresql/extension/fuzzystrmatch.control
 share/postgresql/extension/hstore--1.0--1.1.sql
-share/postgresql/extension/hstore--1.1.sql
+share/postgresql/extension/hstore--1.1--1.2.sql
+share/postgresql/extension/hstore--1.2.sql
 share/postgresql/extension/hstore--unpackaged--1.0.sql
 share/postgresql/extension/hstore.control
 share/postgresql/extension/insert_username--1.0.sql

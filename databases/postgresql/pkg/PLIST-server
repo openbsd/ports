@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.24 2013/10/22 06:26:09 kili Exp $
+@comment $OpenBSD: PLIST-server,v 1.25 2014/01/06 10:47:15 pea Exp $
 @conflict pgsql-*
 @conflict pgsql-clients-*
 @conflict postgresql-clients-*
@@ -15,27 +15,6 @@
 @bin bin/pg_xlogdump
 @bin bin/postgres
 bin/postmaster
-@comment include/postgresql/server/port/irix.h
-@comment include/postgresql/server/port/win32/
-@comment include/postgresql/server/port/win32/arpa/
-@comment include/postgresql/server/port/win32/arpa/inet.h
-@comment include/postgresql/server/port/win32/dlfcn.h
-@comment include/postgresql/server/port/win32/grp.h
-@comment include/postgresql/server/port/win32/netdb.h
-@comment include/postgresql/server/port/win32/netinet/
-@comment include/postgresql/server/port/win32/netinet/in.h
-@comment include/postgresql/server/port/win32/pwd.h
-@comment include/postgresql/server/port/win32/sys/
-@comment include/postgresql/server/port/win32/sys/socket.h
-@comment include/postgresql/server/port/win32/sys/wait.h
-@comment include/postgresql/server/port/win32_msvc/
-@comment include/postgresql/server/port/win32_msvc/dirent.h
-@comment include/postgresql/server/port/win32_msvc/sys/
-@comment include/postgresql/server/port/win32_msvc/sys/file.h
-@comment include/postgresql/server/port/win32_msvc/sys/param.h
-@comment include/postgresql/server/port/win32_msvc/sys/time.h
-@comment include/postgresql/server/port/win32_msvc/unistd.h
-@comment include/postgresql/server/port/win32_msvc/utime.h
 include/postgresql/server/
 include/postgresql/server/access/
 include/postgresql/server/access/attnum.h
@@ -344,13 +323,14 @@ include/postgresql/server/pgstat.h
 include/postgresql/server/pgtar.h
 include/postgresql/server/pgtime.h
 include/postgresql/server/plpgsql.h
-include/postgresql/server/port.h
 include/postgresql/server/port/
+include/postgresql/server/port.h
 include/postgresql/server/port/aix.h
 include/postgresql/server/port/cygwin.h
 include/postgresql/server/port/darwin.h
 include/postgresql/server/port/freebsd.h
 include/postgresql/server/port/hpux.h
+@comment include/postgresql/server/port/irix.h
 include/postgresql/server/port/linux.h
 include/postgresql/server/port/netbsd.h
 include/postgresql/server/port/openbsd.h
@@ -358,7 +338,27 @@ include/postgresql/server/port/osf.h
 include/postgresql/server/port/sco.h
 include/postgresql/server/port/solaris.h
 include/postgresql/server/port/unixware.h
-include/postgresql/server/port/win32.h
+@comment include/postgresql/server/port/win32/
+@comment include/postgresql/server/port/win32.h
+@comment include/postgresql/server/port/win32/arpa/
+@comment include/postgresql/server/port/win32/arpa/inet.h
+@comment include/postgresql/server/port/win32/dlfcn.h
+@comment include/postgresql/server/port/win32/grp.h
+@comment include/postgresql/server/port/win32/netdb.h
+@comment include/postgresql/server/port/win32/netinet/
+@comment include/postgresql/server/port/win32/netinet/in.h
+@comment include/postgresql/server/port/win32/pwd.h
+@comment include/postgresql/server/port/win32/sys/
+@comment include/postgresql/server/port/win32/sys/socket.h
+@comment include/postgresql/server/port/win32/sys/wait.h
+@comment include/postgresql/server/port/win32_msvc/
+@comment include/postgresql/server/port/win32_msvc/dirent.h
+@comment include/postgresql/server/port/win32_msvc/sys/
+@comment include/postgresql/server/port/win32_msvc/sys/file.h
+@comment include/postgresql/server/port/win32_msvc/sys/param.h
+@comment include/postgresql/server/port/win32_msvc/sys/time.h
+@comment include/postgresql/server/port/win32_msvc/unistd.h
+@comment include/postgresql/server/port/win32_msvc/utime.h
 include/postgresql/server/portability/
 include/postgresql/server/portability/instr_time.h
 include/postgresql/server/postgres.h
