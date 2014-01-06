@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2013/08/29 16:30:09 pea Exp $
+# $OpenBSD: Makefile,v 1.14 2014/01/06 14:46:02 pea Exp $
 
 COMMENT =	standards compliant, simple to use Wiki
 
-VERSION =	2013-05-10a
+VERSION =	2013-12-08
 DISTNAME = 	dokuwiki-${VERSION}
 PKGNAME = 	dokuwiki-${VERSION:S/-/./g}
 CATEGORIES =	www
@@ -13,7 +13,7 @@ MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	http://www.splitbrain.org/_media/projects/dokuwiki/
+MASTER_SITES =	http://download.dokuwiki.org/src/dokuwiki/
 
 EXTRACT_SUFX = 	.tgz
 NO_BUILD =	Yes
