@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2013/12/20 21:50:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.89 2014/01/06 08:50:47 ajacoutot Exp $
 
 COMMENT=	GNU Transport Layer Security library
 
@@ -45,8 +45,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 # add dependency on net/unbound; see post-install as well
 CONFIGURE_ARGS += --disable-libdane
 
-# requires security/trousers: not committed, needs kernel support for tpm(4):
-# http://bsssd.sourceforge.net/
+# requires security/trousers: not committed (aja@), needs kernel support
+# for tpm(4): http://bsssd.sourceforge.net/
 CONFIGURE_ARGS += --without-tpm
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
