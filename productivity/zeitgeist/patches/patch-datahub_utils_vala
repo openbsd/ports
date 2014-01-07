@@ -1,0 +1,18 @@
+$OpenBSD: patch-datahub_utils_vala,v 1.1 2014/01/07 08:55:05 ajacoutot Exp $
+
+From c753eed33a0d5d7c7869cb9c75bfab0fccba51c5 Mon Sep 17 00:00:00 2001
+From: William Jon McCann <william.jon.mccann@gmail.com>
+Date: Fri, 03 Jan 2014 21:27:21 +0000
+Subject: Don't spam the logs with warnings that aren't really warnings
+
+--- datahub/utils.vala.orig	Mon Jun 17 08:40:08 2013
++++ datahub/utils.vala	Tue Jan  7 09:50:06 2014
+@@ -44,7 +44,7 @@ public class Utils : Object
+     }
+     catch (Error err)
+     {
+-      warning ("Couldn't get file contents %s: %s", file.get_path (), err.message);
++      debug ("Couldn't get file contents %s: %s", file.get_path (), err.message);
+     }
+     contents = (string) contents_array;
+ #else
