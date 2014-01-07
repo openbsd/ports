@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1253 2013/12/30 12:33:07 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1254 2014/01/07 10:39:17 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -504,6 +504,9 @@ BASE_PKGPATH := ${PKGPATH}
 _FLAVOR_EXT2 :=
 BUILD_PKGPATH := ${PKGPATH}
 _PKG_ARGS =
+.if !empty(PLIST_DB)
+_PKG_ARGS += -DHISTORY_DIR=${PLIST_DB}/history
+.endif
 _README_DIR = ${LOCALBASE}/share/doc/pkg-readmes
 
 PSEUDO_FLAVOR =
