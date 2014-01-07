@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.18 2013/10/11 23:51:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2014/01/07 14:55:32 gsoares Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	comma-separated values manipulation routines
 
-DISTNAME=	Text-CSV_XS-0.95
+DISTNAME=	Text-CSV_XS-1.02
 CATEGORIES=	textproc
 EXTRACT_SUFX=	.tgz
 
 MODULES=	cpan
 CPAN_AUTHOR=	HMBRAND
 
-MAINTAINER=	David Hill <dhill@mindcry.org>
-
-# GPL/Artistic
+# Perl
 PERMIT_PACKAGE_CDROM=   Yes
 
 .include <bsd.port.mk>
