@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.157 2013/12/16 20:57:31 abieber Exp $
+# $OpenBSD: Makefile,v 1.158 2014/01/07 15:04:29 sthen Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -70,7 +70,6 @@
      SUBDIR += otcl
      SUBDIR += parrot
      SUBDIR += pcc
-     SUBDIR += petite-chez
      SUBDIR += pfe
      SUBDIR += php
      SUBDIR += processing
