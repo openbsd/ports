@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2013/10/13 21:41:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.54 2014/01/07 10:01:47 sthen Exp $
 
 COMMENT-main=	graph drawing software
 
@@ -42,7 +42,7 @@ HOMEPAGE=	http://www.graphviz.org/
 
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
-# Common public licence
+# Eclipse Public License v1.0
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	devel/gettext \
