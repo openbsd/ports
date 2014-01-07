@@ -1,6 +1,6 @@
-$OpenBSD: patch-dmassage,v 1.2 2010/01/04 06:35:31 kili Exp $
---- dmassage.orig	Sun Jan 27 13:35:53 2002
-+++ dmassage	Sat Jan  2 20:24:27 2010
+$OpenBSD: patch-dmassage,v 1.3 2014/01/07 17:41:23 sthen Exp $
+--- dmassage.orig	Sun Jan 27 12:35:53 2002
++++ dmassage	Tue Jan  7 09:48:54 2014
 @@ -97,14 +97,11 @@ sub parse_dmesg
  {
      open(DMESG, $DMESG) || die "cannot read dmesg: $!\n";
@@ -25,3 +25,28 @@ $OpenBSD: patch-dmassage,v 1.2 2010/01/04 06:35:31 kili Exp $
  Usage: dmassage [-d dmesg] <-f kernel | -s kernelconfig | -t>
  USAGE
  }
+@@ -214,6 +210,8 @@ B<dmassage> - dmesg parser
+ 
+ =cut
+ 
++=back
++
+ =head1 DESCRIPTION
+ 
+ B<dmassage> parses your system's dmesg to learn which devices are
+@@ -265,5 +263,15 @@ B<< dmassage -s GENERIC >SMALLKERNEL >>
+ Camiel Dobbelaar <cd@sentia.nl>
+ 
+ http://www.sentia.org/projects/dmassage
++
++=head1 CAVEATS
++
++dmassage does not fully support recent OpenBSD releases and
++will often no longer directly create a working kernel configuration
++file; in most cases you will need to make additional changes yourself.
++
++Additionally, note that using a custom kernel is unsupported.
++If reporting any OS bugs, be sure to verify that they still occur
++with GENERIC or GENERIC.MP.
+ 
+ =cut

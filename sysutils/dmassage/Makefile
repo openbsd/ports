@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2013/10/11 23:50:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2014/01/07 17:41:23 sthen Exp $
 
 COMMENT=		dmesg parser
 DISTNAME=		dmassage-0.6
-REVISION =		2
+REVISION=		3
 CATEGORIES=		sysutils
 HOMEPAGE=		http://www.sentia.org/projects/dmassage/
 
