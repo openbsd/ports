@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:10:51 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2014/01/07 13:44:48 sthen Exp $
 
 ONLY_FOR_ARCHS= i386
 
 COMMENT=	color QuickCam control program
 
 DISTNAME=	cqcam-0.91
-REVISION =	3
+REVISION=	4
 CATEGORIES=	graphics
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c m stdc++ jpeg>=62
+
+WANTLIB=	c m stdc++ jpeg>=62
 
 HOMEPAGE=	http://www.cs.duke.edu/~reynolds/cqcam/
 MASTER_SITES=	${HOMEPAGE}
@@ -19,8 +20,9 @@ USE_GROFF =	Yes
 LIB_DEPENDS=	graphics/jpeg
 
 CONFIGURE_STYLE= gnu dest
-CONFIGURE_ARGS= --enable-jpeg \
-		--enable-asm \
+# asm uses %ebx, conflict with PIE
+CONFIGURE_ARGS= --disable-asm \
+		--enable-jpeg \
 		--without-xview
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
