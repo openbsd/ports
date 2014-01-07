@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2013/11/18 07:23:37 landry Exp $
+# $OpenBSD: Makefile,v 1.28 2014/01/07 22:45:05 jeremy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,7 +10,7 @@ BROKEN-powerpc = no atomics for this arch
 
 COMMENT =	Ruby virtual machine and core library
 
-V=		2.1.1
+V=		2.2.3
 EXTRACT_SUFX=	.tar.bz2
 DISTNAME =	rubinius-${V}
 
@@ -51,13 +51,18 @@ FILEUTILS_DIR =	staging/runtime/gems/rubysl-fileutils-*/lib/rubysl/fileutils
 
 SUBST_VARS=	RBX_ARCH
 
+# Used when this rubinius version supports ports LLVM
+#LLVM_OPTION =	--llvm-config=${LOCALBASE}/bin/llvm-config
+# Otherwise
+LLVM_OPTION =	--disable-llvm
+
 do-configure:
 	mkdir -p ${GEM_HOME}
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} bundle20 install \
 		--local --path ${GEM_HOME}
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${RUBY} configure \
 		--prefix=${PREFIX}/lib/rubinius --rake=${RAKE} \
-		--gem=gem20 --llvm-config=${LOCALBASE}/bin/llvm-config
+		--gem=gem20 --make=gmake ${LLVM_OPTION}
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} HOME=${WRKSRC} ${RAKE} build
@@ -75,10 +80,10 @@ do-install:
 # Need to Ctrl-C after tests finish
 TEST_IS_INTERACTIVE = Yes
 
-# VM Test: Failed 1 of 652 tests
+# VM Test: Failed 1 of 650 tests
 # mspec:
-# amd64: 2156 files, 19068 examples, 155140 expectations, 19 failures, 0 errors
-# i386:  2156 files, 19048 examples, 148858 expectations, 22 failures, 0 errors
+# amd64: 2160 files, 19266 examples, 155393 expectations, 16 failures, 1 error
+# i386:  2160 files, 19243 examples, 149109 expectations, 19 failures, 1 error
 do-test:
 	-cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${RAKE} vm:test
 	cd ${WRKSRC} && RUBY=${RUBY} ${RUBY} mspec/bin/mspec ci -f s
