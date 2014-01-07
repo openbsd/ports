@@ -1,7 +1,7 @@
-$OpenBSD: patch-drivers_libusb_c,v 1.1 2010/03/31 22:11:11 sthen Exp $
---- drivers/libusb.c.orig	Sat Mar 20 23:31:09 2010
-+++ drivers/libusb.c	Sat Mar 20 23:31:21 2010
-@@ -376,7 +376,9 @@ static int libusb_strerror(const int ret, const char *
+$OpenBSD: patch-drivers_libusb_c,v 1.2 2014/01/07 21:55:54 sthen Exp $
+--- drivers/libusb.c.orig	Wed Jul 31 21:41:31 2013
++++ drivers/libusb.c	Thu Nov 21 22:08:48 2013
+@@ -375,7 +375,9 @@ static int libusb_strerror(const int ret, const char *
  		return 0;
  
  	case -EOVERFLOW:	/* Value too large for defined data type */

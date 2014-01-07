@@ -1,22 +1,20 @@
-# $OpenBSD: Makefile,v 1.73 2013/07/18 07:58:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.74 2014/01/07 21:55:54 sthen Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
 COMMENT-snmp=		driver for monitoring UPS via SNMP
 COMMENT-xml=		driver for monitoring UPS via XML/HTTP
 
-DISTNAME=		nut-2.6.5
-REVISION-main=		3
-REVISION-cgi=		1
-REVISION-xml=		1
+DISTNAME=		nut-2.7.1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-cgi=		${DISTNAME:S/-/-cgi-/}
 PKGNAME-snmp=		${DISTNAME:S/-/-snmp-/}
 PKGNAME-xml=		${DISTNAME:S/-/-xml-/}
 
-SHARED_LIBS +=  upsclient            2.0      # 2.0
-SHARED_LIBS +=  nutscan              1.0      # 1.0
+SHARED_LIBS +=	upsclient            2.0      # .3.1
+SHARED_LIBS +=	nutclient            0.0      # .0.0
+SHARED_LIBS +=	nutscan              1.0      # .1.0
 
 CATEGORIES=		sysutils
 HOMEPAGE=		http://www.networkupstools.org/
@@ -27,14 +25,14 @@ MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 COMMON +=	c crypto pthread
-WANTLIB-main +=	${COMMON} ltdl m ssl usb usb-1.0 wrap
+WANTLIB-main +=	${COMMON} ltdl m ssl stdc++ usb usb-1.0 wrap
 WANTLIB-xml +=	${COMMON} ${MODGETTEXT_WANTLIB} asn1 expat gssapi krb5 neon ssl z proxy
 WANTLIB-xml +=	com_err heimbase roken wind
 WANTLIB-cgi +=	${COMMON} ${MODGETTEXT_WANTLIB} X11 expat fontconfig
 WANTLIB-cgi +=	freetype gd jpeg m png ssl upsclient xcb z
 WANTLIB-snmp +=	${COMMON} m netsnmp
 
-MASTER_SITES=		${HOMEPAGE}source/2.6/
+MASTER_SITES=		${HOMEPAGE}source/2.7/
 
 MODULES=		devel/gettext \
 			lang/python
@@ -81,8 +79,7 @@ CONFIGURE_ARGS+=	--without-neon
 MULTI_PACKAGES+=	-xml
 .endif
 
-LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
-			devel/libtool,-ltdl \
+LIB_DEPENDS-main=	devel/libtool,-ltdl \
 			devel/libusb-compat
 RUN_DEPENDS-main=	# empty
 
