@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/11/25 14:16:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2014/01/07 19:01:36 juanfra Exp $
 
 SHARED_ONLY =		Yes
 # Racket only supports i386 and amd64 on OpenBSD
@@ -10,7 +10,7 @@ ONLY_FOR_ARCHS =	i386 amd64
 COMMENT =		descendant of scheme with IDE and teaching resources
 
 V =			5.3.6
-REVISION =		1
+REVISION =		2
 PKGNAME =		racket-$V
 # The project uses racket-* for stable and plt-* for development releases
 DISTNAME =		racket-$V-src-unix
@@ -40,7 +40,12 @@ MASTER_SITES =		https://download.racket-lang.org/installers/${V}/racket/ \
 			ftp://download.tuxfamily.org/jod/lang/racket/
 EXTRACT_SUFX =		.tgz
 
-MODULES +=		converters/libiconv
+MODULES +=		converters/libiconv \
+			lang/clang
+
+# udp.rktl test crashes with system gcc
+MODCLANG_ARCHS =	*
+MODCLANG_LANGS =	c c++
 
 # http://docs.racket-lang.org/draw/libs.html
 # http://docs.racket-lang.org/gui/libs.html
