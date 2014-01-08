@@ -1,9 +1,9 @@
-$OpenBSD: patch-data_Xsession_in,v 1.4 2013/05/18 17:28:55 ajacoutot Exp $
+$OpenBSD: patch-data_Xsession_in,v 1.5 2014/01/08 14:07:48 ajacoutot Exp $
 
 XXX push upstream
 
---- data/Xsession.in.orig	Fri Jul 20 21:00:19 2012
-+++ data/Xsession.in	Mon Nov 26 16:17:32 2012
+--- data/Xsession.in.orig	Wed Sep 11 15:06:17 2013
++++ data/Xsession.in	Wed Jan  8 14:48:27 2014
 @@ -23,6 +23,8 @@
  # based on:
  # $XConsortium: Xsession /main/10 1995/12/18 18:21:28 gildea $
@@ -23,3 +23,21 @@ XXX push upstream
    else
      if [ -n "$zenity" ] ; then
  	disptext=`gettextfunc "System has no Xclients file, so starting a failsafe xterm session.  Windows will have focus only if the mouse pointer is above them.  To get out of this mode type 'exit' in the window."`
+@@ -191,12 +196,17 @@ if [ "x$command" = "xdefault" ] ; then
+   fi
+ fi
+ 
++# Do not start ssh-agent(1) in case we run gnome-session (gnome-keyring
++# already provides the functionality of an SSH agent), see:
++# https://bugzilla.redhat.com/show_bug.cgi?id=441123
++if [ "x$command" != "xgnome-session" ]; then
+ # add ssh-agent if found
+ sshagent="`gdmwhich ssh-agent`"
+ if [ -n "$sshagent" ] && [ -x "$sshagent" ] && [ -z "$SSH_AUTH_SOCK" ]; then
+     command="$sshagent -- $command"
+ elif [ -z "$sshagent" ] ; then
+     echo "$0: ssh-agent not found!"
++fi
+ fi
+ 
+ echo "$0: Setup done, will execute: $command"
