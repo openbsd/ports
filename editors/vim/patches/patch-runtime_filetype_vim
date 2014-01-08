@@ -1,6 +1,6 @@
-$OpenBSD: patch-runtime_filetype_vim,v 1.5 2013/10/04 08:44:04 sthen Exp $
---- runtime/filetype.vim.orig	Sun Sep 29 20:11:05 2013
-+++ runtime/filetype.vim	Tue Oct  1 09:20:02 2013
+$OpenBSD: patch-runtime_filetype_vim,v 1.6 2014/01/08 10:23:13 sthen Exp $
+--- runtime/filetype.vim.orig	Tue Jan  7 05:09:28 2014
++++ runtime/filetype.vim	Tue Jan  7 22:14:53 2014
 @@ -71,6 +71,14 @@ func! s:Check_inp()
    endif
  endfunc
@@ -16,7 +16,7 @@ $OpenBSD: patch-runtime_filetype_vim,v 1.5 2013/10/04 08:44:04 sthen Exp $
  " A-A-P recipe
  au BufNewFile,BufRead *.aap			setf aap
  
-@@ -604,7 +612,7 @@ au BufNewFile,BufRead dict.conf,.dictrc		setf dictconf
+@@ -607,7 +615,7 @@ au BufNewFile,BufRead dict.conf,.dictrc		setf dictconf
  au BufNewFile,BufRead dictd.conf		setf dictdconf
  
  " Diff files
@@ -25,7 +25,7 @@ $OpenBSD: patch-runtime_filetype_vim,v 1.5 2013/10/04 08:44:04 sthen Exp $
  
  " Dircolors
  au BufNewFile,BufRead .dir_colors,.dircolors,*/etc/DIR_COLORS	setf dircolors
-@@ -1094,7 +1102,7 @@ au BufNewFile,BufRead */etc/mail/aliases,*/etc/aliases
+@@ -1097,7 +1105,7 @@ au BufNewFile,BufRead */etc/mail/aliases,*/etc/aliases
  au BufNewFile,BufRead .mailcap,mailcap		setf mailcap
  
  " Makefile
@@ -34,7 +34,7 @@ $OpenBSD: patch-runtime_filetype_vim,v 1.5 2013/10/04 08:44:04 sthen Exp $
  
  " MakeIndex
  au BufNewFile,BufRead *.ist,*.mst		setf ist
-@@ -2247,12 +2255,14 @@ au BufNewFile,BufRead *.vim,*.vba,.exrc,_exrc	setf vim
+@@ -2254,12 +2262,14 @@ au BufNewFile,BufRead *.vim,*.vba,.exrc,_exrc	setf vim
  au BufNewFile,BufRead .viminfo,_viminfo		setf viminfo
  
  " Virata Config Script File or Drupal module
