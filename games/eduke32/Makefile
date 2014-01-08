@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:07:38 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2014/01/08 14:01:10 sthen Exp $
 
 COMMENT =	Enhanced Duke Nukem 3D engine
 RDATE =		20120301
 RTAG =		2394
 DISTNAME =	eduke32_src_${RDATE}-${RTAG}
 PKGNAME =	eduke32-2.0.0.${RTAG}
-REVISION =	0
+REVISION =	1
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	games x11
 
@@ -82,5 +82,10 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/buildlic.txt ${PREFIX}/share/doc/eduke32/
 	# sample game mapping/modding data files
 	${INSTALL_DATA} ${WRKDIST}/samples/* ${PREFIX}/share/examples/eduke32/
+
+.if ${MACHINE_ARCH:Mi386}
+CFLAGS +=	-fno-pie
+MAKE_FLAGS +=	MISCLINKOPTS=-nopie
+.endif
 
 .include <bsd.port.mk>
