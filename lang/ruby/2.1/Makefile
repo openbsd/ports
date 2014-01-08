@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/01/03 17:51:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2014/01/08 18:31:03 jeremy Exp $
 
 BROKEN-sparc64	=	segfaults during build
 BROKEN-hppa =		miniruby abort trap when generating rdoc
@@ -18,8 +18,6 @@ PKGNAME-main =		ruby-${VERSION}
 PKGNAME-gdbm =		ruby21-gdbm-${VERSION}
 PKGNAME-tk =		ruby21-tk-${VERSION}
 PKGNAME-ri_docs =	ruby21-ri_docs-${VERSION}
-
-MASTER_SITES =		http://cache.ruby-lang.org/pub/ruby/${RUBYLIBREV}/
 
 PKG_ARCH-ri_docs =	*
 WANTLIB-ri_docs =	# empty

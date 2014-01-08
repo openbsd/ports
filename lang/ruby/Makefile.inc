@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.6 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2014/01/08 18:31:03 jeremy Exp $
 
 SHARED_ONLY ?=	Yes
 
@@ -15,9 +15,7 @@ PERMIT_PACKAGE_CDROM ?= Yes
 PERMIT_PACKAGE_FTP ?= Yes
 PERMIT_DISTFILES_FTP ?= Yes
 
-MASTER_SITES ?=	ftp://www.ruby-lang.org/pub/ruby/${VERSION:R}/ \
-		ftp://mirror.nucba.ac.jp/pub/ruby/${VERSION:R}/ \
-		ftp://ftp.kr.freebsd.org/pub/ruby/${VERSION:R}/
+MASTER_SITES ?=	http://cache.ruby-lang.org/pub/ruby/${VERSION:R}/
 
 CONFIGURE_STYLE ?=	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
