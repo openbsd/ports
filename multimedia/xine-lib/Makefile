@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.107 2013/11/30 22:13:37 brad Exp $
+# $OpenBSD: Makefile,v 1.108 2014/01/08 00:17:53 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multimedia decoding library
 
 DISTNAME=	xine-lib-1.2.4
+REVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
@@ -50,6 +51,9 @@ LIB_DEPENDS=	audio/faad \
 		multimedia/libdvdnav \
 		multimedia/libtheora \
 		x11/libxdg-basedir
+
+# Add back fast math flag since we override CFLAGS
+CFLAGS+=	-ffast-math
 
 MAKE_ENV=	V=1
 
