@@ -1,5 +1,0 @@
-# $OpenBSD: i18n,v 1.1 2012/09/13 08:38:12 ajacoutot Exp $
-#
-# mimics /etc/sysconfig/i18n from Red Hat Linux
-
-LANG="C"

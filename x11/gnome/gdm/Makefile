@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.181 2013/12/26 15:38:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.182 2014/01/08 09:42:14 ajacoutot Exp $
 
 # XXX configuring GDM from gnome-cc does not work
 
@@ -8,7 +8,7 @@ COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		3.10.0.1
-REVISION=		5
+REVISION=		6
 
 SHARED_LIBS +=  gdm                  0.0      # 1.0
 
@@ -54,7 +54,7 @@ MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 CONFIGURE_ARGS=		--disable-static \
 			--mandir=${PREFIX}/man \
-			--with-lang-file=${SYSCONFDIR}/gdm/i18n \
+			--with-lang-file=${SYSCONFDIR}/gdm/locale.conf \
 			--with-at-spi-registryd-directory=${LOCALBASE}/libexec \
 			--with-custom-conf=${SYSCONFDIR}/gdm/custom.conf \
 			--with-dbus-sys=${SYSCONFDIR}/dbus-1/system.d \
@@ -93,8 +93,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gdm/var/db/gdm/.pulse
 	${INSTALL_DATA} ${FILESDIR}/client.conf \
 		${PREFIX}/share/examples/gdm/var/db/gdm/.pulse
-	${INSTALL_DATA} ${FILESDIR}/i18n \
-		${PREFIX}/share/examples/gdm/etc/gdm/i18n
+	${INSTALL_DATA} ${FILESDIR}/locale.conf \
+		${PREFIX}/share/examples/gdm/etc/gdm/locale.conf
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/gdm/*
 
 .include <bsd.port.mk>
