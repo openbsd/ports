@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.23 2013/12/26 14:48:30 ajacoutot Exp $
+$OpenBSD: README-main,v 1.24 2014/01/08 10:09:29 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -31,11 +31,17 @@ key features like screen locking will not work properly. To do so, "gdm"
 must be added at the end of "pkg_scripts" in rc.conf.local(8) (and
 "xdm_flags" commented or removed).
 
-Alternatively, to start GNOME without GDM (not recommended), the
-following line needs to be added:
+Changing the GDM greeter language is done in:
+    ${SYSCONFDIR}/gdm/locale.conf
+See locale(1) for a list of supported locales (`locale -a`).
+
+*** NOT RECOMMENDED ***
+Alternative (non-GDM) GNOME startup
+-----------------------------------
+To start GNOME without GDM, the following line needs to be added:
     exec ${LOCALBASE}/bin/ck-launch-session ${TRUEPREFIX}/bin/gnome-session
-in ~/.xinitrc when using startx(1) (console login)
-in ~/.xsession when using xdm(1) (xdm(1) or similar login)
+to ~/.xinitrc when using startx(1) (console login)
+to ~/.xsession when using xdm(1) (xdm(1) or similar login)
 
 mDNS/DNS-SD support
 ===================
