@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2014/01/03 18:39:51 sebastia Exp $
+# $OpenBSD: Makefile,v 1.36 2014/01/08 20:28:54 brad Exp $
 
 COMMENT = 	web based groupware server
 
@@ -33,6 +33,10 @@ LIB_DEPENDS +=		devel/libmemcached \
 			www/sope
 RUN_DEPENDS +=		sope-postgres-*|sope-mysql-*:www/sope,-postgres \
 			archivers/zip
+
+.if ${MACHINE_ARCH} == "powerpc"
+PATCH_LIST =		patch-* gcc-*
+.endif
 
 CONFIGURE_STYLE =	simple dest
 CONFIGURE_ARGS +=	--gsmake=`gnustep-config --variable=GNUSTEP_MAKEFILES` \
