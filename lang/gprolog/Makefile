@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:20:27 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2014/01/08 11:54:12 sthen Exp $
 
 ONLY_FOR_ARCHS=		amd64 i386
 
 COMMENT=		Prolog compiler
 
 DISTNAME=		gprolog-1.3.1
+REVISION=		0
 CATEGORIES=		lang
 
 HOMEPAGE=		http://www.gprolog.org/
