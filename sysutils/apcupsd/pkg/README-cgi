@@ -1,10 +1,18 @@
+$OpenBSD: README-cgi,v 1.1 2014/01/08 20:46:18 kirby Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
 Before using multimon and the other CGI programs, first ensure that
 apcupsd is configured to run the Network Information Server. This is
-done by setting NETSERVER on in ${SYSCONFDIR}/apcupsd.conf. 
+done by setting NETSERVER on in ${SYSCONFDIR}/apcupsd.conf.
 This switch is on by default.
+
 To run scripts in chrooted apache (default behaviour), configuration
 files must be available to the webserver:
 # mv ${SYSCONFDIR} /var/www/${SYSCONFDIR}
 # ln -s /var/www/${SYSCONFDIR} ${BASESYSCONFDIR}/
+
 And some libraries must be copied in:
 # ${WEB_ROOT}/cgi-bin/apcupsd/copy-libs.sh

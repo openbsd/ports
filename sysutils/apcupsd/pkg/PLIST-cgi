@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-cgi,v 1.1.1.1 2010/05/25 21:56:33 sthen Exp $
+@comment $OpenBSD: PLIST-cgi,v 1.2 2014/01/08 20:46:18 kirby Exp $
+@conflict apcupsd-<=3.14.10p1
 cgi-bin/apcupsd/
 @group bin
 cgi-bin/apcupsd/README
@@ -9,3 +10,14 @@ cgi-bin/apcupsd/copy-libs.sh
 @bin cgi-bin/apcupsd/upsfstats.cgi
 @bin cgi-bin/apcupsd/upsimage.cgi
 @bin cgi-bin/apcupsd/upsstats.cgi
+@cwd ${LOCALBASE}
+share/examples/apcupsd/
+share/examples/apcupsd/etc/
+@sample ${SYSCONFDIR}/
+share/examples/apcupsd/etc/apcupsd.css
+@sample ${SYSCONFDIR}/apcupsd.css
+share/examples/apcupsd/etc/hosts.conf
+@sample ${SYSCONFDIR}/hosts.conf
+share/examples/apcupsd/etc/multimon.conf
+@sample ${SYSCONFDIR}/multimon.conf
+share/doc/pkg-readmes/${FULLPKGNAME}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/09/27 17:49:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2014/01/08 20:46:18 kirby Exp $
 
 COMMENT-main =		daemon for controlling APC UPSes
 COMMENT-cgi =		CGI scripts for web monitoring
@@ -8,15 +8,15 @@ DISTNAME =		apcupsd-3.14.10
 PKGNAME-main =		${DISTNAME}
 PKGNAME-cgi =		${DISTNAME:S/-/-cgi-/}
 PKGNAME-x11 =		${DISTNAME:S/-/-x11-/}
-REVISION-main =		1
-REVISION-cgi =		0
-REVISION-x11 =		1
+REVISION-main =		2
+REVISION-cgi =		1
+REVISION-x11 =		2
 
 CATEGORIES =		sysutils
 
 HOMEPAGE =		http://www.apcupsd.com
 
-MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
+MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
