@@ -1,11 +1,11 @@
-$OpenBSD: patch-Lib_test_regrtest_py,v 1.5 2013/05/22 12:39:30 fgsch Exp $
+$OpenBSD: patch-Lib_test_regrtest_py,v 1.6 2014/01/09 18:03:35 fgsch Exp $
 
 - test_bsddb and test_bsddb3 are in the list below as they are only available
   on i386 and amd64.
 
---- Lib/test/regrtest.py.orig	Sat Apr  6 15:02:29 2013
-+++ Lib/test/regrtest.py	Tue Apr  9 18:43:20 2013
-@@ -1416,22 +1416,17 @@ _expectations = {
+--- Lib/test/regrtest.py.orig	Sun Nov 10 07:36:40 2013
++++ Lib/test/regrtest.py	Fri Nov 22 02:36:23 2013
+@@ -1416,22 +1416,16 @@ _expectations = {
          """,
      'openbsd3':
          """
@@ -20,7 +20,6 @@ $OpenBSD: patch-Lib_test_regrtest_py,v 1.5 2013/05/22 12:39:30 fgsch Exp $
 -        test_locale
 -        test_normalization
 +        test_gdb
-+        test_multiprocessing
          test_ossaudiodev
 -        test_pep277
 -        test_tcl
@@ -31,7 +30,7 @@ $OpenBSD: patch-Lib_test_regrtest_py,v 1.5 2013/05/22 12:39:30 fgsch Exp $
          """,
      'netbsd3':
          """
-@@ -1458,6 +1453,8 @@ _expectations['freebsd5'] = _expectations['freebsd4']
+@@ -1458,6 +1452,8 @@ _expectations['freebsd5'] = _expectations['freebsd4']
  _expectations['freebsd6'] = _expectations['freebsd4']
  _expectations['freebsd7'] = _expectations['freebsd4']
  _expectations['freebsd8'] = _expectations['freebsd4']

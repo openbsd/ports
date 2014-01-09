@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2013/10/27 18:32:55 fgsch Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2014/01/09 18:03:35 fgsch Exp $
 @option no-default-conflict
 @conflict python->=2.7,<2.8
 @conflict python-bz2->=2.7,<2.8
@@ -1542,7 +1542,7 @@ lib/python2.7/keyword.py
 lib/python2.7/keyword.pyc
 lib/python2.7/keyword.pyo
 lib/python2.7/lib-dynload/
-lib/python2.7/lib-dynload/Python-2.7.5-py2.7.egg-info
+lib/python2.7/lib-dynload/Python-2.7.6-py2.7.egg-info
 lib/python2.7/lib-dynload/_bisect.so
 lib/python2.7/lib-dynload/_codecs_cn.so
 lib/python2.7/lib-dynload/_codecs_hk.so
@@ -1606,9 +1606,9 @@ lib/python2.7/lib-dynload/unicodedata.so
 lib/python2.7/lib-dynload/zlib.so
 lib/python2.7/lib2to3/
 lib/python2.7/lib2to3/Grammar.txt
-lib/python2.7/lib2to3/Grammar2.7.5.final.0.pickle
+lib/python2.7/lib2to3/Grammar2.7.6.final.0.pickle
 lib/python2.7/lib2to3/PatternGrammar.txt
-lib/python2.7/lib2to3/PatternGrammar2.7.5.final.0.pickle
+lib/python2.7/lib2to3/PatternGrammar2.7.6.final.0.pickle
 lib/python2.7/lib2to3/__init__.py
 lib/python2.7/lib2to3/__init__.pyc
 lib/python2.7/lib2to3/__init__.pyo
@@ -1836,6 +1836,7 @@ lib/python2.7/lib2to3/tests/data/README
 lib/python2.7/lib2to3/tests/data/bom.py
 lib/python2.7/lib2to3/tests/data/crlf.py
 lib/python2.7/lib2to3/tests/data/different_encoding.py
+lib/python2.7/lib2to3/tests/data/false_encoding.py
 lib/python2.7/lib2to3/tests/data/fixers/
 lib/python2.7/lib2to3/tests/data/fixers/bad_order.py
 lib/python2.7/lib2to3/tests/data/fixers/myfixes/

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.5 2013/05/22 12:39:30 fgsch Exp $
+@comment $OpenBSD: PLIST-tests,v 1.6 2014/01/09 18:03:35 fgsch Exp $
 @option no-default-conflict
 @conflict python-tests->=2.7,<2.8
 lib/python2.7/test/
@@ -7,7 +7,24 @@ lib/python2.7/test/Sine-1000Hz-300ms.aif
 lib/python2.7/test/__init__.py
 lib/python2.7/test/__init__.pyc
 lib/python2.7/test/__init__.pyo
+lib/python2.7/test/audiodata/
+lib/python2.7/test/audiodata/pluck-pcm16.aiff
+lib/python2.7/test/audiodata/pluck-pcm16.au
+lib/python2.7/test/audiodata/pluck-pcm16.wav
+lib/python2.7/test/audiodata/pluck-pcm24.aiff
+lib/python2.7/test/audiodata/pluck-pcm24.wav
+lib/python2.7/test/audiodata/pluck-pcm32.aiff
+lib/python2.7/test/audiodata/pluck-pcm32.au
+lib/python2.7/test/audiodata/pluck-pcm32.wav
+lib/python2.7/test/audiodata/pluck-pcm8.aiff
+lib/python2.7/test/audiodata/pluck-pcm8.au
+lib/python2.7/test/audiodata/pluck-pcm8.wav
+lib/python2.7/test/audiodata/pluck-ulaw.aifc
+lib/python2.7/test/audiodata/pluck-ulaw.au
 lib/python2.7/test/audiotest.au
+lib/python2.7/test/audiotests.py
+lib/python2.7/test/audiotests.pyc
+lib/python2.7/test/audiotests.pyo
 lib/python2.7/test/autotest.py
 lib/python2.7/test/autotest.pyc
 lib/python2.7/test/autotest.pyo
@@ -252,6 +269,7 @@ lib/python2.7/test/mp_fork_bomb.py
 lib/python2.7/test/mp_fork_bomb.pyc
 lib/python2.7/test/mp_fork_bomb.pyo
 lib/python2.7/test/nokia.pem
+lib/python2.7/test/nullbytecert.pem
 lib/python2.7/test/nullcert.pem
 lib/python2.7/test/outstanding_bugs.py
 lib/python2.7/test/outstanding_bugs.pyc
@@ -840,6 +858,9 @@ lib/python2.7/test/test_httplib.pyo
 lib/python2.7/test/test_httpservers.py
 lib/python2.7/test/test_httpservers.pyc
 lib/python2.7/test/test_httpservers.pyo
+lib/python2.7/test/test_idle.py
+lib/python2.7/test/test_idle.pyc
+lib/python2.7/test/test_idle.pyo
 lib/python2.7/test/test_imageop.py
 lib/python2.7/test/test_imageop.pyc
 lib/python2.7/test/test_imageop.pyo
@@ -936,6 +957,9 @@ lib/python2.7/test/test_macostools.pyo
 lib/python2.7/test/test_macpath.py
 lib/python2.7/test/test_macpath.pyc
 lib/python2.7/test/test_macpath.pyo
+lib/python2.7/test/test_macurl2path.py
+lib/python2.7/test/test_macurl2path.pyc
+lib/python2.7/test/test_macurl2path.pyo
 lib/python2.7/test/test_mailbox.py
 lib/python2.7/test/test_mailbox.pyc
 lib/python2.7/test/test_mailbox.pyo
@@ -1005,6 +1029,9 @@ lib/python2.7/test/test_new.pyo
 lib/python2.7/test/test_nis.py
 lib/python2.7/test/test_nis.pyc
 lib/python2.7/test/test_nis.pyo
+lib/python2.7/test/test_nntplib.py
+lib/python2.7/test/test_nntplib.pyc
+lib/python2.7/test/test_nntplib.pyo
 lib/python2.7/test/test_normalization.py
 lib/python2.7/test/test_normalization.pyc
 lib/python2.7/test/test_normalization.pyo
@@ -1245,6 +1272,9 @@ lib/python2.7/test/test_ssl.pyo
 lib/python2.7/test/test_startfile.py
 lib/python2.7/test/test_startfile.pyc
 lib/python2.7/test/test_startfile.pyo
+lib/python2.7/test/test_stat.py
+lib/python2.7/test/test_stat.pyc
+lib/python2.7/test/test_stat.pyo
 lib/python2.7/test/test_str.py
 lib/python2.7/test/test_str.pyc
 lib/python2.7/test/test_str.pyo
@@ -1278,6 +1308,9 @@ lib/python2.7/test/test_structseq.pyo
 lib/python2.7/test/test_subprocess.py
 lib/python2.7/test/test_subprocess.pyc
 lib/python2.7/test/test_subprocess.pyo
+lib/python2.7/test/test_sunau.py
+lib/python2.7/test/test_sunau.pyc
+lib/python2.7/test/test_sunau.pyo
 lib/python2.7/test/test_sunaudiodev.py
 lib/python2.7/test/test_sunaudiodev.pyc
 lib/python2.7/test/test_sunaudiodev.pyo
