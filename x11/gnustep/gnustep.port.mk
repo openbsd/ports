@@ -1,4 +1,4 @@
-# $OpenBSD: gnustep.port.mk,v 1.20 2013/10/21 10:29:57 sebastia Exp $
+# $OpenBSD: gnustep.port.mk,v 1.21 2014/01/09 17:24:16 brad Exp $
 
 # until tested on others
 ONLY_FOR_ARCHS ?=	i386 amd64 macppc
@@ -19,7 +19,7 @@ MODCLANG_LANGS =		c++
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 CONFIGURE_ENV +=	CC="clang" CXX="clang++" CPP="clang -E"
-CONFIGURE_ENV +=	OPTFLAG="${CFLAGS}" CFLAGS="${CFLAGS} -integrated-as"
+CONFIGURE_ENV +=	OPTFLAG="${CFLAGS}"
 MAKE_FLAGS +=		CC="clang" CXX="clang++" CPP="clang -E"
 MAKE_FLAGS +=		OPTFLAG="${CFLAGS}"
 .else
