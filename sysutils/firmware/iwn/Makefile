@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/12/03 09:56:54 brad Exp $
+# $OpenBSD: Makefile,v 1.7 2014/01/09 22:56:18 sthen Exp $
 
 FW_DRIVER=	iwn
 FW_VER=		5.10
+REVISION=	0
+
 DISTFILES=	iwlwifi-4965-ucode-228.61.2.24.tgz \
 		iwlwifi-5000-ucode-8.83.5.1-1.tgz \
 		iwlwifi-5150-ucode-8.24.2.2.tgz \

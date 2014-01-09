@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:41:30 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2014/01/09 22:56:18 sthen Exp $
 
-FW_DRIVER = 	ulpt
-FW_VER = 	1.0
+FW_DRIVER =	ulpt
+FW_VER =	1.0
+REVISION=	0
 
 # "You may not copy the Software onto any public network."
 PERMIT_PACKAGE_CDROM ?=	  stupid license
 PERMIT_PACKAGE_FTP ?=	  stupid license
 PERMIT_DISTFILES_FTP ?=	  stupid license
 
-MASTER_SITES = 	http://www.openprinting.org/download/printdriver/auxfiles/HP/plugins/
+MASTER_SITES =	http://www.openprinting.org/download/printdriver/auxfiles/HP/plugins/
 
-DISTFILES = 	hplip-3.12.11-plugin.run
-WRKDIST = 	${WRKDIR}
+DISTFILES =	hplip-3.12.11-plugin.run
+WRKDIST =	${WRKDIR}
 
-EXTRACT_SUFX = 	.run
+EXTRACT_SUFX =	.run
 EXTRACT_CASES = *.run) \
 	tail -c +9524 ${FULLDISTDIR}/$$archive | ${GZIP_CMD} -dc | ${TAR} -xf - ;;
 
