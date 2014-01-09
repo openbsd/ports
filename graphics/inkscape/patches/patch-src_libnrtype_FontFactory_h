@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_libnrtype_FontFactory_h,v 1.1 2014/01/09 22:22:19 naddy Exp $
+--- src/libnrtype/FontFactory.h.orig	Fri Jul  8 20:25:09 2011
++++ src/libnrtype/FontFactory.h	Thu Jan  9 22:58:34 2014
+@@ -31,7 +31,8 @@
+ #include <pango/pangowin32.h>
+ #else
+ #include <pango/pangoft2.h>
+-#include <freetype/freetype.h>
++#include <ft2build.h>
++#include FT_FREETYPE_H
+ #endif
+ 
+ namespace Glib
