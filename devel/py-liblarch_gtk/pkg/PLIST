@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/06/11 13:45:05 gonzalo Exp $
-lib/python${MODPY_VERSION}/site-packages/liblarch_gtk/
-lib/python${MODPY_VERSION}/site-packages/liblarch_gtk-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
-lib/python${MODPY_VERSION}/site-packages/liblarch_gtk/__init__.py
-lib/python${MODPY_VERSION}/site-packages/liblarch_gtk/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/liblarch_gtk/treemodel.py
-lib/python${MODPY_VERSION}/site-packages/liblarch_gtk/treemodel.pyc
