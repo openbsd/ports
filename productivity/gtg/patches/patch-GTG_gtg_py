@@ -1,7 +1,7 @@
-$OpenBSD: patch-GTG_gtg_py,v 1.5 2012/06/24 23:01:13 gonzalo Exp $
---- GTG/gtg.py.orig	Wed Feb  8 16:58:45 2012
-+++ GTG/gtg.py	Fri May 18 14:49:57 2012
-@@ -79,7 +79,7 @@ def check_instance(directory, uri_list = []):
+$OpenBSD: patch-GTG_gtg_py,v 1.6 2014/01/09 13:31:31 ajacoutot Exp $
+--- GTG/gtg.py.orig	Sun Nov 24 15:51:43 2013
++++ GTG/gtg.py	Thu Jan  9 13:29:49 2014
+@@ -80,7 +80,7 @@ def check_instance(directory, uri_list=[]):
      pid = open(pidfile, "r").readline()
      if pid:
          p = os.system("/bin/ps %s >/dev/null" % pid)
