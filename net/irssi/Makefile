@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.56 2013/12/12 14:10:13 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.57 2014/01/09 14:58:51 jca Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	modular IRC client with many features (ipv6,socks,proxy)
 
 DISTNAME=	irssi-0.8.15
-REVISION=	4
+REVISION=	5
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.irssi.org/
@@ -51,8 +51,5 @@ FAKE_FLAGS=	confdir="${PREFIX}/share/examples/irssi" \
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/docs/irssi.1
-
-post-install:
-	@rm -rf ${PREFIX}/include
 
 .include <bsd.port.mk>
