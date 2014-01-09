@@ -1,0 +1,42 @@
+$OpenBSD: patch-tools_xml2c,v 1.1.1.1 2014/01/09 02:22:09 juanfra Exp $
+
+"toosl/xml2c: make it more portable."
+
+https://code.google.com/p/pdf2djvu/source/detail?spec=svn9e673a76694d07042840a5e5150024eb27d79aa1&r=9e673a76694d07042840a5e5150024eb27d79aa1
+
+Fixed in 0.7.18.
+
+--- tools/xml2c.orig	Wed Jul 24 00:01:58 2013
++++ tools/xml2c	Wed Jul 24 00:02:38 2013
+@@ -1,16 +1,24 @@
+ #!/bin/sh
+ 
+-# Copyright © 2009 Jakub Wilk
++# Copyright © 2009, 2013 Jakub Wilk
+ #
+ # This package is free software; you can redistribute it and/or modify
+ # it under the terms of the GNU General Public License as published by
+ # the Free Software Foundation; version 2 dated June, 1991.
+ 
+-exec sed \
+-  -e '/<!--# *\(.*\) *#-->/ { s//\1/; b; }' \
+-  -e '/<!--.*-->/ { s///g; b; }' \
+-  -e 's/\\\\/\\\\/g' \
+-  -e 's/"/\\"/g' \
+-  -e 's/^/"/; s/$/\\n"/'
++exec sed -e '
++/<!--# *\(.*\) *#-->/ {
++  s//\1/
++  b
++}
++/<!--.*-->/ {
++  s///g
++  b
++}
++s/\\\\/\\\\/g
++s/"/\\"/g
++s/^/"/
++s/$/\\n"/
++'
+ 
+ # vim:ts=2 sw=2 et

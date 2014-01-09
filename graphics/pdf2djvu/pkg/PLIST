@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/01/09 02:22:09 juanfra Exp $
+@bin bin/pdf2djvu
+man/de/
+man/de/man1/
+@man man/de/man1/pdf2djvu.1
+@man man/man1/pdf2djvu.1
+man/pl/
+man/pl/man1/
+@man man/pl/man1/pdf2djvu.1
+man/ru/
+man/ru/man1/
+@man man/ru/man1/pdf2djvu.1
+man/uk/
+man/uk/man1/
+@man man/uk/man1/pdf2djvu.1
+share/locale/de/LC_MESSAGES/pdf2djvu.mo
+share/locale/pl/LC_MESSAGES/pdf2djvu.mo
+share/locale/ru/LC_MESSAGES/pdf2djvu.mo
+share/locale/uk/LC_MESSAGES/pdf2djvu.mo
