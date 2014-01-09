@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_modules_font_freetype_Font_h,v 1.1 2014/01/09 16:48:47 naddy Exp $
+--- src/modules/font/freetype/Font.h.orig	Fri Apr  6 20:15:01 2012
++++ src/modules/font/freetype/Font.h	Thu Jan  9 17:09:36 2014
+@@ -30,10 +30,8 @@
+ #else
+ #include <ft2build.h>
+ #endif
+-#include <freetype/freetype.h>
+-#include <freetype/ftglyph.h>
+-#include <freetype/ftoutln.h>
+-#include <freetype/fttrigon.h>
++#include FT_FREETYPE_H
++#include FT_GLYPH_H
+ 
+ namespace love
+ {
