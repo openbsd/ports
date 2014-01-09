@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/06/12 00:20:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2014/01/09 22:48:25 sthen Exp $
 
 FW_DRIVER=	urtwn
 FW_VER=		1.1
 DISTNAME=	urtwn-1.1p0
-REVISION=	1
+REVISION=	2
 
 WRKDIST=	${WRKDIR}
 EXTRACT_SUFX=	.tgz

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/06/12 00:20:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2014/01/09 22:48:24 sthen Exp $
 
 FW_DRIVER=	ipw
 FW_VER=		1.3
 DISTNAME=	ipw2100-fw-${FW_VER}
-REVISION=	1
+REVISION=	2
 
 WRKDIST=	${WRKDIR}
 EXTRACT_SUFX=	.tgz

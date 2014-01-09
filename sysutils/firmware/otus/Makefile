@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2011/06/12 00:20:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2014/01/09 22:48:25 sthen Exp $
 
 FW_DRIVER=	otus
 FW_VER=		1.0
-REVISION=	0
+REVISION=	1
 
 WRKDIST=	${WRKDIR}
 EXTRACT_SUFX=	.tgz

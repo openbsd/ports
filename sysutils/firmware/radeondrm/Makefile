@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/10/03 13:12:51 jsg Exp $
+# $OpenBSD: Makefile,v 1.4 2014/01/09 22:48:25 sthen Exp $
 
 FW_DRIVER=	radeondrm
 FW_VER=		20131002
 DISTNAME=	radeon-firmware-${FW_VER}
+REVISION=	0
 
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
