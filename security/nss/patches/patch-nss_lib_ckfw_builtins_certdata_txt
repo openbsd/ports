@@ -1,9 +1,9 @@
-$OpenBSD: patch-nss_lib_ckfw_builtins_certdata_txt,v 1.2 2013/12/10 11:17:05 landry Exp $
+$OpenBSD: patch-nss_lib_ckfw_builtins_certdata_txt,v 1.3 2014/01/09 20:09:44 landry Exp $
 add CACert CA
 https://bugzilla.mozilla.org/show_bug.cgi?id=215243
---- nss/lib/ckfw/builtins/certdata.txt.orig	Thu Dec  5 11:00:51 2013
-+++ nss/lib/ckfw/builtins/certdata.txt	Tue Dec 10 12:04:39 2013
-@@ -14178,6 +14178,352 @@ CKA_TRUST_CODE_SIGNING CK_TRUST CKT_NSS_MUST_VERIFY_TR
+--- nss/lib/ckfw/builtins/certdata.txt.orig	Fri Jan  3 20:59:10 2014
++++ nss/lib/ckfw/builtins/certdata.txt	Mon Jan  6 22:46:56 2014
+@@ -15473,6 +15473,352 @@ CKA_TRUST_CODE_SIGNING CK_TRUST CKT_NSS_MUST_VERIFY_TR
  CKA_TRUST_STEP_UP_APPROVED CK_BBOOL CK_FALSE
  
  #
@@ -355,4 +355,4 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=215243
 +#
  # Certificate "ePKI Root Certification Authority"
  #
- CKA_CLASS CK_OBJECT_CLASS CKO_CERTIFICATE
+ # Issuer: OU=ePKI Root Certification Authority,O="Chunghwa Telecom Co., Ltd.",C=TW

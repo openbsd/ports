@@ -1,11 +1,11 @@
-$OpenBSD: patch-nss_lib_freebl_blapi_h,v 1.1 2013/06/23 18:40:01 landry Exp $
+$OpenBSD: patch-nss_lib_freebl_blapi_h,v 1.2 2014/01/09 20:09:44 landry Exp $
 
 From firefox in pkgsrc:
 SHA1_Update conflicts with openssl which may be dynamically loaded
 
---- nss/lib/freebl/blapi.h.orig	Tue May 28 23:43:24 2013
-+++ nss/lib/freebl/blapi.h	Wed Jun 12 22:02:56 2013
-@@ -1021,6 +1021,8 @@ extern void SHA1_DestroyContext(SHA1Context *cx, PRBoo
+--- nss/lib/freebl/blapi.h.orig	Fri Jan  3 20:59:10 2014
++++ nss/lib/freebl/blapi.h	Mon Jan  6 22:46:56 2014
+@@ -1189,6 +1189,8 @@ extern void SHA1_DestroyContext(SHA1Context *cx, PRBoo
  */
  extern void SHA1_Begin(SHA1Context *cx);
  
