@@ -1,0 +1,89 @@
+$OpenBSD: patch-src_cpu_core_dyn_x86_risc_x86_h,v 1.1 2014/01/09 10:10:15 sthen Exp $
+
+%ebx is used by PIE so as-is this doesn't build on i386 as the compiler
+detects that the register has been clobbered. dosbox has some alternative
+code for MacOS X to avoid using %ebx so make use of this. This is done by
+enabling all the OSX-related changes in this file; some of these are for
+another purpose (to deal with aligning the stack on 16 bytes which they
+do as they use SSE extensively, see ABI docs and libgmalloc manual) which
+wouldn't be needed on OpenBSD, but as I don't have full understanding of
+the asm and how different parts interact, it seems safer to enable all
+the related code together. -sthen
+
+https://developer.apple.com/library/mac/documentation/DeveloperTools/Conceptual/LowLevelABI/130-IA-32_Function_Calling_Conventions/IA32.htm
+https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man3/libgmalloc.3.html
+
+--- src/cpu/core_dyn_x86/risc_x86.h.orig	Mon May 10 11:43:54 2010
++++ src/cpu/core_dyn_x86/risc_x86.h	Wed Jan  8 07:34:42 2014
+@@ -112,7 +112,7 @@ return_address:
+ 		pop		ebx
+ 		mov		[retval],eax
+ 	}
+-#elif defined (MACOSX)
++#elif defined (MACOSX) || (defined (__OpenBSD__) && defined(__i386__))
+ 	register Bit32u tempflags=reg_flags & FMASK_TEST;
+ 	__asm__ volatile (
+ 		"pushl %%ebx						\n"
+@@ -752,7 +752,7 @@ static void gen_call_function(void * func,char const* 
+ 	if (ops) {
+ 		va_list params;
+ 		va_start(params,ops);
+-#if defined (MACOSX)
++#if defined (MACOSX) || (defined (__OpenBSD__) && defined(__i386__))
+ 		Bitu stack_used=0;
+ 		bool free_flags=false;
+ #endif
+@@ -761,7 +761,7 @@ static void gen_call_function(void * func,char const* 
+ 			if (*ops=='%') {
+ 				pinfo[pindex].line=ops+1;
+ 				pinfo[pindex].value=va_arg(params,Bitu);
+-#if defined (MACOSX)
++#if defined (MACOSX) || (defined (__OpenBSD__) && defined(__i386__))
+ 				const char * scan=pinfo[pindex].line;
+ 				if ((*scan=='I') || (*scan=='D')) stack_used+=4;
+ 				else if (*scan=='F') free_flags=true;
+@@ -771,7 +771,7 @@ static void gen_call_function(void * func,char const* 
+ 			ops++;
+ 		}
+ 
+-#if defined (MACOSX)
++#if defined (MACOSX) || (defined (__OpenBSD__) && defined(__i386__))
+ 		/* align stack */
+ 		stack_used+=4;			// saving esp on stack as well
+ 
+@@ -846,7 +846,7 @@ static void gen_call_function(void * func,char const* 
+ 				IllegalOption("gen_call_function unknown param");
+ 			}
+ 		}
+-#if defined (MACOSX)
++#if defined (MACOSX) || (defined (__OpenBSD__) && defined(__i386__))
+ 		if (free_flags) release_flags=false;
+ 	} else {
+ 		/* align stack */
+@@ -903,7 +903,7 @@ static void gen_call_function(void * func,char const* 
+ 	/* Restore EAX registers to be used again */
+ 	x86gen.regs[X86_REG_EAX]->notusable=false;
+ 
+-#if defined (MACOSX)
++#if defined (MACOSX) || (defined (__OpenBSD__) && defined(__i386__))
+ 	/* restore stack */
+ 	cache_addb(0x5c);	// pop esp
+ #endif
+@@ -915,7 +915,7 @@ static void gen_call_write(DynReg * dr,Bit32u val,Bitu
+ 	x86gen.regs[X86_REG_EAX]->notusable=true;
+ 	gen_protectflags();
+ 
+-#if defined (MACOSX)
++#if defined (MACOSX) || (defined (__OpenBSD__) && defined(__i386__))
+ 	/* align stack */
+ 	Bitu stack_used=12;
+ 
+@@ -952,7 +952,7 @@ static void gen_call_write(DynReg * dr,Bit32u val,Bitu
+ 	x86gen.regs[X86_REG_EAX]->notusable=false;
+ 	gen_releasereg(dr);
+ 
+-#if defined (MACOSX)
++#if defined (MACOSX) || (defined (__OpenBSD__) && defined(__i386__))
+ 	/* restore stack */
+ 	cache_addb(0x5c);	// pop esp
+ #endif
