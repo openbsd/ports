@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/06/11 13:44:22 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/01/09 13:28:39 ajacoutot Exp $
+@conflict py-liblarch_gtk-*
+@pkgpath devel/py-liblarch_gtk
 lib/python${MODPY_VERSION}/site-packages/liblarch/
 lib/python${MODPY_VERSION}/site-packages/liblarch-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/liblarch/__init__.py
@@ -13,3 +15,12 @@ lib/python${MODPY_VERSION}/site-packages/liblarch/tree.py
 lib/python${MODPY_VERSION}/site-packages/liblarch/tree.pyc
 lib/python${MODPY_VERSION}/site-packages/liblarch/treenode.py
 lib/python${MODPY_VERSION}/site-packages/liblarch/treenode.pyc
+lib/python${MODPY_VERSION}/site-packages/liblarch/viewcount.py
+lib/python${MODPY_VERSION}/site-packages/liblarch/viewcount.pyc
+lib/python${MODPY_VERSION}/site-packages/liblarch/viewtree.py
+lib/python${MODPY_VERSION}/site-packages/liblarch/viewtree.pyc
+lib/python${MODPY_VERSION}/site-packages/liblarch_gtk/
+lib/python${MODPY_VERSION}/site-packages/liblarch_gtk/__init__.py
+lib/python${MODPY_VERSION}/site-packages/liblarch_gtk/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/liblarch_gtk/treemodel.py
+lib/python${MODPY_VERSION}/site-packages/liblarch_gtk/treemodel.pyc

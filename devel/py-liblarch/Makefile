@@ -1,24 +1,28 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:26 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2014/01/09 13:28:39 ajacoutot Exp $
 
-COMMENT=		library to easily handle data structure
+COMMENT=		python library to easily handle data structure
 
-MODPY_EGG_VERSION=	0.1.0
+MODPY_EGG_VERSION=	2.1.0
 DISTNAME=		liblarch-${MODPY_EGG_VERSION}
 PKGNAME=		py-liblarch-${MODPY_EGG_VERSION}
 
 CATEGORIES=		devel
 
-HOMEPAGE=		https://live.gnome.org/liblarch/
+HOMEPAGE=		https://wiki.gnome.org/Projects/liblarch
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://gtg.fritalk.com/publique/gtg.fritalk.com/liblarch/${MODPY_EGG_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
+MASTER_SITES=		https://github.com/liblarch/liblarch/archive/
+DISTFILES=		v${MODPY_EGG_VERSION}${EXTRACT_SUFX}
 
 MODULES=		lang/python
 
-RUN_DEPENDS=		devel/py-gobject
+RUN_DEPENDS=		x11/py-gtk2
+TEST_DEPENDS=		x11/py-gtk2
 
-NO_TEST=		Yes
+MODPY_ADJ_FILES=	run-tests
+
+TEST_IS_INTERACTIVE=	x11
 
 .include <bsd.port.mk>
