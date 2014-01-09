@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2013/08/20 22:05:51 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.14 2014/01/09 14:53:29 jca Exp $
 @pkgpath editors/emacs22,-main
 @pkgpath editors/emacs22,-el
 @pkgpath editors/emacs23,-main
@@ -7,6 +7,7 @@
 %%no_x11%%
 %%gtk2%%
 %%gtk3%%
+!%%no_x11%%
 @bin bin/ctags
 @bin bin/ebrowse
 bin/emacs
@@ -85,8 +86,6 @@ libexec/emacs/${VERSION}/${GCCARCH}/rcs2log
 @man man/man1/emacsclient.1
 @man man/man1/etags.1
 @man man/man1/grep-changelog.1
-share/applications/
-share/applications/emacs.desktop
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/emacs/${VERSION}/
 share/emacs/${VERSION}/etc/
@@ -3983,29 +3982,3 @@ share/emacs/${VERSION}/lisp/xt-mouse.elc
 share/emacs/${VERSION}/site-lisp/
 share/emacs/${VERSION}/site-lisp/subdirs.el
 share/emacs/site-lisp/subdirs.el
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
-share/icons/hicolor/128x128/apps/emacs.png
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
-share/icons/hicolor/16x16/apps/emacs.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
-share/icons/hicolor/24x24/apps/emacs.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
-share/icons/hicolor/32x32/apps/emacs.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
-share/icons/hicolor/48x48/apps/emacs.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
-share/icons/hicolor/scalable/apps/emacs.svg
-share/icons/hicolor/scalable/mimetypes/
-share/icons/hicolor/scalable/mimetypes/emacs-document.svg
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

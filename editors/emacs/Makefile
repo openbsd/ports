@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2013/12/11 12:36:02 juanfra Exp $
+# $OpenBSD: Makefile,v 1.44 2014/01/09 14:53:29 jca Exp $
 
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
 VERSION=		24.3
 DISTNAME=		emacs-${VERSION}
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		editors
 
@@ -42,7 +42,6 @@ MAKE_ENV=		INSTALL_EMACS="${INSTALL_SCRIPT}" \
 SUBST_VARS=		GCCARCH VERSION
 
 MODULES=		devel/gettext
-RUN_DEPENDS=		devel/desktop-file-utils x11/gtk+2,-guic
 LIB_DEPENDS=		devel/libexecinfo security/gnutls textproc/libxml
 
 .if ${FLAVOR} == "no_x11"
@@ -59,7 +58,9 @@ LIB_DEPENDS+=		x11/dbus \
 			graphics/tiff \
 			graphics/giflib \
 			graphics/ImageMagick
-RUN_DEPENDS+=		devel/xdg-utils
+RUN_DEPENDS+=		devel/desktop-file-utils \
+			devel/xdg-utils \
+			x11/gtk+2,-guic
 WANTLIB+=		dbus-1 rsvg-2 gio-2.0 gdk_pixbuf-2.0 gobject-2.0 \
 			glib-2.0 gconf-2 cairo png jpeg tiff gif z \
 			MagickWand MagickCore
@@ -88,5 +89,8 @@ ERRORS+=		"Fatal: Conflicting flavor: ${FLAVOR}"
 
 post-install:
 	chmod -t ${PREFIX}/bin/emacs-${VERSION}
+.if ${FLAVOR:Mno_x11}
+	rm -Rf ${PREFIX}/share/applications/ ${PREFIX}/share/icons/
+.endif
 
 .include <bsd.port.mk>
