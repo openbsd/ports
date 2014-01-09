@@ -1,7 +1,9 @@
-$OpenBSD: patch-lib_facter_ssh_rb,v 1.1 2013/12/21 20:52:21 jasper Exp $
+$OpenBSD: patch-lib_facter_ssh_rb,v 1.2 2014/01/09 07:45:48 jasper Exp $
 
-Add support for ssh-ed25519 keys
-https://github.com/puppetlabs/facter/pull/585
+From daa68fda17a8ac3455d79cdb4a9892f30103814b Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Sat, 21 Dec 2013 21:33:34 +0100
+Subject: [PATCH] Add support for ssh-ed25519 keys
 
 --- lib/facter/ssh.rb.orig	Sat Dec 21 21:45:50 2013
 +++ lib/facter/ssh.rb	Sat Dec 21 21:46:46 2013
