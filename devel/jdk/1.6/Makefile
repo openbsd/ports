@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.51 2013/12/30 23:21:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2014/01/09 09:59:55 sthen Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	amd64 i386
+
 BROKEN-i386=	guarantee(get_thread() == thread) failed: must be the same thread, quickly
+# XXX if fixed, re-add i386 to ONLY_FOR_ARCHS-java in databases/db/Makefile.inc
 
 COMMENT-main=	Java2(TM) SE Dev Kit v${VERSION}
 COMMENT-jre=	Java2(TM) SE Runtime Environment v${VERSION}
