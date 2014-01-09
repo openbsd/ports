@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/01/09 02:22:09 juanfra Exp $
+# $OpenBSD: Makefile,v 1.2 2014/01/09 12:18:34 ajacoutot Exp $
 
 COMMENT =		creates DjVu files from PDF files
 
 V =			0.7.17
 DISTNAME =		pdf2djvu_${V}
 PKGNAME =		pdf2djvu-${V}
+REVISION =		0
 
 CATEGORIES =		graphics
 
@@ -21,8 +22,7 @@ WANTLIB += pthread stdc++ xml2 xslt z
 MASTER_SITES =		https://pdf2djvu.googlecode.com/files/
 
 # https://code.google.com/p/pdf2djvu/wiki/BuildDepends
-MODULES =		converters/libiconv \
-			devel/gettext
+MODULES =		devel/gettext
 LIB_DEPENDS =		graphics/GraphicsMagick \
 			textproc/libxslt \
 			print/poppler \
