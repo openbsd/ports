@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2014/01/03 23:11:20 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2014/01/09 21:00:17 landry Exp $
 
 COMMENT =	GVfs mountpoint manager
 
-XFCE_VERSION =	0.4.1
+XFCE_VERSION =	0.4.2
 XFCE_GOODIE =	gigolo
-REVISION=	5
 
 CATEGORIES =	x11
 
@@ -16,20 +15,10 @@ HOMEPAGE =	http://www.uvena.de/gigolo/
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =	x11/xfce4
-NO_TEST =	Yes
 MODXFCE_DESKTOP_FILE =	Yes
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.11
 CONFIGURE_STYLE =	gnu
 RUN_DEPENDS +=	x11/gnome/gvfs
 LIB_DEPENDS =	x11/gtk+2
-BUILD_DEPENDS += ${MODGNU_AUTOCONF_DEPENDS} ${MODGNU_AUTOMAKE_DEPENDS}
-
-pre-configure:
-	# remove waf wrapper
-	rm -f ${WRKSRC}/configure
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo fontconfig
