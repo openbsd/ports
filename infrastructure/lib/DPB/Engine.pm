@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.101 2013/10/19 09:33:52 espie Exp $
+# $OpenBSD: Engine.pm,v 1.102 2014/01/09 11:08:51 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -453,6 +453,7 @@ sub rebuild_info
 	}
 
 	for my $v (@l) {
+		$self->{locker}->lock($v);
 		if (defined $v->{info}{FDEPENDS}) {
 			for my $f (values %{$v->{info}{FDEPENDS}}) {
 				$f->forget;
@@ -461,6 +462,9 @@ sub rebuild_info
 		delete $v->{info};
 	}
 	$self->{state}->grabber->grab_subdirs($core, \%subdirs);
+	for my $v (@l) {
+		$self->{locker}->unlock($v);
+	}
 }
 
 sub start_new_job
