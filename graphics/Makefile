@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.362 2013/12/20 19:37:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.363 2014/01/09 02:26:03 juanfra Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -201,6 +201,7 @@
      SUBDIR += p5-SVG
      SUBDIR += p5-SVG-Graph
      SUBDIR += p5-Sane
+     SUBDIR += pdf2djvu
      SUBDIR += pdfmod
      SUBDIR += pecl-imagick
      SUBDIR += pho
