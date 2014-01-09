@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_lib_engines_common_evas_font_load_c,v 1.1 2014/01/09 23:03:18 naddy Exp $
+--- src/lib/engines/common/evas_font_load.c.orig	Mon Jul 29 16:25:43 2013
++++ src/lib/engines/common/evas_font_load.c	Thu Jan  9 23:56:37 2014
+@@ -5,7 +5,8 @@
+ 
+ #include "evas_font_private.h" /* for Frame-Queuing support */
+ #include "evas_font_ot.h"
+-#include <freetype/tttables.h> /* Freetype2 OS/2 font table. */
++#include <ft2build.h>
++#include FT_TRUETYPE_TABLES_H /* Freetype2 OS/2 font table. */
+ 
+ #ifdef EVAS_CSERVE2
+ # include "../../cserve2/evas_cs2_private.h"
