@@ -1,0 +1,15 @@
+$OpenBSD: patch-native_jni_gtk-peer_gnu_java_awt_peer_gtk_FreetypeGlyphVector_c,v 1.1 2014/01/09 20:37:02 naddy Exp $
+--- native/jni/gtk-peer/gnu_java_awt_peer_gtk_FreetypeGlyphVector.c.orig	Thu Dec 18 01:43:41 2008
++++ native/jni/gtk-peer/gnu_java_awt_peer_gtk_FreetypeGlyphVector.c	Thu Jan  9 21:26:11 2014
+@@ -42,8 +42,9 @@ exception statement from your version. */
+ #include <pango/pango.h>
+ #include <pango/pangoft2.h>
+ #include <pango/pangofc-font.h>
+-#include <freetype/ftglyph.h>
+-#include <freetype/ftoutln.h>
++#include <ft2build.h>
++#include FT_GLYPH_H
++#include FT_OUTLINE_H
+ #include "jcl.h"
+ #include "gdkfont.h"
+ #include "gnu_java_awt_peer_gtk_FreetypeGlyphVector.h"
