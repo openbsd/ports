@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_client_GLEXT_GLFont2dFreeType_h,v 1.1 2014/01/09 19:54:46 naddy Exp $
+--- src/client/GLEXT/GLFont2dFreeType.h.orig	Mon Dec 29 18:38:23 2008
++++ src/client/GLEXT/GLFont2dFreeType.h	Thu Jan  9 19:45:04 2014
+@@ -23,10 +23,8 @@
+ 
+ #include <GLEXT/GLFont2dStorage.h>
+ #include <ft2build.h>
+-#include <freetype/freetype.h>
+-#include <freetype/ftglyph.h>
+-#include <freetype/ftoutln.h>
+-#include <freetype/fttrigon.h>
++#include FT_FREETYPE_H
++#include FT_GLYPH_H
+ #include <string>
+ 
+ class GLFont2dFreeType

@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_launcher_wxdialogs_TrueTypeFont_h,v 1.1 2014/01/09 19:54:46 naddy Exp $
+--- src/launcher/wxdialogs/TrueTypeFont.h.orig	Sun Mar  2 19:47:36 2008
++++ src/launcher/wxdialogs/TrueTypeFont.h	Thu Jan  9 19:34:06 2014
+@@ -25,10 +25,8 @@
+ #include <wx/image.h>
+ #include <ft2build.h>
+ #include <string>
+-#include <freetype/freetype.h>
+-#include <freetype/ftglyph.h>
+-#include <freetype/ftoutln.h>
+-#include <freetype/fttrigon.h>
++#include FT_FREETYPE_H>
++#include FT_GLYPH_H>
+ 
+ class TrueTypeFont
+ {
