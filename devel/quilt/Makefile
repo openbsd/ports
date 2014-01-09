@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2013/08/31 17:22:16 kirby Exp $
+# $OpenBSD: Makefile,v 1.5 2014/01/09 14:55:42 jca Exp $
 
 COMMENT=		manage large numbers of patches
 
-DISTNAME=		quilt-0.60
-REVISION=		1
+DISTNAME=		quilt-0.61
 CATEGORIES=		devel
 
 HOMEPAGE=		http://savannah.nongnu.org/projects/quilt/
+MAINTAINER=		Kent R. Spillner <kspillner@acm.org>
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -33,12 +33,15 @@ RUN_DEPENDS=		devel/gpatch \
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--with-date=${LOCALBASE}/bin/gdate \
+CONFIGURE_STYLE=	autoconf no-autoheader
+AUTOCONF_VERSION=	2.69
+CONFIGURE_ARGS=		--with-cp=${LOCALBASE}/bin/gcp \
+			--with-date=${LOCALBASE}/bin/gdate \
 			--with-diff=${LOCALBASE}/bin/gdiff \
 			--with-find=${LOCALBASE}/bin/gfind \
 			--with-getopt=${LOCALBASE}/bin/gnugetopt \
 			--with-grep=${LOCALBASE}/bin/ggrep \
+			--with-md5sum=${LOCALBASE}/bin/gmd5sum \
 			--with-patch=${LOCALBASE}/bin/gpatch \
 			--with-sed=${LOCALBASE}/bin/gsed \
 			--without-patch-wrapper \

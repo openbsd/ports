@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure_ac,v 1.1 2014/01/09 14:55:42 jca Exp $
+--- configure.ac.orig	Sun Dec  8 21:51:39 2013
++++ configure.ac	Mon Dec 30 18:28:26 2013
+@@ -367,6 +367,9 @@ fi
+ 
+ QUILT_COMPAT_PROG_PATH(SENDMAIL, sendmail, [], [/usr/sbin])
+ 
++QUILT_COMPAT_PROG_PATH(CP, cp, gcp cp)
++QUILT_COMPAT_PROG_PATH(MD5SUM, md5sum, gmd5sum md5sum)
++
+ AC_PATH_PROG(MSGMERGE, [msgmerge])
+ AC_PATH_PROG(MSGFMT, [msgfmt])
+ AC_PATH_PROG(XGETTEXT, [xgettext])

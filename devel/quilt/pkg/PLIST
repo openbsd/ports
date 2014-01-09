@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/08 15:14:25 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/01/09 14:55:42 jca Exp $
 bin/guards
 bin/quilt
 @man man/man1/guards.1
@@ -25,11 +25,13 @@ share/quilt/annotate
 share/quilt/applied
 share/quilt/compat/
 share/quilt/compat/awk
+share/quilt/compat/cp
 share/quilt/compat/date
 share/quilt/compat/diff
 share/quilt/compat/find
 share/quilt/compat/getopt
 share/quilt/compat/grep
+share/quilt/compat/md5sum
 share/quilt/compat/patch
 share/quilt/compat/sed
 share/quilt/compat/sendmail

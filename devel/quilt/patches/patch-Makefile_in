@@ -1,12 +1,21 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2012/10/08 15:14:25 rpe Exp $
---- Makefile.in.orig	Sun Sep  2 19:19:00 2012
-+++ Makefile.in	Sun Sep  2 19:19:16 2012
+$OpenBSD: patch-Makefile_in,v 1.2 2014/01/09 14:55:42 jca Exp $
+--- Makefile.in.orig	Sun Dec  8 10:40:42 2013
++++ Makefile.in	Mon Dec 30 18:40:55 2013
 @@ -13,7 +13,7 @@ docdir :=	@docdir@
  mandir :=	@mandir@
  localedir :=	$(datadir)/locale
  emacsdir :=	$(datadir)/emacs/site-lisp
 -etcdir :=	$(subst /usr/etc,/etc,$(prefix)/etc)
-+etcdir :=	${SYSCONFDIR}
++etcdir :=	@sysconfdir@
  
  INSTALL :=	@INSTALL@
  POD2MAN :=	@POD2MAN@
+@@ -42,6 +42,8 @@ MSGCAT :=	@MSGCAT@
+ DIFFSTAT :=	@DIFFSTAT@
+ RPMBUILD :=	@RPMBUILD@
+ SENDMAIL :=	@SENDMAIL@
++CP :=		@CP@
++MD5SUM :=	@MD5SUM@
+ 
+ USE_NLS :=	@USE_NLS@
+ STAT_HARDLINK := @STAT_HARDLINK@

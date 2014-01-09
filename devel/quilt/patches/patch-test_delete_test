@@ -1,17 +1,17 @@
-$OpenBSD: patch-test_delete_test,v 1.1.1.1 2012/10/08 15:14:25 rpe Exp $
---- test/delete.test.orig	Sun Sep  2 21:40:18 2012
-+++ test/delete.test	Sun Sep  2 21:40:26 2012
+$OpenBSD: patch-test_delete_test,v 1.2 2014/01/09 14:55:42 jca Exp $
+--- test/delete.test.orig	Sun Dec  8 10:40:42 2013
++++ test/delete.test	Mon Dec 30 18:34:19 2013
 @@ -1,3 +1,4 @@
-+#	>~ find: `?\./dir'?: Permission denied
++#	>~ .*find: [`']?\./dir'?: Permission denied
  Test the delete command.
  
  	$ mkdir patches
-@@ -77,7 +78,7 @@ Test the delete command.
- 
+@@ -79,7 +80,7 @@ Test the delete command.
+ 	# running as root, but you shouldn't do that anyway.
  	$ quilt delete "test3"
  	> Removing patch %{P}test3
--	>~ find: `?\./dir'?: Permission denied
-+	> ${LOCALBASE}/bin/gfind: `./dir': Permission denied
+-	>~ .*find: [`']?\./dir'?: Permission denied
++	>~ /usr/local/bin/gfind: [`']?\./dir'?: Permission denied
  
  	$ chmod a+rx .pc/test3/dir
  
