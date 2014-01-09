@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1254 2014/01/07 10:39:17 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1255 2014/01/09 10:44:33 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -215,6 +215,8 @@ _PKG_DELETE = ${PKG_DELETE} ${_PROGRESS}
 SIGNING_PARAMETERS ?=
 .if empty(SIGNING_PARAMETERS)
 _PKG_ADD_LOCAL += -Dunsigned
+.else
+_PKG_ADD_LOCAL += ${SIGNING_PARAMETERS:M-DSIGNER=*}
 .endif
 
 
