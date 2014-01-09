@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.68 2013/10/26 23:47:23 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.69 2014/01/09 18:28:22 jeremy Exp $
 
 # ruby module
 
@@ -366,12 +366,12 @@ _GEM_MAKE=	"make V=1"
 # under WRKDIST so it can be patched easily to remove or change dependencies.
 # Remove any signing of packages, as patching the gem could then break the
 # signatures.
-MODRUBY_EXTRACT_TARGET = \
-    mkdir -p ${WRKDIST} ${_GEM_CONTENT}; \
-    cd ${_GEM_CONTENT} && tar -xf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}; \
+EXTRACT_CASES += *.gem) \
+    mkdir ${WRKDIST} ${_GEM_CONTENT}; \
+    cd ${_GEM_CONTENT} && tar -xf ${FULLDISTDIR}/$$archive; \
     cd ${WRKDIST} && tar -xzf ${_GEM_DATAFILE} && rm -f ${_GEM_DATAFILE}; \
     gzcat ${_GEM_CONTENT}/metadata.gz > ${WRKDIST}/.metadata; \
-    rm -f ${_GEM_CONTENT}/*.gz.sig ${_GEM_CONTENT}/checksums.yaml.gz
+    rm -f ${_GEM_CONTENT}/*.gz.sig ${_GEM_CONTENT}/checksums.yaml.gz;;
 
 # Rebuild the gem manually after possible patching, then install it to a
 # temporary directory (not the final directory under fake, since that would
@@ -405,10 +405,6 @@ MODRUBY_INSTALL_TARGET = \
     cd ${GEM_BASE_LIB} && mv * ${GEM_ABS_PATH}; \
     chown -R ${SHAREOWN}:${SHAREGRP} ${GEM_ABS_PATH}
 
-.  if !target(do-extract)
-do-extract: 
-	${MODRUBY_EXTRACT_TARGET}
-.  endif
 .  if !target(do-build)
 do-build: 
 	${MODRUBY_BUILD_TARGET}
