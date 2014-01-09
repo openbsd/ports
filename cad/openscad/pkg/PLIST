@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/03/08 01:36:59 brad Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/01/09 00:37:45 sthen Exp $
 @bin bin/openscad
 share/applications/openscad.desktop
 share/openscad/
@@ -33,11 +33,15 @@ share/openscad/examples/example020.scad
 share/openscad/examples/example021.scad
 share/openscad/examples/example022.scad
 share/openscad/examples/example023.scad
+share/openscad/examples/example024.scad
 share/openscad/libraries/
 share/openscad/libraries/MCAD/
+share/openscad/libraries/MCAD/2Dshapes.scad
 share/openscad/libraries/MCAD/3d_triangle.scad
 share/openscad/libraries/MCAD/README.markdown
+share/openscad/libraries/MCAD/SolidPython/
 share/openscad/libraries/MCAD/TODO
+share/openscad/libraries/MCAD/ThingDoc/
 share/openscad/libraries/MCAD/__init__.py
 share/openscad/libraries/MCAD/bearing.scad
 share/openscad/libraries/MCAD/bitmap/
@@ -56,8 +60,10 @@ share/openscad/libraries/MCAD/get_submodules.py
 share/openscad/libraries/MCAD/gridbeam.scad
 share/openscad/libraries/MCAD/hardware.scad
 share/openscad/libraries/MCAD/involute_gears.scad
+share/openscad/libraries/MCAD/layouts.scad
 share/openscad/libraries/MCAD/lego_compatibility.scad
 share/openscad/libraries/MCAD/lgpl-2.1.txt
+share/openscad/libraries/MCAD/libtriangles.scad
 share/openscad/libraries/MCAD/materials.scad
 share/openscad/libraries/MCAD/math.scad
 share/openscad/libraries/MCAD/metric_fastners.scad
