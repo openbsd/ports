@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.20 2013/12/22 19:24:34 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.21 2014/01/10 08:06:11 zhuk Exp $
 @conflict kdeartwork-<=3.4
 @conflict kdeedu-<3.4
 @pkgpath x11/kde/base3
@@ -2081,54 +2081,6 @@ share/config.kde3/klipperrc
 share/config.kde3/konqsidebartng.rc
 share/config.kde3/kshorturifilterrc
 share/config.kde3/kxkb_groups
-share/desktop-directories/
-share/desktop-directories/kde-development-translation.directory
-share/desktop-directories/kde-development-webdevelopment.directory
-share/desktop-directories/kde-development.directory
-share/desktop-directories/kde-editors.directory
-share/desktop-directories/kde-edutainment.directory
-share/desktop-directories/kde-games-arcade.directory
-share/desktop-directories/kde-games-board.directory
-share/desktop-directories/kde-games-card.directory
-share/desktop-directories/kde-games-kids.directory
-share/desktop-directories/kde-games-roguelikes.directory
-share/desktop-directories/kde-games-strategy.directory
-share/desktop-directories/kde-games.directory
-share/desktop-directories/kde-graphics.directory
-share/desktop-directories/kde-information.directory
-share/desktop-directories/kde-internet-terminal.directory
-share/desktop-directories/kde-internet.directory
-share/desktop-directories/kde-main.directory
-share/desktop-directories/kde-more.directory
-share/desktop-directories/kde-multimedia.directory
-share/desktop-directories/kde-office.directory
-share/desktop-directories/kde-science.directory
-share/desktop-directories/kde-settings-accessibility.directory
-share/desktop-directories/kde-settings-components.directory
-share/desktop-directories/kde-settings-desktop.directory
-share/desktop-directories/kde-settings-hardware.directory
-share/desktop-directories/kde-settings-looknfeel.directory
-share/desktop-directories/kde-settings-network.directory
-share/desktop-directories/kde-settings-peripherals.directory
-share/desktop-directories/kde-settings-power.directory
-share/desktop-directories/kde-settings-security.directory
-share/desktop-directories/kde-settings-sound.directory
-share/desktop-directories/kde-settings-system.directory
-share/desktop-directories/kde-settings-webbrowsing.directory
-share/desktop-directories/kde-settings.directory
-share/desktop-directories/kde-settingsmenu.directory
-share/desktop-directories/kde-system-screensavers.directory
-share/desktop-directories/kde-system-terminal.directory
-share/desktop-directories/kde-system.directory
-share/desktop-directories/kde-toys.directory
-share/desktop-directories/kde-unknown.directory
-share/desktop-directories/kde-utilities-accessibility.directory
-share/desktop-directories/kde-utilities-desktop.directory
-share/desktop-directories/kde-utilities-file.directory
-share/desktop-directories/kde-utilities-peripherals.directory
-share/desktop-directories/kde-utilities-pim.directory
-share/desktop-directories/kde-utilities-xutils.directory
-share/desktop-directories/kde-utilities.directory
 share/doc/HTML.kde3/en/kappfinder/
 share/doc/HTML.kde3/en/kappfinder/man-kappfinder.1.docbook
 share/doc/HTML.kde3/en/kate/
@@ -3533,7 +3485,6 @@ share/icons/hicolor/128x128/apps/kdeprintfax.png
 share/icons/hicolor/128x128/apps/khelpcenter.png
 share/icons/hicolor/128x128/apps/kjobviewer.png
 share/icons/hicolor/128x128/apps/klipper.png
-share/icons/hicolor/128x128/apps/knetattach.png
 share/icons/hicolor/128x128/apps/konqueror.png
 share/icons/hicolor/128x128/apps/konsole.png
 share/icons/hicolor/128x128/apps/ksplash.png
@@ -3550,7 +3501,6 @@ share/icons/hicolor/16x16/apps/khotkeys.png
 share/icons/hicolor/16x16/apps/kjobviewer.png
 share/icons/hicolor/16x16/apps/klipper.png
 share/icons/hicolor/16x16/apps/kmenuedit.png
-share/icons/hicolor/16x16/apps/knetattach.png
 share/icons/hicolor/16x16/apps/konqueror.png
 share/icons/hicolor/16x16/apps/konsole.png
 share/icons/hicolor/16x16/apps/kpager.png
@@ -3568,7 +3518,6 @@ share/icons/hicolor/22x22/apps/khelpcenter.png
 share/icons/hicolor/22x22/apps/kjobviewer.png
 share/icons/hicolor/22x22/apps/klipper.png
 share/icons/hicolor/22x22/apps/kmenuedit.png
-share/icons/hicolor/22x22/apps/knetattach.png
 share/icons/hicolor/22x22/apps/konqueror.png
 share/icons/hicolor/22x22/apps/konsole.png
 share/icons/hicolor/22x22/apps/kpager.png
@@ -3586,7 +3535,6 @@ share/icons/hicolor/32x32/apps/khotkeys.png
 share/icons/hicolor/32x32/apps/kjobviewer.png
 share/icons/hicolor/32x32/apps/klipper.png
 share/icons/hicolor/32x32/apps/kmenuedit.png
-share/icons/hicolor/32x32/apps/knetattach.png
 share/icons/hicolor/32x32/apps/konqueror.png
 share/icons/hicolor/32x32/apps/konsole.png
 share/icons/hicolor/32x32/apps/kpager.png
@@ -3604,7 +3552,6 @@ share/icons/hicolor/48x48/apps/khelpcenter.png
 share/icons/hicolor/48x48/apps/kjobviewer.png
 share/icons/hicolor/48x48/apps/klipper.png
 share/icons/hicolor/48x48/apps/kmenuedit.png
-share/icons/hicolor/48x48/apps/knetattach.png
 share/icons/hicolor/48x48/apps/konqueror.png
 share/icons/hicolor/48x48/apps/konsole.png
 share/icons/hicolor/48x48/apps/kpager.png
@@ -3621,7 +3568,6 @@ share/icons/hicolor/64x64/apps/kfm.png
 share/icons/hicolor/64x64/apps/khelpcenter.png
 share/icons/hicolor/64x64/apps/kjobviewer.png
 share/icons/hicolor/64x64/apps/klipper.png
-share/icons/hicolor/64x64/apps/knetattach.png
 share/icons/hicolor/64x64/apps/konqueror.png
 share/icons/hicolor/64x64/apps/konsole.png
 share/icons/hicolor/64x64/apps/ksplash.png
@@ -3633,7 +3579,6 @@ share/icons/hicolor/scalable/apps/kdeprintfax.svgz
 share/icons/hicolor/scalable/apps/khelpcenter.svgz
 share/icons/hicolor/scalable/apps/kjobviewer.svgz
 share/icons/hicolor/scalable/apps/klipper.svgz
-share/icons/hicolor/scalable/apps/knetattach.svgz
 share/icons/hicolor/scalable/apps/konqueror.svgz
 share/icons/hicolor/scalable/apps/konsole.svgz
 share/icons/hicolor/scalable/apps/ktip.svgz
