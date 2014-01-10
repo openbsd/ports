@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2014/01/09 23:28:49 jca Exp $
+# $OpenBSD: Makefile,v 1.33 2014/01/10 00:55:10 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,7 +12,7 @@ CATEGORIES=     net
 
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
-		net/irssi \
+		net/irssi>=0.8.15p5 \
 		devel/glib2
 RUN_DEPENDS=	net/irssi
 
@@ -25,7 +25,7 @@ LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_STYLE= gnu
 AUTOCONF_VERSION=2.61
 AUTOMAKE_VERSION=1.9
-CONFIGURE_ARGS+= --with-irssi=${LOCALBASE}/include/irssi/
+CONFIGURE_ARGS+= --with-irssi=${LOCALBASE}/include/irssi
 
 AUTO_ENV=	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
