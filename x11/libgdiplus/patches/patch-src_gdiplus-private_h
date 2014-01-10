@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_gdiplus-private_h,v 1.1 2014/01/10 13:33:21 naddy Exp $
+--- src/gdiplus-private.h.orig	Thu Jan 13 23:28:19 2011
++++ src/gdiplus-private.h	Fri Jan 10 14:24:53 2014
+@@ -30,7 +30,8 @@
+ #include <stdio.h>
+ #include <math.h>
+ #include <glib.h>
+-#include <freetype/tttables.h>
++#include <ft2build.h>
++#include FT_TRUETYPE_TABLES_H
+ #include <pthread.h>
+ #include <unistd.h>
+ 
