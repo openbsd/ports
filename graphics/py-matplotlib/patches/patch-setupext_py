@@ -1,0 +1,11 @@
+$OpenBSD: patch-setupext_py,v 1.14 2014/01/10 19:05:07 landry Exp $
+--- setupext.py.orig	Fri Jan 10 19:53:17 2014
++++ setupext.py	Fri Jan 10 19:56:08 2014
+@@ -1167,6 +1167,7 @@ def build_tkagg(ext_modules, packages):
+                        define_macros=defines
+                        )
+ 
++    module.include_dirs.extend(['${X11BASE}/include'])
+     add_tk_flags(module) # do this first
+     add_agg_flags(module)
+     add_ft2font_flags(module)

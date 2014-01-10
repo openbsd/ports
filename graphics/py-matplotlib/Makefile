@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2014/01/04 21:21:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2014/01/10 19:05:07 landry Exp $
 
 COMMENT=	Python charting and plotting API
 
@@ -41,6 +41,7 @@ MAKE_ENV+=	EXTRA_INCLUDES="${WRKSRC} ${MODTCL_INCDIR} ${MODTK_INCDIR}" \
 
 pre-configure:
 	@find ${WRKSRC}/examples -name \*.py | xargs ${MODPY_BIN_ADJ}
+	${SUBST_CMD} ${WRKSRC}/setupext.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-matplotlib
