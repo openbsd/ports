@@ -1,7 +1,17 @@
-$OpenBSD: patch-lily_ttf_cc,v 1.4 2011/07/06 14:14:06 kili Exp $
---- lily/ttf.cc.orig	Sun Jun 12 16:05:50 2011
-+++ lily/ttf.cc	Sun Jun 19 13:45:47 2011
-@@ -440,7 +440,7 @@ print_trailer (void *out,
+$OpenBSD: patch-lily_ttf_cc,v 1.5 2014/01/10 18:17:07 landry Exp $
+--- lily/ttf.cc.orig	Tue Jul 26 00:42:15 2011
++++ lily/ttf.cc	Fri Jan 10 18:56:22 2014
+@@ -20,7 +20,8 @@
+ #include <cstdio>
+ #include "freetype.hh"
+ 
+-#include <freetype/tttables.h>
++#include <ft2build.h>
++#include FT_TRUETYPE_TABLES_H
+ 
+ #include "international.hh"
+ #include "memory-stream.hh"
+@@ -440,7 +441,7 @@ print_trailer (void *out,
        if (!glyph_name[0] && ic_map.find (i) != ic_map.end ())
  	{
  	  FT_ULong ucode = ic_map[i];
@@ -10,7 +20,7 @@ $OpenBSD: patch-lily_ttf_cc,v 1.4 2011/07/06 14:14:06 kili Exp $
  	}
  
        if (i == 0)
-@@ -449,7 +449,7 @@ print_trailer (void *out,
+@@ -449,7 +450,7 @@ print_trailer (void *out,
  	glyph_name[0] = '\0';
  
        if (!glyph_name[0])
