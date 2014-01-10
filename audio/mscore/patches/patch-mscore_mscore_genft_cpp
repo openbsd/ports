@@ -1,0 +1,14 @@
+$OpenBSD: patch-mscore_mscore_genft_cpp,v 1.1 2014/01/10 19:35:29 landry Exp $
+Fix build with freetype 2.5.2, from FreeBSD's
+audio/musescore/files/patch-mscore_mscore_genft.cpp
+--- mscore/mscore/genft.cpp.orig	Fri Jan 10 18:41:31 2014
++++ mscore/mscore/genft.cpp	Fri Jan 10 18:41:54 2014
+@@ -27,7 +27,7 @@
+ 
+ #include <ft2build.h>
+ #include FT_FREETYPE_H
+-#include <freetype/tttables.h>
++#include FT_TRUETYPE_TABLES_H
+ #include "al/xml.h"
+ 
+ QMap<int, int> codemap;
