@@ -1,0 +1,67 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/01/10 08:03:29 zhuk Exp $
+@conflict kdebase-<3.5.10p32
+@conflict kde-runtime-<4.11.4p2
+share/desktop-directories/
+share/desktop-directories/kde-development-translation.directory
+share/desktop-directories/kde-development-webdevelopment.directory
+share/desktop-directories/kde-development.directory
+share/desktop-directories/kde-editors.directory
+share/desktop-directories/kde-edu-languages.directory
+share/desktop-directories/kde-edu-mathematics.directory
+share/desktop-directories/kde-edu-miscellaneous.directory
+share/desktop-directories/kde-edu-science.directory
+share/desktop-directories/kde-edu-tools.directory
+share/desktop-directories/kde-education.directory
+share/desktop-directories/kde-edutainment.directory
+share/desktop-directories/kde-games-arcade.directory
+share/desktop-directories/kde-games-board.directory
+share/desktop-directories/kde-games-card.directory
+share/desktop-directories/kde-games-kids.directory
+share/desktop-directories/kde-games-logic.directory
+share/desktop-directories/kde-games-roguelikes.directory
+share/desktop-directories/kde-games-strategy.directory
+share/desktop-directories/kde-games.directory
+share/desktop-directories/kde-graphics.directory
+share/desktop-directories/kde-information.directory
+share/desktop-directories/kde-internet-terminal.directory
+share/desktop-directories/kde-internet.directory
+share/desktop-directories/kde-main.directory
+share/desktop-directories/kde-more.directory
+share/desktop-directories/kde-multimedia.directory
+share/desktop-directories/kde-office.directory
+share/desktop-directories/kde-science.directory
+share/desktop-directories/kde-settings-accessibility.directory
+share/desktop-directories/kde-settings-components.directory
+share/desktop-directories/kde-settings-desktop.directory
+share/desktop-directories/kde-settings-hardware.directory
+share/desktop-directories/kde-settings-looknfeel.directory
+share/desktop-directories/kde-settings-network.directory
+share/desktop-directories/kde-settings-peripherals.directory
+share/desktop-directories/kde-settings-power.directory
+share/desktop-directories/kde-settings-security.directory
+share/desktop-directories/kde-settings-sound.directory
+share/desktop-directories/kde-settings-system.directory
+share/desktop-directories/kde-settings-webbrowsing.directory
+share/desktop-directories/kde-settings.directory
+share/desktop-directories/kde-settingsmenu.directory
+share/desktop-directories/kde-system-screensavers.directory
+share/desktop-directories/kde-system-terminal.directory
+share/desktop-directories/kde-system.directory
+share/desktop-directories/kde-toys.directory
+share/desktop-directories/kde-unknown.directory
+share/desktop-directories/kde-utilities-accessibility.directory
+share/desktop-directories/kde-utilities-desktop.directory
+share/desktop-directories/kde-utilities-file.directory
+share/desktop-directories/kde-utilities-peripherals.directory
+share/desktop-directories/kde-utilities-pim.directory
+share/desktop-directories/kde-utilities-xutils.directory
+share/desktop-directories/kde-utilities.directory
+share/icons/hicolor/128x128/apps/hi128-app-knetattach.png
+share/icons/hicolor/16x16/apps/hi16-app-knetattach.png
+share/icons/hicolor/22x22/apps/hi22-app-knetattach.png
+share/icons/hicolor/32x32/apps/hi32-app-knetattach.png
+share/icons/hicolor/48x48/apps/hi48-app-knetattach.png
+share/icons/hicolor/64x64/apps/hi64-app-knetattach.png
+share/icons/hicolor/scalable/apps/hisc-app-knetattach.svgz
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
