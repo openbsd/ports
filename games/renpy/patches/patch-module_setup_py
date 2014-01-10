@@ -1,0 +1,11 @@
+$OpenBSD: patch-module_setup_py,v 1.1 2014/01/10 18:41:50 landry Exp $
+--- module/setup.py.orig	Fri Jan 10 19:33:43 2014
++++ module/setup.py	Fri Jan 10 19:34:39 2014
+@@ -31,6 +31,7 @@ include("libavformat/avformat.h")
+ include("libavcodec/avcodec.h")
+ include("libswscale/swscale.h")
+ include("GL/glew.h")
++include("GL/glu.h")
+ 
+ library("SDL")
+ library("png")
