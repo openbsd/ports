@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2013/10/06 20:38:52 brad Exp $
+# $OpenBSD: Makefile,v 1.27 2014/01/10 19:31:51 brad Exp $
 
 COMMENT=	free H.264/MPEG-4 AVC encoder
 
 V=		20131002
 DISTNAME=	x264-snapshot-${V}-2245
 PKGNAME=	x264-${V}
+REVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/
 EXTRACT_SUFX=	.tar.bz2
@@ -21,16 +22,28 @@ PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB=	c m pthread
 
+MODULES=	lang/clang
+
+MODCLANG_ARCHS=	amd64
+MODCLANG_LANGS=	c
+
+.if ${MACHINE_ARCH} == "amd64"
+BUILD_DEPENDS+=	devel/yasm
+.endif
+
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
 CONFIGURE_ENV=	API=${LIBx264_VERSION}
-CONFIGURE_ARGS+=--disable-asm \
-		--disable-ffms \
+CONFIGURE_ARGS+=--disable-ffms \
 		--disable-gpac \
 		--disable-lavf \
 		--disable-swscale \
 		--enable-static \
 		--prefix=${PREFIX}
+
+.if ${MACHINE_ARCH} != "amd64"
+CONFIGURE_ARGS+=--disable-asm
+.endif
 
 NO_TEST=	Yes
 
