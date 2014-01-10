@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.230 2014/01/02 12:21:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.231 2014/01/10 21:52:29 brad Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,9 +7,8 @@ ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
 COMMENT =		movie player supporting many formats
 
-V =			20130819
+V =			20140106
 FFMPEG_V =		20131216
-REVISION =		2
 
 SUBST_VARS += 		PREFIX CONFDIR
 
@@ -26,7 +25,7 @@ HOMEPAGE =		http://www.mplayerhq.hu/
 PERMIT_PACKAGE_CDROM =		patents
 PERMIT_PACKAGE_FTP =		Yes
 
-WANTLIB =	GL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm ass avcodec \
+WANTLIB =	EGL GL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm ass avcodec \
 		avformat avutil bluray bz2 c cdda_interface cdda_paranoia \
 		crypto dv dvdnavmini dvdread enca fontconfig freetype \
 		fribidi jpeg m mng mp3lame ncurses ogg>=5 opus png postproc \
@@ -76,14 +75,17 @@ CONFDIR =	${SYSCONFDIR}/mplayer
 
 .if ${MACHINE_ARCH:Marm}
 # uses ARM EABI
-MPLAYER_ARCH=	generic
+MPLAYER_ARCH =	generic
 .else
-MPLAYER_ARCH=	${MACHINE_ARCH}
+MPLAYER_ARCH =	${MACHINE_ARCH}
 .endif
+
+# Add back fast math flag since we override CFLAGS
+CFLAGS +=	-ffast-math
 
 # PIE doesn't leave sufficient registers
 .if ${MACHINE_ARCH:Mi386}
-CFLAGS += -fomit-frame-pointer
+CFLAGS +=	-fomit-frame-pointer
 .endif
 
 USE_GMAKE =	Yes
@@ -96,7 +98,7 @@ CONFIGURE_ARGS += --target="${MPLAYER_ARCH}-openbsd" \
 		--confdir=${CONFDIR} \
 		--mandir=${LOCALBASE}/man \
 		--extra-cflags="-I${LOCALBASE}/include" \
-		--extra-ldflags="-L${LOCALBASE}/lib" \
+		--extra-ldflags="-L${LOCALBASE}/lib -ffast-math" \
 		--extra-libs-mplayer="-lrtunes -lcrypto"
 
 # CONFIGURE_ARGS that disable internal stuff
@@ -146,7 +148,8 @@ CONFIGURE_ARGS += --disable-smb \
 		--disable-faac-lavc \
 		--disable-faad \
 		--disable-theora \
-		--disable-pulse
+		--disable-pulse \
+		--disable-relocatable
 
 # internal tremor, external tremor, external libvorbis all conflict
 # we choose libvorbis to enable encoding to vorbis
@@ -212,7 +215,7 @@ EXAMPLEDIR =	${PREFIX}/share/examples/mplayer
 
 # copy in rtunes and sndio backends
 post-extract:
-	@cp ${FILESDIR}/ao_rtunes.c ${FILESDIR}/ao_sndio.c ${WRKSRC}/libao2
+	@cp ${FILESDIR}/ao_rtunes.c ${WRKSRC}/libao2
 	@cp ${FILESDIR}/ai_sndio.c ${WRKSRC}/stream
 
 # link FFmpeg sources to where build expects

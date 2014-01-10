@@ -1,15 +1,7 @@
-$OpenBSD: patch-libao2_audio_out_c,v 1.5 2013/01/21 16:23:05 brad Exp $
---- libao2/audio_out.c.orig	Sat May  5 01:09:58 2012
-+++ libao2/audio_out.c	Sat May  5 01:30:00 2012
-@@ -42,6 +42,7 @@ extern const ao_functions_t audio_out_null;
- extern const ao_functions_t audio_out_alsa;
- extern const ao_functions_t audio_out_nas;
- extern const ao_functions_t audio_out_sdl;
-+extern const ao_functions_t audio_out_sndio;
- extern const ao_functions_t audio_out_sun;
- extern const ao_functions_t audio_out_sgi;
- extern const ao_functions_t audio_out_win32;
-@@ -54,6 +55,7 @@ extern const ao_functions_t audio_out_v4l2;
+$OpenBSD: patch-libao2_audio_out_c,v 1.6 2014/01/10 21:52:29 brad Exp $
+--- libao2/audio_out.c.orig	Mon Jan  6 17:02:58 2014
++++ libao2/audio_out.c	Mon Jan  6 17:27:38 2014
+@@ -55,6 +55,7 @@ extern const ao_functions_t audio_out_v4l2;
  extern const ao_functions_t audio_out_mpegpes;
  extern const ao_functions_t audio_out_pcm;
  extern const ao_functions_t audio_out_pss;
@@ -17,21 +9,11 @@ $OpenBSD: patch-libao2_audio_out_c,v 1.5 2013/01/21 16:23:05 brad Exp $
  
  const ao_functions_t* const audio_out_drivers[] =
  {
-@@ -82,6 +84,9 @@ const ao_functions_t* const audio_out_drivers[] =
- #ifdef CONFIG_SGI_AUDIO
-         &audio_out_sgi,
- #endif
-+#ifdef CONFIG_SNDIO_AUDIO
-+        &audio_out_sndio,
-+#endif
- #ifdef CONFIG_SUN_AUDIO
-         &audio_out_sun,
- #endif
-@@ -120,6 +125,7 @@ const ao_functions_t* const audio_out_drivers[] =
+@@ -124,6 +125,7 @@ const ao_functions_t* const audio_out_drivers[] =
          &audio_out_null,
  // should not be auto-selected:
          &audio_out_pcm,
-+	&audio_out_rtunes,
++        &audio_out_rtunes,
          NULL
  };
  

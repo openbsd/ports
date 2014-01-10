@@ -1,7 +1,7 @@
-$OpenBSD: patch-stream_stream_cdda_c,v 1.1 2013/01/21 16:23:05 brad Exp $
---- stream/stream_cdda.c.orig	Sat May  5 02:18:19 2012
-+++ stream/stream_cdda.c	Sat May  5 02:18:45 2012
-@@ -439,9 +439,11 @@ static int open_cdda(stream_t *st,int m, void* opts, i
+$OpenBSD: patch-stream_stream_cdda_c,v 1.2 2014/01/10 21:52:29 brad Exp $
+--- stream/stream_cdda.c.orig	Mon Jan  6 17:02:57 2014
++++ stream/stream_cdda.c	Mon Jan  6 17:22:43 2014
+@@ -446,9 +446,11 @@ static int open_cdda(stream_t *st,int m, void* opts, i
    else if(p->search_overlap == 0)
      mode &= ~PARANOIA_MODE_OVERLAP;
  #ifndef CONFIG_LIBCDIO

@@ -1,10 +1,10 @@
-$OpenBSD: patch-libmpdemux_demux_lavf_c,v 1.3 2013/09/06 23:14:40 brad Exp $
+$OpenBSD: patch-libmpdemux_demux_lavf_c,v 1.4 2014/01/10 21:52:29 brad Exp $
 
 Deal with older FFmpeg.
 
---- libmpdemux/demux_lavf.c.orig	Tue Aug 20 03:13:59 2013
-+++ libmpdemux/demux_lavf.c	Tue Aug 20 03:14:31 2013
-@@ -441,7 +441,7 @@ static void handle_stream(demuxer_t *demuxer, AVFormat
+--- libmpdemux/demux_lavf.c.orig	Mon Jan  6 17:03:23 2014
++++ libmpdemux/demux_lavf.c	Mon Jan  6 17:22:43 2014
+@@ -442,7 +442,7 @@ static void handle_stream(demuxer_t *demuxer, AVFormat
              else if (codec->codec_id == AV_CODEC_ID_MOV_TEXT)
                  type = 'm';
              else if (codec->codec_id == AV_CODEC_ID_SSA

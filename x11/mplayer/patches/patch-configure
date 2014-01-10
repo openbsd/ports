@@ -1,32 +1,7 @@
-$OpenBSD: patch-configure,v 1.72 2013/12/12 21:41:54 brad Exp $
---- configure.orig	Mon Aug 19 10:49:15 2013
-+++ configure	Wed Dec 11 22:26:11 2013
-@@ -523,6 +523,7 @@ Audio output:
-   --disable-nas          disable NAS audio output [autodetect]
-   --disable-sgiaudio     disable SGI audio output [autodetect]
-   --disable-sunaudio     disable Sun audio output [autodetect]
-+  --disable-sndio        disable OpenBSD sndio audio output [autodetect]
-   --disable-kai          disable KAI audio output [autodetect]
-   --disable-dart         disable DART audio output [autodetect]
-   --disable-win32waveout disable Windows waveout audio output [autodetect]
-@@ -756,6 +757,7 @@ _xf86keysym=auto
- _mlib=no #broken, thus disabled
- _sgiaudio=auto
- _sunaudio=auto
-+_sndio=auto
- _alsa=auto
- _fastmemcpy=yes
- hardcoded_tables=no
-@@ -1193,6 +1195,8 @@ for ac_option do
-   --disable-mlib)       _mlib=no        ;;
-   --enable-sunaudio)    _sunaudio=yes   ;;
-   --disable-sunaudio)   _sunaudio=no    ;;
-+  --enable-sndio)	_sndio=yes	;;
-+  --disable-sndio)	_sndio=no	;;
-   --enable-sgiaudio)    _sgiaudio=yes   ;;
-   --disable-sgiaudio)   _sgiaudio=no    ;;
-   --enable-alsa)        _alsa=yes       ;;
-@@ -1491,36 +1495,36 @@ echo configuration: $configuration > "$TMPLOG"
+$OpenBSD: patch-configure,v 1.73 2014/01/10 21:52:29 brad Exp $
+--- configure.orig	Mon Jan  6 17:03:04 2014
++++ configure	Mon Jan  6 17:22:43 2014
+@@ -1497,36 +1497,36 @@ echo configuration: $configuration > "$TMPLOG"
  echo >> "$TMPLOG"
  
  
@@ -92,7 +67,7 @@ $OpenBSD: patch-configure,v 1.72 2013/12/12 21:41:54 brad Exp $
  list_subparts() {
    pattern="s/^[^#]*${1}.*([^ ,]*, *\([^ ,)]*\).*/\1_${2}/p"
    sed -n "$pattern" ffmpeg/libav${3} | toupper
-@@ -2349,7 +2353,7 @@ case "$host_arch" in
+@@ -2364,7 +2364,7 @@ case "$host_arch" in
      arch='sparc'
      iproc='sparc'
      if test "$host_arch" = "sparc64" ; then
@@ -101,7 +76,7 @@ $OpenBSD: patch-configure,v 1.72 2013/12/12 21:41:54 brad Exp $
        proc='ultrasparc'
        def_fast_64bit='#define HAVE_FAST_64BIT 1'
      elif sunos ; then
-@@ -2672,7 +2676,7 @@ cat > $TMPC << EOF
+@@ -2692,7 +2692,7 @@ cat > $TMPC << EOF
  int ff_extern;
  EOF
  cc_check -c || die "Symbol mangling check failed."
@@ -110,30 +85,7 @@ $OpenBSD: patch-configure,v 1.72 2013/12/12 21:41:54 brad Exp $
  extern_prefix=${sym%%ff_extern*}
  def_extern_asm="#define EXTERN_ASM $extern_prefix"
  def_extern_prefix="#define EXTERN_PREFIX \"$extern_prefix\""
-@@ -5776,6 +5780,22 @@ fi
- echores "$_sunaudio"
- 
- 
-+echocheck "sndio audio"
-+if test "$_sndio" = auto ; then
-+  _sndio=no
-+  statement_check sndio.h 'sio_initpar(NULL)' -lsndio && _sndio=yes
-+fi
-+if test "$_sndio" = yes ; then
-+  def_sndio='#define CONFIG_SNDIO_AUDIO 1'
-+  _aomodules="sndio $_aomodules"
-+  extra_ldflags="$extra_ldflags -lsndio"
-+else
-+  def_sndio='#undef CONFIG_SNDIO_AUDIO'
-+  _noaomodules="sndio $_noaomodules"
-+fi
-+echores "$_sndio"
-+
-+
- def_mlib='#define CONFIG_MLIB 0'
- if sunos; then
- echocheck "Sun mediaLib"
-@@ -6087,7 +6107,7 @@ echocheck "cdparanoia"
+@@ -6153,7 +6153,7 @@ echocheck "cdparanoia"
  if test "$_cdparanoia" = auto ; then
      _cdparanoia=no
      for inc_tmp in "" "-I/usr/include/cdda" "-I/usr/local/include/cdda" ; do
@@ -142,7 +94,7 @@ $OpenBSD: patch-configure,v 1.72 2013/12/12 21:41:54 brad Exp $
          _cdparanoia=yes && extra_cflags="$extra_cflags $inc_tmp" && break
      done
  fi
-@@ -8033,6 +8053,7 @@ extra_ldflags="$extra_ldflags -lm"
+@@ -8099,6 +8099,7 @@ extra_ldflags="$extra_ldflags $libm"
  # XML documentation tests
  echocheck "XML catalogs"
  for try_catalog in \
@@ -150,7 +102,7 @@ $OpenBSD: patch-configure,v 1.72 2013/12/12 21:41:54 brad Exp $
    /etc/sgml/catalog \
    /usr/share/xml/docbook/*/catalog.xml \
    /opt/local/share/xml/docbook-xml/*/catalog.xml \
-@@ -8060,6 +8081,7 @@ fi
+@@ -8126,6 +8127,7 @@ fi
  
  echocheck "XML chunked stylesheet"
  for try_chunk_xsl in \
@@ -158,7 +110,7 @@ $OpenBSD: patch-configure,v 1.72 2013/12/12 21:41:54 brad Exp $
    /usr/share/xml/docbook/*/html/chunk.xsl \
    /usr/share/sgml/docbook/stylesheet/xsl/nwalsh/html/chunk.xsl \
    /usr/share/sgml/docbook/yelp/docbook/html/chunk.xsl \
-@@ -8085,6 +8107,7 @@ fi
+@@ -8151,6 +8153,7 @@ fi
  
  echocheck "XML monolithic stylesheet"
  for try_docbook_xsl in \
@@ -166,7 +118,7 @@ $OpenBSD: patch-configure,v 1.72 2013/12/12 21:41:54 brad Exp $
    /usr/share/xml/docbook/*/html/docbook.xsl \
    /usr/share/sgml/docbook/stylesheet/xsl/nwalsh/html/docbook.xsl \
    /usr/share/sgml/docbook/yelp/docbook/html/docbook.xsl \
-@@ -8138,6 +8161,7 @@ EOF
+@@ -8204,6 +8207,7 @@ EOF
  echocheck "XML DTD"
  #FIXME: This should prefer higher version numbers, not the other way around ..
  for try_dtd in \
@@ -174,19 +126,3 @@ $OpenBSD: patch-configure,v 1.72 2013/12/12 21:41:54 brad Exp $
    /usr/share/xml/docbook/*/dtd/4*/docbookx.dtd \
    /usr/share/xml/docbook/*/docbookx.dtd \
    /usr/share/sgml/docbook/*/docbookx.dtd \
-@@ -8413,6 +8437,7 @@ SPEEX = $_speex
- STREAM_CACHE = $_stream_cache
- SGIAUDIO = $_sgiaudio
- SUNAUDIO = $_sunaudio
-+SNDIO = $_sndio
- SVGA = $_svga
- TDFXFB = $_tdfxfb
- TDFXVID = $_tdfxvid
-@@ -8846,6 +8871,7 @@ $def_ossaudio_devmixer
- $def_pulse
- $def_sgiaudio
- $def_sunaudio
-+$def_sndio
- $def_win32waveout
- 
- $def_ladspa
