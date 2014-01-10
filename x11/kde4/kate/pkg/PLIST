@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/12/08 19:13:30 zhuk Exp $
-@conflict kdelibs-<4
+@comment $OpenBSD: PLIST,v 1.6 2014/01/10 20:54:57 zhuk Exp $
 @conflict kdebase-<4
-@conflict kdeaddons-<4
 @newgroup _kdesud:583
 @bin bin/kate
 @bin bin/kwrite

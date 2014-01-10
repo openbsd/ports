@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/12/08 19:13:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2014/01/10 20:54:57 zhuk Exp $
 
 COMMENT =	KDE advanced text editor
 DISTNAME =	kate-${MODKDE4_VERSION}
+REVISION =	0
 
 SHARED_LIBS =	kateinterfaces			50.0 # 4.7
 SHARED_LIBS +=	katepartinterfaces		50.0 # 4.7
