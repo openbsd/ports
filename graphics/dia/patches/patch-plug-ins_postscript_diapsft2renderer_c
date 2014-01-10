@@ -1,0 +1,15 @@
+$OpenBSD: patch-plug-ins_postscript_diapsft2renderer_c,v 1.1 2014/01/10 18:26:33 naddy Exp $
+--- plug-ins/postscript/diapsft2renderer.c.orig	Sat Nov  7 18:13:53 2009
++++ plug-ins/postscript/diapsft2renderer.c	Fri Jan 10 19:19:13 2014
+@@ -29,8 +29,9 @@
+ #include <pango/pangoft2.h>
+ #include <pango/pango-engine.h>
+ /* I'd really rather avoid this */
+-#include <freetype/ftglyph.h>
+-#include <freetype/ftoutln.h>
++#include <ft2build.h>
++#include FT_GLYPH_H
++#include FT_OUTLINE_H
+ 
+ #define DPI 300
+ 
