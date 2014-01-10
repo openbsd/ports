@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.9 2013/08/27 01:57:25 bcallah Exp $
---- configure.orig	Mon Aug 19 04:59:59 2013
-+++ configure	Sat Aug 24 16:44:01 2013
+$OpenBSD: patch-configure,v 1.10 2014/01/10 17:57:47 landry Exp $
+--- configure.orig	Mon Sep  9 16:35:07 2013
++++ configure	Fri Jan 10 18:44:50 2014
 @@ -5677,7 +5677,7 @@ elif test $ac_cv_prog_cxx_g = yes; then
    fi
  else
@@ -10,3 +10,18 @@ $OpenBSD: patch-configure,v 1.9 2013/08/27 01:57:25 bcallah Exp $
    else
      CXXFLAGS=
    fi
+@@ -14696,14 +14696,6 @@ done
+ 	  LIBS="$LIBS $freetype_libs"
+ 	  CPPFLAGS="$freetype_cflags $CPPFLAGS"
+ 	fi
+-	ac_fn_cxx_check_header_mongrel "$LINENO" "freetype/config/ftheader.h" "ac_cv_header_freetype_config_ftheader_h" "$ac_includes_default"
+-if test "x$ac_cv_header_freetype_config_ftheader_h" = xyes; then :
+-
+-else
+-  as_fn_error $? "\"ftheader.h not found\"" "$LINENO" 5
+-fi
+-
+-
+ 
+ 	# Check for Xft headers
+ 	xft_config=''
