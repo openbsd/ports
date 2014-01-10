@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.25 2013/12/30 12:28:23 espie Exp $
+# $OpenBSD: Config.pm,v 1.26 2014/01/10 11:26:43 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -85,7 +85,9 @@ sub parse_command_line
 		$state->usage("Can't obtain vital information from the ports tree");
 	}
 	if ($p =~ m/^\s*$/) {
-		$state->{allow_unsigned} = 1;
+		$state->{signer} = '-Dunsigned';
+	} elsif ($p =~ m/\-DSIGNER\=\S+/) {
+		$state->{signer} = $&;
 	}
 	if ($state->{xenocara} =~ m/Yes/i) {
 		$state->{xenocara} = 1;

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.142 2013/12/30 12:28:23 espie Exp $
+# $OpenBSD: Port.pm,v 1.143 2014/01/10 11:26:43 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -394,8 +394,8 @@ sub run
 		    $core->prop->{last_junk}->fullpkgpath, "\n";
 	}
 	my @cmd = ('/usr/sbin/pkg_add', '-aI');
-	if ($job->{builder}{state}{allow_unsigned}) {
-		push(@cmd, '-Dunsigned');
+	if ($job->{builder}{state}{signer}) {
+		push(@cmd, $job->{builder}{state}{signer});
 	}
 	if ($job->{builder}{update}) {
 		push(@cmd, "-rqU", "-Dupdate", "-Dupdatedepends");
@@ -649,8 +649,8 @@ sub run
 
 	$self->handle_output($job);
 	my @cmd = ('/usr/sbin/pkg_add', '-I');
-	if ($job->{builder}{state}{allow_unsigned}) {
-		push(@cmd, '-Dunsigned');
+	if ($job->{builder}{state}{signer}) {
+		push(@cmd, $job->{builder}{state}{signer});
 	}
 	if ($job->{builder}->{update}) {
 		push(@cmd, "-rqU", "-Dupdate", "-Dupdatedepends");
