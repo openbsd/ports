@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/09/25 07:58:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2014/01/10 18:43:38 landry Exp $
 
 COMMENT=	image manipulation functions for Objective Caml
 CATEGORIES=	graphics
@@ -47,6 +47,9 @@ MAKE_FLAGS+=	CFLAGS="${CFLAGS} \
 TEST_IS_INTERACTIVE = X11
 
 OMAKE=		omake --force-dotomake --dotomake ${WRKSRC}/omake_cache
+
+pre-build:
+	${SUBST_CMD} ${WRKSRC}/OMakefile
 
 do-build:
 	cd ${WRKSRC} && env -i ${MAKE_ENV} ${OMAKE} ${MAKE_FLAGS}

@@ -1,11 +1,19 @@
-$OpenBSD: patch-OMakefile,v 1.1 2012/08/18 23:35:30 avsm Exp $
+$OpenBSD: patch-OMakefile,v 1.2 2014/01/10 18:43:38 landry Exp $
 --- OMakefile.orig	Wed Jun 22 20:04:32 2011
-+++ OMakefile	Thu Aug  9 19:49:09 2012
-@@ -34,9 +34,10 @@ LDFLAGS[]+= 
++++ OMakefile	Fri Jan 10 19:36:56 2014
+@@ -24,6 +24,7 @@ if $(defined WithOMyApt)
+ INCLUDES[]=
+   /usr/include/X11
+   /usr/local/include
++  ${X11BASE}/include
+ 
+ # Specify non standard library directories
+ LDFLAGS[]+= 
+@@ -34,9 +35,10 @@ LDFLAGS[]+= 
  PATH_RGB_TXT[]=
    /etc/X11
    /usr/share/X11
-+  /usr/X11R6/share/X11
++  ${X11BASE}/share/X11
  
  BYTE_ENABLED=1
 -NATIVE_ENABLED=1
@@ -13,7 +21,7 @@ $OpenBSD: patch-OMakefile,v 1.1 2012/08/18 23:35:30 avsm Exp $
  
  ########################################################################
  
-@@ -122,11 +123,11 @@ print_configured() =
+@@ -122,11 +124,11 @@ print_configured() =
      export
  
    HAVE_Z = $(Check_header_library z, zlib.h, zlibVersion)
@@ -27,7 +35,7 @@ $OpenBSD: patch-OMakefile,v 1.1 2012/08/18 23:35:30 avsm Exp $
      SUPPORTED_FORMATS+=png
      export
  
-@@ -162,7 +163,7 @@ print_configured() =
+@@ -162,7 +164,7 @@ print_configured() =
      SUPPORTED_FORMATS+=ps
      export
  
