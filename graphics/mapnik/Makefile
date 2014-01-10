@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2013/12/01 12:30:56 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2014/01/10 19:36:18 landry Exp $
 
 COMMENT =	toolkit for developing mapping applications
 
@@ -44,7 +44,7 @@ WANTLIB =	cairo icuuc png>=17.0 pq proj jpeg \
 
 MODSCONS_FLAGS =	PREFIX="${TRUEPREFIX}" \
 			DESTDIR="${WRKINST}" \
-			PNG_INCLUDES="${LOCALBASE}/include" \
+			PNG_INCLUDES="${LOCALBASE}/include ${X11BASE}/include/freetype2" \
 			PNG_LIBS="${LOCALBASE}/lib" \
 			SYSTEM_FONTS="${X11BASE}/lib/X11/fonts/TTF/" \
 			FAST=yes \
