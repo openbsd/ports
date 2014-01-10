@@ -1,0 +1,13 @@
+$OpenBSD: patch-app_text_gimpfont_c,v 1.1 2014/01/10 18:54:50 naddy Exp $
+--- app/text/gimpfont.c.orig	Tue May  8 08:05:46 2012
++++ app/text/gimpfont.c	Fri Jan 10 19:45:42 2014
+@@ -27,7 +27,8 @@
+ 
+ #define PANGO_ENABLE_ENGINE  1   /* Argh */
+ #include <pango/pango-ot.h>
+-#include <freetype/tttables.h>
++#include <ft2build.h>
++#include FT_TRUETYPE_TABLES_H
+ 
+ #include "text-types.h"
+ 
