@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2013/10/26 23:55:38 jeremy Exp $
+# $OpenBSD: Makefile,v 1.13 2014/01/10 19:01:24 jeremy Exp $
 
 COMMENT =	ruby-unicorn for sleepy apps and slow clients
 
 DISTNAME =	rainbows-4.4.1
-REVISION =	1
+REVISION =	2
 CATEGORIES =	www
 
 HOMEPAGE =	http://rainbows.rubyforge.org/
@@ -20,7 +20,7 @@ RUN_DEPENDS =	devel/ruby-kgio,${MODRUBY_FLAVOR}>=2.5,<3.0 \
 		www/ruby-unicorn,${MODRUBY_FLAVOR}>=4.1,<5.0 \
 		www/ruby-rack,${MODRUBY_FLAVOR}>=1.1.0,<2.0
 
-CONFIGURE_STYLE = ruby gem ext
+CONFIGURE_STYLE = ruby gem
 
 post-install:
 	cd ${WRKINST}/${LOCALBASE}/${GEM_LIB}/gems/${DISTNAME}/man/man1 && \
