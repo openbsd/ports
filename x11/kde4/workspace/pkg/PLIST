@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/12/09 16:53:18 zhuk Exp $
-@conflict kdelibs-<4
+@comment $OpenBSD: PLIST,v 1.6 2014/01/10 08:12:11 zhuk Exp $
 @conflict kdebase-<4
 @newgroup _kdesud:583
 @unexec-delete rm -f %D/share/icons/Oxygen_Black/icon-theme.cache
@@ -36,7 +35,7 @@ bin/krdb
 @bin bin/ksysguard
 @bin bin/ksysguardd
 @bin bin/ksystraycmd
-@bin bin/kwin
+@bin bin/kwin4
 @mode 4555
 @bin bin/kwrited
 @mode
@@ -48,7 +47,7 @@ bin/krdb
 @bin bin/plasma-overlay
 @bin bin/plasma-windowed
 @bin bin/solid-action-desktop-gen
-bin/startkde
+bin/startkde4
 @bin bin/systemsettings
 include/kde4/KDE/Plasma/Weather/
 include/kde4/KDE/Plasma/Weather/Ion
@@ -242,7 +241,7 @@ lib/kde4/kwin3_aurorae.so
 lib/kde4/kwin3_b2.so
 lib/kde4/kwin3_laptop.so
 lib/kde4/kwin3_oxygen.so
-lib/kde4/kwin4_effect_builtins.so
+lib/kde4/kwin44_effect_builtins.so
 lib/kde4/kwin_b2_config.so
 lib/kde4/kwin_oxygen_config.so
 @lib ${KDE4LIB}/libkdecorations.so.${LIBkdecorations_VERSION}
@@ -254,8 +253,8 @@ lib/kde4/kwin_oxygen_config.so
 @lib ${KDE4LIB}/libkscreensaver.so.${LIBkscreensaver_VERSION}
 @lib ${KDE4LIB}/libksgrd.so.${LIBksgrd_VERSION}
 @lib ${KDE4LIB}/libksignalplotter.so.${LIBksignalplotter_VERSION}
-@lib ${KDE4LIB}/libkwineffects.so.${LIBkwineffects_VERSION}
-@lib ${KDE4LIB}/libkwinglutils.so.${LIBkwinglutils_VERSION}
+@lib ${KDE4LIB}/libkwin4effects.so.${LIBkwin4effects_VERSION}
+@lib ${KDE4LIB}/libkwin4glutils.so.${LIBkwin4glutils_VERSION}
 @lib ${KDE4LIB}/libkworkspace.so.${LIBkworkspace_VERSION}
 @lib ${KDE4LIB}/liblsofui.so.${LIBlsofui_VERSION}
 @lib ${KDE4LIB}/liboxygenstyle.so.${LIBoxygenstyle_VERSION}
@@ -376,7 +375,7 @@ lib/libkdeinit4_kmenuedit.so
 lib/libkdeinit4_krunner.so
 lib/libkdeinit4_ksmserver.so
 lib/libkdeinit4_ksysguard.so
-lib/libkdeinit4_kwin.so
+lib/libkdeinit4_kwin4.so
 lib/libkdeinit4_kwin_rules_dialog.so
 lib/libkdeinit4_plasma-desktop.so
 lib/libkdeinit4_plasma-netbook.so
@@ -389,8 +388,8 @@ lib/libkdeinit4_plasma-windowed.so
 @lib lib/libkscreensaver.so.${LIBkscreensaver_VERSION}
 @lib lib/libksgrd.so.${LIBksgrd_VERSION}
 @lib lib/libksignalplotter.so.${LIBksignalplotter_VERSION}
-@lib lib/libkwineffects.so.${LIBkwineffects_VERSION}
-@lib lib/libkwinglutils.so.${LIBkwinglutils_VERSION}
+@lib lib/libkwin4effects.so.${LIBkwin4effects_VERSION}
+@lib lib/libkwin4glutils.so.${LIBkwin4glutils_VERSION}
 @lib lib/libkworkspace.so.${LIBkworkspace_VERSION}
 @lib lib/liblsofui.so.${LIBlsofui_VERSION}
 @lib lib/liboxygenstyle.so.${LIBoxygenstyle_VERSION}
@@ -871,80 +870,12 @@ share/apps/kwin/aurorae/aurorae.qml
 share/apps/kwin/b2.desktop
 share/apps/kwin/blinking-startup-fragment.glsl
 share/apps/kwin/cubecap.png
-share/apps/kwin/decorations/
-share/apps/kwin/decorations/kwin4_decoration_qml_plastik/
-share/apps/kwin/decorations/kwin4_decoration_qml_plastik/contents/
-share/apps/kwin/decorations/kwin4_decoration_qml_plastik/contents/config/
-share/apps/kwin/decorations/kwin4_decoration_qml_plastik/contents/config/main.xml
-share/apps/kwin/decorations/kwin4_decoration_qml_plastik/contents/ui/
-share/apps/kwin/decorations/kwin4_decoration_qml_plastik/contents/ui/PlastikButton.qml
-share/apps/kwin/decorations/kwin4_decoration_qml_plastik/contents/ui/config.ui
-share/apps/kwin/decorations/kwin4_decoration_qml_plastik/contents/ui/main.qml
-share/apps/kwin/decorations/kwin4_decoration_qml_plastik/metadata.desktop
 share/apps/kwin/default_rules/
 share/apps/kwin/default_rules/fsp_workarounds_1.kwinrules
 share/apps/kwin/default_rules/plasma_desktop_containment.kwinrules
-share/apps/kwin/desktoptabbox/
-share/apps/kwin/desktoptabbox/informative/
-share/apps/kwin/desktoptabbox/informative/contents/
-share/apps/kwin/desktoptabbox/informative/contents/ui/
-share/apps/kwin/desktoptabbox/informative/contents/ui/ShadowedSvgItem.qml
-share/apps/kwin/desktoptabbox/informative/contents/ui/main.qml
-share/apps/kwin/desktoptabbox/informative/metadata.desktop
-share/apps/kwin/desktoptabbox/previews/
-share/apps/kwin/desktoptabbox/previews/contents/
-share/apps/kwin/desktoptabbox/previews/contents/ui/
-share/apps/kwin/desktoptabbox/previews/contents/ui/ShadowedSvgItem.qml
-share/apps/kwin/desktoptabbox/previews/contents/ui/main.qml
-share/apps/kwin/desktoptabbox/previews/metadata.desktop
 share/apps/kwin/effects/
 share/apps/kwin/effects/desktopgrid/
 share/apps/kwin/effects/desktopgrid/main.qml
-share/apps/kwin/effects/kwin4_effect_dialogparent/
-share/apps/kwin/effects/kwin4_effect_dialogparent/contents/
-share/apps/kwin/effects/kwin4_effect_dialogparent/contents/code/
-share/apps/kwin/effects/kwin4_effect_dialogparent/contents/code/main.js
-share/apps/kwin/effects/kwin4_effect_dialogparent/metadata.desktop
-share/apps/kwin/effects/kwin4_effect_fade/
-share/apps/kwin/effects/kwin4_effect_fade/contents/
-share/apps/kwin/effects/kwin4_effect_fade/contents/code/
-share/apps/kwin/effects/kwin4_effect_fade/contents/code/main.js
-share/apps/kwin/effects/kwin4_effect_fade/contents/config/
-share/apps/kwin/effects/kwin4_effect_fade/contents/config/main.xml
-share/apps/kwin/effects/kwin4_effect_fade/metadata.desktop
-share/apps/kwin/effects/kwin4_effect_fadedesktop/
-share/apps/kwin/effects/kwin4_effect_fadedesktop/contents/
-share/apps/kwin/effects/kwin4_effect_fadedesktop/contents/code/
-share/apps/kwin/effects/kwin4_effect_fadedesktop/contents/code/main.js
-share/apps/kwin/effects/kwin4_effect_fadedesktop/metadata.desktop
-share/apps/kwin/effects/kwin4_effect_login/
-share/apps/kwin/effects/kwin4_effect_login/contents/
-share/apps/kwin/effects/kwin4_effect_login/contents/code/
-share/apps/kwin/effects/kwin4_effect_login/contents/code/main.js
-share/apps/kwin/effects/kwin4_effect_login/contents/config/
-share/apps/kwin/effects/kwin4_effect_login/contents/config/main.xml
-share/apps/kwin/effects/kwin4_effect_login/contents/ui/
-share/apps/kwin/effects/kwin4_effect_login/contents/ui/config.ui
-share/apps/kwin/effects/kwin4_effect_login/metadata.desktop
-share/apps/kwin/effects/kwin4_effect_maximize/
-share/apps/kwin/effects/kwin4_effect_maximize/contents/
-share/apps/kwin/effects/kwin4_effect_maximize/contents/code/
-share/apps/kwin/effects/kwin4_effect_maximize/contents/code/maximize.js
-share/apps/kwin/effects/kwin4_effect_maximize/metadata.desktop
-share/apps/kwin/effects/kwin4_effect_scalein/
-share/apps/kwin/effects/kwin4_effect_scalein/contents/
-share/apps/kwin/effects/kwin4_effect_scalein/contents/code/
-share/apps/kwin/effects/kwin4_effect_scalein/contents/code/main.js
-share/apps/kwin/effects/kwin4_effect_scalein/metadata.desktop
-share/apps/kwin/effects/kwin4_effect_translucency/
-share/apps/kwin/effects/kwin4_effect_translucency/contents/
-share/apps/kwin/effects/kwin4_effect_translucency/contents/code/
-share/apps/kwin/effects/kwin4_effect_translucency/contents/code/main.js
-share/apps/kwin/effects/kwin4_effect_translucency/contents/config/
-share/apps/kwin/effects/kwin4_effect_translucency/contents/config/main.xml
-share/apps/kwin/effects/kwin4_effect_translucency/contents/ui/
-share/apps/kwin/effects/kwin4_effect_translucency/contents/ui/config.ui
-share/apps/kwin/effects/kwin4_effect_translucency/metadata.desktop
 share/apps/kwin/effects/presentwindows/
 share/apps/kwin/effects/presentwindows/main.qml
 share/apps/kwin/kcm_kwindecoration/
@@ -958,26 +889,8 @@ share/apps/kwin/kcm_kwintabbox/kmail.png
 share/apps/kwin/kcm_kwintabbox/konqueror.png
 share/apps/kwin/kcm_kwintabbox/main.qml
 share/apps/kwin/kcm_kwintabbox/systemsettings.png
-share/apps/kwin/kwin.notifyrc
 share/apps/kwin/laptop.desktop
 share/apps/kwin/oxygenclient.desktop
-share/apps/kwin/scripts/
-share/apps/kwin/scripts/desktopchangeosd/
-share/apps/kwin/scripts/desktopchangeosd/contents/
-share/apps/kwin/scripts/desktopchangeosd/contents/ui/
-share/apps/kwin/scripts/desktopchangeosd/contents/ui/main.qml
-share/apps/kwin/scripts/desktopchangeosd/contents/ui/osd.qml
-share/apps/kwin/scripts/desktopchangeosd/metadata.desktop
-share/apps/kwin/scripts/synchronizeskipswitcher/
-share/apps/kwin/scripts/synchronizeskipswitcher/contents/
-share/apps/kwin/scripts/synchronizeskipswitcher/contents/code/
-share/apps/kwin/scripts/synchronizeskipswitcher/contents/code/main.js
-share/apps/kwin/scripts/synchronizeskipswitcher/metadata.desktop
-share/apps/kwin/scripts/videowall/
-share/apps/kwin/scripts/videowall/contents/
-share/apps/kwin/scripts/videowall/contents/code/
-share/apps/kwin/scripts/videowall/contents/code/main.js
-share/apps/kwin/scripts/videowall/metadata.desktop
 share/apps/kwin/shaders/
 share/apps/kwin/shaders/1.10/
 share/apps/kwin/shaders/1.10/coverswitch-reflection.glsl
@@ -1000,60 +913,148 @@ share/apps/kwin/shaders/1.40/lookingglass.frag
 share/apps/kwin/shaders/1.40/sphere.vert
 share/apps/kwin/shaders/1.40/vignetting.frag
 share/apps/kwin/stripTitle.js
-share/apps/kwin/tabbox/
-share/apps/kwin/tabbox/ShadowedSvgItem.qml
-share/apps/kwin/tabbox/big_icons/
-share/apps/kwin/tabbox/big_icons/contents/
-share/apps/kwin/tabbox/big_icons/contents/ui/
-share/apps/kwin/tabbox/big_icons/contents/ui/IconTabBox.qml
-share/apps/kwin/tabbox/big_icons/contents/ui/ShadowedSvgItem.qml
-share/apps/kwin/tabbox/big_icons/contents/ui/main.qml
-share/apps/kwin/tabbox/big_icons/metadata.desktop
-share/apps/kwin/tabbox/compact/
-share/apps/kwin/tabbox/compact/contents/
-share/apps/kwin/tabbox/compact/contents/ui/
-share/apps/kwin/tabbox/compact/contents/ui/ShadowedSvgItem.qml
-share/apps/kwin/tabbox/compact/contents/ui/main.qml
-share/apps/kwin/tabbox/compact/metadata.desktop
-share/apps/kwin/tabbox/informative/
-share/apps/kwin/tabbox/informative/contents/
-share/apps/kwin/tabbox/informative/contents/ui/
-share/apps/kwin/tabbox/informative/contents/ui/ShadowedSvgItem.qml
-share/apps/kwin/tabbox/informative/contents/ui/main.qml
-share/apps/kwin/tabbox/informative/metadata.desktop
-share/apps/kwin/tabbox/present_windows/
-share/apps/kwin/tabbox/present_windows/contents/
-share/apps/kwin/tabbox/present_windows/contents/ui/
-share/apps/kwin/tabbox/present_windows/contents/ui/ShadowedSvgItem.qml
-share/apps/kwin/tabbox/present_windows/contents/ui/main.qml
-share/apps/kwin/tabbox/present_windows/metadata.desktop
-share/apps/kwin/tabbox/small_icons/
-share/apps/kwin/tabbox/small_icons/contents/
-share/apps/kwin/tabbox/small_icons/contents/ui/
-share/apps/kwin/tabbox/small_icons/contents/ui/IconTabBox.qml
-share/apps/kwin/tabbox/small_icons/contents/ui/ShadowedSvgItem.qml
-share/apps/kwin/tabbox/small_icons/contents/ui/main.qml
-share/apps/kwin/tabbox/small_icons/metadata.desktop
-share/apps/kwin/tabbox/tabbox.qml
-share/apps/kwin/tabbox/text/
-share/apps/kwin/tabbox/text/contents/
-share/apps/kwin/tabbox/text/contents/ui/
-share/apps/kwin/tabbox/text/contents/ui/ShadowedSvgItem.qml
-share/apps/kwin/tabbox/text/contents/ui/main.qml
-share/apps/kwin/tabbox/text/metadata.desktop
-share/apps/kwin/tabbox/thumbnails/
-share/apps/kwin/tabbox/thumbnails/contents/
-share/apps/kwin/tabbox/thumbnails/contents/ui/
-share/apps/kwin/tabbox/thumbnails/contents/ui/ShadowedSvgItem.qml
-share/apps/kwin/tabbox/thumbnails/contents/ui/main.qml
-share/apps/kwin/tabbox/thumbnails/metadata.desktop
-share/apps/kwin/tabbox/window_strip/
-share/apps/kwin/tabbox/window_strip/contents/
-share/apps/kwin/tabbox/window_strip/contents/ui/
-share/apps/kwin/tabbox/window_strip/contents/ui/main.qml
-share/apps/kwin/tabbox/window_strip/metadata.desktop
 share/apps/kwin/tm_inner.png
 share/apps/kwin/tm_outer.png
+share/apps/kwin4/
+share/apps/kwin4/decorations/
+share/apps/kwin4/decorations/kwin4_decoration_qml_plastik/
+share/apps/kwin4/decorations/kwin4_decoration_qml_plastik/contents/
+share/apps/kwin4/decorations/kwin4_decoration_qml_plastik/contents/config/
+share/apps/kwin4/decorations/kwin4_decoration_qml_plastik/contents/config/main.xml
+share/apps/kwin4/decorations/kwin4_decoration_qml_plastik/contents/ui/
+share/apps/kwin4/decorations/kwin4_decoration_qml_plastik/contents/ui/PlastikButton.qml
+share/apps/kwin4/decorations/kwin4_decoration_qml_plastik/contents/ui/config.ui
+share/apps/kwin4/decorations/kwin4_decoration_qml_plastik/contents/ui/main.qml
+share/apps/kwin4/decorations/kwin4_decoration_qml_plastik/metadata.desktop
+share/apps/kwin4/desktoptabbox/
+share/apps/kwin4/desktoptabbox/informative/
+share/apps/kwin4/desktoptabbox/informative/contents/
+share/apps/kwin4/desktoptabbox/informative/contents/ui/
+share/apps/kwin4/desktoptabbox/informative/contents/ui/ShadowedSvgItem.qml
+share/apps/kwin4/desktoptabbox/informative/contents/ui/main.qml
+share/apps/kwin4/desktoptabbox/informative/metadata.desktop
+share/apps/kwin4/desktoptabbox/previews/
+share/apps/kwin4/desktoptabbox/previews/contents/
+share/apps/kwin4/desktoptabbox/previews/contents/ui/
+share/apps/kwin4/desktoptabbox/previews/contents/ui/ShadowedSvgItem.qml
+share/apps/kwin4/desktoptabbox/previews/contents/ui/main.qml
+share/apps/kwin4/desktoptabbox/previews/metadata.desktop
+share/apps/kwin4/effects/
+share/apps/kwin4/effects/kwin4_effect_dialogparent/
+share/apps/kwin4/effects/kwin4_effect_dialogparent/contents/
+share/apps/kwin4/effects/kwin4_effect_dialogparent/contents/code/
+share/apps/kwin4/effects/kwin4_effect_dialogparent/contents/code/main.js
+share/apps/kwin4/effects/kwin4_effect_dialogparent/metadata.desktop
+share/apps/kwin4/effects/kwin4_effect_fade/
+share/apps/kwin4/effects/kwin4_effect_fade/contents/
+share/apps/kwin4/effects/kwin4_effect_fade/contents/code/
+share/apps/kwin4/effects/kwin4_effect_fade/contents/code/main.js
+share/apps/kwin4/effects/kwin4_effect_fade/contents/config/
+share/apps/kwin4/effects/kwin4_effect_fade/contents/config/main.xml
+share/apps/kwin4/effects/kwin4_effect_fade/metadata.desktop
+share/apps/kwin4/effects/kwin4_effect_fadedesktop/
+share/apps/kwin4/effects/kwin4_effect_fadedesktop/contents/
+share/apps/kwin4/effects/kwin4_effect_fadedesktop/contents/code/
+share/apps/kwin4/effects/kwin4_effect_fadedesktop/contents/code/main.js
+share/apps/kwin4/effects/kwin4_effect_fadedesktop/metadata.desktop
+share/apps/kwin4/effects/kwin4_effect_login/
+share/apps/kwin4/effects/kwin4_effect_login/contents/
+share/apps/kwin4/effects/kwin4_effect_login/contents/code/
+share/apps/kwin4/effects/kwin4_effect_login/contents/code/main.js
+share/apps/kwin4/effects/kwin4_effect_login/contents/config/
+share/apps/kwin4/effects/kwin4_effect_login/contents/config/main.xml
+share/apps/kwin4/effects/kwin4_effect_login/contents/ui/
+share/apps/kwin4/effects/kwin4_effect_login/contents/ui/config.ui
+share/apps/kwin4/effects/kwin4_effect_login/metadata.desktop
+share/apps/kwin4/effects/kwin4_effect_maximize/
+share/apps/kwin4/effects/kwin4_effect_maximize/contents/
+share/apps/kwin4/effects/kwin4_effect_maximize/contents/code/
+share/apps/kwin4/effects/kwin4_effect_maximize/contents/code/maximize.js
+share/apps/kwin4/effects/kwin4_effect_maximize/metadata.desktop
+share/apps/kwin4/effects/kwin4_effect_scalein/
+share/apps/kwin4/effects/kwin4_effect_scalein/contents/
+share/apps/kwin4/effects/kwin4_effect_scalein/contents/code/
+share/apps/kwin4/effects/kwin4_effect_scalein/contents/code/main.js
+share/apps/kwin4/effects/kwin4_effect_scalein/metadata.desktop
+share/apps/kwin4/effects/kwin4_effect_translucency/
+share/apps/kwin4/effects/kwin4_effect_translucency/contents/
+share/apps/kwin4/effects/kwin4_effect_translucency/contents/code/
+share/apps/kwin4/effects/kwin4_effect_translucency/contents/code/main.js
+share/apps/kwin4/effects/kwin4_effect_translucency/contents/config/
+share/apps/kwin4/effects/kwin4_effect_translucency/contents/config/main.xml
+share/apps/kwin4/effects/kwin4_effect_translucency/contents/ui/
+share/apps/kwin4/effects/kwin4_effect_translucency/contents/ui/config.ui
+share/apps/kwin4/effects/kwin4_effect_translucency/metadata.desktop
+share/apps/kwin4/kwin4.notifyrc
+share/apps/kwin4/scripts/
+share/apps/kwin4/scripts/desktopchangeosd/
+share/apps/kwin4/scripts/desktopchangeosd/contents/
+share/apps/kwin4/scripts/desktopchangeosd/contents/ui/
+share/apps/kwin4/scripts/desktopchangeosd/contents/ui/main.qml
+share/apps/kwin4/scripts/desktopchangeosd/contents/ui/osd.qml
+share/apps/kwin4/scripts/desktopchangeosd/metadata.desktop
+share/apps/kwin4/scripts/synchronizeskipswitcher/
+share/apps/kwin4/scripts/synchronizeskipswitcher/contents/
+share/apps/kwin4/scripts/synchronizeskipswitcher/contents/code/
+share/apps/kwin4/scripts/synchronizeskipswitcher/contents/code/main.js
+share/apps/kwin4/scripts/synchronizeskipswitcher/metadata.desktop
+share/apps/kwin4/scripts/videowall/
+share/apps/kwin4/scripts/videowall/contents/
+share/apps/kwin4/scripts/videowall/contents/code/
+share/apps/kwin4/scripts/videowall/contents/code/main.js
+share/apps/kwin4/scripts/videowall/metadata.desktop
+share/apps/kwin4/tabbox/
+share/apps/kwin4/tabbox/ShadowedSvgItem.qml
+share/apps/kwin4/tabbox/big_icons/
+share/apps/kwin4/tabbox/big_icons/contents/
+share/apps/kwin4/tabbox/big_icons/contents/ui/
+share/apps/kwin4/tabbox/big_icons/contents/ui/IconTabBox.qml
+share/apps/kwin4/tabbox/big_icons/contents/ui/ShadowedSvgItem.qml
+share/apps/kwin4/tabbox/big_icons/contents/ui/main.qml
+share/apps/kwin4/tabbox/big_icons/metadata.desktop
+share/apps/kwin4/tabbox/compact/
+share/apps/kwin4/tabbox/compact/contents/
+share/apps/kwin4/tabbox/compact/contents/ui/
+share/apps/kwin4/tabbox/compact/contents/ui/ShadowedSvgItem.qml
+share/apps/kwin4/tabbox/compact/contents/ui/main.qml
+share/apps/kwin4/tabbox/compact/metadata.desktop
+share/apps/kwin4/tabbox/informative/
+share/apps/kwin4/tabbox/informative/contents/
+share/apps/kwin4/tabbox/informative/contents/ui/
+share/apps/kwin4/tabbox/informative/contents/ui/ShadowedSvgItem.qml
+share/apps/kwin4/tabbox/informative/contents/ui/main.qml
+share/apps/kwin4/tabbox/informative/metadata.desktop
+share/apps/kwin4/tabbox/present_windows/
+share/apps/kwin4/tabbox/present_windows/contents/
+share/apps/kwin4/tabbox/present_windows/contents/ui/
+share/apps/kwin4/tabbox/present_windows/contents/ui/ShadowedSvgItem.qml
+share/apps/kwin4/tabbox/present_windows/contents/ui/main.qml
+share/apps/kwin4/tabbox/present_windows/metadata.desktop
+share/apps/kwin4/tabbox/small_icons/
+share/apps/kwin4/tabbox/small_icons/contents/
+share/apps/kwin4/tabbox/small_icons/contents/ui/
+share/apps/kwin4/tabbox/small_icons/contents/ui/IconTabBox.qml
+share/apps/kwin4/tabbox/small_icons/contents/ui/ShadowedSvgItem.qml
+share/apps/kwin4/tabbox/small_icons/contents/ui/main.qml
+share/apps/kwin4/tabbox/small_icons/metadata.desktop
+share/apps/kwin4/tabbox/tabbox.qml
+share/apps/kwin4/tabbox/text/
+share/apps/kwin4/tabbox/text/contents/
+share/apps/kwin4/tabbox/text/contents/ui/
+share/apps/kwin4/tabbox/text/contents/ui/ShadowedSvgItem.qml
+share/apps/kwin4/tabbox/text/contents/ui/main.qml
+share/apps/kwin4/tabbox/text/metadata.desktop
+share/apps/kwin4/tabbox/thumbnails/
+share/apps/kwin4/tabbox/thumbnails/contents/
+share/apps/kwin4/tabbox/thumbnails/contents/ui/
+share/apps/kwin4/tabbox/thumbnails/contents/ui/ShadowedSvgItem.qml
+share/apps/kwin4/tabbox/thumbnails/contents/ui/main.qml
+share/apps/kwin4/tabbox/thumbnails/metadata.desktop
+share/apps/kwin4/tabbox/window_strip/
+share/apps/kwin4/tabbox/window_strip/contents/
+share/apps/kwin4/tabbox/window_strip/contents/ui/
+share/apps/kwin4/tabbox/window_strip/contents/ui/main.qml
+share/apps/kwin4/tabbox/window_strip/metadata.desktop
 share/apps/kwrited/
 share/apps/kwrited/kwrited.notifyrc
 share/apps/plasma-desktop/
@@ -1346,7 +1347,7 @@ share/autostart/plasma-desktop.desktop
 share/autostart/plasma.desktop
 share/config.kcfg/freespacenotifier.kcfg
 share/config.kcfg/klaunch.kcfg
-share/config.kcfg/kwin.kcfg
+share/config.kcfg/kwin4.kcfg
 share/config.kcfg/plasma-shell-desktop.kcfg
 share/config/activities.knsrc
 share/config/aurorae.knsrc
@@ -2223,24 +2224,6 @@ share/kde4/services/kwin/highlightwindow.desktop
 share/kde4/services/kwin/invert.desktop
 share/kde4/services/kwin/invert_config.desktop
 share/kde4/services/kwin/kscreen.desktop
-share/kde4/services/kwin/kwin4_decoration_qml_plastik.desktop
-share/kde4/services/kwin/kwin4_desktop_switcher_informative.desktop
-share/kde4/services/kwin/kwin4_desktop_switcher_previews.desktop
-share/kde4/services/kwin/kwin4_effect_dialogparent.desktop
-share/kde4/services/kwin/kwin4_effect_fade.desktop
-share/kde4/services/kwin/kwin4_effect_fadedesktop.desktop
-share/kde4/services/kwin/kwin4_effect_login.desktop
-share/kde4/services/kwin/kwin4_effect_maximize.desktop
-share/kde4/services/kwin/kwin4_effect_scalein.desktop
-share/kde4/services/kwin/kwin4_effect_translucency.desktop
-share/kde4/services/kwin/kwin4_window_switcher_big_icons.desktop
-share/kde4/services/kwin/kwin4_window_switcher_compact.desktop
-share/kde4/services/kwin/kwin4_window_switcher_informative.desktop
-share/kde4/services/kwin/kwin4_window_switcher_present_windows.desktop
-share/kde4/services/kwin/kwin4_window_switcher_small_icons.desktop
-share/kde4/services/kwin/kwin4_window_switcher_text.desktop
-share/kde4/services/kwin/kwin4_window_switcher_thumbnails.desktop
-share/kde4/services/kwin/kwin4_window_switcher_window_strip.desktop
 share/kde4/services/kwin/logout.desktop
 share/kde4/services/kwin/lookingglass.desktop
 share/kde4/services/kwin/lookingglass_config.desktop
@@ -2279,6 +2262,25 @@ share/kde4/services/kwin/wobblywindows.desktop
 share/kde4/services/kwin/wobblywindows_config.desktop
 share/kde4/services/kwin/zoom.desktop
 share/kde4/services/kwin/zoom_config.desktop
+share/kde4/services/kwin4/
+share/kde4/services/kwin4/kwin4_decoration_qml_plastik.desktop
+share/kde4/services/kwin4/kwin4_desktop_switcher_informative.desktop
+share/kde4/services/kwin4/kwin4_desktop_switcher_previews.desktop
+share/kde4/services/kwin4/kwin4_effect_dialogparent.desktop
+share/kde4/services/kwin4/kwin4_effect_fade.desktop
+share/kde4/services/kwin4/kwin4_effect_fadedesktop.desktop
+share/kde4/services/kwin4/kwin4_effect_login.desktop
+share/kde4/services/kwin4/kwin4_effect_maximize.desktop
+share/kde4/services/kwin4/kwin4_effect_scalein.desktop
+share/kde4/services/kwin4/kwin4_effect_translucency.desktop
+share/kde4/services/kwin4/kwin4_window_switcher_big_icons.desktop
+share/kde4/services/kwin4/kwin4_window_switcher_compact.desktop
+share/kde4/services/kwin4/kwin4_window_switcher_informative.desktop
+share/kde4/services/kwin4/kwin4_window_switcher_present_windows.desktop
+share/kde4/services/kwin4/kwin4_window_switcher_small_icons.desktop
+share/kde4/services/kwin4/kwin4_window_switcher_text.desktop
+share/kde4/services/kwin4/kwin4_window_switcher_thumbnails.desktop
+share/kde4/services/kwin4/kwin4_window_switcher_window_strip.desktop
 share/kde4/services/kwinactions.desktop
 share/kde4/services/kwinadvanced.desktop
 share/kde4/services/kwincompositing.desktop

@@ -1,0 +1,13 @@
+$OpenBSD: patch-kio_kio_kmimetypechooser_cpp,v 1.1 2014/01/10 08:12:11 zhuk Exp $
+Deconflict kde-runtime with kdebase-3.x.
+--- kio/kio/kmimetypechooser.cpp.orig	Fri Dec 27 14:39:07 2013
++++ kio/kio/kmimetypechooser.cpp	Fri Dec 27 14:39:47 2013
+@@ -203,7 +203,7 @@ void KMimeTypeChooserPrivate::_k_editMimeType()
+     // thanks to libkonq/konq_operations.cc
+     q->connect( KSycoca::self(), SIGNAL(databaseChanged(QStringList)),
+                 q, SLOT(_k_slotSycocaDatabaseChanged(QStringList)) );
+-    QString keditfiletype = QString::fromLatin1("keditfiletype");
++    QString keditfiletype = QString::fromLatin1("keditfiletype4");
+     KRun::runCommand( keditfiletype
+ #ifndef Q_OS_WIN
+                       + " --parent " + QString::number( (ulong)q->topLevelWidget()->winId())

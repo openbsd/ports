@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2013/12/09 16:53:18 zhuk Exp $
+# $OpenBSD: Makefile,v 1.10 2014/01/10 08:12:11 zhuk Exp $
 
 COMMENT =	KDE workspace
 DISTNAME =	kde-workspace-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 # TODO:
 # Port ksysguard to OpenBSD (sensors framework, lsof(1) call replace and others).
@@ -23,9 +23,11 @@ SHARED_LIBS +=	kickoff				51.0
 SHARED_LIBS +=	kscreensaver			51.0 # 5.0
 SHARED_LIBS +=	ksgrd				51.0 # 4.7
 SHARED_LIBS +=	ksignalplotter			51.0 # 4.7
-SHARED_LIBS +=	kwineffects			51.0 # 1.0
-SHARED_LIBS +=	kwinnvidiahack			1.0 # 4.7
-SHARED_LIBS +=  kwinglutils			51.0 # 1.0
+#SHARED_LIBS +=	kwineffects			51.0 # 1.0
+SHARED_LIBS +=	kwin4effects			 0.0 # 1.0
+#SHARED_LIBS +=	kwinnvidiahack			 1.0 # 4.7
+#SHARED_LIBS +=  kwinglutils			51.0 # 1.0
+SHARED_LIBS +=  kwin4glutils			 0.0 # 1.0
 SHARED_LIBS +=	kworkspace			51.0 # 4.7
 SHARED_LIBS +=	lsofui				51.0 # 4.7
 SHARED_LIBS +=	oxygenstyle			51.0 # 4.7
@@ -39,8 +41,8 @@ SHARED_LIBS +=	powerdevilcore			51.0 # 0.1
 SHARED_LIBS +=	powerdevilui			51.0
 SHARED_LIBS +=	processcore			51.0 # 4.7
 SHARED_LIBS +=	processui			51.0 # 4.7
-SHARED_LIBS +=	solidcontrol			1.0 # 4.7
-SHARED_LIBS +=	solidcontrolifaces		1.0 # 4.7
+#SHARED_LIBS +=	solidcontrol			1.0 # 4.7
+#SHARED_LIBS +=	solidcontrolifaces		1.0 # 4.7
 SHARED_LIBS +=	systemsettingsview		51.0
 SHARED_LIBS +=	taskmanager			51.0 # 4.7
 SHARED_LIBS +=	weather_ion			51.0 # 6.0
@@ -117,6 +119,8 @@ CONFIGURE_ARGS =	-DWITH_OpenGLES:Bool=False \
 			-DWITH_Sensors:Bool=False \
 			-DWITH_UDev:Bool=False \
 			-DWITH_Wayland:Bool=False
+
+CONFIGURE_ARGS +=	-DKWIN_NAME:String=kwin4
 
 MODKDE4_SYSCONF_FILES =	dbus-1		share/examples \
 			ksysguarddrc	share/examples/kde

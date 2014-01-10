@@ -1,0 +1,14 @@
+$OpenBSD: patch-kstart_CMakeLists_txt,v 1.1 2014/01/10 08:12:11 zhuk Exp $
+Deconflict with kdebase-3.x.
+--- kstart/CMakeLists.txt.orig	Fri Dec 27 21:21:30 2013
++++ kstart/CMakeLists.txt	Fri Dec 27 21:21:53 2013
+@@ -4,6 +4,9 @@ set(kstart_SRCS kstart.cpp)
+ 
+ kde4_add_executable(kstart ${kstart_SRCS})
+ 
++set_target_properties(kstart PROPERTIES
++	OUTPUT_NAME kstart4)
++
+ target_link_libraries(kstart ${KDE4_KDEUI_LIBS} ${X11_X11_LIB})
+ 
+ install(TARGETS kstart ${INSTALL_TARGETS_DEFAULT_ARGS})

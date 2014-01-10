@@ -1,0 +1,49 @@
+$OpenBSD: patch-doc_khelpcenter_index_docbook,v 1.1 2014/01/10 08:12:11 zhuk Exp $
+Deconflict with kdebase-3.x.
+--- doc/khelpcenter/index.docbook.orig	Sat Dec 28 20:37:08 2013
++++ doc/khelpcenter/index.docbook	Sat Dec 28 20:37:28 2013
+@@ -134,7 +134,7 @@ also. You can use them as follows:
+ <term>An application help file</term>
+ <listitem>
+ <para>
+-<command>khelpcenter</command> 
++<command>khelpcenter4</command> 
+ <option>help:/<replaceable>kwrite</replaceable></option>
+ </para>
+ <para>
+@@ -146,7 +146,7 @@ Opens the &kwrite; help file, at the contents page.
+ <varlistentry>
+ <term>A local &URL;</term>
+ <listitem><para>
+-<command>khelpcenter</command>
++<command>khelpcenter4</command>
+ <option>file:/<replaceable>usr/local/src/qt/html/index.html</replaceable></option>
+ </para>
+ </listitem>
+@@ -156,7 +156,7 @@ Opens the &kwrite; help file, at the contents page.
+ <term>A Man page</term>
+ <listitem>
+ <para>
+-<command>khelpcenter</command>
++<command>khelpcenter4</command>
+ <option>man:/<replaceable>strcpy</replaceable></option>
+ </para>
+ </listitem>
+@@ -166,7 +166,7 @@ Opens the &kwrite; help file, at the contents page.
+ <term>An Info page</term>
+ <listitem>
+ <para>
+-<command>khelpcenter</command> 
++<command>khelpcenter4</command> 
+ <option>info:/<replaceable>gcc</replaceable></option>
+ </para>
+ </listitem>
+@@ -174,7 +174,7 @@ Opens the &kwrite; help file, at the contents page.
+ </variablelist>
+ 
+ <para>
+-Invoking <command>khelpcenter</command> with no parameters opens the
++Invoking <command>khelpcenter4</command> with no parameters opens the
+ default start page.
+ </para>
+ </listitem>

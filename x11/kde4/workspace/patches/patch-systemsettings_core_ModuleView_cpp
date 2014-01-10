@@ -1,0 +1,13 @@
+$OpenBSD: patch-systemsettings_core_ModuleView_cpp,v 1.1 2014/01/10 08:12:11 zhuk Exp $
+Deconflict kde-runtime with kdebase-3.x.
+--- systemsettings/core/ModuleView.cpp.orig	Sat Dec 28 20:57:06 2013
++++ systemsettings/core/ModuleView.cpp	Sat Dec 28 20:57:12 2013
+@@ -318,7 +318,7 @@ void ModuleView::moduleHelp()
+         return;
+     }
+     KUrl url( KUrl("help:/"), docPath );
+-    QProcess::startDetached("khelpcenter", QStringList() << url.url());
++    QProcess::startDetached("khelpcenter4", QStringList() << url.url());
+ }
+ 
+ void ModuleView::activeModuleChanged(KPageWidgetItem * current, KPageWidgetItem * previous)

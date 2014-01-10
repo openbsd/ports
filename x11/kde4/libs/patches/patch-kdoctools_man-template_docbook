@@ -1,0 +1,13 @@
+$OpenBSD: patch-kdoctools_man-template_docbook,v 1.1 2014/01/10 08:12:11 zhuk Exp $
+Deconflict kde-runtime with kdebase-3.x.
+--- kdoctools/man-template.docbook.orig	Sat Dec 28 20:57:25 2013
++++ kdoctools/man-template.docbook	Sat Dec 28 20:57:35 2013
+@@ -76,7 +76,7 @@ to remove them, probably in a variablelist.--></para>
+ <para>More detailed user documentation is available from <ulink
+ url="help:/ --commandname-- ">help:/<!--command--></ulink>
+ (either enter this &URL; into &konqueror;, or run
+-<userinput><command>khelpcenter</command>
++<userinput><command>khelpcenter4</command>
+ <parameter>help:/<!--command--></parameter></userinput>).</para>
+ 
+ <para>There is also further information available at <!--link to

@@ -1,0 +1,13 @@
+$OpenBSD: patch-kio_kfile_kpropertiesdialog_cpp,v 1.1 2014/01/10 08:12:11 zhuk Exp $
+Deconflict kde-runtime with kdebase-3.x.
+--- kio/kfile/kpropertiesdialog.cpp.orig	Fri Dec 27 14:38:53 2013
++++ kio/kfile/kpropertiesdialog.cpp	Fri Dec 27 14:39:37 2013
+@@ -1149,7 +1149,7 @@ void KFilePropsPlugin::slotEditFileType()
+     }  else {
+         mime = d->mimeType;
+     }
+-    QString keditfiletype = QString::fromLatin1("keditfiletype");
++    QString keditfiletype = QString::fromLatin1("keditfiletype4");
+     KRun::runCommand( keditfiletype
+ #ifdef Q_WS_X11
+                       + " --parent " + QString::number( (ulong)properties->window()->winId())

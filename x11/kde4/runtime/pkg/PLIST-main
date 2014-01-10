@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2013/12/08 19:13:34 zhuk Exp $
-@conflict kdebase-<4
-@conflict kdesamba-<4
+@comment $OpenBSD: PLIST-main,v 1.3 2014/01/10 08:12:11 zhuk Exp $
 @pkgpath x11/kde4/runtime
 @group wheel
 @bin bin/kcmshell4
@@ -9,11 +7,11 @@
 @bin bin/kde-open
 bin/kde4
 @bin bin/kde4-menu
-@bin bin/kdebugdialog
-@bin bin/keditfiletype
+@bin bin/kdebugdialog4
+@bin bin/keditfiletype4
 @bin bin/kfile4
 @bin bin/kglobalaccel
-@bin bin/khelpcenter
+@bin bin/khelpcenter4
 @bin bin/khotnewstuff-upload
 @bin bin/khotnewstuff4
 @bin bin/kiconfinder
@@ -22,10 +20,10 @@ bin/kde4
 @bin bin/knotify4
 @bin bin/kquitapp
 @bin bin/kreadconfig
-@bin bin/kstart
+@bin bin/kstart4
 @bin bin/ksvgtopng4
 @bin bin/ktraderclient
-@bin bin/ktrash
+@bin bin/ktrash4
 @bin bin/kuiserver
 @bin bin/kwalletd
 @bin bin/kwriteconfig
@@ -583,46 +581,6 @@ share/dbus-1/interfaces/org.kde.network.kioslavenotifier.xml
 share/dbus-1/services/org.kde.knotify.service
 share/dbus-1/services/org.kde.kuiserver.service
 share/dbus-1/system-services/org.kde.kcontrol.kcmremotewidgets.service
-share/desktop-directories/
-share/desktop-directories/kde-development-translation.directory
-share/desktop-directories/kde-development-webdevelopment.directory
-share/desktop-directories/kde-development.directory
-share/desktop-directories/kde-editors.directory
-share/desktop-directories/kde-edu-languages.directory
-share/desktop-directories/kde-edu-mathematics.directory
-share/desktop-directories/kde-edu-miscellaneous.directory
-share/desktop-directories/kde-edu-science.directory
-share/desktop-directories/kde-edu-tools.directory
-share/desktop-directories/kde-education.directory
-share/desktop-directories/kde-games-arcade.directory
-share/desktop-directories/kde-games-board.directory
-share/desktop-directories/kde-games-card.directory
-share/desktop-directories/kde-games-kids.directory
-share/desktop-directories/kde-games-logic.directory
-share/desktop-directories/kde-games-roguelikes.directory
-share/desktop-directories/kde-games-strategy.directory
-share/desktop-directories/kde-games.directory
-share/desktop-directories/kde-graphics.directory
-share/desktop-directories/kde-information.directory
-share/desktop-directories/kde-internet-terminal.directory
-share/desktop-directories/kde-internet.directory
-share/desktop-directories/kde-main.directory
-share/desktop-directories/kde-more.directory
-share/desktop-directories/kde-multimedia.directory
-share/desktop-directories/kde-office.directory
-share/desktop-directories/kde-science.directory
-share/desktop-directories/kde-settingsmenu.directory
-share/desktop-directories/kde-system-terminal.directory
-share/desktop-directories/kde-system.directory
-share/desktop-directories/kde-toys.directory
-share/desktop-directories/kde-unknown.directory
-share/desktop-directories/kde-utilities-accessibility.directory
-share/desktop-directories/kde-utilities-desktop.directory
-share/desktop-directories/kde-utilities-file.directory
-share/desktop-directories/kde-utilities-peripherals.directory
-share/desktop-directories/kde-utilities-pim.directory
-share/desktop-directories/kde-utilities-xutils.directory
-share/desktop-directories/kde-utilities.directory
 share/doc/HTML/en/fundamentals/
 share/doc/HTML/en/fundamentals/colors.png
 share/doc/HTML/en/fundamentals/common
@@ -991,14 +949,7 @@ share/examples/xdg/menus/kde-information.menu
 @sample ${SYSCONFDIR}/xdg/menus/kde-information.menu
 @group wheel
 share/icons/default.kde4
-share/icons/hicolor/128x128/apps/knetattach.png
-share/icons/hicolor/16x16/apps/knetattach.png
-share/icons/hicolor/22x22/apps/knetattach.png
-share/icons/hicolor/32x32/apps/knetattach.png
-share/icons/hicolor/48x48/apps/knetattach.png
-share/icons/hicolor/64x64/apps/knetattach.png
 @comment share/icons/hicolor/index.theme
-share/icons/hicolor/scalable/apps/knetattach.svgz
 share/kde4/services/about.protocol
 share/kde4/services/applications.protocol
 share/kde4/services/ar.protocol
@@ -1482,5 +1433,3 @@ share/sounds/KDE-Window-Shade-Up.ogg
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

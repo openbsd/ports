@@ -1,0 +1,13 @@
+$OpenBSD: patch-doc_kdesu_man-kdesu_1_docbook,v 1.1 2014/01/10 08:12:11 zhuk Exp $
+Deconflict with kdebase-3.x.
+--- doc/kdesu/man-kdesu.1.docbook.orig	Sat Dec 28 20:36:17 2013
++++ doc/kdesu/man-kdesu.1.docbook	Sat Dec 28 20:36:26 2013
+@@ -168,7 +168,7 @@ password.</para>
+ <para>More detailed user documentation is available from <ulink
+ url="help:/kdesu">help:/kdesu</ulink>
+ (either enter this <acronym>URL</acronym> into &konqueror;, or run
+-<userinput><command>khelpcenter</command>
++<userinput><command>khelpcenter4</command>
+ <parameter>help:/kdesu</parameter></userinput>).</para>
+ 
+ </refsect1>

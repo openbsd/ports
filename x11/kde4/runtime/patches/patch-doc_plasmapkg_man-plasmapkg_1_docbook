@@ -1,0 +1,13 @@
+$OpenBSD: patch-doc_plasmapkg_man-plasmapkg_1_docbook,v 1.1 2014/01/10 08:12:11 zhuk Exp $
+Deconflict with kdebase-3.x.
+--- doc/plasmapkg/man-plasmapkg.1.docbook.orig	Sat Dec 28 20:37:58 2013
++++ doc/plasmapkg/man-plasmapkg.1.docbook	Sat Dec 28 20:38:07 2013
+@@ -93,7 +93,7 @@ directories for this &kde; session will be searched in
+ <para>More detailed user documentation is available from <ulink
+ url="help:/plasma-desktop">help:/plasma-desktop</ulink>
+ (either enter this <acronym>URL</acronym> into &konqueror;, or run
+-<userinput><command>khelpcenter</command>
++<userinput><command>khelpcenter4</command>
+ <parameter>help:/plasma-desktop</parameter></userinput>).</para>
+ 
+ </refsect1>

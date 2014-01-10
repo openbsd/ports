@@ -1,0 +1,13 @@
+$OpenBSD: patch-man-plasmoidviewer_1_docbook,v 1.1 2014/01/10 08:12:11 zhuk Exp $
+Deconflict with kdebase-3.x.
+--- man-plasmoidviewer.1.docbook.orig	Sat Dec 28 20:55:57 2013
++++ man-plasmoidviewer.1.docbook	Sat Dec 28 20:56:06 2013
+@@ -130,7 +130,7 @@ load a package from the current directory.</para></lis
+ <para>More detailed user documentation is available from <ulink
+ url="help:/plasma-desktop">help:/plasma-desktop</ulink>
+ (either enter this <acronym>URL</acronym> into &konqueror;, or run
+-<userinput><command>khelpcenter</command>
++<userinput><command>khelpcenter4</command>
+ <parameter>help:/plasma-desktop</parameter></userinput>).</para>
+ 
+ </refsect1>

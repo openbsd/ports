@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/12/28 21:33:26 zhuk Exp $
+# $OpenBSD: Makefile,v 1.11 2014/01/10 08:12:11 zhuk Exp $
 
 COMMENT-main =		KDE core run-time components
 COMMENT-locale =	KDE locale data files
@@ -6,7 +6,7 @@ DISTNAME =		kde-runtime-${MODKDE4_VERSION}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-locale =	kde4-locale-${MODKDE4_VERSION}
 PKG_ARCH-locale =	*
-REVISION-main =		1
+REVISION-main =		2
 
 DPB_PROPERTIES =	parallel
 
@@ -53,7 +53,7 @@ RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			archivers/xz \
 			devel/desktop-file-utils \
 			misc/shared-mime-info \
-			x11/gtk+2,-guic \
+			x11/kde-shared-data \
 			${BUILD_PKGPATH},-locale>=${MODKDE4_DEP_VERSION}
 
 # QCA2 is useless without this
@@ -83,5 +83,9 @@ MODKDE4_SYSCONF_FILES =	dbus-1	share/examples \
 
 post-extract:
 	cp ${FILESDIR}/*.cmake ${WRKSRC}/cmake/modules/
+
+post-install:
+	rm -R ${PREFIX}/share/desktop-directories
+	find ${PREFIX}/share/icons -name 'knetattach*' | xargs rm
 
 .include <bsd.port.mk>

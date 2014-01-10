@@ -1,0 +1,13 @@
+$OpenBSD: patch-kinfocenter_infocenter_cpp,v 1.1 2014/01/10 08:12:11 zhuk Exp $
+Deconflict kde-runtime with kdebase-3.x.
+--- kinfocenter/infocenter.cpp.orig	Sat Dec 28 20:56:33 2013
++++ kinfocenter/infocenter.cpp	Sat Dec 28 20:56:48 2013
+@@ -238,7 +238,7 @@ void KInfoCenter::helpClickedSlot()
+ 	QString docPath = m_contain->helpPath();
+ 
+ 	KUrl url( KUrl("help:/"), docPath );
+-	QProcess::startDetached("khelpcenter", QStringList() << url.url());
++	QProcess::startDetached("khelpcenter4", QStringList() << url.url());
+ }
+ 
+ void KInfoCenter::exportClickedSlot()

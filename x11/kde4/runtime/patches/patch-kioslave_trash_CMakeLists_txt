@@ -1,0 +1,14 @@
+$OpenBSD: patch-kioslave_trash_CMakeLists_txt,v 1.1 2014/01/10 08:12:11 zhuk Exp $
+Deconflict with kdebase-3.x, see also patches in kde-workspace.
+--- kioslave/trash/CMakeLists.txt.orig	Fri Dec 27 21:26:27 2013
++++ kioslave/trash/CMakeLists.txt	Fri Dec 27 21:28:12 2013
+@@ -45,6 +45,9 @@ set(ktrash_SRCS ktrash.cpp )
+ 
+ kde4_add_executable(ktrash NOGUI ${ktrash_SRCS})
+ 
++set_target_properties(ktrash PROPERTIES
++	OUTPUT_NAME ktrash4)
++
+ target_link_libraries(ktrash  ${KDE4_KIO_LIBS} )
+ 
+ install(TARGETS ktrash ${INSTALL_TARGETS_DEFAULT_ARGS})
