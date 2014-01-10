@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 11:20:28 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2014/01/10 20:50:39 sthen Exp $
 
 COMMENT=	portable Haskell compiler
 
 # not for 64 bits, broken on ppc
 NOT_FOR_ARCHS=	${LP64_ARCHS} powerpc
-BROKEN-hppa= 	Segfault during build since the PIE switch
+BROKEN-hppa=	Segfault during build since the PIE switch
+BROKEN=		http://marc.info/?l=openbsd-ports&m=138867760408976&w=2
 
 V=		1.22
 DISTNAME=	nhc98-$V
