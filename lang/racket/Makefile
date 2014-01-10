@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/01/07 19:01:36 juanfra Exp $
+# $OpenBSD: Makefile,v 1.7 2014/01/10 11:26:02 sthen Exp $
 
 SHARED_ONLY =		Yes
 # Racket only supports i386 and amd64 on OpenBSD
@@ -44,7 +44,8 @@ MODULES +=		converters/libiconv \
 			lang/clang
 
 # udp.rktl test crashes with system gcc
-MODCLANG_ARCHS =	*
+# however build fails with clang 3.3 on i386
+MODCLANG_ARCHS =	amd64
 MODCLANG_LANGS =	c c++
 
 # http://docs.racket-lang.org/draw/libs.html
