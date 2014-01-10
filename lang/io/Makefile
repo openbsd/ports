@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/01/05 19:51:45 nigel Exp $
+# $OpenBSD: Makefile,v 1.14 2014/01/10 14:47:10 dcoppa Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS =i386 amd64
@@ -77,11 +77,18 @@ pre-configure:
 	perl -pi -e 's/\#include \<event\.h\>/#include <event.h>\n#include <event_struct.h>\n#include <buffer_compat.h>/' \
 		${WRKSRC}/addons/Socket/source/Io*.h
 	${SUBST_CMD} ${WRKSRC}/addons/Clutter/CMakeLists.txt
+# Remove obsolete local FindFreetype.cmake module which is not
+# compatible with Freetype 2.5
+	rm ${WRKSRC}/modules/FindFreetype.cmake
 
 pre-install:
 	cp -R ${WRKBUILD}/_build/headers ${PREFIX}/include/io
 	find ${WRKDIST} -name '*.orig' -or -name '*.beforesubst' -print0 | \
 		xargs -r0 rm
+
+post-install:
+	rm ${WRKINST}/${LOCALBASE}/lib/io/addons/*/*.orig
+	rm ${WRKINST}/${LOCALBASE}/lib/io/addons/*/source/*.orig
 
 do-test:
 	cd ${WRKBUILD} && _build/binaries/io \

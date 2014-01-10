@@ -1,0 +1,17 @@
+$OpenBSD: patch-cmake_modules_FindFreetype_cmake,v 1.1 2014/01/10 14:47:10 dcoppa Exp $
+
+Fix build with newer FreeType
+
+--- cmake/modules/FindFreetype.cmake.orig	Fri Jan 10 11:54:46 2014
++++ cmake/modules/FindFreetype.cmake	Fri Jan 10 11:55:26 2014
+@@ -12,7 +12,9 @@ libfind_pkg_check_modules(Freetype_PKGCONF freetype2)
+ 
+ # Include dir
+ find_path(Freetype_INCLUDE_DIR
+-  NAMES freetype/freetype.h
++  NAMES
++    freetype/freetype.h
++    freetype.h
+   PATHS ${Freetype_PKGCONF_INCLUDE_DIRS}
+   PATH_SUFFIXES freetype2
+ )

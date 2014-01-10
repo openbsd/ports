@@ -1,0 +1,15 @@
+$OpenBSD: patch-addons_Font_source_IoFont_c,v 1.1 2014/01/10 14:47:10 dcoppa Exp $
+
+Fix build with newer FreeType
+
+--- addons/Font/source/IoFont.c.orig	Fri Jan 10 10:47:25 2014
++++ addons/Font/source/IoFont.c	Fri Jan 10 10:47:37 2014
+@@ -29,7 +29,7 @@ Smaller fonts (those having a point size around 30 or 
+ 
+ 
+ #include "FreeTypeErrorCodes.h"
+-#include <freetype/ftglyph.h>
++#include FT_GLYPH_H
+ #include <math.h>
+ 
+ #define DATA(self) ((IoFontData *)IoObject_dataPointer(self))

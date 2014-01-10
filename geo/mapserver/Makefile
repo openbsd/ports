@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/12/30 18:06:43 landry Exp $
+# $OpenBSD: Makefile,v 1.32 2014/01/10 14:47:09 dcoppa Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl
 SHARED_ONLY=	Yes
@@ -63,7 +63,7 @@ PREFIX-main=	${VARBASE}/www
 SUBST_VARS+=	PREFIX-main
 
 post-extract:
-	rm -f ${WRKSRC}/cmake/Find{PostgreSQL,ICONV}.cmake
+	rm -f ${WRKSRC}/cmake/Find{Freetype,PostgreSQL,ICONV}.cmake
 
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}/${PREFIX-main}/cgi-bin

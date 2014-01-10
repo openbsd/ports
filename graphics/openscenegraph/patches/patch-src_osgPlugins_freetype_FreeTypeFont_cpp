@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_osgPlugins_freetype_FreeTypeFont_cpp,v 1.1 2014/01/10 14:47:10 dcoppa Exp $
+
+Fix build with newer FreeType
+
+--- src/osgPlugins/freetype/FreeTypeFont.cpp.orig	Fri Jan 10 11:57:06 2014
++++ src/osgPlugins/freetype/FreeTypeFont.cpp	Fri Jan 10 11:58:30 2014
+@@ -14,8 +14,8 @@
+ #include "FreeTypeFont.h"
+ #include "FreeTypeLibrary.h"
+ 
+-#include <freetype/ftoutln.h>
+-#include <freetype/ftbbox.h>
++#include FT_OUTLINE_H
++#include FT_BBOX_H
+ 
+ #include <osg/Notify>
+ #include <osg/io_utils>

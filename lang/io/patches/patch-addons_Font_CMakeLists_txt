@@ -1,0 +1,14 @@
+$OpenBSD: patch-addons_Font_CMakeLists_txt,v 1.1 2014/01/10 14:47:10 dcoppa Exp $
+
+Add missing include directory for OpenGL
+
+--- addons/Font/CMakeLists.txt.orig	Fri Jan 10 10:45:04 2014
++++ addons/Font/CMakeLists.txt	Fri Jan 10 10:45:31 2014
+@@ -19,6 +19,7 @@ if(OPENGL_FOUND AND GLUT_FOUND AND FREETYPE_FOUND AND 
+ 
+ 	# Additional include directories
+ 	include_directories(
++		${OPENGL_INCLUDE_DIR}
+ 		${GLUT_INCLUDE_DIR}
+ 		${FREETYPE_INCLUDE_DIRS}
+ 	)

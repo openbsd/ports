@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/11/25 14:16:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2014/01/10 14:47:10 dcoppa Exp $
 
 BROKEN-mips64 =		missing atomic ops
 BROKEN-mips64el =	missing atomic ops
@@ -56,5 +56,10 @@ LIB_DEPENDS-samples =	${LIB_DEPENDS} \
 			x11/ogre,-main
 
 NO_TEST =		Yes
+
+pre-configure:
+# Remove obsolete local FindFreetype.cmake module which is not
+# compatible with Freetype 2.5
+	rm ${WRKSRC}/CMake/Packages/FindFreetype.cmake
 
 .include <bsd.port.mk>
