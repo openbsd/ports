@@ -1,14 +1,25 @@
-$OpenBSD: patch-common_mk,v 1.13 2012/09/21 17:16:14 dcoppa Exp $
---- common.mk.orig	Wed Sep 19 18:08:09 2012
-+++ common.mk	Fri Sep 21 15:20:57 2012
+$OpenBSD: patch-common_mk,v 1.14 2014/01/11 16:04:43 dcoppa Exp $
+--- common.mk.orig	Sun Dec 22 21:12:41 2013
++++ common.mk	Fri Jan 10 16:40:03 2014
 @@ -1,5 +1,5 @@
  UNAME=$(shell uname)
 -DEBUG=1
 +DEBUG=0
  COVERAGE=0
  INSTALL=install
- FLEX=flex
-@@ -161,20 +161,13 @@ I3_LDFLAGS += -Wl,-rpath,/usr/local/lib -Wl,-rpath,/us
+ ifndef PREFIX
+@@ -109,8 +109,8 @@ X11_CFLAGS := $(call cflags_for_lib, x11)
+ X11_LIBS   := $(call ldflags_for_lib, x11,X11)
+ 
+ # Xcursor
+-XCURSOR_CFLAGS := $(call cflags_for_lib, xcb-cursor)
+-XCURSOR_LIBS   := $(call ldflags_for_lib, xcb-cursor,xcb-cursor)
++XCURSOR_CFLAGS := $(call cflags_for_lib, xcursor)
++XCURSOR_LIBS   := $(call ldflags_for_lib, xcursor,Xcursor)
+ 
+ # yajl
+ YAJL_CFLAGS := $(call cflags_for_lib, yajl)
+@@ -159,20 +159,13 @@ I3_LDFLAGS += -Wl,-rpath,/usr/local/lib -Wl,-rpath,/us
  endif
  
  ifeq ($(UNAME),OpenBSD)

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.74 2013/11/22 19:02:50 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.75 2014/01/11 16:04:43 dcoppa Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
-DISTNAME =	i3-4.6
-REVISION =	5
+DISTNAME =	i3-4.7
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
@@ -16,9 +15,10 @@ PERMIT_PACKAGE_CDROM =   Yes
 
 WANTLIB =	X11 Xcursor c>=68.3 cairo ev fontconfig freetype \
 		glib-2.0 gobject-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre startup-notification-1 xcb \
-		xcb-atom xcb-aux xcb-event xcb-icccm xcb-keysyms \
-		xcb-property xcb-randr xcb-xinerama yajl z
+		pangoft2-1.0 pcre pthread startup-notification-1 \
+		xcb xcb-atom xcb-aux xcb-event xcb-icccm \
+		xcb-keysyms xcb-property xcb-randr xcb-xinerama \
+		yajl z
 
 MODULES =	devel/gettext
 
@@ -55,6 +55,7 @@ post-configure:
 		${WRKSRC}/i3-nagbar/main.c \
 		${WRKSRC}/i3.config \
 		${WRKSRC}/i3.config.keycodes \
+		${WRKSRC}/libi3/get_exe_path.c \
 		${WRKSRC}/src/commands.c \
 		${WRKSRC}/src/config.c
 

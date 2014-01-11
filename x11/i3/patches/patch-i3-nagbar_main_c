@@ -1,8 +1,38 @@
-$OpenBSD: patch-i3-nagbar_main_c,v 1.3 2013/08/13 10:01:54 dcoppa Exp $
---- i3-nagbar/main.c.orig	Wed Aug  7 20:50:24 2013
-+++ i3-nagbar/main.c	Mon Aug 12 15:58:31 2013
-@@ -169,7 +169,7 @@ static void handle_button_release(xcb_connection_t *co
-     symlink(get_exe_path(argv0), link_path);
+$OpenBSD: patch-i3-nagbar_main_c,v 1.4 2014/01/11 16:04:43 dcoppa Exp $
+
+commit 0883dfbe14628430caaeefdb00e282a008d30d76
+Author: Michael Stapelberg <michael@stapelberg.de>
+Date:   Tue Dec 24 10:35:56 2013 +0100
+
+only LOG() the DPI when it changes, DLOG() it otherwise
+
+This avoids flooding stdout every time some text (e.g. a window
+decoration) is drawn, yet leaves the message in place when it's actually
+relevant (upon DPI changes).
+
+--- i3-nagbar/main.c.orig	Sun Dec 22 21:12:41 2013
++++ i3-nagbar/main.c	Fri Jan 10 21:41:56 2014
+@@ -61,7 +61,7 @@ xcb_connection_t *conn;
+ xcb_screen_t *root_screen;
+ 
+ /*
+- * Having verboselog() and errorlog() is necessary when using libi3.
++ * Having verboselog(), errorlog() and debuglog() is necessary when using libi3.
+  *
+  */
+ void verboselog(char *fmt, ...) {
+@@ -80,6 +80,9 @@ void errorlog(char *fmt, ...) {
+     va_end(args);
+ }
+ 
++void debuglog(char *fmt, ...) {
++}
++
+ /*
+  * Starts the given application by passing it through a shell. We use double fork
+  * to avoid zombie processes. As the started application’s parent exits (immediately),
+@@ -164,7 +167,7 @@ static void handle_button_release(xcb_connection_t *co
+     symlink(exe_path, link_path);
  
      char *terminal_cmd;
 -    sasprintf(&terminal_cmd, "i3-sensible-terminal -e %s", link_path);

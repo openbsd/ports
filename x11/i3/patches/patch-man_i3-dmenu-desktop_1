@@ -1,7 +1,7 @@
-$OpenBSD: patch-man_i3-dmenu-desktop_1,v 1.1 2013/05/16 18:42:30 dcoppa Exp $
---- man/i3-dmenu-desktop.1.orig	Wed May 15 09:09:28 2013
-+++ man/i3-dmenu-desktop.1	Wed May 15 09:12:05 2013
-@@ -89,7 +89,7 @@ notifications.
+$OpenBSD: patch-man_i3-dmenu-desktop_1,v 1.2 2014/01/11 16:04:43 dcoppa Exp $
+--- man/i3-dmenu-desktop.1.orig	Sun Dec 22 21:12:52 2013
++++ man/i3-dmenu-desktop.1	Fri Jan 10 16:31:33 2014
+@@ -98,7 +98,7 @@ notifications.
  .PP
  The .desktop files are searched in \f(CW$XDG_DATA_HOME\fR/applications (by default
  \&\f(CW$HOME\fR/.local/share/applications) and in the \*(L"applications\*(R" subdirectory of each
@@ -10,9 +10,9 @@ $OpenBSD: patch-man_i3-dmenu-desktop_1,v 1.1 2013/05/16 18:42:30 dcoppa Exp $
  .PP
  Files with the same name in \f(CW$XDG_DATA_HOME\fR/applications take precedence over
  files in \f(CW$XDG_DATA_DIRS\fR, so that you can overwrite parts of the system-wide
-@@ -103,7 +103,7 @@ file respectively) by appending it to the name of the 
+@@ -112,7 +112,7 @@ file respectively) by appending it to the name of the 
  want to launch \*(L"\s-1GNU\s0 Emacs 24\*(R" with the patch /tmp/foobar.txt, you would type
- \&\*(L"emacs\*(R", press \s-1TAB\s0, type \*(L" /tmp/foobar.txt\*(R" and press \s-1ENTER\s0.
+ \&\*(L"emacs\*(R", press \s-1TAB,\s0 type \*(L" /tmp/foobar.txt\*(R" and press \s-1ENTER.\s0
  .PP
 -\&.desktop files with Terminal=true are started using \fIi3\-sensible\-terminal\fR\|(1).
 +\&.desktop files with Terminal=true are started using \fIxterm\fR\|(1).

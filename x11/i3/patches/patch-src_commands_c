@@ -1,14 +1,7 @@
-$OpenBSD: patch-src_commands_c,v 1.8 2013/08/13 10:01:56 dcoppa Exp $
-
-commit 69d7adcf499aa716586e4b920dfd60e10f9233b0
-Author: Franck Michea <franck.michea@gmail.com>
-Date:   Mon Jul 29 22:45:27 2013 +0200
-
-Add missing return after error reporting.
-
---- src/commands.c.orig	Wed Aug  7 20:50:24 2013
-+++ src/commands.c	Mon Aug 12 16:00:47 2013
-@@ -175,7 +175,7 @@ void cmd_MIGRATION_start_nagbar(void) {
+$OpenBSD: patch-src_commands_c,v 1.9 2014/01/11 16:04:43 dcoppa Exp $
+--- src/commands.c.orig	Sun Dec 22 21:12:41 2013
++++ src/commands.c	Fri Jan 10 16:31:33 2014
+@@ -194,7 +194,7 @@ void cmd_MIGRATION_start_nagbar(void) {
      /* child */
      if (migration_pid == 0) {
          char *pageraction;
@@ -17,11 +10,3 @@ Add missing return after error reporting.
          char *argv[] = {
              NULL, /* will be replaced by the executable path */
              "-t",
-@@ -1796,6 +1796,7 @@ void cmd_move_window_to_center(I3_CMD, char *method) {
-         ystr("error");
-         ystr("Cannot change position. The window/container is not floating.");
-         y(map_close);
-+        return;
-     }
- 
-     if (strcmp(method, "absolute") == 0) {

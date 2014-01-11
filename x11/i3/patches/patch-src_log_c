@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_log_c,v 1.6 2013/08/13 10:01:57 dcoppa Exp $
+$OpenBSD: patch-src_log_c,v 1.7 2014/01/11 16:04:43 dcoppa Exp $
 
-OpenBSD lacks pthread_condattr_setpshared()
+OpenBSD lacks pthread_condattr_setpshared() and posix_fallocate()
 
---- src/log.c.orig	Wed Aug  7 20:50:24 2013
-+++ src/log.c	Mon Aug 12 15:24:01 2013
+--- src/log.c.orig	Sun Dec 22 21:12:41 2013
++++ src/log.c	Fri Jan 10 16:48:15 2014
 @@ -20,7 +20,9 @@
  #include <sys/mman.h>
  #include <sys/stat.h>
@@ -14,7 +14,16 @@ OpenBSD lacks pthread_condattr_setpshared()
  #if defined(__APPLE__)
  #include <sys/types.h>
  #include <sys/sysctl.h>
-@@ -148,11 +150,13 @@ void open_logbuffer(void) {
+@@ -129,7 +131,7 @@ void open_logbuffer(void) {
+             return;
+         }
+ 
+-#if defined(__APPLE__)
++#if defined(__OpenBSD__) || defined(__APPLE__)
+         if (ftruncate(logbuffer_shm, logbuffer_size) == -1) {
+             fprintf(stderr, "Could not ftruncate SHM segment for the i3 log: %s\n", strerror(errno));
+ #else
+@@ -154,11 +156,13 @@ void open_logbuffer(void) {
  
          header = (i3_shmlog_header*)logbuffer;
  
@@ -28,7 +37,7 @@ OpenBSD lacks pthread_condattr_setpshared()
  
          logwalk = logbuffer + sizeof(i3_shmlog_header);
          loglastwrap = logbuffer + logbuffer_size;
-@@ -258,8 +262,10 @@ static void vlog(const bool print, const char *fmt, va
+@@ -264,8 +268,10 @@ static void vlog(const bool print, const char *fmt, va
  
          store_log_markers();
  

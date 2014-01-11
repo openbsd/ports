@@ -1,12 +1,19 @@
-$OpenBSD: patch-man_i3-dump-log_1,v 1.1 2013/06/02 11:24:06 dcoppa Exp $
---- man/i3-dump-log.1.orig	Thu May 23 13:55:30 2013
-+++ man/i3-dump-log.1	Thu May 23 13:56:12 2013
-@@ -31,7 +31,7 @@
+$OpenBSD: patch-man_i3-dump-log_1,v 1.2 2014/01/11 16:04:43 dcoppa Exp $
+--- man/i3-dump-log.1.orig	Sun Dec 22 21:12:52 2013
++++ man/i3-dump-log.1	Fri Jan 10 17:03:23 2014
+@@ -31,14 +31,12 @@
  i3-dump-log \- dumps the i3 SHM log
  .SH "SYNOPSIS"
  .sp
--i3\-dump\-log [\-s <socketpath>]
+-i3\-dump\-log [\-s <socketpath>] [\-f]
 +i3\-dump\-log [\-hVv]
  .SH "DESCRIPTION"
  .sp
  Debug versions of i3 automatically use 1% of your RAM (but 25 MiB max) to store full debug log output\&. This is extremely helpful for bugreports and figuring out what is going on, without permanently logging to a file\&.
+ .sp
+ With i3\-dump\-log, you can dump the SHM log to stdout\&.
+-.sp
+-The \-f flag works like tail \-f, i\&.e\&. the process does not terminate after dumping the log, but prints new lines as they appear\&.
+ .SH "EXAMPLE"
+ .sp
+ i3\-dump\-log | gzip \-9 > /tmp/i3\-log\&.gz
