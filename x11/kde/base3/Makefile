@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.126 2014/01/11 12:15:24 zhuk Exp $
+# $OpenBSD: Makefile,v 1.127 2014/01/11 13:07:59 zhuk Exp $
 
 COMMENT-main = 		K Desktop Environment, basic applications
 COMMENT-samba =		K Desktop Environment, samba support
@@ -13,7 +13,7 @@ PKGNAME-en_US =		kde3-locale-en_US-${VERSION}
 PKGNAME-locale =	kde3-locale-${VERSION}
 PKG_ARCH-en_US =	*
 PKG_ARCH-locale =	*
-REVISION-main =		33
+REVISION-main =		34
 REVISION-samba =	12
 REVISION-en_US =	0
 REVISION-locale =	0
@@ -88,6 +88,7 @@ WANTLIB-en_US =
 WANTLIB-locale =
 
 SEPARATE_BUILD =	flavored
+SUBST_VARS =		PREFIX
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/kdesurc ${PREFIX}/${MODKDE_CONFIG_SUBDIR}

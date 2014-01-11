@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.1 2014/01/11 12:15:24 zhuk Exp $
+$OpenBSD: README-main,v 1.2 2014/01/11 13:07:59 zhuk Exp $
 
 +-----------------------------------------------------------------------
 | Running KDE3 desktop on OpenBSD
@@ -8,7 +8,7 @@ If you don't run KDM, you can start KDE from your .xinitrc with
 this kind of sequence:
 
   kdmdesktop      # to get a nice display
-  KDEDIR=/usr/local exec ssh-agent /usr/local/bin/startkde
+  KDEDIR=${PREFIX} exec ssh-agent ${PREFIX}/bin/startkde
 
 You don't have to run the KDE desktop to just use KDE applications like
 Konqueror.
