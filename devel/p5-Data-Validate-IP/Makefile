@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/07/14 23:06:47 bluhm Exp $
+# $OpenBSD: Makefile,v 1.3 2014/01/11 14:05:19 bluhm Exp $
 
 COMMENT =		ipv4 and ipv6 validation methods
 
-DISTNAME =		Data-Validate-IP-0.20
+DISTNAME =		Data-Validate-IP-0.22
 
 CATEGORIES =		devel
 
