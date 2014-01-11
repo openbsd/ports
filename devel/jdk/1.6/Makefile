@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.52 2014/01/09 09:59:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2014/01/11 22:37:44 sthen Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	amd64 i386
 
 BROKEN-i386=	guarantee(get_thread() == thread) failed: must be the same thread, quickly
 # XXX if fixed, re-add i386 to ONLY_FOR_ARCHS-java in databases/db/Makefile.inc
+# XXX and remove the block that changes editors/libreoffice default flavour
 
 COMMENT-main=	Java2(TM) SE Dev Kit v${VERSION}
 COMMENT-jre=	Java2(TM) SE Runtime Environment v${VERSION}
