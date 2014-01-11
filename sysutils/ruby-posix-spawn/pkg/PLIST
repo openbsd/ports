@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/01/18 18:06:27 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/01/11 22:51:03 jeremy Exp $
 ${GEM_BIN}/posix-spawn-benchmark${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -11,12 +11,6 @@ ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/TODO
 ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/posix-spawn-benchmark
-${GEM_LIB}/gems/${DISTNAME}/ext/
-${GEM_LIB}/gems/${DISTNAME}/ext/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/posix-spawn.c
-${GEM_LIB}/gems/${DISTNAME}/ext/posix-spawn.o
-${GEM_LIB}/gems/${DISTNAME}/ext/posix_spawn_ext.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/posix/
 ${GEM_LIB}/gems/${DISTNAME}/lib/posix-spawn.rb

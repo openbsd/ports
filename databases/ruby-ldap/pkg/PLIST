@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/05/04 20:17:51 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/01/11 22:51:02 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
@@ -9,15 +9,10 @@ ${GEM_LIB}/gems/${DISTNAME}/NOTES
 ${GEM_LIB}/gems/${DISTNAME}/README
 ${GEM_LIB}/gems/${DISTNAME}/TODO
 ${GEM_LIB}/gems/${DISTNAME}/clientauth.c
-${GEM_LIB}/gems/${DISTNAME}/clientauth.o
 ${GEM_LIB}/gems/${DISTNAME}/conn.c
-${GEM_LIB}/gems/${DISTNAME}/conn.o
 ${GEM_LIB}/gems/${DISTNAME}/entry.c
-${GEM_LIB}/gems/${DISTNAME}/entry.o
 ${GEM_LIB}/gems/${DISTNAME}/extconf.rb
 ${GEM_LIB}/gems/${DISTNAME}/ldap.c
-${GEM_LIB}/gems/${DISTNAME}/ldap.o
-${GEM_LIB}/gems/${DISTNAME}/ldap.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ldap/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ldap.so
@@ -25,15 +20,10 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/ldap/control.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ldap/ldif.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ldap/schema.rb
 ${GEM_LIB}/gems/${DISTNAME}/misc.c
-${GEM_LIB}/gems/${DISTNAME}/misc.o
-${GEM_LIB}/gems/${DISTNAME}/mkmf.log
 ${GEM_LIB}/gems/${DISTNAME}/mod.c
-${GEM_LIB}/gems/${DISTNAME}/mod.o
 ${GEM_LIB}/gems/${DISTNAME}/rbldap.h
 ${GEM_LIB}/gems/${DISTNAME}/saslconn.c
-${GEM_LIB}/gems/${DISTNAME}/saslconn.o
 ${GEM_LIB}/gems/${DISTNAME}/sslconn.c
-${GEM_LIB}/gems/${DISTNAME}/sslconn.o
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/add.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/add2.rb

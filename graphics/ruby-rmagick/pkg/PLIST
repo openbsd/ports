@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/11/09 00:17:38 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/01/11 22:51:02 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/ChangeLog
@@ -325,39 +325,6 @@ ${GEM_LIB}/gems/${DISTNAME}/examples/rotating_text.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/spinner.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/thumbnail.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/vignette.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/MANIFEST
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/RMagick2.so
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/extconf.h
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/mkmf.log
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmagick.c
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmagick.h
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmagick.o
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmdraw.c
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmdraw.o
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmenum.c
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmenum.o
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmfill.c
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmfill.o
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmilist.c
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmilist.o
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmimage.c
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmimage.o
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rminfo.c
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rminfo.o
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmmain.c
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmmain.o
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmmontage.c
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmmontage.o
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmpixel.c
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmpixel.o
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmstruct.c
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmstruct.o
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmutil.c
-${GEM_LIB}/gems/${DISTNAME}/ext/RMagick/rmutil.o
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/RMagick.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/RMagick2.so

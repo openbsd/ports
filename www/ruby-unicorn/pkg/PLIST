@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/11/14 17:04:37 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/01/11 22:51:03 jeremy Exp $
 ${GEM_BIN}/unicorn${GEM_BIN_SUFFIX}
 ${GEM_BIN}/unicorn_rails${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -50,23 +50,6 @@ ${GEM_LIB}/gems/${DISTNAME}/examples/logrotate.conf
 ${GEM_LIB}/gems/${DISTNAME}/examples/nginx.conf
 ${GEM_LIB}/gems/${DISTNAME}/examples/unicorn.conf.minimal.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/unicorn.conf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/
-${GEM_LIB}/gems/${DISTNAME}/ext/unicorn_http/
-${GEM_LIB}/gems/${DISTNAME}/ext/unicorn_http/CFLAGS
-${GEM_LIB}/gems/${DISTNAME}/ext/unicorn_http/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/unicorn_http/c_util.h
-${GEM_LIB}/gems/${DISTNAME}/ext/unicorn_http/common_field_optimization.h
-${GEM_LIB}/gems/${DISTNAME}/ext/unicorn_http/ext_help.h
-${GEM_LIB}/gems/${DISTNAME}/ext/unicorn_http/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/unicorn_http/global_variables.h
-${GEM_LIB}/gems/${DISTNAME}/ext/unicorn_http/httpdate.c
-${GEM_LIB}/gems/${DISTNAME}/ext/unicorn_http/httpdate.o
-${GEM_LIB}/gems/${DISTNAME}/ext/unicorn_http/mkmf.log
-${GEM_LIB}/gems/${DISTNAME}/ext/unicorn_http/unicorn_http.c
-${GEM_LIB}/gems/${DISTNAME}/ext/unicorn_http/unicorn_http.o
-${GEM_LIB}/gems/${DISTNAME}/ext/unicorn_http/unicorn_http.rl
-${GEM_LIB}/gems/${DISTNAME}/ext/unicorn_http/unicorn_http.so
-${GEM_LIB}/gems/${DISTNAME}/ext/unicorn_http/unicorn_http_common.rl
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn.rb

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/11/18 00:03:15 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/01/11 22:51:02 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.document
@@ -18,37 +18,6 @@ ${GEM_LIB}/gems/${DISTNAME}/NEWS
 ${GEM_LIB}/gems/${DISTNAME}/README
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/TODO
-${GEM_LIB}/gems/${DISTNAME}/ext/
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/accept.c
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/accept.o
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/ancient_ruby.h
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/autopush.c
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/autopush.o
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/blocking_io_region.h
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/broken_system_compat.h
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/connect.c
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/connect.o
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/kgio.h
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/kgio_ext.c
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/kgio_ext.o
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/kgio_ext.so
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/missing_accept4.h
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/mkmf.log
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/my_fileno.h
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/nonblock.h
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/poll.c
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/poll.o
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/read_write.c
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/read_write.o
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/set_file_path.h
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/sock_for_fd.h
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/tryopen.c
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/tryopen.o
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/wait.c
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/wait.o
 ${GEM_LIB}/gems/${DISTNAME}/kgio.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/kgio.rb

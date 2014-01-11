@@ -1,26 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/11/09 00:05:40 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/01/11 22:51:02 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/ChangeLog.markdown
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.markdown
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
-${GEM_LIB}/gems/${DISTNAME}/ext/
-${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/
-${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/compat.h
-${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/do_common.c
-${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/do_common.h
-${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/do_common.o
-${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/do_sqlite3.c
-${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/do_sqlite3.h
-${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/do_sqlite3.o
-${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/do_sqlite3.so
-${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/do_sqlite3_extension.c
-${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/do_sqlite3_extension.o
-${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/error.h
-${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/mkmf.log
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/do_sqlite3/
 ${GEM_LIB}/gems/${DISTNAME}/lib/do_sqlite3.rb

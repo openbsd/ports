@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/11/17 15:53:54 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/01/11 22:51:03 jeremy Exp $
 ${GEM_BIN}/thin${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -25,20 +25,6 @@ ${GEM_LIB}/gems/${DISTNAME}/example/thin.god
 ${GEM_LIB}/gems/${DISTNAME}/example/thin_solaris_smf.erb
 ${GEM_LIB}/gems/${DISTNAME}/example/thin_solaris_smf.readme.txt
 ${GEM_LIB}/gems/${DISTNAME}/example/vlad.rake
-${GEM_LIB}/gems/${DISTNAME}/ext/
-${GEM_LIB}/gems/${DISTNAME}/ext/thin_parser/
-${GEM_LIB}/gems/${DISTNAME}/ext/thin_parser/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/thin_parser/common.rl
-${GEM_LIB}/gems/${DISTNAME}/ext/thin_parser/ext_help.h
-${GEM_LIB}/gems/${DISTNAME}/ext/thin_parser/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/thin_parser/mkmf.log
-${GEM_LIB}/gems/${DISTNAME}/ext/thin_parser/parser.c
-${GEM_LIB}/gems/${DISTNAME}/ext/thin_parser/parser.h
-${GEM_LIB}/gems/${DISTNAME}/ext/thin_parser/parser.o
-${GEM_LIB}/gems/${DISTNAME}/ext/thin_parser/parser.rl
-${GEM_LIB}/gems/${DISTNAME}/ext/thin_parser/thin.c
-${GEM_LIB}/gems/${DISTNAME}/ext/thin_parser/thin.o
-${GEM_LIB}/gems/${DISTNAME}/ext/thin_parser/thin_parser.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/adapter/

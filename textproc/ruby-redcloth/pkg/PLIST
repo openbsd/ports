@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/11/09 00:17:38 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/01/11 22:51:03 jeremy Exp $
 ${GEM_BIN}/redcloth${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -13,19 +13,6 @@ ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/redcloth
 ${GEM_LIB}/gems/${DISTNAME}/doc/
 ${GEM_LIB}/gems/${DISTNAME}/doc/textile_reference.html
-${GEM_LIB}/gems/${DISTNAME}/ext/
-${GEM_LIB}/gems/${DISTNAME}/ext/redcloth_scan/
-${GEM_LIB}/gems/${DISTNAME}/ext/redcloth_scan/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/redcloth_scan/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/redcloth_scan/mkmf.log
-${GEM_LIB}/gems/${DISTNAME}/ext/redcloth_scan/redcloth.h
-${GEM_LIB}/gems/${DISTNAME}/ext/redcloth_scan/redcloth_attributes.c
-${GEM_LIB}/gems/${DISTNAME}/ext/redcloth_scan/redcloth_attributes.o
-${GEM_LIB}/gems/${DISTNAME}/ext/redcloth_scan/redcloth_inline.c
-${GEM_LIB}/gems/${DISTNAME}/ext/redcloth_scan/redcloth_inline.o
-${GEM_LIB}/gems/${DISTNAME}/ext/redcloth_scan/redcloth_scan.c
-${GEM_LIB}/gems/${DISTNAME}/ext/redcloth_scan/redcloth_scan.o
-${GEM_LIB}/gems/${DISTNAME}/ext/redcloth_scan/redcloth_scan.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/case_sensitive_require/
 ${GEM_LIB}/gems/${DISTNAME}/lib/case_sensitive_require/RedCloth.rb

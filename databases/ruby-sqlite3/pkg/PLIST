@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2013/10/26 23:48:05 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.12 2014/01/11 22:51:02 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gemtest
@@ -10,27 +10,6 @@ ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
-${GEM_LIB}/gems/${DISTNAME}/ext/
-${GEM_LIB}/gems/${DISTNAME}/ext/sqlite3/
-${GEM_LIB}/gems/${DISTNAME}/ext/sqlite3/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/sqlite3/backup.c
-${GEM_LIB}/gems/${DISTNAME}/ext/sqlite3/backup.h
-${GEM_LIB}/gems/${DISTNAME}/ext/sqlite3/backup.o
-${GEM_LIB}/gems/${DISTNAME}/ext/sqlite3/database.c
-${GEM_LIB}/gems/${DISTNAME}/ext/sqlite3/database.h
-${GEM_LIB}/gems/${DISTNAME}/ext/sqlite3/database.o
-${GEM_LIB}/gems/${DISTNAME}/ext/sqlite3/exception.c
-${GEM_LIB}/gems/${DISTNAME}/ext/sqlite3/exception.h
-${GEM_LIB}/gems/${DISTNAME}/ext/sqlite3/exception.o
-${GEM_LIB}/gems/${DISTNAME}/ext/sqlite3/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/sqlite3/mkmf.log
-${GEM_LIB}/gems/${DISTNAME}/ext/sqlite3/sqlite3.c
-${GEM_LIB}/gems/${DISTNAME}/ext/sqlite3/sqlite3.o
-${GEM_LIB}/gems/${DISTNAME}/ext/sqlite3/sqlite3_native.so
-${GEM_LIB}/gems/${DISTNAME}/ext/sqlite3/sqlite3_ruby.h
-${GEM_LIB}/gems/${DISTNAME}/ext/sqlite3/statement.c
-${GEM_LIB}/gems/${DISTNAME}/ext/sqlite3/statement.h
-${GEM_LIB}/gems/${DISTNAME}/ext/sqlite3/statement.o
 ${GEM_LIB}/gems/${DISTNAME}/faq/
 ${GEM_LIB}/gems/${DISTNAME}/faq/faq.rb
 ${GEM_LIB}/gems/${DISTNAME}/faq/faq.yml

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/06 01:14:09 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/01/11 22:51:03 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.document
@@ -23,20 +23,6 @@ ${GEM_LIB}/gems/${DISTNAME}/examples/middleware.ru
 ${GEM_LIB}/gems/${DISTNAME}/examples/watcher.ru
 ${GEM_LIB}/gems/${DISTNAME}/examples/watcher_demo.ru
 ${GEM_LIB}/gems/${DISTNAME}/examples/zbatery.conf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/
-${GEM_LIB}/gems/${DISTNAME}/ext/raindrops/
-${GEM_LIB}/gems/${DISTNAME}/ext/raindrops/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/raindrops/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/raindrops/linux_inet_diag.c
-${GEM_LIB}/gems/${DISTNAME}/ext/raindrops/linux_inet_diag.o
-${GEM_LIB}/gems/${DISTNAME}/ext/raindrops/linux_tcp_info.c
-${GEM_LIB}/gems/${DISTNAME}/ext/raindrops/linux_tcp_info.o
-${GEM_LIB}/gems/${DISTNAME}/ext/raindrops/mkmf.log
-${GEM_LIB}/gems/${DISTNAME}/ext/raindrops/my_fileno.h
-${GEM_LIB}/gems/${DISTNAME}/ext/raindrops/raindrops.c
-${GEM_LIB}/gems/${DISTNAME}/ext/raindrops/raindrops.o
-${GEM_LIB}/gems/${DISTNAME}/ext/raindrops/raindrops_atomic.h
-${GEM_LIB}/gems/${DISTNAME}/ext/raindrops/raindrops_ext.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/raindrops/
 ${GEM_LIB}/gems/${DISTNAME}/lib/raindrops.rb

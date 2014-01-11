@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/01/18 17:06:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/01/11 22:51:02 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/narray.h
@@ -6,44 +6,4 @@ ${GEM_LIB}/gems/${DISTNAME}/narray.so
 ${GEM_LIB}/gems/${DISTNAME}/narray_config.h
 ${GEM_LIB}/gems/${DISTNAME}/narray_ext.rb
 ${GEM_LIB}/gems/${DISTNAME}/nmatrix.rb
-${GEM_LIB}/gems/${DISTNAME}/src/
-@comment ${GEM_LIB}/gems/${DISTNAME}/src/.RUBYARCHDIR.time
-@comment ${GEM_LIB}/gems/${DISTNAME}/src/.RUBYLIBDIR.time
-${GEM_LIB}/gems/${DISTNAME}/src/ChangeLog
-${GEM_LIB}/gems/${DISTNAME}/src/MANIFEST
-${GEM_LIB}/gems/${DISTNAME}/src/Makefile
-${GEM_LIB}/gems/${DISTNAME}/src/README.en
-${GEM_LIB}/gems/${DISTNAME}/src/README.ja
-${GEM_LIB}/gems/${DISTNAME}/src/SPEC.en
-${GEM_LIB}/gems/${DISTNAME}/src/SPEC.ja
-${GEM_LIB}/gems/${DISTNAME}/src/depend
-${GEM_LIB}/gems/${DISTNAME}/src/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/src/lib/
-${GEM_LIB}/gems/${DISTNAME}/src/lib/narray_ext.rb
-${GEM_LIB}/gems/${DISTNAME}/src/lib/nmatrix.rb
-${GEM_LIB}/gems/${DISTNAME}/src/mkmath.rb
-${GEM_LIB}/gems/${DISTNAME}/src/mkmf.log
-${GEM_LIB}/gems/${DISTNAME}/src/mknafunc.rb
-${GEM_LIB}/gems/${DISTNAME}/src/mkop.rb
-${GEM_LIB}/gems/${DISTNAME}/src/na_array.c
-${GEM_LIB}/gems/${DISTNAME}/src/na_array.o
-${GEM_LIB}/gems/${DISTNAME}/src/na_func.c
-${GEM_LIB}/gems/${DISTNAME}/src/na_func.o
-${GEM_LIB}/gems/${DISTNAME}/src/na_index.c
-${GEM_LIB}/gems/${DISTNAME}/src/na_index.o
-${GEM_LIB}/gems/${DISTNAME}/src/na_linalg.c
-${GEM_LIB}/gems/${DISTNAME}/src/na_linalg.o
-${GEM_LIB}/gems/${DISTNAME}/src/na_math.c
-${GEM_LIB}/gems/${DISTNAME}/src/na_math.o
-${GEM_LIB}/gems/${DISTNAME}/src/na_op.c
-${GEM_LIB}/gems/${DISTNAME}/src/na_op.o
-${GEM_LIB}/gems/${DISTNAME}/src/na_random.c
-${GEM_LIB}/gems/${DISTNAME}/src/na_random.o
-${GEM_LIB}/gems/${DISTNAME}/src/narray.c
-${GEM_LIB}/gems/${DISTNAME}/src/narray.def
-${GEM_LIB}/gems/${DISTNAME}/src/narray.h
-${GEM_LIB}/gems/${DISTNAME}/src/narray.o
-${GEM_LIB}/gems/${DISTNAME}/src/narray.so
-${GEM_LIB}/gems/${DISTNAME}/src/narray_config.h
-${GEM_LIB}/gems/${DISTNAME}/src/narray_local.h
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec

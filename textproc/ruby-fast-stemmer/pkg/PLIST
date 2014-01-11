@@ -1,18 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/20 18:15:48 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/01/11 22:51:03 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/VERSION.yml
-${GEM_LIB}/gems/${DISTNAME}/ext/
-${GEM_LIB}/gems/${DISTNAME}/ext/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/porter.c
-${GEM_LIB}/gems/${DISTNAME}/ext/porter.o
-${GEM_LIB}/gems/${DISTNAME}/ext/porter_wrap.c
-${GEM_LIB}/gems/${DISTNAME}/ext/porter_wrap.o
-${GEM_LIB}/gems/${DISTNAME}/ext/stemmer.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/fast_stemmer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/stemmer.so

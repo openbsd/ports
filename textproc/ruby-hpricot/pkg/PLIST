@@ -1,36 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/11/09 00:10:56 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/01/11 22:51:03 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
-${GEM_LIB}/gems/${DISTNAME}/ext/
-${GEM_LIB}/gems/${DISTNAME}/ext/fast_xs/
-${GEM_LIB}/gems/${DISTNAME}/ext/fast_xs/FastXsService.java
-${GEM_LIB}/gems/${DISTNAME}/ext/fast_xs/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/fast_xs/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/fast_xs/fast_xs.c
-${GEM_LIB}/gems/${DISTNAME}/ext/fast_xs/fast_xs.o
-${GEM_LIB}/gems/${DISTNAME}/ext/fast_xs/fast_xs.so
-${GEM_LIB}/gems/${DISTNAME}/ext/fast_xs/mkmf.log
-${GEM_LIB}/gems/${DISTNAME}/ext/hpricot_scan/
-${GEM_LIB}/gems/${DISTNAME}/ext/hpricot_scan/HpricotCss.java
-${GEM_LIB}/gems/${DISTNAME}/ext/hpricot_scan/HpricotScanService.java
-${GEM_LIB}/gems/${DISTNAME}/ext/hpricot_scan/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/hpricot_scan/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/hpricot_scan/hpricot_common.rl
-${GEM_LIB}/gems/${DISTNAME}/ext/hpricot_scan/hpricot_css.c
-${GEM_LIB}/gems/${DISTNAME}/ext/hpricot_scan/hpricot_css.java.rl
-${GEM_LIB}/gems/${DISTNAME}/ext/hpricot_scan/hpricot_css.o
-${GEM_LIB}/gems/${DISTNAME}/ext/hpricot_scan/hpricot_css.rl
-${GEM_LIB}/gems/${DISTNAME}/ext/hpricot_scan/hpricot_scan.c
-${GEM_LIB}/gems/${DISTNAME}/ext/hpricot_scan/hpricot_scan.h
-${GEM_LIB}/gems/${DISTNAME}/ext/hpricot_scan/hpricot_scan.java.rl
-${GEM_LIB}/gems/${DISTNAME}/ext/hpricot_scan/hpricot_scan.o
-${GEM_LIB}/gems/${DISTNAME}/ext/hpricot_scan/hpricot_scan.rl
-${GEM_LIB}/gems/${DISTNAME}/ext/hpricot_scan/hpricot_scan.so
-${GEM_LIB}/gems/${DISTNAME}/ext/hpricot_scan/mkmf.log
 ${GEM_LIB}/gems/${DISTNAME}/extras/
 ${GEM_LIB}/gems/${DISTNAME}/extras/hpricot.png
 ${GEM_LIB}/gems/${DISTNAME}/lib/

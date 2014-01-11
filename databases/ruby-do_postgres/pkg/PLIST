@@ -1,24 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/11/09 00:05:40 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/01/11 22:51:02 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/ChangeLog.markdown
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.markdown
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
-${GEM_LIB}/gems/${DISTNAME}/ext/
-${GEM_LIB}/gems/${DISTNAME}/ext/do_postgres/
-${GEM_LIB}/gems/${DISTNAME}/ext/do_postgres/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/do_postgres/compat.h
-${GEM_LIB}/gems/${DISTNAME}/ext/do_postgres/do_common.c
-${GEM_LIB}/gems/${DISTNAME}/ext/do_postgres/do_common.h
-${GEM_LIB}/gems/${DISTNAME}/ext/do_postgres/do_common.o
-${GEM_LIB}/gems/${DISTNAME}/ext/do_postgres/do_postgres.c
-${GEM_LIB}/gems/${DISTNAME}/ext/do_postgres/do_postgres.o
-${GEM_LIB}/gems/${DISTNAME}/ext/do_postgres/do_postgres.so
-${GEM_LIB}/gems/${DISTNAME}/ext/do_postgres/error.h
-${GEM_LIB}/gems/${DISTNAME}/ext/do_postgres/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/do_postgres/mkmf.log
-${GEM_LIB}/gems/${DISTNAME}/ext/do_postgres/pg_config.h
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/do_postgres/
 ${GEM_LIB}/gems/${DISTNAME}/lib/do_postgres.rb

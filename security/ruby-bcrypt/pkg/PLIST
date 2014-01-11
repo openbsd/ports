@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/09/07 16:10:49 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/01/11 22:51:03 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
@@ -10,26 +10,6 @@ ${GEM_LIB}/gems/${DISTNAME}/Gemfile.lock
 ${GEM_LIB}/gems/${DISTNAME}/README.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/bcrypt-ruby.gemspec
-${GEM_LIB}/gems/${DISTNAME}/ext/
-${GEM_LIB}/gems/${DISTNAME}/ext/jruby/
-${GEM_LIB}/gems/${DISTNAME}/ext/jruby/bcrypt_jruby/
-${GEM_LIB}/gems/${DISTNAME}/ext/jruby/bcrypt_jruby/BCrypt.java
-${GEM_LIB}/gems/${DISTNAME}/ext/mri/
-${GEM_LIB}/gems/${DISTNAME}/ext/mri/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/mri/bcrypt_ext.c
-${GEM_LIB}/gems/${DISTNAME}/ext/mri/bcrypt_ext.o
-${GEM_LIB}/gems/${DISTNAME}/ext/mri/bcrypt_ext.so
-${GEM_LIB}/gems/${DISTNAME}/ext/mri/crypt.c
-${GEM_LIB}/gems/${DISTNAME}/ext/mri/crypt.h
-${GEM_LIB}/gems/${DISTNAME}/ext/mri/crypt.o
-${GEM_LIB}/gems/${DISTNAME}/ext/mri/crypt_blowfish.c
-${GEM_LIB}/gems/${DISTNAME}/ext/mri/crypt_blowfish.o
-${GEM_LIB}/gems/${DISTNAME}/ext/mri/crypt_gensalt.c
-${GEM_LIB}/gems/${DISTNAME}/ext/mri/crypt_gensalt.o
-${GEM_LIB}/gems/${DISTNAME}/ext/mri/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/mri/ow-crypt.h
-${GEM_LIB}/gems/${DISTNAME}/ext/mri/wrapper.c
-${GEM_LIB}/gems/${DISTNAME}/ext/mri/wrapper.o
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/bcrypt.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bcrypt_engine.rb

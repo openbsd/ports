@@ -1,19 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/03/13 06:55:29 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/01/11 22:51:03 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
 ${GEM_LIB}/gems/${DISTNAME}/NEWS
 ${GEM_LIB}/gems/${DISTNAME}/README.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
-${GEM_LIB}/gems/${DISTNAME}/ext/
-${GEM_LIB}/gems/${DISTNAME}/ext/augeas/
-${GEM_LIB}/gems/${DISTNAME}/ext/augeas/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/augeas/_augeas.c
-${GEM_LIB}/gems/${DISTNAME}/ext/augeas/_augeas.h
-${GEM_LIB}/gems/${DISTNAME}/ext/augeas/_augeas.o
-${GEM_LIB}/gems/${DISTNAME}/ext/augeas/_augeas.so
-${GEM_LIB}/gems/${DISTNAME}/ext/augeas/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/augeas/mkmf.log
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/_augeas.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/augeas.rb

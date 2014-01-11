@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/05/06 16:05:12 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/01/11 22:51:01 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGES
@@ -6,16 +6,6 @@ ${GEM_LIB}/gems/${DISTNAME}/INSTALL
 ${GEM_LIB}/gems/${DISTNAME}/README
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/TODO
-${GEM_LIB}/gems/${DISTNAME}/ext/
-${GEM_LIB}/gems/${DISTNAME}/ext/id3lib_api/
-${GEM_LIB}/gems/${DISTNAME}/ext/id3lib_api/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/id3lib_api/Rakefile
-${GEM_LIB}/gems/${DISTNAME}/ext/id3lib_api/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/id3lib_api/id3lib_api.i
-${GEM_LIB}/gems/${DISTNAME}/ext/id3lib_api/id3lib_api.so
-${GEM_LIB}/gems/${DISTNAME}/ext/id3lib_api/id3lib_api_wrap.cxx
-${GEM_LIB}/gems/${DISTNAME}/ext/id3lib_api/id3lib_api_wrap.o
-${GEM_LIB}/gems/${DISTNAME}/ext/id3lib_api/mkmf.log
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/id3lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/id3lib.rb

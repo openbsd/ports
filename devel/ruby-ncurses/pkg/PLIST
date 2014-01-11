@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/10/09 10:24:06 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/01/11 22:51:02 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
@@ -16,24 +16,6 @@ ${GEM_LIB}/gems/${DISTNAME}/examples/rain.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/read_line.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/tclock.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/test_scanw.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/
-${GEM_LIB}/gems/${DISTNAME}/ext/ncurses/
-${GEM_LIB}/gems/${DISTNAME}/ext/ncurses/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/ncurses/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/ncurses/form_wrap.c
-${GEM_LIB}/gems/${DISTNAME}/ext/ncurses/form_wrap.h
-${GEM_LIB}/gems/${DISTNAME}/ext/ncurses/form_wrap.o
-${GEM_LIB}/gems/${DISTNAME}/ext/ncurses/menu_wrap.c
-${GEM_LIB}/gems/${DISTNAME}/ext/ncurses/menu_wrap.h
-${GEM_LIB}/gems/${DISTNAME}/ext/ncurses/menu_wrap.o
-${GEM_LIB}/gems/${DISTNAME}/ext/ncurses/mkmf.log
-${GEM_LIB}/gems/${DISTNAME}/ext/ncurses/ncurses.so
-${GEM_LIB}/gems/${DISTNAME}/ext/ncurses/ncurses_wrap.c
-${GEM_LIB}/gems/${DISTNAME}/ext/ncurses/ncurses_wrap.h
-${GEM_LIB}/gems/${DISTNAME}/ext/ncurses/ncurses_wrap.o
-${GEM_LIB}/gems/${DISTNAME}/ext/ncurses/panel_wrap.c
-${GEM_LIB}/gems/${DISTNAME}/ext/ncurses/panel_wrap.h
-${GEM_LIB}/gems/${DISTNAME}/ext/ncurses/panel_wrap.o
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ncurses-ruby/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ncurses-ruby/version.rb

@@ -1,18 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/11/07 19:05:14 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/01/11 22:51:02 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
 ${GEM_LIB}/gems/${DISTNAME}/MIT-LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
-${GEM_LIB}/gems/${DISTNAME}/ext/
-${GEM_LIB}/gems/${DISTNAME}/ext/sequel_pg/
-${GEM_LIB}/gems/${DISTNAME}/ext/sequel_pg/Makefile
-${GEM_LIB}/gems/${DISTNAME}/ext/sequel_pg/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/sequel_pg/mkmf.log
-${GEM_LIB}/gems/${DISTNAME}/ext/sequel_pg/sequel_pg.c
-${GEM_LIB}/gems/${DISTNAME}/ext/sequel_pg/sequel_pg.o
-${GEM_LIB}/gems/${DISTNAME}/ext/sequel_pg/sequel_pg.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2013/10/26 23:55:37 jeremy Exp $
+# $OpenBSD: Makefile,v 1.17 2014/01/11 22:51:02 jeremy Exp $
 
 COMMENT=	event-driven I/O for Ruby using the Reactor pattern
 
 DISTNAME=	eventmachine-0.12.8
-REVISION =	7
+REVISION =	8
 CATEGORIES=	net devel
 
 HOMEPAGE=	http://rubyeventmachine.com/
