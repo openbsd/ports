@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.46 2013/12/01 22:37:35 brad Exp $
+# $OpenBSD: Makefile,v 1.47 2014/01/11 19:19:43 brad Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		Gtk+3 media player
 
-DISTNAME =		audacious-3.4.2
+DISTNAME =		audacious-3.4.3
 
 SHARED_LIBS =		audclient	3.0 	# 2.0
 SHARED_LIBS +=		audcore		2.1 	# 1.0
