@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2013/12/16 23:07:06 stsp Exp $
+# $OpenBSD: Makefile,v 1.103 2014/01/11 15:00:23 sthen Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -108,7 +108,13 @@ MULTI_PACKAGES=		-main -java -kde
 
 PSEUDO_FLAVORS=	parallel no_lang
 FLAVORS=	debug no_java
+.if ${MACHINE_ARCH:Mi386}
+# XXX hack to fix i386 builds for now which don't have working java
+# XXX N.B. no_java is a *flavour* not a pseudo-flavour
+FLAVOR?=	no_java
+.else
 FLAVOR?=
+.endif
 
 .if !${FLAVOR:Mno_lang}
 LANGS=			ar bg ca de es fa fi fr hu it \
