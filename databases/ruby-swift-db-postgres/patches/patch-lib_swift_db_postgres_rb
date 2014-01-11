@@ -1,0 +1,6 @@
+$OpenBSD: patch-lib_swift_db_postgres_rb,v 1.1 2014/01/11 22:42:26 jeremy Exp $
+--- lib/swift/db/postgres.rb.orig	Fri Jan 10 13:40:28 2014
++++ lib/swift/db/postgres.rb	Fri Jan 10 13:40:34 2014
+@@ -1 +1 @@
+-require 'swift/db/postgres/swift_db_postgres_ext'
++require 'swift_db_postgres_ext'

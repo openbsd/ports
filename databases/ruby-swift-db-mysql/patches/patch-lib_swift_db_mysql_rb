@@ -1,0 +1,6 @@
+$OpenBSD: patch-lib_swift_db_mysql_rb,v 1.1 2014/01/11 22:42:26 jeremy Exp $
+--- lib/swift/db/mysql.rb.orig	Fri Jan 10 14:19:08 2014
++++ lib/swift/db/mysql.rb	Fri Jan 10 14:19:19 2014
+@@ -1 +1 @@
+-require 'swift/db/mysql/swift_db_mysql_ext'
++require 'swift_db_mysql_ext'

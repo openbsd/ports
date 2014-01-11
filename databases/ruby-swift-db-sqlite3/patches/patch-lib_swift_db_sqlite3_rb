@@ -1,0 +1,6 @@
+$OpenBSD: patch-lib_swift_db_sqlite3_rb,v 1.1 2014/01/11 22:42:26 jeremy Exp $
+--- lib/swift/db/sqlite3.rb.orig	Fri Jan 10 13:54:40 2014
++++ lib/swift/db/sqlite3.rb	Fri Jan 10 13:54:41 2014
+@@ -1 +1 @@
+-require 'swift/db/sqlite3/swift_db_sqlite3_ext'
++require 'swift_db_sqlite3_ext'
