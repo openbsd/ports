@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1184 2014/01/09 13:29:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1185 2014/01/11 22:56:03 jeremy Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1262,6 +1262,7 @@
      SUBDIR += ruby-ffi,ruby18
      SUBDIR += ruby-ffi,ruby19
      SUBDIR += ruby-ffi,ruby20
+     SUBDIR += ruby-ffi,ruby21
      SUBDIR += ruby-ffi-inliner
      SUBDIR += ruby-flexmock
      SUBDIR += ruby-gem_plugin
@@ -1282,6 +1283,7 @@
      SUBDIR += ruby-kgio,ruby18
      SUBDIR += ruby-kgio,ruby19
      SUBDIR += ruby-kgio,ruby20
+     SUBDIR += ruby-kgio,ruby21
      SUBDIR += ruby-locale
      SUBDIR += ruby-metaclass
      SUBDIR += ruby-minitest
@@ -1289,8 +1291,10 @@
      SUBDIR += ruby-mspec
      SUBDIR += ruby-narray,ruby19
      SUBDIR += ruby-narray,ruby20
+     SUBDIR += ruby-narray,ruby21
      SUBDIR += ruby-ncurses,ruby19
      SUBDIR += ruby-ncurses,ruby20
+     SUBDIR += ruby-ncurses,ruby21
      SUBDIR += ruby-needle
      SUBDIR += ruby-ole
      SUBDIR += ruby-open4
@@ -1319,10 +1323,12 @@
      SUBDIR += ruby-subset_sum,ruby18
      SUBDIR += ruby-subset_sum,ruby19
      SUBDIR += ruby-subset_sum,ruby20
+     SUBDIR += ruby-subset_sum,ruby21
      SUBDIR += ruby-systemu
      SUBDIR += ruby-term-ansicolor
      SUBDIR += ruby-therubyracer,ruby19
      SUBDIR += ruby-therubyracer,ruby20
+     SUBDIR += ruby-therubyracer,ruby21
      SUBDIR += ruby-tilt
      SUBDIR += ruby-transaction-simple
      SUBDIR += ruby-trollop
@@ -1331,6 +1337,7 @@
      SUBDIR += ruby-uuid,ruby18
      SUBDIR += ruby-yajl,ruby19
      SUBDIR += ruby-yajl,ruby20
+     SUBDIR += ruby-yajl,ruby21
      SUBDIR += ruby-zentest
      SUBDIR += scons
      SUBDIR += sdcc

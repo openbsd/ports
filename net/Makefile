@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.826 2013/12/30 23:20:36 landry Exp $
+# $OpenBSD: Makefile,v 1.827 2014/01/11 22:56:04 jeremy Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -515,6 +515,7 @@
      SUBDIR += ruby-eventmachine,ruby18
      SUBDIR += ruby-eventmachine,ruby19
      SUBDIR += ruby-eventmachine,ruby20
+     SUBDIR += ruby-eventmachine,ruby21
      SUBDIR += ruby-macaddr
      SUBDIR += ruby-macaddr,ruby18
      SUBDIR += ruby-minion
