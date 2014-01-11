@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.58 2013/12/30 12:29:25 zhuk Exp $
+# $OpenBSD: portcheck,v 1.59 2014/01/11 16:42:01 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1227,6 +1227,7 @@ check_pkg_dir() {
 		check_trailing_whitespace "$F"
 		check_newline_at_eof "$F"
 		check_long_lines 72 "$F"
+		check_hardcoded "$F"
 		[[ -n $subst_cmd ]] && check_subst_vars "$F" "$subst_cmd"
 		egrep -q '\$OpenBSD.*\$' "$F" &&
 			err "$F should not contain \$OpenBSD\$ tag"
@@ -1265,6 +1266,7 @@ check_pkg_dir() {
 		check_trailing_whitespace "$F"
 		check_newline_at_eof "$F"
 		check_long_lines 80 "$F"
+		check_hardcoded "$F"
 		head -n 1 -- "$F" |
 			egrep -q '^(#[[:space:]]*)?\$OpenBSD(:.*)?\$$' ||
 			err "$F does not have \$OpenBSD\$ RCS tag at the top"
@@ -1275,6 +1277,7 @@ check_pkg_dir() {
 			err "$F is not a file"
 		check_trailing_whitespace "$F"
 		check_long_lines 80 "$F"
+		check_hardcoded "$F"
 		head -n 5 -- "$F" |
 			egrep -q '^#[[:space:]]*\$OpenBSD(:.*)?\$$' ||
 			err "$F does not have \$OpenBSD\$ RCS tag at the top"
@@ -1287,6 +1290,7 @@ check_pkg_dir() {
 		check_trailing_whitespace "$F"
 		check_newline_at_eof "$F"
 		check_long_lines 72 "$F"
+		check_hardcoded "$F"
 		egrep -q '\$OpenBSD.*\$' "$F" &&
 			err "$F should not contain \$OpenBSD\$ tag"
 		;;
@@ -1297,6 +1301,16 @@ check_pkg_dir() {
 	esac; done
 
 	$empty && err "$dir directory does not contain either DESCR, PFRAG or PLIST files"
+}
+
+# Checks made:
+#   * There are no hardcoded /usr/local or /var paths in file
+check_hardcoded() {
+	$debugging && echo "CALLED: check_hardcoded($*)" >&2
+
+	egrep -q '(/usr/local|/var)[[:>:]]' "$1" &&
+		err "hardcoded paths detected in $1, consider using" \
+		    "SUBST_VARS and PREFIX/LOCALBASE/LOCALSTATEDIR"
 }
 
 # Checks made:
