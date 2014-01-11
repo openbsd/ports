@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2013/11/30 20:37:20 brad Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2014/01/11 19:28:41 brad Exp $
 @conflict mysql-client-*
 @pkgpath databases/mysql,-main
 bin/msql2mysql
@@ -18,17 +18,23 @@ bin/mysqldumpslow
 @bin bin/mysqlslap
 include/mysql/
 include/mysql/auth_dialog_client.h
+include/mysql/big_endian.h
+include/mysql/byte_order_generic.h
+include/mysql/byte_order_generic_x86.h
+include/mysql/byte_order_generic_x86_64.h
 include/mysql/client_plugin.h
 include/mysql/decimal.h
 include/mysql/errmsg.h
 include/mysql/handler_ername.h
 include/mysql/handler_state.h
 include/mysql/keycache.h
+include/mysql/little_endian.h
 include/mysql/m_ctype.h
 include/mysql/m_string.h
 include/mysql/ma_dyncol.h
 include/mysql/my_alloc.h
 include/mysql/my_attribute.h
+include/mysql/my_byteorder.h
 include/mysql/my_compiler.h
 include/mysql/my_config.h
 include/mysql/my_dbug.h
@@ -44,6 +50,7 @@ include/mysql/my_valgrind.h
 include/mysql/my_xml.h
 include/mysql/mysql.h
 include/mysql/mysql_com.h
+include/mysql/mysql_com_server.h
 include/mysql/mysql_embed.h
 include/mysql/mysql_time.h
 include/mysql/mysql_version.h
@@ -64,7 +71,9 @@ include/mysql/private/atomic/solaris.h
 include/mysql/private/atomic/x86-gcc.h
 include/mysql/private/authors.h
 include/mysql/private/base64.h
+include/mysql/private/bounded_queue.h
 include/mysql/private/client_settings.h
+include/mysql/private/compat56.h
 include/mysql/private/contributors.h
 include/mysql/private/create_options.h
 include/mysql/private/custom_conf.h
@@ -81,7 +90,7 @@ include/mysql/private/event_scheduler.h
 include/mysql/private/events.h
 include/mysql/private/field.h
 include/mysql/private/filesort.h
-include/mysql/private/frm_crypt.h
+include/mysql/private/filesort_utils.h
 include/mysql/private/ft_global.h
 include/mysql/private/gcalc_slicescan.h
 include/mysql/private/gcalc_tools.h
@@ -126,6 +135,7 @@ include/mysql/private/message.h
 include/mysql/private/multi_range_read.h
 include/mysql/private/my_aes.h
 include/mysql/private/my_alarm.h
+include/mysql/private/my_apc.h
 include/mysql/private/my_atomic.h
 include/mysql/private/my_base.h
 include/mysql/private/my_bit.h
@@ -133,11 +143,13 @@ include/mysql/private/my_bitmap.h
 include/mysql/private/my_compare.h
 include/mysql/private/my_context.h
 include/mysql/private/my_decimal.h
+include/mysql/private/my_default.h
+include/mysql/private/my_handler_errors.h
 include/mysql/private/my_libwrap.h
 include/mysql/private/my_md5.h
 include/mysql/private/my_nosys.h
 include/mysql/private/my_rdtsc.h
-include/mysql/private/my_regex.h
+include/mysql/private/my_rnd.h
 include/mysql/private/my_stacktrace.h
 include/mysql/private/my_time.h
 include/mysql/private/my_tree.h
@@ -170,9 +182,11 @@ include/mysql/private/replication.h
 include/mysql/private/rijndael.h
 include/mysql/private/rpl_constants.h
 include/mysql/private/rpl_filter.h
+include/mysql/private/rpl_gtid.h
 include/mysql/private/rpl_handler.h
 include/mysql/private/rpl_injector.h
 include/mysql/private/rpl_mi.h
+include/mysql/private/rpl_parallel.h
 include/mysql/private/rpl_record.h
 include/mysql/private/rpl_record_old.h
 include/mysql/private/rpl_reporting.h
@@ -200,9 +214,11 @@ include/mysql/private/sql_audit.h
 include/mysql/private/sql_base.h
 include/mysql/private/sql_binlog.h
 include/mysql/private/sql_bitmap.h
+include/mysql/private/sql_bootstrap.h
 include/mysql/private/sql_cache.h
 include/mysql/private/sql_callback.h
 include/mysql/private/sql_class.h
+include/mysql/private/sql_cmd.h
 include/mysql/private/sql_connect.h
 include/mysql/private/sql_const.h
 include/mysql/private/sql_crypt.h
@@ -212,7 +228,9 @@ include/mysql/private/sql_delete.h
 include/mysql/private/sql_derived.h
 include/mysql/private/sql_do.h
 include/mysql/private/sql_error.h
+include/mysql/private/sql_explain.h
 include/mysql/private/sql_expression_cache.h
+include/mysql/private/sql_get_diagnostics.h
 include/mysql/private/sql_handler.h
 include/mysql/private/sql_help.h
 include/mysql/private/sql_hset.h
@@ -242,6 +260,7 @@ include/mysql/private/sql_servers.h
 include/mysql/private/sql_show.h
 include/mysql/private/sql_signal.h
 include/mysql/private/sql_sort.h
+include/mysql/private/sql_statistics.h
 include/mysql/private/sql_string.h
 include/mysql/private/sql_table.h
 include/mysql/private/sql_tablespace.h
@@ -260,6 +279,7 @@ include/mysql/private/sys_vars.h
 include/mysql/private/sys_vars_shared.h
 include/mysql/private/t_ctype.h
 include/mysql/private/table.h
+include/mysql/private/table_cache.h
 include/mysql/private/thr_alarm.h
 include/mysql/private/thr_lock.h
 include/mysql/private/thr_malloc.h
@@ -276,18 +296,28 @@ include/mysql/private/winservice.h
 include/mysql/private/wqueue.h
 include/mysql/psi/
 include/mysql/psi/mysql_file.h
+include/mysql/psi/mysql_idle.h
+include/mysql/psi/mysql_socket.h
+include/mysql/psi/mysql_stage.h
+include/mysql/psi/mysql_statement.h
+include/mysql/psi/mysql_table.h
 include/mysql/psi/mysql_thread.h
 include/mysql/psi/psi.h
+include/mysql/psi/psi_abi_v0.h
 include/mysql/psi/psi_abi_v1.h
 include/mysql/psi/psi_abi_v2.h
 include/mysql/service_debug_sync.h
 include/mysql/service_kill_statement.h
 include/mysql/service_logger.h
+include/mysql/service_my_plugin_log.h
 include/mysql/service_my_snprintf.h
 include/mysql/service_progress_report.h
+include/mysql/service_sha1.h
 include/mysql/service_thd_alloc.h
+include/mysql/service_thd_autoinc.h
+include/mysql/service_thd_error_context.h
+include/mysql/service_thd_timezone.h
 include/mysql/service_thd_wait.h
-include/mysql/service_thread_scheduler.h
 include/mysql/services.h
 include/mysql/sql_common.h
 include/mysql/sql_state.h

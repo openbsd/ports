@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/11/30 20:37:20 brad Exp $
+# $OpenBSD: Makefile,v 1.9 2014/01/11 19:28:40 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	5.5.34
+VERSION=	10.0.7
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
@@ -15,7 +15,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://ftp.osuosl.org/pub/mariadb/${DISTNAME}/kvm-tarbake-jaunty-x86/ \
 		http://ftp.heanet.ie/mirrors/mariadb/${DISTNAME}/kvm-tarbake-jaunty-x86/
 
-LIB_VERSION=	24
+LIB_VERSION=	25
 SHARED_LIBS=	mysqlclient_r	${LIB_VERSION}.0 \
 		mysqlclient	${LIB_VERSION}.0
 
@@ -38,11 +38,11 @@ SUBST_VARS=	SOCKET_DIR
 MODULES=	devel/cmake
 BUILD_DEPENDS=	devel/bison
 
-RUN_DEPENDS-server=	${BASE_PKGPATH}>=5.5,<5.6 \
+RUN_DEPENDS-server=	${BASE_PKGPATH}>=10.0,<10.1 \
 			databases/p5-DBD-mysql \
 			devel/p5-Term-ReadKey
-LIB_DEPENDS-server=	${BASE_PKGPATH}>=5.5,<5.6
-LIB_DEPENDS-tests=	${BASE_PKGPATH}>=5.5,<5.6
+LIB_DEPENDS-server=	${BASE_PKGPATH}>=10.0,<10.1
+LIB_DEPENDS-tests=	${BASE_PKGPATH}>=10.0,<10.1
 
 USE_GROFF=	Yes
 
@@ -66,7 +66,8 @@ CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DWITH_COMMENT='OpenBSD port: ${FULLPKGNAME-server}' \
 		-DWITH_SSL=system \
 		-DWITH_LIBEDIT=Off \
-		-DWITH_LIBWRAP=On
+		-DWITH_LIBWRAP=On \
+		-DCONNECT_WITH_LIBXML2=Off
 
 MULTI_PACKAGES=	-main -server -tests
 
