@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2013/03/10 22:55:02 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2014/01/11 11:22:43 espie Exp $
 
 COMMENT=	u-law to gsm encoding audio converter and library
 
 DISTNAME=	gsm-1.0.13
-REVISION=	0
+REVISION=	1
 CATEGORIES=	audio
 HOMEPAGE=	http://www.quut.com/gsm/
 MASTER_SITES=	${HOMEPAGE}

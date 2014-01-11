@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.15 2005/12/23 15:07:06 espie Exp $
+@comment $OpenBSD: PLIST,v 1.16 2014/01/11 11:22:43 espie Exp $
 %%SHARED%%
 include/rplay.h
 @comment include/rxposix.h
 lib/librplay.a
 @comment lib/librx.a
-@endfake
 bin/rplay
 bin/rptp
 @comment include/rxposix.h

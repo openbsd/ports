@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/21 08:45:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2014/01/11 11:22:43 espie Exp $
 
 COMMENT=	tools and library routines for working with GIF images
 
 DISTNAME=	libungif-4.1.4
-REVISION =	1
+REVISION =	2
 SHARED_LIBS=	gif	5.4 \
 		ungif	5.4
 CATEGORIES=	graphics
