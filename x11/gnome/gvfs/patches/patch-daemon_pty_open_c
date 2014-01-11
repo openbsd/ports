@@ -1,0 +1,15 @@
+$OpenBSD: patch-daemon_pty_open_c,v 1.7 2014/01/11 17:27:44 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=722001
+
+--- daemon/pty_open.c.orig	Thu Nov  7 16:12:17 2013
++++ daemon/pty_open.c	Sat Jan 11 17:54:26 2014
+@@ -72,7 +72,7 @@
+ #include <glib.h>
+ #include "pty_open.h"
+ 
+-#if defined(HAVE_PTSNAME_R) || defined(HAVE_PTSNAME) || defined(TIOCGPTN)
++#if (defined(HAVE_PTSNAME_R) || defined(HAVE_PTSNAME) || defined(TIOCGPTN)) && !defined(HAVE_OPENPTY)
+ #define HAVE_UNIX98_PTY
+ #else
+ #undef HAVE_UNIX98_PTY
