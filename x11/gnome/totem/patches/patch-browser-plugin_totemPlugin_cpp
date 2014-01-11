@@ -1,0 +1,15 @@
+$OpenBSD: patch-browser-plugin_totemPlugin_cpp,v 1.1 2014/01/11 12:45:37 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=721987
+
+--- browser-plugin/totemPlugin.cpp.orig	Sat Jan 11 13:21:51 2014
++++ browser-plugin/totemPlugin.cpp	Sat Jan 11 13:22:11 2014
+@@ -303,7 +303,7 @@ totemPlugin::Command (const char *aCommand)
+ }
+ 
+ void
+-totemPlugin::SetTime (guint64 aTime)
++totemPlugin::SetTime (uint64_t aTime)
+ {
+ 	D ("SetTime '%lu'", aTime);
+ 

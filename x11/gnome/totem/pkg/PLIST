@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2013/09/27 09:59:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2014/01/11 12:45:37 ajacoutot Exp $
 @conflict nautilus-totem-*
 @pkgpath x11/gnome/totem,nautilus
 @pkgpath x11/gnome/totem,xine
@@ -14,6 +14,13 @@ include/totem/1.0/totem.h
 lib/girepository-1.0/Totem-1.0.typelib
 lib/libtotem.la
 @lib lib/libtotem.so.${LIBtotem_VERSION}
+lib/mozilla/
+lib/mozilla/plugins/
+lib/mozilla/plugins/libtotem-cone-plugin.so
+lib/mozilla/plugins/libtotem-gmp-plugin.so
+lib/mozilla/plugins/libtotem-mully-plugin.so
+lib/mozilla/plugins/libtotem-narrowspace-plugin.so
+lib/mozilla/plugins/libtotem-vegas-plugin.so
 lib/nautilus/extensions-3.0/libtotem-properties-page.so
 lib/pkgconfig/totem.pc
 lib/totem/
@@ -101,6 +108,7 @@ lib/totem/plugins/zeitgeist-dp/
 lib/totem/plugins/zeitgeist-dp/libtotem-zeitgeist-dp-plugin.so
 lib/totem/plugins/zeitgeist-dp/zeitgeist-dp.plugin
 libexec/totem/
+@bin libexec/totem-plugin-viewer
 libexec/totem/totem-bugreport.py
 @man man/man1/totem-video-thumbnailer.1
 @man man/man1/totem.1
