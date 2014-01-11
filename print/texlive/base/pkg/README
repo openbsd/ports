@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.9 2013/05/29 20:04:13 zhuk Exp $
+$OpenBSD: README,v 1.10 2014/01/11 12:56:41 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -57,7 +57,7 @@ Due to inconsistencies in the legacy TeX Live 2009 package, if you
 upgraded from TeX live 2009 (at some point in the past) you may see the
 package tools complain about non-empty directories. This is harmless,
 but can be silenced by (having backed up anything manually added to
-texmfs) removing all TeX Live packages, then `rm -Rf /usr/local/share/texmf*`.
+texmfs) removing all TeX Live packages, then `rm -Rf ${LOCALBASE}/share/texmf*`.
 Now you can install afresh the new TeX Live packages.
 
 Other Misc. Notes

@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2013/07/16 02:48:45 stu Exp $
+$OpenBSD: README,v 1.3 2014/01/11 12:56:41 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,7 +9,7 @@ deriving the maximum value from the original software while keeping
 any modifications to a minimum.
 
 This document describes these differences and includes a handy guide
-and patch for adding Tcl and Tk to ${SYSCONFDIR}/man.conf.
+and patch for adding Tcl and Tk to /etc/man.conf.
 
 Principally, the original install locations have been altered to enable
 installing multiple versions of Tcl and Tk on OpenBSD without conflict.
@@ -95,7 +95,7 @@ is created in order to satisfy libtool.
 
 Manual Page Configuration
 =========================
-Changes to ${SYSCONFDIR}/man.conf are required so that OpenBSD's man(1) and
+Changes to /etc/man.conf are required so that OpenBSD's man(1) and
 related commands can find the Tcl and Tk manual pages.
 
 Additional _whatdb entries are needed which point to the Tcl and Tk
@@ -104,7 +104,7 @@ added to the _default and n sections. Additional sections tcl and tk
 point to the Tcl and Tk manual page directories.
 
 Following this text is a patch (with instructions) that will perform
-the aforementioned changes on an unmodified ${SYSCONFDIR}/man.conf.
+the aforementioned changes on an unmodified /etc/man.conf.
 If not used directly it can serve as a guide.
 
 Tcl/Tk Resources
@@ -116,11 +116,11 @@ Wikibook:  http://en.wikibooks.org/wiki/Programming:Tcl
 Book:      Practical Programming in Tcl and Tk, 4th Edition
            ISBN: 0-13-038560-3
 
-Patch to add Tcl and Tk to ${SYSCONFDIR}/man.conf
-=========================================
+Patch to add Tcl and Tk to /etc/man.conf
+========================================
 Run:
-$ patch -o man.conf.new ${SYSCONFDIR}/man.conf ${_README_DIR}/${FULLPKGNAME}
-Examine and install as ${SYSCONFDIR}/man.conf if it appeases you.
+$ patch -o man.conf.new /etc/man.conf ${_README_DIR}/${FULLPKGNAME}
+Examine and install as /etc/man.conf if it appeases you.
 
 @@ -7,6 +7,8 @@
  _whatdb		/usr/share/man/whatis.db

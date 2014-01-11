@@ -1,4 +1,4 @@
-# $OpenBSD: README,v 1.10 2014/01/03 18:39:51 sebastia Exp $
+# $OpenBSD: README,v 1.11 2014/01/11 12:56:41 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -184,7 +184,7 @@ sogod WOWorkersCount 4
 sogod SOGoDraftsFolderName INBOX.Drafts
 sogod SOGoTrashFolderName INBOX.Trash
 sogod SOGoSentFolderName INBOX.Sent
-sogod SOGoZipPath /usr/local/bin/zip
+sogod SOGoZipPath ${LOCALBASE}/bin/zip
 
 Upgrading from older SOGo versions
 ========================================

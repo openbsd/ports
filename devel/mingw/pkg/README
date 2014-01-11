@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2012/04/02 03:18:17 jeremy Exp $
+$OpenBSD: README,v 1.4 2014/01/11 12:56:41 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -8,7 +8,7 @@ Environment Setup
 =================
 Set the mingw32 binary path before all the others. Like so:
 
-$ export PATH=/usr/local/mingw32/bin:${PATH}
+$ export PATH=${PREFIX}/mingw32/bin:${PATH}
 
 Generating PE files
 ===================
