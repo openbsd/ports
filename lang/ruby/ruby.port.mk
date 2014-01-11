@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.69 2014/01/09 18:28:22 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.70 2014/01/11 22:33:50 jeremy Exp $
 
 # ruby module
 
@@ -24,7 +24,7 @@ MODRUBY_HANDLE_FLAVORS ?= No
 # If ruby.pork.mk should handle FLAVORs, define a separate FLAVOR
 # for each ruby interpreter
 .    if !defined(FLAVORS)
-FLAVORS=		ruby18 ruby19 ruby20 rbx
+FLAVORS=		ruby18 ruby19 ruby20 ruby21 rbx
 .      if !${CONFIGURE_STYLE:L:Mext} && !${CONFIGURE_STYLE:L:Mextconf}
 FLAVORS+=		jruby
 .      endif
@@ -56,12 +56,12 @@ FLAVOR =		ruby20
 
 # Check for conflicting FLAVORs and set MODRUBY_REV appropriately based
 # on the FLAVOR.
-.    for i in ruby18 ruby19 ruby20 jruby rbx
+.    for i in ruby18 ruby19 ruby20 ruby21 jruby rbx
 .      if ${FLAVOR:M$i}
 MODRUBY_REV = ${i:C/ruby([0-9])/\1./}
 .        if ${FLAVOR:N$i:Mruby18} || ${FLAVOR:N$i:Mruby19} || \
-            ${FLAVOR:N$i:Mruby20} || ${FLAVOR:N$i:Mjruby} || \
-	    ${FLAVOR:N$i:Mrbx}
+            ${FLAVOR:N$i:Mruby20} || ${FLAVOR:N$i:Mruby21} || \
+	    ${FLAVOR:N$i:Mjruby} || ${FLAVOR:N$i:Mrbx}
 ERRORS += "Fatal: Conflicting flavors used: ${FLAVOR}"
 .        endif
 .      endif
@@ -110,6 +110,12 @@ MODRUBY_LIBREV =	2.0
 MODRUBY_BINREV =	20
 MODRUBY_FLAVOR =	ruby20
 GEM_BIN_SUFFIX =	20
+GEM_MAN_SUFFIX =	${GEM_BIN_SUFFIX}
+.elif ${MODRUBY_REV} == 2.1
+MODRUBY_LIBREV =	2.1
+MODRUBY_BINREV =	21
+MODRUBY_FLAVOR =	ruby21
+GEM_BIN_SUFFIX =	21
 GEM_MAN_SUFFIX =	${GEM_BIN_SUFFIX}
 .elif ${MODRUBY_REV} == jruby
 MODRUBY_LIBREV =	1.9
@@ -309,6 +315,9 @@ BUILD_DEPENDS+=	lang/ruby/1.9>=1.9.3.0
 BUILD_DEPENDS+=	lang/jruby>=1.6.5
 .  elif ${MODRUBY_REV} == rbx
 BUILD_DEPENDS+=	lang/rubinius>=2.1.1
+.  elif ${MODRUBY_REV} == 2.1
+# Require version that fixes extensions directory path
+BUILD_DEPENDS+=	lang/ruby/2.1>=2.1.0p0
 .  endif
 
 # Just like all ruby C extensions should set SHARED_ONLY,
@@ -320,6 +329,12 @@ ERRORS+=	"Fatal: Pure ruby gems without ext CONFIGURE_STYLE should not \
 		have SHARED_ONLY=Yes"
 .    endif
 PKG_ARCH=	*
+.  elif ${MODRUBY_REV} == 2.1
+# Add build complete file to package so rubygems doesn't attempt to
+# build extensions at runtime
+GEM_EXTENSIONS_DIR ?= ${GEM_LIB}/extensions/${MODRUBY_ARCH:S/i386/x86/}/${MODRUBY_REV}/${DISTNAME}
+SUBST_VARS+=	GEM_EXTENSIONS_DIR
+PKG_ARGS+=	-f ${PORTSDIR}/lang/ruby/rubygems-ext.PLIST
 .  endif
 
 # PLIST magic.  Set variables so that the same PLIST will work for
