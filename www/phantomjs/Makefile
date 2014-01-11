@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/12/20 00:54:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2014/01/11 11:47:20 sthen Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
-DPB_PROPERTIES =	parallel
+DPB_PROPERTIES =	parallel nojunk
+# nojunk: qmake include parser is bogus, c.f. x11/qt4
 
 COMMENT =		headless WebKit scriptable with a JavaScript API
 
