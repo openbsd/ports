@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2014/01/10 08:06:11 zhuk Exp $
+# $OpenBSD: Makefile,v 1.126 2014/01/11 12:15:24 zhuk Exp $
 
 COMMENT-main = 		K Desktop Environment, basic applications
 COMMENT-samba =		K Desktop Environment, samba support
@@ -13,8 +13,8 @@ PKGNAME-en_US =		kde3-locale-en_US-${VERSION}
 PKGNAME-locale =	kde3-locale-${VERSION}
 PKG_ARCH-en_US =	*
 PKG_ARCH-locale =	*
-REVISION-main =		32
-REVISION-samba =	11
+REVISION-main =		33
+REVISION-samba =	12
 REVISION-en_US =	0
 REVISION-locale =	0
 
@@ -82,7 +82,7 @@ WANTLIB-main = ${WANTLIB} GL GLU Half Iex IlmImf IlmThread Imath Xcomposite \
 	roken wind
 
 WANTLIB-samba = ${WANTLIB} execinfo lib/samba/smbclient pthread talloc tdb \
-	wbclient Xfixes Xt expat fontconfig freetype
+	lib/samba/wbclient Xfixes Xt expat fontconfig freetype
 
 WANTLIB-en_US =
 WANTLIB-locale =
@@ -92,5 +92,7 @@ SEPARATE_BUILD =	flavored
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/kdesurc ${PREFIX}/${MODKDE_CONFIG_SUBDIR}
 	${INSTALL_DATA_DIR} ${PREFIX}/${MODKDE_HTML_SUBDIR}/en/common
+	rm -R ${PREFIX}/share/desktop-directories
+	find ${PREFIX}/share/icons -name 'knetattach*' | xargs rm
 
 .include <bsd.port.mk>

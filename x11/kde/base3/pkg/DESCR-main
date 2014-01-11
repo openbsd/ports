@@ -2,7 +2,7 @@ KDE is a network transparent contemporary desktop environment for UNIX
 workstations. It was written by a world-wide network of software
 engineers committed to free software development. KDE seeks to fill
 the need for an easy to use desktop for Unix workstations, similar to
-the desktop environments found under the MacOS or Window95/NT. 
+the desktop environments found under the MacOS or Window95/NT.
 
 This package holds the basic KDE applications. It contains:
 
@@ -53,24 +53,3 @@ This package holds the basic KDE applications. It contains:
 * legacyimport: odd name for a cute program to load GTK themes
 * libkonq: some libraries needed by Konqueror
 * pics: various icons and wallpapers
-
-Setup tips:
-- if you don't run Kdm, you can start KDE from your .xinitrc with this 
-kind of sequence:
-
-kdmdesktop	# to get a nice display
-KDEDIR=/usr/local exec ssh-agent /usr/local/bin/startkde
-
-- you don't have to run all of KDE to use some applications like Konqueror.
-
-- as a user, you should run kappfinder from time to time to make sure you
-have up-to-date menus.
-
-- when upgrading from an old version of kde, it's usually best to start
-over on your .kde files.  Managing legacy config files is quite buggy yet.
-
-- Konqueror does not execute JavaScript nor Java by default. You will need
-a recent JVM installed, and referenced from Konqueror's menu, for Java to
-work.
-
-- install kdesamba if you need to access samba shares.

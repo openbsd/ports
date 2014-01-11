@@ -1,0 +1,19 @@
+$OpenBSD: README-main,v 1.1 2014/01/11 12:15:24 zhuk Exp $
+
++-----------------------------------------------------------------------
+| Running KDE3 desktop on OpenBSD
++-----------------------------------------------------------------------
+
+If you don't run KDM, you can start KDE from your .xinitrc with
+this kind of sequence:
+
+  kdmdesktop      # to get a nice display
+  KDEDIR=/usr/local exec ssh-agent /usr/local/bin/startkde
+
+You don't have to run the KDE desktop to just use KDE applications like
+Konqueror.
+
+As a user, you may have to run kappfinder from time to time to make
+sure you have up-to-date menus.
+
+Install kdesamba if you need to access Samba (Windows) shares.
