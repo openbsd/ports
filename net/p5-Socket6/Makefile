@@ -1,23 +1,20 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:35:54 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2014/01/11 17:31:16 bluhm Exp $
 
-SHARED_ONLY=	Yes
+SHARED_ONLY =		Yes
 
-COMMENT=	Perl defines relating to AF_INET6 sockets
+COMMENT =		Perl defines relating to AF_INET6 sockets
 
-DISTNAME=	Socket6-0.23
-REVISION=	2
+DISTNAME =		Socket6-0.25
 
-CATEGORIES=	net devel
+CATEGORIES =		net devel
 
-MAINTAINER=	Alexander Bluhm <bluhm@openbsd.org>
+MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # 3-clause BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c
+WANTLIB +=		c
 
-MODULES=	cpan
-
-CONFIGURE_ARGS+=	CC="${CC}" CCFLAGS="${CFLAGS}" OPTIMIZE=" "
+MODULES =		cpan
 
 .include <bsd.port.mk>
