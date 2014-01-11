@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure_in,v 1.1 2013/09/30 09:46:08 dcoppa Exp $
+$OpenBSD: patch-configure_in,v 1.2 2014/01/11 21:15:26 dcoppa Exp $
 
 OpenBSD lacks 'nm -D'
 
 setuid root/setgid utmp are handled by PLIST
 
---- configure.in.orig	Mon Aug  5 14:48:58 2013
-+++ configure.in	Wed Sep 25 10:20:52 2013
-@@ -307,7 +307,7 @@ AC_SUBST(IMAGELIB_LIBS)
+--- configure.in.orig	Sat Dec 21 18:11:51 2013
++++ configure.in	Sat Jan 11 20:02:26 2014
+@@ -313,7 +313,7 @@ AC_SUBST(IMAGELIB_LIBS)
  for ml_cv_lib_path in /lib /usr/lib /lib/* `echo $LIBRARY_PATH | tr ":" " "` ; do
  	libm_files=`ls $ml_cv_lib_path/libm\\.so* $ml_cv_lib_path/libm\\.sl* 2> /dev/null`
  	for libm_file in $libm_files ; do
@@ -15,7 +15,7 @@ setuid root/setgid utmp are handled by PLIST
  			ml_cv_libm_dir=`dirname $libm_file`
  		fi
  	done
-@@ -609,19 +609,9 @@ AC_ARG_ENABLE(pty_helper,
+@@ -625,19 +625,9 @@ AC_ARG_ENABLE(pty_helper,
  	pty_helper=$enable_pty_helper)
  if test "$utmp" = "yes" -a "$pty_helper" != "yes" ; then
  	UTMP_CFLAGS="-DUSE_UTMP"
