@@ -1,0 +1,25 @@
+$OpenBSD: patch-texk_web2c_pdftexdir_ttf2afm_c,v 1.1 2014/01/11 18:46:52 edd Exp $
+
+http://tug.org/pipermail/tldistro/2013q3/000218.html
+
+--- texk/web2c/pdftexdir/ttf2afm.c.origy	Fri Oct  4 11:19:32 2013
++++ texk/web2c/pdftexdir/ttf2afm.c	Fri Oct  4 11:20:54 2013
+@@ -521,15 +521,15 @@ static void read_font(void)
+             }
+         }
+         break;
++    default:
++        ttf_warn("unsupported format (%.8X) of `post' table, assuming 3.0",
++                 post_format);
+     case 0x00030000:
+         if (print_glyph == AS_NAME) {
+             ttf_warn
+                 ("no names available in `post' table, print glyph names as indices");
+             print_glyph = AS_INDEX;
+         }
+-        break;
+-    default:
+-        ttf_fail("unsupported format (%.8X) of `post' table", post_format);
+     }
+     ttf_seek_tab("loca", 0);
+     if (loca_format == 1) {

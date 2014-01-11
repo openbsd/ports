@@ -1,18 +1,19 @@
-$OpenBSD: README,v 1.6 2012/12/17 20:28:04 edd Exp $
+$OpenBSD: README,v 1.7 2014/01/11 18:46:52 edd Exp $
 
 Note: This is not a README for users.
 
-TeX Live 2012 - Porting progress
+TeX Live 2013 - Porting progress
 ================================
 
  * Get base compilers working:			OK
- * Test build works.				OK
+ * Check *_ADJ					OK
+ * Test build works.
    -> amd64					OK
-   -> i386					OK
-   -> sparc64					OK
- * Do texmf split (see texmf/files/rblatter)	OK
+   -> i386
+   -> sparc64
+ * Do texmf split (with new texscythe tool)	OK
  * Split out conTeXt (use grep)			OK
- * Move manuals and pdf manuals			OK
+ * Move manuals and remove pdf manuals		OK
    -> All texmf manuals in -minimal		OK
  * Remove external deps				OK
    -> texworks					OK
@@ -20,18 +21,25 @@ TeX Live 2012 - Porting progress
    -> asymptote					OK
  * Remove windows junk				OK
  * Get basic texmf packaging:			OK
+   -> tlpkg/ stuff not needed (and wont be present) OK
+   -> beware errors in the tlpdb (yay)		OK
  * Re-add depenedencies:			OK
  * Hack texmf.cnf				OK
  * Implement @xxx in plists			OK
  * emulate texlinks				OK
- * patch in ruby/python versions for texexec	OK
+ * patch in interpreter paths			OK
  * Take perl modules from extra texmf needed for updmap	OK
  * Generate texmf-var pregen			OK
-   (all as root) 'mktexlsr', 'fmtutil-sys --all',
-     'updmap-sys', rm ls-R and tar up texmf-var
+   (all as root) 'mktexlsr', 'fmtutil-sys --all', OK
+     'updmap-sys', remove ls-R and logs from texmf-var, OK
+     then tar up.				OK
  * Apply any security/reliability patches	OK
-   Search here: http://tug.org/pipermail/tldistro/
- * @comment manpages conflicting with t1utils	OK
+   Search here: http://tug.org/pipermail/tldistro/ OK
+ * Remove manpages conflicting with t1utils	OK
+ * Check buildset in bulk.			OK
+ * Move info pages into the right place.	OK
+ * Check various (non-texlive) packages that use the texmf work
+ * Install everything and run pkg_check(8)	OK
 
 Known Issues
 ============

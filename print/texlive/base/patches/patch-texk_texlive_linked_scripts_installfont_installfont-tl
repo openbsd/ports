@@ -1,6 +1,6 @@
-$OpenBSD: patch-texk_texlive_linked_scripts_installfont_installfont-tl,v 1.1 2013/05/29 20:04:13 zhuk Exp $
---- texk/texlive/linked_scripts/installfont/installfont-tl.origy	Tue Mar 26 12:44:36 2013
-+++ texk/texlive/linked_scripts/installfont/installfont-tl	Tue Mar 26 12:45:10 2013
+$OpenBSD: patch-texk_texlive_linked_scripts_installfont_installfont-tl,v 1.2 2014/01/11 18:46:52 edd Exp $
+--- texk/texlive/linked_scripts/installfont/installfont-tl.origy	Tue Mar 12 00:01:41 2013
++++ texk/texlive/linked_scripts/installfont/installfont-tl	Thu Aug 29 17:49:54 2013
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/ksh

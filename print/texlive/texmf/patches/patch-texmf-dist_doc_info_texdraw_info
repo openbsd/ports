@@ -1,0 +1,18 @@
+$OpenBSD: patch-texmf-dist_doc_info_texdraw_info,v 1.1 2014/01/11 18:46:52 edd Exp $
+
+Add dir info entry to silence pkg_{add,delete} warning.
+
+--- texmf-dist/doc/info/texdraw.info.origy	Mon Dec  9 16:59:38 2013
++++ texmf-dist/doc/info/texdraw.info	Mon Dec  9 17:01:33 2013
+@@ -14,6 +14,11 @@ manual under the conditions for verbatim copying, prov
+ entire resulting derived work is distributed under the terms of a
+ permission notice identical to this one.
+ 
++INFO-DIR-SECTION TeX
++START-INFO-DIR-ENTRY
++* Texdraw: (texdraw).         macros for drawing in TeX
++END-INFO-DIR-ENTRY
++
+ 
+ File: texdraw,  Node: Top,  Next: Introduction,  Prev: (dir),  Up: (dir)
+ 

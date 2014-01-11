@@ -1,0 +1,17 @@
+$OpenBSD: patch-texk_dvipsk_writet1_c,v 1.1 2014/01/11 18:46:52 edd Exp $
+
+http://tug.org/pipermail/tldistro/2013q3/000218.html
+
+--- texk/dvipsk/writet1.c.origy	Fri Oct  4 11:27:21 2013
++++ texk/dvipsk/writet1.c	Fri Oct  4 11:28:46 2013
+@@ -1167,7 +1167,9 @@ static void t1_subset_ascii_part(void)
+     t1_getline();
+     while (!t1_prefix("/Encoding")) {
+         t1_scan_param();
+-        t1_putline();
++        if (!(t1_prefix("/UniqueID") &&
++            !strncmp(t1_line_array + strlen(t1_line_array) -4, "def", 3)))
++            t1_putline();
+         t1_getline();
+     }
+     if (is_reencoded(fm_cur))

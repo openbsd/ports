@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.22 2012/12/17 20:28:04 edd Exp $
+@comment $OpenBSD: PLIST,v 1.23 2014/01/11 18:46:52 edd Exp $
 @conflict teTeX_base-*
 @conflict pdfjam-*
 @conflict ht-<2
+@conflict texlive_texmf-buildset-<2013
 @pkgpath print/teTeX/base
 @pkgpath print/pdfjam
 @pkgpath print/teTeX/base,-fmt
@@ -127,11 +128,14 @@
 @bin bin/xetex
 @comment bin/tlmgr
 bin/a2ping
+bin/a5toa4
+bin/adhocfilelist
 bin/afm2afm
 bin/allcm
 bin/allec
 bin/allneeded
 bin/amstex
+bin/arara
 bin/arlatex
 bin/authorindex
 bin/autoinst
@@ -160,6 +164,7 @@ bin/ctxtools
 bin/de-macro
 bin/deweb
 bin/dosepsbin
+bin/dtxgen
 bin/dvi2fax
 bin/dviasm
 bin/dvigif
@@ -201,6 +206,9 @@ bin/inimf
 bin/initex
 bin/installfont-tl
 bin/jadetex
+bin/kanji-config-updmap
+bin/kanji-config-updmap-sys
+bin/kanji-fontmap-creator
 bin/kpsepath
 bin/kpsetool
 bin/kpsewhere
@@ -211,10 +219,14 @@ bin/latex2man
 bin/latexdiff
 bin/latexdiff-vc
 bin/latexfileversion
+bin/latexpand
 bin/latexrevise
 bin/listbib
 bin/listings-ext.sh
+bin/ltxfileinfo
+bin/lua2dox_filter
 bin/lualatex
+bin/luaotfload-tool
 bin/luatools
 bin/m-tx
 bin/makeglossaries
@@ -240,6 +252,7 @@ bin/mllatex
 bin/mltex
 bin/mptopdf
 bin/mtxrun
+bin/multibibliography
 bin/musixflx
 bin/musixtex
 bin/ofm2opl
@@ -271,8 +284,7 @@ bin/pdfpun
 bin/pdfxmltex
 bin/pedigree
 bin/perltex
-bin/physe
-bin/phyzzx
+bin/pfarrei
 bin/pkfix
 bin/pkfix-helper
 bin/platex
@@ -282,6 +294,7 @@ bin/ps4pdf
 bin/pslatex
 bin/pst2pdf
 bin/pstopdf
+bin/ptex2pdf
 bin/purifyeps
 bin/repstopdf
 bin/rpdfcrop
@@ -317,8 +330,8 @@ bin/tpic2pdftex
 bin/typeoutfileinfo
 bin/ulqda
 bin/updmap
-bin/updmap-setup-kanji
 bin/updmap-sys
+bin/uplatex
 bin/urlbst
 bin/utf8mex
 bin/vpe
@@ -383,8 +396,8 @@ lib/libptexenc.la
 libdata/perl5/site_perl/TeXLive/
 libdata/perl5/site_perl/TeXLive/TLConfig.pm
 libdata/perl5/site_perl/TeXLive/TLUtils.pm
-share/doc/pkg-readmes/${FULLPKGNAME}
 @exec mktexlsr > /dev/null 2>&1
-@unexec-delete rm %D/share/texmf/ls-R
-@unexec-delete rm %D/share/texmf-dist/ls-R
-@unexec-delete rm %D/share/texmf-var/ls-R
+@unexec-delete rm -f %D/share/texmf-dist/ls-R
+@unexec-delete rm -f %D/share/texmf-var/ls-R
+@unexec-delete rm -f %D/share/texmf/ls-R
+@unexec-delete rm -f %D/share/texmf-local/ls-R

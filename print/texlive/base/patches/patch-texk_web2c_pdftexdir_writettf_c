@@ -1,0 +1,24 @@
+$OpenBSD: patch-texk_web2c_pdftexdir_writettf_c,v 1.1 2014/01/11 18:46:52 edd Exp $
+
+http://tug.org/pipermail/tldistro/2013q3/000218.html
+
+--- texk/web2c/pdftexdir/writettf.c.origy	Fri Oct  4 11:21:14 2013
++++ texk/web2c/pdftexdir/writettf.c	Fri Oct  4 11:22:28 2013
+@@ -517,14 +517,13 @@ static void ttf_read_post(void)
+             }
+         }
+         break;
++    default:
++        pdftex_warn("unsupported format (%.8X) of `post' table, assuming 3.0",
++                    (unsigned int) post_format);
+     case 0x00030000:
+         for (glyph = glyph_tab; glyph - glyph_tab < NMACGLYPHS; glyph++) {
+             glyph->name_index = glyph - glyph_tab;
+         }
+-        break;
+-    default:
+-        pdftex_fail("unsupported format (%.8X) of `post' table",
+-                    (unsigned int) post_format);
+     }
+ }
+ 

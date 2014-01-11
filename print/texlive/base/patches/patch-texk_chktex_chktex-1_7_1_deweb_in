@@ -1,0 +1,9 @@
+$OpenBSD: patch-texk_chktex_chktex-1_7_1_deweb_in,v 1.1 2014/01/11 18:46:52 edd Exp $
+--- texk/chktex/chktex-1.7.1/deweb.in.origy	Thu Sep 12 23:05:17 2013
++++ texk/chktex/chktex-1.7.1/deweb.in	Thu Sep 12 23:05:28 2013
+@@ -1,4 +1,4 @@
+-#! @PERL5@
++#!/usr/bin/perl
+ #  deweb v1.2, kills the C sections of a CWEB file, for passing to ChkTeX.
+ #  Copyright (C) 1996 Jens T. Berger Thielemann
+ #

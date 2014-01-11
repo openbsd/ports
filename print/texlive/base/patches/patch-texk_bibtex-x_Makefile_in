@@ -1,0 +1,15 @@
+$OpenBSD: patch-texk_bibtex-x_Makefile_in,v 1.1 2014/01/11 18:46:52 edd Exp $
+
+Missing pthread linkage
+
+--- texk/bibtex-x/Makefile.in.origy	Thu Aug 29 17:50:02 2013
++++ texk/bibtex-x/Makefile.in	Thu Aug 29 17:50:13 2013
+@@ -570,7 +570,7 @@ bibtexu_SOURCES = $(common_sources)
+ # Force Automake to use CXXLD for linking
+ nodist_EXTRA_bibtexu_SOURCES = dummy.cxx
+ bibtexu_CPPFLAGS = $(AM_CPPFLAGS) $(ICU_INCLUDES) -DUTF_8
+-bibtexu_LDADD = $(KPATHSEA_LIBS) $(ICU_LIBS)
++bibtexu_LDADD = $(KPATHSEA_LIBS) $(ICU_LIBS) -pthread
+ csfdir = $(datarootdir)/texmf-dist/bibtex/csf/base
+ dist_csf_DATA = \
+ 	csf/88591lat.csf \

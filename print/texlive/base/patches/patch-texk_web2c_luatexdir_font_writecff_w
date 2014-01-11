@@ -1,0 +1,15 @@
+$OpenBSD: patch-texk_web2c_luatexdir_font_writecff_w,v 1.1 2014/01/11 18:46:52 edd Exp $
+
+http://tug.org/pipermail/tldistro/2013q3/000218.html
+
+--- texk/web2c/luatexdir/font/writecff.w.origy	Fri Oct  4 11:25:51 2013
++++ texk/web2c/luatexdir/font/writecff.w	Fri Oct  4 11:26:50 2013
+@@ -3389,6 +3389,8 @@ void write_cid_cff(PDF pdf, cff_font * cffont, fd_entr
+             }
+             pdf_begin_obj(pdf, cidset, OBJSTM_NEVER);
+             pdf_begin_dict(pdf);
++            pdf_dict_add_streaminfo(pdf);
++            pdf_end_dict(pdf);
+             pdf_begin_stream(pdf);
+             pdf_out_block(pdf, stream, l);
+             pdf_end_stream(pdf);

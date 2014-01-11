@@ -1,0 +1,17 @@
+$OpenBSD: patch-texk_dvipsk_bbox_c,v 1.1 2014/01/11 18:46:52 edd Exp $
+
+http://tug.org/pipermail/tldistro/2013q3/000218.html
+
+--- texk/dvipsk/bbox.c.origy	Fri Oct  4 11:23:12 2013
++++ texk/dvipsk/bbox.c	Fri Oct  4 11:25:18 2013
+@@ -346,8 +346,8 @@ dochar:
+             if (v - bcd->ury < lly) lly = v - bcd->ury;
+             if (v - bcd->lly > ury) ury = v - bcd->lly;
+          } else {
+-            if (h + bcd->ury < llx) llx = h + bcd->ury;
+-            if (h + bcd->lly > urx) urx = h + bcd->lly;
++            if (h + bcd->ury > urx) urx = h + bcd->ury;
++            if (h + bcd->lly < llx) llx = h + bcd->lly;
+             if (v + bcd->llx < lly) lly = v + bcd->llx;
+             if (v + bcd->urx > ury) ury = v + bcd->urx;
+          }
