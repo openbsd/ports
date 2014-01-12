@@ -1,17 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/05/26 23:01:21 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/01/12 23:49:09 bluhm Exp $
 ${P5SITE}/Net/
 ${P5SITE}/Net/SSLGlue/
 ${P5SITE}/Net/SSLGlue.pm
+${P5SITE}/Net/SSLGlue/FTP.pm
 ${P5SITE}/Net/SSLGlue/LDAP.pm
 ${P5SITE}/Net/SSLGlue/LWP.pm
 ${P5SITE}/Net/SSLGlue/POP3.pm
 ${P5SITE}/Net/SSLGlue/SMTP.pm
+${P5SITE}/Net/SSLGlue/Socket.pm
 @man man/man3p/Net::SSLGlue.3p
+@man man/man3p/Net::SSLGlue::FTP.3p
 @man man/man3p/Net::SSLGlue::LDAP.3p
 @man man/man3p/Net::SSLGlue::LWP.3p
 @man man/man3p/Net::SSLGlue::POP3.3p
 @man man/man3p/Net::SSLGlue::SMTP.3p
+@man man/man3p/Net::SSLGlue::Socket.3p
 share/examples/p5-Net-SSLGlue/
+share/examples/p5-Net-SSLGlue/ftps-direct.pl
+share/examples/p5-Net-SSLGlue/ftps-starttls.pl
+share/examples/p5-Net-SSLGlue/ftps-tests.pl
 share/examples/p5-Net-SSLGlue/lwp.pl
 share/examples/p5-Net-SSLGlue/lwp_post.pl
 share/examples/p5-Net-SSLGlue/send-ssl-mail.pl
