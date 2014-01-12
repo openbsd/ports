@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_gcc,v 1.2 2013/12/02 22:34:55 pascal Exp $
+$OpenBSD: patch-gcc_config_gcc,v 1.3 2014/01/12 22:16:02 pascal Exp $
 --- gcc/config.gcc.orig	Thu Oct  3 02:47:24 2013
-+++ gcc/config.gcc	Wed Oct 16 18:56:48 2013
++++ gcc/config.gcc	Sat Dec 28 19:04:43 2013
 @@ -712,6 +712,14 @@ case ${target} in
        default_use_cxa_atexit=yes
        ;;
@@ -33,7 +33,15 @@ $OpenBSD: patch-gcc_config_gcc,v 1.2 2013/12/02 22:34:55 pascal Exp $
  	tm_file="${tm_file} dbxelf.h elfos.h openbsd.h openbsd-stdint.h openbsd-libpthread.h \
  		 pa/pa-openbsd.h pa/pa32-regs.h pa/pa32-openbsd.h"
  	tmake_file="${tmake_file} pa/t-openbsd"
-@@ -1252,6 +1261,7 @@ i[34567]86-*-openbsd*)
+@@ -1245,6 +1254,7 @@ i[34567]86-*-openbsd2.*|i[34567]86-*openbsd3.[0123])
+ 	use_collect2=yes
+ 	;;
+ i[34567]86-*-openbsd*)
++	tm_defines="${tm_defines} PIE_DEFAULT=1"
+ 	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h"
+ 	tm_file="${tm_file} openbsd.h openbsd-stdint.h openbsd-libpthread.h i386/openbsdelf.h"
+ 	extra_options="${extra_options} openbsd.opt"
+@@ -1252,6 +1262,7 @@ i[34567]86-*-openbsd*)
  	gnu_ld=yes
  	;;
  x86_64-*-openbsd*)
@@ -41,7 +49,7 @@ $OpenBSD: patch-gcc_config_gcc,v 1.2 2013/12/02 22:34:55 pascal Exp $
  	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h"
  	tm_file="${tm_file} openbsd.h openbsd-stdint.h openbsd-libpthread.h i386/x86-64.h i386/openbsdelf.h"
  	extra_options="${extra_options} openbsd.opt"
-@@ -1973,11 +1983,12 @@ picochip-*)
+@@ -1973,11 +1984,12 @@ picochip-*)
  	use_gcc_stdint=wrap
  	tmake_file="picochip/t-picochip t-pnt16-warn"
          ;;
@@ -59,7 +67,7 @@ $OpenBSD: patch-gcc_config_gcc,v 1.2 2013/12/02 22:34:55 pascal Exp $
  powerpc-*-darwin*)
  	extra_options="${extra_options} rs6000/darwin.opt"
  	case ${target} in
-@@ -2524,6 +2535,7 @@ sparc64-*-netbsd*)
+@@ -2524,6 +2536,7 @@ sparc64-*-netbsd*)
  	tmake_file="${tmake_file} sparc/t-sparc sparc/t-netbsd64"
  	;;
  sparc64-*-openbsd*)
@@ -67,7 +75,7 @@ $OpenBSD: patch-gcc_config_gcc,v 1.2 2013/12/02 22:34:55 pascal Exp $
  	tm_file="sparc/openbsd1-64.h ${tm_file} dbxelf.h elfos.h sparc/sysv4.h sparc/sp64-elf.h"
  	tm_file="${tm_file} openbsd.h openbsd-stdint.h openbsd-libpthread.h sparc/openbsd64.h"
  	extra_options="${extra_options} openbsd.opt"
-@@ -2710,6 +2722,12 @@ case ${target} in
+@@ -2710,6 +2723,12 @@ case ${target} in
      else
        arch=i386
      fi
