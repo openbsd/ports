@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2013/12/04 07:13:31 steven Exp $
+# $OpenBSD: Makefile,v 1.42 2014/01/12 20:41:11 steven Exp $
 
 COMMENT=	syslogd replacement
 
 SHARED_ONLY =	Yes
 
-V =		3.4.6
-REVISION =	1
+V =		3.4.7
 DISTNAME =	syslog-ng-$V
 CATEGORIES =	sysutils
 
