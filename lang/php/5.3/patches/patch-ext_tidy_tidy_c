@@ -1,30 +1,13 @@
-$OpenBSD: patch-ext_tidy_tidy_c,v 1.5 2014/01/11 15:01:56 sthen Exp $
-
-XXX partial context for second hunk; beware full context contains CVS keyword
-
---- ext/tidy/tidy.c.orig.port	Tue Dec 10 19:04:57 2013
-+++ ext/tidy/tidy.c	Sat Jan 11 14:26:07 2014
-@@ -31,7 +31,7 @@
+$OpenBSD: patch-ext_tidy_tidy_c,v 1.6 2014/01/12 22:03:45 sthen Exp $
+--- ext/tidy/tidy.c.orig.port	Sun Jan 12 21:53:52 2014
++++ ext/tidy/tidy.c	Sun Jan 12 21:56:13 2014
+@@ -31,7 +31,8 @@
  #include "ext/standard/info.h"
  #include "safe_mode.h"
  
 -#include "tidy.h"
 +#include "tidyp.h"
++#define tidyReleaseDate() tidyVersion()
  #include "buffio.h"
  
  /* compatibility with older versions of libtidy */
-@@ -1092,7 +1092,7 @@ static PHP_MINFO_FUNCTION(tidy)
- {
- 	php_info_print_table_start();
- 	php_info_print_table_header(2, "Tidy support", "enabled");
--	php_info_print_table_row(2, "libTidy Release", (char *)tidyReleaseDate());
-+	php_info_print_table_row(2, "libTidy Release", (char *)tidyVersion());
-@@ -1309,7 +1309,7 @@ static PHP_FUNCTION(tidy_get_release)
- 		return;
- 	}
- 
--	RETURN_STRING((char *)tidyReleaseDate(), 1);
-+	RETURN_STRING((char *)tidyVersion(), 1);
- }
- /* }}} */
- 
