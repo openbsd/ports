@@ -1,6 +1,9 @@
-$OpenBSD: patch-lib_puppet_type_sshkey_rb,v 1.1 2013/12/21 21:34:34 jasper Exp $
+$OpenBSD: patch-lib_puppet_type_sshkey_rb,v 1.2 2014/01/12 09:40:43 jasper Exp $
 
-Teach the sshkey type about ssh-ed25519.
+From fff10ad9b27cb532139f178378b1469641a83506 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Sat, 21 Dec 2013 22:44:23 +0100
+Subject: [PATCH 1/2] (PUP-1218) Add ssh-ed25519 support to the sshkey type
 
 --- lib/puppet/type/sshkey.rb.orig	Sat Dec 21 22:18:42 2013
 +++ lib/puppet/type/sshkey.rb	Sat Dec 21 22:19:12 2013
