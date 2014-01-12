@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2013/07/07 21:33:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.51 2014/01/12 14:58:30 naddy Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -6,7 +6,7 @@ COMMENT=		OpenAFS distributed filesystem
 
 VERSION=		1.4.7
 DISTNAME=		openafs-${VERSION}
-REVISION=		24
+REVISION=		25
 
 CATEGORIES=		net
 

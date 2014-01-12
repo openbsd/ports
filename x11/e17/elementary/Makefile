@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2013/12/13 17:49:50 rpe Exp $
+# $OpenBSD: Makefile,v 1.15 2014/01/12 14:58:30 naddy Exp $
 
 COMMENT =		basic widget set, based on EFL
 
 VERSION =		1.7.9
 DISTNAME =		elementary-${VERSION}
-REVISION = 		0
+REVISION = 		1
 
 SHARED_LIBS +=	elementary                0.0 # 8.6
 
