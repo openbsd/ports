@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/11/02 16:04:09 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/01/12 16:25:10 naddy Exp $
 @bin bin/french-conjugator
 @bin bin/french-deconjugator
 @bin bin/verbiste-gtk
@@ -37,12 +37,12 @@ share/locale/da/LC_MESSAGES/verbiste.mo
 share/locale/de/LC_MESSAGES/verbiste.mo
 share/locale/el/LC_MESSAGES/verbiste.mo
 share/locale/fr/LC_MESSAGES/verbiste.mo
-share/texmf/
-share/texmf/tex/
-share/texmf/tex/latex/
-share/texmf/tex/latex/verbiste/
-share/texmf/tex/latex/verbiste/verbiste.cfg
-share/texmf/tex/latex/verbiste/verbiste.cls
+share/texmf-local/
+share/texmf-local/tex/
+share/texmf-local/tex/latex/
+share/texmf-local/tex/latex/verbiste/
+share/texmf-local/tex/latex/verbiste/verbiste.cfg
+share/texmf-local/tex/latex/verbiste/verbiste.cls
 share/verbiste-0.1/
 @comment share/verbiste-0.1/COPYING
 share/verbiste-0.1/conjugation-el.xml

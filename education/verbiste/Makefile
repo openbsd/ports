@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2013/11/02 16:04:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.24 2014/01/12 16:25:10 naddy Exp $
 
 COMMENT=	French and Italian conjugation system
 
 DISTNAME=	verbiste-0.1.40
+REVISION=	0
 SHARED_LIBS=	verbiste-0.1	5.0	# .0.0
 CATEGORIES=	education
 HOMEPAGE=	http://sarrazip.com/dev/verbiste.html
@@ -35,6 +36,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static \
 		--without-gnome-app \
 		--with-gtk-app
 
-MAKE_FLAGS=	INTLLIBS='$$(LTLIBINTL)'
+MAKE_FLAGS=	INTLLIBS='$$(LTLIBINTL)' \
+		latexdir='$$(datadir)/texmf-local/tex/latex/$$(PACKAGE)'
 
 .include <bsd.port.mk>
