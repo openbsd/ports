@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_campaign_server_campaign_server_cpp,v 1.2 2010/10/12 20:33:18 jasper Exp $
---- src/campaign_server/campaign_server.cpp.orig	Thu Apr  8 11:17:11 2010
-+++ src/campaign_server/campaign_server.cpp	Thu Apr  8 11:17:29 2010
-@@ -41,6 +41,8 @@
+$OpenBSD: patch-src_campaign_server_campaign_server_cpp,v 1.3 2014/01/13 09:43:10 pascal Exp $
+--- src/campaign_server/campaign_server.cpp.orig	Sat Aug 17 11:42:19 2013
++++ src/campaign_server/campaign_server.cpp	Sun Jan 12 03:55:08 2014
+@@ -42,6 +42,8 @@
  // work on Windows not sure which other platforms have a problem with it.
  #if !(defined(_WIN32))
  #include <errno.h>

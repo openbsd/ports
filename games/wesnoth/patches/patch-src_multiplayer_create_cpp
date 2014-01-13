@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_multiplayer_create_cpp,v 1.2 2012/04/07 08:32:32 kirby Exp $
---- src/multiplayer_create.cpp.orig	Sat Jan  7 06:35:17 2012
-+++ src/multiplayer_create.cpp	Mon Feb 13 17:17:39 2012
-@@ -40,6 +40,9 @@
- #include "wml_separators.hpp"
- #include "formula_string_utils.hpp"
+$OpenBSD: patch-src_multiplayer_create_cpp,v 1.3 2014/01/13 09:43:10 pascal Exp $
+--- src/multiplayer_create.cpp.orig	Sat Aug 17 11:42:19 2013
++++ src/multiplayer_create.cpp	Sun Jan 12 03:55:08 2014
+@@ -41,6 +41,9 @@
+ 
+ #include <boost/foreach.hpp>
  
 +/* Resolve conflict with nitems() macro from sys/param.h */
 +#undef nitems

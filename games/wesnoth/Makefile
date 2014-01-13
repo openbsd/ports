@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.54 2013/06/23 18:03:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2014/01/13 09:43:10 pascal Exp $
 
 BROKEN-mips64 =		missing atomic ops
 BROKEN-mips64el =	missing atomic ops
 BROKEN-hppa =		missing atomic ops
 COMMENT=	fantasy turn-based strategy game
 
-DISTNAME=	wesnoth-1.10.6
+DISTNAME=	wesnoth-1.10.7
 
 CATEGORIES=	games x11
 
@@ -57,5 +57,8 @@ FLAVOR?=
 .if ${FLAVOR:Mlite}
 CONFIGURE_ARGS+=-DENABLE_LOW_MEM=ON
 .endif
+
+post-install:
+	find ${PREFIX} -name .gitignore -exec rm -f {} \+
 
 .include <bsd.port.mk>
