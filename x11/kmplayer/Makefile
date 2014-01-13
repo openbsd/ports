@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2013/12/22 19:24:35 zhuk Exp $
+# $OpenBSD: Makefile,v 1.21 2014/01/13 19:06:24 zhuk Exp $
 
 COMMENT=	front-end/embeddable KPart for MPlayer
 CATEGORIES=	x11 x11/kde
 DISTNAME=	kmplayer-0.6.4
 EXTRACT_SUFX=	.tar.bz2
 
-REVISION=	8
+REVISION=	9
 
 SHARED_LIBS=	kparts_kmplayer  0.0 \
 		kdeinit_kmplayer 0.0
@@ -24,6 +24,7 @@ MODGNU_CONFIG_GUESS_DIRS=	${MODKDE_CONFIG_GUESS_DIRS}
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.52
 CONFIGURE_ARGS+=	${MODKDE_CONFIGURE_ARGS}
+CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/${KDE}"
 USE_GMAKE=		Yes
 USE_LIBTOOL =		No
 PORTHOME=${WRKDIR}
