@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.55 2013/09/13 07:10:01 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.56 2014/01/13 09:12:10 dcoppa Exp $
 @pkgpath devel/git
 @bin bin/git
 bin/git-cvsserver
@@ -133,7 +133,7 @@ libexec/git/git-relink
 @bin libexec/git/git-remote-http
 @bin libexec/git/git-remote-https
 @bin libexec/git/git-remote-testsvn
-libexec/git/git-repack
+@bin libexec/git/git-repack
 @bin libexec/git/git-replace
 @bin libexec/git/git-repo-config
 libexec/git/git-request-pull
@@ -180,6 +180,7 @@ libexec/git/mergetools/araxis
 libexec/git/mergetools/bc3
 libexec/git/mergetools/codecompare
 libexec/git/mergetools/deltawalker
+libexec/git/mergetools/diffmerge
 libexec/git/mergetools/diffuse
 libexec/git/mergetools/ecmerge
 libexec/git/mergetools/emerge
