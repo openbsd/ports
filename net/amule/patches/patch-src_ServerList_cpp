@@ -1,10 +1,15 @@
-$OpenBSD: patch-src_ServerList_cpp,v 1.1 2012/01/12 11:30:45 dcoppa Exp $
+$OpenBSD: patch-src_ServerList_cpp,v 1.2 2014/01/13 15:01:22 dcoppa Exp $
 
 Bugfix: CServerList::LoadStaticServers() failed on empty lines
 (upstream git commit e298b38e9ce22e2861d34c5d7f6e7b2e009476b1)
 
---- src/ServerList.cpp.orig	Wed Jan 11 16:34:34 2012
-+++ src/ServerList.cpp	Wed Jan 11 16:35:21 2012
+If successfully downloaded a server list, and are not connected at
+the moment, try to connect.
+This happens when no server met is available on startup.
+(upstream git commit 41e0edaed86c9be58ae372e419e2cc02cebfa243)
+
+--- src/ServerList.cpp.orig	Sat Oct  8 23:07:50 2011
++++ src/ServerList.cpp	Mon Jan 13 13:44:42 2014
 @@ -455,7 +455,7 @@ void CServerList::LoadStaticServers()
  		wxString line = f.ReadLine();
  		
@@ -13,4 +18,29 @@ Bugfix: CServerList::LoadStaticServers() failed on empty lines
 +		if (line.IsEmpty() || line.GetChar(0) == '#' || line.GetChar(0) == '/') {
  			continue;
  		}
+ 
+@@ -840,8 +840,9 @@ void CServerList::UpdateServerMetFromURL(const wxStrin
+ }
+ 
+ 
+-void CServerList::DownloadFinished(uint32 result) 
++bool CServerList::DownloadFinished(uint32 result) 
+ {
++	bool ret = false;
+ 	if(result == HTTP_Success) {
+ 		const CPath tempFilename = CPath(theApp->ConfigDir + wxT("server.met.download"));
+ 
+@@ -852,11 +853,13 @@ void CServerList::DownloadFinished(uint32 result) 
+ 		// So, file is loaded and merged, and also saved
+ 		CPath::RemoveFile(tempFilename);
+ 		AddLogLineN(CFormat(_("Finished downloading the server list from %s")) % m_URLUpdate);
++		ret = true;
+ 	} else if (result == HTTP_Skipped) {
+ 		AddLogLineN(CFormat(_("Skipped download of %s, because requested file is not newer.")) % wxT("server.met"));
+ 	} else {
+ 		AddLogLineC(CFormat(_("Failed to download %s from %s")) % wxT("server.met") % m_URLUpdate);
+ 	}
++	return ret;
+ }
+ 
  

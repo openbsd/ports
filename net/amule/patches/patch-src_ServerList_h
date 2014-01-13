@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_ServerList_h,v 1.1 2014/01/13 15:01:22 dcoppa Exp $
+
+If successfully downloaded a server list, and are not connected at
+the moment, try to connect.
+This happens when no server met is available on startup.
+(upstream git commit 41e0edaed86c9be58ae372e419e2cc02cebfa243)
+
+--- src/ServerList.h.orig	Mon Jan 13 13:44:49 2014
++++ src/ServerList.h	Mon Jan 13 13:45:16 2014
+@@ -59,7 +59,7 @@ class CServerList : public CObservableQueue<CServer*> 
+ 	bool		IsInitialized() const { return m_initialized; }
+ 	void		Sort();
+ 	void 		UpdateServerMetFromURL(const wxString& strURL);	
+-	void		DownloadFinished(uint32 result);	
++	bool		DownloadFinished(uint32 result);	
+ 	void		AutoDownloadFinished(uint32 result);	
+ 	uint32		GetAvgFile() const;
+ 

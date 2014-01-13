@@ -1,0 +1,147 @@
+$OpenBSD: patch-src_amuleDlg_cpp,v 1.3 2014/01/13 15:01:22 dcoppa Exp $
+
+Fix the blasted DoNetworkRearrange()
+upstream git commits:
+ http://repo.or.cz/w/amule.git/commit/f2307fa12fb18688131962d11623ec776697b15f
+ http://repo.or.cz/w/amule.git/commit/af9cec62ba0bf02e31ae316749234cbd31792db7
+ http://repo.or.cz/w/amule.git/commit/85ea02a3abc784f415adadfb384c654057e13c01
+ http://repo.or.cz/w/amule.git/commit/d41b28c86b2f07439928720971896dde1ae89bb1
+
+--- src/amuleDlg.cpp.orig	Sun Oct  9 02:19:08 2011
++++ src/amuleDlg.cpp	Mon Jan 13 14:07:43 2014
+@@ -1433,17 +1433,13 @@ void CamuleDlg::DoNetworkRearrange()
+ 
+ 	wxToolBarToolBase* toolbarTool = m_wndToolbar->RemoveTool(ID_BUTTONNETWORKS);
+ 
++	// set the log windows
+ 	wxNotebook* logs_notebook = CastChild( ID_SRVLOG_NOTEBOOK, wxNotebook);
+-	wxNotebook* networks_notebook = CastChild( ID_NETNOTEBOOK, wxNotebook);
+ 
+ 	while (logs_notebook->GetPageCount() > 1) {
+ 		logs_notebook->RemovePage(logs_notebook->GetPageCount() - 1);
+ 	}
+ 
+-	while (networks_notebook->GetPageCount() > 0) {
+-		networks_notebook->RemovePage(networks_notebook->GetPageCount() - 1);
+-	}
+-
+ 	if (thePrefs::GetNetworkED2K()) {
+ #ifndef CLIENT_GUI
+ 		logs_notebook->AddPage(m_logpages[1].page, m_logpages[1].name);
+@@ -1451,57 +1447,88 @@ void CamuleDlg::DoNetworkRearrange()
+ 		logs_notebook->AddPage(m_logpages[2].page, m_logpages[2].name);
+ 	}
+ 
+-	m_networkpages[0].page->Show(thePrefs::GetNetworkED2K());
+-
+ 	if (thePrefs::GetNetworkKademlia()) {
+ 		logs_notebook->AddPage(m_logpages[3].page, m_logpages[3].name);
+ 	}
+ 
+-	m_networkpages[1].page->Show(thePrefs::GetNetworkKademlia());
++	// Set the main window.
++	// If we have both networks active, activate a notebook to select between them.
++	// If only one is active, show the window directly without a surrounding one tab notebook.
+ 
+-	networks_notebook->Show(thePrefs::GetNetworkED2K() && thePrefs::GetNetworkKademlia());
++	// States:
++	// 1: ED2K only
++	// 2: Kad only
++	// 3: both (in Notebook)
+ 
+-	wxWindow* replacement = NULL;
+-
+-	m_networknotebooksizer->Clear();
+-
++	static uint8 currentState = 3;		// on startup we have both enabled
++	uint8 newState;
+ 	if (thePrefs::GetNetworkED2K() && thePrefs::GetNetworkKademlia()) {
++		newState = 3;
+ 		toolbarTool->SetLabel(_("Networks"));
++	}
++	else if (thePrefs::GetNetworkED2K()) {
++		newState = 1;
++		toolbarTool->SetLabel(_("eD2k network"));
++	}
++	else {			// Kad only or no network
++		newState = 2;	// no network makes no sense anyway, so just show Kad there
++		toolbarTool->SetLabel(thePrefs::GetNetworkKademlia() ? _("Kad network") : _("No network"));
++	}
+ 
+-		m_networkpages[0].page->Reparent(networks_notebook);
+-		m_networkpages[1].page->Reparent(networks_notebook);
++	if (newState != currentState) {
++		wxNotebook* networks_notebook = CastChild(ID_NETNOTEBOOK, wxNotebook);
++		// First hide all windows
++		networks_notebook->Show(false);
++		m_networkpages[0].page->Show(false);
++		m_networkpages[1].page->Show(false);
++		m_networknotebooksizer->Clear();
+ 
+-		networks_notebook->AddPage(m_networkpages[0].page, m_networkpages[0].name);
+-		networks_notebook->AddPage(m_networkpages[1].page, m_networkpages[1].name);
++		wxWindow* replacement = NULL;
+ 
+-		replacement = networks_notebook;
++		// Move both pages into the notebook if they aren't already there.
++		if (currentState == 1) {	// ED2K
++			m_networkpages[0].page->Reparent(networks_notebook);
++			networks_notebook->InsertPage(0, m_networkpages[0].page, m_networkpages[0].name);
++		} else if (currentState == 2) {	// Kad
++			m_networkpages[1].page->Reparent(networks_notebook);
++			networks_notebook->AddPage(m_networkpages[1].page, m_networkpages[1].name);
++		}
+ 
+-	} else if (thePrefs::GetNetworkED2K()) {
+-		toolbarTool->SetLabel(_("eD2k network"));
+-		replacement = m_networkpages[0].page;
+-		m_networkpages[1].page->Reparent(m_networknotebooksizer->GetContainingWindow());
+-	} else if (thePrefs::GetNetworkKademlia()) {
+-		toolbarTool->SetLabel(_("Kad network"));
+-		m_networkpages[0].page->Reparent(m_networknotebooksizer->GetContainingWindow());
+-		replacement = m_networkpages[1].page;
+-	} else {
+-		// No networks.
+-		toolbarTool->SetLabel(_("No network"));
+-	}
++		// Now both pages are in the notebook. If we want to show one of them outside, move it back out again.
++		// Windows that are part of a notebook can't be reparented.
++		if (newState == 3) {
++			// Since we messed with the notebook, we now have to show both pages, one after the other.
++			// Otherwise GTK gets confused and shows the first tab only.
++			// (So much for "platform independent".)
++			networks_notebook->SetSelection(1);
++			m_networkpages[1].page->Show();
++			networks_notebook->SetSelection(0);
++			m_networkpages[0].page->Show();
++			replacement = networks_notebook;
++		} else if (newState == 1) {
++			replacement = m_networkpages[0].page;
++			networks_notebook->RemovePage(0);
++		} else {
++			replacement = m_networkpages[1].page;
++			networks_notebook->RemovePage(1);
++		}
+ 
+-	if (replacement) {
+ 		replacement->Reparent(m_networknotebooksizer->GetContainingWindow());
+-		m_networknotebooksizer->Add( replacement, 1, wxGROW|wxALIGN_CENTER_VERTICAL|wxTOP, 5 );
++		replacement->Show();
++		m_networknotebooksizer->Add(replacement, 1, wxGROW | wxALIGN_CENTER_VERTICAL | wxTOP, 5);
+ 		m_networknotebooksizer->Layout();
++		currentState = newState;
+ 	}
+ 
+-	m_wndToolbar->InsertTool(2, toolbarTool);
++	// Tool bar
+ 
++	m_wndToolbar->InsertTool(2, toolbarTool);
+ 	m_wndToolbar->EnableTool(ID_BUTTONNETWORKS, (thePrefs::GetNetworkED2K() || thePrefs::GetNetworkKademlia()));
+ 	m_wndToolbar->EnableTool(ID_BUTTONCONNECT, (thePrefs::GetNetworkED2K() || thePrefs::GetNetworkKademlia()) && theApp->ipfilter->IsReady());
+ 
+ 	m_wndToolbar->Realize();
+ 
++	ShowConnectionState();	// status in the bottom right
+ 	m_searchwnd->FixSearchTypes();
+ }
+ 
