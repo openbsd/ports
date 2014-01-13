@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2013/12/22 19:24:34 zhuk Exp $
+# $OpenBSD: Makefile,v 1.46 2014/01/13 20:38:52 zhuk Exp $
 
 COMMENT = 		K Desktop Environment, admin tools
 CATEGORIES =		x11 x11/kde
 VERSION =		3.5.10
 DISTNAME =		kdeadmin-${VERSION}
-MODKDE_VERSION ?=	3.5.8
+MODKDE_VERSION =	3.5.8
 PKGSPEC =		kdeadmin>=3,<4
 
 MODULES =	x11/kde devel/gettext
@@ -15,13 +15,15 @@ LIB_DEPENDS =	x11/kde/libs3
 
 SEPARATE_BUILD =	flavored
 
-REVISION =	11
-WANTLIB =	ICE SM X11 Xext Xfixes Xrender Xt art_lgpl_2 c expat fam
-WANTLIB +=	fontconfig freetype idn kabc kresources kwalletclient
-WANTLIB +=	lib/kde3/DCOP lib/kde3/kdecore>=6 lib/kde3/kdefx
-WANTLIB +=	lib/kde3/kdeprint lib/kde3/kdesu lib/kde3/kdeui lib/kde3/kio
-WANTLIB +=	lib/kde3/kntlm lib/kde3/kparts m png pthread pthread-stubs
-WANTLIB +=	stdc++ util vcard xcb z
+REVISION =	12
+
+WANTLIB =  c expat m pthread pthread-stubs stdc++ util z
+WANTLIB += ICE SM X11 Xext Xfixes Xrender Xt fontconfig freetype xcb
+WANTLIB += ${KDE}/DCOP ${KDE}/kabc ${KDE}/kdecore>=6 ${KDE}/kdefx
+WANTLIB += ${KDE}/kdeprint ${KDE}/kdesu ${KDE}/kdeui ${KDE}/kio
+WANTLIB += ${KDE}/kntlm ${KDE}/kparts ${KDE}/kresources
+WANTLIB += ${KDE}/kwalletclient ${KDE}/vcard
+WANTLIB += art_lgpl_2 fam idn png
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${MODKDE_HTML_SUBDIR}/en/common
