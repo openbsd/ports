@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.59 2014/01/11 16:42:01 zhuk Exp $
+# $OpenBSD: portcheck,v 1.60 2014/01/13 11:47:31 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1108,7 +1108,7 @@ check_wantlib() {
 			    "in WANTLIB"
 			;;
 
-		DCOP?(?('>')=+([0-9])))
+		@(DCOP|soundserver_idl|vcard)?(?('>')=+([0-9])))
 			err "$portref$v instead of \${KDE}/$v" \
 			    "in WANTLIB (check other libs, too!)"
 			;;
