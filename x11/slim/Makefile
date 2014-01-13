@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2013/10/31 09:03:33 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.26 2014/01/13 20:00:50 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	simple login manager
 
 DISTNAME=	slim-1.3.6
+REVISION=	0
 
 SHARED_LIBS=	slim	0.0 # 1.3
 

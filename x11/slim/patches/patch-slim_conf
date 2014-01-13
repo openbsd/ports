@@ -1,6 +1,6 @@
-$OpenBSD: patch-slim_conf,v 1.7 2013/10/31 09:03:33 dcoppa Exp $
---- slim.conf.orig	Tue Jun 26 10:20:14 2012
-+++ slim.conf	Sat Sep  1 23:15:35 2012
+$OpenBSD: patch-slim_conf,v 1.8 2014/01/13 20:00:50 landry Exp $
+--- slim.conf.orig	Wed Oct  2 00:38:05 2013
++++ slim.conf	Mon Jan 13 20:50:42 2014
 @@ -1,17 +1,17 @@
  # Path, X server and arguments (if needed)
  # Note: -xauth $authfile is automatically appended
@@ -25,7 +25,7 @@ $OpenBSD: patch-slim_conf,v 1.7 2013/10/31 09:03:33 dcoppa Exp $
  
  # Xauth file for server
  authfile           /var/run/slim.auth
-@@ -32,8 +32,8 @@ authfile           /var/run/slim.auth
+@@ -32,16 +32,18 @@ authfile           /var/run/slim.auth
  # NOTE: if your system does not have bash you need
  # to adjust the command according to your preferred shell,
  # i.e. for freebsd use:
@@ -36,7 +36,19 @@ $OpenBSD: patch-slim_conf,v 1.7 2013/10/31 09:03:33 dcoppa Exp $
  
  # Commands executed when starting and exiting a session.
  # They can be used for registering a X11 session with
-@@ -54,7 +54,7 @@ login_cmd           exec /bin/bash -login ~/.xinitrc %
+ # sessreg. You can use the %user variable
+ #
+-# sessionstart_cmd	some command
+-# sessionstop_cmd	some command
+ 
++# transfer /dev/drm0 ownership to the logged in user
++sessionstart_cmd	chown %user /dev/drm0
++sessionstop_cmd	chown root /dev/drm0
++
+ # Start in daemon mode. Valid values: yes | no
+ # Note that this can be overriden by the command line
+ # options "-d" and "-nodaemon"
+@@ -54,7 +56,7 @@ login_cmd           exec /bin/bash -login ~/.xinitrc %
  sessions            xfce4,icewm-session,wmaker,blackbox
  
  # Executed when pressing F11 (requires imagemagick)
@@ -45,7 +57,7 @@ $OpenBSD: patch-slim_conf,v 1.7 2013/10/31 09:03:33 dcoppa Exp $
  
  # welcome message. Available variables: %host, %domain
  welcome_msg         Welcome to %host
-@@ -84,7 +84,7 @@ reboot_msg         The system is rebooting...
+@@ -84,7 +86,7 @@ reboot_msg         The system is rebooting...
  current_theme       default
  
  # Lock file
