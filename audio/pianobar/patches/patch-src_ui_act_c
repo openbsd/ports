@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_ui_act_c,v 1.4 2014/01/13 08:46:45 dcoppa Exp $
+
+commit b91dada75f804ccca64644f6d40276db4815f4b3
+Author: Lars-Dominik Braun <lars@6xq.net>
+Date: Sun Jan 12 13:51:01 2014 +0100
+
+Return if station info request fails
+
+--- src/ui_act.c.orig	Sun Sep 15 15:54:04 2013
++++ src/ui_act.c	Mon Jan 13 08:00:39 2014
+@@ -675,8 +675,12 @@ BarUiActCallback(BarUiActManageStation) {
+ 	reqData.station = selStation;
+ 
+ 	BarUiMsg (&app->settings, MSG_INFO, "Fetching station info... ");
+-	BarUiActDefaultPianoCall (PIANO_REQUEST_GET_STATION_INFO, &reqData);
++	const bool bret = BarUiActDefaultPianoCall (PIANO_REQUEST_GET_STATION_INFO,
++			&reqData);
+ 	BarUiActDefaultEventcmd ("stationfetchinfo");
++	if (!bret) {
++		return;
++	}
+ 
+ 	/* enable submenus depending on data availability */
+ 	strcpy (question, "Delete ");
