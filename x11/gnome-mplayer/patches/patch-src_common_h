@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_common_h,v 1.11 2013/11/06 07:29:30 dcoppa Exp $
+$OpenBSD: patch-src_common_h,v 1.12 2014/01/13 11:28:03 dcoppa Exp $
+
+Fix problem with remembered softvol not being loaded
+
 --- src/common.h.orig	Tue Jul 23 22:36:58 2013
 +++ src/common.h	Wed Nov  6 08:15:39 2013
 @@ -317,7 +317,6 @@ gboolean softvol;

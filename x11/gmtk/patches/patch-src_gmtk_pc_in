@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_gmtk_pc_in,v 1.1 2013/10/07 10:20:29 dcoppa Exp $
---- src/gmtk.pc.in.orig	Mon Oct  7 10:54:02 2013
-+++ src/gmtk.pc.in	Mon Oct  7 10:54:21 2013
-@@ -10,7 +10,7 @@ gtk3=@ENABLE_GTK3@
+$OpenBSD: patch-src_gmtk_pc_in,v 1.2 2014/01/13 11:28:03 dcoppa Exp $
+--- src/gmtk.pc.in.orig	Mon Nov 25 20:44:49 2013
++++ src/gmtk.pc.in	Mon Jan 13 11:29:57 2014
+@@ -11,7 +11,7 @@ backend=@BACKEND@
  Name: gmtk
  Description: Gnome Media Player Toolkit
  Version: @VERSION@
