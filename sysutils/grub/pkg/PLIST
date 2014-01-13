@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/11/08 20:12:13 jasper Exp $
-bin/mbchk
+@comment $OpenBSD: PLIST,v 1.3 2014/01/13 22:12:44 sthen Exp $
+@bin bin/mbchk
 @info info/grub.info
 @info info/multiboot.info
 lib/grub/
@@ -22,7 +22,7 @@ lib/grub/${MACHINE_ARCH}-unknown/xfs_stage1_5
 @man man/man8/grub-md5-crypt.8
 @man man/man8/grub-terminfo.8
 @man man/man8/grub.8
-sbin/grub
+@bin sbin/grub
 sbin/grub-install
 sbin/grub-md5-crypt
 sbin/grub-set-default
