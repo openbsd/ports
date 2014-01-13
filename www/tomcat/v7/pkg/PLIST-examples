@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.17 2013/10/30 15:35:22 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.18 2014/01/13 08:28:51 dcoppa Exp $
 @conflict jakarta-tomcat-examples-*
 @pkgpath www/jakarta-tomcat/v7,-examples
 @owner _tomcat
@@ -1058,6 +1058,7 @@ webapps/docs/api/org/apache/jasper/compiler/ELFunctionMapper.html
 webapps/docs/api/org/apache/jasper/compiler/ELInterpreter.html
 webapps/docs/api/org/apache/jasper/compiler/ELInterpreterFactory.DefaultELInterpreter.html
 webapps/docs/api/org/apache/jasper/compiler/ELInterpreterFactory.html
+webapps/docs/api/org/apache/jasper/compiler/ELParser.TextBuilder.html
 webapps/docs/api/org/apache/jasper/compiler/ELParser.html
 webapps/docs/api/org/apache/jasper/compiler/ErrorDispatcher.html
 webapps/docs/api/org/apache/jasper/compiler/ErrorHandler.html
@@ -1546,6 +1547,15 @@ webapps/docs/api/org/apache/tomcat/util/collections/ConcurrentCache.html
 webapps/docs/api/org/apache/tomcat/util/collections/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/collections/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/collections/package-tree.html
+webapps/docs/api/org/apache/tomcat/util/descriptor/
+webapps/docs/api/org/apache/tomcat/util/descriptor/Constants.html
+webapps/docs/api/org/apache/tomcat/util/descriptor/DigesterFactory.html
+webapps/docs/api/org/apache/tomcat/util/descriptor/LocalResolver.html
+webapps/docs/api/org/apache/tomcat/util/descriptor/XmlErrorHandler.html
+webapps/docs/api/org/apache/tomcat/util/descriptor/XmlIdentifiers.html
+webapps/docs/api/org/apache/tomcat/util/descriptor/package-frame.html
+webapps/docs/api/org/apache/tomcat/util/descriptor/package-summary.html
+webapps/docs/api/org/apache/tomcat/util/descriptor/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/digester/
 webapps/docs/api/org/apache/tomcat/util/digester/AbstractObjectCreationFactory.html
 webapps/docs/api/org/apache/tomcat/util/digester/ArrayStack.html
@@ -1876,7 +1886,10 @@ webapps/docs/api/overview-summary.html
 webapps/docs/api/overview-tree.html
 webapps/docs/api/package-list
 webapps/docs/api/resources/
-webapps/docs/api/resources/inherit.gif
+webapps/docs/api/resources/background.gif
+webapps/docs/api/resources/tab.gif
+webapps/docs/api/resources/titlebar.gif
+webapps/docs/api/resources/titlebar_end.gif
 webapps/docs/api/serialized-form.html
 webapps/docs/api/stylesheet.css
 webapps/docs/appdev/
@@ -1925,6 +1938,7 @@ webapps/docs/cluster-howto.html
 webapps/docs/comments.html
 webapps/docs/config/
 webapps/docs/config/ajp.html
+webapps/docs/config/automatic-deployment.html
 webapps/docs/config/cluster-channel.html
 webapps/docs/config/cluster-deployer.html
 webapps/docs/config/cluster-interceptor.html
@@ -1997,7 +2011,10 @@ webapps/docs/elapi/javax/el/package-tree.html
 webapps/docs/elapi/overview-tree.html
 webapps/docs/elapi/package-list
 webapps/docs/elapi/resources/
-webapps/docs/elapi/resources/inherit.gif
+webapps/docs/elapi/resources/background.gif
+webapps/docs/elapi/resources/tab.gif
+webapps/docs/elapi/resources/titlebar.gif
+webapps/docs/elapi/resources/titlebar_end.gif
 webapps/docs/elapi/serialized-form.html
 webapps/docs/elapi/stylesheet.css
 webapps/docs/extras.html
@@ -2109,7 +2126,10 @@ webapps/docs/jspapi/overview-summary.html
 webapps/docs/jspapi/overview-tree.html
 webapps/docs/jspapi/package-list
 webapps/docs/jspapi/resources/
-webapps/docs/jspapi/resources/inherit.gif
+webapps/docs/jspapi/resources/background.gif
+webapps/docs/jspapi/resources/tab.gif
+webapps/docs/jspapi/resources/titlebar.gif
+webapps/docs/jspapi/resources/titlebar_end.gif
 webapps/docs/jspapi/serialized-form.html
 webapps/docs/jspapi/stylesheet.css
 webapps/docs/logging.html
@@ -2223,7 +2243,10 @@ webapps/docs/servletapi/overview-summary.html
 webapps/docs/servletapi/overview-tree.html
 webapps/docs/servletapi/package-list
 webapps/docs/servletapi/resources/
-webapps/docs/servletapi/resources/inherit.gif
+webapps/docs/servletapi/resources/background.gif
+webapps/docs/servletapi/resources/tab.gif
+webapps/docs/servletapi/resources/titlebar.gif
+webapps/docs/servletapi/resources/titlebar_end.gif
 webapps/docs/servletapi/serialized-form.html
 webapps/docs/servletapi/stylesheet.css
 webapps/docs/setup.html
@@ -2312,7 +2335,10 @@ webapps/docs/websocketapi/overview-summary.html
 webapps/docs/websocketapi/overview-tree.html
 webapps/docs/websocketapi/package-list
 webapps/docs/websocketapi/resources/
-webapps/docs/websocketapi/resources/inherit.gif
+webapps/docs/websocketapi/resources/background.gif
+webapps/docs/websocketapi/resources/tab.gif
+webapps/docs/websocketapi/resources/titlebar.gif
+webapps/docs/websocketapi/resources/titlebar_end.gif
 webapps/docs/websocketapi/serialized-form.html
 webapps/docs/websocketapi/stylesheet.css
 webapps/docs/windows-auth-howto.html
