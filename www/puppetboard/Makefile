@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2013/12/30 07:37:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2014/01/13 10:45:34 jasper Exp $
 
 COMMENT=		web interface to PuppetDB
 
 # git clone of eadcf8708ccdb6cfa7981f91bee425169d23234b
 DISTNAME=		puppetboard-0.0.1
-REVISION=		0
+REVISION=		1
 CATEGORIES=		www
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
