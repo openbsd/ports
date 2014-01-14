@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.29 2013/10/15 14:21:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.30 2014/01/14 08:39:40 ajacoutot Exp $
 @conflict hplip-docs-*
 @conflict hplip-gui-<3.13.7p2
 @extraunexec rm -rf /usr/local/share/hplip/data/firmware
@@ -129,6 +129,8 @@ share/hplip/base/tui.py
 share/hplip/base/tui.pyc
 share/hplip/base/utils.py
 share/hplip/base/utils.pyc
+share/hplip/base/validation.py
+share/hplip/base/validation.pyc
 share/hplip/base/vcard.py
 share/hplip/base/vcard.pyc
 share/hplip/base/wifi.py
