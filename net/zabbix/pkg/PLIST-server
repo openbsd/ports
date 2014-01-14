@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.12 2012/10/10 22:04:57 robert Exp $
+@comment $OpenBSD: PLIST-server,v 1.13 2014/01/14 15:17:46 robert Exp $
 @conflict zabbix-agent-<=1.8.3p5
 @man man/man8/zabbix_proxy.8
 @man man/man8/zabbix_server.8
@@ -38,20 +38,22 @@ share/zabbix/dbpatches/1.8/oracle/
 share/zabbix/dbpatches/1.8/oracle/patch.sql
 share/zabbix/dbpatches/1.8/postgresql/
 share/zabbix/dbpatches/1.8/postgresql/patch.sql
+share/zabbix/dbpatches/2.0/
+share/zabbix/dbpatches/2.0/ibm_db2/
+share/zabbix/dbpatches/2.0/ibm_db2/patch.sql
+share/zabbix/dbpatches/2.0/ibm_db2/rc4_rc5.sql
+share/zabbix/dbpatches/2.0/mysql/
+share/zabbix/dbpatches/2.0/mysql/patch.sql
+share/zabbix/dbpatches/2.0/mysql/rc4_rc5.sql
+share/zabbix/dbpatches/2.0/mysql/upgrade
+share/zabbix/dbpatches/2.0/oracle/
+share/zabbix/dbpatches/2.0/oracle/patch.sql
+share/zabbix/dbpatches/2.0/oracle/rc4_rc5.sql
+share/zabbix/dbpatches/2.0/postgresql/
+share/zabbix/dbpatches/2.0/postgresql/patch.sql
+share/zabbix/dbpatches/2.0/postgresql/rc4_rc5.sql
 share/zabbix/dbpatches/${MAJV}/
-share/zabbix/dbpatches/${MAJV}/ibm_db2/
-share/zabbix/dbpatches/${MAJV}/ibm_db2/patch.sql
-share/zabbix/dbpatches/${MAJV}/ibm_db2/rc4_rc5.sql
-share/zabbix/dbpatches/${MAJV}/mysql/
-share/zabbix/dbpatches/${MAJV}/mysql/patch.sql
-share/zabbix/dbpatches/${MAJV}/mysql/rc4_rc5.sql
-share/zabbix/dbpatches/${MAJV}/mysql/upgrade
-share/zabbix/dbpatches/${MAJV}/oracle/
-share/zabbix/dbpatches/${MAJV}/oracle/patch.sql
-share/zabbix/dbpatches/${MAJV}/oracle/rc4_rc5.sql
-share/zabbix/dbpatches/${MAJV}/postgresql/
-share/zabbix/dbpatches/${MAJV}/postgresql/patch.sql
-share/zabbix/dbpatches/${MAJV}/postgresql/rc4_rc5.sql
+share/zabbix/dbpatches/${MAJV}/README
 share/zabbix/externalscripts/
 share/zabbix/schema/
 share/zabbix/schema/mysql/

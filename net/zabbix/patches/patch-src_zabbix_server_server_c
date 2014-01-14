@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_zabbix_server_server_c,v 1.1 2012/10/10 22:04:57 robert Exp $
---- src/zabbix_server/server.c.orig	Wed Oct 10 23:49:51 2012
-+++ src/zabbix_server/server.c	Wed Oct 10 23:49:57 2012
-@@ -467,7 +467,7 @@ int	main(int argc, char **argv)
+$OpenBSD: patch-src_zabbix_server_server_c,v 1.2 2014/01/14 15:17:46 robert Exp $
+--- src/zabbix_server/server.c.orig	Mon Dec  9 10:15:13 2013
++++ src/zabbix_server/server.c	Tue Jan 14 09:17:46 2014
+@@ -528,7 +528,7 @@ int	main(int argc, char **argv)
  	}
  
  	if (NULL == CONFIG_FILE)

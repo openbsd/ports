@@ -1,6 +1,6 @@
-$OpenBSD: patch-conf_zabbix_proxy_conf,v 1.2 2013/01/24 18:48:15 robert Exp $
---- conf/zabbix_proxy.conf.orig	Sat Dec  8 12:09:14 2012
-+++ conf/zabbix_proxy.conf	Wed Jan 23 19:01:33 2013
+$OpenBSD: patch-conf_zabbix_proxy_conf,v 1.3 2014/01/14 15:17:46 robert Exp $
+--- conf/zabbix_proxy.conf.orig	Mon Dec  9 10:15:13 2013
++++ conf/zabbix_proxy.conf	Tue Jan 14 09:17:46 2014
 @@ -74,7 +74,7 @@ Hostname=Zabbix proxy
  # Default:
  # LogFile=
@@ -18,7 +18,7 @@ $OpenBSD: patch-conf_zabbix_proxy_conf,v 1.2 2013/01/24 18:48:15 robert Exp $
  
  ### Option: DBHost
  #	Database host name.
-@@ -137,7 +138,7 @@ DBName=zabbix
+@@ -138,7 +139,7 @@ DBName=zabbix_proxy
  # Default:
  # DBUser=
  
@@ -27,7 +27,7 @@ $OpenBSD: patch-conf_zabbix_proxy_conf,v 1.2 2013/01/24 18:48:15 robert Exp $
  
  ### Option: DBPassword
  #	Database password. Ignored for SQLite.
-@@ -153,6 +154,7 @@ DBUser=root
+@@ -154,6 +155,7 @@ DBUser=root
  # Mandatory: no
  # Default:
  # DBSocket=/tmp/mysql.sock
@@ -35,7 +35,7 @@ $OpenBSD: patch-conf_zabbix_proxy_conf,v 1.2 2013/01/24 18:48:15 robert Exp $
  
  # Option: DBPort
  #	Database port when not using local socket. Ignored for SQLite.
-@@ -400,6 +402,7 @@ DBUser=root
+@@ -435,6 +437,7 @@ DBUser=root
  # Mandatory: no
  # Default:
  # ExternalScripts=${datadir}/zabbix/externalscripts
@@ -43,7 +43,7 @@ $OpenBSD: patch-conf_zabbix_proxy_conf,v 1.2 2013/01/24 18:48:15 robert Exp $
  
  ### Option: FpingLocation
  #	Location of fping.
-@@ -408,6 +411,7 @@ DBUser=root
+@@ -443,6 +446,7 @@ DBUser=root
  # Mandatory: no
  # Default:
  # FpingLocation=/usr/sbin/fping
@@ -51,11 +51,11 @@ $OpenBSD: patch-conf_zabbix_proxy_conf,v 1.2 2013/01/24 18:48:15 robert Exp $
  
  ### Option: Fping6Location
  #	Location of fping6.
-@@ -417,6 +421,7 @@ DBUser=root
+@@ -452,6 +456,7 @@ DBUser=root
  # Mandatory: no
  # Default:
  # Fping6Location=/usr/sbin/fping6
 +Fping6Location=${LOCALBASE}/sbin/fping6
  
  ### Option: SSHKeyLocation
- #	Location of public and private keys for SSH checks and actions
+ #	Location of public and private keys for SSH checks and actions.
