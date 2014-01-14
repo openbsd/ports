@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.71 2013/11/05 07:33:33 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.72 2014/01/14 13:33:37 dcoppa Exp $
 
 COMMENT=		highly configurable framework window manager
 
 DISTNAME=		awesome-3.5.2
-REVISION=		0
+REVISION=		1
 EXTRACT_SUFX=		.tar.xz
 CATEGORIES=		x11
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		X11 X11-xcb Xcursor c cairo dbus-1 \
 			execinfo gdk_pixbuf-2.0 glib-2.0 \
-			gobject-2.0 ${MODLUA_WANTLIB} m \
+			gobject-2.0 ${MODLUA_WANTLIB} m pthread \
 			startup-notification-1 xcb xcb-atom \
 			xcb-aux xcb-event xcb-icccm xcb-keysyms \
 			xcb-property xcb-randr xcb-render \
@@ -67,10 +67,11 @@ pre-configure:
 		${WRKSRC}/themes/default/theme.lua.in
 
 post-install:
-	@rm ${WRKINST}/${LOCALBASE}/share/awesome/lib/*.{beforesubst,orig}
-	@rm ${WRKINST}/${LOCALBASE}/share/awesome/lib/awful/*.{beforesubst,orig}
-	@rm ${WRKINST}/${LOCALBASE}/share/awesome/lib/menubar/*.{beforesubst,orig}
-	@rm ${WRKINST}/${LOCALBASE}/share/awesome/themes/default/*.{beforesubst,orig}
+	@rm ${WRKINST}/${LOCALBASE}/share/awesome/lib/*.{beforesubst,orig} \
+		${WRKINST}/${LOCALBASE}/share/awesome/lib/awful/*.{beforesubst,orig} \
+		${WRKINST}/${LOCALBASE}/share/awesome/lib/awful/widget/*.orig \
+		${WRKINST}/${LOCALBASE}/share/awesome/lib/menubar/*.{beforesubst,orig} \
+		${WRKINST}/${LOCALBASE}/share/awesome/themes/default/*.{beforesubst,orig}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/awesome
 	@mv ${WRKINST}/${SYSCONFDIR}/xdg/awesome/rc.lua \
 		${PREFIX}/share/examples/awesome/

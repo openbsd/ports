@@ -1,9 +1,29 @@
-$OpenBSD: patch-property_c,v 1.5 2013/10/15 09:28:46 dcoppa Exp $
+$OpenBSD: patch-property_c,v 1.6 2014/01/14 13:33:37 dcoppa Exp $
 
 Revert to the old xcb-util-0.3.6 API
 
+commit 389a54e356f700a4f2a621e05dbdbafab4a3a03a
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Sat Nov 23 14:42:56 2013 +0100
+
+Really ignore loops in transient_for (FS#1124)
+
+The code in property_update_wm_transient_for() looked at the transient_for
+relation before the new transient got set. However, the code is supposed to
+check if we get a loop after introducing this new transient_for.
+
+Thus, if we arrive back at the client that we started from, we can be sure that
+there is a cycle. Signal this by setting the loop counter high enough to abort
+the loop and make the rest of this function do nothing.
+
+No idea how I missed this case before nor why I cannot reproduce this on debian,
+but can reproduce it on Arch just fine.
+
+Reported-By: Kasimir Knallkopf at http://article.gmane.org/gmane.comp.window-managers.awesome/10415
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
 --- property.c.orig	Sat Oct 12 18:48:49 2013
-+++ property.c	Tue Oct 15 09:51:13 2013
++++ property.c	Tue Jan 14 10:21:57 2014
 @@ -98,7 +98,7 @@ HANDLE_PROPERTY(net_wm_pid)
  xcb_get_property_cookie_t
  property_get_wm_transient_for(client_t *c)
@@ -22,7 +42,23 @@ Revert to the old xcb-util-0.3.6 API
  					     cookie,
  					     &trans, NULL))
              return;
-@@ -156,7 +156,7 @@ property_update_wm_client_leader(client_t *c, xcb_get_
+@@ -119,9 +119,14 @@ property_update_wm_transient_for(client_t *c, xcb_get_
+     client_set_type(globalconf.L, -1, WINDOW_TYPE_DIALOG);
+     client_set_above(globalconf.L, -1, false);
+ 
+-    /* Verify that there are no loops in the transient_for relation */
++    /* Verify that there are no loops in the transient_for relation after we are done */
+     for(counter = 0; tmp != NULL && counter <= globalconf.stack.len; counter++)
++    {
++        if (tmp == c)
++            /* We arrived back at the client we started from, so there is a loop */
++            counter = globalconf.stack.len+1;
+         tmp = tmp->transient_for;
++    }
+     if (counter <= globalconf.stack.len)
+         client_set_transient_for(globalconf.L, -1, tc);
+ 
+@@ -156,7 +161,7 @@ property_update_wm_client_leader(client_t *c, xcb_get_
  xcb_get_property_cookie_t
  property_get_wm_normal_hints(client_t *c)
  {
@@ -31,7 +67,7 @@ Revert to the old xcb-util-0.3.6 API
  }
  
  /** Update the size hints of a client.
-@@ -166,7 +166,7 @@ property_get_wm_normal_hints(client_t *c)
+@@ -166,7 +171,7 @@ property_get_wm_normal_hints(client_t *c)
  void
  property_update_wm_normal_hints(client_t *c, xcb_get_property_cookie_t cookie)
  {
@@ -40,7 +76,7 @@ Revert to the old xcb-util-0.3.6 API
  					cookie,
  					&c->size_hints, NULL);
  }
-@@ -174,7 +174,7 @@ property_update_wm_normal_hints(client_t *c, xcb_get_p
+@@ -174,7 +179,7 @@ property_update_wm_normal_hints(client_t *c, xcb_get_p
  xcb_get_property_cookie_t
  property_get_wm_hints(client_t *c)
  {
@@ -49,7 +85,7 @@ Revert to the old xcb-util-0.3.6 API
  }
  
  /** Update the WM hints of a client.
-@@ -184,20 +184,20 @@ property_get_wm_hints(client_t *c)
+@@ -184,20 +189,20 @@ property_get_wm_hints(client_t *c)
  void
  property_update_wm_hints(client_t *c, xcb_get_property_cookie_t cookie)
  {
@@ -75,7 +111,7 @@ Revert to the old xcb-util-0.3.6 API
          client_set_group_window(globalconf.L, -1, wmh.window_group);
  
      lua_pop(globalconf.L, 1);
-@@ -206,7 +206,7 @@ property_update_wm_hints(client_t *c, xcb_get_property
+@@ -206,7 +211,7 @@ property_update_wm_hints(client_t *c, xcb_get_property
  xcb_get_property_cookie_t
  property_get_wm_class(client_t *c)
  {
@@ -84,7 +120,7 @@ Revert to the old xcb-util-0.3.6 API
  }
  
  /** Update WM_CLASS of a client.
-@@ -216,9 +216,9 @@ property_get_wm_class(client_t *c)
+@@ -216,9 +221,9 @@ property_get_wm_class(client_t *c)
  void
  property_update_wm_class(client_t *c, xcb_get_property_cookie_t cookie)
  {
@@ -96,7 +132,7 @@ Revert to the old xcb-util-0.3.6 API
  				     cookie,
  				     &hint, NULL))
          return;
-@@ -227,7 +227,7 @@ property_update_wm_class(client_t *c, xcb_get_property
+@@ -227,7 +232,7 @@ property_update_wm_class(client_t *c, xcb_get_property
      client_set_class_instance(globalconf.L, -1, hint.class_name, hint.instance_name);
      lua_pop(globalconf.L, 1);
  
@@ -105,7 +141,7 @@ Revert to the old xcb-util-0.3.6 API
  }
  
  static int
-@@ -290,7 +290,7 @@ property_update_net_wm_pid(client_t *c, xcb_get_proper
+@@ -290,7 +295,7 @@ property_update_net_wm_pid(client_t *c, xcb_get_proper
  xcb_get_property_cookie_t
  property_get_wm_protocols(client_t *c)
  {
@@ -114,7 +150,7 @@ Revert to the old xcb-util-0.3.6 API
  						c->window, WM_PROTOCOLS);
  }
  
-@@ -301,15 +301,15 @@ property_get_wm_protocols(client_t *c)
+@@ -301,15 +306,15 @@ property_get_wm_protocols(client_t *c)
  void
  property_update_wm_protocols(client_t *c, xcb_get_property_cookie_t cookie)
  {

@@ -1,9 +1,13 @@
-$OpenBSD: patch-objects_drawin_c,v 1.1 2013/10/15 09:28:46 dcoppa Exp $
+$OpenBSD: patch-objects_drawin_c,v 1.2 2014/01/14 13:33:37 dcoppa Exp $
 
 Revert to libXcursor
 
+Fix a bug in luaA_drawin_set_shape_bounding() which forgot to include
+the drawin's border in its size calculation
+(part of upstream git commit 56c57979056ec23cbd4982f3b81f6d80895fbe46)
+
 --- objects/drawin.c.orig	Sat Oct 12 18:48:49 2013
-+++ objects/drawin.c	Tue Oct 15 10:18:16 2013
++++ objects/drawin.c	Tue Jan 14 10:36:22 2014
 @@ -142,7 +142,7 @@ drawin_init(drawin_t *w)
                            | XCB_EVENT_MASK_POINTER_MOTION | XCB_EVENT_MASK_EXPOSURE
                            | XCB_EVENT_MASK_PROPERTY_CHANGE,
@@ -22,3 +26,14 @@ Revert to libXcursor
              p_delete(&drawin->cursor);
              drawin->cursor = a_strdup(buf);
              xwindow_set_cursor(drawin->window, cursor);
+@@ -547,7 +547,9 @@ luaA_drawin_set_shape_bounding(lua_State *L, drawin_t 
+     cairo_surface_t *surf = NULL;
+     if(!lua_isnil(L, -1))
+         surf = (cairo_surface_t *)lua_touserdata(L, -1);
+-    xwindow_set_shape(drawin->window, drawin->geometry.width, drawin->geometry.height,
++    xwindow_set_shape(drawin->window,
++            drawin->geometry.width + 2*drawin->border_width,
++            drawin->geometry.height + 2*drawin->border_width,
+             XCB_SHAPE_SK_BOUNDING, surf, -drawin->border_width);
+     return 0;
+ }
