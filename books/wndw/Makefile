@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/28 14:25:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2014/01/14 14:27:10 sthen Exp $
 
 COMMENT-main =	Wireless Networking in the Developing World, English edition
 COMMENT-es =	Wireless Networking in the Developing World, Spanish edition
@@ -6,6 +6,7 @@ COMMENT-fr =	Wireless Networking in the Developing World, French edition
 COMMENT-ar =	Wireless Networking in the Developing World, Arabic edition
 COMMENT-pt =	Wireless Networking in the Developing World, Portuguese ed.
 COMMENT-id =	Wireless Networking in the Developing World, Indonesian ed.
+COMMENT-my =	Wireless Networking in the Developing World, Burmese ed.
 
 PKGNAME-main =	wndw-3.0
 PKGNAME-es =	wndw-es-3.0
@@ -13,6 +14,7 @@ PKGNAME-fr =	wndw-fr-2.0
 PKGNAME-ar =	wndw-ar-2.0
 PKGNAME-pt =	wndw-pt-1.0
 PKGNAME-id =	wndw-id-2.0
+PKGNAME-my =	wndw-my-3.0
 
 REVISION-ar=	0
 
@@ -23,7 +25,7 @@ CATEGORIES =	books net
 # Creative Commons Attribution-ShareAlike 3.0
 PERMIT_PACKAGE_CDROM =	Yes
 
-MULTI_PACKAGES =-main -es -fr -ar -pt -id
+MULTI_PACKAGES =-main -es -fr -ar -pt -id -my
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
@@ -39,6 +41,7 @@ MASTER_SITES2 =	${HOMEPAGE}pdf/wndw2-ar/
 MASTER_SITES3 =	${HOMEPAGE}pdf/wndw-pt/
 MASTER_SITES4 =	${HOMEPAGE}pdf/wndw-id/ \
 		http://opensource.telkomspeedy.com:5432/furusato/files/
+MASTER_SITES5 =	${HOMEPAGE}pdf/wndw3-my/
 
 DISTFILES =	wndw3-ebook.pdf \
 		wndw3-cover.pdf \
@@ -46,7 +49,8 @@ DISTFILES =	wndw3-ebook.pdf \
 		wndw2-fr-ebook.pdf:1 \
 		wndw2-ar-ebook.pdf:2 \
 		wndw-pt-ebook.pdf:3 \
-		wndw-id-ebook.pdf:4
+		wndw-id-ebook.pdf:4 \
+		wndw3-my-ebook.pdf:5
 
 EXTRACT_ONLY =
 
