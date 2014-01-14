@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/21 08:45:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2014/01/14 00:38:39 sthen Exp $
 
 COMMENT =	user-space USB HID access library written in C
 
@@ -16,9 +16,9 @@ MAINTAINER =	Jonathan Armani <armani@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
 
-MASTER_SITES=	https://alioth.debian.org/frs/download.php/1958/
-
 WANTLIB += 	c usb pthread usb-1.0
+
+MASTER_SITES=	https://www.alioth.debian.org/frs/download.php/latestfile/336/
 
 LIB_DEPENDS = 	devel/libusb-compat
 
