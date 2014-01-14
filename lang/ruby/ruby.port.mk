@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.70 2014/01/11 22:33:50 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.71 2014/01/14 00:59:07 jeremy Exp $
 
 # ruby module
 
@@ -12,12 +12,12 @@ MODRUBY_HANDLE_FLAVORS ?= Yes
 MODRUBY_HANDLE_FLAVORS ?= No
 .endif
 
-# This allows you to build ruby 1.8, ruby 1.9, and jruby packages using
-# the same port directory for gem and extconf based ports.  It does this
-# by adding FLAVORS automatically, unless FLAVORS are already defined
-# or the port defines MODRUBY_REV to tie the port to a specific ruby
-# version.  For example, JDBC gem ports want to set FLAVOR=jruby,
-# since they don't work on ruby 1.8 or ruby 1.9.
+# This allows you to build packages for multiple ruby versions and
+# implementations using the same port directory for gem and extconf based
+# ports.  It does this by adding FLAVORS automatically, unless FLAVORS are
+# already defined or the port defines MODRUBY_REV to tie the port to a specific
+# ruby version.  For example, JDBC gem ports want to set FLAVOR=jruby, since
+# they don't work on other ruby implementations.
 .if !defined(MODRUBY_REV)
 .  if ${MODRUBY_HANDLE_FLAVORS:L:Myes}
 
@@ -31,21 +31,18 @@ FLAVORS+=		jruby
 .    endif
 
 # Instead of adding flavors to the end of the package name, we use
-# different package stems for ruby 1.8, ruby 1.9, and jruby packages.
-# ruby 1.8 uses the historical ruby-* package stem, ruby 1.9 uses
-# ruby19-*, jruby uses jruby-*, and rubinius uses rbx.  In most cases,
+# different package stems for different ruby versions and implementations.
+# ruby 1.8 uses the historical ruby-* package stem, newer ruby versions
+# use rubyXY-*, jruby uses jruby-*, and rubinius uses rbx-*.  In most cases,
 # PKGNAME in the port should be set to the same as DISTNAME, and this
 # will insert the correct package prefix.
 FULLPKGNAME?=		${MODRUBY_PKG_PREFIX}-${PKGNAME}
 
-# If the port can work on both ruby 1.9 and another version of ruby,
-# and gem installs binaries for it, the binaries on ruby 1.9 are installed
-# with a 19 suffix.  GEM_BIN_SUFFIX should be added after such a filename
+# If the port installs binary files or man pages and can work on multiple
+# versions of ruby, those files should have the appropriate suffix so that
+# they do not conflict.  GEM_BIN_SUFFIX should be added after such a filename
 # in the PLIST so that the gem will correctly package on all supported
-# versions of ruby.  Because the rbx, jruby, and default FLAVORs all use
-# same binary names but in different directories, GEM_MAN_SUFFIX is
-# used for the man pages to avoid conflicts since all man files go
-# in the same directory.
+# versions of ruby.
 SUBST_VARS+=		GEM_BIN_SUFFIX GEM_MAN_SUFFIX
 
 FLAVOR?=
@@ -76,19 +73,16 @@ PKG_ARGS+=	-f ${PORTSDIR}/lang/ruby/ruby18.PLIST
 .  endif
 .endif
 
-# The default ruby version to use for non-gem/extconf ports.
-# Defaults to ruby 2.0 for consistency with the default ruby20
-# FLAVOR for gem/extconf ports.
+# The default ruby version to use for non-gem/extconf ports.  Defaults to ruby
+# 2.0 for consistency with the default ruby20 FLAVOR for gem/extconf ports.
 MODRUBY_REV?=		2.0
 
-# Have the man pages for the rbx and jruby versions of a gem file
-# use an -rbx or -jruby suffix to avoid conflicts with the
-# default ruby 1.8 man page.
+# Because the rbx, jruby, and ruby18 FLAVORs all use same binary names but in
+# different directories, GEM_MAN_SUFFIX is used for the man pages to avoid
+# conflicts since all man files go in the same directory.
 GEM_MAN_SUFFIX =	-${MODRUBY_FLAVOR}
 
 # Use the FLAVOR as the prefix for the package, to avoid conflicts.
-# Each of the FLAVORs defined in ruby.port.mk should be independent
-# from the others if possible.
 MODRUBY_PKG_PREFIX =	${MODRUBY_FLAVOR}
 
 GEM_BIN_SUFFIX =	
@@ -179,7 +173,7 @@ ERRORS += "Fatal: Unsupported MODRUBY_TEST value: ${MODRUBY_TEST}"
 	${CONFIGURE_STYLE:L:Msetup}
 .    if !target(do-test)
 # Disable regress for extconf, gem, and setup based ports, since they
-# won't use make check for regress.
+# won't use make check for test.
 NO_TEST =	Yes
 .    endif
 .  endif
@@ -338,7 +332,7 @@ PKG_ARGS+=	-f ${PORTSDIR}/lang/ruby/rubygems-ext.PLIST
 .  endif
 
 # PLIST magic.  Set variables so that the same PLIST will work for
-# both ruby 1.8, ruby 1.9, and jruby.  
+# all ruby versions and implementations.
 SUBST_VARS+=	^GEM_LIB ^GEM_BIN DISTNAME
 
 .  if ${MODRUBY_REV} == jruby
@@ -455,7 +449,7 @@ do-install:
 SUBST_VARS+=		^MODRUBY_SITEARCHDIR ^MODRUBY_SITEDIR MODRUBY_LIBREV \
 			MODRUBY_ARCH
 
-# regression stuff
+# test stuff
 
 .if !empty(MODRUBY_TEST)
 .  if !target(do-test)
