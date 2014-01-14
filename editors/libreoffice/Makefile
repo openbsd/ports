@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2014/01/11 15:00:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.104 2014/01/14 15:38:23 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -7,7 +7,7 @@ COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
 BV=		4.1
-VERSION=	4.1.3.2
+VERSION=	4.1.4.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -16,9 +16,6 @@ PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde3
-
-REVISION-main=	3
-REVISION-java=	1
 
 EPOCH=		0
 
@@ -95,6 +92,8 @@ DISTFILES+=	${EDISTFILES} \
 		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:0 \
 		c48827713e93539dc7285f9e86ffbdc5-harfbuzz-0.9.17.tar.bz2:0 \
 		8473296c671b6e3dd8197f4145e0854b-libodfgen-0.0.2.tar.bz2:0 \
+		368f114c078f94214a308a74c7e991bc-crosextrafonts-20130214.tar.gz:0 \
+		c74b7223abe75949b4af367942d96c7a-crosextrafonts-carlito-20130920.tar.gz:0 \
 		libcdr-0.0.14.tar.bz2:0 \
 		libmspub-0.0.6.tar.bz2:0 \
 		libmwaw-0.1.11.tar.bz2:0 \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.31 2013/11/12 07:57:23 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.32 2014/01/14 15:38:23 robert Exp $
 %%SHARED%%
 bin/libreoffice
 bin/libreoffice${BV}
@@ -1728,6 +1728,14 @@ lib/libreoffice/share/fingerprint/zh-Hant.lm
 lib/libreoffice/share/fingerprint/zu.lm
 lib/libreoffice/share/fonts/
 lib/libreoffice/share/fonts/truetype/
+lib/libreoffice/share/fonts/truetype/Caladea-Bold.ttf
+lib/libreoffice/share/fonts/truetype/Caladea-BoldItalic.ttf
+lib/libreoffice/share/fonts/truetype/Caladea-Italic.ttf
+lib/libreoffice/share/fonts/truetype/Caladea-Regular.ttf
+lib/libreoffice/share/fonts/truetype/Carlito-Bold.ttf
+lib/libreoffice/share/fonts/truetype/Carlito-BoldItalic.ttf
+lib/libreoffice/share/fonts/truetype/Carlito-Italic.ttf
+lib/libreoffice/share/fonts/truetype/Carlito-Regular.ttf
 lib/libreoffice/share/fonts/truetype/DejaVuSans-Bold.ttf
 lib/libreoffice/share/fonts/truetype/DejaVuSans-BoldOblique.ttf
 lib/libreoffice/share/fonts/truetype/DejaVuSans-ExtraLight.ttf
