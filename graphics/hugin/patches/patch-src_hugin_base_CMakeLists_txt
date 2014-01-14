@@ -1,13 +1,13 @@
-$OpenBSD: patch-src_hugin_base_CMakeLists_txt,v 1.1 2012/11/18 16:55:27 dcoppa Exp $
+$OpenBSD: patch-src_hugin_base_CMakeLists_txt,v 1.2 2014/01/14 04:20:20 kirby Exp $
 
 /usr/local/include/boost/config/requires_threads.hpp:47:5: error:
 #error "Compiler threading support is not turned on. Please set the
 correct command line options for threading: -pthread (Linux),
 -pthreads (Solaris) or -mthreads (Mingw32)"
 
---- src/hugin_base/CMakeLists.txt.orig	Fri Dec  2 18:02:40 2011
-+++ src/hugin_base/CMakeLists.txt	Wed Nov 14 10:58:46 2012
-@@ -122,6 +122,8 @@ vigra_ext/MultiThreadOperations.h
+--- src/hugin_base/CMakeLists.txt.orig	Sun Oct 27 15:17:05 2013
++++ src/hugin_base/CMakeLists.txt	Wed Jan  8 00:19:07 2014
+@@ -127,6 +127,8 @@ vigra_ext/MultiThreadOperations.h
  vigra_ext/ImageTransformsGPU.h
  )
  
