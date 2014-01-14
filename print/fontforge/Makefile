@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2013/09/25 07:58:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2014/01/14 17:16:06 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		vector font editor/converter
 
-DISTNAME=		fontforge_full-20110222
-PKGNAME=		${DISTNAME:S,_full,,}
-REVISION=		1
+DISTNAME=		fontforge_full-20120731-b
+PKGNAME=		${DISTNAME:S,_full,,:S,-b,,}
 EXTRACT_SUFX=		.tar.bz2
 SHARED_LIBS=		fontforge	4.0 \
 			gdraw		5.1 \
@@ -16,7 +15,7 @@ SHARED_LIBS=		fontforge	4.0 \
 
 CATEGORIES=		print
 
-HOMEPAGE=		http://fontforge.sourceforge.net/
+HOMEPAGE=		http://fontforge.org/
 
 MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 
@@ -27,11 +26,11 @@ WANTLIB += ICE SM X11 Xext Xft Xi Xrender c cairo expat ffi fontconfig
 WANTLIB += freetype gif glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 harfbuzz jpeg m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pangoxft-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs python2.7 tiff util xcb xcb-render xcb-shm
+WANTLIB += pthread-stubs ${MODPY_WANTLIB} tiff util xcb xcb-render xcb-shm
 WANTLIB += xkbfile xkbui xml2 z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fontforge/}
- 
+
 MODULES=		devel/gettext lang/python
 
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS}	\
@@ -57,8 +56,5 @@ USE_GMAKE=		Yes
 USE_GROFF =		Yes
 
 NO_TEST=		Yes
-
-post-extract:
-	find ${WRKSRC} -name \*.orig -o -name \*.rej | xargs rm
 
 .include <bsd.port.mk>

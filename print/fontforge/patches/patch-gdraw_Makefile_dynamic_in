@@ -1,7 +1,7 @@
-$OpenBSD: patch-gdraw_Makefile_dynamic_in,v 1.5 2009/04/22 12:23:00 kili Exp $
---- gdraw/Makefile.dynamic.in.orig	Sat Jan  3 01:56:57 2009
-+++ gdraw/Makefile.dynamic.in	Mon Mar  9 21:28:42 2009
-@@ -34,7 +34,7 @@ libgdraw_OBJECTS =  choosericons.lo ctlvalues.lo drawb
+$OpenBSD: patch-gdraw_Makefile_dynamic_in,v 1.6 2014/01/14 17:16:07 jasper Exp $
+--- gdraw/Makefile.dynamic.in.orig	Thu Aug  2 17:09:09 2012
++++ gdraw/Makefile.dynamic.in	Sat Jan  4 21:42:37 2014
+@@ -36,7 +36,7 @@ libgdraw_OBJECTS =  choosericons.lo ctlvalues.lo drawb
   gtextfield.lo gtextinfo.lo gwidgets.lo gxdraw.lo gxcdraw.lo \
   ghvbox.lo gmatrixedit.lo gdrawable.lo gspacer.lo xkeysyms_unicode.lo
  

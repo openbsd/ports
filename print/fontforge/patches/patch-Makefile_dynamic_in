@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_dynamic_in,v 1.4 2008/10/27 17:58:52 kili Exp $
---- Makefile.dynamic.in.orig	Tue Jul 29 02:01:36 2008
-+++ Makefile.dynamic.in	Sun Oct 26 14:25:29 2008
-@@ -75,7 +75,6 @@ install_libs: libs
+$OpenBSD: patch-Makefile_dynamic_in,v 1.5 2014/01/14 17:16:07 jasper Exp $
+--- Makefile.dynamic.in.orig	Thu Aug  2 17:09:08 2012
++++ Makefile.dynamic.in	Sat Jan  4 21:42:37 2014
+@@ -77,7 +77,6 @@ install_libs: libs
  	if test -r libgdraw.la ; then $(LIBTOOL) --mode=install $(INSTALL) -c libgdraw.la $(DESTDIR)$(libdir)/libgdraw.la ; fi
  #We don't always build libfontforge
  	if test -r libfontforge.la ; then $(LIBTOOL) --mode=install $(INSTALL) -c libfontforge.la $(DESTDIR)$(libdir)/libfontforge.la ; fi
