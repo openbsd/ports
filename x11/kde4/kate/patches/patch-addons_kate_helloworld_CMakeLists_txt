@@ -1,0 +1,13 @@
+$OpenBSD: patch-addons_kate_helloworld_CMakeLists_txt,v 1.1 2014/01/14 21:34:22 zhuk Exp $
+Fix linking.
+--- addons/kate/helloworld/CMakeLists.txt.orig	Mon Jan 13 23:18:03 2014
++++ addons/kate/helloworld/CMakeLists.txt	Mon Jan 13 23:18:08 2014
+@@ -2,7 +2,7 @@ set(katehelloworldplugin_PART_SRCS plugin_katehellowor
+ 
+ kde4_add_plugin(katehelloworldplugin ${katehelloworldplugin_PART_SRCS})
+ 
+-target_link_libraries(katehelloworldplugin  ${KDE4_KDEUI_LIBS} kateinterfaces )
++target_link_libraries(katehelloworldplugin  kateinterfaces ${KDE4_KDEUI_LIBS} )
+ 
+ ########### install files ###############
+ install(TARGETS katehelloworldplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )

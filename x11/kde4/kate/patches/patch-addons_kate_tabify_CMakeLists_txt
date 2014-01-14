@@ -1,0 +1,13 @@
+$OpenBSD: patch-addons_kate_tabify_CMakeLists_txt,v 1.1 2014/01/14 21:34:22 zhuk Exp $
+Fix linking.
+--- addons/kate/tabify/CMakeLists.txt.orig	Mon Jan 13 22:37:10 2014
++++ addons/kate/tabify/CMakeLists.txt	Mon Jan 13 22:37:32 2014
+@@ -4,7 +4,7 @@ include_directories(${KDE4_INCLUDES})
+ 
+ kde4_add_plugin(katetabifyplugin tabify.cpp)
+ 
+-target_link_libraries(katetabifyplugin  ${KDE4_KDEUI_LIBS} ${KDE4_KPARTS_LIBS} kateinterfaces)
++target_link_libraries(katetabifyplugin  kateinterfaces ${KDE4_KDEUI_LIBS} ${KDE4_KPARTS_LIBS})
+ 
+ install(TARGETS katetabifyplugin DESTINATION ${PLUGIN_INSTALL_DIR})
+ 

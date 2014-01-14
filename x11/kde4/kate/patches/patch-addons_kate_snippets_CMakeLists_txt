@@ -1,0 +1,13 @@
+$OpenBSD: patch-addons_kate_snippets_CMakeLists_txt,v 1.1 2014/01/14 21:34:22 zhuk Exp $
+Fix linking.
+--- addons/kate/snippets/CMakeLists.txt.orig	Mon Jan 13 22:56:13 2014
++++ addons/kate/snippets/CMakeLists.txt	Mon Jan 13 22:56:21 2014
+@@ -8,7 +8,7 @@ set(katesnippetsplugin_PART_SRCS katesnippets.cpp )
+ kde4_add_plugin(katesnippetsplugin ${katesnippetsplugin_PART_SRCS})
+ 
+ 
+-target_link_libraries(katesnippetsplugin  ${KDE4_KDEUI_LIBS} ${KDE4_KPARTS_LIBS} kateinterfaces )
++target_link_libraries(katesnippetsplugin  kateinterfaces ${KDE4_KDEUI_LIBS} ${KDE4_KPARTS_LIBS} )
+ 
+ install(TARGETS katesnippetsplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
+ 

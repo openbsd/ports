@@ -1,0 +1,13 @@
+$OpenBSD: patch-addons_kate_konsole_CMakeLists_txt,v 1.1 2014/01/14 21:34:22 zhuk Exp $
+Fix linking.
+--- addons/kate/konsole/CMakeLists.txt.orig	Mon Jan 13 22:52:10 2014
++++ addons/kate/konsole/CMakeLists.txt	Mon Jan 13 22:52:17 2014
+@@ -8,7 +8,7 @@ set(katekonsoleplugin_PART_SRCS kateconsole.cpp )
+ kde4_add_plugin(katekonsoleplugin ${katekonsoleplugin_PART_SRCS})
+ 
+ 
+-target_link_libraries(katekonsoleplugin  ${KDE4_KDEUI_LIBS} ${KDE4_KPARTS_LIBS} kateinterfaces )
++target_link_libraries(katekonsoleplugin  kateinterfaces ${KDE4_KDEUI_LIBS} ${KDE4_KPARTS_LIBS} )
+ 
+ install(TARGETS katekonsoleplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
+ 

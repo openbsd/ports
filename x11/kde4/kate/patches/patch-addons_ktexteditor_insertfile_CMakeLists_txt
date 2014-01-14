@@ -1,0 +1,13 @@
+$OpenBSD: patch-addons_ktexteditor_insertfile_CMakeLists_txt,v 1.1 2014/01/14 21:34:22 zhuk Exp $
+Fix linking.
+--- addons/ktexteditor/insertfile/CMakeLists.txt.orig	Mon Jan 13 22:45:37 2014
++++ addons/ktexteditor/insertfile/CMakeLists.txt	Mon Jan 13 22:46:43 2014
+@@ -6,7 +6,7 @@ set(ktexteditor_insertfile_PART_SRCS insertfileplugin.
+ 
+ kde4_add_plugin(ktexteditor_insertfile ${ktexteditor_insertfile_PART_SRCS})
+ 
+-target_link_libraries(ktexteditor_insertfile  ${KDE4_KIO_LIBS} ktexteditor kdeui kfile)
++target_link_libraries(ktexteditor_insertfile  ${KDE4_KTEXTEDITOR_LIBS} ${KDE4_KIO_LIBS} ${KDE4_KDEUI_LIBS} ${KDE4_KFILE_LIBS})
+ 
+ install(TARGETS  ktexteditor_insertfile  DESTINATION ${PLUGIN_INSTALL_DIR} )
+ 

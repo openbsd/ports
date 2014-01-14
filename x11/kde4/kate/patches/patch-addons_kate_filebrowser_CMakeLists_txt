@@ -1,0 +1,13 @@
+$OpenBSD: patch-addons_kate_filebrowser_CMakeLists_txt,v 1.1 2014/01/14 21:34:22 zhuk Exp $
+Fix linking.
+--- addons/kate/filebrowser/CMakeLists.txt.orig	Mon Jan 13 22:53:55 2014
++++ addons/kate/filebrowser/CMakeLists.txt	Mon Jan 13 22:54:04 2014
+@@ -3,7 +3,7 @@ set(katefilebrowserplugin_PART_SRCS katefilebrowserplu
+ 
+ kde4_add_plugin(katefilebrowserplugin ${katefilebrowserplugin_PART_SRCS})
+ 
+-target_link_libraries(katefilebrowserplugin ${KDE4_KFILE_LIBS} ${KDE4_KPARTS_LIBS} kateinterfaces )
++target_link_libraries(katefilebrowserplugin kateinterfaces ${KDE4_KFILE_LIBS} ${KDE4_KPARTS_LIBS} )
+ 
+ install(TARGETS katefilebrowserplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
+ 

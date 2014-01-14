@@ -1,0 +1,13 @@
+$OpenBSD: patch-addons_kate_kttsd_CMakeLists_txt,v 1.1 2014/01/14 21:34:22 zhuk Exp $
+Fix linking.
+--- addons/kate/kttsd/CMakeLists.txt.orig	Mon Jan 13 22:53:19 2014
++++ addons/kate/kttsd/CMakeLists.txt	Mon Jan 13 22:53:35 2014
+@@ -3,7 +3,7 @@ set(kate_kttsd_PART_SRCS katekttsd.cpp )
+ 
+ kde4_add_plugin(kate_kttsd ${kate_kttsd_PART_SRCS})
+ 
+-target_link_libraries(kate_kttsd ${KDE4_KDECORE_LIBS} ${KDE4_KTEXTEDITOR_LIBS} ${KDE4_KPARTS_LIBS} kateinterfaces )
++target_link_libraries(kate_kttsd kateinterfaces ${KDE4_KTEXTEDITOR_LIBS} ${KDE4_KPARTS_LIBS} ${KDE4_KDECORE_LIBS} )
+ 
+ 
+ install(TARGETS kate_kttsd  DESTINATION ${PLUGIN_INSTALL_DIR} )

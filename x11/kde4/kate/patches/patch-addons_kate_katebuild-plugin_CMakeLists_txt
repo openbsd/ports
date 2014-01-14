@@ -1,0 +1,13 @@
+$OpenBSD: patch-addons_kate_katebuild-plugin_CMakeLists_txt,v 1.1 2014/01/14 21:34:22 zhuk Exp $
+Fix linking.
+--- addons/kate/katebuild-plugin/CMakeLists.txt.orig	Mon Jan 13 22:58:13 2014
++++ addons/kate/katebuild-plugin/CMakeLists.txt	Mon Jan 13 22:58:25 2014
+@@ -13,7 +13,7 @@ kde4_add_ui_files(katebuild_SRCS build.ui)
+ 
+ kde4_add_plugin(katebuildplugin ${katebuild_SRCS})
+ 
+-target_link_libraries(katebuildplugin ${KDE4_KDECORE_LIBS} kateinterfaces ${KDE4_KTEXTEDITOR_LIBS} )
++target_link_libraries(katebuildplugin kateinterfaces ${KDE4_KTEXTEDITOR_LIBS} ${KDE4_KDECORE_LIBS} )
+ 
+ install(TARGETS katebuildplugin DESTINATION ${PLUGIN_INSTALL_DIR} )
+ 

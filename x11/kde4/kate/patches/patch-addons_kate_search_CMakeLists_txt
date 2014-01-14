@@ -1,0 +1,13 @@
+$OpenBSD: patch-addons_kate_search_CMakeLists_txt,v 1.1 2014/01/14 21:34:22 zhuk Exp $
+Fix linking.
+--- addons/kate/search/CMakeLists.txt.orig	Mon Jan 13 22:49:24 2014
++++ addons/kate/search/CMakeLists.txt	Mon Jan 13 22:49:42 2014
+@@ -23,7 +23,7 @@ kde4_add_ui_files(katesearchplugin_PART_SRCS search.ui
+ 
+ kde4_add_plugin(katesearchplugin ${katesearchplugin_PART_SRCS})
+ 
+-target_link_libraries(katesearchplugin ${KDE4_KDEUI_LIBS} ${KDE4_KDECORE_LIBS} ${KDE4_KTEXTEDITOR_LIBS} kateinterfaces)
++target_link_libraries(katesearchplugin kateinterfaces ${KDE4_KTEXTEDITOR_LIBS} ${KDE4_KDEUI_LIBS} ${KDE4_KDECORE_LIBS})
+ 
+ ########### install files ###############
+ install(TARGETS katesearchplugin DESTINATION ${PLUGIN_INSTALL_DIR})

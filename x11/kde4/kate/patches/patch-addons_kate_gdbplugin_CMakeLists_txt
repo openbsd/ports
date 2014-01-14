@@ -1,0 +1,13 @@
+$OpenBSD: patch-addons_kate_gdbplugin_CMakeLists_txt,v 1.1 2014/01/14 21:34:22 zhuk Exp $
+Fix linking.
+--- addons/kate/gdbplugin/CMakeLists.txt.orig	Mon Jan 13 22:57:02 2014
++++ addons/kate/gdbplugin/CMakeLists.txt	Mon Jan 13 22:57:18 2014
+@@ -23,7 +23,7 @@ set(kategdbplugin_PART_SRCS 
+ kde4_add_ui_files(kategdbplugin_PART_SRCS advanced_settings.ui)
+ 
+ kde4_add_plugin( kategdbplugin ${kategdbplugin_PART_SRCS} )
+-target_link_libraries( kategdbplugin ${KDE4_KDEUI_LIBS} ${KDE4_KDECORE_LIBS} ${KDE4_KTEXTEDITOR_LIBS} kateinterfaces )
++target_link_libraries( kategdbplugin kateinterfaces ${KDE4_KTEXTEDITOR_LIBS} ${KDE4_KDEUI_LIBS} ${KDE4_KDECORE_LIBS} )
+ 
+ install( FILES ui.rc DESTINATION ${DATA_INSTALL_DIR}/kate/plugins/kategdb )
+ install( TARGETS kategdbplugin DESTINATION ${PLUGIN_INSTALL_DIR} )

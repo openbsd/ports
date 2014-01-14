@@ -1,0 +1,13 @@
+$OpenBSD: patch-addons_kate_katesql_CMakeLists_txt,v 1.1 2014/01/14 21:34:22 zhuk Exp $
+Fix linking.
+--- addons/kate/katesql/CMakeLists.txt.orig	Mon Jan 13 22:52:39 2014
++++ addons/kate/katesql/CMakeLists.txt	Mon Jan 13 22:52:58 2014
+@@ -28,7 +28,7 @@ kde4_add_plugin(katesqlplugin ${katesql_SRCS})
+ 
+ add_subdirectory(pics)
+ 
+-target_link_libraries(katesqlplugin ${KDE4_KDECORE_LIBS} ${KDE4_KDEUI_LIBS} ${QT_QTSQL_LIBRARY} kateinterfaces ${KDE4_KTEXTEDITOR_LIBS} )
++target_link_libraries(katesqlplugin kateinterfaces ${KDE4_KTEXTEDITOR_LIBS} ${KDE4_KDEUI_LIBS} ${KDE4_KDECORE_LIBS} ${QT_QTSQL_LIBRARY} )
+ 
+ install(TARGETS katesqlplugin DESTINATION ${PLUGIN_INSTALL_DIR} )
+ 

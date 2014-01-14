@@ -1,0 +1,17 @@
+$OpenBSD: patch-addons_kate_close-except-like_CMakeLists_txt,v 1.1 2014/01/14 21:34:22 zhuk Exp $
+Fix linking.
+--- addons/kate/close-except-like/CMakeLists.txt.orig	Mon Jan 13 22:57:49 2014
++++ addons/kate/close-except-like/CMakeLists.txt	Mon Jan 13 22:57:59 2014
+@@ -11,10 +11,10 @@ set(KATE_CLOSE_EXCEPT_PLUGIN_SOURCES
+ kde4_add_plugin(katecloseexceptplugin ${KATE_CLOSE_EXCEPT_PLUGIN_SOURCES})
+ 
+ target_link_libraries(katecloseexceptplugin
++    kateinterfaces
++    ${KDE4_KTEXTEDITOR_LIBS}
+     ${KDE4_KDEUI_LIBS}
+     ${KDE4_KFILE_LIBS}
+-    ${KDE4_KTEXTEDITOR_LIBS}
+-    kateinterfaces
+   )
+ 
+ configure_file(config.h.in config.h)

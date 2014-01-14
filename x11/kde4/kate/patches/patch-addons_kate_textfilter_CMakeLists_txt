@@ -1,0 +1,13 @@
+$OpenBSD: patch-addons_kate_textfilter_CMakeLists_txt,v 1.1 2014/01/14 21:34:22 zhuk Exp $
+Fix linking.
+--- addons/kate/textfilter/CMakeLists.txt.orig	Mon Jan 13 23:24:22 2014
++++ addons/kate/textfilter/CMakeLists.txt	Mon Jan 13 23:24:34 2014
+@@ -7,7 +7,7 @@ set(katetextfilterplugin_PART_UI textfilterwidget.ui)
+ kde4_add_ui_files(katetextfilterplugin_PART_SRCS ${katetextfilterplugin_PART_UI} )
+ kde4_add_plugin(katetextfilterplugin ${katetextfilterplugin_PART_SRCS})
+ 
+-target_link_libraries(katetextfilterplugin  ${KDE4_KDEUI_LIBS} ${KDE4_KTEXTEDITOR_LIBS} kateinterfaces )
++target_link_libraries(katetextfilterplugin  kateinterfaces ${KDE4_KTEXTEDITOR_LIBS} ${KDE4_KDEUI_LIBS} )
+ 
+ install(TARGETS katetextfilterplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
+ 

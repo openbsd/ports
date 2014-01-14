@@ -1,0 +1,13 @@
+$OpenBSD: patch-addons_kate_kate-ctags_CMakeLists_txt,v 1.1 2014/01/14 21:34:22 zhuk Exp $
+Fix linking.
+--- addons/kate/kate-ctags/CMakeLists.txt.orig	Mon Jan 13 22:54:22 2014
++++ addons/kate/kate-ctags/CMakeLists.txt	Mon Jan 13 22:54:32 2014
+@@ -19,7 +19,7 @@ kde4_add_ui_files(ctagsplugin_SRC kate_ctags.ui CTagsG
+ 
+ kde4_add_plugin(katectagsplugin ${ctagsplugin_SRC})
+ 
+-target_link_libraries(katectagsplugin ${KDE4_KDECORE_LIBS} kateinterfaces ${KDE4_KTEXTEDITOR_LIBS} )
++target_link_libraries(katectagsplugin kateinterfaces ${KDE4_KTEXTEDITOR_LIBS} ${KDE4_KDECORE_LIBS} )
+ 
+ install(TARGETS katectagsplugin DESTINATION ${PLUGIN_INSTALL_DIR} )
+ 

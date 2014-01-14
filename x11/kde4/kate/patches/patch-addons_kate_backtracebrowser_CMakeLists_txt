@@ -1,0 +1,13 @@
+$OpenBSD: patch-addons_kate_backtracebrowser_CMakeLists_txt,v 1.1 2014/01/14 21:34:22 zhuk Exp $
+Fix linking.
+--- addons/kate/backtracebrowser/CMakeLists.txt.orig	Mon Jan 13 23:23:07 2014
++++ addons/kate/backtracebrowser/CMakeLists.txt	Mon Jan 13 23:23:18 2014
+@@ -12,7 +12,7 @@ set(katebacktracebrowserplugin_PART_UI
+ )
+ kde4_add_ui_files(katebacktracebrowserplugin_PART_SRCS ${katebacktracebrowserplugin_PART_UI} )
+ kde4_add_plugin(katebacktracebrowserplugin ${katebacktracebrowserplugin_PART_SRCS})
+-target_link_libraries(katebacktracebrowserplugin ${KDE4_KFILE_LIBS} kateinterfaces ${KDE4_KTEXTEDITOR_LIBS})
++target_link_libraries(katebacktracebrowserplugin kateinterfaces ${KDE4_KTEXTEDITOR_LIBS} ${KDE4_KFILE_LIBS})
+ 
+ ########### install files ###############
+ 

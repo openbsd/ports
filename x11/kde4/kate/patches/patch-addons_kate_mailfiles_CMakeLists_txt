@@ -1,0 +1,13 @@
+$OpenBSD: patch-addons_kate_mailfiles_CMakeLists_txt,v 1.1 2014/01/14 21:34:22 zhuk Exp $
+Fix linking.
+--- addons/kate/mailfiles/CMakeLists.txt.orig	Mon Jan 13 22:56:35 2014
++++ addons/kate/mailfiles/CMakeLists.txt	Mon Jan 13 22:56:45 2014
+@@ -4,7 +4,7 @@ set(katemailfilesplugin_PART_SRCS katemailfiles.cpp ka
+ kde4_add_plugin(katemailfilesplugin ${katemailfilesplugin_PART_SRCS})
+ 
+ 
+-target_link_libraries(katemailfilesplugin ${KDE4_KDECORE_LIBS} ${KDE4_KPARTS_LIBS} kateinterfaces )
++target_link_libraries(katemailfilesplugin kateinterfaces ${KDE4_KPARTS_LIBS} ${KDE4_KDECORE_LIBS} )
+ 
+ install(TARGETS katemailfilesplugin  DESTINATION ${PLUGIN_INSTALL_DIR} )
+ 
