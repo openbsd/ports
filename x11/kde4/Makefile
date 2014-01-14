@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2013/12/08 21:16:59 zhuk Exp $
+# $OpenBSD: Makefile,v 1.36 2014/01/14 20:44:30 zhuk Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz
@@ -252,6 +252,7 @@ SUBDIR += kcachegrind
 SUBDIR += kompare
 SUBDIR += lokalize
 SUBDIR += okteta
+SUBDIR += poxml
 SUBDIR += sdk-kioslaves
 SUBDIR += sdk-strigi-analyzers
 SUBDIR += sdk-thumbnailers
