@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/01/14 17:09:02 jasper Exp $
+${GEM_BIN}/hub${GEM_BIN_SUFFIX}
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/LICENSE
+${GEM_LIB}/gems/${DISTNAME}/README.md
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/bin/
+${GEM_LIB}/gems/${DISTNAME}/bin/hub
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/hub/
+${GEM_LIB}/gems/${DISTNAME}/lib/hub.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hub/args.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hub/commands.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hub/context.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hub/github_api.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hub/json.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hub/runner.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hub/speedy_stdlib.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hub/ssh_config.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hub/standalone.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hub/version.rb
+${GEM_LIB}/gems/${DISTNAME}/man/
+${GEM_LIB}/gems/${DISTNAME}/man/hub.1
+${GEM_LIB}/gems/${DISTNAME}/man/hub.1.html
+${GEM_LIB}/gems/${DISTNAME}/man/hub.1.ronn
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
