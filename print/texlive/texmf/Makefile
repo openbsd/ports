@@ -1,10 +1,15 @@
-# $OpenBSD: Makefile,v 1.36 2014/01/11 18:46:52 edd Exp $
+# $OpenBSD: Makefile,v 1.37 2014/01/14 14:42:00 edd Exp $
 
 COMMENT-context =	texlive texmf for conTeXt
 COMMENT-docs =		texlive documentation
 COMMENT-full =		texlive texmf for extra macros
 COMMENT-main =		texlive texmf for basic functionality
 COMMENT-buildset =	smallest texlive texmf for building ports
+
+# Also bump print/texlive/base if you change the contents of the buildset.
+# This ensures correct hashing in an update situation.
+REVISION-buildset =	0
+REVISION-main =		0
 
 DISTNAME =		texlive-${DIST_V}-texmf
 MASTER_SITES0 =		http://spacehopper.org/mirrors/ \
