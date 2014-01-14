@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2014/01/10 08:12:11 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2014/01/14 21:41:54 zhuk Exp $
 @pkgpath x11/kde4/runtime
+@conflict kdebase-*
 @group wheel
 @bin bin/kcmshell4
 @bin bin/kde-cp
