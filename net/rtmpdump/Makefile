@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2014/01/13 23:52:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2014/01/14 00:18:35 jca Exp $
 
 SHARED_LIBS =		rtmp 1.0
 
 COMMENT =		dump RTMP media streams
 
 DISTNAME =		rtmpdump-2.4pl7
+REVISION =		0
 WRKDIST =		${WRKDIR}/rtmpdump
 
 CATEGORIES =		net
