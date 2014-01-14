@@ -1,0 +1,52 @@
+$OpenBSD: patch-SSLeay_xs,v 1.1 2014/01/14 19:53:58 bluhm Exp $
+https://rt.cpan.org/Public/Bug/Display.html?id=92076
+--- SSLeay.xs.orig	Tue Jan  7 08:28:35 2014
++++ SSLeay.xs	Sat Jan 11 18:53:52 2014
+@@ -780,8 +780,8 @@ int next_proto_helper_AV2protodata(AV * list, unsigned
+     if (last_index<0) return 0;
+     for(i=0; i<=last_index; i++) {
+         char *p = SvPV_nolen(*av_fetch(list, i, 0));
+-        int len = strlen(p);
+-        if (len<0 || len>255) return 0;
++        size_t len = strlen(p);
++        if (len>255) return 0;
+         if (out) {
+             /* if out == NULL we only calculate the length of output */
+             out[ptr] = (unsigned char)len;
+@@ -811,7 +811,7 @@ int next_proto_select_cb_invoke(SSL *ssl, unsigned cha
+ {
+     SV *cb_func, *cb_data;
+     unsigned char *next_proto_data;
+-    unsigned char next_proto_len;
++    size_t next_proto_len;
+     int next_proto_status;
+     SSL_CTX *ctx = SSL_get_SSL_CTX(ssl);
+     STRLEN n_a;
+@@ -941,7 +941,7 @@ int alpn_select_cb_invoke(SSL *ssl, const unsigned cha
+ {
+     SV *cb_func, *cb_data;
+     unsigned char *alpn_data;
+-    unsigned char alpn_len;
++    size_t alpn_len;
+     SSL_CTX *ctx = SSL_get_SSL_CTX(ssl);
+     STRLEN n_a;
+ 
+@@ -1010,7 +1010,8 @@ int alpn_select_cb_invoke(SSL *ssl, const unsigned cha
+ int pem_password_cb_invoke(char *buf, int bufsize, int rwflag, void *data) {
+     dSP;
+     char *str;
+-    int count = -1, str_len = 0;
++    int count = -1;
++    size_t str_len = 0;
+     simple_cb_data_t* cb = (simple_cb_data_t*)data;
+     STRLEN n_a;
+ 
+@@ -3252,7 +3253,7 @@ PEM_get_string_PrivateKey(pk,passwd=NULL,enc_alg=NULL)
+         BIO *bp;
+         int i, n;
+         char *buf;
+-        int passwd_len = 0;
++        size_t passwd_len = 0;
+         pem_password_cb * cb = NULL;
+         void * u = NULL;
+     CODE:
