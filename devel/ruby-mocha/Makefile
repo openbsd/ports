@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/10/26 23:55:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.19 2014/01/15 12:33:45 jasper Exp $
 
 COMMENT =	Ruby library for mocking and stubbing
 
@@ -18,9 +18,5 @@ RUN_DEPENDS =	${MODRUBY_RAKE_DEPENDS} \
 		devel/ruby-metaclass,${MODRUBY_FLAVOR}
 
 CONFIGURE_STYLE = ruby gem
-
-# 7 failures on ruby 1.8, passes on ruby 1.9
-MODRUBY_TEST = rake
-MODRUBY_TEST_TARGET = test:acceptance test:units
 
 .include <bsd.port.mk>
