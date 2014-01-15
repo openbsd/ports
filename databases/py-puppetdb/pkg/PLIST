@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/23 08:30:40 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/01/15 08:40:44 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/
-lib/python${MODPY_VERSION}/site-packages/pypuppetdb-dev-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/pypuppetdb-dev-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/pypuppetdb-dev-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/pypuppetdb-dev-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/pypuppetdb-dev-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/pypuppetdb-dev-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/pypuppetdb-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/pypuppetdb/api/
