@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/01/15 19:42:12 zhuk Exp $
+# $OpenBSD: Makefile,v 1.11 2014/01/15 22:32:08 zhuk Exp $
 
 BROKEN-hppa =	relocation error
 CATEGORIES =	devel lang/ruby x11/kde4
@@ -27,7 +27,7 @@ MODULES =	multimedia/phonon lang/ruby
 MODKDE4_USE =
 
 # ruby 1.8 not supported as it requires LD_PRELOAD hacks for pthreads
-FLAVORS =		ruby19 ruby20
+FLAVORS =		ruby19 ruby20 ruby21
 FLAVOR ?=		ruby20
 MODRUBY_HANDLE_FLAVORS=	Yes
 MODRUBY_ADJ_FILES =	*.rb rbqtapi
