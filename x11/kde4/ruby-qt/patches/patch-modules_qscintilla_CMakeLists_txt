@@ -1,0 +1,16 @@
+$OpenBSD: patch-modules_qscintilla_CMakeLists_txt,v 1.1 2014/01/15 16:21:56 zhuk Exp $
+Fix linking.
+--- modules/qscintilla/CMakeLists.txt.orig	Wed Jan 15 20:04:30 2014
++++ modules/qscintilla/CMakeLists.txt	Wed Jan 15 20:04:39 2014
+@@ -4,9 +4,9 @@ INCLUDE_DIRECTORIES (${QT_INCLUDES})
+ set(rubyqsci_LIBRARY_SRC qscintilla.cpp qscintillahandlers.cpp)
+ add_library(rubyqscintilla MODULE ${rubyqsci_LIBRARY_SRC})
+ target_link_libraries(rubyqscintilla
+-    ${QSCINTILLA_LIBRARIES}
+-    ${SMOKE_QSCI_LIBRARY}
+     qtruby4shared
++    ${SMOKE_QSCI_LIBRARY}
++    ${QSCINTILLA_LIBRARIES}
+ )
+ set_target_properties(rubyqscintilla PROPERTIES PREFIX "" OUTPUT_NAME qscintilla)
+ install(TARGETS rubyqscintilla DESTINATION ${CUSTOM_RUBY_SITE_ARCH_DIR})

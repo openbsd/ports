@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/12/08 19:13:34 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2014/01/15 16:21:56 zhuk Exp $
 
 BROKEN-hppa =	relocation error
 CATEGORIES =	devel lang/ruby x11/kde4
@@ -6,10 +6,11 @@ COMMENT =	Ruby bindings for Qt4
 DISTNAME =	qtruby-${MODKDE4_VERSION}
 PKGNAME =	qt4-${MODKDE4_VERSION}
 HOMEPAGE =	http://techbase.kde.org/Development/Languages/Ruby
+REVISION =	0
 
 SHARED_LIBS =	qtruby4shared		51.0 # 2.0
 
-WANTLIB =  c m stdc++ ${MODRUBY_WANTLIB}
+WANTLIB =  c m pthread stdc++ ${MODRUBY_WANTLIB}
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtDeclarative lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtWebKit
 WANTLIB += lib/qt4/QtXml
