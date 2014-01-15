@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2014/01/12 22:16:02 pascal Exp $
+# $OpenBSD: Makefile,v 1.27 2014/01/15 20:18:36 brad Exp $
 
 ONLY_FOR_ARCHS = alpha amd64 i386 powerpc sparc64
 DPB_PROPERTIES = parallel
@@ -28,13 +28,13 @@ PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 #PKGNAME-go =	gccgo-${FULL_PKGVERSION}
 PKGSPEC-main = gcc->=4.8,<4.9
 
-REVISION-main	= 1
-REVISION-c++	= 1
+REVISION-main	= 2
+REVISION-c++	= 2
 #REVISION-estdc	=
-REVISION-f95	= 1
-REVISION-java	= 1
-REVISION-objc	= 1
-REVISION-ada	= 1
+REVISION-f95	= 2
+REVISION-java	= 2
+REVISION-objc	= 2
+REVISION-ada	= 2
 #REVISION-go	=
 
 SHARED_LIBS =	estdc++		16.0 \
