@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2013/12/25 14:53:27 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2014/01/15 19:42:12 zhuk Exp $
 
 COMMENT =	development-related KIO modules
 DISTNAME =	kdesdk-kioslaves-${MODKDE4_VERSION}
-REVISION =	0
 
 CATEGORIES =	devel
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdesdk/kdesdk-kioslaves

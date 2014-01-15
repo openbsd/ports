@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-zh_TW,v 1.4 2013/12/08 19:13:32 zhuk Exp $
+@comment $OpenBSD: PLIST-zh_TW,v 1.5 2014/01/15 19:42:11 zhuk Exp $
 share/doc/HTML/
 share/doc/HTML/zh_TW/
 share/doc/HTML/zh_TW/common/
@@ -22,8 +22,6 @@ share/locale/zh_TW/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_davgroupware_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_facebook_resource.mo
-share/locale/zh_TW/LC_MESSAGES/akonadi_folderarchive_agent.mo
-share/locale/zh_TW/LC_MESSAGES/akonadi_followupreminder_agent.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_googlecalendar_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_ical_resource.mo
@@ -44,7 +42,6 @@ share/locale/zh_TW/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_mailtransport_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_mbox_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_microblog_resource.mo
-share/locale/zh_TW/LC_MESSAGES/akonadi_migration_agent.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_mixedmaildir_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_nepomuk_feeder.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_nepomuktag_resource.mo
@@ -77,11 +74,9 @@ share/locale/zh_TW/LC_MESSAGES/blinken.mo
 share/locale/zh_TW/LC_MESSAGES/blogilo.mo
 share/locale/zh_TW/LC_MESSAGES/bomber.mo
 share/locale/zh_TW/LC_MESSAGES/bovo.mo
-share/locale/zh_TW/LC_MESSAGES/calendarjanitor.mo
 share/locale/zh_TW/LC_MESSAGES/calendarsupport.mo
 share/locale/zh_TW/LC_MESSAGES/cantor.mo
 share/locale/zh_TW/LC_MESSAGES/cervisia.mo
-share/locale/zh_TW/LC_MESSAGES/contactthemeeditor.mo
 share/locale/zh_TW/LC_MESSAGES/cryptopageplugin.mo
 share/locale/zh_TW/LC_MESSAGES/cvsservice.mo
 share/locale/zh_TW/LC_MESSAGES/dirfilterplugin.mo
@@ -98,7 +93,6 @@ share/locale/zh_TW/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/zh_TW/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/zh_TW/LC_MESSAGES/freespacenotifier.mo
 share/locale/zh_TW/LC_MESSAGES/fsview.mo
-share/locale/zh_TW/LC_MESSAGES/gid-migrator.mo
 share/locale/zh_TW/LC_MESSAGES/granatier.mo
 share/locale/zh_TW/LC_MESSAGES/gwenview.mo
 share/locale/zh_TW/LC_MESSAGES/headerthemeeditor.mo
@@ -157,6 +151,7 @@ share/locale/zh_TW/LC_MESSAGES/katetextfilter.mo
 share/locale/zh_TW/LC_MESSAGES/katexmlcheck.mo
 share/locale/zh_TW/LC_MESSAGES/katexmltools.mo
 share/locale/zh_TW/LC_MESSAGES/katomic.mo
+share/locale/zh_TW/LC_MESSAGES/kbattleship.mo
 share/locale/zh_TW/LC_MESSAGES/kblackbox.mo
 share/locale/zh_TW/LC_MESSAGES/kblankscrn.mo
 share/locale/zh_TW/LC_MESSAGES/kblocks.mo
@@ -364,7 +359,6 @@ share/locale/zh_TW/LC_MESSAGES/kmix.mo
 share/locale/zh_TW/LC_MESSAGES/kmousetool.mo
 share/locale/zh_TW/LC_MESSAGES/kmouth.mo
 share/locale/zh_TW/LC_MESSAGES/kmplot.mo
-share/locale/zh_TW/LC_MESSAGES/knavalbattle.mo
 share/locale/zh_TW/LC_MESSAGES/knetattach.mo
 share/locale/zh_TW/LC_MESSAGES/knetwalk.mo
 share/locale/zh_TW/LC_MESSAGES/knode.mo
@@ -384,7 +378,6 @@ share/locale/zh_TW/LC_MESSAGES/konsoleprofiles.mo
 share/locale/zh_TW/LC_MESSAGES/kontact.mo
 share/locale/zh_TW/LC_MESSAGES/kontactinterfaces.mo
 share/locale/zh_TW/LC_MESSAGES/kopete.mo
-share/locale/zh_TW/LC_MESSAGES/korgac.mo
 share/locale/zh_TW/LC_MESSAGES/korganizer-mobile.mo
 share/locale/zh_TW/LC_MESSAGES/korganizer.mo
 share/locale/zh_TW/LC_MESSAGES/kpartloader.mo
@@ -471,14 +464,10 @@ share/locale/zh_TW/LC_MESSAGES/kxsconfig.mo
 share/locale/zh_TW/LC_MESSAGES/lancelot.mo
 share/locale/zh_TW/LC_MESSAGES/libakonadi-calendar.mo
 share/locale/zh_TW/LC_MESSAGES/libakonadi-kmime.mo
-share/locale/zh_TW/LC_MESSAGES/libakonadi-xml.mo
 share/locale/zh_TW/LC_MESSAGES/libakonadi.mo
 share/locale/zh_TW/LC_MESSAGES/libcomposereditorng.mo
 share/locale/zh_TW/LC_MESSAGES/libeventviews.mo
-share/locale/zh_TW/LC_MESSAGES/libgrantleetheme.mo
-share/locale/zh_TW/LC_MESSAGES/libgrantleethemeeditor.mo
 share/locale/zh_TW/LC_MESSAGES/libincidenceeditors.mo
-share/locale/zh_TW/LC_MESSAGES/libkaddressbookgrantlee.mo
 share/locale/zh_TW/LC_MESSAGES/libkalarmcal.mo
 share/locale/zh_TW/LC_MESSAGES/libkasten.mo
 share/locale/zh_TW/LC_MESSAGES/libkblog.mo
@@ -500,7 +489,6 @@ share/locale/zh_TW/LC_MESSAGES/libkldap.mo
 share/locale/zh_TW/LC_MESSAGES/libkleopatra.mo
 share/locale/zh_TW/LC_MESSAGES/libkmahjongg.mo
 share/locale/zh_TW/LC_MESSAGES/libkmime.mo
-share/locale/zh_TW/LC_MESSAGES/libkomparediff2.mo
 share/locale/zh_TW/LC_MESSAGES/libkonq.mo
 share/locale/zh_TW/LC_MESSAGES/libkpgp.mo
 share/locale/zh_TW/LC_MESSAGES/libkpimidentities.mo
@@ -543,7 +531,6 @@ share/locale/zh_TW/LC_MESSAGES/mailreader.mo
 share/locale/zh_TW/LC_MESSAGES/marble.mo
 share/locale/zh_TW/LC_MESSAGES/marble_qt.mo
 share/locale/zh_TW/LC_MESSAGES/marble_xml_mimetypes.mo
-share/locale/zh_TW/LC_MESSAGES/mboximporter.mo
 share/locale/zh_TW/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/zh_TW/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/zh_TW/LC_MESSAGES/messageviewer_text_vcard_plugin.mo

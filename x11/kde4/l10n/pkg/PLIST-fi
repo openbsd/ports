@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-fi,v 1.4 2013/12/08 19:13:32 zhuk Exp $
+@comment $OpenBSD: PLIST-fi,v 1.5 2014/01/15 19:42:11 zhuk Exp $
 share/apps/
 share/apps/khangman/
 share/apps/khangman/fi.txt
@@ -39,7 +39,6 @@ share/locale/fi/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_davgroupware_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_facebook_resource.mo
-share/locale/fi/LC_MESSAGES/akonadi_folderarchive_agent.mo
 share/locale/fi/LC_MESSAGES/akonadi_googlecalendar_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_ical_resource.mo
@@ -95,7 +94,6 @@ share/locale/fi/LC_MESSAGES/bovo.mo
 share/locale/fi/LC_MESSAGES/calendarsupport.mo
 share/locale/fi/LC_MESSAGES/cantor.mo
 share/locale/fi/LC_MESSAGES/cervisia.mo
-share/locale/fi/LC_MESSAGES/contactthemeeditor.mo
 share/locale/fi/LC_MESSAGES/cryptopageplugin.mo
 share/locale/fi/LC_MESSAGES/cvsservice.mo
 share/locale/fi/LC_MESSAGES/dirfilterplugin.mo
@@ -170,6 +168,7 @@ share/locale/fi/LC_MESSAGES/katetextfilter.mo
 share/locale/fi/LC_MESSAGES/katexmlcheck.mo
 share/locale/fi/LC_MESSAGES/katexmltools.mo
 share/locale/fi/LC_MESSAGES/katomic.mo
+share/locale/fi/LC_MESSAGES/kbattleship.mo
 share/locale/fi/LC_MESSAGES/kblackbox.mo
 share/locale/fi/LC_MESSAGES/kblankscrn.mo
 share/locale/fi/LC_MESSAGES/kblocks.mo
@@ -377,7 +376,6 @@ share/locale/fi/LC_MESSAGES/kmix.mo
 share/locale/fi/LC_MESSAGES/kmousetool.mo
 share/locale/fi/LC_MESSAGES/kmouth.mo
 share/locale/fi/LC_MESSAGES/kmplot.mo
-share/locale/fi/LC_MESSAGES/knavalbattle.mo
 share/locale/fi/LC_MESSAGES/knetattach.mo
 share/locale/fi/LC_MESSAGES/knetwalk.mo
 share/locale/fi/LC_MESSAGES/knode.mo
@@ -486,8 +484,6 @@ share/locale/fi/LC_MESSAGES/libakonadi-kmime.mo
 share/locale/fi/LC_MESSAGES/libakonadi.mo
 share/locale/fi/LC_MESSAGES/libcomposereditorng.mo
 share/locale/fi/LC_MESSAGES/libeventviews.mo
-share/locale/fi/LC_MESSAGES/libgrantleetheme.mo
-share/locale/fi/LC_MESSAGES/libgrantleethemeeditor.mo
 share/locale/fi/LC_MESSAGES/libincidenceeditors.mo
 share/locale/fi/LC_MESSAGES/libkalarmcal.mo
 share/locale/fi/LC_MESSAGES/libkasten.mo
@@ -510,7 +506,6 @@ share/locale/fi/LC_MESSAGES/libkldap.mo
 share/locale/fi/LC_MESSAGES/libkleopatra.mo
 share/locale/fi/LC_MESSAGES/libkmahjongg.mo
 share/locale/fi/LC_MESSAGES/libkmime.mo
-share/locale/fi/LC_MESSAGES/libkomparediff2.mo
 share/locale/fi/LC_MESSAGES/libkonq.mo
 share/locale/fi/LC_MESSAGES/libkpgp.mo
 share/locale/fi/LC_MESSAGES/libkpimidentities.mo
@@ -553,7 +548,6 @@ share/locale/fi/LC_MESSAGES/mailreader.mo
 share/locale/fi/LC_MESSAGES/marble.mo
 share/locale/fi/LC_MESSAGES/marble_qt.mo
 share/locale/fi/LC_MESSAGES/marble_xml_mimetypes.mo
-share/locale/fi/LC_MESSAGES/mboximporter.mo
 share/locale/fi/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/fi/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/fi/LC_MESSAGES/messageviewer_text_vcard_plugin.mo

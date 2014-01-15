@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-et,v 1.4 2013/12/08 19:13:32 zhuk Exp $
+@comment $OpenBSD: PLIST-et,v 1.5 2014/01/15 19:42:11 zhuk Exp $
 share/apps/
 share/apps/khangman/
 share/apps/khangman/et.txt
@@ -152,6 +152,10 @@ share/doc/HTML/et/katomic/
 share/doc/HTML/et/katomic/common
 share/doc/HTML/et/katomic/index.cache.bz2
 share/doc/HTML/et/katomic/index.docbook
+share/doc/HTML/et/kbattleship/
+share/doc/HTML/et/kbattleship/common
+share/doc/HTML/et/kbattleship/index.cache.bz2
+share/doc/HTML/et/kbattleship/index.docbook
 share/doc/HTML/et/kblackbox/
 share/doc/HTML/et/kblackbox/common
 share/doc/HTML/et/kblackbox/index.cache.bz2
@@ -810,10 +814,6 @@ share/doc/HTML/et/kmplot/introduction.docbook
 share/doc/HTML/et/kmplot/man-kmplot.1.docbook
 share/doc/HTML/et/kmplot/reference.docbook
 share/doc/HTML/et/kmplot/using.docbook
-share/doc/HTML/et/knavalbattle/
-share/doc/HTML/et/knavalbattle/common
-share/doc/HTML/et/knavalbattle/index.cache.bz2
-share/doc/HTML/et/knavalbattle/index.docbook
 share/doc/HTML/et/knetattach/
 share/doc/HTML/et/knetattach/common
 share/doc/HTML/et/knetattach/index.cache.bz2
@@ -1380,6 +1380,7 @@ share/locale/et/LC_MESSAGES/katetextfilter.mo
 share/locale/et/LC_MESSAGES/katexmlcheck.mo
 share/locale/et/LC_MESSAGES/katexmltools.mo
 share/locale/et/LC_MESSAGES/katomic.mo
+share/locale/et/LC_MESSAGES/kbattleship.mo
 share/locale/et/LC_MESSAGES/kblackbox.mo
 share/locale/et/LC_MESSAGES/kblankscrn.mo
 share/locale/et/LC_MESSAGES/kblocks.mo
@@ -1586,7 +1587,6 @@ share/locale/et/LC_MESSAGES/kmix.mo
 share/locale/et/LC_MESSAGES/kmousetool.mo
 share/locale/et/LC_MESSAGES/kmouth.mo
 share/locale/et/LC_MESSAGES/kmplot.mo
-share/locale/et/LC_MESSAGES/knavalbattle.mo
 share/locale/et/LC_MESSAGES/knetattach.mo
 share/locale/et/LC_MESSAGES/knetwalk.mo
 share/locale/et/LC_MESSAGES/knode.mo
@@ -1714,7 +1714,6 @@ share/locale/et/LC_MESSAGES/libkldap.mo
 share/locale/et/LC_MESSAGES/libkleopatra.mo
 share/locale/et/LC_MESSAGES/libkmahjongg.mo
 share/locale/et/LC_MESSAGES/libkmime.mo
-share/locale/et/LC_MESSAGES/libkomparediff2.mo
 share/locale/et/LC_MESSAGES/libkonq.mo
 share/locale/et/LC_MESSAGES/libkpgp.mo
 share/locale/et/LC_MESSAGES/libkpimidentities.mo

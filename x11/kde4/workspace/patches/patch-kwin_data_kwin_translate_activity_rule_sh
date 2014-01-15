@@ -1,0 +1,23 @@
+$OpenBSD: patch-kwin_data_kwin_translate_activity_rule_sh,v 1.1 2014/01/15 19:42:12 zhuk Exp $
+Deconflict kde-runtime with kdebase-3.x.
+--- kwin/data/kwin_translate_activity_rule.sh.orig	Wed Jan 15 15:19:51 2014
++++ kwin/data/kwin_translate_activity_rule.sh	Wed Jan 15 15:20:16 2014
+@@ -1,5 +1,5 @@
+ #!/bin/sh
+-COUNT=`kreadconfig --file kwinrulesrc --group General --key count`
++COUNT=`kreadconfig4 --file kwinrulesrc --group General --key count`
+ if [ -z "$COUNT" ]; then
+     exit 0 # nothing to do for us
+ fi
+@@ -8,7 +8,7 @@ fi
+ # it's however less reliable (installation, ini config, etc.)
+ 
+ for i in `seq 1 $COUNT`; do
+-    if [ "`kreadconfig --file kwinrulesrc --group $i --key activity`" = "ALL" ]; then
+-        kwriteconfig --file kwinrulesrc --group $i --key activity "00000000-0000-0000-0000-000000000000"
++    if [ "`kreadconfig4 --file kwinrulesrc --group $i --key activity`" = "ALL" ]; then
++        kwriteconfig4 --file kwinrulesrc --group $i --key activity "00000000-0000-0000-0000-000000000000"
+     fi
+-done
+\ No newline at end of file
++done

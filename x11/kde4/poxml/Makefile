@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2013/12/25 14:36:06 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2014/01/15 19:42:12 zhuk Exp $
 
 COMMENT =	convert PO files to XML
 DISTNAME =	poxml-${MODKDE4_VERSION}
-REVISION =	1
 
 CATEGORIES =	devel
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdesdk/poxml

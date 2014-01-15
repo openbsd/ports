@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2014/01/14 21:34:22 zhuk Exp $
+# $OpenBSD: Makefile,v 1.8 2014/01/15 19:42:08 zhuk Exp $
 
 COMMENT =	KDE advanced text editor
 DISTNAME =	kate-${MODKDE4_VERSION}
-REVISION =	1
 
 SHARED_LIBS =	kateinterfaces			50.0 # 4.7
 SHARED_LIBS +=	katepartinterfaces		50.0 # 4.7
 #SHARED_LIBS +=	ktexteditor_codesnippets_core	0.0 # 0.0
 
 WANTLIB =  c m pthread stdc++ ${MODPY_WANTLIB}
-WANTLIB += lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui
+WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtSql
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtWebKit lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kactivities ${KDE4LIB}/kcmutils ${KDE4LIB}/kdeui
@@ -31,6 +30,8 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		devel/qjson \
 		${MODKDE4_DEP_DIR}/kactivities>=${MODKDE4_DEP_VERSION}
+
+# TODO: build and install both Python2 and Python3 pate plugins
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/12/08 19:13:34 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2014/01/15 19:42:12 zhuk Exp $
 
 CATEGORIES =	devel
 COMMENT =	Qt4 bindings for .NET/Mono
@@ -12,7 +12,7 @@ SHARED_LIBS +=	qttest-sharp		50.0
 SHARED_LIBS +=	qtuitools-sharp		50.0
 SHARED_LIBS +=	qtwebkit-sharp		50.0
 
-WANTLIB =  c m stdc++
+WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork
 WANTLIB += lib/qt4/QtScript lib/qt4/QtTest lib/qt4/QtWebKit
 WANTLIB += lib/qt4/QtXml

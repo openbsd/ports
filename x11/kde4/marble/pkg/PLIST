@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/12/08 19:13:33 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/01/15 19:42:11 zhuk Exp $
 @bin bin/marble
 @bin bin/marble-qt
 @comment @bin bin/marble-touch
@@ -101,6 +101,8 @@ include/marble/ParsingRunner.h
 include/marble/Planet.h
 include/marble/PluginAboutDialog.h
 include/marble/PluginInterface.h
+include/marble/PluginManager.h
+include/marble/PositionProviderPlugin.h
 include/marble/PositionProviderPluginInterface.h
 include/marble/PositionTracking.h
 include/marble/QtMarbleConfigDialog.h

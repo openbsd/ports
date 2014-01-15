@@ -1,0 +1,16 @@
+$OpenBSD: patch-cmake_modules_FindKDE4Internal_cmake,v 1.3 2014/01/15 19:42:11 zhuk Exp $
+Allow overriding KDE4_LIB_DIR by user.
+--- cmake/modules/FindKDE4Internal.cmake.orig	Thu Jan  2 23:26:54 2014
++++ cmake/modules/FindKDE4Internal.cmake	Wed Jan 15 23:11:29 2014
+@@ -582,9 +582,8 @@ else (_kdeBootStrapping)
+ 
+    # KDE4_LIB_INSTALL_DIR and KDE4_INCLUDE_INSTALL_DIR are set in KDELibsDependencies.cmake,
+    # use them to set the KDE4_LIB_DIR and KDE4_INCLUDE_DIR "public interface" variables
+-   set(KDE4_LIB_DIR ${KDE4_LIB_INSTALL_DIR} )
+-   set(KDE4_INCLUDE_DIR ${KDE4_INCLUDE_INSTALL_DIR} )
+-
++   set(KDE4_LIB_DIR "${KDE4_LIB_INSTALL_DIR}" CACHE PATH "KDE libraries placement")
++   set(KDE4_INCLUDE_DIR "${KDE4_INCLUDE_INSTALL_DIR}" CACHE PATH "KDE headers placement")
+ 
+    # This setting is currently not recorded in KDELibsDependencies.cmake:
+    find_file(KDE4_PLASMA_OPENGL_FOUND plasma/glapplet.h PATHS ${KDE4_INCLUDE_DIR} NO_DEFAULT_PATH)

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-nl,v 1.4 2013/12/08 19:13:32 zhuk Exp $
+@comment $OpenBSD: PLIST-nl,v 1.5 2014/01/15 19:42:11 zhuk Exp $
 share/apps/
 share/apps/katepart/
 share/apps/katepart/syntax/
@@ -112,10 +112,6 @@ share/doc/HTML/nl/akonadi_archivemail_agent/
 share/doc/HTML/nl/akonadi_archivemail_agent/common
 share/doc/HTML/nl/akonadi_archivemail_agent/index.cache.bz2
 share/doc/HTML/nl/akonadi_archivemail_agent/index.docbook
-share/doc/HTML/nl/akonadi_folderarchive_agent/
-share/doc/HTML/nl/akonadi_folderarchive_agent/common
-share/doc/HTML/nl/akonadi_folderarchive_agent/index.cache.bz2
-share/doc/HTML/nl/akonadi_folderarchive_agent/index.docbook
 share/doc/HTML/nl/akonadi_sendlater_agent/
 share/doc/HTML/nl/akonadi_sendlater_agent/common
 share/doc/HTML/nl/akonadi_sendlater_agent/index.cache.bz2
@@ -311,6 +307,10 @@ share/doc/HTML/nl/katomic/
 share/doc/HTML/nl/katomic/common
 share/doc/HTML/nl/katomic/index.cache.bz2
 share/doc/HTML/nl/katomic/index.docbook
+share/doc/HTML/nl/kbattleship/
+share/doc/HTML/nl/kbattleship/common
+share/doc/HTML/nl/kbattleship/index.cache.bz2
+share/doc/HTML/nl/kbattleship/index.docbook
 share/doc/HTML/nl/kblackbox/
 share/doc/HTML/nl/kblackbox/common
 share/doc/HTML/nl/kblackbox/index.cache.bz2
@@ -1061,10 +1061,6 @@ share/doc/HTML/nl/kmplot/settings-diagram.png
 share/doc/HTML/nl/kmplot/settings-fonts.png
 share/doc/HTML/nl/kmplot/settings-general.png
 share/doc/HTML/nl/kmplot/using.docbook
-share/doc/HTML/nl/knavalbattle/
-share/doc/HTML/nl/knavalbattle/common
-share/doc/HTML/nl/knavalbattle/index.cache.bz2
-share/doc/HTML/nl/knavalbattle/index.docbook
 share/doc/HTML/nl/knetattach/
 share/doc/HTML/nl/knetattach/common
 share/doc/HTML/nl/knetattach/index.cache.bz2
@@ -1544,8 +1540,6 @@ share/locale/nl/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/nl/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/nl/LC_MESSAGES/akonadi_davgroupware_resource.mo
 share/locale/nl/LC_MESSAGES/akonadi_facebook_resource.mo
-share/locale/nl/LC_MESSAGES/akonadi_folderarchive_agent.mo
-share/locale/nl/LC_MESSAGES/akonadi_followupreminder_agent.mo
 share/locale/nl/LC_MESSAGES/akonadi_googlecalendar_resource.mo
 share/locale/nl/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/nl/LC_MESSAGES/akonadi_ical_resource.mo
@@ -1566,7 +1560,6 @@ share/locale/nl/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/nl/LC_MESSAGES/akonadi_mailtransport_resource.mo
 share/locale/nl/LC_MESSAGES/akonadi_mbox_resource.mo
 share/locale/nl/LC_MESSAGES/akonadi_microblog_resource.mo
-share/locale/nl/LC_MESSAGES/akonadi_migration_agent.mo
 share/locale/nl/LC_MESSAGES/akonadi_mixedmaildir_resource.mo
 share/locale/nl/LC_MESSAGES/akonadi_nepomuk_feeder.mo
 share/locale/nl/LC_MESSAGES/akonadi_nepomuktag_resource.mo
@@ -1599,11 +1592,9 @@ share/locale/nl/LC_MESSAGES/blinken.mo
 share/locale/nl/LC_MESSAGES/blogilo.mo
 share/locale/nl/LC_MESSAGES/bomber.mo
 share/locale/nl/LC_MESSAGES/bovo.mo
-share/locale/nl/LC_MESSAGES/calendarjanitor.mo
 share/locale/nl/LC_MESSAGES/calendarsupport.mo
 share/locale/nl/LC_MESSAGES/cantor.mo
 share/locale/nl/LC_MESSAGES/cervisia.mo
-share/locale/nl/LC_MESSAGES/contactthemeeditor.mo
 share/locale/nl/LC_MESSAGES/cryptopageplugin.mo
 share/locale/nl/LC_MESSAGES/cvsservice.mo
 share/locale/nl/LC_MESSAGES/dirfilterplugin.mo
@@ -1620,7 +1611,6 @@ share/locale/nl/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/nl/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/nl/LC_MESSAGES/freespacenotifier.mo
 share/locale/nl/LC_MESSAGES/fsview.mo
-share/locale/nl/LC_MESSAGES/gid-migrator.mo
 share/locale/nl/LC_MESSAGES/granatier.mo
 share/locale/nl/LC_MESSAGES/gwenview.mo
 share/locale/nl/LC_MESSAGES/headerthemeeditor.mo
@@ -1679,6 +1669,7 @@ share/locale/nl/LC_MESSAGES/katetextfilter.mo
 share/locale/nl/LC_MESSAGES/katexmlcheck.mo
 share/locale/nl/LC_MESSAGES/katexmltools.mo
 share/locale/nl/LC_MESSAGES/katomic.mo
+share/locale/nl/LC_MESSAGES/kbattleship.mo
 share/locale/nl/LC_MESSAGES/kblackbox.mo
 share/locale/nl/LC_MESSAGES/kblankscrn.mo
 share/locale/nl/LC_MESSAGES/kblocks.mo
@@ -1886,7 +1877,6 @@ share/locale/nl/LC_MESSAGES/kmix.mo
 share/locale/nl/LC_MESSAGES/kmousetool.mo
 share/locale/nl/LC_MESSAGES/kmouth.mo
 share/locale/nl/LC_MESSAGES/kmplot.mo
-share/locale/nl/LC_MESSAGES/knavalbattle.mo
 share/locale/nl/LC_MESSAGES/knetattach.mo
 share/locale/nl/LC_MESSAGES/knetwalk.mo
 share/locale/nl/LC_MESSAGES/knode.mo
@@ -1906,7 +1896,6 @@ share/locale/nl/LC_MESSAGES/konsoleprofiles.mo
 share/locale/nl/LC_MESSAGES/kontact.mo
 share/locale/nl/LC_MESSAGES/kontactinterfaces.mo
 share/locale/nl/LC_MESSAGES/kopete.mo
-share/locale/nl/LC_MESSAGES/korgac.mo
 share/locale/nl/LC_MESSAGES/korganizer-mobile.mo
 share/locale/nl/LC_MESSAGES/korganizer.mo
 share/locale/nl/LC_MESSAGES/kpartloader.mo
@@ -1993,14 +1982,10 @@ share/locale/nl/LC_MESSAGES/kxsconfig.mo
 share/locale/nl/LC_MESSAGES/lancelot.mo
 share/locale/nl/LC_MESSAGES/libakonadi-calendar.mo
 share/locale/nl/LC_MESSAGES/libakonadi-kmime.mo
-share/locale/nl/LC_MESSAGES/libakonadi-xml.mo
 share/locale/nl/LC_MESSAGES/libakonadi.mo
 share/locale/nl/LC_MESSAGES/libcomposereditorng.mo
 share/locale/nl/LC_MESSAGES/libeventviews.mo
-share/locale/nl/LC_MESSAGES/libgrantleetheme.mo
-share/locale/nl/LC_MESSAGES/libgrantleethemeeditor.mo
 share/locale/nl/LC_MESSAGES/libincidenceeditors.mo
-share/locale/nl/LC_MESSAGES/libkaddressbookgrantlee.mo
 share/locale/nl/LC_MESSAGES/libkalarmcal.mo
 share/locale/nl/LC_MESSAGES/libkasten.mo
 share/locale/nl/LC_MESSAGES/libkblog.mo
@@ -2022,7 +2007,6 @@ share/locale/nl/LC_MESSAGES/libkldap.mo
 share/locale/nl/LC_MESSAGES/libkleopatra.mo
 share/locale/nl/LC_MESSAGES/libkmahjongg.mo
 share/locale/nl/LC_MESSAGES/libkmime.mo
-share/locale/nl/LC_MESSAGES/libkomparediff2.mo
 share/locale/nl/LC_MESSAGES/libkonq.mo
 share/locale/nl/LC_MESSAGES/libkpgp.mo
 share/locale/nl/LC_MESSAGES/libkpimidentities.mo
@@ -2065,7 +2049,6 @@ share/locale/nl/LC_MESSAGES/mailreader.mo
 share/locale/nl/LC_MESSAGES/marble.mo
 share/locale/nl/LC_MESSAGES/marble_qt.mo
 share/locale/nl/LC_MESSAGES/marble_xml_mimetypes.mo
-share/locale/nl/LC_MESSAGES/mboximporter.mo
 share/locale/nl/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/nl/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/nl/LC_MESSAGES/messageviewer_text_vcard_plugin.mo

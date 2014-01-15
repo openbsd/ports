@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ro,v 1.4 2013/12/08 19:13:32 zhuk Exp $
+@comment $OpenBSD: PLIST-ro,v 1.5 2014/01/15 19:42:11 zhuk Exp $
 share/apps/
 share/apps/ktuberling/
 share/apps/ktuberling/sounds/
@@ -108,7 +108,6 @@ share/locale/ro/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/ro/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/ro/LC_MESSAGES/akonadi_davgroupware_resource.mo
 share/locale/ro/LC_MESSAGES/akonadi_facebook_resource.mo
-share/locale/ro/LC_MESSAGES/akonadi_folderarchive_agent.mo
 share/locale/ro/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/ro/LC_MESSAGES/akonadi_imap_resource.mo
 share/locale/ro/LC_MESSAGES/akonadi_invitations_agent.mo
@@ -132,7 +131,6 @@ share/locale/ro/LC_MESSAGES/akonadi_next.mo
 share/locale/ro/LC_MESSAGES/akonadi_nntp_resource.mo
 share/locale/ro/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/ro/LC_MESSAGES/akonadi_pop3_resource.mo
-share/locale/ro/LC_MESSAGES/akonadi_sendlater_agent.mo
 share/locale/ro/LC_MESSAGES/akonadi_serializer_plugins.mo
 share/locale/ro/LC_MESSAGES/akonadi_singlefile_resource.mo
 share/locale/ro/LC_MESSAGES/akonadi_vcard_resource.mo
@@ -170,7 +168,6 @@ share/locale/ro/LC_MESSAGES/freespacenotifier.mo
 share/locale/ro/LC_MESSAGES/fsview.mo
 share/locale/ro/LC_MESSAGES/granatier.mo
 share/locale/ro/LC_MESSAGES/gwenview.mo
-share/locale/ro/LC_MESSAGES/headerthemeeditor.mo
 share/locale/ro/LC_MESSAGES/htmlsearch.mo
 share/locale/ro/LC_MESSAGES/imagerename_plugin.mo
 share/locale/ro/LC_MESSAGES/imgalleryplugin.mo
@@ -202,7 +199,6 @@ share/locale/ro/LC_MESSAGES/kate.mo
 share/locale/ro/LC_MESSAGES/kate_kttsd.mo
 share/locale/ro/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/ro/LC_MESSAGES/katebuild-plugin.mo
-share/locale/ro/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/ro/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ro/LC_MESSAGES/katefiletemplates.mo
 share/locale/ro/LC_MESSAGES/kategdbplugin.mo
@@ -211,9 +207,7 @@ share/locale/ro/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/ro/LC_MESSAGES/katemailfilesplugin.mo
 share/locale/ro/LC_MESSAGES/kateopenheader.mo
 share/locale/ro/LC_MESSAGES/katepart4.mo
-share/locale/ro/LC_MESSAGES/kateproject.mo
 share/locale/ro/LC_MESSAGES/katesearch.mo
-share/locale/ro/LC_MESSAGES/katesnippetsplugin.mo
 share/locale/ro/LC_MESSAGES/katesql.mo
 share/locale/ro/LC_MESSAGES/katesymbolviewer.mo
 share/locale/ro/LC_MESSAGES/katetabbarextension.mo
@@ -222,6 +216,7 @@ share/locale/ro/LC_MESSAGES/katetextfilter.mo
 share/locale/ro/LC_MESSAGES/katexmlcheck.mo
 share/locale/ro/LC_MESSAGES/katexmltools.mo
 share/locale/ro/LC_MESSAGES/katomic.mo
+share/locale/ro/LC_MESSAGES/kbattleship.mo
 share/locale/ro/LC_MESSAGES/kblackbox.mo
 share/locale/ro/LC_MESSAGES/kblankscrn.mo
 share/locale/ro/LC_MESSAGES/kblocks.mo
@@ -251,7 +246,6 @@ share/locale/ro/LC_MESSAGES/kcm_memory.mo
 share/locale/ro/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/ro/LC_MESSAGES/kcm_pci.mo
 share/locale/ro/LC_MESSAGES/kcm_phonon.mo
-share/locale/ro/LC_MESSAGES/kcm_pimactivity.mo
 share/locale/ro/LC_MESSAGES/kcm_platform.mo
 share/locale/ro/LC_MESSAGES/kcm_remotecontrol.mo
 share/locale/ro/LC_MESSAGES/kcm_solid_actions.mo
@@ -426,7 +420,6 @@ share/locale/ro/LC_MESSAGES/kmix.mo
 share/locale/ro/LC_MESSAGES/kmousetool.mo
 share/locale/ro/LC_MESSAGES/kmouth.mo
 share/locale/ro/LC_MESSAGES/kmplot.mo
-share/locale/ro/LC_MESSAGES/knavalbattle.mo
 share/locale/ro/LC_MESSAGES/knetattach.mo
 share/locale/ro/LC_MESSAGES/knetwalk.mo
 share/locale/ro/LC_MESSAGES/knode.mo
@@ -437,12 +430,10 @@ share/locale/ro/LC_MESSAGES/kollision.mo
 share/locale/ro/LC_MESSAGES/kolourpaint.mo
 share/locale/ro/LC_MESSAGES/kommander.mo
 share/locale/ro/LC_MESSAGES/kompare.mo
-share/locale/ro/LC_MESSAGES/konqprofiles.mo
 share/locale/ro/LC_MESSAGES/konqueror.mo
 share/locale/ro/LC_MESSAGES/konquest.mo
 share/locale/ro/LC_MESSAGES/konsole.mo
 share/locale/ro/LC_MESSAGES/konsolekalendar.mo
-share/locale/ro/LC_MESSAGES/konsoleprofiles.mo
 share/locale/ro/LC_MESSAGES/kontact.mo
 share/locale/ro/LC_MESSAGES/kontactinterfaces.mo
 share/locale/ro/LC_MESSAGES/kopete.mo
@@ -555,7 +546,6 @@ share/locale/ro/LC_MESSAGES/libkldap.mo
 share/locale/ro/LC_MESSAGES/libkleopatra.mo
 share/locale/ro/LC_MESSAGES/libkmahjongg.mo
 share/locale/ro/LC_MESSAGES/libkmime.mo
-share/locale/ro/LC_MESSAGES/libkomparediff2.mo
 share/locale/ro/LC_MESSAGES/libkonq.mo
 share/locale/ro/LC_MESSAGES/libkpgp.mo
 share/locale/ro/LC_MESSAGES/libkpimidentities.mo
@@ -582,7 +572,6 @@ share/locale/ro/LC_MESSAGES/liboktetacore.mo
 share/locale/ro/LC_MESSAGES/liboktetakasten.mo
 share/locale/ro/LC_MESSAGES/liboxygenstyleconfig.mo
 share/locale/ro/LC_MESSAGES/libphonon.mo
-share/locale/ro/LC_MESSAGES/libpimactivity.mo
 share/locale/ro/LC_MESSAGES/libpimcommon.mo
 share/locale/ro/LC_MESSAGES/libplasma.mo
 share/locale/ro/LC_MESSAGES/libplasma_groupingcontainment.mo
@@ -595,7 +584,6 @@ share/locale/ro/LC_MESSAGES/lskat.mo
 share/locale/ro/LC_MESSAGES/mailreader.mo
 share/locale/ro/LC_MESSAGES/marble.mo
 share/locale/ro/LC_MESSAGES/marble_qt.mo
-share/locale/ro/LC_MESSAGES/mboximporter.mo
 share/locale/ro/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/ro/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/ro/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
@@ -607,8 +595,6 @@ share/locale/ro/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/ro/LC_MESSAGES/nepomukbackup.mo
 share/locale/ro/LC_MESSAGES/nepomukcleaner.mo
 share/locale/ro/LC_MESSAGES/nepomukfileindexer.mo
-share/locale/ro/LC_MESSAGES/nepomukfilewatch.mo
-share/locale/ro/LC_MESSAGES/nepomukmigrator.mo
 share/locale/ro/LC_MESSAGES/nepomukserver.mo
 share/locale/ro/LC_MESSAGES/nepomukservicestub.mo
 share/locale/ro/LC_MESSAGES/nepomukstorage.mo
@@ -632,12 +618,10 @@ share/locale/ro/LC_MESSAGES/okular_ooo.mo
 share/locale/ro/LC_MESSAGES/okular_plucker.mo
 share/locale/ro/LC_MESSAGES/okular_poppler.mo
 share/locale/ro/LC_MESSAGES/okular_tiff.mo
-share/locale/ro/LC_MESSAGES/okular_txt.mo
 share/locale/ro/LC_MESSAGES/okular_xps.mo
 share/locale/ro/LC_MESSAGES/org.kde.active.documentviewer.mo
 share/locale/ro/LC_MESSAGES/palapeli.mo
 share/locale/ro/LC_MESSAGES/parley.mo
-share/locale/ro/LC_MESSAGES/pate.mo
 share/locale/ro/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/ro/LC_MESSAGES/phonon_kde.mo
 share/locale/ro/LC_MESSAGES/phonon_vlc.mo
@@ -670,7 +654,6 @@ share/locale/ro/LC_MESSAGES/plasma_applet_fuzzy_clock.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_gasCalculator.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_groupingpanel.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_icon.mo
-share/locale/ro/LC_MESSAGES/plasma_applet_icontasks.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_incomingmsg.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/ro/LC_MESSAGES/plasma_applet_katesession.mo
@@ -783,7 +766,6 @@ share/locale/ro/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
 share/locale/ro/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/ro/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/ro/LC_MESSAGES/plasma_runner_windows.mo
-share/locale/ro/LC_MESSAGES/plasma_runner_youtube.mo
 share/locale/ro/LC_MESSAGES/plasma_scriptengine_qscript.mo
 share/locale/ro/LC_MESSAGES/plasma_toolbox_desktoptoolbox.mo
 share/locale/ro/LC_MESSAGES/plasma_toolbox_paneltoolbox.mo
@@ -792,7 +774,6 @@ share/locale/ro/LC_MESSAGES/plasma_wallpaper_image.mo
 share/locale/ro/LC_MESSAGES/plasma_wallpaper_mandelbrot.mo
 share/locale/ro/LC_MESSAGES/plasma_wallpaper_marble.mo
 share/locale/ro/LC_MESSAGES/plasma_wallpaper_pattern.mo
-share/locale/ro/LC_MESSAGES/plasma_wallpaper_potd.mo
 share/locale/ro/LC_MESSAGES/plasma_wallpaper_virus.mo
 share/locale/ro/LC_MESSAGES/plasma_wallpaper_weather.mo
 share/locale/ro/LC_MESSAGES/plasmagenericshell.mo

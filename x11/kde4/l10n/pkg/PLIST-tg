@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tg,v 1.4 2013/12/08 19:13:32 zhuk Exp $
+@comment $OpenBSD: PLIST-tg,v 1.5 2014/01/15 19:42:11 zhuk Exp $
 share/apps/
 share/apps/khangman/
 share/apps/khangman/tg.txt
@@ -8,7 +8,6 @@ share/apps/kvtml/tg/animals.kvtml
 share/apps/kvtml/tg/easy.kvtml
 share/apps/kvtml/tg/hard.kvtml
 share/apps/kvtml/tg/medium.kvtml
-share/locale/tg/LC_MESSAGES/activitymanager_plugin_globalshortcuts.mo
 share/locale/tg/LC_MESSAGES/adblock.mo
 share/locale/tg/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/tg/LC_MESSAGES/amor.mo
@@ -58,6 +57,7 @@ share/locale/tg/LC_MESSAGES/katetextfilter.mo
 share/locale/tg/LC_MESSAGES/katexmlcheck.mo
 share/locale/tg/LC_MESSAGES/katexmltools.mo
 share/locale/tg/LC_MESSAGES/katomic.mo
+share/locale/tg/LC_MESSAGES/kbattleship.mo
 share/locale/tg/LC_MESSAGES/kblackbox.mo
 share/locale/tg/LC_MESSAGES/kblankscrn.mo
 share/locale/tg/LC_MESSAGES/kbounce.mo
@@ -221,7 +221,6 @@ share/locale/tg/LC_MESSAGES/kmix.mo
 share/locale/tg/LC_MESSAGES/kmousetool.mo
 share/locale/tg/LC_MESSAGES/kmouth.mo
 share/locale/tg/LC_MESSAGES/kmplot.mo
-share/locale/tg/LC_MESSAGES/knavalbattle.mo
 share/locale/tg/LC_MESSAGES/knetattach.mo
 share/locale/tg/LC_MESSAGES/knode.mo
 share/locale/tg/LC_MESSAGES/knotes.mo
@@ -302,7 +301,6 @@ share/locale/tg/LC_MESSAGES/libkdeedu.mo
 share/locale/tg/LC_MESSAGES/libkdegames.mo
 share/locale/tg/LC_MESSAGES/libkdepim.mo
 share/locale/tg/LC_MESSAGES/libkleopatra.mo
-share/locale/tg/LC_MESSAGES/libkomparediff2.mo
 share/locale/tg/LC_MESSAGES/libkonq.mo
 share/locale/tg/LC_MESSAGES/libkscreensaver.mo
 share/locale/tg/LC_MESSAGES/libksieve.mo

@@ -1,7 +1,7 @@
-# $OpenBSD: kde4.port.mk,v 1.17 2013/12/08 19:13:29 zhuk Exp $
+# $OpenBSD: kde4.port.mk,v 1.18 2014/01/15 19:42:08 zhuk Exp $
 
 # The version of KDE SC in x11/kde4
-_MODKDE4_STABLE =	4.11.4
+_MODKDE4_STABLE =	4.11.5
 
 # List of currently supported KDE SC versions, except "stable"
 _MODKDE4_OTHERS =
@@ -152,10 +152,10 @@ MODKDE4_BUILD_DEPENDS +=	devel/automoc
 PKG_ARCH ?=		*
 MODKDE4_NO_QT ?=	Yes	# resources usually don't need Qt
 .   if ${MODKDE4_USE:L:Mworkspace}
-MODKDE4_BUILD_DEPENDS +=	${MODKDE4_DEP_DIR}/workspace>=${MODKDE4_DEP_VERSION}
+MODKDE4_BUILD_DEPENDS +=	${MODKDE4_DEP_DIR}/workspace>=${MODKDE4_DEP_VERSION},<5
 .   endif
 .   if ${MODKDE4_USE:L:Mlibs}
-MODKDE4_BUILD_DEPENDS +=	${MODKDE4_DEP_DIR}/libs,-main>=${MODKDE4_DEP_VERSION}
+MODKDE4_BUILD_DEPENDS +=	${MODKDE4_DEP_DIR}/libs,-main>=${MODKDE4_DEP_VERSION},<5
 .   endif
 .else
 MODKDE4_NO_QT ?=	No
@@ -164,26 +164,26 @@ MODKDE4_NO_QT ?=	No
 ERRORS +=	"Fatal: KDE libraries require Qt."
 .       endif
 
-MODKDE4_LIB_DEPENDS +=		${MODKDE4_DEP_DIR}/libs,-main>=${MODKDE4_DEP_VERSION}
+MODKDE4_LIB_DEPENDS +=		${MODKDE4_DEP_DIR}/libs,-main>=${MODKDE4_DEP_VERSION},<5
 MODKDE4_WANTLIB +=		${MODKDE4_LIB_DIR}/kdecore>=8
 .       if ${MODKDE4_USE:L:Mpim}
-MODKDE4_LIB_DEPENDS +=		${MODKDE4_DEP_DIR}/pimlibs>=${MODKDE4_DEP_VERSION}
+MODKDE4_LIB_DEPENDS +=		${MODKDE4_DEP_DIR}/pimlibs>=${MODKDE4_DEP_VERSION},<5
 MODKDE4_BUILD_DEPENDS +=	devel/boost
 .       endif
 
 .       if ${MODKDE4_USE:L:Mgames}
-MODKDE4_LIB_DEPENDS +=		${MODKDE4_DEP_DIR}/libkdegames>=${MODKDE4_DEP_VERSION}
+MODKDE4_LIB_DEPENDS +=		${MODKDE4_DEP_DIR}/libkdegames>=${MODKDE4_DEP_VERSION},<5
 MODKDE4_WANTLIB +=		${MODKDE4_LIB_DIR}/kdegames
 .       endif
 
 .       if ${MODKDE4_USE:L:Mruntime}
-MODKDE4_RUN_DEPENDS +=		${MODKDE4_DEP_DIR}/runtime,-main>=${MODKDE4_DEP_VERSION}
+MODKDE4_RUN_DEPENDS +=		${MODKDE4_DEP_DIR}/runtime,-main>=${MODKDE4_DEP_VERSION},<5
 .           if ${MODKDE4_USE:L:Mpim}
-MODKDE4_RUN_DEPENDS +=		${MODKDE4_DEP_DIR}/pim-runtime>=${MODKDE4_DEP_VERSION}
+MODKDE4_RUN_DEPENDS +=		${MODKDE4_DEP_DIR}/pim-runtime>=${MODKDE4_DEP_VERSION},<5
 .           endif
 
 .           if ${MODKDE4_USE:L:Mworkspace}
-MODKDE4_LIB_DEPENDS +=		${MODKDE4_DEP_DIR}/workspace>=${MODKDE4_DEP_VERSION}
+MODKDE4_LIB_DEPENDS +=		${MODKDE4_DEP_DIR}/workspace>=${MODKDE4_DEP_VERSION},<5
 .           endif
 .       endif
 .   endif    # ${MODKDE4_USE:L:Mlibs}

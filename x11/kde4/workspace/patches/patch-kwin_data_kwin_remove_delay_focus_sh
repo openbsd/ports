@@ -1,0 +1,13 @@
+$OpenBSD: patch-kwin_data_kwin_remove_delay_focus_sh,v 1.1 2014/01/15 19:42:12 zhuk Exp $
+Deconflict kde-runtime with kdebase-3.x.
+--- kwin/data/kwin_remove_delay_focus.sh.orig	Wed Jan 15 15:21:00 2014
++++ kwin/data/kwin_remove_delay_focus.sh	Wed Jan 15 15:21:27 2014
+@@ -1,4 +1,4 @@
+ #!/bin/sh
+-if ! `kreadconfig --file kwinrc --group Windows --key DelayFocus --default false` && [ `kreadconfig --file kwinrc --group Windows --key DelayFocusInterval --default 0` != 0 ]; then
+-    kwriteconfig --file kwinrc --group Windows --key DelayFocusInterval 0
+-fi
+\ No newline at end of file
++if ! `kreadconfig4 --file kwinrc --group Windows --key DelayFocus --default false` && [ `kreadconfig4 --file kwinrc --group Windows --key DelayFocusInterval --default 0` != 0 ]; then
++    kwriteconfig4 --file kwinrc --group Windows --key DelayFocusInterval 0
++fi

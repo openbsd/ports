@@ -1,0 +1,25 @@
+$OpenBSD: patch-okular_CMakeLists_txt,v 1.1 2014/01/15 19:42:12 zhuk Exp $
+Fix linking. Partly wrong due to problems with some *Config.cmake,
+so do not send this upstream!
+--- okular/CMakeLists.txt.orig	Tue Jan 14 11:56:09 2014
++++ okular/CMakeLists.txt	Tue Jan 14 12:19:40 2014
+@@ -45,15 +45,15 @@ ENDIF(CMAKE_CXX_FLAGS MATCHES "-fvisibility")
+ kde4_add_library(smokeokular SHARED ${smokeokular_LIB_SRCS})
+ 
+ target_link_libraries(smokeokular 
+-    ${QT_CORE_LIBRARY} 
+-    ${QT_GUI_LIBRARY} 
++    smokekdeui
+     ${KDE4_KDECORE_LIBS} 
+     ${KDE4_KDEUI_LIBS}
+     ${KDE4_KIO_LIBS} 
++    ${QT_GUI_LIBRARY} 
++    ${QT_CORE_LIBRARY} 
+     ${OKULAR_CORE_LIBRARY}
+-    ${SMOKE_QTCORE_LIBRARY}
+     ${SMOKE_QTXML_LIBRARY}
+-    smokekdeui
++    ${SMOKE_QTCORE_LIBRARY}
+     ${SMOKE_BASE_LIBRARY}
+ )
+ 

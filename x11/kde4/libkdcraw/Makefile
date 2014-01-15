@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/12/25 13:53:08 zhuk Exp $
+# $OpenBSD: Makefile,v 1.12 2014/01/15 19:42:11 zhuk Exp $
 
 COMMENT-main =	KDE RAW picture decoding C++ library
 COMMENT-icons =	icons for libkdcraw
@@ -6,8 +6,6 @@ CATEGORIES =	graphics devel
 DISTNAME =	libkdcraw-${MODKDE4_VERSION}
 PKGNAME-main =	${DISTNAME}
 PKGNAME-icons =	kde4-libkdcraw-icons-${MODKDE4_VERSION}
-REVISION-main =	3
-REVISION-icons =1
 
 SHARED_LIBS =	kdcraw			50.0	# 20.0
 

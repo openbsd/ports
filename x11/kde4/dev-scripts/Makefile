@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2014/01/10 08:12:11 zhuk Exp $
+# $OpenBSD: Makefile,v 1.4 2014/01/15 19:42:08 zhuk Exp $
 
 COMMENT =	KDE development helper scripts
 DISTNAME =	kde-dev-scripts-${MODKDE4_VERSION}
-REVISION =	0
 
 CATEGORIES =	devel
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdesdk/kde-dev-scripts

@@ -1,7 +1,7 @@
-$OpenBSD: patch-kcalcore_calformat_cpp,v 1.2 2013/12/08 19:13:33 zhuk Exp $
+$OpenBSD: patch-kcalcore_calformat_cpp,v 1.3 2014/01/15 19:42:12 zhuk Exp $
 Unbreak build with OpenBSD UUID library specifics.
---- kcalcore/calformat.cpp.orig	Tue Jul  2 19:27:57 2013
-+++ kcalcore/calformat.cpp	Tue Jul  2 19:28:11 2013
+--- kcalcore/calformat.cpp.orig	Thu Jan  2 23:32:09 2014
++++ kcalcore/calformat.cpp	Mon Jan 13 16:22:42 2014
 @@ -33,7 +33,7 @@
  #include "calformat.h"
  #include "exceptions.h"
@@ -11,12 +11,12 @@ Unbreak build with OpenBSD UUID library specifics.
  #include <uuid/uuid.h>
  #else
  #include <KRandom>
-@@ -120,7 +120,7 @@ void CalFormat::setLoadedProductId( const QString &id 
+@@ -122,7 +122,7 @@ void CalFormat::setLoadedProductId(const QString &id)
  
  QString CalFormat::createUniqueId()
  {
 -#if defined(HAVE_UUID_UUID_H)
-+#if UUID_FOUND
-   uuid_t uuid;
-   char suuid[64];
++#if defined(UUID_FOUND)
+     uuid_t uuid;
+     char suuid[64];
  

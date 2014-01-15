@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-gl,v 1.4 2013/12/08 19:13:32 zhuk Exp $
+@comment $OpenBSD: PLIST-gl,v 1.5 2014/01/15 19:42:11 zhuk Exp $
 share/apps/
 share/apps/khangman/
 share/apps/khangman/gl.txt
@@ -132,10 +132,6 @@ share/doc/HTML/gl/common/fdl-translated.html
 share/doc/HTML/gl/common/gpl-translated.html
 share/doc/HTML/gl/common/kde-localised.css
 share/doc/HTML/gl/common/lgpl-translated.html
-share/doc/HTML/gl/dragonplayer/
-share/doc/HTML/gl/dragonplayer/common
-share/doc/HTML/gl/dragonplayer/index.cache.bz2
-share/doc/HTML/gl/dragonplayer/index.docbook
 share/doc/HTML/gl/gwenview/
 share/doc/HTML/gl/gwenview/common
 share/doc/HTML/gl/gwenview/index.cache.bz2
@@ -165,6 +161,10 @@ share/doc/HTML/gl/kanagram/
 share/doc/HTML/gl/kanagram/common
 share/doc/HTML/gl/kanagram/index.cache.bz2
 share/doc/HTML/gl/kanagram/index.docbook
+share/doc/HTML/gl/kbattleship/
+share/doc/HTML/gl/kbattleship/common
+share/doc/HTML/gl/kbattleship/index.cache.bz2
+share/doc/HTML/gl/kbattleship/index.docbook
 share/doc/HTML/gl/kblocks/
 share/doc/HTML/gl/kblocks/common
 share/doc/HTML/gl/kblocks/index.cache.bz2
@@ -338,10 +338,6 @@ share/doc/HTML/gl/kmines/
 share/doc/HTML/gl/kmines/common
 share/doc/HTML/gl/kmines/index.cache.bz2
 share/doc/HTML/gl/kmines/index.docbook
-share/doc/HTML/gl/kmix/
-share/doc/HTML/gl/kmix/common
-share/doc/HTML/gl/kmix/index.cache.bz2
-share/doc/HTML/gl/kmix/index.docbook
 share/doc/HTML/gl/kmplot/
 share/doc/HTML/gl/kmplot/commands.docbook
 share/doc/HTML/gl/kmplot/common
@@ -357,10 +353,6 @@ share/doc/HTML/gl/kmplot/introduction.docbook
 share/doc/HTML/gl/kmplot/man-kmplot.1.docbook
 share/doc/HTML/gl/kmplot/reference.docbook
 share/doc/HTML/gl/kmplot/using.docbook
-share/doc/HTML/gl/knavalbattle/
-share/doc/HTML/gl/knavalbattle/common
-share/doc/HTML/gl/knavalbattle/index.cache.bz2
-share/doc/HTML/gl/knavalbattle/index.docbook
 share/doc/HTML/gl/knode/
 share/doc/HTML/gl/knode/commands.docbook
 share/doc/HTML/gl/knode/common
@@ -544,8 +536,6 @@ share/locale/gl/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_davgroupware_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_facebook_resource.mo
-share/locale/gl/LC_MESSAGES/akonadi_folderarchive_agent.mo
-share/locale/gl/LC_MESSAGES/akonadi_followupreminder_agent.mo
 share/locale/gl/LC_MESSAGES/akonadi_googlecalendar_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_ical_resource.mo
@@ -566,7 +556,6 @@ share/locale/gl/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/gl/LC_MESSAGES/akonadi_mailtransport_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_mbox_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_microblog_resource.mo
-share/locale/gl/LC_MESSAGES/akonadi_migration_agent.mo
 share/locale/gl/LC_MESSAGES/akonadi_mixedmaildir_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_nepomuk_feeder.mo
 share/locale/gl/LC_MESSAGES/akonadi_nepomuktag_resource.mo
@@ -599,11 +588,9 @@ share/locale/gl/LC_MESSAGES/blinken.mo
 share/locale/gl/LC_MESSAGES/blogilo.mo
 share/locale/gl/LC_MESSAGES/bomber.mo
 share/locale/gl/LC_MESSAGES/bovo.mo
-share/locale/gl/LC_MESSAGES/calendarjanitor.mo
 share/locale/gl/LC_MESSAGES/calendarsupport.mo
 share/locale/gl/LC_MESSAGES/cantor.mo
 share/locale/gl/LC_MESSAGES/cervisia.mo
-share/locale/gl/LC_MESSAGES/contactthemeeditor.mo
 share/locale/gl/LC_MESSAGES/cryptopageplugin.mo
 share/locale/gl/LC_MESSAGES/cvsservice.mo
 share/locale/gl/LC_MESSAGES/dirfilterplugin.mo
@@ -620,7 +607,6 @@ share/locale/gl/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/gl/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/gl/LC_MESSAGES/freespacenotifier.mo
 share/locale/gl/LC_MESSAGES/fsview.mo
-share/locale/gl/LC_MESSAGES/gid-migrator.mo
 share/locale/gl/LC_MESSAGES/granatier.mo
 share/locale/gl/LC_MESSAGES/gwenview.mo
 share/locale/gl/LC_MESSAGES/headerthemeeditor.mo
@@ -679,6 +665,7 @@ share/locale/gl/LC_MESSAGES/katetextfilter.mo
 share/locale/gl/LC_MESSAGES/katexmlcheck.mo
 share/locale/gl/LC_MESSAGES/katexmltools.mo
 share/locale/gl/LC_MESSAGES/katomic.mo
+share/locale/gl/LC_MESSAGES/kbattleship.mo
 share/locale/gl/LC_MESSAGES/kblackbox.mo
 share/locale/gl/LC_MESSAGES/kblankscrn.mo
 share/locale/gl/LC_MESSAGES/kblocks.mo
@@ -886,7 +873,6 @@ share/locale/gl/LC_MESSAGES/kmix.mo
 share/locale/gl/LC_MESSAGES/kmousetool.mo
 share/locale/gl/LC_MESSAGES/kmouth.mo
 share/locale/gl/LC_MESSAGES/kmplot.mo
-share/locale/gl/LC_MESSAGES/knavalbattle.mo
 share/locale/gl/LC_MESSAGES/knetattach.mo
 share/locale/gl/LC_MESSAGES/knetwalk.mo
 share/locale/gl/LC_MESSAGES/knode.mo
@@ -906,7 +892,6 @@ share/locale/gl/LC_MESSAGES/konsoleprofiles.mo
 share/locale/gl/LC_MESSAGES/kontact.mo
 share/locale/gl/LC_MESSAGES/kontactinterfaces.mo
 share/locale/gl/LC_MESSAGES/kopete.mo
-share/locale/gl/LC_MESSAGES/korgac.mo
 share/locale/gl/LC_MESSAGES/korganizer-mobile.mo
 share/locale/gl/LC_MESSAGES/korganizer.mo
 share/locale/gl/LC_MESSAGES/kpartloader.mo
@@ -993,14 +978,10 @@ share/locale/gl/LC_MESSAGES/kxsconfig.mo
 share/locale/gl/LC_MESSAGES/lancelot.mo
 share/locale/gl/LC_MESSAGES/libakonadi-calendar.mo
 share/locale/gl/LC_MESSAGES/libakonadi-kmime.mo
-share/locale/gl/LC_MESSAGES/libakonadi-xml.mo
 share/locale/gl/LC_MESSAGES/libakonadi.mo
 share/locale/gl/LC_MESSAGES/libcomposereditorng.mo
 share/locale/gl/LC_MESSAGES/libeventviews.mo
-share/locale/gl/LC_MESSAGES/libgrantleetheme.mo
-share/locale/gl/LC_MESSAGES/libgrantleethemeeditor.mo
 share/locale/gl/LC_MESSAGES/libincidenceeditors.mo
-share/locale/gl/LC_MESSAGES/libkaddressbookgrantlee.mo
 share/locale/gl/LC_MESSAGES/libkalarmcal.mo
 share/locale/gl/LC_MESSAGES/libkasten.mo
 share/locale/gl/LC_MESSAGES/libkblog.mo
@@ -1022,7 +1003,6 @@ share/locale/gl/LC_MESSAGES/libkldap.mo
 share/locale/gl/LC_MESSAGES/libkleopatra.mo
 share/locale/gl/LC_MESSAGES/libkmahjongg.mo
 share/locale/gl/LC_MESSAGES/libkmime.mo
-share/locale/gl/LC_MESSAGES/libkomparediff2.mo
 share/locale/gl/LC_MESSAGES/libkonq.mo
 share/locale/gl/LC_MESSAGES/libkpgp.mo
 share/locale/gl/LC_MESSAGES/libkpimidentities.mo
@@ -1056,7 +1036,6 @@ share/locale/gl/LC_MESSAGES/libplasma.mo
 share/locale/gl/LC_MESSAGES/libplasma_groupingcontainment.mo
 share/locale/gl/LC_MESSAGES/libplasmaclock.mo
 share/locale/gl/LC_MESSAGES/libplasmaweather.mo
-share/locale/gl/LC_MESSAGES/libpowerdevilcommonconfig.mo
 share/locale/gl/LC_MESSAGES/libtaskmanager.mo
 share/locale/gl/LC_MESSAGES/libtemplateparser.mo
 share/locale/gl/LC_MESSAGES/lokalize.mo
@@ -1065,7 +1044,6 @@ share/locale/gl/LC_MESSAGES/mailreader.mo
 share/locale/gl/LC_MESSAGES/marble.mo
 share/locale/gl/LC_MESSAGES/marble_qt.mo
 share/locale/gl/LC_MESSAGES/marble_xml_mimetypes.mo
-share/locale/gl/LC_MESSAGES/mboximporter.mo
 share/locale/gl/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/gl/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/gl/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
@@ -1257,7 +1235,6 @@ share/locale/gl/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_shell.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
-share/locale/gl/LC_MESSAGES/plasma_runner_translator.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_windows.mo

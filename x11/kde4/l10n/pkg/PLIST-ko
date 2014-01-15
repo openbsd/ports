@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ko,v 1.4 2013/12/08 19:13:32 zhuk Exp $
+@comment $OpenBSD: PLIST-ko,v 1.5 2014/01/15 19:42:11 zhuk Exp $
 share/doc/HTML/
 share/doc/HTML/ko/
 share/doc/HTML/ko/common/
@@ -135,6 +135,7 @@ share/locale/ko/LC_MESSAGES/katetextfilter.mo
 share/locale/ko/LC_MESSAGES/katexmlcheck.mo
 share/locale/ko/LC_MESSAGES/katexmltools.mo
 share/locale/ko/LC_MESSAGES/katomic.mo
+share/locale/ko/LC_MESSAGES/kbattleship.mo
 share/locale/ko/LC_MESSAGES/kblackbox.mo
 share/locale/ko/LC_MESSAGES/kblankscrn.mo
 share/locale/ko/LC_MESSAGES/kbounce.mo
@@ -320,7 +321,6 @@ share/locale/ko/LC_MESSAGES/kmix.mo
 share/locale/ko/LC_MESSAGES/kmousetool.mo
 share/locale/ko/LC_MESSAGES/kmouth.mo
 share/locale/ko/LC_MESSAGES/kmplot.mo
-share/locale/ko/LC_MESSAGES/knavalbattle.mo
 share/locale/ko/LC_MESSAGES/knetattach.mo
 share/locale/ko/LC_MESSAGES/knetwalk.mo
 share/locale/ko/LC_MESSAGES/knode.mo
@@ -428,7 +428,6 @@ share/locale/ko/LC_MESSAGES/libkexiv2.mo
 share/locale/ko/LC_MESSAGES/libkipi.mo
 share/locale/ko/LC_MESSAGES/libkleopatra.mo
 share/locale/ko/LC_MESSAGES/libkmahjongg.mo
-share/locale/ko/LC_MESSAGES/libkomparediff2.mo
 share/locale/ko/LC_MESSAGES/libkonq.mo
 share/locale/ko/LC_MESSAGES/libkpgp.mo
 share/locale/ko/LC_MESSAGES/libkremotecontrol.mo
@@ -644,6 +643,7 @@ share/locale/ko/LC_MESSAGES/plasma_runner_services.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_shell.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_solid.mo
+share/locale/ko/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_windows.mo

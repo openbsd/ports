@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hr,v 1.4 2013/12/08 19:13:32 zhuk Exp $
+@comment $OpenBSD: PLIST-hr,v 1.5 2014/01/15 19:42:11 zhuk Exp $
 share/locale/hr/LC_MESSAGES/adblock.mo
 share/locale/hr/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/hr/LC_MESSAGES/akonadi_contacts_resource.mo
@@ -63,6 +63,7 @@ share/locale/hr/LC_MESSAGES/katetextfilter.mo
 share/locale/hr/LC_MESSAGES/katexmlcheck.mo
 share/locale/hr/LC_MESSAGES/katexmltools.mo
 share/locale/hr/LC_MESSAGES/katomic.mo
+share/locale/hr/LC_MESSAGES/kbattleship.mo
 share/locale/hr/LC_MESSAGES/kblackbox.mo
 share/locale/hr/LC_MESSAGES/kblankscrn.mo
 share/locale/hr/LC_MESSAGES/kblocks.mo
@@ -247,7 +248,6 @@ share/locale/hr/LC_MESSAGES/kmix.mo
 share/locale/hr/LC_MESSAGES/kmousetool.mo
 share/locale/hr/LC_MESSAGES/kmouth.mo
 share/locale/hr/LC_MESSAGES/kmplot.mo
-share/locale/hr/LC_MESSAGES/knavalbattle.mo
 share/locale/hr/LC_MESSAGES/knetattach.mo
 share/locale/hr/LC_MESSAGES/knetwalk.mo
 share/locale/hr/LC_MESSAGES/knode.mo
@@ -344,7 +344,6 @@ share/locale/hr/LC_MESSAGES/libkdepim.mo
 share/locale/hr/LC_MESSAGES/libkexiv2.mo
 share/locale/hr/LC_MESSAGES/libkleopatra.mo
 share/locale/hr/LC_MESSAGES/libkmahjongg.mo
-share/locale/hr/LC_MESSAGES/libkomparediff2.mo
 share/locale/hr/LC_MESSAGES/libkonq.mo
 share/locale/hr/LC_MESSAGES/libkpgp.mo
 share/locale/hr/LC_MESSAGES/libksane.mo

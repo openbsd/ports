@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ca@valencia,v 1.4 2013/12/08 19:13:32 zhuk Exp $
+@comment $OpenBSD: PLIST-ca@valencia,v 1.5 2014/01/15 19:42:10 zhuk Exp $
 share/locale/ca@valencia/LC_MESSAGES/accountwizard.mo
 share/locale/ca@valencia/LC_MESSAGES/accountwizard_ical.mo
 share/locale/ca@valencia/LC_MESSAGES/accountwizard_imap.mo
@@ -14,9 +14,6 @@ share/locale/ca@valencia/LC_MESSAGES/akonadi_archivemail_agent.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_davgroupware_resource.mo
-share/locale/ca@valencia/LC_MESSAGES/akonadi_facebook_resource.mo
-share/locale/ca@valencia/LC_MESSAGES/akonadi_folderarchive_agent.mo
-share/locale/ca@valencia/LC_MESSAGES/akonadi_followupreminder_agent.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_googlecalendar_resource.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_ical_resource.mo
@@ -37,7 +34,6 @@ share/locale/ca@valencia/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_mailtransport_resource.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_mbox_resource.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_microblog_resource.mo
-share/locale/ca@valencia/LC_MESSAGES/akonadi_migration_agent.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_mixedmaildir_resource.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_nepomuk_feeder.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_nepomuktag_resource.mo
@@ -46,7 +42,6 @@ share/locale/ca@valencia/LC_MESSAGES/akonadi_next.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_nntp_resource.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_pop3_resource.mo
-share/locale/ca@valencia/LC_MESSAGES/akonadi_sendlater_agent.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_serializer_plugins.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_singlefile_resource.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_strigi_feeder.mo
@@ -70,11 +65,9 @@ share/locale/ca@valencia/LC_MESSAGES/blinken.mo
 share/locale/ca@valencia/LC_MESSAGES/blogilo.mo
 share/locale/ca@valencia/LC_MESSAGES/bomber.mo
 share/locale/ca@valencia/LC_MESSAGES/bovo.mo
-share/locale/ca@valencia/LC_MESSAGES/calendarjanitor.mo
 share/locale/ca@valencia/LC_MESSAGES/calendarsupport.mo
 share/locale/ca@valencia/LC_MESSAGES/cantor.mo
 share/locale/ca@valencia/LC_MESSAGES/cervisia.mo
-share/locale/ca@valencia/LC_MESSAGES/contactthemeeditor.mo
 share/locale/ca@valencia/LC_MESSAGES/cryptopageplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/cvsservice.mo
 share/locale/ca@valencia/LC_MESSAGES/dirfilterplugin.mo
@@ -91,10 +84,8 @@ share/locale/ca@valencia/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/freespacenotifier.mo
 share/locale/ca@valencia/LC_MESSAGES/fsview.mo
-share/locale/ca@valencia/LC_MESSAGES/gid-migrator.mo
 share/locale/ca@valencia/LC_MESSAGES/granatier.mo
 share/locale/ca@valencia/LC_MESSAGES/gwenview.mo
-share/locale/ca@valencia/LC_MESSAGES/headerthemeeditor.mo
 share/locale/ca@valencia/LC_MESSAGES/htmlsearch.mo
 share/locale/ca@valencia/LC_MESSAGES/imagerename_plugin.mo
 share/locale/ca@valencia/LC_MESSAGES/imgalleryplugin.mo
@@ -130,7 +121,6 @@ share/locale/ca@valencia/LC_MESSAGES/kate.mo
 share/locale/ca@valencia/LC_MESSAGES/kate_kttsd.mo
 share/locale/ca@valencia/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/katebuild-plugin.mo
-share/locale/ca@valencia/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/katefiletemplates.mo
 share/locale/ca@valencia/LC_MESSAGES/kategdbplugin.mo
@@ -150,6 +140,7 @@ share/locale/ca@valencia/LC_MESSAGES/katetextfilter.mo
 share/locale/ca@valencia/LC_MESSAGES/katexmlcheck.mo
 share/locale/ca@valencia/LC_MESSAGES/katexmltools.mo
 share/locale/ca@valencia/LC_MESSAGES/katomic.mo
+share/locale/ca@valencia/LC_MESSAGES/kbattleship.mo
 share/locale/ca@valencia/LC_MESSAGES/kblackbox.mo
 share/locale/ca@valencia/LC_MESSAGES/kblankscrn.mo
 share/locale/ca@valencia/LC_MESSAGES/kblocks.mo
@@ -180,7 +171,6 @@ share/locale/ca@valencia/LC_MESSAGES/kcm_memory.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_pci.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_phonon.mo
-share/locale/ca@valencia/LC_MESSAGES/kcm_pimactivity.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_platform.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_remotecontrol.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_solid_actions.mo
@@ -357,7 +347,6 @@ share/locale/ca@valencia/LC_MESSAGES/kmix.mo
 share/locale/ca@valencia/LC_MESSAGES/kmousetool.mo
 share/locale/ca@valencia/LC_MESSAGES/kmouth.mo
 share/locale/ca@valencia/LC_MESSAGES/kmplot.mo
-share/locale/ca@valencia/LC_MESSAGES/knavalbattle.mo
 share/locale/ca@valencia/LC_MESSAGES/knetattach.mo
 share/locale/ca@valencia/LC_MESSAGES/knetwalk.mo
 share/locale/ca@valencia/LC_MESSAGES/knode.mo
@@ -377,7 +366,6 @@ share/locale/ca@valencia/LC_MESSAGES/konsoleprofiles.mo
 share/locale/ca@valencia/LC_MESSAGES/kontact.mo
 share/locale/ca@valencia/LC_MESSAGES/kontactinterfaces.mo
 share/locale/ca@valencia/LC_MESSAGES/kopete.mo
-share/locale/ca@valencia/LC_MESSAGES/korgac.mo
 share/locale/ca@valencia/LC_MESSAGES/korganizer-mobile.mo
 share/locale/ca@valencia/LC_MESSAGES/korganizer.mo
 share/locale/ca@valencia/LC_MESSAGES/kpartloader.mo
@@ -407,7 +395,6 @@ share/locale/ca@valencia/LC_MESSAGES/kscreenlocker.mo
 share/locale/ca@valencia/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/ca@valencia/LC_MESSAGES/kscreensaver.mo
 share/locale/ca@valencia/LC_MESSAGES/ksendemail.mo
-share/locale/ca@valencia/LC_MESSAGES/ksgrd.mo
 share/locale/ca@valencia/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/kshisen.mo
 share/locale/ca@valencia/LC_MESSAGES/kshorturifilter.mo
@@ -453,7 +440,6 @@ share/locale/ca@valencia/LC_MESSAGES/kwin.mo
 share/locale/ca@valencia/LC_MESSAGES/kwin_art_clients.mo
 share/locale/ca@valencia/LC_MESSAGES/kwin_clients.mo
 share/locale/ca@valencia/LC_MESSAGES/kwin_effects.mo
-share/locale/ca@valencia/LC_MESSAGES/kwin_scripting.mo
 share/locale/ca@valencia/LC_MESSAGES/kwinshutdown.mo
 share/locale/ca@valencia/LC_MESSAGES/kwinstartmenu.mo
 share/locale/ca@valencia/LC_MESSAGES/kwordquiz.mo
@@ -464,14 +450,9 @@ share/locale/ca@valencia/LC_MESSAGES/kxsconfig.mo
 share/locale/ca@valencia/LC_MESSAGES/lancelot.mo
 share/locale/ca@valencia/LC_MESSAGES/libakonadi-calendar.mo
 share/locale/ca@valencia/LC_MESSAGES/libakonadi-kmime.mo
-share/locale/ca@valencia/LC_MESSAGES/libakonadi-xml.mo
 share/locale/ca@valencia/LC_MESSAGES/libakonadi.mo
-share/locale/ca@valencia/LC_MESSAGES/libcomposereditorng.mo
 share/locale/ca@valencia/LC_MESSAGES/libeventviews.mo
-share/locale/ca@valencia/LC_MESSAGES/libgrantleetheme.mo
-share/locale/ca@valencia/LC_MESSAGES/libgrantleethemeeditor.mo
 share/locale/ca@valencia/LC_MESSAGES/libincidenceeditors.mo
-share/locale/ca@valencia/LC_MESSAGES/libkaddressbookgrantlee.mo
 share/locale/ca@valencia/LC_MESSAGES/libkalarmcal.mo
 share/locale/ca@valencia/LC_MESSAGES/libkasten.mo
 share/locale/ca@valencia/LC_MESSAGES/libkblog.mo
@@ -493,7 +474,6 @@ share/locale/ca@valencia/LC_MESSAGES/libkldap.mo
 share/locale/ca@valencia/LC_MESSAGES/libkleopatra.mo
 share/locale/ca@valencia/LC_MESSAGES/libkmahjongg.mo
 share/locale/ca@valencia/LC_MESSAGES/libkmime.mo
-share/locale/ca@valencia/LC_MESSAGES/libkomparediff2.mo
 share/locale/ca@valencia/LC_MESSAGES/libkonq.mo
 share/locale/ca@valencia/LC_MESSAGES/libkpgp.mo
 share/locale/ca@valencia/LC_MESSAGES/libkpimidentities.mo
@@ -521,13 +501,11 @@ share/locale/ca@valencia/LC_MESSAGES/liboktetagui.mo
 share/locale/ca@valencia/LC_MESSAGES/liboktetakasten.mo
 share/locale/ca@valencia/LC_MESSAGES/liboxygenstyleconfig.mo
 share/locale/ca@valencia/LC_MESSAGES/libphonon.mo
-share/locale/ca@valencia/LC_MESSAGES/libpimactivity.mo
 share/locale/ca@valencia/LC_MESSAGES/libpimcommon.mo
 share/locale/ca@valencia/LC_MESSAGES/libplasma.mo
 share/locale/ca@valencia/LC_MESSAGES/libplasma_groupingcontainment.mo
 share/locale/ca@valencia/LC_MESSAGES/libplasmaclock.mo
 share/locale/ca@valencia/LC_MESSAGES/libplasmaweather.mo
-share/locale/ca@valencia/LC_MESSAGES/libpowerdevilcommonconfig.mo
 share/locale/ca@valencia/LC_MESSAGES/libtaskmanager.mo
 share/locale/ca@valencia/LC_MESSAGES/libtemplateparser.mo
 share/locale/ca@valencia/LC_MESSAGES/lokalize.mo
@@ -536,7 +514,6 @@ share/locale/ca@valencia/LC_MESSAGES/mailreader.mo
 share/locale/ca@valencia/LC_MESSAGES/marble.mo
 share/locale/ca@valencia/LC_MESSAGES/marble_qt.mo
 share/locale/ca@valencia/LC_MESSAGES/marble_xml_mimetypes.mo
-share/locale/ca@valencia/LC_MESSAGES/mboximporter.mo
 share/locale/ca@valencia/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/ca@valencia/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/ca@valencia/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
@@ -548,9 +525,6 @@ share/locale/ca@valencia/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/ca@valencia/LC_MESSAGES/nepomukbackup.mo
 share/locale/ca@valencia/LC_MESSAGES/nepomukcleaner.mo
 share/locale/ca@valencia/LC_MESSAGES/nepomukfileindexer.mo
-share/locale/ca@valencia/LC_MESSAGES/nepomukfilewatch.mo
-share/locale/ca@valencia/LC_MESSAGES/nepomukmigrator.mo
-share/locale/ca@valencia/LC_MESSAGES/nepomukpimindexerutility.mo
 share/locale/ca@valencia/LC_MESSAGES/nepomukserver.mo
 share/locale/ca@valencia/LC_MESSAGES/nepomukservicestub.mo
 share/locale/ca@valencia/LC_MESSAGES/nepomukstorage.mo
@@ -575,19 +549,16 @@ share/locale/ca@valencia/LC_MESSAGES/okular_ooo.mo
 share/locale/ca@valencia/LC_MESSAGES/okular_plucker.mo
 share/locale/ca@valencia/LC_MESSAGES/okular_poppler.mo
 share/locale/ca@valencia/LC_MESSAGES/okular_tiff.mo
-share/locale/ca@valencia/LC_MESSAGES/okular_txt.mo
 share/locale/ca@valencia/LC_MESSAGES/okular_xps.mo
 share/locale/ca@valencia/LC_MESSAGES/org.kde.active.documentviewer.mo
 share/locale/ca@valencia/LC_MESSAGES/pairs.mo
 share/locale/ca@valencia/LC_MESSAGES/pairseditor.mo
 share/locale/ca@valencia/LC_MESSAGES/palapeli.mo
 share/locale/ca@valencia/LC_MESSAGES/parley.mo
-share/locale/ca@valencia/LC_MESSAGES/pate.mo
 share/locale/ca@valencia/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/ca@valencia/LC_MESSAGES/phonon_kde.mo
 share/locale/ca@valencia/LC_MESSAGES/phonon_vlc.mo
 share/locale/ca@valencia/LC_MESSAGES/phononserver.mo
-share/locale/ca@valencia/LC_MESSAGES/picmi.mo
 share/locale/ca@valencia/LC_MESSAGES/pimsettingexporter.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma-desktop.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma-netbook.mo
@@ -728,7 +699,6 @@ share/locale/ca@valencia/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_runner_shell.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
-share/locale/ca@valencia/LC_MESSAGES/plasma_runner_translator.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_runner_windows.mo

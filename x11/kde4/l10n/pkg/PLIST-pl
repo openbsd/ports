@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pl,v 1.4 2013/12/08 19:13:32 zhuk Exp $
+@comment $OpenBSD: PLIST-pl,v 1.5 2014/01/15 19:42:11 zhuk Exp $
 share/apps/
 share/apps/khangman/
 share/apps/khangman/pl.txt
@@ -131,6 +131,10 @@ share/doc/HTML/pl/kapman/config.png
 share/doc/HTML/pl/kapman/index.cache.bz2
 share/doc/HTML/pl/kapman/index.docbook
 share/doc/HTML/pl/kapman/kapman.png
+share/doc/HTML/pl/kbattleship/
+share/doc/HTML/pl/kbattleship/common
+share/doc/HTML/pl/kbattleship/index.cache.bz2
+share/doc/HTML/pl/kbattleship/index.docbook
 share/doc/HTML/pl/kblackbox/
 share/doc/HTML/pl/kblackbox/common
 share/doc/HTML/pl/kblackbox/index.cache.bz2
@@ -664,10 +668,6 @@ share/doc/HTML/pl/kmplot/settings-diagram.png
 share/doc/HTML/pl/kmplot/settings-fonts.png
 share/doc/HTML/pl/kmplot/settings-general.png
 share/doc/HTML/pl/kmplot/using.docbook
-share/doc/HTML/pl/knavalbattle/
-share/doc/HTML/pl/knavalbattle/common
-share/doc/HTML/pl/knavalbattle/index.cache.bz2
-share/doc/HTML/pl/knavalbattle/index.docbook
 share/doc/HTML/pl/knetattach/
 share/doc/HTML/pl/knetattach/common
 share/doc/HTML/pl/knetattach/index.cache.bz2
@@ -736,10 +736,8 @@ share/doc/HTML/pl/konsole/index.docbook
 share/doc/HTML/pl/kopete/
 share/doc/HTML/pl/kopete/chatstyle.docbook
 share/doc/HTML/pl/kopete/common
-share/doc/HTML/pl/kopete/icq.docbook
 share/doc/HTML/pl/kopete/index.cache.bz2
 share/doc/HTML/pl/kopete/index.docbook
-share/doc/HTML/pl/kopete/jabber.docbook
 share/doc/HTML/pl/kopete/menus.docbook
 share/doc/HTML/pl/kopete/otr-auth-1.png
 share/doc/HTML/pl/kopete/pipes.docbook
@@ -1126,6 +1124,7 @@ share/locale/pl/LC_MESSAGES/katetextfilter.mo
 share/locale/pl/LC_MESSAGES/katexmlcheck.mo
 share/locale/pl/LC_MESSAGES/katexmltools.mo
 share/locale/pl/LC_MESSAGES/katomic.mo
+share/locale/pl/LC_MESSAGES/kbattleship.mo
 share/locale/pl/LC_MESSAGES/kblackbox.mo
 share/locale/pl/LC_MESSAGES/kblankscrn.mo
 share/locale/pl/LC_MESSAGES/kblocks.mo
@@ -1333,7 +1332,6 @@ share/locale/pl/LC_MESSAGES/kmix.mo
 share/locale/pl/LC_MESSAGES/kmousetool.mo
 share/locale/pl/LC_MESSAGES/kmouth.mo
 share/locale/pl/LC_MESSAGES/kmplot.mo
-share/locale/pl/LC_MESSAGES/knavalbattle.mo
 share/locale/pl/LC_MESSAGES/knetattach.mo
 share/locale/pl/LC_MESSAGES/knetwalk.mo
 share/locale/pl/LC_MESSAGES/knode.mo
@@ -1464,7 +1462,6 @@ share/locale/pl/LC_MESSAGES/libkldap.mo
 share/locale/pl/LC_MESSAGES/libkleopatra.mo
 share/locale/pl/LC_MESSAGES/libkmahjongg.mo
 share/locale/pl/LC_MESSAGES/libkmime.mo
-share/locale/pl/LC_MESSAGES/libkomparediff2.mo
 share/locale/pl/LC_MESSAGES/libkonq.mo
 share/locale/pl/LC_MESSAGES/libkpgp.mo
 share/locale/pl/LC_MESSAGES/libkpimidentities.mo
@@ -1517,6 +1514,7 @@ share/locale/pl/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/pl/LC_MESSAGES/nepomukbackup.mo
 share/locale/pl/LC_MESSAGES/nepomukcleaner.mo
 share/locale/pl/LC_MESSAGES/nepomukfileindexer.mo
+share/locale/pl/LC_MESSAGES/nepomukfilewatch.mo
 share/locale/pl/LC_MESSAGES/nepomukmigrator.mo
 share/locale/pl/LC_MESSAGES/nepomukpimindexerutility.mo
 share/locale/pl/LC_MESSAGES/nepomukserver.mo
@@ -1543,6 +1541,7 @@ share/locale/pl/LC_MESSAGES/okular_ooo.mo
 share/locale/pl/LC_MESSAGES/okular_plucker.mo
 share/locale/pl/LC_MESSAGES/okular_poppler.mo
 share/locale/pl/LC_MESSAGES/okular_tiff.mo
+share/locale/pl/LC_MESSAGES/okular_txt.mo
 share/locale/pl/LC_MESSAGES/okular_xps.mo
 share/locale/pl/LC_MESSAGES/org.kde.active.documentviewer.mo
 share/locale/pl/LC_MESSAGES/pairs.mo

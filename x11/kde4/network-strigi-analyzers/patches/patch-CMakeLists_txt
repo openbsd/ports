@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2013/12/08 18:17:07 zhuk Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2014/01/15 19:42:11 zhuk Exp $
 --- CMakeLists.txt.orig	Sat Nov  9 01:31:35 2013
 +++ CMakeLists.txt	Sat Nov  9 01:32:33 2013
 @@ -32,6 +32,10 @@ macro_log_feature(STRIGI_FOUND "Strigi" "Metadata extr
@@ -7,7 +7,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2013/12/08 18:17:07 zhuk Exp $
  
 +if(Boost_FOUND)
 +    include_directories(${Boost_INCLUDE_DIRS})
-+endif(BOOST_FOUND)
++endif(Boost_FOUND)
 +
  if(STRIGI_FOUND)
      add_subdirectory(torrent)

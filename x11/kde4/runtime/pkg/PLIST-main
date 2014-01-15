@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2014/01/14 21:41:54 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2014/01/15 19:42:12 zhuk Exp $
 @pkgpath x11/kde4/runtime
-@conflict kdebase-*
 @group wheel
 @bin bin/kcmshell4
 @bin bin/kde-cp
@@ -20,14 +19,14 @@ bin/kde4
 @bin bin/kmimetypefinder
 @bin bin/knotify4
 @bin bin/kquitapp
-@bin bin/kreadconfig
+@bin bin/kreadconfig4
 @bin bin/kstart4
 @bin bin/ksvgtopng4
 @bin bin/ktraderclient
 @bin bin/ktrash4
 @bin bin/kuiserver
 @bin bin/kwalletd
-@bin bin/kwriteconfig
+@bin bin/kwriteconfig4
 @bin bin/plasma-remote-helper
 @bin bin/plasmapkg
 @bin bin/solid-hardware

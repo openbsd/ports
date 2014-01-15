@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2014/01/10 08:12:11 zhuk Exp $
+# $OpenBSD: Makefile,v 1.42 2014/01/15 19:42:11 zhuk Exp $
 
 COMMENT-main =		KDE core libraries
 COMMENT-en_US =		KDE en_US locale data
@@ -11,7 +11,6 @@ PKGNAME-langlist =	kde4-langlist-${MODKDE4_VERSION}
 PKG_ARCH-en_US =	*
 PKG_ARCH-langlist =	*
 PKGSPEC-main =		kdelibs->=4
-REVISION-main =		2
 
 DPB_PROPERTIES =	parallel tag:kde4
 
@@ -161,5 +160,9 @@ post-extract:
 .endfor
 	cp ${FILESDIR}/config-util.h.cmake ${WRKSRC}/kdecore/util/
 	cp ${FILESDIR}/ConfigureChecks.cmake ${WRKSRC}/kdecore/util/
+	mv ${WRKSRC}/doc/kjscmd/man-kjscmd{,4}.1.docbook
+
+pre-configure:
+	perl -pi -e 's/\bkjscmd\b/$$&4/g' ${WRKSRC}/doc/kjscmd/*
 
 .include <bsd.port.mk>

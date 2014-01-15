@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-vi,v 1.3 2013/12/08 19:13:32 zhuk Exp $
+@comment $OpenBSD: PLIST-vi,v 1.4 2014/01/15 19:42:11 zhuk Exp $
 share/locale/vi/LC_MESSAGES/akregator.mo
 share/locale/vi/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/vi/LC_MESSAGES/attica_kde.mo
@@ -30,6 +30,7 @@ share/locale/vi/LC_MESSAGES/katetextfilter.mo
 share/locale/vi/LC_MESSAGES/katexmlcheck.mo
 share/locale/vi/LC_MESSAGES/katexmltools.mo
 share/locale/vi/LC_MESSAGES/katomic.mo
+share/locale/vi/LC_MESSAGES/kbattleship.mo
 share/locale/vi/LC_MESSAGES/kblackbox.mo
 share/locale/vi/LC_MESSAGES/kbounce.mo
 share/locale/vi/LC_MESSAGES/kcm_attica.mo
@@ -132,7 +133,6 @@ share/locale/vi/LC_MESSAGES/kio_remote.mo
 share/locale/vi/LC_MESSAGES/kio_sftp.mo
 share/locale/vi/LC_MESSAGES/kio_smb.mo
 share/locale/vi/LC_MESSAGES/kio_smtp.mo
-share/locale/vi/LC_MESSAGES/kio_tags.mo
 share/locale/vi/LC_MESSAGES/kio_thumbnail.mo
 share/locale/vi/LC_MESSAGES/kio_timeline.mo
 share/locale/vi/LC_MESSAGES/kio_trash.mo
@@ -149,7 +149,6 @@ share/locale/vi/LC_MESSAGES/kmimetypefinder.mo
 share/locale/vi/LC_MESSAGES/kmousetool.mo
 share/locale/vi/LC_MESSAGES/kmouth.mo
 share/locale/vi/LC_MESSAGES/kmplot.mo
-share/locale/vi/LC_MESSAGES/knavalbattle.mo
 share/locale/vi/LC_MESSAGES/knetattach.mo
 share/locale/vi/LC_MESSAGES/knotify4.mo
 share/locale/vi/LC_MESSAGES/konqueror.mo

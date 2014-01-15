@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.26 2013/12/25 09:14:23 zhuk Exp $
+# $OpenBSD: Makefile,v 1.27 2014/01/15 19:42:12 zhuk Exp $
 
 COMMENT =	libraries for KDE PIM services
 DISTNAME =	kdepimlibs-${MODKDE4_VERSION}
-REVISION =	1
 
 DPB_PROPERTIES =	parallel
 
@@ -44,7 +43,7 @@ SHARED_LIBS +=  akonadi-socialutils	51.0 # 4.10
 
 WANTLIB =  c m pthread stdc++
 WANTLIB += lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSql
-WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml
+WANTLIB += lib/qt4/QtSvg lib/qt4/QtTest lib/qt4/QtXml
 WANTLIB += ${KDE4LIB}/kcmutils ${KDE4LIB}/kdeui ${KDE4LIB}/kemoticons
 WANTLIB += ${KDE4LIB}/kio ${KDE4LIB}/kparts ${KDE4LIB}/nepomuk
 WANTLIB += ${KDE4LIB}/nepomukcore ${KDE4LIB}/nepomukutils ${KDE4LIB}/solid
@@ -72,9 +71,6 @@ LIB_DEPENDS =	${MODKDE4_DEP_DIR}/nepomuk-core>=${MODKDE4_DEP_VERSION} \
 		security/gpgme>=0.4.5 \
 		sysutils/e2fsprogs>=1.42.7 \
 		textproc/libical
-
-# picks up KDE3 otherwise (crappy CMakeLists.txt?)
-NO_TEST =	Yes
 
 post-extract:
 	cp ${FILESDIR}/*.cmake ${WRKDIST}/cmake/modules

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-uk,v 1.4 2013/12/08 19:13:32 zhuk Exp $
+@comment $OpenBSD: PLIST-uk,v 1.5 2014/01/15 19:42:11 zhuk Exp $
 share/apps/
 share/apps/autocorrect/
 share/apps/autocorrect/uk_UA.xml
@@ -352,10 +352,6 @@ share/doc/HTML/uk/akonadi_archivemail_agent/
 share/doc/HTML/uk/akonadi_archivemail_agent/common
 share/doc/HTML/uk/akonadi_archivemail_agent/index.cache.bz2
 share/doc/HTML/uk/akonadi_archivemail_agent/index.docbook
-share/doc/HTML/uk/akonadi_folderarchive_agent/
-share/doc/HTML/uk/akonadi_folderarchive_agent/common
-share/doc/HTML/uk/akonadi_folderarchive_agent/index.cache.bz2
-share/doc/HTML/uk/akonadi_folderarchive_agent/index.docbook
 share/doc/HTML/uk/akonadi_sendlater_agent/
 share/doc/HTML/uk/akonadi_sendlater_agent/common
 share/doc/HTML/uk/akonadi_sendlater_agent/index.cache.bz2
@@ -627,6 +623,10 @@ share/doc/HTML/uk/katomic/
 share/doc/HTML/uk/katomic/common
 share/doc/HTML/uk/katomic/index.cache.bz2
 share/doc/HTML/uk/katomic/index.docbook
+share/doc/HTML/uk/kbattleship/
+share/doc/HTML/uk/kbattleship/common
+share/doc/HTML/uk/kbattleship/index.cache.bz2
+share/doc/HTML/uk/kbattleship/index.docbook
 share/doc/HTML/uk/kblackbox/
 share/doc/HTML/uk/kblackbox/common
 share/doc/HTML/uk/kblackbox/index.cache.bz2
@@ -1513,10 +1513,6 @@ share/doc/HTML/uk/kmplot/settings-diagram.png
 share/doc/HTML/uk/kmplot/settings-fonts.png
 share/doc/HTML/uk/kmplot/settings-general.png
 share/doc/HTML/uk/kmplot/using.docbook
-share/doc/HTML/uk/knavalbattle/
-share/doc/HTML/uk/knavalbattle/common
-share/doc/HTML/uk/knavalbattle/index.cache.bz2
-share/doc/HTML/uk/knavalbattle/index.docbook
 share/doc/HTML/uk/knetattach/
 share/doc/HTML/uk/knetattach/common
 share/doc/HTML/uk/knetattach/index.cache.bz2
@@ -1906,8 +1902,6 @@ share/doc/HTML/uk/ktouch/create_course3.png
 share/doc/HTML/uk/ktouch/create_layout1.png
 share/doc/HTML/uk/ktouch/create_layout2.png
 share/doc/HTML/uk/ktouch/create_layout3.png
-share/doc/HTML/uk/ktouch/custom-lessons-edit.png
-share/doc/HTML/uk/ktouch/custom-lessons.png
 share/doc/HTML/uk/ktouch/home_screen.png
 share/doc/HTML/uk/ktouch/index.cache.bz2
 share/doc/HTML/uk/ktouch/index.docbook
@@ -2034,7 +2028,6 @@ share/doc/HTML/uk/marble/configure-dateandtime.png
 share/doc/HTML/uk/marble/configure-navigation.png
 share/doc/HTML/uk/marble/configure-plugins.png
 share/doc/HTML/uk/marble/configure-routing.png
-share/doc/HTML/uk/marble/configure-synchronization.png
 share/doc/HTML/uk/marble/configure-view.png
 share/doc/HTML/uk/marble/download-region-3.png
 share/doc/HTML/uk/marble/index.cache.bz2
@@ -2109,7 +2102,6 @@ share/doc/HTML/uk/parley/Parley_practice_grey_flash.png
 share/doc/HTML/uk/parley/Parley_practice_grey_written.png
 share/doc/HTML/uk/parley/Parley_practice_grey_written_right.png
 share/doc/HTML/uk/parley/Parley_practice_grey_written_wrong.png
-share/doc/HTML/uk/parley/Parley_trainer_eng-deu_0-9-4_006b.png
 share/doc/HTML/uk/parley/Parley_welcome_screen.png
 share/doc/HTML/uk/parley/common
 share/doc/HTML/uk/parley/index.cache.bz2
@@ -2190,8 +2182,6 @@ share/locale/uk/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_davgroupware_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_facebook_resource.mo
-share/locale/uk/LC_MESSAGES/akonadi_folderarchive_agent.mo
-share/locale/uk/LC_MESSAGES/akonadi_followupreminder_agent.mo
 share/locale/uk/LC_MESSAGES/akonadi_googlecalendar_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_ical_resource.mo
@@ -2212,7 +2202,6 @@ share/locale/uk/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/uk/LC_MESSAGES/akonadi_mailtransport_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_mbox_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_microblog_resource.mo
-share/locale/uk/LC_MESSAGES/akonadi_migration_agent.mo
 share/locale/uk/LC_MESSAGES/akonadi_mixedmaildir_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_nepomuk_feeder.mo
 share/locale/uk/LC_MESSAGES/akonadi_nepomuktag_resource.mo
@@ -2245,11 +2234,9 @@ share/locale/uk/LC_MESSAGES/blinken.mo
 share/locale/uk/LC_MESSAGES/blogilo.mo
 share/locale/uk/LC_MESSAGES/bomber.mo
 share/locale/uk/LC_MESSAGES/bovo.mo
-share/locale/uk/LC_MESSAGES/calendarjanitor.mo
 share/locale/uk/LC_MESSAGES/calendarsupport.mo
 share/locale/uk/LC_MESSAGES/cantor.mo
 share/locale/uk/LC_MESSAGES/cervisia.mo
-share/locale/uk/LC_MESSAGES/contactthemeeditor.mo
 share/locale/uk/LC_MESSAGES/cryptopageplugin.mo
 share/locale/uk/LC_MESSAGES/cvsservice.mo
 share/locale/uk/LC_MESSAGES/dirfilterplugin.mo
@@ -2266,7 +2253,6 @@ share/locale/uk/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/uk/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/uk/LC_MESSAGES/freespacenotifier.mo
 share/locale/uk/LC_MESSAGES/fsview.mo
-share/locale/uk/LC_MESSAGES/gid-migrator.mo
 share/locale/uk/LC_MESSAGES/granatier.mo
 share/locale/uk/LC_MESSAGES/gwenview.mo
 share/locale/uk/LC_MESSAGES/headerthemeeditor.mo
@@ -2325,6 +2311,7 @@ share/locale/uk/LC_MESSAGES/katetextfilter.mo
 share/locale/uk/LC_MESSAGES/katexmlcheck.mo
 share/locale/uk/LC_MESSAGES/katexmltools.mo
 share/locale/uk/LC_MESSAGES/katomic.mo
+share/locale/uk/LC_MESSAGES/kbattleship.mo
 share/locale/uk/LC_MESSAGES/kblackbox.mo
 share/locale/uk/LC_MESSAGES/kblankscrn.mo
 share/locale/uk/LC_MESSAGES/kblocks.mo
@@ -2532,7 +2519,6 @@ share/locale/uk/LC_MESSAGES/kmix.mo
 share/locale/uk/LC_MESSAGES/kmousetool.mo
 share/locale/uk/LC_MESSAGES/kmouth.mo
 share/locale/uk/LC_MESSAGES/kmplot.mo
-share/locale/uk/LC_MESSAGES/knavalbattle.mo
 share/locale/uk/LC_MESSAGES/knetattach.mo
 share/locale/uk/LC_MESSAGES/knetwalk.mo
 share/locale/uk/LC_MESSAGES/knode.mo
@@ -2552,7 +2538,6 @@ share/locale/uk/LC_MESSAGES/konsoleprofiles.mo
 share/locale/uk/LC_MESSAGES/kontact.mo
 share/locale/uk/LC_MESSAGES/kontactinterfaces.mo
 share/locale/uk/LC_MESSAGES/kopete.mo
-share/locale/uk/LC_MESSAGES/korgac.mo
 share/locale/uk/LC_MESSAGES/korganizer-mobile.mo
 share/locale/uk/LC_MESSAGES/korganizer.mo
 share/locale/uk/LC_MESSAGES/kpartloader.mo
@@ -2639,14 +2624,10 @@ share/locale/uk/LC_MESSAGES/kxsconfig.mo
 share/locale/uk/LC_MESSAGES/lancelot.mo
 share/locale/uk/LC_MESSAGES/libakonadi-calendar.mo
 share/locale/uk/LC_MESSAGES/libakonadi-kmime.mo
-share/locale/uk/LC_MESSAGES/libakonadi-xml.mo
 share/locale/uk/LC_MESSAGES/libakonadi.mo
 share/locale/uk/LC_MESSAGES/libcomposereditorng.mo
 share/locale/uk/LC_MESSAGES/libeventviews.mo
-share/locale/uk/LC_MESSAGES/libgrantleetheme.mo
-share/locale/uk/LC_MESSAGES/libgrantleethemeeditor.mo
 share/locale/uk/LC_MESSAGES/libincidenceeditors.mo
-share/locale/uk/LC_MESSAGES/libkaddressbookgrantlee.mo
 share/locale/uk/LC_MESSAGES/libkalarmcal.mo
 share/locale/uk/LC_MESSAGES/libkasten.mo
 share/locale/uk/LC_MESSAGES/libkblog.mo
@@ -2668,7 +2649,6 @@ share/locale/uk/LC_MESSAGES/libkldap.mo
 share/locale/uk/LC_MESSAGES/libkleopatra.mo
 share/locale/uk/LC_MESSAGES/libkmahjongg.mo
 share/locale/uk/LC_MESSAGES/libkmime.mo
-share/locale/uk/LC_MESSAGES/libkomparediff2.mo
 share/locale/uk/LC_MESSAGES/libkonq.mo
 share/locale/uk/LC_MESSAGES/libkpgp.mo
 share/locale/uk/LC_MESSAGES/libkpimidentities.mo
@@ -2711,7 +2691,6 @@ share/locale/uk/LC_MESSAGES/mailreader.mo
 share/locale/uk/LC_MESSAGES/marble.mo
 share/locale/uk/LC_MESSAGES/marble_qt.mo
 share/locale/uk/LC_MESSAGES/marble_xml_mimetypes.mo
-share/locale/uk/LC_MESSAGES/mboximporter.mo
 share/locale/uk/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/uk/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/uk/LC_MESSAGES/messageviewer_text_vcard_plugin.mo

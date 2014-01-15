@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2013/12/09 12:14:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2014/01/15 19:42:10 zhuk Exp $
 
 COMMENT =	user management application for KDE
 DISTNAME =	kuser-${MODKDE4_VERSION}
-REVISION =	0
 
 CATEGORIES =	sysutils security
 HOMEPAGE =	http://projects.kde.org/projects/kde/kdeadmin/kuser

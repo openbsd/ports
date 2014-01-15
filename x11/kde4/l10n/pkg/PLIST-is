@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-is,v 1.5 2013/12/08 19:13:32 zhuk Exp $
+@comment $OpenBSD: PLIST-is,v 1.6 2014/01/15 19:42:11 zhuk Exp $
 share/locale/is/LC_MESSAGES/activitymanager_plugin_globalshortcuts.mo
 share/locale/is/LC_MESSAGES/adblock.mo
 share/locale/is/LC_MESSAGES/akregator.mo
@@ -62,6 +62,7 @@ share/locale/is/LC_MESSAGES/katetextfilter.mo
 share/locale/is/LC_MESSAGES/katexmlcheck.mo
 share/locale/is/LC_MESSAGES/katexmltools.mo
 share/locale/is/LC_MESSAGES/katomic.mo
+share/locale/is/LC_MESSAGES/kbattleship.mo
 share/locale/is/LC_MESSAGES/kblackbox.mo
 share/locale/is/LC_MESSAGES/kblankscrn.mo
 share/locale/is/LC_MESSAGES/kblocks.mo
@@ -248,7 +249,6 @@ share/locale/is/LC_MESSAGES/kmix.mo
 share/locale/is/LC_MESSAGES/kmousetool.mo
 share/locale/is/LC_MESSAGES/kmouth.mo
 share/locale/is/LC_MESSAGES/kmplot.mo
-share/locale/is/LC_MESSAGES/knavalbattle.mo
 share/locale/is/LC_MESSAGES/knetattach.mo
 share/locale/is/LC_MESSAGES/knetwalk.mo
 share/locale/is/LC_MESSAGES/knode.mo
@@ -346,7 +346,6 @@ share/locale/is/LC_MESSAGES/libkholidays.mo
 share/locale/is/LC_MESSAGES/libkipi.mo
 share/locale/is/LC_MESSAGES/libkleopatra.mo
 share/locale/is/LC_MESSAGES/libkmahjongg.mo
-share/locale/is/LC_MESSAGES/libkomparediff2.mo
 share/locale/is/LC_MESSAGES/libkonq.mo
 share/locale/is/LC_MESSAGES/libksane.mo
 share/locale/is/LC_MESSAGES/libkscreensaver.mo

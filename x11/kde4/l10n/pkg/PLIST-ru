@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ru,v 1.5 2013/12/08 19:13:32 zhuk Exp $
+@comment $OpenBSD: PLIST-ru,v 1.6 2014/01/15 19:42:11 zhuk Exp $
 share/apps/
 share/apps/autocorrect/
 share/apps/autocorrect/ru_RU.xml
@@ -395,6 +395,10 @@ share/doc/HTML/ru/katomic/
 share/doc/HTML/ru/katomic/common
 share/doc/HTML/ru/katomic/index.cache.bz2
 share/doc/HTML/ru/katomic/index.docbook
+share/doc/HTML/ru/kbattleship/
+share/doc/HTML/ru/kbattleship/common
+share/doc/HTML/ru/kbattleship/index.cache.bz2
+share/doc/HTML/ru/kbattleship/index.docbook
 share/doc/HTML/ru/kblackbox/
 share/doc/HTML/ru/kblackbox/common
 share/doc/HTML/ru/kblackbox/index.cache.bz2
@@ -816,10 +820,6 @@ share/doc/HTML/ru/kmplot/introduction.docbook
 share/doc/HTML/ru/kmplot/man-kmplot.1.docbook
 share/doc/HTML/ru/kmplot/reference.docbook
 share/doc/HTML/ru/kmplot/using.docbook
-share/doc/HTML/ru/knavalbattle/
-share/doc/HTML/ru/knavalbattle/common
-share/doc/HTML/ru/knavalbattle/index.cache.bz2
-share/doc/HTML/ru/knavalbattle/index.docbook
 share/doc/HTML/ru/knetattach/
 share/doc/HTML/ru/knetattach/common
 share/doc/HTML/ru/knetattach/index.cache.bz2
@@ -1272,6 +1272,7 @@ share/locale/ru/LC_MESSAGES/katetextfilter.mo
 share/locale/ru/LC_MESSAGES/katexmlcheck.mo
 share/locale/ru/LC_MESSAGES/katexmltools.mo
 share/locale/ru/LC_MESSAGES/katomic.mo
+share/locale/ru/LC_MESSAGES/kbattleship.mo
 share/locale/ru/LC_MESSAGES/kblackbox.mo
 share/locale/ru/LC_MESSAGES/kblankscrn.mo
 share/locale/ru/LC_MESSAGES/kblocks.mo
@@ -1479,7 +1480,6 @@ share/locale/ru/LC_MESSAGES/kmix.mo
 share/locale/ru/LC_MESSAGES/kmousetool.mo
 share/locale/ru/LC_MESSAGES/kmouth.mo
 share/locale/ru/LC_MESSAGES/kmplot.mo
-share/locale/ru/LC_MESSAGES/knavalbattle.mo
 share/locale/ru/LC_MESSAGES/knetattach.mo
 share/locale/ru/LC_MESSAGES/knetwalk.mo
 share/locale/ru/LC_MESSAGES/knode.mo
@@ -1588,7 +1588,6 @@ share/locale/ru/LC_MESSAGES/libakonadi-kmime.mo
 share/locale/ru/LC_MESSAGES/libakonadi.mo
 share/locale/ru/LC_MESSAGES/libcomposereditorng.mo
 share/locale/ru/LC_MESSAGES/libeventviews.mo
-share/locale/ru/LC_MESSAGES/libgrantleetheme.mo
 share/locale/ru/LC_MESSAGES/libincidenceeditors.mo
 share/locale/ru/LC_MESSAGES/libkalarmcal.mo
 share/locale/ru/LC_MESSAGES/libkasten.mo
@@ -1611,7 +1610,6 @@ share/locale/ru/LC_MESSAGES/libkldap.mo
 share/locale/ru/LC_MESSAGES/libkleopatra.mo
 share/locale/ru/LC_MESSAGES/libkmahjongg.mo
 share/locale/ru/LC_MESSAGES/libkmime.mo
-share/locale/ru/LC_MESSAGES/libkomparediff2.mo
 share/locale/ru/LC_MESSAGES/libkonq.mo
 share/locale/ru/LC_MESSAGES/libkpgp.mo
 share/locale/ru/LC_MESSAGES/libkpimidentities.mo
@@ -1654,7 +1652,6 @@ share/locale/ru/LC_MESSAGES/mailreader.mo
 share/locale/ru/LC_MESSAGES/marble.mo
 share/locale/ru/LC_MESSAGES/marble_qt.mo
 share/locale/ru/LC_MESSAGES/marble_xml_mimetypes.mo
-share/locale/ru/LC_MESSAGES/mboximporter.mo
 share/locale/ru/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/ru/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/ru/LC_MESSAGES/messageviewer_text_vcard_plugin.mo

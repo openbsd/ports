@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-he,v 1.4 2013/12/08 19:13:32 zhuk Exp $
+@comment $OpenBSD: PLIST-he,v 1.5 2014/01/15 19:42:11 zhuk Exp $
 share/apps/
 share/apps/klettres/
 share/apps/klettres/he/
@@ -117,6 +117,7 @@ share/locale/he/LC_MESSAGES/katetextfilter.mo
 share/locale/he/LC_MESSAGES/katexmlcheck.mo
 share/locale/he/LC_MESSAGES/katexmltools.mo
 share/locale/he/LC_MESSAGES/katomic.mo
+share/locale/he/LC_MESSAGES/kbattleship.mo
 share/locale/he/LC_MESSAGES/kblackbox.mo
 share/locale/he/LC_MESSAGES/kblankscrn.mo
 share/locale/he/LC_MESSAGES/kbounce.mo
@@ -289,7 +290,6 @@ share/locale/he/LC_MESSAGES/kmix.mo
 share/locale/he/LC_MESSAGES/kmousetool.mo
 share/locale/he/LC_MESSAGES/kmouth.mo
 share/locale/he/LC_MESSAGES/kmplot.mo
-share/locale/he/LC_MESSAGES/knavalbattle.mo
 share/locale/he/LC_MESSAGES/knetattach.mo
 share/locale/he/LC_MESSAGES/knetwalk.mo
 share/locale/he/LC_MESSAGES/knode.mo

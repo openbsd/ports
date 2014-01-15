@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2013/12/25 12:16:04 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2014/01/15 19:42:11 zhuk Exp $
 @option no-default-conflict
 @conflict kdelibs->=4
-@conflict kdebindings-<4
 @pkgpath x11/kde4/libs
 bin/checkXML4
 @bin bin/kbuildsycoca4
@@ -13,7 +12,7 @@ bin/checkXML4
 @bin bin/kdeinit4_wrapper
 @bin bin/kfilemetadatareader
 @bin bin/kjs
-@bin bin/kjscmd
+@bin bin/kjscmd4
 @bin bin/kmailservice4
 @bin bin/kross
 @bin bin/kshell4
@@ -2162,7 +2161,7 @@ libexec/fileshareset
 @man man/man1/kconfig_compiler.1
 @man man/man1/kde4-config.1
 @man man/man1/kjs.1
-@man man/man1/kjscmd.1
+@man man/man1/kjscmd4.1
 @man man/man1/kross.1
 @man man/man1/makekdewidgets.1
 @man man/man1/preparetips.1

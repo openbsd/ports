@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/01/10 20:54:57 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/01/15 19:42:08 zhuk Exp $
 @conflict kdebase-<4
 @newgroup _kdesud:583
 @bin bin/kate
@@ -68,30 +68,6 @@ share/apps/kate/kateui.rc
 share/apps/kate/pate/
 share/apps/kate/pate/block.py
 share/apps/kate/pate/block.pyc
-share/apps/kate/pate/cmake_utils/
-share/apps/kate/pate/cmake_utils/__init__.py
-share/apps/kate/pate/cmake_utils/__init__.pyc
-share/apps/kate/pate/cmake_utils/cmake_help_parser.py
-share/apps/kate/pate/cmake_utils/cmake_help_parser.pyc
-share/apps/kate/pate/cmake_utils/cmake_utils.py
-share/apps/kate/pate/cmake_utils/cmake_utils.pyc
-share/apps/kate/pate/cmake_utils/cmake_utils_settings.py
-share/apps/kate/pate/cmake_utils/cmake_utils_settings.pyc
-share/apps/kate/pate/cmake_utils/cmake_utils_settings.ui
-share/apps/kate/pate/cmake_utils/cmake_utils_toolview_cacheview_page.ui
-share/apps/kate/pate/cmake_utils/cmake_utils_toolview_help_page.ui
-share/apps/kate/pate/cmake_utils/cmake_utils_toolview_settings_page.ui
-share/apps/kate/pate/cmake_utils/command_completers/
-share/apps/kate/pate/cmake_utils/command_completers/__init__.py
-share/apps/kate/pate/cmake_utils/command_completers/__init__.pyc
-share/apps/kate/pate/cmake_utils/command_completers/cmake_policy_cc.py
-share/apps/kate/pate/cmake_utils/command_completers/cmake_policy_cc.pyc
-share/apps/kate/pate/cmake_utils/command_completers/cond_cc.py
-share/apps/kate/pate/cmake_utils/command_completers/cond_cc.pyc
-share/apps/kate/pate/cmake_utils/command_completers/param_types.py
-share/apps/kate/pate/cmake_utils/command_completers/param_types.pyc
-share/apps/kate/pate/cmake_utils/command_completers/syntax_cc.py
-share/apps/kate/pate/cmake_utils/command_completers/syntax_cc.pyc
 share/apps/kate/pate/color_tools.py
 share/apps/kate/pate/color_tools.pyc
 share/apps/kate/pate/color_tools_toolview.ui
@@ -108,16 +84,6 @@ share/apps/kate/pate/django_utils/django_template.pyc
 share/apps/kate/pate/django_utils/django_utils.py
 share/apps/kate/pate/django_utils/django_utils.pyc
 share/apps/kate/pate/django_utils/django_utils.ui
-share/apps/kate/pate/expand/
-share/apps/kate/pate/expand.py
-share/apps/kate/pate/expand.pyc
-share/apps/kate/pate/expand/all.expand
-share/apps/kate/pate/expand/text_css.expand
-share/apps/kate/pate/expand/text_html.expand
-share/apps/kate/pate/expand/text_x-c++hdr.expand
-share/apps/kate/pate/expand/text_x-c++src.expand
-share/apps/kate/pate/expand/text_x-chdr.expand
-share/apps/kate/pate/expand/text_x-python.expand
 share/apps/kate/pate/format.py
 share/apps/kate/pate/format.pyc
 share/apps/kate/pate/gid/
@@ -127,22 +93,6 @@ share/apps/kate/pate/gid/gid.pyc
 share/apps/kate/pate/gid/idutils.py
 share/apps/kate/pate/gid/idutils.pyc
 share/apps/kate/pate/gid/tool.ui
-share/apps/kate/pate/js_utils/
-share/apps/kate/pate/js_utils/jquery_autocomplete.json
-share/apps/kate/pate/js_utils/js_autocomplete.json
-share/apps/kate/pate/js_utils/js_autocomplete.py
-share/apps/kate/pate/js_utils/js_autocomplete.pyc
-share/apps/kate/pate/js_utils/js_settings.py
-share/apps/kate/pate/js_utils/js_settings.pyc
-share/apps/kate/pate/js_utils/js_snippets.py
-share/apps/kate/pate/js_utils/js_snippets.pyc
-share/apps/kate/pate/js_utils/js_utils.py
-share/apps/kate/pate/js_utils/js_utils.pyc
-share/apps/kate/pate/js_utils/js_utils.ui
-share/apps/kate/pate/js_utils/jslint.py
-share/apps/kate/pate/js_utils/jslint.pyc
-share/apps/kate/pate/js_utils/json_pretty.py
-share/apps/kate/pate/js_utils/json_pretty.pyc
 share/apps/kate/pate/libkatepate/
 share/apps/kate/pate/libkatepate/__init__.py
 share/apps/kate/pate/libkatepate/__init__.pyc

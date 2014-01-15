@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-eu,v 1.4 2013/12/08 19:13:32 zhuk Exp $
+@comment $OpenBSD: PLIST-eu,v 1.5 2014/01/15 19:42:11 zhuk Exp $
 share/doc/HTML/
 share/doc/HTML/eu/
 share/doc/HTML/eu/common/
@@ -79,6 +79,7 @@ share/locale/eu/LC_MESSAGES/katetextfilter.mo
 share/locale/eu/LC_MESSAGES/katexmlcheck.mo
 share/locale/eu/LC_MESSAGES/katexmltools.mo
 share/locale/eu/LC_MESSAGES/katomic.mo
+share/locale/eu/LC_MESSAGES/kbattleship.mo
 share/locale/eu/LC_MESSAGES/kblackbox.mo
 share/locale/eu/LC_MESSAGES/kblankscrn.mo
 share/locale/eu/LC_MESSAGES/kblocks.mo
@@ -265,7 +266,6 @@ share/locale/eu/LC_MESSAGES/kmix.mo
 share/locale/eu/LC_MESSAGES/kmousetool.mo
 share/locale/eu/LC_MESSAGES/kmouth.mo
 share/locale/eu/LC_MESSAGES/kmplot.mo
-share/locale/eu/LC_MESSAGES/knavalbattle.mo
 share/locale/eu/LC_MESSAGES/knetattach.mo
 share/locale/eu/LC_MESSAGES/knetwalk.mo
 share/locale/eu/LC_MESSAGES/knode.mo
@@ -363,7 +363,6 @@ share/locale/eu/LC_MESSAGES/libkholidays.mo
 share/locale/eu/LC_MESSAGES/libkleopatra.mo
 share/locale/eu/LC_MESSAGES/libkmahjongg.mo
 share/locale/eu/LC_MESSAGES/libkmime.mo
-share/locale/eu/LC_MESSAGES/libkomparediff2.mo
 share/locale/eu/LC_MESSAGES/libkonq.mo
 share/locale/eu/LC_MESSAGES/libkpgp.mo
 share/locale/eu/LC_MESSAGES/libkremotecontrol.mo
