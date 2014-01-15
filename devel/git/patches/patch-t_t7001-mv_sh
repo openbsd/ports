@@ -1,10 +1,10 @@
-$OpenBSD: patch-t_t7001-mv_sh,v 1.1 2014/01/13 09:12:10 dcoppa Exp $
+$OpenBSD: patch-t_t7001-mv_sh,v 1.2 2014/01/15 19:57:01 benoit Exp $
 
 use 'cp -RpP' instead of 'cp -a'
 
---- t/t7001-mv.sh.orig	Wed Dec 18 00:46:08 2013
-+++ t/t7001-mv.sh	Sun Jan 12 18:24:38 2014
-@@ -278,7 +278,7 @@ test_expect_success 'git mv moves a submodule with a .
+--- t/t7001-mv.sh.orig	Tue Jan 14 18:10:09 2014
++++ t/t7001-mv.sh	Tue Jan 14 19:07:04 2014
+@@ -307,7 +307,7 @@ test_expect_success 'git mv moves a submodule with a .
  	(
  		cd sub &&
  		rm -f .git &&
@@ -13,7 +13,7 @@ use 'cp -RpP' instead of 'cp -a'
  		GIT_WORK_TREE=. git config --unset core.worktree
  	) &&
  	mkdir mod &&
-@@ -301,7 +301,7 @@ test_expect_success 'git mv moves a submodule with a .
+@@ -330,7 +330,7 @@ test_expect_success 'git mv moves a submodule with a .
  	(
  		cd sub &&
  		rm -f .git &&
