@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile_dep,v 1.3 2013/11/29 08:32:24 dcoppa Exp $
---- src/Makefile.dep.orig	Wed Nov 27 15:03:29 2013
-+++ src/Makefile.dep	Wed Nov 27 15:06:06 2013
+$OpenBSD: patch-src_Makefile_dep,v 1.4 2014/01/15 07:08:13 dcoppa Exp $
+--- src/Makefile.dep.orig	Mon Jan 13 17:09:58 2014
++++ src/Makefile.dep	Wed Jan 15 06:59:30 2014
 @@ -5,24 +5,24 @@ ae_evport.o: ae_evport.c
  ae_kqueue.o: ae_kqueue.c
  ae_select.o: ae_select.c
@@ -36,7 +36,7 @@ $OpenBSD: patch-src_Makefile_dep,v 1.3 2013/11/29 08:32:24 dcoppa Exp $
 +debug.o: debug.c redis.h fmacros.h config.h \
 +  ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
    ziplist.h intset.h version.h util.h rdb.h rio.h sha1.h crc64.h bio.h
- dict.o: dict.c fmacros.h dict.h zmalloc.h
+ dict.o: dict.c fmacros.h dict.h zmalloc.h redisassert.h
  endianconv.o: endianconv.c
 @@ -30,29 +30,29 @@ intset.o: intset.c intset.h zmalloc.h endianconv.h con
  lzf_c.o: lzf_c.c lzfP.h
@@ -81,7 +81,7 @@ $OpenBSD: patch-src_Makefile_dep,v 1.3 2013/11/29 08:32:24 dcoppa Exp $
    ziplist.h intset.h version.h util.h rdb.h rio.h lzf.h zipmap.h \
    endianconv.h
  redis-benchmark.o: redis-benchmark.c fmacros.h ae.h \
-@@ -61,52 +61,50 @@ redis-check-aof.o: redis-check-aof.c fmacros.h config.
+@@ -61,52 +61,51 @@ redis-check-aof.o: redis-check-aof.c fmacros.h config.
  redis-check-dump.o: redis-check-dump.c lzf.h crc64.h
  redis-cli.o: redis-cli.c fmacros.h version.h ../deps/hiredis/hiredis.h \
    sds.h zmalloc.h ../deps/linenoise/linenoise.h help.h anet.h ae.h
@@ -97,12 +97,14 @@ $OpenBSD: patch-src_Makefile_dep,v 1.3 2013/11/29 08:32:24 dcoppa Exp $
 +  ae.h sds.h dict.h \
    adlist.h zmalloc.h anet.h ziplist.h intset.h version.h util.h rdb.h \
    rio.h
- rio.o: rio.c fmacros.h rio.h sds.h util.h crc64.h
+ rio.o: rio.c fmacros.h rio.h sds.h util.h crc64.h config.h redis.h \
+-  ../deps/lua/src/lua.h ../deps/lua/src/luaconf.h ae.h dict.h adlist.h \
++  ae.h dict.h adlist.h \
+   zmalloc.h anet.h ziplist.h intset.h version.h rdb.h
 -scripting.o: scripting.c redis.h fmacros.h config.h ../deps/lua/src/lua.h \
 -  ../deps/lua/src/luaconf.h ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
 -  ziplist.h intset.h version.h util.h rdb.h rio.h sha1.h rand.h \
--  ../deps/lua/src/lauxlib.h ../deps/lua/src/lua.h \
--  ../deps/lua/src/lualib.h
+-  ../deps/lua/src/lauxlib.h ../deps/lua/src/lualib.h
 +scripting.o: scripting.c redis.h fmacros.h config.h \
 +  ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
 +  ziplist.h intset.h version.h util.h rdb.h rio.h sha1.h rand.h
@@ -112,8 +114,7 @@ $OpenBSD: patch-src_Makefile_dep,v 1.3 2013/11/29 08:32:24 dcoppa Exp $
 +sentinel.o: sentinel.c redis.h fmacros.h config.h \
 +  ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
    ziplist.h intset.h version.h util.h rdb.h rio.h \
-   ../deps/hiredis/hiredis.h ../deps/hiredis/async.h \
-   ../deps/hiredis/hiredis.h
+   ../deps/hiredis/hiredis.h ../deps/hiredis/async.h
  setproctitle.o: setproctitle.c
  sha1.o: sha1.c sha1.h config.h
 -slowlog.o: slowlog.c redis.h fmacros.h config.h ../deps/lua/src/lua.h \
@@ -156,5 +157,5 @@ $OpenBSD: patch-src_Makefile_dep,v 1.3 2013/11/29 08:32:24 dcoppa Exp $
 +t_zset.o: t_zset.c redis.h fmacros.h config.h \
 +  ae.h sds.h dict.h adlist.h zmalloc.h anet.h \
    ziplist.h intset.h version.h util.h rdb.h rio.h
- util.o: util.c fmacros.h util.h
- ziplist.o: ziplist.c zmalloc.h util.h ziplist.h endianconv.h config.h
+ util.o: util.c fmacros.h util.h sds.h
+ ziplist.o: ziplist.c zmalloc.h util.h sds.h ziplist.h endianconv.h \

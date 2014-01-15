@@ -1,8 +1,8 @@
-$OpenBSD: patch-redis_conf,v 1.9 2013/12/13 08:16:37 dcoppa Exp $
---- redis.conf.orig	Wed Dec 11 15:31:57 2013
-+++ redis.conf	Fri Dec 13 09:07:10 2013
-@@ -13,12 +13,13 @@
- # units are case insensitive so 1GB 1Gb 1gB are all the same.
+$OpenBSD: patch-redis_conf,v 1.10 2014/01/15 07:08:13 dcoppa Exp $
+--- redis.conf.orig	Mon Jan 13 17:09:58 2014
++++ redis.conf	Tue Jan 14 17:07:32 2014
+@@ -33,12 +33,13 @@
+ ################################ GENERAL  #####################################
  
  # By default Redis does not run as a daemon. Use 'yes' if you need it.
 -# Note that Redis will write a pid file in /var/run/redis.pid when daemonized.
@@ -20,7 +20,7 @@ $OpenBSD: patch-redis_conf,v 1.9 2013/12/13 08:16:37 dcoppa Exp $
  
  # Accept connections on the specified port, default is 6379.
  # If port 0 is specified Redis will not listen on a TCP socket.
-@@ -32,7 +33,7 @@ port 6379
+@@ -52,7 +53,7 @@ port 6379
  # Examples:
  #
  # bind 192.168.1.100 10.0.0.1
@@ -29,7 +29,7 @@ $OpenBSD: patch-redis_conf,v 1.9 2013/12/13 08:16:37 dcoppa Exp $
  
  # Specify the path for the Unix socket that will be used to listen for
  # incoming connections. There is no default, so Redis will not listen
-@@ -71,17 +72,17 @@ loglevel notice
+@@ -91,17 +92,17 @@ loglevel notice
  # Specify the log file name. Also the empty string can be used to force
  # Redis to log on the standard output. Note that if you use standard
  # output for logging but daemonize, logs will be sent to /dev/null
@@ -51,7 +51,7 @@ $OpenBSD: patch-redis_conf,v 1.9 2013/12/13 08:16:37 dcoppa Exp $
  
  # Set the number of databases. The default database is DB 0, you can select
  # a different one on a per-connection basis using SELECT <dbid> where
-@@ -155,7 +156,7 @@ dbfilename dump.rdb
+@@ -175,7 +176,7 @@ dbfilename dump.rdb
  # The Append Only File will also be created inside this directory.
  # 
  # Note that you must specify a directory here, not a file name.
@@ -60,7 +60,7 @@ $OpenBSD: patch-redis_conf,v 1.9 2013/12/13 08:16:37 dcoppa Exp $
  
  ################################# REPLICATION #################################
  
-@@ -307,7 +308,7 @@ slave-priority 100
+@@ -327,7 +328,7 @@ slave-priority 100
  # 150k passwords per second against a good box. This means that you should
  # use a very strong password otherwise it will be very easy to break.
  #
