@@ -1,20 +1,22 @@
-# $OpenBSD: Makefile,v 1.11 2013/10/26 23:55:38 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2014/01/15 13:01:51 jasper Exp $
 
 COMMENT =	library to access web resources via HTTP
 
-DISTNAME =	httpclient-2.1.5.2
-REVISION =	6
+DISTNAME =	httpclient-2.3.4.1
 CATEGORIES =	www
 
-HOMEPAGE =	http://dev.ctor.org/http-access2/
+HOMEPAGE =	https://github.com/nahi/httpclient
 
 # same as Ruby
 PERMIT_PACKAGE_CDROM = Yes
 
-MASTER_SITES =		http://dev.ctor.org/download/gems/
-
 MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
+
+TEST_DEPENDS =		${BASE_PKGPATH}
+
+do-test:
+	cd ${WRKSRC}/test && ${RUBY} runner.rb
 
 .include <bsd.port.mk>
