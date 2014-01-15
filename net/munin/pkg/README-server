@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.2 2013/06/03 19:45:32 kirby Exp $
+$OpenBSD: README-server,v 1.3 2014/01/15 08:24:26 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,3 +9,12 @@ $SYSCONFDIR}/munin/munin.conf as desired, you may run the periodic
 tasks from cron with the following line:
 
 */5     *       *       *       *       sudo -u _munin ${TRUEPREFIX}/bin/munin-cron
+
+Log files in /var/log/munin will need to be rotated. Here is a sample
+newsyslog.conf fragment:
+
+/var/log/munin/munin-graph.log  _munin:_munin   644  7     250  *     Z
+/var/log/munin/munin-html.log   _munin:_munin   644  7     250  *     Z
+/var/log/munin/munin-limits.log _munin:_munin   644  7     250  *     Z
+/var/log/munin/munin-node.log   root:wheel      644  7     250  *     Z
+/var/log/munin/munin-update.log _munin:_munin   644  7     250  *     Z
