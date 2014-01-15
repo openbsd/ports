@@ -1,7 +1,7 @@
-$OpenBSD: patch-database_Makefile_in,v 1.11 2013/09/20 15:22:59 sthen Exp $
---- database/Makefile.in.orig	Mon Sep 16 20:28:14 2013
-+++ database/Makefile.in	Fri Sep 20 15:27:54 2013
-@@ -463,6 +463,8 @@ uninstall-am:
+$OpenBSD: patch-database_Makefile_in,v 1.12 2014/01/15 13:06:47 jasper Exp $
+--- database/Makefile.in.orig	Mon Jan 13 18:02:18 2014
++++ database/Makefile.in	Wed Jan 15 11:01:06 2014
+@@ -465,6 +465,8 @@ uninstall-am:
  
  
  install-data-local:
