@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2013/06/04 13:16:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2014/01/15 02:03:53 jeremy Exp $
 
 COMMENT =	powerful webserver security scanner for network
 
 DISTNAME =	arirang-2.02
 PKGNAME =	ruby-${DISTNAME}
-REVISION =	2
+REVISION =	3
 CATEGORIES =	security
 
 MASTER_SITES =	http://monkey.org/~pilot/arirang/ \
@@ -23,7 +23,6 @@ CONFIGURE_STYLE =	ruby extconf
 
 MODULES =	lang/ruby
 WANTLIB =	crypto ssl
-MODRUBY_WANTLIB_m = No
 NO_TEST =	Yes
 
 do-install:
