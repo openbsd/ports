@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2013/10/23 16:33:20 jca Exp $
+# $OpenBSD: Makefile,v 1.38 2014/01/15 00:20:42 sthen Exp $
 
 COMMENT=	DKIM milter
 
 DISTNAME=	dkim-milter-2.8.3
-REVISION =	2
+REVISION=	3
 CATEGORIES=	mail
 HOMEPAGE=	http://sourceforge.net/projects/dkim-milter/
 
@@ -18,11 +18,11 @@ PERMIT_PACKAGE_FTP=		Yes
 WANTLIB=	c crypto milter pthread ssl
 
 EXAMPLESDIR=	share/examples/dkim-milter
-USE_GROFF =	Yes
 
 post-configure:
 	@(echo "define(\`confCC', \`${CC}')"; \
-	  echo "define(\`confOPTIMIZE', \`${CFLAGS}')") \
+	  echo "define(\`confOPTIMIZE', \`${CFLAGS}')"; \
+	  echo "define(\`confNO_MAN_BUILD')") \
 		>${WRKSRC}/devtools/Site/site.config.m4
 
 do-install:
