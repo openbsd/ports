@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2014/01/11 22:51:03 jeremy Exp $
+# $OpenBSD: Makefile,v 1.21 2014/01/15 02:13:58 jeremy Exp $
 
 COMMENT=		HTML, XML, SAX and Reader parser
 
 DISTNAME=		nokogiri-1.5.6
-REVISION =		1
+REVISION =		2
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://nokogiri.rubyforge.org/nokogiri

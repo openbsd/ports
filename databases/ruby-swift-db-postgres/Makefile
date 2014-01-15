@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2014/01/11 22:42:26 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2014/01/15 02:13:58 jeremy Exp $
 
 COMMENT =	postgresql driver for swift
 
 DISTNAME =	swift-db-postgres-0.3.0
-REVISION =	1
+REVISION =	2
 CATEGORIES =	databases
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>

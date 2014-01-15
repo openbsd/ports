@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2014/01/11 22:42:26 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2014/01/15 02:13:57 jeremy Exp $
 
 COMMENT =	mysql driver for swift
 
 DISTNAME =	swift-db-mysql-0.3.0
-REVISION =	2
+REVISION =	3
 CATEGORIES =	databases
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
