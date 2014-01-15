@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/01/11 11:47:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2014/01/15 08:41:37 sthen Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 DPB_PROPERTIES =	parallel nojunk
@@ -29,15 +29,17 @@ MAKE_ENV =		C_INCLUDE_PATH=${X11BASE}/include/ \
 			MAKEFLAGS="-j${MAKE_JOBS}" \
 			OSTYPE="openbsd"
 
-# Passed via environment rather than on the command line to make
-PARALLEL_BUILD =	No
-
 do-configure:
 	perl -pi -e 's,^#!/usr/bin/env bash,#!${LOCALBASE}/bin/bash,g' \
 		${WRKSRC}/src/qt/preconfig.sh
-	@cd ${WRKSRC}/src/qt && env -i ${MAKE_ENV} \
+	cd ${WRKSRC}/src/qt && env -i ${MAKE_ENV} \
 		./preconfig.sh --jobs ${MAKE_JOBS} --qt-config
-	@cd ${WRKSRC} && env -i ${MAKE_ENV} ./src/qt/bin/qmake
+
+pre-build:
+	cd ${WRKSRC}/src/qt && env -i ${MAKE_ENV} ${MAKE} -j${MAKE_JOBS}
+	cd ${WRKSRC}/src/qt/src/plugins/codecs && \
+		env -i ${MAKE_ENV} ${MAKE} -j${MAKE_JOBS}
+	cd ${WRKSRC} && env -i ${MAKE_ENV} ./src/qt/bin/qmake
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/phantomjs ${PREFIX}/bin/phantomjs
