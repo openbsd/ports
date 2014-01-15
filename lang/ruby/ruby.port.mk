@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.71 2014/01/14 00:59:07 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.72 2014/01/15 02:03:17 jeremy Exp $
 
 # ruby module
 
@@ -276,18 +276,17 @@ MODRUBY_pre-configure += ${MODRUBY_ADJ_REPLACE}
 ERRORS+=	"Fatal: Should not have PKG_ARCH=* when compiling extensions"
 .  endif
 SHARED_ONLY=	Yes
-# All ruby C extensions are dependent on libc and ruby's library, and almost
-# all are also dependment on libm, so include c, m, and ruby's library by
-# default, but let the port maintainer opt out of libm by setting
-# MODRUBY_WANTLIB_m=No.
-WANTLIB+=	c ${MODRUBY_WANTLIB}
-MODRUBY_WANTLIB_m?=	Yes
-.  if ${MODRUBY_WANTLIB_m:L:Myes}
-WANTLIB+=	m
+
+# Add appropriate libraries to WANTLIB depending on ruby version and
+# implementation
+MODRUBY_WANTLIB+=	c m
+.  if ${MODRUBY_REV} != 1.8
+MODRUBY_WANTLIB+=	pthread
 .  endif
-.  if ${MODRUBY_REV} == 1.9
-WANTLIB+=	pthread
+.  if ${MODRUBY_REV} == 2.1
+MODRUBY_WANTLIB+=	gmp
 .  endif
+WANTLIB+=	${MODRUBY_WANTLIB}
 LIB_DEPENDS+=	${MODRUBY_LIB_DEPENDS}
 .endif
 
