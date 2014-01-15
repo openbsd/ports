@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/01/13 23:44:26 dlg Exp $
+# $OpenBSD: Makefile,v 1.2 2014/01/15 00:16:40 dlg Exp $
 
 COMMENT=	reusable split of pecl_http's property proxy API
 

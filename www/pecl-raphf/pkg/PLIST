@@ -1,34 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.2 2014/01/13 23:45:42 dlg Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/01/15 00:16:40 dlg Exp $
 lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
 share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
 share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/
 share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_api.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_buffer.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_client.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_client_request.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_client_response.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_cookie.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_curl.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_encoding.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_env.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_env_request.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_env_response.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_etag.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_exception.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_filter.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_header.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_header_parser.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_info.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_message.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_message_body.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_message_parser.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_misc.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_negotiate.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_object.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_options.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_params.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_querystring.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_strlist.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_url.h
-share/php-${MODPHP_VERSION}/include/ext/${MODULE_NAME}/php_${MODULE_NAME}_version.h
