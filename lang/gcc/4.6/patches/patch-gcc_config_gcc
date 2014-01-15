@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_gcc,v 1.8 2014/01/12 22:16:02 pascal Exp $
---- gcc/config.gcc.orig	Wed Mar  6 18:40:07 2013
-+++ gcc/config.gcc	Sat Dec 28 18:58:28 2013
+$OpenBSD: patch-gcc_config_gcc,v 1.9 2014/01/15 20:16:03 brad Exp $
+--- gcc/config.gcc.orig	Wed Mar  6 12:40:07 2013
++++ gcc/config.gcc	Sun Jan 12 19:32:57 2014
 @@ -668,6 +668,14 @@ case ${target} in
      *-*-openbsd2.*|*-*-openbsd3.[012])
        tm_defines="${tm_defines} HAS_LIBC_R=1" ;;
@@ -16,6 +16,15 @@ $OpenBSD: patch-gcc_config_gcc,v 1.8 2014/01/12 22:16:02 pascal Exp $
    ;;
  *-*-rtems*)
    case ${enable_threads} in
+@@ -741,7 +749,7 @@ alpha*-*-netbsd*)
+ 	tmake_file="${tmake_file} alpha/t-alpha alpha/t-ieee"
+ 	;;
+ alpha*-*-openbsd*)
+-	tm_defines="${tm_defines} OBSD_HAS_DECLARE_FUNCTION_NAME OBSD_HAS_DECLARE_FUNCTION_SIZE OBSD_HAS_DECLARE_OBJECT"
++	tm_defines="${tm_defines} OBSD_HAS_DECLARE_FUNCTION_NAME OBSD_HAS_DECLARE_FUNCTION_SIZE OBSD_HAS_DECLARE_OBJECT PIE_DEFAULT=2"
+ 	tm_file="alpha/alpha.h alpha/elf.h openbsd.h openbsd-stdint.h alpha/openbsd.h openbsd-libpthread.h"
+ 	extra_options="${extra_options} openbsd.opt alpha/elf.opt"
+ 	# default x-alpha is only appropriate for dec-osf.
 @@ -1057,10 +1065,14 @@ hppa*-*-linux*)
  	    tmake_file="$tmake_file pa/t-slibgcc-dwarf-ver"
  	fi
