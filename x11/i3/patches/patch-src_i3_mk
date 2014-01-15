@@ -1,4 +1,8 @@
-$OpenBSD: patch-src_i3_mk,v 1.4 2013/06/02 11:24:06 dcoppa Exp $
+$OpenBSD: patch-src_i3_mk,v 1.5 2014/01/15 08:17:17 dcoppa Exp $
+
+OpenBSD lacks pthread_condattr_setpshared(), so no need to link
+with libpthread here.
+
 --- src/i3.mk.orig	Mon Mar 18 22:43:36 2013
 +++ src/i3.mk	Sun Jun  2 11:13:24 2013
 @@ -6,7 +6,11 @@ i3_SOURCES           := $(filter-out $(i3_SOURCES_GENE
