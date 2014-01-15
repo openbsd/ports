@@ -1,13 +1,13 @@
-$OpenBSD: patch-Modules_FindRuby_cmake,v 1.8 2013/10/14 13:02:51 zhuk Exp $
+$OpenBSD: patch-Modules_FindRuby_cmake,v 1.9 2014/01/15 19:54:37 dcoppa Exp $
 Add support for rubyarchhdrdir and rubyarchlibdir, with fallback to "defaults"
 on systems that have such directories but RbConfig doesn't have such options.
---- Modules/FindRuby.cmake.orig	Mon Oct  7 19:31:00 2013
-+++ Modules/FindRuby.cmake	Mon Oct 14 16:07:54 2013
+--- Modules/FindRuby.cmake.orig	Tue Nov  5 20:07:22 2013
++++ Modules/FindRuby.cmake	Tue Jan 14 09:25:56 2014
 @@ -1,6 +1,6 @@
  # - Find Ruby
  # This module finds if Ruby is installed and determines where the include files
 -# and libraries are. Ruby 1.8 and 1.9 are supported.
-+# and libraries are. Ruby 1.8, 1.9 and 2.0 are supported.
++# and libraries are. Ruby 1.8, 1.9, 2.0 and 2.1 are supported.
  #
  # The minimum required version of Ruby can be specified using the
  # standard syntax, e.g. find_package(Ruby 1.8)
@@ -28,7 +28,7 @@ on systems that have such directories but RbConfig doesn't have such options.
  
  if(NOT Ruby_FIND_VERSION_EXACT)
 -  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby1.9 ruby19)
-+  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby2.0 ruby20 ruby1.9 ruby19)
++  list(APPEND _RUBY_POSSIBLE_EXECUTABLE_NAMES ruby2.1 ruby21 ruby2.0 ruby20 ruby1.9 ruby19)
  
    # if we want a version below 1.9, also look for ruby 1.8
    if("${Ruby_FIND_VERSION_SHORT_NODOT}" VERSION_LESS "19")
@@ -86,19 +86,24 @@ on systems that have such directories but RbConfig doesn't have such options.
       RUBY_VENDORARCH_DIR
       RUBY_VENDORLIB_DIR
       RUBY_VERSION_MAJOR
-@@ -149,7 +164,10 @@ if(RUBY_EXECUTABLE AND NOT RUBY_VERSION_MAJOR)
+@@ -148,8 +163,14 @@ if(RUBY_EXECUTABLE AND NOT RUBY_VERSION_MAJOR)
+    set(RUBY_VERSION_MAJOR 1)
     set(RUBY_VERSION_MINOR 8)
     set(RUBY_VERSION_PATCH 0)
-    # check whether we found 1.9.x
+-   # check whether we found 1.9.x
 -   if(${RUBY_EXECUTABLE} MATCHES "ruby1.?9"  OR  RUBY_HDR_DIR)
-+   if(${RUBY_EXECUTABLE} MATCHES "ruby2\\.?0")
++   # check whether we found 2.1.x, 2.0.x, or 1.9.x
++   if(${RUBY_EXECUTABLE} MATCHES "ruby2\\.?1")
++      set(RUBY_VERSION_MAJOR 2)
++      set(RUBY_VERSION_MINOR 1)
++   elseif(${RUBY_EXECUTABLE} MATCHES "ruby2\\.?0")
 +      set(RUBY_VERSION_MAJOR 2)
 +      set(RUBY_VERSION_MINOR 0)
 +   elseif(${RUBY_EXECUTABLE} MATCHES "ruby1\\.?9")
        set(RUBY_VERSION_MAJOR 1)
        set(RUBY_VERSION_MINOR 9)
     endif()
-@@ -166,6 +184,7 @@ find_path(RUBY_INCLUDE_DIR
+@@ -166,6 +187,7 @@ find_path(RUBY_INCLUDE_DIR
     NAMES ruby.h
     HINTS
     ${RUBY_HDR_DIR}
@@ -106,7 +111,7 @@ on systems that have such directories but RbConfig doesn't have such options.
     ${RUBY_ARCH_DIR}
     /usr/lib/ruby/${_RUBY_VERSION_SHORT}/i586-linux-gnu/ )
  
-@@ -176,6 +195,7 @@ if( "${Ruby_FIND_VERSION_SHORT_NODOT}" GREATER 18  OR 
+@@ -176,6 +198,7 @@ if( "${Ruby_FIND_VERSION_SHORT_NODOT}" GREATER 18  OR 
     find_path(RUBY_CONFIG_INCLUDE_DIR
       NAMES ruby/config.h  config.h
       HINTS
@@ -114,7 +119,7 @@ on systems that have such directories but RbConfig doesn't have such options.
       ${RUBY_HDR_DIR}/${RUBY_ARCH}
       ${RUBY_ARCH_DIR}
       )
-@@ -185,7 +205,14 @@ endif()
+@@ -185,7 +208,14 @@ endif()
  
  
  # Determine the list of possible names for the ruby library
