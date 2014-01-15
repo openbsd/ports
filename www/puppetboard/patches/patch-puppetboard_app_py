@@ -1,24 +1,27 @@
-$OpenBSD: patch-puppetboard_app_py,v 1.2 2014/01/13 10:45:34 jasper Exp $
+$OpenBSD: patch-puppetboard_app_py,v 1.3 2014/01/15 08:41:08 jasper Exp $
 
-- TypeError: connect() got an unexpected keyword argument 'ssl'
+- From d92a068057baa8cfc0e65a61b951fdc08d01eeaa Mon Sep 17 00:00:00 2001
+  From: Daniele Sluijters <daniele.sluijters@nedap.com>
+  Date: Mon, 13 Jan 2014 13:11:18 +0100
+  Subject: [PATCH] Switch to using pypuppetdb 0.1.0.
+
 - From 5fa260e748ca83649ea41e2e836ee84500dbfe77 Mon Sep 17 00:00:00 2001
   From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
   Date: Mon, 23 Dec 2013 11:08:12 +0100
   Subject: [PATCH] Report rounded avg. resources per node.
 
 --- puppetboard/app.py.orig	Mon Dec 23 09:44:31 2013
-+++ puppetboard/app.py	Mon Jan 13 11:44:12 2014
-@@ -33,9 +33,6 @@ puppetdb = connect(
++++ puppetboard/app.py	Wed Jan 15 09:22:32 2014
+@@ -33,7 +33,7 @@ puppetdb = connect(
      api_version=3,
      host=app.config['PUPPETDB_HOST'],
      port=app.config['PUPPETDB_PORT'],
 -    ssl=app.config['PUPPETDB_SSL'],
--    ssl_key=app.config['PUPPETDB_KEY'],
--    ssl_cert=app.config['PUPPETDB_CERT'],
++    ssl_verify=app.config['PUPPETDB_SSL_VERIFY'],
+     ssl_key=app.config['PUPPETDB_KEY'],
+     ssl_cert=app.config['PUPPETDB_CERT'],
      timeout=app.config['PUPPETDB_TIMEOUT'],)
- 
- numeric_level = getattr(logging, app.config['LOGLEVEL'].upper(), None)
-@@ -100,7 +97,7 @@ def index():
+@@ -100,7 +100,7 @@ def index():
      metrics = {
          'num_nodes': num_nodes['Value'],
          'num_resources': num_resources['Value'],

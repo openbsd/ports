@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2014/01/13 10:45:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2014/01/15 08:41:08 jasper Exp $
 
 COMMENT=		web interface to PuppetDB
 
 # git clone of eadcf8708ccdb6cfa7981f91bee425169d23234b
 DISTNAME=		puppetboard-0.0.1
-REVISION=		1
+REVISION=		2
 CATEGORIES=		www
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -20,7 +20,7 @@ NO_BUILD=		Yes
 NO_TEST=		Yes
 PKG_ARCH=		*
 
-RUN_DEPENDS=		databases/py-puppetdb \
+RUN_DEPENDS=		databases/py-puppetdb>=0.1.0 \
 			www/py-flask-wtf \
 			www/py-gunicorn \
 			www/py-requests
