@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/12/08 19:13:29 zhuk Exp $
-@conflict kmultimedia-<4
+@comment $OpenBSD: PLIST,v 1.4 2014/01/16 13:48:03 zhuk Exp $
+@conflict kdemultimedia-<4
 @bin bin/juk
 share/applications/kde4/juk.desktop
 share/apps/juk/
