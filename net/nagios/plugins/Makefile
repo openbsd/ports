@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2013/11/02 15:48:12 rpe Exp $
+# $OpenBSD: Makefile,v 1.42 2014/01/16 22:35:20 sthen Exp $
 
 COMMENT-main=	nagios base plugins
 COMMENT-dbi=	dbi plugin
@@ -12,6 +12,7 @@ COMMENT-samba=	samba plugin
 COMMENT-snmp=	plugins using snmp
 
 V=		1.5
+REVISION=	0
 DISTNAME=	nagios-plugins-$V
 PKGNAME-main=	nagios-plugins-$V
 PKGNAME-dbi=	nagios-plugins-dbi-$V
@@ -25,7 +26,7 @@ PKGNAME-samba=	nagios-plugins-samba-$V
 PKGNAME-snmp=	nagios-plugins-snmp-$V
 CATEGORIES=	net
 
-HOMEPAGE=	https://www.nagios-plugins.org/
+HOMEPAGE=	https://www.monitoring-plugins.org/
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
@@ -34,7 +35,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 # see below for WANTLIB
 
-MASTER_SITES=	https://www.nagios-plugins.org/download/
+MASTER_SITES=	https://www.monitoring-plugins.org/download/
 
 BUILD_DEPENDS=	games/qstat \
 		net/fping
