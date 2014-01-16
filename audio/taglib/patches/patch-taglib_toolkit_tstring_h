@@ -1,0 +1,34 @@
+$OpenBSD: patch-taglib_toolkit_tstring_h,v 1.1 2014/01/16 13:37:49 dcoppa Exp $
+
+commit 3bf30af66c8fd77a88d9379a0956ddb2fc70dc20
+Author: Tsuda Kageyu <tsuda.kageyu@gmail.com>
+Date:   Wed Nov 6 17:01:21 2013 +0900
+
+Fix ABI breakage in TagLib::String
+
+--- taglib/toolkit/tstring.h.orig	Tue Oct  8 17:50:01 2013
++++ taglib/toolkit/tstring.h	Thu Jan 16 14:11:33 2014
+@@ -134,13 +134,21 @@ namespace TagLib {
+ 
+     /*!
+      * Makes a deep copy of the data in \a s.
++     *
++     * /note If \a t is UTF16LE, the byte order of \a s will be swapped regardless 
++     * of the CPU byte order.  If UTF16BE, it will not be swapped.  This behavior
++     * will be changed in TagLib2.0.
+      */
+-    String(const wstring &s, Type t = WCharByteOrder);
++    String(const wstring &s, Type t = UTF16BE);
+ 
+     /*!
+      * Makes a deep copy of the data in \a s.
++     *
++     * /note If \a t is UTF16LE, the byte order of \a s will be swapped regardless 
++     * of the CPU byte order.  If UTF16BE, it will not be swapped.  This behavior
++     * will be changed in TagLib2.0.
+      */
+-    String(const wchar_t *s, Type t = WCharByteOrder);
++    String(const wchar_t *s, Type t = UTF16BE);
+ 
+     /*!
+      * Makes a deep copy of the data in \a c.

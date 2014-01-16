@@ -1,10 +1,37 @@
-$OpenBSD: patch-tests_test_string_cpp,v 1.1 2013/11/28 15:49:25 dcoppa Exp $
+$OpenBSD: patch-tests_test_string_cpp,v 1.2 2014/01/16 13:37:49 dcoppa Exp $
 
 Fix namespace collisions
 
---- tests/test_string.cpp.orig	Tue Nov 26 11:27:23 2013
-+++ tests/test_string.cpp	Tue Nov 26 11:27:41 2013
-@@ -218,9 +218,9 @@ class TestString : public CppUnit::TestFixture (public
+commit 3bf30af66c8fd77a88d9379a0956ddb2fc70dc20
+Author: Tsuda Kageyu <tsuda.kageyu@gmail.com>
+Date:   Wed Nov 6 17:01:21 2013 +0900
+
+Fix ABI breakage in TagLib::String
+
+--- tests/test_string.cpp.orig	Tue Oct  8 17:50:01 2013
++++ tests/test_string.cpp	Thu Jan 16 14:24:33 2014
+@@ -75,6 +75,20 @@ class TestString : public CppUnit::TestFixture (public
+ 	String unicode3(L"\u65E5\u672C\u8A9E");
+ 	CPPUNIT_ASSERT(*(unicode3.toCWString() + 1) == L'\u672C');
+ 
++    String unicode4(L"\u65e5\u672c\u8a9e", String::UTF16BE);
++    CPPUNIT_ASSERT(unicode4[1] == L'\u672c');
++
++    String unicode5(L"\u65e5\u672c\u8a9e", String::UTF16LE);
++    CPPUNIT_ASSERT(unicode5[1] == L'\u2c67');
++
++    std::wstring stduni = L"\u65e5\u672c\u8a9e";
++
++    String unicode6(stduni, String::UTF16BE);
++    CPPUNIT_ASSERT(unicode6[1] == L'\u672c');
++
++    String unicode7(stduni, String::UTF16LE);
++    CPPUNIT_ASSERT(unicode7[1] == L'\u2c67');
++
+     CPPUNIT_ASSERT(strcmp(String::number(0).toCString(), "0") == 0);
+     CPPUNIT_ASSERT(strcmp(String::number(12345678).toCString(), "12345678") == 0);
+     CPPUNIT_ASSERT(strcmp(String::number(-12345678).toCString(), "-12345678") == 0);
+@@ -218,9 +232,9 @@ class TestString : public CppUnit::TestFixture (public
      ByteVector lf("abc\x0axyz", 7);
      ByteVector crlf("abc\x0d\x0axyz", 8);
  
