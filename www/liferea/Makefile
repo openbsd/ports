@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.63 2014/01/14 05:01:06 bcallah Exp $
+# $OpenBSD: Makefile,v 1.64 2014/01/16 03:05:51 bcallah Exp $
 
 SHARED_ONLY=		Yes
 
+V=			1.10.5
 COMMENT=		simple GTK desktop news aggregator
-
-DISTNAME=		liferea-1.10.4
+DISTNAME=		liferea-${V}
 CATEGORIES=		www x11
 EXTRACT_SUFX=		.tar.bz2
 
-HOMEPAGE=		http://liferea.sourceforge.net/
-
+HOMEPAGE=		http://lzone.de/liferea/
 MAINTAINER=		Brian Callahan <bcallah@openbsd.org>
 
 # GPLv2+
@@ -30,10 +29,11 @@ WANTLIB += pixman-1 png pthread pthread-stubs secret-1 soup-2.4
 WANTLIB += sqlite3 stdc++ webkitgtk-3.0 webp xcb xcb-render xcb-shm
 WANTLIB += xml2 xslt z
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=liferea/}
+MASTER_SITES=		https://github.com/lwindolf/liferea/releases/download/v${V}/
 
 MODULES=		devel/gettext \
 			textproc/intltool
+
 LIB_DEPENDS=		devel/libnotify>=0.7.2 \
 			textproc/libxslt \
 			devel/libpeas \
