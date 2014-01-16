@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2013/10/22 11:34:15 zhuk Exp $
+# $OpenBSD: Makefile,v 1.45 2014/01/16 09:11:33 zhuk Exp $
 
 COMMENT =		digital image kde application
 CATEGORIES =		graphics x11 x11/kde
 V =			0.9.6
 DISTNAME =		digikam-$V
-REVISION =		12
+REVISION =		13
 PKGSPEC =		digikam-<1
 
 SHARED_LIBS +=		digikam              3.0      # .0.0
@@ -21,7 +21,7 @@ LIB_DEPENDS =	x11/kde/libs3 \
 		graphics/libgphoto2>=2.5 \
 		graphics/libkipi \
 		graphics/tiff \
-		graphics/libkexiv2>=0.1.5 \
+		graphics/libkexiv2>=0.1.5,<4 \
 		graphics/libkdcraw \
 		graphics/lcms
 
