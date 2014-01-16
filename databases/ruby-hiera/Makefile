@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2013/12/04 19:49:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2014/01/16 10:18:22 jasper Exp $
 
 COMMENT=		simple pluggable hierarchical database
 
 V=			1.3.0
 DISTNAME=		hiera-${V}
+REVISION=		0
 
 CATEGORIES=		databases
 
