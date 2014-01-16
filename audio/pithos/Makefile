@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2014/01/15 16:49:12 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2014/01/16 07:09:05 bcallah Exp $
 
 GH_VER =	0.3.18
 COMMENT =	Pandora client for GNOME
 DISTNAME =	pithos-${GH_VER}
-REVISION =	0
+REVISION =	1
 DISTFILES =	${DISTNAME}{${GH_VER}}${EXTRACT_SUFX}
 CATEGORIES =	audio x11
 
@@ -28,6 +28,7 @@ RUN_DEPENDS =	audio/py-last>=0.5.11 \
 		multimedia/gstreamer-0.10/py-gstreamer \
 		x11/dbus-python \
 		x11/gtk+2,-guic \
+		x11/keybinder,-python \
 		x11/py-gtk2
 
 TEST_DEPENDS =	audio/py-last>=0.5.11
