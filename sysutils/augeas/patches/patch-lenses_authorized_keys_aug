@@ -1,0 +1,15 @@
+$OpenBSD: patch-lenses_authorized_keys_aug,v 1.1 2014/01/16 13:33:53 jasper Exp $
+
+Allow 'ssh-ed25519' as a valid authorized_key type.
+
+--- lenses/authorized_keys.aug.orig	Thu Jan 16 14:25:10 2014
++++ lenses/authorized_keys.aug	Thu Jan 16 14:25:23 2014
+@@ -43,7 +43,7 @@ let key_options = [ label "options" . Build.opt_list o
+ 
+ (* View: key_type *)
+ let key_type =
+-  let key_type_re = /ecdsa-sha2-nistp[0-9]+/ | /ssh-[a-z]+/
++  let key_type_re = /ecdsa-sha2-nistp[0-9]+/ | /ssh-[a-z0-9]+/
+   in [ label "type" . store key_type_re ]
+ 
+ (* View: key_comment *)
