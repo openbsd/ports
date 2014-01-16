@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/08/24 17:33:47 zhuk Exp $
-@conflict kdemultimedia-<4
+@comment $OpenBSD: PLIST,v 1.4 2014/01/16 11:21:00 zhuk Exp $
 include/kde4/libkcddb/
 include/kde4/libkcddb/cdinfo.h
 include/kde4/libkcddb/cdinfodialog.h
