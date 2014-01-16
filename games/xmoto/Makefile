@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 11:07:41 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2014/01/16 10:25:54 kirby Exp $
 
 COMMENT =	challenging 2D motocross platform game
 
-V =	 	0.5.9
+V =	 	0.5.10
 DISTNAME =	xmoto-${V}-src
 PKGNAME =	xmoto-${V}
-REVISION=	3
 CATEGORIES =	games
 
 MAINTAINER =	Antti Harri <iku@openbsd.fi>
