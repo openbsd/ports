@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2014/01/16 09:16:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2014/01/16 21:40:17 sthen Exp $
 
 COMMENT =		ebook management application
 
@@ -26,7 +26,8 @@ LIB_DEPENDS=		devel/chmlib \
 			graphics/ImageMagick \
 			textproc/icu4c
 
-COMMON_DEPENDS =	devel/py-dateutil \
+COMMON_DEPENDS =	databases/py-apsw \
+			devel/py-dateutil \
 			devel/xdg-utils \
 			graphics/ImageMagick \
 			graphics/libwmf \
@@ -57,7 +58,6 @@ UPSTREAM_CLUE_LEVEL =	0 # https://bugs.launchpad.net/calibre/+bug/1094719
 SUBST_VARS =		WRKDIR
 
 RUN_DEPENDS =		${COMMON_DEPENDS} \
-			databases/py-apsw \
 			devel/desktop-file-utils \
 			misc/shared-mime-info \
 			print/poppler,-utils
