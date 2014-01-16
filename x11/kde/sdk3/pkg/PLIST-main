@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2013/12/22 19:24:35 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2014/01/16 12:01:58 zhuk Exp $
 @pkgpath x11/kde/sdk3
 bin/adddebug
 bin/build-progress.sh
@@ -992,7 +992,6 @@ share/services/kbabel_whitespacetool.desktop
 share/services/kbabel_xliff_export.desktop
 share/services/kbabel_xliff_import.desktop
 share/services/kbabel_xmltool.desktop
-share/services/kded/ksvnd.desktop
 share/services/kfile_cpp.desktop
 share/services/kfile_diff.desktop
 share/services/kfile_h.desktop
@@ -1000,17 +999,11 @@ share/services/kfile_po.desktop
 share/services/kfile_ts.desktop
 share/services/komparenavtreepart.desktop
 share/services/komparepart.desktop
-share/services/kresources/kcal/
 share/services/kresources/kcal/bugzilla.desktop
 share/services/kuiviewer_part.desktop
 share/services/poauxiliary.desktop
 share/services/pocompendium.desktop
 share/services/pothumbnail.desktop
-share/services/svn+file.protocol
-share/services/svn+http.protocol
-share/services/svn+https.protocol
-share/services/svn+ssh.protocol
-share/services/svn.protocol
 share/services/tmxcompendium.desktop
 share/servicetypes/kbabel_tool.desktop
 share/servicetypes/kbabel_validator.desktop
