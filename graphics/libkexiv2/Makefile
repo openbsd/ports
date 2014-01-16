@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2013/10/22 11:34:19 zhuk Exp $
+# $OpenBSD: Makefile,v 1.20 2014/01/16 09:26:44 zhuk Exp $
 
 COMMENT =	kde wrapper around exiv2
 CATEGORIES =	graphics
 DISTNAME =	libkexiv2-0.1.9
-REVISION =	6
+REVISION =	7
 HOMEPAGE =	http://www.kipi-plugins.org/
 EXTRACT_SUFX =	.tar.bz2
 PKGSPEC =	libkexiv2-<0.2.0

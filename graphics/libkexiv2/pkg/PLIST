@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/07/08 21:56:45 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/01/16 09:26:44 zhuk Exp $
+@option no-default-conflict
+@conflict libkexiv2-<4
 include/kde/libkexiv2/
 include/kde/libkexiv2/kexiv2.h
 include/kde/libkexiv2/libkexiv2_export.h
