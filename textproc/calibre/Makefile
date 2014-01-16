@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2013/11/09 15:02:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2014/01/16 09:16:31 sthen Exp $
 
 COMMENT =		ebook management application
 
-DISTNAME =		calibre-1.10.0
+DISTNAME =		calibre-1.19.0
 CATEGORIES =		textproc
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calibre/}
 EXTRACT_SUFX =		.tar.xz

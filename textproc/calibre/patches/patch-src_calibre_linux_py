@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_calibre_linux_py,v 1.2 2013/11/09 15:02:14 sthen Exp $
+$OpenBSD: patch-src_calibre_linux_py,v 1.3 2014/01/16 09:16:31 sthen Exp $
 
 Saves mime and desktop files on disk instead of trying to add them directly.
 Adapted from archlinux patch:
 https://projects.archlinux.org/svntogit/community.git/tree/trunk?h=packages/calibre
 
---- src/calibre/linux.py.orig	Fri Nov  8 03:44:31 2013
-+++ src/calibre/linux.py	Sat Nov  9 14:27:11 2013
+--- src/calibre/linux.py.orig	Fri Jan 10 04:08:21 2014
++++ src/calibre/linux.py	Tue Jan 14 22:47:52 2014
 @@ -8,7 +8,7 @@ from subprocess import check_call
  from functools import partial
  
@@ -15,7 +15,7 @@ https://projects.archlinux.org/svntogit/community.git/tree/trunk?h=packages/cali
  from calibre.customize.ui import all_input_formats
  from calibre.ptempfile import TemporaryDirectory
  from calibre import CurrentDir
-@@ -450,19 +450,7 @@ class PostInstall:
+@@ -451,19 +451,7 @@ class PostInstall:
              self.setup_completion()
          if islinux or isbsd:
              self.setup_desktop_integration()
@@ -35,7 +35,7 @@ https://projects.archlinux.org/svntogit/community.git/tree/trunk?h=packages/cali
          if warn is None and self.warnings:
              self.info('There were %d warnings'%len(self.warnings))
              for args, kwargs in self.warnings:
-@@ -507,7 +495,7 @@ class PostInstall:
+@@ -510,7 +498,7 @@ class PostInstall:
              if os.path.exists(bc):
                  f = os.path.join(bc, 'calibre')
              else:
@@ -44,7 +44,7 @@ https://projects.archlinux.org/svntogit/community.git/tree/trunk?h=packages/cali
                      f = os.path.join(self.opts.staging_root, 'share/bash_completion.d/calibre')
                  else:
                      f = os.path.join(self.opts.staging_etc, 'bash_completion.d/calibre')
-@@ -651,65 +639,44 @@ class PostInstall:
+@@ -655,73 +643,50 @@ class PostInstall:
                  env['LD_LIBRARY_PATH'] = os.pathsep.join(npaths)
                  cc = partial(check_call, env=env)
  
@@ -74,6 +74,9 @@ https://projects.archlinux.org/svntogit/community.git/tree/trunk?h=packages/cali
 -                render_img('viewer.png', 'calibre-viewer.png')
 -                cc('xdg-icon-resource install --size 128 calibre-viewer.png calibre-viewer', shell=True)
 -                self.icon_resources.append(('apps', 'calibre-viewer', '128'))
+-                render_img('tweak.png', 'calibre-ebook-edit.png')
+-                cc('xdg-icon-resource install --size 128 calibre-ebook-edit.png calibre-ebook-edit', shell=True)
+-                self.icon_resources.append(('apps', 'calibre-ebook-edit', '128'))
 +            with TemporaryDirectory() as tdir, CurrentDir(tdir):
 +                dir = os.path.join(self.opts.staging_sharedir,'../pixmaps')
 +                os.mkdir(dir)
@@ -82,8 +85,9 @@ https://projects.archlinux.org/svntogit/community.git/tree/trunk?h=packages/cali
 +                render_img('mimetypes/tpz.png', os.path.join(dir,'calibre-tpz.png')) #  application-x-topaz-ebook
 +                render_img('mimetypes/azw2.png', os.path.join(dir,'calibre-azw2.png')) #  application-x-kindle-application
 +                render_img('mimetypes/azw3.png', os.path.join(dir,'calibre-azw3.png')) #  application-x-mobi8-ebook
-+                render_img('lt.png', os.path.join(dir, 'calibre-gui.png'))
-+                render_img('viewer.png', os.path.join(dir, 'calibre-viewer.png'))
++                render_img('lt.png', os.path.join(dir,'calibre-gui.png'), width=256, height=256)
++                render_img('viewer.png', os.path.join(dir,'calibre-viewer.png'))
++                render_img('tweak.png', os.path.join(dir,'calibre-ebook-edit.png'))
  
                  mimetypes = set([])
                  for x in all_input_formats():
@@ -95,6 +99,7 @@ https://projects.archlinux.org/svntogit/community.git/tree/trunk?h=packages/cali
                  def write_mimetypes(f):
                      f.write('MimeType=%s;\n'%';'.join(mimetypes))
  
+                 from calibre.ebooks.oeb.polish.main import SUPPORTED
 -                f = open('calibre-lrfviewer.desktop', 'wb')
 +                dir = os.path.join(self.opts.staging_sharedir,'../applications')
 +                os.mkdir(dir)
@@ -105,6 +110,11 @@ https://projects.archlinux.org/svntogit/community.git/tree/trunk?h=packages/cali
 +                f = open(os.path.join(dir, 'calibre-ebook-viewer.desktop'), 'wb')
                  f.write(EVIEWER)
                  write_mimetypes(f)
+-                f = open('calibre-ebook-edit.desktop', 'wb')
++                f = open(os.path.join(dir, 'calibre-ebook-edit.desktop'), 'wb')
+                 f.write(ETWEAK)
+                 mt = [guess_type('a.' + x.lower())[0] for x in SUPPORTED]
+                 f.write('MimeType=%s;\n'%';'.join(mt))
                  f.close()
 -                f = open('calibre-gui.desktop', 'wb')
 +                f = open(os.path.join(dir, 'calibre-gui.desktop'), 'wb')
@@ -112,7 +122,7 @@ https://projects.archlinux.org/svntogit/community.git/tree/trunk?h=packages/cali
                  write_mimetypes(f)
                  f.close()
 -                des = ('calibre-gui.desktop', 'calibre-lrfviewer.desktop',
--                        'calibre-ebook-viewer.desktop')
+-                        'calibre-ebook-viewer.desktop', 'calibre-ebook-edit.desktop')
 -                for x in des:
 -                    cmd = ['xdg-desktop-menu', 'install', '--noupdate', './'+x]
 -                    cc(' '.join(cmd), shell=True)
@@ -129,7 +139,7 @@ https://projects.archlinux.org/svntogit/community.git/tree/trunk?h=packages/cali
          except Exception:
              if self.opts.fatal_errors:
                  raise
-@@ -857,7 +824,7 @@ GUI = '''\
+@@ -881,7 +846,7 @@ GUI = '''\
  [Desktop Entry]
  Version=1.0
  Type=Application
