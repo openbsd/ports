@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_racket_src_gmp_gmplonglong_h,v 1.1 2014/01/16 01:49:32 juanfra Exp $
+
+Racket uses an old version of gmp. It's so old even doesn't include
+assembler code for amd64, where racket uses C.
+
+This patch changes every platform to use the C code because these days
+racket is mostly tested on amd64 on other OS and this can help us in
+the effort to port racket to other platforms.
+
+--- src/racket/src/gmp/gmplonglong.h.orig	Fri Jan 10 04:35:39 2014
++++ src/racket/src/gmp/gmplonglong.h	Fri Jan 10 04:36:33 2014
+@@ -96,6 +96,7 @@ MA 02111-1307, USA. */
+    If any of these macros are left undefined for a particular CPU,
+    C macros are used.  */
+ 
++#define MZ_GMP_NO_ASM 1
+ #ifndef MZ_GMP_NO_ASM
+ 
+ /* The CPUs come in alphabetical order below.
