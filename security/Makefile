@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.328 2014/01/11 22:56:04 jeremy Exp $
+# $OpenBSD: Makefile,v 1.329 2014/01/17 13:30:49 stsp Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -42,6 +42,7 @@
      SUBDIR += dsniff
      SUBDIR += dsniff,no_x11
      SUBDIR += easy-rsa
+     SUBDIR += encfs
      SUBDIR += erl-bcrypt
      SUBDIR += erl-oauth
      SUBDIR += fcrackzip
