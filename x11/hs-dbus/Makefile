@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2013/07/19 07:04:06 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2014/01/17 14:57:22 dcoppa Exp $
 
 COMMENT =		Haskell implementation of the D-Bus protocol
 
-DISTNAME =		dbus-0.10.4
-REVISION =		1
+DISTNAME =		dbus-0.10.5
 CATEGORIES =		devel x11
 
 HOMEPAGE =		https://john-millikin.com/software/haskell-dbus/
