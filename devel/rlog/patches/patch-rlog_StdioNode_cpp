@@ -1,0 +1,23 @@
+$OpenBSD: patch-rlog_StdioNode_cpp,v 1.1.1.1 2014/01/17 10:09:04 stsp Exp $
+--- rlog/StdioNode.cpp.orig	Thu Jan 16 14:16:19 2014
++++ rlog/StdioNode.cpp	Thu Jan 16 14:17:59 2014
+@@ -169,7 +169,8 @@ StdioNode::publish( const RLogData &data )
+     const char *color = NULL;
+     if(colorize)
+     {
+-	sprintf(timeStamp, "%s%02i:%02i:%02i%s ",
++	snprintf(timeStamp, sizeof(timeStamp),
++		"%s%02i:%02i:%02i%s ",
+ 		kGreenColor,
+ 		currentTime.tm_hour,
+ 		currentTime.tm_min,
+@@ -196,7 +197,8 @@ StdioNode::publish( const RLogData &data )
+ 	}
+     } else
+     {
+-	sprintf(timeStamp, "%02i:%02i:%02i ",
++	snprintf(timeStamp, sizeof(timeStamp),
++		"%02i:%02i:%02i ",
+ 		currentTime.tm_hour,
+ 		currentTime.tm_min,
+ 		currentTime.tm_sec);
