@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.215 2013/12/09 08:41:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.216 2014/01/17 09:59:24 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -11,6 +11,8 @@ GNOME_VERSION=		3.10.3
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
 
+REVISION-main=		0
+REVISION-plugins=	0
 
 # NOTE: when EVO_VERSION changes, increment accordingly and bump:
 # mail/evolution-ews
@@ -91,8 +93,7 @@ RUN_DEPENDS-plugins +=	mail/p5-Mail-SpamAssassin
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
-MODGNOME_CPPFLAGS=	-I${X11BASE}/include \
-			$$(krb5-config --cflags)
+MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 
 # without --as-needed, evolution takes 20 minutes (yes, 20!) to start
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib -Wl,-rpath,${TRUEPREFIX}/lib/evolution/${EVO_VERSION}:${TRUEPREFIX}/lib \
@@ -105,8 +106,7 @@ CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS=		--disable-static \
 			--with-openldap="${LOCALBASE}" \
-			--with-sub-version="OpenBSD Ports" \
-			--with-krb5
+			--with-sub-version="OpenBSD Ports"
 
 FAKE_FLAGS=		autostartdir=${PREFIX}/share/examples/evolution/xdg/autostart
 
