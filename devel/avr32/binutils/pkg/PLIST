@@ -1,0 +1,495 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/01/17 15:02:26 stsp Exp $
+avr32/
+avr32/bin/
+@bin avr32/bin/ar
+@bin avr32/bin/as
+@bin avr32/bin/ld
+@bin avr32/bin/ld.bfd
+@bin avr32/bin/nm
+@bin avr32/bin/objcopy
+@bin avr32/bin/objdump
+@bin avr32/bin/ranlib
+@bin avr32/bin/strip
+avr32/lib/
+avr32/lib/ldscripts/
+avr32/lib/ldscripts/avr32elf_ap7000.x
+avr32/lib/ldscripts/avr32elf_ap7000.xbn
+avr32/lib/ldscripts/avr32elf_ap7000.xn
+avr32/lib/ldscripts/avr32elf_ap7000.xr
+avr32/lib/ldscripts/avr32elf_ap7000.xu
+avr32/lib/ldscripts/avr32elf_ap7000.xwr
+avr32/lib/ldscripts/avr32elf_ap7001.x
+avr32/lib/ldscripts/avr32elf_ap7001.xbn
+avr32/lib/ldscripts/avr32elf_ap7001.xn
+avr32/lib/ldscripts/avr32elf_ap7001.xr
+avr32/lib/ldscripts/avr32elf_ap7001.xu
+avr32/lib/ldscripts/avr32elf_ap7001.xwr
+avr32/lib/ldscripts/avr32elf_ap7002.x
+avr32/lib/ldscripts/avr32elf_ap7002.xbn
+avr32/lib/ldscripts/avr32elf_ap7002.xn
+avr32/lib/ldscripts/avr32elf_ap7002.xr
+avr32/lib/ldscripts/avr32elf_ap7002.xu
+avr32/lib/ldscripts/avr32elf_ap7002.xwr
+avr32/lib/ldscripts/avr32elf_ap7200.x
+avr32/lib/ldscripts/avr32elf_ap7200.xbn
+avr32/lib/ldscripts/avr32elf_ap7200.xn
+avr32/lib/ldscripts/avr32elf_ap7200.xr
+avr32/lib/ldscripts/avr32elf_ap7200.xu
+avr32/lib/ldscripts/avr32elf_ap7200.xwr
+avr32/lib/ldscripts/avr32elf_mxt1664eng.x
+avr32/lib/ldscripts/avr32elf_mxt1664eng.xbn
+avr32/lib/ldscripts/avr32elf_mxt1664eng.xn
+avr32/lib/ldscripts/avr32elf_mxt1664eng.xr
+avr32/lib/ldscripts/avr32elf_mxt1664eng.xu
+avr32/lib/ldscripts/avr32elf_mxt1664eng.xwr
+avr32/lib/ldscripts/avr32elf_mxt1664s.x
+avr32/lib/ldscripts/avr32elf_mxt1664s.xbn
+avr32/lib/ldscripts/avr32elf_mxt1664s.xn
+avr32/lib/ldscripts/avr32elf_mxt1664s.xr
+avr32/lib/ldscripts/avr32elf_mxt1664s.xu
+avr32/lib/ldscripts/avr32elf_mxt1664s.xwr
+avr32/lib/ldscripts/avr32elf_mxt2952t.x
+avr32/lib/ldscripts/avr32elf_mxt2952t.xbn
+avr32/lib/ldscripts/avr32elf_mxt2952t.xn
+avr32/lib/ldscripts/avr32elf_mxt2952t.xr
+avr32/lib/ldscripts/avr32elf_mxt2952t.xu
+avr32/lib/ldscripts/avr32elf_mxt2952t.xwr
+avr32/lib/ldscripts/avr32elf_mxt540e.x
+avr32/lib/ldscripts/avr32elf_mxt540e.xbn
+avr32/lib/ldscripts/avr32elf_mxt540e.xn
+avr32/lib/ldscripts/avr32elf_mxt540e.xr
+avr32/lib/ldscripts/avr32elf_mxt540e.xu
+avr32/lib/ldscripts/avr32elf_mxt540e.xwr
+avr32/lib/ldscripts/avr32elf_mxt768e.x
+avr32/lib/ldscripts/avr32elf_mxt768e.xbn
+avr32/lib/ldscripts/avr32elf_mxt768e.xn
+avr32/lib/ldscripts/avr32elf_mxt768e.xr
+avr32/lib/ldscripts/avr32elf_mxt768e.xu
+avr32/lib/ldscripts/avr32elf_mxt768e.xwr
+avr32/lib/ldscripts/avr32elf_uc128d3.x
+avr32/lib/ldscripts/avr32elf_uc128d3.xbn
+avr32/lib/ldscripts/avr32elf_uc128d3.xn
+avr32/lib/ldscripts/avr32elf_uc128d3.xr
+avr32/lib/ldscripts/avr32elf_uc128d3.xu
+avr32/lib/ldscripts/avr32elf_uc128d3.xwr
+avr32/lib/ldscripts/avr32elf_uc128d4.x
+avr32/lib/ldscripts/avr32elf_uc128d4.xbn
+avr32/lib/ldscripts/avr32elf_uc128d4.xn
+avr32/lib/ldscripts/avr32elf_uc128d4.xr
+avr32/lib/ldscripts/avr32elf_uc128d4.xu
+avr32/lib/ldscripts/avr32elf_uc128d4.xwr
+avr32/lib/ldscripts/avr32elf_uc128l3u.x
+avr32/lib/ldscripts/avr32elf_uc128l3u.xbn
+avr32/lib/ldscripts/avr32elf_uc128l3u.xn
+avr32/lib/ldscripts/avr32elf_uc128l3u.xr
+avr32/lib/ldscripts/avr32elf_uc128l3u.xu
+avr32/lib/ldscripts/avr32elf_uc128l3u.xwr
+avr32/lib/ldscripts/avr32elf_uc128l4u.x
+avr32/lib/ldscripts/avr32elf_uc128l4u.xbn
+avr32/lib/ldscripts/avr32elf_uc128l4u.xn
+avr32/lib/ldscripts/avr32elf_uc128l4u.xr
+avr32/lib/ldscripts/avr32elf_uc128l4u.xu
+avr32/lib/ldscripts/avr32elf_uc128l4u.xwr
+avr32/lib/ldscripts/avr32elf_uc128l5.x
+avr32/lib/ldscripts/avr32elf_uc128l5.xbn
+avr32/lib/ldscripts/avr32elf_uc128l5.xn
+avr32/lib/ldscripts/avr32elf_uc128l5.xr
+avr32/lib/ldscripts/avr32elf_uc128l5.xu
+avr32/lib/ldscripts/avr32elf_uc128l5.xwr
+avr32/lib/ldscripts/avr32elf_uc256l3u.x
+avr32/lib/ldscripts/avr32elf_uc256l3u.xbn
+avr32/lib/ldscripts/avr32elf_uc256l3u.xn
+avr32/lib/ldscripts/avr32elf_uc256l3u.xr
+avr32/lib/ldscripts/avr32elf_uc256l3u.xu
+avr32/lib/ldscripts/avr32elf_uc256l3u.xwr
+avr32/lib/ldscripts/avr32elf_uc256l4u.x
+avr32/lib/ldscripts/avr32elf_uc256l4u.xbn
+avr32/lib/ldscripts/avr32elf_uc256l4u.xn
+avr32/lib/ldscripts/avr32elf_uc256l4u.xr
+avr32/lib/ldscripts/avr32elf_uc256l4u.xu
+avr32/lib/ldscripts/avr32elf_uc256l4u.xwr
+avr32/lib/ldscripts/avr32elf_uc3a0128.x
+avr32/lib/ldscripts/avr32elf_uc3a0128.xbn
+avr32/lib/ldscripts/avr32elf_uc3a0128.xn
+avr32/lib/ldscripts/avr32elf_uc3a0128.xr
+avr32/lib/ldscripts/avr32elf_uc3a0128.xu
+avr32/lib/ldscripts/avr32elf_uc3a0128.xwr
+avr32/lib/ldscripts/avr32elf_uc3a0256.x
+avr32/lib/ldscripts/avr32elf_uc3a0256.xbn
+avr32/lib/ldscripts/avr32elf_uc3a0256.xn
+avr32/lib/ldscripts/avr32elf_uc3a0256.xr
+avr32/lib/ldscripts/avr32elf_uc3a0256.xu
+avr32/lib/ldscripts/avr32elf_uc3a0256.xwr
+avr32/lib/ldscripts/avr32elf_uc3a0512.x
+avr32/lib/ldscripts/avr32elf_uc3a0512.xbn
+avr32/lib/ldscripts/avr32elf_uc3a0512.xn
+avr32/lib/ldscripts/avr32elf_uc3a0512.xr
+avr32/lib/ldscripts/avr32elf_uc3a0512.xu
+avr32/lib/ldscripts/avr32elf_uc3a0512.xwr
+avr32/lib/ldscripts/avr32elf_uc3a0512es.x
+avr32/lib/ldscripts/avr32elf_uc3a0512es.xbn
+avr32/lib/ldscripts/avr32elf_uc3a0512es.xn
+avr32/lib/ldscripts/avr32elf_uc3a0512es.xr
+avr32/lib/ldscripts/avr32elf_uc3a0512es.xu
+avr32/lib/ldscripts/avr32elf_uc3a0512es.xwr
+avr32/lib/ldscripts/avr32elf_uc3a1128.x
+avr32/lib/ldscripts/avr32elf_uc3a1128.xbn
+avr32/lib/ldscripts/avr32elf_uc3a1128.xn
+avr32/lib/ldscripts/avr32elf_uc3a1128.xr
+avr32/lib/ldscripts/avr32elf_uc3a1128.xu
+avr32/lib/ldscripts/avr32elf_uc3a1128.xwr
+avr32/lib/ldscripts/avr32elf_uc3a1256.x
+avr32/lib/ldscripts/avr32elf_uc3a1256.xbn
+avr32/lib/ldscripts/avr32elf_uc3a1256.xn
+avr32/lib/ldscripts/avr32elf_uc3a1256.xr
+avr32/lib/ldscripts/avr32elf_uc3a1256.xu
+avr32/lib/ldscripts/avr32elf_uc3a1256.xwr
+avr32/lib/ldscripts/avr32elf_uc3a1512.x
+avr32/lib/ldscripts/avr32elf_uc3a1512.xbn
+avr32/lib/ldscripts/avr32elf_uc3a1512.xn
+avr32/lib/ldscripts/avr32elf_uc3a1512.xr
+avr32/lib/ldscripts/avr32elf_uc3a1512.xu
+avr32/lib/ldscripts/avr32elf_uc3a1512.xwr
+avr32/lib/ldscripts/avr32elf_uc3a1512es.x
+avr32/lib/ldscripts/avr32elf_uc3a1512es.xbn
+avr32/lib/ldscripts/avr32elf_uc3a1512es.xn
+avr32/lib/ldscripts/avr32elf_uc3a1512es.xr
+avr32/lib/ldscripts/avr32elf_uc3a1512es.xu
+avr32/lib/ldscripts/avr32elf_uc3a1512es.xwr
+avr32/lib/ldscripts/avr32elf_uc3a3128.x
+avr32/lib/ldscripts/avr32elf_uc3a3128.xbn
+avr32/lib/ldscripts/avr32elf_uc3a3128.xn
+avr32/lib/ldscripts/avr32elf_uc3a3128.xr
+avr32/lib/ldscripts/avr32elf_uc3a3128.xu
+avr32/lib/ldscripts/avr32elf_uc3a3128.xwr
+avr32/lib/ldscripts/avr32elf_uc3a3128s.x
+avr32/lib/ldscripts/avr32elf_uc3a3128s.xbn
+avr32/lib/ldscripts/avr32elf_uc3a3128s.xn
+avr32/lib/ldscripts/avr32elf_uc3a3128s.xr
+avr32/lib/ldscripts/avr32elf_uc3a3128s.xu
+avr32/lib/ldscripts/avr32elf_uc3a3128s.xwr
+avr32/lib/ldscripts/avr32elf_uc3a3256.x
+avr32/lib/ldscripts/avr32elf_uc3a3256.xbn
+avr32/lib/ldscripts/avr32elf_uc3a3256.xn
+avr32/lib/ldscripts/avr32elf_uc3a3256.xr
+avr32/lib/ldscripts/avr32elf_uc3a3256.xu
+avr32/lib/ldscripts/avr32elf_uc3a3256.xwr
+avr32/lib/ldscripts/avr32elf_uc3a3256s.x
+avr32/lib/ldscripts/avr32elf_uc3a3256s.xbn
+avr32/lib/ldscripts/avr32elf_uc3a3256s.xn
+avr32/lib/ldscripts/avr32elf_uc3a3256s.xr
+avr32/lib/ldscripts/avr32elf_uc3a3256s.xu
+avr32/lib/ldscripts/avr32elf_uc3a3256s.xwr
+avr32/lib/ldscripts/avr32elf_uc3a364.x
+avr32/lib/ldscripts/avr32elf_uc3a364.xbn
+avr32/lib/ldscripts/avr32elf_uc3a364.xn
+avr32/lib/ldscripts/avr32elf_uc3a364.xr
+avr32/lib/ldscripts/avr32elf_uc3a364.xu
+avr32/lib/ldscripts/avr32elf_uc3a364.xwr
+avr32/lib/ldscripts/avr32elf_uc3a364s.x
+avr32/lib/ldscripts/avr32elf_uc3a364s.xbn
+avr32/lib/ldscripts/avr32elf_uc3a364s.xn
+avr32/lib/ldscripts/avr32elf_uc3a364s.xr
+avr32/lib/ldscripts/avr32elf_uc3a364s.xu
+avr32/lib/ldscripts/avr32elf_uc3a364s.xwr
+avr32/lib/ldscripts/avr32elf_uc3a4128.x
+avr32/lib/ldscripts/avr32elf_uc3a4128.xbn
+avr32/lib/ldscripts/avr32elf_uc3a4128.xn
+avr32/lib/ldscripts/avr32elf_uc3a4128.xr
+avr32/lib/ldscripts/avr32elf_uc3a4128.xu
+avr32/lib/ldscripts/avr32elf_uc3a4128.xwr
+avr32/lib/ldscripts/avr32elf_uc3a4128s.x
+avr32/lib/ldscripts/avr32elf_uc3a4128s.xbn
+avr32/lib/ldscripts/avr32elf_uc3a4128s.xn
+avr32/lib/ldscripts/avr32elf_uc3a4128s.xr
+avr32/lib/ldscripts/avr32elf_uc3a4128s.xu
+avr32/lib/ldscripts/avr32elf_uc3a4128s.xwr
+avr32/lib/ldscripts/avr32elf_uc3a4256.x
+avr32/lib/ldscripts/avr32elf_uc3a4256.xbn
+avr32/lib/ldscripts/avr32elf_uc3a4256.xn
+avr32/lib/ldscripts/avr32elf_uc3a4256.xr
+avr32/lib/ldscripts/avr32elf_uc3a4256.xu
+avr32/lib/ldscripts/avr32elf_uc3a4256.xwr
+avr32/lib/ldscripts/avr32elf_uc3a4256s.x
+avr32/lib/ldscripts/avr32elf_uc3a4256s.xbn
+avr32/lib/ldscripts/avr32elf_uc3a4256s.xn
+avr32/lib/ldscripts/avr32elf_uc3a4256s.xr
+avr32/lib/ldscripts/avr32elf_uc3a4256s.xu
+avr32/lib/ldscripts/avr32elf_uc3a4256s.xwr
+avr32/lib/ldscripts/avr32elf_uc3a464.x
+avr32/lib/ldscripts/avr32elf_uc3a464.xbn
+avr32/lib/ldscripts/avr32elf_uc3a464.xn
+avr32/lib/ldscripts/avr32elf_uc3a464.xr
+avr32/lib/ldscripts/avr32elf_uc3a464.xu
+avr32/lib/ldscripts/avr32elf_uc3a464.xwr
+avr32/lib/ldscripts/avr32elf_uc3a464s.x
+avr32/lib/ldscripts/avr32elf_uc3a464s.xbn
+avr32/lib/ldscripts/avr32elf_uc3a464s.xn
+avr32/lib/ldscripts/avr32elf_uc3a464s.xr
+avr32/lib/ldscripts/avr32elf_uc3a464s.xu
+avr32/lib/ldscripts/avr32elf_uc3a464s.xwr
+avr32/lib/ldscripts/avr32elf_uc3b0128.x
+avr32/lib/ldscripts/avr32elf_uc3b0128.xbn
+avr32/lib/ldscripts/avr32elf_uc3b0128.xn
+avr32/lib/ldscripts/avr32elf_uc3b0128.xr
+avr32/lib/ldscripts/avr32elf_uc3b0128.xu
+avr32/lib/ldscripts/avr32elf_uc3b0128.xwr
+avr32/lib/ldscripts/avr32elf_uc3b0256.x
+avr32/lib/ldscripts/avr32elf_uc3b0256.xbn
+avr32/lib/ldscripts/avr32elf_uc3b0256.xn
+avr32/lib/ldscripts/avr32elf_uc3b0256.xr
+avr32/lib/ldscripts/avr32elf_uc3b0256.xu
+avr32/lib/ldscripts/avr32elf_uc3b0256.xwr
+avr32/lib/ldscripts/avr32elf_uc3b0256es.x
+avr32/lib/ldscripts/avr32elf_uc3b0256es.xbn
+avr32/lib/ldscripts/avr32elf_uc3b0256es.xn
+avr32/lib/ldscripts/avr32elf_uc3b0256es.xr
+avr32/lib/ldscripts/avr32elf_uc3b0256es.xu
+avr32/lib/ldscripts/avr32elf_uc3b0256es.xwr
+avr32/lib/ldscripts/avr32elf_uc3b0512.x
+avr32/lib/ldscripts/avr32elf_uc3b0512.xbn
+avr32/lib/ldscripts/avr32elf_uc3b0512.xn
+avr32/lib/ldscripts/avr32elf_uc3b0512.xr
+avr32/lib/ldscripts/avr32elf_uc3b0512.xu
+avr32/lib/ldscripts/avr32elf_uc3b0512.xwr
+avr32/lib/ldscripts/avr32elf_uc3b0512revc.x
+avr32/lib/ldscripts/avr32elf_uc3b0512revc.xbn
+avr32/lib/ldscripts/avr32elf_uc3b0512revc.xn
+avr32/lib/ldscripts/avr32elf_uc3b0512revc.xr
+avr32/lib/ldscripts/avr32elf_uc3b0512revc.xu
+avr32/lib/ldscripts/avr32elf_uc3b0512revc.xwr
+avr32/lib/ldscripts/avr32elf_uc3b064.x
+avr32/lib/ldscripts/avr32elf_uc3b064.xbn
+avr32/lib/ldscripts/avr32elf_uc3b064.xn
+avr32/lib/ldscripts/avr32elf_uc3b064.xr
+avr32/lib/ldscripts/avr32elf_uc3b064.xu
+avr32/lib/ldscripts/avr32elf_uc3b064.xwr
+avr32/lib/ldscripts/avr32elf_uc3b1128.x
+avr32/lib/ldscripts/avr32elf_uc3b1128.xbn
+avr32/lib/ldscripts/avr32elf_uc3b1128.xn
+avr32/lib/ldscripts/avr32elf_uc3b1128.xr
+avr32/lib/ldscripts/avr32elf_uc3b1128.xu
+avr32/lib/ldscripts/avr32elf_uc3b1128.xwr
+avr32/lib/ldscripts/avr32elf_uc3b1256.x
+avr32/lib/ldscripts/avr32elf_uc3b1256.xbn
+avr32/lib/ldscripts/avr32elf_uc3b1256.xn
+avr32/lib/ldscripts/avr32elf_uc3b1256.xr
+avr32/lib/ldscripts/avr32elf_uc3b1256.xu
+avr32/lib/ldscripts/avr32elf_uc3b1256.xwr
+avr32/lib/ldscripts/avr32elf_uc3b1256es.x
+avr32/lib/ldscripts/avr32elf_uc3b1256es.xbn
+avr32/lib/ldscripts/avr32elf_uc3b1256es.xn
+avr32/lib/ldscripts/avr32elf_uc3b1256es.xr
+avr32/lib/ldscripts/avr32elf_uc3b1256es.xu
+avr32/lib/ldscripts/avr32elf_uc3b1256es.xwr
+avr32/lib/ldscripts/avr32elf_uc3b1512.x
+avr32/lib/ldscripts/avr32elf_uc3b1512.xbn
+avr32/lib/ldscripts/avr32elf_uc3b1512.xn
+avr32/lib/ldscripts/avr32elf_uc3b1512.xr
+avr32/lib/ldscripts/avr32elf_uc3b1512.xu
+avr32/lib/ldscripts/avr32elf_uc3b1512.xwr
+avr32/lib/ldscripts/avr32elf_uc3b1512revc.x
+avr32/lib/ldscripts/avr32elf_uc3b1512revc.xbn
+avr32/lib/ldscripts/avr32elf_uc3b1512revc.xn
+avr32/lib/ldscripts/avr32elf_uc3b1512revc.xr
+avr32/lib/ldscripts/avr32elf_uc3b1512revc.xu
+avr32/lib/ldscripts/avr32elf_uc3b1512revc.xwr
+avr32/lib/ldscripts/avr32elf_uc3b164.x
+avr32/lib/ldscripts/avr32elf_uc3b164.xbn
+avr32/lib/ldscripts/avr32elf_uc3b164.xn
+avr32/lib/ldscripts/avr32elf_uc3b164.xr
+avr32/lib/ldscripts/avr32elf_uc3b164.xu
+avr32/lib/ldscripts/avr32elf_uc3b164.xwr
+avr32/lib/ldscripts/avr32elf_uc3c0128c.x
+avr32/lib/ldscripts/avr32elf_uc3c0128c.xbn
+avr32/lib/ldscripts/avr32elf_uc3c0128c.xn
+avr32/lib/ldscripts/avr32elf_uc3c0128c.xr
+avr32/lib/ldscripts/avr32elf_uc3c0128c.xu
+avr32/lib/ldscripts/avr32elf_uc3c0128c.xwr
+avr32/lib/ldscripts/avr32elf_uc3c0256c.x
+avr32/lib/ldscripts/avr32elf_uc3c0256c.xbn
+avr32/lib/ldscripts/avr32elf_uc3c0256c.xn
+avr32/lib/ldscripts/avr32elf_uc3c0256c.xr
+avr32/lib/ldscripts/avr32elf_uc3c0256c.xu
+avr32/lib/ldscripts/avr32elf_uc3c0256c.xwr
+avr32/lib/ldscripts/avr32elf_uc3c0512c.x
+avr32/lib/ldscripts/avr32elf_uc3c0512c.xbn
+avr32/lib/ldscripts/avr32elf_uc3c0512c.xn
+avr32/lib/ldscripts/avr32elf_uc3c0512c.xr
+avr32/lib/ldscripts/avr32elf_uc3c0512c.xu
+avr32/lib/ldscripts/avr32elf_uc3c0512c.xwr
+avr32/lib/ldscripts/avr32elf_uc3c0512crevc.x
+avr32/lib/ldscripts/avr32elf_uc3c0512crevc.xbn
+avr32/lib/ldscripts/avr32elf_uc3c0512crevc.xn
+avr32/lib/ldscripts/avr32elf_uc3c0512crevc.xr
+avr32/lib/ldscripts/avr32elf_uc3c0512crevc.xu
+avr32/lib/ldscripts/avr32elf_uc3c0512crevc.xwr
+avr32/lib/ldscripts/avr32elf_uc3c064c.x
+avr32/lib/ldscripts/avr32elf_uc3c064c.xbn
+avr32/lib/ldscripts/avr32elf_uc3c064c.xn
+avr32/lib/ldscripts/avr32elf_uc3c064c.xr
+avr32/lib/ldscripts/avr32elf_uc3c064c.xu
+avr32/lib/ldscripts/avr32elf_uc3c064c.xwr
+avr32/lib/ldscripts/avr32elf_uc3c1128c.x
+avr32/lib/ldscripts/avr32elf_uc3c1128c.xbn
+avr32/lib/ldscripts/avr32elf_uc3c1128c.xn
+avr32/lib/ldscripts/avr32elf_uc3c1128c.xr
+avr32/lib/ldscripts/avr32elf_uc3c1128c.xu
+avr32/lib/ldscripts/avr32elf_uc3c1128c.xwr
+avr32/lib/ldscripts/avr32elf_uc3c1256c.x
+avr32/lib/ldscripts/avr32elf_uc3c1256c.xbn
+avr32/lib/ldscripts/avr32elf_uc3c1256c.xn
+avr32/lib/ldscripts/avr32elf_uc3c1256c.xr
+avr32/lib/ldscripts/avr32elf_uc3c1256c.xu
+avr32/lib/ldscripts/avr32elf_uc3c1256c.xwr
+avr32/lib/ldscripts/avr32elf_uc3c1512c.x
+avr32/lib/ldscripts/avr32elf_uc3c1512c.xbn
+avr32/lib/ldscripts/avr32elf_uc3c1512c.xn
+avr32/lib/ldscripts/avr32elf_uc3c1512c.xr
+avr32/lib/ldscripts/avr32elf_uc3c1512c.xu
+avr32/lib/ldscripts/avr32elf_uc3c1512c.xwr
+avr32/lib/ldscripts/avr32elf_uc3c1512crevc.x
+avr32/lib/ldscripts/avr32elf_uc3c1512crevc.xbn
+avr32/lib/ldscripts/avr32elf_uc3c1512crevc.xn
+avr32/lib/ldscripts/avr32elf_uc3c1512crevc.xr
+avr32/lib/ldscripts/avr32elf_uc3c1512crevc.xu
+avr32/lib/ldscripts/avr32elf_uc3c1512crevc.xwr
+avr32/lib/ldscripts/avr32elf_uc3c164c.x
+avr32/lib/ldscripts/avr32elf_uc3c164c.xbn
+avr32/lib/ldscripts/avr32elf_uc3c164c.xn
+avr32/lib/ldscripts/avr32elf_uc3c164c.xr
+avr32/lib/ldscripts/avr32elf_uc3c164c.xu
+avr32/lib/ldscripts/avr32elf_uc3c164c.xwr
+avr32/lib/ldscripts/avr32elf_uc3c2128c.x
+avr32/lib/ldscripts/avr32elf_uc3c2128c.xbn
+avr32/lib/ldscripts/avr32elf_uc3c2128c.xn
+avr32/lib/ldscripts/avr32elf_uc3c2128c.xr
+avr32/lib/ldscripts/avr32elf_uc3c2128c.xu
+avr32/lib/ldscripts/avr32elf_uc3c2128c.xwr
+avr32/lib/ldscripts/avr32elf_uc3c2256c.x
+avr32/lib/ldscripts/avr32elf_uc3c2256c.xbn
+avr32/lib/ldscripts/avr32elf_uc3c2256c.xn
+avr32/lib/ldscripts/avr32elf_uc3c2256c.xr
+avr32/lib/ldscripts/avr32elf_uc3c2256c.xu
+avr32/lib/ldscripts/avr32elf_uc3c2256c.xwr
+avr32/lib/ldscripts/avr32elf_uc3c2512c.x
+avr32/lib/ldscripts/avr32elf_uc3c2512c.xbn
+avr32/lib/ldscripts/avr32elf_uc3c2512c.xn
+avr32/lib/ldscripts/avr32elf_uc3c2512c.xr
+avr32/lib/ldscripts/avr32elf_uc3c2512c.xu
+avr32/lib/ldscripts/avr32elf_uc3c2512c.xwr
+avr32/lib/ldscripts/avr32elf_uc3c2512crevc.x
+avr32/lib/ldscripts/avr32elf_uc3c2512crevc.xbn
+avr32/lib/ldscripts/avr32elf_uc3c2512crevc.xn
+avr32/lib/ldscripts/avr32elf_uc3c2512crevc.xr
+avr32/lib/ldscripts/avr32elf_uc3c2512crevc.xu
+avr32/lib/ldscripts/avr32elf_uc3c2512crevc.xwr
+avr32/lib/ldscripts/avr32elf_uc3c264c.x
+avr32/lib/ldscripts/avr32elf_uc3c264c.xbn
+avr32/lib/ldscripts/avr32elf_uc3c264c.xn
+avr32/lib/ldscripts/avr32elf_uc3c264c.xr
+avr32/lib/ldscripts/avr32elf_uc3c264c.xu
+avr32/lib/ldscripts/avr32elf_uc3c264c.xwr
+avr32/lib/ldscripts/avr32elf_uc3l0128.x
+avr32/lib/ldscripts/avr32elf_uc3l0128.xbn
+avr32/lib/ldscripts/avr32elf_uc3l0128.xn
+avr32/lib/ldscripts/avr32elf_uc3l0128.xr
+avr32/lib/ldscripts/avr32elf_uc3l0128.xu
+avr32/lib/ldscripts/avr32elf_uc3l0128.xwr
+avr32/lib/ldscripts/avr32elf_uc3l016.x
+avr32/lib/ldscripts/avr32elf_uc3l016.xbn
+avr32/lib/ldscripts/avr32elf_uc3l016.xn
+avr32/lib/ldscripts/avr32elf_uc3l016.xr
+avr32/lib/ldscripts/avr32elf_uc3l016.xu
+avr32/lib/ldscripts/avr32elf_uc3l016.xwr
+avr32/lib/ldscripts/avr32elf_uc3l0256.x
+avr32/lib/ldscripts/avr32elf_uc3l0256.xbn
+avr32/lib/ldscripts/avr32elf_uc3l0256.xn
+avr32/lib/ldscripts/avr32elf_uc3l0256.xr
+avr32/lib/ldscripts/avr32elf_uc3l0256.xu
+avr32/lib/ldscripts/avr32elf_uc3l0256.xwr
+avr32/lib/ldscripts/avr32elf_uc3l032.x
+avr32/lib/ldscripts/avr32elf_uc3l032.xbn
+avr32/lib/ldscripts/avr32elf_uc3l032.xn
+avr32/lib/ldscripts/avr32elf_uc3l032.xr
+avr32/lib/ldscripts/avr32elf_uc3l032.xu
+avr32/lib/ldscripts/avr32elf_uc3l032.xwr
+avr32/lib/ldscripts/avr32elf_uc3l064.x
+avr32/lib/ldscripts/avr32elf_uc3l064.xbn
+avr32/lib/ldscripts/avr32elf_uc3l064.xn
+avr32/lib/ldscripts/avr32elf_uc3l064.xr
+avr32/lib/ldscripts/avr32elf_uc3l064.xu
+avr32/lib/ldscripts/avr32elf_uc3l064.xwr
+avr32/lib/ldscripts/avr32elf_uc3l064revb.x
+avr32/lib/ldscripts/avr32elf_uc3l064revb.xbn
+avr32/lib/ldscripts/avr32elf_uc3l064revb.xn
+avr32/lib/ldscripts/avr32elf_uc3l064revb.xr
+avr32/lib/ldscripts/avr32elf_uc3l064revb.xu
+avr32/lib/ldscripts/avr32elf_uc3l064revb.xwr
+avr32/lib/ldscripts/avr32elf_uc64d3.x
+avr32/lib/ldscripts/avr32elf_uc64d3.xbn
+avr32/lib/ldscripts/avr32elf_uc64d3.xn
+avr32/lib/ldscripts/avr32elf_uc64d3.xr
+avr32/lib/ldscripts/avr32elf_uc64d3.xu
+avr32/lib/ldscripts/avr32elf_uc64d3.xwr
+avr32/lib/ldscripts/avr32elf_uc64d4.x
+avr32/lib/ldscripts/avr32elf_uc64d4.xbn
+avr32/lib/ldscripts/avr32elf_uc64d4.xn
+avr32/lib/ldscripts/avr32elf_uc64d4.xr
+avr32/lib/ldscripts/avr32elf_uc64d4.xu
+avr32/lib/ldscripts/avr32elf_uc64d4.xwr
+avr32/lib/ldscripts/avr32elf_uc64l3u.x
+avr32/lib/ldscripts/avr32elf_uc64l3u.xbn
+avr32/lib/ldscripts/avr32elf_uc64l3u.xn
+avr32/lib/ldscripts/avr32elf_uc64l3u.xr
+avr32/lib/ldscripts/avr32elf_uc64l3u.xu
+avr32/lib/ldscripts/avr32elf_uc64l3u.xwr
+avr32/lib/ldscripts/avr32elf_uc64l4u.x
+avr32/lib/ldscripts/avr32elf_uc64l4u.xbn
+avr32/lib/ldscripts/avr32elf_uc64l4u.xn
+avr32/lib/ldscripts/avr32elf_uc64l4u.xr
+avr32/lib/ldscripts/avr32elf_uc64l4u.xu
+avr32/lib/ldscripts/avr32elf_uc64l4u.xwr
+avr32/lib/libiberty.a
+@bin bin/avr32-addr2line
+@bin bin/avr32-ar
+@bin bin/avr32-as
+@bin bin/avr32-c++filt
+@bin bin/avr32-elfedit
+@bin bin/avr32-gprof
+@bin bin/avr32-ld
+@bin bin/avr32-ld.bfd
+@bin bin/avr32-nm
+@bin bin/avr32-objcopy
+@bin bin/avr32-objdump
+@bin bin/avr32-ranlib
+@bin bin/avr32-readelf
+@bin bin/avr32-size
+@bin bin/avr32-strings
+@bin bin/avr32-strip
+@comment @info info/as.info
+@comment @info info/bfd.info
+@comment @info info/binutils.info
+@comment @info info/configure.info
+@comment @info info/gprof.info
+@comment @info info/ld.info
+@comment @info info/standards.info
+@man man/man1/avr32-addr2line.1
+@man man/man1/avr32-ar.1
+@man man/man1/avr32-as.1
+@man man/man1/avr32-c++filt.1
+@comment @man man/man1/avr32-dlltool.1
+@man man/man1/avr32-elfedit.1
+@man man/man1/avr32-gprof.1
+@man man/man1/avr32-ld.1
+@comment @man man/man1/avr32-nlmconv.1
+@man man/man1/avr32-nm.1
+@man man/man1/avr32-objcopy.1
+@man man/man1/avr32-objdump.1
+@man man/man1/avr32-ranlib.1
+@man man/man1/avr32-readelf.1
+@man man/man1/avr32-size.1
+@man man/man1/avr32-strings.1
+@man man/man1/avr32-strip.1
+@comment @man man/man1/avr32-windmc.1
+@comment @man man/man1/avr32-windres.1

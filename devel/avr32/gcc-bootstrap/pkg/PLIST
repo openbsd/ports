@@ -1,0 +1,112 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/01/17 15:02:26 stsp Exp $
+avr32/bootstrap/
+avr32/bootstrap/avr32/
+avr32/bootstrap/avr32/lib/
+avr32/bootstrap/bin/
+@bin avr32/bootstrap/bin/avr32-cpp
+@bin avr32/bootstrap/bin/avr32-gcc
+@bin avr32/bootstrap/bin/avr32-gcc-4.4.7
+avr32/bootstrap/bin/avr32-gccbug
+@bin avr32/bootstrap/bin/avr32-gcov
+avr32/bootstrap/lib/
+avr32/bootstrap/lib/gcc/
+avr32/bootstrap/lib/gcc/avr32/
+avr32/bootstrap/lib/gcc/avr32/4.4.7/
+avr32/bootstrap/lib/gcc/avr32/4.4.7/crtbegin.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/crtbeginS.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/crtend.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/crtendS.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/crti.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/crtn.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/include/
+avr32/bootstrap/lib/gcc/avr32/4.4.7/include-fixed/
+avr32/bootstrap/lib/gcc/avr32/4.4.7/include-fixed/README
+avr32/bootstrap/lib/gcc/avr32/4.4.7/include-fixed/limits.h
+avr32/bootstrap/lib/gcc/avr32/4.4.7/include-fixed/syslimits.h
+avr32/bootstrap/lib/gcc/avr32/4.4.7/include/float.h
+avr32/bootstrap/lib/gcc/avr32/4.4.7/include/iso646.h
+avr32/bootstrap/lib/gcc/avr32/4.4.7/include/stdarg.h
+avr32/bootstrap/lib/gcc/avr32/4.4.7/include/stdbool.h
+avr32/bootstrap/lib/gcc/avr32/4.4.7/include/stddef.h
+avr32/bootstrap/lib/gcc/avr32/4.4.7/include/stdfix.h
+avr32/bootstrap/lib/gcc/avr32/4.4.7/include/tgmath.h
+avr32/bootstrap/lib/gcc/avr32/4.4.7/include/unwind.h
+avr32/bootstrap/lib/gcc/avr32/4.4.7/include/varargs.h
+avr32/bootstrap/lib/gcc/avr32/4.4.7/install-tools/
+avr32/bootstrap/lib/gcc/avr32/4.4.7/install-tools/fixinc_list
+avr32/bootstrap/lib/gcc/avr32/4.4.7/install-tools/gsyslimits.h
+avr32/bootstrap/lib/gcc/avr32/4.4.7/install-tools/include/
+avr32/bootstrap/lib/gcc/avr32/4.4.7/install-tools/include/README
+avr32/bootstrap/lib/gcc/avr32/4.4.7/install-tools/include/limits.h
+avr32/bootstrap/lib/gcc/avr32/4.4.7/install-tools/macro_list
+avr32/bootstrap/lib/gcc/avr32/4.4.7/install-tools/mkheaders.conf
+avr32/bootstrap/lib/gcc/avr32/4.4.7/libgcc.a
+avr32/bootstrap/lib/gcc/avr32/4.4.7/libgcov.a
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr1/
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr1/crtbegin.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr1/crtbeginS.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr1/crtend.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr1/crtendS.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr1/crti.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr1/crtn.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr1/libgcc.a
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr1/libgcov.a
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr2/
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr2/crtbegin.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr2/crtbeginS.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr2/crtend.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr2/crtendS.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr2/crti.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr2/crtn.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr2/libgcc.a
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr2/libgcov.a
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr2nomul/
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr2nomul/crtbegin.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr2nomul/crtbeginS.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr2nomul/crtend.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr2nomul/crtendS.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr2nomul/crti.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr2nomul/crtn.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr2nomul/libgcc.a
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr2nomul/libgcov.a
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr3/
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr3/crtbegin.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr3/crtbeginS.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr3/crtend.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr3/crtendS.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr3/crti.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr3/crtn.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr3/libgcc.a
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr3/libgcov.a
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr3fp/
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr3fp/crtbegin.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr3fp/crtbeginS.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr3fp/crtend.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr3fp/crtendS.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr3fp/crti.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr3fp/crtn.o
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr3fp/libgcc.a
+avr32/bootstrap/lib/gcc/avr32/4.4.7/ucr3fp/libgcov.a
+avr32/bootstrap/lib/libiberty.a
+avr32/bootstrap/libexec/
+avr32/bootstrap/libexec/gcc/
+avr32/bootstrap/libexec/gcc/avr32/
+avr32/bootstrap/libexec/gcc/avr32/4.4.7/
+@bin avr32/bootstrap/libexec/gcc/avr32/4.4.7/cc1
+@bin avr32/bootstrap/libexec/gcc/avr32/4.4.7/collect2
+avr32/bootstrap/libexec/gcc/avr32/4.4.7/install-tools/
+avr32/bootstrap/libexec/gcc/avr32/4.4.7/install-tools/fixinc.sh
+@bin avr32/bootstrap/libexec/gcc/avr32/4.4.7/install-tools/fixincl
+avr32/bootstrap/libexec/gcc/avr32/4.4.7/install-tools/mkheaders
+avr32/bootstrap/libexec/gcc/avr32/4.4.7/install-tools/mkinstalldirs
+@comment @info info/cpp.info
+@comment @info info/cppinternals.info
+@comment @info info/gcc.info
+@comment @info info/gccinstall.info
+@comment @info info/gccint.info
+@comment @man man/man1/avr32-cpp.1
+@comment @man man/man1/avr32-gcc.1
+@comment @man man/man1/avr32-gcov.1
+@comment @man man/man7/fsf-funding.7
+@comment @man man/man7/gfdl.7
+@comment @man man/man7/gpl.7

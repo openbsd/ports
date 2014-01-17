@@ -1,0 +1,33 @@
+$OpenBSD: patch-libgcc_Makefile_in,v 1.1.1.1 2014/01/17 15:02:26 stsp Exp $
+Prevent 'permission denied' errors during build as non-root user
+because of attempts to chown files to root.
+These install targets are run during the build, before 'make fake'.
+--- libgcc/Makefile.in.orig	Fri Apr 10 01:23:07 2009
++++ libgcc/Makefile.in	Mon Jan  6 16:24:11 2014
+@@ -99,7 +99,7 @@ all: all-multi
+ 	# them back to the GCC directory.  Too many things (other
+ 	# in-tree libraries, and DejaGNU) know about the layout
+ 	# of the build tree, for now.
+-	$(MAKE) install-leaf DESTDIR=$(gcc_objdir) \
++	$(MAKE) install-leaf INSTALL_DATA=cp DESTDIR=$(gcc_objdir) \
+ 	  slibdir= libsubdir= MULTIOSDIR=$(MULTIDIR)
+ 
+ .PHONY: all-multi
+@@ -857,7 +857,7 @@ endif
+ 	parts="$(EXTRA_PARTS)";					\
+ 	for file in $$parts; do					\
+ 	  rm -f $(gcc_objdir)$(MULTISUBDIR)/$$file;		\
+-	  $(INSTALL_DATA) $$file $(gcc_objdir)$(MULTISUBDIR)/;	\
++	  cp $$file $(gcc_objdir)$(MULTISUBDIR)/;		\
+ 	done
+ 
+ # Build extra startfiles in the gcc directory, for unconverted
+@@ -890,7 +890,7 @@ gcc-extra-parts:
+ 	parts="$(GCC_EXTRA_PARTS)";				\
+ 	for file in $$parts; do					\
+ 	  rm -f $(gcc_objdir)$(MULTISUBDIR)/$$file;		\
+-	  $(INSTALL_DATA) $$file $(gcc_objdir)$(MULTISUBDIR)/;	\
++	  cp $$file $(gcc_objdir)$(MULTISUBDIR)/;		\
+ 	done
+ 
+ all: $(extra-parts)
