@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/01/17 15:02:26 stsp Exp $
+# $OpenBSD: Makefile,v 1.2 2014/01/17 19:54:17 stsp Exp $
 
 COMMENT = 	Atmel AVR 32-bit binutils
 V = 		2.23.1
@@ -11,6 +11,7 @@ WANTLIB = 		c z
 DIST_SUBDIR = 		binutils
 AUTOCONF_VERSION = 	2.64
 AUTOMAKE_VERSION = 	1.11
+BUILD_DEPENDS = 	devel/libtool
 CONFIGURE_ARGS += 	--enable-commonbfdlib=no \
 			--with-cross-host=yes \
 			--disable-werror
