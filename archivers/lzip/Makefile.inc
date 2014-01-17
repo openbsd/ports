@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2013/11/08 20:34:32 juanfra Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2014/01/17 19:46:21 juanfra Exp $
 
 # This directory contain every lzip project.
 # lzd isn't included due to the educational purpose of this and the author
@@ -6,7 +6,7 @@
 
 CATEGORIES =		archivers
 
-MAINTAINER =		Juan Francisco Cantero Hurtado <iam@juanfra.info>
+MAINTAINER =		Juan Francisco Cantero Hurtado <juanfra@openbsd.org>
 
 MASTER_SITES ?=		${MASTER_SITE_SAVANNAH:=lzip/} \
 			${MASTER_SITE_SAVANNAH:=lzip/old/}
