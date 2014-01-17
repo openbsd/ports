@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1186 2014/01/14 17:15:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.1187 2014/01/17 10:13:39 stsp Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1240,6 +1240,7 @@
      SUBDIR += readline
      SUBDIR += rebar
      SUBDIR += remake
+     SUBDIR += rlog
      SUBDIR += ruby-abstract
      SUBDIR += ruby-arrayfields
      SUBDIR += ruby-bacon
