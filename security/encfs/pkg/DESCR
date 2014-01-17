@@ -1,0 +1,15 @@
+EncFS provides an encrypted filesystem based on FUSE and OpenSSL.
+
+EncFS works on a per-file basis, not with entire block devices.
+An EncFS filesystem can grow to any size without being reformatted
+and can be backed-up on a file-by-file basis.
+
+EncFS does NOT encrypt or otherwise hide the following information:
+ - The number of files you have encrypted
+ - The permissions on the files (readable, writable, executable) 
+ - The size of each file
+ - The approximate size of each filename (to within 16 bytes using AES,
+   or 8 bytes using Blowfish)
+
+See also the extended introduction page if you are new to EncFS:
+http://www.arg0.net/encfsintro

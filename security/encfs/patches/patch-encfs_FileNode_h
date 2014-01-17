@@ -1,0 +1,11 @@
+$OpenBSD: patch-encfs_FileNode_h,v 1.1.1.1 2014/01/17 10:10:58 stsp Exp $
+--- encfs/FileNode.h.orig	Thu Jan 16 17:32:40 2014
++++ encfs/FileNode.h	Thu Jan 16 17:33:13 2014
+@@ -57,6 +57,7 @@ class FileNode (public)
+ 
+     // Returns < 0 on error (-errno), file descriptor on success.
+     int open(int flags) const;
++    int open(int flags, mode_t mode) const;
+ 
+     // getAttr returns 0 on success, -errno on failure
+     int getAttr(struct stat *stbuf) const;

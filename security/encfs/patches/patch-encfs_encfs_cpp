@@ -1,0 +1,46 @@
+$OpenBSD: patch-encfs_encfs_cpp,v 1.1.1.1 2014/01/17 10:10:58 stsp Exp $
+--- encfs/encfs.cpp.orig	Thu Nov 18 03:50:51 2010
++++ encfs/encfs.cpp	Thu Jan 16 18:08:31 2014
+@@ -553,6 +553,42 @@ int encfs_utimens(const char *path, const struct times
+     return withCipherPath( "utimens", path, _do_utimens, ts );
+ }
+ 
++int encfs_create(const char *path, mode_t mode, struct fuse_file_info *file)
++{
++    EncFS_Context *ctx = context();
++
++    int res = -EIO;
++    shared_ptr<DirNode> FSRoot = ctx->getRoot(&res);
++    if(!FSRoot)
++	return res;
++
++    try
++    {
++	shared_ptr<FileNode> fnode =
++	    FSRoot->openNode( path, "create", file->flags, mode, &res );
++
++	if(fnode)
++	{
++	    rLog(Info, "encfs_create for %s, flags %i", fnode->cipherName(),
++		    file->flags);
++
++	    if( res >= 0 )
++	    {
++		file->fh = (uintptr_t)ctx->putNode(path, fnode);
++		res = ESUCCESS;
++	    }
++	}
++    } catch( rlog::Error &err )
++    {
++	rError("error caught in create");
++	err.log( _RLWarningChannel );
++    }
++
++    res = encfs_release(path, file);
++
++    return res;
++}
++
+ int encfs_open(const char *path, struct fuse_file_info *file)
+ {
+     EncFS_Context *ctx = context();
