@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2013/12/09 08:56:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2014/01/17 10:03:47 ajacoutot Exp $
 
 EVO_VERSION=		3.10
 SUBST_VARS +=		EVO_VERSION
@@ -9,6 +9,7 @@ COMMENT=		evolution connector for MS Exchange via EWS
 
 GNOME_PROJECT=		evolution-ews
 GNOME_VERSION=		3.10.3
+REVISION=		0
 
 CATEGORIES=		mail
 
@@ -54,10 +55,8 @@ LIB_DEPENDS=		archivers/libmspack
 LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--disable-static \
-			--with-krb5
+CONFIGURE_ARGS=		--disable-static
 
-MODGNOME_CPPFLAGS=	$$(krb5-config --cflags)
 MODGNOME_LDFLAGS=	-Wl,-rpath,${TRUEPREFIX}/lib/evolution-data-server-${EVO_VERSION}
 
 post-install:
