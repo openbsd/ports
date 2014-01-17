@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/06/04 18:41:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2014/01/17 21:43:36 naddy Exp $
 
 COMMENT=		library for powerful image loading capabilities
 
@@ -41,7 +41,8 @@ CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	--with-squish=no \
 			--with-zlib=yes \
 			--enable-ILU \
-                        --enable-ILUT
+			--enable-ILUT \
+			--disable-allegro
 
 # This would only install three binary examples, we'll install it manually.
 CONFIGURE_ARGS+=	--with-examples=no
