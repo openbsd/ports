@@ -1,6 +1,9 @@
-$OpenBSD: patch-daemon_pty_open_c,v 1.8 2014/01/15 13:30:39 ajacoutot Exp $
+$OpenBSD: patch-daemon_pty_open_c,v 1.9 2014/01/17 13:12:15 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=722001
+From 9f5585c3d73e7013ad4e9b0e065e75646daf1bc6 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Wed, 15 Jan 2014 13:26:22 +0000
+Subject: sftp: force openpty(3) on BSD
 
 --- daemon/pty_open.c.orig	Thu Nov  7 16:12:17 2013
 +++ daemon/pty_open.c	Wed Jan 15 14:22:43 2014
