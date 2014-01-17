@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/01/17 10:10:58 stsp Exp $
+# $OpenBSD: Makefile,v 1.2 2014/01/17 10:16:07 ajacoutot Exp $
 
 COMMENT =		fuse-based cryptographic filesystem
 DISTNAME =		encfs-1.7.4
@@ -8,8 +8,6 @@ HOMEPAGE =		http://www.arg0.net/encfs
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB = 		boost_filesystem boost_serialization boost_system c \
 			crypto fuse m pthread rlog ssl stdc++
