@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2013/11/11 16:05:28 bcallah Exp $
+# $OpenBSD: Makefile,v 1.110 2014/01/17 14:17:37 ajacoutot Exp $
 
 COMMENT-main=		terminal emulation library
 COMMENT-python= 	python bindings for vte
@@ -11,8 +11,8 @@ SHARED_LIBS+=	vte	14.1    # 2609.0
 FULLPKGNAME-main=	vte-${GNOME_VERSION}
 FULLPKGNAME-python= 	py-${DISTNAME}
 
-REVISION-main =		12
-REVISION-python = 	9
+REVISION-main =		13
+REVISION-python = 	10
 
 CATEGORIES=		devel
 
@@ -22,17 +22,17 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 cairo expat ffi fontconfig freetype
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0 harfbuzz
+WANTLIB += m ncurses pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png pthread pthread-stubs xcb xcb-render xcb-shm
+WANTLIB += z
+
 MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
-
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm
-WANTLIB += expat ffi fontconfig freetype gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 m ncurses
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread-stubs stdc++ xcb xcb-render xcb-shm z pthread
-WANTLIB += harfbuzz gdk-x11-2.0 gtk-x11-2.0
 
 MODPY_RUNDEP=		No
 MULTI_PACKAGES= 	-main -python
@@ -47,13 +47,12 @@ RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS} \
 
 LIB_DEPENDS-main+=	${LIB_DEPENDS} \
 			x11/gtk+2
-WANTLIB-main=		${WANTLIB} c
+WANTLIB-main=		${WANTLIB} c util
 
 MODGNOME_TOOLS= 	gi
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--disable-gnome-pty-helper \
-			--with-gtk=2.0 \
+CONFIGURE_ARGS=		--with-gtk=2.0 \
 			--enable-python \
 			--program-suffix=2
 

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-python,v 1.7 2012/09/29 13:14:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST-python,v 1.8 2014/01/17 14:17:37 ajacoutot Exp $
 lib/pkgconfig/pyvte.pc
+lib/python${MODPY_VERSION}/site-packages/gtk-2.0/
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/vtemodule.so
 share/pygtk/2.0/defs/vte.defs
