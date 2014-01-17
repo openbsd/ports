@@ -1,7 +1,7 @@
-$OpenBSD: patch-conf_master_cf,v 1.6 2013/10/26 19:05:54 brad Exp $
---- conf/master.cf.orig	Sun Jul 14 11:29:38 2013
-+++ conf/master.cf	Sat Oct 26 02:51:44 2013
-@@ -8,12 +8,12 @@
+$OpenBSD: patch-conf_master_cf,v 1.7 2014/01/17 03:01:41 brad Exp $
+--- conf/master.cf.orig	Tue Dec 24 09:58:27 2013
++++ conf/master.cf	Wed Jan  8 20:47:21 2014
+@@ -9,12 +9,12 @@
  # service type  private unpriv  chroot  wakeup  maxproc command + args
  #               (yes)   (yes)   (yes)   (never) (100)
  # ==========================================================================
@@ -20,7 +20,7 @@ $OpenBSD: patch-conf_master_cf,v 1.6 2013/10/26 19:05:54 brad Exp $
  #  -o syslog_name=postfix/submission
  #  -o smtpd_tls_security_level=encrypt
  #  -o smtpd_sasl_auth_enable=yes
-@@ -24,7 +24,7 @@ smtp      inet  n       -       n       -       -     
+@@ -25,7 +25,7 @@ smtp      inet  n       -       n       -       -     
  #  -o smtpd_recipient_restrictions=
  #  -o smtpd_relay_restrictions=permit_sasl_authenticated,reject
  #  -o milter_macro_daemon_name=ORIGINATING
@@ -29,7 +29,7 @@ $OpenBSD: patch-conf_master_cf,v 1.6 2013/10/26 19:05:54 brad Exp $
  #  -o syslog_name=postfix/smtps
  #  -o smtpd_tls_wrappermode=yes
  #  -o smtpd_sasl_auth_enable=yes
-@@ -35,32 +35,32 @@ smtp      inet  n       -       n       -       -     
+@@ -36,32 +36,32 @@ smtp      inet  n       -       n       -       -     
  #  -o smtpd_recipient_restrictions=
  #  -o smtpd_relay_restrictions=permit_sasl_authenticated,reject
  #  -o milter_macro_daemon_name=ORIGINATING
@@ -83,7 +83,7 @@ $OpenBSD: patch-conf_master_cf,v 1.6 2013/10/26 19:05:54 brad Exp $
  #
  # ====================================================================
  # Interfaces to non-Postfix software. Be sure to examine the manual
-@@ -94,14 +94,14 @@ scache    unix  -       -       n       -       1     
+@@ -95,14 +95,14 @@ scache    unix  -       -       n       -       1     
  # Also specify in main.cf: cyrus_destination_recipient_limit=1
  #
  #cyrus     unix  -       n       n       -       -       pipe
