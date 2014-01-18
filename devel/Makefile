@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1188 2014/01/17 15:04:57 stsp Exp $
+# $OpenBSD: Makefile,v 1.1189 2014/01/18 09:32:07 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1335,6 +1335,9 @@
      SUBDIR += ruby-therubyracer,ruby19
      SUBDIR += ruby-therubyracer,ruby20
      SUBDIR += ruby-therubyracer,ruby21
+     SUBDIR += ruby-thor,ruby19
+     SUBDIR += ruby-thor,ruby20
+     SUBDIR += ruby-thor,ruby21
      SUBDIR += ruby-tilt
      SUBDIR += ruby-transaction-simple
      SUBDIR += ruby-trollop

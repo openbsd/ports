@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.401 2014/01/11 22:56:04 jeremy Exp $
+# $OpenBSD: Makefile,v 1.402 2014/01/18 09:28:59 jasper Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -332,6 +332,9 @@
      SUBDIR += ruby-fast-stemmer,ruby19
      SUBDIR += ruby-fast-stemmer,ruby20
      SUBDIR += ruby-fast-stemmer,ruby21
+     SUBDIR += ruby-gyoku,ruby19
+     SUBDIR += ruby-gyoku,ruby20
+     SUBDIR += ruby-gyoku,ruby21
      SUBDIR += ruby-haml
      SUBDIR += ruby-hpricot,ruby18
      SUBDIR += ruby-hpricot,ruby19
@@ -354,6 +357,9 @@
      SUBDIR += ruby-nokogiri,ruby19
      SUBDIR += ruby-nokogiri,ruby20
      SUBDIR += ruby-nokogiri,ruby21
+     SUBDIR += ruby-nori,ruby19
+     SUBDIR += ruby-nori,ruby20
+     SUBDIR += ruby-nori,ruby21
      SUBDIR += ruby-pdf-reader
      SUBDIR += ruby-pygments.rb
      SUBDIR += ruby-randexp
