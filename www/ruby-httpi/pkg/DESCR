@@ -1,1 +1,6 @@
 Common interface for Ruby's HTTP libraries.
+
+ruby-httpi supports multiple adapters of which Net::HTTP is used by
+default.  To use a different adapter please install the corresponding
+package such as ruby-httpclient.
+
