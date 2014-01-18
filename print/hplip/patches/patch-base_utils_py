@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_utils_py,v 1.12 2013/10/15 14:20:59 ajacoutot Exp $
---- base/utils.py.orig	Fri Oct 11 11:40:14 2013
-+++ base/utils.py	Tue Oct 15 15:42:07 2013
+$OpenBSD: patch-base_utils_py,v 1.13 2014/01/18 15:12:30 ajacoutot Exp $
+--- base/utils.py.orig	Wed Jan  8 10:32:57 2014
++++ base/utils.py	Sat Jan 18 15:47:36 2014
 @@ -575,7 +575,7 @@ class UserSettings(object): # Note: Deprecated after 2
          if len(path):
              self.cmd_pcard = 'hp-unload -d %DEVICE_URI%'
@@ -50,7 +50,73 @@ $OpenBSD: patch-base_utils_py,v 1.12 2013/10/15 14:20:59 ajacoutot Exp $
  def find_browser():
      if platform_avail and platform.system() == 'Darwin':
          return "open"
-@@ -2074,7 +2073,7 @@ def check_user_groups(required_grps_str, avl_grps):
+@@ -1942,38 +1941,39 @@ def downLoad_status(count, blockSize, totalSize):
+ def download_from_network(weburl, outputFile = None, useURLLIB=False):
+     result =False
+ 
+-    if weburl is "" or weburl is None:
+-        log.error("URL is empty")
+-        return result, ""
++    if platform.system() == "Linux":
++        if weburl is "" or weburl is None:
++            log.error("URL is empty")
++            return result, ""
+ 
+-    if outputFile is None:
+-        fp, outputFile = make_temp_file()
++        if outputFile is None:
++            fp, outputFile = make_temp_file()
+ 
+-    try:
+-        if useURLLIB is False:
+-            wget = which("wget")
+-            if wget:
+-                wget = os.path.join(wget, "wget")
+-                status, output = run("%s --cache=off --tries=3 --timeout=60 --output-document=%s %s" %(wget, outputFile, weburl))
+-                if status:
+-                    log.error("Failed to connect to HPLIP site. Error code = %d" %status)
+-                    return False, ""
+-            else:
+-                useURLLIB = True
++        try:
++            if useURLLIB is False:
++                wget = which("wget")
++                if wget:
++                    wget = os.path.join(wget, "wget")
++                    status, output = run("%s --cache=off --tries=3 --timeout=60 --output-document=%s %s" %(wget, outputFile, weburl))
++                    if status:
++                        log.error("Failed to connect to HPLIP site. Error code = %d" %status)
++                        return False, ""
++                else:
++                    useURLLIB = True
+ 
+-        if useURLLIB:
+-            sys.stdout.write("Download in progress...")
+-            urllib.urlretrieve(weburl, outputFile, downLoad_status)
++            if useURLLIB:
++                sys.stdout.write("Download in progress...")
++                urllib.urlretrieve(weburl, outputFile, downLoad_status)
+ 
+-    except IOError, e:
+-        log.error("I/O Error: %s" % e.strerror)
+-        return False, ""
++        except IOError, e:
++            log.error("I/O Error: %s" % e.strerror)
++            return False, ""
+ 
+-    if not os.path.exists(outputFile):
+-        log.error("Failed to download %s file."%outputFile)
+-        return False, ""
++        if not os.path.exists(outputFile):
++            log.error("Failed to download %s file."%outputFile)
++            return False, ""
+ 
+-    return True, outputFile
++        return True, outputFile
+ 
+ 
+ 
+@@ -2074,7 +2074,7 @@ def check_user_groups(required_grps_str, avl_grps):
          grps =re.sub(r'\s', '', str(grps))
          exp_grp_list = grps.split(',')
      else:
