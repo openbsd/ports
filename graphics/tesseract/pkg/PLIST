@@ -1,0 +1,81 @@
+@comment $OpenBSD: PLIST,v 1.1 2014/01/18 13:42:29 ajacoutot Exp $
+@pkgpath graphics/tesseract,-main
+@bin bin/ambiguous_words
+@bin bin/classifier_tester
+@bin bin/cntraining
+@bin bin/combine_tessdata
+@bin bin/dawg2wordlist
+@bin bin/mftraining
+@bin bin/shapeclustering
+@bin bin/tesseract
+@bin bin/unicharset_extractor
+@bin bin/wordlist2dawg
+include/tesseract/
+include/tesseract/apitypes.h
+include/tesseract/baseapi.h
+include/tesseract/basedir.h
+include/tesseract/capi.h
+include/tesseract/errcode.h
+include/tesseract/fileerr.h
+include/tesseract/genericvector.h
+include/tesseract/helpers.h
+include/tesseract/host.h
+include/tesseract/ltrresultiterator.h
+include/tesseract/memry.h
+include/tesseract/ndminx.h
+include/tesseract/pageiterator.h
+include/tesseract/params.h
+include/tesseract/platform.h
+include/tesseract/publictypes.h
+include/tesseract/resultiterator.h
+include/tesseract/serialis.h
+include/tesseract/strngs.h
+include/tesseract/tesscallback.h
+include/tesseract/thresholder.h
+include/tesseract/unichar.h
+include/tesseract/unicharmap.h
+include/tesseract/unicharset.h
+lib/libtesseract.a
+lib/libtesseract.la
+@lib lib/libtesseract.so.${LIBtesseract_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/tesseract.pc
+@man man/man1/ambiguous_words.1
+@man man/man1/cntraining.1
+@man man/man1/combine_tessdata.1
+@man man/man1/dawg2wordlist.1
+@man man/man1/mftraining.1
+@man man/man1/shapeclustering.1
+@man man/man1/tesseract.1
+@man man/man1/unicharset_extractor.1
+@man man/man1/wordlist2dawg.1
+@man man/man5/unicharambigs.5
+@man man/man5/unicharset.5
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/tesseract/
+share/examples/tesseract/eurotext.tif
+share/examples/tesseract/phototest.tif
+share/tessdata/
+share/tessdata/configs/
+share/tessdata/configs/ambigs.train
+share/tessdata/configs/api_config
+share/tessdata/configs/box.train
+share/tessdata/configs/box.train.stderr
+share/tessdata/configs/digits
+share/tessdata/configs/hocr
+share/tessdata/configs/inter
+share/tessdata/configs/kannada
+share/tessdata/configs/linebox
+share/tessdata/configs/logfile
+share/tessdata/configs/makebox
+share/tessdata/configs/quiet
+share/tessdata/configs/rebox
+share/tessdata/configs/strokewidth
+share/tessdata/configs/unlv
+share/tessdata/tessconfigs/
+share/tessdata/tessconfigs/batch
+share/tessdata/tessconfigs/batch.nochop
+share/tessdata/tessconfigs/matdemo
+share/tessdata/tessconfigs/msdemo
+share/tessdata/tessconfigs/nobatch
+share/tessdata/tessconfigs/segdemo

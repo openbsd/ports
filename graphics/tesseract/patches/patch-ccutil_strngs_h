@@ -1,9 +1,0 @@
-$OpenBSD: patch-ccutil_strngs_h,v 1.1 2011/12/22 09:47:50 ajacoutot Exp $
---- ccutil/strngs.h.orig	Wed Dec 21 20:11:25 2011
-+++ ccutil/strngs.h	Wed Dec 21 20:11:30 2011
-@@ -1,4 +1,4 @@
--﻿/**********************************************************************
-+/**********************************************************************
-  * File:        strngs.h  (Formerly strings.h)
-  * Description: STRING class definition.
-  * Author:					Ray Smith

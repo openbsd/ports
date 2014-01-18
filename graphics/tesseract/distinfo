@@ -1,4 +1,2 @@
-SHA256 (tesseract-3.20101024/eng.traineddata.gz) = OtFQxY1Zqn8g4SvtDhWjPJiPWAPWy6jvNmruwMGNTp0=
-SHA256 (tesseract-3.20101024/tesseract-3.01.tar.gz) = wksL0ngpG8k6skL5OEHB2HQ2iclDvYBK+8W4mNwKHJs=
-SIZE (tesseract-3.20101024/eng.traineddata.gz) = 742852
-SIZE (tesseract-3.20101024/tesseract-3.01.tar.gz) = 3287629
+SHA256 (tesseract-ocr-3.02.02.tar.gz) = Js05yz8qb28b9AUNHMCq417e5J60mpLfPLf5SHyqAT0=
+SIZE (tesseract-ocr-3.02.02.tar.gz) = 3890393
