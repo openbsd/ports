@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2014/01/14 19:19:35 bluhm Exp $
+# $OpenBSD: Makefile,v 1.10 2014/01/18 10:05:38 bluhm Exp $
 
 COMMENT =		make common perl modules IPv6 ready by hotpatching
 
-DISTNAME =		Net-INET6Glue-0.601
+DISTNAME =		Net-INET6Glue-0.602
 
 CATEGORIES =		net
 
