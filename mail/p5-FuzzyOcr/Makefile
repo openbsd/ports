@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2013/09/25 07:58:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2014/01/18 13:45:08 ajacoutot Exp $
 
 COMMENT=		detect image spam with SpamAssassin
 
 V=			3.6.0.146
 DISTNAME=		fuzzyocr-$V
 PKGNAME=		p5-FuzzyOcr-$V
-REVISION=		1
+REVISION=		2
 PKG_ARCH=		*
 CATEGORIES=		mail perl5
 
