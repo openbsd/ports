@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_sonos_discovery_rb,v 1.1.1.1 2014/01/18 09:32:32 jasper Exp $
+
+XXX: emulate Linux' multicast TTL until either ruby or the kernel are
+fixed to deal with unsigned char options, or to accept int options.
+
+--- lib/sonos/discovery.rb.orig	Fri Jan 17 15:09:37 2014
++++ lib/sonos/discovery.rb	Fri Jan 17 15:09:45 2014
+@@ -75,7 +75,7 @@ module Sonos
+       @socket = UDPSocket.open
+ 
+       # We're going to use IP with the multicast TTL. Mystery third parameter is a mystery.
+-      @socket.setsockopt(Socket::IPPROTO_IP, Socket::IP_MULTICAST_TTL, 2)
++      @socket.setsockopt(Socket::IPPROTO_IP, 33, 2)
+     end
+ 
+     def search_message
