@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2014/01/18 13:44:17 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2014/01/18 22:04:35 ajacoutot Exp $
 
 COMMENT=	$L language data for Tesseract
 
@@ -6,6 +6,7 @@ V=		3.02
 DISTNAME=	tesseract-ocr-${V}.${L}
 PKGNAME =	tesseract-${L}-${V}
 WRKDIST=	${WRKDIR}/tesseract-ocr
+EPOCH ?=	0
 
 CATEGORIES=	graphics textproc
 
