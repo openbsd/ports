@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2014/01/04 20:49:57 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.18 2014/01/18 19:41:04 bcallah Exp $
 @conflict tmw-*
 @conflict tmw-music-*
 @pkgpath games/tmw
@@ -41,6 +41,7 @@ share/manaplus/data/fonts/liberationsansmono-bold.ttf
 share/manaplus/data/fonts/liberationsansmono.ttf
 share/manaplus/data/fonts/mplus-1p-bold.ttf
 share/manaplus/data/fonts/mplus-1p-regular.ttf
+share/manaplus/data/fonts/wqy-microhei.ttf
 share/manaplus/data/graphics/
 share/manaplus/data/graphics/flags/
 share/manaplus/data/graphics/flags/cn.png
