@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2013/12/30 11:46:16 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2014/01/18 07:33:16 landry Exp $
 
 BROKEN-powerpc=	does not build, error: lvalue required as increment operand
 BROKEN-alpha=	pfe segfaults when called with --help during build
+BROKEN-sparc64=	pfe segfaults when called with --help during build
 
 COMMENT=	Portable Forth Environment
 
