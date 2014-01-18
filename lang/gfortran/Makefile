@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.24 2014/01/12 22:16:02 pascal Exp $
+# $OpenBSD: Makefile,v 1.25 2014/01/18 20:56:53 pascal Exp $
 
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
-BROKEN-powerpc = Segmentation fault during build
 SYSV =		4.2.1
 
 BROKEN-hppa =	port not contributed

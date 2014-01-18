@@ -1,13 +1,13 @@
-$OpenBSD: patch-gcc_config_rs6000_t-openbsd,v 1.1.1.1 2010/10/10 17:39:07 steven Exp $
---- gcc/config/rs6000/t-openbsd.orig	Tue Jun 12 12:23:22 2007
-+++ gcc/config/rs6000/t-openbsd	Tue Jun 12 12:18:16 2007
-@@ -0,0 +1,55 @@
+$OpenBSD: patch-gcc_config_rs6000_t-openbsd,v 1.2 2014/01/18 20:56:53 pascal Exp $
+--- gcc/config/rs6000/t-openbsd.orig	Sat Jan 18 12:17:59 2014
++++ gcc/config/rs6000/t-openbsd	Sat Jan 18 14:33:51 2014
+@@ -0,0 +1,59 @@
 +# include t-rs6000 too
 +# this is taken from t-ppccomm
 +# but crt* removed.
 +
 +
-+LIB2FUNCS_EXTRA = tramp.S
++LIB2FUNCS_EXTRA = tramp.S darwin-ldouble.c
 +
 +# This one can't end up in shared libgcc
 +LIB2FUNCS_STATIC_EXTRA = eabi.S
@@ -31,6 +31,10 @@ $OpenBSD: patch-gcc_config_rs6000_t-openbsd,v 1.1.1.1 2010/10/10 17:39:07 steven
 +tramp.S: $(srcdir)/config/rs6000/tramp.asm
 +	cat $(srcdir)/config/rs6000/tramp.asm > tramp.S
 +
++darwin-ldouble.c: $(srcdir)/config/rs6000/darwin-ldouble.c
++	cat $(srcdir)/config/rs6000/darwin-ldouble.c > darwin-ldouble.c
++
++# Switch synonyms
 +# Switch synonyms
 +MULTILIB_MATCHES_FLOAT	= msoft-float=mcpu?401 \
 +			  msoft-float=mcpu?403 \

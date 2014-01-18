@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_rs6000_openbsd_h,v 1.1.1.1 2010/10/10 17:39:07 steven Exp $
---- gcc/config/rs6000/openbsd.h.orig	Sat Jun  9 17:11:08 2007
-+++ gcc/config/rs6000/openbsd.h	Sat Jun  9 18:24:52 2007
+$OpenBSD: patch-gcc_config_rs6000_openbsd_h,v 1.2 2014/01/18 20:56:53 pascal Exp $
+--- gcc/config/rs6000/openbsd.h.orig	Sat Jan 18 12:17:59 2014
++++ gcc/config/rs6000/openbsd.h	Sat Jan 18 13:54:26 2014
 @@ -0,0 +1,132 @@
 +/* Configuration file for an rs6000 OpenBSD target.
 +   Copyright (C) 1999 Free Software Foundation, Inc.
@@ -62,9 +62,6 @@ $OpenBSD: patch-gcc_config_rs6000_openbsd_h,v 1.1.1.1 2010/10/10 17:39:07 steven
 +#undef	CPP_OS_DEFAULT_SPEC
 +#define CPP_OS_DEFAULT_SPEC "%(cpp_os_openbsd)"
 +
-+#undef LINKER_NAME 
-+#define LINKER_NAME "ld"
-+
 +#undef LINK_SPEC
 +#define LINK_SPEC "%{shared:-shared} \
 +  %{!shared: \
@@ -78,6 +75,9 @@ $OpenBSD: patch-gcc_config_rs6000_openbsd_h,v 1.1.1.1 2010/10/10 17:39:07 steven
 +
 +#undef	STARTFILE_DEFAULT_SPEC
 +#define STARTFILE_DEFAULT_SPEC "%(startfile_openbsd)"
++
++#undef CRTSAVRES_DEFAULT_SPEC 
++#define CRTSAVRES_DEFAULT_SPEC ""
 +
 +#undef	ENDFILE_DEFAULT_SPEC
 +#define ENDFILE_DEFAULT_SPEC "%(endfile_openbsd)"
