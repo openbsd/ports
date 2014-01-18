@@ -1,20 +1,23 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/01/18 09:32:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2014/01/18 09:45:03 jasper Exp $
 
-COMMENT=		control Sonos speakers with Ruby
+COMMENT =		control Sonos speakers with Ruby
 
-DISTNAME=		sonos-0.3.4
+DISTNAME =		sonos-0.3.4
+REVISION =		0
 
-CATEGORIES=		audio net
+CATEGORIES =		audio net
+
+MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES=		lang/ruby
+MODULES =		lang/ruby
 
-CONFIGURE_STYLE=	ruby gem
+CONFIGURE_STYLE =	ruby gem
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		devel/ruby-thor,${MODRUBY_FLAVOR} \
+BUILD_DEPENDS =		${RUN_DEPENDS}
+RUN_DEPENDS =		devel/ruby-thor,${MODRUBY_FLAVOR} \
 			www/ruby-httpclient,${MODRUBY_FLAVOR} \
 			www/ruby-savon,${MODRUBY_FLAVOR}
 
