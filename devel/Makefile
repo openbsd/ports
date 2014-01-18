@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1189 2014/01/18 09:32:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.1190 2014/01/18 19:14:09 syl Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1059,6 +1059,7 @@
      SUBDIR += p5-Universal-isa
      SUBDIR += p5-Universal-moniker
      SUBDIR += p5-Universal-require
+     SUBDIR += p5-Unix-Mknod
      SUBDIR += p5-VCP-autrijus
      SUBDIR += p5-Variable-Magic
      SUBDIR += p5-Want
