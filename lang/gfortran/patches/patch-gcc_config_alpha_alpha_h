@@ -1,0 +1,19 @@
+$OpenBSD: patch-gcc_config_alpha_alpha_h,v 1.1 2014/01/18 11:38:22 pascal Exp $
+--- gcc/config/alpha/alpha.h.orig	Sat Dec  7 10:55:11 2013
++++ gcc/config/alpha/alpha.h	Sat Dec  7 10:55:53 2013
+@@ -373,12 +373,11 @@ extern enum alpha_fp_trap_mode alpha_fptm;
+ 
+ /* Align all constants and variables to at least a word boundary so
+    we can pick up pieces of them faster.  */
+-/* ??? Only if block-move stuff knows about different source/destination
+-   alignment.  */
+-#if 0
+ #define CONSTANT_ALIGNMENT(EXP, ALIGN) MAX ((ALIGN), BITS_PER_WORD)
+ #define DATA_ALIGNMENT(EXP, ALIGN) MAX ((ALIGN), BITS_PER_WORD)
+-#endif
++
++/* Make local arrays of chars word-aligned for the same reasons.  */
++#define LOCAL_ALIGNMENT(TYPE, ALIGN) DATA_ALIGNMENT (TYPE, ALIGN)
+ 
+ /* Set this nonzero if move instructions will actually fail to work
+    when given unaligned data.

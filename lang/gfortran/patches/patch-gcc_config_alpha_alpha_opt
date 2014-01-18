@@ -1,0 +1,17 @@
+$OpenBSD: patch-gcc_config_alpha_alpha_opt,v 1.1 2014/01/18 11:38:22 pascal Exp $
+--- gcc/config/alpha/alpha.opt.orig	Sat Jun 25 03:22:41 2005
++++ gcc/config/alpha/alpha.opt	Sat Dec  7 10:48:00 2013
+@@ -43,8 +43,13 @@ mieee
+ Target Report RejectNegative Mask(IEEE)
+ Emit IEEE-conformant code, without inexact exceptions
+ 
++mno-ieee
++Target Report RejectNegative InverseMask(IEEE)
++Emit non-IEEE-conformant code
++
+ mieee-with-inexact
+ Target Report RejectNegative Mask(IEEE_WITH_INEXACT)
++Emit IEEE-conformant code, with inexact exceptions
+ 
+ mbuild-constants
+ Target Report Mask(BUILD_CONSTANTS)
