@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.102 2014/01/09 11:08:51 espie Exp $
+# $OpenBSD: Engine.pm,v 1.103 2014/01/18 11:23:48 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -437,8 +437,13 @@ sub add_fatal
 {
 	my ($self, $v, $error, @messages) = @_;
 	push(@{$self->{errors}}, $v);
-	my $fh = $self->{locker}->lock($v);
-	print $fh "error=$error\n" if $fh;
+	if ($self->{heldlocks}{$v}) {
+		print {$self->{heldlocks}{$v}} "error=$error\n";
+		delete $self->{heldlocks}{$v};
+	} else {
+		my $fh = $self->{locker}->lock($v);
+		print $fh "error=$error\n" if $fh;
+	}
 	$self->{logger}->log_error($v, @messages);
 }
 
@@ -452,8 +457,9 @@ sub rebuild_info
 		$v->ensure_fullpkgname;
 	}
 
+	$self->{heldlocks} = {};
 	for my $v (@l) {
-		$self->{locker}->lock($v);
+		$self->{heldlocks}{$v} = $self->{locker}->lock($v);
 		if (defined $v->{info}{FDEPENDS}) {
 			for my $f (values %{$v->{info}{FDEPENDS}}) {
 				$f->forget;
@@ -463,8 +469,10 @@ sub rebuild_info
 	}
 	$self->{state}->grabber->grab_subdirs($core, \%subdirs);
 	for my $v (@l) {
+		next unless $self->{heldlocks}{$v};
 		$self->{locker}->unlock($v);
 	}
+	$self->{heldlocks} = {};
 }
 
 sub start_new_job
