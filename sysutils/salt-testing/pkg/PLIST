@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/07 19:23:11 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/01/18 14:03:58 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/SaltTesting-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/salttesting/
 lib/python${MODPY_VERSION}/site-packages/salttesting/__init__.py
@@ -6,8 +6,6 @@ lib/python${MODPY_VERSION}/site-packages/salttesting/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/salttesting/case.py
 lib/python${MODPY_VERSION}/site-packages/salttesting/case.pyc
 lib/python${MODPY_VERSION}/site-packages/salttesting/ext/
-lib/python${MODPY_VERSION}/site-packages/salttesting/ext/HTMLTestRunner.py
-lib/python${MODPY_VERSION}/site-packages/salttesting/ext/HTMLTestRunner.pyc
 lib/python${MODPY_VERSION}/site-packages/salttesting/ext/__init__.py
 lib/python${MODPY_VERSION}/site-packages/salttesting/ext/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/salttesting/ext/console.py
@@ -30,5 +28,13 @@ lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/__init__.py
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/pep263.py
 lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/pep263.pyc
+lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/pep8.py
+lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/pep8.pyc
+lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/string_format.py
+lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/string_format.pyc
+lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/strings.py
+lib/python${MODPY_VERSION}/site-packages/salttesting/pylintplugins/strings.pyc
+lib/python${MODPY_VERSION}/site-packages/salttesting/unit.py
+lib/python${MODPY_VERSION}/site-packages/salttesting/unit.pyc
 lib/python${MODPY_VERSION}/site-packages/salttesting/version.py
 lib/python${MODPY_VERSION}/site-packages/salttesting/version.pyc
