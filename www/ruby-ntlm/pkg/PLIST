@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/01/18 09:24:21 jasper Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.gitignore
+${GEM_LIB}/gems/${DISTNAME}/.travis.yml
+${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
+${GEM_LIB}/gems/${DISTNAME}/Gemfile
+${GEM_LIB}/gems/${DISTNAME}/README.md
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/examples/
+${GEM_LIB}/gems/${DISTNAME}/examples/http.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/imap.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/smtp.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/net/
+${GEM_LIB}/gems/${DISTNAME}/lib/net/ntlm.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rubyntlm.rb
+${GEM_LIB}/gems/${DISTNAME}/rubyntlm.gemspec
+${GEM_LIB}/gems/${DISTNAME}/spec/
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/ntlm_spec.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
