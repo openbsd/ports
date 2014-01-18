@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2014/01/18 19:09:57 syl Exp $
+${P5ARCH}/auto/Unix/Mknod/Mknod.so

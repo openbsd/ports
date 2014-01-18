@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/01/18 19:09:57 syl Exp $
+%%SHARED%%
+${P5ARCH}/
+${P5ARCH}/Unix/
+${P5ARCH}/Unix/Mknod.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Unix/
+${P5ARCH}/auto/Unix/Mknod/
+${P5ARCH}/auto/Unix/Mknod/Mknod.bs
+@man man/man3p/Unix::Mknod.3p
