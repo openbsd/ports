@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_libjingle_libjingle_gyp,v 1.8 2013/12/12 10:43:18 robert Exp $
---- third_party/libjingle/libjingle.gyp.orig.port	Wed Dec  4 21:56:06 2013
-+++ third_party/libjingle/libjingle.gyp	Thu Dec  5 15:32:45 2013
-@@ -538,7 +538,7 @@
+$OpenBSD: patch-third_party_libjingle_libjingle_gyp,v 1.9 2014/01/18 11:42:04 robert Exp $
+--- third_party/libjingle/libjingle.gyp.orig.port	Mon Jan 13 21:59:23 2014
++++ third_party/libjingle/libjingle.gyp	Thu Jan 16 12:26:42 2014
+@@ -541,7 +541,7 @@
              '<(libjingle_source)/talk/base/unixfilesystem.h',
            ],
          }],

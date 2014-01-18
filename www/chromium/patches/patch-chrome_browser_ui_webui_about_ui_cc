@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.14 2013/12/12 10:43:18 robert Exp $
---- chrome/browser/ui/webui/about_ui.cc.orig.port	Wed Dec  4 21:55:42 2013
-+++ chrome/browser/ui/webui/about_ui.cc	Thu Dec  5 15:32:45 2013
+$OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.15 2014/01/18 11:42:04 robert Exp $
+--- chrome/browser/ui/webui/about_ui.cc.orig.port	Mon Jan 13 22:00:06 2014
++++ chrome/browser/ui/webui/about_ui.cc	Thu Jan 16 12:26:42 2014
 @@ -67,7 +67,7 @@
  #include "chrome/browser/ui/webui/theme_source.h"
  #endif
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.14 2013/12/12 10:43:18 r
  #include "content/public/browser/zygote_host_linux.h"
  #include "content/public/common/sandbox_linux.h"
  #endif
-@@ -780,6 +780,7 @@ std::string AboutLinuxProxyConfig() {
+@@ -783,6 +783,7 @@ std::string AboutLinuxProxyConfig() {
    return data;
  }
  
@@ -18,7 +18,7 @@ $OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.14 2013/12/12 10:43:18 r
  void AboutSandboxRow(std::string* data, const std::string& prefix, int name_id,
                       bool good) {
    data->append("<tr><td>");
-@@ -846,6 +847,7 @@ std::string AboutSandbox() {
+@@ -849,6 +850,7 @@ std::string AboutSandbox() {
    return data;
  }
  #endif
@@ -26,7 +26,7 @@ $OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.14 2013/12/12 10:43:18 r
  
  // AboutMemoryHandler ----------------------------------------------------------
  
-@@ -1025,7 +1027,7 @@ void AboutUIHTMLSource::StartDataRequest(
+@@ -1028,7 +1030,7 @@ void AboutUIHTMLSource::StartDataRequest(
      response = ResourceBundle::GetSharedInstance().GetRawDataResource(
          IDR_OS_CREDITS_HTML).as_string();
  #endif

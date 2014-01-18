@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_ffmpeg_libavutil_cpu_c,v 1.1 2013/12/12 10:43:18 robert Exp $
---- third_party/ffmpeg/libavutil/cpu.c.orig.port	Thu Dec  5 15:47:10 2013
-+++ third_party/ffmpeg/libavutil/cpu.c	Tue Dec 10 11:34:41 2013
-@@ -30,10 +30,7 @@
+$OpenBSD: patch-third_party_ffmpeg_libavutil_cpu_c,v 1.2 2014/01/18 11:42:04 robert Exp $
+--- third_party/ffmpeg/libavutil/cpu.c.orig.port	Mon Jan 13 22:01:10 2014
++++ third_party/ffmpeg/libavutil/cpu.c	Thu Jan 16 12:26:42 2014
+@@ -31,10 +31,7 @@
  #if HAVE_GETPROCESSAFFINITYMASK
  #include <windows.h>
  #endif
@@ -11,5 +11,5 @@ $OpenBSD: patch-third_party_ffmpeg_libavutil_cpu_c,v 1.1 2013/12/12 10:43:18 rob
 -#endif
 +#if HAVE_SYSCTL && !defined(__OpenBSD__)
  #include <sys/types.h>
- #include <sys/param.h>
  #include <sys/sysctl.h>
+ #endif

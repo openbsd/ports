@@ -1,6 +1,6 @@
-$OpenBSD: patch-media_media_gyp,v 1.24 2013/12/12 10:43:18 robert Exp $
---- media/media.gyp.orig.port	Thu Dec  5 15:42:54 2013
-+++ media/media.gyp	Tue Dec 10 13:18:58 2013
+$OpenBSD: patch-media_media_gyp,v 1.25 2014/01/18 11:42:04 robert Exp $
+--- media/media.gyp.orig.port	Mon Jan 13 21:59:40 2014
++++ media/media.gyp	Thu Jan 16 12:26:42 2014
 @@ -27,11 +27,15 @@
        }, {
          'use_alsa%': 0,
@@ -18,7 +18,7 @@ $OpenBSD: patch-media_media_gyp,v 1.24 2013/12/12 10:43:18 robert Exp $
      ],
    },
    'includes': [
-@@ -156,6 +160,8 @@
+@@ -155,6 +159,8 @@
          'audio/pulse/pulse_input.h',
          'audio/pulse/pulse_output.cc',
          'audio/pulse/pulse_output.h',
@@ -27,7 +27,7 @@ $OpenBSD: patch-media_media_gyp,v 1.24 2013/12/12 10:43:18 robert Exp $
          'audio/pulse/pulse_unified.cc',
          'audio/pulse/pulse_unified.h',
          'audio/pulse/pulse_util.cc',
-@@ -547,6 +553,21 @@
+@@ -551,6 +557,21 @@
              'webm/chromeos/webm_encoder.h',
            ],
          }],
@@ -49,7 +49,7 @@ $OpenBSD: patch-media_media_gyp,v 1.24 2013/12/12 10:43:18 robert Exp $
          ['use_alsa==1', {
            'link_settings': {
              'libraries': [
-@@ -563,7 +584,7 @@
+@@ -567,7 +588,7 @@
              'audio/openbsd/audio_manager_openbsd.h',
            ],
          }],
@@ -58,7 +58,7 @@ $OpenBSD: patch-media_media_gyp,v 1.24 2013/12/12 10:43:18 robert Exp $
            'variables': {
              'conditions': [
                ['sysroot!=""', {
-@@ -836,7 +857,7 @@
+@@ -832,7 +853,7 @@
              'ENABLE_EAC3_PLAYBACK',
            ],
          }],

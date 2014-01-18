@@ -1,16 +1,16 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.7 2013/12/12 10:43:18 robert Exp $
---- chrome/browser/chrome_content_browser_client.cc.orig.port	Thu Dec  5 15:35:47 2013
-+++ chrome/browser/chrome_content_browser_client.cc	Thu Dec  5 15:37:49 2013
-@@ -479,7 +479,7 @@ void FillFontFamilyMap(const PrefService* prefs,
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.8 2014/01/18 11:42:03 robert Exp $
+--- chrome/browser/chrome_content_browser_client.cc.orig.port	Thu Jan 16 12:34:25 2014
++++ chrome/browser/chrome_content_browser_client.cc	Thu Jan 16 12:35:10 2014
+@@ -492,7 +492,7 @@ void FillFontFamilyMap(const PrefService* prefs,
    }
  }
  
 -#if defined(OS_POSIX) && !defined(OS_MACOSX)
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
- int GetCrashSignalFD(const CommandLine& command_line) {
-   if (command_line.HasSwitch(switches::kExtensionProcess)) {
-     ExtensionCrashHandlerHostLinux* crash_handler =
-@@ -504,7 +504,7 @@ int GetCrashSignalFD(const CommandLine& command_line) 
+ breakpad::CrashHandlerHostLinux* CreateCrashHandlerHost(
+     const std::string& process_type) {
+   base::FilePath dumps_path;
+@@ -548,7 +548,7 @@ int GetCrashSignalFD(const CommandLine& command_line) 
  
    return -1;
  }
@@ -19,16 +19,16 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.7 2013/12/12
  
  #if !defined(OS_CHROMEOS)
  GURL GetEffectiveURLForSignin(const GURL& url) {
-@@ -1319,7 +1319,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
-     command_line->AppendSwitchASCII(switches::kEnableCrashReporter,
-                                     child_process_logging::GetClientId());
-   }
--#elif defined(OS_POSIX)
-+#elif defined(OS_POSIX) && !defined(OS_BSD)
-   if (IsCrashReporterEnabled()) {
-     command_line->AppendSwitchASCII(switches::kEnableCrashReporter,
-         child_process_logging::GetClientId() + "," + base::GetLinuxDistro());
-@@ -2432,7 +2432,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+@@ -1397,7 +1397,7 @@ std::string ChromeContentBrowserClient::GetCanonicalEn
+ 
+ void ChromeContentBrowserClient::AppendExtraCommandLineSwitches(
+     CommandLine* command_line, int child_process_id) {
+-#if defined(OS_POSIX)
++#if defined(OS_POSIX) && !defined(OS_BSD)
+   if (breakpad::IsCrashReporterEnabled()) {
+     std::string enable_crash_reporter;
+     GoogleUpdateSettings::GetMetricsId(&enable_crash_reporter);
+@@ -2529,7 +2529,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
            Profile::FromBrowserContext(browser_context)));
  }
  

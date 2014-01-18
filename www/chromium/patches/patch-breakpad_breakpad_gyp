@@ -1,0 +1,12 @@
+$OpenBSD: patch-breakpad_breakpad_gyp,v 1.3 2014/01/18 11:42:03 robert Exp $
+--- breakpad/breakpad.gyp.orig.port	Thu Jan 16 12:47:58 2014
++++ breakpad/breakpad.gyp	Thu Jan 16 12:48:05 2014
+@@ -334,7 +334,7 @@
+         },
+       ],
+     }],
+-    [ 'OS=="linux" or OS=="android"', {
++    [ 'OS=="linux" or OS=="android" or OS=="openbsd"', {
+       'conditions': [
+         ['OS=="android"', {
+           'defines': [

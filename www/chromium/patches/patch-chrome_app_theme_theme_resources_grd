@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_app_theme_theme_resources_grd,v 1.2 2013/12/12 10:43:18 robert Exp $
---- chrome/app/theme/theme_resources.grd.orig.port	Thu Dec  5 15:33:42 2013
-+++ chrome/app/theme/theme_resources.grd	Thu Dec  5 15:34:13 2013
-@@ -507,7 +507,7 @@
-         <structure type="chrome_scaled_image" name="IDR_NOTIFICATION_ALERT" file="cros/notification_alert.png" />
+$OpenBSD: patch-chrome_app_theme_theme_resources_grd,v 1.3 2014/01/18 11:42:03 robert Exp $
+--- chrome/app/theme/theme_resources.grd.orig.port	Mon Jan 13 22:00:53 2014
++++ chrome/app/theme/theme_resources.grd	Thu Jan 16 12:26:42 2014
+@@ -514,7 +514,7 @@
+       <if expr="pp_ifdef('chromeos')">
          <structure type="chrome_scaled_image" name="IDR_NOTIFICATION_PERIPHERAL_BATTERY_LOW" file="cros/notification_peripheral_battery_low.png" />
        </if>
 -      <if expr="is_win or is_linux">

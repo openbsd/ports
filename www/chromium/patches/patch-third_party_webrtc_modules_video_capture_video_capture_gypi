@@ -1,16 +1,16 @@
-$OpenBSD: patch-third_party_webrtc_modules_video_capture_video_capture_gypi,v 1.3 2013/12/12 10:43:18 robert Exp $
---- third_party/webrtc/modules/video_capture/video_capture.gypi.orig.port	Wed Dec  4 21:57:06 2013
-+++ third_party/webrtc/modules/video_capture/video_capture.gypi	Thu Dec  5 15:32:45 2013
-@@ -41,7 +41,7 @@
+$OpenBSD: patch-third_party_webrtc_modules_video_capture_video_capture_gypi,v 1.4 2014/01/18 11:42:04 robert Exp $
+--- third_party/webrtc/modules/video_capture/video_capture.gypi.orig.port	Thu Jan 16 12:44:59 2014
++++ third_party/webrtc/modules/video_capture/video_capture.gypi	Thu Jan 16 12:45:25 2014
+@@ -36,7 +36,7 @@
            ],
          }, {  # include_internal_video_capture == 1
            'conditions': [
 -            ['OS=="linux"', {
 +            ['OS=="linux" or OS=="openbsd"', {
-               'include_dirs': [
-                 'linux',
-               ],
-@@ -162,7 +162,7 @@
+               'sources': [
+                 'linux/device_info_linux.cc',
+                 'linux/device_info_linux.h',
+@@ -146,7 +146,7 @@
              'test/video_capture_main_mac.mm',
            ],
            'conditions': [
@@ -19,14 +19,12 @@ $OpenBSD: patch-third_party_webrtc_modules_video_capture_video_capture_gypi,v 1.
                'cflags': [
                  '-Wno-write-strings',
                ],
-@@ -170,9 +170,8 @@
+@@ -154,7 +154,7 @@
                  '-lpthread -lm',
                ],
              }],
 -            ['OS=="linux"', {
 +            ['OS=="linux" or OS=="openbsd"', {
                'libraries': [
--                '-lrt',
+                 '-lrt',
                  '-lXext',
-                 '-lX11',
-               ],

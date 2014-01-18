@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.15 2013/12/12 10:43:18 robert Exp $
---- content/browser/browser_main_loop.cc.orig.port	Wed Dec  4 21:54:49 2013
-+++ content/browser/browser_main_loop.cc	Thu Dec  5 15:32:45 2013
+$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.16 2014/01/18 11:42:04 robert Exp $
+--- content/browser/browser_main_loop.cc.orig.port	Mon Jan 13 21:59:58 2014
++++ content/browser/browser_main_loop.cc	Thu Jan 16 12:26:42 2014
 @@ -96,7 +96,7 @@
  #include "ui/gfx/gtk_util.h"
  #endif
@@ -19,7 +19,7 @@ $OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.15 2013/12/12 10:43:18 
  void SetupSandbox(const CommandLine& parsed_command_line) {
    TRACE_EVENT0("startup", "SetupSandbox");
    // TODO(evanm): move this into SandboxWrapper; I'm just trying to move this
-@@ -357,7 +357,7 @@ void BrowserMainLoop::EarlyInitialization() {
+@@ -380,7 +380,7 @@ void BrowserMainLoop::EarlyInitialization() {
    crypto::EnsureNSPRInit();
  #endif  // !defined(USE_OPENSSL)
  

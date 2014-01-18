@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_ui_webui_certificate_viewer_webui_cc,v 1.1 2014/01/18 11:42:04 robert Exp $
+--- chrome/browser/ui/webui/certificate_viewer_webui.cc.orig.port	Thu Jan 16 20:15:57 2014
++++ chrome/browser/ui/webui/certificate_viewer_webui.cc	Thu Jan 16 20:16:12 2014
+@@ -228,7 +228,7 @@ void CertificateViewerDialogHandler::ExportCertificate
+   if (cert_index < 0)
+     return;
+ 
+-  NativeWebContentsModalDialog window =
++  _GtkWindow* window =
+       platform_util::GetTopLevel(dialog_->dialog()->GetNativeDialog());
+   ShowCertExportDialog(web_ui()->GetWebContents(),
+                        window,

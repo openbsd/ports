@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_libjingle_source_talk_base_physicalsocketserver_cc,v 1.2 2013/09/29 19:04:06 robert Exp $
---- third_party/libjingle/source/talk/base/physicalsocketserver.cc.orig.port	Wed Sep 18 10:25:16 2013
-+++ third_party/libjingle/source/talk/base/physicalsocketserver.cc	Sun Sep 22 16:09:42 2013
-@@ -442,7 +442,7 @@ class PhysicalSocket : public AsyncSocket, public sigs
+$OpenBSD: patch-third_party_libjingle_source_talk_base_physicalsocketserver_cc,v 1.3 2014/01/18 11:42:04 robert Exp $
+--- third_party/libjingle/source/talk/base/physicalsocketserver.cc.orig.port	Mon Jan 13 22:01:28 2014
++++ third_party/libjingle/source/talk/base/physicalsocketserver.cc	Thu Jan 16 12:26:42 2014
+@@ -446,7 +446,7 @@ class PhysicalSocket : public AsyncSocket, public sigs
  
      ASSERT(false);
      return -1;
