@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/12/22 09:46:46 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2014/01/18 14:11:23 ajacoutot Exp $
 @bin bin/adaptmaptest
 @bin bin/adaptnorm_reg
 @bin bin/affine_reg
 @bin bin/alltests_reg
-@bin bin/alphaclean_reg
+@bin bin/alphaops_reg
 @bin bin/alphaxform_reg
 @bin bin/arithtest
 @bin bin/barcodetest
@@ -28,12 +27,14 @@
 @bin bin/ccthin1_reg
 @bin bin/ccthin2_reg
 @bin bin/cmapquant_reg
+@bin bin/coloring_reg
 @bin bin/colormask_reg
 @bin bin/colormorphtest
 @bin bin/colorquant_reg
 @bin bin/colorseg_reg
 @bin bin/colorsegtest
 @bin bin/colorspacetest
+@bin bin/compare_reg
 @bin bin/comparepages
 @bin bin/comparetest
 @bin bin/compfilter_reg
@@ -52,10 +53,13 @@
 @bin bin/cornertest
 @bin bin/croptext
 @bin bin/dewarp_reg
-@bin bin/dewarptest
+@bin bin/dewarptest1
+@bin bin/dewarptest2
+@bin bin/dewarptest3
 @bin bin/digitprep1
 @bin bin/distance_reg
 @bin bin/dithertest
+@bin bin/dna_reg
 @bin bin/dwalineargen
 @bin bin/dwamorph1_reg
 @bin bin/dwamorph2_reg
@@ -78,6 +82,7 @@
 @bin bin/fmorphauto_reg
 @bin bin/fmorphautogen
 @bin bin/fpix_reg
+@bin bin/fpixcontours
 @bin bin/gammatest
 @bin bin/genfonts
 @bin bin/gifio_reg
@@ -165,7 +170,6 @@
 @bin bin/rotateorth_reg
 @bin bin/rotateorthtest1
 @bin bin/rotatetest1
-@bin bin/rotatetest2
 @bin bin/runlengthtest
 @bin bin/scale_reg
 @bin bin/scaleandtile
@@ -221,7 +225,6 @@ include/leptonica/gplot.h
 include/leptonica/heap.h
 include/leptonica/imageio.h
 include/leptonica/jbclass.h
-include/leptonica/leptprotos.h
 include/leptonica/leptwin.h
 include/leptonica/list.h
 include/leptonica/morph.h
@@ -235,3 +238,4 @@ include/leptonica/sudoku.h
 include/leptonica/watershed.h
 lib/liblept.a
 lib/liblept.la
+@lib lib/liblept.so.${LIBlept_VERSION}

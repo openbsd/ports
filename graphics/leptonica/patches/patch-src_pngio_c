@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_pngio_c,v 1.1.1.1 2011/12/22 09:46:46 ajacoutot Exp $
---- src/pngio.c.orig	Wed Dec 21 19:37:12 2011
-+++ src/pngio.c	Wed Dec 21 19:37:37 2011
-@@ -98,6 +98,9 @@
+$OpenBSD: patch-src_pngio_c,v 1.2 2014/01/18 14:11:23 ajacoutot Exp $
+--- src/pngio.c.orig	Sun Jan 22 19:29:15 2012
++++ src/pngio.c	Sat Jan 18 14:47:02 2014
+@@ -109,6 +109,9 @@
  #include <string.h>
  #include "allheaders.h"
  

@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_gifio_c,v 1.1 2013/09/25 07:58:40 sthen Exp $
+$OpenBSD: patch-src_gifio_c,v 1.2 2014/01/18 14:11:23 ajacoutot Exp $
 
 handle giflib 5.0+
 https://code.google.com/p/leptonica/issues/detail?id=63
 
---- src/gifio.c.orig	Sun Mar  6 10:13:09 2011
-+++ src/gifio.c	Thu Sep 19 02:21:55 2013
-@@ -89,7 +89,11 @@ SavedImage       si;
+--- src/gifio.c.orig	Sun Jan 22 19:29:15 2012
++++ src/gifio.c	Sat Jan 18 14:47:02 2014
+@@ -100,7 +100,11 @@ SavedImage       si;
      _lseek(fd, 0, SEEK_SET);
  #endif  /* _MSC_VER */
  
@@ -17,7 +17,7 @@ https://code.google.com/p/leptonica/issues/detail?id=63
          return (PIX *)ERROR_PTR("invalid file or file not found",
                                  procName, NULL);
  
-@@ -305,6 +309,10 @@ GifByteType     *gif_line;
+@@ -316,6 +320,10 @@ GifByteType     *gif_line;
      }
  
          /* Save the cmap colors in a gif_cmap */
@@ -28,7 +28,7 @@ https://code.google.com/p/leptonica/issues/detail?id=63
      if ((gif_cmap = MakeMapObject(gif_ncolor, NULL)) == NULL) {
          pixDestroy(&pixd);
          return ERROR_INT("failed to create GIF color map", procName, 1);
-@@ -326,7 +334,11 @@ GifByteType     *gif_line;
+@@ -337,7 +345,11 @@ GifByteType     *gif_line;
      }
  
          /* Get the gif file handle */

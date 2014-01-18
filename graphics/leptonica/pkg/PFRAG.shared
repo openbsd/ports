@@ -1,2 +1,1 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/12/22 09:46:46 ajacoutot Exp $
-@lib lib/liblept.so.${LIBlept_VERSION}
+@comment $OpenBSD: PFRAG.shared,v 1.2 2014/01/18 14:11:23 ajacoutot Exp $
