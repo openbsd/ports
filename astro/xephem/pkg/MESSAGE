@@ -1,5 +1,0 @@
-The initial auxil, catalogs, and tools files have
-been placed in ${PREFIX}/lib/X11/xephem.  Move them
-where you will.  Once moved you MUST modify
-${PREFIX}/lib/X11/app-defaults/XEphem
-At a minimum you must change XEphem.BaseDir.

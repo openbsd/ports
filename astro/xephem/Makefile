@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2013/10/11 20:39:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.47 2014/01/19 15:44:12 ajacoutot Exp $
 
 COMMENT=	interactive astronomical ephemeris
 DISTNAME=	xephem-3.2.3
@@ -11,7 +11,7 @@ PERMIT_PACKAGE_CDROM=   no modifications, no fee
 PERMIT_PACKAGE_FTP=     no modifications
 PERMIT_DISTFILES_FTP=   Yes
 
-REVISION =	6
+REVISION =	7
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xt c m Xm
 
 LIB_DEPENDS += x11/openmotif
