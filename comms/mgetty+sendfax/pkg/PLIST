@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2013/08/09 16:46:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2014/01/19 09:48:29 ajacoutot Exp $
 @extraunexec rm -rf /var/spool/fax/*
 @bin bin/autopvf
 @bin bin/basictopvf
@@ -44,8 +44,10 @@ lib/mgetty+sendfax/cour25n.pbm
 @mode
 @owner
 lib/mgetty+sendfax/setup
+@mode 0700
 @bin libexec/mgetty
 @bin libexec/vgetty
+@mode
 @man man/man1/coverpg.1
 @man man/man1/faxq.1
 @man man/man1/faxrunq.1
@@ -86,8 +88,8 @@ share/doc/mgetty+sendfax/voice/device_settings
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/mgetty+sendfax/
 @sample ${SYSCONFDIR}/mgetty+sendfax/
-share/examples/mgetty+sendfax/dialin.config
 @mode 600
+share/examples/mgetty+sendfax/dialin.config
 @sample ${SYSCONFDIR}/mgetty+sendfax/dialin.config
 @mode
 share/examples/mgetty+sendfax/faxheader
@@ -96,12 +98,10 @@ share/examples/mgetty+sendfax/faxrunq.config
 @sample ${SYSCONFDIR}/mgetty+sendfax/faxrunq.config
 share/examples/mgetty+sendfax/faxspool.rules.sample
 @sample ${SYSCONFDIR}/mgetty+sendfax/faxspool.rules
+@mode 600
 share/examples/mgetty+sendfax/login.config
-@mode 600
 @sample ${SYSCONFDIR}/mgetty+sendfax/login.config
-@mode
 share/examples/mgetty+sendfax/mgetty.config
-@mode 600
 @sample ${SYSCONFDIR}/mgetty+sendfax/mgetty.config
 @mode
 share/examples/mgetty+sendfax/samples/
@@ -153,8 +153,8 @@ share/examples/mgetty+sendfax/samples/printfax.ps
 share/examples/mgetty+sendfax/sendfax.config
 @sample ${SYSCONFDIR}/mgetty+sendfax/sendfax.config
 share/examples/mgetty+sendfax/voice/
-share/examples/mgetty+sendfax/voice.conf
 @mode 600
+share/examples/mgetty+sendfax/voice.conf
 @sample ${SYSCONFDIR}/mgetty+sendfax/voice.conf
 @mode
 share/examples/mgetty+sendfax/voice/scripts/
