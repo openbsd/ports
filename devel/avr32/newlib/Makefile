@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/01/17 15:02:26 stsp Exp $
+# $OpenBSD: Makefile,v 1.2 2014/01/19 20:58:32 stsp Exp $
 
 COMMENT = 	Atmel AVR 32-bit C library
 V = 		1.16.0
@@ -8,6 +8,7 @@ DISTNAME = 	avr32-newlib-${V}
 PERMIT_PACKAGE_CDROM = 	Yes
 
 AUTOCONF_VERSION =	2.59
+AUTOMAKE_VERSION =	1.9
 CONFIGURE_ARGS +=	--enable-newlib-io-long-long \
         		--enable-newlib-io-long-double \
         		--enable-newlib-io-pos-args \
