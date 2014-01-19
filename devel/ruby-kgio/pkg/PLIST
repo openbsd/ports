@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/01/11 22:51:02 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/01/19 20:42:18 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.document
@@ -40,12 +40,14 @@ ${GEM_LIB}/gems/${DISTNAME}/test/test_pipe_popen.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_pipe_read_write.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_poll.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_singleton_read_write.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_socket.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_socketpair_read_write.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_tcp6_client_read_server_write.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_tcp_client_read_server_write.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_tcp_connect.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_tcp_server.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_tcp_server_read_client_write.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_tfo.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_tryopen.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_unix_client_read_server_write.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_unix_connect.rb
