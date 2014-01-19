@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/10/02 14:45:54 giovanni Exp $
+# $OpenBSD: Makefile,v 1.3 2014/01/19 20:57:59 bluhm Exp $
 
-COMMENT =	A drop-in replacement for IO::Socket::INET
+COMMENT =	family-neutral IP socket supporting both IPv4 and IPv6
 
-DISTNAME =	IO-Socket-IP-0.24
+DISTNAME =	IO-Socket-IP-0.26
 
 CATEGORIES =	net
 
