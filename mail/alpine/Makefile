@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/10/17 09:08:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2014/01/19 09:40:28 ajacoutot Exp $
 
 COMMENT-main=		UW e-mail client
 COMMENT-c-client=	UW c-client mail access routines
@@ -25,6 +25,7 @@ PKGNAME-mailutil=	mailutil-uw-${V}
 PKGNAME-pico=		pico-${PICO_V}
 PKGNAME-pilot=		pilot-${PILOT_V}
 
+REVISION-imap=		0
 REVISION-pilot=		11
 
 EPOCH-c-client=		0
@@ -135,6 +136,7 @@ post-install:
 		${PREFIX}/share/examples/imap-uw
 	tar -C ${WRKSRC}/imap/docs -cf - . | \
 		tar -C ${PREFIX}/share/doc/imap-uw -xf -
+	find ${PREFIX}/share/doc/imap-uw -type f -exec chmod 0644 {} \;
 	# mailutil
 	${INSTALL_PROGRAM} ${WRKBUILD}/imap/mailutil/mailutil ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/imap/src/mailutil/mailutil.1 ${PREFIX}/man/man1
