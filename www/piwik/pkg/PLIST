@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.46 2013/12/27 11:30:21 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.47 2014/01/19 16:05:31 giovanni Exp $
 @group daemon
 piwik/
 piwik/LEGALNOTICE
@@ -121,6 +121,7 @@ piwik/core/DataTable/Row/
 piwik/core/DataTable/Row.php
 piwik/core/DataTable/Row/DataTableSummaryRow.php
 piwik/core/DataTable/Simple.php
+piwik/core/DataTable/TableNotFoundException.php
 piwik/core/Date.php
 piwik/core/Db/
 piwik/core/Db.php
@@ -192,6 +193,7 @@ piwik/core/ReportRenderer.php
 piwik/core/ReportRenderer/Html.php
 piwik/core/ReportRenderer/Pdf.php
 piwik/core/ScheduledTask.php
+piwik/core/ScheduledTaskTimetable.php
 piwik/core/ScheduledTime/
 piwik/core/ScheduledTime.php
 piwik/core/ScheduledTime/Daily.php
@@ -337,6 +339,7 @@ piwik/core/Updates/2.0-b13.php
 piwik/core/Updates/2.0-b3.php
 piwik/core/Updates/2.0-b9.php
 piwik/core/Updates/2.0-rc1.php
+piwik/core/Updates/2.0.3-b7.php
 piwik/core/Url.php
 piwik/core/UrlHelper.php
 piwik/core/Version.php
@@ -942,7 +945,6 @@ piwik/misc/others/widget_example_lastvisits.html
 piwik/misc/proxy-hide-piwik-url/
 piwik/misc/proxy-hide-piwik-url/README.md
 piwik/misc/proxy-hide-piwik-url/piwik.php
-piwik/misc/translationTool.sh
 @mode 777
 piwik/misc/user/
 piwik/misc/user/.gitkeep
@@ -987,12 +989,11 @@ piwik/plugins/Annotations/templates/_annotationList.twig
 piwik/plugins/Annotations/templates/getAnnotationManager.twig
 piwik/plugins/Annotations/templates/getEvolutionIcons.twig
 piwik/plugins/Annotations/templates/saveAnnotation.twig
-piwik/plugins/AnonymizeIP/
-piwik/plugins/AnonymizeIP/AnonymizeIP.php
 piwik/plugins/CoreAdminHome/
 piwik/plugins/CoreAdminHome/API.php
 piwik/plugins/CoreAdminHome/Controller.php
 piwik/plugins/CoreAdminHome/CoreAdminHome.php
+piwik/plugins/CoreAdminHome/CustomLogo.php
 piwik/plugins/CoreAdminHome/javascripts/
 piwik/plugins/CoreAdminHome/javascripts/generalSettings.js
 piwik/plugins/CoreAdminHome/javascripts/jsTrackingGenerator.js
@@ -1121,6 +1122,7 @@ piwik/plugins/CorePluginsAdmin/CorePluginsAdmin.php
 piwik/plugins/CorePluginsAdmin/Marketplace.php
 piwik/plugins/CorePluginsAdmin/MarketplaceApiClient.php
 piwik/plugins/CorePluginsAdmin/MarketplaceApiException.php
+piwik/plugins/CorePluginsAdmin/PluginDependency.php
 piwik/plugins/CorePluginsAdmin/PluginInstaller.php
 piwik/plugins/CorePluginsAdmin/PluginInstallerException.php
 piwik/plugins/CorePluginsAdmin/images/
@@ -1221,6 +1223,8 @@ piwik/plugins/DBStats/lang/am.json
 piwik/plugins/DBStats/lang/ar.json
 piwik/plugins/DBStats/lang/be.json
 piwik/plugins/DBStats/lang/bg.json
+piwik/plugins/DBStats/lang/bn.json
+piwik/plugins/DBStats/lang/bs.json
 piwik/plugins/DBStats/lang/ca.json
 piwik/plugins/DBStats/lang/cs.json
 piwik/plugins/DBStats/lang/da.json
@@ -1257,6 +1261,7 @@ piwik/plugins/DBStats/lang/sl.json
 piwik/plugins/DBStats/lang/sq.json
 piwik/plugins/DBStats/lang/sr.json
 piwik/plugins/DBStats/lang/sv.json
+piwik/plugins/DBStats/lang/ta.json
 piwik/plugins/DBStats/lang/te.json
 piwik/plugins/DBStats/lang/th.json
 piwik/plugins/DBStats/lang/tr.json
@@ -1324,6 +1329,7 @@ piwik/plugins/DevicesDetection/images/brand/HTC.ico
 piwik/plugins/DevicesDetection/images/brand/Haier.ico
 piwik/plugins/DevicesDetection/images/brand/Huawei.ico
 piwik/plugins/DevicesDetection/images/brand/INQ.ico
+piwik/plugins/DevicesDetection/images/brand/Jolla.ico
 piwik/plugins/DevicesDetection/images/brand/KDDI.ico
 piwik/plugins/DevicesDetection/images/brand/Karbonn.ico
 piwik/plugins/DevicesDetection/images/brand/Kindle.ico
@@ -1381,11 +1387,16 @@ piwik/plugins/DevicesDetection/images/screens/tv.png
 piwik/plugins/DevicesDetection/images/screens/unknown.gif
 piwik/plugins/DevicesDetection/images/screens/wide.gif
 piwik/plugins/DevicesDetection/lang/
+piwik/plugins/DevicesDetection/lang/bg.json
+piwik/plugins/DevicesDetection/lang/cs.json
+piwik/plugins/DevicesDetection/lang/de.json
+piwik/plugins/DevicesDetection/lang/el.json
 piwik/plugins/DevicesDetection/lang/en.json
+piwik/plugins/DevicesDetection/lang/et.json
+piwik/plugins/DevicesDetection/lang/it.json
+piwik/plugins/DevicesDetection/lang/ru.json
 piwik/plugins/DevicesDetection/templates/
 piwik/plugins/DevicesDetection/templates/index.twig
-piwik/plugins/DoNotTrack/
-piwik/plugins/DoNotTrack/DoNotTrack.php
 piwik/plugins/Events/
 piwik/plugins/Events/Archiver.php
 piwik/plugins/Events/Events.php
@@ -1495,12 +1506,12 @@ piwik/plugins/ImageGraph/Controller.php
 piwik/plugins/ImageGraph/ImageGraph.php
 piwik/plugins/ImageGraph/StaticGraph/
 piwik/plugins/ImageGraph/StaticGraph.php
-piwik/plugins/ImageGraph/StaticGraph/3DPie.php
 piwik/plugins/ImageGraph/StaticGraph/Evolution.php
 piwik/plugins/ImageGraph/StaticGraph/Exception.php
 piwik/plugins/ImageGraph/StaticGraph/GridGraph.php
 piwik/plugins/ImageGraph/StaticGraph/HorizontalBar.php
 piwik/plugins/ImageGraph/StaticGraph/Pie.php
+piwik/plugins/ImageGraph/StaticGraph/Pie3D.php
 piwik/plugins/ImageGraph/StaticGraph/PieGraph.php
 piwik/plugins/ImageGraph/StaticGraph/VerticalBar.php
 piwik/plugins/ImageGraph/fonts/
@@ -1762,6 +1773,8 @@ piwik/plugins/Overlay/templates/renderSidebar.twig
 piwik/plugins/Overlay/templates/showErrorWrongDomain.twig
 piwik/plugins/PrivacyManager/
 piwik/plugins/PrivacyManager/Controller.php
+piwik/plugins/PrivacyManager/DoNotTrackHeaderChecker.php
+piwik/plugins/PrivacyManager/IPAnonymizer.php
 piwik/plugins/PrivacyManager/LogDataPurger.php
 piwik/plugins/PrivacyManager/PrivacyManager.php
 piwik/plugins/PrivacyManager/ReportsPurger.php
@@ -2134,7 +2147,6 @@ piwik/plugins/SitesManager/stylesheets/
 piwik/plugins/SitesManager/stylesheets/SitesManager.less
 piwik/plugins/SitesManager/templates/
 piwik/plugins/SitesManager/templates/_displayJavascriptCode.twig
-piwik/plugins/SitesManager/templates/displayAlternativeTagsHelp.twig
 piwik/plugins/SitesManager/templates/displayJavascriptCode.twig
 piwik/plugins/SitesManager/templates/index.twig
 piwik/plugins/Transitions/
@@ -2448,6 +2460,7 @@ piwik/plugins/UserCountry/stylesheets/
 piwik/plugins/UserCountry/stylesheets/userCountry.less
 piwik/plugins/UserCountry/templates/
 piwik/plugins/UserCountry/templates/_updaterManage.twig
+piwik/plugins/UserCountry/templates/_updaterNextRunTime.twig
 piwik/plugins/UserCountry/templates/adminIndex.twig
 piwik/plugins/UserCountry/templates/getGeoIpUpdaterManageScreen.twig
 piwik/plugins/UserCountry/templates/index.twig
@@ -2712,6 +2725,7 @@ piwik/plugins/UserSettings/images/browsers/OP.gif
 piwik/plugins/UserSettings/images/browsers/OW.gif
 piwik/plugins/UserSettings/images/browsers/PX.gif
 piwik/plugins/UserSettings/images/browsers/RK.gif
+piwik/plugins/UserSettings/images/browsers/SA.gif
 piwik/plugins/UserSettings/images/browsers/SF.gif
 piwik/plugins/UserSettings/images/browsers/SM.gif
 piwik/plugins/UserSettings/images/browsers/TB.gif
@@ -2751,6 +2765,7 @@ piwik/plugins/UserSettings/images/os/PS3.gif
 piwik/plugins/UserSettings/images/os/PSP.gif
 piwik/plugins/UserSettings/images/os/PSV.gif
 piwik/plugins/UserSettings/images/os/QNX.gif
+piwik/plugins/UserSettings/images/os/SAF.gif
 piwik/plugins/UserSettings/images/os/SBA.gif
 piwik/plugins/UserSettings/images/os/SOS.gif
 piwik/plugins/UserSettings/images/os/SYL.gif
@@ -2892,7 +2907,6 @@ piwik/plugins/Zeitgeist/images/fullscreen.png
 piwik/plugins/Zeitgeist/images/goal.png
 piwik/plugins/Zeitgeist/images/grey_marker.png
 piwik/plugins/Zeitgeist/images/help.png
-piwik/plugins/Zeitgeist/images/help_grey.png
 piwik/plugins/Zeitgeist/images/html_icon.png
 piwik/plugins/Zeitgeist/images/ico_alert.png
 piwik/plugins/Zeitgeist/images/ico_delete.png
@@ -2995,6 +3009,7 @@ piwik/vendor/composer/
 piwik/vendor/composer/ClassLoader.php
 piwik/vendor/composer/autoload_classmap.php
 piwik/vendor/composer/autoload_namespaces.php
+piwik/vendor/composer/autoload_psr4.php
 piwik/vendor/composer/autoload_real.php
 piwik/vendor/composer/installed.json
 piwik/vendor/leafo/
