@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure,v 1.1 2014/01/19 03:04:39 pascal Exp $
+--- configure.orig	Mon Dec 30 17:42:37 2013
++++ configure	Fri Jan 17 18:54:23 2014
+@@ -2322,6 +2322,9 @@ else
+ /* System header to define __stub macros and hopefully few prototypes,
+     which can conflict with char iconv_open(); below.  */
+ #include <assert.h>
++#ifdef __OpenBSD__
++#define iconv_open libiconv_open
++#endif
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+     builtin and then its argument prototype would still apply.  */
