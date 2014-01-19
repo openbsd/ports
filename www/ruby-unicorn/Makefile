@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2014/01/15 02:13:58 jeremy Exp $
+# $OpenBSD: Makefile,v 1.16 2014/01/19 20:43:55 jeremy Exp $
 
 COMMENT =	ruby-rack HTTP server for Unix and fast clients
 
-DISTNAME =	unicorn-4.7.0
-REVISION =	1
+DISTNAME =	unicorn-4.8.0
 CATEGORIES =	www
 
 HOMEPAGE =	http://unicorn.bogomips.org/
