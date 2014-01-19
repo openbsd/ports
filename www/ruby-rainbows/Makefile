@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2014/01/10 19:01:24 jeremy Exp $
+# $OpenBSD: Makefile,v 1.14 2014/01/19 20:44:43 jeremy Exp $
 
 COMMENT =	ruby-unicorn for sleepy apps and slow clients
 
-DISTNAME =	rainbows-4.4.1
-REVISION =	2
+DISTNAME =	rainbows-4.6.0
 CATEGORIES =	www
 
 HOMEPAGE =	http://rainbows.rubyforge.org/
@@ -17,7 +16,7 @@ MODULES =	lang/ruby
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS =	devel/ruby-kgio,${MODRUBY_FLAVOR}>=2.5,<3.0 \
-		www/ruby-unicorn,${MODRUBY_FLAVOR}>=4.1,<5.0 \
+		www/ruby-unicorn,${MODRUBY_FLAVOR}>=4.8,<5.0 \
 		www/ruby-rack,${MODRUBY_FLAVOR}>=1.1.0,<2.0
 
 CONFIGURE_STYLE = ruby gem
@@ -26,20 +25,5 @@ post-install:
 	cd ${WRKINST}/${LOCALBASE}/${GEM_LIB}/gems/${DISTNAME}/man/man1 && \
 		mv rainbows.1 ${WRKINST}/${LOCALBASE}/man/man1/rainbows${GEM_MAN_SUFFIX}.1
 	rm -r ${WRKINST}/${LOCALBASE}/${GEM_LIB}/gems/${DISTNAME}/man
-
-# Test fails for various different reasons,
-# many of which are due to nonportable test code
-TEST_DEPENDS =	devel/gmake \
-			devel/ruby-isolate,${MODRUBY_FLAVOR}>=3.0.0 \
-			net/socat \
-			net/curl
- 
-# Limit to a single test file/model (which still fails), until the test suite
-# is fixed.
-do-test:
-	cd ${WRKSRC}/t && RUBYLIB=$$(dirname `${GEM} which rack`) RUBYOPT=-rubygems \
-		RUBY=${RUBY} MRI=${RUBY} MAKE="gmake -ek" gmake -ek \
-		ThreadSpawn.t0000-simple-http.sh
-
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/11/18 00:07:19 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/01/19 20:44:43 jeremy Exp $
 ${GEM_BIN}/rainbows${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -19,6 +19,7 @@ ${GEM_LIB}/gems/${DISTNAME}/FAQ
 ${GEM_LIB}/gems/${DISTNAME}/GIT-VERSION-FILE
 ${GEM_LIB}/gems/${DISTNAME}/GIT-VERSION-GEN
 ${GEM_LIB}/gems/${DISTNAME}/GNUmakefile
+${GEM_LIB}/gems/${DISTNAME}/HACKING
 ${GEM_LIB}/gems/${DISTNAME}/LATEST
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/NEWS
@@ -144,6 +145,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/sync_close.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/thread_pool.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/thread_spawn.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/thread_timeout.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/worker_yield.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/writer_thread_pool/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/writer_thread_pool.rb
@@ -181,7 +183,6 @@ ${GEM_LIB}/gems/${DISTNAME}/t/bin/
 ${GEM_LIB}/gems/${DISTNAME}/t/bin/content-md5-put
 ${GEM_LIB}/gems/${DISTNAME}/t/bin/sha1sum.rb
 ${GEM_LIB}/gems/${DISTNAME}/t/bin/unused_listen
-${GEM_LIB}/gems/${DISTNAME}/t/bin/utee
 ${GEM_LIB}/gems/${DISTNAME}/t/byte-range-common.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/client_header_buffer_size.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/close-has-env.ru
@@ -198,6 +199,7 @@ ${GEM_LIB}/gems/${DISTNAME}/t/fast-pipe-response.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/file-wrap-to_path.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/fork-sleep.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/heartbeat-timeout.ru
+${GEM_LIB}/gems/${DISTNAME}/t/hijack.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/kgio-pipe-response.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/large-file-response.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/my-tap-lib.sh
@@ -297,6 +299,7 @@ ${GEM_LIB}/gems/${DISTNAME}/t/t0500-cramp-streaming.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0501-cramp-rainsocket.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0600-rack-fiber_pool.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0700-app-deferred.sh
+${GEM_LIB}/gems/${DISTNAME}/t/t0800-rack-hijack.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t9000-rack-app-pool.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t9000.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/t9001-sendfile-to-path.sh
