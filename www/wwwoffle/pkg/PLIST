@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/03/20 16:55:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/01/19 10:40:00 ajacoutot Exp $
 @bin bin/wwwoffle
 bin/wwwoffle-ls
 bin/wwwoffle-mv
@@ -25,519 +25,266 @@ share/doc/wwwoffle/README.htdig
 share/doc/wwwoffle/README.lang
 share/doc/wwwoffle/README.win32
 share/doc/wwwoffle/UPGRADE
+@owner daemon
 share/wwwoffle/
-@owner daemon
 @sample /var/spool/wwwoffle/
-@owner
 share/wwwoffle/html/
-@owner daemon
 @sample /var/spool/wwwoffle/html/
-@owner
 share/wwwoffle/html/FAQ.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/FAQ.html
-@owner
 share/wwwoffle/html/Welcome.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/Welcome.html
-@owner
 share/wwwoffle/html/htdig/
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/
-@owner
 share/wwwoffle/html/htdig/button1.gif
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/button1.gif
-@owner
 share/wwwoffle/html/htdig/button10.gif
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/button10.gif
-@owner
 share/wwwoffle/html/htdig/button2.gif
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/button2.gif
-@owner
 share/wwwoffle/html/htdig/button3.gif
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/button3.gif
-@owner
 share/wwwoffle/html/htdig/button4.gif
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/button4.gif
-@owner
 share/wwwoffle/html/htdig/button5.gif
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/button5.gif
-@owner
 share/wwwoffle/html/htdig/button6.gif
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/button6.gif
-@owner
 share/wwwoffle/html/htdig/button7.gif
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/button7.gif
-@owner
 share/wwwoffle/html/htdig/button8.gif
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/button8.gif
-@owner
 share/wwwoffle/html/htdig/button9.gif
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/button9.gif
-@owner
 share/wwwoffle/html/htdig/buttonl.gif
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/buttonl.gif
-@owner
 share/wwwoffle/html/htdig/buttonr.gif
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/buttonr.gif
-@owner
 share/wwwoffle/html/htdig/conf/
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/conf/
-@owner
 share/wwwoffle/html/htdig/conf/htdig-full.conf
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/conf/htdig-full.conf
-@owner
 share/wwwoffle/html/htdig/conf/htdig-incr.conf
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/conf/htdig-incr.conf
-@owner
 share/wwwoffle/html/htdig/conf/htdig-lasttime.conf
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/conf/htdig-lasttime.conf
-@owner
 share/wwwoffle/html/htdig/conf/htfuzzy.conf
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/conf/htfuzzy.conf
-@owner
 share/wwwoffle/html/htdig/conf/htmerge.conf
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/conf/htmerge.conf
-@owner
 share/wwwoffle/html/htdig/conf/htsearch.conf
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/conf/htsearch.conf
-@owner
 share/wwwoffle/html/htdig/db/
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/db/
-@owner
 share/wwwoffle/html/htdig/db-lasttime/
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/db-lasttime/
-@owner
 share/wwwoffle/html/htdig/htdig.gif
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/htdig.gif
-@owner
 share/wwwoffle/html/htdig/index.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/index.html
-@owner
 share/wwwoffle/html/htdig/scripts/
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/scripts/
-@owner
 share/wwwoffle/html/htdig/scripts/wwwoffle-htdig-full
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/scripts/wwwoffle-htdig-full
-@owner
 share/wwwoffle/html/htdig/scripts/wwwoffle-htdig-incr
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/scripts/wwwoffle-htdig-incr
-@owner
 share/wwwoffle/html/htdig/scripts/wwwoffle-htdig-lasttime
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/scripts/wwwoffle-htdig-lasttime
-@owner
 share/wwwoffle/html/htdig/scripts/wwwoffle-htfuzzy
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/scripts/wwwoffle-htfuzzy
-@owner
 share/wwwoffle/html/htdig/scripts/wwwoffle-htsearch
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/scripts/wwwoffle-htsearch
-@owner
 share/wwwoffle/html/htdig/search.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/search.html
-@owner
 share/wwwoffle/html/htdig/star.gif
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/star.gif
-@owner
 share/wwwoffle/html/htdig/star_blank.gif
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/star_blank.gif
-@owner
 share/wwwoffle/html/htdig/start-lt2.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/start-lt2.html
-@owner
 share/wwwoffle/html/htdig/start-lt3.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/start-lt3.html
-@owner
 share/wwwoffle/html/htdig/start-lt4.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/start-lt4.html
-@owner
 share/wwwoffle/html/htdig/start1.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/start1.html
-@owner
 share/wwwoffle/html/htdig/start2.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/start2.html
-@owner
 share/wwwoffle/html/htdig/start3.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/start3.html
-@owner
 share/wwwoffle/html/htdig/start4.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/htdig/start4.html
-@owner
 share/wwwoffle/html/index.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/index.html
-@owner
 share/wwwoffle/html/local/
-@owner daemon
 @sample /var/spool/wwwoffle/html/local/
-@owner
 share/wwwoffle/html/local/images/
-@owner daemon
 @sample /var/spool/wwwoffle/html/local/images/
-@owner
 share/wwwoffle/html/local/images/trans-1x1.gif
-@owner daemon
 @sample /var/spool/wwwoffle/html/local/images/trans-1x1.gif
-@owner
 share/wwwoffle/html/messages/
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/
-@owner
 share/wwwoffle/html/messages/AddCacheInfo.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/AddCacheInfo.html
-@owner
 share/wwwoffle/html/messages/CantRefreshPosted.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/CantRefreshPosted.html
-@owner
 share/wwwoffle/html/messages/ConfigEditPage-Body.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/ConfigEditPage-Body.html
-@owner
 share/wwwoffle/html/messages/ConfigEditPage-Head.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/ConfigEditPage-Head.html
-@owner
 share/wwwoffle/html/messages/ConfigEditPage-Tail.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/ConfigEditPage-Tail.html
-@owner
 share/wwwoffle/html/messages/ConfigError.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/ConfigError.html
-@owner
 share/wwwoffle/html/messages/ConfigUpdate.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/ConfigUpdate.html
-@owner
 share/wwwoffle/html/messages/ConfirmRequest.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/ConfirmRequest.html
-@owner
 share/wwwoffle/html/messages/ControlAuthFail.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/ControlAuthFail.html
-@owner
 share/wwwoffle/html/messages/ControlDelete-Body.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/ControlDelete-Body.html
-@owner
 share/wwwoffle/html/messages/ControlDelete-Head.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/ControlDelete-Head.html
-@owner
 share/wwwoffle/html/messages/ControlDelete-Tail.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/ControlDelete-Tail.html
-@owner
 share/wwwoffle/html/messages/ControlIllegal.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/ControlIllegal.html
-@owner
 share/wwwoffle/html/messages/ControlPage.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/ControlPage.html
-@owner
 share/wwwoffle/html/messages/ControlWWWOFFLE-Head.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/ControlWWWOFFLE-Head.html
-@owner
 share/wwwoffle/html/messages/ControlWWWOFFLE-Tail.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/ControlWWWOFFLE-Tail.html
-@owner
 share/wwwoffle/html/messages/FTPDir-Head.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/FTPDir-Head.html
-@owner
 share/wwwoffle/html/messages/FTPDir-Tail.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/FTPDir-Tail.html
-@owner
 share/wwwoffle/html/messages/FTPDirRedirect.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/FTPDirRedirect.html
-@owner
 share/wwwoffle/html/messages/FTPPut.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/FTPPut.html
-@owner
 share/wwwoffle/html/messages/FileLocked.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/FileLocked.html
-@owner
 share/wwwoffle/html/messages/HostNotGot.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/HostNotGot.html
-@owner
 share/wwwoffle/html/messages/IllegalProtocol.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/IllegalProtocol.html
-@owner
 share/wwwoffle/html/messages/Index-Head.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/Index-Head.html
-@owner
 share/wwwoffle/html/messages/Index-Tail.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/Index-Tail.html
-@owner
 share/wwwoffle/html/messages/IndexError-Body.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/IndexError-Body.html
-@owner
 share/wwwoffle/html/messages/IndexHost-Body.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/IndexHost-Body.html
-@owner
 share/wwwoffle/html/messages/IndexHost-Head.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/IndexHost-Head.html
-@owner
 share/wwwoffle/html/messages/IndexHost-Tail.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/IndexHost-Tail.html
-@owner
 share/wwwoffle/html/messages/IndexIllegal.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/IndexIllegal.html
-@owner
 share/wwwoffle/html/messages/IndexLastTime-Body.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/IndexLastTime-Body.html
-@owner
 share/wwwoffle/html/messages/IndexLastTime-Head.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/IndexLastTime-Head.html
-@owner
 share/wwwoffle/html/messages/IndexLastTime-Tail.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/IndexLastTime-Tail.html
-@owner
 share/wwwoffle/html/messages/IndexLatest-Body.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/IndexLatest-Body.html
-@owner
 share/wwwoffle/html/messages/IndexLatest-Head.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/IndexLatest-Head.html
-@owner
 share/wwwoffle/html/messages/IndexLatest-Tail.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/IndexLatest-Tail.html
-@owner
 share/wwwoffle/html/messages/IndexMonitor-Body.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/IndexMonitor-Body.html
-@owner
 share/wwwoffle/html/messages/IndexMonitor-Head.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/IndexMonitor-Head.html
-@owner
 share/wwwoffle/html/messages/IndexMonitor-Tail.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/IndexMonitor-Tail.html
-@owner
 share/wwwoffle/html/messages/IndexOutgoing-Body.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/IndexOutgoing-Body.html
-@owner
 share/wwwoffle/html/messages/IndexOutgoing-Head.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/IndexOutgoing-Head.html
-@owner
 share/wwwoffle/html/messages/IndexOutgoing-Tail.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/IndexOutgoing-Tail.html
-@owner
 share/wwwoffle/html/messages/IndexProtocol-Body.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/IndexProtocol-Body.html
-@owner
 share/wwwoffle/html/messages/IndexProtocol-Head.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/IndexProtocol-Head.html
-@owner
 share/wwwoffle/html/messages/IndexProtocol-Tail.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/IndexProtocol-Tail.html
-@owner
 share/wwwoffle/html/messages/IndexRedirect.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/IndexRedirect.html
-@owner
 share/wwwoffle/html/messages/IndexRoot-Body.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/IndexRoot-Body.html
-@owner
 share/wwwoffle/html/messages/IndexSeparator-Body.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/IndexSeparator-Body.html
-@owner
 share/wwwoffle/html/messages/IndexURLRedirect.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/IndexURLRedirect.html
-@owner
 share/wwwoffle/html/messages/LocalDirRedirect.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/LocalDirRedirect.html
-@owner
 share/wwwoffle/html/messages/MethodUnsupported.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/MethodUnsupported.html
-@owner
 share/wwwoffle/html/messages/MonitorFormError.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/MonitorFormError.html
-@owner
 share/wwwoffle/html/messages/MonitorIllegal.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/MonitorIllegal.html
-@owner
 share/wwwoffle/html/messages/MonitorPage.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/MonitorPage.html
-@owner
 share/wwwoffle/html/messages/MonitorWillGet.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/MonitorWillGet.html
-@owner
 share/wwwoffle/html/messages/PageNotFound.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/PageNotFound.html
-@owner
 share/wwwoffle/html/messages/ProxyAuthFail.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/ProxyAuthFail.html
-@owner
 share/wwwoffle/html/messages/README
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/README
-@owner
 share/wwwoffle/html/messages/RefreshFormError.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/RefreshFormError.html
-@owner
 share/wwwoffle/html/messages/RefreshIllegal.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/RefreshIllegal.html
-@owner
 share/wwwoffle/html/messages/RefreshPage.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/RefreshPage.html
-@owner
 share/wwwoffle/html/messages/RefreshRedirect.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/RefreshRedirect.html
-@owner
 share/wwwoffle/html/messages/RefreshWillGet.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/RefreshWillGet.html
-@owner
 share/wwwoffle/html/messages/RefusedRequest.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/RefusedRequest.html
-@owner
 share/wwwoffle/html/messages/RemoteHostError.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/RemoteHostError.html
-@owner
 share/wwwoffle/html/messages/ServerError.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/ServerError.html
-@owner
 share/wwwoffle/html/messages/UserNeedsPass.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/UserNeedsPass.html
-@owner
 share/wwwoffle/html/messages/WillGet.html
-@owner daemon
 @sample /var/spool/wwwoffle/html/messages/WillGet.html
-@owner
 share/wwwoffle/html/robots.txt
-@owner daemon
 @sample /var/spool/wwwoffle/html/robots.txt
-@owner
 share/wwwoffle/html/wwwoffle.pac
-@owner daemon
 @sample /var/spool/wwwoffle/html/wwwoffle.pac
-@owner
 share/wwwoffle/http/
-@owner daemon
 @sample /var/spool/wwwoffle/http/
-@owner
 share/wwwoffle/lasttime/
-@owner daemon
 @sample /var/spool/wwwoffle/lasttime/
-@owner
 share/wwwoffle/monitor/
-@owner daemon
 @sample /var/spool/wwwoffle/monitor/
-@owner
 share/wwwoffle/outgoing/
-@owner daemon
 @sample /var/spool/wwwoffle/outgoing/
-@owner
 share/wwwoffle/outgoing/Owwwoffle-browser
-@owner daemon
 @sample /var/spool/wwwoffle/outgoing/Owwwoffle-browser
-@owner
 share/wwwoffle/outgoing/Owwwoffle-user
-@owner daemon
 @sample /var/spool/wwwoffle/outgoing/Owwwoffle-user
-@owner
 share/wwwoffle/outgoing/Uwwwoffle-browser
-@owner daemon
 @sample /var/spool/wwwoffle/outgoing/Uwwwoffle-browser
-@owner
 share/wwwoffle/outgoing/Uwwwoffle-user
-@owner daemon
 @sample /var/spool/wwwoffle/outgoing/Uwwwoffle-user
-@owner
 share/wwwoffle/prevtime1/
-@owner daemon
 @sample /var/spool/wwwoffle/prevtime1/
-@owner
+@mode 0640
 share/wwwoffle/wwwoffle.conf
-@owner daemon
 @sample /var/spool/wwwoffle/wwwoffle.conf
+@mode
+@owner
 @extraunexec rm -rf /var/spool/wwwoffle
