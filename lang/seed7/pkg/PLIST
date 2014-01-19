@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/01/06 03:37:38 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/01/19 20:21:01 bcallah Exp $
 @bin bin/s7
 @bin bin/s7c
 lib/seed7/
@@ -129,6 +129,7 @@ lib/seed7/lib/struct.s7i
 lib/seed7/lib/subrange.s7i
 lib/seed7/lib/syntax.s7i
 lib/seed7/lib/tar.s7i
+lib/seed7/lib/tdes.s7i
 lib/seed7/lib/tee.s7i
 lib/seed7/lib/text.s7i
 lib/seed7/lib/time.s7i
