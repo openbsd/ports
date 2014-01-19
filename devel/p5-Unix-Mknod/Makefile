@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/01/18 19:09:57 syl Exp $
+# $OpenBSD: Makefile,v 1.2 2014/01/19 13:36:45 syl Exp $
 
+SHARED_ONLY=	Yes
 COMMENT=	Perl extension for mknod, major, minor and makedev
 
 MODULES=	cpan
