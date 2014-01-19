@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2013/12/12 14:48:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2014/01/19 09:09:45 ajacoutot Exp $
 @conflict LPRng-*
 @pkgpath print/cups
 @pkgpath print/cups,ldap
@@ -20,12 +20,16 @@
 @bin bin/ppdi
 @bin bin/ppdmerge
 @bin bin/ppdpo
+@mode 0700
 @bin libexec/cups/backend/dnssd
+@mode
 libexec/cups/backend/http
 libexec/cups/backend/https
+@mode 0700
 @bin libexec/cups/backend/ipp
 libexec/cups/backend/ipps
 @bin libexec/cups/backend/lpd
+@mode
 libexec/cups/backend/smb
 @bin libexec/cups/backend/snmp
 @bin libexec/cups/backend/socket
@@ -110,7 +114,9 @@ sbin/accept
 @bin sbin/cupsaccept
 @bin sbin/cupsaddsmb
 @bin sbin/cupsctl
+@mode 0500
 @bin sbin/cupsd
+@mode
 sbin/cupsdisable
 sbin/cupsenable
 @bin sbin/cupsfilter
@@ -866,13 +872,11 @@ share/doc/cups/ru/index.html
 share/doc/pkg-readmes/${FULLPKGNAME}
 @group _cups
 share/examples/cups/
-share/examples/cups/cups-files.conf
 @mode 0640
+share/examples/cups/cups-files.conf
 @sample ${SYSCONFDIR}/cups/cups-files.conf
-@mode
 share/examples/cups/cupsd.conf
 share/examples/cups/cupsd.conf.default
-@mode 0640
 @sample ${SYSCONFDIR}/cups/cupsd.conf
 @group
 @mode
@@ -896,8 +900,8 @@ share/examples/cups/interfaces/
 @sample ${SYSCONFDIR}/cups/interfaces/
 share/examples/cups/ppd/
 @sample ${SYSCONFDIR}/cups/ppd/
-share/examples/cups/snmp.conf
 @mode 0640
+share/examples/cups/snmp.conf
 @sample ${SYSCONFDIR}/cups/snmp.conf
 @mode
 share/examples/cups/ssl/
