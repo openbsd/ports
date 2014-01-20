@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2013/12/21 08:57:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/01/20 11:01:42 ajacoutot Exp $
 @conflict cups-<1.6.0
 @conflict ghostscript-<9.06p3
 @conflict foomatic-filters-*
@@ -98,6 +98,7 @@ share/examples/cups-filters/cups/cups-browsed.conf
 @mode
 share/ppd/
 share/ppd/cupsfilters/
+share/ppd/cupsfilters/Fuji_Xerox-DocuPrint_CM305_df-PDF.ppd
 share/ppd/cupsfilters/Generic-PDF_Printer-PDF.ppd
 share/ppd/cupsfilters/HP-Color_LaserJet_CM3530_MFP-PDF.ppd
 share/ppd/cupsfilters/HP-PhotoSmart_Pro_B8300-hpijs-pdftoijs.ppd
