@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.57 2013/11/25 14:16:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2014/01/20 17:09:52 edd Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	powerful math/statistics/graphics language
 DISTNAME=	R-2.15.3
+REVISION= 	0
 
 SHARED_LIBS=	R	1.1  \
 		Rlapack	31.0 \
@@ -99,7 +100,12 @@ FAKE_FLAGS=	PREFIX=${PREFIX} \
 
 SEPARATE_BUILD=	Yes
 
+TEXMFLOCAL = ${PREFIX}/share/texmf-local
+
 post-install:
+	${INSTALL_DATA_DIR} ${TEXMFLOCAL}
+	mv ${WRKINST}/${LOCALBASE}/lib/R/share/texmf ${TEXMFLOCAL}
+	rm -rf ${WRKINST}/${LOCALBASE}/lib/R/share/texmf
 	@perl -i -pe 's:^R_HOME_DIR=.*:R_HOME_DIR=${TRUEPREFIX}/lib/R:' \
 		${PREFIX}/bin/R
 

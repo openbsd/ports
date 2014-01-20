@@ -1,6 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.19 2013/06/03 10:46:45 dcoppa Exp $
-bin/R
+@comment $OpenBSD: PLIST,v 1.20 2014/01/20 17:09:52 edd Exp $
 @bin bin/Rscript
+@bin lib/R/bin/Rscript
+@bin lib/R/bin/exec/R
+@lib lib/R/lib/libR.so.${LIBR_VERSION}
+@lib lib/R/lib/libRblas.so.${LIBRblas_VERSION}
+@lib lib/R/lib/libRlapack.so.${LIBRlapack_VERSION}
+@man man/man1/R.1
+@man man/man1/Rscript.1
+bin/R
 lib/R/
 lib/R/COPYING
 lib/R/NEWS
@@ -17,7 +24,6 @@ lib/R/bin/Rd2pdf
 lib/R/bin/Rdconv
 lib/R/bin/Rdiff
 lib/R/bin/Rprof
-@bin lib/R/bin/Rscript
 lib/R/bin/SHLIB
 lib/R/bin/Stangle
 lib/R/bin/Sweave
@@ -25,7 +31,6 @@ lib/R/bin/build
 lib/R/bin/check
 lib/R/bin/config
 lib/R/bin/exec/
-@bin lib/R/bin/exec/R
 lib/R/bin/f77_f2c
 lib/R/bin/javareconf
 lib/R/bin/libtool
@@ -117,9 +122,6 @@ lib/R/include/Rmath.h
 lib/R/include/Rversion.h
 lib/R/include/S.h
 lib/R/lib/
-@lib lib/R/lib/libR.so.${LIBR_VERSION}
-@lib lib/R/lib/libRblas.so.${LIBRblas_VERSION}
-@lib lib/R/lib/libRlapack.so.${LIBRlapack_VERSION}
 lib/R/library/
 lib/R/library/KernSmooth/
 lib/R/library/KernSmooth/DESCRIPTION
@@ -4365,24 +4367,25 @@ lib/R/share/make/vars.mk
 lib/R/share/make/winshlib.mk
 lib/R/share/sh/
 lib/R/share/sh/echo.sh
-lib/R/share/texmf/
-lib/R/share/texmf/bibtex/
-lib/R/share/texmf/bibtex/bib/
-lib/R/share/texmf/bibtex/bib/RJournal.bib
-lib/R/share/texmf/bibtex/bib/Rnews.bib
-lib/R/share/texmf/bibtex/bst/
-lib/R/share/texmf/bibtex/bst/jss.bst
-lib/R/share/texmf/tex/
-lib/R/share/texmf/tex/latex/
-lib/R/share/texmf/tex/latex/Rd.sty
-lib/R/share/texmf/tex/latex/Sweave.sty
-lib/R/share/texmf/tex/latex/jss.cls
-lib/R/share/texmf/tex/latex/omsaer.fd
-lib/R/share/texmf/tex/latex/omsaett.fd
-lib/R/share/texmf/tex/latex/omscmtt.fd
-lib/R/share/texmf/tex/latex/ts1aer.fd
-lib/R/share/texmf/tex/latex/ts1aett.fd
-lib/R/share/texmf/tex/latex/upquote.sty
 lib/pkgconfig/libR.pc
-@man man/man1/R.1
-@man man/man1/Rscript.1
+share/texmf-local/
+share/texmf-local/texmf/
+share/texmf-local/texmf/bibtex/
+share/texmf-local/texmf/bibtex/bib/
+share/texmf-local/texmf/bibtex/bib/RJournal.bib
+share/texmf-local/texmf/bibtex/bib/Rnews.bib
+share/texmf-local/texmf/bibtex/bst/
+share/texmf-local/texmf/bibtex/bst/jss.bst
+share/texmf-local/texmf/tex/
+share/texmf-local/texmf/tex/latex/
+share/texmf-local/texmf/tex/latex/Rd.sty
+share/texmf-local/texmf/tex/latex/Sweave.sty
+share/texmf-local/texmf/tex/latex/jss.cls
+share/texmf-local/texmf/tex/latex/omsaer.fd
+share/texmf-local/texmf/tex/latex/omsaett.fd
+share/texmf-local/texmf/tex/latex/omscmtt.fd
+share/texmf-local/texmf/tex/latex/ts1aer.fd
+share/texmf-local/texmf/tex/latex/ts1aett.fd
+share/texmf-local/texmf/tex/latex/upquote.sty
+@exec %D/bin/mktexlsr > /dev/null 2>&1
+@unexec-delete %D/bin/mktexlsr > /dev/null 2>&1
