@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2013/12/21 08:57:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2014/01/20 10:55:04 ajacoutot Exp $
 
 COMMENT=	PDF transformation and inspection utility
 
-DISTNAME=	qpdf-5.1.0
+DISTNAME=	qpdf-5.1.1
 
 SHARED_LIBS +=  qpdf                 2.1      # 13.0
 
