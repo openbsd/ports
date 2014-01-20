@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.57 2013/12/26 00:00:46 fgsch Exp $
+# $OpenBSD: Makefile,v 1.58 2014/01/20 19:14:50 fgsch Exp $
 
 COMMENT =	simplified wrapper and interface generator
 
 SUBST_VARS =	VERSION
 VERSION =	2.0.11
+REVISION =	0
 
 DISTNAME =	swig-${VERSION}
 CATEGORIES =	devel
@@ -49,5 +50,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${SWIG_DOCS}
 	cp -R ${WRKSRC}/Examples/* ${SWIG_EXAMPLES}
 	cp -R ${WRKSRC}/Doc/* ${SWIG_DOCS}
+	chmod 0644 ${SWIG_DOCS}/Manual/CCache.html
 
 .include <bsd.port.mk>
