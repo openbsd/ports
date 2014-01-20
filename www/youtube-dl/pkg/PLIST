@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2014/01/17 08:41:46 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.25 2014/01/20 14:50:54 dcoppa Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -115,6 +115,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/dotsub.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/dotsub.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/dreisat.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/dreisat.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/dropbox.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/dropbox.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ebaumsworld.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ebaumsworld.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ehow.py
