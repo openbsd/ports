@@ -1,6 +1,7 @@
-$OpenBSD: patch-KSaneConfig_cmake_in,v 1.1.1.1 2013/04/24 18:29:01 zhuk Exp $
---- KSaneConfig.cmake.in.orig	Fri Mar 29 20:55:32 2013
-+++ KSaneConfig.cmake.in	Sat Mar 30 12:27:46 2013
+$OpenBSD: patch-KSaneConfig_cmake_in,v 1.2 2014/01/20 10:04:02 zhuk Exp $
+Make KSane being picked up at the right directories.
+--- KSaneConfig.cmake.in.orig	Thu Jan  2 23:32:58 2014
++++ KSaneConfig.cmake.in	Mon Jan 20 14:00:39 2014
 @@ -1,10 +1,6 @@
 -GET_FILENAME_COMPONENT(_IMPORT_PREFIX "${CMAKE_CURRENT_LIST_FILE}" PATH)
 -GET_FILENAME_COMPONENT(_IMPORT_PREFIX "${_IMPORT_PREFIX}" PATH)
@@ -10,7 +11,7 @@ $OpenBSD: patch-KSaneConfig_cmake_in,v 1.1.1.1 2013/04/24 18:29:01 zhuk Exp $
 -find_library(KSANE_LIBRARY NAMES ksane HINTS ${_IMPORT_PREFIX}/lib NO_DEFAULT_PATH)
 -find_path(KSANE_INCLUDE_DIR NAMES libksane/ksane.h HINTS ${_IMPORT_PREFIX}/include NO_DEFAULT_PATH)
 +set(KSANE_INSTALL_DIR "@CMAKE_INSTALL_PREFIX@")
-+find_library(KSANE_LIBRARY NAMES ksane HINTS "@KDE4_LIB_INSTALL_DIR@" NO_DEFAULT_PATH)
++find_library(KSANE_LIBRARY NAMES ksane HINTS "@KDE4_LIB_DIR@" NO_DEFAULT_PATH)
  SET(KSANE_LIBRARY "${KSANE_LIBRARY}" CACHE FILEPATH "KSane image scanning library")
 -SET(KSANE_INCLUDE_DIR "${KSANE_INCLUDE_DIR}" CACHE PATH "Include path for KSane library")
 +SET(KSANE_INCLUDE_DIR "@KDE4_INCLUDE_INSTALL_DIR@" CACHE PATH "Include path for KSane library")
