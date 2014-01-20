@@ -1,25 +1,21 @@
-$OpenBSD: patch-deps_npm_lib_build_js,v 1.1 2013/06/17 23:51:28 abieber Exp $
---- deps/npm/lib/build.js.orig	Mon Jun 17 13:04:25 2013
-+++ deps/npm/lib/build.js	Mon Jun 17 13:06:31 2013
-@@ -172,15 +172,21 @@ function linkBins (pkg, folder, parent, gtop, cb) {
-       if (er) return cb(er)
+$OpenBSD: patch-deps_npm_lib_build_js,v 1.2 2014/01/20 19:42:00 abieber Exp $
+--- deps/npm/lib/build.js.orig	Wed Dec 18 16:49:45 2013
++++ deps/npm/lib/build.js	Mon Dec 23 09:25:46 2013
+@@ -175,17 +175,23 @@ function linkBins (pkg, folder, parent, gtop, cb) {
        // bins should always be executable.
        // XXX skip chmod on windows?
--      fs.chmod(path.resolve(folder, pkg.bin[b]), npm.modes.exec, function (er) {
--        if (er || !gtop) return cb(er)
--        var dest = path.resolve(binRoot, b)
--          , src = path.resolve(folder, pkg.bin[b])
--          , out = npm.config.get("parseable")
--                ? dest + "::" + src + ":BINFILE"
--                : dest + " -> " + src
--        console.log(out)
--        cb()
+       var src = path.resolve(folder, pkg.bin[b])
+-      fs.chmod(src, npm.modes.exec, function (er) {
+-        if (er && er.code === "ENOENT" && npm.config.get("ignore-scripts")) {
+-          return cb()
 +      fs.lstat(folder, function (er,stat) {
 +        if (!stat.isSymbolicLink) {
-+          fs.chmod(path.resolve(folder, pkg.bin[b]), npm.modes.exec, function (er) {
++          fs.chmod(src, npm.modes.exec, function (er) {
++            if (er && er.code === "ENOENT" && npm.config.get("ignore-scripts")) {
++              return cb()
++            }
 +            if (er || !gtop) return cb(er)
 +            var dest = path.resolve(binRoot, b)
-+              , src = path.resolve(folder, pkg.bin[b])
 +              , out = npm.config.get("parseable")
 +                    ? dest + "::" + src + ":BINFILE"
 +                    : dest + " -> " + src
@@ -28,7 +24,14 @@ $OpenBSD: patch-deps_npm_lib_build_js,v 1.1 2013/06/17 23:51:28 abieber Exp $
 +          })
 +        } else {
 +          cb()
-+        }
+         }
+-        if (er || !gtop) return cb(er)
+-        var dest = path.resolve(binRoot, b)
+-          , out = npm.config.get("parseable")
+-                ? dest + "::" + src + ":BINFILE"
+-                : dest + " -> " + src
+-        console.log(out)
+-        cb()
        })
      })
    }, cb)
