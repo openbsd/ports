@@ -1,9 +1,9 @@
-$OpenBSD: patch-texmf-dist_web2c_texmf_cnf,v 1.1 2014/01/11 18:46:52 edd Exp $
+$OpenBSD: patch-texmf-dist_web2c_texmf_cnf,v 1.2 2014/01/20 21:34:44 edd Exp $
 
 Patch in OpenBSD paths.
 
 --- texmf-dist/web2c/texmf.cnf.origy	Mon Apr 15 17:58:08 2013
-+++ texmf-dist/web2c/texmf.cnf	Mon Dec  2 16:31:09 2013
++++ texmf-dist/web2c/texmf.cnf	Mon Jan 20 16:27:08 2014
 @@ -1,6 +1,10 @@
  % original texmf.cnf -- runtime path configuration file for kpathsea.
  % Public domain.
@@ -15,15 +15,7 @@ Patch in OpenBSD paths.
  % If you modify this original file, YOUR CHANGES WILL BE LOST when it is
  % updated.  Instead, put your changes -- and only your changes, not an
  % entire copy! -- in ../../texmf.cnf.  That is, if this file is
-@@ -39,7 +43,6 @@
- % expands to /usr/local/mytex:/usr/local/othertex.  We make extensive
- % use of this.
- 
--
- %  Part 1: Search paths and directories.
- 
- % This is the parent directory of our several trees, i.e.,
-@@ -48,20 +51,19 @@
+@@ -48,10 +52,8 @@
  % All trees must be organized according to the TeX Directory Structure
  % (http://tug.org/tds), or files may not be found.
  %
@@ -36,12 +28,8 @@ Patch in OpenBSD paths.
  
  % The main tree of distributed packages and programs:
  TEXMFDIST = $TEXMFROOT/texmf-dist
- 
- % We used to have a separate /texmf tree with some core programs and files.
- % Keep the variable name.
--TEXMFMAIN = $TEXMFDIST
-+% OpenBSD: Keep this path for now since ports install here.
-+TEXMFMAIN = $TEXMFROOT/texmf
+@@ -61,7 +63,7 @@ TEXMFDIST = $TEXMFROOT/texmf-dist
+ TEXMFMAIN = $TEXMFDIST
  
  % Local additions to the distribution trees.
 -TEXMFLOCAL = $TEXMFROOT/../texmf-local
@@ -49,21 +37,3 @@ Patch in OpenBSD paths.
  
  % TEXMFSYSVAR, where *-sys store cached runtime data.
  TEXMFSYSVAR = $TEXMFROOT/texmf-var
-@@ -91,7 +93,7 @@ TEXMFCONFIG = ~/.texlive2013/texmf-config
- % should take precedence over distribution files -- although it is
- % generally a source of confusion to have different versions of a
- % package installed, whatever the trees, so try to avoid it.
--TEXMF = {$TEXMFCONFIG,$TEXMFVAR,$TEXMFHOME,!!$TEXMFSYSCONFIG,!!$TEXMFSYSVAR,!!$TEXMFLOCAL,!!$TEXMFDIST}
-+TEXMF = {$TEXMFCONFIG,$TEXMFVAR,$TEXMFHOME,!!$TEXMFSYSCONFIG,!!$TEXMFSYSVAR,!!$TEXMFLOCAL,!!$TEXMFDIST,!!$TEXMFMAIN}
- 
- % Where to look for ls-R files.  There need not be an ls-R in the
- % directories in this path, but if there is one, Kpathsea will use it.
-@@ -99,7 +101,7 @@ TEXMF = {$TEXMFCONFIG,$TEXMFVAR,$TEXMFHOME,!!$TEXMFSYS
- % does not create ls-R files in the non-!! elements -- because if an
- % ls-R is present, it will be used, and the disk will not be searched.
- % This is arguably a bug in kpathsea.
--TEXMFDBS = {!!$TEXMFSYSCONFIG,!!$TEXMFSYSVAR,!!$TEXMFLOCAL,!!$TEXMFDIST}
-+TEXMFDBS = {!!$TEXMFSYSCONFIG,!!$TEXMFSYSVAR,!!$TEXMFLOCAL,!!$TEXMFDIST,!!$TEXMFMAIN}
- 
- % The system trees.  These are the trees that are shared by all users.
- % If a tree appears in this list, the mktex* scripts will use

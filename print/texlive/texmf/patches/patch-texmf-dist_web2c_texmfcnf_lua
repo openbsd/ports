@@ -1,9 +1,9 @@
-$OpenBSD: patch-texmf-dist_web2c_texmfcnf_lua,v 1.1 2014/01/11 18:46:52 edd Exp $
+$OpenBSD: patch-texmf-dist_web2c_texmfcnf_lua,v 1.2 2014/01/20 21:34:44 edd Exp $
 
 Patch in OpenBSD paths.
 
 --- texmf-dist/web2c/texmfcnf.lua.origy	Tue Apr  9 15:15:26 2013
-+++ texmf-dist/web2c/texmfcnf.lua	Mon Dec  2 16:37:46 2013
++++ texmf-dist/web2c/texmfcnf.lua	Mon Jan 20 17:33:53 2014
 @@ -3,9 +3,6 @@
  -- ConTeXt needs a properly expanded TEXMFLOCAL, so here is a
  -- bit of lua code to make that happen
@@ -30,14 +30,12 @@ Patch in OpenBSD paths.
              TEXMFVAR        = "home:.texlive2013/texmf-var",
  
              -- We have only one cache path but there can be more. The first writable one
-@@ -62,12 +63,14 @@ return {
+@@ -62,12 +63,12 @@ return {
              -- entry. This makes the tex root relocatable.
  
              TEXMFOS         = "selfautodir:",
 -            TEXMFDIST       = "selfautoparent:texmf-dist",
 +            TEXMFDIST       = "$TEXMFROOT/texmf-dist",
-+	    -- OpenBSD: TEXMFMAIN is deprecated, but some ports use it
-+	    TEXMFMAIN       = "$TEXMFROOT/texmf",
  
              TEXMFLOCAL      = texmflocal,
 -            TEXMFSYSCONFIG  = "selfautoparent:texmf-config",
@@ -49,12 +47,3 @@ Patch in OpenBSD paths.
  
              TEXMFHOME       = "home:texmf",
           -- TEXMFHOME       = os.name == "macosx" and "home:Library/texmf" or "home:texmf",
-@@ -75,7 +78,7 @@ return {
-             -- We need texmfos for a few rare files but as I have a few more bin trees
-             -- a hack is needed. Maybe other users also have texmf-platform-new trees.
- 
--            TEXMF           = "{$TEXMFCONFIG,$TEXMFHOME,!!$TEXMFSYSCONFIG,!!$TEXMFSYSVAR,!!$TEXMFPROJECT,!!$TEXMFFONTS,!!$TEXMFLOCAL,!!$TEXMFDIST}",
-+            TEXMF           = "{$TEXMFCONFIG,$TEXMFHOME,!!$TEXMFSYSCONFIG,!!$TEXMFSYSVAR,!!$TEXMFPROJECT,!!$TEXMFFONTS,!!$TEXMFLOCAL,!!$TEXMFDIST,!!$TEXMFMAIN"},
- 
-             TEXFONTMAPS     = ".;$TEXMF/fonts/data//;$TEXMF/fonts/map/{pdftex,dvips}//",
-             ENCFONTS        = ".;$TEXMF/fonts/data//;$TEXMF/fonts/enc/{dvips,pdftex}//",
