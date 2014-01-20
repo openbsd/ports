@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2013/09/30 08:06:09 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.31 2014/01/20 05:56:11 dcoppa Exp $
 
 COMMENT =	standalone YouTube.com video browser/player
 
-DISTNAME =	minitube-2.1.3
+DISTNAME =	minitube-2.1.5
 CATEGORIES =	www multimedia
 
 HOMEPAGE =	http://flavio.tordini.org/minitube
@@ -34,6 +34,11 @@ MAKE_FLAGS =	CXX=${CXX} \
 FAKE_FLAGS =	INSTALL_ROOT=${WRKINST}
 
 NO_TEST =	Yes
+
+# Zap bogus non-ASCII characters that break the build
+pre-configure:
+	perl -pi -e "s/[^[:ascii:]]//g" \
+		${WRKSRC}/src/aggregatevideosource.cpp
 
 do-configure:
 	cd ${WRKDIST} && env -i ${CONFIGURE_ENV} \
