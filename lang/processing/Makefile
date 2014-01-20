@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/08/07 21:32:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2014/01/20 13:17:28 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,13 +7,11 @@ COMMENT=		language/IDE for images, animations and interactions
 V=			1.5.1
 DISTNAME=		processing-$V-linux
 PKGNAME=		${DISTNAME:S/-linux//}
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		lang graphics
 
 HOMEPAGE=		http://processing.org/
-
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # IDE: GPL
 # Core libraries: LGPL
@@ -34,9 +32,11 @@ NO_TEST=		Yes
 PROCESSING_HOME=	${PREFIX}/share/processing/
 
 # Trash > 125M of files we don't care about: the pre-compiled Java binaries
-# for Linux. And adjust the wrapper script.
+# and shared libraries for Linux. And adjust the wrapper script.
 do-build:
-	rm -fr ${WRKSRC}/java/ ${WRKSRC}/lib/preferences.txt.orig
+	rm -fr ${WRKSRC}/java/ \
+		${WRKSRC}/modes/java/libraries/serial/ \
+		${WRKSRC}/lib/preferences.txt.orig
 	${SUBST_CMD} ${WRKSRC}/processing
 
 do-install:
