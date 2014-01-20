@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2013/09/26 14:35:34 fgsch Exp $
+# $OpenBSD: Makefile,v 1.31 2014/01/20 20:17:29 fgsch Exp $
 
 COMMENT =	wiki engine written in python
 
 MODPY_EGG_VERSION = 1.9.7
 DISTNAME =	moin-${MODPY_EGG_VERSION}
 PKGNAME =	moin${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	www
 
@@ -26,6 +27,7 @@ pre-configure:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/moinmoin
+	find ${PREFIX}/share/moin -type f -exec chmod 0644 {} \;
 	cd ${WRKSRC}/docs && ${INSTALL_DATA} CHANGES INSTALL.html \
 	    README.migration UPDATE.html ${PREFIX}/share/doc/moinmoin
 
