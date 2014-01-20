@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/08/07 21:31:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2014/01/20 19:40:02 abieber Exp $
 
 COMMENT= generate SCons/Makefiles from platform-independent input
 
-DISTNAME=	gyp-r1282
+DISTNAME=	gyp-r1812
 PKGNAME= ${DISTNAME:S/r/0./g}
-REVISION=	0
 
 CATEGORIES=	devel
 
@@ -17,7 +16,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	http://deftly.net/
 
-MODULES= lang/python
+MODULES=	lang/python
+MODPY_SETUPTOOLS=	Yes
 
 NO_CCACHE=	Yes
 
