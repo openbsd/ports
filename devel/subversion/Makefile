@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2013/11/25 17:08:06 stsp Exp $
+# $OpenBSD: Makefile,v 1.130 2014/01/20 15:12:24 stsp Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -9,6 +9,7 @@ COMMENT-gnome-keyring=	GNOME keyring support for subversion
 
 VERSION=		1.8.5
 DISTNAME=		subversion-${VERSION}
+REVISION-main = 	0
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-perl=	p5-SVN-${VERSION}
 FULLPKGPATH-perl=	devel/subversion,-perl
@@ -175,7 +176,8 @@ CONFIGURE_ARGS+=--without-apxs
 .endif
 
 TEST_DEPENDS=${MODPY_RUN_DEPENDS}
-SUBST_VARS+=	LOCALBASE
+TEST_DEPENDS+=	${FULLPKGNAME-gnome-keyring}:${BUILD_PKGPATH},-gnome-keyring
+SUBST_VARS+=	LOCALBASE SO_VERSION
 
 pre-patch:
 	@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
