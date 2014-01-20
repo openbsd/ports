@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 10:50:03 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2014/01/20 17:06:31 edd Exp $
 
 COMMENT=	documentation system for C, C++, IDL and Java
 
 DISTNAME=	doc++-3.4.10
-REVISION =	2
+REVISION =	3
 CATEGORIES=	devel
 
 HOMEPAGE=	http://docpp.sourceforge.net/
@@ -27,8 +27,11 @@ MODULES=	devel/gettext
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/doc++
 	${INSTALL_DATA} ${WRKSRC}/doc/manual/html/* ${PREFIX}/share/doc/doc++
-	${INSTALL_DATA_DIR} ${PREFIX}/share/texmf/tex/latex/doc++
+	${INSTALL_DATA_DIR} ${PREFIX}/share/texmf-local/tex/latex/doc++
 	${INSTALL_DATA} ${WRKSRC}/doc/*.sty \
-		${PREFIX}/share/texmf/tex/latex/doc++
+		${PREFIX}/share/texmf-local/tex/latex/doc++
+# Remove stuff that collides with gettext and libiconv
+	rm ${PREFIX}/share/locale/locale.alias
+	rm ${PREFIX}/lib/charset.alias
 
 .include <bsd.port.mk>

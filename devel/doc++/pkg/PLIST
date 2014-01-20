@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2007/08/11 10:44:24 jasper Exp $
-bin/doc++
-bin/docify
-bin/promote
+@comment $OpenBSD: PLIST,v 1.9 2014/01/20 17:06:31 edd Exp $
+@bin bin/doc++
+@bin bin/docify
+@bin bin/promote
 share/doc/doc++/
 share/doc/doc++/ClassGraph.class
 share/doc/doc++/ClassGraphPanel.class
@@ -40,13 +40,14 @@ share/locale/fr/LC_MESSAGES/doc++.mo
 share/locale/ja/LC_MESSAGES/doc++.mo
 share/locale/ro/LC_MESSAGES/doc++.mo
 share/locale/ru/LC_MESSAGES/doc++.mo
-share/texmf/tex/
-share/texmf/tex/latex/
-share/texmf/tex/latex/doc++/
-share/texmf/tex/latex/doc++/docxx-br.sty
-share/texmf/tex/latex/doc++/docxx-fr.sty
-share/texmf/tex/latex/doc++/docxx-ja.sty
-share/texmf/tex/latex/doc++/docxx-ro.sty
-share/texmf/tex/latex/doc++/docxx.sty
+share/texmf-local/
+share/texmf-local/tex/
+share/texmf-local/tex/latex/
+share/texmf-local/tex/latex/doc++/
+share/texmf-local/tex/latex/doc++/docxx-br.sty
+share/texmf-local/tex/latex/doc++/docxx-fr.sty
+share/texmf-local/tex/latex/doc++/docxx-ja.sty
+share/texmf-local/tex/latex/doc++/docxx-ro.sty
+share/texmf-local/tex/latex/doc++/docxx.sty
 @exec mktexlsr > /dev/null 2>&1
-@unexec mktexlsr > /dev/null 2>&1
+@unexec-delete mktexlsr > /dev/null 2>&1
