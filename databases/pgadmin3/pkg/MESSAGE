@@ -1,6 +1,0 @@
-pgadmin3 is using the mime handling from wxWidgets.
-
-To select the browser to open URLs (i.e. the help), either use the
-environment variable BROWSER or the properties of your desktop (for
-example, share/mime-info/gnome-vfs.keys from the package
-"gnome-mime-data").
