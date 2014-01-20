@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_amule_cpp,v 1.5 2014/01/13 15:01:22 dcoppa Exp $
+$OpenBSD: patch-src_amule_cpp,v 1.6 2014/01/20 21:31:25 dcoppa Exp $
 
 Disable checking for new versions at startup: it's useless and was
 causing a crash with amuled on sparc64.
@@ -19,7 +19,7 @@ This happens when no server met is available on startup.
 (upstream git commit 41e0edaed86c9be58ae372e419e2cc02cebfa243)
 
 --- src/amule.cpp.orig	Sun Sep 18 13:01:52 2011
-+++ src/amule.cpp	Mon Jan 13 15:04:55 2014
++++ src/amule.cpp	Mon Jan 20 16:47:20 2014
 @@ -521,6 +521,7 @@ bool CamuleApp::OnInit()
  		AddLogLineNS(msg);
  	}
@@ -61,7 +61,7 @@ This happens when no server met is available on startup.
 -			// If we have added files with a total size of ~300mb
 -			if (bytecount >= 314572800) {
 +			// If we have added files with a total size of ~3000mb
-+			if (bytecount >= 3145728000) {
++			if (bytecount >= wxULL(3145728000)) {
  				AddDebugLogLineN(logKnownFiles, wxT("Failsafe for crash on file hashing creation"));
  				if ( m_app_state != APP_STATE_SHUTTINGDOWN ) {
  					knownfiles->Save();
