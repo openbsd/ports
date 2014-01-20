@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2013/12/19 18:13:48 shadchin Exp $
+# $OpenBSD: Makefile,v 1.16 2014/01/20 17:04:36 edd Exp $
 
 COMMENT=		powerful descriptive vector graphics language
 
 DISTNAME=		asymptote-2.24.src
 PKGNAME=		asymptote-2.24
 CATEGORIES=		graphics
+REVISION =		0
 
 HOMEPAGE=		http://asymptote.sourceforge.net/
 
@@ -42,7 +43,9 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-gc=${LOCALBASE} \
 			--enable-fftw \
 			--enable-gl \
-			--enable-gsl
+			--enable-gsl \
+			--with-latex=${LOCALBASE}/share/texmf-local/tex/latex \
+			--with-context=${LOCALBASE}/share/texmf-local/tex/context/third
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 			ac_cv_prog_kpsewhich="${LOCALBASE}/bin/kpsewhich"

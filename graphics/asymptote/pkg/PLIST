@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/12/19 18:13:48 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/01/20 17:04:36 edd Exp $
 @bin bin/asy
-bin/xasy
 @info info/asy-faq.info
 @info info/asymptote.info
 @man man/man1/asy.1
 @man man/man1/xasy.1
+bin/xasy
 share/asymptote/
 share/asymptote/CAD.asy
 share/asymptote/GUI/
@@ -441,14 +441,17 @@ share/examples/asymptote/xxsq01.asy
 share/examples/asymptote/xxsq01x-1.asy
 share/examples/asymptote/xxsq01y.asy
 share/examples/asymptote/yingyang.asy
-share/texmf/tex/context/
-share/texmf/tex/context/third/
-share/texmf/tex/context/third/asymptote/
-share/texmf/tex/context/third/asymptote/colo-asy.tex
-share/texmf/tex/latex/asymptote/
-share/texmf/tex/latex/asymptote/asycolors.sty
-share/texmf/tex/latex/asymptote/asymptote.sty
-share/texmf/tex/latex/asymptote/latexmkrc
-share/texmf/tex/latex/asymptote/ocg.sty
+share/texmf-local/
+share/texmf-local/tex/
+share/texmf-local/tex/context/
+share/texmf-local/tex/context/third/
+share/texmf-local/tex/context/third/asymptote/
+share/texmf-local/tex/context/third/asymptote/colo-asy.tex
+share/texmf-local/tex/latex/
+share/texmf-local/tex/latex/asymptote/
+share/texmf-local/tex/latex/asymptote/asycolors.sty
+share/texmf-local/tex/latex/asymptote/asymptote.sty
+share/texmf-local/tex/latex/asymptote/latexmkrc
+share/texmf-local/tex/latex/asymptote/ocg.sty
 @exec mktexlsr > /dev/null 2>&1
 @unexec-delete mktexlsr > /dev/null 2>&1
