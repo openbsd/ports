@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2014/01/15 19:42:11 zhuk Exp $
+# $OpenBSD: Makefile,v 1.12 2014/01/20 19:08:10 zhuk Exp $
 
 COMMENT-main =	KDE image plugins infrastructure
 COMMENT-icons =	icons for libkipi
@@ -6,6 +6,7 @@ CATEGORIES =	graphics devel
 DISTNAME =	libkipi-${MODKDE4_VERSION}
 PKGNAME-main =	${DISTNAME}
 PKGNAME-icons =	kde4-libkipi-icons-${MODKDE4_VERSION}
+PKGSPEC-main =	libkipi->=4,<5
 
 SHARED_LIBS =	kipi		50.1
 
