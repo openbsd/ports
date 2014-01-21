@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/01/21 22:41:29 landry Exp $
+@conflict p5-MojoX-Renderer-TT-*
+@pkgpath textproc/p5-MojoX-Renderer-TT
+${P5SITE}/Mojolicious/Plugin/TtRenderer/
+${P5SITE}/Mojolicious/Plugin/TtRenderer.pm
+${P5SITE}/Mojolicious/Plugin/TtRenderer/Engine.pm
+@man man/man3p/Mojolicious::Plugin::TtRenderer.3p
+@man man/man3p/Mojolicious::Plugin::TtRenderer::Engine.3p
