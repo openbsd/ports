@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/04/10 13:32:45 jim Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/01/21 20:49:41 landry Exp $
 @conflict p5-Mojo-*
 bin/hypnotoad
 bin/mojo
 bin/morbo
-@comment ${P5SITE}/README.pod
 ${P5SITE}/Mojo/
 ${P5SITE}/Mojo.pm
 ${P5SITE}/Mojo/Asset/
@@ -14,7 +13,6 @@ ${P5SITE}/Mojo/Base.pm
 ${P5SITE}/Mojo/ByteStream.pm
 ${P5SITE}/Mojo/Cache.pm
 ${P5SITE}/Mojo/Collection.pm
-${P5SITE}/Mojo/Command.pm
 ${P5SITE}/Mojo/Content/
 ${P5SITE}/Mojo/Content.pm
 ${P5SITE}/Mojo/Content/MultiPart.pm
@@ -23,7 +21,6 @@ ${P5SITE}/Mojo/Cookie/
 ${P5SITE}/Mojo/Cookie.pm
 ${P5SITE}/Mojo/Cookie/Request.pm
 ${P5SITE}/Mojo/Cookie/Response.pm
-${P5SITE}/Mojo/CookieJar.pm
 ${P5SITE}/Mojo/DOM/
 ${P5SITE}/Mojo/DOM.pm
 ${P5SITE}/Mojo/DOM/CSS.pm
@@ -40,6 +37,8 @@ ${P5SITE}/Mojo/IOLoop/Client.pm
 ${P5SITE}/Mojo/IOLoop/Delay.pm
 ${P5SITE}/Mojo/IOLoop/Server.pm
 ${P5SITE}/Mojo/IOLoop/Stream.pm
+${P5SITE}/Mojo/IOLoop/server.crt
+${P5SITE}/Mojo/IOLoop/server.key
 ${P5SITE}/Mojo/JSON/
 ${P5SITE}/Mojo/JSON.pm
 ${P5SITE}/Mojo/JSON/Pointer.pm
@@ -62,6 +61,7 @@ ${P5SITE}/Mojo/Server/Daemon.pm
 ${P5SITE}/Mojo/Server/Hypnotoad.pm
 ${P5SITE}/Mojo/Server/Morbo.pm
 ${P5SITE}/Mojo/Server/PSGI.pm
+${P5SITE}/Mojo/Server/Prefork.pm
 ${P5SITE}/Mojo/Template.pm
 ${P5SITE}/Mojo/Transaction/
 ${P5SITE}/Mojo/Transaction.pm
@@ -71,11 +71,16 @@ ${P5SITE}/Mojo/URL.pm
 ${P5SITE}/Mojo/Upload.pm
 ${P5SITE}/Mojo/UserAgent/
 ${P5SITE}/Mojo/UserAgent.pm
+${P5SITE}/Mojo/UserAgent/CookieJar.pm
+${P5SITE}/Mojo/UserAgent/Proxy.pm
+${P5SITE}/Mojo/UserAgent/Server.pm
 ${P5SITE}/Mojo/UserAgent/Transactor.pm
 ${P5SITE}/Mojo/Util.pm
+${P5SITE}/Mojo/entities.txt
 ${P5SITE}/Mojolicious/
 ${P5SITE}/Mojolicious.pm
 ${P5SITE}/Mojolicious/Command/
+${P5SITE}/Mojolicious/Command.pm
 ${P5SITE}/Mojolicious/Command/cgi.pm
 ${P5SITE}/Mojolicious/Command/cpanify.pm
 ${P5SITE}/Mojolicious/Command/daemon.pm
@@ -88,6 +93,7 @@ ${P5SITE}/Mojolicious/Command/generate/makefile.pm
 ${P5SITE}/Mojolicious/Command/generate/plugin.pm
 ${P5SITE}/Mojolicious/Command/get.pm
 ${P5SITE}/Mojolicious/Command/inflate.pm
+${P5SITE}/Mojolicious/Command/prefork.pm
 ${P5SITE}/Mojolicious/Command/psgi.pm
 ${P5SITE}/Mojolicious/Command/routes.pm
 ${P5SITE}/Mojolicious/Command/test.pm
@@ -96,7 +102,7 @@ ${P5SITE}/Mojolicious/Commands.pm
 ${P5SITE}/Mojolicious/Controller.pm
 ${P5SITE}/Mojolicious/Guides/
 ${P5SITE}/Mojolicious/Guides.pod
-${P5SITE}/Mojolicious/Guides/CodingGuidelines.pod
+${P5SITE}/Mojolicious/Guides/Contributing.pod
 ${P5SITE}/Mojolicious/Guides/Cookbook.pod
 ${P5SITE}/Mojolicious/Guides/FAQ.pod
 ${P5SITE}/Mojolicious/Guides/Growing.pod
@@ -111,12 +117,9 @@ ${P5SITE}/Mojolicious/Plugin/DefaultHelpers.pm
 ${P5SITE}/Mojolicious/Plugin/EPLRenderer.pm
 ${P5SITE}/Mojolicious/Plugin/EPRenderer.pm
 ${P5SITE}/Mojolicious/Plugin/HeaderCondition.pm
-${P5SITE}/Mojolicious/Plugin/I18N.pm
 ${P5SITE}/Mojolicious/Plugin/JSONConfig.pm
 ${P5SITE}/Mojolicious/Plugin/Mount.pm
 ${P5SITE}/Mojolicious/Plugin/PODRenderer.pm
-${P5SITE}/Mojolicious/Plugin/PoweredBy.pm
-${P5SITE}/Mojolicious/Plugin/RequestTimer.pm
 ${P5SITE}/Mojolicious/Plugin/TagHelpers.pm
 ${P5SITE}/Mojolicious/Plugins.pm
 ${P5SITE}/Mojolicious/Renderer.pm
@@ -128,38 +131,56 @@ ${P5SITE}/Mojolicious/Routes/Route.pm
 ${P5SITE}/Mojolicious/Sessions.pm
 ${P5SITE}/Mojolicious/Static.pm
 ${P5SITE}/Mojolicious/Types.pm
+${P5SITE}/Mojolicious/Validator/
+${P5SITE}/Mojolicious/Validator.pm
+${P5SITE}/Mojolicious/Validator/Validation.pm
 ${P5SITE}/Mojolicious/public/
-${P5SITE}/Mojolicious/public/css/
-${P5SITE}/Mojolicious/public/css/prettify-mojo.css
-${P5SITE}/Mojolicious/public/css/prettify.css
 ${P5SITE}/Mojolicious/public/favicon.ico
-${P5SITE}/Mojolicious/public/js/
-${P5SITE}/Mojolicious/public/js/jquery.js
-${P5SITE}/Mojolicious/public/js/lang-apollo.js
-${P5SITE}/Mojolicious/public/js/lang-clj.js
-${P5SITE}/Mojolicious/public/js/lang-css.js
-${P5SITE}/Mojolicious/public/js/lang-go.js
-${P5SITE}/Mojolicious/public/js/lang-hs.js
-${P5SITE}/Mojolicious/public/js/lang-lisp.js
-${P5SITE}/Mojolicious/public/js/lang-lua.js
-${P5SITE}/Mojolicious/public/js/lang-ml.js
-${P5SITE}/Mojolicious/public/js/lang-n.js
-${P5SITE}/Mojolicious/public/js/lang-proto.js
-${P5SITE}/Mojolicious/public/js/lang-scala.js
-${P5SITE}/Mojolicious/public/js/lang-sql.js
-${P5SITE}/Mojolicious/public/js/lang-tex.js
-${P5SITE}/Mojolicious/public/js/lang-vb.js
-${P5SITE}/Mojolicious/public/js/lang-vhdl.js
-${P5SITE}/Mojolicious/public/js/lang-wiki.js
-${P5SITE}/Mojolicious/public/js/lang-xq.js
-${P5SITE}/Mojolicious/public/js/lang-yaml.js
-${P5SITE}/Mojolicious/public/js/prettify.js
-${P5SITE}/Mojolicious/public/mojolicious-black.png
-${P5SITE}/Mojolicious/public/mojolicious-failraptor.png
-${P5SITE}/Mojolicious/public/mojolicious-noraptor.png
-${P5SITE}/Mojolicious/public/mojolicious-notfound.png
-${P5SITE}/Mojolicious/public/mojolicious-pinstripe.gif
-${P5SITE}/Mojolicious/public/mojolicious-white.png
+${P5SITE}/Mojolicious/public/mojo/
+${P5SITE}/Mojolicious/public/mojo/failraptor.png
+${P5SITE}/Mojolicious/public/mojo/jquery/
+${P5SITE}/Mojolicious/public/mojo/jquery/jquery.js
+${P5SITE}/Mojolicious/public/mojo/logo-black.png
+${P5SITE}/Mojolicious/public/mojo/logo-white.png
+${P5SITE}/Mojolicious/public/mojo/noraptor.png
+${P5SITE}/Mojolicious/public/mojo/notfound.png
+${P5SITE}/Mojolicious/public/mojo/pinstripe-dark.png
+${P5SITE}/Mojolicious/public/mojo/pinstripe-light.png
+${P5SITE}/Mojolicious/public/mojo/prettify/
+${P5SITE}/Mojolicious/public/mojo/prettify/lang-apollo.js
+${P5SITE}/Mojolicious/public/mojo/prettify/lang-basic.js
+${P5SITE}/Mojolicious/public/mojo/prettify/lang-clj.js
+${P5SITE}/Mojolicious/public/mojo/prettify/lang-css.js
+${P5SITE}/Mojolicious/public/mojo/prettify/lang-dart.js
+${P5SITE}/Mojolicious/public/mojo/prettify/lang-erlang.js
+${P5SITE}/Mojolicious/public/mojo/prettify/lang-go.js
+${P5SITE}/Mojolicious/public/mojo/prettify/lang-hs.js
+${P5SITE}/Mojolicious/public/mojo/prettify/lang-lisp.js
+${P5SITE}/Mojolicious/public/mojo/prettify/lang-llvm.js
+${P5SITE}/Mojolicious/public/mojo/prettify/lang-lua.js
+${P5SITE}/Mojolicious/public/mojo/prettify/lang-matlab.js
+${P5SITE}/Mojolicious/public/mojo/prettify/lang-ml.js
+${P5SITE}/Mojolicious/public/mojo/prettify/lang-mumps.js
+${P5SITE}/Mojolicious/public/mojo/prettify/lang-n.js
+${P5SITE}/Mojolicious/public/mojo/prettify/lang-pascal.js
+${P5SITE}/Mojolicious/public/mojo/prettify/lang-proto.js
+${P5SITE}/Mojolicious/public/mojo/prettify/lang-r.js
+${P5SITE}/Mojolicious/public/mojo/prettify/lang-rd.js
+${P5SITE}/Mojolicious/public/mojo/prettify/lang-scala.js
+${P5SITE}/Mojolicious/public/mojo/prettify/lang-sql.js
+${P5SITE}/Mojolicious/public/mojo/prettify/lang-tcl.js
+${P5SITE}/Mojolicious/public/mojo/prettify/lang-tex.js
+${P5SITE}/Mojolicious/public/mojo/prettify/lang-vb.js
+${P5SITE}/Mojolicious/public/mojo/prettify/lang-vhdl.js
+${P5SITE}/Mojolicious/public/mojo/prettify/lang-wiki.js
+${P5SITE}/Mojolicious/public/mojo/prettify/lang-xq.js
+${P5SITE}/Mojolicious/public/mojo/prettify/lang-yaml.js
+${P5SITE}/Mojolicious/public/mojo/prettify/prettify-mojo-dark.css
+${P5SITE}/Mojolicious/public/mojo/prettify/prettify-mojo-light.css
+${P5SITE}/Mojolicious/public/mojo/prettify/prettify.css
+${P5SITE}/Mojolicious/public/mojo/prettify/prettify.js
+${P5SITE}/Mojolicious/public/mojo/prettify/run_prettify.js
+${P5SITE}/Mojolicious/public/mojo/stripes.png
 ${P5SITE}/Mojolicious/templates/
 ${P5SITE}/Mojolicious/templates/exception.development.html.ep
 ${P5SITE}/Mojolicious/templates/exception.html.ep
@@ -167,7 +188,6 @@ ${P5SITE}/Mojolicious/templates/mojobar.html.ep
 ${P5SITE}/Mojolicious/templates/not_found.development.html.ep
 ${P5SITE}/Mojolicious/templates/not_found.html.ep
 ${P5SITE}/Mojolicious/templates/perldoc.html.ep
-${P5SITE}/README.pod
 ${P5SITE}/Test/
 ${P5SITE}/Test/Mojo.pm
 ${P5SITE}/ojo.pm
@@ -182,14 +202,12 @@ ${P5SITE}/ojo.pm
 @man man/man3p/Mojo::ByteStream.3p
 @man man/man3p/Mojo::Cache.3p
 @man man/man3p/Mojo::Collection.3p
-@man man/man3p/Mojo::Command.3p
 @man man/man3p/Mojo::Content.3p
 @man man/man3p/Mojo::Content::MultiPart.3p
 @man man/man3p/Mojo::Content::Single.3p
 @man man/man3p/Mojo::Cookie.3p
 @man man/man3p/Mojo::Cookie::Request.3p
 @man man/man3p/Mojo::Cookie::Response.3p
-@man man/man3p/Mojo::CookieJar.3p
 @man man/man3p/Mojo::DOM.3p
 @man man/man3p/Mojo::DOM::CSS.3p
 @man man/man3p/Mojo::DOM::HTML.3p
@@ -222,6 +240,7 @@ ${P5SITE}/ojo.pm
 @man man/man3p/Mojo::Server::Hypnotoad.3p
 @man man/man3p/Mojo::Server::Morbo.3p
 @man man/man3p/Mojo::Server::PSGI.3p
+@man man/man3p/Mojo::Server::Prefork.3p
 @man man/man3p/Mojo::Template.3p
 @man man/man3p/Mojo::Transaction.3p
 @man man/man3p/Mojo::Transaction::HTTP.3p
@@ -229,9 +248,13 @@ ${P5SITE}/ojo.pm
 @man man/man3p/Mojo::URL.3p
 @man man/man3p/Mojo::Upload.3p
 @man man/man3p/Mojo::UserAgent.3p
+@man man/man3p/Mojo::UserAgent::CookieJar.3p
+@man man/man3p/Mojo::UserAgent::Proxy.3p
+@man man/man3p/Mojo::UserAgent::Server.3p
 @man man/man3p/Mojo::UserAgent::Transactor.3p
 @man man/man3p/Mojo::Util.3p
 @man man/man3p/Mojolicious.3p
+@man man/man3p/Mojolicious::Command.3p
 @man man/man3p/Mojolicious::Command::cgi.3p
 @man man/man3p/Mojolicious::Command::cpanify.3p
 @man man/man3p/Mojolicious::Command::daemon.3p
@@ -243,6 +266,7 @@ ${P5SITE}/ojo.pm
 @man man/man3p/Mojolicious::Command::generate::plugin.3p
 @man man/man3p/Mojolicious::Command::get.3p
 @man man/man3p/Mojolicious::Command::inflate.3p
+@man man/man3p/Mojolicious::Command::prefork.3p
 @man man/man3p/Mojolicious::Command::psgi.3p
 @man man/man3p/Mojolicious::Command::routes.3p
 @man man/man3p/Mojolicious::Command::test.3p
@@ -250,7 +274,7 @@ ${P5SITE}/ojo.pm
 @man man/man3p/Mojolicious::Commands.3p
 @man man/man3p/Mojolicious::Controller.3p
 @man man/man3p/Mojolicious::Guides.3p
-@man man/man3p/Mojolicious::Guides::CodingGuidelines.3p
+@man man/man3p/Mojolicious::Guides::Contributing.3p
 @man man/man3p/Mojolicious::Guides::Cookbook.3p
 @man man/man3p/Mojolicious::Guides::FAQ.3p
 @man man/man3p/Mojolicious::Guides::Growing.3p
@@ -264,12 +288,9 @@ ${P5SITE}/ojo.pm
 @man man/man3p/Mojolicious::Plugin::EPLRenderer.3p
 @man man/man3p/Mojolicious::Plugin::EPRenderer.3p
 @man man/man3p/Mojolicious::Plugin::HeaderCondition.3p
-@man man/man3p/Mojolicious::Plugin::I18N.3p
 @man man/man3p/Mojolicious::Plugin::JSONConfig.3p
 @man man/man3p/Mojolicious::Plugin::Mount.3p
 @man man/man3p/Mojolicious::Plugin::PODRenderer.3p
-@man man/man3p/Mojolicious::Plugin::PoweredBy.3p
-@man man/man3p/Mojolicious::Plugin::RequestTimer.3p
 @man man/man3p/Mojolicious::Plugin::TagHelpers.3p
 @man man/man3p/Mojolicious::Plugins.3p
 @man man/man3p/Mojolicious::Renderer.3p
@@ -280,6 +301,7 @@ ${P5SITE}/ojo.pm
 @man man/man3p/Mojolicious::Sessions.3p
 @man man/man3p/Mojolicious::Static.3p
 @man man/man3p/Mojolicious::Types.3p
-@comment @man man/man3p/README.3p
+@man man/man3p/Mojolicious::Validator.3p
+@man man/man3p/Mojolicious::Validator::Validation.3p
 @man man/man3p/Test::Mojo.3p
 @man man/man3p/ojo.3p
