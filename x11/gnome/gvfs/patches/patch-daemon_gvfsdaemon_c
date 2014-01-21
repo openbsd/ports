@@ -1,0 +1,44 @@
+$OpenBSD: patch-daemon_gvfsdaemon_c,v 1.1 2014/01/21 19:23:40 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=720482
+
+--- daemon/gvfsdaemon.c.orig	Tue Jan 21 16:31:25 2014
++++ daemon/gvfsdaemon.c	Tue Jan 21 16:31:13 2014
+@@ -598,10 +598,16 @@ static void
+ new_connection_data_free (void *memory)
+ {
+   NewConnectionData *data = memory;
++  gchar *socket;
+   
+   /* Remove the socket and dir after connected */
+-  if (data->socket_dir) 
++  if (data->socket_dir) {
++    socket = g_strdup_printf ("%s/socket", data->socket_dir);
++    g_unlink (socket);
+     rmdir (data->socket_dir);
++    if (socket)
++      g_free (socket);
++  }
+ 
+   g_free (data->socket_dir);
+   g_free (data);
+@@ -860,6 +866,7 @@ handle_get_connection (GVfsDBusDaemon *object,
+   NewConnectionData *data;
+   char *socket_dir;
+   gchar *guid;
++  gchar *socket;
+   
+   generate_address (&address1, &socket_dir);
+ 
+@@ -904,7 +911,11 @@ handle_get_connection (GVfsDBusDaemon *object,
+   g_free (address1);
+   if (socket_dir)
+     {
++      socket = g_strdup_printf ("%s/socket", socket_dir);
++      g_unlink (socket);
+       rmdir (socket_dir);
++      if (socket)
++        g_free (socket);
+       g_free (socket_dir);
+     }
+   return TRUE;
