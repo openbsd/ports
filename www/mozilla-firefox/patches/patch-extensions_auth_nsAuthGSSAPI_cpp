@@ -1,0 +1,48 @@
+$OpenBSD: patch-extensions_auth_nsAuthGSSAPI_cpp,v 1.4 2014/01/21 21:51:35 landry Exp $
+Properly load all depending libs of gssapi with RTLD_GLOBAL.
+https://bugzilla.mozilla.org/show_bug.cgi?id=648730
+--- extensions/auth/nsAuthGSSAPI.cpp.orig	Thu Dec  5 17:07:30 2013
++++ extensions/auth/nsAuthGSSAPI.cpp	Tue Jan 21 22:36:54 2014
+@@ -120,22 +120,32 @@ gssInit()
+             PR_FreeLibraryName(libName);
+         }
+ #else
+-        
++
+         const char *const libNames[] = {
+-            "gss",
+-            "gssapi_krb5",
++            "asn1",
++            "crypto",
++            "roken",
++            "heimbase",
++            "com_err",
++            "krb5",
+             "gssapi"
+         };
+-        
++
+         const char *const verLibNames[] = {
+-            "libgssapi_krb5.so.2", /* MIT - FC, Suse10, Debian */
+-            "libgssapi.so.4",      /* Heimdal - Suse10, MDK */
+-            "libgssapi.so.1",      /* Heimdal - Suse9, CITI - FC, MDK, Suse10*/
+-            "libgssapi.so"         /* OpenBSD */
++            "libasn1.so",
++            "libcrypto.so",
++            "libroken.so",
++            "libheimbase.so",
++            "libcom_err.so",
++            "libkrb5.so",
++            "libgssapi.so"
+         };
+ 
+-        for (size_t i = 0; i < ArrayLength(verLibNames) && !lib; ++i) {
+-            lib = PR_LoadLibrary(verLibNames[i]);
++        PRLibSpec libSpec;
++        for (size_t i = 0; i < ArrayLength(verLibNames); ++i) {
++            libSpec.type = PR_LibSpec_Pathname;
++            libSpec.value.pathname = verLibNames[i];
++            lib = PR_LoadLibraryWithFlags(libSpec, PR_LD_GLOBAL);
+  
+             /* The CITI libgssapi library calls exit() during
+              * initialization if it's not correctly configured. Try to
