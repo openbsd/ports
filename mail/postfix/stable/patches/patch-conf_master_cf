@@ -1,7 +1,7 @@
-$OpenBSD: patch-conf_master_cf,v 1.5 2013/03/02 20:47:28 brad Exp $
---- conf/master.cf.orig	Mon Sep 24 20:10:16 2012
-+++ conf/master.cf	Wed Oct  3 21:32:18 2012
-@@ -8,12 +8,12 @@
+$OpenBSD: patch-conf_master_cf,v 1.6 2014/01/21 23:52:23 brad Exp $
+--- conf/master.cf.orig	Tue Dec 24 09:58:27 2013
++++ conf/master.cf	Wed Jan  8 20:43:06 2014
+@@ -9,12 +9,12 @@
  # service type  private unpriv  chroot  wakeup  maxproc command + args
  #               (yes)   (yes)   (yes)   (never) (100)
  # ==========================================================================
@@ -20,18 +20,18 @@ $OpenBSD: patch-conf_master_cf,v 1.5 2013/03/02 20:47:28 brad Exp $
  #  -o syslog_name=postfix/submission
  #  -o smtpd_tls_security_level=encrypt
  #  -o smtpd_sasl_auth_enable=yes
-@@ -23,7 +23,7 @@ smtp      inet  n       -       n       -       -     
- #  -o smtpd_sender_restrictions=$mua_sender_restrictions
- #  -o smtpd_recipient_restrictions=permit_sasl_authenticated,reject
+@@ -25,7 +25,7 @@ smtp      inet  n       -       n       -       -     
+ #  -o smtpd_recipient_restrictions=
+ #  -o smtpd_relay_restrictions=permit_sasl_authenticated,reject
  #  -o milter_macro_daemon_name=ORIGINATING
 -#smtps     inet  n       -       n       -       -       smtpd
 +#smtps     inet  n       -       -       -       -       smtpd
  #  -o syslog_name=postfix/smtps
  #  -o smtpd_tls_wrappermode=yes
  #  -o smtpd_sasl_auth_enable=yes
-@@ -33,32 +33,32 @@ smtp      inet  n       -       n       -       -     
- #  -o smtpd_sender_restrictions=$mua_sender_restrictions
- #  -o smtpd_recipient_restrictions=permit_sasl_authenticated,reject
+@@ -36,32 +36,32 @@ smtp      inet  n       -       n       -       -     
+ #  -o smtpd_recipient_restrictions=
+ #  -o smtpd_relay_restrictions=permit_sasl_authenticated,reject
  #  -o milter_macro_daemon_name=ORIGINATING
 -#628       inet  n       -       n       -       -       qmqpd
 -pickup    unix  n       -       n       60      1       pickup
@@ -83,7 +83,7 @@ $OpenBSD: patch-conf_master_cf,v 1.5 2013/03/02 20:47:28 brad Exp $
  #
  # ====================================================================
  # Interfaces to non-Postfix software. Be sure to examine the manual
-@@ -92,14 +92,14 @@ scache    unix  -       -       n       -       1     
+@@ -95,14 +95,14 @@ scache    unix  -       -       n       -       1     
  # Also specify in main.cf: cyrus_destination_recipient_limit=1
  #
  #cyrus     unix  -       n       n       -       -       pipe
