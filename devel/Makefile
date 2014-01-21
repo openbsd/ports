@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1190 2014/01/18 19:14:09 syl Exp $
+# $OpenBSD: Makefile,v 1.1191 2014/01/21 20:39:33 syl Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -737,6 +737,7 @@
      SUBDIR += p5-File-Type
      SUBDIR += p5-File-chdir
      SUBDIR += p5-FileHandle-Unget
+     SUBDIR += p5-Filesys-Statvfs
      SUBDIR += p5-Filter-Template
      SUBDIR += p5-FormValidator-Simple
      SUBDIR += p5-Fortran-Format
