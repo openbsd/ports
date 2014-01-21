@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2014/01/20 17:06:31 edd Exp $
+# $OpenBSD: Makefile,v 1.22 2014/01/21 21:33:15 naddy Exp $
 
 COMMENT=	documentation system for C, C++, IDL and Java
 
@@ -30,8 +30,5 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/texmf-local/tex/latex/doc++
 	${INSTALL_DATA} ${WRKSRC}/doc/*.sty \
 		${PREFIX}/share/texmf-local/tex/latex/doc++
-# Remove stuff that collides with gettext and libiconv
-	rm ${PREFIX}/share/locale/locale.alias
-	rm ${PREFIX}/lib/charset.alias
 
 .include <bsd.port.mk>
