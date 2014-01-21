@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.117 2014/01/18 13:41:22 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.118 2014/01/21 22:45:07 landry Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -330,6 +330,7 @@ my $stem_extensions = {
 	'wcb' =>'tklib',
 	'foomatic-filters' =>'cups-filters',
 	'faad-xmms' => 'xmms-faad',
+	'p5-MojoX-Renderer-TT' => 'p5-Mojolicious-Plugin-TtRenderer',
 };
 
 # reasons for obsolete packages
