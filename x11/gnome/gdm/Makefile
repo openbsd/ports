@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.185 2014/01/08 14:07:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.186 2014/01/21 17:39:30 ajacoutot Exp $
 
 # XXX configuring GDM from gnome-cc does not work
 
@@ -8,7 +8,7 @@ COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		3.10.0.1
-REVISION=		9
+REVISION=		10
 
 SHARED_LIBS +=  gdm                  0.0      # 1.0
 
@@ -51,6 +51,9 @@ MODGNOME_TOOLS= 	gi yelp
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include -DHAS_SA_LEN
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
+
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.69
 
 CONFIGURE_ARGS=		--disable-static \
 			--mandir=${PREFIX}/man \
