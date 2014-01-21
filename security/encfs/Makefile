@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2014/01/17 10:16:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2014/01/21 15:41:27 syl Exp $
 
 COMMENT =		fuse-based cryptographic filesystem
 DISTNAME =		encfs-1.7.4
+REVISION =		0
 SHARED_LIBS = 		encfs	0.0	# 6.1
 CATEGORIES =		security
 HOMEPAGE =		http://www.arg0.net/encfs
