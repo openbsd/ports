@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_awful_menu_lua_in,v 1.1 2014/01/14 13:33:37 dcoppa Exp $
+$OpenBSD: patch-lib_awful_menu_lua_in,v 1.2 2014/01/21 14:30:30 dcoppa Exp $
 
 commit 479f7b990cf411bc116f728eea8edc0ea6b4b8d3
 Author: Uli Schlachter <psychon@znc.in>
@@ -25,9 +25,9 @@ Patch removes the util.escape() call in menu:clients()
 Signed-off-by: Enrico Scholz <enrico.scholz@informatik.tu-chemnitz.de>
 Signed-off-by: Uli Schlachter <psychon@znc.in>
 
---- lib/awful/menu.lua.in.orig	Tue Jan 14 10:26:23 2014
-+++ lib/awful/menu.lua.in	Tue Jan 14 10:39:11 2014
-@@ -455,15 +455,17 @@ end
+--- lib/awful/menu.lua.in.orig	Sat Oct 12 18:48:49 2013
++++ lib/awful/menu.lua.in	Tue Jan 21 15:19:54 2014
+@@ -455,15 +455,16 @@ end
  --------------------------------------------------------------------------------
  
  --- Build a popup menu with running clients and shows it.
@@ -39,7 +39,6 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
 -function menu:clients(args) -- FIXME crude api
 -    _menu = self or {}
 +function menu.clients(args, item_args)
-+    local args = args or args1
      local cls = capi.client.get()
      local cls_t = {}
      for k, c in pairs(cls) do
@@ -49,7 +48,7 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
              function ()
                  if not c:isvisible() then
                      tags.viewmore(c:tags(), c.screen)
-@@ -472,6 +474,13 @@ function menu:clients(args) -- FIXME crude api
+@@ -472,6 +473,13 @@ function menu:clients(args) -- FIXME crude api
                  c:raise()
              end,
              c.icon }
