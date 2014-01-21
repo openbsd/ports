@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2014/01/21 21:33:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2014/01/21 23:33:54 naddy Exp $
 
 COMMENT=	documentation system for C, C++, IDL and Java
 
 DISTNAME=	doc++-3.4.10
-REVISION =	3
+REVISION=	4
 CATEGORIES=	devel
 
 HOMEPAGE=	http://docpp.sourceforge.net/
