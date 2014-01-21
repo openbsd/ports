@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/04/10 12:56:40 jim Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/01/21 20:50:37 landry Exp $
 ${P5SITE}/MojoX/
 ${P5SITE}/MojoX/Session/
 ${P5SITE}/MojoX/Session.pm
@@ -6,8 +6,6 @@ ${P5SITE}/MojoX/Session/Store/
 ${P5SITE}/MojoX/Session/Store.pm
 ${P5SITE}/MojoX/Session/Store/AsyncOrm.pm
 ${P5SITE}/MojoX/Session/Store/Couchdb.pm
-${P5SITE}/MojoX/Session/Store/DBI.pm
-${P5SITE}/MojoX/Session/Store/DBIC.pm
 ${P5SITE}/MojoX/Session/Store/Dbi.pm
 ${P5SITE}/MojoX/Session/Store/Dbic.pm
 ${P5SITE}/MojoX/Session/Transport/
@@ -16,8 +14,6 @@ ${P5SITE}/MojoX/Session/Transport/Cookie.pm
 ${P5SITE}/Mojolicious/Plugin/Session.pm
 @man man/man3p/MojoX::Session.3p
 @man man/man3p/MojoX::Session::Store.3p
-@man man/man3p/MojoX::Session::Store::DBI.3p
-@man man/man3p/MojoX::Session::Store::DBIC.3p
 @man man/man3p/MojoX::Session::Store::Dbi.3p
 @man man/man3p/MojoX::Session::Store::Dbic.3p
 @man man/man3p/MojoX::Session::Transport.3p
