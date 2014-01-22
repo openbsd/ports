@@ -1,18 +1,6 @@
-$OpenBSD: patch-src_ipc_c,v 1.10 2014/01/19 10:25:30 dcoppa Exp $
+$OpenBSD: patch-src_ipc_c,v 1.11 2014/01/22 13:48:38 dcoppa Exp $
 
 Add missing header
-
-commit 76393377160ffd043757ca2dd8d947aa25f69716
-Author: Tony Crisci <tony@dubstepdish.com>
-Date:   Mon Jan 13 15:36:11 2014 -0500
-
-Bugfix: `move <direction>` sends workspace focus
-
-Make sure the command `move <direction>` properly sends the workspace
-focus ipc event required for i3bar to be properly updated and redrawn.
-
-Make `ipc_send_workspace_focus_event publicly available from ipc.h for
-more flexible event sending.
 
 --- src/ipc.c.orig	Sun Dec 22 21:12:41 2013
 +++ src/ipc.c	Sat Jan 18 23:05:20 2014
@@ -24,42 +12,3 @@ more flexible event sending.
  #include <sys/socket.h>
  #include <sys/un.h>
  #include <fcntl.h>
-@@ -960,4 +961,38 @@ int ipc_create_socket(const char *filename) {
- 
-     current_socketpath = resolved;
-     return sockfd;
-+}
-+
-+/*
-+ * For the workspace "focus" event we send, along the usual "change" field,
-+ * also the current and previous workspace, in "current" and "old"
-+ * respectively.
-+ */
-+void ipc_send_workspace_focus_event(Con *current, Con *old) {
-+    setlocale(LC_NUMERIC, "C");
-+    yajl_gen gen = ygenalloc();
-+
-+    y(map_open);
-+
-+    ystr("change");
-+    ystr("focus");
-+
-+    ystr("current");
-+    dump_node(gen, current, false);
-+
-+    ystr("old");
-+    if (old == NULL)
-+        y(null);
-+    else
-+        dump_node(gen, old, false);
-+
-+    y(map_close);
-+
-+    const unsigned char *payload;
-+    ylength length;
-+    y(get_buf, &payload, &length);
-+
-+    ipc_send_event("workspace", I3_IPC_EVENT_WORKSPACE, (const char *)payload);
-+    y(free);
-+    setlocale(LC_NUMERIC, "");
- }
