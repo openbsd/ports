@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2013/07/03 17:03:03 okan Exp $
+# $OpenBSD: Makefile,v 1.24 2014/01/22 15:48:12 okan Exp $
 
 COMMENT=	simple event correlator
 
-DISTNAME=	sec-2.7.4
+DISTNAME=	sec-2.7.5
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=simple-evcorr/}
 
