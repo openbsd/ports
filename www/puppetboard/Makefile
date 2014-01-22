@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2014/01/15 08:41:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2014/01/22 09:21:17 jasper Exp $
 
 COMMENT=		web interface to PuppetDB
 
-# git clone of eadcf8708ccdb6cfa7981f91bee425169d23234b
-DISTNAME=		puppetboard-0.0.1
-REVISION=		2
+MODPY_EGG_VERSION=	0.0.4
+DISTNAME=		puppetboard-${MODPY_EGG_VERSION}
 CATEGORIES=		www
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -12,7 +11,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # Apache2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://distfiles.nl/
+MASTER_SITES=		${MASTER_SITE_PYPI:=p/puppetboard/}
 
 MODULES=		lang/python
 
@@ -21,7 +20,7 @@ NO_TEST=		Yes
 PKG_ARCH=		*
 
 RUN_DEPENDS=		databases/py-puppetdb>=0.1.0 \
-			www/py-flask-wtf \
+			www/py-flask-wtf>=0.9.4p0 \
 			www/py-gunicorn \
 			www/py-requests
 
@@ -29,16 +28,12 @@ PREFIX=			${VARBASE}/www
 INSTDIR=		${PREFIX}/puppetboard
 SUBST_VARS+=		INSTDIR
 
-# Don't bother installing some screenshots of what we're about to run
-post-extract:
-	rm -r ${WRKSRC}/screenshots/
-
 do-install:
 	cp -Rp ${WRKSRC} ${INSTDIR}
 	mv ${INSTDIR}/puppetboard/default_settings.py \
 		${INSTDIR}/puppetboard/default_settings.py.dist
 	${INSTALL_DATA_DIR} ${INSTDIR}/puppetboard/{public,tmp}/
-	mv ${INSTDIR}/wsgi.py ${INSTDIR}/puppetboard_wsgi.py
+	${INSTALL_DATA} ${FILESDIR}/puppetboard_wsgi.py ${INSTDIR}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
 .include <bsd.port.mk>
