@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:35:55 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2014/01/22 00:25:09 fgsch Exp $
 
 COMMENT=		twitter python module
 
 MODPY_EGG_VERSION=	1.7.2
 DISTNAME=		twitter-${MODPY_EGG_VERSION}
 PKGNAME=		py-twitter-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES=		net www
 
@@ -19,8 +20,7 @@ MODULES=		lang/python
 
 MODPY_SETUPTOOLS=	Yes
 
-RUN_DEPENDS=		devel/py-simplejson \
-			net/py-irclib
+RUN_DEPENDS=		net/py-irclib
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
 .include <bsd.port.mk>

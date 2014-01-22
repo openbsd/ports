@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/10 22:55:06 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2014/01/22 00:22:53 fgsch Exp $
 
 COMMENT =	html5-powered web music server
 
 MODPY_EGG_VERSION = 0.6
 DISTNAME =	zeya_${MODPY_EGG_VERSION}.orig
 PKGNAME =	zeya-${MODPY_EGG_VERSION}
+REVISION =	0
 CATEGORIES =	audio www
 
 HOMEPAGE =	http://web.psung.name/zeya/
@@ -20,10 +21,9 @@ MODULES =		lang/python
 
 RUN_DEPENDS =		audio/faad \
 			audio/flac \
-                        audio/mpg123 \
+			audio/mpg123 \
 			audio/py-tagpy \
-                        audio/vorbis-tools \
-			devel/py-simplejson
+			audio/vorbis-tools \
 
 MODPY_ADJ_FILES =	zeya.py \
 			zeyaclient.py \
