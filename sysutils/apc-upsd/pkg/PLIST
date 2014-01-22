@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/03/17 10:35:10 sthen Exp $
-lib/apc-upsd/
-lib/apc-upsd/apc-upsd.conf
-@sample ${SYSCONFDIR}/apc-upsd.conf
-@bin sbin/apc-upsd
-share/doc/apc-upsd/
-share/doc/apc-upsd/smart-protocol
