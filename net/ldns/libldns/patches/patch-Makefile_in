@@ -1,16 +1,16 @@
-$OpenBSD: patch-Makefile_in,v 1.14 2012/10/24 23:49:08 brad Exp $
---- Makefile.in.orig	Wed Oct 17 09:36:24 2012
-+++ Makefile.in	Wed Oct 24 17:04:23 2012
+$OpenBSD: patch-Makefile_in,v 1.15 2014/01/22 00:15:36 brad Exp $
+--- Makefile.in.orig	Fri Jan 10 16:04:41 2014
++++ Makefile.in	Fri Jan 10 17:42:38 2014
 @@ -12,7 +12,7 @@ datarootdir	= @datarootdir@
  datadir		= @datadir@
  libdir		= @libdir@
  includedir	= @includedir@
 -doxygen		= @doxygen@
-+#doxygen	= @doxygen@
- pywrapdir       = ${srcdir}/contrib/python
- pyldnsxwrapdir  = ${srcdir}/contrib/ldnsx
- swig		= @swig@
-@@ -297,7 +297,6 @@ uninstall-h:
++#doxygen		= @doxygen@
+ pywrapdir       = $(srcdir)/contrib/python
+ pyldnsxwrapdir  = $(srcdir)/contrib/ldnsx
+ p5_dns_ldns_dir = $(srcdir)/contrib/DNS-LDNS
+@@ -320,7 +320,6 @@ uninstall-h:
  install-lib: lib
  	$(INSTALL) -m 755 -d $(DESTDIR)$(libdir)
  	$(LIBTOOL) --mode=install cp libldns.la $(DESTDIR)$(libdir)
