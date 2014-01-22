@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.118 2014/01/21 22:45:07 landry Exp $
+# $OpenBSD: Quirks.pm,v 1.119 2014/01/22 12:00:32 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -358,6 +358,7 @@ my $obsolete_reason = {
 	'childsplay-plugins' => 3,
 	'ez-ipupdate' => 3,
 	'tesseract-dan-frak' => 3,
+	'apc-upsd' => 3,
 };
 
 # ->is_base_system($handle, $state):
@@ -406,7 +407,7 @@ sub filter_obsolete
 			    $msg[$reason]);
 		} else {
 			push(@$list, $pkgname);
-	    	}
+		}
 	}
 }
 
