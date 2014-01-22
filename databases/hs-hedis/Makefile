@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/10/04 06:07:55 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.2 2014/01/22 14:43:38 dcoppa Exp $
 
 COMMENT =		client library for the Redis datastore
 
-DISTNAME =		hedis-0.6.2
+DISTNAME =		hedis-0.6.3
 CATEGORIES =		databases
 HOMEPAGE =		https://github.com/informatikr/hedis
 
