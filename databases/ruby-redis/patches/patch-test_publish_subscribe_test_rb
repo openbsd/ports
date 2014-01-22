@@ -1,12 +1,12 @@
-$OpenBSD: patch-test_publish_subscribe_test_rb,v 1.1 2013/05/17 07:52:48 dcoppa Exp $
---- test/publish_subscribe_test.rb.orig	Fri May 17 08:30:47 2013
-+++ test/publish_subscribe_test.rb	Fri May 17 08:31:18 2013
-@@ -132,7 +132,7 @@ class TestPublishSubscribe < Test::Unit::TestCase
+$OpenBSD: patch-test_publish_subscribe_test_rb,v 1.2 2014/01/22 12:01:57 dcoppa Exp $
+--- test/publish_subscribe_test.rb.orig	Thu Jan  1 01:00:00 1970
++++ test/publish_subscribe_test.rb	Wed Jan 22 12:48:13 2014
+@@ -191,7 +191,7 @@ class TestPublishSubscribe < Test::Unit::TestCase
    def test_subscribe_past_a_timeout
      # For some reason, a thread here doesn't reproduce the issue.
      sleep = %{sleep #{OPTIONS[:timeout] * 2}}
--    publish = %{echo "publish foo bar\r\n" | nc localhost #{OPTIONS[:port]}}
-+    publish = %{echo "publish foo bar\r\n" | nc -N localhost #{OPTIONS[:port]}}
+-    publish = %{echo "publish foo bar\r\n" | nc 127.0.0.1 #{OPTIONS[:port]}}
++    publish = %{echo "publish foo bar\r\n" | nc -N 127.0.0.1 #{OPTIONS[:port]}}
      cmd = [sleep, publish].join("; ")
  
      IO.popen(cmd, "r+") do |pipe|

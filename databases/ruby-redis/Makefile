@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2013/11/12 08:10:32 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.14 2014/01/22 12:01:57 dcoppa Exp $
 
 COMMENT =	client library for the Redis key-value store
 
-VERSION =	3.0.6
+VERSION =	3.0.7
 DISTNAME =	redis-${VERSION}
 CATEGORIES =	databases
 
@@ -19,7 +19,7 @@ CONFIGURE_STYLE =	ruby gem
 
 MODRUBY_TEST =		rake
 
-MODRUBY_TEST_BIN =	LC_CTYPE="en_US.UTF-8" ${RAKE} --trace
+MODRUBY_TEST_ENV +=	LC_CTYPE="en_US.UTF-8"
 
 TEST_DEPENDS =		databases/redis
 
