@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2014/01/20 14:50:54 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.26 2014/01/22 13:54:46 dcoppa Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -289,6 +289,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rtlnow.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rtlnow.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rutube.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/rutube.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/servingsys.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/servingsys.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/sina.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/sina.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/slashdot.py
@@ -309,6 +311,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/spankwire.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/spankwire.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/spiegel.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/spiegel.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/spike.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/spike.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/stanfordoc.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/stanfordoc.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/statigram.py
