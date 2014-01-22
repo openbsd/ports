@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2014/01/18 09:45:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2014/01/22 20:39:04 jeremy Exp $
 
 COMMENT =		control Sonos speakers with Ruby
 
 DISTNAME =		sonos-0.3.4
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		audio net
 
