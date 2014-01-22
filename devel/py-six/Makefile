@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2013/09/11 04:23:42 bcallah Exp $
+# $OpenBSD: Makefile,v 1.4 2014/01/22 18:59:58 bcallah Exp $
 
 COMMENT =	Python 2 and 3 compatibility library
-MODPY_EGG_VERSION =	1.4.1
+MODPY_EGG_VERSION =	1.5.2
 DISTNAME =	six-${MODPY_EGG_VERSION}
 PKGNAME =	py-six-${MODPY_EGG_VERSION}
 CATEGORIES =	devel
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =	https://pypi.python.org/packages/source/s/six/
 
 MODULES =	lang/python
+MODPY_SETUPTOOLS =	Yes
 
 TEST_DEPENDS =	devel/py-py \
 		devel/py-test
