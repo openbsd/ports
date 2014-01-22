@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/08/08 15:48:24 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/01/22 11:30:10 dcoppa Exp $
 @group daemon
 pear/
 pear/lib/
@@ -20,6 +20,14 @@ pear/lib/Predis/Cluster/Hash/CRC16HashGenerator.php
 pear/lib/Predis/Cluster/Hash/HashGeneratorInterface.php
 pear/lib/Predis/Cluster/PredisClusterHashStrategy.php
 pear/lib/Predis/Cluster/RedisClusterHashStrategy.php
+pear/lib/Predis/Collection/
+pear/lib/Predis/Collection/Iterator/
+pear/lib/Predis/Collection/Iterator/CursorBasedIterator.php
+pear/lib/Predis/Collection/Iterator/HashKey.php
+pear/lib/Predis/Collection/Iterator/Keyspace.php
+pear/lib/Predis/Collection/Iterator/ListKey.php
+pear/lib/Predis/Collection/Iterator/SetKey.php
+pear/lib/Predis/Collection/Iterator/SortedSetKey.php
 pear/lib/Predis/Command/
 pear/lib/Predis/Command/AbstractCommand.php
 pear/lib/Predis/Command/CommandInterface.php
@@ -37,6 +45,7 @@ pear/lib/Predis/Command/HashIncrementBy.php
 pear/lib/Predis/Command/HashIncrementByFloat.php
 pear/lib/Predis/Command/HashKeys.php
 pear/lib/Predis/Command/HashLength.php
+pear/lib/Predis/Command/HashScan.php
 pear/lib/Predis/Command/HashSet.php
 pear/lib/Predis/Command/HashSetMultiple.php
 pear/lib/Predis/Command/HashSetPreserve.php
@@ -57,6 +66,7 @@ pear/lib/Predis/Command/KeyRandom.php
 pear/lib/Predis/Command/KeyRename.php
 pear/lib/Predis/Command/KeyRenamePreserve.php
 pear/lib/Predis/Command/KeyRestore.php
+pear/lib/Predis/Command/KeyScan.php
 pear/lib/Predis/Command/KeySort.php
 pear/lib/Predis/Command/KeyTimeToLive.php
 pear/lib/Predis/Command/KeyType.php
@@ -91,6 +101,7 @@ pear/lib/Predis/Command/PubSubSubscribe.php
 pear/lib/Predis/Command/PubSubSubscribeByPattern.php
 pear/lib/Predis/Command/PubSubUnsubscribe.php
 pear/lib/Predis/Command/PubSubUnsubscribeByPattern.php
+pear/lib/Predis/Command/RawCommand.php
 pear/lib/Predis/Command/ScriptedCommand.php
 pear/lib/Predis/Command/ServerBackgroundRewriteAOF.php
 pear/lib/Predis/Command/ServerBackgroundSave.php
@@ -124,6 +135,7 @@ pear/lib/Predis/Command/SetMove.php
 pear/lib/Predis/Command/SetPop.php
 pear/lib/Predis/Command/SetRandomMember.php
 pear/lib/Predis/Command/SetRemove.php
+pear/lib/Predis/Command/SetScan.php
 pear/lib/Predis/Command/SetUnion.php
 pear/lib/Predis/Command/SetUnionStore.php
 pear/lib/Predis/Command/StringAppend.php
@@ -168,6 +180,7 @@ pear/lib/Predis/Command/ZSetRemoveRangeByScore.php
 pear/lib/Predis/Command/ZSetReverseRange.php
 pear/lib/Predis/Command/ZSetReverseRangeByScore.php
 pear/lib/Predis/Command/ZSetReverseRank.php
+pear/lib/Predis/Command/ZSetScan.php
 pear/lib/Predis/Command/ZSetScore.php
 pear/lib/Predis/Command/ZSetUnionStore.php
 pear/lib/Predis/CommunicationException.php
@@ -230,6 +243,7 @@ pear/lib/Predis/Profile/ServerVersion20.php
 pear/lib/Predis/Profile/ServerVersion22.php
 pear/lib/Predis/Profile/ServerVersion24.php
 pear/lib/Predis/Profile/ServerVersion26.php
+pear/lib/Predis/Profile/ServerVersion28.php
 pear/lib/Predis/Profile/ServerVersionNext.php
 pear/lib/Predis/Protocol/
 pear/lib/Predis/Protocol/CommandSerializerInterface.php
