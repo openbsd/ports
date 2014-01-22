@@ -1,0 +1,12 @@
+$OpenBSD: patch-wsgiproxy_middleware_py,v 1.1 2014/01/22 00:16:11 fgsch Exp $
+--- wsgiproxy/middleware.py.orig	Sun Jan 12 16:05:02 2014
++++ wsgiproxy/middleware.py	Sun Jan 12 16:05:05 2014
+@@ -1,4 +1,7 @@
+-import simplejson
++try:
++    import json as simplejson
++except ImportError:
++    import simplejson
+ import cPickle as pickle
+ import urllib
+ from wsgiproxy import protocol_version
