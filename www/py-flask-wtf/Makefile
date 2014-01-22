@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2013/12/31 12:48:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2014/01/22 08:53:16 jasper Exp $
 
 COMMENT=	simple integration of Flask and WTForms
 
 MODPY_EGG_VERSION=0.9.4
 DISTNAME=	Flask-WTF-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME:L}
+REVISION=	0
 CATEGORIES=	www
 
 # BSD
@@ -29,8 +30,8 @@ post-build:
 	@cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}wtforms
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}-flask-wtf/
 	cd ${WRKSRC}/docs/_build/html && \
-		pax -rw * ${PREFIX}/share/doc/${MODPY_PY_PREFIX}wtforms
+		pax -rw * ${PREFIX}/share/doc/${MODPY_PY_PREFIX}-flask-wtf/
 
 .include <bsd.port.mk>
