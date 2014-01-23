@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2013/08/07 21:32:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2014/01/23 18:00:38 espie Exp $
 
 COMMENT =	Python library for pretty-printing tabular data
 
 MODPY_EGG_VERSION =	0.7.1
 DISTNAME =		prettytable-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 CATEGORIES =		textproc devel
 
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
@@ -20,5 +20,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
+
+post-install:
+	chmod -R a+r ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/prettytable-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 
 .include <bsd.port.mk>
