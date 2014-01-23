@@ -1,7 +1,9 @@
-$OpenBSD: patch-sysdeps_openbsd_proctime_c,v 1.6 2013/08/26 08:43:16 ajacoutot Exp $
+$OpenBSD: patch-sysdeps_openbsd_proctime_c,v 1.7 2014/01/23 09:41:25 jasper Exp $
 
-XXX push upstream:
-Some fields have moved in struct proc from timeval to timespec.
+From ff07ba102fb6a1bcb058a5e5429181981ce6fa2b Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Thu, 23 Jan 2014 09:34:52 +0000
+Subject: Some fields have moved in struct proc from timeval to timespec.
 
 --- sysdeps/openbsd/proctime.c.orig	Sun Jul 24 21:13:56 2011
 +++ sysdeps/openbsd/proctime.c	Sat Jun  8 15:00:41 2013

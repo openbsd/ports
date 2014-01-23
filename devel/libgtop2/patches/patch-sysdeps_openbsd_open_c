@@ -1,4 +1,10 @@
-$OpenBSD: patch-sysdeps_openbsd_open_c,v 1.1 2013/12/09 14:26:56 robert Exp $
+$OpenBSD: patch-sysdeps_openbsd_open_c,v 1.2 2014/01/23 09:41:25 jasper Exp $
+
+From df1db430320c8646f809ef0224c2a620f7cadd1b Mon Sep 17 00:00:00 2001
+From: Robert Nagy <robert@openbsd.org>
+Date: Thu, 23 Jan 2014 09:39:39 +0000
+Subject: Fix several issues related to process information on OpenBSD and drop lsof usage.
+
 --- sysdeps/openbsd/open.c.orig	Mon Dec  9 15:04:02 2013
 +++ sysdeps/openbsd/open.c	Mon Dec  9 15:04:36 2013
 @@ -55,6 +55,7 @@ glibtop_open_p (glibtop *server, const char *program_n

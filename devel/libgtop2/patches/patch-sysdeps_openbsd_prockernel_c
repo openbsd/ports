@@ -1,4 +1,10 @@
-$OpenBSD: patch-sysdeps_openbsd_prockernel_c,v 1.9 2013/12/09 14:26:56 robert Exp $
+$OpenBSD: patch-sysdeps_openbsd_prockernel_c,v 1.10 2014/01/23 09:41:25 jasper Exp $
+
+From df1db430320c8646f809ef0224c2a620f7cadd1b Mon Sep 17 00:00:00 2001
+From: Robert Nagy <robert@openbsd.org>
+Date: Thu, 23 Jan 2014 09:39:39 +0000
+Subject: Fix several issues related to process information on OpenBSD and drop lsof usage.
+
 --- sysdeps/openbsd/prockernel.c.orig	Sat Jul 27 14:40:23 2013
 +++ sysdeps/openbsd/prockernel.c	Mon Dec  9 14:54:24 2013
 @@ -78,9 +78,9 @@ glibtop_get_proc_kernel_p (glibtop *server,
