@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 02:52:07 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2014/01/23 17:21:01 espie Exp $
 
 COMMENT =	simple PostgreSQL GUI front end
 
 MODPY_EGG_VERSION = 1.9
 DISTNAME =	pgworksheet-${MODPY_EGG_VERSION}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	databases
 
@@ -25,6 +25,8 @@ RUN_DEPENDS =	x11/py-gtk2 \
 		databases/py-pgsql \
 		devel/desktop-file-utils
 
+post-install:
+	chmod -R a+r ${PREFIX}/share/applications ${PREFIX}/share/pixmaps
 
 NO_TEST = 	Yes
 
