@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2013/12/15 08:07:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.32 2014/01/23 07:35:32 ajacoutot Exp $
 @extra owncloud/config/config.php
 owncloud/
 owncloud/.htaccess.dist
@@ -4234,6 +4234,7 @@ owncloud/apps/documents/README.md
 owncloud/apps/documents/ajax/
 owncloud/apps/documents/ajax/controller.php
 owncloud/apps/documents/ajax/documentController.php
+owncloud/apps/documents/ajax/download.php
 owncloud/apps/documents/ajax/otpoll.php
 owncloud/apps/documents/ajax/personal.php
 owncloud/apps/documents/ajax/sessionController.php
@@ -5180,6 +5181,7 @@ owncloud/apps/documents/lib/download.php
 owncloud/apps/documents/lib/download/range.php
 owncloud/apps/documents/lib/download/simple.php
 owncloud/apps/documents/lib/file.php
+owncloud/apps/documents/lib/filter.php
 owncloud/apps/documents/lib/genesis.php
 owncloud/apps/documents/lib/helper.php
 owncloud/apps/documents/lib/invite.php
@@ -5408,7 +5410,6 @@ owncloud/apps/files/l10n/pt_BR.php
 owncloud/apps/files/l10n/pt_PT.php
 owncloud/apps/files/l10n/ro.php
 owncloud/apps/files/l10n/ru.php
-owncloud/apps/files/l10n/ru_RU.php
 owncloud/apps/files/l10n/si_LK.php
 owncloud/apps/files/l10n/sk.php
 owncloud/apps/files/l10n/sk_SK.php
@@ -6342,8 +6343,8 @@ owncloud/apps/files_external/3rdparty/aws-sdk-php/Symfony/Component/ClassLoader/
 owncloud/apps/files_external/3rdparty/aws-sdk-php/Symfony/Component/ClassLoader/Tests/Fixtures/fallback/Pearlike2/FooBar.php
 owncloud/apps/files_external/3rdparty/aws-sdk-php/Symfony/Component/ClassLoader/Tests/Fixtures/includepath/
 owncloud/apps/files_external/3rdparty/aws-sdk-php/Symfony/Component/ClassLoader/Tests/Fixtures/includepath/Foo.php
-owncloud/apps/files_external/3rdparty/aws-sdk-php/Symfony/Component/ClassLoader/Tests/Fixtures/php5.4/
-owncloud/apps/files_external/3rdparty/aws-sdk-php/Symfony/Component/ClassLoader/Tests/Fixtures/php5.4/traits.php
+owncloud/apps/files_external/3rdparty/aws-sdk-php/Symfony/Component/ClassLoader/Tests/Fixtures/php${MODPHP_VERSION}/
+owncloud/apps/files_external/3rdparty/aws-sdk-php/Symfony/Component/ClassLoader/Tests/Fixtures/php${MODPHP_VERSION}/traits.php
 owncloud/apps/files_external/3rdparty/aws-sdk-php/Symfony/Component/ClassLoader/Tests/UniversalClassLoaderTest.php
 owncloud/apps/files_external/3rdparty/aws-sdk-php/Symfony/Component/ClassLoader/UniversalClassLoader.php
 owncloud/apps/files_external/3rdparty/aws-sdk-php/Symfony/Component/ClassLoader/WinCacheClassLoader.php
@@ -6736,7 +6737,6 @@ owncloud/apps/files_external/l10n/pt_BR.php
 owncloud/apps/files_external/l10n/pt_PT.php
 owncloud/apps/files_external/l10n/ro.php
 owncloud/apps/files_external/l10n/ru.php
-owncloud/apps/files_external/l10n/ru_RU.php
 owncloud/apps/files_external/l10n/si_LK.php
 owncloud/apps/files_external/l10n/sk_SK.php
 owncloud/apps/files_external/l10n/sl.php
@@ -6957,7 +6957,6 @@ owncloud/apps/files_sharing/l10n/pt_BR.php
 owncloud/apps/files_sharing/l10n/pt_PT.php
 owncloud/apps/files_sharing/l10n/ro.php
 owncloud/apps/files_sharing/l10n/ru.php
-owncloud/apps/files_sharing/l10n/ru_RU.php
 owncloud/apps/files_sharing/l10n/si_LK.php
 owncloud/apps/files_sharing/l10n/sk_SK.php
 owncloud/apps/files_sharing/l10n/sl.php
@@ -7358,7 +7357,6 @@ owncloud/apps/files_trashbin/appinfo/update.php
 owncloud/apps/files_trashbin/appinfo/version
 owncloud/apps/files_trashbin/css/
 owncloud/apps/files_trashbin/css/trash.css
-owncloud/apps/files_trashbin/download.php
 owncloud/apps/files_trashbin/index.php
 owncloud/apps/files_trashbin/js/
 owncloud/apps/files_trashbin/js/disableDefaultActions.js
@@ -7429,7 +7427,6 @@ owncloud/apps/files_trashbin/l10n/pt_BR.php
 owncloud/apps/files_trashbin/l10n/pt_PT.php
 owncloud/apps/files_trashbin/l10n/ro.php
 owncloud/apps/files_trashbin/l10n/ru.php
-owncloud/apps/files_trashbin/l10n/ru_RU.php
 owncloud/apps/files_trashbin/l10n/si_LK.php
 owncloud/apps/files_trashbin/l10n/sk.php
 owncloud/apps/files_trashbin/l10n/sk_SK.php
@@ -8439,7 +8436,6 @@ owncloud/apps/user_ldap/l10n/pt_BR.php
 owncloud/apps/user_ldap/l10n/pt_PT.php
 owncloud/apps/user_ldap/l10n/ro.php
 owncloud/apps/user_ldap/l10n/ru.php
-owncloud/apps/user_ldap/l10n/ru_RU.php
 owncloud/apps/user_ldap/l10n/si_LK.php
 owncloud/apps/user_ldap/l10n/sk.php
 owncloud/apps/user_ldap/l10n/sk_SK.php
@@ -8581,6 +8577,8 @@ owncloud/core/command/maintenance/repair.php
 owncloud/core/command/maintenance/singleuser.php
 owncloud/core/command/status.php
 owncloud/core/command/upgrade.php
+owncloud/core/command/user/
+owncloud/core/command/user/report.php
 owncloud/core/css/
 owncloud/core/css/apps.css
 owncloud/core/css/auth.css
@@ -8624,6 +8622,8 @@ owncloud/core/doc/admin/_images/ldap-wizard-1-server.png
 owncloud/core/doc/admin/_images/ldap-wizard-2-user.png
 owncloud/core/doc/admin/_images/ldap-wizard-3-login.png
 owncloud/core/doc/admin/_images/ldap-wizard-4-group.png
+owncloud/core/doc/admin/_images/oc_admin_app_page.png
+owncloud/core/doc/admin/_images/oc_admin_user_manage.png
 owncloud/core/doc/admin/_images/ucs-app-center-install.png
 owncloud/core/doc/admin/_images/ucs-app-center-module.png
 owncloud/core/doc/admin/_images/ucsint.png
@@ -8648,6 +8648,7 @@ owncloud/core/doc/admin/_sources/configuration/configuration_mail.txt
 owncloud/core/doc/admin/_sources/configuration/configuration_maintenance.txt
 owncloud/core/doc/admin/_sources/configuration/configuration_preview.txt
 owncloud/core/doc/admin/_sources/configuration/configuration_reverseproxy.txt
+owncloud/core/doc/admin/_sources/configuration/configuration_users.txt
 owncloud/core/doc/admin/_sources/configuration/configuring_big_file_upload.txt
 owncloud/core/doc/admin/_sources/configuration/custom_mount_config.txt
 owncloud/core/doc/admin/_sources/configuration/custom_mount_config_gui.txt
@@ -8720,6 +8721,7 @@ owncloud/core/doc/admin/configuration/configuration_mail.html
 owncloud/core/doc/admin/configuration/configuration_maintenance.html
 owncloud/core/doc/admin/configuration/configuration_preview.html
 owncloud/core/doc/admin/configuration/configuration_reverseproxy.html
+owncloud/core/doc/admin/configuration/configuration_users.html
 owncloud/core/doc/admin/configuration/configuring_big_file_upload.html
 owncloud/core/doc/admin/configuration/custom_mount_config.html
 owncloud/core/doc/admin/configuration/custom_mount_config_gui.html
@@ -8751,23 +8753,23 @@ owncloud/core/doc/admin/search.html
 owncloud/core/doc/admin/searchindex.js
 owncloud/core/doc/user/
 owncloud/core/doc/user/_images/
-owncloud/core/doc/user/_images/bookmark_addurl.jpg
-owncloud/core/doc/user/_images/bookmark_setting.jpg
+owncloud/core/doc/user/_images/bookmark_addurl.png
+owncloud/core/doc/user/_images/bookmark_setting.png
 owncloud/core/doc/user/_images/calendar_createevent.png
 owncloud/core/doc/user/_images/calendar_export.png
 owncloud/core/doc/user/_images/calendar_import.png
 owncloud/core/doc/user/_images/calendar_manage-calendars.png
 owncloud/core/doc/user/_images/calendar_newtimezone1.png
-owncloud/core/doc/user/_images/contact_bottombar.jpg
+owncloud/core/doc/user/_images/contact_bottombar.png
 owncloud/core/doc/user/_images/contact_crop.jpg
-owncloud/core/doc/user/_images/contact_del_ab.jpg
-owncloud/core/doc/user/_images/contact_emptycontact.jpg
-owncloud/core/doc/user/_images/contact_import.jpg
+owncloud/core/doc/user/_images/contact_del_ab.png
+owncloud/core/doc/user/_images/contact_emptycontact.png
 owncloud/core/doc/user/_images/contact_picture.jpg
 owncloud/core/doc/user/_images/contact_syncopt.jpg
 owncloud/core/doc/user/_images/contact_thunderbird-Symbol_Gear.jpg
 owncloud/core/doc/user/_images/contact_thunderbird-Symbol_Impeller.jpg
 owncloud/core/doc/user/_images/contact_thunderbird-URL_config.jpg
+owncloud/core/doc/user/_images/contact_uploadbutton.png
 owncloud/core/doc/user/_images/contact_vcfpick.jpg
 owncloud/core/doc/user/_images/dolphin_webdav.png
 owncloud/core/doc/user/_images/explorer_webdav.png
@@ -8777,6 +8779,7 @@ owncloud/core/doc/user/_images/external_google_drive_3_create_project.png
 owncloud/core/doc/user/_images/external_google_drive_4_enable_api.png
 owncloud/core/doc/user/_images/external_google_drive_5_setup_ownCloud.png
 owncloud/core/doc/user/_images/external_google_drive_6_accept.png
+owncloud/core/doc/user/_images/files_versioning.png
 owncloud/core/doc/user/_images/gnome3_nautilus_webdav.png
 owncloud/core/doc/user/_images/kdes.png
 owncloud/core/doc/user/_images/kdes1.png
@@ -8788,12 +8791,22 @@ owncloud/core/doc/user/_images/kdes6.png
 owncloud/core/doc/user/_images/kdes7.png
 owncloud/core/doc/user/_images/kdes9.png
 owncloud/core/doc/user/_images/oc_connect.png
+owncloud/core/doc/user/_images/oc_documents.png
+owncloud/core/doc/user/_images/oc_documents_col_edit.png
+owncloud/core/doc/user/_images/oc_documents_edit.png
+owncloud/core/doc/user/_images/oc_documents_share.png
+owncloud/core/doc/user/_images/oc_files_share.png
+owncloud/core/doc/user/_images/oc_filesweb.png
+owncloud/core/doc/user/_images/oc_filesweb_navigate.png
+owncloud/core/doc/user/_images/oc_filesweb_new.png
 owncloud/core/doc/user/_images/oc_ui.png
+owncloud/core/doc/user/_images/oc_user_preferences.png
 owncloud/core/doc/user/_images/osx_webdav1.png
 owncloud/core/doc/user/_images/osx_webdav2.png
 owncloud/core/doc/user/_sources/
 owncloud/core/doc/user/_sources/bookmarks.txt
 owncloud/core/doc/user/_sources/contents.txt
+owncloud/core/doc/user/_sources/documents.txt
 owncloud/core/doc/user/_sources/external_storage/
 owncloud/core/doc/user/_sources/external_storage/google_drive.txt
 owncloud/core/doc/user/_sources/files/
@@ -8801,6 +8814,7 @@ owncloud/core/doc/user/_sources/files/configuring_big_file_upload.txt
 owncloud/core/doc/user/_sources/files/deletedfiles.txt
 owncloud/core/doc/user/_sources/files/encryption.txt
 owncloud/core/doc/user/_sources/files/files.txt
+owncloud/core/doc/user/_sources/files/filesweb.txt
 owncloud/core/doc/user/_sources/files/index.txt
 owncloud/core/doc/user/_sources/files/quota.txt
 owncloud/core/doc/user/_sources/files/sync.txt
@@ -8816,6 +8830,7 @@ owncloud/core/doc/user/_sources/pim/sync_kde.txt
 owncloud/core/doc/user/_sources/pim/sync_osx.txt
 owncloud/core/doc/user/_sources/pim/sync_thunderbird.txt
 owncloud/core/doc/user/_sources/pim/troubleshooting.txt
+owncloud/core/doc/user/_sources/userpreferences.txt
 owncloud/core/doc/user/_sources/webinterface.txt
 owncloud/core/doc/user/_static/
 owncloud/core/doc/user/_static/ajax-loader.gif
@@ -8850,6 +8865,7 @@ owncloud/core/doc/user/_static/up.png
 owncloud/core/doc/user/_static/websupport.js
 owncloud/core/doc/user/bookmarks.html
 owncloud/core/doc/user/contents.html
+owncloud/core/doc/user/documents.html
 owncloud/core/doc/user/external_storage/
 owncloud/core/doc/user/external_storage/google_drive.html
 owncloud/core/doc/user/files/
@@ -8857,6 +8873,7 @@ owncloud/core/doc/user/files/configuring_big_file_upload.html
 owncloud/core/doc/user/files/deletedfiles.html
 owncloud/core/doc/user/files/encryption.html
 owncloud/core/doc/user/files/files.html
+owncloud/core/doc/user/files/filesweb.html
 owncloud/core/doc/user/files/index.html
 owncloud/core/doc/user/files/quota.html
 owncloud/core/doc/user/files/sync.html
@@ -8876,6 +8893,7 @@ owncloud/core/doc/user/pim/sync_thunderbird.html
 owncloud/core/doc/user/pim/troubleshooting.html
 owncloud/core/doc/user/search.html
 owncloud/core/doc/user/searchindex.js
+owncloud/core/doc/user/userpreferences.html
 owncloud/core/doc/user/webinterface.html
 owncloud/core/img/
 owncloud/core/img/actions/
@@ -9193,7 +9211,6 @@ owncloud/core/l10n/pt_BR.php
 owncloud/core/l10n/pt_PT.php
 owncloud/core/l10n/ro.php
 owncloud/core/l10n/ru.php
-owncloud/core/l10n/ru_RU.php
 owncloud/core/l10n/si_LK.php
 owncloud/core/l10n/sk.php
 owncloud/core/l10n/sk_SK.php
@@ -10140,18 +10157,6 @@ owncloud/l10n/ru/lib.po
 owncloud/l10n/ru/settings.po
 owncloud/l10n/ru/user_ldap.po
 owncloud/l10n/ru/user_webdavauth.po
-owncloud/l10n/ru_RU/
-owncloud/l10n/ru_RU/core.po
-owncloud/l10n/ru_RU/files.po
-owncloud/l10n/ru_RU/files_encryption.po
-owncloud/l10n/ru_RU/files_external.po
-owncloud/l10n/ru_RU/files_sharing.po
-owncloud/l10n/ru_RU/files_trashbin.po
-owncloud/l10n/ru_RU/files_versions.po
-owncloud/l10n/ru_RU/lib.po
-owncloud/l10n/ru_RU/settings.po
-owncloud/l10n/ru_RU/user_ldap.po
-owncloud/l10n/ru_RU/user_webdavauth.po
 owncloud/l10n/si_LK/
 owncloud/l10n/si_LK/core.po
 owncloud/l10n/si_LK/files.po
@@ -10523,7 +10528,6 @@ owncloud/lib/l10n/pt_BR.php
 owncloud/lib/l10n/pt_PT.php
 owncloud/lib/l10n/ro.php
 owncloud/lib/l10n/ru.php
-owncloud/lib/l10n/ru_RU.php
 owncloud/lib/l10n/si_LK.php
 owncloud/lib/l10n/sk.php
 owncloud/lib/l10n/sk_SK.php
@@ -11027,7 +11031,6 @@ owncloud/settings/l10n/pt_BR.php
 owncloud/settings/l10n/pt_PT.php
 owncloud/settings/l10n/ro.php
 owncloud/settings/l10n/ru.php
-owncloud/settings/l10n/ru_RU.php
 owncloud/settings/l10n/si_LK.php
 owncloud/settings/l10n/sk_SK.php
 owncloud/settings/l10n/sl.php
