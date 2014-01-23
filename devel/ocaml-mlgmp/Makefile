@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:12 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2014/01/23 23:37:32 edd Exp $
 
 COMMENT =		GMP bindings for OCaml
 
 V =			0.13
-REVISION =		3
+REVISION =		4
 DISTNAME =		mlgmp-${V}
 PKGNAME =		ocaml-mlgmp-${V}
 
@@ -52,5 +52,6 @@ pre-build:
 post-install:
 	${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -c \
 		${FILESDIR}/META ${PREFIX}/lib/ocaml/gmp/META
+	chmod 644 ${PREFIX}/lib/ocaml/gmp/gmp.mli
 
 .include <bsd.port.mk>
