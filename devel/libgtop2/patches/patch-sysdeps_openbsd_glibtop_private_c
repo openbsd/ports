@@ -1,0 +1,42 @@
+$OpenBSD: patch-sysdeps_openbsd_glibtop_private_c,v 1.1 2014/01/23 14:06:34 ajacoutot Exp $
+
+From ecbfade5287c1a0a8973d5f18acb4b08f203f4fb Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Thu, 23 Jan 2014 14:03:36 +0000
+Subject: openbsd: really drop all lsof related code
+
+--- sysdeps/openbsd/glibtop_private.c.orig	Thu Jan 23 14:12:40 2014
++++ sysdeps/openbsd/glibtop_private.c	Thu Jan 23 14:12:51 2014
+@@ -12,32 +12,6 @@
+ #include <glib.h>
+ #include <errno.h>
+ 
+-char *
+-execute_lsof(pid_t pid) {
+-	char *output = NULL;
+-	char *lsof;
+-	char *command;
+-	int   exit_status;
+-
+-	lsof = g_find_program_in_path("lsof");
+-	if (lsof == NULL)
+-		return NULL;
+-
+-	command = g_strdup_printf("%s -n -P -Fftn -p %d", lsof, pid);
+-	g_free(lsof);
+-
+-	if (g_spawn_command_line_sync (command, &output, NULL, &exit_status, NULL)) {
+-		if (exit_status != 0) {
+-			g_warning("Could not execute \"%s\" (%i)\nMake sure lsof(8) is installed sgid kmem.",
+-				   command, exit_status);
+-			output = NULL;
+-		}
+-	}
+-
+-	g_free(command);
+-	return output;
+-}
+-
+ /* Ported from linux/glibtop_private.c */
+ gboolean
+ safe_readlink(const char *path, char *buf, int bufsiz)
