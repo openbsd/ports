@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.52 2013/12/27 09:59:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2014/01/23 16:46:59 ajacoutot Exp $
 
 COMMENT=	driver for ZjStream wire protocol compatible printers
 
-VERSION=	20131225
+VERSION=	20140108
 DISTNAME=	foo2zjs-${VERSION}
 
 CATEGORIES=	print
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c cups m pthread
 
+# unversioned distfile
+# http://foo2zjs.rkkda.com/foo2zjs.tar.gz
 MASTER_SITES=	https://distfiles.bsdfrog.org/
 
 USE_GMAKE=	Yes

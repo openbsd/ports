@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2013/12/27 09:59:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2014/01/23 16:46:59 ajacoutot Exp $
 @conflict foomatic-db-<4.0.20091207p1
 @conflict foo2zjs-cup-*
 @pkgpath print/foo2zjs,-cups
@@ -130,6 +130,7 @@ share/foo2zjs/gamma.ps
 share/foo2zjs/icm/
 share/foomatic/db/source/PPD/foo2zjs/
 share/foomatic/db/source/PPD/foo2zjs/Dell-1355.ppd.gz
+share/foomatic/db/source/PPD/foo2zjs/Epson-AcuLaser_M1400.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Fuji_Xerox-DocuPrint_CM205.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Fuji_Xerox-DocuPrint_P205.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Generic-OAKT_Printer.ppd.gz
@@ -304,6 +305,7 @@ share/foomatic/db/source/opt/foo2zjs-z2-PageSize.xml
 share/foomatic/db/source/opt/foo2zjs-z3-MediaType.xml
 share/foomatic/db/source/opt/foo2zjs-z3-PageSize.xml
 share/foomatic/db/source/printer/Dell-1355.xml
+share/foomatic/db/source/printer/Epson-AcuLaser_M1400.xml
 share/foomatic/db/source/printer/Fuji_Xerox-DocuPrint_CM205.xml
 share/foomatic/db/source/printer/Fuji_Xerox-DocuPrint_P205.xml
 share/foomatic/db/source/printer/Generic-OAKT_Printer.xml
