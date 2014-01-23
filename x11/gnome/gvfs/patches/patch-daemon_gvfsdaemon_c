@@ -1,10 +1,13 @@
-$OpenBSD: patch-daemon_gvfsdaemon_c,v 1.1 2014/01/21 19:23:40 ajacoutot Exp $
+$OpenBSD: patch-daemon_gvfsdaemon_c,v 1.2 2014/01/23 14:16:10 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=720482
+From 2909ef002746201a83922fdd1c5efad6766347f8 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Thu, 23 Jan 2014 13:40:32 +0000
+Subject: gvfsdaemon: properly remove socket_dir
 
---- daemon/gvfsdaemon.c.orig	Tue Jan 21 16:31:25 2014
-+++ daemon/gvfsdaemon.c	Tue Jan 21 16:31:13 2014
-@@ -598,10 +598,16 @@ static void
+--- daemon/gvfsdaemon.c.orig	Thu Nov  7 16:12:17 2013
++++ daemon/gvfsdaemon.c	Thu Jan 23 14:39:25 2014
+@@ -598,10 +598,15 @@ static void
  new_connection_data_free (void *memory)
  {
    NewConnectionData *data = memory;
@@ -15,30 +18,24 @@ https://bugzilla.gnome.org/show_bug.cgi?id=720482
 +  if (data->socket_dir) {
 +    socket = g_strdup_printf ("%s/socket", data->socket_dir);
 +    g_unlink (socket);
++    g_free (socket);
      rmdir (data->socket_dir);
-+    if (socket)
-+      g_free (socket);
 +  }
  
    g_free (data->socket_dir);
    g_free (data);
-@@ -860,6 +866,7 @@ handle_get_connection (GVfsDBusDaemon *object,
-   NewConnectionData *data;
-   char *socket_dir;
-   gchar *guid;
-+  gchar *socket;
-   
-   generate_address (&address1, &socket_dir);
- 
-@@ -904,7 +911,11 @@ handle_get_connection (GVfsDBusDaemon *object,
-   g_free (address1);
-   if (socket_dir)
-     {
-+      socket = g_strdup_printf ("%s/socket", socket_dir);
-+      g_unlink (socket);
-       rmdir (socket_dir);
-+      if (socket)
-+        g_free (socket);
-       g_free (socket_dir);
-     }
+@@ -900,13 +905,8 @@ handle_get_connection (GVfsDBusDaemon *object,
    return TRUE;
+ 
+  error_out:
+-  g_free (data);
++  new_connection_data_free (data);
+   g_free (address1);
+-  if (socket_dir)
+-    {
+-      rmdir (socket_dir);
+-      g_free (socket_dir);
+-    }
+   return TRUE;
+ }
+ 
