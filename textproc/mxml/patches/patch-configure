@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.2 2009/01/17 20:28:28 jakemsr Exp $
---- configure.orig	Sat Jan 26 12:50:28 2008
-+++ configure	Mon Jan 12 00:26:29 2009
-@@ -4661,10 +4661,10 @@ echo "${ECHO_T}yes" >&6; }
+$OpenBSD: patch-configure,v 1.3 2014/01/23 18:05:22 bcallah Exp $
+--- configure.orig	Thu Jan 23 01:32:39 2014
++++ configure	Thu Jan 23 01:33:54 2014
+@@ -4315,10 +4315,10 @@ $as_echo "yes" >&6; }
  		*BSD*)
- 			{ echo "$as_me:$LINENO: result: yes" >&5
- echo "${ECHO_T}yes" >&6; }
--			LIBMXML="libmxml.so.1.4"
+ 			{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ $as_echo "yes" >&6; }
+-			LIBMXML="libmxml.so.1.5"
 +			LIBMXML="libmxml.so.${LIBmxml_VERSION}"
  			DSO="\$(CC)"
 -			DSOFLAGS="$DSOFLAGS -Wl,-soname,libmxml.so.1,-R\$(libdir) -shared \$(OPTIM)"
@@ -15,7 +15,7 @@ $OpenBSD: patch-configure,v 1.2 2009/01/17 20:28:28 jakemsr Exp $
                          ;;
  
  		Darwin*)
-@@ -4698,7 +4698,7 @@ if test -n "$GCC"; then
+@@ -4352,7 +4352,7 @@ if test -n "$GCC"; then
  	CFLAGS="-Wall $CFLAGS"
  
  	if test "x$OPTIM" = x; then
