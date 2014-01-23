@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:35:48 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2014/01/23 18:30:57 espie Exp $
 
 COMMENT=	simple and performant DNS server
 
 VERSION=	1.3.07.15
 DISTNAME=	maradns-${VERSION}
 CATEGORIES=	net
+REVISION =	0
 
 HOMEPAGE=	http://www.maradns.org/
 
@@ -25,6 +26,7 @@ post-configure:
 	@perl -pi -e "s, = 99, = 537," ${WRKSRC}/doc/en/examples/ex*
 
 post-install:
+	@chmod a+r ${PREFIX}/share/doc/maradns/source/maraconf.ej
 	@mv ${PREFIX}/share/doc/maradns/examples \
 		${PREFIX}/share/examples/maradns
 
