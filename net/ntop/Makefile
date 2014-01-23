@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2013/03/11 11:35:50 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2014/01/23 17:21:26 espie Exp $
 
 COMMENT=	network usage, interface similar to top(1)
 
 DISTNAME=	ntop-1.1
-REVISION=	1
+REVISION=	2
 DISTFILES=	${DISTNAME}-src.tar.gz
 CATEGORIES=	net
 MASTER_SITES=	ftp://totem.fix.no/pub/mirrors/misc/
