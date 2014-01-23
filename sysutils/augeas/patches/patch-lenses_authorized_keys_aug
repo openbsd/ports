@@ -1,6 +1,9 @@
-$OpenBSD: patch-lenses_authorized_keys_aug,v 1.1 2014/01/16 13:33:53 jasper Exp $
+$OpenBSD: patch-lenses_authorized_keys_aug,v 1.2 2014/01/23 20:21:39 jasper Exp $
 
-Allow 'ssh-ed25519' as a valid authorized_key type.
+From f825222d6bea6332ff5889e5c64ed50d55931cb2 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Thu, 16 Jan 2014 14:34:15 +0100
+Subject: [PATCH] Allow 'ssh-ed25519' as a valid authorized_key type
 
 --- lenses/authorized_keys.aug.orig	Thu Jan 16 14:25:10 2014
 +++ lenses/authorized_keys.aug	Thu Jan 16 14:25:23 2014
