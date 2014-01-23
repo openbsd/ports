@@ -1,6 +1,8 @@
-$OpenBSD: patch-base_mdns_py,v 1.4 2013/01/26 19:38:00 ajacoutot Exp $
+$OpenBSD: patch-base_mdns_py,v 1.5 2014/01/23 11:43:31 ajacoutot Exp $
 
-XXX Unable to setup multicast socket... [Errno 22] Invalid argument
+IP_MULTICAST_TTL socket option on OpenBSD currently doesn't accept
+int, only unsigned char:
+Unable to setup multicast socket... [Errno 22] Invalid argument
 
 --- base/mdns.py.orig	Tue Nov 20 10:55:15 2012
 +++ base/mdns.py	Sat Jan 26 19:13:23 2013
