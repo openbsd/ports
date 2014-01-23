@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2013/11/12 07:37:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2014/01/23 10:51:36 ajacoutot Exp $
 
 COMMENT =		SOAP implementation in C
 
@@ -30,8 +30,7 @@ MODGNOME_TOOLS = 	gi
 MODPY_ADJ_FILES =	libsoup/tld-parser.py
 MODPY_RUNDEP =		No
 
-BUILD_DEPENDS =		net/glib2-networking \
-			net/curl #needed to build tests
+BUILD_DEPENDS =		net/glib2-networking
 RUN_DEPENDS =		net/glib2-networking
 
 LIB_DEPENDS =		devel/glib2 \
@@ -40,8 +39,18 @@ LIB_DEPENDS =		devel/glib2 \
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-ntlm-auth=${LOCALBASE}/bin/ntlm_auth
 
-# checking Apache version... 1.3.29 (Unix) (ignoring)
-# But this prevents needing apache2 for certain regress tests.
-CONFIGURE_ARGS+=	--with-apache-httpd="/usr/sbin/httpd"
+PSEUDO_FLAVORS =	tests
+FLAVOR ?=
+
+.if ${FLAVOR:Mtests}
+MODULES +=		lang/php
+BUILD_DEPENDS +=	php-${MODPHP_VSPEC}-ap2:lang/php/${MODPHP_VERSION},ap2 \
+			lang/php/${MODPHP_VERSION},-xmlrpc \
+			net/curl \
+			www/apache-httpd
+CONFIGURE_ENV +=	ac_cv_prog_PHP=${MODPHP_BIN}
+CONFIGURE_ARGS +=	--with-apache-httpd=${LOCALBASE}/sbin/httpd2 \
+			--with-apache-module-dir="${LOCALBASE}/lib/apache2 ${MODPHP_LIBDIR}"
+.endif
 
 .include <bsd.port.mk>
