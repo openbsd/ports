@@ -1,44 +1,81 @@
-$OpenBSD: patch-bin_smtp-vilter_engine_c,v 1.7 2013/05/09 18:47:53 jasper Exp $
-
-Implement missing print_entries_with_values(), taken from smtp-vilter 1.3.6.
-
---- bin/smtp-vilter/engine.c.orig	Thu May  9 20:46:11 2013
-+++ bin/smtp-vilter/engine.c	Thu May  9 20:46:35 2013
-@@ -1371,6 +1371,37 @@ vilter_unwanted(struct backend *backend, SMFICTX *ctx,
- 	return retval;
+$OpenBSD: patch-bin_smtp-vilter_engine_c,v 1.8 2014/01/23 15:45:18 jasper Exp $
+--- bin/smtp-vilter/engine.c.orig	Sun Jan 21 13:09:38 2007
++++ bin/smtp-vilter/engine.c	Fri Oct 23 09:41:28 2009
+@@ -501,18 +501,62 @@ smtp_vilter_envfrom(SMFICTX *ctx, char **argv)
+ 		}
+ 	}
+ 
++	/* report authentication symbol values */
++	if (verbose >= 2)
++		warnx("SASL authentication parameters: {auth_type}=%s, "
++		    "{auth_authen}=%s, {auth_ssf}=%s, {auth_author}=%s",
++		    smfi_getsymval(ctx, "{auth_type}"),
++		    smfi_getsymval(ctx, "{auth_authen}"),
++		    smfi_getsymval(ctx, "{auth_ssf}"),
++		    smfi_getsymval(ctx, "{auth_author}"));
++
+ 	/* Write an artifical Received: from: Header to the message */
+ 	if (gethostname(hostname, sizeof(hostname))) {
+ 		syslog(LOG_ERR, "can't get local hostname");
+ 		strlcpy(hostname, "localhost", sizeof(hostname));
+ 	}
+-	if (conn->clientaddr == NULL)
+-		fprintf(msg->fp, "Received: from %s by %s\r\n", conn->hostname,
+-		    hostname);
+-	else
+-		fprintf(msg->fp, "Received: from %s (%s) by %s\r\n",
+-		    conn->heloname, conn->clientaddr, hostname);
++	if (verbose >= 2)
++		warnx("header_options = 0x%lx", header_options);
++	if (header_options == 0x0L) {
++		/* plain 'Received:' header (legacy behaviour) */
++		if (conn->clientaddr == NULL)
++			fprintf(msg->fp, "Received: from %s by %s\r\n",
++			    conn->hostname, hostname);
++		else
++			fprintf(msg->fp, "Received: from %s (%s) by %s\r\n",
++			    conn->heloname, conn->clientaddr, hostname);
++	}
+ 
++	if (header_options & 0x1L) {
++		/* include SASL auth info in 'Received:' header */
++		if (verbose >= 2)
++			warnx("including SASL auth info in header");
++		if (smfi_getsymval(ctx, "{auth_authen}") != NULL) {
++			/* SASL authenticated sender */
++			if (conn->clientaddr == NULL)
++				fprintf(msg->fp, "Received: from %s "
++				    "(Authenticated sender: %s) by %s\r\n",
++				    conn->hostname,
++				    smfi_getsymval(ctx, "{auth_authen}"),
++				    hostname);
++			else
++				fprintf(msg->fp, "Received: from %s (%s) "
++				    "(Authenticated sender: %s) by %s\r\n",
++				    conn->heloname,
++				    conn->clientaddr,
++				    smfi_getsymval(ctx, "{auth_authen}"),
++				    hostname);
++		} else {
++			/* non authenticated sender */
++			if (conn->clientaddr == NULL)
++				fprintf(msg->fp, "Received: from %s by %s\r\n",
++				    conn->hostname, hostname);
++			else
++				fprintf(msg->fp, "Received: from %s (%s) by %s\r\n",
++				    conn->heloname, conn->clientaddr, hostname);
++		}
++	}
++		
+ 	return SMFIS_CONTINUE;
  }
  
-+#ifdef ENABLE_LDAP
-+static void
-+print_entries_with_values(LDAP *ld, LDAPMessage *result)
-+{
-+	LDAPMessage	*e;
-+	BerElement	*ber;
-+	char		*dn, *attr;
-+	char		**vals;
-+	int		 i;
+@@ -1764,6 +1808,8 @@ e_main(uid_t uid, gid_t gid, int pipe_m2e[2])
+ 	syslog(LOG_INFO, "dropped privileges, running as %d:%d", uid, gid);
+ 
+ 	/* Initialize sendmail milter */
++	bzero(&desc, sizeof(desc));
 +
-+	for (e = ldap_first_entry(ld, result); e != NULL;
-+	    e = ldap_next_entry(ld, e)) {
-+		if ((dn = ldap_get_dn(ld, e)) != NULL) {
-+			if (verbose)
-+				warnx("dn: %s", dn);
-+			ldap_memfree(dn);
-+		}
-+		for (attr = ldap_first_attribute(ld, e, &ber); attr != NULL;
-+		    attr = ldap_next_attribute(ld, e, ber)) {
-+			if ((vals = ldap_get_values(ld, e, attr)) != NULL) {
-+				for (i = 0; vals[i] != NULL; i++)
-+					printf("%s: %s\n", attr, vals[i]);
-+				ldap_value_free(vals);
-+			}
-+			ldap_memfree(attr);
-+		}
-+		ber_free(ber, 0);
-+	}
-+}
-+#endif
-+
- static sfsistat
- vilter_eom(SMFICTX *ctx)
- {
+ 	desc.xxfi_name = "smtp-vilter";
+ 	desc.xxfi_version = SMFI_VERSION;
+ 	desc.xxfi_flags = SMFIF_ADDHDRS | SMFIF_CHGHDRS;

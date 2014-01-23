@@ -1,12 +1,12 @@
-$OpenBSD: patch-backend_vilter-icap_Makefile,v 1.1 2013/08/09 18:06:52 ian Exp $
---- backend/vilter-icap/Makefile.orig	Sat May  4 07:08:28 2013
-+++ backend/vilter-icap/Makefile	Fri Aug  9 12:19:21 2013
-@@ -22,7 +22,7 @@ LIBDIR=		/usr/pkg/lib/smtp-vilter
- CFLAGS+=	-I/usr/src/gnu/usr.sbin/sendmail/include
- .endif
+$OpenBSD: patch-backend_vilter-icap_Makefile,v 1.2 2014/01/23 15:45:18 jasper Exp $
+--- backend/vilter-icap/Makefile.orig	Sun Nov 12 12:39:17 2006
++++ backend/vilter-icap/Makefile	Thu Jan 23 16:41:39 2014
+@@ -14,7 +14,7 @@ NOPROFILE= 	1
+ CFLAGS+= 	-Wall -fPIC -I${.CURDIR} -I${.CURDIR}/../../include \
+ 		-I/usr/src/gnu/usr.sbin/sendmail/include
  
 -LDADD+=		-nostdlib
 +LDADD+=		-nodefaultlibs
  
- beforeinstall:
- 	-mkdir -p ${DESTDIR}${LIBDIR}
+ install:
+ 	-test ! -d ${DESTDIR}${LIBDIR} && mkdir ${DESTDIR}${LIBDIR}

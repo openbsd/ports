@@ -1,0 +1,20 @@
+$OpenBSD: patch-backend_vilter-attachment_vilter-attachment_c,v 1.3 2014/01/23 15:45:18 jasper Exp $
+--- backend/vilter-attachment/vilter-attachment.c.orig	Wed Jul  2 15:31:58 2008
++++ backend/vilter-attachment/vilter-attachment.c	Wed Jul  2 15:32:19 2008
+@@ -510,7 +510,7 @@ vilter_scan(SMFICTX *ctx, char *fn, size_t fnlen, char
+ 				/* end of message */ ;
+ 			} else {
+ 				p = malloc(sizeof(struct part));
+-				if (p == NULL)
++				if (p == NULL) {
+ 					syslog(LOG_ERR, "attachment: memory allocation error, not all message parts will be written");
+ 					goto line;
+ 				}
+@@ -524,6 +524,7 @@ vilter_scan(SMFICTX *ctx, char *fn, size_t fnlen, char
+ 					free(p);
+ 					p = NULL;
+ 				}
++			}
+ 		}
+ line:
+ 		++lines;
