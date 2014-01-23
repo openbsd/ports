@@ -1,22 +1,19 @@
-$OpenBSD: patch-src_mumble_AudioWizard_cpp,v 1.1.1.1 2013/10/01 10:28:44 dcoppa Exp $
+$OpenBSD: patch-src_mumble_AudioWizard_cpp,v 1.2 2014/01/23 09:52:51 dcoppa Exp $
 
 Disable submitting anonymous statistics
 
 Disable Text-To-Speech; use sound notifications by default
 
-XXX There's a nasty threading issue: in PAAudio.cpp, around line 338, it
-will get caught in an infinite loop. It relies on the PortAudioInput
+There's a convoluted threading issue: in PAAudio.cpp, around line 338,
+it will get caught in an infinite loop. It relies on the PortAudioInput
 object being destroyed in another thread, thereby setting bRunning to
 false and telling it to exit the loop, which will never happen. Luckily,
-this bug is only exposed by the AudioWizard configuration stuff. So, for
-now, remove the call to restartAudio() at line 311 of AudioWizard.cpp:
-it still allows the user to set output delays via the slider, only
-listening to output delays changes on the fly will not work XXX
-
-Remove call to playChord() (see comment above)
+this bug is only exposed by the AudioWizard configuration stuff. So,
+skip calling restartAudio() from on_qsOutputDelay_valueChanged() while
+the AudioWizard is starting up
 
 --- src/mumble/AudioWizard.cpp.orig	Sat Jun  1 23:16:31 2013
-+++ src/mumble/AudioWizard.cpp	Thu Sep 26 07:40:51 2013
++++ src/mumble/AudioWizard.cpp	Wed Jan 22 06:40:54 2014
 @@ -62,7 +62,8 @@ AudioWizard::AudioWizard(QWidget *p) : QWizard(p) {
  	setupUi(this);
  
@@ -49,28 +46,13 @@ Remove call to playChord() (see comment above)
  	qrbNotificationCustom->setVisible(qrbNotificationCustom->isChecked());
  
  	qrbQualityCustom->setVisible(qrbQualityCustom->isChecked());
-@@ -308,7 +301,6 @@ void AudioWizard::on_qcbOutputDevice_activated(int) {
+@@ -308,7 +301,8 @@ void AudioWizard::on_qcbOutputDevice_activated(int) {
  void AudioWizard::on_qsOutputDelay_valueChanged(int v) {
  	qlOutputDelay->setText(tr("%1 ms").arg(v*10));
  	g.s.iOutputDelay = v;
 -	restartAudio();
++	if (! bInit)
++		restartAudio();
  }
  
  void AudioWizard::on_qsMaxAmp_valueChanged(int v) {
-@@ -334,7 +326,6 @@ void AudioWizard::showPage(int pageid) {
- 		g.s.bMute = true;
- 	} else if (cp == qwpDeviceTuning) {
- 		g.s.bMute = true;
--		playChord();
- 	} else if (cp == qwpPositional) {
- 		fX = fY = 0.0f;
- 		g.s.bMute = true;
-@@ -395,7 +386,7 @@ void AudioWizard::restartAudio() {
- 		qgsScene = NULL;
- 	}
- 
--	if ((currentPage() == qwpPositional) || (currentPage() == qwpDeviceTuning))
-+	if (currentPage() == qwpPositional)
- 		playChord();
- }
- 
