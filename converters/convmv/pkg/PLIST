@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/01/24 21:07:00 stsp Exp $
+bin/convmv
+@man man/man1/convmv.1

@@ -1,0 +1,4 @@
+convmv is meant to help convert a single filename, a directory tree and
+the contained files or a whole filesystem into a different encoding. It
+just converts the filenames, not the content of the files. A special
+feature of convmv is that it also takes care of symlinks.
