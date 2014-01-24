@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/09/17 10:29:44 sthen Exp $
-lib/${MODAPACHE_MODULE}
-@exec-update test ! -f ${MODAPACHE_FINAL} || cp -fp %D/%F ${MODAPACHE_FINAL}
-sbin/cleanlink.pl
-sbin/${MODAPACHE_ENABLE}
-share/doc/mod_bandwidth/
-share/doc/mod_bandwidth/README.mod_bandwidth
-@unexec-delete rm -f ${MODAPACHE_FINAL}
