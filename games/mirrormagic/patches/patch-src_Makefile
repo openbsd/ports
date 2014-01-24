@@ -1,12 +1,21 @@
-$OpenBSD: patch-src_Makefile,v 1.1.1.1 2006/01/27 01:32:50 jolan Exp $
---- src/Makefile.orig	Thu Jan 26 21:54:12 2006
-+++ src/Makefile	Thu Jan 26 21:54:20 2006
+$OpenBSD: patch-src_Makefile,v 1.2 2014/01/24 09:56:05 espie Exp $
+--- src/Makefile.orig	Tue Mar 19 02:58:57 2002
++++ src/Makefile	Fri Jan 24 10:33:27 2014
 @@ -112,7 +112,7 @@ ifdef BUILD_DIST				# distribution build
  OPTIONS = -O3 -Wall
  endif
  
 -CFLAGS = $(OPTIONS) $(SYS_CFLAGS) $(CONFIG)
-+CFLAGS = $(SYS_CFLAGS) $(EXTRA_CFLAGS) $(CONFIG)
++CFLAGS += $(SYS_CFLAGS) $(EXTRA_CFLAGS) $(CONFIG)
  LDFLAGS = $(SYS_LDFLAGS) $(EXTRA_LDFLAGS) -lm
  
  
+@@ -149,7 +149,7 @@ endif
+ all: libgame_dir $(PROGNAME)
+ 
+ $(PROGNAME): $(LIBGAME) $(OBJS) $(ICON)
+-	$(CC) $(PROFILING) $(OBJS) $(ICON) $(LIBGAME) $(LDFLAGS) -o $(PROGNAME)
++	$(CC) $(CFLAGS) $(PROFILING) $(OBJS) $(ICON) $(LIBGAME) $(LDFLAGS) -o $(PROGNAME)
+ 
+ libgame_dir:
+ 	@$(MAKE) -C $(LIBDIR)

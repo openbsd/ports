@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_libgame_gadgets_h,v 1.1 2014/01/24 09:56:05 espie Exp $
+--- src/libgame/gadgets.h.orig	Fri Jan 24 10:50:00 2014
++++ src/libgame/gadgets.h	Fri Jan 24 10:50:57 2014
+@@ -20,14 +20,14 @@
+ #define GADGET_FRAME_DELAY	150	/* delay between gadget actions */
+ 
+ /* gadget types */
+-#define GD_TYPE_NORMAL_BUTTON		(1 << 0)
+-#define GD_TYPE_CHECK_BUTTON		(1 << 1)
+-#define GD_TYPE_RADIO_BUTTON		(1 << 2)
+-#define GD_TYPE_DRAWING_AREA		(1 << 3)
+-#define GD_TYPE_TEXTINPUT_ALPHANUMERIC	(1 << 4)
+-#define GD_TYPE_TEXTINPUT_NUMERIC	(1 << 5)
+-#define GD_TYPE_SCROLLBAR_VERTICAL	(1 << 6)
+-#define GD_TYPE_SCROLLBAR_HORIZONTAL	(1 << 7)
++#define GD_TYPE_NORMAL_BUTTON		(1UL << 0)
++#define GD_TYPE_CHECK_BUTTON		(1UL << 1)
++#define GD_TYPE_RADIO_BUTTON		(1UL << 2)
++#define GD_TYPE_DRAWING_AREA		(1UL << 3)
++#define GD_TYPE_TEXTINPUT_ALPHANUMERIC	(1UL << 4)
++#define GD_TYPE_TEXTINPUT_NUMERIC	(1UL << 5)
++#define GD_TYPE_SCROLLBAR_VERTICAL	(1UL << 6)
++#define GD_TYPE_SCROLLBAR_HORIZONTAL	(1UL << 7)
+ 
+ #define GD_TYPE_BUTTON			(GD_TYPE_NORMAL_BUTTON | \
+ 					 GD_TYPE_CHECK_BUTTON | \

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:07:39 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2014/01/24 09:56:05 espie Exp $
 
 COMMENT=	game like Deflektor (C64) / Mindbender (Amiga)
 DISTNAME=	mirrormagic-2.0.2
-REVISION =	1
+REVISION =	2
 CATEGORIES=	games x11
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/mirrormagic/
 
@@ -26,5 +26,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${N} ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/${N}
 	@cp -R ${WRKSRC}/{graphics,levels,music,sounds} ${PREFIX}/share/${N}
+	@chmod a+r ${PREFIX}/share/$N/music/mod.*
 
 .include <bsd.port.mk>
