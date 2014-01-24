@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_log_c,v 1.7 2014/01/11 16:04:43 dcoppa Exp $
+$OpenBSD: patch-src_log_c,v 1.8 2014/01/24 10:08:38 dcoppa Exp $
 
-OpenBSD lacks pthread_condattr_setpshared() and posix_fallocate()
+OpenBSD lacks pthread_condattr_setpshared()
 
 --- src/log.c.orig	Sun Dec 22 21:12:41 2013
 +++ src/log.c	Fri Jan 10 16:48:15 2014
@@ -14,15 +14,6 @@ OpenBSD lacks pthread_condattr_setpshared() and posix_fallocate()
  #if defined(__APPLE__)
  #include <sys/types.h>
  #include <sys/sysctl.h>
-@@ -129,7 +131,7 @@ void open_logbuffer(void) {
-             return;
-         }
- 
--#if defined(__APPLE__)
-+#if defined(__OpenBSD__) || defined(__APPLE__)
-         if (ftruncate(logbuffer_shm, logbuffer_size) == -1) {
-             fprintf(stderr, "Could not ftruncate SHM segment for the i3 log: %s\n", strerror(errno));
- #else
 @@ -154,11 +156,13 @@ void open_logbuffer(void) {
  
          header = (i3_shmlog_header*)logbuffer;
