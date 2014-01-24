@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2013/12/17 08:46:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2014/01/24 19:10:22 zhuk Exp $
 
 V =			1.10.2
 
@@ -10,6 +10,7 @@ DISTNAME =		icinga-$V
 PKGNAME-main =		icinga-$V
 PKGNAME-cgi =		icinga-cgi-$V
 PKGNAME-ido =		icinga-idoutils-$V
+REVISION-main =		0
 
 WANTLIB =		c crypto m pthread ssl
 
@@ -89,5 +90,7 @@ post-install:
 	    chown -R ${SHAREOWN}:${SHAREGRP} icinga-cgi conf
 	cd ${WRKSRC}/module/idoutils; \
 	    pax -rw db ${PREFIX}/share/examples/icinga/
+	# no need to be paranoid for sample config
+	chmod ${SHAREMODE} ${PREFIX}/share/examples/icinga/resource.cfg
 
 .include <bsd.port.mk>

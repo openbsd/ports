@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2013/12/17 08:46:45 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2014/01/24 19:10:22 zhuk Exp $
 @newgroup _icinga:667
 @newuser _icinga:667:_icinga:daemon:Icinga user:/var/icinga:/sbin/nologin
 @comment done this way (rather than SYSCONFDIR/*) for safety...
@@ -51,7 +51,9 @@ share/examples/icinga/objects/timeperiods.cfg
 share/examples/icinga/objects/windows.cfg
 @sample ${SYSCONFDIR}/objects/windows.cfg
 share/examples/icinga/resource.cfg
+@mode 0660
 @sample ${SYSCONFDIR}/resource.cfg
+@mode
 share/examples/icinga/updates/
 share/examples/icinga/updates/cgi.cfg_added_1.7_to_1.8.cfg
 share/examples/icinga/updates/cgi.cfg_added_1.8_to_1.9.cfg
