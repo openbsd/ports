@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2014/01/24 21:21:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.91 2014/01/24 22:20:30 ajacoutot Exp $
 
 COMMENT=	GNU Transport Layer Security library
 
@@ -52,7 +52,7 @@ CONFIGURE_ARGS += --without-tpm
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-# XXX devel/autogen is too old
+# prevents dependency on devel/autogen
 CONFIGURE_ARGS+=--enable-local-libopts
 
 # If one of these tools is found at configure stage, it might be used,
