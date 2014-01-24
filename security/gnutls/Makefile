@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.89 2014/01/06 08:50:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.90 2014/01/24 21:21:47 ajacoutot Exp $
 
 COMMENT=	GNU Transport Layer Security library
 
-V=		3.2.8
+V=		3.2.9
 DISTNAME=	gnutls-${V}
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	security
 
-SHARED_LIBS +=  gnutls               41.2     # 55.0
+SHARED_LIBS +=  gnutls               41.2     # 57.1
 SHARED_LIBS +=  gnutlsxx             29.1     # 29.0
 SHARED_LIBS +=  gnutls-xssl          0.0      # 0.0
 SHARED_LIBS +=  gnutls-openssl       27.2     # 27.2
@@ -51,6 +51,9 @@ CONFIGURE_ARGS += --without-tpm
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+# XXX devel/autogen is too old
+CONFIGURE_ARGS+=--enable-local-libopts
 
 # If one of these tools is found at configure stage, it might be used,
 # no matter whether we use --disable-gtk-doc or not.
