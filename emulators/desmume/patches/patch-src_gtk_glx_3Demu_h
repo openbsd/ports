@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_gtk_glx_3Demu_h,v 1.1 2014/01/24 12:11:33 bentley Exp $
+From upstream r4907.
+--- src/gtk/glx_3Demu.h.orig	Tue Dec 24 02:25:56 2013
++++ src/gtk/glx_3Demu.h	Tue Dec 24 02:25:58 2013
+@@ -20,5 +20,5 @@
+ 
+ #ifdef HAVE_GL_GLX
+ int  init_glx_3Demu(void);
+-void deinit_glx_3Demu(void);
++int deinit_glx_3Demu(void);
+ #endif

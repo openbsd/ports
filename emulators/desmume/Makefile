@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2013/09/06 03:06:44 bentley Exp $
+# $OpenBSD: Makefile,v 1.9 2014/01/24 12:11:33 bentley Exp $
 
 COMMENT =	Nintendo DS emulator
 
-DISTNAME =	desmume-0.9.9
+DISTNAME =	desmume-0.9.10
 
 CATEGORIES =	emulators
 
