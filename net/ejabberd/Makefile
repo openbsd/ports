@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2013/05/05 16:17:19 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.32 2014/01/24 19:05:29 zhuk Exp $
 
 COMMENT=		jabber server written in Erlang
 
 V=			2.1.12
 DISTNAME=		ejabberd-$V
+REVISION=		0
 
 CATEGORIES=		net
 
@@ -76,6 +77,7 @@ post-install:
 	@chown ${SHAREOWN}:${BINGRP} ${PREFIX}/sbin/ejabberdctl
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/ejabberd
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/ejabberd
+	@chmod ${SHAREMODE} ${PREFIX}/share/examples/ejabberd/*.cfg
 	@find ${WRKINST} -type f -name '*.beforesubst' -exec rm {} \;
 
 .include <bsd.port.mk>

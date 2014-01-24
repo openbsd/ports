@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2013/05/05 16:17:19 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.14 2014/01/24 19:05:29 zhuk Exp $
 @newgroup _ejabberd:594
 @newuser _ejabberd:594:_ejabberd:daemon:ejabberd account:/var/db/ejabberd:/bin/sh
 %%SHARED%%
@@ -185,7 +185,9 @@ lib/ejabberd/include/web/ejabberd_web_admin.hrl
 lib/ejabberd/include/web/http_bind.hrl
 lib/ejabberd/priv/
 lib/ejabberd/priv/bin/
+@mode 0750
 lib/ejabberd/priv/bin/captcha.sh
+@mode
 lib/ejabberd/priv/lib/
 lib/ejabberd/priv/lib/sha_drv.so
 lib/ejabberd/priv/msgs/
@@ -235,9 +237,13 @@ share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/ejabberd/
 @sample ${SYSCONFDIR}/ejabberd/
 share/examples/ejabberd/ejabberd.cfg
+@mode 0640
 @sample ${SYSCONFDIR}/ejabberd/ejabberd.cfg
+@mode
 share/examples/ejabberd/ejabberdctl.cfg
+@mode 0640
 @sample ${SYSCONFDIR}/ejabberd/ejabberdctl.cfg
+@mode
 share/examples/ejabberd/extauth/
 share/examples/ejabberd/extauth/check_pass_null.pl
 share/examples/ejabberd/inetrc
@@ -265,7 +271,7 @@ share/examples/ejabberd/transport-configs/init-scripts/msn-transport
 share/examples/ejabberd/transport-configs/init-scripts/yahoo-transport-2
 @owner _ejabberd
 @group _ejabberd
-@sample /var/log/ejabberd/
 @mode 0750
+@sample /var/log/ejabberd/
 @sample /var/db/ejabberd/
 @sample /var/db/ejabberd/ejabberd/
