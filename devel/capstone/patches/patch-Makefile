@@ -1,0 +1,76 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2014/01/24 22:47:46 benoit Exp $
+1. Do not force some compilation flags.
+2. Set library version, respecting OpenBSD policy.
+3. Avoid duplication of defines, linked to (2).
+4. Do not use $(INSTALL_*) at the build stage.
+--- Makefile.orig	Wed Jan 22 14:33:35 2014
++++ Makefile	Fri Jan 24 13:53:48 2014
+@@ -15,7 +15,7 @@ RANLIB = $(CROSS)ranlib
+ STRIP = $(CROSS)strip
+ endif
+ 
+-CFLAGS += -fPIC -O3 -Wall -Iinclude
++CFLAGS += -fPIC -Wall -Iinclude
+ 
+ ifeq ($(USE_SYS_DYN_MEM),yes)
+ CFLAGS += -DUSE_SYS_DYN_MEM
+@@ -43,6 +43,10 @@ INSTALL_DATA ?= $(INSTALL_BIN) -m0644
+ INSTALL_LIBRARY ?= $(INSTALL_BIN) -m0755
+ 
+ LIBNAME = capstone
++LIBVER ?= 0.0.0
++ifdef LIB$(LIBNAME)_VERSION
++LIBVER = $(LIB$(LIBNAME)_VERSION)
++endif
+ 
+ LIBOBJ =
+ LIBOBJ += cs.o utils.o SStream.o MCInstrDesc.o MCRegisterInfo.o
+@@ -120,7 +124,11 @@ endif
+ endif
+ endif
+ 
++ifeq ($(LIBVER),)
+ LIBRARY = lib$(LIBNAME).$(EXT)
++else
++LIBRARY = lib$(LIBNAME).$(EXT).$(LIBVER)
++endif
+ ARCHIVE = lib$(LIBNAME).$(AR_EXT)
+ PKGCFGF = $(LIBNAME).pc
+ 
+@@ -130,7 +138,7 @@ VERSION=$(shell echo `grep -e PKG_MAJOR -e PKG_MINOR C
+ 
+ all: $(LIBRARY) $(ARCHIVE) $(PKGCFGF)
+ 	$(MAKE) -C tests
+-	$(INSTALL_DATA) lib$(LIBNAME).$(EXT) tests
++	cp $(LIBRARY) tests
+ 
+ $(LIBRARY): $(LIBOBJ)
+ 	$(CC) $(LDFLAGS) $(LIBOBJ) -o $(LIBRARY)
+@@ -152,8 +160,8 @@ $(PKGCFGF):
+ 
+ install: $(PKGCFGF) $(ARCHIVE) $(LIBRARY)
+ 	mkdir -p $(LIBDIR)
+-	$(INSTALL_LIBRARY) lib$(LIBNAME).$(EXT) $(LIBDIR)
+-	$(INSTALL_DATA) lib$(LIBNAME).$(AR_EXT) $(LIBDIR)
++	$(INSTALL_LIBRARY) $(LIBRARY) $(LIBDIR)
++	$(INSTALL_DATA) $(ARCHIVE) $(LIBDIR)
+ 	mkdir -p $(INCDIR)/$(LIBNAME)
+ 	$(INSTALL_DATA) include/*.h $(INCDIR)/$(LIBNAME)
+ 	mkdir -p $(LIBDIR)/pkgconfig
+@@ -161,12 +169,12 @@ install: $(PKGCFGF) $(ARCHIVE) $(LIBRARY)
+ 
+ uninstall:
+ 	rm -rf $(INCDIR)/$(LIBNAME)
+-	rm -f $(LIBDIR)/lib$(LIBNAME).$(EXT)
+-	rm -f $(LIBDIR)/lib$(LIBNAME).$(AR_EXT)
+-	rm -f $(LIBDIR)/pkgconfig/$(LIBNAME).pc
++	rm -f $(LIBDIR)/$(LIBRARY)
++	rm -f $(LIBDIR)/$(ARCHIVE)
++	rm -f $(LIBDIR)/pkgconfig/$(PKGCFGF)
+ 
+ clean:
+-	rm -f $(LIBOBJ) lib$(LIBNAME).*
++	rm -f $(LIBOBJ) $(ARCHIVE) $(LIBRARY)
+ 	rm -f $(PKGCFGF)
+ 	$(MAKE) -C bindings/python clean
+ 	$(MAKE) -C bindings/java clean

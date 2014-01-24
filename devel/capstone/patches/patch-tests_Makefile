@@ -1,0 +1,24 @@
+$OpenBSD: patch-tests_Makefile,v 1.1.1.1 2014/01/24 22:47:46 benoit Exp $
+Avoid overriding optimization flags.
+--- tests/Makefile.orig	Fri Jan 24 13:46:13 2014
++++ tests/Makefile	Fri Jan 24 13:46:33 2014
+@@ -11,7 +11,7 @@ CC = $(CROSS)gcc
+ endif
+ 
+ 
+-CFLAGS += -fPIC -O3 -Wall -I$(INCDIR) -L$(LIBDIR)
++CFLAGS += -fPIC -Wall -I$(INCDIR) -L$(LIBDIR)
+ 
+ LIBNAME = capstone
+ 
+@@ -48,8 +48,8 @@ clean:
+ $(BINARY): $(OBJS)
+ 
+ %$(BIN_EXT): %.o
+-	${CC} $(CFLAGS) $(LDFLAGS) $< -O3 -Wall -l$(LIBNAME) -o $@
+-	${CC} $(CFLAGS) $(LDFLAGS) $< -O3 -Wall ../lib$(LIBNAME).$(AR_EXT) -o $(subst $(BIN_EXT),,$@).static$(BIN_EXT)
++	${CC} $(CFLAGS) $(LDFLAGS) $< -Wall -l$(LIBNAME) -o $@
++	${CC} $(CFLAGS) $(LDFLAGS) $< -Wall ../lib$(LIBNAME).$(AR_EXT) -o $(subst $(BIN_EXT),,$@).static$(BIN_EXT)
+ 
+ %.o: %.c
+ 	${CC} ${CFLAGS} -c $< -o $@

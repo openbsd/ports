@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/01/24 22:47:46 benoit Exp $
+include/capstone/
+include/capstone/arm.h
+include/capstone/arm64.h
+include/capstone/capstone.h
+include/capstone/mips.h
+include/capstone/ppc.h
+include/capstone/x86.h
+lib/libcapstone.a
+@lib lib/libcapstone.so.${LIBcapstone_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/capstone.pc
