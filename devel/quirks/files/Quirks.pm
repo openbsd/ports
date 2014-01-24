@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.119 2014/01/22 12:00:32 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.120 2014/01/24 08:57:12 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -359,6 +359,7 @@ my $obsolete_reason = {
 	'ez-ipupdate' => 3,
 	'tesseract-dan-frak' => 3,
 	'apc-upsd' => 3,
+	'mod_bandwidth' => 3,
 };
 
 # ->is_base_system($handle, $state):
