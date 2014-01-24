@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/10/05 06:45:37 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2014/01/24 10:41:50 espie Exp $
 
 COMMENT =	GNUstep theme following NeXT look and feel
 
 V =		0.1
 DISTNAME =	Neos-${V}.theme
 PKGNAME =	gnustep-neos-theme-${V}
+REVISION =	0
 
 HOMEPAGE =	http://gap.nongnu.org/themes/index.html
 MASTER_SITES =	http://savannah.nongnu.org/download/gap/
@@ -21,5 +22,6 @@ do-install:
 	mkdir -p ${PREFIX}/lib/GNUstep/Themes
 	find ${WRKSRC} -name CVS -type d | xargs rm -r
 	cp -r ${WRKSRC} ${PREFIX}/lib/GNUstep/Themes
+	chmod -R a+r ${PREFIX}/lib/GNUstep/Themes
 
 .include <bsd.port.mk>
