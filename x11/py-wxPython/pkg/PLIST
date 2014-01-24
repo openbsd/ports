@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/05/22 08:21:34 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/01/24 14:58:56 dcoppa Exp $
 bin/editra
 bin/helpviewer
 bin/img2png
@@ -181,7 +181,6 @@ lib/python${MODPY_VERSION}/site-packages/wx/_gizmos.so
 lib/python${MODPY_VERSION}/site-packages/wx/_glcanvas.so
 lib/python${MODPY_VERSION}/site-packages/wx/_grid.so
 lib/python${MODPY_VERSION}/site-packages/wx/_html.so
-lib/python${MODPY_VERSION}/site-packages/wx/_media.so
 lib/python${MODPY_VERSION}/site-packages/wx/_misc.py
 lib/python${MODPY_VERSION}/site-packages/wx/_misc.pyc
 lib/python${MODPY_VERSION}/site-packages/wx/_misc_.so
@@ -732,8 +731,6 @@ lib/python${MODPY_VERSION}/site-packages/wx/lib/wxcairo.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/wxcairo.pyc
 lib/python${MODPY_VERSION}/site-packages/wx/lib/wxpTag.py
 lib/python${MODPY_VERSION}/site-packages/wx/lib/wxpTag.pyc
-lib/python${MODPY_VERSION}/site-packages/wx/media.py
-lib/python${MODPY_VERSION}/site-packages/wx/media.pyc
 lib/python${MODPY_VERSION}/site-packages/wx/py/
 lib/python${MODPY_VERSION}/site-packages/wx/py/CHANGES.txt
 lib/python${MODPY_VERSION}/site-packages/wx/py/Py.ico
