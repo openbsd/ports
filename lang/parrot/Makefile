@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2014/01/23 22:17:26 pascal Exp $
+# $OpenBSD: Makefile,v 1.28 2014/01/24 19:56:31 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -9,6 +9,7 @@ REVISION=	0
 DISTNAME=	parrot-$V
 CATEGORIES=	lang perl6
 SHARED_LIBS=	parrot	8.0
+REVISION =	0
 
 HOMEPAGE=	http://www.parrot.org/
 
@@ -61,5 +62,6 @@ pre-configure:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/blib/lib/libparrot.so.${LIBparrot_VERSION} \
 		${PREFIX}/lib
+	chmod a+r ${PREFIX}/share/doc/parrot/$V/pod/packfile-c.pod
 
 .include <bsd.port.mk>
