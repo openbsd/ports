@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2014/01/11 21:15:26 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.35 2014/01/24 10:24:52 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	color terminal emulator with unicode support
 DISTNAME=	mlterm-3.3.2
+REVISION=	0
 
 SHARED_LIBS+=	kik	11.0 # 15.1
 SHARED_LIBS+=	mkf	14.0 # 16.0
@@ -34,7 +35,8 @@ FAKE_FLAGS=	sysconfdir="${PREFIX}/share/examples"
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.65
 CONFIGURE_ARGS=	--enable-anti-alias --enable-utmp \
-		--with-gui=xlib,fb --with-imagelib=gdk-pixbuf2 \
+		--with-gtk=2.0 --with-gui=xlib,fb \
+		--with-imagelib=gdk-pixbuf2 \
 		--with-type-engines=xft,xcore
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/freetype2"
 MAKE_ENV=	LIBkik_VERSION=${LIBkik_VERSION} \
