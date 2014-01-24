@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.54 2014/01/24 19:10:22 zhuk Exp $
+# $OpenBSD: Makefile,v 1.55 2014/01/24 23:00:16 sthen Exp $
 
 V =			1.10.2
+REVISION-main =		0
 
 COMMENT-main =		network monitoring system (improved fork of Nagios)
 COMMENT-cgi =		cgi scripts for Icinga (classic Nagios-style UI)
@@ -10,7 +11,6 @@ DISTNAME =		icinga-$V
 PKGNAME-main =		icinga-$V
 PKGNAME-cgi =		icinga-cgi-$V
 PKGNAME-ido =		icinga-idoutils-$V
-REVISION-main =		0
 
 WANTLIB =		c crypto m pthread ssl
 
@@ -90,7 +90,6 @@ post-install:
 	    chown -R ${SHAREOWN}:${SHAREGRP} icinga-cgi conf
 	cd ${WRKSRC}/module/idoutils; \
 	    pax -rw db ${PREFIX}/share/examples/icinga/
-	# no need to be paranoid for sample config
 	chmod ${SHAREMODE} ${PREFIX}/share/examples/icinga/resource.cfg
 
 .include <bsd.port.mk>
