@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2013/11/05 17:49:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2014/01/24 21:45:16 landry Exp $
 
 COMMENT =			network discovery tool
 
 DISTNAME =			nedi-bsd-1.0.8
 PKGNAME =			nedi-1.0.8
-REVISION =			4
+REVISION =			5
 EXTRACT_SUFX =			.tgz
 CATEGORIES =			net
 
@@ -54,5 +54,8 @@ do-install:
 .for i in nedi.conf seedlist html/log inc/crontab
 	cd ${PREFIX}/nedi; mv $i $i.dist
 .endfor
+	find ${PREFIX}/nedi -perm 744 -exec chmod 644 {} +
+	find ${PREFIX}/nedi -perm 700 -exec chmod 644 {} +
+	find ${PREFIX}/nedi -perm 600 -exec chmod 644 {} +
 
 .include <bsd.port.mk>
