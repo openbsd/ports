@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2014/01/12 14:58:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.73 2014/01/24 12:08:55 espie Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -11,7 +11,7 @@ FULLPKGNAME-el=		emacs-el-${VERSION}
 FULLPKGPATH-el=		editors/emacs21,-el
 FULLPKGNAME-leim=	emacs-leim-${VERSION}
 FULLPKGPATH-leim=	editors/emacs21,-leim
-REVISION-main=		26
+REVISION-main=		27
 REVISION-el=		7
 REVISION-leim=		7
 
@@ -68,5 +68,8 @@ NO_TEST=		Yes
 post-build:
 	cd ${WRKSRC}; src/emacs -batch -f batch-byte-compile \
 	    lisp/mail/mh-{funcs,utils}.el
+
+post-install:
+	chmod -t ${PREFIX}/bin/emacs
 
 .include <bsd.port.mk>
