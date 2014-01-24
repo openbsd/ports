@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.653 2014/01/18 09:26:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.654 2014/01/24 08:56:23 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -116,7 +116,6 @@
      SUBDIR += mod_auth_mysql
      SUBDIR += mod_auth_pgsql
      SUBDIR += mod_auth_radius
-     SUBDIR += mod_bandwidth
      SUBDIR += mod_encoding
      SUBDIR += mod_fastcgi
      SUBDIR += mod_geoip
