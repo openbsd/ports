@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2014/01/14 22:34:03 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2014/01/24 17:44:55 rpe Exp $
 
 COMMENT =		ssh based config management framework
 
 MODPY_EGG_VERSION =	1.4.4
+REVISION =		0
 DISTNAME =		ansible-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils
@@ -20,6 +21,7 @@ MODULES =		lang/python
 
 RUN_DEPENDS =		security/py-paramiko \
 			textproc/py-yaml \
+			www/py-httplib2 \
 			www/py-jinja2
 
 USE_GROFF =		Yes
