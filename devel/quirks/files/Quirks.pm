@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.120 2014/01/24 08:57:12 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.121 2014/01/24 11:40:14 espie Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -421,7 +421,7 @@ sub tweak_search
 {
 	my ($self, $l, $handle, $state) = @_;
 
-	if (@$l != 1 || !$l->[0]->can("add_stem")) {
+	if (@$l == 0 || !$l->[0]->can("add_stem")) {
 		return;
 	}
 	my $stem = OpenBSD::PackageName::splitstem($handle->pkgname);
