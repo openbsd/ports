@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.68 2014/01/11 22:56:03 jeremy Exp $
+# $OpenBSD: Makefile,v 1.69 2014/01/24 21:08:15 stsp Exp $
 
     SUBDIR =
     SUBDIR += base64
     SUBDIR += btoa
+    SUBDIR += convmv
     SUBDIR += d1489
     SUBDIR += dos2unix
     SUBDIR += enca
