@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 22:59:56 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2014/01/24 21:24:40 landry Exp $
 
 V =			1.3.110
 COMMENT =		guitar hero clone
 DISTNAME =		FretsOnFire-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		games x11
 
@@ -44,5 +44,6 @@ do-install:
 			${INSTALL_DATA} ${WRKDIST}/copying.txt ${FFDIR}
 			${INSTALL_SCRIPT} ${WRKDIST}/fretsonfire.sh \
 			    ${PREFIX}/bin/fretsonfire
+			chmod 644 ${PREFIX}/share/fretsonfire/data/translations/fretsonfire_hu.po
 
 .include <bsd.port.mk>
