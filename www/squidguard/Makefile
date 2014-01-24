@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2013/11/30 15:41:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2014/01/24 22:50:37 sthen Exp $
 
 COMMENT =		filter, redirector and access controller for Squid
 
 DISTNAME =		squidGuard-1.4
-REVISION =		9
+REVISION =		10
 CATEGORIES =		www
 
 HOMEPAGE =		http://www.squidguard.org/
@@ -74,5 +74,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/squidguard
 	@rm ${WRKDIST}/samples/{Makefile,*.in}
 	cp -R ${WRKDIST}/samples/* ${PREFIX}/share/examples/squidguard/
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/squidguard/
+	chmod -R og+rX ${PREFIX}/share/examples/squidguard/
 
 .include <bsd.port.mk>
