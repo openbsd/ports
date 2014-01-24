@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/11/03 14:58:17 niallo Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/01/24 22:03:45 landry Exp $
 @group games
-@mode g+s
+@mode 2711
 bin/Omega
 @mode
 share/omega/
+@mode 660
 share/omega/abyss.dat
 share/omega/abyss.txt
 share/omega/arena.dat
@@ -12,6 +13,7 @@ share/omega/city.dat
 share/omega/country.dat
 share/omega/court.dat
 share/omega/dlair.dat
+@mode
 share/omega/help1.txt
 share/omega/help10.txt
 share/omega/help11.txt
@@ -25,19 +27,24 @@ share/omega/help6.txt
 share/omega/help7.txt
 share/omega/help8.txt
 share/omega/help9.txt
+@mode 660
 share/omega/home1.dat
 share/omega/home2.dat
 share/omega/home3.dat
+@mode
 share/omega/intro.txt
 share/omega/lgpl.txt
 share/omega/license.old
 share/omega/license.txt
+@mode 660
 share/omega/maze1.dat
 share/omega/maze2.dat
 share/omega/maze3.dat
 share/omega/maze4.dat
 share/omega/misle.dat
+@mode
 share/omega/motd.txt
+@mode 660
 share/omega/omega.hi
 share/omega/omega.log
 share/omega/scroll1.txt
@@ -46,8 +53,10 @@ share/omega/scroll3.txt
 share/omega/scroll4.txt
 share/omega/speak.dat
 share/omega/temple.dat
+@mode
 share/omega/thanks.txt
 share/omega/update.txt
+@mode 660
 share/omega/village1.dat
 share/omega/village2.dat
 share/omega/village3.dat

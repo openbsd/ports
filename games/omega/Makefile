@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:07:40 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2014/01/24 22:03:45 landry Exp $
 
 COMMENT=	complex rogue-style game of dungeon exploration
 
 VERSION=	0.90.4
 DISTFILES=	omega-${VERSION}-src.tar.gz
 DISTNAME=	omega-${VERSION}
-REVISION =	1
+REVISION =	2
 CATEGORIES=     games
 MASTER_SITES=   http://www.alcyone.com/binaries/omega/
 
