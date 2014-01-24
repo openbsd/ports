@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/12/24 14:39:56 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2014/01/24 21:56:18 landry Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -9,6 +9,7 @@ PKGNAME=	${DISTNAME:L}
 CATEGORIES=	security
 MASTER_SITES=	${HOMEPAGE}files/
 EXTRACT_SUFX=	.tbz
+REVISION=	0
 
 SHARED_LIBS=	botan-1.10	0.1
 
@@ -54,5 +55,8 @@ PKG_ARGS+=	-Damd64=0
 do-test:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${ALL_TEST_FLAGS} \
 	    check && env LD_LIBRARY_PATH=${WRKBUILD} ./check --test
+
+post-install:
+	find ${PREFIX}/share/doc/botan -perm 600 -exec chmod 644 {} +
 
 .include <bsd.port.mk>
