@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1192 2014/01/22 16:12:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.1193 2014/01/24 22:59:02 benoit Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -41,6 +41,7 @@
      SUBDIR += bzr-svn
      SUBDIR += c2hs
      SUBDIR += cabal-install
+     SUBDIR += capstone
      SUBDIR += catalyst
      SUBDIR += catalyst-tutorial
      SUBDIR += ccache
