@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2013/11/10 12:20:29 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2014/01/24 21:30:36 landry Exp $
 
 SHARED_ONLY=	Yes
 SHARED_LIBS +=  freeradius-radius    4.1      # .0.0
@@ -17,13 +17,13 @@ EXTRACT_SUFX=	.tar.bz2
 PKGNAME-main=	freeradius-$V
 REVISION-main=	2
 PKGNAME-iodbc=	freeradius-iodbc-$V
-REVISION-iodbc=	3
+REVISION-iodbc=	4
 PKGNAME-mysql=	freeradius-mysql-$V
-REVISION-mysql=	3
+REVISION-mysql=	4
 PKGNAME-pgsql=	freeradius-pgsql-$V
-REVISION-pgsql=	1
+REVISION-pgsql=	2
 PKGNAME-ldap=	freeradius-ldap-$V
-REVISION-ldap=	1
+REVISION-ldap=	2
 
 CATEGORIES=	net security
 

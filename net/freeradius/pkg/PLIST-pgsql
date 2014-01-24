@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST-pgsql,v 1.3 2011/04/15 09:44:06 pea Exp $
+@comment $OpenBSD: PLIST-pgsql,v 1.4 2014/01/24 21:30:36 landry Exp $
 @conflict freeradius-<2.1.8
 lib/freeradius/rlm_sql_postgresql.so
 share/doc/freeradius/examples/postgresql_update_radacct_group_trigger.sql
 share/examples/freeradius/sql/postgresql/
 @mode 750
 @sample ${SYSCONFDIR}/raddb/sql/postgresql/
-@mode
+@mode 640
 share/examples/freeradius/sql/postgresql/admin.sql
 share/examples/freeradius/sql/postgresql/cisco_h323_db_schema.sql
 share/examples/freeradius/sql/postgresql/counter.conf
@@ -20,3 +20,4 @@ share/examples/freeradius/sql/postgresql/schema.sql
 share/examples/freeradius/sql/postgresql/update_radacct_group_trigger.sql
 share/examples/freeradius/sql/postgresql/voip-postpaid.conf
 @sample ${SYSCONFDIR}/raddb/sql/postgresql/voip-postpaid.conf
+@mode

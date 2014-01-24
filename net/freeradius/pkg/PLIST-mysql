@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST-mysql,v 1.4 2012/09/16 12:44:02 pea Exp $
+@comment $OpenBSD: PLIST-mysql,v 1.5 2014/01/24 21:30:36 landry Exp $
 @conflict freeradius-server-<2.1.8
 lib/freeradius/rlm_sql_mysql.so
 share/examples/freeradius/sql/mysql/
 @mode 750
 @sample ${SYSCONFDIR}/raddb/sql/mysql/
-@mode
+@mode 640
 share/examples/freeradius/sql/mysql/admin.sql
 share/examples/freeradius/sql/mysql/counter.conf
 @sample ${SYSCONFDIR}/raddb/sql/mysql/counter.conf
@@ -23,7 +23,10 @@ share/examples/freeradius/sql/mysql/schema.sql
 share/examples/freeradius/sql/mysql/wimax.conf
 @sample ${SYSCONFDIR}/raddb/sql/mysql/wimax.conf
 share/examples/freeradius/sql/mysql/wimax.sql
+@mode 750
 share/examples/freeradius/sql/ndb/
+@mode 640
 share/examples/freeradius/sql/ndb/README
 share/examples/freeradius/sql/ndb/admin.sql
 share/examples/freeradius/sql/ndb/schema.sql
+@mode

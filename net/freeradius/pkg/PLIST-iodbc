@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST-iodbc,v 1.2 2010/05/17 16:39:25 sthen Exp $
+@comment $OpenBSD: PLIST-iodbc,v 1.3 2014/01/24 21:30:36 landry Exp $
 lib/freeradius/rlm_sql_iodbc.so
 share/doc/freeradius/mssql
 share/examples/freeradius/sql/mssql/
+@mode 640
 share/examples/freeradius/sql/mssql/dialup.conf
 share/examples/freeradius/sql/mssql/schema.sql
+@mode
