@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:42:42 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2014/01/24 12:07:58 espie Exp $
 
 COMMENT=	simple XML parser/printer for OCaml
 CATEGORIES=	textproc
@@ -6,7 +6,7 @@ CATEGORIES=	textproc
 V=		2.2
 DISTNAME=	xml-light-${V}
 PKGNAME=	ocaml-${DISTNAME}
-REVISION =	5
+REVISION =	6
 EXTRACT_SUFX=	.zip
 MASTER_SITES=	http://tech.motion-twin.com/zip/
 
@@ -24,11 +24,15 @@ NO_TEST= 	Yes
 ALL_TARGET=	all
 INSTALL_TARGET=	install
 
+post-install:
+	chmod a+r ${PREFIX}/lib/ocaml/*mli
+
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mocaml_native}
 ALL_TARGET +=		opt
 INSTALL_TARGET +=	installopt
 .endif
+
 
 
 .include <bsd.port.mk>
