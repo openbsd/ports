@@ -1,0 +1,33 @@
+$OpenBSD: patch-doc_dbus-uuidgen_1_xml_in,v 1.1 2014/01/24 10:43:16 ajacoutot Exp $
+
+/var/lib -> /var/db
+
+--- doc/dbus-uuidgen.1.xml.in.orig	Wed Jan 22 12:05:30 2014
++++ doc/dbus-uuidgen.1.xml.in	Wed Jan 22 12:05:50 2014
+@@ -48,7 +48,7 @@ script of a D-Bus package like this:</para>
+ </literallayout> <!-- .fi -->
+ 
+ 
+-<para>This will ensure that /var/lib/dbus/machine-id exists and has the uuid in it.
++<para>This will ensure that /var/db/dbus/machine-id exists and has the uuid in it.
+ It won't overwrite an existing uuid, since this id should remain fixed
+ for a single machine until the next reboot at least.</para>
+ 
+@@ -86,7 +86,7 @@ because there are two different kernels.</para>
+   <varlistentry>
+   <term><option>--get[=FILENAME]</option></term>
+   <listitem>
+-<para>If a filename is not given, defaults to localstatedir/lib/dbus/machine-id
++<para>If a filename is not given, defaults to localstatedir/db/dbus/machine-id
+ (localstatedir is usually /var). If this file exists and is valid, the
+ uuid in the file is printed on stdout. Otherwise, the command exits
+ with a nonzero status.</para>
+@@ -96,7 +96,7 @@ with a nonzero status.</para>
+   <varlistentry>
+   <term><option>--ensure[=FILENAME]</option></term>
+   <listitem>
+-<para>If a filename is not given, defaults to localstatedir/lib/dbus/machine-id
++<para>If a filename is not given, defaults to localstatedir/db/dbus/machine-id
+ (localstatedir is usually /var). If this file exists then it will be
+ validated, and a failure code returned if it contains the wrong thing.
+ If the file does not exist, it will be created with a new uuid in it.

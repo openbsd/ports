@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.109 2014/01/06 17:36:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.110 2014/01/24 10:43:16 ajacoutot Exp $
 
 # DPB: not parallel-safe
 
 COMMENT=	message bus system
 
-DISTNAME=	dbus-1.6.18
+DISTNAME=	dbus-1.8.0
 EPOCH=		0
-REVISION=	1
 
-SHARED_LIBS +=  dbus-1               10.2     # 10.3
+SHARED_LIBS +=  dbus-1               11.0     # 11.3
 
 CATEGORIES=	x11
 DPB_PROPERTIES=	parallel
@@ -26,22 +25,15 @@ MASTER_SITES=	${HOMEPAGE}releases/dbus/
 
 USE_GMAKE=	Yes
 
+BUILD_DEPENDS=	textproc/xmlto
+
 AUTOCONF_VERSION=2.69
 CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-dbus-user=_dbus \
-		--with-xml=expat \
-		--enable-kqueue \
-		--disable-xml-docs \
 		--disable-doxygen-docs \
-		--disable-abstract-sockets \
-		--disable-launchd \
-		--disable-selinux \
-		--disable-libaudit \
-		--disable-dnotify \
-		--disable-inotify \
-		--disable-systemd
+		--without-dbus-glib
 
 # gives no chance of picking up devel/libexecinfo
 CONFIGURE_ENV+=	ac_cv_header_execinfo_h=no \
@@ -51,9 +43,17 @@ CONFIGURE_ENV+=	ac_cv_header_execinfo_h=no \
 # * changes the final dbus binaries
 # * requires py-gobject and dbus-python (dependency loop)
 # * requires the python MODULE
-#CONFIGURE_ARGS+=	--enable-tests=yes
+#CFLAGS +=		-lkvm
+#MODULES +=		lang/python
+#TEST_DEPENDS +=	devel/py-gobject x11/dbus-glib
+#BUILD_DEPENDS +=	devel/py-gobject x11/dbus-glib
+#CONFIGURE_ARGS+=	--enable-tests
 #CONFIGURE_ARGS+=	--enable-verbose-mode
+#CONFIGURE_ARGS+=	--with-dbus-glib
 
 FAKE_FLAGS=	sysconfdir=${TRUEPREFIX}/share/examples/dbus
+
+post-install:
+	rm -r ${WRKINST}/var/{lib,run/dbus}
 
 .include <bsd.port.mk>

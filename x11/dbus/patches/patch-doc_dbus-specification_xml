@@ -1,0 +1,15 @@
+$OpenBSD: patch-doc_dbus-specification_xml,v 1.2 2014/01/24 10:43:16 ajacoutot Exp $
+
+/var/lib -> /var/db
+
+--- doc/dbus-specification.xml.orig	Wed Jan 22 12:09:54 2014
++++ doc/dbus-specification.xml	Wed Jan 22 12:10:05 2014
+@@ -5170,7 +5170,7 @@
+           for .service files in
+           <literal>/usr/local/share/dbus-1/system-services</literal>,
+           <literal>/usr/share/dbus-1/system-services</literal> and
+-          <literal>/lib/dbus-1/system-services</literal>, with that order
++          <literal>/db/dbus-1/system-services</literal>, with that order
+           of precedence. It may also search other implementation-specific
+           locations, but should not vary these locations based on environment
+           variables.

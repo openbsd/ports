@@ -1,7 +1,10 @@
-$OpenBSD: patch-tools_Makefile_in,v 1.19 2013/10/09 11:10:49 ajacoutot Exp $
---- tools/Makefile.in.orig	Tue Oct  8 14:26:28 2013
-+++ tools/Makefile.in	Wed Oct  9 12:43:49 2013
-@@ -412,7 +412,7 @@ AM_CPPFLAGS = \
+$OpenBSD: patch-tools_Makefile_in,v 1.20 2014/01/24 10:43:16 ajacoutot Exp $
+
+/var/lib -> /var/db
+
+--- tools/Makefile.in.orig	Mon Jan 20 15:10:30 2014
++++ tools/Makefile.in	Wed Jan 22 12:00:09 2014
+@@ -418,7 +418,7 @@ AM_CPPFLAGS = \
  	$(DBUS_STATIC_BUILD_CPPFLAGS) \
  	$(DBUS_X_CFLAGS) \
  	-DDBUS_COMPILATION \
@@ -10,19 +13,3 @@ $OpenBSD: patch-tools_Makefile_in,v 1.19 2013/10/09 11:10:49 ajacoutot Exp $
  	$(NULL)
  
  
-@@ -818,12 +818,12 @@ uninstall-am: uninstall-binPROGRAMS
- 	uninstall-am uninstall-binPROGRAMS
- 
- 
--# create the /var/lib/dbus directory for dbus-uuidgen
-+# create the /var/db/dbus directory for dbus-uuidgen
- install-data-local:
--	$(MKDIR_P) $(DESTDIR)$(localstatedir)/lib/dbus
-+	$(MKDIR_P) $(DESTDIR)$(localstatedir)/db/dbus
- 
- installcheck-local:
--	test -d $(DESTDIR)$(localstatedir)/lib/dbus
-+	test -d $(DESTDIR)$(localstatedir)/db/dbus
- 
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.

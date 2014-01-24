@@ -1,24 +1,15 @@
-$OpenBSD: patch-dbus_Makefile_in,v 1.18 2013/12/27 12:12:05 ajacoutot Exp $
+$OpenBSD: patch-dbus_Makefile_in,v 1.19 2014/01/24 10:43:16 ajacoutot Exp $
 
-XXX -lkvm push upstream (cf. patch-dbus_dbus-sysdeps-util-unix_c)
+/var/lib -> /var/db
 
---- dbus/Makefile.in.orig	Fri Nov  1 17:24:42 2013
-+++ dbus/Makefile.in	Fri Dec 27 12:48:18 2013
-@@ -644,7 +644,7 @@ AM_CPPFLAGS = \
- 	$(SYSTEMD_CFLAGS) \
- 	$(VALGRIND_CFLAGS) \
- 	-DDBUS_COMPILATION \
+--- dbus/Makefile.in.orig	Mon Jan 20 15:10:30 2014
++++ dbus/Makefile.in	Wed Jan 22 12:00:58 2014
+@@ -673,7 +673,7 @@ configdir = $(sysconfdir)/dbus-1
+ # results in an otherwise unnecessary dependency on librt. Disable it.
+ AM_CPPFLAGS = -I$(top_builddir) -I$(top_srcdir) $(SYSTEMD_CFLAGS) \
+ 	$(VALGRIND_CFLAGS) -DDBUS_COMPILATION \
 -	-DDBUS_MACHINE_UUID_FILE=\""$(localstatedir)/lib/dbus/machine-id"\" \
 +	-DDBUS_MACHINE_UUID_FILE=\""$(localstatedir)/db/dbus/machine-id"\" \
  	-DDBUS_SYSTEM_CONFIG_FILE=\""$(configdir)/system.conf"\" \
  	-DDBUS_SESSION_CONFIG_FILE=\""$(configdir)/session.conf"\" \
- 	$(NULL)
-@@ -999,7 +999,7 @@ clean-noinstPROGRAMS:
- 
- dbus-test$(EXEEXT): $(dbus_test_OBJECTS) $(dbus_test_DEPENDENCIES) $(EXTRA_dbus_test_DEPENDENCIES) 
- 	@rm -f dbus-test$(EXEEXT)
--	$(AM_V_CCLD)$(LINK) $(dbus_test_OBJECTS) $(dbus_test_LDADD) $(LIBS)
-+	$(AM_V_CCLD)$(LINK) $(dbus_test_OBJECTS) $(dbus_test_LDADD) $(LIBS) -lkvm
- 
- mostlyclean-compile:
- 	-rm -f *.$(OBJEXT)
+ 	$(NULL) -DSD_DAEMON_DISABLE_MQ
