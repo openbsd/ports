@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:41:24 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2014/01/24 21:00:43 landry Exp $
 
 COMMENT=		wireless auditing suite
 
 DISTNAME=		bsd-airtools-v0.2
 PKGNAME=		bsd-airtools-0.2
-REVISION =		4
+REVISION =		5
 CATEGORIES=    		security net
 EXTRACT_SUFX=           .tgz
 
@@ -44,17 +44,13 @@ NO_TEST=		Yes
 
 DOCS=			${PREFIX}/share/doc/bsd-airtools
 
-INSTALL_700=		dstumbler/dstumbler dweputils/dwepdump/dwepdump \
-			prism2ctl/prism2ctl prism2dump/prism2dump
-
-INSTALL_755=		dweputils/dwepcrack/dwepcrack \
+BINARIES=		dstumbler/dstumbler dweputils/dwepdump/dwepdump \
+			prism2ctl/prism2ctl prism2dump/prism2dump \
+			dweputils/dwepcrack/dwepcrack \
 			dweputils/dwepkeygen/dwepkeygen
 
 do-install:
-.for i in ${INSTALL_700}
-	${INSTALL_PROGRAM} -m 700 ${WRKDIST}/$i ${PREFIX}/sbin
-.endfor
-.for i in ${INSTALL_755}
+.for i in ${BINARIES}
 	${INSTALL_PROGRAM} -m 755 ${WRKDIST}/$i ${PREFIX}/sbin
 .endfor
 	${INSTALL_DATA_DIR} ${DOCS}

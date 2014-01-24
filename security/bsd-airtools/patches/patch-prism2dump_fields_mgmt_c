@@ -1,0 +1,12 @@
+$OpenBSD: patch-prism2dump_fields_mgmt_c,v 1.1 2014/01/24 21:00:43 landry Exp $
+for memcpy()
+--- prism2dump/fields_mgmt.c.orig	Fri Jan 24 21:57:32 2014
++++ prism2dump/fields_mgmt.c	Fri Jan 24 21:57:43 2014
+@@ -36,6 +36,7 @@
+  */
+ 
+ #include <stdio.h>
++#include <string.h>
+ #include <sys/types.h>
+ 
+ #include <pcap.h>

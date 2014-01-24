@@ -1,0 +1,12 @@
+$OpenBSD: patch-dweputils_dwepcrack_wordfile_c,v 1.1 2014/01/24 21:00:43 landry Exp $
+for exit()
+--- dweputils/dwepcrack/wordfile.c.orig	Fri Jan 24 21:58:04 2014
++++ dweputils/dwepcrack/wordfile.c	Fri Jan 24 21:58:16 2014
+@@ -38,6 +38,7 @@
+ #include <stdio.h>
+ #include <unistd.h>
+ #include <string.h>
++#include <stdlib.h>
+ #include <signal.h>
+ #include <sys/types.h>
+ #include <sys/wait.h>
