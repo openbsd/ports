@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/11/06 20:45:48 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2014/01/24 20:40:17 landry Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -15,7 +15,7 @@ PKGNAME-rrdtool =	collectd-rrdtool-$V
 PKGNAME-snmp =		collectd-snmp-$V
 CATEGORIES =		sysutils
 
-REVISION-main=		3
+REVISION-main=		4
 REVISION-mysql =	3
 REVISION-pgsql =	2
 REVISION-rrdtool =	2

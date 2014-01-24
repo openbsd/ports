@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_Makefile_in,v 1.4 2012/09/23 19:33:02 jasper Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.5 2014/01/24 20:40:17 landry Exp $
 Install config file in examples/
 --- src/Makefile.in.orig	Sat Nov 27 11:10:51 2010
 +++ src/Makefile.in	Sun Sep 23 21:17:24 2012
@@ -55,7 +55,7 @@ Install config file in examples/
 -		$(INSTALL) -m 0640 collectd.conf $(DESTDIR)$(sysconfdir)/collectd.conf; \
 -	fi; \
 +	$(mkinstalldirs) ${PREFIX}/share/examples
-+	$(INSTALL) -m 0640 collectd.conf ${PREFIX}/share/examples/collectd.conf; \
++	$(INSTALL) -m 0644 collectd.conf ${PREFIX}/share/examples/collectd.conf; \
  	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)
  	$(INSTALL) -m 0644 $(srcdir)/types.db $(DESTDIR)$(pkgdatadir)/types.db;
  	$(INSTALL) -m 0644 $(srcdir)/postgresql_default.conf \

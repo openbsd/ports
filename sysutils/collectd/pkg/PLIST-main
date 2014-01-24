@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2010/11/29 20:20:41 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2014/01/24 20:40:17 landry Exp $
 @newgroup _collectd:652
 @newuser _collectd:652:652:daemon:Collectd Daemon:/var/empty:/sbin/nologin
 @bin bin/collectd-nagios
@@ -128,7 +128,9 @@ share/collectd/
 share/collectd/postgresql_default.conf
 share/collectd/types.db
 share/examples/collectd.conf
+@mode 640
 @sample ${SYSCONFDIR}/collectd.conf
+@mode
 @owner _collectd
 @group _collectd
 @sample /var/collectd/
