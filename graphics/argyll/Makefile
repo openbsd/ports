@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2014/01/03 10:22:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2014/01/25 10:00:05 espie Exp $
 
 COMMENT=	ICC compatible color management system
 
 V=		1.6.2
 DISTNAME=	Argyll_V${V}_src
 PKGNAME=	argyllcms-${V}
+REVISION =	0
 EXTRACT_SUFX=	.zip
 WRKDIST=	${WRKDIR}/${DISTNAME:S/_src//}
 
@@ -33,11 +34,11 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Jamtop
 
 do-build:
-	cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/jam -q -fJambase
+	cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/jam -sEXEMODE=755 -q -fJambase
 
 do-install:
 	cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${ALL_FAKE_FLAGS} DESTDIR="${WRKINST}" \
-		PREFIX="${TRUEPREFIX}" ${LOCALBASE}/bin/jam -q -fJambase install
+		PREFIX="${TRUEPREFIX}" ${LOCALBASE}/bin/jam -q -sEXEMODE=755 -fJambase install
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/argyllcms
 	cd ${WRKSRC}/doc && \
 		for i in $$(cat afiles); do ${INSTALL_DATA} $${i} ${PREFIX}/share/doc/argyllcms; done
