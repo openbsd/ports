@@ -1,6 +1,6 @@
-$OpenBSD: patch-Jambase,v 1.1 2006/04/29 15:35:47 naddy Exp $
---- Jambase.orig	Fri Apr 21 21:21:08 2006
-+++ Jambase	Fri Apr 21 21:21:27 2006
+$OpenBSD: patch-Jambase,v 1.2 2014/01/25 13:17:12 sthen Exp $
+--- Jambase.orig	Wed Apr 23 05:45:49 2003
++++ Jambase	Sat Jan 25 13:09:14 2014
 @@ -516,7 +516,7 @@ else if $(UNIX)
  	LEX		?= lex ;
  	LINKFLAGS	?= $(CCFLAGS) ;
@@ -10,3 +10,21 @@ $OpenBSD: patch-Jambase,v 1.1 2006/04/29 15:35:47 naddy Exp $
  	RANLIB		?= ranlib ;
  	YACC		?= yacc ;
  	YACCGEN		?= .c ;
+@@ -541,7 +541,7 @@ else if $(UNIX)
+ 	CRELIB		?= ;
+ 	DOT		?= . ;
+ 	DOTDOT		?= .. ;
+-	EXEMODE		?= 711 ;
++	EXEMODE		?= 755 ;
+ 	FILEMODE	?= 644 ;
+ 	FORTRAN		?= f77 ;
+ 	FORTRANFLAGS	?= ;
+@@ -1129,7 +1129,7 @@ rule RmTemps
+ 
+ rule Setuid
+ {
+-	MODE on [ FAppendSuffix $(<) : $(SUFEXE) ] = 4711 ;
++	MODE on [ FAppendSuffix $(<) : $(SUFEXE) ] = 4755 ;
+ }
+ 
+ rule Shell

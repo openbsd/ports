@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:09 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2014/01/25 13:17:12 sthen Exp $
 
 COMMENT=		build utility like make
 
-DISTNAME=	 	jam-2.5
-REVISION =		1
-CATEGORIES=	  	devel
+DISTNAME=		jam-2.5
+REVISION =		2
+CATEGORIES=		devel
 
 HOMEPAGE=		http://www.perforce.com/jam/jam.html
 
@@ -13,7 +13,7 @@ MAINTAINER=		Jonathan Auer <jda@auerfamily.org>
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	 	ftp://ftp.perforce.com/pub/jam/
+MASTER_SITES=		ftp://ftp.perforce.com/pub/jam/
 EXTRACT_SUFX=		.tar
 NO_TEST=		Yes
 MAKE_FLAGS=		CC="${CC}" CCFLAGS="${CFLAGS}"

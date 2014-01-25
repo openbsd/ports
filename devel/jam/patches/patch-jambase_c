@@ -1,6 +1,6 @@
-$OpenBSD: patch-jambase_c,v 1.3 2007/11/05 19:48:54 naddy Exp $
---- jambase.c.orig	Mon Nov  5 19:54:25 2007
-+++ jambase.c	Mon Nov  5 19:54:45 2007
+$OpenBSD: patch-jambase_c,v 1.4 2014/01/25 13:17:12 sthen Exp $
+--- jambase.c.orig	Thu Aug 19 19:19:35 2004
++++ jambase.c	Sat Jan 25 13:09:39 2014
 @@ -313,7 +313,7 @@ const char *jambase[] = {
  "LEX		?= lex ;\n",
  "LINKFLAGS	?= $(CCFLAGS) ;\n",
@@ -10,3 +10,21 @@ $OpenBSD: patch-jambase_c,v 1.3 2007/11/05 19:48:54 naddy Exp $
  "RANLIB		?= ranlib ;\n",
  "YACC		?= yacc ;\n",
  "YACCGEN		?= .c ;\n",
+@@ -333,7 +333,7 @@ const char *jambase[] = {
+ "CRELIB		?= ;\n",
+ "DOT		?= . ;\n",
+ "DOTDOT		?= .. ;\n",
+-"EXEMODE		?= 711 ;\n",
++"EXEMODE		?= 755 ;\n",
+ "FILEMODE	?= 644 ;\n",
+ "FORTRAN		?= f77 ;\n",
+ "FORTRANFLAGS	?= ;\n",
+@@ -702,7 +702,7 @@ const char *jambase[] = {
+ "}\n",
+ "rule Setuid\n",
+ "{\n",
+-"MODE on [ FAppendSuffix $(<) : $(SUFEXE) ] = 4711 ;\n",
++"MODE on [ FAppendSuffix $(<) : $(SUFEXE) ] = 4755 ;\n",
+ "}\n",
+ "rule Shell\n",
+ "{\n",
