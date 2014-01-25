@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 20:59:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2014/01/25 12:29:07 espie Exp $
 
 COMMENT =	MySQL backup scripts
 
 V =		2.2
 DISTNAME =	MySQL-zrm-$V.0
 PKGNAME =	${DISTNAME:L}
-REVISION =	5
+REVISION =	6
 CATEGORIES =	databases perl5
 
 HOMEPAGE =	http://www.zmanda.com/
@@ -50,5 +50,6 @@ do-install:
 		${PREFIX}/man/cat$s/`basename $${i%%.$s}`.0; \
 	done
 .endfor
+	chmod -R a+r ${PREFIX}/lib/mysql-zrm
 
 .include <bsd.port.mk>
