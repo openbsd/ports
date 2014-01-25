@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.7 2013/12/12 14:52:23 ajacoutot Exp $
+$OpenBSD: README,v 1.8 2014/01/25 09:26:40 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -11,7 +11,7 @@ command.
 Drivers availability depends on which Foomatic DB(s) package(s) is/are
 installed on the system:
 e.g. (non-exhaustive list) foomatic-db, hplip (and/or hpijs), foo2zjs,
-splix, gutenprint...
+gutenprint...
 
 PPD generation example for a Samsung ML-2850D
 =============================================
@@ -21,3 +21,7 @@ $ foomatic-ppdfile -p 'Samsung-ML-2850D' -d 'Postscript' > samsung-ml2850d.ppd
 
 "samsung-ml2850d.ppd" can then be used as an input filter with CUPS or
 for direct printing using foomatic-rip(1) from the cups-filters package.
+
+Printers using CUPS native drivers (drv) will not be detected by
+foomatic-ppdfile(1) and must be installed using the CUPS tools or its
+web interface.
