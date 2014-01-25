@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2013/08/11 21:21:16 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2014/01/25 12:39:54 espie Exp $
 
 COMMENT =		mail server storing messages in a database
 
 DISTNAME =		archiveopteryx-3.1.3
-REVISION =		9
+REVISION =		10
 CATEGORIES =		mail databases
 
 HOMEPAGE =		http://www.archiveopteryx.org/
@@ -28,6 +28,7 @@ MAKE_ENV +=	CC=${CC} CXX=${CXX}
 JAMFLAGS = \
 	-sAOXUSER=_aox \
 	-sAOXGROUP=_aox \
+	-sEXEMODE=755 \
 	-sBUILD= \
 	-sOPTIM="${CFLAGS}" \
 	-sCXXFLAGS="${CXXFLAGS}" \
