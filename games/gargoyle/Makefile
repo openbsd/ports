@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/08/22 20:06:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2014/01/25 12:49:08 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,6 +7,7 @@ COMMENT =	cross-platform interactive fiction player
 DISTNAME =	gargoyle-2011.1-sources
 PKGNAME =	gargoyle-2011.1
 EPOCH =		0
+REVISION =	0
 
 CATEGORIES =	games x11
 
@@ -44,6 +45,7 @@ WRKDIST =		${WRKDIR}
 INSTALL_TARGET =	install install_man
 JAMDEBUG =	-d x	# display command-lines
 JAMDEBUG +=	-q	# die quickly on build failure
+JAMDEBUG +=	-sEXEMODE=755
 MAKE_ENV +=		CC=${CC} CXX=${CXX}
 DESTDIRNAME =		DESTPREFIX
 
