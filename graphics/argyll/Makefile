@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2014/01/25 13:20:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2014/01/25 14:02:35 ajacoutot Exp $
 
 COMMENT=	ICC compatible color management system
 
@@ -38,7 +38,7 @@ do-build:
 
 do-install:
 	cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${ALL_FAKE_FLAGS} DESTDIR="${WRKINST}" \
-		PREFIX="${TRUEPREFIX}" ${LOCALBASE}/bin/jam -q -sEXEMODE=755 -fJambase install
+		PREFIX="${TRUEPREFIX}" ${LOCALBASE}/bin/jam -q -fJambase install
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/argyllcms
 	cd ${WRKSRC}/doc && \
 		for i in $$(cat afiles); do ${INSTALL_DATA} $${i} ${PREFIX}/share/doc/argyllcms; done
