@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/01/25 12:39:54 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2014/01/25 13:17:35 sthen Exp $
 
 COMMENT =		mail server storing messages in a database
 
@@ -28,7 +28,6 @@ MAKE_ENV +=	CC=${CC} CXX=${CXX}
 JAMFLAGS = \
 	-sAOXUSER=_aox \
 	-sAOXGROUP=_aox \
-	-sEXEMODE=755 \
 	-sBUILD= \
 	-sOPTIM="${CFLAGS}" \
 	-sCXXFLAGS="${CXXFLAGS}" \
