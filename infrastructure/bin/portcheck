@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.60 2014/01/13 11:47:31 zhuk Exp $
+# $OpenBSD: portcheck,v 1.61 2014/01/25 10:08:00 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1275,6 +1275,8 @@ check_pkg_dir() {
 	*.rc)
 		[[ -f $F ]] ||
 			err "$F is not a file"
+		[[ ${F##*/} == [A-Za-z_]*([A-Za-z0-9_]).rc ]] ||
+			err "$F name will not work in rc.subr(8)"
 		check_trailing_whitespace "$F"
 		check_long_lines 80 "$F"
 		check_hardcoded "$F"
