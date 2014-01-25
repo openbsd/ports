@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2013/08/23 08:24:23 zhuk Exp $
+# $OpenBSD: Makefile,v 1.44 2014/01/25 13:12:12 espie Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -7,10 +7,10 @@ COMMENT-pgsql=		pgsql authentication module for courier-authLib
 COMMENT-userdb=		userdb authentication module for courier-authLib
 
 DISTNAME=			courier-authlib-0.65.0
-REVISION-main=		1
-REVISION-mysql=		4
-REVISION-ldap=		4
-REVISION-pgsql=		4
+REVISION-main=		2
+REVISION-mysql=		5
+REVISION-ldap=		5
+REVISION-pgsql=		5
 REVISION-userdb=	0
 PKGNAME-main=		${DISTNAME}
 PKGNAME-ldap=		${DISTNAME:S/lib-/lib-ldap-/}
@@ -162,5 +162,6 @@ post-install:
 .for i in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/courier-authlib
 .endfor
+	chmod a+r ${PREFIX}/share/examples/courier-authlib/*.dist
 
 .include <bsd.port.mk>
