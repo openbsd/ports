@@ -1,14 +1,8 @@
-$OpenBSD: README,v 1.4 2013/04/15 07:33:12 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2014/01/25 09:22:35 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
-
-Updating from previous versions
-===============================
-If you are updating from ANY previous version you are strongly advised
-to delete and re-install your printer under CUPS. This is because the 
-ppd files are often updated between releases. See also the note below.
 
 Enhancing printing output
 =========================

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/11/22 08:09:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2014/01/25 09:22:34 ajacoutot Exp $
 
 COMMENT=	CUPS drivers for SPL printers
 
@@ -7,6 +7,7 @@ DISTNAME=	splix-${V}svn
 PKGNAME=	splix-${V}
 EXTRACT_SUFX=	.tar.bz2
 WRKDIST=	${WRKDIR}/splix
+REVISION=	0
 
 CATEGORIES=	print
 
@@ -31,11 +32,14 @@ RUN_DEPENDS=	print/cups-filters
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes
+ALL_TARGET=	drv all
 
 MAKE_FLAGS=	V=1 \
 		MAKE=${MAKE_PROGRAM} \
 		CXX=${CXX} \
 		OPTIM_CXXFLAGS="${CXXFLAGS}" \
-		PSTORASTER=gstoraster
+		PSTORASTER=gstoraster \
+		CUPSDRV=${PREFIX}/share/cups/drv/splix \
+		DRV_ONLY=1
 
 .include <bsd.port.mk>
