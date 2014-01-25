@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2013/11/02 23:07:49 jmatthew Exp $
+# $OpenBSD: Makefile,v 1.11 2014/01/25 11:35:23 espie Exp $
 
 COMMENT=			distributed data store
 DISTNAME=			riak-1.4.2
 CATEGORIES=			databases
 HOMEPAGE=			http://basho.com/
-REVISION=			0
+REVISION=			1
 
 MAINTAINER=			Jonathan Matthew <jmatthew@openbsd.org>
 
@@ -122,5 +122,6 @@ do-install:
 .for s in app.config vm.args
 	${INSTALL_DATA} ${WRKSRC}/rel/riak/etc/${s} ${PREFIX}/share/riak
 .endfor
+	chmod 755 ${PREFIX}/lib/riak/lib/{app_epath.sh,env.sh}
 
 .include <bsd.port.mk>

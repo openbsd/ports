@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/11/02 23:07:49 jmatthew Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/01/25 11:35:23 espie Exp $
 @comment riak uses sudo(8): homedir must exist and user must have a valid shell
 @newgroup _riak:702
 @newuser _riak:702:_riak:daemon:Riak daemon:/var/riak:/bin/sh
@@ -138,7 +138,7 @@ lib/riak/erts-${ERTS_V}/man/
 lib/riak/erts-${ERTS_V}/src/
 lib/riak/erts-${ERTS_V}/src/setuid_socket_wrap.c
 lib/riak/lib/
-lib/riak/lib/app_epath.sh
+@bin lib/riak/lib/app_epath.sh
 lib/riak/lib/appmon-${APPMON_V}/
 lib/riak/lib/appmon-${APPMON_V}/ebin/
 lib/riak/lib/appmon-${APPMON_V}/ebin/appmon.app
@@ -306,9 +306,7 @@ lib/riak/lib/eleveldb-${ELEVELDB_V}/ebin/eleveldb.beam
 lib/riak/lib/eleveldb-${ELEVELDB_V}/ebin/eleveldb_bump.beam
 lib/riak/lib/eleveldb-${ELEVELDB_V}/priv/
 lib/riak/lib/eleveldb-${ELEVELDB_V}/priv/vsn.git
-@mode 755
 @bin lib/riak/lib/env.sh
-@mode
 lib/riak/lib/eper-${EPER_V}/
 lib/riak/lib/eper-${EPER_V}/ebin/
 lib/riak/lib/eper-${EPER_V}/ebin/bread.beam
