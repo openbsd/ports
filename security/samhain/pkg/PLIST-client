@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST-client,v 1.5 2012/09/07 13:39:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST-client,v 1.6 2014/01/25 13:18:04 espie Exp $
 @extraunexec rm -rf %D/sbin/samhain.signed
 @extraunexec rm -rf /var/samhain/*
 @man man/man5/samhainrc.5
 @man man/man8/samhain.8
+@comment the binary contains the password!
+@mode 700
 @bin sbin/samhain
 @bin sbin/samhain_setpwd
+@mode
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/samhain/
 share/examples/samhain/samhainrc
