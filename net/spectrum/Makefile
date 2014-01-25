@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2013/08/16 10:06:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2014/01/25 10:07:59 espie Exp $
 
 COMMENT =	XMPP transport/gateway
 
 DISTNAME =	spectrum-1.4.8
 CATEGORIES =	net
+REVISION =	0
 
 HOMEPAGE =	http://spectrum.im/
 MASTER_SITES =	https://github.com/downloads/hanzz/libtransport/
@@ -47,5 +48,6 @@ post-install:
 	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/spectrum/spectrum.py.beforesubst
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/spectrum
+	chmod a+r ${PREFIX}/share/examples/spectrum/spectrum.cfg.example
 
 .include <bsd.port.mk>
