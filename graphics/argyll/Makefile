@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/01/25 10:00:05 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2014/01/25 13:20:52 sthen Exp $
 
 COMMENT=	ICC compatible color management system
 
@@ -34,7 +34,7 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Jamtop
 
 do-build:
-	cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/jam -sEXEMODE=755 -q -fJambase
+	cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/jam -q -fJambase
 
 do-install:
 	cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${ALL_FAKE_FLAGS} DESTDIR="${WRKINST}" \
