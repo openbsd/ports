@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.46 2013/12/22 10:38:18 landry Exp $
+# $OpenBSD: Makefile,v 1.47 2014/01/25 11:09:49 sthen Exp $
 
 BROKEN-alpha=	internal compiler error: in extract_insn, at recog.c:2077
 
+# XXX -main contains the files from -client rather than depending it
 COMMENT-main=	network-capable tape backup (client and tape server)
 COMMENT-client=	network-capable tape backup (client only)
 COMMENT-doc=	network-capable tape backup (documentation)
@@ -18,8 +19,8 @@ DISTNAME=	amanda-${DISTVERSION}
 PKGNAME-main=	amanda-${PKGVERSION}
 PKGNAME-client=	amanda-client-${PKGVERSION}
 PKGNAME-doc=	amanda-doc-${PKGVERSION}
-REVISION-main=	3
-REVISION-client=2
+REVISION-main=	4
+REVISION-client=3
 
 CATEGORIES=	misc
 
@@ -45,7 +46,7 @@ BUILD_DEPENDS+= archivers/gtar \
 # AMANDA will gracefully tell them what is required.
 
 WANTLIB=		c m readline termcap
-PKG_ARCH-doc=               *
+PKG_ARCH-doc=		*
 WANTLIB-doc=
 LIB_DEPENDS-doc=
 
@@ -88,6 +89,7 @@ DOC_DIR=	${PREFIX}/share/doc/amanda
 EXAMPLE_DIR=	${PREFIX}/share/examples/amanda
 
 post-install:
+	chmod a+rX ${PREFIX}/sbin/amrecover
 	@cd ${WRKSRC}; \
 	  ${INSTALL_DATA_DIR} ${DOC_DIR}; \
 	  ${INSTALL_DATA} AUTHORS ${DOC_DIR}; \
