@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.69 2013/06/17 13:51:59 giovanni Exp $
+# $OpenBSD: Makefile,v 1.70 2014/01/25 13:15:27 espie Exp $
 
 COMMENT=		send/receive faxes and share modems
 DISTNAME=		hylafax-6.0.6
-REVISION=		1
+REVISION=		2
 CATEGORIES=		comms
 
 HOMEPAGE=		http://www.HylaFAX.org/
