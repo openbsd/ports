@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.526 2013/12/19 16:45:50 bcallah Exp $
+# $OpenBSD: Makefile,v 1.527 2014/01/26 23:21:56 bcallah Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -108,6 +108,7 @@
      SUBDIR += gtksourceview3
      SUBDIR += gtksourceviewmm3
      SUBDIR += gxmessage
+     SUBDIR += herbstluftwm
      SUBDIR += hicolor-icon-theme
      SUBDIR += hs-X11
      SUBDIR += hs-X11-xft
