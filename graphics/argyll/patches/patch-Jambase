@@ -1,0 +1,24 @@
+$OpenBSD: patch-Jambase,v 1.1 2014/01/26 15:38:02 ajacoutot Exp $
+
+sync with ports/devel/jam/patches/patch-Jambase
+
+--- Jambase.orig	Mon Nov 18 23:13:20 2013
++++ Jambase	Sun Jan 26 16:21:36 2014
+@@ -946,7 +946,7 @@ else if $(UNIX)
+ 	CRELIB			?= ;
+ 	DOT				?= . ;
+ 	DOTDOT			?= .. ;
+-	EXEMODE			?= 711 ;
++	EXEMODE			?= 755 ;
+ 	FILEMODE		?= 644 ;
+ 	FORTRAN			?= f77 ;
+ 	FORTRANFLAGS	?= ;
+@@ -3726,7 +3726,7 @@ rule RmTemps_
+ rule Setuid
+ {
+ 	local _t = [ NormPaths $(>:S=$(SUFEXE)) ] ;
+-	MODE on $(_t) = 4711 ;
++	MODE on $(_t) = 4755 ;
+ }
+ 
+ # Shell
