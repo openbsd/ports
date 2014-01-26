@@ -1,0 +1,51 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/01/26 23:21:33 bcallah Exp $
+@bin bin/herbstclient
+@bin bin/herbstluftwm
+@man man/man1/herbstclient.1
+@man man/man1/herbstluftwm.1
+@man man/man7/herbstluftwm-tutorial.7
+share/applications/herbstluftwm.desktop
+share/doc/herbstluftwm/
+share/doc/herbstluftwm/BUGS
+share/doc/herbstluftwm/LICENSE
+share/doc/herbstluftwm/NEWS
+share/doc/herbstluftwm/README
+share/doc/herbstluftwm/herbstclient.html
+share/doc/herbstluftwm/herbstluftwm-tutorial.html
+share/doc/herbstluftwm/herbstluftwm.html
+share/examples/herbstluftwm/
+share/examples/herbstluftwm/README
+share/examples/herbstluftwm/bash_completion.d/
+@sample ${SYSCONFDIR}/bash_completion.d/
+share/examples/herbstluftwm/bash_completion.d/herbstclient-completion
+@sample ${SYSCONFDIR}/bash_completion.d/herbstclient-completion
+share/examples/herbstluftwm/dmenu.sh
+share/examples/herbstluftwm/dumpbeautify.sh
+share/examples/herbstluftwm/exec_on_tag.sh
+share/examples/herbstluftwm/execwith.sh
+share/examples/herbstluftwm/floatmon.sh
+share/examples/herbstluftwm/herbstcommander.sh
+share/examples/herbstluftwm/keychain.sh
+share/examples/herbstluftwm/lasttag.sh
+share/examples/herbstluftwm/layout.sh
+share/examples/herbstluftwm/loadstate.sh
+share/examples/herbstluftwm/q3terminal.sh
+share/examples/herbstluftwm/savestate.sh
+share/examples/herbstluftwm/wselect.sh
+share/examples/herbstluftwm/xdg/
+share/examples/herbstluftwm/xdg/herbstluftwm/
+@sample ${SYSCONFDIR}/xdg/herbstluftwm/
+share/examples/herbstluftwm/xdg/herbstluftwm/autostart
+@mode 755
+@sample ${SYSCONFDIR}/xdg/herbstluftwm/autostart
+share/examples/herbstluftwm/xdg/herbstluftwm/panel.sh
+@sample ${SYSCONFDIR}/xdg/herbstluftwm/panel.sh
+share/examples/herbstluftwm/xdg/herbstluftwm/restartpanels.sh
+@sample ${SYSCONFDIR}/xdg/herbstluftwm/restartpanels.sh
+share/examples/herbstluftwm/zsh/
+share/examples/herbstluftwm/zsh/functions/
+share/examples/herbstluftwm/zsh/functions/Completion/
+share/examples/herbstluftwm/zsh/functions/Completion/X/
+share/examples/herbstluftwm/zsh/functions/Completion/X/_herbstclient
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
