@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.61 2014/01/25 10:08:00 zhuk Exp $
+# $OpenBSD: portcheck,v 1.62 2014/01/26 01:06:40 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1113,7 +1113,7 @@ check_wantlib() {
 			    "in WANTLIB (check other libs, too!)"
 			;;
 
-		kdecore?(?('>')=+([0-9])))
+		@(kdecore|kdeui|kio)?(?('>')=+([0-9])))
 			if $kde4_module; then
 				err "$portref$v instead of \${KDE4LIB}/$v" \
 				    "in WANTLIB (check other libs, too!)"
