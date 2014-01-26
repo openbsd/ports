@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2014/01/24 19:56:55 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2014/01/26 11:38:46 pascal Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT=	virtual machine designed for interpreted languages
 
 V=		5.4.0
-REVISION=	1
+REVISION=	2
 DISTNAME=	parrot-$V
 CATEGORIES=	lang perl6
 SHARED_LIBS=	parrot	8.0
