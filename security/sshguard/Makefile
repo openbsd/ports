@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:41:28 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2014/01/27 15:49:15 kirby Exp $
 
 COMMENT=	protect against brute force attacks on sshd and others
 
 DISTNAME=	sshguard-1.5
+REVISION=	0
 CATEGORIES=	security
 
 # BSD
@@ -15,7 +16,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sshguard/}
 EXTRACT_SUFX=	.tar.bz2
 
 CONFIGURE_STYLE=gnu
-USE_GROFF =	Yes
 NO_TEST=	Yes
 
 FLAVORS =	tcpd
