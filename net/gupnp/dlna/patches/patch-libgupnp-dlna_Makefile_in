@@ -1,0 +1,18 @@
+$OpenBSD: patch-libgupnp-dlna_Makefile_in,v 1.1 2014/01/27 08:53:32 brad Exp $
+
+metadata-backends/gstreamer/.libs/metadata_backends_gstreamer_libgstreamer_la-gupnp-dlna-gst-metadata-extractor.o(.text+0x232): In function `backend_extract_sync':
+: undefined reference to `__stack_smash_handler'
+metadata-backends/gstreamer/.libs/metadata_backends_gstreamer_libgstreamer_la-gupnp-dlna-gst-metadata-extractor.o(.text+0x30f): In function `backend_extract_async':
+: undefined reference to `__stack_smash_handler'
+
+--- libgupnp-dlna/Makefile.in.orig	Wed Jan 22 20:02:52 2014
++++ libgupnp-dlna/Makefile.in	Wed Jan 22 20:05:22 2014
+@@ -627,7 +627,7 @@ metadata_LTLIBRARIES = $(am__append_1) $(am__append_5)
+ 
+ @GSTREAMER_METADATA_BACKEND_ENABLED_TRUE@metadata_backends_gstreamer_libgstreamer_la_LDFLAGS = \
+ @GSTREAMER_METADATA_BACKEND_ENABLED_TRUE@	-no-undefined \
+-@GSTREAMER_METADATA_BACKEND_ENABLED_TRUE@	-shared -fPIC -module -avoid-version -Wl,-z,defs
++@GSTREAMER_METADATA_BACKEND_ENABLED_TRUE@	-shared -fPIC -module -avoid-version
+ 
+ @GSTREAMER_METADATA_BACKEND_ENABLED_TRUE@metadata_backends_gstreamer_libgstreamer_la_SOURCES = \
+ @GSTREAMER_METADATA_BACKEND_ENABLED_TRUE@	metadata-backends/gstreamer/gupnp-dlna-gst-metadata-backend.c \
