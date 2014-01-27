@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.50 2013/12/18 14:49:45 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.51 2014/01/27 14:20:01 giovanni Exp $
 @unexec-delete rm -f /var/www/conf/modules/phpmyadmin.conf
 @group daemon
 phpMyAdmin/
@@ -1395,3 +1395,5 @@ phpMyAdmin/version_check.php
 phpMyAdmin/view_create.php
 phpMyAdmin/view_operations.php
 phpMyAdmin/webapp.php
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}
