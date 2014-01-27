@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2013/12/04 15:53:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2014/01/27 14:12:29 ajacoutot Exp $
 @unexec-delete rm -f %D/emul/fedora/usr/share/man/whatis.db
 emul/
 emul/fedora/
@@ -152,7 +152,9 @@ emul/fedora/etc/redhat-release
 emul/fedora/etc/rpc
 emul/fedora/etc/rpm/
 emul/fedora/etc/rpm/macros.dist
+@mode 0600
 emul/fedora/etc/securetty
+@mode
 emul/fedora/etc/shells
 emul/fedora/etc/skel/
 emul/fedora/etc/sysconfig/
@@ -751,19 +753,27 @@ emul/fedora/usr/libexec/
 emul/fedora/usr/libexec/getconf/
 emul/fedora/usr/libexec/getconf/POSIX_V6_ILP32_OFF32
 emul/fedora/usr/libexec/getconf/POSIX_V6_ILP32_OFFBIG
+@mode 0600
 emul/fedora/usr/libexec/pt_chown
+@mode
 emul/fedora/usr/sbin/
+@mode 0700
 emul/fedora/usr/sbin/build-locale-archive
+@mode
 emul/fedora/usr/sbin/capsh
 emul/fedora/usr/sbin/chroot
 emul/fedora/usr/sbin/getcap
 emul/fedora/usr/sbin/getpcaps
+@mode 0700
 emul/fedora/usr/sbin/glibc_post_upgrade.i386
+@mode
 emul/fedora/usr/sbin/iconvconfig
 emul/fedora/usr/sbin/iconvconfig.i386
 emul/fedora/usr/sbin/libgcc_post_upgrade
 emul/fedora/usr/sbin/setcap
+@mode 0700
 emul/fedora/usr/sbin/tzdata-update
+@mode
 emul/fedora/usr/sbin/zdump
 emul/fedora/usr/sbin/zic
 emul/fedora/usr/share/

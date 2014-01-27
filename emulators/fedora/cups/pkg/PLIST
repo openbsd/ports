@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/10/11 12:02:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/01/27 14:12:29 ajacoutot Exp $
 emul/fedora/etc/gcrypt/
 emul/fedora/etc/krb5.conf
+@mode 0640
 emul/fedora/etc/libaudit.conf
+@mode
 emul/fedora/lib/libaudit.so.0
 emul/fedora/lib/libaudit.so.0.0.0
 emul/fedora/lib/libauparse.so.0
