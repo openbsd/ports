@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.5 2013/09/27 08:09:16 ajacoutot Exp $
---- configure.orig	Tue Aug  6 23:28:26 2013
-+++ configure	Fri Sep 27 09:45:04 2013
-@@ -24264,7 +24264,7 @@ if { as_var=$as_ac_Lib; eval "test \"\${$as_var+set}\"
+$OpenBSD: patch-configure,v 1.6 2014/01/27 14:52:56 ajacoutot Exp $
+--- configure.orig	Fri Dec 27 17:44:25 2013
++++ configure	Mon Jan 27 15:43:01 2014
+@@ -24266,7 +24266,7 @@ if { as_var=$as_ac_Lib; eval "test \"\${$as_var+set}\"
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
