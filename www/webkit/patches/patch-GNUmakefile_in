@@ -1,4 +1,4 @@
-$OpenBSD: patch-GNUmakefile_in,v 1.25 2013/11/14 16:47:00 ajacoutot Exp $
+$OpenBSD: patch-GNUmakefile_in,v 1.26 2014/01/27 19:56:20 landry Exp $
 
 - chunk 1,2 : install GtkLauncher, remove silent build lines
 - chunk 5 : install gtk-doc in a versionned dir to avoid conflicts
@@ -8,9 +8,9 @@ $OpenBSD: patch-GNUmakefile_in,v 1.25 2013/11/14 16:47:00 ajacoutot Exp $
   by emitting a fdtox %r8, %r7 call, whose second operand isn't even and thus invalid.
 (on Source/JavaScriptCore/runtime/NumberPrototype.cpp)
 - chunk 7 & 8 : https://bugs.webkit.org/show_bug.cgi?id=118732
---- GNUmakefile.in.orig	Mon Nov 11 11:56:39 2013
-+++ GNUmakefile.in	Thu Nov 14 09:38:49 2013
-@@ -11294,11 +11294,11 @@ am__v_P_0 = false
+--- GNUmakefile.in.orig	Tue Jan 21 12:41:49 2014
++++ GNUmakefile.in	Mon Jan 27 10:24:55 2014
+@@ -11304,11 +11304,11 @@ am__v_P_0 = false
  am__v_P_1 = :
  AM_V_GEN = $(am__v_GEN_@AM_V@)
  am__v_GEN_ = $(am__v_GEN_@AM_DEFAULT_V@)
@@ -24,7 +24,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.25 2013/11/14 16:47:00 ajacoutot Exp $
  am__v_at_1 = 
  DEFAULT_INCLUDES = -I.@am__isrc@
  depcomp = $(SHELL) $(top_srcdir)/Source/autotools/depcomp
-@@ -11308,7 +11308,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES
+@@ -11318,7 +11318,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES
  	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  AM_V_CC = $(am__v_CC_@AM_V@)
  am__v_CC_ = $(am__v_CC_@AM_DEFAULT_V@)
@@ -33,7 +33,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.25 2013/11/14 16:47:00 ajacoutot Exp $
  am__v_CC_1 = 
  CCLD = $(CC)
  LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
-@@ -11316,13 +11316,13 @@ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAG
+@@ -11326,13 +11326,13 @@ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAG
  	$(AM_LDFLAGS) $(LDFLAGS) -o $@
  AM_V_CCLD = $(am__v_CCLD_@AM_V@)
  am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
@@ -49,7 +49,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.25 2013/11/14 16:47:00 ajacoutot Exp $
  am__v_CXX_1 = 
  CXXLD = $(CXX)
  CXXLINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
-@@ -11330,7 +11330,7 @@ CXXLINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOL
+@@ -11340,7 +11340,7 @@ CXXLINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOL
  	$(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
  AM_V_CXXLD = $(am__v_CXXLD_@AM_V@)
  am__v_CXXLD_ = $(am__v_CXXLD_@AM_DEFAULT_V@)
@@ -58,16 +58,16 @@ $OpenBSD: patch-GNUmakefile_in,v 1.25 2013/11/14 16:47:00 ajacoutot Exp $
  am__v_CXXLD_1 = 
  SOURCES = $(Libraries_WebExtensions_libWebExtensionTest_la_SOURCES) \
  	$(Libraries_WebExtensions_libWebProcessTest_la_SOURCES) \
-@@ -11845,7 +11845,7 @@ pkgconfigdir := $(libdir)/pkgconfig
+@@ -11860,7 +11860,7 @@ pkgconfigdir := $(libdir)/pkgconfig
  libwebkitgtkincludedir := $(prefix)/include/webkitgtk-@WEBKITGTK_API_VERSION@
  
  # Libraries and support components
 -bin_PROGRAMS := Programs/jsc-@WEBKITGTK_API_MAJOR_VERSION@$(EXEEXT)
 +bin_PROGRAMS := Programs/jsc-@WEBKITGTK_API_MAJOR_VERSION@$(EXEEXT) Programs/GtkLauncher$(EXEEXT)
- noinst_DATA := $(am__append_45) $(am__append_70)
+ noinst_DATA := $(am__append_44) \
+ 	Programs/TestWebKitAPI/WebKit2Gtk/resources/webkit2gtk-tests-resources.gresource
  noinst_HEADERS := 
- 
-@@ -69689,7 +69689,7 @@ Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WE
+@@ -69854,7 +69854,7 @@ Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WE
  @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la_CPPFLAGS) $(CPPFLAGS) $(libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la_CXXFLAGS) $(CXXFLAGS) -c -o Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberObject.lo `test -f 'Source/JavaScriptCore/runtime/NumberObject.cpp' || echo '$(srcdir)/'`Source/JavaScriptCore/runtime/NumberObject.cpp
  
  Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberPrototype.lo: Source/JavaScriptCore/runtime/NumberPrototype.cpp
@@ -76,7 +76,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.25 2013/11/14 16:47:00 ajacoutot Exp $
  @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) Source/JavaScriptCore/runtime/$(DEPDIR)/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberPrototype.Tpo Source/JavaScriptCore/runtime/$(DEPDIR)/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberPrototype.Plo
  @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='Source/JavaScriptCore/runtime/NumberPrototype.cpp' object='Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberPrototype.lo' libtool=yes @AMDEPBACKSLASH@
  @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@@ -77507,14 +77507,12 @@ installdirs:
+@@ -77713,14 +77713,12 @@ installdirs:
  	for dir in "$(DESTDIR)$(injectedbundledir)" "$(DESTDIR)$(libdir)" "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(audiodir)" "$(DESTDIR)$(audiodir)" "$(DESTDIR)$(resourcesdir)" "$(DESTDIR)$(webresourcesdir)" "$(DESTDIR)$(girdir)" "$(DESTDIR)$(pkgconfigdir)" "$(DESTDIR)$(typelibsdir)" "$(DESTDIR)$(libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_ladir)" "$(DESTDIR)$(libwebkit2gtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_ladir)" "$(DESTDIR)$(libwebkit2gtkincludedir)" "$(DESTDIR)$(libwebkitgtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_ladir)" "$(DESTDIR)$(libwebkit2gtkincludedir)" "$(DESTDIR)$(libwebkitdomincludedir)" "$(DESTDIR)$(libwebkitgtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_ladir)"; do \
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
@@ -93,7 +93,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.25 2013/11/14 16:47:00 ajacoutot Exp $
  
  installcheck: installcheck-am
  install-strip:
-@@ -78811,7 +78809,7 @@ install-data-local:
+@@ -79023,7 +79021,7 @@ install-data-local:
  @ENABLE_WEBKIT1_TRUE@	  if test -n "$(DOC_MODULE_VERSION)"; then \
  @ENABLE_WEBKIT1_TRUE@	    installdir="$(DESTDIR)$(HTML_DIR)/webkitgtk-$(DOC_MODULE_VERSION)"; \
  @ENABLE_WEBKIT1_TRUE@	  else \
@@ -102,7 +102,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.25 2013/11/14 16:47:00 ajacoutot Exp $
  @ENABLE_WEBKIT1_TRUE@	  fi; \
  @ENABLE_WEBKIT1_TRUE@	  $(mkinstalldirs) $${installdir} ; \
  @ENABLE_WEBKIT1_TRUE@	  for i in $$installfiles; do \
-@@ -79012,7 +79010,8 @@ $(plugin_process_for_dep): $(plugin_process_for_dep_li
+@@ -79224,7 +79222,8 @@ $(plugin_process_for_dep): $(plugin_process_for_dep_li
  WebCoreLayerGtk2.a: $(webcore_layer_gtk2_deps)
  	$(AM_V_GEN)
  	$(AM_V_at)$(shell rm -f $@)
@@ -110,9 +110,9 @@ $OpenBSD: patch-GNUmakefile_in,v 1.25 2013/11/14 16:47:00 ajacoutot Exp $
 +	$(AM_V_at)$(foreach archive, $(webcore_layer_gtk2_archives), $(shell ar t $(archive) | while read f ; do find . -name $$f ; done | xargs -n50 ar cru $@))
 +	ln $@ libWebCoreLayerGtk2.a
  
- @ENABLE_WEBKIT2_TRUE@Programs/resources/webkit2gtk-tests-resources.gresource: Source/WebKit2/UIProcess/API/gtk/tests/resources/webkit2gtk-tests.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/Source/WebKit2/UIProcess/API/gtk/tests/resources/webkit2gtk-tests.gresource.xml)
- @ENABLE_WEBKIT2_TRUE@	$(AM_V_at)mkdir -p ${GENPROGRAMS}/resources
-@@ -79053,7 +79052,8 @@ DerivedSources/InjectedBundle/JS%.cpp: Tools/WebKitTes
+ $(GENSOURCES_WEBKIT2)/BrowserMarshal.h: stamp-mini-browser-marshal.h
+ 	@true
+@@ -79257,7 +79256,8 @@ DerivedSources/InjectedBundle/JS%.cpp: Tools/WebKitTes
  WebCoreLayer.a: $(webcore_layer_deps)
  	$(AM_V_GEN)
  	$(AM_V_at)$(shell rm -f $@)
@@ -120,5 +120,5 @@ $OpenBSD: patch-GNUmakefile_in,v 1.25 2013/11/14 16:47:00 ajacoutot Exp $
 +	$(AM_V_at)$(foreach archive, $(webcore_layer_archives), $(shell ar t $(archive) | while read f ; do find . -name $$f ; done | xargs -n50 ar cru $@))
 +	ln $@ libWebCoreLayer.a
  
- stamp-testwebkitapi-webcore-forwarding-headers: $(WebKit2)/Scripts/generate-forwarding-headers.pl $(Programs_TestWebKitAPI_TestWebCore_SOURCES)
- 	$(AM_V_GEN)$(PERL) $< $(srcdir)/Tools/TestWebKitAPI/Tests/WebCore $(GENSOURCES_WEBCORE)/include gtk \
+ Programs/TestWebKitAPI/WebKit2Gtk/resources/webkit2gtk-tests-resources.gresource: Tools/TestWebKitAPI/Tests/WebKit2Gtk/resources/webkit2gtk-tests.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/Tools/TestWebKitAPI/Tests/WebKit2Gtk/resources/webkit2gtk-tests.gresource.xml)
+ 	$(AM_V_at)mkdir -p ${GENPROGRAMS}/TestWebKitAPI/WebKit2Gtk/resources
