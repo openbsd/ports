@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/01/28 01:01:52 jca Exp $
+@bin bin/fuse-zip
+@man man/man1/fuse-zip.1
+share/doc/fuse-zip/
+share/doc/fuse-zip/README
+share/doc/fuse-zip/changelog

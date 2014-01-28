@@ -1,0 +1,14 @@
+$OpenBSD: patch-fuse-zip_1,v 1.1.1.1 2014/01/28 01:01:52 jca Exp $
+--- fuse-zip.1.orig	Tue Jan 21 00:32:45 2014
++++ fuse-zip.1	Tue Jan 21 00:33:14 2014
+@@ -69,10 +69,6 @@ Be patient. Wait for fuse-zip process finish after unm
+ .SH "PERMISSIONS"
+ Access check will not be performed unless
+ \fB-o default_permissions\fP mount option is given.
+-.SH "FILES"
+-.TP 
+-.if !'po4a'hide' .I /var/log/user.log
+-see this file in case any errors occur
+ .SH "SEE ALSO"
+ .BR fusermount (1).
+ .SH "LICENSE"
