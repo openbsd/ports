@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.222 2013/12/28 17:26:40 jim Exp $
+$OpenBSD: user.list,v 1.223 2014/01/28 16:30:03 zhuk Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -238,3 +238,4 @@ id  user		group		port options
 727 _sslsplit		_sslsplit	security/sslsplit
 728 _sockd		_sockd		security/dante
 729 _greyscanner	_greyscanner	mail/greyscanner
+730 _kdm		_kdm		x11/kde4/workspace
