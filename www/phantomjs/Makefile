@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/01/15 08:41:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2014/01/28 11:37:52 sthen Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 DPB_PROPERTIES =	parallel nojunk
@@ -6,7 +6,7 @@ DPB_PROPERTIES =	parallel nojunk
 
 COMMENT =		headless WebKit scriptable with a JavaScript API
 
-DISTNAME =		phantomjs-1.9.2
+DISTNAME =		phantomjs-1.9.7
 
 CATEGORIES =		www
 HOMEPAGE =		http://phantomjs.org/
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB +=		ICE SM X11 Xext Xi Xinerama Xrender c fontconfig \
 			freetype m pthread stdc++
 
-MASTER_SITES =		http://phantomjs.googlecode.com/files/
+MASTER_SITES = 		https://bitbucket.org/ariya/phantomjs/downloads/
 EXTRACT_SUFX =		-source.zip
 
 BUILD_DEPENDS =		shells/bash
