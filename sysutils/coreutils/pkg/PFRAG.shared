@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2014/01/28 16:55:46 jca Exp $
+@bin bin/gstdbuf
+libexec/coreutils/libstdbuf.so
+@man man/man1/gstdbuf.1

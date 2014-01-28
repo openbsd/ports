@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure,v 1.1 2014/01/28 16:55:46 jca Exp $
+XXX hack for vax, remove when it gets shared libraries
+--- configure.orig	Tue Jan 28 00:44:09 2014
++++ configure	Tue Jan 28 00:44:37 2014
+@@ -62764,7 +62764,7 @@ fi
+ $as_echo_n "checking whether this is an ELF system... " >&6; }
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+-#if __ELF__
++#if __ELF__ && !__vax__
+ yes
+ #endif
+ _ACEOF

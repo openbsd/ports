@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/04/26 16:19:24 brad Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/01/28 16:55:46 jca Exp $
 @conflict fileutils-*
 @conflict sh-utils-*
 @conflict textutils-*
@@ -7,6 +7,7 @@
 @pkgpath misc/fileutils,-gnuls
 @pkgpath misc/sh-utils
 @pkgpath textproc/textutils
+%%SHARED%%
 @bin bin/g[
 @bin bin/gbase64
 @bin bin/gbasename
@@ -84,7 +85,6 @@
 @bin bin/gsort
 @bin bin/gsplit
 @bin bin/gstat
-@bin bin/gstdbuf
 @bin bin/gstty
 @bin bin/gsum
 @bin bin/gsync
@@ -113,7 +113,6 @@
 @info info/coreutils.info
 @comment lib/charset.alias
 libexec/coreutils/
-libexec/coreutils/glibstdbuf.so
 @man man/man1/gbase64.1
 @man man/man1/gbasename.1
 @man man/man1/gcat.1
@@ -190,7 +189,6 @@ libexec/coreutils/glibstdbuf.so
 @man man/man1/gsort.1
 @man man/man1/gsplit.1
 @man man/man1/gstat.1
-@man man/man1/gstdbuf.1
 @man man/man1/gstty.1
 @man man/man1/gsum.1
 @man man/man1/gsync.1
