@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/01/15 19:42:12 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/01/28 17:06:46 zhuk Exp $
 @conflict kdebase-<4
 @newgroup _kdesud:583
+@newgroup _kdm:730
+@newuser _kdm:730:_kdm:daemon:KDM greeter:/nonexistent:/sbin/nologin
 @unexec-delete rm -f %D/share/icons/Oxygen_Black/icon-theme.cache
 @unexec-delete rm -f %D/share/icons/Oxygen_Blue/icon-theme.cache
 @unexec-delete rm -f %D/share/icons/Oxygen_White/icon-theme.cache
@@ -1353,19 +1355,7 @@ share/config/activities.knsrc
 share/config/aurorae.knsrc
 share/config/background.knsrc
 share/config/colorschemes.knsrc
-@comment share/config/kdm/
-@comment share/config/kdm.knsrc
-@comment share/config/kdm/README
-@comment share/config/kdm/Xaccess
-@comment share/config/kdm/Xreset
-@comment share/config/kdm/Xresources
-@comment share/config/kdm/Xsession
-@comment share/config/kdm/Xsetup
-@comment share/config/kdm/Xstartup
-@comment share/config/kdm/Xwilling
-@comment share/config/kdm/backgroundrc
-@comment share/config/kdm/kdmrc
-@comment share/config/kdm/sessions/
+share/config/kdm.knsrc
 share/config/kfontinst.knsrc
 share/config/ksplash.knsrc
 share/config/ksysguard.knsrc
@@ -1637,6 +1627,28 @@ share/examples/dbus-1/system.d/org.kde.kcontrol.kcmkdm.conf
 share/examples/dbus-1/system.d/org.kde.ksysguard.processlisthelper.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.ksysguard.processlisthelper.conf
 share/examples/kde/
+share/examples/kde/kdm/
+@sample ${SYSCONFDIR}/kdm/
+share/examples/kde/kdm/README
+@sample ${SYSCONFDIR}/kdm/README
+share/examples/kde/kdm/Xaccess
+@sample ${SYSCONFDIR}/kdm/Xaccess
+share/examples/kde/kdm/Xreset
+@sample ${SYSCONFDIR}/kdm/Xreset
+share/examples/kde/kdm/Xsession
+@sample ${SYSCONFDIR}/kdm/Xsession
+share/examples/kde/kdm/Xsetup
+@sample ${SYSCONFDIR}/kdm/Xsetup
+share/examples/kde/kdm/Xstartup
+@sample ${SYSCONFDIR}/kdm/Xstartup
+share/examples/kde/kdm/Xwilling
+@sample ${SYSCONFDIR}/kdm/Xwilling
+share/examples/kde/kdm/backgroundrc
+@sample ${SYSCONFDIR}/kdm/backgroundrc
+share/examples/kde/kdm/kdmrc
+@sample ${SYSCONFDIR}/kdm/kdmrc
+share/examples/kde/kdm/sessions/
+@sample ${SYSCONFDIR}/kdm/sessions/
 share/examples/kde/ksysguarddrc
 @sample ${SYSCONFDIR}/ksysguarddrc
 share/icons/KDE_Classic/
@@ -2519,5 +2531,3 @@ share/wallpapers/stripes.png.desktop
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
-@cwd ${LOCALSTATEDIR}
-faces/

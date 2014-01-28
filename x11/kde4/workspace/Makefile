@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2014/01/28 14:49:26 zhuk Exp $
+# $OpenBSD: Makefile,v 1.13 2014/01/28 17:06:46 zhuk Exp $
 
 COMMENT =	KDE workspace
 DISTNAME =	kde-workspace-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 # TODO:
 # Port ksysguard to OpenBSD (sensors framework, lsof(1) call replace and others).
@@ -122,12 +122,14 @@ CONFIGURE_ARGS =	-DWITH_OpenGLES:Bool=False \
 CONFIGURE_ARGS +=	-DKWIN_NAME:String=kwinv4
 
 MODKDE4_SYSCONF_FILES =	dbus-1		share/examples \
-			ksysguarddrc	share/examples/kde
+			ksysguarddrc	share/examples/kde \
+			kdm		share/examples/kde
 
-LOCALSTATEDIR =		${BASELOCALSTATEDIR}/kdm
-KDM_FACES_DIR =		${PREFIX}/share/apps/kdm/faces
+SUBST_VARS =		SYSCONFDIR
 
-SUBST_VARS =		LOCALSTATEDIR SYSCONFDIR
+# generate really default configuration
+GENKDMCONF_FLAGS=	--in ${WRKINST}${SYSCONFDIR}/kdm --no-old
+MAKE_ENV =		GENKDMCONF_FLAGS="${GENKDMCONF_FLAGS}"
 
 # Note: struct ucred check results are not used, do not look there.
 
@@ -138,10 +140,7 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/kdm/config.def
 
 post-install:
-	rm -f ${PREFIX}/share/config/kdm/*.bak
-	${INSTALL_DATA_DIR} ${WRKINST}${LOCALSTATEDIR}/faces
-	rm -Rf ${KDM_FACES_DIR}
-	ln -s ${LOCALSTATEDIR}/faces ${KDM_FACES_DIR}
+	ln -sf ${SYSCONFDIR}/kdm/faces ${PREFIX}/share/apps/kdm/faces
 	mv ${PREFIX}/share/sounds/pop{,-kde4}.wav
 
 .include <bsd.port.mk>
