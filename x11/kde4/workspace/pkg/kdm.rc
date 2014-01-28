@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# $OpenBSD: kdm.rc,v 1.1 2014/01/28 20:50:40 zhuk Exp $
+
+daemon="${TRUEPREFIX}/bin/kdm"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_start() {
+	if pgrep -qf "^/usr/libexec/getty "; then
+		${rcexec} "${daemon} ${daemon_flags}"
+	else
+		# OS is starting, workaround like in gdm.rc
+		( local i=0
+		while [[ $i -lt 10 ]]; do
+			pgrep -qf "^/usr/libexec/getty " && break
+			sleep 1
+			i=$((i+1))
+		done
+		[[ $i -ge 10 ]] && return 1
+		sleep 2
+		${rcexec} "${daemon} ${daemon_flags}" ) &
+	fi
+}
+
+rc_cmd $1

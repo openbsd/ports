@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/01/28 17:06:46 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/01/28 20:50:40 zhuk Exp $
 @conflict kdebase-<4
 @newgroup _kdesud:583
 @newgroup _kdm:730
@@ -2531,3 +2531,4 @@ share/wallpapers/stripes.png.desktop
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/oxygen
+@rcscript ${RCDIR}/kdm
