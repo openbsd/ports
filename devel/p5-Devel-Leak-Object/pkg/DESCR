@@ -1,0 +1,12 @@
+This module provides tracking of objects, for the purpose of detecting
+memory leaks due to circular references or innappropriate caching
+schemes.
+
+Object tracking can be enabled on a per object basis. Any objects
+thus tracked are remembered until DESTROYed; details of any objects
+left are printed out to STDERR at END-time.
+
+Of particular interest is 
+use Devel::Leak::Object qw{ GLOBAL_bless };
+
+which overrides CORE::bless to give a full tally of all objects at END {}
