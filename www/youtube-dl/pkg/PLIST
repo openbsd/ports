@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2014/01/27 09:49:49 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.29 2014/01/28 05:52:48 dcoppa Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -81,6 +81,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cinemassacre.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cinemassacre.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/clipfish.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/clipfish.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cliphunter.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cliphunter.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/clipsyndicate.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/clipsyndicate.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cmt.py
@@ -111,6 +113,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/defense.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/defense.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/depositfiles.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/depositfiles.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/discovery.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/discovery.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/dotsub.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/dotsub.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/dreisat.py
@@ -215,6 +219,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/lynda.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/lynda.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/macgamestore.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/macgamestore.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/malemotion.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/malemotion.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/mdr.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/mdr.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/metacafe.py
