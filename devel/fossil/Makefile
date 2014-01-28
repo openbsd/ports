@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.42 2013/09/21 17:59:07 jturner Exp $
+# $OpenBSD: Makefile,v 1.43 2014/01/28 17:03:59 jturner Exp $
 
 COMMENT =		simple distributed software configuration management
 
-DISTNAME =		fossil-src-20130911114349
-PKGNAME =		fossil-1.27
+DISTNAME =		fossil-src-20140127173344
+PKGNAME =		fossil-1.28
 EPOCH =			0
 CATEGORIES =		devel www
 
 MAINTAINER =		James Turner <james@calminferno.net>
 
 HOMEPAGE =		http://fossil-scm.org/
-MASTER_SITES =		${HOMEPAGE}download/
+MASTER_SITES =		http://fossil-scm.org/download/
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -36,7 +36,7 @@ CONFLICT_MARKER =	fossil-*-static
 
 SUBST_VARS +=		CONFLICT_MARKER
 
-TEST_DEPENDS =	${MODTCL_RUN_DEPENDS}
+TEST_DEPENDS =		${MODTCL_RUN_DEPENDS}
 
 post-extract:
 	@rm -f ${WRKSRC}/src/sqlite3.h
