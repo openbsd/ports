@@ -1,6 +1,6 @@
-$OpenBSD: patch-openbsd__netstat_c,v 1.4 2013/11/22 15:40:22 sthen Exp $
---- openbsd/_netstat.c.orig	Mon Dec 20 23:32:04 2004
-+++ openbsd/_netstat.c	Fri Nov 22 08:39:23 2013
+$OpenBSD: patch-openbsd__netstat_c,v 1.5 2014/01/28 13:31:18 sthen Exp $
+--- openbsd/_netstat.c.orig	Tue Dec 21 06:32:04 2004
++++ openbsd/_netstat.c	Tue Jan 28 13:26:51 2014
 @@ -30,6 +30,7 @@
  #include <sys/socket.h>
  #include <net/if.h>
@@ -20,7 +20,16 @@ $OpenBSD: patch-openbsd__netstat_c,v 1.4 2013/11/22 15:40:22 sthen Exp $
  #include <kvm.h>
  #include <Python.h>
  
-@@ -186,7 +183,6 @@ PyObject *ip6stats(PyObject *self, PyObject *args){
+@@ -140,8 +137,6 @@ PyObject *ipstats(PyObject *self, PyObject *args){
+ 	if (!addULongLong(retdict, "toolong",	  (unsigned long long)ips.ips_toolong))		 return NULL;
+ 	if (!addULongLong(retdict, "nogif",		  (unsigned long long)ips.ips_nogif))		 return NULL;
+ 	if (!addULongLong(retdict, "badaddr",	  (unsigned long long)ips.ips_badaddr))		 return NULL;
+-	if (!addULongLong(retdict, "inhwcsum",	  (unsigned long long)ips.ips_inhwcsum))	 return NULL;
+-	if (!addULongLong(retdict, "outhwcsum",   (unsigned long long)ips.ips_outhwcsum))	 return NULL;
+ 	return retdict;
+ }
+ 
+@@ -186,7 +181,6 @@ PyObject *ip6stats(PyObject *self, PyObject *args){
      //FIXME m2m, an array of 32 long longs. 
      if (!addULongLong(retdict, "mext1",         (unsigned long long)ip6s.ip6s_mext1))           return NULL;
      if (!addULongLong(retdict, "mext2m",        (unsigned long long)ip6s.ip6s_mext2m))          return NULL;
@@ -28,3 +37,22 @@ $OpenBSD: patch-openbsd__netstat_c,v 1.4 2013/11/22 15:40:22 sthen Exp $
      if (!addULongLong(retdict, "nogif",         (unsigned long long)ip6s.ip6s_nogif))           return NULL;
      if (!addULongLong(retdict, "toomanyhdr",    (unsigned long long)ip6s.ip6s_toomanyhdr))      return NULL;
  	return retdict;
+@@ -334,8 +328,6 @@ PyObject *tcpstats(PyObject *self, PyObject *args){
+ 	if (!addULongLong(retdict, "badsyn",		  (unsigned long long)tcps.tcps_badsyn)) return NULL;
+ 	if (!addULongLong(retdict, "rcvbadsig",		  (unsigned long long)tcps.tcps_rcvbadsig)) return NULL;
+ 	if (!addULongLong(retdict, "rcvgoodsig",	  (unsigned long long)tcps.tcps_rcvgoodsig)) return NULL;
+-	if (!addULongLong(retdict, "inhwcsum",		  (unsigned long long)tcps.tcps_inhwcsum)) return NULL;
+-	if (!addULongLong(retdict, "outhwcsum",		  (unsigned long long)tcps.tcps_outhwcsum)) return NULL;
+ 	if (!addULongLong(retdict, "ecn_accepts",	  (unsigned long long)tcps.tcps_ecn_accepts)) return NULL;
+ 	if (!addULongLong(retdict, "ecn_rcvece",	  (unsigned long long)tcps.tcps_ecn_rcvece)) return NULL;
+ 	if (!addULongLong(retdict, "ecn_rcvcwr",	  (unsigned long long)tcps.tcps_ecn_rcvcwr)) return NULL;
+@@ -371,9 +363,7 @@ PyObject *udpstats(PyObject *self, PyObject *args){
+ 	if (!addULongLong(retdict, "nosec",			(unsigned long long)udps.udps_nosec)) return NULL;
+ 	if (!addULongLong(retdict, "fullsock",		(unsigned long long)udps.udps_fullsock)) return NULL;
+ 	if (!addULongLong(retdict, "pcbhashmiss",	(unsigned long long)udps.udps_pcbhashmiss)) return NULL;
+-	if (!addULongLong(retdict, "inhwcsum",		(unsigned long long)udps.udps_inhwcsum)) return NULL;
+ 	if (!addULongLong(retdict, "opackets",		(unsigned long long)udps.udps_opackets)) return NULL;
+-	if (!addULongLong(retdict, "outhwcsum",		(unsigned long long)udps.udps_outhwcsum)) return NULL;
+ 	return retdict;
+ }
+ 
