@@ -1,7 +1,7 @@
-$OpenBSD: patch-xboard_conf_in,v 1.1 2012/10/26 18:08:27 dcoppa Exp $
---- xboard.conf.in.orig	Wed Apr 18 04:31:15 2012
-+++ xboard.conf.in	Fri Oct 26 14:36:43 2012
-@@ -40,7 +40,7 @@
+$OpenBSD: patch-xboard_conf_in,v 1.2 2014/01/28 09:20:12 dcoppa Exp $
+--- xboard.conf.in.orig	Mon Jan  6 18:15:22 2014
++++ xboard.conf.in	Tue Jan 28 08:19:41 2014
+@@ -38,7 +38,7 @@
  -pieceMenu false
  -showTargetSquares true
  -seekGraph true
