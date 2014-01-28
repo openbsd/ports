@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2013/12/30 12:23:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2014/01/28 17:45:33 ajacoutot Exp $
 @conflict gnucash-docs-*
 @pkgpath productivity/gnucash-docs
 bin/gnc-fq-check
@@ -1013,6 +1013,7 @@ share/gnome/help/gnucash-guide/ja/legal.xml
 share/gnome/help/gnucash-help/
 share/gnome/help/gnucash-help/C/
 share/gnome/help/gnucash-help/C/Help_ch_Account-Actions.xml
+share/gnome/help/gnucash-help/C/Help_ch_Business.xml
 share/gnome/help/gnucash-help/C/Help_ch_Customize.xml
 share/gnome/help/gnucash-help/C/Help_ch_GUIMenus.xml
 share/gnome/help/gnucash-help/C/Help_ch_GettingHelp.xml
