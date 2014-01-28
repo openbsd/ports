@@ -1,4 +1,5 @@
-$OpenBSD: patch-plasma_generic_applets_systemtray_CMakeLists_txt,v 1.1.1.1 2013/04/24 19:17:42 zhuk Exp $
+$OpenBSD: patch-plasma_generic_applets_systemtray_CMakeLists_txt,v 1.2 2014/01/28 14:49:26 zhuk Exp $
+Fix build.
 --- plasma/generic/applets/systemtray/CMakeLists.txt.orig	Thu Jan 24 01:46:45 2013
 +++ plasma/generic/applets/systemtray/CMakeLists.txt	Wed Feb  6 23:29:56 2013
 @@ -39,12 +39,12 @@ kde4_add_ui_files(systemtray_SRCS

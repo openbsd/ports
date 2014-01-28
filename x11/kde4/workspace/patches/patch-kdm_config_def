@@ -1,13 +1,27 @@
-$OpenBSD: patch-kdm_config_def,v 1.1.1.1 2013/04/24 19:17:42 zhuk Exp $
---- kdm/config.def.orig	Sat May 21 00:32:06 2011
-+++ kdm/config.def	Mon Sep  5 05:15:43 2011
-@@ -40,6 +40,9 @@
+$OpenBSD: patch-kdm_config_def,v 1.2 2014/01/28 14:49:26 zhuk Exp $
+OpenBSD path specifics.
+--- kdm/config.def.orig	Thu Jan  2 23:27:49 2014
++++ kdm/config.def	Tue Jan 28 00:44:11 2014
+@@ -29,7 +29,11 @@
+ #define RCVERMAJOR 2
+ #define RCVERMINOR 4
+ 
+-#define KDMCONF KDE_CONFDIR "/kdm"
++#if defined(__OpenBSD__)
++# define KDMCONF "${SYSCONFDIR}/kdm"
++#else
++# define KDMCONF KDE_CONFDIR "/kdm"
++#endif
+ #define KDMDATA KDE_DATADIR "/kdm"
+ 
+ #include <sys/param.h> /* for #define BSD */
+@@ -39,6 +43,9 @@
+ # define REBOOT_CMD	"/usr/sbin/shutdown -r now"
  #elif defined(__linux__)
  # define HALT_CMD	"/sbin/shutdown -h -P now"
- # define REBOOT_CMD	"/sbin/shutdown -r now"
++# define REBOOT_CMD	"/sbin/shutdown -r now"
 +#elif defined(__OpenBSD__)
 +# define HALT_CMD	"/sbin/halt -p"
-+# define REBOOT_CMD	"/sbin/shutdown -r now"
+ # define REBOOT_CMD	"/sbin/shutdown -r now"
  #elif defined(BSD)
  # define HALT_CMD	"/sbin/shutdown -p now"
- # define REBOOT_CMD	"/sbin/shutdown -r now"

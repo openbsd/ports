@@ -1,0 +1,13 @@
+$OpenBSD: patch-ksmserver_server_cpp,v 1.1 2014/01/28 14:49:26 zhuk Exp $
+Customizing KWin binary name to deconflict with kdebase-3.x.
+--- ksmserver/server.cpp.orig	Mon Jan 27 13:17:44 2014
++++ ksmserver/server.cpp	Mon Jan 27 21:00:22 2014
+@@ -995,7 +995,7 @@ bool KSMServer::defaultSession() const
+ void KSMServer::selectWm( const QString& kdewm )
+ {
+     wm = "kwin"; // defaults
+-    wmCommands = ( QStringList() << "kwin" ); 
++    wmCommands = ( QStringList() << "kwinv4" ); 
+     if( qstrcmp( getenv( "KDE_FAILSAFE" ), "1" ) == 0 )
+         return; // failsafe, force kwin
+     if( !kdewm.isEmpty())

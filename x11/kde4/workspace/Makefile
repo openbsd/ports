@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2014/01/15 19:42:12 zhuk Exp $
+# $OpenBSD: Makefile,v 1.12 2014/01/28 14:49:26 zhuk Exp $
 
 COMMENT =	KDE workspace
 DISTNAME =	kde-workspace-${MODKDE4_VERSION}
+REVISION =	0
 
 # TODO:
 # Port ksysguard to OpenBSD (sensors framework, lsof(1) call replace and others).
@@ -126,12 +127,15 @@ MODKDE4_SYSCONF_FILES =	dbus-1		share/examples \
 LOCALSTATEDIR =		${BASELOCALSTATEDIR}/kdm
 KDM_FACES_DIR =		${PREFIX}/share/apps/kdm/faces
 
-SUBST_VARS =		LOCALSTATEDIR
+SUBST_VARS =		LOCALSTATEDIR SYSCONFDIR
 
 # Note: struct ucred check results are not used, do not look there.
 
 post-extract:
 	cp ${FILESDIR}/checkpass_bsd.c ${WRKSRC}/kcheckpass/
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/kdm/config.def
 
 post-install:
 	rm -f ${PREFIX}/share/config/kdm/*.bak

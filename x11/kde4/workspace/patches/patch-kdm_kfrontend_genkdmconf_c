@@ -1,0 +1,13 @@
+$OpenBSD: patch-kdm_kfrontend_genkdmconf_c,v 1.1 2014/01/28 14:49:26 zhuk Exp $
+Deconfict with kdebase-3.x.
+--- kdm/kfrontend/genkdmconf.c.orig	Mon Jan 27 21:17:33 2014
++++ kdm/kfrontend/genkdmconf.c	Mon Jan 27 21:17:43 2014
+@@ -771,7 +771,7 @@ static const char def_session2[] =
+ "    exec $HOME/.xsession\n"
+ "    ;;\n"
+ "  default)\n"
+-"    exec " KDE_BINDIR "/startkde\n"
++"    exec " KDE_BINDIR "/startkde4\n"
+ "    ;;\n"
+ "  *)\n"
+ "    eval exec \"$session\"\n"

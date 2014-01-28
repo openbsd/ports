@@ -1,4 +1,5 @@
-$OpenBSD: patch-cmake_modules_UnixAuth_cmake,v 1.1.1.1 2013/04/24 19:17:42 zhuk Exp $
+$OpenBSD: patch-cmake_modules_UnixAuth_cmake,v 1.2 2014/01/28 14:49:26 zhuk Exp $
+Add support for BSD auth.
 --- cmake/modules/UnixAuth.cmake.orig	Thu Jan 19 00:08:40 2012
 +++ cmake/modules/UnixAuth.cmake	Mon Feb  6 14:09:47 2012
 @@ -35,21 +35,27 @@ check_library_exists(crypt crypt "" HAVE_CRYPT)

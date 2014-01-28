@@ -1,4 +1,5 @@
-$OpenBSD: patch-kcontrol_keyboard_tests_xkb_rules_test_cpp,v 1.1.1.1 2013/04/24 19:17:42 zhuk Exp $
+$OpenBSD: patch-kcontrol_keyboard_tests_xkb_rules_test_cpp,v 1.2 2014/01/28 14:49:26 zhuk Exp $
+Fix build.
 --- kcontrol/keyboard/tests/xkb_rules_test.cpp.orig	Sat Oct 20 15:27:15 2012
 +++ kcontrol/keyboard/tests/xkb_rules_test.cpp	Sat Oct 20 15:29:20 2012
 @@ -176,11 +176,11 @@ private Q_SLOTS:

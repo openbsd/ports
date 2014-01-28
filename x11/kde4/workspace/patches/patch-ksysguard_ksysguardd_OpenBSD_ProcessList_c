@@ -1,7 +1,5 @@
-$OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_ProcessList_c,v 1.1.1.1 2013/04/24 19:17:42 zhuk Exp $
-
+$OpenBSD: patch-ksysguard_ksysguardd_OpenBSD_ProcessList_c,v 1.2 2014/01/28 14:49:26 zhuk Exp $
 Adapt to new OpenBSD kinfo_proc API.
-
 --- ksysguard/ksysguardd/OpenBSD/ProcessList.c.orig	Fri Jul  8 11:38:52 2011
 +++ ksysguard/ksysguardd/OpenBSD/ProcessList.c	Fri Jul  8 11:40:10 2011
 @@ -155,7 +155,7 @@ findProcessInList(int pid)

@@ -1,4 +1,5 @@
-$OpenBSD: patch-ConfigureChecks_cmake,v 1.3 2013/12/30 14:11:48 zhuk Exp $
+$OpenBSD: patch-ConfigureChecks_cmake,v 1.4 2014/01/28 14:49:26 zhuk Exp $
+Add support for BSD auth.
 --- ConfigureChecks.cmake.orig	Wed Aug 28 20:59:37 2013
 +++ ConfigureChecks.cmake	Mon Dec  9 20:11:15 2013
 @@ -54,6 +54,7 @@ get_filename_component(xrootdir "${XBINDIR}" PATH)

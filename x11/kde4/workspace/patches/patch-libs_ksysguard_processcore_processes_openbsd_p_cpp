@@ -1,4 +1,5 @@
-$OpenBSD: patch-libs_ksysguard_processcore_processes_openbsd_p_cpp,v 1.1.1.1 2013/04/24 19:17:42 zhuk Exp $
+$OpenBSD: patch-libs_ksysguard_processcore_processes_openbsd_p_cpp,v 1.2 2014/01/28 14:49:26 zhuk Exp $
+Add support for OpenBSD kinfo_proc.
 --- libs/ksysguard/processcore/processes_openbsd_p.cpp.orig	Sat May 21 00:32:07 2011
 +++ libs/ksysguard/processcore/processes_openbsd_p.cpp	Mon Sep  5 05:57:19 2011
 @@ -86,6 +86,10 @@ void ProcessesLocal::Private::readProcStatus(struct ki
