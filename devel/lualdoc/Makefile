@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2013/12/02 16:25:08 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2014/01/29 08:04:20 dcoppa Exp $
 
 COMMENT =	LuaDoc-compatible documentation generation system
 
-GH_VER =	1.4.0
+GH_VER =	1.4.2
 DISTNAME =	LDoc-${GH_VER}
 PKGNAME =	lualdoc-${GH_VER}
 CATEGORIES =	devel
