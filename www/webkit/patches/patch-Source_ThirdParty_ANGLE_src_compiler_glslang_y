@@ -1,0 +1,22 @@
+$OpenBSD: patch-Source_ThirdParty_ANGLE_src_compiler_glslang_y,v 1.1 2014/01/29 17:28:05 ajacoutot Exp $
+
+XXX rm when bison(1) is updated
+Source/ThirdParty/ANGLE/src/compiler/glslang.y:52.1-5: invalid directive: `%code'
+
+--- Source/ThirdParty/ANGLE/src/compiler/glslang.y.orig	Mon Jan 20 10:26:24 2014
++++ Source/ThirdParty/ANGLE/src/compiler/glslang.y	Wed Jan 29 15:13:45 2014
+@@ -49,13 +49,11 @@ WHICH GENERATES THE GLSL ES PARSER (glslang_tab.cpp AN
+ %locations
+ %lex-param {YYLEX_PARAM}
+ 
+-%code requires {
++%union {
+ #define YYLTYPE TSourceLoc
+ #define YYLTYPE_IS_DECLARED 1
+ #define SH_MAX_TOKEN_LENGTH 256  // WebGL spec.
+-}
+ 
+-%union {
+     struct {
+         union {
+             TString *string;

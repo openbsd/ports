@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.20 2014/01/28 23:24:42 landry Exp $
+$OpenBSD: patch-configure,v 1.21 2014/01/29 17:28:05 ajacoutot Exp $
 
 https://bugs.webkit.org/show_bug.cgi?id=117796
 
@@ -13,8 +13,8 @@ glib commit 136e705e8383ff8848e425ac01278102d7badc52
 - Chunk 6 : Don't force the use of -O2, the ports infrastructure
 takes care of that
 
---- configure.orig	Mon Nov 11 11:56:17 2013
-+++ configure	Thu Nov 14 09:38:51 2013
+--- configure.orig	Tue Jan 21 12:09:55 2014
++++ configure	Mon Jan 27 10:18:44 2014
 @@ -4790,7 +4790,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
@@ -33,7 +33,7 @@ takes care of that
  #error Not a supported G++ compiler
  #endif
  
-@@ -17609,26 +17609,14 @@ gsettings__enum_file = $(addsuffix .enums.xml,$(gsetti
+@@ -17606,26 +17606,14 @@ gsettings__enum_file = $(addsuffix .enums.xml,$(gsetti
  
  all-am: $(gsettings_SCHEMAS:.xml=.valid)
  uninstall-am: uninstall-gsettings-schemas
@@ -63,7 +63,7 @@ takes care of that
  	test -n "$(GSETTINGS_DISABLE_SCHEMAS_COMPILE)$(DESTDIR)" || $(GLIB_COMPILE_SCHEMAS) $(gsettingsschemadir)
  
  uninstall-gsettings-schemas:
-@@ -20954,7 +20942,7 @@ $as_echo "$ac_cv_search_shm_open" >&6; }
+@@ -20951,7 +20939,7 @@ $as_echo "$ac_cv_search_shm_open" >&6; }
  ac_res=$ac_cv_search_shm_open
  if test "$ac_res" != no; then :
    test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
@@ -72,7 +72,7 @@ takes care of that
  fi
  
  
-@@ -21386,7 +21374,7 @@ fi
+@@ -21383,7 +21371,7 @@ fi
  # Use C99 as the language standard for C code.
  CFLAGS="$CFLAGS -pthread -std=c99"
  # Use the C++11 standard. Do not warn about C++11 incompatibilities.
@@ -81,7 +81,7 @@ takes care of that
  
  # Clang requires suppression of unused arguments warnings.
  if test "$c_compiler" = "clang"; then
-@@ -21423,8 +21411,8 @@ fi
+@@ -21420,8 +21408,8 @@ fi
  
  # Add the appropriate 'O' level for optimized builds.
  if test "$enable_optimizations" = "yes"; then
