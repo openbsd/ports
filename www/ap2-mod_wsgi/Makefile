@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/01/29 14:06:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2014/01/29 14:07:54 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,6 +19,8 @@ WANTLIB += m pthread ${MODPY_WANTLIB} util
 MASTER_SITES=	http://modwsgi.googlecode.com/files/
 
 MODULES=	lang/python
+
+LIB_DEPENDS=	${MODPY_LIB_DEPENDS}
 
 RUN_DEPENDS=	www/apache-httpd
 BUILD_DEPENDS=	www/apache-httpd
