@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.73 2014/01/21 14:30:30 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.74 2014/01/29 08:42:48 dcoppa Exp $
 
 COMMENT=		highly configurable framework window manager
 
 DISTNAME=		awesome-3.5.2
-REVISION=		2
+REVISION=		3
 EXTRACT_SUFX=		.tar.xz
 CATEGORIES=		x11
 
@@ -69,6 +69,7 @@ pre-configure:
 post-install:
 	@rm ${WRKINST}/${LOCALBASE}/share/awesome/lib/*.{beforesubst,orig} \
 		${WRKINST}/${LOCALBASE}/share/awesome/lib/awful/*.{beforesubst,orig} \
+		${WRKINST}/${LOCALBASE}/share/awesome/lib/awful/layout/suit/*.orig \
 		${WRKINST}/${LOCALBASE}/share/awesome/lib/awful/widget/*.orig \
 		${WRKINST}/${LOCALBASE}/share/awesome/lib/menubar/*.{beforesubst,orig} \
 		${WRKINST}/${LOCALBASE}/share/awesome/themes/default/*.{beforesubst,orig}
