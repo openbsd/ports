@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure_ac,v 1.1.1.1 2007/05/28 17:19:37 jason Exp $
---- configure.ac.orig	Wed Aug 16 15:50:07 2006
-+++ configure.ac	Wed Aug 16 15:51:48 2006
-@@ -216,6 +216,7 @@ AC_CHECK_FUNCS([roundf])
+$OpenBSD: patch-configure_ac,v 1.2 2014/01/29 15:22:31 abieber Exp $
+--- configure.ac.orig	Tue Dec  4 16:35:35 2012
++++ configure.ac	Tue Jan 28 10:08:15 2014
+@@ -352,6 +352,7 @@ AC_CHECK_FUNCS([roundf])
   
  # Check for intl library (Needed for Cygwin) 
  # 
 +AC_CHECK_LIB(iconv, libiconv_open, LIBS="-liconv ${LIBS}")
  AC_CHECK_LIB(intl, gettext, LIBS="-lintl ${LIBS}") 
  
- 
+ # Check for libproj (need to do this before test for shapelib, because
