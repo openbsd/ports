@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: gdm.rc,v 1.26 2014/01/29 14:00:04 ajacoutot Exp $
+# $OpenBSD: gdm.rc,v 1.27 2014/01/29 14:00:46 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/gdm"
 
@@ -13,7 +13,7 @@ rc_reload=NO
 if [ -n "${INRC}" ]; then
 unset rc_bg
 rc_start() {
-	( i=0
+	( local i=0
 	while [ $i -le 10 ]; do
 		pgrep -qf "^/usr/libexec/getty " && break
 		sleep 1
