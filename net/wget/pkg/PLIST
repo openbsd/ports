@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.25 2011/10/12 10:14:30 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.26 2014/01/29 06:08:42 dcoppa Exp $
 @bin bin/wget
 @info info/wget.info
 @comment lib/charset.alias
 @man man/man1/wget.1
 share/examples/wget/
-share/examples/wget/sample.wgetrc
+share/examples/wget/wgetrc
 @sample ${SYSCONFDIR}/wgetrc
 share/locale/be/LC_MESSAGES/wget.mo
 share/locale/bg/LC_MESSAGES/wget.mo

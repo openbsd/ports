@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.61 2013/11/09 23:19:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.62 2014/01/29 06:08:42 dcoppa Exp $
 
 COMMENT =	retrieve files from the web via HTTP, HTTPS and FTP
 
-DISTNAME =	wget-1.14
-REVISION =	1
+DISTNAME =	wget-1.15
 CATEGORIES =	net
 
 HOMEPAGE =	https://www.gnu.org/software/wget/
@@ -18,6 +17,8 @@ LIB_DEPENDS =		devel/libidn \
 MASTER_SITES =		${MASTER_SITE_GNU:=wget/}
 
 MODULES =		devel/gettext
+
+FAKE_FLAGS =           sysconfdir="${PREFIX}/share/examples/wget"
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-ssl=openssl
