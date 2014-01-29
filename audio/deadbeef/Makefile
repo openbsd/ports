@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2013/10/11 14:16:57 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.10 2014/01/29 20:43:26 dcoppa Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		DeaDBeeF is an audio player
-DISTNAME =		deadbeef-0.5.6
-REVISION =		3
+DISTNAME =		deadbeef-0.6.0
 CATEGORIES =		audio
 
 HOMEPAGE =		http://deadbeef.sourceforge.net/
@@ -12,12 +11,13 @@ HOMEPAGE =		http://deadbeef.sourceforge.net/
 # GPLv2 & LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += FLAC GL ICE Imlib2 SM X11 Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c
-WANTLIB += cairo cddb cdio crypto curl dbus-1 expat faad ffi
-WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += FLAC GL GLU Imlib2 X11 Xcomposite Xcursor Xdamage Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 avcodec avformat
+WANTLIB += avutil c cairo cddb cdio crypto curl dbus-1 expat faad
+WANTLIB += ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
-WANTLIB += harfbuzz idn m mad mms mpcdec ogg
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
+WANTLIB += gtk-x11-2.0 harfbuzz idn m mad mms mp4ff mpcdec ogg
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
 WANTLIB += pthread pthread-stubs sndfile sndio ssl vorbis vorbisenc
 WANTLIB += vorbisfile wavpack xcb xcb-render xcb-shm z zip
@@ -48,6 +48,7 @@ LIB_DEPENDS =		archivers/libzip \
 			audio/libvorbis \
 			audio/musepack \
 			audio/wavpack \
+			graphics/ffmpeg \
 			graphics/imlib2 \
 			multimedia/libmms \
 			net/curl \
@@ -66,18 +67,20 @@ AUTOMAKE_VERSION =	1.11
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--disable-static \
+			--disable-abstract-socket \
 			--disable-adplug \
 			--disable-alsa \
+			--disable-coreaudio \
 			--disable-gme \
+			--disable-gtk3 \
+			--disable-mono2stereo \
 			--disable-oss \
 			--disable-pulse \
 			--disable-sid \
-			--disable-wildmidi \
-			--disable-supereq \
 			--disable-src \
-			--disable-mono2stereo \
-			--disable-abstract-socket \
-			--disable-gtk3
+			--disable-supereq \
+			--disable-wildmidi \
+			--disable-wma
 CONFIGURE_ENV +=	CPPFLAGS='-I${LOCALBASE}/lib/libzip/include \
 				  -I${X11BASE}/include \
 				  -I${WRKSRC}/plugins/dumb/dumb-kode54/include' \

@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_pltbrowser_Makefile_am,v 1.1 2014/01/29 20:43:26 dcoppa Exp $
+--- plugins/pltbrowser/Makefile.am.orig	Mon Oct 14 21:34:47 2013
++++ plugins/pltbrowser/Makefile.am	Thu Jan 16 09:25:12 2014
+@@ -16,7 +16,7 @@ AM_CFLAGS = $(CFLAGS) -std=c99 -fPIC
+ 
+ if HAVE_GTK2
+ pltbrowser_gtk2_la_SOURCES = pltbrowser.c
+-pltbrowser_gtk2_la_LDFLAGS = -module
++pltbrowser_gtk2_la_LDFLAGS = -module -avoid-version
+ if STATICLINK
+ GTK_ROOT=@top_srcdir@/$(LIB)/gtk-2.12.12/usr
+ 

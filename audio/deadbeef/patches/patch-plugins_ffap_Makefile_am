@@ -1,8 +1,8 @@
-$OpenBSD: patch-plugins_ffap_Makefile_am,v 1.1 2012/08/10 17:25:01 shadchin Exp $
---- plugins/ffap/Makefile.am.orig	Thu Aug  9 23:43:29 2012
-+++ plugins/ffap/Makefile.am	Thu Aug  9 23:43:38 2012
-@@ -19,7 +19,7 @@ if HAVE_YASM
- 	$(LIBTOOL) --tag=CC --mode=compile $(YASM) $(YASM_FLAGS)  -o $@ $<
+$OpenBSD: patch-plugins_ffap_Makefile_am,v 1.2 2014/01/29 20:43:26 dcoppa Exp $
+--- plugins/ffap/Makefile.am.orig	Sat Nov  2 12:03:15 2013
++++ plugins/ffap/Makefile.am	Thu Jan 16 07:57:26 2014
+@@ -23,7 +23,7 @@ if APE_USE_YASM
+ endif
  endif
  
 -ffap_la_LDFLAGS = -module -lm

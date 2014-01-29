@@ -1,0 +1,15 @@
+$OpenBSD: patch-plugins_artwork_artwork_c,v 1.1 2014/01/29 20:43:26 dcoppa Exp $
+--- plugins/artwork/artwork.c.orig	Sat Nov  2 12:17:03 2013
++++ plugins/artwork/artwork.c	Wed Jan 15 15:17:14 2014
+@@ -25,6 +25,11 @@
+ #include "lastfm.h"
+ #include "albumartorg.h"
+ #include "wos.h"
++#include "../../strdupa.h"
++
++#if defined(__GNUC__) && defined(__STRICT_ANSI__)
++#define alloca(size)   __builtin_alloca(size)
++#endif
+ 
+ #ifdef USE_IMLIB2
+ #include <Imlib2.h>

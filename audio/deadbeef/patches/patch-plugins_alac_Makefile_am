@@ -1,12 +1,17 @@
-$OpenBSD: patch-plugins_alac_Makefile_am,v 1.1 2013/01/03 11:54:49 shadchin Exp $
---- plugins/alac/Makefile.am.orig	Tue Oct 23 22:45:50 2012
-+++ plugins/alac/Makefile.am	Tue Oct 23 22:45:58 2012
-@@ -13,7 +13,7 @@ alac.c decomp.h demux.c demux.h stream.c stream.h\
- ../libmp4ff/mp4ffint.h\
- ../libmp4ff/mp4ff_int_types.h
+$OpenBSD: patch-plugins_alac_Makefile_am,v 1.2 2014/01/29 20:43:26 dcoppa Exp $
+--- plugins/alac/Makefile.am.orig	Sat Nov  2 12:05:11 2013
++++ plugins/alac/Makefile.am	Thu Jan 16 08:03:11 2014
+@@ -4,10 +4,10 @@ pkglib_LTLIBRARIES = alac.la
+ alac_la_SOURCES = alac_plugin.c\
+ alac.c decomp.h demux.c demux.h stream.c stream.h
  
 -alac_la_LDFLAGS = -module
 +alac_la_LDFLAGS = -module -avoid-version
  
- alac_la_LIBADD = $(LDADD) $(FAAD2_LIBS)
- AM_CFLAGS = $(CFLAGS) -std=c99 -DUSE_MP4FF -DUSE_TAGGING -I../libmp4ff
+-alac_la_LIBADD = $(LDADD) $(FAAD2_LIBS) ../libmp4ff/libmp4ff.a
+-AM_CFLAGS = $(CFLAGS) -std=c99 -DUSE_MP4FF -DUSE_TAGGING -I@top_srcdir@/plugins/libmp4ff
++alac_la_LIBADD = $(LDADD) $(FAAD2_LIBS) -lmp4ff
++AM_CFLAGS = $(CFLAGS) -std=c99 -DUSE_MP4FF -DUSE_TAGGING
+ endif
+ 
+ 

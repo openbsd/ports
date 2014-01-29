@@ -1,6 +1,6 @@
-$OpenBSD: patch-plugins_cdda_Makefile_am,v 1.1 2012/08/10 17:25:01 shadchin Exp $
---- plugins/cdda/Makefile.am.orig	Thu Aug  9 23:41:59 2012
-+++ plugins/cdda/Makefile.am	Thu Aug  9 23:42:09 2012
+$OpenBSD: patch-plugins_cdda_Makefile_am,v 1.2 2014/01/29 20:43:26 dcoppa Exp $
+--- plugins/cdda/Makefile.am.orig	Sat Nov  2 12:17:03 2013
++++ plugins/cdda/Makefile.am	Thu Jan 16 07:57:25 2014
 @@ -2,7 +2,7 @@ if HAVE_CDDA
  cddadir = $(libdir)/$(PACKAGE)
  pkglib_LTLIBRARIES = cdda.la
@@ -9,4 +9,4 @@ $OpenBSD: patch-plugins_cdda_Makefile_am,v 1.1 2012/08/10 17:25:01 shadchin Exp 
 +cdda_la_LDFLAGS = -module -avoid-version
  
  cdda_la_LIBADD = $(LDADD) $(CDDA_LIBS)
- AM_CFLAGS = $(CFLAGS) -std=c99
+ AM_CFLAGS = $(CFLAGS) -std=c99 $(CDDA_CFLAGS)

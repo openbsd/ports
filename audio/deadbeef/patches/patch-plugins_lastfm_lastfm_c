@@ -1,0 +1,14 @@
+$OpenBSD: patch-plugins_lastfm_lastfm_c,v 1.1 2014/01/29 20:43:26 dcoppa Exp $
+--- plugins/lastfm/lastfm.c.orig	Wed Jan 15 14:47:39 2014
++++ plugins/lastfm/lastfm.c	Wed Jan 15 14:48:08 2014
+@@ -23,6 +23,10 @@
+ #include <curl/curl.h>
+ #include "../../deadbeef.h"
+ 
++#if defined(__GNUC__) && defined(__STRICT_ANSI__)
++#define alloca(size)   __builtin_alloca(size)
++#endif
++
+ //#define trace(...) { fprintf(stderr, __VA_ARGS__); }
+ #define trace(fmt,...)
+ 

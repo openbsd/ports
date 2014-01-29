@@ -1,9 +1,0 @@
-$OpenBSD: patch-yasmwrapper_sh,v 1.1.1.1 2012/08/08 18:06:48 shadchin Exp $
---- yasmwrapper.sh.orig	Wed May  2 01:00:37 2012
-+++ yasmwrapper.sh	Wed May  2 01:00:43 2012
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/bin/sh
- ARGS=""
- for i in $@ ; do
-     #if [ "$i" != "-fPIC" ] && [ "$i" != "-DPIC" ]; then

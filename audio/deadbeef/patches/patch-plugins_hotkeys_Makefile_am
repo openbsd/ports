@@ -1,10 +1,10 @@
-$OpenBSD: patch-plugins_hotkeys_Makefile_am,v 1.1 2012/08/10 17:25:01 shadchin Exp $
---- plugins/hotkeys/Makefile.am.orig	Thu Aug  9 23:44:52 2012
-+++ plugins/hotkeys/Makefile.am	Thu Aug  9 23:44:59 2012
+$OpenBSD: patch-plugins_hotkeys_Makefile_am,v 1.2 2014/01/29 20:43:26 dcoppa Exp $
+--- plugins/hotkeys/Makefile.am.orig	Wed Jan 15 12:26:06 2014
++++ plugins/hotkeys/Makefile.am	Wed Jan 15 12:26:18 2014
 @@ -2,7 +2,7 @@ if HAVE_HOTKEYS
  hotkeysdir = $(libdir)/$(PACKAGE)
  pkglib_LTLIBRARIES = hotkeys.la
- hotkeys_la_SOURCES = hotkeys.c hotkeys.h
+ hotkeys_la_SOURCES = hotkeys.c hotkeys.h ../libparser/parser.c ../libparser/parser.h actionhandlers.c actionhandlers.h
 -hotkeys_la_LDFLAGS = -module
 +hotkeys_la_LDFLAGS = -module -avoid-version
  

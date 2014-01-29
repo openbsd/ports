@@ -1,12 +1,13 @@
-$OpenBSD: patch-Makefile_am,v 1.2 2012/08/22 20:14:06 naddy Exp $
---- Makefile.am.orig	Tue Aug 21 17:21:34 2012
-+++ Makefile.am	Tue Aug 21 17:22:08 2012
-@@ -43,7 +43,7 @@ deadbeef_SOURCES =\
+$OpenBSD: patch-Makefile_am,v 1.3 2014/01/29 20:43:26 dcoppa Exp $
+--- Makefile.am.orig	Tue Nov  5 21:00:41 2013
++++ Makefile.am	Thu Jan 16 09:05:00 2014
+@@ -46,6 +46,9 @@ deadbeef_SOURCES =\
  sdkdir = $(pkgincludedir)
  sdk_HEADERS = deadbeef.h
  
--deadbeef_LDADD = $(LDADD) $(DEPS_LIBS) $(ICONV_LIB) $(DL_LIBS) -lm -lpthread 
-+deadbeef_LDADD = $(LDADD) $(DEPS_LIBS) $(INTLLIBS) $(ICONV_LIB) $(DL_LIBS) -lm -lpthread 
++# Fix 'undefined symbol' errors when loading plugins
++deadbeef_LDFLAGS = $(LDFLAGS) -Wl,--export-dynamic
++
+ deadbeef_LDADD = $(LDADD) $(DEPS_LIBS) $(ICONV_LIB) $(DL_LIBS) -lm -lpthread $(INTL_LIBS) plugins/libparser/libparser.a
  
  AM_CFLAGS = $(DEPS_CFLAGS) -std=c99
- AM_CPPFLAGS = $(DEPS_CFLAGS)

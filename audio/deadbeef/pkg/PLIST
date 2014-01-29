@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/08/20 22:05:46 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/01/29 20:43:26 dcoppa Exp $
 @bin bin/deadbeef
 include/deadbeef/
 include/deadbeef/deadbeef.h
@@ -26,6 +26,7 @@ lib/deadbeef/ddb_dumb.so
 lib/deadbeef/ddb_gui_GTK2.so
 lib/deadbeef/ddb_shn.so
 lib/deadbeef/ffap.so
+lib/deadbeef/ffmpeg.so
 lib/deadbeef/flac.so
 lib/deadbeef/hotkeys.so
 lib/deadbeef/lastfm.so
@@ -35,6 +36,7 @@ lib/deadbeef/mpgmad.so
 lib/deadbeef/musepack.so
 lib/deadbeef/notify.so
 lib/deadbeef/nullout.so
+lib/deadbeef/pltbrowser_gtk2.so
 lib/deadbeef/shellexec.so
 lib/deadbeef/shellexecui_gtk2.so
 lib/deadbeef/sndfile.so
@@ -84,9 +86,9 @@ share/locale/da/LC_MESSAGES/deadbeef.mo
 share/locale/de/LC_MESSAGES/deadbeef.mo
 share/locale/el/LC_MESSAGES/deadbeef.mo
 share/locale/en_GB/LC_MESSAGES/deadbeef.mo
-share/locale/eo/LC_MESSAGES/deadbeef.mo
 share/locale/es/LC_MESSAGES/deadbeef.mo
 share/locale/et/LC_MESSAGES/deadbeef.mo
+share/locale/eu/LC_MESSAGES/deadbeef.mo
 share/locale/fa/LC_MESSAGES/deadbeef.mo
 share/locale/fi/LC_MESSAGES/deadbeef.mo
 share/locale/fr/LC_MESSAGES/deadbeef.mo
@@ -99,16 +101,19 @@ share/locale/it/LC_MESSAGES/deadbeef.mo
 share/locale/ja/LC_MESSAGES/deadbeef.mo
 share/locale/kk/LC_MESSAGES/deadbeef.mo
 share/locale/km/LC_MESSAGES/deadbeef.mo
+share/locale/lg/
+share/locale/lg/LC_MESSAGES/
 share/locale/lg/LC_MESSAGES/deadbeef.mo
 share/locale/lt/LC_MESSAGES/deadbeef.mo
-share/locale/nb/LC_MESSAGES/deadbeef.mo
 share/locale/nl/LC_MESSAGES/deadbeef.mo
 share/locale/pl/LC_MESSAGES/deadbeef.mo
 share/locale/pt/LC_MESSAGES/deadbeef.mo
 share/locale/pt_BR/LC_MESSAGES/deadbeef.mo
 share/locale/ro/LC_MESSAGES/deadbeef.mo
 share/locale/ru/LC_MESSAGES/deadbeef.mo
-share/locale/si/LC_MESSAGES/deadbeef.mo
+share/locale/si_LK/
+share/locale/si_LK/LC_MESSAGES/
+share/locale/si_LK/LC_MESSAGES/deadbeef.mo
 share/locale/sk/LC_MESSAGES/deadbeef.mo
 share/locale/sl/LC_MESSAGES/deadbeef.mo
 share/locale/sr/LC_MESSAGES/deadbeef.mo
