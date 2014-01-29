@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_libvorbis_Makefile_in,v 1.2 2012/02/17 22:17:52 naddy Exp $
---- doc/libvorbis/Makefile.in.orig	Fri Feb  3 23:21:55 2012
-+++ doc/libvorbis/Makefile.in	Sun Feb  5 20:12:01 2012
-@@ -178,7 +178,7 @@ build_vendor = @build_vendor@
+$OpenBSD: patch-doc_libvorbis_Makefile_in,v 1.3 2014/01/29 21:36:06 brad Exp $
+--- doc/libvorbis/Makefile.in.orig	Wed Jan 22 06:39:50 2014
++++ doc/libvorbis/Makefile.in	Mon Jan 27 03:39:10 2014
+@@ -206,7 +206,7 @@ build_vendor = @build_vendor@
  builddir = @builddir@
  datadir = @datadir@
  datarootdir = @datarootdir@
