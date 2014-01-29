@@ -1,13 +1,17 @@
 #!/bin/sh
 #
-# $OpenBSD: gdm.rc,v 1.25 2013/12/26 15:38:29 ajacoutot Exp $
+# $OpenBSD: gdm.rc,v 1.26 2014/01/29 14:00:04 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/gdm"
 
 . /etc/rc.d/rc.subr
 
+rc_bg=YES
 rc_reload=NO
 
+# on boot: wait for ttys to be initialized
+if [ -n "${INRC}" ]; then
+unset rc_bg
 rc_start() {
 	( i=0
 	while [ $i -le 10 ]; do
@@ -18,6 +22,7 @@ rc_start() {
 	[[ $i -gt 10 ]] && return 1
 	${rcexec} "${daemon} ${daemon_flags}" ) &
 }
+fi
 
 rc_stop() {
 	pkill -f "^${pexp}"

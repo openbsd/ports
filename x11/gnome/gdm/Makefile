@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.186 2014/01/21 17:39:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.187 2014/01/29 14:00:04 ajacoutot Exp $
 
 # XXX configuring GDM from gnome-cc does not work
 
@@ -8,7 +8,7 @@ COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		3.10.0.1
-REVISION=		10
+REVISION=		11
 
 SHARED_LIBS +=  gdm                  0.0      # 1.0
 
