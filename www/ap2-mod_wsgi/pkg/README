@@ -1,0 +1,11 @@
+$OpenBSD: README,v 1.1.1.1 2014/01/29 14:06:07 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+To enable the ap2-mod_wsgi module, the following line need sto be added
+to ${SYSCONFDIR}/apache2/httpd2.conf:
+    LoadModule wsgi_module ${PREFIX}/lib/apache2/mod_wsgi.so
+
+Then httpd2(8) must be restarted.

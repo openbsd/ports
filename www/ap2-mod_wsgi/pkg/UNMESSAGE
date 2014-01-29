@@ -1,0 +1,3 @@
+The following line needs to be removed from ${SYSCONFDIR}/apache2/httpd2.conf
+then httpd2(8) must be restarted:
+    LoadModule wsgi_module ${PREFIX}/lib/apache2/mod_wsgi.so
