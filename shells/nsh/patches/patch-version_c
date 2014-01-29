@@ -1,0 +1,12 @@
+$OpenBSD: patch-version_c,v 1.1 2014/01/29 16:26:17 naddy Exp $
+--- version.c.orig	Sun Feb 10 19:36:49 2013
++++ version.c	Wed Jan 29 00:00:05 2014
+@@ -127,7 +127,7 @@ version(int argc, char **argv)
+ 		pntd = 1;
+ 	}
+ 	if (!pntd)
+-		printf("%d second%s", c, c == 1 ? "" : "s");
++		printf("%d second%s", (int)c, c == 1 ? "" : "s");
+ 	printf("\n");
+ 	printf("system: %s/%s version %s\n", un.sysname, un.machine,
+ 	    un.release);

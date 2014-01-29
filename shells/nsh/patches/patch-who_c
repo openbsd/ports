@@ -1,0 +1,14 @@
+$OpenBSD: patch-who_c,v 1.1 2014/01/29 16:26:17 naddy Exp $
+--- who.c.orig	Sun Feb 10 19:36:49 2013
++++ who.c	Tue Jan 28 21:17:17 2014
+@@ -114,8 +114,8 @@ output(struct utmp *up)
+ 		(void)printf("00:00 ");
+ 	else if (idle < (24 * 60 * 60))
+ 		(void)printf("%02d:%02d ", 
+-			     (idle / (60 * 60)),
+-			     (idle % (60 * 60)) / 60);
++			     ((int)idle / (60 * 60)),
++			     ((int)idle % (60 * 60)) / 60);
+ 	else
+ 		(void)printf(" old  ");
+ 	

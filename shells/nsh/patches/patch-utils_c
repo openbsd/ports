@@ -1,0 +1,14 @@
+$OpenBSD: patch-utils_c,v 1.1 2014/01/29 16:26:17 naddy Exp $
+--- utils.c.orig	Sun Feb 10 19:36:49 2013
++++ utils.c	Tue Jan 28 21:17:43 2014
+@@ -88,8 +88,8 @@ format_time(time_t seconds)
+ 	} else {
+ 		/* standard method produces MMM:SS */
+ 		/* we avoid printf as must as possible to make this quick */
+-		snprintf(result, sizeof(result), "%3d:%02d", seconds / 60,
+-		    seconds % 60);
++		snprintf(result, sizeof(result), "%3d:%02d", (int)seconds / 60,
++		    (int)seconds % 60);
+ 	}
+ 	return (result);
+ }
