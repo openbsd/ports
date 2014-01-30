@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2013/11/05 07:55:21 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2014/01/30 18:51:33 zhuk Exp $
 
 CATEGORIES =	productivity
 COMMENT =	PIM cache and access services
-DISTNAME =	akonadi-1.10.3-1
-PKGNAME =	akonadi-1.10.3.1
+DISTNAME =	akonadi-1.11.0
 HOMEPAGE =	http://community.kde.org/KDE_PIM/Akonadi
 
 SHARED_LIBS = 	akonadiprotocolinternals 2.0	# 1.0
@@ -39,7 +38,5 @@ CONFIGURE_ARGS =	-DDATABASE_BACKEND:String=SQLITE \
 			-DINSTALL_QSQLITE_IN_QT_PREFIX:Bool=Yes
 
 TEST_IS_INTERACTIVE =	X11
-
-WRKDIST =		${WRKDIR}/${PKGNAME:R}
 
 .include <bsd.port.mk>

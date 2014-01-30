@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/11/05 07:55:21 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/01/30 18:51:33 zhuk Exp $
 @pkgpath x11/kde4/akonadi
 @bin bin/akonadi_agent_launcher
 @bin bin/akonadi_agent_server
@@ -41,6 +41,7 @@ share/dbus-1/interfaces/org.freedesktop.Akonadi.NotificationSource.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.Preprocessor.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.Resource.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.Server.xml
+share/dbus-1/interfaces/org.freedesktop.Akonadi.StorageDebugger.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.Tracer.xml
 share/dbus-1/interfaces/org.freedesktop.Akonadi.TracerNotification.xml
 share/dbus-1/services/org.freedesktop.Akonadi.Control.service
