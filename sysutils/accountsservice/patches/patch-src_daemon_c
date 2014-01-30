@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_daemon_c,v 1.25 2013/10/16 08:44:37 ajacoutot Exp $
+$OpenBSD: patch-src_daemon_c,v 1.26 2014/01/30 10:01:33 ajacoutot Exp $
 
 OpenBSD does not have any function to parse a specified passwd(5) file.
 
@@ -8,8 +8,13 @@ The commit is wrong, since we're only interested in local users.
 http://bugs.freedesktop.org/show_bug.cgi?id=41747
 (XXX we need a way to only get local users)
 
---- src/daemon.c.orig	Tue Oct 15 22:25:19 2013
-+++ src/daemon.c	Wed Oct 16 10:34:25 2013
+From 980692e6b9cfe4a34e22f566e0981a8c549e4348 Mon Sep 17 00:00:00 2001
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Fri, 01 Nov 2013 21:09:25 +0000
+Subject: Avoid deleting the root user
+
+--- src/daemon.c.orig	Thu Jan 30 10:09:06 2014
++++ src/daemon.c	Thu Jan 30 10:09:20 2014
 @@ -36,6 +36,10 @@
  #include <utmpx.h>
  #endif
@@ -82,6 +87,15 @@ http://bugs.freedesktop.org/show_bug.cgi?id=41747
          }
          else if (cd->account_type == ACCOUNT_TYPE_STANDARD) {
                  argv[4] = "--";
+@@ -1232,7 +1256,7 @@ daemon_uncache_user (AccountsAccounts      *accounts,
+ }
+ 
+ typedef struct {
+-        gint64 uid;
++        uid_t uid;
+         gboolean remove_files;
+ } DeleteUserData;
+ 
 @@ -1257,6 +1281,34 @@ daemon_delete_user_authorized_cb (Daemon              
                  return;
          }
@@ -136,3 +150,19 @@ http://bugs.freedesktop.org/show_bug.cgi?id=41747
          }
          else {
                  argv[1] = "--";
+@@ -1314,13 +1373,13 @@ daemon_delete_user (AccountsAccounts      *accounts,
+         Daemon *daemon = (Daemon*)accounts;
+         DeleteUserData *data;
+ 
+-        if (uid == 0) {
++        if ((uid_t)uid == 0) {
+                 throw_error (context, ERROR_FAILED, "Refuse to delete root user");
+                 return TRUE;
+         }
+ 
+         data = g_new0 (DeleteUserData, 1);
+-        data->uid = uid;
++        data->uid = (uid_t)uid;
+         data->remove_files = remove_files;
+ 
+         daemon_local_check_auth (daemon,

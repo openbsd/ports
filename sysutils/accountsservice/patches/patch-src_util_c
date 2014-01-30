@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_util_c,v 1.13 2013/12/11 16:11:19 ajacoutot Exp $
+$OpenBSD: patch-src_util_c,v 1.14 2014/01/30 10:01:33 ajacoutot Exp $
 
-We don't use /proc on OpenBSD.
+XXX push upstream: we don't use /proc on OpenBSD
 
 --- src/util.c.orig	Sat May 11 21:54:43 2013
 +++ src/util.c	Thu May 30 20:00:16 2013

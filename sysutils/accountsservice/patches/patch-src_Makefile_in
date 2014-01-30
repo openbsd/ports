@@ -1,4 +1,9 @@
-$OpenBSD: patch-src_Makefile_in,v 1.9 2013/10/16 08:44:37 ajacoutot Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.10 2014/01/30 10:01:33 ajacoutot Exp $
+
+/var/lib -> /var/db
+
+XXX push upstream: -lkvm
+
 --- src/Makefile.in.orig	Tue Oct 15 22:30:35 2013
 +++ src/Makefile.in	Wed Oct 16 10:34:25 2013
 @@ -402,8 +402,8 @@ SUBDIRS = . libaccountsservice
