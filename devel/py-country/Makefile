@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/11/18 20:42:52 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2014/01/30 08:01:48 benoit Exp $
 
 COMMENT =		country, language, currency and scripts definitions
 
-MODPY_EGG_VERSION =	1.2
+MODPY_EGG_VERSION =	1.3
 DISTNAME =		pycountry-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 
