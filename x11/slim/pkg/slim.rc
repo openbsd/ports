@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: slim.rc,v 1.3 2011/12/17 22:01:14 sthen Exp $
+# $OpenBSD: slim.rc,v 1.4 2014/01/30 14:25:35 zhuk Exp $
 
 daemon="${TRUEPREFIX}/bin/slim -d"
 
@@ -8,8 +8,15 @@ daemon="${TRUEPREFIX}/bin/slim -d"
 
 rc_reload=NO
 
+if [ -n "${INRC}" ]; then
 rc_start() {
-	(sleep 5; ${rcexec} "${daemon} ${daemon_flags}")&
+	( local i=0
+	while ! pgrep -qf "^/usr/libexec/getty "; do
+		sleep 1
+		[ $((i++)) -ge 10 ] && return 1
+	done
+	${rcexec} "${daemon} ${daemon_flags}" ) &
 }
+fi
 
 rc_cmd $1
