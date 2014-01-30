@@ -1,6 +1,6 @@
-$OpenBSD: patch-ext_files_config_ini,v 1.3 2013/07/01 13:49:00 jasper Exp $
---- ext/files/config.ini.orig	Mon Jun  3 19:13:08 2013
-+++ ext/files/config.ini	Mon Jul  1 15:43:59 2013
+$OpenBSD: patch-ext_files_config_ini,v 1.4 2014/01/30 18:29:51 jasper Exp $
+--- ext/files/config.ini.orig	Mon Jan  6 22:50:33 2014
++++ ext/files/config.ini	Sun Jan 12 10:58:54 2014
 @@ -3,9 +3,9 @@
  
  [global]
@@ -11,5 +11,5 @@ $OpenBSD: patch-ext_files_config_ini,v 1.3 2013/07/01 13:49:00 jasper Exp $
 -logging-config = /etc/puppetdb/log4j.properties
 +logging-config = ${SYSCONFDIR}/puppetdb/log4j.properties
  
- # Maximum number of results that a resource query may return
- resource-query-limit = 20000
+ 
+ [command-processing]

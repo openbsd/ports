@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.2 2013/12/23 09:51:12 jasper Exp $
+$OpenBSD: README-main,v 1.3 2014/01/30 18:29:51 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -30,7 +30,7 @@ ${SYSCONFDIR}/puppetdb/ssl/ (relative to /etc/puppet/):
 
 Now run to finalize the setup:
 
-    ${LOCALBASE}/sbin/puppetdb-ssl-setup
+    ${LOCALBASE}/libexec/puppetdb/puppetdb-ssl-setup
 
 You may need to merge ${SYSCONFDIR}/puppetdb/conf.d/jetty.ini into
 ${SYSCONFDIR}/puppetdb/conf.d/puppetdb.conf
