@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.8 2014/01/25 09:26:40 ajacoutot Exp $
+$OpenBSD: README,v 1.9 2014/01/30 11:39:04 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -8,10 +8,9 @@ When using the Foomatic framework, printers are driven by a PPD (Printer
 Postscript Description) file which, unless already provided in a
 particular package, can be generated using the foomatic-ppdfile(1)
 command.
-Drivers availability depends on which Foomatic DB(s) package(s) is/are
-installed on the system:
-e.g. (non-exhaustive list) foomatic-db, hplip (and/or hpijs), foo2zjs,
-gutenprint...
+Drivers availability depends on which Foomatic DB package are installed
+on the system:
+e.g. (non-exhaustive list) foomatic-db, hpijs, foo2zjs, gutenprint...
 
 PPD generation example for a Samsung ML-2850D
 =============================================
