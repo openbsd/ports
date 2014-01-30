@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2014/01/23 16:46:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2014/01/30 11:37:35 ajacoutot Exp $
 @conflict foomatic-db-<4.0.20091207p1
 @conflict foo2zjs-cup-*
 @pkgpath print/foo2zjs,-cups
@@ -130,6 +130,7 @@ share/foo2zjs/gamma.ps
 share/foo2zjs/icm/
 share/foomatic/db/source/PPD/foo2zjs/
 share/foomatic/db/source/PPD/foo2zjs/Dell-1355.ppd.gz
+share/foomatic/db/source/PPD/foo2zjs/Dell-C1765.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Epson-AcuLaser_M1400.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Fuji_Xerox-DocuPrint_CM205.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Fuji_Xerox-DocuPrint_P205.ppd.gz
@@ -239,7 +240,9 @@ share/foomatic/db/source/opt/foo2hiperc-InputSlot.xml
 share/foomatic/db/source/opt/foo2hiperc-MediaType.xml
 share/foomatic/db/source/opt/foo2hiperc-PageSize.xml
 share/foomatic/db/source/opt/foo2hiperc-Resolution.xml
-share/foomatic/db/source/opt/foo2hp-AlignCMYK.xml
+share/foomatic/db/source/opt/foo2hp-AlignC.xml
+share/foomatic/db/source/opt/foo2hp-AlignM.xml
+share/foomatic/db/source/opt/foo2hp-AlignY.xml
 share/foomatic/db/source/opt/foo2hp-BitsPerPlane.xml
 share/foomatic/db/source/opt/foo2hp-ColorMode.xml
 share/foomatic/db/source/opt/foo2hp-Duplex.xml
@@ -264,6 +267,12 @@ share/foomatic/db/source/opt/foo2oak-z1-Duplex.xml
 share/foomatic/db/source/opt/foo2oak-z1-InputSlot.xml
 share/foomatic/db/source/opt/foo2oak-z1-MediaType.xml
 share/foomatic/db/source/opt/foo2oak-z1-PageSize.xml
+share/foomatic/db/source/opt/foo2qpdl-ColorAdjustB.xml
+share/foomatic/db/source/opt/foo2qpdl-ColorAdjustC.xml
+share/foomatic/db/source/opt/foo2qpdl-ColorAdjustCR.xml
+share/foomatic/db/source/opt/foo2qpdl-ColorAdjustMG.xml
+share/foomatic/db/source/opt/foo2qpdl-ColorAdjustS.xml
+share/foomatic/db/source/opt/foo2qpdl-ColorAdjustYB.xml
 share/foomatic/db/source/opt/foo2qpdl-ColorMode.xml
 share/foomatic/db/source/opt/foo2qpdl-Duplex.xml
 share/foomatic/db/source/opt/foo2qpdl-ICM.xml
@@ -305,6 +314,7 @@ share/foomatic/db/source/opt/foo2zjs-z2-PageSize.xml
 share/foomatic/db/source/opt/foo2zjs-z3-MediaType.xml
 share/foomatic/db/source/opt/foo2zjs-z3-PageSize.xml
 share/foomatic/db/source/printer/Dell-1355.xml
+share/foomatic/db/source/printer/Dell-C1765.xml
 share/foomatic/db/source/printer/Epson-AcuLaser_M1400.xml
 share/foomatic/db/source/printer/Fuji_Xerox-DocuPrint_CM205.xml
 share/foomatic/db/source/printer/Fuji_Xerox-DocuPrint_P205.xml
