@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_audio_auserver_c,v 1.1 2014/01/30 13:21:43 jasper Exp $
+
+Security fix for CVE-2014-0027,
+https://bugzilla.redhat.com/show_bug.cgi?id=1048678
+
+--- src/audio/auserver.c.orig	Tue Dec  4 19:14:14 2001
++++ src/audio/auserver.c	Thu Jan 30 14:18:33 2014
+@@ -59,9 +59,11 @@ static int play_wave_from_socket(snd_header *header,in
+     int q,i,n,r;
+     unsigned char bytes[CST_AUDIOBUFFSIZE];
+     short shorts[CST_AUDIOBUFFSIZE];
++#ifdef DEBUG
+     cst_file fff;
+ 
+     fff = cst_fopen("/tmp/awb.wav",CST_OPEN_WRITE|CST_OPEN_BINARY);
++#endif
+ 
+     if ((audio_device = audio_open(header->sample_rate,1,
+ 				   (header->encoding == CST_SND_SHORT) ?
+@@ -108,7 +110,9 @@ static int play_wave_from_socket(snd_header *header,in
+ 	for (q=r; q > 0; q-=n)
+ 	{
+ 	    n = audio_write(audio_device,shorts,q);
++#ifdef DEBUG
+ 	    cst_fwrite(fff,shorts,2,q);
++#endif
+ 	    if (n <= 0)
+ 	    {
+ 		audio_close(audio_device);
+@@ -117,7 +121,9 @@ static int play_wave_from_socket(snd_header *header,in
+ 	}
+     }
+     audio_close(audio_device);
++#ifdef DEBUG
+     cst_fclose(fff);
++#endif
+ 
+     return CST_OK_FORMAT;
+ 
