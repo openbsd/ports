@@ -1,8 +1,58 @@
-$OpenBSD: patch-src_ProcessInfo_cpp,v 1.1 2014/01/27 10:23:40 zhuk Exp $
+$OpenBSD: patch-src_ProcessInfo_cpp,v 1.2 2014/01/30 21:28:42 zhuk Exp $
 Fix sysctl(3) error handling.
 --- src/ProcessInfo.cpp.orig	Mon Jan 27 14:10:44 2014
-+++ src/ProcessInfo.cpp	Mon Jan 27 14:15:43 2014
-@@ -781,7 +781,7 @@ class OpenBSDProcessInfo : public UnixProcessInfo (pri
++++ src/ProcessInfo.cpp	Fri Jan 31 01:25:37 2014
+@@ -734,38 +734,28 @@ class OpenBSDProcessInfo : public UnixProcessInfo (pub
+ 
+ private:
+     virtual bool readProcInfo(int aPid) {
++        struct kinfo_proc   kInfoProc;
+         int      managementInfoBase[6];
+-        size_t   mibLength;
+-        struct kinfo_proc*  kInfoProc;
++        size_t   mibLength = sizeof(kInfoProc);
+ 
+         managementInfoBase[0] = CTL_KERN;
+         managementInfoBase[1] = KERN_PROC;
+         managementInfoBase[2] = KERN_PROC_PID;
+         managementInfoBase[3] = aPid;
+-        managementInfoBase[4] = sizeof(struct kinfo_proc);
++        managementInfoBase[4] = sizeof(kInfoProc);
+         managementInfoBase[5] = 1;
+ 
+-        if (::sysctl(managementInfoBase, 6, NULL, &mibLength, NULL, 0) == -1) {
+-            kWarning() << "first sysctl() call failed with code" << errno;
++        if (::sysctl(managementInfoBase, 6, &kInfoProc, &mibLength, NULL, 0) == -1) {
++            kWarning() << "sysctl() call failed with code" << errno;
+             return false;
+         }
+ 
+-        kInfoProc = (struct kinfo_proc*)malloc(mibLength);
+-
+-        if (::sysctl(managementInfoBase, 6, kInfoProc, &mibLength, NULL, 0) == -1) {
+-            kWarning() << "second sysctl() call failed with code" << errno;
+-            free(kInfoProc);
+-            return false;
+-        }
+-
+-        setName(kInfoProc->p_comm);
+-        setPid(kInfoProc->p_pid);
+-        setParentPid(kInfoProc->p_ppid);
+-        setForegroundPid(kInfoProc->p_tpgid);
+-        setUserId(kInfoProc->p_uid);
+-        setUserName(kInfoProc->p_login);
+-
+-        free(kInfoProc);
++        setName(kInfoProc.p_comm);
++        setPid(kInfoProc.p_pid);
++        setParentPid(kInfoProc.p_ppid);
++        setForegroundPid(kInfoProc.p_tpgid);
++        setUserId(kInfoProc.p_uid);
++        setUserName(kInfoProc.p_login);
+         return true;
+     }
+ 
+@@ -781,7 +771,7 @@ class OpenBSDProcessInfo : public UnixProcessInfo (pub
          managementInfoBase[2] = aPid;
          managementInfoBase[3] = whatMib;
  
@@ -11,7 +61,7 @@ Fix sysctl(3) error handling.
              len *= 2;
              nbuf = realloc(buf, len);
              if (nbuf == NULL) {
-@@ -790,8 +790,13 @@ class OpenBSDProcessInfo : public UnixProcessInfo (pri
+@@ -790,8 +780,13 @@ class OpenBSDProcessInfo : public UnixProcessInfo (pub
  
              buf = nbuf;
              rc = ::sysctl(managementInfoBase, 4, buf, &len, NULL, 0);
