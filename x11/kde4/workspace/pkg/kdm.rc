@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: kdm.rc,v 1.2 2014/01/29 16:49:33 zhuk Exp $
+# $OpenBSD: kdm.rc,v 1.3 2014/01/30 16:58:58 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/kdm"
 
@@ -8,6 +8,7 @@ daemon="${TRUEPREFIX}/bin/kdm"
 
 rc_reload=NO
 
+# on boot: wait for ttys to be initialized
 if [ -n "${INRC}" ]; then
 rc_start() {
 	( local i=0

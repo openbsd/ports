@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: slim.rc,v 1.4 2014/01/30 14:25:35 zhuk Exp $
+# $OpenBSD: slim.rc,v 1.5 2014/01/30 16:58:58 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/slim -d"
 
@@ -8,6 +8,7 @@ daemon="${TRUEPREFIX}/bin/slim -d"
 
 rc_reload=NO
 
+# on boot: wait for ttys to be initialized
 if [ -n "${INRC}" ]; then
 rc_start() {
 	( local i=0
