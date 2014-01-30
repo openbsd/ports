@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2014/01/01 20:46:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.46 2014/01/30 01:28:13 bcallah Exp $
 
 COMMENT =		fast and light graphical web browser
 
@@ -7,6 +7,7 @@ CATEGORIES =		www
 
 MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 HOMEPAGE =		http://www.dillo.org/
+REVISION =		0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
@@ -26,7 +27,8 @@ LIB_DEPENDS =	graphics/jpeg \
 		x11/fltk
 
 # XXX dillo should be patched to use ftp(1)
-RUN_DEPENDS =	net/wget
+RUN_DEPENDS =	devel/desktop-file-utils \
+		net/wget
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
@@ -42,5 +44,10 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dillo
 	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${PREFIX}/share/doc/dillo
 	${INSTALL_DATA} ${WRKSRC}/dpid/dpidrc ${PREFIX}/share/examples/dillo
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${FILESDIR}/dillo.xpm ${PREFIX}/share/pixmaps
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	@${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/dillo.desktop \
+		${PREFIX}/share/applications/dillo.desktop
 
 .include <bsd.port.mk>

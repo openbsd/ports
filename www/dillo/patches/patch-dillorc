@@ -1,3 +1,4 @@
+$OpenBSD: patch-dillorc,v 1.5 2014/01/30 01:28:13 bcallah Exp $
 --- dillorc.orig	Thu Apr  4 13:20:10 2013
 +++ dillorc	Thu Apr 18 12:25:04 2013
 @@ -46,7 +46,7 @@
