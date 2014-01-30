@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_dynamic-preprocessors_pop_Makefile_in,v 1.6 2013/08/21 02:28:44 lteo Exp $
---- src/dynamic-preprocessors/pop/Makefile.in.orig	Tue Jul 23 14:35:45 2013
-+++ src/dynamic-preprocessors/pop/Makefile.in	Mon Aug  5 14:37:49 2013
-@@ -261,7 +261,7 @@ top_builddir = @top_builddir@
+$OpenBSD: patch-src_dynamic-preprocessors_pop_Makefile_in,v 1.7 2014/01/30 03:23:48 lteo Exp $
+--- src/dynamic-preprocessors/pop/Makefile.in.orig	Tue Dec 31 19:30:42 2013
++++ src/dynamic-preprocessors/pop/Makefile.in	Thu Jan 23 23:02:18 2014
+@@ -332,7 +332,7 @@ top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = foreign no-dependencies
  lib_LTLIBRARIES = libsf_pop_preproc.la
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_dynamic-preprocessors_pop_Makefile_in,v 1.6 2013/08/21 02:28
  @SO_WITH_STATIC_LIB_TRUE@libsf_pop_preproc_la_LIBADD = ../libsf_dynamic_preproc.la
  @SO_WITH_STATIC_LIB_FALSE@nodist_libsf_pop_preproc_la_SOURCES = \
  @SO_WITH_STATIC_LIB_FALSE@../include/sf_dynamic_preproc_lib.c \
-@@ -498,7 +498,7 @@ distdir: $(DISTFILES)
+@@ -557,7 +557,7 @@ distdir: $(DISTFILES)
  	done
  check-am: all-am
  check: check-am
