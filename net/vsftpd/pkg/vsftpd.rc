@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# $OpenBSD: vsftpd.rc,v 1.1 2013/04/02 11:38:12 sthen Exp $
+# $OpenBSD: vsftpd.rc,v 1.2 2014/01/30 14:01:50 ajacoutot Exp $
 
-daemon="${TRUEPREFIX}/sbin/vsftpd"
-daemon_flags="${SYSCONFDIR}/vsftpd.conf -obackground=yes"
+daemon="${TRUEPREFIX}/sbin/vsftpd -obackground=yes"
+daemon_flags="${SYSCONFDIR}/vsftpd.conf"
 
 . /etc/rc.d/rc.subr
 

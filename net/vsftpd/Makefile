@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2013/04/02 11:38:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2014/01/30 14:01:49 ajacoutot Exp $
 
 COMMENT=		FTP daemon which aims to be secure
 
 DISTNAME=		vsftpd-3.0.2
-REVISION=		0
+REVISION=		1
 CATEGORIES=		net
 
 HOMEPAGE=		http://vsftpd.beasts.org/
