@@ -1,9 +1,9 @@
-$OpenBSD: patch-i3status_conf,v 1.11 2013/03/08 10:23:13 jasper Exp $
+$OpenBSD: patch-i3status_conf,v 1.12 2014/01/30 13:19:40 jasper Exp $
 
 Adjust config file to be reasonably useful on OpenBSD out of the box.
 
---- i3status.conf.orig	Wed Feb 27 10:56:44 2013
-+++ i3status.conf	Wed Feb 27 23:24:44 2013
+--- i3status.conf.orig	Sun Jan  5 12:34:06 2014
++++ i3status.conf	Thu Jan 30 14:00:30 2014
 @@ -1,49 +1,46 @@
  # i3status configuration file.
  # see "man i3status" for documentation.
@@ -76,7 +76,7 @@ Adjust config file to be reasonably useful on OpenBSD out of the box.
 @@ -54,4 +51,8 @@ load {
  
  disk "/" {
-         format = "%free"
+         format = "%avail"
 +}
 +
 +volume master {

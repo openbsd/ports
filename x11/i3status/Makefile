@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2013/06/19 09:15:07 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.31 2014/01/30 13:19:40 jasper Exp $
 
 ONLY_FOR_ARCHS=		${APM_ARCHS}
 
 COMMENT=		generate a statusbar for use with i3/xmobar/dzen2
 
-DISTNAME=		i3status-2.7
-REVISION=		0
+DISTNAME=		i3status-2.8
 CATEGORIES=		x11 sysutils
 
 HOMEPAGE=		http://i3wm.org/i3status/
@@ -31,7 +30,7 @@ NO_TEST=		Yes
 # XXX: Optimizing results in seg. faults on at least amd64.
 CFLAGS+=		-O0
 
-MAKE_ENV+=		SYSCONFDIR=${PREFIX}/share/examples/i3status/
+MAKE_ENV+=		V=1 SYSCONFDIR=${PREFIX}/share/examples/i3status/
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Makefile
