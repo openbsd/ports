@@ -1,7 +1,16 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2014/01/31 11:46:25 zhuk Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2014/01/31 16:37:46 zhuk Exp $
 Does not require C++0x, actually.
---- CMakeLists.txt.orig	Fri Jan 31 15:44:22 2014
-+++ CMakeLists.txt	Fri Jan 31 15:44:33 2014
+--- CMakeLists.txt.orig	Thu Nov 28 18:25:03 2013
++++ CMakeLists.txt	Fri Jan 31 19:03:40 2014
+@@ -82,7 +82,7 @@ endif()
+ macro(SET_DEFAULT_DB_BACKEND)
+     set(_backend ${ARGV0})
+     if("${_backend}" STREQUAL "SQLITE")
+-        set(AKONADI_DATABASE_BACKEND QSQLITE3)
++        set(AKONADI_DATABASE_BACKEND QSQLITE)
+         set(AKONADI_BUILD_QSQLITE TRUE)
+     else()
+         if("${_backend}" STREQUAL "POSTGRES")
 @@ -241,7 +241,7 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_C_COMPILER MATCHE
  
    # more aggressive warnings and C++11 support
