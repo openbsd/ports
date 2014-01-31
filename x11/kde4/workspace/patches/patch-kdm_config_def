@@ -1,5 +1,5 @@
-$OpenBSD: patch-kdm_config_def,v 1.4 2014/01/28 20:50:40 zhuk Exp $
-OpenBSD path specifics.
+$OpenBSD: patch-kdm_config_def,v 1.5 2014/01/31 17:45:35 zhuk Exp $
+OpenBSD specifics.
 --- kdm/config.def.orig	Thu Jan  2 23:27:49 2014
 +++ kdm/config.def	Tue Jan 28 20:55:26 2014
 @@ -29,7 +29,11 @@
