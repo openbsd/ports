@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2013/10/12 21:23:50 gsoares Exp $
+# $OpenBSD: Makefile,v 1.22 2014/01/31 17:40:42 gsoares Exp $
 
 COMMENT =		C/C++ static checker
 
-DISTNAME =		cppcheck-1.62
+DISTNAME =		cppcheck-1.63
 
 CATEGORIES =		devel
 
@@ -25,7 +25,7 @@ ALL_TARGET =		cppcheck
 TEST_TARGET =		test
 
 # -Ilib before PREFIX/include to avoid picking up header from devel/check
-MAKE_FLAGS =		BIN=${PREFIX}/bin SRCDIR=build \
+MAKE_FLAGS =		BIN=${PREFIX}/bin SRCDIR=build CFGDIR=${PREFIX}/share/cppcheck/cfg \
 			CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 			CPPFLAGS="-DHAVE_RULES -DTIXML_USE_STL -Ilib -I${PREFIX}/include" \
 			LDFLAGS="-L${PREFIX}/lib -lpcre"
@@ -46,6 +46,8 @@ post-build:
 	${WRKSRC}/man/cppcheck.1.xml
 
 do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/cppcheck/cfg
+	@cp ${WRKSRC}/cfg/* ${PREFIX}/share/cppcheck/cfg/
 	${INSTALL_PROGRAM} ${WRKSRC}/cppcheck ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/cppcheck.1 ${PREFIX}/man/man1/
 
