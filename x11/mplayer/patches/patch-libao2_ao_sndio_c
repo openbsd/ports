@@ -1,0 +1,12 @@
+$OpenBSD: patch-libao2_ao_sndio_c,v 1.1 2014/01/31 10:44:56 ratchov Exp $
+--- libao2/ao_sndio.c.orig	Fri Jan 31 11:09:00 2014
++++ libao2/ao_sndio.c	Fri Jan 31 11:10:33 2014
+@@ -132,6 +132,8 @@ static int init(int rate, int channels, int format, in
+     ao_data.format |= par.sig ? AF_FORMAT_SI : AF_FORMAT_US;
+     if (par.bits > 8)
+         ao_data.format |= par.le ? AF_FORMAT_LE : AF_FORMAT_BE;
++    else
++        ao_data.format |= AF_FORMAT_NE;
+     ao_data.channels = par.pchan;
+     ao_data.bps = bpf * par.rate;
+     ao_data.buffersize = par.bufsz * bpf;
