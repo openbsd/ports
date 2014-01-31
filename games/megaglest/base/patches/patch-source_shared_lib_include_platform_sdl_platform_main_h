@@ -1,0 +1,21 @@
+$OpenBSD: patch-source_shared_lib_include_platform_sdl_platform_main_h,v 1.1 2014/01/31 09:46:51 jca Exp $
+Fix for i386 PIE (ebx is reserved).
+--- source/shared_lib/include/platform/sdl/platform_main.h.orig	Wed Nov 14 20:20:08 2012
++++ source/shared_lib/include/platform/sdl/platform_main.h	Wed Jan 29 07:29:15 2014
+@@ -582,9 +582,16 @@ int mainSetup(int argc, char **argv) {
+ 
+ #define CHECK_BIT(var,pos) ((var) & (1<<(pos)))
+ 
++#if defined(__i386__) && defined(__PIE__)
+ #define cpuid(func,ax,bx,cx,dx)\
++	__asm__ __volatile__ (\
++	"xchg %%ebx, %%esi; cpuid; xchg %%ebx, %%esi":\
++	"=a" (ax), "=S" (bx), "=c" (cx), "=d" (dx) : "a" (func));
++#else
++#define cpuid(func,ax,bx,cx,dx)\
+ 	__asm__ __volatile__ ("cpuid":\
+ 	"=a" (ax), "=b" (bx), "=c" (cx), "=d" (dx) : "a" (func));
++#endif
+ 
+ 	int ax=0,bx=0,cx=0,dx=0;
+ 	cpuid(0x0000001,ax,bx,cx,dx)

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/05/21 10:34:14 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.4 2014/01/31 09:46:51 jca Exp $
 
 COMMENT =		3D real-time strategy game
 DISTNAME =		megaglest-source-${V}
 PKGNAME =		megaglest-${V}
-REVISION =		1
+REVISION =		2
 
 WANTLIB += GL GLU GLEW ICE SDL SM X11 Xext c crypto curl fontconfig ftgl
 WANTLIB += freetype idn ircclient jpeg ${MODLUA_WANTLIB}
