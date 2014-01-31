@@ -54,6 +54,7 @@ SHA256 (rpm/libxcb-1.1.91-8.fc10.i386.rpm) = KruK0IbNZ2B1dNHM4GWRTETSR2TkuWapzAt
 SHA256 (rpm/libxkbfile-1.0.4-5.fc9.i386.rpm) = yJgNLbU59m2C7aeV2kfzuF1jAr7dzPH84dW0+qYkeq4=
 SHA256 (rpm/setserial-2.17-22.fc9.i386.rpm) = SBoJDzh1lD68PVCFja16Y8g2j4ui9TidWHt3oWFDpqs=
 SHA256 (rpm/setup-2.7.4-4.fc10.noarch.rpm) = HZ4mBzTRHVWlbgfpX0aqodvwjaDEPegiueDqAzYCWXM=
+SHA256 (rpm/sqlite-3.5.9-4.fc10.i386.rpm) = 3ny2HMvGfZh+4iS5xrpo1uoTOVC5V1/9mJidq7WkTDA=
 SHA256 (rpm/zlib-1.2.3-18.fc9.i386.rpm) = dYRpq8tHhb0+vkLth+b8TKvXzfdI7R8SCGTz7VTerek=
 SIZE (rpm/basesystem-10.0-1.noarch.rpm) = 2915
 SIZE (rpm/coreutils-6.12-20.fc10.i386.rpm) = 4766326
@@ -111,4 +112,5 @@ SIZE (rpm/libxcb-1.1.91-8.fc10.i386.rpm) = 127630
 SIZE (rpm/libxkbfile-1.0.4-5.fc9.i386.rpm) = 76377
 SIZE (rpm/setserial-2.17-22.fc9.i386.rpm) = 23185
 SIZE (rpm/setup-2.7.4-4.fc10.noarch.rpm) = 147271
+SIZE (rpm/sqlite-3.5.9-4.fc10.i386.rpm) = 252246
 SIZE (rpm/zlib-1.2.3-18.fc9.i386.rpm) = 76050

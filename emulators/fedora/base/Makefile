@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2014/01/27 14:12:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2014/01/31 13:51:18 ajacoutot Exp $
 
 COMMENT=	Linux compatibility package based on Fedora Core ${FEDORA_V}
 
 PKGNAME=	fedora_base-${FEDORA_V}.0
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS +=  cap                       2.10
 SHARED_LIBS +=  blkid                     1.0
@@ -69,14 +69,15 @@ RPMS=		basesystem-10.0-1.noarch.rpm \
 		libXvMC-1.0.4-5.fc10.i386.rpm \
 		libXxf86dga-1.0.2-3.fc10.i386.rpm \
 		libXxf86misc-1.0.1-6.fc10.i386.rpm \
-		libXxf86vm-1.0.2-1.fc10.i386.rpm
+		libXxf86vm-1.0.2-1.fc10.i386.rpm \
+		sqlite-3.5.9-4.fc10.i386.rpm:0
 
 REMOVE_DIRS=	boot dev home initrd media root tmp var/log var/run var/tmp \
-		usr/local usr/tmp usr/share/fonts
+		usr/local usr/tmp usr/share/fonts usr/share/man usr/share/doc
 
 REMOVE_FILES=	bin/df bin/su etc/exports etc/group etc/localtime \
 		etc/motd etc/passwd etc/printcap etc/services \
-		etc/protocols usr/bin/fc-cache usr/share/man/man1/fc-cache.1.gz
+		etc/protocols usr/bin/fc-cache usr/bin/sqlite3
 
 ADD_DIRS=	usr/X11R6/share usr/X11R6/man usr/X11R6/lib/tls \
 		usr/X11R6/include usr/X11R6/bin
