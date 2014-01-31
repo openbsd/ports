@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/06/01 12:05:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2014/01/31 09:34:22 jca Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 macppc
 
@@ -18,7 +18,8 @@ PKGNAME-main =		openarena-${V}
 PKGNAME-server =	openarena-server-${V}
 PKGNAME-data =		openarena-data-${V}
 
-REVISION-main =		0
+REVISION-main =		1
+REVISION-server =	0
 
 PKG_ARCH-data = 	*
 
@@ -55,6 +56,10 @@ MAKE_FLAGS =		USE_OPENAL=0 \
 .if ${MACHINE_ARCH} == "powerpc"
 MAKE_FLAGS += 		ARCH=ppc \
 			COMPILE_ARCH=ppc
+.endif
+
+.if ${MACHINE_ARCH} == "i386"
+MAKE_FLAGS +=		PIE_CFLAGS=-fno-pie PIE_LDFLAGS=-nopie
 .endif
 
 NO_TEST =		Yes
