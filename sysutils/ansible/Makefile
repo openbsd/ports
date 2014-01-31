@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2014/01/24 17:44:55 rpe Exp $
+# $OpenBSD: Makefile,v 1.17 2014/01/31 06:42:26 rpe Exp $
 
 COMMENT =		ssh based config management framework
 
 MODPY_EGG_VERSION =	1.4.4
-REVISION =		0
+REVISION =		1
 DISTNAME =		ansible-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils
@@ -39,12 +39,15 @@ pre-configure:
 		${WRKSRC}/examples/ansible.cfg \
 		${WRKSRC}/docs/man/man1/*.1
 
+pre-install:
+	@find ${WRKSRC} -name '*.orig' -type f -exec rm {} +
+
 post-install:
 	${INSTALL_DATA_DIR} ${EXDIR} ${DOCDIR} ${MANDIR}
 	@cp -R ${WRKSRC}/examples/* ${EXDIR}/
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${EXDIR}
 	${SUBST_CMD} ${EXDIR}/hosts
-	@rm ${EXDIR}/hosts.{orig,beforesubst}
+	@rm ${EXDIR}/hosts.beforesubst
 	${INSTALL_DATA} ${WRKSRC}/docs/man/man1/*.1 ${MANDIR}/man1
 	${INSTALL_DATA} ${WRKSRC}/docs/man/man3/*.3 ${MANDIR}/man3
 	${INSTALL_DATA} ${WRKSRC}/{COPYING,README.md} ${DOCDIR}/
