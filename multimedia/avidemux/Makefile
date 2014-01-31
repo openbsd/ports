@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2013/06/04 18:41:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2014/01/31 09:37:06 jca Exp $
 
 COMMENT=	free video editor
 
@@ -6,7 +6,7 @@ V=		2.4.4
 DISTNAME=	avidemux_${V}
 PKGNAME=	avidemux-${V}
 
-REVISION=	14
+REVISION=	15
 
 CATEGORIES=	multimedia
 
@@ -44,9 +44,16 @@ USE_GMAKE=	Yes
 AUTOCONF_VERSION=2.60
 AUTOMAKE_VERSION=1.9
 
+.if ${MACHINE_ARCH} == "i386"
+PIE_CFLAGS = -fno-pie
+PIE_LDFLAGS = -nopie
+.endif
+
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -logg -lm -lz"
+CONFIGURE_ENV+=	CFLAGS="${PIE_CFLAGS} ${CFLAGS}" \
+		CXXFLAGS="${PIE_CFLAGS} ${CXXFLAGS}" \
+		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="${PIE_LDFLAGS} -L${LOCALBASE}/lib -logg -lm -lz"
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--enable-xv \
 		--with-x \
