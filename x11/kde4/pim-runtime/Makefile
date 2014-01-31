@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2014/01/16 09:15:49 zhuk Exp $
+# $OpenBSD: Makefile,v 1.12 2014/01/31 16:02:57 zhuk Exp $
 
 COMMENT =	KDE PIM runtime support
 DISTNAME =	kdepim-runtime-${MODKDE4_VERSION}
-REVISION =	0
+REVISION =	1
 
 DPB_PROPERTIES =	parallel
 
