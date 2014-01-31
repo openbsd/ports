@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/12/22 10:51:38 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2014/01/31 17:26:57 gsoares Exp $
 
 BROKEN-alpha=	libtomcrypt/src/headers/tomcrypt_cfg.h:130:6: error: #error You must specify a word size as well as endianess in tomcrypt_cfg.h
 
@@ -22,7 +22,7 @@ CONFIGURE_STYLE = gnu
 CONFIGURE_ARGS += 	--disable-lua-binaries
 CONFIGURE_ENV += 	CPPFLAGS=-I${LOCALBASE}/include  \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-NO_TESTS =	Yes
+NO_TEST =	Yes
 
 MODULES =	devel/gettext
 
