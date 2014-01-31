@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.31 2013/12/07 16:03:03 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.32 2014/01/31 17:32:29 gsoares Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -387,7 +387,7 @@ sub has_property
 sub want_tests
 {
 	my ($self, $name) = @_;
-	if (defined $self->{NO_TESTS} && $self->{NO_TESTS} == 0) {
+	if (defined $self->{NO_TEST} && $self->{NO_TEST} == 0) {
 		return 1;
 	} else {
 		return 0;
