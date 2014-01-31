@@ -1,7 +1,7 @@
-$OpenBSD: patch-server_src_storage_dbconfigpostgresql_cpp,v 1.1.1.1 2013/04/24 09:05:59 zhuk Exp $
---- server/src/storage/dbconfigpostgresql.cpp.orig	Sat Mar  2 15:51:18 2013
-+++ server/src/storage/dbconfigpostgresql.cpp	Sat Mar 23 14:48:12 2013
-@@ -146,8 +146,13 @@ void DbConfigPostgresql::startInternalServer()
+$OpenBSD: patch-server_src_storage_dbconfigpostgresql_cpp,v 1.2 2014/01/31 11:46:25 zhuk Exp $
+--- server/src/storage/dbconfigpostgresql.cpp.orig	Thu Nov 28 18:25:03 2013
++++ server/src/storage/dbconfigpostgresql.cpp	Thu Jan 30 21:23:48 2014
+@@ -155,8 +155,13 @@ void DbConfigPostgresql::startInternalServer()
      // call 'initdb -D/home/user/.local/share/akonadi/data_db'
      const QString command = QString::fromLatin1( "%1" ).arg( mInitDbPath );
      QStringList arguments;
