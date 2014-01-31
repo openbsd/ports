@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/12/10 17:30:41 joshe Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/01/31 00:28:56 sthen Exp $
 @newgroup _mongodb:670
 @newuser _mongodb:670:670:daemon:MongoDB Account:/nonexistent:/sbin/nologin
-%%SHARED%%
 @bin bin/bsondump
 @bin bin/mongo
 @bin bin/mongod
@@ -408,6 +407,7 @@ include/mongo/util/unordered_fast_key_table_internal.h
 include/mongo/util/version.h
 include/mongo/util/winutil.h
 lib/libmongoclient.a
+@lib lib/libmongoclient.so.${LIBmongoclient_VERSION}
 share/examples/mongodb/
 share/examples/mongodb/mongodb.conf
 @sample ${SYSCONFDIR}/mongodb.conf

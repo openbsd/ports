@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/06/02 00:26:32 fgsch Exp $
-@lib lib/libmongoclient.so.${LIBmongoclient_VERSION}

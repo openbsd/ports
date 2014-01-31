@@ -1,3 +1,6 @@
 MongoDB (from "humongous") is an open source, high-performance,
 schema-free, document-oriented database written in the C++ programming
 language.
+
+Note that some regression tests do fail in this port, so carefully check
+whether it is reliable for your use case.
