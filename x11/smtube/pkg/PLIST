@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/05/13 20:14:33 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/01/31 12:06:00 gonzalo Exp $
 @bin bin/smtube
 share/applications/smtube.desktop
 share/doc/smtube/
@@ -15,6 +15,7 @@ share/icons/hicolor/48x48/apps/smtube.png
 share/icons/hicolor/64x64/apps/smtube.png
 share/smtube/
 share/smtube/translations/
+share/smtube/translations/smtube_bg.qm
 share/smtube/translations/smtube_cs.qm
 share/smtube/translations/smtube_el.qm
 share/smtube/translations/smtube_en.qm
@@ -23,7 +24,9 @@ share/smtube/translations/smtube_eu.qm
 share/smtube/translations/smtube_fi.qm
 share/smtube/translations/smtube_gl.qm
 share/smtube/translations/smtube_he_IL.qm
+share/smtube/translations/smtube_hr.qm
 share/smtube/translations/smtube_hu.qm
+share/smtube/translations/smtube_id.qm
 share/smtube/translations/smtube_ja.qm
 share/smtube/translations/smtube_ka.qm
 share/smtube/translations/smtube_lt.qm
@@ -33,9 +36,11 @@ share/smtube/translations/smtube_pl.qm
 share/smtube/translations/smtube_pt.qm
 share/smtube/translations/smtube_pt_BR.qm
 share/smtube/translations/smtube_ru_RU.qm
+share/smtube/translations/smtube_sr.qm
 share/smtube/translations/smtube_sv.qm
 share/smtube/translations/smtube_tr.qm
 share/smtube/translations/smtube_uk.qm
+share/smtube/translations/smtube_vi.qm
 share/smtube/translations/smtube_zh_CN.qm
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2013/05/13 20:14:33 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.5 2014/01/31 12:06:00 gonzalo Exp $
 
 COMMENT =		browse and download YouTube videos
 
-DISTNAME =		smtube-1.7
+DISTNAME =		smtube-1.8
 
 CATEGORIES =		multimedia x11
 
@@ -11,8 +11,9 @@ HOMEPAGE =		http://smplayer.sourceforge.net/
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ICE QtGui QtNetwork QtXml SM X11 Xext Xi Xinerama Xrender
-WANTLIB += c fontconfig freetype m pthread stdc++
+WANTLIB =  c m pthread stdc++
+WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
+WANTLIB += lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtScript lib/qt4/QtXml
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=smplayer/}
 
@@ -28,5 +29,8 @@ USE_GMAKE =		Yes
 NO_TEST =		Yes
 
 ALL_TARGET =		src/smtube
+
+MAKE_FLAGS =		QMAKE=${LOCALBASE}/bin/qmake4 \
+			LRELEASE=${LOCALBASE}/bin/lrelease4
 
 .include <bsd.port.mk>
