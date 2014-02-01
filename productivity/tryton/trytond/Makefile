@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2014/01/23 15:27:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2014/02/01 09:10:31 ajacoutot Exp $
 
-MODPY_EGG_VERSION=	3.0.1
+MODPY_EGG_VERSION=	3.0.2
+REVISION=		#empty
 
 COMMENT=		server of the Tryton application platform
 
