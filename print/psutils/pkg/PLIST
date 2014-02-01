@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.10 2013/11/02 08:38:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/02/01 16:27:59 espie Exp $
 @pkgpath print/psutils[,a3][,a4][,a5][,b5][,b4][,letter][,legal]
 @pkgpath print/psutils[,ledger][,tabloid][,statement][,executive]
 @pkgpath print/psutils[,folio][,quarto][,s10x14]
+@conflict texlive_texmf-minimal-<=2012p0
 @bin bin/epsffit
 bin/extractres
 bin/includeres

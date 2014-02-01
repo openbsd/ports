@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2013/11/02 08:38:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2014/02/01 16:27:59 espie Exp $
 
 COMMENT=	utilities for manipulating PostScript documents
 
 # tarball from Fedora SRPM
 DISTNAME=	psutils-1.21
 EXTRACT_SUFX=	.tar.xz
+REVISION =	0
 
 CATEGORIES=	print
 

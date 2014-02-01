@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2014/01/01 20:46:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2014/02/01 16:27:58 espie Exp $
 
 COMMENT=		strip TeX/LaTeX codes from a file
 
 DISTNAME=		detex-2.8
-REVISION=		0
+REVISION=		1
 CATEGORIES=		print
 
 MASTER_SITES=		ftp://ftp.cs.purdue.edu/pub/trinkle/
