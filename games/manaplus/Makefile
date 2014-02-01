@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2014/01/18 19:41:04 bcallah Exp $
+# $OpenBSD: Makefile,v 1.32 2014/02/01 17:00:37 bcallah Exp $
 
 COMMENT =	extended client for The Mana World
 
-V =		1.4.1.18
+V =		1.4.2.1
 DISTNAME =	manaplus-${V}
 EXTRACT_SUFX =	.tar.xz
 
@@ -23,7 +23,8 @@ FLAVORS =	sdl2
 FLAVOR ?=
 
 MODULES =	devel/gettext
-RUN_DEPENDS =	devel/desktop-file-utils
+RUN_DEPENDS =	devel/desktop-file-utils \
+		devel/xdg-utils
 LIB_DEPENDS =	devel/physfs \
 		net/curl \
 		textproc/libxml
@@ -53,6 +54,8 @@ LIB_DEPENDS +=	devel/sdl-gfx \
 		devel/sdl-mixer \
 		devel/sdl-net \
 		devel/sdl-ttf
+
+RUN_DEPENDS +=	x11/xsel
 .endif
 
 FAKE_FLAGS +=		desktopdir=${PREFIX}/share/applications/
