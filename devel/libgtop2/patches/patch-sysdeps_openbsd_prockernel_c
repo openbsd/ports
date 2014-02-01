@@ -1,22 +1,31 @@
-$OpenBSD: patch-sysdeps_openbsd_prockernel_c,v 1.10 2014/01/23 09:41:25 jasper Exp $
+$OpenBSD: patch-sysdeps_openbsd_prockernel_c,v 1.11 2014/02/01 18:11:43 ajacoutot Exp $
 
 From df1db430320c8646f809ef0224c2a620f7cadd1b Mon Sep 17 00:00:00 2001
 From: Robert Nagy <robert@openbsd.org>
 Date: Thu, 23 Jan 2014 09:39:39 +0000
 Subject: Fix several issues related to process information on OpenBSD and drop lsof usage.
 
+From c99ceeaa65a5482db2b5b3b677a8c4b40acc8eb8 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Sat, 01 Feb 2014 18:09:21 +0000
+Subject: openbsd: better handling of p_wchan
+
 --- sysdeps/openbsd/prockernel.c.orig	Sat Jul 27 14:40:23 2013
-+++ sysdeps/openbsd/prockernel.c	Mon Dec  9 14:54:24 2013
-@@ -78,9 +78,9 @@ glibtop_get_proc_kernel_p (glibtop *server,
++++ sysdeps/openbsd/prockernel.c	Sat Feb  1 19:03:06 2014
+@@ -78,11 +78,13 @@ glibtop_get_proc_kernel_p (glibtop *server,
  		return;
  	}
  
 -	if (pinfo->p_wmesg[0])
 -		g_strlcpy(buf->wchan, pinfo->p_wmesg[0], sizeof(buf->wchan));
 -	
-+	if (pinfo->p_wmesg)
-+		g_strlcpy(buf->wchan, pinfo->p_wmesg, sizeof(buf->wchan));
-+
  	buf->min_flt = pinfo[0].p_uru_minflt;
  	buf->maj_flt = pinfo[0].p_uru_majflt;
++
++	buf->nwchan = pinfo[0].p_wchan;
++	if (pinfo[0].p_wchan && pinfo[0].p_wmesg)
++		g_strlcpy(buf->wchan, pinfo[0].p_wmesg,
++			  sizeof buf->wchan);
  
+ 	buf->flags |= (_glibtop_sysdeps_proc_kernel_wchan
+ 		| _glibtop_sysdeps_proc_kernel_pstats);
