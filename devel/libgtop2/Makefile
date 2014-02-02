@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.112 2014/02/01 18:11:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.113 2014/02/02 11:33:45 ajacoutot Exp $
 
 COMMENT=		portable library for obtaining system information
 
 GNOME_VERSION=		2.28.5
 GNOME_PROJECT=		libgtop
 PKGNAME=		libgtop2-${VERSION}
-REVISION=		8
+REVISION=		9
 
 SHARED_LIBS=		gtop-2.0	9.0	# .9.0
 

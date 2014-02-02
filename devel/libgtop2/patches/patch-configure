@@ -1,35 +1,7 @@
-$OpenBSD: patch-configure,v 1.19 2013/11/26 12:01:19 sthen Exp $
+$OpenBSD: patch-configure,v 1.20 2014/02/02 11:33:45 ajacoutot Exp $
 --- configure.orig	Mon Aug 19 22:31:42 2013
-+++ configure	Mon Aug 26 10:23:43 2013
-@@ -7120,10 +7120,12 @@ newos6*)
-   ;;
- 
- openbsd*)
--  if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
--    lt_cv_deplibs_check_method='match_pattern /lib[^/]+(\.so\.[0-9]+\.[0-9]+|\.so|_pic\.a)$'
-+  lt_cv_file_magic_cmd=/usr/bin/file
-+  lt_cv_file_magic_test_file=`echo /usr/lib/libc.so.*`
-+  if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`"; then
-+    lt_cv_deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
-   else
--    lt_cv_deplibs_check_method='match_pattern /lib[^/]+(\.so\.[0-9]+\.[0-9]+|_pic\.a)$'
-+    lt_cv_deplibs_check_method='file_magic OpenBSD.* shared library'
-   fi
-   ;;
- 
-@@ -16385,11 +16387,6 @@ glib_save_datarootdir="$datarootdir"
- test "x$prefix" = xNONE && prefix=$ac_default_prefix
- test "x$exec_prefix" = xNONE && exec_prefix=$prefix
- datarootdir=`eval echo "${datarootdir}"`
--if test "x$CATOBJEXT" = "x.mo" ; then
--  localedir=`eval echo "${libdir}/locale"`
--else
--  localedir=`eval echo "${datadir}/locale"`
--fi
- prefix="$glib_save_prefix"
- exec_prefix="$glib_save_exec_prefix"
- datarootdir="$glib_save_datarootdir"
-@@ -17547,9 +17544,9 @@ else
++++ configure	Sun Feb  2 12:19:54 2014
+@@ -17547,9 +17547,9 @@ else
    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
