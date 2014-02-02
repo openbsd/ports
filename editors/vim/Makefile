@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2014/01/08 10:23:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.135 2014/02/02 01:44:31 william Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -7,6 +7,7 @@ VERSION=	7.4.135
 DISTNAME=	vim-${VERSION}
 PKGNAME-main=	vim-${VERSION}
 PKGNAME-lang=	vim-lang-${VERSION}
+REVISION-main=	0
 P=		vim${VERSION:R:S/.//}
 CATEGORIES=	editors
 # Upstream's normal distribution (http://ftp.vim.org/pub/vim/unix/) consists
@@ -82,8 +83,7 @@ ERRORS=		"Fatal: You only can select one python flavor"
 .if ${FLAVOR:Mruby}
 MODULES+=	lang/ruby
 MODRUBY_REV=	1.8
-CONFIGURE_ARGS+= --enable-rubyinterp
-MAKE_ENV+=	RUBY="${RUBY}"
+CONFIGURE_ARGS+= --enable-rubyinterp --with-ruby-command=${RUBY}
 LIB_DEPENDS+=	${MODRUBY_LIB_DEPENDS}
 WANTLIB+=	m ${MODRUBY_WANTLIB}
 .endif
