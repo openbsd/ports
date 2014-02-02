@@ -1,7 +1,11 @@
-$OpenBSD: patch-gio_gunixmounts_c,v 1.12 2014/01/21 17:37:56 ajacoutot Exp $
+$OpenBSD: patch-gio_gunixmounts_c,v 1.13 2014/02/02 09:10:35 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=722712
 https://bugzilla.gnome.org/show_bug.cgi?id=583330
+
+From 7cf221aadb4f9bd6e7f015fb327ae551bb52b08f Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Tue, 21 Jan 2014 16:25:35 +0000
+Subject: gio: extend the system_internal lists with BSD paths
 
 --- gio/gunixmounts.c.orig	Thu Nov  7 16:29:13 2013
 +++ gio/gunixmounts.c	Tue Jan 21 17:15:11 2014
