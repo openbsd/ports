@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2014/01/31 16:02:57 zhuk Exp $
+# $OpenBSD: Makefile,v 1.13 2014/02/02 19:16:18 zhuk Exp $
 
 COMMENT =	KDE PIM runtime support
 DISTNAME =	kdepim-runtime-${MODKDE4_VERSION}
-REVISION =	1
+REVISION =	2
 
 DPB_PROPERTIES =	parallel
 
@@ -54,5 +54,7 @@ LIB_DEPENDS =	databases/soprano \
 # Long dependency chain, not ported yet.
 CONFIGURE_ARGS=	-DCMAKE_DISABLE_FIND_PACKAGE_Libkolab:Bool=Yes \
 		-DCMAKE_DISABLE_FIND_PACKAGE_Libkolabxml:Bool=Yes
+
+SUBST_VARS =	LOCALBASE
 
 .include <bsd.port.mk>
