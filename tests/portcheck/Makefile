@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/02/03 22:28:41 zhuk Exp $
+# $OpenBSD: Makefile,v 1.2 2014/02/03 22:40:25 zhuk Exp $
 
 # To add a test named ${testname}:
 #  1) If test should catch errors, add sample portcheck output to the
@@ -23,8 +23,11 @@ SUBST_ARGS =		-c -DCATEGORY=${CATEGORY}
 SCANNING_MSG =		"scanning ports under the ${PORTSDIR}"
 
 # test-specific parameters
+TEST_t1_ARGS =	-C
+TEST_t2_ARGS =	-C
 TEST_t3_ARGS =	-A ${CATEGORY}/t3
 TEST_t4_ARGS =	-A -P ${CATEGORY}/t4
+TEST_t5_ARGS =	-C
 
 # define tests
 .for _t in ${REGRESS_TARGETS}
