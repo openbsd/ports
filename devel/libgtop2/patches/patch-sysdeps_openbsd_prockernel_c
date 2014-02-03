@@ -1,4 +1,4 @@
-$OpenBSD: patch-sysdeps_openbsd_prockernel_c,v 1.11 2014/02/01 18:11:43 ajacoutot Exp $
+$OpenBSD: patch-sysdeps_openbsd_prockernel_c,v 1.12 2014/02/03 13:46:19 ajacoutot Exp $
 
 From df1db430320c8646f809ef0224c2a620f7cadd1b Mon Sep 17 00:00:00 2001
 From: Robert Nagy <robert@openbsd.org>
@@ -11,21 +11,67 @@ Date: Sat, 01 Feb 2014 18:09:21 +0000
 Subject: openbsd: better handling of p_wchan
 
 --- sysdeps/openbsd/prockernel.c.orig	Sat Jul 27 14:40:23 2013
-+++ sysdeps/openbsd/prockernel.c	Sat Feb  1 19:03:06 2014
-@@ -78,11 +78,13 @@ glibtop_get_proc_kernel_p (glibtop *server,
++++ sysdeps/openbsd/prockernel.c	Sun Feb  2 14:07:50 2014
+@@ -36,12 +36,13 @@
+ #include <fcntl.h>
+ 
+ static const unsigned long _glibtop_sysdeps_proc_kernel_pstats =
++(1L << GLIBTOP_PROC_KERNEL_K_FLAGS) +
+ (1L << GLIBTOP_PROC_KERNEL_MIN_FLT) +
+ (1L << GLIBTOP_PROC_KERNEL_MAJ_FLT);
+ 
+ static const unsigned long _glibtop_sysdeps_proc_kernel_wchan =
+-(1L << GLIBTOP_PROC_KERNEL_NWCHAN) +
+-(1L << GLIBTOP_PROC_KERNEL_WCHAN);
++(1L << GLIBTOP_PROC_KERNEL_WCHAN) +
++(1L << GLIBTOP_PROC_KERNEL_NWCHAN);
+ 
+ /* Init function. */
+ 
+@@ -70,20 +71,39 @@ glibtop_get_proc_kernel_p (glibtop *server,
+ 	/* It does not work for the swapper task. */
+ 	if (pid == 0) return;
+ 
++	glibtop_suid_enter (server);
++
+ 	/* Get the process information */
+ 	pinfo = kvm_getprocs (server->machine.kd, KERN_PROC_PID, pid,
+ 			      sizeof(*pinfo), &count);
+ 	if ((pinfo == NULL) || (count != 1)) {
+ 		glibtop_warn_io_r (server, "kvm_getprocs (%d)", pid);
++		glibtop_suid_leave (server);
  		return;
  	}
  
 -	if (pinfo->p_wmesg[0])
 -		g_strlcpy(buf->wchan, pinfo->p_wmesg[0], sizeof(buf->wchan));
 -	
- 	buf->min_flt = pinfo[0].p_uru_minflt;
- 	buf->maj_flt = pinfo[0].p_uru_majflt;
-+
-+	buf->nwchan = pinfo[0].p_wchan;
-+	if (pinfo[0].p_wchan && pinfo[0].p_wmesg)
-+		g_strlcpy(buf->wchan, pinfo[0].p_wmesg,
-+			  sizeof buf->wchan);
+-	buf->min_flt = pinfo[0].p_uru_minflt;
+-	buf->maj_flt = pinfo[0].p_uru_majflt;
++	glibtop_suid_leave (server);
  
- 	buf->flags |= (_glibtop_sysdeps_proc_kernel_wchan
- 		| _glibtop_sysdeps_proc_kernel_pstats);
+-	buf->flags |= (_glibtop_sysdeps_proc_kernel_wchan
+-		| _glibtop_sysdeps_proc_kernel_pstats);
++#define	PROC_WCHAN	p_wchan
++#define	PROC_WMESG	p_wmesg
++
++	buf->nwchan = (unsigned long) pinfo [0].PROC_WCHAN;
++
++	buf->flags |= (1L << GLIBTOP_PROC_KERNEL_NWCHAN);
++
++	if (pinfo [0].PROC_WCHAN && pinfo [0].PROC_WMESG[0] != 0) {
++		g_strlcpy (buf->wchan, pinfo [0].PROC_WMESG,
++			 sizeof buf->wchan);
++		buf->flags |= (1L << GLIBTOP_PROC_KERNEL_WCHAN);
++	} else {
++		buf->wchan [0] = 0;
++	}
++
++	buf->k_flags = (unsigned long) pinfo [0].p_flag;
++	buf->min_flt = (unsigned long) pinfo [0].p_uru_minflt;
++	buf->maj_flt = (unsigned long) pinfo [0].p_uru_majflt;
++
++	buf->flags |= _glibtop_sysdeps_proc_kernel_pstats;
++
++	return;
+ }

@@ -1,0 +1,12 @@
+$OpenBSD: patch-libgtop-sysdeps_m4,v 1.3 2014/02/03 13:46:19 ajacoutot Exp $
+--- libgtop-sysdeps.m4.orig	Sat Jul 27 14:40:23 2013
++++ libgtop-sysdeps.m4	Sun Feb  2 14:20:59 2014
+@@ -79,6 +79,8 @@ AC_DEFUN([GNOME_LIBGTOP_SYSDEPS],[
+ 	  libgtop_sysdeps_dir=openbsd
+ 	  libgtop_use_machine_h=yes
+ 	  libgtop_need_server=yes
++	  libgtop_sysdeps_private_mountlist=yes
++	  libgtop_sysdeps_private_fsusage=yes
+ 	  libgtop_postinstall='chgrp kmem $(bindir)/libgtop_server2 && chmod 2555 $(bindir)/libgtop_server2'
+ 	  ;;
+ 	freebsd*|kfreebsd*)

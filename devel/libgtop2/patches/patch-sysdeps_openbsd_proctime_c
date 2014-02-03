@@ -1,30 +1,69 @@
-$OpenBSD: patch-sysdeps_openbsd_proctime_c,v 1.7 2014/01/23 09:41:25 jasper Exp $
+$OpenBSD: patch-sysdeps_openbsd_proctime_c,v 1.8 2014/02/03 13:46:19 ajacoutot Exp $
 
 From ff07ba102fb6a1bcb058a5e5429181981ce6fa2b Mon Sep 17 00:00:00 2001
 From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
 Date: Thu, 23 Jan 2014 09:34:52 +0000
 Subject: Some fields have moved in struct proc from timeval to timespec.
 
---- sysdeps/openbsd/proctime.c.orig	Sun Jul 24 21:13:56 2011
-+++ sysdeps/openbsd/proctime.c	Sat Jun  8 15:00:41 2013
-@@ -71,7 +71,7 @@ calcru(struct proc *p, struct timeval *up, struct time
- {
- 	quad_t totusec;
- 	u_quad_t u, st, ut, it, tot;
+--- sysdeps/openbsd/proctime.c.orig	Sat Jul 27 14:40:23 2013
++++ sysdeps/openbsd/proctime.c	Sun Feb  2 14:50:40 2014
+@@ -58,59 +58,6 @@ _glibtop_init_proc_time_p (glibtop *server)
+ 		_glibtop_sysdeps_proc_time_user;
+ }
+ 
+-/* Taken from /usr/src/sys/kern/kern_resource.c */
+-
+-/*
+- * Transform the running time and tick information in proc p into user,
+- * system, and interrupt time usage.
+- */
+-
+-static void
+-calcru(struct proc *p, struct timeval *up, struct timeval *sp,
+-    struct timeval *ip)
+-{
+-	quad_t totusec;
+-	u_quad_t u, st, ut, it, tot;
 -        long sec, usec;
-+        long sec, nsec;
-         struct timeval tv;
- 
- 	st = p->p_sticks;
-@@ -85,9 +85,9 @@ calcru(struct proc *p, struct timeval *up, struct time
- 	}
- 
- 	sec = p->p_rtime.tv_sec;
+-        struct timeval tv;
+-
+-	st = p->p_sticks;
+-	ut = p->p_uticks;
+-	it = p->p_iticks;
+-
+-	tot = st + ut + it;
+-	if (tot == 0) {
+-		st = 1;
+-		tot = 1;
+-	}
+-
+-	sec = p->p_rtime.tv_sec;
 -	usec = p->p_rtime.tv_usec;
-+	nsec = p->p_rtime.tv_nsec;
- 
+-
 -	totusec = (quad_t)sec * 1000000 + usec;
-+	totusec = (quad_t)sec * 1000000 + nsec/1000;
+-
+-	if (totusec < 0) {
+-		/* XXX no %qd in kernel.  Truncate. */
+-		fprintf (stderr, "calcru: negative time: %ld usec\n",
+-			 (long)totusec);
+-		totusec = 0;
+-	}
+-
+-
+-	u = totusec;
+-	st = (u * st) / tot;
+-	sp->tv_sec = st / 1000000;
+-	sp->tv_usec = st % 1000000;
+-	ut = (u * ut) / tot;
+-	up->tv_sec = ut / 1000000;
+-	up->tv_usec = ut % 1000000;
+-	if (ip != NULL) {
+-		it = (u * it) / tot;
+-		ip->tv_sec = it / 1000000;
+-		ip->tv_usec = it % 1000000;
+-	}
+-}
+-
+ /* Provides detailed information about a process. */
  
- 	if (totusec < 0) {
- 		/* XXX no %qd in kernel.  Truncate. */
+ void

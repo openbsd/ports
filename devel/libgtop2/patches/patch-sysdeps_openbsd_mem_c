@@ -1,0 +1,42 @@
+$OpenBSD: patch-sysdeps_openbsd_mem_c,v 1.1 2014/02/03 13:46:19 ajacoutot Exp $
+--- sysdeps/openbsd/mem.c.orig	Sat Jul 27 14:40:23 2013
++++ sysdeps/openbsd/mem.c	Sun Feb  2 12:54:19 2014
+@@ -50,12 +50,6 @@ static int pageshift;		/* log base 2 of the pagesize *
+ /* define pagetok in terms of pageshift */
+ #define pagetok(size) ((size) << pageshift)
+ 
+-/* nlist structure for kernel access */
+-static struct nlist nlst [] = {
+-	{ "_bufpages" },
+-	{ 0 }
+-};
+-
+ /* MIB array for sysctl */
+ static int vmmeter_mib [] = { CTL_VM, VM_METER };
+ static int uvmexp_mib  [] = { CTL_VM, VM_UVMEXP };
+@@ -64,15 +58,10 @@ static int bcstats_mib [] = { CTL_VFS, VFS_GENERIC, VF
+ /* Init function. */
+ 
+ void
+-_glibtop_init_mem_p (glibtop *server)
++_glibtop_init_mem_s (glibtop *server)
+ {
+ 	register int pagesize;
+ 
+-	if (kvm_nlist (server->machine.kd, nlst) < 0) {
+-		glibtop_warn_io_r (server, "kvm_nlist (mem)");
+-		return;
+-	}
+-
+ 	/* get the page size and calculate pageshift from it */
+ 	pagesize = sysconf(_SC_PAGESIZE);
+ 	pageshift = 0;
+@@ -88,7 +77,7 @@ _glibtop_init_mem_p (glibtop *server)
+ }
+ 
+ void
+-glibtop_get_mem_p (glibtop *server, glibtop_mem *buf)
++glibtop_get_mem_s (glibtop *server, glibtop_mem *buf)
+ {
+ 	struct vmtotal vmt;
+ 	struct uvmexp uvmexp;

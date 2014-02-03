@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.113 2014/02/02 11:33:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.114 2014/02/03 13:46:19 ajacoutot Exp $
 
 COMMENT=		portable library for obtaining system information
 
 GNOME_VERSION=		2.28.5
 GNOME_PROJECT=		libgtop
 PKGNAME=		libgtop2-${VERSION}
-REVISION=		9
+REVISION=		10
 
 SHARED_LIBS=		gtop-2.0	9.0	# .9.0
 
@@ -36,5 +36,19 @@ CPPFLAGS+=		-DDEBUG \
 			-DLIBGTOP_ENABLE_DEBUG \
 			-DLIBGTOP_FATAL_WARNINGS
 .endif
+
+### rm at next release
+MODGNOME_TOOLS +=	gtk-doc
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.14
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool \
+			x11/gnome/common
+do-configure:
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		${CONFIGURE_ENV} ./autogen.sh ${CONFIGURE_ARGS}
+###
 
 .include <bsd.port.mk>

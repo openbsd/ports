@@ -1,6 +1,6 @@
-$OpenBSD: patch-sysdeps_openbsd_procmap_c,v 1.12 2013/12/09 14:26:56 robert Exp $
---- sysdeps/openbsd/procmap.c.orig	Mon Dec  9 15:06:15 2013
-+++ sysdeps/openbsd/procmap.c	Mon Dec  9 15:11:07 2013
+$OpenBSD: patch-sysdeps_openbsd_procmap_c,v 1.13 2014/02/03 13:46:19 ajacoutot Exp $
+--- sysdeps/openbsd/procmap.c.orig	Sat Jul 27 14:40:23 2013
++++ sysdeps/openbsd/procmap.c	Mon Feb  3 10:41:54 2014
 @@ -193,8 +193,11 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_
  
  	if (kvm_read (server->machine.kd,
@@ -15,3 +15,35 @@ $OpenBSD: patch-sysdeps_openbsd_procmap_c,v 1.12 2013/12/09 14:26:56 robert Exp 
  
  	RB_INIT(&root);
  	nentries = load_vmmap_entries(server,
+@@ -238,6 +241,7 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_
+ 			      &vnode, sizeof (vnode)) != sizeof (vnode)) {
+ 			glibtop_warn_io_r (server, "kvm_read (vnode)");
+ 			unload_vmmap_entries(RB_ROOT(&root));
++			glibtop_suid_leave (server);
+ 			return (glibtop_map_entry*) g_array_free(maps, TRUE);
+ 		}
+ 
+@@ -250,8 +254,12 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_
+ 
+ 		if (kvm_read (server->machine.kd,
+ 			      (unsigned long) vnode.v_data,
+-			      &inode, sizeof (inode)) != sizeof (inode))
+-			glibtop_error_io_r (server, "kvm_read (inode)");
++			      &inode, sizeof (inode)) != sizeof (inode)) {
++			glibtop_warn_io_r (server, "kvm_read (inode)");
++			unload_vmmap_entries(RB_ROOT(&root));
++			glibtop_suid_leave (server);
++			return (glibtop_map_entry*) g_array_free(maps, TRUE);
++		}
+ 
+ 		inum  = inode.i_number;
+ 		dev = inode.i_dev;
+@@ -277,6 +285,8 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_
+ 		if (entry->protection & VM_PROT_EXECUTE)
+ 			mentry->perm |= GLIBTOP_MAP_PERM_EXECUTE;
+ 	}
++
++	glibtop_suid_leave (server);
+ 
+ 	buf->flags = _glibtop_sysdeps_proc_map;
+ 

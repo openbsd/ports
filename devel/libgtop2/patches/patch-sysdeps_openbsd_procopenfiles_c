@@ -1,4 +1,4 @@
-$OpenBSD: patch-sysdeps_openbsd_procopenfiles_c,v 1.3 2014/01/23 13:10:20 ajacoutot Exp $
+$OpenBSD: patch-sysdeps_openbsd_procopenfiles_c,v 1.4 2014/02/03 13:46:19 ajacoutot Exp $
 
 From df1db430320c8646f809ef0224c2a620f7cadd1b Mon Sep 17 00:00:00 2001
 From: Robert Nagy <robert@openbsd.org>
@@ -6,7 +6,7 @@ Date: Thu, 23 Jan 2014 09:39:39 +0000
 Subject: Fix several issues related to process information on OpenBSD and drop lsof usage.
 
 --- sysdeps/openbsd/procopenfiles.c.orig	Sat Jul 27 14:40:23 2013
-+++ sysdeps/openbsd/procopenfiles.c	Thu Jan 23 13:39:34 2014
++++ sysdeps/openbsd/procopenfiles.c	Sun Feb  2 12:55:51 2014
 @@ -3,6 +3,7 @@
  /* Copyright (C) 1998-99 Martin Baulig
     Copyright (C) 2004 Nicol\ufffds Lichtmaier

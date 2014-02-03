@@ -1,4 +1,4 @@
-$OpenBSD: patch-sysdeps_openbsd_netload_c,v 1.4 2014/01/23 09:41:25 jasper Exp $
+$OpenBSD: patch-sysdeps_openbsd_netload_c,v 1.5 2014/02/03 13:46:19 ajacoutot Exp $
 
 1.
 From 07d2816d5b39325bd7381024a88c61b7c56f7b62 Mon Sep 17 00:00:00 2001
@@ -13,7 +13,7 @@ Date: Wed, 16 Oct 2013 15:09:16 +0000
 Subject: OpenBSD: add missing header
 
 --- sysdeps/openbsd/netload.c.orig	Sat Jul 27 14:40:23 2013
-+++ sysdeps/openbsd/netload.c	Tue Nov 26 00:46:30 2013
++++ sysdeps/openbsd/netload.c	Sun Feb  2 12:54:19 2014
 @@ -36,12 +36,13 @@
  
  #include <sys/ioctl.h>
