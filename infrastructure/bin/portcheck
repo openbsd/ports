@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.62 2014/01/26 01:06:40 zhuk Exp $
+# $OpenBSD: portcheck,v 1.63 2014/02/03 22:13:55 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1226,7 +1226,7 @@ check_pkg_dir() {
 			err "$F is not a file"
 		check_trailing_whitespace "$F"
 		check_newline_at_eof "$F"
-		check_long_lines 72 "$F"
+		check_long_lines "$F"
 		check_hardcoded "$F"
 		[[ -n $subst_cmd ]] && check_subst_vars "$F" "$subst_cmd"
 		egrep -q '\$OpenBSD.*\$' "$F" &&
@@ -1265,7 +1265,7 @@ check_pkg_dir() {
 		[[ -n $subst_cmd ]] && check_subst_vars "$F" "$subst_cmd"
 		check_trailing_whitespace "$F"
 		check_newline_at_eof "$F"
-		check_long_lines 80 "$F"
+		check_long_lines "$F"
 		check_hardcoded "$F"
 		head -n 1 -- "$F" |
 			egrep -q '^(#[[:space:]]*)?\$OpenBSD(:.*)?\$$' ||
@@ -1278,7 +1278,7 @@ check_pkg_dir() {
 		[[ ${F##*/} == [A-Za-z_]*([A-Za-z0-9_]).rc ]] ||
 			err "$F name will not work in rc.subr(8)"
 		check_trailing_whitespace "$F"
-		check_long_lines 80 "$F"
+		check_long_lines "$F"
 		check_hardcoded "$F"
 		head -n 5 -- "$F" |
 			egrep -q '^#[[:space:]]*\$OpenBSD(:.*)?\$$' ||
@@ -1291,7 +1291,7 @@ check_pkg_dir() {
 		[[ -n $subst_cmd ]] && check_subst_vars "$F" "$subst_cmd"
 		check_trailing_whitespace "$F"
 		check_newline_at_eof "$F"
-		check_long_lines 72 "$F"
+		check_long_lines "$F"
 		check_hardcoded "$F"
 		egrep -q '\$OpenBSD.*\$' "$F" &&
 			err "$F should not contain \$OpenBSD\$ tag"
@@ -1316,17 +1316,16 @@ check_hardcoded() {
 }
 
 # Checks made:
-#   * There are no lines longer than given number of characters that
-#     have at least one space (avoids warnings on long URLs etc.).
+#   * There are no lines longer than 80 characters that have at least
+#     one space (avoids warnings on long URLs etc.).
 check_long_lines() {
 	$debugging && echo "CALLED: check_long_lines($*)" >&2
-	local max_width=$1; shift;
 	local file=$1; shift
 
-	local n=$(awk <"$file" -v max="$max_width" \
-		  '/[[:space:]]/ && length > max { n++ } END { print n+0 }')
+	local n=$(awk <"$file" \
+		  '/[[:space:]]/ && length > 80 { n++ } END { print n+0 }')
 	(($n > 0 )) &&
-		err "$n line(s) longer than $max_width chars in $file"
+		err "$n line(s) longer than 80 chars in $file"
 }
 
 # Checks made:
@@ -1377,7 +1376,7 @@ check_makefile() {
 
 	local F="$1"
 	check_trailing_whitespace "$F"
-	check_long_lines 80 "$F"
+	check_long_lines "$F"
 	head -n 1 -- "$F" |
 		egrep -q '^#[[:space:]]*\$OpenBSD.*\$' ||
 		err "$F does not have \$OpenBSD\$ RCS tag at the top"
