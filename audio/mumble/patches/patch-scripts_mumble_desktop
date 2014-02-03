@@ -1,0 +1,26 @@
+$OpenBSD: patch-scripts_mumble_desktop,v 1.1 2014/02/03 16:09:36 dcoppa Exp $
+
+commit 192135db544037e5e1dc726b30aa06b2337c9400
+Author: Mikkel Krautz <mikkel@krautz.dk>
+Date:   Sun Nov 10 14:03:28 2013 +0100
+
+Add x-scheme-handler support to the Mumble .desktop file.
+
+This is the modern way to handle application-specific URL schemes
+on the various desktop environments on Unix-like systems.
+
+--- scripts/mumble.desktop.orig	Sat Jun  1 23:16:31 2013
++++ scripts/mumble.desktop	Mon Feb  3 16:49:49 2014
+@@ -8,10 +8,11 @@ GenericName[tr]=Sesle Sohbet
+ Comment=A low-latency, high quality voice chat program for gaming
+ Comment[fr]=Un logiciel de chat vocal de haute qualité et de faible latence pour les jeux
+ Comment[tr]=Oyunlar için yüksek kaliteli ve düşük gecikmeli sesle sohbet programı
+-Exec=mumble
++Exec=mumble %u
+ Icon=mumble
+ Terminal=false
+ Type=Application
+ StartupNotify=false
++MimeType=x-scheme-handler/mumble
+ Categories=Network;Chat;Qt;
+ Version=1.0
