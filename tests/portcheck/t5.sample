@@ -1,0 +1,13 @@
+duplicated assignment of COMMENT at Makefile:7
+patches/patch-xyz does not have $OpenBSD$ RCS tag at the top
+extra file: patches/patch-xyz.orig
+extra file: patches/qwerty
+core dump file found: some.core
+no distinfo in .
+extra file: ./pkg/qwerty
+non-empty WANTLIB- for arch-independent package
+kdeui WANTLIB without x11/kde* in MODULES (check other libs, too!)
+missing RDEP on devel/desktop-file-utils
+missing @exec of update-desktop-database
+missing @unexec-delete of update-desktop-database
+translation file(s) found without devel/gettext dependency
