@@ -1,0 +1,25 @@
+$OpenBSD: patch-panels_region_cc-region-panel_c,v 1.1 2014/02/03 18:23:54 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=723550
+
+--- panels/region/cc-region-panel.c.orig	Tue Nov 12 17:18:28 2013
++++ panels/region/cc-region-panel.c	Mon Feb  3 19:03:00 2014
+@@ -1723,11 +1723,13 @@ setup_login_button (CcRegionPanel *self)
+                                   G_CALLBACK (login_changed), self);
+ 
+         g_object_get (priv->user_manager, "is-loaded", &loaded, NULL);
+-        if (loaded)
+-                set_login_button_visibility (self);
+-        else
+-                g_signal_connect_swapped (priv->user_manager, "notify::is-loaded",
+-                                          G_CALLBACK (set_login_button_visibility), self);
++        if (priv->permission) {
++                if (loaded)
++                        set_login_button_visibility (self);
++                else
++                        g_signal_connect_swapped (priv->user_manager, "notify::is-loaded",
++                                                  G_CALLBACK (set_login_button_visibility), self);
++        }
+ }
+ 
+ static void
