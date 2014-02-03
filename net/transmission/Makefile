@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.92 2013/11/18 16:51:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.93 2014/02/03 13:30:52 dcoppa Exp $
 
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
 COMMENT-qt=	BitTorrent client with Qt interface
 
 VER=		2.82
-REVISION-main=	0
-REVISION-gtk=	0
+REVISION-main=	1
+REVISION-gtk=	1
+REVISION-qt=	0
 DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
@@ -31,7 +32,7 @@ FLAVOR?=
 
 .include <bsd.port.arch.mk>
 
-WANTLIB-common=	c crypto curl event_core event_extra m miniupnpc \
+WANTLIB-common=	c crypto curl event_core event_extra m miniupnpc>=2.0 \
 		natpmp pthread ssl z ${MODGETTEXT_WANTLIB}
 WANTLIB-main=	${WANTLIB-common} idn
 WANTLIB-gtk=	${WANTLIB-common} ICE SM X11 Xcomposite Xcursor Xdamage \
@@ -57,7 +58,7 @@ LIB_DEPENDS-common=${MODGETTEXT_LIB_DEPENDS} \
 		devel/libevent2 \
 		net/curl \
 		net/miniupnp/libnatpmp \
-		net/miniupnp/miniupnpc
+		net/miniupnp/miniupnpc>=1.9
 LIB_DEPENDS-main=${LIB_DEPENDS-common}
 LIB_DEPENDS-gtk=${LIB_DEPENDS-common} \
 		x11/gtk+3

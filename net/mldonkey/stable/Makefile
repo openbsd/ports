@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.54 2013/06/18 09:35:13 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.55 2014/02/03 13:30:52 dcoppa Exp $
 
 COMMENT =	e-donkey client
 DISTNAME =	mldonkey-3.1.3
-REVISION=	1
+REVISION=	2
 CATEGORIES =	net
 
 HOMEPAGE =	http://mldonkey.sourceforge.net/Main_Page
@@ -20,7 +20,7 @@ WANTLIB =		X11 Xcomposite Xcursor Xdamage Xext \
 			atk-1.0 bz2 c cairo charset fontconfig \
 			freetype gd gdk-x11-2.0 gdk_pixbuf-2.0 \
 			gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 \
-			jpeg m magic miniupnpc natpmp pango-1.0 \
+			jpeg m magic miniupnpc>=2.0 natpmp pango-1.0 \
 			pangocairo-1.0 pangoft2-1.0 png pthread \
 			rsvg-2 stdc++ z
 
@@ -43,7 +43,7 @@ LIB_DEPENDS =	archivers/bzip2 \
 		devel/libmagic \
 		graphics/gd \
 		net/miniupnp/libnatpmp \
-		net/miniupnp/miniupnpc \
+		net/miniupnp/miniupnpc>=1.9 \
 		x11/gnome/librsvg \
 		x11/gtk+2
 

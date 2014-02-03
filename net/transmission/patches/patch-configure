@@ -1,6 +1,9 @@
-$OpenBSD: patch-configure,v 1.31 2013/07/12 17:03:59 naddy Exp $
---- configure.orig	Wed Jun 26 04:36:03 2013
-+++ configure	Sat Jul  6 21:51:16 2013
+$OpenBSD: patch-configure,v 1.32 2014/02/03 13:30:52 dcoppa Exp $
+
+Unbreak with miniupnpc>=1.9
+
+--- configure.orig	Fri Aug  9 04:49:21 2013
++++ configure	Mon Feb  3 13:05:57 2014
 @@ -11800,8 +11800,8 @@ if test 0 = "0"; then
  else
    supported_build=no
@@ -34,3 +37,12 @@ $OpenBSD: patch-configure,v 1.31 2013/07/12 17:03:59 naddy Exp $
      fi
  fi
  
+@@ -18223,7 +18223,7 @@ main ()
+     upnpDiscover( 2000, NULL, NULL, 0, 0, &errno );
+     UPNP_GetValidIGD( devlist, &urls, &data, lanaddr, sizeof( lanaddr ) );
+     UPNP_GetSpecificPortMappingEntry( urls.controlURL, data.first.servicetype,
+-                        portStr, "TCP", intClient, intPort, NULL, NULL, NULL );
++                        portStr, "TCP", NULL, intClient, intPort, NULL, NULL, NULL );
+ 
+   ;
+   return 0;
