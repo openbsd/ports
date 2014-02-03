@@ -1,10 +1,10 @@
-$OpenBSD: patch-mk_cmake_Modules_FindMiniupnpc_cmake,v 1.1 2013/05/21 10:34:14 dcoppa Exp $
+$OpenBSD: patch-mk_cmake_Modules_FindMiniupnpc_cmake,v 1.2 2014/02/03 15:20:45 dcoppa Exp $
 
 Unbreak build with miniupnpc>1.7
 (from upstream SVN revision 3958)
 
 --- mk/cmake/Modules/FindMiniupnpc.cmake.orig	Tue Jun  5 23:45:54 2012
-+++ mk/cmake/Modules/FindMiniupnpc.cmake	Tue May 21 11:06:22 2013
++++ mk/cmake/Modules/FindMiniupnpc.cmake	Mon Feb  3 16:03:38 2014
 @@ -58,20 +58,16 @@ if (MINIUPNP_FOUND)
      #include <stdio.h>
      int main()
@@ -64,7 +64,7 @@ Unbreak build with miniupnpc>1.7
  	        devlist = upnpDiscover(upnp_delay, upnp_multicastif, upnp_minissdpdsock, upnp_sameport);
  
                  return 0;
-@@ -96,25 +116,27 @@ if (MINIUPNP_FOUND)
+@@ -96,25 +116,28 @@ if (MINIUPNP_FOUND)
  
     ENDIF()
  
@@ -93,7 +93,8 @@ Unbreak build with miniupnpc>1.7
 +            static struct IGDdatas data;
 +            int main()
 +            {
-+                char externalIP[16]     = "";
++	        char externalIP[16];
++	        externalIP[0] = '\0';
 +	        UPNP_GetExternalIPAddress(urls.controlURL, data.first.servicetype, externalIP);
  
 -        return 0;
@@ -109,7 +110,17 @@ Unbreak build with miniupnpc>1.7
           set(CMAKE_REQUIRED_INCLUDES ${MINIUPNP_INCLUDE_DIR})
           set(CMAKE_REQUIRED_LIBRARIES ${MINIUPNP_LIBRARY})
           check_cxx_source_runs("
-@@ -141,8 +163,12 @@ if (MINIUPNP_FOUND)
+@@ -126,7 +149,8 @@ if (MINIUPNP_FOUND)
+             static struct IGDdatas data;
+             int main()
+             {
+-                char externalIP[16]     = "";
++	        char externalIP[16];
++	        externalIP[0] = '\0';
+ 	        UPNP_GetExternalIPAddress(urls.controlURL, data.servicetype, externalIP);
+ 
+                 return 0;
+@@ -141,8 +165,12 @@ if (MINIUPNP_FOUND)
      IF(MINIUPNPC_VERSION_PRE1_6)
  	message(STATUS "Found miniupnpc version is pre v1.6")
      ENDIF()
