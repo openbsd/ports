@@ -1,4 +1,7 @@
-$OpenBSD: patch-sysdeps_openbsd_suid_open_c,v 1.1 2014/02/03 13:46:19 ajacoutot Exp $
+$OpenBSD: patch-sysdeps_openbsd_suid_open_c,v 1.2 2014/02/03 13:50:32 ajacoutot Exp $
+
+RM at next release.
+
 --- sysdeps/openbsd/suid_open.c.orig	Sat Feb  1 23:49:40 2014
 +++ sysdeps/openbsd/suid_open.c	Sat Feb  1 23:49:40 2014
 @@ -0,0 +1,92 @@

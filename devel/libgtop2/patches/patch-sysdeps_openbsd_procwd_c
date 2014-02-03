@@ -1,9 +1,6 @@
-$OpenBSD: patch-sysdeps_openbsd_procwd_c,v 1.2 2014/02/03 13:46:19 ajacoutot Exp $
+$OpenBSD: patch-sysdeps_openbsd_procwd_c,v 1.3 2014/02/03 13:50:32 ajacoutot Exp $
 
-From ecbfade5287c1a0a8973d5f18acb4b08f203f4fb Mon Sep 17 00:00:00 2001
-From: Antoine Jacoutot <ajacoutot@gnome.org>
-Date: Thu, 23 Jan 2014 14:03:36 +0000
-Subject: openbsd: really drop all lsof related code
+RM at next release.
 
 --- sysdeps/openbsd/procwd.c.orig	Sat Jul 27 14:40:23 2013
 +++ sysdeps/openbsd/procwd.c	Sun Feb  2 14:39:20 2014

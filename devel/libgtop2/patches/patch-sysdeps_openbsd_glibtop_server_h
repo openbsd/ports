@@ -1,4 +1,7 @@
-$OpenBSD: patch-sysdeps_openbsd_glibtop_server_h,v 1.1 2014/02/03 13:46:19 ajacoutot Exp $
+$OpenBSD: patch-sysdeps_openbsd_glibtop_server_h,v 1.2 2014/02/03 13:50:32 ajacoutot Exp $
+
+RM at next release.
+
 --- sysdeps/openbsd/glibtop_server.h.orig	Sat Jul 27 14:40:23 2013
 +++ sysdeps/openbsd/glibtop_server.h	Sun Feb  2 12:57:57 2014
 @@ -26,11 +26,7 @@

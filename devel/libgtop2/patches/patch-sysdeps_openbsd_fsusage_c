@@ -1,8 +1,11 @@
-$OpenBSD: patch-sysdeps_openbsd_fsusage_c,v 1.1 2014/02/03 13:46:19 ajacoutot Exp $
+$OpenBSD: patch-sysdeps_openbsd_fsusage_c,v 1.2 2014/02/03 13:50:32 ajacoutot Exp $
+
+RM at next release.
+
 --- sysdeps/openbsd/fsusage.c.orig	Sat Jul 27 14:40:23 2013
 +++ sysdeps/openbsd/fsusage.c	Sun Feb  2 14:30:33 2014
 @@ -1,15 +1,6 @@
- /* $OpenBSD: patch-sysdeps_openbsd_fsusage_c,v 1.1 2014/02/03 13:46:19 ajacoutot Exp $	*/
+ /* $OpenBSD: patch-sysdeps_openbsd_fsusage_c,v 1.2 2014/02/03 13:50:32 ajacoutot Exp $	*/
  
  #include <config.h>
 -

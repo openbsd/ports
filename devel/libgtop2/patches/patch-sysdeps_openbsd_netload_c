@@ -1,16 +1,6 @@
-$OpenBSD: patch-sysdeps_openbsd_netload_c,v 1.5 2014/02/03 13:46:19 ajacoutot Exp $
+$OpenBSD: patch-sysdeps_openbsd_netload_c,v 1.6 2014/02/03 13:50:32 ajacoutot Exp $
 
-1.
-From 07d2816d5b39325bd7381024a88c61b7c56f7b62 Mon Sep 17 00:00:00 2001
-From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
-Date: Thu, 23 Jan 2014 09:30:53 +0000
-Subject: Adjust header inclusion on OpenBSD
-
-2.
-From 250666219659d721377613a916d8f166c2df93ee Mon Sep 17 00:00:00 2001
-From: Antoine Jacoutot <ajacoutot@gnome.org>
-Date: Wed, 16 Oct 2013 15:09:16 +0000
-Subject: OpenBSD: add missing header
+RM at next release.
 
 --- sysdeps/openbsd/netload.c.orig	Sat Jul 27 14:40:23 2013
 +++ sysdeps/openbsd/netload.c	Sun Feb  2 12:54:19 2014

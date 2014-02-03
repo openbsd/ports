@@ -1,4 +1,7 @@
-$OpenBSD: patch-sysdeps_openbsd_procmap_c,v 1.13 2014/02/03 13:46:19 ajacoutot Exp $
+$OpenBSD: patch-sysdeps_openbsd_procmap_c,v 1.14 2014/02/03 13:50:32 ajacoutot Exp $
+
+RM at next release.
+
 --- sysdeps/openbsd/procmap.c.orig	Sat Jul 27 14:40:23 2013
 +++ sysdeps/openbsd/procmap.c	Mon Feb  3 10:41:54 2014
 @@ -193,8 +193,11 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_

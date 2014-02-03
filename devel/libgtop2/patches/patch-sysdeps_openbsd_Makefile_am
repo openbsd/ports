@@ -1,4 +1,7 @@
-$OpenBSD: patch-sysdeps_openbsd_Makefile_am,v 1.1 2014/02/03 13:46:19 ajacoutot Exp $
+$OpenBSD: patch-sysdeps_openbsd_Makefile_am,v 1.2 2014/02/03 13:50:32 ajacoutot Exp $
+
+RM at next release.
+
 --- sysdeps/openbsd/Makefile.am.orig	Sat Jul 27 14:40:23 2013
 +++ sysdeps/openbsd/Makefile.am	Sun Feb  2 15:17:00 2014
 @@ -4,18 +4,23 @@ INCLUDES			= @INCLUDES@

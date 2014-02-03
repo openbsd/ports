@@ -1,4 +1,7 @@
-$OpenBSD: patch-sysdeps_openbsd_nosuid_c,v 1.1 2014/02/03 13:46:19 ajacoutot Exp $
+$OpenBSD: patch-sysdeps_openbsd_nosuid_c,v 1.2 2014/02/03 13:50:32 ajacoutot Exp $
+
+RM at next release.
+
 --- sysdeps/openbsd/nosuid.c.orig	Sat Jul 27 14:40:23 2013
 +++ sysdeps/openbsd/nosuid.c	Sun Feb  2 12:54:19 2014
 @@ -23,15 +23,7 @@

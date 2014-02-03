@@ -1,4 +1,7 @@
-$OpenBSD: patch-sysdeps_common_mountlist_c,v 1.3 2014/02/01 18:11:43 ajacoutot Exp $
+$OpenBSD: patch-sysdeps_common_mountlist_c,v 1.4 2014/02/03 13:50:32 ajacoutot Exp $
+
+RM at next release.
+
 --- sysdeps/common/mountlist.c.orig	Sat Jul 27 14:40:23 2013
 +++ sysdeps/common/mountlist.c	Sat Feb  1 18:39:20 2014
 @@ -52,7 +52,9 @@ static struct mount_entry *read_filesystem_list (void)

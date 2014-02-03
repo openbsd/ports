@@ -1,9 +1,6 @@
-$OpenBSD: patch-sysdeps_openbsd_open_c,v 1.3 2014/02/03 13:46:19 ajacoutot Exp $
+$OpenBSD: patch-sysdeps_openbsd_open_c,v 1.4 2014/02/03 13:50:32 ajacoutot Exp $
 
-From df1db430320c8646f809ef0224c2a620f7cadd1b Mon Sep 17 00:00:00 2001
-From: Robert Nagy <robert@openbsd.org>
-Date: Thu, 23 Jan 2014 09:39:39 +0000
-Subject: Fix several issues related to process information on OpenBSD and drop lsof usage.
+RM at next release.
 
 --- sysdeps/openbsd/open.c.orig	Sat Jul 27 14:40:23 2013
 +++ sysdeps/openbsd/open.c	Sun Feb  2 12:54:19 2014

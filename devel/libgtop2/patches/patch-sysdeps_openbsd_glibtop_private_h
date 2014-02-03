@@ -1,9 +1,6 @@
-$OpenBSD: patch-sysdeps_openbsd_glibtop_private_h,v 1.1 2014/01/23 14:06:34 ajacoutot Exp $
+$OpenBSD: patch-sysdeps_openbsd_glibtop_private_h,v 1.2 2014/02/03 13:50:32 ajacoutot Exp $
 
-From ecbfade5287c1a0a8973d5f18acb4b08f203f4fb Mon Sep 17 00:00:00 2001
-From: Antoine Jacoutot <ajacoutot@gnome.org>
-Date: Thu, 23 Jan 2014 14:03:36 +0000
-Subject: openbsd: really drop all lsof related code
+RM at next release.
 
 --- sysdeps/openbsd/glibtop_private.h.orig	Thu Jan 23 14:13:45 2014
 +++ sysdeps/openbsd/glibtop_private.h	Thu Jan 23 14:13:51 2014
