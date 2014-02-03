@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.8 2013/05/17 12:42:34 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.9 2014/02/03 10:24:07 dcoppa Exp $
 @conflict jakarta-tomcat-examples-*
 @pkgpath www/jakarta-tomcat/v6,-examples
 @owner _tomcat
@@ -928,6 +928,7 @@ webapps/docs/api/org/apache/jasper/compiler/AttributeParser.html
 webapps/docs/api/org/apache/jasper/compiler/BeanRepository.html
 webapps/docs/api/org/apache/jasper/compiler/Compiler.html
 webapps/docs/api/org/apache/jasper/compiler/ELFunctionMapper.html
+webapps/docs/api/org/apache/jasper/compiler/ELParser.TextBuilder.html
 webapps/docs/api/org/apache/jasper/compiler/ELParser.html
 webapps/docs/api/org/apache/jasper/compiler/ErrorDispatcher.html
 webapps/docs/api/org/apache/jasper/compiler/ErrorHandler.html
@@ -1297,6 +1298,7 @@ webapps/docs/api/org/apache/tomcat/util/buf/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/buf/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/buf/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/collections/
+webapps/docs/api/org/apache/tomcat/util/collections/ConcurrentCache.html
 webapps/docs/api/org/apache/tomcat/util/collections/EmptyEnumeration.html
 webapps/docs/api/org/apache/tomcat/util/collections/LRUCache.html
 webapps/docs/api/org/apache/tomcat/util/collections/MultiMap.html
@@ -1307,6 +1309,15 @@ webapps/docs/api/org/apache/tomcat/util/collections/SimplePool.html
 webapps/docs/api/org/apache/tomcat/util/collections/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/collections/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/collections/package-tree.html
+webapps/docs/api/org/apache/tomcat/util/descriptor/
+webapps/docs/api/org/apache/tomcat/util/descriptor/Constants.html
+webapps/docs/api/org/apache/tomcat/util/descriptor/DigesterFactory.html
+webapps/docs/api/org/apache/tomcat/util/descriptor/LocalResolver.html
+webapps/docs/api/org/apache/tomcat/util/descriptor/XmlErrorHandler.html
+webapps/docs/api/org/apache/tomcat/util/descriptor/XmlIdentifiers.html
+webapps/docs/api/org/apache/tomcat/util/descriptor/package-frame.html
+webapps/docs/api/org/apache/tomcat/util/descriptor/package-summary.html
+webapps/docs/api/org/apache/tomcat/util/descriptor/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/digester/
 webapps/docs/api/org/apache/tomcat/util/digester/AbstractObjectCreationFactory.html
 webapps/docs/api/org/apache/tomcat/util/digester/AbstractRulesImpl.html
@@ -1382,6 +1393,13 @@ webapps/docs/api/org/apache/tomcat/util/http/mapper/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/http/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/http/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/http/package-tree.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/
+webapps/docs/api/org/apache/tomcat/util/http/parser/HttpParser.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/MediaType.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/MediaTypeCache.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/package-frame.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/package-summary.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/log/
 webapps/docs/api/org/apache/tomcat/util/log/SystemLogHandler.html
 webapps/docs/api/org/apache/tomcat/util/log/UserDataHelper.Mode.html
