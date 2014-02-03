@@ -1,3 +1,0 @@
-Server, client and tool developers can use varconf to handle the
-configuration of their application. Initially written for stage, varconf
-is now used by many WorldForge components.
