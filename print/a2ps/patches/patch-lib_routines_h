@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_routines_h,v 1.1 2014/02/03 19:06:42 jasper Exp $
+
+Security fix for CVE-2014-????
+https://bugzilla.redhat.com/show_bug.cgi?id=1060630
+
+--- lib/routines.h.orig	Sat Dec 29 02:37:59 2007
++++ lib/routines.h	Mon Feb  3 18:27:12 2014
+@@ -255,7 +255,8 @@ FILE * xwpopen PARAMS ((const char * command));
+ /* If _STR_ is not defined, give it a tempname in _TMPDIR_ */
+ #define tempname_ensure(Str)				\
+ do {							\
+-  (Str) = (Str) ? (Str) : tempnam (NULL, "a2_");	\
++  (Str) = (Str) ? (Str) : safe_tempnam("a2_");	\
+ } while (0)
++char * safe_tempnam(const char *);
+ 
+ #endif
