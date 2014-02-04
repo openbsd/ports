@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/08/07 23:41:09 brad Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/02/04 09:46:48 brad Exp $
 @conflict bnc-*
 @conflict irc-*
 @conflict ircd-ratbox-*
@@ -95,6 +95,8 @@ lib/ircd-hybrid/modules/autoload/m_stats.la
 lib/ircd-hybrid/modules/autoload/m_stats.so
 lib/ircd-hybrid/modules/autoload/m_svinfo.la
 lib/ircd-hybrid/modules/autoload/m_svinfo.so
+lib/ircd-hybrid/modules/autoload/m_svskill.la
+lib/ircd-hybrid/modules/autoload/m_svskill.so
 lib/ircd-hybrid/modules/autoload/m_svsmode.la
 lib/ircd-hybrid/modules/autoload/m_svsmode.so
 lib/ircd-hybrid/modules/autoload/m_svsnick.la
