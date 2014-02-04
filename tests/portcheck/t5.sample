@@ -1,11 +1,11 @@
-VCS item detected: pkg/CVS
 VCS item detected: CVS
 VCS item detected: patches/CVS
+VCS item detected: pkg/CVS
 core dump file found: some.core
 duplicated assignment of COMMENT at Makefile:7
-extra file: ./pkg/qwerty
 extra file: patches/patch-xyz.orig
 extra file: patches/qwerty
+extra file: pkg/qwerty
 kdeui WANTLIB without x11/kde* in MODULES (check other libs, too!)
 missing @exec of update-desktop-database
 missing @unexec-delete of update-desktop-database

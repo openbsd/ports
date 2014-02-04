@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.64 2014/02/04 21:18:14 zhuk Exp $
+# $OpenBSD: portcheck,v 1.65 2014/02/04 21:28:30 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1216,6 +1216,7 @@ check_pkg_dir() {
 
 	check_perms_in_dir "$dir"
 
+	dir="${dir#./}"
 	for F in "$dir"/* "$dir"/.*; do case "${F##*/}" in
 	DESCR?(-*))
 		empty=false
