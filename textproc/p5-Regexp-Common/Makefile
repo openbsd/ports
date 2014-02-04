@@ -1,13 +1,18 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:42:44 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2014/02/04 03:04:47 bluhm Exp $
 
-COMMENT=		provide commonly requested regular expressions
+COMMENT =		provide commonly requested regular expressions
 
-MODULES=		cpan
-USE_GROFF =		Yes
-DISTNAME=		Regexp-Common-2011041701
-CATEGORIES=		textproc
+DISTNAME =		Regexp-Common-2013031301
+
+CATEGORIES =		textproc
+
+MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # MIT
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE_CDROM =	Yes
+
+MODULES =		cpan
+
+MAKE_ENV +=		TEST_POD=1
 
 .include <bsd.port.mk>
