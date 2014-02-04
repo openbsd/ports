@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/21 08:45:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2014/02/04 02:51:15 william Exp $
 
 COMMENT=		lightweight C library that eases the writing of daemons
 
 DISTNAME=		libdaemon-0.14
-SHARED_LIBS+=		daemon	3.2	# .5.0
+REVISION=		0
+SHARED_LIBS+=		daemon	4.0	# .5.0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://0pointer.de/lennart/projects/libdaemon/
