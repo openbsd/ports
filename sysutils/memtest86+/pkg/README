@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2011/06/02 13:41:41 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2014/02/04 10:14:52 sthen Exp $
 $RuOBSD: README.OpenBSD,v 1.2 2009/02/07 16:01:57 form Exp $
 
 +-----------------------------------------------------------------------
@@ -7,7 +7,7 @@ $RuOBSD: README.OpenBSD,v 1.2 2009/02/07 16:01:57 form Exp $
 
 Using Memtest86+ in OpenBSD environment
 
-o Reboot the machine and boot Memtest86+ using `boot /stand/memtest' command
+o Reboot the machine and boot Memtest86+ using `boot memtest' command
   at the `boot>' prompt.  You can also boot Memtest86+ from network using
   pxeboot(8).
 
