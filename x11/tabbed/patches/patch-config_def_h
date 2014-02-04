@@ -1,21 +1,20 @@
-$OpenBSD: patch-config_def_h,v 1.2 2013/10/19 10:48:29 jung Exp $
---- config.def.h.orig	Fri Oct 18 18:58:44 2013
-+++ config.def.h	Fri Oct 18 18:59:41 2013
-@@ -1,11 +1,12 @@
+$OpenBSD: patch-config_def_h,v 1.3 2014/02/04 01:53:04 gsoares Exp $
+--- config.def.h.orig	Tue Jan 21 15:22:03 2014
++++ config.def.h	Fri Jan 31 15:15:05 2014
+@@ -1,11 +1,11 @@
  /* See LICENSE file for copyright and license details. */
  
  /* appearance */
 -static const char font[]        = "-*-*-medium-*-*-*-14-*-*-*-*-*-*-*";
--static const char normbgcolor[] = "#222222";
--static const char normfgcolor[] = "#cccccc";
--static const char selbgcolor[]  = "#555555";
--static const char selfgcolor[]  = "#ffffff";
+-static const char* normbgcolor  = "#222222";
+-static const char* normfgcolor  = "#cccccc";
+-static const char* selbgcolor   = "#555555";
+-static const char* selfgcolor   = "#ffffff";
 +static const char font[]        = "-*-terminus-medium-*-*-*-*-*-*-*-*-*-*-*";
-+static const char normbgcolor[] = "#202020";
-+static const char normfgcolor[] = "#c0c0c0";
-+static const char selbgcolor[]  = "#404040";
-+static const char selfgcolor[]  = "#f0f0f0";
-+
++static const char* normbgcolor  = "#202020";
++static const char* normfgcolor  = "#c0c0c0";
++static const char* selbgcolor   = "#404040";
++static const char* selfgcolor   = "#f0f0f0";
  static const char before[]      = "<";
  static const char after[]       = ">";
  static const int  tabwidth      = 200;
