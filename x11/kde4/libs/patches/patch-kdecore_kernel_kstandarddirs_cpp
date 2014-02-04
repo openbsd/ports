@@ -1,8 +1,10 @@
-$OpenBSD: patch-kdecore_kernel_kstandarddirs_cpp,v 1.1 2013/04/24 19:45:29 zhuk Exp $
-Provide "libexec" resource type by default, and check for libexec items
-first by default when searching for executables.
---- kdecore/kernel/kstandarddirs.cpp.orig	Mon Dec 17 18:14:17 2012
-+++ kdecore/kernel/kstandarddirs.cpp	Mon Jan  7 19:03:17 2013
+$OpenBSD: patch-kdecore_kernel_kstandarddirs_cpp,v 1.2 2014/02/04 15:25:44 zhuk Exp $
+1. Provide "libexec" resource type by default, and check for libexec items
+   first by default when searching for executables.
+2. Use separate from KDE3 links to special resource directories.
+3. Use system constants instead of magic values.
+--- kdecore/kernel/kstandarddirs.cpp.orig	Thu Jan  2 23:26:54 2014
++++ kdecore/kernel/kstandarddirs.cpp	Tue Feb  4 13:29:25 2014
 @@ -279,6 +279,7 @@ QStringList KStandardDirs::allTypes() const
          list.append(QLatin1String(types_string + types_indices[i]));
      // Those are added manually by addKDEDefaults
@@ -25,7 +27,37 @@ first by default when searching for executables.
        return dir;
      else
        return !KGlobal::hasLocale() ? dir + filename
-@@ -1341,7 +1346,7 @@ QString KStandardDirs::findExe( const QString& appname
+@@ -994,14 +999,13 @@ KStandardDirs::realFilePath(const QString &filename)
+ 
+ void KStandardDirs::KStandardDirsPrivate::createSpecialResource(const char *type)
+ {
+-    char hostname[256];
+-    hostname[0] = 0;
+-    gethostname(hostname, 255);
++    char hostname[MAXHOSTNAMELEN];
++    gethostname(hostname, MAXHOSTNAMELEN);
++    hostname[MAXHOSTNAMELEN-1] = 0;
+     const QString localkdedir = m_prefixes.first();
+-    QString dir = localkdedir + QString::fromLatin1(type) + QLatin1Char('-') + QString::fromLocal8Bit(hostname);
+-    char link[1024];
+-    link[1023] = 0;
+-    int result = readlink(QFile::encodeName(dir).constData(), link, 1023);
++    QString dir = localkdedir + QString::fromLatin1(type) + QLatin1Char('4') + QLatin1Char('-') + QString::fromLocal8Bit(hostname);
++    char link[PATH_MAX+1];
++    int result = readlink(QFile::encodeName(dir).constData(), link, PATH_MAX);
+     bool relink = (result == -1) && (errno == ENOENT);
+     if (result > 0)
+     {
+@@ -1045,7 +1049,7 @@ void KStandardDirs::KStandardDirsPrivate::createSpecia
+             if (system(QByteArray(QFile::encodeName(srv) + ' ' + type)) == -1) {
+                 fprintf(stderr, "Error: unable to launch lnusertemp command" );
+             }
+-            result = readlink(QFile::encodeName(dir).constData(), link, 1023);
++            result = readlink(QFile::encodeName(dir).constData(), link, PATH_MAX);
+         }
+     }
+     if (result > 0)
+@@ -1341,7 +1345,7 @@ QString KStandardDirs::findExe( const QString& appname
                                  const QString& pstr,
                                  SearchOptions options )
  {
@@ -34,7 +66,7 @@ first by default when searching for executables.
  
  #ifdef Q_OS_WIN
      QStringList executable_extensions = executableExtensions();
-@@ -1371,7 +1376,7 @@ QString KStandardDirs::findExe( const QString& appname
+@@ -1371,7 +1375,7 @@ QString KStandardDirs::findExe( const QString& appname
      QString p = installPath("libexec") + appname;
      QString result = checkExecutable(p, options & IgnoreExecBit);
      if (!result.isEmpty()) {
@@ -43,7 +75,7 @@ first by default when searching for executables.
          return result;
      }
  
-@@ -1385,7 +1390,7 @@ QString KStandardDirs::findExe( const QString& appname
+@@ -1385,7 +1389,7 @@ QString KStandardDirs::findExe( const QString& appname
          // Check for executable in this tokenized path
          result = checkExecutable(p, options & IgnoreExecBit);
          if (!result.isEmpty()) {
@@ -52,7 +84,7 @@ first by default when searching for executables.
              return result;
          }
      }
-@@ -1395,14 +1400,14 @@ QString KStandardDirs::findExe( const QString& appname
+@@ -1395,14 +1399,14 @@ QString KStandardDirs::findExe( const QString& appname
      p += appname;
      result = checkExecutable(p, options & IgnoreExecBit);
      if (!result.isEmpty()) {

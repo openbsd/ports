@@ -1,8 +1,8 @@
-$OpenBSD: patch-kinit_lnusertemp_c,v 1.1 2014/02/04 08:56:40 zhuk Exp $
+$OpenBSD: patch-kinit_lnusertemp_c,v 1.2 2014/02/04 15:25:44 zhuk Exp $
 Distinguish KDE4 temporary directories.
 --- kinit/lnusertemp.c.orig	Mon Feb  3 23:02:22 2014
-+++ kinit/lnusertemp.c	Mon Feb  3 23:03:12 2014
-@@ -277,17 +277,17 @@ int main(int argc, char **argv)
++++ kinit/lnusertemp.c	Tue Feb  4 13:24:38 2014
+@@ -277,19 +277,19 @@ int main(int argc, char **argv)
  
    if (strcmp(argv[1], "tmp") == 0)
    {
@@ -12,7 +12,8 @@ Distinguish KDE4 temporary directories.
 -    strcat(tmp_prefix, "/kde-"); 
 +    strcat(tmp_prefix, "/kde4-"); 
      
-     kde_prefix = "/tmp-"; 
+-    kde_prefix = "/tmp-"; 
++    kde_prefix = "/tmp4-"; 
    }
    else if (strcmp(argv[1], "socket") == 0)
    {
@@ -22,9 +23,12 @@ Distinguish KDE4 temporary directories.
 -    strcat(tmp_prefix, "/ksocket-" );
 +    strcat(tmp_prefix, "/k4socket-" );
  
-     kde_prefix = "/socket-"; 
+-    kde_prefix = "/socket-"; 
++    kde_prefix = "/socket4-"; 
    }
-@@ -297,9 +297,9 @@ int main(int argc, char **argv)
+   else if (strcmp(argv[1], "cache") == 0)
+   {
+@@ -297,11 +297,11 @@ int main(int argc, char **argv)
      if (!tmp || !tmp[0]) 
        tmp = "/var/tmp";
  
@@ -34,5 +38,8 @@ Distinguish KDE4 temporary directories.
 -    strcat(tmp_prefix, "/kdecache-" );
 +    strcat(tmp_prefix, "/kde4cache-" );
  
-     kde_prefix = "/cache-"; 
+-    kde_prefix = "/cache-"; 
++    kde_prefix = "/cache4-"; 
    }
+ 
+   res = build_link(tmp, tmp_prefix, kde_prefix); 
