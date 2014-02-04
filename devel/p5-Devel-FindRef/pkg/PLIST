@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/02/04 08:05:18 espie Exp $
+${P5ARCH}/
+${P5ARCH}/Devel/
+${P5ARCH}/Devel/FindRef.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Devel/
+${P5ARCH}/auto/Devel/FindRef/
+${P5ARCH}/auto/Devel/FindRef/FindRef.bs
+${P5ARCH}/auto/Devel/FindRef/FindRef.so
+@man man/man3p/Devel::FindRef.3p

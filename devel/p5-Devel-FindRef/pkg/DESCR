@@ -1,0 +1,6 @@
+Tracking down reference problems (e.g. you expect some object to
+be destroyed, but there are still references to it that keep it
+alive) can be very hard. Fortunately, perl keeps track of all its
+values, so tracking references "backwards" is usually possible.
+
+The "track" function is the main interface provided.
