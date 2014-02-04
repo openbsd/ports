@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_daemon_c,v 1.26 2014/01/30 10:01:33 ajacoutot Exp $
+$OpenBSD: patch-src_daemon_c,v 1.27 2014/02/04 08:53:34 ajacoutot Exp $
 
 OpenBSD does not have any function to parse a specified passwd(5) file.
 
@@ -13,8 +13,8 @@ From: Matthias Clasen <mclasen@redhat.com>
 Date: Fri, 01 Nov 2013 21:09:25 +0000
 Subject: Avoid deleting the root user
 
---- src/daemon.c.orig	Thu Jan 30 10:09:06 2014
-+++ src/daemon.c	Thu Jan 30 10:09:20 2014
+--- src/daemon.c.orig	Tue Oct 15 22:25:19 2013
++++ src/daemon.c	Tue Feb  4 09:49:15 2014
 @@ -36,6 +36,10 @@
  #include <utmpx.h>
  #endif
@@ -26,38 +26,39 @@ Subject: Avoid deleting the root user
  #include <glib.h>
  #include <glib/gi18n.h>
  #include <glib-object.h>
-@@ -307,8 +311,11 @@ entry_generator_fgetpwent (GHashTable *users,
+@@ -48,7 +52,11 @@
+ #include "util.h"
+ 
+ #define PATH_PASSWD "/etc/passwd"
++#if defined (HAVE_SHADOW_H)
+ #define PATH_SHADOW "/etc/shadow"
++#elif defined (__OpenBSD__)
++#define PATH_SHADOW "/etc/master.passwd"
++#endif
+ #define PATH_GROUP "/etc/group"
+ #define PATH_GDM_CUSTOM "/etc/gdm/custom.conf"
+ #ifdef HAVE_UTMPX_H
+@@ -307,6 +315,7 @@ entry_generator_fgetpwent (GHashTable *users,
                             gpointer   *state)
  {
          struct passwd *pwent;
 +#ifdef HAVE_FGETPWENT
          FILE *fp;
-+#endif
  
-+#ifdef HAVE_FGETPWENT
          /* First iteration */
-         if (*state == NULL) {
-                 *state = fp = fopen (PATH_PASSWD, "r");
-@@ -321,13 +328,18 @@ entry_generator_fgetpwent (GHashTable *users,
-         /* Every iteration */
-         fp = *state;
-         pwent = fgetpwent (fp);
-+#else
-+        pwent = getpwent ();
-+#endif
-         if (pwent != NULL) {
-                 return pwent;
-         }
- 
+@@ -328,6 +337,11 @@ entry_generator_fgetpwent (GHashTable *users,
          /* Last iteration */
-+#ifdef HAVE_FGETPWENT
          fclose (fp);
          *state = NULL;
++#else
++        while ((pwent = getpwent ()) != NULL)
++                return pwent;
++        endpwent();
 +#endif
          return NULL;
  }
  
-@@ -1051,7 +1063,11 @@ daemon_create_user_authorized_cb (Daemon              
+@@ -1051,7 +1065,11 @@ daemon_create_user_authorized_cb (Daemon              
          CreateUserData *cd = data;
          User *user;
          GError *error;
@@ -69,7 +70,7 @@ Subject: Avoid deleting the root user
  
          if (getpwnam (cd->user_name) != NULL) {
                  throw_error (context, ERROR_USER_EXISTS, "A user with name '%s' already exists", cd->user_name);
-@@ -1068,9 +1084,17 @@ daemon_create_user_authorized_cb (Daemon              
+@@ -1068,9 +1086,17 @@ daemon_create_user_authorized_cb (Daemon              
          if (cd->account_type == ACCOUNT_TYPE_ADMINISTRATOR) {
                  argv[4] = "-G";
                  argv[5] = ADMIN_GROUP;
@@ -87,7 +88,7 @@ Subject: Avoid deleting the root user
          }
          else if (cd->account_type == ACCOUNT_TYPE_STANDARD) {
                  argv[4] = "--";
-@@ -1232,7 +1256,7 @@ daemon_uncache_user (AccountsAccounts      *accounts,
+@@ -1232,7 +1258,7 @@ daemon_uncache_user (AccountsAccounts      *accounts,
  }
  
  typedef struct {
@@ -96,7 +97,7 @@ Subject: Avoid deleting the root user
          gboolean remove_files;
  } DeleteUserData;
  
-@@ -1257,6 +1281,34 @@ daemon_delete_user_authorized_cb (Daemon              
+@@ -1257,6 +1283,34 @@ daemon_delete_user_authorized_cb (Daemon              
                  return;
          }
  
@@ -131,7 +132,7 @@ Subject: Avoid deleting the root user
          sys_log (context, "delete user '%s' (%d)", pwent->pw_name, ud->uid);
  
          if (daemon->priv->autologin != NULL) {
-@@ -1282,11 +1334,18 @@ daemon_delete_user_authorized_cb (Daemon              
+@@ -1282,11 +1336,18 @@ daemon_delete_user_authorized_cb (Daemon              
  
          argv[0] = "/usr/sbin/userdel";
          if (ud->remove_files) {
@@ -150,7 +151,7 @@ Subject: Avoid deleting the root user
          }
          else {
                  argv[1] = "--";
-@@ -1314,13 +1373,13 @@ daemon_delete_user (AccountsAccounts      *accounts,
+@@ -1314,13 +1375,13 @@ daemon_delete_user (AccountsAccounts      *accounts,
          Daemon *daemon = (Daemon*)accounts;
          DeleteUserData *data;
  
