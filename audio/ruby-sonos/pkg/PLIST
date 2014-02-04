@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/01/18 09:32:32 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/02/04 16:23:47 jasper Exp $
 ${GEM_BIN}/sonos${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -34,13 +34,4 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sonos/system.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sonos/topology_node.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sonos/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/sonos.gemspec
-${GEM_LIB}/gems/${DISTNAME}/test/
-${GEM_LIB}/gems/${DISTNAME}/test/cassettes/
-${GEM_LIB}/gems/${DISTNAME}/test/cassettes/topology.yml
-${GEM_LIB}/gems/${DISTNAME}/test/support/
-${GEM_LIB}/gems/${DISTNAME}/test/support/discovery_macros.rb
-${GEM_LIB}/gems/${DISTNAME}/test/support/vcr.rb
-${GEM_LIB}/gems/${DISTNAME}/test/test_helper.rb
-${GEM_LIB}/gems/${DISTNAME}/test/units/
-${GEM_LIB}/gems/${DISTNAME}/test/units/system_test.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
