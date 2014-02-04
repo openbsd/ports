@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_config_c,v 1.1 2014/01/15 07:08:13 dcoppa Exp $
+$OpenBSD: patch-src_config_c,v 1.2 2014/02/04 12:20:46 dcoppa Exp $
 
 On OpenBSD, time_t is long long
 
---- src/config.c.orig	Wed Jan 15 07:34:26 2014
-+++ src/config.c	Wed Jan 15 07:36:32 2014
-@@ -1412,8 +1412,8 @@ void rewriteConfigSaveOption(struct rewriteConfigState
+--- src/config.c.orig	Tue Feb  4 11:17:21 2014
++++ src/config.c	Tue Feb  4 13:06:36 2014
+@@ -1418,8 +1418,8 @@ void rewriteConfigSaveOption(struct rewriteConfigState
       * config line with "save" will be detected as orphaned and deleted,
       * resulting into no RDB persistence as expected. */
      for (j = 0; j < server.saveparamslen; j++) {

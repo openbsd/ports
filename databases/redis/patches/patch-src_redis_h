@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_redis_h,v 1.1 2013/11/29 08:32:24 dcoppa Exp $
---- src/redis.h.orig	Wed Nov 27 15:18:39 2013
-+++ src/redis.h	Wed Nov 27 15:19:12 2013
-@@ -96,7 +96,7 @@
+$OpenBSD: patch-src_redis_h,v 1.2 2014/02/04 12:20:46 dcoppa Exp $
+--- src/redis.h.orig	Tue Feb  4 11:17:21 2014
++++ src/redis.h	Tue Feb  4 13:06:37 2014
+@@ -97,7 +97,7 @@
  #define REDIS_DEFAULT_REPL_BACKLOG_TIME_LIMIT (60*60)  /* 1 hour */
  #define REDIS_REPL_BACKLOG_MIN_SIZE (1024*16)          /* 16k */
  #define REDIS_BGSAVE_RETRY_DELAY 5 /* Wait a few secs before trying again. */

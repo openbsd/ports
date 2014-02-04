@@ -1,6 +1,6 @@
-$OpenBSD: patch-redis_conf,v 1.10 2014/01/15 07:08:13 dcoppa Exp $
---- redis.conf.orig	Mon Jan 13 17:09:58 2014
-+++ redis.conf	Tue Jan 14 17:07:32 2014
+$OpenBSD: patch-redis_conf,v 1.11 2014/02/04 12:20:46 dcoppa Exp $
+--- redis.conf.orig	Tue Feb  4 11:17:21 2014
++++ redis.conf	Tue Feb  4 13:06:36 2014
 @@ -33,12 +33,13 @@
  ################################ GENERAL  #####################################
  
@@ -20,7 +20,7 @@ $OpenBSD: patch-redis_conf,v 1.10 2014/01/15 07:08:13 dcoppa Exp $
  
  # Accept connections on the specified port, default is 6379.
  # If port 0 is specified Redis will not listen on a TCP socket.
-@@ -52,7 +53,7 @@ port 6379
+@@ -61,7 +62,7 @@ tcp-backlog 511
  # Examples:
  #
  # bind 192.168.1.100 10.0.0.1
@@ -29,7 +29,7 @@ $OpenBSD: patch-redis_conf,v 1.10 2014/01/15 07:08:13 dcoppa Exp $
  
  # Specify the path for the Unix socket that will be used to listen for
  # incoming connections. There is no default, so Redis will not listen
-@@ -91,17 +92,17 @@ loglevel notice
+@@ -100,17 +101,17 @@ loglevel notice
  # Specify the log file name. Also the empty string can be used to force
  # Redis to log on the standard output. Note that if you use standard
  # output for logging but daemonize, logs will be sent to /dev/null
@@ -51,7 +51,7 @@ $OpenBSD: patch-redis_conf,v 1.10 2014/01/15 07:08:13 dcoppa Exp $
  
  # Set the number of databases. The default database is DB 0, you can select
  # a different one on a per-connection basis using SELECT <dbid> where
-@@ -175,7 +176,7 @@ dbfilename dump.rdb
+@@ -184,7 +185,7 @@ dbfilename dump.rdb
  # The Append Only File will also be created inside this directory.
  # 
  # Note that you must specify a directory here, not a file name.
@@ -60,7 +60,7 @@ $OpenBSD: patch-redis_conf,v 1.10 2014/01/15 07:08:13 dcoppa Exp $
  
  ################################# REPLICATION #################################
  
-@@ -327,7 +328,7 @@ slave-priority 100
+@@ -336,7 +337,7 @@ slave-priority 100
  # 150k passwords per second against a good box. This means that you should
  # use a very strong password otherwise it will be very easy to break.
  #
