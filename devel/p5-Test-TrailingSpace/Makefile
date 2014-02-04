@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/08/08 20:27:55 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2014/02/04 02:06:44 bluhm Exp $
 
 COMMENT =		test for trailing space in source files
 
-DISTNAME =		Test-TrailingSpace-0.0203
+DISTNAME =		Test-TrailingSpace-0.0204
 
 CATEGORIES =		devel
 
