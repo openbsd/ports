@@ -1,5 +1,5 @@
 duplicated assignment of COMMENT at Makefile:7
-patches/patch-xyz does not have $OpenBSD$
+patches/patch-xyz does not have $OpenBSD$ RCS tag at the top
 extra file: patches/patch-xyz.orig
 extra file: patches/qwerty
 core dump file found: some.core
