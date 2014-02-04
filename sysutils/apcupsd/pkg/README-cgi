@@ -1,4 +1,4 @@
-$OpenBSD: README-cgi,v 1.1 2014/01/08 20:46:18 kirby Exp $
+$OpenBSD: README-cgi,v 1.2 2014/02/04 18:34:14 kirby Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -11,8 +11,8 @@ This switch is on by default.
 
 To run scripts in chrooted apache (default behaviour), configuration
 files must be available to the webserver:
-# mv ${SYSCONFDIR} /var/www/${SYSCONFDIR}
-# ln -s /var/www/${SYSCONFDIR} ${BASESYSCONFDIR}/
+# mv ${SYSCONFDIR} ${WEB_ROOT}/${SYSCONFDIR}
+# ln -s ${WEB_ROOT}/${SYSCONFDIR} ${BASESYSCONFDIR}/
 
 And some libraries must be copied in:
 # ${WEB_ROOT}/cgi-bin/apcupsd/copy-libs.sh

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-cgi,v 1.2 2014/01/08 20:46:18 kirby Exp $
+@comment $OpenBSD: PLIST-cgi,v 1.3 2014/02/04 18:34:14 kirby Exp $
 @conflict apcupsd-<=3.14.10p1
 cgi-bin/apcupsd/
 @group bin
@@ -16,8 +16,12 @@ share/examples/apcupsd/etc/
 @sample ${SYSCONFDIR}/
 share/examples/apcupsd/etc/apcupsd.css
 @sample ${SYSCONFDIR}/apcupsd.css
+@mode 444
 share/examples/apcupsd/etc/hosts.conf
+@mode
 @sample ${SYSCONFDIR}/hosts.conf
+@mode 444
 share/examples/apcupsd/etc/multimon.conf
+@mode
 @sample ${SYSCONFDIR}/multimon.conf
 share/doc/pkg-readmes/${FULLPKGNAME}
