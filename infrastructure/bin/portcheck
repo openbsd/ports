@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.63 2014/02/03 22:13:55 zhuk Exp $
+# $OpenBSD: portcheck,v 1.64 2014/02/04 21:18:14 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -20,8 +20,8 @@ set +X
 set -u
 
 usage() {
-	echo "usage: ${0##*/} [-CdPU] [-p portsdir] [-x glob]" >&2
-	echo "       ${0##*/} [-AdP] [-p portsdir] [-x glob] [subdir ...]" >&2
+	echo "usage: ${0##*/} [-dNP] [-p portsdir] [-x glob]" >&2
+	echo "       ${0##*/} -A [-dP] [-p portsdir] [-x glob] [subdir ...]" >&2
 	exit 1
 }
 
@@ -30,8 +30,8 @@ usage() {
 # Parsing command line options
 #
 
-existing_port=false
-ignore_cvs=false
+existing_port=true
+ignore_cvs=true
 plist_checks=true
 portsdir=
 rootrun=false
@@ -39,9 +39,10 @@ debugging=false
 
 ignore_list=; unset ignore_list[0]
 
-while getopts "ACdPp:Ux:" OPT; do
+while getopts "AdNPp:x:" OPT; do
 	case $OPT in
 	A)
+		$existing_port || usage
 		if ! $rootrun; then
 			ignore_list[${#ignore_list[@]}]=.cvsignore
 			ignore_list[${#ignore_list[@]}]=.fslckout
@@ -66,16 +67,16 @@ while getopts "ACdPp:Ux:" OPT; do
 			ignore_list[${#ignore_list[@]}]=.update
 		fi
 		rootrun=true
-		existing_port=true
-		ignore_cvs=true
-		;;
-
-	C)
-		ignore_cvs=true
 		;;
 
 	d)
 		debugging=true
+		;;
+
+	N)
+		$rootrun && usage
+		existing_port=false
+		ignore_cvs=false
 		;;
 
 	P)
@@ -84,10 +85,6 @@ while getopts "ACdPp:Ux:" OPT; do
 
 	p)
 		portsdir=$OPTARG
-		;;
-
-	U)
-		existing_port=true
 		;;
 
 	x)

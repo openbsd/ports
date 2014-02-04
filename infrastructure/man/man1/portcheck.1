@@ -1,4 +1,4 @@
-.\"     $OpenBSD: portcheck.1,v 1.2 2013/09/15 09:49:17 rpe Exp $
+.\"     $OpenBSD: portcheck.1,v 1.3 2014/02/04 21:18:14 zhuk Exp $
 .\"
 .\" Copyright (c) 2013 Vadim Zhukov
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: September 15 2013 $
+.Dd $Mdocdate: February 4 2014 $
 .Dt PORTCHECK 1
 .Os
 .Sh NAME
@@ -22,12 +22,13 @@
 .Nd validate a port before submitting
 .Sh SYNOPSIS
 .Nm
-.Op Fl CdPU
+.Op Fl dNP
 .Op Fl p Ar portsdir
 .Op Fl x Ar pattern
 .Pp
 .Nm
-.Op Fl AdP
+.Fl A
+.Op Fl dP
 .Op Fl p Ar portsdir
 .Op Fl x Ar pattern
 .Op Ar subdir ...
@@ -80,11 +81,8 @@ on the whole ports tree, i.e., the one lying in
 .Ev PORTSDIR .
 This option adds several ignore patterns (see
 .Fl x
-option description), implies
-.Fl C
-and
-.Fl U
-options and disables some other checks (e.g., for missing distinfo).
+option description) and disables some other checks (e.g., for missing
+distinfo).
 .Ev PKGPATH
 determining and printing won't be done.
 Implicit change of working directory to the ports tree root is done
@@ -93,9 +91,6 @@ Also, in this mode one or more
 .Ar subdir
 arguments could be specified, to narrow the check only for given
 subdirectories of ports tree root.
-.It Fl C
-Disables checks for the presence of CVS directories,
-for checking ports already committed to CVS tree.
 .It Fl d
 Show debugging information such as calling of check routines.
 .It Fl P
@@ -111,10 +106,12 @@ Forces the given directory to be treated as ports root directory.
 Cancels autodetection of the root ports directory made by default.
 This option is useful, e.g., when you have a temporary ports tree in
 a non-standard location.
-.It Fl U
-Intended to be used when working on port updates.
-Disables the checks like the presence of REVISION markers and non-0.0
+.It Fl N
+Intended to be used when working on new ports.
+Enables the checks like the presence of REVISION markers and non-0.0
 .Ev SHARED_LIBS .
+It also enables checks for the presence of CVS directories that could
+be left by mistake when creating a new port based on another one.
 .It Fl x
 Excludes files and subdirectories matching given shell globbing pattern
 from any checks.
@@ -130,17 +127,12 @@ Multiple -x options may be specified.
 To validate a new port you've just prepared, go to port's directory and
 run:
 .Bd -literal -offset indent
-$ portcheck
+$ portcheck -N
 .Ed
 .Pp
-If you were working on updating of an existing port directly in CVS
-tree, you can avoid extra noise by using the
-.Fl C
-and
-.Fl U
-options:
+If you were working on updating of an existing port in CVS tree:
 .Bd -literal -offset indent
-$ portcheck -CU
+$ portcheck
 .Ed
 .Pp
 To run a global check of the whole
@@ -152,7 +144,7 @@ option instead:
 $ portcheck -Ap /usr/ports devel
 .Ed
 .Sh SEE ALSO
-.Xr portimport 1
+.Xr portimport 1 .
 .Sh HISTORY
 This utility was split from
 .Xr portimport 1

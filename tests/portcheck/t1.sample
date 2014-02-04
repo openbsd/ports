@@ -1,2 +1,4 @@
+VCS item detected: pkg/CVS
+VCS item detected: CVS
 missing RDEP on devel/desktop-file-utils
 no distinfo in .

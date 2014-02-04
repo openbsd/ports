@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portimport,v 1.3 2013/12/11 16:11:09 zhuk Exp $
+# $OpenBSD: portimport,v 1.4 2014/02/04 21:18:14 zhuk Exp $
 # Copyright (c) 2013 Robert Peichaer
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -24,20 +24,18 @@ set -e
 set -u
 
 usage() {
-	echo "usage: $(basename $0) [-U] [-p portsdir] [-u username]" >&2
+	echo "usage: $(basename $0) [-p portsdir] [-u username]" >&2
 	exit 1
 }
 
 user=$(id -un)
-portsdir=
-portcheck_args=
-unset portcheck_args[0]
+set portsdir=
+set -A portcheck_args -- -N
 
 while getopts "p:Uu:" OPT; do
 	case $OPT in
 	p)	portsdir="$OPTARG"
 		portcheck_args[${#portcheck_args[@]}]="-p$portsdir";;
-	U)	portcheck_args[${#portcheck_args[@]}]="-U";;
 	u)	user=$OPTARG;;
 	*)	usage;;
 	esac
@@ -47,7 +45,7 @@ shift $(($OPTIND - 1))
 (($# > 0)) && usage
 
 error=false
-pkgpath=$(portcheck "${portcheck_args[@]:---}") || error=true
+pkgpath=$(portcheck "${portcheck_args[@]}") || error=true
 if $error; then
 	read ans?'Do you want to continue after those errors? [y/N] '
 	[[ $ans == +(y|Y) ]] || exit

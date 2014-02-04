@@ -1,3 +1,6 @@
+VCS item detected: pkg/CVS
+VCS item detected: CVS
+VCS item detected: patches/CVS
 core dump file found: some.core
 duplicated assignment of COMMENT at Makefile:7
 extra file: ./pkg/qwerty
