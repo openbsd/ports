@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2014/02/03 09:40:19 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.31 2014/02/04 15:43:48 dcoppa Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -189,6 +189,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/instagram.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/instagram.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/internetvideoarchive.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/internetvideoarchive.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/iprima.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/iprima.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ivi.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ivi.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/jeuxvideo.py
@@ -235,6 +237,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/mixcloud.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/mixcloud.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/mofosex.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/mofosex.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/mooshare.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/mooshare.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/mpora.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/mpora.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/mtv.py
