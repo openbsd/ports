@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/02/03 22:40:25 zhuk Exp $
+# $OpenBSD: Makefile,v 1.3 2014/02/04 17:02:13 zhuk Exp $
 
 # To add a test named ${testname}:
 #  1) If test should catch errors, add sample portcheck output to the
@@ -69,7 +69,8 @@ ${_t}: .PHONY
 . if exists(${TEST_${_t}_SAMPLE_SRC})
 # there should be errors printed and portcheck should exit with non-zero code
 	@test -e ${TEST_${_t}_FAIL} || echo "${_t}: portcheck did not fail"
-	@diff -u ${TEST_${_t}_DIFF_OPTS} ${TEST_${_t}_SAMPLE} ${TEST_${_t}_ERR}
+	@sort <${TEST_${_t}_ERR} | \
+	    diff -u ${TEST_${_t}_DIFF_OPTS} ${TEST_${_t}_SAMPLE} -
 . else
 # there should be NO errors printed and portcheck should exit with zero code
 	@test ! -e ${TEST_${_t}_FAIL} || echo "${_t}: portcheck did not succeed"
