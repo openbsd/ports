@@ -1,16 +1,19 @@
-# $OpenBSD: Makefile,v 1.85 2013/11/11 16:52:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2014/02/04 22:22:03 ajacoutot Exp $
+
+# XXX when OPENBSD_5_7 is branched
+# drop removal of ${SYSCONFDIR}/pango/pango.modules
 
 SHARED_ONLY=		Yes
 
 COMMENT=		library for layout and rendering of text
 
-GNOME_VERSION=		1.36.1
+GNOME_VERSION=		1.36.2
 GNOME_PROJECT=		pango
 
-SHARED_LIBS +=  pango-1.0            3600.0   # 3600.1
-SHARED_LIBS +=  pangoft2-1.0         3600.0   # 3600.1
-SHARED_LIBS +=  pangoxft-1.0         3600.0   # 3600.1
-SHARED_LIBS +=  pangocairo-1.0       3600.0   # 3600.1
+SHARED_LIBS +=  pango-1.0            3600.0   # 3600.2
+SHARED_LIBS +=  pangoft2-1.0         3600.0   # 3600.2
+SHARED_LIBS +=  pangoxft-1.0         3600.0   # 3600.2
+SHARED_LIBS +=  pangocairo-1.0       3600.0   # 3600.2
 
 CATEGORIES=		devel x11
 
