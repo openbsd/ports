@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/09/17 06:25:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/02/05 07:56:42 jasper Exp $
 @pkgpath geo/libchamplain/libchamplain-gtk
 @pkgpath geo/libchamplain/core
 include/libchamplain-${API_VERSION}/
@@ -27,7 +27,6 @@ include/libchamplain-${API_VERSION}/champlain/champlain-marker-layer.h
 include/libchamplain-${API_VERSION}/champlain/champlain-marker.h
 include/libchamplain-${API_VERSION}/champlain/champlain-marshal.h
 include/libchamplain-${API_VERSION}/champlain/champlain-memory-cache.h
-include/libchamplain-${API_VERSION}/champlain/champlain-memphis-renderer.h
 include/libchamplain-${API_VERSION}/champlain/champlain-network-bbox-tile-source.h
 include/libchamplain-${API_VERSION}/champlain/champlain-network-tile-source.h
 include/libchamplain-${API_VERSION}/champlain/champlain-null-tile-source.h
@@ -56,7 +55,6 @@ lib/libchamplain-gtk-${API_VERSION}.la
 @lib lib/libchamplain-gtk-${API_VERSION}.so.${LIBchamplain-gtk-0.12_VERSION}
 lib/pkgconfig/champlain-${API_VERSION}.pc
 lib/pkgconfig/champlain-gtk-${API_VERSION}.pc
-lib/pkgconfig/champlain-memphis-${API_VERSION}.pc
 share/gir-1.0/Champlain-${API_VERSION}.gir
 share/gir-1.0/GtkChamplain-${API_VERSION}.gir
 share/gtk-doc/html/libchamplain-${API_VERSION}/
@@ -78,7 +76,6 @@ share/gtk-doc/html/libchamplain-${API_VERSION}/ChamplainMapSourceFactory.html
 share/gtk-doc/html/libchamplain-${API_VERSION}/ChamplainMarker.html
 share/gtk-doc/html/libchamplain-${API_VERSION}/ChamplainMarkerLayer.html
 share/gtk-doc/html/libchamplain-${API_VERSION}/ChamplainMemoryCache.html
-share/gtk-doc/html/libchamplain-${API_VERSION}/ChamplainMemphisRenderer.html
 share/gtk-doc/html/libchamplain-${API_VERSION}/ChamplainNetworkBboxTileSource.html
 share/gtk-doc/html/libchamplain-${API_VERSION}/ChamplainNetworkTileSource.html
 share/gtk-doc/html/libchamplain-${API_VERSION}/ChamplainNullTileSource.html
@@ -109,6 +106,7 @@ share/gtk-doc/html/libchamplain-${API_VERSION}/ix06.html
 share/gtk-doc/html/libchamplain-${API_VERSION}/ix07.html
 share/gtk-doc/html/libchamplain-${API_VERSION}/ix08.html
 share/gtk-doc/html/libchamplain-${API_VERSION}/ix09.html
+share/gtk-doc/html/libchamplain-${API_VERSION}/left-insensitive.png
 share/gtk-doc/html/libchamplain-${API_VERSION}/left.png
 share/gtk-doc/html/libchamplain-${API_VERSION}/libchamplain-${API_VERSION}.devhelp2
 share/gtk-doc/html/libchamplain-${API_VERSION}/libchamplain-ChamplainVersion.html
@@ -119,8 +117,10 @@ share/gtk-doc/html/libchamplain-${API_VERSION}/pt04.html
 share/gtk-doc/html/libchamplain-${API_VERSION}/pt05.html
 share/gtk-doc/html/libchamplain-${API_VERSION}/pt06.html
 share/gtk-doc/html/libchamplain-${API_VERSION}/pt07.html
+share/gtk-doc/html/libchamplain-${API_VERSION}/right-insensitive.png
 share/gtk-doc/html/libchamplain-${API_VERSION}/right.png
 share/gtk-doc/html/libchamplain-${API_VERSION}/style.css
+share/gtk-doc/html/libchamplain-${API_VERSION}/up-insensitive.png
 share/gtk-doc/html/libchamplain-${API_VERSION}/up.png
 share/gtk-doc/html/libchamplain-gtk-${API_VERSION}/
 share/gtk-doc/html/libchamplain-gtk-${API_VERSION}/GtkChamplainEmbed.html
@@ -128,11 +128,14 @@ share/gtk-doc/html/libchamplain-gtk-${API_VERSION}/annotation-glossary.html
 share/gtk-doc/html/libchamplain-gtk-${API_VERSION}/home.png
 share/gtk-doc/html/libchamplain-gtk-${API_VERSION}/index.html
 share/gtk-doc/html/libchamplain-gtk-${API_VERSION}/index.sgml
+share/gtk-doc/html/libchamplain-gtk-${API_VERSION}/left-insensitive.png
 share/gtk-doc/html/libchamplain-gtk-${API_VERSION}/left.png
 share/gtk-doc/html/libchamplain-gtk-${API_VERSION}/libchamplain-gtk-${API_VERSION}.devhelp2
 share/gtk-doc/html/libchamplain-gtk-${API_VERSION}/pt01.html
+share/gtk-doc/html/libchamplain-gtk-${API_VERSION}/right-insensitive.png
 share/gtk-doc/html/libchamplain-gtk-${API_VERSION}/right.png
 share/gtk-doc/html/libchamplain-gtk-${API_VERSION}/style.css
+share/gtk-doc/html/libchamplain-gtk-${API_VERSION}/up-insensitive.png
 share/gtk-doc/html/libchamplain-gtk-${API_VERSION}/up.png
 share/vala/vapi/champlain-${API_VERSION}.vapi
 share/vala/vapi/champlain-gtk-${API_VERSION}.vapi
