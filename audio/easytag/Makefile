@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2014/01/04 12:50:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2014/02/05 21:41:53 naddy Exp $
 
 COMMENT=		tag editor for various audio file formats
 
 GNOME_PROJECT=		easytag
 GNOME_VERSION=		2.1.9
+REVISION=		0
 
 CATEGORIES=		audio
 
@@ -35,6 +36,7 @@ LIB_DEPENDS=		audio/id3lib \
 			audio/speex \
 			audio/flac \
 			audio/libvorbis \
+			audio/taglib \
 			audio/wavpack \
 			x11/gtk+2
 
