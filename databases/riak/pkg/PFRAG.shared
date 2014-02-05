@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2013/03/26 05:26:30 jmatthew Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.3 2014/02/05 11:22:51 jmatthew Exp $
 lib/riak/lib/asn1-${ASN1_V}/priv/lib/asn1_erl_nif.so
 lib/riak/lib/bitcask-${BITCASK_V}/priv/bitcask.so
 lib/riak/lib/crypto-${CRYPTO_V}/priv/lib/crypto.so
@@ -7,4 +7,5 @@ lib/riak/lib/erlang_js-${ERLANG_JS_V}/priv/erlang_js_drv.so
 lib/riak/lib/runtime_tools-${RUNTIME_TOOLS_V}/priv/lib/trace_file_drv.so
 lib/riak/lib/runtime_tools-${RUNTIME_TOOLS_V}/priv/lib/trace_ip_drv.so
 lib/riak/lib/runtime_tools-${RUNTIME_TOOLS_V}/priv/lib/dyntrace.so
+lib/riak/lib/sext-${SEXT_V}/priv/sext.so
 lib/riak/lib/syslog-${SYSLOG_V}/priv/syslog_drv.so
