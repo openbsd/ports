@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_routines_c,v 1.1 2014/02/03 19:06:42 jasper Exp $
+$OpenBSD: patch-lib_routines_c,v 1.2 2014/02/05 15:09:45 jasper Exp $
 
-Security fix for CVE-2014-????
+Security fix for CVE-2001-1593
 https://bugzilla.redhat.com/show_bug.cgi?id=1060630
 
 --- lib/routines.c.orig	Sat Dec 29 02:58:23 2007
