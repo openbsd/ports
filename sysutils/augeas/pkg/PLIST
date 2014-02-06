@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/06/17 07:39:49 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/02/06 10:21:09 jasper Exp $
 @bin bin/augparse
 @bin bin/augtool
 @bin bin/fadot
@@ -90,6 +90,7 @@ share/augeas/lenses/dist/jmxpassword.aug
 share/augeas/lenses/dist/json.aug
 share/augeas/lenses/dist/kdump.aug
 share/augeas/lenses/dist/keepalived.aug
+share/augeas/lenses/dist/koji.aug
 share/augeas/lenses/dist/krb5.aug
 share/augeas/lenses/dist/ldif.aug
 share/augeas/lenses/dist/ldso.aug
@@ -179,6 +180,7 @@ share/augeas/lenses/dist/stunnel.aug
 share/augeas/lenses/dist/subversion.aug
 share/augeas/lenses/dist/sudoers.aug
 share/augeas/lenses/dist/sysconfig.aug
+share/augeas/lenses/dist/sysconfig_route.aug
 share/augeas/lenses/dist/sysctl.aug
 share/augeas/lenses/dist/syslog.aug
 share/augeas/lenses/dist/systemd.aug
@@ -255,6 +257,7 @@ share/augeas/lenses/dist/tests/test_jmxpassword.aug
 share/augeas/lenses/dist/tests/test_json.aug
 share/augeas/lenses/dist/tests/test_kdump.aug
 share/augeas/lenses/dist/tests/test_keepalived.aug
+share/augeas/lenses/dist/tests/test_koji.aug
 share/augeas/lenses/dist/tests/test_krb5.aug
 share/augeas/lenses/dist/tests/test_ldap.aug
 share/augeas/lenses/dist/tests/test_ldif.aug
@@ -344,6 +347,7 @@ share/augeas/lenses/dist/tests/test_stunnel.aug
 share/augeas/lenses/dist/tests/test_subversion.aug
 share/augeas/lenses/dist/tests/test_sudoers.aug
 share/augeas/lenses/dist/tests/test_sysconfig.aug
+share/augeas/lenses/dist/tests/test_sysconfig_route.aug
 share/augeas/lenses/dist/tests/test_sysctl.aug
 share/augeas/lenses/dist/tests/test_syslog.aug
 share/augeas/lenses/dist/tests/test_systemd.aug
@@ -360,6 +364,7 @@ share/augeas/lenses/dist/tests/test_xinetd.aug
 share/augeas/lenses/dist/tests/test_xml.aug
 share/augeas/lenses/dist/tests/test_xorg.aug
 share/augeas/lenses/dist/tests/test_xymon.aug
+share/augeas/lenses/dist/tests/test_xymon_alerting.aug
 share/augeas/lenses/dist/tests/test_yum.aug
 share/augeas/lenses/dist/thttpd.aug
 share/augeas/lenses/dist/up2date.aug
@@ -374,6 +379,7 @@ share/augeas/lenses/dist/xinetd.aug
 share/augeas/lenses/dist/xml.aug
 share/augeas/lenses/dist/xorg.aug
 share/augeas/lenses/dist/xymon.aug
+share/augeas/lenses/dist/xymon_alerting.aug
 share/augeas/lenses/dist/yum.aug
 share/vim/
 share/vim/vimfiles/

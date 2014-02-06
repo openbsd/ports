@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2014/01/16 13:33:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2014/02/06 10:21:09 jasper Exp $
 
 COMMENT=		configuration editing tool and API
 
-DISTNAME=		augeas-1.1.0
-REVISION=		2
+DISTNAME=		augeas-1.2.0
 CATEGORIES=		sysutils devel
 
 SHARED_LIBS +=  augeas                    0.0 # 16.0
@@ -18,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		http://download.augeas.net/
 
-MODULES=		devel/gettext
+MODULES=		converters/libiconv
 
 LIB_DEPENDS=		textproc/libxml
 
