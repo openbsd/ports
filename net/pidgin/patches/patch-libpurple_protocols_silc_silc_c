@@ -1,6 +1,6 @@
-$OpenBSD: patch-libpurple_protocols_silc_silc_c,v 1.8 2011/03/13 17:27:11 jasper Exp $
---- libpurple/protocols/silc/silc.c.orig	Thu Mar 10 21:20:28 2011
-+++ libpurple/protocols/silc/silc.c	Fri Mar 11 18:58:56 2011
+$OpenBSD: patch-libpurple_protocols_silc_silc_c,v 1.9 2014/02/06 07:44:15 brad Exp $
+--- libpurple/protocols/silc/silc.c.orig	Wed Jan 22 02:39:51 2014
++++ libpurple/protocols/silc/silc.c	Sat Feb  1 02:56:15 2014
 @@ -674,30 +674,12 @@ silcpurple_close(PurpleConnection *gc)
  	SilcPurpleTask task;
  #endif /* __SILC_TOOLKIT_VERSION */
@@ -33,7 +33,7 @@ $OpenBSD: patch-libpurple_protocols_silc_silc_c,v 1.8 2011/03/13 17:27:11 jasper
  
  	if (sg->conn)
  		silc_client_close_connection(sg->client, sg->conn);
-@@ -1846,9 +1828,6 @@ static PurpleCmdRet silcpurple_cmd_quit(PurpleConversa
+@@ -1845,9 +1827,6 @@ static PurpleCmdRet silcpurple_cmd_quit(PurpleConversa
  {
  	PurpleConnection *gc;
  	SilcPurple sg;
@@ -43,7 +43,7 @@ $OpenBSD: patch-libpurple_protocols_silc_silc_c,v 1.8 2011/03/13 17:27:11 jasper
  
  	gc = purple_conversation_get_gc(conv);
  
-@@ -1860,23 +1839,8 @@ static PurpleCmdRet silcpurple_cmd_quit(PurpleConversa
+@@ -1859,23 +1838,8 @@ static PurpleCmdRet silcpurple_cmd_quit(PurpleConversa
  	if (sg == NULL)
  		return PURPLE_CMD_RET_FAILED;
  

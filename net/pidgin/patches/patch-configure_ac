@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.32 2013/03/08 01:03:09 brad Exp $
---- configure.ac.orig	Mon Feb 11 04:16:51 2013
-+++ configure.ac	Wed Feb 13 14:55:45 2013
+$OpenBSD: patch-configure_ac,v 1.33 2014/02/06 07:44:15 brad Exp $
+--- configure.ac.orig	Wed Jan 22 02:39:49 2014
++++ configure.ac	Sat Feb  1 02:56:17 2014
 @@ -1334,7 +1334,6 @@ if test "x$GCC" = "xyes"; then
  	fi
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure_ac,v 1.32 2013/03/08 01:03:09 brad Exp $
  fi
  
  if test "x$SUNCC" = "xyes"; then
-@@ -1703,6 +1702,11 @@ AM_CONDITIONAL(INSTALL_SSL_CERTIFICATES, test "x$SSL_C
+@@ -1723,6 +1722,11 @@ AM_CONDITIONAL(INSTALL_SSL_CERTIFICATES, test "x$SSL_C
  
  dnl These two are inverses of each other <-- stolen from evolution!
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-configure_ac,v 1.32 2013/03/08 01:03:09 brad Exp $
  AC_ARG_ENABLE(gnutls,
  	[  --enable-gnutls=[yes,no]  attempt to use GnuTLS for SSL support [default=yes]],
  	[enable_gnutls="$enableval"],
-@@ -1713,10 +1717,98 @@ AC_ARG_ENABLE(nss,
+@@ -1733,10 +1737,98 @@ AC_ARG_ENABLE(nss,
  	[enable_nss="$enableval"],
  	[enable_nss="yes"])
  
@@ -122,7 +122,7 @@ $OpenBSD: patch-configure_ac,v 1.32 2013/03/08 01:03:09 brad Exp $
  dnl #
  if test "x$enable_gnutls" != "xno"; then
  	enable_gnutls="no"
-@@ -2114,17 +2206,32 @@ fi
+@@ -2134,17 +2226,32 @@ fi
  
  AM_CONDITIONAL(USE_NSS, test "x$enable_nss" = "xyes")
  

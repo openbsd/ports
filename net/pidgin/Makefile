@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2013/10/31 21:12:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.121 2014/02/06 07:44:15 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
 COMMENT-libpurple= multi-protocol instant messaging library
 
-VERSION=	2.10.7
+VERSION=	2.10.9
 DISTNAME=	pidgin-${VERSION}
 PKGNAME-main=	pidgin-${VERSION}
 PKGNAME-finch=	finch-${VERSION}
@@ -19,14 +19,11 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 EXTRACT_SUFX=	.tar.bz2
 
-REVISION-main=		1
-REVISION-libpurple=	1
-
 SHARED_LIBS=	jabber		0.0 \
 		oscar		0.0 \
-		purple		6.1 \
-		purple-client	6.1 \
-		gnt		6.1 \
+		purple		6.2 \
+		purple-client	6.2 \
+		gnt		6.2 \
 		ymsg		0.0
 
 HOMEPAGE=	http://pidgin.im/
@@ -38,10 +35,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c dbus-1 dbus-glib-1 ffi gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 gthread-2.0 idn m pcre pthread util xml2 z
-WANTLIB-main=	GL X11 Xau Xdmcp ICE SM Xcomposite Xcursor Xdamage Xext \
-		Xfixes Xi Xinerama Xrandr Xrender Xss Xxf86vm atk-1.0 cairo \
-		drm expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
-		gtk-x11-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
+WANTLIB-main=	X11 ICE SM Xcomposite Xcursor Xdamage Xext Xfixes Xi \
+		Xinerama Xrandr Xrender Xss atk-1.0 cairo expat fontconfig \
+		freetype gdk-x11-2.0 gdk_pixbuf-2.0 graphite2 gtk-x11-2.0 \
+		harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
 		png pthread-stubs purple stdc++ xcb-render xcb-shm xcb \
 		${WANTLIB}
 WANTLIB-libpurple= crypto gadu>=5 meanwhile ssl silc>=7 silcclient>=5 \
@@ -77,7 +74,7 @@ MODGCONF2_LIBDEP=	No
 SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.68
+AUTOCONF_VERSION= 2.69
 CONFIGURE_ARGS+= --disable-avahi \
 		 --disable-cap \
 		 --disable-doxygen \
