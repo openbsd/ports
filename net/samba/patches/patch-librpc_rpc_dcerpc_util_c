@@ -1,0 +1,23 @@
+$OpenBSD: patch-librpc_rpc_dcerpc_util_c,v 1.1 2014/02/06 04:33:24 brad Exp $
+
+DCE-RPC fragment length field is incorrectly checked.
+CVE-2013-4408
+
+--- librpc/rpc/dcerpc_util.c.orig	Tue Jan 28 02:16:43 2014
++++ librpc/rpc/dcerpc_util.c	Tue Jan 28 02:16:43 2014
+@@ -48,6 +48,15 @@ uint16_t dcerpc_get_frag_length(const DATA_BLOB *blob)
+ 	}
+ }
+ 
++uint32_t dcerpc_get_call_id(const DATA_BLOB *blob)
++{
++	if (CVAL(blob->data,DCERPC_DREP_OFFSET) & DCERPC_DREP_LE) {
++		return IVAL(blob->data, DCERPC_CALL_ID_OFFSET);
++	} else {
++		return RIVAL(blob->data, DCERPC_CALL_ID_OFFSET);
++	}
++}
++
+ void dcerpc_set_auth_length(DATA_BLOB *blob, uint16_t v)
+ {
+ 	if (CVAL(blob->data,DCERPC_DREP_OFFSET) & DCERPC_DREP_LE) {

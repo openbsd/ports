@@ -1,0 +1,19 @@
+$OpenBSD: patch-lib_async_req_async_sock_c,v 1.1 2014/02/06 04:33:24 brad Exp $
+
+DCE-RPC fragment length field is incorrectly checked.
+CVE-2013-4408
+
+--- lib/async_req/async_sock.c.orig	Wed May  8 04:16:26 2013
++++ lib/async_req/async_sock.c	Tue Jan 28 02:16:43 2014
+@@ -635,6 +635,11 @@ static void read_packet_handler(struct tevent_context 
+ 		return;
+ 	}
+ 
++	if (total + more < total) {
++		tevent_req_error(req, EMSGSIZE);
++		return;
++	}
++
+ 	tmp = talloc_realloc(state, state->buf, uint8_t, total+more);
+ 	if (tevent_req_nomem(tmp, req)) {
+ 		return;

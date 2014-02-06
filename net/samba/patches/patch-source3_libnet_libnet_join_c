@@ -1,0 +1,37 @@
+$OpenBSD: patch-source3_libnet_libnet_join_c,v 1.1 2014/02/06 04:33:24 brad Exp $
+
+DCE-RPC fragment length field is incorrectly checked.
+CVE-2013-4408
+
+--- source3/libnet/libnet_join.c.orig	Wed May  8 04:16:26 2013
++++ source3/libnet/libnet_join.c	Tue Jan 28 02:16:43 2014
+@@ -996,6 +996,14 @@ static NTSTATUS libnet_join_joindomain_rpc(TALLOC_CTX 
+ 		status = result;
+ 		goto done;
+ 	}
++	if (user_rids.count != 1) {
++		status = NT_STATUS_INVALID_NETWORK_RESPONSE;
++		goto done;
++	}
++	if (name_types.count != 1) {
++		status = NT_STATUS_INVALID_NETWORK_RESPONSE;
++		goto done;
++	}
+ 
+ 	if (name_types.ids[0] != SID_NAME_USER) {
+ 		DEBUG(0,("%s is not a user account (type=%d)\n",
+@@ -1365,6 +1373,14 @@ static NTSTATUS libnet_join_unjoindomain_rpc(TALLOC_CT
+ 	}
+ 	if (!NT_STATUS_IS_OK(result)) {
+ 		status = result;
++		goto done;
++	}
++	if (user_rids.count != 1) {
++		status = NT_STATUS_INVALID_NETWORK_RESPONSE;
++		goto done;
++	}
++	if (name_types.count != 1) {
++		status = NT_STATUS_INVALID_NETWORK_RESPONSE;
+ 		goto done;
+ 	}
+ 

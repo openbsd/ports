@@ -1,0 +1,22 @@
+$OpenBSD: patch-source3_smbd_lanman_c,v 1.1 2014/02/06 04:33:25 brad Exp $
+
+DCE-RPC fragment length field is incorrectly checked.
+CVE-2013-4408
+
+--- source3/smbd/lanman.c.orig	Wed May  8 04:16:26 2013
++++ source3/smbd/lanman.c	Tue Jan 28 02:16:43 2014
+@@ -2628,6 +2628,14 @@ static bool api_NetUserGetGroups(struct smbd_server_co
+ 			  nt_errstr(result)));
+ 		goto close_domain;
+ 	}
++	if (rid.count != 1) {
++		status = NT_STATUS_INVALID_NETWORK_RESPONSE;
++		goto close_domain;
++	}
++	if (type.count != 1) {
++		status = NT_STATUS_INVALID_NETWORK_RESPONSE;
++		goto close_domain;
++	}
+ 
+ 	if (type.ids[0] != SID_NAME_USER) {
+ 		DEBUG(10, ("%s is a %s, not a user\n", UserName,

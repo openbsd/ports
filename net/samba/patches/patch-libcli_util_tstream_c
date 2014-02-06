@@ -1,0 +1,19 @@
+$OpenBSD: patch-libcli_util_tstream_c,v 1.1 2014/02/06 04:33:24 brad Exp $
+
+DCE-RPC fragment length field is incorrectly checked.
+CVE-2013-4408
+
+--- libcli/util/tstream.c.orig	Wed May  8 04:16:26 2013
++++ libcli/util/tstream.c	Tue Jan 28 02:16:43 2014
+@@ -129,6 +129,11 @@ static void tstream_read_pdu_blob_done(struct tevent_r
+ 		return;
+ 	}
+ 
++	if (new_buf_size <= old_buf_size) {
++		tevent_req_nterror(req, NT_STATUS_INVALID_BUFFER_SIZE);
++		return;
++	}
++
+ 	buf = talloc_realloc(state, state->pdu_blob.data, uint8_t, new_buf_size);
+ 	if (tevent_req_nomem(buf, req)) {
+ 		return;

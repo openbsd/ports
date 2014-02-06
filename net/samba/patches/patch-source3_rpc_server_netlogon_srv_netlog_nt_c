@@ -1,0 +1,16 @@
+$OpenBSD: patch-source3_rpc_server_netlogon_srv_netlog_nt_c,v 1.1 2014/02/06 04:33:25 brad Exp $
+
+DCE-RPC fragment length field is incorrectly checked.
+CVE-2013-4408
+
+--- source3/rpc_server/netlogon/srv_netlog_nt.c.orig	Wed May  8 04:16:26 2013
++++ source3/rpc_server/netlogon/srv_netlog_nt.c	Tue Jan 28 02:16:43 2014
+@@ -586,7 +586,7 @@ static NTSTATUS samr_find_machine_account(TALLOC_CTX *
+ 		status = NT_STATUS_NO_SUCH_USER;
+ 		goto out;
+ 	}
+-	if (rids.count != types.count) {
++	if (types.count != 1) {
+ 		status = NT_STATUS_INVALID_PARAMETER;
+ 		goto out;
+ 	}

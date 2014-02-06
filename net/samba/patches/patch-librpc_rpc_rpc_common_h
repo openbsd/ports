@@ -1,0 +1,15 @@
+$OpenBSD: patch-librpc_rpc_rpc_common_h,v 1.1 2014/02/06 04:33:24 brad Exp $
+
+DCE-RPC fragment length field is incorrectly checked.
+CVE-2013-4408
+
+--- librpc/rpc/rpc_common.h.orig	Wed May  8 04:16:26 2013
++++ librpc/rpc/rpc_common.h	Tue Jan 28 02:16:43 2014
+@@ -135,6 +135,7 @@ enum dcerpc_transport_t dcerpc_transport_by_tower(cons
+ 
+ void dcerpc_set_frag_length(DATA_BLOB *blob, uint16_t v);
+ uint16_t dcerpc_get_frag_length(const DATA_BLOB *blob);
++uint32_t dcerpc_get_call_id(const DATA_BLOB *blob);
+ void dcerpc_set_auth_length(DATA_BLOB *blob, uint16_t v);
+ uint8_t dcerpc_get_endian_flag(DATA_BLOB *blob);
+ 

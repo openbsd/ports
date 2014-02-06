@@ -1,0 +1,19 @@
+$OpenBSD: patch-source3_lib_util_tsock_c,v 1.1 2014/02/06 04:33:24 brad Exp $
+
+DCE-RPC fragment length field is incorrectly checked.
+CVE-2013-4408
+
+--- source3/lib/util_tsock.c.orig	Wed May  8 04:16:26 2013
++++ source3/lib/util_tsock.c	Tue Jan 28 02:16:43 2014
+@@ -110,6 +110,11 @@ static void tstream_read_packet_done(struct tevent_req
+ 		return;
+ 	}
+ 
++	if (total + more < total) {
++		tevent_req_error(req, EMSGSIZE);
++		return;
++	}
++
+ 	tmp = talloc_realloc(state, state->buf, uint8_t, total+more);
+ 	if (tevent_req_nomem(tmp, req)) {
+ 		return;

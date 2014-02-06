@@ -1,13 +1,39 @@
-$OpenBSD: patch-nsswitch_wbinfo_c,v 1.3 2012/04/10 22:01:20 sthen Exp $
---- nsswitch/wbinfo.c.orig	Sat Apr  7 14:23:20 2012
-+++ nsswitch/wbinfo.c	Tue Apr 10 22:56:36 2012
-@@ -27,9 +27,6 @@
- #include "libwbclient/wbclient.h"
- #include "lib/popt/popt.h"
- #include "../libcli/auth/libcli_auth.h"
--#if (_SAMBA_BUILD_) >= 4
--#include "lib/cmdline/popt_common.h"
--#endif
+$OpenBSD: patch-nsswitch_wbinfo_c,v 1.4 2014/02/06 04:33:24 brad Exp $
+
+DCE-RPC fragment length field is incorrectly checked.
+CVE-2013-4408
+
+--- nsswitch/wbinfo.c.orig	Mon Jan 27 22:29:29 2014
++++ nsswitch/wbinfo.c	Tue Jan 28 02:16:43 2014
+@@ -1377,11 +1377,28 @@ static bool wbinfo_lookup_sids(const char *arg)
+ 	}
  
- #ifdef DBGC_CLASS
- #undef DBGC_CLASS
+ 	for (i=0; i<num_sids; i++) {
++		const char *domain = NULL;
++
+ 		wbcSidToStringBuf(&sids[i], sidstr, sizeof(sidstr));
+ 
+-		d_printf("%s -> %s\\%s %d\n", sidstr,
+-			 domains[names[i].domain_index].short_name,
+-			 names[i].name, names[i].type);
++		if (names[i].domain_index >= num_domains) {
++			domain = "<none>";
++		} else if (names[i].domain_index < 0) {
++			domain = "<none>";
++		} else {
++			domain = domains[names[i].domain_index].short_name;
++		}
++
++		if (names[i].type == WBC_SID_NAME_DOMAIN) {
++			d_printf("%s -> %s %d\n", sidstr,
++				domain,
++				names[i].type);
++		} else {
++			d_printf("%s -> %s%c%s %d\n", sidstr,
++				domain,
++				winbind_separator(),
++				names[i].name, names[i].type);
++		}
+ 	}
+ 	return true;
+ }
