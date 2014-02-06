@@ -1,4 +1,4 @@
-# $OpenBSD: mk.conf.template,v 1.12 2013/11/25 14:16:35 sthen Exp $
+# $OpenBSD: mk.conf.template,v 1.13 2014/02/06 05:12:06 gsoares Exp $
 
 # This file contains some mk.conf entries suitable for ports work.
 #
@@ -24,6 +24,7 @@
 .poison MODGCC3_ARCHES
 .poison MODGCC4_ARCHES
 .poison MODPY_BUILDEP
+.poison NO_TESTS
 .poison NOT_FOR_ARCH
 .poison NOT_FOR_ARCHES
 .poison ONLY_FOR_ARCH
@@ -33,6 +34,8 @@
 .poison RUN_DEPEND
 .poison SEPERATE_BUILD
 .poison SUBIDR
+.poison TEST
+.poison TESTS
 .poison VMEM_WARNING
 .poison WABTLIB
 .poison WATNLIB
