@@ -1,11 +1,11 @@
-$OpenBSD: patch-doc_pcsx_1,v 1.1 2011/09/07 16:00:19 jeremy Exp $
---- doc/pcsx.1.orig	Mon Aug  2 01:39:52 2010
-+++ doc/pcsx.1	Wed Sep  7 08:42:19 2011
-@@ -29,7 +29,6 @@ Loads savestate STATENUM
+$OpenBSD: patch-doc_pcsx_1,v 1.2 2014/02/06 03:10:48 jeremy Exp $
+--- doc/pcsxr.1.orig	Tue Sep 10 02:55:59 2013
++++ doc/pcsxr.1	Tue Feb  4 19:05:51 2014
+@@ -33,7 +33,6 @@ Loads savestate STATENUM
  .TP
  .B -help (-h)
  Display help message
 -.TP
  .SH AUTHOR
- pcsx was written by Linuzappz <linuzappz@pcsx.net>. PCSX-df was written by Ryan Schultz <schultz.ryan@gmail.com> and Andrew Burton <adb@iinet.net.au>.
+ PCSX was written by Linuzappz <linuzappz@pcsx.net>. PCSX-df was written by Ryan Schultz <schultz.ryan@gmail.com> and Andrew Burton <adb@iinet.net.au>. PCSX-Reloaded was written by Wei Mingzhi <weimingzhi@gmail.com>.
  This manual page was written by Ryan Schultz <schultz.ryan@gmail.com> for the Debian Project.
