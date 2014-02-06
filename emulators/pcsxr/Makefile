@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/02/06 03:10:48 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2014/02/06 13:25:17 brad Exp $
 
 SHARED_ONLY =	Yes
 
@@ -32,13 +32,13 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += sndio stdc++ usbhid xcb xcb-dri2 xcb-glx xcb-render
 WANTLIB += xcb-shm z
 
-BUILD_DEPENDS =		devel/autoconf/2.69 \
-			devel/automake/1.14
+BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_SCRIPT =	autogen.sh
-CONFIGURE_ENV =		CPPFLAGS="-I/usr/X11R6/include/" \
-			LDFLAGS="-L/usr/X11R6/lib" \
+CONFIGURE_ENV =		CPPFLAGS="-I${X11BASE}/include" \
+			LDFLAGS="-L${X11BASE}/lib" \
 			AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 			AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
 CONFIGURE_ARGS =	--enable-libcdio --enable-opengl --enable-dynarec=no
