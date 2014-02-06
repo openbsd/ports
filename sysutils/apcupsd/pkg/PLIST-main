@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2014/02/04 18:34:14 kirby Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2014/02/06 06:32:55 kirby Exp $
 @pkgpath sysutils/apcupsd,snmp
 @group bin
 @man man/man5/apcupsd.conf.5
@@ -30,26 +30,20 @@ share/examples/apcupsd/etc/apccontrol
 @mode 750
 @sample ${SYSCONFDIR}/apccontrol
 @mode
+@mode 444
 share/examples/apcupsd/etc/apcupsd.conf
+@mode
 @sample ${SYSCONFDIR}/apcupsd.conf
+@mode 700
 share/examples/apcupsd/etc/changeme
-@mode 700
 @sample ${SYSCONFDIR}/changeme
-@mode
 share/examples/apcupsd/etc/commfailure
-@mode 700
 @sample ${SYSCONFDIR}/commfailure
-@mode
 share/examples/apcupsd/etc/commok
-@mode 700
 @sample ${SYSCONFDIR}/commok
-@mode
 share/examples/apcupsd/etc/offbattery
-@mode 700
 @sample ${SYSCONFDIR}/offbattery
-@mode
 share/examples/apcupsd/etc/onbattery
-@mode 744
 @sample ${SYSCONFDIR}/onbattery
 @mode
 share/examples/apcupsd/rpt/
