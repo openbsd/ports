@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2014/01/03 10:21:01 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2014/02/06 02:33:00 bcallah Exp $
 
-GH_VER =	0.21
+GH_VER =	0.31
 COMMENT =	curses-based front-end for livestreamer
 DISTNAME =	livestreamer-curses-${GH_VER}
 DISTFILES =	${DISTNAME}{v${GH_VER}}${EXTRACT_SUFX}
@@ -33,5 +33,9 @@ do-install:
 		${WRKINST}/${MODPY_SITEPKG}/livestreamer-curses.py
 	${SUBST_CMD} -c -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
 		${FILESDIR}/livestreamer-curses ${PREFIX}/bin/livestreamer-curses
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/livestreamer-curses
+	${INSTALL_DATA} ${WRKSRC}/README.md ${PREFIX}/share/doc/livestreamer-curses
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/livestreamer-curses
+	${INSTALL_DATA} ${WRKSRC}/livestreamer-cursesrc.sample ${PREFIX}/share/examples/livestreamer-curses
 
 .include <bsd.port.mk>

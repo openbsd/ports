@@ -1,4 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/01/03 01:36:39 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/02/06 02:33:00 bcallah Exp $
 bin/livestreamer-curses
 lib/python${MODPY_VERSION}/site-packages/livestreamer-curses.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer-curses.pyc
+share/doc/livestreamer-curses/
+share/doc/livestreamer-curses/README.md
+share/examples/livestreamer-curses/
+share/examples/livestreamer-curses/livestreamer-cursesrc.sample
