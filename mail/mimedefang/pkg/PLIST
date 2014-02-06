@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.12 2013/03/28 14:27:19 ajacoutot Exp $
-@comment homedir is needed force sa-learn under the ~/.spamassassin
+@comment $OpenBSD: PLIST,v 1.13 2014/02/06 16:00:44 ajacoutot Exp $
+@comment non-volatile homedir needed for sa-learn(1), MD sets user_dir to QUARANTINEDIR
 @newgroup _mdefang:570
-@newuser _mdefang:570:_mdefang:daemon:MIMEDefang:/var/spool/MD-Quarantine:/sbin/nologin
+@newuser _mdefang:570:_mdefang:daemon:MIMEDefang User:/var/spool/MD-Quarantine:/sbin/nologin
 @extraunexec rm -rf /var/spool/MIMEDefang/*
 @extraunexec rm -rf /var/spool/MD-Quarantine/*
 @bin bin/md-mx-ctrl
