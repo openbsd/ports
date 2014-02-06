@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2012/08/22 09:55:01 edd Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2014/02/06 17:32:27 edd Exp $
 %%SHARED%%
 @bin bin/acyclic
 @bin bin/bcomps
@@ -14,6 +14,8 @@ bin/dotty
 bin/fdp
 @bin bin/gc
 @bin bin/gml2gv
+@bin bin/graphml2gv
+@bin bin/gv2gml
 bin/gv2gxl
 @bin bin/gvcolor
 @bin bin/gvgen
@@ -43,7 +45,6 @@ include/graphviz/cdt.h
 include/graphviz/cgraph.h
 include/graphviz/color.h
 include/graphviz/geom.h
-include/graphviz/graph.h
 include/graphviz/graphviz_version.h
 include/graphviz/gv.cpp
 include/graphviz/gv.i
@@ -62,58 +63,43 @@ include/graphviz/gvpr.h
 include/graphviz/pack.h
 include/graphviz/pathgeom.h
 include/graphviz/pathplan.h
-include/graphviz/textpara.h
+include/graphviz/textspan.h
 include/graphviz/types.h
 include/graphviz/usershape.h
 include/graphviz/xdot.h
 lib/graphviz/
-lib/graphviz/R/
 lib/graphviz/config6
-lib/graphviz/go/
 lib/graphviz/guile/
-@comment lib/graphviz/guile/libgv_guile.a
-@comment lib/graphviz/guile/libgv_guile.la
-lib/graphviz/io/
-lib/graphviz/java/
+lib/graphviz/guile/libgv_guile.a
+lib/graphviz/guile/libgv_guile.la
 lib/graphviz/libgvplugin_core.a
 lib/graphviz/libgvplugin_core.la
 lib/graphviz/libgvplugin_dot_layout.a
 lib/graphviz/libgvplugin_dot_layout.la
 lib/graphviz/libgvplugin_gd.a
 lib/graphviz/libgvplugin_gd.la
-lib/graphviz/libgvplugin_gdk_pixbuf.a
-lib/graphviz/libgvplugin_gdk_pixbuf.la
+lib/graphviz/libgvplugin_gdk.a
+lib/graphviz/libgvplugin_gdk.la
 lib/graphviz/libgvplugin_gtk.a
 lib/graphviz/libgvplugin_gtk.la
 lib/graphviz/libgvplugin_neato_layout.a
 lib/graphviz/libgvplugin_neato_layout.la
 lib/graphviz/libgvplugin_pango.a
 lib/graphviz/libgvplugin_pango.la
+lib/graphviz/libgvplugin_poppler.a
+lib/graphviz/libgvplugin_poppler.la
 lib/graphviz/libgvplugin_rsvg.a
 lib/graphviz/libgvplugin_rsvg.la
 lib/graphviz/libgvplugin_xlib.a
 lib/graphviz/libgvplugin_xlib.la
-lib/graphviz/lua/
-lib/graphviz/ocaml/
 lib/graphviz/perl/
 lib/graphviz/perl/gv.pm
-@comment lib/graphviz/perl/libgv_perl.a
-@comment lib/graphviz/perl/libgv_perl.la
-lib/graphviz/php/
-lib/graphviz/python/
-lib/graphviz/python23/
-lib/graphviz/python24/
-lib/graphviz/python25/
-lib/graphviz/python26/
-lib/graphviz/python27/
-lib/graphviz/ruby/
-lib/graphviz/sharp/
+lib/graphviz/perl/libgv_perl.a
+lib/graphviz/perl/libgv_perl.la
 lib/libcdt.a
 lib/libcdt.la
 lib/libcgraph.a
 lib/libcgraph.la
-lib/libgraph.a
-lib/libgraph.la
 lib/libgvc.a
 lib/libgvc.la
 lib/libgvpr.a
@@ -124,7 +110,6 @@ lib/libxdot.a
 lib/libxdot.la
 lib/pkgconfig/libcdt.pc
 lib/pkgconfig/libcgraph.pc
-lib/pkgconfig/libgraph.pc
 lib/pkgconfig/libgvc.pc
 lib/pkgconfig/libgvpr.pc
 lib/pkgconfig/libpathplan.pc
@@ -133,8 +118,8 @@ lib/tcl/
 lib/tcl/graphviz/
 lib/tcl/graphviz/libgdtclft.a
 lib/tcl/graphviz/libgdtclft.la
-@comment lib/tcl/graphviz/libgv_tcl.a
-@comment lib/tcl/graphviz/libgv_tcl.la
+lib/tcl/graphviz/libgv_tcl.a
+lib/tcl/graphviz/libgv_tcl.la
 lib/tcl/graphviz/libtcldot.a
 lib/tcl/graphviz/libtcldot.la
 lib/tcl/graphviz/libtcldot_builtin.a
@@ -144,8 +129,8 @@ lib/tcl/graphviz/libtclplan.la
 lib/tcl/graphviz/libtkspline.a
 lib/tcl/graphviz/libtkspline.la
 lib/tcl/graphviz/pkgIndex.tcl
-lib/tcl${MODTCL_VERSION}/
-lib/tcl${MODTCL_VERSION}/graphviz
+lib/tcl${MODTK_VERSION}/
+lib/tcl${MODTK_VERSION}/graphviz
 ${P5ARCH}/
 ${P5ARCH}/gv.pm
 @man man/man1/acyclic.1
@@ -160,9 +145,10 @@ ${P5ARCH}/gv.pm
 @man man/man1/fdp.1
 @man man/man1/gc.1
 @man man/man1/gml2gv.1
+@man man/man1/graphml2gv.1
+@man man/man1/gv2gml.1
 @man man/man1/gv2gxl.1
 @man man/man1/gvcolor.1
-@man man/man1/gvedit.1
 @man man/man1/gvgen.1
 @man man/man1/gvmap.1
 @man man/man1/gvmap.sh.1
@@ -179,7 +165,6 @@ ${P5ARCH}/gv.pm
 @man man/man1/prune.1
 @man man/man1/sccmap.1
 @man man/man1/sfdp.1
-@man man/man1/smyrna.1
 @man man/man1/tred.1
 @man man/man1/twopi.1
 @man man/man1/unflatten.1
@@ -188,11 +173,11 @@ ${P5ARCH}/gv.pm
 @man man/man3/cgraph.3
 @man man/man3/expr.3
 man/man3/gdtclft.3tcl
-@man man/man3/graph.3
 man/man3/gv.3guile
 man/man3/gv.3perl
 man/man3/gv.3tcl
 @man man/man3/gvc.3
+@man man/man3/gvpr.3
 @man man/man3/pack.3
 @man man/man3/pathplan.3
 man/man3/tcldot.3tcl
@@ -210,7 +195,6 @@ share/doc/graphviz/cpl1.0.txt
 share/doc/graphviz/fontfaq.txt
 share/doc/graphviz/html/
 share/doc/graphviz/html/FAQ.html
-share/doc/graphviz/html/Gdtclft2.2.5.example.png
 share/doc/graphviz/html/Mcircle.gif
 share/doc/graphviz/html/Mdiamond.gif
 share/doc/graphviz/html/Msquare.gif
@@ -278,6 +262,13 @@ share/doc/graphviz/html/both.gif
 share/doc/graphviz/html/box.gif
 share/doc/graphviz/html/box3d.gif
 share/doc/graphviz/html/build.html
+share/doc/graphviz/html/c_bold.png
+share/doc/graphviz/html/c_dashed.png
+share/doc/graphviz/html/c_dotted.png
+share/doc/graphviz/html/c_filled.png
+share/doc/graphviz/html/c_rounded.png
+share/doc/graphviz/html/c_solid.png
+share/doc/graphviz/html/c_striped.png
 share/doc/graphviz/html/char.html
 share/doc/graphviz/html/circle.gif
 share/doc/graphviz/html/colorlist.gif
@@ -288,11 +279,28 @@ share/doc/graphviz/html/constraint.gif
 share/doc/graphviz/html/diamond.gif
 share/doc/graphviz/html/doublecircle.gif
 share/doc/graphviz/html/doubleoctagon.gif
+share/doc/graphviz/html/e_bold.png
+share/doc/graphviz/html/e_dashed.png
+share/doc/graphviz/html/e_dotted.png
+share/doc/graphviz/html/e_solid.png
 share/doc/graphviz/html/egg.gif
 share/doc/graphviz/html/ellipse.gif
 share/doc/graphviz/html/fill.gif
 share/doc/graphviz/html/folder.gif
 share/doc/graphviz/html/forward.gif
+share/doc/graphviz/html/g_lin0.png
+share/doc/graphviz/html/g_lin180.png
+share/doc/graphviz/html/g_lin270.png
+share/doc/graphviz/html/g_lin360.png
+share/doc/graphviz/html/g_lin45.png
+share/doc/graphviz/html/g_lin90.png
+share/doc/graphviz/html/g_rad0.png
+share/doc/graphviz/html/g_rad180.png
+share/doc/graphviz/html/g_rad270.png
+share/doc/graphviz/html/g_rad360.png
+share/doc/graphviz/html/g_rad45.png
+share/doc/graphviz/html/g_rad90.png
+share/doc/graphviz/html/gdtclft.entities.example.png
 share/doc/graphviz/html/hexagon.gif
 share/doc/graphviz/html/house.gif
 share/doc/graphviz/html/html1.gif
@@ -308,11 +316,29 @@ share/doc/graphviz/html/invtrapezium.gif
 share/doc/graphviz/html/invtriangle.gif
 share/doc/graphviz/html/lang.html
 share/doc/graphviz/html/mrecord.gif
+share/doc/graphviz/html/n_bold.png
+share/doc/graphviz/html/n_dashed.png
+share/doc/graphviz/html/n_diagonals.png
+share/doc/graphviz/html/n_dotted.png
+share/doc/graphviz/html/n_filled.png
+share/doc/graphviz/html/n_rounded.png
+share/doc/graphviz/html/n_solid.png
+share/doc/graphviz/html/n_striped.png
+share/doc/graphviz/html/n_wedged.png
 share/doc/graphviz/html/nohead.gif
 share/doc/graphviz/html/none.gif
+share/doc/graphviz/html/none_back.png
+share/doc/graphviz/html/none_both.png
+share/doc/graphviz/html/none_forward.png
+share/doc/graphviz/html/none_none.png
+share/doc/graphviz/html/normal_back.png
+share/doc/graphviz/html/normal_both.png
+share/doc/graphviz/html/normal_forward.png
+share/doc/graphviz/html/normal_none.png
 share/doc/graphviz/html/note.gif
 share/doc/graphviz/html/octagon.gif
 share/doc/graphviz/html/output.html
+share/doc/graphviz/html/oval.gif
 share/doc/graphviz/html/parallelogram.gif
 share/doc/graphviz/html/pentagon.gif
 share/doc/graphviz/html/plaintext.gif
@@ -329,6 +355,12 @@ share/doc/graphviz/html/sdlshapes.jpg
 share/doc/graphviz/html/sdlshapes.png
 share/doc/graphviz/html/septagon.gif
 share/doc/graphviz/html/shapes.html
+share/doc/graphviz/html/spline_curved.png
+share/doc/graphviz/html/spline_line.png
+share/doc/graphviz/html/spline_none.png
+share/doc/graphviz/html/spline_ortho.png
+share/doc/graphviz/html/spline_polyline.png
+share/doc/graphviz/html/spline_spline.png
 share/doc/graphviz/html/square.gif
 share/doc/graphviz/html/tab.gif
 share/doc/graphviz/html/tcldot.html
@@ -336,9 +368,11 @@ share/doc/graphviz/html/todo.html
 share/doc/graphviz/html/trapezium.gif
 share/doc/graphviz/html/triangle.gif
 share/doc/graphviz/html/tripleoctagon.gif
+share/doc/graphviz/html/underline.gif
 share/doc/graphviz/html/winbuild.html
 share/doc/graphviz/latex_suggestions.txt
 share/doc/graphviz/pdf/
+share/doc/graphviz/pdf/Agraph.pdf
 share/doc/graphviz/pdf/acyclic.1.pdf
 share/doc/graphviz/pdf/bcomps.1.pdf
 share/doc/graphviz/pdf/ccomps.1.pdf
@@ -357,19 +391,20 @@ share/doc/graphviz/pdf/fdp.1.pdf
 share/doc/graphviz/pdf/gc.1.pdf
 share/doc/graphviz/pdf/gdtclft.3tcl.pdf
 share/doc/graphviz/pdf/gml2gv.1.pdf
-share/doc/graphviz/pdf/graph.3.pdf
+share/doc/graphviz/pdf/graphml2gv.1.pdf
 share/doc/graphviz/pdf/gv.3guile.pdf
 share/doc/graphviz/pdf/gv.3perl.pdf
 share/doc/graphviz/pdf/gv.3tcl.pdf
+share/doc/graphviz/pdf/gv2gml.1.pdf
 share/doc/graphviz/pdf/gv2gxl.1.pdf
 share/doc/graphviz/pdf/gvc.3.pdf
 share/doc/graphviz/pdf/gvcolor.1.pdf
-share/doc/graphviz/pdf/gvedit.1.pdf
 share/doc/graphviz/pdf/gvgen.1.pdf
 share/doc/graphviz/pdf/gvmap.1.pdf
 share/doc/graphviz/pdf/gvmap.sh.1.pdf
 share/doc/graphviz/pdf/gvpack.1.pdf
 share/doc/graphviz/pdf/gvpr.1.pdf
+share/doc/graphviz/pdf/gvpr.3.pdf
 share/doc/graphviz/pdf/gxl2gv.1.pdf
 share/doc/graphviz/pdf/lefty.1.pdf
 share/doc/graphviz/pdf/leftyguide.pdf
@@ -386,7 +421,6 @@ share/doc/graphviz/pdf/pathplan.3.pdf
 share/doc/graphviz/pdf/prune.pdf
 share/doc/graphviz/pdf/sccmap.1.pdf
 share/doc/graphviz/pdf/sfdp.1.pdf
-share/doc/graphviz/pdf/smyrna.1.pdf
 share/doc/graphviz/pdf/smyrna.pdf
 share/doc/graphviz/pdf/tcldot.3tcl.pdf
 share/doc/graphviz/pdf/tkspline.3tk.pdf
@@ -400,9 +434,9 @@ share/examples/graphviz/
 share/examples/graphviz/demo/
 share/examples/graphviz/demo/doted.tcl
 share/examples/graphviz/demo/doted.tcl.README
+share/examples/graphviz/demo/entities.html
 share/examples/graphviz/demo/entities.tcl
 share/examples/graphviz/demo/entities.tcl.README
-share/examples/graphviz/demo/entities.tcl.html
 share/examples/graphviz/demo/gcat.tcl
 share/examples/graphviz/demo/gcat.tcl.README
 share/examples/graphviz/demo/pathplan.tcl
@@ -431,6 +465,7 @@ share/examples/graphviz/graphs/directed/abstract.gv
 share/examples/graphviz/graphs/directed/alf.gv
 share/examples/graphviz/graphs/directed/arrows.gv
 share/examples/graphviz/graphs/directed/awilliams.gv
+share/examples/graphviz/graphs/directed/biological.gv
 share/examples/graphviz/graphs/directed/clust.gv
 share/examples/graphviz/graphs/directed/clust1.gv
 share/examples/graphviz/graphs/directed/clust2.gv
@@ -507,6 +542,36 @@ share/graphviz/doc/html/schema/
 share/graphviz/doc/html/schema/arguments.xml
 share/graphviz/doc/html/schema/attributes.xml
 share/graphviz/doc/html/schema/attributes.xslt
-share/graphviz/examples/
-share/graphviz/gvedit/
-share/graphviz/smyrna/
+share/graphviz/gvpr/
+share/graphviz/gvpr/addranks
+share/graphviz/gvpr/addrings
+share/graphviz/gvpr/anon
+share/graphviz/gvpr/attr
+share/graphviz/gvpr/bb
+share/graphviz/gvpr/bbox
+share/graphviz/gvpr/chkclusters
+share/graphviz/gvpr/cliptree
+share/graphviz/gvpr/col
+share/graphviz/gvpr/collapse
+share/graphviz/gvpr/color
+share/graphviz/gvpr/cycle
+share/graphviz/gvpr/dechain
+share/graphviz/gvpr/deghist
+share/graphviz/gvpr/deledges
+share/graphviz/gvpr/delmulti
+share/graphviz/gvpr/delnodes
+share/graphviz/gvpr/depath
+share/graphviz/gvpr/dijkstra
+share/graphviz/gvpr/flatten
+share/graphviz/gvpr/get-layers-list
+share/graphviz/gvpr/group
+share/graphviz/gvpr/indent
+share/graphviz/gvpr/knbhd
+share/graphviz/gvpr/maxdeg
+share/graphviz/gvpr/path
+share/graphviz/gvpr/rotate
+share/graphviz/gvpr/scale
+share/graphviz/gvpr/scalexy
+share/graphviz/gvpr/span
+share/graphviz/gvpr/topon
+share/graphviz/gvpr/treetoclust

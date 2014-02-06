@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.54 2014/01/07 10:01:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2014/02/06 17:32:27 edd Exp $
 
 COMMENT-main=	graph drawing software
 
-DISTNAME=	graphviz-2.28.0
+DISTNAME=	graphviz-2.36.0
 PKGNAME-main=	${DISTNAME}
 CATEGORIES=	math devel graphics
 
@@ -22,21 +22,21 @@ SHARED_LIBS += gvplugin_dot_layout	1.0 # 6.0
 SHARED_LIBS += gvplugin_neato_layout	1.0 # 6.0
 SHARED_LIBS += gvplugin_xlib		1.0 # 6.0
 SHARED_LIBS += gvplugin_gtk		1.0 # 6.0
-SHARED_LIBS += gvplugin_gdk_pixbuf	0.0 # 6.0
 SHARED_LIBS += gvplugin_rsvg		0.0 # 6.0
+SHARED_LIBS += gvplugin_gdk		0.0 # 6.0
+SHARED_LIBS += gvplugin_poppler		0.0 # 6.0
 
 SHARED_LIBS += cdt			1.0 # 5.0
-SHARED_LIBS += graph			2.0 # 5.0
 SHARED_LIBS += pathplan			2.0 # 4.0
 SHARED_LIBS += gvc			1.0 # 6.0
 SHARED_LIBS += cgraph			0.0 # 6.0
 SHARED_LIBS += gvpr			0.0 # 2.0
 SHARED_LIBS += xdot			0.0 # 4.0
-SHARED_LIBS += gdtclft			2.0 # unknown
-SHARED_LIBS += tcldot			2.0 # unknown
-SHARED_LIBS += tcldot_builtin		2.0 # unknown
-SHARED_LIBS += tclplan			2.0 # unknown
-SHARED_LIBS += tkspline			2.0 # unknown
+SHARED_LIBS += gdtclft			3.0 # unknown
+SHARED_LIBS += tcldot			3.0 # unknown
+SHARED_LIBS += tcldot_builtin		3.0 # unknown
+SHARED_LIBS += tclplan			3.0 # unknown
+SHARED_LIBS += tkspline			3.0 # unknown
 
 HOMEPAGE=	http://www.graphviz.org/
 
@@ -48,27 +48,31 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=	devel/gettext \
 		x11/tk \
 		perl
-LIB_DEPENDS=	graphics/jpeg \
+LIB_DEPENDS =	graphics/jpeg \
 		graphics/png \
 		devel/libtool,-ltdl \
 		graphics/gd>=2.0.34 \
 		x11/gtk+2 \
 		www/libcroco \
 		x11/gnome/librsvg \
-		${_MODTK_SPEC}:x11/tk/${MODTK_VERSION}
+		graphics/graphite2 \
+		devel/harfbuzz \
+		print/poppler \
+		${MODTK_LIB_DEPENDS}
 RUN_DEPENDS=	lang/guile
 BUILD_DEPENDS=	devel/swig \
 		lang/guile
-TEST_DEPENDS=math/graphviz
+TEST_DEPENDS =	${FULLPKGNAME}:math/graphviz
 
-WANTLIB += GL ICE SM X11 Xau Xaw Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xmu Xpm Xrandr Xrender Xt Xxf86vm
-WANTLIB += atk-1.0 c cairo croco-0.6 drm expat ffi fontconfig
+WANTLIB += ICE SM X11 Xau Xaw Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xft Xi Xinerama Xmu Xpm Xrandr Xrender
+WANTLIB += Xss Xt atk-1.0 c cairo croco-0.6 expat ffi fontconfig
 WANTLIB += freetype gd gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg
-WANTLIB += ltdl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs rsvg-2 stdc++ xcb xcb-render
-WANTLIB += xcb-shm xml2 z ${MODTK_LIB} Xft Xss perl util
+WANTLIB += gmodule-2.0 gmp gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
+WANTLIB += guile harfbuzz jpeg lcms2 ltdl m openjpeg pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre perl pixman-1 png
+WANTLIB += poppler poppler-glib pthread pthread-stubs rsvg-2 stdc++
+WANTLIB += tiff tk85 util xcb xcb-render xcb-shm xml2 z
 
 USE_GMAKE =	Yes
 USE_GROFF =	Yes
@@ -130,9 +134,16 @@ post-build:
 .endfor
 
 post-install:
-	@# install pre-generated config6 to avoid @exec/@unexec-delete
+# install pre-generated config6 to avoid @exec/@unexec-delete
 	${SUBST_CMD} -c ${FILESDIR}/config6 ${PREFIX}/lib/graphviz/config6
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/graphviz/config6
+# Once upon a time, graphviz used to install the symlink:
+# ${PREFIX}/lib/tcl${MODTCL_VERSION}/graphviz -> ${PREFIX}/lib/tcl/graphviz
+# Now it installs a copy of the dir, however, 'pkg_add -u' can't update a
+# symlink to a dir, so we manually hack back the old symlink.
+	rm -Rf ${PREFIX}/lib/tcl${MODTCL_VERSION}/graphviz
+	ln -s ${TRUEPREFIX}/lib/tcl/graphviz \
+		${PREFIX}/lib/tcl${MODTCL_VERSION}/graphviz
 
 # Local tests for OpenBSD
 # Can't run built in tests, as requires ksh93 (some specific arguments

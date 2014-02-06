@@ -1,27 +1,27 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.2 2012/08/22 09:55:01 edd Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.3 2014/02/06 17:32:27 edd Exp $
 lib/graphviz/guile/libgv_guile.so
+lib/graphviz/perl/gv.so
+lib/graphviz/perl/libgv_perl.so
+lib/tcl/graphviz/libgv_tcl.so
+${P5ARCH}/gv.so
 @lib lib/graphviz/libgvplugin_core.so.${LIBgvplugin_core_VERSION}
 @lib lib/graphviz/libgvplugin_dot_layout.so.${LIBgvplugin_dot_layout_VERSION}
 @lib lib/graphviz/libgvplugin_gd.so.${LIBgvplugin_gd_VERSION}
-@lib lib/graphviz/libgvplugin_gdk_pixbuf.so.${LIBgvplugin_gdk_pixbuf_VERSION}
+@lib lib/graphviz/libgvplugin_gdk.so.${LIBgvplugin_gdk_VERSION}
 @lib lib/graphviz/libgvplugin_gtk.so.${LIBgvplugin_gtk_VERSION}
 @lib lib/graphviz/libgvplugin_neato_layout.so.${LIBgvplugin_neato_layout_VERSION}
 @lib lib/graphviz/libgvplugin_pango.so.${LIBgvplugin_pango_VERSION}
+@lib lib/graphviz/libgvplugin_poppler.so.${LIBgvplugin_poppler_VERSION}
 @lib lib/graphviz/libgvplugin_rsvg.so.${LIBgvplugin_rsvg_VERSION}
 @lib lib/graphviz/libgvplugin_xlib.so.${LIBgvplugin_xlib_VERSION}
-lib/graphviz/perl/gv.so
-lib/graphviz/perl/libgv_perl.so
 @lib lib/libcdt.so.${LIBcdt_VERSION}
 @lib lib/libcgraph.so.${LIBcgraph_VERSION}
-@lib lib/libgraph.so.${LIBgraph_VERSION}
 @lib lib/libgvc.so.${LIBgvc_VERSION}
 @lib lib/libgvpr.so.${LIBgvpr_VERSION}
 @lib lib/libpathplan.so.${LIBpathplan_VERSION}
 @lib lib/libxdot.so.${LIBxdot_VERSION}
 @lib lib/tcl/graphviz/libgdtclft.so.${LIBgdtclft_VERSION}
-lib/tcl/graphviz/libgv_tcl.so
 @lib lib/tcl/graphviz/libtcldot.so.${LIBtcldot_VERSION}
 @lib lib/tcl/graphviz/libtcldot_builtin.so.${LIBtcldot_builtin_VERSION}
 @lib lib/tcl/graphviz/libtclplan.so.${LIBtclplan_VERSION}
 @lib lib/tcl/graphviz/libtkspline.so.${LIBtkspline_VERSION}
-${P5ARCH}/gv.so

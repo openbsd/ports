@@ -1,17 +1,18 @@
-$OpenBSD: patch-cmd_dot_Makefile_in,v 1.2 2012/08/22 09:55:01 edd Exp $
+$OpenBSD: patch-cmd_dot_Makefile_in,v 1.3 2014/02/06 17:32:27 edd Exp $
 
 Add pthread linkage or '@exec dot -c' will fail with "file not found"
 when trying to dlopen(). Not because the file is missing, but because
 there is a linker error. Sigh, obvious isn't it?
 
---- cmd/dot/Makefile.in.orig2	Sat May  7 04:27:39 2011
-+++ cmd/dot/Makefile.in	Mon Jun 18 12:39:40 2012
-@@ -570,7 +570,7 @@ man_MANS = dot.1 osage.1 patchwork.1
- pdf_DATA = dot.1.pdf osage.1.pdf patchwork.1.pdf
- dot_SOURCES = dot.c no_builtins.c
+--- cmd/dot/Makefile.in.orig2	Sun Feb  2 23:23:31 2014
++++ cmd/dot/Makefile.in	Sun Feb  2 23:24:22 2014
+@@ -615,7 +615,8 @@ dot_SOURCES = dot.c no_builtins.c
  dot_CPPFLAGS = $(AM_CPPFLAGS) -DDEMAND_LOADING=1
--dot_LDADD = $(top_builddir)/lib/gvc/libgvc.la
-+dot_LDADD = $(top_builddir)/lib/gvc/libgvc.la -pthread
+ dot_LDADD = \
+ 	$(top_builddir)/lib/gvc/libgvc.la \
+-	$(top_builddir)/lib/cgraph/libcgraph.la
++	$(top_builddir)/lib/cgraph/libcgraph.la \
++	-pthread
+ 
  dot_static_SOURCES = dot.c dot_builtins.c
  dot_static_CPPFLAGS = $(AM_CPPFLAGS) -DDEMAND_LOADING=0
- dot_static_LDADD =  \

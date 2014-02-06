@@ -1,13 +1,22 @@
-$OpenBSD: patch-config_config_perl_pl,v 1.1 2012/08/22 09:55:01 edd Exp $
+$OpenBSD: patch-config_config_perl_pl,v 1.2 2014/02/06 17:32:27 edd Exp $
 
 Correctly detect install directory
 
---- config/config_perl.pl.orig2	Wed Jun 20 10:54:19 2012
-+++ config/config_perl.pl	Wed Jun 20 10:55:28 2012
-@@ -11,5 +11,5 @@ if ($ARGV[0] eq "PERL_INCLUDES") {
+--- config/config_perl.pl.orig2	Sat Jan 11 22:59:44 2014
++++ config/config_perl.pl	Mon Feb  3 10:19:35 2014
+@@ -11,14 +11,5 @@ if ($ARGV[0] eq "PERL_INCLUDES") {
  	print "-I$archlib/CORE";
  }
  if ($ARGV[0] eq "PERL_INSTALL_DIR") {
--	print "$Config{vendorarch}"
-+	print "$Config{installsitearch}"
+-
+-	my $d;
+-
+-	foreach $d (qw(installvendorarch vendorarch installsitearch sitearch)) {
+-		if (exists($Config{$d}) and defined($Config{$d}) and
+-			($Config{$d} ne '') ) {
+-			print "$Config{$d}";
+-			last;
+-		}
+-	}
++	print "$Config{installsitearch}";
  }

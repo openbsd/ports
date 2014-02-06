@@ -1,14 +1,14 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2012/08/22 09:55:01 edd Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2014/02/06 17:32:27 edd Exp $
 
-A construction that is not compatible with BSD grep.
+Fix grep syntax.
 
---- Makefile.in.orig2	Sun Jun 17 22:55:39 2012
-+++ Makefile.in	Sun Jun 17 22:56:39 2012
-@@ -1179,7 +1179,7 @@ dist-hook:
+--- Makefile.in.orig2	Sun Feb  2 17:33:01 2014
++++ Makefile.in	Sun Feb  2 17:33:08 2014
+@@ -1246,7 +1246,7 @@ dist-hook:
  	find $(distdir) -name CVS -type d -prune -exec rm -rf {} \;
  
- graphviz_version.h: config.h
--	$(GREP) 'PACKAGE\|VERSION\|GVPLUGIN' config.h > graphviz_version.h
+ $(top_builddir)/graphviz_version.h: config.h
+-	$(GREP) 'PACKAGE\|VERSION\|GVPLUGIN' config.h > $(top_builddir)/graphviz_version.h
 +	$(GREP) -E '(PACKAGE|VERSION|GVPLUGIN)' config.h > graphviz_version.h
  
  .PHONY: rpm

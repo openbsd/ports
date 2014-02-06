@@ -1,10 +1,10 @@
-$OpenBSD: patch-lib_gvc_gvconfig_c,v 1.3 2012/08/22 09:55:01 edd Exp $
+$OpenBSD: patch-lib_gvc_gvconfig_c,v 1.4 2014/02/06 17:32:27 edd Exp $
 
 Plugin scanner fails to find our libs because we overide lib version.
 
---- lib/gvc/gvconfig.c.orig2	Mon Jun 18 11:57:45 2012
-+++ lib/gvc/gvconfig.c	Mon Jun 18 11:59:53 2012
-@@ -385,6 +385,8 @@ static void config_rescan(GVC_t *gvc, char *config_pat
+--- lib/gvc/gvconfig.c.orig2	Sat Jan 11 22:59:44 2014
++++ lib/gvc/gvconfig.c	Sun Feb  2 17:23:25 2014
+@@ -421,6 +421,8 @@ static void config_rescan(GVC_t *gvc, char *config_pat
  
  #if defined(WIN32) && !defined(__MINGW32__) && !defined(__CYGWIN__)
      sprintf(config_re,"%s%s", plugin_re_beg, plugin_re_end);
