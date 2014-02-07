@@ -1,9 +1,12 @@
-$OpenBSD: patch-src_gui_c,v 1.39 2014/01/13 11:28:03 dcoppa Exp $
+$OpenBSD: patch-src_gui_c,v 1.40 2014/02/07 10:26:38 dcoppa Exp $
 
 Fix problem with remembered softvol not being loaded
 
+Tracker size adjustments so that it does not look wrong in gecko-mediaplayer
+(upstream svn revision r2467)
+
 --- src/gui.c.orig	Fri Jan  3 18:08:33 2014
-+++ src/gui.c	Mon Jan 13 11:27:17 2014
++++ src/gui.c	Fri Feb  7 11:18:01 2014
 @@ -1708,11 +1708,6 @@ gboolean set_volume(void *data)
          if (!(softvol || audio_device.type == AUDIO_TYPE_SOFTVOL)) {
              gm_audio_get_volume(&audio_device);
@@ -16,3 +19,24 @@ Fix problem with remembered softvol not being loaded
          gm_log(verbose, G_LOG_LEVEL_DEBUG, "data is null new volume is %f", audio_device.volume);
  #ifdef GTK2_12_ENABLED
          gtk_scale_button_set_value(GTK_SCALE_BUTTON(vol_slider), audio_device.volume);
+@@ -7099,7 +7094,7 @@ void player_media_state_changed_callback(GtkButton * b
+         icon_start = "media-playback-start-symbolic";
+ #endif
+ 
+-    gm_log(verbose, G_LOG_LEVEL_MESSAGE, "in media state change with state = %s dontplaynext = %i",
++    gm_log(verbose, G_LOG_LEVEL_DEBUG, "in media state change with state = %s dontplaynext = %i",
+            gmtk_media_state_to_string(media_state), dontplaynext);
+     switch (media_state) {
+         // mplayer is dead, need the next item off the playlist
+@@ -8535,7 +8530,10 @@ void show_window(gint windowid)
+                 gtk_window_resize(GTK_WINDOW(window), window_x, window_y);
+                 gtk_widget_set_size_request(window, window_x, window_y);
+             }
+-        }
++        } else {
++			gtk_widget_set_size_request(window,-1,-1);
++			gtk_widget_set_size_request(GTK_WIDGET(tracker), 100, -1);
++		}
+ 
+     } else {
+ 
