@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.6 2013/03/28 14:27:19 ajacoutot Exp $
+$OpenBSD: README,v 1.7 2014/02/07 10:32:36 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -25,9 +25,9 @@ Improving performance
 On a busy mail server, it is advised to have the spool directory in
 virtual memory (i.e. ramdisk). This can be achieve by adding the
 following line to fstab(5):
-swap /var/spool/MIMEDefang mfs rw,nodev,nosuid,noatime,-s=512000 0 0
+swap /var/spool/MIMEDefang tmpfs rw,nodev,nosuid,-s256M,-u570,-g570,-m0750 0 0
 
-This will create a 256M mfs(8) filesystem under /var/spool/MIMEDefang.
+This will create a 256M tmpfs filesystem under /var/spool/MIMEDefang.
 
 SpamAssassin
 ------------
