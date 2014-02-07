@@ -1,12 +1,12 @@
-$OpenBSD: patch-plugins_vorbis_Makefile_am,v 1.1 2012/08/10 17:25:01 shadchin Exp $
---- plugins/vorbis/Makefile.am.orig	Thu Aug  9 23:51:09 2012
-+++ plugins/vorbis/Makefile.am	Thu Aug  9 23:51:15 2012
+$OpenBSD: patch-plugins_vorbis_Makefile_am,v 1.2 2014/02/07 22:20:13 dcoppa Exp $
+--- plugins/vorbis/Makefile.am.orig	Sat Jan 11 23:44:39 2014
++++ plugins/vorbis/Makefile.am	Fri Feb  7 22:31:55 2014
 @@ -2,7 +2,7 @@ if HAVE_VORBIS
  vorbisdir = $(libdir)/$(PACKAGE)
  pkglib_LTLIBRARIES = vorbis.la
  vorbis_la_SOURCES = vorbis.c vcedit.c vcedit.h vceditaux.h i18n.h
--vorbis_la_LDFLAGS = -module
-+vorbis_la_LDFLAGS = -module -avoid-version
+-vorbis_la_LDFLAGS = -module -lm
++vorbis_la_LDFLAGS = -module -avoid-version -lm
  
- vorbis_la_LIBADD = $(LDADD) $(VORBIS_LIBS) -lc
+ vorbis_la_LIBADD = $(LDADD) $(VORBIS_LIBS)
  AM_CFLAGS = $(CFLAGS) -std=c99

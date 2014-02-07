@@ -1,6 +1,6 @@
-$OpenBSD: patch-plugins_lastfm_Makefile_am,v 1.1 2012/08/10 17:25:01 shadchin Exp $
---- plugins/lastfm/Makefile.am.orig	Thu Aug  9 23:45:05 2012
-+++ plugins/lastfm/Makefile.am	Thu Aug  9 23:45:10 2012
+$OpenBSD: patch-plugins_lastfm_Makefile_am,v 1.2 2014/02/07 22:20:13 dcoppa Exp $
+--- plugins/lastfm/Makefile.am.orig	Sun Jan 26 21:31:41 2014
++++ plugins/lastfm/Makefile.am	Fri Feb  7 21:57:31 2014
 @@ -2,7 +2,7 @@ if HAVE_LASTFM
  lastfmdir = $(libdir)/$(PACKAGE)
  pkglib_LTLIBRARIES = lastfm.la
@@ -9,4 +9,4 @@ $OpenBSD: patch-plugins_lastfm_Makefile_am,v 1.1 2012/08/10 17:25:01 shadchin Ex
 +lastfm_la_LDFLAGS = -module -avoid-version
  
  lastfm_la_LIBADD = $(LDADD) $(CURL_LIBS)
- AM_CFLAGS = -std=c99
+ AM_CFLAGS = -std=c99 $(CURL_CFLAGS)

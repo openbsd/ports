@@ -1,6 +1,6 @@
-$OpenBSD: patch-plugins_vfs_curl_Makefile_am,v 1.1 2012/08/10 17:25:01 shadchin Exp $
---- plugins/vfs_curl/Makefile.am.orig	Thu Aug  9 23:50:47 2012
-+++ plugins/vfs_curl/Makefile.am	Thu Aug  9 23:50:53 2012
+$OpenBSD: patch-plugins_vfs_curl_Makefile_am,v 1.2 2014/02/07 22:20:13 dcoppa Exp $
+--- plugins/vfs_curl/Makefile.am.orig	Sun Jan 26 21:31:41 2014
++++ plugins/vfs_curl/Makefile.am	Fri Feb  7 21:57:31 2014
 @@ -2,7 +2,7 @@ if HAVE_VFS_CURL
  vfs_curldir = $(libdir)/$(PACKAGE)
  pkglib_LTLIBRARIES = vfs_curl.la
@@ -9,4 +9,4 @@ $OpenBSD: patch-plugins_vfs_curl_Makefile_am,v 1.1 2012/08/10 17:25:01 shadchin 
 +vfs_curl_la_LDFLAGS = -module -avoid-version
  
  vfs_curl_la_LIBADD = $(LDADD) $(VFS_CURL_LIBS)
- AM_CFLAGS = $(CFLAGS) -std=c99
+ AM_CFLAGS = $(CFLAGS) $(VFS_CURL_CFLAGS) -std=c99

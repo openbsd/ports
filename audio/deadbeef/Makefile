@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2014/01/29 20:43:26 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.11 2014/02/07 22:20:13 dcoppa Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		DeaDBeeF is an audio player
-DISTNAME =		deadbeef-0.6.0
+DISTNAME =		deadbeef-0.6.1
 CATEGORIES =		audio
 
 HOMEPAGE =		http://deadbeef.sourceforge.net/
@@ -11,8 +11,8 @@ HOMEPAGE =		http://deadbeef.sourceforge.net/
 # GPLv2 & LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += FLAC GL GLU Imlib2 X11 Xcomposite Xcursor Xdamage Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 avcodec avformat
+WANTLIB += FLAC Imlib2 X11 Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 avcodec avformat
 WANTLIB += avutil c cairo cddb cdio crypto curl dbus-1 expat faad
 WANTLIB += ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0

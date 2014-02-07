@@ -1,6 +1,6 @@
-$OpenBSD: patch-streamer_c,v 1.1 2014/01/29 20:43:26 dcoppa Exp $
---- streamer.c.orig	Tue Nov 12 22:32:36 2013
-+++ streamer.c	Tue Jan 28 10:23:38 2014
+$OpenBSD: patch-streamer_c,v 1.2 2014/02/07 22:20:13 dcoppa Exp $
+--- streamer.c.orig	Mon Jan 27 22:24:32 2014
++++ streamer.c	Fri Feb  7 22:33:30 2014
 @@ -52,6 +52,10 @@
  #include "plugins/libparser/parser.h"
  #include "strdupa.h"
@@ -11,13 +11,4 @@ $OpenBSD: patch-streamer_c,v 1.1 2014/01/29 20:43:26 dcoppa Exp $
 +
  //#define trace(...) { fprintf(stderr, __VA_ARGS__); }
  #define trace(fmt,...)
- 
-@@ -1619,7 +1623,7 @@ streamer_thread (void *ctx) {
-         // and another 1ms to buffer slightly faster then playing
-         alloc_time -= ms+2;
-         if (!streamer_buffering && alloc_time > 0) {
--            usleep (alloc_time * 1000);
-+            usleep (1000);
-         }
-     }
  

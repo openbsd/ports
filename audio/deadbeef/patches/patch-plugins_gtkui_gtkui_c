@@ -1,28 +1,32 @@
-$OpenBSD: patch-plugins_gtkui_gtkui_c,v 1.1 2014/01/29 20:43:26 dcoppa Exp $
+$OpenBSD: patch-plugins_gtkui_gtkui_c,v 1.2 2014/02/07 22:20:13 dcoppa Exp $
 
 g_thread_init() is deprecated
 
 Properly call gdk_threads_enter() and gdk_threads_leave() to prevent
 abort() on startup due to gtk trying to unlock a uninitialized mutex
 
---- plugins/gtkui/gtkui.c.orig	Sun Nov 17 16:50:31 2013
-+++ plugins/gtkui/gtkui.c	Thu Jan 16 09:15:42 2014
-@@ -944,9 +944,9 @@ gtkui_thread (void *ctx) {
-     XInitThreads (); // gtkglext/xcb doesn't work without this
- #endif
+--- plugins/gtkui/gtkui.c.orig	Sun Feb  2 19:00:08 2014
++++ plugins/gtkui/gtkui.c	Fri Feb  7 22:22:19 2014
+@@ -961,13 +961,8 @@ gtkui_thread (void *ctx) {
+     add_pixmap_directory (deadbeef->get_pixmap_dir ());
+ 
      // let's start some gtk
 -    g_thread_init (NULL);
-     add_pixmap_directory (deadbeef->get_pixmap_dir ());
+-#ifndef __FreeBSD__
+-    // this call makes gtk_main hang on freebsd for unknown reason
+-    // however, if we don't have this call, deadbeef will crash randomly on
+-    // gentoo linux
      gdk_threads_init ();
+-#endif
 +    gdk_threads_enter ();
+     gtk_init (&argc, (char ***)&argv);
  
-     int argc = 2;
-     const char **argv = alloca (sizeof (char *) * argc);
-@@ -1117,6 +1117,7 @@ gtkui_thread (void *ctx) {
+     // register widget types
+@@ -1128,6 +1123,7 @@ gtkui_thread (void *ctx) {
          gtk_widget_destroy (searchwin);
          searchwin = NULL;
      }
 +    gdk_threads_leave ();
+     return 0;
  }
  
- gboolean
