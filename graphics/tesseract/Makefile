@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2014/01/18 13:42:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2014/02/07 11:48:05 ajacoutot Exp $
 
 COMMENT=	OCR Engine developed at HP Labs
 
@@ -6,6 +6,7 @@ V=		3.02.02
 DISTNAME=	tesseract-ocr-${V}
 PKGNAME=	tesseract-${V}
 WRKDIST=	${WRKDIR}/tesseract-ocr
+REVISION=	0
 
 SHARED_LIBS +=  tesseract            3.1      # 3.2
 
