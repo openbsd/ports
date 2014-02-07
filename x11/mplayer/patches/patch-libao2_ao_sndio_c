@@ -1,7 +1,18 @@
-$OpenBSD: patch-libao2_ao_sndio_c,v 1.1 2014/01/31 10:44:56 ratchov Exp $
---- libao2/ao_sndio.c.orig	Fri Jan 31 11:09:00 2014
-+++ libao2/ao_sndio.c	Fri Jan 31 11:10:33 2014
-@@ -132,6 +132,8 @@ static int init(int rate, int channels, int format, in
+$OpenBSD: patch-libao2_ao_sndio_c,v 1.2 2014/02/07 09:37:05 yasuoka Exp $
+--- libao2/ao_sndio.c.orig	Tue Jan  7 07:02:58 2014
++++ libao2/ao_sndio.c	Thu Feb  6 21:38:57 2014
+@@ -110,6 +110,10 @@ static int init(int rate, int channels, int format, in
+     par.pchan = channels;
+     par.appbufsz = par.rate * 250 / 1000;    /* 250ms buffer */
+     par.round = par.rate * 10 / 1000;        /*  10ms block size */
++
++    if (par.bits < SIO_BPS(par.bits) * 8)
++	par.msb = (par.le)? 0 : 1;
++
+     if (!sio_setpar(hdl, &par)) {
+         mp_msg(MSGT_AO, MSGL_ERR, "ao2: couldn't set params\n");
+         goto err_out;
+@@ -132,6 +136,8 @@ static int init(int rate, int channels, int format, in
      ao_data.format |= par.sig ? AF_FORMAT_SI : AF_FORMAT_US;
      if (par.bits > 8)
          ao_data.format |= par.le ? AF_FORMAT_LE : AF_FORMAT_BE;
