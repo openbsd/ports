@@ -1,7 +1,67 @@
-$OpenBSD: patch-avahi-daemon_main_c,v 1.7 2013/01/26 10:25:31 ajacoutot Exp $
---- avahi-daemon/main.c.orig	Thu Nov 18 04:00:26 2010
-+++ avahi-daemon/main.c	Sat Jan 26 10:40:53 2013
-@@ -1101,8 +1101,10 @@ static int run_server(DaemonConfig *c) {
+$OpenBSD: patch-avahi-daemon_main_c,v 1.8 2014/02/07 07:48:03 ajacoutot Exp $
+
+From 147cdce70b22ae7cee9fb4fe123db40952f31c9e Mon Sep 17 00:00:00 2001
+From: David Zeuthen <zeuthen@chromium.org>
+Date: Tue, 5 Mar 2013 11:52:38 -0800
+Subject: [PATCH] avahi-daemon: add option "host-name-from-machine-id="
+
+--- avahi-daemon/main.c.orig	Fri Feb  7 08:37:36 2014
++++ avahi-daemon/main.c	Fri Feb  7 08:37:45 2014
+@@ -65,6 +65,7 @@
+ #include <avahi-core/publish.h>
+ #include <avahi-core/dns-srv-rr.h>
+ #include <avahi-core/log.h>
++#include <avahi-core/util.h>
+ 
+ #ifdef ENABLE_CHROOT
+ #include "chroot.h"
+@@ -576,6 +577,29 @@ static int parse_usec(const char *s, AvahiUsec *u) {
+     return 0;
+ }
+ 
++static char *get_machine_id(void) {
++    int fd;
++    char buf[32];
++
++    fd = open("/etc/machine-id", O_RDONLY|O_CLOEXEC|O_NOCTTY);
++    if (fd == -1 && errno == ENOENT)
++        fd = open("/var/lib/dbus/machine-id", O_RDONLY|O_CLOEXEC|O_NOCTTY);
++    if (fd == -1)
++        return NULL;
++
++    /* File is on a filesystem so we never get EINTR or partial reads */
++    if (read(fd, buf, sizeof buf) != sizeof buf) {
++        close(fd);
++        return NULL;
++    }
++    close(fd);
++
++    /* Contents can be lower, upper and even mixed case so normalize */
++    avahi_strdown(buf);
++
++    return avahi_strndup(buf, sizeof buf);
++}
++
+ static int load_config_file(DaemonConfig *c) {
+     int r = -1;
+     AvahiIniFile *f;
+@@ -631,6 +655,15 @@ static int load_config_file(DaemonConfig *c) {
+                     c->server_config.use_iff_running = is_yes(p->value);
+                 else if (strcasecmp(p->key, "disallow-other-stacks") == 0)
+                     c->server_config.disallow_other_stacks = is_yes(p->value);
++                else if (strcasecmp(p->key, "host-name-from-machine-id") == 0) {
++                    if (*(p->value) == 'y' || *(p->value) == 'Y') {
++                        char *machine_id = get_machine_id();
++                        if (machine_id != NULL) {
++                            avahi_free(c->server_config.host_name);
++                            c->server_config.host_name = machine_id;
++                        }
++                    }
++                }
+ #ifdef HAVE_DBUS
+                 else if (strcasecmp(p->key, "enable-dbus") == 0) {
+ 
+@@ -1101,8 +1134,10 @@ static int run_server(DaemonConfig *c) {
  
      ignore_signal(SIGPIPE);
  

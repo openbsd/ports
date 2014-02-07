@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2013/11/28 10:53:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.100 2014/02/07 07:48:03 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -26,7 +26,7 @@ PKGNAME-qt3=		avahi-qt3-${V}
 PKGNAME-qt4=		avahi-qt4-${V}
 PKGNAME-ui=		avahi-ui-${V}
 
-REVISION-main=		12
+REVISION-main=		13
 REVISION-gtk=		5
 REVISION-gtk3=		5
 REVISION-gui=		8
@@ -260,6 +260,9 @@ pre-configure:
 	perl -pi -e 's,-ldl,,g' ${WRKSRC}/configure \
 		${WRKSRC}/avahi-client/Makefile.in \
 		${WRKSRC}/avahi-daemon/Makefile.in
+	perl -pi -e "s,/var/lib/dbus,/var/db/dbus,g;" \
+		-e "s,/etc/machine-id,${SYSCONFDIR}/machine-id,g" \
+		${WRKSRC}/avahi-daemon/main.c
 	for i in ${PC_FILES}; do \
 		perl -pi -e 's,Libs:,Libs: -pthread,;' \
 			-e 's,Cflags:,Cflags: -pthread,' ${WRKSRC}/$${i}.in; done
