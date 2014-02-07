@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2014/02/04 15:43:48 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.32 2014/02/07 06:49:34 dcoppa Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -129,6 +129,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/eighttracks.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/eighttracks.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/eitb.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/eitb.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/elpais.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/elpais.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/escapist.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/escapist.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/everyonesmixtape.py
@@ -141,6 +143,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/facebook.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/facebook.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/faz.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/faz.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/firstpost.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/firstpost.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/fktv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/fktv.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/flickr.py
@@ -221,6 +225,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/livestream.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/livestream.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/lynda.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/lynda.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/m6.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/m6.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/macgamestore.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/macgamestore.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/malemotion.py
@@ -257,10 +263,14 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nba.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nba.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nbc.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nbc.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ndr.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ndr.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ndtv.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ndtv.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/newgrounds.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/newgrounds.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nfb.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nfb.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nhl.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/nhl.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/niconico.py
