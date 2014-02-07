@@ -1,2 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/10/21 11:09:38 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/02/07 17:57:04 sebastia Exp $
 @bin bin/ImpersonatorToolKit
+lib/GNUstep/Tools/
+lib/GNUstep/Tools/Resources/
+lib/GNUstep/Tools/Resources/ImpersonatorToolKit/
+lib/GNUstep/Tools/Resources/ImpersonatorToolKit/impersonator.css
