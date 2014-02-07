@@ -1,0 +1,28 @@
+$OpenBSD: patch-conv_c,v 1.1 2014/02/07 08:56:53 brad Exp $
+
+Re-instate the chroot by default code.
+
+--- conv.c.orig	Thu Feb  6 02:48:24 2014
++++ conv.c	Thu Feb  6 02:59:47 2014
+@@ -288,7 +288,9 @@ daemonize_finish(void)
+  * For security, chroot (optionally) and drop privileges.
+  * Pass a NULL chroot_dir to disable chroot() behaviour.
+  */
+-void privdrop(const char *chroot_dir, const char *privdrop_user) {
++void
++privdrop(const char *chroot_dir, const char *privdrop_user)
++{
+    struct passwd *pw;
+ 
+    errno = 0;
+@@ -300,9 +302,7 @@ void privdrop(const char *chroot_dir, const char *priv
+       else
+          err(1, "getpwnam(\"%s\") failed", privdrop_user);
+    }
+-   if (chroot_dir == NULL) {
+-      verbosef("no --chroot dir specified, darkstat will not chroot()");
+-   } else {
++   if (chroot_dir != NULL) {
+       tzset(); /* read /etc/localtime before we chroot */
+       if (chdir(chroot_dir) == -1)
+          err(1, "chdir(\"%s\") failed", chroot_dir);

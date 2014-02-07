@@ -1,0 +1,34 @@
+$OpenBSD: patch-pidfile_c,v 1.1 2014/02/07 08:56:53 brad Exp $
+
+Re-instate the chroot by default code.
+
+--- pidfile.c.orig	Thu Feb  6 02:56:16 2014
++++ pidfile.c	Thu Feb  6 02:57:38 2014
+@@ -29,9 +29,10 @@
+ static int pidfd = -1;
+ static const char *pidname = NULL;
+ 
+-void pidfile_create(const char *chroot_dir,
+-                    const char *filename,
+-                    const char *privdrop_user) {
++void
++pidfile_create(const char *chroot_dir, const char *filename,
++   const char *privdrop_user)
++{
+    struct passwd *pw;
+ 
+    if (pidfd != -1)
+@@ -47,11 +48,8 @@ void pidfile_create(const char *chroot_dir,
+          err(1, "getpwnam(\"%s\") failed", privdrop_user);
+    }
+ 
+-   if (chroot_dir != NULL) {
+-      if (chdir(chroot_dir) == -1) {
+-         err(1, "chdir(\"%s\") failed", chroot_dir);
+-      }
+-   }
++   if (chdir(chroot_dir) == -1)
++      err(1, "chdir(\"%s\") failed", chroot_dir);
+    pidname = filename;
+    pidfd = open(filename, O_WRONLY | O_CREAT | O_TRUNC | O_EXCL, 0600);
+    if (pidfd == -1)
