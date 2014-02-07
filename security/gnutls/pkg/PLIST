@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2013/12/20 21:50:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2014/02/07 09:04:41 ajacoutot Exp $
 @bin bin/certtool
 @bin bin/danetool
 @bin bin/gnutls-cli
@@ -167,6 +167,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_credentials_set.3
 @man man/man3/gnutls_db_check_entry.3
 @man man/man3/gnutls_db_check_entry_time.3
+@man man/man3/gnutls_db_get_default_cache_expiration.3
 @man man/man3/gnutls_db_get_ptr.3
 @man man/man3/gnutls_db_remove_session.3
 @man man/man3/gnutls_db_set_cache_expiration.3
