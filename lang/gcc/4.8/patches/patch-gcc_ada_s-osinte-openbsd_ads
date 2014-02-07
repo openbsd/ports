@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_ada_s-osinte-openbsd_ads,v 1.1 2013/07/18 17:04:08 tobiasu Exp $
---- gcc/ada/s-osinte-openbsd.ads.orig	Mon Jun 17 16:05:29 2013
-+++ gcc/ada/s-osinte-openbsd.ads	Mon Jun 17 17:11:52 2013
-@@ -0,0 +1,643 @@
+$OpenBSD: patch-gcc_ada_s-osinte-openbsd_ads,v 1.2 2014/02/07 01:31:41 tobiasu Exp $
+--- gcc/ada/s-osinte-openbsd.ads.orig	Mon Jan 20 00:29:13 2014
++++ gcc/ada/s-osinte-openbsd.ads	Mon Jan 20 02:52:03 2014
+@@ -0,0 +1,640 @@
 +------------------------------------------------------------------------------
 +--                                                                          --
 +--                  GNAT RUN-TIME LIBRARY (GNARL) COMPONENTS                --
@@ -215,9 +215,6 @@ $OpenBSD: patch-gcc_ada_s-osinte-openbsd_ads,v 1.1 2013/07/18 17:04:08 tobiasu E
 +      tz_dsttime     : int;
 +   end record;
 +   pragma Convention (C, struct_timezone);
-+
-+   procedure usleep (useconds : unsigned_long);
-+   pragma Import (C, usleep, "usleep");
 +
 +   -------------------------
 +   -- Priority Scheduling --
@@ -628,7 +625,7 @@ $OpenBSD: patch-gcc_ada_s-osinte-openbsd_ads,v 1.1 2013/07/18 17:04:08 tobiasu E
 +   type pid_t is new int;
 +   Self_PID : constant pid_t := 0;
 +
-+   type time_t is new long;
++   type time_t is new Long_Long_Integer;
 +
 +   type timespec is record
 +      ts_sec  : time_t;

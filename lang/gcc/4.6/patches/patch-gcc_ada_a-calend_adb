@@ -1,0 +1,14 @@
+$OpenBSD: patch-gcc_ada_a-calend_adb,v 1.1 2014/02/07 01:27:21 tobiasu Exp $
+--- gcc/ada/a-calend.adb.orig	Sun Jan 19 01:33:14 2014
++++ gcc/ada/a-calend.adb	Sun Jan 19 01:34:06 2014
+@@ -1448,9 +1448,7 @@ package body Ada.Calendar is
+       subtype long is Long_Integer;
+       type long_Pointer is access all long;
+ 
+-      type time_t is
+-        range -(2 ** (Standard'Address_Size - Integer'(1))) ..
+-              +(2 ** (Standard'Address_Size - Integer'(1)) - 1);
++      type time_t is new Long_Long_Integer;
+       type time_t_Pointer is access all time_t;
+ 
+       procedure localtime_tzoff

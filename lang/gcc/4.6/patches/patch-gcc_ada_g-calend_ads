@@ -1,0 +1,16 @@
+$OpenBSD: patch-gcc_ada_g-calend_ads,v 1.1 2014/02/07 01:27:21 tobiasu Exp $
+--- gcc/ada/g-calend.ads.orig	Sun Jan 19 06:14:19 2014
++++ gcc/ada/g-calend.ads	Sun Jan 19 06:17:58 2014
+@@ -129,7 +129,11 @@ private
+    --  This is a dummy declaration that should be the largest possible timeval
+    --  structure of all supported targets.
+ 
+-   type timeval is array (1 .. 2) of Interfaces.C.long;
++   type timeval is
++      record
++         tv_sec  : Long_Long_Integer;
++         tv_usec : Interfaces.C.long;
++      end record;
+ 
+    function Julian_Day
+      (Year  : Ada.Calendar.Year_Number;

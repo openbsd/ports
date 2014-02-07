@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_ada_adaint_h,v 1.1 2014/02/07 01:27:21 tobiasu Exp $
+--- gcc/ada/adaint.h.orig	Sun Jan 19 02:40:43 2014
++++ gcc/ada/adaint.h	Sun Jan 19 02:41:02 2014
+@@ -146,7 +146,7 @@ extern OS_Time __gnat_file_time_name                (c
+ extern OS_Time __gnat_file_time_fd                  (int);
+ /* return -1 in case of error */
+ 
+-extern void   __gnat_set_file_time_name		   (char *, time_t);
++extern void   __gnat_set_file_time_name		   (char *, OS_Time);
+ 
+ extern int    __gnat_dup			            (int);
+ extern int    __gnat_dup2			            (int, int);

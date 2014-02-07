@@ -1,0 +1,13 @@
+$OpenBSD: patch-gcc_ada_sysdep_c,v 1.1 2014/02/07 01:27:21 tobiasu Exp $
+--- gcc/ada/sysdep.c.orig	Sun Jan 19 01:26:27 2014
++++ gcc/ada/sysdep.c	Sun Jan 19 01:28:13 2014
+@@ -937,7 +937,8 @@ __gnat_localtime_tzoff (const time_t *timer, long *off
+    struct tm */
+ 
+ #elif defined (__APPLE__) || defined (__FreeBSD__) || defined (linux) ||\
+-     (defined (__alpha__) && defined (__osf__)) || defined (__GLIBC__)
++     (defined (__alpha__) && defined (__osf__)) || defined (__GLIBC__) ||\
++      defined (__OpenBSD__)
+ {
+   localtime_r (timer, &tp);
+   *off = tp.tm_gmtoff;
