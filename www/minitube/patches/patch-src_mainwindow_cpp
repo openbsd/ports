@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_mainwindow_cpp,v 1.1 2014/02/07 16:07:12 dcoppa Exp $
+--- src/mainwindow.cpp.orig	Thu Dec 19 00:37:27 2013
++++ src/mainwindow.cpp	Fri Feb  7 16:50:08 2014
+@@ -558,7 +558,7 @@ void MainWindow::createActions() {
+     action = new QAction(tr("More..."), this);
+     actions->insert("more-region", action);
+ 
+-    action = new QAction(Utils::icon(QStringList() << "view-list-symbolic" << "view-list" << "format-justify-fill"), tr("&Related Videos"), this);
++    action = new QAction(Utils::icon("format-justify-fill"), tr("&Related Videos"), this);
+     action->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_R));
+     action->setStatusTip(tr("Watch videos related to the current one"));
+     action->setEnabled(false);
