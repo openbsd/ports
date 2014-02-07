@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/12/28 18:13:51 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/02/07 18:14:46 rpe Exp $
 awstats/
 awstats/README.TXT
 awstats/data/
@@ -29,17 +29,25 @@ awstats/docs/images/
 awstats/docs/images/awstats.gif
 awstats/docs/images/awstats.ico
 awstats/docs/images/awstats.png
+awstats/docs/images/awstats.svg
+awstats/docs/images/awstats_250x250.png
+awstats/docs/images/awstats_ban_460x270.png
+awstats/docs/images/awstats_ban_800x160.svg
+awstats/docs/images/awstats_ban_960x540.jpg
+awstats/docs/images/awstats_ban_960x540.png
+awstats/docs/images/awstats_ban_960x540.svg
 awstats/docs/images/awstats_logo1.gif
 awstats/docs/images/awstats_logo1.png
 awstats/docs/images/awstats_logo2.gif
 awstats/docs/images/awstats_logo2.png
 awstats/docs/images/awstats_logo3.gif
 awstats/docs/images/awstats_logo3.png
-awstats/docs/images/awstats_logo4.gif
-awstats/docs/images/awstats_logo4.png
 awstats/docs/images/awstats_logo5.gif
 awstats/docs/images/awstats_logo5.png
 awstats/docs/images/awstats_logo6.png
+awstats/docs/images/awstats_logo7.jpg
+awstats/docs/images/awstats_logo7.png
+awstats/docs/images/awstats_logo7.svg
 awstats/docs/images/license_chart.png
 awstats/docs/images/screen_shot_1.gif
 awstats/docs/images/screen_shot_1.jpg
@@ -48,6 +56,7 @@ awstats/docs/images/screen_shot_2.png
 awstats/docs/images/screen_shot_3.png
 awstats/docs/images/screen_shot_4.png
 awstats/docs/images/screen_shot_5.png
+awstats/docs/images/screen_shot_960x540.png
 awstats/docs/images/screen_shot_large_1.jpg
 awstats/docs/images/screen_shot_large_2.jpg
 awstats/docs/images/screen_shot_large_3.jpg
@@ -86,7 +95,7 @@ awstats/tools/nginx/awstats-fcgi.php
 awstats/tools/nginx/awstats-nginx.conf
 awstats/tools/urlaliasbuilder.pl
 awstats/tools/webmin/
-awstats/tools/webmin/awstats-1.9.wbm
+awstats/tools/webmin/awstats-2.0.wbm
 awstats/tools/xslt/
 awstats/tools/xslt/README.txt
 awstats/tools/xslt/awstats.datademo1.xml
@@ -773,12 +782,15 @@ awstats/wwwroot/icon/os/win2000.png
 awstats/wwwroot/icon/os/win2003.png
 awstats/wwwroot/icon/os/win2008.png
 awstats/wwwroot/icon/os/win7.png
+awstats/wwwroot/icon/os/win8.1.png
+awstats/wwwroot/icon/os/win8.png
 awstats/wwwroot/icon/os/win95.png
 awstats/wwwroot/icon/os/win98.png
 awstats/wwwroot/icon/os/wince.png
 awstats/wwwroot/icon/os/winlong.png
 awstats/wwwroot/icon/os/winme.png
 awstats/wwwroot/icon/os/winnt.png
+awstats/wwwroot/icon/os/winphone.png
 awstats/wwwroot/icon/os/winunknown.png
 awstats/wwwroot/icon/os/winvista.png
 awstats/wwwroot/icon/os/winxbox.png

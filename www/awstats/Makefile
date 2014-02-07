@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2013/08/09 23:55:54 rpe Exp $
+# $OpenBSD: Makefile,v 1.9 2014/02/07 18:14:46 rpe Exp $
 
 COMMENT=		free real-time logfile analyzer
 
-DISTNAME=		awstats-7.2
+DISTNAME=		awstats-7.3
 
 CATEGORIES=		www
 
@@ -47,6 +47,7 @@ pre-configure:
 		-e 's,^DirIcons="/icon",DirIcons="/awstatsicons",g;' \
 		-e 's,^#LoadPlugin="geoip GEOIP_STANDARD /pathto/GeoIP.dat",${GEOIPPLUGIN},g;' \
 		${WRKSRC}/wwwroot/cgi-bin/awstats.model.conf
+	@rm ${WRKSRC}/tools/webmin/.gitignore
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}/data
