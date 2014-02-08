@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-conflicts,v 1.7 2014/02/08 13:37:27 espie Exp $
+# $OpenBSD: check-conflicts,v 1.8 2014/02/08 13:50:58 espie Exp $
 # Copyright (c) 2000-2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -296,12 +296,18 @@ sub find_current_pkgnames
 	my @todo = ();
 	my $make = $ENV{MAKE} || 'make';
 
-	my $code = sub {
+	for my $path (values %$name2path) {
+		next if $done->{$path};
+		push(@todo, $path);
+	}
+	my $total = scalar(@todo);
+	my $i = 0;
+	while (my @l = (splice @todo, 0, 1000)) {
 		my $pid = open(my $output, "-|");
 		if ($pid == 0) {
 			$DB::inhibit_exit = 0;
 			chdir($dir) or die "bad directory $dir";
-			$ENV{SUBDIR} = join(' ', @todo);
+			$ENV{SUBDIR} = join(' ', @l);
 			open STDERR, ">", "/dev/null";
 			exec { $make } 
 			    ("make", 'show=FULLPKGNAME${SUBPACKAGE}', 
@@ -309,22 +315,12 @@ sub find_current_pkgnames
 			exit(1);
 		}
 		while (<$output>) {
-			$ui->progress->working(10);
+			$i++;
+			$ui->progress->show($i, $total);
 			chomp;
 			$current->{$_} = 1;
 		}
 		close($output);
-	};
-	for my $path (values %$name2path) {
-		next if $done->{$path};
-		push(@todo, $path);
-		if (@todo >= 1000) {
-			&$code;
-			@todo = ();
-		}
-	}
-	if (@todo > 0) {
-		&$code;
 	}
 }
 
@@ -392,7 +388,6 @@ if (@ARGV > 0) {
 	    });
 }
 
-$ui->progress->next;
 if (!$portpath && $opt_p) {
 	$ui->progress->set_header("Computing current pkgnames");
 	find_current_pkgnames($ui, $opt_p);
