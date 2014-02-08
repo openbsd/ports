@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/05/14 04:14:47 mglocker Exp $
+# $OpenBSD: Makefile,v 1.2 2014/02/08 22:22:55 bluhm Exp $
 
 COMMENT =		parse an email Received: header
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 RUN_DEPENDS =		textproc/p5-Regexp-Common
 BUILD_DEPENDS =		${RUN_DEPENDS}
+TEST_DEPENDS =		mail/p5-Email-Simple
 
 MAKE_ENV =		TEST_POD=Yes
 
