@@ -1,9 +1,9 @@
-$OpenBSD: patch-sysdeps_openbsd_proctime_c,v 1.9 2014/02/03 13:50:32 ajacoutot Exp $
+$OpenBSD: patch-sysdeps_openbsd_proctime_c,v 1.10 2014/02/08 10:55:31 ajacoutot Exp $
 
 RM at next release.
 
 --- sysdeps/openbsd/proctime.c.orig	Sat Jul 27 14:40:23 2013
-+++ sysdeps/openbsd/proctime.c	Sun Feb  2 14:50:40 2014
++++ sysdeps/openbsd/proctime.c	Sat Feb  8 11:26:32 2014
 @@ -58,59 +58,6 @@ _glibtop_init_proc_time_p (glibtop *server)
  		_glibtop_sysdeps_proc_time_user;
  }
@@ -64,3 +64,12 @@ RM at next release.
  /* Provides detailed information about a process. */
  
  void
+@@ -131,7 +78,7 @@ glibtop_get_proc_time_p (glibtop *server, glibtop_proc
+ 	/* Get the process information */
+ 	pinfo = kvm_getprocs (server->machine.kd, KERN_PROC_PID, pid,
+ 			      sizeof (*pinfo), &count);
+-	if ((pinfo == NULL) || (count != 1)) {
++	if (pinfo == NULL) {
+ 		glibtop_warn_io_r (server, "kvm_getprocs (%d)", pid);
+ 		return;
+ 	}
