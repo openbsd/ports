@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/04/09 16:12:12 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/02/08 21:28:03 espie Exp $
 bin/drush
 libexec/drush/
 libexec/drush/LICENSE.txt
@@ -36,8 +36,6 @@ libexec/drush/commands/core/usage.drush.inc
 libexec/drush/commands/core/variable.drush.inc
 libexec/drush/commands/core/watchdog.drush.inc
 libexec/drush/commands/make/
-libexec/drush/commands/make/EXAMPLE.make
-libexec/drush/commands/make/README.txt
 libexec/drush/commands/make/generate.make.inc
 libexec/drush/commands/make/make.download.inc
 libexec/drush/commands/make/make.drush.inc
@@ -76,6 +74,7 @@ libexec/drush/docs/commands.html
 libexec/drush/docs/context.html
 libexec/drush/docs/cron.html
 libexec/drush/docs/drush.api.php
+libexec/drush/docs/make.txt
 libexec/drush/docs/shellaliases.html
 libexec/drush/docs/shellscripts.html
 libexec/drush/docs/strict-options.html
@@ -88,6 +87,7 @@ libexec/drush/examples/example.aliases.drushrc.php
 libexec/drush/examples/example.bashrc
 libexec/drush/examples/example.drush.ini
 libexec/drush/examples/example.drushrc.php
+libexec/drush/examples/example.make
 libexec/drush/examples/helloworld.script
 libexec/drush/examples/policy.drush.inc
 libexec/drush/examples/sandwich-nocolor.txt
@@ -98,7 +98,6 @@ libexec/drush/examples/sync_enable.drush.inc
 libexec/drush/examples/sync_via_http.drush.inc
 libexec/drush/examples/xkcd.drush.inc
 libexec/drush/includes/
-libexec/drush/includes/.gitignore
 libexec/drush/includes/backend.inc
 libexec/drush/includes/batch.inc
 libexec/drush/includes/bootstrap.inc
@@ -129,11 +128,15 @@ libexec/drush/tests/commandSpecificTest.php
 libexec/drush/tests/commandTest.php
 libexec/drush/tests/commandUnitTest.php
 libexec/drush/tests/completeTest.php
+libexec/drush/tests/completetest.drush.inc
+libexec/drush/tests/completetestsite.drush.inc
 libexec/drush/tests/contextTest.php
 libexec/drush/tests/coreTest.php
 libexec/drush/tests/devel.xml
+libexec/drush/tests/drushScriptTest.php
 libexec/drush/tests/drush_testcase.inc
 libexec/drush/tests/fieldTest.php
+libexec/drush/tests/filesystemTest.php
 libexec/drush/tests/generateMakeTest.php
 libexec/drush/tests/hooks/
 libexec/drush/tests/hooks/magic_help_alter/
@@ -141,13 +144,17 @@ libexec/drush/tests/hooks/magic_help_alter/magic.drush.inc
 libexec/drush/tests/imageTest.php
 libexec/drush/tests/makeTest.php
 libexec/drush/tests/makefiles/
+libexec/drush/tests/makefiles/bz2-singlefile.make
+libexec/drush/tests/makefiles/bz2.make
 libexec/drush/tests/makefiles/bzr.make
 libexec/drush/tests/makefiles/contrib-destination.make
+libexec/drush/tests/makefiles/defaults.make
 libexec/drush/tests/makefiles/file-extract.make
 libexec/drush/tests/makefiles/file.make
 libexec/drush/tests/makefiles/get.make
 libexec/drush/tests/makefiles/git-simple.make
 libexec/drush/tests/makefiles/git.make
+libexec/drush/tests/makefiles/gzip.make
 libexec/drush/tests/makefiles/include.make
 libexec/drush/tests/makefiles/included.make
 libexec/drush/tests/makefiles/included2.make
@@ -155,6 +162,7 @@ libexec/drush/tests/makefiles/limited-projects-libraries.make
 libexec/drush/tests/makefiles/md5-fail.make
 libexec/drush/tests/makefiles/md5-succeed.make
 libexec/drush/tests/makefiles/patches.make
+libexec/drush/tests/makefiles/qd-devel.make
 libexec/drush/tests/makefiles/recursion.make
 libexec/drush/tests/makefiles/subtree.make
 libexec/drush/tests/makefiles/svn.make
@@ -166,6 +174,7 @@ libexec/drush/tests/pmDownloadTest.php
 libexec/drush/tests/pmEnDisUnListTest.php
 libexec/drush/tests/pmUpdateCodeTest.php
 libexec/drush/tests/queueTest.php
+libexec/drush/tests/quickDrupalTest.php
 libexec/drush/tests/releaseInfoTest.php
 libexec/drush/tests/resources/
 libexec/drush/tests/resources/create_node_types.php

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/08/12 04:11:21 robert Exp $
+# $OpenBSD: Makefile,v 1.7 2014/02/08 21:28:03 espie Exp $
 
 COMMENT =	command line access to most of drupal
 CATEGORIES = 	www www/drupal6 devel
@@ -6,13 +6,12 @@ MASTER_SITES =	ftp://ftp.drupal.org/pub/drupal/files/projects/
 MASTER_SITES0 =	http://download.pear.php.net/package/
 HOMEPAGE =	http://drupal.org/
 PKG_ARCH =	*
-DISTNAME =	drush-7.x-5.1
+DISTNAME =	drush-7.x-5.9
 WRKDIST =	${WRKDIR}/drush
-PKGNAME =	drush-5.1
+PKGNAME =	drush-5.9
 DISTFILES =	${DISTNAME}.tar.gz Console_Table-1.1.3.tgz:0
 MODULES =	lang/php
 MODPHP_BUILDDEP ?=	No
-REVISION =	0
 
 PERMIT_PACKAGE_CDROM = Yes
 
