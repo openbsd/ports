@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2013/01/30 15:28:25 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/02/08 19:37:29 espie Exp $
 
 COMMENT =	placeholder api for drupal
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-DISTNAME = 	token-7.x-1.4
-PKGNAME =	drupal7-token-1.4
+DISTNAME = 	token-7.x-1.5
+PKGNAME =	drupal7-token-1.5
 
 .include <bsd.port.mk>

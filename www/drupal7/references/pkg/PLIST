@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/10 12:50:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/02/08 19:37:29 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}references/
@@ -8,6 +8,7 @@ ${DRUPAL_MODS}references/README.txt
 ${DRUPAL_MODS}references/node_reference/
 ${DRUPAL_MODS}references/node_reference/node_reference.devel_generate.inc
 ${DRUPAL_MODS}references/node_reference/node_reference.info
+${DRUPAL_MODS}references/node_reference/node_reference.install
 ${DRUPAL_MODS}references/node_reference/node_reference.module
 ${DRUPAL_MODS}references/node_reference/node_reference.test
 ${DRUPAL_MODS}references/references.feeds.inc
@@ -16,6 +17,7 @@ ${DRUPAL_MODS}references/references.module
 ${DRUPAL_MODS}references/user_reference/
 ${DRUPAL_MODS}references/user_reference/user_reference.devel_generate.inc
 ${DRUPAL_MODS}references/user_reference/user_reference.info
+${DRUPAL_MODS}references/user_reference/user_reference.install
 ${DRUPAL_MODS}references/user_reference/user_reference.module
 ${DRUPAL_MODS}references/user_reference/user_reference.test
 ${DRUPAL_MODS}references/views/

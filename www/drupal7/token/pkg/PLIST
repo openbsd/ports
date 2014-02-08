@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/10 12:50:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/02/08 19:37:29 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}token/
@@ -12,6 +12,7 @@ ${DRUPAL_MODS}token/tests/
 ${DRUPAL_MODS}token/tests/token_test.info
 ${DRUPAL_MODS}token/tests/token_test.module
 ${DRUPAL_MODS}token/token.css
+${DRUPAL_MODS}token/token.drush.inc
 ${DRUPAL_MODS}token/token.info
 ${DRUPAL_MODS}token/token.install
 ${DRUPAL_MODS}token/token.js

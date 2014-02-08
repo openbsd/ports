@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/05/31 15:06:39 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2014/02/08 19:37:29 espie Exp $
 
 COMMENT =	fine-grained access control
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-DISTNAME = 	content_access-7.x-1.2-beta1
-PKGNAME =	drupal7-content-access-1.2beta1
+DISTNAME = 	content_access-7.x-1.2-beta2
+PKGNAME =	drupal7-content-access-1.2beta2
 
 .include <bsd.port.mk>

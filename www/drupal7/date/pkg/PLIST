@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/08/23 13:50:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/02/08 19:37:29 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}date/
@@ -8,10 +8,12 @@ ${DRUPAL_MODS}date/LICENSE.txt
 ${DRUPAL_MODS}date/README.txt
 ${DRUPAL_MODS}date/date.api.php
 ${DRUPAL_MODS}date/date.devel_generate.inc
+${DRUPAL_MODS}date/date.diff.inc
 ${DRUPAL_MODS}date/date.field.inc
 ${DRUPAL_MODS}date/date.info
 ${DRUPAL_MODS}date/date.install
 ${DRUPAL_MODS}date/date.js
+${DRUPAL_MODS}date/date.migrate.inc
 ${DRUPAL_MODS}date/date.module
 ${DRUPAL_MODS}date/date.theme
 ${DRUPAL_MODS}date/date.tokens.inc
@@ -44,10 +46,8 @@ ${DRUPAL_MODS}date/date_context/plugins/
 ${DRUPAL_MODS}date/date_context/plugins/date_context_date_condition.inc
 ${DRUPAL_MODS}date/date_elements.inc
 ${DRUPAL_MODS}date/date_migrate/
-${DRUPAL_MODS}date/date_migrate/date.migrate.inc
 ${DRUPAL_MODS}date/date_migrate/date_migrate.info
 ${DRUPAL_MODS}date/date_migrate/date_migrate.module
-${DRUPAL_MODS}date/date_migrate/date_migrate.test
 ${DRUPAL_MODS}date/date_migrate/date_migrate_example/
 ${DRUPAL_MODS}date/date_migrate/date_migrate_example/date_migrate_example.features.field.inc
 ${DRUPAL_MODS}date/date_migrate/date_migrate_example/date_migrate_example.features.inc
@@ -114,6 +114,7 @@ ${DRUPAL_MODS}date/tests/Yahoo.csv
 ${DRUPAL_MODS}date/tests/date.test
 ${DRUPAL_MODS}date/tests/date_api.test
 ${DRUPAL_MODS}date/tests/date_field.test
+${DRUPAL_MODS}date/tests/date_migrate.test
 ${DRUPAL_MODS}date/tests/date_timezone.test
 ${DRUPAL_MODS}date/tests/date_validation.test
 ${DRUPAL_MODS}date/tests/rrule.ics

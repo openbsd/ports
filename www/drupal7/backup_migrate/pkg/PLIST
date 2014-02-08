@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/10 12:49:31 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/02/08 19:37:29 espie Exp $
 @group ${DRUPAL_GROUP}
 @owner ${DRUPAL_OWNER}
 ${DRUPAL_ROOT}/files/
@@ -14,8 +14,6 @@ ${DRUPAL_MODS}backup_migrate/backup_migrate.module
 ${DRUPAL_MODS}backup_migrate/includes/
 ${DRUPAL_MODS}backup_migrate/includes/backup_migrate.drush.inc
 ${DRUPAL_MODS}backup_migrate/includes/crud.inc
-${DRUPAL_MODS}backup_migrate/includes/db.inc
-${DRUPAL_MODS}backup_migrate/includes/db.mysql.inc
 ${DRUPAL_MODS}backup_migrate/includes/destinations.browser.inc
 ${DRUPAL_MODS}backup_migrate/includes/destinations.db.inc
 ${DRUPAL_MODS}backup_migrate/includes/destinations.db.mysql.inc
@@ -23,6 +21,7 @@ ${DRUPAL_MODS}backup_migrate/includes/destinations.email.inc
 ${DRUPAL_MODS}backup_migrate/includes/destinations.file.inc
 ${DRUPAL_MODS}backup_migrate/includes/destinations.ftp.inc
 ${DRUPAL_MODS}backup_migrate/includes/destinations.inc
+${DRUPAL_MODS}backup_migrate/includes/destinations.nodesquirrel.inc
 ${DRUPAL_MODS}backup_migrate/includes/destinations.s3.inc
 ${DRUPAL_MODS}backup_migrate/includes/files.inc
 ${DRUPAL_MODS}backup_migrate/includes/filters.backup_restore.inc
