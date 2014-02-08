@@ -1,0 +1,52 @@
+$OpenBSD: patch-spampd,v 1.1.1.1 2014/02/08 18:58:22 ajacoutot Exp $
+--- spampd.orig	Mon Oct 31 20:45:53 2005
++++ spampd	Sat Feb  8 19:51:55 2014
+@@ -752,8 +752,8 @@ my $childtimeout = 6*60; # child process per-command t
+ my $satimeout = 285; # SpamAssassin timeout in seconds (15s less than Postfix 
+                      # default for smtp_data_done_timeout)
+ my $pidfile = '/var/run/spampd.pid'; # write pid to file
+-my $user = 'mail'; # user to run as
+-my $group = 'mail'; # group to run as
++my $user = '_spampd'; # user to run as
++my $group = '_spampd'; # group to run as
+ my $tagall = 0; # mark-up all msgs with SA, not just spam
+ my $maxsize = 64; # max. msg size to scan with SA, in KB.
+ my $rh = 0; # log which rules were hit
+@@ -849,6 +849,7 @@ if ( $tmp[1] ) { $port = $tmp[1]; }
+ my $assassin = Mail::SpamAssassin->new({
+ 		'dont_copy_prefs' => 1,
+ 		'debug' => $debug,
++		'user_dir' => (getpwnam($user))[7],
+ 		'local_tests_only' => $options{'local-only'} || 0 });
+ 
+ $options{'auto-whitelist'} and eval {
+@@ -942,9 +943,9 @@ Options:
+   --pid=filename           Store the daemon's process ID in this file. 
+                                Default is /var/run/spampd.pid
+   --user=username          Specifies the user that the daemon runs as.
+-                               Default is mail.
++                               Default is _spampd.
+   --group=groupname        Specifies the group that the daemon runs as.
+-                               Default is mail.
++                               Default is _spampd.
+   --nodetach               Don't detach from the console and fork into
+                                background. Useful for some daemon control
+                                tools or when running as a win32 service
+@@ -1249,7 +1250,7 @@ alternate to using the above --relayhost=ip:port notat
+ =item B<--group=groupname> or  B<--g=groupname>
+ 
+ Specifies the user and group that the proxy will run as. Default is
+-I<mail>/I<mail>.
++I<_spampd>/I<_spampd>.
+ 
+ =item B<--children=n> or B<--c=n>
+ 
+@@ -1299,7 +1300,7 @@ Default is 285 seconds.
+ 
+ Specifies a filename where I<spampd> will write its process ID so
+ that it is easy to kill it later. The directory that will contain this
+-file must be writable by the I<spampd> user. The default is
++file must be writable by the I<_spampd> user. The default is
+ F</var/run/spampd.pid>.
+ 
+ =item B<--logsock=unix or inet> C<(new in v2.20)>
