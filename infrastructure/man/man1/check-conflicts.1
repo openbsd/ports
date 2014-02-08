@@ -1,4 +1,4 @@
-.\"	$OpenBSD: check-conflicts.1,v 1.6 2014/02/08 10:47:59 espie Exp $
+.\"	$OpenBSD: check-conflicts.1,v 1.7 2014/02/08 13:22:24 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -85,6 +85,15 @@ Traverse the ports directory for packing-lists, using
 More than one directory could be specified by delimiting them by colon,
 e.g.:
 .Pa /usr/ports/x11/kde:/usr/ports/x11/kde4 .
+.Pp
+If
+.Fl d Ar plist-dir
+is also used, traverse only the directories corresponding to the packages
+under
+.Ar plist-dir
+to figure out current pkgnames, and annotate those with a
+.Sq !
+in the report.
 .El
 .Sh SEE ALSO
 .Xr pkg_add 1 ,
