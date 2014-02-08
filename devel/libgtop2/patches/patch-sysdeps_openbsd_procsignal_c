@@ -1,4 +1,7 @@
-$OpenBSD: patch-sysdeps_openbsd_procsignal_c,v 1.6 2014/02/08 10:55:31 ajacoutot Exp $
+$OpenBSD: patch-sysdeps_openbsd_procsignal_c,v 1.7 2014/02/08 10:58:20 ajacoutot Exp $
+
+RM at next release.
+
 --- sysdeps/openbsd/procsignal.c.orig	Sat Feb  8 11:23:36 2014
 +++ sysdeps/openbsd/procsignal.c	Sat Feb  8 11:26:10 2014
 @@ -62,7 +62,7 @@ glibtop_get_proc_signal_p (glibtop *server,
