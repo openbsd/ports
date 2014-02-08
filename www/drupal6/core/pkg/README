@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2013/05/05 19:24:13 jasper Exp $
+$OpenBSD: README,v 1.6 2014/02/08 18:16:39 espie Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -21,6 +21,9 @@ In mysql, assuming you're connected as admin initially.
 create user drupal@localhost identified by 'password';
 create database drupal character set utf8;
 grant all on drupal.* to drupal@localhost;
+
+Note that the default max_allowed_packet is too small if you install
+a few modules. See /etc/my.cnf.
 
 In postgresql, assuming an `admin' account has all rights:
 
