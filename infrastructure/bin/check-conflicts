@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-conflicts,v 1.4 2013/10/12 10:17:13 espie Exp $
+# $OpenBSD: check-conflicts,v 1.5 2014/02/08 10:48:42 espie Exp $
 # Copyright (c) 2000-2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -61,15 +61,15 @@ sub register
 	my $file = File::Spec->canonpath($self->fullname);
 	# build one single list for each pkgnames combination
 	if (exists $all_conflict->{$file}) {
-		$pkg_list->{$all_conflict->{$file}}->{$pkgname} ||=
+		$pkg_list->{$all_conflict->{$file}}{$pkgname} ||=
 		    [@{$all_conflict->{$file}}, $pkgname ];
 		$all_conflict->{$file} = 
-		    $pkg_list->{$all_conflict->{$file}}->{$pkgname};
+		    $pkg_list->{$all_conflict->{$file}}{$pkgname};
 	} elsif (exists $seen->{$file}) {
-		$pkg_list->{$seen->{$file}}->{$pkgname} ||=
+		$pkg_list->{$seen->{$file}}{$pkgname} ||=
 		    [ @{$seen->{$file}}, $pkgname ];
 		$all_conflict->{$file} = 
-		    $pkg_list->{$seen->{$file}}->{$pkgname};
+		    $pkg_list->{$seen->{$file}}{$pkgname};
 		delete $seen->{$file};
 	} else {
 		$pkg_list->{$pkgname} ||= [$pkgname];
