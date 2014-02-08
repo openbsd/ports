@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2012/01/28 11:33:33 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/02/08 18:35:05 espie Exp $
 
 COMMENT =	filefield extension to select new or existing files
 
-DISTNAME = 	filefield_sources-6.x-1.2
-PKGNAME =	drupal6-filefield_sources-1.2
-REVISION =	1
+DISTNAME = 	filefield_sources-6.x-1.10
+PKGNAME =	drupal6-filefield_sources-1.10
 
 RUN_DEPENDS =	www/drupal6/filefield
 

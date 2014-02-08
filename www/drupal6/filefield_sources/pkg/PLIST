@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/14 09:59:27 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/02/08 18:35:05 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}filefield_sources/
 ${DRUPAL_MODS}filefield_sources/LICENSE.txt
+${DRUPAL_MODS}filefield_sources/README.txt
+${DRUPAL_MODS}filefield_sources/filefield_sources.api.php
 ${DRUPAL_MODS}filefield_sources/filefield_sources.css
 ${DRUPAL_MODS}filefield_sources/filefield_sources.info
 ${DRUPAL_MODS}filefield_sources/filefield_sources.install
@@ -13,6 +15,3 @@ ${DRUPAL_MODS}filefield_sources/sources/attach.inc
 ${DRUPAL_MODS}filefield_sources/sources/imce.inc
 ${DRUPAL_MODS}filefield_sources/sources/reference.inc
 ${DRUPAL_MODS}filefield_sources/sources/remote.inc
-${DRUPAL_MODS}filefield_sources/translations/
-${DRUPAL_MODS}filefield_sources/translations/pt-br.po
-${DRUPAL_MODS}filefield_sources/translations/sv.po

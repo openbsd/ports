@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/20 12:03:17 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/02/08 18:35:05 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}modalframe/
@@ -17,6 +17,7 @@ ${DRUPAL_MODS}modalframe/js/child.js
 ${DRUPAL_MODS}modalframe/js/parent.js
 ${DRUPAL_MODS}modalframe/modalframe-page.tpl.php
 ${DRUPAL_MODS}modalframe/modalframe.info
+${DRUPAL_MODS}modalframe/modalframe.install
 ${DRUPAL_MODS}modalframe/modalframe.module
 ${DRUPAL_MODS}modalframe/modules/
 ${DRUPAL_MODS}modalframe/modules/modalframe_example/
