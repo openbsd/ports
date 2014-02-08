@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.300 2013/10/17 09:13:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.301 2014/02/08 18:58:55 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -195,6 +195,7 @@
      SUBDIR += solid-pop3d
      SUBDIR += solid-pop3d,apop
      SUBDIR += spambayes
+     SUBDIR += spampd
      SUBDIR += sqlgrey
      SUBDIR += swaks
      SUBDIR += sylpheed
