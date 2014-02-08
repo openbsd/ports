@@ -1,0 +1,12 @@
+$OpenBSD: patch-includes_view_inc,v 1.1 2014/02/08 17:58:00 espie Exp $
+--- includes/view.inc.orig	Sat Feb  8 18:56:30 2014
++++ includes/view.inc	Sat Feb  8 18:56:58 2014
+@@ -1392,7 +1392,7 @@ class view extends views_db_object {
+    * that would be very slow.  Buiding the views externally from unified queries is
+    * much faster.
+    */
+-  function load_views() {
++  static function load_views() {
+     $result = db_query("SELECT DISTINCT v.* FROM {views_view} v");
+     $views = array();
+     $vids = array();
