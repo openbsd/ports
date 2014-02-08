@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/08/23 13:33:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/02/08 19:17:20 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}ctools/
@@ -128,6 +128,7 @@ ${DRUPAL_MODS}ctools/images/no-icon.png
 ${DRUPAL_MODS}ctools/images/status-active.gif
 ${DRUPAL_MODS}ctools/images/throbber.gif
 ${DRUPAL_MODS}ctools/includes/
+${DRUPAL_MODS}ctools/includes/action-links.theme.inc
 ${DRUPAL_MODS}ctools/includes/ajax.inc
 ${DRUPAL_MODS}ctools/includes/cache.inc
 ${DRUPAL_MODS}ctools/includes/cache.plugin-type.inc
@@ -209,6 +210,7 @@ ${DRUPAL_MODS}ctools/page_manager/images/locked.png
 ${DRUPAL_MODS}ctools/page_manager/js/
 ${DRUPAL_MODS}ctools/page_manager/js/page-list.js
 ${DRUPAL_MODS}ctools/page_manager/page_manager.admin.inc
+${DRUPAL_MODS}ctools/page_manager/page_manager.api.php
 ${DRUPAL_MODS}ctools/page_manager/page_manager.info
 ${DRUPAL_MODS}ctools/page_manager/page_manager.install
 ${DRUPAL_MODS}ctools/page_manager/page_manager.module
@@ -220,6 +222,7 @@ ${DRUPAL_MODS}ctools/page_manager/plugins/task_handlers/http_response.inc
 ${DRUPAL_MODS}ctools/page_manager/plugins/tasks/
 ${DRUPAL_MODS}ctools/page_manager/plugins/tasks/blog.inc
 ${DRUPAL_MODS}ctools/page_manager/plugins/tasks/blog_user.inc
+${DRUPAL_MODS}ctools/page_manager/plugins/tasks/comment_reply.inc
 ${DRUPAL_MODS}ctools/page_manager/plugins/tasks/contact_site.inc
 ${DRUPAL_MODS}ctools/page_manager/plugins/tasks/contact_user.inc
 ${DRUPAL_MODS}ctools/page_manager/plugins/tasks/node_edit.inc
@@ -301,6 +304,8 @@ ${DRUPAL_MODS}ctools/plugins/content_types/block/icon_core_syndicate.png
 ${DRUPAL_MODS}ctools/plugins/content_types/block/icon_core_userlogin.png
 ${DRUPAL_MODS}ctools/plugins/content_types/block/icon_core_whosnew.png
 ${DRUPAL_MODS}ctools/plugins/content_types/block/icon_core_whosonline.png
+${DRUPAL_MODS}ctools/plugins/content_types/comment/
+${DRUPAL_MODS}ctools/plugins/content_types/comment/comment_reply_form.inc
 ${DRUPAL_MODS}ctools/plugins/content_types/contact/
 ${DRUPAL_MODS}ctools/plugins/content_types/contact/contact.inc
 ${DRUPAL_MODS}ctools/plugins/content_types/contact/icon_contact.png
@@ -341,6 +346,7 @@ ${DRUPAL_MODS}ctools/plugins/content_types/node_form/node_form_author.inc
 ${DRUPAL_MODS}ctools/plugins/content_types/node_form/node_form_book.inc
 ${DRUPAL_MODS}ctools/plugins/content_types/node_form/node_form_buttons.inc
 ${DRUPAL_MODS}ctools/plugins/content_types/node_form/node_form_comment.inc
+${DRUPAL_MODS}ctools/plugins/content_types/node_form/node_form_language.inc
 ${DRUPAL_MODS}ctools/plugins/content_types/node_form/node_form_log.inc
 ${DRUPAL_MODS}ctools/plugins/content_types/node_form/node_form_menu.inc
 ${DRUPAL_MODS}ctools/plugins/content_types/node_form/node_form_path.inc
@@ -403,6 +409,7 @@ ${DRUPAL_MODS}ctools/plugins/relationships/node_edit_form_from_node.inc
 ${DRUPAL_MODS}ctools/plugins/relationships/term_from_node.inc
 ${DRUPAL_MODS}ctools/plugins/relationships/term_parent.inc
 ${DRUPAL_MODS}ctools/plugins/relationships/terms_from_node.inc
+${DRUPAL_MODS}ctools/plugins/relationships/user_category_edit_form_from_user.inc
 ${DRUPAL_MODS}ctools/plugins/relationships/user_from_node.inc
 ${DRUPAL_MODS}ctools/stylizer/
 ${DRUPAL_MODS}ctools/stylizer/plugins/
@@ -425,6 +432,8 @@ ${DRUPAL_MODS}ctools/tests/ctools_export_test/ctools_export_test.install
 ${DRUPAL_MODS}ctools/tests/ctools_export_test/ctools_export_test.module
 ${DRUPAL_MODS}ctools/tests/ctools_plugin_test.info
 ${DRUPAL_MODS}ctools/tests/ctools_plugin_test.module
+${DRUPAL_MODS}ctools/tests/math_expression.test
+${DRUPAL_MODS}ctools/tests/math_expression_stack.test
 ${DRUPAL_MODS}ctools/tests/object_cache.test
 ${DRUPAL_MODS}ctools/tests/plugins/
 ${DRUPAL_MODS}ctools/tests/plugins/cached/

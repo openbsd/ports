@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/08/23 13:50:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/02/08 19:17:20 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}rules/
@@ -8,6 +8,7 @@ ${DRUPAL_MODS}rules/README.txt
 ${DRUPAL_MODS}rules/includes/
 ${DRUPAL_MODS}rules/includes/faces.inc
 ${DRUPAL_MODS}rules/includes/rules.core.inc
+${DRUPAL_MODS}rules/includes/rules.event.inc
 ${DRUPAL_MODS}rules/includes/rules.plugins.inc
 ${DRUPAL_MODS}rules/includes/rules.processor.inc
 ${DRUPAL_MODS}rules/includes/rules.state.inc
@@ -50,15 +51,21 @@ ${DRUPAL_MODS}rules/rules_i18n/rules_i18n.rules.inc
 ${DRUPAL_MODS}rules/rules_i18n/rules_i18n.test
 ${DRUPAL_MODS}rules/rules_scheduler/
 ${DRUPAL_MODS}rules/rules_scheduler/includes/
+${DRUPAL_MODS}rules/rules_scheduler/includes/rules_scheduler.handler.inc
 ${DRUPAL_MODS}rules/rules_scheduler/includes/rules_scheduler.views.inc
 ${DRUPAL_MODS}rules/rules_scheduler/includes/rules_scheduler.views_default.inc
 ${DRUPAL_MODS}rules/rules_scheduler/includes/rules_scheduler_views_filter.inc
 ${DRUPAL_MODS}rules/rules_scheduler/rules_scheduler.admin.inc
+${DRUPAL_MODS}rules/rules_scheduler/rules_scheduler.drush.inc
 ${DRUPAL_MODS}rules/rules_scheduler/rules_scheduler.info
 ${DRUPAL_MODS}rules/rules_scheduler/rules_scheduler.install
 ${DRUPAL_MODS}rules/rules_scheduler/rules_scheduler.module
 ${DRUPAL_MODS}rules/rules_scheduler/rules_scheduler.rules.inc
 ${DRUPAL_MODS}rules/rules_scheduler/rules_scheduler.test
+${DRUPAL_MODS}rules/rules_scheduler/tests/
+${DRUPAL_MODS}rules/rules_scheduler/tests/rules_scheduler_test.inc
+${DRUPAL_MODS}rules/rules_scheduler/tests/rules_scheduler_test.info
+${DRUPAL_MODS}rules/rules_scheduler/tests/rules_scheduler_test.module
 ${DRUPAL_MODS}rules/tests/
 ${DRUPAL_MODS}rules/tests/rules.test
 ${DRUPAL_MODS}rules/tests/rules_test.info

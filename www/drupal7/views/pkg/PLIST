@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/08/23 13:50:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/02/08 19:17:20 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}views/
@@ -362,6 +362,11 @@ ${DRUPAL_MODS}views/modules/taxonomy/views_handler_filter_vocabulary_vid.inc
 ${DRUPAL_MODS}views/modules/taxonomy/views_handler_relationship_node_term_data.inc
 ${DRUPAL_MODS}views/modules/taxonomy/views_plugin_argument_default_taxonomy_tid.inc
 ${DRUPAL_MODS}views/modules/taxonomy/views_plugin_argument_validate_taxonomy_term.inc
+${DRUPAL_MODS}views/modules/tracker/
+${DRUPAL_MODS}views/modules/tracker.views.inc
+${DRUPAL_MODS}views/modules/tracker/views_handler_argument_tracker_comment_user_uid.inc
+${DRUPAL_MODS}views/modules/tracker/views_handler_filter_tracker_boolean_operator.inc
+${DRUPAL_MODS}views/modules/tracker/views_handler_filter_tracker_comment_user_uid.inc
 ${DRUPAL_MODS}views/modules/translation/
 ${DRUPAL_MODS}views/modules/translation.views.inc
 ${DRUPAL_MODS}views/modules/translation/views_handler_argument_node_tnid.inc
@@ -440,6 +445,7 @@ ${DRUPAL_MODS}views/plugins/views_plugin_style_default.inc
 ${DRUPAL_MODS}views/plugins/views_plugin_style_grid.inc
 ${DRUPAL_MODS}views/plugins/views_plugin_style_jump_menu.inc
 ${DRUPAL_MODS}views/plugins/views_plugin_style_list.inc
+${DRUPAL_MODS}views/plugins/views_plugin_style_mapping.inc
 ${DRUPAL_MODS}views/plugins/views_plugin_style_rss.inc
 ${DRUPAL_MODS}views/plugins/views_plugin_style_summary.inc
 ${DRUPAL_MODS}views/plugins/views_plugin_style_summary_jump_menu.inc
@@ -487,11 +493,15 @@ ${DRUPAL_MODS}views/tests/handlers/views_handler_filter_string.test
 ${DRUPAL_MODS}views/tests/handlers/views_handler_sort.test
 ${DRUPAL_MODS}views/tests/handlers/views_handler_sort_date.test
 ${DRUPAL_MODS}views/tests/handlers/views_handler_sort_random.test
+${DRUPAL_MODS}views/tests/node/
+${DRUPAL_MODS}views/tests/node/views_node_revision_relations.test
 ${DRUPAL_MODS}views/tests/plugins/
 ${DRUPAL_MODS}views/tests/plugins/views_plugin_display.test
 ${DRUPAL_MODS}views/tests/styles/
 ${DRUPAL_MODS}views/tests/styles/views_plugin_style.test
+${DRUPAL_MODS}views/tests/styles/views_plugin_style_base.test
 ${DRUPAL_MODS}views/tests/styles/views_plugin_style_jump_menu.test
+${DRUPAL_MODS}views/tests/styles/views_plugin_style_mapping.test
 ${DRUPAL_MODS}views/tests/styles/views_plugin_style_unformatted.test
 ${DRUPAL_MODS}views/tests/taxonomy/
 ${DRUPAL_MODS}views/tests/taxonomy/views_handler_relationship_node_term_data.test
@@ -500,6 +510,7 @@ ${DRUPAL_MODS}views/tests/templates/views-view--frontpage.tpl.php
 ${DRUPAL_MODS}views/tests/test_plugins/
 ${DRUPAL_MODS}views/tests/test_plugins/views_test_plugin_access_test_dynamic.inc
 ${DRUPAL_MODS}views/tests/test_plugins/views_test_plugin_access_test_static.inc
+${DRUPAL_MODS}views/tests/test_plugins/views_test_plugin_style_test_mapping.inc
 ${DRUPAL_MODS}views/tests/user/
 ${DRUPAL_MODS}views/tests/user/views_handler_field_user_name.test
 ${DRUPAL_MODS}views/tests/user/views_user.test

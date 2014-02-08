@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/05/11 06:59:28 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/02/08 19:17:20 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}entity/
@@ -16,7 +16,6 @@ ${DRUPAL_MODS}entity/entity.install
 ${DRUPAL_MODS}entity/entity.module
 ${DRUPAL_MODS}entity/entity.rules.inc
 ${DRUPAL_MODS}entity/entity.test
-${DRUPAL_MODS}entity/entity.tpl.php
 ${DRUPAL_MODS}entity/entity_token.info
 ${DRUPAL_MODS}entity/entity_token.module
 ${DRUPAL_MODS}entity/entity_token.tokens.inc
@@ -46,6 +45,10 @@ ${DRUPAL_MODS}entity/tests/entity_test.install
 ${DRUPAL_MODS}entity/tests/entity_test.module
 ${DRUPAL_MODS}entity/tests/entity_test_i18n.info
 ${DRUPAL_MODS}entity/tests/entity_test_i18n.module
+${DRUPAL_MODS}entity/theme/
+${DRUPAL_MODS}entity/theme/entity.theme.css
+${DRUPAL_MODS}entity/theme/entity.theme.inc
+${DRUPAL_MODS}entity/theme/entity.tpl.php
 ${DRUPAL_MODS}entity/views/
 ${DRUPAL_MODS}entity/views/entity.views.inc
 ${DRUPAL_MODS}entity/views/entity_views_example_query.php
