@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/27 09:20:12 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/02/08 14:58:21 espie Exp $
+@conflict py-flask-wtk-<0.9.4p0
 lib/python${MODPY_VERSION}/site-packages/WTForms-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/WTForms-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/WTForms-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
