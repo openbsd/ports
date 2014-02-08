@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2014/02/06 13:25:17 brad Exp $
+# $OpenBSD: Makefile,v 1.10 2014/02/08 17:49:11 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	Playstation 1 emulator
 
-DISTNAME =	pcsxr-1.9.94.r87113
+DISTNAME =	pcsxr-1.9.94.r87113p0
 PKGNAME =	pcsxr-1.9.94beta0
 
 CATEGORIES =	emulators games
@@ -15,8 +15,7 @@ MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	http://deftly.net/
-EXTRACT_SUFX =	.tar.bz2
+MASTER_SITES =	http://www.elsasser.org/openbsd/distfiles/
 
 USE_GMAKE =	Yes
 
@@ -32,18 +31,10 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += sndio stdc++ usbhid xcb xcb-dri2 xcb-glx xcb-render
 WANTLIB += xcb-shm z
 
-BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
-
 CONFIGURE_STYLE =	gnu
-CONFIGURE_SCRIPT =	autogen.sh
 CONFIGURE_ENV =		CPPFLAGS="-I${X11BASE}/include" \
-			LDFLAGS="-L${X11BASE}/lib" \
-			AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-			AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
+			LDFLAGS="-L${X11BASE}/lib"
 CONFIGURE_ARGS =	--enable-libcdio --enable-opengl --enable-dynarec=no
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.14
 LIBTOOL_FLAGS =		--tag=disable-static
 
 LIB_DEPENDS =	audio/libcdio \
