@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-conflicts,v 1.6 2014/02/08 13:17:19 espie Exp $
+# $OpenBSD: check-conflicts,v 1.7 2014/02/08 13:37:27 espie Exp $
 # Copyright (c) 2000-2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -208,7 +208,7 @@ sub compute_true_conflicts
 
 sub compute_problems
 {
-	my ($ui, $h, $conflicts, $deps, $current) = @_;
+	my ($ui, $h, $conflicts, $deps, $current, $name2path) = @_;
 
 	my $c = {};
 	my $c2 = {};
@@ -231,7 +231,8 @@ sub compute_problems
 		my $result = $cache->{$hv};
 		if (@$result != 0) {
 			my $newkey = join(',', 
-			    map {$current->{$_} ? $_."!" : $_} @$result);
+			    map {$current->{$_} ? "$_!($name2path->{$_})" : 
+			    "$_($name2path->{$_})" } @$result);
 			if (@$result == 1) {
 				$newkey.="-> was ".join(',', @$l);
 			}
@@ -256,6 +257,11 @@ sub handle_plist
 		$ui->errsay("Error reading #1", $filename);
 		return;
 	}
+	if (!defined $plist->pkgname) {
+		$ui->errsay("Invalid package #1", $filename);
+		return;
+	}
+	$name2path->{$plist->pkgname} = $plist->fullpkgpath;
 	$ui->say("#1 -> #2", $filename, $plist->pkgname) if $ui->verbose;
 	$plist->forget;
 	$conflicts->{$plist->pkgname} = 
@@ -271,11 +277,6 @@ sub handle_file
 	my ($ui, $filename) = @_;
 	return if -d $filename;
 	my $plist = OpenBSD::PackingList->fromfile($filename);
-	if (!defined $plist->pkgname) {
-		$ui->errsay("Invalid package #1", $filename);
-		return;
-	}
-	$name2path->{$plist->pkgname} = $plist->fullpkgpath;
 	handle_plist($ui, $filename, $plist);
 }
 
@@ -397,7 +398,7 @@ if (!$portpath && $opt_p) {
 	find_current_pkgnames($ui, $opt_p);
 }
 $ui->progress->set_header("File problems");
-compute_problems($ui, $filehash, $conflicts, $dephash, $current);
+compute_problems($ui, $filehash, $conflicts, $dephash, $current, $name2path);
 for my $cfl (sort keys %$cache2) {
 	$ui->say("#1", $cfl);
 	for my $f (sort @{$cache2->{$cfl}}) {
