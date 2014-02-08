@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/12/08 19:13:31 zhuk Exp $
-@conflict kdegames-<4
+@comment $OpenBSD: PLIST,v 1.4 2014/02/08 21:50:25 zhuk Exp $
+@conflict kdeedu-<4
 @bin bin/ktouch
 lib/kde4/imports/org/kde/ktouch/
 lib/kde4/imports/org/kde/ktouch/graph/
