@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/01/30 15:28:25 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/02/08 18:52:10 espie Exp $
 @option no-default-conflict
 @conflict drupal->=7,<8
 @owner ${DRUPAL_OWNER}
@@ -358,6 +358,7 @@ ${DRUPAL_ROOT}/modules/field/field.crud.inc
 ${DRUPAL_ROOT}/modules/field/field.default.inc
 ${DRUPAL_ROOT}/modules/field/field.form.inc
 ${DRUPAL_ROOT}/modules/field/field.info
+${DRUPAL_ROOT}/modules/field/field.info.class.inc
 ${DRUPAL_ROOT}/modules/field/field.info.inc
 ${DRUPAL_ROOT}/modules/field/field.install
 ${DRUPAL_ROOT}/modules/field/field.module
@@ -665,6 +666,10 @@ ${DRUPAL_ROOT}/modules/simpletest/files/css_test_files/css_input_with_import.css
 ${DRUPAL_ROOT}/modules/simpletest/files/css_test_files/css_input_without_import.css
 ${DRUPAL_ROOT}/modules/simpletest/files/css_test_files/css_input_without_import.css.optimized.css
 ${DRUPAL_ROOT}/modules/simpletest/files/css_test_files/css_input_without_import.css.unoptimized.css
+${DRUPAL_ROOT}/modules/simpletest/files/css_test_files/css_subfolder/
+${DRUPAL_ROOT}/modules/simpletest/files/css_test_files/css_subfolder/css_input_with_import.css
+${DRUPAL_ROOT}/modules/simpletest/files/css_test_files/css_subfolder/css_input_with_import.css.optimized.css
+${DRUPAL_ROOT}/modules/simpletest/files/css_test_files/css_subfolder/css_input_with_import.css.unoptimized.css
 ${DRUPAL_ROOT}/modules/simpletest/files/css_test_files/import1.css
 ${DRUPAL_ROOT}/modules/simpletest/files/css_test_files/import2.css
 ${DRUPAL_ROOT}/modules/simpletest/files/html-1.txt
@@ -680,6 +685,11 @@ ${DRUPAL_ROOT}/modules/simpletest/files/php-1.txt
 ${DRUPAL_ROOT}/modules/simpletest/files/php-2.php
 ${DRUPAL_ROOT}/modules/simpletest/files/sql-1.txt
 ${DRUPAL_ROOT}/modules/simpletest/files/sql-2.sql
+${DRUPAL_ROOT}/modules/simpletest/lib/
+${DRUPAL_ROOT}/modules/simpletest/lib/Drupal/
+${DRUPAL_ROOT}/modules/simpletest/lib/Drupal/simpletest/
+${DRUPAL_ROOT}/modules/simpletest/lib/Drupal/simpletest/Tests/
+${DRUPAL_ROOT}/modules/simpletest/lib/Drupal/simpletest/Tests/PSR0WebTest.php
 ${DRUPAL_ROOT}/modules/simpletest/simpletest.api.php
 ${DRUPAL_ROOT}/modules/simpletest/simpletest.css
 ${DRUPAL_ROOT}/modules/simpletest/simpletest.info
@@ -766,6 +776,16 @@ ${DRUPAL_ROOT}/modules/simpletest/tests/password.test
 ${DRUPAL_ROOT}/modules/simpletest/tests/path.test
 ${DRUPAL_ROOT}/modules/simpletest/tests/path_test.info
 ${DRUPAL_ROOT}/modules/simpletest/tests/path_test.module
+${DRUPAL_ROOT}/modules/simpletest/tests/psr_0_test/
+${DRUPAL_ROOT}/modules/simpletest/tests/psr_0_test/lib/
+${DRUPAL_ROOT}/modules/simpletest/tests/psr_0_test/lib/Drupal/
+${DRUPAL_ROOT}/modules/simpletest/tests/psr_0_test/lib/Drupal/psr_0_test/
+${DRUPAL_ROOT}/modules/simpletest/tests/psr_0_test/lib/Drupal/psr_0_test/Tests/
+${DRUPAL_ROOT}/modules/simpletest/tests/psr_0_test/lib/Drupal/psr_0_test/Tests/ExampleTest.php
+${DRUPAL_ROOT}/modules/simpletest/tests/psr_0_test/lib/Drupal/psr_0_test/Tests/Nested/
+${DRUPAL_ROOT}/modules/simpletest/tests/psr_0_test/lib/Drupal/psr_0_test/Tests/Nested/NestedExampleTest.php
+${DRUPAL_ROOT}/modules/simpletest/tests/psr_0_test/psr_0_test.info
+${DRUPAL_ROOT}/modules/simpletest/tests/psr_0_test/psr_0_test.module
 ${DRUPAL_ROOT}/modules/simpletest/tests/registry.test
 ${DRUPAL_ROOT}/modules/simpletest/tests/requirements1_test.info
 ${DRUPAL_ROOT}/modules/simpletest/tests/requirements1_test.install
@@ -823,6 +843,7 @@ ${DRUPAL_ROOT}/modules/simpletest/tests/update_test_3.module
 ${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/
 ${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/drupal-6.bare.database.php
 ${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/drupal-6.comments.database.php
+${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/drupal-6.duplicate-permission.database.php
 ${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/drupal-6.filled.database.php
 ${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/drupal-6.forum.database.php
 ${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/drupal-6.locale.database.php
@@ -867,8 +888,10 @@ ${DRUPAL_ROOT}/modules/statistics/
 ${DRUPAL_ROOT}/modules/statistics/statistics.admin.inc
 ${DRUPAL_ROOT}/modules/statistics/statistics.info
 ${DRUPAL_ROOT}/modules/statistics/statistics.install
+${DRUPAL_ROOT}/modules/statistics/statistics.js
 ${DRUPAL_ROOT}/modules/statistics/statistics.module
 ${DRUPAL_ROOT}/modules/statistics/statistics.pages.inc
+${DRUPAL_ROOT}/modules/statistics/statistics.php
 ${DRUPAL_ROOT}/modules/statistics/statistics.test
 ${DRUPAL_ROOT}/modules/statistics/statistics.tokens.inc
 ${DRUPAL_ROOT}/modules/syslog/
