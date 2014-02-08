@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2014/01/20 21:34:44 edd Exp $
+# $OpenBSD: Makefile,v 1.39 2014/02/08 17:46:18 edd Exp $
 
 COMMENT-context =	texlive texmf for conTeXt
 COMMENT-docs =		texlive documentation
@@ -6,10 +6,11 @@ COMMENT-full =		texlive texmf for extra macros
 COMMENT-main =		texlive texmf for basic functionality
 COMMENT-buildset =	smallest texlive texmf for building ports
 
-# Also bump print/texlive/base if you change the contents of the buildset.
-# This ensures correct hashing in an update situation.
-REVISION-buildset =	1
-REVISION-main =		0
+# If you move things out of another texmf into the buildset, don't forget to:
+#   * Update the buildset conflict markers in PLIST-buildset.
+#   * Add a more restrictive RUN_DEPEND upon the buildset.
+REVISION-buildset =	2
+REVISION-main =		1
 
 DISTNAME =		texlive-${DIST_V}-texmf
 MASTER_SITES0 =		http://spacehopper.org/mirrors/ \
@@ -40,6 +41,9 @@ MODPY_BUILDDEP =	No
 MODPY_RUNDEP =		No
 
 RUN_DEPENDS-main =	texlive_base-${V}:print/texlive/base
+# Some fonts moved from PLIST-main to PLIST-buildset
+RUN_DEPENDS-main +=	texlive_texmf-buildset->=2013p2:print/texlive/texmf,-buildset
+
 RUN_DEPENDS-full =	texlive_texmf-minimal-${V}:print/texlive/texmf,-main \
 			lang/python/${MODPY_VERSION}
 RUN_DEPENDS-context +=	texlive_texmf-full-${V}:print/texlive/texmf,-full \

@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-buildset,v 1.2 2014/01/14 14:42:00 edd Exp $
+@comment $OpenBSD: PLIST-buildset,v 1.3 2014/02/08 17:46:18 edd Exp $
 @conflict teTeX_texmf-*
 @conflict texlive_base-<2013
 @conflict texlive_texmf-docs-<2013
-@conflict texlive_texmf-minimal-<2013
+@conflict texlive_texmf-minimal-<2013p0
 @conflict texlive_texmf-full-<2013
 @conflict texlive_texmf-context-<2013
 @pkgpath print/texlive/texmf-minimal
@@ -5668,3 +5668,4 @@ share/texmf-var/web2c/xetex/
 share/texmf-var/web2c/xetex/cont-en.fmt
 share/texmf-var/web2c/xetex/xelatex.fmt
 share/texmf-var/web2c/xetex/xetex.fmt
+@exec-update if [ -e "%D/bin/mktexlsr" ]; then %D/bin/mktexlsr > /dev/null 2>&1; fi
