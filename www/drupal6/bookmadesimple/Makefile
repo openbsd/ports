@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2012/01/28 11:33:33 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2014/02/08 18:34:27 espie Exp $
 
 COMMENT =	module to simplify and restrict book node creation
 
-DISTNAME = 	BookMadeSimple-6.x-2.4
-PKGNAME =	drupal6-bookmadesimple-2.4
-REVISION =      2
+DISTNAME = 	book_made_simple-6.x-3.4
+PKGNAME =	drupal6-bookmadesimple-3.4
 
 .include <bsd.port.mk>

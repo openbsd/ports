@@ -1,14 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/25 07:49:11 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/02/08 18:34:27 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
-${DRUPAL_MODS}BookMadeSimple/
-${DRUPAL_MODS}BookMadeSimple/LICENSE.txt
-${DRUPAL_MODS}BookMadeSimple/README.txt
-${DRUPAL_MODS}BookMadeSimple/book_made_simple.css
-${DRUPAL_MODS}BookMadeSimple/book_made_simple.info
-${DRUPAL_MODS}BookMadeSimple/book_made_simple.install
-${DRUPAL_MODS}BookMadeSimple/book_made_simple.module
-${DRUPAL_MODS}BookMadeSimple/translation/
-${DRUPAL_MODS}BookMadeSimple/translation/BookMadeSimple.de_.po
-${DRUPAL_MODS}BookMadeSimple/translation/BookMadeSimple.fr_.po
-${DRUPAL_MODS}BookMadeSimple/translation/BookMadeSimple.pot
+${DRUPAL_MODS}book_made_simple/
+${DRUPAL_MODS}book_made_simple/LICENSE.txt
+${DRUPAL_MODS}book_made_simple/README.txt
+${DRUPAL_MODS}book_made_simple/book_made_simple.css
+${DRUPAL_MODS}book_made_simple/book_made_simple.info
+${DRUPAL_MODS}book_made_simple/book_made_simple.install
+${DRUPAL_MODS}book_made_simple/book_made_simple.module
