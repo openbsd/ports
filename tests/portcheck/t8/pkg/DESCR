@@ -1,1 +1,2 @@
 This line mentions /var/log/t8 and should not produce any warnings.
+This line mentions /var/tmp/t8 and should not produce any warnings.
