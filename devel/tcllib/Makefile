@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/02/07 10:59:03 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2014/02/09 12:27:05 stu Exp $
 
 COMMENT =	Tcl Standard Library
 
@@ -6,7 +6,7 @@ DISTNAME =	tcllib-1.15pl0
 CATEGORIES =	devel lang/tcl
 HOMEPAGE =	http://sourceforge.net/projects/tcllib/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
-REVISION =	0
+REVISION =	1
 
 # BSD style
 PERMIT_PACKAGE_CDROM =	Yes
