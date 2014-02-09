@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.65 2014/02/04 21:28:30 zhuk Exp $
+# $OpenBSD: portcheck,v 1.66 2014/02/09 15:19:32 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -51,20 +51,21 @@ while getopts "AdNPp:x:" OPT; do
 			ignore_list[${#ignore_list[@]}]=.hg
 			ignore_list[${#ignore_list[@]}]=.hgignore
 			ignore_list[${#ignore_list[@]}]=.svn
-			ignore_list[${#ignore_list[@]}]=.FINISHED
-			ignore_list[${#ignore_list[@]}]=.INDEX
-			ignore_list[${#ignore_list[@]}]=.README
-			ignore_list[${#ignore_list[@]}]=.README.md
-			ignore_list[${#ignore_list[@]}]=.bulk
-			ignore_list[${#ignore_list[@]}]=.distfiles
-			ignore_list[${#ignore_list[@]}]=.infrastructure
-			ignore_list[${#ignore_list[@]}]=.lost+found
-			ignore_list[${#ignore_list[@]}]=.mystuff
-			ignore_list[${#ignore_list[@]}]=.openbsd-wip
-			ignore_list[${#ignore_list[@]}]=.packages
-			ignore_list[${#ignore_list[@]}]=.plist
-			ignore_list[${#ignore_list[@]}]=.pobj
-			ignore_list[${#ignore_list[@]}]=.update
+			ignore_list[${#ignore_list[@]}]=FINISHED
+			ignore_list[${#ignore_list[@]}]=INDEX
+			ignore_list[${#ignore_list[@]}]=README
+			ignore_list[${#ignore_list[@]}]=README.md
+			ignore_list[${#ignore_list[@]}]=bulk
+			ignore_list[${#ignore_list[@]}]=distfiles
+			ignore_list[${#ignore_list[@]}]=infrastructure
+			ignore_list[${#ignore_list[@]}]=lost+found
+			ignore_list[${#ignore_list[@]}]=mystuff
+			ignore_list[${#ignore_list[@]}]=openbsd-wip
+			ignore_list[${#ignore_list[@]}]=packages
+			ignore_list[${#ignore_list[@]}]=plist
+			ignore_list[${#ignore_list[@]}]=pobj
+			ignore_list[${#ignore_list[@]}]=tests
+			ignore_list[${#ignore_list[@]}]=update
 		fi
 		rootrun=true
 		;;
