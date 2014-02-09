@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2014/02/07 10:59:03 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2014/02/09 12:26:00 stu Exp $
 
 COMMENT =		enhanced Tk console
 
 DISTNAME =		tkcon-2.5
-REVISION =		2
+REVISION =		3
 CATEGORIES =		x11 x11/tk
 HOMEPAGE =		http://sourceforge.net/projects/tkcon/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -23,8 +23,14 @@ PKG_ARCH =		*
 DOCDIR =		${PREFIX}/share/doc/tkcon
 MODDIR =		${DESTDIR}${MODTCL_MODDIR}/${MODTCL_VERSION}
 
+# Conflicts with observe.n in Tcllib
+BADMAN =		${WRKSRC}/docs/observe.n.man
+
 do-configure:
 	@${MODTCL_WISH_ADJ} ${WRKSRC}/tkcon.tcl
+	sed -e 's!manpage_begin observe!manpage_begin tkcon_observe!' \
+		< ${BADMAN} > ${WRKSRC}/docs/tkcon_observe.n.man \
+	&& mv ${BADMAN} ${BADMAN}.orig
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tkcon.tcl ${PREFIX}/bin/tkcon
