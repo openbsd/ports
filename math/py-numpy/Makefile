@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2013/10/03 16:37:16 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.39 2014/02/09 13:32:40 jasper Exp $
 
 COMMENT=		fast array and numeric programming library for Python
 BROKEN-m88k=		lacks cpu information
@@ -6,7 +6,7 @@ BROKEN-m88k=		lacks cpu information
 MODPY_EGG_VERSION=	1.6.0
 DISTNAME=		numpy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 CATEGORIES=		math devel
 
 HOMEPAGE=		http://numpy.scipy.org/

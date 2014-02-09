@@ -1,0 +1,39 @@
+$OpenBSD: patch-numpy_f2py___init___py,v 1.1 2014/02/09 13:32:40 jasper Exp $
+
+Security fix for CVE-2014-1858, insecure temporary file use
+https://github.com/numpy/numpy/commit/0bb46c1448b0d3f5453d5182a17ea7ac5854ee15
+
+--- numpy/f2py/__init__.py.orig	Mon Feb 28 06:40:29 2011
++++ numpy/f2py/__init__.py	Sun Feb  9 14:18:20 2014
+@@ -27,20 +27,20 @@ def compile(source,
+     from numpy.distutils.exec_command import exec_command
+     import tempfile
+     if source_fn is None:
+-        fname = os.path.join(tempfile.mktemp()+'.f')
++        f = tempfile.NamedTemporaryFile(suffix='.f')
+     else:
+-        fname = source_fn
++        f = open(source_fn, 'w')
+ 
+-    f = open(fname,'w')
+-    f.write(source)
+-    f.close()
++    try:
++        f.write(source)
++        f.flush()
+ 
+-    args = ' -c -m %s %s %s'%(modulename,fname,extra_args)
+-    c = '%s -c "import numpy.f2py as f2py2e;f2py2e.main()" %s' %(sys.executable,args)
+-    s,o = exec_command(c)
+-    if source_fn is None:
+-        try: os.remove(fname)
+-        except OSError: pass
++        args = ' -c -m %s %s %s'%(modulename, f.name, extra_args)
++        c = '%s -c "import numpy.f2py as f2py2e;f2py2e.main()" %s' % \
++                (sys.executable, args)
++        s, o = exec_command(c)
++    finally:
++      f.close()      
+     return s
+ 
+ from numpy.testing import Tester
