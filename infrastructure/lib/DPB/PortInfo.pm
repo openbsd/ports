@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.32 2014/01/31 17:32:29 gsoares Exp $
+# $OpenBSD: PortInfo.pm,v 1.33 2014/02/09 15:24:20 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -173,7 +173,7 @@ our @ISA = qw(AddOrderedList);
 sub add
 {
 	my ($class, $var, $o, $value, $parent) = @_;
-	return if $value =~ /^\s*no\*$/i;
+	return if $value =~ /^\s*no\s*$/i;
 	$class->SUPER::add($var, $o, $value, $parent);
 }
 
