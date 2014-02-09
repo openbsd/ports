@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/02/03 22:28:41 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/02/09 19:27:12 zhuk Exp $
 share/applications/kde4/kcalc.desktop
 share/doc/HTML/en/kcalc/index.cache.bz2
 share/doc/HTML/en/kcalc/index.docbook
+
 share/locale/zh_CN/LC_MESSAGES/gwenview.mo
