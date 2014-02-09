@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portimport,v 1.4 2014/02/04 21:18:14 zhuk Exp $
+# $OpenBSD: portimport,v 1.5 2014/02/09 15:10:49 zhuk Exp $
 # Copyright (c) 2013 Robert Peichaer
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -29,10 +29,10 @@ usage() {
 }
 
 user=$(id -un)
-set portsdir=
+portsdir=
 set -A portcheck_args -- -N
 
-while getopts "p:Uu:" OPT; do
+while getopts "p:u:" OPT; do
 	case $OPT in
 	p)	portsdir="$OPTARG"
 		portcheck_args[${#portcheck_args[@]}]="-p$portsdir";;
