@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.70 2014/02/09 18:11:13 zhuk Exp $
+# $OpenBSD: portcheck,v 1.71 2014/02/09 19:26:25 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1331,6 +1331,7 @@ check_long_lines() {
 # Checks made:
 #   * There is an OpenBSD RCS tag at the top.
 #   * No items with ${FULLPKGNAME} are allowed, except readme.
+#   * No empty lines.
 check_plist_file() {
 	$debugging && echo "CALLED: check_plist_file($*)" >&2
 
@@ -1347,6 +1348,8 @@ check_plist_file() {
 	egrep -v '^(share/doc/pkg-readmes/\$\{FULLPKGNAME\}|@comment .*)$' "$1" |
 		egrep '.\$\{FULLPKGNAME\}|\$\{FULLPKGNAME\}.' >&2 &&
 		err "$1 contains item(s) with \${FULLPKGNAME} in it, see above"
+
+	egrep -q '^[[:space:]]*$' "$1" && err "$1 contains empty lines"
 }
 
 # Checks made:
