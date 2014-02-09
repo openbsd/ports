@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.66 2014/02/09 15:19:32 zhuk Exp $
+# $OpenBSD: portcheck,v 1.67 2014/02/09 15:44:20 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1380,13 +1380,13 @@ check_makefile() {
 		egrep -q '^#[[:space:]]*\$OpenBSD.*\$' ||
 		err "$F does not have \$OpenBSD\$ RCS tag at the top"
 
-	local iflevel=0 l lnum=0 revs= t r mkvars= var dupfound
+	local iflevel=0 l lnum=0 revs= t r mkvars= var duprevfound
 	# do not unset mkvars, having empty element(-s) is fine
 	unset revs[0]
 	local tab="$(print '\t')"
 	while read -r l; do ((++lnum))
 		set -A t -- $l
-		dupfound=false
+		duprevfound=false
 
 		case $l in
 		*(" ")REVISION*)
@@ -1398,7 +1398,7 @@ check_makefile() {
 					if [[ $var == "$r" ]]; then
 						err "duplicated $r in $F"
 						# avoid dup error messages
-						dupfound=true
+						duprevfound=true
 						break
 					fi
 				done
@@ -1422,7 +1422,7 @@ check_makefile() {
 		esac
 
 		if [[ $l == *(" ")+([A-Za-z0-9_-])*(" "|"$tab")?(\?)=* ]] &&
-		   ((iflevel == 0)) && ! $dupfound; then
+		   ((iflevel == 0)) && ! $duprevfound; then
 			var=${t[0]%?(\?)=}
 			for v in "${mkvars[@]}"; do
 				if [[ $v == "$var" ]]; then
