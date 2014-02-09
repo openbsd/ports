@@ -1,0 +1,21 @@
+$OpenBSD: patch-include_gc_config_macros_h,v 1.3 2014/02/09 06:01:54 shadchin Exp $
+--- include/gc_config_macros.h.orig	Sat Jan 18 23:56:01 2014
++++ include/gc_config_macros.h	Sat Jan 18 23:54:59 2014
+@@ -87,14 +87,14 @@
+ # if defined(__mips) && !defined(__linux__)
+ #   define GC_IRIX_THREADS
+ # endif
+-# if defined(__sparc) && !defined(__linux__) \
++# if defined(__OpenBSD__)
++#   define GC_OPENBSD_THREADS
++# elif defined(__sparc) && !defined(__linux__) \
+      || defined(sun) && (defined(i386) || defined(__i386__) \
+                          || defined(__amd64__))
+ #   define GC_SOLARIS_THREADS
+ # elif defined(__APPLE__) && defined(__MACH__)
+ #   define GC_DARWIN_THREADS
+-# elif defined(__OpenBSD__)
+-#   define GC_OPENBSD_THREADS
+ # elif !defined(GC_LINUX_THREADS) && !defined(GC_HPUX_THREADS) \
+        && !defined(GC_OSF1_THREADS) && !defined(GC_IRIX_THREADS)
+     /* FIXME: Should we really need for FreeBSD and NetBSD to check     */

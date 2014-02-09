@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2013/10/11 23:48:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.53 2014/02/09 06:01:54 shadchin Exp $
 
 COMMENT-main=	garbage collection and memory leak detection for C and C++
 COMMENT-atomic=	access to hardware provided atomic memory operations
@@ -7,6 +7,7 @@ VERSION=	7.2d
 DISTNAME=	gc-${VERSION}
 PKGNAME-atomic=	libatomic_ops-${VERSION}
 PKGNAME-main=	boehm-gc-${VERSION}
+REVISION-main=	0
 
 WRKDIST=	${WRKDIR}/gc-7.2
 MULTI_PACKAGES=	-main -atomic
