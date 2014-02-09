@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/02/09 18:14:05 zhuk Exp $
+@conflict kdeutils-<4
+share/examples/t8/
+@sample /var/t8/
+share/examples/t8/foo
+@sample /var/t8/foo

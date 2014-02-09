@@ -1,0 +1,1 @@
+This line mentions /var/log/t8 and should not produce any warnings.
