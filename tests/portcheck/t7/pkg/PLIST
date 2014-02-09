@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/02/09 16:11:16 zhuk Exp $
+share/doc/HTML/en/kcalc/
+share/doc/HTML/en/kcalc/index.docbook
