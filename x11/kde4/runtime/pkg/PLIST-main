@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2014/01/15 19:42:12 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2014/02/09 11:45:52 zhuk Exp $
 @pkgpath x11/kde4/runtime
-@group wheel
 @bin bin/kcmshell4
 @bin bin/kde-cp
 @bin bin/kde-mv
@@ -193,7 +192,6 @@ lib/kde4/kurisearchfilter.so
 lib/kde4/libkmanpart.so
 lib/kde4/librenaudioplugin.so
 lib/kde4/librenimageplugin.so
-@group
 @lib ${KDE4LIB}/libkdeinit4_kcmshell4.so.${LIBkdeinit4_kcmshell4_VERSION}
 @lib ${KDE4LIB}/libkdeinit4_kglobalaccel.so.${LIBkdeinit4_kglobalaccel_VERSION}
 @lib ${KDE4LIB}/libkdeinit4_khelpcenter.so.${LIBkdeinit4_khelpcenter_VERSION}
@@ -201,7 +199,6 @@ lib/kde4/librenimageplugin.so
 @lib ${KDE4LIB}/libkdeinit4_kwalletd.so.${LIBkdeinit4_kwalletd_VERSION}
 @lib ${KDE4LIB}/libkwalletbackend.so.${LIBkwalletbackend_VERSION}
 @lib ${KDE4LIB}/libmolletnetwork.so.${LIBmolletnetwork_VERSION}
-@group wheel
 lib/kde4/localdomainurifilter.so
 lib/kde4/plasma-kpart.so
 lib/kde4/plasma_appletscript_declarative.so
@@ -289,8 +286,10 @@ lib/libknotifyplugin.so
 libexec/kdeeject
 @bin libexec/kdesu
 @mode g+s
+@group wheel
 @bin libexec/kdesud
 @mode
+@group
 @bin libexec/kdontchangethehostname
 libexec/khc_docbookdig.pl
 libexec/khc_htdig.pl
@@ -941,13 +940,9 @@ share/emoticons/kde4/unlove.png
 share/emoticons/kde4/wilted_rose.png
 share/emoticons/kde4/wink.png
 share/examples/dbus-1/system.d/org.kde.kcontrol.kcmremotewidgets.conf
-@group
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.kcontrol.kcmremotewidgets.conf
-@group wheel
 share/examples/xdg/menus/kde-information.menu
-@group
 @sample ${SYSCONFDIR}/xdg/menus/kde-information.menu
-@group wheel
 share/icons/default.kde4
 @comment share/icons/hicolor/index.theme
 share/kde4/services/about.protocol
