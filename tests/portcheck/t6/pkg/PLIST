@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/02/09 15:11:45 zhuk Exp $
+share/icons/bartheme/32x32/shmalice.png
+share/icons/footheme/32x32/alice.png
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/footheme
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/footheme
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/bartheme
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons
