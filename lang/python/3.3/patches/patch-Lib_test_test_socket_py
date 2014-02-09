@@ -1,0 +1,17 @@
+$OpenBSD: patch-Lib_test_test_socket_py,v 1.1 2014/02/09 09:49:26 rpointel Exp $
+security fix: http://bugs.python.org/issue20246
+
+--- Lib/test/test_socket.py
++++ Lib/test/test_socket.py
+@@ -4538,6 +4538,14 @@ class BufferIOTest(SocketConnectedTest):
+ 
+     _testRecvFromIntoMemoryview = _testRecvFromIntoArray
+ 
++    def testRecvFromIntoSmallBuffer(self):
++        # See issue #20246.
++        buf = bytearray(8)
++        self.assertRaises(ValueError, self.cli_conn.recvfrom_into, buf, 1024)
++
++    def _testRecvFromIntoSmallBuffer(self):
++        self.serv_conn.send(MSG)
++
