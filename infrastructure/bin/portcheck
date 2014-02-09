@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.67 2014/02/09 15:44:20 zhuk Exp $
+# $OpenBSD: portcheck,v 1.68 2014/02/09 16:09:55 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1384,7 +1384,9 @@ check_makefile() {
 	# do not unset mkvars, having empty element(-s) is fine
 	unset revs[0]
 	local tab="$(print '\t')"
+	IFS=
 	while read -r l; do ((++lnum))
+		unset IFS
 		set -A t -- $l
 		duprevfound=false
 
@@ -1423,7 +1425,7 @@ check_makefile() {
 
 		if [[ $l == *(" ")+([A-Za-z0-9_-])*(" "|"$tab")?(\?)=* ]] &&
 		   ((iflevel == 0)) && ! $duprevfound; then
-			var=${t[0]%?(\?)=}
+			var=${t[0]%?(\?)=*}
 			for v in "${mkvars[@]}"; do
 				if [[ $v == "$var" ]]; then
 					err "duplicated assignment of $v" \
@@ -1433,7 +1435,9 @@ check_makefile() {
 			done
 			mkvars[${#mkvars[@]}]=$var
 		fi
+		IFS=
 	done <"$F"
+	unset IFS
 }
 
 # Checks made:
