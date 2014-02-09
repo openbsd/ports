@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/02/04 21:18:14 zhuk Exp $
+# $OpenBSD: Makefile,v 1.5 2014/02/09 15:12:24 zhuk Exp $
 
 # To add a test named ${testname}:
 #  1) If test should catch errors, add sample portcheck output to the
@@ -11,7 +11,7 @@
 #     section below.
 
 # user-customizeable
-REGRESS_TARGETS ?=	t1 t2 t3 t4 t5
+REGRESS_TARGETS ?=	t1 t2 t3 t4 t5 t6
 PORTCHECK ?=		${PORTSDIR}/infrastructure/bin/portcheck
 PORTCHECK_ARGS ?=
 SUBST_CMD ?=		${PORTSDIR}/infrastructure/bin/pkg_subst
