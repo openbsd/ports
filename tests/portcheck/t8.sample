@@ -1,0 +1,1 @@
+hardcoded paths detected in pkg/README, consider using SUBST_VARS and PREFIX/LOCALBASE/LOCALSTATEDIR
