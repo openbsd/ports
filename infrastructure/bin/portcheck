@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.68 2014/02/09 16:09:55 zhuk Exp $
+# $OpenBSD: portcheck,v 1.69 2014/02/09 17:24:48 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1305,11 +1305,12 @@ check_pkg_dir() {
 }
 
 # Checks made:
-#   * There are no hardcoded /usr/local or /var paths in file
+#   * There are no hardcoded /usr/local or /var paths in file.
+#     /var/log/* are allowed, though.
 check_hardcoded() {
 	$debugging && echo "CALLED: check_hardcoded($*)" >&2
 
-	egrep -q '(/usr/local|/var)[[:>:]]' "$1" &&
+	egrep -q '(/usr/local|/var([^/]|/[^l]|/l[^o]|/lo[^g]|/log[[:alnum:]]+))[[:>:]]' "$1" &&
 		err "hardcoded paths detected in $1, consider using" \
 		    "SUBST_VARS and PREFIX/LOCALBASE/LOCALSTATEDIR"
 }
