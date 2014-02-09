@@ -1,38 +1,47 @@
-# $OpenBSD: Makefile,v 1.26 2013/04/02 16:41:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2014/02/09 11:51:42 ajacoutot Exp $
 
-COMMENT=	genealogical research and analysis management program system
+COMMENT=		Genealogical Research Analysis Management Programming System
 
-DISTNAME=	gramps-3.2.6
-REVISION=	4
+MODPY_EGG_VERSION=	4.0.3
+DISTNAME=		gramps-${MODPY_EGG_VERSION}
 
-CATEGORIES=	misc x11
+CATEGORIES=		misc x11
 
-HOMEPAGE=	http://www.gramps-project.org/
+HOMEPAGE=		http://www.gramps-project.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gramps/}
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gramps/}
 
-MODULES=	lang/python \
-		textproc/intltool
+MODULES=		lang/python \
+			textproc/intltool
 
-BUILD_DEPENDS=	x11/py-gtk2
-RUN_DEPENDS=	devel/desktop-file-utils \
-		devel/xdg-utils \
-		${MODPY_RUN_DEPENDS},-bsddb \
-		math/graphviz \
-		misc/shared-mime-info \
-		x11/py-gtk2 \
-		www/py-webkitgtk \
-		x11/gtk+2,-guic
+RUN_DEPENDS=		devel/desktop-file-utils \
+			devel/py-gobject3 \
+			devel/xdg-utils \
+			graphics/goocanvas \
+			graphics/libgexiv2 \
+			graphics/py-Pillow \
+			math/graphviz \
+			misc/shared-mime-info \
+			textproc/gtkspell3 \
+			www/webkit \
+			x11/gtk+2,-guic
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--localedir=${LOCALBASE}/share/locale \
-		--enable-packager-mode
-USE_GROFF =	Yes
+# pygobject introspection for gtk+3
+RUN_DEPENDS +=		x11/gtk+3
+
+# XXX missing: py-osmgpsmap
+# XXX missing: PyICU
+
+MODPY_DISTUTILS_BUILD=	build
+
+pre-configure:
+	perl -pi -e 's,/usr/share,${PREFIX}/share,g' ${WRKSRC}/data/gramps.keys.in
+
+post-install:
+	echo -n '${TRUEPREFIX}/share' \
+		>${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gramps/gen/utils/resource-path
 
 .include <bsd.port.mk>
