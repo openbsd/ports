@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2014/02/07 06:49:34 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.33 2014/02/09 12:14:43 pirofti Exp $
 bin/youtube-dl
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/
 lib/python${MODPY_VERSION}/site-packages/youtube_dl-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -57,6 +57,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/bambuser.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/bambuser.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/bandcamp.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/bandcamp.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/bbccouk.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/bbccouk.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/blinkx.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/blinkx.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/bliptv.py
@@ -77,6 +79,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cbs.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cbs.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/channel9.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/channel9.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/chilloutzone.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/chilloutzone.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cinemassacre.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/cinemassacre.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/clipfish.py
@@ -197,6 +201,8 @@ lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/iprima.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/iprima.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ivi.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/ivi.pyc
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/jadorecettepub.py
+lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/jadorecettepub.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/jeuxvideo.py
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/jeuxvideo.pyc
 lib/python${MODPY_VERSION}/site-packages/youtube_dl/extractor/jpopsukitv.py
