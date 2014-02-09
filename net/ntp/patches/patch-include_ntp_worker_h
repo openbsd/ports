@@ -1,0 +1,13 @@
+$OpenBSD: patch-include_ntp_worker_h,v 1.1 2014/02/09 21:36:46 sthen Exp $
+--- include/ntp_worker.h.orig	Thu Feb  6 22:41:12 2014
++++ include/ntp_worker.h	Thu Feb  6 22:50:16 2014
+@@ -9,6 +9,9 @@
+ 
+ #ifdef WORKER
+ # if defined(WORK_THREAD) && defined(WORK_PIPE)
++#  ifdef HAVE_PTHREAD_H
++#   include <pthread.h>
++#  endif
+ #  ifdef HAVE_SEMAPHORE_H
+ #   include <semaphore.h>
+ #  endif

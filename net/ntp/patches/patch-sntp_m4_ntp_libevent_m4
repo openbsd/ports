@@ -1,0 +1,12 @@
+$OpenBSD: patch-sntp_m4_ntp_libevent_m4,v 1.1 2014/02/09 21:36:46 sthen Exp $
+--- sntp/m4/ntp_libevent.m4.orig	Thu Feb  6 22:53:35 2014
++++ sntp/m4/ntp_libevent.m4	Thu Feb  6 22:54:44 2014
+@@ -58,7 +58,7 @@ case "$ntp_use_local_libevent" in
+ 	    ntp_use_local_libevent=no
+ 	    AC_MSG_NOTICE([Using the installed libevent])
+ 	    CPPFLAGS_LIBEVENT=`$PKG_CONFIG --cflags-only-I libevent`
+-	    LDADD_LIBEVENT=`$PKG_CONFIG --libs libevent | sed 's:-levent::'`
++	    LDADD_LIBEVENT=`$PKG_CONFIG --libs libevent`
+ 	    case "$LIBISC_PTHREADS_NOTHREADS" in
+ 	     pthreads)
+ 		LDADD_LIBEVENT="$LDADD_LIBEVENT -levent_pthreads"
