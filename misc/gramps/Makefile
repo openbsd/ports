@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2014/02/09 11:51:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2014/02/09 12:08:50 ajacoutot Exp $
 
 COMMENT=		Genealogical Research Analysis Management Programming System
 
 MODPY_EGG_VERSION=	4.0.3
 DISTNAME=		gramps-${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=		misc x11
 
@@ -39,6 +40,7 @@ MODPY_DISTUTILS_BUILD=	build
 
 pre-configure:
 	perl -pi -e 's,/usr/share,${PREFIX}/share,g' ${WRKSRC}/data/gramps.keys.in
+	perl -pi -e 's,share/man,man,g' ${WRKSRC}/setup.py
 
 post-install:
 	echo -n '${TRUEPREFIX}/share' \

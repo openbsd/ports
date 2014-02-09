@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2014/02/09 11:51:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2014/02/09 12:08:50 ajacoutot Exp $
 bin/gramps
 lib/python${MODPY_VERSION}/site-packages/gramps/
 lib/python${MODPY_VERSION}/site-packages/gramps-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -2088,6 +2088,25 @@ lib/python${MODPY_VERSION}/site-packages/gramps/test/test_util.py
 lib/python${MODPY_VERSION}/site-packages/gramps/test/test_util.pyc
 lib/python${MODPY_VERSION}/site-packages/gramps/version.py
 lib/python${MODPY_VERSION}/site-packages/gramps/version.pyc
+man/cs/
+man/cs/man1/
+@man man/cs/man1/gramps.1.gz
+man/fr/
+man/fr/man1/
+@man man/fr/man1/gramps.1.gz
+@man man/man1/gramps.1.gz
+man/nl/
+man/nl/man1/
+@man man/nl/man1/gramps.1.gz
+man/pl/
+man/pl/man1/
+@man man/pl/man1/gramps.1.gz
+man/pt_BR/
+man/pt_BR/man1/
+@man man/pt_BR/man1/gramps.1.gz
+man/sv/
+man/sv/man1/
+@man man/sv/man1/gramps.1.gz
 share/appdata/
 share/appdata/gramps.appdata.xml
 share/applications/gramps.desktop
@@ -2497,27 +2516,6 @@ share/locale/sv/LC_MESSAGES/gramps.mo
 share/locale/uk/LC_MESSAGES/gramps.mo
 share/locale/vi/LC_MESSAGES/gramps.mo
 share/locale/zh_CN/LC_MESSAGES/gramps.mo
-share/man/
-share/man/cs/
-share/man/cs/man1/
-@man share/man/cs/man1/gramps.1.gz
-share/man/fr/
-share/man/fr/man1/
-@man share/man/fr/man1/gramps.1.gz
-share/man/man1/
-@man share/man/man1/gramps.1.gz
-share/man/nl/
-share/man/nl/man1/
-@man share/man/nl/man1/gramps.1.gz
-share/man/pl/
-share/man/pl/man1/
-@man share/man/pl/man1/gramps.1.gz
-share/man/pt_BR/
-share/man/pt_BR/man1/
-@man share/man/pt_BR/man1/gramps.1.gz
-share/man/sv/
-share/man/sv/man1/
-@man share/man/sv/man1/gramps.1.gz
 share/mime-info/
 share/mime-info/gramps.keys
 share/mime-info/gramps.mime
