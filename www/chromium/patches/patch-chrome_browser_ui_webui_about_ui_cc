@@ -1,12 +1,12 @@
-$OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.15 2014/01/18 11:42:04 robert Exp $
---- chrome/browser/ui/webui/about_ui.cc.orig.port	Mon Jan 13 22:00:06 2014
-+++ chrome/browser/ui/webui/about_ui.cc	Thu Jan 16 12:26:42 2014
+$OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.16 2014/02/10 07:02:24 robert Exp $
+--- chrome/browser/ui/webui/about_ui.cc.orig.port	Mon Feb  3 21:15:08 2014
++++ chrome/browser/ui/webui/about_ui.cc	Sun Feb  9 15:51:13 2014
 @@ -67,7 +67,7 @@
  #include "chrome/browser/ui/webui/theme_source.h"
  #endif
  
 -#if defined(OS_LINUX) || defined(OS_OPENBSD)
-+#if defined(OS_LINUX)
++#if defined(OS_LINUX) && !defined(OS_BSD)
  #include "content/public/browser/zygote_host_linux.h"
  #include "content/public/common/sandbox_linux.h"
  #endif

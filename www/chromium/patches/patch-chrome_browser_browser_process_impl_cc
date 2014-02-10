@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.3 2014/01/18 11:42:03 robert Exp $
---- chrome/browser/browser_process_impl.cc.orig.port	Mon Jan 13 22:00:18 2014
-+++ chrome/browser/browser_process_impl.cc	Thu Jan 16 12:26:42 2014
+$OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.4 2014/02/10 07:02:24 robert Exp $
+--- chrome/browser/browser_process_impl.cc.orig.port	Mon Feb  3 21:15:23 2014
++++ chrome/browser/browser_process_impl.cc	Sun Feb  9 15:41:08 2014
 @@ -108,7 +108,7 @@
  #include "ui/aura/env.h"
  #endif
@@ -44,7 +44,7 @@ $OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.3 2014/01/18 11:42:03
      return NULL;
  #else
    if (!media_file_system_registry_)
-@@ -952,7 +952,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
+@@ -955,7 +955,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
    }
  #endif
  
