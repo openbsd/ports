@@ -1,15 +1,25 @@
 #!/bin/sh
 #
-# $OpenBSD: jenkins.rc,v 1.5 2014/01/27 09:43:24 jasper Exp $
+# $OpenBSD: jenkins.rc,v 1.6 2014/02/10 19:26:25 jasper Exp $
 
 daemon=$(${LOCALBASE}/bin/javaPathHelper -c jenkins)
-daemon_flags="-jar ${TRUEPREFIX}/share/jenkins/jenkins.war --httpPort=8000 --httpsPort=-1 --ajp13Port=-1"
+daemon_flags="-Djava.io.tmpdir=/var/cache/jenkins -jar ${TRUEPREFIX}/share/jenkins/jenkins.war --httpPort=8000 --httpsPort=-1 --ajp13Port=-1"
 daemon_user="_jenkins"
 
 . /etc/rc.d/rc.subr
 
 rc_bg=YES
 rc_reload=NO
+
+# Move Jenkins' exploded .war files away from a location
+# where daily(8)/weekly(8) may clean them.
+# https://issues.jenkins-ci.org/browse/JENKINS-17526
+# https://issues.jenkins-ci.org/browse/JENKINS-20858
+rc_pre() {
+        rm -fr /var/cache/jenkins && \
+                install -d -o _jenkins /var/cache/jenkins
+}
+
 
 rc_stop() {
 	pkill -9 -f "^${pexp}"	
