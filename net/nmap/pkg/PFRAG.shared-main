@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.11 2012/12/19 17:12:12 giovanni Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.12 2014/02/10 17:43:15 sthen Exp $
 share/nmap/nse_main.lua
 share/nmap/nselib/
 share/nmap/nselib/afp.lua
@@ -24,17 +24,20 @@ share/nmap/nselib/data/http-fingerprints.lua
 share/nmap/nselib/data/http-folders.txt
 share/nmap/nselib/data/http-sql-errors.lst
 share/nmap/nselib/data/http-web-files-extensions.lst
+share/nmap/nselib/data/ike-fingerprints.lua
 share/nmap/nselib/data/jdwp-class/
 share/nmap/nselib/data/jdwp-class/JDWPExecCmd.class
 share/nmap/nselib/data/jdwp-class/JDWPExecCmd.java
 share/nmap/nselib/data/jdwp-class/JDWPSystemInfo.class
 share/nmap/nselib/data/jdwp-class/JDWPSystemInfo.java
 share/nmap/nselib/data/jdwp-class/README.txt
+share/nmap/nselib/data/mgroupnames.db
 share/nmap/nselib/data/mysql-cis.audit
 share/nmap/nselib/data/oracle-default-accounts.lst
 share/nmap/nselib/data/oracle-sids
 share/nmap/nselib/data/packetdecoders.lua
 share/nmap/nselib/data/passwords.lst
+share/nmap/nselib/data/pixel.gif
 share/nmap/nselib/data/psexec/
 share/nmap/nselib/data/psexec/README
 share/nmap/nselib/data/psexec/backdoor.lua
@@ -70,6 +73,7 @@ share/nmap/nselib/gps.lua
 share/nmap/nselib/http.lua
 share/nmap/nselib/httpspider.lua
 share/nmap/nselib/iax2.lua
+share/nmap/nselib/ike.lua
 share/nmap/nselib/imap.lua
 share/nmap/nselib/informix.lua
 share/nmap/nselib/ipOps.lua
@@ -269,7 +273,9 @@ share/nmap/scripts/hbase-master-info.nse
 share/nmap/scripts/hbase-region-info.nse
 share/nmap/scripts/hddtemp-info.nse
 share/nmap/scripts/hostmap-bfk.nse
+share/nmap/scripts/hostmap-ip2hosts.nse
 share/nmap/scripts/hostmap-robtex.nse
+share/nmap/scripts/http-adobe-coldfusion-apsa1301.nse
 share/nmap/scripts/http-affiliate-id.nse
 share/nmap/scripts/http-apache-negotiation.nse
 share/nmap/scripts/http-auth-finder.nse
@@ -281,6 +287,8 @@ share/nmap/scripts/http-barracuda-dir-traversal.nse
 share/nmap/scripts/http-brute.nse
 share/nmap/scripts/http-cakephp-version.nse
 share/nmap/scripts/http-chrono.nse
+share/nmap/scripts/http-coldfusion-subzero.nse
+share/nmap/scripts/http-comments-displayer.nse
 share/nmap/scripts/http-config-backup.nse
 share/nmap/scripts/http-cors.nse
 share/nmap/scripts/http-date.nse
@@ -292,6 +300,7 @@ share/nmap/scripts/http-email-harvest.nse
 share/nmap/scripts/http-enum.nse
 share/nmap/scripts/http-exif-spider.nse
 share/nmap/scripts/http-favicon.nse
+share/nmap/scripts/http-fileupload-exploiter.nse
 share/nmap/scripts/http-form-brute.nse
 share/nmap/scripts/http-form-fuzzer.nse
 share/nmap/scripts/http-frontpage-login.nse
@@ -315,6 +324,7 @@ share/nmap/scripts/http-open-proxy.nse
 share/nmap/scripts/http-open-redirect.nse
 share/nmap/scripts/http-passwd.nse
 share/nmap/scripts/http-php-version.nse
+share/nmap/scripts/http-phpmyadmin-dir-traversal.nse
 share/nmap/scripts/http-phpself-xss.nse
 share/nmap/scripts/http-proxy-brute.nse
 share/nmap/scripts/http-put.nse
@@ -327,6 +337,7 @@ share/nmap/scripts/http-sitemap-generator.nse
 share/nmap/scripts/http-slowloris-check.nse
 share/nmap/scripts/http-slowloris.nse
 share/nmap/scripts/http-sql-injection.nse
+share/nmap/scripts/http-stored-xss.nse
 share/nmap/scripts/http-title.nse
 share/nmap/scripts/http-tplink-dir-traversal.nse
 share/nmap/scripts/http-trace.nse
@@ -343,6 +354,7 @@ share/nmap/scripts/http-vuln-cve2010-2861.nse
 share/nmap/scripts/http-vuln-cve2011-3192.nse
 share/nmap/scripts/http-vuln-cve2011-3368.nse
 share/nmap/scripts/http-vuln-cve2012-1823.nse
+share/nmap/scripts/http-vuln-cve2013-0156.nse
 share/nmap/scripts/http-waf-detect.nse
 share/nmap/scripts/http-waf-fingerprint.nse
 share/nmap/scripts/http-wordpress-brute.nse
@@ -351,6 +363,7 @@ share/nmap/scripts/http-wordpress-plugins.nse
 share/nmap/scripts/iax2-brute.nse
 share/nmap/scripts/iax2-version.nse
 share/nmap/scripts/icap-info.nse
+share/nmap/scripts/ike-version.nse
 share/nmap/scripts/imap-brute.nse
 share/nmap/scripts/imap-capabilities.nse
 share/nmap/scripts/informix-brute.nse
@@ -411,11 +424,13 @@ share/nmap/scripts/ms-sql-tables.nse
 share/nmap/scripts/ms-sql-xp-cmdshell.nse
 share/nmap/scripts/msrpc-enum.nse
 share/nmap/scripts/mtrace.nse
+share/nmap/scripts/murmur-version.nse
 share/nmap/scripts/mysql-audit.nse
 share/nmap/scripts/mysql-brute.nse
 share/nmap/scripts/mysql-databases.nse
 share/nmap/scripts/mysql-dump-hashes.nse
 share/nmap/scripts/mysql-empty-password.nse
+share/nmap/scripts/mysql-enum.nse
 share/nmap/scripts/mysql-info.nse
 share/nmap/scripts/mysql-query.nse
 share/nmap/scripts/mysql-users.nse
@@ -553,6 +568,7 @@ share/nmap/scripts/targets-ipv6-multicast-mld.nse
 share/nmap/scripts/targets-ipv6-multicast-slaac.nse
 share/nmap/scripts/targets-sniffer.nse
 share/nmap/scripts/targets-traceroute.nse
+share/nmap/scripts/teamspeak2-version.nse
 share/nmap/scripts/telnet-brute.nse
 share/nmap/scripts/telnet-encryption.nse
 share/nmap/scripts/tftp-enum.nse
@@ -561,6 +577,7 @@ share/nmap/scripts/traceroute-geolocation.nse
 share/nmap/scripts/unusual-port.nse
 share/nmap/scripts/upnp-info.nse
 share/nmap/scripts/url-snarf.nse
+share/nmap/scripts/ventrilo-info.nse
 share/nmap/scripts/versant-info.nse
 share/nmap/scripts/vmauthd-brute.nse
 share/nmap/scripts/vnc-brute.nse

@@ -1,4 +1,4 @@
-$OpenBSD: patch-zenmap_install_scripts_unix_zenmap_desktop,v 1.1 2012/07/16 07:39:31 giovanni Exp $
+$OpenBSD: patch-zenmap_install_scripts_unix_zenmap_desktop,v 1.2 2014/02/10 17:43:15 sthen Exp $
 --- zenmap/install_scripts/unix/zenmap.desktop.orig	Mon Dec 12 10:05:48 2011
 +++ zenmap/install_scripts/unix/zenmap.desktop	Wed Jul 11 15:08:33 2012
 @@ -5,7 +5,7 @@ GenericName=GUI Port Scanner
@@ -6,7 +6,7 @@ $OpenBSD: patch-zenmap_install_scripts_unix_zenmap_desktop,v 1.1 2012/07/16 07:3
  Exec=zenmap %F
  Terminal=false
 -Icon=zenmap
-+Icon=/usr/local/share/zenmap/pixmaps/zenmap.png
++Icon=${TRUEPREFIX}/share/zenmap/pixmaps/zenmap.png
  Type=Application
  Categories=Application;Network;Security;
  Comment=A cross-platform GUI for the Nmap Security Scanner.

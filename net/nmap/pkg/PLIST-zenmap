@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-zenmap,v 1.13 2012/12/19 17:12:12 giovanni Exp $
+@comment $OpenBSD: PLIST-zenmap,v 1.14 2014/02/10 17:43:15 sthen Exp $
 bin/nmapfe
 bin/xnmap
 bin/zenmap
@@ -28,6 +28,9 @@ share/zenmap/locale/it/LC_MESSAGES/zenmap.mo
 share/zenmap/locale/ja/
 share/zenmap/locale/ja/LC_MESSAGES/
 share/zenmap/locale/ja/LC_MESSAGES/zenmap.mo
+share/zenmap/locale/pl/
+share/zenmap/locale/pl/LC_MESSAGES/
+share/zenmap/locale/pl/LC_MESSAGES/zenmap.mo
 share/zenmap/locale/pt_BR/
 share/zenmap/locale/pt_BR/LC_MESSAGES/
 share/zenmap/locale/pt_BR/LC_MESSAGES/zenmap.mo

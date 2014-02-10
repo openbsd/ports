@@ -1,0 +1,60 @@
+$OpenBSD: patch-timing_cc,v 1.1 2014/02/10 17:43:15 sthen Exp $
+
+hunk 1-2: Avoid float-related assertion triggered on i386, not triggered
+on macppc/amd64/sparc64.
+
+hunk 3-5: Format changes for 64-bit time_t, should go upstream.
+
+
+--- timing.cc.orig	Sun Jul 28 23:08:48 2013
++++ timing.cc	Mon Feb 10 11:58:00 2014
+@@ -126,6 +126,8 @@
+ 
+ /* $Id: patch-timing_cc,v 1.1 2014/02/10 17:43:15 sthen Exp $ */
+ 
++#include <limits>
++
+ #include "timing.h"
+ #include "NmapOps.h"
+ #include "utils.h"
+@@ -436,7 +438,7 @@ void RateMeter::update(double amount, const struct tim
+     interval = MAX(current_rate_history, diff);
+   else
+     interval = TIMEVAL_SUBTRACT(*now, start_tv) / 1000000.0;
+-  assert(diff <= interval);
++  assert(diff <= interval + std::numeric_limits<float>::epsilon());
+   /* If we record an amount in the very same instant that the timer is started,
+      there's no way to calculate meaningful rates. Ignore it. */
+   if (interval == 0.0)
+@@ -715,10 +717,10 @@ bool ScanProgressMeter::printStats(double perc_done, 
+       floor(fmod(time_left_s, 60.0)));
+   xml_open_start_tag("taskprogress");
+   xml_attribute("task", "%s", scantypestr);
+-  xml_attribute("time", "%lu", (unsigned long) now->tv_sec);
++  xml_attribute("time", "%lld", (long long) now->tv_sec);
+   xml_attribute("percent", "%.2f", perc_done * 100);
+-  xml_attribute("remaining", "%.f", time_left_s);
+-  xml_attribute("etc", "%lu", (unsigned long) last_est.tv_sec);
++  xml_attribute("remaining", "%.lld", (long long) time_left_s);
++  xml_attribute("etc", "%lld", (long long) last_est.tv_sec);
+   xml_close_empty_tag();
+   xml_newline();
+   log_flush(LOG_STDOUT|LOG_XML);
+@@ -750,7 +752,7 @@ bool ScanProgressMeter::beginOrEndTask(const struct ti
+     log_write(LOG_STDOUT, "Initiating %s at %02d:%02d", scantypestr, tm->tm_hour, tm->tm_min);
+     xml_open_start_tag("taskbegin");
+     xml_attribute("task", "%s", scantypestr);
+-    xml_attribute("time", "%lu", (unsigned long) now->tv_sec);
++    xml_attribute("time", "%lld", (long long) now->tv_sec);
+     if (additional_info) {
+       log_write(LOG_STDOUT, " (%s)", additional_info);
+       xml_attribute("extrainfo", "%s", additional_info);
+@@ -762,7 +764,7 @@ bool ScanProgressMeter::beginOrEndTask(const struct ti
+     log_write(LOG_STDOUT, "Completed %s at %02d:%02d, %.2fs elapsed", scantypestr, tm->tm_hour, tm->tm_min, TIMEVAL_MSEC_SUBTRACT(*now, begin) / 1000.0);
+     xml_open_start_tag("taskend");
+     xml_attribute("task", "%s", scantypestr);
+-    xml_attribute("time", "%lu", (unsigned long) now->tv_sec);
++    xml_attribute("time", "%lld", (long long) now->tv_sec);
+     if (additional_info) {
+       log_write(LOG_STDOUT, " (%s)", additional_info);
+       xml_attribute("extrainfo", "%s", additional_info);
