@@ -1,15 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.11 2014/02/08 19:37:29 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2014/02/10 17:52:34 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_ROOT}/profiles/standard/translations/abt-7.x-1.5.${DRUPAL_LANG}.po
 ${DRUPAL_ROOT}/profiles/standard/translations/auto_nodetitle-7.x-1.0.${DRUPAL_LANG}.po
-${DRUPAL_ROOT}/profiles/standard/translations/backup_migrate-7.x-2.4.${DRUPAL_LANG}.po
+${DRUPAL_ROOT}/profiles/standard/translations/backup_migrate-7.x-2.8.${DRUPAL_LANG}.po
 ${DRUPAL_ROOT}/profiles/standard/translations/colorbox-7.x-1.3.${DRUPAL_LANG}.po
 ${DRUPAL_ROOT}/profiles/standard/translations/compact_forms-7.x-1.0.${DRUPAL_LANG}.po
-${DRUPAL_ROOT}/profiles/standard/translations/content_access-7.x-1.2-beta1.${DRUPAL_LANG}.po
+${DRUPAL_ROOT}/profiles/standard/translations/content_access-7.x-1.2-beta2.${DRUPAL_LANG}.po
 ${DRUPAL_ROOT}/profiles/standard/translations/ctools-7.x-1.3.${DRUPAL_LANG}.po
-${DRUPAL_ROOT}/profiles/standard/translations/date-7.x-2.6.${DRUPAL_LANG}.po
-${DRUPAL_ROOT}/profiles/standard/translations/devel-7.x-1.3.${DRUPAL_LANG}.po
+${DRUPAL_ROOT}/profiles/standard/translations/date-7.x-2.7.${DRUPAL_LANG}.po
+${DRUPAL_ROOT}/profiles/standard/translations/devel-7.x-1.4.${DRUPAL_LANG}.po
 ${DRUPAL_ROOT}/profiles/standard/translations/drupal-7.26.${DRUPAL_LANG}.po
 ${DRUPAL_ROOT}/profiles/standard/translations/entity-7.x-1.3.${DRUPAL_LANG}.po
 ${DRUPAL_ROOT}/profiles/standard/translations/globalredirect-7.x-1.4.${DRUPAL_LANG}.po
@@ -18,13 +18,13 @@ ${DRUPAL_ROOT}/profiles/standard/translations/jquery_plugin-7.x-1.0.${DRUPAL_LAN
 ${DRUPAL_ROOT}/profiles/standard/translations/masquerade-7.x-1.0-rc5.${DRUPAL_LANG}.po
 ${DRUPAL_ROOT}/profiles/standard/translations/nodeaccess_userreference-7.x-3.9.${DRUPAL_LANG}.po
 ${DRUPAL_ROOT}/profiles/standard/translations/pathauto-7.x-1.2.${DRUPAL_LANG}.po
-${DRUPAL_ROOT}/profiles/standard/translations/references-7.x-2.0.${DRUPAL_LANG}.po
+${DRUPAL_ROOT}/profiles/standard/translations/references-7.x-2.1.${DRUPAL_LANG}.po
 ${DRUPAL_ROOT}/profiles/standard/translations/rules-7.x-2.6.${DRUPAL_LANG}.po
-${DRUPAL_ROOT}/profiles/standard/translations/scheduler-7.x-1.0.${DRUPAL_LANG}.po
-${DRUPAL_ROOT}/profiles/standard/translations/schema-7.x-1.0-beta4.${DRUPAL_LANG}.po
+${DRUPAL_ROOT}/profiles/standard/translations/scheduler-7.x-1.2.${DRUPAL_LANG}.po
+${DRUPAL_ROOT}/profiles/standard/translations/schema-7.x-1.0-rc1.${DRUPAL_LANG}.po
 ${DRUPAL_ROOT}/profiles/standard/translations/securelogin-7.x-1.2.${DRUPAL_LANG}.po
-${DRUPAL_ROOT}/profiles/standard/translations/token-7.x-1.4.${DRUPAL_LANG}.po
+${DRUPAL_ROOT}/profiles/standard/translations/token-7.x-1.5.${DRUPAL_LANG}.po
 ${DRUPAL_ROOT}/profiles/standard/translations/ubercart-7.x-3.1.${DRUPAL_LANG}.po
 ${DRUPAL_ROOT}/profiles/standard/translations/user_readonly-7.x-1.4.${DRUPAL_LANG}.po
 ${DRUPAL_ROOT}/profiles/standard/translations/views-7.x-3.7.${DRUPAL_LANG}.po
-${DRUPAL_ROOT}/profiles/standard/translations/webform-7.x-3.18.${DRUPAL_LANG}.po
+${DRUPAL_ROOT}/profiles/standard/translations/webform-7.x-3.19.${DRUPAL_LANG}.po
