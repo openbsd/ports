@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1255 2014/01/09 10:44:33 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1256 2014/02/11 10:34:34 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -3065,7 +3065,7 @@ ${_i:L}-depends-list:
 
 # recursive depend targets
 
-print-package-signature:
+print-package-signature print-update-signature:
 	@echo -n ${FULLPKGNAME${SUBPACKAGE}}
 .if !empty(_DEPRUNLIBS)
 	@${_cache_fragment}; cd ${.CURDIR} && ${MAKE} _print-package-signature-lib _print-package-signature-run| \

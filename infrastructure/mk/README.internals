@@ -1,4 +1,4 @@
-$OpenBSD: README.internals,v 1.10 2013/11/03 15:45:01 espie Exp $
+$OpenBSD: README.internals,v 1.11 2014/02/11 10:34:34 espie Exp $
 Copyright (C) 2011-2012 Marc Espie <espie@openbsd.org>
 
  Permission to use, copy, modify, and distribute this software for any
@@ -89,8 +89,7 @@ Introspection
 -------------
 There's a lot of stuff in the infrastructure which is there only for
 introspection purposes: show, show-all, print-plist-*, dump-vars,
-*-dir-depends, print-package-signature (ill-named, since it actually only
-asks the ports tree for information).
+*-dir-depends, print-update-signature.
 They allow external tools to interrogate the ports tree and get most
 information from it. dpb and sqlports rely very heavily on it.
 

@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.54 2013/11/30 16:06:56 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.55 2014/02/11 10:34:34 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -142,4 +142,4 @@ _recursive_depends_targets = \
 _recursive_cache_targets = \
 	print-plist-with-depends print-plist-libs-with-depends \
 	print-plist-all-with-depends print-package-signature \
-	port-lib-depends-check 
+	print-update-signature port-lib-depends-check 
