@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/12/30 12:35:22 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2014/02/11 07:49:58 stu Exp $
 
 COMMENT =	smalltalk system, vm
 
@@ -6,7 +6,7 @@ SRCV =		1
 DISTFILES =	Squeak-$V-${SRCV}.src.tar.gz
 
 PKGNAME =	squeak-vm-$V.${SRCV}
-REVISION =	3
+REVISION =	4
 
 WRKDIST =	${WRKDIR}/Squeak-$V-${SRCV}
 WRKSRC =	${WRKDIST}/platforms/unix/config
@@ -31,9 +31,10 @@ WANTLIB =		GL X11 m c SM util Xext ICE Xrender Xt pthread \
 			pthread-stubs xcb
 FULLV =			$V-${SRCV}
 
-.if ${MACHINE_ARCH} != "powerpc"
-MAKE_FLAGS +=		INTERP=gnu-interp
-.endif
+# XXX gnu-interp doesn't work with pie.
+#.if ${MACHINE_ARCH} != "powerpc"
+#MAKE_FLAGS +=		INTERP=gnu-interp
+#.endif
 
 MAKE_FLAGS +=		docdir=${PREFIX}/share/doc/squeak
 DESTDIRNAME =		ROOT
