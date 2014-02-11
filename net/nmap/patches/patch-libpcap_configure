@@ -1,0 +1,12 @@
+$OpenBSD: patch-libpcap_configure,v 1.1 2014/02/11 16:16:36 sthen Exp $
+--- libpcap/configure.orig	Tue Feb 11 11:51:20 2014
++++ libpcap/configure	Tue Feb 11 11:51:22 2014
+@@ -3498,7 +3498,7 @@ $as_echo "#define const /**/" >>confdefs.h
+ 		    sparc64*)
+ 			case "$host_os" in
+ 
+-			freebsd*)
++			freebsd*|openbsd*)
+ 			    PIC_OPT=-fPIC
+ 			    ;;
+ 			esac
