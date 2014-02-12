@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.3 2014/01/11 22:29:31 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2014/02/12 22:41:43 jeremy Exp $
 
-BROKEN-sparc64	=	segfaults during build
 BROKEN-hppa =		miniruby abort trap when generating rdoc
 BROKEN-alpha =		miniruby abort trap when generating rdoc
 
