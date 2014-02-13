@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.7 2012/06/19 12:46:12 sthen Exp $
+$OpenBSD: patch-configure,v 1.8 2014/02/13 08:33:02 sthen Exp $
 --- configure.orig	Sun Jun 10 17:13:41 2012
-+++ configure	Tue Jun 19 09:17:08 2012
++++ configure	Thu Feb 13 00:38:36 2014
 @@ -9655,10 +9655,12 @@ else
          PTHREAD_CC="$CC"
  fi
@@ -14,6 +14,15 @@ $OpenBSD: patch-configure,v 1.7 2012/06/19 12:46:12 sthen Exp $
  # Finally, execute ACTION-IF-FOUND/ACTION-IF-NOT-FOUND:
  if test x"$ax_pthread_ok" = xyes; then
  
+@@ -29519,7 +29521,7 @@ else
+ fi
+ 
+ 
+-    ac_fn_c_check_header_compile "$LINENO" "freetype/freetype.h" "ac_cv_header_freetype_freetype_h" "$FT2BUILD_H
++    ac_fn_c_check_header_compile "$LINENO" "freetype.h" "ac_cv_header_freetype_freetype_h" "$FT2BUILD_H
+ "
+ if test "x$ac_cv_header_freetype_freetype_h" = xyes; then :
+   have_freetype_h='yes'
 @@ -32576,7 +32578,7 @@ _ACEOF
  
  
