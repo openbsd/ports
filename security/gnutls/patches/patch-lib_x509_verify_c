@@ -1,0 +1,19 @@
+$OpenBSD: patch-lib_x509_verify_c,v 1.1 2014/02/14 09:07:30 ajacoutot Exp $
+
+Fix for CVE-2014-1959:
+https://www.gitorious.org/gnutls/gnutls/commit/b1abfe3d182d68539900092eb42fc62cf1bb7e7c
+
+--- lib/x509/verify.c.orig	Fri Feb 14 08:18:38 2014
++++ lib/x509/verify.c	Fri Feb 14 08:18:49 2014
+@@ -693,8 +693,10 @@ _gnutls_x509_verify_certificate(const gnutls_x509_crt_
+ 		/* note that here we disable this V1 CA flag. So that no version 1
+ 		 * certificates can exist in a supplied chain.
+ 		 */
+-		if (!(flags & GNUTLS_VERIFY_ALLOW_ANY_X509_V1_CA_CRT))
++		if (!(flags & GNUTLS_VERIFY_ALLOW_ANY_X509_V1_CA_CRT)) {
+ 			flags &= ~(GNUTLS_VERIFY_ALLOW_X509_V1_CA_CRT);
++			flags |= GNUTLS_VERIFY_DO_NOT_ALLOW_X509_V1_CA_CRT;
++		}
+ 		if ((ret =
+ 		     _gnutls_verify_certificate2(certificate_list[i - 1],
+ 						 &certificate_list[i], 1,
