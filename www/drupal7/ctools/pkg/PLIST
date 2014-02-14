@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/02/08 19:17:20 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/02/14 11:12:06 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}ctools/
@@ -169,6 +169,7 @@ ${DRUPAL_MODS}ctools/includes/registry.inc
 ${DRUPAL_MODS}ctools/includes/stylizer.inc
 ${DRUPAL_MODS}ctools/includes/stylizer.theme.inc
 ${DRUPAL_MODS}ctools/includes/utility.inc
+${DRUPAL_MODS}ctools/includes/uuid.inc
 ${DRUPAL_MODS}ctools/includes/views.inc
 ${DRUPAL_MODS}ctools/includes/wizard.inc
 ${DRUPAL_MODS}ctools/includes/wizard.theme.inc
@@ -419,6 +420,12 @@ ${DRUPAL_MODS}ctools/stylizer/plugins/export_ui/stylizer_ui.class.php
 ${DRUPAL_MODS}ctools/stylizer/stylizer.info
 ${DRUPAL_MODS}ctools/stylizer/stylizer.install
 ${DRUPAL_MODS}ctools/stylizer/stylizer.module
+${DRUPAL_MODS}ctools/term_depth/
+${DRUPAL_MODS}ctools/term_depth/plugins/
+${DRUPAL_MODS}ctools/term_depth/plugins/access/
+${DRUPAL_MODS}ctools/term_depth/plugins/access/term_depth.inc
+${DRUPAL_MODS}ctools/term_depth/term_depth.info
+${DRUPAL_MODS}ctools/term_depth/term_depth.module
 ${DRUPAL_MODS}ctools/tests/
 ${DRUPAL_MODS}ctools/tests/context.test
 ${DRUPAL_MODS}ctools/tests/css.test
