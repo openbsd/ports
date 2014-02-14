@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2013/01/18 15:17:43 giovanni Exp $
+$OpenBSD: README,v 1.3 2014/02/14 10:02:52 giovanni Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,7 +9,7 @@ phpMyAdmin has been installed into ${INSTDIR}.
 If using Apache, you can make this accessible to clients by enabling
 the configuration file:
 
-    # ln -s ../modules.sample/phpMyAdmin-httpd.conf /var/www/conf/modules/
+    # ln -s ../modules.sample/phpmyadmin.conf /var/www/conf/modules/
     # /etc/rc.d/httpd restart
 
 By default, this sets an alias for /phpMyAdmin and restricts access
@@ -17,7 +17,7 @@ to connections coming from localhost.
 It also restricts access from search engine bots.
 
 If you need to allow wider access, after considering security
-implications, edit /var/www/conf/modules.sample/phpMyAdmin-httpd.conf
+implications, edit /var/www/conf/modules.sample/phpmyadmin.conf
 and restart Apache.
 
 You can check that you have a working installation by accessing:
