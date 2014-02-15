@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2013/12/06 13:16:45 dlg Exp $
+# $OpenBSD: Makefile,v 1.33 2014/02/15 15:37:15 naddy Exp $
 
 COMMENT =		core event/X abstraction layer
 
 DISTNAME =		ecore-1.7.9
+REVISION =		0
 EPOCH =			2
 
 SO_VERSION =		3.1		# 8.6
@@ -36,7 +37,8 @@ LIB_DEPENDS =		devel/glib2 \
 CONFIGURE_ARGS +=	--disable-doc \
 			--disable-gnutls \
 			--enable-cares \
-			--disable-ecore-cocoa
+			--disable-ecore-cocoa \
+			--disable-ecore-imf-scim
 
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
