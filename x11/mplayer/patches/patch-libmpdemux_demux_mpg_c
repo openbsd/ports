@@ -1,0 +1,20 @@
+$OpenBSD: patch-libmpdemux_demux_mpg_c,v 1.1 2014/02/16 19:50:52 pascal Exp $
+
+Upstream r36845:
+Fix probe bug losing video packets.
+
+ds_fill_buffer will actually lose any data from previous
+ds_fill_buffer calls.
+Use demux_fill_buffer instead to get the intended behaviour.
+
+--- libmpdemux/demux_mpg.c.orig	Mon Jan  6 23:03:23 2014
++++ libmpdemux/demux_mpg.c	Sun Feb 16 14:35:43 2014
+@@ -192,7 +192,7 @@ static demuxer_t* demux_mpg_open(demuxer_t* demuxer) {
+   mpg_demuxer_t* mpg_d;
+ 
+   while (demuxer->video->packs + demuxer->audio->packs < 2)
+-    if (!ds_fill_buffer(demuxer->video)) return 0;
++    if (!demux_fill_buffer(demuxer, demuxer->video)) return 0;
+   mpg_d = calloc(1,sizeof(mpg_demuxer_t));
+   if(mpg_d)
+   {
