@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2014/01/14 14:42:00 edd Exp $
+# $OpenBSD: Makefile,v 1.73 2014/02/17 19:31:10 jasper Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
@@ -132,11 +132,11 @@ CPPFLAGS =	-I${X11BASE}/include \
 
 # Big endian ICU bug
 # http://tug.org/pipermail/tlbuild/2012q2/002266.html
-# XXX still needed?
-#.include <bsd.port.arch.mk>
-#.if ${PROPERTIES:Mbe}
-#CPPFLAGS +=	-DU_IS_BIG_ENDIAN=1
-#.endif
+# XXX still needed
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mbe}
+CPPFLAGS +=	-DU_IS_BIG_ENDIAN=1
+.endif
 
 CONFIGURE_ENV +=	TL_MAKE=${GMAKE} \
 			CPPFLAGS="${CPPFLAGS}"
