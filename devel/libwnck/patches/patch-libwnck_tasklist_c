@@ -1,0 +1,13 @@
+$OpenBSD: patch-libwnck_tasklist_c,v 1.1 2014/02/18 11:02:49 stsp Exp $
+--- libwnck/tasklist.c.orig	Mon Feb 17 19:51:20 2014
++++ libwnck/tasklist.c	Mon Feb 17 19:52:01 2014
+@@ -4340,7 +4340,8 @@ sequence_timeout_callback (void *user_data)
+   WnckTasklist *tasklist = user_data;
+   GList *tmp;
+   GTimeVal now;
+-  long tv_sec, tv_usec;
++  time_t tv_sec;
++  suseconds_t tv_usec;
+   double elapsed;
+ 
+   g_get_current_time (&now);
