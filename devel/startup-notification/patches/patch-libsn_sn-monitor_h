@@ -1,4 +1,5 @@
-$OpenBSD: patch-libsn_sn-monitor_h,v 1.1 2013/11/12 17:55:11 fgsch Exp $
+$OpenBSD: patch-libsn_sn-monitor_h,v 1.2 2014/02/18 11:05:33 stsp Exp $
+http://cgit.freedesktop.org/startup-notification/commit/?id=a7e49fefde18ea8d5bada8096d32f23bcfb5a6dc
 --- libsn/sn-monitor.h.orig	Tue Nov  5 17:53:25 2013
 +++ libsn/sn-monitor.h	Tue Nov  5 17:53:53 2013
 @@ -77,11 +77,11 @@ const char* sn_startup_sequence_get_application_id    
