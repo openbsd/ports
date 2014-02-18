@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_core_screen_c,v 1.1 2014/02/18 11:02:11 stsp Exp $
+--- src/core/screen.c.orig	Mon Feb 17 19:48:27 2014
++++ src/core/screen.c	Mon Feb 17 19:49:08 2014
+@@ -3038,7 +3038,8 @@ collect_timed_out_foreach (void *element,
+ {
+   CollectTimedOutData *ctod = data;
+   SnStartupSequence *sequence = element;
+-  long tv_sec, tv_usec;
++  time_t tv_sec;
++  suseconds_t tv_usec;
+   double elapsed;
+   
+   sn_startup_sequence_get_last_active_time (sequence, &tv_sec, &tv_usec);
