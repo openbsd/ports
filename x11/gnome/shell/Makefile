@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.68 2014/01/16 10:22:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.69 2014/02/20 17:55:45 jasper Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
-GNOME_VERSION=		3.10.3
+GNOME_VERSION=		3.10.4
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -58,7 +58,7 @@ LIB_DEPENDS=		audio/pulseaudio \
 			x11/gnome/gcr \
 			x11/gnome/gjs \
 			x11/gnome/menus \
-			x11/gnome/mutter>=3.10.2
+			x11/gnome/mutter>=3.10.4
 
 # polkit(8) almost always needs to know the "active" session
 RUN_DEPENDS +=		sysutils/consolekit
