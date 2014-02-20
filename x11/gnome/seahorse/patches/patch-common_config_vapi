@@ -1,0 +1,23 @@
+$OpenBSD: patch-common_config_vapi,v 1.1 2014/02/20 10:12:32 ajacoutot Exp $
+
+From e46d5eb408bcbabdd941de0fbcba2fb6d4f41cf8 Mon Sep 17 00:00:00 2001
+From: Stef Walter <stefw@gnome.org>
+Date: Thu, 20 Feb 2014 08:41:54 +0000
+Subject: common: Include correct headers for vala calling C code
+
+--- common/config.vapi.orig	Tue Nov 12 20:19:35 2013
++++ common/config.vapi	Thu Feb 20 10:04:56 2014
+@@ -16,11 +16,13 @@ namespace Config
+  */
+ namespace Seahorse {
+ 
++[CCode (cheader_filename = "libseahorse/seahorse-prefs.h")]
+ namespace Prefs {
+ 	public void show(Gtk.Window window, string? tabid);
+ 	public bool available();
+ }
+ 
++[CCode (cheader_filename = "libseahorse/seahorse-application.h")]
+ namespace Application {
+ 	public unowned Gtk.Application @get();
+ }

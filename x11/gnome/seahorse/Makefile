@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.91 2014/01/08 18:12:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.92 2014/02/20 10:12:32 ajacoutot Exp $
 
 COMMENT=		GNOME encryption interface
 
 GNOME_PROJECT=		seahorse
 GNOME_VERSION=		3.10.2
+REVISION=		0
 
 CATEGORIES=		security
 
@@ -39,5 +40,10 @@ MODGNOME_ICON_CACHE=	Yes
 MODGNOME_DESKTOP_FILE=	Yes
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/seahorse
+
+### patch-common_config_vapi
+MODGNOME_TOOLS +=	vala
+pre-configure:
+	rm ${WRKSRC}/common/*.c
 
 .include <bsd.port.mk>
