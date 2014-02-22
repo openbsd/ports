@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/21 13:19:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/02/22 10:40:04 ajacoutot Exp $
 @conflict pango-<1.31.2
 include/pango-1.0/pango/pangox.h
 lib/libpangox-1.0.la
 @lib lib/libpangox-1.0.so.${LIBpangox-1.0_VERSION}
 lib/pkgconfig/pangox.pc
 share/examples/pango/
+@sample ${SYSCONFDIR}/pango/
 share/examples/pango/pangox.aliases
 @sample ${SYSCONFDIR}/pango/pangox.aliases
