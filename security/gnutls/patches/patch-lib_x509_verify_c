@@ -1,11 +1,145 @@
-$OpenBSD: patch-lib_x509_verify_c,v 1.1 2014/02/14 09:07:30 ajacoutot Exp $
+$OpenBSD: patch-lib_x509_verify_c,v 1.2 2014/03/04 15:09:36 sthen Exp $
 
 Fix for CVE-2014-1959:
 https://www.gitorious.org/gnutls/gnutls/commit/b1abfe3d182d68539900092eb42fc62cf1bb7e7c
 
---- lib/x509/verify.c.orig	Fri Feb 14 08:18:38 2014
-+++ lib/x509/verify.c	Fri Feb 14 08:18:49 2014
-@@ -693,8 +693,10 @@ _gnutls_x509_verify_certificate(const gnutls_x509_crt_
+Fix for CVE-2014-0092:
+https://www.gitorious.org/gnutls/gnutls/commit/855127da290a280df839038671ae6aba01957736
+
+--- lib/x509/verify.c.orig	Tue Mar  4 11:03:57 2014
++++ lib/x509/verify.c	Tue Mar  4 11:03:46 2014
+@@ -129,7 +129,7 @@ check_if_ca(gnutls_x509_crt_t cert, gnutls_x509_crt_t 
+ 					 &issuer_signed_data);
+ 	if (result < 0) {
+ 		gnutls_assert();
+-		goto cleanup;
++		goto fail;
+ 	}
+ 
+ 	result =
+@@ -137,7 +137,7 @@ check_if_ca(gnutls_x509_crt_t cert, gnutls_x509_crt_t 
+ 					 &cert_signed_data);
+ 	if (result < 0) {
+ 		gnutls_assert();
+-		goto cleanup;
++		goto fail;
+ 	}
+ 
+ 	result =
+@@ -145,7 +145,7 @@ check_if_ca(gnutls_x509_crt_t cert, gnutls_x509_crt_t 
+ 				       &issuer_signature);
+ 	if (result < 0) {
+ 		gnutls_assert();
+-		goto cleanup;
++		goto fail;
+ 	}
+ 
+ 	result =
+@@ -153,7 +153,7 @@ check_if_ca(gnutls_x509_crt_t cert, gnutls_x509_crt_t 
+ 				       &cert_signature);
+ 	if (result < 0) {
+ 		gnutls_assert();
+-		goto cleanup;
++		goto fail;
+ 	}
+ 
+ 	/* If the subject certificate is the same as the issuer
+@@ -205,9 +205,10 @@ check_if_ca(gnutls_x509_crt_t cert, gnutls_x509_crt_t 
+ 	} else
+ 		gnutls_assert();
+ 
++ fail:
+ 	result = 0;
+ 
+-      cleanup:
++ cleanup:
+ 	_gnutls_free_datum(&cert_signed_data);
+ 	_gnutls_free_datum(&issuer_signed_data);
+ 	_gnutls_free_datum(&cert_signature);
+@@ -389,8 +390,9 @@ _gnutls_verify_certificate2(gnutls_x509_crt_t cert,
+ 	gnutls_datum_t cert_signed_data = { NULL, 0 };
+ 	gnutls_datum_t cert_signature = { NULL, 0 };
+ 	gnutls_x509_crt_t issuer = NULL;
+-	int issuer_version, result, hash_algo;
++	int issuer_version, result = 0, hash_algo;
+ 	unsigned int out = 0, usage;
++	const mac_entry_st * me;
+ 
+ 	if (output)
+ 		*output = 0;
+@@ -428,13 +430,14 @@ _gnutls_verify_certificate2(gnutls_x509_crt_t cert,
+ 	issuer_version = gnutls_x509_crt_get_version(issuer);
+ 	if (issuer_version < 0) {
+ 		gnutls_assert();
+-		return issuer_version;
++		result = 0;
++		goto cleanup;
+ 	}
+ 
+ 	if (!(flags & GNUTLS_VERIFY_DISABLE_CA_SIGN) &&
+ 	    ((flags & GNUTLS_VERIFY_DO_NOT_ALLOW_X509_V1_CA_CRT)
+ 	     || issuer_version != 1)) {
+-		if (check_if_ca(cert, issuer, max_path, flags) == 0) {
++		if (check_if_ca(cert, issuer, max_path, flags) != 1) {
+ 			gnutls_assert();
+ 			out =
+ 			    GNUTLS_CERT_SIGNER_NOT_CA |
+@@ -466,6 +469,7 @@ _gnutls_verify_certificate2(gnutls_x509_crt_t cert,
+ 					 &cert_signed_data);
+ 	if (result < 0) {
+ 		gnutls_assert();
++		result = 0;
+ 		goto cleanup;
+ 	}
+ 
+@@ -474,6 +478,7 @@ _gnutls_verify_certificate2(gnutls_x509_crt_t cert,
+ 				       &cert_signature);
+ 	if (result < 0) {
+ 		gnutls_assert();
++		result = 0;
+ 		goto cleanup;
+ 	}
+ 
+@@ -482,13 +487,20 @@ _gnutls_verify_certificate2(gnutls_x509_crt_t cert,
+ 						 "signatureAlgorithm.algorithm");
+ 	if (result < 0) {
+ 		gnutls_assert();
++		result = 0;
+ 		goto cleanup;
+ 	}
+ 
+ 	hash_algo = gnutls_sign_get_hash_algorithm(result);
++	me = mac_to_entry(hash_algo);
++	if (me == NULL) {
++		gnutls_assert();
++		result = 0;
++		goto cleanup;
++	}
+ 
+ 	result =
+-	    _gnutls_x509_verify_data(mac_to_entry(hash_algo),
++	    _gnutls_x509_verify_data(me,
+ 				     &cert_signed_data, &cert_signature,
+ 				     issuer);
+ 	if (result == GNUTLS_E_PK_SIG_VERIFY_FAILED) {
+@@ -500,6 +512,7 @@ _gnutls_verify_certificate2(gnutls_x509_crt_t cert,
+ 		result = 0;
+ 	} else if (result < 0) {
+ 		gnutls_assert();
++		result = 0;
+ 		goto cleanup;
+ 	}
+ 
+@@ -671,7 +684,7 @@ _gnutls_x509_verify_certificate(const gnutls_x509_crt_
+ 					  trusted_cas, tcas_size, flags,
+ 					  &output, &issuer, now, &max_path,
+ 					  func);
+-	if (ret == 0) {
++	if (ret != 1) {
+ 		/* if the last certificate in the certificate
+ 		 * list is invalid, then the certificate is not
+ 		 * trusted.
+@@ -692,13 +705,15 @@ _gnutls_x509_verify_certificate(const gnutls_x509_crt_
  		/* note that here we disable this V1 CA flag. So that no version 1
  		 * certificates can exist in a supplied chain.
  		 */
@@ -17,3 +151,9 @@ https://www.gitorious.org/gnutls/gnutls/commit/b1abfe3d182d68539900092eb42fc62cf
  		if ((ret =
  		     _gnutls_verify_certificate2(certificate_list[i - 1],
  						 &certificate_list[i], 1,
+ 						 flags, &output, NULL, now,
+-						 &max_path, func)) == 0) {
++						 &max_path, func)) != 1) {
+ 			status |= output;
+ 			status |= GNUTLS_CERT_INVALID;
+ 			return status;
