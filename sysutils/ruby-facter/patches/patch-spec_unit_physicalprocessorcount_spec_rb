@@ -1,7 +1,9 @@
-$OpenBSD: patch-spec_unit_physicalprocessorcount_spec_rb,v 1.1 2013/06/28 08:36:12 jasper Exp $
+$OpenBSD: patch-spec_unit_physicalprocessorcount_spec_rb,v 1.2 2014/03/09 19:51:16 jasper Exp $
 
-OpenBSD: add physicalprocessorcount fact
-http://projects.puppetlabs.com/issues/21499
+From 766c84a84a4a7008858c45eaf221402a81e1bfa2 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Thu, 27 Jun 2013 22:59:20 +0200
+Subject: [PATCH] Add physicalprocessorcount fact for OpenBSD
 
 --- spec/unit/physicalprocessorcount_spec.rb.orig	Mon May 13 21:30:15 2013
 +++ spec/unit/physicalprocessorcount_spec.rb	Thu Jun 27 23:03:45 2013
