@@ -1,4 +1,4 @@
-$OpenBSD: README-common,v 1.4 2013/12/12 14:53:43 ajacoutot Exp $
+$OpenBSD: README-common,v 1.5 2014/03/09 22:14:54 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -44,14 +44,17 @@ e.g. for a network printer:
 Then add an 'HP Printer (HPLIP)' entry in CUPS with the corresponding
 URI (using the CUPS web interface or lpadmin(8)).
 
-Network printers can also be used through JetDirect and/or LPR, in which
+Network printers can also be used through JetDirect and/or LPD, in which
 case it is not necessary to create a URI; the spooler can be configured
 to use a direct connection.
-e.g. with CUPS, socket://192.168.255.14:9100
+For example:
+    socket://192.168.255.14:9100
+    lpd://192.168.255.14/lp
 
 Alternatively, the printer can be configured to use the foomatic print
 framework using the hpijs package (useful for direct printing without
-CUPS).
+CUPS). For more information, see:
+    ${LOCALBASE}/share/doc/pkg-readmes/cups-filters-*
 
 Scanning
 ========
