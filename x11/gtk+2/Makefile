@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.181 2014/02/09 14:36:10 zhuk Exp $
+# $OpenBSD: Makefile,v 1.182 2014/03/09 22:12:36 ajacoutot Exp $
 
 # XXX remove '@exec ... gtk-2.0/gtk.immodules' after OPENBSD_5_5 is branched
 # XXX remove '@exec rm -f %D/share/icons/icon-theme.cache' after OPENBSD_5_5 is branched
@@ -12,8 +12,8 @@ GNOME_PROJECT=		gtk+
 PKGNAME-main=		gtk+2-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
 
-REVISION-main=		0
-REVISION-guic=		1
+REVISION-main=		1
+REVISION-guic=		2
 
 CATEGORIES=		x11 devel
 
