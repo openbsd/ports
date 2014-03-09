@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1197 2014/02/08 22:15:13 espie Exp $
+# $OpenBSD: Makefile,v 1.1198 2014/03/09 20:39:59 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -54,6 +54,7 @@
      SUBDIR += cil
      SUBDIR += cln
      SUBDIR += cmake
+     SUBDIR += cmocka
      SUBDIR += cmockery
      SUBDIR += coccigrep
      SUBDIR += coccinelle
