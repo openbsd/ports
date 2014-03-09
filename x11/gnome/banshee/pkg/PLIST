@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/04/17 14:59:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/03/09 21:32:49 ajacoutot Exp $
 bin/bamz
 bin/banshee
 bin/muinshee
@@ -148,6 +148,8 @@ lib/pkgconfig/banshee-nowplaying.pc
 lib/pkgconfig/banshee-services.pc
 lib/pkgconfig/banshee-thickclient.pc
 lib/pkgconfig/banshee-webbrowser.pc
+share/appdata/
+share/appdata/banshee.appdata.xml
 share/applications/banshee-audiocd.desktop
 share/applications/banshee-media-player.desktop
 share/applications/banshee.desktop
