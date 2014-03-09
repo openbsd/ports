@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.9 2013/08/09 19:26:56 rpointel Exp $
+# $OpenBSD: Makefile,v 1.10 2014/03/09 20:41:14 rpointel Exp $
 
 COMMENT =		C library implementing server and client side
 # XXX if updating, check the number in the MASTER_SITES path
-DISTNAME =		libssh-0.5.5
+DISTNAME =		libssh-0.6.0
 
-SHARED_LIBS +=  	ssh		0.0 # 4.2
-SHARED_LIBS +=  	ssh_threads	0.0 # 4.2
+EXTRACT_SUFX =		.tar.xz
+
+SHARED_LIBS +=  	ssh		1.0 # 4.3
+SHARED_LIBS +=  	ssh_threads	1.0 # 4.3
 
 CATEGORIES =		security devel
 
 HOMEPAGE =		http://www.libssh.org/
-MASTER_SITES =		https://red.libssh.org/attachments/download/51/
+MASTER_SITES =		https://red.libssh.org/attachments/download/71/
 
 MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 
@@ -23,7 +25,8 @@ MODULES =		devel/cmake
 
 WRKBUILD =		${WRKDIST}/build/
 
-BUILD_DEPENDS =		devel/cmockery
+BUILD_DEPENDS =		devel/cmocka \
+			devel/argp-standalone
 
 CONFIGURE_ARGS +=	-DWITH_TESTING=ON
 

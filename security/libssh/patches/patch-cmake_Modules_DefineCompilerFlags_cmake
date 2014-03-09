@@ -1,11 +1,11 @@
-$OpenBSD: patch-cmake_Modules_DefineCompilerFlags_cmake,v 1.2 2013/11/02 10:43:04 ajacoutot Exp $
+$OpenBSD: patch-cmake_Modules_DefineCompilerFlags_cmake,v 1.3 2014/03/09 20:41:14 rpointel Exp $
 
 Check for compiler flags not available with gcc < 4.
 
---- cmake/Modules/DefineCompilerFlags.cmake.orig	Fri Jul 26 08:39:39 2013
-+++ cmake/Modules/DefineCompilerFlags.cmake	Sat Nov  2 11:37:07 2013
-@@ -10,9 +10,14 @@ if (UNIX AND NOT WIN32)
-     if (${CMAKE_C_COMPILER_ID} MATCHES GNU)
+--- cmake/Modules/DefineCompilerFlags.cmake.orig	Sat Dec 21 18:37:12 2013
++++ cmake/Modules/DefineCompilerFlags.cmake	Wed Jan  8 14:00:39 2014
+@@ -11,9 +11,14 @@ if (UNIX AND NOT WIN32)
+ 
          # add -Wconversion ?
          set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=gnu99 -pedantic -pedantic-errors")
 -        set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement")
