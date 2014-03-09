@@ -1,5 +1,0 @@
-Lasem is a library for rendering SVG and Mathml, implementing a DOM like
-API. It's based on GObject and use Pango and Cairo for the rendering.
-Included in the package, there is a simple application, lasemrender,
-which is able to convert a Mathml, a latex math or a SVG file to either
-a PNG, PDF or SVG image.

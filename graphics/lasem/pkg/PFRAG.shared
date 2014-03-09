@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/12/19 07:53:02 ajacoutot Exp $
-@lib lib/liblasem-0.4.so.${LIBlasem-0.4_VERSION}
