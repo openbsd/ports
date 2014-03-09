@@ -1,23 +1,19 @@
-$OpenBSD: patch-ifdata_c,v 1.1.1.1 2011/05/04 14:11:59 sthen Exp $
---- ifdata.c.orig	Fri Apr 29 17:12:23 2011
-+++ ifdata.c	Fri Apr 29 17:19:47 2011
-@@ -10,10 +10,14 @@
- 	#include <linux/if.h>
+$OpenBSD: patch-ifdata_c,v 1.2 2014/03/09 22:19:35 sthen Exp $
+--- ifdata.c.orig	Tue Dec 31 17:35:43 2013
++++ ifdata.c	Sun Mar  9 22:14:22 2014
+@@ -29,6 +29,11 @@
+    #include <sys/sockio.h>
  #endif
  
--#if defined(__FreeBSD_kernel__)
-+#if defined(__FreeBSD_kernel__) || defined(__OpenBSD__)
- 	#include <net/if.h>
- #endif
- 
-+#ifndef s6_addr16
-+#define s6_addr16 __u6_addr.__u6_addr16
++#if defined(__OpenBSD__)
++   #define s6_addr16 __u6_addr.__u6_addr16
++   #include <net/if.h>
 +#endif
 +
  #include <netinet/in.h>
  #include <errno.h>
  #include <fcntl.h>
-@@ -220,7 +224,7 @@ struct sockaddr *if_network(const char *iface) {
+@@ -235,7 +240,7 @@ struct sockaddr *if_network(const char *iface) {
  	return saddr;
  }
  
@@ -26,7 +22,7 @@ $OpenBSD: patch-ifdata_c,v 1.1.1.1 2011/05/04 14:11:59 sthen Exp $
  	static struct ifreq req;
  
  	if (do_socket_ioctl(iface, SIOCGIFMTU, &req, NULL, PRINT_ERROR))
-@@ -388,7 +392,7 @@ void please_do(int ndo, int *todo, const char *ifname)
+@@ -403,7 +408,7 @@ void please_do(int ndo, int *todo, const char *ifname)
  				print_addr(if_bcast(ifname, &req));
  				break;
  			case DO_PMTU:
@@ -35,7 +31,7 @@ $OpenBSD: patch-ifdata_c,v 1.1.1.1 2011/05/04 14:11:59 sthen Exp $
  				break;
  			case DO_PNETWORK:
  				print_addr(if_network(ifname));
-@@ -400,7 +404,7 @@ void please_do(int ndo, int *todo, const char *ifname)
+@@ -415,7 +420,7 @@ void please_do(int ndo, int *todo, const char *ifname)
  				printf(" ");
  				print_addr(if_bcast(ifname, &req));
  				printf(" ");

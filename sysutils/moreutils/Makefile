@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2013/07/14 11:03:41 pascal Exp $
+# $OpenBSD: Makefile,v 1.8 2014/03/09 22:19:35 sthen Exp $
 
 COMMENT =	miscellaneous unix tools
 
-DISTNAME =	moreutils_0.49
+DISTNAME =	moreutils_0.51
 PKGNAME =	${DISTNAME:S/_/-/}
 WRKDIST =	${WRKDIR}/moreutils
 
@@ -19,14 +19,16 @@ WANTLIB += c
 
 MASTER_SITES =		${MASTER_SITE_DEBIAN:=main/m/moreutils/}
 
-BUILD_DEPENDS =		textproc/docbook2x
+BUILD_DEPENDS =		textproc/docbook-xsl
 RUN_DEPENDS =		devel/p5-IPC-Run \
 			devel/p5-Time-Duration \
 			devel/p5-Time-TimeDate
 
-MAKE_FLAGS =		DOCBOOK2XMAN=docbook2man
 FAKE_FLAGS =		PREFIX=${PREFIX}
 USE_GMAKE =		Yes
 NO_TEST =		Yes
+
+pre-patch:
+	perl -pi -e 's,/usr/share/xml/docbook/stylesheet/docbook-xsl/manpages,${LOCALBASE}/share/xsl/docbook/manpages,' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
