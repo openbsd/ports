@@ -1,4 +1,4 @@
-$OpenBSD: README-web,v 1.6 2012/06/21 07:00:20 ajacoutot Exp $
+$OpenBSD: README-web,v 1.7 2014/03/09 22:30:54 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -31,3 +31,5 @@ you can do this by creating symbolic links as follows:
 Zabbix requires a timezone to be configured in PHP; zabbix.ini
 sets this to UTC, you may like to adjust this. After making these
 changes, stop and start httpd.
+
+At last, edit ${ZABBIX_WEB}/conf/zabbix.conf.php according to your needs.

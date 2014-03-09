@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.21 2014/01/14 15:17:46 robert Exp $
+@comment $OpenBSD: PLIST-web,v 1.22 2014/03/09 22:30:54 ajacoutot Exp $
 @pkgpath net/zabbix,-web,mysql
 @pkgpath net/zabbix,-web,pgsql
 conf/modules.sample/zabbix.conf
@@ -104,6 +104,11 @@ zabbix/conf.import.php
 zabbix/conf/.htaccess
 zabbix/conf/maintenance.inc.php
 zabbix/conf/zabbix.conf.php.example
+@group www
+@mode 0640
+@sample zabbix/conf/zabbix.conf.php
+@group
+@mode
 zabbix/dashboard.php
 zabbix/dashconf.php
 zabbix/disc_prototypes.php
