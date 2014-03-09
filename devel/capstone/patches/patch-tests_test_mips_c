@@ -1,0 +1,27 @@
+$OpenBSD: patch-tests_test_mips_c,v 1.1 2014/03/09 19:58:51 jasper Exp $
+
+The 'mips' symbol is special on MIPS platforms, so rename it to prevent a
+conflict.
+
+--- tests/test_mips.c.orig	Sat Feb 22 12:42:41 2014
++++ tests/test_mips.c	Sat Feb 22 13:10:29 2014
+@@ -31,14 +31,14 @@ static void print_string_hex(char *comment, unsigned c
+ 
+ static void print_insn_detail(cs_insn *ins)
+ {
+-	cs_mips *mips = &(ins->detail->mips);
++	cs_mips *mipsen=  &(ins->detail->mipsen);
+ 
+-	if (mips->op_count)
+-		printf("\top_count: %u\n", mips->op_count);
++	if (mipsen->op_count)
++		printf("\top_count: %u\n", mipsen->op_count);
+ 
+ 	int i;
+-	for (i = 0; i < mips->op_count; i++) {
+-		cs_mips_op *op = &(mips->operands[i]);
++	for (i = 0; i < mipsen->op_count; i++) {
++		cs_mips_op *op = &(mipsen->operands[i]);
+ 		switch((int)op->type) {
+ 			default:
+ 				break;

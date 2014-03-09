@@ -1,0 +1,16 @@
+$OpenBSD: patch-MCInst_h,v 1.1 2014/03/09 19:58:51 jasper Exp $
+
+The 'mips' symbol is special on MIPS platforms, so rename it to prevent a
+conflict.
+
+--- MCInst.h.orig	Sat Feb 22 12:42:16 2014
++++ MCInst.h	Sat Feb 22 12:42:54 2014
+@@ -126,7 +126,7 @@ typedef struct cs_insn_flat {
+ 		cs_x86 x86;	// X86 architecture, including 16-bit, 32-bit & 64-bit mode
+ 		cs_arm64 arm64;	// ARM64 architecture (aka AArch64)
+ 		cs_arm arm;		// ARM architecture (including Thumb/Thumb2)
+-		cs_mips mips;	// MIPS architecture
++		cs_mips mipsen;	// MIPS architecture
+ 		cs_ppc ppc;	// PowerPC architecture
+ 	};
+ } cs_insn_flat;

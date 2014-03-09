@@ -1,0 +1,29 @@
+$OpenBSD: patch-cs_c,v 1.1 2014/03/09 19:58:51 jasper Exp $
+
+The 'mips' symbol is special on MIPS platforms, so rename it to prevent a
+conflict.
+
+--- cs.c.orig	Sat Feb 22 12:44:56 2014
++++ cs.c	Sat Feb 22 12:46:49 2014
+@@ -520,8 +520,8 @@ int cs_op_count(csh ud, cs_insn *insn, unsigned int op
+ 					count++;
+ 			break;
+ 		case CS_ARCH_MIPS:
+-			for (i = 0; i < insn->detail->mips.op_count; i++)
+-				if (insn->detail->mips.operands[i].type == op_type)
++			for (i = 0; i < insn->detail->mipsen.op_count; i++)
++				if (insn->detail->mipsen.operands[i].type == op_type)
+ 					count++;
+ 			break;
+ 		case CS_ARCH_PPC:
+@@ -579,8 +579,8 @@ int cs_op_index(csh ud, cs_insn *insn, unsigned int op
+ 			}
+ 			break;
+ 		case CS_ARCH_MIPS:
+-			for (i = 0; i < insn->detail->mips.op_count; i++) {
+-				if (insn->detail->mips.operands[i].type == op_type)
++			for (i = 0; i < insn->detail->mipsen.op_count; i++) {
++				if (insn->detail->mipsen.operands[i].type == op_type)
+ 					count++;
+ 				if (count == post)
+ 					return i;
