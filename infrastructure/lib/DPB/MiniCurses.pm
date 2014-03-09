@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: MiniCurses.pm,v 1.5 2013/10/15 16:02:08 espie Exp $
+# $OpenBSD: MiniCurses.pm,v 1.6 2014/03/09 20:04:57 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -159,13 +159,18 @@ sub bg
 sub mogrify
 {
 	my ($self, $line) = @_;
+	my $percent = PURPLE;
 	$self->default_bg(BLACK);
 	$self->default_fg(WHITE);
-	if ($line =~ m/frozen|waiting-for-lock/) {
+	if ($line =~ m/waiting-for-lock/) {
+		$line = $self->color($line, BLUE);
+		$self->default_fg(BLUE);
+	} elsif ($line =~ m/frozen/) {
 		if ($line =~ m/for\s+\d+\s*(mn|HOURS)/) {
-			$line = $self->bg($self->color($line, GREEN), RED);
+			$line = $self->bg($self->color($line, BLACK), RED);
 			$self->default_bg(RED);
-			$self->default_fg(GREEN);
+			$self->default_fg(BLACK);
+			$percent = WHITE;
 		} else {
 			$line = $self->color($line, RED);
 			$self->default_fg(RED);
@@ -183,11 +188,12 @@ sub mogrify
 		$line = $self->color($line, RED);
 		$self->default_fg(RED);
 	} elsif ($line =~ m/^Hosts:/) {
-		$line =~ s/(\w+\-)/$self->color($1, RED)/ge;
+		$line =~ s/([\w\.\-]+)(\s|\(|$)/$self->color($1, RED).$2/ge;
+		$line =~ s/(^Hosts:)/$self->color($1, BLUE)/ge;
 	}
 	$line =~ s/(\[\d+\])/$self->color($1, GREEN)/ge;
 	$line =~ s/(\(.*?\))/$self->color($1, YELLOW)/ge;
-	$line =~ s/(\d+\%)/$self->color($1, PURPLE)/ge;
+	$line =~ s/(\d+\%)/$self->color($1, $percent)/ge;
 	return $line;
 }
 
