@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2013/11/01 14:58:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2014/03/09 22:16:21 ajacoutot Exp $
 
 COMMENT=	integrated LaTeX environment for GNOME
 
 GNOME_PROJECT=	latexila
-GNOME_VERSION=	2.10.0
+GNOME_VERSION=	2.10.1
 
 CATEGORIES=	editors print
 
@@ -27,7 +27,7 @@ BUILD_DEPENDS=	devel/gsettings-desktop-schemas
 
 RUN_DEPENDS=	devel/gsettings-desktop-schemas \
 		textproc/latexmk \
-		devel/xdg-utils # xdg-open(1)
+		devel/xdg-utils #xdg-open(1)
 
 LIB_DEPENDS=	devel/libgee06 \
 		textproc/gtkspell3 \
