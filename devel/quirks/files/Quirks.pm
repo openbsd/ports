@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.123 2014/02/08 15:15:16 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.124 2014/03/09 20:08:54 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -363,6 +363,7 @@ my $obsolete_reason = {
 	'varconf' => 0,
 	'radiusd-cistron' => 2,
 	'radiusd-lucent' => 2,
+	'emesene' => 0,
 };
 
 # ->is_base_system($handle, $state):
