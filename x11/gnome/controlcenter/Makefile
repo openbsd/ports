@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.120 2014/02/09 08:48:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.121 2014/03/09 21:59:33 ajacoutot Exp $
+
+# XXX remove pre-configure when updating to 3.12.0
+# https://git.gnome.org/browse/gnome-control-center/commit/?id=4736b03ed9e2ae9214117454f70811dbacd78739
 
 # XXX change proxy settings without network-manager?
 
@@ -7,8 +10,7 @@ SHARED_ONLY=		Yes
 COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
-GNOME_VERSION=		3.10.2
-REVISION=		1
+GNOME_VERSION=		3.10.3
 
 CATEGORIES=		x11
 
@@ -95,7 +97,6 @@ MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gnome-control-center
 
-# XXX https://bugzilla.gnome.org/show_bug.cgi?id=650342
 pre-configure:
 	echo >${WRKSRC}/shell/hostnames-test.txt
 
