@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_print_battery_info_c,v 1.10 2014/03/09 20:03:43 jasper Exp $
+
+For the %percentage display of batteries, drop the leading '0' for values < 10.
+
+--- src/print_battery_info.c.orig	Sun Jan  5 12:34:07 2014
++++ src/print_battery_info.c	Sat Feb 15 14:41:43 2014
+@@ -284,7 +284,7 @@ void print_battery_info(yajl_gen json_gen, char *buffe
+ 	}
+ 
+ 	(void)snprintf(statusbuf, sizeof(statusbuf), "%s", BATT_STATUS_NAME(status));
+-        (void)snprintf(percentagebuf, sizeof(percentagebuf), "%02d%%", apm_info.battery_life);
++        (void)snprintf(percentagebuf, sizeof(percentagebuf), "%.00d%%", apm_info.battery_life);
+ 
+ 	if (status == CS_DISCHARGING && low_threshold > 0) {
+ 		if (strncmp(threshold_type, "percentage", strlen(threshold_type)) == 0
