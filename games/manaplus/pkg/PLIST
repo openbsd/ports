@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2014/01/18 19:41:04 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.19 2014/03/09 20:30:34 bcallah Exp $
 @conflict tmw-*
 @conflict tmw-music-*
 @pkgpath games/tmw
@@ -172,6 +172,8 @@ share/manaplus/data/graphics/sprites/test.xml
 share/manaplus/data/help/
 share/manaplus/data/help/about.txt
 share/manaplus/data/help/chatcommands.txt
+share/manaplus/data/help/chatguild.txt
+share/manaplus/data/help/chatparty.txt
 share/manaplus/data/help/commands.txt
 share/manaplus/data/help/download.txt
 share/manaplus/data/help/footer.txt
@@ -220,6 +222,7 @@ share/manaplus/data/perserver/default/chatcommands.txt
 share/manaplus/data/perserver/default/deadmessages.xml
 share/manaplus/data/perserver/default/features.xml
 share/manaplus/data/perserver/default/gmcommands.txt
+share/manaplus/data/perserver/default/weapons.xml
 share/manaplus/data/sfx/
 share/manaplus/data/sfx/system/
 share/manaplus/data/sfx/system/attention.ogg
@@ -578,6 +581,7 @@ share/manaplus/data/themes/wood/window.xml
 share/manaplus/data/themes/wood/world.xml
 share/manaplus/data/translations/
 share/manaplus/data/translations/help/
+share/manaplus/data/translations/help/cs.po
 share/manaplus/data/translations/help/de.po
 share/manaplus/data/translations/help/es.po
 share/manaplus/data/translations/help/fr.po
@@ -586,6 +590,7 @@ share/manaplus/data/translations/help/nl_BE.po
 share/manaplus/data/translations/help/pl.po
 share/manaplus/data/translations/help/pt_BR.po
 share/manaplus/data/translations/help/ru.po
+share/manaplus/data/translations/help/zh_CN.po
 share/pixmaps/
 share/pixmaps/manaplus.png
 @exec %D/bin/update-desktop-database
