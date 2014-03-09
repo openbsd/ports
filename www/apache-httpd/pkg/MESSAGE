@@ -1,8 +1,0 @@
-This is the official httpd distributed by the Apache Server Project,
-provided as a port for those who, for various reasons, need to run
-version 2. 
-
-OpenBSD provides a custom Apache server, httpd(8), in the base system
-which has been audited for security and may run in a chroot(2)
-environment.  Users are STRONGLY encouraged to use the system httpd
-rather than this port.
