@@ -1,8 +1,8 @@
-$OpenBSD: icinga-bin_icli,v 1.3 2012/08/29 13:31:21 sthen Exp $
---- bin/icli.orig	Tue Aug 28 16:47:39 2012
-+++ bin/icli	Wed Aug 29 14:29:17 2012
-@@ -17,9 +17,9 @@ use Term::Size;
- our $VERSION = '0.43';
+$OpenBSD: icinga-bin_icli,v 1.4 2014/03/09 22:03:27 sthen Exp $
+--- bin/icli.orig	Sun Sep 29 15:18:56 2013
++++ bin/icli	Sun Mar  9 22:01:07 2014
+@@ -19,9 +19,9 @@ use Term::Size;
+ our $VERSION = '0.46';
  
  my ( $cache, $config, $data, $extra );
 -my $config_file = '/var/cache/icinga/objects.cache';

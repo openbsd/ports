@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2013/05/05 21:21:43 rpe Exp $
+# $OpenBSD: Makefile,v 1.8 2014/03/09 22:03:27 sthen Exp $
 
 COMMENT=	command-line interface to Icinga
 
-DISTNAME=	icli-0.44
+DISTNAME=	icli-0.46
 
 CATEGORIES=	net
 
@@ -27,8 +27,7 @@ RUN_DEPENDS=		net/icinga/core
 .endif
 
 RUN_DEPENDS+=		devel/p5-List-MoreUtils \
-			devel/p5-Term-Size \
-			devel/p5-Time-TimeDate
+			devel/p5-Term-Size
 
 CONFIGURE_STYLE=	modbuild
 
