@@ -1,37 +1,42 @@
-$OpenBSD: patch-libzeitgeist_log_vala,v 1.3 2013/09/12 06:49:54 ajacoutot Exp $
+$OpenBSD: patch-libzeitgeist_log_vala,v 1.4 2014/03/09 22:31:54 ajacoutot Exp $
 
-get_nprocs_conf() is a glibc-extension equivalent to sysconf(_SC_NPROCESSORS_CONF).
-https://bugs.launchpad.net/libzeitgeist/+bug/1161565
+From 3fe95cdb5a4c48d3b6606ffb1f60fae3e375fdff Mon Sep 17 00:00:00 2001
+From: Seif Lotfy <seif@lotfy.com>
+Date: Tue, 04 Mar 2014 19:55:53 +0000
+Subject: Replace get_nprocs_conf with g_get_num_processors()
 
---- libzeitgeist/log.vala.orig	Tue Mar 19 07:01:48 2013
-+++ libzeitgeist/log.vala	Thu Mar 28 20:03:52 2013
-@@ -40,6 +40,10 @@
+--- libzeitgeist/log.vala.orig	Mon Jun 17 08:40:08 2013
++++ libzeitgeist/log.vala	Thu Mar  6 09:01:29 2014
+@@ -40,6 +40,7 @@
   * Zeitgeist also comes with a blacklist extension to make sure the user
   * always stays in control of what information is logged.
   */
 +
-+using Posix;
-+using Linux;
-+
  namespace Zeitgeist
  {
  
-@@ -58,9 +62,6 @@ namespace Zeitgeist
+@@ -58,8 +59,8 @@ namespace Zeitgeist
   */
  public class Log : QueuedProxyWrapper
  {
 -    [CCode (cheader_filename = "sys/sysinfo.h", cname = "get_nprocs_conf")]
 -    extern static int get_nprocs_conf ();
--
++    [CCode (cname = "g_get_num_processors")]
++    private extern static uint get_num_processors ();
+ 
      class DbWorker
      {
-         private unowned ThreadFunc<void*> func;
 @@ -141,7 +142,7 @@ public class Log : QueuedProxyWrapper
          try {
              threads = new ThreadPool<DbWorker>.with_owned_data ((worker) => {
                  worker.run ();
 -            }, get_nprocs_conf (), true);
-+            }, (int) Posix.sysconf(Linux._SC_NPROCESSORS_CONF), true);
++            }, (int) get_num_processors (), true);
          } catch (ThreadError err) {
              warning ("%s", err.message);
              threads = null;
+@@ -637,4 +638,3 @@ public class Log : QueuedProxyWrapper
+ 
+ }
+ 
+-// vim:expandtab:ts=4:sw=4

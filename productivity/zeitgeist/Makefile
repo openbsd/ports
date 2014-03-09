@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2014/01/07 08:55:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2014/03/09 22:31:54 ajacoutot Exp $
 
 COMMENT =		event logging framework
 
 V =			0.9.14
 DISTNAME =		zeitgeist-${V}
 EPOCH =			0
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=	zeitgeist-2.0             0.0 # 0.0
 
@@ -35,6 +35,9 @@ MODULES =		devel/gettext \
 			x11/gnome
 
 MODGNOME_TOOLS =	gi vala
+
+# https://bugs.freedesktop.org/show_bug.cgi?id=73837
+MODPY_ADJ_FILES =	data/ontology2code
 
 BUILD_DEPENDS =		textproc/py-rdflib \
 			textproc/raptor

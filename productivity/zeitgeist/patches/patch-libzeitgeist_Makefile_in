@@ -1,21 +1,18 @@
-$OpenBSD: patch-libzeitgeist_Makefile_in,v 1.3 2013/09/12 06:49:54 ajacoutot Exp $
+$OpenBSD: patch-libzeitgeist_Makefile_in,v 1.4 2014/03/09 22:31:54 ajacoutot Exp $
+
+From 74387d7e1eab84323ca4615caa955bdb5bbe7170 Mon Sep 17 00:00:00 2001
+From: Seif Lotfy <seif@lotfy.com>
+Date: Mon, 27 Jan 2014 21:45:42 +0000
+Subject: Replace \+ with \{1,\)
+
 --- libzeitgeist/Makefile.in.orig	Tue Jun 18 04:43:44 2013
 +++ libzeitgeist/Makefile.in	Tue Sep 10 15:51:09 2013
-@@ -406,7 +406,7 @@ AM_CPPFLAGS = \
- 	$(NULL)
- 
- AM_VALAFLAGS = --target-glib=2.26 --pkg gio-2.0 --pkg gio-unix-2.0 \
--	--pkg sqlite3 $(top_srcdir)/config.vapi -C $(NULL) \
-+	--pkg sqlite3 --pkg linux $(top_srcdir)/config.vapi -C $(NULL) \
- 	$(am__append_1)
- libzeitgeist_internal_la_VALAFLAGS = \
- 	$(builddir)/zeitgeist-datamodel-2.0.vapi \
 @@ -518,7 +518,7 @@ MAINTAINERCLEANFILES = 
  # We have to extract our own dlname from libzeitgeist-2.0.la; see bgo#658002.
  # This is what g-ir-scanner does.
  libzeitgeist_dlname = \
 -	`$(SED) -n "s/^dlname='\([A-Za-z0-9.+-]\+\)'/\1/p" libzeitgeist-2.0.la`
-+	`$(SED) -nE "s/^dlname='([A-Za-z0-9.+-]+)'/\1/p" libzeitgeist-2.0.la`
++	`$(SED) -n "s/^dlname='\([A-Za-z0-9.+-]\{1,\}\)'/\1/p" libzeitgeist-2.0.la`
  
  @HAVE_INTROSPECTION_TRUE@libzeitgeist_2_0_gir_VALASOURCES = \
  @HAVE_INTROSPECTION_TRUE@	$(libzeitgeist_2_0_la_VALASOURCES) \
