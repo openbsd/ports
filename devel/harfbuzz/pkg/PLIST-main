@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2013/09/24 09:18:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2014/03/09 22:14:03 ajacoutot Exp $
 @pkgpath devel/harfbuzz
 @bin bin/hb-ot-shape-closure
 @bin bin/hb-shape
@@ -14,6 +14,7 @@ include/harfbuzz/hb-ft.h
 include/harfbuzz/hb-glib.h
 include/harfbuzz/hb-graphite2.h
 include/harfbuzz/hb-ot-layout.h
+include/harfbuzz/hb-ot-shape.h
 include/harfbuzz/hb-ot-tag.h
 include/harfbuzz/hb-ot.h
 include/harfbuzz/hb-set.h
