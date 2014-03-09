@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2013/08/11 08:57:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2014/03/09 19:46:35 espie Exp $
 
 # sync with ONLY_FOR_ARCHS in devel/spidermonkey
 ONLY_FOR_ARCHS-mozilla=	alpha amd64 i386 hppa mips64el mips64 powerpc sparc64
@@ -41,7 +41,7 @@ SUBST_VARS+=		VERSION
 # webkit = cyclic dependency: libproxy,-webkit -> webkit -> libsoup -> libproxy
 # mozilla = devel/spidermonkey does not build on all arches
 PSEUDO_FLAVORS=		no_mozilla no_webkit bootstrap
-FLAVOR?=		no_mozilla no_webkit
+FLAVOR?=		no_mozilla no_webkit bootstrap
 
 MULTI_PACKAGES=		-main -mozilla -webkit
 

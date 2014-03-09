@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2014/01/23 14:16:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.112 2014/03/09 19:46:35 espie Exp $
 
 COMMENT-main=	GNOME Virtual File System
 COMMENT-smb=	GVFS mount module for samba
@@ -77,7 +77,7 @@ CONFIGURE_ARGS=	--disable-cdda \
 MULTI_PACKAGES=		-main -smb -goa
 
 PSEUDO_FLAVORS=		no_smb no_goa bootstrap
-FLAVOR?=		no_smb no_goa
+FLAVOR?=		no_smb no_goa bootstrap
 
 .include <bsd.port.arch.mk>
 
