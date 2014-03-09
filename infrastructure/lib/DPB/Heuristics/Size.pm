@@ -1,6 +1,6 @@
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Size.pm,v 1.3 2013/11/16 16:39:28 espie Exp $
+# $OpenBSD: Size.pm,v 1.4 2014/03/09 20:11:33 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -57,12 +57,13 @@ my $used_per_host = {};
 
 sub build_in_memory
 {
-	my ($self, $core, $v) = @_;
+	my ($self, $fh, $core, $v) = @_;
 	my $t = $core->memory;
 	return 0 if !defined $t;
 
 	# first match previous affinity
 	if ($v->{affinity}) {
+		print $fh ">>> Matching affinity: ", $v->{affinity}, "\n";
 		return $v->{mem_affinity};
 	}
 
@@ -72,6 +73,8 @@ sub build_in_memory
 	if (defined $wrkdir{$p}) {
 		my $hostname = $core->hostname;
 		$used_per_host->{$hostname} //= 0;
+		print $fh ">>> Compare ", $used_per_host->{$hostname}, " + ", 
+		    $wrkdir{$p}, " to ", $t, "\n";
 		if ($used_per_host->{$hostname} + $wrkdir{$p} <= $t) {
 			$used_per_host->{$hostname} += $wrkdir{$p};
 			$used_memory->{$p} = $hostname;
