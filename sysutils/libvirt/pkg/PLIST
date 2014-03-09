@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/10/27 19:40:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/03/09 20:21:23 jasper Exp $
 @bin bin/virsh
 @bin bin/virt-host-validate
 bin/virt-pki-validate
@@ -19,12 +19,6 @@ lib/libvirt.a
 lib/libvirt.la
 @lib lib/libvirt.so.${LIBvirt_VERSION}
 lib/pkgconfig/libvirt.pc
-lib/python${MODPY_VERSION}/site-packages/libvirt.py
-lib/python${MODPY_VERSION}/site-packages/libvirt_lxc.py
-lib/python${MODPY_VERSION}/site-packages/libvirt_qemu.py
-lib/python${MODPY_VERSION}/site-packages/libvirtmod.so
-lib/python${MODPY_VERSION}/site-packages/libvirtmod_lxc.so
-lib/python${MODPY_VERSION}/site-packages/libvirtmod_qemu.so
 libexec/libvirt-guests.sh
 @man man/man1/virsh.1
 @man man/man1/virt-host-validate.1
@@ -48,6 +42,7 @@ share/doc/libvirt/html/architecture.html
 share/doc/libvirt/html/archnetwork.html
 share/doc/libvirt/html/archnode.html
 share/doc/libvirt/html/archstorage.html
+share/doc/libvirt/html/auditlog.html
 share/doc/libvirt/html/auth.html
 share/doc/libvirt/html/bindings.html
 share/doc/libvirt/html/bugs.html
@@ -60,6 +55,7 @@ share/doc/libvirt/html/devguide.html
 share/doc/libvirt/html/docs.html
 share/doc/libvirt/html/downloads.html
 share/doc/libvirt/html/drivers.html
+share/doc/libvirt/html/drvbhyve.html
 share/doc/libvirt/html/drvesx.html
 share/doc/libvirt/html/drvhyperv.html
 share/doc/libvirt/html/drvlxc.html
@@ -90,6 +86,7 @@ share/doc/libvirt/html/formatstorage.html
 share/doc/libvirt/html/formatstorageencryption.html
 share/doc/libvirt/html/generic.css
 share/doc/libvirt/html/goals.html
+share/doc/libvirt/html/governance.html
 share/doc/libvirt/html/hacking.html
 share/doc/libvirt/html/hooks.html
 share/doc/libvirt/html/html/
@@ -106,6 +103,7 @@ share/doc/libvirt/html/internals/
 share/doc/libvirt/html/internals.html
 share/doc/libvirt/html/internals/command.html
 share/doc/libvirt/html/internals/locking.html
+share/doc/libvirt/html/internals/oomtesting.html
 share/doc/libvirt/html/internals/rpc.html
 share/doc/libvirt/html/intro.html
 share/doc/libvirt/html/java.html
@@ -135,6 +133,7 @@ share/doc/libvirt/html/php.html
 share/doc/libvirt/html/python.html
 share/doc/libvirt/html/relatedlinks.html
 share/doc/libvirt/html/remote.html
+share/doc/libvirt/html/secureusage.html
 share/doc/libvirt/html/securityprocess.html
 share/doc/libvirt/html/sitemap.html
 share/doc/libvirt/html/storage.html
