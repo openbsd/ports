@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.143 2014/01/10 11:26:43 espie Exp $
+# $OpenBSD: Port.pm,v 1.144 2014/03/09 20:24:18 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -175,6 +175,21 @@ sub finalize
 		print {$core->job->{lock}} "cleaned\n";
 	}
 	return 0;
+}
+
+# return swallowed cores at the end of fake: package is inherently sequential
+# and there's some "thundering herd" effect when we release lots of cores,
+# so release them a bit early, so by the time we're finished packaging,
+# they're mostly out of "waiting-for-lock"
+package DPB::Task::Port::Fake;
+our @ISA = qw(DPB::Task::Port);
+
+sub finalize
+{
+	my ($self, $core) = @_;
+	$core->unswallow;
+	delete $core->job->{nojunk};
+	$self->SUPER::finalize($core);
 }
 
 package DPB::Task::Port::Signature;
@@ -776,6 +791,7 @@ my $repo = {
 	'show-size' => 'DPB::Task::Port::ShowSize',
 	junk => 'DPB::Task::Port::Uninstall',
 	inbetween => 'DPB::Task::Port::InBetween',
+	fake => 'DPB::Task::Port::Fake',
 };
 
 sub create
