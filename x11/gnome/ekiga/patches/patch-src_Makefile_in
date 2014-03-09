@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2014/03/09 21:48:55 ajacoutot Exp $
+
+From 36db30c774cf24956572a4813e922a5e6d3cdf68 Mon Sep 17 00:00:00 2001
+From: Julien Puydt <jpuydt@free.fr>
+Date: Thu, 20 Feb 2014 15:47:13 +0000
+Subject: Applied patch from Antoine Jacoutot, fixing #724524
+
+--- src/Makefile.in.orig	Mon Feb 17 08:52:47 2014
++++ src/Makefile.in	Mon Feb 17 08:52:35 2014
+@@ -1056,7 +1056,7 @@ src/revision.h:
+             echo "#define EKIGA_REVISION $(GIT_REVISION)" > revision.h; \
+           fi \
+         else \
+-          if !(test -e "./revision.h"); then\
++          if ! test -e "./revision.h"; then\
+             echo "#define EKIGA_REVISION \"unknown\"" > revision.h; \
+           fi \
+         fi
