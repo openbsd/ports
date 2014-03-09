@@ -1,0 +1,17 @@
+$OpenBSD: patch-daemon_gdm-session_h,v 1.1 2014/03/09 21:56:20 ajacoutot Exp $
+
+From 2d025255ab783208af98d848cca7b5e1bb4e44ef Mon Sep 17 00:00:00 2001
+From: Ting-Wei Lan <lantw44@gmail.com>
+Date: Mon, 20 Jan 2014 10:15:35 +0000
+Subject: Fix build problem on FreeBSD
+
+--- daemon/gdm-session.h.orig	Mon Mar  3 09:06:14 2014
++++ daemon/gdm-session.h	Mon Mar  3 09:06:21 2014
+@@ -22,6 +22,7 @@
+ #define __GDM_SESSION_H
+ 
+ #include <glib-object.h>
++#include <sys/types.h>
+ 
+ G_BEGIN_DECLS
+ 

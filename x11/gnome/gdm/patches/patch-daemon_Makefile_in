@@ -1,6 +1,9 @@
-$OpenBSD: patch-daemon_Makefile_in,v 1.9 2013/09/27 10:16:55 ajacoutot Exp $
+$OpenBSD: patch-daemon_Makefile_in,v 1.10 2014/03/09 21:56:20 ajacoutot Exp $
 
-undefined reference to `logwtmp'...
+From 2d025255ab783208af98d848cca7b5e1bb4e44ef Mon Sep 17 00:00:00 2001
+From: Ting-Wei Lan <lantw44@gmail.com>
+Date: Mon, 20 Jan 2014 10:15:35 +0000
+Subject: Fix build problem on FreeBSD
 
 --- daemon/Makefile.in.orig	Mon Sep 23 23:33:27 2013
 +++ daemon/Makefile.in	Fri Sep 27 11:51:15 2013

@@ -1,9 +1,9 @@
-$OpenBSD: patch-daemon_gdm-session-record_c,v 1.3 2014/01/21 17:39:30 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-session-record_c,v 1.4 2014/03/09 21:56:20 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=722482
 
 --- daemon/gdm-session-record.c.orig	Wed Oct 16 15:59:56 2013
-+++ daemon/gdm-session-record.c	Sat Jan 18 09:56:47 2014
++++ daemon/gdm-session-record.c	Fri Feb 21 11:04:16 2014
 @@ -33,6 +33,16 @@
  #include <utmp.h>
  #endif
@@ -21,11 +21,22 @@ https://bugzilla.gnome.org/show_bug.cgi?id=722482
  #include <glib.h>
  #include <glib/gi18n.h>
  #include <glib/gstdio.h>
-@@ -196,6 +206,84 @@ record_set_line (UTMP       *u,
+@@ -43,6 +53,9 @@
+ #define GDM_BAD_SESSION_RECORDS_FILE "/var/log/btmp"
+ #endif
+ 
++static void write_utmp_login_manually (struct utmp *ut);
++static void write_utmp_logout_manually (char *);
++
+ #if !defined(GDM_NEW_SESSION_RECORDS_FILE)
+ #    if defined(WTMPX_FILE)
+ #        define GDM_NEW_SESSION_RECORDS_FILE WTMPX_FILE
+@@ -195,6 +208,84 @@ record_set_line (UTMP       *u,
+         g_debug ("using ut_line %.*s", (int) sizeof (u->ut_line), u->ut_line);
  }
  
- void
-+gdm_login (struct utmp *ut)
++static void
++write_utmp_login_manually (struct utmp *ut)
 +{
 +#if defined(HAVE_GETTTYENT) && defined(HAVE_UTMP_H)
 +        UTMP ubuf;
@@ -71,8 +82,8 @@ https://bugzilla.gnome.org/show_bug.cgi?id=722482
 +#endif
 +}
 +
-+void
-+gdm_logout (char *line)
++static void
++write_utmp_logout_manually (char *line)
 +{
 +#if defined(HAVE_GETTTYENT) && defined(HAVE_UTMP_H)
 +        int rval = 1;
@@ -102,11 +113,10 @@ https://bugzilla.gnome.org/show_bug.cgi?id=722482
 +#endif
 +}
 +
-+void
+ void
  gdm_session_record_login (GPid                  session_pid,
                            const char           *user_name,
-                           const char           *host_name,
-@@ -261,8 +349,9 @@ gdm_session_record_login (GPid                  sessio
+@@ -261,8 +352,9 @@ gdm_session_record_login (GPid                  sessio
                  g_debug ("Adding new utmp record");
                  pututxline (&session_record);
          }
@@ -114,18 +124,18 @@ https://bugzilla.gnome.org/show_bug.cgi?id=722482
 -	login (&session_record);
 +#else
 +        if (strcmp (session_record.ut_name, "(unknown)") != 0)
-+            gdm_login (&session_record);
++            write_utmp_login_manually (&session_record);
  #endif
  }
  
-@@ -333,8 +422,8 @@ gdm_session_record_logout (GPid                  sessi
+@@ -333,8 +425,8 @@ gdm_session_record_logout (GPid                  sessi
          }
  
          endutxent ();
 -#elif defined(HAVE_LOGOUT)
 -        logout (session_record.ut_line);
 +#else
-+        gdm_logout (session_record.ut_line);
++        write_utmp_logout_manually (session_record.ut_line);
  #endif
  }
  
