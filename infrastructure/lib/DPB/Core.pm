@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.70 2013/11/14 09:35:01 espie Exp $
+# $OpenBSD: Core.pm,v 1.71 2014/03/09 20:08:32 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -510,16 +510,26 @@ sub repository
 	return $running;
 }
 
+
+sub walk_same_host_jobs
+{
+	my ($self, $sub) = @_;
+	while (my ($pid, $core) = each %{$self->repository}) {
+		next if $core->hostname ne $self->hostname;
+		# XXX only interested in "real" jobs now
+		next if !defined $core->job->{v};
+		&$sub($pid, $core->job);
+	}
+}
+
 sub same_host_jobs
 {
 	my $self = shift;
 	my @jobs = ();
-	for my $core (values %{$self->repository}) {
-		next if $core->hostname ne $self->hostname;
-		# XXX only interested in "real" jobs now
-		next if !defined $core->job->{v};
-		push(@jobs, $core->job);
-	}
+	$self->walk_same_host_jobs(sub {
+		my ($pid, $job) = @_;
+		push(@jobs, $job);
+	    });
 	return @jobs;
 }
 
@@ -623,25 +633,30 @@ sub can_swallow
 	}
 }
 
+sub unswallow
+{
+	my $self = shift;
+	return unless defined $self->{swallowed};
+	my $l = $self->{swallowed};
+
+	# first prevent the recursive call from taking us into
+	# account
+	delete $self->{swallowed};
+	delete $self->host->{swallow}{$self};
+	delete $self->{swallow};
+	delete $self->{realjobs};
+
+	# then free up our swallowed jobs
+	$self->mark_available(@$l);
+}
+
 sub mark_available
 {
 	my $self = shift;
 	LOOP: for my $core (@_) {
 		# okay, if this core swallowed stuff, then we release 
 		# the swallowed stuff first
-		if (defined $core->{swallowed}) {
-			my $l = $core->{swallowed};
-
-			# first prevent the recursive call from taking us into
-			# account
-			delete $core->{swallowed};
-			delete $core->host->{swallow}{$core};
-			delete $core->{swallow};
-			delete $core->{realjobs};
-
-			# then free up our swallowed jobs
-			$self->mark_available(@$l);
-		}
+		$core->unswallow;
 
 		# if this host has cores that swallow things, let us 
 		# be swallowed
@@ -669,7 +684,15 @@ sub get
 	my $self = shift;
 	$a = $self->available;
 	if (@$a > 1) {
-		@$a = sort {$b->sf <=> $a->sf} @$a;
+		if (DPB::HostProperties->has_sf) {
+			@$a = sort {$b->sf <=> $a->sf} @$a;
+		} else {
+			my %cores;
+			for my $c (@$a) {
+				$cores{$c->hostname}++;
+			}
+			@$a = sort {$cores{$b->hostname} <=> $cores{$a->hostname}} @$a;
+		}
 	}
 	my $core = shift @$a;
 	if ($core->may_unsquiggle) {
@@ -935,7 +958,10 @@ sub exec
 		$cmd = "umask $umask && $cmd";
 	}
 	if ($chroot) {
-		my @cmd2 = (OpenBSD::Paths->sudo, "-E", "chroot");
+		my @cmd2 = ("chroot");
+		if (!$self->prop->{iamroot}) {
+			unshift(@cmd2, OpenBSD::Paths->sudo, "-E");
+		}
 		if (!$self->{sudo} && defined $self->prop->{chroot_user}) {
 			push(@cmd2, "-u", $self->prop->{chroot_user});
 		}
