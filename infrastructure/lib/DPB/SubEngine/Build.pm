@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Build.pm,v 1.9 2013/12/30 17:32:26 espie Exp $
+# $OpenBSD: Build.pm,v 1.10 2014/03/09 20:15:10 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -87,6 +87,23 @@ sub can_start_build
 	if ($self->lock_and_start_build($core, $v)) {
 		return 1;
 	}
+}
+
+# we cheat a bit to standardize built paths
+sub can_really_start_build
+{
+	my ($self, $v, $core) = @_;
+	for my $w (sort {$a->fullpkgpath cmp $b->fullpkgpath} 
+	    $v->build_path_list) {
+	    	next unless $self->{queue}->contains($w);
+		if ($self->SUPER::can_really_start_build($w, $core)) {
+			for my $k ($w->build_path_list) {
+				$self->remove($k);
+			}
+			return 1;
+		}
+	}
+	return 0;
 }
 
 sub check_for_memory_hogs
