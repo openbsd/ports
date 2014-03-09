@@ -1,11 +1,11 @@
-$OpenBSD: patch-gst_udp_gstmultiudpsink_c,v 1.3 2013/09/24 18:29:47 ajacoutot Exp $
+$OpenBSD: patch-gst_udp_gstmultiudpsink_c,v 1.4 2014/03/09 22:33:24 ajacoutot Exp $
 --- gst/udp/gstmultiudpsink.c.orig	Wed Sep  4 19:08:13 2013
 +++ gst/udp/gstmultiudpsink.c	Tue Sep 24 16:46:25 2013
 @@ -49,6 +49,11 @@
  
  #include "gst/glib-compat-private.h"
  
-+// iovec
++/* iovec */
 +#ifdef __OpenBSD__
 +#include <sys/uio.h>
 +#endif
