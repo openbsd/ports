@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.71 2013/03/11 11:02:50 espie Exp $
+# $OpenBSD: Makefile,v 1.72 2014/03/09 19:59:41 jasper Exp $
 
 COMMENT=		X11/Motif GUI text editor
 
 DISTNAME=		nedit-5.5
 P_V=			0.5
-REVISION=		19
+REVISION=		20
 EPOCH=			0
 DISTFILES=		${DISTNAME}-src${EXTRACT_SUFX} \
 			nedit_patterns-${P_V}.tgz:0
@@ -18,8 +18,6 @@ MASTER_SITES0=		http://distfiles.nl/
 DIST_SUBDIR=		nedit
 
 HOMEPAGE=		http://www.nedit.org/
-
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
