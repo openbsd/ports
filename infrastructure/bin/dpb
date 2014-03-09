@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.104 2013/10/18 07:48:09 espie Exp $
+# $OpenBSD: dpb,v 1.105 2014/03/09 19:47:35 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -178,6 +178,7 @@ $state->interpret_paths(@{$state->{xpaths}},
 if ($state->opt('a')) {
 	$state->{all} = 1;
 }
+$state->{build_once} //= $state->{all};
 
 DPB::Core->reap;
 $state->handle_build_files;

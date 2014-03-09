@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.26 2014/01/10 11:26:43 espie Exp $
+# $OpenBSD: Config.pm,v 1.27 2014/03/09 19:47:35 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -221,7 +221,6 @@ sub parse_command_line
 	$state->{permanent_log} = $state->{build_files}[-1];
 	$state->{display_timeout} =
 	    $state->{subst}->value('DISPLAY_TIMEOUT') // 10;
-	$state->{build_once} = $state->{all};
 	if ($state->defines("DONT_BUILD_ONCE")) {
 		$state->{build_once} = 0;
 	}
