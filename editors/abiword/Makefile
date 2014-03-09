@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2013/12/22 10:41:26 landry Exp $
+# $OpenBSD: Makefile,v 1.96 2014/03/09 22:11:05 ajacoutot Exp $
 
 BROKEN-alpha=	gr_RenderInfo.cpp:426:1: internal compiler error: Segmentation fault
 
@@ -8,7 +8,7 @@ COMMENT=	free cross-platform WYSIWYG word processor
 
 VERSION=	3.0.0
 DISTNAME=	abiword-${VERSION}
-REVISION=	0
+REVISION=	1
 
 MAJORVER=	${VERSION:C/..$//}
 SUBST_VARS=	MAJORVER
@@ -28,11 +28,11 @@ WANTLIB += avahi-common bz2 c cairo cairo-gobject croco-0.6 crypto
 WANTLIB += curl dbus-1 enchant expat ffi fontconfig freetype fribidi
 WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gmp gobject-2.0 goffice-0.10 gpg-error graphite2 gs
-WANTLIB += gsf-1 gthread-2.0 gtk-3 harfbuzz idn jpeg lasem-0.4
-WANTLIB += ltdl m mpfr pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs raptor2 rasqal rdf
-WANTLIB += rsvg-2 spectre ssl stdc++ wmf-0.2 wmflite-0.2 wv-1.2
-WANTLIB += xcb xcb-render xcb-shm xml2 xslt yajl z
+WANTLIB += gsf-1 gthread-2.0 gtk-3 harfbuzz idn jpeg ltdl m mpfr
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread pthread-stubs raptor2 rasqal rdf rsvg-2
+WANTLIB += spectre ssl stdc++ wmf-0.2 wmflite-0.2 wv-1.2 xcb xcb-render
+WANTLIB += xcb-shm xml2 xslt yajl z
 
 MASTER_SITES=   http://www.abisource.com/downloads/abiword/${VERSION}/source/
 
