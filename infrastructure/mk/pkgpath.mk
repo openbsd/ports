@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.55 2014/02/11 10:34:34 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.56 2014/03/09 20:33:37 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -92,21 +92,33 @@ _flavor_fragment = sawflavor=false; ${_pflavor_fragment}
 
 _depfile_fragment = \
 	case X$${_DEPENDS_FILE} in \
-		X) _DEPENDS_FILE=`mktemp ${TMPDIR}/depends.XXXXXXXXX|| exit 1`; \
+		X) _DEPENDS_FILE=$$(mktemp ${TMPDIR}/depends.XXXXXXXXX|| exit 1); \
 		export _DEPENDS_FILE; \
 		trap "rm -f $${_DEPENDS_FILE}" 0; \
 		trap 'exit 1' 1 2 3 13 15;; \
 	esac
 
+GLOBAL_DEPENDS_CACHE ?=
+
+# XXX this is to speed up dpb builds beware of consequences !
+.if !empty(GLOBAL_DEPENDS_CACHE)
+_cache_fragment = \
+	mkdir -p ${GLOBAL_DEPENDS_CACHE}; \
+	_DEPENDS_CACHE=${GLOBAL_DEPENDS_CACHE}; \
+	PKG_PATH=${PKGPATH}; \
+	export _DEPENDS_CACHE PKGPATH
+
+.else
 # the cache may be filled in as root, so try to remove as normal user, THEN
 # sudo only if it fails.
 _cache_fragment = \
 	case X$${_DEPENDS_CACHE} in \
-		X) _DEPENDS_CACHE=`mktemp -d ${TMPDIR}/dep_cache.XXXXXXXXX|| exit 1`; \
+		X) _DEPENDS_CACHE=$$(mktemp -d ${TMPDIR}/dep_cache.XXXXXXXXX|| exit 1); \
 		export _DEPENDS_CACHE; \
 		trap "rm -rf 2>/dev/null $${_DEPENDS_CACHE} || ${SUDO} rm -rf $${_DEPENDS_CACHE}" 0; \
 		trap 'exit 1' 1 2 3 13 15;; \
 	esac; PKGPATH=${PKGPATH}; export PKGPATH
+.endif
 
 _MAKE = cd ${.CURDIR} && PKGPATH=${PKGPATH} exec ${MAKE}
 _SUDOMAKE = cd ${.CURDIR} && PKGPATH=${PKGPATH} exec ${SUDO} ${MAKE}
