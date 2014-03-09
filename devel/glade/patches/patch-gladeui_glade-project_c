@@ -1,0 +1,18 @@
+$OpenBSD: patch-gladeui_glade-project_c,v 1.1 2014/03/09 21:57:38 ajacoutot Exp $
+
+From 259e506606f1804953182d1c1279c799ee10aede Mon Sep 17 00:00:00 2001
+From: Ryan Lortie <desrt@desrt.ca>
+Date: Sat, 21 Dec 2013 16:03:17 +0000
+Subject: gladeui: fix a pair of printf security problems
+
+--- gladeui/glade-project.c.orig	Wed Dec 18 16:00:38 2013
++++ gladeui/glade-project.c	Mon Mar  3 10:40:09 2014
+@@ -1871,7 +1871,7 @@ glade_project_load_internal (GladeProject *project)
+ 
+       if (message)
+         {
+-          glade_util_ui_message (glade_app_get_window (), GLADE_UI_ERROR, NULL, message);
++          glade_util_ui_message (glade_app_get_window (), GLADE_UI_ERROR, NULL, "%s", message);
+           g_free (message);
+         }
+       else

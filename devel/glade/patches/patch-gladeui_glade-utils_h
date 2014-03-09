@@ -1,0 +1,25 @@
+$OpenBSD: patch-gladeui_glade-utils_h,v 1.1 2014/03/09 21:57:38 ajacoutot Exp $
+
+From 259e506606f1804953182d1c1279c799ee10aede Mon Sep 17 00:00:00 2001
+From: Ryan Lortie <desrt@desrt.ca>
+Date: Sat, 21 Dec 2013 16:03:17 +0000
+Subject: gladeui: fix a pair of printf security problems
+
+--- gladeui/glade-utils.h.orig	Wed Nov 27 07:38:58 2013
++++ gladeui/glade-utils.h	Mon Mar  3 10:40:09 2014
+@@ -28,11 +28,13 @@ typedef enum 
+ gboolean          glade_util_ui_message           (GtkWidget *parent, 
+ 						   GladeUIMessageType type,
+ 						   GtkWidget *widget,
+-						   const gchar *format, ...);
++						   const gchar *format,
++                                                   ...) G_GNUC_PRINTF (4, 5);
+ 
+ void		  glade_util_flash_message	(GtkWidget *statusbar, 
+ 						 guint context_id,
+-						 gchar *format, ...);
++						 gchar *format,
++                                                 ...) G_GNUC_PRINTF (3, 4);
+ gboolean          glade_util_url_show              (const gchar *url);
+ GtkWidget        *glade_util_file_dialog_new (const gchar *title,
+ 					      GladeProject *project,
