@@ -1,0 +1,13 @@
+$OpenBSD: patch-eval_scm,v 1.1 2014/03/09 20:17:01 jasper Exp $
+--- eval.scm.orig	Fri Oct  4 03:44:52 2013
++++ eval.scm	Tue Feb 25 11:32:56 2014
+@@ -1042,8 +1042,7 @@
+ 		  (not (zero? binary-version))) ; allow "configless" build
+ 	     (string-append
+ 	      ##sys#load-library-extension
+-	      "." 
+-	      (number->string binary-version))
++	      ".${LIBchicken_VERSION}") 
+ 	     ##sys#load-library-extension)))
+     (define complete
+       (cut ##sys#string-append <> ext))

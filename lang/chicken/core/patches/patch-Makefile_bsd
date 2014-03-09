@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makefile_bsd,v 1.1 2014/03/09 20:17:01 jasper Exp $
+--- Makefile.bsd.orig	Mon Sep 24 21:47:36 2012
++++ Makefile.bsd	Mon Sep 24 21:48:07 2012
+@@ -59,7 +59,6 @@ LINKER_LINK_SHARED_PROGRAM_OPTIONS = -Wl,-R"$(RUNTIME_
+ LIBCHICKEN_SO_LINKER_OPTIONS = -Wl,-soname,lib$(PROGRAM_PREFIX)chicken$(PROGRAM_SUFFIX).so$(SONAME_VERSION)
+ LIBRARIES = -lm -lpthread
+ NEEDS_RELINKING = yes
+-USES_SONAME = yes
+ 
+ # special files
+ 

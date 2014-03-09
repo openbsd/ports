@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/06/04 10:36:03 steven Exp $
-@lib lib/libchicken.so.${LIBchicken_VERSION}
-@lib lib/libuchicken.so.${LIBuchicken_VERSION}

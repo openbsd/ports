@@ -1,0 +1,107 @@
+@comment $OpenBSD: PLIST,v 1.1 2014/03/09 20:17:01 jasper Exp $
+@bin bin/chicken
+@bin bin/chicken-bug
+@bin bin/chicken-install
+@bin bin/chicken-profile
+@bin bin/chicken-status
+@bin bin/chicken-uninstall
+@bin bin/csc
+@bin bin/csi
+include/chicken/
+include/chicken/chicken-config.h
+include/chicken/chicken.h
+lib/chicken/
+lib/chicken/6/
+lib/chicken/6/chicken.import.so
+lib/chicken/6/csi.import.so
+lib/chicken/6/data-structures.import.so
+lib/chicken/6/extras.import.so
+lib/chicken/6/files.import.so
+lib/chicken/6/foreign.import.so
+lib/chicken/6/irregex.import.so
+lib/chicken/6/lolevel.import.so
+lib/chicken/6/ports.import.so
+lib/chicken/6/posix.import.so
+lib/chicken/6/setup-api.import.so
+lib/chicken/6/setup-api.so
+lib/chicken/6/setup-download.import.so
+lib/chicken/6/setup-download.so
+lib/chicken/6/srfi-1.import.so
+lib/chicken/6/srfi-13.import.so
+lib/chicken/6/srfi-14.import.so
+lib/chicken/6/srfi-18.import.so
+lib/chicken/6/srfi-4.import.so
+lib/chicken/6/srfi-69.import.so
+lib/chicken/6/tcp.import.so
+lib/chicken/6/types.db
+lib/chicken/6/utils.import.so
+lib/libchicken.a
+@lib lib/libchicken.so.${LIBchicken_VERSION}
+@man man/man1/chicken-bug.1
+@man man/man1/chicken-install.1
+@man man/man1/chicken-profile.1
+@man man/man1/chicken-status.1
+@man man/man1/chicken-uninstall.1
+@man man/man1/chicken.1
+@man man/man1/csc.1
+@man man/man1/csi.1
+share/chicken/
+share/chicken/setup.defaults
+share/doc/chicken/
+share/doc/chicken/LICENSE
+share/doc/chicken/README
+share/doc/chicken/manual/
+share/doc/chicken/manual/Accessing external objects.html
+share/doc/chicken/manual/Acknowledgements.html
+share/doc/chicken/manual/Basic mode of operation.html
+share/doc/chicken/manual/Bibliography.html
+share/doc/chicken/manual/Bugs and limitations.html
+share/doc/chicken/manual/C interface.html
+share/doc/chicken/manual/Callbacks.html
+share/doc/chicken/manual/Cross development.html
+share/doc/chicken/manual/Data representation.html
+share/doc/chicken/manual/Declarations.html
+share/doc/chicken/manual/Deployment.html
+share/doc/chicken/manual/Deviations from the standard.html
+share/doc/chicken/manual/Embedding.html
+share/doc/chicken/manual/Exceptions.html
+share/doc/chicken/manual/Extensions to the standard.html
+share/doc/chicken/manual/Extensions.html
+share/doc/chicken/manual/Foreign type specifiers.html
+share/doc/chicken/manual/Getting started.html
+share/doc/chicken/manual/Interface to external functions and variables.html
+share/doc/chicken/manual/Locations.html
+share/doc/chicken/manual/Macros.html
+share/doc/chicken/manual/Modules.html
+share/doc/chicken/manual/Non-standard macros and special forms.html
+share/doc/chicken/manual/Non-standard read syntax.html
+share/doc/chicken/manual/Other support procedures.html
+share/doc/chicken/manual/Parameters.html
+share/doc/chicken/manual/Supported language.html
+share/doc/chicken/manual/The R5RS standard.html
+share/doc/chicken/manual/The User's Manual.html
+share/doc/chicken/manual/Types.html
+share/doc/chicken/manual/Unit data-structures.html
+share/doc/chicken/manual/Unit eval.html
+share/doc/chicken/manual/Unit expand.html
+share/doc/chicken/manual/Unit extras.html
+share/doc/chicken/manual/Unit files.html
+share/doc/chicken/manual/Unit irregex.html
+share/doc/chicken/manual/Unit library.html
+share/doc/chicken/manual/Unit lolevel.html
+share/doc/chicken/manual/Unit ports.html
+share/doc/chicken/manual/Unit posix.html
+share/doc/chicken/manual/Unit srfi-1.html
+share/doc/chicken/manual/Unit srfi-13.html
+share/doc/chicken/manual/Unit srfi-14.html
+share/doc/chicken/manual/Unit srfi-18.html
+share/doc/chicken/manual/Unit srfi-4.html
+share/doc/chicken/manual/Unit srfi-69.html
+share/doc/chicken/manual/Unit tcp.html
+share/doc/chicken/manual/Unit utils.html
+share/doc/chicken/manual/Using the compiler.html
+share/doc/chicken/manual/Using the interpreter.html
+share/doc/chicken/manual/chicken.png
+share/doc/chicken/manual/faq.html
+share/doc/chicken/manual/index.html
+share/doc/chicken/manual/manual.css

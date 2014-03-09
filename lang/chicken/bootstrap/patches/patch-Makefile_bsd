@@ -1,0 +1,19 @@
+$OpenBSD: patch-Makefile_bsd,v 1.1 2014/03/09 20:17:01 jasper Exp $
+
+OpenBSD base has GCC 4.2.1.
+
+--- Makefile.bsd.orig	Tue Feb 25 11:35:18 2014
++++ Makefile.bsd	Tue Feb 25 11:35:45 2014
+@@ -37,12 +37,7 @@ ARCH ?= $(shell sh $(SRCDIR)/config-arch.sh)
+ SYSTEM ?= $(shell uname -s)
+ # options
+ 
+-# OpenBSD base still uses GCC 3.3.5 which does not support -fwrapv
+-ifeq ($(SYSTEM), OpenBSD)
+ C_COMPILER_OPTIONS ?= -fno-strict-aliasing -DHAVE_CHICKEN_CONFIG_H
+-else
+-C_COMPILER_OPTIONS ?= -fno-strict-aliasing -fwrapv -DHAVE_CHICKEN_CONFIG_H
+-endif
+ 
+ ifdef DEBUGBUILD
+ C_COMPILER_OPTIMIZATION_OPTIONS ?= -g -Wall -Wno-unused
