@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.164 2014/02/10 12:45:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.165 2014/03/09 21:51:21 ajacoutot Exp $
 
 # XXX add libphonenumber support when a cpp release is out
 
@@ -8,6 +8,7 @@ COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		3.10.4
+REVISION=		0
 
 CATEGORIES=		databases productivity
 
@@ -57,11 +58,12 @@ LIB_DEPENDS= 		databases/db/v4 \
 
 MODPY_RUNDEP=		No
 MODGNOME_TOOLS= 	gi vala
-MODGNOME_CPPFLAGS=	-I${LOCALBASE}/include/db4 $$(krb5-config --cflags)
+MODGNOME_CPPFLAGS=	$$(krb5-config --cflags)
 
-CONFIGURE_STYLE= 	gnu
+AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE= 	autoconf
+CONFIGURE_ENV=		DB_CFLAGS="-I${LOCALBASE}/include/db4" DB_LIBS="-ldb"
 CONFIGURE_ARGS=		--with-krb5 \
-			--with-libdb=${LOCALBASE} \
 			--with-openldap=${LOCALBASE}
 
 # needs signond, libsignon-glib -- Ubuntu/Meego

@@ -1,0 +1,35 @@
+$OpenBSD: patch-configure_ac,v 1.13 2014/03/09 21:51:21 ajacoutot Exp $
+
+From 3bb0c0e98965387dfaac8cdc14e7347217e6f68e Mon Sep 17 00:00:00 2001
+From: Ryan Lortie <desrt@desrt.ca>
+Date: Tue, 07 Jan 2014 21:10:13 +0000
+Subject: Bug 721733 - Tweak Berkeley DB detection logic
+
+From 5d2bbbc215e3892f290d17fcb7eee4d8cacd7ce1 Mon Sep 17 00:00:00 2001
+From: Ryan Lortie <desrt@desrt.ca>
+Date: Wed, 08 Jan 2014 17:01:57 +0000
+Subject: configure.ac: trivial typo fix in last commit
+
+--- configure.ac.orig	Mon Dec  9 03:41:02 2013
++++ configure.ac	Mon Mar  3 12:44:34 2014
+@@ -544,10 +544,16 @@ dnl ******************************
+ AC_ARG_WITH([libdb],
+ 	AS_HELP_STRING([--with-libdb=PREFIX],
+ 	[Prefix where libdb is installed]),
+-	[libdb_prefix="$withval"], [libdb_prefix='${prefix}'])
+-
+-DB_CFLAGS="-I$libdb_prefix/include"
+-DB_LIBS="-L$libdb_prefix/lib -ldb"
++	[
++		DB_CFLAGS="-I$withval/include"
++		DB_LIBS="-L$withval/lib -ldb"
++	],
++	[
++		if test -z "$DB_CFLAGS" -a -z "$DB_LIBS"; then
++			DB_CFLAGS=""
++			DB_LIBS="-ldb"
++		fi
++	])
+ 
+ AC_MSG_CHECKING([Berkeley DB])
+ save_cflags=$CFLAGS; CFLAGS=$DB_CFLAGS
