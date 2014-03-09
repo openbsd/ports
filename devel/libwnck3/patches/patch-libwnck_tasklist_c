@@ -1,4 +1,10 @@
-$OpenBSD: patch-libwnck_tasklist_c,v 1.1 2014/02/18 11:03:09 stsp Exp $
+$OpenBSD: patch-libwnck_tasklist_c,v 1.2 2014/03/09 22:23:19 ajacoutot Exp $
+
+From 06a7ec9ac56b350bcce35b138c20bad1a3ae9c6a Mon Sep 17 00:00:00 2001
+From: Stefan Sperling <stsp@stsp.name>
+Date: Tue, 18 Feb 2014 13:14:18 +0000
+Subject: TaskList: use new Startup Notification API
+
 --- libwnck/tasklist.c.orig	Mon Feb 17 19:55:06 2014
 +++ libwnck/tasklist.c	Mon Feb 17 19:54:40 2014
 @@ -4180,7 +4180,8 @@ sequence_timeout_callback (void *user_data)
