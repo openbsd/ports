@@ -1,9 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/06/27 10:43:07 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/03/09 20:26:48 pascal Exp $
 @unexec-delete rm -f ${TRUEPREFIX}/plan9/man/whatis.db
 bin/9
 plan9/
+plan9/CHANGES
 plan9/CONTRIBUTORS
+plan9/INSTALL
+plan9/INSTALL.orig
 plan9/LICENSE
+plan9/Makefile
+plan9/README
+plan9/TODO
 plan9/acid/
 plan9/acid/386
 plan9/acid/68020
@@ -39,6 +45,7 @@ plan9/bin/9a
 plan9/bin/9ar
 plan9/bin/9c
 plan9/bin/9fs
+@bin plan9/bin/9import
 plan9/bin/9l
 @bin plan9/bin/9p
 @comment @bin plan9/bin/9pfuse
@@ -92,6 +99,10 @@ plan9/bin/codereview.py
 @bin plan9/bin/dial
 @bin plan9/bin/dict
 @bin plan9/bin/diff
+plan9/bin/disk/
+plan9/bin/disk/.placeholder
+@bin plan9/bin/disk/mkext
+@bin plan9/bin/disk/mkfs
 @bin plan9/bin/disknfs
 @bin plan9/bin/dns
 @bin plan9/bin/dnsdebug
@@ -111,8 +122,14 @@ plan9/bin/doctype
 @bin plan9/bin/factotum
 @bin plan9/bin/file
 @bin plan9/bin/fmt
-@bin plan9/bin/fontsrv
 @bin plan9/bin/fortune
+plan9/bin/fossil/
+plan9/bin/fossil/conf
+@bin plan9/bin/fossil/flchk
+@bin plan9/bin/fossil/flfmt
+@bin plan9/bin/fossil/fossil
+@bin plan9/bin/fossil/last
+@bin plan9/bin/fossil/view
 @bin plan9/bin/freq
 plan9/bin/fs/
 @bin plan9/bin/fs/32vfs
@@ -153,6 +170,7 @@ plan9/bin/lc
 @bin plan9/bin/listen1
 @bin plan9/bin/look
 plan9/bin/lookman
+plan9/bin/lpbin/
 @bin plan9/bin/ls
 plan9/bin/man
 @bin plan9/bin/mapd
@@ -226,7 +244,6 @@ plan9/bin/samsave
 plan9/bin/sig
 plan9/bin/slay
 @bin plan9/bin/sleep
-@bin plan9/bin/snarfer
 @bin plan9/bin/sort
 plan9/bin/spell
 @bin plan9/bin/split
@@ -326,12 +343,70 @@ plan9/bin/yesterday
 @bin plan9/bin/yuv
 @bin plan9/bin/zerotrunc
 @bin plan9/bin/zip
+plan9/config
+plan9/configure
 plan9/dict/
 plan9/dict/README
 plan9/dict/pgw
 plan9/dict/pgwindex
 plan9/dict/roget
 plan9/dict/rogetindex
+plan9/dist/
+plan9/dist/README
+plan9/dist/addsrclinks
+plan9/dist/buildmk
+plan9/dist/checkman.awk
+plan9/dist/deb.html
+plan9/dist/debian/
+plan9/dist/debian/Release.testing
+plan9/dist/debian/Release.top
+plan9/dist/debian/mkpkg
+plan9/dist/debian/mkrep
+plan9/dist/fixurls
+plan9/dist/glendacircle.png
+plan9/dist/isum
+plan9/dist/isum.awk
+plan9/dist/main.html
+plan9/dist/maketarball
+plan9/dist/manindexbottom.html
+plan9/dist/manindextop.html
+plan9/dist/mantrailer.html
+plan9/dist/manweb
+plan9/dist/mkfile
+plan9/dist/mkfilelist
+plan9/dist/pkg/
+plan9/dist/pkg/base
+plan9/dist/pkg/bin
+plan9/dist/pkg/bin24
+plan9/dist/pkg/bin26
+plan9/dist/pkg/devel
+plan9/dist/pkg/dict
+plan9/dist/pkg/dist
+plan9/dist/pkg/faces
+plan9/dist/pkg/font-asian
+plan9/dist/pkg/font-bh
+plan9/dist/pkg/font-core
+plan9/dist/pkg/font-proof
+plan9/dist/pkg/lib
+plan9/dist/pkg/lp
+plan9/dist/pkg/main
+plan9/dist/pkg/minimal
+plan9/dist/pkg/postscript
+plan9/dist/pkg/postscript-bh
+plan9/dist/pkg/sky
+plan9/dist/pkg/sky-data
+plan9/dist/pkg/src
+plan9/dist/pkg/troff
+plan9/dist/pkg/unixdist
+plan9/dist/spaceglenda100.png
+plan9/dist/ss.html
+plan9/dist/troff/
+plan9/dist/troff/README
+plan9/dist/troff/afm2troff.c
+plan9/dist/troff/devutf.sam
+plan9/dist/troff/mono.sam
+plan9/dist/troff/tfont
+plan9/dist/unix.html
 plan9/face/
 plan9/face/.machinelist
 plan9/face/48x48x1/
@@ -4055,6 +4130,8 @@ plan9/include/thread.h
 plan9/include/u.h
 plan9/include/utf.h
 plan9/include/venti.h
+plan9/install.log
+plan9/install.txt
 plan9/lib/
 plan9/lib/CVS.IEXIST
 plan9/lib/acme.rc
@@ -4113,6 +4190,81 @@ plan9/lib/units
 plan9/lib/words
 plan9/lib/yaccpar
 plan9/lib/yaccpars
+plan9/log/
+plan9/lp/
+plan9/lp/bin/
+plan9/lp/bin/UNLOCK
+plan9/lp/bin/lpsend.rc
+plan9/lp/daemon/
+plan9/lp/daemon/generic
+plan9/lp/daemon/gsdev
+plan9/lp/daemon/psdev
+plan9/lp/devices.sample
+plan9/lp/kill/
+plan9/lp/kill/generic
+plan9/lp/log/
+plan9/lp/log/.placeholder
+plan9/lp/log/lpdaemonl
+plan9/lp/perm/
+plan9/lp/perm/.placeholder
+plan9/lp/prob/
+plan9/lp/prob/.placeholder
+plan9/lp/process/
+plan9/lp/process/dvipost
+plan9/lp/process/g3post
+plan9/lp/process/generic
+plan9/lp/process/gifpost
+plan9/lp/process/hpost
+plan9/lp/process/jpgpost
+plan9/lp/process/noproc
+plan9/lp/process/p9bitpost
+plan9/lp/process/pdfgs
+plan9/lp/process/pdfpost
+plan9/lp/process/post
+plan9/lp/process/ppost
+plan9/lp/process/psextract
+plan9/lp/process/tr2post
+plan9/lp/queue/
+plan9/lp/queue/.placeholder
+plan9/lp/sched/
+plan9/lp/sched/FIFO
+plan9/lp/spooler/
+plan9/lp/spooler/generic
+plan9/lp/spooler/lpdspool
+plan9/lp/spooler/nospool
+plan9/lp/stat/
+plan9/lp/stat/generic
+plan9/lp/stat/lpd
+plan9/mac/
+plan9/mac/9term.app/
+plan9/mac/9term.app/Contents/
+plan9/mac/9term.app/Contents/Info.plist
+plan9/mac/9term.app/Contents/MacOS/
+plan9/mac/9term.app/Contents/MacOS/9term
+plan9/mac/9term.app/Contents/PkgInfo
+plan9/mac/9term.app/Contents/Resources/
+plan9/mac/9term.app/Contents/Resources/spaceglenda.icns
+plan9/mac/Plumb.app/
+plan9/mac/Plumb.app/Contents/
+plan9/mac/Plumb.app/Contents/Info.plist
+plan9/mac/Plumb.app/Contents/MacOS/
+plan9/mac/Plumb.app/Contents/MacOS/plumb
+plan9/mac/Plumb.app/Contents/PkgInfo
+plan9/mac/Plumb.app/Contents/Resources/
+plan9/mac/Plumb.app/Contents/Resources/pjw.icns
+plan9/mac/spaceglenda.icns
+plan9/mac/spaceglenda.png
+plan9/mail/
+plan9/mail/README
+plan9/mail/lib/
+plan9/mail/lib/ignore
+plan9/mail/lib/namefiles
+plan9/mail/lib/names.local
+plan9/mail/lib/qmail
+plan9/mail/lib/remotemail
+plan9/mail/lib/rewrite
+plan9/mail/lib/validateattachment
+plan9/mail/queue/
 plan9/man/
 plan9/man/fonts
 plan9/man/index.html
@@ -4389,12 +4541,14 @@ plan9/man/man3/INDEX
 @man plan9/man/man3/window.3
 plan9/man/man4/
 @man plan9/man/man4/0intro.4
+@man plan9/man/man4/9import.4
 @comment @man plan9/man/man4/9pfuse.4
 @man plan9/man/man4/9pserve.4
 plan9/man/man4/INDEX
 @man plan9/man/man4/acme.4
 @man plan9/man/man4/factotum.4
 @man plan9/man/man4/fontsrv.4
+@man plan9/man/man4/fossil.4
 @man plan9/man/man4/import.4
 @man plan9/man/man4/plumber.4
 @man plan9/man/man4/ramfs.4
@@ -4429,8 +4583,10 @@ plan9/man/man7/INDEX
 @man plan9/man/man7/venti.7
 plan9/man/man8/
 plan9/man/man8/INDEX
+@man plan9/man/man8/fossilcons.8
 @man plan9/man/man8/getflags.8
 @man plan9/man/man8/listen1.8
+@man plan9/man/man8/mkfs.8
 @man plan9/man/man8/vbackup.8
 @man plan9/man/man8/venti-backup.8
 @man plan9/man/man8/venti-fmt.8
@@ -5022,6 +5178,7 @@ plan9/src/cmd/9660srv/iso9660.h
 plan9/src/cmd/9660srv/main.c
 plan9/src/cmd/9660srv/mkfile
 plan9/src/cmd/9660srv/xfile.c
+plan9/src/cmd/9import.c
 plan9/src/cmd/9p.c
 @comment plan9/src/cmd/9pfuse/
 @comment plan9/src/cmd/9pfuse/COPYRIGHT
@@ -5035,6 +5192,7 @@ plan9/src/cmd/9pserve.c
 plan9/src/cmd/9term/
 plan9/src/cmd/9term/9term.c
 plan9/src/cmd/9term/Darwin.c
+plan9/src/cmd/9term/DragonFly.c
 plan9/src/cmd/9term/FreeBSD.c
 plan9/src/cmd/9term/Linux.c
 plan9/src/cmd/9term/NetBSD.c
@@ -5222,6 +5380,7 @@ plan9/src/cmd/auth/userpasswd.c
 plan9/src/cmd/auxclog.c
 plan9/src/cmd/auxstats/
 plan9/src/cmd/auxstats/Darwin.c
+plan9/src/cmd/auxstats/DragonFly.c
 plan9/src/cmd/auxstats/FreeBSD.c
 plan9/src/cmd/auxstats/Linux.c
 plan9/src/cmd/auxstats/NetBSD.c
@@ -5400,6 +5559,10 @@ plan9/src/cmd/diff/diffio.c
 plan9/src/cmd/diff/diffreg.c
 plan9/src/cmd/diff/main.c
 plan9/src/cmd/diff/mkfile
+plan9/src/cmd/disk/
+plan9/src/cmd/disk/mkext.c
+plan9/src/cmd/disk/mkfile
+plan9/src/cmd/disk/mkfs.c
 plan9/src/cmd/draw/
 plan9/src/cmd/draw/cmapcube.c
 plan9/src/cmd/draw/colors.c
@@ -5456,12 +5619,66 @@ plan9/src/cmd/file.c
 plan9/src/cmd/fmt.c
 plan9/src/cmd/fontsrv/
 plan9/src/cmd/fontsrv/a.h
+plan9/src/cmd/fontsrv/freetyperules.sh
 plan9/src/cmd/fontsrv/main.c
 plan9/src/cmd/fontsrv/mkfile
 plan9/src/cmd/fontsrv/nowsys.c
+plan9/src/cmd/fontsrv/osx-cocoa.c
 plan9/src/cmd/fontsrv/osx.c
+plan9/src/cmd/fontsrv/pjw.c
+plan9/src/cmd/fontsrv/showpjw.c
 plan9/src/cmd/fontsrv/x11.c
 plan9/src/cmd/fortune.c
+plan9/src/cmd/fossil/
+plan9/src/cmd/fossil/9.h
+plan9/src/cmd/fossil/9auth.c
+plan9/src/cmd/fossil/9dir.c
+plan9/src/cmd/fossil/9excl.c
+plan9/src/cmd/fossil/9fid.c
+plan9/src/cmd/fossil/9fsys.c
+plan9/src/cmd/fossil/9lstn.c
+plan9/src/cmd/fossil/9p.c
+plan9/src/cmd/fossil/9ping.c
+plan9/src/cmd/fossil/9proc.c
+plan9/src/cmd/fossil/9srv.c
+plan9/src/cmd/fossil/9user.c
+plan9/src/cmd/fossil/Ccli.c
+plan9/src/cmd/fossil/Ccmd.c
+plan9/src/cmd/fossil/Ccons.c
+plan9/src/cmd/fossil/Clog.c
+plan9/src/cmd/fossil/archive.c
+plan9/src/cmd/fossil/bwatch.c
+plan9/src/cmd/fossil/cache.c
+plan9/src/cmd/fossil/check.c
+plan9/src/cmd/fossil/conf.rc
+plan9/src/cmd/fossil/dat.h
+plan9/src/cmd/fossil/disk.c
+plan9/src/cmd/fossil/dump.c
+plan9/src/cmd/fossil/epoch.c
+plan9/src/cmd/fossil/error.c
+plan9/src/cmd/fossil/error.h
+plan9/src/cmd/fossil/file.c
+plan9/src/cmd/fossil/flchk.c
+plan9/src/cmd/fossil/flfmt.c
+plan9/src/cmd/fossil/flfmt9660.c
+plan9/src/cmd/fossil/flfmt9660.h
+plan9/src/cmd/fossil/fns.h
+plan9/src/cmd/fossil/fossil.c
+plan9/src/cmd/fossil/fs.c
+plan9/src/cmd/fossil/fs.h
+plan9/src/cmd/fossil/last.c
+plan9/src/cmd/fossil/mkfile
+plan9/src/cmd/fossil/nobwatch.c
+plan9/src/cmd/fossil/pack.c
+plan9/src/cmd/fossil/periodic.c
+plan9/src/cmd/fossil/source.c
+plan9/src/cmd/fossil/srcload.c
+plan9/src/cmd/fossil/stdinc.h
+plan9/src/cmd/fossil/trunc.c
+plan9/src/cmd/fossil/vac.c
+plan9/src/cmd/fossil/vac.h
+plan9/src/cmd/fossil/view.c
+plan9/src/cmd/fossil/walk.c
 plan9/src/cmd/freq.c
 plan9/src/cmd/fsize.c
 plan9/src/cmd/getflags.c
@@ -6518,6 +6735,7 @@ plan9/src/cmd/vbackup/disknfs.c
 plan9/src/cmd/vbackup/mkfile
 plan9/src/cmd/vbackup/mount-BSD.c
 plan9/src/cmd/vbackup/mount-Darwin.c
+plan9/src/cmd/vbackup/mount-DragonFly.c
 plan9/src/cmd/vbackup/mount-FreeBSD.c
 plan9/src/cmd/vbackup/mount-Linux.c
 plan9/src/cmd/vbackup/mount-NetBSD.c
@@ -7119,6 +7337,7 @@ plan9/src/libhttpd/urlunesc.c
 plan9/src/libip/
 plan9/src/libip/BSD.c
 plan9/src/libip/Darwin.c
+plan9/src/libip/DragonFly.c
 plan9/src/libip/FreeBSD.c
 plan9/src/libip/Linux.c
 plan9/src/libip/NetBSD.c
@@ -7142,6 +7361,7 @@ plan9/src/libip/testreadipifc.c
 plan9/src/libip/udp.c
 plan9/src/libmach/
 plan9/src/libmach/Darwin.c
+plan9/src/libmach/DragonFly.c
 plan9/src/libmach/FreeBSD.c
 plan9/src/libmach/LICENSE
 plan9/src/libmach/Linux.c
@@ -7774,3 +7994,62 @@ plan9/troff/term/tab.think
 plan9/troff/term/tab.thinkbold
 plan9/troff/term/tab.thinksmall
 plan9/troff/term/tab.utf
+plan9/unix/
+plan9/unix/NOTICE.bio
+plan9/unix/NOTICE.fmt
+plan9/unix/NOTICE.mk
+plan9/unix/NOTICE.regexp
+plan9/unix/NOTICE.utf
+plan9/unix/README
+plan9/unix/README.dot
+plan9/unix/fmt.h
+plan9/unix/make/
+plan9/unix/make/Make.Darwin-386
+plan9/unix/make/Make.Darwin-PowerMacintosh
+plan9/unix/make/Make.FreeBSD-386
+plan9/unix/make/Make.HP-UX-9000
+plan9/unix/make/Make.Linux-386
+plan9/unix/make/Make.Linux-power
+plan9/unix/make/Make.Linux-x86_64
+plan9/unix/make/Make.NetBSD-386
+plan9/unix/make/Make.OSF1-alpha
+plan9/unix/make/Make.OpenBSD-386
+plan9/unix/make/Make.SunOS-sun4u
+plan9/unix/make/Make.SunOS-sun4u-cc
+plan9/unix/make/Make.SunOS-sun4u-gcc
+plan9/unix/make/Makefile.BOT
+plan9/unix/make/Makefile.CMD
+plan9/unix/make/Makefile.LIB
+plan9/unix/make/Makefile.MID
+plan9/unix/make/Makefile.TOP
+plan9/unix/make/Makefile.all
+plan9/unix/make/Makefile.bio
+plan9/unix/make/Makefile.fmt
+plan9/unix/make/Makefile.mk
+plan9/unix/make/Makefile.regexp
+plan9/unix/make/Makefile.utf
+plan9/unix/man/
+plan9/unix/man/bio.3
+plan9/unix/man/ex.man
+plan9/unix/man/fixurls
+plan9/unix/man/fmtinstall.3
+plan9/unix/man/fmtstrtod.3
+plan9/unix/man/index.html
+plan9/unix/man/isalpharune.3
+plan9/unix/man/mk.1
+plan9/unix/man/mkfile
+plan9/unix/man/print.3
+plan9/unix/man/quote.3
+plan9/unix/man/regexp9.3
+plan9/unix/man/regexp9.7
+plan9/unix/man/rune.3
+plan9/unix/man/runestrcat.3
+plan9/unix/man/utf.7
+plan9/unix/mkfile
+plan9/unix/mkfile.bio
+plan9/unix/mkfile.fmt
+plan9/unix/mkfile.mk
+plan9/unix/mkfile.regexp
+plan9/unix/mkfile.utf
+plan9/unix/mkfile.what
+plan9/unix/utf.h
