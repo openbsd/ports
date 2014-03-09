@@ -1,12 +1,12 @@
-$OpenBSD: patch-latexmk_pl,v 1.1.1.1 2012/04/08 11:26:30 ajacoutot Exp $
---- latexmk.pl.orig	Sun Apr  8 10:43:23 2012
-+++ latexmk.pl	Sun Apr  8 10:43:38 2012
-@@ -931,6 +931,9 @@ else {
+$OpenBSD: patch-latexmk_pl,v 1.2 2014/03/09 22:17:03 ajacoutot Exp $
+--- latexmk.pl.orig	Sun Nov 10 19:07:12 2013
++++ latexmk.pl	Sun Mar  2 10:37:59 2014
+@@ -958,6 +958,9 @@ else {
          $lpr_pdf  = 'lpr %O %S';
          $pscmd = "ps -ww -u $ENV{USER}"; 
      }
 +    elsif ( $^O eq "openbsd" ) {
-+        $pscmd = "ps -ww -u";
++        $pscmd = "ps -ww -U $ENV{USER}";
 +    }
  }
  

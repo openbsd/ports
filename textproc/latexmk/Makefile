@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:42:42 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2014/03/09 22:17:03 ajacoutot Exp $
 
 COMMENT=	LaTeX documents output generation automation tool
 
-DISTNAME=	latexmk-431
+DISTNAME=	latexmk-439
 EXTRACT_SUFX=	.zip
 
 CATEGORIES=	textproc print
