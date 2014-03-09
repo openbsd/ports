@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2013/11/25 12:59:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2014/03/09 20:01:29 jasper Exp $
 
 COMMENT=		libgit2 bindings in Python
 
-GH_VER=			v0.20.0
+GH_VER=			v0.20.2
 V=			${GH_VER:S/v//}
 PROJECT=		pygit2
 PKGNAME=		py-git2-$V
