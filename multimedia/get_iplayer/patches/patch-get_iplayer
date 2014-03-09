@@ -1,6 +1,6 @@
-$OpenBSD: patch-get_iplayer,v 1.58 2013/09/30 22:43:31 sthen Exp $
---- get_iplayer.orig	Mon Sep 30 19:33:17 2013
-+++ get_iplayer	Mon Sep 30 23:42:12 2013
+$OpenBSD: patch-get_iplayer,v 1.59 2014/03/09 21:07:49 sthen Exp $
+--- get_iplayer.orig	Wed Nov  6 20:12:35 2013
++++ get_iplayer	Thu Nov  7 13:27:59 2013
 @@ -320,6 +320,7 @@ $opt->{verbose} = 1 if $opt_pre->{verbose};
  $opt->{quiet} = 1 if $opt_pre->{quiet};
  $opt->{pvr} = 1 if $opt_pre->{pvr};
@@ -52,7 +52,7 @@ $OpenBSD: patch-get_iplayer,v 1.58 2013/09/30 22:43:31 sthen Exp $
  				],
  		safari		=> [
  				'Mozilla/5.0 (iPhone; U; CPU iPhone OS 2_0 like Mac OS X; en-us) AppleWebKit/525.18.1 (KHTML, like Gecko) Version/3.1.1 Mobile/5A345 Safari/525.20',
-@@ -9797,7 +9800,7 @@ sub tag_file_id3 {
+@@ -9808,7 +9811,7 @@ sub tag_file_id3 {
  # add basic ID3 tag with id3v2
  sub tag_file_id3_basic {
  	my ($self, $meta, $tags) = @_;
