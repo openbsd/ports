@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.106 2013/10/06 09:08:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.107 2014/03/09 21:50:10 ajacoutot Exp $
 
 # add to meta/gnome,-extra when un-BROKEN
-BROKEN=		needs webkit2
+BROKEN=		needs fuctionnal webkit2
 
 SHARED_ONLY=	Yes
 
@@ -9,14 +9,9 @@ COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	3.8.2
-REVISION=	3
-
-# NOTE: when M changes, increment M accordingly
-M=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
-SUBST_VARS=	M
+REVISION=	4
 
 CATEGORIES=	www
-USE_GROFF =	Yes
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -53,7 +48,7 @@ LIB_DEPENDS=	textproc/libxslt \
 		devel/libwnck3 \
 		devel/startup-notification \
 		net/avahi \
-		www/webkit,gtk3>=2.0.0 \
+		www/webkit,gtk3 \
 		x11/gnome/desktop \
 		x11/gnome/gcr
 
@@ -76,7 +71,7 @@ CONFIGURE_ARGS=	--disable-static \
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 
 TEST_DEPENDS=		${BASE_PKGPATH}
-TEST_IS_INTERACTIVE=	X11
+TEST_IS_INTERACTIVE=	x11
 PORTHOME=		/tmp
 
 .include <bsd.port.mk>
