@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/07/17 21:57:24 edd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/03/09 19:50:33 jasper Exp $
 %%native%%
 bin/utop
 bin/utop-full
@@ -12,9 +12,9 @@ lib/ocaml/utop/uTop_main.cmi
 lib/ocaml/utop/uTop_main.mli
 lib/ocaml/utop/utop-camlp4.cma
 lib/ocaml/utop/utop.cma
-@man man/man1/utop-full.1.gz
-@man man/man1/utop.1.gz
-@man man/man5/utoprc.5.gz
+@man man/man1/utop-full.1
+@man man/man1/utop.1
+@man man/man5/utoprc.5
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/utop/
 share/doc/utop/CHANGES.md

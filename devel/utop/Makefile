@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/07/17 21:57:23 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2014/03/09 19:50:33 jasper Exp $
 
 COMMENT =		enhanced OCaml toplevel
 DISTNAME =		utop-1.5
+REVISION =		0
 CATEGORIES =		devel
 
 HOMEPAGE =		https://forge.ocamlcore.org/projects/utop/
@@ -19,14 +20,16 @@ MODULES =		lang/ocaml
 RUN_DEPENDS =		devel/ocaml-lambda-term
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
-post-install:
-	${INSTALL_DATA} \
-		${WRKDIST}/{LICENSE,CHANGES.md,README.md} \
-		${PREFIX}/share/doc/utop/
-
 # silence a warning
 pre-build:
 	# already shipped by the OCaml package
 	rm ${WRKBUILD}/src/lib/errors.mli
+
+post-install:
+	${INSTALL_DATA} \
+		${WRKDIST}/{LICENSE,CHANGES.md,README.md} \
+		${PREFIX}/share/doc/utop/
+	gunzip ${PREFIX}/man/*/*.gz
+
 
 .include <bsd.port.mk>
