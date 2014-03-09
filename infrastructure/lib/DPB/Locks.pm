@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.26 2013/10/25 16:54:27 espie Exp $
+# $OpenBSD: Locks.pm,v 1.27 2014/03/09 20:09:53 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -183,7 +183,9 @@ sub find_dependencies
 				$path = $1;
 			} elsif (m/^host=(.*)/) {
 				$host = $1;
-			} elsif (m/^needed=(.*)/) {
+			# XXX wanted always precedes needed, so
+			# it's safe to overwrite
+			} elsif (m/^(?:wanted|needed)=(.*)/) {
 				@d = split(/\s/, $1);
 			} elsif (m/^nojunk$/) {
 				$nojunk = 1;
