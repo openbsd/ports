@@ -1,11 +1,17 @@
-$OpenBSD: patch-src_polkitbackend_polkitbackendinteractiveauthority_c,v 1.1 2012/11/20 14:11:48 ajacoutot Exp $
---- src/polkitbackend/polkitbackendinteractiveauthority.c.orig	Tue Sep 18 20:43:17 2012
-+++ src/polkitbackend/polkitbackendinteractiveauthority.c	Tue Nov 20 14:23:46 2012
+$OpenBSD: patch-src_polkitbackend_polkitbackendinteractiveauthority_c,v 1.2 2014/03/09 22:26:56 ajacoutot Exp $
+
+From 815dfc64d40cb0267cb96701409c04b4196e508a Mon Sep 17 00:00:00 2001
+From: Ting-Wei Lan <lantw44@gmail.com>
+Date: Mon, 20 Jan 2014 07:34:53 +0000
+Subject: build: Fix several issues on FreeBSD
+
+--- src/polkitbackend/polkitbackendinteractiveauthority.c.orig	Thu Apr  4 20:16:50 2013
++++ src/polkitbackend/polkitbackendinteractiveauthority.c	Wed Feb 19 08:18:51 2014
 @@ -23,7 +23,11 @@
  #include <errno.h>
  #include <pwd.h>
  #include <grp.h>
-+#if defined __OpenBSD__
++#if defined HAVE_OPENBSD
 +#include <netgroup.h>
 +#else
  #include <netdb.h>
@@ -13,25 +19,23 @@ $OpenBSD: patch-src_polkitbackend_polkitbackendinteractiveauthority_c,v 1.1 2012
  #include <string.h>
  #include <glib/gstdio.h>
  #include <locale.h>
-@@ -2113,15 +2117,25 @@ get_users_in_net_group (PolkitIdentity                
+@@ -2113,15 +2117,23 @@ get_users_in_net_group (PolkitIdentity                
    ret = NULL;
    name = polkit_unix_netgroup_get_name (POLKIT_UNIX_NETGROUP (group));
  
-+/* Under BSD, setnetgrent() returns void. */
-+#if defined __OpenBSD__
-+  setnetgrent (name);
-+#else
-+
++#ifdef HAVE_SETNETGRENT_RETURN
    if (setnetgrent (name) == 0)
      {
        g_warning ("Error looking up net group with name %s: %s", name, g_strerror (errno));
        goto out;
      }
++#else
++  setnetgrent (name);
 +#endif
  
    for (;;)
      {
-+#if defined __OpenBSD__
++#if defined HAVE_OPENBSD
 +      const char *hostname, *username, *domainname;
 +#else
        char *hostname, *username, *domainname;
@@ -39,13 +43,3 @@ $OpenBSD: patch-src_polkitbackend_polkitbackendinteractiveauthority_c,v 1.1 2012
        PolkitIdentity *user;
        GError *error = NULL;
  
-@@ -2150,7 +2164,9 @@ get_users_in_net_group (PolkitIdentity                
- 
-   ret = g_list_reverse (ret);
- 
-+#ifndef __OpenBSD__
-  out:
-+#endif
-   endnetgrent ();
-   return ret;
- }

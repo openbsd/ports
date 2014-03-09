@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2014/01/19 10:30:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2014/03/09 22:26:56 ajacoutot Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
 DISTNAME=	polkit-0.112
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  polkit-gobject-1	2.0 # .0.0
 SHARED_LIBS +=  polkit-agent-1		2.0 # .0.0
@@ -42,10 +42,8 @@ RUN_DEPENDS=	x11/dbus
 LIB_DEPENDS=	devel/glib2 \
 		devel/spidermonkey>=17.0,<18.0
 
-AUTOCONF_VERSION= 2.68
+AUTOCONF_VERSION=2.69
 AUTOMAKE_VERSION=1.10
-
-MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/test/mocklibc
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -61,6 +59,9 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-authfw=bsdauth \
 		--with-polkitd-user=_polkitd
 
+# fgetgrent, fgetpwent
+CONFIGURE_ARGS += --disable-test
+
 # If one of these tools is found at configure stage, it might be used,
 # no matter whether we use --disable-gtk-doc or not.
 CONFIGURE_ENV +=ac_cv_path_GTKDOC_CHECK="" \
@@ -74,10 +75,22 @@ USE_GMAKE=	Yes
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/polkit
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/docs/man/pkexec.xml \
+	perl -pi \
+		-e "s,/usr/bin/pkexec,${PREFIX}/bin/pkexec,g;" \
+		-e "s,/usr/bin/python,${MODPY_BIN},g;" \
+		-e "s,/usr/bin/my-pk-test,${PREFIX}/bin/my-pk-test,g;" \
+		-e "s,/usr/share/polkit-1,${PREFIX}/share/polkit-1,g;" \
+		-e "s,/etc/polkit-1,${SYSCONFDIR}/polkit-1,g;" \
+		-e "s,/usr/bin/bash,${LOCALBASE}/bin/bash,g;" \
+		-e "s,/usr/bin/cat,/bin/cat,g;" \
+		-e "s,/usr/bin/pk-example-frobnicate,${PREFIX}/bin/pk-example,g;" \
+		-e "s,>/etc<,>${SYSCONFDIR}<,g;" \
+		-e "s,>/usr<,>${PREFIX}<,g" \
+		${WRKSRC}/docs/man/pkexec.xml \
 		${WRKSRC}/docs/man/polkit.xml \
 		${WRKSRC}/docs/extensiondir.xml \
 		${WRKSRC}/src/examples/org.freedesktop.policykit.examples.pkexec.policy.in
+
 	cd ${WRKSRC} && \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \

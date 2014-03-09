@@ -1,7 +1,10 @@
-$OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.5 2012/09/19 12:39:34 ajacoutot Exp $
---- src/polkitagent/polkitagenthelper-bsdauth.c.orig	Sat Dec  4 09:39:18 2010
-+++ src/polkitagent/polkitagenthelper-bsdauth.c	Sat Dec  4 09:40:52 2010
-@@ -0,0 +1,190 @@
+$OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.6 2014/03/09 22:26:56 ajacoutot Exp $
+
+https://bugs.freedesktop.org/show_bug.cgi?id=75187
+
+--- src/polkitagent/polkitagenthelper-bsdauth.c.orig	Wed Feb 19 10:35:21 2014
++++ src/polkitagent/polkitagenthelper-bsdauth.c	Wed Feb 19 10:35:32 2014
+@@ -0,0 +1,158 @@
 +/*
 + * Copyright (C) 2008 Red Hat, Inc.
 + * Copyright (C) 2009-2010 Andrew Psaltis <ampsaltis@gmail.com>
@@ -35,10 +38,8 @@ $OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.5 2012/09/19 12:
 +#include <string.h>
 +#include <unistd.h>
 +#include <sys/types.h>
-+#include <sys/stat.h>
 +#include <syslog.h>
 +#include <pwd.h>
-+#include <time.h>
 +#include <login_cap.h>
 +#include <bsd_auth.h>
 +
@@ -52,7 +53,6 @@ $OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.5 2012/09/19 12:
 +  struct passwd *pw;
 +  const char *user_to_auth;
 +  const char *cookie;
-+//  time_t tm;
 +
 +  /* clear the entire environment to avoid attacks with
 +     libraries honoring environment variables */
@@ -112,35 +112,6 @@ $OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.5 2012/09/19 12:
 +      fprintf (stderr, "polkit-agent-helper-1: authentication failure. This incident has been logged.\n");
 +      goto error;
 +    }
-+
-+#if 0
-+  /* Check whether the user's password has expired */
-+  now = time (NULL);
-+  if (shadow->sp_max >= 0 && (shadow->sp_lstchg + shadow->sp_max) * 60 * 60 * 24 <= now)
-+    {
-+      syslog (LOG_NOTICE, "password expired for user '%s' [uid=%d] trying to authenticate", user_to_auth, getuid ());
-+      fprintf (stderr, "polkit-agent-helper-1: authorization failure. This incident has been logged.\n");
-+      goto error;
-+    }
-+
-+  /* Check whether the user's password has aged (and account expired along
-+   * with it)
-+   */
-+  if (shadow->sp_inact >= 0 && (shadow->sp_lstchg + shadow->sp_max + shadow->sp_inact) * 60 * 60 * 24 <= now)
-+    {
-+      syslog (LOG_NOTICE, "password aged for user '%s' [uid=%d] trying to authenticate", user_to_auth, getuid ());
-+      fprintf (stderr, "polkit-agent-helper-1: authorization failure. This incident has been logged.\n");
-+      goto error;
-+    }
-+
-+  /* Check whether the user's account has expired */
-+  if (shadow->sp_expire >= 0 && shadow->sp_expire * 60 * 60 * 24 <= now)
-+    {
-+      syslog (LOG_NOTICE, "account expired for user '%s' [uid=%d] trying to authenticate", user_to_auth, getuid ());
-+      fprintf (stderr, "polkit-agent-helper-1: authorization failure. This incident has been logged.\n");
-+      goto error;
-+    }
-+#endif
 +
 +#ifdef PAH_DEBUG
 +  fprintf (stderr, "polkit-agent-helper-1: sending D-Bus message to polkit daemon\n");

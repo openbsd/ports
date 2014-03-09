@@ -1,14 +1,21 @@
-$OpenBSD: patch-Makefile_am,v 1.2 2012/03/17 10:43:32 ajacoutot Exp $
+$OpenBSD: patch-Makefile_am,v 1.3 2014/03/09 22:26:56 ajacoutot Exp $
 
-undefined references to fgetgrent and fgetpwent
+From 815dfc64d40cb0267cb96701409c04b4196e508a Mon Sep 17 00:00:00 2001
+From: Ting-Wei Lan <lantw44@gmail.com>
+Date: Mon, 20 Jan 2014 07:34:53 +0000
+Subject: build: Fix several issues on FreeBSD
 
---- Makefile.am.orig	Wed Feb  8 16:35:22 2012
-+++ Makefile.am	Wed Feb  8 16:36:07 2012
-@@ -1,6 +1,6 @@
+--- Makefile.am.orig	Mon Apr 29 19:28:57 2013
++++ Makefile.am	Wed Feb 19 08:13:53 2014
+@@ -1,6 +1,10 @@
  ## Process this file with automake to produce Makefile.in
  
 -SUBDIRS = actions data src docs po test
 +SUBDIRS = actions data src docs po
++
++if BUILD_TEST
++SUBDIRS += test
++endif
  
  NULL =
  

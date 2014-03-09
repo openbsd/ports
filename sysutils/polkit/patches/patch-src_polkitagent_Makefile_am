@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_polkitagent_Makefile_am,v 1.4 2012/11/20 14:11:48 ajacoutot Exp $
+$OpenBSD: patch-src_polkitagent_Makefile_am,v 1.5 2014/03/09 22:26:56 ajacoutot Exp $
+
+https://bugs.freedesktop.org/show_bug.cgi?id=75187
+
 --- src/polkitagent/Makefile.am.orig	Mon Jun  4 19:47:39 2012
 +++ src/polkitagent/Makefile.am	Fri Aug 17 09:23:26 2012
 @@ -91,6 +91,9 @@ endif

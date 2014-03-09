@@ -1,33 +1,34 @@
-$OpenBSD: patch-src_polkit_polkitunixprocess_c,v 1.5 2012/11/20 14:11:48 ajacoutot Exp $
---- src/polkit/polkitunixprocess.c.orig	Tue Apr 24 18:05:34 2012
-+++ src/polkit/polkitunixprocess.c	Wed Sep 19 15:06:44 2012
-@@ -29,6 +29,12 @@
+$OpenBSD: patch-src_polkit_polkitunixprocess_c,v 1.6 2014/03/09 22:26:56 ajacoutot Exp $
+
+https://bugs.freedesktop.org/show_bug.cgi?id=75187
+
+--- src/polkit/polkitunixprocess.c.orig	Mon May  6 19:54:15 2013
++++ src/polkit/polkitunixprocess.c	Wed Feb 19 08:50:41 2014
+@@ -29,6 +29,10 @@
  #include <sys/sysctl.h>
  #include <sys/user.h>
  #endif
-+#ifdef __OpenBSD__
-+#include <kvm.h>
-+#include <stdio.h>
++#ifdef HAVE_OPENBSD
 +#include <sys/param.h>
 +#include <sys/sysctl.h>
 +#endif
  #include <stdlib.h>
  #include <string.h>
  #include <errno.h>
-@@ -86,7 +92,7 @@ static guint64 get_start_time_for_pid (gint    pid,
+@@ -86,7 +90,7 @@ static guint64 get_start_time_for_pid (gint    pid,
  static gint _polkit_unix_process_get_owner (PolkitUnixProcess  *process,
                                              GError            **error);
  
 -#ifdef HAVE_FREEBSD
-+#if defined(HAVE_FREEBSD) || defined(__OpenBSD__)
++#if defined(HAVE_FREEBSD) || defined(HAVE_OPENBSD)
  static gboolean get_kinfo_proc (gint pid, struct kinfo_proc *p);
  #endif
  
-@@ -554,12 +560,38 @@ get_kinfo_proc (pid_t pid, struct kinfo_proc *p)
+@@ -554,12 +558,38 @@ get_kinfo_proc (pid_t pid, struct kinfo_proc *p)
  }
  #endif
  
-+#ifdef __OpenBSD__
++#ifdef HAVE_OPENBSD
 +static gboolean
 +get_kinfo_proc (gint pid, struct kinfo_proc *p)
 +{
@@ -59,11 +60,11 @@ $OpenBSD: patch-src_polkit_polkitunixprocess_c,v 1.5 2012/11/20 14:11:48 ajacout
  {
    guint64 start_time;
 -#ifndef HAVE_FREEBSD
-+#if !defined(HAVE_FREEBSD) && !defined(__OpenBSD__)
++#if !defined(HAVE_FREEBSD) && !defined(HAVE_OPENBSD)
    gchar *filename;
    gchar *contents;
    size_t length;
-@@ -647,7 +679,11 @@ get_start_time_for_pid (pid_t    pid,
+@@ -647,7 +677,11 @@ get_start_time_for_pid (pid_t    pid,
        goto out;
      }
  
@@ -75,25 +76,25 @@ $OpenBSD: patch-src_polkit_polkitunixprocess_c,v 1.5 2012/11/20 14:11:48 ajacout
  
  out:
  #endif
-@@ -662,7 +698,7 @@ _polkit_unix_process_get_owner (PolkitUnixProcess  *pr
+@@ -662,7 +696,7 @@ _polkit_unix_process_get_owner (PolkitUnixProcess  *pr
    gint result;
    gchar *contents;
    gchar **lines;
 -#ifdef HAVE_FREEBSD
-+#if defined(HAVE_FREEBSD) || defined(__OpenBSD__)
++#if defined(HAVE_FREEBSD) || defined(HAVE_OPENBSD)
    struct kinfo_proc p;
  #else
    gchar filename[64];
-@@ -676,7 +712,7 @@ _polkit_unix_process_get_owner (PolkitUnixProcess  *pr
+@@ -676,7 +710,7 @@ _polkit_unix_process_get_owner (PolkitUnixProcess  *pr
    lines = NULL;
    contents = NULL;
  
 -#ifdef HAVE_FREEBSD
-+#if defined(HAVE_FREEBSD) || defined(__OpenBSD__)
++#if defined(HAVE_FREEBSD) || defined(HAVE_OPENBSD)
    if (get_kinfo_proc (process->pid, &p) == 0)
      {
        g_set_error (error,
-@@ -688,7 +724,11 @@ _polkit_unix_process_get_owner (PolkitUnixProcess  *pr
+@@ -688,7 +722,11 @@ _polkit_unix_process_get_owner (PolkitUnixProcess  *pr
        goto out;
      }
  
