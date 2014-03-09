@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2013/05/04 11:31:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2014/03/09 20:52:25 sthen Exp $
 
 COMMENT =	gateway to send and receive SMS through GSM mobile phones
 
 DISTNAME =	smstools3-3.1.15
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	comms
 
@@ -21,6 +21,7 @@ MASTER_SITES =	${HOMEPAGE}/packages/
 # some scripts use formail
 RUN_DEPENDS =	mail/procmail
 LIB_DEPENDS =	devel/mm
+MODULES =	converters/libiconv
 
 USE_GMAKE =	Yes
 NO_TEST =	Yes

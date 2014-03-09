@@ -1,6 +1,19 @@
-$OpenBSD: patch-src_Makefile,v 1.4 2013/10/26 10:06:45 sthen Exp $
---- src/Makefile.orig	Sat Oct 26 10:58:51 2013
-+++ src/Makefile	Sat Oct 26 11:02:16 2013
+$OpenBSD: patch-src_Makefile,v 1.5 2014/03/09 20:52:25 sthen Exp $
+--- src/Makefile.orig	Tue Sep 21 12:29:14 2010
++++ src/Makefile	Sat Oct 26 11:04:27 2013
+@@ -12,10 +12,10 @@ CFLAGS = -D NUMBER_OF_MODEMS=64
+ CFLAGS += -D NOSTATS
+ 
+ # Comment this out if iconv is not available on the system
+-#CFLAGS += -D USE_ICONV
++CFLAGS += -D USE_ICONV
+ 
+ # Uncomment this is iconv is used and it's not included in libc:
+-#LFLAGS += -liconv
++LFLAGS += -liconv
+ 
+ # Uncomment this to force smsd to run in terminal mode
+ #CFLAGS += -D TERMINAL
 @@ -37,15 +37,15 @@ CFLAGS += -D_FILE_OFFSET_BITS=64
  # Use the following only on GNU/Linux and only if you need ps listing like "smsd: MAINPROCESS" and "smsd: GSM1"
  # CFLAGS += -D USE_LINUX_PS_TRICK
