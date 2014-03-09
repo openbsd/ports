@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:42:40 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2014/03/09 19:48:59 jasper Exp $
 
 COMMENT=	text document format for writing documents and man pages
 
@@ -20,7 +20,7 @@ RUN_DEPENDS=	textproc/docbook-xsl
 MODPY_ADJ_FILES=a2x.py \
 		asciidoc.py \
 		asciidocapi.py \
-		filters/{code,graphviz,latex,music,tests}/*.py
+		filters/{code,graphviz,latex,music}/*.py
 
 PKG_ARCH=	*
 USE_GMAKE=	Yes
