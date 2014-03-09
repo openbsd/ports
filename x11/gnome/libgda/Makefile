@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2013/12/24 08:18:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2014/03/09 22:18:08 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -19,6 +19,8 @@ PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}
 PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
+
+REVISION-main=		0
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -71,11 +73,10 @@ MODGNOME_TOOLS= 	gi yelp
 LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_ARGS+=	--disable-static \
 			--enable-system-sqlite \
-			--enable-gda-gi \
 			--enable-gdaui-gi \
 			--enable-gdaui-vala \
 			--enable-vala-extensions \
-			--with-bdb="${LOCALBASE}" \
+			--with-bdb-includedir-name=include/db4 \
 			--without-firebird \
 			--without-oracle \
 			--without-mdb \
@@ -86,7 +87,6 @@ CONFIGURE_ARGS+=	--disable-vala-extensions \
 			--disable-gdaui-vala \
 			--disable-vala
 
-MODGNOME_CPPFLAGS=	-I${LOCALBASE}/include/db4/
 MODGNOME_LDFLAGS=	-lm
 CONFIGURE_ENV=		LIBCRYPTO_CFLAGS="-I/usr/include/ssl" \
 			LIBCRYPTO_LIBS="-lcrypto" \
@@ -163,11 +163,12 @@ LIB_DEPENDS-ldap=	${LIB_DEPENDS} \
 			databases/openldap
 CONFIGURE_ARGS+=	--with-ldap
 
-# XXX sync LIBdb_VERSION with databases/db/v4
-LIBdb_VERSION=	5.0
-SUBST_VARS+=	LIBdb_VERSION
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/configure
+# XXX sync with LIBdb_VERSION in databases/db/v4
+# (find a proper way to push upstream)
+AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	autoconf no-autoheader
+post-patch:
+	perl -pi -e 's,bdb_libext="\$$linklibext",bdb_libext=".so.5.0",' ${WRKSRC}/m4/bdb.m4
 
 post-install:
 	rm ${PREFIX}/lib/libgda-${GDA_MAJOR}/{plugins,providers}/*.la
