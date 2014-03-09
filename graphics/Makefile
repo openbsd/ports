@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.364 2014/01/11 22:56:03 jeremy Exp $
+# $OpenBSD: Makefile,v 1.365 2014/03/09 22:36:51 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -114,7 +114,6 @@
      SUBDIR += kimdaba
      SUBDIR += kipi-plugins
      SUBDIR += l2p
-     SUBDIR += lasem
      SUBDIR += lcms
      SUBDIR += lcms2
      SUBDIR += lensfun
