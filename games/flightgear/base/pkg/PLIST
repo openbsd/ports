@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/24 22:04:08 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/03/09 19:53:12 pascal Exp $
 @bin bin/GPSsmooth
 @bin bin/MIDGsmooth
 @bin bin/UGsmooth
@@ -16,6 +16,5 @@
 @man man/man1/fgfs.1
 @man man/man1/fgjs.1
 @man man/man1/fgpanel.1
-@man man/man1/gl-info.1
 @man man/man1/js_demo.1
 @man man/man1/terrasync.1

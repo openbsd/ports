@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2014/03/09 19:53:12 pascal Exp $
+--- CMakeLists.txt.orig	Tue Feb 25 16:53:25 2014
++++ CMakeLists.txt	Tue Feb 25 16:53:46 2014
+@@ -269,7 +269,9 @@ check_cxx_source_compiles(
+ 
+ if(HAVE_DLFCN_H)
+     check_library_exists(dl dlerror "" HAVE_DL)
+-    set(DL_LIBRARY "dl")
++    if(HAVE_DL)
++        set(DL_LIBRARY "dl")
++    endif()
+ endif()
+ 
+ SET(CMAKE_DEBUG_POSTFIX "d" CACHE STRING "add a postfix, usually 'd' on windows")

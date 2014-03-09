@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/11/24 21:59:15 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2014/03/09 19:53:12 pascal Exp $
 
 COMMENT =		library set for simulations, games and visualizations
 
-DISTNAME =		simgear-2.12.0
+DISTNAME =		simgear-3.0.0
 
-SHARED_LIBS +=  SimGearCore               0.0 # 2.10
-SHARED_LIBS +=  SimGearScene              0.0 # 2.10
+SHARED_LIBS +=  SimGearCore               1.0 # 2.10
+SHARED_LIBS +=  SimGearScene              1.0 # 2.10
 
 CATEGORIES =		graphics
 
@@ -28,8 +28,7 @@ BUILD_DEPENDS =		devel/boost
 LIB_DEPENDS =		graphics/openscenegraph \
 			audio/openal
 
-CONFIGURE_ARGS +=	-DSYSTEM_EXPAT=ON \
-			-DENABLE_LIBSVN=OFF
+CONFIGURE_ARGS +=	-DSYSTEM_EXPAT=ON
 
 CFLAGS +=		-I${X11BASE}/include -pthread
 

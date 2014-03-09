@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/11/27 12:51:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2014/03/09 19:53:12 pascal Exp $
 
 COMMENT =		modern, open-source flight simulator
 
@@ -24,7 +24,8 @@ RUN_DEPENDS =	games/flightgear/data>=${V}
 CONFIGURE_ARGS +=	-DCMAKE_INSTALL_MANDIR="${PREFIX}/man" \
 			-DFG_DATA_DIR="${TRUEPREFIX}/share/flightgear" \
 			-DSYSTEM_SQLITE=ON \
-			-DENABLE_LIBSVN=OFF
+			-DENABLE_IAX=OFF \
+			-DENABLE_FGCOM=OFF
 
 NO_TEST =	Yes
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/24 21:59:15 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/03/09 19:53:12 pascal Exp $
 include/simgear/
 include/simgear/bucket/
 include/simgear/bucket/newbucket.hxx
@@ -27,7 +27,6 @@ include/simgear/bvh/BVHVisitor.hxx
 include/simgear/canvas/
 include/simgear/canvas/Canvas.hxx
 include/simgear/canvas/CanvasEvent.hxx
-include/simgear/canvas/CanvasEventListener.hxx
 include/simgear/canvas/CanvasEventManager.hxx
 include/simgear/canvas/CanvasEventTypes.hxx
 include/simgear/canvas/CanvasEventVisitor.hxx
@@ -77,6 +76,9 @@ include/simgear/ephemeris/venus.hxx
 include/simgear/io/
 include/simgear/io/DAVMultiStatus.hxx
 include/simgear/io/HTTPClient.hxx
+include/simgear/io/HTTPContentDecode.hxx
+include/simgear/io/HTTPFileRequest.hxx
+include/simgear/io/HTTPMemoryRequest.hxx
 include/simgear/io/HTTPRequest.hxx
 include/simgear/io/SVNDirectory.hxx
 include/simgear/io/SVNReportParser.hxx
@@ -128,6 +130,7 @@ include/simgear/math/sg_random.h
 include/simgear/math/sg_types.hxx
 include/simgear/misc/
 include/simgear/misc/CSSBorder.hxx
+include/simgear/misc/ListDiff.hxx
 include/simgear/misc/ResourceManager.hxx
 include/simgear/misc/gzcontainerfile.hxx
 include/simgear/misc/interpolator.hxx
@@ -146,8 +149,10 @@ include/simgear/nasal/cppbind/
 include/simgear/nasal/cppbind/Ghost.hxx
 include/simgear/nasal/cppbind/NasalCallContext.hxx
 include/simgear/nasal/cppbind/NasalHash.hxx
+include/simgear/nasal/cppbind/NasalObjectHolder.hxx
 include/simgear/nasal/cppbind/NasalString.hxx
 include/simgear/nasal/cppbind/detail/
+include/simgear/nasal/cppbind/detail/from_nasal_function_templates.hxx
 include/simgear/nasal/cppbind/detail/from_nasal_helper.hxx
 include/simgear/nasal/cppbind/detail/functor_templates.hxx
 include/simgear/nasal/cppbind/detail/nasal_traits.hxx
@@ -183,7 +188,6 @@ include/simgear/scene/material/Effect.hxx
 include/simgear/scene/material/EffectBuilder.hxx
 include/simgear/scene/material/EffectCullVisitor.hxx
 include/simgear/scene/material/EffectGeode.hxx
-include/simgear/scene/material/GLPredicate.hxx
 include/simgear/scene/material/Pass.hxx
 include/simgear/scene/material/Technique.hxx
 include/simgear/scene/material/TextureBuilder.hxx
@@ -257,6 +261,7 @@ include/simgear/scene/util/DeletionManager.hxx
 include/simgear/scene/util/NodeAndDrawableVisitor.hxx
 include/simgear/scene/util/Noise.hxx
 include/simgear/scene/util/OptionsReadFileCallback.hxx
+include/simgear/scene/util/OsgDebug.hxx
 include/simgear/scene/util/OsgMath.hxx
 include/simgear/scene/util/OsgSingleton.hxx
 include/simgear/scene/util/PrimitiveUtils.hxx
@@ -315,6 +320,7 @@ include/simgear/structure/commands.hxx
 include/simgear/structure/event_mgr.hxx
 include/simgear/structure/exception.hxx
 include/simgear/structure/intern.hxx
+include/simgear/structure/map.hxx
 include/simgear/structure/singleton.hpp
 include/simgear/structure/subsystem_mgr.hxx
 include/simgear/threads/
@@ -331,3 +337,6 @@ include/simgear/xml/
 include/simgear/xml/easyxml.hxx
 @lib lib/libSimGearCore.so.${LIBSimGearCore_VERSION}
 @lib lib/libSimGearScene.so.${LIBSimGearScene_VERSION}
+share/SimGearCore/
+share/SimGearCore/SimGearCoreConfig-release.cmake
+share/SimGearCore/SimGearCoreConfig.cmake
