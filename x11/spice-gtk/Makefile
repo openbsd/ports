@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2013/09/30 19:01:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2014/03/09 22:28:04 ajacoutot Exp $
 
 COMMENT=	GTK client and libraries for SPICE remote desktop servers
 
-DISTNAME=	spice-gtk-0.20
+DISTNAME=	spice-gtk-0.23
 CATEGORIES=	x11 net
 
 SHARED_LIBS +=  spice-client-glib-2.0     1.0 # 12.0
@@ -20,16 +20,15 @@ MASTER_SITES=	${HOMEPAGE}/../../download/gtk/
 EXTRACT_SUFX=	.tar.bz2
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += c cairo cairo-gobject celt051 crypto dbus-1 dbus-glib-1
-WANTLIB += expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gstapp-0.10 gstaudio-0.10 gstbase-0.10 gstinterfaces-0.10
-WANTLIB += gstpbutils-0.10 gstreamer-0.10 gthread-2.0 gtk-3 harfbuzz
-WANTLIB += jpeg m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += sasl2 ssl xcb xcb-render xcb-shm xml2 z
-WANTLIB += asn1 com_err gssapi heimbase krb5 roken wind
+WANTLIB += Xinerama Xrandr Xrender asn1 atk-1.0 atk-bridge-2.0
+WANTLIB += atspi c cairo cairo-gobject com_err crypto dbus-1 expat
+WANTLIB += ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gssapi gstapp-0.10
+WANTLIB += gstaudio-0.10 gstbase-0.10 gstinterfaces-0.10 gstpbutils-0.10
+WANTLIB += gstreamer-0.10 gthread-2.0 gtk-3 harfbuzz heimbase
+WANTLIB += jpeg krb5 m opus pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs roken sasl2
+WANTLIB += ssl wind xcb xcb-render xcb-shm xml2 z
 
 MODULES=	devel/gettext \
 		lang/python \
@@ -46,22 +45,25 @@ BUILD_DEPENDS=	lang/vala \
 RUN_DEPENDS=	devel/spice-protocol \
 		sysutils/usbutils
 
-LIB_DEPENDS=	audio/celt051 \
+LIB_DEPENDS=	audio/opus \
 		multimedia/gstreamer-0.10/plugins-base \
 		security/cyrus-sasl2 \
-		x11/dbus-glib \
 		x11/gtk+3
 
 USE_GMAKE=	Yes
+
+MODGNU_CONFIG_GUESS_DIRS= \
+		${WRKSRC} \
+		${WRKSRC}/spice-common \
+		${WRKSRC}/spice-common/spice-protocol
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-smartcard \
 		--disable-usbredir \
 		--enable-introspection \
+		--enable-vala \
 		--with-audio=gstreamer \
-		--with-gtk=3.0 \
-		--with-sasl \
 		--disable-gtk-doc
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
