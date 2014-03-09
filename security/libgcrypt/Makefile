@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2014/02/07 08:57:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2014/03/09 20:02:37 jasper Exp $
 
 COMMENT=		crypto library based on code used in GnuPG
 
 DISTNAME=		libgcrypt-1.6.1
+REVISION=		0
 CATEGORIES=		security
 
 SHARED_LIBS +=  gcrypt               19.1     # 20.1

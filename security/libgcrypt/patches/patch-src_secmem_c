@@ -1,0 +1,43 @@
+$OpenBSD: patch-src_secmem_c,v 1.1 2014/03/09 20:02:37 jasper Exp $
+
+Patch copied from gnupg/patches/patch-util_secmem_c
+
+--- src/secmem.c.orig	Wed Jan 29 10:48:38 2014
++++ src/secmem.c	Sat Feb 22 13:48:07 2014
+@@ -36,6 +36,9 @@
+ #include <sys/capability.h>
+ #endif
+ #endif
++#include <sys/param.h>
++#include <sys/sysctl.h>
++#include <uvm/uvm_swap_encrypt.h>
+ 
+ #include "ath.h"
+ #include "g10lib.h"
+@@ -232,8 +235,24 @@ mb_get_new (memblock_t *block, size_t size)
+ static void
+ print_warn (void)
+ {
+-  if (!no_warning)
+-    log_info (_("Warning: using insecure memory!\n"));
++	int    mib[3], swapencrypt = 0;
++	size_t len;
++
++	mib[0] = CTL_VM;
++	mib[1] = VM_SWAPENCRYPT;
++	mib[2] = SWPENC_ENABLE;
++
++	len = sizeof(swapencrypt);
++
++	if (sysctl(mib, 3, &swapencrypt, &len, NULL, 0) == -1)
++		log_info("WARNING: Can't receive vm.swapencrypt.enable sysctl value\n");
++
++	if (!no_warning && !swapencrypt)
++	{
++		log_info("WARNING: Using insecure memory!\n");
++		log_info("Please enable swap encryption via"
++			 " 'sysctl vm.swapencrypt.enable=1'.\n");
++	}
+ }
+ 
+ /* Lock the memory pages into core and drop privileges.  */
