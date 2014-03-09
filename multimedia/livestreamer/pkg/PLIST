@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/01/30 23:45:23 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/03/09 20:38:00 bcallah Exp $
 bin/livestreamer
 lib/python${MODPY_VERSION}/site-packages/livestreamer/
 lib/python${MODPY_VERSION}/site-packages/livestreamer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -77,6 +77,10 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/crunchyroll.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/crunchyroll.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/dailymotion.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/dailymotion.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/dmcloud.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/dmcloud.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/dmcloud_embed.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/dmcloud_embed.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/euronews.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/euronews.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/filmon.py
@@ -85,8 +89,8 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/filmon_us.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/filmon_us.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/freedocast.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/freedocast.pyc
-lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/gomtv.py
-lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/gomtv.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/gomexp.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/gomexp.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/hashd.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/hashd.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/hitbox.py
@@ -103,6 +107,10 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/livestream.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/livestream.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/mips.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/mips.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/mlgtv.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/mlgtv.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/nrk.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/nrk.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/oldlivestream.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/oldlivestream.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/ongamenet.py
