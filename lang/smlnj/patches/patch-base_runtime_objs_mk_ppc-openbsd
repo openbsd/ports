@@ -1,10 +1,10 @@
-$OpenBSD: patch-base_runtime_objs_mk_ppc-openbsd,v 1.1 2013/12/08 22:24:01 jasper Exp $
+$OpenBSD: patch-base_runtime_objs_mk_ppc-openbsd,v 1.2 2014/03/09 19:49:12 jasper Exp $
 
 Add support for OpenBSD/powerpc.
 
---- base/runtime/objs/mk.ppc-openbsd.orig	Sun Dec  8 15:06:37 2013
-+++ base/runtime/objs/mk.ppc-openbsd	Sun Dec  8 21:32:46 2013
-@@ -0,0 +1,26 @@
+--- base/runtime/objs/mk.ppc-openbsd.orig	Sun Feb  2 12:28:30 2014
++++ base/runtime/objs/mk.ppc-openbsd	Sun Feb  2 12:28:45 2014
+@@ -0,0 +1,25 @@
 +# mk.ppc-openbsd
 +#
 +# makefile for OpenBSD (version 4.x), which is a BSD 4.4 clone.
@@ -17,8 +17,7 @@ Add support for OpenBSD/powerpc.
 +ARFLAGS =	Trcv
 +CC ?=		gcc -ansi
 +CFLAGS ?=	-O2
-+CPP =		gcc -x assembler-with-cpp -E -P
-+#CPP =		/usr/bin/cpp -P
++CPP =		${CC} -x assembler-with-cpp -E -P
 +
 +XOBJS =
 +XLIBS =		../c-libs/dl/libunix-dynload.a
