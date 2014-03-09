@@ -1,33 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.7 2013/01/30 01:40:49 brad Exp $
---- configure.ac.orig	Mon Jan 14 18:54:06 2013
-+++ configure.ac	Tue Jan 22 22:04:29 2013
-@@ -81,7 +81,7 @@ AX_CHECK_STRLCAT
- AX_STACK_PROTECT_CC
- AX_STACK_PROTECT_CXX
- 
--AC_CHECK_HEADERS(alloca.h)
-+AC_CHECK_HEADERS(alloca.h sys/ucontext.h)
- 
- # Check for gettext
- AM_GNU_GETTEXT([external])
-@@ -135,15 +135,11 @@ case ${host_os} in
- 		AC_SUBST([WIN32_LIBS], [${WIN32_LIBS}])
- 		LDFLAGS="-Wl,-subsystem,windows ${LDFLAGS}"
- 		;;
--	*openbsd*)
--		AC_DEFINE([_XOPEN_SOURCE], 600, [Enable POSIX extensions if present])
--		# Make sure that backtrace_symbols_fd (GNU raw back trace extension) has some symbols to work with
--		LDFLAGS="-Wl,-export-dynamic ${LDFLAGS}"
--		;;
- 	*)
- 		# Some platforms don't need _XOPEN_SOURCE
- 		case ${host_os} in
- 			*freebsd*) ;;
-+			*openbsd*) ;;
- 			*)
- 				AC_DEFINE([_XOPEN_SOURCE], 600, [Enable POSIX extensions if present])
- 				;;
-@@ -292,7 +288,7 @@ fi
+$OpenBSD: patch-configure_ac,v 1.8 2014/03/09 22:35:51 brad Exp $
+--- configure.ac.orig	Sat Nov 23 20:25:10 2013
++++ configure.ac	Thu Dec  5 16:20:39 2013
+@@ -283,7 +283,7 @@ fi
  
  WZ_WARNINGS_GCC="-Wall -Wextra ${WZ_Wno_}unused-parameter ${WZ_Wno_}sign-compare -Wcast-align -Wwrite-strings -Wpointer-arith ${WZ_Wno_}format-security"
  WZ_WARNINGS_GCC_C="${WZ_WARNINGS_GCC} -Wstrict-prototypes -Wdeclaration-after-statement ${CFLAGS_IGNORE_WARNINGS}"
