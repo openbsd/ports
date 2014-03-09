@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2014/02/09 12:08:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2014/03/09 22:06:09 ajacoutot Exp $
 
 COMMENT=		Genealogical Research Analysis Management Programming System
 
 MODPY_EGG_VERSION=	4.0.3
 DISTNAME=		gramps-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		misc x11
 
@@ -45,5 +45,6 @@ pre-configure:
 post-install:
 	echo -n '${TRUEPREFIX}/share' \
 		>${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gramps/gen/utils/resource-path
+	gunzip ${PREFIX}/man/*/{,*}/*.gz
 
 .include <bsd.port.mk>

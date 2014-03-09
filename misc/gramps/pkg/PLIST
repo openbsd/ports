@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2014/02/09 12:08:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2014/03/09 22:06:09 ajacoutot Exp $
 bin/gramps
 lib/python${MODPY_VERSION}/site-packages/gramps/
 lib/python${MODPY_VERSION}/site-packages/gramps-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -2090,23 +2090,23 @@ lib/python${MODPY_VERSION}/site-packages/gramps/version.py
 lib/python${MODPY_VERSION}/site-packages/gramps/version.pyc
 man/cs/
 man/cs/man1/
-@man man/cs/man1/gramps.1.gz
+@man man/cs/man1/gramps.1
 man/fr/
 man/fr/man1/
-@man man/fr/man1/gramps.1.gz
-@man man/man1/gramps.1.gz
+@man man/fr/man1/gramps.1
+@man man/man1/gramps.1
 man/nl/
 man/nl/man1/
-@man man/nl/man1/gramps.1.gz
+@man man/nl/man1/gramps.1
 man/pl/
 man/pl/man1/
-@man man/pl/man1/gramps.1.gz
+@man man/pl/man1/gramps.1
 man/pt_BR/
 man/pt_BR/man1/
-@man man/pt_BR/man1/gramps.1.gz
+@man man/pt_BR/man1/gramps.1
 man/sv/
 man/sv/man1/
-@man man/sv/man1/gramps.1.gz
+@man man/sv/man1/gramps.1
 share/appdata/
 share/appdata/gramps.appdata.xml
 share/applications/gramps.desktop
