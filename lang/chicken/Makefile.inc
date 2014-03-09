@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2014/03/09 20:17:01 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2014/03/09 20:45:47 jasper Exp $
 
 COMMENT=	practical and portable Scheme system
 
@@ -10,7 +10,7 @@ MAINTAINER=	Timo Myyra <timo.myyra@wickedbsd.net>
 CATEGORIES=	lang
 
 HOMEPAGE=	http://www.call-cc.org/
-MASTER_SITES=	http://code.call-cc.org/releases/4.8.0/
+MASTER_SITES=	http://code.call-cc.org/releases/${V:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}/}/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,8 +27,9 @@ MAKE_FILE=	GNUmakefile
 
 FAKE_FLAGS=	PREFIX=${TRUEPREFIX}
 
+# Based on param.h:MACHINE_STACK_GROWS_UP
 pre-build:
-.if ${MACHINE_ARCH} == "hppa"
+.if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "hppa64"
 	perl -pi -e 's/C_STACK_GROWS_DOWNWARD 1/C_STACK_GROWS_DOWNWARD 0/g' "${WRKSRC}/Makefile.bsd"
 .endif
 
