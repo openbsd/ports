@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_client_side_reply_cc,v 1.1 2013/11/15 19:09:17 sthen Exp $
---- src/client_side_reply.cc.orig	Thu Oct  3 13:32:47 2013
-+++ src/client_side_reply.cc	Mon Oct 21 13:49:36 2013
-@@ -1312,7 +1312,7 @@ clientReplyContext::buildReplyHeader()
+$OpenBSD: patch-src_client_side_reply_cc,v 1.2 2014/03/09 20:56:44 sthen Exp $
+--- src/client_side_reply.cc.orig	Sun Feb  2 08:41:53 2014
++++ src/client_side_reply.cc	Thu Feb 20 23:37:39 2014
+@@ -1316,7 +1316,7 @@ clientReplyContext::buildReplyHeader()
              if (http->storeEntry()->timestamp <= squid_curtime) {
                  // put X-Cache-Age: instead of Age:
                  char age[64];
