@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/09/10 13:26:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2014/03/09 22:04:37 ajacoutot Exp $
 
 COMMENT =	versatile file searching tool
 
@@ -6,7 +6,7 @@ DISTNAME =	catfish-search-0.4.0.1
 PKGNAME =	${DISTNAME:S/-search//}
 CATEGORIES =	textproc
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	http://www.twotoasts.de/index.php?/pages/catfish_summary.html
 
