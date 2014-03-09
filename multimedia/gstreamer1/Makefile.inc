@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.12 2013/12/29 10:35:26 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2014/03/09 22:32:48 ajacoutot Exp $
 
 # Most frequent usage of the GStreamer packages:
 # core		base library
@@ -17,7 +17,7 @@
 
 SHARED_ONLY=		Yes
 
-V ?=			1.2.2
+V ?=			1.2.3
 API=			1.0
 SUBST_VARS +=		API
 
