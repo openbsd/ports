@@ -1,11 +1,11 @@
-$OpenBSD: patch-channels_chan_sip_c,v 1.12 2013/12/20 12:37:05 sthen Exp $
+$OpenBSD: patch-channels_chan_sip_c,v 1.13 2014/03/09 20:51:43 sthen Exp $
 
 https://issues.asterisk.org/jira/secure/attachment/46850/fax-deadlock-v2.patch-11.3.0
 and add a bit more randomness for digest auth
 
---- channels/chan_sip.c.orig	Fri Oct 25 17:05:55 2013
-+++ channels/chan_sip.c	Tue Dec 17 23:12:01 2013
-@@ -8442,8 +8442,6 @@ static struct ast_frame *sip_read(struct ast_channel *
+--- channels/chan_sip.c.orig	Sat Mar  1 23:30:16 2014
++++ channels/chan_sip.c	Mon Mar  3 23:22:16 2014
+@@ -8444,8 +8444,6 @@ static struct ast_frame *sip_read(struct ast_channel *
  			ast_channel_unlock(ast);
  			if (ast_exists_extension(ast, target_context, "fax", 1,
  				S_COR(ast_channel_caller(ast)->id.number.valid, ast_channel_caller(ast)->id.number.str, NULL))) {
@@ -14,7 +14,7 @@ and add a bit more randomness for digest auth
  				ast_verb(2, "Redirecting '%s' to fax extension due to CNG detection\n", ast_channel_name(ast));
  				pbx_builtin_setvar_helper(ast, "FAXEXTEN", ast_channel_exten(ast));
  				if (ast_async_goto(ast, target_context, "fax", 1)) {
-@@ -8452,10 +8450,10 @@ static struct ast_frame *sip_read(struct ast_channel *
+@@ -8454,10 +8452,10 @@ static struct ast_frame *sip_read(struct ast_channel *
  				ast_frfree(fr);
  				fr = &ast_null_frame;
  			} else {
@@ -27,7 +27,7 @@ and add a bit more randomness for digest auth
  		}
  	}
  
-@@ -10722,6 +10720,7 @@ static int process_sdp(struct sip_pvt *p, struct sip_r
+@@ -10730,6 +10728,7 @@ static int process_sdp(struct sip_pvt *p, struct sip_r
  						ast_channel_unlock(p->owner);
  						if (ast_exists_extension(p->owner, target_context, "fax", 1,
  							S_COR(ast_channel_caller(p->owner)->id.number.valid, ast_channel_caller(p->owner)->id.number.str, NULL))) {
@@ -35,7 +35,7 @@ and add a bit more randomness for digest auth
  							ast_verb(2, "Redirecting '%s' to fax extension due to peer T.38 re-INVITE\n", ast_channel_name(p->owner));
  							pbx_builtin_setvar_helper(p->owner, "FAXEXTEN", ast_channel_exten(p->owner));
  							if (ast_async_goto(p->owner, target_context, "fax", 1)) {
-@@ -16274,7 +16273,7 @@ static void build_route(struct sip_pvt *p, struct sip_
+@@ -16313,7 +16312,7 @@ static void build_route(struct sip_pvt *p, struct sip_
  static void build_nonce(struct sip_pvt *p, int forceupdate)
  {
  	if (p->stalenonce || forceupdate || ast_strlen_zero(p->nonce)) {

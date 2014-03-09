@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.191 2013/12/30 23:04:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.192 2014/03/09 20:51:43 sthen Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-VER=			11.7.0
+VER=			11.8.0
 DISTNAME=		asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}
-REVISION-main=		0
 
 CATEGORIES=		telephony
 
@@ -51,7 +50,7 @@ LIB_DEPENDS-main=	audio/gsm \
 			textproc/libxml \
 			${MODGETTEXT_LIB_DEPENDS}
 RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
-			telephony/asterisk-sounds/core-sounds/en,gsm \
+			telephony/asterisk-sounds/core-sounds/en,gsm>=1.4.25 \
 			telephony/asterisk-sounds/moh-opsound,wav
 BUILD_DEPENDS=		security/libsrtp>=1.4.4 # statically linked
 
