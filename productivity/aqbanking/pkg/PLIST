@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/07/11 18:59:48 phessler Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/03/09 21:03:07 sthen Exp $
 @bin bin/aqbanking-cli
 bin/aqbanking-config
+@bin bin/aqebics-tool
 @bin bin/aqhbci-tool4
 @bin bin/hbcixml3
 include/aqbanking5/
@@ -123,6 +124,12 @@ include/aqbanking5/aqofxconnect/oh_institute_spec_fns.h
 include/aqbanking5/aqofxconnect/provider.h
 include/aqbanking5/aqofxconnect/user.h
 include/aqbanking5/aqofxconnect/version.h
+include/aqebics/
+include/aqebics/aqebics.h
+include/aqebics/client/
+include/aqebics/client/account.h
+include/aqebics/client/provider.h
+include/aqebics/client/user.h
 lib/aqbanking/
 lib/aqbanking/plugins/
 lib/aqbanking/plugins/34/
@@ -142,6 +149,13 @@ lib/aqbanking/plugins/34/bankinfo/de.xml
 lib/aqbanking/plugins/34/bankinfo/us.la
 lib/aqbanking/plugins/34/bankinfo/us.so
 lib/aqbanking/plugins/34/bankinfo/us.xml
+lib/aqbanking/plugins/34/dbio/
+lib/aqbanking/plugins/34/dbio/dtaus.la
+lib/aqbanking/plugins/34/dbio/dtaus.so
+lib/aqbanking/plugins/34/dbio/dtaus.xml
+lib/aqbanking/plugins/34/dbio/swift.la
+lib/aqbanking/plugins/34/dbio/swift.so
+lib/aqbanking/plugins/34/dbio/swift.xml
 lib/aqbanking/plugins/34/imexporters/
 lib/aqbanking/plugins/34/imexporters/csv.la
 lib/aqbanking/plugins/34/imexporters/csv.so
@@ -177,6 +191,9 @@ lib/aqbanking/plugins/34/imexporters/yellownet.la
 lib/aqbanking/plugins/34/imexporters/yellownet.so
 lib/aqbanking/plugins/34/imexporters/yellownet.xml
 lib/aqbanking/plugins/34/providers/
+lib/aqbanking/plugins/34/providers/aqebics.la
+lib/aqbanking/plugins/34/providers/aqebics.so
+lib/aqbanking/plugins/34/providers/aqebics.xml
 lib/aqbanking/plugins/34/providers/aqhbci.la
 lib/aqbanking/plugins/34/providers/aqhbci.so
 lib/aqbanking/plugins/34/providers/aqhbci.xml
@@ -186,16 +203,12 @@ lib/aqbanking/plugins/34/providers/aqnone.xml
 lib/aqbanking/plugins/34/providers/aqofxconnect.la
 lib/aqbanking/plugins/34/providers/aqofxconnect.so
 lib/aqbanking/plugins/34/providers/aqofxconnect.xml
-lib/gwenhywfar/plugins/60/dbio/dtaus.la
-lib/gwenhywfar/plugins/60/dbio/dtaus.so
-lib/gwenhywfar/plugins/60/dbio/dtaus.xml
-lib/gwenhywfar/plugins/60/dbio/swift.la
-lib/gwenhywfar/plugins/60/dbio/swift.so
-lib/gwenhywfar/plugins/60/dbio/swift.xml
 lib/libaqbanking.la
 @lib lib/libaqbanking.so.${LIBaqbanking_VERSION}
 lib/libaqbankingpp.la
 @lib lib/libaqbankingpp.so.${LIBaqbankingpp_VERSION}
+lib/libaqebics.la
+@lib lib/libaqebics.so.${LIBaqebics_VERSION}
 lib/libaqhbci.la
 @lib lib/libaqhbci.so.${LIBaqhbci_VERSION}
 lib/libaqnone.la
@@ -214,6 +227,11 @@ share/aqbanking/aqbanking/typemaker2/c/ab_job_list.tm2
 share/aqbanking/aqbanking/typemaker2/c/ab_job_list2.tm2
 share/aqbanking/aqbanking/typemaker2/c/ab_user.tm2
 share/aqbanking/backends/
+share/aqbanking/backends/aqebics/
+share/aqbanking/backends/aqebics/dialogs/
+share/aqbanking/backends/aqebics/dialogs/dlg_edituser.dlg
+share/aqbanking/backends/aqebics/dialogs/dlg_newkeyfile.dlg
+share/aqbanking/backends/aqebics/dialogs/dlg_user_special.dlg
 share/aqbanking/backends/aqhbci/
 share/aqbanking/backends/aqhbci/dialogs/
 share/aqbanking/backends/aqhbci/dialogs/chipcard.png
@@ -329,6 +347,10 @@ share/aqbanking/imexporters/q43/profiles/
 share/aqbanking/imexporters/q43/profiles/default.conf
 share/aqbanking/imexporters/sepa/
 share/aqbanking/imexporters/sepa/profiles/
+share/aqbanking/imexporters/sepa/profiles/001_002_03.conf
+share/aqbanking/imexporters/sepa/profiles/008_001_01.conf
+share/aqbanking/imexporters/sepa/profiles/008_002_02.conf
+share/aqbanking/imexporters/sepa/profiles/008_003_02.conf
 share/aqbanking/imexporters/sepa/profiles/ccm.conf
 share/aqbanking/imexporters/sepa/profiles/default.conf
 share/aqbanking/imexporters/swift/
@@ -357,6 +379,9 @@ share/doc/aqbanking/AUTHORS
 share/doc/aqbanking/COPYING
 share/doc/aqbanking/ChangeLog
 share/doc/aqbanking/README
+share/doc/aqebics/
+share/doc/aqebics/aqebics-tool/
+share/doc/aqebics/aqebics-tool/README
 share/doc/aqhbci/
 share/doc/aqhbci/aqhbci-tool/
 share/doc/aqhbci/aqhbci-tool/README
