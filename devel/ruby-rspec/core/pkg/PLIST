@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/08/06 18:14:11 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/03/09 20:43:34 jasper Exp $
 ${GEM_BIN}/autospec${GEM_BIN_SUFFIX}
 ${GEM_BIN}/rspec${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -202,6 +202,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/formatters/text_mate_formatted-1.9.3
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/formatters/text_mate_formatted-1.9.3-rbx.html
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/formatters/text_mate_formatted-1.9.3.html
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/formatters/text_mate_formatted-2.0.0.html
+${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/formatters/text_mate_formatted-2.1.0.html
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/formatters/text_mate_formatter_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/hooks_filtering_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/core/hooks_spec.rb
@@ -233,10 +234,12 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/config_options_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/helper_methods.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/support/in_sub_process.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/isolate_load_path_mutation.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/isolated_directory.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/isolated_home_directory.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/matchers.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/support/mathn_integration_support.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/sandboxed_mock_space.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/shared_example_groups.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/spec_files.rb

@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2013/10/26 23:55:36 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2014/03/09 20:43:34 jasper Exp $
 
 COMMENT =		rspec runner and formatters
-DISTNAME =		rspec-core-2.14.5
-REVISION =		0
+DISTNAME =		rspec-core-2.14.8
 
 .include <bsd.port.mk>
