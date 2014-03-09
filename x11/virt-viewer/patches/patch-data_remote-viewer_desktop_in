@@ -1,8 +1,0 @@
-$OpenBSD: patch-data_remote-viewer_desktop_in,v 1.2 2013/09/30 19:01:29 jasper Exp $
---- data/remote-viewer.desktop.in.orig	Wed Jul 31 13:57:27 2013
-+++ data/remote-viewer.desktop.in	Mon Sep 30 20:52:29 2013
-@@ -7,3 +7,4 @@ Terminal=false
- MimeType=x-scheme-handler/spice;application/x-virt-viewer;
- StartupNotify=true
- Categories=GNOME;GTK;Network;RemoteAccess;
-+Icon=virt-viewer
