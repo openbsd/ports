@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2013/11/02 11:13:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2014/03/09 22:21:23 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	GLib ICE implementation
 
-DISTNAME =	libnice-0.1.4
-SHARED_LIBS +=  nice                 2.1      # 11.0
-
-REVISION =	1
+DISTNAME =	libnice-0.1.5
+SHARED_LIBS +=  nice                 2.2      # 13.0
 
 CATEGORIES =	net
 
@@ -33,18 +31,21 @@ LIB_DEPENDS =		multimedia/gstreamer1/core \
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS = 	${CONFIGURE_SHARED} \
 			--disable-static \
+			--disable-gtk-doc \
 			--with-gstreamer \
 			--without-gstreamer-0.10
+
+# If one of these tools is found at configure stage, it might be used,
+# no matter whether we use --disable-gtk-doc or not.
+CONFIGURE_ENV +=	ac_cv_path_GTKDOC_CHECK="" \
+			ac_cv_path_GTKDOC_REBASE="" \
+			ac_cv_path_GTKDOC_MKPDF=""
 
 USE_GMAKE =		Yes
 LIBTOOL_FLAGS =		--tag=disable-static
 
-pre-configure:
-	perl -pi -e 's,-Wno-missing-field-initializers,,g' \
-		${WRKSRC}/Makefile.in ${WRKSRC}/agent/Makefile.in \
-		${WRKSRC}/nice/Makefile.in ${WRKSRC}/random/Makefile.in \
-		${WRKSRC}/socket/Makefile.in ${WRKSRC}/stun/Makefile.in \
-		${WRKSRC}/stun/tests/Makefile.in ${WRKSRC}/stun/tools/Makefile.in \
-		${WRKSRC}/tests/Makefile.in
+# don't install example binaries
+post-install:
+	rm ${PREFIX}/bin/*-example
 
 .include <bsd.port.mk>
