@@ -1,5 +1,10 @@
-$OpenBSD: patch-configure_ac,v 1.12 2013/10/10 09:55:24 stsp Exp $
-https://bugzilla.gnome.org/show_bug.cgi?id=709752
+$OpenBSD: patch-configure_ac,v 1.13 2014/03/09 21:44:09 ajacoutot Exp $
+
+From 5574b7c841d81bc9be6b5695a487babdfb94d789 Mon Sep 17 00:00:00 2001
+From: Stefan Sperling <stsp@tigris.org>
+Date: Thu, 10 Oct 2013 20:31:54 +0000
+Subject: bgo #709752 - Don't require neon library for Subversion 1.8
+
 --- configure.ac.orig	Mon Sep 16 03:23:08 2013
 +++ configure.ac	Wed Oct  9 18:48:40 2013
 @@ -58,6 +58,7 @@ GI_REQUIRED=0.9.5

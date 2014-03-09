@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2013/11/15 21:32:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.106 2014/03/09 21:44:09 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		3.10.2
+REVISION=		0
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -80,11 +81,14 @@ CONFIGURE_ARGS+=	--disable-static \
 			--disable-neon
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/plugins/project-wizard/templates/pygtk.wiz.in \
-		${WRKSRC}/plugins/project-wizard/templates/python.wiz.in \
+	perl -pi -e "s,/usr/bin/python,${MODPY_BIN},g" \
 		${WRKSRC}/plugins/project-wizard/templates/pygtk/src/main.py \
 		${WRKSRC}/plugins/project-wizard/templates/python/src/main.py \
 		${WRKSRC}/plugins/language-support-python/org.gnome.anjuta.plugins.python.gschema.xml.in
+
+	perl -pi -e "s,>python<,>python${MODPY_VERSION}<,g" \
+		${WRKSRC}/plugins/project-wizard/templates/pygtk.wiz.in \
+		${WRKSRC}/plugins/project-wizard/templates/python.wiz.in
 
 post-install:
 	rm ${PREFIX}/lib/anjuta/*.la
