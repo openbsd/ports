@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_hiera_backend_rb,v 1.1 2014/01/16 10:18:22 jasper Exp $
+$OpenBSD: patch-lib_hiera_backend_rb,v 1.2 2014/03/09 19:46:21 jasper Exp $
 
 From 00be33858e98459e5125d46ea546e91a888b0e6c Mon Sep 17 00:00:00 2001
 From: Andrew Parker <andy@puppetlabs.com>
@@ -6,8 +6,8 @@ Date: Tue, 10 Dec 2013 11:17:51 -0800
 Subject: [PATCH 2/2] (#22142) Extract method to list all hierarchy files
 
 --- lib/hiera/backend.rb.orig	Thu Jan  1 01:00:00 1970
-+++ lib/hiera/backend.rb	Thu Jan 16 11:09:41 2014
-@@ -35,15 +35,19 @@ class Hiera
++++ lib/hiera/backend.rb	Sat Mar  1 09:59:17 2014
+@@ -34,15 +34,19 @@ class Hiera
        #
        # If the file is not found nil is returned
        def datafile(backend, scope, source, extension)
@@ -33,7 +33,7 @@ Subject: [PATCH 2/2] (#22142) Extract method to list all hierarchy files
        end
  
        # Constructs a list of data sources to search
-@@ -71,6 +75,35 @@ class Hiera
+@@ -70,6 +74,35 @@ class Hiera
          hierarchy.flatten.map do |source|
            source = parse_string(source, scope)
            yield(source) unless source == "" or source =~ /(^\/|\/\/|\/$)/
