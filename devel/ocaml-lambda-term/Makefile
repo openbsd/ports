@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:12 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2014/03/09 19:50:44 jasper Exp $
 
 COMMENT =	library for manipulating the terminal
 CATEGORIES =	devel
 
 # also adapt MASTER_SITES when changing the version!
 DISTNAME =	lambda-term-1.3
-REVISION =	0
+REVISION =	1
 PKGNAME =	ocaml-${DISTNAME}
 MASTER_SITES =	http://forge.ocamlcore.org/frs/download.php/1034/
 
@@ -33,6 +33,6 @@ post-install:
 	${INSTALL_DATA} \
 		${WRKDIST}/{LICENSE,CHANGES} \
 		${PREFIX}/share/doc/ocaml-lambda-term/
-
+	gunzip ${PREFIX}/man/*/*.gz
 
 .include <bsd.port.mk>
