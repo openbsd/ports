@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.145 2014/03/09 20:25:19 espie Exp $
+# $OpenBSD: Port.pm,v 1.146 2014/03/09 20:30:10 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -544,8 +544,12 @@ sub add_live_depends
 {
 	my ($self, $h, $core) = @_;
 	for my $job ($core->same_host_jobs) {
-		next unless defined $job->{live_depends};
-		for my $d (@{$job->{live_depends}}) {
+		if (defined $job->{live_depends}) {
+			for my $d (@{$job->{live_depends}}) {
+				$h->{$d} = 1;
+			}
+		}
+		for my $d (keys %{$job->{depends}}) {
 			$h->{$d} = 1;
 		}
 	}
@@ -859,6 +863,13 @@ sub save_depends
 	print {$job->{lock}} "needed=", join(' ', sort @$l), "\n";
 }
 
+sub save_wanted_depends
+{
+	my $job = shift;
+	print {$job->{lock}} "wanted=", 
+	    join(' ', sort keys %{$job->{depends}}), "\n";
+}
+
 sub need_depends
 {
 	my ($self, $core, $with_tests) = @_;
@@ -885,6 +896,7 @@ sub need_depends
 		print {$self->{logfh}} "Avoided depends for ", 
 		    join(' ', @live), "\n";
 	} else {
+		$self->save_wanted_depends;
 		$self->{depends} = $dep;
 	}
 	return $c;
