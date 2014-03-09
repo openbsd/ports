@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.321 2014/01/18 09:33:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.322 2014/03/09 22:35:46 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -23,7 +23,6 @@
      SUBDIR += cd-discid
      SUBDIR += cdparanoia
      SUBDIR += celt
-     SUBDIR += celt051
      SUBDIR += celt07
      SUBDIR += checkmate
      SUBDIR += chromaprint
