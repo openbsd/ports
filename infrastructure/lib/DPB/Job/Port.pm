@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.144 2014/03/09 20:24:18 espie Exp $
+# $OpenBSD: Port.pm,v 1.145 2014/03/09 20:25:19 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -454,6 +454,7 @@ sub finalize
 	my $v = $job->{v};
 	# reopen log at right location
 	my $fh;
+	$job->{pos} //= 0;
 	if (open($fh, '<', $job->{log}) && seek($fh, $job->{pos}, 0)) {
 		my @r;
 		while (<$fh>) {
@@ -520,7 +521,7 @@ sub setup
 			$still_tainted = 1;
 		}
 	}
-	if (defined $core->job->{builder}->locker ->find_tag($core->hostname)) {
+	if (defined $core->job->{builder}->locker->find_tag($core->hostname)) {
 		$still_tainted = 1;
 	}
 	print $fh "Still tainted: $still_tainted\n";
