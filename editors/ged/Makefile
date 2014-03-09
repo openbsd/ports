@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2013/11/09 23:19:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2014/03/09 19:47:10 pascal Exp $
 
 COMMENT =		GNU version of standard text editor
 
-V =			1.8
+V =			1.10
 DISTNAME =		ed-${V}
 PKGNAME =		ged-${V}
-REVISION =		0
 
 CATEGORIES =		editors
 
@@ -19,6 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB =		c
 
 MASTER_SITES =		${MASTER_SITE_GNU:=ed/}
+EXTRACT_SUFX =		.tar.lz
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
