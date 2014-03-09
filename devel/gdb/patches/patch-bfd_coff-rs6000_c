@@ -1,7 +1,7 @@
-$OpenBSD: patch-bfd_coff-rs6000_c,v 1.1 2012/03/19 13:09:22 pascal Exp $
---- bfd/coff-rs6000.c.orig	Mon Mar 19 10:57:33 2012
-+++ bfd/coff-rs6000.c	Mon Mar 19 11:01:25 2012
-@@ -27,6 +27,7 @@
+$OpenBSD: patch-bfd_coff-rs6000_c,v 1.2 2014/03/09 19:49:21 pascal Exp $
+--- bfd/coff-rs6000.c.orig	Thu Feb  6 03:21:29 2014
++++ bfd/coff-rs6000.c	Fri Feb  7 18:43:41 2014
+@@ -28,6 +28,7 @@
  #include "bfd.h"
  #include "bfdlink.h"
  #include "libbfd.h"

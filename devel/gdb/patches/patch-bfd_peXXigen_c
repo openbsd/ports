@@ -1,8 +1,8 @@
-$OpenBSD: patch-bfd_peXXigen_c,v 1.1 2011/10/28 14:42:43 espie Exp $
+$OpenBSD: patch-bfd_peXXigen_c,v 1.2 2014/03/09 19:49:21 pascal Exp $
 Fix out-of-bounds memcpys (FILNMLEN is 18, sizeof x_fname is 14).
---- bfd/peXXigen.c.orig	Tue Oct 25 15:31:49 2011
-+++ bfd/peXXigen.c	Tue Oct 25 15:32:39 2011
-@@ -249,7 +249,7 @@ _bfd_XXi_swap_aux_in (bfd *	abfd,
+--- bfd/peXXigen.c.orig	Wed Jan  8 10:23:36 2014
++++ bfd/peXXigen.c	Fri Feb  7 18:43:41 2014
+@@ -256,7 +256,7 @@ _bfd_XXi_swap_aux_in (bfd *	abfd,
  	  in->x_file.x_n.x_offset = H_GET_32 (abfd, ext->x_file.x_n.x_offset);
  	}
        else
@@ -11,7 +11,7 @@ Fix out-of-bounds memcpys (FILNMLEN is 18, sizeof x_fname is 14).
        return;
  
      case C_STAT:
-@@ -323,7 +323,7 @@ _bfd_XXi_swap_aux_out (bfd *  abfd,
+@@ -330,7 +330,7 @@ _bfd_XXi_swap_aux_out (bfd *  abfd,
  	  H_PUT_32 (abfd, in->x_file.x_n.x_offset, ext->x_file.x_n.x_offset);
  	}
        else

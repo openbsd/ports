@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2012/08/25 19:15:44 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.12 2014/03/09 19:49:21 pascal Exp $
 @conflict libbfd-*
 @bin bin/egdb
 include/ansidecl.h
@@ -11,7 +11,6 @@ include/symcat.h
 @info info/annotate.info
 @info info/bfd.info
 @info info/gdb.info
-@info info/gdbint.info
 @info info/stabs.info
 @comment lib/charset.alias
 lib/libbfd.a
@@ -19,6 +18,41 @@ lib/libbfd.la
 lib/libopcodes.a
 lib/libopcodes.la
 @man man/man1/egdb.1
-@comment share/gdb/
-@comment share/gdb/python/
-@comment share/gdb/python/gdb/
+@man man/man1/egdbserver.1
+@man man/man5/egdbinit.5
+share/gdb/
+share/gdb/python/
+share/gdb/python/gdb/
+share/gdb/python/gdb/FrameDecorator.py
+share/gdb/python/gdb/FrameIterator.py
+share/gdb/python/gdb/__init__.py
+share/gdb/python/gdb/command/
+share/gdb/python/gdb/command/__init__.py
+share/gdb/python/gdb/command/bound_registers.py
+share/gdb/python/gdb/command/explore.py
+share/gdb/python/gdb/command/frame_filters.py
+share/gdb/python/gdb/command/pretty_printers.py
+share/gdb/python/gdb/command/prompt.py
+share/gdb/python/gdb/command/type_printers.py
+share/gdb/python/gdb/frames.py
+share/gdb/python/gdb/function/
+share/gdb/python/gdb/function/__init__.py
+share/gdb/python/gdb/function/strfns.py
+share/gdb/python/gdb/printing.py
+share/gdb/python/gdb/prompt.py
+share/gdb/python/gdb/types.py
+share/gdb/syscalls/
+share/gdb/syscalls/amd64-linux.xml
+share/gdb/syscalls/arm-linux.xml
+share/gdb/syscalls/gdb-syscalls.dtd
+share/gdb/syscalls/i386-linux.xml
+share/gdb/syscalls/mips-n32-linux.xml
+share/gdb/syscalls/mips-n64-linux.xml
+share/gdb/syscalls/mips-o32-linux.xml
+share/gdb/syscalls/ppc-linux.xml
+share/gdb/syscalls/ppc64-linux.xml
+share/gdb/syscalls/sparc-linux.xml
+share/gdb/syscalls/sparc64-linux.xml
+share/gdb/system-gdbinit/
+share/gdb/system-gdbinit/elinos.py
+share/gdb/system-gdbinit/wrs-linux.py

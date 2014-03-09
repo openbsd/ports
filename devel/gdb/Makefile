@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2013/11/09 23:19:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2014/03/09 19:49:21 pascal Exp $
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
 
-DISTNAME=	gdb-7.6.1
-REVISION=	0
+DISTNAME=	gdb-7.7
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 
@@ -22,7 +21,7 @@ WANTLIB = c expat kvm m ncurses pthread ${MODPY_WANTLIB} util z
 
 #SEPARATE_BUILD = Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--program-transform-name=s,^,e, \
+CONFIGURE_ARGS=	--program-prefix=e \
 		--disable-nls \
 		--without-lzma \
 	 	--enable-target=all \

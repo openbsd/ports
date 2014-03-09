@@ -1,21 +1,32 @@
-$OpenBSD: patch-gdb_data-directory_Makefile_in,v 1.3 2013/05/04 21:27:11 pascal Exp $
---- gdb/data-directory/Makefile.in.orig	Tue Jan  1 07:32:56 2013
-+++ gdb/data-directory/Makefile.in	Mon Apr 29 20:28:12 2013
-@@ -97,7 +97,7 @@ FLAGS_TO_PASS = \
- 	"RUNTESTFLAGS=$(RUNTESTFLAGS)"
+$OpenBSD: patch-gdb_data-directory_Makefile_in,v 1.4 2014/03/09 19:49:21 pascal Exp $
+--- gdb/data-directory/Makefile.in.orig	Fri Feb  7 18:52:56 2014
++++ gdb/data-directory/Makefile.in	Fri Feb  7 18:54:32 2014
+@@ -121,7 +121,7 @@ stamp-syscalls: Makefile $(SYSCALLS_FILES)
+ 	for file in $$files ; do \
+ 	  f=$(SYSCALLS_SRCDIR)/$$file ; \
+ 	  if test -f $$f ; then \
+-	    $(INSTALL_DATA) $$f ./$(SYSCALLS_DIR) ; \
++	    cp $$f ./$(SYSCALLS_DIR) ; \
+ 	  fi ; \
+ 	done
+ 	touch $@
+@@ -162,8 +162,8 @@ stamp-python: Makefile $(PYTHON_FILES)
+ 	files='$(PYTHON_FILES)' ; \
+ 	for file in $$files ; do \
+ 	  dir=`echo "$$file" | sed 's,/[^/]*$$,,'` ; \
+-	  $(INSTALL_DIR) ./$(PYTHON_DIR)/$$dir ; \
+-	  $(INSTALL_DATA) $(PYTHON_SRCDIR)/$$file ./$(PYTHON_DIR)/$$dir ; \
++	  mkdir -p ./$(PYTHON_DIR)/$$dir ; \
++	  cp $(PYTHON_SRCDIR)/$$file ./$(PYTHON_DIR)/$$dir ; \
+ 	done
+ 	touch $@
  
- .PHONY: all
--all: stamp-syscalls stamp-python
-+all:
- 
- # For portability's sake, we need to handle systems that don't have
- # symbolic links.
-@@ -191,7 +191,7 @@ install: all
- 	@$(MAKE) $(FLAGS_TO_PASS) install-only
- 
- .PHONY: install-only
--install-only: install-syscalls install-python
-+install-only:
- 
- .PHONY: uninstall
- uninstall: uninstall-syscalls uninstall-python
+@@ -201,7 +201,7 @@ stamp-system-gdbinit: Makefile $(SYSTEM_GDBINIT_FILES)
+ 	for file in $$files ; do \
+ 	  f=$(SYSTEM_GDBINIT_SRCDIR)/$$file ; \
+ 	  if test -f $$f ; then \
+-	    $(INSTALL_DATA) $$f ./$(SYSTEM_GDBINIT_DIR) ; \
++	    cp $$f ./$(SYSTEM_GDBINIT_DIR) ; \
+ 	  fi ; \
+ 	done
+ 	touch $@

@@ -1,0 +1,31 @@
+$OpenBSD: patch-gdb_doc_Makefile_in,v 1.1 2014/03/09 19:49:21 pascal Exp $
+--- gdb/doc/Makefile.in.orig	Wed Jan  8 10:23:36 2014
++++ gdb/doc/Makefile.in	Fri Feb  7 19:23:45 2014
+@@ -29,6 +29,7 @@ htmldir = @htmldir@
+ mandir = @mandir@
+ man1dir = $(mandir)/man1
+ man5dir = $(mandir)/man5
++program_transform_name = @program_transform_name@
+ 
+ SHELL = @SHELL@
+ 
+@@ -266,7 +267,8 @@ install-man1: $(MAN1S)
+ 	    continue; \
+ 	  fi; \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  f=`echo $$p | sed -e 's|^.*/||'`; \
++          t='$(program_transform_name)'; \
++	  f=`echo $$p | sed -e 's|^.*/||' | sed -e "$$t"`; \
+ 	  echo " $(INSTALL_DATA) '$$d$$p' '$(DESTDIR)$(man1dir)/$$f'"; \
+ 	  $(INSTALL_DATA) "$$d$$p" "$(DESTDIR)$(man1dir)/$$f"; \
+ 	done
+@@ -275,7 +277,8 @@ install-man5: $(MAN5S)
+ 	test -z "$(man5dir)" || $(mkinstalldirs) "$(DESTDIR)$(man5dir)"
+ 	@list='$(MAN5S)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  f=`echo $$p | sed -e 's|^.*/||'`; \
++          t='$(program_transform_name)'; \
++	  f=`echo $$p | sed -e 's|^.*/||' | sed -e "$$t"`; \
+ 	  echo " $(INSTALL_DATA) '$$d$$p' '$(DESTDIR)$(man5dir)/$$f'"; \
+ 	  $(INSTALL_DATA) "$$d$$p" "$(DESTDIR)$(man5dir)/$$f"; \
+ 	done
