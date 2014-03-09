@@ -1,4 +1,6 @@
-$OpenBSD: patch-source_xps_xps-gradient_c,v 1.1 2014/02/15 22:42:07 sthen Exp $
+$OpenBSD: patch-source_xps_xps-gradient_c,v 1.2 2014/03/09 20:56:30 sthen Exp $
+
+CVE-2014-2013
 
 From 60dabde18d7fe12b19da8b509bdfee9cc886aafc Mon Sep 17 00:00:00 2001
 From: =?utf8?q?Simon=20B=C3=BCnzli?= <zeniko@gmail.com>
