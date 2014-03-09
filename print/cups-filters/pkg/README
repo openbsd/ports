@@ -1,8 +1,19 @@
-$OpenBSD: README,v 1.3 2014/02/08 18:01:00 ajacoutot Exp $
+$OpenBSD: README,v 1.4 2014/03/09 21:45:36 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
+
+Bonjour broadcasts of shared, remote printers
+=============================================
+
+The cups-browsed(8) daemon can be used to browse Bonjour broadcasts of
+remote printers and create/remove local raw queues pointing to these
+printers. This requires the avahi-daemon(8) to be running first. To
+start it at boot time, the following line can be added to
+rc.conf.local(5):
+
+    pkg_scripts="${pkg_scripts} avahi_daemon cups_browsed"
 
 lpd(8) using direct printing with foomatic-rip(1)
 =================================================
@@ -13,20 +24,31 @@ CUPS (nor any spooler) and can thus be used with lpd(8).
 Complete documentation can be found at:
     http://www.linuxfoundation.org/collaborate/workgroups/openprinting/database/nospoolerdocumentation
 
-Configuration
--------------
+Foomatic configuration
+----------------------
 A specific PPD file has to be created for the printer. Refer to the
 documentation that comes with the foomatic-db-engine package to learn
 how to generate PPD files
 (cf. ${LOCALBASE}/share/doc/pkg-readmes/foomatic-db-engine-*).
 
-# mkdir -p /etc/foomatic/direct
-# foomatic-ppdfile -p 'Samsung-ML-2850D' -d 'Postscript' > /etc/foomatic/direct/samsung-ml2850d.ppd
+# mkdir -p ${SYSCONFDIR}/foomatic/direct
+# foomatic-ppdfile -p 'Samsung-ML-2850D' -d 'Postscript' > ${SYSCONFDIR}/foomatic/direct/samsung-ml2850d.ppd
 
-Non-postscript files can be printed after having been pre-processed and
-converted. Several packages can be used for that, a2ps being the most
-complete.
-Here's a sample pre-process filter script:
+Alternatively, you can look under
+    ${LOCALBASE}/share/foomatic/db/source/PPD
+for existing PPD files matching your printer (in which case the PPD file
+can be copied and/or gunzip'd under ${SYSCONFDIR}/foomatic/direct).
+
+Input filter script
+-------------------
+Non-postscript files must be converted before being sent to
+foomatic-rip(1). Several packages can be used for that, a2ps being the
+most complete.
+Note that a2ps(1) requires external helper tools for converting files.
+They can be configured under ${SYSCONFDIR}/a2ps{,-site}.cfg. By default,
+converting images requires the ImageMagick package.
+
+Here's a sample converter script:
 
 ---8<-------------------------------------------------------------------
 #!/bin/sh
@@ -40,28 +62,32 @@ e.g.
 - to print in duplex mode: -o duplex
 - to set the page size to letter: -o pagesize=letter
 
-a2ps(1) requires external helper tools for converting files, they can be
-configured under ${SYSCONFDIR}/a2ps{,-site}.cfg.
-By default, converting images requires the ImageMagick package.
+Default options can be set by editing the PPD file.
 
-To use the pre-process filter script as an input filter for lpd(8), the
-corresponding printcap(5) entry can be used:
+To use the above script as an input filter for lpd(8), see the next
+sections (make sure the script is executable).
 
-Locally connected printer (USB)
--------------------------------
+lpd(8): USB printer printcap(5) example
+---------------------------------------
 lp|samsung|Samsung-ML-2850D:\
 	:lp=/dev/ulpt0:\
-	:if=/path/to/pre-process.sh:\
+	:if=/path/to/script.sh:\
 	:sd=/var/spool/output:\
 	:lf=/var/log/lpd-errs:\
 	:sh:
 
-Network printer
----------------
+lpd(8): network printer printcap(5) example
+-------------------------------------------
 rp|samsung|Samsung-ML-2850D:\
-	:lp=515@1.2.3.4:\
-	:if=/path/to/pre-process.sh:\
+	:lp=9100@1.2.3.4:\
+	:if=/path/to/script.sh:\
 	:sd=/var/spool/output:\
 	:lf=/var/log/lpd-errs:\
 	:sh:
-(where 1.2.3.4 is the printer IP address and 515 the spooler port)
+(where 1.2.3.4 is the printer IP address and 9100 the printer stream port)
+
+foomatic-rip(1) does *not* speak LPD (port 515).
+If the printer does not support raw printing over port 9100, it must be
+setup locally on a print server (see above for an example using USB)
+then accessed over LPD by the clients (there is no need to setup any
+print filter on the clients since it will run on the print server).
