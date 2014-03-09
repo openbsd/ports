@@ -1,0 +1,43 @@
+$OpenBSD: patch-lenses_sshd_aug,v 1.1 2014/03/09 19:47:18 jasper Exp $
+
+From 1b299d58bbebd6551412bd721838e9e582a81a07 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Rapha=C3=ABl=20Pinson?= <raphael.pinson@camptocamp.com>
+Date: Fri, 21 Feb 2014 08:09:06 +0100
+Subject: [PATCH] Sshd: Allow all types of issues in Match groups (GH issue #75)
+
+--- lenses/sshd.aug.orig	Mon Jan 27 11:36:08 2014
++++ lenses/sshd.aug	Sat Feb 22 13:30:39 2014
+@@ -114,6 +114,11 @@ module Sshd =
+ 
+    let kexalgorithms = list /KexAlgorithms/i "KexAlgorithms"
+ 
++   let entry = accept_env | allow_groups | allow_users
++             | deny_groups | subsystem | deny_users
++             | macs | ciphers | kexalgorithms
++             | other_entry
++
+    let condition_entry =
+     let value = store  /[^ \t\n]+/ in
+     [ sep . key /[A-Za-z0-9]+/ . sep . value ]
+@@ -121,18 +126,15 @@ module Sshd =
+    let match_cond =
+      [ label "Condition" . condition_entry+ . eol ]
+ 
+-   let match_entry =
+-     ( (indent . comment_noindent) | empty | (indent . other_entry) )
++   let match_entry = indent . (entry | comment_noindent)
++                   | empty 
+ 
+    let match =
+      [ key /Match/i . match_cond
+         . [ label "Settings" .  match_entry+ ]
+      ]
+ 
+-  let lns = (comment | empty | accept_env | allow_groups | allow_users
+-          | deny_groups | subsystem | deny_users
+-          | macs | ciphers | kexalgorithms
+-          | other_entry ) * . match*
++  let lns = (entry | comment | empty)* . match* 
+ 
+   let xfm = transform lns (incl "/etc/ssh/sshd_config")
+ 
