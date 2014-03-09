@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.828 2014/02/08 15:13:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.829 2014/03/09 20:18:50 jasper Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -78,7 +78,6 @@
      SUBDIR += echoping
      SUBDIR += ejabberd
      SUBDIR += ekg
-     SUBDIR += emesene
      SUBDIR += enet
      SUBDIR += epic4
      SUBDIR += erl-amqp_client
