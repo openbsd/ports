@@ -1,15 +1,23 @@
-$OpenBSD: patch-transmitters_multicast_fs-multicast-transmitter_c,v 1.2 2012/09/28 14:26:11 jasper Exp $
---- transmitters/multicast/fs-multicast-transmitter.c.orig	Tue Sep 25 22:23:53 2012
-+++ transmitters/multicast/fs-multicast-transmitter.c	Fri Sep 28 14:27:29 2012
-@@ -55,7 +55,10 @@
+$OpenBSD: patch-transmitters_multicast_fs-multicast-transmitter_c,v 1.3 2014/03/09 19:53:21 jasper Exp $
+
+From c217975266aa3ad379b613a9b154f757432413df Mon Sep 17 00:00:00 2001
+From: Olivier Crête <olivier.crete@collabora.com>
+Date: Tue, 25 Jun 2013 14:38:24 +0000
+Subject: multicast: Remove not required non-standard header
+
+From 8b99315a911e82aaaac31566c33d0a2d7f3483b1 Mon Sep 17 00:00:00 2001
+From: Ryan Lortie <desrt@desrt.ca>
+Date: Fri, 14 Feb 2014 03:03:09 +0000
+Subject: transmitters: include <netinet/in.h> for IPPROTO_*
+
+--- transmitters/multicast/fs-multicast-transmitter.c.orig	Mon Mar  3 15:03:19 2014
++++ transmitters/multicast/fs-multicast-transmitter.c	Mon Mar  3 15:07:24 2014
+@@ -54,7 +54,7 @@
+ # define close closesocket
  #else /*G_OS_WIN32*/
- # include <netdb.h>
  # include <sys/socket.h>
 -# include <netinet/ip.h>
 +# include <netinet/in.h>
-+# ifndef __OpenBSD__
-+#  include <netinet/ip.h>
-+# endif /* !__OpenBSD__ */
  # include <arpa/inet.h>
  #endif /*G_OS_WIN32*/
  

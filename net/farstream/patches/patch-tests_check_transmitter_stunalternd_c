@@ -1,7 +1,11 @@
-$OpenBSD: patch-tests_check_transmitter_stunalternd_c,v 1.1.1.1 2012/04/05 16:02:30 jasper Exp $
---- tests/check/transmitter/stunalternd.c.orig	Wed Apr  4 22:58:18 2012
-+++ tests/check/transmitter/stunalternd.c	Wed Apr  4 22:58:33 2012
-@@ -38,6 +38,7 @@
+$OpenBSD: patch-tests_check_transmitter_stunalternd_c,v 1.2 2014/03/09 19:53:21 jasper Exp $
+
+Include <sys/uio.h> for struct iovec.
+https://bugs.freedesktop.org/show_bug.cgi?id=75716
+
+--- tests/check/transmitter/stunalternd.c.orig	Thu Apr  4 20:28:45 2013
++++ tests/check/transmitter/stunalternd.c	Mon Mar  3 15:11:33 2014
+@@ -37,6 +37,7 @@
  #include <getopt.h>
  #include <errno.h>
  #include <limits.h>

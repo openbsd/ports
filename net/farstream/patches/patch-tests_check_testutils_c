@@ -1,11 +1,15 @@
-$OpenBSD: patch-tests_check_testutils_c,v 1.3 2013/03/26 13:56:48 jasper Exp $
---- tests/check/testutils.c.orig	Tue Mar 26 14:50:53 2013
-+++ tests/check/testutils.c	Tue Mar 26 14:54:06 2013
-@@ -28,6 +28,7 @@
- 
- #ifdef HAVE_GETIFADDRS
+$OpenBSD: patch-tests_check_testutils_c,v 1.4 2014/03/09 19:53:21 jasper Exp $
+
+Include <netinet/in.h> for struct sin_addr,
+https://bugs.freedesktop.org/show_bug.cgi?id=75714
+
+--- tests/check/testutils.c.orig	Mon Mar  3 15:36:28 2014
++++ tests/check/testutils.c	Mon Mar  3 15:38:37 2014
+@@ -30,6 +30,7 @@
   #include <sys/socket.h>
-+ #include <netinet/in.h>
   #include <ifaddrs.h>
   #include <net/if.h>
++ #include <netinet/in.h>
   #include <arpa/inet.h>
+ #endif
+ 
