@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/08/06 18:14:11 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/03/09 20:44:06 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.document
@@ -146,6 +146,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/mocks/passing_argument_matchers_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/mocks/precise_counts_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/mocks/record_messages_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/mocks/serialization_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/rspec/mocks/space_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/mocks/stash_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/mocks/stub_chain_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/rspec/mocks/stub_implementation_spec.rb
