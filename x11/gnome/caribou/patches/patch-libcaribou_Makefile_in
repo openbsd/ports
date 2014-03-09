@@ -1,0 +1,18 @@
+$OpenBSD: patch-libcaribou_Makefile_in,v 1.1 2014/03/09 21:43:03 ajacoutot Exp $
+
+From 42e6418c0e0a308d02ee6d372c95627153ae6c64 Mon Sep 17 00:00:00 2001
+From: Daiki Ueno <ueno@unixuser.org>
+Date: Fri, 17 Jan 2014 03:07:47 +0000
+Subject: build: run fix_gir.py with $(PYTHON)
+
+--- libcaribou/Makefile.in.orig	Mon Mar  3 11:24:10 2014
++++ libcaribou/Makefile.in	Mon Mar  3 11:24:48 2014
+@@ -1184,7 +1184,7 @@ uninstall-am: uninstall-girDATA uninstall-libLTLIBRARI
+ 
+ 
+ Caribou-1.0.gir: _Caribou-1.0.gir
+-	$(top_srcdir)/tools/fix_gir.py $< > $@
++	$(AM_V_GEN)$(PYTHON) -B $(top_srcdir)/tools/fix_gir.py $< > $@
+ 
+ Caribou-1.0.typelib: Caribou-1.0.gir
+ 	@INTROSPECTION_COMPILER@ --shared-library=libcaribou.so.0 -o $@ $^

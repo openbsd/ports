@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2013/11/18 18:06:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2014/03/09 21:43:03 ajacoutot Exp $
 
 COMMENT=	input assistive technology
 
 GNOME_PROJECT=	caribou
 GNOME_VERSION=	0.4.13
+REVISION=	0
 
 SHARED_LIBS +=  caribou                   0.0 # 0.0
 
@@ -38,9 +39,6 @@ LIB_DEPENDS=	devel/libgee \
 		x11/gtk+3
 
 LIBTOOL_FLAGS=	--tag=disable-static
-
-MODPY_ADJ_FILES=tools/fix_gir.py \
-		tools/make_schema.py
 
 CONFIGURE_ARGS=	--disable-static
 
