@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2013/12/08 10:43:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2014/03/09 21:52:16 ajacoutot Exp $
 
 COMMENT=		people aggregation library
 
@@ -41,11 +41,11 @@ TEST_DEPENDS=	${FULLPKGNAME}:${BASE_PKGPATH}
 
 MODGNOME_TOOLS= 	gi vala
 
-# libofono isn't ported yet
+# requires libofono (not ported)
 CONFIGURE_ARGS += 	--disable-ofono-backend
 
 # no Bluez stack on OpenBSD
-CONFIGURE_ARGS +=	--disable-bluez
+CONFIGURE_ARGS +=	--disable-bluez-backend
 
 # https://git.gnome.org/browse/folks/commit/Makefile.am?id=8ebe13c457660de380521874a006425083151741
 CONFIGURE_ARGS += --disable-fatal-warnings
