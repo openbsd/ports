@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1257 2014/03/09 20:03:27 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1258 2014/03/09 21:40:57 ajacoutot Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -382,9 +382,15 @@ BUILD_DEPENDS += devel/libtool
 LIBTOOL ?= /usr/bin/libtool
 MAKE_ENV += PORTSDIR="${PORTSDIR}"
 .  endif
-CONFIGURE_ENV += LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
-MAKE_ENV += LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
-MAKE_FLAGS += LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
+# Intermediate variable because some tools like python to not properly
+# parse variables with trailing spaces and add a bogus "" argument.
+_LIBTOOL = ${LIBTOOL}
+.if !empty(LIBTOOL_FLAGS)
+_LIBTOOL += "${LIBTOOL_FLAGS}"
+.endif
+CONFIGURE_ENV += LIBTOOL="${_LIBTOOL}" ${_lt_libs}
+MAKE_ENV += LIBTOOL="${_LIBTOOL}" ${_lt_libs}
+MAKE_FLAGS += LIBTOOL="${_LIBTOOL}" ${_lt_libs}
 .endif
 MAKE_FLAGS += SHARED_LIBS_LOG=${WRKBUILD}/shared_libs.log
 USE_CCACHE ?= No
