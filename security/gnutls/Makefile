@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.94 2014/03/04 15:09:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.95 2014/03/09 22:08:50 ajacoutot Exp $
 
 COMMENT=	GNU Transport Layer Security library
 
-V=		3.2.10
+V=		3.2.12.1
 DISTNAME=	gnutls-${V}
 EXTRACT_SUFX=	.tar.xz
-REVISION=	1
 
 CATEGORIES=	security
 
-SHARED_LIBS +=  gnutls               41.3     # 57.1
+SHARED_LIBS +=  gnutls               41.4     # 58.3
 SHARED_LIBS +=  gnutlsxx             29.1     # 29.0
 SHARED_LIBS +=  gnutls-xssl          0.0      # 0.0
 SHARED_LIBS +=  gnutls-openssl       27.2     # 27.2
@@ -24,7 +23,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c ffi gmp hogweed m nettle p11-kit pthread stdc++ tasn1
 WANTLIB += z
 
-MASTER_SITES=	ftp://ftp.gnutls.org/gcrypt/gnutls/v${V:R}/
+# XXX temporary
+#MASTER_SITES=	ftp://ftp.gnutls.org/gcrypt/gnutls/v${V:R}/
+MASTER_SITES=	ftp://ftp.gnutls.org/gcrypt/gnutls/v3.2/
+WRKDIST=	${WRKDIR}/gnutls-3.2.12
 
 MODULES=	devel/gettext
 
@@ -50,11 +52,11 @@ CONFIGURE_ARGS += --disable-libdane
 # for tpm(4): http://bsssd.sourceforge.net/
 CONFIGURE_ARGS += --without-tpm
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-
 # prevents dependency on devel/autogen
 CONFIGURE_ARGS+=--enable-local-libopts
+
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 # If one of these tools is found at configure stage, it might be used,
 # no matter whether we use --disable-gtk-doc or not.
