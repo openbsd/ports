@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/09/26 06:27:49 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2014/03/09 22:11:44 ajacoutot Exp $
 bin/g-ir-annotation-tool
 @bin bin/g-ir-compiler
+bin/g-ir-doc-tool
 @bin bin/g-ir-generate
 bin/g-ir-scanner
 include/gobject-introspection-1.0/
