@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/07/11 18:57:39 phessler Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/03/09 21:01:55 sthen Exp $
 @bin bin/gct-tool
 @bin bin/gsa
 bin/gwenhywfar-config
@@ -8,6 +8,7 @@ bin/gwenhywfar-config
 @bin bin/xmlmerge
 include/gwenhywfar4/
 include/gwenhywfar4/gwen-gui-cpp/
+include/gwenhywfar4/gwen-gui-cpp/api.h
 include/gwenhywfar4/gwen-gui-cpp/cppdialog.hpp
 include/gwenhywfar4/gwen-gui-cpp/cppgui.hpp
 include/gwenhywfar4/gwen-gui-cpp/cppwidget.hpp
@@ -16,6 +17,7 @@ include/gwenhywfar4/gwen-gui-gtk2/gtk2_gui.h
 include/gwenhywfar4/gwenhywfar/
 include/gwenhywfar4/gwenhywfar/args.h
 include/gwenhywfar4/gwenhywfar/base64.h
+include/gwenhywfar4/gwenhywfar/bindata.h
 include/gwenhywfar4/gwenhywfar/buffer.h
 include/gwenhywfar4/gwenhywfar/cgui.h
 include/gwenhywfar4/gwenhywfar/configmgr.h
@@ -85,14 +87,17 @@ include/gwenhywfar4/gwenhywfar/memory.h
 include/gwenhywfar4/gwenhywfar/misc.h
 include/gwenhywfar4/gwenhywfar/misc2.h
 include/gwenhywfar4/gwenhywfar/msgengine.h
+include/gwenhywfar4/gwenhywfar/multicache.h
 include/gwenhywfar4/gwenhywfar/mutex.h
 include/gwenhywfar4/gwenhywfar/o_image_be.h
 include/gwenhywfar4/gwenhywfar/padd.h
 include/gwenhywfar4/gwenhywfar/paddalgo.h
+include/gwenhywfar4/gwenhywfar/passwdstore.h
 include/gwenhywfar4/gwenhywfar/path.h
 include/gwenhywfar4/gwenhywfar/pathmanager.h
 include/gwenhywfar4/gwenhywfar/plugin.h
 include/gwenhywfar4/gwenhywfar/plugindescr.h
+include/gwenhywfar4/gwenhywfar/pointerlist.h
 include/gwenhywfar4/gwenhywfar/process.h
 include/gwenhywfar4/gwenhywfar/refptr.h
 include/gwenhywfar4/gwenhywfar/ringbuffer.h
@@ -145,6 +150,8 @@ lib/gwenhywfar/plugins/60/dbio/olddb.xml
 lib/gwenhywfar/plugins/60/dbio/xmldb.la
 lib/gwenhywfar/plugins/60/dbio/xmldb.so
 lib/gwenhywfar/plugins/60/dbio/xmldb.xml
+lib/libgwengui-cpp.la
+@lib lib/libgwengui-cpp.so.${LIBgwengui-cpp_VERSION}
 lib/libgwengui-gtk2.la
 @lib lib/libgwengui-gtk2.so.${LIBgwengui-gtk2_VERSION}
 lib/libgwenhywfar.la
@@ -165,9 +172,14 @@ share/gwenhywfar/typemaker2/c/char.tm2
 share/gwenhywfar/typemaker2/c/char_array.tm2
 share/gwenhywfar/typemaker2/c/char_ptr.tm2
 share/gwenhywfar/typemaker2/c/double.tm2
+share/gwenhywfar/typemaker2/c/double_array.tm2
+share/gwenhywfar/typemaker2/c/gwen_bindata.tm2
 share/gwenhywfar/typemaker2/c/gwen_buffer.tm2
 share/gwenhywfar/typemaker2/c/gwen_date.tm2
 share/gwenhywfar/typemaker2/c/gwen_idlist64.tm2
+share/gwenhywfar/typemaker2/c/gwen_multicache.tm2
+share/gwenhywfar/typemaker2/c/gwen_multicache_type.tm2
+share/gwenhywfar/typemaker2/c/gwen_stringlist2.tm2
 share/gwenhywfar/typemaker2/c/gwen_time.tm2
 share/gwenhywfar/typemaker2/c/idmap_base.tm2
 share/gwenhywfar/typemaker2/c/int.tm2
@@ -177,4 +189,7 @@ share/gwenhywfar/typemaker2/c/list2_base.tm2
 share/gwenhywfar/typemaker2/c/struct_base.tm2
 share/gwenhywfar/typemaker2/c/tree_base.tm2
 share/gwenhywfar/typemaker2/c/uint32_t.tm2
+share/gwenhywfar/typemaker2/c/uint32_t_array.tm2
 share/gwenhywfar/typemaker2/c/uint64_t.tm2
+share/gwenhywfar/typemaker2/c/uint8_t.tm2
+share/gwenhywfar/typemaker2/c/uint8_t_array.tm2
