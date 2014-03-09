@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.86 2014/02/04 22:22:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2014/03/09 22:25:36 ajacoutot Exp $
 
-# XXX when OPENBSD_5_7 is branched
+# XXX when OPENBSD_5_6 is branched
 # drop removal of ${SYSCONFDIR}/pango/pango.modules
 
 SHARED_ONLY=		Yes
