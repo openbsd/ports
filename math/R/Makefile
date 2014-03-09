@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.58 2014/01/20 17:09:52 edd Exp $
+# $OpenBSD: Makefile,v 1.59 2014/03/09 23:01:41 espie Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	powerful math/statistics/graphics language
 DISTNAME=	R-2.15.3
-REVISION= 	0
+REVISION= 	1
 
 SHARED_LIBS=	R	1.1  \
 		Rlapack	31.0 \
@@ -54,6 +54,7 @@ LIB_DEPENDS=	${MODFORTRAN_LIB_DEPENDS} \
 		graphics/jpeg \
 		devel/glib2 \
 		devel/pango \
+		devel/readline \
 		graphics/png \
 		graphics/tiff \
 		textproc/icu4c
@@ -99,6 +100,9 @@ FAKE_FLAGS=	PREFIX=${PREFIX} \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 
 SEPARATE_BUILD=	Yes
+
+USE_GMAKE=	Yes
+
 
 TEXMFLOCAL = ${PREFIX}/share/texmf-local
 
