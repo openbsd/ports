@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2013/11/29 08:52:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.42 2014/03/09 22:10:25 ajacoutot Exp $
 %%SHARED%%
 bin/gnumeric
 @bin bin/gnumeric-${GNOME_VERSION}
@@ -92,6 +92,7 @@ include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/search.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/selection.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/session.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/sf-bessel.h
+include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/sf-dpq.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/sf-gamma.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/sf-trig.h
 include/libspreadsheet-${GNUMERIC_API_VERSION}/spreadsheet/sheet-autofill.h
@@ -803,9 +804,9 @@ share/gnumeric/${GNOME_VERSION}/templates/purchase_order.gnumeric
 share/icons/hicolor/16x16/apps/gnumeric.png
 share/icons/hicolor/22x22/apps/gnumeric.png
 share/icons/hicolor/24x24/apps/gnumeric.png
+share/icons/hicolor/256x256/apps/gnumeric.png
 share/icons/hicolor/32x32/apps/gnumeric.png
 share/icons/hicolor/48x48/apps/gnumeric.png
-share/icons/hicolor/scalable/apps/gnumeric.svg
 share/locale/am/LC_MESSAGES/gnumeric-${GNOME_VERSION}-functions.mo
 share/locale/am/LC_MESSAGES/gnumeric-${GNOME_VERSION}.mo
 share/locale/ar/LC_MESSAGES/gnumeric-${GNOME_VERSION}-functions.mo

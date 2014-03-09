@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.92 2013/11/29 08:52:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.93 2014/03/09 22:10:25 ajacoutot Exp $
 
 GOFFICE_API_VERSION=	0.10
-GOFFICE_VERSION=	0.10.9
+GOFFICE_VERSION=	0.10.12
 
 COMMENT=		spreadsheet application for GNOME
 
 GNOME_PROJECT=		gnumeric
-GNOME_VERSION=		1.12.9
+GNOME_VERSION=		1.12.12
 
 GNUMERIC_API_VERSION=	${GNOME_VERSION:R}
 SUBST_VARS=		GNOME_VERSION GOFFICE_GNOME_VERSION GOFFICE_API_VERSION GNUMERIC_API_VERSION
@@ -24,9 +24,9 @@ WANTLIB += avahi-common bz2 c cairo cairo-gobject croco-0.6 dbus-1
 WANTLIB += expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 goffice-0.10
 WANTLIB += graphite2 gs gsf-1 gthread-2.0 gtk-3 harfbuzz jpeg
-WANTLIB += lasem-0.4 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += perl pixman-1 png pthread pthread-stubs rsvg-2 spectre
-WANTLIB += util xcb xcb-render xcb-shm xml2 z
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre perl pixman-1
+WANTLIB += png pthread pthread-stubs rsvg-2 spectre util xcb xcb-render
+WANTLIB += xcb-shm xml2 xslt z
 
 MODULES=		devel/dconf \
 			devel/gettext \

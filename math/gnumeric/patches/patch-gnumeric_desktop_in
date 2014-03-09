@@ -1,9 +1,0 @@
-$OpenBSD: patch-gnumeric_desktop_in,v 1.2 2013/08/20 07:31:16 ajacoutot Exp $
---- gnumeric.desktop.in.orig	Fri Jul 26 01:33:41 2013
-+++ gnumeric.desktop.in	Tue Aug 20 09:03:19 2013
-@@ -15,4 +15,4 @@ X-GNOME-Bugzilla-Product=Gnumeric
- X-GNOME-Bugzilla-Version=BUGZILLAVERSION
- X-GNOME-Bugzilla-Component=General
- X-GNOME-DocPath=gnumeric
--MimeType=application/x-gnumeric;application/vnd.ms-excel;application/excel;application/msexcel;application/x-excel;application/x-ms-excel;application/x-msexcel;application/x-xls;application/xls;application/x-dos_ms_excel;zz-application/zz-winassoc-xls;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;application/tab-separated-values;text/csv;text/x-csv;text/spreadsheet;text/tab-separated-values;application/vnd.lotus-1-2-3;application/x-123;application/vnd.sun.xml.calc;application/vnd.sun.xml.calc.template;application/x-applix-spreadsheet;application/x-mps;application/x-oleo;application/x-planperfect;application/x-quattropro;application/x-sc;application/x-sylk;application/x-dbase;application/x-dbf;application/x-xbase;application/vnd.oasis.opendocument.spreadsheet;
-+MimeType=application/x-gnumeric;application/vnd.ms-excel;application/excel;application/msexcel;application/x-excel;application/x-ms-excel;application/x-msexcel;application/x-xls;application/xls;application/x-dos_ms_excel;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;application/tab-separated-values;text/csv;text/x-csv;text/spreadsheet;text/tab-separated-values;application/vnd.lotus-1-2-3;application/x-123;application/vnd.sun.xml.calc;application/vnd.sun.xml.calc.template;application/x-applix-spreadsheet;application/x-mps;application/x-oleo;application/x-planperfect;application/x-quattropro;application/x-sc;application/x-sylk;application/x-dbase;application/x-dbf;application/x-xbase;
