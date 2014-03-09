@@ -1,15 +1,10 @@
-@comment $OpenBSD: PLIST-en,v 1.3 2014/03/09 20:51:26 sthen Exp $
-@option no-default-conflict
-@conflict asterisk-core-sounds-en-*-${MODAS_CODEC}
-@conflict asterisk-native-sounds-*
-@conflict asterisk-<1.8.16.0p0
-@pkgpath telephony/asterisk-native-sounds
+@comment $OpenBSD: PLIST-en_GB,v 1.1 2014/03/09 20:51:26 sthen Exp $
 share/asterisk/
 share/asterisk/sounds/
 ${MODAS_INST}/
-${MODAS_INST}/CHANGES-asterisk-core-en-${MODAS_VER}-${MODAS_CODEC}
-${MODAS_INST}/CREDITS-asterisk-core-en-${MODAS_VER}-${MODAS_CODEC}
-${MODAS_INST}/LICENSE-asterisk-core-en-${MODAS_VER}-${MODAS_CODEC}
+${MODAS_INST}/CHANGES-asterisk-core-en_GB-${MODAS_VER}-${MODAS_CODEC}
+${MODAS_INST}/CREDITS-asterisk-core-en_GB-${MODAS_VER}-${MODAS_CODEC}
+${MODAS_INST}/LICENSE-asterisk-core-en_GB-${MODAS_VER}-${MODAS_CODEC}
 ${MODAS_INST}/agent-alreadyon.${MODAS_CODEC}
 ${MODAS_INST}/agent-incorrect.${MODAS_CODEC}
 ${MODAS_INST}/agent-loggedoff.${MODAS_CODEC}
@@ -106,7 +101,7 @@ ${MODAS_INST}/confbridge-rest-talk-vol-out.${MODAS_CODEC}
 ${MODAS_INST}/confbridge-there-are.${MODAS_CODEC}
 ${MODAS_INST}/confbridge-unlocked.${MODAS_CODEC}
 ${MODAS_INST}/confbridge-unmuted.${MODAS_CODEC}
-${MODAS_INST}/core-sounds-en.txt-${MODAS_CODEC}
+${MODAS_INST}/core-sounds-en_GB.txt-${MODAS_CODEC}
 ${MODAS_INST}/demo-abouttotry.${MODAS_CODEC}
 ${MODAS_INST}/demo-congrats.${MODAS_CODEC}
 ${MODAS_INST}/demo-echodone.${MODAS_CODEC}

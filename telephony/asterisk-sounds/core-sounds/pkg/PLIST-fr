@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-fr,v 1.2 2013/05/16 21:53:32 sthen Exp $
+@comment $OpenBSD: PLIST-fr,v 1.3 2014/03/09 20:51:26 sthen Exp $
 @option no-default-conflict
 @conflict asterisk-core-sounds-fr-*-${MODAS_CODEC}
 share/asterisk/
@@ -308,6 +308,7 @@ ${MODAS_INST}/letters/x.${MODAS_CODEC}
 ${MODAS_INST}/letters/y.${MODAS_CODEC}
 ${MODAS_INST}/letters/z.${MODAS_CODEC}
 ${MODAS_INST}/letters/zed.${MODAS_CODEC}
+${MODAS_INST}/lowercase.${MODAS_CODEC}
 ${MODAS_INST}/minutes.${MODAS_CODEC}
 ${MODAS_INST}/pbx-invalid.${MODAS_CODEC}
 ${MODAS_INST}/pbx-invalidpark.${MODAS_CODEC}
@@ -398,6 +399,7 @@ ${MODAS_INST}/tt-monkeys.${MODAS_CODEC}
 ${MODAS_INST}/tt-monkeysintro.${MODAS_CODEC}
 ${MODAS_INST}/tt-somethingwrong.${MODAS_CODEC}
 ${MODAS_INST}/tt-weasels.${MODAS_CODEC}
+${MODAS_INST}/uppercase.${MODAS_CODEC}
 ${MODAS_INST}/vm-Cust1.${MODAS_CODEC}
 ${MODAS_INST}/vm-Cust2.${MODAS_CODEC}
 ${MODAS_INST}/vm-Cust3.${MODAS_CODEC}
@@ -447,6 +449,7 @@ ${MODAS_INST}/vm-message.${MODAS_CODEC}
 ${MODAS_INST}/vm-messages.${MODAS_CODEC}
 ${MODAS_INST}/vm-minutes.${MODAS_CODEC}
 ${MODAS_INST}/vm-mismatch.${MODAS_CODEC}
+${MODAS_INST}/vm-msgforwarded.${MODAS_CODEC}
 ${MODAS_INST}/vm-msginstruct.${MODAS_CODEC}
 ${MODAS_INST}/vm-msgsaved.${MODAS_CODEC}
 ${MODAS_INST}/vm-newpassword.${MODAS_CODEC}

@@ -1,15 +1,16 @@
-@comment $OpenBSD: PLIST-fr,v 1.2 2013/05/16 21:53:32 sthen Exp $
+@comment $OpenBSD: PLIST-fr,v 1.3 2014/03/09 20:51:26 sthen Exp $
 @option no-default-conflict
 @conflict asterisk-extra-fr-*-${MODAS_CODEC}
 share/asterisk/
 share/asterisk/sounds/
+@comment ${MODAS_INST}/CHANGES-asterisk-extra-fr-1.4.txt
+@comment ${MODAS_INST}/MISSING.txt
 ${MODAS_INST}/
 ${MODAS_INST}/1-for-am-2-for-pm.${MODAS_CODEC}
 ${MODAS_INST}/1-yes-2-no.${MODAS_CODEC}
 ${MODAS_INST}/CHANGES-asterisk-extra-fr-${MODAS_VER}-${MODAS_CODEC}
-@comment ${MODAS_INST}/CHANGES-asterisk-extra-fr-1.4.txt
-@comment ${MODAS_INST}/CREDITS-core-extra-fr.txt
-@comment ${MODAS_INST}/MISSING.txt
+${MODAS_INST}/CREDITS-asterisk-extra-fr-${MODAS_VER}-${MODAS_CODEC}
+${MODAS_INST}/LICENSE-asterisk-extra-fr-${MODAS_VER}-${MODAS_CODEC}
 ${MODAS_INST}/T-changed-to.${MODAS_CODEC}
 ${MODAS_INST}/T-is-not-available.${MODAS_CODEC}
 ${MODAS_INST}/T-to-disable-ancmnt.${MODAS_CODEC}
@@ -52,7 +53,6 @@ ${MODAS_INST}/all-reps-busy.${MODAS_CODEC}
 ${MODAS_INST}/all-your-base.${MODAS_CODEC}
 ${MODAS_INST}/altitude.${MODAS_CODEC}
 ${MODAS_INST}/ampersand.${MODAS_CODEC}
-${MODAS_INST}/an-error-has-occured.${MODAS_CODEC}
 ${MODAS_INST}/an-error-has-occurred.${MODAS_CODEC}
 ${MODAS_INST}/and-area-code.${MODAS_CODEC}
 ${MODAS_INST}/and-or.${MODAS_CODEC}
