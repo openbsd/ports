@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2013/10/08 09:19:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2014/03/09 22:09:36 ajacoutot Exp $
 include/libgoffice-${GOFFICE_API_VERSION}/
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/app/
@@ -118,6 +118,7 @@ include/libgoffice-${GOFFICE_API_VERSION}/goffice/gtk/go-image-sel.h
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/gtk/go-line-selector.h
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/gtk/go-locale-sel.h
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/gtk/go-marker-selector.h
+include/libgoffice-${GOFFICE_API_VERSION}/goffice/gtk/go-math-editor.h
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/gtk/go-optionmenu.h
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/gtk/go-palette.h
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/gtk/go-pattern-selector.h
@@ -157,6 +158,7 @@ include/libgoffice-${GOFFICE_API_VERSION}/goffice/utils/go-libxml-extras.h
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/utils/go-line.h
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/utils/go-locale.h
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/utils/go-marker.h
+include/libgoffice-${GOFFICE_API_VERSION}/goffice/utils/go-mml-to-itex.h
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/utils/go-pango-extras.h
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/utils/go-path.h
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/utils/go-pattern.h
