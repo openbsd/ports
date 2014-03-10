@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.149 2013/12/12 19:58:39 landry Exp $
+# $OpenBSD: Makefile,v 1.150 2014/03/10 20:44:12 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 COMMENT-enigmail =	Mozilla Seamonkey GnuPG extension
 
-MOZILLA_VERSION =	2.23
+MOZILLA_VERSION =	2.24
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
 
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-2.8beta1
+PKGNAME-lightning =	lightning-seamonkey-2.9beta1
 ENIG_V =		1.6
 PKGNAME-enigmail =	enigmail-seamonkey-${ENIG_V}
 EPOCH-lightning =	0
 EPOCH-enigmail =	0
-REVISION-enigmail =	0
+REVISION-enigmail =	1
 
 HOMEPAGE =	http://www.seamonkey-project.org/
 #MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/

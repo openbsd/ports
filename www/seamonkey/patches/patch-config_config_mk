@@ -1,9 +1,9 @@
-$OpenBSD: patch-config_config_mk,v 1.1 2013/12/12 19:58:39 landry Exp $
+$OpenBSD: patch-config_config_mk,v 1.2 2014/03/10 20:44:12 landry Exp $
 Fix fallout from http://hg.mozilla.org/releases/comm-release/rev/a6ab55f00e21
 XPIDL_LINK being undefined breaks enigmail build
---- config/config.mk.orig	Tue Dec 10 10:22:36 2013
-+++ config/config.mk	Tue Dec 10 10:22:57 2013
-@@ -325,6 +325,7 @@ MY_RULES	:= $(DEPTH)/config/myrules.mk
+--- config/config.mk.orig	Tue Feb  4 08:00:57 2014
++++ config/config.mk	Wed Feb  5 21:46:54 2014
+@@ -404,6 +404,7 @@ MY_RULES	:= $(DEPTH)/config/myrules.mk
  # Default command macros; can be overridden in <arch>.mk.
  #
  CCC		= $(CXX)
