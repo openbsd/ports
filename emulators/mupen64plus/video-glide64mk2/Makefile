@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/09/05 03:32:36 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2014/03/10 20:27:25 landry Exp $
 
 COMMENT =		n64 emulator video plugin
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
+REVISION=0
 
 MODULES =		gcc4
 MODGCC4_LANGS =		c c++

@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/12/19 16:45:32 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2014/03/10 20:27:25 landry Exp $
 
 COMMENT =	Midnight Commander like file manager for X
 DISTNAME =	worker-3.2.1
+REVISION =	0
 CATEGORIES =	x11
 
 HOMEPAGE =	http://www.boomerangsworld.de/

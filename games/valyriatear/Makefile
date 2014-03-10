@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2013/12/12 07:53:03 brad Exp $
+# $OpenBSD: Makefile,v 1.6 2014/03/10 20:27:25 landry Exp $
 
 V =		0.6.0
 COMMENT =	free J-RPG game
 DISTNAME =	ValyriaTear-${V}
 PKGNAME =	valyriatear-${V}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	games x11
 
 HOMEPAGE =	http://valyriatear.blogspot.com/

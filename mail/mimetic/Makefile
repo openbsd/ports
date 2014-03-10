@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/06/08 20:22:57 jturner Exp $
+# $OpenBSD: Makefile,v 1.4 2014/03/10 20:27:25 landry Exp $
 
 COMMENT =		C++ MIME library
 
 DISTNAME =		mimetic-0.9.7
-REVISION =		1
+REVISION =		2
 CATEGORIES =		mail devel
 
 SHARED_LIBS =		mimetic	1.0 #0.0

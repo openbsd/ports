@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/01/17 19:46:21 juanfra Exp $
+# $OpenBSD: Makefile,v 1.10 2014/03/10 20:27:25 landry Exp $
 
 SHARED_ONLY =		Yes
 # Racket only supports i386 and amd64 on OpenBSD
@@ -10,7 +10,7 @@ ONLY_FOR_ARCHS =	i386 amd64
 COMMENT =		descendant of scheme with IDE and teaching resources
 
 V =			5.3.6
-REVISION =		4
+REVISION =		5
 PKGNAME =		racket-$V
 # The project uses racket-* for stable and plt-* for development releases
 DISTNAME =		racket-$V-src-unix

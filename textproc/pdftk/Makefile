@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2013/10/23 08:25:56 bentley Exp $
+# $OpenBSD: Makefile,v 1.9 2014/03/10 20:27:25 landry Exp $
 
 COMMENT=	pdf swiss army knife
 VERSION=	2.02
+REVISION=	0
 DISTNAME=	pdftk-$(VERSION)
 EXTRACT_SUFX=	-src.zip
 CATEGORIES=	textproc
