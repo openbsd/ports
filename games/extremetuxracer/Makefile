@@ -1,46 +1,38 @@
-# $OpenBSD: Makefile,v 1.5 2013/06/03 02:46:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2014/03/10 20:28:47 pascal Exp $
 
 COMMENT =		downhill racing game
 
-DISTNAME =		extremetuxracer-0.4
-REVISION =		1
+V =			0.6.0
+DISTNAME =		etr-$V
+PKGNAME =		extremetuxracer-$V
 
 CATEGORIES =		games
 
-HOMEPAGE =		http://extremetuxracer.com/
+HOMEPAGE =		http://sourceforge.net/projects/extremetuxracer/
 
 MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB = GL GLU ICE SDL SDL_mixer SM X11 Xext Xi Xmu Xt c freetype
-WANTLIB += m png pthread stdc++ z ${MODTCL_WANTLIB}
-
+WANTLIB += GL GLU SDL SDL_image SDL_mixer c freetype m pthread
+WANTLIB += z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=extremetuxracer/}
+EXTRACT_SUFX =		.tar.xz
 
-MODULES =		lang/tcl
+MODULES =		gcc4
+MODGCC4_LANGS =		c c++
+MODGCC4_ARCHS =		*
 BUILD_DEPENDS =		archivers/unzip
 RUN_DEPENDS =		devel/desktop-file-utils
 LIB_DEPENDS =		devel/sdl-mixer \
-			graphics/png \
-			${MODTCL_LIB_DEPENDS}
+			devel/sdl-image
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--with-tcl="${MODTCL_LIBDIR}" \
-			--with-tcl-inc="${MODTCL_INCDIR}"
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
 
 NO_TEST =		Yes
-
-post-build:
-	cd ${WRKSRC}; unzip etracericons.zip
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/etracericons/etracericon_48.png ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${FILESDIR}/etracer.desktop ${PREFIX}/share/applications
 
 .include <bsd.port.mk>
