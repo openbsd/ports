@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/11/02 15:17:41 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/03/10 22:56:27 rpe Exp $
 @extraunexec rm -rf %D/selfoss/data/*/*
 selfoss/
 @comment selfoss/.gitignore
 selfoss/.htaccess
 selfoss/README.md
+selfoss/common.php
 selfoss/controllers/
 selfoss/controllers/BaseController.php
 selfoss/controllers/Index.php
@@ -59,11 +60,13 @@ selfoss/data/thumbnails/.htaccess
 selfoss/defaults.ini
 @sample selfoss/config.ini
 selfoss/helpers/
+selfoss/helpers/Anonymizer.php
 selfoss/helpers/Authentication.php
 selfoss/helpers/Color.php
 selfoss/helpers/ContentLoader.php
 selfoss/helpers/Image.php
 selfoss/helpers/Logger.php
+selfoss/helpers/Search.php
 selfoss/helpers/SpoutLoader.php
 selfoss/helpers/View.php
 selfoss/helpers/ViewHelper.php
@@ -159,6 +162,8 @@ selfoss/libs/f3/utf.php
 selfoss/libs/f3/web/
 selfoss/libs/f3/web.php
 selfoss/libs/f3/web/geo.php
+selfoss/libs/f3/web/google/
+selfoss/libs/f3/web/google/staticmap.php
 selfoss/libs/f3/web/openid.php
 selfoss/libs/f3/web/pingback.php
 selfoss/libs/floIcon.php
