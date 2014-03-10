@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/08/04 16:22:59 espie Exp $
-bin/bunzip
-bin/bzip
-@man man/man1/bunzip.1
-@man man/man1/bzip.1
