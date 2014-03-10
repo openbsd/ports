@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.103 2014/01/18 11:23:48 espie Exp $
+# $OpenBSD: Engine.pm,v 1.104 2014/03/10 09:06:12 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -350,6 +350,8 @@ sub adjust_tobuild
 			$v->{has} = 2 * ($has != 0) + ($has2 > 1);
 			if ($has + $has2 == 0) {
 				delete $self->{tobuild}{$v};
+				# XXX because of this, not all build_path_list
+				# are considered equal... 
 				if ($self->should_ignore($v, 'RDEPENDS')) {
 					$self->{buildable}->remove($v);
 				} else {
