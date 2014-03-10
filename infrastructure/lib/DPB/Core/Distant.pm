@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.18 2013/10/18 07:34:05 espie Exp $
+# $OpenBSD: Distant.pm,v 1.19 2014/03/10 09:34:54 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -44,7 +44,7 @@ our @ISA = qw(DPB::Shell::Chroot);
 sub ssh
 {
 	my ($class, $socket) = @_;
-	return ('ssh', '-S', $socket);
+	return ('ssh', '-T', '-S', $socket);
 }
 
 sub new
