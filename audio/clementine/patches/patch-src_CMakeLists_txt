@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1 2014/03/10 20:28:42 landry Exp $
+-Wno-unused-private-field -Wno-unknown-warning-option dont exist on gcc 4.8
+--- src/CMakeLists.txt.orig	Sat Mar  8 12:08:49 2014
++++ src/CMakeLists.txt	Sat Mar  8 12:09:19 2014
+@@ -1,6 +1,6 @@
+ 
+ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
+-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Woverloaded-virtual -Wall -Wno-sign-compare -Wno-deprecated-declarations -Wno-unused-local-typedefs -Wno-unused-private-field -Wno-unknown-warning-option --std=c++0x -U__STRICT_ANSI__")
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Woverloaded-virtual -Wall -Wno-sign-compare -Wno-deprecated-declarations -Wno-unused-local-typedefs --std=c++0x -U__STRICT_ANSI__")
+ 
+ option(BUILD_WERROR "Build with -Werror" ON)
+ 
