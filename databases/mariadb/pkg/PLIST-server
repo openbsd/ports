@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.5 2014/01/11 19:28:41 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.6 2014/03/10 01:13:34 brad Exp $
 @conflict mysql-server-*
 @conflict mytop-*
 @pkgpath databases/mysql,-server
@@ -66,7 +66,6 @@ lib/mysql/plugin/query_cache_info.so
 lib/mysql/plugin/query_response_time.so
 lib/mysql/plugin/semisync_master.so
 lib/mysql/plugin/semisync_slave.so
-lib/mysql/plugin/sphinx.so
 lib/mysql/plugin/sql_errlog.so
 @bin libexec/mysqld
 @man man/man1/innochecksum.1

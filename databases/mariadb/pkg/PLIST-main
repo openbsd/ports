@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2014/01/11 19:28:41 brad Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2014/03/10 01:13:34 brad Exp $
 @conflict mysql-client-*
 @pkgpath databases/mysql,-main
 bin/msql2mysql
@@ -140,6 +140,7 @@ include/mysql/private/my_atomic.h
 include/mysql/private/my_base.h
 include/mysql/private/my_bit.h
 include/mysql/private/my_bitmap.h
+include/mysql/private/my_check_opt.h
 include/mysql/private/my_compare.h
 include/mysql/private/my_context.h
 include/mysql/private/my_decimal.h
