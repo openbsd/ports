@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2013/08/12 04:11:22 robert Exp $
+# $OpenBSD: Makefile,v 1.23 2014/03/10 01:11:39 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	fast and stable PHP opcode cacher
 
-VERSION=	2.0.1
-REVISION=	0
+VERSION=	3.1.0
 DISTNAME=	xcache-${VERSION}
 CATEGORIES=	www
 MASTER_SITES=	http://xcache.lighttpd.net/pub/Releases/${VERSION}/
@@ -16,8 +15,6 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
-
-AUTOCONF_VERSION=	2.59
 
 MODULES=		lang/php
 
@@ -37,8 +34,12 @@ DESTDIRNAME=	INSTALL_ROOT
 
 NO_TEST=	Yes
 
-FLAVORS=	coverager
+FLAVORS=	constant coverager
 FLAVOR?=
+
+.if ${FLAVOR:Mconstant}
+CONFIGURE_ARGS+=	--enable-xcache-constant
+.endif
 
 .if ${FLAVOR:Mcoverager}
 CONFIGURE_ARGS+=	--enable-xcache-coverager
@@ -53,15 +54,11 @@ post-extract:
 
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}${WEBROOT}/xcache
-	${INSTALL_DATA_DIR} ${WRKINST}${WEBROOT}/xcache/admin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/php-${MODPHP_VERSION}
-	cd ${WRKSRC}/admin && ${INSTALL_DATA} * ${WRKINST}${WEBROOT}/xcache/admin
+	cd ${WRKSRC}/htdocs && cp -R * ${WRKINST}${WEBROOT}/xcache
+	chown -R ${SHAREOWN}:${SHAREGRP} ${WRKINST}${WEBROOT}/xcache/*
+	chmod -R ${SHAREMODE} ${WRKINST}${WEBROOT}/xcache/*
 	${INSTALL_DATA} ${WRKSRC}/xcache.ini \
 		${PREFIX}/share/examples/php-${MODPHP_VERSION}
-
-.if ${FLAVOR:Mcoverager}
-	${INSTALL_DATA_DIR} ${WRKINST}${WEBROOT}/xcache/coverager
-	cd ${WRKSRC}/coverager && ${INSTALL_DATA} * ${WRKINST}${WEBROOT}/xcache/coverager
-.endif
 
 .include <bsd.port.mk>
