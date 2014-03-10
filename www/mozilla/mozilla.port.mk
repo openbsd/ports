@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.65 2013/12/12 19:49:51 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.66 2014/03/10 20:33:13 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	amd64 arm i386 powerpc sparc64
@@ -39,8 +39,8 @@ MODMOZ_BUILD_DEPENDS =	devel/libIDL \
 			archivers/zip>=2.3
 
 MODMOZ_LIB_DEPENDS =	x11/gtk+2 \
-			devel/nspr>=4.10.2 \
-			security/nss>=3.15.3.1
+			devel/nspr>=4.10.3 \
+			security/nss>=3.15.4
 
 # bug #736961
 SEPARATE_BUILD =	Yes
