@@ -1,7 +1,7 @@
-$OpenBSD: patch-t_t9200-git-cvsexportcommit_sh,v 1.4 2013/01/25 08:14:59 dcoppa Exp $
---- t/t9200-git-cvsexportcommit.sh.orig	Mon Jan 14 20:22:04 2013
-+++ t/t9200-git-cvsexportcommit.sh	Wed Jan 23 14:53:15 2013
-@@ -36,7 +36,7 @@ exit 1
+$OpenBSD: patch-t_t9200-git-cvsexportcommit_sh,v 1.5 2014/03/10 20:56:53 pascal Exp $
+--- t/t9200-git-cvsexportcommit.sh.orig	Fri Feb 14 22:57:09 2014
++++ t/t9200-git-cvsexportcommit.sh	Sun Feb 16 18:13:37 2014
+@@ -35,7 +35,7 @@ exit 1
  
  check_entries () {
  	# $1 == directory, $2 == expected

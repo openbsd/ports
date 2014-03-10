@@ -1,11 +1,11 @@
-$OpenBSD: patch-t_test-lib_sh,v 1.1 2013/05/02 10:01:34 dcoppa Exp $
+$OpenBSD: patch-t_test-lib_sh,v 1.2 2014/03/10 20:56:53 pascal Exp $
 
 Force usage of GNU tar in the test suite: 't5004-archive-corner-cases.sh'
 wants it badly.
 
---- t/test-lib.sh.orig	Sat Apr 27 01:54:17 2013
-+++ t/test-lib.sh	Tue Apr 30 19:14:52 2013
-@@ -47,6 +47,10 @@ fi
+--- t/test-lib.sh.orig	Fri Feb 14 22:57:09 2014
++++ t/test-lib.sh	Sun Feb 16 18:13:37 2014
+@@ -51,6 +51,10 @@ fi
  . "$GIT_BUILD_DIR"/GIT-BUILD-OPTIONS
  export PERL_PATH SHELL_PATH
  

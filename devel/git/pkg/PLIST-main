@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.56 2014/01/13 09:12:10 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.57 2014/03/10 20:56:53 pascal Exp $
 @pkgpath devel/git
 @bin bin/git
 bin/git-cvsserver
@@ -81,7 +81,6 @@ libexec/git/git-filter-branch
 @bin libexec/git/git-init-db
 libexec/git/git-instaweb
 @bin libexec/git/git-log
-libexec/git/git-lost-found
 @bin libexec/git/git-ls-files
 @bin libexec/git/git-ls-remote
 @bin libexec/git/git-ls-tree
@@ -111,7 +110,6 @@ libexec/git/git-p4
 @bin libexec/git/git-pack-refs
 libexec/git/git-parse-remote
 @bin libexec/git/git-patch-id
-@bin libexec/git/git-peek-remote
 @bin libexec/git/git-prune
 @bin libexec/git/git-prune-packed
 libexec/git/git-pull
@@ -135,7 +133,6 @@ libexec/git/git-relink
 @bin libexec/git/git-remote-testsvn
 @bin libexec/git/git-repack
 @bin libexec/git/git-replace
-@bin libexec/git/git-repo-config
 libexec/git/git-request-pull
 @bin libexec/git/git-rerere
 @bin libexec/git/git-reset
@@ -161,7 +158,6 @@ libexec/git/git-stash
 libexec/git/git-submodule
 @bin libexec/git/git-symbolic-ref
 @bin libexec/git/git-tag
-@bin libexec/git/git-tar-tree
 @bin libexec/git/git-unpack-file
 @bin libexec/git/git-unpack-objects
 @bin libexec/git/git-update-index
@@ -260,7 +256,6 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-init.1
 @man man/man1/git-instaweb.1
 @man man/man1/git-log.1
-@man man/man1/git-lost-found.1
 @man man/man1/git-ls-files.1
 @man man/man1/git-ls-remote.1
 @man man/man1/git-ls-tree.1
@@ -285,7 +280,6 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-pack-refs.1
 @man man/man1/git-parse-remote.1
 @man man/man1/git-patch-id.1
-@man man/man1/git-peek-remote.1
 @man man/man1/git-prune-packed.1
 @man man/man1/git-prune.1
 @man man/man1/git-pull.1
@@ -302,7 +296,6 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-remote.1
 @man man/man1/git-repack.1
 @man man/man1/git-replace.1
-@man man/man1/git-repo-config.1
 @man man/man1/git-request-pull.1
 @man man/man1/git-rerere.1
 @man man/man1/git-reset.1
@@ -328,7 +321,6 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-submodule.1
 @man man/man1/git-symbolic-ref.1
 @man man/man1/git-tag.1
-@man man/man1/git-tar-tree.1
 @man man/man1/git-unpack-file.1
 @man man/man1/git-unpack-objects.1
 @man man/man1/git-update-index.1
@@ -392,14 +384,13 @@ share/gitweb/static/git-favicon.png
 share/gitweb/static/git-logo.png
 share/gitweb/static/gitweb.css
 share/gitweb/static/gitweb.js
-share/locale/da/LC_MESSAGES/git.mo
+share/locale/bg/LC_MESSAGES/git.mo
 share/locale/de/LC_MESSAGES/git.mo
 share/locale/fr/LC_MESSAGES/git.mo
 share/locale/is/
 share/locale/is/LC_MESSAGES/
 share/locale/is/LC_MESSAGES/git.mo
 share/locale/it/LC_MESSAGES/git.mo
-share/locale/nl/LC_MESSAGES/git.mo
 share/locale/pt_PT/
 share/locale/pt_PT/LC_MESSAGES/
 share/locale/pt_PT/LC_MESSAGES/git.mo
