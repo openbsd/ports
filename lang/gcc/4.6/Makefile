@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.70 2014/02/07 01:27:21 tobiasu Exp $
+# $OpenBSD: Makefile,v 1.71 2014/03/10 21:11:49 landry Exp $
 
-ONLY_FOR_ARCHS = alpha amd64 hppa i386 powerpc sparc64
+ONLY_FOR_ARCHS = alpha hppa
 DPB_PROPERTIES = parallel
 
 V = 4.6.4
