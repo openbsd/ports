@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:41:27 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2014/03/10 21:15:36 benoit Exp $
 
 COMMENT =		password recovery tool for PDF-files
 
-DISTNAME =		pdfcrack-0.11
+DISTNAME =		pdfcrack-0.12
 CATEGORIES =		security
 
 HOMEPAGE =		http://pdfcrack.sourceforge.net/
@@ -22,5 +22,5 @@ NO_TEST =		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/pdfcrack ${PREFIX}/bin
-        
+
 .include <bsd.port.mk>
