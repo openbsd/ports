@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.51 2014/03/10 18:18:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2014/03/10 19:54:24 ajacoutot Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
 DISTNAME=	polkit-0.112
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=  polkit-gobject-1	2.0 # .0.0
 SHARED_LIBS +=  polkit-agent-1		2.0 # .0.0
@@ -42,7 +42,7 @@ LIB_DEPENDS=	devel/glib2 \
 		devel/spidermonkey>=17.0,<18.0
 
 AUTOCONF_VERSION=2.69
-AUTOMAKE_VERSION=1.10
+AUTOMAKE_VERSION=1.11
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
