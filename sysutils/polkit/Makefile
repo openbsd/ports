@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2014/03/09 22:26:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2014/03/10 18:18:27 ajacoutot Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
@@ -30,11 +30,10 @@ BUILD_DEPENDS=	${MODGNU_AUTOMAKE_DEPENDS} \
 		devel/gettext \
 		devel/gobject-introspection
 
-# needs AM_PROG_LIBTOOL
-BUILD_DEPENDS+=	devel/libtool
+# AUTOCONF needs AM_PROG_LIBTOOL and ENABLE_GTK_DOC
+BUILD_DEPENDS+=	devel/libtool \
+		textproc/gtk-doc
 
-# We do no want to depends on gtk-doc as it creates a dependency loop:
-# polkit -> gtk-doc -> yelp -> gconf2 -> polkit
 BUILD_DEPENDS+=	textproc/docbook-xsl
 
 RUN_DEPENDS=	x11/dbus
