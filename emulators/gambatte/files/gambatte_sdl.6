@@ -1,0 +1,140 @@
+.\"     $OpenBSD: gambatte_sdl.6,v 1.1 2014/03/10 04:18:25 bentley Exp $
+.Dd August 27, 2007
+.Dt GAMBATTE 6
+.Os
+.Sh NAME
+.Nm gambatte
+.Nd Nintendo Game Boy Color emulator
+.Sh SYNOPSIS
+.Nm gambatte
+.Op Fl f
+.Op Fl i Ar keys
+.Op Fl Fl list-keys
+.Op Fl r Ar freq
+.Op Fl s Ar scale
+.Op Fl v Ar filter
+.Op Fl y
+.Ar romfile
+.Sh DESCRIPTION
+.Nm
+emulates a Game Boy (Color) with
+.Ar romfile
+loaded as a Game Boy cartridge.
+.Pp
+The options are as follows:
+.Bl -tag -width Ds
+.It Fl Fl controls
+Show keyboard controls.
+.It Fl Fl force-dmg
+Force DMG mode.
+.It Fl f , Fl Fl full-screen
+Start in full screen mode.
+.It Fl Fl gba-cgb
+Emulate the Game Boy Advance's CGB mode.
+.It Fl Fl multicart-compat
+Support certain multicart ROM images by not strictly respecting the MBC type
+in the ROM header.
+.It Fl i Ar keys , Fl Fl input Ar keys
+Use the 8 given input
+.Ar keys
+for respectively
+.br
+START SELECT A B UP DOWN LEFT RIGHT
+.It Fl l Ar n , Fl Fl latency Ar n
+Use audio buffer latency of
+.Ar n
+ms.
+.br
+16 \(<=
+.Ar n
+\(<= 5000, default: 133
+.It Fl Fl list-keys
+List valid input
+.Ar keys .
+.It Fl p Ar n , Fl Fl periods Ar n
+Use
+.Ar n
+audio buffer periods.
+.br
+1 \(<=
+.Ar n
+\(<= 32, default: 4
+.It Fl Fl resampler Ar n
+Use audio resampler number
+.Ar n.
+.Bl -inset -compact
+.It 0
+fast
+.It 1
+High quality
+.Pq polyphase FIR
+.Bq default
+.It 2
+Very high quality
+.Pq polyphase FIR
+.It 3
+Highest quality
+.Pq polyphase FIR
+.El
+.It Fl r Ar n , Fl Fl sample-rate Ar n
+Use sound sample rate of
+.Ar n
+Hz.
+.br
+32000 \(<=
+.Ar n
+\(<= 192000, default: 48000
+.It Fl s Ar n , Fl Fl scale Ar n
+Scale video output by an integer factor of
+.Ar n .
+.It Fl v Ar n , Fl Fl video-filter Ar n
+Use video filter number
+.Ar n :
+.Bl -inset -compact
+.It 0
+None
+.It 1
+Bicubic Catmull-Rom spline 2\(mu
+.It 2
+Bicubic Catmull-Rom spline 3\(mu
+.It 3
+Kreed's 2xSal
+.It 4
+MaxSt's hq2x
+.It 5
+MaxSt's hq3x
+.El
+.It Fl y , Fl Fl yuv-overlay
+Use YUV overlay for
+.Pq usually faster
+scaling.
+.El
+.Sh INTERACTIVE KEYBOARD CONTROLS
+.Bl -hang
+.It Cm TAB
+fast-forward
+.It Cm Ctrl-f
+toggle full screen
+.It Cm Ctrl-r
+reset
+.It Cm F5
+save state
+.It Cm F6
+choose previous state slot
+.It Cm F7
+choose next state slot
+.It Cm F8
+load state
+.It Cm 0\(en9
+choose state slot 0 to 9
+.It Cm Return
+Start
+.It Cm Shift
+Select
+.It Cm d
+A
+.It Cm c
+B
+.El
+.Sh AUTHORS
+.An Sindre Aam\(oas Aq Mt aamas@stud.ntnu.no
