@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.15 2013/11/17 09:43:09 espie Exp $
+# $OpenBSD: Init.pm,v 1.16 2014/03/10 09:34:07 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -41,6 +41,29 @@ sub finalize
 	}
 	close($fh);
 	$core->prop->{jobs} //= 1;
+	return 1;
+}
+
+package DPB::Task::WhoAmI;
+our @ISA = qw(DPB::Task::Pipe);
+sub run
+{
+	my ($self, $core) = @_;
+	$core->shell->nochroot->exec('/usr/bin/whoami');
+}
+
+sub finalize
+{
+	my ($self, $core) = @_;
+	my $fh = $self->{fh};
+	if ($core->{status} == 0) {
+		my $line = <$fh>;
+		chomp $line;
+		if ($line =~ m/^root$/) {
+			$core->prop->{iamroot} = 1;
+		} 
+	}
+	close($fh);
 	return 1;
 }
 
@@ -158,6 +181,7 @@ sub init_cores
 	DPB::Core->set_logdir($logger->{logdir});
 	for my $core (values %$init) {
 		my $job = DPB::Job::Init->new($logger, $state->{xenocara});
+		$job->add_tasks(DPB::Task::WhoAmI->new);
 		if (!defined $core->prop->{jobs}) {
 			$job->add_tasks(DPB::Task::Ncpu->new);
 		}
