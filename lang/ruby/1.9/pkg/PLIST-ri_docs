@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.9 2013/07/17 15:51:11 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.10 2014/03/11 20:07:07 jeremy Exp $
 @option no-default-conflict
 @conflict ruby-ri_docs->=1.9,<1.10
 share/ri/${RUBYLIBREV}/system/ACL/
@@ -12718,6 +12718,7 @@ share/ri/${RUBYLIBREV}/system/Singleton/included-c.ri
 share/ri/${RUBYLIBREV}/system/SizedQueue/
 share/ri/${RUBYLIBREV}/system/SizedQueue/%3c%3c-i.ri
 share/ri/${RUBYLIBREV}/system/SizedQueue/cdesc-SizedQueue.ri
+share/ri/${RUBYLIBREV}/system/SizedQueue/clear-i.ri
 share/ri/${RUBYLIBREV}/system/SizedQueue/deq-i.ri
 share/ri/${RUBYLIBREV}/system/SizedQueue/enq-i.ri
 share/ri/${RUBYLIBREV}/system/SizedQueue/max%3d-i.ri
