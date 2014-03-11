@@ -1,18 +1,15 @@
-# $OpenBSD: Makefile,v 1.19 2013/10/26 08:02:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2014/03/11 07:56:58 jasper Exp $
 
 COMMENT =	access web services that claim to be RESTful
 
-GNOME_VERSION =	0.7.90
+GNOME_VERSION =	0.7.91
 GNOME_PROJECT =	rest
 PKGNAME =	lib${DISTNAME}
-REVISION =	2
 
 CATEGORIES =	net devel
 
 SHARED_LIBS +=	rest-0.7  	0.2
 SHARED_LIBS +=	rest-extras-0.7 0.0
-
-HOMEPAGE =	http://moblin.org/projects/librest
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>

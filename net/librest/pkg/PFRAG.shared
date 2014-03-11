@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2011/04/28 10:48:38 jasper Exp $
-@lib lib/librest-0.7.so.${LIBrest-0.7_VERSION}
-@lib lib/librest-extras-0.7.so.${LIBrest-extras-0.7_VERSION}

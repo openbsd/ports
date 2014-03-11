@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/08/15 10:58:25 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2014/03/11 07:56:59 jasper Exp $
 include/rest-0.7/
 include/rest-0.7/rest/
 include/rest-0.7/rest-extras/
@@ -25,8 +24,10 @@ lib/girepository-1.0/Rest-0.7.typelib
 lib/girepository-1.0/RestExtras-0.7.typelib
 lib/librest-0.7.a
 lib/librest-0.7.la
+@lib lib/librest-0.7.so.${LIBrest-0.7_VERSION}
 lib/librest-extras-0.7.a
 lib/librest-extras-0.7.la
+@lib lib/librest-extras-0.7.so.${LIBrest-extras-0.7_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/rest-0.7.pc
 lib/pkgconfig/rest-extras-0.7.pc
@@ -51,13 +52,19 @@ share/gtk-doc/html/rest-0.7/ch01.html
 share/gtk-doc/html/rest-0.7/ch02.html
 share/gtk-doc/html/rest-0.7/ch03.html
 share/gtk-doc/html/rest-0.7/ch04.html
+share/gtk-doc/html/rest-0.7/ch05.html
 share/gtk-doc/html/rest-0.7/home.png
 share/gtk-doc/html/rest-0.7/index.html
 share/gtk-doc/html/rest-0.7/index.sgml
+share/gtk-doc/html/rest-0.7/ix01.html
+share/gtk-doc/html/rest-0.7/ix02.html
+share/gtk-doc/html/rest-0.7/left-insensitive.png
 share/gtk-doc/html/rest-0.7/left.png
 share/gtk-doc/html/rest-0.7/rest-0.7.devhelp2
 share/gtk-doc/html/rest-0.7/rest-RestParam.html
 share/gtk-doc/html/rest-0.7/rest-RestParams.html
+share/gtk-doc/html/rest-0.7/right-insensitive.png
 share/gtk-doc/html/rest-0.7/right.png
 share/gtk-doc/html/rest-0.7/style.css
+share/gtk-doc/html/rest-0.7/up-insensitive.png
 share/gtk-doc/html/rest-0.7/up.png
