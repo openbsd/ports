@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.4 2013/11/24 02:25:26 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.5 2014/03/11 20:08:45 jeremy Exp $
 share/ri/
 share/ri/${RUBYLIBREV}/
 share/ri/${RUBYLIBREV}/system/
@@ -13478,6 +13478,7 @@ share/ri/${RUBYLIBREV}/system/Singleton/included-c.ri
 share/ri/${RUBYLIBREV}/system/SizedQueue/
 share/ri/${RUBYLIBREV}/system/SizedQueue/%3c%3c-i.ri
 share/ri/${RUBYLIBREV}/system/SizedQueue/cdesc-SizedQueue.ri
+share/ri/${RUBYLIBREV}/system/SizedQueue/clear-i.ri
 share/ri/${RUBYLIBREV}/system/SizedQueue/deq-i.ri
 share/ri/${RUBYLIBREV}/system/SizedQueue/enq-i.ri
 share/ri/${RUBYLIBREV}/system/SizedQueue/max%3d-i.ri
@@ -14009,6 +14010,27 @@ share/ri/${RUBYLIBREV}/system/Syslog/Facility/
 share/ri/${RUBYLIBREV}/system/Syslog/Facility/cdesc-Facility.ri
 share/ri/${RUBYLIBREV}/system/Syslog/Level/
 share/ri/${RUBYLIBREV}/system/Syslog/Level/cdesc-Level.ri
+share/ri/${RUBYLIBREV}/system/Syslog/Logger/
+share/ri/${RUBYLIBREV}/system/Syslog/Logger/Formatter/
+share/ri/${RUBYLIBREV}/system/Syslog/Logger/Formatter/call-i.ri
+share/ri/${RUBYLIBREV}/system/Syslog/Logger/Formatter/cdesc-Formatter.ri
+share/ri/${RUBYLIBREV}/system/Syslog/Logger/Formatter/clean-i.ri
+share/ri/${RUBYLIBREV}/system/Syslog/Logger/Severity/
+share/ri/${RUBYLIBREV}/system/Syslog/Logger/Severity/cdesc-Severity.ri
+share/ri/${RUBYLIBREV}/system/Syslog/Logger/add-i.ri
+share/ri/${RUBYLIBREV}/system/Syslog/Logger/cdesc-Logger.ri
+share/ri/${RUBYLIBREV}/system/Syslog/Logger/debug-i.ri
+share/ri/${RUBYLIBREV}/system/Syslog/Logger/error-i.ri
+share/ri/${RUBYLIBREV}/system/Syslog/Logger/fatal-i.ri
+share/ri/${RUBYLIBREV}/system/Syslog/Logger/formatter-i.ri
+share/ri/${RUBYLIBREV}/system/Syslog/Logger/info-i.ri
+share/ri/${RUBYLIBREV}/system/Syslog/Logger/level-i.ri
+share/ri/${RUBYLIBREV}/system/Syslog/Logger/make_methods-c.ri
+share/ri/${RUBYLIBREV}/system/Syslog/Logger/new-c.ri
+share/ri/${RUBYLIBREV}/system/Syslog/Logger/syslog%3d-c.ri
+share/ri/${RUBYLIBREV}/system/Syslog/Logger/syslog-c.ri
+share/ri/${RUBYLIBREV}/system/Syslog/Logger/unknown-i.ri
+share/ri/${RUBYLIBREV}/system/Syslog/Logger/warn-i.ri
 share/ri/${RUBYLIBREV}/system/Syslog/Macros/
 share/ri/${RUBYLIBREV}/system/Syslog/Macros/LOG_MASK-i.ri
 share/ri/${RUBYLIBREV}/system/Syslog/Macros/LOG_UPTO-i.ri

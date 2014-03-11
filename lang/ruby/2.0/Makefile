@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/02/12 22:41:43 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2014/03/11 20:08:45 jeremy Exp $
 
 BROKEN-hppa =		miniruby abort trap when generating rdoc
 BROKEN-alpha =		miniruby abort trap when generating rdoc
@@ -9,7 +9,7 @@ COMMENT-tk =		tk interface for ruby
 COMMENT-ri_docs =	ri documentation files for ruby
 
 VERSION =		2.0.0
-PATCHLEVEL =		353
+PATCHLEVEL =		451
 RUBYLIBREV =		2.0
 DISTNAME =		ruby-${VERSION}-p${PATCHLEVEL}
 
@@ -68,6 +68,8 @@ RUN_DEPENDS-gdbm =
 MULTI_PACKAGES+=	-tk
 CONFIGURE_ARGS+=	--with-tcl-include=${PREFIX}/include/tcl8.5 \
 			--with-tk-include=${PREFIX}/include/tk8.5 \
+			--with-tcllib=tcl85 \
+			--with-tklib=tk85 \
 			--with-X11-dir=${X11BASE}
 WANTLIB-tk =		X11 c m pthread ruby20 tcl85 tk85
 LIB_DEPENDS-tk =	tk->=8.5,<8.6:x11/tk/8.5 \
