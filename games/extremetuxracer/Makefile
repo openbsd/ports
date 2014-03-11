@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/03/10 20:28:47 pascal Exp $
+# $OpenBSD: Makefile,v 1.7 2014/03/11 18:03:29 pascal Exp $
 
 COMMENT =		downhill racing game
 
@@ -31,7 +31,7 @@ LIB_DEPENDS =		devel/sdl-mixer \
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
-			CPPFLAGS="-I${LOCALBASE}/include"
+			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
 NO_TEST =		Yes
 
