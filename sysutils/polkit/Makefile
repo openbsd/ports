@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2014/03/10 19:54:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2014/03/11 20:32:46 espie Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
@@ -31,8 +31,7 @@ BUILD_DEPENDS=	${MODGNU_AUTOMAKE_DEPENDS} \
 		devel/gobject-introspection
 
 # AUTOCONF needs AM_PROG_LIBTOOL and ENABLE_GTK_DOC
-BUILD_DEPENDS+=	devel/libtool \
-		textproc/gtk-doc
+BUILD_DEPENDS+=	devel/libtool
 
 BUILD_DEPENDS+=	textproc/docbook-xsl
 
