@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.71 2014/03/09 21:07:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.72 2014/03/11 17:07:22 nigel Exp $
 
 COMMENT=		download/stream programmes from BBC iPlayer
 
 DISTNAME=		get_iplayer-2.85
 CATEGORIES=		multimedia
+REVISION=		0
 
 # http://git.infradead.org/get_iplayer.git
 HOMEPAGE=		http://www.infradead.org/get_iplayer/
@@ -20,7 +21,7 @@ RUN_DEPENDS=		audio/id3lib \
 			multimedia/atomicparsley \
 			net/rtmpdump>=2.4 \
 			textproc/p5-XML-Simple \
-			www/p5-HTML-Parser \
+			www/p5-HTML-Parser>=3.71 \
 			www/p5-libwww>=5.826
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
