@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2013/01/25 09:08:23 bentley Exp $
---- Makefile.orig	Tue Jan 22 10:20:43 2013
-+++ Makefile	Fri Jan 25 01:36:56 2013
-@@ -192,13 +192,13 @@ $(BIN): $(OBJS)
+$OpenBSD: patch-Makefile,v 1.2 2014/03/11 05:16:31 bentley Exp $
+--- Makefile.orig	Mon Jul 29 17:43:11 2013
++++ Makefile	Thu Feb 20 00:39:15 2014
+@@ -182,13 +182,13 @@ $(BIN): $(OBJS)
  install:
  	mkdir -p $(DATADIR)/icons
  	mkdir -p $(PREFIX)/share/pixmaps
