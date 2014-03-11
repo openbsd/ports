@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/01/19 20:21:01 bcallah Exp $
-
-BROKEN-hppa =	SIGILL compiling prg/s7c
+# $OpenBSD: Makefile,v 1.15 2014/03/11 00:01:50 juanfra Exp $
 
 V =		20140119
 COMMENT =	high-level, extensible programming language
