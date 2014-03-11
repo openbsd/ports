@@ -1,22 +1,24 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2009/12/17 14:00:04 benoit Exp $
---- Makefile.orig	Wed Apr 30 22:14:58 2008
-+++ Makefile	Thu Dec 17 11:24:00 2009
-@@ -6,15 +6,13 @@ all: pdfcrack
+$OpenBSD: patch-Makefile,v 1.2 2014/03/11 17:28:48 benoit Exp $
+--- Makefile.orig	Mon Feb 10 08:11:36 2014
++++ Makefile	Tue Mar 11 07:58:12 2014
+@@ -1,16 +1,16 @@
+-CFLAGS= -Wall -Wextra -O3 -g
++CFLAGS= -Wall -Wextra -g
  
- pdfcrack: main.o rc4.o md5.o pdfcrack.o pdfparser.o passwords.o common.o \
+ all: pdfcrack
+ 
+ pdfcrack: main.o sha256.o rc4.o md5.o pdfcrack.o pdfparser.o passwords.o common.o \
  	benchmark.o
--	gcc $(CFLAGS) -o $@ $+
--	strip $@
-+	$(CC) $(CFLAGS) -o $@ $>
+-	gcc $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -o $@ $+
++	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -o $@ $>
  
  pdfreader: pdfparser.o pdfreader.o common.o
--	gcc $(CFLAGS) -o $@ $+
--	strip $@
-+	$(CC) $(CFLAGS) -o $@ $>
+-	gcc $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -o $@ $+
++	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -o $@ $>
  
  clean:
  	rm -f pdfcrack pdfreader testreader *.o
  
  %.o: %.c
--	gcc $(CFLAGS) -c -o $@ $+
-+	$(CC) $(CFLAGS) -c -o $@ $+
+-	gcc $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -c -o $@ $+
++	$(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -c -o $@ $+
