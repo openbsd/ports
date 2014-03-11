@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.6 2014/03/10 01:13:34 brad Exp $
+@comment $OpenBSD: PLIST-server,v 1.7 2014/03/11 09:27:45 brad Exp $
 @conflict mysql-server-*
 @conflict mytop-*
 @pkgpath databases/mysql,-server
@@ -48,11 +48,11 @@ lib/mysql/plugin/ha_connect.so
 lib/mysql/plugin/ha_example.so
 lib/mysql/plugin/ha_federated.so
 lib/mysql/plugin/ha_federatedx.so
+lib/mysql/plugin/ha_innodb.so
 lib/mysql/plugin/ha_sequence.so
 lib/mysql/plugin/ha_sphinx.so
 lib/mysql/plugin/ha_spider.so
 lib/mysql/plugin/ha_test_sql_discovery.so
-lib/mysql/plugin/ha_xtradb.so
 lib/mysql/plugin/handlersocket.so
 lib/mysql/plugin/libdaemon_example.so
 lib/mysql/plugin/locales.so

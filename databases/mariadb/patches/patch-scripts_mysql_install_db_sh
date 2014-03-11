@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.3 2014/01/11 19:28:41 brad Exp $
---- scripts/mysql_install_db.sh.orig	Mon Dec 23 04:35:05 2013
-+++ scripts/mysql_install_db.sh	Fri Dec 27 19:21:02 2013
+$OpenBSD: patch-scripts_mysql_install_db_sh,v 1.4 2014/03/11 09:27:45 brad Exp $
+--- scripts/mysql_install_db.sh.orig	Sat Mar  8 07:41:47 2014
++++ scripts/mysql_install_db.sh	Mon Mar 10 18:15:31 2014
 @@ -28,7 +28,8 @@ srcdir=""
  args=""
  defaults=""
@@ -35,7 +35,7 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.3 2014/01/11 19:28:41 brad Exp $
        exit 1
      fi
    fi
-@@ -473,10 +476,6 @@ fi
+@@ -474,10 +477,6 @@ fi
  # the screen.
  if test "$cross_bootstrap" -eq 0 && test -z "$srcdir"
  then
@@ -46,7 +46,7 @@ $OpenBSD: patch-scripts_mysql_install_db_sh,v 1.3 2014/01/11 19:28:41 brad Exp $
    echo
    echo "PLEASE REMEMBER TO SET A PASSWORD FOR THE MariaDB root USER !"
    echo "To do so, start the server, then issue the following commands:"
-@@ -498,10 +497,7 @@ then
+@@ -499,10 +498,7 @@ then
    then
      echo
      echo "You can start the MariaDB daemon with:"

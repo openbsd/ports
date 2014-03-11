@@ -1,7 +1,7 @@
-$OpenBSD: patch-client_CMakeLists_txt,v 1.2 2014/01/11 19:28:40 brad Exp $
---- client/CMakeLists.txt.orig	Mon Dec 23 04:35:04 2013
-+++ client/CMakeLists.txt	Fri Dec 27 19:27:25 2013
-@@ -33,7 +33,7 @@ COPY_OPENSSL_DLLS(copy_openssl_client)
+$OpenBSD: patch-client_CMakeLists_txt,v 1.3 2014/03/11 09:27:45 brad Exp $
+--- client/CMakeLists.txt.orig	Sat Mar  8 07:41:47 2014
++++ client/CMakeLists.txt	Mon Mar 10 18:15:31 2014
+@@ -32,7 +32,7 @@ COPY_OPENSSL_DLLS(copy_openssl_client)
  ADD_DEFINITIONS(${SSL_DEFINES})
  MYSQL_ADD_EXECUTABLE(mysql completion_hash.cc mysql.cc readline.cc
                             ${CMAKE_SOURCE_DIR}/sql/sql_string.cc)
@@ -10,7 +10,7 @@ $OpenBSD: patch-client_CMakeLists_txt,v 1.2 2014/01/11 19:28:40 brad Exp $
  IF(UNIX)
    TARGET_LINK_LIBRARIES(mysql ${MY_READLINE_LIBRARY})
    SET_TARGET_PROPERTIES(mysql PROPERTIES ENABLE_EXPORTS TRUE)
-@@ -41,38 +41,38 @@ ENDIF(UNIX)
+@@ -40,38 +40,38 @@ ENDIF(UNIX)
  
  MYSQL_ADD_EXECUTABLE(mysqltest mysqltest.cc COMPONENT Test)
  SET_SOURCE_FILES_PROPERTIES(mysqltest.cc PROPERTIES COMPILE_FLAGS "-DTHREADS")
@@ -59,7 +59,7 @@ $OpenBSD: patch-client_CMakeLists_txt,v 1.2 2014/01/11 19:28:40 brad Exp $
  
  # "WIN32" also covers 64 bit. "echo" is used in some files below "mysql-test/".
  IF(WIN32)
-@@ -81,7 +81,7 @@ ENDIF(WIN32)
+@@ -80,7 +80,7 @@ ENDIF(WIN32)
  
  # async_example is just a code example, do not install it.
  ADD_EXECUTABLE(async_example async_example.c)
