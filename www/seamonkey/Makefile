@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2014/03/10 20:44:12 landry Exp $
+# $OpenBSD: Makefile,v 1.151 2014/03/11 06:31:27 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -9,7 +9,7 @@ MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
 
-MULTI_PACKAGES =	-main -lightning -enigmail
+MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-seamonkey-2.9beta1
 ENIG_V =		1.6
@@ -80,9 +80,9 @@ ENIGMAIL_DIR =	mailnews/extensions/enigmail
 
 post-build:
 	# build enigmail
-	cd ${WRKSRC}/${ENIGMAIL_DIR} && ./makemake -o ${WRKBUILD} -r
-	cd ${WRKBUILD}/${ENIGMAIL_DIR} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM}
-	cd ${WRKBUILD}/${ENIGMAIL_DIR} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} xpi
+#	cd ${WRKSRC}/${ENIGMAIL_DIR} && ./makemake -o ${WRKBUILD} -r
+#	cd ${WRKBUILD}/${ENIGMAIL_DIR} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM}
+#	cd ${WRKBUILD}/${ENIGMAIL_DIR} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} xpi
 
 # needed for the naming of the enigmail lib
 .if ${MACHINE_ARCH:Mi386}
