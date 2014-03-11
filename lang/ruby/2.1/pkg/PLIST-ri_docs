@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.1.1.1 2014/01/03 17:52:17 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.2 2014/03/11 20:10:40 jeremy Exp $
 share/ri/
 share/ri/${RUBYLIBREV}/
 share/ri/${RUBYLIBREV}/system/
@@ -2444,6 +2444,7 @@ share/ri/${RUBYLIBREV}/system/Gem/BasicSpecification/loaded_from-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/BasicSpecification/name-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/BasicSpecification/platform-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/BasicSpecification/require_paths-i.ri
+share/ri/${RUBYLIBREV}/system/Gem/BasicSpecification/source_paths-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/BasicSpecification/stubbed%3f-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/BasicSpecification/to_spec-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/BasicSpecification/version-i.ri
@@ -3301,6 +3302,7 @@ share/ri/${RUBYLIBREV}/system/Gem/RequestSet/install_from_gemdeps-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/RequestSet/install_into-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/RequestSet/load_gemdeps-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/RequestSet/new-c.ri
+share/ri/${RUBYLIBREV}/system/Gem/RequestSet/remote-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/RequestSet/resolve-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/RequestSet/resolve_current-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/RequestSet/soft_missing-i.ri
@@ -3355,6 +3357,7 @@ share/ri/${RUBYLIBREV}/system/Gem/Resolver/ComposedSet/cdesc-ComposedSet.ri
 share/ri/${RUBYLIBREV}/system/Gem/Resolver/ComposedSet/find_all-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Resolver/ComposedSet/new-c.ri
 share/ri/${RUBYLIBREV}/system/Gem/Resolver/ComposedSet/prefetch-i.ri
+share/ri/${RUBYLIBREV}/system/Gem/Resolver/ComposedSet/remote%3d-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Resolver/Conflict/
 share/ri/${RUBYLIBREV}/system/Gem/Resolver/Conflict/activated-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Resolver/Conflict/cdesc-Conflict.ri
@@ -3428,6 +3431,7 @@ share/ri/${RUBYLIBREV}/system/Gem/Resolver/Set/
 share/ri/${RUBYLIBREV}/system/Gem/Resolver/Set/cdesc-Set.ri
 share/ri/${RUBYLIBREV}/system/Gem/Resolver/Set/find_all-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Resolver/Set/prefetch-i.ri
+share/ri/${RUBYLIBREV}/system/Gem/Resolver/Set/remote-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Resolver/SpecSpecification/
 share/ri/${RUBYLIBREV}/system/Gem/Resolver/SpecSpecification/cdesc-SpecSpecification.ri
 share/ri/${RUBYLIBREV}/system/Gem/Resolver/SpecSpecification/dependencies-i.ri
@@ -3558,6 +3562,7 @@ share/ri/${RUBYLIBREV}/system/Gem/Source/Git/name-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Source/Git/need_submodules-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Source/Git/new-c.ri
 share/ri/${RUBYLIBREV}/system/Gem/Source/Git/reference-i.ri
+share/ri/${RUBYLIBREV}/system/Gem/Source/Git/remote-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Source/Git/repository-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Source/Git/root_dir-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Source/Git/specs-i.ri
@@ -3860,6 +3865,7 @@ share/ri/${RUBYLIBREV}/system/Gem/TestCase/StaticSet/find_all-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/StaticSet/find_spec-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/StaticSet/load_spec-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/StaticSet/new-c.ri
+share/ri/${RUBYLIBREV}/system/Gem/TestCase/StaticSet/remote-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/add_to_fetcher-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/all_spec_names-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/assert_activate-i.ri
@@ -3873,6 +3879,7 @@ share/ri/${RUBYLIBREV}/system/Gem/TestCase/common_installer_teardown-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/create_tmpdir-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/dep-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/dependency_request-i.ri
+share/ri/${RUBYLIBREV}/system/Gem/TestCase/enable_shared-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/git_gem-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/have_git%3f-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/TestCase/install_default_gems-i.ri
@@ -13335,6 +13342,7 @@ share/ri/${RUBYLIBREV}/system/Singleton/included-i.ri
 share/ri/${RUBYLIBREV}/system/SizedQueue/
 share/ri/${RUBYLIBREV}/system/SizedQueue/%3c%3c-i.ri
 share/ri/${RUBYLIBREV}/system/SizedQueue/cdesc-SizedQueue.ri
+share/ri/${RUBYLIBREV}/system/SizedQueue/clear-i.ri
 share/ri/${RUBYLIBREV}/system/SizedQueue/deq-i.ri
 share/ri/${RUBYLIBREV}/system/SizedQueue/enq-i.ri
 share/ri/${RUBYLIBREV}/system/SizedQueue/max%3d-i.ri
