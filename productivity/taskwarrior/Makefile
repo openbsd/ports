@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2013/06/21 22:38:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2014/03/11 18:25:36 abieber Exp $
 
 COMMENT =	command line todo list manager
 
-VERSION =	2.2.0
+VERSION =	2.3.0
 DISTNAME =	task-${VERSION}
 PKGNAME =	taskwarrior-${VERSION}
-REVISION =	0
 CATEGORIES =	productivity
 
 HOMEPAGE =	http://www.taskwarrior.org/
@@ -21,9 +20,10 @@ MODULES =		devel/cmake \
 			lang/lua
 MODLUA_SA =		Yes
 
-WANTLIB =		c uuid m stdc++
- 
-LIB_DEPENDS =	sysutils/e2fsprogs>=1.42.7
+WANTLIB += c gnutls m ncurses pthread readline stdc++ uuid
+
+LIB_DEPENDS =	security/gnutls \
+		sysutils/e2fsprogs>=1.42.7
 
 CONFIGURE_STYLE =	cmake
 

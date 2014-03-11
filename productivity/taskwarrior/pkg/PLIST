@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/04/14 18:12:36 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/03/11 18:25:37 abieber Exp $
 @bin bin/task
+@bin bin/tasksh
 @man man/man1/task.1
+@man man/man1/tasksh.1
 @man man/man5/task-color.5
 @man man/man5/task-faq.5
 @man man/man5/task-sync.5
