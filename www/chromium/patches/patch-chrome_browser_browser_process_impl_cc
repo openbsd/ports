@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.5 2014/02/10 18:34:59 robert Exp $
---- chrome/browser/browser_process_impl.cc.orig.port	Mon Jan 13 22:00:18 2014
-+++ chrome/browser/browser_process_impl.cc	Thu Jan 16 12:26:42 2014
+$OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.6 2014/03/11 14:52:01 robert Exp $
+--- chrome/browser/browser_process_impl.cc.orig.port	Thu Feb 20 21:27:48 2014
++++ chrome/browser/browser_process_impl.cc	Fri Feb 21 19:39:55 2014
 @@ -108,7 +108,7 @@
  #include "ui/aura/env.h"
  #endif
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.5 2014/02/10 18:34:59
  #include "chrome/browser/media_galleries/media_file_system_registry.h"
  #endif
  
-@@ -255,7 +255,7 @@ void BrowserProcessImpl::StartTearDown() {
+@@ -258,7 +258,7 @@ void BrowserProcessImpl::StartTearDown() {
  
    ExtensionRendererState::GetInstance()->Shutdown();
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.5 2014/02/10 18:34:59
    media_file_system_registry_.reset();
    // Delete |storage_monitor_| now. Otherwise the FILE thread would be gone
    // when we try to release it in the dtor and Valgrind would report a
-@@ -635,7 +635,7 @@ BookmarkPromptController* BrowserProcessImpl::bookmark
+@@ -642,7 +642,7 @@ BookmarkPromptController* BrowserProcessImpl::bookmark
  }
  
  StorageMonitor* BrowserProcessImpl::storage_monitor() {
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.5 2014/02/10 18:34:59
    return NULL;
  #else
    return storage_monitor_.get();
-@@ -644,13 +644,13 @@ StorageMonitor* BrowserProcessImpl::storage_monitor() 
+@@ -651,13 +651,13 @@ StorageMonitor* BrowserProcessImpl::storage_monitor() 
  
  void BrowserProcessImpl::set_storage_monitor_for_test(
      scoped_ptr<StorageMonitor> monitor) {
@@ -44,7 +44,7 @@ $OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.5 2014/02/10 18:34:59
      return NULL;
  #else
    if (!media_file_system_registry_)
-@@ -952,7 +952,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
+@@ -962,7 +962,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
    }
  #endif
  

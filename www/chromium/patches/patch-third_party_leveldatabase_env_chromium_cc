@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_leveldatabase_env_chromium_cc,v 1.9 2014/01/18 11:42:04 robert Exp $
---- third_party/leveldatabase/env_chromium.cc.orig.port	Mon Jan 13 21:59:27 2014
-+++ third_party/leveldatabase/env_chromium.cc	Thu Jan 16 12:26:42 2014
-@@ -68,7 +68,7 @@ int fflush_unlocked(FILE *file) {
+$OpenBSD: patch-third_party_leveldatabase_env_chromium_cc,v 1.10 2014/03/11 14:52:01 robert Exp $
+--- third_party/leveldatabase/env_chromium.cc.orig.port	Thu Feb 20 21:28:40 2014
++++ third_party/leveldatabase/env_chromium.cc	Fri Feb 21 19:39:55 2014
+@@ -69,7 +69,7 @@ int fflush_unlocked(FILE *file) {
    return fflush(file);
  }
  

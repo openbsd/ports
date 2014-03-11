@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_process_memory_linux_cc,v 1.1 2013/10/29 06:51:34 robert Exp $
---- base/process/memory_linux.cc.orig.port	Fri Oct 18 21:50:37 2013
-+++ base/process/memory_linux.cc	Fri Oct 18 23:26:38 2013
-@@ -143,6 +143,7 @@ void EnableTerminationOnOutOfMemory() {
+$OpenBSD: patch-base_process_memory_linux_cc,v 1.2 2014/03/11 14:52:01 robert Exp $
+--- base/process/memory_linux.cc.orig.port	Thu Feb 20 21:28:45 2014
++++ base/process/memory_linux.cc	Fri Feb 21 19:39:55 2014
+@@ -145,6 +145,7 @@ void EnableTerminationOnOutOfMemory() {
  // the setuid sandbox (in process_util_linux.c, in the sandbox source)
  // also has its own C version.
  bool AdjustOOMScore(ProcessId process, int score) {
@@ -9,7 +9,7 @@ $OpenBSD: patch-base_process_memory_linux_cc,v 1.1 2013/10/29 06:51:34 robert Ex
    if (score < 0 || score > kMaxOomScore)
      return false;
  
-@@ -178,6 +179,9 @@ bool AdjustOOMScore(ProcessId process, int score) {
+@@ -180,6 +181,9 @@ bool AdjustOOMScore(ProcessId process, int score) {
    }
  
    return false;

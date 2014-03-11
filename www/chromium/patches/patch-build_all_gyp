@@ -1,11 +1,11 @@
-$OpenBSD: patch-build_all_gyp,v 1.13 2014/01/18 11:42:03 robert Exp $
---- build/all.gyp.orig.port	Mon Jan 13 21:59:33 2014
-+++ build/all.gyp	Thu Jan 16 12:26:42 2014
-@@ -252,7 +252,6 @@
+$OpenBSD: patch-build_all_gyp,v 1.14 2014/03/11 14:52:01 robert Exp $
+--- build/all.gyp.orig.port	Fri Feb 21 19:40:06 2014
++++ build/all.gyp	Fri Feb 21 19:40:40 2014
+@@ -259,7 +259,6 @@
              '../media/media.gyp:media_unittests',
+             '../mojo/mojo.gyp:mojo',
              '../ppapi/ppapi_internal.gyp:ppapi_unittests',
-             '../printing/printing.gyp:printing_unittests',
 -            '../remoting/remoting.gyp:remoting_unittests',
-             '../sync/sync.gyp:sync_unit_tests',
              '../third_party/WebKit/public/all.gyp:all_blink',
              '../third_party/cacheinvalidation/cacheinvalidation.gyp:cacheinvalidation_unittests',
+             '../third_party/libaddressinput/libaddressinput.gyp:libaddressinput_unittests',

@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_browser_process_impl_h,v 1.2 2014/01/18 11:42:03 robert Exp $
---- chrome/browser/browser_process_impl.h.orig.port	Mon Jan 13 22:00:18 2014
-+++ chrome/browser/browser_process_impl.h	Thu Jan 16 12:26:42 2014
-@@ -196,7 +196,7 @@ class BrowserProcessImpl : public BrowserProcess,
+$OpenBSD: patch-chrome_browser_browser_process_impl_h,v 1.3 2014/03/11 14:52:01 robert Exp $
+--- chrome/browser/browser_process_impl.h.orig.port	Thu Feb 20 21:27:48 2014
++++ chrome/browser/browser_process_impl.h	Fri Feb 21 19:39:55 2014
+@@ -201,7 +201,7 @@ class BrowserProcessImpl : public BrowserProcess,
    scoped_ptr<BookmarkPromptController> bookmark_prompt_controller_;
  #endif
  

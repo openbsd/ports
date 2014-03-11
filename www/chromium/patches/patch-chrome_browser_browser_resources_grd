@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_browser_resources_grd,v 1.9 2014/01/18 11:42:03 robert Exp $
---- chrome/browser/browser_resources.grd.orig.port	Mon Jan 13 22:00:18 2014
-+++ chrome/browser/browser_resources.grd	Thu Jan 16 12:26:42 2014
-@@ -205,7 +205,7 @@
+$OpenBSD: patch-chrome_browser_browser_resources_grd,v 1.10 2014/03/11 14:52:01 robert Exp $
+--- chrome/browser/browser_resources.grd.orig.port	Thu Feb 20 21:27:48 2014
++++ chrome/browser/browser_resources.grd	Fri Feb 21 19:39:55 2014
+@@ -212,7 +212,7 @@
        <if expr="is_macosx">
          <include name="IDR_PLUGIN_DB_JSON" file="resources\plugin_metadata\plugins_mac.json" type="BINDATA" />
        </if>
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_browser_resources_grd,v 1.9 2014/01/18 11:42:03 r
          <if expr="pp_ifdef('chromeos')">
            <include name="IDR_PLUGIN_DB_JSON" file="resources\plugin_metadata\plugins_chromeos.json" type="BINDATA" />
          </if>
-@@ -352,7 +352,7 @@
+@@ -356,7 +356,7 @@
        <if expr="pp_ifdef('chromeos')">
          <include name="IDR_NETWORK_CONFIGURATION_MANIFEST" file="resources\chromeos\network_configuration\manifest.json" type="BINDATA" />
        </if>

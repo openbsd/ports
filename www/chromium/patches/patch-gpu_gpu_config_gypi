@@ -1,7 +1,7 @@
-$OpenBSD: patch-gpu_gpu_config_gypi,v 1.1 2013/09/29 19:04:03 robert Exp $
---- gpu/gpu_config.gypi.orig.port	Sun Sep 22 16:21:36 2013
-+++ gpu/gpu_config.gypi	Sun Sep 22 16:21:55 2013
-@@ -67,7 +67,7 @@
+$OpenBSD: patch-gpu_gpu_config_gypi,v 1.2 2014/03/11 14:52:01 robert Exp $
+--- gpu/gpu_config.gypi.orig.port	Thu Feb 20 21:28:11 2014
++++ gpu/gpu_config.gypi	Fri Feb 21 19:39:55 2014
+@@ -63,7 +63,7 @@
          '../third_party/amd/amd_videocard_info_win.cc',
        ],
      }],

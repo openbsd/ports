@@ -1,34 +1,32 @@
-$OpenBSD: patch-media_video_capture_linux_video_capture_device_linux_cc,v 1.3 2014/01/18 11:42:04 robert Exp $
---- media/video/capture/linux/video_capture_device_linux.cc.orig.port	Thu Jan 16 15:44:25 2014
-+++ media/video/capture/linux/video_capture_device_linux.cc	Thu Jan 16 18:14:12 2014
-@@ -172,10 +172,7 @@ void VideoCaptureDevice::GetDeviceSupportedFormats(
+$OpenBSD: patch-media_video_capture_linux_video_capture_device_linux_cc,v 1.4 2014/03/11 14:52:01 robert Exp $
+--- media/video/capture/linux/video_capture_device_linux.cc.orig.port	Fri Feb 21 23:37:50 2014
++++ media/video/capture/linux/video_capture_device_linux.cc	Fri Feb 21 23:38:28 2014
+@@ -170,10 +170,7 @@ void VideoCaptureDevice::GetDeviceSupportedFormats(
      v4l2_frmsizeenum frame_size = {};
      frame_size.pixel_format = pixel_format.pixelformat;
      while (ioctl(fd, VIDIOC_ENUM_FRAMESIZES, &frame_size) == 0) {
 -      if (frame_size.type == V4L2_FRMSIZE_TYPE_DISCRETE) {
--        capture_format.width = frame_size.discrete.width;
--        capture_format.height = frame_size.discrete.height;
+-        supported_format.frame_size.SetSize(
+-            frame_size.discrete.width, frame_size.discrete.height);
 -      } else if (frame_size.type == V4L2_FRMSIZE_TYPE_STEPWISE) {
 +      if (frame_size.type == V4L2_FRMSIZE_TYPE_STEPWISE) {
          // TODO(mcasas): see http://crbug.com/249953, support these devices.
          NOTIMPLEMENTED();
        } else if (frame_size.type == V4L2_FRMSIZE_TYPE_CONTINUOUS) {
-@@ -184,18 +181,10 @@ void VideoCaptureDevice::GetDeviceSupportedFormats(
+@@ -182,18 +179,8 @@ void VideoCaptureDevice::GetDeviceSupportedFormats(
        }
        v4l2_frmivalenum frame_interval = {};
        frame_interval.pixel_format = pixel_format.pixelformat;
 -      frame_interval.width = frame_size.discrete.width;
 -      frame_interval.height = frame_size.discrete.height;
-+//      frame_interval.width = frame_size.discrete.width;
-+//      frame_interval.height = frame_size.discrete.height;
        while (ioctl(fd, VIDIOC_ENUM_FRAMEINTERVALS, &frame_interval) == 0) {
 -        if (frame_interval.type == V4L2_FRMIVAL_TYPE_DISCRETE) {
 -          if (frame_interval.discrete.numerator != 0) {
--            capture_format.frame_rate =
+-            supported_format.frame_rate =
 -                static_cast<float>(frame_interval.discrete.denominator) /
 -                static_cast<float>(frame_interval.discrete.numerator);
 -          } else {
--            capture_format.frame_rate = 0;
+-            supported_format.frame_rate = 0;
 -          }
 -        } else if (frame_interval.type == V4L2_FRMIVAL_TYPE_CONTINUOUS) {
 +        if (frame_interval.type == V4L2_FRMIVAL_TYPE_CONTINUOUS) {

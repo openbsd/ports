@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_renderer_printing_print_web_view_helper_h,v 1.4 2014/01/18 11:42:04 robert Exp $
---- chrome/renderer/printing/print_web_view_helper.h.orig.port	Mon Jan 13 22:00:02 2014
-+++ chrome/renderer/printing/print_web_view_helper.h	Thu Jan 16 12:26:42 2014
+$OpenBSD: patch-chrome_renderer_printing_print_web_view_helper_h,v 1.5 2014/03/11 14:52:01 robert Exp $
+--- chrome/renderer/printing/print_web_view_helper.h.orig.port	Thu Feb 20 21:27:30 2014
++++ chrome/renderer/printing/print_web_view_helper.h	Fri Feb 21 19:39:55 2014
 @@ -233,7 +233,7 @@ class PrintWebViewHelper
    void FinishFramePrinting();
  
@@ -9,4 +9,4 @@ $OpenBSD: patch-chrome_renderer_printing_print_web_view_helper_h,v 1.4 2014/01/1
 +#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
    void PrintPageInternal(const PrintMsg_PrintPage_Params& params,
                           const gfx::Size& canvas_size,
-                          WebKit::WebFrame* frame,
+                          blink::WebFrame* frame,

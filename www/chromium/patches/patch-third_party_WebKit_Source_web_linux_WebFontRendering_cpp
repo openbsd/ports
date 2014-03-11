@@ -1,0 +1,21 @@
+$OpenBSD: patch-third_party_WebKit_Source_web_linux_WebFontRendering_cpp,v 1.1 2014/03/11 14:52:01 robert Exp $
+--- third_party/WebKit/Source/web/linux/WebFontRendering.cpp.orig.port	Tue Feb 25 20:43:32 2014
++++ third_party/WebKit/Source/web/linux/WebFontRendering.cpp	Tue Feb 25 20:55:06 2014
+@@ -34,7 +34,7 @@
+ #include "platform/fonts/FontDescription.h"
+ #include "platform/fonts/FontPlatformData.h"
+ 
+-#if OS(LINUX)
++#if OS(LINUX) || OS(OPENBSD)
+ #include "public/platform/linux/WebFontInfo.h"
+ #endif
+ 
+@@ -77,7 +77,7 @@ void WebFontRendering::setSubpixelRendering(bool useSu
+ void WebFontRendering::setSubpixelPositioning(bool useSubpixelPositioning)
+ {
+     FontDescription::setSubpixelPositioning(useSubpixelPositioning);
+-#if OS(LINUX)
++#if OS(LINUX) || OS(OPENBSD)
+     WebFontInfo::setSubpixelPositioning(useSubpixelPositioning);
+ #endif
+ }

@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.164 2014/03/10 20:27:25 landry Exp $
+# $OpenBSD: Makefile,v 1.165 2014/03/11 14:52:01 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			32.0.1700.102
+V=			33.0.1750.146
 DISTNAME=		chromium-${V}
-REVISION=		0
 
 CATEGORIES=		www
 
@@ -18,7 +17,7 @@ MAINTAINER=		Robert Nagy <robert@openbsd.org>
 EXTRACT_SUFX=		.tar.xz
 
 # The proprietary flavor compiles and enables patented codecs like H.264
-FLAVORS=	proprietary
+FLAVORS=	proprietary debug
 FLAVOR?=
 
 # BSD-like
@@ -77,7 +76,11 @@ LIB_DEPENDS=	archivers/bzip2 \
 .include <bsd.own.mk>
 
 # Set BUILDTYPE to Debug for a debug build
+.if ${FLAVOR:Mdebug}
+BUILDTYPE=	Debug
+.else
 BUILDTYPE=	Release
+.endif
 
 TEST_TARGET=	base_unittests
 
@@ -102,6 +105,7 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Duse_system_yasm=1 \
 		-Duse_system_zlib=0 \
 		-Duse_system_ssl=0 \
+		-Duse_system_icu=1 \
 		-Ddisable_nacl=1 \
 		-Dlinux_breakpad=0 \
 		-Dlinux_use_tcmalloc=0 \
@@ -125,6 +129,11 @@ GYP_DEFS+=	-Dgoogle_api_key='AIzaSyA015yecfJyWi8UQpneQVrNzIKlxjv4MhI' \
 .if ${FLAVOR:Mproprietary}
 GYP_DEFS+=	-Dffmpeg_branding=Chrome \
 		-Dproprietary_codecs=1
+.endif
+
+.if ${FLAVOR:Mdebug}
+GYP_DEFS+=	-Dremove_webcore_debug_symbols=1
+MAKE_ENV+=	V=1
 .endif
 
 MODPY_ADJ_FILES=build/linux/unbundle/replace_gyp_files.py

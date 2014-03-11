@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.10 2014/01/18 11:42:03 robert Exp $
---- chrome/app/chrome_main_delegate.cc.orig.port	Thu Jan 16 12:30:20 2014
-+++ chrome/app/chrome_main_delegate.cc	Thu Jan 16 20:44:43 2014
+$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.11 2014/03/11 14:52:01 robert Exp $
+--- chrome/app/chrome_main_delegate.cc.orig.port	Fri Feb 21 19:42:48 2014
++++ chrome/app/chrome_main_delegate.cc	Sun Feb 23 20:34:49 2014
 @@ -97,7 +97,7 @@
  #include "ui/base/x/x11_util.h"
  #endif
@@ -28,6 +28,15 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.10 2014/01/18 11:42:03 ro
        // The zygote process opens the resources for the renderers.
        process_type == switches::kZygoteProcess ||
  #endif
+@@ -288,7 +288,7 @@ void HandleHelpSwitches(const CommandLine& command_lin
+ }
+ #endif
+ 
+-#if !defined(OS_MACOSX) && !defined(OS_ANDROID)
++#if !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
+ void SIGTERMProfilingShutdown(int signal) {
+   Profiling::Stop();
+   struct sigaction sigact;
 @@ -564,7 +564,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
    std::string process_type =
        command_line.GetSwitchValueASCII(switches::kProcessType);
@@ -37,7 +46,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.10 2014/01/18 11:42:03 ro
    breakpad::SetBreakpadClient(g_chrome_breakpad_client.Pointer());
  #endif
  
-@@ -701,7 +701,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
+@@ -703,7 +703,7 @@ void ChromeMainDelegate::PreSandboxStartup() {
  #endif
    }
  
@@ -46,7 +55,7 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.10 2014/01/18 11:42:03 ro
    // Zygote needs to call InitCrashReporter() in RunZygote().
    if (process_type != switches::kZygoteProcess) {
  #if defined(OS_ANDROID)
-@@ -798,7 +798,7 @@ bool ChromeMainDelegate::DelaySandboxInitialization(
+@@ -800,7 +800,7 @@ bool ChromeMainDelegate::DelaySandboxInitialization(
    return process_type == switches::kNaClLoaderProcess ||
        process_type == switches::kRelauncherProcess;
  }
@@ -55,12 +64,3 @@ $OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.10 2014/01/18 11:42:03 ro
  content::ZygoteForkDelegate* ChromeMainDelegate::ZygoteStarting() {
  #if defined(DISABLE_NACL)
    return NULL;
-@@ -814,7 +814,7 @@ void ChromeMainDelegate::ZygoteForked() {
-     SetUpProfilingShutdownHandler();
-   }
- 
--#if defined(OS_POSIX) && !defined(OS_MACOSX)
-+#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
-   // Needs to be called after we have chrome::DIR_USER_DATA.  BrowserMain sets
-   // this up for the browser process in a different manner.
-   breakpad::InitCrashReporter();

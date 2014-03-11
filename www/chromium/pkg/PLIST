@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2014/01/18 11:42:04 robert Exp $
+@comment $OpenBSD: PLIST,v 1.32 2014/03/11 14:52:01 robert Exp $
 bin/chrome
 chrome/
 @bin chrome/chrome
@@ -131,10 +131,6 @@ chrome/resources/inspector/Images/resourcePlainIconSmall.png
 chrome/resources/inspector/Images/resourcesTimeGraphIcon.png
 chrome/resources/inspector/Images/searchNext.png
 chrome/resources/inspector/Images/searchPrev.png
-chrome/resources/inspector/Images/searchSmallBlue.png
-chrome/resources/inspector/Images/searchSmallBrightBlue.png
-chrome/resources/inspector/Images/searchSmallGray.png
-chrome/resources/inspector/Images/searchSmallWhite.png
 chrome/resources/inspector/Images/sessionStorage.png
 chrome/resources/inspector/Images/settingsListRemove.png
 chrome/resources/inspector/Images/settingsListRemove_2x.png
@@ -177,6 +173,7 @@ chrome/resources/inspector/ResourcesPanel.js
 chrome/resources/inspector/ScriptFormatterWorker.js
 chrome/resources/inspector/SourcesPanel.js
 chrome/resources/inspector/TimelinePanel.js
+chrome/resources/inspector/accelerometer.css
 chrome/resources/inspector/auditsPanel.css
 chrome/resources/inspector/breadcrumbList.css
 chrome/resources/inspector/breakpointsList.css

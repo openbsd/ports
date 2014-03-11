@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_common_extensions_api_api_gyp,v 1.1 2014/01/18 11:42:04 robert Exp $
---- chrome/common/extensions/api/api.gyp.orig.port	Thu Jan 16 18:48:43 2014
-+++ chrome/common/extensions/api/api.gyp	Thu Jan 16 18:48:45 2014
-@@ -166,6 +166,11 @@
+$OpenBSD: patch-chrome_common_extensions_api_api_gyp,v 1.2 2014/03/11 14:52:01 robert Exp $
+--- chrome/common/extensions/api/api.gyp.orig.port	Thu Feb 20 21:27:52 2014
++++ chrome/common/extensions/api/api.gyp	Fri Feb 21 19:39:55 2014
+@@ -172,6 +172,11 @@
                'webrtc_logging_private.idl',
              ],
            }],

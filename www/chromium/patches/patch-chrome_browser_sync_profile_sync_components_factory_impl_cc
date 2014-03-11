@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_sync_profile_sync_components_factory_impl_cc,v 1.3 2014/01/18 11:42:04 robert Exp $
---- chrome/browser/sync/profile_sync_components_factory_impl.cc.orig.port	Mon Jan 13 22:00:03 2014
-+++ chrome/browser/sync/profile_sync_components_factory_impl.cc	Thu Jan 16 12:26:42 2014
-@@ -271,7 +271,7 @@ void ProfileSyncComponentsFactoryImpl::RegisterDesktop
+$OpenBSD: patch-chrome_browser_sync_profile_sync_components_factory_impl_cc,v 1.4 2014/03/11 14:52:01 robert Exp $
+--- chrome/browser/sync/profile_sync_components_factory_impl.cc.orig.port	Thu Feb 20 21:27:40 2014
++++ chrome/browser/sync/profile_sync_components_factory_impl.cc	Fri Feb 21 19:39:55 2014
+@@ -305,7 +305,7 @@ void ProfileSyncComponentsFactoryImpl::RegisterDesktop
        new UIDataTypeController(
            syncer::SYNCED_NOTIFICATIONS, this, profile_, pss));
  

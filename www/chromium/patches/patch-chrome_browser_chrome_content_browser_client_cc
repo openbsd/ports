@@ -1,7 +1,16 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.8 2014/01/18 11:42:03 robert Exp $
---- chrome/browser/chrome_content_browser_client.cc.orig.port	Thu Jan 16 12:34:25 2014
-+++ chrome/browser/chrome_content_browser_client.cc	Thu Jan 16 12:35:10 2014
-@@ -492,7 +492,7 @@ void FillFontFamilyMap(const PrefService* prefs,
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.9 2014/03/11 14:52:01 robert Exp $
+--- chrome/browser/chrome_content_browser_client.cc.orig.port	Fri Feb 21 23:26:54 2014
++++ chrome/browser/chrome_content_browser_client.cc	Sun Feb 23 17:15:40 2014
+@@ -174,7 +174,7 @@
+ #include "chrome/browser/chrome_browser_main_posix.h"
+ #endif
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
+ #include "base/debug/leak_annotations.h"
+ #include "base/linux_util.h"
+ #include "components/breakpad/app/breakpad_linux.h"
+@@ -486,7 +486,7 @@ void FillFontFamilyMap(const PrefService* prefs,
    }
  }
  
@@ -10,16 +19,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.8 2014/01/18
  breakpad::CrashHandlerHostLinux* CreateCrashHandlerHost(
      const std::string& process_type) {
    base::FilePath dumps_path;
-@@ -548,7 +548,7 @@ int GetCrashSignalFD(const CommandLine& command_line) 
- 
-   return -1;
- }
--#endif  // defined(OS_POSIX) && !defined(OS_MACOSX)
-+#endif  // defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
- 
- #if !defined(OS_CHROMEOS)
- GURL GetEffectiveURLForSignin(const GURL& url) {
-@@ -1397,7 +1397,7 @@ std::string ChromeContentBrowserClient::GetCanonicalEn
+@@ -1389,7 +1389,7 @@ std::string ChromeContentBrowserClient::GetCanonicalEn
  
  void ChromeContentBrowserClient::AppendExtraCommandLineSwitches(
      CommandLine* command_line, int child_process_id) {
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.8 2014/01/18
    if (breakpad::IsCrashReporterEnabled()) {
      std::string enable_crash_reporter;
      GoogleUpdateSettings::GetMetricsId(&enable_crash_reporter);
-@@ -2529,7 +2529,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+@@ -2525,7 +2525,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
            Profile::FromBrowserContext(browser_context)));
  }
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_renderer_pepper_usb_key_code_conversion_cc,v 1.1 2013/10/29 06:51:34 robert Exp $
---- content/renderer/pepper/usb_key_code_conversion.cc.orig.port	Sun Oct 20 17:06:56 2013
-+++ content/renderer/pepper/usb_key_code_conversion.cc	Sun Oct 20 17:07:14 2013
-@@ -10,7 +10,7 @@ using WebKit::WebKeyboardEvent;
+$OpenBSD: patch-content_renderer_pepper_usb_key_code_conversion_cc,v 1.2 2014/03/11 14:52:01 robert Exp $
+--- content/renderer/pepper/usb_key_code_conversion.cc.orig.port	Thu Feb 20 21:28:18 2014
++++ content/renderer/pepper/usb_key_code_conversion.cc	Fri Feb 21 19:39:55 2014
+@@ -10,7 +10,7 @@ using blink::WebKeyboardEvent;
  
  namespace content {
  

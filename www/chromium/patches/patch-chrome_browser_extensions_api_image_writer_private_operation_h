@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_extensions_api_image_writer_private_operation_h,v 1.1 2013/12/12 10:43:18 robert Exp $
---- chrome/browser/extensions/api/image_writer_private/operation.h.orig.port	Tue Dec 10 12:47:31 2013
-+++ chrome/browser/extensions/api/image_writer_private/operation.h	Tue Dec 10 12:47:55 2013
-@@ -107,7 +107,7 @@ class Operation
+$OpenBSD: patch-chrome_browser_extensions_api_image_writer_private_operation_h,v 1.2 2014/03/11 14:52:01 robert Exp $
+--- chrome/browser/extensions/api/image_writer_private/operation.h.orig.port	Thu Feb 20 21:27:38 2014
++++ chrome/browser/extensions/api/image_writer_private/operation.h	Fri Feb 21 19:39:55 2014
+@@ -114,7 +114,7 @@ class Operation
    friend class base::RefCountedThreadSafe<Operation>;
  
    // TODO(haven): Clean up these switches. http://crbug.com/292956

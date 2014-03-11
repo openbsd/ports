@@ -1,6 +1,6 @@
-$OpenBSD: patch-remoting_remoting_gyp,v 1.11 2013/12/12 10:43:18 robert Exp $
---- remoting/remoting.gyp.orig.port	Wed Dec  4 21:55:54 2013
-+++ remoting/remoting.gyp	Thu Dec  5 15:32:45 2013
+$OpenBSD: patch-remoting_remoting_gyp,v 1.12 2014/03/11 14:52:01 robert Exp $
+--- remoting/remoting.gyp.orig.port	Thu Feb 20 21:28:03 2014
++++ remoting/remoting.gyp	Fri Feb 21 19:39:55 2014
 @@ -50,7 +50,7 @@
  
      'conditions': [
@@ -10,7 +10,7 @@ $OpenBSD: patch-remoting_remoting_gyp,v 1.11 2013/12/12 10:43:18 robert Exp $
          'enable_remoting_host': 1,
        }, {
          'enable_remoting_host': 0,
-@@ -461,7 +461,7 @@
+@@ -468,7 +468,7 @@
              'host/win/wts_terminal_observer.h',
            ],
            'conditions': [

@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_chrome_renderer_gypi,v 1.8 2014/01/18 11:42:04 robert Exp $
---- chrome/chrome_renderer.gypi.orig.port	Mon Jan 13 22:00:54 2014
-+++ chrome/chrome_renderer.gypi	Thu Jan 16 12:26:42 2014
-@@ -38,6 +38,7 @@
-         '../webkit/glue/webkit_glue.gyp:glue_child',
+$OpenBSD: patch-chrome_chrome_renderer_gypi,v 1.9 2014/03/11 14:52:01 robert Exp $
+--- chrome/chrome_renderer.gypi.orig.port	Thu Feb 20 21:27:54 2014
++++ chrome/chrome_renderer.gypi	Fri Feb 21 19:39:55 2014
+@@ -37,6 +37,7 @@
+         '../webkit/glue/webkit_glue.gyp:glue',
          '../webkit/renderer/webkit_renderer.gyp:webkit_renderer',
          '../webkit/webkit_resources.gyp:webkit_resources',
 +	'../chrome/common/extensions/api/api.gyp:api',

@@ -1,13 +1,12 @@
-$OpenBSD: patch-content_content_browser_gypi,v 1.21 2013/12/12 10:43:18 robert Exp $
---- content/content_browser.gypi.orig.port	Wed Dec  4 21:54:53 2013
-+++ content/content_browser.gypi	Thu Dec  5 15:32:45 2013
-@@ -1474,9 +1474,18 @@
+$OpenBSD: patch-content_content_browser_gypi,v 1.22 2014/03/11 14:52:01 robert Exp $
+--- content/content_browser.gypi.orig.port	Thu Feb 20 11:09:23 2014
++++ content/content_browser.gypi	Mon Mar  3 11:06:51 2014
+@@ -1543,9 +1543,22 @@
        ],
      }],
      ['os_bsd==1', {
 -      'sources/': [
 -        ['exclude', '^browser/gamepad/gamepad_platform_data_fetcher_linux\\.cc$'],
--        ['exclude', '^browser/geolocation/wifi_data_provider_linux\\.cc$'],
 +      'sources!': [
 +        'public/browser/zygote_host_linux.h',
 +        'browser/zygote_host/zygote_host_impl_linux.cc',
@@ -21,5 +20,18 @@ $OpenBSD: patch-content_content_browser_gypi,v 1.21 2013/12/12 10:43:18 robert E
 +        'browser/geolocation/wifi_data_provider_linux.cc',
 +        'browser/udev_linux.cc',
        ],
++      'dependencies': [
++        '../build/linux/system.gyp:dbus',
++      ],
      }],
      ['use_aura!=1 and OS!="win"', {
+       'sources!': [
+@@ -1635,7 +1648,7 @@
+         'browser/geolocation/empty_wifi_data_provider.cc',
+       ],
+     }],
+-    ['OS == "linux" and use_dbus==1', {
++    ['(OS == "linux" or os_bsd==1) and use_dbus==1', {
+       'sources!': [
+         'browser/geolocation/empty_wifi_data_provider.cc',
+       ],

@@ -1,34 +1,16 @@
-$OpenBSD: patch-third_party_WebKit_Source_core_core_gyp,v 1.4 2014/01/18 11:42:04 robert Exp $
---- third_party/WebKit/Source/core/core.gyp.orig.port	Mon Jan 13 22:04:49 2014
-+++ third_party/WebKit/Source/core/core.gyp	Thu Jan 16 12:26:42 2014
-@@ -606,7 +606,7 @@
-         ['exclude', 'platform/graphics/cpu/arm/filters/.*NEON\\.(cpp|h)'],
+$OpenBSD: patch-third_party_WebKit_Source_core_core_gyp,v 1.5 2014/03/11 14:52:01 robert Exp $
+--- third_party/WebKit/Source/core/core.gyp.orig.port	Fri Feb 21 23:38:37 2014
++++ third_party/WebKit/Source/core/core.gyp	Fri Feb 21 23:39:38 2014
+@@ -593,7 +593,7 @@
+         ['exclude', 'platform/Theme\\.cpp$'],
        ],
        'conditions': [
--        ['OS=="linux" or OS=="android"', {
-+        ['OS=="linux" or OS=="android" or OS=="openbsd"', {
-           'sources/': [
-             # Cherry-pick files excluded by the broader regular expressions above.
-             ['include', 'platform/graphics/harfbuzz/FontHarfBuzz\\.cpp$'],
-@@ -627,7 +627,7 @@
-             ['exclude', 'Harfbuzz[^/]+\\.(cpp|h)$'],
-           ],
-         }],
 -        ['OS!="linux"', {
 +        ['OS!="linux" and OS!="openbsd"', {
            'sources/': [
              ['exclude', 'Linux\\.cpp$'],
            ],
-@@ -726,7 +726,7 @@
-             ['exclude', 'platform/graphics/FontPlatformData\\.cpp$'],
-           ],
-         }],
--        ['OS != "linux" and OS != "mac" and (OS != "win" or (OS == "win" and "ENABLE_GDI_FONTS_ON_WINDOWS=1" in feature_defines))', {
-+        ['OS != "linux" and OS != "mac" and OS != "openbsd" and (OS != "win" or (OS == "win" and "ENABLE_GDI_FONTS_ON_WINDOWS=1" in feature_defines))', {
-           'sources/': [
-             ['exclude', 'VDMX[^/]+\\.(cpp|h)$'],
-           ],
-@@ -914,7 +914,7 @@
+@@ -732,7 +732,7 @@
            # Due to a bug in gcc 4.6 in android NDK, we get warnings about uninitialized variable.
            'cflags': ['-Wno-uninitialized'],
          }],
@@ -37,7 +19,7 @@ $OpenBSD: patch-third_party_WebKit_Source_core_core_gyp,v 1.4 2014/01/18 11:42:0
            'sources/': [
              ['exclude', 'Linux\\.cpp$'],
            ],
-@@ -958,7 +958,7 @@
+@@ -776,7 +776,7 @@
          ['OS=="win" and buildtype=="Official"', {
            'msvs_shard': 19,
          }],

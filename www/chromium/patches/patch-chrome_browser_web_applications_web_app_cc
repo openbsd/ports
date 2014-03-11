@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_web_applications_web_app_cc,v 1.7 2013/12/12 10:43:18 robert Exp $
---- chrome/browser/web_applications/web_app.cc.orig.port	Thu Dec  5 17:03:43 2013
-+++ chrome/browser/web_applications/web_app.cc	Thu Dec  5 17:03:49 2013
-@@ -228,7 +228,7 @@ void GetIconsInfo(const WebApplicationInfo& app_info,
+$OpenBSD: patch-chrome_browser_web_applications_web_app_cc,v 1.8 2014/03/11 14:52:01 robert Exp $
+--- chrome/browser/web_applications/web_app.cc.orig.port	Thu Feb 20 21:27:36 2014
++++ chrome/browser/web_applications/web_app.cc	Fri Feb 21 19:39:55 2014
+@@ -226,7 +226,7 @@ void GetIconsInfo(const WebApplicationInfo& app_info,
  }
  #endif
  
@@ -9,4 +9,4 @@ $OpenBSD: patch-chrome_browser_web_applications_web_app_cc,v 1.7 2013/12/12 10:4
 +#if defined(OS_LINUX) || defined(OS_BSD)
  std::string GetWMClassFromAppName(std::string app_name) {
    file_util::ReplaceIllegalCharactersInPath(&app_name, '_');
-   TrimString(app_name, "_", &app_name);
+   base::TrimString(app_name, "_", &app_name);

@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_tools_build_generate_policy_source_py,v 1.1 2013/10/29 06:51:34 robert Exp $
---- chrome/tools/build/generate_policy_source.py.orig.port	Sun Oct 20 18:57:39 2013
-+++ chrome/tools/build/generate_policy_source.py	Sun Oct 20 18:57:46 2013
-@@ -67,7 +67,7 @@ class PolicyDetails:
+$OpenBSD: patch-components_policy_tools_generate_policy_source_py,v 1.1 2014/03/11 14:52:01 robert Exp $
+--- components/policy/tools/generate_policy_source.py.orig.port	Fri Feb 21 23:30:56 2014
++++ components/policy/tools/generate_policy_source.py	Fri Feb 21 23:31:04 2014
+@@ -64,7 +64,7 @@ class PolicyDetails:
        if platform.startswith('chrome.'):
          platform_sub = platform[7:]
          if platform_sub == '*':

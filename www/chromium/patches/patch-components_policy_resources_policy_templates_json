@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_app_policy_policy_templates_json,v 1.3 2014/01/18 11:42:03 robert Exp $
---- chrome/app/policy/policy_templates.json.orig.port	Thu Jan 16 12:32:05 2014
-+++ chrome/app/policy/policy_templates.json	Thu Jan 16 12:32:43 2014
+$OpenBSD: patch-components_policy_resources_policy_templates_json,v 1.1 2014/03/11 14:52:01 robert Exp $
+--- components/policy/resources/policy_templates.json.orig.port	Fri Feb 21 23:25:58 2014
++++ components/policy/resources/policy_templates.json	Fri Feb 21 23:26:47 2014
 @@ -1366,7 +1366,7 @@
            'name': 'GSSAPILibraryName',
            'type': 'string',
@@ -19,12 +19,12 @@ $OpenBSD: patch-chrome_app_policy_policy_templates_json,v 1.3 2014/01/18 11:42:0
        'features': {
          'dynamic_refresh': True,
          'per_profile': False,
-@@ -3960,7 +3960,7 @@
+@@ -3976,7 +3976,7 @@
        'name': 'BackgroundModeEnabled',
        'type': 'main',
        'schema': { 'type': 'boolean' },
 -      'supported_on': ['chrome.win:19-', 'chrome.linux:19-'],
-+      'supported_on': ['chrome.win:19-', 'chrome.linux:19-', 'chrome.openbsd:30-'],
++      'supported_on': ['chrome.win:19-', 'chrome.linux:19-', 'chrome.openbsd:19-'],
        'features': {
          'can_be_recommended': True,
          'dynamic_refresh': True,
