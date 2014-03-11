@@ -1,30 +1,36 @@
-$OpenBSD: patch-makefile,v 1.8 2013/11/02 11:13:19 ajacoutot Exp $
---- makefile.orig	Wed Feb 16 16:03:25 2011
-+++ makefile	Sat Nov  2 11:48:11 2013
-@@ -1,14 +1,13 @@
+$OpenBSD: patch-makefile,v 1.9 2014/03/11 22:22:46 jturner Exp $
+--- makefile.orig	Fri Apr 12 12:31:19 2013
++++ makefile	Fri Feb 28 11:23:33 2014
+@@ -1,5 +1,5 @@
  LIBNAME = lpeg
 -LUADIR = /usr/include/lua5.1/
 +LUADIR = ${MODLUA_INCL_DIR}
  
--COPT = -O2 -DNDEBUG
-+COPT = -O2 -DNDEBUG -fPIC -shared
- 
- CWARNS = -Wall -Wextra -pedantic \
-         -Waggregate-return \
+ COPT = -O2
+ # COPT = -DLPEG_DEBUG -g
+@@ -15,15 +15,13 @@ CWARNS = -Wall -Wextra -pedantic \
+ 	-Wundef \
+ 	-Wwrite-strings \
  	-Wbad-function-cast \
-         -Wcast-align \
-         -Wcast-qual \
 -	-Wdeclaration-after-statement \
- 	-Wdisabled-optimization \
-         -Wmissing-prototypes \
-         -Wnested-externs \
-@@ -21,8 +20,7 @@ CWARNS = -Wall -Wextra -pedantic \
- 	#  -Wunreachable-code \
+ 	-Wmissing-prototypes \
+ 	-Wnested-externs \
+ 	-Wstrict-prototypes \
+ # -Wunreachable-code \
  
  
--CFLAGS = $(CWARNS) $(COPT) -ansi -I$(LUADIR)
+-CFLAGS = $(CWARNS) $(COPT) -ansi -I$(LUADIR) -fPIC
 -CC = gcc
-+CFLAGS += $(CWARNS) $(COPT) -ansi -I$(LUADIR)
++CFLAGS += $(CWARNS) $(COPT) -ansi -I$(LUADIR) -fPIC
  
- # For Linux
- DLLFLAGS = -shared -fpic
+ FILES = lpvm.o lpcap.o lptree.o lpcode.o lpprint.o
+ 
+@@ -36,7 +34,7 @@ macosx:
+ 	make lpeg.so "DLLFLAGS = -bundle -undefined dynamic_lookup"
+ 
+ lpeg.so: $(FILES)
+-	env $(CC) $(DLLFLAGS) $(FILES) -o lpeg.so
++	env $(CC) -shared $(FILES) -o lpeg.so
+ 
+ $(FILES): makefile
+ 
