@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2013/09/30 08:06:10 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.18 2014/03/12 08:29:43 dcoppa Exp $
 @bin bin/minitube
 share/applications/minitube.desktop
 share/icons/hicolor/128x128/apps/minitube.png
@@ -16,8 +16,10 @@ share/minitube/
 share/minitube/locale/
 share/minitube/locale/ar.qm
 share/minitube/locale/ast.qm
+share/minitube/locale/be.qm
 share/minitube/locale/bg_BG.qm
 share/minitube/locale/ca.qm
+share/minitube/locale/ca_ES.qm
 share/minitube/locale/cs_CZ.qm
 share/minitube/locale/da.qm
 share/minitube/locale/de_DE.qm
@@ -26,11 +28,13 @@ share/minitube/locale/en.qm
 share/minitube/locale/es.qm
 share/minitube/locale/es_AR.qm
 share/minitube/locale/es_ES.qm
+share/minitube/locale/es_MX.qm
 share/minitube/locale/fi.qm
 share/minitube/locale/fi_FI.qm
 share/minitube/locale/fr.qm
 share/minitube/locale/gl.qm
 share/minitube/locale/he_IL.qm
+share/minitube/locale/hr.qm
 share/minitube/locale/hu.qm
 share/minitube/locale/ia.qm
 share/minitube/locale/it.qm
@@ -41,6 +45,7 @@ share/minitube/locale/nb.qm
 share/minitube/locale/nl.qm
 share/minitube/locale/pl.qm
 share/minitube/locale/pl_PL.qm
+share/minitube/locale/pt.qm
 share/minitube/locale/pt_BR.qm
 share/minitube/locale/ro.qm
 share/minitube/locale/ru.qm
@@ -51,6 +56,7 @@ share/minitube/locale/sv_SE.qm
 share/minitube/locale/tr.qm
 share/minitube/locale/uk.qm
 share/minitube/locale/uk_UA.qm
+share/minitube/locale/vi.qm
 share/minitube/locale/zh_CN.qm
 share/minitube/locale/zh_TW.qm
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
