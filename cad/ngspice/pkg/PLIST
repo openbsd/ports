@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/01/10 12:19:50 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/03/12 06:18:34 bentley Exp $
 @bin bin/ngmakeidx
 @bin bin/ngmultidec
 @bin bin/ngnutmeg
@@ -115,6 +115,7 @@ share/ngspice/include/ngspice/pzdefs.h
 share/ngspice/include/ngspice/sen2defs.h
 share/ngspice/include/ngspice/sensdefs.h
 share/ngspice/include/ngspice/sensgen.h
+share/ngspice/include/ngspice/sharedspice.h
 share/ngspice/include/ngspice/sim.h
 share/ngspice/include/ngspice/smpdefs.h
 share/ngspice/include/ngspice/sperror.h

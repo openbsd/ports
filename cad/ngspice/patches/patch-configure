@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2014/03/12 06:18:34 bentley Exp $
+--- configure.orig	Tue Mar 11 05:03:46 2014
++++ configure	Tue Mar 11 05:03:48 2014
+@@ -5199,7 +5199,7 @@ else
+ $as_echo "#define NGDEBUG 1" >>confdefs.h
+ 
+     if test "x$GCC" = xyes; then
+-        CFLAGS="-g -O1 -Wall -Wextra -Wmissing-prototypes -Wstrict-prototypes -Wnested-externs -Wold-style-definition -Wredundant-decls -Wconversion $ext_CFLAGS"
++        CFLAGS="-Wall -Wextra -Wmissing-prototypes -Wstrict-prototypes -Wnested-externs -Wold-style-definition -Wconversion $ext_CFLAGS"
+     else
+         CFLAGS="-g $ext_CFLAGS"
+     fi
