@@ -1,24 +1,14 @@
-$OpenBSD: patch-share_applications_feh_pre,v 1.2 2014/01/17 09:53:39 dcoppa Exp $
-
-Add default and en_US GenericName ("Image viewer")
-(upstream git commit 5210da87c6802f59de0e401033a90e4ae0875866)
-
-Use '%F' since feh supports multiple files
-(upstream git commit 865a78510ff53db952ec5de98c934b60bfc664c8)
-
---- share/applications/feh.pre.orig	Tue Jun 11 08:28:26 2013
-+++ share/applications/feh.pre	Fri Jan 17 10:51:05 2014
-@@ -1,10 +1,12 @@
+$OpenBSD: patch-share_applications_feh_pre,v 1.3 2014/03/12 11:41:43 dcoppa Exp $
+--- share/applications/feh.pre.orig	Wed Mar 12 12:24:50 2014
++++ share/applications/feh.pre	Wed Mar 12 12:25:49 2014
+@@ -1,5 +1,6 @@
  [Desktop Entry]
  Name=Feh
 +Name[en_US]=Feh
-+GenericName=Image viewer
-+GenericName[en_US]=Image viewer
+ GenericName=Image viewer
+ GenericName[en_US]=Image viewer
  Comment=Fast Imlib2-based Image Viewer
--Exec=feh %f
-+Exec=feh %F
- Terminal=false
- Type=Application
+@@ -9,4 +10,3 @@ Type=Application
  Icon=$IMAGEDIR$/feh.png
  Categories=Graphics;2DGraphics;Viewer;
  MimeType=image/bmp;image/gif;image/jpeg;image/jpg;image/pjpeg;image/png;image/tiff;image/x-bmp;image/x-pcx;image/x-png;image/x-portable-anymap;image/x-portable-bitmap;image/x-portable-graymap;image/x-portable-pixmap;image/x-tga;image/x-xbitmap;

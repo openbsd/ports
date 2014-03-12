@@ -1,20 +1,6 @@
-$OpenBSD: patch-src_events_c,v 1.6 2013/12/03 07:37:44 dcoppa Exp $
-
-commit c0649c4b2a7c824abc743fa59457221e2bc3ab21
-Author: Daniel Friesel <derf@finalrewind.org>
-Date:   Sun Nov 24 23:29:15 2013 +0100
-
-thumbnail mode: if --action is set, run it instead of opening images
-
-commit 2f09bf037a9e02de6a0df68625f139173495699a
-Author: Daniel Friesel <derf@finalrewind.org>
-Date:   Wed Nov 20 20:53:18 2013 +0100
-
-events.c: fix off-by-one pixel error when warping the pointer in
-the bottom/right window border
-
---- src/events.c.orig	Tue Jun 11 08:28:26 2013
-+++ src/events.c	Tue Dec  3 08:38:16 2013
+$OpenBSD: patch-src_events_c,v 1.7 2014/03/12 11:41:43 dcoppa Exp $
+--- src/events.c.orig	Wed Mar 12 12:32:52 2014
++++ src/events.c	Wed Mar 12 12:33:41 2014
 @@ -124,7 +124,7 @@ void init_buttonbindings(void)
  
  	free(confpath);
@@ -24,64 +10,3 @@ the bottom/right window border
  		return;
  
  	while (fgets(line, sizeof(line), conf)) {
-@@ -378,8 +378,12 @@ static void feh_event_handle_ButtonRelease(XEvent * ev
- 				x /= winwid->zoom;
- 				y /= winwid->zoom;
- 				thumbfile = feh_thumbnail_get_file_from_coords(x, y);
--				if (thumbfile)
--					feh_thumbnail_show_fullsize(thumbfile);
-+				if (thumbfile) {
-+					if (opt.actions[0])
-+						feh_action_run(thumbfile, opt.actions[0]);
-+					else
-+						feh_thumbnail_show_fullsize(thumbfile);
-+				}
- 			}
- 		} else {
- 			opt.mode = MODE_NORMAL;
-@@ -578,36 +582,36 @@ static void feh_event_handle_MotionNotify(XEvent * ev)
- 
- 			winwidget_sanitise_offsets(winwid);
- 
--			D(("im_x %d, im_w %d, off %d, mx %d\n", winwid->im_x,
--				winwid->im_w, winwid->click_offset_x, ev->xmotion.x));
-+			D(("im_x %d, im_w %d, off %d, mx %d, my %d\n", winwid->im_x,
-+				winwid->im_w, winwid->click_offset_x, ev->xmotion.x,
-+				ev->xmotion.y));
- 
- 			/* XWarpPointer generates a MotionNotify event which we will
- 			 * parse. Since that event would undo the effect of the pointer
- 			 * warp, we need to change the click_offset to compensate this.
- 			 */
--			if ((winwid->w - ev->xmotion.x <= 1)
--					&& (winwid->click_offset_x >= winwid->w - 4))
-+			if ((winwid->w - ev->xmotion.x <= 1) && (winwid->im_x < 0))
- 			{
- 				XWarpPointer(disp, None, winwid->win, 0, 0, 0, 0, 3,
- 					ev->xmotion.y);
- 				winwid->click_offset_x -= winwid->w - 4;
- 			}
--			else if ((ev->xmotion.x <= 1) && (winwid->click_offset_x
--					<= (winwid->im_w * winwid->zoom) - winwid->w - 3))
-+			else if ((ev->xmotion.x <= 1) && (winwid->w <
-+					(winwid->im_x + winwid->im_w * winwid->zoom)))
- 			{
- 				XWarpPointer(disp, None, winwid->win, 0, 0, 0, 0,
- 					winwid->w - 4, ev->xmotion.y);
- 				winwid->click_offset_x += winwid->w - 4;
- 			}
- 			else if ((winwid->h - ev->xmotion.y <= 1)
--					&& (winwid->click_offset_y >= winwid->h - 4))
-+					&& (winwid->im_y < 0))
- 			{
- 				XWarpPointer(disp, None, winwid->win, 0, 0, 0, 0,
- 					ev->xmotion.x, 3);
- 				winwid->click_offset_y -= winwid->h - 4;
- 			}
--			else if ((ev->xmotion.y <= 1) && (winwid->click_offset_y
--					<= (winwid->im_h * winwid->zoom) - winwid->h - 3))
-+			else if ((ev->xmotion.y <= 1) && (winwid->h <
-+					(winwid->im_y + winwid->im_h * winwid->zoom)))
- 			{
- 				XWarpPointer(disp, None, winwid->win, 0, 0, 0, 0,
- 					ev->xmotion.x, winwid->h - 4);
