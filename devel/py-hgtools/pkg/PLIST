@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/04/03 06:41:54 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/03/12 21:05:11 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/hgtools/
 lib/python${MODPY_VERSION}/site-packages/hgtools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/hgtools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -26,11 +26,19 @@ lib/python${MODPY_VERSION}/site-packages/hgtools/plugins.pyc
 lib/python${MODPY_VERSION}/site-packages/hgtools/tests/
 lib/python${MODPY_VERSION}/site-packages/hgtools/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/hgtools/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/hgtools/tests/conftest.py
+lib/python${MODPY_VERSION}/site-packages/hgtools/tests/conftest.pyc
+lib/python${MODPY_VERSION}/site-packages/hgtools/tests/test_git.py
+lib/python${MODPY_VERSION}/site-packages/hgtools/tests/test_git.pyc
 lib/python${MODPY_VERSION}/site-packages/hgtools/tests/test_managers.py
 lib/python${MODPY_VERSION}/site-packages/hgtools/tests/test_managers.pyc
+lib/python${MODPY_VERSION}/site-packages/hgtools/tests/test_mercurial.py
+lib/python${MODPY_VERSION}/site-packages/hgtools/tests/test_mercurial.pyc
 lib/python${MODPY_VERSION}/site-packages/hgtools/tests/test_reentry.py
 lib/python${MODPY_VERSION}/site-packages/hgtools/tests/test_reentry.pyc
 lib/python${MODPY_VERSION}/site-packages/hgtools/tests/test_versioning.py
 lib/python${MODPY_VERSION}/site-packages/hgtools/tests/test_versioning.pyc
+lib/python${MODPY_VERSION}/site-packages/hgtools/util.py
+lib/python${MODPY_VERSION}/site-packages/hgtools/util.pyc
 lib/python${MODPY_VERSION}/site-packages/hgtools/versioning.py
 lib/python${MODPY_VERSION}/site-packages/hgtools/versioning.pyc
