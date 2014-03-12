@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.80 2013/11/18 16:34:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.81 2014/03/12 21:20:58 sthen Exp $
 
 COMMENT=	tty-based e-mail client, development version
 
 DISTNAME=	mutt-1.5.22
 EPOCH=		0
-REVISION=	0
+REVISION=	1
 # http://prefix.gentooexperimental.org:8000/mutt-patches is useful
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mutt/} \
 		${MASTER_SITES_MUTT:=devel/}
