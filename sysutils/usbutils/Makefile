@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/21 08:48:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2014/03/12 11:16:14 mpi Exp $
 
 COMMENT =		utility used to display information about USB devices
 
-VERSION =		005
+VERSION =		007
 DISTNAME =		usbutils_${VERSION}.orig
 PKGNAME =		usbutils-${VERSION}
-
-REVISION =		1
 
 CATEGORIES =		sysutils
 HOMEPAGE =		http://www.linux-usb.org
@@ -17,12 +15,13 @@ MAINTAINER =		Martin Pieuchot <mpi@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		http://ftp.de.debian.org/debian/pool/main/u/usbutils/
+EXTRACT_SUFX =		.tar.xz
 
-WANTLIB =		c usb-1.0 z
+WANTLIB =		c pthread usb-1.0 z
 LIB_DEPENDS =		devel/libusb1
 
 AUTOMAKE_VERSION =	1.11
-AUTOCONF_VERSION =	2.68
+AUTOCONF_VERSION =	2.69
 
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS}

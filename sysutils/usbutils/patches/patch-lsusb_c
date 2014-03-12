@@ -1,49 +1,47 @@
-$OpenBSD: patch-lsusb_c,v 1.2 2012/07/16 20:17:03 mpi Exp $
+$OpenBSD: patch-lsusb_c,v 1.3 2014/03/12 11:16:14 mpi Exp $
 
 Disable unsupported options.
 
---- lsusb.c.orig	Sun Oct 30 20:35:50 2011
-+++ lsusb.c	Mon Jul 16 18:05:14 2012
-@@ -3902,6 +3902,7 @@ void devtree_devdisconnect(struct usbdevnode *dev)
- 	dev = dev;	/* reduce compiler warnings */
- }
+--- lsusb.c.orig	Fri Jun  7 01:13:43 2013
++++ lsusb.c	Tue Mar 11 16:42:07 2014
+@@ -3856,6 +3856,7 @@ static void dumpdev(libusb_device *dev)
+ 
+ /* ---------------------------------------------------------------------- */
  
 +#ifndef __OpenBSD__
- static int treedump(void)
+ static int dump_one_device(libusb_context *ctx, const char *path)
  {
- 	int fd;
-@@ -3919,6 +3920,7 @@ static int treedump(void)
- 	devtree_dump(verblevel);
+ 	libusb_device *dev;
+@@ -3877,6 +3878,7 @@ static int dump_one_device(libusb_context *ctx, const 
+ 	dumpdev(dev);
  	return 0;
  }
 +#endif
  
- /* ---------------------------------------------------------------------- */
+ static int list_devices(libusb_context *ctx, int busnum, int devnum, int vendorid, int productid)
+ {
+@@ -3947,7 +3949,7 @@ int main(int argc, char *argv[])
  
-@@ -3937,7 +3939,7 @@ int main(int argc, char *argv[])
- 	char *cp;
- 	int status;
+ 	setlocale(LC_CTYPE, "");
  
--	while ((c = getopt_long(argc, argv, "D:vxtP:p:s:d:V",
-+	while ((c = getopt_long(argc, argv, "D:vxP:p:s:d:V",
+-	while ((c = getopt_long(argc, argv, "D:vtP:p:s:d:Vh",
++	while ((c = getopt_long(argc, argv, "vP:p:s:d:Vh",
  			long_options, NULL)) != EOF) {
  		switch (c) {
  		case 'V':
-@@ -3951,11 +3953,11 @@ int main(int argc, char *argv[])
- 		case 'x':
- 			allowctrlmsg = 1;
+@@ -3961,9 +3963,11 @@ int main(int argc, char *argv[])
+ 			help=1;
  			break;
--
+ 
 +#ifndef __OpenBSD__
  		case 't':
  			treemode = 1;
  			break;
--
 +#endif
+ 
  		case 's':
  			cp = strchr(optarg, ':');
- 			if (cp) {
-@@ -3983,9 +3985,11 @@ int main(int argc, char *argv[])
+@@ -3992,9 +3996,11 @@ int main(int argc, char *argv[])
  				product = strtoul(cp, NULL, 16);
  			break;
  
@@ -55,31 +53,41 @@ Disable unsupported options.
  
  		case '?':
  		default:
-@@ -4004,10 +4008,12 @@ int main(int argc, char *argv[])
+@@ -4013,10 +4019,12 @@ int main(int argc, char *argv[])
  			"  -d vendor:[product]\n"
  			"      Show only devices with the specified vendor and\n"
  			"      product ID numbers (in hexadecimal)\n"
 +#ifndef __OpenBSD__
  			"  -D device\n"
  			"      Selects which device lsusb will examine\n"
- 			"  -t\n"
+ 			"  -t, --tree\n"
  			"      Dump the physical USB device hierarchy as a tree\n"
 +#endif
  			"  -V, --version\n"
  			"      Show version of program\n"
- 			);
-@@ -4033,13 +4039,16 @@ int main(int argc, char *argv[])
- 		return EXIT_FAILURE;
- 	}
+ 			"  -h, --help\n"
+@@ -4039,6 +4047,7 @@ int main(int argc, char *argv[])
+ 				strerror(err));
+ 	status = 0;
  
 +#ifndef __OpenBSD__
  	if (treemode) {
  		/* treemode requires at least verblevel 1 */
  		verblevel += 1 - VERBLEVEL_DEFAULT;
- 		status = treedump();
--	} else if (devdump)
-+	} else
-+	if (devdump)
+@@ -4046,6 +4055,7 @@ int main(int argc, char *argv[])
+ 		names_exit();
+ 		return status;
+ 	}
++#endif
+ 
+ 	err = libusb_init(&ctx);
+ 	if (err) {
+@@ -4053,9 +4063,11 @@ int main(int argc, char *argv[])
+ 		return EXIT_FAILURE;
+ 	}
+ 
++#ifndef __OpenBSD__
+ 	if (devdump)
  		status = dump_one_device(ctx, devdump);
  	else
 +#endif

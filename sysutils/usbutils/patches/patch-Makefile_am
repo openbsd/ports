@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_am,v 1.1.1.1 2012/05/15 13:44:52 mpi Exp $
+$OpenBSD: patch-Makefile_am,v 1.2 2014/03/12 11:16:14 mpi Exp $
 
 No usbhid-dump(1) nor 'lsusb -t' option under OpenBSD
 
---- Makefile.am.orig	Sun Oct 30 20:35:50 2011
-+++ Makefile.am	Tue May 15 14:28:34 2012
+--- Makefile.am.orig	Wed Dec 12 00:01:00 2012
++++ Makefile.am	Tue Mar 11 16:28:10 2014
 @@ -1,6 +1,3 @@
 -SUBDIRS = \
 -	usbhid-dump
@@ -11,11 +11,11 @@ No usbhid-dump(1) nor 'lsusb -t' option under OpenBSD
  AM_LDFLAGS = \
  	-Wl,--as-needed
  
-@@ -19,7 +16,6 @@ bin_SCRIPTS = \
+@@ -17,7 +14,6 @@ bin_SCRIPTS = \
  
  lsusb_SOURCES = \
  	lsusb.c lsusb.h \
 -	lsusb-t.c \
  	list.h \
  	names.c names.h \
- 	devtree.c devtree.h \
+ 	usbmisc.c usbmisc.h
