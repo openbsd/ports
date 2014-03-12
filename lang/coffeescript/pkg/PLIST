@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/07/09 19:08:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/03/12 14:32:28 jasper Exp $
 bin/cake
 bin/coffee
 lib/node_modules/coffee-script/
@@ -7,7 +7,6 @@ lib/node_modules/coffee-script/CNAME
 lib/node_modules/coffee-script/CONTRIBUTING.md
 lib/node_modules/coffee-script/LICENSE
 lib/node_modules/coffee-script/README
-lib/node_modules/coffee-script/Rakefile
 lib/node_modules/coffee-script/bin/
 lib/node_modules/coffee-script/bin/cake
 lib/node_modules/coffee-script/bin/coffee
@@ -24,8 +23,10 @@ lib/node_modules/coffee-script/lib/coffee-script/lexer.js
 lib/node_modules/coffee-script/lib/coffee-script/nodes.js
 lib/node_modules/coffee-script/lib/coffee-script/optparse.js
 lib/node_modules/coffee-script/lib/coffee-script/parser.js
+lib/node_modules/coffee-script/lib/coffee-script/register.js
 lib/node_modules/coffee-script/lib/coffee-script/repl.js
 lib/node_modules/coffee-script/lib/coffee-script/rewriter.js
 lib/node_modules/coffee-script/lib/coffee-script/scope.js
 lib/node_modules/coffee-script/lib/coffee-script/sourcemap.js
 lib/node_modules/coffee-script/package.json
+lib/node_modules/coffee-script/register.js
