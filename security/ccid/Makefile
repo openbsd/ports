@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/12/06 06:35:34 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.11 2014/03/12 13:43:09 dcoppa Exp $
 
 SHARED_ONLY =	Yes
 
@@ -10,7 +10,8 @@ CATEGORIES =	security
 
 HOMEPAGE =	http://pcsclite.alioth.debian.org/ccid.html
 
-MASTER_SITES =	https://alioth.debian.org/frs/download.php/latestfile/112/
+# MASTER_SITES = https://alioth.debian.org/frs/download.php/latestfile/112/
+MASTER_SITES =	http://spacehopper.org/mirrors/
 
 EXTRACT_SUFX =	.tar.bz2
 

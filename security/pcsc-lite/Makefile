@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2014/03/12 08:37:49 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.24 2014/03/12 13:43:09 dcoppa Exp $
 
 COMMENT=	resource manager for PC/SC
 
@@ -11,7 +11,8 @@ SHARED_LIBS+=	pcscspy		0.0 # 0.0.0
 
 HOMEPAGE=	http://pcsclite.alioth.debian.org/pcsclite.html
 
-MASTER_SITES=	https://alioth.debian.org/frs/download.php/latestfile/39/
+# MASTER_SITES=	https://alioth.debian.org/frs/download.php/latestfile/39/
+MASTER_SITES=	http://spacehopper.org/mirrors/
 
 EXTRACT_SUFX=	.tar.bz2
 
