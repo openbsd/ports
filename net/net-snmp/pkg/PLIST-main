@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2012/10/18 14:01:45 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2014/03/12 23:52:14 sthen Exp $
 @pkgpath net/net-snmp
 @extraunexec rm -rf /var/net-snmp/*
-%%SHARED%%
 @bin bin/agentxtrap
 @bin bin/encode_keychange
 bin/fixproc
@@ -217,14 +216,19 @@ include/net-snmp/varbind_api.h
 include/net-snmp/version.h
 lib/libnetsnmp.a
 lib/libnetsnmp.la
+@lib lib/libnetsnmp.so.${LIBnetsnmp_VERSION}
 lib/libnetsnmpagent.a
 lib/libnetsnmpagent.la
+@lib lib/libnetsnmpagent.so.${LIBnetsnmpagent_VERSION}
 lib/libnetsnmphelpers.a
 lib/libnetsnmphelpers.la
+@lib lib/libnetsnmphelpers.so.${LIBnetsnmphelpers_VERSION}
 lib/libnetsnmpmibs.a
 lib/libnetsnmpmibs.la
+@lib lib/libnetsnmpmibs.so.${LIBnetsnmpmibs_VERSION}
 lib/libnetsnmptrapd.a
 lib/libnetsnmptrapd.la
+@lib lib/libnetsnmptrapd.so.${LIBnetsnmptrapd_VERSION}
 @man man/man1/agentxtrap.1
 @man man/man1/encode_keychange.1
 @man man/man1/fixproc.1
