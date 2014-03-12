@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:41:31 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/03/12 11:32:38 edd Exp $
 
 COMMENT =		time multiple executions of a command
 
-DISTNAME =		multitime-1.2
+DISTNAME =		multitime-1.3
 CATEGORIES =		sysutils
 
 HOMEPAGE =		http://tratt.net/laurie/src/multitime/
