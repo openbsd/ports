@@ -1,6 +1,7 @@
-$OpenBSD: patch-agent_component_c,v 1.1 2014/03/12 07:40:34 jasper Exp $
+$OpenBSD: patch-agent_component_c,v 1.2 2014/03/12 07:53:00 jasper Exp $
 
-warning: declaration of 'socket' shadows a global declaration
+https://bugs.freedesktop.org/show_bug.cgi?id=76059
+  warning: declaration of 'socket' shadows a global declaration
 
 --- agent/component.c.orig	Tue Mar 11 19:39:42 2014
 +++ agent/component.c	Tue Mar 11 19:40:28 2014

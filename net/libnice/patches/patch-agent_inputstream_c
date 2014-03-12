@@ -1,6 +1,7 @@
-$OpenBSD: patch-agent_inputstream_c,v 1.1 2014/03/12 07:40:34 jasper Exp $
+$OpenBSD: patch-agent_inputstream_c,v 1.2 2014/03/12 07:53:00 jasper Exp $
 
-warning: declaration of 'socket' shadows a global declaration
+https://bugs.freedesktop.org/show_bug.cgi?id=76059
+  warning: declaration of 'socket' shadows a global declaration
 
 --- agent/inputstream.c.orig	Tue Mar 11 21:17:29 2014
 +++ agent/inputstream.c	Tue Mar 11 21:17:49 2014
