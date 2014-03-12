@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_main_main_c,v 1.5 2012/07/04 12:38:06 dcoppa Exp $
+$OpenBSD: patch-src_main_main_c,v 1.6 2014/03/12 11:04:41 dcoppa Exp $
 
 OpenBSD always returns EINVAL when trying to disable an active stack
 
---- src/main/main.c.orig	Fri Mar  2 00:02:25 2012
-+++ src/main/main.c	Thu May 24 17:38:12 2012
+--- src/main/main.c.orig	Tue Jul 16 00:05:04 2013
++++ src/main/main.c	Tue Feb  4 09:15:53 2014
 @@ -28,6 +28,8 @@
  #include <ctype.h>
  #include <stdlib.h>
@@ -13,7 +13,7 @@ OpenBSD always returns EINVAL when trying to disable an active stack
  
  #define __MAIN__
  #define R_USE_SIGNALS 1
-@@ -618,7 +620,8 @@ static void init_signal_handlers(void)
+@@ -619,7 +621,8 @@ static void init_signal_handlers(void)
  	sigstk.ss_size = SIGSTKSZ + R_USAGE;
  	sigstk.ss_flags = 0;
  	if(sigaltstack(&sigstk, NULL) < 0)

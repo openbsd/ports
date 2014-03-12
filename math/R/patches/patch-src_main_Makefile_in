@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_main_Makefile_in,v 1.6 2012/10/25 11:59:30 dcoppa Exp $
+$OpenBSD: patch-src_main_Makefile_in,v 1.7 2014/03/12 11:04:41 dcoppa Exp $
 
 Fix linking with external libintl
 
---- src/main/Makefile.in.orig	Fri Mar  2 00:02:24 2012
-+++ src/main/Makefile.in	Thu Oct 25 11:27:43 2012
+--- src/main/Makefile.in.orig	Wed Mar  6 00:02:40 2013
++++ src/main/Makefile.in	Mon May 27 14:00:25 2013
 @@ -11,6 +11,7 @@ subdir = src/main
  R_HOME=$(top_builddir)
  
@@ -11,8 +11,8 @@ Fix linking with external libintl
 +DYLIB_EXT=.so.$(LIBR_VERSION)
  
  SOURCES_C = \
- 	CConverters.c CommandLineArgs.c \
-@@ -98,7 +99,7 @@ EXTRA_STATIC_LIBS = \
+ 	CommandLineArgs.c \
+@@ -95,7 +96,7 @@ EXTRA_STATIC_LIBS = \
    $(R_ZLIBS) $(R_BZLIBS) $(R_PCRE) $(R_TRE) $(R_XDR) $(R_XZ) $(R_LIBINTL)
  STATIC_LIBS = $(MAIN_LIBS) $(EXTRA_STATIC_LIBS)
  
@@ -20,4 +20,4 @@ Fix linking with external libintl
 +EXTRA_LIBS = $(BLAS_LIBS) $(FLIBS) $(R_XTRA_LIBS) @LTLIBINTL@ $(READLINE_LIBS) $(LIBS)
  
  R_binary = R.bin
- R_bin_OBJECTS = Rmain.o @BUILD_LTO_TRUE@@WANT_R_SHLIB_FALSE@$(OBJECTS)
+ R_bin_OBJECTS = Rmain.o @WANT_R_SHLIB_FALSE@$(OBJECTS)

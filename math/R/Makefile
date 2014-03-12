@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.59 2014/03/09 23:01:41 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2014/03/12 11:04:41 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	powerful math/statistics/graphics language
-DISTNAME=	R-2.15.3
-REVISION= 	1
+DISTNAME=	R-3.0.3
 
-SHARED_LIBS=	R	1.1  \
-		Rlapack	31.0 \
+SHARED_LIBS=	R	2.0  \
+		Rlapack	31.1 \
 		Rblas	31.0
 
 CATEGORIES=	math
@@ -19,66 +18,71 @@ MAINTAINER=	Rafael Sadowski <rafael@sizeofvoid.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	ICE SM X11 Xext Xmu Xss Xt bz2 c cairo \
-		fontconfig freetype glib-2.0 gobject-2.0 \
-		icui18n icuuc jpeg lzma m ncurses pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pcre png readline \
-		tiff z ${MODFORTRAN_WANTLIB} ${MODTK_WANTLIB}
+		ereadline fontconfig freetype glib-2.0 \
+		gobject-2.0 icui18n icuuc jpeg lzma m \
+		ncurses pango-1.0 pangocairo-1.0 \
+		pangoft2-1.0 pcre png pthread tiff z \
+		${MODFORTRAN_WANTLIB} ${MODTK_WANTLIB}
 
-MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
-		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
-		http://cran.at.r-project.org/src/base/R-2/ \
-		http://cran.au.r-project.org/src/base/R-2/ \
-		http://cran.br.r-project.org/src/base/R-2/ \
-		http://cran.ch.r-project.org/src/base/R-2/ \
-		http://cran.es.r-project.org/src/base/R-2/ \
-		http://cran.dk.r-project.org/src/base/R-2/ \
-		http://cran.hu.r-project.org/src/base/R-2/ \
-		http://cran.uk.r-project.org/src/base/R-2/ \
-		http://cran.us.r-project.org/src/base/R-2/ \
-		http://cran.za.r-project.org/src/base/R-2/ \
-		ftp://ftp.u-aizu.ac.jp/pub/lang/R/CRAN/src/base/R-2/ \
-		http://lib.stat.cmu.edu/R/CRAN/src/base/R-2/ \
-		http://cran.stat.ucla.edu/src/base/R-2/ \
-		http://probability.ca/cran/src/base/R-2/
+MASTER_SITES=	http://cran.r-project.org/src/base/R-3/ \
+		ftp://cran.r-project.org/pub/R/src/base/R-3/ \
+		http://cran.at.r-project.org/src/base/R-3/ \
+		http://cran.au.r-project.org/src/base/R-3/ \
+		http://cran.br.r-project.org/src/base/R-3/ \
+		http://cran.ch.r-project.org/src/base/R-3/ \
+		http://cran.es.r-project.org/src/base/R-3/ \
+		http://cran.dk.r-project.org/src/base/R-3/ \
+		http://cran.hu.r-project.org/src/base/R-3/ \
+		http://cran.uk.r-project.org/src/base/R-3/ \
+		http://cran.us.r-project.org/src/base/R-3/ \
+		http://cran.za.r-project.org/src/base/R-3/ \
+		ftp://ftp.u-aizu.ac.jp/pub/lang/R/CRAN/src/base/R-3/ \
+		http://lib.stat.cmu.edu/R/CRAN/src/base/R-3/ \
+		http://cran.stat.ucla.edu/src/base/R-3/ \
+		http://probability.ca/cran/src/base/R-3/
 
 MODULES=	fortran devel/gettext x11/tk
 MODFORTRAN_COMPILER= gfortran
 
 BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS} \
-		${RUN_DEPENDS}
+		archivers/gtar \
+		archivers/unzip \
+		archivers/zip \
+		devel/xdg-utils
 LIB_DEPENDS=	${MODFORTRAN_LIB_DEPENDS} \
 		${MODTK_LIB_DEPENDS} \
 		archivers/bzip2 \
 		archivers/xz \
-		graphics/cairo \
-		graphics/jpeg \
 		devel/glib2 \
 		devel/pango \
 		devel/readline \
+		graphics/cairo \
+		graphics/jpeg \
 		graphics/png \
 		graphics/tiff \
 		textproc/icu4c
 RUN_DEPENDS=	archivers/gtar \
 		archivers/unzip \
 		archivers/zip \
+		devel/gmake \
 		devel/xdg-utils
 
 CONFIGURE_STYLE=gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/tools
 CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
-		--enable-prebuilt-html \
-		--enable-R-shlib \
 		--enable-BLAS-shlib \
+		--enable-R-shlib \
+		--enable-prebuilt-html \
 		--with-ICU \
-		--with-readline \
-		--with-tcltk \
 		--with-cairo \
 		--with-jpeglib \
 		--with-libpng \
 		--with-libtiff \
-		--with-system-zlib \
+		--with-readline \
 		--with-system-bzlib \
 		--with-system-pcre \
+		--with-system-xz \
+		--with-tcltk \
 		--with-tcl-config=${MODTCL_CONFIG} \
 		--with-tk-config=${MODTK_CONFIG}
 
@@ -103,11 +107,9 @@ SEPARATE_BUILD=	Yes
 
 USE_GMAKE=	Yes
 
-
-TEXMFLOCAL = ${PREFIX}/share/texmf-local
+TEXMFLOCAL=	${PREFIX}/share/texmf-local
 
 post-install:
-	${INSTALL_DATA_DIR} ${TEXMFLOCAL}
 	mv ${WRKINST}/${LOCALBASE}/lib/R/share/texmf ${TEXMFLOCAL}
 	rm -rf ${WRKINST}/${LOCALBASE}/lib/R/share/texmf
 	@perl -i -pe 's:^R_HOME_DIR=.*:R_HOME_DIR=${TRUEPREFIX}/lib/R:' \

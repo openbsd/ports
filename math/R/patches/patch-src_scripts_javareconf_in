@@ -1,16 +1,16 @@
-$OpenBSD: patch-src_scripts_javareconf,v 1.1 2013/06/03 10:46:45 dcoppa Exp $
---- src/scripts/javareconf.orig	Sat Feb 23 00:05:04 2013
-+++ src/scripts/javareconf	Mon Jun  3 11:56:10 2013
-@@ -3,7 +3,7 @@ if test -z "${R_HOME}"; then
-     exit 1
- fi
+$OpenBSD: patch-src_scripts_javareconf_in,v 1.1 2014/03/12 11:04:41 dcoppa Exp $
+--- src/scripts/javareconf.in.orig	Mon Sep  9 00:05:04 2013
++++ src/scripts/javareconf.in	Tue Feb  4 09:19:17 2014
+@@ -6,7 +6,7 @@ fi
+ ## pick up configure-time settings
+ . "${R_HOME}/etc${R_ARCH}/javaconf"
  
 -DYLIB_EXT=`${R_HOME}/bin/R CMD config DYLIB_EXT`
 +SHLIB_EXT=`${R_HOME}/bin/R CMD config SHLIB_EXT`
  tools_classpath=${R_SHARE_DIR}/java
  
- revision='$Rev: 62021 $'
-@@ -212,30 +212,17 @@ case "$hostos" in
+ revision='$Rev: 63872 $'
+@@ -218,29 +218,17 @@ if test "${JAVA_LIBS}" = "~autodetect~"; then
  	LD_LIBRARY_PATH=
  	export LD_LIBRARY_PATH
  	# remove trailing/leading : (if any)
@@ -22,13 +22,12 @@ $OpenBSD: patch-src_scripts_javareconf,v 1.1 2013/06/03 10:46:45 dcoppa Exp $
 -	for dir in ${java_library_path}; do
 -	    if test -f "$dir/libjvm${DYLIB_EXT}"; then
 -		has_libjvm=yes
+-		java_library_path="${dir}"
 -		break
 -	    fi
 -	done
 -	# Then try some heuristics using sun.boot.library.path
 -	if test ${has_libjvm} = no; then
--	    echo "NOTE: Your JVM has a bogus java.library.path system property!" >&2
--	    echo "      Trying a heuristic via sun.boot.library.path to find jvm library..." >&2
 -	    boot_path=`"$JAVA" -classpath "${tools_classpath}" getsp sun.boot.library.path| ${SED-sed} -e 's/:$//' -e 's/^://'`
 -	    if test -n "${boot_path}"; then
 +	if test -n "${boot_path}"; then

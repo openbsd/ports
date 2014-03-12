@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_appl_Makefile_in,v 1.2 2013/06/03 10:46:45 dcoppa Exp $
---- src/appl/Makefile.in.orig	Tue Feb  5 00:05:10 2013
-+++ src/appl/Makefile.in	Mon Jun  3 09:06:33 2013
-@@ -50,7 +50,7 @@ DISTFILES = \
+$OpenBSD: patch-src_appl_Makefile_in,v 1.3 2014/03/12 11:04:41 dcoppa Exp $
+--- src/appl/Makefile.in.orig	Fri Sep 27 00:05:07 2013
++++ src/appl/Makefile.in	Wed Mar 12 10:01:47 2014
+@@ -31,7 +31,7 @@ DISTFILES = \
  @WANT_R_SHLIB_TRUE@ALL_CFLAGS = $(ALL_CFLAGS_LO)
  @WANT_R_SHLIB_TRUE@ALL_FFLAGS = $(ALL_FFLAGS_LO)
  
@@ -9,4 +9,4 @@ $OpenBSD: patch-src_appl_Makefile_in,v 1.2 2013/06/03 10:46:45 dcoppa Exp $
 +Rblas_la = libRblas.so.$(LIBRblas_VERSION)
  Rblas_la_LIBADD = @DYLIB_UNDEFINED_ALLOWED_FALSE@ -flat_namespace -undefined suppress
  
- all: Makefile Makedeps R
+ all: R

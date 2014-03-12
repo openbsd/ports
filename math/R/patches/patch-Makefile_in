@@ -1,10 +1,10 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2012/10/29 11:07:29 dcoppa Exp $
+$OpenBSD: patch-Makefile_in,v 1.3 2014/03/12 11:04:41 dcoppa Exp $
 
 Do not build PDF versions of the R manuals
 
---- Makefile.in.orig	Sun Aug  5 00:05:10 2012
-+++ Makefile.in	Fri Oct 26 10:05:44 2012
-@@ -85,7 +85,7 @@ install install-strip: installdirs svnonly
+--- Makefile.in.orig	Tue Sep 10 00:05:05 2013
++++ Makefile.in	Tue Feb  4 09:15:53 2014
+@@ -95,7 +95,7 @@ install install-strip: installdirs svnonly
  	@for f in $(INSTFILES); do \
  	  $(INSTALL_DATA) $(srcdir)/$${f} "$(DESTDIR)$(rhome)"; \
  	done
@@ -13,7 +13,7 @@ Do not build PDF versions of the R manuals
  	  $(INSTALL_DATA) $${f} "$(DESTDIR)$(rhome)"; \
  	done
  @WANT_R_FRAMEWORK_TRUE@		$(MAKE) -f $(srcdir)/Makefile.fw top_srcdir=$(top_srcdir) $@
-@@ -107,7 +107,7 @@ svnonly:
+@@ -121,7 +121,7 @@ svnonly:
  	  fi \
  	fi
  
@@ -22,7 +22,7 @@ Do not build PDF versions of the R manuals
  install-libR:
  	@if test -f $(libR_la); then $(MAKE) install-libR-exists; fi
  install-libR-exists:
-@@ -119,13 +119,13 @@ installdirs:
+@@ -133,13 +133,13 @@ installdirs:
  uninstall:
  	@(for d in $(SUBDIRS); do rsd="$${d} $${rsd}"; done; \
  	  for d in $${rsd}; do (cd $${d} && $(MAKE) $@); done)
@@ -38,8 +38,8 @@ Do not build PDF versions of the R manuals
  
  mostlyclean: clean
  clean:
-@@ -139,7 +139,7 @@ distclean: clean
- 	  for d in $${rsd}; do (cd $${d} && $(MAKE) $@); done)
+@@ -154,7 +154,7 @@ distclean: clean
+ 	@rm -f po/Makefile
  	-@rm -rf bin include lib library modules gnome
  	@if test -f non-tarball ; then \
 -	  rm -f $(NON_SVN_INSTFILES) NEWS NEWS.pdf non-tarball doc/FAQ doc/RESOURCES doc/html/resources.html doc/html/NEWS.html; \
@@ -47,7 +47,7 @@ Do not build PDF versions of the R manuals
  	fi
  	@if test "$(BUILDDIR_IS_SRCDIR)" = no ; then \
  	  rm -f $(NON_SVN_INSTFILES); \
-@@ -176,7 +176,7 @@ distdir: $(DISTFILES) vignettes
+@@ -192,7 +192,7 @@ distdir: $(DISTFILES) vignettes
  	    || ln $(srcdir)/$${f} $(distdir)/$${f} 2>/dev/null \
  	    || cp -p $(srcdir)/$${f} $(distdir)/$${f}; \
  	done
@@ -56,7 +56,7 @@ Do not build PDF versions of the R manuals
  	  cp -p $${f} $(distdir)/$${f}; \
  	done
  	@for d in $(SUBDIRS); do \
-@@ -194,16 +194,8 @@ distdir: $(DISTFILES) vignettes
+@@ -210,16 +210,8 @@ distdir: $(DISTFILES) vignettes
  	done
  	@for d in grid parallel utils; do \
  	  mkdir -p $(distdir)/src/library/$${d}/inst/doc; \
