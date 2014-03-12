@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/02/04 09:25:20 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/03/12 08:37:49 dcoppa Exp $
 bin/pcsc-spy
 include/PCSC/
 include/PCSC/debuglog.h
@@ -20,4 +20,5 @@ lib/pkgconfig/libpcsclite.pc
 @bin sbin/pcscd
 @comment share/doc/pcsc-lite/
 @comment share/doc/pcsc-lite/README.DAEMON
+@comment share/doc/pcsc-lite/README.polkit
 @rcscript ${RCDIR}/pcscd

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2013/10/28 15:10:25 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.23 2014/03/12 08:37:49 dcoppa Exp $
 
 COMMENT=	resource manager for PC/SC
 
-V=		1.8.10
+V=		1.8.11
 DISTNAME=	pcsc-lite-${V}
 CATEGORIES=	security
 
@@ -30,7 +30,9 @@ MODPY_ADJ_FILES=	src/spy/pcsc-spy
 
 USE_GMAKE=	Yes
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
+
+AUTOCONF_VERSION= 2.69
 
 CONFIGURE_ARGS=	--disable-libudev \
 		--without-systemdsystemunitdir \
