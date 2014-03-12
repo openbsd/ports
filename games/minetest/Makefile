@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2013/12/02 16:25:08 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2014/03/12 04:00:53 bentley Exp $
 
 COMMENT =	infinite-world block sandbox game
-V =		0.4.7
+V =		0.4.9
 DISTNAME =	minetest-${V}
 CATEGORIES =	games x11
 
@@ -28,7 +28,9 @@ LIB_DEPENDS =	audio/openal \
 BUILD_DEPENDS +=	x11/irrlicht
 
 WANTLIB += GL GLU ICE SM X11 Xext Xxf86vm bz2 c curl jpeg m ogg openal
-WANTLIB += png pthread sqlite3 stdc++ vorbis vorbisfile z
+WANTLIB += png pthread sqlite3 stdc++ vorbis vorbisfile z GLESv2
+
+NO_TEST =	Yes
 
 post-install:
 	mv ${WRKDIR}/minetest_game-${V}/ \
