@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/03/09 19:53:12 pascal Exp $
+# $OpenBSD: Makefile,v 1.6 2014/03/13 10:31:52 pascal Exp $
 
 COMMENT =		data files for flightgear
 
@@ -9,6 +9,7 @@ MASTER_SITES =	http://ftp.igh.cnrs.fr/pub/flightgear/ftp/Shared/ \
 		http://ftp.linux.kiev.ua/pub/fgfs/Shared/ \
 		ftp://ftp.kingmont.com/flightsims/flightgear/Shared/
 
+BUILD_DEPENDS =	archivers/bzip2
 EXTRACT_SUFX =	.tar.bz2
 EXTRACT_ONLY =
 
