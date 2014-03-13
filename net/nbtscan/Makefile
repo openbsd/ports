@@ -1,23 +1,24 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:35:49 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2014/03/13 10:22:52 sthen Exp $
 
 COMMENT=	NetBIOS name network scanner
 
 DISTNAME=	nbtscan-1.5.1
+REVISION=	0
+WRKDIST=	${WRKDIR}/${DISTNAME}a
+
 CATEGORIES=	net
+
 MASTER_SITES=	http://www.inetcat.net/software/
 
 HOMEPAGE=	http://www.inetcat.net/software/nbtscan.html
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c
 
-WRKDIST=	${WRKDIR}/${DISTNAME}a
+WANTLIB += c
 
 NO_TEST=	Yes
-
-CONFIGURE_STYLE=gnu
-
+CONFIGURE_STYLE= gnu
 ALL_TARGET=	nbtscan
 
 do-install:

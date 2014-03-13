@@ -1,0 +1,11 @@
+$OpenBSD: patch-statusq_h,v 1.1 2014/03/13 10:22:52 sthen Exp $
+--- statusq.h.orig	Thu May 23 04:31:35 2002
++++ statusq.h	Wed Mar 12 11:58:56 2014
+@@ -103,4 +103,7 @@
+ 	char* service_name;
+ } nb_service_t ;
+ 
++struct nb_host_info* parse_response(char*, int);
++char* getnbservicename(my_uint8_t, int, char*);
++
+ #endif /* STATUSQ_H */
