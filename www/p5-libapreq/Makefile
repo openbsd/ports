@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/10/11 23:51:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2014/03/13 21:17:29 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	generic Apache Request library
 
 MODULES=	cpan
 DISTNAME=	libapreq-1.34
-REVISION=	2
+REVISION=	3
 CATEGORIES=	www
 
 HOMEPAGE=	http://httpd.apache.org/apreq/
@@ -21,9 +21,10 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Apache/}
 BUILD_DEPENDS=	www/mod_perl \
 		www/p5-Apache-Test
 
-RUN_DEPENDS=	www/mod_perl
+RUN_DEPENDS=	www/apache-httpd-openbsd \
+		www/mod_perl
 
-MAKE_ENV+=	APACHE_TEST_HTTPD=/usr/sbin/httpd
+MAKE_ENV+=	APACHE_TEST_HTTPD=${LOCALBASE}/sbin/httpd
 PORTHOME=	${WRKDIR}
 
 MODCPAN_EXAMPLES=	Yes
