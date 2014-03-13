@@ -1,7 +1,7 @@
-$OpenBSD: patch-mod_speedycgi_Makefile_tmpl,v 1.1.1.1 2002/11/10 19:57:04 jakob Exp $
---- mod_speedycgi/Makefile.tmpl.orig	Sun Nov 10 16:03:32 2002
-+++ mod_speedycgi/Makefile.tmpl	Sun Nov 10 16:03:40 2002
-@@ -37,7 +37,6 @@ $(SHARED_OBJ_TARGET): $(SRC_CFILES) $(H_
+$OpenBSD: patch-mod_speedycgi_Makefile_tmpl,v 1.2 2014/03/13 22:25:46 sthen Exp $
+--- mod_speedycgi/Makefile.tmpl.orig	Tue Oct  7 06:03:48 2003
++++ mod_speedycgi/Makefile.tmpl	Thu Mar 13 23:17:59 2014
+@@ -37,7 +37,6 @@ $(SHARED_OBJ_TARGET): $(SRC_CFILES) $(H_FILES) ../src/
  
  #   install the shared object file into Apache 
  install: all

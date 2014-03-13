@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/03/13 17:33:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2014/03/13 22:25:45 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,32 +8,29 @@ MODULES=	cpan
 VERSION=	2.22
 DISTNAME=	CGI-SpeedyCGI-${VERSION}
 PKGNAME=	p5-CGI-SpeedyCGI-${VERSION}
-REVISION=	4
+REVISION=	5
 CATEGORIES=	www
 
 HOMEPAGE=	http://daemoninc.com/SpeedyCGI/
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m perl util 
+WANTLIB += c m perl util
 
 NO_TEST=		Yes
 
-# XXX doesn't use apache-moduleport.mk
+# XXX doesn't use apache-module.port.mk
 BUILD_DEPENDS=		www/apache-httpd-openbsd
 RUN_DEPENDS=		${BUILD_DEPENDS}
 
 post-patch:
-	@cp ${WRKSRC}/src/optdefs ${WRKSRC}/src/optdefs.orig
-	@sed 's,!!PREFIX!!,${PREFIX},' \
-		< ${WRKSRC}/src/optdefs.orig \
-		> ${WRKSRC}/src/optdefs
+	${SUBST_CMD} ${WRKSRC}/src/optdefs
+	ln -s ${LOCALBASE}/sbin/apxs ${WRKDIR}/bin/
 
 post-build:
-	@sed 's,!!PREFIX!!,${PREFIX},' \
-		< ${FILESDIR}/mod_speedycgi-enable \
-		> ${WRKBUILD}/mod_speedycgi-enable
+	@${SUBST_CMD} -c ${FILESDIR}/mod_speedycgi-enable \
+	    ${WRKBUILD}/mod_speedycgi-enable
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKBUILD}/mod_speedycgi-enable ${PREFIX}/sbin

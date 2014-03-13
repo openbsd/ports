@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_optdefs,v 1.1 2007/11/08 06:43:47 jakob Exp $
+$OpenBSD: patch-src_optdefs,v 1.2 2014/03/13 22:25:46 sthen Exp $
 --- src/optdefs.orig	Tue Oct  7 06:03:48 2003
-+++ src/optdefs	Wed Nov  7 09:01:28 2007
++++ src/optdefs	Thu Mar 13 23:15:52 2014
 @@ -63,7 +63,7 @@ option	BackendProg
  type	str
  letter	p
  context	frontend
 -defval	$INSTALLBIN/speedy_backend
-+defval	!!PREFIX!!/bin/speedy_backend
++defval	${PREFIX}/bin/speedy_backend
  desc	Path to the speedy backend program.
  
  option	TmpBase

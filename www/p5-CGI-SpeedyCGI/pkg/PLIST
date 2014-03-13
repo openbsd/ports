@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:49:51 espie Exp $
-bin/speedy
-bin/speedy_backend
+@comment $OpenBSD: PLIST,v 1.5 2014/03/13 22:25:46 sthen Exp $
+@bin bin/speedy
+@bin bin/speedy_backend
 lib/mod_speedycgi.so
 ${P5SITE}/CGI/
 ${P5SITE}/CGI/SpeedyCGI.pm
