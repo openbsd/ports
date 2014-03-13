@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/01/07 22:07:31 sthen Exp $
-@extra /var/www/racktables/inc/secret.php
+@comment $OpenBSD: PLIST,v 1.7 2014/03/13 01:03:35 sthen Exp $
 @extraunexec rm -rf /var/www/racktables/plugins/*
 htdocs/racktables/
 htdocs/racktables/index.php
@@ -23,6 +22,7 @@ racktables/wwwroot/css/
 racktables/wwwroot/css/jquery-ui-1.8.22.redmond.css
 racktables/wwwroot/css/jquery.contextmenu.css
 racktables/wwwroot/css/pi.css
+racktables/wwwroot/css/tagit.css
 racktables/wwwroot/inc/
 racktables/wwwroot/inc/ajax-interface.php
 racktables/wwwroot/inc/auth.php
@@ -76,6 +76,8 @@ racktables/wwwroot/js/portinfo.js
 racktables/wwwroot/js/racktables.js
 racktables/wwwroot/js/slb_editor.js
 racktables/wwwroot/js/tag-cb.js
+racktables/wwwroot/js/tag-it-local.js
+racktables/wwwroot/js/tag-it.js
 racktables/wwwroot/js/vst_editor.js
 racktables/wwwroot/pix/
 racktables/wwwroot/pix/1x1t.gif
@@ -187,6 +189,8 @@ racktables/wwwroot/pix/tango-user-trash-16x16.png
 racktables/wwwroot/pix/tango-user-trash-32x32-gray.png
 racktables/wwwroot/pix/tango-user-trash-32x32.png
 racktables/wwwroot/pix/tango-view-fullscreen-22x22.png
+racktables/wwwroot/pix/tango-view-refresh-16x16.png
 racktables/wwwroot/pix/tango-view-refresh-32x32.png
 racktables/wwwroot/pix/unchecked.png
 racktables/wwwroot/pix/virtualresources.png
+@extra /var/www/racktables/inc/secret.php
