@@ -1,0 +1,22 @@
+$OpenBSD: patch-Makefile_bsd-wrapper,v 1.1.1.1 2014/03/13 17:28:04 sthen Exp $
+--- Makefile.bsd-wrapper.orig	Thu Mar 13 01:50:02 2014
++++ Makefile.bsd-wrapper	Thu Mar 13 01:52:23 2014
+@@ -28,15 +28,15 @@ LNDIR=	/usr/bin/lndir
+ #    proxycachedir: $prefix/proxy
+ #</Layout>
+ 
+-HTTPD_EXEC_PREFIX=	TRUEPREFIX
++HTTPD_EXEC_PREFIX=	${TRUEPREFIX}
+ HTTPD_BINDIR=		${HTTPD_EXEC_PREFIX}/bin
+ HTTPD_SBINDIR=		${HTTPD_EXEC_PREFIX}/sbin
+ HTTPD_LIBEXECDIR=	${HTTPD_EXEC_PREFIX}/lib/apache/modules
+ HTTPD_SYSCONFDIR=	${HTTPD_PREFIX}/conf
+ HTTPD_ICONSDIR=		${HTTPD_PREFIX}/icons
+ HTTPD_HTDOCSDIR=	${HTTPD_PREFIX}/htdocs
+-HTTPD_MANUALDIR=	${HTTPD_EXEC_PREFIX}/share/apache-httpd-openbsd/doc/
+-HTTPD_PREFIX=		${HTTPD_EXEC_PREFIX}/share/apache-httpd-openbsd/www
++HTTPD_MANUALDIR=	${HTTPD_EXEC_PREFIX}/share/doc/apache-httpd-openbsd
++HTTPD_PREFIX=		/var/www
+ HTTPD_INCLUDEDIR=	${HTTPD_EXEC_PREFIX}/lib/apache/include
+ HTTPD_RUNDIR=		${HTTPD_PREFIX}/logs
+ HTTPD_LOGDIR=		${HTTPD_PREFIX}/logs

@@ -1,0 +1,23 @@
+$OpenBSD: patch-config_layout,v 1.1.1.1 2014/03/13 17:28:04 sthen Exp $
+--- config.layout.orig	Thu Mar 13 01:44:51 2014
++++ config.layout	Thu Mar 13 01:47:10 2014
+@@ -265,16 +265,16 @@
+ #   OpenBSD Layout
+ <Layout OpenBSD>
+     prefix:        /var/www
+-    exec_prefix:   TRUEPREFIX
++    exec_prefix:   ${TRUEPREFIX}
+     bindir:        $exec_prefix/bin
+     sbindir:       $exec_prefix/sbin
+     libexecdir:    $exec_prefix/lib/apache/modules
+-    mandir:        $exec_prefix/share/man
++    mandir:        $exec_prefix/man
+     sysconfdir:    $prefix/conf
+     datadir:       $prefix
+     iconsdir:      $prefix/icons
+     htdocsdir:     $prefix/htdocs
+-    manualdir:     $exec_prefix/share/doc/html/httpd
++    manualdir:     $exec_prefix/share/doc/apache-httpd-openbsd
+     cgidir:        $prefix/cgi-bin
+     includedir:    $exec_prefix/lib/apache/include
+     localstatedir: $prefix

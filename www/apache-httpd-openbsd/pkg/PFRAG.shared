@@ -1,0 +1,21 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2014/03/13 17:28:04 sthen Exp $
+lib/apache/modules/libproxy.so
+lib/apache/modules/mod_auth_anon.so
+lib/apache/modules/mod_auth_db.so
+lib/apache/modules/mod_auth_dbm.so
+lib/apache/modules/mod_auth_digest.so
+lib/apache/modules/mod_cern_meta.so
+lib/apache/modules/mod_define.so
+lib/apache/modules/mod_digest.so
+lib/apache/modules/mod_expires.so
+lib/apache/modules/mod_headers.so
+lib/apache/modules/mod_info.so
+lib/apache/modules/mod_log_agent.so
+lib/apache/modules/mod_log_referer.so
+lib/apache/modules/mod_mime_magic.so
+lib/apache/modules/mod_mmap_static.so
+lib/apache/modules/mod_rewrite.so
+lib/apache/modules/mod_speling.so
+lib/apache/modules/mod_unique_id.so
+lib/apache/modules/mod_usertrack.so
+lib/apache/modules/mod_vhost_alias.so
