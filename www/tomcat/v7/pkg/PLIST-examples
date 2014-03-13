@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.18 2014/01/13 08:28:51 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.19 2014/03/13 09:18:33 dcoppa Exp $
 @conflict jakarta-tomcat-examples-*
 @pkgpath www/jakarta-tomcat/v7,-examples
 @owner _tomcat
@@ -549,6 +549,7 @@ webapps/docs/api/org/apache/catalina/startup/UserConfig.html
 webapps/docs/api/org/apache/catalina/startup/UserDatabase.html
 webapps/docs/api/org/apache/catalina/startup/WebAnnotationSet.html
 webapps/docs/api/org/apache/catalina/startup/WebRuleSet.html
+webapps/docs/api/org/apache/catalina/startup/WebappServiceLoader.html
 webapps/docs/api/org/apache/catalina/startup/XmlErrorHandler.html
 webapps/docs/api/org/apache/catalina/startup/package-frame.html
 webapps/docs/api/org/apache/catalina/startup/package-summary.html
