@@ -1,4 +1,4 @@
-# $OpenBSD: apache-module.port.mk,v 1.8 2012/06/07 20:52:41 sebastia Exp $
+# $OpenBSD: apache-module.port.mk,v 1.9 2014/03/13 22:10:53 sthen Exp $
 # simplify installation of apache modules
 # written by Marc Espie 2007, public domain
 #
@@ -31,9 +31,15 @@ SHARED_ONLY ?= Yes
 
 MODAPACHE_ENABLE ?= mod_${MODAPACHE_NAME}-enable
 MODAPACHE_MODULE ?= mod_${MODAPACHE_NAME}.so
-MODAPACHE_FINAL = /usr/lib/apache/modules/${MODAPACHE_MODULE}
+MODAPACHE_FINAL = ${LOCALBASE}/lib/apache/modules/${MODAPACHE_MODULE}
 MODAPACHE_LOCATION ?= ${WRKBUILD}
 MODAPACHE_FILE ?= ${MODAPACHE_LOCATION}/${MODAPACHE_MODULE}
+MODAPACHE_APXS ?= ${LOCALBASE}/sbin/apxs
+MODAPACHE_CTL ?= ${LOCALBASE}/sbin/apachectl
+
+MAKE_FLAGS += APXS=${MODAPACHE_APXS} APACHECTL=${MODAPACHE_CTL}
+BUILD_DEPENDS += www/apache-httpd-openbsd
+RUN_DEPENDS += www/apache-httpd-openbsd
 
 MODAPACHE_CREATE_ENABLE_SCRIPT = \
 	exec >${WRKBUILD}/${MODAPACHE_ENABLE}; \
@@ -49,12 +55,12 @@ MODAPACHE_CREATE_ENABLE_SCRIPT = \
 	echo '    exit 1'; \
 	echo 'else'; \
 	echo '    echo "Enabling ${MODAPACHE_LONG_DESCRIPTION} module..."'; \
-	echo '    /usr/sbin/apxs -i -a -n ${MODAPACHE_NAME} $${MODULE}'; \
+	echo '    ${MODAPACHE_APXS} -i -a -n ${MODAPACHE_NAME} $${MODULE}'; \
 	echo 'fi'
 
 MODAPACHE_INSTALL= \
 	${INSTALL_DATA} ${MODAPACHE_FILE} ${PREFIX}/lib/${MODAPACHE_MODULE}; \
 	${INSTALL_SCRIPT} ${WRKBUILD}/${MODAPACHE_ENABLE} ${PREFIX}/sbin
 
-SUBST_VARS += MODAPACHE_MODULE MODAPACHE_ENABLE MODAPACHE_FINAL
+SUBST_VARS += MODAPACHE_MODULE MODAPACHE_ENABLE MODAPACHE_FINAL MODAPACHE_APXS
 
