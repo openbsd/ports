@@ -1,4 +1,9 @@
-$OpenBSD: patch-jdk_src_solaris_classes_sun_nio_ch_DefaultAsynchronousChannelProvider_java,v 1.1 2013/10/30 15:23:32 dcoppa Exp $
+$OpenBSD: patch-jdk_src_solaris_classes_sun_nio_ch_DefaultAsynchronousChannelProvider_java,v 1.2 2014/03/13 13:47:10 dcoppa Exp $
+
+Fix DefaultAsynchronousChannelProvider.create so it does not crash
+("java.lang.InternalError: platform not recognized"), but instead
+creates an instance of BsdAsynchronousChannelProvider()
+
 --- jdk/src/solaris/classes/sun/nio/ch/DefaultAsynchronousChannelProvider.java.orig	Wed Aug 29 01:15:24 2012
 +++ jdk/src/solaris/classes/sun/nio/ch/DefaultAsynchronousChannelProvider.java	Wed Oct 30 14:26:01 2013
 @@ -50,7 +50,7 @@ public class DefaultAsynchronousChannelProvider {
