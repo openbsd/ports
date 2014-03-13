@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/03/13 11:08:02 sthen Exp $
+${P5SITE}/Net/
+${P5SITE}/Net/SSH.pm
+@man man/man3p/Net::SSH.3p

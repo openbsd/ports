@@ -1,0 +1,2 @@
+Net::SSH is a Perl extension to make use of ssh, providing simple
+wrappers around the system ssh command.
