@@ -1,4 +1,7 @@
-$OpenBSD: patch-filter_foomatic-rip_util_h,v 1.1 2013/12/12 14:46:53 ajacoutot Exp $
+$OpenBSD: patch-filter_foomatic-rip_util_h,v 1.2 2014/03/13 18:29:39 ajacoutot Exp $
+
+XXX push upstream
+
 --- filter/foomatic-rip/util.h.orig	Thu Dec 12 08:28:59 2013
 +++ filter/foomatic-rip/util.h	Thu Dec 12 08:29:20 2013
 @@ -70,8 +70,10 @@ char * strcasestr (const char *haystack, const char *n

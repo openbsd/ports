@@ -1,4 +1,7 @@
-$OpenBSD: patch-filter_foomatic-rip_process_c,v 1.1 2013/12/12 14:46:53 ajacoutot Exp $
+$OpenBSD: patch-filter_foomatic-rip_process_c,v 1.2 2014/03/13 18:29:39 ajacoutot Exp $
+
+XXX push upstream
+
 --- filter/foomatic-rip/process.c.orig	Thu Dec 12 08:38:04 2013
 +++ filter/foomatic-rip/process.c	Thu Dec 12 08:38:21 2013
 @@ -28,6 +28,7 @@

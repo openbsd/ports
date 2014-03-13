@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2014/01/20 11:01:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2014/03/13 18:29:39 ajacoutot Exp $
 @conflict cups-<1.6.0
 @conflict ghostscript-<9.06p3
 @conflict foomatic-filters-*
@@ -61,6 +61,7 @@ share/cups/
 share/cups/banners/
 share/cups/banners/classified
 share/cups/banners/confidential
+share/cups/banners/form
 share/cups/banners/secret
 share/cups/banners/standard
 share/cups/banners/topsecret
@@ -72,6 +73,10 @@ share/cups/charsets/pdf.utf-8.simple
 share/cups/data/
 share/cups/data/default-testpage.pdf
 share/cups/data/default.pdf
+share/cups/data/form_english.pdf
+share/cups/data/form_english_in.odt
+share/cups/data/form_russian.pdf
+share/cups/data/form_russian_in.odt
 share/cups/data/testprint
 share/cups/drv/
 share/cups/drv/cupsfilters.drv
