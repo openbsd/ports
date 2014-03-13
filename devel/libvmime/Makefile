@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/11/06 13:40:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2014/03/13 22:03:37 ajacoutot Exp $
 
 COMMENT=	C++ class library for working with Internet mail
 
@@ -53,8 +53,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 # security/libgsasl; not real need for this so far
 CONFIGURE_ARGS += --disable-sasl
 
-# XXX Apache crashes with php-mapi from mail/zarafa/zarafa,-webaccess
-# /usr/sbin/httpd:/usr/local/lib/libvmime.so.2.0: undefined symbol '_ZN5vmime3net12serviceInfosD2Ev'
+# XXX www/apache-httpd crashes with php-mapi from mail/zarafa/zarafa,-webaccess
+# /usr/local/lib/libvmime.so.2.0: undefined symbol '_ZN5vmime3net12serviceInfosD2Ev
 CONFIGURE_ARGS += --disable-tls
 
 .include <bsd.port.mk>
