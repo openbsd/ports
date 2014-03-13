@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2013/06/20 08:26:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2014/03/13 17:33:27 sthen Exp $
 
 COMMENT=	Apache Kerberos authentication module
 
-REVISION=	11
+REVISION=	12
 DISTNAME=	mod_auth_kerb-5.3
 CATEGORIES=	www
 
@@ -26,6 +26,7 @@ MODAPACHE_NAME=	auth_kerb
 MODAPACHE_LOCATION=	${WRKBUILD}/src
 
 CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=		--with-apache=${LOCALBASE}
 
 post-build:
 	@${MODAPACHE_CREATE_ENABLE_SCRIPT}

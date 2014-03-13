@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/21 08:48:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2014/03/13 17:33:27 sthen Exp $
 
 COMMENT=		Apache-Tomcat AJP Connector
 
 V=			1.2.37
+REVISION=		0
 DISTNAME=		tomcat-connectors-${V}-src
 PKGNAME=		mod_jk-${V}
 CATEGORIES=		www
@@ -23,7 +24,7 @@ MODAPACHE_NAME=		jk
 MODAPACHE_FILE=		${MODAPACHE_LOCATION}/apache-1.3/mod_jk.so
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--with-apxs=/usr/sbin/apxs
+CONFIGURE_ARGS=		--with-apxs=${MODAPACHE_APXS}
 CONFIGURE_ENV+=		CFLAGS='${CFLAGS} -DCHROOTED_APACHE'
 
 WRKSRC=			${WRKDIST}/native

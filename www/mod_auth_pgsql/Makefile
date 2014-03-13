@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:44:43 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2014/03/13 17:33:27 sthen Exp $
 
 COMMENT =	Apache PostgreSQL authentication module
 
-REVISION=	5
+REVISION=	6
 DISTNAME =	mod_auth_pgsql-0.9.12
 CATEGORIES =	www
 
@@ -25,7 +25,8 @@ NO_TEST =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-pgsql-lib=${LOCALBASE}/lib \
-			--with-pgsql-include=${LOCALBASE}/include/postgresql
+			--with-pgsql-include=${LOCALBASE}/include/postgresql \
+			--with-apxs=${MODAPACHE_APXS}
 
 post-build:
 	@${MODAPACHE_CREATE_ENABLE_SCRIPT}

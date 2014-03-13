@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:44:43 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2014/03/13 17:33:27 sthen Exp $
 
 COMMENT=	Apache module for non-ascii filename interoperability
 
-REVISION=	2
+REVISION=	3
 DISTNAME=	mod_encoding-20021209
 CATEGORIES=	www converters
 
@@ -23,7 +23,7 @@ MODAPACHE_NAME=	encoding
 NO_TEST=	Yes
 
 do-build:
-	cd ${WRKSRC} && /usr/sbin/apxs -Wc,"${CFLAGS}" -I${LOCALBASE}/include -c mod_encoding.c \
+	cd ${WRKSRC} && ${MODAPACHE_APXS} -Wc,"${CFLAGS}" -I${LOCALBASE}/include -c mod_encoding.c \
 		-L${LOCALBASE}/lib -liconv -o ${WRKBUILD}/mod_encoding.so
 	@${MODAPACHE_CREATE_ENABLE_SCRIPT}
 

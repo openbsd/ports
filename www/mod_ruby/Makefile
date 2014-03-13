@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/20 19:13:50 jeremy Exp $
+# $OpenBSD: Makefile,v 1.20 2014/03/13 17:33:28 sthen Exp $
 
 COMMENT=		module that embeds Ruby into Apache
 
 DISTNAME=		mod_ruby-1.2.6
-REVISION =		7
+REVISION =		8
 CATEGORIES=		www
 
 HOMEPAGE=		http://modruby.net/
@@ -25,7 +25,7 @@ MODRUBY_REV=		1.8
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT=	configure.rb
-CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs
+CONFIGURE_ARGS+=	--with-apxs=${MODAPACHE_APXS}
 
 NO_TEST=		Yes
 

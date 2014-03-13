@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2009/05/11 19:40:58 claudio Exp $
+$OpenBSD: patch-Makefile_in,v 1.6 2014/03/13 17:33:27 sthen Exp $
 --- Makefile.in.orig	Wed Jul  4 16:37:55 2001
 +++ Makefile.in	Sun May 10 12:37:14 2009
 @@ -20,12 +20,14 @@ html: FAQ.html Changes.html auth_ldap.html
@@ -7,7 +7,7 @@ $OpenBSD: patch-Makefile_in,v 1.5 2009/05/11 19:40:58 claudio Exp $
  
 -CFLAGS=`$(APXS) -q CFLAGS` $(FRONTPAGE) $(SSL) $(SHARED_CACHE) $(OPENLDAP)
 +CFLAGS=`$(APXS) -q CFLAGS CFLAGS_SHLIB` $(FRONTPAGE) $(SSL) $(SHARED_CACHE) $(OPENLDAP) \
-+	-I/usr/lib/apache/include -I${LOCALBASE}/include
++	-I${LOCALBASE}/lib/apache/include -I${LOCALBASE}/include
  CFLAGS_SHLIB=`$(APXS) -q CFLAGS_SHLIB` 
  INCLUDEDIR=`$(APXS) -q INCLUDEDIR`
  EXTRA_LDFLAGS=@LDFLAGS@

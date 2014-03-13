@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2013/04/20 13:55:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2014/03/13 17:33:27 sthen Exp $
 
 COMMENT=	module that embeds a Perl interpreter into Apache
 
 DISTNAME=	mod_perl-1.32pre20130312
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www perl5
 
 # svn checkout; upstream is at http://perl.apache.org/dist/
@@ -27,14 +27,13 @@ WANTLIB=		c m perl util
 RUN_DEPENDS=		devel/p5-Devel-Symdump \
 			www/p5-libwww \
 			www/p5-HTML-Parser
-BUILD_DEPENDS=		${RUN_DEPENDS}
 
 SUBST_VARS=	PKGNAME
 
 NO_TEST=	Yes
 
 CONFIGURE_STYLE= perl
-CONFIGURE_ARGS=	USE_APXS="1" EVERYTHING="1" WITH_APXS="/usr/sbin/apxs"
+CONFIGURE_ARGS=	USE_APXS="1" EVERYTHING="1" WITH_APXS="${MODAPACHE_APXS}"
 
 INSTALL_TARGET=	pure_install doc_install
 

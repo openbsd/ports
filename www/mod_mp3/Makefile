@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2013/06/12 20:36:34 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2014/03/13 17:33:27 sthen Exp $
 
 COMMENT=	turns Apache into an MP3 or Ogg streaming server
 
-REVISION=	6
+REVISION=	7
 DISTNAME=	mod_mp3-0.40
 CATEGORIES=	www audio
 
@@ -21,7 +21,7 @@ MODAPACHE_NAME=		mp3
 MODAPACHE_LOCATION=	${WRKBUILD}/src
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
+CONFIGURE_ARGS+=	--with-apxs=${MODAPACHE_APXS} \
 			--with-perl=/usr/bin/perl
 
 NO_TEST=	Yes

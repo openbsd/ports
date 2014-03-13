@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.50 2014/01/16 23:17:32 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.51 2014/03/13 17:33:27 sthen Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -79,7 +79,9 @@ CONFIGURE_ARGS+=	--enable-shared \
 CONFIGURE_ARGS+=	--with-apxs2=${LOCALBASE}/sbin/apxs2
 BUILD_DEPENDS=		www/apache-httpd
 .else
-CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs
+# doesn't use apache-module.port.mk so MODAPACHE_APXS not available
+CONFIGURE_ARGS+=	--with-apxs=${LOCALBASE}/sbin/apxs
+BUILD_DEPENDS=		www/apache-httpd-openbsd
 .endif
 
 # default included extensions

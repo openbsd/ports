@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/10/29 06:16:26 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2014/03/13 17:33:28 sthen Exp $
 
 COMMENT = 	web based groupware server
 
 VERSION =	5.5rc2
+REVISION=	0
 DISTNAME =	opengroupware-${VERSION}
 
 SHARED_LIBS +=  LSAddress                 0.0 # 5.5
@@ -38,14 +39,15 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 # LGPLv2/GPLv2
 PERMIT_PACKAGE_CDROM =		Yes
 
+WANTLIB += DOM EOControl GDLAccess NGExtensions NGLdap NGMime
+WANTLIB += NGObjWeb NGStreams SaxObjC WEExtensions WOExtensions
+WANTLIB += XmlRpc c gnustep-base ldap m objc2 pthread
+
 MODULES =		apache-module x11/gnustep converters/libiconv
 MODGNUSTEP_NEEDS_GUI =	No
 MODAPACHE_NAME =	ngobjweb
 MODAPACHE_LOCATION =	${WRKBUILD}/SOPE/mod_ngobjweb
 
-WANTLIB += DOM EOControl GDLAccess NGExtensions NGLdap NGMime
-WANTLIB += NGObjWeb NGStreams SaxObjC WEExtensions WOExtensions
-WANTLIB += XmlRpc c gnustep-base ldap m objc2 pthread
 LIB_DEPENDS +=		www/sope
 RUN_DEPENDS +=		sope-postgres-*|sope-mysql-*:www/sope,-postgres \
 			archivers/zip archivers/unzip

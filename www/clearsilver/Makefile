@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/11 11:44:41 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2014/03/13 17:33:27 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,8 +9,8 @@ COMMENT-python=	python bindings for clearsilver
 V=		0.10.4
 DISTNAME=	clearsilver-${V}
 EPOCH=		0
-REVISION=	7
-REVISION-perl=	8
+REVISION=	9
+
 PKGNAME-main=	${DISTNAME}
 PKGNAME-perl=	clearsilver-perl-${V}
 PKGNAME-python=	clearsilver-python-${V}
@@ -24,6 +24,8 @@ MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 
 # Apache 1
 PERMIT_PACKAGE_CDROM=	Yes
+
+BUILD_DEPENDS=		www/apache-httpd-openbsd
 
 MULTI_PACKAGES=	-main -perl -python
 MODULES=	lang/python
@@ -43,6 +45,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS= --disable-csharp \
 		--disable-java \
 		--disable-ruby \
+		--with-apache=${LOCALBASE} \
 		--with-python=${MODPY_BIN} \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

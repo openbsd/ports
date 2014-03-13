@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 11:44:43 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2014/03/13 17:33:27 sthen Exp $
 
 COMMENT=        Apache FastCGI module
 
-REVISION=	3
+REVISION=	4
 DISTNAME=	mod_fastcgi-SNAP-0811090952
 # temporary workaround: as the original distname would prevent a seamless
 # update use the last offical version and append the date of the snapshot
@@ -24,7 +24,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 NO_TEST=     Yes
 
 do-build:
-	(cd ${WRKBUILD}; apxs -o mod_fastcgi.so -c *.c)
+	(cd ${WRKBUILD}; ${MODAPACHE_APXS} -o mod_fastcgi.so -c *.c)
 
 post-build:
 	@${MODAPACHE_CREATE_ENABLE_SCRIPT}

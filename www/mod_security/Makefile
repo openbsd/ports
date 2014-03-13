@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 11:44:43 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2014/03/13 17:33:28 sthen Exp $
 
 COMMENT=	Web intrusion detection and prevention engine
 
 VER=		1.9.3
-REVISION=	5
+REVISION=	6
 DISTNAME=	modsecurity-apache_${VER}
 PKGNAME=	modsecurity-apache-${VER}
 
@@ -27,7 +27,7 @@ DOCS=	CHANGES INSTALL LICENSE README doc/modsecurity-manual.pdf
 SUBST_VARS=	PKGNAME
 
 do-build:
-	cd ${WRKSRC}/apache1 && /usr/sbin/apxs -Wc,"${CFLAGS}" -c \
+	cd ${WRKSRC}/apache1 && ${MODAPACHE_APXS} -Wc,"${CFLAGS}" -c \
 		mod_security.c -o ${WRKBUILD}/mod_security.so
 	@${MODAPACHE_CREATE_ENABLE_SCRIPT}
 

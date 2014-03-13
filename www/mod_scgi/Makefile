@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:44:43 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2014/03/13 17:33:28 sthen Exp $
 
 COMMENT=	apache interface for SCGI servers
 
-REVISION=	4
+REVISION=	5
 DISTNAME=	scgi-1.12
 PKGNAME=	mod_${DISTNAME}
 CATEGORIES=	www
@@ -18,12 +18,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODAPACHE_NAME=	scgi
 
 NO_TEST=	Yes
-APXS=		/usr/sbin/apxs
 
 WRKSRC=		${WRKDIST}/apache1
 
 do-build:
-	cd ${WRKSRC} && ${APXS} -c -o mod_scgi.so mod_scgi.c
+	cd ${WRKSRC} && ${MODAPACHE_APXS} -c -o mod_scgi.so mod_scgi.c
 	@${MODAPACHE_CREATE_ENABLE_SCRIPT}
 
 do-install:

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:44:43 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2014/03/13 17:33:27 sthen Exp $
 
 COMMENT=	Apache LDAP authentication module
 
-REVISION=	11
+REVISION=	12
 VERSION=	1.6.0
 DISTNAME=	auth_ldap-${VERSION}
 PKGNAME=	mod_auth_ldap-${VERSION}
@@ -27,6 +27,7 @@ LIB_DEPENDS=	databases/openldap
 NO_TEST=	Yes
 
 CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=		--with-apxs=${MODAPACHE_APXS}
 
 post-build:
 	@${MODAPACHE_CREATE_ENABLE_SCRIPT}

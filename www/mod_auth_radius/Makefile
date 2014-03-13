@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2013/03/11 11:44:43 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2014/03/13 17:33:27 sthen Exp $
 
-REVISION=	8
+REVISION=	9
 DISTNAME=	mod_auth_radius-1.5.7
 CATEGORIES=	www
 MODULES+=	apache-module
@@ -20,7 +20,7 @@ EXTRACT_SUFX=	.tar
 NO_TEST=	Yes
 
 do-build:
-	@cd ${WRKSRC}; /usr/sbin/apxs -c mod_auth_radius.c
+	@cd ${WRKSRC}; ${MODAPACHE_APXS} -c mod_auth_radius.c
 	@${MODAPACHE_CREATE_ENABLE_SCRIPT}
 
 do-install:

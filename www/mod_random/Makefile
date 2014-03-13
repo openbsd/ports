@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:44:43 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2014/03/13 17:33:27 sthen Exp $
 
 COMMENT=	Apache module that provides randomized services
 
-REVISION=	7
+REVISION=	8
 DISTNAME=	mod_random-1.4
 CATEGORIES=	www
 
@@ -16,11 +16,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODAPACHE_NAME=	random
 
 NO_TEST=	Yes
-APXS=		/usr/sbin/apxs
 
 do-build:
 	cd ${WRKSRC} && \
-		${APXS} -c -o mod_random.so mod_random.c
+		${MODAPACHE_APXS} -c -o mod_random.so mod_random.c
 	@${MODAPACHE_CREATE_ENABLE_SCRIPT}
 
 do-install:

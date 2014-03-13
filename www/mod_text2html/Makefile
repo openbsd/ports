@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:44:43 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2014/03/13 17:33:28 sthen Exp $
 
 COMMENT=	Apache module designed to replace text/plain handler
 
-REVISION=	7
+REVISION=	8
 DISTNAME=	mod_text2html-1.0
 CATEGORIES=	www
 
@@ -17,11 +17,9 @@ MODAPACHE_NAME=	text2html
 
 NO_TEST=	Yes
 
-APXS=		/usr/sbin/apxs
-
 do-build:
 	cd ${WRKBUILD} && \
-		${APXS} -c -o mod_text2html.so mod_text2html.c
+		${MODAPACHE_APXS} -c -o mod_text2html.so mod_text2html.c
 	@${MODAPACHE_CREATE_ENABLE_SCRIPT}
 
 do-install:

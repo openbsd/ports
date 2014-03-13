@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/11/03 16:20:39 robert Exp $
+# $OpenBSD: Makefile,v 1.9 2014/03/13 17:33:27 sthen Exp $
 
 BROKEN-hppa =	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -11,6 +11,7 @@ AUTOCONF_VERSION=	2.65
 
 PV=		5.5
 V=		${PV}.5
+REVISION=	1
 
 INI_TEMPLATES=	development production
 
@@ -27,7 +28,6 @@ LIB_DEPENDS-fpm=	${LIB_DEPENDS-main}
 WANTLIB-fpm=		${WANTLIB-main}
 RUN_DEPENDS-fpm=	${RUN_DEPENDS-main} \
 			php-${V}:lang/php/${PV}
-REVISION-fpm=		0
 
 # pcntl
 PKGNAME-pcntl?=		php-pcntl-${V}

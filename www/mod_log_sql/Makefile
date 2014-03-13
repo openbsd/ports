@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2013/06/12 20:36:34 brad Exp $
+# $OpenBSD: Makefile,v 1.22 2014/03/13 17:33:27 sthen Exp $
 
 COMMENT=	Apache module for logging to an SQL database
 
-REVISION=	9
+REVISION=	10
 DISTNAME=	mod_log_sql-1.18
 CATEGORIES=	www
 
@@ -29,13 +29,12 @@ NO_TEST=	Yes
 WRKSRC=		${WRKDIR}/mod_log_sql
 EXAMPLES=	create_tables.sql make_combined_log.pl
 
-APXS=		/usr/sbin/apxs
 FLAGS=		-I${LOCALBASE}/include/mysql -L${LOCALBASE}/lib \
 		-DWANT_SSL_LOGGING -lmysqlclient -lz
 
 do-build:
 	cd ${WRKBUILD} && \
-		${APXS} -c -o mod_log_sql.so ${FLAGS} mod_log_sql.c
+		${MODAPACHE_APXS} -c -o mod_log_sql.so ${FLAGS} mod_log_sql.c
 	@${MODAPACHE_CREATE_ENABLE_SCRIPT}
 
 do-install:

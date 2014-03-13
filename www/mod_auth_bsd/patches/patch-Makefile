@@ -1,9 +1,0 @@
-$OpenBSD: patch-Makefile,v 1.4 2012/03/08 12:13:01 ajacoutot Exp $
---- Makefile.orig	Wed Feb 21 19:32:45 2007
-+++ Makefile	Wed Feb 21 19:33:14 2007
-@@ -16,4 +16,4 @@ clean:
- 	rm -f mod_auth_bsd.so mod_auth_bsd.o
- 
- module:
--	$(APXS) -c mod_auth_bsd.c -levent
-+	$(APXS) -DDEV_RANDOM=\"/dev/urandom\" -c mod_auth_bsd.c -levent

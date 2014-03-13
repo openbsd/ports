@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/11 11:44:43 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2014/03/13 17:33:27 sthen Exp $
 
 COMMENT=	transparently compress Apache output
 
-REVISION=	6
+REVISION=	7
 DISTNAME=	mod_gzip-1.3.26.1a
 CATEGORIES=	www
 
@@ -27,7 +27,7 @@ HTML_DOCS=	browser.htm cache.htm config.htm encoding.htm \
 		valid-xhtml11.png versions.htm
 
 do-build:
-	cd ${WRKSRC} && /usr/sbin/apxs -Wc,"${CFLAGS}" -c mod_gzip.c \
+	cd ${WRKSRC} && ${MODAPACHE_APXS} -Wc,"${CFLAGS}" -c mod_gzip.c \
 		mod_gzip_debug.c mod_gzip_compress.c -o ${WRKBUILD}/mod_gzip.so
 	@${MODAPACHE_CREATE_ENABLE_SCRIPT}
 
