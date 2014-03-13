@@ -1,4 +1,4 @@
-$OpenBSD: patch-doc_haproxy_1,v 1.1.1.1 2008/07/17 04:31:45 jdixon Exp $
+$OpenBSD: patch-doc_haproxy_1,v 1.2 2014/03/13 08:58:14 dcoppa Exp $
 --- doc/haproxy.1.orig	Sat Jun 21 15:59:05 2008
 +++ doc/haproxy.1	Sun Jul 13 01:17:14 2008
 @@ -164,9 +164,7 @@ This signal is intercepted and ignored on systems with
@@ -8,7 +8,7 @@ $OpenBSD: patch-doc_haproxy_1,v 1.1.1.1 2008/07/17 04:31:45 jdixon Exp $
 -A much better documentation can be found in haproxy-en.txt. On debian
 -systems, you can find this file in
 -/usr/share/doc/haproxy/haproxy-en.txt.gz.
-+More complete documentation can be found in ${PREFIX}/share/doc/haproxy/haproxy-en.txt.
++More complete documentation can be found in ${TRUEPREFIX}/share/doc/haproxy/configuration.txt.
  
  .SH AUTHOR
  
