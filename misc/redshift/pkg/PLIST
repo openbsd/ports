@@ -1,21 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/06/15 08:32:17 ajacoutot Exp $
-bin/gtk-redshift
+@comment $OpenBSD: PLIST,v 1.6 2014/03/13 18:11:43 ajacoutot Exp $
 @bin bin/redshift
-lib/python${MODPY_VERSION}/site-packages/gtk_redshift/
-lib/python${MODPY_VERSION}/site-packages/gtk_redshift/__init__.py
-lib/python${MODPY_VERSION}/site-packages/gtk_redshift/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/gtk_redshift/__init__.pyo
-lib/python${MODPY_VERSION}/site-packages/gtk_redshift/defs.py
-lib/python${MODPY_VERSION}/site-packages/gtk_redshift/defs.pyc
-lib/python${MODPY_VERSION}/site-packages/gtk_redshift/defs.pyo
-lib/python${MODPY_VERSION}/site-packages/gtk_redshift/statusicon.py
-lib/python${MODPY_VERSION}/site-packages/gtk_redshift/statusicon.pyc
-lib/python${MODPY_VERSION}/site-packages/gtk_redshift/statusicon.pyo
-lib/python${MODPY_VERSION}/site-packages/gtk_redshift/utils.py
-lib/python${MODPY_VERSION}/site-packages/gtk_redshift/utils.pyc
-lib/python${MODPY_VERSION}/site-packages/gtk_redshift/utils.pyo
+bin/redshift-gtk
+lib/python${MODPY_VERSION}/site-packages/redshift_gtk/
+lib/python${MODPY_VERSION}/site-packages/redshift_gtk/__init__.py
+lib/python${MODPY_VERSION}/site-packages/redshift_gtk/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/redshift_gtk/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/redshift_gtk/defs.py
+lib/python${MODPY_VERSION}/site-packages/redshift_gtk/defs.pyc
+lib/python${MODPY_VERSION}/site-packages/redshift_gtk/defs.pyo
+lib/python${MODPY_VERSION}/site-packages/redshift_gtk/statusicon.py
+lib/python${MODPY_VERSION}/site-packages/redshift_gtk/statusicon.pyc
+lib/python${MODPY_VERSION}/site-packages/redshift_gtk/statusicon.pyo
+lib/python${MODPY_VERSION}/site-packages/redshift_gtk/utils.py
+lib/python${MODPY_VERSION}/site-packages/redshift_gtk/utils.pyc
+lib/python${MODPY_VERSION}/site-packages/redshift_gtk/utils.pyo
 @man man/man1/redshift.1
-share/applications/gtk-redshift.desktop
+share/applications/redshift-gtk.desktop
 share/icons/hicolor/scalable/apps/redshift-status-off.svg
 share/icons/hicolor/scalable/apps/redshift-status-on.svg
 share/icons/hicolor/scalable/apps/redshift.svg
