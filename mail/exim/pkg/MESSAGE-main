@@ -1,9 +1,9 @@
-To replace sendmail with exim, install a new mailer.conf using the
+To replace smtpd with exim, install a new mailer.conf using the
 following command:
 
     ${PREFIX}/sbin/exim-enable
 
-If you want to restore sendmail, this is done using the following
+If you want to restore smtpd, this is done using the following
 command:
 
     ${PREFIX}/sbin/exim-disable
