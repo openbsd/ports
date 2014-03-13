@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_daemon_driver_driverControlers_ml,v 1.1 2014/03/13 21:21:48 dcoppa Exp $
+
+commit c6bf00a685b15bdf88d56d526bedbcd643c93a66
+Author: ygrek <ygrek@autistici.org>
+Date:   Tue Mar 11 16:15:09 2014 +0800
+
+Revert "gettext: reduce complexity, drop unused code"
+
+This reverts commit 6a094b4381dacdc9043c8348002179eb87846e16.
+"Unused" code is actually used in gui
+
+--- src/daemon/driver/driverControlers.ml.orig	Sun Feb 23 19:14:52 2014
++++ src/daemon/driver/driverControlers.ml	Thu Mar 13 16:37:48 2014
+@@ -1296,7 +1296,7 @@ let http_handler o t r =
+                         List.iter CommonInteractive.start_download files;
+ 
+                         let module M = CommonMessages in
+-                        Buffer.add_string buf (M.download_started num)
++                        Gettext.buftext buf M.download_started num
+                       with  e ->
+                           Printf.bprintf buf "Error %s with %s<br>"
+                             (Printexc2.to_string e) value;

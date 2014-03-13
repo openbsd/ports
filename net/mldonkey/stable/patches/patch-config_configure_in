@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_configure_in,v 1.19 2013/06/18 09:35:13 dcoppa Exp $
---- config/configure.in.orig	Sun Aug  5 17:49:02 2012
-+++ config/configure.in	Tue Jun 18 09:50:42 2013
-@@ -974,7 +974,7 @@ if test "$GD" != "no"; then
+$OpenBSD: patch-config_configure_in,v 1.20 2014/03/13 21:21:48 dcoppa Exp $
+--- config/configure.in.orig	Mon Mar 10 18:06:15 2014
++++ config/configure.in	Thu Mar 13 16:32:27 2014
+@@ -1011,7 +1011,7 @@ if test "$GD" != "no"; then
        PNG_LDFLAGS=`$PNGLIBCONFIG --ldflags`
        LDFLAGS="$LDFLAGS $PNG_LDFLAGS"
      fi
@@ -10,16 +10,16 @@ $OpenBSD: patch-config_configure_in,v 1.19 2013/06/18 09:35:13 dcoppa Exp $
  # restore variables
      LIBS=$SAVE_LIBS_PNG
      CFLAGS=$SAVE_CFLAGS_PNG
-@@ -1002,7 +1002,7 @@ if test "$GD" != "no"; then
-         GD=yes
+@@ -1040,7 +1040,7 @@ if test "$GD" != "no"; then
  	GD_PNG=yes
+         GD_LIBS="$GD_LIBS $PNG_LIBS"
          AC_MSG_RESULT(yes)
 -	AC_CHECK_LIB(png, png_access_version_number,[AC_DEFINE(HAVE_PNGVERSION, 1,)])
 +	AC_CHECK_LIB(png, png_access_version_number,[AC_DEFINE(HAVE_PNGVERSION, 1,)],, -lz -lm)
          AC_DEFINE(HAVE_GD_PNG, 1, [Define to 1 if you have png support in libgd.])
        else
          AC_MSG_RESULT(no)
-@@ -1453,7 +1453,7 @@ else
+@@ -1501,7 +1501,7 @@ else
    MORE_TARGETS="$MORE_TARGETS $GUIS"
    AC_MSG_CHECKING(GToolbox.popup_menu args)
    GTOOLBOX="$OCAMLLIB/$LABLGTK_NAME/gToolbox.mli"
@@ -28,25 +28,3 @@ $OpenBSD: patch-config_configure_in,v 1.19 2013/06/18 09:35:13 dcoppa Exp $
    if test "$GTOOLBOX_ARGS" = "new"; then
      GTOOLBOX_POPUPMENU=' ~button: button ~time: time '
      AC_MSG_RESULT(new)
-@@ -1723,6 +1723,8 @@ else
-   echo "        disabled"
- fi
- 
-+echo ""
-+printf " - GUI build        "
- if test "$LABLGTK_CONFIG" = "yes"; then
-   echo ""
-   printf "\n - GUI support       "
-@@ -1753,10 +1755,10 @@ if test "x$CXX" != "x"; then
-   echo " - $CXX version       $CXX_VERSION"
- fi
- echo ""
--echo "\nNow execute '$GNU_MAKE' to start compiling. Good luck!"
-+echo "Now execute '$GNU_MAKE' to start compiling. Good luck!"
- 
- echo ""
--echo "To compile a static code execute:     $GNU_MAKE mlnet$COMPILE_TARGET.static"
-+echo "To compile a static core execute:     $GNU_MAKE mlnet$COMPILE_TARGET.static"
- echo "To produce a release tarball execute: $GNU_MAKE release.mlnet.static"
- echo "To clean the build directory execute: $GNU_MAKE maintainerclean"
- if test "$DONKEY_SUI" = "yes"; then

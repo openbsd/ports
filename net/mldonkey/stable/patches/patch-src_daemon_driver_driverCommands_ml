@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_daemon_driver_driverCommands_ml,v 1.1 2014/03/13 21:21:48 dcoppa Exp $
+
+commit c6bf00a685b15bdf88d56d526bedbcd643c93a66
+Author: ygrek <ygrek@autistici.org>
+Date:   Tue Mar 11 16:15:09 2014 +0800
+
+Revert "gettext: reduce complexity, drop unused code"
+
+This reverts commit 6a094b4381dacdc9043c8348002179eb87846e16.
+"Unused" code is actually used in gui
+
+--- src/daemon/driver/driverCommands.ml.orig	Sun Feb 23 19:17:59 2014
++++ src/daemon/driver/driverCommands.ml	Thu Mar 13 16:37:48 2014
+@@ -87,7 +87,7 @@ let execute_command arg_list output cmd args =
+     let rec iter list =
+       match list with
+         [] ->
+-          Buffer.add_string buf (no_such_command cmd)
++          Gettext.buftext buf no_such_command cmd
+       | (command, _, arg_kind, help) :: tail ->
+           if command = cmd then begin
+             if !verbose_user_commands && not (user2_is_admin output.conn_user.ui_user) then
