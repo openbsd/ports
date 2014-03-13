@@ -1,0 +1,25 @@
+$OpenBSD: patch-ext_tk_extconf_rb,v 1.1 2014/03/13 16:53:22 jeremy Exp $
+
+Fix bug in tcl/tk library name detection when --with-tcllib
+and --with-tklib are used.
+
+--- ext/tk/extconf.rb.orig	Thu Dec 26 20:16:59 2013
++++ ext/tk/extconf.rb	Thu Dec 26 20:17:07 2013
+@@ -1137,7 +1137,7 @@ def find_tcl(tcllib, stubs, version, *opt_paths)
+       if tcllib
+         print(".")
+         if have_library(tcllib, func, ["tcl.h"])
+-          return [true, path, lib_w_sufx, nil, *inc]
++          return [true, path, tcllib, nil, *inc]
+         end
+       else
+         sufx_list = ['', 't', 'g', 's', 'x']
+@@ -1277,7 +1277,7 @@ def find_tk(tklib, stubs, version, *opt_paths)
+       if tklib
+         print(".")
+         if have_library(tklib, func, ["tcl.h", "tk.h"])
+-          return [true, path, lib_w_sufx, nil, *inc]
++          return [true, path, tklib, nil, *inc]
+         end
+       else
+         sufx_list = ['', 't', 'g', 's', 'x']
