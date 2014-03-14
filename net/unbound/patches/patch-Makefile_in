@@ -1,11 +1,11 @@
-$OpenBSD: patch-Makefile_in,v 1.18 2013/09/20 20:57:52 brad Exp $
---- Makefile.in.orig	Fri Mar 22 08:41:13 2013
-+++ Makefile.in	Fri Sep 13 17:19:24 2013
-@@ -491,7 +491,6 @@ install:	all $(PYTHONMOD_INSTALL) $(PYUNBOUND_INSTALL)
- 	if test ! -e $(DESTDIR)$(configfile); then $(INSTALL) -d `dirname $(DESTDIR)$(configfile)`; $(INSTALL) -c -m 644 doc/example.conf $(DESTDIR)$(configfile); fi
+$OpenBSD: patch-Makefile_in,v 1.19 2014/03/14 17:34:21 brad Exp $
+--- Makefile.in.orig	Fri Jan 31 05:19:01 2014
++++ Makefile.in	Wed Mar 12 21:41:27 2014
+@@ -476,7 +476,6 @@ install-lib:	lib $(UNBOUND_EVENT_INSTALL)
+ 	done
  	$(LIBTOOL) --mode=install cp unbound.h $(DESTDIR)$(includedir)/unbound.h
  	$(LIBTOOL) --mode=install cp libunbound.la $(DESTDIR)$(libdir)
 -	$(LIBTOOL) --mode=finish $(DESTDIR)$(libdir)
  
- pythonmod-uninstall:
- 	rm -f -- $(DESTDIR)$(PYTHON_SITE_PKG)/unboundmodule.py
+ install-all:	all $(PYTHONMOD_INSTALL) $(PYUNBOUND_INSTALL) $(UNBOUND_EVENT_INSTALL) install-lib
+ 	$(INSTALL) -m 755 -d $(DESTDIR)$(sbindir)
