@@ -1,0 +1,12 @@
+$OpenBSD: patch-include_cmocka_h,v 1.1 2014/03/14 14:35:01 rpointel Exp $
+--- include/cmocka.h.orig	Sun Oct 27 16:04:25 2013
++++ include/cmocka.h	Fri Mar 14 13:51:15 2014
+@@ -97,6 +97,8 @@ int __stdcall IsDebuggerPresent();
+ #   else
+       typedef unsigned int uintptr_t;
+ #   endif /* __WORDSIZE == 64 */
++#  elif defined(OpenBSD)
++     typedef unsigned long int uintptr_t;
+ #  else /* __WORDSIZE */
+ #   if defined(_LP64) || defined(_I32LPx)
+       typedef unsigned long int uintptr_t;

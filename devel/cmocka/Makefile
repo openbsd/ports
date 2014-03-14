@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/03/09 20:39:09 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2014/03/14 14:35:01 rpointel Exp $
 
 COMMENT =		elegant unit testing framework for C
 
 DISTNAME =		cmocka-0.3.2
+REVISION =		0
 
 EXTRACT_SUFX =		.tar.xz
 
