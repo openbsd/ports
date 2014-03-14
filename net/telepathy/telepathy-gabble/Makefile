@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.63 2013/10/26 08:02:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2014/03/14 17:26:18 ajacoutot Exp $
 
 COMMENT=		flexible communications framework, xmpp component
 
 DISTNAME=		telepathy-gabble-0.18.1
-REVISION=		0
+REVISION=		1
 
 MASTER_SITES=		${MASTER_SITES_TP:=telepathy-gabble/}
 
@@ -28,6 +28,9 @@ BUILD_DEPENDS +=	devel/py-twisted/words \
 
 # bin/telepathy-gabble-xmpp-console
 RUN_DEPENDS +=		devel/py-gobject3
+
+# pygobject GTK3 introspection (not provided by indirect dependencies)
+RUN_DEPENDS +=		x11/gtk+3
 
 MODPY_ADJ_FILES=	plugins/telepathy-gabble-xmpp-console
 

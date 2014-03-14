@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.47 2013/09/28 08:51:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2014/03/14 17:26:18 ajacoutot Exp $
 
 COMMENT=		fd.o menu editor for GNOME
 
 GNOME_PROJECT=		alacarte
 GNOME_VERSION=		3.10.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		sysutils
 
@@ -19,6 +19,9 @@ BUILD_DEPENDS=		devel/py-gobject3 \
 
 RUN_DEPENDS=		devel/py-gobject3 \
 			x11/gnome/menus
+
+# pygobject GTK3 introspection (not provided by indirect dependencies)
+RUN_DEPENDS +=		x11/gtk+3
 
 PKG_ARCH=		*
 

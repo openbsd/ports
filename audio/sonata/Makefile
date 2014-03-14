@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2014/03/09 22:04:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2014/03/14 17:26:18 ajacoutot Exp $
 
 COMMENT=	GTK+ client for the Music Player Daemon
 
@@ -30,7 +30,7 @@ RUN_DEPENDS=	audio/py-mpd2${MODPY_FLAVOR} \
 		devel/xdg-utils \
 		x11/dbus-python${MODPY_FLAVOR}
 
-# pygobject introspection for gtk+3
+# pygobject GTK3 introspection (not provided by indirect dependencies)
 RUN_DEPENDS +=	x11/gtk+3
 
 post-install:

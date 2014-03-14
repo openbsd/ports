@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2013/12/16 08:24:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2014/03/14 17:26:18 ajacoutot Exp $
 
 # XXX could use brltty and brlapi (with python bindinds) -- not ported yet
 
@@ -26,7 +26,7 @@ BUILD_DEPENDS=		${COMMON_DEPENDS} \
 RUN_DEPENDS=		${COMMON_DEPENDS} \
 			devel/py-setproctitle${MODPY_FLAVOR}
 
-# pygobject introspection for gtk+3
+# pygobject GTK3 introspection (not provided by indirect dependencies)
 RUN_DEPENDS +=		x11/gtk+3
 
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2014/03/09 22:06:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2014/03/14 17:26:18 ajacoutot Exp $
 
 COMMENT=		Genealogical Research Analysis Management Programming System
 
@@ -30,7 +30,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			www/webkit \
 			x11/gtk+2,-guic
 
-# pygobject introspection for gtk+3
+# pygobject GTK3 introspection (not provided by indirect dependencies)
 RUN_DEPENDS +=		x11/gtk+3
 
 # XXX missing: py-osmgpsmap

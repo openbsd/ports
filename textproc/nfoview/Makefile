@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/12/16 15:36:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2014/03/14 17:26:18 ajacoutot Exp $
 
 COMMENT =	simple viewer for NFO files
 MODPY_EGG_VERSION =	1.13.1
@@ -25,7 +25,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		fonts/terminus-font \
 		x11/gtk+2,-guic
 
-# pygobject introspection for gtk+3
+# pygobject GTK3 introspection (not provided by indirect dependencies)
 RUN_DEPENDS +=	x11/gtk+3
 
 TEST_DEPENDS =	devel/py-test${MODPY_FLAVOR} \

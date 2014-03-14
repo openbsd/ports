@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2013/12/16 08:24:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2014/03/14 17:26:18 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -24,7 +24,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/gettext \
 			devel/py-gobject3
 
-# pygobject introspection for gtk+3
+# pygobject GTK3 introspection (not provided by indirect dependencies)
 RUN_DEPENDS +=	x11/gtk+3
 
 RUN_DEPENDS +=		x11/gnome/shell

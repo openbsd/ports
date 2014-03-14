@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2014/03/09 22:04:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2014/03/14 17:26:18 ajacoutot Exp $
 
 COMMENT =	versatile file searching tool
 
@@ -6,7 +6,7 @@ DISTNAME =	catfish-search-0.4.0.1
 PKGNAME =	${DISTNAME:S/-search//}
 CATEGORIES =	textproc
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE =	http://www.twotoasts.de/index.php?/pages/catfish_summary.html
 
@@ -26,6 +26,9 @@ RUN_DEPENDS =	devel/py-gobject3 \
 		devel/desktop-file-utils \
 		devel/py-xdg \
 		x11/gtk+2,-guic
+
+# pygobject GTK3 introspection (not provided by indirect dependencies)
+RUN_DEPENDS +=	x11/gtk+3
 
 pre-configure:
 	cd ${WRKSRC} && ${SUBST_CMD} -c Makefile.in Makefile
