@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2014/03/09 22:08:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.96 2014/03/14 17:42:59 ajacoutot Exp $
 
 COMMENT=	GNU Transport Layer Security library
 
@@ -43,7 +43,8 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
 		--disable-guile \
-		--disable-valgrind-tests
+		--disable-valgrind-tests \
+		--with-default-trust-store-file=/etc/ssl/cert.pem
 
 # add dependency on net/unbound; see post-install as well
 CONFIGURE_ARGS += --disable-libdane
