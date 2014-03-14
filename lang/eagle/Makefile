@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2013/09/25 12:25:17 stu Exp $
+# $OpenBSD: Makefile,v 1.12 2014/03/14 22:08:41 stu Exp $
 
 COMMENT =	Tcl implementation for the CLR
 
 V =		1.0
-P =		5000.25377
+P =		5173.31244
 DISTNAME =	eagle-${V}
-PKGNAME =	${DISTNAME}-beta28
+PKGNAME =	${DISTNAME}-beta29
 CATEGORIES =	lang lang/tcl
 HOMEPAGE =	http://eagle.to/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -24,7 +24,7 @@ MODMONO_DEPS =	No
 
 BUILD_DEPENDS =	archivers/unrar
 RUN_DEPENDS =	${MODMONO_RUN_DEPENDS}
-TEST_DEPENDS=${MODMONO_RUN_DEPENDS}
+TEST_DEPENDS =	${MODMONO_RUN_DEPENDS}
 
 TEST_IS_INTERACTIVE = X11
 
@@ -38,7 +38,7 @@ EAGLE_LIB_DIR =	${EAGLE_INS_DIR}/lib/Eagle${V}
 EAGLE_BIN =	${PREFIX}/bin/eagle
 
 # Skip tests that are too timing-sensitive to succeed everywhere
-# Skip tests that use too much memory and hang
+# Skip tests that use too much memory and/or hang
 EAGLE_TEST_FLAGS = -notFile 'benchmark.eagle delayout.eagle perf*.eagle' \
 		   -skip 'lmap-7.7 lmap-7.8'
 
@@ -56,10 +56,11 @@ do-install:
 	chown ${BINOWN}:${BINGRP} ${EAGLE_BIN}
 	chmod ${BINMODE} ${EAGLE_BIN}
 
+# "set no(exec) 1; set no(compileCSharp) 1" is needed to work around Mono bugs
 do-test:
 	${SETENV} ${MAKE_ENV} ${ALL_TEST_FLAGS} \
 	${LOCALBASE}/bin/mono ${WRKSRC}/bin/EagleShell.exe \
-	-preInitialize 'set test_log {}' \
+	-preInitialize 'set no(exec) 1; set no(compileCSharp) 1; set test_log {}' \
 	-file ${WRKSRC}/Tests/all.eagle \
 	${EAGLE_TEST_FLAGS}
 
