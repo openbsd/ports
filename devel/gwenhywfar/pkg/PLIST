@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/03/09 21:01:55 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/03/14 16:13:43 nigel Exp $
 @bin bin/gct-tool
 @bin bin/gsa
 bin/gwenhywfar-config
@@ -14,6 +14,8 @@ include/gwenhywfar4/gwen-gui-cpp/cppgui.hpp
 include/gwenhywfar4/gwen-gui-cpp/cppwidget.hpp
 include/gwenhywfar4/gwen-gui-gtk2/
 include/gwenhywfar4/gwen-gui-gtk2/gtk2_gui.h
+include/gwenhywfar4/gwen-gui-qt4/
+include/gwenhywfar4/gwen-gui-qt4/qt4_gui.hpp
 include/gwenhywfar4/gwenhywfar/
 include/gwenhywfar4/gwenhywfar/args.h
 include/gwenhywfar4/gwenhywfar/base64.h
@@ -154,9 +156,12 @@ lib/libgwengui-cpp.la
 @lib lib/libgwengui-cpp.so.${LIBgwengui-cpp_VERSION}
 lib/libgwengui-gtk2.la
 @lib lib/libgwengui-gtk2.so.${LIBgwengui-gtk2_VERSION}
+lib/libgwengui-qt4.la
+@lib lib/libgwengui-qt4.so.${LIBgwengui-qt4_VERSION}
 lib/libgwenhywfar.la
 @lib lib/libgwenhywfar.so.${LIBgwenhywfar_VERSION}
 lib/pkgconfig/gwengui-gtk2.pc
+lib/pkgconfig/gwengui-qt4.pc
 lib/pkgconfig/gwenhywfar.pc
 share/aclocal/gwenhywfar.m4
 share/gwenhywfar/
@@ -193,3 +198,4 @@ share/gwenhywfar/typemaker2/c/uint32_t_array.tm2
 share/gwenhywfar/typemaker2/c/uint64_t.tm2
 share/gwenhywfar/typemaker2/c/uint8_t.tm2
 share/gwenhywfar/typemaker2/c/uint8_t_array.tm2
+share/locale/de/LC_MESSAGES/gwenhywfar.mo
