@@ -1,0 +1,9 @@
+$OpenBSD: patch-Makefile,v 1.6 2014/03/14 12:32:18 sthen Exp $
+--- Makefile.orig	Fri Mar 14 12:31:04 2014
++++ Makefile	Fri Mar 14 12:31:09 2014
+@@ -16,4 +16,4 @@ clean:
+ 	rm -f mod_auth_bsd.so mod_auth_bsd.o
+ 
+ module:
+-	$(APXS) -c mod_auth_bsd.c -levent
++	$(APXS) -DDEV_RANDOM=\"/dev/random\" -c mod_auth_bsd.c -levent
