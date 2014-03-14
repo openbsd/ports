@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.51 2014/01/27 14:20:01 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.52 2014/03/14 23:48:49 giovanni Exp $
 @unexec-delete rm -f /var/www/conf/modules/phpmyadmin.conf
 @group daemon
 phpMyAdmin/
@@ -150,8 +150,6 @@ phpMyAdmin/js/ajax.js
 phpMyAdmin/js/canvg/
 phpMyAdmin/js/canvg/MIT-LICENSE.txt
 phpMyAdmin/js/canvg/canvg.js
-phpMyAdmin/js/canvg/flashcanvas.js
-phpMyAdmin/js/canvg/flashcanvas.swf
 phpMyAdmin/js/chart.js
 phpMyAdmin/js/codemirror/
 phpMyAdmin/js/codemirror/LICENSE
@@ -799,6 +797,9 @@ phpMyAdmin/locale/hi/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/hu/
 phpMyAdmin/locale/hu/LC_MESSAGES/
 phpMyAdmin/locale/hu/LC_MESSAGES/phpmyadmin.mo
+phpMyAdmin/locale/ia/
+phpMyAdmin/locale/ia/LC_MESSAGES/
+phpMyAdmin/locale/ia/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/id/
 phpMyAdmin/locale/id/LC_MESSAGES/
 phpMyAdmin/locale/id/LC_MESSAGES/phpmyadmin.mo
