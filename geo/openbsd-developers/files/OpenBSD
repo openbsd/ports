@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.109 2013/12/25 23:45:31 jca Exp $
+# $OpenBSD: OpenBSD,v 1.110 2014/03/15 02:35:19 andre Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -118,6 +118,7 @@
 52.3963543	13.107545	"jung"		# Joerg Jung
 52.4144		12.5524		"sebastia"	# Sebastian Reitenbach
 52.5		21		"alek"		# Aleksander Piotrowski
+52.366		9.716		"andre"		# Andre de Oliveira
 52.584		9.739		"reyk"		# Reyk Floeter
 53.08566	8.13058		"fkr"		# Felix Kronlage
 53.13		9		"jufi"		# Jan-Uwe Finck
