@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.146 2014/03/09 20:30:10 espie Exp $
+# $OpenBSD: Port.pm,v 1.147 2014/03/15 09:51:27 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -298,14 +298,17 @@ sub want_percent { 0 }
 sub setup
 {
 	my ($task, $core) = @_;
-	if (!$core->job->{locked}) {
+	my $job = $core->job;
+	if (!$job->{locked}) {
 		$task->try_lock($core);
 	}
-	if (!$core->job->{locked}) {
-		unshift(@{$core->job->{tasks}}, $task);
+	if (!$job->{locked}) {
+		unshift(@{$job->{tasks}}, $task);
+		$job->{wakemeup} = 1;
+		$job->{lock_order} = $core->prop->{waited_for_lock}++;
 		return DPB::Task::Port::Lock->new(
-		    'waiting-for-lock #'.$core->prop->{waited_for_lock}++);
-	}
+		    'waiting-for-lock #'.$job->{lock_order});
+	} 
 
 	return $task;
 }
@@ -334,6 +337,7 @@ sub junk_unlock
 		print {$core->job->{logfh}} "(Junk lock released for ", 
 		    $core->hostname, " at ", time(), ")\n";
 		delete $core->job->{locked};
+		$core->job->wake_others($core);
 	}
 }
 
@@ -367,18 +371,21 @@ sub run
 {
 	my ($self, $core) = @_;
 	my $job = $core->job;
-	my $try = 1;
+	$SIG{IO} = sub { print {$job->{logfh}} "Received IO\n"; };
+	my $date = time;
+	use POSIX;
 
 	while (1) {
-		$try++;
 		$self->try_lock($core);
 		if ($job->{locked}) {
 			print {$job->{builder}{lockperf}} 
 			    time(), ":", $core->hostname, 
-			    ": $self->{phase}: $try seconds\n";
+			    ": $self->{phase}: ", time() - $date, " seconds\n";
 			exit(0);
 		}
-		sleep 1;
+		print {$job->{logfh}} "(Junk lock failure for ",
+		    $core->hostname, " at ", time(), ")\n";
+		pause;
 	}
 }
 
@@ -386,6 +393,7 @@ sub finalize
 {
 	my ($self, $core) = @_;
 	$core->job->{locked} = 1;
+	delete $core->job->{wakemeup};
 	$self->SUPER::finalize($core);
 }
 
@@ -1146,6 +1154,26 @@ sub add_normal_tasks
 		push @todo, 'clean';
 	}
 	$self->add_tasks(map {DPB::Port::TaskFactory->create($_)} @todo);
+}
+
+sub wake_others
+{
+	my ($self, $core) = @_;
+	my ($minjob, $minpid);
+	$core->walk_same_host_jobs(
+	    sub {
+		my ($pid, $job) = @_;
+		return unless $job->{wakemeup};
+		if (!defined $minjob || 
+		    $job->{lock_order} < $minjob->{lock_order}) {
+			$minjob = $job;
+			$minpid = $pid;
+		}
+	    });
+	if (defined $minjob) {
+		kill IO => $minpid;
+		print {$core->job->{logfh}} "Woken up $minjob->{path}\n";
+	}
 }
 
 package DPB::Job::Port::Test;

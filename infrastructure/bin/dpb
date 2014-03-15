@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.105 2014/03/09 19:47:35 espie Exp $
+# $OpenBSD: dpb,v 1.106 2014/03/15 09:51:27 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -245,6 +245,7 @@ sub handle_non_waiting_jobs
 		}
 	}
 	DPB::Core->log_concurrency(time(), $state->{concurrent});
+	DPB::Core->wake_jobs;
 	$reporter->report($force_report);
 }
 

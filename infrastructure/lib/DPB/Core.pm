@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.71 2014/03/09 20:08:32 espie Exp $
+# $OpenBSD: Core.pm,v 1.72 2014/03/15 09:51:27 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -531,6 +531,25 @@ sub same_host_jobs
 		push(@jobs, $job);
 	    });
 	return @jobs;
+}
+
+sub wake_jobs
+{
+	my $self = shift;
+	my ($alarm, $sleepin);
+	for my $core (values %{$self->repository}) {
+		next if !defined $core->job->{v};
+		if ($core->job->{wakemeup}) {
+			$alarm->{$core->hostname} = $core;
+		}
+		if ($core->job->{locked}) {
+			$sleepin->{$core->hostname} = 1;
+		}
+	}
+	while (my ($host, $core) = each %$alarm) {
+		next if $sleepin->{$host};
+		$core->job->wake_others($core);
+	}
 }
 
 sub one_core

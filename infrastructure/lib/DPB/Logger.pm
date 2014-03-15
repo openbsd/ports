@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Logger.pm,v 1.12 2013/10/25 16:54:27 espie Exp $
+# $OpenBSD: Logger.pm,v 1.13 2014/03/15 09:51:27 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -66,6 +66,12 @@ sub log_pkgpath
 	return $self->logfile("/paths/".$v->fullpkgpath);
 }
 
+sub testlog_pkgpath
+{
+	my ($self, $v) = @_;
+	return $self->logfile("/tests/".$v->fullpkgpath);
+}
+
 sub log_pkgname
 {
 	my ($self, $v) = @_;
@@ -97,6 +103,16 @@ sub make_logs
 	}
 	for my $w ($v->build_path_list) {
 		$self->link($log, $self->log_pkgname($w));
+	}
+	return $log;
+}
+
+sub make_test_logs
+{
+	my ($self, $v) = @_;
+	my $log = $self->testlog_pkgpath($v);
+	if ($self->{clean}) {
+		unlink($log);
 	}
 	return $log;
 }
