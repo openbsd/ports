@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2014/03/09 20:30:34 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.20 2014/03/15 17:18:17 bcallah Exp $
 @conflict tmw-*
 @conflict tmw-music-*
 @pkgpath games/tmw
@@ -170,6 +170,7 @@ share/manaplus/data/graphics/sprites/manaplus_emotes.xml
 share/manaplus/data/graphics/sprites/manaplus_emotions.png
 share/manaplus/data/graphics/sprites/test.xml
 share/manaplus/data/help/
+share/manaplus/data/help/about-tmw.txt
 share/manaplus/data/help/about.txt
 share/manaplus/data/help/chatcommands.txt
 share/manaplus/data/help/chatguild.txt
