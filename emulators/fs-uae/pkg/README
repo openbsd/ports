@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2013/03/31 20:16:10 edd Exp $
+$OpenBSD: README,v 1.3 2014/03/15 13:04:16 edd Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -21,10 +21,9 @@ The Kickstart ROMs are copyrighted. You should obtain them legally.
 Launcher
 ========
 
-The majority of emulator configuration, including the import of
-Kickstarts, can now be done via the launcher.  To run the launcher:
-
- $ fs-uae-launcher
+The majority of emulator configuration, including the import of Kickstarts,
+can now be done via the launcher. This is now an external package
+(emulators/fs-uae-launcher).
 
 Joysticks
 =========

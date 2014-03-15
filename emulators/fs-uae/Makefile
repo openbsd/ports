@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2013/12/02 16:32:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2014/03/15 13:04:15 edd Exp $
 
 BROKEN-powerpc =	error: invalid 'asm': invalid %k value
 BROKEN-alpha =		error: invalid 'asm': invalid %xn code
 BROKEN-sparc64 =	error: invalid 'asm': invalid operand output code
 
 COMMENT =		modern Amiga emulator
-V =			2.2.3
-REVISION =		1
+V =			2.4.0
 MODPY_EGG_VERSION =	${V}
 DISTNAME =		fs-uae-$V
 CATEGORIES =		emulators
@@ -22,35 +21,22 @@ WANTLIB += pthread stdc++ z
 
 MASTER_SITES =		${HOMEPAGE}stable/$V/
 
-MODULES =		devel/gettext \
-			lang/python
-MODPY_SETUPTOOLS =	Yes
+MODULES =		devel/gettext
 LIB_DEPENDS =		devel/sdl \
 			graphics/png \
 			audio/openal \
 			devel/glib2
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+2,-guic \
-			x11/py-wxPython \
-			devel/pygame
+			x11/gtk+2,-guic
 
 USE_GMAKE =		Yes
 
-MAKE_FLAGS +=		prefix=${PREFIX} CXXFLAGS="${CXXFLAGS}" CFLAGS="${CFLAGS}"
+MAKE_FLAGS +=		prefix=${PREFIX} CXXFLAGS="${CXXFLAGS}"
+MAKE_FLAGS +=		CFLAGS="${CFLAGS}" CXX="${CXX}"
 
 NO_TEST =		Yes
 
-# Hack to prevent Python module doing it's own do-build/do-install
-CONFIGURE_STYLE =	not_setup_tools
-
-post-build:
-	cd ${WRKSRC}/launcher && \
-	mkdir -p fs_uae_launcher.egg-info && \
-	    ${SETENV} ${MAKE_ENV} ${MODPY_BIN} ${MODPY_SETUP} build
-
 post-install:
-	cd ${WRKSRC}/launcher && \
-	    ${SETENV} ${MAKE_ENV} ${MODPY_BIN} ${MODPY_SETUP} ${MODPY_DISTUTILS_INSTALL}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/fs-uae
 	mv ${PREFIX}/share/doc/fs-uae/example.conf \
 		${PREFIX}/share/examples/fs-uae/fs-uae.conf

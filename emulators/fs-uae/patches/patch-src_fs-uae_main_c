@@ -1,14 +1,14 @@
-$OpenBSD: patch-src_fs-uae_main_c,v 1.3 2013/09/10 10:23:38 edd Exp $
+$OpenBSD: patch-src_fs-uae_main_c,v 1.4 2014/03/15 13:04:16 edd Exp $
 
-Unbreak joystick detection. Committed upstream.
+Unbreak joystick detection.
 
---- src/fs-uae/main.c.orig	Fri Apr 19 18:06:24 2013
-+++ src/fs-uae/main.c	Sat May  4 17:04:30 2013
-@@ -569,6 +569,7 @@ void list_joysticks() {
+--- src/fs-uae/main.c.orig	Sun Feb 16 14:58:48 2014
++++ src/fs-uae/main.c	Thu Mar 13 15:21:24 2014
+@@ -723,6 +723,7 @@ void list_joysticks() {
      }
      printf("# SDL_NumJoysticks(): %d\n", SDL_NumJoysticks());
      for(int i = 0; i < SDL_NumJoysticks(); i++) {
 +	SDL_JoystickOpen(i);
          if (SDL_JoystickName(i)[0] == '\0') {
-             printf("Unnamed\n");
+             printf("J: Unnamed\n");
          }
