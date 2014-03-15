@@ -1,0 +1,5 @@
+Shared library that implements the scrypt key derivation function.
+scrypt is an alternative to bcrypt that focuses on increased brute-force
+attack cost.  The scrypt reference implementation can be found at
+
+  https://www.tarsnap.com/scrypt.html

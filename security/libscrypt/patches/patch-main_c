@@ -1,0 +1,15 @@
+$OpenBSD: patch-main_c,v 1.1.1.1 2014/03/15 13:37:18 benoit Exp $
+Trivial change of strcpy() to strlcpy().
+Size of stack variable mcf and mcf2 is well known.
+`make check` runs fine with it.
+--- main.c.orig	Thu Jan 23 02:32:17 2014
++++ main.c	Thu Jan 23 14:32:56 2014
+@@ -147,7 +147,7 @@ int main()
+ 	printf("TEST EIGHT: SUCCESSFUL, calculated mcf\n%s\n", mcf);
+ 
+ 	/* Since later calls to scrypt_check() butcher mcf, make a second */
+-	strcpy(mcf2, mcf);
++	strlcpy(mcf2, mcf, SCRYPT_MCF_LEN);
+ 
+ 	/* Couldn't be simpler - for a given mcf, check is the password is valid
+ 	* Returns < 0 on failure to calculate hash
