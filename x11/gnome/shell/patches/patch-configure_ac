@@ -1,8 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.15 2013/12/14 09:53:18 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.16 2014/03/15 07:17:55 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=669495
-http://sources.debian.net/src/gnome-shell/3.8.4-3/debian/patches/10-make-NetworkManager-optional.patch
-http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/gnome-base/gnome-shell/files/gnome-shell-3.8.3-networkmanager-flag.patch
+From 9f3499a7c33e33f9da204f752e5021afee9c68b2 Mon Sep 17 00:00:00 2001
+From: Michael Biebl <biebl@debian.org>
+Date: Tue, 11 Feb 2014 22:20:15 +0000
+Subject: make NetworkManager optional
 
 --- configure.ac.orig	Fri Nov 15 14:27:07 2013
 +++ configure.ac	Sat Dec 14 10:49:34 2013

@@ -1,8 +1,9 @@
-$OpenBSD: patch-js_ui_panel_js,v 1.13 2013/10/16 09:03:55 ajacoutot Exp $
+$OpenBSD: patch-js_ui_panel_js,v 1.14 2014/03/15 07:17:55 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=669495
-http://sources.debian.net/src/gnome-shell/3.8.4-3/debian/patches/10-make-NetworkManager-optional.patch
-http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/gnome-base/gnome-shell/files/gnome-shell-3.8.3-networkmanager-flag.patch
+From 9f3499a7c33e33f9da204f752e5021afee9c68b2 Mon Sep 17 00:00:00 2001
+From: Michael Biebl <biebl@debian.org>
+Date: Tue, 11 Feb 2014 22:20:15 +0000
+Subject: make NetworkManager optional
 
 --- js/ui/panel.js.orig	Tue Oct 15 19:06:27 2013
 +++ js/ui/panel.js	Wed Oct 16 10:49:53 2013
