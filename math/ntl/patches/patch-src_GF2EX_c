@@ -1,3 +1,4 @@
+$OpenBSD: patch-src_GF2EX_c,v 1.3 2014/03/15 09:13:13 benoit Exp $
 --- src/GF2EX.c.orig	Fri Feb 15 15:44:26 2013
 +++ src/GF2EX.c	Tue Feb 19 10:26:58 2013
 @@ -6,6 +6,8 @@

@@ -1,3 +1,4 @@
+$OpenBSD: patch-src_DoConfig,v 1.3 2014/03/15 09:13:13 benoit Exp $
 --- src/DoConfig.orig	Fri Aug 14 14:53:11 2009
 +++ src/DoConfig	Sun Oct 24 11:03:33 2010
 @@ -12,14 +12,14 @@

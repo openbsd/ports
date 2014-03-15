@@ -1,3 +1,4 @@
+$OpenBSD: patch-src_tools_h,v 1.2 2014/03/15 09:13:13 benoit Exp $
 --- include/NTL/tools.h	2008-03-04 15:35:02.000000000 -0800
 +++ include/NTL/tools.h.modified	2008-04-17 12:24:41.000000000 -0700
 @@ -249,6 +249,12 @@

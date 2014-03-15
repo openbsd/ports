@@ -1,3 +1,4 @@
+$OpenBSD: patch-src_vec_GF2_c,v 1.3 2014/03/15 09:13:13 benoit Exp $
 --- src/vec_GF2.c.orig	Fri Aug 14 14:53:11 2009
 +++ src/vec_GF2.c	Sun Oct 24 10:56:44 2010
 @@ -4,6 +4,8 @@
