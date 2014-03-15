@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.50 2013/12/07 19:59:13 brad Exp $
+# $OpenBSD: Makefile,v 1.51 2014/03/15 19:41:03 naddy Exp $
 
 COMMENT=	GTK-based scientific calculator
 
-DISTNAME=	galculator-2.1.2
+DISTNAME=	galculator-2.1.3
 CATEGORIES=	math
 HOMEPAGE=	http://galculator.sourceforge.net/
-REVISION=	1
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
