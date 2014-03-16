@@ -1,6 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/06 09:26:25 sthen Exp $
-${P5SITE}/Lingua/
-${P5SITE}/Lingua/EN/
-${P5SITE}/Lingua/EN/Inflect/
+@comment $OpenBSD: PLIST,v 1.2 2014/03/16 21:56:38 afresh1 Exp $
 ${P5SITE}/Lingua/EN/Inflect/Phrase.pm
 @man man/man3p/Lingua::EN::Inflect::Phrase.3p
