@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.176 2013/11/07 00:30:07 brad Exp $
+# $OpenBSD: Makefile,v 1.177 2014/03/16 11:38:47 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
 
-V=		2.0.9
+V=		2.0.10
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
@@ -28,13 +28,13 @@ WANTLIB-common=	c dbus-1 m pthread ${MODGETTEXT_WANTLIB}
 WANTLIB-main=	GL ICE lib/qt4/QtGui QtCore SM SDL SDL_image X11 Xcomposite \
 		Xcursor Xdamage Xext Xfixes Xi Xinerama Xpm Xrandr Xrender \
 		ass atk-1.0 avcodec avformat avutil bluray cairo cddb dvbpsi \
-		dvdnav dvdread ebml stdc++ expat ffi fontconfig freetype \
-		fribidi gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
-		gmodule-2.0 gnutls gobject-2.0 gpg-error graphite2 gthread-2.0 \
+		dvdnav dvdread ebml enca expat ffi fontconfig freetype fribidi \
+		gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 \
+		gmp gnutls gobject-2.0 gpg-error graphite2 gthread-2.0 \
 		gtk-x11-2.0 harfbuzz hogweed jpeg matroska nettle notify opus \
 		orc-0.4 ogg p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
 		pixman-1 png postproc pthread-stubs samplerate \
-		schroedinger-1.0>=2.0 sndio speex speexdsp swscale tag tar \
+		schroedinger-1.0>=2.0 sndio speex speexdsp stdc++ swscale tag tar \
 		tasn1 tiff usbhid vorbis vorbisenc webp x264 xcb-composite \
 		xcb-keysyms xcb-randr xcb-render xcb-shape xcb-shm xcb-xfixes \
 		xcb-xv xcb xml2 z ${WANTLIB-common}
