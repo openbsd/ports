@@ -1,22 +1,23 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/11 10:50:16 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2014/03/16 02:57:14 afresh1 Exp $
 
-COMMENT=		DateTime submodule for TZ
+COMMENT =		DateTime submodule for TZ
 
-MODULES=		cpan
-DISTNAME=		DateTime-TimeZone-1.19
-REVISION=		0
-CATEGORIES=		devel
+MODULES =		cpan
+DISTNAME =		DateTime-TimeZone-1.64
+REVISION =		0
+CATEGORIES =		devel
 
-# Perl
-PERMIT_PACKAGE_CDROM=   Yes
+MAINTAINER = Andrew Fresh <andrew@cpan.org>
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		devel/p5-Params-Validate \
-			devel/p5-Class-Singleton
+# perl_5
+PERMIT_PACKAGE_CDROM =	Yes
 
-CONFIGURE_STYLE=	modbuild
-USE_GROFF =		Yes
-TEST_DEPENDS=	devel/p5-DateTime \
-			devel/p5-Test-Output
+RUN_DEPENDS =	devel/p5-Class-Load \
+		devel/p5-Class-Singleton \
+		devel/p5-Params-Validate
+
+TEST_DEPENDS =	devel/p5-Test-Fatal \
+		devel/p5-Test-Output \
+		devel/p5-Test-Requires
 
 .include <bsd.port.mk>	
