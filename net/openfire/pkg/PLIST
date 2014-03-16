@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/03/19 16:55:01 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/03/16 01:34:31 sthen Exp $
 @newgroup _openfire:632
 @newuser _openfire:632:_openfire:daemon:openfire user:/var/empty:/bin/sh
 @extraunexec rm -rf %D/openfire/conf/*
@@ -13,7 +13,9 @@ openfire/
 @group
 openfire/lib/
 openfire/lib/activation.jar
-openfire/lib/bouncycastle.jar
+openfire/lib/bcpg-jdk15on.jar
+openfire/lib/bcpkix-jdk15on.jar
+openfire/lib/bcprov-jdk15on.jar
 openfire/lib/commons-el.jar
 openfire/lib/hsqldb.jar
 openfire/lib/jasper-compiler.jar
