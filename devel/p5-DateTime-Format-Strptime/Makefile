@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.15 2013/03/11 10:50:16 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2014/03/16 03:00:03 afresh1 Exp $
 
-COMMENT=	parse and format strp and strf time patterns
+COMMENT =	parse and format strp and strf time patterns
 
-MODULES=	cpan
-DISTNAME=	DateTime-Format-Strptime-1.52
-CATEGORIES=	devel
-
+MODULES =	cpan
+DISTNAME =	DateTime-Format-Strptime-1.54
 EPOCH =		0
+CATEGORIES =	devel
 
-# Artistic 2.0
-PERMIT_PACKAGE_CDROM=	Yes
+MAINTAINER = Andrew Fresh <andrew@cpan.org>
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		devel/p5-DateTime>=0.5000 \
-			devel/p5-DateTime-Locale>=0.41 \
-			devel/p5-DateTime-TimeZone>=0.79 \
-			devel/p5-Params-Validate>=0.64
+# artistic_2
+PERMIT_PACKAGE_CDROM =	Yes
+
+RUN_DEPENDS =	devel/p5-DateTime \
+		devel/p5-DateTime-Locale \
+		devel/p5-DateTime-TimeZone \
+		devel/p5-Params-Validate
 
 .include <bsd.port.mk>
