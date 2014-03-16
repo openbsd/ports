@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.21 2014/03/09 22:25:02 ajacoutot Exp $
+$OpenBSD: README,v 1.22 2014/03/16 09:58:10 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -55,6 +55,7 @@ interface).
 The prefered way is to use a cron(8) job instead. Two options are
 available and both require to edit the web server user's crontab(5).
 e.g. "crontab -u www -e"
+(swap "www" with the user the web server runs as)
 
 -> "Webcron" (works in chroot)
 */15	*	*	*	*	/usr/bin/ftp -Vo - http://<hostname>/owncloud/cron.php >/dev/null

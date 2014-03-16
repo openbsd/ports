@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2014/03/09 22:25:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2014/03/16 09:58:10 ajacoutot Exp $
 @extra owncloud/config/config.php
 owncloud/
 owncloud/.htaccess.dist
@@ -2785,9 +2785,11 @@ owncloud/3rdparty/zxcvbn/js/zxcvbn.js
 owncloud/3rdparty/zxcvbn/js/zxcvbn.min.js
 owncloud/AUTHORS
 owncloud/COPYING-AGPL
-@owner www
+@group www
+@mode 0775
 owncloud/apps/
-@owner
+@mode
+@group
 owncloud/apps/activity/
 owncloud/apps/activity/TODO
 owncloud/apps/activity/ajax/
@@ -8314,13 +8316,13 @@ owncloud/apps/user_webdavauth/settings.php
 owncloud/apps/user_webdavauth/templates/
 owncloud/apps/user_webdavauth/templates/settings.php
 owncloud/apps/user_webdavauth/user_webdavauth.php
-@mode 0700
-@owner www
+@mode 0770
+@group www
 owncloud/config/
-@mode 0600
+@mode 0660
 owncloud/config/config.sample.php
 @mode
-@owner
+@group
 owncloud/console.php
 owncloud/core/
 owncloud/core/ajax/
@@ -11258,10 +11260,10 @@ owncloud/status.php
 owncloud/themes/
 owncloud/themes/README
 owncloud/version.php
-@mode 0700
-@owner www
+@mode 0770
+@group www
 @sample owncloud/data/
 @mode
-@owner
+@group
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
 ${FULLPKGNAME}
