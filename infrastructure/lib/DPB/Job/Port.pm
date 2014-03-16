@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.148 2014/03/16 08:52:53 espie Exp $
+# $OpenBSD: Port.pm,v 1.149 2014/03/16 17:22:05 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -627,7 +627,7 @@ sub run
 	my $h = $job->{builder}->locker->find_dependencies($core->hostname);
 	if (defined $h && $self->add_live_depends($h, $core)) {
 		$self->add_dontjunk($job, $h);
-		my $opt = '-aiX';
+		my $opt = '-aIX';
 		if ($core->prop->{nochecksum}) {
 			$opt .= 'q';
 		}
