@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1198 2014/03/09 20:39:59 rpointel Exp $
+# $OpenBSD: Makefile,v 1.1199 2014/03/16 11:29:57 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -18,6 +18,7 @@
      SUBDIR += asp2php
      SUBDIR += asp2php,no_x11
      SUBDIR += astyle
+     SUBDIR += atf
      SUBDIR += atk
      SUBDIR += atk2mm
      SUBDIR += atlas
@@ -323,6 +324,8 @@
      SUBDIR += json-glib
      SUBDIR += kdbg
      SUBDIR += kdiff3
+     SUBDIR += kyua-cli
+     SUBDIR += kyua-testers
      SUBDIR += lam
      SUBDIR += legit
      SUBDIR += libIDL
@@ -439,6 +442,7 @@
      SUBDIR += luarings
      SUBDIR += luastdlib
      SUBDIR += luastdlib,lua52
+     SUBDIR += lutok
      SUBDIR += m4
      SUBDIR += maven
      SUBDIR += mcs
