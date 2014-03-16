@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/03/16 21:50:26 afresh1 Exp $
+${P5SITE}/Lingua/EN/Number/
+${P5SITE}/Lingua/EN/Number/IsOrdinal.pm
+@man man/man3p/Lingua::EN::Number::IsOrdinal.3p
