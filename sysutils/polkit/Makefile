@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.53 2014/03/11 20:32:46 espie Exp $
+# $OpenBSD: Makefile,v 1.54 2014/03/16 09:16:27 ajacoutot Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
 DISTNAME=	polkit-0.112
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS +=  polkit-gobject-1	2.0 # .0.0
 SHARED_LIBS +=  polkit-agent-1		2.0 # .0.0
@@ -31,8 +31,10 @@ BUILD_DEPENDS=	${MODGNU_AUTOMAKE_DEPENDS} \
 		devel/gobject-introspection
 
 # AUTOCONF needs AM_PROG_LIBTOOL and ENABLE_GTK_DOC
-BUILD_DEPENDS+=	devel/libtool
+BUILD_DEPENDS+=	devel/libtool \
+		textproc/gtk-doc
 
+# man pages
 BUILD_DEPENDS+=	textproc/docbook-xsl
 
 RUN_DEPENDS=	x11/dbus
