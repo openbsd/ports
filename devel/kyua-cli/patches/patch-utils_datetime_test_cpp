@@ -1,0 +1,13 @@
+$OpenBSD: patch-utils_datetime_test_cpp,v 1.1.1.1 2014/03/16 11:28:11 sthen Exp $
+Fix for archs with 32 bits long.
+--- utils/datetime_test.cpp.orig	Mon Dec 23 23:33:29 2013
++++ utils/datetime_test.cpp	Mon Dec 23 23:33:36 2013
+@@ -86,7 +86,7 @@ ATF_TEST_CASE_BODY(delta__from_microseconds)
+     }
+     {
+         const datetime::delta delta = datetime::delta::from_microseconds(
+-            123456789123456);
++            123456789123456LL);
+         ATF_REQUIRE_EQ(123456789, delta.seconds);
+         ATF_REQUIRE_EQ(123456, delta.useconds);
+     }

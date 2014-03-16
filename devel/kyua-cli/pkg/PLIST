@@ -1,0 +1,185 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/03/16 11:28:11 sthen Exp $
+@bin bin/kyua
+@man man/man1/kyua-about.1
+@man man/man1/kyua-config.1
+@man man/man1/kyua-db-exec.1
+@man man/man1/kyua-db-migrate.1
+@man man/man1/kyua-debug.1
+@man man/man1/kyua-help.1
+@man man/man1/kyua-list.1
+@man man/man1/kyua-report-html.1
+@man man/man1/kyua-report.1
+@man man/man1/kyua-test.1
+@man man/man1/kyua.1
+@man man/man5/kyua.conf.5
+@man man/man5/kyuafile.5
+@man man/man7/kyua-build-root.7
+@man man/man7/kyua-test-filters.7
+share/doc/kyua-cli/
+share/doc/kyua-cli/AUTHORS
+share/doc/kyua-cli/COPYING
+share/doc/kyua-cli/NEWS
+share/doc/kyua-cli/README
+share/kyua-cli/
+share/kyua-cli/examples/
+share/kyua-cli/examples/Kyuafile.top
+share/kyua-cli/examples/kyua.conf
+share/kyua-cli/misc/
+share/kyua-cli/misc/context.html
+share/kyua-cli/misc/index.html
+share/kyua-cli/misc/report.css
+share/kyua-cli/misc/test_result.html
+share/kyua-cli/store/
+share/kyua-cli/store/migrate_v1_v2.sql
+share/kyua-cli/store/schema_v2.sql
+tests/kyua-cli/
+tests/kyua-cli/Kyuafile
+tests/kyua-cli/bootstrap/
+tests/kyua-cli/bootstrap/Kyuafile
+@bin tests/kyua-cli/bootstrap/atf_helpers
+@bin tests/kyua-cli/bootstrap/plain_helpers
+tests/kyua-cli/bootstrap/testsuite
+tests/kyua-cli/cli/
+tests/kyua-cli/cli/Kyuafile
+@bin tests/kyua-cli/cli/cmd_about_test
+@bin tests/kyua-cli/cli/cmd_config_test
+@bin tests/kyua-cli/cli/cmd_db_exec_test
+@bin tests/kyua-cli/cli/cmd_db_migrate_test
+@bin tests/kyua-cli/cli/cmd_debug_test
+@bin tests/kyua-cli/cli/cmd_help_test
+@bin tests/kyua-cli/cli/cmd_list_test
+@bin tests/kyua-cli/cli/cmd_report_html_test
+@bin tests/kyua-cli/cli/cmd_report_test
+@bin tests/kyua-cli/cli/cmd_test_test
+@bin tests/kyua-cli/cli/common_test
+@bin tests/kyua-cli/cli/config_test
+@bin tests/kyua-cli/cli/main_test
+tests/kyua-cli/engine/
+tests/kyua-cli/engine/Kyuafile
+@bin tests/kyua-cli/engine/action_test
+@bin tests/kyua-cli/engine/config_test
+@bin tests/kyua-cli/engine/context_test
+tests/kyua-cli/engine/drivers/
+tests/kyua-cli/engine/drivers/Kyuafile
+@bin tests/kyua-cli/engine/drivers/debug_test_test
+@bin tests/kyua-cli/engine/drivers/list_tests_helpers
+@bin tests/kyua-cli/engine/drivers/list_tests_test
+@bin tests/kyua-cli/engine/drivers/run_tests_test
+@bin tests/kyua-cli/engine/drivers/scan_action_test
+@bin tests/kyua-cli/engine/exceptions_test
+@bin tests/kyua-cli/engine/filters_test
+@bin tests/kyua-cli/engine/kyuafile_test
+@bin tests/kyua-cli/engine/metadata_test
+@bin tests/kyua-cli/engine/test_case_atf_helpers
+@bin tests/kyua-cli/engine/test_case_plain_helpers
+@bin tests/kyua-cli/engine/test_case_test
+@bin tests/kyua-cli/engine/test_program_test
+@bin tests/kyua-cli/engine/test_result_test
+@bin tests/kyua-cli/engine/testers_test
+tests/kyua-cli/examples/
+tests/kyua-cli/examples/Kyuafile
+@bin tests/kyua-cli/examples/syntax_test
+tests/kyua-cli/integration/
+tests/kyua-cli/integration/Kyuafile
+tests/kyua-cli/integration/cmd_about_test
+tests/kyua-cli/integration/cmd_config_test
+tests/kyua-cli/integration/cmd_db_exec_test
+tests/kyua-cli/integration/cmd_db_migrate_test
+tests/kyua-cli/integration/cmd_debug_test
+tests/kyua-cli/integration/cmd_help_test
+tests/kyua-cli/integration/cmd_list_test
+tests/kyua-cli/integration/cmd_report_html_test
+tests/kyua-cli/integration/cmd_report_test
+tests/kyua-cli/integration/cmd_test_test
+tests/kyua-cli/integration/global_test
+tests/kyua-cli/integration/helpers/
+@bin tests/kyua-cli/integration/helpers/bad_test_program
+@bin tests/kyua-cli/integration/helpers/bogus_test_cases
+@bin tests/kyua-cli/integration/helpers/config
+@bin tests/kyua-cli/integration/helpers/expect_all_pass
+@bin tests/kyua-cli/integration/helpers/expect_some_fail
+@bin tests/kyua-cli/integration/helpers/interrupts
+@bin tests/kyua-cli/integration/helpers/metadata
+@bin tests/kyua-cli/integration/helpers/simple_all_pass
+@bin tests/kyua-cli/integration/helpers/simple_some_fail
+tests/kyua-cli/store/
+tests/kyua-cli/store/Kyuafile
+@bin tests/kyua-cli/store/backend_test
+@bin tests/kyua-cli/store/dbtypes_test
+@bin tests/kyua-cli/store/exceptions_test
+@bin tests/kyua-cli/store/metadata_test
+@bin tests/kyua-cli/store/schema_inttest
+tests/kyua-cli/store/schema_v1.sql
+tests/kyua-cli/store/testdata_v1.sql
+tests/kyua-cli/store/testdata_v2.sql
+@bin tests/kyua-cli/store/transaction_test
+tests/kyua-cli/utils/
+tests/kyua-cli/utils/Kyuafile
+@bin tests/kyua-cli/utils/auto_array_test
+tests/kyua-cli/utils/cmdline/
+tests/kyua-cli/utils/cmdline/Kyuafile
+@bin tests/kyua-cli/utils/cmdline/base_command_test
+@bin tests/kyua-cli/utils/cmdline/commands_map_test
+@bin tests/kyua-cli/utils/cmdline/exceptions_test
+@bin tests/kyua-cli/utils/cmdline/globals_test
+@bin tests/kyua-cli/utils/cmdline/options_test
+@bin tests/kyua-cli/utils/cmdline/parser_test
+@bin tests/kyua-cli/utils/cmdline/ui_test
+tests/kyua-cli/utils/config/
+tests/kyua-cli/utils/config/Kyuafile
+@bin tests/kyua-cli/utils/config/exceptions_test
+@bin tests/kyua-cli/utils/config/keys_test
+@bin tests/kyua-cli/utils/config/lua_module_test
+@bin tests/kyua-cli/utils/config/nodes_test
+@bin tests/kyua-cli/utils/config/parser_test
+@bin tests/kyua-cli/utils/config/tree_test
+@bin tests/kyua-cli/utils/datetime_test
+@bin tests/kyua-cli/utils/env_test
+tests/kyua-cli/utils/format/
+tests/kyua-cli/utils/format/Kyuafile
+@bin tests/kyua-cli/utils/format/exceptions_test
+@bin tests/kyua-cli/utils/format/formatter_test
+tests/kyua-cli/utils/fs/
+tests/kyua-cli/utils/fs/Kyuafile
+@bin tests/kyua-cli/utils/fs/auto_cleaners_test
+@bin tests/kyua-cli/utils/fs/exceptions_test
+@bin tests/kyua-cli/utils/fs/lua_module_test
+@bin tests/kyua-cli/utils/fs/operations_test
+@bin tests/kyua-cli/utils/fs/path_test
+tests/kyua-cli/utils/logging/
+tests/kyua-cli/utils/logging/Kyuafile
+@bin tests/kyua-cli/utils/logging/macros_test
+@bin tests/kyua-cli/utils/logging/operations_test
+@bin tests/kyua-cli/utils/memory_test
+@bin tests/kyua-cli/utils/optional_test
+@bin tests/kyua-cli/utils/passwd_test
+tests/kyua-cli/utils/process/
+tests/kyua-cli/utils/process/Kyuafile
+@bin tests/kyua-cli/utils/process/child_test
+@bin tests/kyua-cli/utils/process/exceptions_test
+@bin tests/kyua-cli/utils/process/fdstream_test
+@bin tests/kyua-cli/utils/process/helpers
+@bin tests/kyua-cli/utils/process/status_test
+@bin tests/kyua-cli/utils/process/systembuf_test
+@bin tests/kyua-cli/utils/sanity_test
+tests/kyua-cli/utils/signals/
+tests/kyua-cli/utils/signals/Kyuafile
+@bin tests/kyua-cli/utils/signals/exceptions_test
+@bin tests/kyua-cli/utils/signals/interrupts_test
+@bin tests/kyua-cli/utils/signals/misc_test
+@bin tests/kyua-cli/utils/signals/programmer_test
+tests/kyua-cli/utils/sqlite/
+tests/kyua-cli/utils/sqlite/Kyuafile
+@bin tests/kyua-cli/utils/sqlite/c_gate_test
+@bin tests/kyua-cli/utils/sqlite/database_test
+@bin tests/kyua-cli/utils/sqlite/exceptions_test
+@bin tests/kyua-cli/utils/sqlite/statement_test
+@bin tests/kyua-cli/utils/sqlite/transaction_test
+@bin tests/kyua-cli/utils/stream_test
+tests/kyua-cli/utils/text/
+tests/kyua-cli/utils/text/Kyuafile
+@bin tests/kyua-cli/utils/text/exceptions_test
+@bin tests/kyua-cli/utils/text/operations_test
+@bin tests/kyua-cli/utils/text/table_test
+@bin tests/kyua-cli/utils/text/templates_test
+@bin tests/kyua-cli/utils/units_test
