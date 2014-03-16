@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.32 2011/09/21 08:02:07 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.33 2014/03/16 12:39:22 sthen Exp $
 @pkgpath mail/p5-Mail-SpamAssassin
 @newgroup _spamdaemon:506
 @newuser _spamdaemon:506:506:daemon:SpamAssassin:${LOCALSTATEDIR}:/sbin/nologin
+@extraunexec rm -rf ${CONFDIR}/sa-update-keys
 bin/sa-awl
 bin/sa-check_spamd
 bin/sa-compile
@@ -26,6 +27,7 @@ ${P5SITE}/Mail/SpamAssassin/BayesStore/BDB.pm
 ${P5SITE}/Mail/SpamAssassin/BayesStore/DBM.pm
 ${P5SITE}/Mail/SpamAssassin/BayesStore/MySQL.pm
 ${P5SITE}/Mail/SpamAssassin/BayesStore/PgSQL.pm
+${P5SITE}/Mail/SpamAssassin/BayesStore/Redis.pm
 ${P5SITE}/Mail/SpamAssassin/BayesStore/SDBM.pm
 ${P5SITE}/Mail/SpamAssassin/BayesStore/SQL.pm
 ${P5SITE}/Mail/SpamAssassin/Client.pm
@@ -67,6 +69,7 @@ ${P5SITE}/Mail/SpamAssassin/Plugin/ASN.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/AWL.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/AccessDB.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/AntiVirus.pm
+${P5SITE}/Mail/SpamAssassin/Plugin/AskDNS.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/AutoLearnThreshold.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/Bayes.pm
 ${P5SITE}/Mail/SpamAssassin/Plugin/BodyEval.pm
@@ -116,6 +119,7 @@ ${P5SITE}/Mail/SpamAssassin/Util/Progress.pm
 ${P5SITE}/Mail/SpamAssassin/Util/RegistrarBoundaries.pm
 ${P5SITE}/Mail/SpamAssassin/Util/ScopedTimer.pm
 ${P5SITE}/Mail/SpamAssassin/Util/TieOneStringHash.pm
+${P5SITE}/Mail/SpamAssassin/Util/TinyRedis.pm
 ${P5SITE}/spamassassin-run.pod
 @man man/man1/sa-awl.1
 @man man/man1/sa-compile.1
@@ -135,6 +139,7 @@ ${P5SITE}/spamassassin-run.pod
 @man man/man3p/Mail::SpamAssassin::BayesStore::BDB.3p
 @man man/man3p/Mail::SpamAssassin::BayesStore::MySQL.3p
 @man man/man3p/Mail::SpamAssassin::BayesStore::PgSQL.3p
+@man man/man3p/Mail::SpamAssassin::BayesStore::Redis.3p
 @man man/man3p/Mail::SpamAssassin::BayesStore::SQL.3p
 @man man/man3p/Mail::SpamAssassin::Client.3p
 @man man/man3p/Mail::SpamAssassin::Conf.3p
@@ -157,12 +162,14 @@ ${P5SITE}/spamassassin-run.pod
 @man man/man3p/Mail::SpamAssassin::Plugin::AWL.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::AccessDB.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::AntiVirus.3p
+@man man/man3p/Mail::SpamAssassin::Plugin::AskDNS.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::AutoLearnThreshold.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::Bayes.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::BodyRuleBaseExtractor.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::Check.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::DCC.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::DKIM.3p
+@man man/man3p/Mail::SpamAssassin::Plugin::DNSEval.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::Hashcash.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::MIMEHeader.3p
 @man man/man3p/Mail::SpamAssassin::Plugin::OneLineBodyRuleType.3p
@@ -202,7 +209,6 @@ share/doc/SpamAssassin/USAGE
 share/doc/SpamAssassin/procmailrc.example
 share/doc/SpamAssassin/sample-nonspam.txt
 share/doc/SpamAssassin/sample-spam.txt
-@sample ${CONFDIR}/
 share/doc/SpamAssassin/sql/
 share/doc/SpamAssassin/sql/README
 share/doc/SpamAssassin/sql/README.awl
@@ -215,6 +221,7 @@ share/doc/SpamAssassin/sql/userpref_mysql.sql
 share/doc/SpamAssassin/sql/userpref_pg.sql
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/SpamAssassin/
+@sample ${CONFDIR}/
 share/examples/SpamAssassin/init.pre
 @sample ${CONFDIR}/init.pre
 share/examples/SpamAssassin/local.cf
@@ -227,14 +234,11 @@ share/examples/SpamAssassin/v320.pre
 @sample ${CONFDIR}/v320.pre
 share/examples/SpamAssassin/v330.pre
 @sample ${CONFDIR}/v330.pre
-@owner _spamdaemon
-@group _spamdaemon
-@sample ${LOCALSTATEDIR}/
-@extraunexec rm -rf ${CONFDIR}/sa-update-keys
-@owner
-@group
+share/examples/SpamAssassin/v340.pre
+@sample ${CONFDIR}/v340.pre
 share/spamassassin/
 share/spamassassin/10_default_prefs.cf
+share/spamassassin/10_hasbase.cf
 share/spamassassin/20_advance_fee.cf
 share/spamassassin/20_aux_tlds.cf
 share/spamassassin/20_body_tests.cf
@@ -248,6 +252,7 @@ share/spamassassin/20_freemail_domains.cf
 share/spamassassin/20_head_tests.cf
 share/spamassassin/20_html_tests.cf
 share/spamassassin/20_imageinfo.cf
+share/spamassassin/20_mailspike.cf
 share/spamassassin/20_meta_tests.cf
 share/spamassassin/20_net_tests.cf
 share/spamassassin/20_phrases.cf
@@ -295,3 +300,6 @@ share/spamassassin/regression_tests.cf
 share/spamassassin/sa-update-pubkey.txt
 share/spamassassin/user_prefs.template
 @rcscript ${RCDIR}/spamassassin
+@owner _spamdaemon
+@group _spamdaemon
+@sample ${LOCALSTATEDIR}/

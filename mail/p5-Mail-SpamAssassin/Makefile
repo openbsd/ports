@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.81 2013/03/11 11:23:53 espie Exp $
+# $OpenBSD: Makefile,v 1.82 2014/03/16 12:39:22 sthen Exp $
 
 COMMENT=		mailfilter to identify and mark spam
 
-VER=			3.3.2
+VER=			3.4.0
 DISTNAME=		Mail-SpamAssassin-${VER}
-PKGNAME=		p5-${DISTNAME:S/-rc/rc/}
-REVISION=		6
-RULESNAME=		Mail-SpamAssassin-rules-${VER}-r1104058.tar.gz
+PKGNAME=		p5-${DISTNAME}
+RULESNAME=		Mail-SpamAssassin-rules-${VER}.r1565117.tgz
 CATEGORIES=		mail perl5
 
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} ${RULESNAME}
 EXTRACT_SUFX=		.tar.bz2
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
-WRKDIST=		${WRKDIR}/${DISTNAME:C/-rc.*//}
 
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
@@ -29,16 +27,20 @@ COMMON_DEPENDS=		www/p5-HTML-Parser>=3.31 \
 			mail/p5-Mail-DKIM>=0.31 \
 			net/p5-Net-DNS>=0.34 \
 			net/p5-NetAddr-IP \
-			net/p5-IO-Socket-INET6 \
-			security/p5-IO-Socket-SSL \
-			www/p5-libwww
+			net/p5-IO-Socket-IP \
+			security/p5-IO-Socket-SSL
 
 BUILD_DEPENDS=		${COMMON_DEPENDS}
 RUN_DEPENDS=		${COMMON_DEPENDS} \
+			devel/re2c \
 			p5-Mail-SPF-*|p5-Mail-SPF-Query-*:mail/p5-Mail-SPF \
-			net/p5-IP-Country \
+			net/p5-Geo-IP \
+			net/p5-Net-Patricia \
 			security/gnupg \
-			devel/re2c
+			textproc/p5-Encode-Detect \
+			www/p5-libwww
+# SpamAssassin can use curl instead of LWP (lighter dep chain), but it needs
+# a separate HTTP::Date, our LWP pre-dates this being split off.
 
 MAKE_ENV+=		CC="${CC}"
 
@@ -61,6 +63,12 @@ PORTHOME=		${WRKDIR}/temp-home
 DOCS=		CREDITS NOTICE README UPGRADE USAGE LICENSE TRADEMARK \
 		procmailrc.example sample-nonspam.txt sample-spam.txt
 
+# handling this in the extract stage (rather than untarring directly under
+# PREFIX in post-install) allows us to patch the rules if necessary.
+_R=		${WRKSRC}/_dist_rules
+post-extract:
+	mkdir ${_R} && cd ${_R} && tar xzf ${FULLDISTDIR}/${RULESNAME}
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/SpamAssassin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/SpamAssassin/sql
@@ -73,7 +81,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/SpamAssassin
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/sql/* ${PREFIX}/share/doc/SpamAssassin/sql
-	cd ${PREFIX}/share/spamassassin; tar xzf ${FULLDISTDIR}/${RULESNAME}
+	cp -r ${_R}/* ${PREFIX}/share/spamassassin/
 	chown ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/spamassassin/*
 
 pre-test:
