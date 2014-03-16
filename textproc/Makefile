@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.403 2014/01/21 22:43:42 landry Exp $
+# $OpenBSD: Makefile,v 1.404 2014/03/16 21:52:21 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -143,13 +143,16 @@
      SUBDIR += p5-LibXML-Common
      SUBDIR += p5-Libxml
      SUBDIR += p5-Lingua-EN-Fathom
+     SUBDIR += p5-Lingua-EN-FindNumber
      SUBDIR += p5-Lingua-EN-Inflect
      SUBDIR += p5-Lingua-EN-Inflect-Number
      SUBDIR += p5-Lingua-EN-Inflect-Phrase
+     SUBDIR += p5-Lingua-EN-Number-IsOrdinal
      SUBDIR += p5-Lingua-EN-Sentence
      SUBDIR += p5-Lingua-EN-Summarize
      SUBDIR += p5-Lingua-EN-Syllable
      SUBDIR += p5-Lingua-EN-Tagger
+     SUBDIR += p5-Lingua-EN-Words2Nums
      SUBDIR += p5-Lingua-PT-Stemmer
      SUBDIR += p5-Lingua-Stem
      SUBDIR += p5-Lingua-Stem-Fr
