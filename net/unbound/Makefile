@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.53 2014/03/14 17:34:21 brad Exp $
+# $OpenBSD: Makefile,v 1.54 2014/03/16 12:04:21 sthen Exp $
+
+COMES_WITH=	5.6
 
 COMMENT=	validating DNS resolver
 
