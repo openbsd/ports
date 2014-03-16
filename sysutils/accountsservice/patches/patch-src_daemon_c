@@ -1,12 +1,9 @@
-$OpenBSD: patch-src_daemon_c,v 1.27 2014/02/04 08:53:34 ajacoutot Exp $
+$OpenBSD: patch-src_daemon_c,v 1.28 2014/03/16 10:03:22 ajacoutot Exp $
 
-OpenBSD does not have any function to parse a specified passwd(5) file.
-
-Revert the following commit:
-This reverts commit dfa1a6239b01c823ce0fec781c6c9541c988f56e.
-The commit is wrong, since we're only interested in local users.
-http://bugs.freedesktop.org/show_bug.cgi?id=41747
-(XXX we need a way to only get local users)
+From cdee3f55a5821cc76ad270b8c709a7bb1e3ae1b2 Mon Sep 17 00:00:00 2001
+From: Ryan Lortie <desrt@desrt.ca>
+Date: Thu, 13 Mar 2014 22:51:18 +0000
+Subject: daemon: emulate fgetpwent() if we don't have it
 
 From 980692e6b9cfe4a34e22f566e0981a8c549e4348 Mon Sep 17 00:00:00 2001
 From: Matthias Clasen <mclasen@redhat.com>
