@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.147 2014/03/15 09:51:27 espie Exp $
+# $OpenBSD: Port.pm,v 1.148 2014/03/16 08:52:53 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -402,16 +402,66 @@ our @ISA=qw(DPB::Task::Port::Serialized);
 
 sub notime { 1 }
 
+sub recompute_depends
+{
+	my ($self, $core) = @_;
+	# we're running this synchronously with other jobs, so 
+	# let's try avoid running pkg_add if we can !
+	# compute all missing deps for all jobs currently waiting
+	my $deps = {};
+
+	# XXX not a "same_host_jobs" as we're in setup, so not
+	# actually running
+	for my $d (keys %{$core->job->{depends}}) {
+		$deps->{$d} = $d;
+	}
+	for my $job ($core->same_host_jobs) {
+		for my $d (keys %{$job->{depends}}) {
+			$deps->{$d} = $d;
+			$job->{shunt_depends} = $core->job->{path};
+		}
+	}
+	for my $job ($core->same_host_jobs) {
+		next unless defined $job->{live_depends};
+		for my $d (@{$job->{live_depends}}) {
+			delete $deps->{$d};
+		}
+	}
+	return $deps;
+}
+
+sub setup
+{
+	my ($task, $core) = @_;
+	my $job = $core->job;
+
+	# first, we must be sure to have the lock !
+	$task = $task->SUPER::setup($core);
+	if (!$job->{locked}) {
+		return $task;
+	}
+
+	if ($job->{shunt_depends}) {
+		return $job->next_task($core);
+	}
+	my $dep = $task->recompute_depends($core);
+	if (keys %$dep == 0) {
+		return $job->next_task($core);
+	} else {
+		$job->{dodeps} = $dep;
+		return $task;
+	}
+}
+
 sub run
 {
 	my ($self, $core) = @_;
 	my $job = $core->job;
-	my $dep = $job->{depends};
+	$self->handle_output($job);
 	if ($core->prop->{syslog}) {
 		Sys::Syslog::syslog('info', "start $job->{path}(depends)");
 	}
 
-	$self->handle_output($job);
 	if (defined $core->prop->{last_junk}) {
 		print "   last junk was in ",
 		    $core->prop->{last_junk}->fullpkgpath, "\n";
@@ -432,10 +482,12 @@ sub run
 	if ($job->{builder}{state}{localbase} ne '/usr/local') {
 		push(@cmd, "-L", $job->{builder}{state}{localbase});
 	}
-	print join(' ', @cmd, (sort keys %$dep)), "\n";
+	my @l = (sort keys %{$job->{dodeps}});
+	print join(' ', @cmd, @l), "\n";
+	print "was: ", join(' ', @cmd, (sort keys %{$job->{depends}})), "\n";
+	print join(' ', @cmd, @l), "\n";
 	my $path = $job->{builder}{fullrepo}.'/';
-	$core->shell->env(PKG_PATH => $path)->sudo
-	    ->exec(@cmd, (sort keys %$dep));
+	$core->shell->env(PKG_PATH => $path)->sudo->exec(@cmd, @l);
 	exit(1);
 }
 
