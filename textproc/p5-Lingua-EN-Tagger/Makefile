@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:42:43 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2014/03/16 21:55:18 afresh1 Exp $
 
-COMMENT=	part-of-speech tagger for EN natural language processing
+COMMENT =	part-of-speech tagger for EN natural language processing
 
-DISTNAME=	Lingua-EN-Tagger-0.16
-CATEGORIES=	textproc
+DISTNAME =	Lingua-EN-Tagger-0.24
+CATEGORIES =	textproc
 
-MAINTAINER=	Andrew Fresh <andrew@cpan.org>
+MAINTAINER =	Andrew Fresh <andrew@cpan.org>
 
-# GPL3
-PERMIT_PACKAGE_CDROM=	Yes
+# GPLv3 Only
+PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES=		cpan
+MODULES =		cpan
 
-RUN_DEPENDS=		devel/p5-Memoize-ExpireLRU \
-			textproc/p5-Lingua-Stem \
-			www/p5-HTML-Parser
+RUN_DEPENDS =	devel/p5-Memoize-ExpireLRU \
+		textproc/p5-Lingua-Stem \
+		www/p5-HTML-Parser \
+		www/p5-HTML-Tagset
 
 .include <bsd.port.mk>
