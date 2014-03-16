@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/03/16 22:33:44 afresh1 Exp $
+${P5SITE}/Test/Most/
+${P5SITE}/Test/Most.pm
+${P5SITE}/Test/Most/Exception.pm
+@man man/man3p/Test::Most.3p
+@man man/man3p/Test::Most::Exception.3p

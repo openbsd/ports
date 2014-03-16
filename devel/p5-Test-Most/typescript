@@ -1,0 +1,17 @@
+Script started on Sun Mar 16 15:30:23 2014
+$ pwd
+/usr/ports/mystuff/devel/p5-Test-Most
+$ cvs -d cvs.openbsd.org:/cvs -n import ports/devel/p5-Test-Most afresh1 afresports/devel/p5-Test-Most afresh1 afres                                        <h1_2014-0  03156 6  6
+N ports/devel/p5-Test-Most/Makefile
+N ports/devel/p5-Test-Most/distinfo
+N ports/devel/p5-Test-Most/typescript
+cvs server: Importing /cvs/ports/devel/p5-Test-Most/pkg
+N ports/devel/p5-Test-Most/pkg/DESCR
+N ports/devel/p5-Test-Most/pkg/PLIST
+
+No conflicts created by this import
+
+$ vi M $ vi Makefile                                                                   $ vi Makefile  
+(B)0[?1049h[1;87r[m[4l[?1h=[H[J# $OpenBSD: typescript,v 1.1.1.1 2014/03/16 22:33:44 afresh1 Exp $[2BCOMMENT =[7Cmost commonly needed test functions and features.[1BDISTNAME =[6CTest-Most-0.33[1BCATEGORIES =    devel[2BMAINTAINER =    Andrew Fresh <andrew@cpan.org>[2B# perl_5[1BPERMIT_PACKAGE_CDROM =  Yes[2BMODULES =[7Ccpan[2BRUN_DEPENDS =   devel/p5-Exception-Class \[15;17Hdevel/p5-Test-Deep \[16;17Hdevel/p5-Test-Differences \[17;17Hdevel/p5-Test-Exception \[18;17Hdevel/p5-Test-Warn[2B.include <bsd.port.mk>[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[H[86BMakefile: unmodified: line 1[H[86B[J[85A[1B[1BM[3;65H[84BCopying file for recovery...[J[3;65H [84B:wqMakefile: 20 lines, 383 characters[?1l>
+[86;35H.[1B[87;1H[?1049l[?1l>$ cvs -d cvs.openbsd.org:/cvs import ports$ vi Makefile                              /p5-Test-Most afresh1 afresh1_20140316                                        <$ cvs -d cvs.openbsd.org:/cvs -n import ports/devel/p5-Test-Most afresh1 afres>cvs -d cvs.openbsd.org:/cvs -n import ports/devel/p5-Test-Most afresh1 afresh import ports/devel/p5-Test-Most afresh1 afresh1 import ports/devel/p5-Test-Most afresh1 afresh1_
+(B)0[?1049h[1;87r[m[4l[?1h=[H[J[1BCVS: ----------------------------------------------------------------------[1BCVS: Enter Log.  Lines beginning with `CVS:' are removed automatically[1BCVS:[1BCVS: ----------------------------------------------------------------------[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[1B~[H[86B/tmp/cvsWkLMUy: unmodified: line 1[H[86B[J[HImport 
