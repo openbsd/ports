@@ -1,0 +1,6 @@
+Lutok provides thin C++ wrappers around the Lua C API to easy the
+interaction between C++ and Lua.  These wrappers make intensive use of
+RAII to prevent resource leakage, expose C++-friendly data types, report
+errors by means of exceptions and ensure that the Lua stack is always
+left untouched in the face of errors. The library also provides a small
+subset of miscellaneous utility functions built on top of the wrappers.
