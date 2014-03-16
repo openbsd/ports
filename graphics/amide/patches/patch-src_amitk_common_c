@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_amitk_common_c,v 1.1.1.1 2009/06/04 12:59:33 benoit Exp $
---- src/amitk_common.c.orig	Sun Dec  2 14:34:04 2007
-+++ src/amitk_common.c	Wed May 27 15:24:04 2009
-@@ -262,25 +262,37 @@ gboolean amitk_is_xif_directory(const gchar * filename
+$OpenBSD: patch-src_amitk_common_c,v 1.2 2014/03/16 11:21:28 ajacoutot Exp $
+--- src/amitk_common.c.orig	Fri Oct 19 05:17:55 2012
++++ src/amitk_common.c	Sun Mar 16 10:31:13 2014
+@@ -267,25 +267,37 @@ gboolean amitk_is_xif_directory(const gchar * filename
  
      return TRUE;
    }

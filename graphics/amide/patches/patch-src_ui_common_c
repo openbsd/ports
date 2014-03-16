@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_ui_common_c,v 1.3 2013/11/03 10:31:01 benoit Exp $
+$OpenBSD: patch-src_ui_common_c,v 1.4 2014/03/16 11:21:28 ajacoutot Exp $
 
 - Remove call to amide_gnome_help_display(), thus dropping the
   dependency on gnome-vfs2.
 
---- src/ui_common.c.orig	Wed May  8 18:09:25 2013
-+++ src/ui_common.c	Wed May  8 18:09:58 2013
-@@ -903,7 +903,7 @@
+--- src/ui_common.c.orig	Wed Oct  3 23:49:10 2012
++++ src/ui_common.c	Sun Mar 16 10:31:14 2014
+@@ -963,7 +963,7 @@ void amide_unregister_all_windows(void) {
  
  void amide_call_help(const gchar * link_id) {
  
@@ -14,7 +14,7 @@ $OpenBSD: patch-src_ui_common_c,v 1.3 2013/11/03 10:31:01 benoit Exp $
    GError *error=NULL;
    amide_gnome_help_display(PACKAGE, link_id, &error);
    if (error != NULL) {
-@@ -912,7 +912,7 @@
+@@ -972,7 +972,7 @@ void amide_call_help(const gchar * link_id) {
    }
  
  #else
