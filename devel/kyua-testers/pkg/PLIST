@@ -1,0 +1,41 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/03/16 11:28:42 sthen Exp $
+lib/pkgconfig/
+lib/pkgconfig/kyua-testers.pc
+@bin libexec/kyua-atf-tester
+@bin libexec/kyua-plain-tester
+@bin libexec/kyua-tap-tester
+@man man/man1/kyua-atf-tester.1
+@man man/man1/kyua-plain-tester.1
+@man man/man1/kyua-tap-tester.1
+@man man/man1/kyua-tester.1
+@man man/man5/kyua-tester-list.5
+@man man/man5/kyua-tester-result.5
+@man man/man7/kyua-atf-interface.7
+@man man/man7/kyua-plain-interface.7
+@man man/man7/kyua-tap-interface.7
+share/doc/kyua-testers/
+share/doc/kyua-testers/AUTHORS
+share/doc/kyua-testers/COPYING
+share/doc/kyua-testers/NEWS
+share/doc/kyua-testers/README
+tests/
+tests/kyua-testers/
+tests/kyua-testers/Kyuafile
+@bin tests/kyua-testers/atf_helpers
+@bin tests/kyua-testers/atf_inttest
+@bin tests/kyua-testers/atf_list_test
+@bin tests/kyua-testers/atf_result_test
+@bin tests/kyua-testers/cli_test
+@bin tests/kyua-testers/env_test
+@bin tests/kyua-testers/error_test
+@bin tests/kyua-testers/fs_test
+@bin tests/kyua-testers/plain_helpers
+@bin tests/kyua-testers/plain_inttest
+@bin tests/kyua-testers/result_test
+@bin tests/kyua-testers/run_test
+@bin tests/kyua-testers/stacktrace_helper
+@bin tests/kyua-testers/stacktrace_test
+@bin tests/kyua-testers/tap_helpers
+@bin tests/kyua-testers/tap_inttest
+@bin tests/kyua-testers/tap_parser_test
+@bin tests/kyua-testers/text_test
