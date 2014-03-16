@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_lib_ipwd_c,v 1.6 2014/03/16 09:42:12 brad Exp $
+--- src/lib/ipwd.c.orig	Thu Feb  6 00:04:06 2014
++++ src/lib/ipwd.c	Thu Feb  6 00:04:31 2014
+@@ -50,11 +50,6 @@ int i_getpwnam(const char *name, struct passwd *pwd_r)
+ 	do {
+ 		pw_init();
+ 		errno = getpwnam_r(name, pwd_r, pwbuf, pwbuf_size, &result);
+-#ifdef __OpenBSD__
+-		/* OpenBSD returns 1 for all errors, assume it's ERANGE */
+-		if (errno == 1)
+-			errno = ERANGE;
+-#endif
+ 	} while (errno == ERANGE);
+ 	if (result != NULL)
+ 		return 1;
+@@ -73,11 +68,6 @@ int i_getpwuid(uid_t uid, struct passwd *pwd_r)
+ 	do {
+ 		pw_init();
+ 		errno = getpwuid_r(uid, pwd_r, pwbuf, pwbuf_size, &result);
+-#ifdef __OpenBSD__
+-		/* OpenBSD returns 1 for all errors, assume it's ERANGE */
+-		if (errno == 1)
+-			errno = ERANGE;
+-#endif
+ 	} while (errno == ERANGE);
+ 	if (result != NULL)
+ 		return 1;
