@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:42:43 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2014/03/16 21:54:40 afresh1 Exp $
 
-COMMENT=	convert singular to plural, select a or an
+COMMENT =	convert singular to plural, select a or an
 
-MODULES=	cpan
-DISTNAME=	Lingua-EN-Inflect-1.893
-CATEGORIES=	textproc
+MODULES =	cpan
+DISTNAME =	Lingua-EN-Inflect-1.895
+CATEGORIES =	textproc
 
-MAINTAINER=	Sam Smith <S@msmith.net>
+MAINTAINER =	Sam Smith <S@msmith.net>
 
 # Same as Perl
-PERMIT_PACKAGE_CDROM=	Yes
+# unknown
+PERMIT_PACKAGE_CDROM =	Yes
 
-MODCPAN_EXAMPLES=	Yes
-MODCPAN_EXAMPLES_DIST=	demo
+MODCPAN_EXAMPLES =	Yes
+MODCPAN_EXAMPLES_DIST =	demo
 
 .include <bsd.port.mk>
