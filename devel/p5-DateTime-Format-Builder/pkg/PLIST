@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/10/08 12:41:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/03/16 02:59:03 afresh1 Exp $
 ${P5SITE}/DateTime/Format/Builder/
 ${P5SITE}/DateTime/Format/Builder.pm
-${P5SITE}/DateTime/Format/Builder.pod
 ${P5SITE}/DateTime/Format/Builder/Parser/
 ${P5SITE}/DateTime/Format/Builder/Parser.pm
 ${P5SITE}/DateTime/Format/Builder/Parser/Dispatch.pm

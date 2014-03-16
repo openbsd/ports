@@ -1,27 +1,25 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 10:50:15 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2014/03/16 02:59:03 afresh1 Exp $
 
-COMMENT= 	create DateTime parser classes and objects
+COMMENT =	create DateTime parser classes and objects
 
-MODULES=	cpan 
-DISTNAME=	DateTime-Format-Builder-0.80
-CATEGORIES=	devel
-
+MODULES =	cpan 
+DISTNAME =	DateTime-Format-Builder-0.81
 EPOCH =		0
+CATEGORIES =	devel
 
-# perl
-PERMIT_PACKAGE_CDROM=	Yes
+MAINTAINER = Andrew Fresh <andrew@cpan.org>
 
-RUN_DEPENDS=	devel/p5-Params-Validate \
-		devel/p5-Class-Factory-Util \
+# artistic_2
+PERMIT_PACKAGE_CDROM =	Yes
+
+MODCPAN_EXAMPLES =	Yes
+
+RUN_DEPENDS =	devel/p5-Class-Factory-Util \
+		devel/p5-DateTime \
 		devel/p5-DateTime-Format-Strptime \
-		devel/p5-Task-Weaken
-# intentionally no p5-DateTime-Format-IBeat, what's the use ?
+		devel/p5-Params-Validate
 
-TEST_DEPENDS=devel/p5-DateTime-Format-HTTP \
+TEST_DEPENDS =	devel/p5-DateTime-Format-HTTP \
 		devel/p5-DateTime-Format-Mail
-
-CONFIGURE_STYLE=modbuild
-
-MODCPAN_EXAMPLES=Yes
 
 .include <bsd.port.mk>
