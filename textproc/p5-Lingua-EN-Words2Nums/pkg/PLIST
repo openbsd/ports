@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/03/16 21:42:47 afresh1 Exp $
+${P5SITE}/Lingua/
+${P5SITE}/Lingua/EN/
+${P5SITE}/Lingua/EN/Words2Nums.pm
+@man man/man3p/Lingua::EN::Words2Nums.3p
