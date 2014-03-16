@@ -1,7 +1,11 @@
-$OpenBSD: patch-gio_gunixmount_c,v 1.9 2014/02/22 10:14:56 stsp Exp $
+$OpenBSD: patch-gio_gunixmount_c,v 1.10 2014/03/16 09:45:35 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=653555
-https://bugzilla.gnome.org/show_bug.cgi?id=724916
+
+From 64ec757d058dae045e275577da8f14f463cc7c44 Mon Sep 17 00:00:00 2001
+From: Ryan Lortie <desrt@desrt.ca>
+Date: Sun, 02 Mar 2014 22:39:11 +0000
+Subject: GUnixMount: port unmount to GSubprocess
 
 --- gio/gunixmount.c.orig	Fri Oct 25 17:58:38 2013
 +++ gio/gunixmount.c	Sat Feb 22 00:13:50 2014
