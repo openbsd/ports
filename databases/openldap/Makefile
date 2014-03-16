@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.130 2014/03/09 20:52:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.131 2014/03/16 19:43:59 sthen Exp $
 
 COMMENT-main =		open-source LDAP software (client)
 COMMENT-server =	open-source LDAP software (server)
 
 DISTNAME =		openldap-2.4.39
+REVISION-main =		0
 PKGNAME-main =		${DISTNAME:S/-/-client-/}
 PKGNAME-server =	${DISTNAME:S/-/-server-/}
-
 
 # overwrite -main pkgname/path to strip FLAVOR, aci only affects the server
 FULLPKGNAME-main =	${DISTNAME:S/-/-client-/}
