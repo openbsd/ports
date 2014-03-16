@@ -1,7 +1,7 @@
-ClusterSSH opens terminal windows with connections to specified hosts 
-and an administration console. Any text typed into the administration 
-console is replicated to all other connected and active windows. 
-This tool is intended for, but not limited to, cluster administration 
-where the same configuration or commands must be run on each node within 
-the cluster. Performing these commands all at once via this tool ensures 
-all nodes are kept in sync. 
+ClusterSSH opens terminal windows with connections to specified hosts
+and an administration console. Any text typed into the administration
+console is replicated to all other connected and active windows.
+This tool is intended for, but not limited to, cluster administration
+where the same configuration or commands must be run on each node within
+the cluster. Performing these commands all at once via this tool ensures
+all nodes are kept in sync.

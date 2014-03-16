@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/21 19:07:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2014/03/16 08:54:34 benoit Exp $
 
 COMMENT=	secure concurrent multi-server terminal control
 
-DISTNAME=	App-ClusterSSH-4.01_01
-PKGNAME=	clusterssh-4.01.01
+DISTNAME=	App-ClusterSSH-4.02_03
+PKGNAME=	clusterssh-4.02.03
 
 CATEGORIES=	security
 
@@ -25,15 +25,12 @@ RUN_DEPENDS=	x11/p5-Tk \
 		sysutils/p5-File-Which
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-# one test fails due to hard coded xterm path
 TEST_DEPENDS=devel/p5-Test-Trap \
 		devel/p5-Test-Pod \
 		devel/p5-Test-Pod-Coverage \
-		devel/p5-Test-DistManifest
+		devel/p5-Test-DistManifest \
+		devel/p5-Test-Differences
 
 MAKE_ENV=	TEST_POD=Yes
-
-post-extract:
-	cd ${WRKSRC}; chmod -R u+w MYMETA.json
 
 .include <bsd.port.mk>
