@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.128 2014/03/12 09:06:48 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.129 2014/03/16 12:04:34 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -94,6 +94,8 @@ my $base_exceptions = {
 	'nsd' => "/usr/sbin/nsd",
 # 5.2
 	'sqlite3' => '/usr/bin/sqlite3',
+# 5.6
+	'unbound' => '/usr/sbin/unbound',
 };
 
 my $stem_extensions = {
@@ -328,7 +330,7 @@ my $stem_extensions = {
 	'libungif' => 'giflib',
 	'mentry' =>'tklib',
 	'wcb' =>'tklib',
-	'foomatic-filters' =>'cups-filters',
+	'foomatic-filters' => 'cups-filters',
 	'faad-xmms' => 'xmms-faad',
 	'p5-MojoX-Renderer-TT' => 'p5-Mojolicious-Plugin-TtRenderer',
 };
