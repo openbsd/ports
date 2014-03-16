@@ -1,29 +1,29 @@
-$OpenBSD: patch-cs_c,v 1.1 2014/03/09 19:58:51 jasper Exp $
+$OpenBSD: patch-cs_c,v 1.2 2014/03/16 09:45:32 benoit Exp $
 
 The 'mips' symbol is special on MIPS platforms, so rename it to prevent a
 conflict.
 
---- cs.c.orig	Sat Feb 22 12:44:56 2014
-+++ cs.c	Sat Feb 22 12:46:49 2014
-@@ -520,8 +520,8 @@ int cs_op_count(csh ud, cs_insn *insn, unsigned int op
+--- cs.c.orig	Tue Mar  4 17:35:03 2014
++++ cs.c	Mon Mar 10 12:49:14 2014
+@@ -559,8 +559,8 @@
  					count++;
  			break;
  		case CS_ARCH_MIPS:
 -			for (i = 0; i < insn->detail->mips.op_count; i++)
--				if (insn->detail->mips.operands[i].type == op_type)
+-				if (insn->detail->mips.operands[i].type == (mips_op_type)op_type)
 +			for (i = 0; i < insn->detail->mipsen.op_count; i++)
-+				if (insn->detail->mipsen.operands[i].type == op_type)
++				if (insn->detail->mipsen.operands[i].type == (mips_op_type)op_type)
  					count++;
  			break;
  		case CS_ARCH_PPC:
-@@ -579,8 +579,8 @@ int cs_op_index(csh ud, cs_insn *insn, unsigned int op
+@@ -618,8 +618,8 @@
  			}
  			break;
  		case CS_ARCH_MIPS:
 -			for (i = 0; i < insn->detail->mips.op_count; i++) {
--				if (insn->detail->mips.operands[i].type == op_type)
+-				if (insn->detail->mips.operands[i].type == (mips_op_type)op_type)
 +			for (i = 0; i < insn->detail->mipsen.op_count; i++) {
-+				if (insn->detail->mipsen.operands[i].type == op_type)
++				if (insn->detail->mipsen.operands[i].type == (mips_op_type)op_type)
  					count++;
  				if (count == post)
  					return i;

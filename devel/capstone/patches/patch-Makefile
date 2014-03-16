@@ -1,11 +1,13 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2014/01/24 22:47:46 benoit Exp $
+$OpenBSD: patch-Makefile,v 1.2 2014/03/16 09:45:32 benoit Exp $
+
 1. Do not force some compilation flags.
 2. Set library version, respecting OpenBSD policy.
 3. Avoid duplication of defines, linked to (2).
 4. Do not use $(INSTALL_*) at the build stage.
---- Makefile.orig	Wed Jan 22 14:33:35 2014
-+++ Makefile	Fri Jan 24 13:53:48 2014
-@@ -15,7 +15,7 @@ RANLIB = $(CROSS)ranlib
+
+--- Makefile.orig	Tue Mar 11 04:41:09 2014
++++ Makefile	Fri Mar 14 07:52:13 2014
+@@ -16,7 +16,7 @@
  STRIP = $(CROSS)strip
  endif
  
@@ -14,7 +16,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2014/01/24 22:47:46 benoit Exp $
  
  ifeq ($(USE_SYS_DYN_MEM),yes)
  CFLAGS += -DUSE_SYS_DYN_MEM
-@@ -43,6 +43,10 @@ INSTALL_DATA ?= $(INSTALL_BIN) -m0644
+@@ -44,6 +44,10 @@
  INSTALL_LIBRARY ?= $(INSTALL_BIN) -m0755
  
  LIBNAME = capstone
@@ -23,9 +25,15 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2014/01/24 22:47:46 benoit Exp $
 +LIBVER = $(LIB$(LIBNAME)_VERSION)
 +endif
  
- LIBOBJ =
- LIBOBJ += cs.o utils.o SStream.o MCInstrDesc.o MCRegisterInfo.o
-@@ -120,7 +124,11 @@ endif
+ 
+ DEP_ARM =
+@@ -180,12 +184,16 @@
+ AR_EXT = a
+ API_MAJOR=$(shell echo `grep -e CS_API_MAJOR include/capstone.h | grep -v = | awk '{print $$3}'` | awk '{print $$1}')
+ 
+-LDFLAGS += -Wl,-soname,lib$(LIBNAME)$(API_MAJOR)
++LDFLAGS += -Wl,-soname,lib$(LIBNAME)
+ endif
  endif
  endif
  
@@ -37,7 +45,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2014/01/24 22:47:46 benoit Exp $
  ARCHIVE = lib$(LIBNAME).$(AR_EXT)
  PKGCFGF = $(LIBNAME).pc
  
-@@ -130,7 +138,7 @@ VERSION=$(shell echo `grep -e PKG_MAJOR -e PKG_MINOR C
+@@ -193,7 +201,7 @@
  
  all: $(LIBRARY) $(ARCHIVE) $(PKGCFGF)
  	$(MAKE) -C tests
@@ -46,7 +54,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2014/01/24 22:47:46 benoit Exp $
  
  $(LIBRARY): $(LIBOBJ)
  	$(CC) $(LDFLAGS) $(LIBOBJ) -o $(LIBRARY)
-@@ -152,8 +160,8 @@ $(PKGCFGF):
+@@ -244,8 +252,8 @@
  
  install: $(PKGCFGF) $(ARCHIVE) $(LIBRARY)
  	mkdir -p $(LIBDIR)
@@ -56,14 +64,14 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2014/01/24 22:47:46 benoit Exp $
 +	$(INSTALL_DATA) $(ARCHIVE) $(LIBDIR)
  	mkdir -p $(INCDIR)/$(LIBNAME)
  	$(INSTALL_DATA) include/*.h $(INCDIR)/$(LIBNAME)
- 	mkdir -p $(LIBDIR)/pkgconfig
-@@ -161,12 +169,12 @@ install: $(PKGCFGF) $(ARCHIVE) $(LIBRARY)
+ 	mkdir -p $(PKGCFCGDIR)
+@@ -253,12 +261,12 @@
  
  uninstall:
  	rm -rf $(INCDIR)/$(LIBNAME)
 -	rm -f $(LIBDIR)/lib$(LIBNAME).$(EXT)
 -	rm -f $(LIBDIR)/lib$(LIBNAME).$(AR_EXT)
--	rm -f $(LIBDIR)/pkgconfig/$(LIBNAME).pc
+-	rm -f $(PKGCFCGDIR)/$(LIBNAME).pc
 +	rm -f $(LIBDIR)/$(LIBRARY)
 +	rm -f $(LIBDIR)/$(ARCHIVE)
 +	rm -f $(LIBDIR)/pkgconfig/$(PKGCFGF)
@@ -72,5 +80,5 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2014/01/24 22:47:46 benoit Exp $
 -	rm -f $(LIBOBJ) lib$(LIBNAME).*
 +	rm -f $(LIBOBJ) $(ARCHIVE) $(LIBRARY)
  	rm -f $(PKGCFGF)
+ 	rm -f include/diet.h
  	$(MAKE) -C bindings/python clean
- 	$(MAKE) -C bindings/java clean
