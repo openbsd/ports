@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2013/09/27 17:49:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2014/03/16 09:12:23 ajacoutot Exp $
 
 COMMENT=	GNOME multimode HF terminal
 
 GNOME_PROJECT=	gmfsk
 GNOME_VERSION=	0.6
-REVISION=	21
+REVISION=	22
 CATEGORIES=	comms hamradio
 
 HOMEPAGE=	http://gmfsk.connect.fi/

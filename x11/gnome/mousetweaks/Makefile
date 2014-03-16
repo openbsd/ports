@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.51 2013/09/28 08:51:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2014/03/16 09:12:24 ajacoutot Exp $
 
 COMMENT=	mouse accessibility enhancements for GNOME
 
 GNOME_PROJECT=	mousetweaks
 GNOME_VERSION=	3.10.0
-REVISION=	0
+REVISION=	1
 
 # GPLv3 - GFDLv1.3
 PERMIT_PACKAGE_CDROM=	Yes
