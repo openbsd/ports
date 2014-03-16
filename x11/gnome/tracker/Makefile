@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.160 2013/12/19 18:06:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.161 2014/03/16 15:58:48 ajacoutot Exp $
 
 EVO_VERSION=		3.8
 SUBST_VARS +=		EVO_VERSION
@@ -9,7 +9,7 @@ COMMENT=		powerful desktop search tool and indexer
 
 GNOME_PROJECT=		tracker
 GNOME_VERSION=		0.16.4
-REVISION=		0
+REVISION=		1
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
@@ -64,6 +64,7 @@ LIB_DEPENDS=		audio/libcue \
 			sysutils/e2fsprogs>=1.42.7 \
 			sysutils/upower \
 			textproc/exempi \
+			textproc/icu4c \
 			x11/gnome/nautilus \
 			x11/gnome/totem-pl-parser
 
