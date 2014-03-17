@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.33 2014/02/09 15:24:20 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.34 2014/03/17 10:48:40 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -202,19 +202,19 @@ sub new
 {
 	my ($class, $value, $self, $parent) = @_;
 	my $r = {};
-	for my $_ ($class->make_list($value)) {
-		my $copy = $_;
-		next if m/^$/;
-		s/^\:+//;
-		s/^[^\/]*\://;
-		if (s/\:(?:patch|build|configure)$//) {
-			Extra->add($class->extra, $self, $_);
+	for my $d ($class->make_list($value)) {
+		my $copy = $d;
+		next if $d =~ m/^$/;
+		$d =~ s/^\:+//;
+		$d =~ s/^[^\/]*\://;
+		if ($d =~ s/\:(?:patch|build|configure)$//) {
+			Extra->add($class->extra, $self, $d);
 		} else {
-			s/\:$//;
-			if (m/[:<>=]/) {
+			$d =~ s/\:$//;
+			if ($d =~ m/[:<>=]/) {
 				die "Error: invalid *DEPENDS $copy";
 			} else {
-				my $info = DPB::PkgPath->new($_);
+				my $info = DPB::PkgPath->new($d);
 				$info->{parent} //= $parent;
 				$r->{$info} = $info;
 			}

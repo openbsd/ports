@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.27 2014/03/09 19:47:35 espie Exp $
+# $OpenBSD: Config.pm,v 1.28 2014/03/17 10:48:40 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -319,7 +319,6 @@ sub parse_hosts_file
 	my ($class, $filename, $state, $default, $override) = @_;
 	open my $fh, '<', $filename or
 		$state->fatal("Can't read host files #1: #2", $filename, $!);
-	my $_;
 	my $cores = {};
 	while (<$fh>) {
 		chomp;
@@ -332,8 +331,8 @@ sub parse_hosts_file
 		# copy default properties
 		my $prop = DPB::HostProperties->new($default);
 		my ($host, @properties) = split(/\s+/, $_);
-		for my $_ (@properties) {
-			if (m/^(.*?)=(.*)$/) {
+		for my $arg (@properties) {
+			if ($arg =~ m/^(.*?)=(.*)$/) {
 				$prop->{$1} = $2;
 			}
 		}
@@ -406,14 +405,14 @@ sub finalize
 		}
 	}
 	if (defined $prop->{memory}) {
-		my $_ = $prop->{memory};
-		if (s/K$//) {
-		} elsif (s/M$//) {
-			$_ *= 1024;
-		} elsif (s/G$//) {
-			$_ *= 1024 * 1024;
+		my $m = $prop->{memory};
+		if ($m =~ s/K$//) {
+		} elsif ($m =~ s/M$//) {
+			$m *= 1024;
+		} elsif ($m =~ s/G$//) {
+			$m *= 1024 * 1024;
 		}
-		$prop->{memory} = $_;
+		$prop->{memory} = $m;
 		if ($prop->{memory} > 0) {
 			$has_mem = 1;
 		}

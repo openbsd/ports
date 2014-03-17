@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.38 2013/12/30 12:28:23 espie Exp $
+# $OpenBSD: Vars.pm,v 1.39 2014/03/17 10:48:40 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -51,8 +51,8 @@ sub get
 	if ($pid == 0) {
 		$DB::inhibit_exit = 0;
 		print $wh "print-data:\n";
-		for my $_ (@names) {
-			print $wh "\t\@echo \${$_}\n";
+		for my $n (@names) {
+			print $wh "\t\@echo \${$n}\n";
 		}
 		print $wh <<EOT;
 COMMENT = test

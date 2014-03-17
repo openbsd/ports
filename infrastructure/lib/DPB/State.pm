@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: State.pm,v 1.7 2013/11/16 16:39:28 espie Exp $
+# $OpenBSD: State.pm,v 1.8 2014/03/17 10:48:40 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -123,7 +123,6 @@ sub interpret_paths
 		if (-f $file) {
 			open my $fh, '<', $file or
 			    $state->usage("Can't open $file");
-			my $_;
 			while (<$fh>) {
 				chomp;
 				s/\s*(?:\#.*)?$//;
@@ -257,7 +256,6 @@ sub parse_build_file
 		}
 	}
 	open my $fh, '<', $fname or return;
-	my $_;
 	while (<$fh>) {
 		next if m/!$/;
 		my $s = DPB::Serialize::Build->read($_);

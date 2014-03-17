@@ -1,6 +1,6 @@
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Size.pm,v 1.4 2014/03/09 20:11:33 espie Exp $
+# $OpenBSD: Size.pm,v 1.5 2014/03/17 10:48:40 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -105,7 +105,6 @@ sub parse_size_file
 	File::Path::mkpath(File::Basename::dirname($state->{size_log}));
 
 	my @rewrite = ();
-	my $_;
 	while (<$fh>) {
 		chomp;
 		my $s = DPB::Serialize::Size->read($_);

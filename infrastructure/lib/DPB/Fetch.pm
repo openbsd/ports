@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.62 2013/12/02 21:01:43 rpe Exp $
+# $OpenBSD: Fetch.pm,v 1.63 2014/03/17 10:48:40 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -39,7 +39,6 @@ sub new
 	}
 	if (open(my $fh, '<', "$distdir/distinfo")) {
 		print "Reading distinfo...";
-		my $_;
 		while (<$fh>) {
 			if (m/^SHA256\s*\((.*)\) \= (.*)/) {
 				next unless -f "$distdir/$1";
@@ -129,7 +128,6 @@ sub expire_old
 	my $distdir = $self->distdir;
 	open my $fh2, ">", "$distdir/history.new" or return;
 	if (open(my $fh, '<', "$distdir/history")) {
-		my $_;
 		while (<$fh>) {
 			if (m/^\d+\s+SHA256\s*\((.*)\) \= (.*\=)$/) {
 				my ($file, $sha) = ($1, $2);
@@ -201,7 +199,6 @@ sub read_checksums
 	my $filename = shift;
 	open my $fh, '<', $filename or return;
 	my $r = { size => {}, sha => {}};
-	my $_;
 	while (<$fh>) {
 		next if m/^(?:MD5|RMD160|SHA1)/;
 		if (m/^SIZE \((.*)\) \= (\d+)$/) {
