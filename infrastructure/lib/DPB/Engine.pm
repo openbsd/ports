@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.104 2014/03/10 09:06:12 espie Exp $
+# $OpenBSD: Engine.pm,v 1.105 2014/03/17 10:47:12 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -81,7 +81,11 @@ sub log_no_ts
 	$extra //= '';
 	my $fh = $self->{log};
 	my $ts = int($self->{ts});
-	print $fh "$$\@$ts: $kind: ", $v->logname, "$extra\n";
+	print $fh "$$\@$ts: $kind";
+	if (defined $v) {
+		print $fh ": ", $v->logname, $extra;
+	}
+	print $fh "\n";
 }
 
 sub log
@@ -369,6 +373,7 @@ sub check_buildable
 	my $r = $self->limit($forced, 150, "ENG", 
 	    $self->{buildable}->count > 0,
 	    sub {
+		$self->log('+');
 		1 while $self->adjust_built;
 		$self->adjust_tobuild;
 		$self->flush;
