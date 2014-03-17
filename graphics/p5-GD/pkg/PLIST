@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2011/01/11 18:32:52 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/03/17 09:59:00 sthen Exp $
 bin/bdf2gdfont.pl
 ${P5ARCH}/
 ${P5ARCH}/GD/
@@ -23,6 +23,7 @@ ${P5ARCH}/qd.pl
 share/examples/p5-GD/
 share/examples/p5-GD/brushes.pl
 share/examples/p5-GD/copies.pl
+share/examples/p5-GD/draw_colors.pl
 share/examples/p5-GD/fills.pl
 share/examples/p5-GD/font_list.png
 share/examples/p5-GD/fonttest
