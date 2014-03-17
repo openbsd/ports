@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.106 2014/03/15 09:51:27 espie Exp $
+# $OpenBSD: dpb,v 1.107 2014/03/17 10:49:19 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -61,9 +61,9 @@ BEGIN {
 	my $trace = 1;
 	if ($trace) {
 		$SIG{__WARN__} = sub {
-			my $_ = pop @_;
-			s/(.*)( at .*? line .*?\n$)/$1/s;
-			push @_, $_;
+			my $a = pop @_;
+			$a =~ s/(.*)( at .*? line .*?\n$)/$1/s;
+			push @_, $a;
 			$SIG{__WARN__} = $oldwarn;
 			if (defined $reporter) {
 				$reporter->myprint(&trace_message);
@@ -74,9 +74,9 @@ BEGIN {
 
 		$SIG{__DIE__} = sub {
 	 		die @_ if $^S;
-			my $_ = pop @_;
-			s/(.*)( at .*? line .*?\n$)/$1/s;
-			push @_, $_;
+			my $a = pop @_;
+			$a =~ s/(.*)( at .*? line .*?\n$)/$1/s;
+			push @_, $a;
 			if (defined $reporter) {
 				$reporter->reset_cursor;
 			}
