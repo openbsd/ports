@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/05/22 18:22:50 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2014/03/17 14:01:09 brad Exp $
 @bin bin/vp8_scalable_patterns
 @bin bin/vpxdec
 @bin bin/vpxenc
@@ -15,5 +14,6 @@ include/vpx/vpx_encoder.h
 include/vpx/vpx_image.h
 include/vpx/vpx_integer.h
 lib/libvpx.a
+@lib lib/libvpx.so.${LIBvpx_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/vpx.pc

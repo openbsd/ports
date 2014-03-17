@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2010/10/04 23:56:16 ckuethe Exp $
-@lib lib/libvpx.so.${LIBvpx_VERSION}

@@ -1,7 +1,7 @@
-$OpenBSD: patch-libs_mk,v 1.6 2012/08/27 20:42:25 jasper Exp $
---- libs.mk.orig	Tue May  8 19:14:00 2012
-+++ libs.mk	Thu Aug 16 18:54:05 2012
-@@ -193,16 +193,11 @@ LIBS-$(if $(BUILD_LIBVPX),$(CONFIG_STATIC)) += $(BUILD
+$OpenBSD: patch-libs_mk,v 1.7 2014/03/17 14:01:09 brad Exp $
+--- libs.mk.orig	Mon Oct 14 14:16:36 2013
++++ libs.mk	Thu Dec  5 21:38:34 2013
+@@ -181,16 +181,11 @@ LIBS-$(if $(BUILD_LIBVPX),$(CONFIG_STATIC)) += $(BUILD
  $(BUILD_PFX)libvpx_g.a: $(LIBVPX_OBJS)
  
  BUILD_LIBVPX_SO         := $(if $(BUILD_LIBVPX),$(CONFIG_SHARED))
@@ -20,7 +20,7 @@ $OpenBSD: patch-libs_mk,v 1.6 2012/08/27 20:42:25 jasper Exp $
  
  libvpx.ver: $(call enabled,CODEC_EXPORTS)
  	@echo "    [CREATE] $@"
-@@ -217,14 +212,6 @@ $(1): $(2)
+@@ -205,14 +200,6 @@ $(1): $(2)
  	$(qexec)ln -sf $(LIBVPX_SO) $$@
  endef
  
@@ -35,11 +35,3 @@ $OpenBSD: patch-libs_mk,v 1.6 2012/08/27 20:42:25 jasper Exp $
  INSTALL-LIBS-$(CONFIG_SHARED) += $(LIBSUBDIR)/$(LIBVPX_SO)
  
  LIBS-$(BUILD_LIBVPX) += vpx.pc
-@@ -242,6 +229,7 @@ vpx.pc: config.mk libs.mk
- 	$(qexec)echo 'Requires:' >> $@
- 	$(qexec)echo 'Conflicts:' >> $@
- 	$(qexec)echo 'Libs: -L$${libdir} -lvpx' >> $@
-+	$(qexec)echo 'Libs.private: -lm -lpthread' >> $@
- 	$(qexec)echo 'Cflags: -I$${includedir}' >> $@
- INSTALL-LIBS-yes += $(LIBSUBDIR)/pkgconfig/vpx.pc
- INSTALL_MAPS += $(LIBSUBDIR)/pkgconfig/%.pc %.pc

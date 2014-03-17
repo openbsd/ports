@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2013/08/07 21:32:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2014/03/17 14:01:08 brad Exp $
 
 COMMENT=	Google VP8 video codec
 
-V=		1.1.0
+V=		1.2.0
 DISTNAME=	libvpx-v${V}
 PKGNAME=	libvpx-${V}
-REVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	https://webm.googlecode.com/files/
 EXTRACT_SUFX=	.tar.bz2
 
-SHARED_LIBS=	vpx	4.0
+SHARED_LIBS=	vpx	4.1
 
 HOMEPAGE=	http://www.webmproject.org/
 
@@ -35,7 +34,8 @@ MAKE_FLAGS=	LIBVPX_VERSION=${LIBvpx_VERSION} verbose=yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS+=--prefix=${PREFIX} \
-		--disable-optimizations
+		--disable-optimizations \
+		--disable-unit-tests
 CONFIGURE_ENV=	LD="${CC}"
 
 NO_TEST=	Yes
