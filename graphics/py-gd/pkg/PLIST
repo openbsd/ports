@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/10/27 09:21:46 xsa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/03/17 10:19:30 sthen Exp $
 lib/python${MODPY_VERSION}/site-packages/_gd.so
 lib/python${MODPY_VERSION}/site-packages/gd.py
 lib/python${MODPY_VERSION}/site-packages/gd.pyc
-share/doc/py-gd/
-share/doc/py-gd/gd-ref.html
-share/examples/py-gd/
-share/examples/py-gd/adventure.ttf
-share/examples/py-gd/gddemo.py
+lib/python${MODPY_VERSION}/site-packages/gdmodule-0.58-py${MODPY_VERSION}.egg-info
+share/doc/${MODPY_PY_PREFIX}gd/
+share/doc/${MODPY_PY_PREFIX}gd/gd-ref.html
+share/examples/${MODPY_PY_PREFIX}gd/
+share/examples/${MODPY_PY_PREFIX}gd/Pacifico SIL OFL Font License 1.1.txt
+share/examples/${MODPY_PY_PREFIX}gd/Pacifico.ttf
+share/examples/${MODPY_PY_PREFIX}gd/gddemo.py

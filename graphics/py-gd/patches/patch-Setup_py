@@ -1,34 +1,37 @@
-$OpenBSD: patch-Setup_py,v 1.2 2005/10/24 05:05:45 fgsch Exp $
---- Setup.py.orig	Fri Mar 11 01:29:59 2005
-+++ Setup.py	Thu Oct 20 00:21:04 2005
-@@ -40,26 +40,21 @@ def remove(itm, lst):
+$OpenBSD: patch-Setup_py,v 1.3 2014/03/17 10:19:30 sthen Exp $
+--- Setup.py.orig	Fri Jun 21 14:10:13 2013
++++ Setup.py	Mon Mar 17 10:11:13 2014
+@@ -40,10 +40,7 @@ def remove(itm, lst):
  # Unixoid OS's I will just look for the usual suspects.
  
  libdirs = dirtest([
 -    "/usr/local/lib", "/sw/lib", "/usr/lib",
+-    "/usr/lib/i386-linux-gnu", "/usr/lib/x86_64-linux-gnu",
 -    "/usr/lib/X11", "/usr/X11R6/lib",
 -    "/opt/gnome/lib",
-+    "/usr/lib", "%%LOCALBASE%%/lib",
++    "${LOCALBASE}/lib", "/usr/lib", "${X11BASE}/lib",
  ])
  
+ try:
+@@ -55,9 +52,7 @@ except:
  # include_dirs are also non-portable; same trick here.
  
  incdirs = dirtest([
 -    "/usr/local/include", "/sw/include", "/usr/include",
 -    "/usr/include/X11", "/usr/X11R6/include",
 -    "/opt/gnome/include",
-+    "/usr/include", "%%LOCALBASE%%/include",
-+    "%%LIBPNG%%",
++    "${LOCALBASE}/include", "/usr/include", "${X11BASE}/include",
  ])
  
- # Try to identify our libraries
+ try:
+@@ -70,9 +65,7 @@ except:
  
  want_libs = [
      "gd",
--    "jpeg", "png", "gif", "z",
+-    "jpeg", "png", "gif",
 -    "X11", "Xpm",
--    "ttf", "freetype",
-+    "jpeg", "png", "z",
+-    "z", "ttf", "freetype",
++    "jpeg", "png", "z", "freetype",
  ]
  
  libs = filetest(libdirs, want_libs)
