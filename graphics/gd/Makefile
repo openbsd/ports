@@ -1,35 +1,33 @@
-# $OpenBSD: Makefile,v 1.58 2013/03/21 08:45:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2014/03/17 23:20:57 sthen Exp $
 
 COMMENT=	library for dynamic creation of images
 
-DISTNAME=	gd-2.0.35
-REVISION=	1
-SHARED_LIBS=	gd	20.35
+V=		2.1.0
+DISTNAME=	libgd-$V
+PKGNAME=	gd-$V
+
+SHARED_LIBS=	gd	21.0
+
 CATEGORIES=	graphics
-MASTER_SITES=	${HOMEPAGE}/releases/
 
 HOMEPAGE=	http://www.libgd.org/
 
+PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB += c expat fontconfig freetype jpeg m png pthread
+WANTLIB += pthread-stubs tiff vpx z
+
+MASTER_SITES=	https://bitbucket.org/libgd/gd-libgd/downloads/
+
+CONFIGURE_ARGS+= --without-xpm
+
 LIB_DEPENDS=	graphics/jpeg \
-		graphics/png
+		graphics/png \
+		graphics/tiff \
+		multimedia/libvpx
 
 MODULES=	converters/libiconv
 
-WANTLIB=	c expat fontconfig freetype jpeg m png z
-
-PERMIT_PACKAGE_CDROM=	Yes
-
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= --without-xpm
-
-
-post-patch:
-	@cd ${WRKSRC} && touch Makefile.in aclocal.m4 config.hin configure
-
-post-install:
-	@cd ${WRKSRC} && ./gddemo
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gd
-	cd ${WRKSRC} && ${INSTALL_DATA} demoin.png demoout.png index.html \
-	    ${PREFIX}/share/examples/gd
 
 .include <bsd.port.mk>

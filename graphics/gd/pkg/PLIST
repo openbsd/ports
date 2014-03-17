@@ -1,20 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.11 2005/10/12 05:37:43 fgsch Exp $
-%%SHARED%%
-bin/annotate
+@comment $OpenBSD: PLIST,v 1.12 2014/03/17 23:20:57 sthen Exp $
+@bin bin/annotate
 bin/bdftogd
-bin/gd2copypal
-bin/gd2togif
-bin/gd2topng
-bin/gdcmpgif
+@bin bin/gd2copypal
+@bin bin/gd2togif
+@bin bin/gd2topng
+@bin bin/gdcmpgif
 bin/gdlib-config
-bin/gdparttopng
-bin/gdtopng
-bin/giftogd2
-bin/pngtogd
-bin/pngtogd2
-bin/webpng
+@bin bin/gdparttopng
+@bin bin/gdtopng
+@bin bin/giftogd2
+@bin bin/pngtogd
+@bin bin/pngtogd2
+@bin bin/webpng
 include/entities.h
 include/gd.h
+include/gd_color_map.h
+include/gd_errors.h
 include/gd_io.h
 include/gdcache.h
 include/gdfontg.h
@@ -23,9 +24,9 @@ include/gdfontmb.h
 include/gdfonts.h
 include/gdfontt.h
 include/gdfx.h
+include/gdpp.h
 lib/libgd.a
 lib/libgd.la
-share/examples/gd/
-share/examples/gd/demoin.png
-share/examples/gd/demoout.png
-share/examples/gd/index.html
+@lib lib/libgd.so.${LIBgd_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/gdlib.pc
