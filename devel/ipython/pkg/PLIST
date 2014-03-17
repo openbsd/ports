@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2013/11/04 11:31:12 edd Exp $
+@comment $OpenBSD: PLIST,v 1.14 2014/03/17 23:15:01 edd Exp $
 bin/ipcluster
 bin/ipcontroller
 bin/ipengine
@@ -289,6 +289,13 @@ lib/python${MODPY_VERSION}/site-packages/IPython/extensions/tests/test_storemagi
 lib/python${MODPY_VERSION}/site-packages/IPython/external/
 lib/python${MODPY_VERSION}/site-packages/IPython/external/__init__.py
 lib/python${MODPY_VERSION}/site-packages/IPython/external/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/external/appnope/
+lib/python${MODPY_VERSION}/site-packages/IPython/external/appnope/__init__.py
+lib/python${MODPY_VERSION}/site-packages/IPython/external/appnope/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/external/appnope/_dummy.py
+lib/python${MODPY_VERSION}/site-packages/IPython/external/appnope/_dummy.pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/external/appnope/_nope.py
+lib/python${MODPY_VERSION}/site-packages/IPython/external/appnope/_nope.pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/external/argparse/
 lib/python${MODPY_VERSION}/site-packages/IPython/external/argparse/__init__.py
 lib/python${MODPY_VERSION}/site-packages/IPython/external/argparse/__init__.pyc
@@ -2351,6 +2358,8 @@ share/doc/ipython/html/_sources/whatsnew/github-stats-0.12.txt
 share/doc/ipython/html/_sources/whatsnew/github-stats-0.13.txt
 share/doc/ipython/html/_sources/whatsnew/github-stats-1.0.txt
 share/doc/ipython/html/_sources/whatsnew/index.txt
+share/doc/ipython/html/_sources/whatsnew/pr/
+share/doc/ipython/html/_sources/whatsnew/pr/incompat-mpl-backend.txt
 share/doc/ipython/html/_sources/whatsnew/version0.10.txt
 share/doc/ipython/html/_sources/whatsnew/version0.11.txt
 share/doc/ipython/html/_sources/whatsnew/version0.12.txt
@@ -2726,6 +2735,8 @@ share/doc/ipython/html/whatsnew/github-stats-0.12.html
 share/doc/ipython/html/whatsnew/github-stats-0.13.html
 share/doc/ipython/html/whatsnew/github-stats-1.0.html
 share/doc/ipython/html/whatsnew/index.html
+share/doc/ipython/html/whatsnew/pr/
+share/doc/ipython/html/whatsnew/pr/incompat-mpl-backend.html
 share/doc/ipython/html/whatsnew/version0.10.html
 share/doc/ipython/html/whatsnew/version0.11.html
 share/doc/ipython/html/whatsnew/version0.12.html
