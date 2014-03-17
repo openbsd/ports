@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.149 2014/03/16 17:22:05 espie Exp $
+# $OpenBSD: Port.pm,v 1.150 2014/03/17 10:47:45 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -416,6 +416,7 @@ sub recompute_depends
 		$deps->{$d} = $d;
 	}
 	for my $job ($core->same_host_jobs) {
+		next if $job->{shunt_depends};
 		for my $d (keys %{$job->{depends}}) {
 			$deps->{$d} = $d;
 			$job->{shunt_depends} = $core->job->{path};
