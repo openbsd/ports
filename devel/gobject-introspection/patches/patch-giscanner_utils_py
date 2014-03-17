@@ -1,33 +1,53 @@
-$OpenBSD: patch-giscanner_utils_py,v 1.9 2014/03/10 19:39:40 ajacoutot Exp $
+$OpenBSD: patch-giscanner_utils_py,v 1.10 2014/03/17 12:23:24 ajacoutot Exp $
 
-XXX rework and push upstream.
-Make sure try to compile/link with the right libtool,
-this overrides the --libtool option to girscanner.
+https://bugzilla.gnome.org/show_bug.cgi?id=726518
+
+From 513dfb969c2317377eb0f0ec150767a8d95c6d2e Mon Sep 17 00:00:00 2001
+From: Clemens Lang <cal@macports.org>
+Date: Mon, 10 Feb 2014 23:44:06 +0000
+Subject: scanner: Improve compatibility with OS X
 
 --- giscanner/utils.py.orig	Wed Jul 10 18:13:23 2013
-+++ giscanner/utils.py	Wed Sep 25 09:24:11 2013
-@@ -119,22 +119,8 @@ def get_libtool_command(options):
-     if not libtool_infection:
++++ giscanner/utils.py	Mon Mar 17 12:21:29 2014
+@@ -21,6 +21,7 @@
+ import re
+ import os
+ import subprocess
++import platform
+ 
+ 
+ _debugflags = None
+@@ -120,6 +121,12 @@ def get_libtool_command(options):
          return None
  
--    libtool_path = options.libtool_path
--    if libtool_path:
--        # Automake by default sets:
--        # LIBTOOL = $(SHELL) $(top_builddir)/libtool
--        # To be strictly correct we would have to parse shell.  For now
--        # we simply split().
--        return libtool_path.split(' ')
--
--    try:
+     libtool_path = options.libtool_path
++
++    # libtool on OpenBSD is a completely different program and is part
++    # of the OS; GNU libtool does not work there, so make it a no-op
++    if platform.system() == 'OpenBSD':
++        libtool_path = '/usr/bin/libtool'
++
+     if libtool_path:
+         # Automake by default sets:
+         # LIBTOOL = $(SHELL) $(top_builddir)/libtool
+@@ -127,14 +134,18 @@ def get_libtool_command(options):
+         # we simply split().
+         return libtool_path.split(' ')
+ 
++    libtool_cmd = 'libtool'
++    if platform.system() == 'Darwin':
++        # libtool on OS X is a completely different program written by Apple
++        libtool_cmd = 'glibtool'
+     try:
 -        subprocess.check_call(['libtool', '--version'],
--                              stdout=open(os.devnull))
--    except (subprocess.CalledProcessError, OSError):
--        # If libtool's not installed, assume we don't need it
--        return None
--
++        subprocess.check_call([libtool_cmd, '--version'],
+                               stdout=open(os.devnull))
+     except (subprocess.CalledProcessError, OSError):
+         # If libtool's not installed, assume we don't need it
+         return None
+ 
 -    return ['libtool']
-+    libtool_cmd = os.environ.get('LIBTOOL', '/usr/bin/libtool')
-+    return libtool_cmd.split()
++    return [libtool_cmd]
  
  
  def files_are_identical(path1, path2):
