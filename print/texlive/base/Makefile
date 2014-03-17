@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.73 2014/02/17 19:31:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.74 2014/03/17 23:22:02 sthen Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
 DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
-REVISION =		0
+REVISION =		1
 
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
@@ -15,7 +15,7 @@ SHARED_LIBS +=		ptexenc		3.0
 WANTLIB +=		ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c expat
 WANTLIB +=		fontconfig freetype gd jpeg lcms2 m
 WANTLIB +=		openjpeg png>=3 poppler pthread pthread-stubs stdc++
-WANTLIB +=		t1>=4 tiff ttf xcb z
+WANTLIB +=		t1>=4 tiff ttf vpx xcb z
 
 RUN_DEPENDS =		print/ghostscript/gnu \
 			print/detex \

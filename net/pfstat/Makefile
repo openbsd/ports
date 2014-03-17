@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/10/12 13:11:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2014/03/17 23:22:02 sthen Exp $
 
 COMMENT-main=	packet filter statistics visualization
 COMMENT-daemon=	pfstat daemon
@@ -7,7 +7,7 @@ DISTNAME=	pfstat-2.3
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-daemon=	${DISTNAME:S/-/d-/}
-REVISION=	5
+REVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	http://www.benzedrine.cx/
 
@@ -24,7 +24,7 @@ MODULES=		converters/libiconv
 
 MULTI_PACKAGES=		-main -daemon
 
-WANTLIB-main=		${MODLIBICONV_WANTLIB} c m z jpeg png gd>=20
+WANTLIB-main=		${MODLIBICONV_WANTLIB} c m z jpeg png pthread gd>=20
 LIB_DEPENDS-main=	${MODLIBICONV_LIB_DEPENDS} graphics/gd
 WANTLIB-daemon=		c
 LIB_DEPENDS-daemon=

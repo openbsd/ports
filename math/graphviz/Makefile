@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.55 2014/02/06 17:32:27 edd Exp $
+# $OpenBSD: Makefile,v 1.56 2014/03/17 23:21:43 sthen Exp $
 
 COMMENT-main=	graph drawing software
 
 DISTNAME=	graphviz-2.36.0
+REVISION=	0
 PKGNAME-main=	${DISTNAME}
 CATEGORIES=	math devel graphics
 
@@ -45,6 +46,16 @@ MAINTAINER =	Edd Barrett <edd@openbsd.org>
 # Eclipse Public License v1.0
 PERMIT_PACKAGE_CDROM=	Yes
 
+WANTLIB += ICE SM X11 Xau Xaw Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xft Xi Xinerama Xmu Xpm Xrandr Xrender
+WANTLIB += Xss Xt atk-1.0 c cairo croco-0.6 expat ffi fontconfig
+WANTLIB += freetype gd gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gmp gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
+WANTLIB += guile harfbuzz jpeg lcms2 ltdl m openjpeg pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre perl pixman-1 png
+WANTLIB += poppler poppler-glib pthread pthread-stubs rsvg-2 stdc++
+WANTLIB += tiff tk85 util vpx xcb xcb-render xcb-shm xml2 z
+
 MODULES=	devel/gettext \
 		x11/tk \
 		perl
@@ -63,16 +74,6 @@ RUN_DEPENDS=	lang/guile
 BUILD_DEPENDS=	devel/swig \
 		lang/guile
 TEST_DEPENDS =	${FULLPKGNAME}:math/graphviz
-
-WANTLIB += ICE SM X11 Xau Xaw Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xft Xi Xinerama Xmu Xpm Xrandr Xrender
-WANTLIB += Xss Xt atk-1.0 c cairo croco-0.6 expat ffi fontconfig
-WANTLIB += freetype gd gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gmp gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
-WANTLIB += guile harfbuzz jpeg lcms2 ltdl m openjpeg pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre perl pixman-1 png
-WANTLIB += poppler poppler-glib pthread pthread-stubs rsvg-2 stdc++
-WANTLIB += tiff tk85 util xcb xcb-render xcb-shm xml2 z
 
 USE_GMAKE =	Yes
 USE_GROFF =	Yes

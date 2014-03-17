@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/11/15 10:21:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2014/03/17 23:21:26 sthen Exp $
 
 COMMENT =	digital camera library
 CATEGORIES =	graphics devel
@@ -6,6 +6,7 @@ CATEGORIES =	graphics devel
 MAINTAINER =	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 VERSION =	2.5.2
+REVISION =	0
 DISTNAME =	libgphoto2-${VERSION}
 PKGNAME =	libgphoto-${VERSION}
 
@@ -20,7 +21,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gphoto/}
 PERMIT_PACKAGE_CDROM =		Yes
 
 WANTLIB += c exif expat fontconfig freetype gd jpeg ltdl m png
-WANTLIB += pthread pthread-stubs usb usb-1.0 z
+WANTLIB += pthread pthread-stubs tiff usb usb-1.0 vpx z
 
 MAKE_FLAGS =		INTLLIBS='$$(LTLIBINTL)'
 

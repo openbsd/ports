@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:10:54 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2014/03/17 23:21:43 sthen Exp $
 
 COMMENT=		utility to create Message Sequence Charts
 
 DISTNAME=		mscgen-src-0.20
-REVISION=		0
+REVISION=		1
 PKGNAME=		${DISTNAME:S/-src//}
 
 CATEGORIES=		graphics
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/software/
 
-WANTLIB += c gd jpeg m png z fontconfig freetype
+WANTLIB += c fontconfig freetype gd jpeg m png pthread tiff vpx z
 
 MODULES=		converters/libiconv
 
@@ -26,7 +26,7 @@ CONFIGURE_STYLE=	gnu
 FAKE_FLAGS=		exampledir="${PREFIX}/share/examples/mscgen/" \
 			dist_doc_DATA="mscgen.lang"
 
-WRKDIST= 		${WRKDIR}/${DISTNAME:S/-src//}
+WRKDIST=		${WRKDIR}/${DISTNAME:S/-src//}
 
 pre-configure:
 	@perl -pi -e 's,/bin/bash,/bin/sh,g' ${WRKSRC}/test/renderercheck.sh

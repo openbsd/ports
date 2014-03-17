@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 11:10:52 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2014/03/17 23:21:26 sthen Exp $
 
 COMMENT=		fswebcam is a small and simple webcam app
 
 DISTNAME=		fswebcam-20110717
+REVISION=		0
 CATEGORIES=		graphics
 MASTER_SITES=		http://www.firestorm.cx/fswebcam/files/
 
@@ -13,7 +14,7 @@ MAINTAINER=		Marcus Glocker <marcus@nazgul.ch>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c gd
+WANTLIB=		c gd pthread
 
 LIB_DEPENDS=		graphics/gd
 

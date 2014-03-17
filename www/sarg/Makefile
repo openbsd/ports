@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.21 2014/03/09 22:43:25 rpe Exp $
+# $OpenBSD: Makefile,v 1.22 2014/03/17 23:22:21 sthen Exp $
 
 COMMENT=		Squid Analysis Report Generator
 
 DISTNAME=		sarg-2.3.8
+REVISION=		0
 CATEGORIES=		www
 
-HOMEPAGE=	 	http://sarg.sourceforge.net/
+HOMEPAGE=		http://sarg.sourceforge.net/
 
 MAINTAINER=		Robert Peichaer <rpe@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c gd m pcre
+WANTLIB=		c gd m pcre pthread
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sarg/}
 

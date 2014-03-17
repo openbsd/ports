@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2013/09/02 16:02:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2014/03/17 23:22:02 sthen Exp $
 
 COMMENT =	network traffic monitor
 
 DISTNAME =	vnstat-1.11
-REVISION =	6
+REVISION =	7
 CATEGORIES =	net sysutils
 
 HOMEPAGE =	http://humdi.net/vnstat/
@@ -15,7 +15,7 @@ MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	c gd m
+WANTLIB =	c gd m pthread
 
 LIB_DEPENDS =	graphics/gd
 

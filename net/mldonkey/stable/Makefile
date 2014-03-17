@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.56 2014/03/13 21:21:48 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.57 2014/03/17 23:22:02 sthen Exp $
 
 COMMENT =	e-donkey client
 DISTNAME =	mldonkey-3.1.4
+REVISION=	0
 CATEGORIES =	net
 
 HOMEPAGE =	http://mldonkey.sourceforge.net/Main_Page
@@ -12,16 +13,14 @@ MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-EXTRACT_SUFX =		.tar.bz2
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 bz2 c cairo charset fontconfig
+WANTLIB += freetype gd gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gobject-2.0 gtk-x11-2.0 jpeg m magic miniupnpc natpmp
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 png pthread rsvg-2
+WANTLIB += stdc++ tiff vpx z
 
-WANTLIB =		X11 Xcomposite Xcursor Xdamage Xext \
-			Xfixes Xi Xinerama Xrandr Xrender \
-			atk-1.0 bz2 c cairo charset fontconfig \
-			freetype gd gdk-x11-2.0 gdk_pixbuf-2.0 \
-			gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 \
-			jpeg m magic miniupnpc>=2.0 natpmp pango-1.0 \
-			pangocairo-1.0 pangoft2-1.0 png pthread \
-			rsvg-2 stdc++ z
+EXTRACT_SUFX =		.tar.bz2
 
 CONFIGURE_STYLE =	autoconf no-autoheader
 AUTOCONF_DIR =		${WRKSRC}/config

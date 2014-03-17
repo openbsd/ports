@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2005/10/12 05:40:32 fgsch Exp $
-bin/modlogan
+@comment $OpenBSD: PLIST,v 1.8 2014/03/17 23:22:21 sthen Exp $
+@bin bin/modlogan
 lib/modlogan/
 lib/modlogan/libmla_input_bsdftpd.a
 lib/modlogan/libmla_input_bsdftpd.la

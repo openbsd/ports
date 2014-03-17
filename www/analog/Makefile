@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.55 2013/07/05 09:37:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.56 2014/03/17 23:22:21 sthen Exp $
 
 COMMENT=	extremely fast program for analysing WWW logfiles
 
 DISTNAME=	analog-6.0
-REVISION=	1
+REVISION=	2
 CATEGORIES=	www
 
 MASTER_SITES=	http://www.analog.cx/ \
@@ -23,7 +23,7 @@ HOMEPAGE=	http://www.analog.cx/
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m jpeg png z gd>=18 pcre
+WANTLIB += c m jpeg png z gd>=18 pcre pthread
 
 LIB_DEPENDS=	graphics/gd \
 		devel/pcre

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2013/03/25 11:36:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2014/03/17 23:22:21 sthen Exp $
 
 COMMENT=	web server log file analysis program
 
 V=		29
 DISTNAME=	webalizer-2.23-05-RB${V}-src
 PKGNAME=	webalizer-2.23.05.${V}
-REVISION=	3
+REVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.patrickfrei.ch/webalizer/rb${V}/
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	databases/db/v4 \
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	GeoIP>=5 c db gd>=18 m png z
+WANTLIB=	GeoIP>=5 c db gd>=18 m png pthread z
 
 WRKDIST=	${WRKDIR}/webalizer-2.23-05-RB${V}
 
