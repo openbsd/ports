@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.9 2011/12/08 13:42:05 sthen Exp $
---- Makefile.in.orig	Sat Dec  3 12:41:59 2011
-+++ Makefile.in	Mon Dec  5 15:16:47 2011
-@@ -247,7 +247,7 @@ top_build_prefix = @top_build_prefix@
+$OpenBSD: patch-Makefile_in,v 1.10 2014/03/17 13:03:11 sthen Exp $
+--- Makefile.in.orig	Wed Jan 22 19:49:49 2014
++++ Makefile.in	Mon Mar 17 08:32:25 2014
+@@ -281,7 +281,7 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  ACLOCAL_AMFLAGS = -I m4

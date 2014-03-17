@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_Makefile_in,v 1.10 2011/11/30 19:37:21 sthen Exp $
---- tools/Makefile.in.orig	Sat Nov 26 20:37:01 2011
-+++ tools/Makefile.in	Wed Nov 30 19:33:49 2011
-@@ -202,7 +202,7 @@ examplesdir = $(docdir)/examples
+$OpenBSD: patch-tools_Makefile_in,v 1.11 2014/03/17 13:03:11 sthen Exp $
+--- tools/Makefile.in.orig	Sun Jun 30 18:22:30 2013
++++ tools/Makefile.in	Mon Mar 17 08:32:25 2014
+@@ -232,7 +232,7 @@ examplesdir = $(docdir)/examples
  examples_DATA = ca.html ca.pl importCA.html importCA.sh script.sh \
  	stunnel.spec stunnel.init stunnel.service
  
