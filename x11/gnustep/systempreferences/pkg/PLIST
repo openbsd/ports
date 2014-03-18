@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/04/25 16:40:11 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/03/18 11:50:41 sebastia Exp $
 bin/SystemPreferences
 include/PreferencePanes
 lib/GNUstep/Bundles/Defaults.prefPane/
@@ -11,6 +11,7 @@ lib/GNUstep/Bundles/Defaults.prefPane/Resources/English.lproj/Defaults.gorm/data
 lib/GNUstep/Bundles/Defaults.prefPane/Resources/English.lproj/Defaults.gorm/data.info
 lib/GNUstep/Bundles/Defaults.prefPane/Resources/English.lproj/Defaults.gorm/objects.gorm
 lib/GNUstep/Bundles/Defaults.prefPane/Resources/English.lproj/Defaults.plist
+lib/GNUstep/Bundles/Defaults.prefPane/Resources/English.lproj/Localizable.strings
 lib/GNUstep/Bundles/Defaults.prefPane/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/Defaults.prefPane/stamp.make
 lib/GNUstep/Bundles/FileSystem.prefPane/
@@ -36,6 +37,17 @@ lib/GNUstep/Bundles/FontModule.prefPane/Resources/English.lproj/FontModule.gorm/
 lib/GNUstep/Bundles/FontModule.prefPane/Resources/FontModule.tiff
 lib/GNUstep/Bundles/FontModule.prefPane/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/FontModule.prefPane/stamp.make
+lib/GNUstep/Bundles/InternetModule.prefPane/
+@bin lib/GNUstep/Bundles/InternetModule.prefPane/InternetModule
+lib/GNUstep/Bundles/InternetModule.prefPane/Resources/
+lib/GNUstep/Bundles/InternetModule.prefPane/Resources/English.lproj/
+lib/GNUstep/Bundles/InternetModule.prefPane/Resources/English.lproj/InternetModule.gorm/
+lib/GNUstep/Bundles/InternetModule.prefPane/Resources/English.lproj/InternetModule.gorm/data.classes
+lib/GNUstep/Bundles/InternetModule.prefPane/Resources/English.lproj/InternetModule.gorm/data.info
+lib/GNUstep/Bundles/InternetModule.prefPane/Resources/English.lproj/InternetModule.gorm/objects.gorm
+lib/GNUstep/Bundles/InternetModule.prefPane/Resources/Info-gnustep.plist
+lib/GNUstep/Bundles/InternetModule.prefPane/Resources/InternetModule.tiff
+lib/GNUstep/Bundles/InternetModule.prefPane/stamp.make
 lib/GNUstep/Bundles/ModifierKeys.prefPane/
 @bin lib/GNUstep/Bundles/ModifierKeys.prefPane/ModifierKeys
 lib/GNUstep/Bundles/ModifierKeys.prefPane/Resources/
@@ -110,6 +122,7 @@ libexec/GNUstep/SystemPreferences.app/Resources/English.lproj/SystemPreferences.
 libexec/GNUstep/SystemPreferences.app/Resources/English.lproj/SystemPreferences.gorm/objects.gorm
 libexec/GNUstep/SystemPreferences.app/Resources/Info-gnustep.plist
 libexec/GNUstep/SystemPreferences.app/Resources/SystemPreferences.desktop
+libexec/GNUstep/SystemPreferences.app/Resources/SystemPreferences.ico
 libexec/GNUstep/SystemPreferences.app/Resources/SystemPreferences.tiff
 @bin libexec/GNUstep/SystemPreferences.app/SystemPreferences
 libexec/GNUstep/SystemPreferences.app/stamp.make
