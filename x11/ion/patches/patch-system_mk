@@ -1,6 +1,6 @@
-$OpenBSD: patch-system_mk,v 1.10 2013/04/29 12:40:49 gonzalo Exp $
---- system.mk.orig	Fri Jan  9 20:20:27 2009
-+++ system.mk	Mon Apr  8 11:47:30 2013
+$OpenBSD: patch-system_mk,v 1.11 2014/03/18 10:50:47 ajacoutot Exp $
+--- system.mk.orig	Fri Jan  9 23:20:27 2009
++++ system.mk	Tue Mar 18 11:41:59 2014
 @@ -8,7 +8,7 @@
  
  # Installation path prefix. Unless you know what you're doing, the default
@@ -84,7 +84,7 @@ $OpenBSD: patch-system_mk,v 1.10 2013/04/29 12:40:49 gonzalo Exp $
  # You may also need to give the location of its headers. The following
  # should work on Mac OS X (which needs the above option as well) with
  # macports.
-@@ -127,12 +131,12 @@ DEFINES += -DCF_XFREE86_TEXTPROP_BUG_WORKAROUND
+@@ -127,7 +131,7 @@ DEFINES += -DCF_XFREE86_TEXTPROP_BUG_WORKAROUND
  # You may uncomment this if you know that your system C libary provides
  # asprintf and  vasprintf. (GNU libc does.) If HAS_SYSTEM_ASPRINTF is not
  # defined, an implementation provided in libtu/sprintf_2.2/ is used. 
@@ -93,12 +93,6 @@ $OpenBSD: patch-system_mk,v 1.10 2013/04/29 12:40:49 gonzalo Exp $
  
  # The following setting is needed with GNU libc for clock_gettime and the
  # monotonic clock. Other systems may not need it, or may not provide a
- # monotonic clock at all (which Ion can live with, and usually detect).
--EXTRA_LIBS += -lrt
-+#EXTRA_LIBS += -lrt
- 
- # Cygwin needs this.
- #DEFINES += -DCF_NO_GETLOADAVG
 @@ -149,16 +153,16 @@ EXTRA_LIBS += -lrt
  ## C compiler. 
  ##
