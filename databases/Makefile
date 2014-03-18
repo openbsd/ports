@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.264 2014/01/11 22:56:03 jeremy Exp $
+# $OpenBSD: Makefile,v 1.265 2014/03/18 09:15:00 benoit Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -100,6 +100,7 @@
      SUBDIR += p5-DBIx-Class-TimeStamp
      SUBDIR += p5-DBIx-Class-UUIDColumns
      SUBDIR += p5-DBIx-Class-Validation
+     SUBDIR += p5-DBIx-Connector
      SUBDIR += p5-DBIx-ContextualFetch
      SUBDIR += p5-DBIx-DBSchema
      SUBDIR += p5-DBIx-DWIW
