@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2014/03/11 20:10:40 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2014/03/18 07:25:53 jasper Exp $
 
 BROKEN-hppa =		miniruby abort trap when generating rdoc
 BROKEN-alpha =		miniruby abort trap when generating rdoc
+BROKEN-mips64 =		miniruby spins on rbconfig.rb
 
 COMMENT-main =		object oriented script language with threads
 COMMENT-gdbm =		gdbm interface for ruby
