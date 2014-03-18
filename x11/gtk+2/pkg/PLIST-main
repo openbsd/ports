@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.37 2014/03/09 22:12:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.38 2014/03/18 08:08:00 ajacoutot Exp $
 @conflict gail-*
 @conflict gtk+2-cups-*
 @conflict gtk+2-docs-*
@@ -396,10 +396,13 @@ share/gtk-doc/html/gail-libgail-util/gail-libgail-util.devhelp2
 share/gtk-doc/html/gail-libgail-util/home.png
 share/gtk-doc/html/gail-libgail-util/index.html
 share/gtk-doc/html/gail-libgail-util/index.sgml
+share/gtk-doc/html/gail-libgail-util/left-insensitive.png
 share/gtk-doc/html/gail-libgail-util/left.png
 share/gtk-doc/html/gail-libgail-util/libgail-util-main.html
+share/gtk-doc/html/gail-libgail-util/right-insensitive.png
 share/gtk-doc/html/gail-libgail-util/right.png
 share/gtk-doc/html/gail-libgail-util/style.css
+share/gtk-doc/html/gail-libgail-util/up-insensitive.png
 share/gtk-doc/html/gail-libgail-util/up.png
 share/gtk-doc/html/gdk2/
 share/gtk-doc/html/gdk2/GdkDisplay.html
@@ -484,6 +487,7 @@ share/gtk-doc/html/gdk2/icon.png
 share/gtk-doc/html/gdk2/index.html
 share/gtk-doc/html/gdk2/index.sgml
 share/gtk-doc/html/gdk2/iron_cross.png
+share/gtk-doc/html/gdk2/left-insensitive.png
 share/gtk-doc/html/gdk2/left.png
 share/gtk-doc/html/gdk2/left_ptr.png
 share/gtk-doc/html/gdk2/left_side.png
@@ -500,6 +504,7 @@ share/gtk-doc/html/gdk2/pirate.png
 share/gtk-doc/html/gdk2/plus.png
 share/gtk-doc/html/gdk2/question_arrow.png
 share/gtk-doc/html/gdk2/reference.html
+share/gtk-doc/html/gdk2/right-insensitive.png
 share/gtk-doc/html/gdk2/right.png
 share/gtk-doc/html/gdk2/right_ptr.png
 share/gtk-doc/html/gdk2/right_side.png
@@ -530,6 +535,7 @@ share/gtk-doc/html/gdk2/top_tee.png
 share/gtk-doc/html/gdk2/trek.png
 share/gtk-doc/html/gdk2/ul_angle.png
 share/gtk-doc/html/gdk2/umbrella.png
+share/gtk-doc/html/gdk2/up-insensitive.png
 share/gtk-doc/html/gdk2/up.png
 share/gtk-doc/html/gdk2/ur_angle.png
 share/gtk-doc/html/gdk2/watch.png
@@ -941,6 +947,7 @@ share/gtk-doc/html/gtk2/layout-rlbt.png
 share/gtk-doc/html/gtk2/layout-rltb.png
 share/gtk-doc/html/gtk2/layout-tblr.png
 share/gtk-doc/html/gtk2/layout-tbrl.png
+share/gtk-doc/html/gtk2/left-insensitive.png
 share/gtk-doc/html/gtk2/left.png
 share/gtk-doc/html/gtk2/link-button.png
 share/gtk-doc/html/gtk2/list-add.png
@@ -982,6 +989,7 @@ share/gtk-doc/html/gtk2/progressbar.png
 share/gtk-doc/html/gtk2/pt05.html
 share/gtk-doc/html/gtk2/radio-group.png
 share/gtk-doc/html/gtk2/recentchooserdialog.png
+share/gtk-doc/html/gtk2/right-insensitive.png
 share/gtk-doc/html/gtk2/right.png
 share/gtk-doc/html/gtk2/scales.png
 share/gtk-doc/html/gtk2/scrolledwindow.png
@@ -999,6 +1007,7 @@ share/gtk-doc/html/gtk2/toolpalette.png
 share/gtk-doc/html/gtk2/tools-check-spelling.png
 share/gtk-doc/html/gtk2/tree-view-coordinates.png
 share/gtk-doc/html/gtk2/ui-manager.html
+share/gtk-doc/html/gtk2/up-insensitive.png
 share/gtk-doc/html/gtk2/up.png
 share/gtk-doc/html/gtk2/view-fullscreen.png
 share/gtk-doc/html/gtk2/view-refresh.png
