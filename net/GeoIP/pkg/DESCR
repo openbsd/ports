@@ -1,11 +1,10 @@
-GeoIP is a C library that enables the user to find the country that any IP
-address or hostname originates from. It uses a file based database that is
-accurate as of October 2004. This database simply contains IP blocks as keys,
-and countries as values. This database should be more complete and accurate
-than using reverse DNS lookups. Commercial databases and automatic update
-services are available from http://www.maxmind.com/. Updated free databases
-are available from http://geolite.maxmind.com/download/geoip/database/.
+GeoIP includes a C library and command-line tools to look up information in
+MaxMind's IP geolocation databases.
 
-This module can be used to automatically select the geographically closest
-mirror, to analyze your web server logs to determine the countries of your
-visitors, for credit card fraud detection, and for software export controls.
+The distributed package includes a snapshot of the free GeoLite country-level
+databases under CC BY-SA 3.0 license, "This product includes GeoLite data
+created by MaxMind, available from http://www.maxmind.com."
+
+Free-of-charge city and AS number databases and updated country databases are
+available from http://dev.maxmind.com/geoip/legacy/geolite/, commercial
+databases and automatic update services from http://www.maxmind.com/.
