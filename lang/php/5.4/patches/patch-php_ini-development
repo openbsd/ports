@@ -1,7 +1,7 @@
-$OpenBSD: patch-php_ini-development,v 1.4 2014/01/11 15:02:46 sthen Exp $
---- php.ini-development.orig.port	Wed Oct 16 06:39:33 2013
-+++ php.ini-development	Thu Oct 24 23:38:05 2013
-@@ -703,11 +703,8 @@ default_mimetype = "text/html"
+$OpenBSD: patch-php_ini-development,v 1.5 2014/03/18 15:18:36 sthen Exp $
+--- php.ini-development.orig.port	Wed Mar  5 08:07:14 2014
++++ php.ini-development	Tue Mar 18 14:26:53 2014
+@@ -693,11 +693,8 @@ default_mimetype = "text/html"
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
  ; UNIX: "/path1:/path2"
@@ -14,7 +14,7 @@ $OpenBSD: patch-php_ini-development,v 1.4 2014/01/11 15:02:46 sthen Exp $
  ; PHP's default setting for include_path is ".;/path/to/php/pear"
  ; http://php.net/include-path
  
-@@ -729,6 +726,7 @@ user_dir =
+@@ -719,6 +716,7 @@ user_dir =
  ; extension_dir = "./"
  ; On windows:
  ; extension_dir = "ext"
@@ -22,7 +22,7 @@ $OpenBSD: patch-php_ini-development,v 1.4 2014/01/11 15:02:46 sthen Exp $
  
  ; Whether or not to enable the dl() function.  The dl() function does NOT work
  ; properly in multithreaded servers, such as IIS or Zeus, and is automatically
-@@ -809,7 +807,7 @@ max_file_uploads = 20
+@@ -799,7 +797,7 @@ max_file_uploads = 20
  
  ; Whether to allow the treatment of URLs (like http:// or ftp://) as files.
  ; http://php.net/allow-url-fopen
@@ -31,7 +31,7 @@ $OpenBSD: patch-php_ini-development,v 1.4 2014/01/11 15:02:46 sthen Exp $
  
  ; Whether to allow include/require to open URLs (like http:// or ftp://) as files.
  ; http://php.net/allow-url-include
-@@ -995,16 +993,6 @@ pdo_mysql.default_socket=
+@@ -985,16 +983,6 @@ pdo_mysql.default_socket=
  ;phar.cache_list =
  
  [mail function]
