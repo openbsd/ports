@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.19 2013/10/11 23:50:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2014/03/18 23:13:33 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT= 	interface to the DES encryption algorithm
 
 MODULES=	cpan
-DISTNAME=	Crypt-DES-2.05
-REVISION=	4
+DISTNAME=	Crypt-DES-2.07
 CATEGORIES=	security
 
+# perl
 PERMIT_PACKAGE_CDROM=   Yes
 
 WANTLIB += c
 
-.include <bsd.port.mk>	
+.include <bsd.port.mk>
