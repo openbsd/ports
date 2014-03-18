@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/03/11 09:15:15 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/03/18 19:24:59 sthen Exp $
+lib/python${MODPY_VERSION}/site-packages/GeoIP-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/GeoIP.so
-lib/python${MODPY_VERSION}/site-packages/GeoIP_Python-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 share/examples/${MODPY_PY_PREFIX}GeoIP/
 share/examples/${MODPY_PY_PREFIX}GeoIP/test.py
 share/examples/${MODPY_PY_PREFIX}GeoIP/test_city.py
-share/examples/${MODPY_PY_PREFIX}GeoIP/test_city_acc.py
 share/examples/${MODPY_PY_PREFIX}GeoIP/test_city_charset.py
+share/examples/${MODPY_PY_PREFIX}GeoIP/test_domain.py
 share/examples/${MODPY_PY_PREFIX}GeoIP/test_netspeed.py
 share/examples/${MODPY_PY_PREFIX}GeoIP/test_netspeedcell.py
 share/examples/${MODPY_PY_PREFIX}GeoIP/test_org.py
