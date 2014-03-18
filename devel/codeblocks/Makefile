@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/05/31 15:34:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2014/03/18 13:57:04 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ V=		10.05
 P=		1
 DISTNAME=	codeblocks-${V}-${P}debian-src
 PKGNAME=	codeblocks-${V}
-REVISION=	8
+REVISION=	9
 
 EXTRACT_SUFX=	.tar.bz2
 WRKDIST=	${WRKDIR}/codeblocks-${V}
@@ -68,9 +68,7 @@ post-extract:
 
 pre-configure:
 	ln -s /usr/bin/true ${WRKDIR}/bin/svn
-	${SUBST_CMD} ${WRKSRC}/src/sdk/resources/lexers/lexer_bash.sample \
-		${WRKSRC}/src/plugins/compilergcc/compilergcc.cpp
-	rm ${WRKSRC}/src/sdk/resources/lexers/lexer_bash.sample.{beforesubst,orig}
+	${SUBST_CMD} ${WRKSRC}/src/plugins/compilergcc/compilergcc.cpp
 
 # template files are copied to HOME with their original mode which makes
 # it impossible to edit them by default

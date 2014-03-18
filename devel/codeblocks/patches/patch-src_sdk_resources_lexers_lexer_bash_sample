@@ -1,9 +1,0 @@
-$OpenBSD: patch-src_sdk_resources_lexers_lexer_bash_sample,v 1.1.1.1 2009/09/06 17:23:34 ajacoutot Exp $
---- src/sdk/resources/lexers/lexer_bash.sample.orig	Wed Sep  2 21:26:50 2009
-+++ src/sdk/resources/lexers/lexer_bash.sample	Wed Sep  2 21:27:09 2009
-@@ -1,4 +1,4 @@
--#!/usr/bin/env bash
-+#!${LOCALBASE}/bin/bash
- 
- if [ $# -ne 2 ]
- then
