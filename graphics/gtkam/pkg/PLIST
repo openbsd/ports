@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2013/01/19 11:22:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/03/18 08:39:38 ajacoutot Exp $
 @bin bin/gtkam
 @man man/man1/gtkam.1
 share/applications/gtkam.desktop
@@ -41,8 +41,6 @@ share/locale/it/LC_MESSAGES/gtkam.mo
 share/locale/ja/LC_MESSAGES/gtkam.mo
 share/locale/nb/LC_MESSAGES/gtkam.mo
 share/locale/nl/LC_MESSAGES/gtkam.mo
-share/locale/pa/
-share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/gtkam.mo
 share/locale/pl/LC_MESSAGES/gtkam.mo
 share/locale/pt/LC_MESSAGES/gtkam.mo
