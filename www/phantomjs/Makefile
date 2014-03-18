@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/01/28 11:37:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2014/03/18 14:19:54 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 DPB_PROPERTIES =	parallel nojunk
@@ -30,8 +30,6 @@ MAKE_ENV =		C_INCLUDE_PATH=${X11BASE}/include/ \
 			OSTYPE="openbsd"
 
 do-configure:
-	perl -pi -e 's,^#!/usr/bin/env bash,#!${LOCALBASE}/bin/bash,g' \
-		${WRKSRC}/src/qt/preconfig.sh
 	cd ${WRKSRC}/src/qt && env -i ${MAKE_ENV} \
 		./preconfig.sh --jobs ${MAKE_JOBS} --qt-config
 
