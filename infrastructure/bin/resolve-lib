@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: resolve-lib,v 1.4 2011/11/17 23:14:43 espie Exp $
+# $OpenBSD: resolve-lib,v 1.5 2014/03/18 20:39:45 espie Exp $
 #
 # Copyright (c) 2001-2010 Marc Espie <espie@openbsd.org>
 #
@@ -78,7 +78,7 @@ while (@ARGV > 0) {
 	}
 }
 
-my $_;
+# my $_;
 my $repo = OpenBSD::LibRepo->new;
 
 while(<STDIN>) {
