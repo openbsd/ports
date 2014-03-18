@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/10/28 21:58:01 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.7 2014/03/18 12:02:22 jasper Exp $
 @bin bin/exiv2
 include/exiv2/
+include/exiv2/asfvideo.hpp
 include/exiv2/basicio.hpp
 include/exiv2/bmpimage.hpp
 include/exiv2/convert.hpp
@@ -20,6 +20,7 @@ include/exiv2/image.hpp
 include/exiv2/iptc.hpp
 include/exiv2/jp2image.hpp
 include/exiv2/jpgimage.hpp
+include/exiv2/matroskavideo.hpp
 include/exiv2/metadatum.hpp
 include/exiv2/mrwimage.hpp
 include/exiv2/orfimage.hpp
@@ -28,7 +29,9 @@ include/exiv2/pngimage.hpp
 include/exiv2/preview.hpp
 include/exiv2/properties.hpp
 include/exiv2/psdimage.hpp
+include/exiv2/quicktimevideo.hpp
 include/exiv2/rafimage.hpp
+include/exiv2/riffvideo.hpp
 include/exiv2/rw2image.hpp
 include/exiv2/tags.hpp
 include/exiv2/tgaimage.hpp
@@ -40,6 +43,7 @@ include/exiv2/xmp.hpp
 include/exiv2/xmpsidecar.hpp
 lib/libexiv2.a
 lib/libexiv2.la
+@lib lib/libexiv2.so.${LIBexiv2_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/exiv2.pc
 @man man/man1/exiv2.1

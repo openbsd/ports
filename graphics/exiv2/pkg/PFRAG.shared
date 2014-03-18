@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/11/04 12:11:53 espie Exp $
-@lib lib/libexiv2.so.${LIBexiv2_VERSION}
