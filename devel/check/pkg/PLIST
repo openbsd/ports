@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/01/21 13:01:48 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2014/03/18 09:12:01 ajacoutot Exp $
 bin/checkmk
 include/check.h
+include/check_stdint.h
 @info info/check.info
 lib/libcheck.a
 lib/libcheck.la
+@lib lib/libcheck.so.${LIBcheck_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/check.pc
 @man man/man1/checkmk.1

@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2013/01/21 13:01:48 ajacoutot Exp $
---- Makefile.in.orig	Mon Oct 22 16:04:27 2012
-+++ Makefile.in	Mon Jan 21 11:33:09 2013
-@@ -269,7 +269,7 @@ top_build_prefix = @top_build_prefix@
+$OpenBSD: patch-Makefile_in,v 1.4 2014/03/18 09:12:01 ajacoutot Exp $
+--- Makefile.in.orig	Tue Jan 21 01:21:14 2014
++++ Makefile.in	Tue Mar 18 10:07:17 2014
+@@ -293,7 +293,7 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  SUBDIRS = lib src doc . checkmk tests
@@ -10,12 +10,12 @@ $OpenBSD: patch-Makefile_in,v 1.3 2013/01/21 13:01:48 ajacoutot Exp $
  CLEANFILES = *~\
  	$(PACKAGE)-$(VERSION).tar.gz\
  	ChangeLog.bak
-@@ -780,7 +780,7 @@ info: info-recursive
+@@ -840,7 +840,7 @@ info: info-recursive
  
  info-am:
  
--install-data-am: install-docDATA install-m4dataDATA install-pcdataDATA
-+install-data-am: install-m4dataDATA install-pcdataDATA
+-install-data-am: install-docDATA install-includeHEADERS \
++install-data-am: install-includeHEADERS \
+ 	install-m4dataDATA install-pcdataDATA
  
  install-dvi: install-dvi-recursive
- 

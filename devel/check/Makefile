@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/21 08:45:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2014/03/18 09:12:01 ajacoutot Exp $
 
 COMMENT =	unit test framework for C programs
 
-DISTNAME =	check-0.9.9
-SHARED_LIBS +=  check                2.0      # unknown
+DISTNAME =	check-0.9.12
+SHARED_LIBS +=  check                3.0      # unknown
 
 CATEGORIES =	devel
 
@@ -12,7 +12,7 @@ HOMEPAGE =	http://check.sf.net/
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += pthread
+WANTLIB += m pthread
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=check/}
 
