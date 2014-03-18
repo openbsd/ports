@@ -1,0 +1,15 @@
+$OpenBSD: patch-psutil_c,v 1.3 2014/03/18 13:17:48 ajacoutot Exp $
+
+https://bugzilla.redhat.com/show_bug.cgi?id=1072371
+
+--- psutil.c.orig	Thu Jan 16 11:20:54 2014
++++ psutil.c	Tue Mar 18 14:13:36 2014
+@@ -88,7 +88,7 @@ int paper_size(const char *paper_name, double *width, 
+   int res = 0;
+   if (paper_name == NULL) /* Use default paper name */
+     paper_name = pgetline(PAPER);
+-  if (paper_name && (cmd = xasprintf(PAPER " --unit=pt --size %s", paper_name)) && (l = pgetline(cmd)))
++  if (paper_name && (cmd = xasprintf(PAPER " -s %s", paper_name)) && (l = pgetline(cmd)))
+     res = sscanf(l, "%lg %lg", width, height);
+   free(l);
+   free(cmd);

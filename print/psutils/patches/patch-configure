@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.1 2014/03/18 13:17:48 ajacoutot Exp $
+
+https://bugzilla.redhat.com/show_bug.cgi?id=1072371
+
+--- configure.orig	Wed Jan 22 10:31:58 2014
++++ configure	Tue Mar 18 14:13:33 2014
+@@ -15700,7 +15700,7 @@ fi
+ 
+ 
+ if test -z "$PAPER"; then
+-  PAPER=paper
++  PAPER=paperconf
+ fi
+ 
+ 
