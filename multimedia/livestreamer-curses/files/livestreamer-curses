@@ -1,2 +1,0 @@
-#!/bin/sh
-exec ${MODPY_BIN} ${MODPY_SITEPKG}/livestreamer-curses.py
