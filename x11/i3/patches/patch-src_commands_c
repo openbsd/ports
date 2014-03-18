@@ -1,6 +1,18 @@
-$OpenBSD: patch-src_commands_c,v 1.9 2014/01/11 16:04:43 dcoppa Exp $
---- src/commands.c.orig	Sun Dec 22 21:12:41 2013
-+++ src/commands.c	Fri Jan 10 16:31:33 2014
+$OpenBSD: patch-src_commands_c,v 1.10 2014/03/18 12:12:05 dcoppa Exp $
+
+commit a6a6c9b6d9d47ef1ccbff5ac5d4fe17f9666f29f
+Author: Tony Crisci <tony@dubstepdish.com>
+Date:   Fri Mar 14 22:59:08 2014 -0400
+
+Bugfix: don't try to resize docks by command
+
+cmd_resize does not implement a method to resize dock clients.
+
+A command like `[instance=".*"] resize grow width 160 px or 16 ppt`
+when a dock client matched would crash i3.
+
+--- src/commands.c.orig	Thu Jan 23 22:52:24 2014
++++ src/commands.c	Tue Mar 18 13:05:59 2014
 @@ -194,7 +194,7 @@ void cmd_MIGRATION_start_nagbar(void) {
      /* child */
      if (migration_pid == 0) {
@@ -10,3 +22,16 @@ $OpenBSD: patch-src_commands_c,v 1.9 2014/01/11 16:04:43 dcoppa Exp $
          char *argv[] = {
              NULL, /* will be replaced by the executable path */
              "-t",
+@@ -779,6 +779,12 @@ void cmd_resize(I3_CMD, char *way, char *direction, ch
+ 
+     owindow *current;
+     TAILQ_FOREACH(current, &owindows, owindows) {
++        /* Don't handle dock windows (issue #1201) */
++        if (current->con->window->dock) {
++            DLOG("This is a dock window. Not resizing (con = %p)\n)", current->con);
++            continue;
++        }
++
+         Con *floating_con;
+         if ((floating_con = con_inside_floating(current->con))) {
+             cmd_resize_floating(current_match, cmd_output, way, direction, floating_con, px);
