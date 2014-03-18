@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.2 2011/06/02 15:43:05 kili Exp $
---- configure.in.orig	Tue Jul 15 02:07:48 2008
-+++ configure.in	Thu Jun  2 17:12:41 2011
+$OpenBSD: patch-configure_in,v 1.3 2014/03/18 17:53:17 sthen Exp $
+--- configure.in.orig	Tue Jul 15 01:07:48 2008
++++ configure.in	Tue Mar 18 17:52:25 2014
 @@ -130,7 +130,7 @@ AC_ARG_WITH(binpac,
  
  AC_LBL_ENABLE_CHECK([activemapping binpac broccoli brov6 debug \
@@ -10,17 +10,31 @@ $OpenBSD: patch-configure_in,v 1.2 2011/06/02 15:43:05 kili Exp $
  
  dnl ################################################
  dnl # OpenSSL
-@@ -215,6 +215,13 @@ if test "$use_openssl" = "yes"; then
-     AC_MSG_RESULT(yes),
-     AC_MSG_RESULT(no))
+@@ -217,6 +217,13 @@ if test "$use_openssl" = "yes"; then
    AC_LANG_POP([C++])
-+fi
-+
+ fi
+ 
 +if test "$use_openssl" = "yes"; then
 +  AC_CHECK_TYPE(STACK, 
 +		AC_DEFINE([OPENSSL_STACK_TYPE], [STACK], [OpenSSL's stack type]),
 +		AC_DEFINE([OPENSSL_STACK_TYPE], [_STACK], [OpenSSL's stack type]),
 +		[#include <openssl/stack.h>])
- fi
- 
++fi
++
  # do we use ssl?
+ AM_CONDITIONAL(USE_SSL, test "$use_openssl" = "yes")
+ 
+@@ -506,9 +513,10 @@ dnl We assume worst case first and improve on it below
+ AM_CONDITIONAL(USE_NBDNS, false)
+ 
+ dnl Add potential header locations to path
+-if test -d /usr/local/include/bind; then
+-   CFLAGS="$CFLAGS -I/usr/local/include/bind"
+-fi
++dnl XXX OpenBSD build fails if libbind package is picked up
++dnlif test -d /usr/local/include/bind; then
++dnl   CFLAGS="$CFLAGS -I/usr/local/include/bind"
++dnlfi
+ 
+ AC_CHECK_TYPE(ns_msg, bro_check_nb_dns=yes, bro_check_nb_dns=no, [#include <arpa/nameser.h>])
+ 
