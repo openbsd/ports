@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.36 2014/01/17 14:17:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2014/03/18 13:48:31 ajacoutot Exp $
+
+# XXX on upgrade, drop pre-configure:
+# https://git.gnome.org/browse/vte/commit/?h=vte-0-36&id=cbdb21f740a9369f61d6dbfb48f87bce9c5c9ba4
 
 SHARED_ONLY=		Yes
 
