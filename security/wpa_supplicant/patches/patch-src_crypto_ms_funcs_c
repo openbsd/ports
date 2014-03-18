@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_crypto_ms_funcs_c,v 1.1 2014/03/18 05:57:22 dcoppa Exp $
+
+commit 22dd2d7a987325faa089e65914c1602cad85f747
+Author: Jouni Malinen <j@w1.fi>
+Date:   Sat Feb 15 12:06:35 2014 +0200
+
+Fix MSCHAP UTF-8 to UCS-2 conversion for three-byte encoding
+
+This fixes issues in using a password that includes a UTF-8 character
+with three-byte encoding with EAP methods that use NtPasswordHash
+(anything using MSCHAPv2 or LEAP).
+
+Signed-off-by: Jouni Malinen <j@w1.fi>
+
+--- src/crypto/ms_funcs.c.orig	Tue Feb  4 12:23:35 2014
++++ src/crypto/ms_funcs.c	Fri Mar 14 10:49:39 2014
+@@ -58,6 +58,7 @@ static int utf8_to_ucs2(const u8 *utf8_string, size_t 
+ 				WPA_PUT_LE16(ucs2_buffer + j,
+ 					     ((c & 0xF) << 12) |
+ 					     ((c2 & 0x3F) << 6) | (c3 & 0x3F));
++				j += 2;
+ 			}
+ 		}
+ 	}

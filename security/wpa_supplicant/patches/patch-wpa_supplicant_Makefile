@@ -1,7 +1,7 @@
-$OpenBSD: patch-wpa_supplicant_Makefile,v 1.1 2013/01/28 11:03:16 sthen Exp $
---- wpa_supplicant/Makefile.orig	Fri Jan 25 23:16:50 2013
-+++ wpa_supplicant/Makefile	Fri Jan 25 23:16:53 2013
-@@ -50,7 +50,7 @@ mkconfig:
+$OpenBSD: patch-wpa_supplicant_Makefile,v 1.2 2014/03/18 05:57:22 dcoppa Exp $
+--- wpa_supplicant/Makefile.orig	Tue Feb  4 12:23:35 2014
++++ wpa_supplicant/Makefile	Fri Mar 14 10:54:28 2014
+@@ -56,7 +56,7 @@ mkconfig:
  	echo CONFIG_DRIVER_WEXT=y >> .config
  
  $(DESTDIR)$(BINDIR)/%: %

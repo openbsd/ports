@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/02/06 17:27:13 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/03/18 05:57:22 dcoppa Exp $
 @comment @bin sbin/wpa_priv
 @man man/man5/wpa_supplicant.conf.5
+@man man/man8/eapol_test.8
 @man man/man8/wpa_background.8
 @man man/man8/wpa_cli.8
 @comment @man man/man8/wpa_gui.8

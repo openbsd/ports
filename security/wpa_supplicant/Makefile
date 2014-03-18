@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2013/10/31 21:12:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2014/03/18 05:57:22 dcoppa Exp $
 
 COMMENT=	IEEE 802.1X supplicant
 
-DISTNAME=	wpa_supplicant-2.0
-REVISION=	4
+DISTNAME=	wpa_supplicant-2.1
 CATEGORIES=	security net
 
 HOMEPAGE=	http://hostap.epitest.fi/wpa_supplicant/
@@ -31,7 +30,6 @@ EXAMPLEDIR=	${PREFIX}/share/examples/wpa_supplicant
 
 post-extract:
 	@${SUBST_CMD} -c ${FILESDIR}/config ${WRKSRC}/.config
-	@cp ${FILESDIR}/driver_openbsd.c ${WRKSRC}/../src/drivers/
 
 post-install:
 	@#${INSTALL_PROGRAM} ${WRKBUILD}/wpa_priv ${PREFIX}/sbin

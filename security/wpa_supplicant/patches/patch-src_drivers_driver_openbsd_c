@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_drivers_driver_openbsd_c,v 1.3 2014/03/18 05:57:22 dcoppa Exp $
+
+missing include
+
+--- src/drivers/driver_openbsd.c.orig	Fri Mar 14 10:44:23 2014
++++ src/drivers/driver_openbsd.c	Fri Mar 14 10:44:46 2014
+@@ -10,6 +10,7 @@
+ #include <sys/ioctl.h>
+ 
+ #include <net/if.h>
++#include <net/if_var.h>
+ #include <net80211/ieee80211.h>
+ #include <net80211/ieee80211_crypto.h>
+ #include <net80211/ieee80211_ioctl.h>

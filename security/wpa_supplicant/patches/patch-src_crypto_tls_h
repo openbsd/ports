@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_crypto_tls_h,v 1.1 2014/03/18 05:57:22 dcoppa Exp $
+
+commit b62d5b5450101676a0c05691b4bcd94e11426397
+Author: Jouni Malinen <j@w1.fi>
+Date:   Wed Feb 19 11:56:02 2014 +0200
+
+Revert "OpenSSL: Do not accept SSL Client certificate for server"
+
+This reverts commit 51e3eafb68e15e78e98ca955704be8a6c3a7b304. There are
+too many deployed AAA servers that include both id-kp-clientAuth and
+id-kp-serverAuth EKUs for this change to be acceptable as a generic rule
+for AAA authentication server validation. OpenSSL enforces the policy of
+not connecting if only id-kp-clientAuth is included. If a valid EKU is
+listed with it, the connection needs to be accepted.
+
+Signed-off-by: Jouni Malinen <j@w1.fi>
+
+--- src/crypto/tls.h.orig	Tue Feb  4 12:23:35 2014
++++ src/crypto/tls.h	Fri Mar 14 14:33:33 2014
+@@ -41,8 +41,7 @@ enum tls_fail_reason {
+ 	TLS_FAIL_ALTSUBJECT_MISMATCH = 6,
+ 	TLS_FAIL_BAD_CERTIFICATE = 7,
+ 	TLS_FAIL_SERVER_CHAIN_PROBE = 8,
+-	TLS_FAIL_DOMAIN_SUFFIX_MISMATCH = 9,
+-	TLS_FAIL_SERVER_USED_CLIENT_CERT = 10
++	TLS_FAIL_DOMAIN_SUFFIX_MISMATCH = 9
+ };
+ 
+ union tls_event_data {
