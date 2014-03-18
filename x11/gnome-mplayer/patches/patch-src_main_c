@@ -1,9 +1,12 @@
-$OpenBSD: patch-src_main_c,v 1.27 2013/10/07 10:22:38 dcoppa Exp $
+$OpenBSD: patch-src_main_c,v 1.28 2014/03/18 06:50:18 dcoppa Exp $
 
 Fix problem with remembered softvol not being loaded
 
---- src/main.c.orig	Mon Oct  7 10:34:53 2013
-+++ src/main.c	Mon Oct  7 10:38:49 2013
+Prevent window from going fullscreen on startup when embedded
+(upstream svn revision r2468)
+
+--- src/main.c.orig	Mon Nov 25 20:44:09 2013
++++ src/main.c	Thu Mar 13 11:00:24 2014
 @@ -88,7 +88,6 @@ static GOptionEntry entries[] = {
       N_("Last software volume percentage- only applied when remember_softvol is set to TRUE"),
       NULL},
@@ -56,3 +59,12 @@ Fix problem with remembered softvol not being loaded
      }
      gm_log(verbose, G_LOG_LEVEL_DEBUG, "Volume is %lf Audio Device Volume = %f", volume, audio_device.volume);
  
+@@ -1395,7 +1385,7 @@ int main(int argc, char *argv[])
+     // put the request to update the volume into the list of tasks to complete
+     g_idle_add(hookup_volume, NULL);
+     g_idle_add(set_volume, NULL);
+-    if (fullscreen)
++    if (fullscreen && embed_window == 0)
+         g_idle_add(set_fullscreen, NULL);
+     gtk_main();
+     return 0;

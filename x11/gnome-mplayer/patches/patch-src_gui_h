@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_gui_h,v 1.7 2014/03/18 06:50:18 dcoppa Exp $
+
+Fix fullscreen mode hanging when control menu goes thru show/hide
+(upstream svn revision r2469)
+
+--- src/gui.h.orig	Mon Nov 25 20:44:09 2013
++++ src/gui.h	Thu Mar 13 12:21:42 2014
+@@ -138,6 +138,7 @@ void assign_default_keys();
+ void reset_keys_callback(GtkButton * button, gpointer data);
+ gint get_index_from_key_and_modifier(guint key, GdkModifierType modifier);
+ 
++GMutex *fs_controls_lock;
+ void show_fs_controls();
+ void hide_fs_controls();
+ gboolean set_destroy(gpointer data);
