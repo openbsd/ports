@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.57 2014/03/17 23:21:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2014/03/18 11:33:29 sthen Exp $
 
 COMMENT =	command-driven interactive function plotting program
 
 V =		4.6
 PATCHLEVEL =	3
-REVISION =	0
+REVISION =	1
 DISTNAME =	gnuplot-${V}.${PATCHLEVEL}
 CATEGORIES =	math graphics
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gnuplot/}
@@ -15,7 +15,7 @@ HOMEPAGE =	http://www.gnuplot.info/
 # http://gnuplot.cvs.sourceforge.net/gnuplot/gnuplot/Copyright
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c m ncurses pthread readline stdc++ tiff vpx z
+WANTLIB += c m ncurses pthread readline stdc++ z
 
 BUILD_DEPENDS =	editors/emacs21
 
@@ -47,7 +47,8 @@ CONFIGURE_ARGS += --without-x \
 .else
 MODULES +=	converters/libiconv
 LIB_DEPENDS +=	graphics/gd
-WANTLIB +=	X11 fontconfig freetype jpeg png gd>=20 ${MODLIBICONV_WANTLIB}
+WANTLIB +=	X11 fontconfig freetype jpeg png gd>=20 tiff vpx \
+		${MODLIBICONV_WANTLIB}
 CONFIGURE_ARGS += --with-x
 .endif
 
