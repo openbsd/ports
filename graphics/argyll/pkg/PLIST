@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/01/03 10:22:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/03/18 08:16:51 ajacoutot Exp $
 @conflict argyll-*
 @bin bin/applycal
 @bin bin/average
@@ -8,6 +8,7 @@
 @bin bin/chartread
 @bin bin/collink
 @bin bin/colprof
+@bin bin/colverify
 @bin bin/dispcal
 @bin bin/dispread
 @bin bin/dispwin
@@ -42,7 +43,6 @@
 @bin bin/tiffgamut
 @bin bin/timage
 @bin bin/txt2ti3
-@bin bin/verify
 @bin bin/viewgam
 @bin bin/xicclu
 share/color/
@@ -59,6 +59,7 @@ share/color/argyll/ref/ColorChecker.cht
 share/color/argyll/ref/ColorChecker.cie
 share/color/argyll/ref/ColorChecker.ti2
 share/color/argyll/ref/ColorCheckerDC.cht
+share/color/argyll/ref/ColorCheckerDC.ti2
 share/color/argyll/ref/ColorCheckerPassport.cht
 share/color/argyll/ref/ColorCheckerPassport.cie
 share/color/argyll/ref/ColorCheckerSG.cht
@@ -77,6 +78,9 @@ share/color/argyll/ref/D50_3.0.sp
 share/color/argyll/ref/EBU3213_PAL.icm
 share/color/argyll/ref/ECI2002.ti2
 share/color/argyll/ref/ECI2002R.ti2
+share/color/argyll/ref/F1.sp
+share/color/argyll/ref/F5.sp
+share/color/argyll/ref/F8.sp
 share/color/argyll/ref/FograStrip2.ti1
 share/color/argyll/ref/FograStrip2_2.ti2
 share/color/argyll/ref/FograStrip3.ti1
@@ -85,6 +89,8 @@ share/color/argyll/ref/GTIPlus.sp
 share/color/argyll/ref/Hutchcolor.cht
 share/color/argyll/ref/LaserSoftDCPro.cht
 share/color/argyll/ref/Office.sp
+share/color/argyll/ref/ProPhoto.icm
+share/color/argyll/ref/ProPhotoLin.icm
 share/color/argyll/ref/QPcard_201.cht
 share/color/argyll/ref/QPcard_201.cie
 share/color/argyll/ref/QPcard_202.cht
@@ -92,7 +98,7 @@ share/color/argyll/ref/QPcard_202.cie
 share/color/argyll/ref/Rec2020.icm
 share/color/argyll/ref/Rec709.icm
 share/color/argyll/ref/RefMediumGamut.gam
-share/color/argyll/ref/SMPTE431.icm
+share/color/argyll/ref/SMPTE431_P3.icm
 share/color/argyll/ref/SMPTE_RP145_NTSC.icm
 share/color/argyll/ref/SOtele.sp
 share/color/argyll/ref/SpyderChecker.cht
@@ -220,6 +226,7 @@ share/doc/argyllcms/cht_format.html
 share/doc/argyllcms/collink.html
 share/doc/argyllcms/colorchecker.jpg
 share/doc/argyllcms/colprof.html
+share/doc/argyllcms/colverify.html
 share/doc/argyllcms/cube.jpg
 share/doc/argyllcms/dispcal.html
 share/doc/argyllcms/dispprofloc.html
@@ -290,6 +297,5 @@ share/doc/argyllcms/tiffgamut.html
 share/doc/argyllcms/timage.html
 share/doc/argyllcms/txt2ti3.html
 share/doc/argyllcms/ucmm.html
-share/doc/argyllcms/verify.html
 share/doc/argyllcms/viewgam.html
 share/doc/argyllcms/xicclu.html

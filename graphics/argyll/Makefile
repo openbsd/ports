@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2014/01/25 14:02:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2014/03/18 08:16:51 ajacoutot Exp $
 
 COMMENT=	ICC compatible color management system
 
-V=		1.6.2
+V=		1.6.3
 DISTNAME=	Argyll_V${V}_src
 PKGNAME=	argyllcms-${V}
-REVISION =	0
 EXTRACT_SUFX=	.zip
 WRKDIST=	${WRKDIR}/${DISTNAME:S/_src//}
 

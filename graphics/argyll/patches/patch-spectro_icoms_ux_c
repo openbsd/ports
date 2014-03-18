@@ -1,6 +1,6 @@
-$OpenBSD: patch-spectro_icoms_ux_c,v 1.1 2013/09/16 15:48:29 ajacoutot Exp $
---- spectro/icoms_ux.c.orig	Fri Aug 16 18:01:22 2013
-+++ spectro/icoms_ux.c	Mon Sep 16 14:14:14 2013
+$OpenBSD: patch-spectro_icoms_ux_c,v 1.2 2014/03/18 08:16:51 ajacoutot Exp $
+--- spectro/icoms_ux.c.orig	Fri Jan 31 05:08:57 2014
++++ spectro/icoms_ux.c	Tue Mar 18 09:10:33 2014
 @@ -218,7 +218,7 @@ int icompaths_refresh_paths(icompaths *p) {
  				break;
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-spectro_icoms_ux_c,v 1.1 2013/09/16 15:48:29 ajacoutot Exp $
  			   /* This should match uart & USB devs. */
  				( strncmp (de->d_name, "cua", 3) == 0
  				&& strlen (de->d_name) < 7)
-@@ -339,6 +339,9 @@ static int icoms_ser_read(icoms *p, char *rbuf, int bs
+@@ -340,6 +340,9 @@ static int icoms_ser_read(icoms *p, char *rbuf, int bs
  # ifndef IOSSIOSPEED
  #  define IOSSIOSPEED    _IOW('T', 2, speed_t)
  # endif
