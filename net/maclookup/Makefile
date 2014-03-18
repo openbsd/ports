@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:35:48 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2014/03/18 11:57:02 sthen Exp $
 
 COMMENT=	simple filter to look up MAC address vendors
 
-DISTNAME=	maclookup-1.2
+DISTNAME=	maclookup-1.3
 
 CATEGORIES=	net textproc
 
