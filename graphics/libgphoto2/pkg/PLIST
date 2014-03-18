@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2013/03/31 13:47:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2014/03/18 08:40:14 ajacoutot Exp $
 %%SHARED%%
 bin/gphoto2-config
 bin/gphoto2-port-config
@@ -98,6 +98,7 @@ share/libgphoto2/${VERSION}/konica/german
 share/libgphoto2/${VERSION}/konica/japanese
 share/libgphoto2/${VERSION}/konica/korean
 share/libgphoto2/${VERSION}/konica/spanish
+share/locale/cs/LC_MESSAGES/libgphoto2-6.mo
 share/locale/cs/LC_MESSAGES/libgphoto2_port-10.mo
 share/locale/da/LC_MESSAGES/libgphoto2-6.mo
 share/locale/da/LC_MESSAGES/libgphoto2_port-10.mo

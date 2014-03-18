@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.32 2014/03/17 23:21:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2014/03/18 08:40:14 ajacoutot Exp $
 
 COMMENT =	digital camera library
 CATEGORIES =	graphics devel
 
 MAINTAINER =	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-VERSION =	2.5.2
-REVISION =	0
+VERSION =	2.5.3.1
 DISTNAME =	libgphoto2-${VERSION}
 PKGNAME =	libgphoto-${VERSION}
 
 SHARED_LIBS +=  gphoto2_port         7.0      # 11.1
-SHARED_LIBS +=  gphoto2              4.1      # 6.0
+SHARED_LIBS +=  gphoto2              4.2      # 6.0
 
 HOMEPAGE =	http://www.gphoto.org/
 
@@ -21,7 +20,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gphoto/}
 PERMIT_PACKAGE_CDROM =		Yes
 
 WANTLIB += c exif expat fontconfig freetype gd jpeg ltdl m png
-WANTLIB += pthread pthread-stubs tiff usb usb-1.0 vpx z
+WANTLIB += pthread pthread-stubs tiff usb usb-1.0 vpx xml2 z
 
 MAKE_FLAGS =		INTLLIBS='$$(LTLIBINTL)'
 
@@ -40,7 +39,8 @@ MODULES =		devel/gettext
 LIB_DEPENDS =		graphics/gd \
 			graphics/libexif \
 			devel/libusb-compat \
-			devel/libtool,-ltdl
+			devel/libtool,-ltdl \
+			textproc/libxml
 
 # cleanup
 post-install:
