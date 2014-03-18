@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/03/23 15:19:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/03/18 07:49:10 ajacoutot Exp $
 include/gexiv2/
 include/gexiv2/gexiv2-log.h
 include/gexiv2/gexiv2-managed-stream.h
@@ -6,16 +6,17 @@ include/gexiv2/gexiv2-metadata.h
 include/gexiv2/gexiv2-preview-image.h
 include/gexiv2/gexiv2-preview-properties.h
 include/gexiv2/gexiv2-startup.h
+include/gexiv2/gexiv2-version.h
 include/gexiv2/gexiv2.h
 lib/girepository-1.0/
-lib/girepository-1.0/GExiv2-0.4.typelib
+lib/girepository-1.0/GExiv2-0.10.typelib
 lib/libgexiv2.a
 lib/libgexiv2.la
 @lib lib/libgexiv2.so.${LIBgexiv2_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/gexiv2.pc
 share/gir-1.0/
-share/gir-1.0/GExiv2-0.4.gir
+share/gir-1.0/GExiv2-0.10.gir
 share/vala/
 share/vala/vapi/
 share/vala/vapi/gexiv2.vapi
