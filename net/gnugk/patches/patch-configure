@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.14 2014/01/03 06:21:04 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.15 2014/03/18 09:01:07 ajacoutot Exp $
 --- configure.orig	Thu Jan  2 13:27:20 2014
 +++ configure	Fri Jan  3 07:02:38 2014
 @@ -3733,7 +3733,7 @@ else
@@ -28,12 +28,3 @@ $OpenBSD: patch-configure,v 1.14 2014/01/03 06:21:04 ajacoutot Exp $
  if test "${H460SUPPORT:-unset}" = "unset" ; then
  	if test "x${h46023}" != "xno" ; then
  		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: No H.460 support available" >&5
-@@ -4590,7 +4590,7 @@ $as_echo_n "checking for ssh_handle_key_exchange()/ssh
- 
- 		for try in /usr/lib /usr/local/lib $libssh_lib_dir; do
- 			if test -d $try; then
--				LIBS="$old_LIBS -L$try -lssh -lcrypto -lz -lrt"
-+				LIBS="$old_LIBS -L$try -lssh -lcrypto -lz"
- 				cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
- extern ssh_handle_key_exchange(); extern ssh_blocking_flush();
