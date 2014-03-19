@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2013/04/04 16:03:55 brad Exp $
+# $OpenBSD: Makefile,v 1.63 2014/03/19 13:40:59 jasper Exp $
 
 COMMENT=	block-sorting file compressor, unencumbered
 
@@ -15,10 +15,7 @@ HOMEPAGE=	http://www.bzip.org/
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=	c
 
-BZ2_CFLAGS=	-Wall -Winline
-.if ${MACHINE_ARCH} != "m68k"
-BZ2_CFLAGS+=	-fomit-frame-pointer -fno-strength-reduce
-.endif
+BZ2_CFLAGS=	-Wall -Winline -fomit-frame-pointer -fno-strength-reduce
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} ${BZ2_CFLAGS}" \
 		LIBbz2_VERSION=${LIBbz2_VERSION} PREFIX=${TRUEPREFIX}

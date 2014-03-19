@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2014/03/10 22:43:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.98 2014/03/19 13:40:59 jasper Exp $
 
 COMMENT=	get files from FTP, Gopher, HTTP or HTTPS servers
 
@@ -35,11 +35,5 @@ CONFIGURE_ENV+=curl_cv_func_send_args="int,const void *,size_t,int,ssize_t"
 
 # Note:
 # use ulimit -p 256 for test
-
-# curl_fnmatch.c triggers an ICE in output_operand() when compiled -fPIC unless
-# -fno-gcse is used.
-.if ${MACHINE_ARCH} == "m68k"
-CFLAGS+=	-fno-gcse
-.endif
 
 .include <bsd.port.mk>
