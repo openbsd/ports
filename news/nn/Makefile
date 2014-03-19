@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 11:35:58 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2014/03/19 13:48:40 jasper Exp $
 
 COMMENT =		No News is Good News (Fast CLI Point & Read Newsreader)
 DISTNAME =		nn-6.7.3
@@ -27,8 +27,6 @@ MAKE_ENV =		CC="${CC}"
 MFILE =			m-alpha.h
 .elif "${MACHINE_ARCH}" == "hppa"
 MFILE =			m-hp9000.h
-.elif "${MACHINE_ARCH}" == "m68k"
-MFILE = 		m-m680x0.h
 .elif "${MACHINE_ARCH}" == "m88k"
 MFILE =			m-m88000.h
 .elif "${MACHINE_ARCH}" == "powerpc"

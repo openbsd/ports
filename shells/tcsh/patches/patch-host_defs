@@ -1,10 +1,10 @@
-$OpenBSD: patch-host_defs,v 1.6 2012/06/21 14:22:51 jasper Exp $
+$OpenBSD: patch-host_defs,v 1.7 2014/03/19 13:48:40 jasper Exp $
 
 http://bugs.gw.com/view.php?id=181 (committed)
 
 --- host.defs.orig	Wed Jan 11 21:20:15 2012
-+++ host.defs	Sat May 26 12:52:56 2012
-@@ -564,6 +564,38 @@ machtype: defined(vax)					: "vax"
++++ host.defs	Wed Mar 19 14:42:56 2014
+@@ -564,6 +564,37 @@ machtype: defined(vax)					: "vax"
  machtype: defined(x86_64)				: "x86_64"
  enddef	:
  
@@ -15,7 +15,6 @@ http://bugs.gw.com/view.php?id=181 (committed)
 +vendor : defined(__arm__)                              : "arm"
 +vendor : defined(__hppa__) || defined(__hppa64__)      : "hp"
 +vendor : defined(M_intel)                              : "intel"
-+vendor : defined(__m68k__)                             : "motorola"
 +vendor : defined(__m88k__)                             : "motorola"
 +vendor : defined(__mips__) && defined(__sgi__)         : "sgi"
 +vendor : defined(__powerpc__)                          : "motorola"
