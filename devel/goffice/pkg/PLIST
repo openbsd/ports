@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2014/03/09 22:09:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2014/03/19 07:23:40 ajacoutot Exp $
 include/libgoffice-${GOFFICE_API_VERSION}/
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/app/
@@ -218,6 +218,17 @@ lib/libgoffice-${GOFFICE_API_VERSION}.la
 @lib lib/libgoffice-${GOFFICE_API_VERSION}.so.${LIBgoffice-0.10_VERSION}
 lib/pkgconfig/libgoffice-${GOFFICE_API_VERSION}.pc
 share/gir-1.0/GOffice-${GOFFICE_API_VERSION}.gir
+share/goffice/
+share/goffice/${GNOME_VERSION}/
+share/goffice/${GNOME_VERSION}/mmlitex/
+share/goffice/${GNOME_VERSION}/mmlitex/README
+share/goffice/${GNOME_VERSION}/mmlitex/cmarkup.xsl
+share/goffice/${GNOME_VERSION}/mmlitex/entities.xsl
+share/goffice/${GNOME_VERSION}/mmlitex/glayout.xsl
+share/goffice/${GNOME_VERSION}/mmlitex/mmlitex.xsl
+share/goffice/${GNOME_VERSION}/mmlitex/scripts.xsl
+share/goffice/${GNOME_VERSION}/mmlitex/tables.xsl
+share/goffice/${GNOME_VERSION}/mmlitex/tokens.xsl
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/GOArrow.html
 share/gtk-doc/html/goffice-${GOFFICE_API_VERSION}/GOBezierSpline.html
