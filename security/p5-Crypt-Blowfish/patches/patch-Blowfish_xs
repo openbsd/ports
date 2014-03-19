@@ -1,7 +1,7 @@
-$OpenBSD: patch-Blowfish_xs,v 1.1 2004/05/12 03:56:28 jcs Exp $
---- Blowfish.xs.orig	Tue Oct 28 15:06:51 2003
-+++ Blowfish.xs	Tue Oct 28 15:07:05 2003
-@@ -33,7 +33,7 @@
+$OpenBSD: patch-Blowfish_xs,v 1.2 2014/03/19 07:23:45 jasper Exp $
+--- Blowfish.xs.orig	Tue Jul 23 17:42:11 2013
++++ Blowfish.xs	Wed Mar 19 00:10:56 2014
+@@ -33,7 +33,7 @@ blowfish_init(key)
  		char ks[8192];
  
  		key = (unsigned char *) SvPV(ST(0), key_len);
