@@ -1,10 +1,10 @@
-$OpenBSD: patch-Makefile,v 1.13 2013/10/10 15:40:39 ajacoutot Exp $
+$OpenBSD: patch-Makefile,v 1.14 2014/03/19 07:44:04 ajacoutot Exp $
 
 remove gudev requirement
 
---- Makefile.orig	Fri Oct  4 02:23:04 2013
-+++ Makefile	Thu Oct 10 17:31:24 2013
-@@ -315,7 +315,6 @@ EXT_PKGS = \
+--- Makefile.orig	Tue Mar 18 22:50:19 2014
++++ Makefile	Wed Mar 19 07:57:12 2014
+@@ -261,7 +261,6 @@ EXT_PKGS = \
  	gstreamer-base-1.0 \
  	gstreamer-pbutils-1.0 \
  	gtk+-3.0 \
@@ -12,7 +12,7 @@ remove gudev requirement
  	libexif \
  	libgphoto2 \
  	json-glib-1.0 \
-@@ -347,7 +346,6 @@ EXT_PKG_VERSIONS = \
+@@ -293,7 +292,6 @@ EXT_PKG_VERSIONS = \
  	gstreamer-plugins-base-1.0 >= 1.0.0 \
  	gstreamer-pbutils-1.0 >= 1.0.0 \
  	gtk+-3.0 >= 3.6.0 \
@@ -20,7 +20,7 @@ remove gudev requirement
  	libexif >= 0.6.16 \
  	libgphoto2 >= 2.4.2 \
  	libraw >= 0.13.2 \
-@@ -591,8 +589,8 @@ ifndef DISABLE_SCHEMAS_COMPILE
+@@ -543,8 +541,8 @@ ifndef DISABLE_SCHEMAS_COMPILE
  	glib-compile-schemas $(DESTDIR)$(PREFIX)/share/glib-2.0/schemas
  endif
  ifndef DISABLE_GSETTINGS_CONVERT_INSTALL
@@ -31,7 +31,7 @@ remove gudev requirement
  endif
  ifndef DISABLE_ICON_UPDATE
  	-gtk-update-icon-cache -t -f $(DESTDIR)$(PREFIX)/share/icons/hicolor || :
-@@ -763,9 +761,9 @@ pkgcheck:
+@@ -722,9 +720,9 @@ pkgcheck:
  .PHONY: valacheck
  valacheck:
  	@ $(VALAC) --version >/dev/null 2>/dev/null || ( echo 'Shotwell requires Vala compiler $(MIN_VALAC_VERSION) or greater.  No valac found in path or $$VALAC.'; exit 1 )

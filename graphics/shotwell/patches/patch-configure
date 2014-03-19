@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.6 2013/10/10 15:40:40 ajacoutot Exp $
---- configure.orig	Thu Sep 19 22:39:24 2013
-+++ configure	Thu Oct 10 17:30:34 2013
+$OpenBSD: patch-configure,v 1.7 2014/03/19 07:44:04 ajacoutot Exp $
+--- configure.orig	Tue Mar  4 23:54:12 2014
++++ configure	Wed Mar 19 07:55:28 2014
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
 +#!/bin/sh
  #
- # Copyright 2009-2013 Yorba Foundation
+ # Copyright 2009-2014 Yorba Foundation
  #
 @@ -58,8 +58,6 @@ EOT
  
