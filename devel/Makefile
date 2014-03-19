@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1200 2014/03/16 22:40:18 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.1201 2014/03/19 09:24:33 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -818,6 +818,9 @@
      SUBDIR += p5-Memoize-ExpireLRU
      SUBDIR += p5-Module-Find
      SUBDIR += p5-Module-Install
+     SUBDIR += p5-Module-Install-AuthorTests
+     SUBDIR += p5-Module-Install-Repository
+     SUBDIR += p5-Module-Install-XSUtil
      SUBDIR += p5-Module-Manifest
      SUBDIR += p5-Module-Pluggable-Fast
      SUBDIR += p5-Module-Refresh
