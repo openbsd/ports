@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/21 08:45:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2014/03/19 13:38:36 jasper Exp $
 
-# m68k: mmap configure test causes system hang
 # arm: doesn't build super-old and broken assember files
 ONLY_FOR_ARCHS=	alpha amd64 hppa i386 mips64 mips64el powerpc sparc sparc64
 
