@@ -1,15 +1,15 @@
-$OpenBSD: gcc3-patch-glib_tests_Makefile_in,v 1.1 2013/08/23 07:55:31 ajacoutot Exp $
+$OpenBSD: gcc3-patch-glib_tests_Makefile_in,v 1.2 2014/03/19 15:23:58 miod Exp $
 
 -Wstrict-aliasing is not supported by GCC3.
 
---- glib/tests/Makefile.in.orig	Fri Aug 23 09:51:32 2013
-+++ glib/tests/Makefile.in	Fri Aug 23 09:52:03 2013
-@@ -83,7 +83,7 @@ host_triplet = @host@
- DIST_COMMON = $(top_srcdir)/Makefile.decl $(srcdir)/Makefile.in \
- 	$(srcdir)/Makefile.am $(top_srcdir)/depcomp
- noinst_PROGRAMS = $(am__EXEEXT_3) test-spawn-echo$(EXEEXT)
--@HAVE_GCC_TRUE@am__append_1 = -Wstrict-aliasing=2
-+#@HAVE_GCC_TRUE@am__append_1 = -Wstrict-aliasing=2
- @HAVE_EVENTFD_TRUE@am__append_2 = gwakeup-fallback
- @OS_UNIX_TRUE@am__append_3 = unix include
- subdir = glib/tests
+--- glib/tests/Makefile.in.orig	Tue Nov 12 15:26:52 2013
++++ glib/tests/Makefile.in	Wed Mar 19 15:20:40 2014
+@@ -115,7 +115,7 @@ check_PROGRAMS = $(am__EXEEXT_8)
+ @ENABLE_INSTALLED_TESTS_TRUE@	$(dist_installed_test_data)
+ @ENABLE_INSTALLED_TESTS_TRUE@am__append_12 = $(test_ltlibraries) $(installed_test_ltlibraries)
+ @ENABLE_INSTALLED_TESTS_TRUE@am__append_13 = $(installed_test_meta_DATA)
+-@HAVE_GCC_TRUE@am__append_14 = -Wstrict-aliasing=2
++#@HAVE_GCC_TRUE@am__append_14 = -Wstrict-aliasing=2
+ 
+ # -----------------------------------------------------------------------------
+ @OS_UNIX_TRUE@am__append_15 = \
