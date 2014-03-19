@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 17:54:15 espie Exp $
-bin/dnetc
-@man man/man1/dnetc.1
