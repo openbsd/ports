@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/03/19 09:23:34 jasper Exp $
+${P5SITE}/Module/
+${P5SITE}/Module/Install/
+${P5SITE}/Module/Install/Repository.pm
+@man man/man3p/Module::Install::Repository.3p
