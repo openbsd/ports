@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/04 23:38:49 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/03/19 09:02:54 jasper Exp $
 bin/scandeps.pl
 ${P5SITE}/Module/
 ${P5SITE}/Module/ScanDeps/
 ${P5SITE}/Module/ScanDeps.pm
+${P5SITE}/Module/ScanDeps/Cache.pm
 ${P5SITE}/Module/ScanDeps/DataFeed.pm
 @man man/man1/scandeps.pl.1
 @man man/man3p/Module::ScanDeps.3p
-@man man/man3p/Module::ScanDeps::DataFeed.3p
