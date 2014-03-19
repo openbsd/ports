@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.9 2010/02/23 19:55:15 phessler Exp $
+$OpenBSD: patch-configure,v 1.10 2014/03/19 13:37:41 jasper Exp $
 --- configure.orig	Thu Mar 30 02:51:49 2000
-+++ configure	Sat Feb 13 11:30:23 2010
++++ configure	Wed Mar 19 14:35:33 2014
 @@ -528,7 +528,7 @@ fi
  
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.9 2010/02/23 19:55:15 phessler Exp $
    if test -f $ac_dir/install-sh; then
      ac_aux_dir=$ac_dir
      ac_install_sh="$ac_aux_dir/install-sh -c"
-@@ -1273,8 +1273,36 @@ sparc-*) cat >> confdefs.h <<\EOF
+@@ -1273,8 +1273,32 @@ sparc-*) cat >> confdefs.h <<\EOF
  #define __sparc__ 1
  EOF
  ;;
@@ -25,10 +25,6 @@ $OpenBSD: patch-configure,v 1.9 2010/02/23 19:55:15 phessler Exp $
 +;;
 +vax-*) cat >> confdefs.h <<\EOF
 +#define __vax__ 1
-+EOF
-+;;
-+m68k-*) cat >> confdefs.h <<\EOF
-+#define __m68k__ 1
 +EOF
 +;;
 +hppa-*) cat >> confdefs.h <<\EOF
