@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2014/02/09 06:01:54 shadchin Exp $
+# $OpenBSD: Makefile,v 1.54 2014/03/19 13:28:57 jasper Exp $
 
 COMMENT-main=	garbage collection and memory leak detection for C and C++
 COMMENT-atomic=	access to hardware provided atomic memory operations
@@ -23,7 +23,7 @@ MASTER_SITES=	${HOMEPAGE}gc_source/
 HOMEPAGE=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/
 
 # currently works only on most ELF archs
-NOT_FOR_ARCHS=	m68k m88k vax mips64 mips64el
+NOT_FOR_ARCHS=	m88k vax mips64 mips64el
 
 PERMIT_PACKAGE_CDROM=	Yes
 

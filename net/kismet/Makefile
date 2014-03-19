@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/11/10 12:25:14 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2014/03/19 13:28:57 jasper Exp $
 # Much help came from Alexandre Anriot, Robert Nagy, Bernd Ahlers,
 # and, last but not least, Pedro la Peu.
 
@@ -6,7 +6,7 @@ COMMENT-main=	802.11 layer2 wireless network detector, sniffer, and IDS
 COMMENT-gpsmap=	reads GPS and Network XML datafiles and plots networks
 
 # No wireless capabilities
-NOT_FOR_ARCHS=m68k m88k vax
+NOT_FOR_ARCHS=	m88k vax
 
 V=		2008-05-R1
 DISTNAME=	kismet-${V}
