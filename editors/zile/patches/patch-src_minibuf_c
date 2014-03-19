@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_minibuf_c,v 1.1 2014/03/19 15:29:50 bcallah Exp $
+--- src/minibuf.c.orig	Mon Mar 17 22:48:04 2014
++++ src/minibuf.c	Mon Mar 17 22:48:13 2014
+@@ -287,10 +287,7 @@ minibuf_vread_completion (const char *fmt, const char 
+             }
+           else
+             {
+-#pragma GCC diagnostic push
+-#pragma GCC diagnostic ignored "-Wformat-nonliteral"
+               minibuf_error (invalid_err, astr_cstr (ms));
+-#pragma GCC diagnostic pop
+               waitkey ();
+             }
+         }

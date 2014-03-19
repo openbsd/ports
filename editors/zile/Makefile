@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.44 2013/11/09 23:19:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2014/03/19 15:29:50 bcallah Exp $
 
 COMMENT=		lightweight Emacs clone
-DISTNAME=		zile-2.4.9
-REVISION=		0
+DISTNAME=		zile-2.4.11
 CATEGORIES=		editors
 HOMEPAGE=		https://www.gnu.org/software/zile/
 
 MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
 
-# GPLv3
+# GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=		${MASTER_SITE_GNU:=zile/}
 
-WANTLIB += c gc ncursesw
+WANTLIB += c gc ncursesw pthread
 
 LIB_DEPENDS=		devel/boehm-gc
 
