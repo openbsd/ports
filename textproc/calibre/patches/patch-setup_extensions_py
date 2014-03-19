@@ -1,15 +1,17 @@
-$OpenBSD: patch-setup_extensions_py,v 1.4 2014/01/16 09:16:31 sthen Exp $
+$OpenBSD: patch-setup_extensions_py,v 1.5 2014/03/19 02:15:46 sthen Exp $
 
-- make podofo optional
+- XXX make podofo optional as it isn't ported yet; should be fixed
 - fix various header search paths
 - don't override compiler optimizer levels
-- build with libmtp/libusb1 on OpenBSD (possibly useless as it
-may need /sys/ access to actually detect devices..)
+- build with libmtp/libusb1 on OpenBSD (possibly useless as it looks like it
+also wants /sys/ access to actually detect devices..)
 
-if updating patches, watch out for X11BASE -> /usr/X11R6 in last chunk
+if updating patches, watch out for X11BASE -> /usr/X11R6 in last chunk,
+and don't allow an updated patch to change the python shebang line,
+it's correct with "env" here (handled in infrastructure).
 
---- setup/extensions.py.orig	Fri Jan 10 04:08:21 2014
-+++ setup/extensions.py	Tue Jan 14 22:34:03 2014
+--- setup/extensions.py.orig	Fri Mar 14 04:21:05 2014
++++ setup/extensions.py	Tue Mar 18 23:13:59 2014
 @@ -12,7 +12,7 @@ from multiprocessing import cpu_count
  
  from PyQt4.pyqtconfig import QtGuiModuleMakefile
@@ -33,7 +35,7 @@ if updating patches, watch out for X11BASE -> /usr/X11R6 in last chunk
  
      def preflight(self, obj_dir, compiler, linker, builder, cflags, ldflags):
          pass
-@@ -182,6 +175,7 @@ extensions = [
+@@ -201,6 +194,7 @@ extensions = [
                      libraries=['podofo'],
                      lib_dirs=[podofo_lib],
                      inc_dirs=[podofo_inc, os.path.dirname(podofo_inc)],
@@ -41,7 +43,7 @@ if updating patches, watch out for X11BASE -> /usr/X11R6 in last chunk
                      error=podofo_error),
  
      Extension('pictureflow',
-@@ -262,9 +256,10 @@ if isosx:
+@@ -281,9 +275,10 @@ if isosx:
                  ldflags=['-framework', 'CoreServices', '-framework', 'IOKit'])
              )
  
@@ -53,7 +55,7 @@ if updating patches, watch out for X11BASE -> /usr/X11R6 in last chunk
          libraries=['usb-1.0']
      ))
  
-@@ -278,6 +273,7 @@ if islinux or isosx:
+@@ -297,6 +292,7 @@ if islinux or isosx:
          'calibre/devices/mtp/unix/upstream/music-players.h',
          'calibre/devices/mtp/unix/upstream/device-flags.h',
          ],
@@ -61,7 +63,7 @@ if updating patches, watch out for X11BASE -> /usr/X11R6 in last chunk
          libraries=['mtp']
      ))
  
-@@ -304,9 +300,9 @@ if isbsd:
+@@ -324,9 +320,9 @@ if isbsd:
      cflags.append('-pthread')
      ldflags.append('-shared')
      cflags.append('-I'+sysconfig.get_python_inc())
@@ -72,7 +74,7 @@ if updating patches, watch out for X11BASE -> /usr/X11R6 in last chunk
  if isosx:
      x, p = ('i386', 'x86_64')
      archs = ['-arch', x, '-arch', p, '-isysroot',
-@@ -513,7 +509,7 @@ class Build(Command):
+@@ -533,7 +529,7 @@ class Build(Command):
          DESTDIR = .
          TARGET = calibre
          QT *= svg

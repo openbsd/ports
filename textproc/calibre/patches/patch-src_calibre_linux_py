@@ -1,11 +1,10 @@
-$OpenBSD: patch-src_calibre_linux_py,v 1.3 2014/01/16 09:16:31 sthen Exp $
+$OpenBSD: patch-src_calibre_linux_py,v 1.4 2014/03/19 02:15:46 sthen Exp $
 
-Saves mime and desktop files on disk instead of trying to add them directly.
-Adapted from archlinux patch:
-https://projects.archlinux.org/svntogit/community.git/tree/trunk?h=packages/calibre
+- skip uninstaller parts
+- correct path for bash completion samples
 
---- src/calibre/linux.py.orig	Fri Jan 10 04:08:21 2014
-+++ src/calibre/linux.py	Tue Jan 14 22:47:52 2014
+--- src/calibre/linux.py.orig	Fri Mar 14 04:21:05 2014
++++ src/calibre/linux.py	Wed Mar 19 00:37:52 2014
 @@ -8,7 +8,7 @@ from subprocess import check_call
  from functools import partial
  
@@ -15,7 +14,7 @@ https://projects.archlinux.org/svntogit/community.git/tree/trunk?h=packages/cali
  from calibre.customize.ui import all_input_formats
  from calibre.ptempfile import TemporaryDirectory
  from calibre import CurrentDir
-@@ -451,19 +451,7 @@ class PostInstall:
+@@ -495,19 +495,7 @@ class PostInstall:
              self.setup_completion()
          if islinux or isbsd:
              self.setup_desktop_integration()
@@ -33,9 +32,9 @@ https://projects.archlinux.org/svntogit/community.git/tree/trunk?h=packages/cali
 -                    os.rmdir(config_dir)
 -
          if warn is None and self.warnings:
-             self.info('There were %d warnings'%len(self.warnings))
+             self.info('\n\nThere were %d warnings\n'%len(self.warnings))
              for args, kwargs in self.warnings:
-@@ -510,7 +498,7 @@ class PostInstall:
+@@ -561,7 +549,7 @@ class PostInstall:
              if os.path.exists(bc):
                  f = os.path.join(bc, 'calibre')
              else:
@@ -44,107 +43,3 @@ https://projects.archlinux.org/svntogit/community.git/tree/trunk?h=packages/cali
                      f = os.path.join(self.opts.staging_root, 'share/bash_completion.d/calibre')
                  else:
                      f = os.path.join(self.opts.staging_etc, 'bash_completion.d/calibre')
-@@ -655,73 +643,50 @@ class PostInstall:
-                 env['LD_LIBRARY_PATH'] = os.pathsep.join(npaths)
-                 cc = partial(check_call, env=env)
- 
--            with TemporaryDirectory() as tdir, CurrentDir(tdir), \
--                                PreserveMIMEDefaults():
--                render_img('mimetypes/lrf.png', 'calibre-lrf.png')
--                cc('xdg-icon-resource install --noupdate --context mimetypes --size 128 calibre-lrf.png application-lrf', shell=True)
--                self.icon_resources.append(('mimetypes', 'application-lrf', '128'))
--                cc('xdg-icon-resource install --noupdate --context mimetypes --size 128 calibre-lrf.png text-lrs', shell=True)
--                self.icon_resources.append(('mimetypes', 'application-lrs',
--                '128'))
--                render_img('mimetypes/mobi.png', 'calibre-mobi.png')
--                cc('xdg-icon-resource install --noupdate --context mimetypes --size 128 calibre-mobi.png application-x-mobipocket-ebook', shell=True)
--                self.icon_resources.append(('mimetypes', 'application-x-mobipocket-ebook', '128'))
--                render_img('mimetypes/tpz.png', 'calibre-tpz.png')
--                cc('xdg-icon-resource install --noupdate --context mimetypes --size 128 calibre-tpz.png application-x-topaz-ebook', shell=True)
--                self.icon_resources.append(('mimetypes', 'application-x-topaz-ebook', '128'))
--                render_img('mimetypes/azw2.png', 'calibre-azw2.png')
--                cc('xdg-icon-resource install --noupdate --context mimetypes --size 128 calibre-azw2.png application-x-kindle-application', shell=True)
--                self.icon_resources.append(('mimetypes', 'application-x-kindle-application', '128'))
--                render_img('mimetypes/azw3.png', 'calibre-azw3.png')
--                cc('xdg-icon-resource install --noupdate --context mimetypes --size 128 calibre-azw3.png application-x-mobi8-ebook', shell=True)
--                self.icon_resources.append(('mimetypes', 'application-x-mobi8-ebook', '128'))
--                render_img('lt.png', 'calibre-gui.png', width=256, height=256)
--                cc('xdg-icon-resource install --noupdate --size 256 calibre-gui.png calibre-gui', shell=True)
--                self.icon_resources.append(('apps', 'calibre-gui', '128'))
--                render_img('viewer.png', 'calibre-viewer.png')
--                cc('xdg-icon-resource install --size 128 calibre-viewer.png calibre-viewer', shell=True)
--                self.icon_resources.append(('apps', 'calibre-viewer', '128'))
--                render_img('tweak.png', 'calibre-ebook-edit.png')
--                cc('xdg-icon-resource install --size 128 calibre-ebook-edit.png calibre-ebook-edit', shell=True)
--                self.icon_resources.append(('apps', 'calibre-ebook-edit', '128'))
-+            with TemporaryDirectory() as tdir, CurrentDir(tdir):
-+                dir = os.path.join(self.opts.staging_sharedir,'../pixmaps')
-+                os.mkdir(dir)
-+                render_img('mimetypes/lrf.png', os.path.join(dir,'calibre-lrf.png'))
-+                render_img('mimetypes/mobi.png', os.path.join(dir,'calibre-mobi.png')) #  application-x-mobipocket-ebook
-+                render_img('mimetypes/tpz.png', os.path.join(dir,'calibre-tpz.png')) #  application-x-topaz-ebook
-+                render_img('mimetypes/azw2.png', os.path.join(dir,'calibre-azw2.png')) #  application-x-kindle-application
-+                render_img('mimetypes/azw3.png', os.path.join(dir,'calibre-azw3.png')) #  application-x-mobi8-ebook
-+                render_img('lt.png', os.path.join(dir,'calibre-gui.png'), width=256, height=256)
-+                render_img('viewer.png', os.path.join(dir,'calibre-viewer.png'))
-+                render_img('tweak.png', os.path.join(dir,'calibre-ebook-edit.png'))
- 
-                 mimetypes = set([])
-                 for x in all_input_formats():
-                     mt = guess_type('dummy.'+x)[0]
--                    if mt and 'chemical' not in mt and 'ctc-posml' not in mt:
-+                    if mt and 'chemical' not in mt and 'ctc-posml' not in mt and 'text' not in mt and 'pdf' not in mt and 'xhtml' not in mt:
-                         mimetypes.add(mt)
- 
-                 def write_mimetypes(f):
-                     f.write('MimeType=%s;\n'%';'.join(mimetypes))
- 
-                 from calibre.ebooks.oeb.polish.main import SUPPORTED
--                f = open('calibre-lrfviewer.desktop', 'wb')
-+                dir = os.path.join(self.opts.staging_sharedir,'../applications')
-+                os.mkdir(dir)
-+                f = open(os.path.join(dir, 'calibre-lrfviewer.desktop'), 'wb')
-                 f.write(VIEWER)
-                 f.close()
--                f = open('calibre-ebook-viewer.desktop', 'wb')
-+                f = open(os.path.join(dir, 'calibre-ebook-viewer.desktop'), 'wb')
-                 f.write(EVIEWER)
-                 write_mimetypes(f)
--                f = open('calibre-ebook-edit.desktop', 'wb')
-+                f = open(os.path.join(dir, 'calibre-ebook-edit.desktop'), 'wb')
-                 f.write(ETWEAK)
-                 mt = [guess_type('a.' + x.lower())[0] for x in SUPPORTED]
-                 f.write('MimeType=%s;\n'%';'.join(mt))
-                 f.close()
--                f = open('calibre-gui.desktop', 'wb')
-+                f = open(os.path.join(dir, 'calibre-gui.desktop'), 'wb')
-                 f.write(GUI)
-                 write_mimetypes(f)
-                 f.close()
--                des = ('calibre-gui.desktop', 'calibre-lrfviewer.desktop',
--                        'calibre-ebook-viewer.desktop', 'calibre-ebook-edit.desktop')
--                for x in des:
--                    cmd = ['xdg-desktop-menu', 'install', '--noupdate', './'+x]
--                    cc(' '.join(cmd), shell=True)
--                    self.menu_resources.append(x)
--                cc(['xdg-desktop-menu', 'forceupdate'])
--                f = open('calibre-mimetypes.xml', 'wb')
-+                dir = os.path.join(self.opts.staging_sharedir,'../mime/packages/')
-+                os.makedirs(dir)
-+                f = open(os.path.join(dir, 'calibre.xml'), 'wb')
-                 f.write(MIME)
-                 f.close()
--                self.mime_resources.append('calibre-mimetypes.xml')
--                cc('xdg-mime install ./calibre-mimetypes.xml', shell=True)
-         except Exception:
-             if self.opts.fatal_errors:
-                 raise
-@@ -881,7 +846,7 @@ GUI = '''\
- [Desktop Entry]
- Version=1.0
- Type=Application
--Name=calibre
-+Name=Calibre
- GenericName=E-book library management
- Comment=E-book library management: Convert, view, share, catalogue all your e-books
- TryExec=calibre

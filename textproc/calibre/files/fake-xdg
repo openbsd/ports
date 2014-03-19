@@ -1,0 +1,99 @@
+#!/bin/ksh -e
+# ex:ts=4 sw=4:
+
+# To be placed in a directory at the start of PATH and symlinked to
+# xdg-mime, xdg-icon-resource and xdg-desktop-menu.  Intended for use
+# while doing fakedir installations of software that wants to call
+# xdg tools. Requires PREFIX to be passed in via the environment,
+# and does not perform any "finalization" steps, leaving that to
+# be handled by exec/unexec commands in PLISTs.
+#
+# Written for calibre in OpenBSD ports to avoid a bunch of nasty
+# patching that seems to change every release..
+
+# Copyright (c) 2014 Stuart Henderson <sthen@openbsd.org>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+me="${0##*/}"
+
+die() {
+	echo "fake-xdg [$me]: $*"
+	exit 1
+}
+
+run() {
+	echo "fake-xdg [$me]: $*"
+	$*
+}
+
+[[ -n $PREFIX ]] || die "PREFIX not set"
+[[ -n $1 ]] || die "no subcommand"
+
+case "$me" in
+	xdg-mime)
+		[[ $1 == install ]] || die "$me: unknown subcommand $1"
+		[[ -r $2 ]] || die "$me: not readable: $2"
+		[[ -d "$PREFIX/share/mime/packages" ]] || \
+		    run mkdir -p "$PREFIX/share/mime/packages"
+		run cp "$2" "$PREFIX/share/mime/packages/"
+		;;
+	xdg-icon-resource)
+		[[ $1 == install ]] || die "$me: unknown subcommand $1"
+		size=128x128
+		context=apps
+		while [[ -n $2 ]]; do
+			shift
+			[[ $1 == --noupdate ]] && continue
+			[[ $1 == --size ]] && size="${2}x${2}" && shift && continue
+			[[ $1 == --context ]] && context="$2" && shift && continue
+			[[ -r $1 ]] && icon="$1" && name="$2" && break
+			# name seems to be unused in real xdg-icon-resource?
+			die "$me: unknown/unhandled option $1"
+		done
+		[[ -z $icon ]] && die "$me: no icon name"
+		[[ -d "$PREFIX/share/icons/hicolor/$size/$context" ]] || \
+		    run mkdir -p "$PREFIX/share/icons/hicolor/$size/$context"
+		run cp "$icon" "$PREFIX/share/icons/hicolor/$size/$context/"
+		;;
+	xdg-desktop-menu)
+		if [[ $1 == install ]]; then
+			while [[ -n $2 ]]; do
+				shift
+				[[ $1 == --noupdate ]] && continue
+				# [[ $1 == --novendor ]] && continue
+				# [[ $1 == --mode ]] && continue
+				[[ $1 == --context ]] && context="$2" && shift && continue
+				[[ -r $1 ]] && break
+				die "$me: unknown/unhandled option $1"
+			done
+			for file; do
+				case "$file" in
+				*.desktop)	dir=$PREFIX/share/applications ;;
+				*.directory)	dir=$PREFIX/share/desktop-directories ;;
+				*)		die "$me: invalid extension for $file"
+				esac
+				[[ -r $file ]] || die "$me: $file not readable"
+				[[ -d "$dir" ]] || run mkdir -p "$dir"
+				run cp "$file" "$dir/"
+			done
+		elif [[ $1 == forceupdate ]]; then
+			:
+		else
+			die "$me: unknown subcommand $1"
+		fi
+		;;
+	*)
+		die "fake-xdg: unknown command: ${0##*/}"
+		;;
+esac
