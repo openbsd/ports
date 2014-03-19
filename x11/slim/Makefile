@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2014/01/30 16:58:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2014/03/19 13:53:29 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	simple login manager
 
 DISTNAME=	slim-1.3.6
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS=	slim	0.0 # 1.3
 

@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2013/10/31 09:03:33 dcoppa Exp $
+$OpenBSD: README,v 1.5 2014/03/19 13:53:29 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -10,7 +10,7 @@ If you're on a zaurus you'll have to change this setting to vt01 in
 ${SYSCONFDIR}/slim.conf.
 
 If you're on an arch which doesn't handle virtual terminals (like
-sparc, sparc64, TGA-based alpha, hp300 or vax), you will have to
+sparc, sparc64, TGA-based alpha or vax), you will have to
 explicitely set getty off on ttyC0 in /etc/ttys to avoid input
 conflicts:
 

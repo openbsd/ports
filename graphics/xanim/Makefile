@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/10/11 20:39:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.32 2014/03/19 13:53:29 jasper Exp $
 
 COMMENT=	X11 animation player with support for lots of formats
 
@@ -29,22 +29,13 @@ SUP_i386 = xa1.0_cyuv_linuxELF.o.Z:0 \
 xa2.0_cvid_linuxELF.o.Z:0 \
 xa2.0_iv32_linuxELF.o.Z:0
 
-SUP_m68k = xa1.0_cyuv_netbsd68k.o.Z:0 \
-xa2.0_cvid_netbsd68k.o.Z:0 \
-xa2.0_iv32_netbsd68k.o.Z:0
-
 # some architectures support more codecs
 .if (${MACHINE_ARCH} == i386)
 SUPFILES= ${SUP_i386}
 PATCH_LIST+=i386-patch
 .endif
 
-.if (${MACHINE_ARCH} == m68k)
-SUPFILES= ${SUP_m68k}
-PATCH_LIST+=m68k-patch
-.endif
-
-SUPDISTFILES=${SUP_i386} ${SUP_m68k}
+SUPDISTFILES=${SUP_i386}
 
 .if defined(SUPFILES)
 DISTFILES   += ${SUPFILES}
