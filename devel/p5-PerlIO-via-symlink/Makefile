@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/10/11 23:49:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2014/03/19 08:40:57 jasper Exp $
 
 COMMENT=	create symlink from IO handle
 
@@ -11,5 +11,11 @@ MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
+
+BUILD_DEPENDS=	devel/p5-Module-Install
+
+# Don't use the bundled ancient copy of Module::Install.
+post-extract:
+	rm -fr ${WRKSRC}/inc/
 
 .include <bsd.port.mk>
