@@ -1,34 +1,39 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/21 08:45:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2014/03/19 14:39:41 ajacoutot Exp $
 
 COMMENT=	fast and simple image viewer
 
-DISTNAME=	viewnior-1.3
+DISTNAME=	viewnior-1.4
 
 CATEGORIES=	graphics x11
 
 HOMEPAGE=	http://xsisqox.github.com/Viewnior/
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
-
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c drm expat
-WANTLIB += ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs stdc++ xcb
-WANTLIB += xcb-render xcb-shm z cairo
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 c cairo exiv2 expat ffi fontconfig
+WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
+WANTLIB += harfbuzz m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png pthread pthread-stubs stdc++ xcb xcb-render
+WANTLIB += xcb-shm z
 
-MASTER_SITES=	http://cloud.github.com/downloads/xsisqox/Viewnior/
+# original tarball is hosted on Dropbox
+MASTER_SITES=	https://distfiles.bsdfrog.org/
 
 MODULES=	devel/gettext \
 		textproc/intltool
 
-LIB_DEPENDS=	x11/gtk+2
+LIB_DEPENDS=	graphics/exiv2 \
+		x11/gtk+2
+
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+2,-guic
+
+# locate images using mimetype
+BUILD_DEPENDS +=misc/shared-mime-info
+RUN_DEPENDS +=	misc/shared-mime-info
 
 USE_GMAKE=	yes
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/08/19 16:30:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/03/19 14:39:41 ajacoutot Exp $
 @bin bin/viewnior
 @man man/man1/viewnior.1
 share/applications/viewnior.desktop
@@ -8,7 +8,10 @@ share/icons/hicolor/24x24/apps/viewnior.png
 share/icons/hicolor/32x32/apps/viewnior.png
 share/icons/hicolor/48x48/apps/viewnior.png
 share/icons/hicolor/scalable/apps/viewnior.svg
+share/locale/ar/LC_MESSAGES/viewnior.mo
 share/locale/bg/LC_MESSAGES/viewnior.mo
+share/locale/ca/LC_MESSAGES/viewnior.mo
+share/locale/ca@valencia/LC_MESSAGES/viewnior.mo
 share/locale/cs/LC_MESSAGES/viewnior.mo
 share/locale/da/LC_MESSAGES/viewnior.mo
 share/locale/de/LC_MESSAGES/viewnior.mo
@@ -21,8 +24,6 @@ share/locale/he/LC_MESSAGES/viewnior.mo
 share/locale/hu/LC_MESSAGES/viewnior.mo
 share/locale/it/LC_MESSAGES/viewnior.mo
 share/locale/ja/LC_MESSAGES/viewnior.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/viewnior.mo
 share/locale/nl/LC_MESSAGES/viewnior.mo
 share/locale/oc/
