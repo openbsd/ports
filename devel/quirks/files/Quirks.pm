@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.129 2014/03/16 12:04:34 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.130 2014/03/19 13:26:20 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -371,6 +371,7 @@ my $obsolete_reason = {
 	'memphis' => 3,
 	'bzip' => 3,
 	'silverstripe' => 1,
+	'dnetc' => 0,
 };
 
 # ->is_base_system($handle, $state):
