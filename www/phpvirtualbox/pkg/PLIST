@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/01/03 14:26:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/03/20 10:39:45 ajacoutot Exp $
 @unexec-delete rm -f /var/www/conf/modules/phpvirtualbox.conf
 phpvirtualbox/
 phpvirtualbox/CHANGELOG.txt
@@ -562,8 +562,6 @@ phpvirtualbox/panes/wizardNewHD.html
 phpvirtualbox/panes/wizardNewHDAdvanced.html
 phpvirtualbox/panes/wizardNewVM.html
 phpvirtualbox/panes/wizardNewVMAdvanced.html
-phpvirtualbox/phpvirtualbox.conf.dist
-@sample /var/www/conf/modules.sample/phpvirtualbox.conf
 phpvirtualbox/rdp.php
 phpvirtualbox/rdpweb/
 phpvirtualbox/rdpweb/RDPClientUI.swf

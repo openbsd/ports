@@ -1,19 +1,18 @@
-$OpenBSD: README,v 1.2 2013/05/05 19:24:13 jasper Exp $
+$OpenBSD: README,v 1.3 2014/03/20 10:39:45 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-phpvirtualbox has been installed into ${INSTDIR}
+phpVirtualBox has been installed into:
+    ${INSTDIR}
+It should point to the root directory of the HTTP server. e.g.
+    # ln -s ../phpvirtualbox /var/www/htdocs/phpvirtualbox
 
 Configuration is done in:
     ${INSTDIR}/config.php
 
 Default username/password is: admin/admin
-
-When using Apache, running the following command and restarting httpd(8)
-will make phpvirtualbox available from "http://<hostname>/phpvirtualbox".
-    # ln -s ../modules.sample/phpvirtualbox.conf /var/www/conf/modules
 
 VirtualBox configuration on Linux Red Hat(-like) systems
 ========================================================
@@ -26,7 +25,7 @@ phpVirtualBox user
 Since phpVirtualBox is mostly used in shared environments, it's a good
 idea to create a specific UNIX user for it.
 
-# adduser -c "PHP VirtualBox" -U -G vboxusers vbox
+# useradd -c "PHP VirtualBox" -U -G vboxusers vbox
 # passwd vbox
 
 This user credentials must match the "$username" and "$password" values
@@ -39,8 +38,8 @@ proprietary extension pack from Oracle.
 
 e.g.
 # su - vbox
-$ wget http://download.virtualbox.org/virtualbox/4.2.6/Oracle_VM_VirtualBox_Extension_Pack-4.2.6-82870.vbox-extpack
-$ VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-4.2.6-82870.vbox-extpack
+$ wget http://download.virtualbox.org/virtualbox/4.3.8/Oracle_VM_VirtualBox_Extension_Pack-4.3.8-92456.vbox-extpack
+$ VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-4.3.8-92456.vbox-extpack
 
 VirtualBox web service
 ----------------------
@@ -48,7 +47,7 @@ By default, the VirtualBox web service will not run and needs to be
 enabled.
 
 # chkconfig vboxweb-service on
-# echo "VBOXWEB_HOST=1.2.3.4" >> /etc/default/virtualbox
+# echo "VBOXWEB_HOST=127.0.0.1" >> /etc/default/virtualbox
 # echo "VBOXWEB_USER=vbox" >> /etc/default/virtualbox
 # /etc/init.d/vboxweb-service start
 
