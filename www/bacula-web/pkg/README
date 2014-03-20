@@ -1,10 +1,13 @@
-$OpenBSD: README,v 1.3 2013/05/05 19:24:13 jasper Exp $
+$OpenBSD: README,v 1.4 2014/03/20 12:43:21 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-bacula-web has been installed into ${INSTDIR}
+bacula-web has been installed into:
+    ${INSTDIR}
+It should point to the root directory of the HTTP server. e.g.
+    # ln -s ../bacula-web /var/www/htdocs/bacula-web
 
 bacula-web can work with a PostgreSQL, MySQL or SQLite3 database.
 Support for SQLite3 is included with the main php package; to use
@@ -13,7 +16,3 @@ another database, the corresponding package needs to be installed:
 
 Configuration is done in:
     ${INSTDIR}/application/config/config.php
-
-When using Apache, running the following command and restarting httpd(8)
-will make bacula-web available from "http://<hostname>/bacula-web".
-    # ln -s ../modules.sample/bacula-web.conf /var/www/conf/modules

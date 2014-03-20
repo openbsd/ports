@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2014/03/16 09:58:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2014/03/20 12:43:21 ajacoutot Exp $
 
 COMMENT=	monitoring and reporting tool for bacula(8)
 
 DISTNAME=	bacula-web-6.0.0
 EXTRACT_SUFX=	.tgz
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www sysutils
 
@@ -32,8 +32,6 @@ SUBST_VARS=	INSTDIR TINSTDIR
 do-install:
 	cp -Rp ${WRKSRC} ${INSTDIR}
 	rm ${PREFIX}/bacula-web/application/config/config.php.sample.orig
-	${SUBST_CMD} -c ${FILESDIR}/bacula-web.conf \
-		${INSTDIR}/bacula-web.conf.dist
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
 .include <bsd.port.mk>
