@@ -1,15 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/01/14 13:06:17 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/03/20 20:28:43 jasper Exp $
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/telepathy-spec/
 share/gtk-doc/html/telepathy-spec/Account.html
 share/gtk-doc/html/telepathy-spec/Account_Interface_Addressing1.html
 share/gtk-doc/html/telepathy-spec/Account_Interface_Avatar1.html
-share/gtk-doc/html/telepathy-spec/Account_Interface_External_Password_Storage1.html
-share/gtk-doc/html/telepathy-spec/Account_Interface_Hidden1.html
 share/gtk-doc/html/telepathy-spec/Account_Interface_Storage1.html
 share/gtk-doc/html/telepathy-spec/Account_Manager.html
-share/gtk-doc/html/telepathy-spec/Account_Manager_Interface_Hidden1.html
 share/gtk-doc/html/telepathy-spec/Authentication_TLS_Certificate.html
 share/gtk-doc/html/telepathy-spec/Call1_Content.html
 share/gtk-doc/html/telepathy-spec/Call1_Content_Interface_Audio_Control1.html
@@ -34,8 +31,6 @@ share/gtk-doc/html/telepathy-spec/Channel_Interface_Anonymity1.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Captcha_Authentication1.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Chat_State1.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Conference1.html
-share/gtk-doc/html/telepathy-spec/Channel_Interface_Credentials_Storage1.html
-share/gtk-doc/html/telepathy-spec/Channel_Interface_DTMF1.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Destroyable1.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_File_Transfer_Metadata1.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Group1.html
@@ -96,8 +91,8 @@ share/gtk-doc/html/telepathy-spec/Connection_Interface_Resources1.html
 share/gtk-doc/html/telepathy-spec/Connection_Interface_Service_Point1.html
 share/gtk-doc/html/telepathy-spec/Connection_Interface_Sidecars1.html
 share/gtk-doc/html/telepathy-spec/Connection_Manager.html
-share/gtk-doc/html/telepathy-spec/Connection_Manager_Interface_Account_Storage1.html
 share/gtk-doc/html/telepathy-spec/Debug1.html
+share/gtk-doc/html/telepathy-spec/Logger.html
 share/gtk-doc/html/telepathy-spec/NEWS
 share/gtk-doc/html/telepathy-spec/Protocol.html
 share/gtk-doc/html/telepathy-spec/Protocol_Interface_Addressing1.html
