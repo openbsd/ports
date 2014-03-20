@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.183 2014/03/18 08:08:00 ajacoutot Exp $
-
-# XXX remove '@exec ... gtk-2.0/gtk.immodules' after OPENBSD_5_5 is branched
-# XXX remove '@exec rm -f %D/share/icons/icon-theme.cache' after OPENBSD_5_5 is branched
+# $OpenBSD: Makefile,v 1.184 2014/03/20 08:51:52 ajacoutot Exp $
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-guic=		gtk+ icon theme caching utility
