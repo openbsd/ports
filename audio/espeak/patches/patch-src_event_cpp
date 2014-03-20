@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_event_cpp,v 1.2 2012/06/23 12:23:31 ajacoutot Exp $
---- src/event.cpp.orig	Fri Jan  6 18:03:00 2012
-+++ src/event.cpp	Sat Jun 23 12:36:01 2012
-@@ -40,6 +40,12 @@
+$OpenBSD: patch-src_event_cpp,v 1.3 2014/03/20 18:10:29 ajacoutot Exp $
+--- src/event.cpp.orig	Tue Mar  4 17:47:15 2014
++++ src/event.cpp	Thu Mar 20 19:02:13 2014
+@@ -42,6 +42,12 @@
  //>
  //<decls and function prototypes
  
@@ -12,13 +12,13 @@ $OpenBSD: patch-src_event_cpp,v 1.2 2012/06/23 12:23:31 ajacoutot Exp $
 +	    ((tvp)->tv_sec cmp (uvp)->tv_sec))
 +#endif
  
- // my_mutex: protects my_thread_is_talking, 
+ // my_mutex: protects my_thread_is_talking,
  static pthread_mutex_t my_mutex;
-@@ -404,10 +410,14 @@ ENTER("sleep_until_timeout_or_stop_request");
+@@ -410,10 +416,14 @@ ENTER("sleep_until_timeout_or_stop_request");
         to.tv_sec, to.tv_nsec,
         ts.tv_sec, ts.tv_nsec);
  
--	while ((err = sem_timedwait(&my_sem_stop_is_required, &ts)) == -1 
+-	while ((err = sem_timedwait(&my_sem_stop_is_required, &ts)) == -1
 -		&& errno == EINTR)
 +	while ((err = sem_trywait(&my_sem_stop_is_required)) == -1 
 +		&& (errno == EINTR || errno == EAGAIN))

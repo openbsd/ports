@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/05/20 08:15:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/03/20 18:10:29 ajacoutot Exp $
 @bin bin/espeak
 include/espeak/
 include/espeak/speak_lib.h
@@ -24,6 +24,7 @@ share/espeak-data/
 share/espeak-data/af_dict
 share/espeak-data/am_dict
 share/espeak-data/an_dict
+share/espeak-data/as_dict
 share/espeak-data/az_dict
 share/espeak-data/bg_dict
 share/espeak-data/bn_dict
@@ -37,11 +38,14 @@ share/espeak-data/en_dict
 share/espeak-data/eo_dict
 share/espeak-data/es_dict
 share/espeak-data/et_dict
+share/espeak-data/eu_dict
 share/espeak-data/fa_dict
 share/espeak-data/fi_dict
 share/espeak-data/fr_dict
 share/espeak-data/ga_dict
+share/espeak-data/gd_dict
 share/espeak-data/grc_dict
+share/espeak-data/gu_dict
 share/espeak-data/hbs_dict
 share/espeak-data/hi_dict
 share/espeak-data/hu_dict
@@ -57,6 +61,7 @@ share/espeak-data/kn_dict
 share/espeak-data/ko_dict
 share/espeak-data/ku_dict
 share/espeak-data/la_dict
+share/espeak-data/lfn_dict
 share/espeak-data/lt_dict
 share/espeak-data/lv_dict
 share/espeak-data/mbrola/
@@ -106,6 +111,7 @@ share/espeak-data/nci_dict
 share/espeak-data/ne_dict
 share/espeak-data/nl_dict
 share/espeak-data/no_dict
+share/espeak-data/or_dict
 share/espeak-data/pa_dict
 share/espeak-data/pap_dict
 share/espeak-data/phondata
@@ -239,6 +245,7 @@ share/espeak-data/voices/mb/mb-hu1-en
 share/espeak-data/voices/mb/mb-ic1
 share/espeak-data/voices/mb/mb-id1
 share/espeak-data/voices/mb/mb-ir1
+share/espeak-data/voices/mb/mb-ir2
 share/espeak-data/voices/mb/mb-it3
 share/espeak-data/voices/mb/mb-it4
 share/espeak-data/voices/mb/mb-la1
@@ -272,15 +279,21 @@ share/espeak-data/voices/other/eo
 share/espeak-data/voices/other/grc
 share/espeak-data/voices/other/jbo
 share/espeak-data/voices/other/la
+share/espeak-data/voices/other/lfn
 share/espeak-data/voices/other/sw
 share/espeak-data/voices/pt
 share/espeak-data/voices/test/
 share/espeak-data/voices/test/am
+share/espeak-data/voices/test/as
 share/espeak-data/voices/test/az
 share/espeak-data/voices/test/bn
+share/espeak-data/voices/test/eu
+share/espeak-data/voices/test/gd
+share/espeak-data/voices/test/gu
 share/espeak-data/voices/test/kl
 share/espeak-data/voices/test/ko
 share/espeak-data/voices/test/nci
+share/espeak-data/voices/test/or
 share/espeak-data/voices/test/pap
 share/espeak-data/voices/test/si
 share/espeak-data/voices/test/sl
