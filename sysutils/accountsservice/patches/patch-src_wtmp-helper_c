@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_wtmp-helper_c,v 1.1 2014/03/20 18:47:23 ajacoutot Exp $
+
+From e711bb55b332cea17d5f7ea15ae3a84ab071807f Mon Sep 17 00:00:00 2001
+From: Ryan Lortie <desrt@desrt.ca>
+Date: Thu, 20 Mar 2014 18:38:14 +0000
+Subject: wtmp-helper: rename stub generator
+
+--- src/wtmp-helper.c.orig	Thu Mar 20 02:08:10 2014
++++ src/wtmp-helper.c	Thu Mar 20 19:41:37 2014
+@@ -224,8 +224,8 @@ wtmp_helper_get_path_for_monitor (void)
+ #else /* HAVE_UTMPX_H */
+ 
+ struct passwd *
+-entry_generator_wtmp (GHashTable *users,
+-                      gpointer   *state)
++wtmp_helper_entry_generator (GHashTable *users,
++                             gpointer   *state)
+ {
+         return NULL;
+ }

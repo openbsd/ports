@@ -1,9 +1,6 @@
-$OpenBSD: patch-src_daemon_c,v 1.29 2014/03/20 17:55:43 ajacoutot Exp $
-
-HAVE_UTMPX_H: https://bugs.freedesktop.org/show_bug.cgi?id=76410
-
+$OpenBSD: patch-src_daemon_c,v 1.30 2014/03/20 18:47:23 ajacoutot Exp $
 --- src/daemon.c.orig	Thu Mar 20 02:08:10 2014
-+++ src/daemon.c	Thu Mar 20 18:43:53 2014
++++ src/daemon.c	Thu Mar 20 19:41:18 2014
 @@ -33,6 +33,10 @@
  #include <errno.h>
  #include <sys/types.h>
@@ -27,17 +24,7 @@ HAVE_UTMPX_H: https://bugs.freedesktop.org/show_bug.cgi?id=76410
  #define PATH_GROUP "/etc/group"
  #define PATH_GDM_CUSTOM "/etc/gdm/custom.conf"
  
-@@ -313,7 +321,9 @@ reload_users (Daemon *daemon)
-                 g_hash_table_add (local, name);
- 
-         /* Now add/update users from other sources, possibly non-local */
-+#ifdef HAVE_UTMPX_H
-         load_entries (daemon, users, wtmp_helper_entry_generator);
-+#endif
-         load_entries (daemon, users, entry_generator_cachedir);
- 
-         /* Mark which users are local, which are not */
-@@ -882,7 +892,11 @@ daemon_create_user_authorized_cb (Daemon              
+@@ -882,7 +890,11 @@ daemon_create_user_authorized_cb (Daemon              
          CreateUserData *cd = data;
          User *user;
          GError *error;
@@ -49,7 +36,7 @@ HAVE_UTMPX_H: https://bugs.freedesktop.org/show_bug.cgi?id=76410
  
          if (getpwnam (cd->user_name) != NULL) {
                  throw_error (context, ERROR_USER_EXISTS, "A user with name '%s' already exists", cd->user_name);
-@@ -899,9 +913,17 @@ daemon_create_user_authorized_cb (Daemon              
+@@ -899,9 +911,17 @@ daemon_create_user_authorized_cb (Daemon              
          if (cd->account_type == ACCOUNT_TYPE_ADMINISTRATOR) {
                  argv[4] = "-G";
                  argv[5] = ADMIN_GROUP;
@@ -67,7 +54,7 @@ HAVE_UTMPX_H: https://bugs.freedesktop.org/show_bug.cgi?id=76410
          }
          else if (cd->account_type == ACCOUNT_TYPE_STANDARD) {
                  argv[4] = "--";
-@@ -1088,6 +1110,34 @@ daemon_delete_user_authorized_cb (Daemon              
+@@ -1088,6 +1108,34 @@ daemon_delete_user_authorized_cb (Daemon              
                  return;
          }
  
@@ -102,7 +89,7 @@ HAVE_UTMPX_H: https://bugs.freedesktop.org/show_bug.cgi?id=76410
          sys_log (context, "delete user '%s' (%d)", pwent->pw_name, ud->uid);
  
          if (daemon->priv->autologin != NULL) {
-@@ -1113,11 +1163,18 @@ daemon_delete_user_authorized_cb (Daemon              
+@@ -1113,11 +1161,18 @@ daemon_delete_user_authorized_cb (Daemon              
  
          argv[0] = "/usr/sbin/userdel";
          if (ud->remove_files) {
