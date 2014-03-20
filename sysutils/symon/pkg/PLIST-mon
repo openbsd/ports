@@ -1,12 +1,11 @@
-@comment $OpenBSD: PLIST-mon,v 1.13 2011/03/02 07:13:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST-mon,v 1.14 2014/03/20 12:26:33 sthen Exp $
 @conflict symon-*
 @newgroup _symon:535
 @newuser _symon:535:_symon:daemon:symon Account:/var/empty:/sbin/nologin
 @bin libexec/symon
 @man man/man8/symon.8
 share/examples/symon/
+share/examples/symon/c_config.sh
 share/examples/symon/symon.conf
 @sample ${SYSCONFDIR}/symon.conf
-share/symon/
-share/symon/c_config.sh
 @rcscript ${RCDIR}/symon

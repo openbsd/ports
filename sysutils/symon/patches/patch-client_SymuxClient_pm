@@ -1,0 +1,20 @@
+$OpenBSD: patch-client_SymuxClient_pm,v 1.5 2014/03/20 12:26:33 sthen Exp $
+--- client/SymuxClient.pm.orig	Thu Mar 20 12:09:54 2014
++++ client/SymuxClient.pm	Thu Mar 20 12:10:05 2014
+@@ -267,6 +267,8 @@ Example:
+ 
+ =head2 METHODS
+ 
++=over 4
++
+ =item getitem (host, stream, item)
+ 
+ Refresh the measured data and get an item from a stream for a particular
+@@ -303,5 +305,7 @@ Example:
+ 		       "packets_out");
+     # which hosts packets_out was that?
+     print $sc->getsource();
++
++=back
+ 
+ =cut
