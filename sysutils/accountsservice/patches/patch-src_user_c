@@ -1,12 +1,6 @@
-$OpenBSD: patch-src_user_c,v 1.25 2014/01/30 10:01:33 ajacoutot Exp $
-
-From 3863f54e5efe8c3f929dc93ea026a17d5855a786 Mon Sep 17 00:00:00 2001
-From: Ray Strode <rstrode@redhat.com>
-Date: Wed, 29 Jan 2014 15:29:04 +0000
-Subject: user: fix memory leak in save_extra_data function
-
---- src/user.c.orig	Tue Oct 15 22:25:19 2013
-+++ src/user.c	Thu Jan 30 10:20:55 2014
+$OpenBSD: patch-src_user_c,v 1.26 2014/03/20 17:55:43 ajacoutot Exp $
+--- src/user.c.orig	Thu Mar 20 02:08:10 2014
++++ src/user.c	Thu Mar 20 18:24:45 2014
 @@ -123,7 +123,12 @@ account_type_from_pwent (struct passwd *pwent)
  {
          struct group *grp;
@@ -68,15 +62,7 @@ Subject: user: fix memory leak in save_extra_data function
                  locked = TRUE;
          }
          else {
-@@ -437,6 +465,7 @@ save_extra_data (User *user)
-                                              NULL);
-                 g_file_set_contents (filename, data, -1, &error);
-                 g_free (filename);
-+                g_free (data);
-         }
-         if (error) {
-                 g_warning ("Saving data for user %s failed: %s",
-@@ -1552,7 +1581,11 @@ user_change_locked_authorized_cb (Daemon              
+@@ -1553,7 +1581,11 @@ user_change_locked_authorized_cb (Daemon              
                           "%s account of user '%s' (%d)",
                           locked ? "locking" : "unlocking", user->user_name, user->uid);
                  argv[0] = "/usr/sbin/usermod";
@@ -88,7 +74,7 @@ Subject: user: fix memory leak in save_extra_data function
                  argv[2] = "--";
                  argv[3] = user->user_name;
                  argv[4] = NULL;
-@@ -1623,13 +1656,23 @@ user_change_account_type_authorized_cb (Daemon        
+@@ -1624,13 +1656,23 @@ user_change_account_type_authorized_cb (Daemon        
  {
          AccountType account_type = GPOINTER_TO_INT (data);
          GError *error;
@@ -112,7 +98,7 @@ Subject: user: fix memory leak in save_extra_data function
  
          if (user->account_type != account_type) {
                  sys_log (context,
-@@ -1643,17 +1686,35 @@ user_change_account_type_authorized_cb (Daemon        
+@@ -1644,17 +1686,35 @@ user_change_account_type_authorized_cb (Daemon        
                  }
                  wheel = grp->gr_gid;
  
@@ -148,7 +134,7 @@ Subject: user: fix memory leak in save_extra_data function
                          break;
                  case ACCOUNT_TYPE_STANDARD:
                  default:
-@@ -1662,14 +1723,26 @@ user_change_account_type_authorized_cb (Daemon        
+@@ -1663,14 +1723,26 @@ user_change_account_type_authorized_cb (Daemon        
                          break;
                  }
  

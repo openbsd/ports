@@ -1,20 +1,12 @@
-$OpenBSD: patch-src_daemon_c,v 1.28 2014/03/16 10:03:22 ajacoutot Exp $
+$OpenBSD: patch-src_daemon_c,v 1.29 2014/03/20 17:55:43 ajacoutot Exp $
 
-From cdee3f55a5821cc76ad270b8c709a7bb1e3ae1b2 Mon Sep 17 00:00:00 2001
-From: Ryan Lortie <desrt@desrt.ca>
-Date: Thu, 13 Mar 2014 22:51:18 +0000
-Subject: daemon: emulate fgetpwent() if we don't have it
+HAVE_UTMPX_H: https://bugs.freedesktop.org/show_bug.cgi?id=76410
 
-From 980692e6b9cfe4a34e22f566e0981a8c549e4348 Mon Sep 17 00:00:00 2001
-From: Matthias Clasen <mclasen@redhat.com>
-Date: Fri, 01 Nov 2013 21:09:25 +0000
-Subject: Avoid deleting the root user
-
---- src/daemon.c.orig	Tue Oct 15 22:25:19 2013
-+++ src/daemon.c	Tue Feb  4 09:49:15 2014
-@@ -36,6 +36,10 @@
- #include <utmpx.h>
- #endif
+--- src/daemon.c.orig	Thu Mar 20 02:08:10 2014
++++ src/daemon.c	Thu Mar 20 18:43:53 2014
+@@ -33,6 +33,10 @@
+ #include <errno.h>
+ #include <sys/types.h>
  
 +#ifdef __OpenBSD__
 +#include <grp.h> /* getgrnam */
@@ -23,7 +15,7 @@ Subject: Avoid deleting the root user
  #include <glib.h>
  #include <glib/gi18n.h>
  #include <glib-object.h>
-@@ -48,7 +52,11 @@
+@@ -46,7 +50,11 @@
  #include "util.h"
  
  #define PATH_PASSWD "/etc/passwd"
@@ -34,28 +26,18 @@ Subject: Avoid deleting the root user
 +#endif
  #define PATH_GROUP "/etc/group"
  #define PATH_GDM_CUSTOM "/etc/gdm/custom.conf"
- #ifdef HAVE_UTMPX_H
-@@ -307,6 +315,7 @@ entry_generator_fgetpwent (GHashTable *users,
-                            gpointer   *state)
- {
-         struct passwd *pwent;
-+#ifdef HAVE_FGETPWENT
-         FILE *fp;
  
-         /* First iteration */
-@@ -328,6 +337,11 @@ entry_generator_fgetpwent (GHashTable *users,
-         /* Last iteration */
-         fclose (fp);
-         *state = NULL;
-+#else
-+        while ((pwent = getpwent ()) != NULL)
-+                return pwent;
-+        endpwent();
+@@ -313,7 +321,9 @@ reload_users (Daemon *daemon)
+                 g_hash_table_add (local, name);
+ 
+         /* Now add/update users from other sources, possibly non-local */
++#ifdef HAVE_UTMPX_H
+         load_entries (daemon, users, wtmp_helper_entry_generator);
 +#endif
-         return NULL;
- }
+         load_entries (daemon, users, entry_generator_cachedir);
  
-@@ -1051,7 +1065,11 @@ daemon_create_user_authorized_cb (Daemon              
+         /* Mark which users are local, which are not */
+@@ -882,7 +892,11 @@ daemon_create_user_authorized_cb (Daemon              
          CreateUserData *cd = data;
          User *user;
          GError *error;
@@ -67,7 +49,7 @@ Subject: Avoid deleting the root user
  
          if (getpwnam (cd->user_name) != NULL) {
                  throw_error (context, ERROR_USER_EXISTS, "A user with name '%s' already exists", cd->user_name);
-@@ -1068,9 +1086,17 @@ daemon_create_user_authorized_cb (Daemon              
+@@ -899,9 +913,17 @@ daemon_create_user_authorized_cb (Daemon              
          if (cd->account_type == ACCOUNT_TYPE_ADMINISTRATOR) {
                  argv[4] = "-G";
                  argv[5] = ADMIN_GROUP;
@@ -85,16 +67,7 @@ Subject: Avoid deleting the root user
          }
          else if (cd->account_type == ACCOUNT_TYPE_STANDARD) {
                  argv[4] = "--";
-@@ -1232,7 +1258,7 @@ daemon_uncache_user (AccountsAccounts      *accounts,
- }
- 
- typedef struct {
--        gint64 uid;
-+        uid_t uid;
-         gboolean remove_files;
- } DeleteUserData;
- 
-@@ -1257,6 +1283,34 @@ daemon_delete_user_authorized_cb (Daemon              
+@@ -1088,6 +1110,34 @@ daemon_delete_user_authorized_cb (Daemon              
                  return;
          }
  
@@ -129,7 +102,7 @@ Subject: Avoid deleting the root user
          sys_log (context, "delete user '%s' (%d)", pwent->pw_name, ud->uid);
  
          if (daemon->priv->autologin != NULL) {
-@@ -1282,11 +1336,18 @@ daemon_delete_user_authorized_cb (Daemon              
+@@ -1113,11 +1163,18 @@ daemon_delete_user_authorized_cb (Daemon              
  
          argv[0] = "/usr/sbin/userdel";
          if (ud->remove_files) {
@@ -147,20 +120,4 @@ Subject: Avoid deleting the root user
 +#endif
          }
          else {
-                 argv[1] = "--";
-@@ -1314,13 +1375,13 @@ daemon_delete_user (AccountsAccounts      *accounts,
-         Daemon *daemon = (Daemon*)accounts;
-         DeleteUserData *data;
- 
--        if (uid == 0) {
-+        if ((uid_t)uid == 0) {
-                 throw_error (context, ERROR_FAILED, "Refuse to delete root user");
-                 return TRUE;
-         }
- 
-         data = g_new0 (DeleteUserData, 1);
--        data->uid = uid;
-+        data->uid = (uid_t)uid;
-         data->remove_files = remove_files;
- 
-         daemon_local_check_auth (daemon,
+                 argv[1] = "-f";

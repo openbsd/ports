@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.52 2014/02/04 08:53:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2014/03/20 17:55:43 ajacoutot Exp $
 
 # XXX fix change password (gnome-cc run-passwd.c: argv[0])
 
 COMMENT=	D-Bus interface for user account query and manipulation
 
-DISTNAME=	accountsservice-0.6.35
+DISTNAME=	accountsservice-0.6.36
 EXTRACT_SUFX=	.tar.xz
-REVISION=	3
 
 SHARED_LIBS +=  accountsservice           0.0 # 0.0
 
@@ -43,14 +42,13 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-introspection \
 		--disable-systemd
 
-# patch-configure_ac
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.69
-
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/accountsservice
 
 pre-configure:
 	perl -pi -e 's,/etc/gdm,${SYSCONFDIR}/gdm,g' \
 		${WRKSRC}/src/daemon.c
+
+post-install:
+	rm -r ${WRKINST}/var/lib
 
 .include <bsd.port.mk>
