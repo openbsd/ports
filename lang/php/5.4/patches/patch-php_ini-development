@@ -1,6 +1,6 @@
-$OpenBSD: patch-php_ini-development,v 1.5 2014/03/18 15:18:36 sthen Exp $
---- php.ini-development.orig.port	Wed Mar  5 08:07:14 2014
-+++ php.ini-development	Tue Mar 18 14:26:53 2014
+$OpenBSD: patch-php_ini-development,v 1.6 2014/03/20 13:02:19 ajacoutot Exp $
+--- php.ini-development.orig.port	Wed Mar  5 09:07:14 2014
++++ php.ini-development	Thu Mar 20 14:01:33 2014
 @@ -693,11 +693,8 @@ default_mimetype = "text/html"
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
@@ -31,6 +31,15 @@ $OpenBSD: patch-php_ini-development,v 1.5 2014/03/18 15:18:36 sthen Exp $
  
  ; Whether to allow include/require to open URLs (like http:// or ftp://) as files.
  ; http://php.net/allow-url-include
+@@ -906,7 +904,7 @@ cli_server.color = On
+ [Date]
+ ; Defines the default timezone used by the date functions
+ ; http://php.net/date.timezone
+-;date.timezone =
++date.timezone = UTC
+ 
+ ; http://php.net/date.default-latitude
+ ;date.default_latitude = 31.7667
 @@ -985,16 +983,6 @@ pdo_mysql.default_socket=
  ;phar.cache_list =
  

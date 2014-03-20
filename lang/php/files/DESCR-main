@@ -10,10 +10,3 @@ This package installs a stand-alone binary which can be used for
 command-line scripts, as well as an Apache module. It also contains the
 pdo_sqlite driver that implements the PHP Data Objects (PDO) interface
 to enable access to SQLite 3 databases.
-
-By default this port uses the suhosin patch.
-The suhosin patch adds security hardening features to PHP to protect
-your servers on the one hand against a number of well known problems in
-PHP applications and on the other hand against potential unknown
-vulnerabilities within those applications or the PHP core itself.
-http://www.hardened-php.net/suhosin/index.html

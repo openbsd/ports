@@ -1,6 +1,6 @@
-$OpenBSD: patch-php_ini-production,v 1.7 2012/08/05 12:00:54 sthen Exp $
---- php.ini-production.orig.port	Thu Dec 15 10:31:02 2011
-+++ php.ini-production	Wed Jan 18 13:57:26 2012
+$OpenBSD: patch-php_ini-production,v 1.8 2014/03/20 13:02:19 ajacoutot Exp $
+--- php.ini-production.orig.port	Tue Dec 10 20:04:57 2013
++++ php.ini-production	Thu Mar 20 13:36:51 2014
 @@ -793,11 +793,8 @@ default_mimetype = "text/html"
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
@@ -31,6 +31,15 @@ $OpenBSD: patch-php_ini-production,v 1.7 2012/08/05 12:00:54 sthen Exp $
  
  ; Whether to allow include/require to open URLs (like http:// or ftp://) as files.
  ; http://php.net/allow-url-include
+@@ -1005,7 +1003,7 @@ default_socket_timeout = 60
+ [Date]
+ ; Defines the default timezone used by the date functions
+ ; http://php.net/date.timezone
+-;date.timezone =
++date.timezone = UTC
+ 
+ ; http://php.net/date.default-latitude
+ ;date.default_latitude = 31.7667
 @@ -1906,6 +1904,446 @@ ldap.max_links = -1
  
  [dba]
