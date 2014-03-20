@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_modules_module-detect_c,v 1.7 2013/05/22 18:45:23 ajacoutot Exp $
---- src/modules/module-detect.c.orig	Wed Sep 26 13:27:01 2012
-+++ src/modules/module-detect.c	Wed May 22 17:10:11 2013
+$OpenBSD: patch-src_modules_module-detect_c,v 1.8 2014/03/20 17:33:09 ajacoutot Exp $
+--- src/modules/module-detect.c.orig	Thu Jan 23 19:57:55 2014
++++ src/modules/module-detect.c	Thu Mar 20 15:49:28 2014
 @@ -34,6 +34,10 @@
  #include <sys/types.h>
  #include <sys/stat.h>
@@ -14,7 +14,7 @@ $OpenBSD: patch-src_modules_module-detect_c,v 1.7 2013/05/22 18:45:23 ajacoutot 
  #include <pulsecore/modargs.h>
 @@ -48,7 +52,9 @@ PA_MODULE_DESCRIPTION("Detect available audio hardware
  PA_MODULE_VERSION(PACKAGE_VERSION);
- PA_MODULE_LOAD_ONCE(TRUE);
+ PA_MODULE_LOAD_ONCE(true);
  PA_MODULE_USAGE("just-one=<boolean>");
 +#ifdef __linux__
  PA_MODULE_DEPRECATED("Please use module-udev-detect instead of module-detect!");

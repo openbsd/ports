@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_daemon_main_c,v 1.10 2013/06/17 14:47:57 ajacoutot Exp $
---- src/daemon/main.c.orig	Mon Jun 17 16:30:28 2013
-+++ src/daemon/main.c	Mon Jun 17 16:30:48 2013
-@@ -989,10 +989,12 @@ int main(int argc, char *argv[]) {
+$OpenBSD: patch-src_daemon_main_c,v 1.11 2014/03/20 17:33:09 ajacoutot Exp $
+--- src/daemon/main.c.orig	Tue Feb 25 15:01:58 2014
++++ src/daemon/main.c	Thu Mar 20 15:49:28 2014
+@@ -1002,10 +1002,12 @@ int main(int argc, char *argv[]) {
  
      pa_disable_sigpipe();
  
@@ -13,4 +13,4 @@ $OpenBSD: patch-src_daemon_main_c,v 1.10 2013/06/17 14:47:57 ajacoutot Exp $
 +#endif
  
      if (conf->lock_memory) {
- #ifdef HAVE_SYS_MMAN_H
+ #if defined(HAVE_SYS_MMAN_H) && !defined(__ANDROID__)

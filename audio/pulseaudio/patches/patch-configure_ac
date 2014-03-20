@@ -1,16 +1,16 @@
-$OpenBSD: patch-configure_ac,v 1.8 2013/06/04 15:32:03 ajacoutot Exp $
---- configure.ac.orig	Mon Jun  3 20:43:40 2013
-+++ configure.ac	Tue Jun  4 16:12:29 2013
-@@ -161,7 +161,7 @@ esac
+$OpenBSD: patch-configure_ac,v 1.9 2014/03/20 17:33:09 ajacoutot Exp $
+--- configure.ac.orig	Sat Feb 15 09:33:32 2014
++++ configure.ac	Thu Mar 20 15:54:34 2014
+@@ -174,7 +174,7 @@ esac
  #### Compiler flags ####
  
  AX_APPEND_COMPILE_FLAGS(
--    [-Wall -W -Wextra -pipe -Wno-long-long -Wno-overlength-strings -Wunsafe-loop-optimizations -Wundef -Wformat=2 -Wlogical-op -Wsign-compare -Wformat-security -Wmissing-include-dirs -Wformat-nonliteral -Wold-style-definition -Wpointer-arith -Winit-self -Wdeclaration-after-statement -Wfloat-equal -Wmissing-prototypes -Wstrict-prototypes -Wredundant-decls -Wmissing-declarations -Wmissing-noreturn -Wshadow -Wendif-labels -Wcast-align -Wstrict-aliasing -Wwrite-strings -Wno-unused-parameter -ffast-math -Wp,-D_FORTIFY_SOURCE=2 -fno-common -fdiagnostics-show-option],
-+    [-Wall -W -Wextra -pipe -Wno-long-long -Wno-overlength-strings -Wunsafe-loop-optimizations -Wundef -Wformat=2 -Wlogical-op -Wsign-compare -Wformat-security -Wmissing-include-dirs -Wformat-nonliteral -Wold-style-definition -Wpointer-arith -Winit-self -Wdeclaration-after-statement -Wfloat-equal -Wmissing-prototypes -Wstrict-prototypes -Wmissing-declarations -Wmissing-noreturn -Wshadow -Wendif-labels -Wcast-align -Wstrict-aliasing -Wwrite-strings -Wno-unused-parameter -ffast-math -Wp,-D_FORTIFY_SOURCE=2 -fno-common -fdiagnostics-show-option],
+-    [-Wall -W -Wextra -pipe -Wno-long-long -Wno-overlength-strings -Wunsafe-loop-optimizations -Wundef -Wformat=2 -Wlogical-op -Wsign-compare -Wformat-security -Wmissing-include-dirs -Wformat-nonliteral -Wold-style-definition -Wpointer-arith -Winit-self -Wdeclaration-after-statement -Wfloat-equal -Wmissing-prototypes -Wstrict-prototypes -Wredundant-decls -Wmissing-declarations -Wmissing-noreturn -Wshadow -Wendif-labels -Wcast-align -Wstrict-aliasing -Wwrite-strings -Wno-unused-parameter -ffast-math -fno-common -fdiagnostics-show-option],
++    [-Wall -W -Wextra -pipe -Wno-long-long -Wno-overlength-strings -Wunsafe-loop-optimizations -Wundef -Wformat=2 -Wlogical-op -Wsign-compare -Wformat-security -Wmissing-include-dirs -Wformat-nonliteral -Wold-style-definition -Wpointer-arith -Winit-self -Wdeclaration-after-statement -Wfloat-equal -Wmissing-prototypes -Wstrict-prototypes -Wmissing-declarations -Wmissing-noreturn -Wshadow -Wendif-labels -Wcast-align -Wstrict-aliasing -Wwrite-strings -Wno-unused-parameter -ffast-math -fno-common -fdiagnostics-show-option],
      [], [-pedantic -Werror])
  
  # Only enable fastpath asserts when doing a debug build, e.g. from bootstrap.sh.
-@@ -991,7 +991,7 @@ AS_IF([test "x$HAVE_DBUS" = "x1"], AC_DEFINE([HAVE_DBU
+@@ -988,7 +988,7 @@ AS_IF([test "x$HAVE_DBUS" = "x1"], AC_DEFINE([HAVE_DBU
  
  PA_MACHINE_ID="${sysconfdir}/machine-id"
  AX_DEFINE_DIR(PA_MACHINE_ID, PA_MACHINE_ID, [D-Bus machine-id file])
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure_ac,v 1.8 2013/06/04 15:32:03 ajacoutot Exp $
  AX_DEFINE_DIR(PA_MACHINE_ID_FALLBACK, PA_MACHINE_ID_FALLBACK,
  	      [Fallback machine-id file])
  
-@@ -1220,9 +1220,9 @@ fi
+@@ -1234,9 +1234,9 @@ fi
  
  PA_SYSTEM_RUNTIME_PATH="${localstatedir}/run/pulse"
  AX_DEFINE_DIR(PA_SYSTEM_RUNTIME_PATH, PA_SYSTEM_RUNTIME_PATH, [System runtime dir])

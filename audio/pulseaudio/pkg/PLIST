@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2013/06/04 15:32:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2014/03/20 17:33:09 ajacoutot Exp $
 @newgroup _pulse:683
 @newgroup _pulse-access:684
 @newuser _pulse:683:683:daemon:PulseAudio System Daemon:/var/run/pulse:/sbin/nologin
@@ -121,7 +121,9 @@ lib/pulse-${VERSION}/modules/module-stream-restore.so
 lib/pulse-${VERSION}/modules/module-suspend-on-idle.so
 lib/pulse-${VERSION}/modules/module-switch-on-connect.so
 lib/pulse-${VERSION}/modules/module-switch-on-port-available.so
+lib/pulse-${VERSION}/modules/module-tunnel-sink-new.so
 lib/pulse-${VERSION}/modules/module-tunnel-sink.so
+lib/pulse-${VERSION}/modules/module-tunnel-source-new.so
 lib/pulse-${VERSION}/modules/module-tunnel-source.so
 lib/pulse-${VERSION}/modules/module-virtual-sink.so
 lib/pulse-${VERSION}/modules/module-virtual-source.so
@@ -134,14 +136,16 @@ lib/pulse-${VERSION}/modules/module-x11-xsmp.so
 lib/pulseaudio/
 lib/pulseaudio/libpulsecommon-${VERSION}.la
 lib/pulseaudio/libpulsecommon-${VERSION}.so
-libexec/pulse/
 @man man/man1/esdcompat.1
 @man man/man1/pacat.1
 @man man/man1/pacmd.1
 @man man/man1/pactl.1
 @man man/man1/paplay.1
 @man man/man1/pasuspender.1
+@man man/man1/pax11publish.1
 @man man/man1/pulseaudio.1
+@man man/man1/start-pulseaudio-kde.1
+@man man/man1/start-pulseaudio-x11.1
 @man man/man5/default.pa.5
 @man man/man5/pulse-cli-syntax.5
 @man man/man5/pulse-client.conf.5

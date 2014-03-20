@@ -1,14 +1,14 @@
-$OpenBSD: patch-src_daemon_caps_c,v 1.1 2013/06/17 14:47:57 ajacoutot Exp $
---- src/daemon/caps.c.orig	Mon Jun 17 16:31:21 2013
-+++ src/daemon/caps.c	Mon Jun 17 16:30:54 2013
-@@ -86,8 +86,10 @@ void pa_drop_caps(void) {
-     pa_assert_se(cap_set_proc(caps) == 0);
-     pa_assert_se(cap_free(caps) == 0);
- #else
-+# ifdef __linux__
+$OpenBSD: patch-src_daemon_caps_c,v 1.2 2014/03/20 17:33:09 ajacoutot Exp $
+--- src/daemon/caps.c.orig	Wed Jan 29 20:48:03 2014
++++ src/daemon/caps.c	Thu Mar 20 15:52:01 2014
+@@ -93,8 +93,10 @@ void pa_drop_caps(void) {
+ #error "Don't know how to do capabilities on your system.  Please send a patch."
+ #endif /* __linux__ */
+ #else /* HAVE_SYS_CAPABILITY_H */
++#if 0
      pa_log_warn("Normally all extra capabilities would be dropped now, but "
-                 "that's impossible because this Pulseaudio was built without "
-                 "libcap support.");
-+# endif
+                 "that's impossible because PulseAudio was built without "
+                 "capabilities support.");
++#endif
  #endif
  }

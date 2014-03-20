@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_tests_mult-s16-test_c,v 1.1 2013/06/04 15:32:04 ajacoutot Exp $
---- src/tests/mult-s16-test.c.orig	Tue Jun  4 16:56:03 2013
-+++ src/tests/mult-s16-test.c	Tue Jun  4 16:57:11 2013
+$OpenBSD: patch-src_tests_mult-s16-test_c,v 1.2 2014/03/20 17:33:09 ajacoutot Exp $
+--- src/tests/mult-s16-test.c.orig	Thu Jan 23 19:57:55 2014
++++ src/tests/mult-s16-test.c	Thu Mar 20 15:56:34 2014
 @@ -30,6 +30,14 @@
  #include <pulsecore/random.h>
  #include <pulsecore/macro.h>
@@ -13,6 +13,6 @@ $OpenBSD: patch-src_tests_mult-s16-test_c,v 1.1 2013/06/04 15:32:04 ajacoutot Ex
 +# endif
 +#endif
 +
- #define PA_CPU_TEST_RUN_START(l, t1, t2)                        \
- {                                                               \
-     int _j, _k;                                                 \
+ #include "runtime-test-util.h"
+ 
+ static inline int32_t pa_mult_s16_volume_32(int16_t v, int32_t cv) {

@@ -1,4 +1,4 @@
-/* $OpenBSD: module-sndio-symdef.h,v 1.1 2012/09/28 17:09:03 eric Exp $ */
+/* $OpenBSD: module-sndio-symdef.h,v 1.2 2014/03/20 17:33:09 ajacoutot Exp $ */
 
 #ifndef foomodulesndiosymdeffoo
 #define foomodulesndiosymdeffoo
@@ -26,6 +26,6 @@ const char* pa__get_description(void);
 const char* pa__get_usage(void);
 const char* pa__get_version(void);
 const char* pa__get_deprecated(void);
-pa_bool_t pa__load_once(void);
+bool pa__load_once(void);
 
 #endif

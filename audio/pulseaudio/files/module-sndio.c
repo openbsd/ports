@@ -1,4 +1,4 @@
-/* $OpenBSD: module-sndio.c,v 1.6 2013/05/23 06:50:26 ajacoutot Exp $ */
+/* $OpenBSD: module-sndio.c,v 1.7 2014/03/20 17:33:09 ajacoutot Exp $ */
 /*
  * Copyright (c) 2012 Eric Faurot <eric@openbsd.org>
  *
@@ -49,7 +49,7 @@
 PA_MODULE_AUTHOR("Eric Faurot");
 PA_MODULE_DESCRIPTION("OpenBSD sndio sink/source");
 PA_MODULE_VERSION("0.0");
-PA_MODULE_LOAD_ONCE(FALSE);
+PA_MODULE_LOAD_ONCE(false);
 PA_MODULE_USAGE(
 	"sink_name=<name for the sink> "
 	"sink_properties=<properties for the sink> "
@@ -459,7 +459,7 @@ sndio_thread(void *arg)
 
 		mio_pollfd(u->mio, fds_mio, POLLIN);
 
-		if ((ret = pa_rtpoll_run(u->rtpoll, TRUE)) < 0)
+		if ((ret = pa_rtpoll_run(u->rtpoll, true)) < 0)
 	    		goto fail;
 		if (ret == 0)
 	    		goto finish;
@@ -501,8 +501,8 @@ sndio_thread(void *arg)
 int
 pa__init(pa_module *m)
 {
+	bool			 record = false, playback = true;
 	pa_modargs		*ma = NULL;
-	pa_bool_t		 record = FALSE, playback = TRUE;
 	pa_sample_spec		 ss;
 	pa_channel_map		 map;
 	pa_sink_new_data	 sink;
@@ -646,10 +646,10 @@ pa__init(pa_module *m)
 		pa_sink_new_data_init(&sink);
 		sink.driver = __FILE__;
 		sink.module = m;
-		sink.namereg_fail = TRUE;
+		sink.namereg_fail = true;
 		name = pa_modargs_get_value(ma, "sink_name", NULL);
 		if (name == NULL) {
-			sink.namereg_fail = FALSE;
+			sink.namereg_fail = false;
 			snprintf(buf, sizeof (buf), "sndio-sink");
 			name = buf;
 		}
@@ -706,10 +706,10 @@ pa__init(pa_module *m)
 		pa_source_new_data_init(&source);
 		source.driver = __FILE__;
 		source.module = m;
-		source.namereg_fail = TRUE;
+		source.namereg_fail = true;
 		name = pa_modargs_get_value(ma, "source_name", NULL);
 		if (name == NULL) {
-			source.namereg_fail = FALSE;
+			source.namereg_fail = false;
 			snprintf(buf, sizeof (buf), "sndio-source");
 			name = buf;
 		}
@@ -757,7 +757,7 @@ pa__init(pa_module *m)
 	}
 
 	pa_log_debug("buffer: frame=%u bytes=%zu msec=%u", u->par.bufsz,
-	    u->bufsz,  pa_bytes_to_usec(u->bufsz, &u->sink->sample_spec));
+	    u->bufsz, (unsigned int) pa_bytes_to_usec(u->bufsz, &u->sink->sample_spec));
 
 	pa_memchunk_reset(&u->memchunk);
 
