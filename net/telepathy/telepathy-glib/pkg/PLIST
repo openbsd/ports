@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2012/09/28 14:26:40 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.19 2014/03/20 21:10:20 jasper Exp $
 include/telepathy-1.0/
 include/telepathy-1.0/telepathy-glib/
 include/telepathy-1.0/telepathy-glib/_gen/
@@ -279,7 +279,9 @@ share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-mail.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-manager.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-powersaving.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-presence.html
+share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-renaming.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-requests.html
+share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-sidecars.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection-simple-presence.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-connection.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-contact-search-result.html
