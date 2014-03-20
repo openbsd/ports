@@ -1,28 +1,29 @@
-# $OpenBSD: Makefile,v 1.5 2013/04/23 23:04:45 jturner Exp $
+# $OpenBSD: Makefile,v 1.6 2014/03/20 11:17:09 sthen Exp $
 
-COMMENT = run arbitrary commands when files change
+COMMENT =	run arbitrary commands when files change
 
-DISTNAME = entr-1.9
-REV = 587c18272485
+DISTNAME =	entr-2.8
+REV =		9192ece7198c
 
-CATEGORIES = sysutils
+CATEGORIES =	sysutils
 
-HOMEPAGE = http://entrproject.org/
+HOMEPAGE =	http://entrproject.org/
 
-MAINTAINER = Eric Radman <ericshane@eradman.com>
+MAINTAINER =	Eric Radman <ericshane@eradman.com>
 
 # ISC
 PERMIT_PACKAGE_CDROM = Yes
 
 WANTLIB += c
 
-MASTER_SITES = http://entrproject.org/code/ \
-	https://bitbucket.org/eradman/entr/get/
+MASTER_SITES =	http://entrproject.org/code/ \
+		https://bitbucket.org/eradman/entr/get/
 
-MAKE_FILE = Makefile.bsd
-MAKE_FLAGS = CC="${CC}" LDFLAGS="${LDFLAGS}"
-WRKDIST = ${WRKDIR}/eradman-entr-${REV}
+MAKE_FILE =	Makefile.bsd
+MAKE_FLAGS =	CC="${CC}" LDFLAGS="${LDFLAGS}"
+WRKDIST =	${WRKDIR}/eradman-entr-${REV}
+FAKE_FLAGS =	DESTDIR=""
 
-TEST_TARGET = test
+TEST_TARGET =	test
 
 .include <bsd.port.mk>
