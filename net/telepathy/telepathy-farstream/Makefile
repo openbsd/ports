@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2013/09/27 17:34:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2014/03/20 20:23:51 jasper Exp $
 
 COMMENT=		flexible communications framework, farstream component
 
-DISTNAME=		telepathy-farstream-0.6.0
+DISTNAME=		telepathy-farstream-0.6.1
 
 HOMEPAGE=		http://www.freedesktop.org/wiki/Software/Farstream
 
-SHARED_LIBS +=  telepathy-farstream       1.0 # 3.0
+SHARED_LIBS +=  telepathy-farstream       1.0 # 3.1
 
 MASTER_SITES=		${MASTER_SITES_TP:=telepathy-farstream/}
 
