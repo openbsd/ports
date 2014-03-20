@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:10:55 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2014/03/20 06:50:16 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		generate QR Code with Imager using libqrencode
 
-DISTNAME=		Imager-QRCode-0.033
-REVISION=		0
+DISTNAME=		Imager-QRCode-0.034
 CATEGORIES=		graphics
 
 # perl
