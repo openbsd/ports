@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2014/03/10 09:17:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2014/03/20 20:12:17 jasper Exp $
 
 COMMENT=	framework for making media discovery and browsing easy
 
 GNOME_PROJECT=	grilo
-GNOME_VERSION=	0.2.9
+GNOME_VERSION=	0.2.10
 API=		0.2
 SUBST_VARS=	API
 
