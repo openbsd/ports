@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.14 2013/10/25 16:16:23 sthen Exp $
+$OpenBSD: README-main,v 1.15 2014/03/20 16:25:21 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -74,26 +74,55 @@ Two web-based user interfaces are available for Icinga:
 
 1) icinga-cgi: the classic (but improved) Nagios-style interface
 
-   To enable icinga-cgi, link the provided httpd.conf snippet:
+   nginx doesn't support CGI scripts directly; instead the slowcgi(8) wrapper
+   must be used. Enable it at startup:
 
-      $ sudo ln -s /var/www/conf/modules.sample/icinga-cgi.conf \
-         /var/www/conf/modules
+   # echo slowcgi_flags= >> /etc/rc.conf.local
+   # /etc/rc.d/slowcgi start
 
-   You may wish to modify this file.  By default it uses HTTP basic
-   authentication; you can create the password file as follows:
+   And add a configuration section like this to /etc/nginx/nginx.conf:
 
-      $ sudo touch ${SYSCONFDIR}/htpasswd.users
-      $ sudo htpasswd ${SYSCONFDIR}/htpasswd.users <username>
+   location /icinga/ {
+	alias		/icinga-cgi/;
+	satisfy		any;
+	allow		127.0.0.1/32;
+	allow		::1/128;
+	auth_basic	"Icinga Access";
+	auth_basic_user_file /etc/icinga/htpasswd.users;
+   }
+   location /cgi-bin/icinga/ {
+	satisfy		any;
+	allow		127.0.0.1/32;
+	allow		::1/128;
+	root		/;
+	auth_basic	"Icinga Access";
+	auth_basic_user_file /etc/icinga/htpasswd.users;
+	try_files	$uri =404;
+	fastcgi_pass	unix:run/slowcgi.sock;
+	fastcgi_param	REMOTE_USER $remote_user;
+	include		fastcgi_params;
+   }
 
-   When done, restart the web server:
+   The example above permits access from the local machine without password,
+   and requires HTTP basic authentication from other locations. The password
+   file can be created as follows:
 
-      $ sudo /etc/rc.d/httpd restart
+      # htpasswd ${SYSCONFDIR}/htpasswd.users <username>
+
+   When done, reload the web server:
+
+      # /etc/rc.d/nginx reload
 
    You should then be able to access the web interface at
    http://localhost/icinga/
 
 
 2) icinga-web: new API-based interface
+
+** N.B. These icinga-web instructions have not yet been updated for use with
+** with nginx; 2.6 and 2.7 below relate to use with the apache-httpd-openbsd
+** package. Please contact the port maintainer if you can provide suitable
+** configuration sections to use icinga-web with nginx.
 
    2.1) Setup the icinga database. For details see:
    ${TRUEPREFIX}/share/examples/icinga/db/README
