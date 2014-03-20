@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/05/15 20:36:28 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/03/20 19:21:00 gsoares Exp $
 lib/lua/${MODLUA_VERSION}/ssl.so
 share/examples/${FULLPKGNAME}/
 share/examples/${FULLPKGNAME}/README
@@ -15,6 +15,23 @@ share/examples/${FULLPKGNAME}/certs/serverA.cnf
 share/examples/${FULLPKGNAME}/certs/serverA.sh
 share/examples/${FULLPKGNAME}/certs/serverB.cnf
 share/examples/${FULLPKGNAME}/certs/serverB.sh
+share/examples/${FULLPKGNAME}/chain/
+share/examples/${FULLPKGNAME}/chain/client.lua
+share/examples/${FULLPKGNAME}/chain/server.lua
+share/examples/${FULLPKGNAME}/chain/util.lua
+share/examples/${FULLPKGNAME}/dhparam/
+share/examples/${FULLPKGNAME}/dhparam/client.lua
+share/examples/${FULLPKGNAME}/dhparam/params.sh
+share/examples/${FULLPKGNAME}/dhparam/server.lua
+share/examples/${FULLPKGNAME}/digest/
+share/examples/${FULLPKGNAME}/digest/client.lua
+share/examples/${FULLPKGNAME}/digest/server.lua
+share/examples/${FULLPKGNAME}/ecdh/
+share/examples/${FULLPKGNAME}/ecdh/client.lua
+share/examples/${FULLPKGNAME}/ecdh/server.lua
+share/examples/${FULLPKGNAME}/info/
+share/examples/${FULLPKGNAME}/info/client.lua
+share/examples/${FULLPKGNAME}/info/server.lua
 share/examples/${FULLPKGNAME}/key/
 share/examples/${FULLPKGNAME}/key/genkey.sh
 share/examples/${FULLPKGNAME}/key/loadkey.lua
@@ -27,6 +44,19 @@ share/examples/${FULLPKGNAME}/loop/server.lua
 share/examples/${FULLPKGNAME}/oneshot/
 share/examples/${FULLPKGNAME}/oneshot/client.lua
 share/examples/${FULLPKGNAME}/oneshot/server.lua
+share/examples/${FULLPKGNAME}/verification/
+share/examples/${FULLPKGNAME}/verification/fail-string/
+share/examples/${FULLPKGNAME}/verification/fail-string/client.lua
+share/examples/${FULLPKGNAME}/verification/fail-string/server.lua
+share/examples/${FULLPKGNAME}/verification/fail-table/
+share/examples/${FULLPKGNAME}/verification/fail-table/client.lua
+share/examples/${FULLPKGNAME}/verification/fail-table/server.lua
+share/examples/${FULLPKGNAME}/verification/success/
+share/examples/${FULLPKGNAME}/verification/success/client.lua
+share/examples/${FULLPKGNAME}/verification/success/server.lua
+share/examples/${FULLPKGNAME}/verify/
+share/examples/${FULLPKGNAME}/verify/client.lua
+share/examples/${FULLPKGNAME}/verify/server.lua
 share/examples/${FULLPKGNAME}/want/
 share/examples/${FULLPKGNAME}/want/client.lua
 share/examples/${FULLPKGNAME}/want/server.lua
