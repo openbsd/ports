@@ -1,0 +1,12 @@
+$OpenBSD: patch-mutt_ldap_query_pl_in,v 1.1 2014/03/20 13:59:49 jasper Exp $
+--- mutt_ldap_query.pl.in.orig	Wed Mar 19 12:37:59 2014
++++ mutt_ldap_query.pl.in	Wed Mar 19 12:39:30 2014
+@@ -544,6 +544,8 @@ multiple searches for email addresses based on externa
+ just like this one 8-)
+  http://www.spinnaker.de/lbdb/
+ 
++=back
++
+ =head1 AUTHORS
+ 
+ Marc de Courville <marc@courville.org> and the various other contributors... that kindly sent their patches.

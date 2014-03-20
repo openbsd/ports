@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2014/01/01 20:46:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2014/03/20 13:59:49 jasper Exp $
 
 COMMENT-main =		little brother's database, email address query tools
 COMMENT-ldap =		LDAP support for lbdb
 
 VERSION =		0.36
 REVISION-main =		4
-REVISION-ldap =		6
+REVISION-ldap =		7
 
 DISTNAME =		lbdb_${VERSION}
 PKGNAME-main =		lbdb-${VERSION}
