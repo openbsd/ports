@@ -1,0 +1,19 @@
+$OpenBSD: patch-perl_SNMP_SNMP_pm,v 1.1 2014/03/20 12:46:15 sthen Exp $
+--- perl/SNMP/SNMP.pm.orig	Thu Mar 20 12:41:16 2014
++++ perl/SNMP/SNMP.pm	Thu Mar 20 12:44:47 2014
+@@ -1719,11 +1719,15 @@ the keys instead of deriving them from a password as a
+ 
+ =head2 SNMPv1 and SNMPv2c Options
+ 
++=over
++
+ =item Community
+ 
+ For SNMPv1 and SNMPv2c, the clear-text community name to use.
+ 
+ The default is 'public'.
++
++=back
+ 
+ =head2 Other Configuration Options
+ 
