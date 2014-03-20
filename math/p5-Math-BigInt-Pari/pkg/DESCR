@@ -1,0 +1,2 @@
+Provides support for big integer in BigInt et al. calculations via means
+of Math::Pari, an XS layer on top of the very fast PARI library.
