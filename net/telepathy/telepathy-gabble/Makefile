@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2014/03/20 20:31:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.66 2014/03/20 20:48:21 jasper Exp $
 
 COMMENT=		flexible communications framework, xmpp component
 
@@ -38,5 +38,8 @@ CONFIGURE_ARGS=		--with-ca-certificates=/etc/ssl/cert.pem \
 			--enable-plugins
 
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/lib/ext/wocky
+
+post-install:
+	rm ${PREFIX}/lib/telepathy/gabble-0/*/*.{a,la}
 
 .include <bsd.port.mk>
