@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/03/18 12:25:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2014/03/20 18:07:59 ajacoutot Exp $
 
 BROKEN-alpha=	libtomcrypt/src/headers/tomcrypt_cfg.h:130:6: error: #error You must specify a word size as well as endianess in tomcrypt_cfg.h
 
@@ -65,7 +65,7 @@ do-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${DATADIR}
 	${INSTALL_PROGRAM} ${WRKBUILD}/src/stepmania ${PREFIX}/libexec
 	${INSTALL_DATA} ${WRKBUILD}/src/GtkModule.so ${PREFIX}/libexec
-	${INSTALL_PROGRAM} ${WRKBUILD}/stepexe ${PREFIX}/bin/stepmania
+	${INSTALL_SCRIPT} ${WRKBUILD}/stepexe ${PREFIX}/bin/stepmania
 
 # TODO: install more documentation ?
 
