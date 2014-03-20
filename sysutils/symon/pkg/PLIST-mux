@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST-mux,v 1.13 2014/03/20 12:26:33 sthen Exp $
+@comment $OpenBSD: PLIST-mux,v 1.14 2014/03/20 12:31:22 sthen Exp $
 @conflict symon-*
 @bin libexec/symux
 @man man/man8/symux.8
 @man man/man3p/SymuxClient.3p
 ${P5SITE}/SymuxClient.pm
 share/examples/symon/
-share/examples/symon/c_config.sh
 share/examples/symon/c_smrrds.sh
 share/examples/symon/getsymonitem.pl
 share/examples/symon/symux.conf
