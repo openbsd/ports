@@ -1,4 +1,0 @@
-To completely deinstall GitList you need to perform the following steps
-as root:
-    rm -f /var/www/conf/modules/gitlist.conf
-    rm -rf ${PREFIX}/gitlist
