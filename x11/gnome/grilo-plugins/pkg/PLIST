@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2014/03/10 09:17:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2014/03/20 20:13:24 jasper Exp $
 lib/grilo-${API}/grl-apple-trailers.xml
 lib/grilo-${API}/grl-bliptv.xml
 lib/grilo-${API}/grl-bookmarks.xml
@@ -6,10 +6,8 @@ lib/grilo-${API}/grl-filesystem.xml
 lib/grilo-${API}/grl-flickr.xml
 lib/grilo-${API}/grl-freebox.xml
 lib/grilo-${API}/grl-gravatar.xml
-lib/grilo-${API}/grl-guardianvideos.xml
 lib/grilo-${API}/grl-jamendo.xml
 lib/grilo-${API}/grl-lastfm-albumart.xml
-lib/grilo-${API}/grl-local-metadata.xml
 lib/grilo-${API}/grl-magnatune.xml
 lib/grilo-${API}/grl-metadata-store.xml
 lib/grilo-${API}/grl-optical-media.xml
@@ -28,10 +26,8 @@ lib/grilo-${API}/libgrlfilesystem.so
 lib/grilo-${API}/libgrlflickr.so
 lib/grilo-${API}/libgrlfreebox.so
 lib/grilo-${API}/libgrlgravatar.so
-lib/grilo-${API}/libgrlguardianvideos.so
 lib/grilo-${API}/libgrljamendo.so
 lib/grilo-${API}/libgrllastfm-albumart.so
-lib/grilo-${API}/libgrllocalmetadata.so
 lib/grilo-${API}/libgrlmagnatune.so
 lib/grilo-${API}/libgrlmetadatastore.so
 lib/grilo-${API}/libgrloptical-media.so
