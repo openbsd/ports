@@ -1,0 +1,9 @@
+$OpenBSD: patch-doc_man8_alias_manager_pod_in,v 1.1 2014/03/21 09:33:15 sthen Exp $
+--- doc/man8/alias_manager.pod.in.orig	Fri Mar 21 09:29:57 2014
++++ doc/man8/alias_manager.pod.in	Fri Mar 21 09:30:08 2014
+@@ -1,3 +1,5 @@
++=encoding ISO8859-1
++
+ =head1 NAME
+ 
+ alias_manager (or alias_manager.pl) - manage Sympa aliases

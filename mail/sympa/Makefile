@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2013/08/10 10:11:39 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2014/03/21 09:33:15 sthen Exp $
 
 COMMENT =	mailing list manager with web interface
 
 VERSION =	6.1.17
+REVISION =	0
 DISTNAME =	sympa-${VERSION}
 
 CATEGORIES =	mail www
