@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.5 2013/01/28 21:27:59 sthen Exp $
+# $OpenBSD: make-plist,v 1.6 2014/03/21 11:01:43 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -134,9 +134,9 @@ my $portsdir = $ENV{PORTSDIR};
 
 sub prettify
 {
-	my $_ = $_[0]->{filename};
-	$_ =~ s/^.*\/pkg\//pkg\//;
-	return $_;
+	my $f = $_[0]->{filename};
+	$f =~ s/^.*\/pkg\//pkg\//;
+	return $f;
 }
 
 sub report
@@ -186,17 +186,17 @@ sub build_mtree
 
 sub parse_arg
 {
-	my $_ = shift;
-	if (m/^DEPPATHS(-.*?)\=/) {
+	my $p = shift;
+	if ($p =~ m/^DEPPATHS(-.*?)\=/) {
 		$mtree{$1} = build_mtree($1, $');
 		return;
 	} 
-	if (m/\=/) {
-		$subst->parse_option($_);
+	if ($p =~ m/\=/) {
+		$subst->parse_option($p);
 	}
-	if (m/^\^PREFIX(\-.*?)\=(.*)\/?$/) {
+	if ($p =~ m/^\^PREFIX(\-.*?)\=(.*)\/?$/) {
 		$prefix{$1} = $2;
-	} elsif (m/^PLIST(\-.*?)\=/) {
+	} elsif ($p =~ m/^PLIST(\-.*?)\=/) {
 		$plistname{$1} = $';
 	}
 }
@@ -638,7 +638,9 @@ package main;
 sub augment_mtree
 {
 	my ($mtree, $fh) = @_;
-	my $plist = OpenBSD::PackingList->read($fh, \&OpenBSD::PackingList::SharedItemsOnly) or die "couldn't read packing-list\n";
+	my $plist = OpenBSD::PackingList->read($fh, 
+	    \&OpenBSD::PackingList::SharedItemsOnly)
+	    or die "couldn't read packing-list\n";
 	$plist->add_to_mtree($mtree);
 }
 
@@ -650,7 +652,7 @@ sub create_packinglist
 	my ($filename, $sub) = @_;
 
 	my $prefix = $prefix{$sub};
-	my $plist = new OpenBSD::PackingList;
+	my $plist = OpenBSD::PackingList->new;
 	$plist->{filename} = $filename;
 	$plist->{mtree} = $mtree{$sub};
 	$plist->{state}->set_cwd($prefix);
@@ -669,7 +671,6 @@ sub parse_original_plist
     $plist->fromfile($name, 
 	sub {
 	    my ($fh, $cont) = @_;
-	    my $_;
 	    while (<$fh>) {
 		    if (m/^\%\%(.*)\%\%$/) {
 		    	OpenBSD::PackingElement::Fragment->add($plist, $1);
