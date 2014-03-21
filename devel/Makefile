@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1201 2014/03/19 09:24:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.1202 2014/03/21 17:18:22 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1401,7 +1401,6 @@
      SUBDIR += stm32loader
      SUBDIR += stp
      SUBDIR += subversion
-     SUBDIR += svk
      SUBDIR += swig
      SUBDIR += t1lib
      SUBDIR += tclap

@@ -1,6 +1,0 @@
-Svk is a decentralized version control system. While Subversion (svn) 
-aims to take over the CVS user base, svk attempts to take over the user 
-base of the other version control systems, including people who have 
-already switched to another version control system, as well as people 
-who have not yet started using a version control system. It is written 
-in Perl and uses Subversion's underlying filesystem.
