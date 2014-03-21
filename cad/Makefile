@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2013/12/10 21:57:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2014/03/21 20:01:42 naddy Exp $
 
      SUBDIR =
-     SUBDIR += chipmunk
      SUBDIR += fritzing
      SUBDIR += geda-gaf
      SUBDIR += gerbv
