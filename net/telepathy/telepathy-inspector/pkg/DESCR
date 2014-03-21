@@ -1,9 +1,0 @@
-Telepathy Inspector is a telepathy client (GTK+) whose objective is to
-expose all interfaces and functionalities implemented by a given
-connection manager along with its connections, channels, etc.
-
-The idea is to enable the user (likely to be a Telepathy developer) to
-easily view and access all methods and interfaces of all Telepathy
-entities (CMs, connections, etc), which could not be easily achieved
-using a regular telepathy client since it would (and should!) hide all
-Telepathy logic behind a pleasant, usability oriented, GUI.
