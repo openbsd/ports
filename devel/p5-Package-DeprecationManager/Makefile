@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:20 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2014/03/21 15:29:15 jasper Exp $
 
 COMMENT =	manage deprecation warnings for your distribution
 
 MODULES =	cpan
-DISTNAME =	Package-DeprecationManager-0.10
+DISTNAME =	Package-DeprecationManager-0.13
 CATEGORIES =	devel
 
 # Perl
