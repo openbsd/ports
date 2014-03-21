@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2014/03/21 12:55:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2014/03/21 13:10:54 sthen Exp $
 
 COMMENT=		Website META Language: off-line HTML generation toolkit
 
 DISTNAME=		wml-2.0.11
-REVISION=		6
+REVISION=		7
 CATEGORIES=		www
 
 HOMEPAGE=		http://www.thewml.org/

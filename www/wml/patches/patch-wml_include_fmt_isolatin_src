@@ -1,9 +1,12 @@
-$OpenBSD: patch-wml_include_fmt_isolatin_src,v 1.1 2014/03/21 12:55:23 jasper Exp $
---- wml_include/fmt/isolatin.src.orig	Fri Mar 21 13:47:35 2014
-+++ wml_include/fmt/isolatin.src	Fri Mar 21 13:47:45 2014
-@@ -1,3 +1,5 @@
+$OpenBSD: patch-wml_include_fmt_isolatin_src,v 1.2 2014/03/21 13:10:54 sthen Exp $
+--- wml_include/fmt/isolatin.src.orig	Thu Dec  1 17:50:13 2005
++++ wml_include/fmt/isolatin.src	Fri Mar 21 13:09:19 2014
+@@ -117,6 +117,8 @@
+ ##EOF##
+ __END__
+ 
 +=encoding ISO8859-1
 +
- ##
- ##  wml::fmt::isolatin - ISO-Latin-1 to HTML Entity Conversion
- ##  Copyright (c) 1997-2001 Ralf S. Engelschall, All Rights Reserved. 
+ =head1 NAME
+ 
+ wml::fmt::isolatin - ISO-Latin-1 to HTML Entity Conversion

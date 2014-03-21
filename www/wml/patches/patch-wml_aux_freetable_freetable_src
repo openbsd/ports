@@ -1,9 +1,12 @@
-$OpenBSD: patch-wml_aux_freetable_freetable_src,v 1.1 2014/03/21 12:55:23 jasper Exp $
---- wml_aux/freetable/freetable.src.orig	Fri Mar 21 13:42:50 2014
-+++ wml_aux/freetable/freetable.src	Fri Mar 21 13:43:00 2014
-@@ -1,3 +1,5 @@
+$OpenBSD: patch-wml_aux_freetable_freetable_src,v 1.2 2014/03/21 13:10:54 sthen Exp $
+--- wml_aux/freetable/freetable.src.orig	Thu Dec  1 17:50:13 2005
++++ wml_aux/freetable/freetable.src	Fri Mar 21 13:06:19 2014
+@@ -219,6 +219,8 @@ $$cell =~ s/<col>/$col/gi;
+ 
+ ##EOF##
+ 
 +=encoding ISO8859-1
 +
- #!@PATH_PERL@
- eval 'exec @PATH_PERL@ -S $0 ${1+"$@"}'
-     if $running_under_some_shell;
+ =head1 NAME
+ 
+ freetable - tool for making HTML tables generation easier
