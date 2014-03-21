@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: TreeWalker.pm,v 1.1 2013/11/01 11:46:19 espie Exp $
+# $OpenBSD: TreeWalker.pm,v 1.2 2014/03/21 16:45:51 espie Exp $
 #
 # Copyright (c) 2006-2013 Marc Espie <espie@openbsd.org>
 #
@@ -24,17 +24,17 @@ use PkgPath;
 $SIG{__WARN__} = sub {
 	require Carp;
 
-	my $_ = pop @_;
-	s/(.*)( at .*? line .*?\n$)/$1/s;
-	push @_, $_;
+	my $s = pop @_;
+	$s =~ s/(.*)( at .*? line .*?\n$)/$1/s;
+	push @_, $s;
 	warn &Carp::longmess;
 };
 
 $SIG{__DIE__} = sub {
 	require Carp;
 
-	my $_ = pop @_;
-	s/(.*)( at .*? line .*?\n$)/$1/s;
+	my $s = pop @_;
+	$s =~ s/(.*)( at .*? line .*?\n$)/$1/s;
 	push @_, $_;
 	die &Carp::longmess;
 };
