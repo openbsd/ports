@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2013/05/09 19:28:34 zhuk Exp $
+# $OpenBSD: Makefile,v 1.16 2014/03/21 07:32:57 jasper Exp $
 
     SUBDIR =
     SUBDIR += folks
@@ -7,11 +7,9 @@
     SUBDIR += telepathy-glib
     SUBDIR += telepathy-haze
     SUBDIR += telepathy-idle
-    SUBDIR += telepathy-inspector
     SUBDIR += telepathy-logger
     SUBDIR += telepathy-mission-control
     SUBDIR += telepathy-qt
     SUBDIR += telepathy-salut
-    SUBDIR += telepathy-spec
 
 .include <bsd.port.subdir.mk>
