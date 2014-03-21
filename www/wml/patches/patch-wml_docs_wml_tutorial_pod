@@ -1,0 +1,9 @@
+$OpenBSD: patch-wml_docs_wml_tutorial_pod,v 1.1 2014/03/21 09:49:24 sthen Exp $
+--- wml_docs/wml_tutorial.pod.orig	Fri Mar 21 09:43:48 2014
++++ wml_docs/wml_tutorial.pod	Fri Mar 21 09:44:33 2014
+@@ -1,3 +1,5 @@
++=encoding ISO8859-1
++
+ ##
+ ##  WML Tutorial
+ ##  Copyright (c) 1997 Ralf S. Engelschall, All Rights Reserved. 
