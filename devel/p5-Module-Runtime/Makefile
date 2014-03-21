@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 13:49:46 benoit Exp $
+# $OpenBSD: Makefile,v 1.4 2014/03/21 15:21:23 jasper Exp $
 
 COMMENT =	runtime module handling
 
 MODULES =	cpan
-DISTNAME =	Module-Runtime-0.013
+DISTNAME =	Module-Runtime-0.014
 CATEGORIES =	devel
 
 # same as perl
 PERMIT_PACKAGE_CDROM =	Yes
-
-RUN_DEPENDS =	devel/p5-Params-Classify
 
 CONFIGURE_STYLE =	modbuild
 
