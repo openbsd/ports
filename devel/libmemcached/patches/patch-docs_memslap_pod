@@ -1,0 +1,176 @@
+$OpenBSD: patch-docs_memslap_pod,v 1.1 2014/03/21 00:41:18 sthen Exp $
+
+ascii-fy UTF-8, for strict pod2man in perl 5.18
+
+--- docs/memslap.pod.orig	Fri Mar 21 00:35:46 2014
++++ docs/memslap.pod	Fri Mar 21 00:39:36 2014
+@@ -75,7 +75,7 @@ core affinity. 
+ 
+ In addition, each thread has a libevent to manage the events of the network;
+ each thread has one or more self-governed concurrencies; and each
+-concurrency has one or more socket connections. All the concurrencies don’t
++concurrency has one or more socket connections. All the concurrencies don't
+ communicate with each other even though they are in the same thread.
+ 
+ Memslap can create thousands of socket connections, and each
+@@ -97,10 +97,10 @@ of the string to identify a string. It can save much m
+ Each key contains two parts, a prefix and a suffix. The prefix is an
+ uint64_t, 8 bytes. In order to verify the data set before, 
+ memslap need to ensure each key is unique, so it uses the prefix to identify
+-a key. The prefix cannot include illegal characters, such as ‘\r’, ‘\n’,
+-‘\0’ and ‘ ‘. And memslap has an algorithm to ensure that. 
++a key. The prefix cannot include illegal characters, such as '\r', '\n',
++'\0' and ' '. And memslap has an algorithm to ensure that. 
+ 
+-Memslap doesn’t generate all the objects (key-value pairs) at
++Memslap doesn't generate all the objects (key-value pairs) at
+ the beginning. It only generates enough objects to fill the task window
+ (default 10K objects) of each concurrency. Each object has the following
+ basic information, key prefix, key suffix offset in the character table, key
+@@ -220,10 +220,10 @@ Facebook test = false                  Replication tes
+ =head2 Key size, value size and command distribution.
+ 
+ All the distributions are read from the configuration file specified by user
+-with “—cfg_cmd” option. If the user does not specify a configuration file,
++with "-cfg_cmd" option. If the user does not specify a configuration file,
+ memslap will run with the default distribution (key size = 64,
+ value size = 1024, get/set = 9:1). For information on how to edit the
+-configuration file, refer to the “Configuration File” section.
++configuration file, refer to the "Configuration File" section.
+ 
+ The minimum key size is 16 bytes; the maximum key size is 250 bytes. The
+ precision of proportion is 0.001. The proportion of distribution will be
+@@ -239,9 +239,9 @@ the server.
+ =head2 Multi-thread and concurrency
+ 
+ The high performance of memslap benefits from the special
+-schedule of thread and concurrency. It’s important to specify the proper
++schedule of thread and concurrency. It's important to specify the proper
+ number of them. The default number of threads is 1; the default number of
+-concurrency is 16. The user can use “—threads” and “--concurrency” to
++concurrency is 16. The user can use "-threads" and "--concurrency" to
+ specify these variables.
+ 
+ If the system supports setting CPU affinity and the number of threads
+@@ -285,13 +285,13 @@ limit the performance of memslap, there
+ are two ways to do this:
+ 
+ Decrease the number of threads and concurrencies.
+-Use the option “--tps” that memslap
++Use the option "--tps" that memslap
+ provides to limit the throughput. This option allows
+ the user to get the expected throughput. For
+ example, assume that the maximum throughput is 50
+ kops/s for a specific configuration, you can specify
+ the throughput equal to or less than the maximum
+-throughput using “--tps” option.
++throughput using "--tps" option.
+ 
+ =head2 Window size
+ 
+@@ -349,7 +349,7 @@ expire-time verification. In theory, it supports 100% 
+ verification. Specify the "--verbose" options to get more detailed error
+ information.
+ 
+-For example: --exp_verify=0.01 –verify=0.1 , it means that 1% of the objects 
++For example: --exp_verify=0.01 -verify=0.1 , it means that 1% of the objects 
+ set with expire-time, 10% of the objects gotten will be verified. If the
+ objects are gotten, memslap will verify the expire-time and
+ value. 
+@@ -403,7 +403,7 @@ For example:
+ Memslap will dump the statistics of the commands (get and set) at the frequency of every 20
+ seconds. 
+ 
+-For more information on the format of dumping statistic information, refer to “Format of Output” section.
++For more information on the format of dumping statistic information, refer to "Format of Output" section.
+ 
+ =head2 Multi-get
+ 
+@@ -414,19 +414,19 @@ verification and expire-time verification for multi-ge
+ Memslap supports multi-get with both TCP and UDP. Because of
+ the different implementation of the ASCII protocol and binary protocol,
+ there are some differences between the two. For the ASCII protocol,
+-memslap sends one “multi-get” to the server once. For the
++memslap sends one "multi-get" to the server once. For the
+ binary protocol, memslap sends several single get commands
+-together as “multi-get” to the server.
++together as "multi-get" to the server.
+ 
+ =head2 UDP and TCP
+ 
+ Memslap supports both UDP and TCP. For TCP,
+ memslap does not reconnect the memcached server if socket connections are
+ lost. If all the socket connections are lost or memcached server crashes,
+-memslap will exit. If the user specifies the “--reconnect”
++memslap will exit. If the user specifies the "--reconnect"
+ option when socket connections are lost, it will reconnect them. 
+ 
+-User can use “--udp” to enable the UDP feature, but UDP comes with some
++User can use "--udp" to enable the UDP feature, but UDP comes with some
+ limitations: 
+ 
+ UDP cannot set data more than 1400 bytes. 
+@@ -434,7 +434,7 @@ UDP cannot set data more than 1400 bytes. 
+ UDP is not supported by the binary protocol because the binary protocol of
+ memcached does not support that.
+ 
+-UDP doesn’t support reconnection.
++UDP doesn't support reconnection.
+ 
+ =head2 Facebook test
+ 
+@@ -460,11 +460,11 @@ because the UDP packet size is 1400 bytes.
+ =head2 Replication test
+ 
+ For replication test, the user must specify at least two memcached servers.
+-The user can use “—rep_write=” option to enable feature. 
++The user can use "-rep_write=" option to enable feature. 
+ 
+ For example:
+ 
+---servers=10.1.1.1:11211,10.1.1.2:11212 –rep_write=2
++--servers=10.1.1.1:11211,10.1.1.2:11212 -rep_write=2
+ 
+ The above command means that there are 2 replication memcached servers,
+ memslap will set objects to both server 0 and server 1, get
+@@ -503,7 +503,7 @@ For example:
+ Since memcached 1.3.3 doesn't implement binary UDP protocol,
+ memslap does not support UDP. In addition, memcached 1.3.3 does not support
+ multi-get. If you specify "--division=50" option, it just sends 50 get
+-commands together as “mulit-get” to the server.
++commands together as "mulit-get" to the server.
+ 
+ =head1 Configuration file
+ 
+@@ -711,7 +711,7 @@ The rate of network
+ 
+ =item Get_miss
+ 
+-How many objects can’t be gotten
++How many objects can't be gotten
+ 
+ =item Min
+ 
+@@ -834,11 +834,11 @@ Total set commands done
+ 
+ =item get_misses
+ 
+-How many objects can’t be gotten from server
++How many objects can't be gotten from server
+ 
+ =item verify_misses
+ 
+-How many objects need to verify but can’t get them
++How many objects need to verify but can't get them
+ 
+ =item verify_failed
+ 
+@@ -850,7 +850,7 @@ How many objects are expired but we get them
+ 
+ =item unexpired_unget
+ 
+-How many objects are unexpired but we can’t get them
++How many objects are unexpired but we can't get them
+ 
+ =item written_bytes
+ 
