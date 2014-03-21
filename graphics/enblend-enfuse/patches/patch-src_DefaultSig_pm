@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_DefaultSig_pm,v 1.1 2014/03/21 00:56:09 sthen Exp $
+
+Fix with perl 5.18
+https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=719867
+
+--- src/DefaultSig.pm.orig	Fri Mar 21 00:54:01 2014
++++ src/DefaultSig.pm	Fri Mar 21 00:54:11 2014
+@@ -19,7 +19,7 @@ use Sys::Hostname;
+ 
+ our %HAVE_MODULE;
+ BEGIN {
+-    foreach my $module qw(Time::Zone) {
++    foreach my $module (qw(Time::Zone)) {
+         eval "use $module ()"; # import, but keep module's original name space for clarity
+         $HAVE_MODULE{$module} = $EVAL_ERROR eq '';
+     }
