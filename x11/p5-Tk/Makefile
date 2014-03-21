@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2013/04/19 21:32:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2014/03/21 13:07:34 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT-demo=	demonstrate the features of ptk
 
 MODULES=	cpan
 VERSION=	804.030
-REVISION=	0
+REVISION=	1
 DISTNAME=	Tk-${VERSION}
 PKGNAME-main=	p5-Tk-${VERSION}
 PKGNAME-demo=	p5-Tk-demo-${VERSION}

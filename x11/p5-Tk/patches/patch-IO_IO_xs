@@ -1,0 +1,22 @@
+$OpenBSD: patch-IO_IO_xs,v 1.1 2014/03/21 13:07:34 jasper Exp $
+
+From 2333fa35c99aae1db1cb8d3ebce31fc21bc66e0a Mon Sep 17 00:00:00 2001
+From: Slaven Rezic <slaven@rezic.de>
+Date: Sat, 23 Mar 2013 14:00:58 +0100
+Subject: [PATCH] * fix for 5.17.7 and newer: SvUPGRADE() is no longer an expression
+
+--- IO/IO.xs.orig	Fri Mar 21 14:00:03 2014
++++ IO/IO.xs	Fri Mar 21 14:03:56 2014
+@@ -207,11 +207,7 @@ int	offset
+      info.count  = 0;
+      info.error  = 0;
+      info.eof    = 0;
+-     if (!SvUPGRADE(buf, SVt_PV))
+-      {
+-       RETVAL = &PL_sv_undef;
+-       return;
+-      }
++     (void)SvUPGRADE(buf, SVt_PV);
+      SvPOK_only(buf);		/* validate pointer */
+      Tcl_CreateFileHandler(fd, TCL_READABLE, read_handler, (ClientData) &info);
+      do

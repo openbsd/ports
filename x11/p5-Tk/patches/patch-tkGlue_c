@@ -1,0 +1,21 @@
+$OpenBSD: patch-tkGlue_c,v 1.1 2014/03/21 13:07:34 jasper Exp $
+
+From 2333fa35c99aae1db1cb8d3ebce31fc21bc66e0a Mon Sep 17 00:00:00 2001
+From: Slaven Rezic <slaven@rezic.de>
+Date: Sat, 23 Mar 2013 14:00:58 +0100
+Subject: [PATCH] * fix for 5.17.7 and newer: SvUPGRADE() is no longer an expression
+
+--- tkGlue.c.orig	Fri Mar 21 13:57:53 2014
++++ tkGlue.c	Fri Mar 21 14:01:36 2014
+@@ -3830,10 +3830,7 @@ ClientData clientData;
+      return EXPIRE((interp, "Cannot trace readonly variable"));
+     }
+   }
+- if (!SvUPGRADE(sv, SVt_PVMG))
+-  {
+-   return EXPIRE((interp, "Trace SvUPGRADE failed"));
+-  }
++ (void)SvUPGRADE(sv, SVt_PVMG);
+ 
+  if (SvTYPE(sv) == SVt_PVAV)
+   {
