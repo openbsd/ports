@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/09/26 09:57:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/03/21 10:51:55 ajacoutot Exp $
 @bin bin/lou_allround
 @bin bin/lou_checkhyphens
 @bin bin/lou_checktable
@@ -54,7 +54,6 @@ share/liblouis/tables/bra.ctb
 share/liblouis/tables/braille-patterns.cti
 share/liblouis/tables/ca-chardefs.cti
 share/liblouis/tables/ca-g1.ctb
-share/liblouis/tables/chardefs-ueb.cti
 share/liblouis/tables/chardefs.cti
 share/liblouis/tables/ckb-chardefs.cti
 share/liblouis/tables/ckb-g1.ctb
@@ -68,12 +67,20 @@ share/liblouis/tables/cs-g1.ctb
 share/liblouis/tables/cs-translation.cti
 share/liblouis/tables/cy-cy-g1.utb
 share/liblouis/tables/cy-cy-g2.ctb
-share/liblouis/tables/da-1252.ctb
-share/liblouis/tables/da-dk-g1.utb
-share/liblouis/tables/da-dk-g2.ctb
+share/liblouis/tables/da-ansi6.dis
+share/liblouis/tables/da-ansi8.dis
+share/liblouis/tables/da-chardefs6.cti
+share/liblouis/tables/da-chardefs8.cti
+share/liblouis/tables/da-dk-g16.utb
+share/liblouis/tables/da-dk-g18.utb
+share/liblouis/tables/da-dk-g26.ctb
+share/liblouis/tables/da-dk-g28.ctb
+share/liblouis/tables/da-dk-g28caps.cti
+share/liblouis/tables/da-dk-g2core.cti
 share/liblouis/tables/da-dk.dis
 share/liblouis/tables/da-lt.ctb
-share/liblouis/tables/da.ctb
+share/liblouis/tables/da-unicode6.dis
+share/liblouis/tables/da-unicode8.dis
 share/liblouis/tables/de-ch-accents.cti
 share/liblouis/tables/de-ch-g0.utb
 share/liblouis/tables/de-ch-g1.ctb
@@ -101,6 +108,7 @@ share/liblouis/tables/en-GB-g2.ctb
 share/liblouis/tables/en-chess.ctb
 share/liblouis/tables/en-gb-comp8.ctb
 share/liblouis/tables/en-gb-g1.utb
+share/liblouis/tables/en-ueb-chardefs.uti
 share/liblouis/tables/en-ueb-g1.ctb
 share/liblouis/tables/en-ueb-g2.ctb
 share/liblouis/tables/en-us-brf.dis
@@ -199,6 +207,7 @@ share/liblouis/tables/mt.ctb
 share/liblouis/tables/mun.ctb
 share/liblouis/tables/mwr.ctb
 share/liblouis/tables/ne.ctb
+share/liblouis/tables/ne.utb
 share/liblouis/tables/nemeth.ctb
 share/liblouis/tables/nemeth_edit.ctb
 share/liblouis/tables/nemethdefs.cti
@@ -239,6 +248,7 @@ share/liblouis/tables/se-se.ctb
 share/liblouis/tables/se-se.dis
 share/liblouis/tables/sk-sk-g1.utb
 share/liblouis/tables/sk-sk.utb
+share/liblouis/tables/sl-si-comp8.ctb
 share/liblouis/tables/sl-si-g1.utb
 share/liblouis/tables/spaces.ctb
 share/liblouis/tables/sr-chardefs.cti
