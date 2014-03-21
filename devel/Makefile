@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1202 2014/03/21 17:18:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.1203 2014/03/21 17:19:48 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -926,8 +926,6 @@
      SUBDIR += p5-Return-Value
      SUBDIR += p5-SDL
      SUBDIR += p5-SUPER
-     SUBDIR += p5-SVN-Dump
-     SUBDIR += p5-SVN-Mirror
      SUBDIR += p5-SVN-Notify
      SUBDIR += p5-SVN-Simple
      SUBDIR += p5-SVN-Web
