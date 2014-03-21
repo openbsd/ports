@@ -1,6 +1,6 @@
-$OpenBSD: patch-spampd,v 1.1.1.1 2014/02/08 18:58:22 ajacoutot Exp $
+$OpenBSD: patch-spampd,v 1.2 2014/03/21 11:01:33 jasper Exp $
 --- spampd.orig	Mon Oct 31 20:45:53 2005
-+++ spampd	Sat Feb  8 19:51:55 2014
++++ spampd	Wed Mar 19 20:02:26 2014
 @@ -752,8 +752,8 @@ my $childtimeout = 6*60; # child process per-command t
  my $satimeout = 285; # SpamAssassin timeout in seconds (15s less than Postfix 
                       # default for smtp_data_done_timeout)
@@ -32,6 +32,19 @@ $OpenBSD: patch-spampd,v 1.1.1.1 2014/02/08 18:58:22 ajacoutot Exp $
    --nodetach               Don't detach from the console and fork into
                                 background. Useful for some daemon control
                                 tools or when running as a win32 service
+@@ -1075,10 +1076,10 @@ L<http://www.WorldDesign.com/index.cfm/rd/mta/spampd.h
+ 
+ =head1 Requires
+ 
+-=over 5
+-
+ Perl modules:
+ 
++=over 5
++
+ =item B<Mail::SpamAssassin>
+ 
+ =item B<Net::Server::PreForkSimple>
 @@ -1249,7 +1250,7 @@ alternate to using the above --relayhost=ip:port notat
  =item B<--group=groupname> or  B<--g=groupname>
  
@@ -50,3 +63,16 @@ $OpenBSD: patch-spampd,v 1.1.1.1 2014/02/08 18:58:22 ajacoutot Exp $
  F</var/run/spampd.pid>.
  
  =item B<--logsock=unix or inet> C<(new in v2.20)>
+@@ -1390,10 +1391,10 @@ Prints usage information.
+ 
+ =head2 Deprecated Options
+ 
+-=over 5
+-
+ The following options are no longer used but still accepted for backwards
+ compatibility with prevoius I<spampd> versions:
++
++=over 5
+ 
+ =item  B<--dead-letters>
+ 
