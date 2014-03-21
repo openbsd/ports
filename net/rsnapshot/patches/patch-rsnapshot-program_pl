@@ -1,6 +1,6 @@
-$OpenBSD: patch-rsnapshot-program_pl,v 1.5 2011/12/04 08:53:57 ajacoutot Exp $
+$OpenBSD: patch-rsnapshot-program_pl,v 1.6 2014/03/21 10:48:10 espie Exp $
 --- rsnapshot-program.pl.orig	Sun Aug 31 13:17:07 2008
-+++ rsnapshot-program.pl	Fri Sep 19 15:28:30 2008
++++ rsnapshot-program.pl	Fri Mar 21 11:45:39 2014
 @@ -392,7 +392,7 @@ sub find_config_file {
  	# autoconf variables (may have too many slashes)
  	my $autoconf_sysconfdir	= '@sysconfdir@';
@@ -36,7 +36,16 @@ $OpenBSD: patch-rsnapshot-program_pl,v 1.5 2011/12/04 08:53:57 ajacoutot Exp $
  Long lines may be split over several lines.  "Continuation" lines
  B<must> begin with a space or a tab character.  Continuation lines will
  have all leading and trailing whitespace stripped off, and then be appended
-@@ -6729,7 +6725,7 @@ also want to run it from the command line once or twic
+@@ -6716,6 +6712,8 @@ Putting it all together (an example file):
+ 
+ =back
+ 
++=back
++
+ =head1 USAGE
+ 
+ B<rsnapshot> can be used by any user, but for system-wide backups
+@@ -6729,7 +6727,7 @@ also want to run it from the command line once or twic
  a feel for what it's doing.
  
  Here is an example crontab entry, assuming that backup levels B<hourly>,
@@ -45,7 +54,7 @@ $OpenBSD: patch-rsnapshot-program_pl,v 1.5 2011/12/04 08:53:57 ajacoutot Exp $
  
  =over 4
  
-@@ -6774,7 +6770,7 @@ your hourly snapshot will fail sometimes because the d
+@@ -6774,7 +6772,7 @@ your hourly snapshot will fail sometimes because the d
  
  Remember that these are just the times that the program runs.
  To set the number of backups stored, set the B<retain> numbers in
@@ -54,7 +63,7 @@ $OpenBSD: patch-rsnapshot-program_pl,v 1.5 2011/12/04 08:53:57 ajacoutot Exp $
  
  To check the disk space used by rsnapshot, you can call it with the "du" argument.
  
-@@ -6887,7 +6883,7 @@ B<2>  Some warnings occurred, but the backup still fin
+@@ -6887,7 +6885,7 @@ B<2>  Some warnings occurred, but the backup still fin
  
  =head1 FILES
  
@@ -63,7 +72,7 @@ $OpenBSD: patch-rsnapshot-program_pl,v 1.5 2011/12/04 08:53:57 ajacoutot Exp $
  
  =head1 SEE ALSO
  
-@@ -6916,8 +6912,8 @@ B<http://lists.sourceforge.net/lists/listinfo/rsnapsho
+@@ -6916,8 +6914,8 @@ B<http://lists.sourceforge.net/lists/listinfo/rsnapsho
  
  =head1 NOTES
  
@@ -74,7 +83,7 @@ $OpenBSD: patch-rsnapshot-program_pl,v 1.5 2011/12/04 08:53:57 ajacoutot Exp $
  
  Make sure you put a trailing slash on the end of all directory references.
  If you don't, you may have extra directories created in your snapshots.
-@@ -6933,7 +6929,7 @@ If you would like regular users to be able to restore 
+@@ -6933,7 +6931,7 @@ If you would like regular users to be able to restore 
  there are a number of ways this can be accomplished. One such scenario
  would be:
  
