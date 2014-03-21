@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.132 2014/03/21 07:36:26 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.133 2014/03/21 17:22:41 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -375,6 +375,9 @@ my $obsolete_reason = {
 	'gitlist' => 1,
 	'telepathy-inspector' => 0,
 	'telepathy-spec' => 0,
+	'svk' => 3,
+	'p5-SVN-Dump' => 3,
+	'p5-SVN-Mirror' => 3,
 };
 
 # ->is_base_system($handle, $state):
