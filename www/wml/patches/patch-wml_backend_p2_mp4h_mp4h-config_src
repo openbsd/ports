@@ -1,0 +1,12 @@
+$OpenBSD: patch-wml_backend_p2_mp4h_mp4h-config_src,v 1.1 2014/03/21 12:55:23 jasper Exp $
+--- wml_backend/p2_mp4h/mp4h-config.src.orig	Fri Mar 21 13:45:38 2014
++++ wml_backend/p2_mp4h/mp4h-config.src	Fri Mar 21 13:46:22 2014
+@@ -110,6 +110,8 @@ exit 0
+ ##EOF##
+ __END__
+ 
++=encoding ISO8859-1
++
+ =head1 NAME
+ 
+ mp4h-config - Displays configuration suitable to build mp4h modules

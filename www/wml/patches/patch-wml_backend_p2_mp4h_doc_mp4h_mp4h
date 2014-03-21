@@ -1,0 +1,9 @@
+$OpenBSD: patch-wml_backend_p2_mp4h_doc_mp4h_mp4h,v 1.1 2014/03/21 12:55:23 jasper Exp $
+--- wml_backend/p2_mp4h/doc/mp4h.mp4h.orig	Fri Mar 21 13:51:24 2014
++++ wml_backend/p2_mp4h/doc/mp4h.mp4h	Fri Mar 21 13:51:53 2014
+@@ -1,3 +1,5 @@
++=encoding ISO8859-1
++
+ ;;;
+ ;;;  mp4h.mp4h -- Documentation for mp4h
+ ;;;  Copyright 2000-2002, Denis Barbier   <barbier@imacs.polytechnique.fr>
