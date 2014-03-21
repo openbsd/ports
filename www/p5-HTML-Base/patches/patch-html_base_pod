@@ -1,0 +1,43 @@
+$OpenBSD: patch-html_base_pod,v 1.1 2014/03/21 09:07:58 sthen Exp $
+--- html_base.pod.orig	Fri Jun  9 02:07:13 1995
++++ html_base.pod	Fri Mar 21 09:07:20 2014
+@@ -360,11 +360,15 @@ ANCHOR, or PRE tag.
+ This is a little debugging routine.  Calling B<$objref->showme> 
+ causes the object to print out some stats about itself to STDERR.
+ 
++=back
++
+ =head1 GLOBAL SUBROUTINES
+ 
+ HTML::Base contains several B<global> subroutines 
+ (ie, they are defined directly in package HTML::Base).  
+ 
++=over
++
+ =item HTML::Base::html_debug 
+ 
+ Turns on a rather verbose debugging mode.  Messages about object creation
+@@ -462,6 +466,8 @@ equivalents, then outputs the resulting string.  You w
+ need to call this, since the display methods of the HTML objects use it
+ themselves.
+ 
++=back
++
+ =head1 CONTROLLING OUTPUT DESTINATION
+ 
+ By default, all HTML output is directed to STDOUT.  This can be changed
+@@ -476,6 +482,8 @@ Because I prefer to use english name for HTML tags, I 
+ HTML tags to english-named objects.  Note that all of the following class
+ names must be preceded by the package name B<HTML::Base::> during construction.
+ 
++=over
++
+ =item Address 
+ 
+ Implements the <ADDRESS></ADDRESS> HTML tags
+@@ -824,3 +832,5 @@ and WIDTH
+ Implements the <TR></TR> HTML tags
+ 
+ Takes the following attributes: ALIGN, and VALIGN
++
++=back
