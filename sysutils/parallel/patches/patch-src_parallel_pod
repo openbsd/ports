@@ -1,0 +1,49 @@
+$OpenBSD: patch-src_parallel_pod,v 1.1 2014/03/21 10:45:04 jasper Exp $
+--- src/parallel.pod.orig	Wed Mar 19 19:42:29 2014
++++ src/parallel.pod	Wed Mar 19 19:47:10 2014
+@@ -523,18 +523,18 @@ Print a summary of the options to GNU B<parallel> and 
+ 
+ =over 3
+ 
+-=item 0
++=item Z<>0
+ 
+ Do not halt if a job fails. Exit status will be the number of jobs
+ failed. This is the default.
+ 
+-=item 1
++=item Z<>1
+ 
+ Do not start new jobs if a job fails, but complete the running jobs
+ including cleanup. The exit status will be the exit status from the
+ last failing job.
+ 
+-=item 2
++=item Z<>2
+ 
+ Kill off all jobs immediately and exit without cleanup. The exit
+ status will be the exit status from the failing job.
+@@ -2738,19 +2738,19 @@ If B<--halt-on-error> 0 or not specified:
+ 
+ =over 6
+ 
+-=item 0
++=item Z<>0
+ 
+ All jobs ran without error.
+ 
+-=item 1-253
++=item Z<>1-253
+ 
+ Some of the jobs failed. The exit status gives the number of failed jobs
+ 
+-=item 254
++=item Z<>254
+ 
+ More than 253 jobs failed.
+ 
+-=item 255
++=item Z<>255
+ 
+ Other error.
+ 
