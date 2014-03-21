@@ -1,5 +1,5 @@
 --- Makefile.orig	Tue Sep  6 22:22:02 2005
-+++ Makefile	Tue Jan  6 18:07:04 2009
++++ Makefile	Fri Mar 21 13:25:09 2014
 @@ -5,7 +5,7 @@
  
  ZBD_VERSION = 2.4.1A
@@ -9,7 +9,7 @@
  
  ###
  ### Locations of tools, libraries and installation directories.
-@@ -45,19 +45,19 @@
+@@ -45,19 +45,19 @@ OPTIM = -O3
  # BFINC = /usr/include/openssl
  # BFLIB = -lcrypto
  
@@ -35,7 +35,7 @@
  
  #
  # Tools needed for Perl "POD"-format documentation conversion.
-@@ -175,11 +175,12 @@
+@@ -175,11 +175,12 @@ SERVICEOBJ = $(SERVICEOBJ_$(OS))
  #### You REALLY shouldn't have to modify anything beyond here ...
  ####
  
@@ -49,7 +49,14 @@
  
  ZBDFILES = server.zbd vncviewer.zbd vncserver.zbd server.key server.id \
  	client1.key client2.key clients.id
-@@ -195,7 +196,10 @@
+@@ -189,13 +190,16 @@ TXTFILES = README.txt LICENCE.txt GPL2.txt CHANGES.txt
+ 
+ EXTRAFILES = $(ZBDFILES) $(TXTFILES)
+ 
+-all : precheck zebedee$(EXE) zebedee.1 zebedee.html ftpgw.tcl.1 ftpgw.tcl.html zebedee.ja_JP.html
++all : precheck zebedee$(EXE) zebedee.1 zebedee.html ftpgw.tcl.1 ftpgw.tcl.html
+ 
+ precheck :
  	@ if test -z "$(OS)"; then echo "Use '$(MAKE) OS=xxx' where xxx is win32, linux, solaris, freebsd, tru64, irix, hpux, macosx or bsdi"; exit 1; fi
  
  zebedee$(EXE) : $(OBJS)
