@@ -1,0 +1,15 @@
+$OpenBSD: patch-inc_Devel_CheckLib_pm,v 1.1 2014/03/21 11:21:35 jasper Exp $
+
+Fix build with perl 5.18
+
+--- inc/Devel/CheckLib.pm.orig	Fri Mar 21 12:20:29 2014
++++ inc/Devel/CheckLib.pm	Fri Mar 21 12:20:43 2014
+@@ -161,7 +161,7 @@ sub assert_lib {
+     # work-a-like for Makefile.PL's LIBS and INC arguments
+     # if given as command-line argument, append to %args
+     for my $arg (@ARGV) {
+-        for my $mm_attr_key qw(LIBS INC) {
++        for my $mm_attr_key (qw(LIBS INC)) {
+             if (my ($mm_attr_value) = $arg =~ /\A $mm_attr_key = (.*)/x) {
+             # it is tempting to put some \s* into the expression, but the
+             # MM command-line parser only accepts LIBS etc. followed by =,
