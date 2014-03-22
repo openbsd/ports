@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 10:50:19 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2014/03/22 14:05:38 jasper Exp $
 
 COMMENT =	easy subclassing of non-Moose classes
 
 MODULES =	cpan
-DISTNAME =	MooseX-NonMoose-0.22
+DISTNAME =	MooseX-NonMoose-0.26
 CATEGORIES =	devel
 
 # same as perl
