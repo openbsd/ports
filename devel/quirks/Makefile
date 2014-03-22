@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2014/03/22 14:23:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.130 2014/03/22 14:31:51 espie Exp $
 
 COMMENT =	exceptions to pkg_add rules
 CATEGORIES =	devel databases
@@ -12,9 +12,12 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-NO_BUILD =	Yes
-
 PERLDIR =	${PREFIX}/libdata/perl5/site_perl
+
+do-build:
+	@perl -c ${FILESDIR}/Quirks.pm 
+	# warning for $File::Find::name is normal
+	@perl -c ${FILESDIR}/Quirks/texlive.pm
 
 do-install:
 	${INSTALL_DATA_DIR} ${PERLDIR}/OpenBSD
