@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 10:50:17 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2014/03/22 14:00:43 jasper Exp $
 
 COMMENT=	watch for changes to files, cross-platform style
 
 MODULES=	cpan
 DISTNAME=	File-ChangeNotify-0.20
+REVISION=	0
 CATEGORIES=	devel
 
 # Artistic 2.0
@@ -11,8 +12,7 @@ PERMIT_PACKAGE_CDROM =		Yes
 
 CONFIGURE_STYLE =	modbuild
 
-RUN_DEPENDS =	devel/p5-Class-MOP \
-		devel/p5-Moose \
+RUN_DEPENDS =	devel/p5-Moose>=2.1204 \
 		devel/p5-MooseX-Params-Validate \
 		devel/p5-MooseX-SemiAffordanceAccessor \
 		devel/p5-namespace-autoclean
