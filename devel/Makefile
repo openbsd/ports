@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1203 2014/03/21 17:19:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.1204 2014/03/22 13:49:23 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -582,7 +582,6 @@
      SUBDIR += p5-Class-Inspector
      SUBDIR += p5-Class-Load
      SUBDIR += p5-Class-Loader
-     SUBDIR += p5-Class-MOP
      SUBDIR += p5-Class-MakeMethods
      SUBDIR += p5-Class-Meta
      SUBDIR += p5-Class-Meta-Express
@@ -698,6 +697,7 @@
      SUBDIR += p5-EV
      SUBDIR += p5-Env-PS1
      SUBDIR += p5-Error
+     SUBDIR += p5-Eval-Closure
      SUBDIR += p5-Event
      SUBDIR += p5-Event-ExecFlow
      SUBDIR += p5-Event-Lib
@@ -817,6 +817,7 @@
      SUBDIR += p5-MRO-Compat
      SUBDIR += p5-Memoize-ExpireLRU
      SUBDIR += p5-Module-Find
+     SUBDIR += p5-Module-Implementation
      SUBDIR += p5-Module-Install
      SUBDIR += p5-Module-Install-AuthorTests
      SUBDIR += p5-Module-Install-Repository
@@ -950,6 +951,7 @@
      SUBDIR += p5-String-Scanf
      SUBDIR += p5-String-Truncate
      SUBDIR += p5-Sub-Exporter
+     SUBDIR += p5-Sub-Exporter-Progressive
      SUBDIR += p5-Sub-Identify
      SUBDIR += p5-Sub-Install
      SUBDIR += p5-Sub-Lambda
