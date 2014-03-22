@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_network_h,v 1.1 2014/03/22 23:05:43 sthen Exp $
+--- src/network.h.orig	Sun Mar 16 01:45:27 2014
++++ src/network.h	Sun Mar 16 01:45:44 2014
+@@ -230,7 +230,7 @@ struct my_icmphdr
+     u_int32_t   gateway;        /* gateway address */
+     struct
+     {
+-      u_int16_t __unused;
++      u_int16_t __dummy;
+       u_int16_t mtu;
+     } frag;                     /* path mtu discovery */
+   } un;

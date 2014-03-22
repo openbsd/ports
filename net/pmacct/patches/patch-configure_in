@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure_in,v 1.1 2014/03/22 23:05:43 sthen Exp $
+--- configure.in.orig	Sat Mar 22 22:39:17 2014
++++ configure.in	Sat Mar 22 22:39:21 2014
+@@ -25,7 +25,6 @@ AC_PROG_RANLIB
+ dnl initial checks; tweakings to CFLAGS and LDFLAGS
+ dnl see final checks for tweakings to LIBS
+ if test "x$ac_cv_prog_gcc" = xyes ; then
+-  CFLAGS="-O2 ${CFLAGS}"
+   case "$host_os" in
+     IRIX*)
+       CFLAGS="-mabi=n32 -fno-builtins"

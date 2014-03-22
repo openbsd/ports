@@ -1,6 +1,6 @@
 pmacct is a set of passive network monitoring tools to measure, account,
-classify, aggregate and export IPv4 and IPv6 traffic, suitable to ISP, IXP,
-CDN, IP carrier, data-centre and hot-spot enviroments.
+classify, aggregate and export IPv4 and IPv6 traffic, suitable for ISP,
+IXP, CDN, IP carrier, data-centre and hot-spot enviroments.
 
 Being able to collect flow data through libpcap, NetFlow and sFlow and
 optionally augment this by configuring peering with the included BGP
@@ -17,7 +17,5 @@ tools, including RRDtool, GNUPlot, Net-SNMP, MRTG and Cacti.
 
 The default package provides SQLite support, available flavors are:
 
-	threads       compile with threads, required for BGP integration
-                      or running packet classification in parallel
 	mysql         compile with support for MySQL
 	postgresql    compile with support for PostgreSQL

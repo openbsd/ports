@@ -1,4 +1,5 @@
-@comment $OpenBSD: PFRAG.postgresql,v 1.2 2010/08/17 19:51:18 sthen Exp $
+@comment $OpenBSD: PFRAG.postgresql,v 1.3 2014/03/22 23:05:43 sthen Exp $
+@bin bin/pmpgplay
 share/doc/pmacct/README.pgsql
 share/examples/pmacct/sql/pmacct-create-db.pgsql
 share/examples/pmacct/sql/pmacct-create-table_bgp_v1.pgsql

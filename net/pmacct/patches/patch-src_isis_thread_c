@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_isis_thread_c,v 1.1 2014/03/22 23:05:43 sthen Exp $
+--- src/isis/thread.c.orig	Sun Mar 16 01:43:22 2014
++++ src/isis/thread.c	Sun Mar 16 01:43:59 2014
+@@ -20,6 +20,7 @@
+  */
+ 
+ #define __THREAD_C
++#include <stdint.h>
+ 
+ #include "pmacct.h"
+ #include "isis.h"
