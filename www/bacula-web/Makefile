@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2014/03/20 12:43:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2014/03/22 08:16:21 ajacoutot Exp $
 
 COMMENT=	monitoring and reporting tool for bacula(8)
 
 DISTNAME=	bacula-web-6.0.0
 EXTRACT_SUFX=	.tgz
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	www sysutils
 

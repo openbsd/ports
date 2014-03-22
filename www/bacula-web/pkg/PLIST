@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/03/20 12:43:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/03/22 08:16:21 ajacoutot Exp $
 @extraunexec rm -rf %D/bacula-web/application/view/cache/*
-@unexec-delete rm -f /var/www/conf/modules/bacula-web.conf
 bacula-web/
 bacula-web/DOCS/
 bacula-web/DOCS/COPYING

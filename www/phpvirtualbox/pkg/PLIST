@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/03/20 10:39:45 ajacoutot Exp $
-@unexec-delete rm -f /var/www/conf/modules/phpvirtualbox.conf
+@comment $OpenBSD: PLIST,v 1.5 2014/03/22 08:16:21 ajacoutot Exp $
 phpvirtualbox/
 phpvirtualbox/CHANGELOG.txt
 phpvirtualbox/GPLv3.txt
