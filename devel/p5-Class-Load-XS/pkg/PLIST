@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/03/22 13:51:19 jasper Exp $
+${P5ARCH}/Class/
+${P5ARCH}/Class/Load/
+${P5ARCH}/Class/Load/XS.pm
+${P5ARCH}/auto/Class/
+${P5ARCH}/auto/Class/Load/
+${P5ARCH}/auto/Class/Load/XS/
+${P5ARCH}/auto/Class/Load/XS/XS.bs
+${P5ARCH}/auto/Class/Load/XS/XS.so
+@man man/man3p/Class::Load::XS.3p
