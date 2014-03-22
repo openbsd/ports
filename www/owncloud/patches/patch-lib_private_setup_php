@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_private_setup_php,v 1.1 2014/03/22 09:40:21 ajacoutot Exp $
+--- lib/private/setup.php.orig	Mon Mar  3 15:11:46 2014
++++ lib/private/setup.php	Sat Mar 22 10:08:40 2014
+@@ -66,7 +66,7 @@ class OC_Setup {
+ 
+ 		//write the config file
+ 		OC_Config::setValue('trusted_domains', array(OC_Request::serverHost())); 
+-		OC_Config::setValue('datadirectory', $datadir);
++		OC_Config::setValue('datadirectory', '/owncloud-data');
+ 		OC_Config::setValue('dbtype', $dbtype);
+ 		OC_Config::setValue('version', implode('.', OC_Util::getVersion()));
+ 		try {
