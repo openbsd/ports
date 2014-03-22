@@ -1,0 +1,9 @@
+$OpenBSD: patch-doc_man8_sympa_pod,v 1.1 2014/03/22 10:08:40 espie Exp $
+--- doc/man8/sympa.pod.orig	Sat Mar 22 04:05:30 2014
++++ doc/man8/sympa.pod	Sat Mar 22 04:05:42 2014
+@@ -1,3 +1,5 @@
++=encoding ISO8859-1
++
+ =head1 NAME
+ 
+ sympa (or sympa.pl) - A Modern Mailing List Manager
