@@ -1,5 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/02 00:58:02 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/03/22 14:02:25 jasper Exp $
 ${P5SITE}/B/
 ${P5SITE}/B/Hooks/
+${P5SITE}/B/Hooks/EndOfScope/
 ${P5SITE}/B/Hooks/EndOfScope.pm
+${P5SITE}/B/Hooks/EndOfScope/PP/
+${P5SITE}/B/Hooks/EndOfScope/PP.pm
+${P5SITE}/B/Hooks/EndOfScope/PP/FieldHash.pm
+${P5SITE}/B/Hooks/EndOfScope/PP/HintHash.pm
+${P5SITE}/B/Hooks/EndOfScope/XS.pm
 @man man/man3p/B::Hooks::EndOfScope.3p
+@man man/man3p/B::Hooks::EndOfScope::PP.3p
+@man man/man3p/B::Hooks::EndOfScope::XS.3p
