@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.134 2014/03/21 20:01:42 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.135 2014/03/22 13:55:34 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -333,6 +333,9 @@ my $stem_extensions = {
 	'foomatic-filters' => 'cups-filters',
 	'faad-xmms' => 'xmms-faad',
 	'p5-MojoX-Renderer-TT' => 'p5-Mojolicious-Plugin-TtRenderer',
+
+# 5.6
+	'p5-Class-MOP' => 'p5-Moose',
 };
 
 # reasons for obsolete packages
