@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:19 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2014/03/22 14:03:04 jasper Exp $
 
 COMMENT=		declarative syntax for Moose
 
-DISTNAME=		MooseX-Declare-0.35
+DISTNAME=		MooseX-Declare-0.38
 
 CATEGORIES=		devel
 
