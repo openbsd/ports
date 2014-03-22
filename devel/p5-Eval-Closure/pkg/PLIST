@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/03/22 13:46:26 jasper Exp $
+${P5SITE}/Eval/
+${P5SITE}/Eval/Closure.pm
+@man man/man3p/Eval::Closure.3p
