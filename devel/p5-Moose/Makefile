@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2013/03/11 10:50:19 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2014/03/22 13:53:57 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	complete modern object system for perl 5
 
 MODULES=	cpan
-DISTNAME=	Moose-1.25
-REVISION=	0
+DISTNAME=	Moose-2.1204
 CATEGORIES=	devel
 
 # perl
@@ -14,27 +13,40 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c
 
-CPAN_AUTHOR=	DROLSKY
+CPAN_AUTHOR=	ETHER
 
 BUILD_DEPENDS=	devel/p5-Task-Weaken
 
-RUN_DEPENDS=	devel/p5-Class-MOP>=1.11 \
+RUN_DEPENDS=	devel/p5-Class-Load-XS \
 		devel/p5-Data-OptList \
+		devel/p5-Devel-GlobalDestruction \
+		devel/p5-Devel-StackTrace \
+		devel/p5-Dist-CheckConflicts \
+		devel/p5-Eval-Closure \
 		devel/p5-List-MoreUtils \
-		devel/p5-Package-DeprecationManager \
+		devel/p5-MRO-Compat \
+		devel/p5-Module-Runtime>=0.014 \
+		devel/p5-Package-DeprecationManager>=0.13 \
+		devel/p5-Package-Stash \
+		devel/p5-Package-Stash-XS \
 		devel/p5-Params-Util \
 		devel/p5-Sub-Exporter \
 		devel/p5-Sub-Name \
 		devel/p5-Try-Tiny
 
 TEST_DEPENDS=databases/p5-DBM-Deep \
+		devel/p5-Class-Load \
 		devel/p5-DateTime-Calendar-Mayan \
 		devel/p5-DateTime-Format-MySQL \
 		devel/p5-Declare-Constraints-Simple \
+		devel/p5-Devel-GlobalDestruction \
 		devel/p5-IO-String \
 		devel/p5-Locale-US \
 		devel/p5-Module-Refresh \
+		devel/p5-Module-Runtime \
+		devel/p5-MRO-Compat \
 		devel/p5-Params-Coerce \
+		devel/p5-Sub-Name \
 		devel/p5-Test-Deep \
 		devel/p5-Test-Fatal \
 		devel/p5-Test-Output \
