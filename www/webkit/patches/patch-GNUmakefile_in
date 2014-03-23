@@ -1,4 +1,4 @@
-$OpenBSD: patch-GNUmakefile_in,v 1.28 2014/01/29 17:28:05 ajacoutot Exp $
+$OpenBSD: patch-GNUmakefile_in,v 1.29 2014/03/23 09:51:33 espie Exp $
 
 - chunk 1,2 : install GtkLauncher, remove silent build lines
 - chunk 5 : install gtk-doc in a versionned dir to avoid conflicts
@@ -108,7 +108,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.28 2014/01/29 17:28:05 ajacoutot Exp $
  	$(AM_V_at)$(shell rm -f $@)
 -	$(AM_V_at)$(foreach archive, $(webcore_layer_gtk2_archives), $(shell ar t $(archive) | xargs -n50 ar cruT $@))
 +	$(AM_V_at)$(foreach archive, $(webcore_layer_gtk2_archives), $(shell ar t $(archive) | while read f ; do find . -name $$f ; done | xargs -n50 ar cru $@))
-+	ln $@ libWebCoreLayerGtk2.a
++	ln -f $@ libWebCoreLayerGtk2.a
  
  $(GENSOURCES_WEBKIT2)/BrowserMarshal.h: stamp-mini-browser-marshal.h
  	@true
@@ -118,7 +118,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.28 2014/01/29 17:28:05 ajacoutot Exp $
  	$(AM_V_at)$(shell rm -f $@)
 -	$(AM_V_at)$(foreach archive, $(webcore_layer_archives), $(shell ar t $(archive) | xargs -n50 ar cruT $@))
 +	$(AM_V_at)$(foreach archive, $(webcore_layer_archives), $(shell ar t $(archive) | while read f ; do find . -name $$f ; done | xargs -n50 ar cru $@))
-+	ln $@ libWebCoreLayer.a
++	ln -f $@ libWebCoreLayer.a
  
  Programs/TestWebKitAPI/WebKit2Gtk/resources/webkit2gtk-tests-resources.gresource: Tools/TestWebKitAPI/Tests/WebKit2Gtk/resources/webkit2gtk-tests.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/Tools/TestWebKitAPI/Tests/WebKit2Gtk/resources/webkit2gtk-tests.gresource.xml)
  	$(AM_V_at)mkdir -p ${GENPROGRAMS}/TestWebKitAPI/WebKit2Gtk/resources
