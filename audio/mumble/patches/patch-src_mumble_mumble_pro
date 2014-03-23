@@ -1,19 +1,29 @@
-$OpenBSD: patch-src_mumble_mumble_pro,v 1.2 2014/03/18 10:34:16 ajacoutot Exp $
+$OpenBSD: patch-src_mumble_mumble_pro,v 1.3 2014/03/23 18:17:34 kili Exp $
 
 Use celt from our ports tree
 
 --- src/mumble/mumble.pro.orig	Sat Feb  1 00:01:49 2014
 +++ src/mumble/mumble.pro	Tue Mar 18 11:24:50 2014
-@@ -67,11 +67,8 @@ CONFIG(sbcelt) {
+@@ -67,12 +67,9 @@ CONFIG(sbcelt) {
    LIBS *= -lcelt -lsbcelt
    DEFINES *= SBCELT_PREFIX_API SBCELT_COMPAT_API USE_SBCELT
  } else {
 -  unix:!CONFIG(bundled-celt):system(pkg-config --atleast-version=0.7.0 celt) {
 +  unix:!CONFIG(bundled-celt):system(pkg-config --atleast-version=0.7.0 celt07) {
      CONFIG	*= no-bundled-celt
--  }
+   }
 -  CONFIG(no-bundled-celt) {
 -    INCLUDEPATH	*= /usr/include/celt
-   }
+-  }
    !CONFIG(no-bundled-celt) {
      INCLUDEPATH	*= ../../celt-0.7.0-src/libcelt
+   }
+@@ -199,7 +196,7 @@ unix {
+     HEADERS *= GlobalShortcut_unix.h
+     SOURCES *= GlobalShortcut_unix.cpp TextToSpeech_unix.cpp Overlay_unix.cpp SharedMemory_unix.cpp Log_unix.cpp
+     PKGCONFIG *= x11
+-    LIBS *= -lrt -lXi
++    LIBS *= -lXi
+ 
+     !CONFIG(no-oss) {
+       CONFIG  *= oss

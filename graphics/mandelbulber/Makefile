@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2014/03/18 10:18:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2014/03/23 18:17:34 kili Exp $
 
 COMMENT =		3D fractal renderer
 
 V =			1.15
 DISTNAME =		mandelbulber${V}
 PKGNAME =		mandelbulber-${V}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		graphics
 

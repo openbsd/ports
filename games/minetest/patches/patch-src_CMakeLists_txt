@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_CMakeLists_txt,v 1.5 2014/03/18 11:29:46 ajacoutot Exp $
+$OpenBSD: patch-src_CMakeLists_txt,v 1.6 2014/03/23 18:17:34 kili Exp $
 --- src/CMakeLists.txt.orig	Wed Jan  1 22:54:28 2014
 +++ src/CMakeLists.txt	Tue Mar 18 11:50:33 2014
 @@ -29,6 +29,8 @@ set(USE_GETTEXT 0)
@@ -10,7 +10,21 @@ $OpenBSD: patch-src_CMakeLists_txt,v 1.5 2014/03/18 11:29:46 ajacoutot Exp $
  else()
  	MARK_AS_ADVANCED(GETTEXT_ICONV_DLL GETTEXT_INCLUDE_DIR GETTEXT_LIBRARY GETTEXT_MSGFMT)
  endif()
-@@ -430,7 +432,8 @@ if(BUILD_CLIENT)
+@@ -160,7 +162,12 @@ else()
+ 		endif(APPLE)
+ 	endif(BUILD_CLIENT)
+ 	find_package(ZLIB REQUIRED)
+-	set(PLATFORM_LIBS -lpthread -lrt ${CMAKE_DL_LIBS})
++	check_library_exists(rt clock_gettime "" HAVE_LIBRT)
++	if (HAVE_LIBRT)
++		set(PLATFORM_LIBS -lpthread -lrt ${CMAKE_DL_LIBS})
++	else()
++		set(PLATFORM_LIBS -lpthread ${CMAKE_DL_LIBS})
++	endif()
+ 	#set(CLIENT_PLATFORM_LIBS -lXxf86vm)
+ 	# This way Xxf86vm is found on OpenBSD too
+ 	find_library(XXF86VM_LIBRARY Xxf86vm)
+@@ -430,7 +437,8 @@ if(BUILD_CLIENT)
  		${BZIP2_LIBRARIES}
  		${PNG_LIBRARIES}
  		${X11_LIBRARIES}
@@ -20,7 +34,7 @@ $OpenBSD: patch-src_CMakeLists_txt,v 1.5 2014/03/18 11:29:46 ajacoutot Exp $
  		${SOUND_LIBRARIES}
  		${SQLITE3_LIBRARY}
  		${LUA_LIBRARY}
-@@ -465,7 +468,8 @@ if(BUILD_SERVER)
+@@ -465,7 +473,8 @@ if(BUILD_SERVER)
  		${ZLIB_LIBRARIES}
  		${SQLITE3_LIBRARY}
  		${JSON_LIBRARY}
@@ -30,7 +44,7 @@ $OpenBSD: patch-src_CMakeLists_txt,v 1.5 2014/03/18 11:29:46 ajacoutot Exp $
  		${LUA_LIBRARY}
  		${PLATFORM_LIBS}
  	)
-@@ -533,7 +537,7 @@ else()
+@@ -533,7 +542,7 @@ else()
  		set(ARCH i386)
  	endif()
  

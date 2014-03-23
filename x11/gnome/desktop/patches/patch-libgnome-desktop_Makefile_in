@@ -1,4 +1,4 @@
-$OpenBSD: patch-libgnome-desktop_Makefile_in,v 1.11 2014/03/18 08:03:23 ajacoutot Exp $
+$OpenBSD: patch-libgnome-desktop_Makefile_in,v 1.12 2014/03/23 18:17:35 kili Exp $
 
 XXX fix+push upstream
 
@@ -13,3 +13,13 @@ XXX fix+push upstream
  	-DPNP_IDS=\""$(PNP_IDS)"\"				\
  	-DXKB_BASE=\""$(XKB_BASE)"\"				\
  	$(DISABLE_DEPRECATED_CFLAGS)
+@@ -566,8 +566,7 @@ libgnome_desktop_3_la_LIBADD = \
+ 	$(XLIB_LIBS)		\
+ 	$(LIBM)			\
+ 	$(GNOME_DESKTOP_LIBS)	\
+-	libgsystem.la           \
+-	-lrt
++	libgsystem.la
+ 
+ libgnome_desktop_3_la_LDFLAGS = \
+ 	-version-info $(LT_VERSION) \

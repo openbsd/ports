@@ -1,0 +1,12 @@
+$OpenBSD: patch-generate_unix_acpiexec_Makefile,v 1.4 2014/03/23 18:17:34 kili Exp $
+--- generate/unix/acpiexec/Makefile.orig	Wed Jan 11 00:31:39 2012
++++ generate/unix/acpiexec/Makefile	Wed Jan 11 00:31:56 2012
+@@ -200,7 +200,7 @@ OBJECTS = \
+ CFLAGS+= \
+     -DACPI_EXEC_APP \
+     -I$(ACPIEXEC)
+-LDFLAGS += -lpthread -lrt
++LDFLAGS += -lpthread
+ 
+ #
+ # Rules

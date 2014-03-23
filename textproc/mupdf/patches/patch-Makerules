@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makerules,v 1.9 2014/03/18 12:26:08 ajacoutot Exp $
+$OpenBSD: patch-Makerules,v 1.10 2014/03/23 18:17:35 kili Exp $
 --- Makerules.orig	Wed Aug 14 14:41:20 2013
 +++ Makerules	Tue Mar 18 12:39:27 2014
 @@ -6,6 +6,7 @@ OS := $(OS:Windows_NT=MINGW)
@@ -17,7 +17,15 @@ $OpenBSD: patch-Makerules,v 1.9 2014/03/18 12:26:08 ajacoutot Exp $
  
  # Windows (MINGW) build doesn't use system libraries.
  ifeq "$(OS)" "MINGW"
-@@ -62,8 +64,8 @@ SYS_X11_LIBS = $(shell pkg-config --libs x11 xext)
+@@ -55,15 +57,15 @@ SYS_OPENSSL_CFLAGS = -DHAVE_OPENSSL $(shell pkg-config
+ SYS_OPENSSL_LIBS = $(shell pkg-config --libs libcrypto)
+ endif
+ 
+-SYS_CURL_DEPS = -lpthread -lrt
++SYS_CURL_DEPS = $(shell pkg-config --libs libcurl)
+ 
+ SYS_X11_CFLAGS = $(shell pkg-config --cflags x11 xext)
+ SYS_X11_LIBS = $(shell pkg-config --libs x11 xext)
  
  SYS_FREETYPE_CFLAGS = $(shell pkg-config --cflags freetype2)
  SYS_FREETYPE_LIBS = $(shell pkg-config --libs freetype2)

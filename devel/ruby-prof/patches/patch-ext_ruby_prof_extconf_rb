@@ -1,0 +1,15 @@
+$OpenBSD: patch-ext_ruby_prof_extconf_rb,v 1.3 2014/03/23 18:17:34 kili Exp $
+
+clock_gettime is in libc in OpenBSD.
+
+--- ext/ruby_prof/extconf.rb.orig	Thu May  5 10:25:43 2011
++++ ext/ruby_prof/extconf.rb	Thu May  5 10:25:50 2011
+@@ -40,7 +40,7 @@ def add_define(name, value = nil)
+ end
+ require 'rubygems'
+ unless Gem.win_platform? || RUBY_PLATFORM =~ /darwin/
+-  $LDFLAGS += " -lrt" # for clock_gettime
++#  $LDFLAGS += " -lrt" # for clock_gettime
+ end
+ add_define("RUBY_VERSION", RUBY_VERSION.gsub('.', ''))
+ 

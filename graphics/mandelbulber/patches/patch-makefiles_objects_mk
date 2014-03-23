@@ -1,0 +1,10 @@
+$OpenBSD: patch-makefiles_objects_mk,v 1.3 2014/03/23 18:17:34 kili Exp $
+--- makefiles/objects.mk.orig	Sun May  5 17:29:00 2013
++++ makefiles/objects.mk	Sun May  5 17:29:04 2013
+@@ -4,5 +4,5 @@
+ 
+ USER_OBJS :=
+ 
+-LIBS := -lgthread-2.0 -lrt -lglib-2.0 -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lcairo -lpango-1.0 -lfreetype -lfontconfig -lgobject-2.0 -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lcairo -lpango-1.0 -lfreetype -lfontconfig -lgobject-2.0 -lglib-2.0 -lgthread-2.0 -lrt -lpng -ljpeg
++LIBS := -lgthread-2.0 -lglib-2.0 -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lcairo -lpango-1.0 -lfreetype -lfontconfig -lgobject-2.0 -lgtk-x11-2.0 -lgdk-x11-2.0 -latk-1.0 -lgio-2.0 -lpangoft2-1.0 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lcairo -lpango-1.0 -lfreetype -lfontconfig -lgobject-2.0 -lglib-2.0 -lgthread-2.0 -lpng -ljpeg
+ 
