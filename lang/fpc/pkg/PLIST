@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/03/19 18:47:46 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/03/23 10:54:43 pascal Exp $
 %%amd64%%
 %%i386%%
 @bin bin/bin2obj
@@ -22,6 +22,8 @@
 @bin bin/makeskel
 @bin bin/mkarmins
 @bin bin/mkx86ins
+@bin bin/pas2fpm
+@bin bin/pas2ut
 @bin bin/plex
 @bin bin/postw32
 @bin bin/ppdep
@@ -228,6 +230,7 @@ lib/fpc/${V}/units/${CONFIG}/fcl-base/libpinifiles.a
 lib/fpc/${V}/units/${CONFIG}/fcl-base/libpiostream.a
 lib/fpc/${V}/units/${CONFIG}/fcl-base/libplibtar.a
 lib/fpc/${V}/units/${CONFIG}/fcl-base/libpmaskutils.a
+lib/fpc/${V}/units/${CONFIG}/fcl-base/libpnullstream.a
 lib/fpc/${V}/units/${CONFIG}/fcl-base/libppooledmm.a
 lib/fpc/${V}/units/${CONFIG}/fcl-base/libprtfpars.a
 lib/fpc/${V}/units/${CONFIG}/fcl-base/libprttiutils.a
@@ -243,6 +246,8 @@ lib/fpc/${V}/units/${CONFIG}/fcl-base/libtar.o
 lib/fpc/${V}/units/${CONFIG}/fcl-base/libtar.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-base/maskutils.o
 lib/fpc/${V}/units/${CONFIG}/fcl-base/maskutils.ppu
+lib/fpc/${V}/units/${CONFIG}/fcl-base/nullstream.o
+lib/fpc/${V}/units/${CONFIG}/fcl-base/nullstream.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-base/pooledmm.o
 lib/fpc/${V}/units/${CONFIG}/fcl-base/pooledmm.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-base/rtfpars.o
@@ -368,6 +373,7 @@ lib/fpc/${V}/units/${CONFIG}/fcl-db/libpmysql4conn.a
 lib/fpc/${V}/units/${CONFIG}/fcl-db/libpmysql50conn.a
 lib/fpc/${V}/units/${CONFIG}/fcl-db/libpmysql51conn.a
 lib/fpc/${V}/units/${CONFIG}/fcl-db/libpmysql55conn.a
+lib/fpc/${V}/units/${CONFIG}/fcl-db/libpmysql56conn.a
 lib/fpc/${V}/units/${CONFIG}/fcl-db/libpodbcconn.a
 lib/fpc/${V}/units/${CONFIG}/fcl-db/libporacleconnection.a
 lib/fpc/${V}/units/${CONFIG}/fcl-db/libpparadox.a
@@ -398,6 +404,8 @@ lib/fpc/${V}/units/${CONFIG}/fcl-db/mysql51conn.o
 lib/fpc/${V}/units/${CONFIG}/fcl-db/mysql51conn.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-db/mysql55conn.o
 lib/fpc/${V}/units/${CONFIG}/fcl-db/mysql55conn.ppu
+lib/fpc/${V}/units/${CONFIG}/fcl-db/mysql56conn.o
+lib/fpc/${V}/units/${CONFIG}/fcl-db/mysql56conn.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-db/odbcconn.o
 lib/fpc/${V}/units/${CONFIG}/fcl-db/odbcconn.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-db/oracleconnection.o
@@ -642,10 +650,16 @@ lib/fpc/${V}/units/${CONFIG}/fcl-net/ssockets.o
 lib/fpc/${V}/units/${CONFIG}/fcl-net/ssockets.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-passrc/
 lib/fpc/${V}/units/${CONFIG}/fcl-passrc/Package.fpc
+lib/fpc/${V}/units/${CONFIG}/fcl-passrc/libppassrcutil.a
+lib/fpc/${V}/units/${CONFIG}/fcl-passrc/libppastounittest.a
 lib/fpc/${V}/units/${CONFIG}/fcl-passrc/libppastree.a
 lib/fpc/${V}/units/${CONFIG}/fcl-passrc/libppaswrite.a
 lib/fpc/${V}/units/${CONFIG}/fcl-passrc/libppparser.a
 lib/fpc/${V}/units/${CONFIG}/fcl-passrc/libppscanner.a
+lib/fpc/${V}/units/${CONFIG}/fcl-passrc/passrcutil.o
+lib/fpc/${V}/units/${CONFIG}/fcl-passrc/passrcutil.ppu
+lib/fpc/${V}/units/${CONFIG}/fcl-passrc/pastounittest.o
+lib/fpc/${V}/units/${CONFIG}/fcl-passrc/pastounittest.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-passrc/pastree.o
 lib/fpc/${V}/units/${CONFIG}/fcl-passrc/pastree.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-passrc/paswrite.o
@@ -807,7 +821,6 @@ lib/fpc/${V}/units/${CONFIG}/fcl-web/custfcgi.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-web/custfcgi.rst
 lib/fpc/${V}/units/${CONFIG}/fcl-web/custhttpapp.o
 lib/fpc/${V}/units/${CONFIG}/fcl-web/custhttpapp.ppu
-lib/fpc/${V}/units/${CONFIG}/fcl-web/custhttpapp.rst
 lib/fpc/${V}/units/${CONFIG}/fcl-web/custweb.o
 lib/fpc/${V}/units/${CONFIG}/fcl-web/custweb.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-web/custweb.rst
@@ -825,6 +838,9 @@ lib/fpc/${V}/units/${CONFIG}/fcl-web/fcgigate.rst
 lib/fpc/${V}/units/${CONFIG}/fcl-web/fpapache.o
 lib/fpc/${V}/units/${CONFIG}/fcl-web/fpapache.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-web/fpapache.rst
+lib/fpc/${V}/units/${CONFIG}/fcl-web/fpapache24.o
+lib/fpc/${V}/units/${CONFIG}/fcl-web/fpapache24.ppu
+lib/fpc/${V}/units/${CONFIG}/fcl-web/fpapache24.rst
 lib/fpc/${V}/units/${CONFIG}/fcl-web/fpcgi.o
 lib/fpc/${V}/units/${CONFIG}/fcl-web/fpcgi.ppu
 lib/fpc/${V}/units/${CONFIG}/fcl-web/fpdatasetform.o
@@ -1240,6 +1256,14 @@ lib/fpc/${V}/units/${CONFIG}/httpd22/libpapr.a
 lib/fpc/${V}/units/${CONFIG}/httpd22/libpapriconv.a
 lib/fpc/${V}/units/${CONFIG}/httpd22/libpaprutil.a
 lib/fpc/${V}/units/${CONFIG}/httpd22/libphttpd.a
+lib/fpc/${V}/units/${CONFIG}/httpd24/
+lib/fpc/${V}/units/${CONFIG}/httpd24/Package.fpc
+lib/fpc/${V}/units/${CONFIG}/httpd24/apr24.o
+lib/fpc/${V}/units/${CONFIG}/httpd24/apr24.ppu
+lib/fpc/${V}/units/${CONFIG}/httpd24/httpd24.o
+lib/fpc/${V}/units/${CONFIG}/httpd24/httpd24.ppu
+lib/fpc/${V}/units/${CONFIG}/httpd24/libpapr24.a
+lib/fpc/${V}/units/${CONFIG}/httpd24/libphttpd24.a
 lib/fpc/${V}/units/${CONFIG}/ibase/
 lib/fpc/${V}/units/${CONFIG}/ibase/Package.fpc
 lib/fpc/${V}/units/${CONFIG}/ibase/ibase40.o
@@ -1314,6 +1338,8 @@ lib/fpc/${V}/units/${CONFIG}/mysql/libpmysql51.a
 lib/fpc/${V}/units/${CONFIG}/mysql/libpmysql51dyn.a
 lib/fpc/${V}/units/${CONFIG}/mysql/libpmysql55.a
 lib/fpc/${V}/units/${CONFIG}/mysql/libpmysql55dyn.a
+lib/fpc/${V}/units/${CONFIG}/mysql/libpmysql56.a
+lib/fpc/${V}/units/${CONFIG}/mysql/libpmysql56dyn.a
 lib/fpc/${V}/units/${CONFIG}/mysql/my4_sys.o
 lib/fpc/${V}/units/${CONFIG}/mysql/my4_sys.ppu
 lib/fpc/${V}/units/${CONFIG}/mysql/mysql3.o
@@ -1356,6 +1382,10 @@ lib/fpc/${V}/units/${CONFIG}/mysql/mysql55.o
 lib/fpc/${V}/units/${CONFIG}/mysql/mysql55.ppu
 lib/fpc/${V}/units/${CONFIG}/mysql/mysql55dyn.o
 lib/fpc/${V}/units/${CONFIG}/mysql/mysql55dyn.ppu
+lib/fpc/${V}/units/${CONFIG}/mysql/mysql56.o
+lib/fpc/${V}/units/${CONFIG}/mysql/mysql56.ppu
+lib/fpc/${V}/units/${CONFIG}/mysql/mysql56dyn.o
+lib/fpc/${V}/units/${CONFIG}/mysql/mysql56dyn.ppu
 lib/fpc/${V}/units/${CONFIG}/ncurses/
 lib/fpc/${V}/units/${CONFIG}/ncurses/Package.fpc
 lib/fpc/${V}/units/${CONFIG}/ncurses/form.o
@@ -1772,6 +1802,7 @@ lib/fpc/${V}/units/${CONFIG}/rtl/dateutils.o
 lib/fpc/${V}/units/${CONFIG}/rtl/dateutils.ppu
 lib/fpc/${V}/units/${CONFIG}/rtl/dl.o
 lib/fpc/${V}/units/${CONFIG}/rtl/dl.ppu
+lib/fpc/${V}/units/${CONFIG}/rtl/dllprt0.o
 lib/fpc/${V}/units/${CONFIG}/rtl/dos.o
 lib/fpc/${V}/units/${CONFIG}/rtl/dos.ppu
 lib/fpc/${V}/units/${CONFIG}/rtl/dynlibs.o
@@ -1802,6 +1833,7 @@ lib/fpc/${V}/units/${CONFIG}/rtl/libpbaseunix.a
 lib/fpc/${V}/units/${CONFIG}/rtl/libpbsd.a
 lib/fpc/${V}/units/${CONFIG}/rtl/libpcharset.a
 lib/fpc/${V}/units/${CONFIG}/rtl/libpclasses.a
+lib/fpc/${V}/units/${CONFIG}/rtl/libpclocale.a
 lib/fpc/${V}/units/${CONFIG}/rtl/libpcmem.a
 lib/fpc/${V}/units/${CONFIG}/rtl/libpconvutils.a
 lib/fpc/${V}/units/${CONFIG}/rtl/libpcpu.a
@@ -2135,7 +2167,6 @@ share/doc/fpc-${V}/fpc/libffi.txt
 share/doc/fpc-${V}/fpc/licensez.ip
 share/doc/fpc-${V}/fpc/readme.txt
 share/doc/fpc-${V}/fpc/whatsnew.txt
-share/examples/fpc/
 share/examples/fpc-${V}/
 share/examples/fpc-${V}/fcl-db/
 share/examples/fpc-${V}/fcl-db/testcp.pp
@@ -2296,6 +2327,10 @@ share/examples/fpc-${V}/httpd22/mod_example.pp
 share/examples/fpc-${V}/httpd22/mod_hello.pp
 share/examples/fpc-${V}/httpd22/mod_spelling.pp
 share/examples/fpc-${V}/httpd22/testmodule.pp
+share/examples/fpc-${V}/httpd24/
+share/examples/fpc-${V}/httpd24/Makefile
+share/examples/fpc-${V}/httpd24/Makefile.fpc
+share/examples/fpc-${V}/httpd24/mod_hello.pp
 share/examples/fpc-${V}/ibase/
 share/examples/fpc-${V}/ibase/Makefile
 share/examples/fpc-${V}/ibase/Makefile.fpc

@@ -1,10 +1,10 @@
-$OpenBSD: patch-fpcsrc_rtl_openbsd_sysnr_inc,v 1.2 2013/08/18 09:21:59 pascal Exp $
+$OpenBSD: patch-fpcsrc_rtl_openbsd_sysnr_inc,v 1.3 2014/03/23 10:54:43 pascal Exp $
 
 Reassign syscall numbers for post-64bit-time_t world.  Also clean up a lot
 of cruft.  :)
 
---- fpcsrc/rtl/openbsd/sysnr.inc.orig	Sun Apr 22 22:13:48 2012
-+++ fpcsrc/rtl/openbsd/sysnr.inc	Fri Aug 16 18:09:26 2013
+--- fpcsrc/rtl/openbsd/sysnr.inc.orig	Sun Feb 24 15:24:29 2013
++++ fpcsrc/rtl/openbsd/sysnr.inc	Tue Mar 11 19:44:09 2014
 @@ -30,16 +30,17 @@ Const
          syscall_nr_write        = 4  ;
          syscall_nr_open         = 5  ;
@@ -189,7 +189,7 @@ of cruft.  :)
          syscall_nr_getresuid    = 281;
          syscall_nr_setresuid    = 282;
          syscall_nr_getresgid    = 283;
-@@ -231,33 +208,20 @@ Const
+@@ -231,34 +208,20 @@ Const
          syscall_nr_signalstack  = syscall_nr_sigaltstack;
          syscall_nr_shmget       = 289;
          syscall_nr_semop        = 290;
@@ -219,8 +219,9 @@ of cruft.  :)
 +        syscall_nr_MAXSYSCALL   = 331;
  
  { Aliases }
--        syscall_nr_getdirentries = syscall_nr_ogetdirentries;
+-        syscall_nr_getdirentries = syscall_nr_getdirentriesi49;
          syscall_nr_waitpid      = syscall_nr_wait4;  // 7, added: ease of notation purposes
 -{        syscall_nr_getdents = syscall_nr_getdirentries; }
 -{$define USE_GETDIRENTRIES_SYSCALL}
+-{$define USE_GETDIRENTRIES_I49_SYSCALL}
 -

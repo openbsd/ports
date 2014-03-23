@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2013/10/01 09:07:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2014/03/23 10:54:43 pascal Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		open source compiler for Pascal/Object Pascal
 
-V =			2.6.2
+V =			2.6.4
 DISTNAME =		fpcbuild-${V}
 PKGNAME =		fpc-${V}
-REVISION =		2
-BOOT_GEN =		1
+BOOT_GEN =		0
 
 CATEGORIES =		lang
 
@@ -75,10 +74,9 @@ post-install:
 	# generate sample config file
 	${PREFIX}/bin/fpcmkcfg -d "basepath=${TRUEPREFIX}/lib/fpc/$V" \
 		-o ${PREFIX}/share/examples/fpc-$V/fpc.cfg.sample
-	# clean these up for test
-	find ${WRKSRC} -name Package.fpc | xargs rm -f
 
 do-test:
+	find ${WRKSRC} -name Package.fpc | xargs rm -f
 	cd ${WRKSRC}/fpcsrc/tests && ${MAKE_PROGRAM} ${ALL_TEST_FLAGS} full
 
 .include <bsd.port.mk>
