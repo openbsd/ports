@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.404 2014/03/16 21:52:21 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.405 2014/03/23 21:12:10 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -404,6 +404,7 @@
      SUBDIR += tinyxml
      SUBDIR += tre
      SUBDIR += txt2tags
+     SUBDIR += uchardet
      SUBDIR += uncrustify
      SUBDIR += unrtf
      SUBDIR += urlview
