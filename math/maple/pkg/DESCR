@@ -1,7 +1,0 @@
-Maple V.5 is a symbolic computation package developed at the University
-of Waterloo. It's a bit outdated as far as programming languages go,
-but it is very good for algebraic manipulations, integral calculus, and
-so on.
-
-This port uses the commercial `single user' version for i386-Linux.  It can
-probably be extended easily for other versions.
