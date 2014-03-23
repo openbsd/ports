@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.76 2014/03/20 12:46:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.77 2014/03/23 22:04:23 sthen Exp $
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-perl=	SNMP modules for Perl
 COMMENT-tkmib=	graphical SNMP MIB browser
 
 V=		5.7.2.1
-REVISION-perl=	0
+REVISION=	1
 
 DISTNAME=	net-snmp-${V:S/pre/.pre/:S/rc/.rc/}
 MULTI_PACKAGES=	-main -perl -tkmib
@@ -30,7 +30,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB-main=		c crypto kvm m perl util wrap
+WANTLIB-main=		c crypto kvm m perl util
 WANTLIB-perl=		crypto m netsnmp netsnmpagent netsnmptrapd \
 			netsnmpmibs perl
 # depends on libperl's ABI (XS module)
@@ -54,7 +54,6 @@ AUTOCONF_VERSION= 2.68
 CONFIGURE_ARGS=   ${CONFIGURE_SHARED} \
 	--enable-ipv6 \
 	--enable-mfd-rewrites \
-	--with-libwrap \
 	--with-copy-persistent-files="no" \
 	--with-mib-modules="${NET_SNMP_MIB_LIST}" \
 	--with-mibs="${DEFAULT_MIBS}:${OPENBSD_MIBS}" \
