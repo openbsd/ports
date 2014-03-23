@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2013/06/26 12:57:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2014/03/23 01:43:41 sthen Exp $
 
 COMMENT-main =		tools to collect and process netflow data
 COMMENT-nfprofile =	filters data from nfdump according to profiles
 
-V =			1.6.10
+V =			1.6.11
 DISTNAME =		nfdump-$V
 FULLPKGNAME-main =	nfdump-$V
 FULLPKGNAME-nfprofile =	nfprofile-$V
@@ -16,7 +16,7 @@ MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		c z
+WANTLIB =		c pthread z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=nfdump/}
 
