@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/12/16 12:05:04 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/03/23 13:10:22 nigel Exp $
 bin/bp_aacomp.pl
 bin/bp_biblio.pl
 bin/bp_biofetch_genbank_proxy.pl
@@ -38,6 +38,7 @@ bin/bp_nrdb.pl
 bin/bp_oligo_count.pl
 bin/bp_pairwise_kaks.pl
 bin/bp_parse_hmmsearch.pl
+bin/bp_pg_bulk_load_gff.pl
 bin/bp_process_gadfly.pl
 bin/bp_process_sgd.pl
 bin/bp_process_wormbase.pl

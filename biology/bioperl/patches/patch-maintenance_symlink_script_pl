@@ -1,0 +1,14 @@
+$OpenBSD: patch-maintenance_symlink_script_pl,v 1.1 2014/03/23 13:10:22 nigel Exp $
+--- maintenance/symlink_script.pl.orig	Tue Sep 29 17:33:45 2009
++++ maintenance/symlink_script.pl	Sat Mar 22 22:54:28 2014
+@@ -12,7 +13,9 @@ my %symlink_scripts = ('bp_bulk_load_gff.pl' => 'bp_pg
+ # installation process installs the symlink as the actual file, so we may as
+ # well have just done a copy
+ 
+-my $install_dir = $build->install_destination('script');
++my $destdir = $build->runtime_params('destdir');
++my $install_dir = $destdir . $build->install_destination('script');
++
+ $build->log_info("Will try to install symlinks to $install_dir\n");
+ my $orig_dir = $build->cwd;
+ chdir($install_dir);
