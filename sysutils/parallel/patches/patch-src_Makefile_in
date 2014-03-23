@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2012/10/13 20:24:13 rpe Exp $
---- src/Makefile.in.orig	Wed Aug 22 21:33:46 2012
-+++ src/Makefile.in	Sat Oct 13 15:44:35 2012
-@@ -368,7 +368,7 @@ distdir: $(DISTFILES)
+$OpenBSD: patch-src_Makefile_in,v 1.2 2014/03/23 12:30:26 pascal Exp $
+--- src/Makefile.in.orig	Sat Mar 22 12:48:47 2014
++++ src/Makefile.in	Sun Mar 23 12:42:38 2014
+@@ -369,7 +369,7 @@ distdir: $(DISTFILES)
  	done
  check-am: all-am
  check: check-am
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2012/10/13 20:24:13 rpe Exp $
  installdirs:
  	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(docdir)"; do \
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
-@@ -424,7 +424,7 @@ info: info-am
+@@ -425,7 +425,7 @@ info: info-am
  
  info-am:
  

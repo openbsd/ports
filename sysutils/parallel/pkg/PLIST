@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/10/13 20:24:13 rpe Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/03/23 12:30:26 pascal Exp $
 bin/niceload
 bin/parallel
 bin/sem
 bin/sql
 @man man/man1/niceload.1
 @man man/man1/parallel.1
+@man man/man1/parallel_tutorial.1
 @man man/man1/sem.1
 @man man/man1/sql.1
