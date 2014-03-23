@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2013/10/10 02:08:20 brad Exp $
+# $OpenBSD: Makefile,v 1.37 2014/03/23 16:00:17 espie Exp $
 
 COMMENT-main=	library to access the contents of an iPod
 COMMENT-python= python bindings for libgpod
@@ -53,6 +53,11 @@ CONFIGURE_ARGS+=--enable-gdk-pixbuf \
 		--with-python="${MODPY_BIN}" \
 		--localedir=${TRUEPREFIX}/share/locale
 
+# XXX no, we don't have these. bogus build system doesn't allow us to
+# remove them.
+CONFIGURE_ENV += 	ac_cv_path_GTKDOC_CHECK=  \
+			ac_cv_path_GTKDOC_REBASE= \
+			ac_cv_path_GTKDOC_MKPDF=
 pre-configure:
 	@find ${WRKDIST} -name \*.py | \
 		xargs perl -pi -e 's,/usr/bin/python,${MODPY_BIN},g'
