@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Smokeping_pm,v 1.3 2014/03/23 09:27:21 espie Exp $
+--- lib/Smokeping.pm.orig	Sun Mar 23 10:23:03 2014
++++ lib/Smokeping.pm	Sun Mar 23 10:23:24 2014
+@@ -2631,7 +2631,7 @@ DOC
+ The base directory where SmokePing keeps the files related to the DYNAMIC function.
+ This directory must be writeable by the WWW server. It is also used for temporary
+ storage of slave polling results by the master in 
+-L<the master/slave mode|smokeping_master_slave>.
++L<the masterE<sol>slave mode|smokeping_master_slave>.
+ 
+ If this variable is not specified, the value of C<datadir> will be used instead.
+ DOC
