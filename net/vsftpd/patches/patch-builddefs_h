@@ -1,14 +1,12 @@
-$OpenBSD: patch-builddefs_h,v 1.1 2005/07/03 18:06:37 aanriot Exp $
---- builddefs.h.orig	Sat Mar 19 18:50:20 2005
-+++ builddefs.h	Sun Jul  3 11:26:28 2005
-@@ -1,9 +1,9 @@
- #ifndef VSF_BUILDDEFS_H
+$OpenBSD: patch-builddefs_h,v 1.2 2014/03/23 21:36:51 sthen Exp $
+--- builddefs.h.orig	Thu Apr  5 04:24:56 2012
++++ builddefs.h	Sun Mar 23 21:08:23 2014
+@@ -2,8 +2,8 @@
  #define VSF_BUILDDEFS_H
  
--#undef VSF_BUILD_TCPWRAPPERS
+ #undef VSF_BUILD_TCPWRAPPERS
 -#define VSF_BUILD_PAM
 -#undef VSF_BUILD_SSL
-+#define VSF_BUILD_TCPWRAPPERS
 +#undef VSF_BUILD_PAM
 +#define VSF_BUILD_SSL
  
