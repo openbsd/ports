@@ -1,0 +1,12 @@
+$OpenBSD: patch-Wnn_jutil_wddel_c,v 1.1 2014/03/23 17:22:45 espie Exp $
+--- Wnn/jutil/wddel.c.orig	Sun Mar 23 18:10:08 2014
++++ Wnn/jutil/wddel.c	Sun Mar 23 18:10:25 2014
+@@ -199,7 +199,7 @@ char **argv;
+ 	fprintf(stderr, "The specified dictionary isn't registable\n");
+ 	exit(1);
+     }
+-    while(gets(s)){
++    while(fgets(s, sizeof s, stdin)){
+ 	char com[LENGTHYOMI];
+ 	char Com[LENGTHYOMI];
+ 	int ima, hindo;

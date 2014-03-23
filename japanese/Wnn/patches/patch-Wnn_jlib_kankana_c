@@ -1,0 +1,12 @@
+$OpenBSD: patch-Wnn_jlib_kankana_c,v 1.1 2014/03/23 17:22:45 espie Exp $
+--- Wnn/jlib/kankana.c.orig	Sun Mar 23 18:09:05 2014
++++ Wnn/jlib/kankana.c	Sun Mar 23 18:09:41 2014
+@@ -141,7 +141,7 @@ henkan()
+     for(;;){
+ 	if(c_env == env){printf("yomi> ");fflush(stdout);}
+ 	else {printf("kanji> ");fflush(stdout);}
+-	if(gets(yomi) == NULL)return;
++	if(fgets(yomi, sizeof yomi, stdin) == NULL)return;
+ 	if(yomi[0] == '!')return;
+ 	if(yomi[0] == '@'){
+ 	    c_env = (c_env == env)? rev_env:env;
