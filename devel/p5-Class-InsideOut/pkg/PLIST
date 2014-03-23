@@ -1,12 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/10/08 17:51:46 simon Exp $
-${P5SITE}/Class/
+@comment $OpenBSD: PLIST,v 1.3 2014/03/23 22:13:18 jasper Exp $
 ${P5SITE}/Class/InsideOut/
 ${P5SITE}/Class/InsideOut.pm
-${P5SITE}/Class/InsideOut.pod
 ${P5SITE}/Class/InsideOut/Manual/
-${P5SITE}/Class/InsideOut/Manual/About.pm
 ${P5SITE}/Class/InsideOut/Manual/About.pod
-${P5SITE}/Class/InsideOut/Manual/Advanced.pm
 ${P5SITE}/Class/InsideOut/Manual/Advanced.pod
 @man man/man3p/Class::InsideOut.3p
 @man man/man3p/Class::InsideOut::Manual::About.3p

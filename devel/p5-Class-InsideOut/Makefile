@@ -1,19 +1,16 @@
-# $OpenBSD: Makefile,v 1.9 2014/03/23 14:27:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2014/03/23 22:13:18 jasper Exp $
 
 COMMENT= 	alternative object layout in perl
 
 MODULES=	cpan
 
-DISTNAME=	Class-InsideOut-1.09
-REVISION=	1
+DISTNAME=	Class-InsideOut-1.13
 
 CATEGORIES=	devel
 USE_GROFF=	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
-
-CONFIGURE_STYLE=modbuild
 
 RUN_DEPENDS=	devel/p5-Class-ISA
 
