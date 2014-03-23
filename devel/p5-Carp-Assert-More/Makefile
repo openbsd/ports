@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/10/11 23:48:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2014/03/23 14:53:39 jasper Exp $
 
 COMMENT=	convenience wrappers around Carp::Assert
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 RUN_DEPENDS=	devel/p5-Carp-Assert
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS +=	devel/p5-Test-Exception
 
 MAKE_ENV=	TEST_POD=Yes
 
