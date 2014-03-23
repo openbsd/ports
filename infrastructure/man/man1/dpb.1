@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.95 2013/10/06 13:33:26 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.96 2014/03/23 12:24:14 nigel Exp $
 .\"
 .\" Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: October 6 2013 $
+.Dd $Mdocdate: March 23 2014 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -244,7 +244,7 @@ Mostly useful for presentations, as a way to save
 .Nm dpb
 output and replay it later at a faster rate.
 Defaults to
-.Pa %L/term-reports.log ,
+.Pa %L/term-report.log ,
 can be set to nothing to disable.
 .It Ar STARTUP
 Define a start-up script on the command-line, override any host file contents.
@@ -1165,7 +1165,7 @@ creating new jobs.
 .It Pa stop-<hostname>
 Not a logfile at all, but created by the user to stop hostname creating
 new jobs.
-.It Pa term-reports.log
+.It Pa term-report.log
 Saves all terminal output, so that it can be replayed at hi speed with
 .Xr dpb-replay 1 .
 .It Pa vars.log
