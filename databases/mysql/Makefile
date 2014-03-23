@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.223 2013/12/10 22:15:46 brad Exp $
+# $OpenBSD: Makefile,v 1.224 2014/03/23 16:49:30 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -15,6 +15,7 @@ CATEGORIES=	databases
 V=		MySQL-5.1
 MASTER_SITES=	${MASTER_SITE_MYSQL:=Downloads/$V/}
 
+REVISION-server= 0
 EPOCH-main=	0
 EPOCH-server=	0
 EPOCH-tests=	0
@@ -48,7 +49,6 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --with-big-tables \
 		 --with-client-ldflags=-lsupc++ \
 		 --with-comment='OpenBSD port: ${FULLPKGNAME-server}' \
-		 --with-libwrap \
 		 --with-low-memory \
 		 --with-mysqld-ldflags=-lsupc++ \
 		 --with-mysqld-user="_mysql" \
@@ -66,7 +66,7 @@ RUN_DEPENDS-server=	${BASE_PKGPATH}>=5.1v0,<5.2v0 \
 			databases/p5-DBD-mysql
 LIB_DEPENDS-server=	${BASE_PKGPATH}>=5.1v0,<5.2v0
 
-WANTLIB-server=		${WANTLIB} crypto mysqlclient ssl wrap z
+WANTLIB-server=		${WANTLIB} crypto mysqlclient ssl z
 WANTLIB-main=		${WANTLIB} crypto ncursesw readline ssl z
 WANTLIB-tests=		${WANTLIB}
 

@@ -1,15 +1,6 @@
-$OpenBSD: patch-sql_mysqld_cc,v 1.7 2014/03/11 09:27:45 brad Exp $
+$OpenBSD: patch-sql_mysqld_cc,v 1.8 2014/03/23 16:49:30 brad Exp $
 --- sql/mysqld.cc.orig	Sat Mar  8 07:41:31 2014
-+++ sql/mysqld.cc	Mon Mar 10 18:15:31 2014
-@@ -5310,7 +5310,7 @@ int mysqld_main(int argc, char **argv)
-   select_thread_in_use=1;
- 
- #ifdef HAVE_LIBWRAP
--  libwrapName= my_progname+dirname_length(my_progname);
-+  libwrapName= (char *) my_progname+dirname_length(my_progname);
-   openlog(libwrapName, LOG_PID, LOG_AUTH);
- #endif
- 
++++ sql/mysqld.cc	Sun Mar 23 08:33:46 2014
 @@ -6197,7 +6197,7 @@ void handle_connections_sockets()
              The connection was refused by TCP wrappers.
              There are no details (by client IP) available to update the host_cache.

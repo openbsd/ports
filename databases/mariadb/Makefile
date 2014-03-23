@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2014/03/11 09:27:45 brad Exp $
+# $OpenBSD: Makefile,v 1.12 2014/03/23 16:49:30 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -15,6 +15,8 @@ CATEGORIES=	databases
 MASTER_SITES=	http://ftp.osuosl.org/pub/mariadb/${DISTNAME}/kvm-tarbake-jaunty-x86/ \
 		http://ftp.heanet.ie/mirrors/mariadb/${DISTNAME}/kvm-tarbake-jaunty-x86/
 
+REVISION-server= 0
+
 LIB_VERSION=	25
 SHARED_LIBS=	mysqlclient_r	${LIB_VERSION}.0 \
 		mysqlclient	${LIB_VERSION}.0
@@ -28,7 +30,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c crypto m pthread ssl stdc++ z
 WANTLIB-main=	curses readline ${WANTLIB}
-WANTLIB-server=	mysqlclient wrap ${WANTLIB}
+WANTLIB-server=	mysqlclient ${WANTLIB}
 WANTLIB-tests=	mysqlclient ${WANTLIB}
 
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/mysql
@@ -66,7 +68,6 @@ CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DWITH_COMMENT='OpenBSD port: ${FULLPKGNAME-server}' \
 		-DWITH_SSL=system \
 		-DWITH_LIBEDIT=Off \
-		-DWITH_LIBWRAP=On \
 		-DCONNECT_WITH_LIBXML2=Off
 
 MULTI_PACKAGES=	-main -server -tests
