@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2014/03/23 18:17:35 kili Exp $
+# $OpenBSD: Makefile,v 1.40 2014/03/23 22:05:00 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	H.323 gatekeeper
 
 V=		3.5
 DISTNAME=	gnugk-${V}
-REVISION=	1
+REVISION=	2
 
 WRKDIST=	${WRKDIR}/gnugk-${V}
 
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += SDL c crypto expat h323 kvm lber ldap ldap_r lua5.1
 WANTLIB += m netsnmp netsnmpagent netsnmpmibs pt pthread sasl2
-WANTLIB += ssh ssl stdc++ wrap
+WANTLIB += ssh ssl stdc++
 
 MODULES=	lang/lua
 
