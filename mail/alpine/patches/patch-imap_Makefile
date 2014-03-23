@@ -1,6 +1,6 @@
-$OpenBSD: patch-imap_Makefile,v 1.1 2013/10/17 09:08:06 ajacoutot Exp $
+$OpenBSD: patch-imap_Makefile,v 1.2 2014/03/23 16:45:32 naddy Exp $
 --- imap/Makefile.orig	Thu Aug 15 06:36:13 2013
-+++ imap/Makefile	Thu Oct 17 10:47:12 2013
++++ imap/Makefile	Sun Mar 23 17:26:41 2014
 @@ -586,8 +586,8 @@ sslunix sslsco:
  	@echo ++ SSLTYPE=$(SSLTYPE).nopwd
  	@echo +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -12,3 +12,21 @@ $OpenBSD: patch-imap_Makefile,v 1.1 2013/10/17 09:08:06 ajacoutot Exp $
  
  nounenc:
  	@echo +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@@ -676,7 +676,7 @@ an ua:
+ 	$(TOOLS)/$@ "$(LN)" src/ansilib c-client
+ 	$(TOOLS)/$@ "$(LN)" src/charset c-client
+ 	$(TOOLS)/$@ "$(LN)" src/osdep/$(SYSTEM) c-client
+-	$(TOOLS)/$@ "$(LN)" src/mtest mtest
++#	$(TOOLS)/$@ "$(LN)" src/mtest mtest
+ 	$(TOOLS)/$@ "$(LN)" src/ipopd ipopd
+ 	$(TOOLS)/$@ "$(LN)" src/imapd imapd
+ 	$(TOOLS)/$@ "$(LN)" src/mailutil mailutil
+@@ -713,7 +713,7 @@ rebuildclean:
+ 
+ bundled:
+ 	@echo Building bundled tools...
+-	$(CD) mtest;$(MAKE)
++#	$(CD) mtest;$(MAKE)
+ 	$(CD) ipopd;$(MAKE)
+ 	$(CD) imapd;$(MAKE)
+ 	$(CD) mailutil;$(MAKE)
