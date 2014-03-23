@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.55 2013/03/21 08:45:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2014/03/23 16:06:37 naddy Exp $
 
 COMMENT=	sound library for Enlightenment
 
 DISTNAME=	esound-0.2.41
-REVISION=	0
+REVISION=	1
 EPOCH=		0
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/esound/0.2/}
@@ -17,7 +17,7 @@ LIB_DEPENDS=	devel/libaudiofile
 # LGPLv2+ and GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	audiofile c m sndio wrap
+WANTLIB=	FLAC audiofile c m ogg sndio
 
 USE_GROFF=	Yes
 SEPARATE_BUILD=	Yes
@@ -25,8 +25,7 @@ AUTOCONF_VERSION=2.61
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-alsa \
-		--disable-oss \
-		--with-libwrap
+		--disable-oss
 # broken, relies upon v4-mapped addresses
 CONFIGURE_ARGS+= --disable-ipv6
 
