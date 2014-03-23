@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_gcc,v 1.5 2014/01/12 22:16:02 pascal Exp $
+$OpenBSD: patch-gcc_config_gcc,v 1.6 2014/03/23 17:30:20 pascal Exp $
 --- gcc/config.gcc.orig	Sun Feb 24 16:51:55 2013
-+++ gcc/config.gcc	Sat Dec 28 18:51:48 2013
++++ gcc/config.gcc	Sun Mar 23 17:44:53 2014
 @@ -1174,6 +1174,7 @@ i[34567]86-*-openbsd2* | i[34567]86-*-openbsd3.[0123])
  	use_collect2=yes
  	;;
@@ -9,7 +9,15 @@ $OpenBSD: patch-gcc_config_gcc,v 1.5 2014/01/12 22:16:02 pascal Exp $
  	# needed to unconfuse gdb
  	tmake_file="t-libc-ok t-openbsd i386/t-openbsd"
  	tm_file="${cpu_type}/${cpu_type}.h i386/unix.h i386/att.h dbxelf.h elfos.h"
-@@ -2780,10 +2781,13 @@ vax-*-netbsd*)
+@@ -2069,6 +2070,7 @@ romp-*-openbsd*)
+ 	# Nothing special
+ 	;;
+ powerpc-*-openbsd*)
++	tm_defines="${tm_defines} PIE_DEFAULT=2"
+ 	tm_file="rs6000/rs6000.h rs6000/openbsd1.h dbxelf.h elfos.h svr4.h freebsd-spec.h rs6000/sysv4.h openbsd.h ${tm_file}"
+ 	tmake_file="${tmake_file} rs6000/t-ppcos rs6000/t-openbsd"
+ 	tm_file="${tm_file} exec-stack.h"
+@@ -2780,10 +2782,13 @@ vax-*-netbsd*)
  	use_collect2=yes
  	;;
  vax-*-openbsd*)
