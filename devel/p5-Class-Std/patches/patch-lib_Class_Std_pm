@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_Class_Std_pm,v 1.1 2014/03/23 22:19:46 jasper Exp $
+
+Fix with perl 5.18 by replacing non-ASCII character.
+
+--- lib/Class/Std.pm.orig	Sun Mar 23 23:16:00 2014
++++ lib/Class/Std.pm	Sun Mar 23 23:17:58 2014
+@@ -1510,7 +1510,7 @@ other attribute-related behaviours. Each of these opti
+ key/value pair, which may be specified in either Perl 5 "fat comma" syntax
+ ( C<< S<< key => 'value' >> >> ) or in one of the Perl 6 option syntaxes
+ ( C<< S<< :key<value> >> >> or C<< S<< :key('value') >> >> or 
+-C<< S<< :key«value» >> >>).
++C<< S<< :key<<value>> >> >>).
+ 
+ Note that, due to a limitation in Perl itself, the complete C<:ATTR> marker,
+ including its options must appear on a single line.

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:14 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2014/03/23 22:19:46 jasper Exp $
 
 COMMENT=		inside-out object scaffolding
 
 MODULES=		cpan
 DISTNAME=		Class-Std-0.0.9
-REVISION=		0
+REVISION=		1
 CATEGORIES=		devel
 USE_GROFF =		Yes
 
