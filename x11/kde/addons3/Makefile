@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2013/12/22 19:24:34 zhuk Exp $
+# $OpenBSD: Makefile,v 1.73 2014/03/23 09:21:30 espie Exp $
 
 COMMENT =		K Desktop Environment, addons
 CATEGORIES =		x11 x11/kde
@@ -6,6 +6,9 @@ VERSION =		3.5.10
 REVISION =		15
 DISTNAME =		kdeaddons-${VERSION}
 MODKDE_VERSION =	3.5.8
+
+# until the module/lib bug is fixed
+USE_LIBTOOL =	gnu
 
 MODULES =	x11/kde devel/gettext
 

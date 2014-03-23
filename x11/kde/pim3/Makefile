@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2013/12/22 19:24:35 zhuk Exp $
+# $OpenBSD: Makefile,v 1.84 2014/03/23 09:21:30 espie Exp $
 
 COMMENT = 		KDE personal information applications
 CATEGORIES =		x11 x11/kde productivity
@@ -8,6 +8,9 @@ PKGSPEC =		kdepim->=3,<4
 REVISION =		18
 
 MODKDE_VERSION =	3.5.8
+# XXX switch back to gnu libtool until the name.la vs libname.la
+# ambiguity is fixed
+USE_LIBTOOL =	gnu
 
 SHARED_LIBS +=	index                1.0      # .0.0
 SHARED_LIBS +=	kgantt               1.0      # .0.2
