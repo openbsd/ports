@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/02/04 08:05:18 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2014/03/23 14:27:39 jasper Exp $
 
 COMMENT =	tracking back references
 
@@ -9,7 +9,6 @@ CATEGORIES =	devel
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 RUN_DEPENDS =	devel/p5-common-sense
-TEST_DEPENDS =	${RUN_DEPENDS}
 
 # perl
 PERMIT_PACKAGE_CDROM =   Yes

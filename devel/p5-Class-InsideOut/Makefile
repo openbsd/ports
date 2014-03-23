@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:14 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2014/03/23 14:27:39 jasper Exp $
 
 COMMENT= 	alternative object layout in perl
 
@@ -16,6 +16,5 @@ PERMIT_PACKAGE_CDROM=	Yes
 CONFIGURE_STYLE=modbuild
 
 RUN_DEPENDS=	devel/p5-Class-ISA
-TEST_DEPENDS= ${RUN_DEPENDS}
 
 .include <bsd.port.mk>
