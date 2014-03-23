@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_Makefile_in,v 1.4 2014/03/23 18:17:34 kili Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.5 2014/03/23 22:39:28 kili Exp $
 --- src/Makefile.in.orig	Sun Jun 16 03:17:19 2013
 +++ src/Makefile.in	Sun Nov  3 10:11:16 2013
 @@ -2177,7 +2177,7 @@ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
@@ -6,7 +6,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.4 2014/03/23 18:17:34 kili Exp $
  LIBICONV = @LIBICONV@
  LIBOBJS = @LIBOBJS@
 -LIBS = @LIBS@ -lpthread -lrt
-+LIBS = @LIBS@ -lpthread -liconv
++LIBS = @LIBS@ -lpthread
  LTLIBICONV = @LTLIBICONV@
  LTLIBOBJS = @LTLIBOBJS@
  MAINT = @MAINT@

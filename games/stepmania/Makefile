@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/03/23 18:17:34 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2014/03/23 22:39:28 kili Exp $
 
 BROKEN-alpha=	libtomcrypt/src/headers/tomcrypt_cfg.h:130:6: error: #error You must specify a word size as well as endianess in tomcrypt_cfg.h
 
@@ -8,7 +8,7 @@ SHARED_ONLY =	Yes
 
 DISTNAME = 	stepmania-5.0b2a
 PKGNAME =	stepmania-5.0beta2a
-REVISION =	2
+REVISION =	3
 EXTRACT_SUFX = 	-src.tar.bz2
 HOMEPAGE =	http://www.stepmania.com
 MASTER_SITES = 	${MASTER_SITE_SOURCEFORGE:=stepmania/}
