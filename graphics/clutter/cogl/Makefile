@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2014/01/21 09:49:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2014/03/23 07:08:09 ajacoutot Exp $
 
 COMMENT=		modern 3D graphics API
 
@@ -27,6 +27,7 @@ CONFIGURE_ARGS=		--with-gl-libname=libGL.so \
 TEST_DEPENDS=		shells/bash
 TEST_IS_INTERACTIVE=	x11
 
+# https://bugzilla.gnome.org/show_bug.cgi?id=726910
 pre-configure:
 	perl -pi -e 's,/bin/bash,${LOCALBASE}/bin/bash,' \
 		${WRKSRC}/tests/run-tests.sh

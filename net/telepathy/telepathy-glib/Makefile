@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2014/03/20 21:10:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.57 2014/03/23 07:11:21 ajacoutot Exp $
 
 COMMENT=		flexible communications framework, glib bindings
 
@@ -17,6 +17,7 @@ MODULES=		devel/gettext \
 			lang/python
 
 MODPY_RUNDEP=           No
+# https://bugs.freedesktop.org/show_bug.cgi?id=76495
 MODPY_ADJ_FILES=	tests/all-errors-documented.py
 
 BUILD_DEPENDS=		devel/gobject-introspection>=1.30.0 \
