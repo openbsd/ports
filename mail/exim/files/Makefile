@@ -926,7 +926,7 @@ CYRUS_SASLAUTHD_SOCKET=/var/sasl2/mux
 # this setting. See the manual section entitled "Use of tcpwrappers" in the
 # chapter on building and installing Exim.
 #
-USE_TCP_WRAPPERS=yes
+# USE_TCP_WRAPPERS=yes
 #
 # You may well also have to specify a local "include" file and an additional
 # library for TCP wrappers, so you probably need something like this:
