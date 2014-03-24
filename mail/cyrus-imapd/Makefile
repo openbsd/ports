@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2013/06/20 06:54:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.81 2014/03/24 18:19:21 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -47,7 +47,6 @@ CONFIGURE_ARGS=	--with-service-path=${LOCALBASE}/libexec/cyrus-imapd \
 		--enable-idled \
 		--enable-murder \
 		--enable-nntp \
-		--without-libwrap \
 		--without-zephyr \
 		--without-snmp \
 		--with-perl \

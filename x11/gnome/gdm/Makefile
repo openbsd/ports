@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.191 2014/03/16 09:12:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.192 2014/03/24 18:19:21 ajacoutot Exp $
 
 # XXX configuring GDM from gnome-cc does not work
 
@@ -71,8 +71,7 @@ CONFIGURE_ARGS=		--disable-static \
 			--with-group=_gdm \
 			--with-console-kit \
 			--with-xauth-dir=/var/run/gdm \
-			--with-initial-vt=05 \
-			--without-tcp-wrappers
+			--with-initial-vt=05
 
 pre-configure:
 	perl -pi -e 's,root:root,root:wheel,g;' \

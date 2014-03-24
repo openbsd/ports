@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2014/01/28 09:02:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2014/03/24 18:19:21 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -77,7 +77,6 @@ CONFIGURE_ARGS=		--enable-smartalloc \
 			--with-archivedir=/tmp \
 			--with-sbin-perm=755 \
 			--without-x \
-			--without-tcp-wrappers \
 			--without-smtp-host \
 			--without-job-email \
 			--without-dump-email \
