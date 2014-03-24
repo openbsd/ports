@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_socat_1,v 1.4 2012/05/14 20:58:14 sthen Exp $
---- doc/socat.1.orig	Sun Apr 22 11:25:49 2012
-+++ doc/socat.1	Mon May 14 19:23:58 2012
-@@ -3485,11 +3485,11 @@ error\&. 
+$OpenBSD: patch-doc_socat_1,v 1.5 2014/03/24 17:14:46 nigel Exp $
+--- doc/socat.1.orig	Sun Mar  9 20:23:08 2014
++++ doc/socat.1	Mon Mar 24 15:24:21 2014
+@@ -3492,11 +3492,11 @@ error\&. 
  .SH "FILES"
  
  .PP 
