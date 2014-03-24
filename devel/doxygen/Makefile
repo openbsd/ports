@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2013/11/25 14:16:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2014/03/24 20:59:47 miod Exp $
 
-# Memory hog, stuck for days on the same file during build.
+# Memory hog, stuck for days on the same file (configoptions.cpp) during build.
 # XXX check with different optimizer level? see doc/install.doc
-NOT_FOR_ARCHS=	sh
+NOT_FOR_ARCHS=	m88k sh
 BROKEN-alpha=	.got subsegment exceeds 64K
 
 COMMENT-main=	source code documentation generator tool
