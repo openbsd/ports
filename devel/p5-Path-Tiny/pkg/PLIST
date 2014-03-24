@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/03/24 10:28:52 jasper Exp $
+${P5SITE}/Path/
+${P5SITE}/Path/Tiny.pm
+@man man/man3p/Path::Tiny.3p
