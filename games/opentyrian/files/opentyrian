@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [[ -e ${TRUEPREFIX}/share/opentyrian/palette.dat ]]; then
+	cd ${TRUEPREFIX}/share/opentyrian && ./opentyrian $@
+else
+	echo "The datafiles aren't installed. Please follow the instructions:"
+	echo "${TRUEPREFIX}/share/doc/pkg-readmes/${FULLPKGNAME}"
+fi

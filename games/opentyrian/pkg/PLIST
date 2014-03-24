@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/03/24 09:08:55 juanfra Exp $
+bin/opentyrian
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/opentyrian/
+@bin share/opentyrian/opentyrian
+@extraunexec rm -f %D/share/opentyrian/*

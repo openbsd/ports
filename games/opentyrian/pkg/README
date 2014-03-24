@@ -1,0 +1,11 @@
+$OpenBSD: README,v 1.1.1.1 2014/03/24 09:08:55 juanfra Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+In order to play the game you need the data files from "Tyrian":
+http://www.camanis.net/tyrian/tyrian21.zip
+
+For a system wide installation you can install them with this command:
+unzip -j -d /usr/local/share/opentyrian tyrian21.zip
