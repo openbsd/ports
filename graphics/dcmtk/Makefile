@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2013/05/30 10:51:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2014/03/24 17:00:08 naddy Exp $
 
 COMMENT=		DICOM toolkit
 
 DISTNAME=		dcmtk-3.5.4
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		graphics
 
@@ -14,7 +14,7 @@ MASTER_SITES=		ftp://dicom.offis.de/pub/dicom/offis/software/dcmtk/dcmtk354/
 # Several ISC and BSDish
 # ftp://dicom.offis.de/pub/dicom/offis/software/dcmtk/dcmtk354/COPYRIGHT
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c crypto m ssl stdc++ wrap z jpeg>=62 png>=4 \
+WANTLIB=		c crypto m ssl stdc++ z jpeg>=62 png>=4 \
 			tiff>=36 xml2>=9
 
 LIB_DEPENDS=		graphics/jpeg \
@@ -25,7 +25,7 @@ LIB_DEPENDS=		graphics/jpeg \
 RUN_DEPENDS=		graphics/netpbm
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--disable-threads \
+CONFIGURE_ARGS=		--disable-threads --without-libwrap \
 			--with-libtiff --with-libtiffinc=${LOCALBASE} \
 			--with-libpng --with-libpnginc=${LOCALBASE} \
 			--with-libxml --with-libxmlinc=${LOCALBASE}
