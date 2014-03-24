@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/22 19:34:31 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/03/24 08:25:35 jasper Exp $
 bin/ebug
+bin/ebug_backend_perl
 bin/ebug_client
 bin/ebug_server
 ${P5SITE}/Devel/ebug/
