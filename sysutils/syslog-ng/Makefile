@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2014/01/12 20:41:11 steven Exp $
+# $OpenBSD: Makefile,v 1.43 2014/03/24 22:41:00 naddy Exp $
 
 COMMENT=	syslogd replacement
 
@@ -6,6 +6,7 @@ SHARED_ONLY =	Yes
 
 V =		3.4.7
 DISTNAME =	syslog-ng-$V
+REVISION =	0
 CATEGORIES =	sysutils
 
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
@@ -23,7 +24,7 @@ SHARED_LIBS =	syslog-ng		0.0 \
 
 MODULES =	devel/gettext
  
-WANTLIB =	c m pcre wrap crypto ssl evtlog dbi ivykis pthread \
+WANTLIB =	c m pcre crypto ssl evtlog dbi ivykis pthread \
 		glib-2.0 gmodule-2.0 gthread-2.0 json-c
  
 LIB_DEPENDS = 	devel/glib2 \
@@ -33,7 +34,7 @@ LIB_DEPENDS = 	devel/glib2 \
 		databases/libdbi
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--enable-tcp-wrapper \
+CONFIGURE_ARGS +=	--disable-tcp-wrapper \
 			--with-pidfile-dir=/var/run \
 			--enable-json \
 			--with-libmongo-client=no \
