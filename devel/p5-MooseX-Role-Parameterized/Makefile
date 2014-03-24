@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/03/22 14:05:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2014/03/24 10:09:46 jasper Exp $
 
 COMMENT =	roles with composition parameters
 
@@ -11,7 +11,8 @@ USE_GROFF =	Yes
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-RUN_DEPENDS =		devel/p5-Moose
-TEST_DEPENDS =	devel/p5-Test-Exception
+RUN_DEPENDS =	devel/p5-Moose
+TEST_DEPENDS =	devel/p5-Test-Exception \
+		devel/p5-Test-Fatal
 
 .include <bsd.port.mk>
