@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2013/05/22 13:07:13 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.16 2014/03/24 18:20:19 gonzalo Exp $
 
 COMMENT =		complete front-end for MPlayer
 
-DISTNAME =		smplayer-0.8.5
+DISTNAME =		smplayer-0.8.6
 
 CATEGORIES =		multimedia x11
 
@@ -13,8 +13,9 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 # GPLv2 (docs/en/gpl.html)
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += ICE QtGui QtNetwork QtXml SM X11 Xext Xi Xinerama Xrender
-WANTLIB += c fontconfig freetype m pthread stdc++ z
+WANTLIB =  c m pthread stdc++
+WANTLIB += ICE QtGui QtNetwork QtScript QtXml SM X11 Xext Xi Xinerama
+WANTLIB += Xrender c fontconfig freetype m pthread stdc++ z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=smplayer/}
 
@@ -30,5 +31,8 @@ USE_GMAKE =		Yes
 NO_TEST =		Yes
 
 ALL_TARGET =		src/smplayer
+
+MAKE_FLAGS =		QMAKE=${LOCALBASE}/bin/qmake4 \
+			LRELEASE=${LOCALBASE}/bin/lrelease4
 
 .include <bsd.port.mk>

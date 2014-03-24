@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/05/22 13:07:13 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/03/24 18:20:19 gonzalo Exp $
 @bin bin/smplayer
 @man man/man1/smplayer.1
 share/applications/smplayer.desktop
@@ -16,39 +16,32 @@ share/doc/smplayer/Readme.txt
 share/doc/smplayer/Release_notes.txt
 share/doc/smplayer/Watching_TV.txt
 share/doc/smplayer/cs/
-share/doc/smplayer/cs/faq.html
 share/doc/smplayer/cs/gpl.html
 share/doc/smplayer/de/
 share/doc/smplayer/de/gpl.html
 share/doc/smplayer/dvdmenus.txt
 share/doc/smplayer/en/
-share/doc/smplayer/en/faq.html
 share/doc/smplayer/en/gpl.html
 share/doc/smplayer/es/
 share/doc/smplayer/es/gpl.html
 share/doc/smplayer/eu/
-share/doc/smplayer/eu/faq.html
+share/doc/smplayer/fr/
+share/doc/smplayer/fr/gpl.html
 share/doc/smplayer/hu/
-share/doc/smplayer/hu/faq.html
 share/doc/smplayer/hu/gpl.html
 share/doc/smplayer/it/
-share/doc/smplayer/it/faq.html
 share/doc/smplayer/it/gpl.html
 share/doc/smplayer/ja/
-share/doc/smplayer/ja/faq.html
 share/doc/smplayer/ja/gpl.html
 share/doc/smplayer/nl/
 share/doc/smplayer/nl/gpl.html
 share/doc/smplayer/pt/
-share/doc/smplayer/pt/faq.html
 share/doc/smplayer/pt/gpl.html
 share/doc/smplayer/ro/
 share/doc/smplayer/ro/gpl.html
 share/doc/smplayer/ru/
-share/doc/smplayer/ru/faq.html
 share/doc/smplayer/ru/gpl.html
 share/doc/smplayer/zh_CN/
-share/doc/smplayer/zh_CN/faq.html
 share/doc/smplayer/zh_CN/gpl.html
 share/icons/hicolor/128x128/apps/smplayer.png
 share/icons/hicolor/16x16/apps/smplayer.png
