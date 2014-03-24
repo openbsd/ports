@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 10:50:14 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2014/03/24 07:53:25 jasper Exp $
 
 COMMENT=	generic configuration parser, inspired by apache
 
 MODULES=	cpan
-DISTNAME=	Config-General-2.50
+DISTNAME=	Config-General-2.52
 CATEGORIES=	devel
 HOMEPAGE=	http://www.daemon.de/ConfigGeneral
 
