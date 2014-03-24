@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.66 2014/03/10 20:33:13 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.67 2014/03/24 21:03:39 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	amd64 arm i386 powerpc sparc64
@@ -55,7 +55,7 @@ MODMOZ_WANTLIB +=	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
 		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		gobject-2.0 gthread-2.0 gtk-x11-2.0 m \
 		nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		plc4 plds4 pthread event kvm sqlite3>=23 \
+		plc4 plds4 pthread event kvm sqlite3>=27 \
 		smime3 sndio nssutil3 ssl3 stdc++ z
 
 # hack to build against systemwide sqlite3 (# 546162)
