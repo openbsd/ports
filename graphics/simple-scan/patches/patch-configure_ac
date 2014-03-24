@@ -1,14 +1,14 @@
-$OpenBSD: patch-configure_ac,v 1.4 2013/09/27 08:40:57 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.5 2014/03/24 10:13:29 ajacoutot Exp $
 
 No (g)udev under OpenBSD.
 
---- configure.ac.orig	Wed Sep 25 07:40:41 2013
-+++ configure.ac	Thu Sep 26 10:28:39 2013
+--- configure.ac.orig	Sun Mar 23 21:32:02 2014
++++ configure.ac	Mon Mar 24 11:09:03 2014
 @@ -28,7 +28,6 @@ PKG_CHECK_MODULES(SIMPLE_SCAN, [
      zlib
      cairo
      gdk-pixbuf-2.0
 -    gudev-1.0
-     sqlite3
  ])
  
+ PKG_CHECK_MODULES(COLORD, [
