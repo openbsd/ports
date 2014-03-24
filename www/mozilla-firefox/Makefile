@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.247 2014/03/10 20:53:29 landry Exp $
+# $OpenBSD: Makefile,v 1.248 2014/03/24 21:11:37 landry Exp $
 
 COMMENT =	Mozilla web browser
 
 # Don't forget to bump www/firefox-i18n after updates.
 # Don't forget to update devel/xulrunner/2.0 if patches changes.
 
-MOZILLA_VERSION =	27.0.1
+MOZILLA_VERSION =	28.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
 #MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/
-SO_VERSION =	45.0
+SO_VERSION =	46.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	browsercomps mozalloc mozgnome xul
@@ -64,6 +64,10 @@ post-install:
 		${PREFIX}/man/man1/mozilla-firefox.1
 	cd ${PREFIX}/man/man1/ && ln -sf mozilla-firefox.1 firefox.1
 	cd ${PREFIX}/bin/ && ln -sf firefox mozilla-firefox
+	# install prefs
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/defaults/preferences
+	${INSTALL_DATA} ${FILESDIR}/all-openbsd.js \
+		${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/defaults/preferences/
 	# install desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
 	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/${MOZILLA_PROJECT}.desktop \

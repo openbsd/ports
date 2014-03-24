@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.53 2013/11/04 21:15:42 landry Exp $
+@comment $OpenBSD: PLIST,v 1.54 2014/03/24 21:11:37 landry Exp $
 @conflict firefox3-*
 @conflict firefox35-*
 @conflict firefox36-*
@@ -26,6 +26,9 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/chrome/icons/default/default48.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/components/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/components/components.manifest
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/components/libbrowsercomps.so.${LIBbrowsercomps_VERSION}
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/defaults/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/defaults/preferences/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/defaults/preferences/all-openbsd.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/extensions/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/icon.png

@@ -1,7 +1,7 @@
-$OpenBSD: patch-extensions_spellcheck_hunspell_src_mozHunspell_cpp,v 1.13 2013/12/12 19:53:19 landry Exp $
---- extensions/spellcheck/hunspell/src/mozHunspell.cpp.orig	Tue Oct 29 07:04:36 2013
-+++ extensions/spellcheck/hunspell/src/mozHunspell.cpp	Fri Nov  1 10:21:40 2013
-@@ -426,6 +426,14 @@ mozHunspell::LoadDictionaryList()
+$OpenBSD: patch-extensions_spellcheck_hunspell_src_mozHunspell_cpp,v 1.14 2014/03/24 21:11:37 landry Exp $
+--- extensions/spellcheck/hunspell/src/mozHunspell.cpp.orig	Fri Feb 14 02:37:13 2014
++++ extensions/spellcheck/hunspell/src/mozHunspell.cpp	Sun Feb 16 12:29:56 2014
+@@ -413,6 +413,14 @@ mozHunspell::LoadDictionaryList()
      }
    }
  
