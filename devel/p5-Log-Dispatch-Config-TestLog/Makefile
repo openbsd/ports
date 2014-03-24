@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:18 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2014/03/24 10:31:23 jasper Exp $
 
 COMMENT=		set up Log::Dispatch::Config for a test run
 
-DISTNAME=		Log-Dispatch-Config-TestLog-0.01
-REVISION=		0
+DISTNAME=		Log-Dispatch-Config-TestLog-0.02
 
 CATEGORIES=		devel
 
@@ -17,5 +16,7 @@ RUN_DEPENDS=		devel/p5-Log-Dispatch-Binlog \
 			devel/p5-Log-Dispatch-Config \
 			devel/p5-Path-Class \
 			devel/p5-Sub-Override
+TEST_DEPENDS=		devel/p5-Perl-Command \
+			devel/p5-Test-Deep
 
 .include <bsd.port.mk>
