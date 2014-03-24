@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2013/11/14 13:51:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.65 2014/03/24 19:40:22 ajacoutot Exp $
 
 COMMENT=		compiler for the GObject type system
 
@@ -31,9 +31,5 @@ SUBST_VARS+=		API_V
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-vapigen
-
-pre-configure:
-	perl -pi -e 's,/bin/bash,${LOCALBASE}/bin/bash,g' \
-		${WRKSRC}/tests/testrunner.sh
 
 .include <bsd.port.mk>
