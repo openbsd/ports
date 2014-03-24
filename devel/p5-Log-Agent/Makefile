@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 10:50:18 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2014/03/24 08:59:47 jasper Exp $
 
 COMMENT=	abstraction layer for logging and tracing
 
 MODULES=	cpan
-DISTNAME=	Log-Agent-0.307
-REVISION=	1
+DISTNAME=	Log-Agent-1.000
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

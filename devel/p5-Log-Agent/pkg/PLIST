@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/14 23:43:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/03/24 08:59:47 jasper Exp $
 ${P5SITE}/Log/
 ${P5SITE}/Log/Agent/
 ${P5SITE}/Log/Agent.pm
@@ -31,6 +31,7 @@ ${P5SITE}/Log/Agent/Tag/Caller.pm
 ${P5SITE}/Log/Agent/Tag/Priority.pm
 ${P5SITE}/Log/Agent/Tag/String.pm
 ${P5SITE}/Log/Agent/Tag_List.pm
+${P5SITE}/Log/changes.pod
 ${P5SITE}/auto/
 ${P5SITE}/auto/Log/
 ${P5SITE}/auto/Log/Agent/
@@ -82,3 +83,4 @@ ${P5SITE}/auto/Log/Agent/prio_tag.al
 @man man/man3p/Log::Agent::Tag::Priority.3p
 @man man/man3p/Log::Agent::Tag::String.3p
 @man man/man3p/Log::Agent::Tag_List.3p
+@man man/man3p/Log::changes.3p
