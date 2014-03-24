@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/12 19:18:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/03/24 09:04:58 jasper Exp $
+${P5SITE}/Log/
+${P5SITE}/Log/Dispatch/
 ${P5SITE}/Log/Dispatch/Config.pm
 ${P5SITE}/Log/Dispatch/Configurator/
 ${P5SITE}/Log/Dispatch/Configurator.pm
