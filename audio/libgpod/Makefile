@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2014/03/23 16:00:17 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2014/03/24 12:55:43 ajacoutot Exp $
 
 COMMENT-main=	library to access the contents of an iPod
 COMMENT-python= python bindings for libgpod
@@ -47,17 +47,19 @@ WANTLIB-python += ${WANTLIB} gpod
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--enable-gdk-pixbuf \
 		--enable-pygobject \
+		--disable-gtk-doc \
 		--without-hal \
 		--without-libimobiledevice \
 		--without-mono \
 		--with-python="${MODPY_BIN}" \
 		--localedir=${TRUEPREFIX}/share/locale
 
-# XXX no, we don't have these. bogus build system doesn't allow us to
-# remove them.
-CONFIGURE_ENV += 	ac_cv_path_GTKDOC_CHECK=  \
-			ac_cv_path_GTKDOC_REBASE= \
-			ac_cv_path_GTKDOC_MKPDF=
+# If one of these tools is found at configure stage, it might be used,
+# no matter whether we use --disable-gtk-doc or not.
+CONFIGURE_ENV +=	ac_cv_path_GTKDOC_CHECK="" \
+			ac_cv_path_GTKDOC_REBASE="" \
+			ac_cv_path_GTKDOC_MKPDF=""
+
 pre-configure:
 	@find ${WRKDIST} -name \*.py | \
 		xargs perl -pi -e 's,/usr/bin/python,${MODPY_BIN},g'
