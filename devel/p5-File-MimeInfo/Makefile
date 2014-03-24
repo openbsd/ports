@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:17 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2014/03/24 08:41:20 jasper Exp $
 
 COMMENT=		determine file types
 
-DISTNAME=		File-MimeInfo-0.15
-REVISION=		1
+DISTNAME=		File-MimeInfo-0.22
 CATEGORIES=		devel
 USE_GROFF =		Yes
 
@@ -14,8 +13,7 @@ MODULES=		cpan
 
 RUN_DEPENDS=		devel/p5-File-BaseDir \
 			misc/shared-mime-info
-TEST_DEPENDS=	devel/p5-File-DesktopEntry
-
-CONFIGURE_STYLE=	modbuild
+TEST_DEPENDS=		devel/desktop-file-utils \
+			devel/p5-File-DesktopEntry
 
 .include <bsd.port.mk>
