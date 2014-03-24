@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.23 2014/03/22 09:40:21 ajacoutot Exp $
+$OpenBSD: README,v 1.24 2014/03/24 15:09:16 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -21,7 +21,6 @@ run the following as root:
 
 nginx(8) configuration
 ----------------------
-
 The following configuration chunk must be added to the server {} block:
 
 -8<---------------------------------------------------------------------
