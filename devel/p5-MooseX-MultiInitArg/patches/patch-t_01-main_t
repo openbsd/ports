@@ -1,0 +1,15 @@
+$OpenBSD: patch-t_01-main_t,v 1.1 2014/03/24 09:27:59 jasper Exp $
+
+"my" variable $class masks earlier declaration in same statement at t/01-main.t line 33.
+
+--- t/01-main.t.orig	Mon Mar 24 10:27:03 2014
++++ t/01-main.t	Mon Mar 24 10:27:17 2014
+@@ -28,7 +28,7 @@ has x => (
+ package main;
+ use Test::More tests => 10;
+ 
+-foreach my $class qw(WithTrait WithMeta)
++foreach my $class (qw(WithTrait WithMeta))
+ {
+ 	my $foo = $class->new(x => 'x');
+ 	is($foo->x, 'x', "$class x works");
