@@ -1,21 +1,22 @@
-$OpenBSD: patch-extern_libmv_libmv_tracking_brute_region_tracker_cc,v 1.3 2013/05/18 22:01:28 pascal Exp $
---- extern/libmv/libmv/tracking/brute_region_tracker.cc.orig	Fri Apr  5 11:23:20 2013
-+++ extern/libmv/libmv/tracking/brute_region_tracker.cc	Wed May  8 19:55:49 2013
-@@ -24,7 +24,7 @@
+$OpenBSD: patch-extern_libmv_libmv_tracking_brute_region_tracker_cc,v 1.4 2014/03/24 21:16:15 pascal Exp $
+--- extern/libmv/libmv/tracking/brute_region_tracker.cc.orig	Wed Mar 19 23:05:24 2014
++++ extern/libmv/libmv/tracking/brute_region_tracker.cc	Thu Mar 20 22:31:21 2014
+@@ -24,7 +24,8 @@
  #include <emmintrin.h>
  #endif
  
--#if !defined(__APPLE__) && !defined(__FreeBSD__)
-+#if !defined(__APPLE__) && !defined(__FreeBSD__) && !defined(__OpenBSD__)
+-#if !defined(__APPLE__) && !defined(__FreeBSD__) && !defined(__NetBSD__)
++#if !defined(__APPLE__) && !defined(__FreeBSD__) && !defined(__NetBSD__) && \
++	!defined(__OpenBSD__)
  // Needed for memalign on Linux and _aligned_alloc on Windows.
  #ifdef FREE_WINDOWS
  /* make sure _aligned_malloc is included */
-@@ -60,7 +60,7 @@ void *aligned_malloc(int size, int alignment) {
+@@ -60,7 +61,7 @@ void *aligned_malloc(int size, int alignment) {
    // they work natively with SSE types with no further work.
    CHECK_EQ(alignment, 16);
    return malloc(size);
--#elif __FreeBSD__
-+#elif defined(__FreeBSD__) || defined(__OpenBSD__)
+-#elif defined(__FreeBSD__) || defined(__NetBSD__)
++#elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
    void *result;
  
    if (posix_memalign(&result, alignment, size)) {

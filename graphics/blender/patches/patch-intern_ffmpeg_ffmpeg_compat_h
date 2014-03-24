@@ -1,0 +1,12 @@
+$OpenBSD: patch-intern_ffmpeg_ffmpeg_compat_h,v 1.1 2014/03/24 21:16:15 pascal Exp $
+--- intern/ffmpeg/ffmpeg_compat.h.orig	Fri Mar 21 00:34:54 2014
++++ intern/ffmpeg/ffmpeg_compat.h	Fri Mar 21 00:34:59 2014
+@@ -405,7 +405,7 @@ void avformat_close_input(AVFormatContext **ctx)
+ }
+ #endif
+ 
+-#if LIBAVUTIL_VERSION_INT < AV_VERSION_INT(52, 8, 0)
++#if 1
+ FFMPEG_INLINE
+ AVFrame *av_frame_alloc(void)
+ {

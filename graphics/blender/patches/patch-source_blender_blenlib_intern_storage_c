@@ -1,42 +1,12 @@
-$OpenBSD: patch-source_blender_blenlib_intern_storage_c,v 1.8 2013/05/18 22:01:28 pascal Exp $
---- source/blender/blenlib/intern/storage.c.orig	Thu Apr 25 18:35:57 2013
-+++ source/blender/blenlib/intern/storage.c	Wed May  8 19:59:16 2013
-@@ -42,13 +42,13 @@
+$OpenBSD: patch-source_blender_blenlib_intern_storage_c,v 1.9 2014/03/24 21:16:15 pascal Exp $
+--- source/blender/blenlib/intern/storage.c.orig	Wed Mar 19 23:05:25 2014
++++ source/blender/blenlib/intern/storage.c	Thu Mar 20 22:35:00 2014
+@@ -42,7 +42,7 @@
  #include <time.h>
  #include <sys/stat.h>
  
--#if defined(__sun__) || defined(__sun) || defined(__NetBSD__)
-+#if defined(__sun__) || defined(__sun) || defined(__NetBSD__) || defined(__OpenBSD__)
- #  include <sys/statvfs.h> /* Other modern unix os's should probably use this also */
- #elif !defined(__FreeBSD__) && !defined(linux) && (defined(__sparc) || defined(__sparc__))
- #  include <sys/statfs.h>
- #endif
- 
--#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
-+#if defined(__FreeBSD__) || defined(__NetBSD__)
- #  include <sys/param.h>
- #  include <sys/mount.h>
- #endif
-@@ -173,7 +173,7 @@ double BLI_dir_free_space(const char *dir)
- 	return (double) (freec * bytesps * sectorspc);
- #else
- 
--#if defined(__sun__) || defined(__sun) || defined(__NetBSD__)
-+#if defined(__sun__) || defined(__sun) || defined(__NetBSD__) || defined(__OpenBSD__)
- 	struct statvfs disk;
- #else
- 	struct statfs disk;
-@@ -194,11 +194,11 @@ double BLI_dir_free_space(const char *dir)
- 		strcpy(name, "/");
- 	}
- 
--#if defined(__FreeBSD__) || defined(linux) || defined(__OpenBSD__) || defined(__APPLE__) || defined(__GNU__) || defined(__GLIBC__)
-+#if defined(__FreeBSD__) || defined(linux) || defined(__APPLE__) || defined(__GNU__) || defined(__GLIBC__)
- 	if (statfs(name, &disk)) return(-1);
- #endif
- 
--#if defined(__sun__) || defined(__sun) || defined(__NetBSD__)
-+#if defined(__sun__) || defined(__sun) || defined(__NetBSD__) || defined(__OpenBSD__)
- 	if (statvfs(name, &disk)) return(-1);
- #elif !defined(__FreeBSD__) && !defined(linux) && (defined(__sparc) || defined(__sparc__))
- 	/* WARNING - This may not be supported by geeneric unix os's - Campbell */
+-#if defined(__NetBSD__) || defined(__DragonFly__) || defined(__sun__) || defined(__sun)
++#if defined(__OpenBSD__) || defined(__NetBSD__) || defined(__DragonFly__) || defined(__sun__) || defined(__sun)
+    /* Other modern unix os's should probably use this also */
+ #  include <sys/statvfs.h>
+ #  define USE_STATFS_STATVFS

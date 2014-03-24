@@ -1,12 +1,12 @@
-$OpenBSD: patch-extern_libmv_libmv_numeric_numeric_h,v 1.3 2013/05/18 22:01:28 pascal Exp $
---- extern/libmv/libmv/numeric/numeric.h.orig	Fri Apr  5 11:23:20 2013
-+++ extern/libmv/libmv/numeric/numeric.h	Wed May  8 19:57:03 2013
-@@ -33,7 +33,7 @@
- #include <Eigen/QR>
- #include <Eigen/SVD>
+$OpenBSD: patch-extern_libmv_libmv_numeric_numeric_h,v 1.4 2014/03/24 21:16:14 pascal Exp $
+--- extern/libmv/libmv/numeric/numeric.h.orig	Wed Mar 19 23:05:24 2014
++++ extern/libmv/libmv/numeric/numeric.h	Thu Mar 20 22:29:21 2014
+@@ -35,7 +35,7 @@
  
--#if (defined(_WIN32) || defined(__APPLE__) || defined(__FreeBSD__)) && !defined(__MINGW64__)
-+#if (defined(_WIN32) || defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__)) && !defined(__MINGW64__)
-   static void sincos(double x, double *sinx, double *cosx) {
-     *sinx = sin(x);
-     *cosx = cos(x);
+ #if !defined(__MINGW64__)
+ #  if defined(_WIN32) || defined(__APPLE__) || \
+-      defined(__FreeBSD__) || defined(__NetBSD__)
++      defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ static void sincos(double x, double *sinx, double *cosx) {
+   *sinx = sin(x);
+   *cosx = cos(x);

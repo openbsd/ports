@@ -1,0 +1,12 @@
+$OpenBSD: patch-intern_guardedalloc_intern_mallocn_intern_h,v 1.1 2014/03/24 21:16:15 pascal Exp $
+--- intern/guardedalloc/intern/mallocn_intern.h.orig	Wed Mar 19 23:05:25 2014
++++ intern/guardedalloc/intern/mallocn_intern.h	Fri Mar 21 08:55:15 2014
+@@ -56,6 +56,8 @@
+ #  define HAVE_MALLOC_STATS
+ #elif defined(__FreeBSD__)
+ #  include <malloc_np.h>
++#elif defined(__OpenBSD__)
++/* nothing here */
+ #elif defined(__APPLE__)
+ #  include <malloc/malloc.h>
+ #  define malloc_usable_size malloc_size

@@ -1,7 +1,7 @@
-$OpenBSD: patch-source_blender_blenkernel_intern_blender_c,v 1.9 2013/05/18 22:01:28 pascal Exp $
---- source/blender/blenkernel/intern/blender.c.orig	Tue Mar 19 15:25:12 2013
-+++ source/blender/blenkernel/intern/blender.c	Wed May  8 19:55:50 2013
-@@ -820,7 +820,7 @@ int BKE_undo_save_file(const char *filename)
+$OpenBSD: patch-source_blender_blenkernel_intern_blender_c,v 1.10 2014/03/24 21:16:15 pascal Exp $
+--- source/blender/blenkernel/intern/blender.c.orig	Wed Mar 19 23:05:25 2014
++++ source/blender/blenkernel/intern/blender.c	Thu Mar 20 22:28:32 2014
+@@ -803,7 +803,7 @@ int BKE_undo_save_file(const char *filename)
  {
  	UndoElem *uel;
  	MemFileChunk *chunk;

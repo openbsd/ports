@@ -1,0 +1,21 @@
+$OpenBSD: patch-intern_guardedalloc_intern_mallocn_guarded_impl_c,v 1.1 2014/03/24 21:16:15 pascal Exp $
+--- intern/guardedalloc/intern/mallocn_guarded_impl.c.orig	Wed Mar 19 23:05:25 2014
++++ intern/guardedalloc/intern/mallocn_guarded_impl.c	Fri Mar 21 08:54:45 2014
+@@ -611,6 +611,9 @@ static int compare_len(const void *p1, const void *p2)
+ 
+ void MEM_guarded_printmemlist_stats(void)
+ {
++#ifdef __OpenBSD__
++	printf("MEM_guarded_printmemlist_stats not implemented on OpenBSD.");
++#else
+ 	MemHead *membl;
+ 	MemPrintBlock *pb, *printblock;
+ 	unsigned int totpb, a, b;
+@@ -683,6 +686,7 @@ void MEM_guarded_printmemlist_stats(void)
+ #ifdef HAVE_MALLOC_STATS
+ 	printf("System Statistics:\n");
+ 	malloc_stats();
++#endif
+ #endif
+ }
+ 

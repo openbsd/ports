@@ -1,11 +1,12 @@
-$OpenBSD: patch-intern_cycles_CMakeLists_txt,v 1.2 2013/05/18 22:01:28 pascal Exp $
---- intern/cycles/CMakeLists.txt.orig	Mon Feb  4 17:12:37 2013
-+++ intern/cycles/CMakeLists.txt	Fri May  3 22:39:46 2013
-@@ -55,7 +55,6 @@ add_definitions(-DWITH_CUDA)
- add_definitions(-DWITH_MULTI)
+$OpenBSD: patch-intern_cycles_CMakeLists_txt,v 1.3 2014/03/24 21:16:15 pascal Exp $
+--- intern/cycles/CMakeLists.txt.orig	Fri Mar 21 19:06:29 2014
++++ intern/cycles/CMakeLists.txt	Fri Mar 21 19:06:46 2014
+@@ -53,7 +53,7 @@ elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+ 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ffast-math")
+ endif()
  
- include_directories(
--	SYSTEM
- 	${BOOST_INCLUDE_DIR}
- 	${OPENIMAGEIO_INCLUDE_DIRS}
- 	${OPENIMAGEIO_INCLUDE_DIRS}/OpenImageIO
+-add_definitions(-DWITH_KERNEL_SSE2 -DWITH_KERNEL_SSE3 -DWITH_KERNEL_SSE41 -DWITH_KERNEL_AVX)
++add_definitions(-DWITH_KERNEL_SSE2 -DWITH_KERNEL_SSE3)
+ 
+ # for OSL
+ if(WIN32 AND MSVC)
