@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:19 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2014/03/24 09:29:38 jasper Exp $
 
 COMMENT =	extension of Params::Validate for using Moose types
 
 MODULES =	cpan
-DISTNAME =	MooseX-Params-Validate-0.12
-REVISION =	0
+DISTNAME =	MooseX-Params-Validate-0.18
 CATEGORIES =	devel
 USE_GROFF =	Yes
 
@@ -16,6 +15,7 @@ RUN_DEPENDS =	devel/p5-Devel-Caller \
 		devel/p5-Params-Validate \
 		devel/p5-Sub-Exporter
 
-TEST_DEPENDS =	devel/p5-Test-Exception
+TEST_DEPENDS =	devel/p5-Test-Exception \
+		devel/p5-Test-Fatal
 
 .include <bsd.port.mk>
