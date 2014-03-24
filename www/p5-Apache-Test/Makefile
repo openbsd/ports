@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2014/03/13 21:13:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2014/03/24 07:47:23 jasper Exp $
 
 COMMENT=	test wrapper with helpers for testing Apache
 
@@ -16,8 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MAKE_ENV+=	APACHE_TEST_HTTPD=${LOCALBASE}/sbin/httpd
 
 RUN_DEPENDS=	apache-httpd-*|apache-httpd-openbsd-*:www/apache-httpd-openbsd
-TEST_DEPENDS=	${RUN_DEPENDS} \
-		www/p5-libwww
+TEST_DEPENDS +=	www/p5-libwww
 
 pre-configure:
 	@perl -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \

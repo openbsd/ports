@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/03/23 13:10:22 nigel Exp $
+# $OpenBSD: Makefile,v 1.15 2014/03/24 07:47:23 jasper Exp $
 
 COMMENT=	perl tools for bioinformatics
 
@@ -53,8 +53,6 @@ RUN_DEPENDS=	biology/AcePerl \
 		www/p5-SOAP-Lite \
 		www/p5-URI \
 		www/p5-libwww
-
-TEST_DEPENDS=${RUN_DEPENDS}
 
 # Optional (not ported) dependencies:
 # Postscript-TextBlock

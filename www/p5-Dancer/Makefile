@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 12:36:16 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2014/03/24 07:47:23 jasper Exp $
 
 COMMENT =	simple perl web app framework
 
@@ -14,8 +14,7 @@ RUN_DEPENDS = 	devel/p5-Try-Tiny \
 		www/p5-HTTP-Body \
 		www/p5-HTTP-Server-Simple-PSGI
 
-TEST_DEPENDS =	${RUN_DEPENDS} \
-		converters/p5-JSON \
+TEST_DEPENDS +=	converters/p5-JSON \
 	 	devel/p5-Clone \
 		devel/p5-Test-Output \
 		devel/p5-YAML \

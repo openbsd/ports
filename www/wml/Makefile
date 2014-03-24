@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/03/21 13:10:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2014/03/24 07:47:23 jasper Exp $
 
 COMMENT=		Website META Language: off-line HTML generation toolkit
 
@@ -23,7 +23,6 @@ RUN_DEPENDS=		devel/p5-Term-ReadKey \
 			www/p5-HTML-Clean \
 			www/tidyp>=1.04p1
 BUILD_DEPENDS=		${RUN_DEPENDS}
-TEST_DEPENDS=		${RUN_DEPENDS}
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-openworld
