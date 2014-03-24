@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_toolkit_components_downloads_nsDownloadManager_cpp,v 1.13 2013/12/12 19:58:39 landry Exp $
---- mozilla/toolkit/components/downloads/nsDownloadManager.cpp.orig	Sat Dec  7 16:13:21 2013
-+++ mozilla/toolkit/components/downloads/nsDownloadManager.cpp	Sun Dec  8 11:09:52 2013
-@@ -1408,7 +1408,7 @@ nsDownloadManager::GetDefaultDownloadsDirectory(nsIFil
+$OpenBSD: patch-mozilla_toolkit_components_downloads_nsDownloadManager_cpp,v 1.14 2014/03/24 21:34:21 landry Exp $
+--- mozilla/toolkit/components/downloads/nsDownloadManager.cpp.orig	Wed Mar  5 00:34:36 2014
++++ mozilla/toolkit/components/downloads/nsDownloadManager.cpp	Sun Mar  9 00:00:11 2014
+@@ -1409,7 +1409,7 @@ nsDownloadManager::GetDefaultDownloadsDirectory(nsIFil
      rv = downloadDir->Exists(&exists);
      NS_ENSURE_SUCCESS(rv, rv);
      if (!exists) {
@@ -10,7 +10,7 @@ $OpenBSD: patch-mozilla_toolkit_components_downloads_nsDownloadManager_cpp,v 1.1
        NS_ENSURE_SUCCESS(rv, rv);
      }
    }
-@@ -1507,7 +1507,7 @@ nsDownloadManager::GetUserDownloadsDirectory(nsIFile *
+@@ -1508,7 +1508,7 @@ nsDownloadManager::GetUserDownloadsDirectory(nsIFile *
            (void)customDirectory->Exists(&exists);
  
            if (!exists) {

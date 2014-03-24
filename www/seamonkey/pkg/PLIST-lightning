@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-lightning,v 1.19 2013/12/12 19:58:39 landry Exp $
+@comment $OpenBSD: PLIST-lightning,v 1.20 2014/03/24 21:34:21 landry Exp $
 @conflict lightning-seamonkey-<=1.0b1
 @pkgpath productivity/sunbird,-seamonkey
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}/
@@ -127,6 +127,7 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/content/calendar/calendar-event-dialog.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/content/calendar/calendar-event-dialog.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/content/calendar/calendar-event-dialog.xul
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/content/calendar/calendar-extract.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/content/calendar/calendar-invitations-dialog.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/content/calendar/calendar-invitations-dialog.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/content/calendar/calendar-invitations-dialog.xul
@@ -272,6 +273,7 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/skin/calendar/toolbar-small.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/skin/calendar/widgets/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/skin/calendar/widgets/calendar-widgets.css
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/skin/calendar/widgets/drag-center.svg
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/skin/calendar/widgets/minimonth.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/skin/calendar/widgets/nav-arrow.svg
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/calendar/skin/calendar/widgets/nav-today-hov.svg
@@ -317,7 +319,9 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/lightning/skin/lightning/accountCentral.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/lightning/skin/lightning/common/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/lightning/skin/lightning/common/imip.css
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/lightning/skin/lightning/common/lightning-toolbar.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/lightning/skin/lightning/imip.css
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/lightning/skin/lightning/imip.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/lightning/skin/lightning/lightning-toolbar.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/lightning/skin/lightning/lightning-widgets.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/chrome/lightning/skin/lightning/lightning.css
