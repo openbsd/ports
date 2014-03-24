@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2013/11/04 21:21:51 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2014/03/24 21:23:28 landry Exp $
 @conflict mozilla-thunderbird-<=3.1.11
 @pkgpath mail/mozilla-thunderbird
 bin/${MOZILLA_PROJECT}
@@ -23,6 +23,7 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/messenger/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/messenger/mailViews.dat
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/pref/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/pref/channel-prefs.js
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/pref/all-openbsd.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dependentlibs.list
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dictionaries/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dictionaries/en-US.aff
