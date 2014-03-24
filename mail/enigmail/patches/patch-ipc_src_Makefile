@@ -1,0 +1,13 @@
+$OpenBSD: patch-ipc_src_Makefile,v 1.1 2014/03/24 21:01:46 landry Exp $
+Remove warning not supported by base gcc
+--- ipc/src/Makefile.orig	Wed Mar 12 22:11:49 2014
++++ ipc/src/Makefile	Wed Mar 12 22:11:57 2014
+@@ -57,7 +57,7 @@ all: install
+ 
+ 
+ $(objfiles): $(source)
+-	$(CC) $(CFLAGS) -Wno-return-type-c-linkage -c -o $(objfiles) $^
++	$(CC) $(CFLAGS) -c -o $(objfiles) $^
+ 
+ $(libname): $(objfiles)
+ 	$(CC) $(LDFLAGS) -o $(libname) $(objfiles)

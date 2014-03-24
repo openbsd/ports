@@ -1,0 +1,38 @@
+@comment $OpenBSD: PLIST-seamonkey,v 1.3 2014/03/24 21:01:46 landry Exp $
+@conflict enigmail-seamonkey-<=1.6v0p1
+@pkgpath www/seamonkey,-enigmail
+lib/mozilla/
+lib/mozilla/extensions/
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/chrome/
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/chrome.manifest
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/chrome/enigmail.jar
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/components/
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/components/enigMsgCompFields.js
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/components/enigmail.js
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/components/enigmail.xpt
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/components/enigprefs-service.js
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/components/mimeDecrypt.js
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/components/mimeEncrypt.js
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/defaults/
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/defaults/preferences/
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/defaults/preferences/enigmail.js
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/install.rdf
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/commonFuncs.jsm
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/enigmailCommon.jsm
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/gpgAgentHandler.jsm
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/installGnuPG.jsm
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/keyManagement.jsm
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/mimeVerify.jsm
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/pipeConsole.jsm
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/subprocess.jsm
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/subprocess_worker_unix.js
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/modules/subprocess_worker_win.js
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/platform/
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/platform/OpenBSD_${XPCOM_ABI}-gcc3/
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/platform/OpenBSD_${XPCOM_ABI}-gcc3/lib/
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/platform/OpenBSD_${XPCOM_ABI}-gcc3/lib/libsubprocess-${XPCOM_ABI}-gcc3.so
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/wrappers/
+lib/mozilla/extensions/{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}/{847b3a00-7ab1-11d4-8f02-006008948af5}/wrappers/gpg-agent-wrapper.sh

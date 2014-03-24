@@ -1,0 +1,13 @@
+$OpenBSD: patch-config_getOsTarget_pl,v 1.1 2014/03/24 21:01:46 landry Exp $
+recognize our powerpc target_cpu
+--- config/getOsTarget.pl.orig	Sun Mar 16 10:06:34 2014
++++ config/getOsTarget.pl	Sun Mar 16 10:07:15 2014
+@@ -76,7 +76,7 @@ if ($srcCpu =~ /x86[_-]64/i) {
+ elsif ($srcCpu =~ /i[3456]86/i) {
+   $targetCpu = "x86";
+ }
+-elsif ($srcCpu =~ /ppc/i) {
++elsif ($srcCpu =~ /powerpc/i) {
+   $targetCpu = "ppc";
+ }
+ elsif ($srcCpu =~ /alpha/i) {
