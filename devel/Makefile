@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1206 2014/03/24 10:29:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.1207 2014/03/24 14:59:14 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -701,7 +701,6 @@
      SUBDIR += p5-Eval-Closure
      SUBDIR += p5-Event
      SUBDIR += p5-Event-ExecFlow
-     SUBDIR += p5-Event-Lib
      SUBDIR += p5-Exception-Class
      SUBDIR += p5-Expect
      SUBDIR += p5-Expect-Simple
