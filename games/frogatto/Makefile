@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/10/01 09:07:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2014/03/24 12:31:16 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -6,15 +6,13 @@ COMMENT=	2D adventure platformer game
 
 # repackaged source from github minus the MacOS* dirs
 DISTNAME=	frogatto-1.3.20130317
-REVISION=	0
+REVISION=	1
 MASTER_SITES=	https://distfiles.bsdfrog.org/
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	games
 
 HOMEPAGE=	http://www.frogatto.com/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3 + see share/frogatto/LICENSE
 PERMIT_PACKAGE_CDROM=	may not charge
