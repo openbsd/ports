@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2013/12/12 14:11:36 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.42 2014/03/24 14:39:23 dcoppa Exp $
 
 COMMENT=	SOCKS client and server
 
 DISTNAME=	dante-1.4.0
+REVISION=	0
 CATEGORIES=	security
 
 SHARED_LIBS=	dsocks	1.2 \
@@ -20,12 +21,13 @@ MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 # BSD/CMU
 PERMIT_PACKAGE_CDROM=Yes
 
-WANTLIB=	c m wrap
+WANTLIB=	c m
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static
 CONFIGURE_ARGS+= --without-ldap \
+		--without-libwrap \
 		--without-pam \
 		--without-sasl \
 		--without-upnp
