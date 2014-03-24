@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2011/01/07 10:17:04 pea Exp $
+$OpenBSD: patch-configure,v 1.2 2014/03/24 12:53:37 naddy Exp $
 --- configure.orig	Mon Oct  8 18:38:57 2007
 +++ configure	Mon Jan 14 11:56:10 2008
 @@ -9502,7 +9502,6 @@ openbsd*)
@@ -20,11 +20,3 @@ $OpenBSD: patch-configure,v 1.1.1.1 2011/01/07 10:17:04 pea Exp $
  	__db_version_compat
  #endif
  
-@@ -37236,6 +37235,7 @@ cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- 
-+#include <sys/types.h>
- #include <tcpd.h>
- int allow_severity = 0;
- int deny_severity  = 0;

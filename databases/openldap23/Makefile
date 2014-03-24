@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2013/06/20 06:54:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2014/03/24 12:53:37 naddy Exp $
 
 COMMENT=	Open source LDAP software (server)
 
 DISTNAME=	openldap-2.3.43
 PKGNAME=	${DISTNAME:S/-/-server-/}
-REVISION=	13
+REVISION=	14
 
 CATEGORIES=	databases net
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://www.openldap.org/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += asn1 c com_err crypto gssapi heimbase
-WANTLIB += krb5 m perl pthread roken sasl2 ssl util wind wrap
+WANTLIB += krb5 m perl pthread roken sasl2 ssl util wind
 
 MASTER_SITES=	http://mirror.switch.ch/ftp/mirror/OpenLDAP/openldap-release/ \
 		http://gd.tuwien.ac.at/infosys/network/OpenLDAP/openldap-release/ \
@@ -35,7 +35,6 @@ CONFIGURE_ARGS+=	--enable-slapd \
 			--enable-cleartext \
 			--enable-crypt \
 			--enable-rewrite \
-			--enable-wrappers \
 			--with-cyrus-sasl \
 			--enable-spasswd
 
