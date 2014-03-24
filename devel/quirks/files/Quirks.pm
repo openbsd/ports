@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.137 2014/03/23 18:50:39 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.138 2014/03/24 15:00:35 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -384,6 +384,7 @@ my $obsolete_reason = {
 	'chipmunk' => 0,
 	'maple' => 3,
 	'mapleshare' => 3,
+	'p5-Event-Lib' => 3,
 };
 
 # ->is_base_system($handle, $state):
