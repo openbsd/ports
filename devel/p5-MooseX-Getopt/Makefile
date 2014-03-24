@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/03/22 14:03:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2014/03/24 10:30:49 jasper Exp $
 
 COMMENT=		Moose role for processing command line options
 
@@ -20,6 +20,7 @@ TEST_DEPENDS=		devel/p5-Class-Load \
 			devel/p5-Module-Runtime \
 			devel/p5-MRO-Compat \
 			devel/p5-MooseX-ConfigFromFile \
+			devel/p5-Path-Tiny \
 			devel/p5-Test-Deep \
 			devel/p5-Test-Fatal \
 			devel/p5-Test-Requires \
