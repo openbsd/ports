@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2014/03/12 11:04:41 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.61 2014/03/24 09:08:46 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -87,7 +87,8 @@ CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
 		--with-tk-config=${MODTK_CONFIG}
 
 CONFIGURE_ENV=	FFLAGS="${FFLAGS}" \
-		LDFLAGS="-L${PREFIX}/lib -Wl,-R${PREFIX}/lib/R/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include/ereadline -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -Wl,-R${LOCALBASE}/lib/R/lib" \
 		ac_cv_path_TAR="${LOCALBASE}/bin/gtar"
 
 MAKE_FLAGS=	INSTALL_DATA='install -c -m 644' \

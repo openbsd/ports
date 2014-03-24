@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2013/10/22 06:03:54 benoit Exp $
+# $OpenBSD: Makefile,v 1.96 2014/03/24 09:08:46 espie Exp $
 
 COMMENT=	shell-like command line ftp and sftp client
 
@@ -24,7 +24,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-openssl \
 		--without-gnutls \
 		--disable-shared
-CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include/ereadline -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MODULES=	devel/gettext

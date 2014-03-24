@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/04/27 15:11:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2014/03/24 09:08:46 espie Exp $
 
 COMMENT=	curses GDB interface
 DISTNAME=	cgdb-0.6.7
@@ -22,7 +22,7 @@ AUTOCONF_VERSION= 2.69
 CONFIGURE_ARGS+=  --with-readline=yes
 
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include"
+		CPPFLAGS="-I${LOCALBASE}/include/ereadline -I${LOCALBASE}/include"
 
 # there are tests, but not working yet
 NO_TEST=	Yes

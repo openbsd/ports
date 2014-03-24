@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/04/18 15:08:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2014/03/24 09:08:46 espie Exp $
 
 COMMENT =		library to edit command lines as they are typed in
 
@@ -13,6 +13,7 @@ PATCHFILES =		readline62-001:0 \
 LIBV =			0.1
 SHARED_LIBS +=		ehistory ${LIBV}
 SHARED_LIBS +=		ereadline ${LIBV}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -29,6 +30,7 @@ CONFIGURE_STYLE =	gnu
 SEPARATE_BUILD =	Yes
 
 MAKE_ENV =		RL_SHLIB_V=${LIBereadline_VERSION}
+FAKE_FLAGS =		includedir=${TRUEPREFIX}/include/ereadline
 
 pre-configure:
 	perl -pi \
