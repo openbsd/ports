@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/03/22 14:05:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2014/03/24 09:25:44 jasper Exp $
 
 COMMENT=		method declarations with type constraints
 
@@ -21,5 +21,7 @@ RUN_DEPENDS=		devel/p5-Context-Preserve \
 			devel/p5-aliased \
 			devel/p5-namespace-autoclean
 BUILD_DEPENDS=		${RUN_DEPENDS}
+TEST_DEPENDS=		devel/p5-Test-Deep \
+			devel/p5-Test-Fatal
 
 .include <bsd.port.mk>
