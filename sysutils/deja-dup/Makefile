@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2013/11/17 09:48:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2014/03/24 10:31:53 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	simple encrypted backup tool for GNOME
 
-GNOME_VERSION=	26.0
+GNOME_VERSION=	28.0
 GNOME_PROJECT=	deja-dup
-REVISION=	1
 
 CATEGORIES=	sysutils x11/gnome
 
@@ -60,6 +59,10 @@ BUILD_DEPENDS += textproc/gsed
 pre-configure:
 	perl -pi -e 's,sed -i,gsed -i,g' \
 		${WRKSRC}/data/Makefile.in
-	${SUBST_CMD} ${WRKSRC}/common/PythonChecker.vala
+	${SUBST_CMD} ${WRKSRC}/deja-dup/widgets/WidgetUtils.vala
+
+post-install:
+	rm ${PREFIX}/lib/deja-dup/*.la
+	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.la
 
 .include <bsd.port.mk>
