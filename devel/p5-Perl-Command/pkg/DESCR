@@ -1,0 +1,3 @@
+This module exports one symbol - @PERL, which is very similar to $^X (see
+"$^X" in perlvar), except it also contains a list of commands which will give
+the sub-perl all of the same @INC paths as this one.
