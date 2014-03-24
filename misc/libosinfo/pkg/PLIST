@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/12/19 18:06:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/03/24 09:58:24 ajacoutot Exp $
 @bin bin/osinfo-db-validate
 @bin bin/osinfo-detect
 @bin bin/osinfo-install-script
@@ -115,8 +115,10 @@ share/libosinfo/db/hypervisors/qemu.xml
 share/libosinfo/db/hypervisors/rhel-xen.xml
 share/libosinfo/db/hypervisors/xen.xml
 share/libosinfo/db/install-scripts/
+share/libosinfo/db/install-scripts/debian.xml
 share/libosinfo/db/install-scripts/fedora.xml
 share/libosinfo/db/install-scripts/rhel.xml
+share/libosinfo/db/install-scripts/ubuntu.xml
 share/libosinfo/db/install-scripts/windows-cmd.xml
 share/libosinfo/db/install-scripts/windows-reg.xml
 share/libosinfo/db/install-scripts/windows-sif.xml

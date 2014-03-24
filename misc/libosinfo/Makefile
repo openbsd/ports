@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2013/12/22 09:33:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2014/03/24 09:58:24 ajacoutot Exp $
 
 COMMENT=		library for managing information about operating systems
 
-DISTNAME=		libosinfo-0.2.9
+DISTNAME=		libosinfo-0.2.10
 
-SHARED_LIBS +=  osinfo-1.0                0.0 # 2.9
+SHARED_LIBS +=  osinfo-1.0           0.0      # .2.10
 
 CATEGORIES=		misc devel
 
@@ -40,6 +40,13 @@ USE_LIBTOOL=		gnu
 CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS=		--with-usb-ids-path=${LOCALBASE}/share/hwdata/usb.ids \
-			--with-pci-ids-path=${LOCALBASE}/share/hwdata/pnp.ids
+			--with-pci-ids-path=${LOCALBASE}/share/hwdata/pnp.ids \
+			--disable-gtk-doc
+
+# If one of these tools is found at configure stage, it might be used,
+# no matter whether we use --disable-gtk-doc or not.
+CONFIGURE_ENV +=	ac_cv_path_GTKDOC_CHECK="" \
+			ac_cv_path_GTKDOC_REBASE="" \
+			ac_cv_path_GTKDOC_MKPDF=""
 
 .include <bsd.port.mk>
