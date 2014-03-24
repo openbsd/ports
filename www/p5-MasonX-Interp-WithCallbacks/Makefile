@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/03/13 22:45:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2014/03/24 09:16:23 jasper Exp $
 
 COMMENT=	Mason callback support via Params::CallbackRequest
 
@@ -13,8 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-Params-CallbackRequest \
 		www/p5-HTML-Mason
-TEST_DEPENDS=	${RUN_DEPENDS} \
-		www/apache-httpd-openbsd \
+TEST_DEPENDS=	www/apache-httpd-openbsd \
 		www/p5-Apache-Test
 
 CONFIGURE_STYLE=modbuild
