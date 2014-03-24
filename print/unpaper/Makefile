@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:37:54 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2014/03/24 12:29:39 ajacoutot Exp $
 
 COMMENT=	post-processing tool for scanned paper sheets
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c m
 
-MASTER_SITES=	${MASTER_SITE_BERLIOS:=unpaper/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=unpaper.berlios/}
 
 NO_TEST=	Yes
 
