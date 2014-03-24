@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2013/03/11 11:46:13 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2014/03/24 10:05:51 ajacoutot Exp $
 
 COMMENT=		fallback theme of the icon theme specification
 
-DISTNAME=		hicolor-icon-theme-0.12
-REVISION=		2
+# new release: bump x11/gtk+2,-guic to force a run of gtk-update-icon-cache;
+# we cannot run it ourselves because gtk-update-icon-cache depends on
+# hicolor-icon-theme and that would create a dependency loop
+DISTNAME=		hicolor-icon-theme-0.13
 
 CATEGORIES=		x11
 
