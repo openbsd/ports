@@ -1,4 +1,4 @@
-# $OpenBSD: FS.pm,v 1.1 2010/08/20 15:22:22 espie Exp $
+# $OpenBSD: FS.pm,v 1.2 2014/03/24 15:18:17 afresh1 Exp $
 # Copyright (c) 2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -167,7 +167,7 @@ sub is_info
 
 sub is_manpage
 {
-	my $_ = shift;
+	local $_ = shift;
 	if (m,/man/(?:[^/]*?/)?man(.*?)/[^/]+\.\1[[:alpha:]]?(?:\.gz|\.Z)?$,) {
 		return 1;
 	}

@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.6 2014/03/21 11:01:43 espie Exp $
+# $OpenBSD: make-plist,v 1.7 2014/03/24 15:18:17 afresh1 Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -72,25 +72,25 @@ sub add
 
 sub reverse
 {
-	my ($self, $_) = @_;
+	my ($self, $path) = @_;
 	for my $k (@{$self->{r}}) {
 		if ($k =~ m/^\^(.*)$/) {
 			my $k2 = $1;
 			my $v = $self->{h}->{$k2};
-			s/^\Q$v\E/\$\{\Q$k2\E\}/g;
+			$path =~ s/^\Q$v\E/\$\{\Q$k2\E\}/g;
 		} else {
 			my $v = $self->{h}->{$k};
-			s/\Q$v\E/\$\{\Q$k\E\}/g;
+			$path =~ s/\Q$v\E/\$\{\Q$k\E\}/g;
 		}
 	}
-	return $_;
+	return $path;
 }
 
 my $first_warn = 1;
 sub reverse_with_lib
 {
-	my ($self, $_) = @_;
-	if (m/^(.*?)lib([^\/]+)\.so\.(\d+\.\d+)$/) {
+	my ($self, $path) = @_;
+	if ($path =~ m/^(.*?)lib([^\/]+)\.so\.(\d+\.\d+)$/) {
 		my ($path, $name, $version) = ($1, $2, $3);
 		if (!defined $self->{l}->{$name}) {
 			if ($first_warn) {
@@ -107,7 +107,7 @@ sub reverse_with_lib
 		$self->{found}->{$name} = 1;
 		return $self->reverse("${path}lib$name.so.")."\${LIB${name}_VERSION}";
 	} else {
-		return $self->reverse($_);
+		return $self->reverse($path);
 	}
 }
 
@@ -506,24 +506,24 @@ sub register
 package OpenBSD::PackingElement::ExeclikeAction;
 sub pseudo_expand
 {
-	my ($_, $item) = @_;
-	if (m/\%F/o) {
+	my ($file, $item) = @_;
+	if ($file =~ m/\%F/o) {
 		return "XXXX" unless defined $item;
-		s/\%F/$item->{name}/g;
+		$file =~ s/\%F/$item->{name}/g;
 	}
-	if (m/\%D/o) {
+	if ($file =~ m/\%D/o) {
 		return "XXXX" unless defined $item;
-		s/\%D/$item->cwd/ge;
+		$file =~ s/\%D/$item->cwd/ge;
 	}
-	if (m/\%B/o) {
+	if ($file =~ m/\%B/o) {
 		return "XXXX" unless defined $item;
-		s/\%B/dirname($item->fullname)/ge;
+		$file =~ s/\%B/dirname($item->fullname)/ge;
 	}
-	if (m/\%f/o) {
+	if ($file =~ m/\%f/o) {
 		return "XXXX" unless defined $item;
-		s/\%f/basename($item->fullname)/ge;
+		$file =~ s/\%f/basename($item->fullname)/ge;
 	}
-	return $_;
+	return $file;
 }
 
 sub delay_tag
