@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/03/24 08:11:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2014/03/24 14:43:07 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c
 
 CONFIGURE_STYLE=	modbuild
+
+BUILD_DEPENDS =		devel/p5-ExtUtils-Depends
 
 RUN_DEPENDS=		converters/p5-JSON-XS \
 			devel/p5-Algorithm-Diff \
