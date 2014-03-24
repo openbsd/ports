@@ -1,6 +1,10 @@
---- Makefile.orig	Sat Dec 15 16:29:38 2012
-+++ Makefile	Tue Mar  5 19:29:11 2013
-@@ -6,31 +6,17 @@ USELIBWRAP=	# Use libwrap?
+--- Makefile.orig	Sat Jul 27 16:25:04 2013
++++ Makefile	Mon Mar 24 18:28:02 2014
+@@ -2,35 +2,20 @@
+ 
+ VERSION="1.15"
+ USELIBCONFIG=1	# Use libconfig? (necessary to use configuration files)
+-USELIBWRAP=	# Use libwrap?
  COV_TEST= 	# Perform test coverage?
  PREFIX=/usr/local
  
@@ -33,7 +37,7 @@
  all: sslh $(MAN) echosrv
  
  .c.o: *.h
-@@ -51,7 +37,7 @@ echosrv: $(OBJS) echosrv.o
+@@ -51,7 +36,7 @@ echosrv: $(OBJS) echosrv.o
  	$(CC) $(CFLAGS) -o echosrv echosrv.o probe.o common.o $(LIBS)
  
  $(MAN): sslh.pod Makefile
