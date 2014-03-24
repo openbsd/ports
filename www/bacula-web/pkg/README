@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2014/03/20 12:43:21 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2014/03/24 15:08:21 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -16,3 +16,14 @@ another database, the corresponding package needs to be installed:
 
 Configuration is done in:
     ${INSTDIR}/application/config/config.php
+
+nginx(8) configuration
+----------------------
+The following configuration chunk must be added to the server {} block
+to deny access to the configuration directory:
+
+-8<---------------------------------------------------------------------
+        location ~ /application/config {
+            deny  all;
+        }
+-8<---------------------------------------------------------------------
