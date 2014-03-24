@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/03/22 13:47:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2014/03/24 09:12:34 jasper Exp $
 
 COMMENT =		loads one of several alternate module implementations
 
@@ -13,6 +13,7 @@ MODULES =		cpan
 RUN_DEPENDS =		devel/p5-Module-Runtime \
 			devel/p5-Try-Tiny
 
-TEST_DEPENDS =		devel/p5-Test-Requires
+TEST_DEPENDS =		devel/p5-Test-Fatal \
+			devel/p5-Test-Requires
 
 .include <bsd.port.mk>

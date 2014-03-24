@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/03/22 14:03:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2014/03/24 09:14:55 jasper Exp $
 
 COMMENT=		declarative syntax for Moose
 
@@ -18,7 +18,8 @@ RUN_DEPENDS=		devel/p5-List-MoreUtils \
 			devel/p5-MooseX-Types \
 			devel/p5-namespace-autoclean
 
-TEST_DEPENDS=	devel/p5-Test-Exception \
+TEST_DEPENDS=		devel/p5-Test-Exception \
+			devel/p5-Test-Fatal \
 			devel/p5-Test-NoWarnings
 
 .include <bsd.port.mk>
