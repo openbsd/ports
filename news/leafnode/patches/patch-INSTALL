@@ -1,6 +1,6 @@
-$OpenBSD: patch-INSTALL,v 1.12 2009/02/12 13:33:07 giovanni Exp $
---- INSTALL.orig	Sun Feb 25 12:28:08 2007
-+++ INSTALL	Sun Feb  8 10:28:54 2009
+$OpenBSD: patch-INSTALL,v 1.13 2014/03/25 12:23:36 ajacoutot Exp $
+--- INSTALL.orig	Tue Apr 14 14:49:24 2009
++++ INSTALL	Tue Mar 25 13:21:54 2014
 @@ -70,14 +70,14 @@ as sudo.
      the lock file (defaults to leaf.node/lock.file below the spooldir).
  
@@ -74,34 +74,107 @@ $OpenBSD: patch-INSTALL,v 1.12 2009/02/12 13:33:07 giovanni Exp $
      probably run fetchnews from /etc/ppp/ip-up.local or /etc/ppp/ip-up.
  
  10. (as root) Edit /etc/hosts.deny to add a line:
-@@ -236,12 +236,11 @@ as sudo.
+@@ -221,31 +221,21 @@ as sudo.
+        configuration file for inetd is usually /etc/inetd.conf or
+        /etc/inet/inetd.conf.
+ 
+-    b) Then, xinetd has joined in and is now the default on Red Hat and
+-       SUSE Linux, it is described in section 11b.
+-
+-    c) Another possibility is to use Dan J. Bernstein's daemontools and
++    b) Another possibility is to use Dan J. Bernstein's daemontools and
+        ucspi-tcp packages, but like all DJB-ware, their installation is easy,
+        but different from that of most other packages. The installation is
+-       described in section 11c (automatic) and 11d (manual).
++       described in section 11b (automatic) and 11c (manual).
+ 
+-11a.ONLY WHEN USING INETD (Beware, many systems ship xinetd nowadays, see
+-    section 11b below instead.)
++11a.ONLY WHEN USING INETD
+ 
+     (as root) Edit /etc/inetd.conf so that $(BINDIR)/leafnode is executed for
      incoming NNTP connections.  Here is my inetd.conf line (insert it at the
      leftmost column, without leading spaces!):
  
 -    nntp stream tcp nowait news /usr/sbin/tcpd /usr/local/sbin/leafnode
-+    nntp stream tcp nowait _news /usr/libexec/tcpd /usr/local/sbin/leafnode
++    nntp stream tcp nowait _news /usr/local/sbin/leafnode leafnode
  
-     This starts leafnode for all connections on the nntp port, subject to
+-    This starts leafnode for all connections on the nntp port, subject to
 -    /etc/hosts.allow and /etc/hosts.deny screening.  If you don't have
 -    /usr/sbin/tcpd, fetch the tcp_wrappers package and install it.
 -
-+    /etc/hosts.allow and /etc/hosts.deny screening.
+-    Using leafnode without tcpd is not supported and opens your computer to
+-    abuse (even happens on modem lines that are only connected during the
+-    fetch!)
+-
++    This starts leafnode for all connections on the nntp port.
 +    
-     Using leafnode without tcpd is not supported and opens your computer to
-     abuse (even happens on modem lines that are only connected during the
-     fetch!)
-@@ -278,8 +277,8 @@ as sudo.
- 	    socket_type     = stream
- 	    protocol        = tcp
- 	    wait            = no
+     After these changes, force inetd to read the changed configuration file by
+     sending it the HANGUP signal. To achieve this, issue the following command
+     (as root):
+@@ -254,51 +244,8 @@ as sudo.
+ 
+     Proceed to step #12.
+ 
+-11b.ONLY WHEN USING XINETD
+-    (as root)
++11b. (as root) AUTOMATIC INSTALLATION WITH DAEMONTOOLS AND UCSPI-TCP
+ 
+-    xinetd versions before 2.3.10 are not supported. It may or may not work for
+-    you with older versions.
+-
+-    More documentation is available in the xinetd and xinetd.conf manual pages.
+-    Try man xinetd.
+-
+-     a. check if your /etc/xinetd.conf has a "includedir /etc/xinetd.d" line.
+-	If it has, store the configuration snippet below as
+-	/etc/xinetd.d/leafnode. If your xinetd.conf does NOT have that
+-	includedir line, append the configuration snippet to your
+-	/etc/xinetd.conf.
+-
+-     b. After you have figured which of the two files to edit (or create), add
+-	this to the xinetd configuration file:
+-
+-	service nntp
+-	{
+-	    flags           = NAMEINARGS NOLIBWRAP
+-	    socket_type     = stream
+-	    protocol        = tcp
+-	    wait            = no
 -	    user            = news
 -	    server          = /usr/sbin/tcpd
-+	    user            = _news
-+	    server          = /usr/libexec/tcpd
- 	    server_args     = /usr/local/sbin/leafnode
- 	    instances       = 7
- 	    per_source      = 3
-@@ -349,7 +348,7 @@ as sudo.
+-	    server_args     = /usr/local/sbin/leafnode
+-	    instances       = 7
+-	    per_source      = 3
+-	}
+-
+-    This allows at most 7 leafnode connections. At most 3 connections are
+-    allowed from the same client host at the same time. Adjust these figures if
+-    necessary.
+-
+-    Send xinetd a USR2 or HUP signal (check the documentation which one you
+-    need, it depends on the xinetd version) to make it re-read its
+-    configuration.  Figure its PID with ps ax | egrep '[x]inetd' on Linux or
+-    *BSD or ps -ef | egrep '[x]inetd' on SysV machines (Solaris), then do:
+-    kill -s USR2 12345, replacing 12345 with the PID you just found out.
+-
+-    Proceed to step #12.
+-
+-11c. (as root) AUTOMATIC INSTALLATION WITH DAEMONTOOLS AND UCSPI-TCP
+-
+     Scope: this installation will configure to run tcpserver for leafnode, with
+     native ("tcprules") access control that (by default) allows connections
+     from 127.0.0.1 and listens on that address.
+@@ -320,7 +267,7 @@ as sudo.
+     c. Configuration hints that relate to this setup (listening IP,
+        access control, maximum number of clients) are in README-daemontools.
+ 
+-11d. (as root) MANUAL INSTALLATION WITH DAEMONTOOLS AND UCSPI-TCP
++11c. (as root) MANUAL INSTALLATION WITH DAEMONTOOLS AND UCSPI-TCP
+     a. Before you can proceed, you need to install Dan J. Bernstein's
+        daemontools and ucspi-tcp, available from
+        http://cr.yp.to/daemontools.html and http://cr.yp.to/ucspi-tcp.html --
+@@ -349,7 +296,7 @@ as sudo.
         #! /bin/sh
         exec 2>&1
         exec /usr/local/bin/tcpserver -c10 -l0 -H -v 127.0.0.1 119 \
@@ -110,7 +183,7 @@ $OpenBSD: patch-INSTALL,v 1.12 2009/02/12 13:33:07 giovanni Exp $
         /usr/local/sbin/leafnode
  
         You may need to adjust the paths if your software is in a non-standard
-@@ -365,7 +364,7 @@ as sudo.
+@@ -365,7 +312,7 @@ as sudo.
         exec 2>&1
         exec /usr/local/bin/tcpserver -c10 -l0 -H -v -x nntp.cdb \
         127.0.0.1 119 \
@@ -119,7 +192,7 @@ $OpenBSD: patch-INSTALL,v 1.12 2009/02/12 13:33:07 giovanni Exp $
  
         As above, adjust the paths and the IP.
  
-@@ -400,7 +399,7 @@ as sudo.
+@@ -400,7 +347,7 @@ as sudo.
      svscan should notice the new leafnode service within 5 seconds and
      start it.
  
@@ -128,7 +201,7 @@ $OpenBSD: patch-INSTALL,v 1.12 2009/02/12 13:33:07 giovanni Exp $
      fetchnews reads a list of all newsgroups from your upstream server.  With
      an 28.8 modem, it can take as long as 60 minutes (depending on how many
      newsgroups your provider offers). To see fetchnews working, run it with
-@@ -427,7 +426,7 @@ as sudo.
+@@ -427,7 +374,7 @@ as sudo.
      After this, you should have empty files in
      /var/spool/news/interesting.groups/ for every group you want to read.
  
