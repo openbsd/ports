@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.76 2014/03/16 09:11:23 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.77 2014/03/25 09:39:17 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -96,12 +96,12 @@ MODGNOME_CONFIGURE_ARGS_vala=--disable-vala --disable-vala-bindings
 
 .   if ${MODGNOME_TOOLS:Mvala}
         MODGNOME_CONFIGURE_ARGS_vala=--enable-vala --enable-vala-bindings
-        MODGNOME_BUILD_DEPENDS+=lang/vala>=0.22.1
+        MODGNOME_BUILD_DEPENDS+=lang/vala>=0.24.0
 .   endif
 
 .   if ${MODGNOME_TOOLS:Myelp}
         MODGNOME_BUILD_DEPENDS+=x11/gnome/yelp-tools
-        MODGNOME_BUILD_DEPENDS+=x11/gnome/doc-utils>=0.20.10p1
+        MODGNOME_BUILD_DEPENDS+=x11/gnome/doc-utils>=0.20.10p2
         # automatically try to detect GUI applications
 .       if defined(MODGNOME_DESKTOP_FILE) && ${MODGNOME_DESKTOP_FILE:L} == "yes"
             MODGNOME_RUN_DEPENDS+=x11/gnome/yelp
