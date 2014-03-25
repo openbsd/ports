@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/21 08:45:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2014/03/25 21:20:39 espie Exp $
 
 COMMENT =	skeletal based character animation library
 DISTNAME =	cal3d-0.11.0
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	cal3d	1.0	# .12.0
 
@@ -10,7 +10,7 @@ CATEGORIES =	graphics
 
 HOMEPAGE =	http://home.gna.org/cal3d/
 
-MAINTAINER =	Laurent Fanis <laurent@openbsd.org>
+MAINTAINER =	Laurent Fanis <laurent.fanis@gmail.com>
 
 # LGPL
 PERMIT_PACKAGE_CDROM =	Yes

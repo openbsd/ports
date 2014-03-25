@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:44:50 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/03/25 21:20:39 espie Exp $
 
 COMMENT=		HTTP testing tool
 
 DISTNAME=		wbox-5
 CATEGORIES=		net www
+REVISION =		0
 
 HOMEPAGE=		http://www.hping.org/wbox/
 
-MAINTAINER=		Laurent Fanis <laurent@openbsd.org>
+MAINTAINER=		Laurent Fanis <laurent.fanis@gmail.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

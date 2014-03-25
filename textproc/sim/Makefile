@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:42:47 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2014/03/25 21:20:39 espie Exp $
 
 COMMENT =		tests lexical similarity in texts
 
 DISTNAME =		sim_2_26
 PKGNAME =		sim-2.26
-REVISION =		0
+REVISION =		1
 CATEGORIES =		textproc
 
 HOMEPAGE =		http://www.cs.vu.nl/~dick/sim.html
 
-MAINTAINER =     	Laurent Fanis <laurent@openbsd.org>
+MAINTAINER =     	Laurent Fanis <laurent.fanis@gmail.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

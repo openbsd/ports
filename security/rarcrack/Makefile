@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:41:28 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2014/03/25 21:20:39 espie Exp $
 
 COMMENT=		rar, 7zip and zip password bruteforcer
 
 DISTNAME=		rarcrack-0.2
-REVISION =		2
+REVISION =		3
 CATEGORIES=		security
 
 HOMEPAGE=		http://rarcrack.sourceforge.net/
 
-MAINTAINER=		Laurent Fanis <laurent@openbsd.org>
+MAINTAINER=		Laurent Fanis <laurent.fanis@gmail.com>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

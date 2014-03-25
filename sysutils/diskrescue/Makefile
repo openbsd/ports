@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:41:30 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2014/03/25 21:20:39 espie Exp $
 
 COMMENT =		fancy dd
 
 DISTNAME =		diskrescue-0.3
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 
 HOMEPAGE =		http://opensource.conformal.com/wiki/Disk_Rescue
 
-MAINTAINER =		Laurent Fanis <laurent@openbsd.org>
+MAINTAINER =		Laurent Fanis <laurent.fanis@gmail.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

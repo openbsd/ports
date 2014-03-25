@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:37:55 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2014/03/25 21:20:39 espie Exp $
 
 COMMENT =		HTML slide generator based on SlideML
 
 DISTNAME =		slideml-1.1.0
+REVISION =		0
 
 CATEGORIES =		productivity
 
 HOMEPAGE =		http://opensource.conformal.com/wiki/Slide_ML
 
-MAINTAINER =		Laurent Fanis <laurent@openbsd.org>
+MAINTAINER =		Laurent Fanis <laurent.fanis@gmail.com>
 
 #W3C Software Notice and License & BSD
 PERMIT_PACKAGE_CDROM =	Yes
