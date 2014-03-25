@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/12/08 15:09:15 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/03/25 13:21:20 jsing Exp $
 %%amd64%%
 %%i386%%
 @bin bin/go
@@ -2309,6 +2309,7 @@ go/src/pkg/net/mockserver_test.go
 go/src/pkg/net/multicast_test.go
 go/src/pkg/net/net.go
 go/src/pkg/net/net_test.go
+go/src/pkg/net/net_windows_test.go
 go/src/pkg/net/packetconn_test.go
 go/src/pkg/net/parse.go
 go/src/pkg/net/parse_test.go
