@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/03/25 10:33:33 pascal Exp $
+include/OpenColorIO/
+include/OpenColorIO/OpenColorABI.h
+include/OpenColorIO/OpenColorIO.h
+include/OpenColorIO/OpenColorTransforms.h
+include/OpenColorIO/OpenColorTypes.h
+include/PyOpenColorIO/
+include/PyOpenColorIO/PyOpenColorIO.h
+@lib lib/libOpenColorIO.so.${LIBOpenColorIO_VERSION}
+lib/pkgconfig/OpenColorIO.pc
+lib/python${MODPY_VERSION}/site-packages/PyOpenColorIO.so
+share/ocio/
+share/ocio/setup_ocio.sh
