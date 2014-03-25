@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.25 2014/01/08 10:37:25 ajacoutot Exp $
+$OpenBSD: README-main,v 1.26 2014/03/25 16:54:25 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -26,10 +26,10 @@ in rc.conf.local(8)).
 
 GDM
 ---
-It is _strongly_ advised to use GDM as the login manager otherwise some
-key features like screen locking will not work properly. To do so, "gdm"
-must be added at the end of "pkg_scripts" in rc.conf.local(8) (and
-"xdm_flags" commented or removed).
+Session management requires the use of GDM as login manager, otherwise
+some key features like screen locking, session ending... will not work
+properly. To do so, "gdm" must be added at the end of "pkg_scripts" in
+rc.conf.local(8) (and "xdm_flags" commented or removed).
 
 Changing the GDM greeter language is done in:
     ${SYSCONFDIR}/gdm/locale.conf
