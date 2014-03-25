@@ -1,0 +1,107 @@
+$OpenBSD: patch-master__bin_munin-check_in,v 1.1 2014/03/25 08:42:25 kirby Exp $
+--- master/_bin/munin-check.in.orig	Sat Dec  7 14:55:16 2013
++++ master/_bin/munin-check.in	Sat Feb 15 19:23:30 2014
+@@ -1,4 +1,4 @@
+-#!@@BASH@@
++#!@@GOODSH@@
+ # -*- sh -*-
+ # Copyright (C) 2008 Matthias Schmitz
+ # This program is free software; you can redistribute it and/or
+@@ -20,20 +20,17 @@
+ 
+ ####
+ # prints usage
+-function usage() {
++function usage {
+     echo "Usage: munin-check [options]
+ Options:
+-   -h|--help		Show this help.
+-   -f|--fix-permissions Fix the permissions of the munin dirs and files.
+-   			Needs superuser rights.
+-
+-Please don't use this script if you are using 'graph_strategy cgi'!
+-It doesn't care about the right permissions for www-data yet...
++   -h		Show this help.
++   -f		Fix the permissions of the munin dirs and files.
++   		Needs superuser rights.
+ "
+ }
+ 
+ # Get options from the command line
+-TEMP=$(getopt -o fh --long fix-permissions,help -n 'munin-check' -- "$@")
++TEMP=$(getopt fh $*)
+ 
+ if [[ $? -ne 0 ]]; then
+     echo "Terminating..." >&2
+@@ -45,8 +42,8 @@ eval set -- "$TEMP"
+ 
+ while :; do
+     case "$1" in
+-	-h|--help) usage ; exit 0; shift ;;
+-	-f|--fix-permissions) PLEASE_FIXME="true" ;  shift ;;
++	-h) usage ; exit 0; shift ;;
++	-f) PLEASE_FIXME="true" ;  shift ;;
+ 	--) shift ; break ;;
+ 	*) echo "Internal error!" ; exit 1 ;;
+     esac
+@@ -54,7 +51,7 @@ done
+ 
+ ####
+ # sets owner to "@@USER@@"
+-function fix_owner() {
++function fix_owner {
+     fix_object=$1; shift
+     fix_owner=$1; shift
+ 
+@@ -72,7 +69,7 @@ function fix_owner() {
+ ####
+ # check if "@@USER@@" is owner, if PLEASE_FIXME set it calls fix_owner()
+ 
+-function owner_ok() {
++function owner_ok {
+     object=$1; shift || exit 1
+     correctowner=$1; shift || exit 1
+ 
+@@ -94,6 +91,11 @@ function owner_ok() {
+ 	    "lost+found") return 0;;
+ 	esac
+ 
++	# cgi-tmp owner should be www
++	case $object in
++	    "cgi-tmp") correctowner=www;
++	esac
++
+ 	# ... and then dive into it
+ 	for subobject in $object/*; do
+ 		owner_ok $subobject $correctowner
+@@ -102,7 +104,7 @@ function owner_ok() {
+ }
+ 
+ 
+-function perm_ok(){
++function perm_ok {
+     object=$1; shift || exit 1
+     correctperm=$1; shift || exit 1
+ 
+@@ -145,12 +147,20 @@ for dir in @@DBDIR@@/*; do
+ 	*/plugin-state)
+ 	    continue;;
+     esac
++    case $dir in
++	*/cgi-tmp)
++	    continue;;
++    esac
+     echo "check $dir"
+     owner_ok $dir @@USER@@
+ done
+ 
++echo "check @@DBDIR@@/cgi-tmp"
++owner_ok @@DBDIR@@/cgi-tmp www
++
+ echo "check miscellaneous"
+-norec=yes owner_ok @@LOGDIR@@ @@USER@@
++norec=yes owner_ok @@LOGDIR@@ @@PLUGINUSER@@
++norec=yes perm_ok @@LOGDIR@@ 775
+ 
+ norec=yes owner_ok @@DBDIR@@ @@USER@@
+ norec=yes perm_ok @@DBDIR@@ 755

@@ -1,11 +1,11 @@
-$OpenBSD: README-server,v 1.3 2014/01/15 08:24:26 sthen Exp $
+$OpenBSD: README-server,v 1.4 2014/03/25 08:42:25 kirby Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
 After configuring at least one munin-node instance and adapting
-$SYSCONFDIR}/munin/munin.conf as desired, you may run the periodic
+${SYSCONFDIR}/munin/munin.conf as desired, you may run the periodic
 tasks from cron with the following line:
 
 */5     *       *       *       *       sudo -u _munin ${TRUEPREFIX}/bin/munin-cron
@@ -16,5 +16,12 @@ newsyslog.conf fragment:
 /var/log/munin/munin-graph.log  _munin:_munin   644  7     250  *     Z
 /var/log/munin/munin-html.log   _munin:_munin   644  7     250  *     Z
 /var/log/munin/munin-limits.log _munin:_munin   644  7     250  *     Z
-/var/log/munin/munin-node.log   root:wheel      644  7     250  *     Z
 /var/log/munin/munin-update.log _munin:_munin   644  7     250  *     Z
+
+Optionally you may want to use rrdcached to reduce disk I/O. Here is a sample
+/etc/rc.conf.local part:
+rrdcached_flags="-b /var/db/munin -l unix:/var/run/munin/rrdcached.sock \
+-j /var/db/munin/journal -p /var/run/munin/rrdcached.pid \
+-m 0660 -s _munin -w 1800 -z 1800 -f 3600 -F"
+rrdcached_user="_munin"
+Add www user to _munin group to grant write permissions on rrdcached socket.

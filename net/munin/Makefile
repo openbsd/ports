@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2014/01/15 08:24:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2014/03/25 08:42:25 kirby Exp $
 
 COMMENT-main =	flexible network host monitoring, client
 COMMENT-server =flexible network host monitoring, server
 
-V =		2.0.18
-REVISION =	0
+V =		2.0.19
 DISTNAME =	munin-$V
 PKGNAME-main =	munin-node-$V
 PKGNAME-server =munin-server-$V
@@ -54,7 +53,8 @@ MAKE_ENV +=		CONFDIR=${SYSCONFDIR}/munin \
 			OSTYPE=openbsd \
 			PREFIX=${PREFIX} \
 			PYTHON=${MODPY_BIN}
-MAKE_FLAGS +=		BASH=${LOCALBASE}/bin/bash
+MAKE_FLAGS +=		BASH=${LOCALBASE}/bin/bash \
+			PLUGINUSER=_munin-plugin
 
 FAKE_FLAGS +=		HTMLDIR=${WRKINST}/${PREFIX}/share/examples/munin/www \
 			CGIDIR=${WRKINST}/${PREFIX}/share/examples/munin/www \

@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.1 2013/03/22 15:00:29 kirby Exp $
+$OpenBSD: README-main,v 1.2 2014/03/25 08:42:25 kirby Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -26,6 +26,10 @@ You can change permissions and ownership of the log files (and edit
 /etc/newsyslog.conf to match). If necessary you can configure the plugin
 to run as a different user with the "user" option (see
 ${SYSCONFDIR}/munin/plugin-conf.d/openbsd-packages).
+
+Log files in /var/log/munin will need to be rotated. Here is a sample
+newsyslog.conf fragment:
+/var/log/munin/munin-node.log   root:wheel      644  7     250  *     Z
 
 SNMP-based monitors are also available; to use these, install the
 p5-Net-SNMP package.
