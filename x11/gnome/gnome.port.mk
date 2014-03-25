@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.77 2014/03/25 09:39:17 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.78 2014/03/25 11:37:47 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -69,7 +69,7 @@ USE_GMAKE?=		Yes
 # Currently supported tools are:
 # * gi: Build and enable GObject Introspection data.
 # * gtk-doc: Enable to build the included docs.
-# * vala: Enable vala bindings.
+# * vala: Enable vala bindings and/or building from vala source files.
 # * yelp: Use this if there are any files under share/gnome/help/
 #         or "page" files under share/help/ in the PLIST that are opened
 #         with yelp -- gnome-doc-utils is here to make sure we have a
