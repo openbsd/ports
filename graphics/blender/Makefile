@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.57 2014/03/24 21:16:14 pascal Exp $
+# $OpenBSD: Makefile,v 1.58 2014/03/25 10:38:07 pascal Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
 COMMENT =	3D creation software
 
 DISTNAME =	blender-2.70
+REVISION =	0
 
 CATEGORIES =	graphics
 
@@ -48,12 +49,12 @@ LIB_DEPENDS =	graphics/png \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gnome/librsvg
 
-WANTLIB += GL GLEW GLU Half Iex IlmImf IlmThread Imath OpenImageIO
-WANTLIB += SDL X11 Xi Xxf86vm avcodec avdevice avformat avutil
-WANTLIB += boost_date_time-mt boost_filesystem-mt boost_regex-mt
+WANTLIB += GL GLEW GLU Half Iex IlmImf IlmThread Imath OpenColorIO
+WANTLIB += OpenImageIO SDL X11 Xi Xxf86vm avcodec avdevice avformat
+WANTLIB += avutil boost_date_time-mt boost_filesystem-mt boost_regex-mt
 WANTLIB += boost_system-mt boost_thread-mt c fftw3 freetype jpeg
 WANTLIB += m openal openjpeg png pthread ${MODPY_WANTLIB} swscale tiff
-WANTLIB += util z
+WANTLIB += tinyxml util yaml-cpp z
 
 NO_TEST =	Yes
 
