@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-mozilla,v 1.3 2012/10/14 20:01:38 sthen Exp $
-lib/libproxy/${VERSION}/modules/pacrunner_mozjs.so
