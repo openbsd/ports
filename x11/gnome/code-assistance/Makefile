@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2013/11/16 09:42:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2014/03/25 09:00:47 jasper Exp $
 
 COMMENT=		code assistance services for GNOME
 
 GNOME_PROJECT=		gnome-code-assistance
 GNOME_VERSION=		0.3.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 
@@ -12,7 +12,7 @@ CATEGORIES=		devel
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c ffi gee-0.8 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += pcre pthread vala-0.22 z
+WANTLIB += pcre pthread vala-0.24 z
 
 MODULES=		devel/dconf \
 			devel/gettext \

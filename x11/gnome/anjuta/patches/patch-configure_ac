@@ -1,12 +1,17 @@
-$OpenBSD: patch-configure_ac,v 1.13 2014/03/09 21:44:09 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.14 2014/03/25 09:00:47 jasper Exp $
 
 From 5574b7c841d81bc9be6b5695a487babdfb94d789 Mon Sep 17 00:00:00 2001
 From: Stefan Sperling <stsp@tigris.org>
 Date: Thu, 10 Oct 2013 20:31:54 +0000
 Subject: bgo #709752 - Don't require neon library for Subversion 1.8
 
---- configure.ac.orig	Mon Sep 16 03:23:08 2013
-+++ configure.ac	Wed Oct  9 18:48:40 2013
+From f456efa285f4c7f97c89c60d5b006354b8b06466 Mon Sep 17 00:00:00 2001
+From: Dominique Leuenberger <dimstar@opensuse.org>
+Date: Tue, 28 Jan 2014 20:38:55 +0000
+Subject: Support Vala 0.24
+
+--- configure.ac.orig	Tue Nov 12 22:17:07 2013
++++ configure.ac	Mon Mar 24 21:29:56 2014
 @@ -58,6 +58,7 @@ GI_REQUIRED=0.9.5
  
  dnl Subversion plugin
@@ -15,6 +20,15 @@ Subject: bgo #709752 - Don't require neon library for Subversion 1.8
  SVN_MAJOR=1
  SVN_MINOR=5
  SVN_PATCH=0
+@@ -317,7 +318,7 @@ if test "$user_disabled_vala" = 1; then
+ else
+         AC_MSG_RESULT(no)
+ 	AC_MSG_CHECKING(if libvala is available)
+-	m4_foreach([VERSION], [[0.18], [0.20], [0.22]],
++	m4_foreach([VERSION], [[0.18], [0.20], [0.22], [0.24]],
+ 		[PKG_CHECK_EXISTS([ libvala-VERSION ],
+ 			 [ valaver="-VERSION" ])
+ 			 ])
 @@ -653,6 +654,7 @@ fi
  dnl ******************************************************************
  dnl Check for extra libs required by subversion.
