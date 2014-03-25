@@ -1,4 +1,0 @@
-This application can search for files in a given directory, matching
-their names or contents.
-It doesn't require any indexation tool, and as such is lightweight but
-slow.
