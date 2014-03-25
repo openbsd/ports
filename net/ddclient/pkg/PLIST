@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/09/18 11:38:47 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/03/25 10:06:25 dcoppa Exp $
 sbin/ddclient
 share/doc/ddclient/
-share/doc/ddclient/README
 share/doc/ddclient/README.cisco
+share/doc/ddclient/README.md
 share/doc/ddclient/README.ssl
 share/examples/ddclient/
 @sample ${SYSCONFDIR}/ddclient/
