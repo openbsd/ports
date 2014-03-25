@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2014/03/21 13:07:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2014/03/25 17:07:22 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT-demo=	demonstrate the features of ptk
 
 MODULES=	cpan
 VERSION=	804.030
-REVISION=	1
+REVISION=	2
 DISTNAME=	Tk-${VERSION}
 PKGNAME-main=	p5-Tk-${VERSION}
 PKGNAME-demo=	p5-Tk-demo-${VERSION}
@@ -18,8 +18,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MULTI_PACKAGES=	-main -demo
 
-WANTLIB-main=	X11 m z png
+WANTLIB-main=	${WANTLIB} X11 m z png
 LIB_DEPENDS-main= graphics/png
+
+WANTLIB-demo=
 
 RUN_DEPENDS=	www/p5-HTML-Parser
 BUILD_DEPENDS=	${RUN_DEPENDS}
