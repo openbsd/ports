@@ -1,20 +1,12 @@
-$OpenBSD: README,v 1.1 2014/01/27 15:49:15 kirby Exp $
+$OpenBSD: README,v 1.2 2014/03/25 12:31:50 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-To use sshguard with:
-
-* pf:
-
-you must add the following to /etc/pf.conf:
+To use sshguard with pf(4), add the following to /etc/pf.conf:
 
 table <sshguard> persist
 
 block in quick on egress proto tcp from <sshguard> \
 	to any port ssh label "ssh bruteforce"
-
-* tcpd:
-
-hosts.allow(5) must be present under /etc.

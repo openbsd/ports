@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2014/01/27 15:49:15 kirby Exp $
+# $OpenBSD: Makefile,v 1.8 2014/03/25 12:31:50 ajacoutot Exp $
 
 COMMENT=	protect against brute force attacks on sshd and others
 
 DISTNAME=	sshguard-1.5
-REVISION=	0
+REVISION=	1
 CATEGORIES=	security
 
 # BSD
@@ -18,13 +18,6 @@ EXTRACT_SUFX=	.tar.bz2
 CONFIGURE_STYLE=gnu
 NO_TEST=	Yes
 
-FLAVORS =	tcpd
-FLAVOR?=
-
-.if ${FLAVOR:Mtcpd}
-CONFIGURE_ARGS = --with-firewall=hosts
-.else
 CONFIGURE_ARGS = --with-firewall=pf 
-.endif
 
 .include <bsd.port.mk>
