@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2013/09/26 15:01:10 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.26 2014/03/25 16:06:58 jasper Exp $
 @pkgpath x11/gnome/gucharmap,gtk2
 bin/charmap
 bin/gnome-character-map
@@ -190,7 +190,6 @@ share/locale/xh/LC_MESSAGES/gucharmap.mo
 share/locale/zh_CN/LC_MESSAGES/gucharmap.mo
 share/locale/zh_HK/LC_MESSAGES/gucharmap.mo
 share/locale/zh_TW/LC_MESSAGES/gucharmap.mo
-share/vala/vapi/gucharmap-2.90.vapi
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/update-desktop-database
