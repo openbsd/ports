@@ -1,6 +1,6 @@
-$OpenBSD: patch-Changelog,v 1.11 2013/12/17 08:46:45 sthen Exp $
---- Changelog.orig	Thu Dec  5 11:51:35 2013
-+++ Changelog	Tue Dec 17 08:37:46 2013
+$OpenBSD: patch-Changelog,v 1.12 2014/03/25 01:26:33 sthen Exp $
+--- Changelog.orig	Thu Mar 13 10:46:50 2014
++++ Changelog	Tue Mar 25 00:05:17 2014
 @@ -7,11 +7,9 @@ Thanks to all contributers, testers and developers. Pl
  UPGRADE NOTES
  
@@ -14,4 +14,4 @@ $OpenBSD: patch-Changelog,v 1.11 2013/12/17 08:46:45 sthen Exp $
 +	- ${TRUEPREFIX}/share/examples/icinga/updates/
  
  
- 1.10.2 - 05/12/2013
+ NEWS

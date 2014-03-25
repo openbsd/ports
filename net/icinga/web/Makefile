@@ -1,7 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2013/10/25 16:16:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2014/03/25 01:26:33 sthen Exp $
 
 COMMENT =	web UI for icinga
-DISTNAME =	icinga-web-1.10.0
+
+V =		1.11.0
+DISTNAME =	icinga-web-$V
+
+MASTER_SITES =	https://github.com/Icinga/icinga-web/releases/download/v$V/
 
 MODULES=	lang/php
 
@@ -13,7 +17,7 @@ RUN_DEPENDS =	${COMMON_DEPENDS} \
 		lang/php/${MODPHP_VERSION},-xsl \
 		php-pdo_mysql-${MODPHP_VSPEC}|php-pdo_pgsql-${MODPHP_VSPEC}:lang/php/${MODPHP_VERSION},-pdo_mysql \
 		net/icinga/core \
-		net/icinga/core,-ido>=1.10
+		net/icinga/core,-ido>=1.11
 # Optional php extensions: ldap soap xmlrpc memcache
 
 BUILD_DEPENDS=	${COMMON_DEPENDS}

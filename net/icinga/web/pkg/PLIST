@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2013/10/25 16:16:23 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.16 2014/03/25 01:26:33 sthen Exp $
 @conflict icinga-api-*
 @pkgpath net/icinga/core,-api
 app/
@@ -431,6 +431,7 @@ app/modules/Api/models/DBALMetaManagerModel.class.php
 app/modules/Api/models/DeprecatedApiContainerModel.class.php
 app/modules/Api/models/IcingaControlTaskModel.class.php
 app/modules/Api/models/LegacyApiContainerModel.class.php
+app/modules/Api/models/MacroExpanderModel.class.php
 app/modules/Api/models/Relation/
 app/modules/Api/models/Relation/DataModelModel.class.php
 app/modules/Api/models/Result/
@@ -940,6 +941,7 @@ app/modules/Cronks/actions/Tackle/
 app/modules/Cronks/actions/Tackle/CronkAction.class.php
 app/modules/Cronks/actions/Util/
 app/modules/Cronks/actions/Util/OpenAction.class.php
+app/modules/Cronks/actions/Util/ReloadStatusAction.class.php
 app/modules/Cronks/config/
 app/modules/Cronks/config/autoload.xml
 app/modules/Cronks/config/config_handlers.xml
@@ -1041,6 +1043,9 @@ app/modules/Cronks/lib/js/Cronk/grid/renderer/CommentColumnRenderer.js
 app/modules/Cronks/lib/js/Cronk/grid/renderer/IcingaColumnRenderer.js
 app/modules/Cronks/lib/js/Cronk/grid/renderer/InfoIconColumnRenderer.js
 app/modules/Cronks/lib/js/Cronk/grid/renderer/WidgetRenderer.js
+app/modules/Cronks/lib/js/Cronk/grid/renderer/bc_customColumnPerfdataSanatized.js
+app/modules/Cronks/lib/js/Cronk/menu/
+app/modules/Cronks/lib/js/Cronk/menu/ReloadStatus.js
 app/modules/Cronks/lib/js/Cronk/util/
 app/modules/Cronks/lib/js/Cronk/util/CronkBuilder.js
 app/modules/Cronks/lib/js/Cronk/util/CronkOpener.js
@@ -1126,6 +1131,7 @@ app/modules/Cronks/lib/js/search/
 app/modules/Cronks/lib/js/search/SearchHandler.js
 app/modules/Cronks/lib/model/
 app/modules/Cronks/lib/model/CronksBaseModel.class.php
+app/modules/Cronks/lib/model/CronksUserCacheDataModel.class.php
 app/modules/Cronks/lib/template/
 app/modules/Cronks/lib/template/CronkGridTemplateAjaxGridLayout.class.php
 app/modules/Cronks/lib/template/CronkGridTemplateLayout.class.php
@@ -1156,6 +1162,7 @@ app/modules/Cronks/models/Provider/CronkCategorySecurityModel.class.php
 app/modules/Cronks/models/Provider/CronksDataModel.class.php
 app/modules/Cronks/models/Provider/CronksSecurityModel.class.php
 app/modules/Cronks/models/Provider/ObjectInfoIconsModel.class.php
+app/modules/Cronks/models/Provider/ProgramStatusModel.class.php
 app/modules/Cronks/models/Provider/StatusSummaryModel.class.php
 app/modules/Cronks/models/Provider/SystemPerformanceModel.class.php
 app/modules/Cronks/models/System/
@@ -1218,6 +1225,7 @@ app/modules/Cronks/validate/Tackle/
 app/modules/Cronks/validate/Tackle/Cronk.xml
 app/modules/Cronks/validate/Util/
 app/modules/Cronks/validate/Util/Open.xml
+app/modules/Cronks/validate/Util/ReloadStatus.xml
 app/modules/Cronks/views/
 app/modules/Cronks/views/Example/
 app/modules/Cronks/views/Example/HelloWorldSuccessView.class.php
@@ -1250,6 +1258,7 @@ app/modules/Cronks/views/Tackle/
 app/modules/Cronks/views/Tackle/CronkSuccessView.class.php
 app/modules/Cronks/views/Util/
 app/modules/Cronks/views/Util/OpenSuccessView.class.php
+app/modules/Cronks/views/Util/ReloadStatusSuccessView.class.php
 app/modules/Reporting/
 app/modules/Reporting/actions/
 app/modules/Reporting/actions/Cronk/
@@ -1510,6 +1519,7 @@ bin/write_copy.py
 doc/
 doc/AUTHORS
 doc/CHANGELOG-1.10
+doc/CHANGELOG-1.11
 doc/CHANGELOG-1.6
 doc/CHANGELOG-1.7
 doc/CHANGELOG-1.8
@@ -1590,6 +1600,7 @@ etc/schema/sqlite.sql
 etc/schema/updates/
 etc/schema/updates/mysql/
 etc/schema/updates/mysql/mysql_v1-0-3_to_v1-2.sql
+etc/schema/updates/mysql/mysql_v1-10-0_to_1-10-1.sql
 etc/schema/updates/mysql/mysql_v1-2_to_v1-3.sql
 etc/schema/updates/mysql/mysql_v1-3_to_v1-4.sql
 etc/schema/updates/mysql/mysql_v1-4_to_v1-5.sql
@@ -1606,6 +1617,7 @@ etc/schema/updates/mysql/mysql_v1-9-0_to_1-9-1.sql
 etc/schema/updates/mysql/mysql_v1-9-1_to_1-10-0.sql
 etc/schema/updates/oracle/
 etc/schema/updates/oracle/oracle_v1-0-3_to_v1-2.sql
+etc/schema/updates/oracle/oracle_v1-10-0_to_v1-10-1.sql
 etc/schema/updates/oracle/oracle_v1-2_to_1-3.sql
 etc/schema/updates/oracle/oracle_v1-3_to_1-4.sql
 etc/schema/updates/oracle/oracle_v1-4_to_v1-5.sql
@@ -1621,6 +1633,7 @@ etc/schema/updates/oracle/oracle_v1-9-0_to_v1-9-1.sql
 etc/schema/updates/oracle/oracle_v1-9-1_to_v1-10-0.sql
 etc/schema/updates/pgsql/
 etc/schema/updates/pgsql/pgsql_v1-0-3_to_v1-2.sql
+etc/schema/updates/pgsql/pgsql_v1-10-0_to_v1-10-1.sql
 etc/schema/updates/pgsql/pgsql_v1-2_to_v1-3.sql
 etc/schema/updates/pgsql/pgsql_v1-3_to_1-4.sql
 etc/schema/updates/pgsql/pgsql_v1-4_to_v1-5.sql

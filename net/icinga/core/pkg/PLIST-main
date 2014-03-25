@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2014/01/24 19:10:22 zhuk Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2014/03/25 01:26:33 sthen Exp $
 @newgroup _icinga:667
 @newuser _icinga:667:_icinga:daemon:Icinga user:/var/icinga:/sbin/nologin
 @comment done this way (rather than SYSCONFDIR/*) for safety...
@@ -55,15 +55,18 @@ share/examples/icinga/resource.cfg
 @sample ${SYSCONFDIR}/resource.cfg
 @mode
 share/examples/icinga/updates/
+share/examples/icinga/updates/cgi.cfg_added_1.10_to_1.11.cfg
 share/examples/icinga/updates/cgi.cfg_added_1.7_to_1.8.cfg
 share/examples/icinga/updates/cgi.cfg_added_1.8_to_1.9.cfg
 share/examples/icinga/updates/cgi.cfg_added_1.9_to_1.10.cfg
 share/examples/icinga/updates/cgi.cfg_removed_1.7_to_1.8.cfg
+share/examples/icinga/updates/icinga.cfg_added_1.10_to_1.11.cfg
 share/examples/icinga/updates/icinga.cfg_added_1.7_to_1.8.cfg
 share/examples/icinga/updates/icinga.cfg_added_1.9_to_1.10.cfg
 share/examples/icinga/updates/icinga.cfg_removed_1.9_to_1.10.cfg
 share/examples/icinga/updates/ido2db.cfg_added_1.9_to_1.10.cfg
 share/examples/icinga/updates/ido2db.cfg_removed_1.9_to_1.10.cfg
+share/examples/icinga/updates/idomod.cfg_added_1.10_to_1.11.cfg
 share/examples/icinga/updates/idomod.cfg_added_1.9_to_1.10.cfg
 @mode 755
 @owner _icinga
