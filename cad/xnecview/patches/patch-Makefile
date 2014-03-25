@@ -1,0 +1,13 @@
+$OpenBSD: patch-Makefile,v 1.1 2014/03/25 17:52:18 sthen Exp $
+--- Makefile.orig	Mon Mar 27 21:38:37 2006
++++ Makefile	Tue Mar 25 17:41:56 2014
+@@ -4,7 +4,8 @@ PNG	= yes
+ 
+ 
+ CC	= gcc
+-CFLAGS	= -O2 -g -Wall `pkg-config gtk+-2.0 --cflags`
++myCFLAGS	?= -O2 -g
++CFLAGS	= ${myCFLAGS} -Wall `pkg-config gtk+-2.0 --cflags`
+ 
+ LD	= $(CC)
+ LDFLAGS	= `pkg-config gtk+-2.0 --libs` -lm
