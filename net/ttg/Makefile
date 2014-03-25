@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:35:57 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2014/03/25 01:45:27 sthen Exp $
 
 COMMENT=	live CLI display of interface bandwidth, using SNMP
 
-DISTNAME=	ttg-2.0
+DISTNAME=	ttg-2.1
 
 CATEGORIES=	net
 
