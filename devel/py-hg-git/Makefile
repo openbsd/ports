@@ -1,39 +1,40 @@
-# $OpenBSD: Makefile,v 1.13 2013/10/03 16:37:16 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.14 2014/03/25 16:19:15 sthen Exp $
 
 COMMENT =	push/pull from a Git server repository using Mercurial
 
-MODPY_EGG_VERSION =	0.3.4
+MODPY_EGG_VERSION =	0.5.0
 DISTNAME =		py-hg-git-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		devel
 
 HOMEPAGE =		http://hg-git.github.com/
 
+MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@gmail.com>
+
 # GPLv2
 PERMIT_PACKAGE_CDROM =		Yes
 
-# Ugly gymnastics to give a more sensible filename than "0.3.4.tar.gz"..
-MASTER_SITES =	https://bitbucket.org/durin42/hg-git/get/${MODPY_EGG_VERSION}${EXTRACT_SUFX}?dummy=/
+MASTER_SITES =		https://bitbucket.org/durin42/hg-git/get/
+DISTFILES =		${DISTNAME}{${MODPY_EGG_VERSION}}${EXTRACT_SUFX}
 
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
-WRKDIST =		${WRKDIR}/durin42-hg-git-586b7aa96466
+WRKDIST =		${WRKDIR}/durin42-hg-git-ef41e87ea11a
 
-RUN_DEPENDS =		devel/py-dulwich \
+RUN_DEPENDS =		devel/py-dulwich>=0.9.5 \
 			devel/mercurial
-TEST_DEPENDS =	${RUN_DEPENDS} \
+TEST_DEPENDS =		${RUN_DEPENDS} \
 			archivers/bzip2 \
 			archivers/unzip \
+			devel/py-nose \
 			devel/git,-main
 
 pre-test:
-	perl -pi -e 's|python |python${MODPY_VERSION} |g' \
-	    ${WRKSRC}/tests/test-*
+	ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 
 do-test:
-	cd ${WRKSRC}/tests && ${MODPY_BIN} run-tests.py \
-	    --with-hg=${LOCALBASE}/hg
+	cd ${WRKSRC}/tests && env ${MAKE_ENV} ${MODPY_BIN} run-tests.py \
+	    --with-hg=${LOCALBASE}/bin/hg
 
 .include <bsd.port.mk>
