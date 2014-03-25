@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_cineon_imageio_cineoninput_cpp,v 1.1 2014/03/25 10:37:39 pascal Exp $
+--- src/cineon.imageio/cineoninput.cpp.orig	Sun Jan 26 02:32:20 2014
++++ src/cineon.imageio/cineoninput.cpp	Mon Mar 24 23:31:50 2014
+@@ -271,7 +271,7 @@ CineonInput::open (const std::string &name, ImageSpec 
+                                                 TypeDesc (TypeDesc::FLOAT,  \
+                                                 2), &floats[0])
+ #define CINEON_SET_ATTRIB_STR(X, x)     if (m_cin.header.x[0]               \
+-                                        && m_cin.header.x[0] != -1)         \
++                                        && m_cin.header.x[0] != char(-1))         \
+                                             m_spec.attribute ("cineon:" #X, \
+                                                 m_cin.header.x)
+ 

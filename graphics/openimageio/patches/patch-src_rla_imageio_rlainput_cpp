@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_rla_imageio_rlainput_cpp,v 1.1 2014/03/25 10:37:39 pascal Exp $
+--- src/rla.imageio/rlainput.cpp.orig	Sun Jan 26 02:32:20 2014
++++ src/rla.imageio/rlainput.cpp	Mon Mar 24 23:31:50 2014
+@@ -449,7 +449,7 @@ RLAInput::decode_rle_span (unsigned char *buf, int n, 
+ {
+     size_t e = 0;
+     while (n > 0 && e < elen) {
+-        char count = encoded[e++];
++        signed char count = (signed char) encoded[e++];
+         if (count >= 0) {
+             // run count positive: value repeated count+1 times
+             for (int i = 0;  i <= count && n;  ++i, buf += stride, --n)

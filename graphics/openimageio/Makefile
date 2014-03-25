@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2013/08/07 21:31:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2014/03/25 10:37:39 pascal Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		library for reading and writing images
-BROKEN-hppa =		missing atomic ops
-BROKEN-mips64 =		missing atomic ops
 
-V =			1.1.10
-DISTNAME =		Release-${V}
+V =			1.3.12
+DISTNAME =		Release-$V
 PKGNAME =		openimageio-${V}
-REVISION =		0
 
-SHARED_LIBS +=		OpenImageIO	1.0 # 1.0
+SHARED_LIBS +=		OpenImageIO	2.0 # 1.0
 
 CATEGORIES =		graphics devel
 
@@ -22,11 +19,11 @@ MAINTAINER =		Pascal Stumpf <Pascal.Stumpf@cubes.de>
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += GL GLEW GLU Half ICE Iex IlmImf IlmThread Imath QtGui
-WANTLIB += QtOpenGL SM X11 Xext boost_filesystem-mt boost_python-mt
-WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c jpeg
-WANTLIB += m openjpeg png pthread ${MODPY_WANTLIB} stdc++ tiff webp z
-WANTLIB += freetype
+WANTLIB += GL GLEW GLU Half ICE Iex IlmImf IlmThread Imath OpenColorIO
+WANTLIB += QtGui QtOpenGL SM X11 Xext boost_filesystem-mt boost_python-mt
+WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c crypto
+WANTLIB += freetype gif jpeg m openjpeg png pthread python2.7
+WANTLIB += ssl stdc++ tiff webp z
 
 MASTER_SITES =		https://github.com/OpenImageIO/oiio/archive/
 DIST_SUBDIR =		openimageio
@@ -40,13 +37,15 @@ LIB_DEPENDS =		devel/boost \
 			graphics/libwebp \
 			graphics/glew \
 			graphics/ilmbase \
-			graphics/openexr
+			graphics/openexr \
+			graphics/giflib \
+			graphics/opencolorio
 
-CONFIGURE_ARGS +=	-DPYLIB_INSTALL_DIR="lib/python${MODPY_VERSION}/site-packages"
+CONFIGURE_ARGS +=	-DPYLIB_INSTALL_DIR="lib/python${MODPY_VERSION}/site-packages" \
+			-DNOTHREADS=ON
 
 CFLAGS +=		-pthread
 WRKDIST =		${WRKDIR}/oiio-Release-$V
-WRKSRC =		${WRKDIST}/src
 
 post-install:
 	find ${PREFIX} -name '*.orig' -exec rm -f {} \;
