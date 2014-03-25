@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2013/09/25 12:54:20 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.36 2014/03/25 08:59:45 jasper Exp $
 bin/vala
 bin/vala-${API_V}
 bin/vala-gen-introspect
@@ -16,7 +16,7 @@ include/vala-${API_V}/valacodegen.h
 include/vala-${API_V}/valagee.h
 lib/libvala-${API_V}.a
 lib/libvala-${API_V}.la
-@lib lib/libvala-${API_V}.so.${LIBvala-0.22_VERSION}
+@lib lib/libvala-${API_V}.so.${LIBvala-0.24_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/libvala-${API_V}.pc
 lib/vala-${API_V}/
@@ -71,6 +71,8 @@ share/vala-${API_V}/vapi/clutter-1.0.deps
 share/vala-${API_V}/vapi/clutter-1.0.vapi
 share/vala-${API_V}/vapi/clutter-gst-1.0.deps
 share/vala-${API_V}/vapi/clutter-gst-1.0.vapi
+share/vala-${API_V}/vapi/clutter-gst-2.0.deps
+share/vala-${API_V}/vapi/clutter-gst-2.0.vapi
 share/vala-${API_V}/vapi/clutter-gtk-0.10.deps
 share/vala-${API_V}/vapi/clutter-gtk-0.10.vapi
 share/vala-${API_V}/vapi/clutter-gtk-1.0.deps
@@ -252,6 +254,8 @@ share/vala-${API_V}/vapi/libpanelapplet-2.0.deps
 share/vala-${API_V}/vapi/libpanelapplet-2.0.vapi
 share/vala-${API_V}/vapi/libpeas-1.0.deps
 share/vala-${API_V}/vapi/libpeas-1.0.vapi
+share/vala-${API_V}/vapi/libpeas-gtk-1.0.deps
+share/vala-${API_V}/vapi/libpeas-gtk-1.0.vapi
 share/vala-${API_V}/vapi/libpq.vapi
 share/vala-${API_V}/vapi/librsvg-2.0.deps
 share/vala-${API_V}/vapi/librsvg-2.0.vapi
@@ -277,6 +281,8 @@ share/vala-${API_V}/vapi/mx-1.0.deps
 share/vala-${API_V}/vapi/mx-1.0.vapi
 share/vala-${API_V}/vapi/mysql.vapi
 share/vala-${API_V}/vapi/orc-0.4.vapi
+share/vala-${API_V}/vapi/packagekit-glib2.deps
+share/vala-${API_V}/vapi/packagekit-glib2.vapi
 share/vala-${API_V}/vapi/pango.deps
 share/vala-${API_V}/vapi/pango.vapi
 share/vala-${API_V}/vapi/pangocairo.deps
@@ -327,6 +333,7 @@ share/vala-${API_V}/vapi/vte.vapi
 share/vala-${API_V}/vapi/webkit-1.0.deps
 share/vala-${API_V}/vapi/webkit-1.0.vapi
 share/vala-${API_V}/vapi/x11.vapi
+share/vala-${API_V}/vapi/xcb-icccm.vapi
 share/vala-${API_V}/vapi/xcb.vapi
 share/vala-${API_V}/vapi/xtst.deps
 share/vala-${API_V}/vapi/xtst.vapi
