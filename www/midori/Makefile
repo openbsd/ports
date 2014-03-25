@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.63 2013/11/21 16:10:46 landry Exp $
+# $OpenBSD: Makefile,v 1.64 2014/03/25 09:40:32 landry Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	lightweight web browser
 
-XFCE_VERSION =	0.5.6
+XFCE_VERSION =	0.5.7
 XFCE_GOODIE =	midori
 DISTNAME =	${XFCE_GOODIE}_${XFCE_VERSION}_all_
+PKGNAME =	${XFCE_GOODIE}-${XFCE_VERSION}
+WRKDIST =	${WRKDIR}/${PKGNAME}
 
 HOMEPAGE =	http://www.midori-browser.org
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
@@ -56,7 +58,7 @@ WANTLIB += Xss atk-1.0 c cairo
 WANTLIB += fontconfig freetype gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += m notify pango-1.0 xml2 z
-WANTLIB += pangocairo-1.0 pangoft2-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pthread
 WANTLIB += soup-2.4 sqlite3 soup-gnome-2.4
 
 pre-configure:

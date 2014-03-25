@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2013/11/21 16:10:46 landry Exp $
+@comment $OpenBSD: PLIST,v 1.34 2014/03/25 09:40:32 landry Exp $
 @bin bin/midori
 @lib lib/libmidori-core.so.${LIBmidori-core_VERSION}
 lib/midori/
@@ -13,6 +13,7 @@ lib/midori/libdelayed-load.so
 lib/midori/libdevpet.so
 lib/midori/libexternal-download-manager.so
 lib/midori/libfeed-panel.so
+lib/midori/libflummi.so
 lib/midori/libformhistory.so
 lib/midori/libhistory-list.so
 lib/midori/libmouse-gestures.so
@@ -127,6 +128,8 @@ share/midori/res/bookmarks/Create.sql
 share/midori/res/bookmarks/Import_old_db_bookmarks.sql
 share/midori/res/close.png
 share/midori/res/error.html
+share/midori/res/flummi/
+share/midori/res/flummi/Create.sql
 share/midori/res/forms/
 share/midori/res/forms/Create.sql
 share/midori/res/gtk3.css
@@ -134,6 +137,10 @@ share/midori/res/history/
 share/midori/res/history/Create.sql
 share/midori/res/history/Day.sql
 share/midori/res/logo-shade.png
+share/midori/res/nojs/
+share/midori/res/nojs/nojs-statusicon-allowed.png
+share/midori/res/nojs/nojs-statusicon-denied.png
+share/midori/res/nojs/nojs-statusicon-mixed.png
 share/midori/res/speeddial-head.html
 share/midori/res/tabby/
 share/midori/res/tabby/Create.sql
