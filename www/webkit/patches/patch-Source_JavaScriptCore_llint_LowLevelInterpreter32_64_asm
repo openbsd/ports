@@ -1,10 +1,10 @@
-$OpenBSD: patch-Source_JavaScriptCore_llint_LowLevelInterpreter32_64_asm,v 1.2 2013/10/06 14:03:42 landry Exp $
+$OpenBSD: patch-Source_JavaScriptCore_llint_LowLevelInterpreter32_64_asm,v 1.3 2014/03/25 06:25:45 landry Exp $
 https://bugs.webkit.org/show_bug.cgi?id=103128
 https://bug-103128-attachments.webkit.org/attachment.cgi?id=202076
 last chunk: https://bug-103128-attachments.webkit.org/attachment.cgi?id=202651
---- Source/JavaScriptCore/llint/LowLevelInterpreter32_64.asm.orig	Fri Sep 27 10:49:22 2013
-+++ Source/JavaScriptCore/llint/LowLevelInterpreter32_64.asm	Sun Oct  6 14:49:14 2013
-@@ -1259,7 +1259,7 @@ _llint_op_get_by_pname:
+--- Source/JavaScriptCore/llint/LowLevelInterpreter32_64.asm.orig	Tue Feb  4 17:38:03 2014
++++ Source/JavaScriptCore/llint/LowLevelInterpreter32_64.asm	Fri Feb 14 20:41:39 2014
+@@ -1574,7 +1574,7 @@ _llint_op_get_by_pname:
      loadp JSCell::m_structure[t2], t0
      bpneq t0, JSPropertyNameIterator::m_cachedStructure[t3], .opGetByPnameSlow
      loadi 24[PC], t0
@@ -13,7 +13,7 @@ last chunk: https://bug-103128-attachments.webkit.org/attachment.cgi?id=202651
      subi 1, t0
      biaeq t0, JSPropertyNameIterator::m_numCacheableSlots[t3], .opGetByPnameSlow
      bilt t0, JSPropertyNameIterator::m_cachedStructureInlineCapacity[t3], .opGetByPnameInlineProperty
-@@ -1679,7 +1679,7 @@ _llint_op_next_pname:
+@@ -2002,7 +2002,7 @@ _llint_op_next_pname:
      loadi 20[PC], t2
      loadi PayloadOffset[cfr, t2, 8], t2
      loadp JSPropertyNameIterator::m_jsStrings[t2], t3
@@ -22,7 +22,7 @@ last chunk: https://bug-103128-attachments.webkit.org/attachment.cgi?id=202651
      addi 1, t0
      storei t0, PayloadOffset[cfr, t1, 8]
      loadi 4[PC], t1
-@@ -1743,7 +1743,11 @@ macro getDeBruijnScope(deBruijinIndexOperand, scopeChe
+@@ -2067,7 +2067,11 @@ macro getDeBruijnScope(deBruijinIndexOperand, scopeChe
  
      loadp CodeBlock[cfr], t1
      bineq CodeBlock::m_codeType[t1], FunctionCode, .loop

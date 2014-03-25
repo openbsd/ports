@@ -1,25 +1,30 @@
-@comment $OpenBSD: PFRAG.gtk3,v 1.5 2013/11/14 16:47:00 ajacoutot Exp $
+@comment $OpenBSD: PFRAG.gtk3,v 1.6 2014/03/25 06:25:45 landry Exp $
 @bin bin/GtkLauncher-3
 @bin bin/MiniBrowser
 @bin bin/jsc-3
+@bin libexec/WebKitNetworkProcess
 @bin libexec/WebKitPluginProcess
 @bin libexec/WebKitWebProcess
 lib/girepository-1.0/WebKit2-${WEBKIT_API_VERSION}.typelib
+lib/girepository-1.0/WebKit2WebExtension-${WEBKIT_API_VERSION}.typelib
 @lib lib/libjavascriptcoregtk-${WEBKIT_API_VERSION}.so.${LIBjavascriptcoregtk-3.0_VERSION}
 lib/libwebkit2gtk-${WEBKIT_API_VERSION}.la
 @lib lib/libwebkit2gtk-${WEBKIT_API_VERSION}.so.${LIBwebkit2gtk-3.0_VERSION}
 @lib lib/libwebkitgtk-${WEBKIT_API_VERSION}.so.${LIBwebkitgtk-3.0_VERSION}
 lib/pkgconfig/webkit2gtk-${WEBKIT_API_VERSION}.pc
+lib/pkgconfig/webkit2gtk-web-extension-${WEBKIT_API_VERSION}.pc
 lib/pkgconfig/webkitgtk-${WEBKIT_API_VERSION}.pc
 lib/webkit2gtk-${WEBKIT_API_VERSION}/
 lib/webkit2gtk-${WEBKIT_API_VERSION}/injected-bundle/
 lib/webkit2gtk-${WEBKIT_API_VERSION}/injected-bundle/libwebkit2gtkinjectedbundle.la
 lib/webkit2gtk-${WEBKIT_API_VERSION}/injected-bundle/libwebkit2gtkinjectedbundle.so
 share/gir-1.0/WebKit2-${WEBKIT_API_VERSION}.gir
+share/gir-1.0/WebKit2WebExtension-${WEBKIT_API_VERSION}.gir
 share/gtk-doc/html/webkit2gtk/
 share/gtk-doc/html/webkit2gtk/WebKitAuthenticationRequest.html
 share/gtk-doc/html/webkit2gtk/WebKitBackForwardList.html
 share/gtk-doc/html/webkit2gtk/WebKitBackForwardListItem.html
+share/gtk-doc/html/webkit2gtk/WebKitCertificateInfo.html
 share/gtk-doc/html/webkit2gtk/WebKitContextMenu.html
 share/gtk-doc/html/webkit2gtk/WebKitContextMenuItem.html
 share/gtk-doc/html/webkit2gtk/WebKitCookieManager.html
@@ -53,6 +58,7 @@ share/gtk-doc/html/webkit2gtk/WebKitWebViewGroup.html
 share/gtk-doc/html/webkit2gtk/WebKitWindowProperties.html
 share/gtk-doc/html/webkit2gtk/annotation-glossary.html
 share/gtk-doc/html/webkit2gtk/api-index-2-2.html
+share/gtk-doc/html/webkit2gtk/api-index-2-4.html
 share/gtk-doc/html/webkit2gtk/ch01.html
 share/gtk-doc/html/webkit2gtk/ch02.html
 share/gtk-doc/html/webkit2gtk/home.png

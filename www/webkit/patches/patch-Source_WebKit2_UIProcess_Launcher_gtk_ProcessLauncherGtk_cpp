@@ -1,6 +1,6 @@
-$OpenBSD: patch-Source_WebKit2_UIProcess_Launcher_gtk_ProcessLauncherGtk_cpp,v 1.2 2013/11/14 16:47:00 ajacoutot Exp $
---- Source/WebKit2/UIProcess/Launcher/gtk/ProcessLauncherGtk.cpp.orig	Mon Nov 11 09:34:23 2013
-+++ Source/WebKit2/UIProcess/Launcher/gtk/ProcessLauncherGtk.cpp	Thu Nov 14 09:38:50 2013
+$OpenBSD: patch-Source_WebKit2_UIProcess_Launcher_gtk_ProcessLauncherGtk_cpp,v 1.3 2014/03/25 06:25:45 landry Exp $
+--- Source/WebKit2/UIProcess/Launcher/gtk/ProcessLauncherGtk.cpp.orig	Mon Feb 10 19:50:45 2014
++++ Source/WebKit2/UIProcess/Launcher/gtk/ProcessLauncherGtk.cpp	Wed Feb 19 22:12:36 2014
 @@ -45,7 +45,11 @@
  #if OS(UNIX)
  #include <sys/socket.h>

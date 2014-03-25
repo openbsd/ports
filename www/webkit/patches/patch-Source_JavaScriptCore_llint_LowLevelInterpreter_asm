@@ -1,10 +1,10 @@
-$OpenBSD: patch-Source_JavaScriptCore_llint_LowLevelInterpreter_asm,v 1.2 2013/10/06 14:03:42 landry Exp $
+$OpenBSD: patch-Source_JavaScriptCore_llint_LowLevelInterpreter_asm,v 1.3 2014/03/25 06:25:45 landry Exp $
 https://bugs.webkit.org/show_bug.cgi?id=103128
 https://bug-103128-attachments.webkit.org/attachment.cgi?id=202076
 Last chunk: https://bug-103128-attachments.webkit.org/attachment.cgi?id=202651
---- Source/JavaScriptCore/llint/LowLevelInterpreter.asm.orig	Fri Sep 20 09:24:34 2013
-+++ Source/JavaScriptCore/llint/LowLevelInterpreter.asm	Sun Oct  6 14:48:27 2013
-@@ -109,6 +109,12 @@ else
+--- Source/JavaScriptCore/llint/LowLevelInterpreter.asm.orig	Tue Feb  4 17:38:03 2014
++++ Source/JavaScriptCore/llint/LowLevelInterpreter.asm	Fri Feb 14 22:47:15 2014
+@@ -122,6 +122,12 @@ else
      const PayloadOffset = 0
  end
  
@@ -17,7 +17,7 @@ Last chunk: https://bug-103128-attachments.webkit.org/attachment.cgi?id=202651
  # Constant for reasoning about butterflies.
  const IsArray                  = 1
  const IndexingShapeMask        = 30
-@@ -276,13 +282,13 @@ macro assertNotConstant(index)
+@@ -299,13 +305,13 @@ macro assertNotConstant(index)
  end
  
  macro functionForCallCodeBlockGetter(targetRegister)
@@ -33,11 +33,10 @@ Last chunk: https://bug-103128-attachments.webkit.org/attachment.cgi?id=202651
      loadp JSFunction::m_executable[targetRegister], targetRegister
      loadp FunctionExecutable::m_codeBlockForConstruct[targetRegister], targetRegister
  end
-@@ -657,7 +663,11 @@ _llint_op_jngreatereq:
- _llint_op_loop_hint:
-     traceExecution()
-     loadp JITStackFrame::vm[sp], t1
--    loadb VM::watchdog+Watchdog::m_timerDidFire[t1], t0
+@@ -696,6 +702,11 @@ _llint_op_loop_hint:
+     loadp CodeBlock[cfr], t1
+     loadp CodeBlock::m_vm[t1], t1
+     loadb VM::watchdog+Watchdog::m_timerDidFire[t1], t0
 +    if FOUR_BYTE_BOOL
 +        loadi VM::watchdog+Watchdog::m_timerDidFire[t1], t0
 +    else

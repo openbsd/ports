@@ -1,9 +1,10 @@
-$OpenBSD: patch-Source_WTF_wtf_MathExtras_h,v 1.1 2013/10/06 14:03:43 landry Exp $
+$OpenBSD: patch-Source_WTF_wtf_MathExtras_h,v 1.2 2014/03/25 06:25:45 landry Exp $
 signbit & isfinite are defined in gcc's cmath for 4.6 & 4.8..
 so partly revert https://bugs.webkit.org/show_bug.cgi?id=19975, make it conditional to older gcc
---- Source/WTF/wtf/MathExtras.h.orig	Wed Jun 26 10:42:13 2013
-+++ Source/WTF/wtf/MathExtras.h	Thu Jul 18 09:30:59 2013
-@@ -106,7 +106,8 @@ inline bool isinf(double x) { return !finite(x) && !is
+https://bugs.webkit.org/show_bug.cgi?id=129927
+--- Source/WTF/wtf/MathExtras.h.orig	Tue Jan 21 15:06:51 2014
++++ Source/WTF/wtf/MathExtras.h	Fri Feb 14 20:41:39 2014
+@@ -94,7 +94,8 @@ inline bool isinf(double x) { return !finite(x) && !is
  
  #endif
  

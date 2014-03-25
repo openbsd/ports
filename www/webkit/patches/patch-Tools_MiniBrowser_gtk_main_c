@@ -1,8 +1,8 @@
-$OpenBSD: patch-Tools_MiniBrowser_gtk_main_c,v 1.1 2013/10/06 14:03:44 landry Exp $
+$OpenBSD: patch-Tools_MiniBrowser_gtk_main_c,v 1.2 2014/03/25 06:25:45 landry Exp $
 Dont assume we're running from the src/objdir
---- Tools/MiniBrowser/gtk/main.c.orig	Wed Sep 18 09:07:57 2013
-+++ Tools/MiniBrowser/gtk/main.c	Mon Sep 23 22:44:52 2013
-@@ -263,8 +263,6 @@ int main(int argc, char *argv[])
+--- Tools/MiniBrowser/gtk/main.c.orig	Mon Mar 17 09:08:24 2014
++++ Tools/MiniBrowser/gtk/main.c	Tue Mar 18 07:58:48 2014
+@@ -265,8 +265,6 @@ int main(int argc, char *argv[])
      }
      g_option_context_free (context);
  

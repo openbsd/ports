@@ -1,39 +1,17 @@
-$OpenBSD: patch-configure,v 1.21 2014/01/29 17:28:05 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.22 2014/03/25 06:25:45 landry Exp $
 
-https://bugs.webkit.org/show_bug.cgi?id=117796
-
-- Chunk 1, 2 & 4 : https://bugs.webkit.org/show_bug.cgi?id=109932
-Only webkit2 requires c++11 features atm, so let's relax the check until we have webkit2
-
-- Chunk 5 : no librt on OpenBSD
-
-- Chunk 3 : GNOME Bug 627126 - gsettings schema files don't get installed on FreeBSD
+- Chunk 1: GNOME Bug 627126 - gsettings schema files don't get installed on FreeBSD
 glib commit 136e705e8383ff8848e425ac01278102d7badc52
 
-- Chunk 6 : Don't force the use of -O2, the ports infrastructure
+- Chunk 2 : no librt on OpenBSD
+https://bugs.webkit.org/show_bug.cgi?id=129973
+
+- Chunk 3 : Don't force the use of -O2, the ports infrastructure
 takes care of that
 
---- configure.orig	Tue Jan 21 12:09:55 2014
-+++ configure	Mon Jan 27 10:18:44 2014
-@@ -4790,7 +4790,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
- cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
- 
--#if !(defined(__GNUC__) && !defined(__clang__) && !defined(__INTEL_COMPILER) && __GNUC__ >= 4 && __GNUC_MINOR__ >= 7)
-+#if !(defined(__GNUC__) && !defined(__clang__) && !defined(__INTEL_COMPILER) && __GNUC__ >= 4 && __GNUC_MINOR__ >= 2)
- #error Not a supported GCC compiler
- #endif
- 
-@@ -4848,7 +4848,7 @@ ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
- cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
- 
--#if !(defined(__GNUG__) && defined(__GNUC__) && !defined(__clang__) && !defined(__INTEL_COMPILER) && __GNUC__ >= 4 && __GNUC_MINOR__ >= 7)
-+#if !(defined(__GNUG__) && defined(__GNUC__) && !defined(__clang__) && !defined(__INTEL_COMPILER) && __GNUC__ >= 4 && __GNUC_MINOR__ >= 2)
- #error Not a supported G++ compiler
- #endif
- 
-@@ -17606,26 +17606,14 @@ gsettings__enum_file = $(addsuffix .enums.xml,$(gsetti
+--- configure.orig	Mon Mar 17 09:11:58 2014
++++ configure	Tue Mar 18 07:58:48 2014
+@@ -17659,26 +17659,14 @@ gsettings__enum_file = $(addsuffix .enums.xml,$(gsetti
  
  all-am: $(gsettings_SCHEMAS:.xml=.valid)
  uninstall-am: uninstall-gsettings-schemas
@@ -63,7 +41,7 @@ takes care of that
  	test -n "$(GSETTINGS_DISABLE_SCHEMAS_COMPILE)$(DESTDIR)" || $(GLIB_COMPILE_SCHEMAS) $(gsettingsschemadir)
  
  uninstall-gsettings-schemas:
-@@ -20951,7 +20939,7 @@ $as_echo "$ac_cv_search_shm_open" >&6; }
+@@ -21164,7 +21152,7 @@ $as_echo "$ac_cv_search_shm_open" >&6; }
  ac_res=$ac_cv_search_shm_open
  if test "$ac_res" != no; then :
    test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
@@ -72,16 +50,7 @@ takes care of that
  fi
  
  
-@@ -21383,7 +21371,7 @@ fi
- # Use C99 as the language standard for C code.
- CFLAGS="$CFLAGS -pthread -std=c99"
- # Use the C++11 standard. Do not warn about C++11 incompatibilities.
--CXXFLAGS="$CXXFLAGS -pthread -std=c++11 -Wno-c++11-compat"
-+#CXXFLAGS="$CXXFLAGS -pthread -std=c++11 -Wno-c++11-compat"
- 
- # Clang requires suppression of unused arguments warnings.
- if test "$c_compiler" = "clang"; then
-@@ -21420,8 +21408,8 @@ fi
+@@ -21860,8 +21848,8 @@ fi
  
  # Add the appropriate 'O' level for optimized builds.
  if test "$enable_optimizations" = "yes"; then
@@ -89,6 +58,6 @@ takes care of that
 -    CFLAGS="$CFLAGS -O2"
 +    CXXFLAGS="$CXXFLAGS"
 +    CFLAGS="$CFLAGS"
- else
-     CXXFLAGS="$CXXFLAGS -O0"
-     CFLAGS="$CFLAGS -O0"
+ 
+     if test "$c_compiler" = "gcc"; then
+         CFLAGS="$CFLAGS -D_FORTIFY_SOURCE=2"

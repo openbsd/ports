@@ -1,16 +1,16 @@
-$OpenBSD: patch-GNUmakefile_in,v 1.30 2014/03/23 12:59:57 espie Exp $
+$OpenBSD: patch-GNUmakefile_in,v 1.31 2014/03/25 06:25:45 landry Exp $
 
-- chunk 1,2 : install GtkLauncher, remove silent build lines
-- chunk 5 : install gtk-doc in a versionned dir to avoid conflicts
-- chunk 6 : dont rebase doc, python process fails
-- chunk 4 : dont rerun make within make during install, gmake blows
-- chunk 3 : append extra -O0 cflags for sparc64 which otherwise result in overoptimization
+- chunk 1->4 : remove silent build lines
+- chunk 5 : install GtkLauncher
+- chunk 7 : dont rerun make within make during install, gmake blows
+- chunk 8 : append extra -O0 cflags for sparc64 which otherwise result in overoptimization
   by emitting a fdtox %r8, %r7 call, whose second operand isn't even and thus invalid.
 (on Source/JavaScriptCore/runtime/NumberPrototype.cpp)
-- chunk 7 & 8 : https://bugs.webkit.org/show_bug.cgi?id=118732
---- GNUmakefile.in.orig	Tue Jan 21 12:41:49 2014
-+++ GNUmakefile.in	Mon Jan 27 10:24:55 2014
-@@ -11304,11 +11304,11 @@ am__v_P_0 = false
+- chunk 9->12 : fix variable quoting to properly install doc in a versionned dir
+
+--- GNUmakefile.in.orig	Mon Mar 17 09:12:20 2014
++++ GNUmakefile.in	Tue Mar 18 07:58:48 2014
+@@ -12428,11 +12428,11 @@ am__v_P_0 = false
  am__v_P_1 = :
  AM_V_GEN = $(am__v_GEN_@AM_V@)
  am__v_GEN_ = $(am__v_GEN_@AM_DEFAULT_V@)
@@ -24,7 +24,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.30 2014/03/23 12:59:57 espie Exp $
  am__v_at_1 = 
  DEFAULT_INCLUDES = -I.@am__isrc@
  depcomp = $(SHELL) $(top_srcdir)/Source/autotools/depcomp
-@@ -11318,7 +11318,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES
+@@ -12442,7 +12442,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES
  	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  AM_V_CC = $(am__v_CC_@AM_V@)
  am__v_CC_ = $(am__v_CC_@AM_DEFAULT_V@)
@@ -33,7 +33,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.30 2014/03/23 12:59:57 espie Exp $
  am__v_CC_1 = 
  CCLD = $(CC)
  LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
-@@ -11326,13 +11326,13 @@ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAG
+@@ -12450,13 +12450,13 @@ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAG
  	$(AM_LDFLAGS) $(LDFLAGS) -o $@
  AM_V_CCLD = $(am__v_CCLD_@AM_V@)
  am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
@@ -49,7 +49,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.30 2014/03/23 12:59:57 espie Exp $
  am__v_CXX_1 = 
  CXXLD = $(CXX)
  CXXLINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
-@@ -11340,7 +11340,7 @@ CXXLINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOL
+@@ -12464,7 +12464,7 @@ CXXLINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOL
  	$(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
  AM_V_CXXLD = $(am__v_CXXLD_@AM_V@)
  am__v_CXXLD_ = $(am__v_CXXLD_@AM_DEFAULT_V@)
@@ -58,16 +58,16 @@ $OpenBSD: patch-GNUmakefile_in,v 1.30 2014/03/23 12:59:57 espie Exp $
  am__v_CXXLD_1 = 
  SOURCES = $(Libraries_WebExtensions_libWebExtensionTest_la_SOURCES) \
  	$(Libraries_WebExtensions_libWebProcessTest_la_SOURCES) \
-@@ -11860,7 +11860,7 @@ pkgconfigdir := $(libdir)/pkgconfig
- libwebkitgtkincludedir := $(prefix)/include/webkitgtk-@WEBKITGTK_API_VERSION@
+@@ -13001,7 +13001,7 @@ libwebkitgtkincludedir := $(prefix)/include/webkitgtk-
+ INSPECTOR_SCRIPTS_DIR := $(JavaScriptCore)/inspector/scripts
  
  # Libraries and support components
 -bin_PROGRAMS := Programs/jsc-@WEBKITGTK_API_MAJOR_VERSION@$(EXEEXT)
 +bin_PROGRAMS := Programs/jsc-@WEBKITGTK_API_MAJOR_VERSION@$(EXEEXT) Programs/GtkLauncher$(EXEEXT)
- noinst_DATA := $(am__append_44) \
- 	Programs/TestWebKitAPI/WebKit2Gtk/resources/webkit2gtk-tests-resources.gresource
+ noinst_DATA := DerivedSources/webkitdom/webkitdom.symbols \
+ 	$(am__append_33) $(am__append_94)
  noinst_HEADERS := 
-@@ -69854,7 +69854,7 @@ Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WE
+@@ -72792,7 +72792,7 @@ Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WE
  @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la_CPPFLAGS) $(CPPFLAGS) $(libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la_CXXFLAGS) $(CXXFLAGS) -c -o Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberObject.lo `test -f 'Source/JavaScriptCore/runtime/NumberObject.cpp' || echo '$(srcdir)/'`Source/JavaScriptCore/runtime/NumberObject.cpp
  
  Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberPrototype.lo: Source/JavaScriptCore/runtime/NumberPrototype.cpp
@@ -76,8 +76,8 @@ $OpenBSD: patch-GNUmakefile_in,v 1.30 2014/03/23 12:59:57 espie Exp $
  @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) Source/JavaScriptCore/runtime/$(DEPDIR)/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberPrototype.Tpo Source/JavaScriptCore/runtime/$(DEPDIR)/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberPrototype.Plo
  @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='Source/JavaScriptCore/runtime/NumberPrototype.cpp' object='Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberPrototype.lo' libtool=yes @AMDEPBACKSLASH@
  @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@@ -77713,14 +77713,12 @@ installdirs:
- 	for dir in "$(DESTDIR)$(injectedbundledir)" "$(DESTDIR)$(libdir)" "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(audiodir)" "$(DESTDIR)$(audiodir)" "$(DESTDIR)$(resourcesdir)" "$(DESTDIR)$(webresourcesdir)" "$(DESTDIR)$(girdir)" "$(DESTDIR)$(pkgconfigdir)" "$(DESTDIR)$(typelibsdir)" "$(DESTDIR)$(libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_ladir)" "$(DESTDIR)$(libwebkit2gtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_ladir)" "$(DESTDIR)$(libwebkit2gtkincludedir)" "$(DESTDIR)$(libwebkitgtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_ladir)" "$(DESTDIR)$(libwebkit2gtkincludedir)" "$(DESTDIR)$(libwebkitdomincludedir)" "$(DESTDIR)$(libwebkitgtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_ladir)"; do \
+@@ -81068,14 +81068,12 @@ installdirs:
+ 	for dir in "$(DESTDIR)$(injectedbundledir)" "$(DESTDIR)$(libdir)" "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(audiodir)" "$(DESTDIR)$(audiodir)" "$(DESTDIR)$(resourcesdir)" "$(DESTDIR)$(webresourcesdir)" "$(DESTDIR)$(girdir)" "$(DESTDIR)$(pkgconfigdir)" "$(DESTDIR)$(typelibsdir)" "$(DESTDIR)$(libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_ladir)" "$(DESTDIR)$(libwebkit2gtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_ladir)" "$(DESTDIR)$(libwebkitgtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_ladir)" "$(DESTDIR)$(libwebkit2gtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_ladir)" "$(DESTDIR)$(libwebkitdomincludedir)" "$(DESTDIR)$(libwebkitgtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_ladir)"; do \
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
 -install: $(BUILT_SOURCES)
@@ -93,32 +93,49 @@ $OpenBSD: patch-GNUmakefile_in,v 1.30 2014/03/23 12:59:57 espie Exp $
  
  installcheck: installcheck-am
  install-strip:
-@@ -79023,7 +79021,7 @@ install-data-local:
- @ENABLE_WEBKIT1_TRUE@	  if test -n "$(DOC_MODULE_VERSION)"; then \
- @ENABLE_WEBKIT1_TRUE@	    installdir="$(DESTDIR)$(HTML_DIR)/webkitgtk-$(DOC_MODULE_VERSION)"; \
+@@ -82383,8 +82381,8 @@ install-data-local:
+ @ENABLE_WEBKIT1_TRUE@	then echo 1>&2 'No documentation to install' ; \
+ @ENABLE_WEBKIT1_TRUE@	else \
+ @ENABLE_WEBKIT1_TRUE@	  DOC_MODULE_VERSION=`cat ./Documentation/webkitgtk/version.xml`; \
+-@ENABLE_WEBKIT1_TRUE@	  if test -n "$(DOC_MODULE_VERSION)"; then \
+-@ENABLE_WEBKIT1_TRUE@	    installdir="$(DESTDIR)$(HTML_DIR)/webkitgtk-$(DOC_MODULE_VERSION)"; \
++@ENABLE_WEBKIT1_TRUE@	  if test -n "$${DOC_MODULE_VERSION}"; then \
++@ENABLE_WEBKIT1_TRUE@	    installdir="$(DESTDIR)$(HTML_DIR)/webkitgtk-$${DOC_MODULE_VERSION}"; \
  @ENABLE_WEBKIT1_TRUE@	  else \
--@ENABLE_WEBKIT1_TRUE@	    installdir="$(DESTDIR)$(HTML_DIR)/webkitgtk"; \
-+@ENABLE_WEBKIT1_TRUE@	    installdir="$(DESTDIR)$(HTML_DIR)/webkitgtk-$(WEBKITGTK_API_VERSION)"; \
+ @ENABLE_WEBKIT1_TRUE@	    installdir="$(DESTDIR)$(HTML_DIR)/webkitgtk"; \
  @ENABLE_WEBKIT1_TRUE@	  fi; \
- @ENABLE_WEBKIT1_TRUE@	  $(mkinstalldirs) $${installdir} ; \
- @ENABLE_WEBKIT1_TRUE@	  for i in $$installfiles; do \
-@@ -79224,7 +79222,8 @@ $(plugin_process_for_dep): $(plugin_process_for_dep_li
- WebCoreLayerGtk2.a: $(webcore_layer_gtk2_deps)
- 	$(AM_V_GEN)
- 	$(AM_V_at)$(shell rm -f $@)
--	$(AM_V_at)$(foreach archive, $(webcore_layer_gtk2_archives), $(shell ar t $(archive) | xargs -n50 ar cruT $@))
-+	$(AM_V_at)$(foreach archive, $(webcore_layer_gtk2_archives), $(shell ar t $(archive) | while read f ; do find . -name $$f ; done | xargs -n50 ar cru $@))
-+	-ln $@ libWebCoreLayerGtk2.a
- 
- $(GENSOURCES_WEBKIT2)/BrowserMarshal.h: stamp-mini-browser-marshal.h
- 	@true
-@@ -79257,7 +79256,8 @@ DerivedSources/InjectedBundle/JS%.cpp: Tools/WebKitTes
- WebCoreLayer.a: $(webcore_layer_deps)
- 	$(AM_V_GEN)
- 	$(AM_V_at)$(shell rm -f $@)
--	$(AM_V_at)$(foreach archive, $(webcore_layer_archives), $(shell ar t $(archive) | xargs -n50 ar cruT $@))
-+	$(AM_V_at)$(foreach archive, $(webcore_layer_archives), $(shell ar t $(archive) | while read f ; do find . -name $$f ; done | xargs -n50 ar cru $@))
-+	-ln $@ libWebCoreLayer.a
- 
- Programs/TestWebKitAPI/WebKit2Gtk/resources/webkit2gtk-tests-resources.gresource: Tools/TestWebKitAPI/Tests/WebKit2Gtk/resources/webkit2gtk-tests.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/Tools/TestWebKitAPI/Tests/WebKit2Gtk/resources/webkit2gtk-tests.gresource.xml)
- 	$(AM_V_at)mkdir -p ${GENPROGRAMS}/TestWebKitAPI/WebKit2Gtk/resources
+@@ -82393,9 +82391,9 @@ install-data-local:
+ @ENABLE_WEBKIT1_TRUE@	    echo ' $(INSTALL_DATA) '$$i ; \
+ @ENABLE_WEBKIT1_TRUE@	    $(INSTALL_DATA) $$i $${installdir}; \
+ @ENABLE_WEBKIT1_TRUE@	  done; \
+-@ENABLE_WEBKIT1_TRUE@	  if test -n "$(DOC_MODULE_VERSION)"; then \
++@ENABLE_WEBKIT1_TRUE@	  if test -n "$${DOC_MODULE_VERSION}"; then \
+ @ENABLE_WEBKIT1_TRUE@	    mv -f $${installdir}/webkitgtk.devhelp2 \
+-@ENABLE_WEBKIT1_TRUE@	      $${installdir}/webkitgtk-$(DOC_MODULE_VERSION).devhelp2; \
++@ENABLE_WEBKIT1_TRUE@	      $${installdir}/webkitgtk-$${DOC_MODULE_VERSION}.devhelp2; \
+ @ENABLE_WEBKIT1_TRUE@	  fi; \
+ @ENABLE_WEBKIT1_TRUE@	fi
+ @ENABLE_WEBKIT2_TRUE@	@installfiles=`echo ./Documentation/webkit2gtk/html/*`; \
+@@ -82423,8 +82421,8 @@ install-data-local:
+ 	then echo 1>&2 'No documentation to install' ; \
+ 	else \
+ 	  DOC_MODULE_VERSION=`cat ./Documentation/webkitdomgtk/version.xml`; \
+-	  if test -n "$(DOC_MODULE_VERSION)"; then \
+-	    installdir="$(DESTDIR)$(HTML_DIR)/webkitdomgtk-$(DOC_MODULE_VERSION)"; \
++	  if test -n "$${DOC_MODULE_VERSION}"; then \
++	    installdir="$(DESTDIR)$(HTML_DIR)/webkitdomgtk-$${DOC_MODULE_VERSION}"; \
+ 	  else \
+ 	    installdir="$(DESTDIR)$(HTML_DIR)/webkitdomgtk"; \
+ 	  fi; \
+@@ -82433,9 +82431,9 @@ install-data-local:
+ 	    echo ' $(INSTALL_DATA) '$$i ; \
+ 	    $(INSTALL_DATA) $$i $${installdir}; \
+ 	  done; \
+-	  if test -n "$(DOC_MODULE_VERSION)"; then \
++	  if test -n "$${DOC_MODULE_VERSION}"; then \
+ 	    mv -f $${installdir}/webkitdomgtk.devhelp2 \
+-	      $${installdir}/webkitdomgtk-$(DOC_MODULE_VERSION).devhelp2; \
++	      $${installdir}/webkitdomgtk-$${DOC_MODULE_VERSION}.devhelp2; \
+ 	  fi; \
+ 	fi
+ @ENABLE_GTK_DOC_TRUE@	@$(AM_V_GEN) PKG_CONFIG=$(PKG_CONFIG) $(PYTHON) $(srcdir)/Tools/gtk/generate-gtkdoc --rebase --virtual-root=$${DESTDIR}

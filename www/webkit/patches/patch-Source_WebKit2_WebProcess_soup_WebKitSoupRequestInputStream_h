@@ -1,5 +1,7 @@
-$OpenBSD: patch-Source_WebKit2_WebProcess_soup_WebKitSoupRequestInputStream_h,v 1.1 2013/10/06 14:03:44 landry Exp $
+$OpenBSD: patch-Source_WebKit2_WebProcess_soup_WebKitSoupRequestInputStream_h,v 1.2 2014/03/25 06:25:45 landry Exp $
 Fix build failure on amd64 ?
+/usr/obj/webkit-trunk/.libs/libwebkit2gtk-3.0.so.33.0: undefined reference to `webkitSoupRequestInputStreamNew'
+https://bugs.webkit.org/show_bug.cgi?id=129974
 --- Source/WebKit2/WebProcess/soup/WebKitSoupRequestInputStream.h.orig	Sun Jun  2 21:34:20 2013
 +++ Source/WebKit2/WebProcess/soup/WebKitSoupRequestInputStream.h	Sun Jun  2 21:34:33 2013
 @@ -46,7 +46,7 @@ struct _WebKitSoupRequestInputStreamClass {

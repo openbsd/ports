@@ -1,12 +1,12 @@
-$OpenBSD: patch-Source_JavaScriptCore_jit_ExecutableAllocator_h,v 1.2 2013/10/06 14:03:42 landry Exp $
+$OpenBSD: patch-Source_JavaScriptCore_jit_ExecutableAllocator_h,v 1.3 2014/03/25 06:25:45 landry Exp $
 
 https://bugs.webkit.org/show_bug.cgi?id=61137
 
---- Source/JavaScriptCore/jit/ExecutableAllocator.h.orig	Wed Jun 26 10:42:11 2013
-+++ Source/JavaScriptCore/jit/ExecutableAllocator.h	Mon Jul 15 23:03:44 2013
+--- Source/JavaScriptCore/jit/ExecutableAllocator.h.orig	Tue Feb  4 17:38:03 2014
++++ Source/JavaScriptCore/jit/ExecutableAllocator.h	Fri Feb 14 20:41:39 2014
 @@ -104,7 +104,8 @@ class DemandExecutableAllocator;
  #if ENABLE(EXECUTABLE_ALLOCATOR_FIXED)
- #if CPU(ARM)
+ #if CPU(ARM) || CPU(ARM64)
  static const size_t fixedExecutableMemoryPoolSize = 16 * 1024 * 1024;
 -#elif CPU(X86_64)
 +// We don't want an initial allocation of 1GB, it's above the default ulimit

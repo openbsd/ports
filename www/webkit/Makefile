@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.107 2014/03/11 21:00:38 landry Exp $
+# $OpenBSD: Makefile,v 1.108 2014/03/25 06:25:45 landry Exp $
 
 COMMENT =	open source web browser engine for Gtk+
 
-V =		2.2.4
+V =		2.4.0
 DISTNAME =	webkitgtk-${V}
 PKGNAME =	webkit-${V}
 EPOCH =		1
@@ -25,11 +25,14 @@ MODULES =	devel/gettext \
 		lang/ruby \
 		x11/gnome
 
-
 MODULES +=		gcc4
 MODGCC4_ARCHS =		*
 MODGCC4_LANGS =		c++
-#MODGCC4_VERSION =	4.8
+# cant use clang = needs <chrono> header in StdLib ?
+#MODULES +=		lang/clang
+#MODCLANG_ARCHS =        amd64
+#MODCLANG_LANGS =        c c++
+
 
 MAKE_FILE =		GNUmakefile
 PORTHOME =		${WRKDIST}
@@ -37,9 +40,10 @@ SUBST_VARS =		WEBKIT_API_VERSION GTK_API_VERSION
 
 MODPY_RUNDEP =		No
 MODRUBY_RUNDEP =	No
-MODPY_ADJ_FILES =	Tools/gtk/generate-feature-defines-files
+MODPY_ADJ_FILES =	Tools/gtk/generate-feature-defines-files \
+			Tools/gtk/generate-inspector-gresource-manifest.py
 
-MODGNOME_CPPFLAGS =	-I${X11BASE}/include
+MODGNOME_CPPFLAGS =	-I${X11BASE}/include -DLOG_DISABLED=0
 MODGNOME_LDFLAGS =	-L${X11BASE}/lib -lX11
 MODGNOME_TOOLS =	gi
 
@@ -47,12 +51,11 @@ MODGNOME_TOOLS =	gi
 CONFIGURE_STYLE =	gnu
 # breaks because of missing webkit2/ headers dir ?
 #SEPARATE_BUILD =	Yes
+#AR_FLAGS,  cf http://trac.webkit.org/changeset/163954
 
 CONFIGURE_ENV =	ac_cv_path_FLEX=${LOCALBASE}/bin/gflex \
+		AR_FLAGS="cru" \
 		ac_cv_path_RUBY=${RUBY}
-
-#c++0x in 4.6, c++11 in 4.8 - removed in a patch but we need to readd it for wk2
-CONFIGURE_ENV +=	CXXFLAGS="${CXXFLAGS} -std=c++0x -Wno-c++0x-compat"
 
 LIBTOOL_FLAGS =	--tag=disable-static
 CONFIGURE_ARGS= --disable-static \
@@ -68,11 +71,6 @@ CONFIGURE_ARGS= --disable-static \
 CONFIGURE_ARGS +=	--enable-optimizations=no
 # XXX huge hack LDFLAGS is already added a bit before
 CONFIGURE_ENV +=	COVERAGE_LDFLAGS="-Wl,--relax"
-.endif
-
-.if ${MACHINE_ARCH:Msparc64}
-# until 1.9 is reliable on sparc64...
-MODRUBY_REV =	1.8
 .endif
 
 WANTLIB =	ICE SM X11 Xcomposite Xcursor Xdamage Xext \
@@ -124,7 +122,7 @@ WANTLIB +=	atk-bridge-2.0 atspi
 
 WEBKIT_API_VERSION =	3.0
 GTK_API_VERSION =	3.0
-SHARED_LIBS += webkit2gtk-${WEBKIT_API_VERSION}		0.0 # 29.2
+SHARED_LIBS += webkit2gtk-${WEBKIT_API_VERSION}		1.0 # 34.0
 .else
 # only works with gtk+3
 CONFIGURE_ARGS+=	--disable-webkit2
@@ -132,11 +130,15 @@ WEBKIT_API_VERSION =	1.0
 GTK_API_VERSION =	2.0
 .endif
 
-SHARED_LIBS += javascriptcoregtk-${WEBKIT_API_VERSION}	4.0 # 15.5
-SHARED_LIBS += webkitgtk-${WEBKIT_API_VERSION}		6.0 # 19.8
+SHARED_LIBS += javascriptcoregtk-${WEBKIT_API_VERSION}	5.0 # 16.4
+SHARED_LIBS += webkitgtk-${WEBKIT_API_VERSION}		7.0 # 22.2
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Source/WebCore/plugins/PluginDatabase.cpp ${WRKSRC}/configure
+	# this ensures gtk-doc files are installed in a versionned directory so that we can
+	# install both versions alongside, see DOC_MODULE_VERSION in GNUMakefile.in
+	echo ${WEBKIT_API_VERSION} > ${WRKSRC}/Documentation/webkitdomgtk/version.xml
+	echo ${WEBKIT_API_VERSION} > ${WRKSRC}/Documentation/webkitgtk/version.xml
 
 .if ${FLAVOR:Mgtk3}
 post-install:

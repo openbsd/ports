@@ -1,16 +1,16 @@
-$OpenBSD: patch-Source_WTF_wtf_DisallowCType_h,v 1.1 2013/10/06 14:03:43 landry Exp $
+$OpenBSD: patch-Source_WTF_wtf_DisallowCType_h,v 1.2 2014/03/25 06:25:45 landry Exp $
 just, wtf.
 error:
 'isspace_WTF_Please_use_ASCIICType_instead_of_ctype_see_comment_in_ASCIICType_h' 
 was not declared in this scope
---- Source/WTF/wtf/DisallowCType.h.orig	Wed Jul 17 22:49:42 2013
-+++ Source/WTF/wtf/DisallowCType.h	Wed Jul 17 22:50:11 2013
+--- Source/WTF/wtf/DisallowCType.h.orig	Thu Jan 23 17:49:58 2014
++++ Source/WTF/wtf/DisallowCType.h	Fri Feb 14 22:53:44 2014
 @@ -41,7 +41,7 @@
  // or <glib/gi18n-lib.h>, which in turn include <xlocale/_ctype.h> which uses
  // isacii(). 
  #include <wtf/Platform.h>
--#if !PLATFORM(QT) && !(OS(DARWIN) && PLATFORM(GTK)) && !OS(QNX) && !defined(_LIBCPP_VERSION)
-+#if !PLATFORM(QT) && !((OS(OPENBSD) || OS(DARWIN)) && PLATFORM(GTK)) && !OS(QNX) && !defined(_LIBCPP_VERSION)
+-#if !(OS(DARWIN) && PLATFORM(GTK)) && !PLATFORM(EFL) && !defined(_LIBCPP_VERSION)
++#if !((OS(OPENBSD) || OS(DARWIN)) && PLATFORM(GTK)) && !PLATFORM(EFL) && !defined(_LIBCPP_VERSION)
  
  #include <ctype.h>
  

@@ -1,12 +1,43 @@
-$OpenBSD: patch-Source_WTF_wtf_Platform_h,v 1.3 2013/11/14 16:47:00 ajacoutot Exp $
+$OpenBSD: patch-Source_WTF_wtf_Platform_h,v 1.4 2014/03/25 06:25:45 landry Exp $
 
-Add defines for mips64*/hppa.
+Add defines for sparc64/mips64.
 Disable yarr jit on anything not having a jit
 https://bugs.webkit.org/show_bug.cgi?id=113638
+https://bugs.webkit.org/show_bug.cgi?id=129839
 
---- Source/WTF/wtf/Platform.h.orig	Mon Nov 11 10:21:52 2013
-+++ Source/WTF/wtf/Platform.h	Thu Nov 14 09:38:50 2013
-@@ -83,9 +83,14 @@
+sparc defines/code was removed upstream in 
+http://trac.webkit.org/changeset/159817
+
+chunk 4
+https://bugs.webkit.org/show_bug.cgi?id=126502
+
+chunk 5
+http://trac.webkit.org/changeset/164220
+https://bugs.webkit.org/show_bug.cgi?id=128898
+(also check https://bugs.webkit.org/show_bug.cgi?id=128549)
+
+https://bugs.webkit.org/show_bug.cgi?id=129963 for dfg_jit/llint
+
+last chunk needed to build on ppc/sparc64, otherwise yarr jit and
+assembler is enabled (because of llint cloop) but there's no asm
+for those
+
+--- Source/WTF/wtf/Platform.h.orig	Mon Mar  3 09:11:49 2014
++++ Source/WTF/wtf/Platform.h	Sat Mar  8 22:59:04 2014
+@@ -71,6 +71,12 @@
+ #define WTF_CPU_BIG_ENDIAN 1
+ #endif
+ 
++/* CPU(SPARC64) - Sun Sparc64 */
++#if defined(__sparc64__)
++#define WTF_CPU_SPARC64 1
++#define WTF_CPU_BIG_ENDIAN 1
++#endif
++
+ /* CPU(IA64) - Itanium / IA-64 */
+ #if defined(__ia64__)
+ #define WTF_CPU_IA64 1
+@@ -82,9 +88,14 @@
  
  /* CPU(MIPS) - MIPS 32-bit */
  /* Note: Only O32 ABI is tested, so we enable it for O32 ABI for now.  */
@@ -23,52 +54,48 @@ https://bugs.webkit.org/show_bug.cgi?id=113638
  #if defined(__MIPSEB__)
  #define WTF_CPU_BIG_ENDIAN 1
  #endif
-@@ -125,6 +130,11 @@
- #define WTF_CPU_SH4 1
- #endif
- 
-+/* CPU(HPPA) - HP-PA */
-+#if defined(__hppa__)
-+#define WTF_CPU_HPPA 1
-+#endif
-+
- /* CPU(SPARC32) - SPARC 32-bit */
- #if defined(__sparc) && !defined(__arch64__) || defined(__sparcv8)
- #define WTF_CPU_SPARC32 1
-@@ -323,7 +333,7 @@
+@@ -313,7 +324,7 @@
  
  #endif /* ARM */
  
--#if CPU(ARM) || CPU(MIPS) || CPU(SH4) || CPU(SPARC)
-+#if CPU(ARM) || CPU(MIPS) || CPU(SH4) || CPU(SPARC) || CPU(MIPS64) || CPU(SPARC64)
+-#if CPU(ARM) || CPU(MIPS) || CPU(SH4)
++#if CPU(ARM) || CPU(MIPS) || CPU(SH4) || CPU(MIPS64) || CPU(SPARC64)
  #define WTF_CPU_NEEDS_ALIGNED_ACCESS 1
  #endif
  
-@@ -689,7 +699,8 @@
+@@ -641,6 +652,8 @@
      || CPU(ALPHA) \
-     || CPU(SPARC64) \
+     || CPU(ARM64) \
      || CPU(S390X) \
--    || CPU(PPC64)
-+    || CPU(PPC64) \
-+    || CPU(MIPS64)
++    || CPU(SPARC64) \
++    || CPU(MIPS64) \
+     || CPU(PPC64)
  #define WTF_USE_JSVALUE64 1
  #else
- #define WTF_USE_JSVALUE32_64 1
-@@ -855,7 +866,7 @@
+@@ -708,7 +721,7 @@
+    low-level interpreter. */
+ #if !defined(ENABLE_LLINT) \
+     && ENABLE(JIT) \
+-    && (OS(DARWIN) || OS(LINUX) || OS(FREEBSD)) \
++    && (OS(DARWIN) || OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)) \
+     && (PLATFORM(MAC) || PLATFORM(IOS) || PLATFORM(GTK)) \
+     && (CPU(X86) || CPU(X86_64) || CPU(ARM_THUMB2) || CPU(ARM_TRADITIONAL) || CPU(ARM64) || CPU(MIPS) || CPU(SH4))
+ #define ENABLE_LLINT 1
+@@ -716,7 +729,7 @@
+ 
+ #if !defined(ENABLE_DFG_JIT) && ENABLE(JIT) && !COMPILER(MSVC)
+ /* Enable the DFG JIT on X86 and X86_64.  Only tested on Mac, GNU/Linux and FreeBSD. */
+-#if (CPU(X86) || CPU(X86_64)) && (OS(DARWIN) || OS(LINUX) || OS(FREEBSD))
++#if (CPU(X86) || CPU(X86_64)) && (OS(DARWIN) || OS(LINUX) || OS(FREEBSD) || OS(OPENBSD))
+ #define ENABLE_DFG_JIT 1
+ #endif
+ /* Enable the DFG JIT on ARMv7.  Only tested on iOS and Qt/GTK+ Linux. */
+@@ -807,7 +820,7 @@
  #define ENABLE_REGEXP_TRACING 0
  
  /* Yet Another Regex Runtime - turned on by default for JIT enabled ports. */
--#if !defined(ENABLE_YARR_JIT) && (ENABLE(JIT) || ENABLE(LLINT_C_LOOP)) && !(OS(QNX) && PLATFORM(QT))
-+#if !defined(ENABLE_YARR_JIT) && (ENABLE(JIT)) && !(OS(QNX) && PLATFORM(QT))
+-#if !defined(ENABLE_YARR_JIT) && (ENABLE(JIT) || ENABLE(LLINT_C_LOOP))
++#if !defined(ENABLE_YARR_JIT) && ENABLE(JIT)
  #define ENABLE_YARR_JIT 1
  
  /* Setting this flag compares JIT results with interpreter results. */
-@@ -864,7 +875,7 @@
- 
- /* If either the JIT or the RegExp JIT is enabled, then the Assembler must be
-    enabled as well: */
--#if ENABLE(JIT) || ENABLE(YARR_JIT)
-+#if ENABLE(JIT)
- #if defined(ENABLE_ASSEMBLER) && !ENABLE_ASSEMBLER
- #error "Cannot enable the JIT or RegExp JIT without enabling the Assembler"
- #else

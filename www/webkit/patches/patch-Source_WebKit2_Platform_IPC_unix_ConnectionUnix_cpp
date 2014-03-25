@@ -1,0 +1,12 @@
+$OpenBSD: patch-Source_WebKit2_Platform_IPC_unix_ConnectionUnix_cpp,v 1.1 2014/03/25 06:25:45 landry Exp $
+https://bugs.webkit.org/show_bug.cgi?id=129964
+--- Source/WebKit2/Platform/IPC/unix/ConnectionUnix.cpp.orig	Mon Feb 17 20:17:28 2014
++++ Source/WebKit2/Platform/IPC/unix/ConnectionUnix.cpp	Mon Feb 17 20:17:50 2014
+@@ -31,6 +31,7 @@
+ #include "DataReference.h"
+ #include "SharedMemory.h"
+ #include <sys/socket.h>
++#include <sys/uio.h>
+ #include <unistd.h>
+ #include <errno.h>
+ #include <fcntl.h>

@@ -1,6 +1,6 @@
-$OpenBSD: patch-Source_WTF_wtf_RAMSize_cpp,v 1.1 2013/04/13 09:11:02 landry Exp $
---- Source/WTF/wtf/RAMSize.cpp.orig	Thu Jul 19 12:02:14 2012
-+++ Source/WTF/wtf/RAMSize.cpp	Sat Mar  9 21:26:30 2013
+$OpenBSD: patch-Source_WTF_wtf_RAMSize_cpp,v 1.2 2014/03/25 06:25:45 landry Exp $
+--- Source/WTF/wtf/RAMSize.cpp.orig	Tue Jan 21 15:06:51 2014
++++ Source/WTF/wtf/RAMSize.cpp	Fri Feb 14 20:41:39 2014
 @@ -27,7 +27,7 @@
  #include "RAMSize.h"
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-Source_WTF_wtf_RAMSize_cpp,v 1.1 2013/04/13 09:11:02 landry Exp 
  #include <sys/param.h>
  #include <sys/types.h>
  #include <sys/sysctl.h>
-@@ -45,13 +45,17 @@ static const size_t ramSizeGuess = 128 * MB;
+@@ -43,13 +43,17 @@ static const size_t ramSizeGuess = 128 * MB;
  
  static size_t computeRAMSize()
  {
