@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.223 2014/02/07 13:40:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.224 2014/03/25 07:31:45 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -89,7 +89,6 @@
      SUBDIR += seahorse
      SUBDIR += seahorse-nautilus
      SUBDIR += seahorse-sharing
-     SUBDIR += search-tool
      SUBDIR += session
      SUBDIR += settings-daemon
      SUBDIR += shell
