@@ -1,4 +1,4 @@
-# $OpenBSD: xfce4.port.mk,v 1.20 2013/05/31 19:14:11 landry Exp $
+# $OpenBSD: xfce4.port.mk,v 1.21 2014/03/25 09:02:07 landry Exp $
 
 # Module for Xfce related ports, divided into five categories:
 # core, goodie, artwork, thunar plugins, panel plugins.
@@ -47,12 +47,12 @@ MODXFCE_PURGE_LA?=	lib/xfce4/panel/plugins lib/xfce4/panel-plugins
 HOMEPAGE?=	http://goodies.xfce.org/projects/applications/${XFCE_GOODIE}
 
 MASTER_SITES?=	http://archive.xfce.org/src/apps/${XFCE_GOODIE:L}/${XFCE_BRANCH}/
-DISTNAME=	${XFCE_GOODIE}-${XFCE_VERSION}
+DISTNAME?=	${XFCE_GOODIE}-${XFCE_VERSION}
 .elif defined(XFCE_ARTWORK)
 HOMEPAGE?=	http://www.xfce.org/projects/
 
 MASTER_SITES?=	http://archive.xfce.org/src/art/${XFCE_ARTWORK}/${XFCE_BRANCH}/
-DISTNAME=	${XFCE_ARTWORK}-${XFCE_VERSION}
+DISTNAME?=	${XFCE_ARTWORK}-${XFCE_VERSION}
 .elif defined(THUNAR_PLUGIN)
 HOMEPAGE?=	http://goodies.xfce.org/projects/thunar-plugins/${THUNAR_PLUGIN}
 
@@ -64,7 +64,7 @@ MODXFCE_PURGE_LA ?=	lib/thunarx-2
 HOMEPAGE?=	http://www.xfce.org/projects/${XFCE_PROJECT}
 
 MASTER_SITES?=	http://archive.xfce.org/src/xfce/${XFCE_PROJECT:L}/${XFCE_BRANCH}/
-DISTNAME=	${XFCE_PROJECT}-${XFCE_VERSION}
+DISTNAME?=	${XFCE_PROJECT}-${XFCE_VERSION}
 .endif
 
 # remove useless .la file
