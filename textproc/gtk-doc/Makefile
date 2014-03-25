@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2014/03/16 09:12:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2014/03/25 13:01:54 jasper Exp $
 
 COMMENT=	GTK C code documentation system
 
@@ -27,7 +27,9 @@ CONFIGURE_ENV=		ac_cv_path_DBLATEX= \
 # only files under tests/ are compiled but not installed
 PKG_ARCH=		*
 
-BUILD_DEPENDS=		textproc/docbook-xsl \
+# glib2 needed to build regression tests
+BUILD_DEPENDS=		devel/glib2 \
+			textproc/docbook-xsl \
 			textproc/openjade \
 			textproc/source-highlight
 
