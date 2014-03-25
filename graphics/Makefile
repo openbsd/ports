@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.365 2014/03/09 22:36:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.366 2014/03/25 10:35:17 pascal Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -163,6 +163,7 @@
      SUBDIR += node-canvas
      SUBDIR += ocaml-camlimages
      SUBDIR += ocrad
+     SUBDIR += opencolorio
      SUBDIR += opencsg
      SUBDIR += opencv
      SUBDIR += openexr
