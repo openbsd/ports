@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2014/03/24 21:46:16 landry Exp $
+# $OpenBSD: Makefile,v 1.33 2014/03/25 22:38:23 landry Exp $
 
 # keep in synch with mozilla.port.mk
 ONLY_FOR_ARCHS =	i386 amd64 powerpc sparc64
@@ -25,6 +25,7 @@ MODPY_RUNDEP =	No
 USE_GMAKE =	Yes
 CONFIGURE_STYLE =	gnu
 
+BUILD_DEPENDS =	archivers/zip
 RUN_DEPENDS =	security/gnupg
 
 # needed for the naming of the libsubprocess.so
