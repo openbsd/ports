@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2013/07/04 10:34:17 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.21 2014/03/25 08:53:17 sthen Exp $
 bin/exiftool
 ${P5SITE}/File/
 ${P5SITE}/File/RandomAccess.pm
@@ -13,6 +13,7 @@ ${P5SITE}/Image/ExifTool/AIFF.pm
 ${P5SITE}/Image/ExifTool/APE.pm
 ${P5SITE}/Image/ExifTool/APP12.pm
 ${P5SITE}/Image/ExifTool/ASF.pm
+${P5SITE}/Image/ExifTool/Apple.pm
 ${P5SITE}/Image/ExifTool/BMP.pm
 ${P5SITE}/Image/ExifTool/BZZ.pm
 ${P5SITE}/Image/ExifTool/BigTIFF.pm
@@ -57,6 +58,7 @@ ${P5SITE}/Image/ExifTool/Charset/Turkish.pm
 ${P5SITE}/Image/ExifTool/Charset/Vietnam.pm
 ${P5SITE}/Image/ExifTool/DICOM.pm
 ${P5SITE}/Image/ExifTool/DNG.pm
+${P5SITE}/Image/ExifTool/DPX.pm
 ${P5SITE}/Image/ExifTool/DV.pm
 ${P5SITE}/Image/ExifTool/DarwinCore.pm
 ${P5SITE}/Image/ExifTool/DjVu.pm
@@ -163,6 +165,7 @@ ${P5SITE}/Image/ExifTool/Reconyx.pm
 ${P5SITE}/Image/ExifTool/Ricoh.pm
 ${P5SITE}/Image/ExifTool/Samsung.pm
 ${P5SITE}/Image/ExifTool/Sanyo.pm
+${P5SITE}/Image/ExifTool/Scalado.pm
 ${P5SITE}/Image/ExifTool/Shift.pl
 ${P5SITE}/Image/ExifTool/Shortcuts.pm
 ${P5SITE}/Image/ExifTool/Sigma.pm
@@ -174,6 +177,7 @@ ${P5SITE}/Image/ExifTool/TagInfoXML.pm
 ${P5SITE}/Image/ExifTool/TagLookup.pm
 ${P5SITE}/Image/ExifTool/TagNames.pod
 ${P5SITE}/Image/ExifTool/Theora.pm
+${P5SITE}/Image/ExifTool/Torrent.pm
 ${P5SITE}/Image/ExifTool/Unknown.pm
 ${P5SITE}/Image/ExifTool/Vorbis.pm
 ${P5SITE}/Image/ExifTool/WriteCanonRaw.pl
@@ -183,6 +187,7 @@ ${P5SITE}/Image/ExifTool/WritePDF.pl
 ${P5SITE}/Image/ExifTool/WritePNG.pl
 ${P5SITE}/Image/ExifTool/WritePhotoshop.pl
 ${P5SITE}/Image/ExifTool/WritePostScript.pl
+${P5SITE}/Image/ExifTool/WriteQuickTime.pl
 ${P5SITE}/Image/ExifTool/WriteXMP.pl
 ${P5SITE}/Image/ExifTool/Writer.pl
 ${P5SITE}/Image/ExifTool/XMP.pm
@@ -199,6 +204,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::APE.3p
 @man man/man3p/Image::ExifTool::APP12.3p
 @man man/man3p/Image::ExifTool::ASF.3p
+@man man/man3p/Image::ExifTool::Apple.3p
 @man man/man3p/Image::ExifTool::BMP.3p
 @man man/man3p/Image::ExifTool::BZZ.3p
 @man man/man3p/Image::ExifTool::BigTIFF.3p
@@ -212,6 +218,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::Charset.3p
 @man man/man3p/Image::ExifTool::DICOM.3p
 @man man/man3p/Image::ExifTool::DNG.3p
+@man man/man3p/Image::ExifTool::DPX.3p
 @man man/man3p/Image::ExifTool::DV.3p
 @man man/man3p/Image::ExifTool::DarwinCore.3p
 @man man/man3p/Image::ExifTool::DjVu.3p
@@ -316,6 +323,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::Ricoh.3p
 @man man/man3p/Image::ExifTool::Samsung.3p
 @man man/man3p/Image::ExifTool::Sanyo.3p
+@man man/man3p/Image::ExifTool::Scalado.3p
 @man man/man3p/Image::ExifTool::Shift.3p
 @man man/man3p/Image::ExifTool::Shortcuts.3p
 @man man/man3p/Image::ExifTool::Sigma.3p
@@ -327,6 +335,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::TagLookup.3p
 @man man/man3p/Image::ExifTool::TagNames.3p
 @man man/man3p/Image::ExifTool::Theora.3p
+@man man/man3p/Image::ExifTool::Torrent.3p
 @man man/man3p/Image::ExifTool::Unknown.3p
 @man man/man3p/Image::ExifTool::Vorbis.3p
 @man man/man3p/Image::ExifTool::WriteCanonRaw.3p
@@ -336,6 +345,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::WritePNG.3p
 @man man/man3p/Image::ExifTool::WritePhotoshop.3p
 @man man/man3p/Image::ExifTool::WritePostScript.3p
+@man man/man3p/Image::ExifTool::WriteQuickTime.3p
 @man man/man3p/Image::ExifTool::WriteXMP.3p
 @man man/man3p/Image::ExifTool::Writer.3p
 @man man/man3p/Image::ExifTool::XMP.3p
