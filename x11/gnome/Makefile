@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.224 2014/03/25 07:31:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.225 2014/03/25 08:42:01 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -94,7 +94,6 @@
      SUBDIR += shell
      SUBDIR += shell-extensions
      SUBDIR += sushi
-     SUBDIR += system-log
      SUBDIR += system-monitor
      SUBDIR += terminal
      SUBDIR += themes-standard
