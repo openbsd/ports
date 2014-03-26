@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2014/01/08 14:56:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2014/03/26 08:45:33 sthen Exp $
 
 COMMENT =		n64 emulator core
-SHARED_LIBS = 		mupen64plus 2.2 # 2.0
-REVISION =		0
+SHARED_LIBS =		mupen64plus 2.2 # 2.0
+REVISION =		1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -12,7 +12,7 @@ LIB_DEPENDS =		devel/sdl \
 			graphics/png \
 			print/freetype
 
-MUPEN64PLUS_MOD = 	core
+MUPEN64PLUS_MOD =	core
 
 # PIC #ifdef in src/r4300/x86/rjump.c:104 (taken as a result of PIE by
 # default) needs newer gcc
