@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.69 2014/02/20 17:55:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.70 2014/03/26 11:05:20 jasper Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.10.4
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,7 +20,7 @@ WANTLIB += girepository-1.0 gjs glib-2.0 gmodule-2.0 gnome-menu-3
 WANTLIB += gobject-2.0 gpg-error graphite2 gssapi gstbase-1.0
 WANTLIB += gstreamer-1.0 gthread-2.0 gtk-3 harfbuzz heimbase
 WANTLIB += ical icalss icalvcal json-c json-glib-1.0 krb5
-WANTLIB += ltdl m mozjs-17.0 mutter ncurses ncursesw nspr4 nss3
+WANTLIB += ltdl m mozjs-24 mutter ncurses ncursesw nspr4 nss3
 WANTLIB += nssutil3 ogg p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png polkit-agent-1 polkit-gobject-1
 WANTLIB += pthread pthread-stubs pulse pulse-mainloop-glib readline
@@ -30,8 +31,15 @@ WANTLIB += xml2 z gnome-desktop-3 upower-glib xkbfile
 
 MODULES=		devel/dconf \
 			devel/gettext \
+			lang/clang \
 			lang/python \
 			x11/gnome
+
+# Needed by (gjs -> spidermonkey)
+MODULES +=              gcc4 lang/clang
+MODGCC4_ARCHS =         powerpc sparc64 alpha i386
+MODCLANG_ARCHS =        amd64
+MODCLANG_LANGS =        c c++
 
 MODGNOME_TOOLS=		gi
 
@@ -103,6 +111,8 @@ BUILD_DEPENDS +=	${MODGNU_AUTOMAKE_DEPENDS} \
 			x11/gnome/common
 
 pre-configure:
+	# XXX: Remove when updating to 3.12.0
+	mv ${WRKSRC}/src/shell-js.c ${WRKSRC}/src/shell-js.cpp
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} aclocal -I m4
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \

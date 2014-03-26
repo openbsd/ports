@@ -1,12 +1,17 @@
-$OpenBSD: patch-src_Makefile_am,v 1.9 2014/03/15 07:17:55 ajacoutot Exp $
+$OpenBSD: patch-src_Makefile_am,v 1.10 2014/03/26 11:05:20 jasper Exp $
 
 From 9f3499a7c33e33f9da204f752e5021afee9c68b2 Mon Sep 17 00:00:00 2001
 From: Michael Biebl <biebl@debian.org>
 Date: Tue, 11 Feb 2014 22:20:15 +0000
 Subject: make NetworkManager optional
 
---- src/Makefile.am.orig	Thu Sep 12 20:09:56 2013
-+++ src/Makefile.am	Fri Oct 11 14:05:14 2013
+From 225d31720f4bba7e31bbe91e6cacb1f89abbf4eb Mon Sep 17 00:00:00 2001
+From: Tim Lunn <tim@feathertop.org>
+Date: Sun, 6 Oct 2013 19:21:50 +1100
+Subject: [PATCH] port shell-js to c++
+
+--- src/Makefile.am.orig	Wed Feb 19 19:19:33 2014
++++ src/Makefile.am	Wed Mar 26 11:57:39 2014
 @@ -103,7 +103,6 @@ shell_public_headers_h =		\
  	shell-invert-lightness-effect.h	\
  	shell-keybinding-modes.h	\
@@ -45,6 +50,15 @@ Subject: make NetworkManager optional
  libgnome_shell_sources =		\
  	$(shell_built_sources)		\
  	$(shell_public_headers_h)	\
+@@ -207,7 +213,7 @@ endif HAVE_MUTTER_WAYLAND
+ 
+ libgnome_shell_js_la_SOURCES =		\
+ 	shell-js.h			\
+-	shell-js.c			\
++	shell-js.cpp			\
+ 	$(NULL)
+ 
+ libgnome_shell_js_la_LIBADD =		\
 @@ -331,7 +337,10 @@ INTROSPECTION_GIRS += ShellMenu-0.1.gir
  CLEANFILES += ShellMenu-0.1.gir
  

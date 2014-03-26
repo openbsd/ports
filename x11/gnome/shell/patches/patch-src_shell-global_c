@@ -1,13 +1,26 @@
-$OpenBSD: patch-src_shell-global_c,v 1.3 2014/02/20 17:55:45 jasper Exp $
+$OpenBSD: patch-src_shell-global_c,v 1.4 2014/03/26 11:05:20 jasper Exp $
 
 From 15ff426be8e76af7c038feb3b754fbfde4056e5d Mon Sep 17 00:00:00 2001
 From: Antoine Jacoutot <ajacoutot@gnome.org>
 Date: Thu, 31 Oct 2013 10:46:59 +0000
 Subject: shell_global_reexec_self: add support for OpenBSD
 
+From 1841df1670f97131e9e9b828f032c89404c7759f Mon Sep 17 00:00:00 2001
+From: Tim Lunn <tim@feathertop.org>
+Date: Tue, 29 Oct 2013 18:12:10 +1100
+Subject: [PATCH] remove direct access to jsapi
+
 --- src/shell-global.c.orig	Wed Feb 19 19:19:34 2014
-+++ src/shell-global.c	Thu Feb 20 14:48:22 2014
-@@ -34,6 +34,11 @@
++++ src/shell-global.c	Wed Mar 26 11:52:15 2014
+@@ -22,7 +22,6 @@
+ #include <clutter/x11/clutter-x11.h>
+ #include <gdk/gdkx.h>
+ #include <gio/gio.h>
+-#include <gjs/gjs-module.h>
+ #include <girepository.h>
+ #include <meta/display.h>
+ #include <meta/util.h>
+@@ -34,6 +33,11 @@
  #include <malloc.h>
  #endif
  
@@ -19,7 +32,7 @@ Subject: shell_global_reexec_self: add support for OpenBSD
  #include "shell-enum-types.h"
  #include "shell-global-private.h"
  #include "shell-perf-log.h"
-@@ -1124,20 +1129,30 @@ shell_global_reexec_self (ShellGlobal *global)
+@@ -1124,20 +1128,30 @@ shell_global_reexec_self (ShellGlobal *global)
    char *buf_p;
    char *buf_end;
    GError *error = NULL;
@@ -54,3 +67,48 @@ Subject: shell_global_reexec_self: add support for OpenBSD
    g_ptr_array_add (arr, NULL);
  
    /* Close all file descriptors other than stdin/stdout/stderr, otherwise
+@@ -1162,44 +1176,6 @@ shell_global_on_gc (GjsContext   *context,
+ {
+   global->last_gc_end_time = g_get_monotonic_time ();
+ }
+-
+-/**
+- * shell_global_get_memory_info:
+- * @global:
+- * @meminfo: (out caller-allocates): Output location for memory information
+- *
+- * Load process-global data about memory usage.
+- */
+-void
+-shell_global_get_memory_info (ShellGlobal        *global,
+-                              ShellMemoryInfo    *meminfo)
+-{
+-  JSContext *context;
+-  gint64 now;
+-
+-#ifdef HAVE_MALLINFO
+-  {
+-    struct mallinfo info = mallinfo ();
+-    meminfo->glibc_uordblks = info.uordblks;
+-  }
+-#else
+-  meminfo->glibc_uordblks = 0;
+-#endif
+-
+-  context = gjs_context_get_native_context (global->js_context);
+-
+-  meminfo->js_bytes = JS_GetGCParameter (JS_GetRuntime (context), JSGC_BYTES);
+-
+-  meminfo->gjs_boxed = (unsigned int) gjs_counter_boxed.value;
+-  meminfo->gjs_gobject = (unsigned int) gjs_counter_object.value;
+-  meminfo->gjs_function = (unsigned int) gjs_counter_function.value;
+-  meminfo->gjs_closure = (unsigned int) gjs_counter_closure.value;
+-
+-  now = g_get_monotonic_time ();
+-
+-  meminfo->last_gc_seconds_ago = (now - global->last_gc_end_time) / G_TIME_SPAN_SECOND;
+-}
+-
+ 
+ /**
+  * shell_global_notify_error:

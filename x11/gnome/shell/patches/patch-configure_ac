@@ -1,13 +1,26 @@
-$OpenBSD: patch-configure_ac,v 1.16 2014/03/15 07:17:55 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.17 2014/03/26 11:05:20 jasper Exp $
+
+From 225d31720f4bba7e31bbe91e6cacb1f89abbf4eb Mon Sep 17 00:00:00 2001
+From: Tim Lunn <tim@feathertop.org>
+Date: Sun, 6 Oct 2013 19:21:50 +1100
+Subject: [PATCH] port shell-js to c++
 
 From 9f3499a7c33e33f9da204f752e5021afee9c68b2 Mon Sep 17 00:00:00 2001
 From: Michael Biebl <biebl@debian.org>
 Date: Tue, 11 Feb 2014 22:20:15 +0000
 Subject: make NetworkManager optional
 
---- configure.ac.orig	Fri Nov 15 14:27:07 2013
-+++ configure.ac	Sat Dec 14 10:49:34 2013
-@@ -91,9 +91,7 @@ SHARED_PCS="gio-unix-2.0 >= $GIO_MIN_VERSION
+--- configure.ac.orig	Wed Feb 19 20:09:03 2014
++++ configure.ac	Wed Mar 26 11:57:52 2014
+@@ -16,6 +16,7 @@ m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
+ 
+ # Checks for programs.
+ AC_PROG_CC
++AC_PROG_CXX
+ 
+ # Initialize libtool
+ LT_PREREQ([2.2.6])
+@@ -91,9 +92,7 @@ SHARED_PCS="gio-unix-2.0 >= $GIO_MIN_VERSION
              libcanberra libcanberra-gtk3
              telepathy-glib >= $TELEPATHY_GLIB_MIN_VERSION
              polkit-agent-1 >= $POLKIT_MIN_VERSION
@@ -18,7 +31,7 @@ Subject: make NetworkManager optional
  
  PKG_CHECK_MODULES(GNOME_SHELL, $SHARED_PCS)
  PKG_CHECK_MODULES(MUTTER, libmutter >= $MUTTER_MIN_VERSION)
-@@ -162,6 +160,38 @@ if test "$langinfo_ok" = "yes"; then
+@@ -162,6 +161,38 @@ if test "$langinfo_ok" = "yes"; then
              [Define if _NL_TIME_FIRST_WEEKDAY is available])
  fi
  
@@ -57,7 +70,7 @@ Subject: make NetworkManager optional
  # Sets GLIB_GENMARSHAL and GLIB_MKENUMS
  AM_PATH_GLIB_2_0()
  
-@@ -203,3 +233,15 @@ AC_CONFIG_FILES([
+@@ -203,3 +234,15 @@ AC_CONFIG_FILES([
    man/Makefile
  ])
  AC_OUTPUT
