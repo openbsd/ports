@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/03/26 12:13:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/03/26 12:17:08 ajacoutot Exp $
 @option no-default-conflict
-@pkgpath devel/spidermonkey
 @conflict spidermonkey->=17.0,<18.0
 @bin bin/js17
 bin/js17-config
