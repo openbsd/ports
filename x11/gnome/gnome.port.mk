@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.78 2014/03/25 11:37:47 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.79 2014/03/26 16:09:06 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -86,12 +86,12 @@ MODGNOME_CONFIGURE_ARGS_vala=--disable-vala --disable-vala-bindings
 .if defined(MODGNOME_TOOLS)
 .   if ${MODGNOME_TOOLS:Mgi}
         MODGNOME_CONFIGURE_ARGS_gi=--enable-introspection
-        MODGNOME_BUILD_DEPENDS+=devel/gobject-introspection>=1.38.0
+        MODGNOME_BUILD_DEPENDS+=devel/gobject-introspection>=1.40.0
 .   endif
 
 .   if ${MODGNOME_TOOLS:Mgtk-doc}
         MODGNOME_CONFIGURE_ARGS_gtkdoc=--enable-gtk-doc
-        MODGNOME_BUILD_DEPENDS+=textproc/gtk-doc
+        MODGNOME_BUILD_DEPENDS+=textproc/gtk-doc>=1.20p0
 .   endif
 
 .   if ${MODGNOME_TOOLS:Mvala}
@@ -100,7 +100,7 @@ MODGNOME_CONFIGURE_ARGS_vala=--disable-vala --disable-vala-bindings
 .   endif
 
 .   if ${MODGNOME_TOOLS:Myelp}
-        MODGNOME_BUILD_DEPENDS+=x11/gnome/yelp-tools
+        MODGNOME_BUILD_DEPENDS+=x11/gnome/yelp-tools>=3.12.0
         MODGNOME_BUILD_DEPENDS+=x11/gnome/doc-utils>=0.20.10p2
         # automatically try to detect GUI applications
 .       if defined(MODGNOME_DESKTOP_FILE) && ${MODGNOME_DESKTOP_FILE:L} == "yes"
