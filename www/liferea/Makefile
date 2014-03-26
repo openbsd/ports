@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2014/03/18 04:12:55 bcallah Exp $
+# $OpenBSD: Makefile,v 1.66 2014/03/26 06:57:52 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,6 +7,7 @@ COMMENT=		simple GTK desktop news aggregator
 DISTNAME=		liferea-${V}
 CATEGORIES=		www x11
 EXTRACT_SUFX=		.tar.bz2
+REVISION=		0
 
 HOMEPAGE=		http://lzone.de/liferea/
 MAINTAINER=		Brian Callahan <bcallah@openbsd.org>
@@ -48,6 +49,9 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 FAKE_FLAGS=		htmldocdir="${PREFIX}/share/doc/liferea/html"
 
 MODGCONF2_SCHEMAS_DIR=	liferea
+
+# XXX
+USE_LIBTOOL=		gnu
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
