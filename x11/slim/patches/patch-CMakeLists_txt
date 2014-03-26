@@ -1,6 +1,6 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.3 2013/10/31 09:03:33 dcoppa Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.4 2014/03/26 06:50:58 dcoppa Exp $
 --- CMakeLists.txt.orig	Wed Oct  2 00:38:05 2013
-+++ CMakeLists.txt	Wed Oct 30 09:16:53 2013
++++ CMakeLists.txt	Wed Mar 26 07:50:25 2014
 @@ -25,7 +25,7 @@ set(CMAKE_INSTALL_PREFIX "/usr/local" CACHE PATH "Inst
  set(PKGDATADIR "${CMAKE_INSTALL_PREFIX}/share/slim")
  set(SYSCONFDIR "/etc")
@@ -10,7 +10,27 @@ $OpenBSD: patch-CMakeLists_txt,v 1.3 2013/10/31 09:03:33 dcoppa Exp $
  
  set(SLIM_DEFINITIONS)
  if(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD" OR
-@@ -158,8 +158,6 @@ endif(USE_CONSOLEKIT)
+@@ -42,11 +42,6 @@ set(SLIM_DEFINITIONS ${SLIM_DEFINITIONS} "-DVERSION=\"
+ set(SLIM_DEFINITIONS ${SLIM_DEFINITIONS} "-DPKGDATADIR=\"${PKGDATADIR}\"")
+ set(SLIM_DEFINITIONS ${SLIM_DEFINITIONS} "-DSYSCONFDIR=\"${SYSCONFDIR}\"")
+ 
+-# Flags
+-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -g -O2")
+-set(CMAKE_CPP_FLAGS "${CMAKE_CPP_FLAGS} -Wall -g -O2")
+-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -g -O2")
+-
+ # source 
+ set(slim_srcs
+ 	main.cpp
+@@ -101,7 +96,6 @@ find_package(X11 REQUIRED)
+ find_package(Freetype REQUIRED)
+ find_package(JPEG REQUIRED)
+ find_package(PNG REQUIRED)
+-find_package(ZLIB REQUIRED)
+ 
+ # Fontconfig
+ set(FONTCONFIG_DIR ${CMAKE_MODULE_PATH})
+@@ -158,8 +152,6 @@ endif(USE_CONSOLEKIT)
  
  # system librarys
  find_library(M_LIB m)
@@ -19,7 +39,23 @@ $OpenBSD: patch-CMakeLists_txt,v 1.3 2013/10/31 09:03:33 dcoppa Exp $
  find_package(Threads)
  
  add_definitions(${SLIM_DEFINITIONS})
-@@ -185,8 +183,6 @@ target_link_libraries(libslim
+@@ -172,21 +164,20 @@ include_directories(
+ 	${X11_Xrandr_INCLUDE_PATH}
+ 	${FREETYPE_INCLUDE_DIR_freetype2}
+ 	${X11_Xmu_INCLUDE_PATH}
+-	${ZLIB_INCLUDE_DIR}
+ 	${JPEG_INCLUDE_DIR}
+ 	${PNG_INCLUDE_DIR}
+ )
+ 
+ target_link_libraries(libslim
+-    ${JPEG_LIBRARIES}
++	${X11_Xft_LIB}
++	${X11_Xrandr_LIB}
++	${JPEG_LIBRARIES}
+ 	${PNG_LIBRARIES}
+ )
+ 
  #Set up library with all found packages for slim
  target_link_libraries(${PROJECT_NAME}
  	${M_LIB}
@@ -28,7 +64,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.3 2013/10/31 09:03:33 dcoppa Exp $
  	${X11_X11_LIB}
  	${X11_Xft_LIB}
  	${X11_Xrender_LIB}
-@@ -202,8 +198,6 @@ if(BUILD_SLIMLOCK)
+@@ -202,8 +193,6 @@ if(BUILD_SLIMLOCK)
      #Set up library with all found packages for slimlock
      target_link_libraries(slimlock
          ${M_LIB}
@@ -37,7 +73,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.3 2013/10/31 09:03:33 dcoppa Exp $
          ${X11_X11_LIB}
          ${X11_Xft_LIB}
          ${X11_Xrender_LIB}
-@@ -221,7 +215,9 @@ endif(BUILD_SLIMLOCK)
+@@ -221,7 +210,9 @@ endif(BUILD_SLIMLOCK)
  ####### install
  # slim
  install(TARGETS slim RUNTIME DESTINATION bin)
@@ -47,7 +83,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.3 2013/10/31 09:03:33 dcoppa Exp $
  
  if (BUILD_SHARED_LIBS)
  	set_target_properties(libslim PROPERTIES
-@@ -236,9 +232,11 @@ endif (BUILD_SHARED_LIBS)
+@@ -236,9 +227,11 @@ endif (BUILD_SHARED_LIBS)
  
  # man file
  install(FILES slim.1 DESTINATION ${MANDIR}/man1/)
