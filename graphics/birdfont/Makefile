@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/03/26 09:15:34 ajacoutot Exp $
-
-BROKEN=		does not build with new vala
+# $OpenBSD: Makefile,v 1.4 2014/03/26 09:23:33 ajacoutot Exp $
 
 COMMENT =	free font editor for TTF, EOT, and SVG fonts
 DISTNAME =	birdfont-0.31
@@ -44,7 +42,7 @@ CONFIGURE_STYLE =	simple
 NO_TEST =	Yes
 SUBST_VARS +=	DESTDIR
 
-post-patch:
+pre-configure:
 	perl -pi -e "s,bash,sh,g" ${WRKSRC}/*.sh ${WRKSRC}/scripts/run.py
 	${SUBST_CMD} ${WRKSRC}/configure ${WRKSRC}/install.py ${WRKSRC}/dodo.py ${WRKSRC}/scripts/bavala.py
 

@@ -1,6 +1,9 @@
-$OpenBSD: patch-dodo_py,v 1.1 2013/09/13 07:09:36 bcallah Exp $
---- dodo.py.orig	Sun Aug 25 15:36:42 2013
-+++ dodo.py	Sun Aug 25 15:37:13 2013
+$OpenBSD: patch-dodo_py,v 1.2 2014/03/26 09:23:33 ajacoutot Exp $
+
+glib-2.0.vapi:967.53-967.68: error: Access to instance member `length' from nullable reference denied
+
+--- dodo.py.orig	Thu Sep 12 15:33:31 2013
++++ dodo.py	Wed Mar 26 10:19:22 2014
 @@ -45,7 +45,7 @@ LIBS = [
      'cairo',
      'gdk-pixbuf-2.0',
@@ -10,7 +13,12 @@ $OpenBSD: patch-dodo_py,v 1.1 2013/09/13 07:09:36 bcallah Exp $
      ]
  
  def task_build ():
-@@ -78,7 +78,7 @@ valac_options = [
+@@ -73,12 +73,11 @@ def task_pkg_flags():
+ 
+ 
+ valac_options = [
+-	'--enable-experimental-non-null',
+ 	'--enable-experimental',
  	'--target-glib=2.34', # see bug 0000004
  	'--define=LINUX'
  	]

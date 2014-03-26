@@ -1,0 +1,30 @@
+$OpenBSD: patch-scripts_build_py,v 1.1 2014/03/26 09:23:33 ajacoutot Exp $
+
+glib-2.0.vapi:967.53-967.68: error: Access to instance member `length' from nullable reference denied
+
+--- scripts/build.py.orig	Wed Mar 26 10:19:55 2014
++++ scripts/build.py	Wed Mar 26 10:20:02 2014
+@@ -31,7 +31,6 @@ def libbirdfont(prefix, cc, cflags, ldflags, valac, va
+ 		-C \
+ 		""" + valaflags + """ \
+ 		--basedir build/libbirdfont/ \
+-		--enable-experimental-non-null \
+ 		--enable-experimental \
+ 		--library libbirdfont \
+ 		-H build/libbirdfont/birdfont.h \
+@@ -89,7 +88,6 @@ def birdfont_export(prefix, cc, cflags, ldflags, valac
+ 	
+ 	run(valac + """ \
+ 		-C \
+-		--enable-experimental-non-null \
+ 		--enable-experimental \
+ 		--define=MAC birdfont-export/* \
+ 		--vapidir=./ \
+@@ -135,7 +133,6 @@ def birdfont_gtk(prefix, cc, cflags, ldflags, valac, v
+ 	run(valac + " " + valaflags  + """\
+ 		-C \
+ 		birdfont/* \
+-		--enable-experimental-non-null \
+ 		--enable-experimental \
+ 		--vapidir=./ \
+ 		--pkg gee-1.0 \
