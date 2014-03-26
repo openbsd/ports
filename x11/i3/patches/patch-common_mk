@@ -1,6 +1,6 @@
-$OpenBSD: patch-common_mk,v 1.17 2014/03/23 18:17:35 kili Exp $
+$OpenBSD: patch-common_mk,v 1.18 2014/03/26 07:02:34 ajacoutot Exp $
 --- common.mk.orig	Thu Jan 23 22:52:24 2014
-+++ common.mk	Tue Mar 18 12:45:57 2014
++++ common.mk	Mon Mar 24 08:15:17 2014
 @@ -1,5 +1,5 @@
  UNAME=$(shell uname)
 -DEBUG=1
@@ -19,7 +19,7 @@ $OpenBSD: patch-common_mk,v 1.17 2014/03/23 18:17:35 kili Exp $
  
  # yajl
  YAJL_CFLAGS := $(call cflags_for_lib, yajl)
-@@ -160,20 +160,13 @@ I3_LDFLAGS += -Wl,-rpath,/usr/local/lib -Wl,-rpath,/us
+@@ -160,9 +160,9 @@ I3_LDFLAGS += -Wl,-rpath,/usr/local/lib -Wl,-rpath,/us
  endif
  
  ifeq ($(UNAME),OpenBSD)
@@ -31,14 +31,14 @@ $OpenBSD: patch-common_mk,v 1.17 2014/03/23 18:17:35 kili Exp $
  endif
  
  ifeq ($(UNAME),FreeBSD)
+@@ -171,8 +171,8 @@ endif
+ 
+ ifeq ($(UNAME),Darwin)
  LIBS += -liconv
--endif
--
--ifeq ($(UNAME),Darwin)
--LIBS += -liconv
 -else
 -# Darwin (Mac OS X) doesn’t have librt
--LIBS += -lrt
++else ifneq ($(UNAME),OpenBSD)
++# Darwin (Mac OS X) and OpenBSD do not have librt
+ LIBS += -lrt
  endif
  
- ifneq (,$(filter Linux GNU GNU/%, $(UNAME)))
