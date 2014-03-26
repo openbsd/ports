@@ -1,8 +1,17 @@
-$OpenBSD: patch-configure,v 1.1 2013/08/11 09:09:04 landry Exp $
+$OpenBSD: patch-configure,v 1.2 2014/03/26 10:11:01 landry Exp $
 Disable methodjit on mips64
---- configure.orig	Mon Mar 25 20:34:20 2013
-+++ configure	Sat Aug 10 23:33:46 2013
-@@ -8359,7 +8359,7 @@ EOF
+--- configure.orig	Wed Dec 11 23:23:20 2013
++++ configure	Mon Mar 24 17:51:42 2014
+@@ -7864,7 +7864,7 @@ EOF
+     ;;
+ 
+ *-openbsd*)
+-    DLL_SUFFIX=".so.1.0"
++    DLL_SUFFIX=".so.${SO_VERSION}"
+     DSO_CFLAGS=''
+     DSO_PIC_CFLAGS='-fPIC'
+     DSO_LDOPTS='-shared -fPIC'
+@@ -8331,7 +8331,7 @@ EOF
  
      fi
      ;;

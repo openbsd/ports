@@ -1,0 +1,13 @@
+$OpenBSD: patch-gc_RootMarking_cpp,v 1.1 2014/03/26 10:11:01 landry Exp $
+patch for hppa ?
+--- gc/RootMarking.cpp.orig	Mon Nov 11 09:59:52 2013
++++ gc/RootMarking.cpp	Mon Nov 11 10:00:19 2013
+@@ -320,7 +320,7 @@ MarkConservativeStackRoots(JSTracer *trc, bool useSave
+ 
+     uintptr_t *stackMin, *stackEnd;
+ #if JS_STACK_GROWTH_DIRECTION > 0
+-    stackMin = rt->nativeStackBase;
++    stackMin = reinterpret_cast<uintptr_t *>(rt->nativeStackBase);
+     stackEnd = cgcd->nativeStackTop;
+ #else
+     stackMin = cgcd->nativeStackTop + 1;

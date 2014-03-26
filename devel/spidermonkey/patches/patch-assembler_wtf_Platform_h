@@ -1,7 +1,7 @@
-$OpenBSD: patch-assembler_wtf_Platform_h,v 1.1 2013/08/11 09:09:03 landry Exp $
+$OpenBSD: patch-assembler_wtf_Platform_h,v 1.2 2014/03/26 10:11:01 landry Exp $
 Fix mips64
---- assembler/wtf/Platform.h.orig	Sun Aug 11 00:24:56 2013
-+++ assembler/wtf/Platform.h	Sun Aug 11 00:27:34 2013
+--- assembler/wtf/Platform.h.orig	Tue Oct 29 21:40:26 2013
++++ assembler/wtf/Platform.h	Sat Nov  9 15:34:06 2013
 @@ -139,9 +139,14 @@
  
  /* WTF_CPU_MIPS - MIPS 32-bit */
@@ -19,7 +19,7 @@ Fix mips64
  #if defined(__MIPSEB__)
  #define WTF_CPU_BIG_ENDIAN 1
  #endif
-@@ -358,7 +363,7 @@
+@@ -359,7 +364,7 @@
  
  #endif /* ARM */
  
@@ -28,7 +28,7 @@ Fix mips64
  #define WTF_CPU_NEEDS_ALIGNED_ACCESS 1
  #endif
  
-@@ -1010,7 +1015,8 @@
+@@ -1011,7 +1016,8 @@
      || WTF_CPU_ALPHA \
      || WTF_CPU_SPARC64 \
      || WTF_CPU_S390X \
