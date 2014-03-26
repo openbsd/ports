@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/09/26 08:26:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/03/26 14:55:04 jasper Exp $
 include/geocode-glib-1.0/
 include/geocode-glib-1.0/geocode-glib/
+include/geocode-glib-1.0/geocode-glib/geocode-bounding-box.h
 include/geocode-glib-1.0/geocode-glib/geocode-enum-types.h
 include/geocode-glib-1.0/geocode-glib/geocode-error.h
 include/geocode-glib-1.0/geocode-glib/geocode-forward.h
@@ -8,13 +9,19 @@ include/geocode-glib-1.0/geocode-glib/geocode-glib.h
 include/geocode-glib-1.0/geocode-glib/geocode-location.h
 include/geocode-glib-1.0/geocode-glib/geocode-place.h
 include/geocode-glib-1.0/geocode-glib/geocode-reverse.h
+lib/girepository-1.0/
 lib/girepository-1.0/GeocodeGlib-1.0.typelib
 lib/libgeocode-glib.a
 lib/libgeocode-glib.la
 @lib lib/libgeocode-glib.so.${LIBgeocode-glib_VERSION}
+lib/pkgconfig/
 lib/pkgconfig/geocode-glib-1.0.pc
+share/gir-1.0/
 share/gir-1.0/GeocodeGlib-1.0.gir
+share/gtk-doc/
+share/gtk-doc/html/
 share/gtk-doc/html/geocode-glib-1.0/
+share/gtk-doc/html/geocode-glib-1.0/GeocodeBoundingBox.html
 share/gtk-doc/html/geocode-glib-1.0/GeocodeForward.html
 share/gtk-doc/html/geocode-glib-1.0/GeocodeLocation.html
 share/gtk-doc/html/geocode-glib-1.0/GeocodePlace.html
@@ -35,3 +42,16 @@ share/gtk-doc/html/geocode-glib-1.0/right.png
 share/gtk-doc/html/geocode-glib-1.0/style.css
 share/gtk-doc/html/geocode-glib-1.0/up-insensitive.png
 share/gtk-doc/html/geocode-glib-1.0/up.png
+share/icons/
+share/icons/gnome/
+share/icons/gnome/scalable/
+share/icons/gnome/scalable/places/
+share/icons/gnome/scalable/places/poi-airport.svg
+share/icons/gnome/scalable/places/poi-building.svg
+share/icons/gnome/scalable/places/poi-bus-stop.svg
+share/icons/gnome/scalable/places/poi-car.svg
+share/icons/gnome/scalable/places/poi-marker.svg
+share/icons/gnome/scalable/places/poi-railway-station.svg
+share/icons/gnome/scalable/places/poi-town.svg
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/gnome
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/gnome
