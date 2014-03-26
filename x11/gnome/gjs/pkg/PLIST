@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/09/26 06:29:10 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/03/26 10:42:00 jasper Exp $
 bin/gjs
 @bin bin/gjs-console
 include/gjs-1.0/
@@ -9,6 +9,7 @@ include/gjs-1.0/gi/closure.h
 include/gjs-1.0/gi/enumeration.h
 include/gjs-1.0/gi/foreign.h
 include/gjs-1.0/gi/function.h
+include/gjs-1.0/gi/fundamental.h
 include/gjs-1.0/gi/gerror.h
 include/gjs-1.0/gi/gtype.h
 include/gjs-1.0/gi/interface.h
@@ -23,6 +24,7 @@ include/gjs-1.0/gjs/
 include/gjs-1.0/gjs/byteArray.h
 include/gjs-1.0/gjs/compat.h
 include/gjs-1.0/gjs/context.h
+include/gjs-1.0/gjs/coverage.h
 include/gjs-1.0/gjs/gjs-module.h
 include/gjs-1.0/gjs/gjs.h
 include/gjs-1.0/gjs/importer.h
@@ -47,20 +49,3 @@ share/examples/gjs/gio-cat.js
 share/examples/gjs/gtk.js
 share/examples/gjs/http-server.js
 share/examples/gjs/test.jpg
-share/gjs-1.0/
-share/gjs-1.0/cairo.js
-share/gjs-1.0/format.js
-share/gjs-1.0/gettext.js
-share/gjs-1.0/jsUnit.js
-share/gjs-1.0/lang.js
-share/gjs-1.0/mainloop.js
-share/gjs-1.0/overrides/
-share/gjs-1.0/overrides/GLib.js
-share/gjs-1.0/overrides/GObject.js
-share/gjs-1.0/overrides/Gio.js
-share/gjs-1.0/promise.js
-share/gjs-1.0/signals.js
-share/gjs-1.0/tweener/
-share/gjs-1.0/tweener/equations.js
-share/gjs-1.0/tweener/tweenList.js
-share/gjs-1.0/tweener/tweener.js
