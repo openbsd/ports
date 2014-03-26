@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2011/06/16 01:29:57 sthen Exp $
-@extraunexec rm -rf ${SYSCONFDIR}/iodbc/ODBCDataSources/*
+@comment $OpenBSD: PLIST-main,v 1.4 2014/03/26 14:12:27 sthen Exp $
 @pkgpath databases/iodbc
-%%SHARED%%
+@extraunexec rm -rf ${SYSCONFDIR}/iodbc/ODBCDataSources/*
 bin/iodbc-config
 @bin bin/iodbctest
 @bin bin/iodbctestw
@@ -18,8 +17,10 @@ include/sqltypes.h
 include/sqlucode.h
 lib/libiodbc.a
 lib/libiodbc.la
+@lib lib/libiodbc.so.${LIBiodbc_VERSION}
 lib/libiodbcinst.a
 lib/libiodbcinst.la
+@lib lib/libiodbcinst.so.${LIBiodbcinst_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/libiodbc.pc
 @man man/man1/iodbc-config.1

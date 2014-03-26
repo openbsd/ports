@@ -1,7 +1,7 @@
-$OpenBSD: patch-samples_Makefile_in,v 1.4 2011/06/16 01:29:57 sthen Exp $
---- samples/Makefile.in.orig	Thu Sep 10 15:34:57 2009
-+++ samples/Makefile.in	Fri Jun  3 11:28:05 2011
-@@ -627,9 +627,9 @@ uninstall-am: uninstall-binPROGRAMS
+$OpenBSD: patch-samples_Makefile_in,v 1.5 2014/03/26 14:12:27 sthen Exp $
+--- samples/Makefile.in.orig	Tue Mar 27 13:40:28 2012
++++ samples/Makefile.in	Wed Mar 26 13:36:46 2014
+@@ -630,9 +630,9 @@ uninstall-am: uninstall-binPROGRAMS
  
  
  install-exec-hook:

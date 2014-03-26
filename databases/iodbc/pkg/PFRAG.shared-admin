@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-admin,v 1.1 2007/01/09 18:49:28 kurt Exp $
-@lib lib/libdrvproxy.so.${LIBdrvproxy_VERSION}
-@lib lib/libiodbcadm.so.${LIBiodbcadm_VERSION}
