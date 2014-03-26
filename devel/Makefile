@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1208 2014/03/26 12:14:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.1209 2014/03/26 14:36:03 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -15,8 +15,6 @@
      SUBDIR += argtable
      SUBDIR += arm-elf
      SUBDIR += asm6
-     SUBDIR += asp2php
-     SUBDIR += asp2php,no_x11
      SUBDIR += astyle
      SUBDIR += atf
      SUBDIR += atk

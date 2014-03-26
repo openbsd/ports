@@ -1,6 +1,0 @@
-asp2php is a program which converts Microsoft's ASP code to PHP.
-It supports multiple database drivers, sessions, both PHP3 and PHP4,
-and also provides a graphical front end to do all this.
-
-Flavors:
-	no_x11	- build without X11 support
