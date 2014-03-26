@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2013/12/01 12:14:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2014/03/26 13:46:49 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	network-related gio modules for glib2
 
-GNOME_VERSION=	2.38.2
+GNOME_VERSION=	2.40.0
 GNOME_PROJECT=	glib-networking
 
 PKGNAME=	glib2-networking-${GNOME_VERSION}
@@ -39,8 +39,5 @@ CONFIGURE_ARGS=	--disable-static \
 		--with-ca-certificates=/etc/ssl/cert.pem
 
 TEST_IS_INTERACTIVE=	x11
-
-# XXX Bogus element outside of every prefix: /files/ca-roots.pem...
-FAKE_FLAGS=	testfiles_DATA=
 
 .include <bsd.port.mk>
