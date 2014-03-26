@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/09/26 06:38:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/03/26 13:34:46 ajacoutot Exp $
 share/pkgconfig/
 share/pkgconfig/yelp-xsl.pc
 share/yelp-xsl/
@@ -25,9 +25,6 @@ share/yelp-xsl/icons/hicolor/scalable/status/yelp-note-important.svg
 share/yelp-xsl/icons/hicolor/scalable/status/yelp-note-tip.svg
 share/yelp-xsl/icons/hicolor/scalable/status/yelp-note-warning.svg
 share/yelp-xsl/icons/hicolor/scalable/status/yelp-note.svg
-share/yelp-xsl/icons/hicolor/watermarks/
-share/yelp-xsl/icons/hicolor/watermarks/yelp-code-python.png
-share/yelp-xsl/icons/hicolor/watermarks/yelp-code.png
 share/yelp-xsl/js/
 share/yelp-xsl/js/jquery.js
 share/yelp-xsl/js/jquery.syntax.brush.apache.js
