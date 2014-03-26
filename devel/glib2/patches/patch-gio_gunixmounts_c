@@ -1,15 +1,10 @@
-$OpenBSD: patch-gio_gunixmounts_c,v 1.13 2014/02/02 09:10:35 ajacoutot Exp $
+$OpenBSD: patch-gio_gunixmounts_c,v 1.14 2014/03/26 08:28:15 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=583330
 
-From 7cf221aadb4f9bd6e7f015fb327ae551bb52b08f Mon Sep 17 00:00:00 2001
-From: Antoine Jacoutot <ajacoutot@gnome.org>
-Date: Tue, 21 Jan 2014 16:25:35 +0000
-Subject: gio: extend the system_internal lists with BSD paths
-
---- gio/gunixmounts.c.orig	Thu Nov  7 16:29:13 2013
-+++ gio/gunixmounts.c	Tue Jan 21 17:15:11 2014
-@@ -155,6 +155,9 @@ struct _GUnixMountMonitor {
+--- gio/gunixmounts.c.orig	Wed Feb 12 21:08:36 2014
++++ gio/gunixmounts.c	Tue Mar 25 08:12:54 2014
+@@ -150,6 +150,9 @@ struct _GUnixMountMonitor {
    GFileMonitor *fstab_monitor;
    GFileMonitor *mtab_monitor;
  
@@ -19,7 +14,7 @@ Subject: gio: extend the system_internal lists with BSD paths
    GSource *proc_mounts_watch_source;
  };
  
-@@ -167,6 +170,8 @@ static GUnixMountMonitor *the_mount_monitor = NULL;
+@@ -162,6 +165,8 @@ static GUnixMountMonitor *the_mount_monitor = NULL;
  static GList *_g_get_unix_mounts (void);
  static GList *_g_get_unix_mount_points (void);
  
@@ -28,7 +23,7 @@ Subject: gio: extend the system_internal lists with BSD paths
  G_DEFINE_TYPE (GUnixMountMonitor, g_unix_mount_monitor, G_TYPE_OBJECT);
  
  #define MOUNT_POLL_INTERVAL 4000
-@@ -193,6 +198,7 @@ G_DEFINE_TYPE (GUnixMountMonitor, g_unix_mount_monitor
+@@ -188,6 +193,7 @@ G_DEFINE_TYPE (GUnixMountMonitor, g_unix_mount_monitor
  #endif
  
  #if (defined(HAVE_GETVFSSTAT) || defined(HAVE_GETFSSTAT)) && defined(HAVE_FSTAB_H) && defined(HAVE_SYS_MOUNT_H)
@@ -36,51 +31,7 @@ Subject: gio: extend the system_internal lists with BSD paths
  #include <sys/ucred.h>
  #include <sys/mount.h>
  #include <fstab.h>
-@@ -243,22 +249,31 @@ g_unix_is_mount_path_system_internal (const char *moun
-     "/",              /* we already have "Filesystem root" in Nautilus */ 
-     "/bin",
-     "/boot",
-+    "/compat/linux/proc",
-+    "/compat/linux/sys",
-     "/dev",
-     "/etc",
-     "/home",
-     "/lib",
-     "/lib64",
-+    "/libexec",
-     "/live/cow",
-     "/live/image",
-     "/media",
-     "/mnt",
-     "/opt",
-+    "/rescue",
-     "/root",
-     "/sbin",
-     "/srv",
-     "/tmp",
-     "/usr",
-+    "/usr/X11R6",
-     "/usr/local",
-+    "/usr/obj",
-+    "/usr/ports",
-+    "/usr/src",
-+    "/usr/xobj",
-     "/var",
-     "/var/crash",
-     "/var/local",
-@@ -299,8 +314,11 @@ guess_system_internal (const char *mountpoint,
-     "devfs",
-     "devpts",
-     "ecryptfs",
-+    "fdescfs",
-     "kernfs",
-     "linprocfs",
-+    "mfs",
-+    "nullfs",
-     "proc",
-     "procfs",
-     "ptyfs",
-@@ -1128,6 +1146,10 @@ get_mounts_timestamp (void)
+@@ -1134,6 +1140,10 @@ get_mounts_timestamp (void)
        if (stat (monitor_file, &buf) == 0)
  	return (guint64)buf.st_mtime;
      }
@@ -91,7 +42,7 @@ Subject: gio: extend the system_internal lists with BSD paths
    return 0;
  }
  
-@@ -1273,6 +1295,13 @@ g_unix_mount_monitor_finalize (GObject *object)
+@@ -1279,6 +1289,13 @@ g_unix_mount_monitor_finalize (GObject *object)
        g_object_unref (monitor->mtab_monitor);
      }
  
@@ -105,7 +56,7 @@ Subject: gio: extend the system_internal lists with BSD paths
    the_mount_monitor = NULL;
  
    G_OBJECT_CLASS (g_unix_mount_monitor_parent_class)->finalize (object);
-@@ -1354,6 +1383,52 @@ mtab_file_changed (GFileMonitor      *monitor,
+@@ -1360,6 +1377,52 @@ mtab_file_changed (GFileMonitor      *monitor,
  }
  
  static gboolean
@@ -158,7 +109,7 @@ Subject: gio: extend the system_internal lists with BSD paths
  proc_mounts_changed (GIOChannel   *channel,
                       GIOCondition  cond,
                       gpointer      user_data)
-@@ -1417,6 +1492,12 @@ g_unix_mount_monitor_init (GUnixMountMonitor *monitor)
+@@ -1423,6 +1486,12 @@ g_unix_mount_monitor_init (GUnixMountMonitor *monitor)
            g_object_unref (file);
            g_signal_connect (monitor->mtab_monitor, "changed", (GCallback)mtab_file_changed, monitor);
          }

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2013/11/12 16:17:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2014/03/26 08:28:15 ajacoutot Exp $
 @conflict glib2-docs-*
 @conflict glib2-fam-*
 @pkgpath devel/glib2,-docs
@@ -6,6 +6,7 @@
 @pkgpath devel/glib2,-main
 @unexec-delete rm -f %D/share/glib-2.0/schemas/gschemas.compiled
 @unexec-delete rm -f %D/lib/gio/modules/giomodule.cache
+@bin bin/gapplication
 @bin bin/gdbus
 bin/gdbus-codegen
 @bin bin/gio-querymodules
@@ -118,6 +119,7 @@ include/glib-2.0/gio/gnetworkaddress.h
 include/glib-2.0/gio/gnetworking.h
 include/glib-2.0/gio/gnetworkmonitor.h
 include/glib-2.0/gio/gnetworkservice.h
+include/glib-2.0/gio/gnotification.h
 include/glib-2.0/gio/goutputstream.h
 include/glib-2.0/gio/gpermission.h
 include/glib-2.0/gio/gpollableinputstream.h
@@ -150,6 +152,8 @@ include/glib-2.0/gio/gsocketcontrolmessage.h
 include/glib-2.0/gio/gsocketlistener.h
 include/glib-2.0/gio/gsocketservice.h
 include/glib-2.0/gio/gsrvtarget.h
+include/glib-2.0/gio/gsubprocess.h
+include/glib-2.0/gio/gsubprocesslauncher.h
 include/glib-2.0/gio/gtask.h
 include/glib-2.0/gio/gtcpconnection.h
 include/glib-2.0/gio/gtcpwrapperconnection.h
@@ -303,6 +307,7 @@ lib/pkgconfig/gmodule-export-2.0.pc
 lib/pkgconfig/gmodule-no-export-2.0.pc
 lib/pkgconfig/gobject-2.0.pc
 lib/pkgconfig/gthread-2.0.pc
+@man man/man1/gapplication.1
 @man man/man1/gdbus-codegen.1
 @man man/man1/gdbus.1
 @man man/man1/gio-querymodules.1
@@ -321,14 +326,15 @@ share/aclocal/glib-gettext.m4
 share/aclocal/gsettings.m4
 share/bash-completion/
 share/bash-completion/completions/
+share/bash-completion/completions/gapplication
 share/bash-completion/completions/gdbus
 share/bash-completion/completions/gresource
 share/bash-completion/completions/gsettings
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/gdb/
 share/gdb/auto-load/
-share/gdb/auto-load/libglib-2.0.so.0.3800.2-gdb.py
-share/gdb/auto-load/libgobject-2.0.so.0.3800.2-gdb.py
+share/gdb/auto-load/libglib-2.0.so.0.4000.0-gdb.py
+share/gdb/auto-load/libgobject-2.0.so.0.4000.0-gdb.py
 share/glib-2.0/
 share/glib-2.0/codegen/
 share/glib-2.0/codegen/__init__.py
@@ -374,6 +380,7 @@ share/gtk-doc/html/gio/GAction.html
 share/gtk-doc/html/gio/GActionGroup.html
 share/gtk-doc/html/gio/GActionMap.html
 share/gtk-doc/html/gio/GAppInfo.html
+share/gtk-doc/html/gio/GAppInfoMonitor.html
 share/gtk-doc/html/gio/GApplication.html
 share/gtk-doc/html/gio/GApplicationCommandLine.html
 share/gtk-doc/html/gio/GAsyncInitable.html
@@ -460,6 +467,7 @@ share/gtk-doc/html/gio/GSocketControlMessage.html
 share/gtk-doc/html/gio/GSocketListener.html
 share/gtk-doc/html/gio/GSocketService.html
 share/gtk-doc/html/gio/GSrvTarget.html
+share/gtk-doc/html/gio/GSubprocess.html
 share/gtk-doc/html/gio/GTask.html
 share/gtk-doc/html/gio/GTcpConnection.html
 share/gtk-doc/html/gio/GTcpWrapperConnection.html
@@ -499,6 +507,7 @@ share/gtk-doc/html/gio/api-index-2-32.html
 share/gtk-doc/html/gio/api-index-2-34.html
 share/gtk-doc/html/gio/api-index-2-36.html
 share/gtk-doc/html/gio/api-index-2-38.html
+share/gtk-doc/html/gio/api-index-2-40.html
 share/gtk-doc/html/gio/api-index-deprecated.html
 share/gtk-doc/html/gio/api-index-full.html
 share/gtk-doc/html/gio/application.html
@@ -506,28 +515,29 @@ share/gtk-doc/html/gio/async.html
 share/gtk-doc/html/gio/ch01.html
 share/gtk-doc/html/gio/ch02.html
 share/gtk-doc/html/gio/ch03.html
-share/gtk-doc/html/gio/ch29.html
 share/gtk-doc/html/gio/ch30.html
-share/gtk-doc/html/gio/ch30s02.html
-share/gtk-doc/html/gio/ch30s03.html
 share/gtk-doc/html/gio/ch31.html
 share/gtk-doc/html/gio/ch31s02.html
 share/gtk-doc/html/gio/ch31s03.html
-share/gtk-doc/html/gio/ch31s04.html
-share/gtk-doc/html/gio/ch31s05.html
-share/gtk-doc/html/gio/ch31s06.html
-share/gtk-doc/html/gio/ch31s07.html
 share/gtk-doc/html/gio/ch32.html
 share/gtk-doc/html/gio/ch32s02.html
 share/gtk-doc/html/gio/ch32s03.html
 share/gtk-doc/html/gio/ch32s04.html
 share/gtk-doc/html/gio/ch32s05.html
+share/gtk-doc/html/gio/ch32s06.html
+share/gtk-doc/html/gio/ch32s07.html
+share/gtk-doc/html/gio/ch33.html
+share/gtk-doc/html/gio/ch33s02.html
+share/gtk-doc/html/gio/ch33s03.html
+share/gtk-doc/html/gio/ch33s04.html
+share/gtk-doc/html/gio/ch33s05.html
 share/gtk-doc/html/gio/conversion.html
 share/gtk-doc/html/gio/extending-gio.html
 share/gtk-doc/html/gio/extending.html
 share/gtk-doc/html/gio/failable_initialization.html
 share/gtk-doc/html/gio/file_mon.html
 share/gtk-doc/html/gio/file_ops.html
+share/gtk-doc/html/gio/gapplication-tool.html
 share/gtk-doc/html/gio/gdbus-codegen.html
 share/gtk-doc/html/gio/gdbus-convenience.html
 share/gtk-doc/html/gio/gdbus-lowlevel.html
@@ -550,9 +560,11 @@ share/gtk-doc/html/gio/gio-GIOError.html
 share/gtk-doc/html/gio/gio-GIOScheduler.html
 share/gtk-doc/html/gio/gio-GInetAddressMask.html
 share/gtk-doc/html/gio/gio-GMenuModel-exporter.html
+share/gtk-doc/html/gio/gio-GNotification.html
 share/gtk-doc/html/gio/gio-GPropertyAction.html
 share/gtk-doc/html/gio/gio-GResource.html
 share/gtk-doc/html/gio/gio-GSettingsSchema-GSettingsSchemaSource.html
+share/gtk-doc/html/gio/gio-GSubprocessLauncher.html
 share/gtk-doc/html/gio/gio-GWin32InputStream.html
 share/gtk-doc/html/gio/gio-GWin32OutputStream.html
 share/gtk-doc/html/gio/gio-Owning-Bus-Names.html
@@ -574,6 +586,7 @@ share/gtk-doc/html/gio/home.png
 share/gtk-doc/html/gio/icons.html
 share/gtk-doc/html/gio/index.html
 share/gtk-doc/html/gio/index.sgml
+share/gtk-doc/html/gio/left-insensitive.png
 share/gtk-doc/html/gio/left.png
 share/gtk-doc/html/gio/menu-example.png
 share/gtk-doc/html/gio/menu-model.png
@@ -584,19 +597,26 @@ share/gtk-doc/html/gio/pt01.html
 share/gtk-doc/html/gio/pt02.html
 share/gtk-doc/html/gio/resolver.html
 share/gtk-doc/html/gio/resources.html
+share/gtk-doc/html/gio/right-insensitive.png
 share/gtk-doc/html/gio/right.png
 share/gtk-doc/html/gio/running-gio-apps.html
 share/gtk-doc/html/gio/settings.html
 share/gtk-doc/html/gio/streaming.html
 share/gtk-doc/html/gio/style.css
+share/gtk-doc/html/gio/subprocesses.html
 share/gtk-doc/html/gio/testing.html
 share/gtk-doc/html/gio/tls.html
 share/gtk-doc/html/gio/tools.html
 share/gtk-doc/html/gio/types.html
+share/gtk-doc/html/gio/up-insensitive.png
 share/gtk-doc/html/gio/up.png
 share/gtk-doc/html/gio/utils.html
 share/gtk-doc/html/gio/volume_mon.html
 share/gtk-doc/html/glib/
+share/gtk-doc/html/glib/Sorted_binary_tree_breadth-first_traversal.svg
+share/gtk-doc/html/glib/Sorted_binary_tree_inorder.svg
+share/gtk-doc/html/glib/Sorted_binary_tree_postorder.svg
+share/gtk-doc/html/glib/Sorted_binary_tree_preorder.svg
 share/gtk-doc/html/glib/annotation-glossary.html
 share/gtk-doc/html/glib/api-index-2-10.html
 share/gtk-doc/html/glib/api-index-2-12.html
@@ -615,6 +635,7 @@ share/gtk-doc/html/glib/api-index-2-34.html
 share/gtk-doc/html/glib/api-index-2-36.html
 share/gtk-doc/html/glib/api-index-2-38.html
 share/gtk-doc/html/glib/api-index-2-4.html
+share/gtk-doc/html/glib/api-index-2-40.html
 share/gtk-doc/html/glib/api-index-2-6.html
 share/gtk-doc/html/glib/api-index-2-8.html
 share/gtk-doc/html/glib/api-index-deprecated.html
@@ -713,11 +734,14 @@ share/gtk-doc/html/glib/gvariant-text.html
 share/gtk-doc/html/glib/home.png
 share/gtk-doc/html/glib/index.html
 share/gtk-doc/html/glib/index.sgml
+share/gtk-doc/html/glib/left-insensitive.png
 share/gtk-doc/html/glib/left.png
 share/gtk-doc/html/glib/mainloop-states.gif
+share/gtk-doc/html/glib/right-insensitive.png
 share/gtk-doc/html/glib/right.png
 share/gtk-doc/html/glib/style.css
 share/gtk-doc/html/glib/tools.html
+share/gtk-doc/html/glib/up-insensitive.png
 share/gtk-doc/html/glib/up.png
 share/gtk-doc/html/gobject/
 share/gtk-doc/html/gobject/GBinding.html
@@ -785,11 +809,13 @@ share/gtk-doc/html/gobject/howto-interface.html
 share/gtk-doc/html/gobject/howto-signals.html
 share/gtk-doc/html/gobject/index.html
 share/gtk-doc/html/gobject/index.sgml
+share/gtk-doc/html/gobject/left-insensitive.png
 share/gtk-doc/html/gobject/left.png
 share/gtk-doc/html/gobject/pr01.html
 share/gtk-doc/html/gobject/pt01.html
 share/gtk-doc/html/gobject/pt02.html
 share/gtk-doc/html/gobject/pt03.html
+share/gtk-doc/html/gobject/right-insensitive.png
 share/gtk-doc/html/gobject/right.png
 share/gtk-doc/html/gobject/rn01.html
 share/gtk-doc/html/gobject/rn02.html
@@ -800,6 +826,7 @@ share/gtk-doc/html/gobject/tools-gob.html
 share/gtk-doc/html/gobject/tools-gtkdoc.html
 share/gtk-doc/html/gobject/tools-refdb.html
 share/gtk-doc/html/gobject/tools-vala.html
+share/gtk-doc/html/gobject/up-insensitive.png
 share/gtk-doc/html/gobject/up.png
 share/locale/af/
 share/locale/af/LC_MESSAGES/

@@ -1,15 +1,10 @@
-$OpenBSD: patch-gio_gunixmount_c,v 1.10 2014/03/16 09:45:35 ajacoutot Exp $
+$OpenBSD: patch-gio_gunixmount_c,v 1.11 2014/03/26 08:28:15 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=653555
 
-From 64ec757d058dae045e275577da8f14f463cc7c44 Mon Sep 17 00:00:00 2001
-From: Ryan Lortie <desrt@desrt.ca>
-Date: Sun, 02 Mar 2014 22:39:11 +0000
-Subject: GUnixMount: port unmount to GSubprocess
-
---- gio/gunixmount.c.orig	Fri Oct 25 17:58:38 2013
-+++ gio/gunixmount.c	Sat Feb 22 00:13:50 2014
-@@ -29,6 +29,12 @@
+--- gio/gunixmount.c.orig	Thu Mar 20 04:50:45 2014
++++ gio/gunixmount.c	Tue Mar 25 08:12:54 2014
+@@ -27,6 +27,12 @@
  #include <sys/wait.h>
  #include <unistd.h>
  
@@ -20,61 +15,9 @@ Subject: GUnixMount: port unmount to GSubprocess
 +#endif
 +
  #include <glib.h>
- #include "gunixvolumemonitor.h"
- #include "gunixmount.h"
-@@ -314,7 +320,15 @@ read:
-         goto read;
-    }
-   else if (status == G_IO_STATUS_EOF)
--    g_string_append_len (data->error_string, buf, bytes_read);
-+    {
-+      g_string_append_len (data->error_string, buf, bytes_read);
-+      if (data->error_channel_source)
-+        {
-+          g_source_unref (data->error_channel_source);
-+          data->error_channel_source = NULL;
-+        }
-+      return G_SOURCE_REMOVE;
-+    }
-   else if (status == G_IO_STATUS_ERROR)
-     {
-       if (data->error_string->len > 0)
-@@ -328,10 +342,10 @@ read:
-           g_source_unref (data->error_channel_source);
-           data->error_channel_source = NULL;
-         }
--      return FALSE;
-+      return G_SOURCE_REMOVE;
-     }
- 
--  return TRUE;
-+  return G_SOURCE_CONTINUE;
- }
- 
- static gboolean
-@@ -340,7 +354,6 @@ eject_unmount_do_cb (gpointer user_data)
-   GTask *task = user_data;
-   UnmountEjectOp *data = g_task_get_task_data (task);
-   GPid child_pid;
--  GSource *child_watch;
-   GError *error = NULL;
- 
-   if (g_task_return_error_if_cancelled (task))
-@@ -371,12 +384,8 @@ eject_unmount_do_cb (gpointer user_data)
-   data->error_channel_source = g_io_create_watch (data->error_channel, G_IO_IN);
-   g_task_attach_source (task, data->error_channel_source,
-                         (GSourceFunc) eject_unmount_read_error);
-+  g_child_watch_add (child_pid, (GChildWatchFunc) eject_unmount_cb, task);
- 
--  child_watch = g_child_watch_source_new (child_pid);
--  g_task_attach_source (task, data->error_channel_source,
--                        (GSourceFunc) eject_unmount_cb);
--  g_source_unref (child_watch);
--
- handle_error:
-   if (error != NULL)
-     {
-@@ -451,12 +460,20 @@ g_unix_mount_eject (GMount             *mount,
+ #include "gsubprocess.h"
+ #include "gioenums.h"
+@@ -355,12 +361,20 @@ g_unix_mount_eject (GMount             *mount,
    GUnixMount *unix_mount = G_UNIX_MOUNT (mount);
    char *argv[] = {"eject", NULL, NULL};
  
