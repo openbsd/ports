@@ -1,23 +1,10 @@
-$OpenBSD: patch-giscanner_utils_py,v 1.10 2014/03/17 12:23:24 ajacoutot Exp $
+$OpenBSD: patch-giscanner_utils_py,v 1.11 2014/03/26 08:29:11 jasper Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=726518
 
-From 513dfb969c2317377eb0f0ec150767a8d95c6d2e Mon Sep 17 00:00:00 2001
-From: Clemens Lang <cal@macports.org>
-Date: Mon, 10 Feb 2014 23:44:06 +0000
-Subject: scanner: Improve compatibility with OS X
-
---- giscanner/utils.py.orig	Wed Jul 10 18:13:23 2013
-+++ giscanner/utils.py	Mon Mar 17 12:21:29 2014
-@@ -21,6 +21,7 @@
- import re
- import os
- import subprocess
-+import platform
- 
- 
- _debugflags = None
-@@ -120,6 +121,12 @@ def get_libtool_command(options):
+--- giscanner/utils.py.orig	Tue Mar 25 10:09:29 2014
++++ giscanner/utils.py	Tue Mar 25 10:09:32 2014
+@@ -143,6 +143,12 @@ def get_libtool_command(options):
          return None
  
      libtool_path = options.libtool_path
@@ -30,24 +17,3 @@ Subject: scanner: Improve compatibility with OS X
      if libtool_path:
          # Automake by default sets:
          # LIBTOOL = $(SHELL) $(top_builddir)/libtool
-@@ -127,14 +134,18 @@ def get_libtool_command(options):
-         # we simply split().
-         return libtool_path.split(' ')
- 
-+    libtool_cmd = 'libtool'
-+    if platform.system() == 'Darwin':
-+        # libtool on OS X is a completely different program written by Apple
-+        libtool_cmd = 'glibtool'
-     try:
--        subprocess.check_call(['libtool', '--version'],
-+        subprocess.check_call([libtool_cmd, '--version'],
-                               stdout=open(os.devnull))
-     except (subprocess.CalledProcessError, OSError):
-         # If libtool's not installed, assume we don't need it
-         return None
- 
--    return ['libtool']
-+    return [libtool_cmd]
- 
- 
- def files_are_identical(path1, path2):
