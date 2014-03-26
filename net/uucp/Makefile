@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.21 2013/03/11 11:35:58 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2014/03/26 20:57:14 jca Exp $
 
 COMMENT=	UUCP suite
 
 DISTNAME=	uucp-1.07
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net mail
 
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c
 
 MASTER_SITES=	${MASTER_SITE_GNU:=uucp/}
+
+RUN_DEPENDS=	mail/rmail
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--sbindir=${PREFIX}/libexec/uucp \
@@ -22,6 +24,8 @@ SAMPLES=	call config dial dialcode passwd port sys1 sys2
 pre-build:
 	@perl -pi -e "s,/usr/local/conf/uucp,${SYSCONFDIR}/uucp,g" \
 		${WRKSRC}/sample/* ${WRKSRC}/uucp.texi
+	@perl -pi -e "s,/usr/local/bin,${LOCALBASE}/bin,g" \
+		${WRKSRC}/policy.h
 	@perl -pi -e "s,/usr/spool/uucp,/var/spool/uucp,g" \
 		${WRKSRC}/sample/* ${WRKSRC}/uucp.texi
 	@perl -pi -e "s,/usr/spool/anonymous,/var/spool/anonymous,g" \
