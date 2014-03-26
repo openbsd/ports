@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.302 2014/03/24 21:37:00 landry Exp $
+# $OpenBSD: Makefile,v 1.303 2014/03/26 20:55:04 jca Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -180,6 +180,7 @@
      SUBDIR += rcube-sieverules
      SUBDIR += rcube-yubikey-plugin
      SUBDIR += relaydb
+     SUBDIR += rmail
      SUBDIR += roundcubemail
      SUBDIR += rss2email
      SUBDIR += ruby-mail
