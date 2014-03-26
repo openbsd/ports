@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/07/12 00:49:23 jca Exp $
+# $OpenBSD: Makefile,v 1.9 2014/03/26 18:17:49 ajacoutot Exp $
 
 # pinentry builds against it's own stripped version of libassuan
 # I will see with upstream how to change this behavior
@@ -10,8 +10,8 @@ VERSION = 	0.8.1
 DISTNAME = 	pinentry-${VERSION}
 CATEGORIES = 	security
 
-REVISION-main = 0
-REVISION-gtk2 = 0
+REVISION-main = 1
+REVISION-gtk2 = 1
 PKGNAME-main = 	${DISTNAME}
 PKGNAME-gtk2 = 	pinentry-gtk2-${VERSION}
 
@@ -26,17 +26,17 @@ PERMIT_PACKAGE_CDROM = 	Yes
 
 MULTI_PACKAGES = 	-main -gtk2
 
-WANTLIB-main = 		${WANTLIB} c ncurses
-WANTLIB-gtk2 = 		${WANTLIB} c GL X11 Xcomposite Xcursor Xdamage \
+WANTLIB-main = 		c ncurses ${MODLIBICONV_WANTLIB}
+WANTLIB-gtk2 = 		${WANTLIB} c X11 Xcomposite Xcursor Xdamage \
 			Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 \
-			cairo expat fontconfig freetype gdk-x11-2.0 \
-			gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0  \
-			gobject-2.0 gthread-2.0 gtk-x11-2.0 intl m ncurses \
-			pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png \
-			pthread pthread-stubs xcb xcb-render xcb-shm z
+			cairo fontconfig freetype gdk-x11-2.0 \
+			gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
+			gobject-2.0 gtk-x11-2.0 m ncurses \
+			pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+			pthread z
 LIB_DEPENDS-gtk2 = 	x11/gtk+2
 
-MODULES = 		converters/libiconv
+MODULES = 		devel/gettext converters/libiconv
 
 CONFIGURE_STYLE = 	gnu
 CONFIGURE_ENV = 	CPPFLAGS="-I${LOCALBASE}/include" \
