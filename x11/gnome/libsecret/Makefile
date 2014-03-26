@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2014/03/09 22:22:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2014/03/26 17:55:41 ajacoutot Exp $
 
 COMMENT=		library for storing and retrieving passwords and secrets
 
@@ -33,7 +33,7 @@ TEST_IS_INTERACTIVE=	X11
 TEST_DEPENDS=		devel/py-gobject3 \
 			x11/dbus-python
 
-# regression tests call 'python' directly
+# regression tests call 'env python'
 MODULES +=		lang/python
 TEST_DEPENDS +=		${MODPY_RUN_DEPENDS}
 MODPY_RUNDEP=		No
