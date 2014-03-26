@@ -1,0 +1,16 @@
+$OpenBSD: patch-assembler_jit_ExecutableAllocator_h,v 1.1.1.1 2014/03/26 12:13:53 jasper Exp $
+--- assembler/jit/ExecutableAllocator.h.orig	Sun Aug 11 00:23:06 2013
++++ assembler/jit/ExecutableAllocator.h	Sun Aug 11 00:23:47 2013
+@@ -37,6 +37,12 @@
+ #include "js/HashTable.h"
+ #include "js/Vector.h"
+ 
++#if defined(__mips64__)
++#if defined(__OpenBSD__)
++#include <mips64/sysarch.h>
++#endif
++#endif
++
+ #if WTF_CPU_SPARC
+ #ifdef linux  // bugzilla 502369
+ static void sync_instruction_memory(caddr_t v, u_int len)

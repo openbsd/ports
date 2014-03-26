@@ -1,0 +1,40 @@
+$OpenBSD: patch-assembler_wtf_Platform_h,v 1.1.1.1 2014/03/26 12:13:53 jasper Exp $
+Fix mips64
+--- assembler/wtf/Platform.h.orig	Sun Aug 11 00:24:56 2013
++++ assembler/wtf/Platform.h	Sun Aug 11 00:27:34 2013
+@@ -139,9 +139,14 @@
+ 
+ /* WTF_CPU_MIPS - MIPS 32-bit */
+ /* Note: Only O32 ABI is tested, so we enable it for O32 ABI for now.  */
+-#if (defined(mips) || defined(__mips__) || defined(MIPS) || defined(_MIPS_)) \
+-    && defined(_ABIO32)
++#if (defined(mips) || defined(__mips__) || defined(MIPS) || defined(_MIPS_) || defined (__mips64__))
++#if defined(_ABIO32)
+ #define WTF_CPU_MIPS 1
++#endif
++#if defined(__mips64__)
++#define WTF_CPU_MIPS64        1
++#define USE_SYSTEM_MALLOC     1
++#endif
+ #if defined(__MIPSEB__)
+ #define WTF_CPU_BIG_ENDIAN 1
+ #endif
+@@ -358,7 +363,7 @@
+ 
+ #endif /* ARM */
+ 
+-#if WTF_CPU_ARM || WTF_CPU_MIPS
++#if WTF_CPU_ARM || WTF_CPU_MIPS || WTF_CPU_MIPS64
+ #define WTF_CPU_NEEDS_ALIGNED_ACCESS 1
+ #endif
+ 
+@@ -1010,7 +1015,8 @@
+     || WTF_CPU_ALPHA \
+     || WTF_CPU_SPARC64 \
+     || WTF_CPU_S390X \
+-    || WTF_CPU_PPC64
++    || WTF_CPU_PPC64 \
++    || WTF_CPU_MIPS64
+ #define WTF_USE_JSVALUE64 1
+ #else
+ #define WTF_USE_JSVALUE32_64 1

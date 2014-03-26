@@ -1,0 +1,13 @@
+$OpenBSD: patch-ctypes_libffi_src_x86_freebsd_S,v 1.1.1.1 2014/03/26 12:13:53 jasper Exp $
+--- ctypes/libffi/src/x86/freebsd.S.orig	Thu Mar 31 21:08:36 2011
++++ ctypes/libffi/src/x86/freebsd.S	Mon Apr  1 11:28:19 2013
+@@ -49,6 +49,9 @@ ffi_call_SYSV:
+ 	movl  16(%ebp),%ecx
+ 	subl  %ecx,%esp
+ 
++	/* Align the stack pointer to 16-bytes */
++	andl  $0xfffffff0, %esp
++
+ 	movl  %esp,%eax
+ 
+ 	/* Place all of the ffi_prep_args in position  */

@@ -1,0 +1,13 @@
+$OpenBSD: patch-jsgc_cpp,v 1.1.1.1 2014/03/26 12:13:53 jasper Exp $
+Fix build on hppa
+--- jsgc.cpp.orig	Sat Aug 10 18:57:20 2013
++++ jsgc.cpp	Sat Aug 10 18:57:43 2013
+@@ -1176,7 +1176,7 @@ MarkConservativeStackRoots(JSTracer *trc, bool useSave
+ 
+     uintptr_t *stackMin, *stackEnd;
+ #if JS_STACK_GROWTH_DIRECTION > 0
+-    stackMin = rt->nativeStackBase;
++    stackMin = reinterpret_cast<uintptr_t *>(rt->nativeStackBase);
+     stackEnd = cgcd->nativeStackTop;
+ #else
+     stackMin = cgcd->nativeStackTop + 1;

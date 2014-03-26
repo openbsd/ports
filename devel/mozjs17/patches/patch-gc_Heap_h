@@ -1,0 +1,17 @@
+$OpenBSD: patch-gc_Heap_h,v 1.1.1.1 2014/03/26 12:13:53 jasper Exp $
+alpha & sparc64 has 8k pagesize too
+assume all mips64 have 16k pagesize..
+--- gc/Heap.h.orig	Mon Feb 11 22:33:22 2013
++++ gc/Heap.h	Sun Aug 11 08:06:15 2013
+@@ -108,8 +108,10 @@ struct Cell
+  * Bug 692267: Move page size definition to gc/Memory.h and include it
+  *             directly once jsgc.h is no longer an installed header.
+  */
+-#if defined(SOLARIS) && (defined(__sparc) || defined(__sparcv9))
++#if defined(SOLARIS) && (defined(__sparc) || defined(__sparcv9)) || defined(__alpha__) || defined (__sparc64__)
+ const size_t PageShift = 13;
++#elif defined(__mips64__)
++const size_t PageShift = 14;
+ #else
+ const size_t PageShift = 12;
+ #endif

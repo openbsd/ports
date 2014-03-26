@@ -1,0 +1,76 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/03/26 12:13:53 jasper Exp $
+@option no-default-conflict
+@pkgpath devel/spidermonkey
+@conflict spidermonkey->=17.0,<18.0
+@bin bin/js17
+bin/js17-config
+include/js-${MOZILLA_VERSION}/
+include/js-${MOZILLA_VERSION}/ds/
+include/js-${MOZILLA_VERSION}/ds/BitArray.h
+include/js-${MOZILLA_VERSION}/gc/
+include/js-${MOZILLA_VERSION}/gc/Barrier.h
+include/js-${MOZILLA_VERSION}/gc/Heap.h
+include/js-${MOZILLA_VERSION}/gc/Root.h
+include/js-${MOZILLA_VERSION}/gc/Statistics.h
+include/js-${MOZILLA_VERSION}/gc/StoreBuffer.h
+include/js-${MOZILLA_VERSION}/js/
+include/js-${MOZILLA_VERSION}/js-config.h
+include/js-${MOZILLA_VERSION}/js.msg
+include/js-${MOZILLA_VERSION}/js/HashTable.h
+include/js-${MOZILLA_VERSION}/js/LegacyIntTypes.h
+include/js-${MOZILLA_VERSION}/js/MemoryMetrics.h
+include/js-${MOZILLA_VERSION}/js/RequiredDefines.h
+include/js-${MOZILLA_VERSION}/js/TemplateLib.h
+include/js-${MOZILLA_VERSION}/js/Utility.h
+include/js-${MOZILLA_VERSION}/js/Vector.h
+include/js-${MOZILLA_VERSION}/jsalloc.h
+include/js-${MOZILLA_VERSION}/jsapi.h
+include/js-${MOZILLA_VERSION}/jsatom.h
+include/js-${MOZILLA_VERSION}/jsatom.tbl
+include/js-${MOZILLA_VERSION}/jsclass.h
+include/js-${MOZILLA_VERSION}/jsclist.h
+include/js-${MOZILLA_VERSION}/jscpucfg.h
+include/js-${MOZILLA_VERSION}/jsdbgapi.h
+include/js-${MOZILLA_VERSION}/jsdhash.h
+include/js-${MOZILLA_VERSION}/jsfriendapi.h
+include/js-${MOZILLA_VERSION}/jsgc.h
+include/js-${MOZILLA_VERSION}/jslock.h
+include/js-${MOZILLA_VERSION}/json.h
+include/js-${MOZILLA_VERSION}/jsperf.h
+include/js-${MOZILLA_VERSION}/jsprf.h
+include/js-${MOZILLA_VERSION}/jsproto.tbl
+include/js-${MOZILLA_VERSION}/jsproxy.h
+include/js-${MOZILLA_VERSION}/jsprvtd.h
+include/js-${MOZILLA_VERSION}/jspubtd.h
+include/js-${MOZILLA_VERSION}/jstypes.h
+include/js-${MOZILLA_VERSION}/jsutil.h
+include/js-${MOZILLA_VERSION}/jsval.h
+include/js-${MOZILLA_VERSION}/jsversion.h
+include/js-${MOZILLA_VERSION}/jswrapper.h
+include/js-${MOZILLA_VERSION}/mozilla/
+include/js-${MOZILLA_VERSION}/mozilla/Assertions.h
+include/js-${MOZILLA_VERSION}/mozilla/Attributes.h
+include/js-${MOZILLA_VERSION}/mozilla/BloomFilter.h
+include/js-${MOZILLA_VERSION}/mozilla/CheckedInt.h
+include/js-${MOZILLA_VERSION}/mozilla/Constants.h
+include/js-${MOZILLA_VERSION}/mozilla/FloatingPoint.h
+include/js-${MOZILLA_VERSION}/mozilla/GuardObjects.h
+include/js-${MOZILLA_VERSION}/mozilla/HashFunctions.h
+include/js-${MOZILLA_VERSION}/mozilla/Likely.h
+include/js-${MOZILLA_VERSION}/mozilla/LinkedList.h
+include/js-${MOZILLA_VERSION}/mozilla/MSStdInt.h
+include/js-${MOZILLA_VERSION}/mozilla/MathAlgorithms.h
+include/js-${MOZILLA_VERSION}/mozilla/NullPtr.h
+include/js-${MOZILLA_VERSION}/mozilla/RangedPtr.h
+include/js-${MOZILLA_VERSION}/mozilla/RefPtr.h
+include/js-${MOZILLA_VERSION}/mozilla/SHA1.h
+include/js-${MOZILLA_VERSION}/mozilla/Scoped.h
+include/js-${MOZILLA_VERSION}/mozilla/StandardInteger.h
+include/js-${MOZILLA_VERSION}/mozilla/ThreadLocal.h
+include/js-${MOZILLA_VERSION}/mozilla/TypeTraits.h
+include/js-${MOZILLA_VERSION}/mozilla/Types.h
+include/js-${MOZILLA_VERSION}/mozilla/Util.h
+include/js-${MOZILLA_VERSION}/mozilla/WeakPtr.h
+lib/libmozjs-${MOZILLA_VERSION}.a
+@lib lib/libmozjs-${MOZILLA_VERSION}.so.${LIBmozjs-17.0_VERSION}
+lib/pkgconfig/mozjs-${MOZILLA_VERSION}.pc

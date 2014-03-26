@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2014/03/26 12:13:53 jasper Exp $
+Disable methodjit on mips64
+--- configure.orig	Mon Mar 25 20:34:20 2013
++++ configure	Sat Aug 10 23:33:46 2013
+@@ -8359,7 +8359,7 @@ EOF
+ 
+     fi
+     ;;
+-mips*-*)
++mips-*)
+     ENABLE_METHODJIT=1
+     ENABLE_MONOIC=1
+     ENABLE_POLYIC=1

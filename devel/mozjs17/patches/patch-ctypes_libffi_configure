@@ -1,0 +1,22 @@
+$OpenBSD: patch-ctypes_libffi_configure,v 1.1.1.1 2014/03/26 12:13:53 jasper Exp $
+fix mips64* & hppa
+--- ctypes/libffi/configure.orig	Sat Aug 10 18:42:15 2013
++++ ctypes/libffi/configure	Sat Aug 10 18:43:11 2013
+@@ -11213,7 +11213,7 @@ case "$host" in
+ 	TARGET=FRV; TARGETDIR=frv
+ 	;;
+ 
+-  hppa*-*-linux* | parisc*-*-linux*)
++  hppa*-*-linux* | hppa*-*-openbsd* | parisc*-*-linux*)
+ 	TARGET=PA_LINUX; TARGETDIR=pa
+ 	;;
+   hppa*64-*-hpux*)
+@@ -11256,7 +11256,7 @@ case "$host" in
+   mips-sgi-irix5.* | mips-sgi-irix6.*)
+ 	TARGET=MIPS; TARGETDIR=mips
+ 	;;
+-  mips*-*linux*)
++  mips*-*linux* | mips*-*-openbsd*)
+ 	# Support 128-bit long double for NewABI.
+ 	HAVE_LONG_DOUBLE='defined(__mips64)'
+ 	TARGET=MIPS; TARGETDIR=mips
