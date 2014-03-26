@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.831 2014/03/16 12:04:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.832 2014/03/26 10:43:58 jasper Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -582,6 +582,7 @@
      SUBDIR += tinyfugue
      SUBDIR += tircd
      SUBDIR += tircproxy
+     SUBDIR += tkabber
      SUBDIR += tkirc
      SUBDIR += tn5250
      SUBDIR += tor
