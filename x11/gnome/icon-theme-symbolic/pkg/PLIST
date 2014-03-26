@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2013/10/14 12:51:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2014/03/26 13:32:33 ajacoutot Exp $
 share/icons/gnome/scalable/
 share/icons/gnome/scalable/actions/
 share/icons/gnome/scalable/actions/action-unavailable-symbolic.svg
@@ -14,7 +14,6 @@ share/icons/gnome/scalable/actions/document-properties-symbolic.svg
 share/icons/gnome/scalable/actions/document-save-as-symbolic.svg
 share/icons/gnome/scalable/actions/document-save-symbolic.svg
 share/icons/gnome/scalable/actions/document-send-symbolic.svg
-share/icons/gnome/scalable/actions/drive-multidisk-symbolic.svg
 share/icons/gnome/scalable/actions/edit-clear-all-symbolic.svg
 share/icons/gnome/scalable/actions/edit-clear-rtl-symbolic.svg
 share/icons/gnome/scalable/actions/edit-clear-symbolic.svg
@@ -84,6 +83,7 @@ share/icons/gnome/scalable/actions/media-skip-backward-rtl-symbolic.svg
 share/icons/gnome/scalable/actions/media-skip-backward-symbolic.svg
 share/icons/gnome/scalable/actions/media-skip-forward-rtl-symbolic.svg
 share/icons/gnome/scalable/actions/media-skip-forward-symbolic.svg
+share/icons/gnome/scalable/actions/media-view-subtitles-symbolic.svg
 share/icons/gnome/scalable/actions/object-flip-horizontal-symbolic.svg
 share/icons/gnome/scalable/actions/object-flip-vertical-symbolic.svg
 share/icons/gnome/scalable/actions/object-rotate-left-symbolic.svg
@@ -161,6 +161,7 @@ share/icons/gnome/scalable/devices/audio-headset-symbolic.svg
 share/icons/gnome/scalable/devices/audio-input-microphone-symbolic.svg
 share/icons/gnome/scalable/devices/audio-speakers-symbolic.svg
 share/icons/gnome/scalable/devices/camera-photo-symbolic.svg
+share/icons/gnome/scalable/devices/camera-video-symbolic.svg
 share/icons/gnome/scalable/devices/camera-web-symbolic.svg
 share/icons/gnome/scalable/devices/colorimeter-colorhug-symbolic.svg
 share/icons/gnome/scalable/devices/computer-apple-ipad-symbolic.svg
@@ -170,6 +171,8 @@ share/icons/gnome/scalable/devices/drive-harddisk-ieee1394-symbolic.svg
 share/icons/gnome/scalable/devices/drive-harddisk-symbolic.svg
 share/icons/gnome/scalable/devices/drive-harddisk-system-symbolic.svg
 share/icons/gnome/scalable/devices/drive-harddisk-usb-symbolic.svg
+share/icons/gnome/scalable/devices/drive-multidisk-alt-symbolic.svg
+share/icons/gnome/scalable/devices/drive-multidisk-alt2-symbolic.svg
 share/icons/gnome/scalable/devices/drive-multidisk-symbolic.svg
 share/icons/gnome/scalable/devices/drive-optical-symbolic.svg
 share/icons/gnome/scalable/devices/drive-removable-media-symbolic.svg
@@ -190,6 +193,8 @@ share/icons/gnome/scalable/devices/media-removable-symbolic.svg
 share/icons/gnome/scalable/devices/media-zip-symbolic.svg
 share/icons/gnome/scalable/devices/multimedia-player-apple-ipod-touch-symbolic.svg
 share/icons/gnome/scalable/devices/multimedia-player-symbolic.svg
+share/icons/gnome/scalable/devices/network-wired-symbolic.svg
+share/icons/gnome/scalable/devices/network-wireless-symbolic.svg
 share/icons/gnome/scalable/devices/phone-apple-iphone-symbolic.svg
 share/icons/gnome/scalable/devices/phone-symbolic.svg
 share/icons/gnome/scalable/devices/printer-network-symbolic.svg
@@ -238,6 +243,7 @@ share/icons/gnome/scalable/mimetypes/application-certificate-symbolic.svg
 share/icons/gnome/scalable/mimetypes/application-rss+xml-symbolic.svg
 share/icons/gnome/scalable/mimetypes/application-x-appliance-symbolic.svg
 share/icons/gnome/scalable/mimetypes/audio-x-generic-symbolic.svg
+share/icons/gnome/scalable/mimetypes/inode-directory-symbolic.svg
 share/icons/gnome/scalable/mimetypes/package-x-generic-symbolic.svg
 share/icons/gnome/scalable/mimetypes/text-x-generic-symbolic.svg
 share/icons/gnome/scalable/mimetypes/video-x-generic-symbolic.svg
@@ -319,6 +325,8 @@ share/icons/gnome/scalable/status/network-cellular-acquiring-symbolic.svg
 share/icons/gnome/scalable/status/network-cellular-connected-symbolic.svg
 share/icons/gnome/scalable/status/network-cellular-edge-symbolic.svg
 share/icons/gnome/scalable/status/network-cellular-gprs-symbolic.svg
+share/icons/gnome/scalable/status/network-cellular-no-route-symbolic.svg
+share/icons/gnome/scalable/status/network-cellular-offline-symbolic.svg
 share/icons/gnome/scalable/status/network-cellular-signal-excellent-symbolic.svg
 share/icons/gnome/scalable/status/network-cellular-signal-good-symbolic.svg
 share/icons/gnome/scalable/status/network-cellular-signal-none-symbolic.svg
@@ -336,11 +344,14 @@ share/icons/gnome/scalable/status/network-vpn-acquiring-symbolic.svg
 share/icons/gnome/scalable/status/network-vpn-symbolic.svg
 share/icons/gnome/scalable/status/network-wired-acquiring-symbolic.svg
 share/icons/gnome/scalable/status/network-wired-disconnected-symbolic.svg
-share/icons/gnome/scalable/status/network-wired-symbolic.svg
+share/icons/gnome/scalable/status/network-wired-no-route-symbolic.svg
+share/icons/gnome/scalable/status/network-wired-offline-symbolic.svg
 share/icons/gnome/scalable/status/network-wireless-acquiring-symbolic.svg
 share/icons/gnome/scalable/status/network-wireless-connected-symbolic.svg
 share/icons/gnome/scalable/status/network-wireless-encrypted-symbolic.svg
 share/icons/gnome/scalable/status/network-wireless-hotspot-symbolic.svg
+share/icons/gnome/scalable/status/network-wireless-no-route-symbolic.svg
+share/icons/gnome/scalable/status/network-wireless-offline-symbolic.svg
 share/icons/gnome/scalable/status/network-wireless-signal-excellent-symbolic.svg
 share/icons/gnome/scalable/status/network-wireless-signal-good-symbolic.svg
 share/icons/gnome/scalable/status/network-wireless-signal-none-symbolic.svg
