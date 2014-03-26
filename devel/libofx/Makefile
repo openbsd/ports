@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.10 2013/07/11 19:29:32 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2014/03/26 20:04:14 landry Exp $
 
 COMMENT=	opensource implementation of the OFX specification
 
-DISTNAME=	libofx-0.9.8
+DISTNAME=	libofx-0.9.9
 CATEGORIES=	devel
 
 HOMEPAGE=	http://libofx.sourceforge.net/
 
 MAINTAINER=	Landry Breuil <landry@openbsd.org>
 
-SHARED_LIBS=	ofx 7.0	# .5.1
+SHARED_LIBS=	ofx 7.0	# .6.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

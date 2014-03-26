@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/07/11 19:29:33 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/03/26 20:04:14 landry Exp $
 @bin bin/ofx2qif
 @bin bin/ofxdump
 include/libofx/
@@ -148,8 +148,8 @@ share/doc/libofx/html/inc_2libofx_8h.html
 share/doc/libofx/html/inc_2libofx_8h_source.html
 share/doc/libofx/html/index.html
 share/doc/libofx/html/jquery.js
-share/doc/libofx/html/libofx-0_89_87_2inc_2libofx_8h.html
-share/doc/libofx/html/libofx-0_89_87_2inc_2libofx_8h_source.html
+share/doc/libofx/html/libofx-0_89_88_2inc_2libofx_8h.html
+share/doc/libofx/html/libofx-0_89_88_2inc_2libofx_8h_source.html
 share/doc/libofx/html/messages_8cpp.html
 share/doc/libofx/html/messages_8cpp_source.html
 share/doc/libofx/html/messages_8hh.html
