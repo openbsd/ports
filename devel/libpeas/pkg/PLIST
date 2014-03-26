@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2013/04/15 07:39:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2014/03/26 10:43:51 jasper Exp $
 @bin bin/peas-demo
 include/libpeas-1.0/
 include/libpeas-1.0/libpeas/
@@ -21,16 +21,12 @@ lib/libpeas-1.0/
 lib/libpeas-1.0.la
 @lib lib/libpeas-1.0.so.${LIBpeas-1.0_VERSION}
 lib/libpeas-1.0/loaders/
-lib/libpeas-1.0/loaders/libgjsloader.so
 lib/libpeas-1.0/loaders/libpython3loader.so
 lib/libpeas-1.0/loaders/libpythonloader.so
 lib/libpeas-gtk-1.0.la
 @lib lib/libpeas-gtk-1.0.so.${LIBpeas-gtk-1.0_VERSION}
 lib/peas-demo/
 lib/peas-demo/plugins/
-lib/peas-demo/plugins/gjshello/
-lib/peas-demo/plugins/gjshello/gjshello.js
-lib/peas-demo/plugins/gjshello/gjshello.plugin
 lib/peas-demo/plugins/helloworld/
 lib/peas-demo/plugins/helloworld/helloworld.plugin
 lib/peas-demo/plugins/helloworld/libhelloworld.so
@@ -97,8 +93,6 @@ share/locale/eu/LC_MESSAGES/libpeas.mo
 share/locale/fa/LC_MESSAGES/libpeas.mo
 share/locale/fi/LC_MESSAGES/libpeas.mo
 share/locale/fr/LC_MESSAGES/libpeas.mo
-share/locale/fur/
-share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/libpeas.mo
 share/locale/gl/LC_MESSAGES/libpeas.mo
 share/locale/gu/LC_MESSAGES/libpeas.mo
