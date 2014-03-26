@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2014/03/26 10:11:01 landry Exp $
+# $OpenBSD: Makefile,v 1.22 2014/03/26 16:05:38 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 # based on ffx 24 engine
@@ -29,6 +29,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES =	lang/python
 # necessary glue to build with the correct compiler after fx 17
+# sync with x11/gnome/gjs and x11/gnome/shell
 MODULES +=		gcc4 lang/clang
 MODGCC4_ARCHS =		powerpc sparc64 alpha i386
 MODGCC4_LANGS =		c c++

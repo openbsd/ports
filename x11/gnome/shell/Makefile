@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2014/03/26 11:05:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.71 2014/03/26 16:05:38 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
@@ -35,11 +35,12 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
-# Needed by (gjs -> spidermonkey)
-MODULES +=              gcc4 lang/clang
-MODGCC4_ARCHS =         powerpc sparc64 alpha i386
-MODCLANG_ARCHS =        amd64
-MODCLANG_LANGS =        c c++
+# sync with devel/spidermonkey
+MODULES +=		gcc4 lang/clang
+MODGCC4_ARCHS =		powerpc sparc64 alpha i386
+MODGCC4_LANGS =		c c++
+MODCLANG_ARCHS =	amd64
+MODCLANG_LANGS =	c c++
 
 MODGNOME_TOOLS=		gi
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2014/03/26 11:05:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2014/03/26 16:05:38 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -30,9 +30,10 @@ MODULES=		devel/gettext \
 			lang/clang \
 			x11/gnome
 
-# Needed by spidermonkey
-MODULES +=              gcc4 lang/clang
-MODGCC4_ARCHS =         powerpc sparc64 alpha i386
+# sync with devel/spidermonkey
+MODULES +=		gcc4 lang/clang
+MODGCC4_ARCHS =		powerpc sparc64 alpha i386
+MODGCC4_LANGS =		c c++
 MODCLANG_ARCHS =	amd64
 MODCLANG_LANGS =	c c++
 
