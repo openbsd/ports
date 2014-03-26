@@ -1,12 +1,12 @@
-$OpenBSD: patch-phoenix_pro,v 1.6 2012/04/05 21:02:25 jasper Exp $
+$OpenBSD: patch-phoenix_pro,v 1.7 2014/03/26 16:00:31 jasper Exp $
 
 - Don't build everything twice, just once takes long enough already.
 - Remove bundled boost and use the system-wide version instead.
 
---- phoenix.pro.orig	Sat Mar 10 16:09:14 2012
-+++ phoenix.pro	Thu Apr  5 22:36:34 2012
+--- phoenix.pro.orig	Fri Jan 24 21:00:54 2014
++++ phoenix.pro	Wed Mar 26 16:11:04 2014
 @@ -31,7 +31,7 @@
- # QTPLUGIN  += qjpeg qsqlite 
+ # QTPLUGIN  += qjpeg qsqlite
  
  
 -CONFIG += debug_and_release
@@ -14,9 +14,4 @@ $OpenBSD: patch-phoenix_pro,v 1.6 2012/04/05 21:02:25 jasper Exp $
  win32 {
  # release build using msvc 2010 needs to use Multi-threaded (/MT) for the code generation/runtime library option
  # release build using msvc 2010 needs to add msvcrt.lib;%(IgnoreSpecificDefaultLibraries) to the linker/no default libraries option
-@@ -131,4 +131,4 @@ RESOURCES += phoenixresources.qrc
- TARGET = Fritzing
- TEMPLATE = app
  
--	
-+INCLUDEPATH += ${LOCALBASE}/include/boost/	

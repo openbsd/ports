@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2013/05/10 20:30:30 rpe Exp $
+# $OpenBSD: Makefile,v 1.18 2014/03/26 16:00:31 jasper Exp $
 
 COMMENT=	interactive electronics designing software
 
-V=		0.7.7
+V=		0.8.7
 DISTNAME=	fritzing-$Vb.source
 PKGNAME=	fritzing-$V
 CATEGORIES=	cad
@@ -25,12 +25,8 @@ NO_TEST=	Yes
 BUILD_DEPENDS=	devel/boost
 RUN_DEPENDS=	devel/desktop-file-utils
 
-# XXX: Sigh...words fail me.
-WRKDIST=	${WRKDIR}/fritzing-0.7.6b.source
-
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/phoenix.pro ${WRKSRC}/src/fapplication.cpp
-	cd ${WRKSRC} && rm -r src/lib/boost_1_43_0
 
 # -DLINUX_32 gets added to CFLAGS, though it's only used to figure out
 # if there is a newer version of the 32-bit Linux binary on the upstream
@@ -44,7 +40,7 @@ do-install:
 		${FILESDIR}/fritzing.sh ${PREFIX}/bin/fritzing
 	${INSTALL_PROGRAM} ${WRKSRC}/Fritzing ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/fritzing/
-	cd ${WRKSRC}; tar cf - bins parts resources sketches tools translations | \
+	cd ${WRKSRC}; tar cf - bins help parts pdb resources sketches tools translations | \
 		tar xf - -C ${PREFIX}/share/fritzing/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
 	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/fritzing.desktop \
