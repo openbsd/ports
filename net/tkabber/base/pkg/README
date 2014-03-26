@@ -1,0 +1,13 @@
+$OpenBSD: README,v 1.1.1.1 2014/03/26 09:50:34 kirby Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Optional dependencies for Tkabber:
+
+* snack (sound notifications)
+* tkimg (support for PNG, JPG images)
+* ispell (spell checking)
+* tkcon (Tk console)
+* tktray (iconify Tkabber)

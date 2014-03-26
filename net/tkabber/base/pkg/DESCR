@@ -1,0 +1,4 @@
+Tkabber is a fully-featured client for a Jabber instant messaging
+system. It is written in Tcl/Tk and has many features like support of
+unicode, ssl support, http proxy, file transfers and support of
+multi-user conference protocol.

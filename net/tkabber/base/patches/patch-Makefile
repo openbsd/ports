@@ -1,0 +1,20 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2014/03/26 09:50:34 kirby Exp $
+--- Makefile.orig	Wed Mar 19 15:08:10 2014
++++ Makefile	Wed Mar 19 15:14:06 2014
+@@ -30,7 +30,7 @@ install: install-bin install-doc install-examples
+ 
+ install-bin:
+ 	install -d $(DESTDIR)$(TKABBERDIR)
+-	cp -dr --no-preserve=ownership *.tcl $(SUBDIRS) $(DESTDIR)$(TKABBERDIR)
++	cp -R *.tcl $(SUBDIRS) $(DESTDIR)$(TKABBERDIR)
+ 	chmod 755 $(DESTDIR)$(TKABBERDIR)/tkabber.tcl
+ 	chmod 755 $(DESTDIR)$(TKABBERDIR)/tkabber-remote.tcl
+ 	install -d $(DESTDIR)$(BINDIR)
+@@ -47,6 +47,6 @@ install-doc: doc
+ 
+ install-examples:
+ 	install -d $(DESTDIR)$(DOCDIR)
+-	cp -dr --no-preserve=ownership examples $(DESTDIR)$(DOCDIR)
++	cp -R examples $(DESTDIR)$(DOCDIR)
+ 
+ .PHONY: all doc install install-bin install-doc install-examples
