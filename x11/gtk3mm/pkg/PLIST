@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2013/10/11 13:26:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/03/26 08:32:03 ajacoutot Exp $
 include/gdkmm-3.0/
 include/gdkmm-3.0/gdkmm/
 include/gdkmm-3.0/gdkmm.h
@@ -57,6 +57,7 @@ include/gtkmm-3.0/gtkmm/accellabel.h
 include/gtkmm-3.0/gtkmm/accelmap.h
 include/gtkmm-3.0/gtkmm/action.h
 include/gtkmm-3.0/gtkmm/actionable.h
+include/gtkmm-3.0/gtkmm/actionbar.h
 include/gtkmm-3.0/gtkmm/actiongroup.h
 include/gtkmm-3.0/gtkmm/activatable.h
 include/gtkmm-3.0/gtkmm/adjustment.h
@@ -121,6 +122,8 @@ include/gtkmm-3.0/gtkmm/filechooserdialog.h
 include/gtkmm-3.0/gtkmm/filechooserwidget.h
 include/gtkmm-3.0/gtkmm/filefilter.h
 include/gtkmm-3.0/gtkmm/fixed.h
+include/gtkmm-3.0/gtkmm/flowbox.h
+include/gtkmm-3.0/gtkmm/flowboxchild.h
 include/gtkmm-3.0/gtkmm/fontbutton.h
 include/gtkmm-3.0/gtkmm/fontchooser.h
 include/gtkmm-3.0/gtkmm/fontchooserdialog.h
@@ -174,6 +177,7 @@ include/gtkmm-3.0/gtkmm/paned.h
 include/gtkmm-3.0/gtkmm/papersize.h
 include/gtkmm-3.0/gtkmm/placessidebar.h
 include/gtkmm-3.0/gtkmm/plug.h
+include/gtkmm-3.0/gtkmm/popover.h
 include/gtkmm-3.0/gtkmm/printcontext.h
 include/gtkmm-3.0/gtkmm/printer.h
 include/gtkmm-3.0/gtkmm/printjob.h
@@ -187,6 +191,7 @@ include/gtkmm-3.0/gtkmm/private/accelgroup_p.h
 include/gtkmm-3.0/gtkmm/private/accellabel_p.h
 include/gtkmm-3.0/gtkmm/private/action_p.h
 include/gtkmm-3.0/gtkmm/private/actionable_p.h
+include/gtkmm-3.0/gtkmm/private/actionbar_p.h
 include/gtkmm-3.0/gtkmm/private/actiongroup_p.h
 include/gtkmm-3.0/gtkmm/private/activatable_p.h
 include/gtkmm-3.0/gtkmm/private/adjustment_p.h
@@ -249,6 +254,8 @@ include/gtkmm-3.0/gtkmm/private/filechooserdialog_p.h
 include/gtkmm-3.0/gtkmm/private/filechooserwidget_p.h
 include/gtkmm-3.0/gtkmm/private/filefilter_p.h
 include/gtkmm-3.0/gtkmm/private/fixed_p.h
+include/gtkmm-3.0/gtkmm/private/flowbox_p.h
+include/gtkmm-3.0/gtkmm/private/flowboxchild_p.h
 include/gtkmm-3.0/gtkmm/private/fontbutton_p.h
 include/gtkmm-3.0/gtkmm/private/fontchooser_p.h
 include/gtkmm-3.0/gtkmm/private/fontchooserdialog_p.h
@@ -301,6 +308,7 @@ include/gtkmm-3.0/gtkmm/private/paned_p.h
 include/gtkmm-3.0/gtkmm/private/papersize_p.h
 include/gtkmm-3.0/gtkmm/private/placessidebar_p.h
 include/gtkmm-3.0/gtkmm/private/plug_p.h
+include/gtkmm-3.0/gtkmm/private/popover_p.h
 include/gtkmm-3.0/gtkmm/private/printcontext_p.h
 include/gtkmm-3.0/gtkmm/private/printer_p.h
 include/gtkmm-3.0/gtkmm/private/printjob_p.h
