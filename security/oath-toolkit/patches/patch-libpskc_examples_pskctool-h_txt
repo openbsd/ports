@@ -1,0 +1,24 @@
+$OpenBSD: patch-libpskc_examples_pskctool-h_txt,v 1.1 2014/03/26 14:17:53 sthen Exp $
+
+sync for regression test
+
+--- libpskc/examples/pskctool-h.txt.orig	Wed Mar 26 14:05:56 2014
++++ libpskc/examples/pskctool-h.txt	Wed Mar 26 14:05:59 2014
+@@ -2,7 +2,7 @@ Manipulate Portable Symmetric Key Container (PSKC) dat
+ 
+ Usage: pskctool [OPTIONS]... [FILE]...
+ 
+-This tool allows you to parse, print, validate, sign and verify PSKC data.  The
++This tool allows you to parse, print, validate, sign and verify PSKC data.  The 
+ input is provided in FILE or on standard input.
+ 
+   -h, --help             Print help and exit
+@@ -15,7 +15,7 @@ input is provided in FILE or on standard input.
+ Selecting one of the following modes is required:
+ 
+  Mode: info
+-  -i, --info             Parse and print human readable summary of PSKC input
++  -i, --info             Parse and print human readable summary of PSKC input  
+                            (default=off)
+ 
+  Mode: validate

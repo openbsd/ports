@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2013/05/16 12:11:18 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2014/03/26 14:17:53 sthen Exp $
 @pkgpath security/oath-toolkit
 @bin bin/oathtool
 include/liboath/
@@ -26,4 +26,6 @@ lib/pkgconfig/liboath.pc
 @man man/man3/oath_totp_validate.3
 @man man/man3/oath_totp_validate2.3
 @man man/man3/oath_totp_validate2_callback.3
+@man man/man3/oath_totp_validate3.3
+@man man/man3/oath_totp_validate3_callback.3
 @man man/man3/oath_totp_validate_callback.3
