@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2013/03/29 15:21:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2014/03/26 15:24:41 ajacoutot Exp $
 @bin bin/devhelp
 include/devhelp-3.0/
 include/devhelp-3.0/devhelp/
@@ -26,6 +26,8 @@ lib/libdevhelp-3.la
 @lib lib/libdevhelp-3.so.${LIBdevhelp-3_VERSION}
 lib/pkgconfig/libdevhelp-3.0.pc
 share/GConf/gsettings/devhelp.convert
+share/appdata/
+share/appdata/devhelp.appdata.xml
 share/applications/devhelp.desktop
 share/devhelp/
 share/devhelp/assistant/
