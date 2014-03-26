@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2014/03/13 22:35:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2014/03/26 10:42:38 jasper Exp $
 
 TRACKER_VERSION=0.16
 
@@ -8,6 +8,7 @@ COMMENT=	document manager for GNOME
 
 GNOME_PROJECT=	gnome-documents
 GNOME_VERSION=	3.10.2
+REVISION=	0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,7 +23,7 @@ WANTLIB += gnome-desktop-3 goa-1.0 gobject-2.0 gpg-error graphite2
 WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
 WANTLIB += harfbuzz harfbuzz-icu icudata icui18n icuuc idn javascriptcoregtk-3.0
-WANTLIB += jpeg json-glib-1.0 kvm m mozjs-17.0 ncursesw nspr4
+WANTLIB += jpeg json-glib-1.0 kvm m mozjs-24 ncursesw nspr4
 WANTLIB += nss3 oauth orc-0.4 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += readline rest-0.7 secret-1 smime3 softokn3 soup-2.4

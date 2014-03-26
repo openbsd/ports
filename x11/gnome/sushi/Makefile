@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/10/06 09:08:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2014/03/26 10:42:38 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	quick previewer for Nautilus
 
 GNOME_PROJECT=	sushi
 GNOME_VERSION=	3.10.0
-REVISION=	1
+REVISION=	2
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,7 +22,7 @@ WANTLIB += gpg-error graphite2 gssapi gstapp-1.0 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstfft-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 gtksourceview-3.0
 WANTLIB += harfbuzz harfbuzz-icu heimbase icudata icui18n icuuc
-WANTLIB += javascriptcoregtk-3.0 jpeg json-glib-1.0 krb5 m mozjs-17.0
+WANTLIB += javascriptcoregtk-3.0 jpeg json-glib-1.0 krb5 m mozjs-24
 WANTLIB += musicbrainz5 ncursesw neon orc-0.4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png proxy pthread pthread-stubs
 WANTLIB += readline roken secret-1 soup-2.4 sqlite3 ssl stdc++
