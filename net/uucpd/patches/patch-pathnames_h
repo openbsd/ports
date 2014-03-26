@@ -1,0 +1,9 @@
+$OpenBSD: patch-pathnames_h,v 1.1.1.1 2014/03/26 20:49:27 jca Exp $
+--- pathnames.h.orig	Wed Mar 12 15:39:45 2014
++++ pathnames.h	Wed Mar 12 15:40:05 2014
+@@ -33,4 +33,4 @@
+ 
+ #include <paths.h>
+ 
+-#define	_PATH_UUCICO	"/usr/local/libexec/uucp/uucico"
++#define	_PATH_UUCICO	"${LOCALBASE}/libexec/uucp/uucico"

@@ -1,0 +1,12 @@
+$OpenBSD: patch-uucpd_8,v 1.1.1.1 2014/03/26 20:49:27 jca Exp $
+--- uucpd.8.orig	Wed Mar 12 15:39:43 2014
++++ uucpd.8	Wed Mar 12 15:40:39 2014
+@@ -42,7 +42,7 @@ daemon reads a username and password, and then execute
+ the UUCP file transfer daemon, if the
+ username and password match a valid account and
+ the account's shell is
+-.Dq /usr/local/libexec/uucp/uucico .
++.Dq ${LOCALBASE}/libexec/uucp/uucico .
+ .Pp
+ .Nm
+ is started by

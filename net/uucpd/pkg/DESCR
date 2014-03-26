@@ -1,0 +1,6 @@
+The uucpd daemon reads a username and password, and then executes
+uucico, the UUCP file transfer daemon, if the username and password
+match a valid account and the account's shell is
+``${LOCALBASE}/libexec/uucp/uucico''.
+
+uucico can be found in the uucp package.
