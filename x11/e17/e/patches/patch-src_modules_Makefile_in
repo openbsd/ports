@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_modules_Makefile_in,v 1.1 2012/12/24 13:11:03 stsp Exp $
---- src/modules/Makefile.in.orig	Sun Nov 18 09:47:21 2012
-+++ src/modules/Makefile.in	Sun Nov 18 09:47:32 2012
-@@ -2099,7 +2099,7 @@ EDJE_FLAGS = $(EDJE_FLAGS_VERBOSE_$(V)) @EDJE_DEF@
+$OpenBSD: patch-src_modules_Makefile_in,v 1.2 2014/03/26 08:55:26 sthen Exp $
+--- src/modules/Makefile.in.orig	Thu Oct 31 23:07:50 2013
++++ src/modules/Makefile.in	Wed Mar 26 08:54:44 2014
+@@ -2060,7 +2060,7 @@ EDJE_FLAGS = $(EDJE_FLAGS_VERBOSE_$(V)) @EDJE_DEF@
  @USE_MODULE_CPUFREQ_TRUE@cpufreq_freqset_SOURCES = cpufreq/freqset.c
  @USE_MODULE_CPUFREQ_TRUE@cpufreq_freqset_CFLAGS = @e_cflags@ @SUID_CFLAGS@
  @USE_MODULE_CPUFREQ_TRUE@cpufreq_freqset_LDFLAGS = @SUID_LDFLAGS@

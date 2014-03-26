@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_bin_e_init_main_c,v 1.1 2012/11/10 15:06:03 stsp Exp $
+$OpenBSD: patch-src_bin_e_init_main_c,v 1.2 2014/03/26 08:55:26 sthen Exp $
 hide splash screen after 5 seconds, for some reason it doesn't time out properly
---- src/bin/e_init_main.c.orig	Fri Nov  9 04:39:43 2012
-+++ src/bin/e_init_main.c	Fri Nov  9 04:39:54 2012
-@@ -336,7 +336,7 @@ e_init_init(void)
+--- src/bin/e_init_main.c.orig	Mon Jul 29 18:12:34 2013
++++ src/bin/e_init_main.c	Wed Mar 26 08:54:44 2014
+@@ -344,7 +344,7 @@ e_init_init(void)
                                     _e_init_cb_signal_done_ok, NULL);
     free(roots);
  
