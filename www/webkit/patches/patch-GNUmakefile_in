@@ -1,12 +1,11 @@
-$OpenBSD: patch-GNUmakefile_in,v 1.31 2014/03/25 06:25:45 landry Exp $
+$OpenBSD: patch-GNUmakefile_in,v 1.32 2014/03/26 21:10:06 landry Exp $
 
 - chunk 1->4 : remove silent build lines
 - chunk 5 : install GtkLauncher
-- chunk 7 : dont rerun make within make during install, gmake blows
-- chunk 8 : append extra -O0 cflags for sparc64 which otherwise result in overoptimization
+- chunk 6 : append extra -O0 cflags for sparc64 which otherwise result in overoptimization
   by emitting a fdtox %r8, %r7 call, whose second operand isn't even and thus invalid.
 (on Source/JavaScriptCore/runtime/NumberPrototype.cpp)
-- chunk 9->12 : fix variable quoting to properly install doc in a versionned dir
+- chunk 7->10 : fix variable quoting to properly install doc in a versionned dir
 
 --- GNUmakefile.in.orig	Mon Mar 17 09:12:20 2014
 +++ GNUmakefile.in	Tue Mar 18 07:58:48 2014
@@ -76,23 +75,6 @@ $OpenBSD: patch-GNUmakefile_in,v 1.31 2014/03/25 06:25:45 landry Exp $
  @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) Source/JavaScriptCore/runtime/$(DEPDIR)/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberPrototype.Tpo Source/JavaScriptCore/runtime/$(DEPDIR)/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberPrototype.Plo
  @AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='Source/JavaScriptCore/runtime/NumberPrototype.cpp' object='Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberPrototype.lo' libtool=yes @AMDEPBACKSLASH@
  @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@@ -81068,14 +81068,12 @@ installdirs:
- 	for dir in "$(DESTDIR)$(injectedbundledir)" "$(DESTDIR)$(libdir)" "$(DESTDIR)$(bindir)" "$(DESTDIR)$(libexecdir)" "$(DESTDIR)$(audiodir)" "$(DESTDIR)$(audiodir)" "$(DESTDIR)$(resourcesdir)" "$(DESTDIR)$(webresourcesdir)" "$(DESTDIR)$(girdir)" "$(DESTDIR)$(pkgconfigdir)" "$(DESTDIR)$(typelibsdir)" "$(DESTDIR)$(libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_ladir)" "$(DESTDIR)$(libwebkit2gtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_ladir)" "$(DESTDIR)$(libwebkitgtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_ladir)" "$(DESTDIR)$(libwebkit2gtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_ladir)" "$(DESTDIR)$(libwebkitdomincludedir)" "$(DESTDIR)$(libwebkitgtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_ladir)"; do \
- 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
- 	done
--install: $(BUILT_SOURCES)
--	$(MAKE) $(AM_MAKEFLAGS) install-am
-+install: $(BUILT_SOURCES) install-am
- install-exec: install-exec-am
- install-data: install-data-am
- uninstall: uninstall-am
- 
--install-am: all-am
--	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
-+install-am: all-am install-exec-am install-data-am
- 
- installcheck: installcheck-am
- install-strip:
 @@ -82383,8 +82381,8 @@ install-data-local:
  @ENABLE_WEBKIT1_TRUE@	then echo 1>&2 'No documentation to install' ; \
  @ENABLE_WEBKIT1_TRUE@	else \
