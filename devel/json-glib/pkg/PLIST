@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/04/17 09:56:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/03/26 14:36:55 jasper Exp $
+@bin bin/json-glib-format
+@bin bin/json-glib-validate
 include/json-glib-1.0/
 include/json-glib-1.0/json-glib/
 include/json-glib-1.0/json-glib/json-builder.h
@@ -11,6 +13,7 @@ include/json-glib-1.0/json-glib/json-parser.h
 include/json-glib-1.0/json-glib/json-path.h
 include/json-glib-1.0/json-glib/json-reader.h
 include/json-glib-1.0/json-glib/json-types.h
+include/json-glib-1.0/json-glib/json-version-macros.h
 include/json-glib-1.0/json-glib/json-version.h
 lib/girepository-1.0/
 lib/girepository-1.0/Json-1.0.typelib
@@ -19,6 +22,8 @@ lib/libjson-glib-1.0.la
 @lib lib/libjson-glib-1.0.so.${LIBjson-glib-1.0_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/json-glib-1.0.pc
+@man man/man1/json-glib-format.1
+@man man/man1/json-glib-validate.1
 share/gir-1.0/
 share/gir-1.0/Json-1.0.gir
 share/gtk-doc/
@@ -33,7 +38,7 @@ share/gtk-doc/html/json-glib/annotation-glossary.html
 share/gtk-doc/html/json-glib/ch01.html
 share/gtk-doc/html/json-glib/ch02.html
 share/gtk-doc/html/json-glib/ch03.html
-share/gtk-doc/html/json-glib/ch04.html
+share/gtk-doc/html/json-glib/ch05.html
 share/gtk-doc/html/json-glib/home.png
 share/gtk-doc/html/json-glib/index.html
 share/gtk-doc/html/json-glib/index.sgml
@@ -47,6 +52,7 @@ share/gtk-doc/html/json-glib/ix07.html
 share/gtk-doc/html/json-glib/ix08.html
 share/gtk-doc/html/json-glib/json-advanced.html
 share/gtk-doc/html/json-glib/json-base.html
+share/gtk-doc/html/json-glib/json-format-tool.html
 share/gtk-doc/html/json-glib/json-glib-Boxed-Types-Serialization.html
 share/gtk-doc/html/json-glib/json-glib-GObject-Serialization.html
 share/gtk-doc/html/json-glib/json-glib-JSON-Array.html
@@ -59,10 +65,15 @@ share/gtk-doc/html/json-glib/json-glib.devhelp2
 share/gtk-doc/html/json-glib/json-glib.html
 share/gtk-doc/html/json-glib/json-streams.html
 share/gtk-doc/html/json-glib/json-tools.html
+share/gtk-doc/html/json-glib/json-validate-tool.html
+share/gtk-doc/html/json-glib/left-insensitive.png
 share/gtk-doc/html/json-glib/left.png
 share/gtk-doc/html/json-glib/license.html
+share/gtk-doc/html/json-glib/right-insensitive.png
 share/gtk-doc/html/json-glib/right.png
 share/gtk-doc/html/json-glib/style.css
+share/gtk-doc/html/json-glib/tools.html
+share/gtk-doc/html/json-glib/up-insensitive.png
 share/gtk-doc/html/json-glib/up.png
 share/locale/as/
 share/locale/as/LC_MESSAGES/
@@ -87,7 +98,11 @@ share/locale/es/LC_MESSAGES/json-glib-1.0.mo
 share/locale/et/LC_MESSAGES/json-glib-1.0.mo
 share/locale/eu/LC_MESSAGES/json-glib-1.0.mo
 share/locale/fr/LC_MESSAGES/json-glib-1.0.mo
+share/locale/fur/
+share/locale/fur/LC_MESSAGES/
+share/locale/fur/LC_MESSAGES/json-glib-1.0.mo
 share/locale/gl/LC_MESSAGES/json-glib-1.0.mo
+share/locale/he/LC_MESSAGES/json-glib-1.0.mo
 share/locale/hi/
 share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/json-glib-1.0.mo

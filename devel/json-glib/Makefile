@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2013/09/28 08:50:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2014/03/26 14:36:55 jasper Exp $
 
 COMMENT=		JSON parser for GLib-based libraries and applications
 
 GNOME_PROJECT=		json-glib
-GNOME_VERSION=		0.16.2
-REVISION=		0
+GNOME_VERSION=		1.0.0
 
-SHARED_LIBS +=  json-glib-1.0        5.0      # 1600.0
+SHARED_LIBS +=  json-glib-1.0        5.1      # 0.0
 
 CATEGORIES=		devel
 
@@ -16,7 +15,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 pthread
+WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 pthread
 WANTLIB += pcre z
 
 MODULES=		devel/gettext \
