@@ -1,9 +1,32 @@
-$OpenBSD: patch-ini_jk_init_ini,v 1.2 2013/04/24 12:47:39 gonzalo Exp $
+$OpenBSD: patch-ini_jk_init_ini,v 1.3 2014/03/26 17:38:27 gonzalo Exp $
 
 fix some default paths in the jail creation configuration file
 
---- ini/jk_init.ini.orig	Fri Aug 10 14:16:47 2012
-+++ ini/jk_init.ini	Tue Apr 23 06:35:22 2013
+--- ini/jk_init.ini.orig	Mon Dec 23 06:02:42 2013
++++ ini/jk_init.ini	Wed Dec 25 16:04:26 2013
+@@ -2,18 +2,18 @@
+ # this section probably needs adjustment on 64bit systems
+ # or non-Linux systems
+ comment = common files for all jails that need user/group information
+-paths = /lib/libnsl.so.1, /lib64/libnsl.so.1, /lib/libnss*.so.2, /lib64/libnss*.so.2, /lib/i386-linux-gnu/libnsl.so.1, /lib/i386-linux-gnu/libnss*.so.2, /lib/x86_64-linux-gnu/libnsl.so.1, /lib/x86_64-linux-gnu/libnss*.so.2, /etc/nsswitch.conf, /etc/ld.so.conf
++paths = /lib/libnsl.so.1, /lib64/libnsl.so.1, /lib/libnss*.so.2, /lib64/libnss*.so.2, /lib/i386-linux-gnu/libnsl.so.1, /lib/i386-linux-gnu/libnss*.so.2, /lib/x86_64-linux-gnu/libnsl.so.1, /lib/x86_64-linux-gnu/libnss*.so.2, ${SYSCONFDIR}/nsswitch.conf, ${SYSCONFDIR}/ld.so.conf
+ # Solaris needs 
+-# paths = /etc/default/nss, /lib/libnsl.so.1, /usr/lib/nss_*.so.1, /etc/nsswitch.conf
++# paths = ${SYSCONFDIR}/default/nss, /lib/libnsl.so.1, /usr/lib/nss_*.so.1, ${SYSCONFDIR}/nsswitch.conf
+ 
+ [netbasics]
+ comment = common files for all jails that need any internet connectivity
+-paths = /lib/libnss_dns.so.2, /lib64/libnss_dns.so.2, /etc/resolv.conf, /etc/host.conf, /etc/hosts, /etc/protocols, /etc/services
++paths = /lib/libnss_dns.so.2, /lib64/libnss_dns.so.2, ${SYSCONFDIR}/resolv.conf, ${SYSCONFDIR}/host.conf, ${SYSCONFDIR}/hosts, ${SYSCONFDIR}/protocols, ${SYSCONFDIR}/services
+ # on Solaris devices /dev/udp and /dev/tcp might be needed too, not sure
+ 
+ [logbasics]
+ comment = timezone information and log sockets
+-paths = /etc/localtime
++paths = ${SYSCONFDIR}/localtime
+ need_logsocket = 1
+ # Solaris does not need logsocket
+ # but needs 
 @@ -21,7 +21,7 @@ need_logsocket = 1
  
  [jk_lsh]
@@ -13,16 +36,15 @@ fix some default paths in the jail creation configuration file
  users = root
  groups = root
  includesections = uidbasics, logbasics
-@@ -37,7 +37,7 @@ devices = /dev/null
+@@ -71,14 +71,14 @@ devices = /dev/null
  
- [git]
- comment = Fast Version Control System
--paths = /usr/bin/git*, /usr/share/git-core
-+paths = ${LOCALBASE}/bin/git*, ${LOCALBASE}/share/git-core
- includesections = editors
- 
- [scp]
-@@ -78,7 +78,7 @@ includesections = uidbasics
+ [basicshell]
+ comment = bash based shell with several basic utilities
+-paths = /bin/sh, bash, ls, cat, chmod, mkdir, cp, cpio, date, dd, echo, egrep, false, fgrep, grep, gunzip, gzip, ln, ls, mkdir, mktemp, more, mv, pwd, rm, rmdir, sed, sh, sleep, sync, tar, touch, true, uncompress, zcat, /etc/motd, /etc/issue, /etc/bash.bashrc, /etc/bashrc, /etc/profile, /usr/lib/locale/en_US.utf8
++paths = /bin/sh, bash, ls, cat, chmod, mkdir, cp, cpio, date, dd, echo, egrep, false, fgrep, grep, gunzip, gzip, ln, ls, mkdir, mktemp, more, mv, pwd, rm, rmdir, sed, sh, sleep, sync, tar, touch, true, uncompress, zcat, ${SYSCONFDIR}/motd, ${SYSCONFDIR}/issue, ${SYSCONFDIR}/bash.bashrc, ${SYSCONFDIR}/bashrc, ${SYSCONFDIR}/profile, /usr/lib/locale/en_US.utf8
+ users = root
+ groups = root
+ includesections = uidbasics
  
  [midnightcommander]
  comment = Midnight Commander
@@ -31,6 +53,21 @@ fix some default paths in the jail creation configuration file
  includesections = basicshell, terminfo
  
  [extendedshell]
+@@ -88,12 +88,12 @@ includesections = basicshell, midnightcommander, edito
+ 
+ [terminfo]
+ comment = terminfo databases, required for example for ncurses or vim 
+-paths = /etc/terminfo, /usr/share/terminfo, /lib/terminfo
++paths = ${SYSCONFDIR}/terminfo, /usr/share/terminfo, /lib/terminfo
+ 
+ [editors]
+ comment = vim, joe and nano
+ includesections = terminfo
+-paths = joe, nano, vi, vim, /etc/vimrc, /etc/joe, /usr/share/vim
++paths = joe, nano, vi, vim, ${SYSCONFDIR}/vimrc, ${SYSCONFDIR}/joe, /usr/share/vim
+ 
+ [netutils]
+ comment = several internet utilities like wget, ftp, rsync, scp, ssh
 @@ -110,7 +110,7 @@ includesections = extendedshell, netutils, apacheutils
  
  [openvpn]
@@ -40,7 +77,16 @@ fix some default paths in the jail creation configuration file
  users = root,nobody
  groups = root,nogroup
  includesections = netbasics
-@@ -131,7 +131,7 @@ paths = perl, /usr/lib/perl, /usr/lib/perl5, /usr/shar
+@@ -120,7 +120,7 @@ need_logsocket = 1
+ 
+ [apache]
+ comment = the apache webserver, very basic setup, probably too limited for you
+-paths = /usr/sbin/apache
++paths = ${TRUEPREFIX}/apache
+ users = root, www-data
+ groups = root, www-data
+ includesections = netbasics, uidbasics
+@@ -131,16 +131,16 @@ paths = perl, /usr/lib/perl, /usr/lib/perl5, /usr/shar
  
  [xauth]
  comment = getting X authentication to work
@@ -49,10 +95,21 @@ fix some default paths in the jail creation configuration file
  
  [xclients]
  comment = minimal files for X clients
+-paths = /usr/X11R6/lib/X11/rgb.txt
++paths = ${X11BASE}/lib/X11/rgb.txt
+ includesections = xauth
+ 
+ [vncserver]
+ comment = the VNC server program
+-paths = Xvnc, Xrealvnc, /usr/X11R6/lib/X11/fonts/
++paths = Xvnc, Xrealvnc, ${X11BASE}/lib/X11/fonts/
+ includesections = xclients
+ 
+ [ping]
 @@ -149,5 +149,5 @@ paths_w_setuid = /bin/ping
  
  #[xterm]
  #comment = xterm
 -#paths = /usr/bin/X11/xterm, /usr/share/terminfo, /etc/terminfo
-+#paths = ${X11BASE}/bin/xterm, /usr/share/terminfo, /etc/terminfo
++#paths = ${X11BASE}/bin/xterm, /usr/share/terminfo, ${SYSCONFDIR}/terminfo
  #devices = /dev/pts/0, /dev/pts/1, /dev/pts/2, /dev/pts/3, /dev/pts/4, /dev/ptyb4, /dev/ptya4, /dev/tty, /dev/tty0, /dev/tty4

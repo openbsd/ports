@@ -1,6 +1,6 @@
-$OpenBSD: patch-man_jk_socketd_8,v 1.1.1.1 2010/09/20 07:15:31 sebastia Exp $
---- man/jk_socketd.8.orig	Sun Feb  7 17:13:06 2010
-+++ man/jk_socketd.8	Tue Sep 14 19:13:19 2010
+$OpenBSD: patch-man_jk_socketd_8,v 1.2 2014/03/26 17:38:27 gonzalo Exp $
+--- man/jk_socketd.8.orig	Fri Jan  3 18:51:20 2014
++++ man/jk_socketd.8	Wed Dec 25 15:54:12 2013
 @@ -18,7 +18,7 @@ jk_socketd \- a daemon to create a rate-limited /dev/l
  .SH DESCRIPTION
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-man_jk_socketd_8,v 1.1.1.1 2010/09/20 07:15:31 sebastia Exp $
  and writes all data eventually to syslog using the real
  .I /dev/log
  Programs like jk_lsh and also many daemons need a /dev/log socket to do logging to syslog.
-@@ -75,7 +75,7 @@ message rate limit interval in seconds for socket spec
+@@ -77,7 +77,7 @@ message rate limit interval in seconds for socket spec
  
  .SH FILES
  

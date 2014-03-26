@@ -1,6 +1,6 @@
-$OpenBSD: patch-man_jailkit_8,v 1.1.1.1 2010/09/20 07:15:30 sebastia Exp $
---- man/jailkit.8.orig	Sun Feb  7 17:13:06 2010
-+++ man/jailkit.8	Tue Sep 14 19:11:46 2010
+$OpenBSD: patch-man_jailkit_8,v 1.2 2014/03/26 17:38:27 gonzalo Exp $
+--- man/jailkit.8.orig	Sat Dec 21 18:05:22 2013
++++ man/jailkit.8	Wed Dec 25 16:01:05 2013
 @@ -36,7 +36,7 @@ This section gives summary sketches of the various pro
  
  .BR jk_init
@@ -13,12 +13,12 @@ $OpenBSD: patch-man_jailkit_8,v 1.1.1.1 2010/09/20 07:15:30 sebastia Exp $
 @@ -53,15 +53,15 @@ file. When the user logs in, jk_chrootsh is executed a
  
  .BR jk_lsh
- is a limited shell that allows only those commands to be executed as specified in its configuration file. 
+ is a limited shell that allows only those commands to be executed as specified in its configuration file.
 -.I /etc/jailkit/jk_lsh.ini.
 +.I ${SYSCONFDIR}/jailkit/jk_lsh.ini.
  It is typically started in one of two ways, by specifying it as the user's shell or by using the jk_chrootsh program. The first way is implemented by specifying jk_lsh as the shell in the user's entry in the 'real'
  .I /etc/passwd
- file. In this case, it executes in the normal file system and reads its configuration from 
+ file. In this case, it executes in the normal file system and reads its configuration from
 -.I /etc/jailkit/jk_lsh.ini.
 +.I ${SYSCONFDIR}/jailkit/jk_lsh.ini.
  In the second way, jk_lsh is started from within jk_chrootsh by specifying it as the shell in the passwd file located inside the JAIL directory:
@@ -30,12 +30,12 @@ $OpenBSD: patch-man_jailkit_8,v 1.1.1.1 2010/09/20 07:15:30 sebastia Exp $
  Use this program if you want to deny regular shell access (e.g. logins) but you want to allow execution of only one or a few commands such sftp, scp, rsync, or cvs.
  
 @@ -69,12 +69,12 @@ Use this program if you want to deny regular shell acc
- is a utility to give regular users access to the 
+ is a utility to give regular users access to the
  .BR chroot(2)
  (change root) system call in a safe way. Which users are allowed in which jails is controlled from
 -.I /etc/jailkit/jk_uchroot.ini
 +.I ${SYSCONFDIR}/jailkit/jk_uchroot.ini
- . Use this utility for users that can run processes both inside a jail and outside a jail.
+ Use this utility for users that can run processes both inside a jail and outside a jail.
  
  .BR jk_socketd
  is a daemon that allows logging safely to syslog from within a jail. It limits the logging rate based on parameters set in its configuration file:
@@ -43,34 +43,24 @@ $OpenBSD: patch-man_jailkit_8,v 1.1.1.1 2010/09/20 07:15:30 sebastia Exp $
 +.I ${SYSCONFDIR}/jailkit/jk_socketd.ini
  
  .BR jk_chrootlaunch
- is a utility to start a daemon that cannot do a 
+ is a utility to start a daemon that cannot do a
 @@ -86,7 +86,7 @@ is a tool to move an existing user account into a jail
  
  .BR jk_check
- is a jail integrity checker. It checks a jail for some of the potential security problems. (Obviously it does not check all possible weaknesses.) It reports any setuid and setgid programs, checks for any modified programs, checks for world writable directories, and more. It is configured by 
+ is a jail integrity checker. It checks a jail for some of the potential security problems. (Obviously it does not check all possible weaknesses.) It reports any setuid and setgid programs, checks for any modified programs, checks for world writable directories, and more. It is configured by
 -.I /etc/jailkit/jk_check.ini
 +.I ${SYSCONFDIR}/jailkit/jk_check.ini
  .
  
  .BR jk_list
-@@ -114,7 +114,7 @@ jk_init -j /home/sftproot scp
- jk_addjailuser -j /home/sftproot test
- # Edit the jk_lsh configfile in the jail; see man jk_lsh.
- # You can use every editor you want; I choose 'joe'
--joe /home/sftproot/etc/jailkit/jk_lsh.ini
-+joe /home/sftproot${SYSCONFDIR}/jailkit/jk_lsh.ini
- # Restart jk_socketd so that log messages are transferred 
- killall jk_socketd
- jk_socketd
 @@ -127,9 +127,9 @@ tail /var/log/daemon.log /var/log/auth.log
  .SH FILES
  
- The jailkit configuration files are located in 
+ The jailkit configuration files are located in
 -.I /etc/jailkit/
--Note that in some cases the configuration files must be replicated into the JAIL/etc/jailkit directory and edited appropriately. A jk program that is run within the jail directory is able to read its configuration from only the jailed
--.I etc/jailkit
 +.I ${SYSCONFDIR}/jailkit/
-+Note that in some cases the configuration files must be replicated into the JAIL${SYSCONFDIR}/jailkit directory and edited appropriately. A jk program that is run within the jail directory is able to read its configuration from only the jailed
+ Note that in some cases the configuration files must be replicated into the JAIL/etc/jailkit directory and edited appropriately. A jk program that is run within the jail directory is able to read its configuration from only the jailed
+-.I etc/jailkit
 +.I ${SYSCONFDIR}/jailkit
  directory.
  

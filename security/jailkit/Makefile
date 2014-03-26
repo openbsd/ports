@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2013/04/24 12:47:39 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.12 2014/03/26 17:38:27 gonzalo Exp $
 
 COMMENT=		utilities for jailing a user or process
 
-DISTNAME=		jailkit-2.16
+DISTNAME=		jailkit-2.17
 CATEGORIES=		security sysutils
 
 HOMEPAGE=		http://olivier.sessink.nl/jailkit/
-MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 
 MASTER_SITES=		${HOMEPAGE}
 
