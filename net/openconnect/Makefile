@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.23 2014/01/02 11:54:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2014/03/26 14:19:07 sthen Exp $
 
 COMMENT=	client for Cisco AnyConnect SSL VPN
 
-DISTNAME=	openconnect-5.02
+DISTNAME=	openconnect-5.99
 DIST_SUBDIR=	openconnect
 VPNC_SCRIPT=	vpnc-script
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${VPNC_SCRIPT}:0
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-SHARED_LIBS +=  openconnect               1.1 # 2.2
+SHARED_LIBS +=  openconnect               2.0 # 3.2
 
 CATEGORIES=	net
 
@@ -26,6 +26,7 @@ MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/
 MASTER_SITES0=	http://git.infradead.org/users/dwmw2/vpnc-scripts.git/blob_plain/0e042c5ab78bd5dbeeb82b8570160c081fa8c3ff:/
 
 # used to format html during build, USE_GROFF not needed
+# XXX can probably convert to using mandoc?
 BUILD_DEPENDS=		textproc/groff \
 			textproc/py-xml
 MODULES=		devel/gettext \
