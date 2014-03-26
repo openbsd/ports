@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/11/08 23:11:48 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/03/26 03:27:26 daniel Exp $
 %%SHARED%%
 %%native%%
 @bin bin/coq-tex
@@ -992,7 +992,6 @@ lib/coq/user-contrib/
 @man man/man1/coqmktop.1
 @man man/man1/coqtop.1
 @man man/man1/coqtop.byte.1
-@man man/man1/coqtop.opt.1
 @man man/man1/coqwc.1
 @man man/man1/gallina.1
 share/coq/

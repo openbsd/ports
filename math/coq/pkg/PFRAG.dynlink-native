@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.dynlink-native,v 1.1 2013/01/04 11:07:29 chrisz Exp $
+@comment $OpenBSD: PFRAG.dynlink-native,v 1.2 2014/03/26 03:27:26 daniel Exp $
 @bin bin/coqchk.opt
 @bin bin/coqide.opt
 @bin bin/coqtop.opt
@@ -52,3 +52,4 @@ lib/coq/tactics/tactics.a
 lib/coq/tactics/tactics.cmxa
 lib/coq/toplevel/toplevel.a
 lib/coq/toplevel/toplevel.cmxa
+@man man/man1/coqtop.opt.1

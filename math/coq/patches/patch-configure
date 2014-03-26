@@ -1,24 +1,13 @@
-$OpenBSD: patch-configure,v 1.4 2013/10/26 07:38:19 brad Exp $
+$OpenBSD: patch-configure,v 1.5 2014/03/26 03:27:26 daniel Exp $
 
-Fix GNU make check with newer versions.
-
---- configure.orig	Sat Dec 22 05:06:16 2012
-+++ configure	Fri Oct 25 14:38:49 2013
-@@ -335,7 +335,7 @@ if [ "$MAKE" != "" ]; then
-   MAKEVERSION=`$MAKE -v | head -1 | cut -d" " -f3`
-   MAKEVERSIONMAJOR=`echo $MAKEVERSION | cut -d. -f1`
-   MAKEVERSIONMINOR=`echo $MAKEVERSION | cut -d. -f2`
--  if [ "$MAKEVERSIONMAJOR" -eq 3 -a "$MAKEVERSIONMINOR" -ge 81 ]; then
-+  if [ "$MAKEVERSIONMAJOR" -gt 3 -o "$MAKEVERSIONMAJOR" -eq 3 -a "$MAKEVERSIONMINOR" -ge 81 ]; then
-       echo "You have GNU Make $MAKEVERSION. Good!"
-   else
-       OK="no"
-@@ -887,7 +887,7 @@ case $coqrunbyteflags_spec/$local/$custom_spec/$CUSTOM
+--- configure.orig	Sat Dec 21 03:03:14 2013
++++ configure	Mon Dec 30 19:04:42 2013
+@@ -897,7 +897,7 @@ case $coqrunbyteflags_spec/$local/$custom_spec/$CUSTOM
      */true/*/*) COQRUNBYTEFLAGS="-dllib -lcoqrun -dllpath '$COQTOP'/kernel/byterun";;
      *)
          COQRUNBYTEFLAGS="-dllib -lcoqrun -dllpath '$LIBDIR'"
--        BUILDLDPATH="export CAML_LD_LIBRARY_PATH='$COQTOP'/kernel/byterun";;
-+        BUILDLDPATH="export CAML_LD_LIBRARY_PATH=$COQTOP/kernel/byterun";;
+-        BUILDLDPATH="export CAML_LD_LIBRARY_PATH='$COQTOP'/kernel/byterun:$CAML_LD_LIBRARY_PATH";;
++        BUILDLDPATH="export CAML_LD_LIBRARY_PATH=$COQTOP/kernel/byterun:$CAML_LD_LIBRARY_PATH";;
  esac
  case $coqtoolsbyteflags_spec/$custom_spec/$CUSTOM_OS in
      yes/*/*) COQTOOLSBYTEFLAGS="$coqtoolsbyteflags";;
