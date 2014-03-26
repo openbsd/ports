@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.46 2013/10/11 15:01:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.47 2014/03/26 13:31:46 ajacoutot Exp $
 @unexec-delete rm -f %D/share/icons/gnome/icon-theme.cache
 share/icons/gnome/
 share/icons/gnome/16x16/
@@ -691,6 +691,7 @@ share/icons/gnome/16x16/mimetypes/application-vnd.openxmlformats-officedocument.
 share/icons/gnome/16x16/mimetypes/application-vnd.openxmlformats-officedocument.spreadsheetml.template.png
 share/icons/gnome/16x16/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
 share/icons/gnome/16x16/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.template.png
+share/icons/gnome/16x16/mimetypes/application-x-addon.png
 share/icons/gnome/16x16/mimetypes/application-x-executable.png
 share/icons/gnome/16x16/mimetypes/ascii.png
 share/icons/gnome/16x16/mimetypes/audio-x-generic.png
@@ -851,6 +852,7 @@ share/icons/gnome/16x16/mimetypes/x-office-presentation-template.png
 share/icons/gnome/16x16/mimetypes/x-office-presentation.png
 share/icons/gnome/16x16/mimetypes/x-office-spreadsheet-template.png
 share/icons/gnome/16x16/mimetypes/x-office-spreadsheet.png
+share/icons/gnome/16x16/mimetypes/x-package-repository.png
 share/icons/gnome/16x16/mimetypes/zip.png
 share/icons/gnome/16x16/places/
 share/icons/gnome/16x16/places/application-x-gnome-saved-search.png
@@ -995,6 +997,8 @@ share/icons/gnome/16x16/status/printer-printing.png
 share/icons/gnome/16x16/status/security-high.png
 share/icons/gnome/16x16/status/security-low.png
 share/icons/gnome/16x16/status/security-medium.png
+share/icons/gnome/16x16/status/semi-starred-rtl.png
+share/icons/gnome/16x16/status/semi-starred.png
 share/icons/gnome/16x16/status/software-update-available.png
 share/icons/gnome/16x16/status/software-update-urgent.png
 share/icons/gnome/16x16/status/starred.png
@@ -1747,6 +1751,7 @@ share/icons/gnome/22x22/mimetypes/application-vnd.openxmlformats-officedocument.
 share/icons/gnome/22x22/mimetypes/application-vnd.openxmlformats-officedocument.spreadsheetml.template.png
 share/icons/gnome/22x22/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
 share/icons/gnome/22x22/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.template.png
+share/icons/gnome/22x22/mimetypes/application-x-addon.png
 share/icons/gnome/22x22/mimetypes/application-x-executable.png
 share/icons/gnome/22x22/mimetypes/ascii.png
 share/icons/gnome/22x22/mimetypes/audio-x-generic.png
@@ -1907,6 +1912,7 @@ share/icons/gnome/22x22/mimetypes/x-office-presentation-template.png
 share/icons/gnome/22x22/mimetypes/x-office-presentation.png
 share/icons/gnome/22x22/mimetypes/x-office-spreadsheet-template.png
 share/icons/gnome/22x22/mimetypes/x-office-spreadsheet.png
+share/icons/gnome/22x22/mimetypes/x-package-repository.png
 share/icons/gnome/22x22/mimetypes/zip.png
 share/icons/gnome/22x22/places/
 share/icons/gnome/22x22/places/application-x-gnome-saved-search.png
@@ -2051,6 +2057,8 @@ share/icons/gnome/22x22/status/printer-printing.png
 share/icons/gnome/22x22/status/security-high.png
 share/icons/gnome/22x22/status/security-low.png
 share/icons/gnome/22x22/status/security-medium.png
+share/icons/gnome/22x22/status/semi-starred-rtl.png
+share/icons/gnome/22x22/status/semi-starred.png
 share/icons/gnome/22x22/status/software-update-available.png
 share/icons/gnome/22x22/status/software-update-urgent.png
 share/icons/gnome/22x22/status/starred.png
@@ -2797,6 +2805,7 @@ share/icons/gnome/24x24/mimetypes/application-vnd.openxmlformats-officedocument.
 share/icons/gnome/24x24/mimetypes/application-vnd.openxmlformats-officedocument.spreadsheetml.template.png
 share/icons/gnome/24x24/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
 share/icons/gnome/24x24/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.template.png
+share/icons/gnome/24x24/mimetypes/application-x-addon.png
 share/icons/gnome/24x24/mimetypes/application-x-executable.png
 share/icons/gnome/24x24/mimetypes/ascii.png
 share/icons/gnome/24x24/mimetypes/audio-x-generic.png
@@ -2957,6 +2966,7 @@ share/icons/gnome/24x24/mimetypes/x-office-presentation-template.png
 share/icons/gnome/24x24/mimetypes/x-office-presentation.png
 share/icons/gnome/24x24/mimetypes/x-office-spreadsheet-template.png
 share/icons/gnome/24x24/mimetypes/x-office-spreadsheet.png
+share/icons/gnome/24x24/mimetypes/x-package-repository.png
 share/icons/gnome/24x24/mimetypes/zip.png
 share/icons/gnome/24x24/places/
 share/icons/gnome/24x24/places/application-x-gnome-saved-search.png
@@ -3101,6 +3111,8 @@ share/icons/gnome/24x24/status/printer-printing.png
 share/icons/gnome/24x24/status/security-high.png
 share/icons/gnome/24x24/status/security-low.png
 share/icons/gnome/24x24/status/security-medium.png
+share/icons/gnome/24x24/status/semi-starred-rtl.png
+share/icons/gnome/24x24/status/semi-starred.png
 share/icons/gnome/24x24/status/software-update-available.png
 share/icons/gnome/24x24/status/software-update-urgent.png
 share/icons/gnome/24x24/status/starred.png
@@ -3543,6 +3555,7 @@ share/icons/gnome/256x256/mimetypes/application-vnd.openxmlformats-officedocumen
 share/icons/gnome/256x256/mimetypes/application-vnd.openxmlformats-officedocument.spreadsheetml.template.png
 share/icons/gnome/256x256/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
 share/icons/gnome/256x256/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.template.png
+share/icons/gnome/256x256/mimetypes/application-x-addon.png
 share/icons/gnome/256x256/mimetypes/application-x-executable.png
 share/icons/gnome/256x256/mimetypes/ascii.png
 share/icons/gnome/256x256/mimetypes/audio-x-generic.png
@@ -3697,6 +3710,7 @@ share/icons/gnome/256x256/mimetypes/x-office-presentation-template.png
 share/icons/gnome/256x256/mimetypes/x-office-presentation.png
 share/icons/gnome/256x256/mimetypes/x-office-spreadsheet-template.png
 share/icons/gnome/256x256/mimetypes/x-office-spreadsheet.png
+share/icons/gnome/256x256/mimetypes/x-package-repository.png
 share/icons/gnome/256x256/mimetypes/zip.png
 share/icons/gnome/256x256/places/
 share/icons/gnome/256x256/places/application-x-gnome-saved-search.png
@@ -3822,6 +3836,8 @@ share/icons/gnome/256x256/status/printer-printing.png
 share/icons/gnome/256x256/status/security-high.png
 share/icons/gnome/256x256/status/security-low.png
 share/icons/gnome/256x256/status/security-medium.png
+share/icons/gnome/256x256/status/semi-starred-rtl.png
+share/icons/gnome/256x256/status/semi-starred.png
 share/icons/gnome/256x256/status/software-update-available.png
 share/icons/gnome/256x256/status/software-update-urgent.png
 share/icons/gnome/256x256/status/starred.png
@@ -4543,6 +4559,7 @@ share/icons/gnome/32x32/mimetypes/application-vnd.openxmlformats-officedocument.
 share/icons/gnome/32x32/mimetypes/application-vnd.openxmlformats-officedocument.spreadsheetml.template.png
 share/icons/gnome/32x32/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
 share/icons/gnome/32x32/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.template.png
+share/icons/gnome/32x32/mimetypes/application-x-addon.png
 share/icons/gnome/32x32/mimetypes/application-x-executable.png
 share/icons/gnome/32x32/mimetypes/ascii.png
 share/icons/gnome/32x32/mimetypes/audio-x-generic.png
@@ -4703,6 +4720,7 @@ share/icons/gnome/32x32/mimetypes/x-office-presentation-template.png
 share/icons/gnome/32x32/mimetypes/x-office-presentation.png
 share/icons/gnome/32x32/mimetypes/x-office-spreadsheet-template.png
 share/icons/gnome/32x32/mimetypes/x-office-spreadsheet.png
+share/icons/gnome/32x32/mimetypes/x-package-repository.png
 share/icons/gnome/32x32/mimetypes/zip.png
 share/icons/gnome/32x32/places/
 share/icons/gnome/32x32/places/application-x-gnome-saved-search.png
@@ -4843,6 +4861,8 @@ share/icons/gnome/32x32/status/printer-printing.png
 share/icons/gnome/32x32/status/security-high.png
 share/icons/gnome/32x32/status/security-low.png
 share/icons/gnome/32x32/status/security-medium.png
+share/icons/gnome/32x32/status/semi-starred-rtl.png
+share/icons/gnome/32x32/status/semi-starred.png
 share/icons/gnome/32x32/status/software-update-available.png
 share/icons/gnome/32x32/status/software-update-urgent.png
 share/icons/gnome/32x32/status/starred.png
@@ -5593,6 +5613,7 @@ share/icons/gnome/48x48/mimetypes/application-vnd.openxmlformats-officedocument.
 share/icons/gnome/48x48/mimetypes/application-vnd.openxmlformats-officedocument.spreadsheetml.template.png
 share/icons/gnome/48x48/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.document.png
 share/icons/gnome/48x48/mimetypes/application-vnd.openxmlformats-officedocument.wordprocessingml.template.png
+share/icons/gnome/48x48/mimetypes/application-x-addon.png
 share/icons/gnome/48x48/mimetypes/application-x-executable.png
 share/icons/gnome/48x48/mimetypes/ascii.png
 share/icons/gnome/48x48/mimetypes/audio-x-generic.png
@@ -5753,6 +5774,7 @@ share/icons/gnome/48x48/mimetypes/x-office-presentation-template.png
 share/icons/gnome/48x48/mimetypes/x-office-presentation.png
 share/icons/gnome/48x48/mimetypes/x-office-spreadsheet-template.png
 share/icons/gnome/48x48/mimetypes/x-office-spreadsheet.png
+share/icons/gnome/48x48/mimetypes/x-package-repository.png
 share/icons/gnome/48x48/mimetypes/zip.png
 share/icons/gnome/48x48/places/
 share/icons/gnome/48x48/places/application-x-gnome-saved-search.png
@@ -5893,6 +5915,8 @@ share/icons/gnome/48x48/status/printer-printing.png
 share/icons/gnome/48x48/status/security-high.png
 share/icons/gnome/48x48/status/security-low.png
 share/icons/gnome/48x48/status/security-medium.png
+share/icons/gnome/48x48/status/semi-starred-rtl.png
+share/icons/gnome/48x48/status/semi-starred.png
 share/icons/gnome/48x48/status/software-update-available.png
 share/icons/gnome/48x48/status/software-update-urgent.png
 share/icons/gnome/48x48/status/starred.png
