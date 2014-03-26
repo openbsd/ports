@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.15 2014/03/20 16:25:21 sthen Exp $
+$OpenBSD: README-main,v 1.16 2014/03/26 12:09:28 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -49,6 +49,10 @@ If upgrading from an earlier version of icinga-web (the PHP API-based
 web interface), you will need to apply updates to the icinga_web database
 schema from /var/www/icinga-web/etc/schema/updates. You should also clear
 the cache by running "/var/www/icinga-web/bin/clearcache.sh".
+
+The 1.11.0 update enables CSRF protection for cmd.cgi by default;
+if using external programs (like Nagstamon or aNag) to access the classic
+UI, you may need to set disable_cmd_cgi_csrf_protection=1 in cgi.cfg.
 
 
 Chroot Considerations
