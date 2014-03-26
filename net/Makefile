@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.832 2014/03/26 10:43:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.833 2014/03/26 20:54:07 jca Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -603,6 +603,7 @@
      SUBDIR += unworkable
      SUBDIR += ushare
      SUBDIR += uucp
+     SUBDIR += uucpd
      SUBDIR += valknut
      SUBDIR += vicq
      SUBDIR += vncsnapshot
