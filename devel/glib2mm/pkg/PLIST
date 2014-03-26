@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2013/11/18 09:17:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2014/03/26 08:31:44 ajacoutot Exp $
 @conflict glib2mm-docs-*
 @pkgpath devel/glib2mm,-main
 @pkgpath devel/glib2mm,-docs
@@ -83,6 +83,7 @@ include/giomm-${V}/giomm/mount.h
 include/giomm-${V}/giomm/mountoperation.h
 include/giomm-${V}/giomm/networkaddress.h
 include/giomm-${V}/giomm/networkservice.h
+include/giomm-${V}/giomm/notification.h
 include/giomm-${V}/giomm/outputstream.h
 include/giomm-${V}/giomm/pollableinputstream.h
 include/giomm-${V}/giomm/pollableoutputstream.h
@@ -163,6 +164,7 @@ include/giomm-${V}/giomm/private/mount_p.h
 include/giomm-${V}/giomm/private/mountoperation_p.h
 include/giomm-${V}/giomm/private/networkaddress_p.h
 include/giomm-${V}/giomm/private/networkservice_p.h
+include/giomm-${V}/giomm/private/notification_p.h
 include/giomm-${V}/giomm/private/outputstream_p.h
 include/giomm-${V}/giomm/private/pollableinputstream_p.h
 include/giomm-${V}/giomm/private/pollableoutputstream_p.h
@@ -656,6 +658,9 @@ share/doc/glibmm-${V}/reference/html/classGio_1_1NetworkAddress__inherit__graph.
 share/doc/glibmm-${V}/reference/html/classGio_1_1NetworkService-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1NetworkService.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1NetworkService__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGio_1_1Notification-members.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1Notification.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1Notification__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1OutputStream-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1OutputStream.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1OutputStream__inherit__graph.png
@@ -889,10 +894,8 @@ share/doc/glibmm-${V}/reference/html/classGlib_1_1Markup_1_1AttributeKeyLess-mem
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Markup_1_1AttributeKeyLess.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Markup_1_1ParseContext-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Markup_1_1ParseContext.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1Markup_1_1ParseContext__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Markup_1_1Parser-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Markup_1_1Parser.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1Markup_1_1Parser__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGlib_1_1MatchInfo-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1MatchInfo.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Module-members.html
@@ -1485,7 +1488,6 @@ share/doc/glibmm-${V}/reference/html/inherit_graph_97.png
 share/doc/glibmm-${V}/reference/html/inherit_graph_98.png
 share/doc/glibmm-${V}/reference/html/inherit_graph_99.png
 share/doc/glibmm-${V}/reference/html/inherits.html
-share/doc/glibmm-${V}/reference/html/jquery.js
 share/doc/glibmm-${V}/reference/html/modules.html
 share/doc/glibmm-${V}/reference/html/namespaceGio.html
 share/doc/glibmm-${V}/reference/html/namespaceGio_1_1DBus.html
@@ -1581,6 +1583,7 @@ share/doc/glibmm-${V}/reference/html/since_2_34.html
 share/doc/glibmm-${V}/reference/html/since_2_36.html
 share/doc/glibmm-${V}/reference/html/since_2_38.html
 share/doc/glibmm-${V}/reference/html/since_2_4.html
+share/doc/glibmm-${V}/reference/html/since_2_40.html
 share/doc/glibmm-${V}/reference/html/since_2_6.html
 share/doc/glibmm-${V}/reference/html/since_3_2.html
 share/doc/glibmm-${V}/reference/html/structGlib_1_1Container__Helpers_1_1TypeTraits-members.html
