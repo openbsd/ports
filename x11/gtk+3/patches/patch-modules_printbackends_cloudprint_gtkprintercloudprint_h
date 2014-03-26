@@ -1,0 +1,18 @@
+$OpenBSD: patch-modules_printbackends_cloudprint_gtkprintercloudprint_h,v 1.1 2014/03/26 08:31:13 ajacoutot Exp $
+
+From 8ede929ef7fc79f52e5b7aa845f63975635a46d6 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Tue, 25 Mar 2014 11:24:41 +0000
+Subject: prevent redefinition of typedef GtkPrinterCloudprint
+
+--- modules/printbackends/cloudprint/gtkprintercloudprint.h.orig	Tue Mar 25 10:50:09 2014
++++ modules/printbackends/cloudprint/gtkprintercloudprint.h	Tue Mar 25 10:59:36 2014
+@@ -30,8 +30,6 @@ G_BEGIN_DECLS
+ #define GTK_PRINTER_CLOUDPRINT(obj)	(G_TYPE_CHECK_INSTANCE_CAST ((obj), GTK_TYPE_PRINTER_CLOUDPRINT, GtkPrinterCloudprint))
+ #define GTK_IS_PRINTER_CLOUDPRINT(obj)	(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GTK_TYPE_PRINTER_CLOUDPRINT))
+ 
+-typedef struct _GtkPrinterCloudprint	GtkPrinterCloudprint;
+-
+ void	gtk_printer_cloudprint_register_type (GTypeModule *module);
+ GtkPrinterCloudprint *gtk_printer_cloudprint_new	(const char *name,
+ 							 gboolean is_virtual,

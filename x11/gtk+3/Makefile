@@ -1,20 +1,22 @@
-# $OpenBSD: Makefile,v 1.93 2014/01/28 08:40:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.94 2014/03/26 08:31:13 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-cups=		gtk+3 CUPS print backend
+COMMENT-cloudprint=	gtk+3 Google Cloud Print backend
 
-GNOME_VERSION=		3.10.7
+GNOME_VERSION=		3.12.0
 GNOME_PROJECT=		gtk+
 
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
+PKGNAME-cloudprint=	gtk+3-cloudprint-${GNOME_VERSION}
 
 CATEGORIES=		x11 devel
 
-SHARED_LIBS +=  gdk-3                1000.0   # 1000.2
-SHARED_LIBS +=  gtk-3                1000.0   # 1000.2
+SHARED_LIBS +=  gdk-3                1200.0   # 1200.0
+SHARED_LIBS +=  gtk-3                1200.0   # 1200.0
 SHARED_LIBS +=  gailutil-3           0.0      # 0.0
 
 HOMEPAGE=		http://www.gtk.org/
@@ -24,15 +26,15 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes graphite2
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo cairo-gobject
-WANTLIB += expat ffi fontconfig freetype gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
-WANTLIB += ICE SM dbus-1 harfbuzz pthread
-WANTLIB += xcb xcb-render xcb-shm z atk-bridge-2.0 atspi
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
+WANTLIB += cairo cairo-gobject dbus-1 expat ffi fontconfig freetype
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += graphite2 gthread-2.0 harfbuzz m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += xcb xcb-render xcb-shm z
 
-MULTI_PACKAGES=		-main -cups
+MULTI_PACKAGES=		-main -cups -cloudprint
 
 MODULES=		devel/gettext \
 			devel/dconf \
@@ -41,14 +43,13 @@ MODULES=		devel/gettext \
 # man pages
 BUILD_DEPENDS +=	textproc/docbook-xsl
 
-RUN_DEPENDS=		x11/hicolor-icon-theme
-
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/pango \
 			graphics/gdk-pixbuf2 \
-			x11/gnome/at-spi2-atk
+			x11/gnome/at-spi2-atk>=2.12.0
 
-RUN_DEPENDS-main=	${RUN_DEPENDS}
+RUN_DEPENDS-main=	${RUN_DEPENDS} \
+			x11/hicolor-icon-theme
 
 # convenient dependency to prevent hunting what needs what:
 # some apps need more icons than the stock ones
@@ -70,6 +71,16 @@ WANTLIB-cups += asn1 crypto cups gdk-3 gssapi gtk-3 krb5 ssl
 WANTLIB-cups += avahi-client avahi-common
 WANTLIB-cups += com_err heimbase roken wind
 
+RUN_DEPENDS-cloudprint=	${MODGETTEXT_RUN_DEPENDS}
+LIB_DEPENDS-cloudprint=	${LIB_DEPENDS} \
+			devel/json-glib \
+			net/librest \
+			${BASE_PKGPATH},-main=${GNOME_VERSION}
+
+WANTLIB-cloudprint += ${WANTLIB}
+WANTLIB-cloudprint += gdk-3 gtk-3 json-glib-1.0 rest-0.7 soup-2.4 soup-gnome-2.4
+WANTLIB-cloudprint += sqlite3 xml2
+
 MODGNOME_TOOLS=		gi
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include/freetype2
 MODGNOME_ICON_CACHE=	Yes
@@ -77,8 +88,6 @@ MODGNOME_ICON_CACHE=	Yes
 TEST_IS_INTERACTIVE=	x11
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--enable-x11-backend \
-			--disable-wayland-backend
 
 # sync archs list with devel/spidermonkey
 # colord depends on polkit which depends on spidermonkey
