@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.55 2014/03/26 12:18:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2014/03/26 14:56:23 ajacoutot Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
 DISTNAME=	polkit-0.112
-REVISION=	4
+REVISION=	5
 
 SHARED_LIBS +=  polkit-gobject-1	2.0 # .0.0
 SHARED_LIBS +=  polkit-agent-1		2.0 # .0.0
@@ -25,15 +25,6 @@ MODULES=	devel/gettext \
 		lang/python \
 		textproc/intltool
 
-BUILD_DEPENDS=	${MODGNU_AUTOMAKE_DEPENDS} \
-		${MODGNU_AUTOCONF_DEPENDS} \
-		devel/gettext \
-		devel/gobject-introspection
-
-# AUTOCONF needs AM_PROG_LIBTOOL and ENABLE_GTK_DOC
-BUILD_DEPENDS+=	devel/libtool \
-		textproc/gtk-doc
-
 # man pages
 BUILD_DEPENDS+=	textproc/docbook-xsl
 
@@ -41,9 +32,6 @@ RUN_DEPENDS=	x11/dbus
 
 LIB_DEPENDS=	devel/glib2 \
 		devel/mozjs17
-
-AUTOCONF_VERSION=2.69
-AUTOMAKE_VERSION=1.11
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -73,6 +61,18 @@ MODPY_RUNDEP=	No
 USE_GMAKE=	Yes
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/polkit
+
+### Remove when updating to a newer release with integrated bsd_auth(3) support.
+AUTOCONF_VERSION=2.69
+AUTOMAKE_VERSION=1.11
+BUILD_DEPENDS=	${MODGNU_AUTOMAKE_DEPENDS} \
+		${MODGNU_AUTOCONF_DEPENDS} \
+		devel/gettext \
+		devel/gobject-introspection
+# AUTOCONF needs AM_PROG_LIBTOOL
+BUILD_DEPENDS+=	devel/libtool
+###
+
 
 pre-configure:
 	perl -pi \
