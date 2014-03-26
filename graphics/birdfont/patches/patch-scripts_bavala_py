@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_bavala_py,v 1.2 2013/09/13 07:09:37 bcallah Exp $
---- scripts/bavala.py.orig	Sat Aug 24 16:18:42 2013
-+++ scripts/bavala.py	Sun Aug 25 15:30:09 2013
+$OpenBSD: patch-scripts_bavala_py,v 1.3 2014/03/26 12:57:18 jasper Exp $
+--- scripts/bavala.py.orig	Sat Mar 22 16:52:02 2014
++++ scripts/bavala.py	Wed Mar 26 10:36:29 2014
 @@ -81,7 +81,7 @@ class Vala(object):
          if library:
              self.header = join(build, library) + '.h'
@@ -10,9 +10,9 @@ $OpenBSD: patch-scripts_bavala_py,v 1.2 2013/09/13 07:09:37 bcallah Exp $
              self.so_link = join(build, src) + '.so'
              self.so_link_name = src + '.so'
              self.so_version = so_version
-@@ -163,7 +163,7 @@ class Vala(object):
+@@ -167,7 +167,7 @@ class Vala(object):
      def gen_ln(self):
-         """generate a symbilic link to the generated ".so" file"""
+         """generate a symbolic link to the generated ".so" file"""
          so_file = self.so.rsplit('/')[-1]
 -        create_link = "ln -s -T " + so_file + " " + self.so_link_name + " "
 +        create_link = "ln -s " + so_file + " " + self.so_link_name + " "

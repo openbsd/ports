@@ -1,19 +1,10 @@
-$OpenBSD: patch-dodo_py,v 1.2 2014/03/26 09:23:33 ajacoutot Exp $
+$OpenBSD: patch-dodo_py,v 1.3 2014/03/26 12:57:18 jasper Exp $
 
 glib-2.0.vapi:967.53-967.68: error: Access to instance member `length' from nullable reference denied
 
---- dodo.py.orig	Thu Sep 12 15:33:31 2013
-+++ dodo.py	Wed Mar 26 10:19:22 2014
-@@ -45,7 +45,7 @@ LIBS = [
-     'cairo',
-     'gdk-pixbuf-2.0',
-     'webkit-1.0',
--    'gee-1.0'
-+    'gee-0.8'
-     ]
- 
- def task_build ():
-@@ -73,12 +73,11 @@ def task_pkg_flags():
+--- dodo.py.orig	Sat Mar 22 16:52:01 2014
++++ dodo.py	Wed Mar 26 10:36:57 2014
+@@ -74,12 +74,11 @@ def task_pkg_flags():
  
  
  valac_options = [
@@ -23,7 +14,7 @@ glib-2.0.vapi:967.53-967.68: error: Access to instance member `length' from null
  	'--define=LINUX'
  	]
 -libbird = Vala(src='libbirdfont', build='build', library='birdfont', so_version=version.SO_VERSION, pkg_libs=LIBS)
-+libbird = Vala(src='libbirdfont', build='build', library='birdfont', so_version=${LIBbirdfont_VERSION}, pkg_libs=LIBS)
++libbird = Vala(src='libbirdfont', build='build', library='birdfont', so_version='${LIBbirdfont_VERSION}', pkg_libs=LIBS)
  def task_libbirdfont():
      yield libbird.gen_c(valac_options)
      yield libbird.gen_o(['-fPIC', """-D 'GETTEXT_PACKAGE="birdfont"'"""])

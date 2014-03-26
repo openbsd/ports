@@ -1,15 +1,16 @@
-$OpenBSD: patch-install_py,v 1.1 2013/09/13 07:09:36 bcallah Exp $
---- install.py.orig	Thu Sep 12 22:17:47 2013
-+++ install.py	Thu Sep 12 22:19:52 2013
-@@ -67,9 +67,8 @@ install ('build/bin/birdfont-export', '/bin')
- if os.path.isfile ('build/bin/libbirdfont.so.' + version.SO_VERSION):
- 	install ('build/bin/libbirdfont.so.' + version.SO_VERSION, '/lib')
- 	install ('build/bin/libbirdfont.so', '/lib')
+$OpenBSD: patch-install_py,v 1.2 2014/03/26 12:57:18 jasper Exp $
+--- install.py.orig	Sat Mar 22 16:52:02 2014
++++ install.py	Wed Mar 26 10:37:26 2014
+@@ -112,10 +112,8 @@ if os.path.isfile ('build/bin/libbirdfont.so.' + versi
+ 	install ('build/bin/libbirdfont.so.' + version.SO_VERSION, libdir, 644)
+ 	link (libdir, 'libbirdfont.so.' + version.SO_VERSION, ' libbirdfont.so.' + version.SO_VERSION_MAJOR)
+ 	link (libdir, 'libbirdfont.so.' + version.SO_VERSION, ' libbirdfont.so')
 -elif os.path.isfile ('build/libbirdfont.so.' + version.SO_VERSION):
--	install ('build/libbirdfont.so.' + version.SO_VERSION, '/lib')
--	install ('build/libbirdfont.so', '/lib')
+-	install ('build/libbirdfont.so.' + version.SO_VERSION, libdir, 644)
+-	link (libdir, 'libbirdfont.so.' + version.SO_VERSION, ' libbirdfont.so.' + version.SO_VERSION_MAJOR)
+-	link (libdir, 'libbirdfont.so.' + version.SO_VERSION, ' libbirdfont.so')
 +elif os.path.isfile ('build/libbirdfont.so.' + '${LIBbirdfont_VERSION}'):
-+	install ('build/libbirdfont.so.' + '${LIBbirdfont_VERSION}', '/lib')
++	install ('build/libbirdfont.so.' + '${LIBbirdfont_VERSION}', '/lib', 644)
  elif os.path.isfile ('build/bin/libbirdfont.' + version.SO_VERSION + '.dylib'):
- 	install ('build/bin/libbirdfont.' + version.SO_VERSION + '.dylib', '/lib')
- 	install ('build/bin/libbirdfont.dylib', '/lib')
+ 	install ('build/bin/libbirdfont.' + version.SO_VERSION + '.dylib', libdir, 644)
+ 	link (libdir, 'libbirdfont.' + version.SO_VERSION + '.dylib', ' libbirdfont.dylib.' + version.SO_VERSION_MAJOR)
