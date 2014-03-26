@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.39 2014/03/09 22:50:17 brad Exp $
---- configure.orig	Wed Nov 27 17:15:55 2013
-+++ configure	Sat Feb  1 23:04:03 2014
+$OpenBSD: patch-configure,v 1.40 2014/03/26 14:14:47 brad Exp $
+--- configure.orig	Tue Mar 25 10:01:10 2014
++++ configure	Tue Mar 25 17:44:02 2014
 @@ -1290,9 +1290,9 @@ for flag in $gcc_flags; do
      fi
  done
@@ -14,19 +14,7 @@ $OpenBSD: patch-configure,v 1.39 2014/03/09 22:50:17 brad Exp $
  fi
  
  # Workaround for http://gcc.gnu.org/PR55489.  Happens with -fPIE/-fPIC and
-@@ -1357,6 +1357,11 @@ EOF
-       pie="no"
-     fi
-   fi
-+
-+  if compile_prog "-fno-pie" "-nopie"; then
-+    CFLAGS_NOPIE="-fno-pie"
-+    LDFLAGS_NOPIE="-nopie"
-+  fi 
- fi
- 
- ##########################################
-@@ -3549,8 +3554,6 @@ fi
+@@ -3554,8 +3554,6 @@ fi
  if test "$gcov" = "yes" ; then
    CFLAGS="-fprofile-arcs -ftest-coverage -g $CFLAGS"
    LDFLAGS="-fprofile-arcs -ftest-coverage $LDFLAGS"
@@ -35,19 +23,3 @@ $OpenBSD: patch-configure,v 1.39 2014/03/09 22:50:17 brad Exp $
  fi
  
  
-@@ -4288,6 +4291,7 @@ echo "LD=$ld" >> $config_host_mak
- echo "WINDRES=$windres" >> $config_host_mak
- echo "LIBTOOL=$libtool" >> $config_host_mak
- echo "CFLAGS=$CFLAGS" >> $config_host_mak
-+echo "CFLAGS_NOPIE=$CFLAGS_NOPIE" >> $config_host_mak
- echo "QEMU_CFLAGS=$QEMU_CFLAGS" >> $config_host_mak
- echo "QEMU_INCLUDES=$QEMU_INCLUDES" >> $config_host_mak
- if test "$sparse" = "yes" ; then
-@@ -4301,6 +4305,7 @@ else
-   echo "AUTOCONF_HOST := "                             >> $config_host_mak
- fi
- echo "LDFLAGS=$LDFLAGS" >> $config_host_mak
-+echo "LDFLAGS_NOPIE=$LDFLAGS_NOPIE" >> $config_host_mak
- echo "LIBTOOLFLAGS=$LIBTOOLFLAGS" >> $config_host_mak
- echo "LIBS+=$LIBS" >> $config_host_mak
- echo "LIBS_TOOLS+=$libs_tools" >> $config_host_mak
