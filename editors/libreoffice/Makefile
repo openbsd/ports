@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2014/03/10 20:27:25 landry Exp $
+# $OpenBSD: Makefile,v 1.106 2014/03/26 07:27:17 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -7,7 +7,7 @@ COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
 BV=		4.1
-VERSION=	4.1.4.2
+VERSION=	4.1.5.3
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -17,9 +17,6 @@ PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde3
 
-REVISION-main=	0
-REVISION-kde=	0
-REVISION-java=	0
 EPOCH=		0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -216,6 +213,7 @@ WANTLIB-kde=		${MODQT_WANTLIB} \
 			lib/kde3/kdecore \
 			lib/kde3/kdeui lib/kde3/kio
 WANTLIB-kde+=		ICE SM Xext icule icuuc
+WANTLIB-kde+=		Xrender
 
 .include <bsd.port.arch.mk>
 
