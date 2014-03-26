@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2013/12/11 16:47:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2014/03/26 13:32:55 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		standard GNOME themes
 
 GNOME_PROJECT=		gnome-themes-standard
-GNOME_VERSION=		3.10.0
-REVISION=		1
+GNOME_VERSION=		3.12.0
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -38,12 +37,13 @@ LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_ARGS=		--disable-static
 
+post-install:
 # set the global cursor theme
 # https://bugzilla.gnome.org/show_bug.cgi?id=660353
-post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/default
 	${INSTALL_DATA} ${FILESDIR}/index.theme \
 		${PREFIX}/share/icons/default
+
 	rm ${PREFIX}/lib/gtk-3.0/3.0.0/theming-engines/*.la
 	rm ${PREFIX}/lib/gtk-2.0/2.10.0/engines/*.la
 
