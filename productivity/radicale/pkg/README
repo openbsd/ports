@@ -1,26 +1,40 @@
-$OpenBSD: README,v 1.4 2011/08/22 08:43:54 sthen Exp $
+$OpenBSD: README,v 1.5 2014/03/26 10:17:02 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
 Radicale will run out of the box but with NO SECURITY.
+
 There are two things you should do to enable security:
 enable passwords and enable encryption.
 
 Authentication
 ==============
-To enable passwords, edit ${SYSCONFDIR}/radicale/config and change
+To enable simple passwords, edit ${SYSCONFDIR}/radicale/config and change
 "type = None" (i.e. passwords are not requested or checked) to
 "type = htpasswd".
 
 User password(s) may be created with htpasswd(1); e.g.
-"htpasswd -s ${SYSCONFDIR}/radicale/users username".
-If the 'users' file does not already exist, use the '-c' option to create it.
+"htpasswd ${SYSCONFDIR}/radicale/users username".
+
+As of radicale-0.8p0, the OpenBSD port of Radicale has been modified
+to support bcrypt password hashes.
+
+Previous versions required old unix "crypt" or unsalted SHA-1 hashes
+of passwords, neither of which are safe.
+
+Users of previous versions should set "htpasswd_encryption = bcrypt"
+in ${SYSCONFDIR}/radicale/config and update their saved passwords when
+possible (to help with migration, existing SHA hashes stored with a
+"{SHA}" prefix in the users file will still work with the new setting).
 
 By default all calendars may be accessed by any authenticated user.
 To restrict calendars so that "/user1/calendar_name" can ONLY be
 accessed by user1, also change "personal = False" to "personal = True".
+
+For further authentication options (including deferring authentication
+to an existing IMAP server), consult Radicale's documentation.
 
 Encryption
 ==========

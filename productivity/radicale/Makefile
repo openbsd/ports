@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2013/10/21 09:47:19 jung Exp $
+# $OpenBSD: Makefile,v 1.21 2014/03/26 10:17:02 sthen Exp $
 
 COMMENT =	simple CalDAV calendar server
 
 MODPY_EGG_VERSION = 0.8
+REVISION =	0
 DISTNAME =	Radicale-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:L}
 CATEGORIES =	productivity net
@@ -18,6 +19,7 @@ MASTER_SITES =		${MASTER_SITE_PYPI:=R/Radicale/}
 
 MODULES =		lang/python
 MODPY_ADJ_FILES =	radicale.py
+LIB_DEPENDS =		security/py-bcrypt
 
 NO_TEST =		Yes
 
