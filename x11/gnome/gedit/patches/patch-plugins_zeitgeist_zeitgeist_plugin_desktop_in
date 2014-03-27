@@ -1,7 +1,9 @@
-$OpenBSD: patch-plugins_zeitgeist_zeitgeist_plugin_desktop_in,v 1.2 2014/03/27 12:22:15 jasper Exp $
+$OpenBSD: patch-plugins_zeitgeist_zeitgeist_plugin_desktop_in,v 1.3 2014/03/27 12:41:18 jasper Exp $
 
-Unbreak loading the zeitgeist plugin.
-https://bugzilla.gnome.org/show_bug.cgi?id=727156
+From 8f8049d2c3b1ae5ddadb77bcc04b25e2bfebe481 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Thu, 27 Mar 2014 12:20:33 +0000
+Subject: Use correct module name to load the zeitgeist plugin.
 
 --- plugins/zeitgeist/zeitgeist.plugin.desktop.in.orig	Thu Mar 27 13:12:29 2014
 +++ plugins/zeitgeist/zeitgeist.plugin.desktop.in	Thu Mar 27 13:12:33 2014
