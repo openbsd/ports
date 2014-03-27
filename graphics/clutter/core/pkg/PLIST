@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2013/11/19 17:29:18 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/03/27 13:07:44 jasper Exp $
 @conflict cogl-<1.8.0
 include/clutter-${API_VERSION}/
 include/clutter-${API_VERSION}/cally/
@@ -87,8 +87,8 @@ include/clutter-${API_VERSION}/clutter/clutter-snap-constraint.h
 include/clutter-${API_VERSION}/clutter/clutter-stage-manager.h
 include/clutter-${API_VERSION}/clutter/clutter-stage.h
 include/clutter-${API_VERSION}/clutter/clutter-swipe-action.h
-include/clutter-${API_VERSION}/clutter/clutter-table-layout.h
 include/clutter-${API_VERSION}/clutter/clutter-tap-action.h
+include/clutter-${API_VERSION}/clutter/clutter-test-utils.h
 include/clutter-${API_VERSION}/clutter/clutter-text-buffer.h
 include/clutter-${API_VERSION}/clutter/clutter-text.h
 include/clutter-${API_VERSION}/clutter/clutter-texture.h
@@ -131,6 +131,7 @@ include/clutter-${API_VERSION}/clutter/deprecated/clutter-shader.h
 include/clutter-${API_VERSION}/clutter/deprecated/clutter-stage-manager.h
 include/clutter-${API_VERSION}/clutter/deprecated/clutter-stage.h
 include/clutter-${API_VERSION}/clutter/deprecated/clutter-state.h
+include/clutter-${API_VERSION}/clutter/deprecated/clutter-table-layout.h
 include/clutter-${API_VERSION}/clutter/deprecated/clutter-texture.h
 include/clutter-${API_VERSION}/clutter/deprecated/clutter-timeline.h
 include/clutter-${API_VERSION}/clutter/deprecated/clutter-timeout-pool.h
@@ -398,6 +399,7 @@ share/locale/it/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/ja/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/km/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/kn/LC_MESSAGES/clutter-${API_VERSION}.mo
+share/locale/ko/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/lt/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/lv/LC_MESSAGES/clutter-${API_VERSION}.mo
 share/locale/mk/LC_MESSAGES/clutter-${API_VERSION}.mo
