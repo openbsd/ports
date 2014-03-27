@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2014/03/26 14:36:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2014/03/27 07:52:14 jasper Exp $
 
 COMMENT=		JSON parser for GLib-based libraries and applications
 
@@ -20,6 +20,8 @@ WANTLIB += pcre z
 
 MODULES=		devel/gettext \
 			x11/gnome
+# man pages
+BUILD_DEPENDS=		textproc/docbook-xsl
 
 LIB_DEPENDS=		devel/glib2
 
