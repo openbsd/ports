@@ -1,6 +1,6 @@
-$OpenBSD: patch-client_Makefile_in,v 1.13 2013/09/26 07:05:04 ajacoutot Exp $
---- client/Makefile.in.orig	Mon Sep 23 23:29:28 2013
-+++ client/Makefile.in	Thu Sep 26 08:51:37 2013
+$OpenBSD: patch-client_Makefile_in,v 1.14 2014/03/27 08:02:49 ajacoutot Exp $
+--- client/Makefile.in.orig	Mon Mar 24 20:24:40 2014
++++ client/Makefile.in	Wed Mar 26 17:10:17 2014
 @@ -83,7 +83,7 @@ DIST_COMMON = $(top_srcdir)/Makefile.gtester $(srcdir)
  	$(srcdir)/Makefile.am $(srcdir)/dconf.pc.in \
  	$(top_srcdir)/aux/depcomp $(dconfclientinclude_HEADERS) \
@@ -10,7 +10,7 @@ $OpenBSD: patch-client_Makefile_in,v 1.13 2013/09/26 07:05:04 ajacoutot Exp $
  subdir = client
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  am__aclocal_m4_deps = $(top_srcdir)/m4/gtk-doc.m4 \
-@@ -363,7 +363,7 @@ top_srcdir = @top_srcdir@
+@@ -365,7 +365,7 @@ top_srcdir = @top_srcdir@
  # initialize variables for unconditional += appending
  TEST_PROGS = 
  shlibdir = $(libdir)
@@ -19,7 +19,7 @@ $OpenBSD: patch-client_Makefile_in,v 1.13 2013/09/26 07:05:04 ajacoutot Exp $
  noinst_LIBRARIES = libdconf-client.a
  dconfinclude_HEADERS = dconf.h
  dconfclientinclude_HEADERS = dconf-client.h
-@@ -381,7 +381,7 @@ libdconf_so_1_0_0_LDADD = \
+@@ -383,7 +383,7 @@ libdconf_so_1_0_0_LDADD = \
  	../shm/libdconf-shm-shared.a			\
  	$(gio_LIBS)
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-client_Makefile_in,v 1.13 2013/09/26 07:05:04 ajacoutot Exp $
  libdconf_so_1_0_0_SOURCES = $(libdconf_client_a_SOURCES)
  EXTRA_DIST = dconf.vapi dconf.deps
  vapi_DATA = dconf.vapi dconf.deps
-@@ -477,8 +477,8 @@ uninstall-shlibPROGRAMS:
+@@ -479,8 +479,8 @@ uninstall-shlibPROGRAMS:
  clean-shlibPROGRAMS:
  	-test -z "$(shlib_PROGRAMS)" || rm -f $(shlib_PROGRAMS)
  
@@ -39,7 +39,7 @@ $OpenBSD: patch-client_Makefile_in,v 1.13 2013/09/26 07:05:04 ajacoutot Exp $
  	$(AM_V_CCLD)$(libdconf_so_1_0_0_LINK) $(libdconf_so_1_0_0_OBJECTS) $(libdconf_so_1_0_0_LDADD) $(LIBS)
  
  mostlyclean-compile:
-@@ -899,13 +899,6 @@ test-report perf-report full-report:	${TEST_PROGS}
+@@ -901,13 +901,6 @@ test-report perf-report full-report:	${TEST_PROGS}
  
  # run tests in cwd as part of make check
  check-local: test-nonrecursive

@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST-editor,v 1.11 2013/09/26 07:05:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST-editor,v 1.12 2014/03/27 08:02:49 ajacoutot Exp $
 @conflict dconf-<0.5.1p5
 @bin bin/dconf-editor
 share/applications/dconf-editor.desktop
+share/appdata/
+share/appdata/dconf-editor.appdata.xml
 share/glib-2.0/schemas/ca.desrt.dconf-editor.gschema.xml
 share/icons/HighContrast/
 share/icons/HighContrast/16x16/
