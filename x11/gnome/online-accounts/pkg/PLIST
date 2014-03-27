@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2013/10/21 17:02:52 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2014/03/27 08:22:09 jasper Exp $
 include/goa-1.0/
 include/goa-1.0/goa/
 include/goa-1.0/goa/goa-generated.h
@@ -43,7 +43,7 @@ share/icons/hicolor/16x16/apps/goa-account-facebook.png
 share/icons/hicolor/16x16/apps/goa-account-flickr.png
 share/icons/hicolor/16x16/apps/goa-account-google.png
 share/icons/hicolor/16x16/apps/goa-account-owncloud.png
-share/icons/hicolor/16x16/apps/goa-account-twitter.png
+share/icons/hicolor/16x16/apps/goa-account-pocket.png
 share/icons/hicolor/16x16/apps/goa-account-yahoo.png
 share/icons/hicolor/16x16/apps/goa-account.png
 share/icons/hicolor/16x16/apps/im-aim.png
@@ -71,7 +71,7 @@ share/icons/hicolor/22x22/apps/goa-account-facebook.png
 share/icons/hicolor/22x22/apps/goa-account-flickr.png
 share/icons/hicolor/22x22/apps/goa-account-google.png
 share/icons/hicolor/22x22/apps/goa-account-owncloud.png
-share/icons/hicolor/22x22/apps/goa-account-twitter.png
+share/icons/hicolor/22x22/apps/goa-account-pocket.png
 share/icons/hicolor/22x22/apps/goa-account-yahoo.png
 share/icons/hicolor/22x22/apps/goa-account.png
 share/icons/hicolor/22x22/apps/im-aim.png
@@ -99,7 +99,7 @@ share/icons/hicolor/24x24/apps/goa-account-facebook.png
 share/icons/hicolor/24x24/apps/goa-account-flickr.png
 share/icons/hicolor/24x24/apps/goa-account-google.png
 share/icons/hicolor/24x24/apps/goa-account-owncloud.png
-share/icons/hicolor/24x24/apps/goa-account-twitter.png
+share/icons/hicolor/24x24/apps/goa-account-pocket.png
 share/icons/hicolor/24x24/apps/goa-account-yahoo.png
 share/icons/hicolor/24x24/apps/goa-account.png
 share/icons/hicolor/24x24/apps/im-aim.png
@@ -127,7 +127,7 @@ share/icons/hicolor/32x32/apps/goa-account-facebook.png
 share/icons/hicolor/32x32/apps/goa-account-flickr.png
 share/icons/hicolor/32x32/apps/goa-account-google.png
 share/icons/hicolor/32x32/apps/goa-account-owncloud.png
-share/icons/hicolor/32x32/apps/goa-account-twitter.png
+share/icons/hicolor/32x32/apps/goa-account-pocket.png
 share/icons/hicolor/32x32/apps/goa-account-yahoo.png
 share/icons/hicolor/32x32/apps/goa-account.png
 share/icons/hicolor/32x32/apps/im-aim.png
@@ -154,7 +154,7 @@ share/icons/hicolor/48x48/apps/goa-account-facebook.png
 share/icons/hicolor/48x48/apps/goa-account-flickr.png
 share/icons/hicolor/48x48/apps/goa-account-google.png
 share/icons/hicolor/48x48/apps/goa-account-owncloud.png
-share/icons/hicolor/48x48/apps/goa-account-twitter.png
+share/icons/hicolor/48x48/apps/goa-account-pocket.png
 share/icons/hicolor/48x48/apps/goa-account-yahoo.png
 share/icons/hicolor/48x48/apps/goa-account.png
 share/icons/hicolor/48x48/apps/im-aim.png
@@ -291,6 +291,9 @@ share/locale/fur/LC_MESSAGES/
 share/locale/fur/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/ga/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/ga/LC_MESSAGES/gnome-online-accounts.mo
+share/locale/gd/
+share/locale/gd/LC_MESSAGES/
+share/locale/gd/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/gl/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/gl/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/gu/
