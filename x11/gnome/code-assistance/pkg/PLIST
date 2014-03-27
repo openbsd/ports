@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/16 09:30:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/03/27 13:56:19 jasper Exp $
 libexec/gnome-code-assistance/
 libexec/gnome-code-assistance/backends/
 libexec/gnome-code-assistance/backends/js/
@@ -53,6 +53,19 @@ libexec/gnome-code-assistance/backends/py/gnome/codeassistance/c/clangimporter.p
 libexec/gnome-code-assistance/backends/py/gnome/codeassistance/c/config.py
 libexec/gnome-code-assistance/backends/py/gnome/codeassistance/c/makefileintegration.py
 libexec/gnome-code-assistance/backends/py/gnome/codeassistance/c/service.py
+libexec/gnome-code-assistance/backends/py/gnome/codeassistance/json/
+libexec/gnome-code-assistance/backends/py/gnome/codeassistance/json/__init__.py
+libexec/gnome-code-assistance/backends/py/gnome/codeassistance/json/${MODPY_PYCACHE}/
+libexec/gnome-code-assistance/backends/py/gnome/codeassistance/json/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+libexec/gnome-code-assistance/backends/py/gnome/codeassistance/json/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyo
+libexec/gnome-code-assistance/backends/py/gnome/codeassistance/json/deps/
+libexec/gnome-code-assistance/backends/py/gnome/codeassistance/json/deps/simplejson/
+libexec/gnome-code-assistance/backends/py/gnome/codeassistance/json/deps/simplejson/__init__.py
+libexec/gnome-code-assistance/backends/py/gnome/codeassistance/json/deps/simplejson/compat.py
+libexec/gnome-code-assistance/backends/py/gnome/codeassistance/json/deps/simplejson/decoder.py
+libexec/gnome-code-assistance/backends/py/gnome/codeassistance/json/deps/simplejson/encoder.py
+libexec/gnome-code-assistance/backends/py/gnome/codeassistance/json/deps/simplejson/ordered_dict.py
+libexec/gnome-code-assistance/backends/py/gnome/codeassistance/json/deps/simplejson/scanner.py
 libexec/gnome-code-assistance/backends/py/gnome/codeassistance/python/
 libexec/gnome-code-assistance/backends/py/gnome/codeassistance/python/__init__.py
 libexec/gnome-code-assistance/backends/py/gnome/codeassistance/python/${MODPY_PYCACHE}/
@@ -404,14 +417,17 @@ libexec/gnome-code-assistance/backends/rb/gnome/codeassistance/types.rb
 libexec/gnome-code-assistance/c
 libexec/gnome-code-assistance/css
 libexec/gnome-code-assistance/js
+libexec/gnome-code-assistance/json
 libexec/gnome-code-assistance/python
 libexec/gnome-code-assistance/ruby
 libexec/gnome-code-assistance/sh
 @bin libexec/gnome-code-assistance/vala
+@bin libexec/gnome-code-assistance/valahelper
 libexec/gnome-code-assistance/xml
 share/dbus-1/services/org.gnome.CodeAssist.v1.c.service
 share/dbus-1/services/org.gnome.CodeAssist.v1.css.service
 share/dbus-1/services/org.gnome.CodeAssist.v1.js.service
+share/dbus-1/services/org.gnome.CodeAssist.v1.json.service
 share/dbus-1/services/org.gnome.CodeAssist.v1.python.service
 share/dbus-1/services/org.gnome.CodeAssist.v1.ruby.service
 share/dbus-1/services/org.gnome.CodeAssist.v1.sh.service
