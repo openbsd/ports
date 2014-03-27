@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_decoder_dec_lavc_c,v 1.3 2013/01/26 12:47:44 brad Exp $
+$OpenBSD: patch-src_decoder_dec_lavc_c,v 1.4 2014/03/27 21:38:10 brad Exp $
 
 Update for newer FFmpeg API.
 
 --- src/decoder/dec_lavc.c.orig	Thu Aug 20 14:11:11 2009
-+++ src/decoder/dec_lavc.c	Fri Jan 18 00:34:08 2013
++++ src/decoder/dec_lavc.c	Thu Mar 27 01:12:13 2014
 @@ -25,6 +25,7 @@
  #include <stdlib.h>
  #include <string.h>
@@ -12,25 +12,98 @@ Update for newer FFmpeg API.
  
  #include "dec_lavc.h"
  
-@@ -53,7 +54,7 @@ decode_lavc(decoder_t * dec) {
+@@ -36,6 +37,45 @@
+ 
+ extern size_t sample_size;
+ 
++/* Adapted from avcodec_decode_audio3() implementation found at:
++ * https://raw.github.com/FFmpeg/FFmpeg/master/libavcodec/utils.c
++ */
++int decode_audio3(AVCodecContext *avctx, int16_t *samples, int *frame_size_ptr, AVPacket *avpkt) {
++	int ret;
++#if LIBAVCODEC_VERSION_MAJOR < 53
++	ret = avcodec_decode_audio3(avctx, samples, frame_size_ptr, avpkt);
++#else /* LIBAVCODEC_VERSION_MAJOR >= 53 */
++	AVFrame frame = { { 0 } };
++	int got_frame = 0;
++	
++	ret = avcodec_decode_audio4(avctx, &frame, &got_frame, avpkt);
++	if (ret >= 0 && got_frame) {
++		int ch, plane_size;
++		int planar = av_sample_fmt_is_planar(avctx->sample_fmt);
++		int data_size = av_samples_get_buffer_size(&plane_size, avctx->channels,
++							   frame.nb_samples, avctx->sample_fmt, 1);
++		if (*frame_size_ptr < data_size) {
++			av_log(avctx, AV_LOG_ERROR, "output buffer size is too small for "
++			       "the current frame (%d < %d)\n", *frame_size_ptr, data_size);
++			return AVERROR(EINVAL);
++		}
++		memcpy(samples, frame.extended_data[0], plane_size);
++		
++		if (planar && avctx->channels > 1) {
++			uint8_t *out = ((uint8_t *)samples) + plane_size;
++			for (ch = 1; ch < avctx->channels; ch++) {
++				memcpy(out, frame.extended_data[ch], plane_size);
++				out += plane_size;
++			}
++		}
++		*frame_size_ptr = data_size;
++	} else {
++		*frame_size_ptr = 0;
++	}
++#endif /* LIBAVCODEC_VERSION_MAJOR >= 53 */
++	return ret;
++}
++
+ /* return 1 if reached end of stream, 0 else */
+ int
+ decode_lavc(decoder_t * dec) {
+@@ -44,16 +84,16 @@ decode_lavc(decoder_t * dec) {
+         file_decoder_t * fdec = dec->fdec;
+ 
+ 	AVPacket packet;
+-        int16_t samples[AVCODEC_MAX_AUDIO_FRAME_SIZE];
+-        float fsamples[AVCODEC_MAX_AUDIO_FRAME_SIZE];
+-        int n_bytes = AVCODEC_MAX_AUDIO_FRAME_SIZE;
++        int16_t samples[MAX_AUDIO_FRAME_SIZE];
++        float fsamples[MAX_AUDIO_FRAME_SIZE];
++        int n_bytes = MAX_AUDIO_FRAME_SIZE;
+ 
+ 	if (av_read_frame(pd->avFormatCtx, &packet) < 0)
+ 		return 1;
  
  	if (packet.stream_index == pd->audioStream) {
  
 -		avcodec_decode_audio2(pd->avCodecCtx, samples, &n_bytes, packet.data, packet.size);
-+		avcodec_decode_audio3(pd->avCodecCtx, samples, &n_bytes, &packet);
++		decode_audio3(pd->avCodecCtx, samples, &n_bytes, &packet);
  		if (n_bytes > 0) {
  			int i;
  			for (i = 0; i < n_bytes/2; i++) {
-@@ -111,7 +112,7 @@ lavc_decoder_open(decoder_t * dec, char * filename) {
+@@ -111,11 +151,23 @@ lavc_decoder_open(decoder_t * dec, char * filename) {
  	file_decoder_t * fdec = dec->fdec;
  	int i;
  
--	if (av_open_input_file(&pd->avFormatCtx, filename, NULL, 0, NULL) != 0)
++#if LIBAVFORMAT_VERSION_MAJOR < 53
+ 	if (av_open_input_file(&pd->avFormatCtx, filename, NULL, 0, NULL) != 0)
++#else /* LIBAVFORMAT_VERSION_MAJOR >= 53 */
 +	if (avformat_open_input(&pd->avFormatCtx, filename, NULL, NULL) != 0)
++#endif /* LIBAVFORMAT_VERSION_MAJOR >= 53 */
++	{
  		return DECODER_OPEN_BADLIB;
++	}
  
++#if LIBAVFORMAT_VERSION_MAJOR < 53
  	if (av_find_stream_info(pd->avFormatCtx) < 0)
-@@ -124,7 +125,7 @@ lavc_decoder_open(decoder_t * dec, char * filename) {
++#else /* LIBAVFORMAT_VERSION_MAJOR >= 53 */
++	if (avformat_find_stream_info(pd->avFormatCtx, NULL) < 0)
++#endif /* LIBAVFORMAT_VERSION_MAJOR >= 53 */
++	{
+ 		return DECODER_OPEN_BADLIB;
++	}
+ 
+ 	/* debug */
+ #ifdef LAVC_DEBUG
+@@ -124,7 +176,7 @@ lavc_decoder_open(decoder_t * dec, char * filename) {
  
  	pd->audioStream = -1;
  	for (i = 0; i < pd->avFormatCtx->nb_streams; i++) {
@@ -39,3 +112,43 @@ Update for newer FFmpeg API.
  			pd->audioStream = i;
  			break;
  		}
+@@ -133,6 +185,10 @@ lavc_decoder_open(decoder_t * dec, char * filename) {
+ 		return DECODER_OPEN_BADLIB;
+ 
+ 	pd->avCodecCtx = pd->avFormatCtx->streams[pd->audioStream]->codec;
++#if LIBAVCODEC_VERSION_MAJOR >= 53
++	pd->avCodecCtx->get_buffer = avcodec_default_get_buffer;
++	pd->avCodecCtx->release_buffer = avcodec_default_release_buffer;
++#endif /* LIBAVCODEC_VERSION_MAJOR >= 53 */
+ 
+ 	pd->time_base = pd->avFormatCtx->streams[pd->audioStream]->time_base;
+ 
+@@ -140,8 +196,14 @@ lavc_decoder_open(decoder_t * dec, char * filename) {
+ 	if (pd->avCodec == NULL)
+ 		return DECODER_OPEN_BADLIB;
+ 
++#if LIBAVCODEC_VERSION_MAJOR < 53
+ 	if (avcodec_open(pd->avCodecCtx, pd->avCodec) < 0)
++#else /* LIBAVCODEC_VERSION_MAJOR >= 53 */
++	if (avcodec_open2(pd->avCodecCtx, pd->avCodec, NULL) < 0)
++#endif /* LIBAVCODEC_VERSION_MAJOR >= 53 */
++	{
+ 		return DECODER_OPEN_BADLIB;
++	}
+ 
+ 	if ((pd->avCodecCtx->channels != 1) && (pd->avCodecCtx->channels != 2)) {
+ 		fprintf(stderr,
+@@ -184,7 +246,13 @@ lavc_decoder_close(decoder_t * dec) {
+ 	lavc_pdata_t * pd = (lavc_pdata_t *)dec->pdata;
+ 
+ 	avcodec_close(pd->avCodecCtx);
++
++#if LIBAVFORMAT_VERSION_MAJOR < 53
+ 	av_close_input_file(pd->avFormatCtx);
++#else /* LIBAVFORMAT_VERSION_MAJOR >= 53 */
++	avformat_close_input(&pd->avFormatCtx);
++#endif /* LIBAVFORMAT_VERSION_MAJOR >= 53 */
++
+ 	rb_free(pd->rb);
+ }
+ 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2013/03/10 22:55:01 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2014/03/27 21:38:10 brad Exp $
 
 COMMENT=	advanced music player
 
 DISTNAME=	aqualung-0.9beta11
-REVISION=	12
+REVISION=	13
 EPOCH=		0
 CATEGORIES=	audio
 
@@ -15,7 +15,7 @@ MAINTAINER=	Jeremy Evans <jeremy@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 bz2 c cairo expat fontconfig
+WANTLIB += Xrandr Xrender atk-1.0 bz2 c cairo fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += gthread-2.0 m mp3lame ogg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pthread samplerate sndfile sndio stdc++
@@ -23,7 +23,6 @@ WANTLIB += vorbis vorbisenc vorbisfile z gtk-x11-2.0 gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 xml2 mac mad mpcdec FLAC avcodec
 WANTLIB += avformat avutil jack wavpack lrdf oggz speex cddb cdio
 WANTLIB += cdio_cdda cdio_paranoia modplug ${MODLUA_WANTLIB}
-WANTLIB += GL pixman-1 png pthread-stubs xcb xcb-render xcb-shm
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=aqualung/}
 
@@ -37,10 +36,13 @@ BUILD_DEPENDS=	devel/autoconf/2.63 \
 
 LIB_DEPENDS=	audio/flac \
 		audio/jack \
+		audio/lame \
 		audio/libcdio \
 		audio/libcddb \
 		audio/libmad \
 		audio/libmodplug \
+		audio/libsndfile \
+		audio/libvorbis \
 		audio/mac \
 		audio/musepack \
 		audio/speex \
@@ -57,11 +59,11 @@ RUN_DEPENDS=	devel/desktop-file-utils
 AUTOCONF_VERSION= 2.63
 AUTOMAKE_VERSION= 1.10
 
+CFLAGS+=	-DPTHREAD_MIN_PRIORITY=0 -DPTHREAD_MAX_PRIORITY=31 \
+		-I${LOCALBASE}/include -I${MODLUA_INCL_DIR}
+
 CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib " \
-		CFLAGS="${CFLAGS} -DOSS_DEVICE='\"/dev/audio\"'  \
-		-DPTHREAD_MIN_PRIORITY=0 -DPTHREAD_MAX_PRIORITY=31  \
-		-I${LOCALBASE}/include -I${MODLUA_INCL_DIR}"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib "
 
 # ifp (requires libifp) - no package
 CONFIGURE_ARGS=	--with-cdda \

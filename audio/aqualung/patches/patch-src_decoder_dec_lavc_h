@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_decoder_dec_lavc_h,v 1.4 2013/01/26 12:47:44 brad Exp $
+$OpenBSD: patch-src_decoder_dec_lavc_h,v 1.5 2014/03/27 21:38:10 brad Exp $
 
 Update for newer FFmpeg API.
 
---- src/decoder/dec_lavc.h.orig	Thu Jan 17 23:01:12 2013
-+++ src/decoder/dec_lavc.h	Thu Jan 17 23:04:05 2013
+--- src/decoder/dec_lavc.h.orig	Thu Aug 20 14:11:11 2009
++++ src/decoder/dec_lavc.h	Thu Mar 27 00:48:37 2014
 @@ -24,25 +24,9 @@
  
  #ifdef HAVE_LAVC
@@ -31,3 +31,13 @@ Update for newer FFmpeg API.
  
  #endif /* HAVE_LAVC */
  
+@@ -50,7 +34,8 @@
+ 
+ #ifdef HAVE_LAVC
+ 
+-#define RB_LAVC_SIZE (3*AVCODEC_MAX_AUDIO_FRAME_SIZE)
++#define MAX_AUDIO_FRAME_SIZE 192000 // 1 second of 48khz 32bit audio
++#define RB_LAVC_SIZE (3*MAX_AUDIO_FRAME_SIZE)
+ 
+ typedef struct _lavc_pdata_t {
+         rb_t * rb;
