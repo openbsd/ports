@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2014/03/27 15:12:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2014/03/27 17:43:41 ajacoutot Exp $
 
 TRACKER_VERSION=1.0
 
@@ -7,8 +7,7 @@ SHARED_ONLY=	Yes
 COMMENT=	document manager for GNOME
 
 GNOME_PROJECT=	gnome-documents
-GNOME_VERSION=	3.10.2
-REVISION=	1
+GNOME_VERSION=	3.12.0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -28,9 +27,9 @@ WANTLIB += nss3 oauth orc-0.4 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += readline rest-0.7 secret-1 smime3 softokn3 soup-2.4
 WANTLIB += soup-gnome-2.4 sqlite3 ssl ssl3 stdc++
-WANTLIB += uuid webkitgtk-3.0 webp xcb xcb-render xcb-shm xkbfile
-WANTLIB += xml2 xslt z zapojit-0.0
-WANTLIB += tracker-miner-${TRACKER_VERSION}
+WANTLIB += uuid webkitgtk-3.0 webp xcb xcb-render xcb-shm
+WANTLIB += xml2 xslt z zapojit-0.0 mediaart-1.0
+WANTLIB += tracker-control-${TRACKER_VERSION}
 WANTLIB += tracker-sparql-${TRACKER_VERSION}
 WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-data
 WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-common
