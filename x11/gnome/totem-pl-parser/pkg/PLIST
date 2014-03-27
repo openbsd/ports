@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2013/09/26 16:09:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2014/03/27 16:11:35 ajacoutot Exp $
 include/totem-pl-parser/
 include/totem-pl-parser/1/
 include/totem-pl-parser/1/plparser/
@@ -29,11 +29,14 @@ share/gtk-doc/html/totem-pl-parser/home.png
 share/gtk-doc/html/totem-pl-parser/index.html
 share/gtk-doc/html/totem-pl-parser/index.sgml
 share/gtk-doc/html/totem-pl-parser/ix02.html
+share/gtk-doc/html/totem-pl-parser/left-insensitive.png
 share/gtk-doc/html/totem-pl-parser/left.png
+share/gtk-doc/html/totem-pl-parser/right-insensitive.png
 share/gtk-doc/html/totem-pl-parser/right.png
 share/gtk-doc/html/totem-pl-parser/style.css
 share/gtk-doc/html/totem-pl-parser/totem-pl-parser-TotemPlPlaylistIter.html
 share/gtk-doc/html/totem-pl-parser/totem-pl-parser.devhelp2
+share/gtk-doc/html/totem-pl-parser/up-insensitive.png
 share/gtk-doc/html/totem-pl-parser/up.png
 share/locale/af/LC_MESSAGES/totem-pl-parser.mo
 share/locale/am/LC_MESSAGES/totem-pl-parser.mo
@@ -70,6 +73,9 @@ share/locale/fi/LC_MESSAGES/totem-pl-parser.mo
 share/locale/fr/LC_MESSAGES/totem-pl-parser.mo
 share/locale/fur/LC_MESSAGES/totem-pl-parser.mo
 share/locale/ga/LC_MESSAGES/totem-pl-parser.mo
+share/locale/gd/
+share/locale/gd/LC_MESSAGES/
+share/locale/gd/LC_MESSAGES/totem-pl-parser.mo
 share/locale/gl/LC_MESSAGES/totem-pl-parser.mo
 share/locale/gu/LC_MESSAGES/totem-pl-parser.mo
 share/locale/he/LC_MESSAGES/totem-pl-parser.mo
