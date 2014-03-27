@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2014/03/26 10:42:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2014/03/27 19:37:58 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	quick previewer for Nautilus
 
 GNOME_PROJECT=	sushi
 GNOME_VERSION=	3.10.0
-REVISION=	2
+REVISION=	3
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,7 +27,7 @@ WANTLIB += musicbrainz5 ncursesw neon orc-0.4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png proxy pthread pthread-stubs
 WANTLIB += readline roken secret-1 soup-2.4 sqlite3 ssl stdc++
 WANTLIB += webkitgtk-3.0 webp wind xcb xcb-render xcb-shm xml2
-WANTLIB += xslt z
+WANTLIB += xslt z cogl-path
 
 MODULES=	devel/gettext \
 		x11/gnome
