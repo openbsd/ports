@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.88 2014/01/23 10:51:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.89 2014/03/27 08:07:04 ajacoutot Exp $
 
 COMMENT =		SOAP implementation in C
 
 GNOME_PROJECT =		libsoup
-GNOME_VERSION =		2.44.2
+GNOME_VERSION =		2.46.0
 
 SHARED_LIBS +=  soup-2.4             8.0      # 8.0
 SHARED_LIBS +=  soup-gnome-2.4       8.0      # 8.0

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2013/10/26 08:02:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2014/03/27 08:07:04 ajacoutot Exp $
 @conflict libsoup-gnome-*
 @pkgpath devel/libsoup,-main
 @pkgpath devel/libsoup,-gnome
@@ -113,6 +113,7 @@ share/gtk-doc/html/libsoup-${API_VERSION}/home.png
 share/gtk-doc/html/libsoup-${API_VERSION}/index.html
 share/gtk-doc/html/libsoup-${API_VERSION}/index.sgml
 share/gtk-doc/html/libsoup-${API_VERSION}/ix01.html
+share/gtk-doc/html/libsoup-${API_VERSION}/left-insensitive.png
 share/gtk-doc/html/libsoup-${API_VERSION}/left.png
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-GValue-Support.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-HTML-Form-Support.html
@@ -125,10 +126,13 @@ share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-soup-status.htm
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}.devhelp2
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-build-howto.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-client-howto.html
+share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-request-howto.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-server-howto.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-session-porting.html
+share/gtk-doc/html/libsoup-${API_VERSION}/right-insensitive.png
 share/gtk-doc/html/libsoup-${API_VERSION}/right.png
 share/gtk-doc/html/libsoup-${API_VERSION}/style.css
+share/gtk-doc/html/libsoup-${API_VERSION}/up-insensitive.png
 share/gtk-doc/html/libsoup-${API_VERSION}/up.png
 share/locale/an/LC_MESSAGES/libsoup.mo
 share/locale/as/LC_MESSAGES/libsoup.mo
