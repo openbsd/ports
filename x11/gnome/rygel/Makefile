@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.48 2013/12/22 14:09:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.49 2014/03/27 15:12:47 ajacoutot Exp $
+
+TRACKER_VERSION=	1.0
 
 SHARED_ONLY=		Yes
 
@@ -6,13 +8,12 @@ COMMENT=		home media solution that allows easy media sharing
 
 GNOME_PROJECT=		rygel
 GNOME_VERSION=		0.20.3
+REVISION=		0
 
 SHARED_LIBS +=  rygel-core-2.0         0.0      # .1.0
 SHARED_LIBS +=  rygel-renderer-2.0     0.0      # .1.0
 SHARED_LIBS +=  rygel-server-2.0       0.0      # .1.0
 SHARED_LIBS +=  rygel-renderer-gst-2.0 0.0      # .1.0
-
-TRACKER_VERSION=	0.16
 
 CATEGORIES=		multimedia
 

@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.32 2014/03/26 10:42:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2014/03/27 15:12:47 ajacoutot Exp $
 
-TRACKER_VERSION=0.16
+TRACKER_VERSION=1.0
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT=	document manager for GNOME
 
 GNOME_PROJECT=	gnome-documents
 GNOME_VERSION=	3.10.2
-REVISION=	0
+REVISION=	1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
