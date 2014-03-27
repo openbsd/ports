@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2013/12/21 08:24:37 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.23 2014/03/27 14:21:46 jasper Exp $
 @conflict glade3-<3.8.0p1
 @bin bin/glade
 @bin bin/glade-previewer
@@ -50,7 +50,6 @@ lib/libgladeui-2.la
 lib/pkgconfig/gladeui-2.0.pc
 @man man/man1/glade-previewer.1
 @man man/man1/glade.1
-share/appdata/
 share/appdata/glade.appdata.xml
 share/applications/glade.desktop
 share/gir-1.0/Gladeui-2.0.gir
@@ -383,12 +382,15 @@ share/gtk-doc/html/gladeui-2/home.png
 share/gtk-doc/html/gladeui-2/index.html
 share/gtk-doc/html/gladeui-2/index.sgml
 share/gtk-doc/html/gladeui-2/ix01.html
+share/gtk-doc/html/gladeui-2/left-insensitive.png
 share/gtk-doc/html/gladeui-2/left.png
 share/gtk-doc/html/gladeui-2/misc.html
 share/gtk-doc/html/gladeui-2/properties.html
 share/gtk-doc/html/gladeui-2/pythonsupport.html
+share/gtk-doc/html/gladeui-2/right-insensitive.png
 share/gtk-doc/html/gladeui-2/right.png
 share/gtk-doc/html/gladeui-2/style.css
+share/gtk-doc/html/gladeui-2/up-insensitive.png
 share/gtk-doc/html/gladeui-2/up.png
 share/gtk-doc/html/gladeui-2/widgetclasses.html
 share/help/C/glade/
@@ -422,6 +424,7 @@ share/help/el/glade/figures/
 share/help/el/glade/figures/main-window.png
 share/help/el/glade/index.docbook
 share/help/el/glade/legal.xml
+share/help/en_GB/
 share/help/en_GB/glade/
 share/help/en_GB/glade/figures/
 share/help/en_GB/glade/figures/main-window.png
@@ -454,6 +457,12 @@ share/help/hi/glade/figures/
 share/help/hi/glade/figures/main-window.png
 share/help/hi/glade/index.docbook
 share/help/hi/glade/legal.xml
+share/help/hu/
+share/help/hu/glade/
+share/help/hu/glade/figures/
+share/help/hu/glade/figures/main-window.png
+share/help/hu/glade/index.docbook
+share/help/hu/glade/legal.xml
 share/help/it/glade/
 share/help/it/glade/figures/
 share/help/it/glade/figures/main-window.png

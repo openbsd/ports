@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.60 2014/03/09 21:57:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2014/03/27 14:21:46 jasper Exp $
 
 COMMENT=	user interface builder for the gtk+3 toolkit
 
-GNOME_VERSION=	3.16.1
+GNOME_VERSION=	3.18.1
 GNOME_PROJECT= 	glade
-REVISION=	0
 
 CATEGORIES=	devel
 
@@ -43,11 +42,9 @@ RUN_DEPENDS=	x11/gnome/devhelp \
 
 MODGNOME_DESKTOP_FILE= 	Yes
 MODGNOME_ICON_CACHE=	Yes
-MODGNOME_TOOLS= gi yelp
+MODGNOME_TOOLS= 	gi yelp
 
 CONFIGURE_STYLE=	gnu
-MODGNOME_CPPFLAGS=	-pthread
-MODGNOME_LDFLAGS=	-pthread -lutil
 
 post-install:
 	rm ${PREFIX}/lib/glade/modules/*.{a,la}
