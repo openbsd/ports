@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2014/01/17 14:17:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2014/03/27 08:14:16 jasper Exp $
 @conflict vte-<0.28.2p3
 @conflict vte-ptyhelper-*
 @bin bin/vte2_90
@@ -33,6 +33,7 @@ share/gtk-doc/html/vte-2.90/api-index-0-24.html
 share/gtk-doc/html/vte-2.90/api-index-0-26.html
 share/gtk-doc/html/vte-2.90/api-index-0-28.html
 share/gtk-doc/html/vte-2.90/api-index-0-34.html
+share/gtk-doc/html/vte-2.90/api-index-0-36.html
 share/gtk-doc/html/vte-2.90/api-index-deprecated.html
 share/gtk-doc/html/vte-2.90/api-index-full.html
 share/gtk-doc/html/vte-2.90/ch01.html
@@ -133,6 +134,7 @@ share/locale/sr@latin/LC_MESSAGES/vte-2.90.mo
 share/locale/sv/LC_MESSAGES/vte-2.90.mo
 share/locale/ta/LC_MESSAGES/vte-2.90.mo
 share/locale/te/LC_MESSAGES/vte-2.90.mo
+share/locale/tg/LC_MESSAGES/vte-2.90.mo
 share/locale/th/LC_MESSAGES/vte-2.90.mo
 share/locale/tr/LC_MESSAGES/vte-2.90.mo
 share/locale/ug/LC_MESSAGES/vte-2.90.mo

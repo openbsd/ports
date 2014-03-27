@@ -1,19 +1,15 @@
-# $OpenBSD: Makefile,v 1.37 2014/03/18 13:48:31 ajacoutot Exp $
-
-# XXX on upgrade, drop pre-configure:
-# https://git.gnome.org/browse/vte/commit/?h=vte-0-36&id=cbdb21f740a9369f61d6dbfb48f87bce9c5c9ba4
+# $OpenBSD: Makefile,v 1.38 2014/03/27 08:14:16 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		terminal emulation library
 
 GNOME_PROJECT=		vte
-GNOME_VERSION=		0.34.9
-REVISION=		1
+GNOME_VERSION=		0.36.0
 
 PKGNAME=		vte3-${GNOME_VERSION}
 
-SHARED_LIBS +=  vte2_90              1.0      # 3409.9
+SHARED_LIBS +=  vte2_90              1.0      # 3609.0
 
 CATEGORIES=		devel
 
@@ -44,10 +40,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS +=	--disable-Bsymbolic
 
 TEST_DEPENDS=		shells/bash
-
-pre-configure:
-	perl -pi -e "s,/bin/bash,${LOCALBASE}/bin/bash,g" \
-		${WRKSRC}/src/test-vte-sh.sh
 
 # XXX: https://bugzilla.gnome.org/show_bug.cgi?id=675987
 post-install:
