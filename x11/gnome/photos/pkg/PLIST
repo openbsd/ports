@@ -1,8 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/10/14 14:08:57 ajacoutot Exp $
-@bin bin/gnome-photos
+@comment $OpenBSD: PLIST,v 1.6 2014/03/27 16:21:58 ajacoutot Exp $
+bin/gnome-photos
+@bin libexec/gnome-photos-service
 share/appdata/
-share/appdata/gnome-photos.appdata.xml
-share/applications/gnome-photos.desktop
+share/appdata/org.gnome.Photos.appdata.xml
+share/applications/org.gnome.Photos.desktop
+share/dbus-1/
+share/dbus-1/services/
+share/dbus-1/services/org.gnome.Photos.service
 share/doc/gnome-photos/
 share/doc/gnome-photos/ARTISTS
 share/doc/gnome-photos/AUTHORS
@@ -14,6 +18,9 @@ share/glib-2.0/schemas/org.gnome.photos.gschema.xml
 share/gnome-photos/
 share/gnome-photos/icons/
 share/gnome-photos/icons/thumbnail-frame.png
+share/gnome-shell/
+share/gnome-shell/search-providers/
+share/gnome-shell/search-providers/org.gnome.Photos.search-provider.ini
 share/icons/hicolor/16x16/apps/gnome-photos.png
 share/icons/hicolor/22x22/apps/gnome-photos.png
 share/icons/hicolor/24x24/apps/gnome-photos.png
@@ -22,12 +29,14 @@ share/icons/hicolor/32x32/apps/gnome-photos.png
 share/icons/hicolor/48x48/apps/gnome-photos.png
 share/locale/ar/LC_MESSAGES/gnome-photos.mo
 share/locale/as/LC_MESSAGES/gnome-photos.mo
+share/locale/bg/LC_MESSAGES/gnome-photos.mo
 share/locale/ca/LC_MESSAGES/gnome-photos.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-photos.mo
 share/locale/cs/LC_MESSAGES/gnome-photos.mo
 share/locale/da/LC_MESSAGES/gnome-photos.mo
 share/locale/de/LC_MESSAGES/gnome-photos.mo
 share/locale/el/LC_MESSAGES/gnome-photos.mo
+share/locale/eo/LC_MESSAGES/gnome-photos.mo
 share/locale/es/LC_MESSAGES/gnome-photos.mo
 share/locale/et/LC_MESSAGES/gnome-photos.mo
 share/locale/eu/LC_MESSAGES/gnome-photos.mo
@@ -41,10 +50,12 @@ share/locale/hu/LC_MESSAGES/gnome-photos.mo
 share/locale/id/LC_MESSAGES/gnome-photos.mo
 share/locale/it/LC_MESSAGES/gnome-photos.mo
 share/locale/ja/LC_MESSAGES/gnome-photos.mo
+share/locale/kk/LC_MESSAGES/gnome-photos.mo
 share/locale/kn/LC_MESSAGES/gnome-photos.mo
 share/locale/ko/LC_MESSAGES/gnome-photos.mo
 share/locale/lt/LC_MESSAGES/gnome-photos.mo
 share/locale/lv/LC_MESSAGES/gnome-photos.mo
+share/locale/ml/LC_MESSAGES/gnome-photos.mo
 share/locale/nb/LC_MESSAGES/gnome-photos.mo
 share/locale/nl/LC_MESSAGES/gnome-photos.mo
 share/locale/pa/LC_MESSAGES/gnome-photos.mo
@@ -56,6 +67,7 @@ share/locale/sk/LC_MESSAGES/gnome-photos.mo
 share/locale/sl/LC_MESSAGES/gnome-photos.mo
 share/locale/sr/LC_MESSAGES/gnome-photos.mo
 share/locale/sr@latin/LC_MESSAGES/gnome-photos.mo
+share/locale/te/LC_MESSAGES/gnome-photos.mo
 share/locale/tg/LC_MESSAGES/gnome-photos.mo
 share/locale/tr/LC_MESSAGES/gnome-photos.mo
 share/locale/uk/LC_MESSAGES/gnome-photos.mo
