@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.103 2013/10/17 07:37:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.104 2014/03/27 08:06:33 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	password agent for the GNOME project
 
 GNOME_PROJECT=	gnome-keyring
-GNOME_VERSION=	3.10.1
+GNOME_VERSION=	3.12.0
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -35,22 +35,18 @@ CONFIGURE_ARGS=	--disable-static \
 
 FAKE_FLAGS=	configdir=${PREFIX}/share/examples/gnome-keyring/pkcs11/modules
 
-# XXX push a proper fix upstream
-BUILD_DEPENDS += textproc/gsed
-pre-configure:
-	perl -pi -e 's,sed -i,gsed -i,g' \
-		${WRKSRC}/pkcs11/gnome2-store/tests/Makefile.in \
-		${WRKSRC}/pkcs11/xdg-store/Makefile.in \
-		${WRKSRC}/pkcs11/ssh-store/tests/Makefile.in \
-		${WRKSRC}/pkcs11/gkm/tests/Makefile.in \
-		${WRKSRC}/daemon/Makefile.in \
-		${WRKSRC}/egg/tests/Makefile.in \
-		${WRKSRC}/egg/Makefile.in \
-		${WRKSRC}/Makefile.decl
-
 post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gnome-keyring
 	mv ${WRKINST}/etc/xdg ${PREFIX}/share/examples/gnome-keyring
 	rm ${PREFIX}/lib/gnome-keyring/devel/*.{a,la}
 	rm ${PREFIX}/lib/pkcs11/*.{a,la}
+
+# regression tests call 'env python'
+MODULES +=		lang/python
+TEST_DEPENDS +=		${MODPY_RUN_DEPENDS}
+MODPY_RUNDEP=		No
+MODPY_BUILDDEP=		No
+pre-test:
+	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 
 .include <bsd.port.mk>

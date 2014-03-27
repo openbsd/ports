@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2013/10/17 07:37:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.36 2014/03/27 08:06:33 ajacoutot Exp $
 bin/gnome-keyring
 @bin bin/gnome-keyring-3
 @bin bin/gnome-keyring-daemon
@@ -9,15 +9,10 @@ lib/gnome-keyring/devel/gkm-secret-store-standalone.so
 lib/gnome-keyring/devel/gkm-ssh-store-standalone.so
 lib/gnome-keyring/devel/gkm-xdg-store-standalone.so
 lib/pkcs11/gnome-keyring-pkcs11.so
-@man man/man1/gnome-keyring-daemon.1
 share/GConf/gsettings/org.gnome.crypto.cache.convert
 share/dbus-1/services/org.freedesktop.secrets.service
 share/dbus-1/services/org.gnome.keyring.service
 share/examples/gnome-keyring/
-share/examples/gnome-keyring/pkcs11/
-share/examples/gnome-keyring/pkcs11/modules/
-share/examples/gnome-keyring/pkcs11/modules/gnome-keyring.module
-@sample ${SYSCONFDIR}/pkcs11/modules/gnome-keyring.module
 share/examples/gnome-keyring/xdg/
 @sample ${SYSCONFDIR}/xdg/
 share/examples/gnome-keyring/xdg/autostart/
@@ -61,6 +56,7 @@ share/locale/fa/LC_MESSAGES/gnome-keyring.mo
 share/locale/fi/LC_MESSAGES/gnome-keyring.mo
 share/locale/fr/LC_MESSAGES/gnome-keyring.mo
 share/locale/ga/LC_MESSAGES/gnome-keyring.mo
+share/locale/gd/LC_MESSAGES/gnome-keyring.mo
 share/locale/gl/LC_MESSAGES/gnome-keyring.mo
 share/locale/gu/LC_MESSAGES/gnome-keyring.mo
 share/locale/he/LC_MESSAGES/gnome-keyring.mo
@@ -116,5 +112,6 @@ share/locale/xh/LC_MESSAGES/gnome-keyring.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-keyring.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-keyring.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-keyring.mo
+share/p11-kit/modules/gnome-keyring.module
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
