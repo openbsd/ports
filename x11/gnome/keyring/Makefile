@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2014/03/27 08:06:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.105 2014/03/27 13:47:36 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,9 +22,6 @@ WANTLIB += pthread-stubs stdc++ xcb xcb-render xcb-shm z
 MODULES=	devel/gettext \
 		x11/gnome \
 		devel/dconf
-
-# man pages
-BUILD_DEPENDS +=	textproc/docbook-xsl
 
 LIB_DEPENDS=	x11/gnome/gcr
 
