@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.89 2014/03/25 16:54:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.90 2014/03/27 09:05:31 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (base installation)
 COMMENT-extra=		GNOME desktop meta-package (full installation)
 
-V=			3.10.2
+V=			3.12.0
 PKGNAME=		gnome-${V}
 
 PKGNAME-main=		gnome-${V}
 PKGNAME-extra=		gnome-extra-${V}
-
-REVISION-main=		6
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -36,8 +34,10 @@ RUN_DEPENDS-main +=	x11/gnome/shell-extensions
 RUN_DEPENDS-main +=	graphics/colord-gtk
 
 # GNOME spooler is CUPS (gnome-printers-panel in gnome-control-center)
-# add gtk+3-cups so that gtkprint() can see native CUPS printers
+# add gtk+3-cups so that gtkprint() can see native CUPS printers;
+# add gtk+3-cloudprint, gnome-online-accounts is already a dependency
 RUN_DEPENDS-main +=	x11/gtk+3,-cups
+RUN_DEPENDS-main +=	x11/gtk+3,-cloudprint
 
 # add commonly used utilities
 RUN_DEPENDS-main +=	graphics/evince,-nautilus \
@@ -86,6 +86,7 @@ RUN_DEPENDS-extra +=	STEM-=${V}:${BASE_PKGPATH},-main \
 			mail/evolution,-plugins \
 			mail/evolution-rss \
 			sysutils/deja-dup \
+			www/epiphany \
 			x11/gnome/ekiga \
 			x11/gnome/empathy \
 			x11/gnome/icon-theme-extras \
@@ -93,7 +94,5 @@ RUN_DEPENDS-extra +=	STEM-=${V}:${BASE_PKGPATH},-main \
 			x11/gnome/totem \
 			x11/gnome/user-share \
 			x11/gnome/vinagre
-
-# RUN_DEPENDS-extra +=	www/epiphany
 
 .include <bsd.port.mk>
