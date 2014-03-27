@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/09/27 10:40:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/03/27 17:06:09 ajacoutot Exp $
 lib/gnome-online-miners/
 lib/gnome-online-miners/libgom-1.0.so
+@bin libexec/gom-facebook-miner
 @bin libexec/gom-flickr-miner
 @bin libexec/gom-gdata-miner
 @bin libexec/gom-owncloud-miner
 @bin libexec/gom-zpj-miner
+share/dbus-1/services/org.gnome.OnlineMiners.Facebook.service
 share/dbus-1/services/org.gnome.OnlineMiners.Flickr.service
 share/dbus-1/services/org.gnome.OnlineMiners.GData.service
 share/dbus-1/services/org.gnome.OnlineMiners.Owncloud.service
