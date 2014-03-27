@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/10/15 18:38:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/03/27 19:41:05 ajacoutot Exp $
 @newgroup _gnome-initial-setup:724
 @newuser _gnome-initial-setup:724:_gnome-initial-setup:daemon:GNOME Initial Setup:/nonexistent:/sbin/nologin
 @bin libexec/gnome-initial-setup
@@ -11,8 +11,6 @@ share/examples/gnome-initial-setup/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/gnome-initial-setup/xdg/autostart/gnome-initial-setup-copy-worker.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/gnome-initial-setup-copy-worker.desktop
-share/examples/gnome-initial-setup/xdg/autostart/gnome-initial-setup-first-login.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/gnome-initial-setup-first-login.desktop
 share/examples/gnome-initial-setup/xdg/autostart/gnome-welcome-tour.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/gnome-welcome-tour.desktop
 share/gdm/

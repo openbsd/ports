@@ -1,11 +1,11 @@
-$OpenBSD: patch-gnome-initial-setup_pages_Makefile_in,v 1.1.1.1 2013/09/30 13:29:36 ajacoutot Exp $
---- gnome-initial-setup/pages/Makefile.in.orig	Sat Sep 28 13:44:20 2013
-+++ gnome-initial-setup/pages/Makefile.in	Sat Sep 28 13:44:25 2013
-@@ -337,7 +337,6 @@ SUBDIRS = \
- 	language \
+$OpenBSD: patch-gnome-initial-setup_pages_Makefile_in,v 1.2 2014/03/27 19:41:05 ajacoutot Exp $
+--- gnome-initial-setup/pages/Makefile.in.orig	Tue Mar 25 05:28:41 2014
++++ gnome-initial-setup/pages/Makefile.in	Thu Mar 27 20:21:26 2014
+@@ -339,7 +339,6 @@ SUBDIRS = \
+ 	region \
  	keyboard \
  	eulas \
 -	network \
- 	account \
- 	location \
+ 	timezone \
  	goa \
+ 	account \

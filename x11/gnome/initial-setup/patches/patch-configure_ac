@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure_ac,v 1.1.1.1 2013/09/30 13:29:36 ajacoutot Exp $
---- configure.ac.orig	Sat Sep 28 12:52:42 2013
-+++ configure.ac	Sat Sep 28 12:52:56 2013
-@@ -33,10 +33,6 @@ ac_configure_args=$prev_ac_configure_args
- export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:"$ac_top_build_prefix"egg-list-box
+$OpenBSD: patch-configure_ac,v 1.2 2014/03/27 19:41:05 ajacoutot Exp $
+--- configure.ac.orig	Tue Mar 25 05:28:07 2014
++++ configure.ac	Thu Mar 27 20:20:44 2014
+@@ -28,10 +28,6 @@ POLKIT_REQUIRED_VERSION=0.103
+ GDM_REQUIRED_VERSION=3.8.3
  
  PKG_CHECK_MODULES(INITIAL_SETUP,
 -                  NetworkManager >= $NETWORK_MANAGER_REQUIRED_VERSION

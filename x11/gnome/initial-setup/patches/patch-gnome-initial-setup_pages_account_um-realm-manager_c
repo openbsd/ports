@@ -1,7 +1,7 @@
-$OpenBSD: patch-gnome-initial-setup_pages_account_um-realm-manager_c,v 1.1.1.1 2013/09/30 13:29:36 ajacoutot Exp $
---- gnome-initial-setup/pages/account/um-realm-manager.c.orig	Fri Aug 30 00:29:26 2013
-+++ gnome-initial-setup/pages/account/um-realm-manager.c	Sat Sep 28 14:07:35 2013
-@@ -24,7 +24,7 @@
+$OpenBSD: patch-gnome-initial-setup_pages_account_um-realm-manager_c,v 1.2 2014/03/27 19:41:05 ajacoutot Exp $
+--- gnome-initial-setup/pages/account/um-realm-manager.c.orig	Mon Mar 10 05:47:29 2014
++++ gnome-initial-setup/pages/account/um-realm-manager.c	Thu Mar 27 20:20:44 2014
+@@ -23,7 +23,7 @@
  
  #include "um-realm-manager.h"
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-gnome-initial-setup_pages_account_um-realm-manager_c,v 1.1.1.1 2
  
  #include <glib.h>
  #include <glib/gi18n.h>
-@@ -744,9 +744,6 @@ login_perform_kinit (krb5_context k5,
+@@ -702,9 +702,6 @@ login_perform_kinit (krb5_context k5,
          }
  
          code = krb5_get_init_creds_opt_alloc (k5, &opts);

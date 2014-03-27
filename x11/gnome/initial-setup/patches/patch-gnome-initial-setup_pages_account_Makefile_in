@@ -1,10 +1,10 @@
-$OpenBSD: patch-gnome-initial-setup_pages_account_Makefile_in,v 1.1.1.1 2013/09/30 13:29:36 ajacoutot Exp $
+$OpenBSD: patch-gnome-initial-setup_pages_account_Makefile_in,v 1.2 2014/03/27 19:41:05 ajacoutot Exp $
 
 XXX push upstream: on OpenBSD, crypt() is part of libc, create a proper configure check
 
---- gnome-initial-setup/pages/account/Makefile.in.orig	Sat Sep 28 13:59:31 2013
-+++ gnome-initial-setup/pages/account/Makefile.in	Sat Sep 28 14:00:20 2013
-@@ -349,7 +349,7 @@ libgisaccount_la_SOURCES = \
+--- gnome-initial-setup/pages/account/Makefile.in.orig	Tue Mar 25 05:28:41 2014
++++ gnome-initial-setup/pages/account/Makefile.in	Thu Mar 27 20:20:44 2014
+@@ -356,7 +356,7 @@ libgisaccount_la_SOURCES = \
  	$(NULL)
  
  libgisaccount_la_CFLAGS = $(INITIAL_SETUP_CFLAGS) -I "$(srcdir)/../.."

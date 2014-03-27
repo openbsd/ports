@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2014/03/16 09:12:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2014/03/27 19:41:05 ajacoutot Exp $
 
 COMMENT=		initial-setup firstboot-like tool
 
 GNOME_PROJECT=		gnome-initial-setup
-GNOME_VERSION=		3.10.1.1
-REVISION=		0
+GNOME_VERSION=		3.12.0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,7 +23,7 @@ WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png polkit-gobject-1 pthread pthread-stubs pwquality
 WANTLIB += rest-0.7 roken secret-1 soup-2.4 soup-gnome-2.4 sqlite3
 WANTLIB += stdc++ telepathy-glib webkitgtk-3.0 webp wind xcb xcb-render
-WANTLIB += xcb-shm xkbfile xml2 xslt z orc-0.4
+WANTLIB += xcb-shm xml2 xslt z orc-0.4
 
 MODULES=		x11/gnome \
 			devel/dconf \
@@ -46,8 +45,6 @@ RUN_DEPENDS +=		sysutils/polkit
 
 # polkit(8) almost always needs to know the "active" session
 RUN_DEPENDS +=		sysutils/consolekit
-
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/egg-list-box
 
 AUTOCONF_VERSION=	2.69
 CONFIGURE_STYLE=	autoconf
