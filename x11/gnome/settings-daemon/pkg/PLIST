@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2013/09/26 14:51:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.35 2014/03/27 11:41:04 ajacoutot Exp $
 include/gnome-settings-daemon-3.0/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/gnome-settings-plugin.h
@@ -24,7 +24,6 @@ lib/gnome-settings-daemon-3.0/libmedia-keys.so
 lib/gnome-settings-daemon-3.0/libmouse.so
 lib/gnome-settings-daemon-3.0/libpower.so
 lib/gnome-settings-daemon-3.0/libprint-notifications.so
-lib/gnome-settings-daemon-3.0/libremote-display.so
 lib/gnome-settings-daemon-3.0/libscreensaver-proxy.so
 lib/gnome-settings-daemon-3.0/libsmartcard.so
 lib/gnome-settings-daemon-3.0/libsound.so
@@ -34,7 +33,6 @@ lib/gnome-settings-daemon-3.0/media-keys.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/mouse.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/power.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/print-notifications.gnome-settings-plugin
-lib/gnome-settings-daemon-3.0/remote-display.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/screensaver-proxy.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/smartcard.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/sound.gnome-settings-plugin
@@ -55,7 +53,6 @@ libexec/gnome-settings-daemon-localeexec
 @bin libexec/gsd-test-media-keys
 @bin libexec/gsd-test-mouse
 @bin libexec/gsd-test-print-notifications
-@bin libexec/gsd-test-remote-display
 @bin libexec/gsd-test-screensaver-proxy
 @bin libexec/gsd-test-smartcard
 @bin libexec/gsd-test-sound
@@ -96,16 +93,6 @@ share/gnome-settings-daemon-3.0/
 share/gnome-settings-daemon-3.0/input-device-example.sh
 share/gnome-settings-daemon/datetime/
 share/gnome-settings-daemon/datetime/backward
-share/gnome-settings-daemon/icons/
-share/gnome-settings-daemon/icons/hicolor/
-share/gnome-settings-daemon/icons/hicolor/64x64/
-share/gnome-settings-daemon/icons/hicolor/64x64/devices/
-share/gnome-settings-daemon/icons/hicolor/64x64/devices/kbd-capslock-off.png
-share/gnome-settings-daemon/icons/hicolor/64x64/devices/kbd-capslock-on.png
-share/gnome-settings-daemon/icons/hicolor/64x64/devices/kbd-numlock-off.png
-share/gnome-settings-daemon/icons/hicolor/64x64/devices/kbd-numlock-on.png
-share/gnome-settings-daemon/icons/hicolor/64x64/devices/kbd-scrolllock-off.png
-share/gnome-settings-daemon/icons/hicolor/64x64/devices/kbd-scrolllock-on.png
 share/icons/hicolor/16x16/apps/gsd-xrandr.png
 share/icons/hicolor/22x22/apps/gsd-xrandr.png
 share/icons/hicolor/24x24/apps/gsd-xrandr.png
