@@ -1,10 +1,10 @@
-$OpenBSD: patch-libgnome-desktop_Makefile_in,v 1.12 2014/03/23 18:17:35 kili Exp $
+$OpenBSD: patch-libgnome-desktop_Makefile_in,v 1.13 2014/03/27 09:04:56 ajacoutot Exp $
 
 XXX fix+push upstream
 
---- libgnome-desktop/Makefile.in.orig	Thu Nov 21 12:16:39 2013
-+++ libgnome-desktop/Makefile.in	Thu Nov 21 12:28:19 2013
-@@ -499,7 +499,7 @@ AM_CPPFLAGS = \
+--- libgnome-desktop/Makefile.in.orig	Mon Mar 24 15:31:08 2014
++++ libgnome-desktop/Makefile.in	Thu Mar 27 09:55:40 2014
+@@ -496,7 +496,7 @@ AM_CPPFLAGS = \
  	-DG_LOG_DOMAIN=\"GnomeDesktop\"				\
  	-DGNOMELOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale\""	\
  	-DISO_CODES_PREFIX=\""$(ISO_CODES_PREFIX)"\"		\
@@ -13,7 +13,7 @@ XXX fix+push upstream
  	-DPNP_IDS=\""$(PNP_IDS)"\"				\
  	-DXKB_BASE=\""$(XKB_BASE)"\"				\
  	$(DISABLE_DEPRECATED_CFLAGS)
-@@ -566,8 +566,7 @@ libgnome_desktop_3_la_LIBADD = \
+@@ -562,8 +562,7 @@ libgnome_desktop_3_la_LIBADD = \
  	$(XLIB_LIBS)		\
  	$(LIBM)			\
  	$(GNOME_DESKTOP_LIBS)	\
