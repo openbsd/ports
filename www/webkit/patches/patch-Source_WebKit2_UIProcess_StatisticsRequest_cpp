@@ -1,0 +1,16 @@
+$OpenBSD: patch-Source_WebKit2_UIProcess_StatisticsRequest_cpp,v 1.3 2014/03/27 22:03:48 landry Exp $
+https://bugs.webkit.org/show_bug.cgi?id=130837
+--- Source/WebKit2/UIProcess/StatisticsRequest.cpp.orig	Thu Mar 27 21:13:49 2014
++++ Source/WebKit2/UIProcess/StatisticsRequest.cpp	Thu Mar 27 21:14:23 2014
+@@ -44,7 +44,11 @@ StatisticsRequest::~StatisticsRequest()
+ 
+ uint64_t StatisticsRequest::addOutstandingRequest()
+ {
++#if CPU(PPC)
++    static int64_t uniqueRequestID;
++#else
+     static std::atomic<int64_t> uniqueRequestID;
++#endif
+ 
+     uint64_t requestID = ++uniqueRequestID;
+     m_outstandingRequests.add(requestID);
