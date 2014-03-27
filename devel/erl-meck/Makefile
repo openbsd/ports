@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 10:50:03 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2014/03/27 08:47:56 jasper Exp $
 
 COMMENT=	mocking library for Erlang
 
@@ -19,7 +19,7 @@ MODULES=	lang/erlang
 
 ALL_TARGET=	compile
 
-PORTHOME=	/tmp/
+PORTHOME=	${WRKDIR}
 
 do-install:
 	${INSTALL_DATA_DIR} ${ERL_LIBDIR}/{ebin,src}

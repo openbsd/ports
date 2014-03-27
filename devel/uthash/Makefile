@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 10:50:31 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2014/03/27 08:47:56 jasper Exp $
 
 COMMENT=		C macros to add, find and delete items from a hash
 
@@ -16,7 +16,7 @@ EXTRACT_SUFX=		.tar.bz2
 NO_BUILD=		Yes
 PKG_ARCH=		*
 
-PORTHOME=		/tmp
+PORTHOME=		${WRKDIR}
 TEST_TARGET= 	run_tests
 
 do-install:
