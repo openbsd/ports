@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.161 2014/03/16 15:58:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.162 2014/03/27 13:54:07 ajacoutot Exp $
 
 EVO_VERSION=		3.8
 SUBST_VARS +=		EVO_VERSION
@@ -70,8 +70,8 @@ LIB_DEPENDS=		audio/libcue \
 
 # XXX should be a LIB_DEPENDS+WANTLIB but check-lib-depends(1) does not
 # work with unversioned solibs (LOCALBASE/lib/evolution/*/*.so).
-#BUILD_DEPENDS +=	mail/evolution,-main
-#RUN_DEPENDS +=		mail/evolution,-main
+#BUILD_DEPENDS +=	mail/evolution
+#RUN_DEPENDS +=		mail/evolution
 
 TEST_DEPENDS=		${MODPY_RUN_DEPENDS} \
 			x11/dbus-python
