@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_libpiano_response_c,v 1.5 2014/03/27 10:13:14 dcoppa Exp $
+
+commit 90f6ffbdb7c7cc07cb02b69fcfb3a3844f0180b7
+Author: Lars-Dominik Braun <lars@6xq.net>
+Date:   Fri Mar 14 11:47:26 2014 +0100
+
+piano: Request track length
+
+The returned length is used as first length estimate before enough
+audio data arrives to show the real length and for the eventcmd
+API.
+
+--- src/libpiano/response.c.orig	Sun Sep 15 15:54:04 2013
++++ src/libpiano/response.c	Thu Mar 27 10:30:08 2014
+@@ -277,6 +277,8 @@ PianoReturn_t PianoResponse (PianoHandle_t *ph, PianoR
+ 				song->detailUrl = PianoJsonStrdup (s, "songDetailUrl");
+ 				song->fileGain = json_object_get_double (
+ 						json_object_object_get (s, "trackGain"));
++				song->length = json_object_get_int (
++						json_object_object_get (s, "trackLength"));
+ 				switch (json_object_get_int (json_object_object_get (s,
+ 						"songRating"))) {
+ 					case 1:

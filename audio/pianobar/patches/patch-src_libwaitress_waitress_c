@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_libwaitress_waitress_c,v 1.7 2014/03/27 10:13:14 dcoppa Exp $
+
+commit 8e685c992516834e35bcccea1f61c39a9d847e2f
+Author: Lars-Dominik Braun <lars@6xq.net>
+Date:   Fri Mar 14 11:55:44 2014 +0100
+
+waitress: Increase kernel receive buffer
+
+Should be large enough for a complete song now (if permitted by
+sysctl).
+
+--- src/libwaitress/waitress.c.orig	Thu Mar 27 10:32:31 2014
++++ src/libwaitress/waitress.c	Thu Mar 27 10:33:11 2014
+@@ -808,7 +808,7 @@ static WaitressReturn_t WaitressConnect (WaitressHandl
+ 			fcntl (sock, F_SETFL, O_NONBLOCK);
+ 
+ 			/* increase socket receive buffer */
+-			const int sockopt = 256*1024;
++			const int sockopt = 5*1024*1024;
+ 			setsockopt (sock, SOL_SOCKET, SO_RCVBUF, &sockopt,
+ 					sizeof (sockopt));
+ 
