@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2013/10/15 08:25:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2014/03/27 09:58:47 ajacoutot Exp $
 
 COMMENT=		directory tree analyzer for GNOME
 
 GNOME_PROJECT=		baobab
-GNOME_VERSION=		3.10.1
+GNOME_VERSION=		3.12.0
 
 # GPLv2 - GFDLv1.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,5 +23,9 @@ MODULES=		devel/dconf \
 MODGNOME_TOOLS= 	gi vala yelp
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
+
+pre-configure:
+# XXX cc1: error: unrecognized command line option "-Wno-unused-but-set-variable"
+	perl -pi -e 's,-Wno-unused-but-set-variable,,' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
