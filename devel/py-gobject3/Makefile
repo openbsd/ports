@@ -1,22 +1,19 @@
-# $OpenBSD: Makefile,v 1.32 2014/01/12 14:58:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2014/03/27 08:03:47 ajacoutot Exp $
 
 COMMENT-main=		Python bindings for GLib and GObject
 COMMENT-common=		common files for py-gobject3
 
 GNOME_PROJECT=		pygobject
-GNOME_VERSION=		3.10.2
+GNOME_VERSION=		3.12.0
 MODPY_EGG_VERSION=	${GNOME_VERSION}
 
 PKGNAME-main=		py-gobject3-${GNOME_VERSION}
-REVISION-main=		0
 FULLPKGNAME-common=	py-gobject3-common-${GNOME_VERSION}
 FULLPKGPATH-common=	devel/py-gobject3,-common
 
 SUBST_VARS=		OSREV
 
 CATEGORIES=		devel
-
-SHARED_LIBS +=  pyglib-gi-2.0-python${MODPY_VERSION}   1.0 # 0.0
 
 HOMEPAGE=		http://www.pygtk.org/
 
@@ -67,6 +64,6 @@ TEST_DEPENDS=		${BUILD_PKGPATH}
 TEST_IS_INTERACTIVE=	x11
 
 post-install:
-	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gi/{,_glib,_gobject}/*.{a,la}
+	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gi/*.{a,la}
 
 .include <bsd.port.mk>

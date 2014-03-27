@@ -1,16 +1,21 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2013/10/14 11:24:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2014/03/27 08:03:47 ajacoutot Exp $
 @conflict py-gtk2-2.8.6*
 @conflict py-gobject-<2.28.6p2v0
 %%python3%%
 !%%python3%%
-lib/libpyglib-gi-2.0-python${MODPY_VERSION}.a
-lib/libpyglib-gi-2.0-python${MODPY_VERSION}.la
-@lib lib/libpyglib-gi-2.0-python${MODPY_VERSION}.so.${LIBpyglib-gi-2.0-python${MODPY_VERSION}_VERSION}
 lib/python${MODPY_VERSION}/site-packages/gi/
 lib/python${MODPY_VERSION}/site-packages/gi/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_constants.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_constants.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_option.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_option.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_propertyhelper.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_propertyhelper.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_signalhelper.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_signalhelper.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}docstring.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}docstring.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}importer.${MODPY_PYC_MAGIC_TAG}pyc
@@ -21,32 +26,17 @@ lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}pygtkcompat.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}pygtkcompat.${MODPY_PYC_MAGIC_TAG}pyo
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyo
+lib/python${MODPY_VERSION}/site-packages/gi/_constants.py
 lib/python${MODPY_VERSION}/site-packages/gi/_gi.so
 lib/python${MODPY_VERSION}/site-packages/gi/_gi_cairo.so
-lib/python${MODPY_VERSION}/site-packages/gi/_glib/
-lib/python${MODPY_VERSION}/site-packages/gi/_glib/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gi/_glib/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/gi/_glib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gi/_glib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyo
-lib/python${MODPY_VERSION}/site-packages/gi/_glib/${MODPY_PYCACHE}option.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gi/_glib/${MODPY_PYCACHE}option.${MODPY_PYC_MAGIC_TAG}pyo
-lib/python${MODPY_VERSION}/site-packages/gi/_glib/_glib.so
-lib/python${MODPY_VERSION}/site-packages/gi/_glib/option.py
 lib/python${MODPY_VERSION}/site-packages/gi/_gobject/
 lib/python${MODPY_VERSION}/site-packages/gi/_gobject/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gi/_gobject/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gi/_gobject/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/_gobject/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyo
-lib/python${MODPY_VERSION}/site-packages/gi/_gobject/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gi/_gobject/${MODPY_PYCACHE}constants.${MODPY_PYC_MAGIC_TAG}pyo
-lib/python${MODPY_VERSION}/site-packages/gi/_gobject/${MODPY_PYCACHE}propertyhelper.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gi/_gobject/${MODPY_PYCACHE}propertyhelper.${MODPY_PYC_MAGIC_TAG}pyo
-lib/python${MODPY_VERSION}/site-packages/gi/_gobject/${MODPY_PYCACHE}signalhelper.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gi/_gobject/${MODPY_PYCACHE}signalhelper.${MODPY_PYC_MAGIC_TAG}pyo
-lib/python${MODPY_VERSION}/site-packages/gi/_gobject/_gobject.so
-lib/python${MODPY_VERSION}/site-packages/gi/_gobject/constants.py
-lib/python${MODPY_VERSION}/site-packages/gi/_gobject/propertyhelper.py
-lib/python${MODPY_VERSION}/site-packages/gi/_gobject/signalhelper.py
+lib/python${MODPY_VERSION}/site-packages/gi/_option.py
+lib/python${MODPY_VERSION}/site-packages/gi/_propertyhelper.py
+lib/python${MODPY_VERSION}/site-packages/gi/_signalhelper.py
 lib/python${MODPY_VERSION}/site-packages/gi/docstring.py
 lib/python${MODPY_VERSION}/site-packages/gi/importer.py
 lib/python${MODPY_VERSION}/site-packages/gi/module.py
