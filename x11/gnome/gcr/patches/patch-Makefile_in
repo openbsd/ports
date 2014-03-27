@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2014/03/27 08:06:04 ajacoutot Exp $
+--- Makefile.in.orig	Wed Mar 26 17:58:15 2014
++++ Makefile.in	Wed Mar 26 17:58:43 2014
+@@ -6144,9 +6144,7 @@ check-gcr-symbols: gcr-base-expected.abi gcr-base-actu
+ 
+ # libgcr-3.so (and  friends) symlink to libgcr-ui-3.so for compatibility raisons
+ @WITH_GTK_TRUE@install-exec-hook:
+-@WITH_GTK_TRUE@	$(LN_S) -f `readlink $(DESTDIR)$(libdir)/libgcr-ui-@GCR_MAJOR@.so` $(DESTDIR)$(libdir)/libgcr-@GCR_MAJOR@.so
+-@WITH_GTK_TRUE@	$(LN_S) -f `readlink $(DESTDIR)$(libdir)/libgcr-ui-@GCR_MAJOR@.so` $(DESTDIR)$(libdir)/libgcr-@GCR_MAJOR@.so.@GCR_CURRENT@
+-@WITH_GTK_TRUE@	$(LN_S) -f `readlink $(DESTDIR)$(libdir)/libgcr-ui-@GCR_MAJOR@.so` $(DESTDIR)$(libdir)/libgcr-@GCR_MAJOR@.so.@GCR_CURRENT@.0.0
++@WITH_GTK_TRUE@	cd $(DESTDIR)$(libdir)/ && $(LN_S) -f libgcr-ui-@GCR_MAJOR@.so.${LIBgcr-ui-3_VERSION} libgcr-@GCR_MAJOR@.so.${LIBgcr-ui-3_VERSION}
+ 
+ @WITH_GTK_TRUE@ui/gcr-enum-types.h: $(ENUM_TEMPLATE_H) $(ui_HEADER_FILES)
+ @WITH_GTK_TRUE@	$(AM_V_GEN) $(GLIB_MKENUMS) --template $^ > $@
