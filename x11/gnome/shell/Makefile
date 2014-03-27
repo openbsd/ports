@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.71 2014/03/26 16:05:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2014/03/27 19:05:31 jasper Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
-GNOME_VERSION=		3.10.4
-REVISION=		0
+GNOME_VERSION=		3.12.0
+REVISION=1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,7 +16,7 @@ WANTLIB += canberra canberra-gtk3 clutter-1.0 cogl cogl-pango
 WANTLIB += com_err croco-0.6 crypto dbus-1 dbus-glib-1 ecal-1.2
 WANTLIB += edataserver-1.2 execinfo expat ffi fontconfig freetype
 WANTLIB += gck-1 gcr-base-3 gcrypt gdbm gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += girepository-1.0 gjs glib-2.0 gmodule-2.0 gnome-menu-3
+WANTLIB += girepository-1.0 gjs glib-2.0 gmodule-2.0 cogl-path
 WANTLIB += gobject-2.0 gpg-error graphite2 gssapi gstbase-1.0
 WANTLIB += gstreamer-1.0 gthread-2.0 gtk-3 harfbuzz heimbase
 WANTLIB += ical icalss icalvcal json-c json-glib-1.0 krb5
@@ -27,7 +27,7 @@ WANTLIB += pthread pthread-stubs pulse pulse-mainloop-glib readline
 WANTLIB += roken secret-1 smime3 sndfile softokn3 soup-2.4 sqlite3
 WANTLIB += ssl3 startup-notification-1 stdc++ telepathy-glib vorbis
 WANTLIB += vorbisenc vorbisfile wind xcb xcb-aux xcb-render xcb-shm
-WANTLIB += xml2 z gnome-desktop-3 upower-glib xkbfile
+WANTLIB += xml2 z gnome-desktop-3 upower-glib icudata icui18n icuuc
 
 MODULES=		devel/dconf \
 			devel/gettext \
@@ -66,7 +66,6 @@ LIB_DEPENDS=		audio/pulseaudio \
 			www/libcroco \
 			x11/gnome/gcr \
 			x11/gnome/gjs \
-			x11/gnome/menus \
 			x11/gnome/mutter>=3.10.4
 
 # polkit(8) almost always needs to know the "active" session
@@ -103,25 +102,6 @@ MODGNOME_DESKTOP_FILE=	Yes
 LIBTOOL_FLAGS= 		--tag=disable-static
 
 CONFIGURE_ARGS=		--disable-static
-
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.11
-BUILD_DEPENDS +=	${MODGNU_AUTOMAKE_DEPENDS} \
-			${MODGNU_AUTOCONF_DEPENDS} \
-			devel/libtool \
-			x11/gnome/common
-
-pre-configure:
-	# XXX: Remove when updating to 3.12.0
-	mv ${WRKSRC}/src/shell-js.c ${WRKSRC}/src/shell-js.cpp
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} aclocal -I m4
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoconf
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoheader
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} automake
 
 post-install:
 	rm ${PREFIX}/lib/gnome-shell/*.la
