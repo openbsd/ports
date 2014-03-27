@@ -1,0 +1,10 @@
+$OpenBSD: patch-data_tracker-control_pc_in,v 1.1 2014/03/27 15:12:29 ajacoutot Exp $
+--- data/tracker-control.pc.in.orig	Thu Mar 27 15:44:18 2014
++++ data/tracker-control.pc.in	Thu Mar 27 15:44:34 2014
+@@ -7,5 +7,5 @@ Name: tracker-control
+ Description: A library to monitor/control tracker miners
+ Version: @VERSION@
+ Requires: glib-2.0 gio-2.0
+-Libs: -L${libdir} -ltracker-control-@TRACKER_API_VERSION@
++Libs: -L${libdir} -ltracker-control-@TRACKER_API_VERSION@ -Wl,-rpath,${libdir}/tracker-@TRACKER_API_VERSION@
+ Cflags: -I${includedir}/tracker-@TRACKER_API_VERSION@
