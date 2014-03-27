@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.57 2014/03/27 06:51:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2014/03/27 17:51:07 ajacoutot Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
 DISTNAME=	polkit-0.112
-REVISION=	5
+REVISION=	6
 
 SHARED_LIBS +=  polkit-gobject-1	2.0 # .0.0
 SHARED_LIBS +=  polkit-agent-1		2.0 # .0.0
@@ -27,8 +27,6 @@ MODULES=	devel/gettext \
 
 # man pages
 BUILD_DEPENDS+=	textproc/docbook-xsl
-
-RUN_DEPENDS=	x11/dbus
 
 LIB_DEPENDS=	devel/glib2 \
 		devel/mozjs17

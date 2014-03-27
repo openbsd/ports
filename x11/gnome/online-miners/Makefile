@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/03/27 17:06:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2014/03/27 17:51:07 ajacoutot Exp $
 
 TRACKER_VERSION=	1.0
 
@@ -8,6 +8,7 @@ COMMENT=		crawls through your online content
 
 GNOME_PROJECT=		gnome-online-miners
 GNOME_VERSION=		3.12.0
+REVISION=		0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -33,8 +34,6 @@ LIB_DEPENDS=		devel/libgdata \
 			x11/gnome/grilo \
 			x11/gnome/libzapojit \
 			x11/gnome/tracker
-
-RUN_DEPENDS=		x11/dbus
 
 # gom-flickr-miner.c: grl_registry_load_plugin_by_id (registry, "grl-flickr", ...)
 RUN_DEPENDS +=		x11/gnome/grilo-plugins
