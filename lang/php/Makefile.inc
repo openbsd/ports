@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.51 2014/03/13 17:33:27 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.52 2014/03/27 14:04:34 sthen Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -209,8 +209,7 @@ MULTI_PACKAGES+=	-odbc
 COMMENT-odbc=		odbc database access extensions for php5
 CONFIGURE_ARGS+=        --with-iodbc=shared,${LOCALBASE}
 LIB_DEPENDS-odbc=	databases/iodbc
-WANTLIB-odbc=		iodbc>=2 pthread
-# php 5.4/5.5 : WANTLIB-odbc+=iodbcinst
+WANTLIB-odbc=		iodbcinst iodbc>=2 pthread
 
 # pdo-mysql
 MULTI_PACKAGES+=	-pdo_mysql
@@ -313,7 +312,7 @@ PHPXS_SUBST+= -e 's,${i},${${i}},'
 
 MODULES=		converters/libiconv devel/gettext
 
-WANTLIB-main=		c crypto ssl z pthread gssapi krb5 xml2>=8 \
+WANTLIB-main+=		c crypto ssl z pthread gssapi krb5 xml2>=8 \
 			m asn1 com_err heimbase roken \
 			wind ${MODGETTEXT_WANTLIB}
 # php 5.4/5.5 : WANTLIB-main += stdc++

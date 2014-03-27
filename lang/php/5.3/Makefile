@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2014/03/27 10:41:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.74 2014/03/27 14:04:35 sthen Exp $
 
 BROKEN-hppa =	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -12,6 +12,7 @@ SUHOSIN_PHPV=	5.3.24
 SUHOSIN_P_V=	0.9.10unofficial
 REVISION=	4
 REVISION-main=	6
+REVISION-odbc=	5
 
 INI_TEMPLATES=	development production
 
