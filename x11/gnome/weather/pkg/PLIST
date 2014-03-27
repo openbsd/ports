@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/10/15 18:07:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/03/27 09:15:02 ajacoutot Exp $
 bin/gnome-weather
 lib/org.gnome.Weather.Application/
 lib/org.gnome.Weather.Application/girepository-1.0/
@@ -18,6 +18,7 @@ share/icons/hicolor/256x256/apps/org.gnome.Weather.Application.png
 share/icons/hicolor/32x32/apps/org.gnome.Weather.Application.png
 share/icons/hicolor/48x48/apps/org.gnome.Weather.Application.png
 share/locale/as/LC_MESSAGES/org.gnome.Weather.Application.mo
+share/locale/be/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/ca/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/ca@valencia/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/cs/LC_MESSAGES/org.gnome.Weather.Application.mo
@@ -25,6 +26,7 @@ share/locale/da/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/de/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/el/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/en_GB/LC_MESSAGES/org.gnome.Weather.Application.mo
+share/locale/eo/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/es/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/et/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/eu/LC_MESSAGES/org.gnome.Weather.Application.mo
@@ -33,12 +35,15 @@ share/locale/fi/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/fr/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/fur/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/ga/LC_MESSAGES/org.gnome.Weather.Application.mo
+share/locale/gd/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/gl/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/he/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/hu/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/id/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/it/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/ja/LC_MESSAGES/org.gnome.Weather.Application.mo
+share/locale/kk/LC_MESSAGES/org.gnome.Weather.Application.mo
+share/locale/kn/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/ko/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/lt/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/lv/LC_MESSAGES/org.gnome.Weather.Application.mo
@@ -54,6 +59,8 @@ share/locale/sk/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/sl/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/sr/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/sr@latin/LC_MESSAGES/org.gnome.Weather.Application.mo
+share/locale/sv/LC_MESSAGES/org.gnome.Weather.Application.mo
+share/locale/te/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/tg/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/th/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/tr/LC_MESSAGES/org.gnome.Weather.Application.mo
@@ -62,20 +69,12 @@ share/locale/zh_CN/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/zh_HK/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/locale/zh_TW/LC_MESSAGES/org.gnome.Weather.Application.mo
 share/org.gnome.Weather.Application/
-share/org.gnome.Weather.Application/city.js
-share/org.gnome.Weather.Application/forecast.js
 share/org.gnome.Weather.Application/gir-1.0/
 share/org.gnome.Weather.Application/gir-1.0/Gd-1.0.gir
-share/org.gnome.Weather.Application/main.js
 share/org.gnome.Weather.Application/org.gnome.Weather.Application
-share/org.gnome.Weather.Application/org.gnome.Weather.Application.gresource
+share/org.gnome.Weather.Application/org.gnome.Weather.Application.data.gresource
+share/org.gnome.Weather.Application/org.gnome.Weather.Application.src.gresource
 share/org.gnome.Weather.Application/package.js
-share/org.gnome.Weather.Application/params.js
-share/org.gnome.Weather.Application/searchProvider.js
-share/org.gnome.Weather.Application/strings.js
-share/org.gnome.Weather.Application/util.js
-share/org.gnome.Weather.Application/window.js
-share/org.gnome.Weather.Application/world.js
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
