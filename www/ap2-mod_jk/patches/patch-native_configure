@@ -1,7 +1,7 @@
-$OpenBSD: patch-native_configure,v 1.1.1.1 2013/01/25 08:51:16 dcoppa Exp $
---- native/configure.orig	Tue May 29 09:35:01 2012
-+++ native/configure	Wed Nov 28 11:31:08 2012
-@@ -3648,7 +3648,7 @@ for as_dir in $PATH
+$OpenBSD: patch-native_configure,v 1.2 2014/03/27 10:35:19 dcoppa Exp $
+--- native/configure.orig	Thu Feb 27 18:26:26 2014
++++ native/configure	Thu Mar 27 11:28:39 2014
+@@ -3662,7 +3662,7 @@ for as_dir in $PATH
  do
    IFS=$as_save_IFS
    test -z "$as_dir" && as_dir=.
