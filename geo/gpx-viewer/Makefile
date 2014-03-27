@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2014/02/05 13:25:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2014/03/27 13:46:09 jasper Exp $
 
 COMMENT =	gpx file viewer
 
 VERSION =	0.3.0
 DISTNAME =	gpx-viewer-${VERSION}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	geo x11
 
@@ -35,7 +35,7 @@ FAKE_FLAGS=	desktopdir=${PREFIX}/share/applications
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo champlain-0.12 champlain-gtk-0.12
-WANTLIB += clutter-gtk-1.0 dbus-1
+WANTLIB += clutter-gtk-1.0 dbus-1 cogl-path
 WANTLIB += cairo-gobject clutter-1.0 cogl cogl-pango gdk-3 gtk-3
 WANTLIB += expat fontconfig freetype gdk_pixbuf-2.0
 WANTLIB += gdl-3 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0

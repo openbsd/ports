@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2013/12/31 09:20:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.79 2014/03/27 13:46:09 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
 GNOME_VERSION=	3.2.6
+REVISION=	0
 
 API_V=		${GNOME_VERSION:R}
 SUBST_VARS=	API_V
@@ -22,7 +23,7 @@ WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
 WANTLIB += c cairo cairo-gobject clutter-1.0 clutter-gtk-1.0 cogl
 WANTLIB += dbus-1 exiv2 expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2 cogl-path
 WANTLIB += gstreamer-1.0 gthread-2.0 gtk-3 harfbuzz jpeg json-glib-1.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs rsvg-2 secret-1 soup-2.4
