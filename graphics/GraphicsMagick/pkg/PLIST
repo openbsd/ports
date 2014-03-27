@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2013/04/15 01:58:32 brad Exp $
+@comment $OpenBSD: PLIST,v 1.12 2014/03/27 02:15:34 brad Exp $
 @pkgpath graphics/GraphicsMagick,no_x11
 bin/GraphicsMagick++-config
 bin/GraphicsMagick-config
@@ -273,6 +273,8 @@ lib/GraphicsMagick/modules-Q16/coders/viff.la
 lib/GraphicsMagick/modules-Q16/coders/viff.so
 lib/GraphicsMagick/modules-Q16/coders/wbmp.la
 lib/GraphicsMagick/modules-Q16/coders/wbmp.so
+lib/GraphicsMagick/modules-Q16/coders/webp.la
+lib/GraphicsMagick/modules-Q16/coders/webp.so
 lib/GraphicsMagick/modules-Q16/coders/wmf.la
 lib/GraphicsMagick/modules-Q16/coders/wmf.so
 lib/GraphicsMagick/modules-Q16/coders/wpg.la

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2013/06/04 18:41:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2014/03/27 02:15:34 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	image processing tools with stable ABI
 
-DISTNAME=	GraphicsMagick-1.3.18
+DISTNAME=	GraphicsMagick-1.3.19
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=graphicsmagick/}
 EXTRACT_SUFX=	.tar.xz
@@ -21,7 +21,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		ICE SM X11 Xext bz2 c freetype jasper jbig jpeg lcms2 \
-			ltdl lzma m png pthread stdc++ tiff wmflite-0.2 \
+			ltdl lzma m png16 pthread stdc++ tiff webp wmflite-0.2 \
 			xcb xml2 z
 
 MODULES=		converters/libiconv
@@ -32,6 +32,7 @@ LIB_DEPENDS=		archivers/bzip2 \
 			graphics/jasper \
 			graphics/jbigkit \
 			graphics/lcms2 \
+			graphics/libwebp \
 			graphics/libwmf \
 			graphics/png \
 			graphics/tiff \
