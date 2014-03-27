@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2013/09/27 07:16:22 ajacoutot Exp $
-@bin bin/vino-passwd
+@comment $OpenBSD: PLIST,v 1.13 2014/03/27 16:48:17 ajacoutot Exp $
 @bin libexec/vino-server
 share/GConf/
 share/GConf/gsettings/
