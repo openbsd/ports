@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.141 2014/03/25 11:22:29 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.142 2014/03/27 12:46:07 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -388,6 +388,7 @@ my $obsolete_reason = {
 	'p5-Event-Lib' => 3,
 	'gnome-search-tool' => 3,
 	'gnome-system-log' => 3,
+	'mash' => 3,
 };
 
 # ->is_base_system($handle, $state):
