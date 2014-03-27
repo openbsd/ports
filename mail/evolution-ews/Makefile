@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.41 2014/03/27 14:13:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2014/03/27 14:35:14 ajacoutot Exp $
 
-EVO_VERSION=		3.10
+EVO_VERSION=		3.12
 SUBST_VARS +=		EVO_VERSION
 
 SHARED_ONLY=		Yes
@@ -8,8 +8,7 @@ SHARED_ONLY=		Yes
 COMMENT=		evolution connector for MS Exchange via EWS
 
 GNOME_PROJECT=		evolution-ews
-GNOME_VERSION=		3.10.4
-REVISION=		0
+GNOME_VERSION=		3.12.0
 
 CATEGORIES=		mail
 
@@ -28,19 +27,19 @@ WANTLIB += atspi cairo cairo-gobject camel-1.2 canberra canberra-gtk3
 WANTLIB += com_err crypto db dbus-1 dbus-glib-1 ebackend-1.2 ebook-1.2
 WANTLIB += ebook-contacts-1.2 ecal-1.2 edata-book-1.2 edata-cal-1.2
 WANTLIB += edataserver-1.2 enchant expat ffi fontconfig freetype
-WANTLIB += gailutil-3 gck-1 gcr-base-3 gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB += gailutil-3 gck-1 gcr-3 gcr-base-3 gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += geoclue gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3
 WANTLIB += gobject-2.0 gpg-error graphite2 gssapi gstapp-1.0 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstfft-1.0 gstpbutils-1.0 gstreamer-1.0
 WANTLIB += gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3 gtkhtml-4.0
-WANTLIB += gtkhtml-editor-4.0 harfbuzz harfbuzz-icu heimbase ical
-WANTLIB += icalss icalvcal icudata icui18n icuuc javascriptcoregtk-3.0
-WANTLIB += jpeg krb5 ltdl m mspack nspr4 nss3 nssutil3 ogg orc-0.4
-WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs roken
-WANTLIB += secret-1 smime3 softokn3 soup-2.4 soup-gnome-2.4 sqlite3
-WANTLIB += ssl3 stdc++ vorbis vorbisfile webkitgtk-3.0 webp wind
-WANTLIB += xcb xcb-render xcb-shm xkbfile xml2 xslt z
+WANTLIB += gtkhtml-editor-4.0 gtkspell3-3 harfbuzz harfbuzz-icu
+WANTLIB += heimbase ical icalss icalvcal icudata icui18n icuuc
+WANTLIB += javascriptcoregtk-3.0 jpeg krb5 ltdl m mspack nspr4
+WANTLIB += nss3 nssutil3 ogg orc-0.4 p11-kit pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread pthread-stubs
+WANTLIB += roken secret-1 smime3 softokn3 soup-2.4 sqlite3 ssl3
+WANTLIB += stdc++ vorbis vorbisfile webkitgtk-3.0 webp wind xcb
+WANTLIB += xcb-render xcb-shm xml2 xslt z
 
 MODULES=		devel/gettext \
 			x11/gnome

@@ -1,12 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/09/27 09:46:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/03/27 14:35:14 ajacoutot Exp $
 include/evolution-data-server/ews/
+include/evolution-data-server/ews/e-ews-connection-utils.h
 include/evolution-data-server/ews/e-ews-connection.h
+include/evolution-data-server/ews/e-ews-debug.h
 include/evolution-data-server/ews/e-ews-enums.h
 include/evolution-data-server/ews/e-ews-enumtypes.h
 include/evolution-data-server/ews/e-ews-folder.h
 include/evolution-data-server/ews/e-ews-item-change.h
 include/evolution-data-server/ews/e-ews-item.h
 include/evolution-data-server/ews/e-ews-message.h
+include/evolution-data-server/ews/e-ews-notification.h
 include/evolution-data-server/ews/e-ews-oof-settings.h
 include/evolution-data-server/ews/ews-errors.h
 lib/evolution-data-server/addressbook-backends/libebookbackendews.so
@@ -19,6 +22,8 @@ lib/evolution-data-server/libewsutils.la
 @lib lib/evolution-data-server/libewsutils.so.${LIBewsutils_VERSION}
 lib/evolution-data-server/registry-modules/module-ews-backend.so
 lib/evolution/${EVO_VERSION}/modules/module-ews-configuration.so
+share/evolution-data-server/ews/
+share/evolution-data-server/ews/windowsZones.xml
 share/evolution/${EVO_VERSION}/errors/module-ews-configuration.error
 share/locale/as/LC_MESSAGES/evolution-ews.mo
 share/locale/ca/LC_MESSAGES/evolution-ews.mo
@@ -33,7 +38,9 @@ share/locale/gl/LC_MESSAGES/evolution-ews.mo
 share/locale/gu/LC_MESSAGES/evolution-ews.mo
 share/locale/hu/LC_MESSAGES/evolution-ews.mo
 share/locale/id/LC_MESSAGES/evolution-ews.mo
+share/locale/ja/LC_MESSAGES/evolution-ews.mo
 share/locale/kn/LC_MESSAGES/evolution-ews.mo
+share/locale/lt/LC_MESSAGES/evolution-ews.mo
 share/locale/lv/LC_MESSAGES/evolution-ews.mo
 share/locale/mr/LC_MESSAGES/evolution-ews.mo
 share/locale/nb/LC_MESSAGES/evolution-ews.mo
