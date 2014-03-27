@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2014/03/25 16:06:58 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.27 2014/03/27 08:30:54 jasper Exp $
 @pkgpath x11/gnome/gucharmap,gtk2
 bin/charmap
 bin/gnome-character-map
@@ -22,6 +22,8 @@ lib/libgucharmap_2_90.a
 lib/libgucharmap_2_90.la
 @lib lib/libgucharmap_2_90.so.${LIBgucharmap_2_90_VERSION}
 lib/pkgconfig/gucharmap-2.90.pc
+share/appdata/
+share/appdata/gucharmap.appdata.xml
 share/applications/gucharmap.desktop
 share/gir-1.0/Gucharmap-2.90.gir
 share/glib-2.0/schemas/org.gnome.Charmap.enums.xml
