@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.112 2014/03/09 19:46:35 espie Exp $
+# $OpenBSD: Makefile,v 1.113 2014/03/27 08:55:09 ajacoutot Exp $
+
+SHARED_ONLY=	Yes
 
 COMMENT-main=	GNOME Virtual File System
 COMMENT-smb=	GVFS mount module for samba
 COMMENT-goa=	GVFS volume monitor for gnome-online-account
 
 GNOME_PROJECT=	gvfs
-GNOME_VERSION=	1.18.3
+GNOME_VERSION=	1.20.0
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-smb=	${GNOME_PROJECT}-smb-${GNOME_VERSION}
 PKGNAME-goa=	${GNOME_PROJECT}-goa-${GNOME_VERSION}
-
-REVISION-main=	5
-
-SHARED_LIBS +=  gvfscommon           4.0      # unknown
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -33,15 +31,15 @@ WANTLIB-main += avahi-glib bz2 cairo cairo-gobject dbus-1 expat
 WANTLIB-main += fontconfig freetype fuse gdk-3 gdk_pixbuf-2.0 xml2
 WANTLIB-main += archive gtk-3 harfbuzz lzma m pango-1.0
 WANTLIB-main += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread-stubs
-WANTLIB-main += soup-2.4 soup-gnome-2.4 sqlite3 gthread-2.0 xcb xcb-render
+WANTLIB-main += soup-2.4 sqlite3 gthread-2.0 xcb xcb-render
 WANTLIB-main += gcrypt gpg-error secret-1
 
 WANTLIB-smb += ${WANTLIB}
-WANTLIB-smb += gvfscommon smbclient execinfo talloc tdb wbclient
+WANTLIB-smb += smbclient execinfo talloc tdb wbclient
 WANTLIB-smb += gcrypt gpg-error secret-1
 
 WANTLIB-goa += ${WANTLIB}
-WANTLIB-goa += goa-1.0 gvfscommon
+WANTLIB-goa += goa-1.0
 
 MODGNOME_DESKTOP_FILE=	Yes
 
@@ -56,23 +54,26 @@ LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		x11/gtk+3
 
 RUN_DEPENDS-smb= ${MODGETTEXT_RUN_DEPENDS} \
-		${MODDCONF_RUN_DEPENDS}
+		${MODDCONF_RUN_DEPENDS} \
+		${BASE_PKGPATH},-main=${GNOME_VERSION}
 LIB_DEPENDS-smb= ${LIB_DEPENDS} \
-		${BASE_PKGPATH},-main=${GNOME_VERSION} \
 		net/samba
 
-RUN_DEPENDS-goa= ${MODGETTEXT_RUN_DEPENDS}
+RUN_DEPENDS-goa= ${MODGETTEXT_RUN_DEPENDS} \
+		${BASE_PKGPATH},-main=${GNOME_VERSION}
 LIB_DEPENDS-goa= ${LIB_DEPENDS} \
-		${BASE_PKGPATH},-main=${GNOME_VERSION} \
 		x11/gnome/online-accounts
 
-CONFIGURE_ARGS=	--disable-cdda \
+CONFIGURE_ARGS=	--disable-static \
+		--disable-cdda \
 		--disable-bluray \
 		--disable-afc \
 		--disable-obexftp \
 		--disable-gudev \
 		--disable-udev \
 		--disable-gdu
+
+LIBTOOL_FLAGS=	--tag=disable-static
 
 MULTI_PACKAGES=		-main -smb -goa
 
@@ -94,6 +95,7 @@ TEST_DEPENDS=	devel/py-gobject3
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
-	rm ${PREFIX}/lib/gio/modules/*.{a,la}
+	rm ${PREFIX}/lib/gio/modules/*.la
+	rm ${PREFIX}/lib/gvfs/*.la
 
 .include <bsd.port.mk>

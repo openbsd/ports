@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.28 2013/11/01 18:32:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.29 2014/03/27 08:55:09 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
-%%SHARED%%
 @bin bin/gvfs-cat
 @bin bin/gvfs-copy
 @bin bin/gvfs-info
@@ -23,9 +22,11 @@ include/gvfs-client/
 include/gvfs-client/gvfs/
 include/gvfs-client/gvfs/gvfsurimapper.h
 include/gvfs-client/gvfs/gvfsuriutils.h
-lib/libgvfscommon.a
-lib/libgvfscommon.la
-@lib lib/libgvfscommon.so.${LIBgvfscommon_VERSION}
+lib/gio/modules/libgioremote-volume-monitor.so
+lib/gio/modules/libgvfsdbus.so
+lib/gvfs/
+lib/gvfs/libgvfscommon.so
+lib/gvfs/libgvfsdaemon.so
 @bin libexec/gvfsd
 @bin libexec/gvfsd-afp
 @bin libexec/gvfsd-afp-browse
@@ -163,6 +164,8 @@ share/locale/vi/LC_MESSAGES/gvfs.mo
 share/locale/zh_CN/LC_MESSAGES/gvfs.mo
 share/locale/zh_HK/LC_MESSAGES/gvfs.mo
 share/locale/zh_TW/LC_MESSAGES/gvfs.mo
+@exec %D/bin/gio-querymodules %D/lib/gio/modules
+@unexec-delete %D/bin/gio-querymodules %D/lib/gio/modules
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/update-desktop-database
