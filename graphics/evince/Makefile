@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2013/11/16 21:00:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.104 2014/03/27 12:14:31 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT-dvi=	evince document viewer backend for dvi documents
 COMMENT-nautilus= evince plugin for nautilus
 
 GNOME_PROJECT=	evince
-GNOME_VERSION=	3.10.3
+GNOME_VERSION=	3.12.0
 
 MAJ_V=		3.0
 SUBST_VARS=	MAJ_V
