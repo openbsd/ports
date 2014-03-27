@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.115 2014/01/11 12:45:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.116 2014/03/27 17:10:48 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		official media player for GNOME
 
 GNOME_PROJECT=		totem
-GNOME_VERSION=		3.10.1
-REVISION=		2
+GNOME_VERSION=		3.12.0
 
 SHARED_LIBS +=  totem                0.0      # unknown
 
@@ -18,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender archive atk-1.0 atk-bridge-2.0
 WANTLIB += atspi bz2 c cairo cairo-gobject clutter-1.0 clutter-gst-2.0
-WANTLIB += clutter-gtk-1.0 cogl cogl-pango dbus-1 dbus-glib-1
+WANTLIB += clutter-gtk-1.0 cogl cogl-pango dbus-1 cogl-path grlpls-0.2
 WANTLIB += expat ffi fontconfig freetype gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmime-2.6 gmodule-2.0
 WANTLIB += gobject-2.0 gpg-error graphite2 grilo-0.2 gstaudio-1.0
@@ -43,7 +42,6 @@ BUILD_DEPENDS +=	devel/pylint
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/py-gobject3 \
-			devel/py-xdg \
 			x11/dbus-python \
 			x11/gnome/grilo-plugins
 
@@ -68,6 +66,12 @@ MODGNOME_TOOLS=		gi vala yelp
 LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_ARGS=		--disable-static
+
+pre-configure:
+# XXX cc1: error: unrecognized command line option "-Wno-unused-but-set-variable"
+	find ${WRKSRC} -name Makefile.in | xargs -r \
+		perl -pi -e 's,-Wno-unused-but-set-variable,,' \
+		${WRKSRC}/src/Makefile.in
 
 post-install:
 	rm ${PREFIX}/lib/totem/plugins/*/*.la

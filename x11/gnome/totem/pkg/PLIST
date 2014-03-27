@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2014/01/11 12:45:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2014/03/27 17:10:48 ajacoutot Exp $
 @conflict nautilus-totem-*
 @pkgpath x11/gnome/totem,nautilus
 @pkgpath x11/gnome/totem,xine
@@ -37,18 +37,11 @@ lib/totem/plugins/brasero-disc-recorder/libbrasero-disc-recorder.so
 lib/totem/plugins/chapters/
 lib/totem/plugins/chapters/chapters-edit.ui
 lib/totem/plugins/chapters/chapters-list.ui
-lib/totem/plugins/chapters/chapters.plugin
-lib/totem/plugins/chapters/libchapters.so
 lib/totem/plugins/dbus/
 lib/totem/plugins/dbus/dbusservice.plugin
 lib/totem/plugins/dbus/dbusservice.py
 lib/totem/plugins/dbus/dbusservice.pyc
 lib/totem/plugins/dbus/dbusservice.pyo
-lib/totem/plugins/grilo/
-lib/totem/plugins/grilo/grilo.plugin
-lib/totem/plugins/grilo/grilo.ui
-lib/totem/plugins/grilo/libgrilo.so
-lib/totem/plugins/grilo/totem-grilo.conf
 lib/totem/plugins/gromit/
 lib/totem/plugins/gromit/gromit.plugin
 lib/totem/plugins/gromit/libgromit.so
@@ -115,6 +108,7 @@ libexec/totem/totem-bugreport.py
 share/GConf/gsettings/opensubtitles.convert
 share/GConf/gsettings/pythonconsole.convert
 share/GConf/gsettings/totem.convert
+share/appdata/totem.appdata.xml
 share/applications/totem.desktop
 share/gir-1.0/Totem-1.0.gir
 share/glib-2.0/schemas/org.gnome.totem.enums.xml
@@ -135,7 +129,9 @@ share/gtk-doc/html/totem/ix02.html
 share/gtk-doc/html/totem/ix03.html
 share/gtk-doc/html/totem/ix04.html
 share/gtk-doc/html/totem/ix05.html
+share/gtk-doc/html/totem/left-insensitive.png
 share/gtk-doc/html/totem/left.png
+share/gtk-doc/html/totem/right-insensitive.png
 share/gtk-doc/html/totem/right.png
 share/gtk-doc/html/totem/style.css
 share/gtk-doc/html/totem/totem-Interface.html
@@ -143,6 +139,7 @@ share/gtk-doc/html/totem/totem-TotemPlugin.html
 share/gtk-doc/html/totem/totem-plugins.html
 share/gtk-doc/html/totem/totem.devhelp2
 share/gtk-doc/html/totem/tutorials.html
+share/gtk-doc/html/totem/up-insensitive.png
 share/gtk-doc/html/totem/up.png
 share/help/C/totem/
 share/help/C/totem/figures/
@@ -303,6 +300,19 @@ share/help/gl/totem/figures/totem_volume_maximum_button.png
 share/help/gl/totem/figures/totem_volume_mute_button.png
 share/help/gl/totem/index.docbook
 share/help/gl/totem/legal.xml
+share/help/id/
+share/help/id/totem/
+share/help/id/totem/figures/
+share/help/id/totem/figures/totem_next_button.png
+share/help/id/totem/figures/totem_pause_button.png
+share/help/id/totem/figures/totem_play_button.png
+share/help/id/totem/figures/totem_previous_button.png
+share/help/id/totem/figures/totem_show_playlist_button.png
+share/help/id/totem/figures/totem_start_window.png
+share/help/id/totem/figures/totem_volume_maximum_button.png
+share/help/id/totem/figures/totem_volume_mute_button.png
+share/help/id/totem/index.docbook
+share/help/id/totem/legal.xml
 share/help/it/
 share/help/it/totem/
 share/help/it/totem/figures/
@@ -501,7 +511,6 @@ share/icons/hicolor/32x32/apps/totem.png
 share/icons/hicolor/32x32/devices/totem-tv.png
 share/icons/hicolor/48x48/apps/totem.png
 share/icons/hicolor/48x48/devices/totem-tv.png
-share/icons/hicolor/scalable/actions/view-sidebar-symbolic.svg
 share/icons/hicolor/scalable/devices/totem-tv.svg
 share/locale/af/LC_MESSAGES/totem.mo
 share/locale/am/LC_MESSAGES/totem.mo
@@ -535,6 +544,7 @@ share/locale/fa/LC_MESSAGES/totem.mo
 share/locale/fi/LC_MESSAGES/totem.mo
 share/locale/fr/LC_MESSAGES/totem.mo
 share/locale/ga/LC_MESSAGES/totem.mo
+share/locale/gd/LC_MESSAGES/totem.mo
 share/locale/gl/LC_MESSAGES/totem.mo
 share/locale/gu/LC_MESSAGES/totem.mo
 share/locale/gv/LC_MESSAGES/totem.mo
@@ -584,6 +594,7 @@ share/locale/sr@latin/LC_MESSAGES/totem.mo
 share/locale/sv/LC_MESSAGES/totem.mo
 share/locale/ta/LC_MESSAGES/totem.mo
 share/locale/te/LC_MESSAGES/totem.mo
+share/locale/tg/LC_MESSAGES/totem.mo
 share/locale/th/LC_MESSAGES/totem.mo
 share/locale/tr/LC_MESSAGES/totem.mo
 share/locale/ug/LC_MESSAGES/totem.mo
@@ -597,12 +608,10 @@ share/locale/zh_TW/LC_MESSAGES/totem.mo
 share/locale/zu/LC_MESSAGES/totem.mo
 share/thumbnailers/totem.thumbnailer
 share/totem/
-share/totem/filmholes-big-left.png
-share/totem/filmholes-big-right.png
-share/totem/filmholes.png
-share/totem/fullscreen.ui
+share/totem/controls.ui
 share/totem/mozilla-viewer.css
 share/totem/mozilla-viewer.ui
+share/totem/org_gnome_totem_PluginViewer.xml
 share/totem/playlist.ui
 share/totem/preferences.ui
 share/totem/properties.ui
