@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.114 2014/01/23 08:59:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.115 2014/03/27 12:17:43 jasper Exp $
 
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
-GNOME_VERSION=		3.10.4
+GNOME_VERSION=		3.12.0
 
 CATEGORIES=		editors
 
@@ -32,7 +32,7 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 LIB_DEPENDS=		devel/libpeas>=1.8.0 \
 			productivity/zeitgeist>=0.9.14v0 \
 			textproc/enchant \
-			x11/gtksourceview3
+			x11/gtksourceview3>=3.12.0
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes \
@@ -40,7 +40,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			x11/gnome/gvfs #--enable-gvfs-metadata
 
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
-MODGNOME_TOOLS= 	gi yelp
+MODGNOME_TOOLS= 	gi vala yelp
 MODGNOME_DESKTOP_FILE=	Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 

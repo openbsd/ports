@@ -1,33 +1,32 @@
-@comment $OpenBSD: PLIST,v 1.38 2013/10/21 15:32:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.39 2014/03/27 12:17:43 jasper Exp $
 @bin bin/gedit
 bin/gnome-text-editor
-include/gedit${MODPY_BIN_SUFFIX}.0/
-include/gedit${MODPY_BIN_SUFFIX}.0/gedit/
-include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-app-activatable.h
-include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-app.h
-include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-commands.h
-include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-debug.h
-include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-document.h
-include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-encodings-combo-box.h
-include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-encodings.h
-include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-message-bus.h
-include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-message.h
-include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-panel.h
-include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-progress-info-bar.h
-include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-statusbar.h
-include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-tab.h
-include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-utils.h
-include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-view-activatable.h
-include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-view.h
-include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-window-activatable.h
-include/gedit${MODPY_BIN_SUFFIX}.0/gedit/gedit-window.h
+include/gedit-3.12/
+include/gedit-3.12/gedit/
+include/gedit-3.12/gedit/gedit-app-activatable.h
+include/gedit-3.12/gedit/gedit-app.h
+include/gedit-3.12/gedit/gedit-commands.h
+include/gedit-3.12/gedit/gedit-debug.h
+include/gedit-3.12/gedit/gedit-document.h
+include/gedit-3.12/gedit/gedit-encodings-combo-box.h
+include/gedit-3.12/gedit/gedit-encodings.h
+include/gedit-3.12/gedit/gedit-menu-extension.h
+include/gedit-3.12/gedit/gedit-message-bus.h
+include/gedit-3.12/gedit/gedit-message.h
+include/gedit-3.12/gedit/gedit-progress-info-bar.h
+include/gedit-3.12/gedit/gedit-statusbar.h
+include/gedit-3.12/gedit/gedit-tab.h
+include/gedit-3.12/gedit/gedit-utils.h
+include/gedit-3.12/gedit/gedit-view-activatable.h
+include/gedit-3.12/gedit/gedit-view.h
+include/gedit-3.12/gedit/gedit-window-activatable.h
+include/gedit-3.12/gedit/gedit-window.h
 lib/gedit/
 lib/gedit/girepository-1.0/
-lib/gedit/girepository-1.0/Gedit${MODPY_BIN_SUFFIX}.0.typelib
+lib/gedit/girepository-1.0/Gedit-3.0.typelib
 lib/gedit/libgedit-private.la
 lib/gedit/libgedit-private.so
 lib/gedit/plugins/
-lib/gedit/plugins/changecase.plugin
 lib/gedit/plugins/docinfo.plugin
 lib/gedit/plugins/externaltools/
 lib/gedit/plugins/externaltools.plugin
@@ -35,6 +34,8 @@ lib/gedit/plugins/externaltools/__init__.py
 lib/gedit/plugins/externaltools/${MODPY_PYCACHE}/
 lib/gedit/plugins/externaltools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/gedit/plugins/externaltools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/externaltools/${MODPY_PYCACHE}appactivatable.${MODPY_PYC_MAGIC_TAG}pyc
+lib/gedit/plugins/externaltools/${MODPY_PYCACHE}appactivatable.${MODPY_PYC_MAGIC_TAG}pyo
 lib/gedit/plugins/externaltools/${MODPY_PYCACHE}capture.${MODPY_PYC_MAGIC_TAG}pyc
 lib/gedit/plugins/externaltools/${MODPY_PYCACHE}capture.${MODPY_PYC_MAGIC_TAG}pyo
 lib/gedit/plugins/externaltools/${MODPY_PYCACHE}filelookup.${MODPY_PYC_MAGIC_TAG}pyc
@@ -51,6 +52,7 @@ lib/gedit/plugins/externaltools/${MODPY_PYCACHE}outputpanel.${MODPY_PYC_MAGIC_TA
 lib/gedit/plugins/externaltools/${MODPY_PYCACHE}outputpanel.${MODPY_PYC_MAGIC_TAG}pyo
 lib/gedit/plugins/externaltools/${MODPY_PYCACHE}windowactivatable.${MODPY_PYC_MAGIC_TAG}pyc
 lib/gedit/plugins/externaltools/${MODPY_PYCACHE}windowactivatable.${MODPY_PYC_MAGIC_TAG}pyo
+lib/gedit/plugins/externaltools/appactivatable.py
 lib/gedit/plugins/externaltools/capture.py
 lib/gedit/plugins/externaltools/filelookup.py
 lib/gedit/plugins/externaltools/functions.py
@@ -60,14 +62,13 @@ lib/gedit/plugins/externaltools/manager.py
 lib/gedit/plugins/externaltools/outputpanel.py
 lib/gedit/plugins/externaltools/windowactivatable.py
 lib/gedit/plugins/filebrowser.plugin
-lib/gedit/plugins/libchangecase.so
 lib/gedit/plugins/libdocinfo.so
 lib/gedit/plugins/libfilebrowser.so
 lib/gedit/plugins/libmodelines.so
 lib/gedit/plugins/libsort.so
 lib/gedit/plugins/libspell.so
 lib/gedit/plugins/libtime.so
-lib/gedit/plugins/libzeitgeistplugin.so
+lib/gedit/plugins/libzeitgeist.so
 lib/gedit/plugins/modelines.plugin
 lib/gedit/plugins/pythonconsole/
 lib/gedit/plugins/pythonconsole.plugin
@@ -168,16 +169,11 @@ share/applications/gedit.desktop
 share/dbus-1/services/org.gnome.gedit.service
 share/gedit/
 share/gedit/gir-1.0/
-share/gedit/gir-1.0/Gedit${MODPY_BIN_SUFFIX}.0.gir
+share/gedit/gir-1.0/Gedit-3.0.gir
 share/gedit/logo/
 share/gedit/logo/gedit-logo.png
 share/gedit/plugins/
 share/gedit/plugins/externaltools/
-share/gedit/plugins/externaltools/tools/
-share/gedit/plugins/externaltools/tools/build
-share/gedit/plugins/externaltools/tools/open-terminal-here
-share/gedit/plugins/externaltools/tools/remove-trailing-spaces
-share/gedit/plugins/externaltools/tools/run-command
 share/gedit/plugins/externaltools/ui/
 share/gedit/plugins/externaltools/ui/outputpanel.ui
 share/gedit/plugins/externaltools/ui/tools.ui
@@ -229,18 +225,15 @@ share/gtk-doc/html/gedit/GeditMessage.html
 share/gtk-doc/html/gedit/GeditMessageBus.html
 share/gtk-doc/html/gedit/GeditViewActivatable.html
 share/gtk-doc/html/gedit/GeditWindowActivatable.html
+share/gtk-doc/html/gedit/annotation-glossary.html
+share/gtk-doc/html/gedit/api-index-full.html
 share/gtk-doc/html/gedit/ch01.html
-share/gtk-doc/html/gedit/gedit-GeditMessageType.html
-share/gtk-doc/html/gedit/gedit-GeditPrintJob.html
 share/gtk-doc/html/gedit/gedit-gedit-app.html
 share/gtk-doc/html/gedit/gedit-gedit-debug.html
 share/gtk-doc/html/gedit/gedit-gedit-document.html
 share/gtk-doc/html/gedit/gedit-gedit-encodings-combo-box.html
 share/gtk-doc/html/gedit/gedit-gedit-encodings.html
-share/gtk-doc/html/gedit/gedit-gedit-file-chooser-dialog.html
-share/gtk-doc/html/gedit/gedit-gedit-help.html
-share/gtk-doc/html/gedit/gedit-gedit-panel.html
-share/gtk-doc/html/gedit/gedit-gedit-print-job-preview.html
+share/gtk-doc/html/gedit/gedit-gedit-menu-extension.html
 share/gtk-doc/html/gedit/gedit-gedit-progress-info-bar.html
 share/gtk-doc/html/gedit/gedit-gedit-statusbar.html
 share/gtk-doc/html/gedit/gedit-gedit-tab.html
@@ -253,6 +246,7 @@ share/gtk-doc/html/gedit/index.html
 share/gtk-doc/html/gedit/index.sgml
 share/gtk-doc/html/gedit/left-insensitive.png
 share/gtk-doc/html/gedit/left.png
+share/gtk-doc/html/gedit/object-tree.html
 share/gtk-doc/html/gedit/right-insensitive.png
 share/gtk-doc/html/gedit/right.png
 share/gtk-doc/html/gedit/style.css
@@ -304,6 +298,7 @@ share/help/C/gedit/gedit-search.page
 share/help/C/gedit/gedit-shortcut-keys.page
 share/help/C/gedit/gedit-spellcheck.page
 share/help/C/gedit/gedit-syntax-highlighting.page
+share/help/C/gedit/gedit-tab-groups.page
 share/help/C/gedit/gedit-tabs-moving.page
 share/help/C/gedit/gedit-tabs.page
 share/help/C/gedit/gedit-undo-recent-action.page
@@ -355,6 +350,7 @@ share/help/ar/gedit/gedit-search.page
 share/help/ar/gedit/gedit-shortcut-keys.page
 share/help/ar/gedit/gedit-spellcheck.page
 share/help/ar/gedit/gedit-syntax-highlighting.page
+share/help/ar/gedit/gedit-tab-groups.page
 share/help/ar/gedit/gedit-tabs-moving.page
 share/help/ar/gedit/gedit-tabs.page
 share/help/ar/gedit/gedit-undo-recent-action.page
@@ -406,6 +402,7 @@ share/help/bg/gedit/gedit-search.page
 share/help/bg/gedit/gedit-shortcut-keys.page
 share/help/bg/gedit/gedit-spellcheck.page
 share/help/bg/gedit/gedit-syntax-highlighting.page
+share/help/bg/gedit/gedit-tab-groups.page
 share/help/bg/gedit/gedit-tabs-moving.page
 share/help/bg/gedit/gedit-tabs.page
 share/help/bg/gedit/gedit-undo-recent-action.page
@@ -457,6 +454,7 @@ share/help/ca/gedit/gedit-search.page
 share/help/ca/gedit/gedit-shortcut-keys.page
 share/help/ca/gedit/gedit-spellcheck.page
 share/help/ca/gedit/gedit-syntax-highlighting.page
+share/help/ca/gedit/gedit-tab-groups.page
 share/help/ca/gedit/gedit-tabs-moving.page
 share/help/ca/gedit/gedit-tabs.page
 share/help/ca/gedit/gedit-undo-recent-action.page
@@ -508,6 +506,7 @@ share/help/cs/gedit/gedit-search.page
 share/help/cs/gedit/gedit-shortcut-keys.page
 share/help/cs/gedit/gedit-spellcheck.page
 share/help/cs/gedit/gedit-syntax-highlighting.page
+share/help/cs/gedit/gedit-tab-groups.page
 share/help/cs/gedit/gedit-tabs-moving.page
 share/help/cs/gedit/gedit-tabs.page
 share/help/cs/gedit/gedit-undo-recent-action.page
@@ -559,6 +558,7 @@ share/help/da/gedit/gedit-search.page
 share/help/da/gedit/gedit-shortcut-keys.page
 share/help/da/gedit/gedit-spellcheck.page
 share/help/da/gedit/gedit-syntax-highlighting.page
+share/help/da/gedit/gedit-tab-groups.page
 share/help/da/gedit/gedit-tabs-moving.page
 share/help/da/gedit/gedit-tabs.page
 share/help/da/gedit/gedit-undo-recent-action.page
@@ -610,6 +610,7 @@ share/help/de/gedit/gedit-search.page
 share/help/de/gedit/gedit-shortcut-keys.page
 share/help/de/gedit/gedit-spellcheck.page
 share/help/de/gedit/gedit-syntax-highlighting.page
+share/help/de/gedit/gedit-tab-groups.page
 share/help/de/gedit/gedit-tabs-moving.page
 share/help/de/gedit/gedit-tabs.page
 share/help/de/gedit/gedit-undo-recent-action.page
@@ -661,6 +662,7 @@ share/help/el/gedit/gedit-search.page
 share/help/el/gedit/gedit-shortcut-keys.page
 share/help/el/gedit/gedit-spellcheck.page
 share/help/el/gedit/gedit-syntax-highlighting.page
+share/help/el/gedit/gedit-tab-groups.page
 share/help/el/gedit/gedit-tabs-moving.page
 share/help/el/gedit/gedit-tabs.page
 share/help/el/gedit/gedit-undo-recent-action.page
@@ -712,6 +714,7 @@ share/help/es/gedit/gedit-search.page
 share/help/es/gedit/gedit-shortcut-keys.page
 share/help/es/gedit/gedit-spellcheck.page
 share/help/es/gedit/gedit-syntax-highlighting.page
+share/help/es/gedit/gedit-tab-groups.page
 share/help/es/gedit/gedit-tabs-moving.page
 share/help/es/gedit/gedit-tabs.page
 share/help/es/gedit/gedit-undo-recent-action.page
@@ -763,6 +766,7 @@ share/help/eu/gedit/gedit-search.page
 share/help/eu/gedit/gedit-shortcut-keys.page
 share/help/eu/gedit/gedit-spellcheck.page
 share/help/eu/gedit/gedit-syntax-highlighting.page
+share/help/eu/gedit/gedit-tab-groups.page
 share/help/eu/gedit/gedit-tabs-moving.page
 share/help/eu/gedit/gedit-tabs.page
 share/help/eu/gedit/gedit-undo-recent-action.page
@@ -814,6 +818,7 @@ share/help/fi/gedit/gedit-search.page
 share/help/fi/gedit/gedit-shortcut-keys.page
 share/help/fi/gedit/gedit-spellcheck.page
 share/help/fi/gedit/gedit-syntax-highlighting.page
+share/help/fi/gedit/gedit-tab-groups.page
 share/help/fi/gedit/gedit-tabs-moving.page
 share/help/fi/gedit/gedit-tabs.page
 share/help/fi/gedit/gedit-undo-recent-action.page
@@ -865,6 +870,7 @@ share/help/fr/gedit/gedit-search.page
 share/help/fr/gedit/gedit-shortcut-keys.page
 share/help/fr/gedit/gedit-spellcheck.page
 share/help/fr/gedit/gedit-syntax-highlighting.page
+share/help/fr/gedit/gedit-tab-groups.page
 share/help/fr/gedit/gedit-tabs-moving.page
 share/help/fr/gedit/gedit-tabs.page
 share/help/fr/gedit/gedit-undo-recent-action.page
@@ -916,6 +922,7 @@ share/help/gl/gedit/gedit-search.page
 share/help/gl/gedit/gedit-shortcut-keys.page
 share/help/gl/gedit/gedit-spellcheck.page
 share/help/gl/gedit/gedit-syntax-highlighting.page
+share/help/gl/gedit/gedit-tab-groups.page
 share/help/gl/gedit/gedit-tabs-moving.page
 share/help/gl/gedit/gedit-tabs.page
 share/help/gl/gedit/gedit-undo-recent-action.page
@@ -967,6 +974,7 @@ share/help/hu/gedit/gedit-search.page
 share/help/hu/gedit/gedit-shortcut-keys.page
 share/help/hu/gedit/gedit-spellcheck.page
 share/help/hu/gedit/gedit-syntax-highlighting.page
+share/help/hu/gedit/gedit-tab-groups.page
 share/help/hu/gedit/gedit-tabs-moving.page
 share/help/hu/gedit/gedit-tabs.page
 share/help/hu/gedit/gedit-undo-recent-action.page
@@ -1018,6 +1026,7 @@ share/help/id/gedit/gedit-search.page
 share/help/id/gedit/gedit-shortcut-keys.page
 share/help/id/gedit/gedit-spellcheck.page
 share/help/id/gedit/gedit-syntax-highlighting.page
+share/help/id/gedit/gedit-tab-groups.page
 share/help/id/gedit/gedit-tabs-moving.page
 share/help/id/gedit/gedit-tabs.page
 share/help/id/gedit/gedit-undo-recent-action.page
@@ -1069,6 +1078,7 @@ share/help/it/gedit/gedit-search.page
 share/help/it/gedit/gedit-shortcut-keys.page
 share/help/it/gedit/gedit-spellcheck.page
 share/help/it/gedit/gedit-syntax-highlighting.page
+share/help/it/gedit/gedit-tab-groups.page
 share/help/it/gedit/gedit-tabs-moving.page
 share/help/it/gedit/gedit-tabs.page
 share/help/it/gedit/gedit-undo-recent-action.page
@@ -1120,6 +1130,7 @@ share/help/ja/gedit/gedit-search.page
 share/help/ja/gedit/gedit-shortcut-keys.page
 share/help/ja/gedit/gedit-spellcheck.page
 share/help/ja/gedit/gedit-syntax-highlighting.page
+share/help/ja/gedit/gedit-tab-groups.page
 share/help/ja/gedit/gedit-tabs-moving.page
 share/help/ja/gedit/gedit-tabs.page
 share/help/ja/gedit/gedit-undo-recent-action.page
@@ -1171,6 +1182,7 @@ share/help/ko/gedit/gedit-search.page
 share/help/ko/gedit/gedit-shortcut-keys.page
 share/help/ko/gedit/gedit-spellcheck.page
 share/help/ko/gedit/gedit-syntax-highlighting.page
+share/help/ko/gedit/gedit-tab-groups.page
 share/help/ko/gedit/gedit-tabs-moving.page
 share/help/ko/gedit/gedit-tabs.page
 share/help/ko/gedit/gedit-undo-recent-action.page
@@ -1222,6 +1234,7 @@ share/help/lv/gedit/gedit-search.page
 share/help/lv/gedit/gedit-shortcut-keys.page
 share/help/lv/gedit/gedit-spellcheck.page
 share/help/lv/gedit/gedit-syntax-highlighting.page
+share/help/lv/gedit/gedit-tab-groups.page
 share/help/lv/gedit/gedit-tabs-moving.page
 share/help/lv/gedit/gedit-tabs.page
 share/help/lv/gedit/gedit-undo-recent-action.page
@@ -1273,6 +1286,7 @@ share/help/oc/gedit/gedit-search.page
 share/help/oc/gedit/gedit-shortcut-keys.page
 share/help/oc/gedit/gedit-spellcheck.page
 share/help/oc/gedit/gedit-syntax-highlighting.page
+share/help/oc/gedit/gedit-tab-groups.page
 share/help/oc/gedit/gedit-tabs-moving.page
 share/help/oc/gedit/gedit-tabs.page
 share/help/oc/gedit/gedit-undo-recent-action.page
@@ -1324,6 +1338,7 @@ share/help/pt_BR/gedit/gedit-search.page
 share/help/pt_BR/gedit/gedit-shortcut-keys.page
 share/help/pt_BR/gedit/gedit-spellcheck.page
 share/help/pt_BR/gedit/gedit-syntax-highlighting.page
+share/help/pt_BR/gedit/gedit-tab-groups.page
 share/help/pt_BR/gedit/gedit-tabs-moving.page
 share/help/pt_BR/gedit/gedit-tabs.page
 share/help/pt_BR/gedit/gedit-undo-recent-action.page
@@ -1375,6 +1390,7 @@ share/help/ru/gedit/gedit-search.page
 share/help/ru/gedit/gedit-shortcut-keys.page
 share/help/ru/gedit/gedit-spellcheck.page
 share/help/ru/gedit/gedit-syntax-highlighting.page
+share/help/ru/gedit/gedit-tab-groups.page
 share/help/ru/gedit/gedit-tabs-moving.page
 share/help/ru/gedit/gedit-tabs.page
 share/help/ru/gedit/gedit-undo-recent-action.page
@@ -1426,6 +1442,7 @@ share/help/sl/gedit/gedit-search.page
 share/help/sl/gedit/gedit-shortcut-keys.page
 share/help/sl/gedit/gedit-spellcheck.page
 share/help/sl/gedit/gedit-syntax-highlighting.page
+share/help/sl/gedit/gedit-tab-groups.page
 share/help/sl/gedit/gedit-tabs-moving.page
 share/help/sl/gedit/gedit-tabs.page
 share/help/sl/gedit/gedit-undo-recent-action.page
@@ -1477,6 +1494,7 @@ share/help/sv/gedit/gedit-search.page
 share/help/sv/gedit/gedit-shortcut-keys.page
 share/help/sv/gedit/gedit-spellcheck.page
 share/help/sv/gedit/gedit-syntax-highlighting.page
+share/help/sv/gedit/gedit-tab-groups.page
 share/help/sv/gedit/gedit-tabs-moving.page
 share/help/sv/gedit/gedit-tabs.page
 share/help/sv/gedit/gedit-undo-recent-action.page
@@ -1528,6 +1546,7 @@ share/help/te/gedit/gedit-search.page
 share/help/te/gedit/gedit-shortcut-keys.page
 share/help/te/gedit/gedit-spellcheck.page
 share/help/te/gedit/gedit-syntax-highlighting.page
+share/help/te/gedit/gedit-tab-groups.page
 share/help/te/gedit/gedit-tabs-moving.page
 share/help/te/gedit/gedit-tabs.page
 share/help/te/gedit/gedit-undo-recent-action.page
@@ -1579,6 +1598,7 @@ share/help/th/gedit/gedit-search.page
 share/help/th/gedit/gedit-shortcut-keys.page
 share/help/th/gedit/gedit-spellcheck.page
 share/help/th/gedit/gedit-syntax-highlighting.page
+share/help/th/gedit/gedit-tab-groups.page
 share/help/th/gedit/gedit-tabs-moving.page
 share/help/th/gedit/gedit-tabs.page
 share/help/th/gedit/gedit-undo-recent-action.page
@@ -1630,6 +1650,7 @@ share/help/uk/gedit/gedit-search.page
 share/help/uk/gedit/gedit-shortcut-keys.page
 share/help/uk/gedit/gedit-spellcheck.page
 share/help/uk/gedit/gedit-syntax-highlighting.page
+share/help/uk/gedit/gedit-tab-groups.page
 share/help/uk/gedit/gedit-tabs-moving.page
 share/help/uk/gedit/gedit-tabs.page
 share/help/uk/gedit/gedit-undo-recent-action.page
@@ -1681,6 +1702,7 @@ share/help/zh_CN/gedit/gedit-search.page
 share/help/zh_CN/gedit/gedit-shortcut-keys.page
 share/help/zh_CN/gedit/gedit-spellcheck.page
 share/help/zh_CN/gedit/gedit-syntax-highlighting.page
+share/help/zh_CN/gedit/gedit-tab-groups.page
 share/help/zh_CN/gedit/gedit-tabs-moving.page
 share/help/zh_CN/gedit/gedit-tabs.page
 share/help/zh_CN/gedit/gedit-undo-recent-action.page
@@ -1732,6 +1754,7 @@ share/help/zh_HK/gedit/gedit-search.page
 share/help/zh_HK/gedit/gedit-shortcut-keys.page
 share/help/zh_HK/gedit/gedit-spellcheck.page
 share/help/zh_HK/gedit/gedit-syntax-highlighting.page
+share/help/zh_HK/gedit/gedit-tab-groups.page
 share/help/zh_HK/gedit/gedit-tabs-moving.page
 share/help/zh_HK/gedit/gedit-tabs.page
 share/help/zh_HK/gedit/gedit-undo-recent-action.page
@@ -1783,6 +1806,7 @@ share/help/zh_TW/gedit/gedit-search.page
 share/help/zh_TW/gedit/gedit-shortcut-keys.page
 share/help/zh_TW/gedit/gedit-spellcheck.page
 share/help/zh_TW/gedit/gedit-syntax-highlighting.page
+share/help/zh_TW/gedit/gedit-tab-groups.page
 share/help/zh_TW/gedit/gedit-tabs-moving.page
 share/help/zh_TW/gedit/gedit-tabs.page
 share/help/zh_TW/gedit/gedit-undo-recent-action.page
@@ -1889,6 +1913,8 @@ share/locale/xh/LC_MESSAGES/gedit.mo
 share/locale/zh_CN/LC_MESSAGES/gedit.mo
 share/locale/zh_HK/LC_MESSAGES/gedit.mo
 share/locale/zh_TW/LC_MESSAGES/gedit.mo
+share/vala/vapi/gedit.deps
+share/vala/vapi/gedit.vapi
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
