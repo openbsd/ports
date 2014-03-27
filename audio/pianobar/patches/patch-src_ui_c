@@ -1,0 +1,50 @@
+$OpenBSD: patch-src_ui_c,v 1.15 2014/03/27 09:28:06 dcoppa Exp $
+
+commit ebfd7d45c6b8eb5b2a1ee6e97a3f21f5f5bf9b43
+Author: Cody P Schafer <devel@codyps.com>
+Date:   Thu Mar 13 11:14:21 2014 -0700
+
+fix warnings now noted due to format string checking
+
+--- src/ui.c.orig	Sun Sep 15 15:54:04 2013
++++ src/ui.c	Thu Mar 27 10:18:13 2014
+@@ -354,7 +354,7 @@ PianoStation_t *BarUiSelectStation (BarApp_t *app, Pia
+ 			const PianoStation_t *currStation = sortedStations[i];
+ 			/* filter stations */
+ 			if (BarStrCaseStr (currStation->name, buf) != NULL) {
+-				BarUiMsg (&app->settings, MSG_LIST, "%2i) %c%c%c %s\n", i,
++				BarUiMsg (&app->settings, MSG_LIST, "%2zi) %c%c%c %s\n", i,
+ 						currStation->useQuickMix ? 'q' : ' ',
+ 						currStation->isQuickMix ? 'Q' : ' ',
+ 						!currStation->isCreator ? 'S' : ' ',
+@@ -364,10 +364,10 @@ PianoStation_t *BarUiSelectStation (BarApp_t *app, Pia
+ 			}
+ 		}
+ 
+-		BarUiMsg (&app->settings, MSG_QUESTION, prompt);
++		BarUiMsg (&app->settings, MSG_QUESTION, "%s", prompt);
+ 		if (autoselect && displayCount == 1 && stationCount != 1) {
+ 			/* auto-select last remaining station */
+-			BarUiMsg (&app->settings, MSG_NONE, "%i\n", lastDisplayed);
++			BarUiMsg (&app->settings, MSG_NONE, "%zi\n", lastDisplayed);
+ 			retStation = sortedStations[lastDisplayed];
+ 		} else {
+ 			if (BarReadlineStr (buf, sizeof (buf), &app->input,
+@@ -441,7 +441,7 @@ PianoArtist_t *BarUiSelectArtist (BarApp_t *app, Piano
+ 		tmpArtist = startArtist;
+ 		PianoListForeachP (tmpArtist) {
+ 			if (BarStrCaseStr (tmpArtist->name, buf) != NULL) {
+-				BarUiMsg (&app->settings, MSG_LIST, "%2u) %s\n", i,
++				BarUiMsg (&app->settings, MSG_LIST, "%2lu) %s\n", i,
+ 						tmpArtist->name);
+ 			}
+ 			i++;
+@@ -477,7 +477,7 @@ char *BarUiSelectMusicId (BarApp_t *app, PianoStation_
+ 	PianoArtist_t *tmpArtist;
+ 	PianoSong_t *tmpSong;
+ 
+-	BarUiMsg (&app->settings, MSG_QUESTION, msg);
++	BarUiMsg (&app->settings, MSG_QUESTION, "%s", msg);
+ 	if (BarReadlineStr (lineBuf, sizeof (lineBuf), &app->input,
+ 			BAR_RL_DEFAULT) > 0) {
+ 		PianoReturn_t pRet;

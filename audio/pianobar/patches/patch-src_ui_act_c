@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_ui_act_c,v 1.4 2014/01/13 08:46:45 dcoppa Exp $
+$OpenBSD: patch-src_ui_act_c,v 1.5 2014/03/27 09:28:06 dcoppa Exp $
 
 commit b91dada75f804ccca64644f6d40276db4815f4b3
 Author: Lars-Dominik Braun <lars@6xq.net>
@@ -6,8 +6,14 @@ Date: Sun Jan 12 13:51:01 2014 +0100
 
 Return if station info request fails
 
+commit ebfd7d45c6b8eb5b2a1ee6e97a3f21f5f5bf9b43
+Author: Cody P Schafer <devel@codyps.com>
+Date:   Thu Mar 13 11:14:21 2014 -0700
+
+fix warnings now noted due to format string checking
+
 --- src/ui_act.c.orig	Sun Sep 15 15:54:04 2013
-+++ src/ui_act.c	Mon Jan 13 08:00:39 2014
++++ src/ui_act.c	Thu Mar 27 10:18:13 2014
 @@ -675,8 +675,12 @@ BarUiActCallback(BarUiActManageStation) {
  	reqData.station = selStation;
  
@@ -22,3 +28,12 @@ Return if station info request fails
  
  	/* enable submenus depending on data availability */
  	strcpy (question, "Delete ");
+@@ -720,7 +724,7 @@ BarUiActCallback(BarUiActManageStation) {
+ 		return;
+ 	}
+ 
+-	BarUiMsg (&app->settings, MSG_QUESTION, question);
++	BarUiMsg (&app->settings, MSG_QUESTION, "%s", question);
+ 	if (BarReadline (selectBuf, sizeof (selectBuf), allowedActions, &app->input,
+ 					BAR_RL_FULLRETURN, -1)) {
+ 		if (selectBuf[0] == 'a') {
