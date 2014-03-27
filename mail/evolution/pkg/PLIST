@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.40 2013/09/27 09:30:40 ajacoutot Exp $
-@conflict evolution-plugins-<=3.2.2p0
-@pkgpath mail/evolution
+@comment $OpenBSD: PLIST,v 1.29 2014/03/27 14:13:10 ajacoutot Exp $
+@conflict evolution-plugins-*
+@pkgpath mail/evolution,-main
+@pkgpath mail/evolution,-plugins
 @bin bin/evolution
 include/evolution-${EVO_VERSION}/
 include/evolution-${EVO_VERSION}/addressbook/
@@ -209,6 +210,11 @@ include/evolution-${EVO_VERSION}/e-util/e-preferences-window.h
 include/evolution-${EVO_VERSION}/e-util/e-preview-pane.h
 include/evolution-${EVO_VERSION}/e-util/e-print.h
 include/evolution-${EVO_VERSION}/e-util/e-printable.h
+include/evolution-${EVO_VERSION}/e-util/e-proxy-combo-box.h
+include/evolution-${EVO_VERSION}/e-util/e-proxy-editor.h
+include/evolution-${EVO_VERSION}/e-util/e-proxy-link-selector.h
+include/evolution-${EVO_VERSION}/e-util/e-proxy-preferences.h
+include/evolution-${EVO_VERSION}/e-util/e-proxy-selector.h
 include/evolution-${EVO_VERSION}/e-util/e-reflow-model.h
 include/evolution-${EVO_VERSION}/e-util/e-reflow.h
 include/evolution-${EVO_VERSION}/e-util/e-rule-context.h
@@ -230,6 +236,7 @@ include/evolution-${EVO_VERSION}/e-util/e-source-selector-dialog.h
 include/evolution-${EVO_VERSION}/e-util/e-source-selector.h
 include/evolution-${EVO_VERSION}/e-util/e-source-util.h
 include/evolution-${EVO_VERSION}/e-util/e-spell-entry.h
+include/evolution-${EVO_VERSION}/e-util/e-spell-text-view.h
 include/evolution-${EVO_VERSION}/e-util/e-stock-request.h
 include/evolution-${EVO_VERSION}/e-util/e-table-click-to-add.h
 include/evolution-${EVO_VERSION}/e-util/e-table-col-dnd.h
@@ -285,6 +292,7 @@ include/evolution-${EVO_VERSION}/e-util/e-util.h
 include/evolution-${EVO_VERSION}/e-util/e-web-view-gtkhtml.h
 include/evolution-${EVO_VERSION}/e-util/e-web-view-preview.h
 include/evolution-${EVO_VERSION}/e-util/e-web-view.h
+include/evolution-${EVO_VERSION}/e-util/e-widget-undo.h
 include/evolution-${EVO_VERSION}/e-util/e-xml-utils.h
 include/evolution-${EVO_VERSION}/e-util/ea-calendar-cell.h
 include/evolution-${EVO_VERSION}/e-util/ea-calendar-item.h
@@ -329,6 +337,7 @@ include/evolution-${EVO_VERSION}/em-format/e-mail-parser-extension.h
 include/evolution-${EVO_VERSION}/em-format/e-mail-parser.h
 include/evolution-${EVO_VERSION}/em-format/e-mail-part-attachment-bar.h
 include/evolution-${EVO_VERSION}/em-format/e-mail-part-attachment.h
+include/evolution-${EVO_VERSION}/em-format/e-mail-part-audio.h
 include/evolution-${EVO_VERSION}/em-format/e-mail-part-headers.h
 include/evolution-${EVO_VERSION}/em-format/e-mail-part-image.h
 include/evolution-${EVO_VERSION}/em-format/e-mail-part-list.h
@@ -339,8 +348,8 @@ include/evolution-${EVO_VERSION}/libemail-engine/
 include/evolution-${EVO_VERSION}/libemail-engine/camel-null-store.h
 include/evolution-${EVO_VERSION}/libemail-engine/camel-sasl-xoauth2.h
 include/evolution-${EVO_VERSION}/libemail-engine/e-mail-authenticator.h
-include/evolution-${EVO_VERSION}/libemail-engine/e-mail-enums.h
-include/evolution-${EVO_VERSION}/libemail-engine/e-mail-enumtypes.h
+include/evolution-${EVO_VERSION}/libemail-engine/e-mail-engine-enums.h
+include/evolution-${EVO_VERSION}/libemail-engine/e-mail-engine-enumtypes.h
 include/evolution-${EVO_VERSION}/libemail-engine/e-mail-folder-utils.h
 include/evolution-${EVO_VERSION}/libemail-engine/e-mail-junk-filter.h
 include/evolution-${EVO_VERSION}/libemail-engine/e-mail-session-utils.h
@@ -350,6 +359,7 @@ include/evolution-${EVO_VERSION}/libemail-engine/e-mail-utils.h
 include/evolution-${EVO_VERSION}/libemail-engine/em-filter-folder-element.h
 include/evolution-${EVO_VERSION}/libemail-engine/em-vfolder-context.h
 include/evolution-${EVO_VERSION}/libemail-engine/em-vfolder-rule.h
+include/evolution-${EVO_VERSION}/libemail-engine/libemail-engine.h
 include/evolution-${EVO_VERSION}/libemail-engine/mail-config.h
 include/evolution-${EVO_VERSION}/libemail-engine/mail-folder-cache.h
 include/evolution-${EVO_VERSION}/libemail-engine/mail-mt.h
@@ -404,6 +414,8 @@ include/evolution-${EVO_VERSION}/mail/e-mail-config-welcome-page.h
 include/evolution-${EVO_VERSION}/mail/e-mail-config-window.h
 include/evolution-${EVO_VERSION}/mail/e-mail-display-popup-extension.h
 include/evolution-${EVO_VERSION}/mail/e-mail-display.h
+include/evolution-${EVO_VERSION}/mail/e-mail-enums.h
+include/evolution-${EVO_VERSION}/mail/e-mail-enumtypes.h
 include/evolution-${EVO_VERSION}/mail/e-mail-folder-pane.h
 include/evolution-${EVO_VERSION}/mail/e-mail-junk-options.h
 include/evolution-${EVO_VERSION}/mail/e-mail-label-action.h
@@ -419,6 +431,7 @@ include/evolution-${EVO_VERSION}/mail/e-mail-printer.h
 include/evolution-${EVO_VERSION}/mail/e-mail-reader-utils.h
 include/evolution-${EVO_VERSION}/mail/e-mail-reader.h
 include/evolution-${EVO_VERSION}/mail/e-mail-request.h
+include/evolution-${EVO_VERSION}/mail/e-mail-send-account-override.h
 include/evolution-${EVO_VERSION}/mail/e-mail-sidebar.h
 include/evolution-${EVO_VERSION}/mail/e-mail-tag-editor.h
 include/evolution-${EVO_VERSION}/mail/e-mail-ui-session.h
@@ -498,7 +511,6 @@ lib/evolution/${EVO_VERSION}/libgnomecanvas.la
 lib/evolution/${EVO_VERSION}/libgnomecanvas.so
 lib/evolution/${EVO_VERSION}/modules/
 lib/evolution/${EVO_VERSION}/modules/module-addressbook.so
-lib/evolution/${EVO_VERSION}/modules/module-audio-inline.so
 lib/evolution/${EVO_VERSION}/modules/module-backup-restore.so
 lib/evolution/${EVO_VERSION}/modules/module-bogofilter.so
 lib/evolution/${EVO_VERSION}/modules/module-book-config-google.so
@@ -525,20 +537,44 @@ lib/evolution/${EVO_VERSION}/modules/module-plugin-lib.so
 lib/evolution/${EVO_VERSION}/modules/module-plugin-manager.so
 lib/evolution/${EVO_VERSION}/modules/module-prefer-plain.so
 lib/evolution/${EVO_VERSION}/modules/module-settings.so
+lib/evolution/${EVO_VERSION}/modules/module-spamassassin.so
 lib/evolution/${EVO_VERSION}/modules/module-startup-wizard.so
 lib/evolution/${EVO_VERSION}/modules/module-text-highlight.so
 lib/evolution/${EVO_VERSION}/modules/module-vcard-inline.so
 lib/evolution/${EVO_VERSION}/modules/module-web-inspector.so
 lib/evolution/${EVO_VERSION}/plugins/
+lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-dbx-import.so
+lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-email-custom-header.so
+lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-evolution-attachment-reminder.so
+lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-evolution-bbdb.so
+lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-external-editor.so
+lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-face.so
 lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-itip-formatter.so
+lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-mail-notification.so
+lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-mail-to-task.so
+lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-mailing-list-actions.so
 lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-prefer-plain.so
+lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-pst-import.so
 lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-publish-calendar.so
+lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-save-calendar.so
+lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-templates.so
+lib/evolution/${EVO_VERSION}/plugins/org-gnome-dbx-import.eplug
+lib/evolution/${EVO_VERSION}/plugins/org-gnome-email-custom-header.eplug
+lib/evolution/${EVO_VERSION}/plugins/org-gnome-evolution-attachment-reminder.eplug
+lib/evolution/${EVO_VERSION}/plugins/org-gnome-evolution-bbdb.eplug
+lib/evolution/${EVO_VERSION}/plugins/org-gnome-external-editor.eplug
+lib/evolution/${EVO_VERSION}/plugins/org-gnome-face.eplug
 lib/evolution/${EVO_VERSION}/plugins/org-gnome-itip-formatter.eplug
+lib/evolution/${EVO_VERSION}/plugins/org-gnome-mail-notification.eplug
+lib/evolution/${EVO_VERSION}/plugins/org-gnome-mail-to-task.eplug
+lib/evolution/${EVO_VERSION}/plugins/org-gnome-mailing-list-actions.eplug
 lib/evolution/${EVO_VERSION}/plugins/org-gnome-prefer-plain.eplug
+lib/evolution/${EVO_VERSION}/plugins/org-gnome-pst-import.eplug
 lib/evolution/${EVO_VERSION}/plugins/org-gnome-publish-calendar.eplug
+lib/evolution/${EVO_VERSION}/plugins/org-gnome-save-calendar.eplug
+lib/evolution/${EVO_VERSION}/plugins/org-gnome-templates.eplug
 lib/pkgconfig/evolution-calendar-3.0.pc
 lib/pkgconfig/evolution-mail-3.0.pc
-lib/pkgconfig/evolution-plugin-3.0.pc
 lib/pkgconfig/evolution-shell-3.0.pc
 lib/pkgconfig/libemail-engine.pc
 libexec/evolution/
@@ -660,8 +696,12 @@ share/evolution/${EVO_VERSION}/errors/evolution-offline-alert.error
 share/evolution/${EVO_VERSION}/errors/filter.error
 share/evolution/${EVO_VERSION}/errors/mail-composer.error
 share/evolution/${EVO_VERSION}/errors/mail.error
+share/evolution/${EVO_VERSION}/errors/org-gnome-attachment-reminder.error
 share/evolution/${EVO_VERSION}/errors/org-gnome-backup-restore.error
+share/evolution/${EVO_VERSION}/errors/org-gnome-external-editor.error
+share/evolution/${EVO_VERSION}/errors/org-gnome-face.error
 share/evolution/${EVO_VERSION}/errors/org-gnome-itip-formatter.error
+share/evolution/${EVO_VERSION}/errors/org-gnome-mailing-list-actions.error
 share/evolution/${EVO_VERSION}/errors/shell.error
 share/evolution/${EVO_VERSION}/errors/widgets.error
 share/evolution/${EVO_VERSION}/etspec/
@@ -908,8 +948,6 @@ share/evolution/${EVO_VERSION}/ui/e-delegate-dialog.ui
 share/evolution/${EVO_VERSION}/ui/e-send-options.ui
 share/evolution/${EVO_VERSION}/ui/e-table-config.ui
 share/evolution/${EVO_VERSION}/ui/e-timezone-dialog.ui
-share/evolution/${EVO_VERSION}/ui/eab-contact-commit-duplicate-detected.ui
-share/evolution/${EVO_VERSION}/ui/eab-contact-duplicate-detected.ui
 share/evolution/${EVO_VERSION}/ui/event-page.ui
 share/evolution/${EVO_VERSION}/ui/evolution-calendars.ui
 share/evolution/${EVO_VERSION}/ui/evolution-composer.ui
@@ -926,6 +964,7 @@ share/evolution/${EVO_VERSION}/ui/goto-dialog.ui
 share/evolution/${EVO_VERSION}/ui/mail-config.ui
 share/evolution/${EVO_VERSION}/ui/mail-dialogs.ui
 share/evolution/${EVO_VERSION}/ui/memo-page.ui
+share/evolution/${EVO_VERSION}/ui/org-gnome-email-custom-header.ui
 share/evolution/${EVO_VERSION}/ui/publish-calendar.ui
 share/evolution/${EVO_VERSION}/ui/recurrence-page.ui
 share/evolution/${EVO_VERSION}/ui/schedule-page.ui
@@ -972,11 +1011,18 @@ share/glib-2.0/schemas/org.gnome.evolution.calendar.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.importer.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.mail.gschema.xml
+share/glib-2.0/schemas/org.gnome.evolution.plugin.attachment-reminder.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.plugin.autocontacts.gschema.xml
+share/glib-2.0/schemas/org.gnome.evolution.plugin.email-custom-header.gschema.xml
+share/glib-2.0/schemas/org.gnome.evolution.plugin.external-editor.gschema.xml
+share/glib-2.0/schemas/org.gnome.evolution.plugin.face-picture.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.plugin.itip.gschema.xml
+share/glib-2.0/schemas/org.gnome.evolution.plugin.mail-notification.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.plugin.prefer-plain.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.plugin.publish-calendar.gschema.xml
+share/glib-2.0/schemas/org.gnome.evolution.plugin.templates.gschema.xml
 share/glib-2.0/schemas/org.gnome.evolution.shell.gschema.xml
+share/glib-2.0/schemas/org.gnome.evolution.spamassassin.gschema.xml
 share/gtk-doc/html/evolution-mail-composer/
 share/gtk-doc/html/evolution-mail-composer/EComposerActivity.html
 share/gtk-doc/html/evolution-mail-composer/EComposerFromHeader.html
@@ -998,6 +1044,28 @@ share/gtk-doc/html/evolution-mail-composer/object-tree.html
 share/gtk-doc/html/evolution-mail-composer/right.png
 share/gtk-doc/html/evolution-mail-composer/style.css
 share/gtk-doc/html/evolution-mail-composer/up.png
+share/gtk-doc/html/evolution-mail-engine/
+share/gtk-doc/html/evolution-mail-engine/CamelNullStore.html
+share/gtk-doc/html/evolution-mail-engine/CamelSaslXOAuth2.html
+share/gtk-doc/html/evolution-mail-engine/EMFilterFolderElement.html
+share/gtk-doc/html/evolution-mail-engine/EMVFolderContext.html
+share/gtk-doc/html/evolution-mail-engine/EMVFolderRule.html
+share/gtk-doc/html/evolution-mail-engine/EMailAuthenticator.html
+share/gtk-doc/html/evolution-mail-engine/EMailJunkFilter.html
+share/gtk-doc/html/evolution-mail-engine/EMailSession.html
+share/gtk-doc/html/evolution-mail-engine/MailFolderCache.html
+share/gtk-doc/html/evolution-mail-engine/api-index-full.html
+share/gtk-doc/html/evolution-mail-engine/ch01.html
+share/gtk-doc/html/evolution-mail-engine/ch02.html
+share/gtk-doc/html/evolution-mail-engine/evolution-mail-engine.devhelp2
+share/gtk-doc/html/evolution-mail-engine/home.png
+share/gtk-doc/html/evolution-mail-engine/index.html
+share/gtk-doc/html/evolution-mail-engine/index.sgml
+share/gtk-doc/html/evolution-mail-engine/left.png
+share/gtk-doc/html/evolution-mail-engine/object-tree.html
+share/gtk-doc/html/evolution-mail-engine/right.png
+share/gtk-doc/html/evolution-mail-engine/style.css
+share/gtk-doc/html/evolution-mail-engine/up.png
 share/gtk-doc/html/evolution-mail-formatter/
 share/gtk-doc/html/evolution-mail-formatter/EMailExtensionRegistry.html
 share/gtk-doc/html/evolution-mail-formatter/EMailFormatter.html
@@ -1147,6 +1215,11 @@ share/gtk-doc/html/evolution-util/EPortEntry.html
 share/gtk-doc/html/evolution-util/EPreferencesWindow.html
 share/gtk-doc/html/evolution-util/EPreviewPane.html
 share/gtk-doc/html/evolution-util/EPrintable.html
+share/gtk-doc/html/evolution-util/EProxyComboBox.html
+share/gtk-doc/html/evolution-util/EProxyEditor.html
+share/gtk-doc/html/evolution-util/EProxyLinkSelector.html
+share/gtk-doc/html/evolution-util/EProxyPreferences.html
+share/gtk-doc/html/evolution-util/EProxySelector.html
 share/gtk-doc/html/evolution-util/EReflow.html
 share/gtk-doc/html/evolution-util/EReflowModel.html
 share/gtk-doc/html/evolution-util/ERuleContext.html
@@ -1226,6 +1299,7 @@ share/gtk-doc/html/evolution-util/ch12.html
 share/gtk-doc/html/evolution-util/ch13.html
 share/gtk-doc/html/evolution-util/ch14.html
 share/gtk-doc/html/evolution-util/ch15.html
+share/gtk-doc/html/evolution-util/ch16.html
 share/gtk-doc/html/evolution-util/evolution-util-Canvas-Utilities.html
 share/gtk-doc/html/evolution-util/evolution-util-Category-Utilities.html
 share/gtk-doc/html/evolution-util/evolution-util-Date-and-Time-Formatting.html
@@ -1259,6 +1333,7 @@ share/gtk-doc/html/evolution-util/evolution-util-Selections.html
 share/gtk-doc/html/evolution-util/evolution-util-Sorting-Utilities.html
 share/gtk-doc/html/evolution-util/evolution-util-Text-to-HTML-Conversion.html
 share/gtk-doc/html/evolution-util/evolution-util-Unicode-Utilities.html
+share/gtk-doc/html/evolution-util/evolution-util-e-spell-text-view.html
 share/gtk-doc/html/evolution-util/evolution-util.devhelp2
 share/gtk-doc/html/evolution-util/home.png
 share/gtk-doc/html/evolution-util/index.html
@@ -5317,6 +5392,7 @@ share/locale/sr@latin/LC_MESSAGES/evolution-${EVO_VERSION}.mo
 share/locale/sv/LC_MESSAGES/evolution-${EVO_VERSION}.mo
 share/locale/ta/LC_MESSAGES/evolution-${EVO_VERSION}.mo
 share/locale/te/LC_MESSAGES/evolution-${EVO_VERSION}.mo
+share/locale/tg/LC_MESSAGES/evolution-${EVO_VERSION}.mo
 share/locale/th/LC_MESSAGES/evolution-${EVO_VERSION}.mo
 share/locale/tr/LC_MESSAGES/evolution-${EVO_VERSION}.mo
 share/locale/ug/LC_MESSAGES/evolution-${EVO_VERSION}.mo
