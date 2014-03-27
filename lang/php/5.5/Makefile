@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2014/03/27 11:34:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2014/03/27 14:05:02 sthen Exp $
 
 BROKEN-hppa =	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -15,9 +15,11 @@ INI_TEMPLATES=	development production
 
 CONFIGURE_ARGS+=	--enable-mysqlnd
 
+WANTLIB-main+=		stdc++
+
 # fpm
 PKGNAME-fpm?=		php-fpm-${V}
-MULTI_PACKAGES+=        -fpm
+MULTI_PACKAGES+=	-fpm
 COMMENT-fpm=		stand-alone FPM version of PHP
 CONFIGURE_ARGS+=	--enable-fpm \
 			--with-fpm-user=www \
