@@ -1,10 +1,7 @@
-$OpenBSD: patch-plugins_zeitgeist_zeitgeist_plugin_desktop_in,v 1.1 2014/03/27 12:17:43 jasper Exp $
+$OpenBSD: patch-plugins_zeitgeist_zeitgeist_plugin_desktop_in,v 1.2 2014/03/27 12:22:15 jasper Exp $
 
-Unbreak loading the zeitgeist plugin:
-
-(gedit:15316): libpeas-WARNING **: zeitgeistplugin: File not found
-
-(gedit:15316): libpeas-WARNING **: Error loading plugin 'zeitgeistplugin'
+Unbreak loading the zeitgeist plugin.
+https://bugzilla.gnome.org/show_bug.cgi?id=727156
 
 --- plugins/zeitgeist/zeitgeist.plugin.desktop.in.orig	Thu Mar 27 13:12:29 2014
 +++ plugins/zeitgeist/zeitgeist.plugin.desktop.in	Thu Mar 27 13:12:33 2014
