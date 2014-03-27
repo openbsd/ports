@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.39 2014/03/27 14:13:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2014/03/27 14:20:58 ajacoutot Exp $
 
-EVO_VERSION=		3.10
+BROKEN=			XXX temporary
+
+EVO_VERSION=		3.12
 SUBST_VARS +=		EVO_VERSION
 
 SHARED_ONLY=		Yes
