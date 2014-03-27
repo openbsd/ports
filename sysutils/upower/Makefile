@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.34 2013/10/18 16:43:50 landry Exp $
+# $OpenBSD: Makefile,v 1.35 2014/03/27 07:59:35 jasper Exp $
 
 ONLY_FOR_ARCHS =${APM_ARCHS}
 
 COMMENT =	userland power management interface
 
-DISTNAME =	upower-0.9.23
+DISTNAME =	upower-0.99.0
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	sysutils
-SHARED_LIBS +=  upower-glib               0.0 # 1.2
+SHARED_LIBS +=  upower-glib               1.0 # 2.0
 
 HOMEPAGE =	http://upower.freedesktop.org/
 MASTER_SITES =	${HOMEPAGE}/releases/
@@ -17,7 +17,7 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c dbus-1 dbus-glib-1 glib-2.0 gobject-2.0 m polkit-gobject-1
+WANTLIB += c dbus-1 dbus-glib-1 gio-2.0 glib-2.0 gobject-2.0 m polkit-gobject-1
 WANTLIB += pthread
 
 CONFIGURE_STYLE =	gnu
