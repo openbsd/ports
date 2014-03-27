@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.165 2014/03/09 21:51:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.166 2014/03/27 10:08:21 ajacoutot Exp $
 
 # XXX add libphonenumber support when a cpp release is out
 
@@ -7,12 +7,11 @@ SHARED_ONLY=		Yes
 COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
-GNOME_VERSION=		3.10.4
-REVISION=		0
+GNOME_VERSION=		3.12.0
 
 CATEGORIES=		databases productivity
 
-SHARED_LIBS +=  camel-1.2            36.0     # 45.0
+SHARED_LIBS +=  camel-1.2            37.0     # 49.0
 SHARED_LIBS +=  edataserver-1.2      18.0     # 18.0
 SHARED_LIBS +=  ebackend-1.2         5.0      # 7.0
 SHARED_LIBS +=  ebook-contacts-1.2   1.0      # 0.0
@@ -39,6 +38,7 @@ WANTLIB += nss3 nssutil3 oauth p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += roken sasl2 secret-1 smime3 softokn3 soup-2.4 sqlite3
 WANTLIB += ssl ssl3 wind xcb xcb-render xcb-shm xml2 z
+WANTLIB += Xau Xdmcp gcr-3 icudata icui18n icuuc stdc++
 
 MODULES=		devel/gettext \
 			devel/dconf \
@@ -60,8 +60,7 @@ MODPY_RUNDEP=		No
 MODGNOME_TOOLS= 	gi vala
 MODGNOME_CPPFLAGS=	$$(krb5-config --cflags)
 
-AUTOCONF_VERSION=	2.69
-CONFIGURE_STYLE= 	autoconf
+CONFIGURE_STYLE= 	gnu
 CONFIGURE_ENV=		DB_CFLAGS="-I${LOCALBASE}/include/db4" DB_LIBS="-ldb"
 CONFIGURE_ARGS=		--with-krb5 \
 			--with-openldap=${LOCALBASE}
@@ -71,8 +70,10 @@ CONFIGURE_ARGS +=	--disable-uoa
 
 pre-configure:
 	perl -pi -e 's,/usr/sbin/imapd,${LOCALBASE}/libexec/imapd,g' \
-		${WRKSRC}/camel/camel-imapx-settings.c \
+		${WRKSRC}/camel/providers/imapx/camel-imapx-settings.c \
 		${WRKSRC}/docs/reference/camel/html/CamelIMAPXSettings.html
+# XXX cc1plus: error: unrecognized command line option "-Wnoexcept"
+	perl -pi -e 's,-Wnoexcept,,' ${WRKSRC}/configure
 
 post-install:
 	rm ${PREFIX}/lib/evolution-data-server/*/*.{a,la}
