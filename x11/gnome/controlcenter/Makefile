@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2014/03/16 08:55:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.123 2014/03/27 12:41:07 ajacoutot Exp $
 
 # XXX remove pre-configure when updating to 3.12.0
 # https://git.gnome.org/browse/gnome-control-center/commit/?id=4736b03ed9e2ae9214117454f70811dbacd78739
@@ -10,7 +10,7 @@ SHARED_ONLY=		Yes
 COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
-GNOME_VERSION=		3.10.3
+GNOME_VERSION=		3.12.0
 
 CATEGORIES=		x11
 
@@ -36,7 +36,7 @@ WANTLIB += pthread-stubs pulse pulse-mainloop-glib pwquality rest-0.7
 WANTLIB += roken secret-1 smbclient sndfile soup-2.4 soup-gnome-2.4
 WANTLIB += sqlite3 stdc++ telepathy-glib upower-glib vorbis vorbisenc
 WANTLIB += vorbisfile webkitgtk-3.0 webp wind xcb xcb-render xcb-shm
-WANTLIB += xkbfile xml2 xslt z
+WANTLIB += xml2 xslt z grilo-0.2
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -51,6 +51,7 @@ LIB_DEPENDS=		audio/pulseaudio \
 			sysutils/accountsservice \
 			sysutils/upower \
 			x11/gnome/desktop \
+			x11/gnome/grilo \
 			x11/gnome/menus \
 			x11/gnome/online-accounts
 

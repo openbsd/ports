@@ -1,10 +1,10 @@
-$OpenBSD: patch-panels_user-accounts_um-realm-manager_c,v 1.1 2013/06/18 07:11:27 ajacoutot Exp $
+$OpenBSD: patch-panels_user-accounts_um-realm-manager_c,v 1.2 2014/03/27 12:41:07 ajacoutot Exp $
 
 XXX push upsteam: fix build with Heimdal.
 
---- panels/user-accounts/um-realm-manager.c.orig	Tue Jun 18 08:52:03 2013
-+++ panels/user-accounts/um-realm-manager.c	Tue Jun 18 08:50:53 2013
-@@ -23,7 +23,7 @@
+--- panels/user-accounts/um-realm-manager.c.orig	Mon Mar  3 12:55:25 2014
++++ panels/user-accounts/um-realm-manager.c	Thu Mar 27 13:00:03 2014
+@@ -22,7 +22,7 @@
  
  #include "um-realm-manager.h"
  
@@ -13,7 +13,7 @@ XXX push upsteam: fix build with Heimdal.
  
  #include <glib.h>
  #include <glib/gi18n.h>
-@@ -740,8 +740,10 @@ login_perform_kinit (krb5_context k5,
+@@ -739,8 +739,10 @@ login_perform_kinit (krb5_context k5,
          code = krb5_get_init_creds_opt_alloc (k5, &opts);
          g_return_val_if_fail (code == 0, code);
  

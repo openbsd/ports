@@ -1,10 +1,10 @@
-$OpenBSD: patch-panels_common_cc-common-language_c,v 1.4 2013/10/26 15:57:25 ajacoutot Exp $
+$OpenBSD: patch-panels_common_cc-common-language_c,v 1.5 2014/03/27 12:41:07 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=710412
 
---- panels/common/cc-common-language.c.orig	Thu Oct 17 18:09:54 2013
-+++ panels/common/cc-common-language.c	Thu Oct 17 18:24:50 2013
-@@ -601,11 +601,7 @@ insert_language (GHashTable *ht,
+--- panels/common/cc-common-language.c.orig	Mon Mar  3 12:55:25 2014
++++ panels/common/cc-common-language.c	Thu Mar 27 13:00:03 2014
+@@ -600,11 +600,7 @@ insert_language (GHashTable *ht,
  
          g_debug ("We have translations for %s", lang);
  
