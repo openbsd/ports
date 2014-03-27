@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.148 2014/02/05 13:41:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.149 2014/03/27 19:04:23 jasper Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
-GNOME_VERSION=		3.10.3
+GNOME_VERSION=		3.12.0
 SUBST_VARS=		GNOME_VERSION
-REVISION=		0
 
 CATEGORIES=		net
 
@@ -26,7 +25,7 @@ WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
 WANTLIB += harfbuzz harfbuzz-icu hogweed icudata icui18n icuuc
 WANTLIB += javascriptcoregtk-3.0 jpeg json-c json-glib-1.0 ltdl
-WANTLIB += m mission-control-plugins nettle notify
+WANTLIB += m mission-control-plugins nettle notify cogl-path
 WANTLIB += ogg orc-0.4 p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs pulse pulse-mainloop-glib
 WANTLIB += secret-1 sndfile soup-2.4 soup-gnome-2.4 sqlite3 stdc++
@@ -75,10 +74,6 @@ RUN_DEPENDS +=		multimedia/gstreamer1/plugins-good,-pulse
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS= 	yelp
-
-CONFIGURE_ARGS+=	--disable-gudev \
-			--disable-Werror \
-			--without-cheese
 
 # needs signond, libsignon-glib -- Ubuntu/Meego
 CONFIGURE_ARGS +=	--disable-ubuntu-online-accounts
