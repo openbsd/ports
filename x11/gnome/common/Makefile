@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2013/09/28 08:51:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2014/03/27 08:03:34 jasper Exp $
 
 COMMENT=	common automake macros for GNOME
 
 GNOME_PROJECT=	gnome-common
-GNOME_VERSION=	3.10.0
-REVISION=	0
+GNOME_VERSION=	3.12.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
