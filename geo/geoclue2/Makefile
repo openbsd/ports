@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2013/10/26 08:02:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2014/03/27 10:58:21 jasper Exp $
 
 COMMENT=		modular geoinformation service on top of D-Bus
 
-VERSION=		2.0.0
+VERSION=		2.1.7
 DISTNAME=		geoclue-${VERSION}
 PKGNAME=		geoclue2-${VERSION}
 CATEGORIES=		geo devel
-REVISION=		0
 
 HOMEPAGE=		http://geoclue.freedesktop.org/
 
@@ -24,16 +23,25 @@ MODULES=		devel/gettext \
 
 LIB_DEPENDS =		devel/libsoup \
 			devel/json-glib
+RUN_DEPENDS =		devel/desktop-file-utils
 
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-gtk-doc
+
+# disable all components requiring ModemManager
+CONFIGURE_ARGS +=	--disable-3g-source \
+			--disable-wifi-source \
+			--disable-modem-gps-source
 CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include" \
                         LDFLAGS="-L${LOCALBASE}/lib"
 
 FAKE_FLAGS+=		DBUS_SYS_DIR=${PREFIX}/share/examples/geoclue/
+
+# don't install the demo agent .desktop file (agent requires MM)
+FAKE_FLAGS +=		apps_DATA=geoclue-where-am-i.desktop
 
 # If one of these tools is found at configure stage, it might be used,
 # no matter whether we use --disable-gtk-doc or not.
