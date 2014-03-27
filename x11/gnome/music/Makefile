@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2014/03/09 22:01:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2014/03/27 15:41:08 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		GNOME music playing application
 
 GNOME_PROJECT=		gnome-music
-GNOME_VERSION=		3.10.3
+GNOME_VERSION=		3.12.0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,7 +23,7 @@ MODULES=		x11/gnome \
 			lang/python \
 			devel/gettext
 
-MODGNOME_TOOLS=		gi
+MODGNOME_TOOLS=		gi yelp
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
