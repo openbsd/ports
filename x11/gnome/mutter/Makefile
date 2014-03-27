@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2014/02/20 17:55:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2014/03/27 19:04:40 jasper Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		3.10.4
+GNOME_VERSION=		3.12.0
 
 SHARED_LIBS +=  mutter                    0.1 # 0.0
 
@@ -20,7 +20,7 @@ WANTLIB += gtk-3 harfbuzz json-glib-1.0 ltdl
 WANTLIB += m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs startup-notification-1 vorbis
 WANTLIB += vorbisfile xcb xcb-aux xcb-render xcb-shm z
-WANTLIB += dbus-glib-1 gnome-desktop-3 upower-glib xkbfile
+WANTLIB += gnome-desktop-3 upower-glib cogl-path
 
 MODULES=		devel/dconf \
 			devel/gettext \

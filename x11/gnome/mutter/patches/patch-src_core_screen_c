@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_core_screen_c,v 1.1 2014/02/18 11:02:11 stsp Exp $
---- src/core/screen.c.orig	Mon Feb 17 19:48:27 2014
-+++ src/core/screen.c	Mon Feb 17 19:49:08 2014
-@@ -3038,7 +3038,8 @@ collect_timed_out_foreach (void *element,
+$OpenBSD: patch-src_core_screen_c,v 1.2 2014/03/27 19:04:40 jasper Exp $
+--- src/core/screen.c.orig	Thu Mar 13 12:55:59 2014
++++ src/core/screen.c	Thu Mar 27 17:11:55 2014
+@@ -2777,7 +2777,8 @@ collect_timed_out_foreach (void *element,
  {
    CollectTimedOutData *ctod = data;
    SnStartupSequence *sequence = element;

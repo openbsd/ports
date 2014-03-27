@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/09/27 14:04:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/03/27 19:04:40 jasper Exp $
 @conflict metacity-*
 @pkgpath x11/gnome/metacity
 @bin bin/mutter
@@ -44,6 +44,7 @@ lib/pkgconfig/libmutter.pc
 lib/pkgconfig/mutter-plugins.pc
 @man man/man1/mutter.1
 share/GConf/gsettings/mutter-schemas.convert
+share/applications/
 share/applications/mutter.desktop
 share/glib-2.0/schemas/org.gnome.mutter.gschema.xml
 share/gnome/
@@ -103,6 +104,8 @@ share/locale/be@latin/LC_MESSAGES/mutter.mo
 share/locale/bg/LC_MESSAGES/mutter.mo
 share/locale/bn/LC_MESSAGES/mutter.mo
 share/locale/bn_IN/LC_MESSAGES/mutter.mo
+share/locale/br/
+share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/mutter.mo
 share/locale/bs/LC_MESSAGES/mutter.mo
 share/locale/ca/LC_MESSAGES/mutter.mo
@@ -145,6 +148,8 @@ share/locale/kk/LC_MESSAGES/mutter.mo
 share/locale/kn/LC_MESSAGES/mutter.mo
 share/locale/ko/LC_MESSAGES/mutter.mo
 share/locale/ku/LC_MESSAGES/mutter.mo
+share/locale/la/
+share/locale/la/LC_MESSAGES/
 share/locale/la/LC_MESSAGES/mutter.mo
 share/locale/lt/LC_MESSAGES/mutter.mo
 share/locale/lv/LC_MESSAGES/mutter.mo
