@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_io_filesystem_disk_filesystem_cc,v 1.1 2014/03/27 04:00:25 bentley Exp $
+
+We don't have O_NOATIME.
+
+Committed upstream in bzr 6349.
+
+--- src/io/filesystem/disk_filesystem.cc.orig	Sun Apr 15 16:26:59 2012
++++ src/io/filesystem/disk_filesystem.cc	Sun Apr 15 16:27:01 2012
+@@ -442,7 +442,7 @@ void * RealFSImpl::fastLoad
+ 
+ #ifdef __APPLE__
+ 	file = open(fullname.c_str(), O_RDONLY);
+-#elif defined (__FreeBSD__)
++#elif defined (__FreeBSD__) || defined (__OpenBSD__)
+ 	file = open(fullname.c_str(), O_RDONLY);
+ #else
+ 	file = open(fullname.c_str(), O_RDONLY|O_NOATIME);

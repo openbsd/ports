@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_network_network_system_h,v 1.1 2014/03/27 04:00:25 bentley Exp $
+
+Committed upstream in bzr 6349.
+
+--- src/network/network_system.h.orig	Sun Apr 15 17:28:10 2012
++++ src/network/network_system.h	Sun Apr 15 17:28:17 2012
+@@ -26,6 +26,7 @@
+ 
+ // These includes work on Linux and should be fine on any other Unix-alike.
+ // If not, this is the right place to conditionally include what is needed.
++#include <sys/types.h>
+ #include <sys/ioctl.h>
+ #include <sys/socket.h>
+ #include <net/if.h>

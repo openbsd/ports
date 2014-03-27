@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_wlapplication_cc,v 1.1 2014/03/27 04:00:25 bentley Exp $
+
+Default to X11 driver.
+
+Committed upstream in bzr 6349.
+
+--- src/wlapplication.cc.orig	Fri Oct 26 17:16:21 2012
++++ src/wlapplication.cc	Fri Oct 26 17:16:45 2012
+@@ -976,7 +976,7 @@ bool WLApplication::init_hardware() {
+ 	int result = -1;
+ 
+ 	//add default video mode
+-#if defined(__linux__) || defined(__FreeBSD__)
++#if defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__)
+ 	videomode.push_back("x11");
+ #elif WIN32
+ 	videomode.push_back("windib");
