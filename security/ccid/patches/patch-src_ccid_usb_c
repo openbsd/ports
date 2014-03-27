@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_ccid_usb_c,v 1.1 2014/03/27 13:55:43 dcoppa Exp $
+
+Revert svn revision 6801, "Do not get the data rates if
+bNumDataRatesSupported = 0", since it breaks (at least) my reader
+
+--- src/ccid_usb.c.orig	Sun Mar 23 16:09:48 2014
++++ src/ccid_usb.c	Thu Mar 27 13:54:17 2014
+@@ -635,13 +635,7 @@ again:
+ 				usbDevice[reader_index].ccid.bMaxSlotIndex = device_descriptor[4];
+ 				usbDevice[reader_index].ccid.bCurrentSlotIndex = 0;
+ 				usbDevice[reader_index].ccid.readTimeout = DEFAULT_COM_READ_TIMEOUT;
+-				if (device_descriptor[27])
+-					usbDevice[reader_index].ccid.arrayOfSupportedDataRates = get_data_rates(reader_index, config_desc, num);
+-				else
+-				{
+-					usbDevice[reader_index].ccid.arrayOfSupportedDataRates = NULL;
+-					DEBUG_INFO("bNumDataRatesSupported is 0");
+-				}
++				usbDevice[reader_index].ccid.arrayOfSupportedDataRates = get_data_rates(reader_index, config_desc, num);
+ 				usbDevice[reader_index].ccid.bInterfaceProtocol = usb_interface->altsetting->bInterfaceProtocol;
+ 				usbDevice[reader_index].ccid.bNumEndpoints = usb_interface->altsetting->bNumEndpoints;
+ 				usbDevice[reader_index].ccid.dwSlotStatus = IFD_ICC_PRESENT;
