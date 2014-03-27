@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.104 2013/11/14 13:59:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.105 2014/03/27 12:47:02 jasper Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
 GNOME_PROJECT=		eog
-GNOME_VERSION=		3.10.2
+GNOME_VERSION=		3.12.0
 
 CATEGORIES=		graphics
 
@@ -18,7 +18,7 @@ WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gnome-desktop-3
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += jpeg lcms2 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre peas-1.0 peas-gtk-1.0 pixman-1 png pthread pthread-stubs
-WANTLIB += rsvg-2 xcb xcb-render xcb-shm xkbfile xml2 z
+WANTLIB += rsvg-2 xcb xcb-render xcb-shm xml2 z
 
 MODULES=		devel/dconf \
 			devel/gettext \
@@ -27,10 +27,10 @@ MODULES=		devel/dconf \
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=		devel/libpeas \
+			graphics/lcms2 \
 			graphics/libexif \
 			textproc/exempi \
-			x11/gnome/desktop \
-			graphics/lcms2
+			x11/gnome/desktop
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas
 

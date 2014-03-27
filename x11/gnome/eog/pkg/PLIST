@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2013/09/27 09:53:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.39 2014/03/27 12:47:02 jasper Exp $
 @bin bin/eog
 include/eog-3.0/
 include/eog-3.0/eog/
@@ -8,7 +8,6 @@ include/eog-3.0/eog/eog-clipboard-handler.h
 include/eog-3.0/eog/eog-debug.h
 include/eog-3.0/eog/eog-dialog.h
 include/eog-3.0/eog/eog-enums.h
-include/eog-3.0/eog/eog-exif-details.h
 include/eog-3.0/eog/eog-exif-util.h
 include/eog-3.0/eog/eog-file-chooser.h
 include/eog-3.0/eog/eog-image-save-info.h
@@ -40,6 +39,8 @@ lib/eog/plugins/statusbar-date.plugin
 lib/pkgconfig/
 lib/pkgconfig/eog.pc
 share/GConf/gsettings/eog.convert
+share/appdata/
+share/appdata/eog.appdata.xml
 share/applications/eog.desktop
 share/eog/
 share/eog/eog-app-menu.xml
@@ -86,7 +87,6 @@ share/glib-2.0/schemas/org.gnome.eog.enums.xml
 share/glib-2.0/schemas/org.gnome.eog.gschema.xml
 share/gtk-doc/html/eog/
 share/gtk-doc/html/eog/EogDialog.html
-share/gtk-doc/html/eog/EogExifDetails.html
 share/gtk-doc/html/eog/EogFileChooser.html
 share/gtk-doc/html/eog/EogImageSaveInfo.html
 share/gtk-doc/html/eog/EogMetadataReaderJpg.html
@@ -107,6 +107,7 @@ share/gtk-doc/html/eog/ch04.html
 share/gtk-doc/html/eog/ch05.html
 share/gtk-doc/html/eog/ch06.html
 share/gtk-doc/html/eog/ch07.html
+share/gtk-doc/html/eog/eog-EogExifDetails.html
 share/gtk-doc/html/eog/eog-eog-application.html
 share/gtk-doc/html/eog/eog-eog-clipboard-handler.html
 share/gtk-doc/html/eog/eog-eog-config-keys.html
@@ -136,11 +137,14 @@ share/gtk-doc/html/eog/eog.devhelp2
 share/gtk-doc/html/eog/home.png
 share/gtk-doc/html/eog/index.html
 share/gtk-doc/html/eog/index.sgml
+share/gtk-doc/html/eog/left-insensitive.png
 share/gtk-doc/html/eog/left.png
 share/gtk-doc/html/eog/pt01.html
+share/gtk-doc/html/eog/right-insensitive.png
 share/gtk-doc/html/eog/right.png
 share/gtk-doc/html/eog/rn01.html
 share/gtk-doc/html/eog/style.css
+share/gtk-doc/html/eog/up-insensitive.png
 share/gtk-doc/html/eog/up.png
 share/help/
 share/help/C/
@@ -1685,8 +1689,6 @@ share/locale/fy/
 share/locale/fy/LC_MESSAGES/
 share/locale/fy/LC_MESSAGES/eog.mo
 share/locale/ga/LC_MESSAGES/eog.mo
-share/locale/gd/
-share/locale/gd/LC_MESSAGES/
 share/locale/gd/LC_MESSAGES/eog.mo
 share/locale/gl/LC_MESSAGES/eog.mo
 share/locale/gu/LC_MESSAGES/eog.mo
