@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.113 2014/01/03 16:02:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.114 2014/03/27 19:06:17 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
-GNOME_VERSION=	3.10.2
-REVISION=	0
+GNOME_VERSION=	3.12.0
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,20 +18,26 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-3 harfbuzz m ncurses
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs util vte2_90 xcb xcb-render
-WANTLIB += xcb-shm z
+WANTLIB += xcb-shm z nautilus-extension
 
 MODULES=	devel/dconf \
 		devel/gettext \
 		x11/gnome
 
-BUILD_DEPENDS=	devel/gsettings-desktop-schemas
+BUILD_DEPENDS=	devel/gsettings-desktop-schemas \
+		misc/appdata-tools \
+		x11/gnome/shell
 RUN_DEPENDS=	devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=	devel/gconf2 \
 		devel/vte3>=0.34.6 \
-		sysutils/e2fsprogs>=1.42.7
+		sysutils/e2fsprogs>=1.42.7 \
+		x11/gnome/nautilus
 
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
+
+post-install:
+	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.{a,la}
 
 .include <bsd.port.mk>
