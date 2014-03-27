@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2014/02/10 12:46:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2014/03/27 14:13:31 ajacoutot Exp $
 
 EVO_VERSION=		3.10
 SUBST_VARS +=		EVO_VERSION
@@ -9,6 +9,7 @@ COMMENT=		evolution connector for MS Exchange via EWS
 
 GNOME_PROJECT=		evolution-ews
 GNOME_VERSION=		3.10.4
+REVISION=		0
 
 CATEGORIES=		mail
 
@@ -46,8 +47,8 @@ MODULES=		devel/gettext \
 
 # XXX should be a LIB_DEPENDS+WANTLIB but check-lib-depends(1) does not
 # work with unversioned solibs (LOCALBASE/lib/evolution/*/*.so).
-BUILD_DEPENDS +=	mail/evolution,-main
-RUN_DEPENDS +=		mail/evolution,-main
+BUILD_DEPENDS +=	mail/evolution
+RUN_DEPENDS +=		mail/evolution
 
 LIB_DEPENDS=		archivers/libmspack
 
