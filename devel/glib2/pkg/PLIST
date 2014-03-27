@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2014/03/26 08:28:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.35 2014/03/27 09:00:40 ajacoutot Exp $
 @conflict glib2-docs-*
 @conflict glib2-fam-*
 @pkgpath devel/glib2,-docs
@@ -1033,4 +1033,4 @@ share/locale/zh_CN/LC_MESSAGES/glib20.mo
 share/locale/zh_HK/LC_MESSAGES/glib20.mo
 share/locale/zh_TW/LC_MESSAGES/glib20.mo
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@exec %D/bin/gio-querymodules %D/lib/gio/modules/
+@exec %D/bin/gio-querymodules %D/lib/gio/modules

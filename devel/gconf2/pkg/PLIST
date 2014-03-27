@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2013/09/27 17:48:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2014/03/27 09:00:39 ajacoutot Exp $
 @conflict gconf2-polkit-*
 @pkgpath devel/gconf2,-main
 @pkgpath devel/gconf2,-polkit
@@ -266,5 +266,5 @@ share/sgml/
 share/sgml/gconf/
 share/sgml/gconf/gconf-1.0.dtd
 @sample /var/db/gconf/gconf.xml.system/
-@exec %D/bin/gio-querymodules %D/lib/gio/modules/
-@unexec-delete %D/bin/gio-querymodules %D/lib/gio/modules/
+@exec %D/bin/gio-querymodules %D/lib/gio/modules
+@unexec-delete %D/bin/gio-querymodules %D/lib/gio/modules

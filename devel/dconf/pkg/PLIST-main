@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2014/03/27 08:02:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2014/03/27 09:00:39 ajacoutot Exp $
 @conflict vala-<0.10
 @pkgpath devel/dconf
 @extraunexec rm -rf ${SYSCONFDIR}/dconf/db/*
@@ -115,5 +115,5 @@ share/vala/vapi/dconf.deps
 share/vala/vapi/dconf.vapi
 @sample ${SYSCONFDIR}/dconf/db/
 @sample ${SYSCONFDIR}/dconf/profile/
-@exec %D/bin/gio-querymodules %D/lib/gio/modules/
-@unexec-delete %D/bin/gio-querymodules %D/lib/gio/modules/
+@exec %D/bin/gio-querymodules %D/lib/gio/modules
+@unexec-delete %D/bin/gio-querymodules %D/lib/gio/modules
