@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2014/03/15 15:28:01 rpe Exp $
+# $OpenBSD: Makefile,v 1.22 2014/03/27 12:07:59 naddy Exp $
 
 COMMENT =		ssh based config management framework
 
@@ -25,7 +25,6 @@ RUN_DEPENDS =		security/py-keyczar \
 			www/py-httplib2 \
 			www/py-jinja2
 
-USE_GROFF =		Yes
 NO_TEST =		Yes
 
 DOCDIR =		${PREFIX}/share/doc/ansible

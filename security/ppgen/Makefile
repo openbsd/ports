@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:41:27 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2014/03/27 12:07:59 naddy Exp $
 
 COMMENT=	secure passphrase generator
 
@@ -16,7 +16,6 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE=autoconf dest no-autoheader
-USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/ppgen
