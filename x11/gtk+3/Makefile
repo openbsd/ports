@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2014/03/26 08:31:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.95 2014/03/27 07:45:34 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -89,8 +89,7 @@ TEST_IS_INTERACTIVE=	x11
 
 CONFIGURE_STYLE=	gnu
 
-# sync archs list with devel/spidermonkey
-# colord depends on polkit which depends on spidermonkey
+# sync with devel/mozjs17: colord -> polkit -> mozjs17
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64" || \
     ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "hppa" || \
     ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sparc64" || \
