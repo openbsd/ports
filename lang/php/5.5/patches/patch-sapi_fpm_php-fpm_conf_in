@@ -1,6 +1,28 @@
-$OpenBSD: patch-sapi_fpm_php-fpm_conf_in,v 1.1.1.1 2013/08/07 16:46:56 robert Exp $
---- sapi/fpm/php-fpm.conf.in.orig.port	Wed Jul  3 08:10:53 2013
-+++ sapi/fpm/php-fpm.conf.in	Sat Jul 27 18:39:50 2013
+$OpenBSD: patch-sapi_fpm_php-fpm_conf_in,v 1.2 2014/03/27 11:34:05 sthen Exp $
+--- sapi/fpm/php-fpm.conf.in.orig.port	Wed Mar  5 10:18:00 2014
++++ sapi/fpm/php-fpm.conf.in	Wed Mar 26 23:04:21 2014
+@@ -156,7 +156,7 @@ group = @php_fpm_group@
+ ;                            specific port;
+ ;   '/path/to/unix/socket' - to listen on a unix socket.
+ ; Note: This value is mandatory.
+-listen = 127.0.0.1:9000
++listen = /var/www/run/php-fpm.sock
+ 
+ ; Set listen(2) backlog.
+ ; Default Value: 65535 (-1 on FreeBSD and OpenBSD)
+@@ -167,9 +167,9 @@ listen = 127.0.0.1:9000
+ ; BSD-derived systems allow connections regardless of permissions. 
+ ; Default Values: user and group are set as the running user
+ ;                 mode is set to 0666
+-;listen.owner = @php_fpm_user@
+-;listen.group = @php_fpm_group@
+-;listen.mode = 0666
++listen.owner = www
++listen.group = www
++listen.mode = 0660
+  
+ ; List of ipv4 addresses of FastCGI clients which are allowed to connect.
+ ; Equivalent to the FCGI_WEB_SERVER_ADDRS environment variable in the original
 @@ -461,7 +461,7 @@ pm.max_spare_servers = 3
  ;       possible. However, all PHP paths will be relative to the chroot
  ;       (error_log, sessions.save_path, ...).

@@ -1,9 +1,9 @@
-$OpenBSD: patch-ext_sockets_sockaddr_conv_c,v 1.1.1.1 2013/08/07 16:46:56 robert Exp $
---- ext/sockets/sockaddr_conv.c.orig.port	Sun Jul 28 11:34:19 2013
-+++ ext/sockets/sockaddr_conv.c	Sun Jul 28 11:35:29 2013
-@@ -9,6 +9,11 @@
- #include <arpa/inet.h>
- #endif
+$OpenBSD: patch-ext_sockets_sockaddr_conv_c,v 1.2 2014/03/27 11:34:05 sthen Exp $
+--- ext/sockets/sockaddr_conv.c.orig.port	Wed Mar  5 10:18:00 2014
++++ ext/sockets/sockaddr_conv.c	Mon Mar 24 22:53:00 2014
+@@ -11,6 +11,11 @@
+ 
+ extern int php_string_to_if_index(const char *val, unsigned *out TSRMLS_DC);
  
 +#if defined(__OpenBSD__)
 +#define AI_ADDRCONFIG 0
