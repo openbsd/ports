@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.10 2013/10/14 10:56:19 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.11 2014/03/27 12:39:08 ajacoutot Exp $
 
 /var/lib -> /var/db
 
---- configure.orig	Mon Oct 14 12:29:24 2013
-+++ configure	Mon Oct 14 12:50:57 2013
-@@ -19021,7 +19021,7 @@ else
+--- configure.orig	Mon Mar 24 10:32:41 2014
++++ configure	Thu Mar 27 13:23:47 2014
+@@ -18568,7 +18568,7 @@ else
  fi
  
  
@@ -12,4 +12,4 @@ $OpenBSD: patch-configure,v 1.10 2013/10/14 10:56:19 ajacoutot Exp $
 +GCM_SYSTEM_PROFILES_DIR="\$(localstatedir)/db/color"
  
  
- ac_config_files="$ac_config_files Makefile data/Makefile data/icons/Makefile data/icons/16x16/Makefile data/icons/22x22/Makefile data/icons/24x24/Makefile data/icons/32x32/Makefile data/icons/48x48/Makefile data/icons/64x64/Makefile data/icons/256x256/Makefile data/icons/scalable/Makefile data/tests/Makefile data/targets/Makefile data/figures/Makefile data/ti1/Makefile help/Makefile man/Makefile po/Makefile.in src/Makefile"
+ ac_config_files="$ac_config_files Makefile data/Makefile data/appdata/Makefile data/icons/Makefile data/icons/16x16/Makefile data/icons/22x22/Makefile data/icons/24x24/Makefile data/icons/32x32/Makefile data/icons/48x48/Makefile data/icons/64x64/Makefile data/icons/256x256/Makefile data/icons/scalable/Makefile data/tests/Makefile data/targets/Makefile data/figures/Makefile data/ti1/Makefile help/Makefile man/Makefile po/Makefile.in src/Makefile"
