@@ -1,23 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/03/27 10:58:21 jasper Exp $
-lib/pkgconfig/
+@comment $OpenBSD: PLIST,v 1.3 2014/03/27 11:30:16 ajacoutot Exp $
+@newgroup _geoclue:731
+@newuser _geoclue:731:_geoclue:daemon:GeoClue service user:/nonexistent:/sbin/nologin
 lib/pkgconfig/geoclue-2.0.pc
 @bin libexec/geoclue
 libexec/geoclue-2.0/
 libexec/geoclue-2.0/demos/
 @bin libexec/geoclue-2.0/demos/where-am-i
-share/applications/
 share/applications/geoclue-where-am-i.desktop
-share/dbus-1/
 share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.freedesktop.GeoClue2.Agent.xml
 share/dbus-1/interfaces/org.freedesktop.GeoClue2.xml
-share/dbus-1/system-services/
 share/dbus-1/system-services/org.freedesktop.GeoClue2.service
 share/examples/geoclue/
-@sample ${SYSCONFDIR}/dbus-1/
-@sample ${SYSCONFDIR}/dbus-1/system.d/
-share/examples/geoclue/org.freedesktop.GeoClue2.Agent.conf
-share/examples/geoclue/org.freedesktop.GeoClue2.conf
+share/examples/geoclue/dbus-1/
+share/examples/geoclue/dbus-1/system.d/
+share/examples/geoclue/dbus-1/system.d/org.freedesktop.GeoClue2.Agent.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/org.freedesktop.GeoClue2.Agent.conf
+share/examples/geoclue/dbus-1/system.d/org.freedesktop.GeoClue2.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.freedesktop.GeoClue2.conf
+share/examples/geoclue/geoclue/
+@sample ${SYSCONFDIR}/geoclue/
+share/examples/geoclue/geoclue/geoclue.conf
+@sample ${SYSCONFDIR}/geoclue/geoclue.conf
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
