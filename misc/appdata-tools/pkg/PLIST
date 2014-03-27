@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/03/27 10:24:46 jasper Exp $
+@bin bin/appdata-validate
+@man man/man1/appdata-validate.1
+share/aclocal/appdata-xml.m4
+share/appdata/
+share/appdata/schema/
+share/appdata/schema/appdata.rnc
+share/appdata/schema/appdata.xsd
+share/appdata/schema/schema-locating-rules.xml
+share/emacs/site-lisp/site-start.d/
+share/emacs/site-lisp/site-start.d/appdata-rng-init.el
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
+share/locale/en_GB/LC_MESSAGES/appdata-tools.mo
