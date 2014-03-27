@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.56 2014/02/03 13:00:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.57 2014/03/27 08:23:28 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		weather information access library
 
 GNOME_PROJECT=		libgweather
-GNOME_VERSION=		3.10.2
-REVISION=		0
+GNOME_VERSION=		3.12.0
 
-SHARED_LIBS +=		gweather-3             2.0      # 2.0
+SHARED_LIBS +=		gweather-3             2.1      # 7.3
 
 CATEGORIES=		net
 

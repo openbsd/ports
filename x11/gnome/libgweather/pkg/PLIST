@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2014/02/03 13:00:29 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.20 2014/03/27 08:23:28 jasper Exp $
 @conflict gnome-applets2-<=2.22.0
 include/libgweather-3.0/
 include/libgweather-3.0/libgweather/
@@ -6,6 +6,7 @@ include/libgweather-3.0/libgweather/gweather-enum-types.h
 include/libgweather-3.0/libgweather/gweather-enums.h
 include/libgweather-3.0/libgweather/gweather-location.h
 include/libgweather-3.0/libgweather/gweather-timezone.h
+include/libgweather-3.0/libgweather/gweather-version.h
 include/libgweather-3.0/libgweather/gweather-weather.h
 include/libgweather-3.0/libgweather/gweather.h
 include/libgweather-3.0/libgweather/location-entry.h
@@ -19,6 +20,7 @@ share/gir-1.0/GWeather-3.0.gir
 share/glib-2.0/schemas/org.gnome.GWeather.enums.xml
 share/glib-2.0/schemas/org.gnome.GWeather.gschema.xml
 share/gtk-doc/html/libgweather-3.0/
+share/gtk-doc/html/libgweather-3.0/GWeatherInfo.html
 share/gtk-doc/html/libgweather-3.0/GWeatherLocation.html
 share/gtk-doc/html/libgweather-3.0/GWeatherLocationEntry.html
 share/gtk-doc/html/libgweather-3.0/GWeatherTimezone.html
@@ -30,10 +32,11 @@ share/gtk-doc/html/libgweather-3.0/ch01.html
 share/gtk-doc/html/libgweather-3.0/home.png
 share/gtk-doc/html/libgweather-3.0/index.html
 share/gtk-doc/html/libgweather-3.0/index.sgml
+share/gtk-doc/html/libgweather-3.0/ix03.html
 share/gtk-doc/html/libgweather-3.0/left-insensitive.png
 share/gtk-doc/html/libgweather-3.0/left.png
 share/gtk-doc/html/libgweather-3.0/libgweather-3.0.devhelp2
-share/gtk-doc/html/libgweather-3.0/libgweather-GWeatherInfo.html
+share/gtk-doc/html/libgweather-3.0/libgweather-Versioning-information.html
 share/gtk-doc/html/libgweather-3.0/object-tree.html
 share/gtk-doc/html/libgweather-3.0/right-insensitive.png
 share/gtk-doc/html/libgweather-3.0/right.png
@@ -509,6 +512,8 @@ share/locale/fr/LC_MESSAGES/libgweather-3.0.mo
 share/locale/fr/LC_MESSAGES/libgweather-locations.mo
 share/locale/ga/LC_MESSAGES/libgweather-3.0.mo
 share/locale/ga/LC_MESSAGES/libgweather-locations.mo
+share/locale/gd/LC_MESSAGES/libgweather-3.0.mo
+share/locale/gd/LC_MESSAGES/libgweather-locations.mo
 share/locale/gl/LC_MESSAGES/libgweather-3.0.mo
 share/locale/gl/LC_MESSAGES/libgweather-locations.mo
 share/locale/gu/LC_MESSAGES/libgweather-3.0.mo
