@@ -1,17 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.44 2013/09/26 15:11:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.45 2014/03/27 12:42:05 ajacoutot Exp $
 @bin bin/gnome-session
 @bin bin/gnome-session-inhibit
-@bin bin/gnome-session-properties
 @bin bin/gnome-session-quit
 @bin libexec/gnome-session-check-accelerated
 @bin libexec/gnome-session-check-accelerated-helper
 @bin libexec/gnome-session-failed
 @man man/man1/gnome-session-inhibit.1
-@man man/man1/gnome-session-properties.1
 @man man/man1/gnome-session-quit.1
 @man man/man1/gnome-session.1
 share/GConf/gsettings/gnome-session.convert
-share/applications/gnome-session-properties.desktop
 share/doc/gnome-session/
 share/doc/gnome-session/dbus/
 share/doc/gnome-session/dbus/gnome-session.html
@@ -66,6 +63,7 @@ share/locale/fr/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/fur/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/fy/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/ga/LC_MESSAGES/gnome-session-3.0.mo
+share/locale/gd/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/gl/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/gu/LC_MESSAGES/gnome-session-3.0.mo
 share/locale/ha/
@@ -150,5 +148,3 @@ share/xsessions/gnome.desktop
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database

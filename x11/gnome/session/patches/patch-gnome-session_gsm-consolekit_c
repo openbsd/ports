@@ -1,0 +1,100 @@
+$OpenBSD: patch-gnome-session_gsm-consolekit_c,v 1.14 2014/03/27 12:42:05 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=727099
+
+--- gnome-session/gsm-consolekit.c.orig	Tue Mar 18 21:31:47 2014
++++ gnome-session/gsm-consolekit.c	Thu Mar 27 12:42:43 2014
+@@ -29,8 +29,10 @@
+ #include <dbus/dbus-glib.h>
+ #include <dbus/dbus-glib-lowlevel.h>
+ 
++#ifdef HAVE_OLD_UPOWER
+ #define UPOWER_ENABLE_DEPRECATED 1
+ #include <upower.h>
++#endif
+ 
+ #include "gsm-system.h"
+ #include "gsm-consolekit.h"
+@@ -54,7 +56,9 @@ struct _GsmConsolekitPrivate
+         DBusGProxy      *bus_proxy;
+         DBusGProxy      *ck_proxy;
+         DBusGProxy      *session_proxy;
++#ifdef HAVE_OLD_UPOWER
+         UpClient        *up_client;
++#endif
+ 
+         gboolean         is_active;
+         gboolean         restarting;
+@@ -304,8 +308,10 @@ gsm_consolekit_ensure_ck_connection (GsmConsolekit  *m
+                                              G_CALLBACK (on_active_changed), manager, NULL);
+         }
+ 
++#ifdef HAVE_OLD_UPOWER
+         g_clear_object (&manager->priv->up_client);
+         manager->priv->up_client = up_client_new ();
++#endif
+ 
+         is_connected = TRUE;
+ 
+@@ -379,7 +385,9 @@ gsm_consolekit_free_dbus (GsmConsolekit *manager)
+         g_clear_object (&manager->priv->ck_proxy);
+         g_clear_object (&manager->priv->session_proxy);
+         g_clear_object (&manager->priv->session_id);
++#ifdef HAVE_OLD_UPOWER
+         g_clear_object (&manager->priv->up_client);
++#endif
+ 
+         if (manager->priv->dbus_connection != NULL) {
+                 DBusConnection *connection;
+@@ -948,7 +956,11 @@ gsm_consolekit_can_suspend (GsmSystem *system)
+ {
+         GsmConsolekit *consolekit = GSM_CONSOLEKIT (system);
+ 
++#ifdef HAVE_OLD_UPOWER
+         return up_client_get_can_suspend (consolekit->priv->up_client);
++#else
++        return FALSE;
++#endif
+ }
+ 
+ static gboolean
+@@ -956,12 +968,17 @@ gsm_consolekit_can_hibernate (GsmSystem *system)
+ {
+         GsmConsolekit *consolekit = GSM_CONSOLEKIT (system);
+ 
++#ifdef HAVE_OLD_UPOWER
+         return up_client_get_can_hibernate (consolekit->priv->up_client);
++#else
++        return FALSE;
++#endif
+ }
+ 
+ static void
+ gsm_consolekit_suspend (GsmSystem *system)
+ {
++#ifdef HAVE_OLD_UPOWER
+         GsmConsolekit *consolekit = GSM_CONSOLEKIT (system);
+         GError *error = NULL;
+         gboolean ret;
+@@ -971,11 +988,13 @@ gsm_consolekit_suspend (GsmSystem *system)
+                 g_warning ("Unexpected suspend failure: %s", error->message);
+                 g_error_free (error);
+         }
++#endif
+ }
+ 
+ static void
+ gsm_consolekit_hibernate (GsmSystem *system)
+ {
++#ifdef HAVE_OLD_UPOWER
+         GsmConsolekit *consolekit = GSM_CONSOLEKIT (system);
+         GError *error = NULL;
+         gboolean ret;
+@@ -985,6 +1004,7 @@ gsm_consolekit_hibernate (GsmSystem *system)
+                 g_warning ("Unexpected hibernate failure: %s", error->message);
+                 g_error_free (error);
+         }
++#endif
+ }
+ 
+ static void
