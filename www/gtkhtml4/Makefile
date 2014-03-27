@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2013/09/28 08:50:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2014/03/27 08:44:53 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		lightweight HTML rendering/printing/editing engine
 
 GNOME_PROJECT=		gtkhtml
-GNOME_VERSION=		4.6.6
-REVISION=		0
+GNOME_VERSION=		4.8.0
 
 API_VERSION=		4.0
 SUBST_VARS=		API_VERSION
@@ -49,6 +48,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes
 
 CONFIGURE_STYLE=	gnu
+# pickup X11/XF86keysym.h for multimedia support
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 

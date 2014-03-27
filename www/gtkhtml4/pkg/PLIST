@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/05/14 10:20:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/03/27 08:44:53 jasper Exp $
 @conflict gtkhtml3-<3.32.2p0
 @bin bin/gtkhtml-editor-test
 include/libgtkhtml-${API_VERSION}/
@@ -126,6 +126,7 @@ share/locale/sr@latin/LC_MESSAGES/gtkhtml-${API_VERSION}.mo
 share/locale/sv/LC_MESSAGES/gtkhtml-${API_VERSION}.mo
 share/locale/ta/LC_MESSAGES/gtkhtml-${API_VERSION}.mo
 share/locale/te/LC_MESSAGES/gtkhtml-${API_VERSION}.mo
+share/locale/tg/LC_MESSAGES/gtkhtml-${API_VERSION}.mo
 share/locale/th/LC_MESSAGES/gtkhtml-${API_VERSION}.mo
 share/locale/tr/LC_MESSAGES/gtkhtml-${API_VERSION}.mo
 share/locale/ug/LC_MESSAGES/gtkhtml-${API_VERSION}.mo
