@@ -1,0 +1,18 @@
+$OpenBSD: patch-daemon_gdm-session-worker_c,v 1.7 2014/03/27 19:19:17 ajacoutot Exp $
+
+From 1d76114a001c5c4eeba17fc9a455e3a132fc23c5 Mon Sep 17 00:00:00 2001
+From: Ryan Lortie <desrt@desrt.ca>
+Date: Wed, 26 Mar 2014 04:33:58 +0000
+Subject: ConsoleKit: a pair of tweaks
+
+--- daemon/gdm-session-worker.c.orig	Wed Mar 19 23:32:33 2014
++++ daemon/gdm-session-worker.c	Thu Mar 27 18:27:58 2014
+@@ -274,7 +274,7 @@ open_ck_session (GdmSessionWorker  *worker)
+ 
+         g_variant_builder_init (&builder, G_VARIANT_TYPE ("a(sv)"));
+         g_variant_builder_add_parsed (&builder, "('unix-user', <%i>)", uid);
+-        g_variant_builder_add_parsed (&builder, "('display-device', <%s>)", display_device);
++        g_variant_builder_add_parsed (&builder, "('x11-display-device', <%s>)", display_device);
+         g_variant_builder_add_parsed (&builder, "('x11-display', <%s>)", display_name);
+         g_variant_builder_add_parsed (&builder, "('remote-host-name', <%s>)", display_hostname);
+         g_variant_builder_add_parsed (&builder, "('is-local', <%b>)", worker->priv->display_is_local);

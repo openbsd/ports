@@ -1,0 +1,28 @@
+$OpenBSD: patch-daemon_gdm-server_c,v 1.1 2014/03/27 19:19:17 ajacoutot Exp $
+
+XXX push upstream
+(no sigwaitinfo(2) on OpenBSD)
+
+--- daemon/gdm-server.c.orig	Thu Mar 27 19:24:15 2014
++++ daemon/gdm-server.c	Thu Mar 27 19:29:34 2014
+@@ -219,6 +219,7 @@ static gpointer
+ sigusr1_thread_main (gpointer user_data)
+ {
+         sigset_t sigusr1_mask;
++        int sig;
+ 
+         /* Handle only SIGUSR1 */
+         sigemptyset (&sigusr1_mask);
+@@ -233,8 +234,11 @@ sigusr1_thread_main (gpointer user_data)
+         /* Spin waiting for a SIGUSR1 */
+         while (TRUE) {
+                 siginfo_t info;
++                int ret, sig;
+ 
+-                if (sigwaitinfo (&sigusr1_mask, &info) == -1)
++                ret = sigwait (&sigusr1_mask, &sig);
++                info.si_signo = sig;
++                if (ret == -1)
+                         continue;
+ 
+                 g_idle_add (got_sigusr1, GUINT_TO_POINTER (info.si_pid));

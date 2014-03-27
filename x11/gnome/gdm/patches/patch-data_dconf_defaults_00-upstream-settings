@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_dconf_defaults_00-upstream-settings,v 1.1 2014/03/27 19:19:17 ajacoutot Exp $
+--- data/dconf/defaults/00-upstream-settings.orig	Thu Mar 27 18:24:39 2014
++++ data/dconf/defaults/00-upstream-settings	Thu Mar 27 18:24:50 2014
+@@ -13,7 +13,7 @@ enable=true
+ show-desktop-icons=false
+ 
+ [org/gnome/desktop/default-applications/terminal]
+-exec='/bin/true'
++exec='true'
+ 
+ [org/gnome/desktop/interface]
+ toolkit-accessibility=true

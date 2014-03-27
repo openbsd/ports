@@ -1,16 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.69 2014/01/30 11:00:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.70 2014/03/27 19:19:18 ajacoutot Exp $
 @comment starts a full gnome-session as _gdm which requires a valid homedir
 @newgroup _gdm:676
 @newuser _gdm:676:_gdm:daemon:GNOME Display Manager:/var/db/gdm:/sbin/nologin
-@unexec-delete rm -f ${SYSCONFDIR}/dconf/db/gdm
 @extraunexec rm -rf /var/db/gdm/.ICEauthority
 @extraunexec rm -rf /var/db/gdm/.aucat_cookie
 @extraunexec rm -rf /var/db/gdm/.cache
+@extraunexec rm -rf /var/db/gdm/.color
 @extraunexec rm -rf /var/db/gdm/.dbus
-@extraunexec rm -rf /var/db/gdm/.config/dconf/*
-@extraunexec rm -rf /var/db/gdm/.config/gnome-session
-@extraunexec rm -rf /var/db/gdm/.config/pulse
-@extraunexec rm -rf /var/db/gdm/.pulse/*[!client.conf]
+@extraunexec rm -rf /var/db/gdm/.config
+@extraunexec rm -rf /var/db/gdm/.local/{sound,icc,gnome-shell,telepathy}
+@extraunexec rm -rf /var/db/gdm/.pulse/*!(client.conf)
 @extraunexec rm -rf /var/db/gdm/*
 @extraunexec rm -rf /var/cache/gdm/*
 @extraunexec rm -rf /var/log/gdm/*
@@ -28,28 +27,16 @@ lib/pkgconfig/gdm.pc
 @bin libexec/gdm-host-chooser
 @bin libexec/gdm-session-worker
 @bin libexec/gdm-simple-chooser
-@bin libexec/gdm-simple-slave
-@bin libexec/gdm-xdmcp-chooser-slave
 @bin sbin/gdm
+share/dconf/
+share/dconf/profile/
+share/dconf/profile/gdm
 share/examples/gdm/
 share/examples/gdm/etc/
 share/examples/gdm/etc/dbus-1/
 share/examples/gdm/etc/dbus-1/system.d/
 share/examples/gdm/etc/dbus-1/system.d/gdm.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/gdm.conf
-share/examples/gdm/etc/dconf/
-share/examples/gdm/etc/dconf/db/
-share/examples/gdm/etc/dconf/db/gdm.d/
-@sample ${SYSCONFDIR}/dconf/db/gdm.d/
-share/examples/gdm/etc/dconf/db/gdm.d/00-upstream-settings
-@sample ${SYSCONFDIR}/dconf/db/gdm.d/00-upstream-settings
-share/examples/gdm/etc/dconf/db/gdm.d/locks/
-@sample ${SYSCONFDIR}/dconf/db/gdm.d/locks/
-share/examples/gdm/etc/dconf/db/gdm.d/locks/00-upstream-settings-locks
-@sample ${SYSCONFDIR}/dconf/db/gdm.d/locks/00-upstream-settings-locks
-share/examples/gdm/etc/dconf/profile/
-share/examples/gdm/etc/dconf/profile/gdm
-@sample ${SYSCONFDIR}/dconf/profile/gdm
 share/examples/gdm/etc/gdm/
 @sample ${SYSCONFDIR}/gdm/
 share/examples/gdm/etc/gdm/Init/
@@ -99,10 +86,6 @@ share/examples/gdm/var/db/gdm/
 @sample /var/db/gdm/
 @mode
 @owner _gdm
-share/examples/gdm/var/db/gdm/.config/
-@sample /var/db/gdm/.config/
-share/examples/gdm/var/db/gdm/.config/dconf/
-@sample /var/db/gdm/.config/dconf/
 share/examples/gdm/var/db/gdm/.local/
 @sample /var/db/gdm/.local/
 share/examples/gdm/var/db/gdm/.local/share/
@@ -120,6 +103,7 @@ share/examples/gdm/var/db/gdm/.pulse/client.conf
 share/gdm/gdb-cmd
 share/gdm/gdm.schemas
 share/gdm/greeter/
+share/gdm/greeter-dconf-defaults
 share/gdm/greeter/applications/
 share/gdm/greeter/applications/gdm-simple-greeter.desktop
 share/gdm/greeter/applications/gnome-shell.desktop
@@ -127,6 +111,7 @@ share/gdm/greeter/applications/mime-dummy-handler.desktop
 share/gdm/greeter/applications/mimeapps.list
 share/gdm/greeter/applications/polkit-gnome-authentication-agent-1.desktop
 share/gdm/greeter/autostart/
+share/gdm/greeter/autostart/caribou-autostart.desktop
 share/gdm/greeter/autostart/orca-autostart.desktop
 share/gdm/locale.alias
 share/gir-1.0/Gdm-1.0.gir
@@ -332,6 +317,4 @@ share/pixmaps/nohost.png
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@exec %D/bin/dconf update
-@unexec-delete %D/bin/dconf update
 @rcscript ${RCDIR}/gdm

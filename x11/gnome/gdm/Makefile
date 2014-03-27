@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.192 2014/03/24 18:19:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.193 2014/03/27 19:19:17 ajacoutot Exp $
 
 # XXX configuring GDM from gnome-cc does not work
 
@@ -7,8 +7,7 @@ SHARED_ONLY=		Yes
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
-GNOME_VERSION=		3.10.0.1
-REVISION=		15
+GNOME_VERSION=		3.12.0
 
 SHARED_LIBS +=  gdm                  0.0      # 1.0
 
@@ -31,12 +30,19 @@ MODULES=		devel/gettext \
 
 BUILD_DEPENDS=		devel/check
 
+# 'dconf compile'
+BUILD_DEPENDS +=	devel/dconf
+
 # cyclic dependency, see pkg/DESCR
 # bring _all_ runtime dependencies (including consolekit and zenity)
 #RUN_DEPENDS +=		x11/gnome/session
 
+# cyclic dependency
 # gnome-initial-setup is an opt-in handled in meta/gnome
 #RUN_DEPENDS +=		x11/gnome/initial-setup
+
+# caribou-autostart.desktop
+RUN_DEPENDS +=		x11/gnome/caribou
 
 # orca-autostart.desktop
 RUN_DEPENDS +=		x11/gnome/orca
@@ -90,7 +96,6 @@ post-install:
 		${PREFIX}/share/glib-2.0/schemas
 	mv ${WRKINST}/etc/gdm ${PREFIX}/share/examples/gdm/etc
 	mv ${WRKINST}/etc/dbus-1 ${PREFIX}/share/examples/gdm/etc
-	mv ${WRKINST}/etc/dconf ${PREFIX}/share/examples/gdm/etc
 	mv ${WRKINST}/var/db/gdm ${PREFIX}/share/examples/gdm/var/db
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gdm/var/db/gdm/.pulse
 	${INSTALL_DATA} ${FILESDIR}/client.conf \

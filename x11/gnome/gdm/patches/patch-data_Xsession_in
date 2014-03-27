@@ -1,9 +1,9 @@
-$OpenBSD: patch-data_Xsession_in,v 1.5 2014/01/08 14:07:48 ajacoutot Exp $
+$OpenBSD: patch-data_Xsession_in,v 1.6 2014/03/27 19:19:17 ajacoutot Exp $
 
 XXX push upstream
 
---- data/Xsession.in.orig	Wed Sep 11 15:06:17 2013
-+++ data/Xsession.in	Wed Jan  8 14:48:27 2014
+--- data/Xsession.in.orig	Tue Mar 18 05:23:44 2014
++++ data/Xsession.in	Thu Mar 27 18:24:20 2014
 @@ -23,6 +23,8 @@
  # based on:
  # $XConsortium: Xsession /main/10 1995/12/18 18:21:28 gildea $
@@ -13,7 +13,7 @@ XXX push upstream
  command="$@"
  
  # this will go into the .xsession-errors along with all other echo's
-@@ -180,6 +182,9 @@ if [ "x$command" = "xdefault" ] ; then
+@@ -173,6 +175,9 @@ if [ "x$command" = "xdefault" ] ; then
      command="/etc/X11/xinit/Xclients"
    elif [ -x /etc/X11/Xclients ]; then
      command="/etc/X11/Xclients"
@@ -23,7 +23,7 @@ XXX push upstream
    else
      if [ -n "$zenity" ] ; then
  	disptext=`gettextfunc "System has no Xclients file, so starting a failsafe xterm session.  Windows will have focus only if the mouse pointer is above them.  To get out of this mode type 'exit' in the window."`
-@@ -191,12 +196,17 @@ if [ "x$command" = "xdefault" ] ; then
+@@ -184,12 +189,17 @@ if [ "x$command" = "xdefault" ] ; then
    fi
  fi
  
