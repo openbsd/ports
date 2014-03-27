@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2014/03/26 14:56:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2014/03/27 06:51:38 ajacoutot Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
@@ -65,7 +65,7 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/polkit
 ### Remove when updating to a newer release with integrated bsd_auth(3) support.
 AUTOCONF_VERSION=2.69
 AUTOMAKE_VERSION=1.11
-BUILD_DEPENDS=	${MODGNU_AUTOMAKE_DEPENDS} \
+BUILD_DEPENDS +=${MODGNU_AUTOMAKE_DEPENDS} \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		devel/gettext \
 		devel/gobject-introspection
