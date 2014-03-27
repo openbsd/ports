@@ -1,10 +1,13 @@
-$OpenBSD: patch-yubiserve_py,v 1.1.1.1 2012/07/18 08:25:07 sthen Exp $
+$OpenBSD: patch-yubiserve_py,v 1.2 2014/03/27 13:52:30 sthen Exp $
 
 sqlite3 support from
 http://code.google.com/p/yubico-yubiserve/source/list r39
 
---- yubiserve.py.orig	Wed Jul 18 01:16:24 2012
-+++ yubiserve.py	Wed Jul 18 01:16:13 2012
+remove bogus timestamp checking code; that isn't what the timestamps are for,
+and they wrap after between 0 and 24-and-a-bit days uptime causing failures.
+
+--- yubiserve.py.orig	Tue Dec 14 10:48:50 2010
++++ yubiserve.py	Thu Mar 27 13:51:00 2014
 @@ -1,4 +1,4 @@
 -#!/usr/bin/python
 +#!${MODPY_BIN}
@@ -69,7 +72,7 @@ http://code.google.com/p/yubico-yubiserve/source/list r39
  					self.validationResult = self.status['BAD_OTP']
  					return self.validationResult
  				if not (self.CRC() or self.isCRCValid()):
-@@ -126,7 +137,7 @@ class OTPValidation():
+@@ -126,16 +137,13 @@ class OTPValidation():
  				self.internalcounter = self.hexdec(self.plaintext[14:16] + self.plaintext[12:14] + self.plaintext[22:24])
  				self.timestamp = self.hexdec(self.plaintext[20:22] + self.plaintext[18:20] + self.plaintext[16:18])
  				cur.execute('SELECT counter, time FROM yubikeys WHERE publicname = "' + self.userid + '" AND active = "1"')
@@ -78,7 +81,16 @@ http://code.google.com/p/yubico-yubiserve/source/list r39
  					self.validationResult = self.status['BAD_OTP']
  					return self.validationResult
  				(self.counter, self.time) = cur.fetchone()
-@@ -147,11 +158,13 @@ class OTPValidation():
+ 				if (self.counter) >= (self.internalcounter):
+ 					self.validationResult = self.status['REPLAYED_OTP']
+ 					return self.validationResult
+-				if (self.time >= self.timestamp) and ((self.counter >> 8) == (self.internalcounter >> 8)):
+-					self.validationResult = self.status['DELAYED_OTP']
+-					return self.validationResult
+ 		except IndexError:
+ 			self.validationResult = self.status['BAD_OTP']
+ 			return self.validationResult
+@@ -147,11 +155,13 @@ class OTPValidation():
  class YubiServeHandler (BaseHTTPServer.BaseHTTPRequestHandler):
  	__base = BaseHTTPServer.BaseHTTPRequestHandler
  	__base_handle = __base.handle
@@ -95,7 +107,7 @@ http://code.google.com/p/yubico-yubiserve/source/list r39
  	elif config['yubiDB'] == 'mysql':
  		con = MySQLdb.connect(host=config['yubiMySQLHost'], user=config['yubiMySQLUser'], passwd=config['yubiMySQLPass'], db=config['yubiMySQLName'])
  	#except:
-@@ -200,16 +213,16 @@ class YubiServeHandler (BaseHTTPServer.BaseHTTPRequest
+@@ -200,16 +210,16 @@ class YubiServeHandler (BaseHTTPServer.BaseHTTPRequest
  						orderedResult = 'nonce=' + getData['nonce'] + '&otp=' + getData['otp'] + '&sl=100&status=' + [k for k, v in otpvalidation.status.iteritems() if v == validation][0] + '&t=' + iso_time
  					except KeyError:
  						result = 't=' + iso_time + '\r\notp=' + getData['otp'] + '\r\nnonce=\r\nsl=100\r\nstatus=' + [k for k, v in otpvalidation.status.iteritems() if v == validation][0] + '\r\n'
@@ -115,7 +127,7 @@ http://code.google.com/p/yubico-yubiserve/source/list r39
  							else:
  								result = 't=' + iso_time + '\r\notp=' + getData['otp'] + '\r\nstatus=NO_CLIENT\r\n'
  					except KeyError:
-@@ -230,7 +243,7 @@ class YubiServeHandler (BaseHTTPServer.BaseHTTPRequest
+@@ -230,7 +240,7 @@ class YubiServeHandler (BaseHTTPServer.BaseHTTPRequest
  					apiID = re.escape(getData['id'])
  					cur = self.con.cursor()
  					cur.execute("SELECT secret from apikeys WHERE id = '" + apiID + "'")
@@ -124,7 +136,7 @@ http://code.google.com/p/yubico-yubiserve/source/list r39
  						api_key = cur.fetchone()[0]
  						otp_hmac = hmac.new(api_key, msg=orderedResult, digestmod=hashlib.sha1).hexdigest().decode('hex').encode('base64').strip()
  			except KeyError:
-@@ -264,7 +277,7 @@ class YubiServeHandler (BaseHTTPServer.BaseHTTPRequest
+@@ -264,7 +274,7 @@ class YubiServeHandler (BaseHTTPServer.BaseHTTPRequest
  							apiID = re.escape(getData['id'])
  							cur = self.con.cursor()
  							cur.execute("SELECT secret from apikeys WHERE id = '" + apiID + "'")
@@ -133,7 +145,7 @@ http://code.google.com/p/yubico-yubiserve/source/list r39
  								api_key = cur.fetchone()[0]
  								otp_hmac = hmac.new(api_key, msg=result, digestmod=hashlib.sha1).hexdigest().decode('hex').encode('base64').strip()
  							else:
-@@ -285,7 +298,7 @@ class YubiServeHandler (BaseHTTPServer.BaseHTTPRequest
+@@ -285,7 +295,7 @@ class YubiServeHandler (BaseHTTPServer.BaseHTTPRequest
  							apiID = re.escape(getData['id'])
  							cur = self.con.cursor()
  							cur.execute("SELECT secret from apikeys WHERE id = '" + apiID + "'")
@@ -142,7 +154,7 @@ http://code.google.com/p/yubico-yubiserve/source/list r39
  								api_key = cur.fetchone()[0]
  								otp_hmac = hmac.new(api_key, msg=result, digestmod=hashlib.sha1).hexdigest().decode('hex').encode('base64').strip()
  					except KeyError:
-@@ -305,7 +318,7 @@ class YubiServeHandler (BaseHTTPServer.BaseHTTPRequest
+@@ -305,7 +315,7 @@ class YubiServeHandler (BaseHTTPServer.BaseHTTPRequest
  					apiID = re.escape(getData['id'])
  					cur = self.con.cursor()
  					cur.execute("SELECT secret from apikeys WHERE id = '" + apiID + "'")
@@ -151,7 +163,7 @@ http://code.google.com/p/yubico-yubiserve/source/list r39
  						api_key = cur.fetchone()[0]
  						otp_hmac = hmac.new(api_key, msg=result, digestmod=hashlib.sha1).hexdigest().decode('hex').encode('base64').strip()
  			except KeyError:
-@@ -321,8 +334,8 @@ class YubiServeHandler (BaseHTTPServer.BaseHTTPRequest
+@@ -321,8 +331,8 @@ class YubiServeHandler (BaseHTTPServer.BaseHTTPRequest
  class SecureHTTPServer(BaseHTTPServer.HTTPServer):
  	def __init__(self, server_address, HandlerClass):
  		BaseHTTPServer.HTTPServer.__init__(self, server_address, HandlerClass)
