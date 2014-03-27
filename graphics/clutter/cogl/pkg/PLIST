@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2013/09/26 14:55:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/03/27 13:07:32 jasper Exp $
 @conflict clutter-<1.8.0
 include/cogl/
 include/cogl/cogl/
@@ -13,6 +13,7 @@ include/cogl/cogl-path/cogl2-path-functions.h
 include/cogl/cogl/cogl-atlas-texture.h
 include/cogl/cogl/cogl-attribute-buffer.h
 include/cogl/cogl/cogl-attribute.h
+include/cogl/cogl/cogl-auto-texture.h
 include/cogl/cogl/cogl-bitmap.h
 include/cogl/cogl/cogl-buffer.h
 include/cogl/cogl/cogl-clip-state.h
@@ -30,10 +31,12 @@ include/cogl/cogl/cogl-euler.h
 include/cogl/cogl/cogl-fence.h
 include/cogl/cogl/cogl-fixed.h
 include/cogl/cogl/cogl-frame-info.h
+include/cogl/cogl/cogl-framebuffer-deprecated.h
 include/cogl/cogl/cogl-framebuffer.h
 include/cogl/cogl/cogl-gles2-types.h
 include/cogl/cogl/cogl-gles2.h
 include/cogl/cogl/cogl-glib-source.h
+include/cogl/cogl/cogl-glx.h
 include/cogl/cogl/cogl-index-buffer.h
 include/cogl/cogl/cogl-indices.h
 include/cogl/cogl/cogl-macros.h
@@ -65,9 +68,11 @@ include/cogl/cogl/cogl-texture-2d-gl.h
 include/cogl/cogl/cogl-texture-2d-sliced.h
 include/cogl/cogl/cogl-texture-2d.h
 include/cogl/cogl/cogl-texture-3d.h
+include/cogl/cogl/cogl-texture-deprecated.h
 include/cogl/cogl/cogl-texture-pixmap-x11.h
 include/cogl/cogl/cogl-texture-rectangle.h
 include/cogl/cogl/cogl-texture.h
+include/cogl/cogl/cogl-type-casts.h
 include/cogl/cogl/cogl-types.h
 include/cogl/cogl/cogl-vector.h
 include/cogl/cogl/cogl-version.h
@@ -77,6 +82,18 @@ include/cogl/cogl/cogl-xlib.h
 include/cogl/cogl/cogl.h
 include/cogl/cogl/cogl1-context.h
 include/cogl/cogl/cogl2-experimental.h
+include/cogl/cogl/deprecated/
+include/cogl/cogl/deprecated/cogl-auto-texture.h
+include/cogl/cogl/deprecated/cogl-clip-state.h
+include/cogl/cogl/deprecated/cogl-clutter-xlib.h
+include/cogl/cogl/deprecated/cogl-clutter.h
+include/cogl/cogl/deprecated/cogl-fixed.h
+include/cogl/cogl/deprecated/cogl-framebuffer-deprecated.h
+include/cogl/cogl/deprecated/cogl-material-compat.h
+include/cogl/cogl/deprecated/cogl-shader.h
+include/cogl/cogl/deprecated/cogl-texture-deprecated.h
+include/cogl/cogl/deprecated/cogl-type-casts.h
+include/cogl/cogl/deprecated/cogl-vertex-buffer.h
 include/cogl/cogl/gl-prototypes/
 include/cogl/cogl/gl-prototypes/cogl-core-functions.h
 include/cogl/cogl/gl-prototypes/cogl-gles2-functions.h
@@ -84,9 +101,13 @@ include/cogl/cogl/gl-prototypes/cogl-glsl-functions.h
 include/cogl/cogl/gl-prototypes/cogl-in-gles-core-functions.h
 include/cogl/cogl/gl-prototypes/cogl-in-gles2-core-functions.h
 lib/girepository-${API_VERSION}/Cogl-${API_VERSION}.typelib
+lib/girepository-${API_VERSION}/Cogl-2.0.typelib
 lib/girepository-${API_VERSION}/CoglPango-${API_VERSION}.typelib
+lib/girepository-${API_VERSION}/CoglPango-2.0.typelib
 lib/libcogl-pango.la
 @lib lib/libcogl-pango.so.${LIBcogl-pango_VERSION}
+lib/libcogl-path.la
+@lib lib/libcogl-path.so.${LIBcogl-path_VERSION}
 lib/libcogl.la
 @lib lib/libcogl.so.${LIBcogl_VERSION}
 lib/pkgconfig/cogl-${API_VERSION}.pc
@@ -94,11 +115,15 @@ lib/pkgconfig/cogl-2.0-experimental.pc
 lib/pkgconfig/cogl-gl-${API_VERSION}.pc
 lib/pkgconfig/cogl-pango-${API_VERSION}.pc
 lib/pkgconfig/cogl-pango-2.0-experimental.pc
+lib/pkgconfig/cogl-path-${API_VERSION}.pc
+lib/pkgconfig/cogl-path-2.0-experimental.pc
 share/cogl/
 share/cogl/examples-data/
 share/cogl/examples-data/crate.jpg
 share/gir-${API_VERSION}/Cogl-${API_VERSION}.gir
+share/gir-${API_VERSION}/Cogl-2.0.gir
 share/gir-${API_VERSION}/CoglPango-${API_VERSION}.gir
+share/gir-${API_VERSION}/CoglPango-2.0.gir
 share/locale/an/LC_MESSAGES/cogl.mo
 share/locale/ar/LC_MESSAGES/cogl.mo
 share/locale/as/LC_MESSAGES/cogl.mo

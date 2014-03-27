@@ -1,7 +1,7 @@
-$OpenBSD: patch-cogl_winsys_cogl-winsys-egl-kms_c,v 1.4 2013/09/26 14:55:30 jasper Exp $
---- cogl/winsys/cogl-winsys-egl-kms.c.orig	Mon Sep 23 14:40:52 2013
-+++ cogl/winsys/cogl-winsys-egl-kms.c	Thu Sep 26 15:50:16 2013
-@@ -104,7 +104,7 @@ typedef struct _CoglOnscreenKMS
+$OpenBSD: patch-cogl_winsys_cogl-winsys-egl-kms_c,v 1.5 2014/03/27 13:07:32 jasper Exp $
+--- cogl/winsys/cogl-winsys-egl-kms.c.orig	Fri Mar 21 16:50:34 2014
++++ cogl/winsys/cogl-winsys-egl-kms.c	Thu Mar 27 13:48:15 2014
+@@ -112,7 +112,7 @@ typedef struct _CoglOnscreenKMS
    CoglBool pending_swap_notify;
  } CoglOnscreenKMS;
  
