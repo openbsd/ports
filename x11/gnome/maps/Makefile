@@ -1,12 +1,21 @@
-# $OpenBSD: Makefile,v 1.4 2013/11/13 13:37:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2014/03/27 15:42:26 ajacoutot Exp $
 
 COMMENT=		map application for GNOME
 
 GNOME_PROJECT=		gnome-maps
-GNOME_VERSION=		3.10.2
+GNOME_VERSION=		3.12.0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
+
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
+WANTLIB += c cairo cairo-gobject dbus-1 expat ffi fontconfig freetype
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0 gjs glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
+WANTLIB += harfbuzz iconv intl m mozjs-24 ncursesw pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += readline xcb xcb-render xcb-shm z
 
 MODULES=		x11/gnome \
 			devel/dconf
@@ -14,13 +23,11 @@ MODULES=		x11/gnome \
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 
-BUILD_DEPENDS=		x11/gnome/gjs
+LIB_DEPENDS=		x11/gnome/gjs
 
-RUN_DEPENDS=		devel/py-gobject3 \
-			geo/geocode-glib \
+# loads JS from an included GResource
+RUN_DEPENDS=		geo/geocode-glib \
 			geo/geoclue2 \
-			geo/libchamplain \
-			graphics/clutter/clutter-gtk \
-			x11/gnome/gjs
+			geo/libchamplain
 
 .include <bsd.port.mk>
