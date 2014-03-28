@@ -1,0 +1,57 @@
+.\" Copyright (c)  2005-2007   Daniel Baumann <mail@daniel-baumann.ch>
+.\" License: GPL version 2 or (at your option) any later version
+.TH FLAC123 1 "2005-11-05" "0.0.9" "command-line flac player"
+
+.SH NAME
+flac123 \- a command-line flac player
+
+.SH SYNOPSIS
+.B flac123
+.RI [ options ] " files" ...
+
+.SH DESCRIPTION
+.B flac123
+is the only component of flac-tools at this time. It is a command-line player
+for the FLAC format, an open format for losslessly compressing audio data.
+.B flac123
+is heavily based upon mpg321 by Joe Drew <drew@debian.org>
+.PP
+flac-tools aims to be a complete set of tools for playing and manipulating audio
+files stored the the FLAC format.
+.PP
+
+.SH OPTIONS
+.TP
+.B \-d, \-\-driver=STRING
+Set libao output driver (oss, esd, arts, macosx, etc). Default is sndio.
+.TP
+.B \-w, \-\-wav=FILENAME
+Send output to wav file (use --wav=- and -q for stdout).
+.TP
+.B \-R, \-\-remote
+Set remote mode for programmatic control.
+.TP
+.B \-b, \-\-buffer\-size=STRING
+Set buffer size.
+.TP
+.B \-q, \-\-quiet
+Suppress text output.
+.TP
+.B \-?, \-\-help
+Show summary of options.
+.TP
+.B \-\-usage
+Display brief usage message.
+
+.SH SEE ALSO
+.BR mpg321 (1),
+.BR ogg123 (1).
+.BR <http://flac-tools.sourceforge.net/>
+.br
+
+.SH AUTHOR
+flac123 was written by Jake Angerman <kerneljake@hotmail.com>.
+.PP
+This manual page was written by Daniel Baumann
+<mail@daniel-baumann.ch>, for the Debian project (but may be used
+by others).

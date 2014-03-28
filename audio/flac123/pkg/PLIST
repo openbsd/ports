@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/03/28 20:58:56 naddy Exp $
+@bin bin/flac123
+@man man/man1/flac123.1
