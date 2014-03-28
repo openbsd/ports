@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/05/11 11:14:29 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/03/28 21:21:31 nigel Exp $
 ${P5SITE}/Module/
 ${P5SITE}/Module/Find.pm
 @man man/man3p/Module::Find.3p
+share/examples/p5-Module-Find/
+share/examples/p5-Module-Find/example.pl
