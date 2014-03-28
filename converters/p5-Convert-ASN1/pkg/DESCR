@@ -1,4 +1,4 @@
-Convert::ASN1 encodes and decodes ASN.1 data structures 
+Convert::ASN1 encodes and decodes ASN.1 data structures
 using BER/DER rules.
 
 See 'perldoc Convert::ASN1' for more information.

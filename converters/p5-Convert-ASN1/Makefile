@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2013/10/11 23:48:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2014/03/28 22:09:31 nigel Exp $
 
 COMMENT=	module to encode and decode ASN.1 data structures
 
-DISTNAME=	Convert-ASN1-0.22
-REVISION=	0
+DISTNAME=	Convert-ASN1-0.26
 CATEGORIES=	converters
 MODULES=	cpan
 
