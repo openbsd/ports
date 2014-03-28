@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.70 2014/03/27 19:19:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.71 2014/03/28 08:23:42 ajacoutot Exp $
 @comment starts a full gnome-session as _gdm which requires a valid homedir
 @newgroup _gdm:676
 @newuser _gdm:676:_gdm:daemon:GNOME Display Manager:/var/db/gdm:/sbin/nologin
+@extraunexec find /var/db/gdm/.pulse -type f ! -name client.conf -exec rm -f '{}' \;
 @extraunexec rm -rf /var/db/gdm/.ICEauthority
 @extraunexec rm -rf /var/db/gdm/.aucat_cookie
 @extraunexec rm -rf /var/db/gdm/.cache
@@ -9,7 +10,6 @@
 @extraunexec rm -rf /var/db/gdm/.dbus
 @extraunexec rm -rf /var/db/gdm/.config
 @extraunexec rm -rf /var/db/gdm/.local/{sound,icc,gnome-shell,telepathy}
-@extraunexec rm -rf /var/db/gdm/.pulse/*!(client.conf)
 @extraunexec rm -rf /var/db/gdm/*
 @extraunexec rm -rf /var/cache/gdm/*
 @extraunexec rm -rf /var/log/gdm/*
