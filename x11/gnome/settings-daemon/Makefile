@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2014/03/27 11:41:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.124 2014/03/28 08:48:41 ajacoutot Exp $
 
 # XXX gcm-dmi.c:141:2: warning: #warning Please add dmi support for your OS
 
@@ -46,9 +46,6 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas
 RUN_DEPENDS=		devel/gsettings-desktop-schemas
 
-# man pages
-BUILD_DEPENDS +=	textproc/docbook-xsl
-
 # share/polkit-1/actions/org.gnome.settings-daemon.plugins.power.policy
 RUN_DEPENDS +=		sysutils/polkit
 
@@ -68,6 +65,7 @@ RUN_DEPENDS +=		geo/geoclue2
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
+MODGNOME_TOOLS=		docbook
 
 LIBTOOL_FLAGS=		--tag=disable-static
 

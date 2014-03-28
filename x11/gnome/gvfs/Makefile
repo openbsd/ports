@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2014/03/27 08:55:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.114 2014/03/28 08:48:41 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -42,9 +42,7 @@ WANTLIB-goa += ${WANTLIB}
 WANTLIB-goa += goa-1.0
 
 MODGNOME_DESKTOP_FILE=	Yes
-
-# man pages
-BUILD_DEPENDS += textproc/docbook-xsl
+MODGNOME_TOOLS=		docbook
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		archivers/libarchive \

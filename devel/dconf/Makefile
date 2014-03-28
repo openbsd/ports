@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2014/03/27 09:00:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2014/03/28 08:48:41 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -44,11 +44,7 @@ MODULES=		devel/dconf \
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
-
-BUILD_DEPENDS=		lang/vala
-
-# man pages (adds textproc/libxslt)
-BUILD_DEPENDS +=	textproc/docbook-xsl
+MODGNOME_TOOLS=		docbook vala
 
 RUN_DEPENDS-main=	# empty
 LIB_DEPENDS-main=	devel/glib2 \

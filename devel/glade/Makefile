@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2014/03/27 14:21:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.62 2014/03/28 08:48:41 ajacoutot Exp $
 
 COMMENT=	user interface builder for the gtk+3 toolkit
 
@@ -31,9 +31,6 @@ MODULES=	devel/gettext \
 
 BUILD_DEPENDS=	devel/py-gobject3
 
-# man pages
-BUILD_DEPENDS += textproc/docbook-xsl
-
 LIB_DEPENDS=	x11/gtk+3>=3.5.18 \
 		devel/libffi
 
@@ -42,7 +39,7 @@ RUN_DEPENDS=	x11/gnome/devhelp \
 
 MODGNOME_DESKTOP_FILE= 	Yes
 MODGNOME_ICON_CACHE=	Yes
-MODGNOME_TOOLS= 	gi yelp
+MODGNOME_TOOLS= 	docbook gi yelp
 
 CONFIGURE_STYLE=	gnu
 

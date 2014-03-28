@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2014/03/28 08:25:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.74 2014/03/28 08:48:41 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
@@ -42,13 +42,11 @@ MODGCC4_LANGS =		c c++
 MODCLANG_ARCHS =	amd64
 MODCLANG_LANGS =	c c++
 
-MODGNOME_TOOLS=		gi
+MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_TOOLS=		docbook gi
 
 BUILD_DEPENDS +=	devel/gsettings-desktop-schemas
 RUN_DEPENDS +=		devel/gsettings-desktop-schemas
-
-# man pages
-BUILD_DEPENDS +=	textproc/docbook-xsl
 
 # gnome-keybindings.pc, sysutils/accountsservice (unlockDialog.js...)
 BUILD_DEPENDS +=	x11/gnome/controlcenter
@@ -96,8 +94,6 @@ RUN_DEPENDS +=		x11/gnome/icon-theme-symbolic
 # add required introspection libs that are not in the dependency chain
 RUN_DEPENDS +=		inputmethods/ibus \
 			x11/gnome/gdm
-
-MODGNOME_DESKTOP_FILE=	Yes
 
 LIBTOOL_FLAGS= 		--tag=disable-static
 

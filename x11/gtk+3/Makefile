@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2014/03/27 07:45:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.96 2014/03/28 08:48:41 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -40,9 +40,6 @@ MODULES=		devel/gettext \
 			devel/dconf \
 			x11/gnome
 
-# man pages
-BUILD_DEPENDS +=	textproc/docbook-xsl
-
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/pango \
 			graphics/gdk-pixbuf2 \
@@ -81,7 +78,7 @@ WANTLIB-cloudprint += ${WANTLIB}
 WANTLIB-cloudprint += gdk-3 gtk-3 json-glib-1.0 rest-0.7 soup-2.4 soup-gnome-2.4
 WANTLIB-cloudprint += sqlite3 xml2
 
-MODGNOME_TOOLS=		gi
+MODGNOME_TOOLS=		docbook gi
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include/freetype2
 MODGNOME_ICON_CACHE=	Yes
 

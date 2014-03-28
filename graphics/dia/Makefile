@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2014/03/09 21:47:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.100 2014/03/28 08:48:41 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -26,8 +26,6 @@ WANTLIB += xcb-shm xml2 xslt z
 MODULES=		devel/gettext \
 			x11/gnome
 
-BUILD_DEPENDS=		textproc/docbook-xsl
-
 LIB_DEPENDS=		x11/gtk+2 \
 			graphics/libart \
 			textproc/libxslt
@@ -36,6 +34,7 @@ RUN_DEPENDS=		devel/xdg-utils
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
+MODGNOME_TOOLS=		docbook
 
 LIBTOOL_FLAGS=		--tag=disable-static
 

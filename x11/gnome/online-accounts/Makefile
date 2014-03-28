@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2014/03/27 08:22:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2014/03/28 08:48:41 ajacoutot Exp $
 
 COMMENT=	interfaces for interacting with online accounts
 
@@ -28,16 +28,13 @@ WANTLIB += xcb-render xcb-shm xml2 xslt z orc-0.4
 MODULES=		devel/gettext \
 			x11/gnome
 
-# man pages
-BUILD_DEPENDS += 	textproc/docbook-xsl
-
 LIB_DEPENDS=		devel/json-glib \
 			net/librest \
 			net/telepathy/telepathy-glib \
 			x11/gnome/libsecret \
 			www/webkit,gtk3>=2.2.0v0
 
-MODGNOME_TOOLS= 	gi
+MODGNOME_TOOLS= 	docbook gi
 MODGNOME_ICON_CACHE=	Yes
 
 .include <bsd.port.mk>

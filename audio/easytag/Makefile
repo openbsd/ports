@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2014/02/05 21:41:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.40 2014/03/28 08:48:41 ajacoutot Exp $
 
 COMMENT=		tag editor for various audio file formats
 
@@ -26,10 +26,7 @@ MODULES=		devel/gettext \
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
-MODGNOME_TOOLS=		yelp
-
-# man pages
-BUILD_DEPENDS += textproc/docbook-xsl
+MODGNOME_TOOLS=		docbook yelp
 
 LIB_DEPENDS=		audio/id3lib \
 			audio/libid3tag \
