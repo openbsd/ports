@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.322 2014/03/09 22:35:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.323 2014/03/28 20:59:48 naddy Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -46,6 +46,7 @@
      SUBDIR += faad
      SUBDIR += festival
      SUBDIR += flac
+     SUBDIR += flac123
      SUBDIR += flite
      SUBDIR += fluidsynth
      SUBDIR += fookebox
