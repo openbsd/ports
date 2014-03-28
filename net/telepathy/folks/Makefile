@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2014/03/09 21:52:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2014/03/28 07:06:33 ajacoutot Exp $
 
 COMMENT=		people aggregation library
 
@@ -6,7 +6,7 @@ GNOME_PROJECT=		folks
 GNOME_VERSION=		0.9.6
 # MODULE_VERSION in config.h
 API_V=			41
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  folks-telepathy           5.1 # 41.1
 SHARED_LIBS +=  folks                     5.4 # 41.1
@@ -23,7 +23,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
 WANTLIB += gssapi gthread-2.0 heimbase krb5 m ncurses nspr4 nss3
 WANTLIB += nssutil3 p11-kit pcre plc4 plds4 pthread readline roken
 WANTLIB += secret-1 smime3 softokn3 soup-2.4 sqlite3 ssl3 telepathy-glib
-WANTLIB += wind xml2 z zeitgeist-2.0
+WANTLIB += wind xml2 z zeitgeist-2.0 icudata icui18n icuuc
 
 MODULES=		devel/dconf \
 			devel/gettext \
@@ -32,7 +32,7 @@ MODULES=		devel/dconf \
 LIB_DEPENDS=	databases/evolution-data-server \
 		devel/libgee \
 		net/telepathy/telepathy-glib \
-		productivity/zeitgeist>=0.9.14v0
+		productivity/zeitgeist
 
 # needed at runtime by the telepathy backend (AccountManager)
 RUN_DEPENDS=	net/telepathy/telepathy-mission-control
