@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.79 2014/03/26 16:09:06 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.80 2014/03/28 08:48:14 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -67,6 +67,7 @@ USE_GMAKE?=		Yes
 # or for ensuring documentation is available. If an option is not set, it's
 # explicitly disabled.
 # Currently supported tools are:
+# * docbook: Build man pages with docbook.
 # * gi: Build and enable GObject Introspection data.
 # * gtk-doc: Enable to build the included docs.
 # * vala: Enable vala bindings and/or building from vala source files.
@@ -76,14 +77,16 @@ USE_GMAKE?=		Yes
 #         dependency on rarian (and legacy scrollkeeper-*) and have
 #         access to the gnome-doc-* tools (legacy);
 #         same goes with yelp-tools which gives us itstool.
-# Please note that if you're using multi-packages, you have to use the
-# MODGNOME_RUN_DEPENDS_${tool} in your multi package RUN_DEPENDS.
 
 MODGNOME_CONFIGURE_ARGS_gtkdoc=--disable-gtk-doc
 MODGNOME_CONFIGURE_ARGS_gi=--disable-introspection
 MODGNOME_CONFIGURE_ARGS_vala=--disable-vala --disable-vala-bindings
 
 .if defined(MODGNOME_TOOLS)
+.   if ${MODGNOME_TOOLS:Mdocbook}
+        MODGNOME_BUILD_DEPENDS+=textproc/docbook-xsl>=1.68.1p5
+.   endif
+
 .   if ${MODGNOME_TOOLS:Mgi}
         MODGNOME_CONFIGURE_ARGS_gi=--enable-introspection
         MODGNOME_BUILD_DEPENDS+=devel/gobject-introspection>=1.40.0
