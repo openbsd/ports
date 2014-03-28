@@ -53,7 +53,7 @@ server {
 		include		fastcgi_params;
 		fastcgi_index	index.php;
 		fastcgi_param	HTTPS on;
-		fastcgi_pass	127.0.0.1:9000;
+		fastcgi_pass	unix:run/php-fpm.sock;
 		fastcgi_send_timeout 1800;
 		fastcgi_read_timeout 1800;
 		fastcgi_connect_timeout 1800;
@@ -68,7 +68,7 @@ server {
 		include		fastcgi_params;
 		fastcgi_param	HTTPS on;
 		fastcgi_index	index.php;
-		fastcgi_pass	127.0.0.1:9000;
+		fastcgi_pass	unix:run/php-fpm.sock;
 		fastcgi_send_timeout 1800;
 		fastcgi_read_timeout 1800;
 		fastcgi_connect_timeout 1800;
