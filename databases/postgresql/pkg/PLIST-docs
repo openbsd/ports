@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.63 2014/03/11 10:42:34 pea Exp $
+@comment $OpenBSD: PLIST-docs,v 1.64 2014/03/28 11:50:51 pea Exp $
 share/doc/postgresql/
 share/doc/postgresql/COPYRIGHT
 share/doc/postgresql/HISTORY
@@ -783,6 +783,7 @@ share/doc/postgresql/html/release-8-4-18.html
 share/doc/postgresql/html/release-8-4-19.html
 share/doc/postgresql/html/release-8-4-2.html
 share/doc/postgresql/html/release-8-4-20.html
+share/doc/postgresql/html/release-8-4-21.html
 share/doc/postgresql/html/release-8-4-3.html
 share/doc/postgresql/html/release-8-4-4.html
 share/doc/postgresql/html/release-8-4-5.html
@@ -799,6 +800,7 @@ share/doc/postgresql/html/release-9-0-13.html
 share/doc/postgresql/html/release-9-0-14.html
 share/doc/postgresql/html/release-9-0-15.html
 share/doc/postgresql/html/release-9-0-16.html
+share/doc/postgresql/html/release-9-0-17.html
 share/doc/postgresql/html/release-9-0-2.html
 share/doc/postgresql/html/release-9-0-3.html
 share/doc/postgresql/html/release-9-0-4.html
@@ -812,6 +814,7 @@ share/doc/postgresql/html/release-9-1-1.html
 share/doc/postgresql/html/release-9-1-10.html
 share/doc/postgresql/html/release-9-1-11.html
 share/doc/postgresql/html/release-9-1-12.html
+share/doc/postgresql/html/release-9-1-13.html
 share/doc/postgresql/html/release-9-1-2.html
 share/doc/postgresql/html/release-9-1-3.html
 share/doc/postgresql/html/release-9-1-4.html
@@ -828,10 +831,12 @@ share/doc/postgresql/html/release-9-2-4.html
 share/doc/postgresql/html/release-9-2-5.html
 share/doc/postgresql/html/release-9-2-6.html
 share/doc/postgresql/html/release-9-2-7.html
+share/doc/postgresql/html/release-9-2-8.html
 share/doc/postgresql/html/release-9-2.html
 share/doc/postgresql/html/release-9-3-1.html
 share/doc/postgresql/html/release-9-3-2.html
 share/doc/postgresql/html/release-9-3-3.html
+share/doc/postgresql/html/release-9-3-4.html
 share/doc/postgresql/html/release-9-3.html
 share/doc/postgresql/html/release.html
 share/doc/postgresql/html/resources.html
