@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2013/04/16 13:17:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2014/03/28 07:57:56 ajacoutot Exp $
 
 COMMENT=		utility library for XKB
 
@@ -20,7 +20,7 @@ MODULES=		devel/gettext \
 
 MODGNOME_TOOLS=		gi
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
+BUILD_DEPENDS=		devel/iso-codes
 RUN_DEPENDS=		devel/iso-codes
 LIB_DEPENDS=		devel/glib2 \
 			textproc/libxml
