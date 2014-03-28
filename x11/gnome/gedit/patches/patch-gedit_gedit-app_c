@@ -1,0 +1,24 @@
+$OpenBSD: patch-gedit_gedit-app_c,v 1.3 2014/03/28 08:47:44 jasper Exp $
+
+From fa9263f9fb7a32c73f7635936fdf9ff589e1b43d Mon Sep 17 00:00:00 2001
+From: Kalev Lember <kalevlember@gmail.com>
+Date: Tue, 18 Mar 2014 12:49:03 +0000
+Subject: Plug memory leaks with css loading
+
+--- gedit/gedit-app.c.orig	Fri Mar 21 20:51:39 2014
++++ gedit/gedit-app.c	Fri Mar 28 09:41:17 2014
+@@ -554,12 +554,14 @@ gedit_app_startup (GApplication *application)
+ 		gtk_style_context_add_provider_for_screen (gdk_screen_get_default (),
+ 		                                           GTK_STYLE_PROVIDER (provider),
+ 		                                           GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
++		g_object_unref (provider);
+ 	}
+ 	else
+ 	{
+ 		g_warning ("Could not load css provider: %s", error->message);
+ 		g_error_free (error);
+ 	}
++	g_object_unref (css_file);
+ 
+ 	/*
+ 	 * We use the default gtksourceview style scheme manager so that plugins
