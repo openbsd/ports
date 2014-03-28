@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2014/03/09 22:18:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.89 2014/03/28 09:55:14 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -20,7 +20,8 @@ PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
 
-REVISION-main=		0
+REVISION-main=		1
+REVISION-ui=		0
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -97,8 +98,7 @@ FAKE_FLAGS=		configdir="${PREFIX}/share/examples/libgda"
 WANTLIB-main += ${WANTLIB} c gcrypt gpg-error ncurses sqlite3
 WANTLIB-main += readline soup-2.4 crypto gdk_pixbuf-2.0 png xslt
 
-RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
-			devel/iso-codes
+RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/libsoup \
 			textproc/libxslt \
@@ -124,6 +124,8 @@ LIB_DEPENDS-ui=		${LIB_DEPENDS} \
 			x11/dbus \
 			x11/gnome/libgda \
 			x11/gtksourceview3
+RUN_DEPENDS-ui=		${RUN_DEPENDS} \
+			devel/iso-codes
 .endif
 
 .if ${FLAVOR:Mno_mysql}
