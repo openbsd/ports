@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 11:44:46 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2014/03/28 12:18:07 sthen Exp $
 
 COMMENT=	client and server-side SOAP implementation
 
-DISTNAME=	SOAP-Lite-0.713
+DISTNAME=	SOAP-Lite-1.11
 CATEGORIES=	www
 
 # perl
@@ -12,31 +12,20 @@ MODULES=	cpan
 MODCPAN_EXAMPLES=Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/p5-Task-Weaken \
-		devel/p5-Class-Inspector \
-		mail/p5-MIME-Lite \
+RUN_DEPENDS=	devel/p5-Class-Inspector \
+		devel/p5-IO-SessionData \
+		devel/p5-Task-Weaken \
 		mail/p5-MIME-tools \
 		security/p5-Crypt-SSLeay \
 		security/p5-IO-Socket-SSL \
 		textproc/p5-XML-Parser \
-		www/mod_perl \
 		www/p5-URI \
 		www/p5-libwww
 
-CONFIGURE_ARGS+=	--noprompt \
-			--HTTP-Client \
-			--HTTPS-Client \
-			--MAILTO-Client \
-			--FTP-Client \
-			--HTTP-Daemon \
-			--HTTP-Apache \
-			--noHTTP-FCGI \
-			--POP3-Server \
-			--IO-Server \
-			--noMQ \
-			--noJABBER \
-			--MIMEParser \
-			--TCP \
-			--HTTP
+pre-patch:
+	cd ${WRKSRC} && \
+	    perl -pi -e '$$. == 1 && s,^#!.*env perl,#!/usr/bin/perl,;' \
+	    -e 'close ARGV if eof;' bin/SOAPsh.pl bin/stubmaker.pl \
+	    examples/XMLRPC/xmlrpc.cgi examples/XMLRPC/xmlrpc.daemon
 
 .include <bsd.port.mk>

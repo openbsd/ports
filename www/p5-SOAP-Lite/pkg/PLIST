@@ -1,13 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/12/17 22:06:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/03/28 12:18:07 sthen Exp $
 bin/SOAPsh.pl
-bin/XMLRPCsh.pl
 bin/stubmaker.pl
 ${P5SITE}/Apache/
 ${P5SITE}/Apache/SOAP.pm
-${P5SITE}/Apache/XMLRPC/
-${P5SITE}/Apache/XMLRPC/Lite.pm
-${P5SITE}/IO/SessionData.pm
-${P5SITE}/IO/SessionSet.pm
 ${P5SITE}/SOAP/
 ${P5SITE}/SOAP/Client.pod
 ${P5SITE}/SOAP/Constants.pm
@@ -41,23 +36,9 @@ ${P5SITE}/SOAP/Transport/MAILTO.pm
 ${P5SITE}/SOAP/Transport/POP3.pm
 ${P5SITE}/SOAP/Transport/TCP.pm
 ${P5SITE}/SOAP/Utils.pod
-${P5SITE}/UDDI/
-${P5SITE}/UDDI/Lite.pm
-${P5SITE}/XML/
-${P5SITE}/XML/Parser/
-${P5SITE}/XML/Parser/Lite.pm
-${P5SITE}/XMLRPC/
-${P5SITE}/XMLRPC/Lite.pm
-${P5SITE}/XMLRPC/Test.pm
-${P5SITE}/XMLRPC/Transport/
-${P5SITE}/XMLRPC/Transport/HTTP.pm
-${P5SITE}/XMLRPC/Transport/POP3.pm
-${P5SITE}/XMLRPC/Transport/TCP.pm
 @man man/man1/SOAPsh.pl.1
-@man man/man1/XMLRPCsh.pl.1
 @man man/man1/stubmaker.pl.1
 @man man/man3p/Apache::SOAP.3p
-@man man/man3p/Apache::XMLRPC::Lite.3p
 @man man/man3p/SOAP::Client.3p
 @man man/man3p/SOAP::Constants.3p
 @man man/man3p/SOAP::Data.3p
@@ -76,14 +57,8 @@ ${P5SITE}/XMLRPC/Transport/TCP.pm
 @man man/man3p/SOAP::Transport.3p
 @man man/man3p/SOAP::Transport::LOOPBACK.3p
 @man man/man3p/SOAP::Transport::POP3.3p
+@man man/man3p/SOAP::Transport::TCP.3p
 @man man/man3p/SOAP::Utils.3p
-@man man/man3p/UDDI::Lite.3p
-@man man/man3p/XML::Parser::Lite.3p
-@man man/man3p/XMLRPC::Lite.3p
-@man man/man3p/XMLRPC::Test.3p
-@man man/man3p/XMLRPC::Transport::HTTP.3p
-@man man/man3p/XMLRPC::Transport::POP3.3p
-@man man/man3p/XMLRPC::Transport::TCP.3p
 share/examples/p5-SOAP-Lite/
 share/examples/p5-SOAP-Lite/COM/
 share/examples/p5-SOAP-Lite/COM/README
