@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2014/03/23 13:18:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.133 2014/03/28 09:30:34 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -56,7 +56,7 @@ LIB_DEPENDS=		audio/libgpod \
 # context plugin
 RUN_DEPENDS +=		www/py-mako${MODPY_FLAVOR}
 
-# grilo plugin
+# calls grl_registry_load...plugin
 RUN_DEPENDS +=		x11/gnome/grilo-plugins
 
 # rbzeitgeist plugin

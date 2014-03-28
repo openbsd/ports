@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2014/03/27 17:10:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.117 2014/03/28 09:30:34 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -42,8 +42,10 @@ BUILD_DEPENDS +=	devel/pylint
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/py-gobject3 \
-			x11/dbus-python \
-			x11/gnome/grilo-plugins
+			x11/dbus-python
+
+# calls grl_registry_load...plugin
+RUN_DEPENDS +=		x11/gnome/grilo-plugins
 
 LIB_DEPENDS=		x11/gnome/totem-pl-parser \
 			devel/gobject-introspection \

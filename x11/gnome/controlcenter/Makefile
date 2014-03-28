@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2014/03/28 08:48:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.125 2014/03/28 09:30:34 ajacoutot Exp $
 
 # XXX remove pre-configure when updating to 3.12.0
 # https://git.gnome.org/browse/gnome-control-center/commit/?id=4736b03ed9e2ae9214117454f70811dbacd78739
@@ -11,6 +11,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.12.0
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -77,6 +78,9 @@ RUN_DEPENDS+=		x11/gnome/power-manager
 
 # needed for gnome-printers-panel
 RUN_DEPENDS+=		print/cups-pk-helper
+
+# calls grl_registry_load...plugin
+RUN_DEPENDS +=		x11/gnome/grilo-plugins
 
 # needed for gnome-region-panel; optional and would create a cyclic dep:
 # gnome-session -> gnome-shell -> gnome-control-center -> gnome-session

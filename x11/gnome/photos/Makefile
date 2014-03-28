@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2014/03/27 16:21:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2014/03/28 09:30:34 ajacoutot Exp $
 
 TRACKER_VERSION=	1.0
 
@@ -6,6 +6,7 @@ COMMENT=		access, organize and share your photos on GNOME
 
 GNOME_PROJECT=		gnome-photos
 GNOME_VERSION=		3.12.0
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -37,6 +38,9 @@ LIB_DEPENDS=		graphics/gegl \
 			x11/gnome/grilo \
 			x11/gnome/online-accounts \
 			x11/gnome/tracker
+
+# calls grl_registry_load...plugin
+RUN_DEPENDS +=		x11/gnome/grilo-plugins
 
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_DESKTOP_FILE=	Yes

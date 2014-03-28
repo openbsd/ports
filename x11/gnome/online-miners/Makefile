@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/03/27 17:51:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2014/03/28 09:30:34 ajacoutot Exp $
 
 TRACKER_VERSION=	1.0
 
@@ -35,7 +35,7 @@ LIB_DEPENDS=		devel/libgdata \
 			x11/gnome/libzapojit \
 			x11/gnome/tracker
 
-# gom-flickr-miner.c: grl_registry_load_plugin_by_id (registry, "grl-flickr", ...)
+# calls grl_registry_load...plugin
 RUN_DEPENDS +=		x11/gnome/grilo-plugins
 
 LIBTOOL_FLAGS=		--tag=disable-static
