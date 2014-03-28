@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2014/03/24 07:47:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2014/03/28 11:40:16 sthen Exp $
+
+BROKEN=		needs update for perl 5.18
 
 COMMENT=	perl tools for bioinformatics
 
