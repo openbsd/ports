@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.58 2014/01/20 15:36:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2014/03/28 08:03:18 ajacoutot Exp $
 
 COMMENT=		base elements for GStreamer
 
 V=			0.10.36
 DISTNAME=		gst-plugins-base-${V}
 PKGNAME=		gstreamer-plugins-base-${V}
-REVISION=		9
+REVISION=		10
 
 SHARED_LIBS +=  gstinterfaces-0.10   2.6      # .25.0
 SHARED_LIBS +=  gsttag-0.10          2.6      # .25.0
@@ -32,8 +32,11 @@ WANTLIB += xcb-render xcb-shm xml2 z
 
 MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-base/}
 
+BUILD_DEPENDS=		devel/iso-codes
+RUN_DEPENDS=		devel/iso-codes
+
 # needed for ${WRKSRC}/tests/
-BUILD_DEPENDS=		x11/gtk+2
+BUILD_DEPENDS +=	x11/gtk+2
 
 LIB_DEPENDS=		${P}/core \
 			audio/cdparanoia \

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2013/10/04 07:25:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2014/03/28 08:01:15 ajacoutot Exp $
 
 COMMENT=	gtk+3 spelling checker
 
 DISTNAME=	gtkspell3-3.0.4
+REVISION=	0
 
 SHARED_LIBS +=  gtkspell3-3          0.1      # 1.0
 
@@ -30,6 +31,9 @@ MODULES=	devel/gettext \
 		x11/gnome
 
 MODGNOME_TOOLS=	gi vala
+
+BUILD_DEPENDS=	devel/iso-codes
+RUN_DEPENDS=	devel/iso-codes
 
 LIB_DEPENDS=	textproc/enchant \
 		x11/gtk+3
