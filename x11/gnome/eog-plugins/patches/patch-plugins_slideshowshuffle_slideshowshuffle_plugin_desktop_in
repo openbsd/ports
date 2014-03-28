@@ -1,0 +1,13 @@
+$OpenBSD: patch-plugins_slideshowshuffle_slideshowshuffle_plugin_desktop_in,v 1.1 2014/03/28 09:25:27 jasper Exp $
+
+Use python3 loader 
+
+--- plugins/slideshowshuffle/slideshowshuffle.plugin.desktop.in.orig	Fri Mar 28 10:23:38 2014
++++ plugins/slideshowshuffle/slideshowshuffle.plugin.desktop.in	Fri Mar 28 10:23:47 2014
+@@ -1,5 +1,5 @@
+ [Plugin]
+-Loader=python
++Loader=python3
+ Module=slideshowshuffle
+ IAge=2
+ _Name=Slideshow Shuffle
