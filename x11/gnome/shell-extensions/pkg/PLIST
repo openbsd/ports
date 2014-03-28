@@ -1,18 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.8 2014/03/27 19:05:58 jasper Exp $
-share/applications/
+@comment $OpenBSD: PLIST,v 1.9 2014/03/28 16:02:22 ajacoutot Exp $
 share/applications/gnome-shell-classic.desktop
-share/glib-2.0/
-share/glib-2.0/schemas/
 share/glib-2.0/schemas/org.gnome.shell.extensions.auto-move-windows.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.classic-overrides.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.example.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.native-window-placement.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.user-theme.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.extensions.window-list.gschema.xml
-share/gnome-session/
-share/gnome-session/sessions/
 share/gnome-session/sessions/gnome-classic.session
-share/gnome-shell/
 share/gnome-shell/extensions/
 share/gnome-shell/extensions/alternate-tab@gnome-shell-extensions.gcampax.github.com/
 share/gnome-shell/extensions/alternate-tab@gnome-shell-extensions.gcampax.github.com/convenience.js
@@ -88,18 +82,13 @@ share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.
 share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/stylesheet.css
 share/gnome-shell/modes/
 share/gnome-shell/modes/classic.json
-share/gnome-shell/theme/
 share/gnome-shell/theme/classic-process-working.svg
 share/gnome-shell/theme/classic-toggle-off-intl.svg
 share/gnome-shell/theme/classic-toggle-off-us.svg
 share/gnome-shell/theme/classic-toggle-on-intl.svg
 share/gnome-shell/theme/classic-toggle-on-us.svg
 share/gnome-shell/theme/gnome-classic.css
-share/locale/af/
-share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/gnome-shell-extensions.mo
-share/locale/an/
-share/locale/an/LC_MESSAGES/
 share/locale/an/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/ar/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/as/LC_MESSAGES/gnome-shell-extensions.mo
@@ -125,8 +114,6 @@ share/locale/hu/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/id/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/it/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/ja/LC_MESSAGES/gnome-shell-extensions.mo
-share/locale/kk/
-share/locale/kk/LC_MESSAGES/
 share/locale/kk/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/kn/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/ko/LC_MESSAGES/gnome-shell-extensions.mo
