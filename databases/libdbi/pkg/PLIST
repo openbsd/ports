@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/02 00:57:57 merdely Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2014/03/28 07:38:09 ajacoutot Exp $
 include/dbi/
 include/dbi/dbd.h
 include/dbi/dbi-dev.h
 include/dbi/dbi.h
 lib/libdbi.a
 lib/libdbi.la
+@lib lib/libdbi.so.${LIBdbi_VERSION}
 share/doc/libdbi/
 share/doc/libdbi/driver-guide/
 share/doc/libdbi/driver-guide.pdf
@@ -51,4 +51,3 @@ share/doc/libdbi/programmers-guide/reference.html
 share/doc/libdbi/programmers-guide/terminology.html
 share/doc/libdbi/programmers-guide/x267.html
 share/doc/libdbi/programmers-guide/x276.html
-share/doc/libdbi/programmers-guide/x278.html

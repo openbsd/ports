@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/21 08:45:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2014/03/28 07:38:08 ajacoutot Exp $
 
 COMMENT =		database-independent abstraction layer
-DISTNAME =		libdbi-0.8.3
+DISTNAME =		libdbi-0.8.4
 CATEGORIES =		databases
 SHARED_LIBS +=		dbi 0.0 # .0.5
 
