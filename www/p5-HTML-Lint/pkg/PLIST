@@ -1,14 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/10/02 23:10:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/03/28 15:22:41 sthen Exp $
 @conflict weblint-*
 bin/weblint
 ${P5SITE}/HTML/Lint/
 ${P5SITE}/HTML/Lint.pm
 ${P5SITE}/HTML/Lint/Error.pm
 ${P5SITE}/HTML/Lint/HTML4.pm
+${P5SITE}/HTML/Lint/Parser.pm
 ${P5SITE}/Test/
 ${P5SITE}/Test/HTML/
 ${P5SITE}/Test/HTML/Lint.pm
 @man man/man3p/HTML::Lint.3p
 @man man/man3p/HTML::Lint::Error.3p
 @man man/man3p/HTML::Lint::HTML4.3p
+@man man/man3p/HTML::Lint::Parser.3p
 @man man/man3p/Test::HTML::Lint.3p
