@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/03/28 12:17:47 sthen Exp $
+@conflict p5-SOAP-Lite-<1.11
+${P5SITE}/IO/
+${P5SITE}/IO/SessionData.pm
+${P5SITE}/IO/SessionSet.pm
