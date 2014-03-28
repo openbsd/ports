@@ -1,7 +1,9 @@
-$OpenBSD: patch-plugins_slideshowshuffle_slideshowshuffle_plugin_desktop_in,v 1.2 2014/03/28 09:33:20 jasper Exp $
+$OpenBSD: patch-plugins_slideshowshuffle_slideshowshuffle_plugin_desktop_in,v 1.3 2014/03/28 20:28:30 jasper Exp $
 
-Switch slideshowshuffle to python3 loader
-https://bugzilla.gnome.org/show_bug.cgi?id=727222
+From 4d024133af07ba738542e23917c31d7248b6ef2a Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Fri, 28 Mar 2014 09:26:24 +0000
+Subject: Switch slideshowshuffle to use the python3 loader.
 
 --- plugins/slideshowshuffle/slideshowshuffle.plugin.desktop.in.orig	Fri Mar 28 10:23:38 2014
 +++ plugins/slideshowshuffle/slideshowshuffle.plugin.desktop.in	Fri Mar 28 10:23:47 2014

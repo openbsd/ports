@@ -1,7 +1,9 @@
-$OpenBSD: patch-plugins_export-to-folder_export-to-folder_py,v 1.1 2014/03/28 09:25:27 jasper Exp $
+$OpenBSD: patch-plugins_export-to-folder_export-to-folder_py,v 1.2 2014/03/28 20:28:30 jasper Exp $
 
-Stop export-to-folder plugin from being too chatty.
-https://bugzilla.gnome.org/show_bug.cgi?id=727218
+From e70eff0464b1943162c1cf4e707b4f8b9707172f Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Fri, 28 Mar 2014 08:53:24 +0000
+Subject: Make the export-to-folder plugin less chatty.
 
 --- plugins/export-to-folder/export-to-folder.py.orig	Fri Mar 28 09:51:35 2014
 +++ plugins/export-to-folder/export-to-folder.py	Fri Mar 28 09:51:49 2014
