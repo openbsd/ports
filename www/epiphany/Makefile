@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2014/03/27 09:09:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.110 2014/03/28 09:17:37 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	3.12.0
+REVISION=	0
 
 CATEGORIES=	www
 
@@ -57,7 +58,7 @@ MODULES=	devel/dconf \
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
-MODGNOME_TOOLS=		Yes
+MODGNOME_TOOLS=		yelp
 MODGNOME_DESKTOP_FILE=	Yes
 
 CONFIGURE_STYLE=gnu
