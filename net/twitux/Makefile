@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2013/10/26 08:02:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2014/03/28 09:56:03 ajacoutot Exp $
 
 COMMENT=		Gtk-based GUI client for Twitter
 
 GNOME_PROJECT=		twitux
 GNOME_VERSION=		0.69
-REVISION=		8
+REVISION=		9
 EPOCH=			0
 
 CATEGORIES=     	net
@@ -27,6 +27,7 @@ WANTLIB += stdc++ vorbis vorbisfile xcb xcb-render xcb-shm xml2
 WANTLIB += z
 
 BUILD_DEPENDS=	devel/iso-codes
+RUN_DEPENDS=	devel/iso-codes
 
 LIB_DEPENDS=	devel/libsoup \
 		x11/libsexy \
