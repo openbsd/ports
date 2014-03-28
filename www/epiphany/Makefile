@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2014/03/28 09:17:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.111 2014/03/28 10:05:10 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	3.12.0
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www
 
@@ -30,7 +30,7 @@ WANTLIB += icui18n javascriptcoregtk-3.0 jpeg orc-0.4 EGL harfbuzz-icu
 WANTLIB += m notify p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs secret-1 soup-2.4
 WANTLIB += sqlite3 startup-notification-1 stdc++ webkit2gtk-3.0
-WANTLIB += webp wnck-3 xcb xcb-aux xcb-render xcb-shm xkbfile
+WANTLIB += webp wnck-3 xcb xcb-aux xcb-render xcb-shm
 WANTLIB += xml2 xslt z icudata icuuc
 
 BUILD_DEPENDS=	devel/iso-codes \
@@ -71,5 +71,8 @@ MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 TEST_DEPENDS=		${BASE_PKGPATH}
 TEST_IS_INTERACTIVE=	x11
 PORTHOME=		${WRKDIR}
+
+post-install:
+	rm ${PREFIX}/lib/epiphany/3.12/web-extensions/*.la
 
 .include <bsd.port.mk>
