@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:35:50 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/03/28 11:36:08 sthen Exp $
 
 COMMENT=	PayPal API
 
-DISTNAME=	Business-PayPal-API-0.69
-REVISION=	0
+DISTNAME=	Business-PayPal-API-0.70
 CATEGORIES=	net
-USE_GROFF=	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=   Yes
