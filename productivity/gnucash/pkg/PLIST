@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2014/01/28 17:45:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2014/03/28 08:12:05 ajacoutot Exp $
 @conflict gnucash-docs-*
 @pkgpath productivity/gnucash-docs
 bin/gnc-fq-check
@@ -12,7 +12,6 @@ bin/gnucash-valgrind
 include/gnucash/
 include/gnucash/Account.h
 include/gnucash/FreqSpec.h
-include/gnucash/GNCId.h
 include/gnucash/Query.h
 include/gnucash/QuickFill.h
 include/gnucash/Recurrence.h
@@ -486,7 +485,6 @@ share/gnome/help/gnucash-guide/C/figures/invest_AccountsPredef.png
 share/gnome/help/gnucash-guide/C/figures/invest_SetupPortfolio2.png
 share/gnome/help/gnucash-guide/C/figures/invest_dividendcash.png
 share/gnome/help/gnucash-guide/C/figures/invest_dividendreinvest1.png
-share/gnome/help/gnucash-guide/C/figures/invest_dividendreinvest2.png
 share/gnome/help/gnucash-guide/C/figures/invest_int1.png
 share/gnome/help/gnucash-guide/C/figures/invest_int2-1.png
 share/gnome/help/gnucash-guide/C/figures/invest_int2.png
@@ -1441,7 +1439,6 @@ share/gnucash/accounts/sk/acctchrt_spouseinc.gnucash-xea
 share/gnucash/accounts/sk/acctchrt_spouseretire.gnucash-xea
 share/gnucash/accounts/sv_SE/
 share/gnucash/accounts/sv_SE/bas_2012.gnucash-xea
-share/gnucash/accounts/sv_SE/swedish_small_business.gnucash-xea
 share/gnucash/accounts/tr_TR/
 share/gnucash/accounts/tr_TR/acctchrt_TEKDUZ.gnucash-xea
 share/gnucash/accounts/tr_TR/acctchrt_brokerage.gnucash-xea
