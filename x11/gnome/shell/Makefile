@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.74 2014/03/28 08:48:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2014/03/28 15:54:15 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.12.0
-REVISION=		0
+REVISION=		1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -48,14 +48,6 @@ MODGNOME_TOOLS=		docbook gi
 BUILD_DEPENDS +=	devel/gsettings-desktop-schemas
 RUN_DEPENDS +=		devel/gsettings-desktop-schemas
 
-# gnome-keybindings.pc, sysutils/accountsservice (unlockDialog.js...)
-BUILD_DEPENDS +=	x11/gnome/controlcenter
-RUN_DEPENDS +=		x11/gnome/controlcenter
-
-# onscreen keyboard
-BUILD_DEPENDS +=	x11/gnome/caribou
-RUN_DEPENDS +=		x11/gnome/caribou
-
 LIB_DEPENDS=		audio/pulseaudio \
 			databases/evolution-data-server \
 			multimedia/gstreamer1/core \
@@ -65,6 +57,16 @@ LIB_DEPENDS=		audio/pulseaudio \
 			x11/gnome/gcr \
 			x11/gnome/gjs \
 			x11/gnome/mutter>=3.10.4
+
+# configure looks for gnome-keybindings.pc
+# system.js, backgroundMenu.js, network.js, remoteSearch.js
+# brings sysutils/accountsservice introspection libs
+BUILD_DEPENDS +=	x11/gnome/controlcenter
+RUN_DEPENDS +=		x11/gnome/controlcenter
+
+# onscreen keyboard
+BUILD_DEPENDS +=	x11/gnome/caribou
+RUN_DEPENDS +=		x11/gnome/caribou
 
 # polkit(8) almost always needs to know the "active" session
 RUN_DEPENDS +=		sysutils/consolekit
@@ -80,9 +82,8 @@ RUN_DEPENDS +=		devel/py-gobject3
 # dateMenu.js
 RUN_DEPENDS +=		x11/gnome/clocks
 
-# telepathyClient.js, userMenu.js (AccountManager)
-RUN_DEPENDS +=		net/telepathy/telepathy-logger \
-			net/telepathy/telepathy-mission-control
+# telepathyClient.js
+RUN_DEPENDS +=		net/telepathy/telepathy-logger
 
 # yelp.desktop menu entry (from yelp: OnlyShowIn=GNOME;Unity;)
 # prevents => The URI "help:gnome-help/index" does not point to a valid page.
