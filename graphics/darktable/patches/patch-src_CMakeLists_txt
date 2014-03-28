@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1 2014/03/28 15:08:03 jasper Exp $
+
+Disable -Werror to prevent failing compilation when using deprecated
+functions from libgnome-keyring
+
+--- src/CMakeLists.txt.orig	Fri Mar 28 15:53:14 2014
++++ src/CMakeLists.txt	Fri Mar 28 15:56:56 2014
+@@ -315,7 +315,7 @@ if(NOT CUSTOM_CFLAGS)
+ if(NOT APPLE AND NOT CMAKE_C_COMPILER_ID STREQUAL "Clang")
+   # apple build fails on deprecated warnings..
+   # and too many warnings reported by Clang for now
+-  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Werror")
++  #set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Werror")
+ 
+   # gcc-4.8 build fails on unused local typedefs in gmacros.h:162
+   # to be removed when glib will get fixed
