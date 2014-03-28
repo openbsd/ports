@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1209 2014/03/26 14:36:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.1210 2014/03/28 12:18:37 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -778,6 +778,7 @@
      SUBDIR += p5-IO-LockedFile
      SUBDIR += p5-IO-Multiplex
      SUBDIR += p5-IO-Pager
+     SUBDIR += p5-IO-SessionData
      SUBDIR += p5-IO-String
      SUBDIR += p5-IO-Tee
      SUBDIR += p5-IO-Tty
