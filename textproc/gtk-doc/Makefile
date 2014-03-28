@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2014/03/25 13:01:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2014/03/28 09:10:04 ajacoutot Exp $
 
 COMMENT=	GTK C code documentation system
 
@@ -17,7 +17,7 @@ MODULES=		x11/gnome \
 			lang/python
 
 MODPY_RUNDEP=		No
-MODGNOME_TOOLS= 	yelp
+MODGNOME_TOOLS= 	docbook yelp
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-highlight=source-highlight
@@ -29,7 +29,6 @@ PKG_ARCH=		*
 
 # glib2 needed to build regression tests
 BUILD_DEPENDS=		devel/glib2 \
-			textproc/docbook-xsl \
 			textproc/openjade \
 			textproc/source-highlight
 
