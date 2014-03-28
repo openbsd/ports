@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2014/03/24 15:08:21 ajacoutot Exp $
+$OpenBSD: README,v 1.6 2014/03/28 10:30:28 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -19,7 +19,7 @@ Configuration is done in:
 
 nginx(8) configuration
 ----------------------
-The following configuration chunk must be added to the server {} block
+The following configuration chunk must be added to the server{} block
 to deny access to the configuration directory:
 
 -8<---------------------------------------------------------------------
