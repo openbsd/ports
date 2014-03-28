@@ -1,6 +1,6 @@
-$OpenBSD: patch-get_iplayer,v 1.59 2014/03/09 21:07:49 sthen Exp $
+$OpenBSD: patch-get_iplayer,v 1.60 2014/03/28 16:18:21 sthen Exp $
 --- get_iplayer.orig	Wed Nov  6 20:12:35 2013
-+++ get_iplayer	Thu Nov  7 13:27:59 2013
++++ get_iplayer	Fri Mar 28 16:16:29 2014
 @@ -320,6 +320,7 @@ $opt->{verbose} = 1 if $opt_pre->{verbose};
  $opt->{quiet} = 1 if $opt_pre->{quiet};
  $opt->{pvr} = 1 if $opt_pre->{pvr};
@@ -52,6 +52,15 @@ $OpenBSD: patch-get_iplayer,v 1.59 2014/03/09 21:07:49 sthen Exp $
  				],
  		safari		=> [
  				'Mozilla/5.0 (iPhone; U; CPU iPhone OS 2_0 like Mac OS X; en-us) AppleWebKit/525.18.1 (KHTML, like Gecko) Version/3.1.1 Mobile/5A345 Safari/525.20',
+@@ -2583,7 +2586,7 @@ sub request_url_retry {
+ 	}
+ 
+ 	# Malformed URL check
+-	if ( $url !~ m{^\s*http\:\/\/}i ) {
++	if ( $url !~ m{^\s*(http|https)\:\/\/}i ) {
+ 		logger "ERROR: Malformed URL: '$url'\n";
+ 		return '';
+ 	}
 @@ -9808,7 +9811,7 @@ sub tag_file_id3 {
  # add basic ID3 tag with id3v2
  sub tag_file_id3_basic {
