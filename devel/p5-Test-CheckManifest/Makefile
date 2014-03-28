@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/23 22:29:04 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2014/03/28 21:25:13 nigel Exp $
 
 COMMENT =	check Manifest matches your distro
 
-DISTNAME =	Test-CheckManifest-1.26
+DISTNAME =	Test-CheckManifest-1.28
 CPAN_AUTHOR =	RENEEB
 CATEGORIES =	devel
 
