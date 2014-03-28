@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:42:47 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/03/28 16:19:31 jasper Exp $
 
 COMMENT =		source code beautifier
 
@@ -18,8 +18,7 @@ WANTLIB += c m stdc++
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=uncrustify/}
 
-CONFIGURE_STYLE =	simple
-CONFIGURE_ARGS +=	--mandir=${LOCALBASE}/man/
+CONFIGURE_STYLE =	gnu
 
 MODULES =	lang/python
 
