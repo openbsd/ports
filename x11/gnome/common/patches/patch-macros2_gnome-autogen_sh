@@ -1,0 +1,30 @@
+$OpenBSD: patch-macros2_gnome-autogen_sh,v 1.1 2014/03/28 12:33:10 jasper Exp $
+
+Revert, as it leads to:
+/usr/local/bin/aclocal[35]: /usr/local/bin/aclocal-1.14.1: not found
+
+From b6f099488526288ad0ab1b2061304441df0b2466 Mon Sep 17 00:00:00 2001
+From: Ryan Lortie <desrt@desrt.ca>
+Date: Thu, 13 Mar 2014 13:57:29 +0000
+Subject: gnome-autogen: require automake 1.11.2
+
+--- macros2/gnome-autogen.sh.orig	Fri Mar 28 13:30:43 2014
++++ macros2/gnome-autogen.sh	Fri Mar 28 13:30:57 2014
+@@ -6,7 +6,6 @@ test "$PKG_NAME" || PKG_NAME=Package
+ test "$srcdir" || srcdir=.
+ 
+ # default version requirements ...
+-test "$REQUIRED_AUTOMAKE_VERSION" || REQUIRED_AUTOMAKE_VERSION=1.11.2
+ test "$REQUIRED_AUTORECONF_VERSION" || REQUIRED_AUTORECONF_VERSION=2.53
+ test "$REQUIRED_GLIB_GETTEXT_VERSION" || REQUIRED_GLIB_GETTEXT_VERSION=2.2.0
+ test "$REQUIRED_INTLTOOL_VERSION" || REQUIRED_INTLTOOL_VERSION=0.25
+@@ -251,9 +250,6 @@ want_pkg_config=false
+ want_gtk_doc=false
+ want_gnome_doc_utils=false
+ want_maintainer_mode=false
+-
+-version_check automake AUTOMAKE automake $REQUIRED_AUTOMAKE_VERSION \
+-    "http://ftp.gnu.org/pub/gnu/automake/automake-$REQUIRED_AUTOMAKE_VERSION.tar.xz"
+ 
+ version_check autoreconf AUTORECONF autoreconf $REQUIRED_AUTORECONF_VERSION \
+     "http://ftp.gnu.org/pub/gnu/autoconf/autoconf-$REQUIRED_AUTORECONF_VERSION.tar.xz"
