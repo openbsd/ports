@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/03/27 17:51:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2014/03/29 00:19:45 ajacoutot Exp $
 
 COMMENT=		modular geoinformation service on top of D-Bus
 
@@ -6,7 +6,7 @@ VERSION=		2.1.7
 DISTNAME=		geoclue-${VERSION}
 PKGNAME=		geoclue2-${VERSION}
 CATEGORIES=		geo devel
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		http://geoclue.freedesktop.org/
 
@@ -28,7 +28,8 @@ LIB_DEPENDS=		devel/libsoup \
 MODGNOME_DESKTOP_FILE=	Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--with-dbus-service-user==_geoclue
+# XXX Failed to acquire name 'org.freedesktop.GeoClue2' on system bus or lost it.
+#CONFIGURE_ARGS=		--with-dbus-service-user==_geoclue
 
 # disable all components requiring ModemManager
 CONFIGURE_ARGS +=	--disable-3g-source \
