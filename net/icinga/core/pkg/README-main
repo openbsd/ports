@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.16 2014/03/26 12:09:28 sthen Exp $
+$OpenBSD: README-main,v 1.17 2014/03/29 12:07:01 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -58,7 +58,7 @@ UI, you may need to set disable_cmd_cgi_csrf_protection=1 in cgi.cfg.
 Chroot Considerations
 =====================
 
-If you're using OpenBSD's default chroot environment for httpd with
+If you're using OpenBSD's default chroot environment for nginx with
 the icinga-cgi package, some files will need to be moved inside the
 jail and symbolic links created.
 
@@ -198,8 +198,8 @@ existing configuration files:
 	echo 'icinga_flags="-d ${BASESYSCONFDIR}/nagios/nagios.cfg"' >> /etc/rc.conf.local
 	echo 'pkg_scripts="${pkg_scripts} icinga' >> /etc/rc.conf.local
 
-You will need to merge the settings between Nagios' and Icinga's
-cgi.cfg files.  sdiff(1), as used by sysmerge(8), can help with this.
-main_config_file and some other settings (admin usernames etc) should
-be taken from the Nagios file, whereas the various web-related settings
-(url_html_path, physical_html_path, etc) need to point to the Icinga files.
+You will need to merge the settings between Nagios' and Icinga's cgi.cfg
+files. sdiff(1), as used by sysmerge(8), can help with this. main_config_file
+and some other settings (admin usernames etc) should be taken from the
+Nagios file, whereas the various web-related settings (url_html_path,
+physical_html_path, etc) need to point to the Icinga files.
