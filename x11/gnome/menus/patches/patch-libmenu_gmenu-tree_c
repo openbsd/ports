@@ -1,0 +1,39 @@
+$OpenBSD: patch-libmenu_gmenu-tree_c,v 1.6 2014/03/29 08:56:24 ajacoutot Exp $
+
+From e951cfaad73000b533304b52a5dbbce23c11efd9 Mon Sep 17 00:00:00 2001
+From: Jasper St. Pierre <jstpierre@mecheye.net>
+Date: Mon, 18 Nov 2013 23:11:17 +0000
+Subject: Revert "Memory leak fixes"
+
+From fabf5ba19d1cead5c91c3669e48f090e7a60d16f Mon Sep 17 00:00:00 2001
+From: Jasper St. Pierre <jstpierre@mecheye.net>
+Date: Mon, 18 Nov 2013 23:10:57 +0000
+Subject: Memory leak fixes
+
+--- libmenu/gmenu-tree.c.orig	Sat Mar 29 09:35:55 2014
++++ libmenu/gmenu-tree.c	Sat Mar 29 09:35:31 2014
+@@ -1242,13 +1242,9 @@ gmenu_tree_directory_make_path (GMenuTreeDirectory *di
+   append_directory_path (directory, path);
+ 
+   if (entry != NULL)
+-    {
+-      const char *basename;
++    g_string_append (path,
++		     desktop_entry_get_basename (entry->desktop_entry));
+ 
+-      basename = desktop_entry_get_basename (entry->desktop_entry);
+-      g_string_append (path, basename);
+-    }
+-
+   return g_string_free (path, FALSE);
+ }
+ 
+@@ -1277,7 +1273,7 @@ gmenu_tree_entry_get_desktop_file_path (GMenuTreeEntry
+ const char *
+ gmenu_tree_entry_get_desktop_file_id (GMenuTreeEntry *entry)
+ {
+-  g_return_val_if_fail (entry != NULL, FALSE);
++  g_return_val_if_fail (entry != NULL, NULL);
+ 
+   return entry->desktop_file_id;
+ }

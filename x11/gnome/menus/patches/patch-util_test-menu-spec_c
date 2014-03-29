@@ -1,0 +1,18 @@
+$OpenBSD: patch-util_test-menu-spec_c,v 1.1 2014/03/29 08:56:24 ajacoutot Exp $
+
+From 353f866cc3b4938c8f771c972ce32f12a4a8b273 Mon Sep 17 00:00:00 2001
+From: Jasper St. Pierre <jstpierre@mecheye.net>
+Date: Mon, 18 Nov 2013 23:20:02 +0000
+Subject: test-menu-spec: Remove g_type_init()
+
+--- util/test-menu-spec.c.orig	Sat Oct  5 01:43:39 2013
++++ util/test-menu-spec.c	Sat Mar 29 09:35:34 2014
+@@ -207,8 +207,6 @@ main (int argc, char **argv)
+   GMenuTreeFlags      flags;
+   GError             *error = NULL;
+ 
+-  g_type_init ();
+-
+ #if 0
+   /* See comment when defining _() at the top of this file. */
+   bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
