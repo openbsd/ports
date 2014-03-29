@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2014/01/07 21:55:54 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2014/03/29 15:39:13 ajacoutot Exp $
 @conflict nut-<2.6.2p0
 @conflict nut-scanner-*
 @conflict upsd-*
@@ -69,7 +69,7 @@ bin/upssched-cmd
 @comment html/bottom.html
 @comment html/header.html
 @comment html/index.html
-html/nut-banner.png
+@comment html/nut-banner.png
 lib/libnutclient.a
 lib/libnutclient.la
 @lib lib/libnutclient.so.${LIBnutclient_VERSION}
