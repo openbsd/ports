@@ -1,0 +1,10 @@
+$OpenBSD: patch-libstdc++-v3_config_os_bsd_openbsd_os_defines_h,v 1.1 2014/03/29 10:09:27 sthen Exp $
+--- libstdc++-v3/config/os/bsd/openbsd/os_defines.h.orig	Fri Mar 28 17:52:22 2014
++++ libstdc++-v3/config/os/bsd/openbsd/os_defines.h	Fri Mar 28 17:53:21 2014
+@@ -38,4 +38,6 @@
+ #define _GLIBCXX_USE_C99_FLOAT_TRANSCENDENTALS_DYNAMIC _GLIBCXX_USE_C99_DYNAMIC
+ #define _GLIBCXX_USE_C99_FP_MACROS_DYNAMIC _GLIBCXX_USE_C99_DYNAMIC
+ 
++#undef _GLIBCXX_HAVE_GETS
++
+ #endif
