@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2014/03/14 17:26:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2014/03/29 09:02:26 jasper Exp $
 
 COMMENT=		fd.o menu editor for GNOME
 
 GNOME_PROJECT=		alacarte
-GNOME_VERSION=		3.10.0
-REVISION=		1
+GNOME_VERSION=		3.11.91
 
 CATEGORIES=		sysutils
 
@@ -25,6 +24,7 @@ RUN_DEPENDS +=		x11/gtk+3
 
 PKG_ARCH=		*
 
+MODGNOME_TOOLS= 	docbook
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 

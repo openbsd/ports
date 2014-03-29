@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/04/04 07:05:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2014/03/29 09:02:26 jasper Exp $
 bin/alacarte
 lib/python${MODPY_VERSION}/site-packages/Alacarte/
 lib/python${MODPY_VERSION}/site-packages/Alacarte/ItemEditor.py
@@ -19,6 +19,7 @@ lib/python${MODPY_VERSION}/site-packages/Alacarte/config.pyo
 lib/python${MODPY_VERSION}/site-packages/Alacarte/util.py
 lib/python${MODPY_VERSION}/site-packages/Alacarte/util.pyc
 lib/python${MODPY_VERSION}/site-packages/Alacarte/util.pyo
+@man man/man1/alacarte.1
 share/alacarte/
 share/alacarte/alacarte.ui
 share/alacarte/directory-editor.ui
