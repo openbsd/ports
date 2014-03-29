@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2013/12/12 21:56:19 brad Exp $
+# $OpenBSD: Makefile,v 1.53 2014/03/29 22:50:05 brad Exp $
 
 COMMENT=	virus/spam scanning framework
 
@@ -9,7 +9,7 @@ DISTNAME=	mailscanner-${V}.${Vss}
 PKGNAME=	mailscanner-${V}.${Vss:S/-/./}
 REVISION=	0
 CATEGORIES=	mail
-MASTER_SITES=	http://mailscanner.info/files/4/tar/
+MASTER_SITES=	http://comstyle.com/source/
 
 DISTFILES=	MailScanner-install-${V}.${Vss}${EXTRACT_SUFX}
 
