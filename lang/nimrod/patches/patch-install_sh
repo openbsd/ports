@@ -1,0 +1,22 @@
+$OpenBSD: patch-install_sh,v 1.1.1.1 2014/03/29 23:59:26 jturner Exp $
+--- install.sh.orig	Mon May 20 17:16:12 2013
++++ install.sh	Fri Mar 28 16:45:39 2014
+@@ -39,13 +39,12 @@ if [ $# -eq 1 ] ; then
+       datadir=/usr/local/share/nimrod/data
+       ;;
+     *)
+-      bindir="$1/nimrod/bin"
+-      configdir="$1/nimrod/config"
+-      libdir="$1/nimrod/lib"
+-      docdir="$1/nimrod/doc"
+-      datadir="$1/nimrod/data"
++      bindir="$1/bin"
++      configdir="$1/share/examples/nimrod"
++      libdir="$1/lib/nimrod"
++      docdir="$1/share/doc/nimrod"
++      datadir="$1/share/nimrod"
+       
+-      mkdir -p $1/nimrod
+       mkdir -p $bindir
+       mkdir -p $configdir
+       ;;

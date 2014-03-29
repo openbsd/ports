@@ -1,0 +1,16 @@
+$OpenBSD: patch-build_sh,v 1.1.1.1 2014/03/29 23:59:26 jturner Exp $
+--- build.sh.orig	Mon May 20 17:16:12 2013
++++ build.sh	Fri Mar 28 15:19:25 2014
+@@ -26,9 +26,9 @@ do
+   esac
+ done
+ 
+-CC="gcc"
+-LINKER="gcc"
+-COMP_FLAGS="-w -O3 -fno-strict-aliasing$extraBuildArgs"
++#CC="gcc"
++#LINKER="gcc"
++COMP_FLAGS="$COMP_FLAGS -fno-strict-aliasing$extraBuildArgs"
+ LINK_FLAGS=""
+ # platform detection
+ ucpu=`uname -m`

@@ -1,0 +1,12 @@
+$OpenBSD: patch-build_3_1_posix_c,v 1.1.1.1 2014/03/29 23:59:26 jturner Exp $
+--- build/3_1/posix.c.orig	Fri Mar 28 18:55:21 2014
++++ build/3_1/posix.c	Fri Mar 28 18:55:26 2014
+@@ -16,8 +16,6 @@
+ 
+ #include <fenv.h>
+ 
+-#include <fmtmsg.h>
+-
+ #include <fnmatch.h>
+ 
+ #include <ftw.h>

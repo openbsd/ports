@@ -1,0 +1,40 @@
+$OpenBSD: patch-config_nimrod_cfg,v 1.1.1.1 2014/03/29 23:59:25 jturner Exp $
+--- config/nimrod.cfg.orig	Wed May  8 15:34:44 2013
++++ config/nimrod.cfg	Sat Mar 29 12:08:42 2014
+@@ -69,9 +69,9 @@ hint[LineTooLong]=off
+     tcc.options.linker = "-ldl"
+   @else:
+     # BSD got posix_spawn only recently, so we deactivate it for osproc:
+-    define:useFork
++    #define:useFork
+     # at least NetBSD has problems with thread local storage:
+-    tlsEmulation:on
++    #tlsEmulation:on
+   @end
+ @end
+ 
+@@ -97,6 +97,8 @@ hint[LineTooLong]=off
+ @else:
+   gcc.options.always = "-w"
+   gpp.options.always = "-w"
++  egcc.options.always = "-w"
++  egpp.options.always = "-w"
+ @end
+ 
+ gcc.options.speed = "-O3 -fno-strict-aliasing"
+@@ -107,6 +109,15 @@ gpp.options.speed = "-O3 -fno-strict-aliasing"
+ gpp.options.size = "-Os"
+ gpp.options.debug = "-g3 -O0"
+ #passl = "-pg"
++
++# Configuration for the ports GCC compiler:
++egcc.options.speed = "-O3 -fno-strict-aliasing"
++egcc.options.size = "-Os"
++egcc.options.debug = "-g3 -O0"
++
++egpp.options.speed = "-O3 -fno-strict-aliasing"
++egpp.options.size = "-Os"
++egpp.options.debug = "-g3 -O0"
+ 
+ # Configuration for the LLVM GCC compiler:
+ llvm_gcc.options.debug = "-g"
