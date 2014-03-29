@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.658 2014/03/20 13:18:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.659 2014/03/29 16:43:14 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -304,7 +304,6 @@
      SUBDIR += p5-Plack-Test-ExternalServer
      SUBDIR += p5-Plagger
      SUBDIR += p5-PodToHTML
-     SUBDIR += p5-RTx-Tags
      SUBDIR += p5-Rose-HTML-Objects
      SUBDIR += p5-Rose-HTMLx-Form-Field-Autocomplete
      SUBDIR += p5-Rose-URI
