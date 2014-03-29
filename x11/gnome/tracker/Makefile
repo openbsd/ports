@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.164 2014/03/27 15:12:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.165 2014/03/29 19:31:06 ajacoutot Exp $
 
 EVO_VERSION=		3.12
 SUBST_VARS +=		EVO_VERSION
@@ -9,6 +9,7 @@ COMMENT=		powerful desktop search tool and indexer
 
 GNOME_PROJECT=		tracker
 GNOME_VERSION=		1.0.0
+REVISION=		0
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
@@ -17,6 +18,7 @@ PKGNAME=		meta-tracker-${VERSION}
 # NOTE: when TRACKER_VERSION changes, increment accordingly and bump:
 # x11/gnome/documents
 # x11/gnome/grilo-plugins
+# x11/gnome/nautilus
 # x11/gnome/online-miners
 # x11/gnome/photos
 # x11/gnome/rygel
@@ -41,7 +43,7 @@ WANTLIB += gdk-3 gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gmime-2.6
 WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 gsf-1 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
 WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz icudata icui18n
-WANTLIB += icuuc jpeg kvm lcms2 lzma m nautilus-extension openjpeg
+WANTLIB += icuuc jpeg kvm lcms2 lzma m openjpeg
 WANTLIB += orc-0.4 osinfo-1.0 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png poppler poppler-glib pthread pthread-stubs
 WANTLIB += soup-2.4 sqlite3 stdc++ tag tag_c tiff totem-plparser
@@ -66,7 +68,6 @@ LIB_DEPENDS=		audio/libcue \
 			textproc/exempi \
 			textproc/icu4c \
 			x11/gnome/libmediaart \
-			x11/gnome/nautilus \
 			x11/gnome/totem-pl-parser
 
 # XXX should be a LIB_DEPENDS+WANTLIB but check-lib-depends(1) does not
@@ -102,14 +103,15 @@ CONFIGURE_ARGS +=	--disable-miner-rss
 # needs libiptcdata
 CONFIGURE_ARGS +=	--disable-libiptcdata
 
+# cyclic dependency with x11/gnome/nautilus
+CONFIGURE_ARGS +=	--disable-nautilus-extension
+
 # XXX re-enable evolution plugins when fixed upstream
 # temporarily disable evolution miner which does not build with evo >= 3.6.0
 # when fixed:
 #  uncomment BUILD_DEPENDS on evolution
 #  uncomment the rm call in post-install
 CONFIGURE_ARGS +=	--disable-miner-evolution
-
-MODGNOME_LDFLAGS=	-Wl,-rpath,${TRUEPREFIX}/lib/tracker-${TRACKER_VERSION}
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/meta-tracker/
 
@@ -122,7 +124,6 @@ post-install:
 	rm ${PREFIX}/lib/tracker-${TRACKER_VERSION}/extract-modules/*.la
 	rm ${PREFIX}/lib/tracker-${TRACKER_VERSION}/writeback-modules/*.la
 #	rm ${PREFIX}/lib/evolution/${EVO_VERSION}/plugins/*.la
-	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.la
 
 do-test:
 	cd ${WRKBUILD}/tests/functional-tests && ${MAKE_PROGRAM}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2014/03/27 15:12:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2014/03/29 19:31:06 ajacoutot Exp $
 @conflict evolution-meta-tracker-*
 @conflict nautilus-meta-tracker-*
 @pkgpath x11/gnome/tracker,-evolution
@@ -40,7 +40,6 @@ lib/libtracker-miner-${TRACKER_VERSION}.la
 @lib lib/libtracker-miner-${TRACKER_VERSION}.so.${LIBtracker-miner-1.0_VERSION}
 lib/libtracker-sparql-${TRACKER_VERSION}.la
 @lib lib/libtracker-sparql-${TRACKER_VERSION}.so.${LIBtracker-sparql-1.0_VERSION}
-lib/nautilus/extensions-3.0/libnautilus-tracker-tags.so
 lib/pkgconfig/tracker-control-${TRACKER_VERSION}.pc
 lib/pkgconfig/tracker-miner-${TRACKER_VERSION}.pc
 lib/pkgconfig/tracker-sparql-${TRACKER_VERSION}.pc

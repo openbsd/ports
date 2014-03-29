@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.136 2014/03/27 10:27:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.137 2014/03/29 19:31:06 ajacoutot Exp $
+
+TRACKER_VERSION=	1.0
 
 COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		3.12.0
+REVISION=		0
 
 SHARED_LIBS +=  nautilus-extension   3.0      # 5.0
 
@@ -20,6 +23,10 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3 gobject-2.0
 WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz m notify pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs xcb xcb-render xcb-shm xml2 z
+WANTLIB += icudata icui18n icuuc kvm sqlite3 uuid
+WANTLIB += tracker-sparql-${TRACKER_VERSION}
+WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-data
+WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-common
 
 MODULES=		devel/gettext \
 			x11/gnome \
@@ -31,16 +38,12 @@ RUN_DEPENDS=		x11/gnome/gvfs \
 LIB_DEPENDS=		x11/gnome/desktop \
 			devel/libnotify \
 			graphics/libexif \
-			textproc/exempi
+			textproc/exempi \
+			x11/gnome/tracker
 
 MODGNOME_TOOLS= 	gi
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_MIME_FILE=	Yes
-
-# it would introduce a cyclic dependency with x11/gnome/tracker; also it
-# is better to keep the regular search for nautilus so that we can get
-# results from paths not indexed by tracker
-CONFIGURE_ARGS +=	--disable-tracker
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
