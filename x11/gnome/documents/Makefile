@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2014/03/28 08:48:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2014/03/29 19:32:25 ajacoutot Exp $
 
 TRACKER_VERSION=1.0
 
@@ -8,6 +8,7 @@ COMMENT=	document manager for GNOME
 
 GNOME_PROJECT=	gnome-documents
 GNOME_VERSION=	3.12.0
+REVISION=	0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -40,6 +41,7 @@ MODULES=	devel/gettext \
 
 LIB_DEPENDS=	devel/libgdata \
 		graphics/evince \
+		x11/gnome/desktop \
 		x11/gnome/gjs \
 		x11/gnome/libzapojit \
 		x11/gnome/tracker

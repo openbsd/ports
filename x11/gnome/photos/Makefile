@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/03/28 09:30:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2014/03/29 19:32:25 ajacoutot Exp $
 
 TRACKER_VERSION=	1.0
 
@@ -6,7 +6,7 @@ COMMENT=		access, organize and share your photos on GNOME
 
 GNOME_PROJECT=		gnome-photos
 GNOME_VERSION=		3.12.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		graphics
 
@@ -34,6 +34,7 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 LIB_DEPENDS=		graphics/gegl \
+			x11/gnome/desktop \
 			x11/gnome/gfbgraph \
 			x11/gnome/grilo \
 			x11/gnome/online-accounts \
