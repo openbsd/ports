@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2014/03/28 15:54:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2014/03/29 08:47:21 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
@@ -60,7 +60,7 @@ LIB_DEPENDS=		audio/pulseaudio \
 
 # configure looks for gnome-keybindings.pc
 # system.js, backgroundMenu.js, network.js, remoteSearch.js
-# brings sysutils/accountsservice introspection libs
+# brings accountsservice and gnome-menus introspection libs
 BUILD_DEPENDS +=	x11/gnome/controlcenter
 RUN_DEPENDS +=		x11/gnome/controlcenter
 
