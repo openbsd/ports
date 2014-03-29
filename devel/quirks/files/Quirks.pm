@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.142 2014/03/27 12:46:07 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.143 2014/03/29 16:44:29 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -389,6 +389,7 @@ my $obsolete_reason = {
 	'gnome-search-tool' => 3,
 	'gnome-system-log' => 3,
 	'mash' => 3,
+	'p5-RTx-Tags' => 0,
 };
 
 # ->is_base_system($handle, $state):
