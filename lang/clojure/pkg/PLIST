@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/03/17 19:35:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/03/30 20:38:10 jasper Exp $
 bin/clojure
 clojure/
 clojure/clj_completions
@@ -62,18 +62,18 @@ clojure/src/jvm/clojure/asm/AnnotationVisitor.java
 clojure/src/jvm/clojure/asm/AnnotationWriter.java
 clojure/src/jvm/clojure/asm/Attribute.java
 clojure/src/jvm/clojure/asm/ByteVector.java
-clojure/src/jvm/clojure/asm/ClassAdapter.java
 clojure/src/jvm/clojure/asm/ClassReader.java
 clojure/src/jvm/clojure/asm/ClassVisitor.java
 clojure/src/jvm/clojure/asm/ClassWriter.java
+clojure/src/jvm/clojure/asm/Context.java
 clojure/src/jvm/clojure/asm/Edge.java
 clojure/src/jvm/clojure/asm/FieldVisitor.java
 clojure/src/jvm/clojure/asm/FieldWriter.java
 clojure/src/jvm/clojure/asm/Frame.java
+clojure/src/jvm/clojure/asm/Handle.java
 clojure/src/jvm/clojure/asm/Handler.java
 clojure/src/jvm/clojure/asm/Item.java
 clojure/src/jvm/clojure/asm/Label.java
-clojure/src/jvm/clojure/asm/MethodAdapter.java
 clojure/src/jvm/clojure/asm/MethodVisitor.java
 clojure/src/jvm/clojure/asm/MethodWriter.java
 clojure/src/jvm/clojure/asm/Opcodes.java
@@ -82,8 +82,8 @@ clojure/src/jvm/clojure/asm/commons/
 clojure/src/jvm/clojure/asm/commons/AdviceAdapter.java
 clojure/src/jvm/clojure/asm/commons/AnalyzerAdapter.java
 clojure/src/jvm/clojure/asm/commons/CodeSizeEvaluator.java
-clojure/src/jvm/clojure/asm/commons/EmptyVisitor.java
 clojure/src/jvm/clojure/asm/commons/GeneratorAdapter.java
+clojure/src/jvm/clojure/asm/commons/InstructionAdapter.java
 clojure/src/jvm/clojure/asm/commons/LocalVariablesSorter.java
 clojure/src/jvm/clojure/asm/commons/Method.java
 clojure/src/jvm/clojure/asm/commons/SerialVersionUIDAdder.java
@@ -91,6 +91,10 @@ clojure/src/jvm/clojure/asm/commons/StaticInitMerger.java
 clojure/src/jvm/clojure/asm/commons/TableSwitchGenerator.java
 clojure/src/jvm/clojure/asm/commons/package.html
 clojure/src/jvm/clojure/asm/package.html
+clojure/src/jvm/clojure/java/
+clojure/src/jvm/clojure/java/api/
+clojure/src/jvm/clojure/java/api/Clojure.java
+clojure/src/jvm/clojure/java/api/package.html
 clojure/src/jvm/clojure/lang/
 clojure/src/jvm/clojure/lang/AFn.java
 clojure/src/jvm/clojure/lang/AFunction.java
@@ -174,6 +178,7 @@ clojure/src/jvm/clojure/lang/MapEntry.java
 clojure/src/jvm/clojure/lang/MapEquivalence.java
 clojure/src/jvm/clojure/lang/MethodImplCache.java
 clojure/src/jvm/clojure/lang/MultiFn.java
+clojure/src/jvm/clojure/lang/Murmur3.java
 clojure/src/jvm/clojure/lang/Named.java
 clojure/src/jvm/clojure/lang/Namespace.java
 clojure/src/jvm/clojure/lang/Numbers.java
@@ -210,6 +215,7 @@ clojure/src/jvm/clojure/lang/TransactionalHashMap.java
 clojure/src/jvm/clojure/lang/Util.java
 clojure/src/jvm/clojure/lang/Var.java
 clojure/src/jvm/clojure/lang/XMLHandler.java
+clojure/src/jvm/clojure/lang/package.html
 clojure/src/jvm/clojure/main.java
 clojure/src/resources/
 clojure/src/resources/clojure/
