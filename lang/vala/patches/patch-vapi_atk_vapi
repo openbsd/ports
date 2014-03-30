@@ -1,6 +1,9 @@
-$OpenBSD: patch-vapi_atk_vapi,v 1.1 2014/03/30 14:42:13 ajacoutot Exp $
+$OpenBSD: patch-vapi_atk_vapi,v 1.2 2014/03/30 16:53:06 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=727029
+From ad4efc4c7b8dc13f62f14b8ecd9099baf58d2f67 Mon Sep 17 00:00:00 2001
+From: Luca Bruno <lucabru@src.gnome.org>
+Date: Sun, 30 Mar 2014 11:47:08 +0000
+Subject: atk: Update and fix metadata
 
 --- vapi/atk.vapi.orig	Sun Dec 22 19:40:23 2013
 +++ vapi/atk.vapi	Sun Mar 30 13:51:49 2014
