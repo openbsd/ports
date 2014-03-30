@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/12/08 15:06:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2014/03/30 14:31:56 ajacoutot Exp $
 
 BROKEN=		runtime issue (threads related?)
 
@@ -43,10 +43,7 @@ LIB_DEPENDS=	devel/libgtop2 \
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS=		yelp
-MODGNOME_LDFLAGS=	-Wl,-rpath,${TRUEPREFIX}/lib/nemiver
 
-# XXX our libtool(1) does not like to link against unversioned SOLIBS
-USE_LIBTOOL=	gnu
 LIBTOOL_FLAGS=	--tag=disable-static
 
 CONFIGURE_ARGS=	--disable-static \
