@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/06/15 09:04:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/03/30 18:38:31 brad Exp $
 @comment bin/fbxine
 @bin bin/xine
 bin/xine-bugreport
@@ -58,19 +58,9 @@ share/doc/xine-ui/README_pl
 share/doc/xine-ui/README_uk
 share/doc/xitk/
 share/doc/xitk/README
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/xine.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/xine.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/xine.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/xine.png
 share/locale/cs/LC_MESSAGES/xine-ui.mo
 share/locale/cs/LC_MESSAGES/xitk.mo
