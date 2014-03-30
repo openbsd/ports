@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2014/03/29 15:01:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2014/03/30 19:30:28 naddy Exp $
 
 ONLY_FOR_ARCHS = alpha amd64 i386 powerpc sparc64
 DPB_PROPERTIES = parallel
@@ -259,7 +259,8 @@ post-extract:
 	cp ${FULLDISTDIR}/${ECJ} ${WRKSRC}/ecj.jar
 .endif
 .if ${BUILD_PACKAGES:M-ada}
-	perl -pi -e 's,^#endif$$,#undef _GLIBCXX_HAVE_GETS\n#endif,' ${WRKDIR}/bootstrap/include/c++/*/*/bits/os_defines.h
+	perl -pi -e 's,^#define (_GLIBCXX_HAVE_GETS) .*,/* #undef $$1 */,' \
+		${WRKDIR}/bootstrap/include/c++/*/*/bits/c++config.h
 .endif
 
 post-install:
