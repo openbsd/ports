@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.7 2014/03/30 14:31:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2014/03/30 14:43:24 ajacoutot Exp $
 
-BROKEN=		runtime issue (threads related?)
 
 SHARED_ONLY=	Yes
 

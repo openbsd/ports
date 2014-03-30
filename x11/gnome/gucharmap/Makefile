@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2014/03/27 08:30:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.83 2014/03/30 14:43:24 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		Unicode character map for the GNOME project
 
 GNOME_PROJECT=		gucharmap
 GNOME_VERSION=		3.12.0
+REVISION=		0
 
 SHARED_LIBS +=  gucharmap_2_90            7.0 # 7.0
 
@@ -24,9 +25,7 @@ MODULES=		devel/gettext \
 			devel/dconf \
 			x11/gnome
 
-# XXX: disable vala for now:
-# error: The type name `Atk.TableCell' could not be found
-MODGNOME_TOOLS= 	gi yelp
+MODGNOME_TOOLS= 	gi vala yelp
 MODGNOME_DESKTOP_FILE=	Yes
 
 LIB_DEPENDS=		x11/gtk+3,-main
