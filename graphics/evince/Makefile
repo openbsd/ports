@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2014/03/27 12:14:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.105 2014/03/30 13:37:34 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,14 +9,16 @@ COMMENT-nautilus= evince plugin for nautilus
 GNOME_PROJECT=	evince
 GNOME_VERSION=	3.12.0
 
+PKGNAME-main=	${DISTNAME}
+PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
+PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
+
+REVISION-main=	0
+
 MAJ_V=		3.0
 SUBST_VARS=	MAJ_V
 
 CATEGORIES=	graphics print
-
-PKGNAME-main=	${DISTNAME}
-PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
-PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
 
 SHARED_LIBS +=  evdocument3               0.2 # 4.0
 SHARED_LIBS +=  evview3                   0.0 # 3.0

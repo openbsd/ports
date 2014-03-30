@@ -1,0 +1,58 @@
+$OpenBSD: patch-libview_ev-view-presentation_c,v 1.1 2014/03/30 13:37:34 ajacoutot Exp $
+
+From a203fc1bf0b6f4f4c920c3144ebae77e41686751 Mon Sep 17 00:00:00 2001
+From: Gustau Perez <gustau.perez@gmail.com>
+Date: Fri, 28 Mar 2014 19:31:08 +0000
+Subject: Fix a crash during the build with introspection enabled
+
+--- libview/ev-view-presentation.c.orig	Tue Mar 25 12:16:13 2014
++++ libview/ev-view-presentation.c	Sun Mar 30 15:00:09 2014
+@@ -1428,7 +1428,6 @@ ev_view_presentation_class_init (EvViewPresentationCla
+ 	GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
+ 	GObjectClass   *gobject_class = G_OBJECT_CLASS (klass);
+ 	GtkBindingSet  *binding_set;
+-        GtkCssProvider *provider;
+ 
+ 	klass->change_page = ev_view_presentation_change_page;
+ 
+@@ -1542,23 +1541,30 @@ ev_view_presentation_class_init (EvViewPresentationCla
+ 	gtk_binding_entry_add_signal (binding_set, GDK_KEY_K, 0,
+ 				      "change_page", 1,
+ 				      GTK_TYPE_SCROLL_TYPE, GTK_SCROLL_PAGE_BACKWARD);
+-
+-        provider = gtk_css_provider_new ();
+-        gtk_css_provider_load_from_data (provider,
+-                                         "EvViewPresentation {\n"
+-                                         " background-color: black; }",
+-                                         -1, NULL);
+-        gtk_style_context_add_provider_for_screen (gdk_screen_get_default (),
+-                                                   GTK_STYLE_PROVIDER (provider),
+-                                                   GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+-        g_object_unref (provider);
+ }
+ 
+ static void
+ ev_view_presentation_init (EvViewPresentation *pview)
+ {
++        static gsize initialization_value = 0;
++
+ 	gtk_widget_set_can_focus (GTK_WIDGET (pview), TRUE);
+         pview->is_constructing = TRUE;
++
++	if (g_once_init_enter (&initialization_value)) {
++		GtkCssProvider *provider;
++
++		provider = gtk_css_provider_new ();
++		gtk_css_provider_load_from_data (provider,
++						 "EvViewPresentation {\n"
++						 " background-color: black; }",
++						 -1, NULL);
++		gtk_style_context_add_provider_for_screen (gdk_screen_get_default (),
++							   GTK_STYLE_PROVIDER (provider),
++							   GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
++		g_object_unref (provider);
++		g_once_init_leave (&initialization_value, 1);
++	}
+ }
+ 
+ GtkWidget *
