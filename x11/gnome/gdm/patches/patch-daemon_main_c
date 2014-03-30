@@ -1,0 +1,39 @@
+$OpenBSD: patch-daemon_main_c,v 1.1 2014/03/30 14:45:32 ajacoutot Exp $
+
+REVERT - OpenBSD lacks sigwaitinfo(2)
+From 956d7d1c7a0cfbf2beacdb9e88e645e15ad32047 Mon Sep 17 00:00:00 2001
+From: Jasper St. Pierre <jstpierre@mecheye.net>
+Date: Fri, 14 Feb 2014 19:32:50 +0000
+Subject: server: Process SIGUSR1 more carefully
+
+--- daemon/main.c.orig	Sun Mar 30 11:34:52 2014
++++ daemon/main.c	Sun Mar 30 11:36:03 2014
+@@ -295,19 +295,6 @@ is_debug_set (void)
+         return debug;
+ }
+ 
+-/* SIGUSR1 is used by the X server to tell us that we're ready, so
+- * block it. We'll unblock it in the worker thread in gdm-server.c
+- */
+-static void
+-block_sigusr1 (void)
+-{
+-        sigset_t mask;
+-
+-        sigemptyset (&mask);
+-        sigaddset (&mask, SIGUSR1);
+-        sigprocmask (SIG_BLOCK, &mask, NULL);
+-}
+-
+ int
+ main (int    argc,
+       char **argv)
+@@ -327,8 +314,6 @@ main (int    argc,
+ 
+                 { NULL }
+         };
+-
+-        block_sigusr1 ();
+ 
+         bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
+         textdomain (GETTEXT_PACKAGE);
