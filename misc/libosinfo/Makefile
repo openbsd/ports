@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/03/24 09:58:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2014/03/30 14:53:34 ajacoutot Exp $
 
 COMMENT=		library for managing information about operating systems
 
@@ -34,7 +34,7 @@ LIB_DEPENDS=		devel/glib2 \
 
 RUN_DEPENDS=		misc/hwdata
 
-# XXX
+# XXX undefined reference to `memcpy'
 USE_LIBTOOL=		gnu
 
 CONFIGURE_STYLE=	gnu
