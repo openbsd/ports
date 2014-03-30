@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.145 2014/03/30 13:28:12 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.146 2014/03/30 19:28:47 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -337,6 +337,7 @@ my $stem_extensions = {
 # 5.6
 	'p5-Class-MOP' => 'p5-Moose',
 	'libproxy-mozilla' => 'libproxy-webkit',
+	'p5-Mozilla-CA' => 'p5-Mozilla-CA-Fake',
 };
 
 # reasons for obsolete packages
