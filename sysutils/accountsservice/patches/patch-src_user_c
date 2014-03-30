@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_user_c,v 1.26 2014/03/20 17:55:43 ajacoutot Exp $
---- src/user.c.orig	Thu Mar 20 02:08:10 2014
-+++ src/user.c	Thu Mar 20 18:24:45 2014
+$OpenBSD: patch-src_user_c,v 1.27 2014/03/30 12:50:52 ajacoutot Exp $
+--- src/user.c.orig	Thu Mar 20 19:16:44 2014
++++ src/user.c	Sun Mar 30 14:47:24 2014
 @@ -123,7 +123,12 @@ account_type_from_pwent (struct passwd *pwent)
  {
          struct group *grp;
@@ -43,12 +43,23 @@ $OpenBSD: patch-src_user_c,v 1.26 2014/03/20 17:55:43 ajacoutot Exp $
  
          return ACCOUNT_TYPE_STANDARD;
  }
-@@ -264,7 +281,18 @@ user_update_from_pwent (User          *user,
+@@ -159,6 +176,8 @@ user_update_from_pwent (User          *user,
+ {
+ #ifdef HAVE_SHADOW_H
+         struct spwd *spent;
++#else
++	struct passwd *pw;
+ #endif
+         gchar *real_name;
+         gboolean changed;
+@@ -264,7 +283,20 @@ user_update_from_pwent (User          *user,
                  passwd = spent->sp_pwdp;
  #endif
  
 +#ifdef __OpenBSD__
-+        passwd = pwent->pw_passwd;
++        pw = getpwnam (pwent->pw_name);
++        if (pw)
++                passwd = pw->pw_passwd;
 +        if (g_strcmp0(passwd, "skey") == 0)
 +                passwd = NULL;
 +#endif
@@ -62,7 +73,7 @@ $OpenBSD: patch-src_user_c,v 1.26 2014/03/20 17:55:43 ajacoutot Exp $
                  locked = TRUE;
          }
          else {
-@@ -1553,7 +1581,11 @@ user_change_locked_authorized_cb (Daemon              
+@@ -1553,7 +1585,11 @@ user_change_locked_authorized_cb (Daemon              
                           "%s account of user '%s' (%d)",
                           locked ? "locking" : "unlocking", user->user_name, user->uid);
                  argv[0] = "/usr/sbin/usermod";
@@ -74,7 +85,7 @@ $OpenBSD: patch-src_user_c,v 1.26 2014/03/20 17:55:43 ajacoutot Exp $
                  argv[2] = "--";
                  argv[3] = user->user_name;
                  argv[4] = NULL;
-@@ -1624,13 +1656,23 @@ user_change_account_type_authorized_cb (Daemon        
+@@ -1624,13 +1660,23 @@ user_change_account_type_authorized_cb (Daemon        
  {
          AccountType account_type = GPOINTER_TO_INT (data);
          GError *error;
@@ -98,7 +109,7 @@ $OpenBSD: patch-src_user_c,v 1.26 2014/03/20 17:55:43 ajacoutot Exp $
  
          if (user->account_type != account_type) {
                  sys_log (context,
-@@ -1644,17 +1686,35 @@ user_change_account_type_authorized_cb (Daemon        
+@@ -1644,17 +1690,35 @@ user_change_account_type_authorized_cb (Daemon        
                  }
                  wheel = grp->gr_gid;
  
@@ -134,7 +145,7 @@ $OpenBSD: patch-src_user_c,v 1.26 2014/03/20 17:55:43 ajacoutot Exp $
                          break;
                  case ACCOUNT_TYPE_STANDARD:
                  default:
-@@ -1663,14 +1723,26 @@ user_change_account_type_authorized_cb (Daemon        
+@@ -1663,14 +1727,26 @@ user_change_account_type_authorized_cb (Daemon        
                          break;
                  }
  
