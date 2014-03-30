@@ -1,0 +1,8 @@
+Mozilla::CA provides a copy of Mozilla's bundle of Certificate Authority
+certificates in a form that can be consumed by modules and libraries based
+on OpenSSL.
+
+This package is an alternative. It does *not* directly install the
+Mozilla CA bundle, instead the provided library function (which just
+provides the location of the PEM file) has been modified to reference
+the system /etc/ssl/cert.pem file.
