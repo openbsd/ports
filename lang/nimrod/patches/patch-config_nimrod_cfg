@@ -1,18 +1,15 @@
-$OpenBSD: patch-config_nimrod_cfg,v 1.1.1.1 2014/03/29 23:59:25 jturner Exp $
+$OpenBSD: patch-config_nimrod_cfg,v 1.2 2014/03/30 00:15:01 jturner Exp $
 --- config/nimrod.cfg.orig	Wed May  8 15:34:44 2013
-+++ config/nimrod.cfg	Sat Mar 29 12:08:42 2014
-@@ -69,9 +69,9 @@ hint[LineTooLong]=off
++++ config/nimrod.cfg	Sat Mar 29 20:14:09 2014
+@@ -69,7 +69,7 @@ hint[LineTooLong]=off
      tcc.options.linker = "-ldl"
    @else:
      # BSD got posix_spawn only recently, so we deactivate it for osproc:
 -    define:useFork
 +    #define:useFork
      # at least NetBSD has problems with thread local storage:
--    tlsEmulation:on
-+    #tlsEmulation:on
+     tlsEmulation:on
    @end
- @end
- 
 @@ -97,6 +97,8 @@ hint[LineTooLong]=off
  @else:
    gcc.options.always = "-w"
