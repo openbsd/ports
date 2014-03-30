@@ -1,21 +1,16 @@
-$OpenBSD: patch-src_unexelf_c,v 1.1 2011/07/08 09:41:46 jasper Exp $
---- src/unexelf.c.orig	Tue Oct 15 16:21:44 2002
-+++ src/unexelf.c	Fri Jul  8 11:37:20 2011
-@@ -537,7 +537,12 @@ typedef struct {
+$OpenBSD: patch-src_unexelf_c,v 1.2 2014/03/30 18:15:43 landry Exp $
+--- src/unexelf.c.orig	Tue Oct 15 08:21:44 2002
++++ src/unexelf.c	Sun Mar 30 11:10:05 2014
+@@ -460,7 +460,7 @@ extern void fatal (char *, ...);
+ #define MAP_FAILED ((void *) -1)
+ #endif
  
- #ifdef __OpenBSD__
- # include <sys/exec_elf.h>
--#endif
-+# ifdef __alpha__
-+#  include <sys/exec_ecoff.h>
-+#  define HDRR		struct ecoff_symhdr
-+#  define pHDRR		HDRR *
-+# endif /* __alpha__ */
-+#endif /* __OpenBSD__ */
- 
- #if __GNU_LIBRARY__ - 0 >= 6
- # include <link.h>	/* get ElfW etc */
-@@ -549,10 +554,12 @@ typedef struct {
+-#if defined (__alpha__) && !defined (__NetBSD__) && !defined (__OpenBSD__)
++#if defined (__alpha__) && !defined (__NetBSD__)
+ /* Declare COFF debugging symbol table.  This used to be in
+    /usr/include/sym.h, but this file is no longer included in Red Hat
+    5.0 and presumably in any other glibc 2.x based distribution.  */
+@@ -549,10 +549,12 @@ typedef struct {
  # else
  #  define ElfBitsW(bits, type) Elf/**/bits/**/_/**/type
  # endif
