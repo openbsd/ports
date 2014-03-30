@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/26 23:44:38 nigel Exp $
-${P5SITE}/Mozilla/
-${P5SITE}/Mozilla/CA/
-${P5SITE}/Mozilla/CA.pm
-${P5SITE}/Mozilla/CA/cacert.pem
-${P5SITE}/Mozilla/mk-ca-bundle.pl
-@man man/man3p/Mozilla::CA.3p

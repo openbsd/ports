@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.334 2014/03/25 12:32:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.335 2014/03/30 19:28:02 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -187,7 +187,7 @@
      SUBDIR += p5-IO-Socket-SSL
      SUBDIR += p5-MD5
      SUBDIR += p5-Module-Signature
-     SUBDIR += p5-Mozilla-CA
+     SUBDIR += p5-Mozilla-CA-Fake
      SUBDIR += p5-Net-SSLGlue
      SUBDIR += p5-Net-SSL-ExpireDate
      SUBDIR += p5-Net_SSLeay
