@@ -1,7 +1,9 @@
-$OpenBSD: patch-tests_check_testutils_c,v 1.4 2014/03/09 19:53:21 jasper Exp $
+$OpenBSD: patch-tests_check_testutils_c,v 1.5 2014/03/30 12:36:28 jasper Exp $
 
-Include <netinet/in.h> for struct sin_addr,
-https://bugs.freedesktop.org/show_bug.cgi?id=75714
+From: 5f52c16b14fd8fac562aaf04e926a0d8e9a298e1 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Mon Mar 3 15:39:00 2014 +0100
+Subject: Include <netinet/in.h> for struct sin_addr.
 
 --- tests/check/testutils.c.orig	Mon Mar  3 15:36:28 2014
 +++ tests/check/testutils.c	Mon Mar  3 15:38:37 2014
