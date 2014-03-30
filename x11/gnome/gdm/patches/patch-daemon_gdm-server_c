@@ -1,4 +1,4 @@
-$OpenBSD: patch-daemon_gdm-server_c,v 1.4 2014/03/30 14:48:23 ajacoutot Exp $
+$OpenBSD: patch-daemon_gdm-server_c,v 1.5 2014/03/30 18:43:44 ajacoutot Exp $
 
 REVERT - OpenBSD lacks sigwaitinfo(2)
 From 956d7d1c7a0cfbf2beacdb9e88e645e15ad32047 Mon Sep 17 00:00:00 2001
@@ -7,7 +7,7 @@ Date: Fri, 14 Feb 2014 19:32:50 +0000
 Subject: server: Process SIGUSR1 more carefully
 
 --- daemon/gdm-server.c.orig	Wed Mar 19 16:15:29 2014
-+++ daemon/gdm-server.c	Sun Mar 30 16:47:26 2014
++++ daemon/gdm-server.c	Sun Mar 30 20:43:02 2014
 @@ -94,6 +94,7 @@ struct GdmServerPrivate
          char    *auth_file;
  
@@ -117,23 +117,36 @@ Subject: server: Process SIGUSR1 more carefully
  
  #ifdef WITH_SYSTEMD
  
-@@ -752,15 +691,11 @@ gdm_server_spawn (GdmServer    *server,
+@@ -709,12 +648,6 @@ server_child_watch (GPid       pid,
+         g_object_unref (server);
+ }
+ 
+-static void
+-prune_active_servers_list (GdmServer *server)
+-{
+-        active_servers = g_slist_remove (active_servers, server);
+-}
+-
+ static gboolean
+ gdm_server_spawn (GdmServer    *server,
+                   const char   *vtarg,
+@@ -752,15 +685,6 @@ gdm_server_spawn (GdmServer    *server,
          g_debug ("GdmServer: Starting X server process: %s", freeme);
          g_free (freeme);
  
 -        active_servers = g_slist_append (active_servers, server);
 -
-         g_object_weak_ref (G_OBJECT (server),
-                            (GWeakNotify)
-                            prune_active_servers_list,
-                            server);
- 
+-        g_object_weak_ref (G_OBJECT (server),
+-                           (GWeakNotify)
+-                           prune_active_servers_list,
+-                           server);
+-
 -        gdm_server_launch_sigusr1_thread_if_needed ();
 -
          if (!g_spawn_async_with_pipes (NULL,
                                         argv,
                                         (char **)env->pdata,
-@@ -1105,11 +1040,16 @@ gdm_server_class_init (GdmServerClass *klass)
+@@ -1105,11 +1029,16 @@ gdm_server_class_init (GdmServerClass *klass)
  static void
  gdm_server_init (GdmServer *server)
  {
@@ -150,7 +163,7 @@ Subject: server: Process SIGUSR1 more carefully
  }
  
  static void
-@@ -1123,6 +1063,9 @@ gdm_server_finalize (GObject *object)
+@@ -1123,6 +1052,9 @@ gdm_server_finalize (GObject *object)
          server = GDM_SERVER (object);
  
          g_return_if_fail (server->priv != NULL);
