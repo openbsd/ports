@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.26 2014/03/25 16:54:25 ajacoutot Exp $
+$OpenBSD: README-main,v 1.27 2014/03/30 16:50:44 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -27,16 +27,16 @@ in rc.conf.local(8)).
 GDM
 ---
 Session management requires the use of GDM as login manager, otherwise
-some key features like screen locking, session ending... will not work
+some key features like screen locking, session tracking... will not work
 properly. To do so, "gdm" must be added at the end of "pkg_scripts" in
 rc.conf.local(8) (and "xdm_flags" commented or removed).
 
-Changing the GDM greeter language is done in:
+GDM greeter language and character set is configured in:
     ${SYSCONFDIR}/gdm/locale.conf
 
-*** NOT RECOMMENDED ***
 Alternative (non-GDM) GNOME startup
 -----------------------------------
+*** NOT RECOMMENDED ***
 To start GNOME without GDM, the following line needs to be added:
     exec ${LOCALBASE}/bin/ck-launch-session ${TRUEPREFIX}/bin/gnome-session
 to ~/.xinitrc when using startx(1) (console login)
