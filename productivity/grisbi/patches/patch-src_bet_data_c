@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_bet_data_c,v 1.1 2014/03/30 19:37:17 landry Exp $
+http://listes.grisbi.org/pipermail/devel/2014-March/002168.html
+--- src/bet_data.c.orig	Wed Mar 26 21:23:19 2014
++++ src/bet_data.c	Wed Mar 26 21:23:26 2014
+@@ -443,7 +443,7 @@ gboolean bet_data_search_div_hist ( gint account_numbe
+     {
+         if ( sub_div_nb == 0 )
+             return_val = TRUE;
+-        else if ( sub_div_nb > 0 );
++        else if ( sub_div_nb > 0 )
+         {
+             sub_key = utils_str_itoa ( sub_div_nb );
+             if ( g_hash_table_lookup ( shd -> sub_div_list, sub_key ) )
