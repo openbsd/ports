@@ -1,4 +1,0 @@
-gedit-cossa is a CSS previewer for GTK+ themes, integrating with gedit
-so the edited CSS is promptly visible in the various samples.
-gedit-cossa may be easily extended with more samples and allows zooming
-these to help get the tiny details right.
