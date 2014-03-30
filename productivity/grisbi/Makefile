@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2013/12/05 21:41:08 landry Exp $
+# $OpenBSD: Makefile,v 1.33 2014/03/30 19:36:42 landry Exp $
 
 COMMENT=	personal accounting application
 SHARED_ONLY =	Yes
 
-DISTNAME=	grisbi-0.8.9
-REVISION=	1
+DISTNAME=	grisbi-1.0.0
 
 CATEGORIES=	productivity x11
 
@@ -26,6 +25,7 @@ WANTLIB += m osp pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread pthread-stubs stdc++ xcb z pcre crypto gdk_pixbuf-2.0
 WANTLIB += xml2 gdk-x11-2.0 gtk-x11-2.0 ofx gthread-2.0
 WANTLIB += xcb-render xcb-shm ffi graphite2 harfbuzz
+WANTLIB += bz2 dbus-1 dbus-glib-1 gconf-2 goffice-0.8 gsf-1
 
 
 MODULES=	devel/gettext \
@@ -33,9 +33,11 @@ MODULES=	devel/gettext \
 
 LIB_DEPENDS=	textproc/libxml \
 		x11/gtk+2 \
+		devel/goffice08 \
 		devel/libofx
 
 RUN_DEPENDS=	devel/desktop-file-utils \
+		misc/shared-mime-info \
 		x11/gtk+2,-guic
 
 USE_GMAKE=	Yes
