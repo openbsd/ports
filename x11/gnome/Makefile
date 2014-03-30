@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.227 2014/03/30 12:59:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.228 2014/03/30 13:26:44 jasper Exp $
 
      SUBDIR =
      SUBDIR += alacarte
      SUBDIR += anjuta
-     SUBDIR += anjuta-extras
      SUBDIR += at-spi2-atk
      SUBDIR += at-spi2-core
      SUBDIR += backgrounds
