@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2014/03/27 12:39:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2014/03/31 09:38:25 ajacoutot Exp $
 
 COMMENT=	color profile manager for GNOME
 
 GNOME_PROJECT=	gnome-color-manager
 GNOME_VERSION=	3.12.0
+REVISION=	0
 
 CATEGORIES=	graphics
 
@@ -35,19 +36,15 @@ RUN_DEPENDS=	graphics/argyll \
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
-MODGNOME_TOOLS=	yelp
+MODGNOME_TOOLS=		yelp
 
-# XXX the --disable-man-pages switch exists but does nothing
-CONFIGURE_ARGS +=--disable-man-pages
+# XXX gcm-calibrate.sgml:1: parser error : StartTag: invalid element name
 CONFIGURE_ENV += ac_cv_path_DOCBOOK2MAN=no
 
+# our old gcc does not handle some of the warning flags
+MAKE_FLAGS=	WARNINGFLAGS_C=
+
 pre-configure:
-	perl -pi -e 's,-Wclobbered,,g;' \
-		-e 's,-Wempty-body,,g;' \
-		-e 's,-Wignored-qualifiers,,g;' \
-		-e 's,-Wtype-limits,,g;' \
-		-e 's,-Wmissing-parameter-type,,g' \
-		${WRKSRC}/configure
 	perl -pi -e 's,/usr/share,${LOCALBASE}/share,g;' \
 		-e 's,/usr/bin,${LOCALBASE}/bin,g' \
 		${WRKSRC}/src/{gcm-calibrate.c,gcm-calibrate-argyll.c,gcm-picker.c,gcm-calibrate-main.c}
