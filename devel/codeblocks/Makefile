@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2014/03/18 13:57:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2014/03/31 14:22:48 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ V=		10.05
 P=		1
 DISTNAME=	codeblocks-${V}-${P}debian-src
 PKGNAME=	codeblocks-${V}
-REVISION=	9
+REVISION=	10
 
 EXTRACT_SUFX=	.tar.bz2
 WRKDIST=	${WRKDIR}/codeblocks-${V}
@@ -56,8 +56,7 @@ LIBTOOL_FLAGS=	--tag=disable-static
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib \
-			-Wl,-rpath,${TRUEPREFIX}/lib/wxSmithContribItems"
+		LDFLAGS="-L${LOCALBASE}/lib"
 # XXX lib_finder.cpp:302: error: syntax error before `->' token
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static \
