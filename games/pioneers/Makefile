@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2013/09/27 17:49:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2014/03/31 19:51:10 naddy Exp $
 
 COMMENT=	Settlers of Catan for GNOME/Gtk
 
 GNOME_PROJECT=	pioneers
 GNOME_VERSION=	14.1
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	games
 
@@ -34,7 +34,8 @@ MODULES=	devel/gettext \
 BUILD_DEPENDS=	x11/gnome/librsvg
 RUN_DEPENDS=	x11/gtk+2,-guic
 LIB_DEPENDS=	x11/gnome/libgnome \
-		x11/gtk+2
+		x11/gtk+2 \
+		devel/libnotify
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_TOOLS= 	yelp
