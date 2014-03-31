@@ -1,0 +1,18 @@
+$OpenBSD: patch-tests_libpeas_extension-c_c,v 1.1 2014/03/31 10:16:55 jasper Exp $
+
+Add OpenBSD's error messages to log hooks.
+
+--- tests/libpeas/extension-c.c.orig	Mon Mar 31 12:13:34 2014
++++ tests/libpeas/extension-c.c	Mon Mar 31 12:15:14 2014
+@@ -53,7 +53,11 @@ test_extension_c_nonexistent (PeasEngine *engine)
+ {
+   PeasPluginInfo *info;
+ 
++#ifndef __OpenBSD__
+   testing_util_push_log_hook ("*extension-c-nonexistent*No such file*");
++#else
++  testing_util_push_log_hook ("extension-c-nonexistent: File not found");
++#endif /* !__OpenBSD__ */
+   testing_util_push_log_hook ("Error loading plugin 'extension-c-nonexistent'");
+ 
+   info = peas_engine_get_plugin_info (engine, "extension-c-nonexistent");
