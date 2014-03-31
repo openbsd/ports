@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2014/01/10 19:36:18 landry Exp $
+# $OpenBSD: Makefile,v 1.18 2014/03/31 07:33:12 ajacoutot Exp $
 
 COMMENT =	toolkit for developing mapping applications
 
 DISTNAME =	mapnik-v2.2.0
 PKGNAME =	${DISTNAME:S/v//}
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	mapnik 2.0 #2.0
 CATEGORIES =	graphics geo
@@ -18,7 +18,8 @@ DPB_PROPERTIES = nojunk
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =	http://mapnik.s3.amazonaws.com/dist/v2.2.0/
-MODULES =	devel/scons \
+MODULES =	devel/gettext \
+		devel/scons \
 		lang/python
 
 TEST_DEPENDS =	devel/py-nose \
@@ -39,7 +40,7 @@ WANTLIB =	cairo icuuc png>=17.0 pq proj jpeg \
 		boost_regex-mt boost_system-mt boost_thread-mt \
 		c freetype m stdc++ xml2 z curl gdal \
 		X11 Xau Xdmcp Xext Xrender fontconfig glib-2.0 \
-		gobject-2.0 intl pcre pixman-1 pthread-stubs \
+		gobject-2.0 pcre pixman-1 pthread-stubs \
 		xcb xcb-render xcb-shm pthread
 
 MODSCONS_FLAGS =	PREFIX="${TRUEPREFIX}" \
