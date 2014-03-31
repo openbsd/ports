@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/04/28 22:47:20 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/03/31 21:48:05 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Database/
 lib/ghc/${DISTNAME}/Database/PostgreSQL/
@@ -11,6 +11,8 @@ lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/BuiltinTypes.hi
 lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/BuiltinTypes.p_hi
 lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/Compat.hi
 lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/Compat.p_hi
+lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/Copy.hi
+lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/Copy.p_hi
 lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/Errors.hi
 lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/Errors.p_hi
 lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/FromField.hi
@@ -50,6 +52,8 @@ lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/Transaction.p_hi
 lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/TypeInfo/
 lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/TypeInfo.hi
 lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/TypeInfo.p_hi
+lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/TypeInfo/Macro.hi
+lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/TypeInfo/Macro.p_hi
 lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/TypeInfo/Static.hi
 lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/TypeInfo/Static.p_hi
 lib/ghc/${DISTNAME}/Database/PostgreSQL/Simple/TypeInfo/Types.hi
@@ -65,6 +69,7 @@ share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/Database-PostgreSQL-Simple-Arrays.html
 share/doc/hs-${DISTNAME}/html/Database-PostgreSQL-Simple-BuiltinTypes.html
+share/doc/hs-${DISTNAME}/html/Database-PostgreSQL-Simple-Copy.html
 share/doc/hs-${DISTNAME}/html/Database-PostgreSQL-Simple-Errors.html
 share/doc/hs-${DISTNAME}/html/Database-PostgreSQL-Simple-FromField.html
 share/doc/hs-${DISTNAME}/html/Database-PostgreSQL-Simple-FromRow.html
@@ -79,6 +84,7 @@ share/doc/hs-${DISTNAME}/html/Database-PostgreSQL-Simple-Time.html
 share/doc/hs-${DISTNAME}/html/Database-PostgreSQL-Simple-ToField.html
 share/doc/hs-${DISTNAME}/html/Database-PostgreSQL-Simple-ToRow.html
 share/doc/hs-${DISTNAME}/html/Database-PostgreSQL-Simple-Transaction.html
+share/doc/hs-${DISTNAME}/html/Database-PostgreSQL-Simple-TypeInfo-Macro.html
 share/doc/hs-${DISTNAME}/html/Database-PostgreSQL-Simple-TypeInfo-Static.html
 share/doc/hs-${DISTNAME}/html/Database-PostgreSQL-Simple-TypeInfo.html
 share/doc/hs-${DISTNAME}/html/Database-PostgreSQL-Simple-Types.html
@@ -94,6 +100,7 @@ share/doc/hs-${DISTNAME}/html/doc-index-F.html
 share/doc/hs-${DISTNAME}/html/doc-index-G.html
 share/doc/hs-${DISTNAME}/html/doc-index-H.html
 share/doc/hs-${DISTNAME}/html/doc-index-I.html
+share/doc/hs-${DISTNAME}/html/doc-index-J.html
 share/doc/hs-${DISTNAME}/html/doc-index-L.html
 share/doc/hs-${DISTNAME}/html/doc-index-M.html
 share/doc/hs-${DISTNAME}/html/doc-index-N.html
@@ -116,6 +123,7 @@ share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/mini_Database-PostgreSQL-Simple-Arrays.html
 share/doc/hs-${DISTNAME}/html/mini_Database-PostgreSQL-Simple-BuiltinTypes.html
+share/doc/hs-${DISTNAME}/html/mini_Database-PostgreSQL-Simple-Copy.html
 share/doc/hs-${DISTNAME}/html/mini_Database-PostgreSQL-Simple-Errors.html
 share/doc/hs-${DISTNAME}/html/mini_Database-PostgreSQL-Simple-FromField.html
 share/doc/hs-${DISTNAME}/html/mini_Database-PostgreSQL-Simple-FromRow.html
@@ -130,6 +138,7 @@ share/doc/hs-${DISTNAME}/html/mini_Database-PostgreSQL-Simple-Time.html
 share/doc/hs-${DISTNAME}/html/mini_Database-PostgreSQL-Simple-ToField.html
 share/doc/hs-${DISTNAME}/html/mini_Database-PostgreSQL-Simple-ToRow.html
 share/doc/hs-${DISTNAME}/html/mini_Database-PostgreSQL-Simple-Transaction.html
+share/doc/hs-${DISTNAME}/html/mini_Database-PostgreSQL-Simple-TypeInfo-Macro.html
 share/doc/hs-${DISTNAME}/html/mini_Database-PostgreSQL-Simple-TypeInfo-Static.html
 share/doc/hs-${DISTNAME}/html/mini_Database-PostgreSQL-Simple-TypeInfo.html
 share/doc/hs-${DISTNAME}/html/mini_Database-PostgreSQL-Simple-Types.html
