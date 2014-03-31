@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2006/05/06 19:44:40 msf Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/03/31 15:14:13 robert Exp $
 ${P5SITE}/DBIx/SearchBuilder/
 ${P5SITE}/DBIx/SearchBuilder.pm
 ${P5SITE}/DBIx/SearchBuilder/Handle/
@@ -17,6 +17,7 @@ ${P5SITE}/DBIx/SearchBuilder/Record/Cachable.pm
 ${P5SITE}/DBIx/SearchBuilder/SchemaGenerator.pm
 ${P5SITE}/DBIx/SearchBuilder/Union.pm
 ${P5SITE}/DBIx/SearchBuilder/Unique.pm
+${P5SITE}/DBIx/SearchBuilder/Util.pm
 @man man/man3p/DBIx::SearchBuilder.3p
 @man man/man3p/DBIx::SearchBuilder::Handle.3p
 @man man/man3p/DBIx::SearchBuilder::Handle::Informix.3p
@@ -32,3 +33,4 @@ ${P5SITE}/DBIx/SearchBuilder/Unique.pm
 @man man/man3p/DBIx::SearchBuilder::SchemaGenerator.3p
 @man man/man3p/DBIx::SearchBuilder::Union.3p
 @man man/man3p/DBIx::SearchBuilder::Unique.3p
+@man man/man3p/DBIx::SearchBuilder::Util.3p

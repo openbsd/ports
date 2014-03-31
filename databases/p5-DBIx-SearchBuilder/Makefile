@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2013/03/11 02:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2014/03/31 15:14:13 robert Exp $
 
 COMMENT=	encapsulate SQL queries and rows in simple perl objects
 
 MODULES=	cpan
 
-DISTNAME=	DBIx-SearchBuilder-1.59
+DISTNAME=	DBIx-SearchBuilder-1.65
 
 CATEGORIES=	databases
 USE_GROFF =	Yes
@@ -22,7 +22,7 @@ RUN_DEPENDS=	databases/p5-DBD-SQLite \
 		devel/p5-capitalization \
 		devel/p5-Want
 
-TEST_DEPENDS= devel/p5-Test-Pod \
-		 devel/p5-Devel-StackTrace
+TEST_DEPENDS=	devel/p5-Test-Pod \
+		devel/p5-Devel-StackTrace
 
 .include <bsd.port.mk>
