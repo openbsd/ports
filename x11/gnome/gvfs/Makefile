@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2014/03/28 22:13:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.116 2014/03/31 13:44:47 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,9 +13,9 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-smb=	${GNOME_PROJECT}-smb-${GNOME_VERSION}
 PKGNAME-goa=	${GNOME_PROJECT}-goa-${GNOME_VERSION}
 
-REVISION-main=	0
-REVISION-smb=	0
-REVISION-goa=	0
+REVISION-main=	1
+REVISION-smb=	1
+REVISION-goa=	1
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -47,9 +47,6 @@ WANTLIB-goa += goa-1.0
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_TOOLS=		docbook
-# links to libgvscommon and libgvfsdaemon:
-# these are not versioned and install under a non-standard library path
-MODGNOME_LDFLAGS=	-Wl,-rpath,${TRUEPREFIX}/lib/gvfs
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		archivers/libarchive \
