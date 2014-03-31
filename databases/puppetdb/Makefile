@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/03/31 08:43:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2014/03/31 09:17:56 jasper Exp $
 
 COMMENT-main=	fast, scalable, and reliable data warehouse for Puppet
 COMMENT-plugin= PuppetDB terminus plugin
@@ -7,6 +7,7 @@ V=		1.6.3
 DISTNAME=	puppetdb-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-plugin= puppetdb-terminus-$V
+REVISION-main=	0
 CATEGORIES=	databases
 
 HOMEPAGE=	http://docs.puppetlabs.com/puppetdb/latest/
@@ -40,17 +41,24 @@ SCRIPTS=	anonymize export foreground import ssl-setup
 do-configure:
 	${SUBST_CMD} ${WRKSRC}/Rakefile \
 			${WRKSRC}/tasks/install.rake \
-			${WRKSRC}/ext/files/config.ini
+			${WRKSRC}/ext/files/config.ini \
+			${WRKSRC}/ext/files/puppetdb.env
 .for s in ${SCRIPTS}
 	${SUBST_CMD} ${WRKSRC}/ext/files/puppetdb-$s
 .endfor
+	perl -pi -e 's,/bin/bash,${LOCALBASE}/bin/bash,g;' \
+		-e 's,/usr/libexec,${LOCALBASE}/libexec,g;' \
+		${WRKSRC}/ext/files/puppetdb*
+
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{,examples/}puppetdb
 	${INSTALL_DATA_DIR} ${PREFIX}/libexec/puppetdb/
+	${INSTALL_SCRIPT} ${WRKSRC}/ext/files/puppetdb ${PREFIX}/bin/
 .for s in ${SCRIPTS}
 	${INSTALL_SCRIPT} ${WRKSRC}/ext/files/puppetdb-$s ${PREFIX}/libexec/puppetdb/
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/ext/files/puppetdb.env ${PREFIX}/libexec/puppetdb/
 .for c in config.ini database.ini jetty.ini repl.ini
 	cat ${WRKSRC}/ext/files/$c >> ${PREFIX}/share/examples/puppetdb/puppetdb.conf
 .endfor

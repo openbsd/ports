@@ -1,0 +1,15 @@
+$OpenBSD: patch-ext_files_puppetdb_env,v 1.1 2014/03/31 09:17:56 jasper Exp $
+--- ext/files/puppetdb.env.orig	Thu Mar 27 00:49:49 2014
++++ ext/files/puppetdb.env	Mon Mar 31 11:15:02 2014
+@@ -8,4 +8,9 @@ elif [ -r  "/etc/sysconfig/puppetdb" ] ; then
+     JAVA_ARGS="-Xmx192m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/log/puppetdb/puppetdb-oom.hprof"
+     USER="puppetdb"
+     CONFIG="/etc/puppetdb/conf.d"
+-fi
+\ No newline at end of file
++elif [ `uname` == "OpenBSD" ] ; then
++    JAVA_BIN=$(javaPathHelper -c puppetdb)
++    JAVA_ARGS="-Xmx192m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/log/puppetdb/puppetdb-oom.hprof"
++    USER="_puppetdb"
++    INSTALL_DIR="${PREFIX}/share/puppetdb/"
++fi

@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2014/01/30 18:29:51 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2014/03/31 09:17:56 jasper Exp $
 @newgroup _puppetdb:719
 @newuser _puppetdb:719:719:daemon:PuppetDB user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/log/puppetdb/*
+bin/puppetdb
 libexec/puppetdb/puppetdb-anonymize
 libexec/puppetdb/puppetdb-export
 libexec/puppetdb/puppetdb-foreground
 libexec/puppetdb/puppetdb-import
 libexec/puppetdb/puppetdb-ssl-setup
+libexec/puppetdb/puppetdb.env
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/puppetdb/
 @sample ${SYSCONFDIR}/puppetdb/
