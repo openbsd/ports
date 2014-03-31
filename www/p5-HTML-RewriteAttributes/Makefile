@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:44:45 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2014/03/31 15:15:19 robert Exp $
 
 COMMENT=	concise attribute rewriting
 
 MODULES=	cpan
-DISTNAME=	HTML-RewriteAttributes-0.04
+DISTNAME=	HTML-RewriteAttributes-0.05
 CATEGORIES=	www devel
 USE_GROFF =	Yes
 
