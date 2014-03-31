@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2014/03/26 10:43:51 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.19 2014/03/31 09:58:33 jasper Exp $
 @bin bin/peas-demo
 include/libpeas-1.0/
 include/libpeas-1.0/libpeas/
@@ -31,10 +31,11 @@ lib/peas-demo/plugins/helloworld/
 lib/peas-demo/plugins/helloworld/helloworld.plugin
 lib/peas-demo/plugins/helloworld/libhelloworld.so
 lib/peas-demo/plugins/pythonhello/
+lib/peas-demo/plugins/pythonhello/${MODPY_PYCACHE}/
+lib/peas-demo/plugins/pythonhello/${MODPY_PYCACHE}pythonhello.${MODPY_PYC_MAGIC_TAG}pyc
+lib/peas-demo/plugins/pythonhello/${MODPY_PYCACHE}pythonhello.${MODPY_PYC_MAGIC_TAG}pyo
 lib/peas-demo/plugins/pythonhello/pythonhello.plugin
 lib/peas-demo/plugins/pythonhello/pythonhello.py
-lib/peas-demo/plugins/pythonhello/pythonhello.pyc
-lib/peas-demo/plugins/pythonhello/pythonhello.pyo
 lib/peas-demo/plugins/secondtime/
 lib/peas-demo/plugins/secondtime/libsecondtime.so
 lib/peas-demo/plugins/secondtime/secondtime.plugin
@@ -60,13 +61,16 @@ share/gtk-doc/html/libpeas/ch03.html
 share/gtk-doc/html/libpeas/home.png
 share/gtk-doc/html/libpeas/index.html
 share/gtk-doc/html/libpeas/index.sgml
+share/gtk-doc/html/libpeas/left-insensitive.png
 share/gtk-doc/html/libpeas/left.png
 share/gtk-doc/html/libpeas/libpeas-PeasExtension.html
 share/gtk-doc/html/libpeas/libpeas.devhelp2
 share/gtk-doc/html/libpeas/peas-gtk-plugin-manager.png
 share/gtk-doc/html/libpeas/pt01.html
+share/gtk-doc/html/libpeas/right-insensitive.png
 share/gtk-doc/html/libpeas/right.png
 share/gtk-doc/html/libpeas/style.css
+share/gtk-doc/html/libpeas/up-insensitive.png
 share/gtk-doc/html/libpeas/up.png
 share/icons/hicolor/16x16/actions/libpeas-plugin.png
 share/icons/hicolor/22x22/actions/libpeas-plugin.png
