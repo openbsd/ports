@@ -1,5 +1,5 @@
 !!NOTE!! The update to Tomcat 7.0.52 has made changes which prevent the
-         the configuration method used in older versions of Railo's README
+         configuration method used in older versions of Railo's README
          from working.
 
 The README has now been updated, but existing installations will be broken
