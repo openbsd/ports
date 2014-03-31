@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:18 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2014/03/31 15:14:27 robert Exp $
 
 COMMENT= 	run a subprocess
 
 MODULES=	cpan
-DISTNAME=	IPC-Run-0.82
-REVISION=	0
+DISTNAME=	IPC-Run-0.92
 CATEGORIES=	devel
 USE_GROFF =	Yes
 
