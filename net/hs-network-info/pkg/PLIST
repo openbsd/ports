@@ -1,0 +1,28 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/03/31 21:41:13 kili Exp $
+lib/ghc/${DISTNAME}/
+lib/ghc/${DISTNAME}/HS${DISTNAME}.o
+lib/ghc/${DISTNAME}/Network/
+lib/ghc/${DISTNAME}/Network/Info.hi
+lib/ghc/${DISTNAME}/Network/Info.p_hi
+lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
+lib/ghc/${DISTNAME}/register.sh
+share/doc/hs-${DISTNAME}/
+share/doc/hs-${DISTNAME}/LICENSE
+share/doc/hs-${DISTNAME}/html/
+share/doc/hs-${DISTNAME}/html/Network-Info.html
+share/doc/hs-${DISTNAME}/html/doc-index.html
+share/doc/hs-${DISTNAME}/html/frames.html
+share/doc/hs-${DISTNAME}/html/haddock-util.js
+share/doc/hs-${DISTNAME}/html/hslogo-16.png
+share/doc/hs-${DISTNAME}/html/index-frames.html
+share/doc/hs-${DISTNAME}/html/index.html
+share/doc/hs-${DISTNAME}/html/mini_Network-Info.html
+share/doc/hs-${DISTNAME}/html/minus.gif
+share/doc/hs-${DISTNAME}/html/network-info.haddock
+share/doc/hs-${DISTNAME}/html/ocean.css
+share/doc/hs-${DISTNAME}/html/plus.gif
+share/doc/hs-${DISTNAME}/html/synopsis.png
+@exec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/register.sh -v0
+@unexec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/unregister.sh -v0 --force
+lib/ghc/${DISTNAME}/unregister.sh

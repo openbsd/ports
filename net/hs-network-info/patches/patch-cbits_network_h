@@ -1,0 +1,25 @@
+$OpenBSD: patch-cbits_network_h,v 1.1.1.1 2014/03/31 21:41:13 kili Exp $
+
+Don't double the size of ip addresses on LP64 architectures to avoid
+posssible memory corruption.
+
+A better solution seems to be contained in the pull request at
+https://github.com/jystic/network-info/pull/5; but until it didn't
+make it into a new relaese of hs-network-info, we use the quick
+hack below.
+
+--- cbits/network.h.orig	Wed Oct 17 04:25:56 2012
++++ cbits/network.h	Sun Mar 30 23:53:21 2014
+@@ -1,8 +1,10 @@
++#include <sys/types.h>
++
+ #define NAME_SIZE (128+4)
+ #define MAC_SIZE 6
+ 
+-typedef long ipv4;
+-typedef long ipv6[4];
++typedef int32_t ipv4;
++typedef int32_t ipv6[4];
+ 
+ struct network_interface {
+     wchar_t name[NAME_SIZE];
