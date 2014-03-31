@@ -1,13 +1,13 @@
-$OpenBSD: patch-Rakefile,v 1.4 2014/01/30 18:29:51 jasper Exp $
+$OpenBSD: patch-Rakefile,v 1.5 2014/03/31 08:43:22 jasper Exp $
 
 - Change various configuration variables to what they would be like when
   PuppetDB has been _installed_, as these variables are used in other scripts.
   The installer has been modified in tasks/install.rake
 - Set OpenBSD's Ruby site dir.
 
---- Rakefile.orig	Mon Jan  6 22:48:56 2014
-+++ Rakefile	Sun Jan 12 11:02:23 2014
-@@ -57,19 +57,19 @@ if @pe
+--- Rakefile.orig	Thu Mar 27 00:48:54 2014
++++ Rakefile	Mon Mar 31 09:55:34 2014
+@@ -75,19 +75,19 @@ if @pe
      @pe_version = ENV['PE_VER'] || '3.0'
      @java_bin = "/opt/puppet/bin/java"
  else
@@ -33,7 +33,7 @@ $OpenBSD: patch-Rakefile,v 1.4 2014/01/30 18:29:51 jasper Exp $
  end
  
  @initscriptname = "/etc/init.d/#{@name}"
-@@ -94,7 +94,7 @@ case @osfamily
+@@ -112,7 +112,7 @@ case @osfamily
    when /suse/
      @plibdir = @pe ? PE_SITELIBDIR : (%x(ruby -rrbconfig -e "puts RbConfig::CONFIG['sitelibdir']").chomp)
    when /openbsd/

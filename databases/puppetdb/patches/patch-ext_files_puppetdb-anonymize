@@ -1,10 +1,12 @@
-$OpenBSD: patch-ext_files_puppetdb-anonymize,v 1.1 2013/12/15 11:29:22 jasper Exp $
---- ext/files/puppetdb-anonymize.orig	Sun Dec 15 11:54:20 2013
-+++ ext/files/puppetdb-anonymize	Sun Dec 15 11:55:13 2013
-@@ -1,3 +1,4 @@
+$OpenBSD: patch-ext_files_puppetdb-anonymize,v 1.2 2014/03/31 08:43:22 jasper Exp $
+--- ext/files/puppetdb-anonymize.orig	Thu Mar 27 00:49:49 2014
++++ ext/files/puppetdb-anonymize	Mon Mar 31 09:55:34 2014
+@@ -1,5 +1,6 @@
 -#!/bin/bash
 +#!${LOCALBASE}/bin/bash
  
--/usr/bin/java -Xmx192m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/log/puppetdb/puppetdb-oom.hprof  -jar /usr/share/puppetdb/puppetdb.jar anonymize "$@"
+-. /usr/libexec/puppetdb/puppetdb.env
 +JAVA_CMD=$(javaPathHelper -c puppetdb)
 +${JAVA_CMD} -Xmx192m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/log/puppetdb/puppetdb-oom.hprof  -jar ${PREFIX}/share/puppetdb/puppetdb.jar anonymize "$@"
+ 
+ ${JAVA_BIN} -Xmx192m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/log/puppetdb/puppetdb-oom.hprof -jar ${INSTALL_DIR}/puppetdb.jar anonymize "$@"

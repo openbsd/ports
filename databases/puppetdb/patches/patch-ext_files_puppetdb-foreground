@@ -1,11 +1,14 @@
-$OpenBSD: patch-ext_files_puppetdb-foreground,v 1.2 2013/07/01 13:49:00 jasper Exp $
---- ext/files/puppetdb-foreground.orig	Mon Jun  3 19:13:08 2013
-+++ ext/files/puppetdb-foreground	Mon Jul  1 15:45:28 2013
-@@ -1,4 +1,5 @@
--#!/bin/bash
+$OpenBSD: patch-ext_files_puppetdb-foreground,v 1.3 2014/03/31 08:43:22 jasper Exp $
+--- ext/files/puppetdb-foreground.orig	Thu Mar 27 00:49:49 2014
++++ ext/files/puppetdb-foreground	Mon Mar 31 09:55:34 2014
+@@ -1,7 +1,8 @@
+ #!/bin/bash
+ 
+-. /usr/libexec/puppetdb/puppetdb.env
 +#!${LOCALBASE}/bin/bash
  
 +JAVA_CMD=$(javaPathHelper -c puppetdb)
  ARGS="$@"
--su puppetdb -s /bin/bash -c "/usr/bin/java -Xmx192m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/log/puppetdb/puppetdb-oom.hprof  -jar /usr/share/puppetdb/puppetdb.jar services -c /etc/puppetdb/conf.d $ARGS"
+-
 +su _puppetdb -s ${LOCALBASE}/bin/bash -c "${JAVA_CMD} -Xmx192m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/log/puppetdb/puppetdb-oom.hprof  -jar ${PREFIX}/share/puppetdb/puppetdb.jar services -c ${SYSCONFDIR}/puppetdb/conf.d $ARGS"
+ su ${USER} -s /bin/bash -c "${JAVA_BIN} ${JAVA_ARGS} -jar ${INSTALL_DIR}/puppetdb.jar services -c ${CONFIG} ${@}"
