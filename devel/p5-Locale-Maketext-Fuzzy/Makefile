@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:18 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2014/03/31 15:14:40 robert Exp $
 
 COMMENT=		Maketext from already interpolated strings
 
 MODULES=		cpan
-DISTNAME=		Locale-Maketext-Fuzzy-0.02
-REVISION=		0
+DISTNAME=		Locale-Maketext-Fuzzy-0.11
 CATEGORIES=		converters devel
 USE_GROFF =		Yes
 
