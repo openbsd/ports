@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:23:53 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2014/03/31 07:42:21 jasper Exp $
 
 COMMENT=		simple SMTP client
 
@@ -9,7 +9,7 @@ CATEGORIES=		mail
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c
 
-MASTER_SITES=		ftp://www.ossp.org/pkg/tool/smtpclient/
+MASTER_SITES=		http://distfiles.nl/
 
 CONFIGURE_STYLE=	gnu dest
 
