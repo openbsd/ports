@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_terminal-appmenu_ui,v 1.1 2014/03/31 06:56:14 ajacoutot Exp $
+
+From c79f71feaf525f5e7236934a94268f836e1af862 Mon Sep 17 00:00:00 2001
+From: Christian Persch <chpe@gnome.org>
+Date: Mon, 24 Mar 2014 14:16:22 +0000
+Subject: appmenu: Fix action parameter
+
+--- src/terminal-appmenu.ui.orig	Mon Mar 24 15:02:16 2014
++++ src/terminal-appmenu.ui	Mon Mar 31 08:47:43 2014
+@@ -21,7 +21,7 @@
+       <item>
+         <attribute name="label" translatable="yes">_New Terminal</attribute>
+         <attribute name="action">win.new-terminal</attribute>
+-        <attribute name="target">'default'</attribute>
++        <attribute name="target" type="(ss)">('default','default')</attribute>
+       </item>
+     </section>
+     <section>
