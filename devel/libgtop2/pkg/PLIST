@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2013/08/26 08:43:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2014/03/31 09:34:52 ajacoutot Exp $
 @bin bin/libgtop_daemon2
 @mode 2555
 @group kmem
@@ -66,6 +66,7 @@ share/gtk-doc/html/libgtop/
 share/gtk-doc/html/libgtop/home.png
 share/gtk-doc/html/libgtop/index.html
 share/gtk-doc/html/libgtop/index.sgml
+share/gtk-doc/html/libgtop/left-insensitive.png
 share/gtk-doc/html/libgtop/left.png
 share/gtk-doc/html/libgtop/libgtop-Close.html
 share/gtk-doc/html/libgtop/libgtop-Command.html
@@ -106,8 +107,10 @@ share/gtk-doc/html/libgtop/libgtop-version.html
 share/gtk-doc/html/libgtop/libgtop-white-paper-overview.html
 share/gtk-doc/html/libgtop/libgtop-white-paper.html
 share/gtk-doc/html/libgtop/libgtop.devhelp2
+share/gtk-doc/html/libgtop/right-insensitive.png
 share/gtk-doc/html/libgtop/right.png
 share/gtk-doc/html/libgtop/style.css
+share/gtk-doc/html/libgtop/up-insensitive.png
 share/gtk-doc/html/libgtop/up.png
 share/locale/am/
 share/locale/am/LC_MESSAGES/

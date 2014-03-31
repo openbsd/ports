@@ -1,9 +1,9 @@
-$OpenBSD: patch-sysdeps_openbsd_Makefile_am,v 1.2 2014/02/03 13:50:32 ajacoutot Exp $
+$OpenBSD: patch-sysdeps_openbsd_Makefile_am,v 1.3 2014/03/31 09:34:52 ajacoutot Exp $
 
 RM at next release.
 
 --- sysdeps/openbsd/Makefile.am.orig	Sat Jul 27 14:40:23 2013
-+++ sysdeps/openbsd/Makefile.am	Sun Feb  2 15:17:00 2014
++++ sysdeps/openbsd/Makefile.am	Mon Mar 31 10:51:53 2014
 @@ -4,18 +4,23 @@ INCLUDES			= @INCLUDES@
  
  noinst_LTLIBRARIES		= libgtop_sysdeps-2.0.la libgtop_sysdeps_suid-2.0.la
@@ -17,7 +17,7 @@ RM at next release.
  
  libgtop_sysdeps_2_0_la_LDFLAGS	= $(LT_VERSION_INFO)
  
--libgtop_sysdeps_suid_2_0_la_LIBADD	= $(KVM_LIBS)
+ libgtop_sysdeps_suid_2_0_la_LIBADD	= $(KVM_LIBS)
 -libgtop_sysdeps_suid_2_0_la_SOURCES	= open.c close.c cpu.c mem.c swap.c \
 -				  uptime.c loadavg.c shm_limits.c msg_limits.c \
 -				  sem_limits.c proclist.c procstate.c procuid.c \
@@ -25,7 +25,6 @@ RM at next release.
 -				  procsegment.c procargs.c procmap.c netlist.c \
 -				  netload.c ppp.c procopenfiles.c fsusage.c \
 -				  procwd.c procaffinity.c glibtop_private.c
-+libgtop_sysdeps_suid_2_0_la_LIBADD	= $(KVM_LIBS) $(EXTRA_SYSDEPS_LIBS)
 +libgtop_sysdeps_suid_2_0_la_SOURCES	=  suid_open.c close.c swap.c \
 +				  proclist.c procstate.c procuid.c \
 +				  proctime.c procmem.c procsignal.c \
