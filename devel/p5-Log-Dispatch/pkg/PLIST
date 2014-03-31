@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/10/06 08:15:32 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/03/31 15:14:51 robert Exp $
 ${P5SITE}/Log/
 ${P5SITE}/Log/Dispatch/
 ${P5SITE}/Log/Dispatch.pm
 ${P5SITE}/Log/Dispatch/ApacheLog.pm
 ${P5SITE}/Log/Dispatch/Base.pm
+${P5SITE}/Log/Dispatch/Code.pm
+${P5SITE}/Log/Dispatch/Conflicts.pm
 ${P5SITE}/Log/Dispatch/Email/
 ${P5SITE}/Log/Dispatch/Email.pm
 ${P5SITE}/Log/Dispatch/Email/MIMELite.pm
@@ -21,6 +23,8 @@ ${P5SITE}/Log/Dispatch/Syslog.pm
 @man man/man3p/Log::Dispatch.3p
 @man man/man3p/Log::Dispatch::ApacheLog.3p
 @man man/man3p/Log::Dispatch::Base.3p
+@man man/man3p/Log::Dispatch::Code.3p
+@man man/man3p/Log::Dispatch::Conflicts.3p
 @man man/man3p/Log::Dispatch::Email.3p
 @man man/man3p/Log::Dispatch::Email::MIMELite.3p
 @man man/man3p/Log::Dispatch::Email::MailSend.3p

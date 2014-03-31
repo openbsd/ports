@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2013/03/11 10:50:18 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2014/03/31 15:14:51 robert Exp $
 
 COMMENT=	dispatches messages to one or more outputs
 
 MODULES=	cpan
-DISTNAME=	Log-Dispatch-2.29
+DISTNAME=	Log-Dispatch-2.41
 CATEGORIES=	devel
 USE_GROFF =	Yes
 
