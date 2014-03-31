@@ -1,6 +1,7 @@
-$OpenBSD: patch-tests_libpeas_engine_c,v 1.1 2014/03/31 10:16:55 jasper Exp $
+$OpenBSD: patch-tests_libpeas_engine_c,v 1.2 2014/03/31 11:18:47 jasper Exp $
 
-Add OpenBSD's error messages to log hooks.
+Add error messages on OpenBSD to test log hooks
+https://bugzilla.gnome.org/show_bug.cgi?id=727380
 
 --- tests/libpeas/engine.c.orig	Mon Mar 31 12:11:42 2014
 +++ tests/libpeas/engine.c	Mon Mar 31 12:15:33 2014
