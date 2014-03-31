@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2014/03/20 17:33:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2014/03/31 14:02:06 ajacoutot Exp $
 
 # XXX
 # util.c: implement pa_get_binary_name()
@@ -44,7 +44,11 @@ MODULES=		devel/gettext \
 			textproc/intltool
 
 USE_GMAKE=		Yes
-# undefined reference to `lt__PROGRAM__LTX_preloaded_symbols'
+
+# XXX undefined reference to `lt__PROGRAM__LTX_preloaded_symbols';
+# XXX remove -rpath from LDFLAGS when switching back to our libtool(1)
+# and remove the following patches:
+# patch-libpulse-mainloop-glib_pc_in patch-libpulse-simple_pc_in patch-libpulse_pc_in
 USE_LIBTOOL=		gnu
 LIBTOOL_FLAGS=		--tag=disable-static
 
@@ -100,7 +104,7 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-gconf \
 			--disable-avahi \
 			--disable-orc
-# linked "privately" to lib/pulseaudio/libpulsecommon-X.Y.so
+
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib \
 				-Wl,-rpath,${TRUEPREFIX}/lib/pulseaudio:${TRUEPREFIX}/lib/pulse-${VERSION}/modules" \
