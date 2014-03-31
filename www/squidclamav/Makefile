@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2013/11/06 13:07:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2014/03/31 13:04:11 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	clamd-based virus scanner for c-icap
 
-DISTNAME=	squidclamav-6.10
-REVISION=	2
+DISTNAME=	squidclamav-6.11
 
 CATEGORIES=	www
 
@@ -24,15 +23,18 @@ RUN_DEPENDS=	www/c-icap/c-icap>=0.3.1
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-c-icap=${LOCALBASE}
 
-FAKE_FLAGS=	DEFAULT_DOC_DIR=${PREFIX}/share/doc/squidclamav
+FAKE_FLAGS=	DEFAULT_DOC_DIR=${PREFIX}/share/doc/squidclamav \
+		CONFIGDIR=${PREFIX}/share/examples/squidclamav
 
 pre-configure:
 	perl -pi -e 's,/etc/squidclamav.conf,${SYSCONFDIR}/squidclamav.conf,' \
 	    ${WRKSRC}/src/squidclamav.h
 
+pre-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/squidclamav
+
 post-install:
 	rm -f ${PREFIX}/lib/c_icap/squidclamav.la
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/squidclamav/
-	mv ${WRKINST}/etc/squidclamav.conf ${PREFIX}/share/examples/squidclamav/
+	mv ${PREFIX}/share/c_icap/templates/squidclamav/en/MALWARE_FOUND{,.default}
 
 .include <bsd.port.mk>

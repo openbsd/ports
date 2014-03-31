@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/11/06 13:07:43 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/03/31 13:04:11 sthen Exp $
 @comment lib/c_icap/squidclamav.a
 lib/c_icap/squidclamav.so
 libexec/squidclamav/
@@ -9,9 +9,16 @@ libexec/squidclamav/clwarn.cgi.fr_FR
 libexec/squidclamav/clwarn.cgi.pt_BR
 libexec/squidclamav/clwarn.cgi.ru_RU
 @man man/man1/squidclamav.1
+share/c_icap/
+share/c_icap/templates/
+share/c_icap/templates/squidclamav/
+share/c_icap/templates/squidclamav/en/
+share/c_icap/templates/squidclamav/en/MALWARE_FOUND.default
+@sample share/c_icap/templates/squidclamav/en/MALWARE_FOUND
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/squidclamav/
 share/doc/squidclamav/README
 share/examples/squidclamav/
 share/examples/squidclamav/squidclamav.conf
 @sample ${SYSCONFDIR}/squidclamav.conf
+@comment share/examples/squidclamav/squidclamav.conf.default
