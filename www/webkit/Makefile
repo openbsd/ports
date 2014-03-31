@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.109 2014/03/25 06:26:21 landry Exp $
+# $OpenBSD: Makefile,v 1.110 2014/03/31 16:50:23 sthen Exp $
+
+BROKEN-i386= Source/JavaScriptCore/dfg/DFGByteCodeParser.cpp:1738:90: error: call of overloaded 'OpInfo(size_t)' is ambiguous
 
 COMMENT =	open source web browser engine for Gtk+
 
