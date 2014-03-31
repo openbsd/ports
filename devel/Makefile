@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1210 2014/03/28 12:18:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.1211 2014/03/31 21:44:35 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -299,6 +299,7 @@
      SUBDIR += hs-uniplate
      SUBDIR += hs-unix-compat
      SUBDIR += hs-unordered-containers
+     SUBDIR += hs-uuid
      SUBDIR += hs-vault
      SUBDIR += hs-vector
      SUBDIR += hs-vector-algorithms
