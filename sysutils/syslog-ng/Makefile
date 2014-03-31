@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2014/03/24 22:41:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2014/03/31 17:06:54 ajacoutot Exp $
 
 COMMENT=	syslogd replacement
 
@@ -6,7 +6,7 @@ SHARED_ONLY =	Yes
 
 V =		3.4.7
 DISTNAME =	syslog-ng-$V
-REVISION =	0
+REVISION =	1
 CATEGORIES =	sysutils
 
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
@@ -51,6 +51,7 @@ CONFIGURE_ENV +=	OPENSSL_CFLAGS="-I/usr/include/openssl" \
 USE_GMAKE =	Yes
 USE_GROFF =	Yes
 
+SYSCONFDIR =	${BASESYSCONFDIR}/syslog-ng
 CFLAGS +=	-I${LOCALBASE}/include
 
 SUBST_VARS +=	V
@@ -67,8 +68,5 @@ post-install:
 		${EXAMPLES}/syslog-ng.conf.openbsd
 	rm -rf ${PREFIX}/share/{include,tools,xsd}
 	rm -f ${PREFIX}/lib/syslog-ng/*.{a,la}
-# XXX hack for libtool dropping -rpath
-	ln -s syslog-ng/libsyslog-ng-crypto.so ${PREFIX}/lib/libsyslog-ng-crypto.so
 
 .include <bsd.port.mk>
-CONFIGURE_ARGS+=	--sysconfdir=${SYSCONFDIR}/syslog-ng

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2014/01/12 20:41:11 steven Exp $
+@comment $OpenBSD: PLIST,v 1.17 2014/03/31 17:06:54 ajacoutot Exp $
 @bin bin/loggen
 @bin bin/pdbtool
 bin/update-patterndb
@@ -81,7 +81,6 @@ include/syslog-ng/value-pairs.h
 include/syslog-ng/versioning.h
 include/syslog-ng/vptransform.h
 @lib lib/libsyslog-ng-3.4.7.so.${LIBsyslog-ng-3.4.7_VERSION}
-lib/libsyslog-ng-crypto.so
 lib/libsyslog-ng.a
 lib/libsyslog-ng.la
 @lib lib/libsyslog-ng.so.${LIBsyslog-ng_VERSION}
