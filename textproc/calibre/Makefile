@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2014/03/19 02:15:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2014/03/31 23:54:35 sthen Exp $
 
 COMMENT =		ebook management application
 
-DISTNAME =		calibre-1.28.0
+DISTNAME =		calibre-1.30.0
 CATEGORIES =		textproc
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calibre/}
 EXTRACT_SUFX =		.tar.xz
@@ -70,6 +70,8 @@ MAKE_ENV +=		QMAKE="${LOCALBASE}/bin/qmake4"
 MAKE_ENV +=		LDFLAGS="${LDFLAGS}"
 MAKE_ENV +=		FT_LIB_DIR="${X11BASE}/lib"
 MAKE_ENV +=		XDG_DATA_DIRS="${PREFIX}/share"
+#MAKE_ENV +=		PODOFO_INC_DIR="${LOCALBASE}/include/podofo"
+#MAKE_ENV +=		PODOFO_LIB_DIR="${LOCALBASE}/lib"
 
 # Requires /sys filesystem for HW detection
 MAKE_ENV +=		WITH_USB=no
