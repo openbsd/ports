@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2013/03/19 22:32:28 sthen Exp $
+$OpenBSD: README,v 1.5 2014/03/31 10:28:20 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -18,31 +18,44 @@ a patch which can be used:
 Then skip to the next section in this file, "Starting the service
 and online configuration".
 
-If you need to edit manually, Tomcat's ${CATALINA_BASE}/conf/web.xml file
-should have these changes:
+If you have already modified Tomcat's configuration and need to edit
+manually, there are two possible ways to proceed.
 
-- Add lines after the first <?xml...?> line at the top of the file, so it
-looks like this:
+1. Insert the contents of ${PREFIX}/conf/web-railo.xml in Tomcat's
+${CATALINA_BASE}/conf/web.xml file. This will need to be kept up-to-date
+with future Railo releases.
 
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<!DOCTYPE root [
-    <!ENTITY railo SYSTEM "./web-railo.xml" >
-]>
+ -or-
 
-- Towards the bottom of web.xml, add the CFML-related file extensions
-to the <welcome-file-list> section:
+2. Modify Tomcat configuration to include web-railo.xml itself; this is
+the method used by the patch below, initial setup is slightly more complex
+but ongoing maintenance is reduced.
+
+   a) Change the <Context> line in ${CATALINA_BASE}/conf/context.xml to read
+      <Context xmlBlockExternal="false">.
+
+   b) Add lines after the first <?xml...?> line at the top of
+      ${CATALINA_BASE}/conf/web.xml, so it looks like this:
+
+   <?xml version="1.0" encoding="ISO-8859-1"?>
+   <!DOCTYPE root [
+       <!ENTITY railo SYSTEM "./web-railo.xml" >
+   ]>
+
+   c) Towards the bottom of web.xml, add the CFML-related file extensions
+      to the <welcome-file-list> section:
 
 	<welcome-file-list>
 	    <welcome-file>index.cfm</welcome-file>
-	    <welcome-file>index.cfml</welcome-file>
 	    <welcome-file>index.html</welcome-file>
 	    <welcome-file>index.htm</welcome-file>
 	    <welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 
-- Add "&railo;" at the bottom of the </web-app> section to include the
-"railo" xml entity defined above. This just includes the contents of the
-web-railo.xml file containing the CF-related settings.
+   d) Add "&railo;" at the bottom of the </web-app> section to include
+      the "railo" xml entity defined above. This tells Tomcat to include
+      the contents of the web-railo.xml file containing the Railo-related
+      settings.
 
 	&railo;
 	</web-app>
@@ -76,8 +89,20 @@ as expected, and don't forget to rotate/archive them as appropriate.
 	${CATALINA_BASE}/railo/server-config/railo-server/context/logs
 	${CATALINA_BASE}/railo/web-config/*/logs (various dirs, per-context)
 
-Patch to unmodified Tomcat web.xml
-==================================
+Patch to unmodified Tomcat sample configuration
+===============================================
+
+--- context.xml.orig	Mon Mar 31 11:20:33 2014
++++ context.xml	Mon Mar 31 11:20:50 2014
+@@ -16,7 +16,7 @@
+   limitations under the License.
+ -->
+ <!-- The contents of this file will be loaded for each web application -->
+-<Context>
++<Context xmlBlockExternal="false">
+ 
+     <!-- Default set of monitored resources -->
+     <WatchedResource>WEB-INF/web.xml</WatchedResource>
 
 --- web.xml.orig	Tue Mar 19 22:29:42 2013
 +++ web.xml	Tue Mar 19 22:29:55 2013
