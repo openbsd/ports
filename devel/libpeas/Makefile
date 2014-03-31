@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2014/03/31 09:58:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2014/03/31 10:12:19 jasper Exp $
 
 COMMENT=	gobject-based plugins engine
 
@@ -44,8 +44,7 @@ LIBTOOL_FLAGS=	--tag=disable-static
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-static \
-		--disable-glade-catalog \
-		--disable-gjs
+		--disable-glade-catalog
 
 # we need support for both python2 and python3
 BUILD_DEPENDS +=lang/python/${MODPY_DEFAULT_VERSION_2}
