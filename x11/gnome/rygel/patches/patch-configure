@@ -1,0 +1,18 @@
+$OpenBSD: patch-configure,v 1.1 2014/03/31 14:57:25 ajacoutot Exp $
+
+libtool(1) issue:
+    undefined reference to `__stack_smash_handler'
+    undefined reference to `strerror'
+    undefined reference to `lseek'
+
+--- configure.orig	Mon Mar 31 16:49:03 2014
++++ configure	Mon Mar 31 16:49:16 2014
+@@ -17724,7 +17724,7 @@ else
+ fi
+ 
+ 
+-RYGEL_PLUGIN_LINKER_FLAGS="-module -avoid-version -Wl,-z,defs"
++RYGEL_PLUGIN_LINKER_FLAGS="-module -avoid-version"
+ 
+ RYGEL_PLUGIN_DIR=${libdir}/rygel-2.2/plugins
+ 

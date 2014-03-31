@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2014/03/27 16:08:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2014/03/31 14:57:25 ajacoutot Exp $
 
 TRACKER_VERSION=	1.0
 
@@ -9,6 +9,7 @@ COMMENT=		home media solution that allows easy media sharing
 GNOME_PROJECT=		rygel
 GNOME_VERSION=		0.22.0
 API_V=			2.2
+REVISION=		0
 
 SHARED_LIBS +=  rygel-core-${API_V}         0.0      # .2.2
 SHARED_LIBS +=  rygel-renderer-${API_V}     0.0      # .2.2
@@ -47,9 +48,6 @@ LIB_DEPENDS=		converters/libunistring \
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS=		vala
-
-# XXX undefined reference to `memset'
-USE_LIBTOOL=		gnu
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
