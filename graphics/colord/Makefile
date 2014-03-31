@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2014/01/28 08:46:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2014/03/31 15:19:59 sthen Exp $
 
 COMMENT=	device color profile management daemon
 
@@ -29,7 +29,8 @@ MODULES=	devel/dconf \
 
 BUILD_DEPENDS=	devel/gobject-introspection \
 		lang/vala \
-		textproc/docbook2x
+		textproc/docbook2x \
+		x11/dbus
 
 LIB_DEPENDS=	graphics/lcms2 \
 		sysutils/polkit
