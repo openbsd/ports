@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.146 2014/03/30 19:28:47 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.147 2014/04/01 18:03:16 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -284,7 +284,6 @@ my $stem_extensions = {
 	'vte-ptyhelper' => 'vte',
 # 5.2
 	'gpsbabel-gui' => 'gpsbabel-tk',
-	'gnome-extras' => 'gnome-extra',
 	'maatkit' => 'percona-toolkit',
 	'scrotwm' => 'spectrwm',
 	'gnuls' => 'coreutils',
@@ -338,6 +337,7 @@ my $stem_extensions = {
 	'p5-Class-MOP' => 'p5-Moose',
 	'libproxy-mozilla' => 'libproxy-webkit',
 	'p5-Mozilla-CA' => 'p5-Mozilla-CA-Fake',
+	'gnome-extra' => 'gnome-extras',
 };
 
 # reasons for obsolete packages
