@@ -1,0 +1,6 @@
+This package contains scripts used by vpnc and OpenConnect (and possibly
+other programs) to provide an OS-independent interface for various
+operations associated with configuring VPNs over tun(4) devices.
+
+It provides facilities such as device creation, adding/removing routes,
+updating resolv.conf, etc.
