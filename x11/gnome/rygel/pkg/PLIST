@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2014/03/27 16:08:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2014/04/01 13:21:14 ajacoutot Exp $
 @bin bin/rygel
 @bin bin/rygel-preferences
 include/rygel-${API_V}/
@@ -6,12 +6,16 @@ include/rygel-${API_V}/rygel-core.h
 include/rygel-${API_V}/rygel-renderer-gst.h
 include/rygel-${API_V}/rygel-renderer.h
 include/rygel-${API_V}/rygel-server.h
+lib/librygel-core-${API_V}.a
 lib/librygel-core-${API_V}.la
 @lib lib/librygel-core-${API_V}.so.${LIBrygel-core-2.2_VERSION}
+lib/librygel-renderer-${API_V}.a
 lib/librygel-renderer-${API_V}.la
 @lib lib/librygel-renderer-${API_V}.so.${LIBrygel-renderer-2.2_VERSION}
+lib/librygel-renderer-gst-${API_V}.a
 lib/librygel-renderer-gst-${API_V}.la
 @lib lib/librygel-renderer-gst-${API_V}.so.${LIBrygel-renderer-gst-2.2_VERSION}
+lib/librygel-server-${API_V}.a
 lib/librygel-server-${API_V}.la
 @lib lib/librygel-server-${API_V}.so.${LIBrygel-server-2.2_VERSION}
 lib/pkgconfig/rygel-core-${API_V}.pc

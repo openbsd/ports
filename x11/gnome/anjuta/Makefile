@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2014/03/27 15:04:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.109 2014/04/01 13:21:14 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		3.12.0
+REVISION=		0
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -64,7 +65,6 @@ RUN_DEPENDS +=		devel/autogen
 # needed by the python plugin
 RUN_DEPENDS +=		devel/py-rope
 
-LIBTOOL_FLAGS=		--tag=disable-static
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_MIME_FILE=	Yes
@@ -74,8 +74,7 @@ MODGNOME_TOOLS= 	gi yelp vala
 YACC=			bison -y
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--disable-static \
-			--with-symbol-db-shm=/tmp \
+CONFIGURE_ARGS+=	--with-symbol-db-shm=/tmp \
 			--disable-neon
 
 pre-configure:
@@ -87,6 +86,6 @@ pre-configure:
 		${WRKSRC}/plugins/project-wizard/templates/python.wiz.in
 
 post-install:
-	rm ${PREFIX}/lib/anjuta/*.la
+	rm ${PREFIX}/lib/anjuta/*.{a,la}
 
 .include <bsd.port.mk>

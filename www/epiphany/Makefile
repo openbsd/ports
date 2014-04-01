@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2014/03/28 10:05:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.112 2014/04/01 13:21:14 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	3.12.0
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	www
 
@@ -56,14 +56,11 @@ MODULES=	devel/dconf \
 		devel/gettext \
 		x11/gnome
 
-LIBTOOL_FLAGS=	--tag=disable-static
-
 MODGNOME_TOOLS=		yelp
 MODGNOME_DESKTOP_FILE=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--disable-static \
-		--disable-nss \
+CONFIGURE_ARGS=	--disable-nss \
 		--with-distributor-name="OpenBSD ports"
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
@@ -73,6 +70,6 @@ TEST_IS_INTERACTIVE=	x11
 PORTHOME=		${WRKDIR}
 
 post-install:
-	rm ${PREFIX}/lib/epiphany/3.12/web-extensions/*.la
+	rm ${PREFIX}/lib/epiphany/3.12/web-extensions/*.{a,la}
 
 .include <bsd.port.mk>

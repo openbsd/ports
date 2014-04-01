@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2014/04/01 07:40:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.118 2014/04/01 13:21:14 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,9 +13,9 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-smb=	${GNOME_PROJECT}-smb-${GNOME_VERSION}
 PKGNAME-goa=	${GNOME_PROJECT}-goa-${GNOME_VERSION}
 
-REVISION-main=	1
-REVISION-smb=	1
-REVISION-goa=	1
+REVISION-main=	2
+REVISION-smb=	2
+REVISION-goa=	2
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -66,8 +66,7 @@ RUN_DEPENDS-goa= ${MODGETTEXT_RUN_DEPENDS} \
 LIB_DEPENDS-goa= ${LIB_DEPENDS} \
 		x11/gnome/online-accounts
 
-CONFIGURE_ARGS=	--disable-static \
-		--disable-libsystemd-login \
+CONFIGURE_ARGS=	--disable-libsystemd-login \
 		--disable-cdda \
 		--disable-bluray \
 		--disable-afc \
@@ -75,8 +74,6 @@ CONFIGURE_ARGS=	--disable-static \
 		--disable-gudev \
 		--disable-udev \
 		--disable-gdu
-
-LIBTOOL_FLAGS=	--tag=disable-static
 
 MULTI_PACKAGES=		-main -smb -goa
 
@@ -98,7 +95,7 @@ TEST_DEPENDS=	devel/py-gobject3
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
-	rm ${PREFIX}/lib/gio/modules/*.la
-	rm ${PREFIX}/lib/gvfs/*.la
+	rm ${PREFIX}/lib/gio/modules/*.{a,la}
+	rm ${PREFIX}/lib/gvfs/*.{a,la}
 
 .include <bsd.port.mk>

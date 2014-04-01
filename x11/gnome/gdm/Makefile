@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.199 2014/04/01 07:40:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.200 2014/04/01 13:21:14 ajacoutot Exp $
 
 # XXX remove from PLIST when OPENBSD_5_6 is branched:
 # @unexec rm -f ${SYSCONFDIR}/dconf/db/gdm
@@ -9,7 +9,7 @@ COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		3.12.0
-REVISION=		4
+REVISION=		5
 
 SHARED_LIBS +=  gdm                  0.0      # 1.0
 
@@ -56,8 +56,6 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			security/openpam \
 			sysutils/accountsservice
 
-LIBTOOL_FLAGS=		--tag=disable-static
-
 MODGNOME_TOOLS= 	gi yelp
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include -DHAS_SA_LEN
@@ -66,8 +64,7 @@ MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69
 
-CONFIGURE_ARGS=		--disable-static \
-			--disable-systemd-journal \
+CONFIGURE_ARGS=		--disable-systemd-journal \
 			--without-systemd \
 			--mandir=${PREFIX}/man \
 			--with-lang-file=${SYSCONFDIR}/gdm/locale.conf \

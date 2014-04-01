@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2014/03/31 14:57:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2014/04/01 13:21:14 ajacoutot Exp $
 
 TRACKER_VERSION=	1.0
 
@@ -9,7 +9,7 @@ COMMENT=		home media solution that allows easy media sharing
 GNOME_PROJECT=		rygel
 GNOME_VERSION=		0.22.0
 API_V=			2.2
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  rygel-core-${API_V}         0.0      # .2.2
 SHARED_LIBS +=  rygel-renderer-${API_V}     0.0      # .2.2
@@ -49,16 +49,12 @@ MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS=		vala
 
-LIBTOOL_FLAGS=		--tag=disable-static
-
-CONFIGURE_ARGS+=	--disable-static
-
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/rygel/
 
 SUBST_VARS +=		API_V
 
 post-install:
-	rm ${PREFIX}/lib/rygel-${API_V}/{engines,plugins}/*.la
+	rm ${PREFIX}/lib/rygel-${API_V}/{engines,plugins}/*.{a,la}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/gtk-doc/html/
 
 .include <bsd.port.mk>

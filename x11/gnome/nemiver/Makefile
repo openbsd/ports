@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/03/30 14:44:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2014/04/01 13:21:14 ajacoutot Exp $
 
 BROKEN=		runtime issue (threads related?)
 
@@ -44,12 +44,9 @@ MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS=		yelp
 
-LIBTOOL_FLAGS=	--tag=disable-static
-
-CONFIGURE_ARGS=	--disable-static \
-		--with-default-gdb=${LOCALBASE}/bin/egdb
+CONFIGURE_ARGS=	--with-default-gdb=${LOCALBASE}/bin/egdb
 
 post-install:
-	rm ${PREFIX}/lib/nemiver/{,modules,plugins/*}/*.la
+	rm ${PREFIX}/lib/nemiver/{,modules,plugins/*}/*.{a,la}
 
 .include <bsd.port.mk>

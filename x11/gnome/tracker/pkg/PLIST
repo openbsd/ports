@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2014/03/29 19:31:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2014/04/01 13:21:14 ajacoutot Exp $
 @conflict evolution-meta-tracker-*
 @conflict nautilus-meta-tracker-*
 @pkgpath x11/gnome/tracker,-evolution
@@ -34,10 +34,13 @@ include/tracker-${TRACKER_VERSION}/libtracker-sparql/tracker-version.h
 lib/girepository-${TRACKER_VERSION}/Tracker-${TRACKER_VERSION}.typelib
 lib/girepository-${TRACKER_VERSION}/TrackerControl-${TRACKER_VERSION}.typelib
 lib/girepository-${TRACKER_VERSION}/TrackerMiner-${TRACKER_VERSION}.typelib
+lib/libtracker-control-${TRACKER_VERSION}.a
 lib/libtracker-control-${TRACKER_VERSION}.la
 @lib lib/libtracker-control-${TRACKER_VERSION}.so.${LIBtracker-control-1.0_VERSION}
+lib/libtracker-miner-${TRACKER_VERSION}.a
 lib/libtracker-miner-${TRACKER_VERSION}.la
 @lib lib/libtracker-miner-${TRACKER_VERSION}.so.${LIBtracker-miner-1.0_VERSION}
+lib/libtracker-sparql-${TRACKER_VERSION}.a
 lib/libtracker-sparql-${TRACKER_VERSION}.la
 @lib lib/libtracker-sparql-${TRACKER_VERSION}.so.${LIBtracker-sparql-1.0_VERSION}
 lib/pkgconfig/tracker-control-${TRACKER_VERSION}.pc
@@ -65,10 +68,13 @@ lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-ps.so
 lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-text.so
 lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-tiff.so
 lib/tracker-${TRACKER_VERSION}/extract-modules/libextract-xmp.so
+lib/tracker-${TRACKER_VERSION}/libtracker-common.a
 lib/tracker-${TRACKER_VERSION}/libtracker-common.la
 @lib lib/tracker-${TRACKER_VERSION}/libtracker-common.so.${LIBtracker-common_VERSION}
+lib/tracker-${TRACKER_VERSION}/libtracker-data.a
 lib/tracker-${TRACKER_VERSION}/libtracker-data.la
 @lib lib/tracker-${TRACKER_VERSION}/libtracker-data.so.${LIBtracker-data_VERSION}
+lib/tracker-${TRACKER_VERSION}/libtracker-extract.a
 lib/tracker-${TRACKER_VERSION}/libtracker-extract.la
 @lib lib/tracker-${TRACKER_VERSION}/libtracker-extract.so.${LIBtracker-extract_VERSION}
 lib/tracker-${TRACKER_VERSION}/writeback-modules/

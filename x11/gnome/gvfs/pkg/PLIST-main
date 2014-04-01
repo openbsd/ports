@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.29 2014/03/27 08:55:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.30 2014/04/01 13:21:14 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 @bin bin/gvfs-cat
 @bin bin/gvfs-copy
@@ -65,12 +65,8 @@ lib/gvfs/libgvfsdaemon.so
 @man man/man1/gvfsd-metadata.1
 @man man/man1/gvfsd.1
 @man man/man7/gvfs.7
-share/GConf/
-share/GConf/gsettings/
 share/GConf/gsettings/gvfs-dns-sd.convert
 share/bash-completion/completions/gvfs
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/gvfs-daemon.service
 share/dbus-1/services/gvfs-metadata.service
 share/glib-2.0/schemas/org.gnome.system.dns_sd.gschema.xml

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.165 2014/03/29 19:31:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.166 2014/04/01 13:21:14 ajacoutot Exp $
 
 EVO_VERSION=		3.12
 SUBST_VARS +=		EVO_VERSION
@@ -9,7 +9,7 @@ COMMENT=		powerful desktop search tool and indexer
 
 GNOME_PROJECT=		tracker
 GNOME_VERSION=		1.0.0
-REVISION=		0
+REVISION=		1
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
@@ -78,8 +78,6 @@ LIB_DEPENDS=		audio/libcue \
 TEST_DEPENDS=		${MODPY_RUN_DEPENDS} \
 			x11/dbus-python
 
-LIBTOOL_FLAGS=		--tag=disable-static
-
 MODGNOME_TOOLS= 	gi vala
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
@@ -89,8 +87,7 @@ MODPY_RUNDEP=		No
 MODPY_ADJ_FILES=	tests/tracker-writeback/01-writeback.py \
 			utils/data-generators/cc/generate
 
-CONFIGURE_ARGS=		--disable-static \
-			--disable-miner-thunderbird \
+CONFIGURE_ARGS=		--disable-miner-thunderbird \
 			--disable-miner-firefox \
 			--disable-network-manager
 
@@ -121,9 +118,9 @@ pre-configure:
 		${WRKSRC}/src/tracker-needle/tracker-utils.vala
 
 post-install:
-	rm ${PREFIX}/lib/tracker-${TRACKER_VERSION}/extract-modules/*.la
-	rm ${PREFIX}/lib/tracker-${TRACKER_VERSION}/writeback-modules/*.la
-#	rm ${PREFIX}/lib/evolution/${EVO_VERSION}/plugins/*.la
+	rm ${PREFIX}/lib/tracker-${TRACKER_VERSION}/extract-modules/*.{a,la}
+	rm ${PREFIX}/lib/tracker-${TRACKER_VERSION}/writeback-modules/*.{a,la}
+#	rm ${PREFIX}/lib/evolution/${EVO_VERSION}/plugins/*.{a,la}
 
 do-test:
 	cd ${WRKBUILD}/tests/functional-tests && ${MAKE_PROGRAM}

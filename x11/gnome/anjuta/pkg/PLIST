@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2014/03/27 15:04:17 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.34 2014/04/01 13:21:14 ajacoutot Exp $
 @conflict gnome-build-*
 @pkgpath x11/gnome/build
 @bin bin/anjuta
@@ -215,6 +215,7 @@ lib/anjuta/sourceview.plugin
 lib/anjuta/symbol-db.plugin
 lib/girepository-1.0/Anjuta-3.0.typelib
 lib/girepository-1.0/IAnjuta-3.0.typelib
+lib/libanjuta-3.a
 lib/libanjuta-3.la
 @lib lib/libanjuta-3.so.${LIBanjuta-3_VERSION}
 lib/pkgconfig/libanjuta-3.0.pc
