@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.27 2014/03/30 16:50:44 ajacoutot Exp $
+$OpenBSD: README-main,v 1.28 2014/04/01 18:02:58 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -8,7 +8,7 @@ $OpenBSD: README-main,v 1.27 2014/03/30 16:50:44 ajacoutot Exp $
 
 The GNOME desktop is composed of 2 meta-packages:
     * gnome, for a standard GNOME installation
-    * gnome-extra, for a full GNOME installation
+    * gnome-extras, for a full GNOME installation
 
 The "gnome" package is focused on generic usage to give the user the
 choice to install his favorite applications for daily usage (i.e. PIM,

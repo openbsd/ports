@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-extra,v 1.1 2012/02/23 09:22:06 ajacoutot Exp $
-@conflict gnome-extras-*
-@pkgpath ${BASE_PKGPATH},-extras
