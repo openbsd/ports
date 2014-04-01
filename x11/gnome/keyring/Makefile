@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2014/03/27 13:47:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.106 2014/04/01 05:55:37 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -29,6 +29,8 @@ LIBTOOL_ARGS=	--tag=disable-static
 
 CONFIGURE_ARGS=	--disable-static \
 		--disable-pam
+
+CONFIGURE_ENV=	ac_cv_path_XSLTPROC=
 
 FAKE_FLAGS=	configdir=${PREFIX}/share/examples/gnome-keyring/pkcs11/modules
 
