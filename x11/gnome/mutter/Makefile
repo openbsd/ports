@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2014/04/01 18:06:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2014/04/01 18:07:48 jasper Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
 GNOME_VERSION=		3.12.0
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  mutter                    0.1 # 0.0
 
@@ -27,7 +27,7 @@ MODULES=		devel/dconf \
 			devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS +=		gobject-introspection
+MODGNOME_TOOLS +=	desktop-file-utils gobject-introspection
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			devel/startup-notification \
@@ -42,8 +42,6 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			x11/gnome/themes-standard \
 			x11/gnome/zenity
-
-DESKTOP_FILES=		Yes
 
 # disable -Werror which breaks at least hppa/mips64/sparc64
 CONFIGURE_ARGS +=	--enable-compile-warnings=yes
