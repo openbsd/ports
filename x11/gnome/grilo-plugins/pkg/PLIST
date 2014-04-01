@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2014/03/20 20:13:24 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.17 2014/04/01 13:21:46 ajacoutot Exp $
 lib/grilo-${API}/grl-apple-trailers.xml
 lib/grilo-${API}/grl-bliptv.xml
 lib/grilo-${API}/grl-bookmarks.xml
@@ -8,9 +8,11 @@ lib/grilo-${API}/grl-freebox.xml
 lib/grilo-${API}/grl-gravatar.xml
 lib/grilo-${API}/grl-jamendo.xml
 lib/grilo-${API}/grl-lastfm-albumart.xml
+lib/grilo-${API}/grl-local-metadata.xml
 lib/grilo-${API}/grl-magnatune.xml
 lib/grilo-${API}/grl-metadata-store.xml
 lib/grilo-${API}/grl-optical-media.xml
+lib/grilo-${API}/grl-pocket.xml
 lib/grilo-${API}/grl-podcasts.xml
 lib/grilo-${API}/grl-raitv.xml
 lib/grilo-${API}/grl-shoutcast.xml
@@ -28,9 +30,11 @@ lib/grilo-${API}/libgrlfreebox.so
 lib/grilo-${API}/libgrlgravatar.so
 lib/grilo-${API}/libgrljamendo.so
 lib/grilo-${API}/libgrllastfm-albumart.so
+lib/grilo-${API}/libgrllocalmetadata.so
 lib/grilo-${API}/libgrlmagnatune.so
 lib/grilo-${API}/libgrlmetadatastore.so
 lib/grilo-${API}/libgrloptical-media.so
+lib/grilo-${API}/libgrlpocket.so
 lib/grilo-${API}/libgrlpodcasts.so
 lib/grilo-${API}/libgrlraitv.so
 lib/grilo-${API}/libgrlshoutcast.so
@@ -39,6 +43,8 @@ lib/grilo-${API}/libgrltracker.so
 lib/grilo-${API}/libgrlupnp.so
 lib/grilo-${API}/libgrlvimeo.so
 lib/grilo-${API}/libgrlyoutube.so
+share/help/
+share/help/C/
 share/help/C/examples/
 share/help/C/examples/example-tmdb.c
 share/help/C/grilo-plugins/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2014/03/30 13:37:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.106 2014/04/01 13:21:45 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,7 +13,9 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
 
-REVISION-main=	0
+REVISION-main=	1
+REVISION-dvi=	0
+REVISION-nautilus=0
 
 MAJ_V=		3.0
 SUBST_VARS=	MAJ_V
@@ -83,10 +85,7 @@ MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_MIME_FILE=	Yes
 
-LIBTOOL_FLAGS=	--tag=disable-static
-
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+= --disable-static
 
 MODGNOME_CPPFLAGS=${CFLAGS}
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
@@ -112,8 +111,8 @@ post-install:
 # This will fail if no_nautilus is found in FLAVOR, so make sure we don't
 # do it if it is.
 .if ${BUILD_PACKAGES:M-nautilus}
-	rm ${PREFIX}/lib/nautilus/extensions-${MAJ_V}/*.la
+	rm ${PREFIX}/lib/nautilus/extensions-${MAJ_V}/*.{a,la}
 .endif
-	rm ${PREFIX}/lib/evince/4/backends/*.la
+	rm ${PREFIX}/lib/evince/4/backends/*.{a,la}
 
 .include <bsd.port.mk>

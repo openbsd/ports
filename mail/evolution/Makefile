@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.219 2014/03/31 14:26:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.220 2014/04/01 13:21:45 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		3.12.0
-REVISION=		0
+REVISION=		1
 
 # NOTE: when EVO_VERSION changes, increment accordingly and bump:
 # mail/evolution-ews
@@ -71,19 +71,17 @@ MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 # without --as-needed, evolution takes 20 minutes (yes, 20!) to start
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib -Wl,--as-needed
 
-LIBTOOL_FLAGS=		--tag=disable-static
 YACC=			bison
 
 CONFIGURE_STYLE=	gnu
 
-CONFIGURE_ARGS=		--disable-static \
-			--with-openldap="${LOCALBASE}" \
+CONFIGURE_ARGS=		--with-openldap="${LOCALBASE}" \
 			--with-sub-version="OpenBSD Ports"
 
 FAKE_FLAGS=		autostartdir=${PREFIX}/share/examples/evolution/xdg/autostart
 
 post-install:
-	rm ${PREFIX}/lib/evolution/${EVO_VERSION}/{modules,plugins}/*.la
+	rm ${PREFIX}/lib/evolution/${EVO_VERSION}/{modules,plugins}/*.{a,la}
 	find ${PREFIX}/share/evolution/${EVO_VERSION}/default -perm 444 -exec chmod 644 {} \;
 
 .include <bsd.port.mk>

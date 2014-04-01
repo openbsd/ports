@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2014/03/27 13:07:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2014/04/01 13:21:45 ajacoutot Exp $
 
 COMMENT=		clutter GStreamer integration library
 
 GNOME_PROJECT=		clutter-gst
 GNOME_VERSION=		2.0.10
-REVISION=		0
+REVISION=		1
 
 API_VERSION=		2.0
 
@@ -25,6 +25,6 @@ LIB_DEPENDS=		graphics/clutter/core>=${MAJOR} \
 			multimedia/gstreamer1/plugins-base
 
 post-install:
-	rm ${PREFIX}/lib/gstreamer-1.0/*.la
+	rm ${PREFIX}/lib/gstreamer-1.0/*.{a,la}
 
 .include <bsd.port.mk>

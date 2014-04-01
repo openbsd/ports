@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.20 2014/04/01 08:24:59 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.21 2014/04/01 13:21:45 ajacoutot Exp $
 
 SHARED_ONLY?=		Yes
 
@@ -17,10 +17,7 @@ PERMIT_PACKAGE_CDROM?=  Yes
 MODULES +=		devel/gettext \
 			x11/gnome
 
-LIBTOOL_FLAGS?=		--tag=disable-static
-
 CONFIGURE_STYLE?=	gnu
-CONFIGURE_ARGS +=	--disable-static
 
 API_VERSION?=		1.0
 MAJOR?=			1.18

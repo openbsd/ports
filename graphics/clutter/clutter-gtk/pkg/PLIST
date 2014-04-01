@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/10/21 16:59:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/04/01 13:21:45 ajacoutot Exp $
 include/clutter-gtk-${API_VERSION}/
 include/clutter-gtk-${API_VERSION}/clutter-gtk/
 include/clutter-gtk-${API_VERSION}/clutter-gtk/clutter-gtk.h
@@ -9,6 +9,7 @@ include/clutter-gtk-${API_VERSION}/clutter-gtk/gtk-clutter-util.h
 include/clutter-gtk-${API_VERSION}/clutter-gtk/gtk-clutter-version.h
 include/clutter-gtk-${API_VERSION}/clutter-gtk/gtk-clutter-window.h
 lib/girepository-${API_VERSION}/GtkClutter-${API_VERSION}.typelib
+lib/libclutter-gtk-${API_VERSION}.a
 lib/libclutter-gtk-${API_VERSION}.la
 @lib lib/libclutter-gtk-${API_VERSION}.so.${LIBclutter-gtk-1.0_VERSION}
 lib/pkgconfig/clutter-gtk-${API_VERSION}.pc

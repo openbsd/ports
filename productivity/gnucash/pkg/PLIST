@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2014/03/28 08:12:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2014/04/01 13:21:45 ajacoutot Exp $
 @conflict gnucash-docs-*
 @pkgpath productivity/gnucash-docs
 bin/gnc-fq-check
@@ -251,18 +251,25 @@ lib/gnucash/libgncmod-standard-reports.so
 lib/gnucash/libgncmod-stylesheets.so
 lib/gnucash/libgncmod-tax-us.so
 lib/gnucash/libgncmod-utility-reports.so
+lib/libgnc-backend-sql.a
 lib/libgnc-backend-sql.la
 @lib lib/libgnc-backend-sql.so.${LIBgnc-backend-sql_VERSION}
+lib/libgnc-backend-xml-utils.a
 lib/libgnc-backend-xml-utils.la
 @lib lib/libgnc-backend-xml-utils.so.${LIBgnc-backend-xml-utils_VERSION}
+lib/libgnc-business-ledger.a
 lib/libgnc-business-ledger.la
 @lib lib/libgnc-business-ledger.so.${LIBgnc-business-ledger_VERSION}
+lib/libgnc-core-utils.a
 lib/libgnc-core-utils.la
 @lib lib/libgnc-core-utils.so.${LIBgnc-core-utils_VERSION}
+lib/libgnc-gnome.a
 lib/libgnc-gnome.la
 @lib lib/libgnc-gnome.so.${LIBgnc-gnome_VERSION}
+lib/libgnc-module.a
 lib/libgnc-module.la
 @lib lib/libgnc-module.so.${LIBgnc-module_VERSION}
+lib/libgnc-qof.a
 lib/libgnc-qof.la
 @lib lib/libgnc-qof.so.${LIBgnc-qof_VERSION}
 libexec/gnucash/

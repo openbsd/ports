@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/03/27 15:41:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/04/01 13:21:46 ajacoutot Exp $
 bin/gnome-music
 lib/gnome-music/
 lib/gnome-music/girepository-1.0/
@@ -48,6 +48,7 @@ lib/python${MODPY_VERSION}/site-packages/gnomemusic/toolbar.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/view.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/window.py
+share/appdata/
 share/appdata/gnome-music.appdata.xml
 share/applications/gnome-music.desktop
 share/glib-2.0/schemas/org.gnome.Music.gschema.xml
@@ -55,6 +56,8 @@ share/gnome-music/
 share/gnome-music/gir-1.0/
 share/gnome-music/gir-1.0/Gd-1.0.gir
 share/gnome-music/gnome-music.gresource
+share/help/
+share/help/C/
 share/help/C/gnome-music/
 share/help/C/gnome-music/figures/
 share/help/C/gnome-music/figures/gnome-music${MODPY_BIN_SUFFIX}.12.png
@@ -68,6 +71,7 @@ share/help/C/gnome-music/playlist-create-songs.page
 share/help/C/gnome-music/playlist-delete.page
 share/help/C/gnome-music/playlist-remove-songs.page
 share/help/C/gnome-music/search.page
+share/help/cs/
 share/help/cs/gnome-music/
 share/help/cs/gnome-music/figures/
 share/help/cs/gnome-music/figures/gnome-music${MODPY_BIN_SUFFIX}.12.png
@@ -81,6 +85,7 @@ share/help/cs/gnome-music/playlist-create-songs.page
 share/help/cs/gnome-music/playlist-delete.page
 share/help/cs/gnome-music/playlist-remove-songs.page
 share/help/cs/gnome-music/search.page
+share/help/es/
 share/help/es/gnome-music/
 share/help/es/gnome-music/figures/
 share/help/es/gnome-music/figures/gnome-music${MODPY_BIN_SUFFIX}.12.png
@@ -94,6 +99,7 @@ share/help/es/gnome-music/playlist-create-songs.page
 share/help/es/gnome-music/playlist-delete.page
 share/help/es/gnome-music/playlist-remove-songs.page
 share/help/es/gnome-music/search.page
+share/help/fr/
 share/help/fr/gnome-music/
 share/help/fr/gnome-music/figures/
 share/help/fr/gnome-music/figures/gnome-music${MODPY_BIN_SUFFIX}.12.png
@@ -107,6 +113,7 @@ share/help/fr/gnome-music/playlist-create-songs.page
 share/help/fr/gnome-music/playlist-delete.page
 share/help/fr/gnome-music/playlist-remove-songs.page
 share/help/fr/gnome-music/search.page
+share/help/hu/
 share/help/hu/gnome-music/
 share/help/hu/gnome-music/figures/
 share/help/hu/gnome-music/figures/gnome-music${MODPY_BIN_SUFFIX}.12.png
@@ -120,6 +127,7 @@ share/help/hu/gnome-music/playlist-create-songs.page
 share/help/hu/gnome-music/playlist-delete.page
 share/help/hu/gnome-music/playlist-remove-songs.page
 share/help/hu/gnome-music/search.page
+share/help/pt_BR/
 share/help/pt_BR/gnome-music/
 share/help/pt_BR/gnome-music/figures/
 share/help/pt_BR/gnome-music/figures/gnome-music${MODPY_BIN_SUFFIX}.12.png

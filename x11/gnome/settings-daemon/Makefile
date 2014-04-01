@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2014/04/01 07:40:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.126 2014/04/01 13:21:46 ajacoutot Exp $
 
 # XXX gcm-dmi.c:141:2: warning: #warning Please add dmi support for your OS
 
@@ -8,6 +8,7 @@ COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
 GNOME_VERSION=		3.12.0.1
+REVISION=		0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -67,13 +68,10 @@ MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS=		docbook
 
-LIBTOOL_FLAGS=		--tag=disable-static
-
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
-CONFIGURE_ARGS= 	--disable-static \
-			--disable-gudev \
+CONFIGURE_ARGS= 	--disable-gudev \
 			--disable-rfkill
 
 FAKE_FLAGS=		desktopdir=${PREFIX}/share/examples/gnome-settings-daemon/xdg/autostart \
@@ -88,6 +86,6 @@ pre-configure:
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/*.gschema.override \
 		${PREFIX}/share/glib-2.0/schemas
-	rm ${PREFIX}/lib/gnome-settings-daemon-3.0/*.la
+	rm ${PREFIX}/lib/gnome-settings-daemon-3.0/*.{a,la}
 
 .include <bsd.port.mk>

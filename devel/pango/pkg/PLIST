@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2014/02/04 22:22:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.34 2014/04/01 13:21:45 ajacoutot Exp $
 @exec-update rm -f ${SYSCONFDIR}/pango/pango.modules
 @unexec-delete rm -f %D/lib/pango/1.8.0/modules.cache
 @bin bin/pango-querymodules
@@ -43,12 +43,16 @@ lib/girepository-1.0/Pango-1.0.typelib
 lib/girepository-1.0/PangoCairo-1.0.typelib
 lib/girepository-1.0/PangoFT2-1.0.typelib
 lib/girepository-1.0/PangoXft-1.0.typelib
+lib/libpango-1.0.a
 lib/libpango-1.0.la
 @lib lib/libpango-1.0.so.${LIBpango-1.0_VERSION}
+lib/libpangocairo-1.0.a
 lib/libpangocairo-1.0.la
 @lib lib/libpangocairo-1.0.so.${LIBpangocairo-1.0_VERSION}
+lib/libpangoft2-1.0.a
 lib/libpangoft2-1.0.la
 @lib lib/libpangoft2-1.0.so.${LIBpangoft2-1.0_VERSION}
+lib/libpangoxft-1.0.a
 lib/libpangoxft-1.0.la
 @lib lib/libpangoxft-1.0.so.${LIBpangoxft-1.0_VERSION}
 lib/pango/

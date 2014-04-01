@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2014/03/31 10:12:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2014/04/01 13:21:45 ajacoutot Exp $
 
 COMMENT=	gobject-based plugins engine
 
 GNOME_PROJECT=	libpeas
 GNOME_VERSION=	1.10.0
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -40,11 +41,8 @@ LIB_DEPENDS=	devel/gobject-introspection \
 MODGNOME_ICON_CACHE=	Yes
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
-LIBTOOL_FLAGS=	--tag=disable-static
-
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--disable-static \
-		--disable-glade-catalog
+CONFIGURE_ARGS=	--disable-glade-catalog
 
 # we need support for both python2 and python3
 BUILD_DEPENDS +=lang/python/${MODPY_DEFAULT_VERSION_2}
@@ -55,7 +53,7 @@ CONFIGURE_ENV=	PYTHON2="${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_2}" \
 		PYTHON3_CONFIG="${LOCALBASE}/bin/python${MODPY_DEFAULT_VERSION_3}-config"
 
 post-install:
-	rm ${PREFIX}/lib/libpeas-1.0/loaders/*.la
-	rm ${PREFIX}/lib/peas-demo/plugins/{helloworld,secondtime}/*.la
+	rm ${PREFIX}/lib/libpeas-1.0/loaders/*.{a,la}
+	rm ${PREFIX}/lib/peas-demo/plugins/{helloworld,secondtime}/*.{a,la}
 
 .include <bsd.port.mk>

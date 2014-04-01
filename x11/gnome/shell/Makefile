@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.77 2014/04/01 07:40:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2014/04/01 13:21:46 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.12.0
-REVISION=		1
+REVISION=		2
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -96,13 +96,10 @@ RUN_DEPENDS +=		x11/gnome/icon-theme-symbolic
 RUN_DEPENDS +=		inputmethods/ibus \
 			x11/gnome/gdm
 
-LIBTOOL_FLAGS= 		--tag=disable-static
-
-CONFIGURE_ARGS=		--disable-static \
-			--disable-systemd
+CONFIGURE_ARGS=		--disable-systemd
 
 post-install:
-	rm ${PREFIX}/lib/gnome-shell/*.la
-	rm ${PREFIX}/lib/mozilla/plugins/*.la
+	rm ${PREFIX}/lib/gnome-shell/*.{a,la}
+	rm ${PREFIX}/lib/mozilla/plugins/*.{a,la}
 
 .include <bsd.port.mk>

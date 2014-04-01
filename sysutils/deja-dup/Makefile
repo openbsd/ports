@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2014/03/24 10:31:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2014/04/01 13:21:45 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	simple encrypted backup tool for GNOME
 
 GNOME_VERSION=	28.0
 GNOME_PROJECT=	deja-dup
+REVISION=	0
 
 CATEGORIES=	sysutils x11/gnome
 
@@ -37,16 +38,13 @@ MODGNOME_TOOLS=	vala yelp
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 
-LIBTOOL_FLAGS=	--tag=disable-static
-
 RUN_DEPENDS=	sysutils/duplicity
 
 LIB_DEPENDS=	devel/libpeas \
 		x11/gnome/nautilus
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--disable-static \
-		--with-nautilus \
+CONFIGURE_ARGS=	--with-nautilus \
 		--without-unity
 
 # XXX does not build with new gnome-control-center
@@ -62,7 +60,8 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/deja-dup/widgets/WidgetUtils.vala
 
 post-install:
-	rm ${PREFIX}/lib/deja-dup/*.la
-	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.la
+	rm ${PREFIX}/lib/deja-dup/*.{a,la}
+	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.{a,la}
+	rm ${PREFIX}/libexec/deja-dup/tools/*.{a,la}
 
 .include <bsd.port.mk>

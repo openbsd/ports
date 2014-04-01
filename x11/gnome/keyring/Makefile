@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2014/04/01 05:55:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.107 2014/04/01 13:21:46 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	password agent for the GNOME project
 
 GNOME_PROJECT=	gnome-keyring
 GNOME_VERSION=	3.12.0
+REVISION=	0
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,10 +26,7 @@ MODULES=	devel/gettext \
 
 LIB_DEPENDS=	x11/gnome/gcr
 
-LIBTOOL_ARGS=	--tag=disable-static
-
-CONFIGURE_ARGS=	--disable-static \
-		--disable-pam
+CONFIGURE_ARGS=	--disable-pam
 
 CONFIGURE_ENV=	ac_cv_path_XSLTPROC=
 

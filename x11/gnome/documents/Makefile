@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2014/03/29 19:32:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2014/04/01 13:21:46 ajacoutot Exp $
 
 TRACKER_VERSION=1.0
 
@@ -8,7 +8,7 @@ COMMENT=	document manager for GNOME
 
 GNOME_PROJECT=	gnome-documents
 GNOME_VERSION=	3.12.0
-REVISION=	0
+REVISION=	1
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -53,15 +53,11 @@ MODGNOME_TOOLS=		docbook gi vala
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_DESKTOP_FILE=	Yes
 
-LIBTOOL_FLAGS=	--tag=disable-static
-
-CONFIGURE_ARGS=	--disable-static
-
 # XXX --disable-getting-started is the default but configure checks for
 # itstool(1) anyway
 BUILD_DEPENDS +=	textproc/itstool
 
 post-install:
-	rm ${PREFIX}/lib/gnome-documents/*.la
+	rm ${PREFIX}/lib/gnome-documents/*.{a,la}
 
 .include <bsd.port.mk>

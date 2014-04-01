@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/04/01 11:26:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2014/04/01 13:21:47 ajacoutot Exp $
 bin/pygtk-codegen-2.0
 bin/pygtk-demo
 include/pygtk-2.0/pygtk/
@@ -107,13 +107,11 @@ lib/pygtk/2.0/demos/ui_manager.pyo
 lib/pygtk/2.0/pygtk-demo.py
 lib/pygtk/2.0/pygtk-demo.pyc
 lib/pygtk/2.0/pygtk-demo.pyo
-@comment lib/python${MODPY_VERSION}/site-packages/gtk-2.0/atk.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/atk.so
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/__init__.pyo
-@comment lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/_gtk.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/_gtk.so
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/_lazyutils.py
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/_lazyutils.pyc
@@ -124,16 +122,12 @@ lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/compat.pyo
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/deprecation.py
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/deprecation.pyc
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/deprecation.pyo
-@comment lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/glade.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/glade.so
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/keysyms.py
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/keysyms.pyc
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtk/keysyms.pyo
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtkunixprint.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/gtkunixprint.so
-@comment lib/python${MODPY_VERSION}/site-packages/gtk-2.0/pango.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/pango.so
-@comment lib/python${MODPY_VERSION}/site-packages/gtk-2.0/pangocairo.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/pangocairo.so
 share/gtk-doc/html/pygtk/
 share/gtk-doc/html/pygtk/atk-class-reference.html

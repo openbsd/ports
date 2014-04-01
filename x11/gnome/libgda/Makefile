@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2014/03/28 09:55:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.90 2014/04/01 13:21:46 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -20,8 +20,11 @@ PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
 
-REVISION-main=		1
-REVISION-ui=		0
+REVISION-main=		2
+REVISION-ldap=		0
+REVISION-mysql=		0
+REVISION-pgsql=		0
+REVISION-ui=		1
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -71,9 +74,7 @@ TEST_DEPENDS=	devel/check
 
 MODGNOME_TOOLS= 	gi yelp
 
-LIBTOOL_FLAGS=		--tag=disable-static
-CONFIGURE_ARGS+=	--disable-static \
-			--enable-system-sqlite \
+CONFIGURE_ARGS=		--enable-system-sqlite \
 			--enable-gdaui-gi \
 			--enable-gdaui-vala \
 			--enable-vala-extensions \
@@ -173,6 +174,6 @@ post-patch:
 	perl -pi -e 's,bdb_libext="\$$linklibext",bdb_libext=".so.5.0",' ${WRKSRC}/m4/bdb.m4
 
 post-install:
-	rm ${PREFIX}/lib/libgda-${GDA_MAJOR}/{plugins,providers}/*.la
+	rm ${PREFIX}/lib/libgda-${GDA_MAJOR}/{plugins,providers}/*.{a,la}
 
 .include <bsd.port.mk>

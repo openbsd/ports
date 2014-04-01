@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2014/03/19 07:23:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2014/04/01 13:21:44 ajacoutot Exp $
 include/libgoffice-${GOFFICE_API_VERSION}/
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/
 include/libgoffice-${GOFFICE_API_VERSION}/goffice/app/
@@ -214,6 +214,7 @@ lib/goffice/${GNOME_VERSION}/plugins/smoothing/
 lib/goffice/${GNOME_VERSION}/plugins/smoothing/plugin.xml
 lib/goffice/${GNOME_VERSION}/plugins/smoothing/smoothing.so
 lib/goffice/${GNOME_VERSION}/plugins/smoothing/types.xml
+lib/libgoffice-${GOFFICE_API_VERSION}.a
 lib/libgoffice-${GOFFICE_API_VERSION}.la
 @lib lib/libgoffice-${GOFFICE_API_VERSION}.so.${LIBgoffice-0.10_VERSION}
 lib/pkgconfig/libgoffice-${GOFFICE_API_VERSION}.pc

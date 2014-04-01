@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/03/27 19:04:40 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/04/01 13:21:46 ajacoutot Exp $
 @conflict metacity-*
 @pkgpath x11/gnome/metacity
 @bin bin/mutter
@@ -32,6 +32,7 @@ include/mutter/meta/types.h
 include/mutter/meta/util.h
 include/mutter/meta/window.h
 include/mutter/meta/workspace.h
+lib/libmutter.a
 lib/libmutter.la
 @lib lib/libmutter.so.${LIBmutter_VERSION}
 lib/mutter/

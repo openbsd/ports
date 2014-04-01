@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/04/01 07:27:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/04/01 13:21:46 ajacoutot Exp $
 @bin bin/gpointing-device-settings
 include/gpointing-device-settings/
 include/gpointing-device-settings/gpds-gconf.h
@@ -22,6 +22,7 @@ lib/gpointing-device-settings/module/mouse.so
 lib/gpointing-device-settings/module/pointingstick.so
 @comment lib/gpointing-device-settings/module/touchpad.la
 lib/gpointing-device-settings/module/touchpad.so
+lib/libgpds.a
 lib/libgpds.la
 @lib lib/libgpds.so.${LIBgpds_VERSION}
 lib/pkgconfig/libgpointing-device-settings.pc

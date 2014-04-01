@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2014/03/19 07:23:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2014/04/01 13:21:44 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	document centric objects and utilities
 
 GNOME_PROJECT=	goffice
 GNOME_VERSION=	0.10.13
+REVISION=	0
 
 # NOTE: when GNOME_VERSION changes, increment GOFFICE_VERSION and
 # GOFFICE_API_VERSION accordingly and bump:
@@ -44,12 +45,9 @@ LIB_DEPENDS=		devel/libgsf \
 MODGNOME_TOOLS=		gi
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
-LIBTOOL_FLAGS=		--tag=disable-static
-
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--disable-static
 
 post-install:
-	rm ${PREFIX}/lib/goffice/${GNOME_VERSION}/plugins/*/*.la
+	rm ${PREFIX}/lib/goffice/${GNOME_VERSION}/plugins/*/*.{a,la}
 
 .include <bsd.port.mk>

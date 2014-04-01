@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2013/09/27 17:49:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2014/04/01 13:21:46 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -6,8 +6,7 @@ COMMENT =		tool for setting pointing devices
 
 DISTNAME =		gpointing-device-settings-1.5.1
 CATEGORIES =		x11 sysutils
-
-REVISION =		7
+REVISION =		8
 
 SHARED_LIBS +=  gpds                      0.0 # 1.0
 
@@ -37,7 +36,10 @@ LIB_DEPENDS =		x11/gtk+2
 RUN_DEPENDS =		x11/gnome/settings-daemon
 BUILD_DEPENDS =		x11/gnome/settings-daemon
 
-LIBTOOL_FLAGS =		--tag=disable-static
 CONFIGURE_STYLE =	gnu
+
+post-install:
+	rm ${PREFIX}/lib/gnome-settings-daemon-2.0/*.a
+	rm ${PREFIX}/lib/gpointing-device-settings/module/*.a
 
 .include <bsd.port.mk>

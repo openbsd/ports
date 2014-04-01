@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2014/03/27 09:15:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2014/04/01 13:21:46 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		weather application for GNOME
 
 GNOME_PROJECT=		gnome-weather
 GNOME_VERSION=		3.12.0
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -32,11 +33,7 @@ MODGNOME_TOOLS=		gi
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 
-LIBTOOL_FLAGS=		--tag=disable-static
-
-CONFIGURE_ARGS=		--disable-static
-
 post-install:
-	rm ${PREFIX}/lib/org.gnome.Weather.Application/libgd.la
+	rm ${PREFIX}/lib/org.gnome.Weather.Application/*.{a,la}
 
 .include <bsd.port.mk>

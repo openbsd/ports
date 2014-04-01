@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/03/09 21:32:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2014/04/01 13:21:45 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	music management and playback application for GNOME
 
 GNOME_VERSION=	2.6.2
 GNOME_PROJECT=	banshee
+REVISION=	0
 
 CATEGORIES=	audio multimedia
 
@@ -59,10 +60,7 @@ MODGNOME_ICON_CACHE=	Yes
 MODGNOME_MIME_FILE=	Yes
 MODGNOME_TOOLS=		yelp
 
-LIBTOOL_FLAGS=	--tag=disable-static
-
-CONFIGURE_ARGS=	--disable-static \
-		--with-vendor-build-id="OpenBSD Ports" \
+CONFIGURE_ARGS=	--with-vendor-build-id="OpenBSD Ports" \
 		--disable-shave
 
 # XXX lang/boo is marked as BROKEN
@@ -100,7 +98,7 @@ MAKE_FLAGS +=	INSTALL_DATA='/usr/bin/install -c -m 444'
 .endif
 
 post-install:
-	rm ${PREFIX}/lib/banshee/Backends/*.la
-	rm ${PREFIX}/lib/banshee/*.la
+	rm ${PREFIX}/lib/banshee/Backends/*.{a,la}
+	rm ${PREFIX}/lib/banshee/*.{a,la}
 
 .include <bsd.port.mk>

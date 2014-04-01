@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2014/03/31 14:26:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2014/04/01 13:21:45 ajacoutot Exp $
 
 EVO_VERSION=		3.12
 SUBST_VARS +=		EVO_VERSION
@@ -9,7 +9,7 @@ COMMENT=		evolution connector for MS Exchange via EWS
 
 GNOME_PROJECT=		evolution-ews
 GNOME_VERSION=		3.12.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		mail
 
@@ -52,13 +52,10 @@ RUN_DEPENDS +=		mail/evolution
 
 LIB_DEPENDS=		archivers/libmspack
 
-LIBTOOL_FLAGS=		--tag=disable-static
-
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--disable-static
 
 post-install:
-	rm ${PREFIX}/lib/evolution-data-server/*/*.la
-	rm ${PREFIX}/lib/evolution/${EVO_VERSION}/modules/*.la
+	rm ${PREFIX}/lib/evolution-data-server/*/*.{a,la}
+	rm ${PREFIX}/lib/evolution/${EVO_VERSION}/modules/*.{a,la}
 
 .include <bsd.port.mk>

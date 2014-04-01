@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/04/01 07:13:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2014/04/01 13:21:45 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		pangox compatibility library
 
 GNOME_VERSION=		0.0.2
 GNOME_PROJECT=		pangox-compat
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  pangox-1.0         2906.0   # 0.0
 
@@ -27,10 +27,7 @@ MODULES=		devel/gettext \
 
 LIB_DEPENDS=		devel/pango>=1.31.2
 
-LIBTOOL_FLAGS=		--tag=disable-static
-
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--disable-static
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples
 

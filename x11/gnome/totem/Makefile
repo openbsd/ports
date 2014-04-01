@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2014/03/28 09:30:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.118 2014/04/01 13:21:46 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		official media player for GNOME
 
 GNOME_PROJECT=		totem
 GNOME_VERSION=		3.12.0
+REVISION=		0
 
 SHARED_LIBS +=  totem                0.0      # unknown
 
@@ -65,10 +66,6 @@ MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS=		gi vala yelp
 
-LIBTOOL_FLAGS=		--tag=disable-static
-
-CONFIGURE_ARGS=		--disable-static
-
 pre-configure:
 # XXX cc1: error: unrecognized command line option "-Wno-unused-but-set-variable"
 	find ${WRKSRC} -name Makefile.in | xargs -r \
@@ -76,8 +73,8 @@ pre-configure:
 		${WRKSRC}/src/Makefile.in
 
 post-install:
-	rm ${PREFIX}/lib/totem/plugins/*/*.la
-	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.la
-	rm ${PREFIX}/lib/mozilla/plugins/*.la
+	rm ${PREFIX}/lib/totem/plugins/*/*.{a,la}
+	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.{a,la}
+	rm ${PREFIX}/lib/mozilla/plugins/*.{a,la}
 
 .include <bsd.port.mk>

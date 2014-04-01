@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2014/03/24 10:31:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2014/04/01 13:21:45 ajacoutot Exp $
 @bin bin/deja-dup
 @bin bin/deja-dup-preferences
 lib/deja-dup/
@@ -9,7 +9,6 @@ libexec/deja-dup/
 @bin libexec/deja-dup/deja-dup-monitor
 libexec/deja-dup/tools/
 libexec/deja-dup/tools/duplicity.plugin
-@comment libexec/deja-dup/tools/libduplicity.la
 libexec/deja-dup/tools/libduplicity.so
 man/ar/
 man/ar/man1/
@@ -310,7 +309,6 @@ man/zh_TW/man1/
 @man man/zh_TW/man1/deja-dup-preferences.1
 @man man/zh_TW/man1/deja-dup.1
 share/GConf/gsettings/deja-dup.convert
-share/appdata/
 share/appdata/deja-dup.appdata.xml
 share/applications/deja-dup-preferences.desktop
 share/applications/deja-dup.desktop

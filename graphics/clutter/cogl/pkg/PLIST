@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2014/03/27 13:07:32 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.12 2014/04/01 13:21:45 ajacoutot Exp $
 @conflict clutter-<1.8.0
 include/cogl/
 include/cogl/cogl/
@@ -104,10 +104,13 @@ lib/girepository-${API_VERSION}/Cogl-${API_VERSION}.typelib
 lib/girepository-${API_VERSION}/Cogl-2.0.typelib
 lib/girepository-${API_VERSION}/CoglPango-${API_VERSION}.typelib
 lib/girepository-${API_VERSION}/CoglPango-2.0.typelib
+lib/libcogl-pango.a
 lib/libcogl-pango.la
 @lib lib/libcogl-pango.so.${LIBcogl-pango_VERSION}
+lib/libcogl-path.a
 lib/libcogl-path.la
 @lib lib/libcogl-path.so.${LIBcogl-path_VERSION}
+lib/libcogl.a
 lib/libcogl.la
 @lib lib/libcogl.so.${LIBcogl_VERSION}
 lib/pkgconfig/cogl-${API_VERSION}.pc

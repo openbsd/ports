@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/11/18 18:06:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/04/01 13:21:46 ajacoutot Exp $
 @bin bin/caribou
 bin/caribou-preferences
 include/libcaribou/
@@ -7,6 +7,7 @@ lib/girepository-1.0/Caribou-1.0.typelib
 lib/gnome-settings-daemon-3.0/gtk-modules/caribou-gtk-module.desktop
 lib/gtk-2.0/modules/libcaribou-gtk-module.so
 lib/gtk-3.0/modules/libcaribou-gtk-module.so
+lib/libcaribou.a
 lib/libcaribou.la
 @lib lib/libcaribou.so.${LIBcaribou_VERSION}
 lib/pkgconfig/caribou-1.0.pc

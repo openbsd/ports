@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2014/03/27 12:17:43 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.40 2014/04/01 13:21:46 ajacoutot Exp $
 @bin bin/gedit
 bin/gnome-text-editor
 include/gedit-3.12/
@@ -24,6 +24,7 @@ include/gedit-3.12/gedit/gedit-window.h
 lib/gedit/
 lib/gedit/girepository-1.0/
 lib/gedit/girepository-1.0/Gedit-3.0.typelib
+lib/gedit/libgedit-private.a
 lib/gedit/libgedit-private.la
 lib/gedit/libgedit-private.so
 lib/gedit/plugins/

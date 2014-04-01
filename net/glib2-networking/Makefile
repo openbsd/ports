@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2014/03/27 09:00:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2014/04/01 13:21:45 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	network-related gio modules for glib2
 
 GNOME_VERSION=	2.40.0
 GNOME_PROJECT=	glib-networking
-REVISION=	0
+REVISION=	1
 
 PKGNAME=	glib2-networking-${GNOME_VERSION}
 

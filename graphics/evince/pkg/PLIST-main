@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.32 2014/03/27 12:14:31 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.33 2014/04/01 13:21:45 ajacoutot Exp $
 @conflict evince-djvu-*
 @pkgpath graphics/evince
 @pkgpath graphics/evince,-djvu
@@ -71,8 +71,10 @@ lib/evince/4/backends/psdocument.evince-backend
 lib/evince/4/backends/tiffdocument.evince-backend
 lib/girepository-1.0/EvinceDocument-${MAJ_V}.typelib
 lib/girepository-1.0/EvinceView-${MAJ_V}.typelib
+lib/libevdocument3.a
 lib/libevdocument3.la
 @lib lib/libevdocument3.so.${LIBevdocument3_VERSION}
+lib/libevview3.a
 lib/libevview3.la
 @lib lib/libevview3.so.${LIBevview3_VERSION}
 lib/pkgconfig/evince-document-${MAJ_V}.pc

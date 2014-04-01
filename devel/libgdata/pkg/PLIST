@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2013/08/06 19:41:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2014/04/01 13:21:45 ajacoutot Exp $
 include/libgdata/
 include/libgdata/gdata/
 include/libgdata/gdata/app/
@@ -102,6 +102,7 @@ include/libgdata/gdata/services/youtube/gdata-youtube-service.h
 include/libgdata/gdata/services/youtube/gdata-youtube-state.h
 include/libgdata/gdata/services/youtube/gdata-youtube-video.h
 lib/girepository-1.0/GData-0.0.typelib
+lib/libgdata.a
 lib/libgdata.la
 @lib lib/libgdata.so.${LIBgdata_VERSION}
 lib/pkgconfig/libgdata.pc

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/03/27 15:41:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2014/04/01 13:21:46 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		GNOME music playing application
 
 GNOME_PROJECT=		gnome-music
 GNOME_VERSION=		3.12.0
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -41,11 +42,7 @@ RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 # sndio(7) support
 RUN_DEPENDS +=	multimedia/gstreamer1/plugins-base
 
-LIBTOOL_FLAGS=		--tag=disable-static
-
-CONFIGURE_ARGS=		--disable-static
-
 post-install:
-	rm ${PREFIX}/lib/gnome-music/libgd.la
+	rm ${PREFIX}/lib/gnome-music/*.{a,la}
 
 .include <bsd.port.mk>

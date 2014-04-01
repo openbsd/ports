@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2013/12/21 08:21:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2014/04/01 13:21:44 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		Google Data API based Glib client library
 
 GNOME_PROJECT=		libgdata
 GNOME_VERSION=		0.14.1
+REVISION=		0
 
 SHARED_LIBS +=  gdata                16.1     # 18.2
 
@@ -35,9 +36,6 @@ LIB_DEPENDS=		devel/libsoup \
 
 MODGNOME_TOOLS= 	gi vala
 
-LIBTOOL_FLAGS+= 	--tag=disable-static
-
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--disable-static
 
 .include <bsd.port.mk>

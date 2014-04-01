@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2013/09/28 08:50:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2014/04/01 13:21:46 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,6 +7,7 @@ COMMENT=		collection of theme engines for GTK+2
 GNOME_PROJECT=		gtk-engines
 GNOME_VERSION=		2.20.2
 EXTRACT_SUFX=		.tar.bz2
+REVISION=		0
 
 # warning: PKGNAME does not default to ${DISTNAME}
 PKGNAME=		gtk-engines2-${GNOME_VERSION}
@@ -30,13 +31,13 @@ LIB_DEPENDS=	x11/gtk+2
 MODULES=		devel/gettext \
 			x11/gnome
 
-LIBTOOL_FLAGS=		--tag=disable-static
-
 CONFIGURE_STYLE= 	gnu
-CONFIGURE_ARGS= 	--disable-static \
-			--disable-lua
+CONFIGURE_ARGS= 	--disable-lua
 
 # nm: unknown option -- D
 NO_TEST=	       Yes
+
+post-install:
+	rm ${PREFIX}/lib/gtk-2.0/2.10.0/engines/*.a
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2014/03/28 08:48:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.101 2014/04/01 13:21:45 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		technical diagrams drawing tool
 
 GNOME_PROJECT=		dia
 GNOME_VERSION=		0.97.2
-REVISION=		10
+REVISION=		11
 
 CATEGORIES=		graphics
 
@@ -36,11 +36,8 @@ MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS=		docbook
 
-LIBTOOL_FLAGS=		--tag=disable-static
-
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--disable-static \
-			--without-hardbooks \
+CONFIGURE_ARGS=		--without-hardbooks \
 			--without-python \
 			--without-swig \
 			--disable-db2html \
@@ -50,6 +47,6 @@ CONFIGURE_ARGS=		--disable-static \
 post-install:
 	mv ${PREFIX}/share/man/fr ${PREFIX}/man
 	rmdir ${PREFIX}/share/man/ ${PREFIX}/share/oaf/
-	rm ${PREFIX}/lib/dia/*.la
+	rm ${PREFIX}/lib/dia/*.{a,la}
 
 .include <bsd.port.mk>

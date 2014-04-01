@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/09/19 08:01:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/04/01 13:21:45 ajacoutot Exp $
 include/clutter-gst-${API_VERSION}/
 include/clutter-gst-${API_VERSION}/clutter-gst/
 include/clutter-gst-${API_VERSION}/clutter-gst/clutter-gst-enum-types.h
@@ -11,6 +11,7 @@ include/clutter-gst-${API_VERSION}/clutter-gst/clutter-gst-video-texture.h
 include/clutter-gst-${API_VERSION}/clutter-gst/clutter-gst.h
 lib/girepository-1.0/ClutterGst-${API_VERSION}.typelib
 lib/gstreamer-1.0/libgstclutter.so
+lib/libclutter-gst-${API_VERSION}.a
 lib/libclutter-gst-${API_VERSION}.la
 @lib lib/libclutter-gst-${API_VERSION}.so.${LIBclutter-gst-2.0_VERSION}
 lib/pkgconfig/clutter-gst-${API_VERSION}.pc

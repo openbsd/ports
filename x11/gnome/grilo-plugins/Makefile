@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2014/03/29 16:35:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2014/04/01 13:21:46 ajacoutot Exp $
 
 TRACKER_VERSION=1.0
 
@@ -8,7 +8,7 @@ COMMENT=	plugins for Grilo
 
 GNOME_PROJECT=	grilo-plugins
 GNOME_VERSION=	0.2.12
-REVISION=	2
+REVISION=	3
 
 API=		0.2
 SUBST_VARS=	API
@@ -27,6 +27,7 @@ WANTLIB += p11-kit pcre plc4 plds4 pthread smime3 softokn3 soup-2.4
 WANTLIB += sqlite3 ssl ssl3 totem-plparser uuid
 WANTLIB += xml2 z dbus-1 grlpls-0.2 icudata
 WANTLIB += avahi-client avahi-common avahi-glib avahi-gobject
+WANTLIB += gdk_pixbuf-2.0 mediaart-1.0 png rest-0.7 soup-gnome-2.4
 WANTLIB += tracker-sparql-${TRACKER_VERSION}
 WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-common
 WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-data
@@ -41,13 +42,9 @@ LIB_DEPENDS=	devel/libgdata \
 		x11/gnome/grilo>=0.2.10 \
 		x11/gnome/tracker
 
-LIBTOOL_FLAGS=	--tag=disable-static
-
 MODGNOME_TOOLS=	yelp
 
-CONFIGURE_ARGS=	--disable-static
-
 post-install:
-	rm ${PREFIX}/lib/grilo-${API}/*.la
+	rm ${PREFIX}/lib/grilo-${API}/*.{a,la}
 
 .include <bsd.port.mk>

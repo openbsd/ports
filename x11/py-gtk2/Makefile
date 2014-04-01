@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2013/11/25 14:16:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2014/04/01 13:21:46 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 BROKEN-alpha=	.got subsegment exceeds 64K
@@ -8,7 +8,7 @@ COMMENT=	GTK+2 Python bindings
 GNOME_PROJECT=	pygtk
 GNOME_VERSION=	2.24.0
 PKGNAME=	py-gtk2-${VERSION}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	x11
 
@@ -43,9 +43,7 @@ USE_GMAKE=	No
 PATCH_LIST=	patch-* sup-mips64-*
 .endif
 
-LIBTOOL_FLAGS+=	--tag=disable-static
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--disable-static
 
 # pick bind_textdomain_codeset
 MODGNOME_LDFLAGS=-lintl -liconv
@@ -55,5 +53,8 @@ TEST_IS_INTERACTIVE= x11
 pre-configure:
 	@find ${WRKDIST} -name \*.py | \
 	    xargs perl -i -pe 's,^#!/usr/bin/env python,#!${MODPY_BIN},'
+
+post-install:
+	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gtk-2.0/{,gtk}/*.{a,la}
 
 .include <bsd.port.mk>

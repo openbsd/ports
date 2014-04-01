@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2014/03/27 14:13:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2014/04/01 13:21:45 ajacoutot Exp $
 @conflict evolution-plugins-*
 @pkgpath mail/evolution,-main
 @pkgpath mail/evolution,-plugins
@@ -477,36 +477,52 @@ include/evolution-${EVO_VERSION}/shell/e-shell-window.h
 include/evolution-${EVO_VERSION}/shell/e-shell.h
 lib/evolution/
 lib/evolution/${EVO_VERSION}/
+lib/evolution/${EVO_VERSION}/libeabutil.a
 lib/evolution/${EVO_VERSION}/libeabutil.la
 lib/evolution/${EVO_VERSION}/libeabutil.so
+lib/evolution/${EVO_VERSION}/libecontacteditor.a
 lib/evolution/${EVO_VERSION}/libecontacteditor.la
 lib/evolution/${EVO_VERSION}/libecontacteditor.so
+lib/evolution/${EVO_VERSION}/libecontactlisteditor.a
 lib/evolution/${EVO_VERSION}/libecontactlisteditor.la
 lib/evolution/${EVO_VERSION}/libecontactlisteditor.so
+lib/evolution/${EVO_VERSION}/libemail-engine.a
 lib/evolution/${EVO_VERSION}/libemail-engine.la
 lib/evolution/${EVO_VERSION}/libemail-engine.so
+lib/evolution/${EVO_VERSION}/libessmime.a
 lib/evolution/${EVO_VERSION}/libessmime.la
 lib/evolution/${EVO_VERSION}/libessmime.so
+lib/evolution/${EVO_VERSION}/libevolution-addressbook-importers.a
 lib/evolution/${EVO_VERSION}/libevolution-addressbook-importers.la
 lib/evolution/${EVO_VERSION}/libevolution-addressbook-importers.so
+lib/evolution/${EVO_VERSION}/libevolution-calendar-importers.a
 lib/evolution/${EVO_VERSION}/libevolution-calendar-importers.la
 lib/evolution/${EVO_VERSION}/libevolution-calendar-importers.so
+lib/evolution/${EVO_VERSION}/libevolution-calendar.a
 lib/evolution/${EVO_VERSION}/libevolution-calendar.la
 lib/evolution/${EVO_VERSION}/libevolution-calendar.so
+lib/evolution/${EVO_VERSION}/libevolution-mail-composer.a
 lib/evolution/${EVO_VERSION}/libevolution-mail-composer.la
 lib/evolution/${EVO_VERSION}/libevolution-mail-composer.so
+lib/evolution/${EVO_VERSION}/libevolution-mail-formatter.a
 lib/evolution/${EVO_VERSION}/libevolution-mail-formatter.la
 lib/evolution/${EVO_VERSION}/libevolution-mail-formatter.so
+lib/evolution/${EVO_VERSION}/libevolution-mail-importers.a
 lib/evolution/${EVO_VERSION}/libevolution-mail-importers.la
 lib/evolution/${EVO_VERSION}/libevolution-mail-importers.so
+lib/evolution/${EVO_VERSION}/libevolution-mail.a
 lib/evolution/${EVO_VERSION}/libevolution-mail.la
 lib/evolution/${EVO_VERSION}/libevolution-mail.so
+lib/evolution/${EVO_VERSION}/libevolution-shell.a
 lib/evolution/${EVO_VERSION}/libevolution-shell.la
 lib/evolution/${EVO_VERSION}/libevolution-shell.so
+lib/evolution/${EVO_VERSION}/libevolution-smime.a
 lib/evolution/${EVO_VERSION}/libevolution-smime.la
 lib/evolution/${EVO_VERSION}/libevolution-smime.so
+lib/evolution/${EVO_VERSION}/libevolution-util.a
 lib/evolution/${EVO_VERSION}/libevolution-util.la
 lib/evolution/${EVO_VERSION}/libevolution-util.so
+lib/evolution/${EVO_VERSION}/libgnomecanvas.a
 lib/evolution/${EVO_VERSION}/libgnomecanvas.la
 lib/evolution/${EVO_VERSION}/libgnomecanvas.so
 lib/evolution/${EVO_VERSION}/modules/

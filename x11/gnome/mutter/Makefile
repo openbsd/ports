@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2014/03/27 19:04:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2014/04/01 13:21:46 ajacoutot Exp $
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
 GNOME_VERSION=		3.12.0
+REVISION=		0
 
 SHARED_LIBS +=  mutter                    0.1 # 0.0
 
@@ -44,9 +45,6 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 
 DESKTOP_FILES=		Yes
 
-LIBTOOL_FLAGS+= 	--tag=disable-static
-
-CONFIGURE_ARGS +=	--disable-static
 # disable -Werror which breaks at least hppa/mips64/sparc64
 CONFIGURE_ARGS +=	--enable-compile-warnings=yes
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2014/03/27 17:10:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2014/04/01 13:21:46 ajacoutot Exp $
 @conflict nautilus-totem-*
 @pkgpath x11/gnome/totem,nautilus
 @pkgpath x11/gnome/totem,xine
@@ -12,6 +12,7 @@ include/totem/1.0/totem-interface.h
 include/totem/1.0/totem-plugin.h
 include/totem/1.0/totem.h
 lib/girepository-1.0/Totem-1.0.typelib
+lib/libtotem.a
 lib/libtotem.la
 @lib lib/libtotem.so.${LIBtotem_VERSION}
 lib/mozilla/

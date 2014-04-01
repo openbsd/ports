@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/03/27 13:46:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2014/04/01 13:21:45 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	library to provide a GTK+ widget to display maps
 GNOME_PROJECT=	libchamplain
 GNOME_VERSION=	0.12.7
 API_VERSION=	0.12
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  champlain-${API_VERSION}       1.0      # 3.2
 SHARED_LIBS +=  champlain-gtk-${API_VERSION}   1.0      # 3.2
@@ -35,10 +35,8 @@ WANTLIB += sqlite3 xcb xcb-render xcb-shm xml2 z cogl-path
 MODULES=		devel/gettext \
 			x11/gnome
 
-LIBTOOL_FLAGS=		--tag=disable-static
-
 LIB_DEPENDS=		devel/libsoup \
-			graphics/clutter/clutter-gtk>=1.2.0
+			graphics/clutter/clutter-gtk
 
 MODGNOME_TOOLS=		gi vala
 

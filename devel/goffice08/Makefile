@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/09/28 08:50:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2014/04/01 13:21:44 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ GNOME_PROJECT=	goffice
 GNOME_VERSION=	0.8.17
 EXTRACT_SUFX=	.tar.bz2
 PKGNAME=	goffice08-${GNOME_VERSION}
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS +=	goffice-0.8          0.0      # .8.0
 
@@ -39,13 +39,10 @@ LIB_DEPENDS=	devel/libgsf \
 
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
-LIBTOOL_FLAGS=	--tag=disable-static
-
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--disable-static \
-		--with-config-backend=gconf
+CONFIGURE_ARGS=	--with-config-backend=gconf
 
 post-install:
-	rm ${PREFIX}/lib/goffice/${GNOME_VERSION}/plugins/*/*.la
+	rm ${PREFIX}/lib/goffice/${GNOME_VERSION}/plugins/*/*.{a,la}
 
 .include <bsd.port.mk>

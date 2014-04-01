@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/09/26 08:16:22 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/04/01 13:21:45 ajacoutot Exp $
 bin/gupnp-binding-tool
 include/gupnp-1.0/
 include/gupnp-1.0/libgupnp/
@@ -20,6 +20,7 @@ include/gupnp-1.0/libgupnp/gupnp-white-list.h
 include/gupnp-1.0/libgupnp/gupnp-xml-doc.h
 include/gupnp-1.0/libgupnp/gupnp.h
 lib/girepository-1.0/GUPnP-1.0.typelib
+lib/libgupnp-1.0.a
 lib/libgupnp-1.0.la
 @lib lib/libgupnp-1.0.so.${LIBgupnp-1.0_VERSION}
 lib/pkgconfig/gupnp-1.0.pc

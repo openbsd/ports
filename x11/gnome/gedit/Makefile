@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.117 2014/04/01 07:01:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.118 2014/04/01 13:21:46 ajacoutot Exp $
 
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
 GNOME_VERSION=		3.12.0
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		editors
 
@@ -43,14 +43,12 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODGNOME_TOOLS= 	gi vala yelp
 MODGNOME_DESKTOP_FILE=	Yes
-LIBTOOL_FLAGS=		--tag=disable-static
 
-CONFIGURE_ARGS=		--disable-static \
-			--disable-updater
+CONFIGURE_ARGS=		--disable-updater
 
 TEST_IS_INTERACTIVE=	X11
 
 post-install:
-	rm ${PREFIX}/lib/gedit/plugins/*.la
+	rm ${PREFIX}/lib/gedit/plugins/*.{a,la}
 
 .include <bsd.port.mk>

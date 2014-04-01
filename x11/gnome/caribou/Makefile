@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2014/03/27 13:46:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2014/04/01 13:21:45 ajacoutot Exp $
 
 COMMENT=	input assistive technology
 
 GNOME_PROJECT=	caribou
 GNOME_VERSION=	0.4.13
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=  caribou                   0.0 # 0.0
 
@@ -38,13 +38,9 @@ LIB_DEPENDS=	devel/libgee \
 		x11/gtk+2 \
 		x11/gtk+3
 
-LIBTOOL_FLAGS=	--tag=disable-static
-
-CONFIGURE_ARGS=	--disable-static
-
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/caribou
 
 post-install:
-	rm ${PREFIX}/lib/gtk-{2,3}.0/modules/*.la
+	rm ${PREFIX}/lib/gtk-{2,3}.0/modules/*.{a,la}
 
 .include <bsd.port.mk>

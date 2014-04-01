@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2014/04/01 08:08:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.135 2014/04/01 13:21:44 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		3.0.2
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # 7.0
 
@@ -76,11 +76,8 @@ MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
-LIBTOOL_FLAGS=		--tag=disable-static
-
 CONFIGURE_STYLE= 	gnu
-CONFIGURE_ARGS=		--disable-static \
-			--without-brasero \
+CONFIGURE_ARGS=		--without-brasero \
 			--without-hal \
 			--without-gudev \
 			--disable-fm-radio \
@@ -100,7 +97,8 @@ TEST_IS_INTERACTIVE=	x11
 
 post-install:
 	rm ${PREFIX}/lib/rhythmbox/{,sample-}plugins/*/*.la
-	rm ${PREFIX}/lib/mozilla/plugins/*.la
+	rm ${PREFIX}/lib/rhythmbox/sample-plugins/*/*.a
+	rm ${PREFIX}/lib/mozilla/plugins/*.{a,la}
 	# XXX hangs: check at next upgrade of rhythmbox
 	rm -rf ${PREFIX}/{lib,share}/rhythmbox/plugins/replaygain
 

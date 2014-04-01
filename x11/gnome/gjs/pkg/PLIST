@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/03/26 10:42:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/04/01 13:21:46 ajacoutot Exp $
 bin/gjs
 @bin bin/gjs-console
 include/gjs-1.0/
@@ -36,6 +36,7 @@ include/gjs-1.0/gjs/type-module.h
 lib/gjs/
 lib/gjs/girepository-1.0/
 lib/gjs/girepository-1.0/GjsPrivate-1.0.typelib
+lib/libgjs.a
 lib/libgjs.la
 @lib lib/libgjs.so.${LIBgjs_VERSION}
 lib/pkgconfig/gjs-1.0.pc

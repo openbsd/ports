@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.73 2014/03/27 15:04:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.74 2014/04/01 13:21:46 ajacoutot Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
 GNOME_VERSION=		3.12.0
+REVISION=		0
 
 CATEGORIES=		editors
 
@@ -49,11 +50,7 @@ MODGNOME_TOOLS=		yelp
 # dashboard plugin
 RUN_DEPENDS +=		productivity/zeitgeist
 
-LIBTOOL_FLAGS=		--tag=disable-static
-
-CONFIGURE_ARGS=		--disable-static
-
 post-install:
-	rm ${PREFIX}/lib/gedit/plugins/*.la
+	rm ${PREFIX}/lib/gedit/plugins/*.{a,la}
 
 .include <bsd.port.mk>

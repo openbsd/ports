@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2014/04/01 07:13:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.90 2014/04/01 13:21:45 ajacoutot Exp $
 
 # XXX when OPENBSD_5_6 is branched
 # drop removal of ${SYSCONFDIR}/pango/pango.modules
@@ -9,6 +9,7 @@ COMMENT=		library for layout and rendering of text
 
 GNOME_VERSION=		1.36.3
 GNOME_PROJECT=		pango
+REVISION=		0
 
 SHARED_LIBS +=  pango-1.0            3600.0   # 3600.3
 SHARED_LIBS +=  pangoft2-1.0         3600.0   # 3600.3
@@ -37,12 +38,9 @@ MODGNOME_TOOLS=		gi
 LIB_DEPENDS=		devel/glib2>=2.38.0 \
 			devel/harfbuzz
 
-LIBTOOL_FLAGS=		--tag=disable-static
-
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--disable-static
 
 post-install:
-	rm ${PREFIX}/lib/pango/1.8.0/modules/*.la
+	rm ${PREFIX}/lib/pango/1.8.0/modules/*.{a,la}
 
 .include <bsd.port.mk>

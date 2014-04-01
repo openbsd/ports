@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/03/27 19:37:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2014/04/01 13:21:46 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	quick previewer for Nautilus
 
 GNOME_PROJECT=	sushi
 GNOME_VERSION=	3.10.0
-REVISION=	3
+REVISION=	4
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -40,11 +40,7 @@ LIB_DEPENDS=	audio/libmusicbrainz5 \
 		x11/gnome/gjs \
 		x11/gtksourceview3
 
-LIBTOOL_FLAGS=	--tag=disable-static
-
-CONFIGURE_ARGS=	--disable-static
-
 post-install:
-	rm ${PREFIX}/lib/sushi/*.la
+	rm ${PREFIX}/lib/sushi/*.{a,la}
 
 .include <bsd.port.mk>

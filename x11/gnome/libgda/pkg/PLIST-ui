@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ui,v 1.24 2013/11/16 15:22:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST-ui,v 1.25 2014/04/01 13:21:46 ajacoutot Exp $
 @conflict libgda-<5.1.2p4v2
 @bin bin/gda-browser-${GDA_MAJOR}
 @bin bin/gda-control-center-${GDA_MAJOR}
@@ -40,6 +40,7 @@ lib/libgda-${GDA_MAJOR}/plugins/gdaui-entry-pict-spec.xml
 lib/libgda-${GDA_MAJOR}/plugins/gdaui-entry-pict-spec_string.xml
 lib/libgda-${GDA_MAJOR}/plugins/gdaui-entry-text-spec.xml
 lib/libgda-${GDA_MAJOR}/plugins/libgda-ui-plugins.so
+lib/libgda-ui-${GDA_MAJOR}.a
 lib/libgda-ui-${GDA_MAJOR}.la
 @lib lib/libgda-ui-${GDA_MAJOR}.so.${LIBgda-ui-5.0_VERSION}
 lib/pkgconfig/libgda-ui-${GDA_MAJOR}.pc

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2014/03/28 08:12:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2014/04/01 13:21:45 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -8,6 +8,7 @@ GNOME_PROJECT =		gnucash
 GNOME_VERSION =		2.6.2
 DOC_VERSION = 		2.6.2
 EXTRACT_SUFX =		.tar.bz2
+REVISION =		0
 
 SHARED_LIBS +=  gnc-qof              2.0      # 1.4
 SHARED_LIBS +=  gnc-core-utils       0.0      # unknown
@@ -53,8 +54,6 @@ MODGNOME_DESKTOP_FILE =	Yes
 MODGNOME_ICON_CACHE =	Yes
 MODGNOME_TOOLS = 	yelp
 
-LIBTOOL_FLAGS =		--tag=disable-static
-
 BUILD_DEPENDS=		databases/libdbi-drivers,-sqlite3
 RUN_DEPENDS=		databases/libdbi-drivers,-sqlite3
 
@@ -66,8 +65,7 @@ LIB_DEPENDS =		databases/libdbi \
 			x11/gnome/libgnomecanvas
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--disable-static \
-			--with-dbi-dbd-dir=${LOCALBASE}/lib/dbd \
+CONFIGURE_ARGS =	--with-dbi-dbd-dir=${LOCALBASE}/lib/dbd \
 			--with-xdg-data-dirs=${LOCALBASE}/share
 
 # --disable-ofx until libofx/libsp is fixed to work with .so
@@ -88,6 +86,6 @@ post-build:
 post-install:
 	cd ${DOC_DIR} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} install
-	rm ${PREFIX}/lib/gnucash/*.la
+	rm ${PREFIX}/lib/gnucash/*.{a,la}
 
 .include <bsd.port.mk>
