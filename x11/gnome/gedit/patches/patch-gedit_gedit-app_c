@@ -1,4 +1,9 @@
-$OpenBSD: patch-gedit_gedit-app_c,v 1.3 2014/03/28 08:47:44 jasper Exp $
+$OpenBSD: patch-gedit_gedit-app_c,v 1.4 2014/04/01 07:01:46 jasper Exp $
+
+From 36907e0bf6226182cf4f361663ad7dc4a6b2cd15 Mon Sep 17 00:00:00 2001
+From: Paolo Borelli <pborelli@gnome.org>
+Date: Sun, 30 Mar 2014 00:07:59 +0100
+Subject: Unref all the menu models at shutdown
 
 From fa9263f9fb7a32c73f7635936fdf9ff589e1b43d Mon Sep 17 00:00:00 2001
 From: Kalev Lember <kalevlember@gmail.com>
@@ -6,8 +11,17 @@ Date: Tue, 18 Mar 2014 12:49:03 +0000
 Subject: Plug memory leaks with css loading
 
 --- gedit/gedit-app.c.orig	Fri Mar 21 20:51:39 2014
-+++ gedit/gedit-app.c	Fri Mar 28 09:41:17 2014
-@@ -554,12 +554,14 @@ gedit_app_startup (GApplication *application)
++++ gedit/gedit-app.c	Tue Apr  1 08:41:44 2014
+@@ -182,6 +182,8 @@ gedit_app_dispose (GObject *object)
+ 	g_clear_object (&app->priv->engine);
+ 
+ 	g_clear_object (&app->priv->window_menu);
++	g_clear_object (&app->priv->notebook_menu);
++	g_clear_object (&app->priv->tab_width_menu);
+ 
+ 	G_OBJECT_CLASS (gedit_app_parent_class)->dispose (object);
+ }
+@@ -554,12 +556,14 @@ gedit_app_startup (GApplication *application)
  		gtk_style_context_add_provider_for_screen (gdk_screen_get_default (),
  		                                           GTK_STYLE_PROVIDER (provider),
  		                                           GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);

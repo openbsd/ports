@@ -1,0 +1,20 @@
+$OpenBSD: patch-gedit_gedit-window_c,v 1.1 2014/04/01 07:01:46 jasper Exp $
+
+From 27db7534af9d46ce26d07ea30f8fbbb3c29f75a9 Mon Sep 17 00:00:00 2001
+From: Paolo Borelli <pborelli@gnome.org>
+Date: Sun, 30 Mar 2014 11:56:51 +0200
+Subject: Do not leak closed tabs list
+
+--- gedit/gedit-window.c.orig	Tue Apr  1 08:43:32 2014
++++ gedit/gedit-window.c	Tue Apr  1 08:43:54 2014
+@@ -231,7 +231,9 @@ gedit_window_dispose (GObject *object)
+ static void
+ gedit_window_finalize (GObject *object)
+ {
+-	gedit_debug (DEBUG_WINDOW);
++	GeditWindow *window = GEDIT_WINDOW (object);
++
++	g_slist_free_full (window->priv->closed_docs_stack, (GDestroyNotify)g_object_unref);
+ 
+ 	G_OBJECT_CLASS (gedit_window_parent_class)->finalize (object);
+ }
