@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/09/24 18:28:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/04/01 16:31:40 ajacoutot Exp $
 @bin bin/gst-inspect-${API}
 @bin bin/gst-launch-${API}
 @bin bin/gst-typefind-${API}
@@ -113,14 +113,19 @@ lib/girepository-${API}/GstController-${API}.typelib
 lib/girepository-${API}/GstNet-${API}.typelib
 lib/gstreamer-${API}/
 lib/gstreamer-${API}/libgstcoreelements.so
+lib/libgstbase-${API}.a
 lib/libgstbase-${API}.la
 @lib lib/libgstbase-${API}.so.${LIBgstbase-1.0_VERSION}
+lib/libgstcheck-${API}.a
 lib/libgstcheck-${API}.la
 @lib lib/libgstcheck-${API}.so.${LIBgstcheck-1.0_VERSION}
+lib/libgstcontroller-${API}.a
 lib/libgstcontroller-${API}.la
 @lib lib/libgstcontroller-${API}.so.${LIBgstcontroller-1.0_VERSION}
+lib/libgstnet-${API}.a
 lib/libgstnet-${API}.la
 @lib lib/libgstnet-${API}.so.${LIBgstnet-1.0_VERSION}
+lib/libgstreamer-${API}.a
 lib/libgstreamer-${API}.la
 @lib lib/libgstreamer-${API}.so.${LIBgstreamer-1.0_VERSION}
 lib/pkgconfig/gstreamer-${API}.pc

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2013/11/20 08:53:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2014/04/01 16:31:40 ajacoutot Exp $
 
 COMMENT=		OpenGL elements for GStreamer
 
 V=			0.10.2
 DISTNAME=		gst-plugins-gl-${V}
 PKGNAME=		gstreamer-plugins-gl-${V}
-REVISION=		6
+REVISION=		7
 
 SHARED_LIBS +=  gstgl-0.10                0.0 # 1.0
 
@@ -26,5 +26,8 @@ LDFLAGS +=		-lm -lGL
 
 # requires x11/gtk+2
 CONFIGURE_ARGS=		--disable-examples
+
+post-install:
+	rm ${PREFIX}/lib/gstreamer-${VERSION}/*.{a,la}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.27 2013/06/04 18:41:53 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.28 2014/04/01 16:31:40 ajacoutot Exp $
 
 # Most frequent usage of the GStreamer packages:
 # core          base library
@@ -47,7 +47,6 @@ TEST_DEPENDS +=	${BASE_PKGPATH}
 MODULES +=		devel/gettext
 
 USE_GMAKE ?=		Yes
-LIBTOOL_FLAGS ?=	--tag=disable-static
 AUTOCONF_VERSION ?=	2.68
 
 BUILD_DEPENDS +=	devel/bison \
@@ -66,8 +65,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--with-default-visualizer=goom \
 			--enable-introspection \
 			--disable-gtk-doc \
-			--disable-valgrind \
-			--disable-static
+			--disable-valgrind
 
 # If one of these tools is found at configure stage, it might be used,
 # no matter whether we use --disable-gtk-doc or not.

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2012/09/06 12:37:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2014/04/01 16:31:40 ajacoutot Exp $
 @conflict gstreamer-bad-<0.10.17
 @conflict gstreamer-a52-*
 @conflict gstreamer-mad-*
@@ -45,8 +45,6 @@ share/locale/ja/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
 share/locale/lt/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
 share/locale/lv/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
 share/locale/ms/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
-share/locale/mt/
-share/locale/mt/LC_MESSAGES/
 share/locale/mt/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
 share/locale/nb/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo
 share/locale/nl/LC_MESSAGES/gst-plugins-ugly-${VERSION}.mo

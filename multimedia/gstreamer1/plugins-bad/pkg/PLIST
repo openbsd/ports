@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2013/12/29 10:36:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2014/04/01 16:31:40 ajacoutot Exp $
 include/gstreamer-${API}/gst/basecamerabinsrc/
 include/gstreamer-${API}/gst/basecamerabinsrc/gstbasecamerasrc.h
 include/gstreamer-${API}/gst/basecamerabinsrc/gstcamerabin-enum.h
@@ -92,18 +92,25 @@ lib/gstreamer-${API}/libgstvideofiltersbad.so
 lib/gstreamer-${API}/libgstvideoparsersbad.so
 lib/gstreamer-${API}/libgsty4mdec.so
 lib/gstreamer-${API}/libgstyadif.so
+lib/libgstbasecamerabinsrc-${API}.a
 lib/libgstbasecamerabinsrc-${API}.la
 @lib lib/libgstbasecamerabinsrc-${API}.so.${LIBgstbasecamerabinsrc-1.0_VERSION}
+lib/libgstcodecparsers-${API}.a
 lib/libgstcodecparsers-${API}.la
 @lib lib/libgstcodecparsers-${API}.so.${LIBgstcodecparsers-1.0_VERSION}
+lib/libgstegl-${API}.a
 lib/libgstegl-${API}.la
 @lib lib/libgstegl-${API}.so.${LIBgstegl-1.0_VERSION}
+lib/libgstinsertbin-${API}.a
 lib/libgstinsertbin-${API}.la
 @lib lib/libgstinsertbin-${API}.so.${LIBgstinsertbin-1.0_VERSION}
+lib/libgstmpegts-${API}.a
 lib/libgstmpegts-${API}.la
 @lib lib/libgstmpegts-${API}.so.${LIBgstmpegts-1.0_VERSION}
+lib/libgstphotography-${API}.a
 lib/libgstphotography-${API}.la
 @lib lib/libgstphotography-${API}.so.${LIBgstphotography-1.0_VERSION}
+lib/libgsturidownloader-${API}.a
 lib/libgsturidownloader-${API}.la
 @lib lib/libgsturidownloader-${API}.so.${LIBgsturidownloader-1.0_VERSION}
 lib/pkgconfig/gstreamer-codecparsers-${API}.pc
@@ -169,8 +176,6 @@ share/locale/ja/LC_MESSAGES/gst-plugins-bad-${API}.mo
 share/locale/ky/LC_MESSAGES/gst-plugins-bad-${API}.mo
 share/locale/lt/LC_MESSAGES/gst-plugins-bad-${API}.mo
 share/locale/lv/LC_MESSAGES/gst-plugins-bad-${API}.mo
-share/locale/mt/
-share/locale/mt/LC_MESSAGES/
 share/locale/mt/LC_MESSAGES/gst-plugins-bad-${API}.mo
 share/locale/nb/LC_MESSAGES/gst-plugins-bad-${API}.mo
 share/locale/nl/LC_MESSAGES/gst-plugins-bad-${API}.mo

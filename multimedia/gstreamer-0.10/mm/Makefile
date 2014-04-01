@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/01/11 13:44:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2014/04/01 16:31:40 ajacoutot Exp $
 
 COMMENT=	C++ bindings for GStreamer
 
@@ -6,7 +6,7 @@ V=		0.10.11
 NAME=		gstreamermm
 DISTNAME=	${NAME}-${V}
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  gstreamermm_get_plugin_defs-0.10 1.0 # .2.1
 SHARED_LIBS +=  gstreamermm-0.10                 1.0 # .2.1

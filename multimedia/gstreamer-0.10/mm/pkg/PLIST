@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/07/21 06:37:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/04/01 16:31:40 ajacoutot Exp $
 include/gstreamermm-${VERSION}/
 include/gstreamermm-${VERSION}/gstreamermm/
 include/gstreamermm-${VERSION}/gstreamermm.h
@@ -293,8 +293,10 @@ lib/gstreamermm-${VERSION}/gen/m4/plugingen_gstreamermm.m4
 lib/gstreamermm-${VERSION}/gen/m4/shared.m4
 lib/gstreamermm-${VERSION}/include/
 lib/gstreamermm-${VERSION}/include/gstreamermmconfig.h
+lib/libgstreamermm-${VERSION}.a
 lib/libgstreamermm-${VERSION}.la
 @lib lib/libgstreamermm-${VERSION}.so.${LIBgstreamermm-0.10_VERSION}
+lib/libgstreamermm_get_plugin_defs-${VERSION}.a
 lib/libgstreamermm_get_plugin_defs-${VERSION}.la
 @lib lib/libgstreamermm_get_plugin_defs-${VERSION}.so.${LIBgstreamermm_get_plugin_defs-0.10_VERSION}
 lib/pkgconfig/gstreamermm-${VERSION}.pc

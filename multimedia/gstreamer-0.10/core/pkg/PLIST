@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2012/09/06 12:37:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2014/04/01 16:31:40 ajacoutot Exp $
 @conflict gstreamer-frontend-*
 @conflict gstreamer->=0.8,<0.10
 @pkgpath multimedia/gstreamer-0.10/core,-main
@@ -115,16 +115,22 @@ lib/girepository-1.0/GstNet-${VERSION}.typelib
 lib/gstreamer-${VERSION}/
 lib/gstreamer-${VERSION}/libgstcoreelements.so
 lib/gstreamer-${VERSION}/libgstcoreindexers.so
+lib/libgstbase-${VERSION}.a
 lib/libgstbase-${VERSION}.la
 @lib lib/libgstbase-${VERSION}.so.${LIBgstbase-0.10_VERSION}
+lib/libgstcheck-${VERSION}.a
 lib/libgstcheck-${VERSION}.la
 @lib lib/libgstcheck-${VERSION}.so.${LIBgstcheck-0.10_VERSION}
+lib/libgstcontroller-${VERSION}.a
 lib/libgstcontroller-${VERSION}.la
 @lib lib/libgstcontroller-${VERSION}.so.${LIBgstcontroller-0.10_VERSION}
+lib/libgstdataprotocol-${VERSION}.a
 lib/libgstdataprotocol-${VERSION}.la
 @lib lib/libgstdataprotocol-${VERSION}.so.${LIBgstdataprotocol-0.10_VERSION}
+lib/libgstnet-${VERSION}.a
 lib/libgstnet-${VERSION}.la
 @lib lib/libgstnet-${VERSION}.so.${LIBgstnet-0.10_VERSION}
+lib/libgstreamer-${VERSION}.a
 lib/libgstreamer-${VERSION}.la
 @lib lib/libgstreamer-${VERSION}.so.${LIBgstreamer-0.10_VERSION}
 lib/pkgconfig/gstreamer-${VERSION}.pc

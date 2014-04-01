@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2013/09/24 18:30:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/04/01 16:31:41 ajacoutot Exp $
 lib/gstreamer-${API}/libgstasf.so
 lib/gstreamer-${API}/libgstdvdlpcmdec.so
 lib/gstreamer-${API}/libgstdvdread.so
@@ -35,8 +35,6 @@ share/locale/ja/LC_MESSAGES/gst-plugins-ugly-${API}.mo
 share/locale/lt/LC_MESSAGES/gst-plugins-ugly-${API}.mo
 share/locale/lv/LC_MESSAGES/gst-plugins-ugly-${API}.mo
 share/locale/ms/LC_MESSAGES/gst-plugins-ugly-${API}.mo
-share/locale/mt/
-share/locale/mt/LC_MESSAGES/
 share/locale/mt/LC_MESSAGES/gst-plugins-ugly-${API}.mo
 share/locale/nb/LC_MESSAGES/gst-plugins-ugly-${API}.mo
 share/locale/nl/LC_MESSAGES/gst-plugins-ugly-${API}.mo

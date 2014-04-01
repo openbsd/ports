@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2013/05/22 07:18:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2014/04/01 16:31:40 ajacoutot Exp $
 
 COMMENT=		Python bindings for GStreamer
 
 V=			0.10.22
 DISTNAME=		gst-python-${V}
 PKGNAME=		py-gstreamer-${V}
-REVISION=		3
+REVISION=		4
 
 HOMEPAGE=		http://gstreamer.freedesktop.org/modules/gst-python.html
 
@@ -36,8 +36,8 @@ post-install:
 	@cd ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/ && \
 		${MODPY_BIN} -OOOO -c 'import pygst' && \
 		${MODPY_BIN} -c 'import pygst'
-	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/gst/*.la \
-		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/*.la \
-		${PREFIX}/lib/gstreamer-${VERSION}/*.la
+	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/gst/*.{a,la}
+	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/*.{a,la}
+	rm ${PREFIX}/lib/gstreamer-${VERSION}/*.{a,la}
 
 .include <bsd.port.mk>

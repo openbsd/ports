@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/09/24 18:29:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/04/01 16:31:41 ajacoutot Exp $
 @bin bin/gst-discoverer-${API}
 @bin bin/gst-play-${API}
 include/gstreamer-${API}/gst/allocators/
@@ -139,26 +139,37 @@ lib/gstreamer-${API}/libgstvolume.so
 lib/gstreamer-${API}/libgstvorbis.so
 lib/gstreamer-${API}/libgstximagesink.so
 lib/gstreamer-${API}/libgstxvimagesink.so
+lib/libgstallocators-${API}.a
 lib/libgstallocators-${API}.la
 @lib lib/libgstallocators-${API}.so.${LIBgstallocators-1.0_VERSION}
+lib/libgstapp-${API}.a
 lib/libgstapp-${API}.la
 @lib lib/libgstapp-${API}.so.${LIBgstapp-1.0_VERSION}
+lib/libgstaudio-${API}.a
 lib/libgstaudio-${API}.la
 @lib lib/libgstaudio-${API}.so.${LIBgstaudio-1.0_VERSION}
+lib/libgstfft-${API}.a
 lib/libgstfft-${API}.la
 @lib lib/libgstfft-${API}.so.${LIBgstfft-1.0_VERSION}
+lib/libgstpbutils-${API}.a
 lib/libgstpbutils-${API}.la
 @lib lib/libgstpbutils-${API}.so.${LIBgstpbutils-1.0_VERSION}
+lib/libgstriff-${API}.a
 lib/libgstriff-${API}.la
 @lib lib/libgstriff-${API}.so.${LIBgstriff-1.0_VERSION}
+lib/libgstrtp-${API}.a
 lib/libgstrtp-${API}.la
 @lib lib/libgstrtp-${API}.so.${LIBgstrtp-1.0_VERSION}
+lib/libgstrtsp-${API}.a
 lib/libgstrtsp-${API}.la
 @lib lib/libgstrtsp-${API}.so.${LIBgstrtsp-1.0_VERSION}
+lib/libgstsdp-${API}.a
 lib/libgstsdp-${API}.la
 @lib lib/libgstsdp-${API}.so.${LIBgstsdp-1.0_VERSION}
+lib/libgsttag-${API}.a
 lib/libgsttag-${API}.la
 @lib lib/libgsttag-${API}.so.${LIBgsttag-1.0_VERSION}
+lib/libgstvideo-${API}.a
 lib/libgstvideo-${API}.la
 @lib lib/libgstvideo-${API}.so.${LIBgstvideo-1.0_VERSION}
 lib/pkgconfig/gstreamer-allocators-${API}.pc
