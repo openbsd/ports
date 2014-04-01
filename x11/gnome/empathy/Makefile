@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.149 2014/03/27 19:04:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.150 2014/04/01 07:31:59 jasper Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
@@ -77,9 +77,6 @@ MODGNOME_TOOLS= 	yelp
 
 # needs signond, libsignon-glib -- Ubuntu/Meego
 CONFIGURE_ARGS +=	--disable-ubuntu-online-accounts
-
-# needs connman or network-manager
-CONFIGURE_ARGS+=	--without-connectivity
 
 post-install:
 	rm ${PREFIX}/lib/mission-control-plugins.0/*.{a,la}
