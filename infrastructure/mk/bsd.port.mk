@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1259 2014/04/01 18:38:53 jasper Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1260 2014/04/01 18:41:33 jasper Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -36,11 +36,6 @@ ERRORS += "Fatal: Variable PERMIT_DISTFILES_CDROM is obsolete."
 .for v in NO_REGRESS REGRESS_IS_INTERACTIVE REGRESS_DEPENDS
 .  if defined($v)
 ERRORS += "Fatal: $v has been replaced with ${v:S/REGRESS/TEST/}."
-.  endif
-.endfor
-.for t in pre-regress do-regress post-regress
-.  if target($t)
-ERRORS += "Fatal: $t has been replaced with ${t:S/regress/test/}."
 .  endif
 .endfor
 
