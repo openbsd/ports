@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.835 2014/04/01 11:39:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.836 2014/04/01 18:26:42 jasper Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -609,7 +609,7 @@
      SUBDIR += vicq
      SUBDIR += vncsnapshot
      SUBDIR += vnstat
-     SUBDIR += vpn-scripts
+     SUBDIR += vpnc-scripts
      SUBDIR += vsftpd
      SUBDIR += walker
      SUBDIR += weechat
