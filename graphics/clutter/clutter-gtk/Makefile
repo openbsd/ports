@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2014/04/01 15:31:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2014/04/01 18:06:29 jasper Exp $
 
 COMMENT=		GTK+ widget for clutter
 
@@ -17,7 +17,7 @@ WANTLIB += gthread-2.0 gtk-3 harfbuzz json-glib-1.0 cogl-path
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-shm z
 
-MODGNOME_TOOLS=		gobject-introspection
+MODGNOME_TOOLS +=		gobject-introspection
 
 LIB_DEPENDS=		graphics/clutter/core>=${MAJOR} \
 			x11/gtk+3

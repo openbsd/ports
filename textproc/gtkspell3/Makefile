@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/04/01 15:31:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2014/04/01 18:06:30 jasper Exp $
 
 COMMENT=	gtk+3 spelling checker
 
@@ -30,7 +30,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtkspell/}
 MODULES=	devel/gettext \
 		x11/gnome
 
-MODGNOME_TOOLS=	gobject-introspection vala
+MODGNOME_TOOLS +=	gobject-introspection vala
 
 BUILD_DEPENDS=	devel/iso-codes
 RUN_DEPENDS=	devel/iso-codes

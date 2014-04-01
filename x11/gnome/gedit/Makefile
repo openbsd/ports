@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2014/04/01 17:03:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.121 2014/04/01 18:06:31 jasper Exp $
 
 COMMENT=		lightweight GNOME text editor
 
@@ -41,9 +41,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			x11/gnome/gvfs #--enable-gvfs-metadata
 
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
-MODGNOME_TOOLS= 	gobject-introspection vala yelp
-MODGNOME_TOOLS +=	desktop-file-utils
-
+MODGNOME_TOOLS += gobject-introspection vala yelp  desktop-file-utils
 CONFIGURE_ARGS=		--disable-updater
 
 TEST_IS_INTERACTIVE=	X11

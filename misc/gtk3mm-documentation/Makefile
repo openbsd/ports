@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/03/16 09:12:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2014/04/01 18:06:30 jasper Exp $
 
 COMMENT=	documentation for gtk3mm
 
@@ -19,7 +19,7 @@ MODULES=	x11/gnome
 
 PKG_ARCH=	*
 
-MODGNOME_TOOLS=	yelp
+MODGNOME_TOOLS +=	yelp
 
 BUILD_DEPENDS=	x11/gtk3mm
 

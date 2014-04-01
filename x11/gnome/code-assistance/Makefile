@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/03/27 13:56:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2014/04/01 18:06:30 jasper Exp $
 
 COMMENT=		code assistance services for GNOME
 
@@ -20,7 +20,7 @@ MODULES=		devel/dconf \
 			lang/ruby \
 			x11/gnome
 
-MODGNOME_TOOLS=		vala
+MODGNOME_TOOLS +=		vala
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS=		${RUN_DEPENDS}

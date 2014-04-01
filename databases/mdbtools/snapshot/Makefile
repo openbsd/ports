@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2014/03/16 09:12:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2014/04/01 18:06:28 jasper Exp $
 
 COMMENT-main=		read microsoft Access MDB
 COMMENT-gmdb=		graphical interface to MDB tools
@@ -45,7 +45,8 @@ WANTLIB-gmdb += xcb-render xcb-shm xml2 z
 MODULES=		devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS= 	yelp
+MODGNOME_TOOLS += 	yelp
+
 WRKDIST=		${WRKDIR}/mdbtools
 
 BUILD_DEPENDS=		devel/bison \

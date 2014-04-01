@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/04/01 15:31:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2014/04/01 18:06:31 jasper Exp $
 
 COMMENT=	GLib/GObject wrapper for SkyDrive and Hotmail REST APIs
 
@@ -23,6 +23,5 @@ MODULES=	devel/gettext \
 
 LIB_DEPENDS=	x11/gnome/online-accounts
 
-MODGNOME_TOOLS=	gobject-introspection
-
+MODGNOME_TOOLS +=	gobject-introspection
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/04/01 17:03:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2014/04/01 18:06:29 jasper Exp $
 
 COMMENT =	lightweight mail user agent
 
@@ -14,9 +14,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 HOMEPAGE =	http://yorba.org/projects/geary/
 MODULES =	devel/cmake devel/dconf x11/gnome devel/gettext
 
-MODGNOME_TOOLS =	gobject-introspection yelp vala
-MODGNOME_TOOLS +=	desktop-file-utils
-MODGNOME_TOOLS +=	gtk-update-icon-cache
+MODGNOME_TOOLS += gobject-introspection yelp vala desktop-file-utils
+MODGNOME_TOOLS += gtk-update-icon-cache
 
 CONFIGURE_ARGS =-DGSETTINGS_COMPILE=OFF \
 		-DGSETTINGS_COMPILE_IN_PLACE=OFF \

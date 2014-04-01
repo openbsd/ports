@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2014/04/01 17:03:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2014/04/01 18:06:30 jasper Exp $
 
 COMMENT=		dbus debugger
 
@@ -15,9 +15,8 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
-MODGNOME_TOOLS +=	desktop-file-utils
-MODGNOME_TOOLS +=	gtk-update-icon-cache
-MODGNOME_TOOLS=		gobject-introspection yelp
+MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache gobject-introspection
+MODGNOME_TOOLS += yelp
 
 BUILD_DEPENDS=		x11/gtk+3
 

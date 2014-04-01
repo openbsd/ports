@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2014/04/01 13:21:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2014/04/01 18:06:31 jasper Exp $
 
 TRACKER_VERSION=1.0
 
@@ -42,8 +42,7 @@ LIB_DEPENDS=	devel/libgdata \
 		x11/gnome/grilo>=0.2.10 \
 		x11/gnome/tracker
 
-MODGNOME_TOOLS=	yelp
-
+MODGNOME_TOOLS +=	yelp
 post-install:
 	rm ${PREFIX}/lib/grilo-${API}/*.{a,la}
 

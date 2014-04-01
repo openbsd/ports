@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2014/04/01 17:03:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.93 2014/04/01 18:06:31 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -50,9 +50,6 @@ WANTLIB += gthread-2.0 xml2 gcrypt secret-1 gpg-error ffi pthread
 MODULES=		devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS +=	desktop-file-utils
-MODGNOME_TOOLS +=	gtk-update-icon-cache
-
 # /libgda-5.1.2_writes_to_HOME/.cache/g-ir-scanner
 PORTHOME=		${WRKDIST}
 
@@ -72,7 +69,7 @@ BUILD_DEPENDS=		databases/db/v4 \
 
 TEST_DEPENDS=	devel/check
 
-MODGNOME_TOOLS= 	gobject-introspection yelp
+MODGNOME_TOOLS += 	gobject-introspection yelp   desktop-file-utils  gtk-update-icon-cache
 
 CONFIGURE_ARGS=		--enable-system-sqlite \
 			--enable-gdaui-gi \

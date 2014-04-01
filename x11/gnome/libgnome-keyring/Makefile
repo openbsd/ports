@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2014/04/01 15:31:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2014/04/01 18:06:31 jasper Exp $
 
 COMMENT=	library for gnome keyring integration
 
@@ -13,8 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += dbus-1 ffi gcrypt glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gpg-error pcre pthread
 
-MODGNOME_TOOLS=	gobject-introspection vala
-
+MODGNOME_TOOLS +=	gobject-introspection vala
 MODULES=	devel/gettext \
 		x11/gnome
 

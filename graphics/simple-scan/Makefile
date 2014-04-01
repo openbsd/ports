@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2014/04/01 17:03:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2014/04/01 18:06:29 jasper Exp $
 
 COMMENT=		simple scanning utility
 
@@ -29,8 +29,7 @@ LIB_DEPENDS=		graphics/sane-backends \
 			x11/gtk+3 \
 			graphics/colord
 
-MODGNOME_TOOLS +=	desktop-file-utils
-MODGNOME_TOOLS= 	yelp
+MODGNOME_TOOLS += desktop-file-utils yelp
 
 USE_GMAKE=		Yes
 

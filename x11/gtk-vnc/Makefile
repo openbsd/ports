@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2014/04/01 15:31:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2014/04/01 18:06:32 jasper Exp $
 
 COMMENT=		VNC viewer widget for GTK
 
@@ -34,7 +34,7 @@ LIB_DEPENDS=		security/gnutls \
 			security/libgcrypt \
 			x11/gtk+3
 
-MODGNOME_TOOLS= 	gobject-introspection vala
+MODGNOME_TOOLS += 	gobject-introspection vala
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--without-examples \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.225 2014/03/28 08:48:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.226 2014/04/01 18:06:28 jasper Exp $
 
 COMMENT=		general-purpose utility library
 
@@ -28,7 +28,7 @@ MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
 
-MODGNOME_TOOLS=		docbook
+MODGNOME_TOOLS +=		docbook
 
 LIB_DEPENDS=		devel/pcre \
 			devel/libelf \

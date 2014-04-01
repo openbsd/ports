@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.168 2014/04/01 15:31:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.169 2014/04/01 18:06:28 jasper Exp $
 
 # XXX add libphonenumber support when a cpp release is out
 
@@ -57,7 +57,8 @@ LIB_DEPENDS= 		databases/db/v4 \
 			x11/gnome/online-accounts
 
 MODPY_RUNDEP=		No
-MODGNOME_TOOLS= 	gobject-introspection vala
+MODGNOME_TOOLS += 	gobject-introspection vala
+
 MODGNOME_CPPFLAGS=	$$(krb5-config --cflags)
 
 CONFIGURE_STYLE= 	gnu

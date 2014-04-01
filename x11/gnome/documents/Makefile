@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2014/04/01 17:03:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2014/04/01 18:06:31 jasper Exp $
 
 TRACKER_VERSION=1.0
 
@@ -49,10 +49,8 @@ LIB_DEPENDS=	devel/libgdata \
 # src/application.js
 RUN_DEPENDS +=	x11/gnome/online-miners
 
-MODGNOME_TOOLS=		docbook gobject-introspection vala
-MODGNOME_TOOLS +=	gtk-update-icon-cache
-MODGNOME_TOOLS +=	desktop-file-utils
-
+MODGNOME_TOOLS += docbook gobject-introspection vala gtk-update-icon-cache
+MODGNOME_TOOLS += desktop-file-utils
 # XXX --disable-getting-started is the default but configure checks for
 # itstool(1) anyway
 BUILD_DEPENDS +=	textproc/itstool

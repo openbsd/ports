@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2014/04/01 17:03:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.77 2014/04/01 18:06:31 jasper Exp $
 
 # if ekiga ever moves to gstreamer, detect_sndiosink_devices() will need
 # to be implemented in:
@@ -54,9 +54,7 @@ CFLAGS +=	-fexceptions
 
 MODGCONF2_SCHEMAS_DIR= ekiga
 
-MODGNOME_TOOLS +=	desktop-file-utils
-MODGNOME_TOOLS +=	gtk-update-icon-cache
-MODGNOME_TOOLS=		yelp
+MODGNOME_TOOLS +=  desktop-file-utils  gtk-update-icon-cache yelp
 MODGNOME_LDFLAGS=-L${X11BASE}/lib
 
 CONFIGURE_ARGS=	--enable-h323 \

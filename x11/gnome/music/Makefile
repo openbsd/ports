@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/04/01 17:03:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2014/04/01 18:06:32 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -24,9 +24,8 @@ MODULES=		x11/gnome \
 			lang/python \
 			devel/gettext
 
-MODGNOME_TOOLS=		gobject-introspection yelp
-MODGNOME_TOOLS +=	desktop-file-utils
-MODGNOME_TOOLS +=	gtk-update-icon-cache
+MODGNOME_TOOLS += gobject-introspection yelp desktop-file-utils
+MODGNOME_TOOLS += gtk-update-icon-cache
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 MODPY_ADJ_FILES=	gnome-music.in
 

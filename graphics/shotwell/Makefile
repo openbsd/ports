@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2014/04/01 17:03:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2014/04/01 18:06:29 jasper Exp $
 
 COMMENT =	digital photo organizer
 
@@ -27,9 +27,7 @@ MODULES =	devel/dconf \
 		devel/gettext \
 		x11/gnome
 
-MODGNOME_TOOLS = 	vala yelp
-MODGNOME_TOOLS +=	desktop-file-utils
-MODGNOME_TOOLS +=	gtk-update-icon-cache
+MODGNOME_TOOLS += vala yelp  desktop-file-utils  gtk-update-icon-cache
 
 BUILD_DEPENDS =	www/webkit,gtk3
 RUN_DEPENDS =	www/webkit,gtk3

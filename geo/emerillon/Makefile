@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2014/04/01 17:03:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2014/04/01 18:06:29 jasper Exp $
 
 COMMENT =	map viewer using Openstreetmap data
 
@@ -29,12 +29,11 @@ WANTLIB += sqlite3 xcb xcb-render xcb-shm xml2 z
 EXTRACT_SUFX=		.tar.bz2
 
 CONFIGURE_STYLE =	gnu
-MODGNOME_TOOLS +=	desktop-file-utils
 
 MODULES=	devel/gettext \
 		x11/gnome
 
-MODGNOME_TOOLS= 	gobject-introspection vala yelp
+MODGNOME_TOOLS += 	desktop-file-utils gobject-introspection vala yelp
 
 LIB_DEPENDS =	geo/libchamplain>=0.12.0 \
 		devel/libpeas \

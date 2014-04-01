@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2014/04/01 17:03:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2014/04/01 18:06:31 jasper Exp $
 
 COMMENT=		serial terminal for GNOME
 
@@ -25,8 +25,5 @@ WANTLIB += ICE SM atk-bridge-2.0 atspi dbus-1 harfbuzz
 
 LIB_DEPENDS=		x11/gtk+3
 
-MODGNOME_TOOLS +=	desktop-file-utils
-MODGNOME_TOOLS +=	gtk-update-icon-cache
-MODGNOME_TOOLS= 	yelp
-
+MODGNOME_TOOLS +=  desktop-file-utils  gtk-update-icon-cache yelp
 .include <bsd.port.mk>

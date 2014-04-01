@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2014/04/01 15:31:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2014/04/01 18:06:31 jasper Exp $
 
 COMMENT=	framework for making media discovery and browsing easy
 
@@ -35,8 +35,7 @@ LIB_DEPENDS=	devel/libsoup \
 		x11/gnome/totem-pl-parser \
 		x11/gtk+3
 
-MODGNOME_TOOLS= gobject-introspection vala
-
+MODGNOME_TOOLS += gobject-introspection vala
 # Own the grilo plugins directory to prevent warnings that this
 # directory does not exist when no plugin is installed.
 post-install:

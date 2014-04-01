@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2014/04/01 17:03:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2014/04/01 18:06:29 jasper Exp $
 
 COMMENT=		graphic library for gtk+2
 
@@ -32,8 +32,7 @@ LIB_DEPENDS=		devel/glib2 \
 # (g_content_type_from_mime_type requires shared-mime-info)
 BUILD_DEPENDS +=	misc/shared-mime-info
 
-MODGNOME_TOOLS +=	shared-mime-info
-MODGNOME_TOOLS=		gobject-introspection
+MODGNOME_TOOLS +=  shared-mime-info  gobject-introspection
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-libjasper \

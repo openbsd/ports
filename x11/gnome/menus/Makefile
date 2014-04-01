@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2014/04/01 17:03:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.73 2014/04/01 18:06:31 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -19,9 +19,7 @@ WANTLIB += z
 MODULES=		devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS +=	desktop-file-utils
-MODGNOME_TOOLS= 	gobject-introspection
-
+MODGNOME_TOOLS +=  desktop-file-utils gobject-introspection
 LIB_DEPENDS=		devel/glib2
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gnome-menus

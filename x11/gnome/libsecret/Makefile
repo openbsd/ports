@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2014/04/01 15:31:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2014/04/01 18:06:31 jasper Exp $
 
 COMMENT=		library for storing and retrieving passwords and secrets
 
@@ -16,8 +16,7 @@ WANTLIB += gpg-error pcre pthread z
 MODULES=		devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS=		docbook gobject-introspection vala
-
+MODGNOME_TOOLS +=		docbook gobject-introspection vala
 LIB_DEPENDS=		devel/glib2 \
 			security/libgcrypt
 

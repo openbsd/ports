@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2014/04/01 17:03:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.121 2014/04/01 18:06:32 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -62,10 +62,8 @@ LIB_DEPENDS=		x11/gnome/totem-pl-parser \
 RUN_DEPENDS +=		multimedia/gstreamer1/plugins-good \
 			multimedia/gstreamer1/plugins-libav
 
-MODGNOME_TOOLS +=	desktop-file-utils
-MODGNOME_TOOLS +=	gtk-update-icon-cache
-MODGNOME_TOOLS=		gobject-introspection vala yelp
-
+MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache gobject-introspection
+MODGNOME_TOOLS += vala yelp
 pre-configure:
 # XXX cc1: error: unrecognized command line option "-Wno-unused-but-set-variable"
 	find ${WRKSRC} -name Makefile.in | xargs -r \

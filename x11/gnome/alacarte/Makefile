@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2014/04/01 17:03:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2014/04/01 18:06:30 jasper Exp $
 
 COMMENT=		fd.o menu editor for GNOME
 
@@ -24,8 +24,5 @@ RUN_DEPENDS +=		x11/gtk+3
 
 PKG_ARCH=		*
 
-MODGNOME_TOOLS= 	docbook
-MODGNOME_TOOLS +=	desktop-file-utils
-MODGNOME_TOOLS +=	gtk-update-icon-cache
-
+MODGNOME_TOOLS += docbook  desktop-file-utils  gtk-update-icon-cache
 .include <bsd.port.mk>

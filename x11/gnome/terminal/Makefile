@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2014/04/01 17:03:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.117 2014/04/01 18:06:32 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -35,9 +35,7 @@ LIB_DEPENDS=	devel/gconf2 \
 		sysutils/e2fsprogs>=1.42.7 \
 		x11/gnome/nautilus
 
-MODGNOME_TOOLS= 	yelp
-MODGNOME_TOOLS +=	desktop-file-utils
-
+MODGNOME_TOOLS += yelp  desktop-file-utils
 post-install:
 	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.{a,la}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2014/04/01 17:03:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.128 2014/04/01 18:06:32 jasper Exp $
 
 # XXX gcm-dmi.c:141:2: warning: #warning Please add dmi support for your OS
 
@@ -64,10 +64,7 @@ RUN_DEPENDS +=		geo/geoclue2
 # cyclic dep: gnome-session -> gnome-settings-daemon -> gnome-session
 #RUN_DEPENDS +=		x11/gnome/session
 
-MODGNOME_TOOLS +=	desktop-file-utils
-MODGNOME_TOOLS +=	gtk-update-icon-cache
-MODGNOME_TOOLS=		docbook
-
+MODGNOME_TOOLS += docbook  desktop-file-utils  gtk-update-icon-cache
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 

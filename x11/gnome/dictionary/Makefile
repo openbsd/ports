@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/04/01 17:03:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2014/04/01 18:06:31 jasper Exp $
 
 COMMENT=		GNOME dictionary application
 
@@ -24,7 +24,6 @@ MODULES=		devel/dconf \
 
 LIB_DEPENDS=		x11/gtk+3
 
-MODGNOME_TOOLS= 	yelp
-MODGNOME_TOOLS +=	desktop-file-utils
-
+MODGNOME_TOOLS +=  yelp  desktop-file-utils
 .include <bsd.port.mk>
+

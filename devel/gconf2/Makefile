@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2014/04/01 15:31:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.89 2014/04/01 18:06:28 jasper Exp $
 
 COMMENT=	configuration database system for GNOME
 
@@ -34,7 +34,7 @@ MODPY_ADJ_FILES=gsettings/gsettings-schema-convert
 LIB_DEPENDS=	textproc/libxml \
 		x11/dbus-glib
 
-MODGNOME_TOOLS=	gobject-introspection
+MODGNOME_TOOLS +=	gobject-introspection
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--without-openldap \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2014/04/01 17:03:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.121 2014/04/01 18:06:31 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -45,9 +45,7 @@ WANTLIB-smb += gcrypt gpg-error secret-1
 WANTLIB-goa += ${WANTLIB}
 WANTLIB-goa += goa-1.0
 
-MODGNOME_TOOLS +=	desktop-file-utils
-MODGNOME_TOOLS=		docbook
-
+MODGNOME_TOOLS +=  desktop-file-utils docbook
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		archivers/libarchive \
 		devel/libsoup \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/04/01 17:03:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2014/04/01 18:06:30 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -55,11 +55,7 @@ RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-ugly #mp3 support
 LIB_DEPENDS=	www/webkit \
 		multimedia/gstreamer-0.10/plugins-base
 
-MODGNOME_TOOLS +=	desktop-file-utils
-MODGNOME_TOOLS +=	gtk-update-icon-cache
-MODGNOME_TOOLS +=	shared-mime-info
-MODGNOME_TOOLS=		yelp
-
+MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache shared-mime-info yelp
 CONFIGURE_ARGS=	--with-vendor-build-id="OpenBSD Ports" \
 		--disable-shave
 

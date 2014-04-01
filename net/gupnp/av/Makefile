@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2014/04/01 15:31:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2014/04/01 18:06:30 jasper Exp $
 
 COMMENT=		helpers for building A/V applications using GUPnP
 
@@ -16,6 +16,6 @@ WANTLIB += z
 
 LIB_DEPENDS=		net/gupnp/core>=0.20.0
 
-MODGNOME_TOOLS= 	gobject-introspection vala
+MODGNOME_TOOLS += 	gobject-introspection vala
 
 .include <bsd.port.mk>

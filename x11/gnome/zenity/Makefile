@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2014/03/16 09:12:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2014/04/01 18:06:32 jasper Exp $
 
 COMMENT=		dialogs for GNOME
 
@@ -20,6 +20,5 @@ MODULES=		devel/gettext \
 LIB_DEPENDS=		devel/libnotify>=0.7.2 \
 			www/webkit,gtk3
 
-MODGNOME_TOOLS= 	yelp
-
+MODGNOME_TOOLS += 	yelp
 .include <bsd.port.mk>

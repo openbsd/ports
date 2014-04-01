@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2014/04/01 17:03:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2014/04/01 18:06:30 jasper Exp $
 
 COMMENT=	graphical diff and merge tool
 
@@ -15,10 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=	lang/python \
 		x11/gnome
 
-MODGNOME_TOOLS= 	yelp
-MODGNOME_TOOLS +=	desktop-file-utils
-MODGNOME_TOOLS +=	gtk-update-icon-cache
-MODGNOME_TOOLS +=	shared-mime-info
+MODGNOME_TOOLS += yelp desktop-file-utils gtk-update-icon-cache shared-mime-info
 
 MODPY_ADJ_FILES=	bin/meld
 

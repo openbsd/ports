@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2014/04/01 15:31:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.120 2014/04/01 18:06:28 jasper Exp $
 
 COMMENT=		portable library for obtaining system information
 
@@ -23,7 +23,7 @@ MODULES=		devel/gettext \
 
 LIB_DEPENDS=		devel/glib2
 
-MODGNOME_TOOLS= 	gobject-introspection
+MODGNOME_TOOLS += 	gobject-introspection
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+= 	--without-libgtop-smp
@@ -38,8 +38,7 @@ CPPFLAGS+=		-DDEBUG \
 .endif
 
 ### rm at next release
-MODGNOME_TOOLS +=	gtk-doc
-AUTOCONF_VERSION=	2.69
+  gtk-docAUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.14
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \

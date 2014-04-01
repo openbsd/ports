@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2014/04/01 17:03:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2014/04/01 18:06:30 jasper Exp $
 
 COMMENT =	labels and business card designer
 
@@ -44,11 +44,7 @@ LIB_DEPENDS =	databases/evolution-data-server \
 		x11/gnome/librsvg \
 		x11/gtk+3
 
-MODGNOME_TOOLS = 	yelp
-MODGNOME_TOOLS +=	desktop-file-utils
-MODGNOME_TOOLS +=	gtk-update-icon-cache
-MODGNOME_TOOLS +=	shared-mime-info
-
+MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache shared-mime-info yelp
 CONFIGURE_STYLE =	gnu
 
 .include <bsd.port.mk>

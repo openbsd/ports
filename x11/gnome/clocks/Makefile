@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/04/01 17:03:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2014/04/01 18:06:30 jasper Exp $
 
 COMMENT=		clock application for GNOME
 
@@ -33,10 +33,7 @@ LIB_DEPENDS=		audio/libcanberra \
 BUILD_DEPENDS +=	geo/geoclue2
 RUN_DEPENDS +=		geo/geoclue2
 
-MODGNOME_TOOLS=		vala yelp
-MODGNOME_TOOLS +=	desktop-file-utils
-MODGNOME_TOOLS +=	gtk-update-icon-cache
-
+MODGNOME_TOOLS +=  vala yelp  desktop-file-utils  gtk-update-icon-cache
 pre-configure:
 	perl -pi -e 's,.-Wno-unused-but-set-variable,,' \
 		${WRKSRC}/Makefile.in

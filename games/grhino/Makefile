@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/04/01 17:03:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2014/04/01 18:06:29 jasper Exp $
 
 COMMENT =		Othello/Reversi-like game
 DISTNAME =		grhino-${V}
@@ -25,8 +25,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=rhino/GRhino/${V}/}
 MODULES =		devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS =	yelp
-MODGNOME_TOOLS +=	desktop-file-utils
+MODGNOME_TOOLS +=  desktop-file-utils yelp
 
 LIB_DEPENDS =		x11/gnome/libgnomeui
 

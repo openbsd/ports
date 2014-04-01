@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2014/04/01 17:03:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.60 2014/04/01 18:06:31 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -28,9 +28,7 @@ MODULES=		devel/gettext \
 			devel/dconf \
 			x11/gnome
 
-MODGNOME_TOOLS= 	gobject-introspection vala
-MODGNOME_TOOLS +=	gtk-update-icon-cache
-
+MODGNOME_TOOLS += gobject-introspection vala  gtk-update-icon-cache
 LIB_DEPENDS=		devel/libsoup>=2.42.0 \
 			x11/gtk+3
 

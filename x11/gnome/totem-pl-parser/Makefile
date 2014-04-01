@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2014/04/01 15:31:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.60 2014/04/01 18:06:32 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -30,6 +30,5 @@ LIB_DEPENDS=	mail/gmime \
 		net/quvi/libquvi>=0.9.3 \
 		security/libgcrypt
 
-MODGNOME_TOOLS= gobject-introspection
-
+MODGNOME_TOOLS += gobject-introspection
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.168 2014/04/01 17:03:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.169 2014/04/01 18:06:32 jasper Exp $
 
 EVO_VERSION=		3.12
 SUBST_VARS +=		EVO_VERSION
@@ -78,9 +78,8 @@ LIB_DEPENDS=		audio/libcue \
 TEST_DEPENDS=		${MODPY_RUN_DEPENDS} \
 			x11/dbus-python
 
-MODGNOME_TOOLS= 	gobject-introspection vala
-MODGNOME_TOOLS +=	desktop-file-utils
-MODGNOME_TOOLS +=	gtk-update-icon-cache
+MODGNOME_TOOLS += gobject-introspection vala desktop-file-utils
+MODGNOME_TOOLS += gtk-update-icon-cache
 MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
 
