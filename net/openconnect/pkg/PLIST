@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/03/26 14:19:07 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/04/01 11:40:12 sthen Exp $
 include/openconnect.h
 lib/libopenconnect.a
 lib/libopenconnect.la
@@ -40,12 +40,6 @@ share/doc/openconnect/styles/
 share/doc/openconnect/styles/main.css
 share/doc/openconnect/technical.html
 share/doc/openconnect/vpnc-script.html
-share/examples/openconnect/
-share/examples/openconnect/vpnc-script
-@sample ${SYSCONFDIR}/openconnect/
-@mode 755
-@sample ${SYSCONFDIR}/openconnect/vpnc-script
-@mode
 share/locale/ar/LC_MESSAGES/openconnect.mo
 share/locale/cs/LC_MESSAGES/openconnect.mo
 share/locale/de/LC_MESSAGES/openconnect.mo
