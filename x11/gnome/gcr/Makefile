@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2014/03/27 08:06:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2014/04/01 11:32:57 ajacoutot Exp $
 
 COMMENT=	library for bits of crypto UI and parsing
 
@@ -37,6 +37,9 @@ LIB_DEPENDS=	x11/gtk+3 \
 
 BUILD_DEPENDS=	security/gnupg
 RUN_DEPENDS=	security/gnupg
+
+# Need xsltproc in order to build with gobject introspection
+BUILD_DEPENDS += textproc/libxslt
 
 # XXX push a proper fix upstream
 BUILD_DEPENDS += textproc/gsed
