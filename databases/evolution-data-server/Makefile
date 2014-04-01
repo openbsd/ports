@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.166 2014/03/27 10:08:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.167 2014/04/01 13:48:46 ajacoutot Exp $
 
 # XXX add libphonenumber support when a cpp release is out
 
@@ -61,7 +61,9 @@ MODGNOME_TOOLS= 	gi vala
 MODGNOME_CPPFLAGS=	$$(krb5-config --cflags)
 
 CONFIGURE_STYLE= 	gnu
-CONFIGURE_ENV=		DB_CFLAGS="-I${LOCALBASE}/include/db4" DB_LIBS="-ldb"
+CONFIGURE_ENV=		DB_CFLAGS="-I${LOCALBASE}/include/db4" \
+			DB_LIBS="-ldb" \
+			ac_cv_path_DB_LOAD=${LOCALBASE}/bin/db4_load
 CONFIGURE_ARGS=		--with-krb5 \
 			--with-openldap=${LOCALBASE}
 
