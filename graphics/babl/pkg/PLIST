@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/06/06 07:55:14 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/04/01 14:52:10 ajacoutot Exp $
 include/babl-${API_VERSION}/
 include/babl-${API_VERSION}/babl/
 include/babl-${API_VERSION}/babl/babl-macros.h
@@ -6,26 +6,17 @@ include/babl-${API_VERSION}/babl/babl-types.h
 include/babl-${API_VERSION}/babl/babl-version.h
 include/babl-${API_VERSION}/babl/babl.h
 lib/babl-${API_VERSION}/
-@comment lib/babl-0.1/CIE.la
 lib/babl-${API_VERSION}/CIE.so
-@comment lib/babl-0.1/cairo.la
 lib/babl-${API_VERSION}/cairo.so
-@comment lib/babl-0.1/fast-float.la
 lib/babl-${API_VERSION}/fast-float.so
-@comment lib/babl-0.1/float.la
 lib/babl-${API_VERSION}/float.so
-@comment lib/babl-0.1/gegl-fixups.la
 lib/babl-${API_VERSION}/gegl-fixups.so
-@comment lib/babl-0.1/gggl-lies.la
 lib/babl-${API_VERSION}/gggl-lies.so
-@comment lib/babl-0.1/gggl.la
 lib/babl-${API_VERSION}/gggl.so
-@comment lib/babl-0.1/gimp-8bit.la
 lib/babl-${API_VERSION}/gimp-8bit.so
-@comment lib/babl-0.1/naive-CMYK.la
 lib/babl-${API_VERSION}/naive-CMYK.so
-@comment lib/babl-0.1/sse-fixups.la
 lib/babl-${API_VERSION}/sse-fixups.so
+lib/libbabl-${API_VERSION}.a
 lib/libbabl-${API_VERSION}.la
 @lib lib/libbabl-${API_VERSION}.so.${LIBbabl-0.1_VERSION}
 lib/pkgconfig/

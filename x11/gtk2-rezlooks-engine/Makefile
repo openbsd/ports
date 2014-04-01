@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/21 08:48:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2014/04/01 14:52:10 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		Clearlooks based GTK+ 2.x engine
 V=			0.6
 DISTNAME=		39179-rezlooks-$V
 PKGNAME=		gtk2-rezlooks-engine-$V
-REVISION=		1
+REVISION=		2
 CATEGORIES=		x11
 
 # GPLv2
@@ -36,14 +36,13 @@ LIB_DEPENDS =	x11/gtk+2
 
 WRKDIST= 	${WRKDIR}/rezlooks-$V
 
-LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
-		--disable-static
+CONFIGURE_ARGS= ${CONFIGURE_SHARED}
 
 post-install:
+	rm ${PREFIX}/lib/gtk-2.0/2.10.0/engines/*.{a,la}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/themes/
 	cp -R ${WRKDIR}/${THEMES_DISTNAME}/* ${PREFIX}/share/themes/
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/themes/*

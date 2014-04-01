@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2014/04/01 07:40:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2014/04/01 14:52:09 ajacoutot Exp $
 
 # XXX
 # util.c: implement pa_get_binary_name()
@@ -19,6 +19,7 @@ COMMENT=		cross-platform networked sound server
 VERSION=		5.0
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 SHARED_LIBS +=  pulse                3.0      # .17.3
 SHARED_LIBS +=  pulse-simple         0.0      # .1.0
@@ -50,7 +51,6 @@ USE_GMAKE=		Yes
 # and remove the following patches:
 # patch-libpulse-mainloop-glib_pc_in patch-libpulse-simple_pc_in patch-libpulse_pc_in
 USE_LIBTOOL=		gnu
-LIBTOOL_FLAGS=		--tag=disable-static
 
 # needed for tests
 BUILD_DEPENDS +=	devel/check
@@ -74,7 +74,6 @@ CONFIGURE_STYLE=	gnu
 # sndiod(1) is the default sound server on OpenBSD and pulseaudio is only
 # needed for a couple of use cases (volume control, media-keys)
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--disable-static \
 			--disable-atomic-arm-linux-helpers \
 			--disable-default-build-tests \
 			--with-system-user=_pulse \
@@ -136,8 +135,9 @@ pre-configure:
 ### END SNDIO ###
 	${SUBST_CMD} ${WRKSRC}/src/daemon/default.pa.in
 
-# we don't install padsp
 post-install:
+	rm ${PREFIX}/lib/pulse-${VERSION}/modules/*.a
+# we don't install padsp
 	cd ${PREFIX} && rm man/man1/padsp.1
 
 .include <bsd.port.mk>

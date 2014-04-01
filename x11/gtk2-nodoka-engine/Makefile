@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/21 08:48:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2014/04/01 14:52:10 ajacoutot Exp $
 
 COMMENT =	GTK+2 engine from Fedora
 
 VERSION =	0.7.5
 DISTNAME =	gtk-nodoka-engine-${VERSION}
 PKGNAME =	gtk2-nodoka-engine-${VERSION}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES =	x11
 
@@ -27,18 +27,17 @@ MASTER_SITES =	http://fedorahosted.org/releases/n/o/nodoka/
 SHARED_ONLY =	Yes
 
 MODULES =	devel/gettext
-LIBTOOL_FLAGS+=	--tag=disable-static
 LIB_DEPENDS =	x11/gtk+2
 
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--disable-static
+CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 
 # XXX gtk+3 support does not build yet
 CONFIGURE_ARGS +=	--with-gtk=2.0
 
 post-install:
+	rm ${PREFIX}/lib/gtk-2.0/2.10.0/engines/*.{a,la}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gtk2-nodoka-engine
 	${INSTALL_DATA} ${WRKSRC}/README  ${PREFIX}/share/doc/gtk2-nodoka-engine/
 

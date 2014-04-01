@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2014/03/20 17:33:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2014/04/01 14:52:09 ajacoutot Exp $
 @newgroup _pulse:683
 @newgroup _pulse-access:684
 @newuser _pulse:683:683:daemon:PulseAudio System Daemon:/var/run/pulse:/sbin/nologin
@@ -52,12 +52,16 @@ lib/cmake/
 lib/cmake/PulseAudio/
 lib/cmake/PulseAudio/PulseAudioConfig.cmake
 lib/cmake/PulseAudio/PulseAudioConfigVersion.cmake
+lib/libpulse-mainloop-glib.a
 lib/libpulse-mainloop-glib.la
 @lib lib/libpulse-mainloop-glib.so.${LIBpulse-mainloop-glib_VERSION}
+lib/libpulse-simple.a
 lib/libpulse-simple.la
 @lib lib/libpulse-simple.so.${LIBpulse-simple_VERSION}
+lib/libpulse.a
 lib/libpulse.la
 @lib lib/libpulse.so.${LIBpulse_VERSION}
+lib/libpulsecore-${VERSION}.a
 lib/libpulsecore-${VERSION}.la
 lib/libpulsecore-${VERSION}.so
 lib/pkgconfig/libpulse-mainloop-glib.pc
@@ -134,6 +138,7 @@ lib/pulse-${VERSION}/modules/module-x11-cork-request.so
 lib/pulse-${VERSION}/modules/module-x11-publish.so
 lib/pulse-${VERSION}/modules/module-x11-xsmp.so
 lib/pulseaudio/
+lib/pulseaudio/libpulsecommon-${VERSION}.a
 lib/pulseaudio/libpulsecommon-${VERSION}.la
 lib/pulseaudio/libpulsecommon-${VERSION}.so
 @man man/man1/esdcompat.1

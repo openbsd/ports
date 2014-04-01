@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/21 08:48:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2014/04/01 14:52:10 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	Equinox GTK+2 engine
 V=		1.50
 DISTNAME=	121881-equinox-${V}
 PKGNAME=	gtk2-equinox-engine-${V}
-REVISION=	1
+REVISION=	2
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		140449-equinox-themes-${V}${EXTRACT_SUFX}
@@ -32,13 +32,10 @@ MASTER_SITES=	http://gnome-look.org/CONTENT/content-files/
 
 MODULES=	devel/gettext
 
-LIBTOOL_FLAGS=	--tag=disable-static
-
 LIB_DEPENDS=	x11/gtk+2
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-static
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 _DNAME=		equinox-gtk-engine-${V:C/^([0-9]+\.[0-9]+).*/\1/}
 WRKDIST=	${WRKDIR}/${_DNAME:S/-gtk-engine//}
@@ -48,6 +45,7 @@ post-extract:
 		for i in Equinox*; do mv "$$i" $$(echo "$$i" | sed -e 's, ,_,g'); done
 
 post-install:
+	rm ${PREFIX}/lib/gtk-2.0/2.10.0/engines/*.{a,la}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/themes/
 	cp -R ${WRKDIR}/Equinox_Evolution* ${PREFIX}/share/themes/
 	chown -R ${SHAREOWN}:${SHAREGRP} \

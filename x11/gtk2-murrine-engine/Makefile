@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2014/04/01 13:21:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2014/04/01 14:52:10 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,7 +7,7 @@ COMMENT =	beautiful glass-like GTK+ 2.x engine and themes
 GNOME_VERSION =	0.98.2
 GNOME_PROJECT =	murrine
 PKGNAME =	gtk2-murrine-engine-${GNOME_VERSION}
-REVISION =	1
+REVISION =	2
 CATEGORIES =	x11
 
 HOMEPAGE =	http://cimitan.com/murrine/
@@ -54,6 +54,7 @@ CONFIGURE_ARGS = --enable-animation \
 		--disable-rgba
 
 post-install:
+	rm ${PREFIX}/lib/gtk-2.0/2.10.0/engines/*.{a,la}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/themes/
 	cp -R ${WRKDIR}/Murrina* ${PREFIX}/share/themes/
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/themes/*
@@ -61,6 +62,5 @@ post-install:
 # https://bugs.launchpad.net/ubuntu/+source/murrine-themes/+bug/584941
 	perl -pi -e 's/scrollbar_color.*=.*// ; s/hilight_ratio/hilight_shade/; s/gradients.*=.*//' \
 		${PREFIX}/share/themes/*/gtk-2.0/gtkrc
-	rm ${PREFIX}/lib/gtk-2.0/2.10.0/engines/*.a
 
 .include <bsd.port.mk>

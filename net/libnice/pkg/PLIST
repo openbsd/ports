@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/03/09 22:21:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/04/01 14:52:10 ajacoutot Exp $
 @bin bin/stunbdc
 @bin bin/stund
 include/nice/
@@ -22,6 +22,7 @@ include/stun/usages/turn.h
 include/stun/win32_common.h
 @comment lib/gstreamer-1.0/libgstnice.la
 lib/gstreamer-1.0/libgstnice.so
+lib/libnice.a
 lib/libnice.la
 @lib lib/libnice.so.${LIBnice_VERSION}
 lib/pkgconfig/nice.pc

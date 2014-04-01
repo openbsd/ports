@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/21 08:45:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2014/04/01 14:52:09 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ API_VERSION=	0.1
 V=		${API_VERSION}.10
 DISTNAME=	babl-${V}
 CATEGORIES=	graphics devel
+REVISION=	0
 
 SHARED_LIBS +=  babl-${API_VERSION}		1.0      # 105.1
 
@@ -24,8 +25,6 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/babl/${V:R}/ \
 
 WANTLIB=	m
 
-LIBTOOL_FLAGS=	--tag=disable-static
-
 USE_GMAKE=	Yes
 
 SUBST_VARS=	API_VERSION
@@ -33,8 +32,7 @@ SUBST_VARS=	API_VERSION
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	ac_cv_path_W3M=no \
 		ac_cv_path_RSVG=no
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-static
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 # XXX https://bugzilla.gnome.org/show_bug.cgi?id=673580
 #BUILD_DEPENDS += lang/vala \
@@ -46,5 +44,8 @@ CONFIGURE_ARGS += --without-vala \
 CONFIGURE_ARGS+= --enable-mmx \
 		--disable-sse \
 		--disable-altivec
+
+post-install:
+	rm ${PREFIX}/lib/babl-${API_VERSION}/*.{a,la}
 
 .include <bsd.port.mk>

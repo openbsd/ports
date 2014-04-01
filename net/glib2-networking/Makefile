@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2014/04/01 13:21:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2014/04/01 14:52:10 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	network-related gio modules for glib2
 
 GNOME_VERSION=	2.40.0
 GNOME_PROJECT=	glib-networking
-REVISION=	1
+REVISION=	2
 
 PKGNAME=	glib2-networking-${GNOME_VERSION}
 
@@ -33,12 +33,12 @@ LIB_DEPENDS=	net/libproxy \
 		security/gnutls \
 		devel/glib2
 
-LIBTOOL_FLAGS=	--tag=disable-static
-
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--disable-static \
-		--with-ca-certificates=/etc/ssl/cert.pem
+CONFIGURE_ARGS=	--with-ca-certificates=/etc/ssl/cert.pem
 
 TEST_IS_INTERACTIVE=	x11
+
+post-install:
+	rm ${PREFIX}/lib/gio/modules/*.a
 
 .include <bsd.port.mk>

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/04/29 07:01:18 ajacoutot Exp $
-@comment lib/gtk-2.0/2.10.0/engines/libequinox.la
+@comment $OpenBSD: PLIST,v 1.5 2014/04/01 14:52:10 ajacoutot Exp $
 lib/gtk-2.0/2.10.0/engines/libequinox.so
 share/themes/Equinox_Evolution/
 share/themes/Equinox_Evolution/gtk-2.0/

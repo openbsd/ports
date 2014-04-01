@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2014/03/20 20:31:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2014/04/01 14:52:10 ajacoutot Exp $
 
 COMMENT=		abstraction layer between apps and connection managers
 
 DISTNAME=		telepathy-mission-control-5.16.1
+REVISION=		0
 
 SHARED_LIBS +=  mission-control-plugins 3.0      # 5.1
 
@@ -15,15 +16,13 @@ WANTLIB += gobject-2.0 pcre pthread z telepathy-glib ffi
 
 MODULES=		devel/gettext \
 			lang/python
+
 MODPY_RUNDEP=		No
 
 BUILD_DEPENDS=		textproc/libxslt
 LIB_DEPENDS=		net/telepathy/telepathy-glib>=0.18.0
 
-LIBTOOL_FLAGS=		--tag=disable-static
-
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-static
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 
 # both are dependant
 CONFIGURE_ARGS+=	--disable-upower \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/09/24 19:02:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2014/04/01 14:52:09 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -8,7 +8,7 @@ COMMENT=	GTK+2 subtitles editor
 
 V=		0.40.0
 DISTNAME=	subtitleeditor-${V}
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	graphics editors
 
@@ -52,17 +52,17 @@ MODULES+=	devel/gettext \
 USE_GMAKE=	Yes
 USE_GROFF=	Yes
 
-LIBTOOL_FLAGS= --tag=disable-static
-
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		GST_REGISTRY=${WRKDIR}/registry.${MACHINE_ARCH}.bin
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-static \
 		--with-default-video-sink=autovideosink \
 		--with-default-audio-sink=autoaudiosink \
 		--enable-ccache=no \
 		--enable-gl=no
+
+post-install:
+	rm ${PREFIX}/lib/subtitleeditor/plugins/*/*.{a,la}
 
 .include <bsd.port.mk>

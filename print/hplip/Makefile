@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2014/03/13 22:37:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.110 2014/04/01 14:52:10 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -19,6 +19,8 @@ PKGNAME-hpaio=		hpaio-${V}
 PKGNAME-hpcups=		hpcups-${V}
 PKGNAME-hpijs=		hpijs-${V}
 PKGNAME-gui=		hplip-gui-${V}
+
+REVISION=		0
 
 SHARED_LIBS +=  hpmud		2.0 # 0.6
 SHARED_LIBS +=  hpip		2.0 # 0.1
@@ -122,7 +124,6 @@ RUN_DEPENDS-gui +=	graphics/xsane
 
 LIB_DEPENDS-gui=	#empty
 
-LIBTOOL_FLAGS=		--tag=disable-static
 FAKE_FLAGS=		hplip_confdir=${PREFIX}/share/examples/hplip/hp \
 			hplip_statedir=${PREFIX}/share/examples/hplip/db \
 			mimedir=${PREFIX}/share/examples/hplip/cups \
@@ -132,7 +133,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--disable-static \
 			--with-hpppddir=${PREFIX}/share/foomatic/db/source/PPD/HP \
 			--with-cupsbackenddir=${PREFIX}/libexec/cups/backend \
 			--with-cupsfilterdir=${PREFIX}/libexec/cups/filter \
@@ -191,7 +191,7 @@ post-install:
 	rm -r ${WRKINST}/usr/lib
 	rm -r ${WRKINST}/etc/udev
 	mv ${PREFIX}/share/doc/hplip-${V} ${PREFIX}/share/doc/hplip/html
-	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/*.la
-	rm ${PREFIX}/lib/sane/*.la
+	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/*.{a,la}
+	rm ${PREFIX}/lib/sane/*.{a,la}
 
 .include <bsd.port.mk>

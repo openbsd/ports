@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2014/03/12 07:40:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2014/04/01 14:52:10 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	GLib ICE implementation
 
 DISTNAME =	libnice-0.1.5
-REVISION =	0
+REVISION =	1
 SHARED_LIBS +=  nice                 2.2      # 13.0
 
 CATEGORIES =	net
@@ -31,7 +31,6 @@ LIB_DEPENDS =		multimedia/gstreamer1/core \
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS = 	${CONFIGURE_SHARED} \
-			--disable-static \
 			--disable-gtk-doc \
 			--with-gstreamer \
 			--without-gstreamer-0.10
@@ -43,10 +42,10 @@ CONFIGURE_ENV +=	ac_cv_path_GTKDOC_CHECK="" \
 			ac_cv_path_GTKDOC_MKPDF=""
 
 USE_GMAKE =		Yes
-LIBTOOL_FLAGS =		--tag=disable-static
 
-# don't install example binaries
 post-install:
+	rm ${PREFIX}/lib/gstreamer-1.0/*.a
+# don't install example binaries
 	rm ${PREFIX}/bin/*-example
 
 .include <bsd.port.mk>

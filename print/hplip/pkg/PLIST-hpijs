@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hpijs,v 1.35 2014/03/13 22:37:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST-hpijs,v 1.36 2014/04/01 14:52:10 ajacoutot Exp $
 @conflict hplip-libs-<=3.9.8
 @conflict hpcups-<=3.2.11
 @pkgpath print/hpijs
@@ -667,8 +667,8 @@ share/foomatic/db/source/PPD/HP/hp-laserjet_pro_mfp_m125rnw-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_pro_mfp_m126a-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_pro_mfp_m126nw-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_pro_mfp_m127fn-hpijs.ppd.gz
-share/foomatic/db/source/PPD/HP/hp-laserjet_pro_mfp_m127fw-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_pro_mfp_m127fp-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-laserjet_pro_mfp_m127fw-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_pro_mfp_m435-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_professional_m1132_mfp-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_professional_m1136_mfp-hpijs.ppd.gz

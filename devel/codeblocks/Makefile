@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/03/31 14:22:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2014/04/01 14:52:09 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ V=		10.05
 P=		1
 DISTNAME=	codeblocks-${V}-${P}debian-src
 PKGNAME=	codeblocks-${V}
-REVISION=	10
+REVISION=	11
 
 EXTRACT_SUFX=	.tar.bz2
 WRKDIST=	${WRKDIR}/codeblocks-${V}
@@ -52,14 +52,11 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 
 MODULES=	devel/gettext
 
-LIBTOOL_FLAGS=	--tag=disable-static
-
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 # XXX lib_finder.cpp:302: error: syntax error before `->' token
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-static \
 		--with-contrib-plugins=all,-libfinder
 
 post-extract:
@@ -74,5 +71,6 @@ pre-configure:
 post-install:
 	find ${PREFIX}/share/codeblocks/templates/ -type f -perm 444 | \
 		xargs chmod 644
+	rm ${PREFIX}/lib/codeblocks/plugins/*.{a,la}
 
 .include <bsd.port.mk>

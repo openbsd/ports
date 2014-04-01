@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2013/08/26 13:16:20 landry Exp $
+# $OpenBSD: Makefile,v 1.44 2014/04/01 14:52:10 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,8 +13,8 @@ CATEGORIES=	graphics devel
 PKGNAME-main=	gegl-${V}
 PKGNAME-plugins=gegl-plugins-${V}
 
-REVISION-main=	1
-REVISION-plugins=	0
+REVISION-main=		2
+REVISION-plugins=	1
 
 SHARED_LIBS +=  gegl-${API_VERSION}		0.0 # 199.1
 
@@ -36,8 +36,6 @@ WANTLIB += gthread-2.0 m pcre z execinfo ffi
 
 MODULES=	devel/gettext \
 		textproc/intltool
-
-LIBTOOL_FLAGS=	--tag=disable-static
 
 USE_GMAKE=	Yes
 
@@ -80,7 +78,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		ac_cv_path_DOT="no"
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
-		--disable-static \
 		--disable-docs \
 		--without-umfpack \
 		--without-sdl \
@@ -105,5 +102,8 @@ CONFIGURE_ARGS += --without-vala \
 # be safe until proven stable
 CONFIGURE_ARGS+= --enable-mmx \
 		--disable-sse
+
+post-install:
+	rm ${PREFIX}/lib/gegl-0.2/*.{a,la}
 
 .include <bsd.port.mk>

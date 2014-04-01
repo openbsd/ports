@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST-common,v 1.2 2013/08/22 10:49:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST-common,v 1.3 2014/04/01 14:52:10 ajacoutot Exp $
 @conflict hplip-libs-*
 @conflict hplip-<3.13.7p4
 @pkgpath print/hplip,-libs
 @newgroup _cups:541
 @extraunexec rm -rf /var/log/hp/tmp/*
 @extraunexec rm -f /var/log/hp/* 2>/dev/null || true
+lib/libhpip.a
 lib/libhpip.la
 @lib lib/libhpip.so.${LIBhpip_VERSION}
+lib/libhpmud.a
 lib/libhpmud.la
 @lib lib/libhpmud.so.${LIBhpmud_VERSION}
 share/cups/drv/

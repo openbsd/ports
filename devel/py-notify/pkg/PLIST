@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/18 18:08:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/04/01 14:52:09 ajacoutot Exp $
 lib/pkgconfig/notify-python.pc
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/pynotify/
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/pynotify/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/pynotify/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/pynotify/__init__.pyo
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/pynotify/_pynotify.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/pynotify/_pynotify.so
 share/pygtk/2.0/defs/pynotify.defs

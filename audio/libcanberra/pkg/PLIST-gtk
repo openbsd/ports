@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-gtk,v 1.4 2012/09/27 06:17:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST-gtk,v 1.5 2014/04/01 14:52:09 ajacoutot Exp $
 @conflict libcanberra-<=0.24p1
 lib/gtk-2.0/
 lib/gtk-2.0/modules/
 lib/gtk-2.0/modules/libcanberra-gtk-module.so
+lib/libcanberra-gtk.a
 lib/libcanberra-gtk.la
 @lib lib/libcanberra-gtk.so.${LIBcanberra-gtk_VERSION}
 lib/pkgconfig/libcanberra-gtk.pc

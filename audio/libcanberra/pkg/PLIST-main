@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2012/09/27 06:17:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2014/04/01 14:52:09 ajacoutot Exp $
 @conflict libcanberra-<gtk-0.28p0
 @pkgpath audio/libcanberra
 include/canberra-gtk.h
@@ -6,6 +6,7 @@ include/canberra.h
 lib/libcanberra-0.30/
 lib/libcanberra-0.30/libcanberra-multi.so
 lib/libcanberra-0.30/libcanberra-sndio.so
+lib/libcanberra.a
 lib/libcanberra.la
 @lib lib/libcanberra.so.${LIBcanberra_VERSION}
 lib/pkgconfig/libcanberra.pc

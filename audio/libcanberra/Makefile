@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2013/05/31 15:34:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2014/04/01 14:52:09 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -14,9 +14,9 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-gtk=	libcanberra-gtk-${V}
 PKGNAME-gtk3=	libcanberra-gtk3-${V}
 
-REVISION-main=	0
-REVISION-gtk=	0
-REVISION-gtk3=	0
+REVISION-main=	1
+REVISION-gtk=	1
+REVISION-gtk3=	1
 
 SHARED_LIBS +=  canberra             2.0      # 2.5
 SHARED_LIBS +=  canberra-gtk3        1.8      # 1.8
@@ -82,14 +82,12 @@ LIB_DEPENDS-gtk3=	${BASE_PKGPATH} \
 			x11/gtk+3
 RUN_DEPENDS-gtk3=	${MODGETTEXT_RUN_DEPENDS}
 
-LIBTOOL_FLAGS=		--tag=disable-static
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS= 	${CONFIGURE_SHARED} \
-			--disable-static \
 			--disable-gtk-doc \
 			--disable-gtk-doc-html \
 			--disable-gstreamer \
@@ -119,7 +117,7 @@ pre-configure:
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} automake
 
 post-install:
-	rm ${PREFIX}/lib/libcanberra-${V}/*.la \
-		${PREFIX}/lib/gtk-{2,3}.0/modules/*.la
+	rm ${PREFIX}/lib/libcanberra-${V}/*.{a,la}
+	rm ${PREFIX}/lib/gtk-{2,3}.0/modules/*.{a,la}
 
 .include <bsd.port.mk>

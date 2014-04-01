@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2013/11/05 17:15:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2014/04/01 14:52:09 ajacoutot Exp $
 @bin bin/gcompris
 @bin bin/gcompris-gnuchess
 lib/gcompris/
@@ -15595,8 +15595,6 @@ share/locale/ru/LC_MESSAGES/gcompris.mo
 share/locale/rw/LC_MESSAGES/gcompris.mo
 share/locale/sk/LC_MESSAGES/gcompris.mo
 share/locale/sl/LC_MESSAGES/gcompris.mo
-share/locale/so/
-share/locale/so/LC_MESSAGES/
 share/locale/so/LC_MESSAGES/gcompris.mo
 share/locale/sq/LC_MESSAGES/gcompris.mo
 share/locale/sr/LC_MESSAGES/gcompris.mo

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2013/11/05 17:15:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2014/04/01 14:52:09 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	educational game for children
 
 DISTNAME=	gcompris-13.11
 EXTRACT_SUFX=	.tar.bz2
+REVISION=	0
 
 CATEGORIES=	games education
 
@@ -52,14 +53,11 @@ RUN_DEPENDS=	games/gnuchess \
 
 USE_GMAKE=	Yes
 
-LIBTOOL_FLAGS=	--tag=disable-static
-
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -pthread" \
 		ac_cv_path_TETEX=no
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-static \
 		--enable-py-build-only \
 		--with-python=${MODPY_BIN}
 
@@ -71,7 +69,7 @@ pre-configure:
 		${WRKSRC}/src/electric-activity/electric.py
 
 post-install:
-	rm ${PREFIX}/lib/gcompris/*.la
+	rm ${PREFIX}/lib/gcompris/*.{a,la}
 	find ${PREFIX}/share/gcompris -type f -perm 755 -exec chmod 644 {} \;
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/gcompris
 

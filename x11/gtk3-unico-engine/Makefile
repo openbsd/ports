@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/05/31 15:35:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2014/04/01 14:52:10 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	Unico GTK+3 engine
 V=		1.0.2.1
 DISTNAME=	unico-${V}
 PKGNAME=	gtk3-unico-engine-${V}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	x11
 
@@ -31,11 +31,10 @@ MODULES=	devel/gettext
 
 LIB_DEPENDS=	x11/gtk+3
 
-
-LIBTOOL_FLAGS =	--tag=disable-static
-
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-static
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+
+post-install:
+	rm ${PREFIX}/lib/gtk-3.0/3.0.0/theming-engines/*.{a,la}
 
 .include <bsd.port.mk>
