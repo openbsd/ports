@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/04/01 13:21:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2014/04/01 17:03:15 jasper Exp $
 
 BROKEN=		runtime issue (threads related?)
 
@@ -40,8 +40,8 @@ LIB_DEPENDS=	devel/libgtop2 \
 		x11/gnome/ghex \
 		x11/gtksourceviewmm3
 
-MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_ICON_CACHE=	Yes
+MODGNOME_TOOLS +=	desktop-file-utils
+MODGNOME_TOOLS +=	gtk-update-icon-cache
 MODGNOME_TOOLS=		yelp
 
 CONFIGURE_ARGS=	--with-default-gdb=${LOCALBASE}/bin/egdb

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2014/04/01 15:31:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.137 2014/04/01 17:03:13 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -69,8 +69,8 @@ RUN_DEPENDS +=		multimedia/gstreamer1/plugins-good
 # needed for mp3 support
 RUN_DEPENDS +=		multimedia/gstreamer1/plugins-ugly
 
-MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_ICON_CACHE=	Yes
+MODGNOME_TOOLS +=	desktop-file-utils
+MODGNOME_TOOLS +=	gtk-update-icon-cache
 MODGNOME_TOOLS= 	gobject-introspection vala yelp
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include

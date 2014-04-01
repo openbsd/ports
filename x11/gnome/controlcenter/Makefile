@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.126 2014/04/01 13:21:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.127 2014/04/01 17:03:14 jasper Exp $
 
 # XXX remove pre-configure when updating to 3.12.0
 # https://git.gnome.org/browse/gnome-control-center/commit/?id=4736b03ed9e2ae9214117454f70811dbacd78739
@@ -87,8 +87,8 @@ RUN_DEPENDS +=		x11/gnome/grilo-plugins
 #RUN_DEPENDS+=		x11/gnome/session
 
 MODGNOME_TOOLS= 	docbook yelp
-MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_ICON_CACHE=	Yes
+MODGNOME_TOOLS +=	desktop-file-utils
+MODGNOME_TOOLS +=	gtk-update-icon-cache
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.167 2014/04/01 15:31:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.168 2014/04/01 17:03:15 jasper Exp $
 
 EVO_VERSION=		3.12
 SUBST_VARS +=		EVO_VERSION
@@ -79,8 +79,8 @@ TEST_DEPENDS=		${MODPY_RUN_DEPENDS} \
 			x11/dbus-python
 
 MODGNOME_TOOLS= 	gobject-introspection vala
-MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_ICON_CACHE=	Yes
+MODGNOME_TOOLS +=	desktop-file-utils
+MODGNOME_TOOLS +=	gtk-update-icon-cache
 MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
 

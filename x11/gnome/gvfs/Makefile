@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2014/04/01 16:48:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.120 2014/04/01 17:03:15 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -45,7 +45,7 @@ WANTLIB-smb += gcrypt gpg-error secret-1
 WANTLIB-goa += ${WANTLIB}
 WANTLIB-goa += goa-1.0
 
-MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_TOOLS +=	desktop-file-utils
 MODGNOME_TOOLS=		docbook
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \

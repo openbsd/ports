@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2014/03/16 09:42:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2014/04/01 17:03:13 jasper Exp $
 
 COMMENT=		GNOME music player client
 
@@ -38,8 +38,8 @@ post-patch:
 BUILD_DEPENDS=		x11/gob2
 
 MODGNOME_TOOLS=		vala yelp
-MODGNOME_ICON_CACHE=	Yes
-MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_TOOLS +=	gtk-update-icon-cache
+MODGNOME_TOOLS +=	desktop-file-utils
 
 CONFIGURE_ARGS+=	--enable-appindicator=no
 

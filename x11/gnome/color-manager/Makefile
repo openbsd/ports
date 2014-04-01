@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2014/03/31 09:38:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2014/04/01 17:03:14 jasper Exp $
 
 COMMENT=	color profile manager for GNOME
 
@@ -34,8 +34,8 @@ LIB_DEPENDS=	audio/libcanberra,-gtk3 \
 RUN_DEPENDS=	graphics/argyll \
 		graphics/shared-color-targets
 
-MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_ICON_CACHE=	Yes
+MODGNOME_TOOLS +=	desktop-file-utils
+MODGNOME_TOOLS +=	gtk-update-icon-cache
 MODGNOME_TOOLS=		yelp
 
 # XXX gcm-calibrate.sgml:1: parser error : StartTag: invalid element name

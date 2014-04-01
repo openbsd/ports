@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2014/04/01 15:31:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.120 2014/04/01 17:03:15 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -62,8 +62,8 @@ LIB_DEPENDS=		x11/gnome/totem-pl-parser \
 RUN_DEPENDS +=		multimedia/gstreamer1/plugins-good \
 			multimedia/gstreamer1/plugins-libav
 
-MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_ICON_CACHE=	Yes
+MODGNOME_TOOLS +=	desktop-file-utils
+MODGNOME_TOOLS +=	gtk-update-icon-cache
 MODGNOME_TOOLS=		gobject-introspection vala yelp
 
 pre-configure:

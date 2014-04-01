@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2014/04/01 15:31:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2014/04/01 17:03:15 jasper Exp $
 
 COMMENT=	interfaces for interacting with online accounts
 
@@ -36,7 +36,7 @@ LIB_DEPENDS=		devel/json-glib \
 			www/webkit,gtk3
 
 MODGNOME_TOOLS= 	docbook gobject-introspection
-MODGNOME_ICON_CACHE=	Yes
+MODGNOME_TOOLS +=	gtk-update-icon-cache
 
 MODGNU_CONFIG_GUESS_DIRS= \
 			${WRKSRC} \

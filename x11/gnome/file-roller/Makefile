@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2014/03/27 10:15:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.95 2014/04/01 17:03:14 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -42,8 +42,8 @@ LIB_DEPENDS=	archivers/libarchive \
 		x11/gnome/nautilus
 
 MODGNOME_TOOLS= 	yelp
-MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_ICON_CACHE=	Yes
+MODGNOME_TOOLS +=	desktop-file-utils
+MODGNOME_TOOLS +=	gtk-update-icon-cache
 
 post-install:
 	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.{a,la}

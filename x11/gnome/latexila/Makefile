@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/03/27 13:07:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2014/04/01 17:03:15 jasper Exp $
 
 COMMENT=	integrated LaTeX environment for GNOME
 
@@ -34,7 +34,7 @@ LIB_DEPENDS=	devel/libgee06 \
 		x11/gtksourceview3
 
 MODGNOME_TOOLS= 	yelp
-MODGNOME_ICON_CACHE=	Yes
-MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_TOOLS +=	gtk-update-icon-cache
+MODGNOME_TOOLS +=	desktop-file-utils
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2014/04/01 15:31:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.80 2014/04/01 17:03:15 jasper Exp $
 
 COMMENT=		next generation GNOME shell
 
@@ -42,7 +42,7 @@ MODGCC4_LANGS =		c c++
 MODCLANG_ARCHS =	amd64
 MODCLANG_LANGS =	c c++
 
-MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_TOOLS +=	desktop-file-utils
 MODGNOME_TOOLS=		docbook gobject-introspection
 
 BUILD_DEPENDS +=	devel/gsettings-desktop-schemas

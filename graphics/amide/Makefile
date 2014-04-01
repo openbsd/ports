@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2014/03/16 11:21:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2014/04/01 17:03:13 jasper Exp $
 
 COMMENT =	Amide a Medical Imaging Data Examiner
 
@@ -34,7 +34,7 @@ MODULES =	devel/gettext \
 		x11/gnome
 
 MODGNOME_TOOLS=	yelp
-MODGNOME_DESKTOP_FILE= Yes
+MODGNOME_TOOLS +=	desktop-file-utils
 
 BUILD_DEPENDS =	devel/m4
 

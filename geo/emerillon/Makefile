@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2014/04/01 15:31:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2014/04/01 17:03:13 jasper Exp $
 
 COMMENT =	map viewer using Openstreetmap data
 
@@ -29,7 +29,7 @@ WANTLIB += sqlite3 xcb xcb-render xcb-shm xml2 z
 EXTRACT_SUFX=		.tar.bz2
 
 CONFIGURE_STYLE =	gnu
-MODGNOME_DESKTOP_FILE =		yes
+MODGNOME_TOOLS +=	desktop-file-utils
 
 MODULES=	devel/gettext \
 		x11/gnome

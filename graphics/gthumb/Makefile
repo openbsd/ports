@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2014/04/01 13:21:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2014/04/01 17:03:13 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -50,9 +50,9 @@ RUN_DEPENDS=	graphics/dcraw \
 		multimedia/gstreamer1/plugins-base
 
 MODGNOME_TOOLS= 	yelp
-MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_ICON_CACHE=	Yes
-MODGNOME_MIME_FILE=	Yes
+MODGNOME_TOOLS +=	desktop-file-utils
+MODGNOME_TOOLS +=	gtk-update-icon-cache
+MODGNOME_TOOLS +=	shared-mime-info
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 

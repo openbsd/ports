@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2013/09/17 05:48:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2014/04/01 17:03:13 jasper Exp $
 
 COMMENT=	brain teaser game
 
@@ -29,8 +29,8 @@ RUN_DEPENDS=	devel/mono-addins \
 		shells/bash \
 		x11/gnome/mono-gnome
 
-MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_ICON_CACHE=	Yes
+MODGNOME_TOOLS +=	desktop-file-utils
+MODGNOME_TOOLS +=	gtk-update-icon-cache
 MODGNOME_TOOLS= 	yelp
 
 CONFIGURE_STYLE=gnu

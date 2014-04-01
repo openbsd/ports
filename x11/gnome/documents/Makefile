@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2014/04/01 15:31:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2014/04/01 17:03:14 jasper Exp $
 
 TRACKER_VERSION=1.0
 
@@ -50,8 +50,8 @@ LIB_DEPENDS=	devel/libgdata \
 RUN_DEPENDS +=	x11/gnome/online-miners
 
 MODGNOME_TOOLS=		docbook gobject-introspection vala
-MODGNOME_ICON_CACHE=	Yes
-MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_TOOLS +=	gtk-update-icon-cache
+MODGNOME_TOOLS +=	desktop-file-utils
 
 # XXX --disable-getting-started is the default but configure checks for
 # itstool(1) anyway

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/09/27 17:49:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2014/04/01 17:03:13 jasper Exp $
 
 COMMENT =	Mastermind clone reflexion game
 
@@ -23,8 +23,8 @@ LIB_DEPENDS =	x11/gtk+2 \
 		devel/gconf2
 
 MODGNOME_TOOLS= 	yelp
-MODGNOME_ICON_CACHE=	Yes
-MODGNOME_DESKTOP_FILE =	Yes
+MODGNOME_TOOLS +=	gtk-update-icon-cache
+MODGNOME_TOOLS +=	desktop-file-utils
 
 CONFIGURE_STYLE =	gnu
 

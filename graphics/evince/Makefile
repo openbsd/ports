@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2014/04/01 15:31:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.108 2014/04/01 17:03:13 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -81,9 +81,9 @@ LIB_DEPENDS-nautilus= ${BASE_PKGPATH} \
 		x11/gnome/nautilus
 RUN_DEPENDS-nautilus=${MODGETTEXT_RUN_DEPENDS}
 
-MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_ICON_CACHE=	Yes
-MODGNOME_MIME_FILE=	Yes
+MODGNOME_TOOLS +=	desktop-file-utils
+MODGNOME_TOOLS +=	gtk-update-icon-cache
+MODGNOME_TOOLS +=	shared-mime-info
 
 CONFIGURE_STYLE=gnu
 

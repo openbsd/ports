@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/09/28 08:50:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2014/04/01 17:03:13 jasper Exp $
 
 COMMENT=	simple application for modifying PDF documents
 
@@ -22,8 +22,8 @@ RUN_DEPENDS=	print/poppler \
 		x11/gnome/mono-gnome
 
 MODGNOME_TOOLS= 	yelp
-MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_ICON_CACHE=	Yes
+MODGNOME_TOOLS +=	desktop-file-utils
+MODGNOME_TOOLS +=	gtk-update-icon-cache
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-release \

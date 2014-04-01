@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2014/04/01 15:31:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.92 2014/04/01 17:03:15 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -50,8 +50,8 @@ WANTLIB += gthread-2.0 xml2 gcrypt secret-1 gpg-error ffi pthread
 MODULES=		devel/gettext \
 			x11/gnome
 
-MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_ICON_CACHE=	Yes
+MODGNOME_TOOLS +=	desktop-file-utils
+MODGNOME_TOOLS +=	gtk-update-icon-cache
 
 # /libgda-5.1.2_writes_to_HOME/.cache/g-ir-scanner
 PORTHOME=		${WRKDIST}

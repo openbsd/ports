@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2014/04/01 15:31:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.111 2014/04/01 17:03:14 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -65,9 +65,9 @@ RUN_DEPENDS +=		devel/autogen
 # needed by the python plugin
 RUN_DEPENDS +=		devel/py-rope
 
-MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_ICON_CACHE=	Yes
-MODGNOME_MIME_FILE=	Yes
+MODGNOME_TOOLS +=	desktop-file-utils
+MODGNOME_TOOLS +=	gtk-update-icon-cache
+MODGNOME_TOOLS +=	shared-mime-info
 
 MODGNOME_TOOLS= 	gobject-introspection yelp vala
 

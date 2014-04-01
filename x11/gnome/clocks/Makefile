@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2014/03/27 12:53:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2014/04/01 17:03:14 jasper Exp $
 
 COMMENT=		clock application for GNOME
 
@@ -34,8 +34,8 @@ BUILD_DEPENDS +=	geo/geoclue2
 RUN_DEPENDS +=		geo/geoclue2
 
 MODGNOME_TOOLS=		vala yelp
-MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_ICON_CACHE=	Yes
+MODGNOME_TOOLS +=	desktop-file-utils
+MODGNOME_TOOLS +=	gtk-update-icon-cache
 
 pre-configure:
 	perl -pi -e 's,.-Wno-unused-but-set-variable,,' \

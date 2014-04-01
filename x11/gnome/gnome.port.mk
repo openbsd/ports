@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.82 2014/04/01 15:31:46 jasper Exp $
+# $OpenBSD: gnome.port.mk,v 1.83 2014/04/01 17:03:14 jasper Exp $
 #
 # Module for GNOME related ports
 
@@ -35,41 +35,29 @@ MODULES+=		textproc/intltool
 .   endif
 .endif
 
-# Set to 'yes' if there are .desktop files under share/applications/.
-# Requires the following goo in PLIST:
-# @exec %D/bin/update-desktop-database
-# @unexec-delete %D/bin/update-desktop-database
-.if defined(MODGNOME_DESKTOP_FILE) && ${MODGNOME_DESKTOP_FILE:L} == "yes"
-MODGNOME_RUN_DEPENDS+=	devel/desktop-file-utils
-MODGNOME_pre-configure += ln -sf /usr/bin/true ${WRKDIR}/bin/desktop-file-validate;
-.endif
-
-# Set to 'yes' if there are icon files under share/icons/.
-# Requires the following goo in PLIST (adapt $icon-theme accordingly):
-# @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/$icon-theme
-# @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/$icon-theme
-.if defined(MODGNOME_ICON_CACHE) && ${MODGNOME_ICON_CACHE:L} == "yes"
-MODGNOME_RUN_DEPENDS+=	x11/gtk+2,-guic
-.endif
-
-# Set to 'yes' if there are .xml files under share/mime/.
-# Requires the following goo in PLIST:
-# @exec %D/bin/update-mime-database %D/share/mime
-# @unexec-delete %D/bin/update-mime-database %D/share/mime
-.if defined(MODGNOME_MIME_FILE) && ${MODGNOME_MIME_FILE:L} == "yes"
-MODGNOME_RUN_DEPENDS+=	misc/shared-mime-info
-MODGNOME_pre-configure += ln -sf /usr/bin/true ${WRKDIR}/bin/update-mime-database;
-.endif
-
 USE_GMAKE?=		Yes
 
 # Use MODGNOME_TOOLS to indicate certain tools are needed for building bindings
 # or for ensuring documentation is available. If an option is not set, it's
 # explicitly disabled.
 # Currently supported tools are:
+# * desktop-file-utils: Use this if there are .desktop files under
+#                       share/applications/. This also requires the following
+#                       go in PLIST:
+#                       @exec %D/bin/update-desktop-database
+#                       @unexec-delete %D/bin/update-desktop-database
 # * docbook: Build man pages with docbook.
 # * gobject-introspection: Build and enable GObject Introspection data.
 # * gtk-doc: Enable to build the included docs.
+# * gtk-update-icon-cache: Enable if there are icon files under share/icons/.
+#                          Requires the following goo in PLIST (adapt
+#                          $icon-theme accordingly):
+#                          @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/$icon-theme
+#                          @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/$icon-theme
+# * shared-mime-info: Enable if there are .xml files under share/mime/.
+#                     Requires the following goo in PLIST:
+#                     @exec %D/bin/update-mime-database %D/share/mime
+#                     @unexec-delete %D/bin/update-mime-database %D/share/mime
 # * vala: Enable vala bindings and/or building from vala source files.
 # * yelp: Use this if there are any files under share/gnome/help/
 #         or "page" files under share/help/ in the PLIST that are opened
@@ -83,6 +71,11 @@ MODGNOME_CONFIGURE_ARGS_gi=--disable-introspection
 MODGNOME_CONFIGURE_ARGS_vala=--disable-vala --disable-vala-bindings
 
 .if defined(MODGNOME_TOOLS)
+.   if ${MODGNOME_TOOLS:Mdesktop-file-utils}
+        MODGNOME_RUN_DEPENDS+=	devel/desktop-file-utils
+        MODGNOME_pre-configure += ln -sf /usr/bin/true ${WRKDIR}/bin/desktop-file-validate;
+.   endif
+
 .   if ${MODGNOME_TOOLS:Mdocbook}
         MODGNOME_BUILD_DEPENDS+=textproc/docbook-xsl>=1.68.1p5
 .   endif
@@ -94,7 +87,16 @@ MODGNOME_CONFIGURE_ARGS_vala=--disable-vala --disable-vala-bindings
 
 .   if ${MODGNOME_TOOLS:Mgtk-doc}
         MODGNOME_CONFIGURE_ARGS_gtkdoc=--enable-gtk-doc
-[A        MODGNOME_BUILD_DEPENDS+=textproc/gtk-doc>=1.20p0
+        MODGNOME_BUILD_DEPENDS+=textproc/gtk-doc>=1.20p0
+.   endif
+
+.   if ${MODGNOME_TOOLS:Mgtk-update-icon-cache}
+        MODGNOME_RUN_DEPENDS+=	x11/gtk+2,-guic
+.   endif
+
+.   if ${MODGNOME_TOOLS:Mshared-mime-info}
+        MODGNOME_RUN_DEPENDS+=	misc/shared-mime-info
+        MODGNOME_pre-configure += ln -sf /usr/bin/true ${WRKDIR}/bin/update-mime-database;
 .   endif
 
 .   if ${MODGNOME_TOOLS:Mvala}
@@ -106,7 +108,7 @@ MODGNOME_CONFIGURE_ARGS_vala=--disable-vala --disable-vala-bindings
         MODGNOME_BUILD_DEPENDS+=x11/gnome/yelp-tools>=3.12.0
         MODGNOME_BUILD_DEPENDS+=x11/gnome/doc-utils>=0.20.10p2
         # automatically try to detect GUI applications
-.       if defined(MODGNOME_DESKTOP_FILE) && ${MODGNOME_DESKTOP_FILE:L} == "yes"
+.       if ${MODGNOME_TOOLS:Mdesktop-file-utils}
             MODGNOME_RUN_DEPENDS+=x11/gnome/yelp
 .       endif
 .   endif

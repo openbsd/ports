@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2014/03/27 15:23:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.79 2014/04/01 17:03:15 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -33,9 +33,9 @@ LIB_DEPENDS=	devel/vte3 \
 		x11/gtk-vnc \
 		x11/spice-gtk
 
-MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_ICON_CACHE=	Yes
-MODGNOME_MIME_FILE=	Yes
+MODGNOME_TOOLS +=	desktop-file-utils
+MODGNOME_TOOLS +=	gtk-update-icon-cache
+MODGNOME_TOOLS +=	shared-mime-info
 MODGNOME_TOOLS= 	yelp
 
 .include <bsd.port.mk>

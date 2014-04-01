@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.151 2014/04/01 07:40:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.152 2014/04/01 17:03:14 jasper Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
@@ -71,8 +71,8 @@ RUN_DEPENDS +=		geo/geoclue2
 # gst-pulse (src/empathy-audio-sink.c)
 RUN_DEPENDS +=		multimedia/gstreamer1/plugins-good,-pulse
 
-MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_ICON_CACHE=	Yes
+MODGNOME_TOOLS +=	desktop-file-utils
+MODGNOME_TOOLS +=	gtk-update-icon-cache
 MODGNOME_TOOLS= 	yelp
 
 CONFIGURE_ARGS=		--disable-gudev

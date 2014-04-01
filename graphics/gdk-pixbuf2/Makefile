@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2014/04/01 15:31:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2014/04/01 17:03:13 jasper Exp $
 
 COMMENT=		graphic library for gtk+2
 
@@ -32,7 +32,7 @@ LIB_DEPENDS=		devel/glib2 \
 # (g_content_type_from_mime_type requires shared-mime-info)
 BUILD_DEPENDS +=	misc/shared-mime-info
 
-MODGNOME_MIME_FILE=	Yes
+MODGNOME_TOOLS +=	shared-mime-info
 MODGNOME_TOOLS=		gobject-introspection
 
 CONFIGURE_STYLE=	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.220 2014/04/01 13:21:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.221 2014/04/01 17:03:13 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -64,8 +64,8 @@ RUN_DEPENDS +=		mail/bogofilter
 BUILD_DEPENDS +=	mail/p5-Mail-SpamAssassin
 
 MODGNOME_TOOLS= 	yelp
-MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_ICON_CACHE=	Yes
+MODGNOME_TOOLS +=	desktop-file-utils
+MODGNOME_TOOLS +=	gtk-update-icon-cache
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 
 # without --as-needed, evolution takes 20 minutes (yes, 20!) to start
