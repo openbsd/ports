@@ -1,4 +1,10 @@
-$OpenBSD: patch-ext_files_puppetdb_env,v 1.1 2014/03/31 09:17:56 jasper Exp $
+$OpenBSD: patch-ext_files_puppetdb_env,v 1.2 2014/04/01 06:52:48 jasper Exp $
+
+From 20efae87f44b7b78b659a23cef970866db615ce0 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Mon, 31 Mar 2014 19:42:15 +0200
+Subject: [PATCH] [PDB-564] Add OpenBSD-specific variables to puppetdb.env
+
 --- ext/files/puppetdb.env.orig	Thu Mar 27 00:49:49 2014
 +++ ext/files/puppetdb.env	Mon Mar 31 11:15:02 2014
 @@ -8,4 +8,9 @@ elif [ -r  "/etc/sysconfig/puppetdb" ] ; then
