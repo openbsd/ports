@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2014/04/01 07:31:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.151 2014/04/01 07:40:45 ajacoutot Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
@@ -74,6 +74,8 @@ RUN_DEPENDS +=		multimedia/gstreamer1/plugins-good,-pulse
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS= 	yelp
+
+CONFIGURE_ARGS=		--disable-gudev
 
 # needs signond, libsignon-glib -- Ubuntu/Meego
 CONFIGURE_ARGS +=	--disable-ubuntu-online-accounts

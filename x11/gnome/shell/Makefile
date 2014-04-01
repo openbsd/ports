@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2014/03/29 08:47:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2014/04/01 07:40:45 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
@@ -98,7 +98,8 @@ RUN_DEPENDS +=		inputmethods/ibus \
 
 LIBTOOL_FLAGS= 		--tag=disable-static
 
-CONFIGURE_ARGS=		--disable-static
+CONFIGURE_ARGS=		--disable-static \
+			--disable-systemd
 
 post-install:
 	rm ${PREFIX}/lib/gnome-shell/*.la

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2014/03/31 13:44:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.117 2014/04/01 07:40:45 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -67,6 +67,7 @@ LIB_DEPENDS-goa= ${LIB_DEPENDS} \
 		x11/gnome/online-accounts
 
 CONFIGURE_ARGS=	--disable-static \
+		--disable-libsystemd-login \
 		--disable-cdda \
 		--disable-bluray \
 		--disable-afc \

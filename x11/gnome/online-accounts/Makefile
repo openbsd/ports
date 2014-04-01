@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2014/03/28 08:48:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2014/04/01 07:40:45 ajacoutot Exp $
 
 COMMENT=	interfaces for interacting with online accounts
 
@@ -36,5 +36,7 @@ LIB_DEPENDS=		devel/json-glib \
 
 MODGNOME_TOOLS= 	docbook gi
 MODGNOME_ICON_CACHE=	Yes
+
+CONFIGURE_ARGS=		--disable-gudev
 
 .include <bsd.port.mk>

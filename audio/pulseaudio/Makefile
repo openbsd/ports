@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2014/03/31 14:02:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2014/04/01 07:40:45 ajacoutot Exp $
 
 # XXX
 # util.c: implement pa_get_binary_name()
@@ -94,6 +94,7 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-jack \
 			--disable-hal-compat \
 			--disable-systemd \
+			--disable-systemd-journal \
 			--disable-udev \
 			--disable-lirc \
 			--disable-samplerate \

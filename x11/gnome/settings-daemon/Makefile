@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2014/03/28 08:48:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.125 2014/04/01 07:40:45 ajacoutot Exp $
 
 # XXX gcm-dmi.c:141:2: warning: #warning Please add dmi support for your OS
 
@@ -72,10 +72,8 @@ LIBTOOL_FLAGS=		--tag=disable-static
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
-CONFIGURE_ARGS= 	--disable-static
-
-# Linux stuffs
-CONFIGURE_ARGS +=	--disable-gudev \
+CONFIGURE_ARGS= 	--disable-static \
+			--disable-gudev \
 			--disable-rfkill
 
 FAKE_FLAGS=		desktopdir=${PREFIX}/share/examples/gnome-settings-daemon/xdg/autostart \

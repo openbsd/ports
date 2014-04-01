@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.198 2014/03/30 14:48:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.199 2014/04/01 07:40:45 ajacoutot Exp $
 
 # XXX remove from PLIST when OPENBSD_5_6 is branched:
 # @unexec rm -f ${SYSCONFDIR}/dconf/db/gdm
@@ -67,6 +67,8 @@ CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69
 
 CONFIGURE_ARGS=		--disable-static \
+			--disable-systemd-journal \
+			--without-systemd \
 			--mandir=${PREFIX}/man \
 			--with-lang-file=${SYSCONFDIR}/gdm/locale.conf \
 			--with-at-spi-registryd-directory=${LOCALBASE}/libexec \
