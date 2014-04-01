@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2013/11/16 15:22:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2014/04/01 10:46:41 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	gettext(1) files editor for GNOME
 
 GNOME_PROJECT=	gtranslator
 GNOME_VERSION=	2.91.6
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	textproc devel
 
@@ -49,6 +49,10 @@ MODGNOME_CPPFLAGS=	-I${LOCALBASE}/include/db4
 CONFIGURE_STYLE=gnu
 
 # XXX needs to be ported to gtkspell3
-CONFIGURE_ARGS += --without-gtkspell
+CONFIGURE_ARGS += --without-gtkspell3
+
+post-install:
+	rm ${PREFIX}/lib/gtranslator/*.{a,la}
+	rm ${PREFIX}/lib/gtranslator/plugins/*.{a,la}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2012/12/30 08:17:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2014/04/01 10:46:41 ajacoutot Exp $
 @bin bin/gtranslator
 include/gtranslator-3.0/
 include/gtranslator-3.0/gtranslator/
@@ -21,8 +21,6 @@ include/gtranslator-3.0/gtranslator/gtr-window.h
 lib/gtranslator/
 lib/gtranslator/girepository-1.0/
 lib/gtranslator/girepository-1.0/Gtranslator-3.0.typelib
-@comment lib/gtranslator/libgtranslator-private.a
-@comment lib/gtranslator/libgtranslator-private.la
 lib/gtranslator/libgtranslator-private.so
 lib/gtranslator/plugins/
 lib/gtranslator/plugins/charmap/
@@ -40,26 +38,12 @@ lib/gtranslator/plugins/gtr-fullscreen.plugin
 lib/gtranslator/plugins/gtr-insert-params.plugin
 lib/gtranslator/plugins/gtr-open-tran.plugin
 lib/gtranslator/plugins/gtr-translation-memory.plugin
-@comment lib/gtranslator/plugins/libalternatelang.a
-@comment lib/gtranslator/plugins/libalternatelang.la
 lib/gtranslator/plugins/libalternatelang.so
-@comment lib/gtranslator/plugins/libdict.a
-@comment lib/gtranslator/plugins/libdict.la
 lib/gtranslator/plugins/libdict.so
-@comment lib/gtranslator/plugins/libfullscreen.a
-@comment lib/gtranslator/plugins/libfullscreen.la
 lib/gtranslator/plugins/libfullscreen.so
-@comment lib/gtranslator/plugins/libinsertparams.a
-@comment lib/gtranslator/plugins/libinsertparams.la
 lib/gtranslator/plugins/libinsertparams.so
-@comment lib/gtranslator/plugins/libopentran.a
-@comment lib/gtranslator/plugins/libopentran.la
 lib/gtranslator/plugins/libopentran.so
-@comment lib/gtranslator/plugins/libsourcecodeview.a
-@comment lib/gtranslator/plugins/libsourcecodeview.la
 lib/gtranslator/plugins/libsourcecodeview.so
-@comment lib/gtranslator/plugins/libtranslation-memory.a
-@comment lib/gtranslator/plugins/libtranslation-memory.la
 lib/gtranslator/plugins/libtranslation-memory.so
 lib/pkgconfig/gtranslator.pc
 @man man/man1/gtranslator.1
