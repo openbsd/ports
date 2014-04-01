@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2014/04/01 13:21:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2014/04/01 15:31:45 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -34,7 +34,7 @@ LIB_DEPENDS=		devel/libsoup \
 			x11/gnome/gcr \
 			x11/gnome/online-accounts
 
-MODGNOME_TOOLS= 	gi vala
+MODGNOME_TOOLS= 	gobject-introspection vala
 
 CONFIGURE_STYLE=	gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/03/30 14:53:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2014/04/01 15:31:46 jasper Exp $
 
 COMMENT=		library for managing information about operating systems
 
@@ -23,7 +23,7 @@ MASTER_SITES=		https://fedorahosted.org/releases/l/i/libosinfo/
 MODULES=		devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS=		gi vala
+MODGNOME_TOOLS=		gobject-introspection vala
 
 # needed for test
 BUILD_DEPENDS +=	devel/check \

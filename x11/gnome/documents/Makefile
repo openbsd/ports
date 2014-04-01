@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2014/04/01 13:21:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2014/04/01 15:31:46 jasper Exp $
 
 TRACKER_VERSION=1.0
 
@@ -49,7 +49,7 @@ LIB_DEPENDS=	devel/libgdata \
 # src/application.js
 RUN_DEPENDS +=	x11/gnome/online-miners
 
-MODGNOME_TOOLS=		docbook gi vala
+MODGNOME_TOOLS=		docbook gobject-introspection vala
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_DESKTOP_FILE=	Yes
 

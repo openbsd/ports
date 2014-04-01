@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/03/18 07:49:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2014/04/01 15:31:46 jasper Exp $
 
 COMMENT=	GObject wrapper around exiv2
 
@@ -19,7 +19,7 @@ WANTLIB += stdc++ z
 MODULES=	devel/gettext \
 		x11/gnome
 
-MODGNOME_TOOLS=	gi
+MODGNOME_TOOLS=	gobject-introspection
 
 LIB_DEPENDS=	graphics/exiv2 \
 		devel/glib2

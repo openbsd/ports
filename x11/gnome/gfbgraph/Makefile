@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/03/27 16:13:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2014/04/01 15:31:47 jasper Exp $
 
 COMMENT=		GObject library for Facebook Graph API
 
@@ -20,7 +20,7 @@ WANTLIB += soup-gnome-2.4 sqlite3 xml2 z
 MODULES=		devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS=		gi
+MODGNOME_TOOLS=		gobject-introspection
 
 LIB_DEPENDS=		x11/gnome/online-accounts
 

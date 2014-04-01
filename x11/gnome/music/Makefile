@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/04/01 13:21:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2014/04/01 15:31:47 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -24,7 +24,7 @@ MODULES=		x11/gnome \
 			lang/python \
 			devel/gettext
 
-MODGNOME_TOOLS=		gi yelp
+MODGNOME_TOOLS=		gobject-introspection yelp
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}

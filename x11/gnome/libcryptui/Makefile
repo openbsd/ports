@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/10/17 07:08:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2014/04/01 15:31:47 jasper Exp $
 
 COMMENT=	interface components for OpenPGP
 
@@ -32,6 +32,6 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/dconf
 
-MODGNOME_TOOLS=	gi
+MODGNOME_TOOLS=	gobject-introspection
 
 .include <bsd.port.mk>

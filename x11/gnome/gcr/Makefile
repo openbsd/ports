@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2014/04/01 11:32:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2014/04/01 15:31:46 jasper Exp $
 
 COMMENT=	library for bits of crypto UI and parsing
 
@@ -26,7 +26,7 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/dconf
 
-MODGNOME_TOOLS=		gi vala
+MODGNOME_TOOLS=		gobject-introspection vala
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_MIME_FILE=	Yes

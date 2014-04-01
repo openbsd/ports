@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2014/04/01 13:21:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2014/04/01 15:31:45 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -42,7 +42,7 @@ LIB_DEPENDS=		devel/libgsf \
 			x11/gnome/librsvg \
 			x11/gtk+3
 
-MODGNOME_TOOLS=		gi
+MODGNOME_TOOLS=		gobject-introspection
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 CONFIGURE_STYLE=	gnu

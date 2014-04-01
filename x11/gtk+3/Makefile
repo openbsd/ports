@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2014/03/28 08:48:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.97 2014/04/01 15:31:47 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -78,7 +78,7 @@ WANTLIB-cloudprint += ${WANTLIB}
 WANTLIB-cloudprint += gdk-3 gtk-3 json-glib-1.0 rest-0.7 soup-2.4 soup-gnome-2.4
 WANTLIB-cloudprint += sqlite3 xml2
 
-MODGNOME_TOOLS=		docbook gi
+MODGNOME_TOOLS=		docbook gobject-introspection
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include/freetype2
 MODGNOME_ICON_CACHE=	Yes
 

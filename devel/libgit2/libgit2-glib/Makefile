@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2014/03/09 20:01:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2014/04/01 15:31:45 jasper Exp $
 
 COMMENT=		GLib library wrapping libgit2
 
@@ -13,7 +13,7 @@ MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
 
-MODGNOME_TOOLS=		gi
+MODGNOME_TOOLS=		gobject-introspection
 MODPY_VERSION=          ${MODPY_DEFAULT_VERSION_3}
 
 BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}

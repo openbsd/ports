@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2014/03/27 08:14:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2014/04/01 15:31:45 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -32,7 +32,7 @@ MODULES=		devel/gettext \
 
 LIB_DEPENDS=		x11/gtk+3
 
-MODGNOME_TOOLS= 	gi
+MODGNOME_TOOLS= 	gobject-introspection
 
 CONFIGURE_STYLE=	gnu
 

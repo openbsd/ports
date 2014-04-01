@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2014/03/25 13:28:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2014/04/01 15:31:46 jasper Exp $
 
 COMMENT=		graphic library for gtk+2
 
@@ -33,7 +33,7 @@ LIB_DEPENDS=		devel/glib2 \
 BUILD_DEPENDS +=	misc/shared-mime-info
 
 MODGNOME_MIME_FILE=	Yes
-MODGNOME_TOOLS=		gi
+MODGNOME_TOOLS=		gobject-introspection
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-libjasper \

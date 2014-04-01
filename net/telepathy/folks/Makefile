@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2014/03/28 07:06:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2014/04/01 15:31:46 jasper Exp $
 
 COMMENT=		people aggregation library
 
@@ -39,7 +39,7 @@ RUN_DEPENDS=	net/telepathy/telepathy-mission-control
 
 TEST_DEPENDS=	${FULLPKGNAME}:${BASE_PKGPATH}
 
-MODGNOME_TOOLS= 	gi vala
+MODGNOME_TOOLS= 	gobject-introspection vala
 
 # requires libofono (not ported)
 CONFIGURE_ARGS += 	--disable-ofono-backend

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/03/30 13:13:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2014/04/01 15:31:47 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,7 +25,7 @@ WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre peas-1.0
 WANTLIB += peas-gtk-1.0 pixman-1 png pthread pthread-stubs
 WANTLIB += xcb xcb-render xcb-shm xml2 z
 
-MODGNOME_TOOLS=	gi
+MODGNOME_TOOLS=	gobject-introspection
 
 LIB_DEPENDS=	devel/libgee
 

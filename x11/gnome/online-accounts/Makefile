@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2014/04/01 07:59:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2014/04/01 15:31:47 jasper Exp $
 
 COMMENT=	interfaces for interacting with online accounts
 
@@ -35,7 +35,7 @@ LIB_DEPENDS=		devel/json-glib \
 			x11/gnome/libsecret \
 			www/webkit,gtk3
 
-MODGNOME_TOOLS= 	docbook gi
+MODGNOME_TOOLS= 	docbook gobject-introspection
 MODGNOME_ICON_CACHE=	Yes
 
 MODGNU_CONFIG_GUESS_DIRS= \

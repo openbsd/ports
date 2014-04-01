@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.81 2014/03/30 14:43:24 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.82 2014/04/01 15:31:46 jasper Exp $
 #
 # Module for GNOME related ports
 
@@ -68,7 +68,7 @@ USE_GMAKE?=		Yes
 # explicitly disabled.
 # Currently supported tools are:
 # * docbook: Build man pages with docbook.
-# * gi: Build and enable GObject Introspection data.
+# * gobject-introspection: Build and enable GObject Introspection data.
 # * gtk-doc: Enable to build the included docs.
 # * vala: Enable vala bindings and/or building from vala source files.
 # * yelp: Use this if there are any files under share/gnome/help/
@@ -87,14 +87,14 @@ MODGNOME_CONFIGURE_ARGS_vala=--disable-vala --disable-vala-bindings
         MODGNOME_BUILD_DEPENDS+=textproc/docbook-xsl>=1.68.1p5
 .   endif
 
-.   if ${MODGNOME_TOOLS:Mgi}
+.   if ${MODGNOME_TOOLS:Mgobject-introspection}
         MODGNOME_CONFIGURE_ARGS_gi=--enable-introspection
         MODGNOME_BUILD_DEPENDS+=devel/gobject-introspection>=1.40.0
 .   endif
 
 .   if ${MODGNOME_TOOLS:Mgtk-doc}
         MODGNOME_CONFIGURE_ARGS_gtkdoc=--enable-gtk-doc
-        MODGNOME_BUILD_DEPENDS+=textproc/gtk-doc>=1.20p0
+[A        MODGNOME_BUILD_DEPENDS+=textproc/gtk-doc>=1.20p0
 .   endif
 
 .   if ${MODGNOME_TOOLS:Mvala}

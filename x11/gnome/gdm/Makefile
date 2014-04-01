@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.200 2014/04/01 13:21:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.201 2014/04/01 15:31:46 jasper Exp $
 
 # XXX remove from PLIST when OPENBSD_5_6 is branched:
 # @unexec rm -f ${SYSCONFDIR}/dconf/db/gdm
@@ -56,7 +56,7 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			security/openpam \
 			sysutils/accountsservice
 
-MODGNOME_TOOLS= 	gi yelp
+MODGNOME_TOOLS= 	gobject-introspection yelp
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include -DHAS_SA_LEN
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib

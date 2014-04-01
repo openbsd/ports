@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2014/03/20 08:10:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2014/04/01 15:31:45 jasper Exp $
 
 COMMENT=		GNOME Structured File library
 
@@ -21,7 +21,7 @@ WANTLIB += gobject-2.0 m pcre png pthread xml2 z
 MODULES=		devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS=		gi
+MODGNOME_TOOLS=		gobject-introspection
 
 LIB_DEPENDS=		archivers/bzip2 \
 			graphics/gdk-pixbuf2 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2014/04/01 13:21:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.110 2014/04/01 15:31:46 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -69,7 +69,7 @@ MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_MIME_FILE=	Yes
 
-MODGNOME_TOOLS= 	gi yelp vala
+MODGNOME_TOOLS= 	gobject-introspection yelp vala
 
 YACC=			bison -y
 

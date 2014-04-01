@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2014/04/01 13:21:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2014/04/01 15:31:46 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -17,7 +17,7 @@ MODULES=		devel/gettext \
 WANTLIB += uuid gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gssdp-1.0 m pcre soup-2.4 xml2 z ffi pthread sqlite3
 
-MODGNOME_TOOLS= 	gi vala
+MODGNOME_TOOLS= 	gobject-introspection vala
 LIB_DEPENDS=		net/gssdp \
 			sysutils/e2fsprogs
 

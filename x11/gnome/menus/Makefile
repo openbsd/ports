@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2014/03/29 08:56:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2014/04/01 15:31:47 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -20,7 +20,7 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_TOOLS= 	gi
+MODGNOME_TOOLS= 	gobject-introspection
 
 LIB_DEPENDS=		devel/glib2
 

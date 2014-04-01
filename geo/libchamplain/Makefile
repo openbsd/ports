@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2014/04/01 13:21:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2014/04/01 15:31:45 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -38,7 +38,7 @@ MODULES=		devel/gettext \
 LIB_DEPENDS=		devel/libsoup \
 			graphics/clutter/clutter-gtk
 
-MODGNOME_TOOLS=		gi vala
+MODGNOME_TOOLS=		gobject-introspection vala
 
 CONFIGURE_STYLE=	gnu
 

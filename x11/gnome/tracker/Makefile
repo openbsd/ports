@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.166 2014/04/01 13:21:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.167 2014/04/01 15:31:47 jasper Exp $
 
 EVO_VERSION=		3.12
 SUBST_VARS +=		EVO_VERSION
@@ -78,7 +78,7 @@ LIB_DEPENDS=		audio/libcue \
 TEST_DEPENDS=		${MODPY_RUN_DEPENDS} \
 			x11/dbus-python
 
-MODGNOME_TOOLS= 	gi vala
+MODGNOME_TOOLS= 	gobject-introspection vala
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODPY_BUILDDEP=		No

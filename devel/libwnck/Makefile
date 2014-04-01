@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2014/02/18 11:02:49 stsp Exp $
+# $OpenBSD: Makefile,v 1.57 2014/04/01 15:31:45 jasper Exp $
 
 COMMENT=		window navigator construction kit
 
@@ -30,7 +30,7 @@ WANTLIB += z
 MODULES=		devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS= 	gi
+MODGNOME_TOOLS= 	gobject-introspection
 LIB_DEPENDS=		x11/gtk+2 \
 			devel/startup-notification
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2014/03/28 07:57:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2014/04/01 15:31:47 jasper Exp $
 
 COMMENT=		utility library for XKB
 
@@ -18,7 +18,7 @@ WANTLIB += pcre xcb xkbfile xml2 z pthread
 MODULES=		devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS=		gi
+MODGNOME_TOOLS=		gobject-introspection
 
 BUILD_DEPENDS=		devel/iso-codes
 RUN_DEPENDS=		devel/iso-codes

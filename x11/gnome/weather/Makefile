@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/04/01 13:21:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2014/04/01 15:31:47 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -29,7 +29,7 @@ RUN_DEPENDS=		x11/gnome/gjs
 
 LIB_DEPENDS=		x11/gtk+3
 
-MODGNOME_TOOLS=		gi
+MODGNOME_TOOLS=		gobject-introspection
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 

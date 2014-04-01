@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2014/04/01 13:21:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.91 2014/04/01 15:31:47 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -72,7 +72,7 @@ BUILD_DEPENDS=		databases/db/v4 \
 
 TEST_DEPENDS=	devel/check
 
-MODGNOME_TOOLS= 	gi yelp
+MODGNOME_TOOLS= 	gobject-introspection yelp
 
 CONFIGURE_ARGS=		--enable-system-sqlite \
 			--enable-gdaui-gi \

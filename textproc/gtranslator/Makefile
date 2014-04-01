@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2014/04/01 10:46:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2014/04/01 15:31:46 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -43,7 +43,7 @@ LIB_DEPENDS=	devel/gobject-introspection \
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
-MODGNOME_TOOLS= 	gi yelp
+MODGNOME_TOOLS= 	gobject-introspection yelp
 MODGNOME_CPPFLAGS=	-I${LOCALBASE}/include/db4
 
 CONFIGURE_STYLE=gnu

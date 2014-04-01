@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2014/03/14 17:26:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2014/04/01 15:31:46 jasper Exp $
 
 COMMENT=		dbus debugger
 
@@ -17,7 +17,7 @@ MODULES=		devel/dconf \
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
-MODGNOME_TOOLS=		gi yelp
+MODGNOME_TOOLS=		gobject-introspection yelp
 
 BUILD_DEPENDS=		x11/gtk+3
 

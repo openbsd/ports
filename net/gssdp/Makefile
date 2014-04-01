@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2014/02/03 17:41:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2014/04/01 15:31:46 jasper Exp $
 
 COMMENT=		API for handling SSDP resource discovery and announcement
 
@@ -25,7 +25,7 @@ WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs soup-2.4 sqlite3
 WANTLIB += xcb xcb-render xcb-shm xml2 z
 
-MODGNOME_TOOLS= 	gi vala
+MODGNOME_TOOLS= 	gobject-introspection vala
 
 LIB_DEPENDS=		devel/libsoup \
 			x11/gtk+3

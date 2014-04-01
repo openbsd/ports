@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2014/03/09 21:58:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2014/04/01 15:31:46 jasper Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -29,7 +29,7 @@ MULTI_PACKAGES=	-main -mono
 MODULES +=	devel/gettext \
 		x11/gnome
 
-MODGNOME_TOOLS=	gi vala
+MODGNOME_TOOLS=	gobject-introspection vala
 
 # needed to build the tests
 BUILD_DEPENDS += security/libgpg-error

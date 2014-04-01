@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.185 2014/03/24 10:06:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.186 2014/04/01 15:31:47 jasper Exp $
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-guic=		gtk+ icon theme caching utility
@@ -69,7 +69,7 @@ MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
 MODPY_ADJ_FILES=	gtk/gtk-builder-convert
 
-MODGNOME_TOOLS=		gi
+MODGNOME_TOOLS=		gobject-introspection
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include/freetype2
 
 TEST_IS_INTERACTIVE=	x11

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2014/03/28 08:48:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2014/04/01 15:31:45 jasper Exp $
 
 COMMENT=		JSON parser for GLib-based libraries and applications
 
@@ -23,7 +23,7 @@ MODULES=		devel/gettext \
 
 LIB_DEPENDS=		devel/glib2
 
-MODGNOME_TOOLS= 	docbook gi
+MODGNOME_TOOLS= 	docbook gobject-introspection
 
 CONFIGURE_STYLE=	gnu
 

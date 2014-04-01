@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2014/03/27 10:16:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2014/04/01 15:31:45 jasper Exp $
 
 COMMENT=	GObject based collection library
 
@@ -21,7 +21,7 @@ WANTLIB += z
 MODULES=	devel/gettext \
 		x11/gnome
 
-MODGNOME_TOOLS= gi vala
+MODGNOME_TOOLS= gobject-introspection vala
 
 LIB_DEPENDS=	devel/glib2
 

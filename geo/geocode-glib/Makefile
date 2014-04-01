@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/03/26 14:55:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2014/04/01 15:31:45 jasper Exp $
 
 COMMENT=	convenience library for the geocoding
 
@@ -24,7 +24,7 @@ WANTLIB += m pcre pthread soup-2.4 sqlite3 xml2 z
 LIB_DEPENDS=	devel/json-glib>=1.0.0 \
 		devel/libsoup
 
-MODGNOME_TOOLS=		gi
+MODGNOME_TOOLS=		gobject-introspection
 MODGNOME_ICON_CACHE=	Yes
 
 CONFIGURE_STYLE=	gnu

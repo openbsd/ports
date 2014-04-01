@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2014/03/18 06:40:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.95 2014/04/01 15:31:47 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -23,7 +23,7 @@ WANTLIB += pthread-stubs xcb xcb-render xcb-shm xml2 z
 MODULES=	devel/gettext \
 		x11/gnome
 
-MODGNOME_TOOLS=	gi vala
+MODGNOME_TOOLS=	gobject-introspection vala
 
 LIB_DEPENDS=	devel/pango \
 		graphics/gdk-pixbuf2 \

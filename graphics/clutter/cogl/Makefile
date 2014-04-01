@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2014/04/01 13:21:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2014/04/01 15:31:46 jasper Exp $
 
 COMMENT=		modern 3D graphics API
 
@@ -17,7 +17,7 @@ WANTLIB += harfbuzz m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += xcb xcb-render xcb-shm z
 
-MODGNOME_TOOLS=		gi
+MODGNOME_TOOLS=		gobject-introspection
 
 LIB_DEPENDS=		devel/pango \
 			graphics/gdk-pixbuf2

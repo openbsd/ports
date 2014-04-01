@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2014/03/28 08:48:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2014/04/01 15:31:45 jasper Exp $
 
 COMMENT=	user interface builder for the gtk+3 toolkit
 
@@ -39,7 +39,7 @@ RUN_DEPENDS=	x11/gnome/devhelp \
 
 MODGNOME_DESKTOP_FILE= 	Yes
 MODGNOME_ICON_CACHE=	Yes
-MODGNOME_TOOLS= 	docbook gi yelp
+MODGNOME_TOOLS= 	docbook gobject-introspection yelp
 
 CONFIGURE_STYLE=	gnu
 

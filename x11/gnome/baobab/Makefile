@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2014/03/27 09:58:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2014/04/01 15:31:46 jasper Exp $
 
 COMMENT=		directory tree analyzer for GNOME
 
@@ -20,7 +20,7 @@ MODULES=		devel/dconf \
 			devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS= 	gi vala yelp
+MODGNOME_TOOLS= 	gobject-introspection vala yelp
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 
