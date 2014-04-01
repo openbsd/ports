@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2014/02/22 10:40:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2014/04/01 07:13:17 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -30,8 +30,7 @@ LIB_DEPENDS=		devel/pango>=1.31.2
 LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--disable-static
+CONFIGURE_ARGS=		--disable-static
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2014/03/18 07:53:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.89 2014/04/01 07:13:17 ajacoutot Exp $
 
 # XXX when OPENBSD_5_6 is branched
 # drop removal of ${SYSCONFDIR}/pango/pango.modules
@@ -40,8 +40,7 @@ LIB_DEPENDS=		devel/glib2>=2.38.0 \
 LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--disable-static
+CONFIGURE_ARGS=		--disable-static
 
 post-install:
 	rm ${PREFIX}/lib/pango/1.8.0/modules/*.la
