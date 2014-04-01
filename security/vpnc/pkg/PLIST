@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/05/20 16:26:51 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/04/01 11:40:27 sthen Exp $
 @man man/man8/vpnc.8
 @bin sbin/vpnc
 sbin/vpnc-disconnect
@@ -9,10 +9,6 @@ share/examples/vpnc/
 share/examples/vpnc/split.sh
 @mode 0755
 @sample ${SYSCONFDIR}/vpnc/split.sh
-@mode
-share/examples/vpnc/vpnc-script
-@mode 0755
-@sample ${SYSCONFDIR}/vpnc/vpnc-script
 @mode
 share/examples/vpnc/vpnc.conf
 @mode 0600

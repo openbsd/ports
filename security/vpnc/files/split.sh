@@ -16,4 +16,4 @@ CISCO_SPLIT_INC_0_PROTOCOL=0
 CISCO_SPLIT_INC_0_SPORT=0
 CISCO_SPLIT_INC_0_DPORT=0
 
-. /etc/vpnc/vpnc-script
+. /etc/vpnc-script
