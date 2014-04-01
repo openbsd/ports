@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/03/13 17:28:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2014/04/01 15:07:19 florian Exp $
 
 COMMENT=	OpenBSD improved and secured version of Apache 1.3
 
 DISTNAME=	apache-httpd-openbsd-1.3p54
 PKGNAME=	apache-httpd-openbsd-1.3
-REVISION=	54
+REVISION=	55
 CATEGORIES=	www
 
-HOMEPAGE=	http://sha256.net/apache-httpd-openbsd/
+HOMEPAGE=	https://github.com/fobser/apache-httpd-openbsd
 
 # Apache 1.1
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c crypto m pthread ssl
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	http://sha256.net/apache-httpd-openbsd/
 
 NO_TEST=	Yes
 
