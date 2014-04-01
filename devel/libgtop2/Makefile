@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2014/04/01 19:36:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.122 2014/04/01 19:38:36 jasper Exp $
 
 COMMENT=		portable library for obtaining system information
 
@@ -26,7 +26,6 @@ LIB_DEPENDS=		devel/glib2
 MODGNOME_TOOLS += 	gobject-introspection
 
 CONFIGURE_STYLE=	gnu
-AUTOCONF_VERSION=	2.69
 CONFIGURE_ARGS+= 	--without-libgtop-smp
 CONFIGURE_ENV=		GMSGFMT="${LOCALBASE}/bin/msgfmt" \
 			ac_cv_header_sys_mount_h=yes
@@ -39,7 +38,8 @@ CPPFLAGS+=		-DDEBUG \
 .endif
 
 ### rm at next release
-  gtk-docAUTOCONF_VERSION=	2.69
+MODGNOME_TOOLS +=	gtk-doc
+AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.14
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
