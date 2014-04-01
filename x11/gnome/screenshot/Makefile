@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/03/27 08:33:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2014/04/01 18:38:54 jasper Exp $
 
 COMMENT=		screenshot application for GNOME
 
@@ -19,6 +19,6 @@ MODULES=		devel/dconf \
 			devel/gettext \
 			x11/gnome
 
-MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_TOOLS=		desktop-file-utils
 
 .include <bsd.port.mk>

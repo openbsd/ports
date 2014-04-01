@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/04/01 13:21:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2014/04/01 18:38:54 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -32,7 +32,7 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/dconf
 
-MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_TOOLS=		desktop-file-utils
 
 post-install:
 	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.{a,la}

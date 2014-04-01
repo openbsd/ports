@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/04/01 13:21:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2014/04/01 18:38:54 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -32,8 +32,7 @@ LIB_DEPENDS=		x11/gnome/nautilus \
 
 RUN_DEPENDS=		www/ap2-mod_dnssd
 
-MODGNOME_ICON_CACHE=	Yes
-MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gnome-user-share
 

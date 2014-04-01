@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2014/02/08 19:20:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2014/04/01 18:38:53 jasper Exp $
 
 COMMENT=		fast and easy porn downloader
 
@@ -27,9 +27,9 @@ MODULES=		devel/gconf2 \
 LIB_DEPENDS=		devel/libglade2 \
 			net/curl \
 			textproc/libxml
-RUN_DEPENDS=		devel/desktop-file-utils
 
-MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_TOOLS=		desktop-file-utils
+
 MODGCONF2_SCHEMAS_DIR=	gnaughty
 
 CONFIGURE_STYLE=	gnu

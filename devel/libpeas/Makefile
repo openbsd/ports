@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2014/04/01 13:21:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2014/04/01 18:38:53 jasper Exp $
 
 COMMENT=	gobject-based plugins engine
 
@@ -38,7 +38,7 @@ RUN_DEPENDS=	devel/py-gobject3 \
 LIB_DEPENDS=	devel/gobject-introspection \
 		x11/gtk+3
 
-MODGNOME_ICON_CACHE=	Yes
+MODGNOME_TOOLS=		gtk-update-icon-cache
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 CONFIGURE_STYLE=gnu

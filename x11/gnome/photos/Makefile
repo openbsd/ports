@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2014/03/29 19:32:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2014/04/01 18:38:53 jasper Exp $
 
 TRACKER_VERSION=	1.0
 
@@ -43,7 +43,6 @@ LIB_DEPENDS=		graphics/gegl \
 # calls grl_registry_load...plugin
 RUN_DEPENDS +=		x11/gnome/grilo-plugins
 
-MODGNOME_ICON_CACHE=	Yes
-MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_TOOLS=		gtk-update-icon-cache desktop-file-utils
 
 .include <bsd.port.mk>

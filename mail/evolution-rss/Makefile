@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2014/03/28 06:56:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2014/04/01 18:38:53 jasper Exp $
 
 EVO_VERSION=		3.12
 SUBST_VARS +=		EVO_VERSION
@@ -66,7 +66,7 @@ LIB_DEPENDS=		www/webkit,gtk3
 BUILD_DEPENDS +=	mail/evolution
 RUN_DEPENDS +=		mail/evolution
 
-MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_TOOLS =	desktop-file-utils
 
 AUTOCONF_VERSION=	2.69
 CONFIGURE_STYLE=	autoconf

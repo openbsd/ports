@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2014/04/01 18:06:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.110 2014/04/01 18:38:53 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -47,7 +47,8 @@ WANTLIB += xcb-shm xcb xcb-render z gthread-2.0 cairo-gobject m ffi
 WANTLIB += atk-bridge-2.0 atspi harfbuzz
 WANTLIB += gmodule-2.0 graphite2
 
-MODGNOME_TOOLS += gobject-introspection yelp
+MODGNOME_TOOLS += gobject-introspection yelp desktop-file-utils
+MODGNOME_TOOLS += gtk-update-icon-cache shared-mime-info
 
 LIB_DEPENDS=	x11/gtk+3
 
@@ -81,7 +82,6 @@ LIB_DEPENDS-nautilus= ${BASE_PKGPATH} \
 		x11/gnome/nautilus
 RUN_DEPENDS-nautilus=${MODGETTEXT_RUN_DEPENDS}
 
-  desktop-file-utils  gtk-update-icon-cache  shared-mime-info
 CONFIGURE_STYLE=gnu
 
 MODGNOME_CPPFLAGS=${CFLAGS}
