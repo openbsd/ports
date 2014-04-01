@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2014/04/01 13:21:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.119 2014/04/01 16:48:39 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,9 +13,9 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-smb=	${GNOME_PROJECT}-smb-${GNOME_VERSION}
 PKGNAME-goa=	${GNOME_PROJECT}-goa-${GNOME_VERSION}
 
-REVISION-main=	2
-REVISION-smb=	2
-REVISION-goa=	2
+REVISION-main=	3
+REVISION-smb=	3
+REVISION-goa=	3
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -92,6 +92,10 @@ CONFIGURE_ARGS +=	--disable-goa
 
 # test_polkitd.py, gvfs-test
 TEST_DEPENDS=	devel/py-gobject3
+
+# patch-common_gvfsmountinfo_c, patch-configure_ac
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.69
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
