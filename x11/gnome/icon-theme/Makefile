@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2014/03/26 13:31:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2014/04/01 08:14:17 ajacoutot Exp $
 
 PKG_ARCH=	*
 
@@ -21,12 +21,10 @@ BUILD_DEPENDS=	x11/icon-naming-utils
 MODGNOME_ICON_CACHE=	Yes
 RUN_DEPENDS +=		x11/gnome/librsvg
 
-CONFIGURE_ARGS=	--enable-icon-mapping \
-		--disable-nls
+# do not enforce build dependency on gtk-update-icon-cache
+CONFIGURE_ENV +=	ac_cv_path_GTK_UPDATE_ICON_CACHE=/usr/bin/true
 
-# gtk-update-icon-cache is checked by configure but do not enforce the
-# dependency: we don't need to run it, the package takes care of that
-pre-configure:
-	ln -s /usr/bin/true ${WRKDIR}/bin/gtk-update-icon-cache
+# installs empty share/locale/... directories
+CONFIGURE_ARGS +=	--disable-nls
 
 .include <bsd.port.mk>

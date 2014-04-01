@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2014/03/26 13:32:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2014/04/01 08:14:17 ajacoutot Exp $
 
 COMMENT=	extra icons for GNOME
 
@@ -21,6 +21,5 @@ MODGNOME_ICON_CACHE=	Yes
 
 CONFIGURE_ENV=	ac_cv_path_GIT=false \
 		ac_cv_path_INKSCAPE=false
-CONFIGURE_ARGS=	--enable-icon-mapping
 
 .include <bsd.port.mk>
