@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.3 2013/11/15 04:53:22 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.4 2014/04/02 11:37:36 ajacoutot Exp $
 
 XXX remove dependency on itstool, help files got removed
 (check if this patch is still needed at next update)
 
---- configure.orig	Fri Nov 15 05:48:05 2013
-+++ configure	Fri Nov 15 05:48:42 2013
-@@ -13516,256 +13516,6 @@ HELP_DIR="$with_help_dir"
+--- configure.orig	Tue Mar 18 12:12:44 2014
++++ configure	Wed Apr  2 13:28:10 2014
+@@ -13513,256 +13513,6 @@ HELP_DIR="$with_help_dir"
  
  
  
