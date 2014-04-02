@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2014/04/01 18:06:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2014/04/02 16:12:04 ajacoutot Exp $
 
 COMMENT=		simple scanning utility
 
 GNOME_PROJECT=		simple-scan
 GNOME_VERSION=		3.12.0
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -37,6 +38,6 @@ AUTOCONF_VERSION=	2.69
 CONFIGURE_STYLE=	autoconf no-autoheader
 
 # patch-src_simple-scan_vala
-BUILD_DEPENDS +=	lang/vala
+MODGNOME_TOOLS +=	vala
 
 .include <bsd.port.mk>

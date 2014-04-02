@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_simple-scan_vala,v 1.1 2013/09/27 08:40:58 ajacoutot Exp $
+$OpenBSD: patch-src_simple-scan_vala,v 1.2 2014/04/02 16:12:04 ajacoutot Exp $
 
 No (g)udev under OpenBSD.
 
---- src/simple-scan.vala.orig	Fri Sep 27 10:33:59 2013
-+++ src/simple-scan.vala	Fri Sep 27 10:34:10 2013
+--- src/simple-scan.vala.orig	Tue Jan  7 09:54:14 2014
++++ src/simple-scan.vala	Wed Apr  2 18:04:22 2014
 @@ -31,7 +31,6 @@ public class SimpleScan : Gtk.Application
  
      private ScanDevice? default_device = null;
@@ -12,16 +12,18 @@ No (g)udev under OpenBSD.
      private UserInterface ui;
      private Scanner scanner;
      private Book book;
-@@ -63,8 +62,6 @@ public class SimpleScan : Gtk.Application
+@@ -62,10 +61,6 @@ public class SimpleScan : Gtk.Application
+         scanner.scan_failed.connect (scanner_failed_cb);
          scanner.scanning_changed.connect (scanner_scanning_changed_cb);
  
-         string[]? subsystems = { "usb", null };
+-        string[]? subsystems = { "usb", null };
 -        udev_client = new GUdev.Client (subsystems);
 -        udev_client.uevent.connect (on_uevent);
- 
+-
          if (default_device != null)
          {
-@@ -88,7 +85,6 @@ public class SimpleScan : Gtk.Application
+             List<ScanDevice> device_list = null;
+@@ -88,7 +83,6 @@ public class SimpleScan : Gtk.Application
          base.shutdown ();
          book = null;
          ui = null;
@@ -29,7 +31,7 @@ No (g)udev under OpenBSD.
          scanner.free ();
      }
  
-@@ -448,11 +444,6 @@ public class SimpleScan : Gtk.Application
+@@ -448,11 +442,6 @@ public class SimpleScan : Gtk.Application
          log_file.printf ("[%+.2fs] %s %s\n", log_timer.elapsed (), prefix, message);
          if (debug_enabled)
              stderr.printf ("[%+.2fs] %s %s\n", log_timer.elapsed (), prefix, message);
