@@ -1,9 +1,6 @@
-$OpenBSD: patch-configure,v 1.1 2014/03/31 14:57:25 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.2 2014/04/02 07:01:54 ajacoutot Exp $
 
-libtool(1) issue:
-    undefined reference to `__stack_smash_handler'
-    undefined reference to `strerror'
-    undefined reference to `lseek'
+https://bugzilla.gnome.org/show_bug.cgi?id=727479
 
 --- configure.orig	Mon Mar 31 16:49:03 2014
 +++ configure	Mon Mar 31 16:49:16 2014
