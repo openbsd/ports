@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2014/04/02 09:36:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.99 2014/04/02 14:34:47 ajacoutot Exp $
 
 GOFFICE_API_VERSION=	0.10
 GOFFICE_VERSION=	0.10.13
@@ -35,7 +35,7 @@ MODULES=		devel/dconf \
 LIB_DEPENDS=		devel/goffice=${GOFFICE_VERSION}
 
 MODGNOME_TOOLS += desktop-file-utils gobject-introspection gtk-update-icon-cache
-MODGNOME_TOOLS +=	yelp
+MODGNOME_TOOLS += yelp
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--without-gda \

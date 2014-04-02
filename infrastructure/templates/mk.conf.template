@@ -1,4 +1,4 @@
-# $OpenBSD: mk.conf.template,v 1.15 2014/04/01 18:09:51 jasper Exp $
+# $OpenBSD: mk.conf.template,v 1.16 2014/04/02 14:34:47 ajacoutot Exp $
 
 # This file contains some mk.conf entries suitable for ports work.
 #
@@ -23,8 +23,8 @@
 .poison MASTER_SITE_SOURCEFORGET
 .poison MODGCC3_ARCHES
 .poison MODGCC4_ARCHES
-.poison	MODGNOME_DESKTOP_FILE
-.poison	MODGNOME_ICON_CACHE
+.poison MODGNOME_DESKTOP_FILE
+.poison MODGNOME_ICON_CACHE
 .poison MODGNOME_MIME_FILE
 .poison MODPY_BUILDEP
 .poison NO_TESTS

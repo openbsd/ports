@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2014/04/02 09:36:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2014/04/02 14:34:47 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -12,6 +12,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		x11/gnome
 
-MODGNOME_TOOLS +=	yelp
+MODGNOME_TOOLS += yelp
 
 .include <bsd.port.mk>
