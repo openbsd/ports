@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/11/09 23:19:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2014/04/02 09:23:13 ajacoutot Exp $
 
 COMMENT =		manipulate Unicode strings
 
 DISTNAME =		libunistring-0.9.3
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		unistring                 0.0 # 1.2
 
@@ -20,10 +20,8 @@ MASTER_SITES =		${MASTER_SITE_GNU:=libunistring/}
 
 MODULES =		converters/libiconv
 
-# needs --preserve-dup-deps
-USE_LIBTOOL =		gnu
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS =	${CONFIGURE_SHARED}
 
 # XXX: One regression test fails:
 # test-wcwidth fails on: ASSERT (wcwidth (0x05B0) == 0);

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/06/14 17:30:48 pascal Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2014/04/02 09:23:13 ajacoutot Exp $
 include/unicase.h
 include/uniconv.h
 include/unictype.h
@@ -23,3 +22,4 @@ include/uniwidth.h
 @comment lib/charset.alias
 lib/libunistring.a
 lib/libunistring.la
+@lib lib/libunistring.so.${LIBunistring_VERSION}

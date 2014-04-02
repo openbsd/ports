@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/06/14 17:30:48 pascal Exp $
-@lib lib/libunistring.so.${LIBunistring_VERSION}
