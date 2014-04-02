@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.228 2014/03/30 13:26:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.229 2014/04/02 15:30:39 jasper Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -81,6 +81,7 @@
      SUBDIR += orca
      SUBDIR += photos
      SUBDIR += planner
+     SUBDIR += polari
      SUBDIR += power-manager
      SUBDIR += py-atspi
      SUBDIR += rygel
