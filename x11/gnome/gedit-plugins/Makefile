@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2014/04/01 18:06:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.76 2014/04/02 09:36:13 jasper Exp $
 
 COMMENT=		plugins for Gedit
 
@@ -45,7 +45,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			x11/gnome/gedit \
 			x11/gnome/gucharmap
 
-MODGNOME_TOOLS +=		yelp
+MODGNOME_TOOLS +=	yelp
 # dashboard plugin
 RUN_DEPENDS +=		productivity/zeitgeist
 

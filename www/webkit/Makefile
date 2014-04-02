@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2014/04/01 15:31:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.112 2014/04/02 09:36:12 jasper Exp $
 
 BROKEN-i386= Source/JavaScriptCore/dfg/DFGByteCodeParser.cpp:1738:90: error: call of overloaded 'OpInfo(size_t)' is ambiguous
 
@@ -46,7 +46,7 @@ MODPY_ADJ_FILES =	Tools/gtk/generate-feature-defines-files \
 
 MODGNOME_CPPFLAGS =	-I${X11BASE}/include -DLOG_DISABLED=0
 MODGNOME_LDFLAGS =	-L${X11BASE}/lib -lX11
-MODGNOME_TOOLS =	gobject-introspection
+MODGNOME_TOOLS += = gobject-introspection
 
 # XXX TODO switch to cmake ?
 CONFIGURE_STYLE =	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2014/04/01 18:06:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.141 2014/04/02 09:36:13 jasper Exp $
 
 TRACKER_VERSION=	1.0
 
@@ -41,7 +41,7 @@ LIB_DEPENDS=		x11/gnome/desktop \
 			textproc/exempi \
 			x11/gnome/tracker
 
-MODGNOME_TOOLS +=  gobject-introspection  desktop-file-utils  shared-mime-info
+MODGNOME_TOOLS += desktop-file-utils gobject-introspection shared-mime-info
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 

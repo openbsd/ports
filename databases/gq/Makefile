@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2014/04/01 18:06:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.53 2014/04/02 09:36:09 jasper Exp $
 
 COMMENT=	GTK-based LDAP client
 
@@ -29,7 +29,7 @@ LIB_DEPENDS=	databases/openldap \
 		devel/libglade2 \
 		x11/gnome/libgnome-keyring
 
-MODGNOME_TOOLS += yelp desktop-file-utils shared-mime-info gtk-update-icon-cache
+MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache shared-mime-info yelp
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-kerberos-prefix=/usr \

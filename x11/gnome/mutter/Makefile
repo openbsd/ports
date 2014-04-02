@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2014/04/01 18:07:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2014/04/02 09:36:13 jasper Exp $
 
 COMMENT=		window and compositing manager
 
@@ -27,7 +27,7 @@ MODULES=		devel/dconf \
 			devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS +=	desktop-file-utils gobject-introspection
+MODGNOME_TOOLS += desktop-file-utils gobject-introspection
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			devel/startup-notification \

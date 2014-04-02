@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2014/04/01 19:38:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.123 2014/04/02 09:36:10 jasper Exp $
 
 COMMENT=		portable library for obtaining system information
 
@@ -23,7 +23,7 @@ MODULES=		devel/gettext \
 
 LIB_DEPENDS=		devel/glib2
 
-MODGNOME_TOOLS += 	gobject-introspection
+MODGNOME_TOOLS +=	gobject-introspection
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+= 	--without-libgtop-smp

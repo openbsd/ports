@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2014/04/01 18:06:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.66 2014/04/02 09:36:12 jasper Exp $
 
 SHARED_ONLY =		Yes
 
@@ -50,7 +50,7 @@ MODULES =		devel/dconf \
 			devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS +=  desktop-file-utils  gtk-update-icon-cache yelp
+MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache yelp
 
 BUILD_DEPENDS=		databases/libdbi-drivers,-sqlite3
 RUN_DEPENDS=		databases/libdbi-drivers,-sqlite3

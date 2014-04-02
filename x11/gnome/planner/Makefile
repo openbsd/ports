@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2014/04/01 18:06:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.66 2014/04/02 09:36:14 jasper Exp $
 
 COMMENT=		project management application
 
@@ -55,7 +55,8 @@ LIB_DEPENDS=		security/libgcrypt \
 			x11/gnome/libgnomecanvas \
 			x11/gnome/libgnomeui
 
-MODGNOME_TOOLS += yelp desktop-file-utils gtk-update-icon-cache shared-mime-info
+MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache shared-mime-info yelp
+
 MODGCONF2_SCHEMAS_DIR=	planner
 
 CONFIGURE_ARGS= 	--disable-python \

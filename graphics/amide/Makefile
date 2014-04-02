@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2014/04/01 18:06:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2014/04/02 09:36:11 jasper Exp $
 
 COMMENT =	Amide a Medical Imaging Data Examiner
 
@@ -33,7 +33,7 @@ EXTRACT_SUFX =	.tgz
 MODULES =	devel/gettext \
 		x11/gnome
 
-MODGNOME_TOOLS +=  yelp  desktop-file-utils
+MODGNOME_TOOLS += desktop-file-utils yelp
 
 BUILD_DEPENDS =	devel/m4
 

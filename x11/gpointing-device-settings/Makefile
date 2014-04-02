@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2014/04/01 18:38:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2014/04/02 09:36:14 jasper Exp $
 
 SHARED_ONLY =		Yes
 
@@ -29,7 +29,7 @@ MODULES =		devel/gconf2 \
 			devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS =	desktop-file-utils
+MODGNOME_TOOLS += = desktop-file-utils
 
 MODGCONF2_SCHEMAS_DIR =	gpointing-device-settings
 

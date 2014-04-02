@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/03/28 09:32:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2014/04/02 09:36:11 jasper Exp $
 
 COMMENT =		AppData tools
 
@@ -23,7 +23,7 @@ WANTLIB += z
 MODULES=		devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS =	docbook
+MODGNOME_TOOLS += = docbook
 
 LIB_DEPENDS =		devel/libsoup \
 			graphics/gdk-pixbuf2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2014/04/01 18:06:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2014/04/02 09:36:11 jasper Exp $
 
 COMMENT =	access web services that claim to be RESTful
 
@@ -23,7 +23,7 @@ WANTLIB += z
 
 MODULES =		devel/gettext \
 			x11/gnome
-MODGNOME_TOOLS += 	gobject-introspection
+MODGNOME_TOOLS +=	gobject-introspection
 
 LIB_DEPENDS =		devel/libsoup
 

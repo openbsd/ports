@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/04/01 18:06:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2014/04/02 09:36:10 jasper Exp $
 
 COMMENT=		library for Model-View-Controller type across DBus
 
@@ -22,7 +22,7 @@ MODULES=	devel/gettext \
 		lang/python \
 		x11/gnome
 
-MODGNOME_TOOLS +=	gobject-introspection vala
+MODGNOME_TOOLS += gobject-introspection vala
 
 LIB_DEPENDS=	devel/glib2 \
 		textproc/icu4c

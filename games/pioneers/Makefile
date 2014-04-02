@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2014/04/01 18:06:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2014/04/02 09:36:10 jasper Exp $
 
 COMMENT=	Settlers of Catan for GNOME/Gtk
 
@@ -37,7 +37,7 @@ LIB_DEPENDS=	x11/gnome/libgnome \
 		x11/gtk+2 \
 		devel/libnotify
 
-MODGNOME_TOOLS +=  desktop-file-utils yelp
+MODGNOME_TOOLS += desktop-file-utils yelp
 
 CONFIGURE_STYLE=gnu
 USE_GROFF =	Yes

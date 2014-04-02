@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2014/04/01 18:06:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.85 2014/04/02 09:36:11 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -49,7 +49,7 @@ LIB_DEPENDS=	graphics/clutter/clutter-gtk  \
 RUN_DEPENDS=	graphics/dcraw \
 		multimedia/gstreamer1/plugins-base
 
-MODGNOME_TOOLS += yelp desktop-file-utils gtk-update-icon-cache shared-mime-info
+MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache shared-mime-info yelp
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib

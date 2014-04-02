@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2014/04/01 18:38:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2014/04/02 09:36:14 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -27,7 +27,7 @@ LIB_DEPENDS=		x11/gtk+2 \
 			x11/gtk+3 \
 			x11/gnome/librsvg
 
-MODGNOME_TOOLS=		gtk-update-icon-cache
+MODGNOME_TOOLS +=	gtk-update-icon-cache
 
 # As explained here:
 # https://mail.gnome.org/archives/desktop-devel-list/2011-March/msg00017.html

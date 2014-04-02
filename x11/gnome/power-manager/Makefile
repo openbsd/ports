@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2014/04/01 18:38:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2014/04/02 09:36:14 jasper Exp $
 
 COMMENT=		GNOME power manager
 
@@ -22,7 +22,7 @@ MODULES=	devel/dconf \
 		devel/gettext \
 		x11/gnome
 
-MODGNOME_TOOLS=		gtk-update-icon-cache desktop-file-utils
+MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache
 
 LIB_DEPENDS=	sysutils/upower \
 		x11/gtk+3

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2014/04/01 18:06:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.87 2014/04/02 09:36:13 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -25,7 +25,7 @@ MODULES=		devel/gettext \
 			devel/dconf \
 			x11/gnome
 
-MODGNOME_TOOLS +=  gobject-introspection vala yelp  desktop-file-utils
+MODGNOME_TOOLS += desktop-file-utils gobject-introspection vala yelp
 LIB_DEPENDS=		x11/gtk+3,-main
 
 # error: -Bsymbolic requested but not supported by ld

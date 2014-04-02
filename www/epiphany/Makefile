@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2014/04/01 18:06:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.115 2014/04/02 09:36:12 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -56,7 +56,7 @@ MODULES=	devel/dconf \
 		devel/gettext \
 		x11/gnome
 
-MODGNOME_TOOLS += yelp desktop-file-utils
+MODGNOME_TOOLS += desktop-file-utils yelp
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-nss \

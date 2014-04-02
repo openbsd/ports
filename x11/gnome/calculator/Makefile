@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/04/01 18:06:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2014/04/02 09:36:12 jasper Exp $
 
 COMMENT=		GNOME desktop calculator
 
@@ -24,5 +24,6 @@ LIB_DEPENDS+=		x11/gtksourceview3
 # needed to download IMF/ECB rates (Financial mode)
 RUN_DEPENDS=		x11/gnome/gvfs
 
-MODGNOME_TOOLS += vala yelp  desktop-file-utils
+MODGNOME_TOOLS += desktop-file-utils vala yelp
+
 .include <bsd.port.mk>

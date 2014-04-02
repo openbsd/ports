@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2014/04/01 18:06:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.53 2014/04/02 09:36:14 jasper Exp $
 
 COMMENT=	interfaces for interacting with online accounts
 
@@ -35,7 +35,8 @@ LIB_DEPENDS=		devel/json-glib \
 			x11/gnome/libsecret \
 			www/webkit,gtk3
 
-MODGNOME_TOOLS += docbook gobject-introspection  gtk-update-icon-cache
+MODGNOME_TOOLS += 	docbook gobject-introspection gtk-update-icon-cache
+
 MODGNU_CONFIG_GUESS_DIRS= \
 			${WRKSRC} \
 			${WRKSRC}/telepathy-account-widgets

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2014/04/01 18:06:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.73 2014/04/02 09:36:10 jasper Exp $
 
 COMMENT=	editor for the GConf configuration system
 
@@ -30,7 +30,7 @@ LIB_DEPENDS=	x11/gtk+3
 
 USE_GROFF=		Yes
 
-MODGNOME_TOOLS +=  desktop-file-utils  gtk-update-icon-cache yelp
+MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache yelp
 
 MODGCONF2_SCHEMAS_DIR=	gconf-editor
 

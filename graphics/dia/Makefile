@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2014/04/01 18:06:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.104 2014/04/02 09:36:11 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -32,7 +32,7 @@ LIB_DEPENDS=		x11/gtk+2 \
 
 RUN_DEPENDS=		devel/xdg-utils
 
-MODGNOME_TOOLS +=  desktop-file-utils  gtk-update-icon-cache docbook
+MODGNOME_TOOLS += desktop-file-utils docbook gtk-update-icon-cache
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--without-hardbooks \

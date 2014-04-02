@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2014/04/01 18:38:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.111 2014/04/02 09:36:11 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -47,7 +47,7 @@ WANTLIB += xcb-shm xcb xcb-render z gthread-2.0 cairo-gobject m ffi
 WANTLIB += atk-bridge-2.0 atspi harfbuzz
 WANTLIB += gmodule-2.0 graphite2
 
-MODGNOME_TOOLS += gobject-introspection yelp desktop-file-utils
+MODGNOME_TOOLS += desktop-file-utils gobject-introspection yelp
 MODGNOME_TOOLS += gtk-update-icon-cache shared-mime-info
 
 LIB_DEPENDS=	x11/gtk+3

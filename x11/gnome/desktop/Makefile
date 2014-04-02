@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2014/04/01 18:06:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.124 2014/04/02 09:36:12 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -35,7 +35,8 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 
 LIB_DEPENDS=		x11/gtk+3
 
-MODGNOME_TOOLS += 	gobject-introspection yelp
+MODGNOME_TOOLS +=	gobject-introspection yelp
+
 CONFIGURE_ARGS=		--with-gnome-distributor="OpenBSD Ports" \
 			--with-pnp-ids-path=${LOCALBASE}/share/hwdata
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2014/04/01 18:06:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.60 2014/04/02 09:36:10 jasper Exp $
 
 COMMENT=	accessibility toolkit used by gtk+
 
@@ -20,7 +20,7 @@ WANTLIB += ffi glib-2.0 gobject-2.0 pcre pthread
 MODULES=	devel/gettext \
 		x11/gnome
 
-MODGNOME_TOOLS += gobject-introspection
+MODGNOME_TOOLS +=	gobject-introspection
 
 LIB_DEPENDS=	devel/glib2>=2.40.0
 

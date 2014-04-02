@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2014/04/01 18:06:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.66 2014/04/02 09:36:10 jasper Exp $
 
 COMMENT=	user interface builder for the gtk+3 toolkit
 
@@ -37,7 +37,7 @@ LIB_DEPENDS=	x11/gtk+3>=3.5.18 \
 RUN_DEPENDS=	x11/gnome/devhelp \
 		devel/py-gobject3
 
-MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache docbook
+MODGNOME_TOOLS += desktop-file-utils docbook gtk-update-icon-cache
 MODGNOME_TOOLS += gobject-introspection yelp
 
 CONFIGURE_STYLE=	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2014/04/01 18:06:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.71 2014/04/02 09:36:14 jasper Exp $
 
 # XXX could use brltty and brlapi (with python bindinds) -- not ported yet
 
@@ -30,7 +30,7 @@ RUN_DEPENDS=		${COMMON_DEPENDS} \
 RUN_DEPENDS +=		x11/gtk+3
 
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
-MODGNOME_TOOLS += desktop-file-utils  gtk-update-icon-cache yelp
+MODGNOME_TOOLS += 	desktop-file-utils gtk-update-icon-cache yelp
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/orca/
 
 .include <bsd.port.mk>

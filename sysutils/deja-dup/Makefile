@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2014/04/01 18:06:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2014/04/02 09:36:12 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -34,7 +34,7 @@ MODULES=	devel/dconf \
 		lang/python \
 		x11/gnome
 
-MODGNOME_TOOLS += vala yelp  desktop-file-utils  gtk-update-icon-cache
+MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache vala yelp
 
 RUN_DEPENDS=	sysutils/duplicity
 

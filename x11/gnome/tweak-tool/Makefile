@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2014/04/01 18:38:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2014/04/02 09:36:14 jasper Exp $
 
 PKG_ARCH=		*
 
@@ -34,6 +34,6 @@ RUN_DEPENDS +=		devel/libnotify
 
 MODPY_ADJ_FILES=	gnome-tweak-tool
 
-MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
+MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache
 
 .include <bsd.port.mk>

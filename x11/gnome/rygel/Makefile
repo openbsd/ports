@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2014/04/01 18:06:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2014/04/02 09:36:14 jasper Exp $
 
 TRACKER_VERSION=	1.0
 
@@ -45,7 +45,8 @@ LIB_DEPENDS=		converters/libunistring \
 			net/gupnp/dlna \
 			x11/gnome/tracker>=${TRACKER_VERSION}
 
-MODGNOME_TOOLS += desktop-file-utils  gtk-update-icon-cache vala
+MODGNOME_TOOLS += 	desktop-file-utils gtk-update-icon-cache vala
+
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/rygel/
 
 SUBST_VARS +=		API_V

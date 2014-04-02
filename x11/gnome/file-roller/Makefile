@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2014/04/01 18:06:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.97 2014/04/02 09:36:13 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -41,7 +41,8 @@ LIB_DEPENDS=	archivers/libarchive \
 		devel/libmagic \
 		x11/gnome/nautilus
 
-MODGNOME_TOOLS += yelp  desktop-file-utils  gtk-update-icon-cache
+MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache yelp
+
 post-install:
 	rm ${PREFIX}/lib/nautilus/extensions-3.0/*.{a,la}
 

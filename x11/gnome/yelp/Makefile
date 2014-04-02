@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2014/04/01 18:38:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.102 2014/04/02 09:36:14 jasper Exp $
 
 COMMENT=		GNOME help browser
 
@@ -35,6 +35,6 @@ RUN_DEPENDS=		x11/gnome/yelp-xsl
 LIB_DEPENDS=		archivers/xz \
 			www/webkit,gtk3
 
-MODGNOME_TOOLS=		desktop-file-utils
+MODGNOME_TOOLS +=	desktop-file-utils
 
 .include <bsd.port.mk>

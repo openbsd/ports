@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2014/04/01 18:06:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2014/04/02 09:36:12 jasper Exp $
 
 TRACKER_VERSION=	1.0
 
@@ -40,5 +40,6 @@ LIB_DEPENDS=		graphics/clutter/clutter-gtk \
 # needs xdg-email
 RUN_DEPENDS=		devel/xdg-utils
 
-MODGNOME_TOOLS += yelp desktop-file-utils gtk-update-icon-cache shared-mime-info
+MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache shared-mime-info yelp
+
 .include <bsd.port.mk>

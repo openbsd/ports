@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2014/04/01 18:06:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2014/04/02 09:36:14 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -29,7 +29,8 @@ RUN_DEPENDS=		x11/gnome/gjs
 
 LIB_DEPENDS=		x11/gtk+3
 
-MODGNOME_TOOLS += gobject-introspection desktop-file-utils gtk-update-icon-cache
+MODGNOME_TOOLS += desktop-file-utils gobject-introspection gtk-update-icon-cache
+
 post-install:
 	rm ${PREFIX}/lib/org.gnome.Weather.Application/*.{a,la}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2014/04/01 18:06:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.60 2014/04/02 09:36:10 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -42,7 +42,7 @@ MODULES=		devel/dconf \
 			devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS +=  desktop-file-utils  gtk-update-icon-cache docbook vala
+MODGNOME_TOOLS += desktop-file-utils docbook gtk-update-icon-cache vala
 
 RUN_DEPENDS-main=	# empty
 LIB_DEPENDS-main=	devel/glib2 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2014/04/01 18:06:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.56 2014/04/02 09:36:12 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -41,8 +41,8 @@ LIB_DEPENDS=	devel/gobject-introspection \
 		x11/gnome/dictionary \
 		x11/gnome/libgda
 
-MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache gobject-introspection
-MODGNOME_TOOLS += yelp
+MODGNOME_TOOLS += desktop-file-utils gobject-introspection gtk-update-icon-cache
+MODGNOME_TOOLS +=	yelp
 
 MODGNOME_CPPFLAGS=	-I${LOCALBASE}/include/db4
 

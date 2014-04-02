@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2014/04/01 18:06:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2014/04/02 09:36:12 jasper Exp $
 
 COMMENT=		directory tree analyzer for GNOME
 
@@ -20,8 +20,9 @@ MODULES=		devel/dconf \
 			devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS += gobject-introspection vala yelp desktop-file-utils
+MODGNOME_TOOLS += desktop-file-utils gobject-introspection vala yelp
 MODGNOME_TOOLS += gtk-update-icon-cache
+
 pre-configure:
 # XXX cc1: error: unrecognized command line option "-Wno-unused-but-set-variable"
 	perl -pi -e 's,-Wno-unused-but-set-variable,,' ${WRKSRC}/src/Makefile.in

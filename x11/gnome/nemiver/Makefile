@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2014/04/01 18:06:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2014/04/02 09:36:14 jasper Exp $
 
 BROKEN=		runtime issue (threads related?)
 
@@ -40,7 +40,8 @@ LIB_DEPENDS=	devel/libgtop2 \
 		x11/gnome/ghex \
 		x11/gtksourceviewmm3
 
-MODGNOME_TOOLS +=  desktop-file-utils  gtk-update-icon-cache yelp
+MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache yelp
+
 CONFIGURE_ARGS=	--with-default-gdb=${LOCALBASE}/bin/egdb
 
 post-install:

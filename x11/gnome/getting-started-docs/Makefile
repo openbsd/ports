@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/04/01 18:06:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2014/04/02 09:36:13 jasper Exp $
 
 PKG_ARCH=		*
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		x11/gnome
 
-MODGNOME_TOOLS += 	yelp
+MODGNOME_TOOLS +=	yelp
 RUN_DEPENDS=		x11/gnome/user-docs
 
 # share/help/*/gnome-help/figures/*.webm

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/04/01 18:06:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2014/04/02 09:36:11 jasper Exp $
 
 COMMENT =	GPS track manager
 
@@ -17,7 +17,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=viking/}
 MODULES =	devel/gettext x11/gnome
 
 CONFIGURE_STYLE =	gnu
-MODGNOME_TOOLS +=  desktop-file-utils  gtk-update-icon-cache yelp
+MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache yelp
 
 MODGNOME_LDFLAGS=-pthread
 

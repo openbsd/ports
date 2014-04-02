@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2014/04/01 18:06:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.93 2014/04/02 09:36:10 jasper Exp $
 
 # XXX when OPENBSD_5_6 is branched
 # drop removal of ${SYSCONFDIR}/pango/pango.modules
@@ -33,7 +33,7 @@ WANTLIB += xcb xcb-render xcb-shm z
 MODULES=		devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS +=		gobject-introspection
+MODGNOME_TOOLS +=	gobject-introspection
 
 LIB_DEPENDS=		devel/glib2>=2.38.0 \
 			devel/harfbuzz

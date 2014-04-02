@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2014/04/01 15:31:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.91 2014/04/02 09:36:10 jasper Exp $
 
 COMMENT =		SOAP implementation in C
 
@@ -26,7 +26,7 @@ MODULES =		devel/gettext \
 			lang/python \
 			x11/gnome
 
-MODGNOME_TOOLS = 	gobject-introspection
+MODGNOME_TOOLS += = gobject-introspection
 MODPY_ADJ_FILES =	libsoup/tld-parser.py
 MODPY_RUNDEP =		No
 

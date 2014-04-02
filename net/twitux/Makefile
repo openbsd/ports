@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2014/04/01 18:06:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2014/04/02 09:36:12 jasper Exp $
 
 COMMENT=		Gtk-based GUI client for Twitter
 
@@ -42,7 +42,7 @@ MODULES=	devel/gconf2 \
 
 MODGCONF2_SCHEMAS_DIR=	twitux
 
-MODGNOME_TOOLS += yelp  gtk-update-icon-cache   desktop-file-utils
+MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache yelp
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-dbus=yes \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/04/01 18:38:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2014/04/02 09:36:13 jasper Exp $
 
 COMMENT=		map application for GNOME
 
@@ -20,7 +20,7 @@ WANTLIB += readline xcb xcb-render xcb-shm z
 MODULES=		x11/gnome \
 			devel/dconf
 
-MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
+MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache
 
 LIB_DEPENDS=		x11/gnome/gjs
 

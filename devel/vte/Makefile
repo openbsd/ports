@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2014/04/01 18:06:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.113 2014/04/02 09:36:10 jasper Exp $
 
 COMMENT-main=		terminal emulation library
 COMMENT-python= 	python bindings for vte
@@ -49,7 +49,7 @@ LIB_DEPENDS-main+=	${LIB_DEPENDS} \
 			x11/gtk+2
 WANTLIB-main=		${WANTLIB} c util
 
-MODGNOME_TOOLS += 	gobject-introspection
+MODGNOME_TOOLS +=	gobject-introspection
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-gtk=2.0 \
