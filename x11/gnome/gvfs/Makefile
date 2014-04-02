@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2014/04/01 18:06:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.122 2014/04/02 06:14:01 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,7 +13,7 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-smb=	${GNOME_PROJECT}-smb-${GNOME_VERSION}
 PKGNAME-goa=	${GNOME_PROJECT}-goa-${GNOME_VERSION}
 
-REVISION-main=	3
+REVISION-main=	4
 REVISION-smb=	3
 REVISION-goa=	3
 

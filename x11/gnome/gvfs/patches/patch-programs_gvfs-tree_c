@@ -1,0 +1,14 @@
+$OpenBSD: patch-programs_gvfs-tree_c,v 1.1 2014/04/02 06:14:01 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=727447
+
+--- programs/gvfs-tree.c.orig	Fri Dec 13 15:59:13 2013
++++ programs/gvfs-tree.c	Wed Apr  2 08:05:44 2014
+@@ -35,6 +35,7 @@ static GOptionEntry entries[] =
+ {
+   { "hidden", 'h', 0, G_OPTION_ARG_NONE, &show_hidden, N_("Show hidden files"), NULL },
+   { "follow-symlinks", 'l', 0, G_OPTION_ARG_NONE, &follow_symlinks, N_("Follow symbolic links, mounts and shortcuts"), NULL },
++  { NULL }
+ };
+ 
+ static gint
