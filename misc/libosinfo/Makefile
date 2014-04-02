@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2014/04/01 18:06:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2014/04/02 07:44:07 ajacoutot Exp $
 
 COMMENT=		library for managing information about operating systems
 
 DISTNAME=		libosinfo-0.2.10
+REVISION=		0
 
 SHARED_LIBS +=  osinfo-1.0           0.0      # .2.10
 
@@ -23,7 +24,7 @@ MASTER_SITES=		https://fedorahosted.org/releases/l/i/libosinfo/
 MODULES=		devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS +=		gobject-introspection vala
+MODGNOME_TOOLS=		gobject-introspection vala
 
 # needed for test
 BUILD_DEPENDS +=	devel/check \
@@ -34,19 +35,12 @@ LIB_DEPENDS=		devel/glib2 \
 
 RUN_DEPENDS=		misc/hwdata
 
-# XXX undefined reference to `memcpy'
-USE_LIBTOOL=		gnu
-
 CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ARGS=		--with-usb-ids-path=${LOCALBASE}/share/hwdata/usb.ids \
-			--with-pci-ids-path=${LOCALBASE}/share/hwdata/pnp.ids \
-			--disable-gtk-doc
+			--with-pci-ids-path=${LOCALBASE}/share/hwdata/pnp.ids
 
-# If one of these tools is found at configure stage, it might be used,
-# no matter whether we use --disable-gtk-doc or not.
-CONFIGURE_ENV +=	ac_cv_path_GTKDOC_CHECK="" \
-			ac_cv_path_GTKDOC_REBASE="" \
-			ac_cv_path_GTKDOC_MKPDF=""
+# https://fedorahosted.org/libosinfo/ticket/5
+MAKE_FLAGS=		NO_UNDEFINED_FLAGS=
 
 .include <bsd.port.mk>
