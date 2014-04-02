@@ -1,0 +1,84 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/04/02 15:30:12 jasper Exp $
+bin/polari
+lib/polari/
+lib/polari/girepository-1.0/
+lib/polari/girepository-1.0/Polari-1.0.typelib
+lib/polari/libpolari-1.0.so
+share/appdata/
+share/appdata/org.gnome.Polari.appdata.xml
+share/applications/org.gnome.Polari.desktop
+share/dbus-1/
+share/dbus-1/services/
+share/dbus-1/services/org.gnome.Polari.service
+share/glib-2.0/schemas/org.gnome.polari.gschema.xml
+share/icons/hicolor/16x16/apps/polari.png
+share/icons/hicolor/22x22/apps/polari.png
+share/icons/hicolor/24x24/apps/polari.png
+share/icons/hicolor/256x256/apps/polari.png
+share/icons/hicolor/32x32/apps/polari.png
+share/icons/hicolor/48x48/apps/polari.png
+share/icons/hicolor/512x512/
+share/icons/hicolor/512x512/apps/
+share/icons/hicolor/512x512/apps/polari.png
+share/icons/hicolor/scalable/apps/polari.svg
+share/locale/ca/LC_MESSAGES/polari.mo
+share/locale/cs/LC_MESSAGES/polari.mo
+share/locale/da/LC_MESSAGES/polari.mo
+share/locale/de/LC_MESSAGES/polari.mo
+share/locale/el/LC_MESSAGES/polari.mo
+share/locale/es/LC_MESSAGES/polari.mo
+share/locale/eu/LC_MESSAGES/polari.mo
+share/locale/fi/LC_MESSAGES/polari.mo
+share/locale/fr/LC_MESSAGES/polari.mo
+share/locale/gl/LC_MESSAGES/polari.mo
+share/locale/he/LC_MESSAGES/polari.mo
+share/locale/hu/LC_MESSAGES/polari.mo
+share/locale/id/LC_MESSAGES/polari.mo
+share/locale/it/LC_MESSAGES/polari.mo
+share/locale/ko/LC_MESSAGES/polari.mo
+share/locale/lt/LC_MESSAGES/polari.mo
+share/locale/lv/LC_MESSAGES/polari.mo
+share/locale/nb/LC_MESSAGES/polari.mo
+share/locale/pa/LC_MESSAGES/polari.mo
+share/locale/pl/LC_MESSAGES/polari.mo
+share/locale/pt/LC_MESSAGES/polari.mo
+share/locale/pt_BR/LC_MESSAGES/polari.mo
+share/locale/ru/LC_MESSAGES/polari.mo
+share/locale/sl/LC_MESSAGES/polari.mo
+share/locale/sr/LC_MESSAGES/polari.mo
+share/locale/sr@latin/LC_MESSAGES/polari.mo
+share/locale/te/LC_MESSAGES/polari.mo
+share/locale/uk/LC_MESSAGES/polari.mo
+share/locale/zh_CN/LC_MESSAGES/polari.mo
+share/locale/zh_HK/LC_MESSAGES/polari.mo
+share/locale/zh_TW/LC_MESSAGES/polari.mo
+share/polari/
+share/polari/gir-1.0/
+share/polari/gir-1.0/Polari-1.0.gir
+share/polari/js/
+share/polari/js/accountsMonitor.js
+share/polari/js/appNotifications.js
+share/polari/js/application.js
+share/polari/js/chatView.js
+share/polari/js/chatroomManager.js
+share/polari/js/config.js
+share/polari/js/connections.js
+share/polari/js/entryArea.js
+share/polari/js/ircParser.js
+share/polari/js/joinDialog.js
+share/polari/js/main.js
+share/polari/js/mainWindow.js
+share/polari/js/messageDialog.js
+share/polari/js/pasteManager.js
+share/polari/js/roomList.js
+share/polari/js/roomStack.js
+share/polari/js/tabCompletion.js
+share/polari/js/userList.js
+share/polari/js/utils.js
+share/polari/polari.gresource
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
