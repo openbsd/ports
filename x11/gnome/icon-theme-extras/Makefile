@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2014/04/02 09:36:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2014/04/03 12:08:40 jasper Exp $
 
 COMMENT=	extra icons for GNOME
 
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	x11/icon-naming-utils \
 
 PKG_ARCH=	*
 
-MODGNOME_TOOLS += = gtk-update-icon-cache
+MODGNOME_TOOLS += gtk-update-icon-cache
 
 CONFIGURE_ENV=	ac_cv_path_GIT=false \
 		ac_cv_path_INKSCAPE=false
