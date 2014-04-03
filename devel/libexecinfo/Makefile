@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2013/08/06 18:58:52 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2014/04/03 13:46:47 pirofti Exp $
 
 COMMENT =	clone of backtrace facility found in the GNU libc
 
 V =		0.2
 DISTNAME =	backtrace-$V
 PKGNAME =	libexecinfo-$V
-REVISION =	3
+REVISION =	4
 EPOCH =		0
 CATEGORIES =	devel
 
@@ -26,7 +26,7 @@ MAKE_FLAGS =	LIB=execinfo
 FAKE_FLAGS =	PREFIX=${WRKINST}/${TRUEPREFIX} \
 		MANDIR=${PREFIX}/man/man
 
-.if ${MACHINE_ARCH:Mmips64*} || ${MACHINE_ARCH:Mhppa} || ${MACHINE_ARCH:Marm} || ${MACHINE_ARCH:Mvax}
+.if ${MACHINE_ARCH:Mmips64*} || ${MACHINE_ARCH:Mhppa} || ${MACHINE_ARCH:Marm} || ${MACHINE_ARCH:Mvax} || ${MACHINE_ARCH:Msh}
 CFLAGS+=	-D__BUILTIN_HACK
 .endif
 
