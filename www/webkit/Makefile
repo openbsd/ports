@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.113 2014/04/03 12:37:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.114 2014/04/03 15:20:14 sthen Exp $
 
-BROKEN-i386= Source/JavaScriptCore/dfg/DFGByteCodeParser.cpp:1738:90: error: call of overloaded 'OpInfo(size_t)' is ambiguous
+BROKEN-i386 =	Error: suffix or operands invalid for `fucomip'
 
 COMMENT =	open source web browser engine for Gtk+
 
