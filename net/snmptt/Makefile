@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2013/03/11 11:35:56 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2014/04/03 13:14:14 sthen Exp $
 
-COMMENT=		SNMP trap handler written
+COMMENT=	SNMP trap handler (translates traps to friendlier format)
 
-DISTNAME=		snmptt_1.3
-PKGNAME=		${DISTNAME:S/_/-/}
-REVISION=		1
+DISTNAME=	snmptt_1.4
+PKGNAME=	${DISTNAME:S/_/-/}
 
-CATEGORIES=		net
+CATEGORIES=	net
 
-HOMEPAGE=		http://snmptt.sourceforge.net/
+HOMEPAGE=	http://snmptt.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,7 +23,7 @@ RUN_DEPENDS=		devel/p5-Config-IniFiles \
 			net/net-snmp
 
 DOC_DIR=		${PREFIX}/share/doc/snmptt
-EX_DIR= 		${PREFIX}/share/examples/snmptt
+EX_DIR=			${PREFIX}/share/examples/snmptt
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/{snmptt,snmptthandler} ${PREFIX}/sbin
