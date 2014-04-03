@@ -1,0 +1,32 @@
+$OpenBSD: patch-c_random_sh,v 1.1 2014/04/03 15:13:19 naddy Exp $
+--- c_random.sh.orig	Tue Jun 14 14:04:56 2005
++++ c_random.sh	Mon Mar 31 18:56:43 2014
+@@ -12,14 +12,23 @@ rnd_tst=no
+ 
+ /bin/rm -f ./my_random_file  2>/dev/null
+ 
+-if test -r "/dev/urandom"; then
+-  if test -c "/dev/urandom"; then
+-    dd if=/dev/urandom ibs=1 count=4 > my_random_file 2>/dev/null
+-    nsum=`sum ./my_random_file | awk '{print $1 }' | sed 's%^0*%%g' 2>/dev/null`
++if openssl version >/dev/null 2>&1 ; then
++    nsum=`printf %d 0x\`openssl rand -hex 2\``
+     if test x$nsum != x; then
+       rnd_tst=yes
+     fi
+-  fi
++fi
++
++if test x$rnd_tst = xno; then
++    if test -r "/dev/urandom"; then
++      if test -c "/dev/urandom"; then
++        dd if=/dev/urandom ibs=1 count=4 > my_random_file 2>/dev/null
++        nsum=`sum ./my_random_file | awk '{print $1 }' | sed 's%^0*%%g' 2>/dev/null`
++        if test x$nsum != x; then
++          rnd_tst=yes
++        fi
++      fi
++    fi
+ fi
+ 
+ if test x$rnd_tst = xno; then
