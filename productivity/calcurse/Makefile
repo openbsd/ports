@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2013/06/02 18:53:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2014/04/03 15:47:59 ajacoutot Exp $
 
 COMMENT=	text-based calendar and scheduling application
 
-DISTNAME=	calcurse-2.9.2
+DISTNAME=	calcurse-3.1.4
 EPOCH=		0
+
 CATEGORIES=	productivity
 
 MAINTAINER=	Frederic Culot <frederic@culot.org>
@@ -20,6 +21,7 @@ MASTER_SITES=	${HOMEPAGE}files/
 MODULES=	devel/gettext
 
 CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	--without-asciidoc
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/calcurse
