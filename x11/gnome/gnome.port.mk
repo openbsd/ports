@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.83 2014/04/01 17:03:14 jasper Exp $
+# $OpenBSD: gnome.port.mk,v 1.84 2014/04/03 12:18:19 jasper Exp $
 #
 # Module for GNOME related ports
 
@@ -71,6 +71,14 @@ MODGNOME_CONFIGURE_ARGS_gi=--disable-introspection
 MODGNOME_CONFIGURE_ARGS_vala=--disable-vala --disable-vala-bindings
 
 .if defined(MODGNOME_TOOLS)
+_VALID_TOOLS=desktop-file-utils docbook gobject-introspection gtk-doc \
+    gtk-update-icon-cache shared-mime-info vala yelp
+.   for _t in ${MODGNOME_TOOLS}
+.       if !${_VALID_TOOLS:M${_t}}
+ERRORS += "Fatal: unknown MODGNOME_TOOLS option: ${_t}\n(not in ${_VALID_TOOLS})"        
+.       endif
+.   endfor
+
 .   if ${MODGNOME_TOOLS:Mdesktop-file-utils}
         MODGNOME_RUN_DEPENDS+=	devel/desktop-file-utils
         MODGNOME_pre-configure += ln -sf /usr/bin/true ${WRKDIR}/bin/desktop-file-validate;
