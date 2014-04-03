@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/04/02 09:36:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2014/04/03 12:37:41 jasper Exp $
 
 COMMENT =		event logging framework
 
@@ -34,7 +34,7 @@ MODULES =		devel/gettext \
 			lang/python \
 			x11/gnome
 
-MODGNOME_TOOLS += = gobject-introspection vala
+MODGNOME_TOOLS +=	gobject-introspection vala
 
 # https://bugs.freedesktop.org/show_bug.cgi?id=73837
 MODPY_ADJ_FILES =	data/ontology2code
