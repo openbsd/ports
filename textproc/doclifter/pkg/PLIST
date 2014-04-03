@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/04/03 07:04:52 bentley Exp $
+bin/doclifter
+bin/manlifter
+@man man/man1/doclifter.1
+@man man/man1/manlifter.1

@@ -1,0 +1,12 @@
+$OpenBSD: patch-manlifter,v 1.1.1.1 2014/04/03 07:04:52 bentley Exp $
+--- manlifter.orig	Fri Mar 28 02:09:47 2014
++++ manlifter	Fri Mar 28 02:09:50 2014
+@@ -69,7 +69,7 @@ def fetch_page(file, localcopy, patch):
+     if os.path.exists(patch):
+         here = os.getcwd()
+         os.chdir(outdir)
+-        patch = commands.getoutput("patch --version-control=never <%s" % (patch,))
++        patch = commands.getoutput("patch <%s" % (patch,))
+         stem = os.path.basename(localcopy)
+         os.system("rm -f %s.orig %s.rej" % (stem, stem))
+         os.chdir(here)
