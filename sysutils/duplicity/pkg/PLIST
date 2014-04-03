@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2013/11/25 14:14:43 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/04/03 07:59:35 ajacoutot Exp $
 bin/duplicity
 bin/rdiffdir
 lib/python${MODPY_VERSION}/site-packages/duplicity/
@@ -17,14 +17,18 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/backends/_boto_multi.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/_boto_multi.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/_boto_single.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/_boto_single.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/_cf_cloudfiles.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/_cf_cloudfiles.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/_cf_pyrax.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/_cf_pyrax.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/_ssh_paramiko.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/_ssh_paramiko.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/_ssh_pexpect.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/_ssh_pexpect.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/botobackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/botobackend.pyc
-lib/python${MODPY_VERSION}/site-packages/duplicity/backends/cloudfilesbackend.py
-lib/python${MODPY_VERSION}/site-packages/duplicity/backends/cloudfilesbackend.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/cfbackend.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/cfbackend.pyc
 @comment lib/python${MODPY_VERSION}/site-packages/duplicity/backends/dpbxbackend.py
 @comment lib/python${MODPY_VERSION}/site-packages/duplicity/backends/dpbxbackend.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/ftpbackend.py
