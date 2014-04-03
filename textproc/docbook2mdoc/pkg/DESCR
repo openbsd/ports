@@ -1,0 +1,4 @@
+The docbook2mdoc utility is a converter from DocBook into mdoc.
+
+docbook2mdoc is very experimental: it probably won't work with your
+manual without improvement.
