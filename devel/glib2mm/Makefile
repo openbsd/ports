@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.70 2014/03/26 08:31:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2014/04/03 17:36:18 ajacoutot Exp $
 
 COMMENT=	C++ interface for glib2
 
 GNOME_PROJECT=	glibmm
-GNOME_VERSION=	2.39.92
+GNOME_VERSION=	2.39.92.1
 PKGNAME=	glib2mm-${GNOME_VERSION}
 
 V=		2.4
@@ -33,5 +33,10 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	M4='m4 -g' \
 		ac_cv_path_DOXYGEN=""
 CONFIGURE_ARGS=	--enable-static
+
+# XXX rm at next release
+# git checkout (2014-04-03 09:40:54) + and togen.sh run
+MASTER_SITES=	https://distfiles.bsdfrog.org/
+CONFIGURE_ARGS += --disable-documentation
 
 .include <bsd.port.mk>

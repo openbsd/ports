@@ -1,0 +1,22 @@
+$OpenBSD: patch-glib_glibmm_wrap_init_cc,v 1.1 2014/04/03 17:36:18 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=727554
+
+--- glib/glibmm/wrap_init.cc.orig	Thu Apr  3 19:14:54 2014
++++ glib/glibmm/wrap_init.cc	Thu Apr  3 19:15:01 2014
+@@ -64,7 +64,6 @@ GQuark g_spawn_error_quark(void);
+ GQuark g_thread_error_quark(void);
+ #endif // *_DISABLE_DEPRECATED
+ GQuark g_thread_error_quark(void);
+-GQuark g_variant_parse_error_quark(void);
+ } // extern "C"
+ 
+ namespace Glib {
+@@ -99,7 +98,6 @@ void wrap_init()
+ #ifndef GLIBMM_DISABLE_DEPRECATED
+   Glib::Error::register_domain(g_thread_error_quark(), &ThreadError::throw_func);
+ #endif // *_DISABLE_DEPRECATED
+-  Glib::Error::register_domain(g_variant_parse_error_quark(), &VariantParseError::throw_func);
+ 
+   // Call the wrap_init() functions in sub-namespaces:
+   Threads::wrap_init();
