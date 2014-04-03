@@ -1,0 +1,72 @@
+$OpenBSD: patch-data_oses_openbsd_xml_in,v 1.1 2014/04/03 12:48:35 jasper Exp $
+
+Update information for OpenBSD with past two releases.
+https://fedorahosted.org/libosinfo/ticket/14
+
+--- data/oses/openbsd.xml.in.orig	Thu Apr  3 13:50:29 2014
++++ data/oses/openbsd.xml.in	Thu Apr  3 13:50:33 2014
+@@ -207,4 +207,64 @@
+     </media>
+   </os>
+ 
++  <os id="http://openbsd.org/openbsd/5.4">
++    <short-id>openbsd5.4</short-id>
++    <_name>OpenBSD 5.4</_name>
++    <version>5.4</version>
++    <family>openbsd</family>
++    <distro>openbsd</distro>
++    <_vendor>OpenBSD Project</_vendor>
++    <upgrades id='http://openbsd.org/openbsd/5.3'/>
++    <derives-from id='http://openbsd.org/openbsd/5.3'/>
++
++
++    <media arch='i686'>
++      <iso>
++	<publisher-id>The OpenBSD project</publisher-id>
++	<system-id>OpenBSD</system-id>
++	<volume-id>OpenBSD/i386    5.4 Install CD</volume-id>
++	<application-id>OpenBSD 5.4 i386 Install CD</application-id>
++      </iso>
++    </media>
++
++    <media arch='x86_64'>
++      <iso>
++	<publisher-id>The OpenBSD project</publisher-id>
++	<system-id>OpenBSD</system-id>
++	<volume-id>OpenBSD/amd64   5.4 Install CD</volume-id>
++	<application-id>OpenBSD 5.4 amd64 Install CD</application-id>
++      </iso>
++    </media>
++  </os>
++
++  <os id="http://openbsd.org/openbsd/5.5">
++    <short-id>openbsd5.5</short-id>
++    <_name>OpenBSD 5.5</_name>
++    <version>5.5</version>
++    <family>openbsd</family>
++    <distro>openbsd</distro>
++    <_vendor>OpenBSD Project</_vendor>
++    <upgrades id='http://openbsd.org/openbsd/5.4'/>
++    <derives-from id='http://openbsd.org/openbsd/5.4'/>
++
++
++    <media arch='i686'>
++      <iso>
++	<publisher-id>The OpenBSD project</publisher-id>
++	<system-id>OpenBSD</system-id>
++	<volume-id>OpenBSD/i386    5.5 Install CD</volume-id>
++	<application-id>OpenBSD 5.5 i386 Install CD</application-id>
++      </iso>
++    </media>
++
++    <media arch='x86_64'>
++      <iso>
++	<publisher-id>The OpenBSD project</publisher-id>
++	<system-id>OpenBSD</system-id>
++	<volume-id>OpenBSD/amd64   5.5 Install CD</volume-id>
++	<application-id>OpenBSD 5.5 amd64 Install CD</application-id>
++      </iso>
++    </media>
++  </os>
++
+ </libosinfo>
