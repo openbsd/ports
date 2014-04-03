@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2014/04/01 18:02:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.95 2014/04/03 07:20:50 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (base installation)
 COMMENT-extras=		GNOME desktop meta-package (full installation)
@@ -10,7 +10,7 @@ PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
 REVISION-main=		2
-REVISION-extras=	1
+REVISION-extras=	2
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -94,6 +94,7 @@ RUN_DEPENDS-extras +=	STEM-=${V}:${BASE_PKGPATH},-main \
 			x11/gnome/ekiga \
 			x11/gnome/empathy \
 			x11/gnome/icon-theme-extras \
+			x11/gnome/polari \
 			x11/gnome/rygel \
 			x11/gnome/totem \
 			x11/gnome/user-share \
