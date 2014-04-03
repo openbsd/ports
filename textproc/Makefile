@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.405 2014/03/23 21:12:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.406 2014/04/03 06:15:07 bentley Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -26,6 +26,7 @@
      SUBDIR += docbook-dsssl
      SUBDIR += docbook-to-man
      SUBDIR += docbook-xsl
+     SUBDIR += docbook2mdoc
      SUBDIR += docbook2x
      SUBDIR += docx2txt
      SUBDIR += ebook-tools
@@ -292,6 +293,7 @@
      SUBDIR += pear-XML-Util
      SUBDIR += pilot_makedoc
      SUBDIR += pinfo
+     SUBDIR += pod2mdoc
      SUBDIR += py-Chart
      SUBDIR += py-HappyDoc
      SUBDIR += py-MarkupSafe
