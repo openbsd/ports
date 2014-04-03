@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/04/03 06:10:42 bentley Exp $
+@bin bin/pod2mdoc
+@man man/man1/pod2mdoc.1

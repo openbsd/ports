@@ -1,0 +1,8 @@
+The pod2mdoc utility is a converter from POD into mdoc. It's meant to
+operate like pod2man.
+
+Be aware, as stated in the manual:
+
+    By way of being a presentational language, POD is not
+    well-represented by mdoc(7). Semantic content will be necessarily
+    lost.
