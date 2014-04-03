@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_Makefile_in,v 1.5 2014/03/16 11:21:28 ajacoutot Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.6 2014/04/03 19:53:07 brad Exp $
 
 Don't build amide_gnome.c, it's only there because upstream didn't
 migrate away from this deprecated library yet. It's function is to
 display help, which is also available online.
 
---- src/Makefile.in.orig	Wed Oct 17 17:53:12 2012
-+++ src/Makefile.in	Sun Mar 16 10:31:17 2014
-@@ -133,7 +133,7 @@ am__objects_6 = amitk_roi_ELLIPSOID.$(OBJEXT) \
+--- src/Makefile.in.orig	Sun Jan 26 22:04:33 2014
++++ src/Makefile.in	Thu Mar 27 03:45:43 2014
+@@ -161,7 +161,7 @@ am__objects_6 = amitk_roi_ELLIPSOID.$(OBJEXT) \
  am_amide_OBJECTS = $(am__objects_1) $(am__objects_2) $(am__objects_3) \
  	$(am__objects_4) $(am__objects_3) $(am__objects_5) \
  	$(am__objects_3) $(am__objects_6) $(am__objects_3) \
@@ -15,7 +15,7 @@ display help, which is also available online.
  	amitk_common.$(OBJEXT) amitk_canvas.$(OBJEXT) \
  	amitk_canvas_object.$(OBJEXT) amitk_color_table.$(OBJEXT) \
  	amitk_color_table_menu.$(OBJEXT) amitk_data_set.$(OBJEXT) \
-@@ -444,8 +444,6 @@ amide_SOURCES = \
+@@ -532,8 +532,6 @@ amide_SOURCES = \
  	amide_intl.h \
  	amide_gconf.c \
  	amide_gconf.h \
@@ -24,7 +24,7 @@ display help, which is also available online.
  	amitk_common.c \
  	amitk_common.h \
  	amitk_canvas.c \
-@@ -813,7 +811,6 @@ distclean-compile:
+@@ -905,7 +903,6 @@ distclean-compile:
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/alignment_procrustes.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/amide.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/amide_gconf.Po@am__quote@

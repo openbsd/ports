@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2014/04/02 09:36:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2014/04/03 19:53:07 brad Exp $
 
 COMMENT =	Amide a Medical Imaging Data Examiner
 
-DISTNAME =	amide-1.0.4
+DISTNAME =	amide-1.0.5
 CATEGORIES =	graphics
-REVISION =	1
 
 HOMEPAGE =	http://amide.sourceforge.net/
 
@@ -43,7 +42,7 @@ LIB_DEPENDS =	devel/gsl>=1.6 \
 		graphics/ffmpeg>=20121026 \
 		devel/gconf2
 
-AUTOCONF_VERSION =	2.68
+AUTOCONF_VERSION =	2.69
 CONFIGURE_STYLE =	autoconf
 CONFIGURE_ENV =		XMEDCON_CONFIG="${LOCALBASE}/bin/xmedcon-config"
 CONFIGURE_ARGS +=	--disable-xmedcontest \

@@ -1,24 +1,25 @@
---- configure.in.orig	Fri Oct  5 00:17:23 2012
-+++ configure.in	Sun Mar 16 10:31:17 2014
-@@ -53,7 +53,7 @@ dnl esac
- dnl specify optimization level, added 2010.02.20
- OPTIMIZATION_LEVEL="-O3"
- echo "setting optimization level to $OPTIMIZATION_LEVEL"
--CFLAGS="$CFLAGS $OPTIMIZATION_LEVEL"
-+CFLAGS="${CFLAGS}"
+$OpenBSD: patch-configure_ac,v 1.1 2014/04/03 19:53:07 brad Exp $
+--- configure.ac.orig	Thu Mar 27 03:45:56 2014
++++ configure.ac	Thu Mar 27 03:46:08 2014
+@@ -55,7 +55,7 @@ dnl make sure an optimization level is set. On jhbuild
+ dnl overwritten, so we're using this to make sure some optimization is on
+ dnl when compiling. This is especially important to speeding up the 
+ dnl reslicing algorithm
+-OPTIMIZATION_CFLAGS="-O2"
++OPTIMIZATION_CFLAGS=""
+ echo "setting optimization level to $OPTIMIZATION_CFLAGS"
+ AC_SUBST(OPTIMIZATION_CFLAGS)
  
- if test $CC = "gcc"; then
-    echo -n "checking version of gcc... "
-@@ -101,7 +101,7 @@ AM_PATH_XMEDCON(0.10.0, FOUND_XMEDCON=yes, FOUND_XMEDC
+@@ -106,7 +106,7 @@ AM_PATH_XMEDCON(0.10.0, FOUND_XMEDCON=yes, FOUND_XMEDC
  dnl switch to C++ for DCMTK library stuff - also, if pthread is on the platform, probably need that
  dnl autoconf doesn't have a nice macro for checking for c++ libraries, therefore the below:
  AC_CHECK_LIB(pthread, pthread_mutex_init, THREAD_LIBS="-lpthread", THREAD_LIBS="")
 -AMIDE_LIBDCMDATA_LIBS="-L/usr/local/dicom/lib -L/usr/lib64/dcmtk -L/usr/lib/dcmtk -ldcmdata -loflog -lofstd -lz $THREAD_LIBS"
 +AMIDE_LIBDCMDATA_LIBS=""
  AMIDE_LIBDCMDATA_CFLAGS="-I/usr/local/dicom/include"
- dnl 2010.02.20	AMIDE_LIBDCMDATA_CFLAGS="-I/usr/local/dicom/include/dcmtk/dcmdata -I/usr/local/dicom/include/dcmtk/ofstd -I/usr/local/dicom/include -I/usr/include/dcmtk/dcmdata -I/usr/local/include/dcmtk/ofstd -I/sw/include/dcmtk/dcmdata -I/sw/include/dcmtk/ofstd -I/sw/include/dcmtk"
  saved_libs="${LIBS}"
-@@ -348,11 +348,8 @@ fi
+ LIBS="${LIBS} ${AMIDE_LIBDCMDATA_LIBS}"
+@@ -352,11 +352,8 @@ fi
  ## add in gnome-vfs if not on win32 or gtk-osx
  ## gnome-vfs is only used by amide_gnome.c and only on unix
  if (test $native_win32 = no) && (test $enable_native_gtk_osx = no); then
