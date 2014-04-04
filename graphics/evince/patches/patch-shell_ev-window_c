@@ -1,0 +1,34 @@
+$OpenBSD: patch-shell_ev-window_c,v 1.7 2014/04/04 09:03:36 ajacoutot Exp $
+
+From 3850ff531e02260083ca0da55267d4007d0d9d83 Mon Sep 17 00:00:00 2001
+From: Debarshi Ray <debarshir@gnome.org>
+Date: Thu, 3 Apr 2014 13:43:54 +0200
+Subject: ev-window: Don't crash when trying to save a copy
+
+--- shell/ev-window.c.orig	Tue Mar 25 12:16:13 2014
++++ shell/ev-window.c	Fri Apr  4 10:57:59 2014
+@@ -2428,7 +2428,6 @@ ev_window_file_chooser_restore_folder (EvWindow       
+ {
+         const gchar *dir;
+         gchar *folder_uri;
+-        gchar *parent_uri = NULL;
+ 
+         g_settings_get (ev_window_ensure_settings (window),
+                         get_settings_key_for_directory (directory),
+@@ -2440,7 +2439,7 @@ ev_window_file_chooser_restore_folder (EvWindow       
+                 parent = g_file_get_parent (file);
+                 g_object_unref (file);
+                 if (parent) {
+-                        folder_uri = parent_uri = g_file_get_uri (parent);
++                        folder_uri = g_file_get_uri (parent);
+                         g_object_unref (parent);
+                 }
+         }
+@@ -2454,7 +2453,6 @@ ev_window_file_chooser_restore_folder (EvWindow       
+         }
+ 
+         g_free (folder_uri);
+-        g_free (parent_uri);
+ }
+ 
+ static void

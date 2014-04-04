@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2014/04/02 09:36:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.112 2014/04/04 09:03:36 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,7 +13,7 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
 
-REVISION-main=	1
+REVISION-main=	2
 REVISION-dvi=	0
 REVISION-nautilus=0
 
