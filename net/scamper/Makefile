@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2014/01/23 00:39:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2014/04/04 23:13:17 sthen Exp $
 
 SHARED_LIBS +=  scamperfile               0.0 # 0.0
 
 COMMENT =	parallel internet measurement utility
 
-V =		20140122
+V =		20140404
 DISTNAME =	scamper-cvs-$V
 PKGNAME =	scamper-0.0.$V
 
@@ -25,5 +25,10 @@ USE_GROFF =		Yes
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-privsep-user=_scamper
+
+post-install:
+.for i in trace ping tracelb dealias sting neighbourdisc tbit sniff
+	ln ${PREFIX}/bin/scamper ${PREFIX}/bin/scamper-$i
+.endfor
 
 .include <bsd.port.mk>
