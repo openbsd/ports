@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.20 2014/01/12 09:54:03 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.21 2014/04/04 14:31:26 jasper Exp $
 
 PKG_ARCH ?=	*
 COMMENT ?=	centralised configuration management for networks
@@ -48,6 +48,7 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/puppet.conf ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet
 	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp/
 	${INSTALL_DATA} ${WRKSRC}/ext/emacs/* ${PREFIX}/share/emacs/site-lisp/
+	gunzip ${PREFIX}/man/*/*.gz
 
 post-install:
 	find ${PREFIX} -type f \( -name '*.beforesubst' -or -name '*.orig' \) -exec rm {} \;

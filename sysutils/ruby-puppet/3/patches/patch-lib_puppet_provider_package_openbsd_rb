@@ -1,10 +1,10 @@
-$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.9 2013/12/21 15:06:02 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.10 2014/04/04 14:31:26 jasper Exp $
 
 (#23078) Implement feature :upgradeable for OpenBSD package provider.
 https://github.com/puppetlabs/puppet/pull/2033
 
---- lib/puppet/provider/package/openbsd.rb.orig	Thu Dec 19 19:53:07 2013
-+++ lib/puppet/provider/package/openbsd.rb	Sat Dec 21 15:51:53 2013
+--- lib/puppet/provider/package/openbsd.rb.orig	Thu Apr  3 20:12:09 2014
++++ lib/puppet/provider/package/openbsd.rb	Fri Apr  4 16:12:46 2014
 @@ -12,6 +12,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
    has_feature :versionable
    has_feature :install_options
@@ -13,7 +13,7 @@ https://github.com/puppetlabs/puppet/pull/2033
  
    def self.instances
      packages = []
-@@ -52,6 +53,46 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -54,6 +55,46 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
      [command(:pkginfo), "-a"]
    end
  
@@ -59,8 +59,8 @@ https://github.com/puppetlabs/puppet/pull/2033
 +
    def parse_pkgconf
      unless @resource[:source]
-       if Puppet::FileSystem::File.exist?("/etc/pkg.conf")
-@@ -78,7 +119,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+       if Puppet::FileSystem.exist?("/etc/pkg.conf")
+@@ -80,7 +121,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
      end
    end
  
@@ -69,7 +69,7 @@ https://github.com/puppetlabs/puppet/pull/2033
      cmd = []
  
      parse_pkgconf
-@@ -92,6 +133,15 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -94,6 +135,15 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
      end
  
      cmd << install_options
@@ -85,7 +85,7 @@ https://github.com/puppetlabs/puppet/pull/2033
      cmd << full_name
  
      Puppet::Util.withenv(e_vars) { pkgadd cmd.flatten.compact.join(' ') }
-@@ -100,14 +150,21 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -102,14 +152,21 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
    def get_version
      execpipe([command(:pkginfo), "-I", @resource[:name]]) do |process|
        # our regex for matching pkg_info output
