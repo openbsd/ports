@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2014/01/12 14:58:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.52 2014/04/04 17:17:03 edd Exp $
 
 BROKEN-mips64 = 	undefined reference to `__sync_fetch_and_add_8'
 BROKEN-hppa =		undefined reference to `__sync_fetch_and_add_4'
@@ -6,15 +6,16 @@ BROKEN-sparc64 =	infinite loop or aborts during build
 
 COMMENT =		Prolog for the real world
 
-V =			6.2.6
+V =			6.6.4
 DISTNAME =		pl-$V
 PKGNAME =		swi-prolog-$V
-REVISION =		0
 CATEGORIES =		lang
 
-SHARED_LIBS =		pl	4.0
+SHARED_LIBS =		pl	5.0
 
 HOMEPAGE =		http://www.swi-prolog.org/
+
+MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
@@ -22,16 +23,14 @@ PERMIT_PACKAGE_CDROM =	Yes
 MASTER_SITES =		${HOMEPAGE}/download/stable/src/ \
 			http://distfiles.nl/
 
-CONFIGURE_STYLE =	autoconf
-AUTOCONF_VERSION =	2.68
-AUTOCONF_DIR =		${WRKSRC}/src ${WRKSRC}/packages/semweb
+CONFIGURE_STYLE =		gnu
 MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}/src \
 				${WRKSRC}/packages/jpl \
 				${WRKSRC}/packages/xpce/src
 
 CONFIGURE_ENV +=	CIFLAGS=' -I${LOCALBASE}/include' \
 			LDFLAGS=' -L${LOCALBASE}/lib' \
-			COFLAGS='-O2 -pipe -g'
+			COFLAGS='${CFLAGS}'
 
 CONFIGURE_ARGS =	--enable-mt \
 			--disable-custom-flags \
@@ -70,9 +69,7 @@ post-install:
 # The following tests fail (hang). We remove them to allow the rest
 # of the tests to execute atleast.
 # When updating, uncomment these to see if they still fail.
-# Still failing 20130623 :(
 pre-test:
-	rm -f ${WRKBUILD}/src/Tests/thread/test_signal.pl
 	rm -f ${WRKBUILD}/src/Tests/core/test_resource_error.pl
 
 .include <bsd.port.mk>
