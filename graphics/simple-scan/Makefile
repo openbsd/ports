@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2014/04/02 16:12:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2014/04/04 10:17:37 ajacoutot Exp $
 
 COMMENT=		simple scanning utility
 
 GNOME_PROJECT=		simple-scan
 GNOME_VERSION=		3.12.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		graphics
 
@@ -29,6 +29,9 @@ MODULES=		devel/gettext \
 LIB_DEPENDS=		graphics/sane-backends \
 			x11/gtk+3 \
 			graphics/colord
+
+# xdg-email(1)
+RUN_DEPENDS +=		devel/xdg-utils
 
 MODGNOME_TOOLS += desktop-file-utils yelp
 
