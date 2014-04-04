@@ -1,10 +1,10 @@
-$OpenBSD: patch-lib_facter_virtual_rb,v 1.5 2014/03/17 17:26:50 jasper Exp $
+$OpenBSD: patch-lib_facter_virtual_rb,v 1.6 2014/04/04 14:31:16 jasper Exp $
 
 When running on oVirt correctly set is_virtual/virtual facts.
 
---- lib/facter/virtual.rb.orig	Mon Mar 17 17:58:01 2014
-+++ lib/facter/virtual.rb	Mon Mar 17 17:58:20 2014
-@@ -99,6 +99,7 @@ Facter.add("virtual") do
+--- lib/facter/virtual.rb.orig	Tue Apr  1 19:23:03 2014
++++ lib/facter/virtual.rb	Fri Apr  4 15:34:23 2014
+@@ -98,6 +98,7 @@ Facter.add("virtual") do
        next "vmware"     if lines.any? {|l| l =~ /VMware/ }
        next "virtualbox" if lines.any? {|l| l =~ /VirtualBox/ }
        next "xenhvm"     if lines.any? {|l| l =~ /HVM domU/ }

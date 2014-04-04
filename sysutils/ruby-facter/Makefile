@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.52 2014/03/17 17:26:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.53 2014/04/04 14:31:16 jasper Exp $
 
 COMMENT=	Ruby library for retrieving facts from operating systems
 
-VERSION=	1.7.5
-REVISION=	0
+VERSION=	2.0.1
 
 DISTNAME=	facter-${VERSION}
 CATEGORIES=	sysutils
@@ -33,7 +32,8 @@ pre-configure:
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-facter
-	@cd ${WRKSRC} && ${ALL_FAKE_FLAGS} ${RUBY} install.rb
+	@cd ${WRKSRC} && \
+		${ALL_FAKE_FLAGS} ${RUBY} install.rb --destdir=${WRKINST}
 	${INSTALL_DATA} ${WRKSRC}/etc/facter.conf \
 		${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-facter
 	cd ${PREFIX}/man/man8 && gunzip facter.8.gz

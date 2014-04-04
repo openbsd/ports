@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2013/12/19 09:35:01 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2014/04/04 14:31:16 jasper Exp $
 bin/facter
 ${MODRUBY_SITEDIR}/facter/
 ${MODRUBY_SITEDIR}/facter.rb
@@ -7,6 +7,17 @@ ${MODRUBY_SITEDIR}/facter/application.rb
 ${MODRUBY_SITEDIR}/facter/architecture.rb
 ${MODRUBY_SITEDIR}/facter/augeasversion.rb
 ${MODRUBY_SITEDIR}/facter/blockdevices.rb
+${MODRUBY_SITEDIR}/facter/core/
+${MODRUBY_SITEDIR}/facter/core/aggregate.rb
+${MODRUBY_SITEDIR}/facter/core/directed_graph.rb
+${MODRUBY_SITEDIR}/facter/core/execution/
+${MODRUBY_SITEDIR}/facter/core/execution.rb
+${MODRUBY_SITEDIR}/facter/core/execution/base.rb
+${MODRUBY_SITEDIR}/facter/core/execution/posix.rb
+${MODRUBY_SITEDIR}/facter/core/execution/windows.rb
+${MODRUBY_SITEDIR}/facter/core/logging.rb
+${MODRUBY_SITEDIR}/facter/core/resolvable.rb
+${MODRUBY_SITEDIR}/facter/core/suitable.rb
 ${MODRUBY_SITEDIR}/facter/domain.rb
 ${MODRUBY_SITEDIR}/facter/ec2.rb
 ${MODRUBY_SITEDIR}/facter/facterversion.rb
@@ -58,18 +69,6 @@ ${MODRUBY_SITEDIR}/facter/uptime_hours.rb
 ${MODRUBY_SITEDIR}/facter/uptime_seconds.rb
 ${MODRUBY_SITEDIR}/facter/util/
 ${MODRUBY_SITEDIR}/facter/util/architecture.rb
-${MODRUBY_SITEDIR}/facter/util/cfpropertylist/
-${MODRUBY_SITEDIR}/facter/util/cfpropertylist.rb
-${MODRUBY_SITEDIR}/facter/util/cfpropertylist/LICENSE
-${MODRUBY_SITEDIR}/facter/util/cfpropertylist/lib/
-${MODRUBY_SITEDIR}/facter/util/cfpropertylist/lib/cfpropertylist.rb
-${MODRUBY_SITEDIR}/facter/util/cfpropertylist/lib/rbBinaryCFPropertyList.rb
-${MODRUBY_SITEDIR}/facter/util/cfpropertylist/lib/rbCFPlistError.rb
-${MODRUBY_SITEDIR}/facter/util/cfpropertylist/lib/rbCFPropertyList.rb
-${MODRUBY_SITEDIR}/facter/util/cfpropertylist/lib/rbCFTypes.rb
-${MODRUBY_SITEDIR}/facter/util/cfpropertylist/lib/rbLibXMLParser.rb
-${MODRUBY_SITEDIR}/facter/util/cfpropertylist/lib/rbNokogiriParser.rb
-${MODRUBY_SITEDIR}/facter/util/cfpropertylist/lib/rbREXMLParser.rb
 ${MODRUBY_SITEDIR}/facter/util/collection.rb
 ${MODRUBY_SITEDIR}/facter/util/composite_loader.rb
 ${MODRUBY_SITEDIR}/facter/util/config.rb
@@ -78,6 +77,7 @@ ${MODRUBY_SITEDIR}/facter/util/directory_loader.rb
 ${MODRUBY_SITEDIR}/facter/util/ec2.rb
 ${MODRUBY_SITEDIR}/facter/util/fact.rb
 ${MODRUBY_SITEDIR}/facter/util/file_read.rb
+${MODRUBY_SITEDIR}/facter/util/formatter.rb
 ${MODRUBY_SITEDIR}/facter/util/ip/
 ${MODRUBY_SITEDIR}/facter/util/ip.rb
 ${MODRUBY_SITEDIR}/facter/util/ip/windows.rb
@@ -86,8 +86,8 @@ ${MODRUBY_SITEDIR}/facter/util/macaddress.rb
 ${MODRUBY_SITEDIR}/facter/util/macosx.rb
 ${MODRUBY_SITEDIR}/facter/util/manufacturer.rb
 ${MODRUBY_SITEDIR}/facter/util/memory.rb
-${MODRUBY_SITEDIR}/facter/util/monkey_patches.rb
 ${MODRUBY_SITEDIR}/facter/util/netmask.rb
+${MODRUBY_SITEDIR}/facter/util/normalization.rb
 ${MODRUBY_SITEDIR}/facter/util/nothing_loader.rb
 ${MODRUBY_SITEDIR}/facter/util/parser.rb
 ${MODRUBY_SITEDIR}/facter/util/plist/

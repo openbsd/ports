@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_facter_memory_rb,v 1.7 2013/06/27 19:04:23 jasper Exp $
---- lib/facter/memory.rb.orig	Mon May 13 21:30:15 2013
-+++ lib/facter/memory.rb	Thu Jun 27 20:53:44 2013
+$OpenBSD: patch-lib_facter_memory_rb,v 1.8 2014/04/04 14:31:16 jasper Exp $
+--- lib/facter/memory.rb.orig	Tue Apr  1 19:23:03 2014
++++ lib/facter/memory.rb	Fri Apr  4 15:34:23 2014
 @@ -82,6 +82,16 @@ end
    end
  end
@@ -19,8 +19,8 @@ $OpenBSD: patch-lib_facter_memory_rb,v 1.7 2013/06/27 19:04:23 jasper Exp $
    Facter.add("SwapEncrypted") do
      confine :kernel => :Darwin
 @@ -157,6 +167,32 @@ Facter.add("swapfree_mb") do
-     swap_anon_use = Facter::Util::Resolution.exec("/sbin/sysctl -n vm.swap_anon_use").to_f * page_size
-     swap_cache_use = Facter::Util::Resolution.exec("/sbin/sysctl -n vm.swap_cache_use").to_f * page_size
+     swap_anon_use = Facter::Core::Execution.exec("/sbin/sysctl -n vm.swap_anon_use").to_f * page_size
+     swap_cache_use = Facter::Core::Execution.exec("/sbin/sysctl -n vm.swap_cache_use").to_f * page_size
      swapfree = swaptotal - swap_anon_use - swap_cache_use
 +    "%.2f" % [(swapfree.to_f / 1024.0) / 1024.0]
 +  end

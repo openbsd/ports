@@ -1,13 +1,13 @@
-$OpenBSD: patch-lib_facter_physicalprocessorcount_rb,v 1.5 2014/03/09 19:51:16 jasper Exp $
+$OpenBSD: patch-lib_facter_physicalprocessorcount_rb,v 1.6 2014/04/04 14:31:16 jasper Exp $
 
 From 766c84a84a4a7008858c45eaf221402a81e1bfa2 Mon Sep 17 00:00:00 2001
 From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
 Date: Thu, 27 Jun 2013 22:59:20 +0200
 Subject: [PATCH] Add physicalprocessorcount fact for OpenBSD
 
---- lib/facter/physicalprocessorcount.rb.orig	Thu Jun 27 23:05:51 2013
-+++ lib/facter/physicalprocessorcount.rb	Thu Jun 27 23:05:53 2013
-@@ -82,3 +82,10 @@ Facter.add('physicalprocessorcount') do
+--- lib/facter/physicalprocessorcount.rb.orig	Tue Apr  1 19:23:03 2014
++++ lib/facter/physicalprocessorcount.rb	Fri Apr  4 15:34:23 2014
+@@ -80,3 +80,10 @@ Facter.add('physicalprocessorcount') do
      end
    end
  end
