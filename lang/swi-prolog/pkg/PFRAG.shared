@@ -1,6 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.10 2013/07/10 09:10:44 edd Exp $
-@lib lib/libpl.so.${LIBpl_VERSION}
-@lib lib/swipl-${V}/lib/${FULLARCH}/libpl.so.${LIBpl_VERSION}
+@comment $OpenBSD: PFRAG.shared,v 1.11 2014/04/04 17:53:49 edd Exp $
 lib/swipl-${V}/lib/${FULLARCH}/cgi.so
 lib/swipl-${V}/lib/${FULLARCH}/crypt.so
 lib/swipl-${V}/lib/${FULLARCH}/double_metaphone.so
@@ -11,6 +9,7 @@ lib/swipl-${V}/lib/${FULLARCH}/json.so
 lib/swipl-${V}/lib/${FULLARCH}/libswipl.so
 lib/swipl-${V}/lib/${FULLARCH}/memfile.so
 lib/swipl-${V}/lib/${FULLARCH}/mime.so
+lib/swipl-${V}/lib/${FULLARCH}/ntriples.so
 lib/swipl-${V}/lib/${FULLARCH}/pdt_console.so
 lib/swipl-${V}/lib/${FULLARCH}/pl2xpce.so
 lib/swipl-${V}/lib/${FULLARCH}/porter_stem.so
@@ -25,6 +24,7 @@ lib/swipl-${V}/lib/${FULLARCH}/snowball.so
 lib/swipl-${V}/lib/${FULLARCH}/socket.so
 lib/swipl-${V}/lib/${FULLARCH}/ssl4pl.so
 lib/swipl-${V}/lib/${FULLARCH}/streaminfo.so
+lib/swipl-${V}/lib/${FULLARCH}/syslog.so
 lib/swipl-${V}/lib/${FULLARCH}/table.so
 lib/swipl-${V}/lib/${FULLARCH}/time.so
 lib/swipl-${V}/lib/${FULLARCH}/turtle.so

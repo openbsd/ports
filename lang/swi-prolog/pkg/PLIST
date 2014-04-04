@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.12 2013/07/10 09:10:44 edd Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/04/04 17:53:49 edd Exp $
 %%SHARED%%
 bin/swipl
 bin/swipl-ld
 bin/swipl-rc
 @bin bin/xpce-client
+@lib lib/libpl.so.${LIBpl_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/swipl.pc
 lib/swipl-${V}/
@@ -54,12 +55,14 @@ lib/swipl-${V}/include/sicstus/
 lib/swipl-${V}/include/sicstus/sicstus.h
 lib/swipl-${V}/lib/
 lib/swipl-${V}/lib/${FULLARCH}/
+@lib lib/swipl-${V}/lib/${FULLARCH}/libpl.so.${LIBpl_VERSION}
 lib/swipl-${V}/lib/${FULLARCH}/libswipl.a
 lib/swipl-${V}/library/
 lib/swipl-${V}/library/DTD/
 lib/swipl-${V}/library/DTD/HTML4.dcl
 lib/swipl-${V}/library/DTD/HTML4.dtd
 lib/swipl-${V}/library/DTD/HTML4.soc
+lib/swipl-${V}/library/DTD/HTML5.dtd
 lib/swipl-${V}/library/DTD/HTMLlat1.ent
 lib/swipl-${V}/library/DTD/HTMLspec.ent
 lib/swipl-${V}/library/DTD/HTMLsym.ent
@@ -138,6 +141,7 @@ lib/swipl-${V}/library/clp/clpr/store_r.pl
 lib/swipl-${V}/library/clp/simplex.pl
 lib/swipl-${V}/library/codesio.pl
 lib/swipl-${V}/library/coinduction.pl
+lib/swipl-${V}/library/console_input.pl
 lib/swipl-${V}/library/crypt.pl
 lib/swipl-${V}/library/csv.pl
 lib/swipl-${V}/library/ctypes.pl
@@ -152,23 +156,50 @@ lib/swipl-${V}/library/dialect/ciao/
 lib/swipl-${V}/library/dialect/ciao.pl
 lib/swipl-${V}/library/dialect/ciao/aggregates.pl
 lib/swipl-${V}/library/dialect/ciao/assertions.pl
+lib/swipl-${V}/library/dialect/ciao/basicmodes.pl
 lib/swipl-${V}/library/dialect/ciao/classic.pl
+lib/swipl-${V}/library/dialect/ciao/dcg.pl
 lib/swipl-${V}/library/dialect/ciao/engine/
+lib/swipl-${V}/library/dialect/ciao/engine/attributes.pl
+lib/swipl-${V}/library/dialect/ciao/engine/basic_props.pl
+lib/swipl-${V}/library/dialect/ciao/engine/basiccontrol.pl
+lib/swipl-${V}/library/dialect/ciao/engine/exceptions.pl
+lib/swipl-${V}/library/dialect/ciao/engine/exceptions_db.pl
 lib/swipl-${V}/library/dialect/ciao/engine/hiord_rt.pl
 lib/swipl-${V}/library/dialect/ciao/engine/internals.pl
+lib/swipl-${V}/library/dialect/ciao/engine/io_aux.pl
+lib/swipl-${V}/library/dialect/ciao/file_utils.pl
 lib/swipl-${V}/library/dialect/ciao/format.pl
+lib/swipl-${V}/library/dialect/ciao/freeze.pl
+lib/swipl-${V}/library/dialect/ciao/hiord.pl
+lib/swipl-${V}/library/dialect/ciao/hiordlib.pl
 lib/swipl-${V}/library/dialect/ciao/iso_misc.pl
 lib/swipl-${V}/library/dialect/ciao/isomodes.pl
 lib/swipl-${V}/library/dialect/ciao/lists.pl
+lib/swipl-${V}/library/dialect/ciao/llists.pl
+lib/swipl-${V}/library/dialect/ciao/nativeprops.pl
+lib/swipl-${V}/library/dialect/ciao/nortchecks.pl
+lib/swipl-${V}/library/dialect/ciao/odd.pl
+lib/swipl-${V}/library/dialect/ciao/prolog_flags.pl
 lib/swipl-${V}/library/dialect/ciao/read.pl
+lib/swipl-${V}/library/dialect/ciao/regtypes/
 lib/swipl-${V}/library/dialect/ciao/regtypes.pl
+lib/swipl-${V}/library/dialect/ciao/regtypes/regtypes_tr.pl
 lib/swipl-${V}/library/dialect/ciao/sockets.pl
+lib/swipl-${V}/library/dialect/ciao/sort.pl
+lib/swipl-${V}/library/dialect/ciao/streams.pl
 lib/swipl-${V}/library/dialect/ciao/strings.pl
 lib/swipl-${V}/library/dialect/ciao/system.pl
 lib/swipl-${V}/library/dialect/ciao/terms.pl
+lib/swipl-${V}/library/dialect/ciao/terms_check.pl
+lib/swipl-${V}/library/dialect/ciao/terms_vars.pl
+lib/swipl-${V}/library/dialect/ciao/unittestdecls.pl
+lib/swipl-${V}/library/dialect/ciao/unittestprops.pl
 lib/swipl-${V}/library/dialect/ciao/write.pl
 lib/swipl-${V}/library/dialect/commons.pl
+lib/swipl-${V}/library/dialect/hprolog/
 lib/swipl-${V}/library/dialect/hprolog.pl
+lib/swipl-${V}/library/dialect/hprolog/format.pl
 lib/swipl-${V}/library/dialect/ifprolog/
 lib/swipl-${V}/library/dialect/ifprolog.pl
 lib/swipl-${V}/library/dialect/iso/
@@ -209,8 +240,10 @@ lib/swipl-${V}/library/hotfix.pl
 lib/swipl-${V}/library/http/
 lib/swipl-${V}/library/http/INDEX.pl
 lib/swipl-${V}/library/http/README
+lib/swipl-${V}/library/http/ax.pl
 lib/swipl-${V}/library/http/dcg_basics.pl
 lib/swipl-${V}/library/http/html_head.pl
+lib/swipl-${V}/library/http/html_quasiquotations.pl
 lib/swipl-${V}/library/http/html_write.pl
 lib/swipl-${V}/library/http/http_authenticate.pl
 lib/swipl-${V}/library/http/http_client.pl
@@ -225,6 +258,7 @@ lib/swipl-${V}/library/http/http_header.pl
 lib/swipl-${V}/library/http/http_hook.pl
 lib/swipl-${V}/library/http/http_host.pl
 lib/swipl-${V}/library/http/http_json.pl
+lib/swipl-${V}/library/http/http_load.pl
 lib/swipl-${V}/library/http/http_log.pl
 lib/swipl-${V}/library/http/http_mime_plugin.pl
 lib/swipl-${V}/library/http/http_open.pl
@@ -237,8 +271,10 @@ lib/swipl-${V}/library/http/http_session.pl
 lib/swipl-${V}/library/http/http_sgml_plugin.pl
 lib/swipl-${V}/library/http/http_ssl_plugin.pl
 lib/swipl-${V}/library/http/http_stream.pl
+lib/swipl-${V}/library/http/http_unix_daemon.pl
 lib/swipl-${V}/library/http/http_wrapper.pl
 lib/swipl-${V}/library/http/inetd_httpd.pl
+lib/swipl-${V}/library/http/js_grammar.pl
 lib/swipl-${V}/library/http/js_write.pl
 lib/swipl-${V}/library/http/json.pl
 lib/swipl-${V}/library/http/json_convert.pl
@@ -259,6 +295,7 @@ lib/swipl-${V}/library/http/web/icons/layout.png
 lib/swipl-${V}/library/http/web/icons/openid-logo-square.png
 lib/swipl-${V}/library/http/web/icons/openid-logo-tiny.png
 lib/swipl-${V}/library/http/xpce_httpd.pl
+lib/swipl-${V}/library/http/yadis.pl
 lib/swipl-${V}/library/iso_639.pl
 lib/swipl-${V}/library/isub.pl
 lib/swipl-${V}/library/listing.pl
@@ -335,6 +372,7 @@ lib/swipl-${V}/library/pure_input.pl
 lib/swipl-${V}/library/pwp.pl
 lib/swipl-${V}/library/qpforeign.pl
 lib/swipl-${V}/library/qsave.pl
+lib/swipl-${V}/library/quasi_quotations.pl
 lib/swipl-${V}/library/quintus.pl
 lib/swipl-${V}/library/random.pl
 lib/swipl-${V}/library/rbtrees.pl
@@ -348,6 +386,7 @@ lib/swipl-${V}/library/readutil.pl
 lib/swipl-${V}/library/record.pl
 lib/swipl-${V}/library/rewrite.pl
 lib/swipl-${V}/library/rlimit.pl
+lib/swipl-${V}/library/sandbox.pl
 lib/swipl-${V}/library/semweb/
 lib/swipl-${V}/library/semweb/INDEX.pl
 lib/swipl-${V}/library/semweb/README
@@ -362,6 +401,7 @@ lib/swipl-${V}/library/semweb/rdf_http_plugin.pl
 lib/swipl-${V}/library/semweb/rdf_library.pl
 lib/swipl-${V}/library/semweb/rdf_library.ttl
 lib/swipl-${V}/library/semweb/rdf_litindex.pl
+lib/swipl-${V}/library/semweb/rdf_ntriples.pl
 lib/swipl-${V}/library/semweb/rdf_persistency.pl
 lib/swipl-${V}/library/semweb/rdf_portray.pl
 lib/swipl-${V}/library/semweb/rdf_turtle.pl
@@ -370,7 +410,7 @@ lib/swipl-${V}/library/semweb/rdf_zlib_plugin.pl
 lib/swipl-${V}/library/semweb/rdfs.pl
 lib/swipl-${V}/library/semweb/rdfs.rdfs
 lib/swipl-${V}/library/semweb/sparql_client.pl
-lib/swipl-${V}/library/semweb/turtle_base.pl
+lib/swipl-${V}/library/semweb/turtle.pl
 lib/swipl-${V}/library/settings.pl
 lib/swipl-${V}/library/sgml.pl
 lib/swipl-${V}/library/sgml_write.pl
@@ -384,6 +424,7 @@ lib/swipl-${V}/library/ssl.pl
 lib/swipl-${V}/library/statistics.pl
 lib/swipl-${V}/library/streaminfo.pl
 lib/swipl-${V}/library/streampool.pl
+lib/swipl-${V}/library/syslog.pl
 lib/swipl-${V}/library/system.pl
 lib/swipl-${V}/library/table.pl
 lib/swipl-${V}/library/table_util.pl
@@ -409,11 +450,13 @@ lib/swipl-${V}/library/utf8.pl
 lib/swipl-${V}/library/varnumbers.pl
 lib/swipl-${V}/library/vm.pl
 lib/swipl-${V}/library/when.pl
+lib/swipl-${V}/library/win_menu.pl
 lib/swipl-${V}/library/writef.pl
 lib/swipl-${V}/library/www_browser.pl
 lib/swipl-${V}/library/xpath.pl
 lib/swipl-${V}/library/xsdp_types.pl
 lib/swipl-${V}/library/zlib.pl
+lib/swipl-${V}/swipl-win.rc
 lib/swipl-${V}/swipl.home
 lib/swipl-${V}/swipl.rc
 lib/swipl-${V}/xpce/
@@ -1171,7 +1214,7 @@ lib/swipl-${V}/xpce/prolog/lib/emacs/history.pl
 lib/swipl-${V}/xpce/prolog/lib/emacs/hit_list.pl
 lib/swipl-${V}/xpce/prolog/lib/emacs/html_mode.pl
 lib/swipl-${V}/xpce/prolog/lib/emacs/java_mode.pl
-lib/swipl-${V}/xpce/prolog/lib/emacs/java_script_mode.pl
+lib/swipl-${V}/xpce/prolog/lib/emacs/javascript_mode.pl
 lib/swipl-${V}/xpce/prolog/lib/emacs/language_mode.pl
 lib/swipl-${V}/xpce/prolog/lib/emacs/latex_mode.pl
 lib/swipl-${V}/xpce/prolog/lib/emacs/logtalk_mode.pl
@@ -1378,6 +1421,7 @@ lib/swipl-${V}/xpce/prolog/lib/trace/icons/foreign.xpm
 lib/swipl-${V}/xpce/prolog/lib/trace/icons/get.xpm
 lib/swipl-${V}/xpce/prolog/lib/trace/icons/grammar.xpm
 lib/swipl-${V}/xpce/prolog/lib/trace/icons/import.xpm
+lib/swipl-${V}/xpce/prolog/lib/trace/icons/interactor.xpm
 lib/swipl-${V}/xpce/prolog/lib/trace/icons/interrupt.xpm
 lib/swipl-${V}/xpce/prolog/lib/trace/icons/into.xpm
 lib/swipl-${V}/xpce/prolog/lib/trace/icons/ivar.xpm
@@ -1442,7 +1486,6 @@ share/doc/swipl/Manual/Bibliography.html
 share/doc/swipl/Manual/Contents.html
 share/doc/swipl/Manual/DCG.html
 share/doc/swipl/Manual/DDE.html
-share/doc/swipl/Manual/DLL.html
 share/doc/swipl/Manual/DocIndex.html
 share/doc/swipl/Manual/IDE.html
 share/doc/swipl/Manual/IO.html
@@ -1451,13 +1494,13 @@ share/doc/swipl/Manual/acknowledge.html
 share/doc/swipl/Manual/aggregate.html
 share/doc/swipl/Manual/allsolutions.html
 share/doc/swipl/Manual/altmoduleapi.html
+share/doc/swipl/Manual/ancestral-cut.html
 share/doc/swipl/Manual/apply.html
-share/doc/swipl/Manual/applylist.html
 share/doc/swipl/Manual/arith.html
 share/doc/swipl/Manual/assoc.html
 share/doc/swipl/Manual/attvar.html
 share/doc/swipl/Manual/autoload.html
-share/doc/swipl/Manual/block3.html
+share/doc/swipl/Manual/breakpoint.html
 share/doc/swipl/Manual/broadcast.gif
 share/doc/swipl/Manual/broadcast.html
 share/doc/swipl/Manual/builtin.html
@@ -1471,7 +1514,6 @@ share/doc/swipl/Manual/check.html
 share/doc/swipl/Manual/chr.html
 share/doc/swipl/Manual/chrintro.html
 share/doc/swipl/Manual/clicense.html
-share/doc/swipl/Manual/clpclp_distinct.html
 share/doc/swipl/Manual/clpfd.html
 share/doc/swipl/Manual/clpqr.html
 share/doc/swipl/Manual/cmdline.html
@@ -1493,7 +1535,6 @@ share/doc/swipl/Manual/defmodule.html
 share/doc/swipl/Manual/dialect.html
 share/doc/swipl/Manual/dynamic-modules.html
 share/doc/swipl/Manual/dynamic.html
-share/doc/swipl/Manual/dynstatic.html
 share/doc/swipl/Manual/edit.html
 share/doc/swipl/Manual/editreload.html
 share/doc/swipl/Manual/errors.html
@@ -1502,7 +1543,6 @@ share/doc/swipl/Manual/examples.html
 share/doc/swipl/Manual/excepthook.html
 share/doc/swipl/Manual/exception.html
 share/doc/swipl/Manual/exception3.html
-share/doc/swipl/Manual/extendarith.html
 share/doc/swipl/Manual/extvar.html
 share/doc/swipl/Manual/files.html
 share/doc/swipl/Manual/findappfile.html
@@ -1522,7 +1562,6 @@ share/doc/swipl/Manual/funcsummary.html
 share/doc/swipl/Manual/gc.html
 share/doc/swipl/Manual/gemacs.html
 share/doc/swipl/Manual/gensym.html
-share/doc/swipl/Manual/globalcut.html
 share/doc/swipl/Manual/glossary.html
 share/doc/swipl/Manual/guidelines.html
 share/doc/swipl/Manual/guitracer.html
@@ -1544,7 +1583,6 @@ share/doc/swipl/Manual/initfile.html
 share/doc/swipl/Manual/initgoal.html
 share/doc/swipl/Manual/intlibs.html
 share/doc/swipl/Manual/intro.html
-share/doc/swipl/Manual/iso.html
 share/doc/swipl/Manual/jitindex.html
 share/doc/swipl/Manual/libpl.html
 share/doc/swipl/Manual/library.html
@@ -1553,13 +1591,13 @@ share/doc/swipl/Manual/limits.html
 share/doc/swipl/Manual/listing.html
 share/doc/swipl/Manual/lists.html
 share/doc/swipl/Manual/loadfilehook.html
+share/doc/swipl/Manual/locale.html
 share/doc/swipl/Manual/manipatom.html
 share/doc/swipl/Manual/manipmodule.html
 share/doc/swipl/Manual/manipstack.html
 share/doc/swipl/Manual/manipterm.html
 share/doc/swipl/Manual/memory.html
 share/doc/swipl/Manual/metacall.html
-share/doc/swipl/Manual/metainmodule.html
 share/doc/swipl/Manual/metapred.html
 share/doc/swipl/Manual/miscarith.html
 share/doc/swipl/Manual/miscpreds.html
@@ -1568,10 +1606,8 @@ share/doc/swipl/Manual/moduleop.html
 share/doc/swipl/Manual/modules.html
 share/doc/swipl/Manual/mt-xpce.html
 share/doc/swipl/Manual/mtoplevel.html
-share/doc/swipl/Manual/mtunbound.html
 share/doc/swipl/Manual/navigator.html
 share/doc/swipl/Manual/nb_set.html
-share/doc/swipl/Manual/nbset.html
 share/doc/swipl/Manual/next.gif
 share/doc/swipl/Manual/operators.html
 share/doc/swipl/Manual/opsummary.html
@@ -1596,10 +1632,10 @@ share/doc/swipl/Manual/profnode.gif
 share/doc/swipl/Manual/projectfiles.html
 share/doc/swipl/Manual/prolog_xref.html
 share/doc/swipl/Manual/prologpack.html
-share/doc/swipl/Manual/prologxref.html
 share/doc/swipl/Manual/protocol.html
 share/doc/swipl/Manual/qsaveforeign.html
 share/doc/swipl/Manual/qsavelimits.html
+share/doc/swipl/Manual/quasiquotations.html
 share/doc/swipl/Manual/quickstart.html
 share/doc/swipl/Manual/random.html
 share/doc/swipl/Manual/readline.html
@@ -1607,12 +1643,8 @@ share/doc/swipl/Manual/readutil.html
 share/doc/swipl/Manual/record.html
 share/doc/swipl/Manual/reexport.html
 share/doc/swipl/Manual/registry.html
-share/doc/swipl/Manual/relnotes.html
 share/doc/swipl/Manual/resmodules.html
-share/doc/swipl/Manual/runenv.html
 share/doc/swipl/Manual/runtime.html
-share/doc/swipl/Manual/sec-5.11.html
-share/doc/swipl/Manual/sec-E.4.html
 share/doc/swipl/Manual/sicstus-chr.html
 share/doc/swipl/Manual/signal.html
 share/doc/swipl/Manual/simplex.html
@@ -1626,6 +1658,7 @@ share/doc/swipl/Manual/summary.html
 share/doc/swipl/Manual/swiorother.html
 share/doc/swipl/Manual/swiprolog.html
 share/doc/swipl/Manual/syntax.html
+share/doc/swipl/Manual/syntaxext.html
 share/doc/swipl/Manual/system.html
 share/doc/swipl/Manual/termrw.html
 share/doc/swipl/Manual/thmonitor.html
@@ -1643,15 +1676,12 @@ share/doc/swipl/Manual/typetest.html
 share/doc/swipl/Manual/ugraphs.html
 share/doc/swipl/Manual/up.gif
 share/doc/swipl/Manual/url.html
-share/doc/swipl/Manual/usemodules.html
 share/doc/swipl/Manual/useresource.html
 share/doc/swipl/Manual/usingmodules.html
 share/doc/swipl/Manual/varnumbers.html
-share/doc/swipl/Manual/whichmodules.html
 share/doc/swipl/Manual/whymodules.html
 share/doc/swipl/Manual/widechars.html
 share/doc/swipl/Manual/www_browser.html
-share/doc/swipl/Manual/xpce.html
 share/doc/swipl/Manual/xref.html
 share/doc/swipl/Manual/xrefchatdep.gif
 share/doc/swipl/Manual/xrefchatfile.gif
@@ -1676,8 +1706,10 @@ share/doc/swipl/packages/examples/chr/listdom.chr
 share/doc/swipl/packages/examples/chr/primes.chr
 share/doc/swipl/packages/examples/http/
 share/doc/swipl/packages/examples/http/calc.pl
+share/doc/swipl/packages/examples/http/debian-init-script
 share/doc/swipl/packages/examples/http/demo_body.pl
 share/doc/swipl/packages/examples/http/demo_client.pl
+share/doc/swipl/packages/examples/http/demo_daemon.pl
 share/doc/swipl/packages/examples/http/demo_files.pl
 share/doc/swipl/packages/examples/http/demo_inetd
 share/doc/swipl/packages/examples/http/demo_openid.pl
