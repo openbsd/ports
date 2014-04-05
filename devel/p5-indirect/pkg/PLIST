@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/04/05 06:22:25 afresh1 Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2014/04/05 09:07:09 sthen Exp $
 ${P5ARCH}/
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/indirect/
 ${P5ARCH}/auto/indirect/indirect.bs
+${P5ARCH}/auto/indirect/indirect.so
 ${P5ARCH}/indirect.pm
 @man man/man3p/indirect.3p
