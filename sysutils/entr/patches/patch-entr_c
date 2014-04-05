@@ -1,0 +1,22 @@
+$OpenBSD: patch-entr_c,v 1.1 2014/04/05 22:14:59 sthen Exp $
+--- entr.c.orig	Thu Mar 13 18:44:39 2014
++++ entr.c	Sat Apr  5 10:32:08 2014
+@@ -38,7 +38,7 @@
+ 
+ /* events to watch for */
+ 
+-#define NOTE_ALL NOTE_DELETE|NOTE_WRITE|NOTE_EXTEND|NOTE_RENAME
++#define NOTE_ALL NOTE_DELETE|NOTE_WRITE|NOTE_EXTEND|NOTE_RENAME|NOTE_TRUNCATE
+ 
+ /* shortcuts */
+ 
+@@ -456,7 +456,8 @@ main:
+ 		if (evList[i].fflags & NOTE_DELETE ||
+ 		    evList[i].fflags & NOTE_WRITE  ||
+ 		    evList[i].fflags & NOTE_EXTEND ||
+-		    evList[i].fflags & NOTE_RENAME) {
++		    evList[i].fflags & NOTE_RENAME ||
++		    evList[i].fflags & NOTE_TRUNCATE) {
+ 			if (fifo.fd == 0)
+ 				do_exec = 1;
+ 			else {
