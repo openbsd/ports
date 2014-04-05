@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/01/26 23:21:33 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2014/04/05 05:42:07 bcallah Exp $
 
 COMMENT =	manual tiling window manager
-DISTNAME =	herbstluftwm-0.5.3
+DISTNAME =	herbstluftwm-0.6.2
 CATEGORIES =	x11
 
 HOMEPAGE =	http://herbstluftwm.org/

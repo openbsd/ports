@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/01/26 23:21:33 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/04/05 05:42:07 bcallah Exp $
 @bin bin/herbstclient
 @bin bin/herbstluftwm
 @man man/man1/herbstclient.1
@@ -31,6 +31,7 @@ share/examples/herbstluftwm/layout.sh
 share/examples/herbstluftwm/loadstate.sh
 share/examples/herbstluftwm/q3terminal.sh
 share/examples/herbstluftwm/savestate.sh
+share/examples/herbstluftwm/scratchpad.sh
 share/examples/herbstluftwm/wselect.sh
 share/examples/herbstluftwm/xdg/
 share/examples/herbstluftwm/xdg/herbstluftwm/
