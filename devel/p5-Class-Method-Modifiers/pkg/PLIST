@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.4 2014/04/05 06:20:05 afresh1 Exp $
+${P5SITE}/Class/
+${P5SITE}/Class/Method/
+${P5SITE}/Class/Method/Modifiers.pm
+@man man/man3p/Class::Method::Modifiers.3p
