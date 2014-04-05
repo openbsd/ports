@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/04/05 05:50:31 afresh1 Exp $
+${P5SITE}/ExtUtils/
+${P5SITE}/ExtUtils/Config.pm
+@man man/man3p/ExtUtils::Config.3p
