@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/04/05 05:39:22 afresh1 Exp $
+${P5SITE}/Role/
+${P5SITE}/Role/Tiny/
+${P5SITE}/Role/Tiny.pm
+${P5SITE}/Role/Tiny/With.pm
+@man man/man3p/Role::Tiny.3p
+@man man/man3p/Role::Tiny::With.3p
