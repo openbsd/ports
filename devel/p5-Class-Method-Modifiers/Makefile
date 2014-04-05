@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2014/04/05 06:20:05 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.9 2014/04/05 09:10:13 sthen Exp $
 
 COMMENT =	provides Moose-like method modifiers
 
 MODULES =	cpan
 DISTNAME =	Class-Method-Modifiers-2.10
+REVISION =	0
 CATEGORIES =	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
