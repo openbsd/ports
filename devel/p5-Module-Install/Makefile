@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2014/03/19 09:07:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2014/04/05 11:56:10 sthen Exp $
 
 COMMENT=        standalone extensible Perl module installer
 
 MODULES=	cpan
 DISTNAME=	Module-Install-1.08
+REVISION=	0
 CATEGORIES=     devel
-USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
