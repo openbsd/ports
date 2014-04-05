@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/04/05 15:09:46 afresh1 Exp $
+bin/moo-outdated
+${P5SITE}/Method/
+${P5SITE}/Method/Generate/
+${P5SITE}/Method/Generate/Accessor.pm
+${P5SITE}/Method/Generate/BuildAll.pm
+${P5SITE}/Method/Generate/Constructor.pm
+${P5SITE}/Method/Generate/DemolishAll.pm
+${P5SITE}/Method/Inliner.pm
+${P5SITE}/Moo/
+${P5SITE}/Moo.pm
+${P5SITE}/Moo/Conflicts.pm
+${P5SITE}/Moo/HandleMoose/
+${P5SITE}/Moo/HandleMoose.pm
+${P5SITE}/Moo/HandleMoose/FakeMetaClass.pm
+${P5SITE}/Moo/HandleMoose/_TypeMap.pm
+${P5SITE}/Moo/Object.pm
+${P5SITE}/Moo/Role.pm
+${P5SITE}/Moo/_Utils.pm
+${P5SITE}/Moo/_mro.pm
+${P5SITE}/Moo/sification.pm
+${P5SITE}/Sub/
+${P5SITE}/Sub/Defer.pm
+${P5SITE}/Sub/Quote.pm
+${P5SITE}/oo.pm
+@man man/man3p/Moo.3p
+@man man/man3p/Moo::Role.3p
+@man man/man3p/Sub::Defer.3p
+@man man/man3p/Sub::Quote.3p
