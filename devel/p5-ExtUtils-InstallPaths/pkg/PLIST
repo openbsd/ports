@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/04/05 06:06:18 afresh1 Exp $
+${P5SITE}/ExtUtils/
+${P5SITE}/ExtUtils/InstallPaths.pm
+@man man/man3p/ExtUtils::InstallPaths.3p
