@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1212 2014/04/04 07:46:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1213 2014/04/05 15:34:27 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -587,6 +587,7 @@
      SUBDIR += p5-Class-MakeMethods
      SUBDIR += p5-Class-Meta
      SUBDIR += p5-Class-Meta-Express
+     SUBDIR += p5-Class-Method-Modifiers
      SUBDIR += p5-Class-MethodMaker
      SUBDIR += p5-Class-MethodMapper
      SUBDIR += p5-Class-Multimethods
@@ -707,8 +708,12 @@
      SUBDIR += p5-Expect-Simple
      SUBDIR += p5-Exporter-Lite
      SUBDIR += p5-Exporter-Tidy
+     SUBDIR += p5-ExtUtils-BuildRC
      SUBDIR += p5-ExtUtils-CChecker
+     SUBDIR += p5-ExtUtils-Config
      SUBDIR += p5-ExtUtils-Depends
+     SUBDIR += p5-ExtUtils-Helpers
+     SUBDIR += p5-ExtUtils-InstallPaths
      SUBDIR += p5-ExtUtils-PkgConfig
      SUBDIR += p5-ExtUtils-XSBuilder
      SUBDIR += p5-ExtUtils-XSpp
@@ -790,6 +795,7 @@
      SUBDIR += p5-IPC-Run3
      SUBDIR += p5-IPC-ShareLite
      SUBDIR += p5-IPC-Shareable
+     SUBDIR += p5-Import-Into
      SUBDIR += p5-Inline
      SUBDIR += p5-Internals
      SUBDIR += p5-Iterator
@@ -833,6 +839,7 @@
      SUBDIR += p5-Module-Starter-Plugin-CGIApp
      SUBDIR += p5-Module-Versions-Report
      SUBDIR += p5-Module-Which
+     SUBDIR += p5-Moo
      SUBDIR += p5-Moose
      SUBDIR += p5-MooseX-Aliases
      SUBDIR += p5-MooseX-AttributeHelpers
@@ -929,6 +936,7 @@
      SUBDIR += p5-Regexp-IPv6
      SUBDIR += p5-Regexp-Shellish
      SUBDIR += p5-Return-Value
+     SUBDIR += p5-Role-Tiny
      SUBDIR += p5-SDL
      SUBDIR += p5-SUPER
      SUBDIR += p5-SVN-Notify
@@ -1095,10 +1103,12 @@
      SUBDIR += p5-capitalization
      SUBDIR += p5-common-sense
      SUBDIR += p5-enum
+     SUBDIR += p5-indirect
      SUBDIR += p5-libintl
      SUBDIR += p5-namespace-autoclean
      SUBDIR += p5-namespace-clean
      SUBDIR += p5-prefork
+     SUBDIR += p5-strictures
      SUBDIR += pango
      SUBDIR += pangomm
      SUBDIR += pangox-compat
