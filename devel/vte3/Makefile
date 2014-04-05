@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2014/04/02 09:36:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2014/04/05 07:17:23 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		terminal emulation library
 
 GNOME_PROJECT=		vte
 GNOME_VERSION=		0.36.0
+REVISION=		0
 
 PKGNAME=		vte3-${GNOME_VERSION}
 
@@ -33,6 +34,10 @@ MODULES=		devel/gettext \
 LIB_DEPENDS=		x11/gtk+3
 
 MODGNOME_TOOLS +=	gobject-introspection
+
+MODGNU_CONFIG_GUESS_DIRS= \
+			${WRKSRC} \
+			${WRKSRC}/gnome-pty-helper
 
 CONFIGURE_STYLE=	gnu
 

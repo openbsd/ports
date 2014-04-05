@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2014/04/02 09:36:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.114 2014/04/05 07:17:23 ajacoutot Exp $
 
 COMMENT-main=		terminal emulation library
 COMMENT-python= 	python bindings for vte
@@ -11,7 +11,7 @@ SHARED_LIBS+=	vte	14.1    # 2609.0
 FULLPKGNAME-main=	vte-${GNOME_VERSION}
 FULLPKGNAME-python= 	py-${DISTNAME}
 
-REVISION-main =		13
+REVISION-main =		14
 REVISION-python = 	10
 
 CATEGORIES=		devel
@@ -50,6 +50,10 @@ LIB_DEPENDS-main+=	${LIB_DEPENDS} \
 WANTLIB-main=		${WANTLIB} c util
 
 MODGNOME_TOOLS +=	gobject-introspection
+
+MODGNU_CONFIG_GUESS_DIRS= \
+			${WRKSRC} \
+			${WRKSRC}/gnome-pty-helper
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-gtk=2.0 \
