@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2013/01/28 07:55:58 jasper Exp $
---- setup.py.orig	Thu Nov  1 17:09:06 2012
-+++ setup.py	Mon Jan 14 09:43:04 2013
-@@ -139,6 +139,13 @@ class pil_build_ext(build_ext):
+$OpenBSD: patch-setup_py,v 1.2 2014/04/06 21:10:19 sthen Exp $
+--- setup.py.orig	Tue Apr  1 18:21:44 2014
++++ setup.py	Sun Apr  6 16:47:32 2014
+@@ -290,6 +290,13 @@ class pil_build_ext(build_ext):
  
          if _tkinter:
              TCL_VERSION = _tkinter.TCL_VERSION[:3]
@@ -15,36 +15,32 @@ $OpenBSD: patch-setup_py,v 1.1.1.1 2013/01/28 07:55:58 jasper Exp $
  
          if _tkinter and not TCL_ROOT:
              # we have Tkinter but the TCL_ROOT variable was not set;
-@@ -187,12 +194,15 @@ class pil_build_ext(build_ext):
-                 _add_directory(include_dirs, tcl_dir)
- 
-         # standard locations
--        _add_directory(library_dirs, "/usr/local/lib")
--        _add_directory(include_dirs, "/usr/local/include")
-+        _add_directory(library_dirs, os.path.join(os.getenv("LOCALBASE"), "lib"))
-+        _add_directory(include_dirs, os.path.join(os.getenv("LOCALBASE"), "include"))
- 
+@@ -330,6 +337,11 @@ class pil_build_ext(build_ext):
          _add_directory(library_dirs, "/usr/lib")
          _add_directory(include_dirs, "/usr/include")
  
++        _add_directory(library_dirs, os.path.join(os.getenv("LOCALBASE"), "lib"))
++        _add_directory(include_dirs, os.path.join(os.getenv("LOCALBASE"), "include"))
 +        _add_directory(library_dirs, os.path.join(os.getenv("X11BASE"), "lib"))
 +        _add_directory(include_dirs, os.path.join(os.getenv("X11BASE"), "include"))
 +
-         #
-         # insert new dirs *before* default libs, to avoid conflicts
-         # between Python PYD stub libs and real libraries
-@@ -293,7 +303,7 @@ class pil_build_ext(build_ext):
+         # on Windows, look for the OpenJPEG libraries in the location that
+         # the official installed puts them
+         if sys.platform == "win32":
+@@ -481,7 +493,7 @@ class pil_build_ext(build_ext):
              if feature.freetype_version == 20:
                  defs.append(("USE_FREETYPE_2_0", None))
              exts.append(Extension(
--                "_imagingft", ["_imagingft.c"], libraries=["freetype"],
-+                "_imagingft", ["_imagingft.c"], libraries=["freetype", "z"],
+-                "PIL._imagingft", ["_imagingft.c"], libraries=["freetype"],
++                "PIL._imagingft", ["_imagingft.c"], libraries=["freetype", "z"],
                  define_macros=defs))
  
          if os.path.isfile("_imagingtiff.c") and feature.tiff:
-@@ -466,5 +476,4 @@ setup(
-     cmdclass={"build_ext": pil_build_ext},
-     ext_modules=[Extension("_imaging", ["_imaging.c"])],
+@@ -673,7 +685,6 @@ setup(
+     ext_modules=[Extension("PIL._imaging", ["_imaging.c"])],
+     include_package_data=True,
      packages=find_packages(),
 -    scripts=glob.glob("Scripts/pil*.py"),
-     )
+     test_suite='PIL.tests',
+     keywords=["Imaging",],
+     license='Standard PIL License',

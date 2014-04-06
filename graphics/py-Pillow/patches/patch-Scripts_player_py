@@ -1,0 +1,12 @@
+$OpenBSD: patch-Scripts_player_py,v 1.1 2014/04/06 21:10:19 sthen Exp $
+--- Scripts/player.py.orig	Sun Apr  6 20:32:01 2014
++++ Scripts/player.py	Sun Apr  6 20:32:08 2014
+@@ -21,7 +21,7 @@ Image.DEBUG = 0
+ # --------------------------------------------------------------------
+ # experimental: support ARG animation scripts
+ 
+-import ArgImagePlugin
++from PIL import ArgImagePlugin
+ 
+ def applet_hook(animation, images):
+     app = animation(animation_display, images)

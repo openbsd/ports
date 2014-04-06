@@ -1,10 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/01/28 07:55:58 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/04/06 21:10:19 sthen Exp $
 @conflict py-Imaging-*
+@pkgpath graphics/py-Imaging
+@pkgpath graphics/py-Imaging,-bin[,python2.4][,python2.5][,python2.6][,python2.7]
+@pkgpath graphics/py-Imaging,-docs[,python2.4][,python2.5][,python2.6][,python2.7]
+@pkgpath graphics/py-Imaging,-examples[,python2.4][,python2.5][,python2.6][,python2.7]
+@pkgpath graphics/py-Imaging,-main[,python2.4][,python2.5][,python2.6][,python2.7]
+bin/enhancer
+bin/explode
+bin/gifmaker
+bin/painter
 bin/pilconvert
 bin/pildriver
 bin/pilfile
 bin/pilfont
 bin/pilprint
+bin/player
+bin/thresholder
+bin/viewer
 include/python${MODPY_VERSION}/ImPlatform.h
 include/python${MODPY_VERSION}/Imaging.h
 lib/python${MODPY_VERSION}/site-packages/PIL/
@@ -76,8 +88,6 @@ lib/python${MODPY_VERSION}/site-packages/PIL/ImageFilter.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageFilter.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageFont.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageFont.pyc
-lib/python${MODPY_VERSION}/site-packages/PIL/ImageGL.py
-lib/python${MODPY_VERSION}/site-packages/PIL/ImageGL.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageGrab.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageGrab.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/ImageMath.py
@@ -108,8 +118,12 @@ lib/python${MODPY_VERSION}/site-packages/PIL/ImtImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/ImtImagePlugin.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/IptcImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/IptcImagePlugin.pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/Jpeg2KImagePlugin.py
+lib/python${MODPY_VERSION}/site-packages/PIL/Jpeg2KImagePlugin.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/JpegImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/JpegImagePlugin.pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/JpegPresets.py
+lib/python${MODPY_VERSION}/site-packages/PIL/JpegPresets.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/McIdasImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/McIdasImagePlugin.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/MicImagePlugin.py
@@ -118,6 +132,7 @@ lib/python${MODPY_VERSION}/site-packages/PIL/MpegImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/MpegImagePlugin.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/MspImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/MspImagePlugin.pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/OleFileIO-README.md
 lib/python${MODPY_VERSION}/site-packages/PIL/OleFileIO.py
 lib/python${MODPY_VERSION}/site-packages/PIL/OleFileIO.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/PSDraw.py
@@ -142,6 +157,8 @@ lib/python${MODPY_VERSION}/site-packages/PIL/PpmImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/PpmImagePlugin.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/PsdImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/PsdImagePlugin.pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/PyAccess.py
+lib/python${MODPY_VERSION}/site-packages/PIL/PyAccess.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/SgiImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/SgiImagePlugin.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/SpiderImagePlugin.py
@@ -158,6 +175,8 @@ lib/python${MODPY_VERSION}/site-packages/PIL/TiffTags.py
 lib/python${MODPY_VERSION}/site-packages/PIL/TiffTags.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/WalImageFile.py
 lib/python${MODPY_VERSION}/site-packages/PIL/WalImageFile.pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/WebPImagePlugin.py
+lib/python${MODPY_VERSION}/site-packages/PIL/WebPImagePlugin.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/WmfImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/WmfImagePlugin.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/XVThumbImagePlugin.py
@@ -168,13 +187,21 @@ lib/python${MODPY_VERSION}/site-packages/PIL/XpmImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/XpmImagePlugin.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/__init__.py
 lib/python${MODPY_VERSION}/site-packages/PIL/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/_binary.py
+lib/python${MODPY_VERSION}/site-packages/PIL/_binary.pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/_imaging.so
+lib/python${MODPY_VERSION}/site-packages/PIL/_imagingcms.so
+lib/python${MODPY_VERSION}/site-packages/PIL/_imagingft.so
+lib/python${MODPY_VERSION}/site-packages/PIL/_imagingmath.so
+lib/python${MODPY_VERSION}/site-packages/PIL/_imagingtk.so
+lib/python${MODPY_VERSION}/site-packages/PIL/_util.py
+lib/python${MODPY_VERSION}/site-packages/PIL/_util.pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/_webp.so
+lib/python${MODPY_VERSION}/site-packages/PIL/tests.py
+lib/python${MODPY_VERSION}/site-packages/PIL/tests.pyc
 lib/python${MODPY_VERSION}/site-packages/Pillow-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Pillow-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Pillow-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/Pillow-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/Pillow-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/_imaging.so
-lib/python${MODPY_VERSION}/site-packages/_imagingcms.so
-lib/python${MODPY_VERSION}/site-packages/_imagingft.so
-lib/python${MODPY_VERSION}/site-packages/_imagingmath.so
-lib/python${MODPY_VERSION}/site-packages/_imagingtk.so
+lib/python${MODPY_VERSION}/site-packages/Pillow-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
