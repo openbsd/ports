@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2013/08/08 19:11:43 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2014/04/06 12:53:41 sthen Exp $
 @option no-default-conflict
 @conflict php->=5.5,<5.6
 @conflict php5-core->=5.2
@@ -244,6 +244,8 @@ share/php-${PV}/include/ext/pcre/php_pcre.h
 share/php-${PV}/include/ext/pdo/
 share/php-${PV}/include/ext/pdo/php_pdo.h
 share/php-${PV}/include/ext/pdo/php_pdo_driver.h
+share/php-${PV}/include/ext/phar/
+share/php-${PV}/include/ext/phar/php_phar.h
 share/php-${PV}/include/ext/session/
 share/php-${PV}/include/ext/session/mod_files.h
 share/php-${PV}/include/ext/session/mod_user.h
