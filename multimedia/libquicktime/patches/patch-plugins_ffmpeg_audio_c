@@ -1,0 +1,18 @@
+$OpenBSD: patch-plugins_ffmpeg_audio_c,v 1.1 2014/04/06 20:24:01 brad Exp $
+
+Deal with newer FFmpeg API.
+
+--- plugins/ffmpeg/audio.c.orig	Thu Mar 27 17:06:49 2014
++++ plugins/ffmpeg/audio.c	Thu Mar 27 17:08:00 2014
+@@ -45,6 +45,11 @@
+ #define ENCODE_AUDIO 1
+ #endif
+ 
++#ifndef AVCODEC_MAX_AUDIO_FRAME_SIZE
++/* from libavcodec/avcodec.h dated Dec 23 2012 */
++#define AVCODEC_MAX_AUDIO_FRAME_SIZE 192000 // 1 second of 48khz 32bit audio
++#endif
++
+ /* The following code was ported from gmerlin_avdecoder (http://gmerlin.sourceforge.net) */
+ 
+ /* MPEG Audio header parsing code */

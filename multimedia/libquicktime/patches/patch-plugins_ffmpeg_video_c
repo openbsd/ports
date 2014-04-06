@@ -1,0 +1,18 @@
+$OpenBSD: patch-plugins_ffmpeg_video_c,v 1.3 2014/04/06 20:24:01 brad Exp $
+
+Deal with newer FFmpeg API.
+
+--- plugins/ffmpeg/video.c.orig	Thu Mar 27 17:15:32 2014
++++ plugins/ffmpeg/video.c	Thu Mar 27 17:16:55 2014
+@@ -1335,6 +1335,11 @@ static int lqt_ffmpeg_encode_video(quicktime_t *file, 
+     codec->avctx->height = height;
+ 
+     lqt_ffmpeg_setup_encoding_colormodel(vtrack);
++#if ENCODE_VIDEO2
++    codec->frame->width = width;
++    codec->frame->height = height;
++    codec->frame->format = codec->avctx->pix_fmt;
++#endif
+ 
+     lqt_get_pixel_aspect(file, track, &pixel_width, &pixel_height);
+     codec->avctx->sample_aspect_ratio.num = pixel_width;
