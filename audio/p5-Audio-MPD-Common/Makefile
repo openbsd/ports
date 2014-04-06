@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/10 22:55:04 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2014/04/06 12:05:20 sthen Exp $
 
 COMMENT=		bunch of common helper classes for MPD
 
 DISTNAME=		Audio-MPD-Common-1.110550
+REVISION=		0
 CATEGORIES=		audio
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -14,7 +15,6 @@ MODULES=		cpan
 CPAN_AUTHOR=		JQUELIN
 
 CONFIGURE_STYLE=	modbuild
-USE_GROFF =		Yes
 
 RUN_DEPENDS=		devel/p5-Class-Accessor \
 			devel/p5-MooseX-Has-Sugar \
