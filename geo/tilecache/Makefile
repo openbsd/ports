@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2013/10/03 16:37:16 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.12 2014/04/06 21:10:23 sthen Exp $
 
 COMMENT =	tile caching frontend for WMS/TMS services
 
 MODPY_EGG_VERSION =	2.11
 DISTNAME =	tilecache-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	geo graphics
 
@@ -18,7 +19,8 @@ MASTER_SITES =	${HOMEPAGE}
 MODULES =	lang/python
 
 MODPY_SETUPTOOLS =	Yes
-RUN_DEPENDS =		graphics/py-Imaging
+RUN_DEPENDS =		graphics/py-Pillow \
+			www/py-paste
 
 post-configure:
 	${SUBST_CMD} ${WRKSRC}/setup.py
