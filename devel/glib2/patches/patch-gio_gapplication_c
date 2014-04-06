@@ -1,0 +1,17 @@
+$OpenBSD: patch-gio_gapplication_c,v 1.1 2014/04/06 12:17:29 ajacoutot Exp $
+
+From 7e10a9141eb2fa03fa5abbdcff511f30e28e3ac8 Mon Sep 17 00:00:00 2001
+From: Marek Kasik <mkasik@redhat.com>
+Date: Thu, 3 Apr 2014 17:35:22 +0200
+Subject: GApplication: Don't decrease use_count below 0
+
+--- gio/gapplication.c.orig	Mon Feb 24 15:28:43 2014
++++ gio/gapplication.c	Sun Apr  6 13:52:16 2014
+@@ -1870,6 +1870,7 @@ void
+ g_application_release (GApplication *application)
+ {
+   g_return_if_fail (G_IS_APPLICATION (application));
++  g_return_if_fail (application->priv->use_count > 0);
+ 
+   application->priv->use_count--;
+ 
