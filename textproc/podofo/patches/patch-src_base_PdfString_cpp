@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_base_PdfString_cpp,v 1.1.1.1 2014/04/06 11:31:21 sthen Exp $
+
+For some reason, alloca() doesn't seem to be working from C++ on OpenBSD,
+returning a linker error, so convert to malloc() instead.
+
+--- src/base/PdfString.cpp.orig	Mon Mar 31 22:47:08 2014
++++ src/base/PdfString.cpp	Mon Mar 31 22:50:17 2014
+@@ -530,7 +530,11 @@ void PdfString::InitFromUtf8( const pdf_utf8* pszStrin
+ 
+     pdf_long        lBufLen = (lLen << 1) + sizeof(wchar_t);
+     // twice as large buffer should always be enough
+-    pdf_utf16be *pBuffer = static_cast<pdf_utf16be *>(alloca(lBufLen)); 
++    pdf_utf16be *pBuffer = static_cast<pdf_utf16be *>(malloc(lBufLen)); 
++    if( !pBuffer )
++    {
++        PODOFO_RAISE_ERROR( ePdfError_OutOfMemory );
++    }
+ 
+     lBufLen = PdfString::ConvertUTF8toUTF16( pszStringUtf8, lLen, pBuffer, lBufLen );
+ 
+@@ -539,6 +543,7 @@ void PdfString::InitFromUtf8( const pdf_utf8* pszStrin
+     memcpy( m_buffer.GetBuffer(), reinterpret_cast<const char*>(pBuffer), lBufLen );
+     m_buffer.GetBuffer()[lBufLen] = '\0';
+     m_buffer.GetBuffer()[lBufLen+1] = '\0';
++    free(pBuffer);
+ }
+ 
+ void PdfString::InitUtf8()

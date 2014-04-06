@@ -1,0 +1,17 @@
+PoDoFo is a free portable C++ library which includes classes to parse a PDF
+file and modify its contents into memory. The changes can be written back to
+disk easily. PoDoFo is designed to avoid loading large PDF objects into
+memory until they are required and can write large streams immediately to
+disk, so it is possible to manipulate quite large files with it.
+
+Besides PDF parsing and writing PoDoFo includes also very simple classes
+to create your own PDF files.
+
+PoDoFo is primarily useful for applications that wish to do lower level
+manipulation of PDF, such as extracting content or merging files. It's also
+useful if your application has specific requirements for its PDF output that
+more general output-oriented libraries like Cairo cannot satisfy.
+
+Simple tools tuild around the PoDoFo library are also included. They are
+primarily examples on how to use the PoDoFo library in your own projects,
+but also offer some features for working with PDF files.

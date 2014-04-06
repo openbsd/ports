@@ -1,0 +1,20 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2014/04/06 11:31:21 sthen Exp $
+--- CMakeLists.txt.orig	Wed Dec 12 22:55:46 2012
++++ CMakeLists.txt	Mon Mar 31 22:57:32 2014
+@@ -282,7 +282,6 @@ IF(CMAKE_COMPILER_IS_GNUCXX)
+         -Wswitch-enum
+         -Wcast-qual
+         -Wwrite-strings
+-        -Wredundant-decls
+         -Wreorder
+ 		#-Wold-style-cast
+        )
+@@ -505,7 +504,7 @@ SET(PODOFO_LIB
+ #
+ # Setup directories we will need
+ #
+-SET(MANDIR "share/man/")
++SET(MANDIR "man/")
+ 
+ # Create the config file. It'll be appended to as the subdirs run though
+ # then dependency information will be written to it at the end of the
