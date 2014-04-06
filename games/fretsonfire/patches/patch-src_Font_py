@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Font_py,v 1.1 2014/04/06 21:10:25 sthen Exp $
+--- src/Font.py.orig	Sun Apr  6 18:28:33 2014
++++ src/Font.py	Sun Apr  6 18:28:40 2014
+@@ -206,7 +206,7 @@ class Font:
+ 
+       # Draw outlines
+       """
+-      import Image, ImageFilter
++      from PIL import Image, ImageFilter
+       srcImg = Image.fromstring("RGBA", s.get_size(), pygame.image.tostring(s, "RGBA"))
+       img    = Image.fromstring("RGBA", s.get_size(), pygame.image.tostring(s, "RGBA"))
+       for y in xrange(img.size[1]):
