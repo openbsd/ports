@@ -1,0 +1,30 @@
+$OpenBSD: patch-gtk_gtkoverlay_c,v 1.1 2014/04/06 12:16:47 ajacoutot Exp $
+
+From 2a26c39b299a24434595109640e31a77715c4ab1 Mon Sep 17 00:00:00 2001
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Sat, 5 Apr 2014 11:21:50 -0400
+Subject: overlay: deal gracefully with main widget being absent
+
+--- gtk/gtkoverlay.c.orig	Mon Mar 24 18:28:56 2014
++++ gtk/gtkoverlay.c	Sun Apr  6 13:59:46 2014
+@@ -203,12 +203,19 @@ gtk_overlay_get_main_widget_allocation (GtkOverlay *ov
+       main_alloc.width = gtk_widget_get_allocated_width (grandchild);
+       main_alloc.height = gtk_widget_get_allocated_height (grandchild);
+     }
+-  else
++  else if (GTK_IS_WIDGET (main_widget))
+     {
+       main_alloc.x = 0;
+       main_alloc.y = 0;
+       main_alloc.width = gtk_widget_get_allocated_width (main_widget);
+       main_alloc.height = gtk_widget_get_allocated_height (main_widget);
++    }
++  else
++    {
++      main_alloc.x = 0;
++      main_alloc.y = 0;
++      main_alloc.width = 1;
++      main_alloc.height = 1;
+     }
+ 
+   if (main_alloc_out)

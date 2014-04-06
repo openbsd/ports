@@ -1,0 +1,28 @@
+$OpenBSD: patch-gtk_gtkflowbox_c,v 1.1 2014/04/06 12:16:47 ajacoutot Exp $
+
+From 7ac684e9e3d0e58931d1c165d83e9e407467b461 Mon Sep 17 00:00:00 2001
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Sat, 29 Mar 2014 00:46:51 -0400
+Subject: flow box: Avoid excessive signals
+
+--- gtk/gtkflowbox.c.orig	Mon Mar 24 18:28:56 2014
++++ gtk/gtkflowbox.c	Sun Apr  6 13:57:56 2014
+@@ -961,8 +961,6 @@ static gboolean
+ gtk_flow_box_child_set_selected (GtkFlowBoxChild *child,
+                                  gboolean         selected)
+ {
+-  GtkFlowBox *box;
+-
+   if (CHILD_PRIV (child)->selected != selected)
+     {
+       CHILD_PRIV (child)->selected = selected;
+@@ -972,9 +970,6 @@ gtk_flow_box_child_set_selected (GtkFlowBoxChild *chil
+       else
+         gtk_widget_unset_state_flags (GTK_WIDGET (child),
+                                       GTK_STATE_FLAG_SELECTED);
+-
+-      box = gtk_flow_box_child_get_box (child);
+-      _gtk_flow_box_accessible_selection_changed (GTK_WIDGET (box));
+ 
+       gtk_widget_queue_draw (GTK_WIDGET (child));
+ 
