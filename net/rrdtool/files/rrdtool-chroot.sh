@@ -1,6 +1,7 @@
 #!/bin/ksh
 #
-# make rrdtool(1) available in Apache chroot(8)
+# make rrdtool(1) available in webserver chroot(8): copy in library
+# dependencies and generate barebones pango/fontconfig/pango configuration
 
 # WARNING: /var/www/usr/libexec/ld.so and /var/www/lib/* may be shared
 # by other executables in the chroot(8)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2014/03/28 10:06:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2014/04/06 17:01:34 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,8 +9,8 @@ COMMENT-ruby=	ruby interface to librrd
 
 MODPY_EGG_VERSION= 0.2.2
 VERSION=	1.4.8
-REVISION-main=	2
-REVISION-ruby=	2
+REVISION-main=	3
+REVISION-ruby=	3
 REVISION-python=0
 REVISION-update=0
 DISTNAME=	rrdtool-${VERSION}
@@ -39,7 +39,6 @@ PSEUDO_FLAVORS=	no_ruby no_python
 MULTI_PACKAGES= -main -python -ruby -update
 
 MODULES=	devel/gettext lang/python lang/ruby
-MODRUBY_REV=	1.8# XXX ruby 1.9/2.0 work too, but don't build on sparc64 et al
 
 CONFIGURE_STYLE= gnu
 CPPFLAGS+=	-I${X11BASE}/include/ \
