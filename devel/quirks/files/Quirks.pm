@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.147 2014/04/01 18:03:16 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.148 2014/04/06 21:10:22 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -338,6 +338,7 @@ my $stem_extensions = {
 	'libproxy-mozilla' => 'libproxy-webkit',
 	'p5-Mozilla-CA' => 'p5-Mozilla-CA-Fake',
 	'gnome-extra' => 'gnome-extras',
+	'py-Imaging' => 'py-Pillow',
 };
 
 # reasons for obsolete packages

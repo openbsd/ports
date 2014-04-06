@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.366 2014/03/25 10:35:17 pascal Exp $
+# $OpenBSD: Makefile,v 1.367 2014/04/06 21:10:21 sthen Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -214,7 +214,6 @@
      SUBDIR += pqiv
      SUBDIR += prison
      SUBDIR += pstoedit
-     SUBDIR += py-Imaging
      SUBDIR += py-Pillow
      SUBDIR += py-cairo
      SUBDIR += py-dot
