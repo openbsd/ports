@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2014/03/31 23:54:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2014/04/06 11:32:04 sthen Exp $
 
 COMMENT =		ebook management application
 
 DISTNAME =		calibre-1.30.0
+REVISION =		0
 CATEGORIES =		textproc
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calibre/}
 EXTRACT_SUFX =		.tar.xz
@@ -19,16 +20,15 @@ WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += ICE MagickCore MagickWand lib/qt4/QtDBus lib/qt4/QtGui
 WANTLIB += lib/qt4/QtSvg lib/qt4/QtXml SM X11 Xext Xi Xinerama Xrender
 WANTLIB += chm fontconfig freetype icudata icui18n icuio icuuc m mtp
-WANTLIB += pthread stdc++ usb-1.0 z
+WANTLIB += podofo pthread stdc++ usb-1.0 z
 
 LIB_DEPENDS=		devel/chmlib \
 			devel/libmtp \
 			devel/libusb1 \
 			graphics/ImageMagick \
-			textproc/icu4c
+			textproc/icu4c \
+			textproc/podofo
 
-# XXX PoDoFo should be ported and added here; then remove hack
-# XXX from patch-setup_extensions_py that makes it optional
 COMMON_DEPENDS =	databases/py-apsw \
 			devel/py-dateutil \
 			devel/xdg-utils \
@@ -70,8 +70,8 @@ MAKE_ENV +=		QMAKE="${LOCALBASE}/bin/qmake4"
 MAKE_ENV +=		LDFLAGS="${LDFLAGS}"
 MAKE_ENV +=		FT_LIB_DIR="${X11BASE}/lib"
 MAKE_ENV +=		XDG_DATA_DIRS="${PREFIX}/share"
-#MAKE_ENV +=		PODOFO_INC_DIR="${LOCALBASE}/include/podofo"
-#MAKE_ENV +=		PODOFO_LIB_DIR="${LOCALBASE}/lib"
+MAKE_ENV +=		PODOFO_INC_DIR="${LOCALBASE}/include/podofo"
+MAKE_ENV +=		PODOFO_LIB_DIR="${LOCALBASE}/lib"
 
 # Requires /sys filesystem for HW detection
 MAKE_ENV +=		WITH_USB=no

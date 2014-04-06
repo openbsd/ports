@@ -1,6 +1,5 @@
-$OpenBSD: patch-setup_extensions_py,v 1.6 2014/03/31 23:54:35 sthen Exp $
+$OpenBSD: patch-setup_extensions_py,v 1.7 2014/04/06 11:32:04 sthen Exp $
 
-- XXX make podofo optional as it isn't ported yet; should be fixed
 - fix various header search paths
 - don't override compiler optimizer levels
 - build with libmtp/libusb1 on OpenBSD (possibly useless as it looks like it
@@ -35,15 +34,7 @@ it's correct with "env" here (handled in infrastructure).
  
      def preflight(self, obj_dir, compiler, linker, builder, cflags, ldflags):
          pass
-@@ -201,6 +194,7 @@ extensions = [
-                     libraries=['podofo'],
-                     lib_dirs=[podofo_lib],
-                     inc_dirs=[podofo_inc, os.path.dirname(podofo_inc)],
-+                    optional=1,
-                     error=podofo_error),
- 
-     Extension('pictureflow',
-@@ -281,9 +275,10 @@ if isosx:
+@@ -281,9 +274,10 @@ if isosx:
                  ldflags=['-framework', 'CoreServices', '-framework', 'IOKit'])
              )
  
@@ -55,7 +46,7 @@ it's correct with "env" here (handled in infrastructure).
          libraries=['usb-1.0']
      ))
  
-@@ -297,6 +292,7 @@ if islinux or isosx:
+@@ -297,6 +291,7 @@ if islinux or isosx:
          'calibre/devices/mtp/unix/upstream/music-players.h',
          'calibre/devices/mtp/unix/upstream/device-flags.h',
          ],
@@ -63,7 +54,7 @@ it's correct with "env" here (handled in infrastructure).
          libraries=['mtp']
      ))
  
-@@ -324,9 +320,9 @@ if isbsd:
+@@ -324,9 +319,9 @@ if isbsd:
      cflags.append('-pthread')
      ldflags.append('-shared')
      cflags.append('-I'+sysconfig.get_python_inc())
@@ -74,7 +65,7 @@ it's correct with "env" here (handled in infrastructure).
  if isosx:
      x, p = ('i386', 'x86_64')
      archs = ['-arch', x, '-arch', p, '-isysroot',
-@@ -533,7 +529,7 @@ class Build(Command):
+@@ -533,7 +528,7 @@ class Build(Command):
          DESTDIR = .
          TARGET = calibre
          QT *= svg
