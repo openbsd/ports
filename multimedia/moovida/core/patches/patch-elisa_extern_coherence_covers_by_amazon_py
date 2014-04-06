@@ -1,0 +1,12 @@
+$OpenBSD: patch-elisa_extern_coherence_covers_by_amazon_py,v 1.1 2014/04/06 21:10:30 sthen Exp $
+--- elisa/extern/coherence/covers_by_amazon.py.orig	Sun Apr  6 20:13:56 2014
++++ elisa/extern/coherence/covers_by_amazon.py	Sun Apr  6 20:14:02 2014
+@@ -198,7 +198,7 @@ class CoverGetter(object):
+         if(len(convert_from) and len(convert_to)):
+             #print "got_image %d, convert to %s" % (len(result), convert_to)
+             try:
+-                import Image
++                from PIL import Image
+ 
+                 im = Image.open(StringIO.StringIO(result))
+                 name,file_ext =  os.path.splitext(self.filename)

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2014/04/06 11:32:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2014/04/06 21:10:30 sthen Exp $
 
 COMMENT =		ebook management application
 
 DISTNAME =		calibre-1.30.0
-REVISION =		0
+REVISION =		1
 CATEGORIES =		textproc
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calibre/}
 EXTRACT_SUFX =		.tar.xz
@@ -34,7 +34,7 @@ COMMON_DEPENDS =	databases/py-apsw \
 			devel/xdg-utils \
 			graphics/ImageMagick \
 			graphics/libwmf \
-			graphics/py-Imaging \
+			graphics/py-Pillow \
 			net/py-dnspython \
 			graphics/png \
 			print/poppler, \

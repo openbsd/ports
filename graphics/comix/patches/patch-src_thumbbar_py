@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_thumbbar_py,v 1.1 2014/04/06 21:10:30 sthen Exp $
+--- src/thumbbar.py.orig	Sun Apr  6 18:22:54 2014
++++ src/thumbbar.py	Sun Apr  6 18:23:36 2014
+@@ -4,8 +4,8 @@ import urllib
+ 
+ import gtk
+ import gobject
+-import Image
+-import ImageDraw
++from PIL import Image
++from PIL import ImageDraw
+ 
+ import image
+ from preferences import prefs

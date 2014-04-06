@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_thumbremover_py,v 1.1 2014/04/06 21:10:30 sthen Exp $
+--- src/thumbremover.py.orig	Sun Apr  6 18:22:54 2014
++++ src/thumbremover.py	Sun Apr  6 18:23:41 2014
+@@ -7,7 +7,7 @@ import urllib
+ 
+ import gtk
+ import pango
+-import Image
++from PIL import Image
+ 
+ import encoding
+ import labels

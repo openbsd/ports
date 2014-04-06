@@ -1,22 +1,31 @@
-$OpenBSD: patch-src_comix_py,v 1.3 2013/04/29 12:57:58 gonzalo Exp $
+$OpenBSD: patch-src_comix_py,v 1.4 2014/04/06 21:10:30 sthen Exp $
 
 point python to where comix modules are installed
 
---- src/comix.py.orig	Fri Mar  6 14:54:01 2009
-+++ src/comix.py	Mon Apr 15 16:27:28 2013
+--- src/comix.py.orig	Fri Mar  6 16:54:01 2009
++++ src/comix.py	Sun Apr  6 18:23:29 2014
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env python
 +#!${MODPY_BIN}
  
  """Comix - GTK Comic Book Viewer
  
-@@ -25,6 +25,9 @@ import os
- import sys
+@@ -26,6 +26,9 @@ import sys
  import gettext
  import getopt
-+
+ 
 +# add path for comix python modules
 +sys.path.insert(0, '${PREFIX}/share/comix/src')
- 
++
  #Check for PyGTK and PIL dependencies.
  try:
+     import pygtk
+@@ -49,7 +52,7 @@ except ImportError:
+     sys.exit(1)
+ 
+ try:
+-    import Image
++    from PIL import Image
+     assert Image.VERSION >= '1.1.5'
+ except AssertionError:
+     print "You don't have the required version of the Python Imaging",

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.50 2013/05/10 06:03:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2014/04/06 21:10:30 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	DTP program
 DISTNAME=	scribus-1.4.2
+REVISION=	0
 CATEGORIES=	print
 
 HOMEPAGE=	http://www.scribus.net/
@@ -27,7 +28,7 @@ MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	devel/boost
 RUN_DEPENDS=	devel/desktop-file-utils \
-		graphics/py-Imaging \
+		graphics/py-Pillow \
 		print/ghostscript/gnu \
 		textproc/antiword \
 		misc/shared-mime-info \

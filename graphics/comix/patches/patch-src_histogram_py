@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_histogram_py,v 1.1 2014/04/06 21:10:30 sthen Exp $
+--- src/histogram.py.orig	Sun Apr  6 18:22:54 2014
++++ src/histogram.py	Sun Apr  6 18:23:46 2014
+@@ -1,9 +1,9 @@
+ """histogram.py - Draw histograms (RGB) from pixbufs."""
+ 
+ import gtk
+-import Image
+-import ImageDraw
+-import ImageOps
++from PIL import Image
++from PIL import ImageDraw
++from PIL import ImageOps
+ 
+ import image
+ 

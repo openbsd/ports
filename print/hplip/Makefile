@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2014/04/01 14:52:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.111 2014/04/06 21:10:30 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -21,6 +21,7 @@ PKGNAME-hpijs=		hpijs-${V}
 PKGNAME-gui=		hplip-gui-${V}
 
 REVISION=		0
+REVISION-main=		1
 
 SHARED_LIBS +=  hpmud		2.0 # 0.6
 SHARED_LIBS +=  hpip		2.0 # 0.1
@@ -59,7 +60,7 @@ RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS} \
 			${MODGETTEXT_RUN_DEPENDS} \
 			print/py-reportlab/reportlab \
 			x11/dbus-python \
-			graphics/py-Imaging \
+			graphics/py-Pillow \
 			print/hplip,-hpcups \
 			print/hplip,-hpaio
 

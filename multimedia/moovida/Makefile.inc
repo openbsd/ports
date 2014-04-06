@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.9 2013/11/03 22:04:44 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2014/04/06 21:10:30 sthen Exp $
 
 VERSION =	1.0.7
 CATEGORIES =	multimedia x11
@@ -24,7 +24,7 @@ RUN_DEPENDS +=	audio/libgpod,-python \
 		devel/py-twisted/web \
 		devel/py-twisted/web2 \
 		devel/py-xdg \
-		graphics/py-Imaging \
+		graphics/py-Pillow \
 		graphics/py-cairo \
 		graphics/py-pigment \
 		multimedia/coherence \

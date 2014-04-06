@@ -1,0 +1,12 @@
+$OpenBSD: patch-mime_comicthumb,v 1.1 2014/04/06 21:10:30 sthen Exp $
+--- mime/comicthumb.orig	Sun Apr  6 18:22:54 2014
++++ mime/comicthumb	Sun Apr  6 18:23:51 2014
+@@ -22,7 +22,7 @@ import tarfile
+ import subprocess
+ 
+ try:
+-    import Image
++    from PIL import Image
+ except ImportError:
+     print '! Could not import the Image module (PIL).'
+     print __doc__

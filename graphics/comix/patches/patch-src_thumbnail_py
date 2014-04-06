@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_thumbnail_py,v 1.1 2014/04/06 21:10:30 sthen Exp $
+--- src/thumbnail.py.orig	Sun Apr  6 18:22:54 2014
++++ src/thumbnail.py	Sun Apr  6 18:23:39 2014
+@@ -15,7 +15,7 @@ import shutil
+ import tempfile
+ 
+ import gtk
+-import Image
++from PIL import Image
+ 
+ import archive
+ import constants

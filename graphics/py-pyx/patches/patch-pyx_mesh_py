@@ -1,0 +1,21 @@
+$OpenBSD: patch-pyx_mesh_py,v 1.1 2014/04/06 21:10:30 sthen Exp $
+--- pyx/mesh.py.orig	Sun Apr  6 19:48:19 2014
++++ pyx/mesh.py	Sun Apr  6 19:48:29 2014
+@@ -110,7 +110,7 @@ class mesh(canvasitem.canvasitem):
+     def processPS(self, file, writer, context, registry, bbox):
+         if writer.mesh_as_bitmap:
+             from pyx import bitmap, canvas
+-            import Image
++            from PIL import Image
+             c = canvas.canvas()
+             c.insert(self)
+             i = Image.open(c.pipeGS("pngalpha", resolution=writer.mesh_as_bitmap_resolution, seekable=True))
+@@ -140,7 +140,7 @@ class mesh(canvasitem.canvasitem):
+     def processPDF(self, file, writer, context, registry, bbox):
+         if writer.mesh_as_bitmap:
+             from pyx import bitmap, canvas
+-            import Image
++            from PIL import Image
+             c = canvas.canvas()
+             c.insert(self)
+             i = Image.open(c.pipeGS("pngalpha", resolution=writer.mesh_as_bitmap_resolution, seekable=True))

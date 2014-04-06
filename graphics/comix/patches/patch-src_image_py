@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_image_py,v 1.1 2014/04/06 21:10:30 sthen Exp $
+--- src/image.py.orig	Sun Apr  6 18:22:54 2014
++++ src/image.py	Sun Apr  6 18:23:23 2014
+@@ -1,10 +1,10 @@
+ """image.py - Various image manipulations."""
+ 
+ import gtk
+-import Image
+-import ImageEnhance
+-import ImageOps
+-import ImageStat
++from PIL import Image
++from PIL import ImageEnhance
++from PIL import ImageOps
++from PIL import ImageStat
+ 
+ from preferences import prefs
+ 

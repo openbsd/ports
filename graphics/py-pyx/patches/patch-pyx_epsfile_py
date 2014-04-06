@@ -1,0 +1,12 @@
+$OpenBSD: patch-pyx_epsfile_py,v 1.1 2014/04/06 21:10:30 sthen Exp $
+--- pyx/epsfile.py.orig	Sun Apr  6 19:48:19 2014
++++ pyx/epsfile.py	Sun Apr  6 19:48:33 2014
+@@ -345,7 +345,7 @@ class epsfile(canvasitem.canvasitem):
+     def processPDF(self, file, writer, context, registry, bbox):
+         warnings.warn("EPS file is included as a bitmap created using pipeGS")
+         from pyx import bitmap, canvas
+-        import Image
++        from PIL import Image
+         c = canvas.canvas()
+         c.insert(self)
+         i = Image.open(c.pipeGS(device="pngalpha", resolution=600, seekable=True))

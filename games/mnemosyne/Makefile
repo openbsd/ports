@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2013/09/06 18:26:50 bcallah Exp $
+# $OpenBSD: Makefile,v 1.23 2014/04/06 21:10:30 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	flash-card tool which optimises your learning process
 
 MODPY_EGG_VERSION=2.2.1
+REVISION=	0
 DISTNAME=	Mnemosyne-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	games education
@@ -22,7 +23,7 @@ MODPY_SETUPTOOLS=yes
 
 RUN_DEPENDS=	x11/py-qt4 \
 		textproc/py-xml \
-		graphics/py-Imaging \
+		graphics/py-Pillow \
 		graphics/py-matplotlib \
 		www/py-CherryPy \
 		devel/desktop-file-utils

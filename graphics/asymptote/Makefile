@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2014/01/20 17:04:36 edd Exp $
+# $OpenBSD: Makefile,v 1.17 2014/04/06 21:10:30 sthen Exp $
 
 COMMENT=		powerful descriptive vector graphics language
 
 DISTNAME=		asymptote-2.24.src
 PKGNAME=		asymptote-2.24
 CATEGORIES=		graphics
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE=		http://asymptote.sourceforge.net/
 
@@ -21,7 +21,7 @@ WANTLIB += GL GLU c fftw3 gc glut gsl gslcblas m ncurses pthread
 WANTLIB += pthread-stubs readline sigsegv stdc++ z
 
 BUILD_DEPENDS=		print/texlive/base
-RUN_DEPENDS=		graphics/py-Imaging \
+RUN_DEPENDS=		graphics/py-Pillow \
 			print/texlive/texmf,-full \
 			${MODPY_TKINTER_DEPENDS}
 

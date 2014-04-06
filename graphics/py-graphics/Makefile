@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2013/08/07 21:32:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2014/04/06 21:10:30 sthen Exp $
 
 COMMENT=	multimedia framework for Python
 
 MODPY_EGG_VERSION= 1.5
 DISTNAME=	PyGraphics-${MODPY_EGG_VERSION}
 PKGNAME=	py-graphics-${MODPY_EGG_VERSION}
-REVISION=	6
+REVISION=	7
 EPOCH=		0
 
 CATEGORIES=	graphics
@@ -24,6 +24,6 @@ PKG_ARCH=	*
 NO_TEST=	Yes
 
 RUN_DEPENDS=	${MODPY_TKINTER_DEPENDS} \
-		graphics/py-Imaging
+		graphics/py-Pillow
 
 .include <bsd.port.mk>

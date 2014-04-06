@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_library_py,v 1.1 2014/04/06 21:10:30 sthen Exp $
+--- src/library.py.orig	Sun Apr  6 18:22:54 2014
++++ src/library.py	Sun Apr  6 18:23:44 2014
+@@ -8,8 +8,8 @@ from xml.sax.saxutils import escape as xmlescape
+ import gtk
+ import gobject
+ import pango
+-import Image
+-import ImageDraw
++from PIL import Image
++from PIL import ImageDraw
+ 
+ import archive
+ import encoding
