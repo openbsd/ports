@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2012/12/20 12:36:28 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.23 2014/04/06 06:37:56 benoit Exp $
 @bin bin/bluefish
 lib/bluefish/
 lib/bluefish/about.so
@@ -9,6 +9,7 @@ lib/bluefish/infbrowser.so
 lib/bluefish/snippets.so
 lib/bluefish/zencoding.so
 @man man/man1/bluefish.1
+share/appdata/bluefish.appdata.xml
 share/applications/bluefish.desktop
 share/bluefish/
 share/bluefish/bflang/
@@ -24,6 +25,7 @@ share/bluefish/bflang/asp.bflang2
 share/bluefish/bflang/bflang2.bflang2
 share/bluefish/bflang/c.bflang2
 share/bluefish/bflang/cfml.bflang2
+share/bluefish/bflang/chuck.bflang2
 share/bluefish/bflang/clojure.bflang2
 share/bluefish/bflang/cpp.bflang2
 share/bluefish/bflang/css-rules.bfinc
@@ -81,8 +83,20 @@ share/bluefish/bflib/bflib_php5_with_examples.xml.gz
 share/bluefish/bflib/bflib_python_2.3.xml.gz
 share/bluefish/bflib/bflib_xhtml.xml.gz
 share/bluefish/bluefish_splash.png
+share/bluefish/cssmin.py
 share/bluefish/default_accelmap
 share/bluefish/encodings
+share/bluefish/jsbeautifier/
+share/bluefish/jsbeautifier/__init__.py
+share/bluefish/jsbeautifier/unpackers/
+share/bluefish/jsbeautifier/unpackers/__init__.py
+share/bluefish/jsbeautifier/unpackers/evalbased.py
+share/bluefish/jsbeautifier/unpackers/javascriptobfuscator.py
+share/bluefish/jsbeautifier/unpackers/myobfuscate.py
+share/bluefish/jsbeautifier/unpackers/packer.py
+share/bluefish/jsbeautifier/unpackers/urlencode.py
+share/bluefish/jsbeautify
+share/bluefish/jsmin.py
 share/bluefish/lipsum/
 share/bluefish/lipsum/__init__.py
 share/bluefish/lipsum/data/
@@ -209,6 +223,14 @@ share/locale/el/LC_MESSAGES/bluefish_plugin_htmlbar.mo
 share/locale/el/LC_MESSAGES/bluefish_plugin_infbrowser.mo
 share/locale/el/LC_MESSAGES/bluefish_plugin_snippets.mo
 share/locale/el/LC_MESSAGES/bluefish_plugin_zencoding.mo
+share/locale/en/LC_MESSAGES/bluefish.mo
+share/locale/en/LC_MESSAGES/bluefish_plugin_about.mo
+share/locale/en/LC_MESSAGES/bluefish_plugin_charmap.mo
+share/locale/en/LC_MESSAGES/bluefish_plugin_entities.mo
+share/locale/en/LC_MESSAGES/bluefish_plugin_htmlbar.mo
+share/locale/en/LC_MESSAGES/bluefish_plugin_infbrowser.mo
+share/locale/en/LC_MESSAGES/bluefish_plugin_snippets.mo
+share/locale/en/LC_MESSAGES/bluefish_plugin_zencoding.mo
 share/locale/es/LC_MESSAGES/bluefish.mo
 share/locale/es/LC_MESSAGES/bluefish_plugin_about.mo
 share/locale/es/LC_MESSAGES/bluefish_plugin_charmap.mo
@@ -413,7 +435,6 @@ share/mime/packages/bluefish.xml
 share/pixmaps/
 share/pixmaps/application-x-bluefish-project.png
 share/pixmaps/bluefish.png
-share/xml/
 share/xml/bluefish/
 share/xml/bluefish/2.0/
 share/xml/bluefish/2.0/bflang2.rng

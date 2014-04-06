@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.68 2013/05/31 15:34:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2014/04/06 06:37:56 benoit Exp $
 
 COMMENT=	HTML editor for experienced web designers
 
-DISTNAME=	bluefish-2.2.3
+DISTNAME =	bluefish-2.2.5
 CATEGORIES=	www editors
 HOMEPAGE=	http://bluefish.openoffice.nl/
-REVISION=	0
 
 MASTER_SITES=	http://www.bennewitz.com/bluefish/stable/source/
 
