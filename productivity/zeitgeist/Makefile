@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2014/04/03 12:37:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2014/04/06 12:09:14 ajacoutot Exp $
 
 COMMENT =		event logging framework
 
 V =			0.9.14
 DISTNAME =		zeitgeist-${V}
 EPOCH =			0
-REVISION =		3
+REVISION =		4
 
 SHARED_LIBS +=	zeitgeist-2.0             0.0 # 0.0
 
@@ -55,5 +55,13 @@ FAKE_FLAGS=		zeitgeistdocdir="${PREFIX}/share/doc/zeitgeist/" \
 			sysconfdir="${PREFIX}/share/examples/zeitgeist/"
 
 CONFIGURE_STYLE =	gnu
+
+# http://cgit.freedesktop.org/zeitgeist/zeitgeist/patch/?id=d2c966faf4979b5745ea0df8062795fc82b9fcc1
+pre-configure:
+.for i in datahub/Makefile.in examples/vala/Makefile.in extensions/Makefile.in \
+    extensions/fts++/Makefile.in libzeitgeist/Makefile.in src/Makefile.in \
+    test/direct/Makefile.in
+	perl -pi -e 's,--target-glib=2.26,--target-glib=2.36,g' ${WRKSRC}/$i
+.endfor
 
 .include <bsd.port.mk>
