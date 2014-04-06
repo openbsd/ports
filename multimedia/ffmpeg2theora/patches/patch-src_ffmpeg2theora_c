@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_ffmpeg2theora_c,v 1.3 2014/04/06 20:13:53 brad Exp $
+
+Deal with deprecated FFmpeg API.
+
+--- src/ffmpeg2theora.c.orig	Thu Apr  3 01:58:34 2014
++++ src/ffmpeg2theora.c	Thu Apr  3 01:59:08 2014
+@@ -47,6 +47,8 @@
+ #include "ffmpeg2theora.h"
+ #include "avinfo.h"
+ 
++#define MAX_AUDIO_FRAME_SIZE 192000 // 1 second of 48khz 32bit audio
++
+ #define LENGTH(x) (sizeof(x) / sizeof(*x))
+ 
+ enum {
+@@ -1068,8 +1070,8 @@ void ff2theora_output(ff2theora this) {
+         int first = 1;
+         int audio_eos = 0, video_eos = 0, audio_done = 0, video_done = 0;
+         int ret;
+-        int16_t *audio_buf=av_malloc(4*AVCODEC_MAX_AUDIO_FRAME_SIZE);
+-        int16_t *resampled=av_malloc(4*AVCODEC_MAX_AUDIO_FRAME_SIZE);
++        int16_t *audio_buf=av_malloc(4*MAX_AUDIO_FRAME_SIZE);
++        int16_t *resampled=av_malloc(4*MAX_AUDIO_FRAME_SIZE);
+         int16_t *audio_p=NULL;
+         int no_frames;
+         int no_samples;
+@@ -1530,7 +1532,7 @@ void ff2theora_output(ff2theora this) {
+                 while((audio_eos && !audio_done) || avpkt.size > 0 ) {
+                     int samples=0;
+                     int samples_out=0;
+-                    int data_size = 4*AVCODEC_MAX_AUDIO_FRAME_SIZE;
++                    int data_size = 4*MAX_AUDIO_FRAME_SIZE;
+                     int bytes_per_sample = av_get_bytes_per_sample(aenc->sample_fmt);
+ 
+                     if (avpkt.size > 0) {
