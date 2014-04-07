@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2014/03/31 17:06:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2014/04/07 21:16:45 steven Exp $
 
 COMMENT=	syslogd replacement
 
@@ -6,7 +6,7 @@ SHARED_ONLY =	Yes
 
 V =		3.4.7
 DISTNAME =	syslog-ng-$V
-REVISION =	1
+REVISION =	2
 CATEGORIES =	sysutils
 
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
@@ -41,6 +41,7 @@ CONFIGURE_ARGS +=	--disable-tcp-wrapper \
 			--with-librabbitmq-client=no \
 			--disable-mongodb \
 			--disable-amqp \
+			--disable-geoip \
 			--without-libnet \
 			--with-ivykis=system \
 			--enable-sql
