@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2012/06/28 23:10:48 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2014/04/07 12:31:47 sthen Exp $
 @pkgpath net/nagios/plugins
+@pkgpath net/nagios/plugins,-ntp
+@conflict nagios-plugins-ntp-*
 @comment lib/charset.alias
 libexec/nagios/
 @bin libexec/nagios/check_apt
@@ -30,6 +32,7 @@ libexec/nagios/check_mailq
 libexec/nagios/check_nntp
 libexec/nagios/check_nntps
 @bin libexec/nagios/check_nt
+@bin libexec/nagios/check_ntp
 @bin libexec/nagios/check_ntp_peer
 @bin libexec/nagios/check_ntp_time
 @bin libexec/nagios/check_nwstat
@@ -58,10 +61,5 @@ libexec/nagios/check_wave
 libexec/nagios/utils.pm
 libexec/nagios/utils.sh
 share/doc/pkg-readmes/${FULLPKGNAME}
-share/locale/
-share/locale/de/
-share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/nagios-plugins.mo
-share/locale/fr/
-share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/nagios-plugins.mo

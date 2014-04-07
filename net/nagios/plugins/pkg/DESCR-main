@@ -1,9 +1,5 @@
-Nagios monitors hosts and services on your network. Actual host and service
-checks are performed by separate plugins which return the host or service
-status to Nagios. This package provides the base plugins for Nagios.
+Monitoring-plugins provides host and service checks suitable for use with
+Nagios, Icinga and compatible programs, using a simple interface based on exit
+codes and simple text output.
 
-FLAVORS:
-	no_db		do not build database related packages
-	no_ntp		do not build package with ntp plugin
-	no_samba	do not build package with samba plugin
-	no_snmp		do not build snmp related packages
+This package contains the base plugins.

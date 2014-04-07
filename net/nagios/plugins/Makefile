@@ -1,29 +1,29 @@
-# $OpenBSD: Makefile,v 1.42 2014/01/16 22:35:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2014/04/07 12:31:47 sthen Exp $
 
-COMMENT-main=	nagios base plugins
-COMMENT-dbi=	dbi plugin
-COMMENT-fping=	fping plugin
-COMMENT-game=	gameserver plugin
-COMMENT-ldap=	ldap plugin
-COMMENT-mysql=	mysql plugin
-COMMENT-ntp=	ntp plugin
-COMMENT-pgsql=	postgresql plugin
-COMMENT-samba=	samba plugin
-COMMENT-snmp=	plugins using snmp
+COMMENT-main=	monitoring plugins (for Nagios, Icinga, etc)
+COMMENT-dbi=	dbi monitoring plugin
+COMMENT-fping=	fping monitoring plugin
+COMMENT-game=	gameserver monitoring plugin
+COMMENT-ldap=	ldap monitoring plugin
+COMMENT-mysql=	mysql monitoring plugin
+COMMENT-pgsql=	postgresql monitoring plugin
+COMMENT-samba=	samba monitoring plugin
+COMMENT-snmp=	monitoring plugins using snmp
 
 V=		1.5
-REVISION=	0
+REVISION=	2
+# name currently mid-transition from nagios-plugins
+#DISTNAME=	monitoring-plugins-$V
 DISTNAME=	nagios-plugins-$V
-PKGNAME-main=	nagios-plugins-$V
-PKGNAME-dbi=	nagios-plugins-dbi-$V
-PKGNAME-fping=	nagios-plugins-fping-$V
-PKGNAME-game=	nagios-plugins-game-$V
-PKGNAME-ldap=	nagios-plugins-ldap-$V
-PKGNAME-mysql=	nagios-plugins-mysql-$V
-PKGNAME-ntp=	nagios-plugins-ntp-$V
-PKGNAME-pgsql=	nagios-plugins-pgsql-$V
-PKGNAME-samba=	nagios-plugins-samba-$V
-PKGNAME-snmp=	nagios-plugins-snmp-$V
+PKGNAME-main=	monitoring-plugins-$V
+PKGNAME-dbi=	monitoring-plugins-dbi-$V
+PKGNAME-fping=	monitoring-plugins-fping-$V
+PKGNAME-game=	monitoring-plugins-game-$V
+PKGNAME-ldap=	monitoring-plugins-ldap-$V
+PKGNAME-mysql=	monitoring-plugins-mysql-$V
+PKGNAME-pgsql=	monitoring-plugins-pgsql-$V
+PKGNAME-samba=	monitoring-plugins-samba-$V
+PKGNAME-snmp=	monitoring-plugins-snmp-$V
 CATEGORIES=	net
 
 HOMEPAGE=	https://www.monitoring-plugins.org/
@@ -33,97 +33,87 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-# see below for WANTLIB
+WANTLIB=	c pthread
+WANTLIB-main=	${WANTLIB} crypto m ssl
+MODULES=	devel/gettext
 
 MASTER_SITES=	https://www.monitoring-plugins.org/download/
-
-BUILD_DEPENDS=	games/qstat \
-		net/fping
 
 FAKE_FLAGS=	setuid_root_mode=0555
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
-CONFIGURE_ENV=	PATH_TO_FPING=${LOCALBASE}/sbin/fping \
-		PATH_TO_NTPDATE=${LOCALBASE}/sbin/ntpdate \
-		PATH_TO_NTPDC=${LOCALBASE}/sbin/ntpdc \
-		PATH_TO_NTPQ=${LOCALBASE}/sbin/ntpq \
-		CPPFLAGS="$$(krb5-config --cflags)"
-CONFIGURE_ARGS+=--libexecdir=${PREFIX}/libexec/nagios \
+CONFIGURE_ENV=	CPPFLAGS="$$(krb5-config --cflags)"
+CONFIGURE_ARGS+= --libexecdir=${PREFIX}/libexec/nagios \
 		--with-cgiurl=/cgi-bin/nagios \
 		--with-openssl=/usr \
 		--without-gnutls
+# can autodetect command paths, but hard-coding avoids build dependencies
+CONFIGURE_ARGS+= --with-fping-command=${LOCALBASE}/sbin/fping \
+		--with-fping6-command=${LOCALBASE}/sbin/fping6 \
+		--with-smbclient-command=${LOCALBASE}/bin/smbclient \
+		--with-snmpget-command=${LOCALBASE}/bin/snmpget \
+		--with-snmpgetnext-command=${LOCALBASE}/bin/snmpgetnext \
+		--with-qstat-command=${LOCALBASE}/bin/qstat
+# listed here to make it easier to move BIND to ports
+CONFIGURE_ARGS+= --with-dig-command=/usr/sbin/dig \
+		--with-nslookup-command=/usr/sbin/nslookup
+# missing: radius
 
-PSEUDO_FLAVORS=	no_db no_ntp no_samba no_snmp
+CFLAGS+=	-DLDAP_DEPRECATED
+
+PSEUDO_FLAVORS=	no_db
 FLAVOR?=
 
-MULTI_PACKAGES=	-main -fping -game
-
-.if ! ${FLAVOR:Mno_db}
-MULTI_PACKAGES+=-dbi -ldap -mysql -pgsql
-CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} \
-		--with-pgsql=${LOCALBASE}
-CFLAGS+=	-DLDAP_DEPRECATED
-.else
-CONFIGURE_ARGS+=--without-dbi --without-mysql --without-pgsql
-.endif
-
-.if ! ${FLAVOR:Mno_ntp}
-MULTI_PACKAGES+=-ntp
-BUILD_DEPENDS+=	net/ntp
-.endif
-
-.if ! ${FLAVOR:Mno_samba}
-MULTI_PACKAGES+=-samba
-BUILD_DEPENDS+=	net/samba
-.endif
-
-.if ! ${FLAVOR:Mno_snmp}
-MULTI_PACKAGES+=-snmp
-BUILD_DEPENDS+=	net/p5-Net-SNMP \
-		net/net-snmp
-.endif
-
-WANTLIB=		c pthread
-
-WANTLIB-dbi=		${WANTLIB} dbi m
-LIB_DEPENDS-dbi=	databases/libdbi \
-			${LIB_DEPENDS}
-
-RUN_DEPENDS-fping=	net/fping
-
-RUN_DEPENDS-game=	games/qstat
-
-WANTLIB-ldap+=		${WANTLIB} asn1 com_err crypto gssapi krb5
-WANTLIB-ldap+=		lber-2.4 ldap-2.4 sasl2 ssl
-WANTLIB-ldap+=		heimbase roken wind
-LIB_DEPENDS-ldap=	databases/openldap \
-			${LIB_DEPENDS}
-
-WANTLIB-mysql=		${WANTLIB} crypto m mysqlclient ssl z
-LIB_DEPENDS-mysql=	databases/mysql \
-			${LIB_DEPENDS}
-
-WANTLIB-ntp=		${WANTLIB} m
-RUN_DEPENDS-ntp=	net/ntp
-
-WANTLIB-pgsql+=		${WANTLIB} com_err crypto pq ssl
-WANTLIB-pgsql+=		asn1 krb5 heimbase roken wind
-LIB_DEPENDS-pgsql=	databases/postgresql \
-			${LIB_DEPENDS}
-
-LIB_DEPENDS-samba=
-WANTLIB-samba=
-RUN_DEPENDS-samba=	net/samba
-
-RUN_DEPENDS-snmp=	net/net-snmp \
-			net/p5-Net-SNMP
-
-WANTLIB-main=		${WANTLIB} crypto m ssl
-
-MODULES=		devel/gettext
+MULTI_PACKAGES= -main -fping -game -samba -snmp -dbi -ldap -mysql -pgsql
 
 # many broken tests, but...
 TEST_IS_INTERACTIVE=Yes
+
+.include <bsd.port.arch.mk>
+
+.if ${FLAVOR:Mno_db}
+BUILD_PACKAGES := ${BUILD_PACKAGES:N-dbi:N-ldap:N-mysql:N-pgsql}
+.endif
+
+# no build dependencies, or lightweight build dependencies
+BUILD_DEPENDS+=		net/p5-Net-SNMP
+RUN_DEPENDS-fping=	${RUN_DEPENDS} net/fping
+RUN_DEPENDS-game=	${RUN_DEPENDS} games/qstat
+LIB_DEPENDS-samba=
+WANTLIB-samba=
+RUN_DEPENDS-samba=	net/samba
+RUN_DEPENDS-snmp=	${RUN_DEPENDS} net/net-snmp net/p5-Net-SNMP
+
+# MYSQL
+.if !${BUILD_PACKAGES:M-mysql}
+CONFIGURE_ARGS += --without-mysql
+.else
+CONFIGURE_ARGS += --with-mysql=${LOCALBASE}
+.endif
+LIB_DEPENDS-mysql = ${LIB_DEPENDS} databases/mysql
+WANTLIB-mysql = ${WANTLIB} crypto m mysqlclient ssl z
+
+# PGSQL
+.if !${BUILD_PACKAGES:M-pgsql}
+CONFIGURE_ARGS += --without-pgsql
+.else
+CONFIGURE_ARGS += --with-pgsql=${LOCALBASE}
+.endif
+LIB_DEPENDS-pgsql = ${LIB_DEPENDS} databases/postgresql
+WANTLIB-pgsql += ${WANTLIB} com_err crypto pq ssl
+WANTLIB-pgsql += asn1 krb5 heimbase roken wind
+
+# DBI
+.if !${BUILD_PACKAGES:M-dbi}
+CONFIGURE_ARGS += --without-dbi
+.endif
+LIB_DEPENDS-dbi = ${LIB_DEPENDS} databases/libdbi
+WANTLIB-dbi = ${WANTLIB} dbi m
+
+# LDAP
+LIB_DEPENDS-ldap = ${LIB_DEPENDS} databases/openldap
+WANTLIB-ldap += ${WANTLIB} asn1 com_err crypto gssapi krb5
+WANTLIB-ldap += lber-2.4 ldap-2.4 sasl2 ssl heimbase roken wind
 
 .include <bsd.port.mk>
