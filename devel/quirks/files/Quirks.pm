@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.148 2014/04/06 21:10:22 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.149 2014/04/07 12:32:20 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -339,6 +339,17 @@ my $stem_extensions = {
 	'p5-Mozilla-CA' => 'p5-Mozilla-CA-Fake',
 	'gnome-extra' => 'gnome-extras',
 	'py-Imaging' => 'py-Pillow',
+	'p5-Nagios-Plugin' => 'p5-Monitoring-Plugin',
+	'nagios-plugins' => 'monitoring-plugins',
+	'nagios-plugins-fping' => 'monitoring-plugins-fping',
+	'nagios-plugins-game' => 'monitoring-plugins-game',
+	'nagios-plugins-ntp' => 'monitoring-plugins', # merged to -main
+	'nagios-plugins-samba' => 'monitoring-plugins-samba',
+	'nagios-plugins-snmp' => 'monitoring-plugins-snmp',
+	'nagios-plugins-dbi' => 'monitoring-plugins-dbi',
+	'nagios-plugins-ldap' => 'monitoring-plugins-ldap',
+	'nagios-plugins-mysql' => 'monitoring-plugins-mysql',
+	'nagios-plugins-pgsql' => 'monitoring-plugins-pgsql',
 };
 
 # reasons for obsolete packages
