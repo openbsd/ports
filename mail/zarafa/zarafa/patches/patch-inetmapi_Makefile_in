@@ -1,0 +1,12 @@
+$OpenBSD: patch-inetmapi_Makefile_in,v 1.1 2014/04/07 13:46:06 robert Exp $
+--- inetmapi/Makefile.in.orig	Sun Apr  6 20:36:45 2014
++++ inetmapi/Makefile.in	Sun Apr  6 20:37:10 2014
+@@ -329,7 +329,7 @@ AM_CPPFLAGS = ${ZCPPFLAGS} $(DEBUGFLAGS) $(BOOST_CPPFL
+ 	$(VMIME_CFLAGS) \
+ 	-I$(top_srcdir)/mapi4linux/include -I$(top_srcdir)/provider/common  -I${top_srcdir}/common \
+ 	-I${top_srcdir}/libfreebusy -I${top_srcdir}/libicalmapi \
+-    -I$//usr/include/libxml2
++	$(XML2_CFLAGS)
+ 
+ 
+ # Add '-z now' -> -Wl,-z, -Wl,now to LD flags so that we do early binding of symbols. This fixes

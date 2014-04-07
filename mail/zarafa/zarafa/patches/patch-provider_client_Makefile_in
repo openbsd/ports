@@ -1,12 +1,12 @@
-$OpenBSD: patch-provider_client_Makefile_in,v 1.19 2013/11/01 11:20:20 robert Exp $
---- provider/client/Makefile.in.orig	Wed Oct 30 14:38:26 2013
-+++ provider/client/Makefile.in	Wed Oct 30 14:38:30 2013
-@@ -377,7 +377,7 @@ AM_CPPFLAGS = ${ZCPPFLAGS} $(DEBUGFLAGS) $(BOOST_CPPFL
+$OpenBSD: patch-provider_client_Makefile_in,v 1.20 2014/04/07 13:46:06 robert Exp $
+--- provider/client/Makefile.in.orig	Mon Mar 31 12:59:11 2014
++++ provider/client/Makefile.in	Sun Apr  6 19:53:27 2014
+@@ -381,7 +381,7 @@ AM_CPPFLAGS = ${ZCPPFLAGS} $(DEBUGFLAGS) $(BOOST_CPPFL
  	-I${top_srcdir}/common						\
  	-I${top_srcdir}/zarafa-libsync
  
--libzarafaclient_la_LDFLAGS = ${AM_LDFLAGS} -avoid-version
-+libzarafaclient_la_LDFLAGS = ${AM_LDFLAGS}
+-libzarafaclient_la_LDFLAGS = ${AM_LDFLAGS} -avoid-version -module
++libzarafaclient_la_LDFLAGS = ${AM_LDFLAGS} -module
  libzarafaclient_la_LIBADD = $(GSOAP_LIBS) $(SSL_LIBS)	\
  	${top_builddir}/provider/soap/libgsoap.la			\
  	${top_builddir}/provider/soap/libsoapclient.la		\

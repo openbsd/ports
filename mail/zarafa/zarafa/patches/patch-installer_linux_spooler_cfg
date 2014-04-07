@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_spooler_cfg,v 1.7 2013/01/27 13:06:20 robert Exp $
---- installer/linux/spooler.cfg.orig	Wed Jan 23 12:48:53 2013
-+++ installer/linux/spooler.cfg	Sun Jan 27 12:59:52 2013
+$OpenBSD: patch-installer_linux_spooler_cfg,v 1.8 2014/04/07 13:46:06 robert Exp $
+--- installer/linux/spooler.cfg.orig	Thu Jan 30 12:43:17 2014
++++ installer/linux/spooler.cfg	Mon Feb  3 11:25:37 2014
 @@ -11,16 +11,16 @@ smtp_port = 25
  server_socket	=	file:///var/run/zarafa
  
@@ -20,9 +20,9 @@ $OpenBSD: patch-installer_linux_spooler_cfg,v 1.7 2013/01/27 13:06:20 robert Exp
 -running_path = /
 +running_path = /var/empty
  
- ##############################################################
- # SPOOLER LOG SETTINGS
-@@ -45,7 +45,7 @@ log_timestamp	=	1
+ # create memory coredumps upon crash in the running_path directory
+ coredump_enabled = no
+@@ -48,7 +48,7 @@ log_timestamp	=	1
  #       to use this type of login method
  
  # Login to the Zarafa server using this SSL Key
@@ -31,7 +31,7 @@ $OpenBSD: patch-installer_linux_spooler_cfg,v 1.7 2013/01/27 13:06:20 robert Exp
  
  # The password of the SSL Key
  sslkey_pass = replace-with-server-cert-password
-@@ -140,13 +140,13 @@ archive_on_send = no
+@@ -143,13 +143,13 @@ archive_on_send = no
  plugin_enabled = yes
  
  # Path to the spooler plugin manager

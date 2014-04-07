@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.19 2013/11/01 11:20:20 robert Exp $
---- doc/Makefile.in.orig	Sat Sep 28 00:00:05 2013
-+++ doc/Makefile.in	Wed Oct 30 14:32:59 2013
-@@ -609,7 +609,7 @@ $(BUILT_SOURCES): manual.xml
+$OpenBSD: patch-doc_Makefile_in,v 1.20 2014/04/07 13:46:06 robert Exp $
+--- doc/Makefile.in.orig	Thu Jan 30 12:44:46 2014
++++ doc/Makefile.in	Mon Feb  3 11:25:37 2014
+@@ -611,7 +611,7 @@ $(BUILT_SOURCES): manual.xml
  	@if [ -z $(PROG_XMLTO) ]; then \
  		echo Please install xmlto to generate manual pages; \
  	else \

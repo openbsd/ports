@@ -1,0 +1,46 @@
+$OpenBSD: patch-libcalendar_src_OccurrenceData_h,v 1.1 2014/04/07 13:46:06 robert Exp $
+
+On OpenBSD, _U is defined in ctype.h.
+
+--- libcalendar/src/OccurrenceData.h.orig	Mon Mar  3 15:40:21 2014
++++ libcalendar/src/OccurrenceData.h	Mon Mar  3 15:40:34 2014
+@@ -70,13 +70,13 @@ namespace details {
+ 		typedef _T value_type;
+ 
+ 		TrackedValue();
+-		template <typename _U>
+-		TrackedValue(const _U &value);
++		template <typename _ZCPU>
++		TrackedValue(const _ZCPU &value);
+ 		~TrackedValue();
+ 
+ 		operator const_ref () const;
+-		template <typename _U>
+-		void set(const _U &value);
++		template <typename _ZCPU>
++		void set(const _ZCPU &value);
+ 		bool dirty() const;
+ 		void mark_clean();
+ 
+@@ -97,8 +97,8 @@ namespace details {
+ 	{ }
+ 
+ 	template <typename _T>
+-	template <typename _U>
+-	TrackedValue<_T>::TrackedValue(const _U &value)
++	template <typename _ZCPU>
++	TrackedValue<_T>::TrackedValue(const _ZCPU &value)
+ 	: m_initialData(value)
+ 	, m_lpCurrentData(NULL)
+ 	{ }
+@@ -116,8 +116,8 @@ namespace details {
+ 	}
+ 
+ 	template <typename _T>
+-	template <typename _U>
+-	void TrackedValue<_T>::set(const _U &value) {
++	template <typename _ZCPU>
++	void TrackedValue<_T>::set(const _ZCPU &value) {
+ 		if (m_lpCurrentData == NULL)
+ 			m_lpCurrentData = new value_type(value);
+ 		else

@@ -1,10 +1,10 @@
-$OpenBSD: patch-common_mapi_ptr_mapi_object_ptr_h,v 1.6 2011/12/22 17:10:04 ajacoutot Exp $
+$OpenBSD: patch-common_mapi_ptr_mapi_object_ptr_h,v 1.7 2014/04/07 13:46:06 robert Exp $
 
 On OpenBSD, _P and _U are defined in ctype.h.
 
---- common/mapi_ptr/mapi_object_ptr.h.orig	Thu Dec 22 01:02:34 2011
-+++ common/mapi_ptr/mapi_object_ptr.h	Thu Dec 22 12:14:19 2011
-@@ -142,13 +142,13 @@ class mapi_object_ptr (public)
+--- common/mapi_ptr/mapi_object_ptr.h.orig	Thu Jan 30 13:41:33 2014
++++ common/mapi_ptr/mapi_object_ptr.h	Mon Feb  3 11:25:37 2014
+@@ -134,13 +134,13 @@ class mapi_object_ptr (public)
  		std::swap(m_lpObject, other.m_lpObject);
  	}
  	
@@ -20,18 +20,18 @@ On OpenBSD, _P and _U are defined in ctype.h.
 -			hr = m_lpObject->QueryInterface(_U::iid, (void**)&lpNewObject);
 +			hr = m_lpObject->QueryInterface(_ZCPU::iid, (void**)&lpNewObject);
  			if (hr == hrSuccess)
- 				refResult = lpNewObject;
+ 				refResult.reset(lpNewObject, false);
  
-@@ -170,7 +170,7 @@ class mapi_object_ptr (public)
+@@ -162,7 +162,7 @@ class mapi_object_ptr (public)
  				if (HrGetOneProp(m_lpObject, PR_EC_OBJECT, &ptrPropValue) != hrSuccess)
  					goto exit;	// hr is still MAPI_E_INTERFACE_NOT_SUPPORTED
  
 -				hr = ((IECUnknown*)ptrPropValue->Value.lpszA)->QueryInterface(_U::iid, (void**)&lpNewObject);
 +				hr = ((IECUnknown*)ptrPropValue->Value.lpszA)->QueryInterface(_ZCPU::iid, (void**)&lpNewObject);
  				if (hr == hrSuccess)
- 					refResult = lpNewObject;
+ 					refResult.reset(lpNewObject, false);
  			}
-@@ -196,9 +196,9 @@ class mapi_object_ptr (public)
+@@ -188,9 +188,9 @@ class mapi_object_ptr (public)
  		return m_lpObject;
  	}
  

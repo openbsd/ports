@@ -1,19 +1,19 @@
-$OpenBSD: patch-common_Makefile_in,v 1.20 2013/11/01 11:20:20 robert Exp $
---- common/Makefile.in.orig	Wed Oct 30 14:34:15 2013
-+++ common/Makefile.in	Wed Oct 30 14:59:20 2013
-@@ -405,7 +405,7 @@ AM_CPPFLAGS = ${ZCPPFLAGS} $(DEBUGFLAGS) $(BOOST_CPPFL
+$OpenBSD: patch-common_Makefile_in,v 1.21 2014/04/07 13:46:06 robert Exp $
+--- common/Makefile.in.orig	Mon Feb  3 11:29:34 2014
++++ common/Makefile.in	Mon Feb  3 11:31:14 2014
+@@ -407,7 +407,7 @@ AM_CPPFLAGS = ${ZCPPFLAGS} $(DEBUGFLAGS) $(BOOST_CPPFL
  	-I${top_srcdir}/mapi4linux/include -I${top_srcdir}/provider/common \
  	-I${top_srcdir}/libfreebusy $(MYSQL_INCLUDES)
  
 -libcommon_mapi_la_LDFLAGS = ${AM_LDFLAGS} -static
 +libcommon_mapi_la_LDFLAGS = ${AM_LDFLAGS}
- libcommon_mapi_la_SOURCES = CommonUtil.cpp				\
- 			rtfutil.cpp									\
- 			codepage.cpp								\
-@@ -428,8 +428,9 @@ libcommon_mapi_la_SOURCES = CommonUtil.cpp				\
- 			IStreamAdapter.cpp							\
- 			MAPIConsoleTable.cpp						\
- 			ECMAPIDebug.cpp
+ libcommon_mapi_la_SOURCES = CommonUtil.cpp  \
+ 			rtfutil.cpp					    \
+ 			codepage.cpp					\
+@@ -431,8 +431,9 @@ libcommon_mapi_la_SOURCES = CommonUtil.cpp  \
+ 			MAPIConsoleTable.cpp			\
+ 			ECMAPIDebug.cpp					\
+ 			MAPIErrors.cpp
 +libcommon_mapi_la_LIBADD = -lpthread ${ICU_LIBS}
  
 -libcommon_util_la_LDFLAGS = ${AM_LDFLAGS} -static
@@ -21,14 +21,13 @@ $OpenBSD: patch-common_Makefile_in,v 1.20 2013/11/01 11:20:20 robert Exp $
  libcommon_util_la_SOURCES = platform.cpp platform.linux.cpp md5.cpp \
  	base64.cpp ECLogger.cpp ECConfig.cpp ECConfigImpl.cpp \
  	ECFifoBuffer.cpp ECSerializer.cpp ECCache.cpp my_getopt.cpp \
-@@ -440,14 +441,18 @@ libcommon_util_la_SOURCES = platform.cpp platform.linu
+@@ -443,14 +444,17 @@ libcommon_util_la_SOURCES = platform.cpp platform.linu
  	ECGetText.cpp threadutil.cpp ECRestriction.cpp userutil.cpp \
  	ECFeatures.cpp ECACL.cpp fileutil.cpp ECThreadPool.cpp \
  	ConsoleTable.cpp $(am__append_1)
 -libcommon_ssl_la_LDFLAGS = ${AM_LDFLAGS} -static
 +libcommon_util_la_LIBADD = -lpthread ${BOOST_FILESYSTEM_LIBS} ${BOOST_SYSTEM_LIBS} ${ICU_LIBS}
 +libcommon_ssl_la_LDFLAGS = ${AM_LDFLAGS}
-+
  libcommon_ssl_la_SOURCES = \
  			SSLUtil.cpp								\
  			ECChannelClient.cpp						\

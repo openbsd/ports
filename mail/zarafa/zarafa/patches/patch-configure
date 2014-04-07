@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.29 2013/11/01 11:20:20 robert Exp $
---- configure.orig	Wed Oct 30 14:36:25 2013
-+++ configure	Wed Oct 30 14:38:09 2013
-@@ -18812,68 +18812,6 @@ rm -f core conftest.err conftest.$ac_objext \
+$OpenBSD: patch-configure,v 1.30 2014/04/07 13:46:06 robert Exp $
+--- configure.orig	Thu Jan 30 12:44:44 2014
++++ configure	Mon Feb  3 11:25:37 2014
+@@ -18850,68 +18850,6 @@ rm -f core conftest.err conftest.$ac_objext \
  
  LIBS=$LIBS_system
  
@@ -70,7 +70,7 @@ $OpenBSD: patch-configure,v 1.29 2013/11/01 11:20:20 robert Exp $
  # Only specific links with uuid and dl, clients only with crypto and ssl for ssl connections
  SSL_LIBS=
  # TODO: version of ssl check??
-@@ -18884,7 +18822,7 @@ if test "${ac_cv_lib_ssl_SSL_accept+set}" = set; then 
+@@ -18922,7 +18860,7 @@ if test "${ac_cv_lib_ssl_SSL_accept+set}" = set; then 
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS

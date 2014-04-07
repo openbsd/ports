@@ -1,7 +1,7 @@
-$OpenBSD: patch-ECtools_zarafa-admin_zarafa-admin_cpp,v 1.4 2013/03/31 13:01:19 robert Exp $
---- ECtools/zarafa-admin/zarafa-admin.cpp.orig	Thu Feb 28 17:13:17 2013
-+++ ECtools/zarafa-admin/zarafa-admin.cpp	Sun Mar 31 14:29:43 2013
-@@ -2745,11 +2745,13 @@ int main(int argc, char* argv[])
+$OpenBSD: patch-ECtools_zarafa-admin_zarafa-admin_cpp,v 1.5 2014/04/07 13:46:06 robert Exp $
+--- ECtools/zarafa-admin/zarafa-admin.cpp.orig	Mon Mar 31 13:45:37 2014
++++ ECtools/zarafa-admin/zarafa-admin.cpp	Sun Apr  6 19:53:26 2014
+@@ -2718,11 +2718,13 @@ int main(int argc, char* argv[])
  		case OPT_UTF8: {
  			// set early, so other arguments are parsed in this charset.
  			std::string locale;

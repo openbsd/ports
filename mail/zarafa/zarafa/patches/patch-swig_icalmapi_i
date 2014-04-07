@@ -1,13 +1,13 @@
-$OpenBSD: patch-swig_icalmapi_i,v 1.1 2014/01/04 09:36:27 landry Exp $
+$OpenBSD: patch-swig_icalmapi_i,v 1.2 2014/04/07 13:46:06 robert Exp $
 Fix build with SWIG 2.0.x
 https://jira.zarafa.com/browse/ZCP-11548
 https://jira.zarafa.com/secure/attachment/22284/zarafa-7.1.4-swig20.patch
---- swig/icalmapi.i.orig	Sat Jan  4 10:13:46 2014
-+++ swig/icalmapi.i	Sat Jan  4 10:14:14 2014
+--- swig/icalmapi.i.orig	Mon Feb  3 11:36:11 2014
++++ swig/icalmapi.i	Mon Feb  3 11:36:46 2014
 @@ -24,14 +24,14 @@
  	$1 = &temp;
  }
- %typemap(argout) (eIcalType* ) {
+ %typemap(argout) eIcalType* value {
 -	%append_output(SWIG_From_long(*$1));
 +	%append_output(PyInt_FromLong(*$1));
  }
@@ -15,7 +15,7 @@ https://jira.zarafa.com/secure/attachment/22284/zarafa-7.1.4-swig20.patch
  %typemap(in,numinputs=0) (time_t *) (time_t temp) {
  	$1 = &temp;
  }
- %typemap(argout) (time_t* ) {
+ %typemap(argout) time_t* value {
 -	%append_output(SWIG_From_long(*$1));
 +	%append_output(PyInt_FromLong(*$1));
  }

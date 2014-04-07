@@ -1,10 +1,10 @@
-$OpenBSD: patch-ECtools_zarafa-search_ECIndexDB_cpp,v 1.3 2013/03/31 13:01:19 robert Exp $
+$OpenBSD: patch-ECtools_zarafa-search_ECIndexDB_cpp,v 1.4 2014/04/07 13:46:06 robert Exp $
 
 Fix buil with clucene-core >= 2.x
 
---- ECtools/zarafa-search/ECIndexDB.cpp.orig	Thu Feb 28 17:13:17 2013
-+++ ECtools/zarafa-search/ECIndexDB.cpp	Sun Mar 31 14:29:43 2013
-@@ -68,7 +68,7 @@
+--- ECtools/zarafa-search/ECIndexDB.cpp.orig	Thu Jan 30 13:41:34 2014
++++ ECtools/zarafa-search/ECIndexDB.cpp	Mon Feb  3 11:25:37 2014
+@@ -69,7 +69,7 @@
  #include <string>
  #include <algorithm>
  
@@ -13,7 +13,7 @@ Fix buil with clucene-core >= 2.x
  
  using namespace kyotocabinet;
  
-@@ -305,7 +305,7 @@ HRESULT ECIndexDB::AddTerm(folderid_t folder, docid_t 
+@@ -314,7 +314,7 @@ HRESULT ECIndexDB::AddTerm(folderid_t folder, docid_t 
          unsigned int len;
          unsigned int keylen;
          

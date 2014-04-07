@@ -1,6 +1,6 @@
-$OpenBSD: patch-common_platform_linux_h,v 1.13 2012/08/30 14:28:22 ajacoutot Exp $
---- common/platform.linux.h.orig	Wed Aug  8 17:14:57 2012
-+++ common/platform.linux.h	Wed Aug 29 10:16:58 2012
+$OpenBSD: patch-common_platform_linux_h,v 1.14 2014/04/07 13:46:06 robert Exp $
+--- common/platform.linux.h.orig	Thu Jan 30 13:41:33 2014
++++ common/platform.linux.h	Mon Feb  3 11:25:37 2014
 @@ -63,8 +63,16 @@
  #include <dlfcn.h>
  #include <stddef.h>
@@ -27,7 +27,7 @@ $OpenBSD: patch-common_platform_linux_h,v 1.13 2012/08/30 14:28:22 ajacoutot Exp
  #else
  inline int _vsnprintf_l(char *str, size_t size, const char *format, locale_t locale, va_list ap) {
  	locale_t prev = uselocale(locale);
-@@ -676,7 +686,11 @@ time_t GetProcessTime();
+@@ -683,7 +693,11 @@ time_t GetProcessTime();
  
  #ifndef ntohll
  	#if __BYTE_ORDER == __LITTLE_ENDIAN
@@ -39,7 +39,7 @@ $OpenBSD: patch-common_platform_linux_h,v 1.13 2012/08/30 14:28:22 ajacoutot Exp
  	#else
  		#define ntohll(x) (x)
  	#endif
-@@ -684,14 +698,18 @@ time_t GetProcessTime();
+@@ -691,14 +705,18 @@ time_t GetProcessTime();
  
  #ifndef htonll
  	#if __BYTE_ORDER == __LITTLE_ENDIAN

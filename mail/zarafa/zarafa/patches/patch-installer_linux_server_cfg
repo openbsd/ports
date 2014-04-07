@@ -1,16 +1,16 @@
-$OpenBSD: patch-installer_linux_server_cfg,v 1.18 2013/02/04 07:14:20 ajacoutot Exp $
---- installer/linux/server.cfg.orig	Sun Jan 27 13:00:14 2013
-+++ installer/linux/server.cfg	Sun Jan 27 13:02:27 2013
+$OpenBSD: patch-installer_linux_server_cfg,v 1.19 2014/04/07 13:46:06 robert Exp $
+--- installer/linux/server.cfg.orig	Mon Feb  3 11:31:18 2014
++++ installer/linux/server.cfg	Mon Feb  3 11:33:18 2014
 @@ -42,16 +42,16 @@ local_admin_users	= root
  system_email_address	= postmaster@localhost
  
  # drop privileges and run the process as this user
 -run_as_user		= 
-+run_as_user		= _zarafa
++run_as_user		= _zarafa 
  
  # drop privileges and run the process as this group
 -run_as_group		= 
-+run_as_group		= _zarafa
++run_as_group		= _zarafa 
  
  # create a pid file for stopping the service via the init.d scripts
  pid_file		= /var/run/zarafa-server.pid
@@ -55,7 +55,7 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.18 2013/02/04 07:14:20 ajacoutot 
  
  # Path with CA certificates, e.g. /etc/ssl/certs
 -server_ssl_ca_path	=
-+server_ssl_ca_path	= /etc/ssl/cert.pem
++server_ssl_ca_path	= ${SYSCONFDIR}/ssl/cert.pem
  
  # Accept SSLv2 only connections. Normally v3 connections are used.
  server_ssl_enable_v2 = no
@@ -68,12 +68,12 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.18 2013/02/04 07:14:20 ajacoutot 
  # THREAD SETTINGS
 @@ -287,23 +287,24 @@ companyquota_warn      = 0
  # Name of the plugin that handles users
- # Required, default = ldap
+ # Required, default = db
  # Values: ldap, unix, db, ldapms (available in enterprise license)
 +# note: the unix plugin is not yet supported on OpenBSD
  user_plugin		= db
  
- # configuration file of the user plugin, examples can be found in /usr/share/zarafa/example-config
+ # configuration file of the user plugin, examples can be found in /usr/share/doc/zarafa/example-config
 -user_plugin_config	= /etc/zarafa/ldap.cfg
 +user_plugin_config	= ${SYSCONFDIR}/zarafa/ldap.cfg
  
