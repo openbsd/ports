@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.27 2013/10/11 23:50:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.28 2014/04/07 06:43:12 brad Exp $
 
 COMMENT=		DVD authoring application
 
-DISTNAME=		DVDStyler-2.4.3
+DISTNAME=		DVDStyler-2.7.1
 PKGNAME=		${DISTNAME:L}
 CATEGORIES=		multimedia
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=dvdstyler/}
 EXTRACT_SUFX=		.tar.bz2
-REVISION=		0
 
 HOMEPAGE=		http://www.dvdstyler.org/
 
@@ -29,6 +28,7 @@ MODULES=		devel/gettext
 
 BUILD_DEPENDS=		archivers/zip \
 			multimedia/dvdauthor>=0.7.0 \
+			multimedia/mjpegtools \
 			sysutils/dvd+rw-tools \
 			textproc/xmlto
 RUN_DEPENDS=		devel/desktop-file-utils \
@@ -39,7 +39,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 LIB_DEPENDS=		graphics/ffmpeg>=20121026 \
 			graphics/libexif \
 			x11/gnome/libgnomeui \
-			x11/wxSVG>=1.1.14 \
+			x11/wxSVG>=1.2.1 \
 			x11/wxWidgets>=2.8.12p3 \
 			x11/wxWidgets,-media>=2.8.12p0
 

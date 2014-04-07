@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/09/11 18:15:12 brad Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/04/07 06:43:12 brad Exp $
 @bin bin/dvdstyler
 @man man/man1/dvdstyler.1
 share/applications/dvdstyler.desktop
@@ -107,6 +107,7 @@ share/dvdstyler/docs/help_de.zip
 share/dvdstyler/docs/help_en.zip
 share/dvdstyler/docs/help_fi.zip
 share/dvdstyler/docs/help_fr.zip
+share/dvdstyler/docs/help_hu.zip
 share/dvdstyler/docs/help_it.zip
 share/dvdstyler/docs/help_ja.zip
 share/dvdstyler/docs/help_nb.zip
@@ -139,6 +140,12 @@ share/dvdstyler/rc/add.png
 share/dvdstyler/rc/dvdstyler.png
 share/dvdstyler/rc/files.png
 share/dvdstyler/rc/help.png
+share/dvdstyler/rc/justifyCenter.png
+share/dvdstyler/rc/justifyCenterSelected.png
+share/dvdstyler/rc/justifyLeft.png
+share/dvdstyler/rc/justifyLeftSelected.png
+share/dvdstyler/rc/justifyRight.png
+share/dvdstyler/rc/justifyRightSelected.png
 share/dvdstyler/rc/logo.png
 share/dvdstyler/rc/logoSmall.png
 share/dvdstyler/rc/minus.png
@@ -169,11 +176,19 @@ share/dvdstyler/templates/Basic/oceanWS.dvdt
 share/dvdstyler/templates/Basic/oceanWS.png
 share/dvdstyler/templates/Basic/turbulence.dvdt
 share/dvdstyler/templates/Basic/turbulence.png
+share/dvdstyler/templates/Basic/turbulenceWS.dvdt
+share/dvdstyler/templates/Basic/turbulenceWS.png
 share/dvdstyler/templates/Travel/
 share/dvdstyler/templates/Travel/travel.dvdt
 share/dvdstyler/templates/Travel/travel.png
 share/dvdstyler/templates/Travel/travelWS.dvdt
 share/dvdstyler/templates/Travel/travelWS.png
+share/dvdstyler/transitions/
+share/dvdstyler/transitions/fade.xml
+share/dvdstyler/transitions/wipeBottomToTop.xml
+share/dvdstyler/transitions/wipeLeftToRight.xml
+share/dvdstyler/transitions/wipeRightToLeft.xml
+share/dvdstyler/transitions/wipeTopToBottom.xml
 share/locale/ar/LC_MESSAGES/dvdstyler.mo
 share/locale/ca/LC_MESSAGES/dvdstyler.mo
 share/locale/cs/LC_MESSAGES/dvdstyler.mo
