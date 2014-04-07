@@ -1,3 +1,4 @@
-Nagios::Plugin provides some common routines for writing Nagios plugins.
+Monitoring::Plugin provides some common routines for writing monitoring
+plugins supporting the interface used by Nagios, Icinga and other programs.
 The idea is to make it as easy as possible for developers to conform to the
-Nagios plugin guidelines.
+plugin guidelines.

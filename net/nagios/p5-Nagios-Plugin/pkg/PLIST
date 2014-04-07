@@ -1,19 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/07/25 20:45:04 simon Exp $
-${P5SITE}/Nagios/
-${P5SITE}/Nagios/Plugin/
-${P5SITE}/Nagios/Plugin.pm
-${P5SITE}/Nagios/Plugin/Config.pm
-${P5SITE}/Nagios/Plugin/ExitResult.pm
-${P5SITE}/Nagios/Plugin/Functions.pm
-${P5SITE}/Nagios/Plugin/Getopt.pm
-${P5SITE}/Nagios/Plugin/Performance.pm
-${P5SITE}/Nagios/Plugin/Range.pm
-${P5SITE}/Nagios/Plugin/Threshold.pm
-@man man/man3p/Nagios::Plugin.3p
-@man man/man3p/Nagios::Plugin::Config.3p
-@man man/man3p/Nagios::Plugin::ExitResult.3p
-@man man/man3p/Nagios::Plugin::Functions.3p
-@man man/man3p/Nagios::Plugin::Getopt.3p
-@man man/man3p/Nagios::Plugin::Performance.3p
-@man man/man3p/Nagios::Plugin::Range.3p
-@man man/man3p/Nagios::Plugin::Threshold.3p
+@comment $OpenBSD: PLIST,v 1.3 2014/04/07 12:31:51 sthen Exp $
+@conflict p5-Nagios-Plugin-*
+${P5SITE}/Monitoring/
+${P5SITE}/Monitoring/Plugin/
+${P5SITE}/Monitoring/Plugin.pm
+${P5SITE}/Monitoring/Plugin/Config.pm
+${P5SITE}/Monitoring/Plugin/ExitResult.pm
+${P5SITE}/Monitoring/Plugin/Functions.pm
+${P5SITE}/Monitoring/Plugin/Getopt.pm
+${P5SITE}/Monitoring/Plugin/Performance.pm
+${P5SITE}/Monitoring/Plugin/Range.pm
+${P5SITE}/Monitoring/Plugin/Threshold.pm
+@man man/man3p/Monitoring::Plugin.3p
+@man man/man3p/Monitoring::Plugin::Config.3p
+@man man/man3p/Monitoring::Plugin::ExitResult.3p
+@man man/man3p/Monitoring::Plugin::Functions.3p
+@man man/man3p/Monitoring::Plugin::Getopt.3p
+@man man/man3p/Monitoring::Plugin::Performance.3p
+@man man/man3p/Monitoring::Plugin::Range.3p
+@man man/man3p/Monitoring::Plugin::Threshold.3p
