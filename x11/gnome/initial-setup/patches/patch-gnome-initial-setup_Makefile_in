@@ -1,6 +1,9 @@
-$OpenBSD: patch-gnome-initial-setup_Makefile_in,v 1.3 2014/03/27 19:41:05 ajacoutot Exp $
+$OpenBSD: patch-gnome-initial-setup_Makefile_in,v 1.4 2014/04/07 10:30:32 ajacoutot Exp $
+
+XXX fix+push upstream
+
 --- gnome-initial-setup/Makefile.in.orig	Tue Mar 25 05:28:41 2014
-+++ gnome-initial-setup/Makefile.in	Thu Mar 27 20:21:55 2014
++++ gnome-initial-setup/Makefile.in	Mon Apr  7 11:10:46 2014
 @@ -104,7 +104,7 @@ gnome_initial_setup_OBJECTS = $(am_gnome_initial_setup
  am__DEPENDENCIES_1 =
  gnome_initial_setup_DEPENDENCIES = pages/language/libgislanguage.la \
@@ -10,6 +13,15 @@ $OpenBSD: patch-gnome-initial-setup_Makefile_in,v 1.3 2014/03/27 19:41:05 ajacou
  	pages/timezone/libgistimezone.la pages/goa/libgisgoa.la \
  	pages/account/libgisaccount.la \
  	pages/password/libgispassword.la \
+@@ -398,7 +398,7 @@ AM_CPPFLAGS = \
+ 	-DGCR_API_SUBJECT_TO_CHANGE \
+ 	-DUIDIR="\"$(uidir)\"" \
+ 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
+-	-DLIBLOCALEDIR=\""$(prefix)/lib/locale"\" \
++	-DLIBLOCALEDIR=\""/usr/share/locale"\" \
+ 	-DDATADIR=\""$(datadir)"\"
+ 
+ resource_files = $(shell glib-compile-resources --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/gis-assistant.gresource.xml)
 @@ -415,7 +415,6 @@ gnome_initial_setup_LDADD = \
  	pages/region/libgisregion.la \
  	pages/keyboard/libgiskeyboard.la \
