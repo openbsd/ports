@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2014/04/03 15:20:14 sthen Exp $
-
-BROKEN-i386 =	Error: suffix or operands invalid for `fucomip'
+# $OpenBSD: Makefile,v 1.115 2014/04/07 12:53:32 sthen Exp $
 
 COMMENT =	open source web browser engine for Gtk+
 
