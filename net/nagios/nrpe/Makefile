@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2014/03/23 21:07:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2014/04/07 12:32:23 sthen Exp $
 
 COMMENT=	Nagios Remote Plugin Executor
 
 DISTNAME=	nrpe-2.15
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
