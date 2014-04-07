@@ -1,15 +1,6 @@
-$OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.6 2014/03/11 14:52:01 robert Exp $
---- chrome/browser/browser_process_impl.cc.orig.port	Thu Feb 20 21:27:48 2014
-+++ chrome/browser/browser_process_impl.cc	Fri Feb 21 19:39:55 2014
-@@ -108,7 +108,7 @@
- #include "ui/aura/env.h"
- #endif
- 
--#if !defined(OS_ANDROID) && !defined(OS_IOS)
-+#if !defined(OS_ANDROID) && !defined(OS_IOS) && !defined(OS_BSD)
- #include "chrome/browser/media_galleries/media_file_system_registry.h"
- #endif
- 
+$OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.7 2014/04/07 19:32:03 robert Exp $
+--- chrome/browser/browser_process_impl.cc.orig.port	Sat Mar 15 04:22:08 2014
++++ chrome/browser/browser_process_impl.cc	Mon Apr  7 21:16:02 2014
 @@ -258,7 +258,7 @@ void BrowserProcessImpl::StartTearDown() {
  
    ExtensionRendererState::GetInstance()->Shutdown();
@@ -28,7 +19,7 @@ $OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.6 2014/03/11 14:52:01
    return NULL;
  #else
    return storage_monitor_.get();
-@@ -651,13 +651,13 @@ StorageMonitor* BrowserProcessImpl::storage_monitor() 
+@@ -651,7 +651,7 @@ StorageMonitor* BrowserProcessImpl::storage_monitor() 
  
  void BrowserProcessImpl::set_storage_monitor_for_test(
      scoped_ptr<StorageMonitor> monitor) {
@@ -37,13 +28,6 @@ $OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.6 2014/03/11 14:52:01
    storage_monitor_ = monitor.Pass();
  #endif
  }
- 
- MediaFileSystemRegistry* BrowserProcessImpl::media_file_system_registry() {
--#if defined(OS_ANDROID) || defined(OS_IOS)
-+#if defined(OS_ANDROID) || defined(OS_IOS) || defined(OS_BSD)
-     return NULL;
- #else
-   if (!media_file_system_registry_)
 @@ -962,7 +962,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
    }
  #endif
