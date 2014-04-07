@@ -1,6 +1,6 @@
-$OpenBSD: patch-ffmpeg_movie_c,v 1.4 2013/09/05 12:01:31 sthen Exp $
---- ffmpeg_movie.c.orig	Mon Oct 13 23:46:53 2008
-+++ ffmpeg_movie.c	Thu Sep  5 13:00:52 2013
+$OpenBSD: patch-ffmpeg_movie_c,v 1.5 2014/04/07 08:01:37 brad Exp $
+--- ffmpeg_movie.c.orig	Mon Oct 13 18:46:53 2008
++++ ffmpeg_movie.c	Mon Apr  7 03:48:31 2014
 @@ -36,6 +36,8 @@
  
  #include <avcodec.h>
@@ -279,7 +279,22 @@ $OpenBSD: patch-ffmpeg_movie_c,v 1.4 2013/09/05 12:01:31 sthen Exp $
      
      if (fmt) {
          /* cast const to non-const to keep compiler from complaining, 
-@@ -960,7 +977,7 @@ static const char* _php_get_codec_name(ff_movie_contex
+@@ -947,12 +964,14 @@ static const char* _php_get_codec_name(ff_movie_contex
+     /* Copied from libavcodec/utils.c::avcodec_string */
+     if (p) {
+         codec_name = p->name;
++#ifdef FF_API_SUB_ID
+         if (decoder_ctx->codec_id == CODEC_ID_MP3) {
+             if (decoder_ctx->sub_id == 2)
+                 codec_name = "mp2";
+             else if (decoder_ctx->sub_id == 1)
+                 codec_name = "mp1";
+         }
++#endif
+     } else if (decoder_ctx->codec_id == CODEC_ID_MPEG2TS) {
+         /* fake mpeg2 transport stream codec (currently not registered) */
+         codec_name = "mpeg2ts";
+@@ -960,7 +979,7 @@ static const char* _php_get_codec_name(ff_movie_contex
          codec_name = decoder_ctx->codec_name;
      } else {
          /* output avi tags */
@@ -288,7 +303,7 @@ $OpenBSD: patch-ffmpeg_movie_c,v 1.4 2013/09/05 12:01:31 sthen Exp $
              snprintf(buf1, sizeof(buf1), "%c%c%c%c",
                      decoder_ctx->codec_tag & 0xff,
                      (decoder_ctx->codec_tag >> 8) & 0xff,
-@@ -986,7 +1003,7 @@ FFMPEG_PHP_METHOD(ffmpeg_movie, getVideoCodec)
+@@ -986,7 +1005,7 @@ FFMPEG_PHP_METHOD(ffmpeg_movie, getVideoCodec)
  
      GET_MOVIE_RESOURCE(ffmovie_ctx);
  
@@ -297,7 +312,7 @@ $OpenBSD: patch-ffmpeg_movie_c,v 1.4 2013/09/05 12:01:31 sthen Exp $
   
      if (codec_name) {
          RETURN_STRINGL(codec_name, strlen(codec_name), 1);
-@@ -1006,7 +1023,7 @@ FFMPEG_PHP_METHOD(ffmpeg_movie, getAudioCodec)
+@@ -1006,7 +1025,7 @@ FFMPEG_PHP_METHOD(ffmpeg_movie, getAudioCodec)
  
      GET_MOVIE_RESOURCE(ffmovie_ctx);
  
@@ -306,7 +321,7 @@ $OpenBSD: patch-ffmpeg_movie_c,v 1.4 2013/09/05 12:01:31 sthen Exp $
   
      if (codec_name) {
          RETURN_STRINGL(codec_name, strlen(codec_name), 1);
-@@ -1026,7 +1043,7 @@ FFMPEG_PHP_METHOD(ffmpeg_movie, getVideoStreamId )
+@@ -1026,7 +1045,7 @@ FFMPEG_PHP_METHOD(ffmpeg_movie, getVideoStreamId )
      
      GET_MOVIE_RESOURCE(ffmovie_ctx);
     
@@ -315,7 +330,7 @@ $OpenBSD: patch-ffmpeg_movie_c,v 1.4 2013/09/05 12:01:31 sthen Exp $
  
  	if( stream_id == -1 )
  	{
-@@ -1048,7 +1065,7 @@ FFMPEG_PHP_METHOD(ffmpeg_movie, getAudioStreamId )
+@@ -1048,7 +1067,7 @@ FFMPEG_PHP_METHOD(ffmpeg_movie, getAudioStreamId )
      
      GET_MOVIE_RESOURCE(ffmovie_ctx);
     
@@ -324,7 +339,7 @@ $OpenBSD: patch-ffmpeg_movie_c,v 1.4 2013/09/05 12:01:31 sthen Exp $
  
  	if( stream_id == -1 )
  	{
-@@ -1086,7 +1103,7 @@ FFMPEG_PHP_METHOD(ffmpeg_movie, getAudioChannels)
+@@ -1086,7 +1105,7 @@ FFMPEG_PHP_METHOD(ffmpeg_movie, getAudioChannels)
  
      GET_MOVIE_RESOURCE(ffmovie_ctx);
  
@@ -333,7 +348,7 @@ $OpenBSD: patch-ffmpeg_movie_c,v 1.4 2013/09/05 12:01:31 sthen Exp $
   
      if (channels) {
          RETURN_LONG(channels);
-@@ -1122,7 +1139,7 @@ FFMPEG_PHP_METHOD(ffmpeg_movie, getAudioSampleRate)
+@@ -1122,7 +1141,7 @@ FFMPEG_PHP_METHOD(ffmpeg_movie, getAudioSampleRate)
  
      GET_MOVIE_RESOURCE(ffmovie_ctx);
  
@@ -342,7 +357,7 @@ $OpenBSD: patch-ffmpeg_movie_c,v 1.4 2013/09/05 12:01:31 sthen Exp $
   
      if (sample_rate) {
          RETURN_LONG(sample_rate);
-@@ -1158,7 +1175,7 @@ FFMPEG_PHP_METHOD(ffmpeg_movie, getAudioBitRate)
+@@ -1158,7 +1177,7 @@ FFMPEG_PHP_METHOD(ffmpeg_movie, getAudioBitRate)
  
      GET_MOVIE_RESOURCE(ffmovie_ctx);
  
@@ -351,7 +366,7 @@ $OpenBSD: patch-ffmpeg_movie_c,v 1.4 2013/09/05 12:01:31 sthen Exp $
   
      if (bit_rate) {
          RETURN_LONG(bit_rate);
-@@ -1178,7 +1195,7 @@ FFMPEG_PHP_METHOD(ffmpeg_movie, getVideoBitRate)
+@@ -1178,7 +1197,7 @@ FFMPEG_PHP_METHOD(ffmpeg_movie, getVideoBitRate)
  
      GET_MOVIE_RESOURCE(ffmovie_ctx);
  
@@ -360,7 +375,7 @@ $OpenBSD: patch-ffmpeg_movie_c,v 1.4 2013/09/05 12:01:31 sthen Exp $
   
      if (bit_rate) {
          RETURN_LONG(bit_rate);
-@@ -1201,7 +1218,7 @@ static AVFrame* _php_read_av_frame(ff_movie_context *f
+@@ -1201,7 +1220,7 @@ static AVFrame* _php_read_av_frame(ff_movie_context *f
      int got_frame; 
  
      video_stream = _php_get_stream_index(ffmovie_ctx->fmt_ctx, 
@@ -369,7 +384,7 @@ $OpenBSD: patch-ffmpeg_movie_c,v 1.4 2013/09/05 12:01:31 sthen Exp $
      if (video_stream < 0) {
          return NULL;
      }
-@@ -1212,11 +1229,10 @@ static AVFrame* _php_read_av_frame(ff_movie_context *f
+@@ -1212,11 +1231,10 @@ static AVFrame* _php_read_av_frame(ff_movie_context *f
      while (av_read_frame(ffmovie_ctx->fmt_ctx, &packet) >= 0) {
          if (packet.stream_index == video_stream) {
          
@@ -383,7 +398,7 @@ $OpenBSD: patch-ffmpeg_movie_c,v 1.4 2013/09/05 12:01:31 sthen Exp $
                  *pts = packet.pts;
                  av_free_packet(&packet);
                  return frame;
-@@ -1243,7 +1259,7 @@ static AVFrame* _php_get_av_frame(ff_movie_context *ff
+@@ -1243,7 +1261,7 @@ static AVFrame* _php_get_av_frame(ff_movie_context *ff
      AVCodecContext *decoder_ctx = NULL;
      AVFrame *frame = NULL;
  
@@ -392,7 +407,7 @@ $OpenBSD: patch-ffmpeg_movie_c,v 1.4 2013/09/05 12:01:31 sthen Exp $
      if (decoder_ctx == NULL) {
          return NULL;
      }
-@@ -1275,14 +1291,15 @@ static AVFrame* _php_get_av_frame(ff_movie_context *ff
+@@ -1275,14 +1293,15 @@ static AVFrame* _php_get_av_frame(ff_movie_context *ff
          frame = _php_read_av_frame(ffmovie_ctx, decoder_ctx, is_keyframe, pts);
  
          /* hurry up if we're still a ways from the target frame */
@@ -410,7 +425,7 @@ $OpenBSD: patch-ffmpeg_movie_c,v 1.4 2013/09/05 12:01:31 sthen Exp $
          ffmovie_ctx->frame_number++; 
  
          /* 
-@@ -1440,7 +1457,7 @@ static double _php_get_sample_aspect_ratio(ff_movie_co
+@@ -1440,7 +1459,7 @@ static double _php_get_sample_aspect_ratio(ff_movie_co
      AVCodecContext *decoder_ctx;
  	
  
