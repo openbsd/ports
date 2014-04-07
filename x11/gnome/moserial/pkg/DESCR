@@ -1,9 +1,0 @@
-moserial is a clean, friendly gtk-based serial terminal for the gnome
-desktop. It is written in Vala for extra goodness.
-
- - ASCII and HEX views of incoming and outgoing data
- - Logging to file of incoming and/or outgoing data
- - Support for x, y, and z-modem file send and receive
- - Support for profile files, to load/save common configurations
- - Easier to use than the alternatives
- - Supports i18n
