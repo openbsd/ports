@@ -1,0 +1,66 @@
+$OpenBSD: patch-src_shell-global_c,v 1.6 2014/04/07 15:38:25 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=727763
+
+--- src/shell-global.c.orig	Wed Mar 19 21:27:35 2014
++++ src/shell-global.c	Mon Apr  7 17:24:52 2014
+@@ -1143,17 +1143,7 @@ shell_global_reexec_self (ShellGlobal *global)
+       g_warning ("failed to get /proc/self/cmdline: %s", error->message);
+       return;
+     }
+-#elif defined __OpenBSD__
+-  int pid = getpid();
+-  int mib[] = { CTL_KERN, KERN_PROC_ARGS, pid, KERN_PROC_ARGV };
+-  if (sysctl(mib, G_N_ELEMENTS (mib), &buf, &len, NULL, 0) == -1) {
+-    g_warning ("failed to get command line args: %d", errno);
+-    return;
+-  }
+-#else
+-  return;
+-#endif
+-  
++
+   buf_end = buf+len;
+   arr = g_ptr_array_new ();
+   /* The cmdline file is NUL-separated */
+@@ -1161,6 +1151,40 @@ shell_global_reexec_self (ShellGlobal *global)
+     g_ptr_array_add (arr, buf_p);
+ 
+   g_ptr_array_add (arr, NULL);
++#elif defined __OpenBSD__
++  gchar **args, **args2;
++  pid_t pid = getpid();
++  gint mib[] = { CTL_KERN, KERN_PROC_ARGS, pid, KERN_PROC_ARGV };
++
++  args = NULL;
++  buf = NULL;
++  len = 128;
++
++  while (len < SIZE_MAX / 2) {
++    len *= 2;
++    if ((args2 = realloc (args, 2 * len)) == NULL)
++      break;
++    args = args2;
++    if (sysctl (mib, G_N_ELEMENTS (mib), args, &len, NULL, 0) == -1) {
++      if (errno == ENOMEM)
++        continue;
++      break;
++    }
++    buf = g_strndup (*args, len);
++    break;
++  }
++
++  g_free (args);
++
++  if (buf == NULL)
++    return;
++
++  arr = g_ptr_array_new ();
++  g_ptr_array_add (arr, buf);
++  g_ptr_array_add (arr, NULL);
++#else
++  return;
++#endif
+ 
+   /* Close all file descriptors other than stdin/stdout/stderr, otherwise
+    * they will leak and stay open after the exec. In particular, this is
