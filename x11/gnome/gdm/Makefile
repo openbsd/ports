@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.205 2014/04/06 10:51:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.206 2014/04/07 10:19:25 ajacoutot Exp $
 
 # XXX remove from PLIST when OPENBSD_5_6 is branched:
 # @unexec rm -f ${SYSCONFDIR}/dconf/db/gdm
@@ -9,7 +9,7 @@ COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		3.12.0
-REVISION=		6
+REVISION=		7
 
 SHARED_LIBS +=  gdm                  0.0      # 1.0
 

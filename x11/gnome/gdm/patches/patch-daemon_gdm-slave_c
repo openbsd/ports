@@ -1,0 +1,15 @@
+$OpenBSD: patch-daemon_gdm-slave_c,v 1.3 2014/04/07 10:19:25 ajacoutot Exp $
+
+XXX fix+push upstream
+
+--- daemon/gdm-slave.c.orig	Mon Apr  7 12:15:14 2014
++++ daemon/gdm-slave.c	Mon Apr  7 12:15:22 2014
+@@ -236,7 +236,7 @@ gdm_slave_setup_xhost_auth (XHostAddress *host_entries
+         si_entries[0].valuelength = strlen ("root");
+         si_entries[1].value       = GDM_USERNAME;
+         si_entries[1].valuelength = strlen (GDM_USERNAME);
+-        si_entries[2].value       = "gnome-initial-setup";
++        si_entries[2].value       = "_gnome-initial-setup";
+         si_entries[2].valuelength = strlen ("gnome-initial-setup");
+ 
+         host_entries[0].family    = FamilyServerInterpreted;
