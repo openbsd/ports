@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2014/04/01 14:52:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2014/04/07 06:50:40 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -14,7 +14,7 @@ PKGNAME-main=	gegl-${V}
 PKGNAME-plugins=gegl-plugins-${V}
 
 REVISION-main=		2
-REVISION-plugins=	1
+REVISION-plugins=	2
 
 SHARED_LIBS +=  gegl-${API_VERSION}		0.0 # 199.1
 
@@ -66,7 +66,7 @@ RUN_DEPENDS-plugins= 	${BUILD_PKGPATH},-main
 LIB_DEPENDS-plugins= 	${LIB_DEPENDS} \
 			graphics/ilmbase \
 			graphics/openexr \
-			graphics/ffmpeg>=20100512
+			graphics/ffmpeg>=20130319
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
