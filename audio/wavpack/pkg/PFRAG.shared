@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/01/10 02:08:34 sthen Exp $
-@lib lib/libwavpack.so.${LIBwavpack_VERSION}
