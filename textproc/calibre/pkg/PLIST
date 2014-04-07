@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/04/06 11:32:04 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/04/07 00:21:28 sthen Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -367,6 +367,8 @@ lib/calibre/calibre/ebooks/compression/palmdoc.py
 lib/calibre/calibre/ebooks/compression/palmdoc.pyc
 lib/calibre/calibre/ebooks/compression/tcr.py
 lib/calibre/calibre/ebooks/compression/tcr.pyc
+lib/calibre/calibre/ebooks/constants.py
+lib/calibre/calibre/ebooks/constants.pyc
 lib/calibre/calibre/ebooks/conversion/
 lib/calibre/calibre/ebooks/conversion/__init__.py
 lib/calibre/calibre/ebooks/conversion/__init__.pyc
@@ -487,6 +489,8 @@ lib/calibre/calibre/ebooks/docx/footnotes.py
 lib/calibre/calibre/ebooks/docx/footnotes.pyc
 lib/calibre/calibre/ebooks/docx/images.py
 lib/calibre/calibre/ebooks/docx/images.pyc
+lib/calibre/calibre/ebooks/docx/index.py
+lib/calibre/calibre/ebooks/docx/index.pyc
 lib/calibre/calibre/ebooks/docx/lcid.py
 lib/calibre/calibre/ebooks/docx/lcid.pyc
 lib/calibre/calibre/ebooks/docx/names.py
@@ -1419,6 +1423,8 @@ lib/calibre/calibre/gui2/convert/debug.py
 lib/calibre/calibre/gui2/convert/debug.pyc
 lib/calibre/calibre/gui2/convert/debug_ui.py
 lib/calibre/calibre/gui2/convert/debug_ui.pyc
+lib/calibre/calibre/gui2/convert/djvu_input_ui.py
+lib/calibre/calibre/gui2/convert/djvu_input_ui.pyc
 lib/calibre/calibre/gui2/convert/docx_input.py
 lib/calibre/calibre/gui2/convert/docx_input.pyc
 lib/calibre/calibre/gui2/convert/docx_input_ui.py
@@ -1972,8 +1978,6 @@ lib/calibre/calibre/gui2/store/stores/cdp_plugin.py
 lib/calibre/calibre/gui2/store/stores/cdp_plugin.pyc
 lib/calibre/calibre/gui2/store/stores/chitanka_plugin.py
 lib/calibre/calibre/gui2/store/stores/chitanka_plugin.pyc
-lib/calibre/calibre/gui2/store/stores/diesel_ebooks_plugin.py
-lib/calibre/calibre/gui2/store/stores/diesel_ebooks_plugin.pyc
 lib/calibre/calibre/gui2/store/stores/ebook_nl_plugin.py
 lib/calibre/calibre/gui2/store/stores/ebook_nl_plugin.pyc
 lib/calibre/calibre/gui2/store/stores/ebookpoint_plugin.py
@@ -2332,6 +2336,8 @@ lib/calibre/calibre/plugins/unrar.so
 lib/calibre/calibre/plugins/woff.so
 lib/calibre/calibre/ptempfile.py
 lib/calibre/calibre/ptempfile.pyc
+lib/calibre/calibre/rpdb.py
+lib/calibre/calibre/rpdb.pyc
 lib/calibre/calibre/startup.py
 lib/calibre/calibre/startup.pyc
 lib/calibre/calibre/test_build.py
@@ -2980,6 +2986,7 @@ share/calibre/images/catalog.png
 share/calibre/images/chapters.png
 share/calibre/images/character-set.png
 share/calibre/images/clear_left.png
+share/calibre/images/code.png
 share/calibre/images/column.png
 share/calibre/images/config.png
 share/calibre/images/connect_share.png
