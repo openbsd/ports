@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2014/04/01 16:31:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2014/04/08 17:25:05 ajacoutot Exp $
 
 COMMENT=		base elements for GStreamer
 
@@ -61,5 +61,12 @@ pre-configure:
 		${WRKSRC}/ext/cdparanoia/gstcdparanoiasrc.c \
 		${WRKSRC}/gst-libs/gst/cdda/gstcddabasesrc.c \
 		${WRKSRC}/tests/check/libs/cddabasesrc.c
+
+# https://bugzilla.gnome.org/show_bug.cgi?id=726571
+# XXX check if still needed at next release
+.for i in pbutils audio app video fft cdda rtsp sdp riff tag interfaces rtp netbuffer
+	perl -pi -e 's,--libtool="\$$\(top_builddir\)/libtool",--libtool="\$${LIBTOOL}",g' \
+		${WRKSRC}/gst-libs/gst/$i/Makefile.in
+.endfor
 
 .include <bsd.port.mk>

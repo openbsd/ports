@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2014/04/01 16:31:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2014/04/08 17:25:06 ajacoutot Exp $
 
 COMMENT=		bad elements for GStreamer
 
@@ -97,6 +97,13 @@ CONFIGURE_ARGS +=	--disable-examples
 CFLAGS +=		-I${X11BASE}/include
 
 pre-configure:
+# https://bugzilla.gnome.org/show_bug.cgi?id=726571
+# XXX check if still needed at next release
+.for i in mpegts insertbin egl
+	perl -pi -e 's,--libtool="\$$\(top_builddir\)/libtool",--libtool="\$${LIBTOOL}",g' \
+		${WRKSRC}/$i/Makefile.in
+.endfor
+
 	perl -pi -e 's,/dev/dvd,/dev/rcd0c,g' \
 		${WRKSRC}/ext/resindvd/resindvdbin.c \
 		${WRKSRC}/ext/resindvd/resindvdsrc.c

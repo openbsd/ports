@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2014/04/01 16:31:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2014/04/08 17:25:06 ajacoutot Exp $
 
 COMMENT=		base elements for GStreamer
 
@@ -59,8 +59,15 @@ BUILD_DEPENDS +=	devel/libtool # needs needs libtoolize
 post-extract:
 	cp -R ${FILESDIR} ${WRKSRC}/ext/sndio
 
-# autopoint(1) uses HOME, make sure it exists
 pre-configure:
+# https://bugzilla.gnome.org/show_bug.cgi?id=726571
+# XXX check if still needed at next release
+.for i in audio riff tag sdp fft pbutils rtp allocators app rtsp video
+	perl -pi -e 's,--libtool="\$$\(top_builddir\)/libtool",--libtool="\$${LIBTOOL}",g' \
+		${WRKSRC}/gst-libs/gst/$i/Makefile.am
+.endfor
+
+# autopoint(1) uses HOME, make sure it exists
 	cd ${WRKSRC} && HOME=${WRKDIST} \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
