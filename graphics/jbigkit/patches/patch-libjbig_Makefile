@@ -1,24 +1,22 @@
-$OpenBSD: patch-libjbig_Makefile,v 1.7 2013/08/06 17:03:51 miod Exp $
---- libjbig/Makefile.orig	Sat Aug 30 17:20:52 2008
-+++ libjbig/Makefile	Mon Aug  5 04:47:03 2013
-@@ -7,8 +7,14 @@ CC = gcc
+$OpenBSD: patch-libjbig_Makefile,v 1.8 2014/04/08 13:59:32 sthen Exp $
+--- libjbig/Makefile.orig	Thu Mar 27 18:47:15 2014
++++ libjbig/Makefile	Tue Apr  8 14:36:15 2014
+@@ -6,7 +6,13 @@ CC = gcc
  # Options for the compiler: A high optimization level is suggested
- CFLAGS = -g -O -Wall -ansi -pedantic # --coverage
+ CFLAGS = -g -O -W -Wall -ansi -pedantic # --coverage
  
--all: libjbig.a tstcodec tstcodec85
 +PICFLAG= -fpic
- 
-+.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
-+all: libjbig.a libjbig85.a
-+.else
-+all: libjbig.a libjbig.so.$(VERSION) libjbig85.a libjbig85.so.$(VERSION)
-+.endif
 +
- tstcodec: tstcodec.o jbig.o jbig_ar.o
- 	$(CC) $(CFLAGS) -o tstcodec $+
++.if defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes"
+ all: libjbig.a libjbig85.a tstcodec tstcodec85
++.else
++all: libjbig.a libjbig.so.$(VERSION) libjbig85.a libjbig85.so.$(VERSION) tstcodec tstcodec85
++.endif
  
-@@ -16,15 +22,28 @@ tstcodec85: tstcodec85.o jbig85.o jbig_ar.o
- 	$(CC) $(CFLAGS) -o tstcodec85 $+
+ tstcodec: tstcodec.o jbig.o jbig_ar.o
+ 	$(CC) $(CFLAGS) -o tstcodec tstcodec.o jbig.o jbig_ar.o
+@@ -15,15 +21,28 @@ tstcodec85: tstcodec85.o jbig85.o jbig_ar.o
+ 	$(CC) $(CFLAGS) -o tstcodec85 tstcodec85.o jbig85.o jbig_ar.o
  
  libjbig.a: jbig.o jbig_ar.o
 -	rm -f libjbig.a
@@ -52,10 +50,11 @@ $OpenBSD: patch-libjbig_Makefile,v 1.7 2013/08/06 17:03:51 miod Exp $
  jbig.o: jbig.c jbig.h jbig_ar.h
  jbig85.o: jbig85.c jbig85.h jbig_ar.h
  jbig_ar.o: jbig_ar.c jbig_ar.h
-@@ -44,5 +63,4 @@ t82test.pbm: tstcodec
+@@ -50,6 +69,5 @@ t82test.pbm: tstcodec
  	./tstcodec $@
  
  clean:
--	rm -f *.{o,gcda,gcno,gcov} *~ core gmon.out dbg_d\=??.pbm t82test.pbm
--	rm -f tstcodec tstcodec85
+-	rm -f *.o *.gcda *.gcno *.gcov *.plist *~ core gmon.out dbg_d\=??.pbm
+-	rm -f t82test.pbm
 +	rm -f *.{o,gcda,gcno,gcov} *~ core gmon.out dbg_d\=??.pbm libjbig.so.$(VERSION) libjbig85.so.$(VERSION)
+ 	rm -f tstcodec tstcodec85

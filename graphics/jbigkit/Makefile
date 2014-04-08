@@ -1,28 +1,26 @@
-# $OpenBSD: Makefile,v 1.42 2013/09/21 23:15:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.43 2014/04/08 13:59:32 sthen Exp $
 
-COMMENT =		lossless image compression library, with lightweight version
-REVISION =		0
+COMMENT =	lossless image compression library, with lightweight version
 
-DISTNAME =		jbigkit-2.0
+DISTNAME =	jbigkit-2.1
 
-SHARED_LIBS +=		jbig   3.0 # 2.0
-SHARED_LIBS +=		jbig85 3.0 # 2.0
+SHARED_LIBS +=	jbig   3.0 # 2.0
+SHARED_LIBS +=	jbig85 3.0 # 2.0
 
-CATEGORIES =		graphics
+CATEGORIES =	graphics
 
-HOMEPAGE =		http://www.cl.cam.ac.uk/~mgk25/jbigkit/
+HOMEPAGE =	http://www.cl.cam.ac.uk/~mgk25/jbigkit/
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c
 
-MASTER_SITES =		http://www.cl.cam.ac.uk/~mgk25/download/
+MASTER_SITES =	http://www.cl.cam.ac.uk/~mgk25/download/
 
-MAKE_FLAGS =		CC="${CC}" CCFLAGS="${CFLAGS} -Wall" VERSION="${LIBjbig_VERSION}"
-MAKE_ENV =		LD_LIBRARY_PATH="${WRKSRC}/libjbig"
-
-WRKDIST =		${WRKDIR}/jbigkit
+MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS} -Wall" \
+		VERSION="${LIBjbig_VERSION}"
+MAKE_ENV =	LD_LIBRARY_PATH="${WRKSRC}/libjbig"
 
 do-install:
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man1
