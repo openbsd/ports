@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1260 2014/04/01 18:41:33 jasper Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1261 2014/04/08 13:29:34 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2476,6 +2476,11 @@ ${_WRKDIR_COOKIE}:
 		exit 1; \
 	fi
 .endif
+	@if [ x`SUDO_PORT_V1=ah ${SUDO} /bin/sh -c 'eval echo $${SUDO_PORT_V1}'` \
+		!= xah ]; then \
+			echo >&2 "Error: sudo does not let env variables through"; \
+			exit 1; \
+	fi
 	@mkdir -p ${WRKDIR} ${WRKDIR}/bin ${DEPDIR}
 #	@ln -s ${LOCALBASE}/bin/pkg-config ${WRKDIR}/bin
 .if ${USE_CCACHE:L} == "yes" && ${NO_CCACHE:L} == "no"
