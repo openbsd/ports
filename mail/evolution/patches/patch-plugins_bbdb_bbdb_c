@@ -1,0 +1,203 @@
+$OpenBSD: patch-plugins_bbdb_bbdb_c,v 1.1 2014/04/08 15:23:15 ajacoutot Exp $
+
+From a132c1f9bd00195f63e99b2ebf08243a98b8346d Mon Sep 17 00:00:00 2001
+From: Watson Yuuma Sato <yuuma.sato@gmail.com>
+Date: Mon, 24 Mar 2014 17:22:16 +0100
+Subject: Bug #545106 - [Automatic Contacts] Adds duplicate email addresses
+
+--- plugins/bbdb/bbdb.c.orig	Tue Jan  7 22:05:51 2014
++++ plugins/bbdb/bbdb.c	Tue Apr  8 16:35:48 2014
+@@ -220,7 +220,14 @@ handle_destination (EDestination *destination)
+ 	} else {
+ 		const gchar *name;
+ 		const gchar *email;
++		EContact *contact;
+ 
++		contact = e_destination_get_contact (destination);
++
++		/* Skipping autocompleted contacts */
++		if (contact != NULL)
++			return;
++
+ 		name = e_destination_get_name (destination);
+ 		email = e_destination_get_email (destination);
+ 
+@@ -278,6 +285,14 @@ bbdb_do_it (EBookClient *client,
+ 	gboolean status;
+ 	EContact *contact;
+ 	GError *error = NULL;
++	EShell *shell;
++	ESourceRegistry *registry;
++	EClientCache *client_cache;
++	GList *addressbooks;
++	GList *aux_addressbooks;
++	EBookClient *client_addressbook;
++	ESourceAutocomplete *autocomplete_extension;
++	gboolean on_autocomplete, has_autocomplete;
+ 
+ 	g_return_if_fail (client != NULL);
+ 
+@@ -293,64 +308,109 @@ bbdb_do_it (EBookClient *client,
+ 		name = temp_name;
+ 	}
+ 
+-	/* If any contacts exists with this email address, don't do anything */
+-	query_string = g_strdup_printf ("(contains \"email\" \"%s\")", email);
+-	status = e_book_client_get_contacts_sync (client, query_string, &contacts, NULL, NULL);
+-	g_free (query_string);
+-	if (contacts != NULL || !status) {
+-		g_slist_free_full (contacts, (GDestroyNotify) g_object_unref);
+-		g_free (temp_name);
++	/* Search through all addressbooks */
++	shell = e_shell_get_default ();
++	registry = e_shell_get_registry (shell);
++	client_cache = e_shell_get_client_cache (shell);
++	addressbooks = e_source_registry_list_enabled (registry, E_SOURCE_EXTENSION_ADDRESS_BOOK);
+ 
+-		return;
+-	}
++	aux_addressbooks = addressbooks;
++	while (aux_addressbooks != NULL) {
+ 
+-	if (g_utf8_strchr (name, -1, '\"')) {
+-		GString *tmp = g_string_new (name);
+-		gchar *p;
++		/* Check only addressbooks with autocompletion enabled */
++		has_autocomplete = e_source_has_extension (aux_addressbooks->data, E_SOURCE_EXTENSION_AUTOCOMPLETE);
++		if (!has_autocomplete) {
++			aux_addressbooks = aux_addressbooks->next;
++			continue;
++		}
+ 
+-		while (p = g_utf8_strchr (tmp->str, tmp->len, '\"'), p)
+-			tmp = g_string_erase (tmp, p - tmp->str, 1);
++		autocomplete_extension = e_source_get_extension (aux_addressbooks->data, E_SOURCE_EXTENSION_AUTOCOMPLETE);
++		on_autocomplete = e_source_autocomplete_get_include_me (autocomplete_extension);
++		if (!on_autocomplete) {
++			aux_addressbooks = aux_addressbooks->next;
++			continue;
++		}
+ 
+-		g_free (temp_name);
+-		temp_name = g_string_free (tmp, FALSE);
+-		name = temp_name;
+-	}
++		client_addressbook = (EBookClient *) e_client_cache_get_client_sync (
++				client_cache, (ESource *) aux_addressbooks->data,
++				E_SOURCE_EXTENSION_ADDRESS_BOOK,
++				NULL, &error);
+ 
+-	contacts = NULL;
+-	/* If a contact exists with this name, add the email address to it. */
+-	query_string = g_strdup_printf ("(is \"full_name\" \"%s\")", name);
+-	status = e_book_client_get_contacts_sync (client, query_string, &contacts, NULL, NULL);
+-	g_free (query_string);
+-	if (contacts != NULL || !status) {
+-		/* FIXME: If there's more than one contact with this
+-		 * name, just give up; we're not smart enough for
+-		 * this. */
+-		if (!status || contacts->next != NULL) {
+-			g_slist_free_full (
+-				contacts,
+-				(GDestroyNotify) g_object_unref);
++		if (error != NULL) {
++			g_warning ("bbdb: Failed to get addressbook client : %s\n", error->message);
++			g_error_free (error);
++			aux_addressbooks = aux_addressbooks->next;
++			continue;
++		}
++
++		/* If any contacts exists with this email address, don't do anything */
++		query_string = g_strdup_printf ("(contains \"email\" \"%s\")", email);
++		status = e_book_client_get_contacts_sync (client_addressbook, query_string, &contacts, NULL, NULL);
++		g_free (query_string);
++		if (contacts != NULL || !status) {
++			g_slist_free_full (contacts, (GDestroyNotify) g_object_unref);
+ 			g_free (temp_name);
++			g_list_free_full (addressbooks, (GDestroyNotify) g_object_unref);
++			g_object_unref (client_addressbook);
++
+ 			return;
+ 		}
+ 
+-		contact = (EContact *) contacts->data;
+-		add_email_to_contact (contact, email);
++		if (g_utf8_strchr (name, -1, '\"')) {
++			GString *tmp = g_string_new (name);
++			gchar *p;
+ 
+-		e_book_client_modify_contact_sync (
+-			client, contact, NULL, &error);
++			while (p = g_utf8_strchr (tmp->str, tmp->len, '\"'), p)
++				tmp = g_string_erase (tmp, p - tmp->str, 1);
+ 
+-		if (error != NULL) {
+-			g_warning (
+-				"bbdb: Could not modify contact: %s\n",
+-				error->message);
+-			g_error_free (error);
++			g_free (temp_name);
++			temp_name = g_string_free (tmp, FALSE);
++			name = temp_name;
+ 		}
+ 
+-		g_slist_free_full (contacts, (GDestroyNotify) g_object_unref);
+-		g_free (temp_name);
+-		return;
++		contacts = NULL;
++		/* If a contact exists with this name, add the email address to it. */
++		query_string = g_strdup_printf ("(is \"full_name\" \"%s\")", name);
++		status = e_book_client_get_contacts_sync (client_addressbook, query_string, &contacts, NULL, NULL);
++		g_free (query_string);
++		if (contacts != NULL || !status) {
++			/* FIXME: If there's more than one contact with this
++			 * name, just give up; we're not smart enough for
++			 * this. */
++			if (!status || contacts->next != NULL) {
++				g_slist_free_full (
++						contacts,
++						(GDestroyNotify) g_object_unref);
++				g_free (temp_name);
++				g_list_free_full (addressbooks, (GDestroyNotify) g_object_unref);
++				g_object_unref (client_addressbook);
++				return;
++			}
++
++			contact = (EContact *) contacts->data;
++			add_email_to_contact (contact, email);
++
++			e_book_client_modify_contact_sync (
++					client_addressbook, contact, NULL, &error);
++
++			if (error != NULL) {
++				g_warning ("bbdb: Could not modify contact: %s\n", error->message);
++				g_error_free (error);
++			}
++
++			g_slist_free_full (contacts, (GDestroyNotify) g_object_unref);
++			g_free (temp_name);
++			g_list_free_full (addressbooks, (GDestroyNotify) g_object_unref);
++			g_object_unref (client_addressbook);
++			return;
++		}
++
++		g_object_unref(client_addressbook);
++		aux_addressbooks = aux_addressbooks->next;
+ 	}
+ 
++	g_list_free_full (addressbooks, (GDestroyNotify) g_object_unref);
++
+ 	/* Otherwise, create a new contact. */
+ 	contact = e_contact_new ();
+ 	e_contact_set (contact, E_CONTACT_FULL_NAME, (gpointer) name);
+@@ -360,9 +420,7 @@ bbdb_do_it (EBookClient *client,
+ 	e_book_client_add_contact_sync (client, contact, NULL, NULL, &error);
+ 
+ 	if (error != NULL) {
+-		g_warning (
+-			"bbdb: Failed to add new contact: %s",
+-			error->message);
++		g_warning ("bbdb: Failed to add new contact: %s", error->message);
+ 		g_error_free (error);
+ 	}
+ 

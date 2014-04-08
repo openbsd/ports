@@ -1,0 +1,27 @@
+$OpenBSD: patch-e-util_e-file-request_c,v 1.1 2014/04/08 15:23:15 ajacoutot Exp $
+
+From 162f568fde4c87b4105abb3897dc633791c794b7 Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Fri, 4 Apr 2014 15:37:13 +0200
+Subject: Fix few more memory leaks
+
+--- e-util/e-file-request.c.orig	Tue Jan  7 22:05:51 2014
++++ e-util/e-file-request.c	Tue Apr  8 16:41:48 2014
+@@ -60,7 +60,7 @@ handle_file_request (GSimpleAsyncResult *res,
+ 
+ 		stream = g_memory_input_stream_new_from_data (
+ 				contents, length, (GDestroyNotify) g_free);
+-		g_simple_async_result_set_op_res_gpointer (res, stream, NULL);
++		g_simple_async_result_set_op_res_gpointer (res, stream, g_object_unref);
+ 	}
+ }
+ 
+@@ -130,6 +130,8 @@ file_request_send_finish (SoupRequest *request,
+ 
+ 	if (!stream) /* We must always return something */
+ 		stream = g_memory_input_stream_new ();
++	else
++		g_object_ref (stream);
+ 
+ 	return stream;
+ }

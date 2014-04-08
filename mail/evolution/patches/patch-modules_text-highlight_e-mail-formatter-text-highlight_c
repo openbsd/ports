@@ -1,0 +1,17 @@
+$OpenBSD: patch-modules_text-highlight_e-mail-formatter-text-highlight_c,v 1.5 2014/04/08 15:23:15 ajacoutot Exp $
+
+From 7c54be0edafd10f1e1d6d26c83a8cd4b011b2398 Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Wed, 26 Mar 2014 10:38:34 +0100
+Subject: [text-highlight] Fix a possible memory leak
+
+--- modules/text-highlight/e-mail-formatter-text-highlight.c.orig	Fri Feb 28 20:38:11 2014
++++ modules/text-highlight/e-mail-formatter-text-highlight.c	Tue Apr  8 16:36:32 2014
+@@ -105,6 +105,7 @@ get_syntax (EMailPart *part,
+ 		if (filename != NULL) {
+ 			gchar *ext = g_strrstr (filename, ".");
+ 			if (ext != NULL) {
++				g_free (syntax);
+ 				syntax = (gchar *) get_syntax_for_ext (ext + 1);
+ 				syntax = syntax ? g_strdup (syntax) : NULL;
+ 			}

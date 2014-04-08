@@ -1,0 +1,19 @@
+$OpenBSD: patch-addressbook_libebook-contacts_e-vcard_c,v 1.1 2014/04/08 15:22:44 ajacoutot Exp $
+
+From c79455a91b966ab0a80dc5f0e84aade61c8dba07 Mon Sep 17 00:00:00 2001
+From: Xavier Claessens <xavier.claessens@collabora.com>
+Date: Mon, 24 Mar 2014 15:51:05 +0100
+Subject: Bug #726788 - Crash on malformed vCard
+
+--- addressbook/libebook-contacts/e-vcard.c.orig	Tue Jan  7 16:32:17 2014
++++ addressbook/libebook-contacts/e-vcard.c	Tue Apr  8 15:53:09 2014
+@@ -763,7 +763,8 @@ parse (EVCard *evc,
+ 		e_vcard_attribute_free (attr);
+ 		attr = NULL;
+ 	} else if (attr) {
+-		if (!ignore_uid || g_ascii_strcasecmp (attr->name, EVC_UID) != 0)
++		if ((!ignore_uid || g_ascii_strcasecmp (attr->name, EVC_UID) != 0) &&
++		    g_ascii_strcasecmp (attr->name, "end") != 0)
+ 			e_vcard_add_attribute (evc, attr);
+ 	}
+ 	while (*p) {

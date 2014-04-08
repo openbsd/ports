@@ -1,0 +1,17 @@
+$OpenBSD: patch-mail_e-mail-config-window_c,v 1.1 2014/04/08 15:23:15 ajacoutot Exp $
+
+From 9f656a1259a71c61068febf61733b2787e6ed105 Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Thu, 27 Mar 2014 17:08:58 +0100
+Subject: Bug #726542 - Unpadded black border on various mail account settings
+
+--- mail/e-mail-config-window.c.orig	Fri Feb 28 20:38:10 2014
++++ mail/e-mail-config-window.c	Tue Apr  8 16:39:37 2014
+@@ -365,6 +365,7 @@ mail_config_window_constructed (GObject *object)
+ 	gtk_widget_set_vexpand (widget, TRUE);
+ 	gtk_widget_set_margin_bottom (widget, 17);
+ 	gtk_notebook_set_show_tabs (GTK_NOTEBOOK (widget), FALSE);
++	gtk_notebook_set_show_border (GTK_NOTEBOOK (widget), FALSE);
+ 	gtk_grid_attach (GTK_GRID (container), widget, 2, 1, 1, 1);
+ 	window->priv->notebook = widget;  /* not referenced */
+ 	gtk_widget_show (widget);

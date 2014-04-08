@@ -1,0 +1,17 @@
+$OpenBSD: patch-calendar_importers_icalendar-importer_c,v 1.1 2014/04/08 15:23:15 ajacoutot Exp $
+
+From 9f656a1259a71c61068febf61733b2787e6ed105 Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Thu, 27 Mar 2014 17:08:58 +0100
+Subject: Bug #726542 - Unpadded black border on various mail account settings
+
+--- calendar/importers/icalendar-importer.c.orig	Tue Jan  7 22:05:51 2014
++++ calendar/importers/icalendar-importer.c	Tue Apr  8 16:39:37 2014
+@@ -303,6 +303,7 @@ ivcal_getwidget (EImport *ei,
+ 
+ 	nb = gtk_notebook_new ();
+ 	gtk_notebook_set_show_tabs (GTK_NOTEBOOK (nb), FALSE);
++	gtk_notebook_set_show_border (GTK_NOTEBOOK (nb), FALSE);
+ 	gtk_box_pack_start (GTK_BOX (vbox), nb, TRUE, TRUE, 6);
+ 
+ 	/* Type of icalendar items */

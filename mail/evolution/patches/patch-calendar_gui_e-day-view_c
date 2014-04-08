@@ -1,0 +1,44 @@
+$OpenBSD: patch-calendar_gui_e-day-view_c,v 1.1 2014/04/08 15:23:15 ajacoutot Exp $
+
+From 30bb3576c607f49ee5b0f1c9c625e6d41c486838 Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Mon, 24 Mar 2014 16:21:49 +0100
+Subject: Bug #726110 - Use gtk_drag_check_threshold() instead of hard-coded
+
+--- calendar/gui/e-day-view.c.orig	Thu Mar 13 14:43:23 2014
++++ calendar/gui/e-day-view.c	Tue Apr  8 16:35:05 2014
+@@ -75,10 +75,6 @@
+ /* The number of timeouts we skip before we start scrolling. */
+ #define E_DAY_VIEW_AUTO_SCROLL_DELAY	5
+ 
+-/* The number of pixels the mouse has to be moved with the button down before
+- * we start a drag. */
+-#define E_DAY_VIEW_DRAG_START_OFFSET	4
+-
+ /* The amount we scroll the main canvas when the Page Up/Down keys are pressed,
+  * as a fraction of the page size. */
+ #define E_DAY_VIEW_PAGE_STEP		0.5
+@@ -4669,10 +4665,7 @@ e_day_view_on_top_canvas_motion (GtkWidget *widget,
+ 			return FALSE;
+ 
+ 		if (!e_cal_util_component_has_recurrences (event->comp_data->icalcomp)
+-		    && (abs (canvas_x - day_view->drag_event_x)
+-			> E_DAY_VIEW_DRAG_START_OFFSET
+-			|| abs (canvas_y - day_view->drag_event_y)
+-			> E_DAY_VIEW_DRAG_START_OFFSET)) {
++		    && gtk_drag_check_threshold (widget, day_view->drag_event_x, day_view->drag_event_y, canvas_x, canvas_y)) {
+ 			day_view->drag_event_day = day_view->pressed_event_day;
+ 			day_view->drag_event_num = day_view->pressed_event_num;
+ 			day_view->pressed_event_day = -1;
+@@ -4781,10 +4774,7 @@ e_day_view_on_main_canvas_motion (GtkWidget *widget,
+ 		   && day_view->pressed_event_day != E_DAY_VIEW_LONG_EVENT) {
+ 		GtkTargetList *target_list;
+ 
+-		if ((abs (canvas_x - day_view->drag_event_x)
+-			> E_DAY_VIEW_DRAG_START_OFFSET
+-			|| abs (canvas_y - day_view->drag_event_y)
+-			> E_DAY_VIEW_DRAG_START_OFFSET)) {
++		if (gtk_drag_check_threshold (widget, day_view->drag_event_x, day_view->drag_event_y, canvas_x, canvas_y)) {
+ 			day_view->drag_event_day = day_view->pressed_event_day;
+ 			day_view->drag_event_num = day_view->pressed_event_num;
+ 			day_view->pressed_event_day = -1;

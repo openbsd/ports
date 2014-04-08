@@ -1,0 +1,18 @@
+$OpenBSD: patch-e-util_e-table-column-specification_c,v 1.1 2014/04/08 15:23:15 ajacoutot Exp $
+
+From afe39b84353ed091828fe704cf127a21f492b415 Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Wed, 26 Mar 2014 16:48:03 +0100
+Subject: Fix two memory leaks
+
+--- e-util/e-table-column-specification.c.orig	Mon Mar  3 01:37:23 2014
++++ e-util/e-table-column-specification.c	Tue Apr  8 16:38:00 2014
+@@ -72,7 +72,7 @@ e_table_column_specification_init (ETableColumnSpecifi
+ {
+ 	specification->model_col = 0;
+ 	specification->compare_col = 0;
+-	specification->title = g_strdup ("");
++	specification->title = NULL;
+ 	specification->pixbuf = NULL;
+ 
+ 	specification->expansion = 0;

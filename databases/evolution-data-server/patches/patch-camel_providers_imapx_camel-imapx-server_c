@@ -1,0 +1,49 @@
+$OpenBSD: patch-camel_providers_imapx_camel-imapx-server_c,v 1.1 2014/04/08 15:22:44 ajacoutot Exp $
+
+From 8476b8abecb190019cf2fdfef6f0a9f3ec6e8cae Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Wed, 2 Apr 2014 19:12:53 +0200
+Subject: CamelIMAPXServer not shut down properly on network outage
+
+--- camel/providers/imapx/camel-imapx-server.c.orig	Sun Mar 23 00:32:13 2014
++++ camel/providers/imapx/camel-imapx-server.c	Tue Apr  8 15:56:44 2014
+@@ -5041,18 +5041,17 @@ camel_imapx_server_shutdown (CamelIMAPXServer *is)
+ 
+ 	g_return_if_fail (CAMEL_IS_IMAPX_SERVER (is));
+ 
+-	g_main_loop_quit (is->priv->idle_main_loop);
+-	g_main_loop_quit (is->priv->parser_main_loop);
+-
+ 	QUEUE_LOCK (is);
+ 
+ 	is->state = IMAPX_SHUTDOWN;
+ 
+ 	cancellable = g_weak_ref_get (&is->priv->parser_cancellable);
+-	g_weak_ref_set (&is->priv->parser_cancellable, NULL);
+ 
+ 	QUEUE_UNLOCK (is);
+ 
++	g_main_loop_quit (is->priv->idle_main_loop);
++	g_main_loop_quit (is->priv->parser_main_loop);
++
+ 	g_cancellable_cancel (cancellable);
+ 	g_clear_object (&cancellable);
+ }
+@@ -7620,14 +7619,15 @@ imapx_ready_to_read (GInputStream *input_stream,
+ 	}
+ 
+ 	if (g_cancellable_is_cancelled (cancellable)) {
+-		gboolean active_queue_is_empty;
++		gboolean active_queue_is_empty, is_shutdown_request;
+ 
+ 		QUEUE_LOCK (is);
+ 		active_queue_is_empty =
+ 			camel_imapx_command_queue_is_empty (is->active);
++		is_shutdown_request = is->state == IMAPX_SHUTDOWN;
+ 		QUEUE_UNLOCK (is);
+ 
+-		if (active_queue_is_empty || imapx_in_idle (is)) {
++		if (!is_shutdown_request && (active_queue_is_empty || imapx_in_idle (is))) {
+ 			g_cancellable_reset (cancellable);
+ 			g_clear_error (&local_error);
+ 		} else {

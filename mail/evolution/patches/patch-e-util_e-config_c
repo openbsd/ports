@@ -1,0 +1,17 @@
+$OpenBSD: patch-e-util_e-config_c,v 1.1 2014/04/08 15:23:15 ajacoutot Exp $
+
+From 9f656a1259a71c61068febf61733b2787e6ed105 Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Thu, 27 Mar 2014 17:08:58 +0100
+Subject: Bug #726542 - Unpadded black border on various mail account settings
+
+--- e-util/e-config.c.orig	Sun Feb  2 17:55:09 2014
++++ e-util/e-config.c	Tue Apr  8 16:39:37 2014
+@@ -420,6 +420,7 @@ ec_rebuild (EConfig *config)
+ 						0, wn->context->data);
+ 				} else {
+ 					root = gtk_notebook_new ();
++					gtk_notebook_set_show_border (GTK_NOTEBOOK (root), FALSE);
+ 					gtk_widget_show (root);
+ 				}
+ 
