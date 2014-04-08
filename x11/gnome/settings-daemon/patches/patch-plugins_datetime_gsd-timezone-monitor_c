@@ -1,0 +1,23 @@
+$OpenBSD: patch-plugins_datetime_gsd-timezone-monitor_c,v 1.1 2014/04/08 13:42:35 ajacoutot Exp $
+
+From 6871b46e735479e521104f8c4b17280163902015 Mon Sep 17 00:00:00 2001
+From: Kalev Lember <kalevlember@gmail.com>
+Date: Wed, 2 Apr 2014 16:30:56 +0200
+Subject: datetime: Call geoclue's stop method when we no longer need it
+
+--- plugins/datetime/gsd-timezone-monitor.c.orig	Tue Mar  4 17:15:04 2014
++++ plugins/datetime/gsd-timezone-monitor.c	Tue Apr  8 15:37:52 2014
+@@ -441,8 +441,12 @@ gsd_timezone_monitor_finalize (GObject *obj)
+                 g_clear_object (&priv->cancellable);
+         }
+ 
++        if (priv->geoclue_client) {
++                geoclue_client_call_stop (priv->geoclue_client, NULL, NULL, NULL);
++                g_clear_object (&priv->geoclue_client);
++        }
++
+         g_clear_object (&priv->dtm);
+-        g_clear_object (&priv->geoclue_client);
+         g_clear_object (&priv->geoclue_manager);
+         g_clear_object (&priv->permission);
+         g_clear_pointer (&priv->current_timezone, g_free);
