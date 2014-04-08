@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.84 2014/04/03 12:18:19 jasper Exp $
+# $OpenBSD: gnome.port.mk,v 1.85 2014/04/08 17:25:35 ajacoutot Exp $
 #
 # Module for GNOME related ports
 
@@ -90,7 +90,7 @@ ERRORS += "Fatal: unknown MODGNOME_TOOLS option: ${_t}\n(not in ${_VALID_TOOLS})
 
 .   if ${MODGNOME_TOOLS:Mgobject-introspection}
         MODGNOME_CONFIGURE_ARGS_gi=--enable-introspection
-        MODGNOME_BUILD_DEPENDS+=devel/gobject-introspection>=1.40.0
+        MODGNOME_BUILD_DEPENDS+=devel/gobject-introspection>=1.40.0p0
 .   endif
 
 .   if ${MODGNOME_TOOLS:Mgtk-doc}
