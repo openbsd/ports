@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2013/11/15 19:09:17 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2014/04/08 12:22:48 sthen Exp $
 
 MULTI_PACKAGES=	-main -ntlm
 
@@ -6,7 +6,7 @@ COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
 COMMENT-ntlm=	NTLM authentication/ACL support for Squid
 
-DISTNAME=	squid-$V
+DISTNAME?=	squid-$V
 EXTRACT_SUFX?=	.tar.xz
 PKGNAME-main=	squid-$V
 PKGNAME-ldap=	squid-ldap-$V
@@ -25,10 +25,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c m pthread stdc++
 
-WANTLIB-main=	${WANTLIB} asn1 crypto db execinfo gssapi krb5 ssl \
-		com_err heimbase roken wind
+WANTLIB-main +=	${WANTLIB} asn1 com_err crypto db execinfo gssapi
+WANTLIB-main +=	heimbase krb5 roken ssl wind
 
-LIB_DEPENDS-main= ${LIB_DEPENDS} \
+LIB_DEPENDS-main += ${LIB_DEPENDS} \
 		databases/db/v4 \
 		devel/libexecinfo
 
@@ -72,6 +72,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--enable-referer-log \
 		--enable-removal-policies="lru heap" \
 		--enable-ssl \
+		--with-openssl \
 		--enable-stacktraces \
 		--enable-storeio="aufs ufs diskd rock" \
 		--with-default-user="_squid" \
@@ -88,7 +89,7 @@ CONFIGURE_ARGS+= --disable-pf-transparent \
 # kerberos_ldap_group fails
 CONFIGURE_ARGS+= --enable-external-acl-helpers="${EXTERNAL_ACL}"
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV+=	CPPFLAGS="`krb5-config --cflags` -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_header_et_com_err_h=false
 E=		${TRUEPREFIX}/share/examples/squid
@@ -101,13 +102,14 @@ TEST_DEPENDS= devel/cppunit
 MULTI_PACKAGES+= -ldap
 EXTERNAL_ACL+=	LDAP_group eDirectory_userip
 RUN_DEPENDS-ldap= ${BASE_PKGPATH}
-LIB_DEPENDS-ldap= ${LIB_DEPENDS} databases/openldap
+LIB_DEPENDS-ldap += ${LIB_DEPENDS} databases/openldap
 WANTLIB-ldap +=	${WANTLIB} asn1 com_err crypto gssapi krb5
 WANTLIB-ldap +=	lber-2.4 ldap-2.4 sasl2 ssl wind
 WANTLIB-ldap +=	com_err heimbase roken
 .endif
 
 RUN_DEPENDS-ntlm= net/samba,ads ${BASE_PKGPATH}
+WANTLIB-ntlm +=	${WANTLIB}
 
 post-patch:
 	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} LOCALBASE=${LOCALBASE} ./bootstrap.sh

@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_squid_8_in,v 1.1 2013/11/15 19:09:18 sthen Exp $
+$OpenBSD: patch-src_squid_8_in,v 1.2 2014/04/08 12:22:48 sthen Exp $
 --- src/squid.8.in.orig	Tue Mar 12 10:15:58 2013
 +++ src/squid.8.in	Tue Mar 12 14:21:28 2013
 @@ -194,12 +194,14 @@ Some packaging distributions block even that.

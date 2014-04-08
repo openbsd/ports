@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2013/11/15 19:09:17 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2014/04/08 12:22:48 sthen Exp $
 @newgroup _squid:515
 @newuser _squid:515:_squid:daemon:Squid Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${LOCALSTATEDIR}/cache/*
@@ -11,7 +11,6 @@ libexec/squid/basic_db_auth
 @bin libexec/squid/basic_fake_auth
 @bin libexec/squid/basic_msnt_auth
 @bin libexec/squid/basic_ncsa_auth
-@bin libexec/squid/basic_nis_auth
 libexec/squid/basic_pop3_auth
 @bin libexec/squid/basic_radius_auth
 @bin libexec/squid/cachemgr.cgi
@@ -25,7 +24,10 @@ libexec/squid/ext_sql_session_acl
 libexec/squid/helper-mux.pl
 libexec/squid/log_db_daemon
 @bin libexec/squid/log_file_daemon
+@bin libexec/squid/negotiate_kerberos_auth
+@bin libexec/squid/negotiate_kerberos_auth_test
 @bin libexec/squid/negotiate_wrapper_auth
+@bin libexec/squid/ssl_crtd
 libexec/squid/storeid_file_rewrite
 @bin libexec/squid/unlinkd
 @bin libexec/squid/url_fake_rewrite
@@ -41,6 +43,7 @@ libexec/squid/url_fake_rewrite.sh
 @man man/man8/ext_time_quota_acl.8
 @man man/man8/ext_unix_group_acl.8
 @man man/man8/log_db_daemon.8
+@man man/man8/negotiate_kerberos_auth.8
 @man man/man8/squid.8
 @man man/man8/storeid_file_rewrite.8
 @bin sbin/squid
@@ -1631,6 +1634,9 @@ share/squid/errors/sl/ERR_ZERO_SIZE_OBJECT
 share/squid/errors/sl/error-details.txt
 share/squid/errors/sr
 share/squid/errors/sr-cyrl/
+share/squid/errors/sr-cyrl-cs
+share/squid/errors/sr-cyrl-me
+share/squid/errors/sr-cyrl-rs
 share/squid/errors/sr-cyrl/ERR_ACCESS_DENIED
 share/squid/errors/sr-cyrl/ERR_ACL_TIME_QUOTA_EXCEEDED
 share/squid/errors/sr-cyrl/ERR_AGENT_CONFIGURE
@@ -1675,6 +1681,8 @@ share/squid/errors/sr-cyrl/ERR_ZERO_SIZE_OBJECT
 share/squid/errors/sr-cyrl/error-details.txt
 share/squid/errors/sr-latn/
 share/squid/errors/sr-latn-cs
+share/squid/errors/sr-latn-me
+share/squid/errors/sr-latn-rs
 share/squid/errors/sr-latn/ERR_ACCESS_DENIED
 share/squid/errors/sr-latn/ERR_ACL_TIME_QUOTA_EXCEEDED
 share/squid/errors/sr-latn/ERR_AGENT_CONFIGURE
@@ -1717,6 +1725,7 @@ share/squid/errors/sr-latn/ERR_URN_RESOLVE
 share/squid/errors/sr-latn/ERR_WRITE_ERROR
 share/squid/errors/sr-latn/ERR_ZERO_SIZE_OBJECT
 share/squid/errors/sr-latn/error-details.txt
+share/squid/errors/sr-rs
 share/squid/errors/sr-sp
 share/squid/errors/sv/
 share/squid/errors/sv-fi
@@ -2025,95 +2034,102 @@ share/squid/errors/vi/ERR_URN_RESOLVE
 share/squid/errors/vi/ERR_WRITE_ERROR
 share/squid/errors/vi/ERR_ZERO_SIZE_OBJECT
 share/squid/errors/vi/error-details.txt
-share/squid/errors/zh-cn/
-share/squid/errors/zh-cn/ERR_ACCESS_DENIED
-share/squid/errors/zh-cn/ERR_ACL_TIME_QUOTA_EXCEEDED
-share/squid/errors/zh-cn/ERR_AGENT_CONFIGURE
-share/squid/errors/zh-cn/ERR_AGENT_WPAD
-share/squid/errors/zh-cn/ERR_CACHE_ACCESS_DENIED
-share/squid/errors/zh-cn/ERR_CACHE_MGR_ACCESS_DENIED
-share/squid/errors/zh-cn/ERR_CANNOT_FORWARD
-share/squid/errors/zh-cn/ERR_CONFLICT_HOST
-share/squid/errors/zh-cn/ERR_CONNECT_FAIL
-share/squid/errors/zh-cn/ERR_DIR_LISTING
-share/squid/errors/zh-cn/ERR_DNS_FAIL
-share/squid/errors/zh-cn/ERR_ESI
-share/squid/errors/zh-cn/ERR_FORWARDING_DENIED
-share/squid/errors/zh-cn/ERR_FTP_DISABLED
-share/squid/errors/zh-cn/ERR_FTP_FAILURE
-share/squid/errors/zh-cn/ERR_FTP_FORBIDDEN
-share/squid/errors/zh-cn/ERR_FTP_NOT_FOUND
-share/squid/errors/zh-cn/ERR_FTP_PUT_CREATED
-share/squid/errors/zh-cn/ERR_FTP_PUT_ERROR
-share/squid/errors/zh-cn/ERR_FTP_PUT_MODIFIED
-share/squid/errors/zh-cn/ERR_FTP_UNAVAILABLE
-share/squid/errors/zh-cn/ERR_GATEWAY_FAILURE
-share/squid/errors/zh-cn/ERR_ICAP_FAILURE
-share/squid/errors/zh-cn/ERR_INVALID_REQ
-share/squid/errors/zh-cn/ERR_INVALID_RESP
-share/squid/errors/zh-cn/ERR_INVALID_URL
-share/squid/errors/zh-cn/ERR_LIFETIME_EXP
-share/squid/errors/zh-cn/ERR_NO_RELAY
-share/squid/errors/zh-cn/ERR_ONLY_IF_CACHED_MISS
-share/squid/errors/zh-cn/ERR_PRECONDITION_FAILED
-share/squid/errors/zh-cn/ERR_READ_ERROR
-share/squid/errors/zh-cn/ERR_READ_TIMEOUT
-share/squid/errors/zh-cn/ERR_SECURE_CONNECT_FAIL
-share/squid/errors/zh-cn/ERR_SHUTTING_DOWN
-share/squid/errors/zh-cn/ERR_SOCKET_FAILURE
-share/squid/errors/zh-cn/ERR_TOO_BIG
-share/squid/errors/zh-cn/ERR_UNSUP_HTTPVERSION
-share/squid/errors/zh-cn/ERR_UNSUP_REQ
-share/squid/errors/zh-cn/ERR_URN_RESOLVE
-share/squid/errors/zh-cn/ERR_WRITE_ERROR
-share/squid/errors/zh-cn/ERR_ZERO_SIZE_OBJECT
-share/squid/errors/zh-cn/error-details.txt
+share/squid/errors/zh-cn
+share/squid/errors/zh-hans/
+share/squid/errors/zh-hans-cn
+share/squid/errors/zh-hans-sg
+share/squid/errors/zh-hans/ERR_ACCESS_DENIED
+share/squid/errors/zh-hans/ERR_ACL_TIME_QUOTA_EXCEEDED
+share/squid/errors/zh-hans/ERR_AGENT_CONFIGURE
+share/squid/errors/zh-hans/ERR_AGENT_WPAD
+share/squid/errors/zh-hans/ERR_CACHE_ACCESS_DENIED
+share/squid/errors/zh-hans/ERR_CACHE_MGR_ACCESS_DENIED
+share/squid/errors/zh-hans/ERR_CANNOT_FORWARD
+share/squid/errors/zh-hans/ERR_CONFLICT_HOST
+share/squid/errors/zh-hans/ERR_CONNECT_FAIL
+share/squid/errors/zh-hans/ERR_DIR_LISTING
+share/squid/errors/zh-hans/ERR_DNS_FAIL
+share/squid/errors/zh-hans/ERR_ESI
+share/squid/errors/zh-hans/ERR_FORWARDING_DENIED
+share/squid/errors/zh-hans/ERR_FTP_DISABLED
+share/squid/errors/zh-hans/ERR_FTP_FAILURE
+share/squid/errors/zh-hans/ERR_FTP_FORBIDDEN
+share/squid/errors/zh-hans/ERR_FTP_NOT_FOUND
+share/squid/errors/zh-hans/ERR_FTP_PUT_CREATED
+share/squid/errors/zh-hans/ERR_FTP_PUT_ERROR
+share/squid/errors/zh-hans/ERR_FTP_PUT_MODIFIED
+share/squid/errors/zh-hans/ERR_FTP_UNAVAILABLE
+share/squid/errors/zh-hans/ERR_GATEWAY_FAILURE
+share/squid/errors/zh-hans/ERR_ICAP_FAILURE
+share/squid/errors/zh-hans/ERR_INVALID_REQ
+share/squid/errors/zh-hans/ERR_INVALID_RESP
+share/squid/errors/zh-hans/ERR_INVALID_URL
+share/squid/errors/zh-hans/ERR_LIFETIME_EXP
+share/squid/errors/zh-hans/ERR_NO_RELAY
+share/squid/errors/zh-hans/ERR_ONLY_IF_CACHED_MISS
+share/squid/errors/zh-hans/ERR_PRECONDITION_FAILED
+share/squid/errors/zh-hans/ERR_READ_ERROR
+share/squid/errors/zh-hans/ERR_READ_TIMEOUT
+share/squid/errors/zh-hans/ERR_SECURE_CONNECT_FAIL
+share/squid/errors/zh-hans/ERR_SHUTTING_DOWN
+share/squid/errors/zh-hans/ERR_SOCKET_FAILURE
+share/squid/errors/zh-hans/ERR_TOO_BIG
+share/squid/errors/zh-hans/ERR_UNSUP_HTTPVERSION
+share/squid/errors/zh-hans/ERR_UNSUP_REQ
+share/squid/errors/zh-hans/ERR_URN_RESOLVE
+share/squid/errors/zh-hans/ERR_WRITE_ERROR
+share/squid/errors/zh-hans/ERR_ZERO_SIZE_OBJECT
+share/squid/errors/zh-hans/error-details.txt
+share/squid/errors/zh-hant/
+share/squid/errors/zh-hant-hk
+share/squid/errors/zh-hant-mo
+share/squid/errors/zh-hant-tw
+share/squid/errors/zh-hant/ERR_ACCESS_DENIED
+share/squid/errors/zh-hant/ERR_ACL_TIME_QUOTA_EXCEEDED
+share/squid/errors/zh-hant/ERR_AGENT_CONFIGURE
+share/squid/errors/zh-hant/ERR_AGENT_WPAD
+share/squid/errors/zh-hant/ERR_CACHE_ACCESS_DENIED
+share/squid/errors/zh-hant/ERR_CACHE_MGR_ACCESS_DENIED
+share/squid/errors/zh-hant/ERR_CANNOT_FORWARD
+share/squid/errors/zh-hant/ERR_CONFLICT_HOST
+share/squid/errors/zh-hant/ERR_CONNECT_FAIL
+share/squid/errors/zh-hant/ERR_DIR_LISTING
+share/squid/errors/zh-hant/ERR_DNS_FAIL
+share/squid/errors/zh-hant/ERR_ESI
+share/squid/errors/zh-hant/ERR_FORWARDING_DENIED
+share/squid/errors/zh-hant/ERR_FTP_DISABLED
+share/squid/errors/zh-hant/ERR_FTP_FAILURE
+share/squid/errors/zh-hant/ERR_FTP_FORBIDDEN
+share/squid/errors/zh-hant/ERR_FTP_NOT_FOUND
+share/squid/errors/zh-hant/ERR_FTP_PUT_CREATED
+share/squid/errors/zh-hant/ERR_FTP_PUT_ERROR
+share/squid/errors/zh-hant/ERR_FTP_PUT_MODIFIED
+share/squid/errors/zh-hant/ERR_FTP_UNAVAILABLE
+share/squid/errors/zh-hant/ERR_GATEWAY_FAILURE
+share/squid/errors/zh-hant/ERR_ICAP_FAILURE
+share/squid/errors/zh-hant/ERR_INVALID_REQ
+share/squid/errors/zh-hant/ERR_INVALID_RESP
+share/squid/errors/zh-hant/ERR_INVALID_URL
+share/squid/errors/zh-hant/ERR_LIFETIME_EXP
+share/squid/errors/zh-hant/ERR_NO_RELAY
+share/squid/errors/zh-hant/ERR_ONLY_IF_CACHED_MISS
+share/squid/errors/zh-hant/ERR_PRECONDITION_FAILED
+share/squid/errors/zh-hant/ERR_READ_ERROR
+share/squid/errors/zh-hant/ERR_READ_TIMEOUT
+share/squid/errors/zh-hant/ERR_SECURE_CONNECT_FAIL
+share/squid/errors/zh-hant/ERR_SHUTTING_DOWN
+share/squid/errors/zh-hant/ERR_SOCKET_FAILURE
+share/squid/errors/zh-hant/ERR_TOO_BIG
+share/squid/errors/zh-hant/ERR_UNSUP_HTTPVERSION
+share/squid/errors/zh-hant/ERR_UNSUP_REQ
+share/squid/errors/zh-hant/ERR_URN_RESOLVE
+share/squid/errors/zh-hant/ERR_WRITE_ERROR
+share/squid/errors/zh-hant/ERR_ZERO_SIZE_OBJECT
+share/squid/errors/zh-hant/error-details.txt
 share/squid/errors/zh-hk
 share/squid/errors/zh-mo
 share/squid/errors/zh-sg
-share/squid/errors/zh-tw/
-share/squid/errors/zh-tw/ERR_ACCESS_DENIED
-share/squid/errors/zh-tw/ERR_ACL_TIME_QUOTA_EXCEEDED
-share/squid/errors/zh-tw/ERR_AGENT_CONFIGURE
-share/squid/errors/zh-tw/ERR_AGENT_WPAD
-share/squid/errors/zh-tw/ERR_CACHE_ACCESS_DENIED
-share/squid/errors/zh-tw/ERR_CACHE_MGR_ACCESS_DENIED
-share/squid/errors/zh-tw/ERR_CANNOT_FORWARD
-share/squid/errors/zh-tw/ERR_CONFLICT_HOST
-share/squid/errors/zh-tw/ERR_CONNECT_FAIL
-share/squid/errors/zh-tw/ERR_DIR_LISTING
-share/squid/errors/zh-tw/ERR_DNS_FAIL
-share/squid/errors/zh-tw/ERR_ESI
-share/squid/errors/zh-tw/ERR_FORWARDING_DENIED
-share/squid/errors/zh-tw/ERR_FTP_DISABLED
-share/squid/errors/zh-tw/ERR_FTP_FAILURE
-share/squid/errors/zh-tw/ERR_FTP_FORBIDDEN
-share/squid/errors/zh-tw/ERR_FTP_NOT_FOUND
-share/squid/errors/zh-tw/ERR_FTP_PUT_CREATED
-share/squid/errors/zh-tw/ERR_FTP_PUT_ERROR
-share/squid/errors/zh-tw/ERR_FTP_PUT_MODIFIED
-share/squid/errors/zh-tw/ERR_FTP_UNAVAILABLE
-share/squid/errors/zh-tw/ERR_GATEWAY_FAILURE
-share/squid/errors/zh-tw/ERR_ICAP_FAILURE
-share/squid/errors/zh-tw/ERR_INVALID_REQ
-share/squid/errors/zh-tw/ERR_INVALID_RESP
-share/squid/errors/zh-tw/ERR_INVALID_URL
-share/squid/errors/zh-tw/ERR_LIFETIME_EXP
-share/squid/errors/zh-tw/ERR_NO_RELAY
-share/squid/errors/zh-tw/ERR_ONLY_IF_CACHED_MISS
-share/squid/errors/zh-tw/ERR_PRECONDITION_FAILED
-share/squid/errors/zh-tw/ERR_READ_ERROR
-share/squid/errors/zh-tw/ERR_READ_TIMEOUT
-share/squid/errors/zh-tw/ERR_SECURE_CONNECT_FAIL
-share/squid/errors/zh-tw/ERR_SHUTTING_DOWN
-share/squid/errors/zh-tw/ERR_SOCKET_FAILURE
-share/squid/errors/zh-tw/ERR_TOO_BIG
-share/squid/errors/zh-tw/ERR_UNSUP_HTTPVERSION
-share/squid/errors/zh-tw/ERR_UNSUP_REQ
-share/squid/errors/zh-tw/ERR_URN_RESOLVE
-share/squid/errors/zh-tw/ERR_WRITE_ERROR
-share/squid/errors/zh-tw/ERR_ZERO_SIZE_OBJECT
-share/squid/errors/zh-tw/error-details.txt
+share/squid/errors/zh-tw
 share/squid/icons/
 share/squid/icons/SN.png
 share/squid/icons/silk/

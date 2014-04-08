@@ -1,4 +1,4 @@
-$OpenBSD: patch-helpers_external_acl_wbinfo_group_ext_wbinfo_group_acl_pl_in,v 1.1 2013/11/15 19:09:18 sthen Exp $
+$OpenBSD: patch-helpers_external_acl_wbinfo_group_ext_wbinfo_group_acl_pl_in,v 1.2 2014/04/08 12:22:48 sthen Exp $
 --- helpers/external_acl/wbinfo_group/ext_wbinfo_group_acl.pl.in.orig	Sat Oct 20 13:39:49 2012
 +++ helpers/external_acl/wbinfo_group/ext_wbinfo_group_acl.pl.in	Fri Nov  9 21:55:59 2012
 @@ -126,14 +126,14 @@ sub check {

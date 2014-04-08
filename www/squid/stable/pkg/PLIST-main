@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2013/11/16 19:20:46 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2014/04/08 12:22:48 sthen Exp $
 @pkgpath www/squid[,ldap][,ntlm][,snmp][,transparent]
 @pkgpath www/squid,-main
 @newgroup _squid:515
@@ -17,6 +17,7 @@ libexec/squid/basic_db_auth
 libexec/squid/basic_pop3_auth
 @bin libexec/squid/basic_radius_auth
 @bin libexec/squid/cachemgr.cgi
+libexec/squid/cert_valid.pl
 @bin libexec/squid/digest_file_auth
 @bin libexec/squid/diskd
 @bin libexec/squid/ext_file_userip_acl
@@ -29,6 +30,7 @@ libexec/squid/log_db_daemon
 @bin libexec/squid/negotiate_kerberos_auth
 @bin libexec/squid/negotiate_kerberos_auth_test
 @bin libexec/squid/negotiate_wrapper_auth
+libexec/squid/storeid_file_rewrite
 @bin libexec/squid/unlinkd
 @bin libexec/squid/url_fake_rewrite
 libexec/squid/url_fake_rewrite.sh
@@ -45,6 +47,7 @@ libexec/squid/url_fake_rewrite.sh
 @man man/man8/log_db_daemon.8
 @man man/man8/negotiate_kerberos_auth.8
 @man man/man8/squid.8
+@man man/man8/storeid_file_rewrite.8
 @bin sbin/squid
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/squid/
@@ -1410,6 +1413,7 @@ share/squid/errors/pt-br/ERR_URN_RESOLVE
 share/squid/errors/pt-br/ERR_WRITE_ERROR
 share/squid/errors/pt-br/ERR_ZERO_SIZE_OBJECT
 share/squid/errors/pt-br/error-details.txt
+share/squid/errors/pt-bz
 share/squid/errors/pt-pt
 share/squid/errors/pt/ERR_ACCESS_DENIED
 share/squid/errors/pt/ERR_ACL_TIME_QUOTA_EXCEEDED
