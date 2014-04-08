@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2014/04/02 09:36:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.130 2014/04/08 15:24:00 ajacoutot Exp $
 
 # XXX remove pre-configure when updating to 3.12.0
 # https://git.gnome.org/browse/gnome-control-center/commit/?id=4736b03ed9e2ae9214117454f70811dbacd78739
@@ -11,7 +11,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.12.0
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		x11
 
