@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.78 2014/03/26 08:29:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.79 2014/04/08 17:23:41 ajacoutot Exp $
 
 COMMENT=		GObject Introspection
 
 GNOME_VERSION=		1.40.0
 GNOME_PROJECT=		gobject-introspection
+REVISION=		0
 
 CATEGORIES=		devel
 
