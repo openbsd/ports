@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.22 2014/03/09 22:30:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST-web,v 1.23 2014/04/08 21:05:06 robert Exp $
 @pkgpath net/zabbix,-web,mysql
 @pkgpath net/zabbix,-web,pgsql
 conf/modules.sample/zabbix.conf
@@ -442,6 +442,7 @@ zabbix/include/classes/items/
 zabbix/include/classes/items/CHelpItems.php
 zabbix/include/classes/macros/
 zabbix/include/classes/macros/CMacrosResolver.php
+zabbix/include/classes/macros/CMacrosResolverGeneral.php
 zabbix/include/classes/macros/CMacrosResolverHelper.php
 zabbix/include/classes/parsers/
 zabbix/include/classes/parsers/CTriggerExpression.php
