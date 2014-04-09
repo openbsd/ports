@@ -1,9 +1,9 @@
-$OpenBSD: patch-getweb_in,v 1.24 2014/03/21 15:37:15 ajacoutot Exp $
---- getweb.in.orig	Fri Mar 21 16:35:11 2014
-+++ getweb.in	Fri Mar 21 16:35:11 2014
+$OpenBSD: patch-getweb_in,v 1.25 2014/04/09 15:20:35 ajacoutot Exp $
+--- getweb.in.orig	Wed Apr  9 17:17:54 2014
++++ getweb.in	Wed Apr  9 17:17:54 2014
 @@ -11,7 +11,7 @@
  
- VERSION='20140318'
+ VERSION='20140408'
  
 -WGETOPTS="--passive-ftp -q"
 +WGETOPTS="-V"
