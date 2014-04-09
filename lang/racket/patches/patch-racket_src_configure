@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_configure,v 1.1.1.1 2013/09/19 14:55:55 sthen Exp $
---- src/configure.orig	Sat Aug 10 00:38:27 2013
-+++ src/configure	Wed Sep 18 23:47:10 2013
-@@ -8878,7 +8878,7 @@ if test "${enable_shared}" = "yes" ; then
+$OpenBSD: patch-racket_src_configure,v 1.1 2014/04/09 03:34:48 juanfra Exp $
+--- src/configure.orig	Sat Jan 11 19:20:47 2014
++++ src/configure	Sun Jan 26 02:08:24 2014
+@@ -9164,7 +9164,7 @@ if test "${enable_shared}" = "yes" ; then
      plt_lib_version=`grep " MZSCHEME_VERSION " ${srcdir}/racket/src/schvers.h | cut -d '"' -f 2`
    fi
  

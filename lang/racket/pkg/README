@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2013/09/19 14:55:56 sthen Exp $
+$OpenBSD: README,v 1.2 2014/04/09 03:34:49 juanfra Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -7,16 +7,10 @@ $OpenBSD: README,v 1.1.1.1 2013/09/19 14:55:56 sthen Exp $
 Known issues
 ============
 
-- Racket and Scribble crash with a segfault in some specific situations due to
-  the limits imposed by OpenBSD. If this happens, check the limits of the shell
-  and login.conf.
-
 - Some examples of ffi-lib don't work.
 
 - Due to lack of thread-local storage support on OpenBSD, "places" and
   "futures" are disabled.
-
-- ODBC doesn't work on OpenBSD. Fixed on Racket 6.
 
 Limitations
 ===========

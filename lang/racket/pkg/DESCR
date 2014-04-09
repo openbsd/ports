@@ -1,17 +1,16 @@
-Racket (formerly called PLT Scheme) is a multi-paradigm programming
-language in the Lisp/Scheme family, that also serves as a platform for
-language creation, design, and implementation.
+Racket is a multi-paradigm programming language in the Lisp/Scheme
+family, that also serves as a platform for language creation, design,
+and implementation.
 
 The primary components of Racket platform are:
 
 - The implementation of Racket (including a rich run-time system,
   various libraries, JIT compiler, and more).
-- DrRacket (formerly named DrScheme), the Racket program development
-  environment.
+- DrRacket, the Racket program development environment.
 - Teachpacks to use together with various books.
 - pkg.racket-lang.org, Racket's web-based package distribution system
   for user-contributed packages.
 - raco, command line tool for finding documentation, compiling Racket
-  source to bytecode, packaging executables, and packaging installable
-  archives.
+  source to bytecode, packaging executables, packaging installable
+  archives, and installing packages from remote servers.
 
