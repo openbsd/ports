@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2013/03/11 11:41:32 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2014/04/09 20:45:57 kili Exp $
 
 COMMENT-main =		system monitoring tool
 COMMENT-nagios =	nagios plugin for resmon
@@ -7,6 +7,7 @@ V =			20090802
 DISTNAME =		resmon-$V
 PKGNAME-main =		${DISTNAME}
 PKGNAME-nagios =	nagios-plugins-resmon-$V
+REVISION-nagios =	0
 CATEGORIES =		sysutils
 HOMEPAGE =		http://labs.omniti.com/trac/resmon
 
