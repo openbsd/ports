@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2010/01/10 10:21:05 ajacoutot Exp $
-@lib lib/libsylph-0.so.${LIBsylph-0_VERSION}
-@lib lib/libsylpheed-plugin-0.so.${LIBsylpheed-plugin-0_VERSION}
