@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2014/03/12 13:18:37 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.120 2014/04/09 12:30:41 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 SHARED_ONLY =		Yes
@@ -24,7 +24,7 @@ PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
 
-REVISION-main =		2
+REVISION-main =		3
 
 # XXX qmake include parser is bogus
 DPB_PROPERTIES =	parallel	nojunk
@@ -208,6 +208,8 @@ WANTLIB-main =		${commonWANTLIB} jpeg mng \
 			Xrender fontconfig freetype png>=2 z \
 			sqlite3
 
+# dlopen'd icui18n in src/corelib/tools/qlocale_icu.cpp
+RUN_DEPENDS-main +=	textproc/icu4c
 
 LIB_DEPENDS-mysql =	${BUILD_PKGPATH} \
 			databases/mysql
