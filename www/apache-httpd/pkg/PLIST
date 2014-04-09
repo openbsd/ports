@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2013/07/12 13:21:25 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.23 2014/04/09 22:11:32 stsp Exp $
 @newgroup _apache2:576
 @newuser _apache2:576:576:daemon:Apache HTTP Server:/var/empty:/sbin/nologin
 include/apache2/
@@ -192,14 +192,14 @@ share/doc/apache2/developer/debugging.html
 share/doc/apache2/developer/debugging.html.en
 share/doc/apache2/developer/documenting.html
 share/doc/apache2/developer/documenting.html.en
-share/doc/apache2/developer/documenting.html.zh-cn
+share/doc/apache2/developer/documenting.html.zh-cn.utf8
 share/doc/apache2/developer/filters.html
 share/doc/apache2/developer/filters.html.en
 share/doc/apache2/developer/hooks.html
 share/doc/apache2/developer/hooks.html.en
 share/doc/apache2/developer/index.html
 share/doc/apache2/developer/index.html.en
-share/doc/apache2/developer/index.html.zh-cn
+share/doc/apache2/developer/index.html.zh-cn.utf8
 share/doc/apache2/developer/modules.html
 share/doc/apache2/developer/modules.html.en
 share/doc/apache2/developer/modules.html.ja.utf8
@@ -226,7 +226,7 @@ share/doc/apache2/faq/
 share/doc/apache2/faq/index.html
 share/doc/apache2/faq/index.html.en
 share/doc/apache2/faq/index.html.tr.utf8
-share/doc/apache2/faq/index.html.zh-cn
+share/doc/apache2/faq/index.html.zh-cn.utf8
 share/doc/apache2/filter.html
 share/doc/apache2/filter.html.en
 share/doc/apache2/filter.html.es
@@ -250,7 +250,7 @@ share/doc/apache2/handler.html.ja.utf8
 share/doc/apache2/handler.html.ko.euc-kr
 share/doc/apache2/handler.html.ru.koi8-r
 share/doc/apache2/handler.html.tr.utf8
-share/doc/apache2/handler.html.zh-cn
+share/doc/apache2/handler.html.zh-cn.utf8
 share/doc/apache2/howto/
 share/doc/apache2/howto/access.html
 share/doc/apache2/howto/access.html.en
@@ -274,7 +274,7 @@ share/doc/apache2/howto/index.html
 share/doc/apache2/howto/index.html.en
 share/doc/apache2/howto/index.html.ja.utf8
 share/doc/apache2/howto/index.html.ko.euc-kr
-share/doc/apache2/howto/index.html.zh-cn
+share/doc/apache2/howto/index.html.zh-cn.utf8
 share/doc/apache2/howto/public_html.html
 share/doc/apache2/howto/public_html.html.en
 share/doc/apache2/howto/public_html.html.ja.utf8
@@ -303,6 +303,7 @@ share/doc/apache2/images/mod_filter_new.gif
 share/doc/apache2/images/mod_filter_new.png
 share/doc/apache2/images/mod_filter_new.tr.png
 share/doc/apache2/images/mod_filter_old.gif
+share/doc/apache2/images/mod_filter_old.png
 share/doc/apache2/images/mod_rewrite_fig1.gif
 share/doc/apache2/images/mod_rewrite_fig1.png
 share/doc/apache2/images/mod_rewrite_fig2.gif
@@ -330,7 +331,7 @@ share/doc/apache2/index.html.ja.utf8
 share/doc/apache2/index.html.ko.euc-kr
 share/doc/apache2/index.html.pt-br
 share/doc/apache2/index.html.tr.utf8
-share/doc/apache2/index.html.zh-cn
+share/doc/apache2/index.html.zh-cn.utf8
 share/doc/apache2/install.html
 share/doc/apache2/install.html.de
 share/doc/apache2/install.html.en
@@ -361,7 +362,7 @@ share/doc/apache2/misc/index.html
 share/doc/apache2/misc/index.html.en
 share/doc/apache2/misc/index.html.ko.euc-kr
 share/doc/apache2/misc/index.html.tr.utf8
-share/doc/apache2/misc/index.html.zh-cn
+share/doc/apache2/misc/index.html.zh-cn.utf8
 share/doc/apache2/misc/password_encryptions.html
 share/doc/apache2/misc/password_encryptions.html.en
 share/doc/apache2/misc/perf-tuning.html
@@ -403,7 +404,7 @@ share/doc/apache2/mod/directives.html.ja.utf8
 share/doc/apache2/mod/directives.html.ko.euc-kr
 share/doc/apache2/mod/directives.html.ru.koi8-r
 share/doc/apache2/mod/directives.html.tr.utf8
-share/doc/apache2/mod/directives.html.zh-cn
+share/doc/apache2/mod/directives.html.zh-cn.utf8
 share/doc/apache2/mod/event.html
 share/doc/apache2/mod/event.html.en
 share/doc/apache2/mod/index.html
@@ -413,7 +414,7 @@ share/doc/apache2/mod/index.html.es
 share/doc/apache2/mod/index.html.ja.utf8
 share/doc/apache2/mod/index.html.ko.euc-kr
 share/doc/apache2/mod/index.html.tr.utf8
-share/doc/apache2/mod/index.html.zh-cn
+share/doc/apache2/mod/index.html.zh-cn.utf8
 share/doc/apache2/mod/mod_actions.html
 share/doc/apache2/mod/mod_actions.html.de
 share/doc/apache2/mod/mod_actions.html.en
@@ -721,7 +722,7 @@ share/doc/apache2/mod/quickreference.html.ja.utf8
 share/doc/apache2/mod/quickreference.html.ko.euc-kr
 share/doc/apache2/mod/quickreference.html.ru.koi8-r
 share/doc/apache2/mod/quickreference.html.tr.utf8
-share/doc/apache2/mod/quickreference.html.zh-cn
+share/doc/apache2/mod/quickreference.html.zh-cn.utf8
 share/doc/apache2/mod/worker.html
 share/doc/apache2/mod/worker.html.de
 share/doc/apache2/mod/worker.html.en
@@ -735,7 +736,7 @@ share/doc/apache2/mpm.html.fr
 share/doc/apache2/mpm.html.ja.utf8
 share/doc/apache2/mpm.html.ko.euc-kr
 share/doc/apache2/mpm.html.tr.utf8
-share/doc/apache2/mpm.html.zh-cn
+share/doc/apache2/mpm.html.zh-cn.utf8
 share/doc/apache2/new_features_2_0.html
 share/doc/apache2/new_features_2_0.html.de
 share/doc/apache2/new_features_2_0.html.en
@@ -759,7 +760,7 @@ share/doc/apache2/platform/ebcdic.html.ko.euc-kr
 share/doc/apache2/platform/index.html
 share/doc/apache2/platform/index.html.en
 share/doc/apache2/platform/index.html.ko.euc-kr
-share/doc/apache2/platform/index.html.zh-cn
+share/doc/apache2/platform/index.html.zh-cn.utf8
 share/doc/apache2/platform/netware.html
 share/doc/apache2/platform/netware.html.en
 share/doc/apache2/platform/netware.html.ko.euc-kr
@@ -822,7 +823,7 @@ share/doc/apache2/programs/index.html.ja.utf8
 share/doc/apache2/programs/index.html.ko.euc-kr
 share/doc/apache2/programs/index.html.ru.koi8-r
 share/doc/apache2/programs/index.html.tr.utf8
-share/doc/apache2/programs/index.html.zh-cn
+share/doc/apache2/programs/index.html.zh-cn.utf8
 share/doc/apache2/programs/logresolve.html
 share/doc/apache2/programs/logresolve.html.en
 share/doc/apache2/programs/logresolve.html.ko.euc-kr
@@ -855,7 +856,7 @@ share/doc/apache2/rewrite/index.html
 share/doc/apache2/rewrite/index.html.en
 share/doc/apache2/rewrite/index.html.fr
 share/doc/apache2/rewrite/index.html.tr.utf8
-share/doc/apache2/rewrite/index.html.zh-cn
+share/doc/apache2/rewrite/index.html.zh-cn.utf8
 share/doc/apache2/rewrite/intro.html
 share/doc/apache2/rewrite/intro.html.en
 share/doc/apache2/rewrite/intro.html.fr
@@ -888,13 +889,13 @@ share/doc/apache2/sitemap.html.es
 share/doc/apache2/sitemap.html.ja.utf8
 share/doc/apache2/sitemap.html.ko.euc-kr
 share/doc/apache2/sitemap.html.tr.utf8
-share/doc/apache2/sitemap.html.zh-cn
+share/doc/apache2/sitemap.html.zh-cn.utf8
 share/doc/apache2/ssl/
 share/doc/apache2/ssl/index.html
 share/doc/apache2/ssl/index.html.en
 share/doc/apache2/ssl/index.html.ja.utf8
 share/doc/apache2/ssl/index.html.tr.utf8
-share/doc/apache2/ssl/index.html.zh-cn
+share/doc/apache2/ssl/index.html.zh-cn.utf8
 share/doc/apache2/ssl/ssl_compat.html
 share/doc/apache2/ssl/ssl_compat.html.en
 share/doc/apache2/ssl/ssl_faq.html
@@ -931,7 +932,9 @@ share/doc/apache2/style/latex/atbeginend.sty
 share/doc/apache2/style/manualpage.dtd
 share/doc/apache2/style/modulesynopsis.dtd
 share/doc/apache2/style/scripts/
+share/doc/apache2/style/scripts/MINIFY
 share/doc/apache2/style/scripts/prettify.js
+share/doc/apache2/style/scripts/prettify.min.js
 share/doc/apache2/style/sitemap.dtd
 share/doc/apache2/style/version.ent
 share/doc/apache2/style/xsl/
@@ -978,7 +981,7 @@ share/doc/apache2/vhosts/index.html.ja.utf8
 share/doc/apache2/vhosts/index.html.ko.euc-kr
 share/doc/apache2/vhosts/index.html.ru.koi8-r
 share/doc/apache2/vhosts/index.html.tr.utf8
-share/doc/apache2/vhosts/index.html.zh-cn
+share/doc/apache2/vhosts/index.html.zh-cn.utf8
 share/doc/apache2/vhosts/ip-based.html
 share/doc/apache2/vhosts/ip-based.html.en
 share/doc/apache2/vhosts/ip-based.html.fr
