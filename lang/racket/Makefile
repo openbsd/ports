@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2014/04/09 03:34:48 juanfra Exp $
+# $OpenBSD: Makefile,v 1.12 2014/04/09 21:20:33 kili Exp $
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	i386 amd64
@@ -51,7 +51,7 @@ BUILD_DEPENDS =		devel/pango \
 			graphics/jpeg
 RUN_DEPENDS =		devel/desktop-file-utils
 
-WANTLIB += c m pthread ffi iodbc unique gtkglext-x11-1.0 gdkglext-x11-1.0
+WANTLIB += c m pthread ffi iodbc unique-1.0 gtkglext-x11-1.0 gdkglext-x11-1.0
 
 WRKDIST =		${WRKDIR}/racket-$V
 WRKSRC =		${WRKDIST}/src
