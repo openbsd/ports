@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-en_GB,v 1.1 2014/03/09 20:51:26 sthen Exp $
+@comment $OpenBSD: PLIST-en_GB,v 1.2 2014/04/09 00:41:03 sthen Exp $
+@option no-default-conflict
+@conflict asterisk-extra-en_GB-${MODAS_CODEC}-*
 share/asterisk/
 share/asterisk/sounds/
 ${MODAS_INST}/
