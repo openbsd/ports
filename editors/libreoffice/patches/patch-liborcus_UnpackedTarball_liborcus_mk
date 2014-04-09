@@ -1,9 +1,9 @@
-$OpenBSD: patch-liborcus_UnpackedTarball_liborcus_mk,v 1.1 2013/11/12 07:57:23 robert Exp $
---- liborcus/UnpackedTarball_liborcus.mk.orig.port	Sun Nov  3 19:11:19 2013
-+++ liborcus/UnpackedTarball_liborcus.mk	Sun Nov  3 19:17:35 2013
-@@ -21,9 +21,10 @@ liborcus_patches += liborcus_0.1.0-configure.patch
- # don't use dllimport
- liborcus_patches += liborcus_0.1.0-dllimport.patch
+$OpenBSD: patch-liborcus_UnpackedTarball_liborcus_mk,v 1.2 2014/04/09 06:16:05 robert Exp $
+--- liborcus/UnpackedTarball_liborcus.mk.orig.port	Wed Feb  5 16:04:15 2014
++++ liborcus/UnpackedTarball_liborcus.mk	Tue Apr  8 02:33:09 2014
+@@ -24,9 +24,10 @@ liborcus_patches += liborcus_0.1.0-dllimport.patch
+ # fdo#63844
+ liborcus_patches += liborcus-handle-invalid-xml.patch.1
  
 -ifeq ($(OS),MACOSX)
 +ifeq ($(OS),OPENBSD)

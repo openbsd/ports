@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.4 2013/11/12 07:57:23 robert Exp $
---- configure.ac.orig.port	Tue Oct 22 19:49:23 2013
-+++ configure.ac	Sun Nov 10 21:03:32 2013
-@@ -7817,7 +7817,7 @@ if test "x$enable_postgresql_sdbc" != "xno"; then
+$OpenBSD: patch-configure_ac,v 1.5 2014/04/09 06:16:05 robert Exp $
+--- configure.ac.orig.port	Wed Feb  5 16:04:15 2014
++++ configure.ac	Tue Apr  8 02:33:09 2014
+@@ -7852,7 +7852,7 @@ if test "x$enable_postgresql_sdbc" != "xno"; then
              if test "$with_gssapi" != "no"; then
                WITH_GSSAPI=YES
                save_LIBS=$LIBS
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_ac,v 1.4 2013/11/12 07:57:23 robert Exp $
                      [AC_MSG_ERROR([could not find function 'gss_init_sec_context' required for GSSAPI])])
                GSSAPI_LIBS=$LIBS
                LIBS=$save_LIBS
-@@ -8401,11 +8401,7 @@ AC_MSG_CHECKING([whether to enable HarfBuzz support])
+@@ -8436,11 +8436,7 @@ AC_MSG_CHECKING([whether to enable HarfBuzz support])
  if test "$_os" != "WINNT" -a "$_os" != "Darwin"; then
      AC_MSG_RESULT([yes])
      ENABLE_HARFBUZZ="TRUE"
@@ -23,7 +23,7 @@ $OpenBSD: patch-configure_ac,v 1.4 2013/11/12 07:57:23 robert Exp $
  else
      AC_MSG_RESULT([no])
  fi
-@@ -8724,7 +8720,7 @@ if test "$with_system_hunspell" = "yes"; then
+@@ -8759,7 +8755,7 @@ if test "$with_system_hunspell" = "yes"; then
      fi
      AC_LANG_POP([C++])
      libo_MINGW_CHECK_DLL([libhunspell-1.3])
@@ -32,7 +32,7 @@ $OpenBSD: patch-configure_ac,v 1.4 2013/11/12 07:57:23 robert Exp $
  else
      AC_MSG_RESULT([internal])
      SYSTEM_HUNSPELL=NO
-@@ -10236,11 +10232,11 @@ if test "$test_kde" = "yes" -a "$ENABLE_KDE" = "TRUE";
+@@ -10271,11 +10267,11 @@ if test "$test_kde" = "yes" -a "$ENABLE_KDE" = "TRUE";
          kde_libdirs="/usr/lib64/kde/lib64 /usr/local/kde/lib64 /usr/kde/lib64 /usr/lib64/kde /usr/lib64/kde3 /usr/X11R6/lib64 /usr/local/lib64 /opt/kde3/lib64 /opt/kde/lib64 /usr/X11R6/kde/lib64 /usr/lib/kde/lib /usr/local/kde/lib /usr/kde/lib /usr/lib/kde /usr/lib/kde3 /usr/lib /usr/X11R6/lib /usr/local/lib /opt/kde3/lib /opt/kde/lib /usr/X11R6/kde/lib /usr/lib64 $x_libraries"
      fi
      if test -n "$KDEDIR"; then
