@@ -1,6 +1,9 @@
-$OpenBSD: patch-panels_info_cc-info-panel_c,v 1.7 2014/04/08 15:24:00 ajacoutot Exp $
+$OpenBSD: patch-panels_info_cc-info-panel_c,v 1.8 2014/04/09 12:19:53 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=727819
+From f43a7a88a465da610c894e6250075738a910d9ae Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Tue, 8 Apr 2014 13:38:53 +0200
+Subject: info: Conditionally display the "Check for updates" button
 
 --- panels/info/cc-info-panel.c.orig	Tue Apr  8 13:37:36 2014
 +++ panels/info/cc-info-panel.c	Tue Apr  8 13:37:21 2014
