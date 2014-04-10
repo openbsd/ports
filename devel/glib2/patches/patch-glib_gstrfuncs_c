@@ -1,6 +1,9 @@
-$OpenBSD: patch-glib_gstrfuncs_c,v 1.13 2014/04/10 05:43:26 ajacoutot Exp $
+$OpenBSD: patch-glib_gstrfuncs_c,v 1.14 2014/04/10 14:19:38 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=727890
+From eec507c15987388ae624eada236032e700bf8c50 Mon Sep 17 00:00:00 2001
+From: Dan Winship <danw@gnome.org>
+Date: Wed, 9 Apr 2014 09:57:46 -0400
+Subject: g_str_has_prefix: don't call strlen(str)
 
 --- glib/gstrfuncs.c.orig	Sat Feb 22 16:29:07 2014
 +++ glib/gstrfuncs.c	Thu Apr 10 07:39:50 2014
