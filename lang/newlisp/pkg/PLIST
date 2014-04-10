@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/12/07 19:35:22 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/04/10 20:20:16 bcallah Exp $
 bin/newlisp
 @bin bin/newlisp-${V}
 bin/newlisp-edit
@@ -44,7 +44,9 @@ share/newlisp-${V}/guiserver/rotation-demo.lsp
 share/newlisp-${V}/guiserver/shapes-demo.lsp
 share/newlisp-${V}/guiserver/sound-demo.lsp
 share/newlisp-${V}/guiserver/stroke-demo.lsp
+share/newlisp-${V}/guiserver/table-demo.lsp
 share/newlisp-${V}/guiserver/tabs-demo.lsp
+share/newlisp-${V}/guiserver/textfield-demo.lsp
 share/newlisp-${V}/guiserver/textrot-demo.lsp
 share/newlisp-${V}/guiserver/uppercase.lsp
 share/newlisp-${V}/guiserver/widgets-demo.lsp
@@ -58,7 +60,6 @@ share/newlisp-${V}/modules/getopts.lsp
 share/newlisp-${V}/modules/gmp.lsp
 share/newlisp-${V}/modules/gsl.lsp
 share/newlisp-${V}/modules/infix.lsp
-share/newlisp-${V}/modules/macro.lsp
 share/newlisp-${V}/modules/mysql.lsp
 share/newlisp-${V}/modules/odbc.lsp
 share/newlisp-${V}/modules/plot.lsp
