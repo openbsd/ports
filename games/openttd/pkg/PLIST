@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2013/09/24 06:33:02 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.19 2014/04/10 06:32:48 bentley Exp $
 @bin bin/openttd
 @man man/man6/openttd.6
 share/applications/openttd.desktop
@@ -9,6 +9,7 @@ share/doc/openttd/Readme_OS2.txt
 share/doc/openttd/Readme_Windows_MSVC.txt
 share/doc/openttd/admin_network.txt
 share/doc/openttd/changelog.txt
+share/doc/openttd/desync.txt
 share/doc/openttd/elrail.svg
 share/doc/openttd/elrail_tile.png
 share/doc/openttd/elrail_track.png
@@ -16,6 +17,7 @@ share/doc/openttd/known-bugs.txt
 share/doc/openttd/landscape.html
 share/doc/openttd/landscape_externals.html
 share/doc/openttd/landscape_grid.html
+share/doc/openttd/linkgraph.txt
 share/doc/openttd/multiplayer.txt
 share/doc/openttd/obg_format.txt
 share/doc/openttd/obm_format.txt
@@ -51,6 +53,7 @@ share/openttd/ai/compat_1.0.nut
 share/openttd/ai/compat_1.1.nut
 share/openttd/ai/compat_1.2.nut
 share/openttd/ai/compat_1.3.nut
+share/openttd/ai/compat_1.4.nut
 share/openttd/baseset/
 share/openttd/baseset/no_music.obm
 share/openttd/baseset/no_sound.obs

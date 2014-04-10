@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2013/12/08 14:58:32 bentley Exp $
+# $OpenBSD: Makefile,v 1.35 2014/04/10 06:32:48 bentley Exp $
 
 COMMENT=	open source clone of the game Transport Tycoon Deluxe
 
-V =		1.3.3
+V =		1.4.0
 DISTNAME =	openttd-${V}
 EXTRACT_SUFX=	-source.tar.gz
-GFX_V=		0.4.7
+GFX_V =		0.5.0
 SFX_V=		0.2.3
 MSX_V=		0.3.1
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -24,7 +24,7 @@ MAINTAINER =	Anthony J. Bentley <anthony@cathet.us>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += SDL c fontconfig freetype icudata icui18n icuuc
-WANTLIB += icule iculx lzma lzo2 m png pthread stdc++ z
+WANTLIB += icule iculx lzma lzo2 m png pthread stdc++ xdg-basedir z
 
 MASTER_SITES=		http://binaries.openttd.org/releases/${V}/
 MASTER_SITES0=		https://bundles.openttdcoop.org/opengfx/releases/${GFX_V}/
@@ -35,7 +35,8 @@ LIB_DEPENDS=		archivers/lzo2 \
 			devel/sdl \
 			graphics/png \
 			textproc/icu4c \
-			archivers/xz
+			archivers/xz \
+			x11/libxdg-basedir
 
 RUN_DEPENDS=            devel/desktop-file-utils \
 			x11/gtk+2,-guic
@@ -65,6 +66,9 @@ EXAMPLESDIR=		${PREFIX}/share/examples/openttd
 GAMEDIR=		${PREFIX}/share/openttd
 
 FAKE_FLAGS=BUNDLE_DIR=${WRKINST}/bundle BUNDLES_DIR=${WRKINST}/bundle
+
+post-extract:
+	cd ${WRKDIR} && ${TAR} xf opengfx-${GFX_V}.tar
 
 post-install:
 	${INSTALL_DATA_DIR} ${GAMEDIR}/media
