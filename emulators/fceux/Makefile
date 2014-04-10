@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/04/22 23:28:07 bentley Exp $
+# $OpenBSD: Makefile,v 1.6 2014/04/10 06:04:42 bentley Exp $
 
 COMMENT =		emulator for Nintendo Entertainment System
 
-V =			2.2.1
+V =			2.2.2
 DISTNAME =		fceux-${V}.src
 PKGNAME =		fceux-${V}
 CATEGORIES =		emulators games
@@ -20,6 +20,7 @@ WANTLIB += 		GL SDL X11 c gd gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0
 WANTLIB += 		gobject-2.0 gtk-x11-2.0 lua5.1 m pthread
 WANTLIB += 		stdc++ z ${MODLUA_WANTLIB}
 
+RUN_DEPENDS =		devel/desktop-file-utils
 LIB_DEPENDS =		devel/sdl \
 			graphics/gd \
 			x11/gtk+2 
@@ -45,7 +46,7 @@ post-extract:
 	@perl -MExtUtils::Command -e dos2unix ${WRKSRC}
 
 pre-configure:
-	${SUBST_CMD} ${WRKDIST}/SConstruct
+	${SUBST_CMD} ${WRKDIST}/SConstruct ${WRKDIST}/fceux.desktop
 
 do-install:
 	${SETENV} ${MAKE_ENV} ${MODSCONS_BIN} -C ${WRKSRC} \

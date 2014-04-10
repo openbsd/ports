@@ -1,34 +1,68 @@
-$OpenBSD: patch-SConstruct,v 1.2 2013/04/22 23:28:07 bentley Exp $
---- SConstruct.orig	Sun Mar 10 15:21:52 2013
-+++ SConstruct	Fri Apr 19 14:34:56 2013
-@@ -125,8 +125,8 @@ else:
+$OpenBSD: patch-SConstruct,v 1.3 2014/04/10 06:04:42 bentley Exp $
+Fix SCons install target. From upstream r3067.
+--- SConstruct.orig	Thu Mar 13 23:30:04 2014
++++ SConstruct	Thu Mar 13 23:30:28 2014
+@@ -138,9 +138,9 @@ else:
        # Should work on any *nix
        env.Append(CCFLAGS = ["-DLUA_USE_LINUX"])
      lua_available = False
 -    if conf.CheckLib('lua5.1'):
 -      env.Append(LINKFLAGS = ["-ldl", "-llua5.1"])
+-      env.Append(CCFLAGS = ["-I/usr/include/lua5.1"])
 +    if conf.CheckLib('${MODLUA_WANTLIB}'):
 +      env.Append(LINKFLAGS = '${MODLUA_LIB}')
++      env.Append(CCFLAGS = ["-I${MODLUA_INCL_DIR}"])
        lua_available = True
      elif conf.CheckLib('lua'):
        env.Append(LINKFLAGS = ["-ldl", "-llua"])
-@@ -164,8 +164,6 @@ print "base CCFLAGS:",env['CCFLAGS']
+@@ -177,8 +177,6 @@ print "base CCFLAGS:",env['CCFLAGS']
  
  if env['DEBUG']:
-   env.Append(CPPDEFINES=["_DEBUG"], CCFLAGS = ['-g'])
+   env.Append(CPPDEFINES=["_DEBUG"], CCFLAGS = ['-g', '-O0'])
 -else:
 -  env.Append(CCFLAGS = ['-O2'])
  
  if env['PLATFORM'] != 'win32' and env['PLATFORM'] != 'cygwin' and env['CREATE_AVI']:
    env.Append(CPPDEFINES=["CREATE_AVI"])
-@@ -203,8 +201,8 @@ env.Command(auxlib_dst, auxlib_src, [Copy(auxlib_dst, 
+@@ -205,7 +205,6 @@
+ 
+ auxlib_src = 'src/auxlib.lua'
+ auxlib_dst = 'bin/auxlib.lua'
+-auxlib_inst_dst = prefix + '/share/fceux/auxlib.lua'
+ 
+ fceux_h_src = 'output/fceux.chm'
+ fceux_h_dst = 'bin/fceux.chm'
+@@ -217,25 +216,17 @@
  
  man_src = 'documentation/fceux.6'
  man_net_src = 'documentation/fceux-net-server.6'
 -man_dst = prefix + '/share/man/man6/fceux.6'
 -man_net_dst = prefix + '/share/man/man6/fceux-net-server.6'
-+man_dst = prefix + '/man/man6/fceux.6'
-+man_net_dst = prefix + '/man/man6/fceux-net-server.6'
  
  share_src = 'output/'
- share_dst = prefix + '/share/fceux/'
+-share_dst = prefix + '/share/fceux/'
+ 
+ image_src = 'fceux.png'
+-image_dst = prefix + '/share/pixmaps'
+ 
+ desktop_src = 'fceux.desktop'
+-desktop_dst = prefix + '/share/applications/'
+-
+-env.Install(prefix + "/bin/", fceux)
+-env.Install(prefix + "/bin/", "fceux-net-server")
+-# TODO:  Where to put auxlib on "scons install?"
+-env.Alias('install', env.Command(auxlib_inst_dst, auxlib_src, [Copy(auxlib_inst_dst, auxlib_src)]))
+-env.Alias('install', env.Command(share_dst, share_src, [Copy(share_dst, share_src)]))
+-env.Alias('install', env.Command(man_dst, man_src, [Copy(man_dst, man_src)]))
+-env.Alias('install', env.Command(man_net_dst, man_net_src, [Copy(man_net_dst, man_net_src)]))
+-env.Alias('install', env.Command(image_dst, image_src, [Copy(image_dst, image_src)]))
+-env.Alias('install', env.Command(desktop_dst, desktop_src, [Copy(desktop_dst, desktop_src)]))
+-env.Alias('install', (prefix + "/bin/"))
++
++env.Install(prefix + "/bin/", [fceux, fceux_net_server_src])
++env.InstallAs(prefix + '/share/fceux/', share_src)
++env.Install(prefix + '/share/fceux/', auxlib_src)
++env.Install(prefix + '/share/pixmaps/', image_src)
++env.Install(prefix + '/share/applications/', desktop_src)
++env.Install(prefix + "/man/man6/", [man_src, man_net_src])
++env.Alias('install', prefix)
