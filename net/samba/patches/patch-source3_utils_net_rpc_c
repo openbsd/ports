@@ -1,11 +1,11 @@
-$OpenBSD: patch-source3_utils_net_rpc_c,v 1.1 2014/02/06 04:33:25 brad Exp $
+$OpenBSD: patch-source3_utils_net_rpc_c,v 1.2 2014/04/10 00:50:58 brad Exp $
 
 DCE-RPC fragment length field is incorrectly checked.
 CVE-2013-4408
 
---- source3/utils/net_rpc.c.orig	Tue Jan 28 02:16:43 2014
-+++ source3/utils/net_rpc.c	Tue Jan 28 02:16:43 2014
-@@ -2889,7 +2889,12 @@ static NTSTATUS rpc_list_group_members(struct net_cont
+--- source3/utils/net_rpc.c.orig	Wed May  8 04:16:26 2013
++++ source3/utils/net_rpc.c	Wed Apr  9 17:25:43 2014
+@@ -2865,7 +2865,12 @@ static NTSTATUS rpc_list_group_members(struct net_cont
  		if (!NT_STATUS_IS_OK(result)) {
  			return result;
  		}

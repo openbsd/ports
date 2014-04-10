@@ -1,10 +1,10 @@
-$OpenBSD: patch-source3_rpc_client_cli_pipe_c,v 1.1 2014/02/06 04:33:25 brad Exp $
+$OpenBSD: patch-source3_rpc_client_cli_pipe_c,v 1.2 2014/04/10 00:50:58 brad Exp $
 
 DCE-RPC fragment length field is incorrectly checked.
 CVE-2013-4408
 
---- source3/rpc_client/cli_pipe.c.orig	Tue Jan 28 02:16:43 2014
-+++ source3/rpc_client/cli_pipe.c	Tue Jan 28 02:16:43 2014
+--- source3/rpc_client/cli_pipe.c.orig	Wed May  8 04:16:26 2013
++++ source3/rpc_client/cli_pipe.c	Wed Apr  9 17:25:42 2014
 @@ -235,6 +235,7 @@ struct get_complete_frag_state {
  	struct event_context *ev;
  	struct rpc_pipe_client *cli;
@@ -29,9 +29,9 @@ CVE-2013-4408
  	state->pdu = pdu;
  
  	received = pdu->length;
-@@ -286,6 +289,11 @@ static struct tevent_req *get_complete_frag_send(TALLO
- 		return tevent_req_post(req, ev);
- 	}
+@@ -282,6 +285,11 @@ static struct tevent_req *get_complete_frag_send(TALLO
+ 
+ 	state->frag_len = dcerpc_get_frag_length(pdu);
  
 +	if (state->call_id != dcerpc_get_call_id(pdu)) {
 +		tevent_req_nterror(req, NT_STATUS_RPC_PROTOCOL_ERROR);
@@ -41,9 +41,9 @@ CVE-2013-4408
  	/*
  	 * Ensure we have frag_len bytes of data.
  	 */
-@@ -338,6 +346,11 @@ static void get_complete_frag_got_header(struct tevent
- 		return;
- 	}
+@@ -330,6 +338,11 @@ static void get_complete_frag_got_header(struct tevent
+ 
+ 	state->frag_len = dcerpc_get_frag_length(state->pdu);
  
 +	if (state->call_id != dcerpc_get_call_id(state->pdu)) {
 +		tevent_req_nterror(req, NT_STATUS_RPC_PROTOCOL_ERROR);
@@ -53,7 +53,7 @@ CVE-2013-4408
  	if (!data_blob_realloc(NULL, state->pdu, state->frag_len)) {
  		tevent_req_nterror(req, NT_STATUS_NO_MEMORY);
  		return;
-@@ -698,6 +711,7 @@ struct rpc_api_pipe_state {
+@@ -690,6 +703,7 @@ struct rpc_api_pipe_state {
  	struct event_context *ev;
  	struct rpc_pipe_client *cli;
  	uint8_t expected_pkt_type;
@@ -61,7 +61,7 @@ CVE-2013-4408
  
  	DATA_BLOB incoming_frag;
  	struct ncacn_packet *pkt;
-@@ -716,7 +730,8 @@ static struct tevent_req *rpc_api_pipe_send(TALLOC_CTX
+@@ -708,7 +722,8 @@ static struct tevent_req *rpc_api_pipe_send(TALLOC_CTX
  					    struct event_context *ev,
  					    struct rpc_pipe_client *cli,
  					    DATA_BLOB *data, /* Outgoing PDU */
@@ -71,7 +71,7 @@ CVE-2013-4408
  {
  	struct tevent_req *req, *subreq;
  	struct rpc_api_pipe_state *state;
-@@ -730,6 +745,7 @@ static struct tevent_req *rpc_api_pipe_send(TALLOC_CTX
+@@ -722,6 +737,7 @@ static struct tevent_req *rpc_api_pipe_send(TALLOC_CTX
  	state->ev = ev;
  	state->cli = cli;
  	state->expected_pkt_type = expected_pkt_type;
@@ -79,7 +79,7 @@ CVE-2013-4408
  	state->incoming_frag = data_blob_null;
  	state->reply_pdu = data_blob_null;
  	state->reply_pdu_offset = 0;
-@@ -829,6 +845,7 @@ static void rpc_api_pipe_trans_done(struct tevent_req 
+@@ -821,6 +837,7 @@ static void rpc_api_pipe_trans_done(struct tevent_req 
  
  	/* Ensure we have enough data for a pdu. */
  	subreq = get_complete_frag_send(state, state->ev, state->cli,
@@ -87,7 +87,7 @@ CVE-2013-4408
  					&state->incoming_frag);
  	if (tevent_req_nomem(subreq, req)) {
  		return;
-@@ -948,6 +965,7 @@ static void rpc_api_pipe_got_pdu(struct tevent_req *su
+@@ -940,6 +957,7 @@ static void rpc_api_pipe_got_pdu(struct tevent_req *su
  	}
  
  	subreq = get_complete_frag_send(state, state->ev, state->cli,
@@ -95,7 +95,7 @@ CVE-2013-4408
  					&state->incoming_frag);
  	if (tevent_req_nomem(subreq, req)) {
  		return;
-@@ -1300,7 +1318,8 @@ struct tevent_req *rpc_api_pipe_req_send(TALLOC_CTX *m
+@@ -1292,7 +1310,8 @@ struct tevent_req *rpc_api_pipe_req_send(TALLOC_CTX *m
  	if (is_last_frag) {
  		subreq = rpc_api_pipe_send(state, ev, state->cli,
  					   &state->rpc_out,
@@ -105,7 +105,7 @@ CVE-2013-4408
  		if (subreq == NULL) {
  			goto fail;
  		}
-@@ -1436,7 +1455,8 @@ static void rpc_api_pipe_req_write_done(struct tevent_
+@@ -1428,7 +1447,8 @@ static void rpc_api_pipe_req_write_done(struct tevent_
  	if (is_last_frag) {
  		subreq = rpc_api_pipe_send(state, state->ev, state->cli,
  					   &state->rpc_out,
@@ -115,7 +115,7 @@ CVE-2013-4408
  		if (tevent_req_nomem(subreq, req)) {
  			return;
  		}
-@@ -1675,7 +1695,7 @@ struct tevent_req *rpc_pipe_bind_send(TALLOC_CTX *mem_
+@@ -1667,7 +1687,7 @@ struct tevent_req *rpc_pipe_bind_send(TALLOC_CTX *mem_
  	}
  
  	subreq = rpc_api_pipe_send(state, ev, cli, &state->rpc_out,
@@ -124,7 +124,7 @@ CVE-2013-4408
  	if (subreq == NULL) {
  		goto fail;
  	}
-@@ -1873,7 +1893,8 @@ static NTSTATUS rpc_bind_next_send(struct tevent_req *
+@@ -1865,7 +1885,8 @@ static NTSTATUS rpc_bind_next_send(struct tevent_req *
  	}
  
  	subreq = rpc_api_pipe_send(state, state->ev, state->cli,
@@ -134,7 +134,7 @@ CVE-2013-4408
  	if (subreq == NULL) {
  		return NT_STATUS_NO_MEMORY;
  	}
-@@ -1905,7 +1926,8 @@ static NTSTATUS rpc_bind_finish_send(struct tevent_req
+@@ -1897,7 +1918,8 @@ static NTSTATUS rpc_bind_finish_send(struct tevent_req
  	}
  
  	subreq = rpc_api_pipe_send(state, state->ev, state->cli,

@@ -1,11 +1,11 @@
-$OpenBSD: patch-nsswitch_wbinfo_c,v 1.4 2014/02/06 04:33:24 brad Exp $
+$OpenBSD: patch-nsswitch_wbinfo_c,v 1.5 2014/04/10 00:50:58 brad Exp $
 
 DCE-RPC fragment length field is incorrectly checked.
 CVE-2013-4408
 
---- nsswitch/wbinfo.c.orig	Mon Jan 27 22:29:29 2014
-+++ nsswitch/wbinfo.c	Tue Jan 28 02:16:43 2014
-@@ -1377,11 +1377,28 @@ static bool wbinfo_lookup_sids(const char *arg)
+--- nsswitch/wbinfo.c.orig	Wed May  8 04:16:26 2013
++++ nsswitch/wbinfo.c	Wed Apr  9 17:25:42 2014
+@@ -1380,11 +1380,28 @@ static bool wbinfo_lookup_sids(const char *arg)
  	}
  
  	for (i=0; i<num_sids; i++) {

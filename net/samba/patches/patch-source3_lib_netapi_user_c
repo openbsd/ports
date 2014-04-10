@@ -1,11 +1,11 @@
-$OpenBSD: patch-source3_lib_netapi_user_c,v 1.1 2014/02/06 04:33:24 brad Exp $
+$OpenBSD: patch-source3_lib_netapi_user_c,v 1.2 2014/04/10 00:50:58 brad Exp $
 
 DCE-RPC fragment length field is incorrectly checked.
 CVE-2013-4408
 
---- source3/lib/netapi/user.c.orig	Tue Jan 28 02:16:43 2014
-+++ source3/lib/netapi/user.c	Tue Jan 28 02:16:43 2014
-@@ -3113,6 +3113,14 @@ WERROR NetUserGetGroups_r(struct libnetapi_ctx *ctx,
+--- source3/lib/netapi/user.c.orig	Wed May  8 04:16:26 2013
++++ source3/lib/netapi/user.c	Wed Apr  9 17:25:42 2014
+@@ -3081,6 +3081,14 @@ WERROR NetUserGetGroups_r(struct libnetapi_ctx *ctx,
  		werr = ntstatus_to_werror(result);
  		goto done;
  	}
@@ -20,7 +20,7 @@ CVE-2013-4408
  
  	for (i=0; i < names.count; i++) {
  		status = add_GROUP_USERS_INFO_X_buffer(ctx,
-@@ -3714,6 +3722,14 @@ WERROR NetUserGetLocalGroups_r(struct libnetapi_ctx *c
+@@ -3658,6 +3666,14 @@ WERROR NetUserGetLocalGroups_r(struct libnetapi_ctx *c
  	}
  	if (!NT_STATUS_IS_OK(result)) {
  		werr = ntstatus_to_werror(result);

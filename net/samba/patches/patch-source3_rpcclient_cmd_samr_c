@@ -1,11 +1,11 @@
-$OpenBSD: patch-source3_rpcclient_cmd_samr_c,v 1.1 2014/02/06 04:33:25 brad Exp $
+$OpenBSD: patch-source3_rpcclient_cmd_samr_c,v 1.2 2014/04/10 00:50:58 brad Exp $
 
 DCE-RPC fragment length field is incorrectly checked.
 CVE-2013-4408
 
---- source3/rpcclient/cmd_samr.c.orig	Tue Jan 28 02:16:43 2014
-+++ source3/rpcclient/cmd_samr.c	Tue Jan 28 02:16:43 2014
-@@ -2220,6 +2220,14 @@ static NTSTATUS cmd_samr_lookup_rids(struct rpc_pipe_c
+--- source3/rpcclient/cmd_samr.c.orig	Wed May  8 04:16:26 2013
++++ source3/rpcclient/cmd_samr.c	Wed Apr  9 17:25:42 2014
+@@ -2193,6 +2193,14 @@ static NTSTATUS cmd_samr_lookup_rids(struct rpc_pipe_c
  		goto done;
  
  	/* Display results */

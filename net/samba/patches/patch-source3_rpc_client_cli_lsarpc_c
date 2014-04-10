@@ -1,11 +1,11 @@
-$OpenBSD: patch-source3_rpc_client_cli_lsarpc_c,v 1.1 2014/02/06 04:33:25 brad Exp $
+$OpenBSD: patch-source3_rpc_client_cli_lsarpc_c,v 1.2 2014/04/10 00:50:58 brad Exp $
 
 DCE-RPC fragment length field is incorrectly checked.
 CVE-2013-4408
 
---- source3/rpc_client/cli_lsarpc.c.orig	Tue Jan 28 02:16:43 2014
-+++ source3/rpc_client/cli_lsarpc.c	Tue Jan 28 02:16:43 2014
-@@ -662,9 +662,19 @@ NTSTATUS dcerpc_lsa_lookup_names_generic(struct dcerpc
+--- source3/rpc_client/cli_lsarpc.c.orig	Wed May  8 04:16:26 2013
++++ source3/rpc_client/cli_lsarpc.c	Wed Apr  9 17:25:42 2014
+@@ -647,9 +647,19 @@ NTSTATUS dcerpc_lsa_lookup_names_generic(struct dcerpc
  		struct dom_sid *sid = &(*sids)[i];
  
  		if (use_lookupnames4) {
@@ -25,7 +25,7 @@ CVE-2013-4408
  			dom_idx		= sid_array.sids[i].sid_index;
  			(*types)[i]	= sid_array.sids[i].sid_type;
  		}
-@@ -676,6 +686,14 @@ NTSTATUS dcerpc_lsa_lookup_names_generic(struct dcerpc
+@@ -661,6 +671,14 @@ NTSTATUS dcerpc_lsa_lookup_names_generic(struct dcerpc
  			ZERO_STRUCTP(sid);
  			(*types)[i] = SID_NAME_UNKNOWN;
  			continue;

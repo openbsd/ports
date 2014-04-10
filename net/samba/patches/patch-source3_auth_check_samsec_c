@@ -1,0 +1,15 @@
+$OpenBSD: patch-source3_auth_check_samsec_c,v 1.1 2014/04/10 00:50:58 brad Exp $
+
+Password lockout not enforced for SAMR password changes.
+CVE-2013-4496
+
+--- source3/auth/check_samsec.c.orig	Wed May  8 04:16:26 2013
++++ source3/auth/check_samsec.c	Wed Apr  9 17:29:56 2014
+@@ -408,6 +408,7 @@ NTSTATUS check_sam_security(const DATA_BLOB *challenge
+ 	/* Quit if the account was locked out. */
+ 	if (pdb_get_acct_ctrl(sampass) & ACB_AUTOLOCK) {
+ 		DEBUG(3,("check_sam_security: Account for user %s was locked out.\n", username));
++		TALLOC_FREE(sampass);
+ 		return NT_STATUS_ACCOUNT_LOCKED_OUT;
+ 	}
+ 
