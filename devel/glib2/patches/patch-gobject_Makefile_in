@@ -1,0 +1,17 @@
+$OpenBSD: patch-gobject_Makefile_in,v 1.14 2014/04/10 07:29:06 ajacoutot Exp $
+
+From 3662eb9759fe225d1c214db6927c667a1b733e8a Mon Sep 17 00:00:00 2001
+From: Alexandre Rostovtsev <tetromino@gentoo.org>
+Date: Mon, 2 Sep 2013 13:59:18 -0400
+Subject: gobject: try to link with -Wl,-z,nodelete
+
+--- gobject/Makefile.in.orig	Thu Apr 10 09:11:42 2014
++++ gobject/Makefile.in	Thu Apr 10 09:12:08 2014
+@@ -870,6 +870,7 @@ lib_LTLIBRARIES = libgobject-2.0.la
+ @OS_WIN32_AND_DLL_COMPILATION_TRUE@gobject_win32_res_ldflag = -Wl,$(gobject_win32_res)
+ libgobjectincludedir = $(includedir)/glib-2.0/gobject
+ libgobject_2_0_la_LDFLAGS = $(GLIB_LINK_FLAGS) \
++  $(GOBJECT_LINK_FLAGS) \
+   $(gobject_win32_res_ldflag) \
+   -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
+   -export-dynamic $(no_undefined)

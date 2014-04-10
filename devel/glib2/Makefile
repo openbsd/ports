@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.229 2014/04/10 05:43:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.230 2014/04/10 07:29:06 ajacoutot Exp $
 
 COMMENT=		general-purpose utility library
 
 GNOME_PROJECT=		glib
 GNOME_VERSION=		2.40.0
 PKGNAME=		${DISTNAME:S/glib/glib2/}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		devel
 
@@ -50,6 +50,10 @@ CONFIGURE_ARGS=		--enable-static \
 .if ${PROPERTIES:Mgcc3}
 PATCH_LIST=	patch-* gcc3-*
 .endif
+
+# XXX rm at next release; patch-configure_ac, patch-gobject_Makefile_in
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.69
 
 pre-configure:
 	perl -pi -e "s,/usr/local,${LOCALBASE},g;" \

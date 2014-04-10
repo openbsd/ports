@@ -1,0 +1,50 @@
+$OpenBSD: patch-configure_ac,v 1.10 2014/04/10 07:29:06 ajacoutot Exp $
+
+From 3662eb9759fe225d1c214db6927c667a1b733e8a Mon Sep 17 00:00:00 2001
+From: Alexandre Rostovtsev <tetromino@gentoo.org>
+Date: Mon, 2 Sep 2013 13:59:18 -0400
+Subject: gobject: try to link with -Wl,-z,nodelete
+
+--- configure.ac.orig	Mon Mar 24 19:53:31 2014
++++ configure.ac	Thu Apr 10 09:10:14 2014
+@@ -3465,6 +3465,40 @@ fi
+ AC_SUBST(GLIB_LINK_FLAGS)
+ 
+ dnl
++dnl Check for -z,nodelete linker flag: the type system assumes that
++dnl libgobject stays loaded for the lifetime of the process.
++dnl Since ld.bfd does not treat wrong -z options as fatal by default,
++dnl we also try to check for the --fatal-warnings linker flag if
++dnl auto-detecting.
++dnl
++
++AC_ARG_ENABLE([znodelete],
++              [AS_HELP_STRING([--disable-znodelete],
++                              [avoid linking with -z,nodelete])],,
++              [SAVED_LDFLAGS="${LDFLAGS}"
++               AC_MSG_CHECKING([for --fatal-warnings linker flag])
++               LDFLAGS=-Wl,--fatal-warnings
++               AC_TRY_LINK([], [int main (void) { return 0; }],
++                           AC_MSG_RESULT(yes)
++                           [ldflags_fatal=-Wl,--fatal-warnings],
++                           AC_MSG_RESULT(no)
++                           ldflags_fatal=)
++               AC_MSG_CHECKING([for -z,nodelete linker flag])
++               LDFLAGS="$ldflags_fatal -Wl,-z,nodelete"
++               AC_TRY_LINK([], [int main (void) { return 0; }],
++                           AC_MSG_RESULT(yes)
++                           enable_znodelete=yes,
++                           AC_MSG_RESULT(no)
++                           enable_znodelete=no)
++               LDFLAGS="${SAVED_LDFLAGS}"])
++
++if test "x${enable_znodelete}" = "xyes"; then
++  GOBJECT_LINK_FLAGS=-Wl,-z,nodelete
++fi
++
++AC_SUBST(GOBJECT_LINK_FLAGS)
++
++dnl
+ dnl Check for -fvisibility=hidden to determine if we can do GNU-style
+ dnl visibility attributes for symbol export control
+ dnl
