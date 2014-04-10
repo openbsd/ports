@@ -1,4 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.10 2014/04/10 07:29:06 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.11 2014/04/10 08:45:07 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=727941
 
 From 3662eb9759fe225d1c214db6927c667a1b733e8a Mon Sep 17 00:00:00 2001
 From: Alexandre Rostovtsev <tetromino@gentoo.org>
@@ -6,11 +8,23 @@ Date: Mon, 2 Sep 2013 13:59:18 -0400
 Subject: gobject: try to link with -Wl,-z,nodelete
 
 --- configure.ac.orig	Mon Mar 24 19:53:31 2014
-+++ configure.ac	Thu Apr 10 09:10:14 2014
-@@ -3465,6 +3465,40 @@ fi
- AC_SUBST(GLIB_LINK_FLAGS)
++++ configure.ac	Thu Apr 10 10:26:47 2014
+@@ -2272,9 +2272,6 @@ case $host in
+   *-*-freebsd*|*-*-linux*)
+     G_THREAD_LIBS_FOR_GTHREAD="`echo $G_THREAD_LIBS | sed s/-pthread/-lpthread/`"
+     ;;
+-  *-*-openbsd*)
+-    LDFLAGS="$LDFLAGS -pthread"
+-    ;;
+   *)
+     G_THREAD_LIBS_FOR_GTHREAD="$G_THREAD_LIBS"
+     ;;
+@@ -3463,6 +3460,40 @@ if test "x${enable_Bsymbolic}" = "xyes"; then
+ fi
  
- dnl
+ AC_SUBST(GLIB_LINK_FLAGS)
++
++dnl
 +dnl Check for -z,nodelete linker flag: the type system assumes that
 +dnl libgobject stays loaded for the lifetime of the process.
 +dnl Since ld.bfd does not treat wrong -z options as fatal by default,
@@ -43,8 +57,6 @@ Subject: gobject: try to link with -Wl,-z,nodelete
 +fi
 +
 +AC_SUBST(GOBJECT_LINK_FLAGS)
-+
-+dnl
- dnl Check for -fvisibility=hidden to determine if we can do GNU-style
- dnl visibility attributes for symbol export control
+ 
  dnl
+ dnl Check for -fvisibility=hidden to determine if we can do GNU-style
