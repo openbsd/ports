@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/01/03 16:18:11 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/04/10 16:01:12 jeremy Exp $
 @bin bin/io
 @bin bin/io_static
 include/io/
@@ -1602,6 +1602,30 @@ lib/io/addons/Loki/source/IoLokiInit.c
 lib/io/addons/Loki/tests/
 lib/io/addons/Loki/tests/correctness/
 lib/io/addons/Loki/tests/correctness/testcg.io
+lib/io/addons/Loudmouth/
+lib/io/addons/Loudmouth/CMakeLists.txt
+lib/io/addons/Loudmouth/_build/
+lib/io/addons/Loudmouth/_build/binaries/
+lib/io/addons/Loudmouth/_build/dll/
+lib/io/addons/Loudmouth/_build/dll/libIoLoudmouth.so
+lib/io/addons/Loudmouth/_build/headers/
+lib/io/addons/Loudmouth/_build/lib/
+lib/io/addons/Loudmouth/_build/objs/
+lib/io/addons/Loudmouth/depends
+lib/io/addons/Loudmouth/io/
+lib/io/addons/Loudmouth/io/JID.io
+lib/io/addons/Loudmouth/io/Loudmouth.io
+lib/io/addons/Loudmouth/io/LoudmouthMessage.io
+lib/io/addons/Loudmouth/protos
+lib/io/addons/Loudmouth/source/
+lib/io/addons/Loudmouth/source/IoLoudmouth.c
+lib/io/addons/Loudmouth/source/IoLoudmouth.h
+lib/io/addons/Loudmouth/source/IoLoudmouthInit.c
+lib/io/addons/Loudmouth/tests/
+lib/io/addons/Loudmouth/tests/correctness/
+lib/io/addons/Loudmouth/tests/correctness/JID.io
+lib/io/addons/Loudmouth/tests/correctness/LoudmouthMessage.io
+lib/io/addons/Loudmouth/tests/correctness/run.io
 lib/io/addons/MD5/
 lib/io/addons/MD5/CMakeLists.txt
 lib/io/addons/MD5/_build/

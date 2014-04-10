@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/01/10 14:47:10 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.15 2014/04/10 16:01:12 jeremy Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS =i386 amd64
@@ -7,7 +7,7 @@ COMMENT =	embeddable prototype-based language
 
 DISTNAME =	stevedekorte-io-2011.09.12-106-g02f9800
 PKGNAME =	io-20110905
-REVISION =	9
+REVISION =	10
 
 CATEGORIES =	lang
 
@@ -25,9 +25,9 @@ MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL GLU ICE SM X11 Xext Xi Xmu atk-1.0 c cairo clutter-1.0
-WANTLIB += curses dbi edit event_core event_extra freetype glib-2.0
-WANTLIB += glut gmp jpeg lzo2 m memcached mysqlclient ogg pango-1.0
+WANTLIB += GL GLU ICE SM X11 Xext Xi Xmu atk-1.0 c cairo clutter-1.0 curses
+WANTLIB += dbi edit event_core event_extra freetype glib-2.0 glut gmp
+WANTLIB += jpeg loudmouth-1 lzo2 m memcached mysqlclient ogg pango-1.0
 WANTLIB += pcre pcreposix png pthread ${MODPY_WANTLIB} qdbm readline
 WANTLIB += sndfile sqlite3 theora tiff uuid vorbis xml2 yajl z
 
@@ -51,6 +51,7 @@ LIB_DEPENDS =	archivers/lzo2 \
 		graphics/tiff \
 		lang/python/2.7 \
 		multimedia/libtheora \
+		net/loudmouth \
 		sysutils/e2fsprogs>=1.42.7 \
 		textproc/libxml,no_python
 
