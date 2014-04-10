@@ -1,6 +1,8 @@
-$OpenBSD: patch-configure_ac,v 1.11 2014/04/10 08:45:07 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.12 2014/04/10 09:13:00 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=727941
+
+https://bugzilla.gnome.org/show_bug.cgi?id=727939
 
 From 3662eb9759fe225d1c214db6927c667a1b733e8a Mon Sep 17 00:00:00 2001
 From: Alexandre Rostovtsev <tetromino@gentoo.org>
@@ -8,7 +10,7 @@ Date: Mon, 2 Sep 2013 13:59:18 -0400
 Subject: gobject: try to link with -Wl,-z,nodelete
 
 --- configure.ac.orig	Mon Mar 24 19:53:31 2014
-+++ configure.ac	Thu Apr 10 10:26:47 2014
++++ configure.ac	Thu Apr 10 10:59:12 2014
 @@ -2272,9 +2272,6 @@ case $host in
    *-*-freebsd*|*-*-linux*)
      G_THREAD_LIBS_FOR_GTHREAD="`echo $G_THREAD_LIBS | sed s/-pthread/-lpthread/`"
@@ -19,7 +21,25 @@ Subject: gobject: try to link with -Wl,-z,nodelete
    *)
      G_THREAD_LIBS_FOR_GTHREAD="$G_THREAD_LIBS"
      ;;
-@@ -3463,6 +3460,40 @@ if test "x${enable_Bsymbolic}" = "xyes"; then
+@@ -3448,21 +3445,57 @@ dnl
+ AC_ARG_ENABLE(Bsymbolic,
+               [AS_HELP_STRING([--disable-Bsymbolic],
+                               [avoid linking with -Bsymbolic])],,
+-              [SAVED_LDFLAGS="${LDFLAGS}"
++              [SAVED_LDFLAGS="${LDFLAGS}" SAVED_LIBS="${LIBS}"
+                AC_MSG_CHECKING([for -Bsymbolic-functions linker flag])
+                LDFLAGS=-Wl,-Bsymbolic-functions
++               LIBS=
+                AC_TRY_LINK([], [int main (void) { return 0; }],
+                            AC_MSG_RESULT(yes)
+                            enable_Bsymbolic=yes,
+                            AC_MSG_RESULT(no)
+                            enable_Bsymbolic=no)
+-               LDFLAGS="${SAVED_LDFLAGS}"])
++               LDFLAGS="${SAVED_LDFLAGS}" LIBS="${SAVED_LIBS}"])
+ 
+ if test "x${enable_Bsymbolic}" = "xyes"; then
+   GLIB_LINK_FLAGS=-Wl,-Bsymbolic-functions
  fi
  
  AC_SUBST(GLIB_LINK_FLAGS)
@@ -35,9 +55,10 @@ Subject: gobject: try to link with -Wl,-z,nodelete
 +AC_ARG_ENABLE([znodelete],
 +              [AS_HELP_STRING([--disable-znodelete],
 +                              [avoid linking with -z,nodelete])],,
-+              [SAVED_LDFLAGS="${LDFLAGS}"
++              [SAVED_LDFLAGS="${LDFLAGS}" SAVED_LIBS="${LIBS}"
 +               AC_MSG_CHECKING([for --fatal-warnings linker flag])
 +               LDFLAGS=-Wl,--fatal-warnings
++               LIBS=
 +               AC_TRY_LINK([], [int main (void) { return 0; }],
 +                           AC_MSG_RESULT(yes)
 +                           [ldflags_fatal=-Wl,--fatal-warnings],
@@ -50,7 +71,7 @@ Subject: gobject: try to link with -Wl,-z,nodelete
 +                           enable_znodelete=yes,
 +                           AC_MSG_RESULT(no)
 +                           enable_znodelete=no)
-+               LDFLAGS="${SAVED_LDFLAGS}"])
++               LDFLAGS="${SAVED_LDFLAGS}" LIBS="${SAVED_LIBS}"])
 +
 +if test "x${enable_znodelete}" = "xyes"; then
 +  GOBJECT_LINK_FLAGS=-Wl,-z,nodelete
