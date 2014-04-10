@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2014/04/10 11:59:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.81 2014/04/10 12:25:22 naddy Exp $
 
 COMMENT=	GNU Bourne Again Shell
 
@@ -22,9 +22,9 @@ PATCHFILES+=	bash43-0$i:0
 MODULES=	devel/gettext
 WANTLIB=	c termcap 
 
-# enable if parse.y is patched
-BUILD_DEPENDS=	devel/bison
-YACC=		${LOCALBASE}/bin/bison -y
+# enable if parse.y is patched without y.tab.c
+#BUILD_DEPENDS=	devel/bison
+#YACC=		${LOCALBASE}/bin/bison -y
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${NO_SHARED_LIBS:S/Yes/--enable-static-link/:S/No//}
