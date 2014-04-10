@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.224 2014/04/08 15:23:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.225 2014/04/10 11:27:53 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -67,7 +67,7 @@ MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache yelp
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 
-# without --as-needed, evolution takes 20 minutes (yes, 20!) to start
+# without --as-needed, evolution takes ages to start
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib -Wl,--as-needed
 
 YACC=			bison
