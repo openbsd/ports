@@ -1,4 +1,7 @@
-$OpenBSD: patch-sysdeps_openbsd_mem_c,v 1.3 2014/04/08 18:55:59 naddy Exp $
+$OpenBSD: patch-sysdeps_openbsd_mem_c,v 1.4 2014/04/10 14:37:10 ajacoutot Exp $
+
+RM at next release.
+
 --- sysdeps/openbsd/mem.c.orig	Sat Jul 27 14:40:23 2013
 +++ sysdeps/openbsd/mem.c	Fri Apr  4 23:25:20 2014
 @@ -30,9 +30,7 @@
