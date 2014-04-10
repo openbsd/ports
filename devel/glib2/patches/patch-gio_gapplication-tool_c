@@ -1,0 +1,38 @@
+$OpenBSD: patch-gio_gapplication-tool_c,v 1.1 2014/04/10 16:52:02 ajacoutot Exp $
+
+From 723941644299a3efc1bf221335a06892cc250b92 Mon Sep 17 00:00:00 2001
+From: Cosimo Cecchi <cosimoc@gnome.org>
+Date: Wed, 9 Apr 2014 18:07:22 -0700
+Subject: gapplication-tool: fix a typo
+
+From c938e742317a9253d9bac84280dc455d5bd3d610 Mon Sep 17 00:00:00 2001
+From: Cosimo Cecchi <cosimoc@gnome.org>
+Date: Wed, 9 Apr 2014 18:07:38 -0700
+Subject: gapplication-tool: ensure object paths are valid
+
+--- gio/gapplication-tool.c.orig	Thu Apr 10 18:46:07 2014
++++ gio/gapplication-tool.c	Thu Apr 10 18:46:21 2014
+@@ -238,8 +238,12 @@ app_path_for_id (const gchar *app_id)
+ 
+   path = g_strconcat ("/", app_id, NULL);
+   for (i = 0; path[i]; i++)
+-    if (path[i] == '.')
+-      path[i] = '/';
++    {
++      if (path[i] == '.')
++        path[i] = '/';
++      if (path[i] == '-')
++        path[i] = '_';
++    }
+ 
+   return path;
+ }
+@@ -293,7 +297,7 @@ app_get_platform_data (void)
+ 
+   g_variant_builder_init (&builder, G_VARIANT_TYPE_VARDICT);
+ 
+-  if ((startup_id = g_getenv ("DESKTOP_STARTUP_iD")))
++  if ((startup_id = g_getenv ("DESKTOP_STARTUP_ID")))
+     g_variant_builder_add (&builder, "{sv}", "desktop-startup-id", g_variant_new_string (startup_id));
+ 
+   return g_variant_builder_end (&builder);
