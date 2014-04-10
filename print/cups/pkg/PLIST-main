@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2014/01/19 09:09:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2014/04/10 17:15:34 ajacoutot Exp $
 @conflict LPRng-*
 @pkgpath print/cups
 @pkgpath print/cups,ldap
@@ -340,6 +340,77 @@ share/cups/templates/cs/subscription-canceled.tmpl
 share/cups/templates/cs/test-page.tmpl
 share/cups/templates/cs/trailer.tmpl
 share/cups/templates/cs/users.tmpl
+share/cups/templates/de/
+share/cups/templates/de/add-class.tmpl
+share/cups/templates/de/add-printer.tmpl
+share/cups/templates/de/add-rss-subscription.tmpl
+share/cups/templates/de/admin.tmpl
+share/cups/templates/de/choose-device.tmpl
+share/cups/templates/de/choose-make.tmpl
+share/cups/templates/de/choose-model.tmpl
+share/cups/templates/de/choose-serial.tmpl
+share/cups/templates/de/choose-uri.tmpl
+share/cups/templates/de/class-added.tmpl
+share/cups/templates/de/class-confirm.tmpl
+share/cups/templates/de/class-deleted.tmpl
+share/cups/templates/de/class-jobs-header.tmpl
+share/cups/templates/de/class-modified.tmpl
+share/cups/templates/de/class.tmpl
+share/cups/templates/de/classes-header.tmpl
+share/cups/templates/de/classes.tmpl
+share/cups/templates/de/command.tmpl
+share/cups/templates/de/edit-config.tmpl
+share/cups/templates/de/error-op.tmpl
+share/cups/templates/de/error.tmpl
+share/cups/templates/de/header.tmpl
+share/cups/templates/de/help-header.tmpl
+share/cups/templates/de/help-printable.tmpl
+share/cups/templates/de/help-trailer.tmpl
+share/cups/templates/de/job-cancel.tmpl
+share/cups/templates/de/job-hold.tmpl
+share/cups/templates/de/job-move.tmpl
+share/cups/templates/de/job-moved.tmpl
+share/cups/templates/de/job-release.tmpl
+share/cups/templates/de/job-restart.tmpl
+share/cups/templates/de/jobs-header.tmpl
+share/cups/templates/de/jobs.tmpl
+share/cups/templates/de/list-available-printers.tmpl
+share/cups/templates/de/modify-class.tmpl
+share/cups/templates/de/modify-printer.tmpl
+share/cups/templates/de/norestart.tmpl
+share/cups/templates/de/option-boolean.tmpl
+share/cups/templates/de/option-conflict.tmpl
+share/cups/templates/de/option-header.tmpl
+share/cups/templates/de/option-pickmany.tmpl
+share/cups/templates/de/option-pickone.tmpl
+share/cups/templates/de/option-trailer.tmpl
+share/cups/templates/de/pager.tmpl
+share/cups/templates/de/printer-accept.tmpl
+share/cups/templates/de/printer-added.tmpl
+share/cups/templates/de/printer-configured.tmpl
+share/cups/templates/de/printer-confirm.tmpl
+share/cups/templates/de/printer-default.tmpl
+share/cups/templates/de/printer-deleted.tmpl
+share/cups/templates/de/printer-jobs-header.tmpl
+share/cups/templates/de/printer-modified.tmpl
+share/cups/templates/de/printer-purge.tmpl
+share/cups/templates/de/printer-reject.tmpl
+share/cups/templates/de/printer-start.tmpl
+share/cups/templates/de/printer-stop.tmpl
+share/cups/templates/de/printer.tmpl
+share/cups/templates/de/printers-header.tmpl
+share/cups/templates/de/printers.tmpl
+share/cups/templates/de/restart.tmpl
+share/cups/templates/de/samba-export.tmpl
+share/cups/templates/de/samba-exported.tmpl
+share/cups/templates/de/search.tmpl
+share/cups/templates/de/set-printer-options-header.tmpl
+share/cups/templates/de/set-printer-options-trailer.tmpl
+share/cups/templates/de/subscription-added.tmpl
+share/cups/templates/de/subscription-canceled.tmpl
+share/cups/templates/de/test-page.tmpl
+share/cups/templates/de/trailer.tmpl
+share/cups/templates/de/users.tmpl
 share/cups/templates/edit-config.tmpl
 share/cups/templates/error-op.tmpl
 share/cups/templates/error.tmpl
@@ -756,6 +827,8 @@ share/doc/cups/cs/
 share/doc/cups/cs/index.html
 share/doc/cups/cups-printable.css
 share/doc/cups/cups.css
+share/doc/cups/de/
+share/doc/cups/de/index.html
 share/doc/cups/es/
 share/doc/cups/es/index.html
 share/doc/cups/fr/
@@ -878,8 +951,8 @@ share/examples/cups/cups-files.conf
 share/examples/cups/cupsd.conf
 share/examples/cups/cupsd.conf.default
 @sample ${SYSCONFDIR}/cups/cupsd.conf
-@group
 @mode
+@group
 share/examples/cups/dbus-1/
 share/examples/cups/dbus-1/system.d/
 @group _cups
@@ -914,6 +987,7 @@ share/examples/cups/ssl/
 @group
 share/locale/ca/cups_ca.po
 share/locale/cs/cups_cs.po
+share/locale/de/cups_de.po
 share/locale/es/cups_es.po
 share/locale/fr/cups_fr.po
 share/locale/it/cups_it.po

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-libs,v 1.5 2013/10/27 08:50:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST-libs,v 1.6 2014/04/10 17:15:34 ajacoutot Exp $
 @conflict cups-<1.6.0
 @newgroup _cups:541
 @newuser _cups:541:541:daemon:CUPS printer spooler daemon:/nonexistent:/sbin/nologin
@@ -40,7 +40,6 @@ libexec/cups/filter/
 @man man/man1/cups-config.1
 share/cups/
 share/cups/banners/
-share/cups/charsets/
 share/cups/data/
 share/cups/drv/
 share/cups/mime/

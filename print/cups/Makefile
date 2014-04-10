@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.174 2014/04/03 12:50:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.175 2014/04/10 17:15:34 ajacoutot Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
 
-VERSION=		1.7.1
+VERSION=		1.7.2
 DISTNAME=		cups-${VERSION}-source
 EXTRACT_SUFX=		.tar.bz2
 
 PKGNAME-main=		cups-${VERSION}
 PKGNAME-libs=		cups-libs-${VERSION}
-
-REVISION-main=		2
-REVISION-libs=		0
 
 CATEGORIES=		print sysutils
 
@@ -76,7 +73,7 @@ FAKE_FLAGS=		BUILDROOT=${WRKINST} \
 			SERVERROOT=${WRKINST}${PREFIX}/share/examples/cups
 
 AUTOCONF_VERSION= 	2.68
-AUTOMAKE_VERSION= 	1.10
+AUTOMAKE_VERSION= 	1.9
 
 USE_GMAKE=		Yes
 
