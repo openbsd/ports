@@ -1,0 +1,43 @@
+$OpenBSD: patch-libmedia_ffmpeg_AudioResamplerFfmpeg_h,v 1.1 2014/04/10 06:13:04 brad Exp $
+
+Update for newer FFmpeg API.
+
+--- libmedia/ffmpeg/AudioResamplerFfmpeg.h.orig	Mon Apr  7 06:30:52 2014
++++ libmedia/ffmpeg/AudioResamplerFfmpeg.h	Mon Apr  7 06:39:48 2014
+@@ -56,21 +56,29 @@ class AudioResamplerFfmpeg (public)
+ 	/// @param input
+ 	/// A pointer to the audio data that needs resampling
+ 	///
+-	/// @param output
+-	/// A pointer to where the resampled output should be placed
++	/// @param plane_size
++	/// Input plane/line size
+ 	///
+ 	/// @param samples
+ 	/// Number of samples in the audio
+ 	///
++	/// @param output
++	/// A pointer to where the resampled output should be placed
++	///
+ 	/// @return the number of samples in the output data.
+ 	///
+-	DSOEXPORT int resample(
+-		boost::int16_t* input, boost::int16_t* output, int samples
+-	);
++	DSOEXPORT int resample(boost::uint8_t** input, int plane_size,
++		int samples, boost::uint8_t** output);
+ 
+ private:
+-	// The container of the resample format information.
+-	ReSampleContext* _context;
++    // The container of the resample format information.
++#ifdef HAVE_SWRESAMPLE_H
++    SwrContext* _context;
++#elif HAVE_AVRESAMPLE_H
++    AVAudioResampleContext* _context;
++#else
++    ReSampleContext* _context;
++#endif
+ };
+ 
+ } // gnash.media.ffmpeg namespace 

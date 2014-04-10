@@ -1,10 +1,23 @@
-$OpenBSD: patch-libmedia_ffmpeg_AudioDecoderFfmpeg_cpp,v 1.1 2013/03/08 00:58:26 brad Exp $
+$OpenBSD: patch-libmedia_ffmpeg_AudioDecoderFfmpeg_cpp,v 1.2 2014/04/10 06:13:04 brad Exp $
 
 Update for newer FFmpeg API.
 
 --- libmedia/ffmpeg/AudioDecoderFfmpeg.cpp.orig	Thu Jan 19 14:17:48 2012
-+++ libmedia/ffmpeg/AudioDecoderFfmpeg.cpp	Mon Feb 18 12:06:22 2013
-@@ -84,8 +84,10 @@ AudioDecoderFfmpeg::~AudioDecoderFfmpeg()
++++ libmedia/ffmpeg/AudioDecoderFfmpeg.cpp	Mon Apr  7 23:18:03 2014
+@@ -30,12 +30,6 @@
+ 
+ //#define GNASH_DEBUG_AUDIO_DECODING
+ 
+-#if LIBAVCODEC_VERSION_MAJOR >= 53
+-#define AVCODEC_DECODE_AUDIO avcodec_decode_audio3
+-#else
+-#define AVCODEC_DECODE_AUDIO avcodec_decode_audio2
+-#endif
+-
+ namespace gnash {
+ namespace media {
+ namespace ffmpeg {
+@@ -84,25 +78,27 @@ AudioDecoderFfmpeg::~AudioDecoderFfmpeg()
  
  void AudioDecoderFfmpeg::setup(SoundInfo& info)
  {
@@ -15,8 +28,30 @@ Update for newer FFmpeg API.
 +#endif
      avcodec_register_all();// change this to only register need codec?
  
-     enum CodecID codec_id;
-@@ -131,12 +133,20 @@ void AudioDecoderFfmpeg::setup(SoundInfo& info)
+-    enum CodecID codec_id;
++    enum CODECID codec_id;
+ 
+     switch(info.getFormat()) {
+         case AUDIO_CODEC_RAW:
+-            codec_id = CODEC_ID_PCM_U16LE;
++            codec_id = AV_CODEC_ID_PCM_U16LE;
+             break;
+         case AUDIO_CODEC_ADPCM:
+-            codec_id = CODEC_ID_ADPCM_SWF;
++            codec_id = AV_CODEC_ID_ADPCM_SWF;
+             break;
+         case AUDIO_CODEC_MP3:
+-            codec_id = CODEC_ID_MP3;
++            codec_id = AV_CODEC_ID_MP3;
+             _needsParsing=true;
+             break;
+         case AUDIO_CODEC_AAC:
+-            codec_id = CODEC_ID_AAC;
++            codec_id = AV_CODEC_ID_AAC;
+             _needsParsing=true;
+             break;
+         default:
+@@ -131,12 +127,20 @@ void AudioDecoderFfmpeg::setup(SoundInfo& info)
          }
      }
  
@@ -37,8 +72,16 @@ Update for newer FFmpeg API.
      if (ret < 0) {
          av_free(_audioCodecCtx);
          _audioCodecCtx=0;
-@@ -158,14 +168,14 @@ void AudioDecoderFfmpeg::setup(SoundInfo& info)
-             case CODEC_ID_PCM_U16LE:
+@@ -152,20 +156,20 @@ void AudioDecoderFfmpeg::setup(SoundInfo& info)
+     /// @todo do this only if !_needsParsing ?
+     switch (_audioCodecCtx->codec->id)
+     {
+-            case CODEC_ID_MP3:
++            case AV_CODEC_ID_MP3:
+                 break;
+ 
+-            case CODEC_ID_PCM_U16LE:
++            case AV_CODEC_ID_PCM_U16LE:
                  _audioCodecCtx->channels = (info.isStereo() ? 2 : 1);
                  _audioCodecCtx->sample_rate = info.getSampleRate();
 -                _audioCodecCtx->sample_fmt = SAMPLE_FMT_S16; // ?! arbitrary ?
@@ -54,7 +97,7 @@ Update for newer FFmpeg API.
                  break;
      }
  }
-@@ -173,7 +183,10 @@ void AudioDecoderFfmpeg::setup(SoundInfo& info)
+@@ -173,14 +177,17 @@ void AudioDecoderFfmpeg::setup(SoundInfo& info)
  void AudioDecoderFfmpeg::setup(const AudioInfo& info)
  {
      // Init the avdecoder-decoder
@@ -64,8 +107,54 @@ Update for newer FFmpeg API.
 +#endif
      avcodec_register_all();// change this to only register need codec?
  
-     enum CodecID codec_id = CODEC_ID_NONE;
-@@ -254,7 +267,11 @@ void AudioDecoderFfmpeg::setup(const AudioInfo& info)
+-    enum CodecID codec_id = CODEC_ID_NONE;
++    enum CODECID codec_id = AV_CODEC_ID_NONE;
+ 
+     if (info.type == CODEC_TYPE_CUSTOM)
+     {
+-        codec_id = static_cast<CodecID>(info.codec);
++        codec_id = static_cast<CODECID>(info.codec);
+     }
+     else if (info.type == CODEC_TYPE_FLASH)
+     {
+@@ -190,22 +197,22 @@ void AudioDecoderFfmpeg::setup(const AudioInfo& info)
+             case AUDIO_CODEC_UNCOMPRESSED:
+             case AUDIO_CODEC_RAW:
+                 if (info.sampleSize == 2) {
+-                    codec_id = CODEC_ID_PCM_S16LE;
++                    codec_id = AV_CODEC_ID_PCM_S16LE;
+                 } else {
+-                    codec_id = CODEC_ID_PCM_S8;
++                    codec_id = AV_CODEC_ID_PCM_S8;
+                 }
+                 break;
+ 
+             case AUDIO_CODEC_ADPCM:
+-                codec_id = CODEC_ID_ADPCM_SWF;
++                codec_id = AV_CODEC_ID_ADPCM_SWF;
+                 break;
+ 
+             case AUDIO_CODEC_MP3:
+-                codec_id = CODEC_ID_MP3;
++                codec_id = AV_CODEC_ID_MP3;
+                 break;
+ 
+             case AUDIO_CODEC_AAC:
+-                codec_id = CODEC_ID_AAC;
++                codec_id = AV_CODEC_ID_AAC;
+                 break;
+ 
+ #ifdef FFMPEG_NELLYMOSER
+@@ -213,7 +220,7 @@ void AudioDecoderFfmpeg::setup(const AudioInfo& info)
+             //       (but probably not Ffmpeg's fault, he said)
+             //       I'd like to take a look at the testcase --strk
+             case AUDIO_CODEC_NELLYMOSER:
+-                codec_id = CODEC_ID_NELLYMOSER;
++                codec_id = AV_CODEC_ID_NELLYMOSER;
+                 break;
+ #endif
+ 
+@@ -254,7 +261,11 @@ void AudioDecoderFfmpeg::setup(const AudioInfo& info)
      _needsParsing = (_parser != NULL);
  
      // Create an audioCodecCtx from the ffmpeg parser if exists/possible
@@ -77,7 +166,26 @@ Update for newer FFmpeg API.
      if (!_audioCodecCtx) {
          throw MediaException(_("AudioDecoderFfmpeg: libavcodec couldn't "
                      "allocate context"));
-@@ -297,7 +314,7 @@ void AudioDecoderFfmpeg::setup(const AudioInfo& info)
+@@ -280,15 +291,15 @@ void AudioDecoderFfmpeg::setup(const AudioInfo& info)
+     //       some of the variables
+     switch (codec_id)
+     {
+-            case CODEC_ID_MP3:
++            case AV_CODEC_ID_MP3:
+                 break;
+ 
+-            case CODEC_ID_PCM_S8:
++            case AV_CODEC_ID_PCM_S8:
+                 // Either FFMPEG or the parser are getting this wrong.
+                 _audioCodecCtx->sample_rate = info.sampleRate / 2;
+                 _audioCodecCtx->channels = (info.stereo ? 2 : 1);
+                 break;
+-            case CODEC_ID_PCM_S16LE:
++            case AV_CODEC_ID_PCM_S16LE:
+                 _audioCodecCtx->channels = (info.stereo ? 2 : 1);
+                 _audioCodecCtx->sample_rate = info.sampleRate;
+                 break;
+@@ -297,7 +308,7 @@ void AudioDecoderFfmpeg::setup(const AudioInfo& info)
                  _audioCodecCtx->channels = (info.stereo ? 2 : 1);
                  _audioCodecCtx->sample_rate = info.sampleRate;
                  // was commented out (why?):
@@ -86,7 +194,7 @@ Update for newer FFmpeg API.
                  break;
      }
  
-@@ -305,7 +322,11 @@ void AudioDecoderFfmpeg::setup(const AudioInfo& info)
+@@ -305,7 +316,11 @@ void AudioDecoderFfmpeg::setup(const AudioInfo& info)
  #ifdef GNASH_DEBUG_AUDIO_DECODING
      log_debug("  Opening codec");
  #endif // GNASH_DEBUG_AUDIO_DECODING
@@ -98,3 +206,244 @@ Update for newer FFmpeg API.
      if (ret < 0) {
          //avcodec_close(_audioCodecCtx);
          av_free(_audioCodecCtx);
+@@ -326,7 +341,7 @@ AudioDecoderFfmpeg::decode(const boost::uint8_t* input
+ {
+     //GNASH_REPORT_FUNCTION;
+ 
+-    size_t retCapacity = AVCODEC_MAX_AUDIO_FRAME_SIZE;
++    size_t retCapacity = MAX_AUDIO_FRAME_SIZE;
+     boost::uint8_t* retBuf = new boost::uint8_t[retCapacity];
+     int retBufSize = 0;
+ 
+@@ -376,35 +391,14 @@ AudioDecoderFfmpeg::decode(const boost::uint8_t* input
+ 
+         if ( ! framesize )
+         {
+-            // If nothing is consumed, this will fail. It can happen if a
+-            // block is passed to the decoder when nothing can be 
+-            // parsed from the block. This is probably a malformed SWF.
+-            //assert(decodedBytes == inputSize);
+-
+-            // NOTE: If this happens the caller sent us
+-            //       a block of data which is not composed
+-            //       by complete audio frames.
+-            //       Could be due to an error in the caller
+-            //       code, or to a malformed SWF...
+-            //       At time of writing this (2008-11-01)
+-            //       it is most likely an error in caller
+-            //       code (streaming sound/event sound)
+-            //       so we log an ERROR rather then a
+-            //       MALFORMED input. You can uncomment the
+-            //       abort below to check who is the caller 
+-            //       with gdb. When callers are checked,
+-            //       we may turn this into a MALFORMED
+-            //       kind of error (DEFINESOUND, SOUNDSTREAMBLOCK
+-            //       or FLV AudioTag not containing full audio frames)
+-            //
+-
+-            log_error(_("AudioDecoderFfmpeg: "
++            // See https://savannah.gnu.org/bugs/?25456
++            // for a live testcase
++            log_debug("AudioDecoderFfmpeg: "
+                       "could not find a complete frame in "
+-                      "the last %d bytes of input"
+-                        " (malformed SWF or FLV?)"),
+-                      consumed);
+-            //abort();
+-            continue;
++                      "the last %d bytes of a %d bytes block"
++                        " (nothing should be lost)",
++                      consumed, inputSize);
++            break; 
+         }
+ 
+ 
+@@ -480,65 +474,86 @@ AudioDecoderFfmpeg::decodeFrame(const boost::uint8_t* 
+ 
+     assert(inputSize);
+ 
+-    const size_t bufsize = AVCODEC_MAX_AUDIO_FRAME_SIZE;
++    size_t outSize = MAX_AUDIO_FRAME_SIZE;
+ 
+     // TODO: make this a private member, to reuse (see NetStreamFfmpeg in 0.8.3)
+-    boost::uint8_t* output;
+-
+-    output = reinterpret_cast<boost::uint8_t*>(av_malloc(bufsize));
+-    if (!output) {
++ boost::int16_t* outPtr = reinterpret_cast<boost::int16_t*>(av_malloc(outSize));
++ if (!outPtr) {
+         log_error(_("failed to allocate audio buffer."));
+         outputSize = 0;
+         return NULL;
+     }
+ 
+-    boost::int16_t* outPtr = reinterpret_cast<boost::int16_t*>(output);
++    boost::int16_t* output = outPtr;
+ 
+-    // We initialize output size to the full size
+-    // then decoding will eventually reduce it
+-    int outSize = bufsize; 
+ 
+ #ifdef GNASH_DEBUG_AUDIO_DECODING
+     log_debug("AudioDecoderFfmpeg: about to decode %d bytes; "
+-        "ctx->channels:%d, avctx->frame_size:%d",
++        "ctx->channels:%d, ctx->frame_size:%d",
+         inputSize, _audioCodecCtx->channels, _audioCodecCtx->frame_size);
+ #endif
+ 
+     // older ffmpeg versions didn't accept a const input..
+-#if LIBAVCODEC_VERSION_MAJOR >= 53
+     AVPacket pkt;
++    int got_frm = 0;
+     av_init_packet(&pkt);
+-    pkt.data = (uint8_t*) input;
++    pkt.data = const_cast<uint8_t*>(input);
+     pkt.size = inputSize;
+-#endif
+-    int tmp = AVCODEC_DECODE_AUDIO(_audioCodecCtx, outPtr, &outSize,
+-#if LIBAVCODEC_VERSION_MAJOR >= 53
+-                                   &pkt);
+-#else
+-                                   input, inputSize);
+-#endif
++    AVFrame *frm = FRAMEALLOC();
++    if (!frm) {
++        log_error(_("failed to allocate frame."));
++        av_free(output);
++        return NULL;
++    }
++    int tmp = avcodec_decode_audio4(_audioCodecCtx, frm, &got_frm, &pkt);
+ 
+ #ifdef GNASH_DEBUG_AUDIO_DECODING
+-    log_debug(" avcodec_decode_audio[2](ctx, bufptr, %d, input, %d) "
+-            "returned %d; set frame_size=%d",
+-            bufsize, inputSize, tmp, outSize);
++    const char* fmtname = av_get_sample_fmt_name(_audioCodecCtx->sample_fmt);
++    log_debug(" decodeFrame | frm->nb_samples: %d | &got_frm: %d | "
++        "returned %d | inputSize: %d",
++        frm->nb_samples, got_frm, tmp, inputSize);
+ #endif
+ 
+-    if (tmp < 0) {
+-        log_error(_("avcodec_decode_audio returned %d. Upgrading "
+-                    "ffmpeg/libavcodec might fix this issue."), tmp);
+-        outputSize = 0;
++    int plane_size;
++    if (tmp >= 0 && got_frm) {
++        int data_size = av_samples_get_buffer_size( &plane_size,
++            _audioCodecCtx->channels, frm->nb_samples,
++            _audioCodecCtx->sample_fmt, 1);
++        if (static_cast<int>(outSize) < data_size) {
++            log_error(_("output buffer size is too small for the current frame "
++                "(%d < %d)"), outSize, data_size);
++            av_free(output);
++            return NULL;
++        }
+ 
+-        av_free(output);
+-        return NULL;
+-    }
++        memcpy(outPtr, frm->extended_data[0], plane_size);
+ 
+-    if (outSize < 2) {
+-        log_error(_("outputSize:%d after decoding %d bytes of input audio "
+-                    "data. Upgrading ffmpeg/libavcodec might fix this issue."),
+-                    outputSize, inputSize);
+-        outputSize = 0;
++#if !(defined(HAVE_SWRESAMPLE_H) || defined(HAVE_AVRESAMPLE_H))
++        int planar = av_sample_fmt_is_planar(_audioCodecCtx->sample_fmt);
++        if (planar && _audioCodecCtx->channels > 1) {
++            uint8_t *out = ((uint8_t *)outPtr) + plane_size;
++            for (int ch = 1; ch < _audioCodecCtx->channels; ch++) {
++                memcpy(out, frm->extended_data[ch], plane_size);
++                out += plane_size;
++            }
++        }
++#endif
+ 
++        outSize = data_size;
++#ifdef GNASH_DEBUG_AUDIO_DECODING
++        log_debug(" decodeFrame | fmt: %d | fmt_name: %s | planar: %d | "
++            "plane_size: %d | outSize: %d",
++            _audioCodecCtx->sample_fmt, fmtname, planar, plane_size, outSize);
++#endif
++    } else {
++        if (tmp < 0)
++            log_error(_("avcodec_decode_audio returned %d."), tmp);
++        if (outSize < 2)
++            log_error(_("outputSize:%d after decoding %d bytes of input audio "
++                "data."), outputSize, inputSize);
++        log_error(_("Upgrading ffmpeg/libavcodec might fix this issue."));
++        outputSize = 0;
++        av_freep(&frm);
+         av_free(output);
+         return NULL;
+     }
+@@ -562,27 +577,28 @@ AudioDecoderFfmpeg::decodeFrame(const boost::uint8_t* 
+         boost::uint8_t* resampledOutput = new boost::uint8_t[resampledFrameSize]; 
+ 
+ #ifdef GNASH_DEBUG_AUDIO_DECODING
+-        log_debug("Calling the resampler; resampleFactor:%d; "
+-            "ouput to 44100hz, 2channels, %dbytes; "
+-            "input is %dhz, %dchannels, %dbytes, %dsamples",
+-            resampleFactor,
+-            resampledFrameSize, _audioCodecCtx->sample_rate,
+-            _audioCodecCtx->channels, outSize, inSamples);
++        log_debug(" decodeFrame | Calling the resampler, resampleFactor: %d | "
++            "in %d hz %d ch %d bytes %d samples, %s fmt", resampleFactor,
++            _audioCodecCtx->sample_rate, _audioCodecCtx->channels, outSize,
++            inSamples, fmtname);
++        log_debug(" decodeFrame | out 44100 hz 2 ch %d bytes",
++            resampledFrameSize);
+ #endif
+ 
+-        int outSamples = _resampler.resample(outPtr, // input
+-            reinterpret_cast<boost::int16_t*>(resampledOutput), // output
+-            inSamples); // input..
++        int outSamples = _resampler.resample(frm->extended_data, // input
++            plane_size, // input
++            frm->nb_samples, // input
++            &resampledOutput); // output
+ 
++        // make sure to set outPtr *after* we use it as input to the resampler
++        outPtr = reinterpret_cast<boost::int16_t*>(resampledOutput);
++
+ #ifdef GNASH_DEBUG_AUDIO_DECODING
+         log_debug("resampler returned %d samples ", outSamples);
+ #endif
+ 
+-        // make sure to set outPtr *after* we use it as input to the resampler
+-        outPtr = reinterpret_cast<boost::int16_t*>(resampledOutput);
++        av_freep(&frm);
+ 
+-        av_free(output);
+-
+         if (expectedMaxOutSamples < outSamples) {
+             log_error(_(" --- Computation of resampled samples (%d) < then the actual returned samples (%d)"),
+                 expectedMaxOutSamples, outSamples);
+@@ -608,12 +624,13 @@ AudioDecoderFfmpeg::decodeFrame(const boost::uint8_t* 
+     }
+     else {
+         boost::uint8_t* newOutput = new boost::uint8_t[outSize];
+-        std::memcpy(newOutput, output, outSize);
++        std::memcpy(newOutput, outPtr, outSize);
+         outPtr = reinterpret_cast<boost::int16_t*>(newOutput);
+-        av_free(output);
++        av_freep(&frm);
+     }
+ 
+     outputSize = outSize;
++    av_free(output);
+     return reinterpret_cast<uint8_t*>(outPtr);
+ }
+ 
+@@ -645,7 +662,8 @@ AudioDecoderFfmpeg::parseInput(const boost::uint8_t* i
+         // democratic value for a chunk to decode...
+         // @todo this might be constrained by codec id, check that !
+ 
+-        // NOTE: AVCODEC_MAX_AUDIO_FRAME_SIZE resulted bigger
++        // NOTE: AVCODEC_MAX_AUDIO_FRAME_SIZE (192000, deprecated replaced with
++        //       MAX_AUDIO_FRAME_SIZE) resulted bigger
+         //       than avcodec_decode_audio could handle, resulting
+         //       in eventSoundTest1.swf regression.
+         //static const unsigned int maxFrameSize = AVCODEC_MAX_AUDIO_FRAME_SIZE;

@@ -1,9 +1,9 @@
-$OpenBSD: patch-libmedia_ffmpeg_MediaParserFfmpeg_cpp,v 1.1 2013/03/08 00:58:26 brad Exp $
+$OpenBSD: patch-libmedia_ffmpeg_MediaParserFfmpeg_cpp,v 1.2 2014/04/10 06:13:04 brad Exp $
 
 Update for newer FFmpeg API.
 
 --- libmedia/ffmpeg/MediaParserFfmpeg.cpp.orig	Thu Jan 19 14:17:48 2012
-+++ libmedia/ffmpeg/MediaParserFfmpeg.cpp	Mon Feb 18 12:06:22 2013
++++ libmedia/ffmpeg/MediaParserFfmpeg.cpp	Mon Apr  7 06:39:48 2014
 @@ -344,8 +344,10 @@ MediaParserFfmpeg::initializeParser()
  {
      av_register_all(); // TODO: needs to be invoked only once ?
@@ -78,6 +78,49 @@ Update for newer FFmpeg API.
          if (tag && tag->value) {
              setId3Info(&Id3Info::album, std::string(tag->value),
                      _id3Object);
+@@ -468,13 +492,13 @@ MediaParserFfmpeg::initializeParser()
+         boost::uint16_t width = _videoStream->codec->width;
+         boost::uint16_t height = _videoStream->codec->height;
+         boost::uint16_t frameRate = static_cast<boost::uint16_t>(
+-                as_double(_videoStream->r_frame_rate));
++                as_double(_videoStream->avg_frame_rate));
+ #if !defined(HAVE_LIBAVFORMAT_AVFORMAT_H) && !defined(HAVE_FFMPEG_AVCODEC_H)
+         boost::uint64_t duration = _videoStream->codec_info_duration;
+ #else
+         boost::uint64_t duration = _videoStream->duration;
+ #endif
+-        if (duration == AV_NOPTS_VALUE) {
++        if (duration == static_cast<boost::uint64_t>(AV_NOPTS_VALUE)) {
+             log_error(_("Duration of video stream unknown"));
+             duration=0; // TODO: guess!
+         } else {
+@@ -503,7 +527,7 @@ MediaParserFfmpeg::initializeParser()
+ #else
+         boost::uint64_t duration = _audioStream->duration;
+ #endif
+-        if (duration == AV_NOPTS_VALUE) {
++        if (duration == static_cast<boost::uint64_t>(AV_NOPTS_VALUE)) {
+             log_error(_("Duration of audio stream unknown to ffmpeg"));
+             duration=0; // TODO: guess!
+         } 
+@@ -601,7 +625,7 @@ MediaParserFfmpeg::seekMedia(boost::int64_t offset, in
+ 	else if (whence == SEEK_END)
+ 	{
+ 		// New position is offset + end of file
+-		log_unimpl("MediaParserFfmpeg seek from end of file");
++		LOG_ONCE(log_unimpl("MediaParserFfmpeg seek from end of file"));
+ 		// This is (most likely) a streamed file, so we can't seek to the end!
+ 		// Instead we seek to byteIOBufferSize bytes... seems to work fine...
+ 		_stream->seek(byteIOBufferSize);
+@@ -611,7 +635,7 @@ MediaParserFfmpeg::seekMedia(boost::int64_t offset, in
+ 	{
+ 		// ffmpeg uses whence=AVSEEK_SIZE and offset=0 to request
+ 		// stream size !
+-		log_unimpl("MediaParserFfmpeg: unsupported whence value %d", whence);
++		LOG_ONCE(log_unimpl("MediaParserFfmpeg: unsupported whence value %d", whence));
+ 		return -1;
+ 	}
+ 
 @@ -620,30 +644,34 @@ MediaParserFfmpeg::seekMedia(boost::int64_t offset, in
  }
  

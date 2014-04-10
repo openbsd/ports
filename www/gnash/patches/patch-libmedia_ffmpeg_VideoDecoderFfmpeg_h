@@ -1,0 +1,29 @@
+$OpenBSD: patch-libmedia_ffmpeg_VideoDecoderFfmpeg_h,v 1.1 2014/04/10 06:13:04 brad Exp $
+--- libmedia/ffmpeg/VideoDecoderFfmpeg.h.orig	Mon Apr  7 06:34:47 2014
++++ libmedia/ffmpeg/VideoDecoderFfmpeg.h	Mon Apr  7 06:39:48 2014
+@@ -27,7 +27,6 @@
+ #include <vector>
+ #include <memory>
+ #include "dsodefs.h" //For DSOEXPORT
+-#include "log.h"
+ #include "VideoDecoder.h"
+ #include "MediaParser.h" // for videoCodecType enum
+ #include "ffmpegHeaders.h"
+@@ -70,7 +69,7 @@ class VideoDecoderFfmpeg : public VideoDecoder { (priv
+     //
+     /// @return CODEC_ID_NONE for unsupported flash codecs
+     ///
+-    static CodecID flashToFfmpegCodec(videoCodecType format);
++    static CODECID flashToFfmpegCodec(videoCodecType format);
+ 
+     /// \brief converts an video frame from (almost) any type to RGB24.
+     ///
+@@ -84,7 +83,7 @@ class VideoDecoderFfmpeg : public VideoDecoder { (priv
+     std::auto_ptr<image::GnashImage> frameToImage(AVCodecContext* srcCtx,
+             const AVFrame& srcFrame);
+ 
+-    void init(enum CodecID format, int width, int height,
++    void init(enum CODECID format, int width, int height,
+             boost::uint8_t* extradata=0, int extradataSize=0);
+ 
+     std::auto_ptr<image::GnashImage> decode(const boost::uint8_t* input,

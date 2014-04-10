@@ -1,10 +1,59 @@
-$OpenBSD: patch-libmedia_ffmpeg_VideoDecoderFfmpeg_cpp,v 1.1 2013/03/08 00:58:26 brad Exp $
+$OpenBSD: patch-libmedia_ffmpeg_VideoDecoderFfmpeg_cpp,v 1.2 2014/04/10 06:13:04 brad Exp $
 
 Update for newer FFmpeg API.
 
 --- libmedia/ffmpeg/VideoDecoderFfmpeg.cpp.orig	Thu Jan 19 14:17:49 2012
-+++ libmedia/ffmpeg/VideoDecoderFfmpeg.cpp	Mon Feb 18 12:06:22 2013
-@@ -171,7 +171,10 @@ VideoDecoderFfmpeg::init(enum CodecID codecId, int /*w
++++ libmedia/ffmpeg/VideoDecoderFfmpeg.cpp	Mon Apr  7 06:39:48 2014
+@@ -53,9 +53,13 @@ namespace {
+     void clear_vaapi_context(AVCodecContext* avctx);
+     void reset_context(AVCodecContext* avctx, VaapiContextFfmpeg* vactx = 0);
+     PixelFormat get_format(AVCodecContext* avctx, const PixelFormat* fmt);
++#if LIBAVCODEC_VERSION_MAJOR >= 55
++    int get_buffer(AVCodecContext* avctx, AVFrame* pic, int flags);
++#else
+     int get_buffer(AVCodecContext* avctx, AVFrame* pic);
+     int reget_buffer(AVCodecContext* avctx, AVFrame* pic);
+-    void release_buffer(AVCodecContext *avctx, AVFrame *pic);
++    void release_buffer(AVCodecContext* avctx, AVFrame* pic);
++#endif
+ }
+ 
+ #ifdef HAVE_SWSCALE_H
+@@ -117,7 +121,7 @@ VideoDecoderFfmpeg::VideoDecoderFfmpeg(videoCodecType 
+     _videoCodec(NULL)
+ {
+ 
+-    CodecID codec_id = flashToFfmpegCodec(format);
++    CODECID codec_id = flashToFfmpegCodec(format);
+     init(codec_id, width, height);
+ 
+ }
+@@ -127,16 +131,16 @@ VideoDecoderFfmpeg::VideoDecoderFfmpeg(const VideoInfo
+     _videoCodec(NULL)
+ {
+ 
+-    CodecID codec_id = CODEC_ID_NONE;
++    CODECID codec_id = AV_CODEC_ID_NONE;
+ 
+     if ( info.type == CODEC_TYPE_FLASH )
+     {
+         codec_id = flashToFfmpegCodec(static_cast<videoCodecType>(info.codec));
+     }
+-    else codec_id = static_cast<CodecID>(info.codec);
++    else codec_id = static_cast<CODECID>(info.codec);
+ 
+     // This would cause nasty segfaults.
+-    if (codec_id == CODEC_ID_NONE)
++    if (codec_id == AV_CODEC_ID_NONE)
+     {
+         boost::format msg = boost::format(_("Cannot find suitable "
+                 "decoder for flash codec %d")) % info.codec;
+@@ -167,11 +171,14 @@ VideoDecoderFfmpeg::VideoDecoderFfmpeg(const VideoInfo
+ }
+ 
+ void
+-VideoDecoderFfmpeg::init(enum CodecID codecId, int /*width*/, int /*height*/,
++VideoDecoderFfmpeg::init(enum CODECID codecId, int /*width*/, int /*height*/,
          boost::uint8_t* extradata, int extradataSize)
  {
      // Init the avdecoder-decoder
@@ -15,7 +64,7 @@ Update for newer FFmpeg API.
      avcodec_register_all();// change this to only register need codec?
  
      _videoCodec = avcodec_find_decoder(codecId); 
-@@ -180,7 +183,11 @@ VideoDecoderFfmpeg::init(enum CodecID codecId, int /*w
+@@ -180,7 +187,11 @@ VideoDecoderFfmpeg::init(enum CodecID codecId, int /*w
          throw MediaException(_("libavcodec can't decode this video format"));
      }
  
@@ -27,7 +76,21 @@ Update for newer FFmpeg API.
      if (!_videoCodecCtx->getContext()) {
          throw MediaException(_("libavcodec couldn't allocate context"));
      }
-@@ -203,7 +210,11 @@ VideoDecoderFfmpeg::init(enum CodecID codecId, int /*w
+@@ -191,9 +202,13 @@ VideoDecoderFfmpeg::init(enum CodecID codecId, int /*w
+     ctx->extradata_size = extradataSize;
+ 
+     ctx->get_format     = get_format;
++#if LIBAVCODEC_VERSION_MAJOR >= 55
++    ctx->get_buffer2    = get_buffer;
++#else
+     ctx->get_buffer     = get_buffer;
+     ctx->reget_buffer   = reget_buffer;
+     ctx->release_buffer = release_buffer;
++#endif
+ 
+ #ifdef HAVE_VA_VA_H
+     if (vaapi_is_enabled()) {
+@@ -203,7 +218,11 @@ VideoDecoderFfmpeg::init(enum CodecID codecId, int /*w
      }
  #endif
  
@@ -39,7 +102,91 @@ Update for newer FFmpeg API.
      if (ret < 0) {
          boost::format msg = boost::format(_("libavcodec "
                              "failed to initialize FFMPEG "
-@@ -529,7 +540,11 @@ get_buffer(AVCodecContext* avctx, AVFrame* pic)
+@@ -247,7 +266,7 @@ VideoDecoderFfmpeg::frameToImage(AVCodecContext* srcCt
+     const int height = srcCtx->height;
+ 
+ #ifdef FFMPEG_VP6A
+-    PixelFormat pixFmt = (srcCtx->codec->id == CODEC_ID_VP6A) ?
++    PixelFormat pixFmt = (srcCtx->codec->id == AV_CODEC_ID_VP6A) ?
+         PIX_FMT_RGBA : PIX_FMT_RGB24;
+ #else 
+     PixelFormat pixFmt = PIX_FMT_RGB24;
+@@ -349,7 +368,7 @@ VideoDecoderFfmpeg::decode(const boost::uint8_t* input
+ 
+     std::auto_ptr<image::GnashImage> ret;
+ 
+-    AVFrame* frame = avcodec_alloc_frame();
++    AVFrame* frame = FRAMEALLOC();
+     if ( ! frame ) {
+         log_error(_("Out of memory while allocating avcodec frame"));
+         return ret;
+@@ -360,7 +379,7 @@ VideoDecoderFfmpeg::decode(const boost::uint8_t* input
+ #if LIBAVCODEC_VERSION_MAJOR >= 53
+     AVPacket pkt;
+     av_init_packet(&pkt);
+-    pkt.data = (uint8_t*) input;
++    pkt.data = const_cast<uint8_t*>(input);
+     pkt.size = input_size;
+     avcodec_decode_video2(_videoCodecCtx->getContext(), frame, &bytes,
+             &pkt);
+@@ -411,29 +430,29 @@ VideoDecoderFfmpeg::peek()
+ }
+ 
+ /* public static */
+-enum CodecID
++enum CODECID
+ VideoDecoderFfmpeg::flashToFfmpegCodec(videoCodecType format)
+ {
+         // Find the decoder and init the parser
+         switch(format) {
+                 case VIDEO_CODEC_H264:
+-                         return CODEC_ID_H264;
++                         return AV_CODEC_ID_H264;
+                 case VIDEO_CODEC_H263:
+-			 // CODEC_ID_H263I didn't work with Lavc51.50.0
++			 // AV_CODEC_ID_H263I didn't work with Lavc51.50.0
+ 			 // and NetStream-SquareTest.swf
+-                         return CODEC_ID_FLV1;
++                         return AV_CODEC_ID_FLV1;
+                 case VIDEO_CODEC_VP6:
+-                        return CODEC_ID_VP6F;
++                        return AV_CODEC_ID_VP6F;
+ #ifdef FFMPEG_VP6A
+                 case VIDEO_CODEC_VP6A:
+-	                return CODEC_ID_VP6A;
++	                return AV_CODEC_ID_VP6A;
+ #endif
+                 case VIDEO_CODEC_SCREENVIDEO:
+-                        return CODEC_ID_FLASHSV;
++                        return AV_CODEC_ID_FLASHSV;
+                 default:
+                         log_error(_("Unsupported video codec %d"),
+                                 static_cast<int>(format));
+-                        return CODEC_ID_NONE;
++                        return AV_CODEC_ID_NONE;
+         }
+ }
+ 
+@@ -514,10 +533,18 @@ get_format(AVCodecContext* avctx, const PixelFormat* f
+ 
+ /// AVCodecContext.get_buffer() implementation
+ int
++#if LIBAVCODEC_VERSION_MAJOR >= 55
++get_buffer(AVCodecContext* avctx, AVFrame* pic, int flags)
++#else
+ get_buffer(AVCodecContext* avctx, AVFrame* pic)
++#endif
+ {
+     VaapiContextFfmpeg* const vactx = get_vaapi_context(avctx);
++#if LIBAVCODEC_VERSION_MAJOR >= 55
++    if (!vactx) return avcodec_default_get_buffer2(avctx, pic, flags);
++#else
+     if (!vactx) return avcodec_default_get_buffer(avctx, pic);
++#endif
+ 
+ #ifdef HAVE_VA_VA_H
+     if (!vactx->initDecoder(avctx->width, avctx->height)) return -1;
+@@ -529,13 +556,18 @@ get_buffer(AVCodecContext* avctx, AVFrame* pic)
  
      static unsigned int pic_num = 0;
      pic->type = FF_BUFFER_TYPE_USER;
@@ -51,3 +198,18 @@ Update for newer FFmpeg API.
      surface->setPicNum(pic_num);
      return 0;
  #endif
+     return -1;
+ }
+ 
++#if LIBAVCODEC_VERSION_MAJOR < 55
+ /// AVCodecContext.reget_buffer() implementation
+ int
+ reget_buffer(AVCodecContext* avctx, AVFrame* pic)
+@@ -567,6 +599,7 @@ release_buffer(AVCodecContext *avctx, AVFrame *pic)
+     pic->data[3] = NULL;
+ #endif
+ }
++#endif
+ 
+ }
+ 

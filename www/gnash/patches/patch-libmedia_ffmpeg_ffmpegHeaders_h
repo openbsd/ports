@@ -1,7 +1,16 @@
-$OpenBSD: patch-libmedia_ffmpeg_ffmpegHeaders_h,v 1.1 2013/03/08 00:59:08 brad Exp $
---- libmedia/ffmpeg/ffmpegHeaders.h.orig	Mon Feb 18 12:04:12 2013
-+++ libmedia/ffmpeg/ffmpegHeaders.h	Mon Feb 18 12:06:22 2013
-@@ -83,5 +83,15 @@ extern "C" {
+$OpenBSD: patch-libmedia_ffmpeg_ffmpegHeaders_h,v 1.2 2014/04/10 06:13:04 brad Exp $
+--- libmedia/ffmpeg/ffmpegHeaders.h.orig	Thu Jan 19 14:17:49 2012
++++ libmedia/ffmpeg/ffmpegHeaders.h	Mon Apr  7 06:39:48 2014
+@@ -38,6 +38,8 @@
+ #endif
+ #endif
+ 
++#define MAX_AUDIO_FRAME_SIZE 192000
++
+ #ifdef HAVE_FFMPEG_AVCODEC_H
+ extern "C" {
+ # include <ffmpeg/avcodec.h>
+@@ -83,5 +85,89 @@ extern "C" {
  #define HAVE_SWSCALE_H 1
  #endif
  
@@ -14,6 +23,80 @@ $OpenBSD: patch-libmedia_ffmpeg_ffmpegHeaders_h,v 1.1 2013/03/08 00:59:08 brad E
 +#define AV_SAMPLE_FMT_DBL  SAMPLE_FMT_DBL
 +
 +#define AVSampleFormat SampleFormat
++#endif
++
++// till Debian libav 10~beta1
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(55,34,1)
++#define AV_CODEC_ID_AAC CODEC_ID_AAC
++#define AV_CODEC_ID_ADPCM_SWF CODEC_ID_ADPCM_SWF
++#define AV_CODEC_ID_FLASHSV CODEC_ID_FLASHSV
++#define AV_CODEC_ID_FLV1 CODEC_ID_FLV1
++#define AV_CODEC_ID_H264 CODEC_ID_H264
++#define AV_CODEC_ID_MP3 CODEC_ID_MP3
++#define AV_CODEC_ID_NELLYMOSER CODEC_ID_NELLYMOSER
++#define AV_CODEC_ID_NONE CODEC_ID_NONE
++#define AV_CODEC_ID_PCM_S8 CODEC_ID_PCM_S8
++#define AV_CODEC_ID_PCM_S16LE CODEC_ID_PCM_S16LE
++#define AV_CODEC_ID_PCM_U16LE CODEC_ID_PCM_U16LE
++#define AV_CODEC_ID_VP6A CODEC_ID_VP6A
++#define AV_CODEC_ID_VP6F CODEC_ID_VP6F
++
++#define avg_frame_rate r_frame_rate
++#define FRAMEALLOC avcodec_alloc_frame
++#else
++#define FRAMEALLOC av_frame_alloc
++#endif
++
++#if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(55,18,102)
++#define CODECID AVCodecID
++#else
++#define CODECID CodecID
++#endif
++
++#ifdef HAVE_SWRESAMPLE_H
++extern "C" {
++#include <swresample.h>
++}
++#endif
++
++#ifdef HAVE_FFMPEG_SWRESAMPLE_H
++extern "C" {
++#include <ffmpeg/swresample.h>
++}
++#define HAVE_SWRESAMPLE_H 1
++#endif
++
++#ifdef HAVE_LIBSWRESAMPLE_SWRESAMPLE_H
++extern "C" {
++#include <libswresample/swresample.h>
++}
++#define HAVE_SWRESAMPLE_H 1
++#endif
++
++#ifdef HAVE_AVRESAMPLE_H
++extern "C" {
++#include <avresample.h>
++}
++#endif
++
++#ifdef HAVE_LIBAV_AVRESAMPLE_H
++extern "C" {
++#include <libav/avresample.h>
++}
++#define HAVE_AVRESAMPLE_H 1
++#endif
++
++#ifdef HAVE_LIBAVRESAMPLE_AVRESAMPLE_H
++extern "C" {
++#include <libavresample/avresample.h>
++}
++#define HAVE_AVRESAMPLE_H 1
++#endif
++
++#ifdef HAVE_LIBAVUTIL_OPT_H
++extern "C" {
++#include <libavutil/opt.h>
++}
 +#endif
  
  #endif // GNASH_MEDIA_FFMPEG_HEADERS_H

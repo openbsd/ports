@@ -1,0 +1,33 @@
+$OpenBSD: patch-libmedia_ffmpeg_VideoDecoderFfmpegVaapi_h,v 1.1 2014/04/10 06:13:04 brad Exp $
+--- libmedia/ffmpeg/VideoDecoderFfmpegVaapi.h.orig	Mon Apr  7 06:39:09 2014
++++ libmedia/ffmpeg/VideoDecoderFfmpegVaapi.h	Mon Apr  7 06:39:48 2014
+@@ -29,6 +29,12 @@ extern "C" {
+ #include <libavcodec/vaapi.h>
+ }
+ 
++#if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(55,18,102)
++#define CODECID AVCodecID
++#else
++#define CODECID CodecID
++#endif
++
+ namespace gnash {
+ namespace media {
+ namespace ffmpeg {
+@@ -62,14 +68,14 @@ class VaapiContextFfmpeg : public vaapi_context {
+     boost::shared_ptr<VaapiContext> _context;
+ 
+ public:
+-    VaapiContextFfmpeg(enum CodecID codec_id);
++    VaapiContextFfmpeg(enum CODECID codec_id);
+ 
+     bool initDecoder(unsigned int width, unsigned int height);
+ 
+     VaapiSurfaceFfmpeg *getSurface()
+         { return new VaapiSurfaceFfmpeg(_context->acquireSurface(), _context); }
+ 
+-    static VaapiContextFfmpeg *create(enum CodecID codec_id);
++    static VaapiContextFfmpeg *create(enum CODECID codec_id);
+ };
+     
+ } // gnash.media.ffmpeg namespace 

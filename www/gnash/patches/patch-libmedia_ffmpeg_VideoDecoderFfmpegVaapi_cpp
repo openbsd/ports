@@ -1,0 +1,30 @@
+$OpenBSD: patch-libmedia_ffmpeg_VideoDecoderFfmpegVaapi_cpp,v 1.1 2014/04/10 06:13:04 brad Exp $
+--- libmedia/ffmpeg/VideoDecoderFfmpegVaapi.cpp.orig	Mon Apr  7 06:38:54 2014
++++ libmedia/ffmpeg/VideoDecoderFfmpegVaapi.cpp	Mon Apr  7 06:39:48 2014
+@@ -31,7 +31,7 @@ namespace media {
+ namespace ffmpeg {
+ 
+ /// Translates FFmpeg Codec ID to VAProfile
+-static VAProfile get_profile(enum CodecID codec_id)
++static VAProfile get_profile(enum CODECID codec_id)
+ {
+     static const int mpeg2_profiles[] =
+         { VAProfileMPEG2Main, VAProfileMPEG2Simple, -1 };
+@@ -94,7 +94,7 @@ void vaapi_set_surface(AVFrame *pic, VaapiSurfaceFfmpe
+     }
+ }
+ 
+-VaapiContextFfmpeg::VaapiContextFfmpeg(enum CodecID codec_id)
++VaapiContextFfmpeg::VaapiContextFfmpeg(enum CODECID codec_id)
+     : _context(new VaapiContext(get_profile(codec_id), VAEntrypointVLD))
+ {
+     // FFmpeg's vaapi_context must be zero-initialized
+@@ -115,7 +115,7 @@ bool VaapiContextFfmpeg::initDecoder(unsigned int widt
+     return true;
+ }
+ 
+-VaapiContextFfmpeg *VaapiContextFfmpeg::create(enum CodecID codec_id)
++VaapiContextFfmpeg *VaapiContextFfmpeg::create(enum CODECID codec_id)
+ {
+     if (!vaapi_is_enabled())
+         return NULL;

@@ -1,143 +1,213 @@
-$OpenBSD: patch-macros_ffmpeg_m4,v 1.3 2012/09/26 19:19:56 brad Exp $
+$OpenBSD: patch-macros_ffmpeg_m4,v 1.4 2014/04/10 06:13:04 brad Exp $
 --- macros/ffmpeg.m4.orig	Thu Jan 19 14:17:49 2012
-+++ macros/ffmpeg.m4	Tue Sep 25 23:08:43 2012
-@@ -416,56 +416,6 @@ dnl   AC_EGREP_HEADER(avcodec_decode_audio2, ${avcodec
-   dnl
-   if test x"${ac_cv_path_ffmpeg_lib}" != x; then
++++ macros/ffmpeg.m4	Mon Apr  7 06:45:17 2014
+@@ -43,7 +43,7 @@ AC_DEFUN([GNASH_PATH_FFMPEG],
+       ffmpeg_top_incl=`dirname ${with_ffmpeg_incl}`
+       if test -f ${with_ffmpeg_incl}/avcodec.h; then
+         ac_cv_path_ffmpeg_incl="-I`(cd ${ffmpeg_top_incl}; pwd)`"
+-        if test -f ${with_ffmpeg_incl}/version.h && $EGREP LIBAVCODEC_VERSION ${with_ffmpeg_incl}/version.h >/dev/null; then
++        if test -f ${with_ffmpeg_incl}/version.h && $EGREP LIBAVCODEC_VERSION ${with_ffmpeg_incl}/version.h 2>&1 >/dev/null; then
+           avcodec_h=${with_ffmpeg_incl}/version.h
+         else
+           avcodec_h=${with_ffmpeg_incl}/avcodec.h
+@@ -73,7 +73,7 @@ AC_DEFUN([GNASH_PATH_FFMPEG],
+         for i in "" ffmpeg libavcodec ffmpeg/libavcodec; do
+           if test -f ${ffmpeg_top_incl}/${i}/avcodec.h; then
+             ac_cv_path_ffmpeg_incl="-I`(cd ${ffmpeg_top_incl}; pwd)`"
+-            if test -f ${ffmpeg_top_incl}/${i}/version.h && $EGREP LIBAVCODEC_VERSION ${ffmpeg_top_incl}/${i}/version.h 2>/dev/null; then
++            if test -f ${ffmpeg_top_incl}/${i}/version.h && $EGREP LIBAVCODEC_VERSION ${ffmpeg_top_incl}/${i}/version.h  2>&1 >/dev/null; then
+               avcodec_h="${ffmpeg_top_incl}/${i}/version.h"
+             else
+               avcodec_h="${ffmpeg_top_incl}/${i}/avcodec.h"
+@@ -97,7 +97,7 @@ AC_DEFUN([GNASH_PATH_FFMPEG],
+       for i in ffmpeg libavcodec ffmpeg/libavcodec; do
+         if test -f ${ffmpeg_top_incl}/${i}/avcodec.h; then
+           ac_cv_path_ffmpeg_incl="-I`(cd ${ffmpeg_top_incl}/${i}; pwd)`"
+-          if test -f ${ffmpeg_top_incl}/${i}/version.h && $EGREP LIBAVCODEC_VERSION ${ffmpeg_top_incl}/${i}/version.h 2>/dev/null; then
++          if test -f ${ffmpeg_top_incl}/${i}/version.h && $EGREP LIBAVCODEC_VERSION ${ffmpeg_top_incl}/${i}/version.h  2>&1 >/dev/null; then
+             avcodec_h=${ffmpeg_top_incl}/${i}/version.h
+           else
+             avcodec_h=${ffmpeg_top_incl}/${i}/avcodec.h
+@@ -219,9 +219,9 @@ AC_DEFUN([GNASH_PATH_FFMPEG],
  
--    dnl Look for the DTS library, which is required on some systems. {
--    dnl
--    dnl TODO: skip this if -ldts is already in due to pkg-config 
--    dnl
--    AC_MSG_CHECKING([for libdts library])
--    if test x"$PKG_CONFIG" != x -a x${cross_compiling} = xno; then
--      $PKG_CONFIG --exists libdts && libdts=`$PKG_CONFIG --libs-only-l libdts`
--    else
--      libdts=""
--    fi
--    if test x"${libdts}" = x; then
--      if test -f ${top_lib_dir}/libdts.a -o -f ${top_lib_dir}/libdts.${shlibext}; then
--        ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -ldts"
--        AC_MSG_RESULT(${top_lib_dir}/libdts)
--      else
--        AC_MSG_RESULT(no)
--        if test x${cross_compiling} = xno; then
--          AC_CHECK_LIB(dts, dts_init, [ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -ldts"])
--        fi
--      fi
--    else
--      AC_MSG_RESULT(${libdts})
--      ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} ${libdts}"      
--    fi
--    dnl End of DTS library looking }
--	
--    dnl Look for the VORBISENC library, which is required on some systems. {
--    AC_MSG_CHECKING([for libvorbisenc library])
--    if test x"$PKG_CONFIG" != x -a x${cross_compiling} = xno; then
--      $PKG_CONFIG --exists vorbisenc && libvorbisenc=`$PKG_CONFIG --libs-only-l vorbisenc`
--    else
--      libvorbisenc=""
--    fi
--    if test x"${libvorbisenc}" = x; then
--      if test -f ${top_lib_dir}/libvorbisenc.a -o -f ${top_lib_dir}/libvorbisenc.${shlibext}; then
--        ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lvorbisenc"
--        AC_MSG_RESULT(${top_lib_dir}/libvorbisenc)
--      else
--        AC_MSG_RESULT(no)
--        if test x${cross_compiling} = xno; then
--          AC_CHECK_LIB(vorbisenc, vorbis_encode_init, [ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lvorbisenc"])
--        fi
--      fi
--    else
--      AC_MSG_RESULT(${libvorbisenc})
--      ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} ${libvorbisenc}"
--    fi
--    dnl End of VORBINSEC library looking }
--	
--
-     dnl Look for the AVFORMAT library {
-     dnl
-     dnl TODO: libavformat be mandatory, thus linked in already ?
-@@ -523,82 +473,6 @@ dnl   AC_EGREP_HEADER(avcodec_decode_audio2, ${avcodec
+     AC_MSG_CHECKING([ffmpeg version])
+ 
+-    ffmpeg_major_version=`$EGREP "define LIBAVCODEC_VERSION_MAJOR " ${versionfile} | sed -e "s%[[^0-9]]%%g"`
+-    ffmpeg_minor_version=`$EGREP "define LIBAVCODEC_VERSION_MINOR " ${versionfile} | sed -e "s%[[^0-9]]%%g"`
+-    ffmpeg_micro_version=`$EGREP "define LIBAVCODEC_VERSION_MICRO " ${versionfile} | sed -e "s%[[^0-9]]%%g"`
++    ffmpeg_major_version=`$EGREP "define LIBAVCODEC_VERSION_MAJOR " ${versionfile} 2>&1 | sed -e "s%[[^0-9]]%%g"`
++    ffmpeg_minor_version=`$EGREP "define LIBAVCODEC_VERSION_MINOR " ${versionfile} 2>&1 | sed -e "s%[[^0-9]]%%g"`
++    ffmpeg_micro_version=`$EGREP "define LIBAVCODEC_VERSION_MICRO " ${versionfile} 2>&1 | sed -e "s%[[^0-9]]%%g"`
+ 
+     if test x"${ffmpeg_major_version}" != x ; then
+ 
+@@ -230,15 +230,15 @@ AC_DEFUN([GNASH_PATH_FFMPEG],
+     else
+ 
+       dnl #define LIBAVCODEC_VERSION_TRIPLET 51,50,1
+-      ffmpeg_version=`$EGREP "define LIBAVCODEC_VERSION_TRIPLET " ${versionfile} | awk '{print $'3'}' | sed -e "s%,%.%g"`
++      ffmpeg_version=`$EGREP "define LIBAVCODEC_VERSION_TRIPLET " ${versionfile}  2>&1 | awk '{print $'3'}' | sed -e "s%,%.%g"`
+ 
+       if test x"${ffmpeg_version}" = x ; then
+ 
+         dnl NOTE: the [0-9]*d. pattern discards deb-heads rubbish prefix
+-        ffmpeg_version=`$EGREP "define LIBAVCODEC_VERSION " ${versionfile} | awk '{print $'3'}' | sed -e "s%^[[0-9]]d\.%%"` 
++        ffmpeg_version=`$EGREP "define LIBAVCODEC_VERSION " ${versionfile} | awk '{print $'3'}' 2>&1 | sed -e "s%^[[0-9]]d\.%%"` 
+ 
+         if test x"${ffmpeg_version}" = x ; then
+-          ffmpeg_version=`$EGREP "define LIBAVCODEC_BUILD " ${versionfile} | awk '{print $'3'}'`
++          ffmpeg_version=`$EGREP "define LIBAVCODEC_BUILD " ${versionfile} 2>&1  | awk '{print $'3'}'`
+         fi
+       fi
+ 
+@@ -255,32 +255,34 @@ AC_DEFUN([GNASH_PATH_FFMPEG],
+     AC_MSG_RESULT($ffmpeg_version ($ffmpeg_num_version))
+ 
+ 
+-dnl   AC_EGREP_HEADER(avcodec_decode_audio2, ${avcodec_h}, [avfound=yes], [avfound=no])
+-  
+-    if test -z "$ffmpeg_num_version" -o "$ffmpeg_num_version" -lt 512800; then
+-      AC_MSG_WARN([Wrong ffmpeg/libavcodec version! 51.28.0 or greater required, $ffmpeg_version detected.])
++dnl  minimum supported libavcodec version = Debian stable one = currently Wheezy 7.0 53.35.00
++
++    if test -z "$ffmpeg_num_version" -o "$ffmpeg_num_version" -lt 533500; then
++      AC_MSG_WARN([Wrong ffmpeg/libavcodec version! 53.35.0 or greater required, $ffmpeg_version detected.])
+     else
+       ffmpeg_version_check=ok
      fi
-     dnl End of AVUTIL library looking }
- 	
--    dnl Look for the THEORA library, which is required on some systems. {
--    dnl
--    dnl TODO: skip this if -ltheora is already in due to pkg-config 
--    dnl
--    AC_MSG_CHECKING([for libtheora library])
--    if test x"$PKG_CONFIG" != x -a x${cross_compiling} = xno; then
--      $PKG_CONFIG --exists theora && libtheora=`$PKG_CONFIG --libs-only-l theora`
+ 
+-    if test -z "$ffmpeg_num_version" -o "$ffmpeg_num_version" -lt 514900; then
+-      dnl 51.49.0 or higher required
+-      AC_MSG_WARN([This version of ffmpeg/libavcodec ($ffmpeg_version) is not able to play VP6A encoded video: 51.49.0 or higher required!])
 -    else
--      libtheora=""
--    fi
--    if test x"${libtheora}" = x; then
--      if test -f ${top_lib_dir}/libtheora.a -o -f ${top_lib_dir}/libtheora.${shlibext}; then
--        ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -ltheora"
--        AC_MSG_RESULT(${top_lib_dir}/libtheora)
--      else
--        AC_MSG_RESULT(no)
--        if test x${cross_compiling} = xno; then
--          AC_CHECK_LIB(theora, theora_encode_init, [ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -ltheora"])
--        fi
--      fi
--    else
--      AC_MSG_RESULT(${libtheora})
--      ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} ${libtheora}"      
--    fi
--    dnl End of THEORA library looking }
--
--    dnl Look for the GSM library, which is required on some systems. {
--    AC_MSG_CHECKING([for libgsm library])
--    if test x"$PKG_CONFIG" != x -a x${cross_compiling} = xno; then
--      $PKG_CONFIG --exists gsm && libgsm=`$PKG_CONFIG --libs-only-l gsm`
--    else
--      libgsm=""
+-      AC_DEFINE(FFMPEG_VP6A, 1, [Define if ffmpeg can play VP6A.])
 -    fi
 -
--    if test x"${libgsm}" = x; then
--      if test -f ${top_lib_dir}/libgsm.a -o -f ${top_lib_dir}/libgsm.${shlibext}; then
--        ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lgsm"
--        AC_MSG_RESULT(${top_lib_dir}/libgsm)
--      else
--        AC_MSG_RESULT(no)
--        if test x${cross_compiling} = xno; then
--          AC_CHECK_LIB(gsm, gsm_destroy, [ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lgsm"])
--        fi
--      fi
--    fi
--
--    AC_MSG_RESULT(${libgsm})
--    ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} ${libgsm}"
--    dnl End of GSM library looking }
--    
--    dnl Look for the DC1394 library, which is required on some systems. {
--    dnl
--    dnl TODO: skip this if -ldc1394 is already in due to pkg-config 
--    dnl
--    AC_MSG_CHECKING([for libdc1394 library])
--    if test x"$PKG_CONFIG" != x -a x${cross_compiling} = xno; then
--      $PKG_CONFIG --exists libdc  && libdc=`$PKG_CONFIG --libs-only-l libdc1394`
+-    if test -z "$ffmpeg_num_version" -o "$ffmpeg_num_version" -lt 514600; then
+-      dnl 51.46.0 (r10741) or higher required for CODEC_ID_NELLYMOSER
+-      AC_MSG_WARN([This version of ffmpeg/libavcodec ($ffmpeg_version) is not able to decode NELLYMOSER encoded audio: 51.46.0 (r10741) or higher required!])
 -    else
--      libtdc=""
+-      AC_DEFINE(FFMPEG_NELLYMOSER, 1, [Define if ffmpeg can decode NELLYMOSER audio])
 -    fi
--    if test x"${libdc}" = x; then
--      if test -f ${top_lib_dir}/libdc1394.a -o -f ${top_lib_dir}/libdc1394.${shlibext}; then
--        ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -ldc1394"
--        AC_MSG_RESULT(${top_lib_dir}/libdc1394)
--      else
--        AC_MSG_RESULT(no)
--        if test x${cross_compiling} = xno; then
--          AC_CHECK_LIB(dc1394_control, dc1394_is_camera, [ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -ldc1394_control"])
--        fi
--      fi
--    else
--      AC_MSG_RESULT(${libdc})
--      ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} ${libdc}"
--    fi
--    dnl End of DC1394 library looking }
--
-     dnl Look for the SWSCALE library {
-     dnl
-     dnl This is required on some system if ffmpeg is
+   else
+     AC_MSG_WARN([Could not check ffmpeg version (can't find avcodec.h file)])
+     # ffmpeg_version_check=ok # this is NOT ok, why would it be ?! 
+   fi
+ 
++dnl Check if installed ffmpeg/libav already switched aac decoding from S16 to
++dnl float planar format (FLTP). If recent enough, we'll recommend to install
++dnl a dedicate resampling library to get aac properly decoded.
++dnl Commit in question (3d3cf6745e2a5dc9c377244454c3186d75b177fa) corresponds
++dnl to libavcodec ffmpeg version 54.77.100 / libav version 54.33.0.
++dnl | ffmpeg | 1.0 (54.59.100) S16 | 1.1 (54.86.100) FLTP |
++dnl | libav  | 0.8 (53.35.0)   S16 | 9   (54.35.0)   FLTP |
++
++  if test ${ffmpeg_major_version} -ge 55 -o \
++    \( ${ffmpeg_major_version} -eq 54 -a ${ffmpeg_micro_version} -eq 0 \) -o \
++    \( ${ffmpeg_major_version} -eq 54 -a ${ffmpeg_minor_version} -ge 77 -a \
++    ${ffmpeg_micro_version} -ge 100 \); then
++      ffmpeg_aac_float_planar=yes
++  fi
++
+   LIBAVCODEC_IDENT=${ffmpeg_version}
+   FFMPEG_CFLAGS="-D__STDC_CONSTANT_MACROS ${ac_cv_path_ffmpeg_incl}"
+ 
+@@ -319,6 +321,46 @@ dnl   AC_EGREP_HEADER(avcodec_decode_audio2, ${avcodec
+      ffmpeg_version_check=
+   fi
+ 
++  AC_MSG_CHECKING([for libavutil/opt.h])
++  have_ffmpeg_libavutil=no
++  if test -f "${ffmpeg_top_incl}/libavutil/opt.h"; then
++    have_ffmpeg_libavutil=yes
++    AC_DEFINE(HAVE_LIBAVUTIL_OPT_H, 1, [Define if libavutil/opt.h is found])
++  fi
++  AC_MSG_RESULT($have_ffmpeg_libavutil)
++
++  AC_MSG_CHECKING([for swresample.h])
++  have_ffmpeg_swresample=no
++  if test -f "${ffmpeg_top_incl}/ffmpeg/swresample.h"; then
++    have_ffmpeg_swresample=yes
++    AC_DEFINE(HAVE_FFMPEG_SWRESAMPLE_H, 1, [Define if swresample.h is found])
++  fi
++  if test -f "${ffmpeg_top_incl}/libswresample/swresample.h"; then
++    have_ffmpeg_swresample=yes
++    AC_DEFINE(HAVE_LIBSWRESAMPLE_SWRESAMPLE_H, 1, [Define if swresample.h is found])
++  fi
++  if test -f "${ffmpeg_top_incl}/swresample.h"; then
++    have_ffmpeg_swresample=yes
++    AC_DEFINE(HAVE_SWRESAMPLE_H, 1, [Define if swresample.h is found])
++  fi
++  AC_MSG_RESULT($have_ffmpeg_swresample)
++
++  AC_MSG_CHECKING([for avresample.h])
++  have_libav_avresample=no
++  if test -f "${ffmpeg_top_incl}/libav/avresample.h"; then
++    have_libav_avresample=yes
++    AC_DEFINE(HAVE_LIBAV_AVRESAMPLE_H, 1, [Define if avresample.h is found])
++  fi
++  if test -f "${ffmpeg_top_incl}/libavresample/avresample.h"; then
++    have_libav_avresample=yes
++    AC_DEFINE(HAVE_LIBAVRESAMPLE_AVRESAMPLE_H, 1, [Define if avresample.h is found])
++  fi
++  if test -f "${ffmpeg_top_incl}/avresample.h"; then
++    have_libav_avresample=yes
++    AC_DEFINE(HAVE_AVRESAMPLE_H, 1, [Define if avresample.h is found])
++  fi
++  AC_MSG_RESULT($have_libav_avresample)
++
+   AC_MSG_CHECKING([for libavcodec/vaapi.h])
+   have_ffmpeg_vaapi="no"
+   if test -f "${ffmpeg_top_incl}/ffmpeg/vaapi.h"; then
+@@ -624,6 +666,51 @@ dnl   AC_EGREP_HEADER(avcodec_decode_audio2, ${avcodec
+       ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} ${libsws}"
+     fi
+     dnl End of SWSCALE library looking }
++
++    dnl Look for the {SW,AV}RESAMPLE libraries {
++    dnl
++    AC_MSG_CHECKING([for libswresample library])
++    if test x"$PKG_CONFIG" != x -a x${cross_compiling} = xno; then
++      $PKG_CONFIG --exists libswresample  && libswresample=`$PKG_CONFIG --libs-only-l libswresample`
++    else
++      libswresample=""
++    fi
++    if test x"${libswresample}" = x; then
++      if test -f ${top_lib_dir}/libswresample.a -o -f ${top_lib_dir}/libswresample.${shlibext}; then
++        ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lswresample"
++        AC_MSG_RESULT(yes)
++      else
++        AC_MSG_RESULT(no)
++        if test x${cross_compiling} = xno; then
++          AC_CHECK_LIB(swresample, swresample, [ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lswresample"])
++        fi
++      fi
++    else
++      AC_MSG_RESULT(${libswresample})
++      ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} ${libswresample}"
++    fi
++
++    AC_MSG_CHECKING([for libavresample library])
++    if test x"$PKG_CONFIG" != x -a x${cross_compiling} = xno; then
++      $PKG_CONFIG --exists libavresample  && libavresample=`$PKG_CONFIG --libs-only-l libavresample`
++    else
++      libavresample=""
++    fi
++    if test x"${libavresample}" = x; then
++      if test -f ${top_lib_dir}/libavresample.a -o -f ${top_lib_dir}/libavresample.${shlibext}; then
++        ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lavresample"
++        AC_MSG_RESULT(yes)
++      else
++        AC_MSG_RESULT(no)
++        if test x${cross_compiling} = xno; then
++          AC_CHECK_LIB(avresample, avresample, [ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lavresample"])
++        fi
++      fi
++    else
++      AC_MSG_RESULT(${libavresample})
++      ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} ${libavresample}"
++    fi
++    dnl End of {SW,AV}RESAMPLE libraries looking }
+ 
+   fi
+   dnl End of all optional library tests }

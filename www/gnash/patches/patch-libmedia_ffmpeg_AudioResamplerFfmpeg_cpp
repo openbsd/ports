@@ -1,0 +1,120 @@
+$OpenBSD: patch-libmedia_ffmpeg_AudioResamplerFfmpeg_cpp,v 1.1 2014/04/10 06:13:04 brad Exp $
+
+Update for newer FFmpeg API.
+
+--- libmedia/ffmpeg/AudioResamplerFfmpeg.cpp.orig	Mon Apr  7 06:29:11 2014
++++ libmedia/ffmpeg/AudioResamplerFfmpeg.cpp	Mon Apr  7 06:39:48 2014
+@@ -19,6 +19,7 @@
+ //
+ 
+ #include "AudioResamplerFfmpeg.h"
++#include "utility.h"
+ #include "log.h"
+ 
+ #include <cmath>
+@@ -33,47 +34,74 @@ AudioResamplerFfmpeg::AudioResamplerFfmpeg()
+ 	:_context(NULL)
+ {
+ }
+-
+-AudioResamplerFfmpeg::~AudioResamplerFfmpeg()
+-{
+-  if ( _context ) {
+-    audio_resample_close( _context );
+-  }
++AudioResamplerFfmpeg::~AudioResamplerFfmpeg() {
++    if (_context) {
++#ifdef HAVE_SWRESAMPLE_H
++        swr_free(&_context);
++#elif HAVE_AVRESAMPLE_H
++        avresample_close(_context);
++        avresample_free(&_context);
++#else
++        audio_resample_close(_context);
++#endif
++    }
+ }
+ 
+ bool
+-AudioResamplerFfmpeg::init( AVCodecContext* ctx ) 
+-{
+-  if ( (ctx->sample_rate != 44100) || (ctx->channels != 2) ) {
+-    if ( ! _context ) {
+-#if LIBAVCODEC_VERSION_MAJOR >= 53
+-      _context = av_audio_resample_init(
+-		2, ctx->channels, 44100, ctx->sample_rate,
+-		AV_SAMPLE_FMT_S16, AV_SAMPLE_FMT_S16,
+-		16, 10, 0, 0.8
++AudioResamplerFfmpeg::init(AVCodecContext* ctx) {
++    if ((ctx->sample_rate != 44100) ||
++#if defined(HAVE_SWRESAMPLE_H) || defined(HAVE_AVRESAMPLE_H)
++        (ctx->sample_fmt != AV_SAMPLE_FMT_S16) ||
++#endif
++        (ctx->channels != 2)) {
++        if (! _context) {
++#ifdef HAVE_SWRESAMPLE_H
++            _context = swr_alloc();
++#elif HAVE_AVRESAMPLE_H
++            _context = avresample_alloc_context();
+ #else
+-      _context = audio_resample_init(
+-		2, ctx->channels, 44100, ctx->sample_rate
++            _context = av_audio_resample_init(2, ctx->channels,
++                44100, ctx->sample_rate,
++                AV_SAMPLE_FMT_S16, AV_SAMPLE_FMT_S16,
++                16, 10, 0, 0.8);
+ #endif
+-	);
++#if defined(HAVE_SWRESAMPLE_H) || defined(HAVE_AVRESAMPLE_H)
++            av_opt_set_int(_context, "in_channel_layout",
++                av_get_default_channel_layout(ctx->channels), 0);
++            av_opt_set_int(_context, "out_channel_layout", AV_CH_LAYOUT_STEREO, 0);
++            av_opt_set_int(_context, "in_sample_rate", ctx->sample_rate, 0);
++            av_opt_set_int(_context, "out_sample_rate", 44100, 0);
++            av_opt_set_int(_context, "in_sample_fmt", ctx->sample_fmt, 0);
++            av_opt_set_int(_context, "out_sample_fmt", AV_SAMPLE_FMT_S16, 0);
++#endif
++#ifdef HAVE_SWRESAMPLE_H
++            swr_init(_context);
++#elif HAVE_AVRESAMPLE_H
++            avresample_open(_context);
++#endif
++        }
++        return true;
+     }
+-
+-    return true;
+-  }
+-
+-  return false;
++    return false;
+ }
+ 
+ int
+-AudioResamplerFfmpeg::resample( 
+-				boost::int16_t* input, 
+-				boost::int16_t* output, 
+-				int samples 
+-			) 
+-{
+-  return audio_resample( _context, output, input, samples );
++AudioResamplerFfmpeg::resample(boost::uint8_t** input, int plane_size,
++    int samples, boost::uint8_t** output) {
++#ifdef HAVE_SWRESAMPLE_H
++    return swr_convert(_context,
++        output, MAX_AUDIO_FRAME_SIZE,
++        const_cast<const uint8_t**>(input), samples);
++#elif HAVE_AVRESAMPLE_H
++    return avresample_convert(_context,
++        output, 0, MAX_AUDIO_FRAME_SIZE,
++        input, plane_size, samples);
++#else
++    UNUSED( plane_size );
++    return audio_resample(_context, reinterpret_cast<short*>(*output),
++        reinterpret_cast<short*>(*input), samples); 
++#endif
+ }
+-
+ 
+ } // gnash.media.ffmpeg namespace 
+ } // gnash.media namespace 
