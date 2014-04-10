@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.188 2013/10/20 19:32:05 fgsch Exp $
+# $OpenBSD: network.conf.template,v 1.189 2014/04/10 13:38:19 sthen Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -214,7 +214,6 @@ MASTER_SITE_BERLIOS+=	\
 MASTER_SITE_MYSQL+= \
 	http://mirror.switch.ch/mirror/mysql/ \
 	http://mirrors.ukfast.co.uk/sites/ftp.mysql.com/ \
-	http://ftp.easynet.be/mysql/ \
 	http://ftp.gwdg.de/pub/misc/mysql/ \
 	http://ftp.fh-wolfenbuettel.de/pub/database/mysql/ \
 	http://ftp.fi.muni.cz/pub/mysql/ \
