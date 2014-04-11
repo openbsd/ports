@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.46 2014/01/30 01:28:13 bcallah Exp $
+# $OpenBSD: Makefile,v 1.47 2014/04/11 17:44:08 bcallah Exp $
 
 COMMENT =		fast and light graphical web browser
 
-DISTNAME =		dillo-3.0.3
+DISTNAME =		dillo-3.0.4
 CATEGORIES =		www
 
 MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 HOMEPAGE =		http://www.dillo.org/
-REVISION =		0
 
-# GPLv3
+# GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += X11 Xau Xdmcp Xext Xft Xinerama c
@@ -33,7 +32,6 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-ipv6 \
-			--disable-threaded-dns \
 			--enable-ssl
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

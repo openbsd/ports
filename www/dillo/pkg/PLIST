@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2014/01/30 01:28:13 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.15 2014/04/11 17:44:09 bcallah Exp $
 @bin bin/dillo
 bin/dillo-install-hyphenation
 @bin bin/dpid
@@ -26,6 +26,7 @@ lib/dillo/dpi/vsource/
 @man man/man1/dillo.1
 share/applications/dillo.desktop
 share/doc/dillo/
+share/doc/dillo/CCCwork.txt
 share/doc/dillo/Cache.txt
 share/doc/dillo/Cookies.txt
 share/doc/dillo/Dillo.txt

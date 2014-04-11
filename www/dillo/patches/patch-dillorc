@@ -1,7 +1,7 @@
-$OpenBSD: patch-dillorc,v 1.5 2014/01/30 01:28:13 bcallah Exp $
---- dillorc.orig	Thu Apr  4 13:20:10 2013
-+++ dillorc	Thu Apr 18 12:25:04 2013
-@@ -46,7 +46,7 @@
+$OpenBSD: patch-dillorc,v 1.6 2014/04/11 17:44:08 bcallah Exp $
+--- dillorc.orig	Wed Apr  9 13:39:59 2014
++++ dillorc	Thu Apr 10 09:34:20 2014
+@@ -51,7 +51,7 @@
  # "fc-list : family | cut -d ',' -f 2 | sort").
  #font_serif="DejaVu Serif"
  #font_sans_serif="DejaVu Sans"
