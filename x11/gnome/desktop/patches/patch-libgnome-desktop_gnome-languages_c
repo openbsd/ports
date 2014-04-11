@@ -1,0 +1,94 @@
+$OpenBSD: patch-libgnome-desktop_gnome-languages_c,v 1.7 2014/04/11 19:11:47 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=710412
+
+--- libgnome-desktop/gnome-languages.c.orig	Fri Apr 11 20:33:21 2014
++++ libgnome-desktop/gnome-languages.c	Fri Apr 11 20:35:27 2014
+@@ -88,27 +88,14 @@ gnome_locale_free (GnomeLocale *locale)
+ static char *
+ normalize_codeset (const char *codeset)
+ {
+-        char *normalized_codeset;
+-        const char *p;
+-        char *q;
++        if (codeset == NULL)
++                return NULL;
+ 
+-        normalized_codeset = g_strdup (codeset);
++        if (g_str_equal (codeset, "UTF-8") ||
++            g_str_equal (codeset, "utf8"))
++                return g_strdup ("UTF-8");
+ 
+-        if (codeset != NULL) {
+-                for (p = codeset, q = normalized_codeset;
+-                     *p != '\0'; p++) {
+-
+-                        if (*p == '-' || *p == '_') {
+-                                continue;
+-                        }
+-
+-                        *q = g_ascii_tolower (*p);
+-                        q++;
+-                }
+-                *q = '\0';
+-        }
+-
+-        return normalized_codeset;
++        return g_strdup (codeset);
+ }
+ 
+ /**
+@@ -150,6 +137,7 @@ gnome_parse_locale (const char *locale,
+ 
+         if (re == NULL) {
+                 GError *error = NULL;
++                /* Assume a locale name as used by GNU libc. */
+                 re = g_regex_new ("^(?P<language>[^_.@[:space:]]+)"
+                                   "(_(?P<territory>[[:upper:]]+))?"
+                                   "(\\.(?P<codeset>[-_0-9a-zA-Z]+))?"
+@@ -164,7 +152,8 @@ gnome_parse_locale (const char *locale,
+ 
+         if (!g_regex_match (re, locale, 0, &match_info) ||
+             g_match_info_is_partial_match (match_info)) {
+-                g_warning ("locale '%s' isn't valid\n", locale);
++                g_warning ("locale name '%s' doesn't match GNU libc "
++                           "conventions\n", locale);
+                 goto out;
+         }
+ 
+@@ -340,7 +329,7 @@ language_name_get_codeset_details (const char  *langua
+         if (is_utf8 != NULL) {
+                 codeset = normalize_codeset (codeset);
+ 
+-                *is_utf8 = strcmp (codeset, "utf8") == 0;
++                *is_utf8 = strcmp (codeset, "UTF-8") == 0;
+                 g_free (codeset);
+         }
+ 
+@@ -411,13 +400,20 @@ add_locale (const char *language_name,
+         if (is_utf8) {
+                 name = g_strdup (language_name);
+         } else if (utf8_only) {
+-                name = g_strdup_printf ("%s.utf8", language_name);
+-
+-                language_name_get_codeset_details (name, NULL, &is_utf8);
+-                if (!is_utf8) {
+-                        g_free (name);
+-                        return FALSE;
++                name = g_strdup_printf ("%s.UTF-8", language_name);
++                /* If the locale name has no dot, assume that its encoding
++                 * part is missing and try again after adding ".UTF-8".
++                 * This catches locale names like "de_DE". */
++                if (strchr(language_name, '.') == NULL) {
++                        name = g_strdup_printf ("%s.UTF-8", language_name);
++                        language_name_get_codeset_details (name, NULL,
++                                                           &is_utf8);
++                        if (!is_utf8) {
++                                g_free (name);
++                                return FALSE;
++                        }
+                 }
++                return FALSE;
+         } else {
+                 name = g_strdup (language_name);
+         }
