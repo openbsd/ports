@@ -1,0 +1,26 @@
+$OpenBSD: patch-addressbook_gui_contact-editor_e-contact-editor_c,v 1.1 2014/04/11 10:00:17 ajacoutot Exp $
+
+From acdcfe136fb0dc0073b0b5ea0a3d82dddcdbe95f Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Fri, 11 Apr 2014 09:25:18 +0200
+Subject: Bug #727967 - Undo/Redo text is not displayed in menus
+
+--- addressbook/gui/contact-editor/e-contact-editor.c.orig	Mon Mar  3 01:37:23 2014
++++ addressbook/gui/contact-editor/e-contact-editor.c	Fri Apr 11 11:12:25 2014
+@@ -266,14 +266,14 @@ static GtkActionEntry undo_entries[] = {
+ 
+ 	{ "undo",
+ 	  "edit-undo",
+-	  NULL,
++	  N_("Undo"),
+ 	  "<Control>z",
+ 	  N_("Undo"),
+ 	  NULL }, /* Handled by EFocusTracker */
+ 
+ 	{ "redo",
+ 	  "edit-redo",
+-	  NULL,
++	  N_("Redo"),
+ 	  "<Control>y",
+ 	  N_("Redo"),
+ 	  NULL } /* Handled by EFocusTracker */

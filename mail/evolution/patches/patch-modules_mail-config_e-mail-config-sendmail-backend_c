@@ -1,0 +1,35 @@
+$OpenBSD: patch-modules_mail-config_e-mail-config-sendmail-backend_c,v 1.1 2014/04/11 10:00:17 ajacoutot Exp $
+
+From eb61b07aad09903f9937b424d9f3e720559a1c16 Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Fri, 11 Apr 2014 10:55:25 +0200
+Subject: Bug #684425 - Do not pass NULL text to gtk_entry_set_text()
+
+--- modules/mail-config/e-mail-config-sendmail-backend.c.orig	Tue Jan  7 22:05:51 2014
++++ modules/mail-config/e-mail-config-sendmail-backend.c	Fri Apr 11 11:13:32 2014
+@@ -22,6 +22,7 @@
+ #include <glib/gi18n-lib.h>
+ 
+ #include <camel/camel.h>
++#include <e-util/e-util.h>
+ #include <libebackend/libebackend.h>
+ 
+ #include "e-mail-config-sendmail-backend.h"
+@@ -139,7 +140,7 @@ mail_config_sendmail_backend_insert_widgets (EMailConf
+ 		G_BINDING_BIDIRECTIONAL |
+ 		G_BINDING_SYNC_CREATE);
+ 
+-	g_object_bind_property (
++	e_binding_bind_object_text_property (
+ 		settings, "custom-binary",
+ 		custom_binary_entry, "text",
+ 		G_BINDING_BIDIRECTIONAL |
+@@ -156,7 +157,7 @@ mail_config_sendmail_backend_insert_widgets (EMailConf
+ 		G_BINDING_BIDIRECTIONAL |
+ 		G_BINDING_SYNC_CREATE);
+ 
+-	g_object_bind_property (
++	e_binding_bind_object_text_property (
+ 		settings, "custom-args",
+ 		custom_args_entry, "text",
+ 		G_BINDING_BIDIRECTIONAL |

@@ -1,0 +1,27 @@
+$OpenBSD: patch-mail_e-mail-config-assistant_c,v 1.1 2014/04/11 10:00:17 ajacoutot Exp $
+
+From eb61b07aad09903f9937b424d9f3e720559a1c16 Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Fri, 11 Apr 2014 10:55:25 +0200
+Subject: Bug #684425 - Do not pass NULL text to gtk_entry_set_text()
+
+--- mail/e-mail-config-assistant.c.orig	Fri Mar  7 19:15:31 2014
++++ mail/e-mail-config-assistant.c	Fri Apr 11 11:13:32 2014
+@@ -728,7 +728,7 @@ mail_config_assistant_constructed (GObject *object)
+ 	e_mail_config_assistant_add_page (assistant, page);
+ 	assistant->priv->receiving_page = g_object_ref (page);
+ 
+-	g_object_bind_property (
++	e_binding_bind_object_text_property (
+ 		mail_identity_extension, "address",
+ 		page, "email-address",
+ 		G_BINDING_SYNC_CREATE);
+@@ -811,7 +811,7 @@ mail_config_assistant_constructed (GObject *object)
+ 	e_mail_config_assistant_add_page (assistant, page);
+ 	assistant->priv->sending_page = g_object_ref (page);
+ 
+-	g_object_bind_property (
++	e_binding_bind_object_text_property (
+ 		mail_identity_extension, "address",
+ 		page, "email-address",
+ 		G_BINDING_SYNC_CREATE);

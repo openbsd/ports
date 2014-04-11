@@ -1,0 +1,18 @@
+$OpenBSD: patch-modules_startup-wizard_e-mail-config-import-progress-page_c,v 1.1 2014/04/11 10:00:17 ajacoutot Exp $
+
+From eb61b07aad09903f9937b424d9f3e720559a1c16 Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Fri, 11 Apr 2014 10:55:25 +0200
+Subject: Bug #684425 - Do not pass NULL text to gtk_entry_set_text()
+
+--- modules/startup-wizard/e-mail-config-import-progress-page.c.orig	Fri Feb 28 20:38:10 2014
++++ modules/startup-wizard/e-mail-config-import-progress-page.c	Fri Apr 11 11:13:32 2014
+@@ -199,7 +199,7 @@ mail_config_import_progress_page_constructed (GObject 
+ 	page->priv->progress_bar = widget;  /* not referenced */
+ 	gtk_widget_show (widget);
+ 
+-	g_object_bind_property (
++	e_binding_bind_object_text_property (
+ 		activity, "text",
+ 		widget, "text",
+ 		G_BINDING_SYNC_CREATE);

@@ -1,0 +1,26 @@
+$OpenBSD: patch-mail_e-mail-config-welcome-page_c,v 1.1 2014/04/11 10:00:17 ajacoutot Exp $
+
+From eb61b07aad09903f9937b424d9f3e720559a1c16 Mon Sep 17 00:00:00 2001
+From: Milan Crha <mcrha@redhat.com>
+Date: Fri, 11 Apr 2014 10:55:25 +0200
+Subject: Bug #684425 - Do not pass NULL text to gtk_entry_set_text()
+
+--- mail/e-mail-config-welcome-page.c.orig	Fri Feb 28 20:38:10 2014
++++ mail/e-mail-config-welcome-page.c	Fri Apr 11 11:13:32 2014
+@@ -20,6 +20,7 @@
+ #include <config.h>
+ #include <glib/gi18n-lib.h>
+ 
++#include <e-util/e-util.h>
+ #include <libebackend/libebackend.h>
+ 
+ #define E_MAIL_CONFIG_WELCOME_PAGE_GET_PRIVATE(obj) \
+@@ -123,7 +124,7 @@ mail_config_welcome_page_constructed (GObject *object)
+ 	gtk_box_pack_start (GTK_BOX (page), widget, FALSE, FALSE, 0);
+ 	gtk_widget_show (widget);
+ 
+-	g_object_bind_property (
++	e_binding_bind_object_text_property (
+ 		page, "text",
+ 		widget, "label",
+ 		G_BINDING_BIDIRECTIONAL |
