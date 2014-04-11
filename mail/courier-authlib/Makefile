@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2014/01/25 13:12:12 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2014/04/11 09:35:04 giovanni Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -6,12 +6,7 @@ COMMENT-mysql=		mysql authentication module for courier-authLib
 COMMENT-pgsql=		pgsql authentication module for courier-authLib
 COMMENT-userdb=		userdb authentication module for courier-authLib
 
-DISTNAME=			courier-authlib-0.65.0
-REVISION-main=		2
-REVISION-mysql=		5
-REVISION-ldap=		5
-REVISION-pgsql=		5
-REVISION-userdb=	0
+DISTNAME=		courier-authlib-0.66.1
 PKGNAME-main=		${DISTNAME}
 PKGNAME-ldap=		${DISTNAME:S/lib-/lib-ldap-/}
 PKGNAME-mysql=		${DISTNAME:S/lib-/lib-mysql-/}
@@ -46,7 +41,9 @@ CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ENV=		LIBS="-L${LOCALBASE}/lib" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
-			CPPFLAGS="-I${LOCALBASE}/include"
+			CPPFLAGS="-I${LOCALBASE}/include" \
+			ac_cv_lib_db_dbopen=no \
+			ac_cv_lib_db_db_env_create=no
 
 COURIERSTATE=		/var/run/courier-auth
 EXAMPLE_DIR=		${PREFIX}/share/examples/courier-authlib
