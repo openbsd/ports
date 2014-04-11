@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.56 2014/04/01 14:52:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2014/04/11 14:52:46 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	educational game for children
 
-DISTNAME=	gcompris-13.11
+DISTNAME=	gcompris-14.03
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	0
 
 CATEGORIES=	games education
 
@@ -27,7 +26,7 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += rsvg-2 sqlite3 util xcb xcb-render xcb-shm xml2 z
 WANTLIB += ${MODPY_WANTLIB}
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gcompris/}
+MASTER_SITES=	http://gcompris.net/download/
 
 MODULES=	devel/gettext \
 		lang/python \
@@ -55,8 +54,7 @@ USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -pthread" \
-		ac_cv_path_TETEX=no
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-py-build-only \
 		--with-python=${MODPY_BIN}
