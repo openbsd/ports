@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.26 2014/03/28 10:30:28 ajacoutot Exp $
+$OpenBSD: README,v 1.27 2014/04/11 16:28:17 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -130,7 +130,7 @@ installation and create a new admin user.
 Updating
 ========
 Before updating to a new release, read:
-    http://doc.owncloud.org/server/5.0/admin_manual/maintenance/update.html
+    http://doc.owncloud.org/server/6.0/admin_manual/maintenance/update.html
 
 When using a PostgreSQL or MySQL, the corresponding MDB2 php package
 must be installed to properly upgrade the database:
