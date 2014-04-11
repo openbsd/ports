@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2014/03/29 07:50:15 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/04/11 15:15:40 benoit Exp $
 @bin bin/highlight
 @man man/man1/highlight.1
 share/doc/highlight/
@@ -72,6 +72,7 @@ share/highlight/langDefs/frink.lang
 share/highlight/langDefs/fsharp.lang
 share/highlight/langDefs/fx.lang
 share/highlight/langDefs/gambas.lang
+share/highlight/langDefs/gdb.lang
 share/highlight/langDefs/go.lang
 share/highlight/langDefs/graphviz.lang
 share/highlight/langDefs/haskell.lang
@@ -268,6 +269,7 @@ share/highlight/themes/solarized-dark.theme
 share/highlight/themes/solarized-light.theme
 share/highlight/themes/tabula.theme
 share/highlight/themes/tcsoft.theme
+share/highlight/themes/the.theme
 share/highlight/themes/vampire.theme
 share/highlight/themes/whitengrey.theme
 share/highlight/themes/xoria256.theme
