@@ -1,0 +1,15 @@
+$OpenBSD: patch-client_cd-util_c,v 1.1 2014/04/11 10:48:17 ajacoutot Exp $
+
+/var/lib -> /var/db
+
+--- client/cd-util.c.orig	Fri Apr 11 11:43:37 2014
++++ client/cd-util.c	Fri Apr 11 11:43:51 2014
+@@ -810,7 +810,7 @@ cd_util_dump (CdUtilPrivate *priv, gchar **values, GEr
+ {
+ 	CdDevice *device;
+ 	CdProfile *profile;
+-	const gchar *argv[] = { "sqlite3", "/var/lib/colord/mapping.db", ".dump", NULL };
++	const gchar *argv[] = { "sqlite3", "/var/db/colord/mapping.db", ".dump", NULL };
+ 	gboolean ret = TRUE;
+ 	gchar *mapping_db = NULL;
+ 	gchar *tmp;

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2013/08/06 19:10:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2014/04/11 10:48:17 ajacoutot Exp $
 @conflict shared-color-profiles-*
 @conflict shared-color-profiles-extra-*
 @pkgpath graphics/colord
@@ -24,12 +24,13 @@ include/colord-1/colord/cd-buffer.h
 include/colord-1/colord/cd-client-sync.h
 include/colord-1/colord/cd-client.h
 include/colord-1/colord/cd-color.h
-include/colord-1/colord/cd-deprecated.h
 include/colord-1/colord/cd-device-sync.h
 include/colord-1/colord/cd-device.h
 include/colord-1/colord/cd-dom.h
+include/colord-1/colord/cd-edid.h
 include/colord-1/colord/cd-enum.h
 include/colord-1/colord/cd-icc-store.h
+include/colord-1/colord/cd-icc-utils.h
 include/colord-1/colord/cd-icc.h
 include/colord-1/colord/cd-interp-akima.h
 include/colord-1/colord/cd-interp-linear.h
@@ -42,6 +43,7 @@ include/colord-1/colord/cd-profile.h
 include/colord-1/colord/cd-quirk.h
 include/colord-1/colord/cd-sensor-sync.h
 include/colord-1/colord/cd-sensor.h
+include/colord-1/colord/cd-spectrum.h
 include/colord-1/colord/cd-transform.h
 include/colord-1/colord/cd-version.h
 lib/colord-sensors/
@@ -58,7 +60,6 @@ lib/pkgconfig/colord.pc
 @bin libexec/colord-session
 @man man/man1/cd-create-profile.1
 @man man/man1/cd-fix-profile.1
-@man man/man1/colord.conf.1
 @man man/man1/colormgr.1
 share/color/
 share/color/icc/
@@ -88,6 +89,9 @@ share/color/icc/colord/WideGamutRGB.icc
 share/color/icc/colord/sRGB.icc
 share/color/icc/colord/x11-colors.icc
 share/colord/
+share/colord/cmf/
+share/colord/cmf/CIE1931-2deg-XYZ.cmf
+share/colord/cmf/CIE1964-10deg-XYZ.cmf
 share/colord/icons/
 share/colord/icons/color-munki-photo-ambient.svg
 share/colord/icons/color-munki-photo-attach.svg
@@ -105,6 +109,30 @@ share/colord/icons/i1-pro-attach.svg
 share/colord/icons/spyder2-attach.svg
 share/colord/icons/spyder3-attach.svg
 share/colord/icons/spyder4-attach.svg
+share/colord/illuminant/
+share/colord/illuminant/CIE-A.sp
+share/colord/illuminant/CIE-B.sp
+share/colord/illuminant/CIE-C.sp
+share/colord/illuminant/CIE-D50.sp
+share/colord/illuminant/CIE-D55.sp
+share/colord/illuminant/CIE-D65.sp
+share/colord/illuminant/CIE-D93.sp
+share/colord/illuminant/CIE-E.sp
+share/colord/illuminant/CIE-F1.sp
+share/colord/illuminant/CIE-F10.sp
+share/colord/illuminant/CIE-F11.sp
+share/colord/illuminant/CIE-F12.sp
+share/colord/illuminant/CIE-F2.sp
+share/colord/illuminant/CIE-F3.sp
+share/colord/illuminant/CIE-F4.sp
+share/colord/illuminant/CIE-F5.sp
+share/colord/illuminant/CIE-F6.sp
+share/colord/illuminant/CIE-F7.sp
+share/colord/illuminant/CIE-F8.sp
+share/colord/illuminant/CIE-F9.sp
+share/colord/ref/
+share/colord/ref/CIE-1986-daylight-SPD.cmf
+share/colord/ref/CIE-TCS.sp
 share/colord/ti1/
 share/colord/ti1/display-long.ti1
 share/colord/ti1/display-normal.ti1
@@ -121,8 +149,6 @@ share/dbus-1/services/
 share/dbus-1/services/org.freedesktop.ColorHelper.service
 share/dbus-1/system-services/org.freedesktop.ColorManager.service
 share/examples/colord/
-share/examples/colord/colord.conf
-@sample ${SYSCONFDIR}/colord.conf
 share/examples/colord/dbus-1/
 share/examples/colord/dbus-1/system.d/
 share/examples/colord/dbus-1/system.d/org.freedesktop.ColorManager.conf
@@ -139,6 +165,9 @@ share/locale/bn_IN/LC_MESSAGES/colord.mo
 share/locale/ca/LC_MESSAGES/colord.mo
 share/locale/cs/LC_MESSAGES/colord.mo
 share/locale/da/LC_MESSAGES/colord.mo
+share/locale/da_DK/
+share/locale/da_DK/LC_MESSAGES/
+share/locale/da_DK/LC_MESSAGES/colord.mo
 share/locale/de/LC_MESSAGES/colord.mo
 share/locale/el/LC_MESSAGES/colord.mo
 share/locale/en_GB/LC_MESSAGES/colord.mo
@@ -174,12 +203,21 @@ share/locale/ml/LC_MESSAGES/colord.mo
 share/locale/mr/LC_MESSAGES/colord.mo
 share/locale/ms/LC_MESSAGES/colord.mo
 share/locale/nb/LC_MESSAGES/colord.mo
+share/locale/nb_NO/
+share/locale/nb_NO/LC_MESSAGES/
+share/locale/nb_NO/LC_MESSAGES/colord.mo
 share/locale/nl/LC_MESSAGES/colord.mo
+share/locale/nn_NO/
+share/locale/nn_NO/LC_MESSAGES/
+share/locale/nn_NO/LC_MESSAGES/colord.mo
 share/locale/or/LC_MESSAGES/colord.mo
 share/locale/pa/LC_MESSAGES/colord.mo
 share/locale/pl/LC_MESSAGES/colord.mo
 share/locale/pt/LC_MESSAGES/colord.mo
 share/locale/pt_BR/LC_MESSAGES/colord.mo
+share/locale/pt_PT/
+share/locale/pt_PT/LC_MESSAGES/
+share/locale/pt_PT/LC_MESSAGES/colord.mo
 share/locale/ro/LC_MESSAGES/colord.mo
 share/locale/ru/LC_MESSAGES/colord.mo
 share/locale/sk/LC_MESSAGES/colord.mo
