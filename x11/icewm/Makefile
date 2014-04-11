@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.54 2014/01/04 09:05:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2014/04/11 15:25:24 giovanni Exp $
 
 COMMENT=	small and fast window manager
 
 DISTNAME=	icewm-1.3.8
+REVISION=	0
 CATEGORIES=	x11	
 
 HOMEPAGE=	http://www.icewm.org/
@@ -35,6 +36,8 @@ CONFIGURE_ARGS=	--with-docdir=${PREFIX}/share/doc \
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+USE_GROFF=	Yes
 
 .include <bsd.port.arch.mk>
 

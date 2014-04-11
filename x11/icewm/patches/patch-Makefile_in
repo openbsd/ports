@@ -1,7 +1,25 @@
-$OpenBSD: patch-Makefile_in,v 1.12 2014/01/04 09:05:24 ajacoutot Exp $
+$OpenBSD: patch-Makefile_in,v 1.13 2014/04/11 15:25:24 giovanni Exp $
 --- Makefile.in.orig	Sun Nov 17 17:54:39 2013
-+++ Makefile.in	Sat Jan  4 09:34:01 2014
-@@ -119,12 +119,9 @@ install-base: base
++++ Makefile.in	Fri Apr  4 10:00:05 2014
+@@ -4,7 +4,7 @@
+ # Please run 'configure' first (generate it with autogen.sh)
+ ################################################################################
+ 
+-SHELL=/bin/bash
++SHELL=/bin/sh
+ 
+ srcdir     = @srcdir@
+ top_srcdir = @top_srcdir@
+@@ -56,6 +56,8 @@ docs:
+ nls:
+ 	@cd po && $(MAKE) all
+ 
++man:
++
+ srcclean:
+ 	@cd src && $(MAKE) clean
+ 
+@@ -119,12 +121,9 @@ install-base: base
  
  install-docs: docs
  	@echo ------------------------------------------

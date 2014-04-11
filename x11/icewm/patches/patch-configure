@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.13 2014/01/04 09:05:24 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.14 2014/04/11 15:25:24 giovanni Exp $
 --- configure.orig	Sun Nov 17 18:41:19 2013
-+++ configure	Sat Jan  4 09:34:01 2014
++++ configure	Thu Apr  3 23:24:54 2014
 @@ -2664,7 +2664,7 @@ test -n "$target_alias" &&
      NONENONEs,x,x, &&
    program_prefix=${target_alias}-
  
 -TARGETS=base
-+TARGETS='base docs'
++TARGETS='base docs man'
  APPLICATIONS='icewm icewm-session icesh icewmhint icewmbg icewmtray'
  TESTCASES=`echo src/test*.cc | sed 's%src/\([^ ]*\)\.cc%\1%g'`
  TESTCASES="$TESTCASES iceview icesame iceicon icerun icelist icebar" # iceclock

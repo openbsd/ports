@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2010/12/12 19:13:01 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2014/04/11 15:25:25 giovanni Exp $
 @bin bin/icehelp
 @bin bin/icesh
 @bin bin/icewm
@@ -7,6 +7,7 @@ bin/icewm-set-gnomewm
 @bin bin/icewmbg
 @bin bin/icewmhint
 @bin bin/icewmtray
+@man man/man1/icewm.1
 share/doc/icewm/
 share/doc/icewm/icewm-1.html
 share/doc/icewm/icewm-10.html

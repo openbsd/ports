@@ -1,7 +1,16 @@
-$OpenBSD: patch-src_default_h,v 1.13 2014/01/04 09:05:24 ajacoutot Exp $
+$OpenBSD: patch-src_default_h,v 1.14 2014/04/11 15:25:24 giovanni Exp $
 --- src/default.h.orig	Sun Nov 17 17:54:39 2013
-+++ src/default.h	Sat Jan  4 09:34:02 2014
-@@ -162,8 +162,8 @@ XSV(const char *, acpiIgnoreBatteries,          0)
++++ src/default.h	Sat Apr  5 23:20:25 2014
+@@ -38,7 +38,7 @@ XIV(bool, showTaskBar,                          true)
+ XIV(bool, taskBarAtTop,                         false)
+ XIV(bool, taskBarKeepBelow,                     false)
+ XIV(bool, taskBarShowClock,                     true)
+-XIV(bool, taskBarShowApm,                       false)
++XIV(bool, taskBarShowApm,                       true)
+ XIV(bool, taskBarShowApmTime,                   true) // mschy
+ XIV(bool, taskBarShowApmGraph,                  true) // hatred
+ XIV(bool, taskBarShowMailboxStatus,             true)
+@@ -162,10 +162,10 @@ XSV(const char *, acpiIgnoreBatteries,          0)
  #endif
  
  XSV(const char *, mailBoxPath,                  0)
@@ -10,5 +19,8 @@ $OpenBSD: patch-src_default_h,v 1.13 2014/01/04 09:05:24 ajacoutot Exp $
 +XSV(const char *, mailCommand,                  "xterm -name mail -title MAIL -e mail")
 +XSV(const char *, mailClassHint,                "mail.XTerm")
  XSV(const char *, newMailCommand,               0)
- XSV(const char *, lockCommand,                  0)
+-XSV(const char *, lockCommand,                  0)
++XSV(const char *, lockCommand,                  "xlock -name icewm -mode random")
  XSV(const char *, clockCommand,                 "xclock -name icewm -title Clock")
+ XSV(const char *, clockClassHint,               "icewm.XClock")
+ XSV(const char *, runDlgCommand,                0)
