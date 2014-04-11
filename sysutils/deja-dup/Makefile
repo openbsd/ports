@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2014/04/03 09:05:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2014/04/11 09:17:35 giovanni Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	simple encrypted backup tool for GNOME
 
 GNOME_VERSION=	30.0
 GNOME_PROJECT=	deja-dup
+REVISION=	0
 
 CATEGORIES=	sysutils x11/gnome
 
@@ -45,8 +46,11 @@ CONFIGURE_ARGS +=	-DENABLE_CCPANEL:BOOL=OFF
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/deja-dup
 
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/libdeja/PythonChecker.vala
+
 post-install:
-	${INSTALL_DATA_DIR} /share/examples
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
 	mv ${PREFIX}/etc ${PREFIX}/share/examples/deja-dup
 
 .include <bsd.port.mk>
