@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2014/04/07 10:00:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.97 2014/04/11 10:21:15 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (base installation)
 COMMENT-extras=		GNOME desktop meta-package (full installation)
@@ -9,7 +9,7 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-main=		3
+REVISION-main=		4
 REVISION-extras=	2
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
@@ -32,9 +32,6 @@ RUN_DEPENDS-main +=	x11/gnome/controlcenter \
 
 # gnome-classic.session
 RUN_DEPENDS-main +=	x11/gnome/shell-extensions
-
-# colord and gtk+3 are already dependencies
-RUN_DEPENDS-main +=	graphics/colord-gtk
 
 # GNOME spooler is CUPS (gnome-printers-panel in gnome-control-center)
 # add gtk+3-cups so that gtkprint() can see native CUPS printers;
