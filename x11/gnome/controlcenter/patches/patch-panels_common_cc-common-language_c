@@ -1,10 +1,21 @@
-$OpenBSD: patch-panels_common_cc-common-language_c,v 1.5 2014/03/27 12:41:07 ajacoutot Exp $
+$OpenBSD: patch-panels_common_cc-common-language_c,v 1.6 2014/04/11 19:12:10 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=710412
 
 --- panels/common/cc-common-language.c.orig	Mon Mar  3 12:55:25 2014
-+++ panels/common/cc-common-language.c	Thu Mar 27 13:00:03 2014
-@@ -600,11 +600,7 @@ insert_language (GHashTable *ht,
++++ panels/common/cc-common-language.c	Fri Apr 11 20:38:56 2014
+@@ -578,6 +578,10 @@ add_other_users_language (GHashTable *ht)
+         g_object_unref (proxy);
+ }
+ 
++/*
++ * Note that @lang needs to be formatted like the locale strings
++ * returned by gnome_get_all_locales().
++ */
+ static void
+ insert_language (GHashTable *ht,
+                  const char *lang)
+@@ -600,10 +604,7 @@ insert_language (GHashTable *ht,
  
          g_debug ("We have translations for %s", lang);
  
@@ -12,8 +23,54 @@ https://bugzilla.gnome.org/show_bug.cgi?id=710412
 -                key = g_strdup (lang);
 -        else
 -                key = g_strdup_printf ("%s.utf8", lang);
--
 +        key = g_strdup (lang);
+ 
          label_own_lang = gnome_get_language_from_locale (key, key);
          label_current_lang = gnome_get_language_from_locale (key, NULL);
-         label_untranslated = gnome_get_language_from_locale (key, "C");
+@@ -632,15 +633,15 @@ cc_common_language_get_initial_languages (void)
+ 
+         ht = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, g_free);
+ 
+-        insert_language (ht, "en_US");
+-        insert_language (ht, "en_GB");
+-        insert_language (ht, "de_DE");
+-        insert_language (ht, "fr_FR");
+-        insert_language (ht, "es_ES");
+-        insert_language (ht, "zh_CN");
+-        insert_language (ht, "ja_JP");
+-        insert_language (ht, "ru_RU");
+-        insert_language (ht, "ar_EG");
++        insert_language (ht, "en_US.UTF-8");
++        insert_language (ht, "en_GB.UTF-8");
++        insert_language (ht, "de_DE.UTF-8");
++        insert_language (ht, "fr_FR.UTF-8");
++        insert_language (ht, "es_ES.UTF-8");
++        insert_language (ht, "zh_CN.UTF-8");
++        insert_language (ht, "ja_JP.UTF-8");
++        insert_language (ht, "ru_RU.UTF-8");
++        insert_language (ht, "ar_EG.UTF-8");
+ 
+         return ht;
+ }
+@@ -741,6 +742,21 @@ cc_common_language_add_user_languages (GtkTreeModel *m
+         name = cc_common_language_get_current_language ();
+         display = g_hash_table_lookup (user_langs, name);
+         if (!display) {
++                char *language = NULL;
++                char *country = NULL;
++                char *codeset = NULL;
++
++                gnome_parse_locale (name, &language, &country, &codeset, NULL);
++                g_free (name);
++
++                if (!codeset || !g_str_equal (codeset, "UTF-8"))
++                        g_warning ("Current user locale codeset isn't UTF-8");
++
++                name = g_strdup_printf ("%s_%s.UTF-8", language, country);
++                g_free (language);
++                g_free (country);
++                g_free (codeset);
++
+                 insert_language (user_langs, name);
+                 display = g_hash_table_lookup (user_langs, name);
+         }

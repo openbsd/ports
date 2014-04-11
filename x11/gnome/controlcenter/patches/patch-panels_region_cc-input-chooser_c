@@ -1,0 +1,24 @@
+$OpenBSD: patch-panels_region_cc-input-chooser_c,v 1.1 2014/04/11 19:12:10 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=710412
+
+--- panels/region/cc-input-chooser.c.orig	Mon Mar  3 12:55:25 2014
++++ panels/region/cc-input-chooser.c	Fri Apr 11 20:38:17 2014
+@@ -889,7 +889,7 @@ get_ibus_locale_infos (GtkWidget *chooser)
+           lang_code != NULL &&
+           country_code != NULL)
+         {
+-          gchar *locale = g_strdup_printf ("%s_%s.utf8", lang_code, country_code);
++          gchar *locale = g_strdup_printf ("%s_%s.UTF-8", lang_code, country_code);
+ 
+           info = g_hash_table_lookup (priv->locales, locale);
+           if (info)
+@@ -1014,7 +1014,7 @@ get_locale_infos (GtkWidget *chooser)
+       if (!gnome_parse_locale (*locale, &lang_code, &country_code, NULL, NULL))
+         continue;
+ 
+-      simple_locale = g_strdup_printf ("%s_%s.utf8", lang_code, country_code);
++      simple_locale = g_strdup_printf ("%s_%s.UTF-8", lang_code, country_code);
+       if (g_hash_table_contains (priv->locales, simple_locale))
+         {
+           g_free (simple_locale);
