@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2014/04/02 14:00:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2014/04/11 14:54:39 ajacoutot Exp $
 
-COMMENT=	color profile manager for GNOME
+COMMENT=		color profile manager for GNOME
 
-GNOME_PROJECT=	gnome-color-manager
-GNOME_VERSION=	3.12.0
-REVISION=	1
+GNOME_PROJECT=		gnome-color-manager
+GNOME_VERSION=		3.12.1
 
-CATEGORIES=	graphics
+CATEGORIES=		graphics
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,26 +21,25 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += stdc++ tiff util vorbis vorbisfile vte2_90 xcb xcb-render
 WANTLIB += xcb-shm z
 
-MODULES=	devel/gettext \
-		x11/gnome
+MODULES=		devel/gettext \
+			x11/gnome
 
-LIB_DEPENDS=	audio/libcanberra,-gtk3 \
-		devel/vte3 \
-		graphics/colord-gtk \
-		graphics/exiv2 \
-		graphics/libexif
+LIB_DEPENDS=		audio/libcanberra,-gtk3 \
+			devel/vte3 \
+			graphics/colord-gtk \
+			graphics/exiv2 \
+			graphics/libexif
 
-RUN_DEPENDS=	graphics/argyll \
-		graphics/shared-color-targets
+RUN_DEPENDS=		graphics/argyll \
+			graphics/shared-color-targets
 
-  
-MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache yelp
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
 
 # XXX gcm-calibrate.sgml:1: parser error : StartTag: invalid element name
-CONFIGURE_ENV += ac_cv_path_DOCBOOK2MAN=no
+CONFIGURE_ENV +=	ac_cv_path_DOCBOOK2MAN=no
 
 # our old gcc does not handle some of the warning flags
-MAKE_FLAGS=	WARNINGFLAGS_C=
+MAKE_FLAGS=		WARNINGFLAGS_C=
 
 pre-configure:
 	perl -pi -e 's,/usr/share,${LOCALBASE}/share,g;' \
