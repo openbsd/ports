@@ -1,28 +1,24 @@
-# $OpenBSD: Makefile,v 1.123 2014/04/02 09:36:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.124 2014/04/11 14:47:25 ajacoutot Exp $
 
-SHARED_ONLY=	Yes
+SHARED_ONLY=		Yes
 
-COMMENT-main=	GNOME Virtual File System
-COMMENT-smb=	GVFS mount module for samba
-COMMENT-goa=	GVFS volume monitor for gnome-online-account
+COMMENT-main=		GNOME Virtual File System
+COMMENT-smb=		GVFS mount module for samba
+COMMENT-goa=		GVFS volume monitor for gnome-online-account
 
-GNOME_PROJECT=	gvfs
-GNOME_VERSION=	1.20.0
+GNOME_PROJECT=		gvfs
+GNOME_VERSION=		1.20.1
 
-PKGNAME-main=	${DISTNAME}
-PKGNAME-smb=	${GNOME_PROJECT}-smb-${GNOME_VERSION}
-PKGNAME-goa=	${GNOME_PROJECT}-goa-${GNOME_VERSION}
-
-REVISION-main=	4
-REVISION-smb=	3
-REVISION-goa=	3
+PKGNAME-main=		${DISTNAME}
+PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
+PKGNAME-goa=		${GNOME_PROJECT}-goa-${GNOME_VERSION}
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MODULES=	devel/gettext \
-		x11/gnome \
-		devel/dconf
+MODULES=		devel/gettext \
+			x11/gnome \
+			devel/dconf
 
 WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 pcre pthread
 WANTLIB += util z
@@ -45,33 +41,34 @@ WANTLIB-smb += gcrypt gpg-error secret-1
 WANTLIB-goa += ${WANTLIB}
 WANTLIB-goa += goa-1.0
 
-MODGNOME_TOOLS += desktop-file-utils docbook
-LIB_DEPENDS-main= ${LIB_DEPENDS} \
-		archivers/libarchive \
-		devel/libsoup \
-		net/avahi \
-		x11/gnome/libsecret \
-		x11/gtk+3
+MODGNOME_TOOLS=		desktop-file-utils docbook
 
-RUN_DEPENDS-smb= ${MODGETTEXT_RUN_DEPENDS} \
-		${MODDCONF_RUN_DEPENDS} \
-		${BASE_PKGPATH},-main=${GNOME_VERSION}
-LIB_DEPENDS-smb= ${LIB_DEPENDS} \
-		net/samba
+LIB_DEPENDS-main=	${LIB_DEPENDS} \
+			archivers/libarchive \
+			devel/libsoup \
+			net/avahi \
+			x11/gnome/libsecret \
+			x11/gtk+3
 
-RUN_DEPENDS-goa= ${MODGETTEXT_RUN_DEPENDS} \
-		${BASE_PKGPATH},-main=${GNOME_VERSION}
-LIB_DEPENDS-goa= ${LIB_DEPENDS} \
-		x11/gnome/online-accounts
+RUN_DEPENDS-smb=	${MODGETTEXT_RUN_DEPENDS} \
+			${MODDCONF_RUN_DEPENDS} \
+			${BASE_PKGPATH},-main=${GNOME_VERSION}
+LIB_DEPENDS-smb=	${LIB_DEPENDS} \
+			net/samba
 
-CONFIGURE_ARGS=	--disable-libsystemd-login \
-		--disable-cdda \
-		--disable-bluray \
-		--disable-afc \
-		--disable-obexftp \
-		--disable-gudev \
-		--disable-udev \
-		--disable-gdu
+RUN_DEPENDS-goa=	${MODGETTEXT_RUN_DEPENDS} \
+			${BASE_PKGPATH},-main=${GNOME_VERSION}
+LIB_DEPENDS-goa=	${LIB_DEPENDS} \
+			x11/gnome/online-accounts
+
+CONFIGURE_ARGS=		--disable-libsystemd-login \
+			--disable-cdda \
+			--disable-bluray \
+			--disable-afc \
+			--disable-obexftp \
+			--disable-gudev \
+			--disable-udev \
+			--disable-gdu
 
 MULTI_PACKAGES=		-main -smb -goa
 
@@ -89,11 +86,7 @@ CONFIGURE_ARGS +=	--disable-goa
 .endif
 
 # test_polkitd.py, gvfs-test
-TEST_DEPENDS=	devel/py-gobject3
-
-# patch-common_gvfsmountinfo_c, patch-configure_ac
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.69
+TEST_DEPENDS=		devel/py-gobject3
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
