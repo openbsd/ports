@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2013/08/07 21:58:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2014/04/12 07:36:58 benoit Exp $
 
 COMMENT=	Python library to manipulate gettext files
 
-MODPY_EGG_VERSION =	1.0.3
+MODPY_EGG_VERSION =	1.0.4
 DISTNAME =	polib-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
