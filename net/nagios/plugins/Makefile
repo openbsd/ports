@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2014/04/07 12:31:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2014/04/12 19:52:19 zhuk Exp $
 
 COMMENT-main=	monitoring plugins (for Nagios, Icinga, etc)
 COMMENT-dbi=	dbi monitoring plugin
@@ -12,6 +12,7 @@ COMMENT-snmp=	monitoring plugins using snmp
 
 V=		1.5
 REVISION=	2
+REVISION-main=	3
 # name currently mid-transition from nagios-plugins
 #DISTNAME=	monitoring-plugins-$V
 DISTNAME=	nagios-plugins-$V

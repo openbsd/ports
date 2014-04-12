@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2014/04/07 12:31:47 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2014/04/12 19:52:19 zhuk Exp $
 @pkgpath net/nagios/plugins
 @pkgpath net/nagios/plugins,-ntp
+@conflict nagios-plugins-*
 @conflict nagios-plugins-ntp-*
 @comment lib/charset.alias
 libexec/nagios/
