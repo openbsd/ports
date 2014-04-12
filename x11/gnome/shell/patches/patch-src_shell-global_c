@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_shell-global_c,v 1.7 2014/04/08 15:24:21 ajacoutot Exp $
+$OpenBSD: patch-src_shell-global_c,v 1.8 2014/04/12 07:10:43 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=727763
 
 --- src/shell-global.c.orig	Wed Mar 19 21:27:35 2014
-+++ src/shell-global.c	Tue Apr  8 08:37:14 2014
++++ src/shell-global.c	Tue Apr  8 18:38:55 2014
 @@ -1143,17 +1143,7 @@ shell_global_reexec_self (ShellGlobal *global)
        g_warning ("failed to get /proc/self/cmdline: %s", error->message);
        return;
@@ -28,7 +28,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=727763
  
    g_ptr_array_add (arr, NULL);
 +#elif defined __OpenBSD__
-+  gchar **args;
++  gchar **args, **args_p;
 +  pid_t pid = getpid();
 +  gint mib[] = { CTL_KERN, KERN_PROC_ARGS, pid, KERN_PROC_ARGV };
 +
@@ -48,16 +48,16 @@ https://bugzilla.gnome.org/show_bug.cgi?id=727763
 +
 +  if (sysctl (mib, G_N_ELEMENTS (mib), args, &len, NULL, 0) == -1) {
 +    g_warning ("failed to get command line args: %d", errno);
++    g_free (args);
 +    return;
 +  }
 +
-+  buf = g_strndup (*args, len);
++  arr = g_ptr_array_new ();
++  for (args_p = args; *args_p; args_p++)
++    g_ptr_array_add (arr, g_strdup (*args_p));
++  g_ptr_array_add (arr, NULL);
 +
 +  g_free (args);
-+
-+  arr = g_ptr_array_new ();
-+  g_ptr_array_add (arr, buf);
-+  g_ptr_array_add (arr, NULL);
 +#else
 +  return;
 +#endif
