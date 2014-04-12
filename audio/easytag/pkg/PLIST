@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.13 2014/01/04 12:50:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2014/04/12 07:39:12 ajacoutot Exp $
 @bin bin/easytag
 @man man/man1/easytag.1
+share/appdata/
+share/appdata/easytag.appdata.xml
 share/applications/easytag.desktop
 share/help/
 share/help/C/
@@ -19,6 +21,8 @@ share/help/C/easytag/legal.xml
 share/help/C/easytag/media/
 share/help/C/easytag/media/icon.png
 share/help/C/easytag/playlist-generate.page
+share/help/C/easytag/problems-id3.page
+share/help/C/easytag/problems-ogg-split.page
 share/help/C/easytag/scanner.page
 share/help/C/easytag/starting.page
 share/help/C/easytag/tag-field.page
@@ -38,6 +42,7 @@ share/locale/cs/LC_MESSAGES/easytag.mo
 share/locale/da/LC_MESSAGES/easytag.mo
 share/locale/de/LC_MESSAGES/easytag.mo
 share/locale/el/LC_MESSAGES/easytag.mo
+share/locale/en_GB/LC_MESSAGES/easytag.mo
 share/locale/es/LC_MESSAGES/easytag.mo
 share/locale/fr/LC_MESSAGES/easytag.mo
 share/locale/he/LC_MESSAGES/easytag.mo
@@ -54,6 +59,7 @@ share/locale/sl/LC_MESSAGES/easytag.mo
 share/locale/sr/LC_MESSAGES/easytag.mo
 share/locale/sr@latin/LC_MESSAGES/easytag.mo
 share/locale/sv/LC_MESSAGES/easytag.mo
+share/locale/te/LC_MESSAGES/easytag.mo
 share/locale/tr/LC_MESSAGES/easytag.mo
 share/locale/uk/LC_MESSAGES/easytag.mo
 share/locale/zh_CN/LC_MESSAGES/easytag.mo
