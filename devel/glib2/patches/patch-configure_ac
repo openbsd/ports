@@ -1,6 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.12 2014/04/10 09:13:00 ajacoutot Exp $
-
-https://bugzilla.gnome.org/show_bug.cgi?id=727941
+$OpenBSD: patch-configure_ac,v 1.13 2014/04/12 05:57:29 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=727939
 
@@ -8,6 +6,11 @@ From 3662eb9759fe225d1c214db6927c667a1b733e8a Mon Sep 17 00:00:00 2001
 From: Alexandre Rostovtsev <tetromino@gentoo.org>
 Date: Mon, 2 Sep 2013 13:59:18 -0400
 Subject: gobject: try to link with -Wl,-z,nodelete
+
+From 74ec947079e9159c71b28b98439b8a7ad9c415ee Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Thu, 10 Apr 2014 10:40:16 +0200
+Subject: openbsd: remove -pthread
 
 --- configure.ac.orig	Mon Mar 24 19:53:31 2014
 +++ configure.ac	Thu Apr 10 10:59:12 2014
