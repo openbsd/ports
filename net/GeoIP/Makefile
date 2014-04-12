@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.29 2014/03/18 17:56:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2014/04/12 09:58:43 sthen Exp $
 
 COMMENT=	find the country where IP address/hostname originates from
 
 V=		1.6.0
+REVISION=	0
 DISTNAME=	GeoIP-$V
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} geolite-data-20140316.tar.bz2:0
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		geolite-data-20140402.tar.bz2:0
 
 SHARED_LIBS +=	GeoIP                9.0      # 7.0
 
@@ -36,8 +38,10 @@ pre-test:
 
 # maintainer convenience target
 geolite:
+	set -x; \
 	t=`mktemp -d /tmp/geoip.XXXXXXXXXX`; \
-	f=geolite-data-`date +%Y%m%d`.tar.bz2; \
+	d=`date +%Y%m%d`; \
+	f=geolite-data-$${d}.tar.bz2; \
 	cd $$t; \
 	mkdir data; \
 	cd data; \
@@ -45,8 +49,7 @@ geolite:
 	echo "see http://www.maxmind.com and http://dev.maxmind.com/geoip/legacy/geolite/." >> readme.txt; \
 	echo "Distributed under Creative Commons Attribution-ShareAlike 3.0 Unported License." >> readme.txt; \
 	echo "Created at `date -z UTC` and intended for OS packaging purposes." >> readme.txt; \
-	ftp http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz \
-	http://geolite.maxmind.com/download/geoip/database/GeoIPv6.dat.gz \
+	ftp http://geolite.maxmind.com/download/geoip/database/{GeoIPv6.dat.gz,GeoLiteCountry/GeoIP.dat.gz}; \
 	gunzip *gz; \
 	cd ..; \
 	tar cjf $$f data; \
