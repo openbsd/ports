@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/01/18 17:34:15 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/04/12 21:17:13 sthen Exp $
 include/Judy.h
 lib/libJudy.a
-%%SHARED%%
 lib/libJudy.la
+@lib lib/libJudy.so.${LIBJudy_VERSION}
 @man man/man3/J1BC.3
 @man man/man3/J1C.3
 @man man/man3/J1F.3
