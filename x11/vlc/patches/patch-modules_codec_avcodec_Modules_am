@@ -1,0 +1,11 @@
+$OpenBSD: patch-modules_codec_avcodec_Modules_am,v 1.1 2014/04/12 20:41:26 brad Exp $
+--- modules/codec/avcodec/Modules.am.orig	Thu Apr 10 02:02:17 2014
++++ modules/codec/avcodec/Modules.am	Thu Apr 10 02:02:35 2014
+@@ -4,6 +4,7 @@ libavcodec_plugin_la_SOURCES = \
+ 	video.c \
+ 	subtitle.c \
+ 	audio.c \
++	cpu.c \
+ 	deinterlace.c \
+ 	fourcc.c \
+ 	chroma.h \

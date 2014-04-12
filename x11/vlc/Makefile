@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.177 2014/03/16 11:38:47 brad Exp $
+# $OpenBSD: Makefile,v 1.178 2014/04/12 20:41:26 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,6 +9,7 @@ V=		2.0.10
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
+REVISION-main=	0
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz

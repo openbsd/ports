@@ -1,0 +1,51 @@
+$OpenBSD: patch-modules_codec_avcodec_avcodec_c,v 1.4 2014/04/12 20:41:26 brad Exp $
+--- modules/codec/avcodec/avcodec.c.orig	Thu Apr 10 01:51:51 2014
++++ modules/codec/avcodec/avcodec.c	Thu Apr 10 01:56:03 2014
+@@ -274,43 +274,10 @@ static int OpenDecoder( vlc_object_t *p_this )
+     p_context->opaque = (void *)p_this;
+ 
+     /* Set CPU capabilities */
+-    unsigned i_cpu = vlc_CPU();
+-    p_context->dsp_mask = 0;
+-    if( !(i_cpu & CPU_CAPABILITY_MMX) )
+-    {
+-        p_context->dsp_mask |= AV_CPU_FLAG_MMX;
+-    }
+-    if( !(i_cpu & CPU_CAPABILITY_MMXEXT) )
+-    {
+-        p_context->dsp_mask |= AV_CPU_FLAG_MMX2;
+-    }
+-    if( !(i_cpu & CPU_CAPABILITY_3DNOW) )
+-    {
+-        p_context->dsp_mask |= AV_CPU_FLAG_3DNOW;
+-    }
+-    if( !(i_cpu & CPU_CAPABILITY_SSE) )
+-    {
+-        p_context->dsp_mask |= AV_CPU_FLAG_SSE;
+-    }
+-    if( !(i_cpu & CPU_CAPABILITY_SSE2) )
+-    {
+-        p_context->dsp_mask |= AV_CPU_FLAG_SSE2;
+-    }
+-#ifdef AV_CPU_FLAG_SSE3
+-    if( !(i_cpu & CPU_CAPABILITY_SSE3) )
+-        p_context->dsp_mask |= AV_CPU_FLAG_SSE3;
+-#endif
+-#ifdef AV_CPU_FLAG_SSSE3
+-    if( !(i_cpu & CPU_CAPABILITY_SSSE3) )
+-        p_context->dsp_mask |= AV_CPU_FLAG_SSSE3;
+-#endif
+-#ifdef AV_CPU_FLAG_SSE4
+-    if( !(i_cpu & CPU_CAPABILITY_SSE4_1) )
+-        p_context->dsp_mask |= AV_CPU_FLAG_SSE4;
+-#endif
+-#ifdef AV_CPU_FLAG_SSE42
+-    if( !(i_cpu & CPU_CAPABILITY_SSE4_2) )
+-        p_context->dsp_mask |= AV_CPU_FLAG_SSE42;
++#if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT( 51, 25, 0 )
++    av_set_cpu_flags_mask( INT_MAX & ~GetVlcDspMask() );
++#else
++    p_context->dsp_mask = GetVlcDspMask();
+ #endif
+ 
+     p_dec->b_need_packetized = true;

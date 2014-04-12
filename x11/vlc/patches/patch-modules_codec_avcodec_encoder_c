@@ -1,0 +1,64 @@
+$OpenBSD: patch-modules_codec_avcodec_encoder_c,v 1.3 2014/04/12 20:41:26 brad Exp $
+--- modules/codec/avcodec/encoder.c.orig	Fri Feb 21 10:27:16 2014
++++ modules/codec/avcodec/encoder.c	Thu Apr 10 21:35:17 2014
+@@ -358,25 +358,11 @@ int OpenEncoder( vlc_object_t *p_this )
+     p_context->opaque = (void *)p_this;
+ 
+     /* Set CPU capabilities */
+-    unsigned i_cpu = vlc_CPU();
+-    p_context->dsp_mask = 0;
+-    if( !(i_cpu & CPU_CAPABILITY_MMX) )
+-    {
+-        p_context->dsp_mask |= AV_CPU_FLAG_MMX;
+-    }
+-    if( !(i_cpu & CPU_CAPABILITY_MMXEXT) )
+-    {
+-        p_context->dsp_mask |= AV_CPU_FLAG_MMX2;
+-    }
+-    if( !(i_cpu & CPU_CAPABILITY_3DNOW) )
+-    {
+-        p_context->dsp_mask |= AV_CPU_FLAG_3DNOW;
+-    }
+-    if( !(i_cpu & CPU_CAPABILITY_SSE) )
+-    {
+-        p_context->dsp_mask |= AV_CPU_FLAG_SSE;
+-        p_context->dsp_mask |= AV_CPU_FLAG_SSE2;
+-    }
++#if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT( 51, 25, 0 )
++    av_set_cpu_flags_mask( INT_MAX & ~GetVlcDspMask() );
++#else
++    p_context->dsp_mask = GetVlcDspMask();
++#endif
+ 
+     p_sys->i_key_int = var_GetInteger( p_enc, ENC_CFG_PREFIX "keyint" );
+     p_sys->i_b_frames = var_GetInteger( p_enc, ENC_CFG_PREFIX "bframes" );
+@@ -497,8 +483,10 @@ int OpenEncoder( vlc_object_t *p_this )
+         p_context->dark_masking = p_sys->f_dark_masking;
+         p_context->p_masking = p_sys->f_p_masking;
+         p_context->border_masking = p_sys->f_border_masking;
++#if (LIBAVCODEC_VERSION_MAJOR < 55)
+         p_context->luma_elim_threshold = p_sys->i_luma_elim;
+         p_context->chroma_elim_threshold = p_sys->i_chroma_elim;
++#endif
+ 
+         if( p_sys->i_key_int > 0 )
+             p_context->gop_size = p_sys->i_key_int;
+@@ -511,9 +499,6 @@ int OpenEncoder( vlc_object_t *p_this )
+                p_enc->fmt_out.i_codec == VLC_CODEC_MP1V ) )
+             p_context->flags |= CODEC_FLAG_LOW_DELAY;
+ 
+-        if( p_enc->fmt_out.i_codec == VLC_CODEC_MP2V )
+-            p_context->idct_algo = FF_IDCT_LIBMPEG2MMX;
+-
+         av_reduce( &p_context->sample_aspect_ratio.num,
+                    &p_context->sample_aspect_ratio.den,
+                    p_enc->fmt_in.video.i_sar_num,
+@@ -885,7 +870,7 @@ int OpenEncoder( vlc_object_t *p_this )
+         p_enc->fmt_out.audio.i_bitspersample = aout_BitsPerSample( vlc_fourcc_GetCodec( AUDIO_ES, p_enc->fmt_out.i_codec ) );
+ 
+         if( p_context->frame_size > 1 )
+-            p_sys->i_buffer_out = 8 * AVCODEC_MAX_AUDIO_FRAME_SIZE;
++            p_sys->i_buffer_out = 8 * MAX_AUDIO_FRAME_SIZE;
+         else
+             p_sys->i_buffer_out = p_sys->i_frame_size * p_sys->i_sample_bytes;
+         p_sys->p_buffer_out = malloc( p_sys->i_buffer_out );
