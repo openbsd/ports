@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2013/11/25 11:37:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2014/04/12 17:05:58 stsp Exp $
 
 COMMENT=	Apache Portable Runtime
 
-V=		1.4.6
+V=		1.5.0
 DISTNAME=	apr-$V
-REVISION=	3
-SHARED_LIBS +=	apr-1             4.6     # .4.6
+SHARED_LIBS +=	apr-1             5.0     # .5.0
 
 CATEGORIES=	devel
 
@@ -27,6 +26,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-installbuilddir=${LOCALBASE}/lib/apr-1/ \
 		--enable-other-child \
 		--enable-threads \
+		--enable-pool-debug=yes \
 		ac_cv_prog_AWK=awk
 
 pre-install:
