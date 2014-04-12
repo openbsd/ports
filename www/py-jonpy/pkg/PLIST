@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/01/13 08:34:52 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/04/12 06:48:38 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/jon/
 lib/python${MODPY_VERSION}/site-packages/jon/__init__.py
 lib/python${MODPY_VERSION}/site-packages/jon/__init__.pyc
@@ -27,7 +27,7 @@ lib/python${MODPY_VERSION}/site-packages/jon/wt/rowaccess.py
 lib/python${MODPY_VERSION}/site-packages/jon/wt/rowaccess.pyc
 lib/python${MODPY_VERSION}/site-packages/jon/wt/textblock.py
 lib/python${MODPY_VERSION}/site-packages/jon/wt/textblock.pyc
-lib/python${MODPY_VERSION}/site-packages/jon${MODPY_PY_PREFIX}0.10-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/jon${MODPY_PY_PREFIX}0.11-py${MODPY_VERSION}.egg-info
 share/doc/${MODPY_PY_PREFIX}jonpy/
 share/doc/${MODPY_PY_PREFIX}jonpy/cgi.html
 share/doc/${MODPY_PY_PREFIX}jonpy/dbpool.html
