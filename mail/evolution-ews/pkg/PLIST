@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/03/27 14:35:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/04/13 16:20:44 ajacoutot Exp $
 include/evolution-data-server/ews/
 include/evolution-data-server/ews/e-ews-connection-utils.h
 include/evolution-data-server/ews/e-ews-connection.h
@@ -16,8 +16,10 @@ lib/evolution-data-server/addressbook-backends/libebookbackendews.so
 lib/evolution-data-server/calendar-backends/libecalbackendews.so
 lib/evolution-data-server/camel-providers/libcamelews.so
 lib/evolution-data-server/camel-providers/libcamelews.urls
+lib/evolution-data-server/libeews-1.2.a
 lib/evolution-data-server/libeews-1.2.la
 @lib lib/evolution-data-server/libeews-1.2.so.${LIBeews-1.2_VERSION}
+lib/evolution-data-server/libewsutils.a
 lib/evolution-data-server/libewsutils.la
 @lib lib/evolution-data-server/libewsutils.so.${LIBewsutils_VERSION}
 lib/evolution-data-server/registry-modules/module-ews-backend.so
@@ -44,6 +46,7 @@ share/locale/lt/LC_MESSAGES/evolution-ews.mo
 share/locale/lv/LC_MESSAGES/evolution-ews.mo
 share/locale/mr/LC_MESSAGES/evolution-ews.mo
 share/locale/nb/LC_MESSAGES/evolution-ews.mo
+share/locale/or/LC_MESSAGES/evolution-ews.mo
 share/locale/pl/LC_MESSAGES/evolution-ews.mo
 share/locale/pt_BR/LC_MESSAGES/evolution-ews.mo
 share/locale/sl/LC_MESSAGES/evolution-ews.mo
