@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2014/03/27 13:01:45 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/04/13 11:50:10 jasper Exp $
 @conflict gcalctool-*
 @pkgpath x11/gnome/gcalctool
 @bin bin/gcalccmd
@@ -880,6 +880,7 @@ share/locale/fa/LC_MESSAGES/gnome-calculator.mo
 share/locale/fi/LC_MESSAGES/gnome-calculator.mo
 share/locale/fr/LC_MESSAGES/gnome-calculator.mo
 share/locale/ga/LC_MESSAGES/gnome-calculator.mo
+share/locale/gd/LC_MESSAGES/gnome-calculator.mo
 share/locale/gl/LC_MESSAGES/gnome-calculator.mo
 share/locale/gu/LC_MESSAGES/gnome-calculator.mo
 share/locale/he/LC_MESSAGES/gnome-calculator.mo
