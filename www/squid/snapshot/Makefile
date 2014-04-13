@@ -1,8 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2014/04/13 12:38:37 sthen Exp $
-
-BROKEN-i386=	64-bit atomic ops
-# on arch where atomic ops are supported at all, squid (as of bzr rev 13201)
-# needs 64-bit ops. talking to upstream.
+# $OpenBSD: Makefile,v 1.10 2014/04/13 21:41:00 sthen Exp $
 
 D=		20140413-r13351
 V=		3.5pre${D:C/-.*//}
