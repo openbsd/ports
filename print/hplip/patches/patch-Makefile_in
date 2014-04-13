@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.31 2014/03/13 22:37:27 ajacoutot Exp $
---- Makefile.in.orig	Thu Mar  6 06:11:18 2014
-+++ Makefile.in	Thu Mar 13 23:24:11 2014
-@@ -4405,16 +4405,16 @@ cups_drv = prnt/drv/hpcups.drv
+$OpenBSD: patch-Makefile_in,v 1.32 2014/04/13 07:47:15 ajacoutot Exp $
+--- Makefile.in.orig	Fri Apr  4 12:42:56 2014
++++ Makefile.in	Sun Apr 13 09:32:10 2014
+@@ -4447,16 +4447,16 @@ cups_drv = prnt/drv/hpcups.drv
  @HPLIP_BUILD_TRUE@@SCAN_BUILD_TRUE@        scan/sane/soaphti.h scan/sane/soapi.h scan/sane/xml.c scan/sane/xml.h scan/sane/ledm.h scan/sane/ledmi.h scan/sane/ledm.c \
  @HPLIP_BUILD_TRUE@@SCAN_BUILD_TRUE@        scan/sane/bb_ledm.c scan/sane/http.h scan/sane/http.c scan/sane/sclpml.c scan/sane/sclpml.h common/utils.c common/utils.h
  
@@ -21,7 +21,7 @@ $OpenBSD: patch-Makefile_in,v 1.31 2014/03/13 22:37:27 ajacoutot Exp $
  @HPLIP_BUILD_TRUE@@LIBUSB01_BUILD_TRUE@libhpmud_la_CFLAGS = -DMUDNAME=\"$(MUDNAME)\" -DCONFDIR=\"$(hplip_confdir)\"
  @HPLIP_BUILD_TRUE@@LIBUSB01_BUILD_FALSE@libhpmud_la_SOURCES = io/hpmud/hpmud.c io/hpmud/mlc.c io/hpmud/model.c io/hpmud/pml.c \
  @HPLIP_BUILD_TRUE@@LIBUSB01_BUILD_FALSE@	  io/hpmud/hpmud.h io/hpmud/hpmudi.h io/hpmud/list.h io/hpmud/mlc.h io/hpmud/pml.h io/hpmud/dot4.c \
-@@ -4427,7 +4427,7 @@ cups_drv = prnt/drv/hpcups.drv
+@@ -4469,7 +4469,7 @@ cups_drv = prnt/drv/hpcups.drv
  @HPLIP_BUILD_TRUE@@LIBUSB01_BUILD_TRUE@	  common/utils.c common/utils.h
  
  @HPLIP_BUILD_TRUE@libhpmud_la_LDFLAGS = -version-info 0:6:0 -lpthread \
@@ -30,7 +30,7 @@ $OpenBSD: patch-Makefile_in,v 1.31 2014/03/13 22:37:27 ajacoutot Exp $
  @HPLIP_BUILD_TRUE@	$(am__append_4)
  @HPLIP_BUILD_TRUE@libhpip_la_LDFLAGS = -version-info 0:1:0
  @HPLIP_BUILD_TRUE@libhpip_la_LIBADD = -lm
-@@ -4580,7 +4580,7 @@ cups_drv = prnt/drv/hpcups.drv
+@@ -4622,7 +4622,7 @@ cups_drv = prnt/drv/hpcups.drv
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hpmudext_la_LDFLAGS = -module -avoid-version
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hpmudext_la_SOURCES = io/mudext/hpmudext.c
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hpmudext_la_LIBADD = libhpmud.la
@@ -39,7 +39,7 @@ $OpenBSD: patch-Makefile_in,v 1.31 2014/03/13 22:37:27 ajacoutot Exp $
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@LIBUSB01_BUILD_TRUE@hpmudext_la_CFLAGS = -I$(PYTHONINCLUDEDIR)
  
  # ui (qt3)
-@@ -4632,7 +4632,7 @@ cups_drv = prnt/drv/hpcups.drv
+@@ -4674,7 +4674,7 @@ cups_drv = prnt/drv/hpcups.drv
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hppgsz_SOURCES = prnt/hpijs/PrinterProperties.cpp prnt/hpijs/PrinterProperties.h prnt/hpijs/bug.h
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hppgsz_CXXFLAGS = $(libapdk_la_CXXFLAGS)
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hppgsz_CFLAGS = $(libapdk_la_CFLAGS)
@@ -48,7 +48,7 @@ $OpenBSD: patch-Makefile_in,v 1.31 2014/03/13 22:37:27 ajacoutot Exp $
  
  # hplip.desktop
  @FULL_BUILD_TRUE@@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@hplip_desktopdir = $(icondir)
-@@ -4697,8 +4697,8 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+@@ -4739,8 +4739,8 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
  
  @HPIJS_INSTALL_TRUE@hpijs_CXXFLAGS = $(libapdk_la_CXXFLAGS)
  @HPIJS_INSTALL_TRUE@hpijs_CFLAGS = $(libapdk_la_CFLAGS)
@@ -59,7 +59,7 @@ $OpenBSD: patch-Makefile_in,v 1.31 2014/03/13 22:37:27 ajacoutot Exp $
  
  # hpcups
  #if NEW_HPCUPS
-@@ -4738,7 +4738,7 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+@@ -4780,7 +4780,7 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
  @HPCUPS_INSTALL_TRUE@	common/utils.c common/utils.h
  
  @HPCUPS_INSTALL_TRUE@hpcups_CXXFLAGS = $(APDK_ENDIAN_FLAG) $(DBUS_CFLAGS)
@@ -68,7 +68,7 @@ $OpenBSD: patch-Makefile_in,v 1.31 2014/03/13 22:37:27 ajacoutot Exp $
  #else
  #hpcupsdir = $(cupsfilterdir)
  #hpcups_PROGRAMS = hpcups
-@@ -4746,15 +4746,15 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+@@ -4788,15 +4788,15 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
  #hpcups_CXXFLAGS = $(libapdk_la_CXXFLAGS)
  #hpcups_CFLAGS = $(libapdk_la_CFLAGS)
  #if HPCUPS_ONLY_BUILD
