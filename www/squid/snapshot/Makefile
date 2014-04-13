@@ -1,7 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2014/04/08 12:22:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2014/04/13 12:38:37 sthen Exp $
 
-V=		3.5pre20140405
-DISTNAME=	squid-3.HEAD-20140405-r13341
+BROKEN-i386=	64-bit atomic ops
+# on arch where atomic ops are supported at all, squid (as of bzr rev 13201)
+# needs 64-bit ops. talking to upstream.
+
+D=		20140413-r13351
+V=		3.5pre${D:C/-.*//}
+DISTNAME=	squid-3.HEAD-$D
 EXTRACT_SUFX=	.tar.bz2
 
 EXTERNAL_ACL=	LDAP_group SQL_session file_userip time_quota session \
