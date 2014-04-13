@@ -1,8 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/09/21 16:46:28 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/04/13 09:19:19 benoit Exp $
 ${P5SITE}/Proc/
 ${P5SITE}/Proc/Simple.pm
-${P5SITE}/auto/
-${P5SITE}/auto/Proc/
-${P5SITE}/auto/Proc/Simple/
-${P5SITE}/auto/Proc/Simple/autosplit.ix
 @man man/man3p/Proc::Simple.3p
