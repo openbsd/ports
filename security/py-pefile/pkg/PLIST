@@ -1,9 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/08/06 19:20:09 rpointel Exp $
-lib/python${MODPY_VERSION}/site-packages/pefile-1.2.10_123-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/pefile-1.2.10_123-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/pefile-1.2.10_123-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/pefile-1.2.10_123-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/pefile-1.2.10_123-py${MODPY_VERSION}.egg-info/top_level.txt
+@comment $OpenBSD: PLIST,v 1.2 2014/04/13 07:06:26 benoit Exp $
+lib/python${MODPY_VERSION}/site-packages/ordlookup/
+lib/python${MODPY_VERSION}/site-packages/ordlookup/__init__.py
+lib/python${MODPY_VERSION}/site-packages/ordlookup/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/ordlookup/oleaut32.py
+lib/python${MODPY_VERSION}/site-packages/ordlookup/oleaut32.pyc
+lib/python${MODPY_VERSION}/site-packages/ordlookup/ws2_32.py
+lib/python${MODPY_VERSION}/site-packages/ordlookup/ws2_32.pyc
+lib/python${MODPY_VERSION}/site-packages/pefile-1.2.10_139-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/pefile-1.2.10_139-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/pefile-1.2.10_139-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/pefile-1.2.10_139-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/pefile-1.2.10_139-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pefile.py
 lib/python${MODPY_VERSION}/site-packages/pefile.pyc
 lib/python${MODPY_VERSION}/site-packages/peutils.py
