@@ -1,0 +1,24 @@
+$OpenBSD: patch-Lib_test_test_os_py,v 1.1.1.1 2014/04/13 07:10:12 rpointel Exp $
+--- Lib/test/test_os.py.orig	Mon Mar 17 03:31:30 2014
++++ Lib/test/test_os.py	Sat Apr  5 09:27:14 2014
+@@ -901,7 +901,7 @@ class MakedirTests(unittest.TestCase):
+         os.makedirs(path, mode)
+         self.assertRaises(OSError, os.makedirs, path, mode)
+         self.assertRaises(OSError, os.makedirs, path, mode, exist_ok=False)
+-        self.assertRaises(OSError, os.makedirs, path, 0o776, exist_ok=True)
++        os.makedirs(path, 0o776, exist_ok=True)
+         os.makedirs(path, mode=mode, exist_ok=True)
+         os.umask(old_mask)
+ 
+@@ -938,9 +938,8 @@ class MakedirTests(unittest.TestCase):
+             os.makedirs(path, mode, exist_ok=True)
+             # remove the bit.
+             os.chmod(path, stat.S_IMODE(os.lstat(path).st_mode) & ~S_ISGID)
+-            with self.assertRaises(OSError):
+-                # Should fail when the bit is not already set when demanded.
+-                os.makedirs(path, mode | S_ISGID, exist_ok=True)
++            # May work even when the bit is not already set when demanded.
++            os.makedirs(path, mode | S_ISGID, exist_ok=True)
+         finally:
+             os.umask(old_mask)
+ 

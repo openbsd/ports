@@ -1,0 +1,15 @@
+$OpenBSD: patch-Modules_pyexpat_c,v 1.1.1.1 2014/04/13 07:10:12 rpointel Exp $
+--- Modules/pyexpat.c.orig	Mon Mar 17 03:31:31 2014
++++ Modules/pyexpat.c	Sat Apr  5 09:24:14 2014
+@@ -373,6 +373,11 @@ call_character_handler(xmlparseobject *self, const XML
+                                     noop_character_data_handler);
+         return -1;
+     }
++    if (!have_handler(self, CharacterData)) {
++        Py_DECREF(args);
++        flag_error(self);
++        return -1;
++    }
+     PyTuple_SET_ITEM(args, 0, temp);
+     /* temp is now a borrowed reference; consider it unused. */
+     self->in_callback = 1;
