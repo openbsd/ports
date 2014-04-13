@@ -1,14 +1,12 @@
-$OpenBSD: patch-src_modules_rlm_sql_drivers_rlm_sql_iodbc_configure,v 1.1 2008/01/21 22:21:24 rui Exp $
---- src/modules/rlm_sql/drivers/rlm_sql_iodbc/configure.orig	Sat Jan  5 17:14:36 2008
-+++ src/modules/rlm_sql/drivers/rlm_sql_iodbc/configure	Mon Jan 21 16:21:32 2008
-@@ -2639,8 +2639,8 @@ smart_lib=
+$OpenBSD: patch-src_modules_rlm_sql_drivers_rlm_sql_iodbc_configure,v 1.2 2014/04/13 20:16:03 ajacoutot Exp $
+--- src/modules/rlm_sql/drivers/rlm_sql_iodbc/configure.orig	Mon Sep 10 13:51:34 2012
++++ src/modules/rlm_sql/drivers/rlm_sql_iodbc/configure	Sun Apr 13 17:43:53 2014
+@@ -2639,7 +2639,7 @@ smart_lib=
  smart_lib_dir=
  
  if test "x$smart_try_dir" != "x"; then
 -  for try in $smart_try_dir; do
--    LIBS="-L$try -liodbc $old_LIBS"
-+  for try in $smart_try_dir /usr/local/lib; do
-+    LIBS="-L$try -liodbc -pthread $old_LIBS"
++  for try in $smart_try_dir ${LOCALBASE}/lib; do
+     LIBS="-L$try -liodbc $old_LIBS"
      cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
- _ACEOF

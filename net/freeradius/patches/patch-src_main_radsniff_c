@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_main_radsniff_c,v 1.2 2010/10/25 13:22:20 pea Exp $
---- src/main/radsniff.c.orig	Tue Sep 28 13:03:56 2010
-+++ src/main/radsniff.c	Mon Oct 11 11:22:27 2010
+$OpenBSD: patch-src_main_radsniff_c,v 1.3 2014/04/13 20:16:03 ajacoutot Exp $
+--- src/main/radsniff.c.orig	Mon Sep 10 13:51:34 2012
++++ src/main/radsniff.c	Sun Apr 13 17:43:53 2014
 @@ -40,7 +40,7 @@ static VALUE_PAIR *filter_vps = NULL;
  
  static int minimal = 0;
@@ -8,9 +8,9 @@ $OpenBSD: patch-src_main_radsniff_c,v 1.2 2010/10/25 13:22:20 pea Exp $
 -struct timeval start_pcap = {0, 0};
 +struct bpf_timeval start_pcap = {0, 0};
  static rbtree_t *filter_tree = NULL;
+ static rbtree_t *request_tree = NULL;
  static pcap_dumper_t *pcap_dumper = NULL;
- 
-@@ -163,8 +163,8 @@ static void sort(RADIUS_PACKET *packet)
+@@ -165,8 +165,8 @@ static void sort(RADIUS_PACKET *packet)
  }
  
  #define USEC 1000000

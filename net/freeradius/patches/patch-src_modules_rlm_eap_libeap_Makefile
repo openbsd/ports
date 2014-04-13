@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_modules_rlm_eap_libeap_Makefile,v 1.5 2008/12/29 19:17:36 rui Exp $
+$OpenBSD: patch-src_modules_rlm_eap_libeap_Makefile,v 1.6 2014/04/13 20:16:03 ajacoutot Exp $
 --- src/modules/rlm_eap/libeap/Makefile.orig	Fri Dec  5 16:37:56 2008
 +++ src/modules/rlm_eap/libeap/Makefile	Sun Dec 28 00:26:20 2008
 @@ -27,7 +27,7 @@ TARGET		= $(LIBPREFIX)freeradius-eap
@@ -10,9 +10,3 @@ $OpenBSD: patch-src_modules_rlm_eap_libeap_Makefile,v 1.5 2008/12/29 19:17:36 ru
  	$(LDFLAGS) $(LINK_MODE) -o $@ -rpath $(libdir) $^ \
  	$(LIBRADIUS) $(LIBS)
  	@for x in .libs/* $^; do \
-@@ -44,5 +44,3 @@ clean:
- install: all
- 	$(LIBTOOL) --mode=install $(INSTALL) -c $(TARGET).la \
- 		$(R)$(libdir)/$(TARGET).la
--	rm -f $(R)$(libdir)/$(TARGET)-$(RADIUSD_VERSION).la;
--	ln -s $(TARGET).la $(R)$(libdir)/$(TARGET)-$(RADIUSD_VERSION).la

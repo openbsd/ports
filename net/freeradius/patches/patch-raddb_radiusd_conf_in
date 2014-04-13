@@ -1,21 +1,12 @@
-$OpenBSD: patch-raddb_radiusd_conf_in,v 1.11 2010/05/17 16:39:25 sthen Exp $
---- raddb/radiusd.conf.in.orig	Wed Dec 30 15:44:35 2009
-+++ raddb/radiusd.conf.in	Mon May 10 14:10:42 2010
-@@ -54,7 +54,7 @@
- prefix = @prefix@
- exec_prefix = @exec_prefix@
- sysconfdir = @sysconfdir@
--localstatedir = @localstatedir@
-+localstatedir = /var 
- sbindir = @sbindir@
- logdir = @logdir@
- raddbdir = @raddbdir@
+$OpenBSD: patch-raddb_radiusd_conf_in,v 1.12 2014/04/13 20:16:03 ajacoutot Exp $
+--- raddb/radiusd.conf.in.orig	Mon Sep 10 13:51:34 2012
++++ raddb/radiusd.conf.in	Sun Apr 13 17:43:53 2014
 @@ -103,7 +103,7 @@ db_dir = ${raddbdir}
  #	make
  #	make install
  #
 -libdir = @libdir@
-+libdir = @prefix@/lib/freeradius 
++libdir = @libdir@/freeradius 
  
  #  pidfile: Where to place the PID of the RADIUS server.
  #
@@ -50,7 +41,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.11 2010/05/17 16:39:25 sthen Exp $
  
  
  # THREAD POOL CONFIGURATION
-@@ -675,12 +675,12 @@ modules {
+@@ -692,12 +692,12 @@ modules {
  	#  For all EAP related authentications.
  	#  Now in another file, because it is very large.
  	#
@@ -65,7 +56,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.11 2010/05/17 16:39:25 sthen Exp $
  
  	#
  	#  This module is an SQL enabled version of the counter module.
-@@ -692,12 +692,12 @@ modules {
+@@ -709,12 +709,12 @@ modules {
  	#  totally dependent on the SQL module to process Accounting
  	#  packets.
  	#
@@ -80,7 +71,7 @@ $OpenBSD: patch-raddb_radiusd_conf_in,v 1.11 2010/05/17 16:39:25 sthen Exp $
  }
  
  # Instantiation
-@@ -767,7 +767,7 @@ instantiate {
+@@ -784,7 +784,7 @@ instantiate {
  #	to multiple times.
  #
  ######################################################################
