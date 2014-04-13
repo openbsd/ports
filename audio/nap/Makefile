@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2013/03/10 22:55:04 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2014/04/13 01:01:38 naddy Exp $
 
 COMMENT=	gnu curses-based napster client
 
@@ -20,7 +20,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nap/} \
 	      	
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
-USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nap

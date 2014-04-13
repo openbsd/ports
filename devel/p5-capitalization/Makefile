@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2013/03/11 10:50:24 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2014/04/13 01:01:39 naddy Exp $
 
 COMMENT=	use familiar style on method naming
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	capitalization-0.03
 REVISION=	1
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes

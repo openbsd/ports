@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2013/09/25 09:02:08 giovanni Exp $$
+# $OpenBSD: Makefile,v 1.3 2014/04/13 01:01:38 naddy Exp $$
 
 COMMENT =	utility for quick MySQL dumping
 
@@ -21,7 +21,6 @@ BUILD_DEPENDS =	textproc/py-sphinx
 LIB_DEPENDS =	databases/mysql \
 		devel/glib2 \
 		devel/pcre
-USE_GROFF =	Yes
 
 NO_TEST =	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/03/11 11:42:45 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2014/04/13 01:01:39 naddy Exp $
 
 COMMENT=	perl module to perform XSLT transformations
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	XML-XSLT-0.48
 REVISION=	0
 CATEGORIES=	textproc
-USE_GROFF =	Yes
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 

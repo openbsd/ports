@@ -1,4 +1,4 @@
-#   $OpenBSD: Makefile,v 1.23 2013/03/11 11:35:53 espie Exp $
+#   $OpenBSD: Makefile,v 1.24 2014/04/13 01:01:39 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,6 @@ MODULES=	cpan
 DISTNAME=	Net-Pcap-0.16
 REVISION=	2
 CATEGORIES=	net
-USE_GROFF =	Yes
 
 PERMIT_PACKAGE_CDROM=	Yes
 

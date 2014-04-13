@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/05/17 09:12:26 kirby Exp $
+# $OpenBSD: Makefile,v 1.18 2014/04/13 01:01:39 naddy Exp $
 
 COMMENT=	X11 counterpart of curses-based misc/dialog
 
@@ -24,7 +24,6 @@ EXTRACT_SUFX=	.tar.bz2
 LIB_DEPENDS=	x11/gtk+2
 MODULES=	devel/gettext
 
-USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--with-gtk2
 

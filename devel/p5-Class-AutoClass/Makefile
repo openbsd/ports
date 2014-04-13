@@ -1,11 +1,10 @@
-#	$OpenBSD: Makefile,v 1.12 2013/03/11 10:50:13 espie Exp $
+#	$OpenBSD: Makefile,v 1.13 2014/04/13 01:01:38 naddy Exp $
 
 COMMENT=	get and set methods and simplify object initialization
 
 DISTNAME=	Class-AutoClass-1.54
 REVISION=	0
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 

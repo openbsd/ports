@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 10:50:24 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2014/04/13 01:01:39 naddy Exp $
 
 COMMENT=		YAML Test Shell
 
@@ -10,7 +10,6 @@ CATEGORIES=		devel
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		cpan
-USE_GROFF =		Yes
 
 RUN_DEPENDS=		devel/p5-YAML>=0.68
 

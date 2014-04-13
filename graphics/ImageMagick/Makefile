@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2014/02/13 08:33:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.133 2014/04/13 01:01:39 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -55,7 +55,6 @@ BUILD_DEPENDS =		${RUN_DEPENDS}
 
 ALL_TARGET=		all perl-build
 
-USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-quantum-depth=16 \

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2013/03/21 09:59:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2014/04/13 01:01:38 naddy Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	JSON serialising/deserialising, done correctly and fast
 
 MODULES =	cpan
-USE_GROFF =	Yes
 DISTNAME =	JSON-XS-2.33
 EPOCH =		1
 CATEGORIES =	converters

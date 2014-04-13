@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2013/11/27 18:22:42 landry Exp $
+# $OpenBSD: Makefile,v 1.24 2014/04/13 01:01:39 naddy Exp $
 
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
 .if (${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "amd64")
@@ -47,7 +47,6 @@ CONFIGURE_STYLE = autoconf gnu
 AUTOCONF_VERSION = 2.61
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}
 USE_GMAKE = Yes
-USE_GROFF =	Yes
 
 CPPFLAGS +=	-I${WRKSRC}/src/vigra_impex \
 		-I${LOCALBASE}/include \

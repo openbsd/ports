@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:35:53 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2014/04/13 01:01:39 naddy Exp $
 
 COMMENT=		module to interact with a Cisco router
 
@@ -6,7 +6,6 @@ MODULES=		cpan
 DISTNAME=		Net-Telnet-Cisco-1.10
 REVISION=		0
 CATEGORIES=		net
-USE_GROFF =		Yes
 
 HOMEPAGE=		http://nettelnetcisco.sourceforge.net/
 

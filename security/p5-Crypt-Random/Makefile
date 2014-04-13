@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/03/11 11:41:27 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2014/04/13 01:01:39 naddy Exp $
 
 COMMENT=	cryptographically secure random number generator
 
@@ -6,7 +6,6 @@ MODULES=	cpan
 DISTNAME=	Crypt-Random-1.25
 REVISION=	2
 CATEGORIES=	security
-USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

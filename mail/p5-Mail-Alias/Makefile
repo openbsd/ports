@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 11:23:52 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2014/04/13 01:01:39 naddy Exp $
 
 COMMENT=	manipulates e-mail alias files of various formats
 
@@ -9,6 +9,5 @@ CATEGORIES=	mail
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

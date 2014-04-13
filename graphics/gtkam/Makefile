@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2014/03/18 08:39:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2014/04/13 01:01:39 naddy Exp $
 
 COMMENT=	digital camera frontend
 
@@ -30,7 +30,6 @@ RUN_DEPENDS=	devel/desktop-file-utils
 MODULES=	devel/gettext \
 		textproc/intltool
 
-USE_GROFF =	Yes
 USE_GMAKE =	Yes
 
 MAKE_FLAGS =	INTLLIBS='$$(LTLIBINTL)'

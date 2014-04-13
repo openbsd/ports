@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2013/03/11 11:41:28 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2014/04/13 01:01:39 naddy Exp $
 
 COMMENT=	simple log monitoring program
 
@@ -21,7 +21,6 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 PERMIT_PACKAGE_CDROM=	Yes
 
 CONFIGURE_STYLE= perl
-USE_GROFF =	Yes
 PKG_ARCH=	*
 
 .include <bsd.port.mk>
