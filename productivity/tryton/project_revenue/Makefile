@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2013/11/17 08:45:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2014/04/13 08:11:14 ajacoutot Exp $
 
-REVISION =		1
+MODPY_EGG_VERSION=	3.0.1
+REVISION=		#empty
 
 TRYTOND_MODULE =	project_revenue
 
