@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2014/04/14 09:08:44 landry Exp $
+# $OpenBSD: Makefile,v 1.70 2014/04/14 19:50:09 matthieu Exp $
 
 SHARED_ONLY=		Yes
 
@@ -11,6 +11,7 @@ COMMENT-pdfviewer=	pdfviewer plugin
 COMMENT-gdata=		gdata plugin
 
 V=			3.9.3
+REVISION=		0
 DISTNAME=		claws-mail-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
@@ -55,7 +56,7 @@ WANTLIB += asn1 com_err graphite2 gssapi heimbase krb5 roken wind
 WANTLIB-main =  ${WANTLIB}
 WANTLIB-main += ICE SM X11-xcb assuan c dbus-1 dbus-glib-1 enchant
 WANTLIB-main += gmp gnutls gpg-error gpgme hogweed nettle p11-kit perl
-WANTLIB-main += startup-notification-1 stdc++ tasn1 util xcb-aux xml2
+WANTLIB-main += startup-notification-1 stdc++ tasn1 util xcb-util xml2
 WANTLIB-main += canberra canberra-gtk notify ltdl ogg vorbis vorbisfile
 
 WANTLIB-gdata = ${WANTLIB} 

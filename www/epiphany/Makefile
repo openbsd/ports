@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2014/04/02 09:36:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.116 2014/04/14 19:50:09 matthieu Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	3.12.0
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	www
 
@@ -30,7 +30,7 @@ WANTLIB += icui18n javascriptcoregtk-3.0 jpeg orc-0.4 EGL harfbuzz-icu
 WANTLIB += m notify p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs secret-1 soup-2.4
 WANTLIB += sqlite3 startup-notification-1 stdc++ webkit2gtk-3.0
-WANTLIB += webp wnck-3 xcb xcb-aux xcb-render xcb-shm
+WANTLIB += webp wnck-3 xcb xcb-util xcb-render xcb-shm
 WANTLIB += xml2 xslt z icudata icuuc
 
 BUILD_DEPENDS=	devel/iso-codes \
