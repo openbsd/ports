@@ -1,0 +1,15 @@
+$OpenBSD: patch-duplicity_globals_py,v 1.1 2014/04/14 15:14:29 jca Exp $
+Switch the default ssh backend from paramiko to pexpect.
+--- duplicity/globals.py.orig	Mon Apr 14 00:01:15 2014
++++ duplicity/globals.py	Mon Apr 14 00:02:16 2014
+@@ -213,8 +213,8 @@ sftp_command = None
+ # default to batch mode using public-key encryption
+ ssh_askpass = False
+ 
+-# default ssh backend is paramiko
+-ssh_backend = "paramiko"
++# default ssh backend is pexpect
++ssh_backend = "pexpect"
+ 
+ # user added ssh options
+ ssh_options = ""

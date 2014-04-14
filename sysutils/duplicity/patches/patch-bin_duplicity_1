@@ -1,0 +1,52 @@
+$OpenBSD: patch-bin_duplicity_1,v 1.1 2014/04/14 15:14:29 jca Exp $
+Document the ssh backend change from paramiko to pexpect.
+--- bin/duplicity.1.orig	Mon Apr 14 11:44:24 2014
++++ bin/duplicity.1	Mon Apr 14 15:16:56 2014
+@@ -104,7 +104,7 @@ There are two
+ for scp/sftp/ssh access (also see
+ .BR "A NOTE ON SSH BACKENDS" ).
+ .TP
+-.BR "ssh paramiko backend" " (enabled by default)"
++.B "ssh paramiko backend"
+ .B paramiko
+ (SSH2 for python)
+ - http://pypi.python.org/pypi/paramiko (downloads); http://github.com/paramiko/paramiko (project page)
+@@ -113,7 +113,7 @@ for scp/sftp/ssh access (also see
+ (Python Cryptography Toolkit)
+ - http://www.dlitz.net/software/pycrypto/
+ .TP
+-.B ssh pexpect backend
++.BR "ssh pexpect backend" " (default on OpenBSD)"
+ .B sftp/scp client binaries
+ OpenSSH - http://www.openssh.com/
+ .TP
+@@ -823,9 +823,9 @@ This password is also used for passphrase-protected ss
+ .TP
+ .BI "--ssh-backend " backend
+ Allows the explicit selection of a ssh backend. Defaults to
+-.BR paramiko .
++.BR "pexpect on OpenBSD" .
+ Alternatively you might choose
+-.BR pexpect .
++.BR paramiko .
+ .br
+ See also
+ .BR "A NOTE ON SSH BACKENDS" .
+@@ -1511,7 +1511,7 @@ backend allows to define
+ .BR --scp-command " and"
+ .BR --sftp-command .
+ .PP
+-.BR "SSH paramiko backend " "(selected by default)"
++.B "SSH paramiko backend"
+ is a complete reimplementation of ssh protocols natively in python. Advantages
+ are speed and maintainability. Minor disadvantage is that extra packages are
+ needed as listed in
+@@ -1524,7 +1524,7 @@ mode (
+ .I --use-scp
+ ) though scp access is used for put/get operations but listing is done via ssh remote shell.
+ .PP
+-.B SSH pexpect backend
++.BR "SSH pexpect backend" " (selected by default on OpenBSD)"
+ is the legacy ssh backend using the command line ssh binaries via pexpect.
+ Older versions used
+ .I scp
