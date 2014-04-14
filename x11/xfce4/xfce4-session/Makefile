@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.65 2013/06/19 21:43:49 landry Exp $
+# $OpenBSD: Makefile,v 1.66 2014/04/14 19:52:45 matthieu Exp $
 
 COMMENT=	Xfce4 session manager
 
 XFCE_PROJECT=	xfce4-session
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=	xfsm-4.6	1.0 # .0.0
 
@@ -32,7 +32,7 @@ WANTLIB += atk-1.0 c cairo dbus-1 dbus-glib-1 drm expat ffi fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs startup-notification-1 wnck-1 xcb xcb-aux
+WANTLIB += pthread-stubs startup-notification-1 wnck-1 xcb xcb-util
 WANTLIB += xcb-render xcb-shm stdc++ xfce4ui-1 xfce4util xfconf-0 z
 WANTLIB += harfbuzz
 

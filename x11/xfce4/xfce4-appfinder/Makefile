@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2013/05/31 19:16:59 landry Exp $
+# $OpenBSD: Makefile,v 1.41 2014/04/14 19:52:45 matthieu Exp $
 
 COMMENT=	Xfce4 application finder
 
 XFCE_PROJECT=	xfce4-appfinder
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,7 +25,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		ICE SM dbus-1 dbus-glib-1 gio-2.0 gthread-2.0 \
 		pcre pthread startup-notification-1 xfce4ui-1 \
 		pthread-stubs xcb X11-xcb ffi \
-		xcb-aux gthread-2.0 xcb-render xcb-shm \
+		xcb-util gthread-2.0 xcb-render xcb-shm \
 		xfconf-0 gdk-x11-2.0 GL Xxf86vm drm garcon-1 \
 		gdk_pixbuf-2.0 gtk-x11-2.0 stdc++ harfbuzz
 

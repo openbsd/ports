@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2013/11/26 11:59:32 fgsch Exp $
+# $OpenBSD: Makefile,v 1.27 2014/04/14 19:52:44 matthieu Exp $
 
 COMMENT =	OpenGL window and compositing manager
 
 V =		0.8.8
 DISTNAME =	compiz-${V}
+REVISION =	0
 
 SHARED_LIBS =	decoration	1.0
 
@@ -17,7 +18,7 @@ WANTLIB +=	GL GLU ICE SM X11 X11-xcb XRes Xau Xcomposite Xcursor \
 		gio-2.0 glapi glib-2.0 gmodule-2.0 gobject-2.0 graphite2 \
 		gthread-2.0 gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs \
-		rsvg-2 startup-notification-1 stdc++ wnck-1 xcb xcb-aux \
+		rsvg-2 startup-notification-1 stdc++ wnck-1 xcb xcb-util \
 		xcb-dri2 xcb-glx xcb-render xcb-shm xml2 xslt z
 
 MASTER_SITES =	http://releases.compiz.org/${V}/
