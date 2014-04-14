@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/04/01 13:21:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/04/14 09:13:33 ajacoutot Exp $
 bin/gnome-music
 lib/gnome-music/
 lib/gnome-music/girepository-1.0/
@@ -70,6 +70,8 @@ share/help/C/gnome-music/playlist-create-artists.page
 share/help/C/gnome-music/playlist-create-songs.page
 share/help/C/gnome-music/playlist-delete.page
 share/help/C/gnome-music/playlist-remove-songs.page
+share/help/C/gnome-music/playlist-repeat.page
+share/help/C/gnome-music/playlist-shuffle.page
 share/help/C/gnome-music/search.page
 share/help/cs/
 share/help/cs/gnome-music/
@@ -84,7 +86,25 @@ share/help/cs/gnome-music/playlist-create-artists.page
 share/help/cs/gnome-music/playlist-create-songs.page
 share/help/cs/gnome-music/playlist-delete.page
 share/help/cs/gnome-music/playlist-remove-songs.page
+share/help/cs/gnome-music/playlist-repeat.page
+share/help/cs/gnome-music/playlist-shuffle.page
 share/help/cs/gnome-music/search.page
+share/help/el/
+share/help/el/gnome-music/
+share/help/el/gnome-music/figures/
+share/help/el/gnome-music/figures/gnome-music${MODPY_BIN_SUFFIX}.12.png
+share/help/el/gnome-music/index.page
+share/help/el/gnome-music/introduction.page
+share/help/el/gnome-music/legal.xml
+share/help/el/gnome-music/play-music.page
+share/help/el/gnome-music/playlist-create-albums.page
+share/help/el/gnome-music/playlist-create-artists.page
+share/help/el/gnome-music/playlist-create-songs.page
+share/help/el/gnome-music/playlist-delete.page
+share/help/el/gnome-music/playlist-remove-songs.page
+share/help/el/gnome-music/playlist-repeat.page
+share/help/el/gnome-music/playlist-shuffle.page
+share/help/el/gnome-music/search.page
 share/help/es/
 share/help/es/gnome-music/
 share/help/es/gnome-music/figures/
@@ -98,6 +118,8 @@ share/help/es/gnome-music/playlist-create-artists.page
 share/help/es/gnome-music/playlist-create-songs.page
 share/help/es/gnome-music/playlist-delete.page
 share/help/es/gnome-music/playlist-remove-songs.page
+share/help/es/gnome-music/playlist-repeat.page
+share/help/es/gnome-music/playlist-shuffle.page
 share/help/es/gnome-music/search.page
 share/help/fr/
 share/help/fr/gnome-music/
@@ -112,6 +134,8 @@ share/help/fr/gnome-music/playlist-create-artists.page
 share/help/fr/gnome-music/playlist-create-songs.page
 share/help/fr/gnome-music/playlist-delete.page
 share/help/fr/gnome-music/playlist-remove-songs.page
+share/help/fr/gnome-music/playlist-repeat.page
+share/help/fr/gnome-music/playlist-shuffle.page
 share/help/fr/gnome-music/search.page
 share/help/hu/
 share/help/hu/gnome-music/
@@ -126,6 +150,8 @@ share/help/hu/gnome-music/playlist-create-artists.page
 share/help/hu/gnome-music/playlist-create-songs.page
 share/help/hu/gnome-music/playlist-delete.page
 share/help/hu/gnome-music/playlist-remove-songs.page
+share/help/hu/gnome-music/playlist-repeat.page
+share/help/hu/gnome-music/playlist-shuffle.page
 share/help/hu/gnome-music/search.page
 share/help/pt_BR/
 share/help/pt_BR/gnome-music/
@@ -140,6 +166,8 @@ share/help/pt_BR/gnome-music/playlist-create-artists.page
 share/help/pt_BR/gnome-music/playlist-create-songs.page
 share/help/pt_BR/gnome-music/playlist-delete.page
 share/help/pt_BR/gnome-music/playlist-remove-songs.page
+share/help/pt_BR/gnome-music/playlist-repeat.page
+share/help/pt_BR/gnome-music/playlist-shuffle.page
 share/help/pt_BR/gnome-music/search.page
 share/icons/hicolor/16x16/apps/gnome-music.png
 share/icons/hicolor/22x22/apps/gnome-music.png
@@ -170,6 +198,7 @@ share/locale/he/LC_MESSAGES/gnome-music.mo
 share/locale/hu/LC_MESSAGES/gnome-music.mo
 share/locale/id/LC_MESSAGES/gnome-music.mo
 share/locale/it/LC_MESSAGES/gnome-music.mo
+share/locale/ja/LC_MESSAGES/gnome-music.mo
 share/locale/kn/LC_MESSAGES/gnome-music.mo
 share/locale/ko/LC_MESSAGES/gnome-music.mo
 share/locale/lt/LC_MESSAGES/gnome-music.mo
