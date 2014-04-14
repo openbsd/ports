@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2014/04/14 18:43:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.112 2014/04/14 18:52:22 ajacoutot Exp $
 
 # DPB: not parallel-safe
 
@@ -6,7 +6,7 @@ COMMENT=	message bus system
 
 DISTNAME=	dbus-1.8.0
 EPOCH=		0
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  dbus-1               11.0     # 11.3
 
@@ -28,12 +28,12 @@ USE_GMAKE=	Yes
 
 BUILD_DEPENDS=	textproc/xmlto
 
-AUTOCONF_VERSION=2.69
-CONFIGURE_STYLE=autoconf
+CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-dbus-user=_dbus \
 		--disable-doxygen-docs \
+		--disable-modular-tests \
 		--without-dbus-glib
 
 # gives no chance of picking up devel/libexecinfo
@@ -49,6 +49,7 @@ CONFIGURE_ENV+=	ac_cv_header_execinfo_h=no \
 #BUILD_DEPENDS +=	devel/py-gobject x11/dbus-glib
 #CONFIGURE_ARGS+=	--enable-tests
 #CONFIGURE_ARGS+=	--enable-verbose-mode
+#CONFIGURE_ARGS+=	--enable-modular-tests
 #CONFIGURE_ARGS+=	--with-dbus-glib
 
 FAKE_FLAGS=	sysconfdir=${TRUEPREFIX}/share/examples/dbus
