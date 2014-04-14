@@ -1,0 +1,18 @@
+$OpenBSD: patch-modules_ssl_ssl_engine_init_c,v 1.1 2014/04/14 19:23:31 sthen Exp $
+
+OpenBSD's libcrypto no longer supports ENGINE_CTRL_CHIL_SET_FORKCHECK
+
+--- modules/ssl/ssl_engine_init.c.orig	Mon Apr 14 13:20:57 2014
++++ modules/ssl/ssl_engine_init.c	Mon Apr 14 13:21:22 2014
+@@ -406,9 +406,11 @@ void ssl_init_Engine(server_rec *s, apr_pool_t *p)
+             ssl_die();
+         }
+ 
++#ifdef ENGINE_CTRL_CHIL_SET_FORKCHECK
+         if (strEQ(mc->szCryptoDevice, "chil")) {
+             ENGINE_ctrl(e, ENGINE_CTRL_CHIL_SET_FORKCHECK, 1, 0, 0);
+         }
++#endif
+ 
+         if (!ENGINE_set_default(e, ENGINE_METHOD_ALL)) {
+             ap_log_error(APLOG_MARK, APLOG_ERR, 0, s,
