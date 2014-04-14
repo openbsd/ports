@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.10 2014/03/27 09:58:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/04/14 15:12:06 ajacoutot Exp $
 @conflict gnome-utils-*
 @bin bin/baobab
 @man man/man1/baobab.1
 share/appdata/
 share/appdata/baobab.appdata.xml
-share/applications/baobab.desktop
+share/applications/org.gnome.baobab.desktop
+share/dbus-1/
+share/dbus-1/services/
+share/dbus-1/services/org.gnome.baobab.service
 share/glib-2.0/schemas/org.gnome.baobab.gschema.xml
 share/help/
 share/help/C/
