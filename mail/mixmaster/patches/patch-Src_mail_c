@@ -1,7 +1,7 @@
-$OpenBSD: patch-Src_mail_c,v 1.1 2003/11/23 18:52:40 sturm Exp $
---- Src/mail.c.orig	2003-11-23 19:32:51.000000000 +0100
-+++ Src/mail.c	2003-11-23 19:34:17.000000000 +0100
-@@ -152,7 +152,7 @@ int sendmail(BUFFER *message, char *from
+$OpenBSD: patch-Src_mail_c,v 1.2 2014/04/14 20:53:58 naddy Exp $
+--- Src/mail.c.orig	Sun Nov  9 12:12:04 2003
++++ Src/mail.c	Mon Apr 14 21:25:49 2014
+@@ -152,7 +152,7 @@ int sendmail(BUFFER *message, char *from, BUFFER *addr
  
      /* Step 2:  Stat the file.  Wait for ENOENT as a response. */
      for (count = 0;; count++) {

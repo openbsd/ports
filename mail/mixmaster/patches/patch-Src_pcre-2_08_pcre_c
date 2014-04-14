@@ -1,7 +1,7 @@
-$OpenBSD: patch-Src_pcre-2_08_pcre_c,v 1.1 2005/08/27 15:57:31 naddy Exp $
---- Src/pcre-2.08/pcre.c.orig	Fri Aug 26 20:12:43 2005
-+++ Src/pcre-2.08/pcre.c	Fri Aug 26 20:16:47 2005
-@@ -435,14 +435,30 @@ read_repeat_counts(const uschar *p, int 
+$OpenBSD: patch-Src_pcre-2_08_pcre_c,v 1.2 2014/04/14 20:53:58 naddy Exp $
+--- Src/pcre-2.08/pcre.c.orig	Sun Nov  9 12:11:50 2003
++++ Src/pcre-2.08/pcre.c	Mon Apr 14 21:25:49 2014
+@@ -435,14 +435,30 @@ read_repeat_counts(const uschar *p, int *minp, int *ma
  int min = 0;
  int max = -1;
  

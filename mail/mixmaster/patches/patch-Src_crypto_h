@@ -1,0 +1,12 @@
+$OpenBSD: patch-Src_crypto_h,v 1.1 2014/04/14 20:53:58 naddy Exp $
+--- Src/crypto.h.orig	Sun Nov  9 12:12:08 2003
++++ Src/crypto.h	Mon Apr 14 21:31:57 2014
+@@ -15,7 +15,7 @@
+ 
+ #ifdef USE_OPENSSL
+ #include <openssl/opensslv.h>
+-#if (OPENSSL_VERSION_NUMBER < 0x0903100)
++#if (OPENSSL_VERSION_NUMBER < 0x0907100)
+ #error "This version of OpenSSL is not supported. Please get a more current version from http://www.openssl.org"
+ #endif /* version check */
+ #include <openssl/des.h>
