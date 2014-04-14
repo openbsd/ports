@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.28 2013/09/25 08:03:17 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.29 2014/04/14 08:53:35 landry Exp $
 @conflict claws-mail-attremover-*
 @conflict claws-mail-notification-*
 @conflict claws-mail-rssyl-*
@@ -92,6 +92,7 @@ include/claws-mail/expldifdlg.h
 include/claws-mail/export.h
 include/claws-mail/exporthtml.h
 include/claws-mail/exportldif.h
+include/claws-mail/file_checker.h
 include/claws-mail/filtering.h
 include/claws-mail/folder.h
 include/claws-mail/folder_item_prefs.h
@@ -190,6 +191,7 @@ include/claws-mail/plugins/claws-mail/gtkhotkey/tomboykeybinder.h
 include/claws-mail/plugins/claws-mail/ical.h
 include/claws-mail/plugins/pgpcore/
 include/claws-mail/plugins/pgpcore/passphrase.h
+include/claws-mail/plugins/pgpcore/pgp_utils.h
 include/claws-mail/plugins/pgpcore/pgp_viewer.h
 include/claws-mail/plugins/pgpcore/prefs_gpg.h
 include/claws-mail/plugins/pgpcore/select-keys.h
