@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 10:50:18 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/04/14 13:51:12 benoit Exp $
 
 COMMENT=	non-blocking I/O as lambda calculus
 
-DISTNAME=	IO-Lambda-1.20
-REVISION=	0
+DISTNAME =	IO-Lambda-1.23
 CATEGORIES=	devel
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
-
-USE_GROFF=	Yes
 
 MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIST=	eg
