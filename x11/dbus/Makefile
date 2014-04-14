@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2014/01/24 10:43:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.111 2014/04/14 18:43:24 ajacoutot Exp $
 
 # DPB: not parallel-safe
 
@@ -6,6 +6,7 @@ COMMENT=	message bus system
 
 DISTNAME=	dbus-1.8.0
 EPOCH=		0
+REVISION=	0
 
 SHARED_LIBS +=  dbus-1               11.0     # 11.3
 
@@ -19,7 +20,7 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 c expat kvm pthread xcb
+WANTLIB += ICE SM X11 c expat pthread xcb
 
 MASTER_SITES=	${HOMEPAGE}releases/dbus/
 
@@ -43,7 +44,6 @@ CONFIGURE_ENV+=	ac_cv_header_execinfo_h=no \
 # * changes the final dbus binaries
 # * requires py-gobject and dbus-python (dependency loop)
 # * requires the python MODULE
-#CFLAGS +=		-lkvm
 #MODULES +=		lang/python
 #TEST_DEPENDS +=	devel/py-gobject x11/dbus-glib
 #BUILD_DEPENDS +=	devel/py-gobject x11/dbus-glib

@@ -1,39 +1,35 @@
-$OpenBSD: patch-dbus_dbus-sysdeps-util-unix_c,v 1.10 2014/01/24 10:43:16 ajacoutot Exp $
+$OpenBSD: patch-dbus_dbus-sysdeps-util-unix_c,v 1.11 2014/04/14 18:43:24 ajacoutot Exp $
 
 XXX push upstream
 
 --- dbus/dbus-sysdeps-util-unix.c.orig	Fri Jan 17 17:00:13 2014
-+++ dbus/dbus-sysdeps-util-unix.c	Wed Jan 22 12:00:04 2014
-@@ -60,6 +60,13 @@
++++ dbus/dbus-sysdeps-util-unix.c	Mon Apr 14 19:05:17 2014
+@@ -60,6 +60,10 @@
  
  #include "sd-daemon.h"
  
 +#ifdef __OpenBSD__
-+#include <sys/param.h>
-+#include <sys/proc.h>
 +#include <sys/sysctl.h>
-+#include <kvm.h>
 +#endif
 +
  #ifndef O_BINARY
  #define O_BINARY 0
  #endif
-@@ -1121,7 +1128,14 @@ _dbus_command_for_pid (unsigned long  pid,
+@@ -1121,7 +1125,13 @@ _dbus_command_for_pid (unsigned long  pid,
    /* This is all Linux-specific for now */
    DBusString path;
    DBusString cmdline;
 +#ifndef __OpenBSD__
    int fd;
 +#else
-+  int nproc;
-+  struct kinfo_proc *kp;
-+  kvm_t *kd;
-+  char **argv;
++  char **argv, **args;
++  int mib[4];
++  size_t len;
 +#endif
    
    if (!_dbus_string_init (&path)) 
      {
-@@ -1136,6 +1150,7 @@ _dbus_command_for_pid (unsigned long  pid,
+@@ -1136,6 +1146,7 @@ _dbus_command_for_pid (unsigned long  pid,
        return FALSE;
      }
    
@@ -41,37 +37,56 @@ XXX push upstream
    if (!_dbus_string_append_printf (&path, "/proc/%ld/cmdline", pid))
      goto oom;
    
-@@ -1163,6 +1178,24 @@ _dbus_command_for_pid (unsigned long  pid,
+@@ -1163,6 +1174,34 @@ _dbus_command_for_pid (unsigned long  pid,
    
    if (!_dbus_close (fd, error))
      goto fail;
-+#else
-+  if ((kd = kvm_openfiles(NULL, NULL, NULL, KVM_NO_FILES, NULL)) == NULL)
++#else /* OpenBSD */
++  args = NULL;
++  len = max_len;
++  mib[0] = CTL_KERN;
++  mib[1] = KERN_PROC_ARGS;
++  mib[2] = pid;
++  mib[3] = KERN_PROC_ARGV;
++
++  if (sysctl (mib, 4, NULL, &len, NULL, 0) == -1)
 +    goto fail;
 +
-+  if ((kp = kvm_getprocs(kd, KERN_PROC_PID, pid, sizeof(*kp), &nproc)) == NULL)
++  args = malloc (len + 1);
++  if (args == NULL)
 +    goto fail;
 +
-+  if ((kp->p_flag & P_SYSTEM) != 0)
++  if (sysctl (mib, 4, args, &len, NULL, 0) == -1)
 +    goto fail;
 +
-+  if ((argv = kvm_getargv(kd, kp, 0)) == NULL)
-+    goto fail;
-+
-+  if (!_dbus_string_append_printf (&cmdline, *argv))
-+    goto fail;
-+  else
-+    kvm_close(kd);
++  for (argv = args; *argv != NULL; argv++) {
++    if (argv != args)
++      {
++        if (!_dbus_string_append_printf (&cmdline, " "))
++          goto fail;
++      }
++    if (!_dbus_string_append_printf (&cmdline, "%s", *argv))
++      goto fail;
++  }
 +#endif
    
    string_squash_nonprintable (&cmdline);  
  
-@@ -1177,6 +1210,9 @@ oom:
+@@ -1171,12 +1210,18 @@ _dbus_command_for_pid (unsigned long  pid,
+ 
+   _dbus_string_free (&cmdline);  
+   _dbus_string_free (&path);
++#ifdef __OpenBSD__
++  free (args);
++#endif
+   return TRUE;
+ oom:
+   _DBUS_SET_OOM (error);
  fail:
    _dbus_string_free (&cmdline);
    _dbus_string_free (&path);
 +#ifdef __OpenBSD__
-+  kvm_close(kd);
++  free (args);
 +#endif
    return FALSE;
  }

@@ -1,18 +1,6 @@
-$OpenBSD: patch-bus_Makefile_in,v 1.21 2014/01/24 10:43:16 ajacoutot Exp $
-
-XXX -lkvm push upstream (cf. patch-dbus_dbus-sysdeps-util-unix_c)
-
+$OpenBSD: patch-bus_Makefile_in,v 1.22 2014/04/14 18:43:24 ajacoutot Exp $
 --- bus/Makefile.in.orig	Mon Jan 20 15:10:29 2014
 +++ bus/Makefile.in	Fri Jan 24 11:34:40 2014
-@@ -400,7 +400,7 @@ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
- LAUNCHCTL = @LAUNCHCTL@
- LAUNCHD_AGENT_DIR = @LAUNCHD_AGENT_DIR@
- LD = @LD@
--LDFLAGS = @LDFLAGS@
-+LDFLAGS = @LDFLAGS@ -lkvm
- LIBDBUS_LIBS = @LIBDBUS_LIBS@
- LIBOBJS = @LIBOBJS@
- LIBS = @LIBS@
 @@ -1526,13 +1526,6 @@ install-data-hook:
  @HAVE_SYSTEMD_TRUE@	ln -fs ../dbus.service $(DESTDIR)$(systemdsystemunitdir)/multi-user.target.wants/dbus.service
  
