@@ -1,0 +1,22 @@
+$OpenBSD: patch-xwindow_c,v 1.6 2014/04/15 14:56:45 dcoppa Exp $
+
+commit c9ff826fbef2b9d4df84c1ef5ec5eba33661abee
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Mon Apr 14 10:04:14 2014 +0200
+
+xwindow_shape_pixmap: Correctly handle invalid geometry
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+--- xwindow.c.orig	Tue Apr 15 16:30:41 2014
++++ xwindow.c	Tue Apr 15 16:32:02 2014
+@@ -330,6 +330,9 @@ xwindow_shape_pixmap(int width, int height, cairo_surf
+     cairo_surface_t *dest;
+     cairo_t *cr;
+ 
++    if (width <= 0 || height <= 0)
++        return XCB_NONE;
++
+     xcb_create_pixmap(globalconf.connection, 1, pixmap, globalconf.screen->root, width, height);
+     dest = cairo_xcb_surface_create_for_bitmap(globalconf.connection, globalconf.screen, pixmap, width, height);
+ 

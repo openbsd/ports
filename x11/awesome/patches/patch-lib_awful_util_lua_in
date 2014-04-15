@@ -1,7 +1,16 @@
-$OpenBSD: patch-lib_awful_util_lua_in,v 1.7 2014/04/15 11:16:04 dcoppa Exp $
+$OpenBSD: patch-lib_awful_util_lua_in,v 1.8 2014/04/15 14:56:45 dcoppa Exp $
+
+commit b4b6e6c1fcc94814bed6587ba3e43be6baace3a5
+Author: Gino! <grey@greygrease.nowhere.lan>
+Date:   Fri Apr 11 17:09:10 2014 -0400
+
+Fix Icon Finding in awful.util
+
+This should also fix naughty failures to display the correct icons
+
 --- lib/awful/util.lua.in.orig	Fri Apr 11 11:07:10 2014
-+++ lib/awful/util.lua.in	Tue Apr 15 12:54:46 2014
-@@ -180,12 +180,12 @@ end
++++ lib/awful/util.lua.in	Tue Apr 15 16:28:51 2014
+@@ -180,25 +180,28 @@ end
  -- It searches for the icon path under the directories given w/the right ext
  -- @param iconname The name of the icon to search for.
  -- @param exts Table of image extensions allowed, otherwise { 'png', gif' }
@@ -12,7 +21,31 @@ $OpenBSD: patch-lib_awful_util_lua_in,v 1.7 2014/04/15 11:16:04 dcoppa Exp $
  function util.geticonpath(iconname, exts, dirs, size)
      exts = exts or { 'png', 'gif' }
 -    dirs = dirs or { '/usr/share/pixmaps/' }
-+    dirs = dirs or { '${LOCALBASE}/share/pixmaps/' }
++    dirs = dirs or { '${LOCALBASE}/share/pixmaps/', '${LOCALBASE}/share/icons/hicolor/' }
++    icontypes = { 'apps', 'actions',  'categories',  'emblems',
++    'mimetypes',  'status', 'devices', 'extras', 'places', 'stock' }
      for _, d in pairs(dirs) do
++        local icon
          for _, e in pairs(exts) do
-             local icon
+-            local icon
+-            if size then
+-                icon = string.format("%s%ux%u/%s.%s",
+-                       d, size, size, iconname, e)
+-                if util.file_readable(icon) then
+-                    return icon
+-                end
+-            end
+             icon = d .. iconname .. '.' .. e
+             if util.file_readable(icon) then
+                 return icon
++            end
++            if size then
++                for _, t in pairs(icontypes) do
++                    icon = string.format("%s%ux%u/%s/%s.%s", d, size, size, t, iconname, e)
++                    if util.file_readable(icon) then
++                        return icon
++                    end
++                end
+             end
+         end
+     end
