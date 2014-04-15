@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.74 2014/01/29 08:42:48 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.75 2014/04/15 10:32:36 dcoppa Exp $
 
 COMMENT=		highly configurable framework window manager
 
 DISTNAME=		awesome-3.5.2
-REVISION=		3
+REVISION=		4
 EXTRACT_SUFX=		.tar.xz
 CATEGORIES=		x11
 
@@ -14,13 +14,13 @@ MAINTAINER=		David Coppa <dcoppa@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		X11 X11-xcb Xcursor c cairo dbus-1 \
-			execinfo gdk_pixbuf-2.0 glib-2.0 \
-			gobject-2.0 ${MODLUA_WANTLIB} m pthread \
-			startup-notification-1 xcb xcb-atom \
-			xcb-aux xcb-event xcb-icccm xcb-keysyms \
-			xcb-property xcb-randr xcb-render \
-			xcb-shape xcb-xinerama xcb-xtest xdg-basedir
+WANTLIB=		X11 c cairo dbus-1 execinfo \
+			gdk_pixbuf-2.0 glib-2.0 gobject-2.0 \
+			${MODLUA_WANTLIB} m pthread \
+			startup-notification-1 xcb xcb-cursor \
+			xcb-icccm xcb-keysyms xcb-randr \
+			xcb-render xcb-shape xcb-util \
+			xcb-xinerama xcb-xtest xdg-basedir
 
 MASTER_SITES=		${HOMEPAGE}download/
 

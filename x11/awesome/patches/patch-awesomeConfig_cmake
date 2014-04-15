@@ -1,6 +1,6 @@
-$OpenBSD: patch-awesomeConfig_cmake,v 1.12 2013/10/15 09:28:40 dcoppa Exp $
+$OpenBSD: patch-awesomeConfig_cmake,v 1.13 2014/04/15 10:32:36 dcoppa Exp $
 --- awesomeConfig.cmake.orig	Sat Oct 12 18:48:49 2013
-+++ awesomeConfig.cmake	Tue Oct 15 10:23:15 2013
++++ awesomeConfig.cmake	Tue Apr 15 11:42:58 2014
 @@ -16,12 +16,11 @@ option(COMPRESS_MANPAGES "compress manpages" ON)
  option(GENERATE_DOC "generate API documentation" ON)
  
@@ -42,27 +42,7 @@ $OpenBSD: patch-awesomeConfig_cmake,v 1.12 2013/10/15 09:28:40 dcoppa Exp $
  # }}}
  
  # {{{ Check if documentation can be build
-@@ -136,14 +131,16 @@ pkg_check_modules(AWESOME_REQUIRED REQUIRED
-     gdk-pixbuf-2.0
-     cairo
-     x11
--    xcb-cursor
-+    x11-xcb
-+    xcursor
-     xcb-randr
-     xcb-xtest
-     xcb-xinerama
-     xcb-shape
--    xcb-util>=0.3.8
-+    xcb-aux>=0.3.6
-+    xcb-atom>=0.3.6
-     xcb-keysyms>=0.3.4
--    xcb-icccm>=0.3.8
-+    xcb-icccm>=0.3.6
-     cairo-xcb
-     libstartup-notification-1.0>=0.10
-     xproto>=7.0.15
-@@ -189,7 +186,7 @@ else()
+@@ -189,7 +184,7 @@ else()
  endif()
  
  # Error check
@@ -71,7 +51,7 @@ $OpenBSD: patch-awesomeConfig_cmake,v 1.12 2013/10/15 09:28:40 dcoppa Exp $
      message(FATAL_ERROR "lua library not found")
  endif()
  
-@@ -257,7 +254,7 @@ endif()
+@@ -257,7 +252,7 @@ endif()
  if(DEFINED AWESOME_MAN_PATH)
     set(AWESOME_MAN_PATH ${AWESOME_MAN_PATH} CACHE PATH "awesome manpage directory")
  else()
