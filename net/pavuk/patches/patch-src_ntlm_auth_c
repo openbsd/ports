@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_ntlm_auth_c,v 1.1 2014/04/15 11:25:42 naddy Exp $
+--- src/ntlm_auth.c.orig	Thu Oct 27 16:06:37 2005
++++ src/ntlm_auth.c	Mon Apr 14 23:01:42 2014
+@@ -249,14 +249,17 @@ static void ntlm_des_enc(unsigned char *key, unsigned 
+ static void ntlm_des_enc(unsigned char *key, unsigned char *plaintext,
+   unsigned char *result)
+ {
+-  des_key_schedule ks;
+ #ifdef OPENSSL
+-  const_des_cblock _plaintext;
++  DES_key_schedule ks;
++  const_DES_cblock _plaintext;
++  DES_cblock _result;
++  DES_cblock key64;
+ #else
++  des_key_schedule ks;
+   const des_cblock _plaintext;
+-#endif
+   des_cblock _result;
+   des_cblock key64;
++#endif
+   unsigned char skey[8];
+ 
+   memcpy(&_plaintext, plaintext, sizeof(_plaintext));
+@@ -265,10 +268,10 @@ static void ntlm_des_enc(unsigned char *key, unsigned 
+   memcpy(key64, skey, 8);
+ 
+ #ifdef OPENSSL
+-  des_set_odd_parity(&key64);
+-  des_set_key(&key64, ks);
++  DES_set_odd_parity(&key64);
++  DES_set_key(&key64, &ks);
+ 
+-  des_ecb_encrypt(&_plaintext, &_result, ks, DES_ENCRYPT);
++  DES_ecb_encrypt(&_plaintext, &_result, &ks, DES_ENCRYPT);
+ #else
+   des_set_odd_parity(key64);
+   des_set_key(key64, ks);
