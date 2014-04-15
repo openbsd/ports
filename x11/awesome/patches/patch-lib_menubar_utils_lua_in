@@ -1,34 +1,6 @@
-$OpenBSD: patch-lib_menubar_utils_lua_in,v 1.2 2014/01/14 13:33:37 dcoppa Exp $
-
-commit aa51379be0a9317a5549034bc9be149f41ad9201
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun Dec 29 15:10:31 2013 +0100
-
-menubar: Fix API docs
-
-ldoc wants documentation comments to start with "---", not just "--".
-
-Signed-off-by: Uli Schlachter <psychon@znc.in>
-
+$OpenBSD: patch-lib_menubar_utils_lua_in,v 1.3 2014/04/15 11:16:04 dcoppa Exp $
 --- lib/menubar/utils.lua.in.orig	Sat Oct 12 18:48:49 2013
 +++ lib/menubar/utils.lua.in	Tue Jan 14 13:26:39 2014
-@@ -23,14 +23,14 @@ local utils = {}
- 
- -- Options section
- 
---- Terminal which applications that need terminal would open in.
-+--- Terminal which applications that need terminal would open in.
- utils.terminal = 'xterm'
- 
- -- The default icon for applications that don't provide any icon in
- -- their .desktop files.
- local default_icon = nil
- 
---- Name of the WM for the OnlyShownIn entry in the .desktop file.
-+--- Name of the WM for the OnlyShownIn entry in the .desktop file.
- utils.wm_name = "awesome"
- 
- -- Private section
 @@ -81,10 +81,10 @@ function utils.lookup_icon(icon_file)
          local icon_theme_paths = {}
          local icon_theme = theme.icon_theme

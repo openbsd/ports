@@ -1,7 +1,4 @@
-$OpenBSD: patch-lib_naughty_lua_in,v 1.10 2014/01/14 13:33:37 dcoppa Exp $
-
-Unbreak build with LDoc>=1.4.0
-
+$OpenBSD: patch-lib_naughty_lua_in,v 1.11 2014/04/15 11:16:04 dcoppa Exp $
 --- lib/naughty.lua.in.orig	Sat Oct 12 18:48:49 2013
 +++ lib/naughty.lua.in	Tue Jan 14 13:10:28 2014
 @@ -38,8 +38,8 @@ naughty.config.padding = 4
@@ -15,11 +12,3 @@ Unbreak build with LDoc>=1.4.0
  --- List of formats that will be checked by getIcon()
  --   Default: { "png", "gif" }
  naughty.config.icon_formats = { "png", "gif" }
-@@ -61,7 +61,6 @@ naughty.config.notify_callback = nil
- -- @field low The preset for notifications with low urgency level
- -- @field normal The default preset for every notification without a preset that will also be used for normal urgency level
- -- @field critical The preset for notifications with a critical urgency level
---- @class table
- naughty.config.presets = {
-     normal = {},
-     low = {

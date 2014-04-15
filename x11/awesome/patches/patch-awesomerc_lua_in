@@ -1,13 +1,4 @@
-$OpenBSD: patch-awesomerc_lua_in,v 1.6 2014/01/14 13:33:37 dcoppa Exp $
-
-commit 843a36aa6e7fdb5e1e76fbb9879328c92adc77f7
-Author: Rocco Aliberti <raliberti84@gmail.com>
-Date:   Fri Jan 3 16:06:13 2014 +0100
-
-awesomerc: Fix set menu clients width (FS#1200)
-
-Signed-off-by: Uli Schlachter <psychon@znc.in>
-
+$OpenBSD: patch-awesomerc_lua_in,v 1.7 2014/04/15 11:16:04 dcoppa Exp $
 --- awesomerc.lua.in.orig	Sat Oct 12 18:48:49 2013
 +++ awesomerc.lua.in	Tue Jan 14 10:41:46 2014
 @@ -42,7 +42,7 @@ beautiful.init("@AWESOME_THEMES_PATH@/default/theme.lu
@@ -19,14 +10,3 @@ Signed-off-by: Uli Schlachter <psychon@znc.in>
  editor_cmd = terminal .. " -e " .. editor
  
  -- Default modkey.
-@@ -148,7 +148,9 @@ mytasklist.buttons = awful.util.table.join(
-                                                   instance:hide()
-                                                   instance = nil
-                                               else
--                                                  instance = awful.menu.clients({ width=250 })
-+                                                  instance = awful.menu.clients({
-+                                                      theme = { width = 250 }
-+                                                  })
-                                               end
-                                           end),
-                      awful.button({ }, 4, function ()

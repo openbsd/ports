@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_awful_util_lua_in,v 1.6 2013/05/22 15:05:50 dcoppa Exp $
---- lib/awful/util.lua.in.orig	Mon May 20 13:49:04 2013
-+++ lib/awful/util.lua.in	Mon May 20 13:49:32 2013
-@@ -181,12 +181,12 @@ end
+$OpenBSD: patch-lib_awful_util_lua_in,v 1.7 2014/04/15 11:16:04 dcoppa Exp $
+--- lib/awful/util.lua.in.orig	Fri Apr 11 11:07:10 2014
++++ lib/awful/util.lua.in	Tue Apr 15 12:54:46 2014
+@@ -180,12 +180,12 @@ end
  -- It searches for the icon path under the directories given w/the right ext
  -- @param iconname The name of the icon to search for.
  -- @param exts Table of image extensions allowed, otherwise { 'png', gif' }

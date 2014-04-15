@@ -1,29 +1,12 @@
-$OpenBSD: patch-lib_menubar_menu_gen_lua_in,v 1.2 2014/01/14 13:33:37 dcoppa Exp $
-
-commit aa51379be0a9317a5549034bc9be149f41ad9201
-Author: Uli Schlachter <psychon@znc.in>
-Date:   Sun Dec 29 15:10:31 2013 +0100
-
-menubar: Fix API docs
-
-ldoc wants documentation comments to start with "---", not just "--".
-
-Signed-off-by: Uli Schlachter <psychon@znc.in>
-
---- lib/menubar/menu_gen.lua.in.orig	Sat Oct 12 18:48:49 2013
-+++ lib/menubar/menu_gen.lua.in	Tue Jan 14 13:32:52 2014
-@@ -17,11 +17,11 @@ local menu_gen = {}
+$OpenBSD: patch-lib_menubar_menu_gen_lua_in,v 1.3 2014/04/15 11:16:04 dcoppa Exp $
+--- lib/menubar/menu_gen.lua.in.orig	Tue Apr 15 12:56:12 2014
++++ lib/menubar/menu_gen.lua.in	Tue Apr 15 12:56:50 2014
+@@ -19,7 +19,7 @@ local menu_gen = {}
  
- -- Options section
- 
---- Specifies all directories where menubar should look for .desktop
-+--- Specifies all directories where menubar should look for .desktop
+ --- Specifies all directories where menubar should look for .desktop
  -- files. The search is not recursive.
 -menu_gen.all_menu_dirs = { '/usr/share/applications/', '/usr/local/share/applications/' }
 +menu_gen.all_menu_dirs = "${LOCALBASE}/share/applications/"
  
---- Specify the mapping of .desktop Categories section to the
-+--- Specify the mapping of .desktop Categories section to the
+ --- Specify the mapping of .desktop Categories section to the
  -- categories in the menubar. If "use" flag is set to false then any of
- -- the applications that fall only to this category will not be shown.
- menu_gen.all_categories = {
