@@ -1,6 +1,6 @@
-$OpenBSD: patch-conf_server_xml,v 1.2 2011/12/05 11:22:10 dcoppa Exp $
---- conf/server.xml.orig	Mon Dec  5 11:46:20 2011
-+++ conf/server.xml	Mon Dec  5 11:48:53 2011
+$OpenBSD: patch-conf_server_xml,v 1.3 2014/04/15 13:49:24 dcoppa Exp $
+--- conf/server.xml.orig	Tue Mar 25 04:26:32 2014
++++ conf/server.xml	Tue Apr 15 15:20:32 2014
 @@ -67,12 +67,12 @@
           APR (HTTP/AJP) Connector: /docs/apr.html
           Define a non-SSL HTTP/1.1 Connector on port 8080
@@ -16,13 +16,13 @@ $OpenBSD: patch-conf_server_xml,v 1.2 2011/12/05 11:22:10 dcoppa Exp $
                 port="8080" protocol="HTTP/1.1"
                 connectionTimeout="20000"
                 redirectPort="8443" />
-@@ -82,13 +82,13 @@
-          connector should be using the OpenSSL style configuration
-          described in the APR documentation -->
+@@ -83,13 +83,13 @@
+          OpenSSL style configuration is required as described in the APR/native
+          documentation -->
      <!--
--    <Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true"
-+    <Connector address="0.0.0.0" port="8443" protocol="HTTP/1.1" SSLEnabled="true"
-                maxThreads="150" scheme="https" secure="true"
+-    <Connector port="8443" protocol="org.apache.coyote.http11.Http11Protocol"
++    <Connector address="0.0.0.0" port="8443" protocol="org.apache.coyote.http11.Http11Protocol"
+                maxThreads="150" SSLEnabled="true" scheme="https" secure="true"
                 clientAuth="false" sslProtocol="TLS" />
      -->
  
@@ -32,7 +32,7 @@ $OpenBSD: patch-conf_server_xml,v 1.2 2011/12/05 11:22:10 dcoppa Exp $
  
  
      <!-- An Engine represents the entry point (within Catalina) that processes
-@@ -120,7 +120,7 @@
+@@ -121,7 +121,7 @@
                 resourceName="UserDatabase"/>
        </Realm>
  
