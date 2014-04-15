@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_slideshow_c,v 1.9 2014/04/15 13:02:21 dcoppa Exp $
+
+commit a0ddc0dcff5d43871f8c0e87dfb5d2c49671ac30
+Author: Roland Angerer <dev@rangerer.at>
+Date:   Thu Apr 10 10:32:07 2014 +0200
+
+re-randomize after list is through
+
+--- src/slideshow.c.orig	Fri Feb 28 18:23:21 2014
++++ src/slideshow.c	Tue Apr 15 14:45:03 2014
+@@ -692,7 +692,13 @@ gib_list *feh_list_jump(gib_list * root, gib_list * l,
+ 				if (opt.cycle_once) {
+ 					exit(0);
+ 				}
+-				ret = root;
++				if (opt.randomize) {
++					/* Randomize the filename order */
++					filelist = gib_list_randomize(filelist);
++					ret = filelist;
++				} else {
++					ret = root;
++				}
+ 			}
+ 		} else {
+ 			if (ret->prev)
