@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.240 2014/04/02 09:36:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.241 2014/04/15 13:30:46 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
-GNOME_VERSION=		3.12.0
+GNOME_VERSION=		3.12.1
 
 CATEGORIES=		x11
 
@@ -49,7 +49,7 @@ RUN_DEPENDS+=	devel/gsettings-desktop-schemas \
 		x11/gnome/backgrounds \
 		x11/gnome/themes-standard
 
-MODGNOME_TOOLS +=	gtk-update-icon-cache
+MODGNOME_TOOLS=	gtk-update-icon-cache
 
 MODGNOME_CPPFLAGS=-I${X11BASE}/include
 MODGNOME_LDFLAGS=-L${X11BASE}/lib
