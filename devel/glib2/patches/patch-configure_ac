@@ -1,6 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.13 2014/04/12 05:57:29 ajacoutot Exp $
-
-https://bugzilla.gnome.org/show_bug.cgi?id=727939
+$OpenBSD: patch-configure_ac,v 1.14 2014/04/15 13:14:48 ajacoutot Exp $
 
 From 3662eb9759fe225d1c214db6927c667a1b733e8a Mon Sep 17 00:00:00 2001
 From: Alexandre Rostovtsev <tetromino@gentoo.org>
@@ -11,6 +9,11 @@ From 74ec947079e9159c71b28b98439b8a7ad9c415ee Mon Sep 17 00:00:00 2001
 From: Antoine Jacoutot <ajacoutot@gnome.org>
 Date: Thu, 10 Apr 2014 10:40:16 +0200
 Subject: openbsd: remove -pthread
+
+From 6c7972a05c2901d67d793be2db64817fec94e8e7 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Thu, 10 Apr 2014 11:16:44 +0200
+Subject: build: also unset LIBS when LDFLAGS is unset
 
 --- configure.ac.orig	Mon Mar 24 19:53:31 2014
 +++ configure.ac	Thu Apr 10 10:59:12 2014
