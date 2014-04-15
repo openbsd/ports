@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2013/06/12 20:36:34 brad Exp $
+# $OpenBSD: Makefile,v 1.18 2014/04/15 08:53:04 ajacoutot Exp $
 
 COMMENT =	free open-source SQL full-text search engine
 BROKEN-hppa =	internal compiler error: internal consistency failure
@@ -26,7 +26,6 @@ MODPHP_BUILDDEP =	No
 MODPHP_RUNDEP =		No
 
 LOCALSTATEDIR =		${BASELOCALSTATEDIR}/sphinx
-SUBST_VARS =		LOCALSTATEDIR
 
 CONFIGURE_ARGS =	--with-unixodbc=no
 CONFIGURE_STYLE =	gnu

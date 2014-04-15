@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2013/10/24 20:22:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.93 2014/04/15 08:53:04 ajacoutot Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
@@ -43,7 +43,6 @@ LIB_DEPENDS=		mail/courier-authlib \
 
 LOCALSTATEDIR=		${BASELOCALSTATEDIR}/run/courier
 EXAMPLE_DIR=		${PREFIX}/share/examples/courier
-SUBST_VARS=		LOCALSTATEDIR
 SYSCONFDIR=		/etc/courier
 
 CONFIGURE_ARGS=		--sbindir=${PREFIX}/sbin \

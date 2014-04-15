@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2014/03/25 21:05:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.84 2014/04/15 08:53:04 ajacoutot Exp $
 
 COMMENT=		mailfilter to identify and mark spam
 
@@ -56,7 +56,7 @@ CONFDIR=		${SYSCONFDIR}/mail/spamassassin
 LOCALSTATEDIR=		/var/db/spamassassin
 SAMPLE_CONFDIR=		${PREFIX}/share/examples/SpamAssassin
 
-SUBST_VARS=		CONFDIR LOCALSTATEDIR
+SUBST_VARS=		CONFDIR
 
 # test insists on creating files in $HOME
 PORTHOME=		${WRKDIR}/temp-home

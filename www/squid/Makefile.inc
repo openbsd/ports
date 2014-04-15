@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2014/04/08 12:22:48 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2014/04/15 08:53:04 ajacoutot Exp $
 
 MULTI_PACKAGES=	-main -ntlm
 
@@ -34,7 +34,6 @@ LIB_DEPENDS-main += ${LIB_DEPENDS} \
 
 SYSCONFDIR=	${BASESYSCONFDIR}/squid
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/squid
-SUBST_VARS=	LOCALSTATEDIR
 
 PSEUDO_FLAVORS=	no_ldap
 FLAVOR?=

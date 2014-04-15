@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2013/10/31 21:12:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2014/04/15 08:53:04 ajacoutot Exp $
 
 COMMENT=	multi-threaded routing daemon
 
@@ -20,7 +20,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=	c curses m readline termcap
 
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/quagga
-SUBST_VARS=	LOCALSTATEDIR
 
 BUILD_DEPENDS=	lang/gawk
 USE_GMAKE=	Yes

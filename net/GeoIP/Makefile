@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2014/04/12 09:58:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2014/04/15 08:53:04 ajacoutot Exp $
 
 COMMENT=	find the country where IP address/hostname originates from
 
@@ -22,7 +22,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += c z
 
 SEPARATE_BUILD=	Yes
-SUBST_VARS+=	LOCALSTATEDIR
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--datadir=${LOCALSTATEDIR}/db \

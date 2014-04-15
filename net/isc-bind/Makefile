@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2014/01/31 10:14:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2014/04/15 08:53:04 ajacoutot Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
@@ -29,7 +29,6 @@ MODULES=	converters/libiconv \
 # used for dnssec-checkds/dnssec-coverage, but don't want to force the run dep.
 MODPY_RUNDEP=	No
 LIB_DEPENDS=	textproc/libxml
-SUBST_VARS=	LOCALSTATEDIR
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
