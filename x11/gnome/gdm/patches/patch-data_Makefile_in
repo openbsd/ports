@@ -1,10 +1,7 @@
-$OpenBSD: patch-data_Makefile_in,v 1.7 2014/03/27 19:19:17 ajacoutot Exp $
-
-XXX push upstream
-
---- data/Makefile.in.orig	Tue Mar 25 15:08:04 2014
-+++ data/Makefile.in	Thu Mar 27 18:24:20 2014
-@@ -1026,6 +1026,7 @@ uninstall-am: uninstall-dbusconfDATA uninstall-dconfdb
+$OpenBSD: patch-data_Makefile_in,v 1.8 2014/04/15 13:15:19 ajacoutot Exp $
+--- data/Makefile.in.orig	Tue Apr 15 14:41:18 2014
++++ data/Makefile.in	Tue Apr 15 15:02:48 2014
+@@ -1025,6 +1025,7 @@ uninstall-am: uninstall-dbusconfDATA uninstall-dconfdb
  Xsession: $(srcdir)/Xsession.in
  	sed	-e 's,[@]XSESSION_SHELL[@],$(XSESSION_SHELL),g' \
  		-e 's,[@]libexecdir[@],$(libexecdir),g' \
