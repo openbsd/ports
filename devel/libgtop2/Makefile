@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2014/04/08 18:55:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.125 2014/04/15 08:49:10 ajacoutot Exp $
 
 COMMENT=		portable library for obtaining system information
 
@@ -44,10 +44,8 @@ AUTOMAKE_VERSION=	1.14
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/libtool \
-			x11/gnome/common
+			x11/gnome/common>=3.12.0p2
 do-configure:
-	ln -sf ${LOCALBASE}/bin/aclocal-${AUTOMAKE_VERSION} ${WRKDIR}/bin/aclocal
-	ln -sf ${LOCALBASE}/bin/automake-${AUTOMAKE_VERSION} ${WRKDIR}/bin/automake
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		${CONFIGURE_ENV} ./autogen.sh ${CONFIGURE_ARGS}
