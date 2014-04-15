@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2014/04/02 09:36:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2014/04/15 15:23:23 ajacoutot Exp $
 
 TRACKER_VERSION=	1.0
 
 COMMENT=		access, organize and share your photos on GNOME
 
 GNOME_PROJECT=		gnome-photos
-GNOME_VERSION=		3.12.0
-REVISION=		1
+GNOME_VERSION=		3.12.1
 
 CATEGORIES=		graphics
 
@@ -43,6 +42,6 @@ LIB_DEPENDS=		graphics/gegl \
 # calls grl_registry_load...plugin
 RUN_DEPENDS +=		x11/gnome/grilo-plugins
 
-MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/03/27 16:21:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/04/15 15:23:23 ajacoutot Exp $
 bin/gnome-photos
 @bin libexec/gnome-photos-service
 share/appdata/
@@ -21,6 +21,16 @@ share/gnome-photos/icons/thumbnail-frame.png
 share/gnome-shell/
 share/gnome-shell/search-providers/
 share/gnome-shell/search-providers/org.gnome.Photos.search-provider.ini
+share/help/C/gnome-photos/
+share/help/C/gnome-photos/favorites-set.page
+share/help/C/gnome-photos/favorites.page
+share/help/C/gnome-photos/index.page
+share/help/C/gnome-photos/legal.xml
+share/help/C/gnome-photos/media/
+share/help/C/gnome-photos/media/logo1.png
+share/help/C/gnome-photos/view-album.page
+share/help/C/gnome-photos/view-favorites.page
+share/help/C/gnome-photos/view.page
 share/icons/hicolor/16x16/apps/gnome-photos.png
 share/icons/hicolor/22x22/apps/gnome-photos.png
 share/icons/hicolor/24x24/apps/gnome-photos.png
