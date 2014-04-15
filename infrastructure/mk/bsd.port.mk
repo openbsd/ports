@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1261 2014/04/08 13:29:34 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1262 2014/04/15 08:52:35 ajacoutot Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -946,7 +946,7 @@ _lt_libs += lib${_n:S/+/_/g:S/-/_/g:S/./_/g}_ltversion=${_v}
 # Create the generic variable substitution list, from subst vars
 SUBST_VARS += MACHINE_ARCH ARCH HOMEPAGE ^PREFIX ^SYSCONFDIR FLAVOR_EXT \
 	FULLPKGNAME MAINTAINER ^BASE_PKGPATH ^LOCALBASE ^X11BASE ^TRUEPREFIX \
-	^RCDIR
+	^RCDIR ^LOCALSTATEDIR
 _tmpvars =
 
 _PKG_ADD_AUTO ?=
