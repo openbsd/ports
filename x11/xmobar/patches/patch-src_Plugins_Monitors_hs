@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_Plugins_Monitors_hs,v 1.5 2013/11/25 10:31:04 dcoppa Exp $
---- src/Plugins/Monitors.hs.orig	Mon Nov 25 09:48:32 2013
-+++ src/Plugins/Monitors.hs	Mon Nov 25 09:59:43 2013
+$OpenBSD: patch-src_Plugins_Monitors_hs,v 1.6 2014/04/15 12:08:06 dcoppa Exp $
+--- src/Plugins/Monitors.hs.orig	Fri Mar 14 00:17:19 2014
++++ src/Plugins/Monitors.hs	Tue Apr 15 13:33:17 2014
 @@ -21,20 +21,20 @@ import Plugins
  
- import Plugins.Monitors.Common (runM)
+ import Plugins.Monitors.Common (runM, runMD)
  import Plugins.Monitors.Weather
 -import Plugins.Monitors.Net
 -import Plugins.Monitors.Mem
@@ -43,10 +43,10 @@ $OpenBSD: patch-src_Plugins_Monitors_hs,v 1.5 2013/11/25 10:31:04 dcoppa Exp $
 -              | DynNetwork               Args Rate
 -              | BatteryP     Args        Args Rate
 -              | BatteryN     Args        Args Rate Alias
-+--            | Network      Interface   Args Rate
-+--            | DynNetwork               Args Rate
-+--            | BatteryP     Args        Args Rate
-+--            | BatteryN     Args        Args Rate Alias
++--             | Network      Interface   Args Rate
++--             | DynNetwork               Args Rate
++--             | BatteryP     Args        Args Rate
++--             | BatteryN     Args        Args Rate Alias
                | Battery      Args        Rate
 -              | DiskU        DiskSpec    Args Rate
 -              | DiskIO       DiskSpec    Args Rate
@@ -62,20 +62,20 @@ $OpenBSD: patch-src_Plugins_Monitors_hs,v 1.5 2013/11/25 10:31:04 dcoppa Exp $
 -              | TopProc      Args        Rate
 -              | TopMem       Args        Rate
 -              | Uptime       Args        Rate
-+--            | DiskU        DiskSpec    Args Rate
-+--            | DiskIO       DiskSpec    Args Rate
-+--            | Thermal      Zone        Args Rate
-+--            | ThermalZone  ZoneNo      Args Rate
-+--            | Memory       Args        Rate
-+--            | Swap         Args        Rate
-+--            | Cpu          Args        Rate
-+--            | MultiCpu     Args        Rate
-+--            | Brightness   Args        Rate
-+--            | CpuFreq      Args        Rate
-+--            | CoreTemp     Args        Rate
-+--            | TopProc      Args        Rate
-+--            | TopMem       Args        Rate
-+--            | Uptime       Args        Rate
++--             | DiskU        DiskSpec    Args Rate
++--             | DiskIO       DiskSpec    Args Rate
++--             | Thermal      Zone        Args Rate
++--             | ThermalZone  ZoneNo      Args Rate
++--             | Memory       Args        Rate
++--             | Swap         Args        Rate
++--             | Cpu          Args        Rate
++--             | MultiCpu     Args        Rate
++--             | Brightness   Args        Rate
++--             | CpuFreq      Args        Rate
++--             | CoreTemp     Args        Rate
++--             | TopProc      Args        Rate
++--             | TopMem       Args        Rate
++--             | Uptime       Args        Rate
  #ifdef IWLIB
                | Wireless Interface  Args Rate
  #endif
@@ -91,14 +91,14 @@ $OpenBSD: patch-src_Plugins_Monitors_hs,v 1.5 2013/11/25 10:31:04 dcoppa Exp $
 -    alias (Swap _ _) = "swap"
 -    alias (Cpu _ _) = "cpu"
 -    alias (MultiCpu _ _) = "multicpu"
-+--  alias (Network i _ _) = i
-+--  alias (DynNetwork _ _) = "dynnetwork"
-+--  alias (Thermal z _ _) = z
-+--  alias (ThermalZone z _ _) = "thermal" ++ show z
-+--  alias (Memory _ _) = "memory"
-+--  alias (Swap _ _) = "swap"
-+--  alias (Cpu _ _) = "cpu"
-+--  alias (MultiCpu _ _) = "multicpu"
++--   alias (Network i _ _) = i
++--   alias (DynNetwork _ _) = "dynnetwork"
++--   alias (Thermal z _ _) = z
++--   alias (ThermalZone z _ _) = "thermal" ++ show z
++--   alias (Memory _ _) = "memory"
++--   alias (Swap _ _) = "swap"
++--   alias (Cpu _ _) = "cpu"
++--   alias (MultiCpu _ _) = "multicpu"
      alias (Battery _ _) = "battery"
 -    alias (BatteryP _ _ _)= "battery"
 -    alias (BatteryN _ _ _ a)= a
@@ -110,16 +110,16 @@ $OpenBSD: patch-src_Plugins_Monitors_hs,v 1.5 2013/11/25 10:31:04 dcoppa Exp $
 -    alias (DiskU _ _ _) = "disku"
 -    alias (DiskIO _ _ _) = "diskio"
 -    alias (Uptime _ _) = "uptime"
-+--  alias (BatteryP _ _ _)= "battery"
-+--  alias (BatteryN _ _ _ a)= a
-+--  alias (Brightness _ _) = "bright"
-+--  alias (CpuFreq _ _) = "cpufreq"
-+--  alias (TopProc _ _) = "top"
-+--  alias (TopMem _ _) = "topmem"
-+--  alias (CoreTemp _ _) = "coretemp"
-+--  alias (DiskU _ _ _) = "disku"
-+--  alias (DiskIO _ _ _) = "diskio"
-+--  alias (Uptime _ _) = "uptime"
++--   alias (BatteryP _ _ _)= "battery"
++--   alias (BatteryN _ _ _ a)= a
++--   alias (Brightness _ _) = "bright"
++--   alias (CpuFreq _ _) = "cpufreq"
++--   alias (TopProc _ _) = "top"
++--   alias (TopMem _ _) = "topmem"
++--   alias (CoreTemp _ _) = "coretemp"
++--   alias (DiskU _ _ _) = "disku"
++--   alias (DiskIO _ _ _) = "diskio"
++--   alias (Uptime _ _) = "uptime"
  #ifdef IWLIB
      alias (Wireless i _ _) = i ++ "wi"
  #endif
@@ -133,23 +133,23 @@ $OpenBSD: patch-src_Plugins_Monitors_hs,v 1.5 2013/11/25 10:31:04 dcoppa Exp $
 -    start (MultiCpu a r) = startMultiCpu a r
 -    start (TopProc a r) = startTop a r
 -    start (TopMem a r) = runM a topMemConfig runTopMem r
-+--  start (Network  i a r) = startNet i a r
-+--  start (DynNetwork a r) = startDynNet a r
-+--  start (Cpu a r) = startCpu a r
-+--  start (MultiCpu a r) = startMultiCpu a r
-+--  start (TopProc a r) = startTop a r
-+--  start (TopMem a r) = runM a topMemConfig runTopMem r
-     start (Weather s a r) = runM (a ++ [s]) weatherConfig runWeather r
++--   start (Network  i a r) = startNet i a r
++--   start (DynNetwork a r) = startDynNet a r
++--   start (Cpu a r) = startCpu a r
++--   start (MultiCpu a r) = startMultiCpu a r
++--   start (TopProc a r) = startTop a r
++--   start (TopMem a r) = runM a topMemConfig runTopMem r
+     start (Weather s a r) = runMD (a ++ [s]) weatherConfig runWeather r weatherReady
 -    start (Thermal z a r) = runM (a ++ [z]) thermalConfig runThermal r
 -    start (ThermalZone z a r) =
 -      runM (a ++ [show z]) thermalZoneConfig runThermalZone r
 -    start (Memory a r) = runM a memConfig runMem r
 -    start (Swap a r) = runM a swapConfig runSwap r
-+--  start (Thermal z a r) = runM (a ++ [z]) thermalConfig runThermal r
-+--  start (ThermalZone z a r) =
-+--    runM (a ++ [show z]) thermalZoneConfig runThermalZone r
-+--  start (Memory a r) = runM a memConfig runMem r
-+--  start (Swap a r) = runM a swapConfig runSwap r
++--   start (Thermal z a r) = runM (a ++ [z]) thermalConfig runThermal r
++--   start (ThermalZone z a r) =
++--     runM (a ++ [show z]) thermalZoneConfig runThermalZone r
++--   start (Memory a r) = runM a memConfig runMem r
++--   start (Swap a r) = runM a swapConfig runSwap r
      start (Battery a r) = runM a battConfig runBatt r
 -    start (BatteryP s a r) = runM a battConfig (runBatt' s) r
 -    start (BatteryN s a r _) = runM a battConfig (runBatt' s) r
@@ -159,14 +159,14 @@ $OpenBSD: patch-src_Plugins_Monitors_hs,v 1.5 2013/11/25 10:31:04 dcoppa Exp $
 -    start (DiskU s a r) = runM a diskUConfig (runDiskU s) r
 -    start (DiskIO s a r) = startDiskIO s a r
 -    start (Uptime a r) = runM a uptimeConfig runUptime r
-+--  start (BatteryP s a r) = runM a battConfig (runBatt' s) r
-+--  start (BatteryN s a r _) = runM a battConfig (runBatt' s) r
-+--  start (Brightness a r) = runM a brightConfig runBright r
-+--  start (CpuFreq a r) = runM a cpuFreqConfig runCpuFreq r
-+--  start (CoreTemp a r) = runM a coreTempConfig runCoreTemp r
-+--  start (DiskU s a r) = runM a diskUConfig (runDiskU s) r
-+--  start (DiskIO s a r) = startDiskIO s a r
-+--  start (Uptime a r) = runM a uptimeConfig runUptime r
++--   start (BatteryP s a r) = runM a battConfig (runBatt' s) r
++--   start (BatteryN s a r _) = runM a battConfig (runBatt' s) r
++--   start (Brightness a r) = runM a brightConfig runBright r
++--   start (CpuFreq a r) = runM a cpuFreqConfig runCpuFreq r
++--   start (CoreTemp a r) = runM a coreTempConfig runCoreTemp r
++--   start (DiskU s a r) = runM a diskUConfig (runDiskU s) r
++--   start (DiskIO s a r) = startDiskIO s a r
++--   start (Uptime a r) = runM a uptimeConfig runUptime r
  #ifdef IWLIB
      start (Wireless i a r) = runM (a ++ [i]) wirelessConfig runWireless r
  #endif

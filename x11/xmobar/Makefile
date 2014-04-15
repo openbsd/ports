@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2013/11/25 10:31:04 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.29 2014/04/15 12:08:06 dcoppa Exp $
 
 COMMENT =		minimalistic text based status bar
 
-DISTNAME =		xmobar-0.19
+DISTNAME =		xmobar-0.20.1
 CATEGORIES =		x11
 HOMEPAGE =		http://projects.haskell.org/xmobar
 
@@ -19,14 +19,15 @@ MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =		cabal hackage nort
 MODGHC_SETUP_CONF_ARGS = --flags="with_xft with_mpd with_mpris"
 
-BUILD_DEPENDS =		devel/hs-mtl \
-			devel/hs-parsec \
-			devel/hs-regex-pcre-builtin \
+BUILD_DEPENDS =		devel/hs-mtl>=2.0,<2.2 \
+			devel/hs-parsec>=3.1,<3.2 \
+			devel/hs-regex-compat \
 			devel/hs-stm>=2.3,<2.5 \
+			net/hs-HTTP>=4000 \
 			x11/hs-X11>=1.6.1 \
 			x11/hs-X11-xft>=0.2,<0.4 \
 			x11/hs-dbus>=0.10 \
-			audio/hs-libmpd>=0.8
+			audio/hs-libmpd>=0.8,<0.9
 
 LIB_DEPENDS =		textproc/libxml
 

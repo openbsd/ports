@@ -1,7 +1,7 @@
-$OpenBSD: patch-samples_xmobar_config,v 1.6 2013/11/25 10:31:04 dcoppa Exp $
---- samples/xmobar.config.orig	Mon Nov 25 10:01:53 2013
-+++ samples/xmobar.config	Mon Nov 25 10:06:36 2013
-@@ -1,22 +1,20 @@
+$OpenBSD: patch-samples_xmobar_config,v 1.7 2014/04/15 12:08:06 dcoppa Exp $
+--- samples/xmobar.config.orig	Fri Mar 14 00:17:19 2014
++++ samples/xmobar.config	Tue Apr 15 13:33:17 2014
+@@ -1,23 +1,21 @@
 -Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
 +Config { font = "fixed"
         , borderColor = "black"
@@ -11,6 +11,7 @@ $OpenBSD: patch-samples_xmobar_config,v 1.6 2013/11/25 10:31:04 dcoppa Exp $
         , position = Top
 +       , allDesktops = True
         , lowerOnStart = True
+        , pickBroadest = False
 +       , overrideRedirect = True
         , persistent = False
         , hideOnStart = False
