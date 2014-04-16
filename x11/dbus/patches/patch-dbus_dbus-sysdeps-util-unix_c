@@ -1,9 +1,9 @@
-$OpenBSD: patch-dbus_dbus-sysdeps-util-unix_c,v 1.12 2014/04/16 08:18:16 ajacoutot Exp $
+$OpenBSD: patch-dbus_dbus-sysdeps-util-unix_c,v 1.13 2014/04/16 12:35:51 ajacoutot Exp $
 
 XXX push upstream
 
 --- dbus/dbus-sysdeps-util-unix.c.orig	Fri Jan 17 17:00:13 2014
-+++ dbus/dbus-sysdeps-util-unix.c	Wed Apr 16 10:13:01 2014
++++ dbus/dbus-sysdeps-util-unix.c	Wed Apr 16 14:32:18 2014
 @@ -60,6 +60,10 @@
  
  #include "sd-daemon.h"
@@ -37,16 +37,19 @@ XXX push upstream
    if (!_dbus_string_append_printf (&path, "/proc/%ld/cmdline", pid))
      goto oom;
    
-@@ -1163,6 +1174,30 @@ _dbus_command_for_pid (unsigned long  pid,
+@@ -1163,6 +1174,37 @@ _dbus_command_for_pid (unsigned long  pid,
    
    if (!_dbus_close (fd, error))
      goto fail;
 +#else /* OpenBSD */
-+  len = sizeof (max_len);
++  args = NULL;
 +  mib[0] = CTL_KERN;
 +  mib[1] = KERN_PROC_ARGS;
 +  mib[2] = pid;
 +  mib[3] = KERN_PROC_ARGV;
++
++  if (sysctl (mib, 4, NULL, &len, NULL, 0) == -1)
++    goto fail;
 +
 +  args = malloc (len);
 +  if (args == NULL)
@@ -64,11 +67,15 @@ XXX push upstream
 +    if (!_dbus_string_append_printf (&cmdline, "%s", *argv))
 +      goto fail;
 +  }
++
++  if (_dbus_string_get_length (&cmdline) > max_len)
++    _dbus_string_set_length (&cmdline, max_len);
++
 +#endif
    
    string_squash_nonprintable (&cmdline);  
  
-@@ -1171,12 +1206,18 @@ _dbus_command_for_pid (unsigned long  pid,
+@@ -1171,12 +1213,18 @@ _dbus_command_for_pid (unsigned long  pid,
  
    _dbus_string_free (&cmdline);  
    _dbus_string_free (&path);

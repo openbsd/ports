@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2014/04/16 08:18:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.114 2014/04/16 12:35:51 ajacoutot Exp $
 
 # DPB: not parallel-safe
 
@@ -6,7 +6,7 @@ COMMENT=	message bus system
 
 DISTNAME=	dbus-1.8.0
 EPOCH=		0
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS +=  dbus-1               11.0     # 11.3
 
