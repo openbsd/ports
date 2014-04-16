@@ -1,6 +1,6 @@
-$OpenBSD: patch-macros_ffmpeg_m4,v 1.4 2014/04/10 06:13:04 brad Exp $
+$OpenBSD: patch-macros_ffmpeg_m4,v 1.5 2014/04/16 05:31:11 brad Exp $
 --- macros/ffmpeg.m4.orig	Thu Jan 19 14:17:49 2012
-+++ macros/ffmpeg.m4	Mon Apr  7 06:45:17 2014
++++ macros/ffmpeg.m4	Mon Apr 14 21:55:13 2014
 @@ -43,7 +43,7 @@ AC_DEFUN([GNASH_PATH_FFMPEG],
        ffmpeg_top_incl=`dirname ${with_ffmpeg_incl}`
        if test -f ${with_ffmpeg_incl}/avcodec.h; then
@@ -159,54 +159,204 @@ $OpenBSD: patch-macros_ffmpeg_m4,v 1.4 2014/04/10 06:13:04 brad Exp $
    AC_MSG_CHECKING([for libavcodec/vaapi.h])
    have_ffmpeg_vaapi="no"
    if test -f "${ffmpeg_top_incl}/ffmpeg/vaapi.h"; then
-@@ -624,6 +666,51 @@ dnl   AC_EGREP_HEADER(avcodec_decode_audio2, ${avcodec
-       ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} ${libsws}"
+@@ -416,56 +458,6 @@ dnl   AC_EGREP_HEADER(avcodec_decode_audio2, ${avcodec
+   dnl
+   if test x"${ac_cv_path_ffmpeg_lib}" != x; then
+ 
+-    dnl Look for the DTS library, which is required on some systems. {
+-    dnl
+-    dnl TODO: skip this if -ldts is already in due to pkg-config 
+-    dnl
+-    AC_MSG_CHECKING([for libdts library])
+-    if test x"$PKG_CONFIG" != x -a x${cross_compiling} = xno; then
+-      $PKG_CONFIG --exists libdts && libdts=`$PKG_CONFIG --libs-only-l libdts`
+-    else
+-      libdts=""
+-    fi
+-    if test x"${libdts}" = x; then
+-      if test -f ${top_lib_dir}/libdts.a -o -f ${top_lib_dir}/libdts.${shlibext}; then
+-        ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -ldts"
+-        AC_MSG_RESULT(${top_lib_dir}/libdts)
+-      else
+-        AC_MSG_RESULT(no)
+-        if test x${cross_compiling} = xno; then
+-          AC_CHECK_LIB(dts, dts_init, [ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -ldts"])
+-        fi
+-      fi
+-    else
+-      AC_MSG_RESULT(${libdts})
+-      ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} ${libdts}"      
+-    fi
+-    dnl End of DTS library looking }
+-	
+-    dnl Look for the VORBISENC library, which is required on some systems. {
+-    AC_MSG_CHECKING([for libvorbisenc library])
+-    if test x"$PKG_CONFIG" != x -a x${cross_compiling} = xno; then
+-      $PKG_CONFIG --exists vorbisenc && libvorbisenc=`$PKG_CONFIG --libs-only-l vorbisenc`
+-    else
+-      libvorbisenc=""
+-    fi
+-    if test x"${libvorbisenc}" = x; then
+-      if test -f ${top_lib_dir}/libvorbisenc.a -o -f ${top_lib_dir}/libvorbisenc.${shlibext}; then
+-        ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lvorbisenc"
+-        AC_MSG_RESULT(${top_lib_dir}/libvorbisenc)
+-      else
+-        AC_MSG_RESULT(no)
+-        if test x${cross_compiling} = xno; then
+-          AC_CHECK_LIB(vorbisenc, vorbis_encode_init, [ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lvorbisenc"])
+-        fi
+-      fi
+-    else
+-      AC_MSG_RESULT(${libvorbisenc})
+-      ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} ${libvorbisenc}"
+-    fi
+-    dnl End of VORBINSEC library looking }
+-	
+-
+     dnl Look for the AVFORMAT library {
+     dnl
+     dnl TODO: libavformat be mandatory, thus linked in already ?
+@@ -522,108 +514,77 @@ dnl   AC_EGREP_HEADER(avcodec_decode_audio2, ${avcodec
+       ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} ${libavutil}"
      fi
-     dnl End of SWSCALE library looking }
+     dnl End of AVUTIL library looking }
+-	
+-    dnl Look for the THEORA library, which is required on some systems. {
 +
++    dnl Look for the SWSCALE library {
+     dnl
+-    dnl TODO: skip this if -ltheora is already in due to pkg-config 
+-    dnl
+-    AC_MSG_CHECKING([for libtheora library])
++    dnl This is required on some system if ffmpeg is
++    dnl configured with --enable-gpl --enable-swscale.
++    AC_MSG_CHECKING([for libswscale library])
+     if test x"$PKG_CONFIG" != x -a x${cross_compiling} = xno; then
+-      $PKG_CONFIG --exists theora && libtheora=`$PKG_CONFIG --libs-only-l theora`
++      $PKG_CONFIG --exists libswscale  && libsws=`$PKG_CONFIG --libs-only-l libswscale`
+     else
+-      libtheora=""
++      libsws=""
+     fi
+-    if test x"${libtheora}" = x; then
+-      if test -f ${top_lib_dir}/libtheora.a -o -f ${top_lib_dir}/libtheora.${shlibext}; then
+-        ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -ltheora"
+-        AC_MSG_RESULT(${top_lib_dir}/libtheora)
++    if test x"${libsws}" = x; then
++      if test -f ${top_lib_dir}/libswscale.a -o -f ${top_lib_dir}/libswscale.${shlibext}; then
++        ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lswscale"
++        AC_MSG_RESULT(yes)
+       else
+         AC_MSG_RESULT(no)
+         if test x${cross_compiling} = xno; then
+-          AC_CHECK_LIB(theora, theora_encode_init, [ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -ltheora"])
++          AC_CHECK_LIB(swscale, sws_scale, [ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lswscale"])
+         fi
+       fi
+     else
+-      AC_MSG_RESULT(${libtheora})
+-      ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} ${libtheora}"      
++      AC_MSG_RESULT(${libsws})
++      ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} ${libsws}"
+     fi
+-    dnl End of THEORA library looking }
++    dnl End of SWSCALE library looking }
+ 
+-    dnl Look for the GSM library, which is required on some systems. {
+-    AC_MSG_CHECKING([for libgsm library])
+-    if test x"$PKG_CONFIG" != x -a x${cross_compiling} = xno; then
+-      $PKG_CONFIG --exists gsm && libgsm=`$PKG_CONFIG --libs-only-l gsm`
+-    else
+-      libgsm=""
+-    fi
+-
+-    if test x"${libgsm}" = x; then
+-      if test -f ${top_lib_dir}/libgsm.a -o -f ${top_lib_dir}/libgsm.${shlibext}; then
+-        ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lgsm"
+-        AC_MSG_RESULT(${top_lib_dir}/libgsm)
+-      else
+-        AC_MSG_RESULT(no)
+-        if test x${cross_compiling} = xno; then
+-          AC_CHECK_LIB(gsm, gsm_destroy, [ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lgsm"])
+-        fi
+-      fi
+-    fi
+-
+-    AC_MSG_RESULT(${libgsm})
+-    ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} ${libgsm}"
+-    dnl End of GSM library looking }
+-    
+-    dnl Look for the DC1394 library, which is required on some systems. {
 +    dnl Look for the {SW,AV}RESAMPLE libraries {
-+    dnl
+     dnl
+-    dnl TODO: skip this if -ldc1394 is already in due to pkg-config 
+-    dnl
+-    AC_MSG_CHECKING([for libdc1394 library])
 +    AC_MSG_CHECKING([for libswresample library])
-+    if test x"$PKG_CONFIG" != x -a x${cross_compiling} = xno; then
+     if test x"$PKG_CONFIG" != x -a x${cross_compiling} = xno; then
+-      $PKG_CONFIG --exists libdc  && libdc=`$PKG_CONFIG --libs-only-l libdc1394`
 +      $PKG_CONFIG --exists libswresample  && libswresample=`$PKG_CONFIG --libs-only-l libswresample`
-+    else
+     else
+-      libtdc=""
 +      libswresample=""
-+    fi
+     fi
+-    if test x"${libdc}" = x; then
+-      if test -f ${top_lib_dir}/libdc1394.a -o -f ${top_lib_dir}/libdc1394.${shlibext}; then
+-        ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -ldc1394"
+-        AC_MSG_RESULT(${top_lib_dir}/libdc1394)
 +    if test x"${libswresample}" = x; then
 +      if test -f ${top_lib_dir}/libswresample.a -o -f ${top_lib_dir}/libswresample.${shlibext}; then
 +        ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lswresample"
 +        AC_MSG_RESULT(yes)
-+      else
-+        AC_MSG_RESULT(no)
-+        if test x${cross_compiling} = xno; then
+       else
+         AC_MSG_RESULT(no)
+         if test x${cross_compiling} = xno; then
+-          AC_CHECK_LIB(dc1394_control, dc1394_is_camera, [ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -ldc1394_control"])
 +          AC_CHECK_LIB(swresample, swresample, [ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lswresample"])
-+        fi
-+      fi
-+    else
+         fi
+       fi
+     else
+-      AC_MSG_RESULT(${libdc})
+-      ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} ${libdc}"
 +      AC_MSG_RESULT(${libswresample})
 +      ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} ${libswresample}"
-+    fi
-+
+     fi
+-    dnl End of DC1394 library looking }
+ 
+-    dnl Look for the SWSCALE library {
+-    dnl
+-    dnl This is required on some system if ffmpeg is
+-    dnl configured with --enable-gpl --enable-swscale.
+-    AC_MSG_CHECKING([for libswscale library])
 +    AC_MSG_CHECKING([for libavresample library])
-+    if test x"$PKG_CONFIG" != x -a x${cross_compiling} = xno; then
+     if test x"$PKG_CONFIG" != x -a x${cross_compiling} = xno; then
+-      $PKG_CONFIG --exists libswscale  && libsws=`$PKG_CONFIG --libs-only-l libswscale`
 +      $PKG_CONFIG --exists libavresample  && libavresample=`$PKG_CONFIG --libs-only-l libavresample`
-+    else
+     else
+-      libsws=""
 +      libavresample=""
-+    fi
+     fi
+-    if test x"${libsws}" = x; then
+-      if test -f ${top_lib_dir}/libswscale.a -o -f ${top_lib_dir}/libswscale.${shlibext}; then
+-        ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lswscale"
 +    if test x"${libavresample}" = x; then
 +      if test -f ${top_lib_dir}/libavresample.a -o -f ${top_lib_dir}/libavresample.${shlibext}; then
 +        ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lavresample"
-+        AC_MSG_RESULT(yes)
-+      else
-+        AC_MSG_RESULT(no)
-+        if test x${cross_compiling} = xno; then
+         AC_MSG_RESULT(yes)
+       else
+         AC_MSG_RESULT(no)
+         if test x${cross_compiling} = xno; then
+-          AC_CHECK_LIB(swscale, sws_scale, [ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lswscale"])
 +          AC_CHECK_LIB(avresample, avresample, [ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lavresample"])
-+        fi
-+      fi
-+    else
+         fi
+       fi
+     else
+-      AC_MSG_RESULT(${libsws})
+-      ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} ${libsws}"
 +      AC_MSG_RESULT(${libavresample})
 +      ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} ${libavresample}"
-+    fi
+     fi
+-    dnl End of SWSCALE library looking }
 +    dnl End of {SW,AV}RESAMPLE libraries looking }
  
    fi
