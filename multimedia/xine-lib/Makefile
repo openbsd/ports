@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.108 2014/01/08 00:17:53 brad Exp $
+# $OpenBSD: Makefile,v 1.109 2014/04/16 05:09:00 brad Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multimedia decoding library
 
-DISTNAME=	xine-lib-1.2.4
-REVISION=	0
+DISTNAME=	xine-lib-1.2.5
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	xine	30.2
+SHARED_LIBS=	xine	31.0
 
 HOMEPAGE=	http://www.xine-project.org/
 
@@ -21,12 +20,12 @@ PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB=	FLAC GL GLU ICE SDL SM X11 Xext Xinerama Xv XvMCW a52 avcodec \
-		avutil bluray c cdio dca dvdnav dvdread expat faad fontconfig \
-		freetype iso9660 jpeg m mad modplug mpcdec mng ogg postproc \
-		pthread pthread-stubs sndio speex theora usbhid vcdinfo vorbis \
-		wavpack xcb-shape xcb-shm xcb-xv xcb xdg-basedir xml2 z
+		avformat avutil bluray c cdio dca dvdnav dvdread expat faad \
+		fontconfig freetype iso9660 jpeg m mad modplug mpcdec mng ogg \
+		postproc pthread pthread-stubs sndio speex theora usbhid vcdinfo \
+		vorbis wavpack xcb-shape xcb-shm xcb-xv xcb xdg-basedir xml2 z
 
-XINEAPI_REV=	2.3
+XINEAPI_REV=	2.4
 SUBST_VARS+=	XINEAPI_REV
 
 MODULES=	devel/gettext
@@ -43,7 +42,7 @@ LIB_DEPENDS=	audio/faad \
 		audio/speex \
 		audio/wavpack \
 		devel/sdl \
-		graphics/ffmpeg>=20111126 \
+		graphics/ffmpeg>=20130319 \
 		graphics/jpeg \
 		graphics/libmng \
 		graphics/vcdimager \
@@ -69,6 +68,7 @@ CONFIGURE_ARGS+=--disable-aalib \
 		--disable-optimizations \
 		--disable-real-codecs \
 		--disable-samba \
+		--disable-vpx \
 		--disable-w32dll \
 		--with-external-dvdnav \
 		--with-fontconfig \
