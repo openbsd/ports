@@ -1,0 +1,20 @@
+Paulstrecth is a program for stretching audio. It is suitable only for
+extreme sound stretching of the audio (like 50x) and for applying
+special effects by "spectral smoothing" the sounds. It can transform any
+sound or music into a texture.
+
+Features:
+
+* It produces high quality extreme sound stretching. While most sound
+stretching software sounds bad when trying to stretch the sounds a lot,
+this one is optimized for extreme sound stretching. So, the stretch
+amount is unlimited.
+
+* You can play the stretched sound in real-time (including the
+possibility to "freeze" the sound) or you can render the whole sound or
+a part of it to audio files.
+
+* It has many post-processing effects, like: filters, pitch/frequency
+shifters.
+
+* Support for WAV, OGG VORBIS files and MP3 files

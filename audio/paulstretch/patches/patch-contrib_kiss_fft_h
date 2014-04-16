@@ -1,0 +1,11 @@
+$OpenBSD: patch-contrib_kiss_fft_h,v 1.1.1.1 2014/04/16 02:01:59 bcallah Exp $
+--- contrib/kiss_fft.h.orig	Fri Jan 24 01:12:42 2014
++++ contrib/kiss_fft.h	Fri Jan 24 01:12:48 2014
+@@ -5,7 +5,6 @@
+ #include <stdio.h>
+ #include <math.h>
+ #include <memory.h>
+-#include <malloc.h>
+ 
+ #ifdef __cplusplus
+ extern "C" {

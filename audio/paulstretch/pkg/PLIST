@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/04/16 02:01:59 bcallah Exp $
+@bin bin/paulstretch
