@@ -1,4 +1,11 @@
-$OpenBSD: patch-common_mk,v 1.19 2014/04/15 10:31:30 dcoppa Exp $
+$OpenBSD: patch-common_mk,v 1.20 2014/04/16 14:12:04 dcoppa Exp $
+
+commit 2ba0d1ea49886db949c95e84cc8bfdea319b4c9a
+Author: David Coppa <dcoppa@gmail.com>
+Date:   Wed Mar 26 10:01:50 2014 +0100
+
+OpenBSD does not have librt
+
 --- common.mk.orig	Thu Jan 23 22:52:24 2014
 +++ common.mk	Tue Apr 15 07:55:02 2014
 @@ -1,5 +1,5 @@
