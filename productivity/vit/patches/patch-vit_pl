@@ -1,9 +1,9 @@
-$OpenBSD: patch-vit_pl,v 1.1.1.1 2013/10/31 18:54:40 bcallah Exp $
+$OpenBSD: patch-vit_pl,v 1.2 2014/04/16 01:57:45 bcallah Exp $
 
 List of keybindings doesn't belong under /etc.
---- vit.pl.orig	Wed Oct 30 22:31:36 2013
-+++ vit.pl	Wed Oct 30 22:34:04 2013
-@@ -9,7 +9,7 @@ use strict;
+--- vit.pl.orig	Sun Apr  6 11:40:14 2014
++++ vit.pl	Tue Apr 15 21:49:12 2014
+@@ -11,7 +11,7 @@ use strict;
  use Curses;
  use Time::HiRes qw(usleep);
  

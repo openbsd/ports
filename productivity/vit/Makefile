@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/10/31 18:54:40 bcallah Exp $
+# $OpenBSD: Makefile,v 1.2 2014/04/16 01:57:45 bcallah Exp $
 
 COMMENT =		ncurses front-end for taskwarrior
 
-DISTNAME =		vit-1.1
+DISTNAME =		vit-1.2
 CATEGORIES =		productivity
 
 HOMEPAGE =		http://taskwarrior.org/projects/1/wiki/Vit
