@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/04/02 15:30:12 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/04/16 07:14:48 jasper Exp $
 bin/polari
 lib/polari/
 lib/polari/girepository-1.0/
@@ -21,6 +21,7 @@ share/icons/hicolor/512x512/
 share/icons/hicolor/512x512/apps/
 share/icons/hicolor/512x512/apps/polari.png
 share/icons/hicolor/scalable/apps/polari.svg
+share/locale/ar/LC_MESSAGES/polari.mo
 share/locale/ca/LC_MESSAGES/polari.mo
 share/locale/cs/LC_MESSAGES/polari.mo
 share/locale/da/LC_MESSAGES/polari.mo
@@ -44,6 +45,7 @@ share/locale/pl/LC_MESSAGES/polari.mo
 share/locale/pt/LC_MESSAGES/polari.mo
 share/locale/pt_BR/LC_MESSAGES/polari.mo
 share/locale/ru/LC_MESSAGES/polari.mo
+share/locale/sk/LC_MESSAGES/polari.mo
 share/locale/sl/LC_MESSAGES/polari.mo
 share/locale/sr/LC_MESSAGES/polari.mo
 share/locale/sr@latin/LC_MESSAGES/polari.mo
