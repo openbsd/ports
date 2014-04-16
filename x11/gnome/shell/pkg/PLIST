@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2014/03/27 19:05:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2014/04/16 07:28:34 jasper Exp $
 @conflict gnome-panel-*
 @conflict gnome-screensaver-*
 @conflict notification-daemon-*
@@ -192,6 +192,7 @@ share/locale/id/LC_MESSAGES/gnome-shell.mo
 share/locale/it/LC_MESSAGES/gnome-shell.mo
 share/locale/ja/LC_MESSAGES/gnome-shell.mo
 share/locale/kk/LC_MESSAGES/gnome-shell.mo
+share/locale/km/LC_MESSAGES/gnome-shell.mo
 share/locale/kn/LC_MESSAGES/gnome-shell.mo
 share/locale/ko/LC_MESSAGES/gnome-shell.mo
 share/locale/ku/LC_MESSAGES/gnome-shell.mo
