@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/04/01 13:21:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/04/16 07:24:15 jasper Exp $
 @conflict metacity-*
 @pkgpath x11/gnome/metacity
 @bin bin/mutter
@@ -45,7 +45,6 @@ lib/pkgconfig/libmutter.pc
 lib/pkgconfig/mutter-plugins.pc
 @man man/man1/mutter.1
 share/GConf/gsettings/mutter-schemas.convert
-share/applications/
 share/applications/mutter.desktop
 share/glib-2.0/schemas/org.gnome.mutter.gschema.xml
 share/gnome/
