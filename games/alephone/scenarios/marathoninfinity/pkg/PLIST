@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2012/07/13 16:55:22 phessler Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/04/17 06:58:47 bentley Exp $
 @conflict marathoninfinity-*
 @conflict marathoninfinity-hires-*
 @pkgpath games/alephone/scenarios/marathoninfinity
@@ -467,6 +467,50 @@ share/alephone/Infinity/Plugins/HD Weapons/XBLA Projectiles.ShPa
 share/alephone/Infinity/Plugins/HD Weapons/XBLA Projectiles.mml
 share/alephone/Infinity/Plugins/HD Weapons/XBLA Weapons in Hand.ShPa
 share/alephone/Infinity/Plugins/HD Weapons/XBLA Weapons in Hand.mml
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/Plugin.xml
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/DejaVuLGCSansCondensed-Bold.ttf
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/DejaVuLGCSansCondensed-BoldBold.ttf
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/DejaVuLGCSansCondensed-BoldOblique.ttf
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/LICENSE-DejaVu
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/SquarishSansCT.README
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/Squarish_Sans_CT_Medium.ttf
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/button_c.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/button_c_p.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/button_l.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/button_l_p.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/button_r.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/button_r_p.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/frame_b.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/frame_bl.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/frame_br.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/frame_l.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/frame_r.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/frame_t.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/frame_tl.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/frame_tr.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/list_b.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/list_bl.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/list_br.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/list_l.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/list_r.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/list_t.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/list_tl.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/list_tr.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/slider.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/slider_c.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/slider_l.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/slider_r.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/theme2.mml
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/thumb_b.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/thumb_bc.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/thumb_c.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/thumb_t.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/thumb_tc.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/tiny_button_c.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/tiny_button_l.bmp
+share/alephone/Infinity/Plugins/Marathon Infinity Theme/resources/tiny_button_r.bmp
 share/alephone/Infinity/Plugins/XBLA_HUD/
 share/alephone/Infinity/Plugins/XBLA_HUD/720p/
 share/alephone/Infinity/Plugins/XBLA_HUD/720p/alien.png

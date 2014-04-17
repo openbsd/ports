@@ -1,8 +1,8 @@
-#	$OpenBSD: Makefile,v 1.10 2013/03/11 11:07:37 espie Exp $
+#	$OpenBSD: Makefile,v 1.11 2014/04/17 06:58:47 bentley Exp $
 PKG_ARCH =	*
 
 COMMENT =	marathon one data files
-V =		20120514
+V =		20140104
 DISTNAME =	marathon-0.0.${V}
 HOMEPAGE =	http://source.bungie.org/get/
 
@@ -21,7 +21,7 @@ INSTALL_M =	${INSTALL_LOC}/Marathon
 do-install:
 	${INSTALL_DATA_DIR} ${INSTALL_M}
 	# Marathon 1
-	@cd ${WRKDIR}/"Marathon (A1)" && pax -rw . ${INSTALL_M}
+	@cd ${WRKDIR}/Marathon && pax -rw . ${INSTALL_M}
 	${INSTALL_SCRIPT} ${FILESDIR}/marathon.sh ${PREFIX}/bin/marathon
 	${INSTALL_DATA} ${FULLDISTDIR}/Marathon_Manual.pdf ${INSTALL_M}
 

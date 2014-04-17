@@ -1,14 +1,34 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/01/27 21:35:24 phessler Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/04/17 06:58:47 bentley Exp $
 bin/marathon
 share/alephone/
 share/alephone/Marathon/
-share/alephone/Marathon/M1A1 Images.imgA
-share/alephone/Marathon/M1A1 Map.sceA
-share/alephone/Marathon/M1A1 Preferences
-share/alephone/Marathon/M1A1 Shapes.shpA
-share/alephone/Marathon/M1A1 Sounds.sndA
+share/alephone/Marathon/Fonts.fntA
+share/alephone/Marathon/Map.scen
+share/alephone/Marathon/Marathon Preferences
+share/alephone/Marathon/Marathon.appl
 share/alephone/Marathon/Marathon_Manual.pdf
+share/alephone/Marathon/Music/
+share/alephone/Marathon/Music/00.ogg
+share/alephone/Marathon/Music/01.ogg
+share/alephone/Marathon/Music/02.ogg
+share/alephone/Marathon/Music/03.ogg
+share/alephone/Marathon/Music/04.ogg
+share/alephone/Marathon/Music/05.ogg
+share/alephone/Marathon/Music/06.ogg
+share/alephone/Marathon/Music/07.ogg
+share/alephone/Marathon/Music/08.ogg
+share/alephone/Marathon/Music/09.ogg
+share/alephone/Marathon/Music/10.ogg
+share/alephone/Marathon/Music/11.ogg
+share/alephone/Marathon/Music/12.ogg
+share/alephone/Marathon/Music/13.ogg
+share/alephone/Marathon/Music/14.ogg
+share/alephone/Marathon/Music/15.ogg
+share/alephone/Marathon/Physics.phys
 share/alephone/Marathon/Plugins/
+share/alephone/Marathon/Plugins/Default HUD/
+share/alephone/Marathon/Plugins/Default HUD/Default_HUD_M1.lua
+share/alephone/Marathon/Plugins/Default HUD/Plugin.xml
 share/alephone/Marathon/Plugins/Enhanced HUD/
 share/alephone/Marathon/Plugins/Enhanced HUD/720p/
 share/alephone/Marathon/Plugins/Enhanced HUD/720p/alien.png
@@ -104,200 +124,153 @@ share/alephone/Marathon/Plugins/Marathon Theme/resources/thumb_tc.bmp
 share/alephone/Marathon/Plugins/Marathon Theme/resources/tiny_button_c.bmp
 share/alephone/Marathon/Plugins/Marathon Theme/resources/tiny_button_l.bmp
 share/alephone/Marathon/Plugins/Marathon Theme/resources/tiny_button_r.bmp
-share/alephone/Marathon/Plugins/TTEP_v7/
-share/alephone/Marathon/Plugins/TTEP_v7/DON'T UNZIP ME - PUT ME IN PLUGINS FOLDER.txt
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/general/
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/general/controlpanels01.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/general/controlpanels02.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/general/controlpanels03.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/general/controlpanels04.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/general/herringbone.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/general/rechargers01.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/general/rechargers02.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/general/rechargers03.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/general/rechargers04.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/general/rechargers05.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/general/rechargers06.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/general/special01.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/general/special02.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/general/special03.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/general/starscape.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/general/stripes.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/general/teleporter.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/general/terminal01.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/general/terminal02.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/general/terminal03.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/general/terminal04.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/general/terminal05.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/general/terminal06.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/grendel/
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/lava/
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/lava/lava05.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/lava/lava06.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/lava/lava07.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/lava/lava08.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/lava/lava09.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/lava/lava10.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/lava/lava11.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/lava/lava12.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/lava/lava14.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/lava/lava15.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/lava/lava16.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/lava/lava17.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/lava/lava18.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/lava/lava19.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/lava/lava20.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/lava/lava21.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/lava/lava22.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/lava/lava23.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/lava/lava24.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/lava/lava25.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/lava/lava26.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/lava/lava27.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/lava/lava28.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/lava/lava29.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/lava/lava30.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/lava/lava31.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/lava/lava32.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/lava/lava33.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor00.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor01.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor02.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor03.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor04.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor05.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor06.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor07.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor08.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor09.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor11.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor12.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor13.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor14.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor15.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor16.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor17.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor18.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor19.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor20.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor21.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor22.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor23.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor24.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor25.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor26.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor27.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor28.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor29.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor30.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor31.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor32.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor33.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor34.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor35.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor36.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor37.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor38.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor39.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor40.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor41.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor42.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor43.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor44.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor45.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor46.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor47.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor48.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pfhor/pfhor49.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/pid/
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage05.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage06.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage07.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage08.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage09.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage10.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage11.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage14.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage15.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage16.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage17.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage18.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage19.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage20.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage21.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage22.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage23.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage24.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage25.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage26.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage28.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage29.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage30.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage31.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage32.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage33.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage34.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage36.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage42.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage43.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/sewage/sewage55.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/water/
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/water/water06.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/water/water07.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/water/water08.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/water/water09.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/water/water10.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/water/water11.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/water/water13.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/water/water14.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/water/water15.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/water/water16.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/water/water17.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/water/water18.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/water/water19.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/water/water20.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/water/water21.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/water/water22.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/water/water23.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/water/water24.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/water/water25.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/water/water26.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/water/water27.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/water/water28.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/water/water29.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/water/water31.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/water/water32.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/water/water33.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/water/water34.dds
-share/alephone/Marathon/Plugins/TTEP_v7/M1 Textures/water/water35.dds
-share/alephone/Marathon/Plugins/TTEP_v7/Original - TXT.rtf
-share/alephone/Marathon/Plugins/TTEP_v7/Plugin.xml
-share/alephone/Marathon/Plugins/TTEP_v7/Textures M1.mml
-share/alephone/Marathon/Read Me M1A1.html
+share/alephone/Marathon/Plugins/TTEP v7/
+share/alephone/Marathon/Plugins/TTEP v7/Collections/
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/00.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/01.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/02.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/03.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/04.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/05.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/06.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/07.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/08.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/09.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/10.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/11.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/12.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/13.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/14.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/15.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/16.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/17.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/18.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/19.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/20.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/21.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/22.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/23.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/24.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/25.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/26.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/27.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/28.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/29.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/30.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/02/31.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/08/
+share/alephone/Marathon/Plugins/TTEP v7/Collections/08/00.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/08/01.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/08/02.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/08/03.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/08/04.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/08/05.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/08/06.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/08/07.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/00.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/01.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/02.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/03.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/04.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/05.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/06.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/07.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/08.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/09.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/10.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/11.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/12.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/13.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/14.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/15.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/16.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/17.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/18.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/19.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/20.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/21.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/22.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/23.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/24.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/25.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/26.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/27.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/28.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/17/29.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/00.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/01.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/02.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/03.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/04.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/05.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/06.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/07.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/08.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/09.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/10.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/11.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/12.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/13.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/14.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/15.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/16.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/17.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/18.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/19.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/20.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/21.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/22.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/23.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/24.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/25.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/26.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/27.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/28.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/18/29.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/00.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/01.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/02.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/03.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/04.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/05.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/06.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/07.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/08.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/09.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/10.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/11.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/12.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/13.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/14.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/15.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/16.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/17.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/18.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/19.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/20.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/21.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/22.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/23.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/24.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/25.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/26.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/27.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/28.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/19/29.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/24/
+share/alephone/Marathon/Plugins/TTEP v7/Collections/24/00.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/24/01.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/24/02.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/24/03.dds
+share/alephone/Marathon/Plugins/TTEP v7/Collections/24/05.dds
+share/alephone/Marathon/Plugins/TTEP v7/Original - TXT.rtf
+share/alephone/Marathon/Plugins/TTEP v7/Plugin.xml
+share/alephone/Marathon/Plugins/TTEP v7/Textures.mml
 share/alephone/Marathon/Scripts/
-share/alephone/Marathon/Scripts/M1A1.mml
-share/alephone/Marathon/Scripts/dialog_sounds.mml
-share/alephone/Marathon/Scripts/monsters.mml
-share/alephone/Marathon/Scripts/scenery.mml
-share/alephone/Marathon/Scripts/settings.mml
-share/alephone/Marathon/Scripts/vidmaster.mml
-share/alephone/Marathon/Tracks/
-share/alephone/Marathon/Tracks/aliensagain.ogg
-share/alephone/Marathon/Tracks/chomber.ogg
-share/alephone/Marathon/Tracks/fatman.ogg
-share/alephone/Marathon/Tracks/flippant.ogg
-share/alephone/Marathon/Tracks/flowersinheaven.ogg
-share/alephone/Marathon/Tracks/freedom.ogg
-share/alephone/Marathon/Tracks/guardians.ogg
-share/alephone/Marathon/Tracks/landing.ogg
-share/alephone/Marathon/Tracks/leela.ogg
-share/alephone/Marathon/Tracks/newpacific.ogg
-share/alephone/Marathon/Tracks/newpacific_reprise.ogg
-share/alephone/Marathon/Tracks/rapture.ogg
-share/alephone/Marathon/Tracks/rushing.ogg
-share/alephone/Marathon/Tracks/splash_marathon.ogg
-share/alephone/Marathon/Tracks/swirls.ogg
-share/alephone/Marathon/Tracks/whataboutbob.ogg
+share/alephone/Marathon/Scripts/Marathon.mml
+share/alephone/Marathon/Shapes.shps
+share/alephone/Marathon/Sounds.sndz

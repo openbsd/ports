@@ -1,0 +1,15 @@
+$OpenBSD: patch-Source_Files_FFmpeg_Movie_cpp,v 1.1 2014/04/17 06:58:47 bentley Exp $
+Remove use of deprecated quality setting.
+
+From upstream r5002.
+--- Source_Files/FFmpeg/Movie.cpp.orig	Thu Feb 20 13:15:17 2014
++++ Source_Files/FFmpeg/Movie.cpp	Thu Feb 20 13:15:18 2014
+@@ -491,7 +491,7 @@ bool Movie::Setup()
+         
+         // tuning options
+         int aq = graphics_preferences->movie_export_audio_quality;
+-        audio_stream->codec->global_quality = audio_stream->quality = FF_QP2LAMBDA * (aq / 10);
++        audio_stream->codec->global_quality = FF_QP2LAMBDA * (aq / 10);
+         audio_stream->codec->flags |= CODEC_FLAG_QSCALE;
+         
+         // find correct sample format

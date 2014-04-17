@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2012/07/13 16:54:33 phessler Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/04/17 06:58:47 bentley Exp $
 @conflict marathon2-*
 @conflict marathon2-hires-*
 @pkgpath games/alephone/scenarios/marathon2
@@ -807,6 +807,9 @@ share/alephone/Marathon2/Plugins/HD Monsters/ShapesHD/16/0/31.png
 share/alephone/Marathon2/Plugins/HD Monsters/ShapesHD/16/0/32.png
 share/alephone/Marathon2/Plugins/HD Monsters/ShapesHD/16/0/33.png
 share/alephone/Marathon2/Plugins/HD Monsters/ShapesHD/16/0/34.png
+share/alephone/Marathon2/Plugins/HD Monsters/ShapesHD/16/0/35.png
+share/alephone/Marathon2/Plugins/HD Monsters/ShapesHD/16/0/36.png
+share/alephone/Marathon2/Plugins/HD Monsters/ShapesHD/16/0/37.png
 share/alephone/Marathon2/Plugins/HD Monsters/ShapesHD/16/0/4.png
 share/alephone/Marathon2/Plugins/HD Monsters/ShapesHD/16/0/5.png
 share/alephone/Marathon2/Plugins/HD Monsters/ShapesHD/16/0/6.png
