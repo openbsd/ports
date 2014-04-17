@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2013/11/09 23:19:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2014/04/17 00:23:17 juanfra Exp $
 
 COMMENT=	interactive typing tutor
 
-DISTNAME=	gtypist-2.9.3
-REVISION=	0
+DISTNAME=	gtypist-2.9.4
 CATEGORIES=	education
 HOMEPAGE=	https://www.gnu.org/software/gtypist/
 
@@ -18,7 +17,8 @@ WANTLIB=	c ncursesw
 MODULES=	devel/gettext
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${WRKDIR}/include" EMACS=no
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${WRKDIR}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" EMACS=no
 
 MAKE_FLAGS=	'gtypist_LDADD=$$(LTLIBINTL)'
 
