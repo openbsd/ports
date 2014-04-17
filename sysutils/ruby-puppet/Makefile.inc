@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.24 2014/04/17 15:25:39 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.25 2014/04/17 17:22:35 jasper Exp $
 
 PKG_ARCH ?=	*
 COMMENT ?=	centralised configuration management for networks
@@ -19,6 +19,7 @@ SUBST_VARS +=	RUBY
 # Ruby version as Puppet. Please consult this matrix before adjusting:
 # http://docs.puppetlabs.com/guides/platforms.html
 #  devel/ruby-rgen
+#  databases/puppetdb
 #  databases/ruby-hiera
 #  databases/ruby-hiera-file
 #  net/ruby-msgpack
