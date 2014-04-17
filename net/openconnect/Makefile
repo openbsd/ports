@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2014/04/01 11:40:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2014/04/17 14:57:36 sthen Exp $
 
 COMMENT=	client for Cisco AnyConnect SSL VPN
 
 DISTNAME=	openconnect-5.99
-REVISION=	0
+REVISION=	1
 DIST_SUBDIR=	openconnect
 
 SHARED_LIBS +=  openconnect               2.0 # 3.2
@@ -22,18 +22,19 @@ WANTLIB += stdc++ tasn1 xml2 z ffi
 
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/
 
-# used to format html during build, USE_GROFF not needed
-# XXX can probably convert to using mandoc?
-BUILD_DEPENDS=		textproc/groff \
-			textproc/py-xml
 MODULES=		devel/gettext \
 			lang/python
 MODPY_RUNDEP=		No
-
+# groff is used to format html during build, USE_GROFF not needed
+# XXX can probably convert to using mandoc?
+BUILD_DEPENDS=		textproc/groff \
+			textproc/py-xml
 LIB_DEPENDS=		security/gnutls \
 			textproc/libxml \
 			net/libproxy>=0.4.6p7 \
 			security/oath-toolkit>=2.0.2
+RUN_DEPENDS=		net/vpnc-scripts
+
 FAKE_FLAGS=		pkgdatadir=${PREFIX}/share/doc/openconnect
 
 CONFIGURE_STYLE=	gnu

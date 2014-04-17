@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2014/04/01 11:40:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2014/04/17 14:57:36 sthen Exp $
 
 COMMENT=		client for Cisco 3000 VPN concentrators
 
 DISTNAME=		vpnc-0.5.3
-REVISION=		3
+REVISION=		4
 CATEGORIES=		security net
 
 HOMEPAGE=		http://www.unix-ag.uni-kl.de/~massar/vpnc/
@@ -18,6 +18,7 @@ MASTER_SITES=		${HOMEPAGE}
 MODULES=		devel/gettext
 
 LIB_DEPENDS=		security/libgcrypt>=1.2
+RUN_DEPENDS=		net/vpnc-scripts
 
 USE_GMAKE=		Yes
 NO_TEST=		Yes
