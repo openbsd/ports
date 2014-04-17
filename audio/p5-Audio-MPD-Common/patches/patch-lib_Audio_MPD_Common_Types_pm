@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_Audio_MPD_Common_Types_pm,v 1.1 2014/04/17 20:51:25 landry Exp $
+
+https://rt.cpan.org/Public/Bug/Display.html?id=90670
+https://github.com/zoffixznet/audio-mpd-common/commit/351d454b093927ce204acfa5f8a4c4bb393578f9
+
+--- lib/Audio/MPD/Common/Types.pm.orig	Thu Apr 17 08:18:18 2014
++++ lib/Audio/MPD/Common/Types.pm	Thu Apr 17 08:18:26 2014
+@@ -20,7 +20,7 @@ use Moose::Util::TypeConstraints;
+ 
+ use Audio::MPD::Common::Time;
+ 
+-enum 'State' => qw{ play stop pause };
++enum 'State' => [qw{ play stop pause }];
+ 
+ coerce 'Audio::MPD::Common::Time'
+     => from 'Str'

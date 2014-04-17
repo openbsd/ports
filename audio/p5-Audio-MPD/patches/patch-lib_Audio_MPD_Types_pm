@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_Audio_MPD_Types_pm,v 1.1 2014/04/17 20:51:25 landry Exp $
+
+https://rt.cpan.org/Public/Bug/Display.html?id=90682
+https://github.com/zoffixznet/audio-mpd/commit/7eb61ed18732cb2b7592b01b0ac2e1aa705f3a13
+
+--- lib/Audio/MPD/Types.pm.orig	Thu Apr 17 08:07:31 2014
++++ lib/Audio/MPD/Types.pm	Thu Apr 17 08:07:43 2014
+@@ -18,7 +18,7 @@ package Audio::MPD::Types;
+ 
+ use Moose::Util::TypeConstraints;
+ 
+-enum CONNTYPE  => qw{ reuse once };
++enum CONNTYPE  => [qw{ reuse once }];
+ 
+ 1;
+ 
