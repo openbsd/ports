@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.21 2014/04/04 14:31:26 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.22 2014/04/17 14:07:41 jasper Exp $
 
 PKG_ARCH ?=	*
 COMMENT ?=	centralised configuration management for networks
@@ -12,7 +12,7 @@ FILESDIR ?=	${.CURDIR}/../files
 PKGDIR ?=	${.CURDIR}/../pkg
 PLIST ?=	${.CURDIR}/pkg/PLIST
 
-CATEGORIES +=	sysutils net
+CATEGORIES +=	sysutils
 SUBST_VARS +=	RUBY
 
 # For maintenance/ease of use, the following ports should use the same
