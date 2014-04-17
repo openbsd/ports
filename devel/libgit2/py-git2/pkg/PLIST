@@ -1,10 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/03/09 20:01:29 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/04/17 19:26:33 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/_pygit2.so
 lib/python${MODPY_VERSION}/site-packages/pygit2/
-lib/python${MODPY_VERSION}/site-packages/pygit2-0.20.2-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/pygit2-0.20.3-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pygit2/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pygit2/credentials.py
+lib/python${MODPY_VERSION}/site-packages/pygit2/credentials.pyc
 lib/python${MODPY_VERSION}/site-packages/pygit2/repository.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/repository.pyc
+lib/python${MODPY_VERSION}/site-packages/pygit2/settings.py
+lib/python${MODPY_VERSION}/site-packages/pygit2/settings.pyc
 lib/python${MODPY_VERSION}/site-packages/pygit2/version.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/version.pyc
