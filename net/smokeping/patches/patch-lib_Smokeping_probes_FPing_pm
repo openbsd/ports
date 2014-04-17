@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_Smokeping_probes_FPing_pm,v 1.1 2014/04/17 22:11:37 sthen Exp $
+--- lib/Smokeping/probes/FPing.pm.orig	Thu Apr 17 23:10:47 2014
++++ lib/Smokeping/probes/FPing.pm	Thu Apr 17 23:10:51 2014
+@@ -15,8 +15,8 @@ to generate the POD document.
+ =cut
+ 
+ use strict;
+-use base qw(Smokeping::probes::base);
+ use IPC::Open3;
++use base qw(Smokeping::probes::base);
+ use Symbol;
+ use Carp;
+ 
