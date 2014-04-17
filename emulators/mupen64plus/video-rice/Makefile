@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2013/09/05 03:26:32 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2014/04/17 07:03:59 bentley Exp $
 
 COMMENT =		n64 emulator opengl video plugin
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
+REVISION =		1
 
 WANTLIB =		GL SDL m png pthread stdc++
 LIB_DEPENDS =		devel/sdl graphics/png

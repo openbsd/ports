@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2013/12/20 02:24:39 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2014/04/17 07:03:59 bentley Exp $
 
 ONLY_FOR_ARCHS ?=	amd64 i386
 SHARED_ONLY = 		Yes
@@ -14,6 +14,7 @@ CONFIGURE_STYLE ?=	none
 USE_GMAKE ?=		Yes
 MAKE_FLAGS += 		CC=${CC} \
 			CXX=${CXX} \
+			DEBUG=1 \
 			V=1 \
 			OPTFLAGS=
 
