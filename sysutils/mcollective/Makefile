@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2014/03/09 19:45:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2014/04/17 18:12:09 jasper Exp $
 
 COMMENT=	framework for server orchestration/parallel job execution
 
 DISTNAME=	mcollective-2.4.1
+REVISION=	0
 
 CATEGORIES=	sysutils
 
@@ -16,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=	http://downloads.puppetlabs.com/mcollective/
 
 MODULES=	lang/ruby
-MODRUBY_REV=	1.9
+MODRUBY_REV=	2.0
 
 RUN_DEPENDS=	net/ruby-stomp,${MODRUBY_FLAVOR}>=1.3.2
 

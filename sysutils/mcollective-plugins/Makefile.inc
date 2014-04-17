@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2013/12/24 09:20:38 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2014/04/17 18:12:09 jasper Exp $
 
 CATEGORIES?=		sysutils
 
@@ -11,7 +11,7 @@ NO_BUILD?=		Yes
 NO_TEST?=		Yes
 PKG_ARCH?=		*
 
-RUN_DEPENDS+=		sysutils/mcollective
+RUN_DEPENDS+=		sysutils/mcollective>=2.4.1p0
 
 MCO_SUBDIRS?=		agent aggregate application data util validator
 MCO_LIBDIR=		${PREFIX}/libexec/mcollective/mcollective/
