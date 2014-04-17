@@ -1,7 +1,7 @@
-$OpenBSD: patch-Completion_Unix_Type__diff_options,v 1.1 2006/10/19 13:44:51 naddy Exp $
---- Completion/Unix/Type/_diff_options.orig	Thu Sep 30 04:28:18 2004
-+++ Completion/Unix/Type/_diff_options	Wed Oct 11 14:23:55 2006
-@@ -120,9 +120,35 @@ else
+$OpenBSD: patch-Completion_Unix_Type__diff_options,v 1.2 2014/04/17 12:12:20 jasper Exp $
+--- Completion/Unix/Type/_diff_options.orig	Wed Nov 27 20:00:19 2013
++++ Completion/Unix/Type/_diff_options	Mon Apr 14 18:10:09 2014
+@@ -119,9 +119,35 @@ else
          '-S+[set first file in comparison]:start with file:_files'
        )
      ;;

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.1 2010/09/06 18:53:51 nicm Exp $
---- configure.ac.orig	Mon Aug 30 09:36:42 2010
-+++ configure.ac	Mon Aug 30 09:37:03 2010
-@@ -701,7 +701,7 @@ AH_TEMPLATE([ZSH_NO_XOPEN],
+$OpenBSD: patch-configure_ac,v 1.2 2014/04/17 12:12:20 jasper Exp $
+--- configure.ac.orig	Wed Nov 27 20:00:20 2013
++++ configure.ac	Mon Apr 14 18:10:09 2014
+@@ -756,7 +756,7 @@ AH_TEMPLATE([ZSH_NO_XOPEN],
  AC_CACHE_CHECK(if _XOPEN_SOURCE_EXTENDED should not be defined,
  zsh_cv_no_xopen,
  [[case "$host_os" in

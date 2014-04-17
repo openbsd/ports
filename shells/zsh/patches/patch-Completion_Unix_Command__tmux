@@ -1,78 +1,10 @@
-$OpenBSD: patch-Completion_Unix_Command__tmux,v 1.2 2009/12/16 15:03:28 pea Exp $
---- Completion/Unix/Command/_tmux.orig	Thu Dec 10 17:25:18 2009
-+++ Completion/Unix/Command/_tmux	Thu Dec 10 17:27:19 2009
-@@ -0,0 +1,1491 @@
-+#compdef tmux
-+
-+# tmux <http://tmux.sf.net> completion for zsh <http://zsh.sf.net>.
-+#
-+# Configuration:
-+#
-+# - On some OSs, the directory for tmux's server sockets may not be
-+#   the default (which is /tmp/tmux-<uid>/), but say
-+#   /var/run/tmux/tmux-<uid>, in which case the completion for
-+#   'tmux -L <tab>' will not be able to find the sockets in the default
-+#   location (debian does this, for instance); tell _tmux the right place
-+#   to look:
-+#       % zstyle ':completion:*:*:tmux:*:sockets' socketdir "/var/run/tmux/tmux-${UID}"
-+#
-+# - tmux knows a *lot* of sub-commands, hence 'tmux <tab>' returns a lot
-+#   of possible completions. _tmux knows about all commands and their aliases.
-+#   By default, both are offered. If you do not care about the aliases, do this:
-+#       % zstyle ':completion:*:*:tmux:*:subcommands' mode 'commands'
-+#
-+#   The same can be done to only return aliases by setting the above style
-+#   to 'aliases'. The default value is 'both' (but actually every value
-+#   different from 'commands' and 'aliases' will have the same effect).
-+#
-+#   'lsw' is an alias for 'list-windows' for example; note that not all
-+#   commands have aliases. So probably, either the default 'both' or
-+#   'commands' makes most sense for this style.
-+#
-+# - For finer grained control over what is suggested as possible completions,
-+#   the 'ignored-patterns' style may be used; suppose you think that only
-+#   '*-window' or '*-windows' are worth being completed. You would get that
-+#   behaviour like this:
-+#       % zstyle ':completion:*:*:tmux:*:subcommands' ignored-patterns '^*-window(|s)'
-+#
-+#   Some tmux commands currently do not work if called from a shell prompt,
-+#   so it would make sense to ignore them per default (at the time of writing,
-+#   those commands are choose-{session,client,window}, confirm-before and
-+#   find-window. This would ignore them:
-+#       % zstyle ':completion:*:*:tmux:*:subcommands' ignored-patterns \
-+#                'choose-*' 'confirm-before' 'find-window'
-+#
-+# The configuration for subcommand completions may be done in
-+# this context: ':completion:*:*:tmux-<sub-command>:*:*'
-+
-+# Global variables; setup the first time _tmux is called.
-+# For $_tmux_commands[] generation, see the very end of this file.
-+typeset -ga _tmux_commands _tmux_aliases
-+typeset -gA _tmux_aliasmap
-+
-+_tmux_aliasmap=(
-+    # clients and sessions
-+    attach      attach-session
-+    detach      detach-client
-+    has         has-session
-+    lsc         list-clients
-+    lscm        list-commands
-+    ls          list-sessions
-+    new         new-session
-+    refresh     refresh-client
-+    rename      rename-session
-+    showmsgs    show-messages
-+    source      source-file
-+    start       start-server
-+    suspendc    suspend-client
-+    switchc     switch-client
-+
-+    # windows and panes
-+    breakp      break-pane
-+    capturep    capture-pane
-+    displayp    display-panes
-+    downp       down-pane
-+    findw       find-window
+$OpenBSD: patch-Completion_Unix_Command__tmux,v 1.3 2014/04/17 12:12:20 jasper Exp $
+--- Completion/Unix/Command/_tmux.orig	Wed Nov 27 20:00:19 2013
++++ Completion/Unix/Command/_tmux	Mon Apr 14 18:10:09 2014
+@@ -69,6 +69,1497 @@ _tmux_aliasmap=(
+     displayp    display-panes
+     downp       down-pane
+     findw       find-window
 +    killp       kill-pane
 +    killw       kill-window
 +    last        last-window
@@ -1493,3 +1425,77 @@ $OpenBSD: patch-Completion_Unix_Command__tmux,v 1.2 2009/12/16 15:03:28 pea Exp 
 +unset desc f rev tmux_describe
 +
 +_tmux
++#compdef tmux
++
++# tmux <http://tmux.sf.net> completion for zsh <http://zsh.sf.net>.
++#
++# Configuration:
++#
++# - On some OSs, the directory for tmux's server sockets may not be
++#   the default (which is /tmp/tmux-<uid>/), but say
++#   /var/run/tmux/tmux-<uid>, in which case the completion for
++#   'tmux -L <tab>' will not be able to find the sockets in the default
++#   location (debian does this, for instance); tell _tmux the right place
++#   to look:
++#       % zstyle ':completion:*:*:tmux:*:sockets' socketdir "/var/run/tmux/tmux-${UID}"
++#
++# - tmux knows a *lot* of sub-commands, hence 'tmux <tab>' returns a lot
++#   of possible completions. _tmux knows about all commands and their aliases.
++#   By default, both are offered. If you do not care about the aliases, do this:
++#       % zstyle ':completion:*:*:tmux:*:subcommands' mode 'commands'
++#
++#   The same can be done to only return aliases by setting the above style
++#   to 'aliases'. The default value is 'both' (but actually every value
++#   different from 'commands' and 'aliases' will have the same effect).
++#
++#   'lsw' is an alias for 'list-windows' for example; note that not all
++#   commands have aliases. So probably, either the default 'both' or
++#   'commands' makes most sense for this style.
++#
++# - For finer grained control over what is suggested as possible completions,
++#   the 'ignored-patterns' style may be used; suppose you think that only
++#   '*-window' or '*-windows' are worth being completed. You would get that
++#   behaviour like this:
++#       % zstyle ':completion:*:*:tmux:*:subcommands' ignored-patterns '^*-window(|s)'
++#
++#   Some tmux commands currently do not work if called from a shell prompt,
++#   so it would make sense to ignore them per default (at the time of writing,
++#   those commands are choose-{session,client,window}, confirm-before and
++#   find-window. This would ignore them:
++#       % zstyle ':completion:*:*:tmux:*:subcommands' ignored-patterns \
++#                'choose-*' 'confirm-before' 'find-window'
++#
++# The configuration for subcommand completions may be done in
++# this context: ':completion:*:*:tmux-<sub-command>:*:*'
++
++# Global variables; setup the first time _tmux is called.
++# For $_tmux_commands[] generation, see the very end of this file.
++typeset -ga _tmux_commands _tmux_aliases
++typeset -gA _tmux_aliasmap
++
++_tmux_aliasmap=(
++    # clients and sessions
++    attach      attach-session
++    detach      detach-client
++    has         has-session
++    lsc         list-clients
++    lscm        list-commands
++    ls          list-sessions
++    new         new-session
++    refresh     refresh-client
++    rename      rename-session
++    showmsgs    show-messages
++    source      source-file
++    start       start-server
++    suspendc    suspend-client
++    switchc     switch-client
++
++    # windows and panes
++    breakp      break-pane
++    capturep    capture-pane
++    displayp    display-panes
++    downp       down-pane
++    findw       find-window
+     joinp       join-pane
+     killp       kill-pane
+     killw       kill-window

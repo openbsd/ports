@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.37 2013/10/02 19:49:14 gsoares Exp $
+@comment $OpenBSD: PLIST,v 1.38 2014/04/17 12:12:20 jasper Exp $
 @pkgpath shells/zsh,-main
 @shell bin/zsh
 %%SHARED%%
-@bin bin/zsh-${V}
-@info info/zsh.info
+@bin bin/${FULLPKGNAME}
 @man man/man1/zsh.1
 @man man/man1/zshall.1
 @man man/man1/zshbuiltins.1
@@ -122,6 +121,7 @@ share/zsh/${V}/functions/_calendar
 share/zsh/${V}/functions/_call_function
 share/zsh/${V}/functions/_call_program
 share/zsh/${V}/functions/_canonical_paths
+share/zsh/${V}/functions/_cat
 share/zsh/${V}/functions/_ccal
 share/zsh/${V}/functions/_cd
 share/zsh/${V}/functions/_cdbs-edit-patch
@@ -139,6 +139,7 @@ share/zsh/${V}/functions/_combination
 share/zsh/${V}/functions/_comm
 share/zsh/${V}/functions/_command
 share/zsh/${V}/functions/_command_names
+share/zsh/${V}/functions/_comp_locale
 share/zsh/${V}/functions/_compdef
 share/zsh/${V}/functions/_complete
 share/zsh/${V}/functions/_complete_debug
@@ -175,6 +176,7 @@ share/zsh/${V}/functions/_dbus
 share/zsh/${V}/functions/_dchroot
 share/zsh/${V}/functions/_dchroot-dsa
 share/zsh/${V}/functions/_dcop
+share/zsh/${V}/functions/_dcut
 share/zsh/${V}/functions/_dd
 share/zsh/${V}/functions/_deb_packages
 share/zsh/${V}/functions/_debchange
@@ -187,6 +189,7 @@ share/zsh/${V}/functions/_delimiters
 share/zsh/${V}/functions/_describe
 share/zsh/${V}/functions/_description
 share/zsh/${V}/functions/_devtodo
+share/zsh/${V}/functions/_df
 share/zsh/${V}/functions/_dhclient
 share/zsh/${V}/functions/_dhcpinfo
 share/zsh/${V}/functions/_dict
@@ -231,6 +234,7 @@ share/zsh/${V}/functions/_enscript
 share/zsh/${V}/functions/_env
 share/zsh/${V}/functions/_equal
 share/zsh/${V}/functions/_espeak
+share/zsh/${V}/functions/_etags
 share/zsh/${V}/functions/_ethtool
 share/zsh/${V}/functions/_expand
 share/zsh/${V}/functions/_expand_alias
@@ -351,7 +355,6 @@ share/zsh/${V}/functions/_lha
 share/zsh/${V}/functions/_lighttpd
 share/zsh/${V}/functions/_limit
 share/zsh/${V}/functions/_limits
-share/zsh/${V}/functions/_linda
 share/zsh/${V}/functions/_links
 share/zsh/${V}/functions/_lintian
 share/zsh/${V}/functions/_list
@@ -385,6 +388,7 @@ share/zsh/${V}/functions/_make-kpkg
 share/zsh/${V}/functions/_man
 share/zsh/${V}/functions/_match
 share/zsh/${V}/functions/_math
+share/zsh/${V}/functions/_math_params
 share/zsh/${V}/functions/_matlab
 share/zsh/${V}/functions/_md5sum
 share/zsh/${V}/functions/_mdadm
@@ -403,6 +407,7 @@ share/zsh/${V}/functions/_mkshortcut
 share/zsh/${V}/functions/_mkzsh
 share/zsh/${V}/functions/_module
 share/zsh/${V}/functions/_module-assistant
+share/zsh/${V}/functions/_module_math_func
 share/zsh/${V}/functions/_modutils
 share/zsh/${V}/functions/_mondo
 share/zsh/${V}/functions/_monotone
@@ -489,6 +494,7 @@ share/zsh/${V}/functions/_portmaster
 share/zsh/${V}/functions/_ports
 share/zsh/${V}/functions/_portsnap
 share/zsh/${V}/functions/_postfix
+share/zsh/${V}/functions/_postscript
 share/zsh/${V}/functions/_powerd
 share/zsh/${V}/functions/_prcs
 share/zsh/${V}/functions/_precommand
@@ -498,6 +504,7 @@ share/zsh/${V}/functions/_printenv
 share/zsh/${V}/functions/_printers
 share/zsh/${V}/functions/_procstat
 share/zsh/${V}/functions/_prompt
+share/zsh/${V}/functions/_prove
 share/zsh/${V}/functions/_prstat
 share/zsh/${V}/functions/_ps
 share/zsh/${V}/functions/_ps1234
@@ -540,6 +547,7 @@ share/zsh/${V}/functions/_rrdtool
 share/zsh/${V}/functions/_rsync
 share/zsh/${V}/functions/_rubber
 share/zsh/${V}/functions/_ruby
+share/zsh/${V}/functions/_run-help
 share/zsh/${V}/functions/_sablotron
 share/zsh/${V}/functions/_samba
 share/zsh/${V}/functions/_savecore
@@ -650,6 +658,7 @@ share/zsh/${V}/functions/_uscan
 share/zsh/${V}/functions/_user_admin
 share/zsh/${V}/functions/_user_at_host
 share/zsh/${V}/functions/_user_expand
+share/zsh/${V}/functions/_user_math_func
 share/zsh/${V}/functions/_users
 share/zsh/${V}/functions/_users_on
 share/zsh/${V}/functions/_uzbl
@@ -927,6 +936,115 @@ share/zsh/${V}/functions/zsh-newuser-install
 share/zsh/${V}/functions/zsh_directory_name_cdr
 share/zsh/${V}/functions/zstyle+
 share/zsh/${V}/functions/ztodo
+share/zsh/${V}/help/
+share/zsh/${V}/help/alias
+share/zsh/${V}/help/autoload
+share/zsh/${V}/help/bg
+share/zsh/${V}/help/bindkey
+share/zsh/${V}/help/break
+share/zsh/${V}/help/builtin
+share/zsh/${V}/help/bye
+share/zsh/${V}/help/cap
+share/zsh/${V}/help/cd
+share/zsh/${V}/help/chdir
+share/zsh/${V}/help/clone
+share/zsh/${V}/help/colon
+share/zsh/${V}/help/command
+share/zsh/${V}/help/comparguments
+share/zsh/${V}/help/compcall
+share/zsh/${V}/help/compctl
+share/zsh/${V}/help/compdescribe
+share/zsh/${V}/help/compfiles
+share/zsh/${V}/help/compgroups
+share/zsh/${V}/help/compquote
+share/zsh/${V}/help/comptags
+share/zsh/${V}/help/comptry
+share/zsh/${V}/help/compvalues
+share/zsh/${V}/help/continue
+share/zsh/${V}/help/declare
+share/zsh/${V}/help/dirs
+share/zsh/${V}/help/disable
+share/zsh/${V}/help/disown
+share/zsh/${V}/help/dot
+share/zsh/${V}/help/echo
+share/zsh/${V}/help/echotc
+share/zsh/${V}/help/echoti
+share/zsh/${V}/help/emulate
+share/zsh/${V}/help/enable
+share/zsh/${V}/help/eval
+share/zsh/${V}/help/exec
+share/zsh/${V}/help/exit
+share/zsh/${V}/help/export
+share/zsh/${V}/help/false
+share/zsh/${V}/help/fc
+share/zsh/${V}/help/fg
+share/zsh/${V}/help/float
+share/zsh/${V}/help/functions
+share/zsh/${V}/help/getcap
+share/zsh/${V}/help/getln
+share/zsh/${V}/help/getopts
+share/zsh/${V}/help/hash
+share/zsh/${V}/help/history
+share/zsh/${V}/help/integer
+share/zsh/${V}/help/jobs
+share/zsh/${V}/help/kill
+share/zsh/${V}/help/let
+share/zsh/${V}/help/limit
+share/zsh/${V}/help/local
+share/zsh/${V}/help/log
+share/zsh/${V}/help/logout
+share/zsh/${V}/help/noglob
+share/zsh/${V}/help/popd
+share/zsh/${V}/help/print
+share/zsh/${V}/help/printf
+share/zsh/${V}/help/pushd
+share/zsh/${V}/help/pushln
+share/zsh/${V}/help/pwd
+share/zsh/${V}/help/r
+share/zsh/${V}/help/read
+share/zsh/${V}/help/readonly
+share/zsh/${V}/help/rehash
+share/zsh/${V}/help/return
+share/zsh/${V}/help/sched
+share/zsh/${V}/help/set
+share/zsh/${V}/help/setcap
+share/zsh/${V}/help/setopt
+share/zsh/${V}/help/shift
+share/zsh/${V}/help/source
+share/zsh/${V}/help/stat
+share/zsh/${V}/help/suspend
+share/zsh/${V}/help/test
+share/zsh/${V}/help/times
+share/zsh/${V}/help/trap
+share/zsh/${V}/help/true
+share/zsh/${V}/help/ttyctl
+share/zsh/${V}/help/type
+share/zsh/${V}/help/typeset
+share/zsh/${V}/help/ulimit
+share/zsh/${V}/help/umask
+share/zsh/${V}/help/unalias
+share/zsh/${V}/help/unfunction
+share/zsh/${V}/help/unhash
+share/zsh/${V}/help/unlimit
+share/zsh/${V}/help/unset
+share/zsh/${V}/help/unsetopt
+share/zsh/${V}/help/vared
+share/zsh/${V}/help/wait
+share/zsh/${V}/help/whence
+share/zsh/${V}/help/where
+share/zsh/${V}/help/which
+share/zsh/${V}/help/zcompile
+share/zsh/${V}/help/zformat
+share/zsh/${V}/help/zftp
+share/zsh/${V}/help/zle
+share/zsh/${V}/help/zmodload
+share/zsh/${V}/help/zparseopts
+share/zsh/${V}/help/zprof
+share/zsh/${V}/help/zpty
+share/zsh/${V}/help/zregexparse
+share/zsh/${V}/help/zsocket
+share/zsh/${V}/help/zstyle
+share/zsh/${V}/help/ztcp
 share/zsh/${V}/scripts/
 share/zsh/${V}/scripts/newuser
 share/zsh/site-functions/
