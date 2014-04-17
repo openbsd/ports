@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.335 2014/03/30 19:28:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.336 2014/04/17 17:06:34 jasper Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -44,7 +44,6 @@
      SUBDIR += easy-rsa
      SUBDIR += encfs
      SUBDIR += erl-bcrypt
-     SUBDIR += erl-oauth
      SUBDIR += fcrackzip
      SUBDIR += fragroute
      SUBDIR += fragrouter

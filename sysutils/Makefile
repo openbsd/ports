@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.310 2014/01/22 11:59:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.311 2014/04/17 17:06:34 jasper Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -53,9 +53,6 @@
      SUBDIR += dwdiff
      SUBDIR += e2fsprogs
      SUBDIR += entr
-     SUBDIR += erchef
-     SUBDIR += erl-lager
-     SUBDIR += erl-stats_hero
      SUBDIR += eventlog
      SUBDIR += faubackup
      SUBDIR += fdupes

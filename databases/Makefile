@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.265 2014/03/18 09:15:00 benoit Exp $
+# $OpenBSD: Makefile,v 1.266 2014/04/17 17:06:34 jasper Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -8,10 +8,6 @@
      SUBDIR += dbh
      SUBDIR += dbic++
      SUBDIR += directoryassistant
-     SUBDIR += erl-Emysql
-     SUBDIR += erl-couchbeam
-     SUBDIR += erl-epgsql
-     SUBDIR += erl-sqerl
      SUBDIR += evolution-data-server
      SUBDIR += freetds
      SUBDIR += gdbm

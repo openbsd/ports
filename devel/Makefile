@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1214 2014/04/17 15:43:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.1215 2014/04/17 17:06:34 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -101,19 +101,6 @@
      SUBDIR += eclipse
      SUBDIR += ectags
      SUBDIR += emacs-haskell
-     SUBDIR += erl-automeck
-     SUBDIR += erl-bear
-     SUBDIR += erl-depsolver
-     SUBDIR += erl-ej
-     SUBDIR += erl-ejson
-     SUBDIR += erl-eper
-     SUBDIR += erl-fast_log
-     SUBDIR += erl-folsom
-     SUBDIR += erl-gen_server2
-     SUBDIR += erl-jiffy
-     SUBDIR += erl-meck
-     SUBDIR += erl-mixer
-     SUBDIR += erl-pooler
      SUBDIR += ethos
      SUBDIR += fasm
      SUBDIR += ffcall
