@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.22 2014/04/17 14:07:41 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.23 2014/04/17 14:15:53 jasper Exp $
 
 PKG_ARCH ?=	*
 COMMENT ?=	centralised configuration management for networks
@@ -37,7 +37,7 @@ RUN_DEPENDS +=	converters/ruby-json,${MODRUBY_FLAVOR} \
 		sysutils/ruby-shadow,${MODRUBY_FLAVOR} \
 		${MODRUBY_ICONV_DEPENDS}
 
-# Apache
+# Apache2
 PERMIT_PACKAGE_CDROM=	Yes
 
 do-install:
