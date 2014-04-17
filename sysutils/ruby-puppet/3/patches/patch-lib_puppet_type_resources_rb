@@ -1,8 +1,9 @@
-$OpenBSD: patch-lib_puppet_type_resources_rb,v 1.2 2013/09/13 07:20:30 jasper Exp $
+$OpenBSD: patch-lib_puppet_type_resources_rb,v 1.3 2014/04/17 15:27:50 jasper Exp $
 
-User ID's below 1000 are considered "system users" on OpenBSD,
-eventhough we lack the concept of "system users". Puppet uses
-this to determine if a user can be purged.
+From 535e748d2f0c102d0b5041988480e2ef237cd10f Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Thu, 17 Apr 2014 17:12:36 +0200
+Subject: [PATCH] User ID's below 1000, not 500, are generally considered system users on OpenBSD.
 
 --- lib/puppet/type/resources.rb.orig	Tue Sep 10 00:15:46 2013
 +++ lib/puppet/type/resources.rb	Wed Sep 11 23:30:18 2013
