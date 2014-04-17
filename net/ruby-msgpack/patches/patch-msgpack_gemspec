@@ -1,0 +1,17 @@
+$OpenBSD: patch-msgpack_gemspec,v 1.1.1.1 2014/04/17 14:27:56 jasper Exp $
+
+Prevent aborting tests if git is not installed.
+
+--- msgpack.gemspec.orig	Wed Apr 16 10:57:16 2014
++++ msgpack.gemspec	Wed Apr 16 10:57:32 2014
+@@ -12,8 +12,8 @@ Gem::Specification.new do |s|
+   s.homepage = "http://msgpack.org/"
+   s.rubyforge_project = "msgpack"
+   s.has_rdoc = false
+-  s.files = `git ls-files`.split("\n")
+-  s.test_files = `git ls-files -- {test,spec}/*`.split("\n")
++#  s.files = `git ls-files`.split("\n")
++#  s.test_files = `git ls-files -- {test,spec}/*`.split("\n")
+   s.require_paths = ["lib"]
+   s.extensions = ["ext/msgpack/extconf.rb"]
+ 
