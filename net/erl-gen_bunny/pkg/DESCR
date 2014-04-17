@@ -1,3 +1,0 @@
-erl-gen_bunny is a RabbitMQ client library for erlang whose primary goal
-is to be easy to use. Especially for simple publisher and consumer
-applications.

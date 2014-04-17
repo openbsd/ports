@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/08 11:54:39 jasper Exp $
-%%SHARED%%
-lib/erlang/lib/ejson-${VERSION}/
-lib/erlang/lib/ejson-${VERSION}/ebin/
-lib/erlang/lib/ejson-${VERSION}/ebin/ejson.app
-lib/erlang/lib/ejson-${VERSION}/ebin/ejson.beam
-lib/erlang/lib/ejson-${VERSION}/priv/
-lib/erlang/lib/ejson-${VERSION}/src/
-lib/erlang/lib/ejson-${VERSION}/src/ejson.erl

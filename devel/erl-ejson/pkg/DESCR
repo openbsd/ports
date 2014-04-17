@@ -1,3 +1,0 @@
-Decode and encode JSON into/from Erlang terms using Elang NIF library if
-available.. This the module used in CouchDB project ported a standalone
-module with rebar support.

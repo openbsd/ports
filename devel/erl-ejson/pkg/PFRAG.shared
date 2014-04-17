@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2013/03/08 11:54:39 jasper Exp $
-lib/erlang/lib/ejson-${VERSION}/priv/ejson.so

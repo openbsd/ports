@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/08 11:57:54 jasper Exp $
-lib/erlang/lib/gen_server2-${VERSION}/
-lib/erlang/lib/gen_server2-${VERSION}/ebin/
-lib/erlang/lib/gen_server2-${VERSION}/ebin/gen_server2.app
-lib/erlang/lib/gen_server2-${VERSION}/ebin/gen_server2.beam
-lib/erlang/lib/gen_server2-${VERSION}/ebin/priority_queue.beam
-lib/erlang/lib/gen_server2-${VERSION}/src/
-lib/erlang/lib/gen_server2-${VERSION}/src/gen_server2.erl
-lib/erlang/lib/gen_server2-${VERSION}/src/priority_queue.erl

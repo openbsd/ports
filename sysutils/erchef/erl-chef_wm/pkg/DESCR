@@ -1,4 +1,0 @@
-The "wm" stands for webmachine. This OTP application contains the core
-of the erchef REST API implemented on top of the Webmachine toolkit. The
-URL routing that matches URLs with Erlang modules handling requests for
-those URLs is defined in `priv/dispatch.conf`.

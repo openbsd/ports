@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/08 11:53:57 jasper Exp $
-lib/erlang/lib/ej-${VERSION}/
-lib/erlang/lib/ej-${VERSION}/ebin/
-lib/erlang/lib/ej-${VERSION}/ebin/ej.app
-lib/erlang/lib/ej-${VERSION}/ebin/ej.beam
-lib/erlang/lib/ej-${VERSION}/include/
-lib/erlang/lib/ej-${VERSION}/include/ej.hrl
-lib/erlang/lib/ej-${VERSION}/src/
-lib/erlang/lib/ej-${VERSION}/src/ej.erl

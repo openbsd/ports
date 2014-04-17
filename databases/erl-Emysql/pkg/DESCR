@@ -1,3 +1,0 @@
-This is an Erlang MySQL driver, based on a rewrite at Electronic Arts.
-Easy to use, strong connection pooling, prepared statements & stored
-procedures. Optimized for a central node architecture and OLTP.

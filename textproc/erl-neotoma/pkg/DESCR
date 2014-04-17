@@ -1,5 +1,0 @@
-Neotoma is a packrat parser-generator for Erlang for Parsing Expression
-Grammars (PEGs).  It consists of a parsing-combinator library with
-memoization routines, a parser for PEGs, and a utility to generate
-parsers from PEGs. It is inspired by treetop, a Ruby library with
-similar aims, and parsec, the parser-combinator library for Haskell.

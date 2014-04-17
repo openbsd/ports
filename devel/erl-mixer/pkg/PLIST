@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/03/11 12:39:23 jasper Exp $
-lib/erlang/lib/mixer-${VERSION}/
-lib/erlang/lib/mixer-${VERSION}/ebin/
-lib/erlang/lib/mixer-${VERSION}/ebin/mixer.app
-lib/erlang/lib/mixer-${VERSION}/ebin/mixer.beam
-lib/erlang/lib/mixer-${VERSION}/include/
-lib/erlang/lib/mixer-${VERSION}/include/mixer.hrl
-lib/erlang/lib/mixer-${VERSION}/src/
-lib/erlang/lib/mixer-${VERSION}/src/mixer.erl

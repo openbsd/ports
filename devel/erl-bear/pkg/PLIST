@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/03/08 11:53:05 jasper Exp $
-lib/erlang/lib/bear-${VERSION}/
-lib/erlang/lib/bear-${VERSION}/ebin/
-lib/erlang/lib/bear-${VERSION}/ebin/bear.app
-lib/erlang/lib/bear-${VERSION}/ebin/bear.beam
-lib/erlang/lib/bear-${VERSION}/src/
-lib/erlang/lib/bear-${VERSION}/src/bear.erl
