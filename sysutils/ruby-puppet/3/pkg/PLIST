@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2014/04/04 14:31:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2014/04/17 14:04:58 jasper Exp $
 @pkgpath sysutils/ruby-puppet
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
@@ -1216,6 +1216,7 @@ ${MODRUBY_RELEXAMPLEDIR}-puppet/fileserver.conf
 ${MODRUBY_RELEXAMPLEDIR}-puppet/puppet.conf
 @sample ${SYSCONFDIR}/puppet/puppet.conf
 ${MODRUBY_RELEXAMPLEDIR}-puppet/tagmail.conf
+@sample ${SYSCONFDIR}/puppet/tagmail.conf
 @mode 0755
 @owner _puppet
 @group _puppet
