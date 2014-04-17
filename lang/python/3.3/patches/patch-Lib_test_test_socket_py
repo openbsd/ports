@@ -1,9 +1,7 @@
-$OpenBSD: patch-Lib_test_test_socket_py,v 1.1 2014/02/09 09:49:26 rpointel Exp $
-security fix: http://bugs.python.org/issue20246
-
---- Lib/test/test_socket.py
-+++ Lib/test/test_socket.py
-@@ -4538,6 +4538,14 @@ class BufferIOTest(SocketConnectedTest):
+$OpenBSD: patch-Lib_test_test_socket_py,v 1.2 2014/04/17 06:05:59 rpointel Exp $
+--- Lib/test/test_socket.py.orig	Wed May 15 18:32:56 2013
++++ Lib/test/test_socket.py	Sat Apr  5 08:14:56 2014
+@@ -4524,6 +4524,14 @@ class BufferIOTest(SocketConnectedTest):
  
      _testRecvFromIntoMemoryview = _testRecvFromIntoArray
  
@@ -15,3 +13,6 @@ security fix: http://bugs.python.org/issue20246
 +    def _testRecvFromIntoSmallBuffer(self):
 +        self.serv_conn.send(MSG)
 +
+ 
+ TIPC_STYPE = 2000
+ TIPC_LOWER = 200

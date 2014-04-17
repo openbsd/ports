@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-idle,v 1.1.1.1 2013/04/28 01:29:57 fgsch Exp $
+@comment $OpenBSD: PLIST-idle,v 1.2 2014/04/17 06:05:59 rpointel Exp $
 @option no-default-conflict
 @conflict python-idle->=3.3,<3.4
 @pkgpath lang/python3/3.3,-idle
@@ -28,6 +28,13 @@ lib/python3.3/idlelib/IOBinding.py
 lib/python3.3/idlelib/Icons/
 lib/python3.3/idlelib/Icons/folder.gif
 lib/python3.3/idlelib/Icons/idle.icns
+lib/python3.3/idlelib/Icons/idle.ico
+lib/python3.3/idlelib/Icons/idle_16.gif
+lib/python3.3/idlelib/Icons/idle_16.png
+lib/python3.3/idlelib/Icons/idle_32.gif
+lib/python3.3/idlelib/Icons/idle_32.png
+lib/python3.3/idlelib/Icons/idle_48.gif
+lib/python3.3/idlelib/Icons/idle_48.png
 lib/python3.3/idlelib/Icons/minusnode.gif
 lib/python3.3/idlelib/Icons/openfolder.gif
 lib/python3.3/idlelib/Icons/plusnode.gif
@@ -200,6 +207,51 @@ lib/python3.3/idlelib/help.txt
 lib/python3.3/idlelib/idle.bat
 lib/python3.3/idlelib/idle.py
 lib/python3.3/idlelib/idle.pyw
+lib/python3.3/idlelib/idle_test/
+lib/python3.3/idlelib/idle_test/README.txt
+lib/python3.3/idlelib/idle_test/__init__.py
+lib/python3.3/idlelib/idle_test/__pycache__/
+lib/python3.3/idlelib/idle_test/__pycache__/__init__.cpython-33.pyc
+lib/python3.3/idlelib/idle_test/__pycache__/__init__.cpython-33.pyo
+lib/python3.3/idlelib/idle_test/__pycache__/mock_idle.cpython-33.pyc
+lib/python3.3/idlelib/idle_test/__pycache__/mock_idle.cpython-33.pyo
+lib/python3.3/idlelib/idle_test/__pycache__/mock_tk.cpython-33.pyc
+lib/python3.3/idlelib/idle_test/__pycache__/mock_tk.cpython-33.pyo
+lib/python3.3/idlelib/idle_test/__pycache__/test_calltips.cpython-33.pyc
+lib/python3.3/idlelib/idle_test/__pycache__/test_calltips.cpython-33.pyo
+lib/python3.3/idlelib/idle_test/__pycache__/test_config_name.cpython-33.pyc
+lib/python3.3/idlelib/idle_test/__pycache__/test_config_name.cpython-33.pyo
+lib/python3.3/idlelib/idle_test/__pycache__/test_delegator.cpython-33.pyc
+lib/python3.3/idlelib/idle_test/__pycache__/test_delegator.cpython-33.pyo
+lib/python3.3/idlelib/idle_test/__pycache__/test_formatparagraph.cpython-33.pyc
+lib/python3.3/idlelib/idle_test/__pycache__/test_formatparagraph.cpython-33.pyo
+lib/python3.3/idlelib/idle_test/__pycache__/test_grep.cpython-33.pyc
+lib/python3.3/idlelib/idle_test/__pycache__/test_grep.cpython-33.pyo
+lib/python3.3/idlelib/idle_test/__pycache__/test_idlehistory.cpython-33.pyc
+lib/python3.3/idlelib/idle_test/__pycache__/test_idlehistory.cpython-33.pyo
+lib/python3.3/idlelib/idle_test/__pycache__/test_pathbrowser.cpython-33.pyc
+lib/python3.3/idlelib/idle_test/__pycache__/test_pathbrowser.cpython-33.pyo
+lib/python3.3/idlelib/idle_test/__pycache__/test_rstrip.cpython-33.pyc
+lib/python3.3/idlelib/idle_test/__pycache__/test_rstrip.cpython-33.pyo
+lib/python3.3/idlelib/idle_test/__pycache__/test_searchengine.cpython-33.pyc
+lib/python3.3/idlelib/idle_test/__pycache__/test_searchengine.cpython-33.pyo
+lib/python3.3/idlelib/idle_test/__pycache__/test_text.cpython-33.pyc
+lib/python3.3/idlelib/idle_test/__pycache__/test_text.cpython-33.pyo
+lib/python3.3/idlelib/idle_test/__pycache__/test_warning.cpython-33.pyc
+lib/python3.3/idlelib/idle_test/__pycache__/test_warning.cpython-33.pyo
+lib/python3.3/idlelib/idle_test/mock_idle.py
+lib/python3.3/idlelib/idle_test/mock_tk.py
+lib/python3.3/idlelib/idle_test/test_calltips.py
+lib/python3.3/idlelib/idle_test/test_config_name.py
+lib/python3.3/idlelib/idle_test/test_delegator.py
+lib/python3.3/idlelib/idle_test/test_formatparagraph.py
+lib/python3.3/idlelib/idle_test/test_grep.py
+lib/python3.3/idlelib/idle_test/test_idlehistory.py
+lib/python3.3/idlelib/idle_test/test_pathbrowser.py
+lib/python3.3/idlelib/idle_test/test_rstrip.py
+lib/python3.3/idlelib/idle_test/test_searchengine.py
+lib/python3.3/idlelib/idle_test/test_text.py
+lib/python3.3/idlelib/idle_test/test_warning.py
 lib/python3.3/idlelib/idlever.py
 lib/python3.3/idlelib/keybindingDialog.py
 lib/python3.3/idlelib/macosxSupport.py

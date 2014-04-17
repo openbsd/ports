@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2013/05/22 12:37:05 fgsch Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2014/04/17 06:05:59 rpointel Exp $
 @option no-default-conflict
 @conflict python->=3.3,<3.4
 @pkgpath lang/python3/3.3,-main
@@ -1643,9 +1643,9 @@ lib/python3.3/lib-dynload/xxlimited.so
 lib/python3.3/lib-dynload/zlib.so
 lib/python3.3/lib2to3/
 lib/python3.3/lib2to3/Grammar.txt
-lib/python3.3/lib2to3/Grammar3.3.2.final.0.pickle
+lib/python3.3/lib2to3/Grammar3.3.5.final.0.pickle
 lib/python3.3/lib2to3/PatternGrammar.txt
-lib/python3.3/lib2to3/PatternGrammar3.3.2.final.0.pickle
+lib/python3.3/lib2to3/PatternGrammar3.3.5.final.0.pickle
 lib/python3.3/lib2to3/__init__.py
 lib/python3.3/lib2to3/__main__.py
 lib/python3.3/lib2to3/__pycache__/
@@ -1895,6 +1895,7 @@ lib/python3.3/lib2to3/tests/data/README
 lib/python3.3/lib2to3/tests/data/bom.py
 lib/python3.3/lib2to3/tests/data/crlf.py
 lib/python3.3/lib2to3/tests/data/different_encoding.py
+lib/python3.3/lib2to3/tests/data/false_encoding.py
 lib/python3.3/lib2to3/tests/data/fixers/
 lib/python3.3/lib2to3/tests/data/fixers/bad_order.py
 lib/python3.3/lib2to3/tests/data/fixers/myfixes/
@@ -2324,7 +2325,6 @@ lib/python3.3/venv/__pycache__/__main__.cpython-33.pyo
 lib/python3.3/venv/scripts/
 lib/python3.3/venv/scripts/posix/
 lib/python3.3/venv/scripts/posix/activate
-lib/python3.3/venv/scripts/posix/pydoc
 lib/python3.3/warnings.py
 lib/python3.3/wave.py
 lib/python3.3/weakref.py

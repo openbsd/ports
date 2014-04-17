@@ -1,0 +1,29 @@
+$OpenBSD: patch-Lib_test_test_os_py,v 1.1 2014/04/17 06:05:59 rpointel Exp $
+
+Security fix: http://bugs.python.org/issue21082
+os.makedirs(exist_ok=True) is not thread-safe: 
+umask is set temporary to 0
+
+--- Lib/test/test_os.py.orig	Wed May 15 18:32:56 2013
++++ Lib/test/test_os.py	Sat Apr  5 08:17:21 2014
+@@ -866,7 +866,7 @@ class MakedirTests(unittest.TestCase):
+         os.makedirs(path, mode)
+         self.assertRaises(OSError, os.makedirs, path, mode)
+         self.assertRaises(OSError, os.makedirs, path, mode, exist_ok=False)
+-        self.assertRaises(OSError, os.makedirs, path, 0o776, exist_ok=True)
++        os.makedirs(path, 0o776, exist_ok=True)
+         os.makedirs(path, mode=mode, exist_ok=True)
+         os.umask(old_mask)
+ 
+@@ -892,9 +892,8 @@ class MakedirTests(unittest.TestCase):
+             os.makedirs(path, mode, exist_ok=True)
+             # remove the bit.
+             os.chmod(path, stat.S_IMODE(os.lstat(path).st_mode) & ~S_ISGID)
+-            with self.assertRaises(OSError):
+-                # Should fail when the bit is not already set when demanded.
+-                os.makedirs(path, mode | S_ISGID, exist_ok=True)
++            # May work even when the bit is not already set when demanded.
++            os.makedirs(path, mode | S_ISGID, exist_ok=True)
+         finally:
+             os.umask(old_mask)
+ 
