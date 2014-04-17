@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.23 2014/04/17 14:15:53 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.24 2014/04/17 15:25:39 jasper Exp $
 
 PKG_ARCH ?=	*
 COMMENT ?=	centralised configuration management for networks
@@ -21,6 +21,7 @@ SUBST_VARS +=	RUBY
 #  devel/ruby-rgen
 #  databases/ruby-hiera
 #  databases/ruby-hiera-file
+#  net/ruby-msgpack
 #  sysutils/mcollective
 #  sysutils/ruby-augeas
 #  sysutils/ruby-facter
