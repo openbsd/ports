@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.47 2014/03/23 18:17:35 kili Exp $
+# $OpenBSD: Makefile,v 1.48 2014/04/17 20:30:57 sthen Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
-V =		1.3
+V =		1.4
 DISTNAME =	mupdf-$V-source
-PKGNAME =	mupdf-${V:S/-rc/rc/}
-REVISION =	3
+PKGNAME =	mupdf-$V
 
 CATEGORIES =	textproc x11
 
@@ -22,7 +21,7 @@ WANTLIB += X11 Xext c crypto curl freetype idn jbig2dec jpeg m
 WANTLIB += openjp2 pthread ssl z
 
 # http://git.ghostscript.com/?p=mupdf.git;a=summary
-MASTER_SITES =	http://mupdf.googlecode.com/files/
+MASTER_SITES =	http://mupdf.com/downloads/
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/xdg-utils
@@ -41,13 +40,13 @@ CFLAGS +=	-ffunction-sections
 # -I flags prepend mupdf's own, to allow building with previous ver installed
 MAKE_ENV += CFLAGS="${CFLAGS} -I$(WRKSRC)/fitz -I$(WRKSRC)/pdf -I$(WRKSRC)/xps"
 
-MAKE_FLAGS =	NOCURL= \
-		CC="${CC}" CXX="${CXX}" \
+MAKE_FLAGS =	CC="${CC}" CXX="${CXX}" \
+		HAVE_CURL=yes \
 		CURL_LIB="-lcurl" \
 		CURL_LIBS="-lpthread -lidn -lssl -lcurl" \
 		SYS_OPENSSL_LIBS="-lssl -lcrypto" \
 		LDFLAGS="${LDFLAGS}" \
-		build= verbose=1
+		build= verbose=yes
 
 FAKE_FLAGS =	NOCURL= prefix=${PREFIX} mandir=${PREFIX}/man
 

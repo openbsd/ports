@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makerules,v 1.10 2014/03/23 18:17:35 kili Exp $
---- Makerules.orig	Wed Aug 14 14:41:20 2013
-+++ Makerules	Tue Mar 18 12:39:27 2014
-@@ -6,6 +6,7 @@ OS := $(OS:Windows_NT=MINGW)
+$OpenBSD: patch-Makerules,v 1.11 2014/04/17 20:30:57 sthen Exp $
+--- Makerules.orig	Fri Apr 11 16:10:41 2014
++++ Makerules	Thu Apr 17 21:11:06 2014
+@@ -7,6 +7,7 @@ OS := $(OS:Darwin=MACOS)
  
  CFLAGS += -Wall
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-Makerules,v 1.10 2014/03/23 18:17:35 kili Exp $
  ifeq "$(build)" "debug"
  CFLAGS += -pipe -g -DDEBUG
  else ifeq "$(build)" "profile"
-@@ -23,6 +24,7 @@ CFLAGS += -pipe -g -DMEMENTO -DDEBUG
+@@ -24,6 +25,7 @@ CFLAGS += -pipe -g -DMEMENTO -DDEBUG
  else
  $(error unknown build setting: '$(build)')
  endif
@@ -17,12 +17,21 @@ $OpenBSD: patch-Makerules,v 1.10 2014/03/23 18:17:35 kili Exp $
  
  # Windows (MINGW) build doesn't use system libraries.
  ifeq "$(OS)" "MINGW"
-@@ -55,15 +57,15 @@ SYS_OPENSSL_CFLAGS = -DHAVE_OPENSSL $(shell pkg-config
- SYS_OPENSSL_LIBS = $(shell pkg-config --libs libcrypto)
+@@ -54,7 +56,7 @@ LD = xcrun ld
+ RANLIB_CMD = xcrun ranlib $@
+ 
+ # Linux uses pkg-config for system libraries.
+-else ifeq "$(OS)" "Linux"
++else
+ 
+ HAVE_X11 ?= yes
+ 
+@@ -64,15 +66,15 @@ SYS_OPENSSL_LIBS = $(shell pkg-config --libs libcrypto
  endif
  
+ # TODO: use pkg-config for system CURL
 -SYS_CURL_DEPS = -lpthread -lrt
-+SYS_CURL_DEPS = $(shell pkg-config --libs libcurl)
++SYS_CURL_DEPS = -lpthread
  
  SYS_X11_CFLAGS = $(shell pkg-config --cflags x11 xext)
  SYS_X11_LIBS = $(shell pkg-config --libs x11 xext)
