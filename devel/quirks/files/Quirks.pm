@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.150 2014/04/07 12:41:27 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.151 2014/04/17 23:37:25 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -406,6 +406,7 @@ my $obsolete_reason = {
 	'gedit-cossa' => 3,
 	'anjuta-extras' => 3,
 	'moserial' => 3,
+	'ethos' => 3,
 };
 
 # ->is_base_system($handle, $state):
