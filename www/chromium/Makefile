@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.168 2014/04/07 19:32:03 robert Exp $
+# $OpenBSD: Makefile,v 1.169 2014/04/17 16:27:53 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			33.0.1750.152
+V=			34.0.1847.116
 DISTNAME=		chromium-${V}
-REVISION=		0
 
 CATEGORIES=		www
 
@@ -113,7 +112,7 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Ddisable_nacl=1 \
 		-Dlinux_breakpad=0 \
 		-Dlinux_use_tcmalloc=0 \
-		-Dlinux_strip_binary=1 \
+		-Dlinux_strip_binary=0 \
 		-Dlinux_use_heapchecker=0 \
 		-Denable_webrtc=0 \
 		-Denable_one_click_signin=1 \
@@ -121,6 +120,7 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Duse_sndio=1 \
 		-Dclang=1 \
 		-Dclang_use_chrome_plugins=0 \
+		-Dwerror= \
 		-Dno_gc_sections=1 \
 		-DOS=openbsd
 
@@ -174,7 +174,7 @@ do-install:
 	chmod ${BINMODE} ${PREFIX}/bin/chrome
 	${INSTALL_MAN} ${BUILDDIR}/chrome.1 ${PREFIX}/man/man1
 
-.for p in chrome chrome_100_percent content_resources resources
+.for p in chrome_100_percent content_resources resources
 	${INSTALL_DATA} ${BUILDDIR}/${p}.pak ${PREFIX}/chrome
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/chrome/locales

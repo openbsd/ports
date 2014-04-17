@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_sync_profile_sync_components_factory_impl_cc,v 1.4 2014/03/11 14:52:01 robert Exp $
---- chrome/browser/sync/profile_sync_components_factory_impl.cc.orig.port	Thu Feb 20 21:27:40 2014
-+++ chrome/browser/sync/profile_sync_components_factory_impl.cc	Fri Feb 21 19:39:55 2014
-@@ -305,7 +305,7 @@ void ProfileSyncComponentsFactoryImpl::RegisterDesktop
-       new UIDataTypeController(
-           syncer::SYNCED_NOTIFICATIONS, this, profile_, pss));
+$OpenBSD: patch-chrome_browser_sync_profile_sync_components_factory_impl_cc,v 1.5 2014/04/17 16:27:53 robert Exp $
+--- chrome/browser/sync/profile_sync_components_factory_impl.cc.orig.port	Wed Apr  2 21:04:22 2014
++++ chrome/browser/sync/profile_sync_components_factory_impl.cc	Sat Apr 12 09:40:41 2014
+@@ -374,7 +374,7 @@ void ProfileSyncComponentsFactoryImpl::RegisterDesktop
+ 
+   // TODO(petewil): Enable the data type controller once we have a handler.
  
 -#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_CHROMEOS)
 +#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_CHROMEOS) || defined(OS_BSD)

@@ -1,12 +1,12 @@
-$OpenBSD: patch-ui_base_strings_app_locale_settings_grd,v 1.3 2013/12/12 10:43:18 robert Exp $
---- ui/base/strings/app_locale_settings.grd.orig.port	Wed Dec  4 21:55:51 2013
-+++ ui/base/strings/app_locale_settings.grd	Thu Dec  5 15:32:45 2013
+$OpenBSD: patch-ui_base_strings_app_locale_settings_grd,v 1.4 2014/04/17 16:27:53 robert Exp $
+--- ui/base/strings/app_locale_settings.grd.orig.port	Tue Apr 15 20:01:57 2014
++++ ui/base/strings/app_locale_settings.grd	Tue Apr 15 20:02:40 2014
 @@ -229,7 +229,7 @@
            75%
          </message>
        </if>
--      <if expr="(is_linux or is_android) and not pp_ifdef('chromeos')">
-+      <if expr="os.find('bsd') != -1 or ((is_linux or is_android) and not pp_ifdef('chromeos'))">
+-      <if expr="(desktop_linux or is_android) and not chromeos">
++      <if expr="(desktop_linux or is_android or (os.find('bsd') != -1)) and not chromeos">
          <!-- The font used in Web UI (e.g. History). Note that these are only
               backups. We try to use the system font if possible. -->
          <message name="IDS_WEB_FONT_FAMILY" use_name_for_id="true">

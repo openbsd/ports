@@ -1,14 +1,16 @@
-$OpenBSD: patch-media_media_gyp,v 1.26 2014/03/11 14:52:01 robert Exp $
---- media/media.gyp.orig.port	Thu Feb 20 11:09:01 2014
-+++ media/media.gyp	Fri Feb 28 23:18:13 2014
-@@ -27,11 +27,15 @@
-       }, {
-         'use_alsa%': 0,
+$OpenBSD: patch-media_media_gyp,v 1.27 2014/04/17 16:27:53 robert Exp $
+--- media/media.gyp.orig.port	Tue Apr 15 19:53:36 2014
++++ media/media.gyp	Tue Apr 15 19:55:22 2014
+@@ -22,13 +22,17 @@
+         'media_use_libvpx%': 1,
        }],
--      ['os_posix==1 and OS!="mac" and OS!="android" and chromeos!=1 and embedded!=1', {
-+      ['os_posix==1 and OS!="mac" and OS!="android" and chromeos!=1 and embedded!=1 and os_bsd!=1', {
+       # Enable ALSA and Pulse for runtime selection.
+-      ['(OS=="linux" or OS=="freebsd" or OS=="solaris") and embedded!=1 and use_cras==0', {
++      ['(OS=="linux" or OS=="freebsd" or OS=="solaris") and embedded!=1 and use_cras==0 and os_bsd!=1', {
+         'use_alsa%': 1,
          'use_pulseaudio%': 1,
        }, {
+         'use_alsa%': 0,
          'use_pulseaudio%': 0,
        }],
 +      # Override to dynamically link the sndio library.
@@ -18,17 +20,17 @@ $OpenBSD: patch-media_media_gyp,v 1.26 2014/03/11 14:52:01 robert Exp $
      ],
    },
    'includes': [
-@@ -162,6 +166,8 @@
+@@ -153,6 +157,8 @@
          'audio/pulse/pulse_input.h',
          'audio/pulse/pulse_output.cc',
          'audio/pulse/pulse_output.h',
 +        'audio/sndio/sndio_output.cc',
 +        'audio/sndio/sndio_output.h',
-         'audio/pulse/pulse_unified.cc',
-         'audio/pulse/pulse_unified.h',
          'audio/pulse/pulse_util.cc',
-@@ -588,6 +594,24 @@
-             'webm/chromeos/webm_encoder.h',
+         'audio/pulse/pulse_util.h',
+         'audio/sample_rates.cc',
+@@ -604,6 +610,24 @@
+             'formats/webm/chromeos/webm_encoder.h',
            ],
          }],
 +        ['use_sndio == 1', {
@@ -52,7 +54,7 @@ $OpenBSD: patch-media_media_gyp,v 1.26 2014/03/11 14:52:01 robert Exp $
          ['use_alsa==1', {
            'link_settings': {
              'libraries': [
-@@ -606,7 +630,7 @@
+@@ -625,7 +649,7 @@
              'audio/openbsd/audio_manager_openbsd.h',
            ],
          }],
@@ -61,8 +63,8 @@ $OpenBSD: patch-media_media_gyp,v 1.26 2014/03/11 14:52:01 robert Exp $
            'variables': {
              'conditions': [
                ['sysroot!=""', {
-@@ -871,7 +895,7 @@
-             'ENABLE_EAC3_PLAYBACK',
+@@ -885,7 +909,7 @@
+             'base/simd/convert_yuv_to_rgb_x86.cc',
            ],
          }],
 -        ['OS!="linux" and OS!="win"', {
@@ -70,7 +72,7 @@ $OpenBSD: patch-media_media_gyp,v 1.26 2014/03/11 14:52:01 robert Exp $
            'sources!': [
              'base/keyboard_event_counter.cc',
              'base/keyboard_event_counter.h',
-@@ -1042,7 +1066,7 @@
+@@ -1068,7 +1092,7 @@
              'USE_PULSEAUDIO',
            ],
          }],
@@ -79,7 +81,7 @@ $OpenBSD: patch-media_media_gyp,v 1.26 2014/03/11 14:52:01 robert Exp $
            'conditions': [
              ['linux_use_tcmalloc==1', {
                'dependencies': [
-@@ -1632,7 +1656,7 @@
+@@ -1661,7 +1685,7 @@
              'filters/pipeline_integration_test_base.cc',
            ],
            'conditions': [

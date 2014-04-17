@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_process_process_metrics_openbsd_cc,v 1.1 2013/09/29 19:04:00 robert Exp $
---- base/process/process_metrics_openbsd.cc.orig.port	Sun Sep 22 16:16:28 2013
-+++ base/process/process_metrics_openbsd.cc	Fri Sep 27 23:26:15 2013
+$OpenBSD: patch-base_process_process_metrics_openbsd_cc,v 1.2 2014/04/17 16:27:53 robert Exp $
+--- base/process/process_metrics_openbsd.cc.orig.port	Sat Apr 12 09:42:20 2014
++++ base/process/process_metrics_openbsd.cc	Sat Apr 12 09:45:48 2014
 @@ -4,6 +4,16 @@
  
  #include "base/process/process_metrics.h"
@@ -85,7 +85,7 @@ $OpenBSD: patch-base_process_process_metrics_openbsd_cc,v 1.1 2013/09/29 19:04:0
  }
  
  size_t ProcessMetrics::GetPeakWorkingSetSize() const {
-@@ -89,20 +114,28 @@ bool ProcessMetrics::GetIOCounters(IoCounters* io_coun
+@@ -89,20 +114,27 @@ bool ProcessMetrics::GetIOCounters(IoCounters* io_coun
  }
  
  static int GetProcessCPU(pid_t pid) {
@@ -114,14 +114,13 @@ $OpenBSD: patch-base_process_process_metrics_openbsd_cc,v 1.1 2013/09/29 19:04:0
 +out:
 +  free(info);
 +  return pctcpu;
-+
  }
  
  double ProcessMetrics::GetCPUUsage() {
-@@ -122,7 +155,6 @@ double ProcessMetrics::GetCPUUsage() {
+@@ -122,7 +154,6 @@ double ProcessMetrics::GetCPUUsage() {
    }
  
-   int64 time_delta = time - last_time_;
+   int64 time_delta = time - last_cpu_time_;
 -  DCHECK_NE(time_delta, 0);
  
    if (time_delta == 0)

@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.32 2014/03/11 14:52:01 robert Exp $
+@comment $OpenBSD: PLIST,v 1.33 2014/04/17 16:27:53 robert Exp $
 bin/chrome
 chrome/
 @bin chrome/chrome
-chrome/chrome.pak
 chrome/chrome_100_percent.pak
 chrome/content_resources.pak
 chrome/libffmpegsumo.so
@@ -72,19 +71,16 @@ chrome/resources/inspector/
 chrome/resources/inspector/AuditsPanel.js
 chrome/resources/inspector/CodeMirrorTextEditor.js
 chrome/resources/inspector/ElementsPanel.js
+chrome/resources/inspector/ExtensionServer.js
 chrome/resources/inspector/HeapSnapshotWorker.js
 chrome/resources/inspector/Images/
 chrome/resources/inspector/Images/addIcon.png
 chrome/resources/inspector/Images/applicationCache.png
 chrome/resources/inspector/Images/back.png
-chrome/resources/inspector/Images/breakpoint2.png
-chrome/resources/inspector/Images/breakpoint2_2x.png
-chrome/resources/inspector/Images/breakpointBorder.png
-chrome/resources/inspector/Images/breakpointConditional2.png
-chrome/resources/inspector/Images/breakpointConditional2_2x.png
-chrome/resources/inspector/Images/breakpointConditionalBorder.png
-chrome/resources/inspector/Images/breakpointConditionalCounterBorder.png
-chrome/resources/inspector/Images/breakpointCounterBorder.png
+chrome/resources/inspector/Images/breakpoint.png
+chrome/resources/inspector/Images/breakpointConditional.png
+chrome/resources/inspector/Images/breakpointConditional_2x.png
+chrome/resources/inspector/Images/breakpoint_2x.png
 chrome/resources/inspector/Images/checker.png
 chrome/resources/inspector/Images/cookie.png
 chrome/resources/inspector/Images/database.png
@@ -94,17 +90,12 @@ chrome/resources/inspector/Images/domain.png
 chrome/resources/inspector/Images/fileSystem.png
 chrome/resources/inspector/Images/forward.png
 chrome/resources/inspector/Images/frame.png
-chrome/resources/inspector/Images/glossyHeader.png
-chrome/resources/inspector/Images/glossyHeaderPressed.png
-chrome/resources/inspector/Images/glossyHeaderSelected.png
-chrome/resources/inspector/Images/glossyHeaderSelectedPressed.png
 chrome/resources/inspector/Images/graphLabelCalloutLeft.png
 chrome/resources/inspector/Images/graphLabelCalloutRight.png
 chrome/resources/inspector/Images/indexedDB.png
 chrome/resources/inspector/Images/indexedDBIndex.png
 chrome/resources/inspector/Images/indexedDBObjectStore.png
 chrome/resources/inspector/Images/localStorage.png
-chrome/resources/inspector/Images/namedFlowOverflow.png
 chrome/resources/inspector/Images/navigationControls.png
 chrome/resources/inspector/Images/navigationControls_2x.png
 chrome/resources/inspector/Images/paneAddButtons.png
@@ -117,11 +108,7 @@ chrome/resources/inspector/Images/popoverBackground.png
 chrome/resources/inspector/Images/profileGroupIcon.png
 chrome/resources/inspector/Images/profileIcon.png
 chrome/resources/inspector/Images/profileSmallIcon.png
-chrome/resources/inspector/Images/programCounterBorder.png
 chrome/resources/inspector/Images/radioDot.png
-chrome/resources/inspector/Images/regionEmpty.png
-chrome/resources/inspector/Images/regionFit.png
-chrome/resources/inspector/Images/regionOverset.png
 chrome/resources/inspector/Images/resourceCSSIcon.png
 chrome/resources/inspector/Images/resourceDocumentIcon.png
 chrome/resources/inspector/Images/resourceDocumentIconSmall.png
@@ -134,13 +121,12 @@ chrome/resources/inspector/Images/searchPrev.png
 chrome/resources/inspector/Images/sessionStorage.png
 chrome/resources/inspector/Images/settingsListRemove.png
 chrome/resources/inspector/Images/settingsListRemove_2x.png
-chrome/resources/inspector/Images/spinner.gif
 chrome/resources/inspector/Images/spinnerActive.gif
 chrome/resources/inspector/Images/spinnerActiveSelected.gif
 chrome/resources/inspector/Images/spinnerInactive.gif
 chrome/resources/inspector/Images/spinnerInactiveSelected.gif
 chrome/resources/inspector/Images/statusbarButtonGlyphs.png
-chrome/resources/inspector/Images/statusbarButtonGlyphs2x.png
+chrome/resources/inspector/Images/statusbarButtonGlyphs_2x.png
 chrome/resources/inspector/Images/statusbarResizerHorizontal.png
 chrome/resources/inspector/Images/statusbarResizerVertical.png
 chrome/resources/inspector/Images/thumbActiveHoriz.png
@@ -149,20 +135,6 @@ chrome/resources/inspector/Images/thumbHoriz.png
 chrome/resources/inspector/Images/thumbHoverHoriz.png
 chrome/resources/inspector/Images/thumbHoverVert.png
 chrome/resources/inspector/Images/thumbVert.png
-chrome/resources/inspector/Images/timelineHollowPillBlue.png
-chrome/resources/inspector/Images/timelineHollowPillGray.png
-chrome/resources/inspector/Images/timelineHollowPillGreen.png
-chrome/resources/inspector/Images/timelineHollowPillOrange.png
-chrome/resources/inspector/Images/timelineHollowPillPurple.png
-chrome/resources/inspector/Images/timelineHollowPillRed.png
-chrome/resources/inspector/Images/timelineHollowPillYellow.png
-chrome/resources/inspector/Images/timelinePillBlue.png
-chrome/resources/inspector/Images/timelinePillGray.png
-chrome/resources/inspector/Images/timelinePillGreen.png
-chrome/resources/inspector/Images/timelinePillOrange.png
-chrome/resources/inspector/Images/timelinePillPurple.png
-chrome/resources/inspector/Images/timelinePillRed.png
-chrome/resources/inspector/Images/timelinePillYellow.png
 chrome/resources/inspector/Images/toolbarItemSelected.png
 chrome/resources/inspector/Images/trackHoriz.png
 chrome/resources/inspector/Images/trackVert.png
@@ -172,6 +144,7 @@ chrome/resources/inspector/ProfilesPanel.js
 chrome/resources/inspector/ResourcesPanel.js
 chrome/resources/inspector/ScriptFormatterWorker.js
 chrome/resources/inspector/SourcesPanel.js
+chrome/resources/inspector/TempStorageSharedWorker.js
 chrome/resources/inspector/TimelinePanel.js
 chrome/resources/inspector/accelerometer.css
 chrome/resources/inspector/auditsPanel.css
@@ -181,7 +154,6 @@ chrome/resources/inspector/buildSystemOnly.js
 chrome/resources/inspector/canvasProfiler.css
 chrome/resources/inspector/cmdevtools.css
 chrome/resources/inspector/codemirror.css
-chrome/resources/inspector/cssNamedFlows.css
 chrome/resources/inspector/dataGrid.css
 chrome/resources/inspector/devtools.html
 chrome/resources/inspector/devtools_extension_api.js

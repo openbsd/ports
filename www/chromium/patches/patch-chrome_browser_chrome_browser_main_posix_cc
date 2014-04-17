@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_chrome_browser_main_posix_cc,v 1.7 2013/10/29 06:51:34 robert Exp $
---- chrome/browser/chrome_browser_main_posix.cc.orig.port	Fri Oct 11 19:29:35 2013
-+++ chrome/browser/chrome_browser_main_posix.cc	Sun Oct 20 18:52:07 2013
-@@ -291,7 +291,7 @@ void ChromeBrowserMainPartsPosix::PreEarlyInitializati
+$OpenBSD: patch-chrome_browser_chrome_browser_main_posix_cc,v 1.8 2014/04/17 16:27:53 robert Exp $
+--- chrome/browser/chrome_browser_main_posix.cc.orig.port	Wed Apr  2 21:04:38 2014
++++ chrome/browser/chrome_browser_main_posix.cc	Sat Apr 12 09:40:41 2014
+@@ -292,7 +292,7 @@ void ChromeBrowserMainPartsPosix::PreEarlyInitializati
    if (!fd_limit_string.empty()) {
      base::StringToInt(fd_limit_string, &fd_limit);
    }
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_chrome_browser_main_posix_cc,v 1.7 2013/10/29 06:
    // We use quite a few file descriptors for our IPC, and the default limit on
    // the Mac is low (256), so bump it up if there is no explicit override.
    if (fd_limit == 0) {
-@@ -313,6 +313,11 @@ void ChromeBrowserMainPartsPosix::PostMainMessageLoopS
+@@ -314,6 +314,11 @@ void ChromeBrowserMainPartsPosix::PostMainMessageLoopS
      g_pipe_pid = getpid();
      g_shutdown_pipe_read_fd = pipefd[0];
      g_shutdown_pipe_write_fd = pipefd[1];
@@ -20,9 +20,9 @@ $OpenBSD: patch-chrome_browser_chrome_browser_main_posix_cc,v 1.7 2013/10/29 06:
 +    const size_t kShutdownDetectorThreadStackSize = 0;
 +#else 
  #if !defined(ADDRESS_SANITIZER) && !defined(KEEP_SHADOW_STACKS)
-     const size_t kShutdownDetectorThreadStackSize = PTHREAD_STACK_MIN;
+     const size_t kShutdownDetectorThreadStackSize = PTHREAD_STACK_MIN * 2;
  #else
-@@ -320,6 +325,7 @@ void ChromeBrowserMainPartsPosix::PostMainMessageLoopS
+@@ -321,6 +326,7 @@ void ChromeBrowserMainPartsPosix::PostMainMessageLoopS
      // shadow stacks) bloat the stack frames, so we need to increase the stack
      // size to avoid hitting the guard page.
      const size_t kShutdownDetectorThreadStackSize = PTHREAD_STACK_MIN * 4;

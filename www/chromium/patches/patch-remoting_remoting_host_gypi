@@ -1,8 +1,8 @@
-$OpenBSD: patch-remoting_remoting_gyp,v 1.12 2014/03/11 14:52:01 robert Exp $
---- remoting/remoting.gyp.orig.port	Thu Feb 20 21:28:03 2014
-+++ remoting/remoting.gyp	Fri Feb 21 19:39:55 2014
-@@ -50,7 +50,7 @@
- 
+$OpenBSD: patch-remoting_remoting_host_gypi,v 1.1 2014/04/17 16:27:53 robert Exp $
+--- remoting/remoting_host.gypi.orig.port	Tue Apr 15 19:56:34 2014
++++ remoting/remoting_host.gypi	Tue Apr 15 19:57:11 2014
+@@ -12,7 +12,7 @@
+   'variables': {
      'conditions': [
        # Remoting host is supported only on Windows, OSX and Linux (with X11).
 -      ['OS=="win" or OS=="mac" or (OS=="linux" and chromeos==0 and use_x11==1)', {
@@ -10,7 +10,7 @@ $OpenBSD: patch-remoting_remoting_gyp,v 1.12 2014/03/11 14:52:01 robert Exp $
          'enable_remoting_host': 1,
        }, {
          'enable_remoting_host': 0,
-@@ -468,7 +468,7 @@
+@@ -251,7 +251,7 @@
              'host/win/wts_terminal_observer.h',
            ],
            'conditions': [
@@ -18,4 +18,4 @@ $OpenBSD: patch-remoting_remoting_gyp,v 1.12 2014/03/11 14:52:01 robert Exp $
 +            ['OS=="linux" or os_bsd==1', {
                'dependencies': [
                  # Always use GTK on Linux, even for Aura builds.
-                 #
+                 '../build/linux/system.gyp:gtk',

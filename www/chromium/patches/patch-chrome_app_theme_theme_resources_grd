@@ -1,12 +1,12 @@
-$OpenBSD: patch-chrome_app_theme_theme_resources_grd,v 1.4 2014/03/11 14:52:01 robert Exp $
---- chrome/app/theme/theme_resources.grd.orig.port	Thu Feb 20 21:27:26 2014
-+++ chrome/app/theme/theme_resources.grd	Fri Feb 21 19:39:55 2014
-@@ -507,7 +507,7 @@
+$OpenBSD: patch-chrome_app_theme_theme_resources_grd,v 1.5 2014/04/17 16:27:53 robert Exp $
+--- chrome/app/theme/theme_resources.grd.orig.port	Sat Apr 12 09:48:38 2014
++++ chrome/app/theme/theme_resources.grd	Sat Apr 12 09:48:58 2014
+@@ -501,7 +501,7 @@
        <if expr="pp_ifdef('chromeos')">
          <structure type="chrome_scaled_image" name="IDR_NOTIFICATION_PERIPHERAL_BATTERY_LOW" file="cros/notification_peripheral_battery_low.png" />
        </if>
--      <if expr="is_win or is_linux">
-+      <if expr="is_win or is_linux or is_posix">
+-      <if expr="is_win or pp_ifdef('desktop_linux')">
++      <if expr="is_win or pp_ifdef('desktop_linux') or is_posix">
          <structure type="chrome_scaled_image" name="IDR_NOTIFICATION_TRAY_DO_NOT_DISTURB_ATTENTION" file="common/notification_tray_do_not_disturb_attention.png" />
          <structure type="chrome_scaled_image" name="IDR_NOTIFICATION_TRAY_DO_NOT_DISTURB_EMPTY" file="common/notification_tray_do_not_disturb_empty.png" />
          <structure type="chrome_scaled_image" name="IDR_NOTIFICATION_TRAY_ATTENTION" file="common/notification_tray_attention.png" />

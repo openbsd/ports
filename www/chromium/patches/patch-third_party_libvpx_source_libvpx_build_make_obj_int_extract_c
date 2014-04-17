@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_libvpx_source_libvpx_build_make_obj_int_extract_c,v 1.4 2013/10/29 06:51:34 robert Exp $
---- third_party/libvpx/source/libvpx/build/make/obj_int_extract.c.orig.port	Fri Oct 11 19:45:03 2013
-+++ third_party/libvpx/source/libvpx/build/make/obj_int_extract.c	Fri Oct 18 20:47:20 2013
-@@ -196,7 +196,11 @@ bail:
+$OpenBSD: patch-third_party_libvpx_source_libvpx_build_make_obj_int_extract_c,v 1.5 2014/04/17 16:27:53 robert Exp $
+--- third_party/libvpx/source/libvpx/build/make/obj_int_extract.c.orig.port	Wed Apr  2 21:05:33 2014
++++ third_party/libvpx/source/libvpx/build/make/obj_int_extract.c	Sat Apr 12 09:40:41 2014
+@@ -200,7 +200,11 @@ bail:
  }
  
  #elif defined(__ELF__)

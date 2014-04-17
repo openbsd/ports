@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_gl_gl_gyp,v 1.4 2013/12/12 10:43:18 robert Exp $
---- ui/gl/gl.gyp.orig.port	Wed Dec  4 21:55:50 2013
-+++ ui/gl/gl.gyp	Thu Dec  5 15:32:45 2013
-@@ -177,7 +177,7 @@
+$OpenBSD: patch-ui_gl_gl_gyp,v 1.5 2014/04/17 16:27:53 robert Exp $
+--- ui/gl/gl.gyp.orig.port	Wed Apr  2 21:04:03 2014
++++ ui/gl/gl.gyp	Sat Apr 12 09:40:41 2014
+@@ -170,7 +170,7 @@
          },
        ],
        'conditions': [

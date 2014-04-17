@@ -1,8 +1,8 @@
-$OpenBSD: patch-third_party_WebKit_Source_config_h,v 1.2 2014/01/18 11:42:04 robert Exp $
---- third_party/WebKit/Source/config.h.orig.port	Thu Jan 16 12:42:20 2014
-+++ third_party/WebKit/Source/config.h	Thu Jan 16 12:42:30 2014
-@@ -167,6 +167,6 @@
- #define __STDC_FORMAT_MACROS 1
+$OpenBSD: patch-third_party_WebKit_Source_config_h,v 1.3 2014/04/17 16:27:53 robert Exp $
+--- third_party/WebKit/Source/config.h.orig.port	Wed Apr  2 21:08:53 2014
++++ third_party/WebKit/Source/config.h	Sat Apr 12 09:40:41 2014
+@@ -156,6 +156,6 @@
+ #define SKIP_STATIC_CONSTRUCTORS_ON_GCC 1
  #endif
  
 -#if OS(LINUX) || OS(ANDROID) || ENABLE(HARFBUZZ_ON_WINDOWS)

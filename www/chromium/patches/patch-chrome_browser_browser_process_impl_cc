@@ -1,39 +1,21 @@
-$OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.7 2014/04/07 19:32:03 robert Exp $
---- chrome/browser/browser_process_impl.cc.orig.port	Sat Mar 15 04:22:08 2014
-+++ chrome/browser/browser_process_impl.cc	Mon Apr  7 21:16:02 2014
-@@ -258,7 +258,7 @@ void BrowserProcessImpl::StartTearDown() {
+$OpenBSD: patch-chrome_browser_browser_process_impl_cc,v 1.8 2014/04/17 16:27:53 robert Exp $
+--- chrome/browser/browser_process_impl.cc.orig.port	Wed Apr  2 21:04:38 2014
++++ chrome/browser/browser_process_impl.cc	Wed Apr 16 23:09:02 2014
+@@ -261,7 +261,7 @@ void BrowserProcessImpl::StartTearDown() {
  
    ExtensionRendererState::GetInstance()->Shutdown();
  
 -#if !defined(OS_ANDROID) && !defined(OS_IOS)
 +#if !defined(OS_ANDROID) && !defined(OS_IOS) && !defined(OS_BSD)
    media_file_system_registry_.reset();
-   // Delete |storage_monitor_| now. Otherwise the FILE thread would be gone
-   // when we try to release it in the dtor and Valgrind would report a
-@@ -642,7 +642,7 @@ BookmarkPromptController* BrowserProcessImpl::bookmark
- }
- 
- StorageMonitor* BrowserProcessImpl::storage_monitor() {
--#if defined(OS_ANDROID) || defined(OS_IOS)
-+#if defined(OS_ANDROID) || defined(OS_IOS) || defined(OS_BSD)
-   return NULL;
- #else
-   return storage_monitor_.get();
-@@ -651,7 +651,7 @@ StorageMonitor* BrowserProcessImpl::storage_monitor() 
- 
- void BrowserProcessImpl::set_storage_monitor_for_test(
-     scoped_ptr<StorageMonitor> monitor) {
--#if !defined(OS_ANDROID) && !defined(OS_IOS)
-+#if !defined(OS_ANDROID) && !defined(OS_IOS) && !defined(OS_BSD)
-   storage_monitor_ = monitor.Pass();
- #endif
- }
-@@ -962,7 +962,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
+   // Remove the global instance of the Storage Monitor now. Otherwise the
+   // FILE thread would be gone when we try to release it in the dtor and
+@@ -954,7 +954,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
    }
  #endif
  
 -#if !defined(OS_ANDROID) && !defined(OS_IOS)
 +#if !defined(OS_ANDROID) && !defined(OS_IOS) && !defined(OS_BSD)
-   storage_monitor_.reset(StorageMonitor::Create());
+   StorageMonitor::Create();
  #endif
  

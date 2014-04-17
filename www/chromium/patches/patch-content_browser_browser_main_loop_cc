@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.17 2014/03/11 14:52:01 robert Exp $
---- content/browser/browser_main_loop.cc.orig.port	Fri Feb 21 23:31:16 2014
-+++ content/browser/browser_main_loop.cc	Sun Feb 23 18:37:52 2014
+$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.18 2014/04/17 16:27:53 robert Exp $
+--- content/browser/browser_main_loop.cc.orig.port	Wed Apr  2 21:03:33 2014
++++ content/browser/browser_main_loop.cc	Sat Apr 12 09:40:41 2014
 @@ -102,7 +102,7 @@
  #include "ui/gfx/gtk_util.h"
  #endif
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.17 2014/03/11 14:52:01 
  #include <sys/stat.h>
  
  #include "content/browser/renderer_host/render_sandbox_host_linux.h"
-@@ -125,7 +125,7 @@
+@@ -129,7 +129,7 @@
  namespace content {
  namespace {
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.17 2014/03/11 14:52:01 
  void SetupSandbox(const CommandLine& parsed_command_line) {
    TRACE_EVENT0("startup", "SetupSandbox");
    // TODO(evanm): move this into SandboxWrapper; I'm just trying to move this
-@@ -346,7 +346,7 @@ void BrowserMainLoop::Init() {
+@@ -353,7 +353,7 @@ void BrowserMainLoop::Init() {
  void BrowserMainLoop::EarlyInitialization() {
    TRACE_EVENT0("startup", "BrowserMainLoop::EarlyInitialization");
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.17 2014/03/11 14:52:01 
    // No thread should be created before this call, as SetupSandbox()
    // will end-up using fork().
    SetupSandbox(parsed_command_line_);
-@@ -784,7 +784,7 @@ void BrowserMainLoop::ShutdownThreadsAndCleanUp() {
+@@ -777,7 +777,7 @@ void BrowserMainLoop::ShutdownThreadsAndCleanUp() {
    }
  #endif
  

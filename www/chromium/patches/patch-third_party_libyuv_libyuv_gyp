@@ -1,19 +1,19 @@
-$OpenBSD: patch-third_party_libyuv_libyuv_gyp,v 1.5 2013/07/15 14:59:30 robert Exp $
---- third_party/libyuv/libyuv.gyp.orig.port	Sun Jul  7 16:00:07 2013
-+++ third_party/libyuv/libyuv.gyp	Sun Jul  7 16:00:42 2013
-@@ -29,11 +29,15 @@
-                  '<(DEPTH)/third_party/libjpeg_turbo/libjpeg.gyp:libjpeg',
+$OpenBSD: patch-third_party_libyuv_libyuv_gyp,v 1.6 2014/04/17 16:27:53 robert Exp $
+--- third_party/libyuv/libyuv.gyp.orig.port	Tue Apr 15 20:00:21 2014
++++ third_party/libyuv/libyuv.gyp	Tue Apr 15 20:01:20 2014
+@@ -83,11 +83,15 @@
                ],
-             }, {
+             }],
+             [ 'use_system_libjpeg == 1', {
 +              'include_dirs': [ '/usr/local/include' ],
                'link_settings': {
                  'libraries': [
                    '-ljpeg',
                  ],
-               },
-+        }],
-+         ['target_arch == "ia32"', {
-+          'cflags': [ '-fomit-frame-pointer' ],
+               }
++            }],
++            ['target_arch == "ia32"', {
++              'cflags': [ '-fomit-frame-pointer' ],
              }],
            ],
          }],

@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_common_extensions_api_api_gyp,v 1.2 2014/03/11 14:52:01 robert Exp $
---- chrome/common/extensions/api/api.gyp.orig.port	Thu Feb 20 21:27:52 2014
-+++ chrome/common/extensions/api/api.gyp	Fri Feb 21 19:39:55 2014
-@@ -172,6 +172,11 @@
-               'webrtc_logging_private.idl',
+$OpenBSD: patch-chrome_common_extensions_api_api_gyp,v 1.3 2014/04/17 16:27:53 robert Exp $
+--- chrome/common/extensions/api/api.gyp.orig.port	Wed Apr  2 21:04:09 2014
++++ chrome/common/extensions/api/api.gyp	Sat Apr 12 09:40:41 2014
+@@ -175,6 +175,11 @@
+               'cast_streaming_udp_transport.idl',
              ],
            }],
 +          ['enable_webrtc==0', {

@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_WebKit_Source_platform_blink_platform_gyp,v 1.1 2014/03/11 14:52:01 robert Exp $
---- third_party/WebKit/Source/platform/blink_platform.gyp.orig.port	Fri Feb 21 23:39:54 2014
-+++ third_party/WebKit/Source/platform/blink_platform.gyp	Fri Feb 21 23:40:29 2014
-@@ -196,7 +196,7 @@
+$OpenBSD: patch-third_party_WebKit_Source_platform_blink_platform_gyp,v 1.2 2014/04/17 16:27:53 robert Exp $
+--- third_party/WebKit/Source/platform/blink_platform.gyp.orig.port	Wed Apr  2 21:08:45 2014
++++ third_party/WebKit/Source/platform/blink_platform.gyp	Sat Apr 12 09:40:41 2014
+@@ -193,7 +193,7 @@
      # compiler optimizations, see crbug.com/237063
      'msvs_disabled_warnings': [ 4267, 4334, 4724 ],
      'conditions': [
@@ -10,7 +10,7 @@ $OpenBSD: patch-third_party_WebKit_Source_platform_blink_platform_gyp,v 1.1 2014
          'sources/': [
            # Cherry-pick files excluded by the broader regular expressions above.
            ['include', 'fonts/harfbuzz/FontHarfBuzz\\.cpp$'],
-@@ -304,7 +304,7 @@
+@@ -303,7 +303,7 @@
            ['exclude', 'fonts/harfbuzz/HarfBuzzFaceCoreText\\.cpp$'],
          ],
        }],

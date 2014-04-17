@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_chrome_browser_extensions_gypi,v 1.9 2014/03/11 14:52:01 robert Exp $
---- chrome/chrome_browser_extensions.gypi.orig.port	Thu Feb 20 21:27:54 2014
-+++ chrome/chrome_browser_extensions.gypi	Mon Feb 24 07:25:58 2014
-@@ -908,6 +908,11 @@
+$OpenBSD: patch-chrome_chrome_browser_extensions_gypi,v 1.10 2014/04/17 16:27:53 robert Exp $
+--- chrome/chrome_browser_extensions.gypi.orig.port	Wed Apr  2 21:04:59 2014
++++ chrome/chrome_browser_extensions.gypi	Sat Apr 12 09:40:41 2014
+@@ -922,6 +922,11 @@
          'browser/extensions/window_controller_list_observer.h',
        ],
        'conditions': [

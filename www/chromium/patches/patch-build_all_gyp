@@ -1,7 +1,7 @@
-$OpenBSD: patch-build_all_gyp,v 1.14 2014/03/11 14:52:01 robert Exp $
---- build/all.gyp.orig.port	Fri Feb 21 19:40:06 2014
-+++ build/all.gyp	Fri Feb 21 19:40:40 2014
-@@ -259,7 +259,6 @@
+$OpenBSD: patch-build_all_gyp,v 1.15 2014/04/17 16:27:53 robert Exp $
+--- build/all.gyp.orig.port	Wed Apr  2 21:03:54 2014
++++ build/all.gyp	Sat Apr 12 09:40:41 2014
+@@ -292,7 +292,6 @@
              '../media/media.gyp:media_unittests',
              '../mojo/mojo.gyp:mojo',
              '../ppapi/ppapi_internal.gyp:ppapi_unittests',

@@ -1,0 +1,18 @@
+$OpenBSD: patch-device_hid_hid_gyp,v 1.1 2014/04/17 16:27:53 robert Exp $
+--- device/hid/hid.gyp.orig.port	Tue Apr 15 20:29:16 2014
++++ device/hid/hid.gyp	Tue Apr 15 20:30:17 2014
+@@ -19,6 +19,14 @@
+             '../../build/linux/system.gyp:udev',
+           ],
+         }],
++        ['OS=="openbsd"', {
++          'sources!': [
++            'hid_connection_linux.cc',
++            'hid_connection_linux.h',
++            'hid_service_linux.cc',
++            'hid_service_linux.h',
++          ],
++        }],
+       ],
+       'sources': [
+         'hid_connection.cc',

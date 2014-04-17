@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.9 2014/03/11 14:52:01 robert Exp $
---- chrome/browser/chrome_content_browser_client.cc.orig.port	Fri Feb 21 23:26:54 2014
-+++ chrome/browser/chrome_content_browser_client.cc	Sun Feb 23 17:15:40 2014
-@@ -174,7 +174,7 @@
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.10 2014/04/17 16:27:53 robert Exp $
+--- chrome/browser/chrome_content_browser_client.cc.orig.port	Wed Apr  2 21:04:38 2014
++++ chrome/browser/chrome_content_browser_client.cc	Sat Apr 12 09:40:41 2014
+@@ -181,7 +181,7 @@
  #include "chrome/browser/chrome_browser_main_posix.h"
  #endif
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.9 2014/03/11
  #include "base/debug/leak_annotations.h"
  #include "base/linux_util.h"
  #include "components/breakpad/app/breakpad_linux.h"
-@@ -486,7 +486,7 @@ void FillFontFamilyMap(const PrefService* prefs,
+@@ -493,7 +493,7 @@ void FillFontFamilyMap(const PrefService* prefs,
    }
  }
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.9 2014/03/11
  breakpad::CrashHandlerHostLinux* CreateCrashHandlerHost(
      const std::string& process_type) {
    base::FilePath dumps_path;
-@@ -1389,7 +1389,7 @@ std::string ChromeContentBrowserClient::GetCanonicalEn
+@@ -1449,7 +1449,7 @@ std::string ChromeContentBrowserClient::GetCanonicalEn
  
  void ChromeContentBrowserClient::AppendExtraCommandLineSwitches(
      CommandLine* command_line, int child_process_id) {
@@ -28,8 +28,8 @@ $OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.9 2014/03/11
    if (breakpad::IsCrashReporterEnabled()) {
      std::string enable_crash_reporter;
      GoogleUpdateSettings::GetMetricsId(&enable_crash_reporter);
-@@ -2525,7 +2525,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
-           Profile::FromBrowserContext(browser_context)));
+@@ -2587,7 +2587,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+   }
  }
  
 -#if defined(OS_POSIX) && !defined(OS_MACOSX)

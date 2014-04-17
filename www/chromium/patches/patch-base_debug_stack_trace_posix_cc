@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_debug_stack_trace_posix_cc,v 1.12 2014/03/11 14:52:01 robert Exp $
---- base/debug/stack_trace_posix.cc.orig.port	Thu Feb 20 21:28:47 2014
-+++ base/debug/stack_trace_posix.cc	Fri Feb 21 19:39:55 2014
-@@ -477,7 +477,11 @@ StackTrace::StackTrace() {
+$OpenBSD: patch-base_debug_stack_trace_posix_cc,v 1.13 2014/04/17 16:27:53 robert Exp $
+--- base/debug/stack_trace_posix.cc.orig.port	Wed Apr  2 21:03:58 2014
++++ base/debug/stack_trace_posix.cc	Sat Apr 12 09:40:41 2014
+@@ -471,7 +471,11 @@ StackTrace::StackTrace() {
  
    // Though the backtrace API man page does not list any possible negative
    // return values, we take no chance.

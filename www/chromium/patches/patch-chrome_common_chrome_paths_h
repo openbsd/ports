@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_common_chrome_paths_h,v 1.1 2014/04/17 16:27:53 robert Exp $
+--- chrome/common/chrome_paths.h.orig.port	Wed Apr 16 10:34:28 2014
++++ chrome/common/chrome_paths.h	Wed Apr 16 10:34:44 2014
+@@ -109,7 +109,7 @@ enum {
+                                    // files to be installed when managed user
+                                    // session starts.
+ 
+-#if defined(OS_LINUX) || (defined(OS_MACOSX) && !defined(OS_IOS))
++#if defined(OS_LINUX) || (defined(OS_MACOSX) && !defined(OS_IOS)) || defined(OS_BSD)
+   DIR_NATIVE_MESSAGING,         // System directory where native messaging host
+                                 // manifest files are stored.
+   DIR_USER_NATIVE_MESSAGING,    // Directory with Native Messaging Hosts

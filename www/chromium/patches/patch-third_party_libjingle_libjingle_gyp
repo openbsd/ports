@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_libjingle_libjingle_gyp,v 1.10 2014/03/11 14:52:01 robert Exp $
---- third_party/libjingle/libjingle.gyp.orig.port	Thu Feb 20 21:28:39 2014
-+++ third_party/libjingle/libjingle.gyp	Wed Feb 26 15:09:11 2014
-@@ -541,7 +541,7 @@
+$OpenBSD: patch-third_party_libjingle_libjingle_gyp,v 1.11 2014/04/17 16:27:53 robert Exp $
+--- third_party/libjingle/libjingle.gyp.orig.port	Wed Apr  2 21:03:47 2014
++++ third_party/libjingle/libjingle.gyp	Sat Apr 12 09:40:41 2014
+@@ -543,7 +543,7 @@
              '<(libjingle_source)/talk/base/unixfilesystem.h',
            ],
          }],
@@ -10,7 +10,7 @@ $OpenBSD: patch-third_party_libjingle_libjingle_gyp,v 1.10 2014/03/11 14:52:01 r
            'sources': [
              '<(libjingle_source)/talk/base/latebindingsymboltable.cc',
              '<(libjingle_source)/talk/base/latebindingsymboltable.h',
-@@ -790,7 +790,7 @@
+@@ -795,7 +795,7 @@
                ],
              }],
              # TODO(mallinath) - Enable SCTP for iOS.

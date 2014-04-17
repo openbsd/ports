@@ -1,6 +1,6 @@
-$OpenBSD: patch-net_udp_udp_socket_libevent_cc,v 1.1 2014/03/11 14:52:01 robert Exp $
---- net/udp/udp_socket_libevent.cc.orig.port	Fri Feb 21 23:57:24 2014
-+++ net/udp/udp_socket_libevent.cc	Fri Feb 21 23:58:33 2014
+$OpenBSD: patch-net_udp_udp_socket_libevent_cc,v 1.2 2014/04/17 16:27:53 robert Exp $
+--- net/udp/udp_socket_libevent.cc.orig.port	Wed Apr  2 21:03:39 2014
++++ net/udp/udp_socket_libevent.cc	Sat Apr 12 09:40:41 2014
 @@ -36,7 +36,7 @@ const int kBindRetries = 10;
  const int kPortStart = 1024;
  const int kPortEnd = 65535;
@@ -19,7 +19,7 @@ $OpenBSD: patch-net_udp_udp_socket_libevent_cc,v 1.1 2014/03/11 14:52:01 robert 
          ip_mreqn mreq;
          mreq.imr_ifindex = multicast_interface_;
          mreq.imr_address.s_addr = htonl(INADDR_ANY);
-@@ -637,7 +637,7 @@ int UDPSocketLibevent::JoinGroup(const IPAddressNumber
+@@ -644,7 +644,7 @@ int UDPSocketLibevent::JoinGroup(const IPAddressNumber
        if (addr_family_ != AF_INET)
          return ERR_ADDRESS_INVALID;
  

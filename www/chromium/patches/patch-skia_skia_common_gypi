@@ -1,7 +1,7 @@
-$OpenBSD: patch-skia_skia_library_gypi,v 1.4 2014/03/11 14:52:01 robert Exp $
---- skia/skia_library.gypi.orig.port	Thu Feb 20 21:28:32 2014
-+++ skia/skia_library.gypi	Fri Feb 21 19:39:55 2014
-@@ -195,7 +195,7 @@
+$OpenBSD: patch-skia_skia_common_gypi,v 1.1 2014/04/17 16:27:53 robert Exp $
+--- skia/skia_common.gypi.orig.port	Tue Apr 15 19:57:28 2014
++++ skia/skia_common.gypi	Tue Apr 15 19:57:45 2014
+@@ -61,7 +61,7 @@
      }],
  
      #Settings for text blitting, chosen to approximate the system browser.

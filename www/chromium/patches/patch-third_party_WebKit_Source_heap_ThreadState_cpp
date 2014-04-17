@@ -1,0 +1,38 @@
+$OpenBSD: patch-third_party_WebKit_Source_heap_ThreadState_cpp,v 1.1 2014/04/17 16:27:53 robert Exp $
+--- third_party/WebKit/Source/heap/ThreadState.cpp.orig.port	Tue Apr 15 20:50:41 2014
++++ third_party/WebKit/Source/heap/ThreadState.cpp	Tue Apr 15 22:12:46 2014
+@@ -43,11 +43,25 @@
+ extern "C" void* __libc_stack_end;  // NOLINT
+ #endif
+ 
++#if OS(OPENBSD)
++#include <pthread_np.h>
++#endif
++
+ namespace WebCore {
+ 
+ static void* getStackStart()
+ {
+-#if defined(__GLIBC__) || OS(ANDROID)
++#if defined(__GLIBC__) || OS(ANDROID) || OS(OPENBSD)
++#if OS(OPENBSD)
++    stack_t ss;
++    void* base;
++    size_t size;
++    int error = pthread_stackseg_np(pthread_self(), &ss);
++    RELEASE_ASSERT(!error);
++    base = (void*)((size_t) ss.ss_sp - ss.ss_size);
++    size = ss.ss_size;
++    return reinterpret_cast<Address>(base) + size;
++#else
+     pthread_attr_t attr;
+     if (!pthread_getattr_np(pthread_self(), &attr)) {
+         void* base;
+@@ -57,6 +71,7 @@ static void* getStackStart()
+         pthread_attr_destroy(&attr);
+         return reinterpret_cast<Address>(base) + size;
+     }
++#endif
+ #if defined(__GLIBC__)
+     // pthread_getattr_np can fail for the main thread. In this case
+     // just like NaCl we rely on the __libc_stack_end to give us

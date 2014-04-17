@@ -1,0 +1,21 @@
+$OpenBSD: patch-content_renderer_pepper_resource_converter_cc,v 1.1 2014/04/17 16:27:53 robert Exp $
+--- content/renderer/pepper/resource_converter.cc.orig.port	Wed Apr 16 19:25:15 2014
++++ content/renderer/pepper/resource_converter.cc	Wed Apr 16 19:26:59 2014
+@@ -98,7 +98,7 @@ bool DOMMediaStreamTrackToResource(
+     scoped_ptr<IPC::Message>* create_message) {
+   DCHECK(!dom_media_stream_track.isNull());
+   *pending_renderer_id = 0;
+-
++#if defined(ENABLE_WEBRTC)
+   const blink::WebMediaStreamTrack track = dom_media_stream_track.component();
+   const std::string id = track.source().id().utf8();
+ 
+@@ -123,7 +123,7 @@ bool DOMMediaStreamTrackToResource(
+         new PpapiPluginMsg_MediaStreamAudioTrack_CreateFromPendingHost(id));
+     return true;
+   }
+-
++#endif
+   return false;
+ }
+ 

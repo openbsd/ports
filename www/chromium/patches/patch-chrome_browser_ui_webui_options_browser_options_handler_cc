@@ -1,43 +1,39 @@
-$OpenBSD: patch-chrome_browser_ui_webui_options_browser_options_handler_cc,v 1.4 2014/03/11 14:52:01 robert Exp $
---- chrome/browser/ui/webui/options/browser_options_handler.cc.orig.port	Thu Feb 20 21:27:32 2014
-+++ chrome/browser/ui/webui/options/browser_options_handler.cc	Fri Feb 21 19:39:55 2014
-@@ -322,7 +322,8 @@ void BrowserOptionsHandler::GetLocalizedValues(Diction
+$OpenBSD: patch-chrome_browser_ui_webui_options_browser_options_handler_cc,v 1.5 2014/04/17 16:27:53 robert Exp $
+--- chrome/browser/ui/webui/options/browser_options_handler.cc.orig.port	Sat Apr 12 09:54:06 2014
++++ chrome/browser/ui/webui/options/browser_options_handler.cc	Sat Apr 12 09:54:26 2014
+@@ -313,7 +313,7 @@ void BrowserOptionsHandler::GetLocalizedValues(base::D
      { "toolbarShowHomeButton", IDS_OPTIONS_TOOLBAR_SHOW_HOME_BUTTON },
      { "translateEnableTranslate",
        IDS_OPTIONS_TRANSLATE_ENABLE_TRANSLATE },
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if defined(OS_POSIX) && !defined(OS_CHROMEOS) && !defined(OS_MACOSX) && \
-+    !defined(OS_ANDROID)
++#if defined(OS_POSIX) && !defined(OS_CHROMEOS)
      { "showWindowDecorations", IDS_SHOW_WINDOW_DECORATIONS },
      { "themesNativeButton", IDS_THEMES_GTK_BUTTON },
      { "themesSetClassic", IDS_THEMES_SET_CLASSIC },
-@@ -625,7 +626,8 @@ void BrowserOptionsHandler::RegisterMessages() {
+@@ -620,7 +620,7 @@ void BrowserOptionsHandler::RegisterMessages() {
        "requestProfilesInfo",
        base::Bind(&BrowserOptionsHandler::HandleRequestProfilesInfo,
                   base::Unretained(this)));
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if defined(OS_POSIX) && !defined(OS_CHROMEOS) && !defined(OS_MACOSX) && \
-+    !defined(OS_ANDROID)
++#if defined(OS_POSIX) && !defined(OS_CHROMEOS)
    web_ui()->RegisterMessageCallback(
        "themesSetNative",
        base::Bind(&BrowserOptionsHandler::ThemesSetNative,
-@@ -1175,7 +1177,8 @@ void BrowserOptionsHandler::ObserveThemeChanged() {
+@@ -1204,7 +1204,7 @@ void BrowserOptionsHandler::ObserveThemeChanged() {
    ThemeService* theme_service = ThemeServiceFactory::GetForProfile(profile);
    bool is_native_theme = false;
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if defined(OS_POSIX) && !defined(OS_CHROMEOS) && !defined(OS_MACOSX) && \
-+    !defined(OS_ANDROID)
++#if defined(OS_POSIX) && !defined(OS_CHROMEOS)
    bool profile_is_managed = profile->IsManaged();
    is_native_theme = theme_service->UsingNativeTheme();
    base::FundamentalValue native_theme_enabled(!is_native_theme &&
-@@ -1197,7 +1200,8 @@ void BrowserOptionsHandler::ThemesReset(const ListValu
+@@ -1226,7 +1226,7 @@ void BrowserOptionsHandler::ThemesReset(const base::Li
    ThemeServiceFactory::GetForProfile(profile)->UseDefaultTheme();
  }
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if defined(OS_POSIX) && !defined(OS_CHROMEOS) && !defined(OS_MACOSX) && \
-+    !defined(OS_ANDROID)
- void BrowserOptionsHandler::ThemesSetNative(const ListValue* args) {
++#if defined(OS_POSIX) && !defined(OS_CHROMEOS)
+ void BrowserOptionsHandler::ThemesSetNative(const base::ListValue* args) {
    content::RecordAction(UserMetricsAction("Options_GtkThemeSet"));
    Profile* profile = Profile::FromWebUI(web_ui());
