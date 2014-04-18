@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.284 2014/03/24 09:10:54 juanfra Exp $
+# $OpenBSD: Makefile,v 1.285 2014/04/18 15:15:13 pascal Exp $
 
      SUBDIR =
      SUBDIR += abuse
@@ -218,6 +218,7 @@
      SUBDIR += uqm
      SUBDIR += valyriatear
      SUBDIR += vectoroids
+     SUBDIR += vegastrike
      SUBDIR += vitetris
      SUBDIR += vms-empire
      SUBDIR += vodovod
