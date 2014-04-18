@@ -1,0 +1,90 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/04/18 21:49:44 sthen Exp $
+@newgroup _unifi:732
+@newuser _unifi:732:_unifi:daemon:unifi user:/usr/local/share/unifi:/sbin/nologin
+@owner _unifi
+share/unifi/
+@owner
+share/unifi/bin/
+share/unifi/bin/mongod
+@extraunexec rm -rf %D/share/unifi/conf/*
+@owner _unifi
+share/unifi/conf/
+share/unifi/dl/
+share/unifi/dl/firmware/
+share/unifi/dl/firmware/BZ2/
+share/unifi/dl/firmware/BZ2/3.1.10.2519/
+share/unifi/dl/firmware/BZ2/3.1.10.2519/firmware.bin
+share/unifi/dl/firmware/U2S48/
+share/unifi/dl/firmware/U2S48/3.1.10.2519/
+share/unifi/dl/firmware/U2S48/3.1.10.2519/firmware.bin
+share/unifi/dl/firmware/U7E/
+share/unifi/dl/firmware/U7E/3.1.10.2519/
+share/unifi/dl/firmware/U7E/3.1.10.2519/firmware.bin
+share/unifi/dl/firmware/U7P/
+share/unifi/dl/firmware/U7P/3.1.10.2519/
+share/unifi/dl/firmware/U7P/3.1.10.2519/firmware.bin
+share/unifi/dl/firmware/bundles.json
+@owner
+share/unifi/lib/
+share/unifi/lib/MRJAdapter.jar
+share/unifi/lib/ace.jar
+share/unifi/lib/annotations-api.jar
+share/unifi/lib/asm.jar
+share/unifi/lib/bootstrap.jar
+share/unifi/lib/catalina-ant.jar
+share/unifi/lib/catalina-ha.jar
+share/unifi/lib/catalina-tribes.jar
+share/unifi/lib/catalina.jar
+share/unifi/lib/cglib.jar
+share/unifi/lib/commons-beanutils.jar
+share/unifi/lib/commons-codec.jar
+share/unifi/lib/commons-daemon.jar
+share/unifi/lib/commons-httpclient.jar
+share/unifi/lib/commons-lang.jar
+share/unifi/lib/commons-logging.jar
+share/unifi/lib/commons-net.jar
+share/unifi/lib/dom4j.jar
+share/unifi/lib/ecj-4.2.1.jar
+share/unifi/lib/el-api.jar
+share/unifi/lib/jasper-el.jar
+share/unifi/lib/jasper.jar
+share/unifi/lib/jmdns.jar
+share/unifi/lib/jsp-api.jar
+share/unifi/lib/jstl.jar
+share/unifi/lib/jstun-0.7.3.jar
+share/unifi/lib/jul-log4j-bridge.jar
+share/unifi/lib/log4j.jar
+share/unifi/lib/mail.jar
+share/unifi/lib/mongo.jar
+share/unifi/lib/org.springframework.config.java-1.0.0.M4.jar
+share/unifi/lib/servlet-api.jar
+share/unifi/lib/slf4j-api.jar
+share/unifi/lib/slf4j-log4j12.jar
+share/unifi/lib/spring-beans-2.5.6.jar
+share/unifi/lib/spring-context-2.5.6.jar
+share/unifi/lib/spring-core-2.5.6.jar
+share/unifi/lib/sshj.jar
+share/unifi/lib/tomcat-api.jar
+share/unifi/lib/tomcat-coyote.jar
+share/unifi/lib/tomcat-dbcp.jar
+share/unifi/lib/tomcat-i18n-es.jar
+share/unifi/lib/tomcat-i18n-fr.jar
+share/unifi/lib/tomcat-i18n-ja.jar
+share/unifi/lib/tomcat-jdbc.jar
+share/unifi/lib/tomcat-juli-adapters.jar
+share/unifi/lib/tomcat-juli.jar
+share/unifi/lib/tomcat-util.jar
+share/unifi/logs
+@owner _unifi
+@sample /var/log/unifi/
+@owner
+share/unifi/readme.txt
+@owner _unifi
+share/unifi/webapps/
+share/unifi/webapps/ROOT.war
+@owner
+@exec-update rm -rf %D/share/unifi/webapps/ROOT
+@extraunexec rm -rf %D/share/unifi/{dl,data,run,work,conf}
+@extraunexec rm -rf %D/share/unifi/webapps/*
+@extraunexec rm -rf /var/log/unifi
+@rcscript ${RCDIR}/unifi
