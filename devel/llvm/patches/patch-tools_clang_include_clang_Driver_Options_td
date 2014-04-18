@@ -1,11 +1,12 @@
-$OpenBSD: patch-tools_clang_include_clang_Driver_Options_td,v 1.1 2013/06/21 22:09:12 brad Exp $
---- tools/clang/include/clang/Driver/Options.td.orig	Tue Jun  4 23:41:19 2013
-+++ tools/clang/include/clang/Driver/Options.td	Tue Jun  4 23:41:50 2013
-@@ -1004,6 +1004,7 @@ def nodefaultlibs : Flag<["-"], "nodefaultlibs">;
- def nofixprebinding : Flag<["-"], "nofixprebinding">;
- def nolibc : Flag<["-"], "nolibc">;
- def nomultidefs : Flag<["-"], "nomultidefs">;
-+def nopie : Flag<["-"], "nopie">;
- def noprebind : Flag<["-"], "noprebind">;
- def noseglinkedit : Flag<["-"], "noseglinkedit">;
- def nostartfiles : Flag<["-"], "nostartfiles">;
+$OpenBSD: patch-tools_clang_include_clang_Driver_Options_td,v 1.2 2014/04/18 09:30:48 brad Exp $
+--- tools/clang/include/clang/Driver/Options.td.orig	Fri Jan 31 06:34:49 2014
++++ tools/clang/include/clang/Driver/Options.td	Fri Jan 31 06:43:54 2014
+@@ -253,7 +253,7 @@ def Qn : Flag<["-"], "Qn">;
+ def Qunused_arguments : Flag<["-"], "Qunused-arguments">, Flags<[DriverOption, CoreOption]>,
+   HelpText<"Don't emit warning for unused driver arguments">;
+ def Q : Flag<["-"], "Q">;
+-def R : Flag<["-"], "R">;
++def R : JoinedOrSeparate<["-"], "R">, Flags<[RenderJoined]>;
+ def S : Flag<["-"], "S">, Flags<[DriverOption,CC1Option]>, Group<Action_Group>,
+   HelpText<"Only run preprocess and compilation steps">;
+ def Tbss : JoinedOrSeparate<["-"], "Tbss">, Group<T_Group>;

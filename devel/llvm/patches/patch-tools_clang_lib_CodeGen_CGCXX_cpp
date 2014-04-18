@@ -1,0 +1,23 @@
+$OpenBSD: patch-tools_clang_lib_CodeGen_CGCXX_cpp,v 1.1 2014/04/18 09:30:48 brad Exp $
+
+Don't produce an alias between destructors with different calling conventions.
+
+http://llvm.org/bugs/show_bug.cgi?id=19007
+https://bugzilla.mozilla.org/show_bug.cgi?id=978423
+
+--- tools/clang/lib/CodeGen/CGCXX.cpp.orig	Fri Apr  4 23:01:26 2014
++++ tools/clang/lib/CodeGen/CGCXX.cpp	Fri Apr  4 23:02:50 2014
+@@ -92,7 +92,13 @@ bool CodeGenModule::TryEmitBaseDestructorAsAlias(const
+   if (!ClassLayout.getBaseClassOffset(UniqueBase).isZero())
+     return true;
+ 
++  // Give up if the calling conventions don't match. We could update the call,
++  // but it is probably not worth it.
+   const CXXDestructorDecl *BaseD = UniqueBase->getDestructor();
++  if (BaseD->getType()->getAs<FunctionType>()->getCallConv() !=
++      D->getType()->getAs<FunctionType>()->getCallConv())
++    return true;
++
+   return TryEmitDefinitionAsAlias(GlobalDecl(D, Dtor_Base),
+                                   GlobalDecl(BaseD, Dtor_Base),
+                                   false);

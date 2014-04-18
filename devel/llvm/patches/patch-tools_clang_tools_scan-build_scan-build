@@ -1,21 +1,21 @@
-$OpenBSD: patch-tools_clang_tools_scan-build_scan-build,v 1.5 2013/06/21 22:09:12 brad Exp $
---- tools/clang/tools/scan-build/scan-build.orig	Wed May  1 20:52:46 2013
-+++ tools/clang/tools/scan-build/scan-build	Wed May  8 06:31:00 2013
-@@ -410,7 +410,7 @@ sub CopyFiles {
+$OpenBSD: patch-tools_clang_tools_scan-build_scan-build,v 1.6 2014/04/18 09:30:48 brad Exp $
+--- tools/clang/tools/scan-build/scan-build.orig	Mon Feb 24 21:55:37 2014
++++ tools/clang/tools/scan-build/scan-build	Mon Feb 24 22:03:55 2014
+@@ -419,7 +419,7 @@ sub CopyFiles {
  
    my $Dir = shift;
  
 -  my $JS = Cwd::realpath("$RealBin/sorttable.js");
 +  my $JS = Cwd::realpath("${LOCALBASE}/share/llvm/sorttable.js");
-   
+ 
    DieDiag("Cannot find 'sorttable.js'.\n")
-     if (! -r $JS);  
-@@ -420,7 +420,7 @@ sub CopyFiles {
+     if (! -r $JS);
+@@ -429,7 +429,7 @@ sub CopyFiles {
    DieDiag("Could not copy 'sorttable.js' to '$Dir'.\n")
      if (! -r "$Dir/sorttable.js");
-     
+ 
 -  my $CSS = Cwd::realpath("$RealBin/scanview.css");
 +  my $CSS = Cwd::realpath("${LOCALBASE}/share/llvm/scanview.css");
-   
+ 
    DieDiag("Cannot find 'scanview.css'.\n")
      if (! -r $CSS);
