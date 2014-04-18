@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2014/04/13 01:01:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.29 2014/04/18 21:57:32 sthen Exp $
 
 COMMENT-main =		mature and flexible open source SIP server
 
@@ -35,7 +35,10 @@ SHARED_LIBS +=		binrpc	1.0	# 0.1
 SHARED_LIBS +=		srutils	1.0	# 1.0
 SHARED_LIBS +=		print	0.0	# 1.2
 
-MAKE_ENV =		CC="${CC}" CC_EXTRA_OPTS="${CFLAGS}" LD_EXTRA_OPTS="${LDFLAGS} -pthread" QUIET=verbose
+MAKE_ENV =		CC="${CC}" \
+			CC_EXTRA_OPTS="${CFLAGS} -DOPENSSL_NO_BUF_FREELISTS" \
+			LD_EXTRA_OPTS="${LDFLAGS} -pthread" \
+			QUIET=verbose
 
 MASTER_SITES =		http://www.kamailio.org/pub/kamailio/${VERSION}/src/
 WRKDIST =		${WRKDIR}/kamailio-${VERSION}
