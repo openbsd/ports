@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_goa_Makefile_in,v 1.1 2014/04/18 12:48:52 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=726570
+
+--- src/goa/Makefile.in.orig	Fri Apr 18 14:13:11 2014
++++ src/goa/Makefile.in	Fri Apr 18 14:13:41 2014
+@@ -1006,7 +1006,7 @@ goaenumtypes.c: goaenums.h goaenumtypes.h goaenumtypes
+ @HAVE_INTROSPECTION_TRUE@		--pkg=gobject-2.0 				\
+ @HAVE_INTROSPECTION_TRUE@		--pkg=gio-2.0 					\
+ @HAVE_INTROSPECTION_TRUE@		--pkg-export=goa-1.0				\
+-@HAVE_INTROSPECTION_TRUE@		--libtool=$(top_builddir)/libtool		\
++@HAVE_INTROSPECTION_TRUE@		--libtool="$(LIBTOOL)"				\
+ @HAVE_INTROSPECTION_TRUE@		--c-include='goa/goa.h'				\
+ @HAVE_INTROSPECTION_TRUE@                -I$(top_srcdir)/src	 			\
+ @HAVE_INTROSPECTION_TRUE@                -I$(top_srcdir)/src/goa	 			\

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2014/04/15 11:15:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.56 2014/04/18 12:48:51 ajacoutot Exp $
 
 COMMENT=	interfaces for interacting with online accounts
 
@@ -41,11 +41,5 @@ MODGNU_CONFIG_GUESS_DIRS= \
 			${WRKSRC}/telepathy-account-widgets
 
 CONFIGURE_ARGS=		--disable-gudev
-
-pre-configure:
-# https://bugzilla.gnome.org/show_bug.cgi?id=726570
-# XXX check if still needed at next release
-	perl -pi -e 's,--libtool=\$$\(top_builddir\)/libtool,--libtool=\$${LIBTOOL},g' \
-		${WRKSRC}/src/goa/Makefile.in
 
 .include <bsd.port.mk>
