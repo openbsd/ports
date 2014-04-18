@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_goa_Makefile_in,v 1.1 2014/04/18 12:48:52 ajacoutot Exp $
+$OpenBSD: patch-src_goa_Makefile_in,v 1.2 2014/04/18 12:52:31 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=726570
+From e4a875d2f2b0d4178fd909c181631c5c760edc17 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Fri, 18 Apr 2014 14:11:31 +0200
+Subject: build: Do not hardcode path to libtool
 
 --- src/goa/Makefile.in.orig	Fri Apr 18 14:13:11 2014
 +++ src/goa/Makefile.in	Fri Apr 18 14:13:41 2014
