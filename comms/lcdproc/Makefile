@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/11 01:30:26 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2014/04/18 23:22:17 jasper Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		interface to various LCD displays
 DISTNAME =		lcdproc-0.5.5
-REVISION =		3
+REVISION =		4
 CATEGORIES =		comms devel
 HOMEPAGE =		http://www.lcdproc.org
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
@@ -13,7 +13,6 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 LIB_DEPENDS =		devel/libftdi \
-			devel/libusb1 \
 			devel/libhid
 # XXX If we ever get an xmlto update, we could build some user docs
 #BUILD_DEPENDS =		textproc/xmlto
