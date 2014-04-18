@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.224 2014/03/27 11:30:01 ajacoutot Exp $
+$OpenBSD: user.list,v 1.225 2014/04/18 21:50:56 sthen Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -240,3 +240,4 @@ id  user		group		port options
 729 _greyscanner	_greyscanner	mail/greyscanner
 730 _kdm		_kdm		x11/kde4/workspace
 731 _geoclue		_geoclue	geo/geoclue2
+732 _unifi		_unifi		net/unifi
