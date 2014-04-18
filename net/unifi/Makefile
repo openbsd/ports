@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/04/18 21:49:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2014/04/18 22:01:22 sthen Exp $
 
 COMMENT=	Ubiquiti uniFi wireless controller
 
 DISTFILES=	unifi-$V{UniFi.unix}.zip
 V=		3.1.10
+REVISION=	0
 PKGNAME=	unifi-$V
 
 CATEGORIES=	net
