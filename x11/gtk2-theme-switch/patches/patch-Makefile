@@ -1,24 +1,21 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2005/10/31 20:14:11 alek Exp $
+$OpenBSD: patch-Makefile,v 1.2 2014/04/18 12:03:00 ajacoutot Exp $
 --- Makefile.orig	Wed Jun 11 07:16:36 2003
-+++ Makefile	Mon Oct 31 16:15:19 2005
-@@ -1,24 +1,22 @@
- GCC = cc
++++ Makefile	Fri Apr 18 13:58:40 2014
+@@ -1,8 +1,8 @@
+-GCC = cc
 -PREFIX=/usr/local
 -CFLAGS = -O2 -Wall $(shell pkg-config --cflags gtk+-2.0)
 -LIBS = $(shell pkg-config --libs gtk+-2.0)
 -CFLAGS += -DGTK_DISABLE_BROKEN -DGTK_DISABLE_DEPRECATED
-+CFLAGS += -O2 -Wall `pkg-config --cflags gtk+-2.0`
-+LIBS = `pkg-config --libs gtk+-2.0`
++GCC = ${CC}
++PREFIX ?= /usr/local
++CFLAGS += -Wall $$(pkg-config --cflags gtk+-2.0)
++LIBS = $$(pkg-config --libs gtk+-2.0)
 +CFLAGS += -DGTK_DISABLE_BROKEN
  
  VERSION = 2.0.0rc2
  all: switch
- 
- switch: switch.c switch.h
--	${GCC} -o switch2 switch.c ${CFLAGS} ${LIBS}
-+	${CC} -o switch2 switch.c ${CFLAGS} ${LIBS}
- 
- clean:
+@@ -14,11 +14,10 @@ clean:
  	-rm -f switch2 *~
  	
  install: all

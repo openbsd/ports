@@ -1,25 +1,25 @@
-$OpenBSD: patch-switch_1,v 1.1.1.1 2005/10/31 20:14:11 alek Exp $
---- switch.1.orig	Mon Oct 31 21:08:06 2005
-+++ switch.1	Mon Oct 31 21:08:42 2005
+$OpenBSD: patch-switch_1,v 1.2 2014/04/18 12:03:00 ajacoutot Exp $
+--- switch.1.orig	Wed Jun 11 07:16:36 2003
++++ switch.1	Fri Apr 18 13:43:32 2014
 @@ -3,7 +3,7 @@
  .\" NAME should be all caps, SECTION should be 1-8, maybe w/ subsection
  .\" other parms are allowed: see man(7), man(1)
  .SH NAME
 -gtk-theme-switch \- fast and easy tool for switching and installing GTK themes
-+gtk2-theme-switch \- fast and easy tool for switching and installing GTK themes
++gtk-theme-switch2 \- fast and easy tool for switching and installing GTK themes
  .SH COMMAND LINE ARGUMENTS
  .nf
  .BR "\-h[elp] " (display\ command-line\ argument\ reference)
-@@ -18,10 +18,10 @@ Multiple command line arguments can be p
+@@ -18,10 +18,10 @@ Multiple command line arguments can be passed to the e
  invocation.
  .PP
  Passing no arguments will start
 -.B gtk-theme-switch
-+.B gtk2-theme-switch
++.B gtk-theme-switch2
  in dock-mode.
  .SH DESCRIPTION
 -.B gtk-theme-switch
-+.B gtk2-theme-switch
++.B gtk-theme-switch2
  is a Gtk+ theme switching utility that can be run from the console, and has an
  optional GUI dock and theme preview. It also can install themes downloaded
  from gtk.themes.org.
