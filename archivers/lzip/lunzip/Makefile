@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2014/01/17 19:46:21 juanfra Exp $
+# $OpenBSD: Makefile,v 1.4 2014/04/18 21:53:54 juanfra Exp $
 
 COMMENT =		decompressor written in C for lzip files
 
-DISTNAME =		lunzip-1.4
-REVISION =		1
+DISTNAME =		lunzip-1.5
 
 HOMEPAGE =		http://lzip.nongnu.org/lunzip.html
+
+MASTER_SITES =		${MASTER_SITE_SAVANNAH:=lzip/lunzip/}
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
