@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/11 11:42:44 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2014/04/18 07:40:53 benoit Exp $
 
 COMMENT =	rewrite strings based on a set of known prefixes
 
-DISTNAME =	String-RewritePrefix-0.006
+DISTNAME =	String-RewritePrefix-0.007
 CATEGORIES =	textproc
 MODULES =	cpan
-USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
