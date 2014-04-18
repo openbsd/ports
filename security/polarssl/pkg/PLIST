@@ -1,47 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/04/18 11:37:02 sthen Exp $
-@bin bin/polarssl_aescrypt2
-@bin bin/polarssl_benchmark
-@bin bin/polarssl_cert_app
-@bin bin/polarssl_cert_req
-@bin bin/polarssl_cert_write
-@bin bin/polarssl_crl_app
-@bin bin/polarssl_crypt_and_hash
-@bin bin/polarssl_dh_client
-@bin bin/polarssl_dh_genprime
-@bin bin/polarssl_dh_server
-@bin bin/polarssl_gen_entropy
-@bin bin/polarssl_gen_key
-@bin bin/polarssl_gen_random_ctr_drbg
-@bin bin/polarssl_gen_random_havege
-@bin bin/polarssl_generic_sum
-@bin bin/polarssl_hello
-@bin bin/polarssl_key_app
-@bin bin/polarssl_md5sum
-@bin bin/polarssl_mpi_demo
-@bin bin/polarssl_o_p_test
-@bin bin/polarssl_pem2der
-@bin bin/polarssl_pk_decrypt
-@bin bin/polarssl_pk_encrypt
-@bin bin/polarssl_pk_sign
-@bin bin/polarssl_pk_verify
-@bin bin/polarssl_req_app
-@bin bin/polarssl_rsa_decrypt
-@bin bin/polarssl_rsa_encrypt
-@bin bin/polarssl_rsa_genkey
-@bin bin/polarssl_rsa_sign
-@bin bin/polarssl_rsa_verify
-@bin bin/polarssl_selftest
-@bin bin/polarssl_sha1sum
-@bin bin/polarssl_sha2sum
-@bin bin/polarssl_ssl_cert_test
-@bin bin/polarssl_ssl_client1
-@bin bin/polarssl_ssl_client2
-@bin bin/polarssl_ssl_fork_server
-@bin bin/polarssl_ssl_mail_client
-@bin bin/polarssl_ssl_pthread_server
-@bin bin/polarssl_ssl_server
-@bin bin/polarssl_ssl_test
-@bin bin/polarssl_strerror
+@comment $OpenBSD: PLIST,v 1.2 2014/04/18 21:54:16 sthen Exp $
 include/polarssl/
 include/polarssl/aes.h
 include/polarssl/aesni.h
@@ -111,3 +68,48 @@ lib/libpolarssl.a
 share/doc/polarssl/
 share/doc/polarssl/ChangeLog
 share/doc/polarssl/README.rst
+share/examples/polarssl/
+@bin share/examples/polarssl/aescrypt2
+@bin share/examples/polarssl/benchmark
+@bin share/examples/polarssl/cert_app
+@bin share/examples/polarssl/cert_req
+@bin share/examples/polarssl/cert_write
+@bin share/examples/polarssl/crl_app
+@bin share/examples/polarssl/crypt_and_hash
+@bin share/examples/polarssl/dh_client
+@bin share/examples/polarssl/dh_genprime
+@bin share/examples/polarssl/dh_server
+@bin share/examples/polarssl/gen_entropy
+@bin share/examples/polarssl/gen_key
+@bin share/examples/polarssl/gen_random_ctr_drbg
+@bin share/examples/polarssl/gen_random_havege
+@bin share/examples/polarssl/generic_sum
+@bin share/examples/polarssl/hello
+@bin share/examples/polarssl/key_app
+@bin share/examples/polarssl/md5sum
+@bin share/examples/polarssl/mpi_demo
+@bin share/examples/polarssl/o_p_test
+@bin share/examples/polarssl/pem2der
+@bin share/examples/polarssl/pk_decrypt
+@bin share/examples/polarssl/pk_encrypt
+@bin share/examples/polarssl/pk_sign
+@bin share/examples/polarssl/pk_verify
+share/examples/polarssl/readme.txt
+@bin share/examples/polarssl/req_app
+@bin share/examples/polarssl/rsa_decrypt
+@bin share/examples/polarssl/rsa_encrypt
+@bin share/examples/polarssl/rsa_genkey
+@bin share/examples/polarssl/rsa_sign
+@bin share/examples/polarssl/rsa_verify
+@bin share/examples/polarssl/selftest
+@bin share/examples/polarssl/sha1sum
+@bin share/examples/polarssl/sha2sum
+@bin share/examples/polarssl/ssl_cert_test
+@bin share/examples/polarssl/ssl_client1
+@bin share/examples/polarssl/ssl_client2
+@bin share/examples/polarssl/ssl_fork_server
+@bin share/examples/polarssl/ssl_mail_client
+@bin share/examples/polarssl/ssl_pthread_server
+@bin share/examples/polarssl/ssl_server
+@bin share/examples/polarssl/ssl_test
+@bin share/examples/polarssl/strerror
