@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/10/10 02:08:21 brad Exp $
+# $OpenBSD: Makefile,v 1.25 2014/04/18 23:37:57 jasper Exp $
 
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers' XGCC
 
@@ -7,8 +7,6 @@ V=4.3.4
 #GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c gmp mpfr
-DIST_SUBDIR=gcc
-
 
 EXTRACT_SUFX=	.tar.bz2
 PKGNAME=	avr-gcc-${V}
