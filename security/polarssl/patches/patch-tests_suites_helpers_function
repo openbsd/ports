@@ -1,0 +1,21 @@
+$OpenBSD: patch-tests_suites_helpers_function,v 1.1.1.1 2014/04/18 11:37:02 sthen Exp $
+
+Stops test_suite_pk from looping forever.
+
+--- tests/suites/helpers.function.orig	Fri Apr 18 11:59:32 2014
++++ tests/suites/helpers.function	Fri Apr 18 11:59:54 2014
+@@ -105,13 +105,10 @@ static void hexify(unsigned char *obuf, const unsigned
+  */
+ static int rnd_std_rand( void *rng_state, unsigned char *output, size_t len )
+ {
+-    size_t i;
+-
+     if( rng_state != NULL )
+         rng_state  = NULL;
+ 
+-    for( i = 0; i < len; ++i )
+-        output[i] = rand();
++    arc4random_buf(output, len);
+ 
+     return( 0 );
+ }
