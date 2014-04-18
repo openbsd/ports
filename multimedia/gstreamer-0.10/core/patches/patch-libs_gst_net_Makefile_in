@@ -1,0 +1,18 @@
+$OpenBSD: patch-libs_gst_net_Makefile_in,v 1.1 2014/04/18 08:54:13 ajacoutot Exp $
+
+From 3e24bbefba9889c621d35234143271d6f0453326 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Wed, 09 Apr 2014 14:44:07 +0000
+Subject: libs: g-ir-scanner: do not hardcode libtool path
+
+--- libs/gst/net/Makefile.in.orig	Fri Apr 18 10:43:59 2014
++++ libs/gst/net/Makefile.in	Fri Apr 18 10:44:06 2014
+@@ -891,7 +891,7 @@ Android.mk: Makefile.am
+ @HAVE_INTROSPECTION_TRUE@		--library=$(top_builddir)/gst/libgstreamer-0.10.la \
+ @HAVE_INTROSPECTION_TRUE@		--library=libgstnet-0.10.la \
+ @HAVE_INTROSPECTION_TRUE@		--include=Gst-0.10 \
+-@HAVE_INTROSPECTION_TRUE@		--libtool="$(top_builddir)/libtool" \
++@HAVE_INTROSPECTION_TRUE@		--libtool="${LIBTOOL}" \
+ @HAVE_INTROSPECTION_TRUE@		--pkg gstreamer-0.10 \
+ @HAVE_INTROSPECTION_TRUE@		--pkg-export="gstreamer-net-0.10" \
+ @HAVE_INTROSPECTION_TRUE@		--add-init-section="gst_init(NULL,NULL);" \

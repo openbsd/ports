@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2014/04/08 17:25:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2014/04/18 08:54:13 ajacoutot Exp $
 
 COMMENT=		framework for streaming media
 
@@ -29,13 +29,5 @@ CONFIGURE_ENV +=	FLEX_PATH=${LOCALBASE}/bin/gflex \
 # tests/check/gst (which is not built) but better safe than sorry
 CONFIGURE_ENV +=	ac_cv_lib_gmp___gmpz_init_set_d=no \
 			ac_cv_lib_gsl_gsl_rng_uniform_int=no
-
-pre-configure:
-# https://bugzilla.gnome.org/show_bug.cgi?id=726571
-# XXX check if still needed at next release
-.for i in libs/gst/base libs/gst/dataprotocol libs/gst/check libs/gst/controller libs/gst/net gst
-	perl -pi -e 's,--libtool="\$$\(top_builddir\)/libtool",--libtool="\$${LIBTOOL}",g' \
-		${WRKSRC}/$i/Makefile.in
-.endfor
 
 .include <bsd.port.mk>
