@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.311 2014/04/17 17:06:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.312 2014/04/18 11:29:44 weerd Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -158,6 +158,7 @@
      SUBDIR += radmind
      SUBDIR += rancid
      SUBDIR += ranger
+     SUBDIR += ranval
      SUBDIR += rdiff-backup
      SUBDIR += resmon
      SUBDIR += rpl
