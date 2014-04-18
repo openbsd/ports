@@ -1,3 +1,4 @@
+$OpenBSD: patch-tests-lha-test_in,v 1.2 2014/04/18 22:59:32 jasper Exp $
 --- tests/lha-test.in.orig	Sun Jul 27 19:37:51 2003
 +++ tests/lha-test.in	Sun Dec  4 17:40:11 2005
 @@ -1,4 +1,4 @@

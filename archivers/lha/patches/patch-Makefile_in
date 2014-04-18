@@ -1,6 +1,7 @@
---- tests/Makefile.in.orig	Sat Sep 24 15:05:21 2005
-+++ tests/Makefile.in	Sun Dec  4 17:40:11 2005
-@@ -281,7 +281,7 @@ uninstall-am: uninstall-info-am
+$OpenBSD: patch-Makefile_in,v 1.2 2014/04/18 22:59:32 jasper Exp $
+--- tests/Makefile.in.orig	Mon Oct 16 16:50:10 2006
++++ tests/Makefile.in	Sat Apr 19 00:52:34 2014
+@@ -311,7 +311,7 @@ uninstall-am: uninstall-info-am
  
  
  check-local:

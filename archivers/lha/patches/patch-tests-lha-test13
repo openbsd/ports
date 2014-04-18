@@ -1,6 +1,7 @@
+$OpenBSD: patch-tests-lha-test13,v 1.2 2014/04/18 22:59:32 jasper Exp $
 --- tests/lha-test13.orig	Tue Jul 29 14:15:43 2003
-+++ tests/lha-test13	Sun Dec  4 17:40:11 2005
-@@ -46,17 +46,17 @@ diff test-tmp-euc test-tmp-euc-d2/test-t
++++ tests/lha-test13	Sat Apr 19 00:52:34 2014
+@@ -46,17 +46,17 @@ diff test-tmp-euc test-tmp-euc-d2/test-tmp-euc
  							check $? $LINENO
  
  i=0
