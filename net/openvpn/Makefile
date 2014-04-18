@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2014/04/18 11:54:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2014/04/18 19:08:12 espie Exp $
 
 COMMENT=	easy-to-use, robust, and highly configurable VPN
 
@@ -28,11 +28,11 @@ SAMPLES_DIR=	${PREFIX}/share/examples/openvpn
 # not enabled yet; OpenVPN's PolarSSL support currently requires 1.2 API
 #FLAVORS=	polarssl
 #FLAVOR?=
-.if ${FLAVOR:Mpolarssl}
-LIB_DEPENDS+=	security/polarssl
-WANTLIB+=	polarssl
-CONFIGURE_ARGS+= --with-crypto-library=polarssl
-.endif
+#.if ${FLAVOR:Mpolarssl}
+#LIB_DEPENDS+=	security/polarssl
+#WANTLIB+=	polarssl
+#CONFIGURE_ARGS+= --with-crypto-library=polarssl
+#.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${SAMPLES_DIR}/sample-config-files \
