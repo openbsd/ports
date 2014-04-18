@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.336 2014/04/17 17:06:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.337 2014/04/18 11:37:40 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -207,6 +207,7 @@
      SUBDIR += pgpdump
      SUBDIR += pidgin-otr
      SUBDIR += pinentry
+     SUBDIR += polarssl
      SUBDIR += portscanner
      SUBDIR += portsentry
      SUBDIR += ppgen
