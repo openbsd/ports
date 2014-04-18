@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/04/18 15:14:09 pascal Exp $
+@bin bin/asteroidgen
+@bin bin/base_maker
+@bin bin/mesh_xml
+@bin bin/mesher
+@bin bin/tempgen
+@bin bin/trisort
+@bin bin/vegaserver
+@bin bin/vegastrike
+@bin bin/vsreplace
+@bin bin/vsrextract
+@bin bin/vsrmake
+@bin bin/vssetup
+share/vegastrike/objconv/
+share/vegastrike/objconv/3ds2xml
+share/vegastrike/objconv/obj2xml
+share/vegastrike/objconv/wcp2xml

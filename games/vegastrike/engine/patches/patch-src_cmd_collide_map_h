@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_cmd_collide_map_h,v 1.1.1.1 2014/04/18 15:14:09 pascal Exp $
+--- src/cmd/collide_map.h.orig.port	Mon Mar 19 09:20:14 2012
++++ src/cmd/collide_map.h	Sat May 26 16:32:35 2012
+@@ -7,6 +7,7 @@
+ #include <limits>
+ #endif
+ #include <vector>
++#include <cmath>
+ /* Arbitrarily use Set for ALL PLATFORMS -hellcatv */
+ class Unit;
+ class Bolt;
+@@ -35,7 +36,7 @@ class Collidable (public)
+             position = QVector( 0, 0, 0 );      //hack for now
+ 
+ #else
+-        if ( ISNAN( getKey() ) )
++        if ( std::isnan( getKey() ) )
+             position = QVector( 0, 0, 0 );      //hack for now
+ #endif
+     }
+@@ -76,7 +77,7 @@ class Collidable (public)
+ #ifdef __APPLE__
+             !FINITE( radius )
+ #else
+-            ISNAN( radius )
++            std::isnan( radius )
+ #endif
+             || radius >= -FLT_MIN) radius = -FLT_MIN*2;
+         this->SetPosition( p );
+@@ -176,7 +177,7 @@ inline void init_null_collide_iter()
+ 
+ inline bool is_null( const CollideMap::iterator &it )
+ {
+-    return ISNAN( (**it).radius );
++    return std::isnan( (**it).radius );
+ }
+ 
+ inline void set_null( CollideMap::iterator &it )

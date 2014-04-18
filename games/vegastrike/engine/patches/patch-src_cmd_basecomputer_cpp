@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_cmd_basecomputer_cpp,v 1.1.1.1 2014/04/18 15:14:09 pascal Exp $
+--- src/cmd/basecomputer.cpp.orig.port	Mon Mar 19 09:20:14 2012
++++ src/cmd/basecomputer.cpp	Mon Aug 26 18:45:59 2013
+@@ -3047,7 +3047,7 @@ static int datesort( const void *v1, const void *v2 )
+     return s1.st_mtime-s2.st_mtime;
+ }
+ 
+-#if (defined (__FREEBSD__)) || (defined (_WIN32) && !defined (__CYGWIN__ ) ) || (defined (__GLIBC_MINOR__) && __GLIBC_MINOR__ >= 10) || defined(__HAIKU__)
++#if (defined (__FREEBSD__)) || (defined (_WIN32) && !defined (__CYGWIN__ ) ) || (defined (__GLIBC_MINOR__) && __GLIBC_MINOR__ >= 10) || defined(__HAIKU__) || defined(__OPENBSD__)
+ typedef int (*scancompare)( const struct dirent **v1, const struct dirent **v2 );
+ #else
+ typedef int (*scancompare)( const void *v1, const void *v2 );
+@@ -4750,7 +4750,7 @@ bool BaseComputer::showPlayerInfo( const EventCommandI
+ void prettyPrintFloat( char *buffer, float f, int digitsBefore, int digitsAfter, int bufferLen )
+ {
+     int   bufferPos = 0;
+-    if ( !FINITE( f ) || ISNAN( f ) ) {
++    if ( !FINITE( f ) || std::isnan( f ) ) {
+         buffer[0] = 'n';
+         buffer[1] = '/';
+         buffer[2] = 'a';

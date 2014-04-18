@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_networking_lowlevel_packetmem_cpp,v 1.1.1.1 2014/04/18 15:14:09 pascal Exp $
+
+http://sourceforge.net/p/vegastrike/code/13530/
+
+--- src/networking/lowlevel/packetmem.cpp.orig.port	Mon Aug 26 14:41:08 2013
++++ src/networking/lowlevel/packetmem.cpp	Mon Aug 26 14:45:12 2013
+@@ -102,7 +102,7 @@ void PacketMem::inner_set( void* buffer, size_t size, 
+     }
+     else
+     {
+-        _buffer.reset( 0 );
++        _buffer.reset();
+         _len = 0;
+     }
+ }

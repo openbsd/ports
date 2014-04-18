@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_cmd_unit_generic_cpp,v 1.1.1.1 2014/04/18 15:14:09 pascal Exp $
+--- src/cmd/unit_generic.cpp.orig.port	Mon Mar 19 09:20:14 2012
++++ src/cmd/unit_generic.cpp	Sat May 26 16:32:35 2012
+@@ -47,6 +47,7 @@
+ 
+ #include "unit_find.h"
+ #include "pilot.h"
++#include <cmath>
+ 
+ #include "vsfilesystem.h"
+ #include <iostream>
+@@ -3303,7 +3304,7 @@ Vector Unit::ClampTorque( const Vector &amt1 )
+     //HACK this forces the reaction to be Li-6+D fusion with efficiency governed by the getFuelUsage function
+     fuel -= GetFuelUsage( false )*SIMULATION_ATOM*Res.Magnitude()*FMEC_exit_vel_inverse/Lithium6constant;
+ #ifndef __APPLE__
+-    if ( ISNAN( fuel ) ) {
++    if ( std::isnan( fuel ) ) {
+         fprintf( stderr, "FUEL is NAN\n" );
+         fuel = 0;
+     }
+@@ -3468,7 +3469,7 @@ Vector Unit::ClampThrust( const Vector &amt1, bool aft
+                && finegrainedFuelEfficiency) ? afterburnenergy : GetFuelUsage( afterburn ) )*SIMULATION_ATOM*Res.Magnitude()
+             *FMEC_exit_vel_inverse/Lithium6constant;
+ #ifndef __APPLE__
+-        if ( ISNAN( fuel ) ) {
++        if ( std::isnan( fuel ) ) {
+             fprintf( stderr, "Fuel is NAN A\n" );
+             fuel = 0;
+         }
+@@ -3479,7 +3480,7 @@ Vector Unit::ClampThrust( const Vector &amt1, bool aft
+         //HACK this forces the reaction to be Li-6+Li-6 fusion with efficiency governed by the getFuelUsage function
+         fuel -= GetFuelUsage( false )*SIMULATION_ATOM*Res.Magnitude()*FMEC_exit_vel_inverse/Lithium6constant;
+ #ifndef __APPLE__
+-        if ( ISNAN( fuel ) ) {
++        if ( std::isnan( fuel ) ) {
+             fprintf( stderr, "Fuel is NAN B\n" );
+             fuel = 0;
+         }

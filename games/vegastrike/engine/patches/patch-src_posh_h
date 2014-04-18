@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_posh_h,v 1.1.1.1 2014/04/18 15:14:09 pascal Exp $
+--- src/posh.h.orig.port	Thu Feb 24 23:35:06 2011
++++ src/posh.h	Sat May 26 16:32:35 2012
+@@ -1022,7 +1022,7 @@ POSH_COMPILE_TIME_ASSERT( posh_i64_t, sizeof (posh_i64
+ 
+ #endif /* defined FORCE_DOXYGEN */
+ 
+-#if defined POSH_CPU_AXP && (defined POSH_OS_TRU64 || defined POSH_OS_LINUX || defined __FreeBSD__)
++#if defined POSH_CPU_AXP && (defined POSH_OS_TRU64 || defined POSH_OS_LINUX || defined BSD)
+ #  define POSH_64BIT_POINTER 1
+ #endif
+ 

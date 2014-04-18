@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2014/04/18 15:14:09 pascal Exp $
+--- Makefile.in.orig.port	Sat May 26 17:13:54 2012
++++ Makefile.in	Sat May 26 17:14:04 2012
+@@ -1894,7 +1894,7 @@ base_maker_SOURCES = \
+   src/xml_support.h
+ 
+ @BOOSTSYSTEM_FALSE@@HAVE_OGRE_TRUE@MESHER_BOOST_LIBS = 
+-@BOOSTSYSTEM_TRUE@@HAVE_OGRE_TRUE@MESHER_BOOST_LIBS = -lboost_thread
++@BOOSTSYSTEM_TRUE@@HAVE_OGRE_TRUE@MESHER_BOOST_LIBS = -lboost_thread-mt
+ @HAVE_OGRE_FALSE@MESHER_BOOST_LIBS = 
+ mesher_CXXFLAGS = $(OGRE_CFLAGS) -I../../src -I../..
+ mesher_LDADD = $(OGRE_LIBS) -lexpat $(MESHER_BOOST_LIBS)

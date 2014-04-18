@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_cmd_collide2_opcodetypes_h,v 1.1.1.1 2014/04/18 15:14:09 pascal Exp $
+--- src/cmd/collide2/opcodetypes.h.orig.port	Sat Sep 18 00:29:19 2010
++++ src/cmd/collide2/opcodetypes.h	Sat May 26 16:32:35 2012
+@@ -196,7 +196,7 @@ typedef uint64 uintmax_t;
+ #if defined(HAVE_WCTYPE_H)
+ #include <wctype.h>
+ #endif
+-#if !((defined(CS_HAVE_WINT_T) && defined(_WCTYPE_T_DEFINED)) || defined(_WINT_T) || defined(_WINT_T_DECLARED))
++#if !((defined(CS_HAVE_WINT_T) && defined(_WCTYPE_T_DEFINED)) || defined(_WINT_T) || defined(_WINT_T_DECLARED)) && !defined(__cplusplus)
+ #ifndef wint_t
+ #if _MSC_VER >= 1300
+     typedef unsigned short wint_t;

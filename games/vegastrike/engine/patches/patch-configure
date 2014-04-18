@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2014/04/18 15:14:09 pascal Exp $
+--- configure.orig.port	Mon Aug 26 19:07:12 2013
++++ configure	Mon Aug 26 19:07:24 2013
+@@ -10520,10 +10520,6 @@ rm -f conftest.err conftest.$ac_objext conftest.$ac_ex
+ fi
+ DEBUG_NOOPT="-O0 -g"
+ CUBEMAP_FLAGS="-DNV_CUBE_MAP"
+-# Remove these flags beforehand... this should not remove functionality.
+-CXXFLAGS="`echo $CXXFLAGS | sed -e 's/-g[^[:space:]]*//g' | sed -e 's/-O[^[:space:]]//g'`"
+-CFLAGS="`echo $CFLAGS | sed -e 's/-g[^[:space:]]*//g' | sed -e 's/-O[^[:space:]]//g'`"
+-VS_CXXFLAGS="`echo $VS_CXXFLAGS | sed -e 's/-g[^[:space:]]*//g' | sed -e 's/-O[^[:space:]]//g'`"
+ 
+ # Check whether --enable-permissive or --disable-permissive was given.
+ if test "${enable_permissive+set}" = set; then
