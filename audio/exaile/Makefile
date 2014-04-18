@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2013/09/10 13:26:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2014/04/18 23:03:53 jasper Exp $
 
 COMMENT =	music manager and player for GTK+ written in Python
 
 V =		3.3
 P =		1
 DISTNAME =	exaile-${V}.${P}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	audio x11
 
@@ -16,7 +16,8 @@ MASTER_SITES = http://www.launchpad.net/exaile/$V.x/$V.$P/+download/
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-MODULES =	lang/python
+MODULES =	devel/gettext \
+		lang/python
 
 COMMON_DEPENDS =x11/dbus-python>=0.82.1 \
 		devel/py-notify>=0.1.1 \
