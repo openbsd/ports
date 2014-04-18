@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2014/04/08 17:25:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2014/04/18 09:00:05 ajacoutot Exp $
 
 COMMENT=		clutter GStreamer integration library
 
@@ -25,7 +25,7 @@ LIB_DEPENDS=		graphics/clutter/core>=${MAJOR} \
 			multimedia/gstreamer1/plugins-base
 
 pre-configure:
-# https://bugzilla.gnome.org/show_bug.cgi?id=726571
+# https://bugzilla.gnome.org/show_bug.cgi?id=728484
 # XXX check if still needed at next release
 	perl -pi -e 's,--libtool="\$$\(top_builddir\)/libtool",--libtool="\$${LIBTOOL}",g' \
 		${WRKSRC}/clutter-gst/Makefile.in
