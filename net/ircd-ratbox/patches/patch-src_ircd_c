@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_ircd_c,v 1.2 2013/10/31 01:25:07 brad Exp $
---- src/ircd.c.orig	Sun May 27 09:09:42 2012
-+++ src/ircd.c	Wed Oct 30 20:46:50 2013
+$OpenBSD: patch-src_ircd_c,v 1.3 2014/04/19 18:31:45 sthen Exp $
+--- src/ircd.c.orig	Sun May 27 14:09:42 2012
++++ src/ircd.c	Sat Apr 19 19:26:26 2014
 @@ -242,7 +242,6 @@ make_daemon(void)
  	}
  	else if(pid > 0)
@@ -29,3 +29,17 @@ $OpenBSD: patch-src_ircd_c,v 1.2 2013/10/31 01:25:07 brad Exp $
  	}
  #endif
  	init_sys();
+@@ -654,12 +662,7 @@ ratbox_main(int argc, char *argv[])
+ 	else
+ 		ConfigServerHide.links_disabled = 1;
+ 
+-	if(ConfigFileEntry.use_egd && (ConfigFileEntry.egdpool_path != NULL))
+-	{
+-		rb_init_prng(ConfigFileEntry.egdpool_path, RB_PRNG_EGD);
+-	}
+-	else
+-		rb_init_prng(NULL, RB_PRNG_DEFAULT);
++	rb_init_prng(NULL, RB_PRNG_DEFAULT);
+ 	seed_random(NULL);
+ 
+ 	init_main_logfile(logFileName);
