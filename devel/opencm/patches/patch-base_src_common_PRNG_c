@@ -1,0 +1,25 @@
+$OpenBSD: patch-base_src_common_PRNG_c,v 1.3 2014/04/19 12:38:45 sthen Exp $
+--- base/src/common/PRNG.c.orig	Sat Apr 19 06:34:16 2014
++++ base/src/common/PRNG.c	Sat Apr 19 06:34:51 2014
+@@ -75,21 +75,6 @@ void initialize_PRNG(void)
+   if(getenv("RANDFILE"))
+     RAND_load_file(getenv("RANDFILE"), MAX_READ);
+ 
+-  /* We limit gathering entropy from an EGD socket to only 128 bytes to work
+-     around some flaws in the design of EGD (in particular, EGD is slow, it
+-     will crash if too many requests come in too fast, it gathers entropy
+-     slowly, and it will block if it doesn't have enough).
+-
+-     I (Jack L) recommend using PRNGD (a fast and stable EGD clone written in
+-     C) instead of EGD for these reasons.
+-
+-     RAND_egd_bytes is only available in OpenSSL 0.9.6 and up. However, given
+-     that 0.9.5 and previous versions have exploitable overflows, this is not a
+-     major concern.
+-  */
+-  if(getenv("EGD_PATH"))
+-    RAND_egd_bytes(getenv("EGD_PATH"), 128);
+-
+   /* Check to see if we are sufficiently initialized */
+   if(!RAND_status())
+   {
