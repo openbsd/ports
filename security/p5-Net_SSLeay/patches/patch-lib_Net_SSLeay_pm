@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_Net_SSLeay_pm,v 1.1 2014/04/19 14:52:44 sthen Exp $
+--- lib/Net/SSLeay.pm.orig	Sat Apr 19 08:44:26 2014
++++ lib/Net/SSLeay.pm	Sat Apr 19 08:44:35 2014
+@@ -896,7 +896,6 @@ sub randomize (;$$$) {
+     RAND_load_file($rn_seed_file, -s _) if $rnsf;
+     RAND_seed($seed) if $seed;
+     RAND_seed($ENV{RND_SEED}) if $ENV{RND_SEED};
+-    RAND_egd($egd_path) if -e $egd_path && -S _;
+     RAND_load_file($Net::SSLeay::random_device, $Net::SSLeay::how_random/8)
+ 	if -r $Net::SSLeay::random_device;
+ }

@@ -1,0 +1,26 @@
+$OpenBSD: patch-SSLeay_xs,v 1.3 2014/04/19 14:52:44 sthen Exp $
+--- SSLeay.xs.orig	Sat Apr 19 08:44:26 2014
++++ SSLeay.xs	Sat Apr 19 08:44:47 2014
+@@ -2038,11 +2038,6 @@ RAND_poll()
+ int
+ RAND_status()
+ 
+-int
+-RAND_egd_bytes(path, bytes)
+-    const char *path
+-    int bytes
+-
+ SV *
+ RAND_file_name(num)
+     size_t num
+@@ -2079,10 +2074,6 @@ RAND_load_file(file_name, how_much)
+ int
+ RAND_write_file(file_name)
+      char *  file_name
+-
+-int
+-RAND_egd(path)
+-     char *  path
+ 
+ #define REM40 "Minimal X509 stuff..., this is a bit ugly and should be put in its own modules Net::SSLeay::X509.pm"
+ 
