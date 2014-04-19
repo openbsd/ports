@@ -1,17 +1,17 @@
-$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.10 2014/04/19 12:13:34 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.11 2014/04/19 12:28:00 jasper Exp $
 
 From a25e2cc2ef72d2549c84a91d75c587ecbfabfe4f Mon Sep 17 00:00:00 2001
 From: Zach Leslie <zach@puppetlabs.com>
 Date: Tue, 14 Jan 2014 11:19:53 -0800
 Subject: [PATCH] (PUP-2143) Implement :enableable for OpenBSD service provider
 
+
+* https://github.com/puppetlabs/puppet/pull/2557
 - Do not unconditionally alphabetically sort the list of pkg_scripts
   as order matters. Explicit ordering will need to be forced through
   resources dependencies.
-
 - Do not add _flags="" for pkg_scripts if no :flags were set, as it
   may override the default flags from inside the script.
-
 - Use a faster way of determining if something is in base, instead of checking
   something is from packages with pkg_info.
 
