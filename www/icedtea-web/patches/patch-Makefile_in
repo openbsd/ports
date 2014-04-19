@@ -1,22 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2013/04/22 14:17:10 landry Exp $
---- Makefile.in.orig	Thu Apr 11 18:15:37 2013
-+++ Makefile.in	Mon Apr 22 16:14:41 2013
-@@ -776,12 +776,12 @@ install-data-local:
- @ENABLE_DOCS_TRUE@	(cd ${abs_top_builddir}/docs/netx; \
- @ENABLE_DOCS_TRUE@	 for files in $$(find . -type f); \
- @ENABLE_DOCS_TRUE@	 do \
--@ENABLE_DOCS_TRUE@	   ${INSTALL_DATA} -D $${files} $(DESTDIR)$(htmldir)/netx/$${files}; \
-+@ENABLE_DOCS_TRUE@	   ${INSTALL_DATA} $${files} $(DESTDIR)$(htmldir)/netx/$${files}; \
- @ENABLE_DOCS_TRUE@	 done)
- @ENABLE_DOCS_TRUE@@ENABLE_PLUGIN_TRUE@	(cd ${abs_top_builddir}/docs/plugin; \
- @ENABLE_DOCS_TRUE@@ENABLE_PLUGIN_TRUE@	 for files in $$(find . -type f); \
- @ENABLE_DOCS_TRUE@@ENABLE_PLUGIN_TRUE@	 do \
--@ENABLE_DOCS_TRUE@@ENABLE_PLUGIN_TRUE@	   ${INSTALL_DATA} -D $${files} $(DESTDIR)$(htmldir)/plugin/$${files}; \
-+@ENABLE_DOCS_TRUE@@ENABLE_PLUGIN_TRUE@	   ${INSTALL_DATA} $${files} $(DESTDIR)$(htmldir)/plugin/$${files}; \
- @ENABLE_DOCS_TRUE@@ENABLE_PLUGIN_TRUE@	 done)
- 
- uninstall-local:
-@@ -879,8 +879,8 @@ clean-liveconnect:
+$OpenBSD: patch-Makefile_in,v 1.6 2014/04/19 08:27:24 ajacoutot Exp $
+--- Makefile.in.orig	Tue Feb  4 13:00:58 2014
++++ Makefile.in	Sat Apr 19 10:14:26 2014
+@@ -945,8 +945,8 @@ clean-liveconnect:
  
  netx-source-files.txt:
  	find $(NETX_SRCDIR) -name '*.java' | sort > $@
@@ -27,7 +12,7 @@ $OpenBSD: patch-Makefile_in,v 1.5 2013/04/22 14:17:10 landry Exp $
  
  stamps/netx.stamp: netx-source-files.txt stamps/bootstrap-directory.stamp
  	mkdir -p $(NETX_DIR)
-@@ -890,14 +890,15 @@ stamps/netx.stamp: netx-source-files.txt stamps/bootst
+@@ -956,14 +956,15 @@ stamps/netx.stamp: netx-source-files.txt stamps/bootst
  	    -bootclasspath $(RUNTIME) \
  	    @netx-source-files.txt
  	(cd $(NETX_RESOURCE_DIR); \
@@ -46,7 +31,7 @@ $OpenBSD: patch-Makefile_in,v 1.5 2013/04/22 14:17:10 landry Exp $
  	mkdir -p stamps
  	touch $@
  
-@@ -933,9 +934,10 @@ stamps/extra-class-files.stamp: extra-source-files.txt
+@@ -999,9 +1000,10 @@ stamps/extra-class-files.stamp: extra-source-files.txt
            -sourcepath $(abs_top_srcdir)/extra -cp netx.build \
            -bootclasspath $(RUNTIME) @extra-source-files.txt
  	(cd $(NETX_EXTRA_DIR); \

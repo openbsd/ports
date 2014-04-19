@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugin_icedteanp_IcedTeaNPPlugin_cc,v 1.1 2012/03/29 12:28:27 kurt Exp $
---- plugin/icedteanp/IcedTeaNPPlugin.cc.orig	Wed Mar 28 15:02:49 2012
-+++ plugin/icedteanp/IcedTeaNPPlugin.cc	Wed Mar 28 15:11:30 2012
-@@ -261,8 +261,6 @@ int plugin_debug = getenv ("ICEDTEAPLUGIN_DEBUG") != N
+$OpenBSD: patch-plugin_icedteanp_IcedTeaNPPlugin_cc,v 1.2 2014/04/19 08:27:24 ajacoutot Exp $
+--- plugin/icedteanp/IcedTeaNPPlugin.cc.orig	Tue Feb  4 12:03:04 2014
++++ plugin/icedteanp/IcedTeaNPPlugin.cc	Sat Apr 19 10:14:26 2014
+@@ -222,8 +222,6 @@ int plugin_debug = getenv ("ICEDTEAPLUGIN_DEBUG") != N
  int plugin_debug_suspend = (getenv("ICEDTEAPLUGIN_DEBUG") != NULL) &&
          (strcmp(getenv("ICEDTEAPLUGIN_DEBUG"), "suspend") == 0);
  
