@@ -1,4 +1,4 @@
-$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.9 2014/04/19 11:07:35 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.10 2014/04/19 12:13:34 jasper Exp $
 
 From a25e2cc2ef72d2549c84a91d75c587ecbfabfe4f Mon Sep 17 00:00:00 2001
 From: Zach Leslie <zach@puppetlabs.com>
@@ -12,8 +12,11 @@ Subject: [PATCH] (PUP-2143) Implement :enableable for OpenBSD service provider
 - Do not add _flags="" for pkg_scripts if no :flags were set, as it
   may override the default flags from inside the script.
 
+- Use a faster way of determining if something is in base, instead of checking
+  something is from packages with pkg_info.
+
 --- lib/puppet/provider/service/openbsd.rb.orig	Wed Apr 16 01:06:55 2014
-+++ lib/puppet/provider/service/openbsd.rb	Sat Apr 19 12:51:45 2014
++++ lib/puppet/provider/service/openbsd.rb	Sat Apr 19 13:58:04 2014
 @@ -4,7 +4,11 @@ Puppet::Type.type(:service).provide :openbsd, :parent 
  
    confine :operatingsystem => :openbsd
@@ -256,8 +259,8 @@ Subject: [PATCH] (PUP-2143) Implement :enableable for OpenBSD service provider
 +  # of a package installation.
 +  # @api private
 +  def in_base?
-+    system("/usr/sbin/pkg_info -qE /etc/rc.d/#{self.name}> /dev/null")
-+    $?.exitstatus == 1
++    script = File.readlines(self.class.rcconf).find {|s| s =~ /^#{rcvar_name}/ }
++    !script.nil?
 +  end
 +
 +  # @api private
