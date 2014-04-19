@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2013/10/03 06:12:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.32 2014/04/19 08:32:20 jasper Exp $
 include/gnome-menus-3.0/
 include/gnome-menus-3.0/gmenu-tree.h
 lib/girepository-1.0/GMenu-3.0.typelib
@@ -179,5 +179,3 @@ share/locale/zh_TW/LC_MESSAGES/gnome-menus-3.0.mo
 share/locale/zu/
 share/locale/zu/LC_MESSAGES/
 share/locale/zu/LC_MESSAGES/gnome-menus-3.0.mo
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database

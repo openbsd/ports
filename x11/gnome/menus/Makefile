@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2014/04/02 09:36:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.75 2014/04/19 08:32:20 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		implementation of the FreeDesktop Desktop Menu Spec
 
 GNOME_PROJECT=		gnome-menus
 GNOME_VERSION=		3.10.1
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gnome-menu-3         0.0      # 0.0
 
@@ -19,7 +19,7 @@ WANTLIB += z
 MODULES=		devel/gettext \
 			x11/gnome
 
-MODGNOME_TOOLS += 	desktop-file-utils gobject-introspection
+MODGNOME_TOOLS += 	gobject-introspection
 
 LIB_DEPENDS=		devel/glib2
 
