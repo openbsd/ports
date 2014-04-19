@@ -1,12 +1,16 @@
-$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.7 2014/04/18 22:07:36 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_service_openbsd_rb,v 1.8 2014/04/19 10:40:56 jasper Exp $
 
 From a25e2cc2ef72d2549c84a91d75c587ecbfabfe4f Mon Sep 17 00:00:00 2001
 From: Zach Leslie <zach@puppetlabs.com>
 Date: Tue, 14 Jan 2014 11:19:53 -0800
 Subject: [PATCH] (PUP-2143) Implement :enableable for OpenBSD service provider
 
+- Do not unconditoinally alphabetically sort the list of pkg_scripts
+  as order matters. Explicit ordering will need to be forced through
+  resources dependencies.
+
 --- lib/puppet/provider/service/openbsd.rb.orig	Wed Apr 16 01:06:55 2014
-+++ lib/puppet/provider/service/openbsd.rb	Sat Apr 19 00:00:54 2014
++++ lib/puppet/provider/service/openbsd.rb	Sat Apr 19 12:38:51 2014
 @@ -4,7 +4,11 @@ Puppet::Type.type(:service).provide :openbsd, :parent 
  
    confine :operatingsystem => :openbsd
@@ -208,7 +212,7 @@ Subject: [PATCH] (PUP-2143) Implement :enableable for OpenBSD service provider
 +  # return the array with the current resource added
 +  # @api private
 +  def pkg_scripts_append
-+    [pkg_scripts(), resource[:name]].flatten.sort.uniq
++    [pkg_scripts(), resource[:name]].flatten.uniq
 +  end
 +
 +  # return the array without the current resource
