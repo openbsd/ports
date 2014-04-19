@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2014/01/14 20:17:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2014/04/19 12:48:03 jasper Exp $
 
 COMMENT =		high-level IO library for Ruby
 
-DISTNAME =		highline-1.6.20
+DISTNAME =		highline-1.6.21
 CATEGORIES =		devel
 
 HOMEPAGE =		http://highline.rubyforge.org/
