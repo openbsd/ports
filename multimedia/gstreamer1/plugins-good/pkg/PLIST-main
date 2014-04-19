@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2014/04/01 16:31:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2014/04/19 17:47:13 ajacoutot Exp $
 @conflict gstreamer1-plugins-bad-<1.2.0
 lib/gstreamer-${API}/libgstalaw.so
 lib/gstreamer-${API}/libgstalpha.so
@@ -48,7 +48,6 @@ lib/gstreamer-${API}/libgstspectrum.so
 lib/gstreamer-${API}/libgstspeex.so
 lib/gstreamer-${API}/libgsttaglib.so
 lib/gstreamer-${API}/libgstudp.so
-lib/gstreamer-${API}/libgstvideo4linux2.so
 lib/gstreamer-${API}/libgstvideobox.so
 lib/gstreamer-${API}/libgstvideocrop.so
 lib/gstreamer-${API}/libgstvideofilter.so
