@@ -1,0 +1,9 @@
+$OpenBSD: patch-lib_specinfra_command_rb,v 1.1.1.1 2014/04/19 16:41:29 jasper Exp $
+--- lib/specinfra/command.rb.orig	Sat Apr 19 16:15:50 2014
++++ lib/specinfra/command.rb	Sat Apr 19 16:16:04 2014
+@@ -21,4 +21,5 @@ require "specinfra/command/aix"
+ require "specinfra/command/darwin"
+ require "specinfra/command/freebsd"
+ require "specinfra/command/freebsd10"
++require "specinfra/command/openbsd"
+ require "specinfra/command/windows"

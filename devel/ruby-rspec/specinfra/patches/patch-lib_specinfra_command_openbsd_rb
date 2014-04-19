@@ -1,0 +1,53 @@
+$OpenBSD: patch-lib_specinfra_command_openbsd_rb,v 1.1.1.1 2014/04/19 16:41:29 jasper Exp $
+--- lib/specinfra/command/openbsd.rb.orig	Sat Apr 19 17:43:00 2014
++++ lib/specinfra/command/openbsd.rb	Sat Apr 19 18:19:15 2014
+@@ -0,0 +1,49 @@
++module SpecInfra
++  module Command
++    class OpenBSD < Base
++      def check_enabled(service, level=3)
++        "egrep '(#{escape(service)}_flags=|^pkg_scripts=\"(.*)#{escape(service)}(.*)\")' /etc/rc.conf.local | grep -v \=NO"
++      end
++
++      def check_file_md5checksum(file, expected)
++        regexp = "^#{expected}"
++        "cksum -qa md5 #{escape(file)} | grep -w #{escape(regexp)}"
++      end
++
++      def check_file_sha256checksum(file, expected)
++        regexp = "^#{expected}"
++        "cksum -qa sha256 #{escape(file)} | grep -w #{escape(regexp)}"
++      end
++
++      def check_installed(package, version=nil)
++        if version
++          "pkg_info -a | cut -d ' ' -f 1 | grep  #{escape(package)}-#{escape(version)}"
++        else
++          "pkg_info -a | cut -d ' ' -f 1 | grep  #{escape(package)}"
++        end
++      end
++
++      def check_listening(port)
++        "netstat -nat -f inet | egrep '((tcp|udp).*\.#{port}.*LISTEN$)'"
++      end
++
++      def check_mode(file, mode)
++        regexp = "^#{mode}$"
++        "stat -f%Lp #{escape(file)} | grep #{escape(regexp)}"
++      end
++
++      def check_mounted(path)
++        regexp = "on #{path} "
++        "mount | grep #{escape(regexp)}"
++      end
++
++      def get_mode(file)
++        "stat -f%Lp #{escape(file)}"
++      end
++
++      def install(package)
++        "pkg_add #{package}"
++      end
++    end
++  end
++end

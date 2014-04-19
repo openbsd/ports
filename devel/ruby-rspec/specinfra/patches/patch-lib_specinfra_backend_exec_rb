@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_specinfra_backend_exec_rb,v 1.1.1.1 2014/04/19 16:41:29 jasper Exp $
+--- lib/specinfra/backend/exec.rb.orig	Sat Apr 19 16:40:34 2014
++++ lib/specinfra/backend/exec.rb	Sat Apr 19 16:41:33 2014
+@@ -235,6 +235,8 @@ module SpecInfra
+           end
+         elsif run_command('uname -sr').stdout =~ /Arch/i
+           { :family => 'Arch', :release => nil }
++        elsif run_command('uname -s').stdout =~ /OpenBSD/i
++          { :family => 'OpenBSD', :release => nil }
+         else
+           { :family => 'Base', :release => nil }
+         end
