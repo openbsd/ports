@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2014/03/09 21:53:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2014/04/19 14:30:01 ajacoutot Exp $
 @conflict foomatic-db-<4.0.20091207p1
 @conflict foo2zjs-cup-*
 @pkgpath print/foo2zjs,-cups
@@ -133,6 +133,7 @@ share/foomatic/db/source/PPD/foo2zjs/Dell-1355.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Dell-C1765.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Epson-AcuLaser_M1400.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Fuji_Xerox-DocuPrint_CM205.ppd.gz
+share/foomatic/db/source/PPD/foo2zjs/Fuji_Xerox-DocuPrint_CM215.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Fuji_Xerox-DocuPrint_M215.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Fuji_Xerox-DocuPrint_P205.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Generic-OAKT_Printer.ppd.gz
@@ -319,6 +320,7 @@ share/foomatic/db/source/printer/Dell-1355.xml
 share/foomatic/db/source/printer/Dell-C1765.xml
 share/foomatic/db/source/printer/Epson-AcuLaser_M1400.xml
 share/foomatic/db/source/printer/Fuji_Xerox-DocuPrint_CM205.xml
+share/foomatic/db/source/printer/Fuji_Xerox-DocuPrint_CM215.xml
 share/foomatic/db/source/printer/Fuji_Xerox-DocuPrint_M215.xml
 share/foomatic/db/source/printer/Fuji_Xerox-DocuPrint_P205.xml
 share/foomatic/db/source/printer/Generic-OAKT_Printer.xml
