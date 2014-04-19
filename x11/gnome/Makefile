@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.233 2014/04/19 17:09:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.234 2014/04/19 18:06:17 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -23,7 +23,6 @@
      SUBDIR += dictionary
      SUBDIR += doc-utils
      SUBDIR += documents
-     SUBDIR += ekiga
      SUBDIR += empathy
      SUBDIR += eog
      SUBDIR += eog-plugins
