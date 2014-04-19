@@ -1,6 +1,6 @@
-$OpenBSD: patch-resource_c,v 1.1.1.1 2008/12/07 22:03:28 okan Exp $
---- resource.c.orig	Mon Oct  6 09:43:22 2008
-+++ resource.c	Mon Oct  6 09:43:39 2008
+$OpenBSD: patch-resource_c,v 1.2 2014/04/19 15:42:06 sthen Exp $
+--- resource.c.orig	Sun Mar 19 07:21:20 2006
++++ resource.c	Sat Apr 19 16:41:46 2014
 @@ -9,6 +9,8 @@
  #include "stuff.h"
  #include "resource.h"
@@ -10,3 +10,11 @@ $OpenBSD: patch-resource_c,v 1.1.1.1 2008/12/07 22:03:28 okan Exp $
  
  #if CAN_HANDLE_SIGNALS
  #include <signal.h>
+@@ -2271,7 +2273,6 @@ static one_caller tBoolean tls_initialize(void)
+         my_spf_cleanup(debugstrbuf, spfbuf);
+       }
+ #endif
+-      if (RAND_egd(seedfilename) >= 0) goto rand_finish;
+       debugmsg("TLS: random D\n");
+       (void) RAND_load_file(seedfilename, -1);
+         /* ("-1" is allowed for OpenSSL >= 0.9.5) */
