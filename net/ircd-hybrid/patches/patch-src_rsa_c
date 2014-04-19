@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_rsa_c,v 1.1 2014/04/19 18:23:58 sthen Exp $
+--- src/rsa.c.orig	Sat Apr 19 19:23:13 2014
++++ src/rsa.c	Sat Apr 19 19:23:27 2014
+@@ -68,12 +68,6 @@ binary_to_hex(unsigned char *bin, char *hex, int lengt
+ int
+ get_randomness(unsigned char *buf, int length)
+ {
+-  /* Seed OpenSSL PRNG with EGD enthropy pool -kre */
+-  if (ConfigFileEntry.use_egd &&
+-      ConfigFileEntry.egdpool_path)
+-    if (RAND_egd(ConfigFileEntry.egdpool_path) == -1)
+-      return -1;
+-
+   if (RAND_status())
+     return RAND_bytes(buf, length);
+   /* XXX - abort? */
