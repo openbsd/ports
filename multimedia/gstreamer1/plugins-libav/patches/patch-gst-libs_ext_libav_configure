@@ -1,7 +1,7 @@
-$OpenBSD: patch-gst-libs_ext_libav_configure,v 1.5 2013/09/24 18:30:47 ajacoutot Exp $
---- gst-libs/ext/libav/configure.orig	Tue Sep 24 14:41:14 2013
-+++ gst-libs/ext/libav/configure	Tue Sep 24 18:28:02 2013
-@@ -3132,7 +3132,7 @@ die_license_disabled version3 libvo_amrwbenc
+$OpenBSD: patch-gst-libs_ext_libav_configure,v 1.6 2014/04/19 17:48:24 ajacoutot Exp $
+--- gst-libs/ext/libav/configure.orig	Fri Apr 18 12:30:33 2014
++++ gst-libs/ext/libav/configure	Sat Apr 19 19:11:10 2014
+@@ -3143,7 +3143,7 @@ die_license_disabled version3 libvo_amrwbenc
  
  enabled version3 && { enabled gpl && enable gplv3 || enable lgplv3; }
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-gst-libs_ext_libav_configure,v 1.5 2013/09/24 18:30:47 ajacoutot
  
  enable_pic() {
      enable pic
-@@ -3608,7 +3608,6 @@ enabled extra_warnings && check_cflags -Winline
+@@ -3619,7 +3619,6 @@ enabled extra_warnings && check_cflags -Winline
  # add some linker flags
  check_ldflags -Wl,--warn-common
  check_ldflags -Wl,-rpath-link=libswscale:libavfilter:libavdevice:libavformat:libavcodec:libavutil:libavresample
@@ -18,7 +18,7 @@ $OpenBSD: patch-gst-libs_ext_libav_configure,v 1.5 2013/09/24 18:30:47 ajacoutot
  
  enabled xmm_clobber_test &&
      check_ldflags -Wl,--wrap,avcodec_open2              \
-@@ -3637,10 +3636,6 @@ fi
+@@ -3648,10 +3647,6 @@ fi
  if [ -z "$optflags" ]; then
      if enabled small; then
          optflags=$cflags_size
