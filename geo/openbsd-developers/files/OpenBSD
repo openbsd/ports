@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.111 2014/03/15 15:42:28 afresh1 Exp $
+# $OpenBSD: OpenBSD,v 1.112 2014/04/19 11:53:20 logan Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -13,6 +13,7 @@
 -22.88		-43.28		"pedro"		# Pedro Martelletto
 -12.56		-38.31		"gsoares"	# Gleydson Soares
 15.58		-61.35		"joris"		# Joris Vink
+20.20		57.50		"logan"		# Loganaden Velvindron
 25.0		121.400		"kevlo"		# Kevin Lo
 30.448		-97.684		"marco"		# Marco Peereboom
 34.710962	-82.872323	"okan"		# Okan Demirmen
