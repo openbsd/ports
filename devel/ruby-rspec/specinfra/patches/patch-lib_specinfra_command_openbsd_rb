@@ -1,4 +1,6 @@
-$OpenBSD: patch-lib_specinfra_command_openbsd_rb,v 1.3 2014/04/19 18:25:12 jasper Exp $
+$OpenBSD: patch-lib_specinfra_command_openbsd_rb,v 1.4 2014/04/19 18:30:50 jasper Exp $
+
+https://github.com/serverspec/specinfra/pull/91
 
 XXX: backend/exec.rb#get_routing_table needs to be adjusted to deal with
      multiple formats.
