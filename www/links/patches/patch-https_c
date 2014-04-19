@@ -1,0 +1,17 @@
+$OpenBSD: patch-https_c,v 1.1 2014/04/19 17:42:59 sthen Exp $
+--- https.c.orig	Sat Apr 19 18:36:12 2014
++++ https.c	Sat Apr 19 18:37:12 2014
+@@ -33,11 +33,8 @@ SSL *getSSL(void)
+ 		char f_randfile[PATH_MAX];
+ 
+ 		const char *f = RAND_file_name(f_randfile, sizeof(f_randfile));
+-		if (f && RAND_egd(f)<0) {
+-			/* Not an EGD, so read and write to it */
+-			if (RAND_load_file(f_randfile, -1))
+-				RAND_write_file(f_randfile);
+-		}
++		if (RAND_load_file(f_randfile, -1))
++			RAND_write_file(f_randfile);
+ 		SSLeay_add_ssl_algorithms();
+ 		context = SSL_CTX_new(SSLv23_client_method());
+ 		SSL_CTX_set_options(context, SSL_OP_ALL);
