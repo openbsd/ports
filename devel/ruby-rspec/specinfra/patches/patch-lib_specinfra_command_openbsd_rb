@@ -1,7 +1,11 @@
-$OpenBSD: patch-lib_specinfra_command_openbsd_rb,v 1.2 2014/04/19 16:56:45 jasper Exp $
---- lib/specinfra/command/openbsd.rb.orig	Sat Apr 19 18:55:29 2014
-+++ lib/specinfra/command/openbsd.rb	Sat Apr 19 18:55:44 2014
-@@ -0,0 +1,61 @@
+$OpenBSD: patch-lib_specinfra_command_openbsd_rb,v 1.3 2014/04/19 18:25:12 jasper Exp $
+
+XXX: backend/exec.rb#get_routing_table needs to be adjusted to deal with
+     multiple formats.
+
+--- lib/specinfra/command/openbsd.rb.orig	Sat Apr 19 19:13:19 2014
++++ lib/specinfra/command/openbsd.rb	Sat Apr 19 20:23:38 2014
+@@ -0,0 +1,77 @@
 +module SpecInfra
 +  module Command
 +    class OpenBSD < Base
@@ -35,8 +39,20 @@ $OpenBSD: patch-lib_specinfra_command_openbsd_rb,v 1.2 2014/04/19 16:56:45 jaspe
 +        end
 +      end
 +
++      def get_interface_speed_of(name)
++        "ifconfig #{name} | grep 'media\:' | perl -pe 's|.*media\:.*\\((.*?)\\)|\\1|'"
++      end
++
++      def check_ipv4_address(interface, ip_address)
++        "ifconfig #{interface} | grep -w inet | cut -d ' ' -f 2"
++      end
++
 +      def check_listening(port)
 +        "netstat -nat -f inet | egrep '((tcp|udp).*\.#{port}.*LISTEN$)'"
++      end
++
++      def check_mail_alias(recipient, target)
++        "egrep '^#{escape(recipient)}:.*#{escape(target)}' /etc/mail/aliases"
 +      end
 +
 +      def check_mode(file, mode)
@@ -48,6 +64,10 @@ $OpenBSD: patch-lib_specinfra_command_openbsd_rb,v 1.2 2014/04/19 16:56:45 jaspe
 +        regexp = "on #{path} "
 +        "mount | grep #{escape(regexp)}"
 +      end
++
++#      def check_routing_table(destination)
++#        "route -n show -gateway | egrep '(^default|#{destination})' | head -1"
++#      end
 +
 +      def check_running(service)
 +        "/etc/rc.d/#{escape(service)} status"
