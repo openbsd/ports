@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.60 2014/03/20 12:31:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2014/04/19 17:02:00 sthen Exp $
 
 COMMENT-main=		active monitoring tool
 
 V=			2.86
-REVISION=		3
+REVISION=		4
 DISTNAME=		symon-$V
 WRKDIST=		${WRKDIR}/symon
 PKGNAME-main=		${DISTNAME}
@@ -46,6 +46,10 @@ MAKE_ENV=	CLIENTDIR="${P5SITE}" \
 # avoid stripping the binaries
 MAKE_ENV+=		DEBUG=1
 .endif
+
+# XXX disable pf queue support until it can be updated for new PF queues
+post-patch:
+	rm ${WRKSRC}/platform/OpenBSD/sm_pfq.c
 
 post-build:
 	cd ${WRKSRC}/client && \
