@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2014/04/02 09:36:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2014/04/19 15:47:37 ajacoutot Exp $
 
 COMMENT=	library for bits of crypto UI and parsing
 
 GNOME_PROJECT=	gcr
 GNOME_VERSION=	3.12.0
+REVISION=	0
 
 SHARED_LIBS +=  gck-1                1.0      # 0.0
 SHARED_LIBS +=  gcr-base-3           2.0      # 1.0
@@ -28,6 +29,7 @@ MODULES=	devel/gettext \
 
 MODGNOME_TOOLS += desktop-file-utils gobject-introspection vala
 MODGNOME_TOOLS += gtk-update-icon-cache shared-mime-info
+
 LIB_DEPENDS=	x11/gtk+3 \
 		security/libgcrypt \
 		security/p11-kit
@@ -38,12 +40,6 @@ RUN_DEPENDS=	security/gnupg
 # Need xsltproc in order to build with gobject introspection
 BUILD_DEPENDS += textproc/libxslt
 
-# XXX push a proper fix upstream
-BUILD_DEPENDS += textproc/gsed
-pre-configure:
-	perl -pi -e 's,sed -i,gsed -i,g' ${WRKSRC}/Makefile.in
-	${SUBST_CMD} ${WRKSRC}/Makefile.in
-
 # regression tests call 'env python'
 MODULES +=		lang/python
 TEST_DEPENDS +=		${MODPY_RUN_DEPENDS}
@@ -51,5 +47,10 @@ MODPY_RUNDEP=		No
 MODPY_BUILDDEP=		No
 pre-test:
 	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
+
+post-install:
+	grep -q '/libgcr-3.so' ${WRKSRC}/Makefile || exit 1
+	cd ${PREFIX}/lib && \
+		ln -s libgcr-ui-3.so.${LIBgcr-ui-3_VERSION} libgcr-3.so.${LIBgcr-ui-3_VERSION}
 
 .include <bsd.port.mk>

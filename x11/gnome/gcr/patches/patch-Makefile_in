@@ -1,14 +1,42 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2014/03/27 08:06:04 ajacoutot Exp $
---- Makefile.in.orig	Wed Mar 26 17:58:15 2014
-+++ Makefile.in	Wed Mar 26 17:58:43 2014
-@@ -6144,9 +6144,7 @@ check-gcr-symbols: gcr-base-expected.abi gcr-base-actu
+$OpenBSD: patch-Makefile_in,v 1.2 2014/04/19 15:47:37 ajacoutot Exp $
+
+https://bugzilla.gnome.org/browse.cgi?product=gnome-keyring
+
+--- Makefile.in.orig	Sun Mar 23 09:24:45 2014
++++ Makefile.in	Sat Apr 19 17:00:35 2014
+@@ -6049,8 +6052,10 @@ recheck-memory: valgrind-suppressions
  
- # libgcr-3.so (and  friends) symlink to libgcr-ui-3.so for compatibility raisons
- @WITH_GTK_TRUE@install-exec-hook:
--@WITH_GTK_TRUE@	$(LN_S) -f `readlink $(DESTDIR)$(libdir)/libgcr-ui-@GCR_MAJOR@.so` $(DESTDIR)$(libdir)/libgcr-@GCR_MAJOR@.so
--@WITH_GTK_TRUE@	$(LN_S) -f `readlink $(DESTDIR)$(libdir)/libgcr-ui-@GCR_MAJOR@.so` $(DESTDIR)$(libdir)/libgcr-@GCR_MAJOR@.so.@GCR_CURRENT@
--@WITH_GTK_TRUE@	$(LN_S) -f `readlink $(DESTDIR)$(libdir)/libgcr-ui-@GCR_MAJOR@.so` $(DESTDIR)$(libdir)/libgcr-@GCR_MAJOR@.so.@GCR_CURRENT@.0.0
-+@WITH_GTK_TRUE@	cd $(DESTDIR)$(libdir)/ && $(LN_S) -f libgcr-ui-@GCR_MAJOR@.so.${LIBgcr-ui-3_VERSION} libgcr-@GCR_MAJOR@.so.${LIBgcr-ui-3_VERSION}
+ asn:
+ 	for asn in $(ASN_SRCS); do \
+-		asn1Parser -o $(srcdir)/$$asn.h $$asn \
+-		sed -i 's|#include.*|/* \0 */|' $$asn.h \
++		asn1Parser -o $(srcdir)/$$asn.h.tmp $$asn && \
++		sed 's|#include.*|/* \0 */|' < $(srcdir)/$$asn.h.tmp > $(srcdir)/$$asn.h.tmp2 && \
++		mv $(srcdir)/$$asn.h.tmp2 $(srcdir)/$$asn.h && \
++		rm -f $(srcdir)/$$asn.h.tmp $(srcdir)/$$asn.h.tmp2
+ 	done
  
- @WITH_GTK_TRUE@ui/gcr-enum-types.h: $(ENUM_TEMPLATE_H) $(ui_HEADER_FILES)
- @WITH_GTK_TRUE@	$(AM_V_GEN) $(GLIB_MKENUMS) --template $^ > $@
+ gck/gck-marshal.h: gck/gck-marshal.list $(GLIB_GENMARSHAL)
+@@ -6104,13 +6109,18 @@ gcr/gcr-oids.c: gcr/gcr-oids.list gcr/gcr-mkoids
+ 
+ gcr/gcr-oids.h: gcr/gcr-oids.c
+ 
+-gcr/gcr-dbus-generated.c: $(DBUS_XML_DEFINITIONS)
++gcr/temp-dbus-generated.c: $(DBUS_XML_DEFINITIONS)
+ 	$(AM_V_GEN) $(GDBUS_CODEGEN) --interface-prefix org.gnome.keyring.internal. \
+-		--generate-c-code gcr/gcr-dbus-generated --c-namespace GcrDBus $^
+-	$(AM_V_GEN) sed -i -e 's/gcr_dbus/_gcr_dbus/g' gcr/gcr-dbus-generated.[ch]
++		--generate-c-code gcr/temp-dbus-generated --c-namespace GcrDBus $^
+ 
+-gcr/gcr-dbus-generated.h: gcr/gcr-dbus-generated.c
++gcr/gcr-dbus-generated.c: gcr/temp-dbus-generated.c
++	$(AM_V_GEN) sed -e 's/gcr_dbus/_gcr_dbus/g' \
++		-e 's/temp-dbus-generated.h/gcr-dbus-generated.h/g' \
++		gcr/temp-dbus-generated.c > gcr/gcr-dbus-generated.c
+ 
++gcr/gcr-dbus-generated.h: gcr/temp-dbus-generated.c
++	$(AM_V_GEN) sed -e 's/gcr_dbus/_gcr_dbus/g' gcr/temp-dbus-generated.h > gcr/gcr-dbus-generated.h
++
+ gcr-base-$(GCR_MAJOR).pc: gcr/gcr-base.pc
+ 	$(AM_V_GEN) cp gcr/gcr-base.pc gcr-base-$(GCR_MAJOR).pc
+ 
