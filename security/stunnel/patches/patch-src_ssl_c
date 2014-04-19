@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_ssl_c,v 1.1 2014/04/19 12:29:02 sthen Exp $
+--- src/ssl.c.orig	Sat Apr 19 06:26:38 2014
++++ src/ssl.c	Sat Apr 19 06:28:18 2014
+@@ -195,18 +195,6 @@ NOEXPORT int init_prng(GLOBAL_OPTIONS *global) {
+     }
+     s_log(LOG_DEBUG, "RAND_screen failed to sufficiently seed PRNG");
+ #else
+-    if(global->egd_sock) {
+-        if((bytes=RAND_egd(global->egd_sock))==-1) {
+-            s_log(LOG_WARNING, "EGD Socket %s failed", global->egd_sock);
+-            bytes=0;
+-        } else {
+-            totbytes+=bytes;
+-            s_log(LOG_DEBUG, "Snagged %d random bytes from EGD Socket %s",
+-                bytes, global->egd_sock);
+-            return 0; /* OpenSSL always gets what it needs or fails,
+-                         so no need to check if seeded sufficiently */
+-        }
+-    }
+     /* try the good-old default /dev/urandom, if available  */
+     totbytes+=add_rand_file(global, "/dev/urandom");
+     if(RAND_status())
