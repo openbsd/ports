@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/04/18 21:54:16 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/04/19 14:40:51 sthen Exp $
 include/polarssl/
 include/polarssl/aes.h
 include/polarssl/aesni.h
@@ -69,6 +69,7 @@ share/doc/polarssl/
 share/doc/polarssl/ChangeLog
 share/doc/polarssl/README.rst
 share/examples/polarssl/
+share/examples/polarssl/README
 @bin share/examples/polarssl/aescrypt2
 @bin share/examples/polarssl/benchmark
 @bin share/examples/polarssl/cert_app
@@ -94,7 +95,6 @@ share/examples/polarssl/
 @bin share/examples/polarssl/pk_encrypt
 @bin share/examples/polarssl/pk_sign
 @bin share/examples/polarssl/pk_verify
-share/examples/polarssl/readme.txt
 @bin share/examples/polarssl/req_app
 @bin share/examples/polarssl/rsa_decrypt
 @bin share/examples/polarssl/rsa_encrypt
