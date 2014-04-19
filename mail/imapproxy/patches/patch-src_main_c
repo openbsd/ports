@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_main_c,v 1.1 2014/04/19 15:22:32 sthen Exp $
+--- src/main.c.orig	Sat Apr 19 16:19:37 2014
++++ src/main.c	Sat Apr 19 16:19:59 2014
+@@ -470,15 +470,10 @@ int main( int argc, char *argv[] )
+ 
+ 	    /* Set up OpenSSL thread protection */
+ 	    ssl_thread_setup(fn);
+-	    
+-            /* Need to seed PRNG, too! */
+-            if ( RAND_egd( ( RAND_file_name( f_randfile, sizeof( f_randfile ) ) == f_randfile ) ? f_randfile : "/.rnd" ) ) 
+-	    {
+-                /* Not an EGD, so read and write it. */
+-                if ( RAND_load_file( f_randfile, -1 ) )
+-                    RAND_write_file( f_randfile );
+-            }
+-	
++
++            if ( RAND_load_file( f_randfile, -1 ) )
++                RAND_write_file( f_randfile );
++
+ 	    SSL_load_error_strings();
+ 	    tls_ctx = SSL_CTX_new( TLSv1_client_method() );
+ 	    if ( tls_ctx == NULL )
