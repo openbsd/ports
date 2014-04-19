@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2014/04/01 16:31:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2014/04/19 17:47:40 ajacoutot Exp $
 include/gstreamer-${API}/gst/basecamerabinsrc/
 include/gstreamer-${API}/gst/basecamerabinsrc/gstbasecamerasrc.h
 include/gstreamer-${API}/gst/basecamerabinsrc/gstcamerabin-enum.h
@@ -147,11 +147,14 @@ share/gtk-doc/html/gst-plugins-bad-libs-${API}/gstreamer-plugins-bad.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/home.png
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/index.html
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/index.sgml
+share/gtk-doc/html/gst-plugins-bad-libs-${API}/left-insensitive.png
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/left.png
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/mpegts.html
+share/gtk-doc/html/gst-plugins-bad-libs-${API}/right-insensitive.png
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/right.png
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/style.css
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/tools.html
+share/gtk-doc/html/gst-plugins-bad-libs-${API}/up-insensitive.png
 share/gtk-doc/html/gst-plugins-bad-libs-${API}/up.png
 share/locale/af/LC_MESSAGES/gst-plugins-bad-${API}.mo
 share/locale/az/LC_MESSAGES/gst-plugins-bad-${API}.mo
