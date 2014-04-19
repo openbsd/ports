@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/04/01 16:31:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/04/19 17:45:41 ajacoutot Exp $
 @bin bin/gst-inspect-${API}
 @bin bin/gst-launch-${API}
 @bin bin/gst-typefind-${API}
@@ -215,17 +215,22 @@ share/gtk-doc/html/gstreamer-${API}/gstreamer.html
 share/gtk-doc/html/gstreamer-${API}/home.png
 share/gtk-doc/html/gstreamer-${API}/index.html
 share/gtk-doc/html/gstreamer-${API}/index.sgml
+share/gtk-doc/html/gstreamer-${API}/left-insensitive.png
 share/gtk-doc/html/gstreamer-${API}/left.png
 share/gtk-doc/html/gstreamer-${API}/libgstreamer.html
+share/gtk-doc/html/gstreamer-${API}/right-insensitive.png
 share/gtk-doc/html/gstreamer-${API}/right.png
 share/gtk-doc/html/gstreamer-${API}/style.css
+share/gtk-doc/html/gstreamer-${API}/up-insensitive.png
 share/gtk-doc/html/gstreamer-${API}/up.png
 share/gtk-doc/html/gstreamer-libs-${API}/
+share/gtk-doc/html/gstreamer-libs-${API}/GstARGBControlBinding.html
 share/gtk-doc/html/gstreamer-libs-${API}/GstAdapter.html
 share/gtk-doc/html/gstreamer-libs-${API}/GstBaseSink.html
 share/gtk-doc/html/gstreamer-libs-${API}/GstBaseSrc.html
 share/gtk-doc/html/gstreamer-libs-${API}/GstBaseTransform.html
 share/gtk-doc/html/gstreamer-libs-${API}/GstCollectPads.html
+share/gtk-doc/html/gstreamer-libs-${API}/GstDirectControlBinding.html
 share/gtk-doc/html/gstreamer-libs-${API}/GstInterpolationControlSource.html
 share/gtk-doc/html/gstreamer-libs-${API}/GstLFOControlSource.html
 share/gtk-doc/html/gstreamer-libs-${API}/GstNetClientClock.html
@@ -243,7 +248,6 @@ share/gtk-doc/html/gstreamer-libs-${API}/gstreamer-check.html
 share/gtk-doc/html/gstreamer-libs-${API}/gstreamer-control.html
 share/gtk-doc/html/gstreamer-libs-${API}/gstreamer-hierarchy.html
 share/gtk-doc/html/gstreamer-libs-${API}/gstreamer-libs-${API}.devhelp2
-share/gtk-doc/html/gstreamer-libs-${API}/gstreamer-libs-GstARGBControlBinding.html
 share/gtk-doc/html/gstreamer-libs-${API}/gstreamer-libs-GstBaseParse.html
 share/gtk-doc/html/gstreamer-libs-${API}/gstreamer-libs-GstBitReader.html
 share/gtk-doc/html/gstreamer-libs-${API}/gstreamer-libs-GstBufferStraw.html
@@ -251,7 +255,6 @@ share/gtk-doc/html/gstreamer-libs-${API}/gstreamer-libs-GstByteReader.html
 share/gtk-doc/html/gstreamer-libs-${API}/gstreamer-libs-GstByteWriter.html
 share/gtk-doc/html/gstreamer-libs-${API}/gstreamer-libs-GstCheck.html
 share/gtk-doc/html/gstreamer-libs-${API}/gstreamer-libs-GstDataQueue.html
-share/gtk-doc/html/gstreamer-libs-${API}/gstreamer-libs-GstDirectControlBinding.html
 share/gtk-doc/html/gstreamer-libs-${API}/gstreamer-libs-GstNetTimePacket.html
 share/gtk-doc/html/gstreamer-libs-${API}/gstreamer-libs-GstQueueArray.html
 share/gtk-doc/html/gstreamer-libs-${API}/gstreamer-libs-GstStreamConsistency.html
@@ -261,9 +264,12 @@ share/gtk-doc/html/gstreamer-libs-${API}/gstreamer-net.html
 share/gtk-doc/html/gstreamer-libs-${API}/home.png
 share/gtk-doc/html/gstreamer-libs-${API}/index.html
 share/gtk-doc/html/gstreamer-libs-${API}/index.sgml
+share/gtk-doc/html/gstreamer-libs-${API}/left-insensitive.png
 share/gtk-doc/html/gstreamer-libs-${API}/left.png
+share/gtk-doc/html/gstreamer-libs-${API}/right-insensitive.png
 share/gtk-doc/html/gstreamer-libs-${API}/right.png
 share/gtk-doc/html/gstreamer-libs-${API}/style.css
+share/gtk-doc/html/gstreamer-libs-${API}/up-insensitive.png
 share/gtk-doc/html/gstreamer-libs-${API}/up.png
 share/gtk-doc/html/gstreamer-plugins-${API}/
 share/gtk-doc/html/gstreamer-plugins-${API}/ch01.html
@@ -290,9 +296,12 @@ share/gtk-doc/html/gstreamer-plugins-${API}/gstreamer-plugins-valve.html
 share/gtk-doc/html/gstreamer-plugins-${API}/home.png
 share/gtk-doc/html/gstreamer-plugins-${API}/index.html
 share/gtk-doc/html/gstreamer-plugins-${API}/index.sgml
+share/gtk-doc/html/gstreamer-plugins-${API}/left-insensitive.png
 share/gtk-doc/html/gstreamer-plugins-${API}/left.png
+share/gtk-doc/html/gstreamer-plugins-${API}/right-insensitive.png
 share/gtk-doc/html/gstreamer-plugins-${API}/right.png
 share/gtk-doc/html/gstreamer-plugins-${API}/style.css
+share/gtk-doc/html/gstreamer-plugins-${API}/up-insensitive.png
 share/gtk-doc/html/gstreamer-plugins-${API}/up.png
 share/locale/af/LC_MESSAGES/gstreamer-${API}.mo
 share/locale/az/LC_MESSAGES/gstreamer-${API}.mo
