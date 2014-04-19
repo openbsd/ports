@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2014/04/01 16:31:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/04/19 17:46:07 ajacoutot Exp $
 @bin bin/gst-discoverer-${API}
 @bin bin/gst-play-${API}
 include/gstreamer-${API}/gst/allocators/
@@ -292,9 +292,12 @@ share/gtk-doc/html/gst-plugins-base-libs-${API}/gstreamer-video.html
 share/gtk-doc/html/gst-plugins-base-libs-${API}/home.png
 share/gtk-doc/html/gst-plugins-base-libs-${API}/index.html
 share/gtk-doc/html/gst-plugins-base-libs-${API}/index.sgml
+share/gtk-doc/html/gst-plugins-base-libs-${API}/left-insensitive.png
 share/gtk-doc/html/gst-plugins-base-libs-${API}/left.png
+share/gtk-doc/html/gst-plugins-base-libs-${API}/right-insensitive.png
 share/gtk-doc/html/gst-plugins-base-libs-${API}/right.png
 share/gtk-doc/html/gst-plugins-base-libs-${API}/style.css
+share/gtk-doc/html/gst-plugins-base-libs-${API}/up-insensitive.png
 share/gtk-doc/html/gst-plugins-base-libs-${API}/up.png
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/ch01.html
@@ -374,9 +377,12 @@ share/gtk-doc/html/gst-plugins-base-plugins-${API}/gst-plugins-base-plugins-xvim
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/home.png
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/index.html
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/index.sgml
+share/gtk-doc/html/gst-plugins-base-plugins-${API}/left-insensitive.png
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/left.png
+share/gtk-doc/html/gst-plugins-base-plugins-${API}/right-insensitive.png
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/right.png
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/style.css
+share/gtk-doc/html/gst-plugins-base-plugins-${API}/up-insensitive.png
 share/gtk-doc/html/gst-plugins-base-plugins-${API}/up.png
 share/locale/af/LC_MESSAGES/gst-plugins-base-${API}.mo
 share/locale/az/LC_MESSAGES/gst-plugins-base-${API}.mo
