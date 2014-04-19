@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2014/03/24 18:19:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2014/04/19 09:44:11 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=		network backup solution (client)
 COMMENT-server=		network backup solution (server)
 COMMENT-bat=		network backup solution (gui-client)
 
-V=			5.2.13
+V=			7.0.2
 DISTNAME=		bacula-$V
 FULLPKGNAME-main=	bacula-client-$V
 FULLPKGPATH-main=	${PKGPATH},-main
@@ -15,41 +15,35 @@ FULLPKGNAME-bat=	bacula-bat-$V
 FULLPKGPATH-bat=	${PKGPATH},-bat
 CATEGORIES=		sysutils
 
-REVISION-main=		3
-REVISION-server=	6
+SHARED_LIBS +=  bac                  5.0
+SHARED_LIBS +=  baccfg               5.0
+SHARED_LIBS +=  bacfind              5.0
+SHARED_LIBS +=  bacsql               5.0
 
-# XXX build fails if a previous version is installed
-SHARED_LIBS +=  bac                  4.0
-SHARED_LIBS +=  baccfg               4.0
-SHARED_LIBS +=  bacpy                4.0
-SHARED_LIBS +=  bacfind              4.0
-SHARED_LIBS +=  bacsql               4.0
-BACCATS_LIBV =	2.0
+BACCATS_LIBV =	3.0
 SHARED_LIBS +=  baccats              ${BACCATS_LIBV}
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bacula/}
 HOMEPAGE=		http://www.bacula.org/
 
-MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Stuart Henderson <sthen@openbsd.org> \
+			Antoine Jacoutot <ajacoutot@openbsd.org>
 
 WANTLIB += c pthread crypto ssl z m stdc++
 
 # AGPLv3 with exception for OpenSSL (majority),
 # FDL (docs), LGPL (some libraries), and PD
-# http://bacula.org/en/dev-manual/main/main/Bacula_Copyright_Trademark_.html
+# http://www.bacula.org/7.0.x-manuals/en/main/Bacula_Copyright_Trademark_.html
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		devel/gettext
 
-BACULACONF=		/etc/bacula
-BACULASTATE=		/var/bacula
-SUBST_VARS=		BACULACONF BACULASTATE TRUEPREFIX
+LOCALSTATEDIR=		${BASELOCALSTATEDIR}/bacula
+SYSCONFDIR=		${BASESYSCONFDIR}/bacula
 
-CONFIGURE_STYLE=	simple
-USE_GMAKE=		yes
-USE_GROFF=		yes
-USE_LIBTOOL=		gnu# ports libtool passes libtool-only parameters to linker
-NO_TEST=		yes
+CONFIGURE_STYLE=	gnu
+USE_GMAKE=		Yes
+NO_TEST=		Yes
 
 PSEUDO_FLAVORS=		no_bat no_server
 FLAVORS=		pgsql mysql sqlite3
@@ -61,28 +55,20 @@ FLAVOR =		pgsql
 MULTI_PACKAGES=		-main -server -bat
 
 CONFIGURE_ARGS=		--enable-smartalloc \
-			--prefix=${PREFIX} \
-			--mandir=${PREFIX}/man \
-			--infodir=${PREFIX}/info \
 			--docdir=${PREFIX}/share/doc/bacula \
 			--htmldir=${PREFIX}/share/doc/bacula/html \
-			--sysconfdir=${BACULACONF} \
 			--with-scriptdir=${PREFIX}/libexec/bacula \
-			--localstatedir=${BACULASTATE} \
 			--with-fd-user=root \
 			--with-fd-group=wheel \
 			--with-pid-dir=/var/run \
-			--with-subsys-dir=${BACULASTATE} \
-			--with-working-dir=${BACULASTATE} \
+			--with-subsys-dir=${LOCALSTATEDIR} \
+			--with-working-dir=${LOCALSTATEDIR} \
 			--with-archivedir=/tmp \
 			--with-sbin-perm=755 \
 			--without-x \
 			--without-smtp-host \
 			--without-job-email \
 			--without-dump-email \
-			--disable-gnome \
-			--disable-bwx-console \
-			--disable-tray-monitor \
 			--disable-nls \
 			--disable-conio \
 			--enable-readline \
@@ -110,7 +96,7 @@ CONFIGURE_ENV+=		ac_cv_func_${ac_func}=no
 
 .include <bsd.port.arch.mk>
 
-WANTLIB-server += ${WANTLIB} bac baccfg bacfind bacpy lzo2
+WANTLIB-server += ${WANTLIB} bac baccfg bacfind lzo2
 LIB_DEPENDS-server=	${LIB_DEPENDS} \
 			sysutils/bacula,-main
 
@@ -126,7 +112,7 @@ CONFIGURE_ARGS+=	--with-dir-user=_bacula \
 			--with-sd-group=_bacula
 
 .  if ${FLAVOR:Mpgsql}
-WANTLIB-server += pq>=2
+WANTLIB-server += pq>=2 asn1 com_err heimbase krb5 roken wind
 CONFIGURE_ARGS+=	--with-postgresql
 LIB_DEPENDS-server+=	databases/postgresql
 BACKEND +=		postgresql
@@ -205,8 +191,8 @@ post-install:
 .else
 	rm ${PREFIX}/man/man1/bat.1
 .endif
+	rm ${PREFIX}/sbin/bacula
 	mv ${WRKINST}/etc/bacula/* ${PREFIX}/share/examples/bacula/
-	rm ${PREFIX}/man/man1/bacula-{bwxconsole,tray-monitor}.1
 	rmdir ${WRKINST}/{etc,var}/bacula
 
 .include <bsd.port.mk>

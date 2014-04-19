@@ -1,71 +1,7 @@
-$OpenBSD: patch-src_stored_Makefile_in,v 1.3 2012/03/08 17:34:34 sthen Exp $
-
-Reorder LDFLAGS (prefer -L.libs over /usr/local/lib) so that bacula can
-be rebuilt while already installed.
-
---- src/stored/Makefile.in.orig	Tue Feb 21 15:59:33 2012
-+++ src/stored/Makefile.in	Wed Mar  7 22:15:20 2012
-@@ -95,12 +95,12 @@ all: Makefile bacula-sd @STATIC_SD@ bls bextract bscan
- 
- bacula-sd: Makefile $(SDOBJS) ../lib/libbacpy$(DEFAULT_ARCHIVE_TYPE) ../lib/libbaccfg$(DEFAULT_ARCHIVE_TYPE) ../lib/libbac$(DEFAULT_ARCHIVE_TYPE)
- 	@echo "Linking $@ ..."
--	$(LIBTOOL_LINK) $(CXX) $(WLDFLAGS) $(LDFLAGS) -L../lib -o $@ $(SDOBJS) $(ZLIBS) \
-+	$(LIBTOOL_LINK) $(CXX) -L../lib $(WLDFLAGS) $(LDFLAGS) -o $@ $(SDOBJS) $(ZLIBS) \
- 	   -lbacpy -lbaccfg -lbac -lm $(PYTHON_LIBS) $(DLIB) $(LIBS) $(WRAPLIBS) \
- 	$(GETTEXT_LIBS) $(OPENSSL_LIBS) $(CAP_LIBS)
- 
- static-bacula-sd: Makefile $(SDOBJS) ../lib/libbacpy$(DEFAULT_ARCHIVE_TYPE) ../lib/libbaccfg$(DEFAULT_ARCHIVE_TYPE) ../lib/libbac$(DEFAULT_ARCHIVE_TYPE)
--	$(LIBTOOL_LINK) $(CXX) $(WLDFLAGS) $(LDFLAGS) -static -L../lib -o $@ $(SDOBJS) $(ZLIBS) \
-+	$(LIBTOOL_LINK) $(CXX) -static -L../lib $(WLDFLAGS) $(LDFLAGS) -o $@ $(SDOBJS) $(ZLIBS) \
- 	   -lbacpy -lbaccfg -lbac -lm $(PYTHON_LIBS) $(DLIB) $(LIBS) $(WRAPLIBS) \
- 	$(GETTEXT_LIBS) $(OPENSSL_LIBS) $(CAP_LIBS)
- 	strip $@
-@@ -111,7 +111,7 @@ btape.o: btape.c
- 	   -I$(basedir) $(DINCLUDE) $(CFLAGS) $<
- 
- btape: Makefile  $(TAPEOBJS) ../lib/libbac$(DEFAULT_ARCHIVE_TYPE) ../lib/libbaccfg$(DEFAULT_ARCHIVE_TYPE)
--	$(LIBTOOL_LINK) $(CXX) $(TTOOL_LDFLAGS) $(LDFLAGS) -L../lib -o $@ $(TAPEOBJS) \
-+	$(LIBTOOL_LINK) $(CXX) $(TTOOL_LDFLAGS) -L../lib $(LDFLAGS) -o $@ $(TAPEOBJS) \
- 	   -lbaccfg -lbac $(DLIB) -lm $(LIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS)
- 
- bls.o:	bls.c
-@@ -121,7 +121,7 @@ bls.o:	bls.c
- 
- bls:	Makefile $(BLSOBJS) ../findlib/libbacfind$(DEFAULT_ARCHIVE_TYPE) ../lib/libbaccfg$(DEFAULT_ARCHIVE_TYPE) ../lib/libbac$(DEFAULT_ARCHIVE_TYPE)
- 	@echo "Compiling $<"
--	$(LIBTOOL_LINK) $(CXX) $(TTOOL_LDFLAGS) $(LDFLAGS) -L../lib -L../findlib -o $@ $(BLSOBJS) $(DLIB) \
-+	$(LIBTOOL_LINK) $(CXX) $(TTOOL_LDFLAGS) -L../lib -L../findlib $(LDFLAGS) -o $@ $(BLSOBJS) $(DLIB) \
- 	   -lbacfind -lbaccfg -lbac -lm $(LIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS)
- 
- bextract.o: bextract.c
-@@ -131,7 +131,7 @@ bextract.o: bextract.c
- 
- bextract: Makefile $(BEXTOBJS) ../findlib/libbacfind$(DEFAULT_ARCHIVE_TYPE) ../lib/libbaccfg$(DEFAULT_ARCHIVE_TYPE) ../lib/libbac$(DEFAULT_ARCHIVE_TYPE)
- 	@echo "Compiling $<"
--	$(LIBTOOL_LINK) $(CXX) $(TTOOL_LDFLAGS) $(LDFLAGS) -L../lib -L../findlib -o $@ $(BEXTOBJS) $(DLIB) $(ZLIBS) $(LZOLIBS) \
-+	$(LIBTOOL_LINK) $(CXX) $(TTOOL_LDFLAGS) -L../lib -L../findlib $(LDFLAGS) -o $@ $(BEXTOBJS) $(DLIB) $(ZLIBS) $(LZOLIBS) \
- 	   -lbacfind -lbaccfg -lbac -lm $(LIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS)
- 
- bscan.o: bscan.c
-@@ -141,7 +141,7 @@ bscan.o: bscan.c
- 
- bscan:	Makefile $(SCNOBJS) ../findlib/libbacfind$(DEFAULT_ARCHIVE_TYPE) ../lib/libbaccfg$(DEFAULT_ARCHIVE_TYPE) \
- 	../cats/libbacsql$(DEFAULT_ARCHIVE_TYPE) ../cats/libbaccats$(DEFAULT_ARCHIVE_TYPE)
--	$(LIBTOOL_LINK) $(CXX) $(TTOOL_LDFLAGS) $(LDFLAGS) -L../lib -L../cats -L../findlib -o $@ $(SCNOBJS) \
-+	$(LIBTOOL_LINK) $(CXX) $(TTOOL_LDFLAGS) -L../lib -L../cats -L../findlib $(LDFLAGS) -o $@ $(SCNOBJS) \
- 	   -lbacsql -lbaccats $(DB_LIBS) $(ZLIBS) -lbacfind -lbaccfg -lbac -lm $(LIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS)
- 
- bcopy.o: bcopy.c
-@@ -150,7 +150,7 @@ bcopy.o: bcopy.c
- 	   -I$(basedir) $(DINCLUDE) $(CFLAGS) $<
- 
- bcopy:	Makefile $(COPYOBJS) ../findlib/libbacfind$(DEFAULT_ARCHIVE_TYPE) ../lib/libbaccfg$(DEFAULT_ARCHIVE_TYPE) ../lib/libbac$(DEFAULT_ARCHIVE_TYPE)
--	$(LIBTOOL_LINK) $(CXX) $(TTOOL_LDFLAGS) $(LDFLAGS) -L../lib -o $@ $(COPYOBJS) \
-+	$(LIBTOOL_LINK) $(CXX) $(TTOOL_LDFLAGS) -L../lib $(LDFLAGS) -o $@ $(COPYOBJS) \
- 	   -lbaccfg -lbac -lm $(LIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS)
- 
- Makefile: $(srcdir)/Makefile.in $(topdir)/config.status
-@@ -173,9 +173,6 @@ install: all
+$OpenBSD: patch-src_stored_Makefile_in,v 1.4 2014/04/19 09:44:11 ajacoutot Exp $
+--- src/stored/Makefile.in.orig	Sat Mar 29 09:00:03 2014
++++ src/stored/Makefile.in	Fri Apr  4 22:13:11 2014
+@@ -189,9 +189,6 @@ install: all
  	fi; \
  	echo "${INSTALL_CONFIG} $$srcconf ${DESTDIR}${sysconfdir}/$$destconf"; \
  	${INSTALL_CONFIG} $$srcconf ${DESTDIR}${sysconfdir}/$$destconf

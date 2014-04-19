@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_lib_lockmgr_h,v 1.1 2014/04/19 09:44:11 ajacoutot Exp $
+
+From 11f7bbb53348ebeaa74ef384bb654640c905db89 Mon Sep 17 00:00:00 2001
+From: Eric Bollengier <eric@baculasystems.com>
+Date: Fri, 11 Apr 2014 07:23:31 +0000
+Subject: Fix #2047 about bthread_cond_wait_p not declared
+
+--- src/lib/lockmgr.h.orig	Wed Apr  2 19:32:30 2014
++++ src/lib/lockmgr.h	Sat Apr 19 11:27:55 2014
+@@ -230,6 +230,7 @@ int bthread_kill(pthread_t thread, int sig,
+ # define BTHREAD_MUTEX_NO_PRIORITY      PTHREAD_MUTEX_INITIALIZER
+ # define BTHREAD_MUTEX_INITIALIZER      PTHREAD_MUTEX_INITIALIZER
+ # define lmgr_mutex_is_locked(m)        (1)
++# define bthread_cond_wait_p(w, x, y, z) pthread_cond_wait(w,x)
+ 
+ #endif  /* _USE_LOCKMGR */
+ 

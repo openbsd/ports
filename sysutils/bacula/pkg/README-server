@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.8 2013/06/06 13:57:48 ajacoutot Exp $
+$OpenBSD: README-server,v 1.9 2014/04/19 09:44:11 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -19,7 +19,7 @@ In this documentation, it is assumed the PostgreSQL administrator user
 is 'postgres' and the MySQL one is 'root'; adapt accordingly to your
 setup.
 Replace 'dbpassword' with the bacula DB user password (configured in
-${BACULACONF}/bacula-dir.conf).
+${SYSCONFDIR}/bacula-dir.conf).
 
 While SQLite3 may be of interest for quickly testing a setup, it is
 usually not advised to use it in production but rather go for a full
@@ -58,7 +58,7 @@ Setting up the bacula DB user password.
 SQLite3
 -------
 
-Creating the DB and tables (default to ${BACULASTATE}/bacula.db).
+Creating the DB and tables (default to ${LOCALSTATEDIR}/bacula.db).
     $ cd ${TRUEPREFIX}/libexec/bacula
     $ sudo -u _bacula ./make_bacula_tables
 

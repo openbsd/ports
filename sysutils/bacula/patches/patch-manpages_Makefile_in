@@ -1,7 +1,7 @@
-$OpenBSD: patch-manpages_Makefile_in,v 1.4 2012/03/06 20:11:33 sthen Exp $
---- manpages/Makefile.in.orig	Mon Mar  5 10:01:00 2012
-+++ manpages/Makefile.in	Mon Mar  5 10:01:42 2012
-@@ -20,17 +20,9 @@ depend:
+$OpenBSD: patch-manpages_Makefile_in,v 1.5 2014/04/19 09:44:11 ajacoutot Exp $
+--- manpages/Makefile.in.orig	Wed Apr  2 18:32:30 2014
++++ manpages/Makefile.in	Tue Apr  8 16:26:01 2014
+@@ -18,17 +18,9 @@ depend:
  
  install:
  	$(MKDIR) $(DESTDIR)/$(mandir)/man8

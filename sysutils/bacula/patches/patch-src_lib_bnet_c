@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_lib_bnet_c,v 1.1 2014/04/19 09:44:11 ajacoutot Exp $
+--- src/lib/bnet.c.orig	Wed Apr  2 18:32:30 2014
++++ src/lib/bnet.c	Tue Apr  8 16:26:01 2014
+@@ -627,7 +627,9 @@ int set_socket_errno(int sockstat)
+       /* Handle errrors from prior connections as EAGAIN */
+       switch (errno) {
+          case ENETDOWN:
++#ifdef EPROTO
+          case EPROTO:
++#endif
+          case ENOPROTOOPT:
+          case EHOSTDOWN:
+ #ifdef ENONET

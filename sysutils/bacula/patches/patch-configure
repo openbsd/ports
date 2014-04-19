@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.14 2013/04/12 10:39:04 ajacoutot Exp $
---- configure.orig	Tue Feb 19 20:21:35 2013
-+++ configure	Fri Apr 12 07:02:31 2013
-@@ -4806,7 +4806,7 @@ $as_echo "no" >&6; }
+$OpenBSD: patch-configure,v 1.15 2014/04/19 09:44:11 ajacoutot Exp $
+--- configure.orig	Wed Apr  2 18:32:30 2014
++++ configure	Tue Apr  8 16:26:01 2014
+@@ -4776,7 +4776,7 @@ $as_echo "no" >&6; }
  fi
  
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.14 2013/04/12 10:39:04 ajacoutot Exp $
     as_fn_error $? "Unable to find C++ compiler" "$LINENO" 5
  fi
  
-@@ -16716,7 +16716,7 @@ if test x$use_libtool != xno; then
+@@ -16640,7 +16640,7 @@ if test x$use_libtool != xno; then
     LIBTOOL_INSTALL_TARGET="libtool-install"
     LIBTOOL_UNINSTALL_TARGET="libtool-uninstall"
     LIBTOOL_CLEAN_TARGET="libtool-clean"
@@ -19,25 +19,25 @@ $OpenBSD: patch-configure,v 1.14 2013/04/12 10:39:04 ajacoutot Exp $
     FD_PLUGIN_DIR="src/plugins/fd"
     have_plugins=yes
  else
-@@ -22422,7 +22422,7 @@ if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
+@@ -22251,7 +22251,7 @@ if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
  
  $as_echo "#define HAVE_READLINE 1" >>confdefs.h
  
--		    CONS_LIBS="-lreadline -lhistory $TERM_LIB"
-+		    CONS_LIBS="-lreadline $TERM_LIB"
+-		    CONS_LIBS="-lreadline -lhistory ${TERM_LIB}"
++		    CONS_LIBS="-lreadline ${TERM_LIB}"
  		    got_readline="yes"
  
  else
-@@ -22461,7 +22461,7 @@ $as_echo "#define HAVE_READLINE 1" >>confdefs.h
+@@ -22290,7 +22290,7 @@ $as_echo "#define HAVE_READLINE 1" >>confdefs.h
  
  			got_readline="yes"
  			CONS_INC="-I${TOP_DIR}/depkgs/readline"
--			CONS_LIBS="-lreadline -lhistory $TERM_LIB"
-+			CONS_LIBS="-lreadline $TERM_LIB"
+-			CONS_LIBS="-lreadline -lhistory ${TERM_LIB}"
++			CONS_LIBS="-lreadline ${TERM_LIB}"
  			CONS_LDFLAGS="-L${TOP_DIR}/depkgs/readline"
  			PRTREADLINE_SRC="${TOP_DIR}/depkgs/readline"
  
-@@ -30760,6 +30760,7 @@ netbsd)
+@@ -30478,6 +30478,7 @@ openbsd)
     DISTVER=`uname -a |awk '{print $3}'`
     lld="qd"
     llu="qu"
@@ -45,7 +45,7 @@ $OpenBSD: patch-configure,v 1.14 2013/04/12 10:39:04 ajacoutot Exp $
     TAPEDRIVE="/dev/nrst0"
     PSCMD="ps -ax -o pid,command"
     PTHREAD_LIB="-pthread"
-@@ -30778,6 +30779,7 @@ openbsd)
+@@ -30487,6 +30488,7 @@ openbsd)
         platforms/openbsd/bacula-fd \
         platforms/openbsd/bacula-sd \
         platforms/openbsd/bacula-dir"

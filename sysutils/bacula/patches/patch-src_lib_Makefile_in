@@ -1,30 +1,21 @@
-$OpenBSD: patch-src_lib_Makefile_in,v 1.3 2012/07/09 18:40:58 sthen Exp $
---- src/lib/Makefile.in.orig	Thu Jun 28 15:52:03 2012
-+++ src/lib/Makefile.in	Thu Jul  5 16:33:20 2012
-@@ -120,7 +120,7 @@ libbac.a: $(LIBBAC_OBJS)
+$OpenBSD: patch-src_lib_Makefile_in,v 1.4 2014/04/19 09:44:11 ajacoutot Exp $
+--- src/lib/Makefile.in.orig	Thu Apr 10 17:29:37 2014
++++ src/lib/Makefile.in	Thu Apr 10 17:30:22 2014
+@@ -105,7 +105,7 @@ libbac.a: $(LIBBAC_OBJS)
  
  libbac.la: Makefile $(LIBBAC_LOBJS)
  	@echo "Making $@ ..."
 -	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBAC_LOBJS) -export-dynamic -rpath $(libdir) -release $(LIBBAC_LT_RELEASE) $(WRAPLIBS) $(CAP_LIBS) $(ZLIBS) $(OPENSSL_LIBS) $(LIBS) $(DLLIBS)
-+	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBAC_LOBJS) -export-dynamic -rpath $(libdir) $(LIBbac_VERSION) $(WRAPLIBS) $(CAP_LIBS) $(ZLIBS) $(OPENSSL_LIBS) $(LIBS) $(DLLIBS)
++	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBAC_LOBJS) -export-dynamic -rpath $(libdir) $(WRAPLIBS) $(CAP_LIBS) $(ZLIBS) $(OPENSSL_LIBS) $(LIBS) $(DLLIBS)
  
  libbaccfg.a: $(LIBBACCFG_OBJS) 
  	@echo "Making $@ ..."
-@@ -129,7 +129,7 @@ libbaccfg.a: $(LIBBACCFG_OBJS) 
+@@ -114,7 +114,7 @@ libbaccfg.a: $(LIBBACCFG_OBJS) 
  
  libbaccfg.la: Makefile $(LIBBACCFG_LOBJS) 
  	@echo "Making $@ ..."
 -	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBACCFG_LOBJS) -export-dynamic -rpath $(libdir) -release $(LIBBACCFG_LT_RELEASE) $(OPENSSL_LIBS) $(LIBS)
-+	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBACCFG_LOBJS) -export-dynamic -rpath $(libdir) ${LIBbaccfg_VERSION} $(OPENSSL_LIBS) $(LIBS)
- 
- libbacpy.a: $(LIBBACPY_OBJS) 
- 	@echo "Making $@ ..."
-@@ -138,7 +138,7 @@ libbacpy.a: $(LIBBACPY_OBJS) 
- 
- libbacpy.la: Makefile $(LIBBACPY_LOBJS) 
- 	@echo "Making $@ ..."
--	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBACPY_LOBJS) -export-dynamic -rpath $(libdir) -release $(LIBBACPY_LT_RELEASE) $(PYTHON_LIBS) $(OPENSSL_LIBS) $(LIBS)
-+	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBACPY_LOBJS) -export-dynamic -rpath $(libdir) ${LIBbacpy_VERSION} $(PYTHON_LIBS) $(OPENSSL_LIBS) $(LIBS)
++	$(LIBTOOL_LINK) $(CXX) $(DEFS) $(DEBUG) $(LDFLAGS) -o $@ $(LIBBACCFG_LOBJS) -export-dynamic -rpath $(libdir) $(OPENSSL_LIBS) $(LIBS)
  
  Makefile: $(srcdir)/Makefile.in $(topdir)/config.status
  	cd $(topdir) \

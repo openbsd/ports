@@ -1,28 +1,12 @@
-$OpenBSD: patch-src_qt-console_main_cpp,v 1.7 2013/04/12 10:39:04 ajacoutot Exp $
---- src/qt-console/main.cpp.orig	Tue Feb 19 20:21:35 2013
-+++ src/qt-console/main.cpp	Fri Apr 12 07:06:32 2013
-@@ -37,15 +37,6 @@
- #include <QApplication>
- #include <QTranslator>
- 
--/*
-- * We need Qt version 4.8.4 or later to be able to comple correctly
-- */
--#if QT_VERSION < 0x040804
--#error "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
--#error "You need Qt version 4.8.4 or later to build Bat"
--#error "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
--#endif
--
- MainWin *mainWin;
- QApplication *app;
- 
-@@ -58,7 +49,7 @@ extern bool parse_bat_config(CONFIG *config, const cha
+$OpenBSD: patch-src_qt-console_main_cpp,v 1.8 2014/04/19 09:44:11 ajacoutot Exp $
+--- src/qt-console/main.cpp.orig	Sat Mar 29 09:00:03 2014
++++ src/qt-console/main.cpp	Fri Apr  4 22:03:00 2014
+@@ -46,7 +46,7 @@ extern bool parse_bat_config(CONFIG *config, const cha
  extern void message_callback(int /* type */, char *msg);
  
  
 -#define CONFIG_FILE "bat.conf"     /* default configuration file */
-+#define CONFIG_FILE "${BACULACONF}/bat.conf"   /* default configuration file */
++#define CONFIG_FILE "${SYSCONFDIR}/bat.conf"   /* default configuration file */
  
  /* Static variables */
  static CONFIG *config;

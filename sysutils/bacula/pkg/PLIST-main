@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.20 2014/01/28 09:02:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.21 2014/04/19 09:44:11 ajacoutot Exp $
 @conflict bacula-server-<5.2.1
 @pkgpath sysutils/bacula,-client
 @newgroup _bacula:591
 @newuser _bacula:591:_bacula:daemon:Bacula Director:/nonexistent:/sbin/nologin
+@comment lib/bpipe-fd.a
 lib/bpipe-fd.so
 lib/libbac.a
 lib/libbac.la
@@ -13,9 +14,6 @@ lib/libbaccfg.la
 lib/libbacfind.a
 lib/libbacfind.la
 @lib lib/libbacfind.so.${LIBbacfind_VERSION}
-lib/libbacpy.a
-lib/libbacpy.la
-@lib lib/libbacpy.so.${LIBbacpy_VERSION}
 libexec/bacula/
 libexec/bacula/bacula-ctl-fd
 libexec/bacula/bacula_config
@@ -24,7 +22,6 @@ libexec/bacula/bconsole
 @man man/man8/bconsole.8
 @man man/man8/bregex.8
 @man man/man8/bwild.8
-sbin/bacula
 @bin sbin/bacula-fd
 @bin sbin/bconsole
 share/doc/bacula/
@@ -39,23 +36,23 @@ share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/bacula/
 @mode 750
 @group _bacula
-@sample ${BACULACONF}/
+@sample ${SYSCONFDIR}/
 @mode 770
 @owner _bacula
-@sample ${BACULASTATE}/
+@sample ${LOCALSTATEDIR}/
 @mode
 @owner
 @group
 @mode 640
 share/examples/bacula/bacula-fd.conf
 @group _bacula
-@sample ${BACULACONF}/bacula-fd.conf
+@sample ${SYSCONFDIR}/bacula-fd.conf
 @mode
 @group
 @mode 640
 share/examples/bacula/bconsole.conf
 @group _bacula
-@sample ${BACULACONF}/bconsole.conf
+@sample ${SYSCONFDIR}/bconsole.conf
 @mode
 @group
 @rcscript ${RCDIR}/bacula_fd

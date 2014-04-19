@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_stored_bacula-sd_conf_in,v 1.5 2012/09/14 08:14:31 ajacoutot Exp $
---- src/stored/bacula-sd.conf.in.orig	Tue Feb 21 16:59:33 2012
-+++ src/stored/bacula-sd.conf.in	Thu Jun 28 19:53:06 2012
-@@ -67,15 +67,15 @@ Device {
+$OpenBSD: patch-src_stored_bacula-sd_conf_in,v 1.6 2014/04/19 09:44:11 ajacoutot Exp $
+--- src/stored/bacula-sd.conf.in.orig	Sat Mar 29 09:00:03 2014
++++ src/stored/bacula-sd.conf.in	Fri Apr  4 22:03:00 2014
+@@ -126,15 +126,15 @@ Device {
  #  Name = Autochanger
  #  Device = Drive-1
  #  Device = Drive-2
@@ -20,7 +20,7 @@ $OpenBSD: patch-src_stored_bacula-sd_conf_in,v 1.5 2012/09/14 08:14:31 ajacoutot
  #  AutomaticMount = yes;               # when device opened, read it
  #  AlwaysOpen = yes;
  #  RemovableMedia = yes;
-@@ -97,7 +97,7 @@ Device {
+@@ -156,7 +156,7 @@ Device {
  #  Name = Drive-2                      #
  #  Drive Index = 1
  #  Media Type = DLT-8000
@@ -29,7 +29,7 @@ $OpenBSD: patch-src_stored_bacula-sd_conf_in,v 1.5 2012/09/14 08:14:31 ajacoutot
  #  AutomaticMount = yes;               # when device opened, read it
  #  AlwaysOpen = yes;
  #  RemovableMedia = yes;
-@@ -121,8 +121,8 @@ Device {
+@@ -180,8 +180,8 @@ Device {
  #  RemovableMedia = yes;
  #  RandomAccess = no;
  #  Maximum File Size = 3GB
@@ -40,7 +40,7 @@ $OpenBSD: patch-src_stored_bacula-sd_conf_in,v 1.5 2012/09/14 08:14:31 ajacoutot
  ## AutoChanger = yes
  #  # Enable the Alert command only if you have the mtx package loaded
  ## Alert Command = "sh -c 'tapeinfo -f %c |grep TapeAlert|cat'"
-@@ -142,7 +142,7 @@ Device {
+@@ -201,7 +201,7 @@ Device {
  #  RemovableMedia = yes;
  #  RandomAccess = no;
  #  Maximum File Size = 4GB
@@ -49,7 +49,7 @@ $OpenBSD: patch-src_stored_bacula-sd_conf_in,v 1.5 2012/09/14 08:14:31 ajacoutot
  ## Changer Device = /dev/sg0
  ## AutoChanger = yes
  #  # Enable the Alert command only if you have the mtx package loaded
-@@ -163,7 +163,7 @@ Device {
+@@ -222,7 +222,7 @@ Device {
  #  RemovableMedia = yes;
  #  RandomAccess = no;
  #  Maximum File Size = 5GB
@@ -58,8 +58,8 @@ $OpenBSD: patch-src_stored_bacula-sd_conf_in,v 1.5 2012/09/14 08:14:31 ajacoutot
  ## Changer Device = /dev/sg0
  ## AutoChanger = yes
  #  # Enable the Alert command only if you have the mtx package loaded
-@@ -182,7 +182,7 @@ Device {
- #  Name = DDS-4 
+@@ -261,7 +261,7 @@ Device {
+ #  Name = DDS-4
  #  Description = "DDS-4 for FreeBSD"
  #  Media Type = DDS-4
 -#  Archive Device = /dev/nsa1

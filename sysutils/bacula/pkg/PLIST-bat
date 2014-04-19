@@ -1,11 +1,6 @@
-@comment $OpenBSD: PLIST-bat,v 1.12 2013/04/12 10:39:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST-bat,v 1.13 2014/04/19 09:44:11 ajacoutot Exp $
 @man man/man1/bat.1
 @bin sbin/bat
-@mode 750
-@group _bacula
-@sample ${BACULACONF}/
-@mode
-@group
 share/applications/bat.desktop
 share/doc/bacula/clients.html
 share/doc/bacula/console.html
@@ -23,7 +18,7 @@ share/doc/bacula/storage.html
 share/examples/bacula/bat.conf
 @mode 640
 @group _bacula
-@sample ${BACULACONF}/bat.conf
+@sample ${SYSCONFDIR}/bat.conf
 @mode
 @group
 share/pixmaps/

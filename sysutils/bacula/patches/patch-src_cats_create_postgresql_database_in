@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_cats_create_postgresql_database_in,v 1.1 2011/11/17 23:45:56 ajacoutot Exp $
---- src/cats/create_postgresql_database.in.orig	Tue Nov 15 21:47:07 2011
-+++ src/cats/create_postgresql_database.in	Tue Nov 15 21:47:22 2011
-@@ -52,7 +52,7 @@ else
+$OpenBSD: patch-src_cats_create_postgresql_database_in,v 1.2 2014/04/19 09:44:11 ajacoutot Exp $
+--- src/cats/create_postgresql_database.in.orig	Sat Mar 29 09:00:03 2014
++++ src/cats/create_postgresql_database.in	Fri Apr  4 22:03:00 2014
+@@ -67,7 +67,7 @@ else
     echo "!!!! Creation of ${db_name} database failed. !!!!"
     echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
  fi

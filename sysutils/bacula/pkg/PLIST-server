@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.14 2012/07/04 12:02:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST-server,v 1.15 2014/04/19 09:44:11 ajacoutot Exp $
 @conflict bacula-<2.2.7
 @conflict bacula-client-<5.2.6p2
 @newuser _bacula-sd:599:_bacula:daemon:Bacula Storage Daemon:/nonexistent:/sbin/nologin
@@ -9,7 +9,6 @@ lib/libbaccats-${BACKEND}.a
 lib/libbaccats-${BACKEND}.la
 @lib lib/libbaccats.so.${LIBbaccats_VERSION}
 @lib lib/libbaccats-${BACKEND}.so.${LIBbaccats-${BACKEND}_VERSION}
-libexec/bacula/
 libexec/bacula/bacula
 libexec/bacula/bacula-ctl-dir
 libexec/bacula/bacula-ctl-sd
@@ -48,7 +47,6 @@ libexec/bacula/updatedb/update_bacula_tables_8_to_9
 libexec/bacula/updatedb/update_bdb_tables_8_to_9
 libexec/bacula/updatedb/update_mysql_tables_10_to_11
 libexec/bacula/updatedb/update_mysql_tables_11_to_12
-libexec/bacula/updatedb/update_mysql_tables_12_to_14
 libexec/bacula/updatedb/update_mysql_tables_4_to_5
 libexec/bacula/updatedb/update_mysql_tables_5_to_6
 libexec/bacula/updatedb/update_mysql_tables_6_to_7
@@ -57,13 +55,11 @@ libexec/bacula/updatedb/update_mysql_tables_8_to_9
 libexec/bacula/updatedb/update_mysql_tables_9_to_10
 libexec/bacula/updatedb/update_postgresql_tables_10_to_11
 libexec/bacula/updatedb/update_postgresql_tables_11_to_12
-libexec/bacula/updatedb/update_postgresql_tables_12_to_14
 libexec/bacula/updatedb/update_postgresql_tables_7_to_8
 libexec/bacula/updatedb/update_postgresql_tables_8_to_9
 libexec/bacula/updatedb/update_postgresql_tables_9_to_10
 libexec/bacula/updatedb/update_sqlite3_tables_10_to_11
 libexec/bacula/updatedb/update_sqlite3_tables_11_to_12
-libexec/bacula/updatedb/update_sqlite3_tables_12_to_14
 libexec/bacula/updatedb/update_sqlite3_tables_8_to_9
 libexec/bacula/updatedb/update_sqlite3_tables_9_to_10
 libexec/bacula/updatedb/update_sqlite_tables_4_to_5
@@ -78,6 +74,7 @@ libexec/bacula/updatedb/update_sqlite_tables_8_to_9
 @man man/man8/bcopy.8
 @man man/man8/bextract.8
 @man man/man8/bls.8
+@man man/man8/bpluginfo.8
 @man man/man8/bscan.8
 @man man/man8/btape.8
 @man man/man8/btraceback.8
@@ -87,6 +84,7 @@ libexec/bacula/updatedb/update_sqlite_tables_8_to_9
 @bin sbin/bcopy
 @bin sbin/bextract
 @bin sbin/bls
+@bin sbin/bpluginfo
 @bin sbin/bregex
 @bin sbin/bscan
 @bin sbin/bsmtp
@@ -96,24 +94,18 @@ sbin/btraceback
 @bin sbin/dbcheck
 share/doc/pkg-readmes/${FULLPKGNAME}
 @mode 750
-@group _bacula
-@sample ${BACULACONF}/
-@mode 770
-@sample ${BACULASTATE}/
-@mode
-@group
 share/examples/bacula/
 @mode 644
 share/examples/bacula/bacula-dir.conf
 @mode 640
 @group _bacula
-@sample ${BACULACONF}/bacula-dir.conf
+@sample ${SYSCONFDIR}/bacula-dir.conf
 @mode 644
 @group
 share/examples/bacula/bacula-sd.conf
 @mode 640
 @group _bacula
-@sample ${BACULACONF}/bacula-sd.conf
+@sample ${SYSCONFDIR}/bacula-sd.conf
 @mode
 @group
 @rcscript ${RCDIR}/bacula_dir

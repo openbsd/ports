@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.3 2012/08/04 15:17:06 ajacoutot Exp $
+$OpenBSD: README-main,v 1.4 2014/04/19 09:44:11 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -6,4 +6,4 @@ $OpenBSD: README-main,v 1.3 2012/08/04 15:17:06 ajacoutot Exp $
 
 To be able to interact with the Bacula Director as non-root, the user
 needs to be part of the '_bacula' group so that the
-${BACULACONF}/bconsole.conf and ${BACULACONF}/bat.conf files can be read.
+${SYSCONFDIR}/bconsole.conf and ${SYSCONFDIR}/bat.conf files can be read.
