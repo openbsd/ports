@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.12 2013/05/08 15:44:09 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.13 2014/04/19 21:03:58 pea Exp $
 @bin bin/pgadmin3
-@bin bin/png2c
 share/pgadmin3/
 share/pgadmin3/branding/
 share/pgadmin3/branding/branding.ini
@@ -15,10 +14,13 @@ share/pgadmin3/docs/cs_CZ/hints/encoding-ascii.html
 share/pgadmin3/docs/cs_CZ/hints/encoding-unicode.html
 share/pgadmin3/docs/cs_CZ/hints/fki.html
 share/pgadmin3/docs/cs_CZ/hints/instrumentation.html
+share/pgadmin3/docs/cs_CZ/hints/instrumentation91_with.html
+share/pgadmin3/docs/cs_CZ/hints/instrumentation91_without.html
 share/pgadmin3/docs/cs_CZ/hints/multiple.html
 share/pgadmin3/docs/cs_CZ/hints/object-editing.html
 share/pgadmin3/docs/cs_CZ/hints/pk.html
 share/pgadmin3/docs/cs_CZ/hints/saving-passwords.html
+share/pgadmin3/docs/cs_CZ/hints/vacuum-full.html
 share/pgadmin3/docs/cs_CZ/hints/vacuum.html
 share/pgadmin3/docs/cs_CZ/hints/view-without-pk.html
 share/pgadmin3/docs/cs_CZ/pgadmin3.css
@@ -58,9 +60,7 @@ share/pgadmin3/docs/en_US/hints/saving-passwords.html
 share/pgadmin3/docs/en_US/hints/vacuum-full.html
 share/pgadmin3/docs/en_US/hints/vacuum.html
 share/pgadmin3/docs/en_US/hints/view-without-pk.html
-@mode 666
-share/pgadmin3/docs/en_US/pgadmin3.hhp.cached
-@mode
+share/pgadmin3/docs/en_US/pgadmin3.css
 share/pgadmin3/docs/es_ES/
 share/pgadmin3/docs/es_ES/hints/
 share/pgadmin3/docs/es_ES/hints/autovacuum.html
@@ -162,9 +162,6 @@ share/pgadmin3/docs/zh_TW/hints/vacuum.html
 share/pgadmin3/docs/zh_TW/hints/view-without-pk.html
 share/pgadmin3/docs/zh_TW/pgadmin3.css
 share/pgadmin3/i18n/
-share/pgadmin3/i18n/af_ZA/
-share/pgadmin3/i18n/af_ZA/pgadmin3.mo
-share/pgadmin3/i18n/af_ZA/wxstd.mo
 share/pgadmin3/i18n/ca_ES/
 share/pgadmin3/i18n/ca_ES/pgadmin3.mo
 share/pgadmin3/i18n/ca_ES/wxstd.mo
@@ -174,21 +171,12 @@ share/pgadmin3/i18n/cs_CZ/wxstd.mo
 share/pgadmin3/i18n/de_DE/
 share/pgadmin3/i18n/de_DE/pgadmin3.mo
 share/pgadmin3/i18n/de_DE/wxstd.mo
-share/pgadmin3/i18n/es_ES/
-share/pgadmin3/i18n/es_ES/pgadmin3.mo
-share/pgadmin3/i18n/es_ES/wxstd.mo
 share/pgadmin3/i18n/fr_FR/
 share/pgadmin3/i18n/fr_FR/pgadmin3.mo
 share/pgadmin3/i18n/fr_FR/wxstd.mo
-share/pgadmin3/i18n/it_IT/
-share/pgadmin3/i18n/it_IT/pgadmin3.mo
-share/pgadmin3/i18n/it_IT/wxstd.mo
 share/pgadmin3/i18n/ja_JP/
 share/pgadmin3/i18n/ja_JP/pgadmin3.mo
 share/pgadmin3/i18n/ja_JP/wxstd.mo
-share/pgadmin3/i18n/ko_KR/
-share/pgadmin3/i18n/ko_KR/pgadmin3.mo
-share/pgadmin3/i18n/ko_KR/wxstd.mo
 share/pgadmin3/i18n/lv_LV/
 share/pgadmin3/i18n/lv_LV/pgadmin3.mo
 share/pgadmin3/i18n/lv_LV/wxstd.mo
@@ -197,9 +185,6 @@ share/pgadmin3/i18n/pgadmin3.lng
 share/pgadmin3/i18n/pl_PL/
 share/pgadmin3/i18n/pl_PL/pgadmin3.mo
 share/pgadmin3/i18n/pl_PL/wxstd.mo
-share/pgadmin3/i18n/pt_PT/
-share/pgadmin3/i18n/pt_PT/pgadmin3.mo
-share/pgadmin3/i18n/pt_PT/wxstd.mo
 share/pgadmin3/i18n/ru_RU/
 share/pgadmin3/i18n/ru_RU/pgadmin3.mo
 share/pgadmin3/i18n/ru_RU/wxstd.mo
@@ -210,9 +195,6 @@ share/pgadmin3/i18n/wxstd.mo
 share/pgadmin3/i18n/zh_CN/
 share/pgadmin3/i18n/zh_CN/pgadmin3.mo
 share/pgadmin3/i18n/zh_CN/wxstd.mo
-share/pgadmin3/i18n/zh_TW/
-share/pgadmin3/i18n/zh_TW/pgadmin3.mo
-share/pgadmin3/i18n/zh_TW/wxstd.mo
 share/pgadmin3/plugins.d/
 share/pgadmin3/plugins.d/plugins.ini
 share/pgadmin3/settings.ini
