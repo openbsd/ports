@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_openssl_app_c,v 1.1 2014/04/19 12:24:40 sthen Exp $
+--- src/openssl/app.c.orig	Sat Apr 19 06:23:13 2014
++++ src/openssl/app.c	Sat Apr 19 06:24:05 2014
+@@ -1478,11 +1478,6 @@ xmlSecOpenSSLAppLoadRANDFile(const char *file) {
+ 
+     if(file == NULL) {
+         file = RAND_file_name(buffer, sizeof(buffer));
+-    }else if(RAND_egd(file) > 0) {
+-        /* we try if the given filename is an EGD socket.
+-         * if it is, we don't write anything back to the file. */
+-        egdsocket = 1;
+-        return 1;
+     }
+ 
+     if((file == NULL) || !RAND_load_file(file, -1)) {
