@@ -11,7 +11,7 @@ missing @exec of update-desktop-database
 missing @unexec-delete of update-desktop-database
 missing RDEP on devel/desktop-file-utils
 no distinfo in .
-non-empty WANTLIB- for arch-independent package
+non-empty WANTLIB for arch-independent package
 patches/patch-xyz does not have $OpenBSD$ RCS tag at the top
 pkg/PLIST contains empty lines
 translation file(s) found without devel/gettext dependency
