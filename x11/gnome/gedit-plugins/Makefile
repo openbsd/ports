@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2014/04/15 07:00:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.78 2014/04/19 12:11:10 ajacoutot Exp $
 
 COMMENT=		plugins for Gedit
 
@@ -29,7 +29,6 @@ MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/libgit2/libgit2-glib>=0.0.6p0 \
 			devel/vte3 \
-			textproc/gsed \
 			x11/gnome/gedit \
 			x11/gnome/gucharmap
 
