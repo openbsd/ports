@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2014/04/18 09:30:48 brad Exp $
+# $OpenBSD: Makefile,v 1.72 2014/04/19 19:56:21 brad Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -10,6 +10,7 @@ COMMENT =	modular, fast C/C++/ObjC compiler, static analyzer and tools
 
 LLVM_V =	3.5
 DISTNAME =	llvm-${LLVM_V}.20140228
+REVISION =	0
 CATEGORIES =	devel
 MASTER_SITES =	http://comstyle.com/source/
 EXTRACT_SUFX =	.tar.xz
@@ -22,7 +23,7 @@ HOMEPAGE =	http://www.llvm.org/
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =	c curses m pthread stdc++ z
+WANTLIB =	c m pthread stdc++ z
 
 MODULES =	devel/cmake \
 		lang/python
@@ -34,6 +35,7 @@ RUN_DEPENDS +=		devel/gtest
 
 SEPARATE_BUILD =	Yes
 CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
+			-DLLVM_ENABLE_TERMINFO:Bool=False \
 			-DLLVM_REQUIRES_RTTI:Bool=True \
 			-DCMAKE_BUILD_TYPE:String=Release \
 			-DCMAKE_DISABLE_FIND_PACKAGE_LibXml2:Bool=True
