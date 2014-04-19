@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2013/12/24 15:18:38 kili Exp $
+# $OpenBSD: Makefile,v 1.102 2014/04/19 14:30:05 sthen Exp $
 
 COMMENT=	GNU PostScript interpreter
 
@@ -20,7 +20,7 @@ FLAVOR_STRING=	${FLAVOR_EXT:S/-/,/g}
 
 SUBST_VARS=	VERSION FLAVOR_STRING
 
-# GPLv3, except for the included CMap files from Adobe, which may
+# AGPLv3, except for the included CMap files from Adobe, which may
 # only be redistributed without modifications.
 PERMIT_PACKAGE_CDROM=	Yes
 
