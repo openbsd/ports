@@ -1,0 +1,39 @@
+$OpenBSD: patch-glib_goption_c,v 1.9 2014/04/20 21:18:53 ajacoutot Exp $
+
+From 58abc1fc198a8579667ea2164c33964b250a0435 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Wed, 16 Apr 2014 10:27:09 +0200
+Subject: platform_get_argv0: drop unneeded headers for OpenBSD
+
+--- glib/goption.c.orig	Sat Feb 22 16:29:07 2014
++++ glib/goption.c	Sun Apr 20 23:16:20 2014
+@@ -185,9 +185,7 @@
+ #include <errno.h>
+ 
+ #if defined __OpenBSD__
+-#include <sys/types.h>
+ #include <unistd.h>
+-#include <sys/param.h>
+ #include <sys/sysctl.h>
+ #endif
+ 
+@@ -1763,13 +1761,16 @@ platform_get_argv0 (void)
+   g_free (cmdline);
+   return base_arg0;
+ #elif defined __OpenBSD__
+-  char **cmdline = NULL;
++  char **cmdline;
+   char *base_arg0;
+-  gsize len = PATH_MAX;
++  gsize len;
+ 
+   int mib[] = { CTL_KERN, KERN_PROC_ARGS, getpid(), KERN_PROC_ARGV };
+ 
+-  cmdline = (char **) realloc (cmdline, len);
++  if (sysctl (mib, G_N_ELEMENTS (mib), NULL, &len, NULL, 0) == -1)
++      return NULL;
++
++  cmdline = g_malloc0 (len);
+ 
+   if (sysctl (mib, G_N_ELEMENTS (mib), cmdline, &len, NULL, 0) == -1)
+     {
