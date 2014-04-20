@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.38 2014/04/17 12:12:20 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.39 2014/04/20 21:26:51 jasper Exp $
 @pkgpath shells/zsh,-main
 @shell bin/zsh
 %%SHARED%%
-@bin bin/${FULLPKGNAME}
+@bin bin/zsh-${V}
 @man man/man1/zsh.1
 @man man/man1/zshall.1
 @man man/man1/zshbuiltins.1
