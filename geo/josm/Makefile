@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2014/04/20 06:49:10 landry Exp $
+# $OpenBSD: Makefile,v 1.24 2014/04/20 08:04:10 landry Exp $
 
 COMMENT=		OpenStreetMap map editor
 
@@ -34,7 +34,7 @@ INSTALL_DIR =		josm
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/${INSTALL_DIR}
 	${INSTALL_DATA} $(DISTDIR)/${DISTNAME}${EXTRACT_SUFX} ${PREFIX}/share/${INSTALL_DIR}/josm-latest.jar
-	@${SUBST_CMD} -c files/josm.sh $(PREFIX)/bin/josm
+	@${SUBST_CMD} -c ${FILESDIR}/josm.sh $(PREFIX)/bin/josm
 	chown ${BINOWN}:${BINGRP} $(PREFIX)/bin/josm
 	chmod +x $(PREFIX)/bin/josm
 	${INSTALL_MAN} $(FILESDIR)/josm.1 ${PREFIX}/man/man1/josm.1
