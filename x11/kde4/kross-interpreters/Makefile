@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2013/12/25 13:40:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.6 2014/04/20 16:41:39 jasper Exp $
 
 COMMENT-main =	KDE bindings for running interpreters
 COMMENT-java =	KDE Java bindings
@@ -21,7 +21,6 @@ WANTLIB-main =  ${WANTLIB} ${MODPY_WANTLIB} ${MODRUBY_WANTLIB}
 WANTLIB-main += lib/qt4/QtGui
 WANTLIB-main += ${KDE4LIB}/kpty
 
-MODULES =		lang/python
 MODKDE4_USE =		libs
 
 # Unported
