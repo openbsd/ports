@@ -1,7 +1,7 @@
-$OpenBSD: patch-pg_top_1_in,v 1.1.1.1 2008/06/10 20:48:10 okan Exp $
---- pg_top.1.in.orig	Tue Jun 10 13:36:03 2008
-+++ pg_top.1.in	Tue Jun 10 13:39:20 2008
-@@ -437,6 +437,12 @@ things can change while
+$OpenBSD: patch-pg_top_1_in,v 1.2 2014/04/20 19:40:55 okan Exp $
+--- pg_top.1.in.orig	Fri Mar 14 12:59:11 2014
++++ pg_top.1.in	Fri Mar 14 12:58:38 2014
+@@ -441,6 +441,12 @@ things can change while
  .I pg_top
  is collecting information for an update.  The picture it gives is only a
  close approximation to reality.
