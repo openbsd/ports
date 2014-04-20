@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/08/10 10:42:38 landry Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/04/20 21:19:44 jasper Exp $
 @conflict libxfcegui4-<4.7.0
 @conflict xfce-utils-*
 @bin bin/xfce4-about
@@ -107,3 +107,5 @@ share/locale/zh_CN/LC_MESSAGES/libxfce4ui.mo
 share/locale/zh_TW/LC_MESSAGES/libxfce4ui.mo
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

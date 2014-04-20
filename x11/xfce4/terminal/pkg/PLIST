@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2013/12/28 11:13:37 landry Exp $
+@comment $OpenBSD: PLIST,v 1.20 2014/04/20 21:19:44 jasper Exp $
 @conflict terminal-<=0.4.5p1
 @bin bin/xfce4-terminal
 man/ar/
@@ -140,7 +140,5 @@ share/xfce4/terminal/colorschemes/tango.theme
 share/xfce4/terminal/colorschemes/white-on-black.theme
 share/xfce4/terminal/colorschemes/xterm.theme
 share/xfce4/terminal/terminal-preferences.ui
-@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

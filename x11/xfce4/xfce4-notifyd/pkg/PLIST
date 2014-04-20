@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/10/30 10:53:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/04/20 21:19:44 jasper Exp $
 @bin bin/xfce4-notifyd-config
 lib/xfce4/notifyd/
 @bin lib/xfce4/notifyd/xfce4-notifyd
@@ -55,3 +55,5 @@ share/themes/ZOMG-PONIES!/xfce-notify-4.0/
 share/themes/ZOMG-PONIES!/xfce-notify-4.0/gtkrc
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

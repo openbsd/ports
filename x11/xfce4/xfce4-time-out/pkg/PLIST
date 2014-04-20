@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2013/01/02 17:12:23 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/04/20 21:19:45 jasper Exp $
 lib/xfce4/panel/plugins/libtime-out.so
 share/icons/hicolor/48x48/apps/xfce4-time-out-plugin.png
 share/icons/hicolor/scalable/apps/xfce4-time-out-plugin.svg
@@ -38,3 +38,5 @@ share/locale/ur_PK/LC_MESSAGES/xfce4-time-out-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-time-out-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-time-out-plugin.mo
 share/xfce4/panel/plugins/xfce4-time-out-plugin.desktop
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

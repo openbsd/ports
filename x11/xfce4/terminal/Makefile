@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.45 2014/04/14 19:52:45 matthieu Exp $
+# $OpenBSD: Makefile,v 1.46 2014/04/20 21:19:44 jasper Exp $
 
 COMMENT=	Xfce4 vte-based terminal
 
 XFCE_VERSION=	0.6.3
 XFCE_GOODIE=	xfce4-terminal
-REVISION=	0
+REVISION=	1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes
-MODXFCE_ICON_CACHE=	Yes
 USE_GROFF =	Yes
 
 LIB_DEPENDS=	x11/xfce4/libxfce4ui \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/01/02 17:12:22 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/04/20 21:19:44 jasper Exp $
 lib/xfce4/panel/plugins/libmount.so
 share/icons/hicolor/scalable/apps/xfce-mount.svg
 share/locale/ar/LC_MESSAGES/xfce4-mount-plugin.mo
@@ -41,3 +41,5 @@ share/locale/vi/LC_MESSAGES/xfce4-mount-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-mount-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-mount-plugin.mo
 share/xfce4/panel/plugins/xfce4-mount-plugin.desktop
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2014/04/14 19:52:45 matthieu Exp $
+# $OpenBSD: Makefile,v 1.17 2014/04/20 21:19:44 jasper Exp $
 
 COMMENT=	Xfce4 widget library
 
 XFCE_VERSION =	4.10.0
 XFCE_PROJECT=	libxfce4ui
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS=	xfce4ui-1		0.1	\
 		xfce4kbd-private-2	1.0	# 0.0
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	x11/xfce4
 
+MODXFCE_DESKTOP_FILE=	Yes
 MODXFCE_ICON_CACHE=	Yes
 CONFIGURE_ARGS +=	--disable-gladeui
 
