@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/12/08 19:13:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.7 2014/04/20 16:31:13 jasper Exp $
 
 COMMENT =	KDE geometric constructions explorer
 DISTNAME =	kig-${MODKDE4_VERSION}
@@ -13,9 +13,6 @@ WANTLIB += ${KDE4LIB}/nepomuk ${KDE4LIB}/nepomukutils
 WANTLIB += soprano
 
 MODULES =	lang/python
-
-RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2,-guic
 
 BUILD_DEPENDS =	devel/boost
 RUN_DEPENDS =	devel/boost \
