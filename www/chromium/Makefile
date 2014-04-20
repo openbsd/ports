@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.169 2014/04/17 16:27:53 robert Exp $
+# $OpenBSD: Makefile,v 1.170 2014/04/20 10:00:21 jasper Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
@@ -153,7 +153,7 @@ pre-configure:
 		${WRKSRC}/third_party/ffmpeg/chromium/config/Chromium/openbsd/${_arch}/libavutil
 .endfor
 	@mkdir -p ${WRKSRC}/media/audio/sndio
-	@cp files/sndio_output.{cc,h} ${WRKSRC}/media/audio/sndio
+	@cp ${FILESDIR}/sndio_output.{cc,h} ${WRKSRC}/media/audio/sndio
 
 # gyp_chromium generates all the Makefiles from gyp
 do-configure:

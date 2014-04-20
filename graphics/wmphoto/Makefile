@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:10:56 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2014/04/20 10:00:21 jasper Exp $
 
 COMMENT=		wm-dockapp; shows photos and execute commands on that photo
 
@@ -23,6 +23,6 @@ WRKSRC=			${WRKDIST}/wmphoto
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/wmphoto ${PREFIX}/bin
-	${INSTALL_MAN} files/wmphoto.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${FILESDIR}/wmphoto.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

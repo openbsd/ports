@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2013/05/06 11:57:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2014/04/20 10:00:21 jasper Exp $
 
 COMMENT=	client for anonymous remailing
 
@@ -30,7 +30,7 @@ MIXMASTER_FILES=${WRKDIST}/conf/* ${WRKDIST}/README \
 	${WRKDIR}/mixmaster-update.pl ${WRKDIR}/allpingers.txt
 
 post-patch:
-	@cp files/Makefile ${WRKSRC}
+	@cp ${FILESDIR}/Makefile ${WRKSRC}
 
 pre-install:
 	@perl -pi -e "s,/etc,${SYSCONFDIR},g" ${WRKDIR}/mixmaster-update.pl

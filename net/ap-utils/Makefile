@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2013/10/24 15:18:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2014/04/20 10:00:21 jasper Exp $
 
 COMMENT=	Atmel/NWN wireless access point configuration tools
 
@@ -28,6 +28,6 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/systrace/
-	${INSTALL_DATA} files/bin_ap_config ${PREFIX}/share/examples/systrace/
+	${INSTALL_DATA} ${FILESDIR}/bin_ap_config ${PREFIX}/share/examples/systrace/
 
 .include <bsd.port.mk>

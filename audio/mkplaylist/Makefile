@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/03/10 22:55:03 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2014/04/20 10:00:21 jasper Exp $
 
 COMMENT=		creates playlists from directory trees
 
@@ -26,6 +26,6 @@ pre-patch:
 	@mv ${WRKSRC}/mkplaylist.py ${WRKSRC}/mkplaylist
 
 post-install:
-	${INSTALL_MAN} files/mkplaylist.1 ${PREFIX}/man/man1/
+	${INSTALL_MAN} ${FILESDIR}/mkplaylist.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>

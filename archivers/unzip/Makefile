@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2014/03/10 12:02:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.49 2014/04/20 10:00:21 jasper Exp $
 
 COMMENT=	extract, list & test files in a ZIP archive
 
@@ -33,6 +33,6 @@ post-install:
 
 do-test:
 	cd ${WRKBUILD} && ./unzip -x -a -o testmake.zip
-	cmp -s ${WRKBUILD}/notes files/notes
+	cmp -s ${WRKBUILD}/notes ${FILESDIR}/notes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2013/10/11 23:48:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2014/04/20 10:00:21 jasper Exp $
 
 COMMENT=		wm-dockapp; sound mixer
 
@@ -21,6 +21,6 @@ NO_TEST=		Yes
 do-install:
 	${INSTALL_PROGRAM_DIR} ${PREFIX}/GNUstep/Apps/Mixer.app
 	${INSTALL_PROGRAM} ${WRKBUILD}/Mixer.app ${PREFIX}/GNUstep/Apps/Mixer.app/Mixer
-	${INSTALL_MAN} files/Mixer.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${FILESDIR}/Mixer.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2013/12/23 15:07:50 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2014/04/20 10:00:21 jasper Exp $
 
 COMMENT =	MOD player
 DISTNAME =	tracker-5.3
@@ -30,7 +30,7 @@ NO_TEST =	Yes
 
 post-extract:
 	@mkdir -p ${WRKSRC}/Arch/OpenBSD
-	@cp files/{audio.c,config.h} ${WRKSRC}/Arch/OpenBSD
+	@cp ${FILESDIR}/{audio.c,config.h} ${WRKSRC}/Arch/OpenBSD
 
 pre-install:
 	${INSTALL_DATA_DIR} ${DESTDIR}${SYSCONFDIR}
