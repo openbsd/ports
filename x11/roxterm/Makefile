@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2013/04/02 16:41:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2014/04/20 17:25:04 jasper Exp $
 
 COMMENT=		terminal emulator for X
 
 DISTNAME=		roxterm-2.0.1
-REVISION=		8
+REVISION=		9
 CATEGORIES=		x11
 
 HOMEPAGE=		http://roxterm.sourceforge.net/
@@ -12,20 +12,19 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=roxterm/}
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
-WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 drm expat
-WANTLIB += ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-3
-WANTLIB += m ncurses pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs stdc++ vte2_90 xcb
-WANTLIB += xcb-render xcb-shm z
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
+WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 expat ffi
+WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
+WANTLIB += harfbuzz m ncurses pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs util vte2_90
+WANTLIB += xcb xcb-render xcb-shm z
 
 MODULES=		devel/gettext
 
 LIB_DEPENDS=		devel/vte3 \
-			x11/dbus-glib \
-			devel/libglade2
+			x11/dbus-glib
 
 BUILD_DEPENDS=		textproc/docbook-xsl \
 			textproc/xmlto
