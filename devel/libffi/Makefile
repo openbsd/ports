@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2013/10/23 10:32:01 fgsch Exp $
+# $OpenBSD: Makefile,v 1.25 2014/04/20 16:09:47 jasper Exp $
 
 COMMENT=		Foreign Function Interface
 
@@ -18,10 +18,24 @@ MASTER_SITES=		ftp://sourceware.org/pub/libffi/
 
 TEST_DEPENDS=		devel/dejagnu
 
+AUTOCONF_VERSION=       2.63
+AUTOMAKE_VERSION=       1.11
+
+BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
+
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 
 FAKE_FLAGS+=		includesdir="${PREFIX}/include"
+
+pre-configure:
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} aclocal
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoconf
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} automake
 
 post-patch:
 	@mkdir ${WRKSRC}/src/m88k

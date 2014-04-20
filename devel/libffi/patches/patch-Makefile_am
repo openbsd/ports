@@ -1,0 +1,26 @@
+$OpenBSD: patch-Makefile_am,v 1.1 2014/04/20 16:09:47 jasper Exp $
+
+Enable libffi on m88k and vax platforms.
+
+--- Makefile.am.orig	Sun Apr 20 17:37:54 2014
++++ Makefile.am	Sun Apr 20 17:39:31 2014
+@@ -127,6 +127,9 @@ endif
+ if M68K
+ nodist_libffi_la_SOURCES += src/m68k/ffi.c src/m68k/sysv.S
+ endif
++if M88K
++nodist_libffi_la_SOURCES += src/m88k/ffi.c src/m88k/obsd.S
++endif
+ if POWERPC
+ nodist_libffi_la_SOURCES += src/powerpc/ffi.c src/powerpc/sysv.S src/powerpc/ppc_closure.S src/powerpc/linux64.S src/powerpc/linux64_closure.S
+ endif
+@@ -153,6 +156,9 @@ nodist_libffi_la_SOURCES += src/frv/eabi.S src/frv/ffi
+ endif
+ if S390
+ nodist_libffi_la_SOURCES += src/s390/sysv.S src/s390/ffi.c
++endif
++if VAX
++nodist_libffi_la_SOURCES += src/vax/ffi.c src/vax/elfbsd.S
+ endif
+ if X86_64
+ nodist_libffi_la_SOURCES += src/x86/ffi64.c src/x86/unix64.S src/x86/ffi.c src/x86/sysv.S
