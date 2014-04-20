@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2014/03/27 07:59:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2014/04/20 18:03:23 jasper Exp $
 
 ONLY_FOR_ARCHS =${APM_ARCHS}
 
 COMMENT =	userland power management interface
 
 DISTNAME =	upower-0.99.0
+REVISION =	0
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	sysutils
 SHARED_LIBS +=  upower-glib               1.0 # 2.0
