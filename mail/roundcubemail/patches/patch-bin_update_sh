@@ -1,0 +1,12 @@
+$OpenBSD: patch-bin_update_sh,v 1.1 2014/04/20 19:59:54 sthen Exp $
+--- bin/update.sh.orig	Sun Apr 20 20:28:44 2014
++++ bin/update.sh	Sun Apr 20 20:29:34 2014
+@@ -157,7 +157,7 @@ if ($RCI->configured) {
+   // check database schema
+   if ($RCI->config['db_dsnw']) {
+     echo "Executing database schema update.\n";
+-    system("php " . INSTALL_PATH . "bin/updatedb.sh --package=roundcube --version=" . $opts['version']
++    system("${MODPHP_BIN} " . INSTALL_PATH . "bin/updatedb.sh --package=roundcube --version=" . $opts['version']
+       . " --dir=" . INSTALL_PATH . DIRECTORY_SEPARATOR . "SQL", $res);
+ 
+     $success = !$res;

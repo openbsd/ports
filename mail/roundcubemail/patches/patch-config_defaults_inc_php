@@ -1,0 +1,12 @@
+$OpenBSD: patch-config_defaults_inc_php,v 1.1 2014/04/20 19:59:54 sthen Exp $
+--- config/defaults.inc.php.orig	Sun Apr  6 15:13:09 2014
++++ config/defaults.inc.php	Sun Apr 20 20:51:11 2014
+@@ -594,7 +594,7 @@ $config['spellcheck_dictionary'] = false;
+ // - 'atd'     - install your own After the Deadline server or check with the people at http://www.afterthedeadline.com before using their API
+ // Since Google shut down their public spell checking service, you need to 
+ // connect to a Nox Spell Server when using 'googie' here. Therefore specify the 'spellcheck_uri'
+-$config['spellcheck_engine'] = 'googie';
++$config['spellcheck_engine'] = 'pspell';
+ 
+ // For locally installed Nox Spell Server or After the Deadline services,
+ // please specify the URI to call it.

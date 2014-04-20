@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.76 2014/03/21 07:32:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2014/04/20 19:59:54 sthen Exp $
 
 COMMENT=	imap4 webmail client
 
-DISTNAME=	roundcubemail-0.9.5
-REVISION=	1
-PKGNAME=	${DISTNAME:S/-rc/rc/}
+COMPOSER_V=	1.0.0-alpha8
+DISTNAME=	roundcubemail-1.0.0
 CATEGORIES=	mail www
 HOMEPAGE=	http://www.roundcube.net/
 
@@ -14,6 +13,13 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=roundcubemail/}
+# this is optional but is used for installing plugins; upstream instructions
+# tell you to "curl http://<url> | php" which is totally unsafe, so let's fetch
+# a known/verifiable version instead.
+MASTER_SITES0=	https://getcomposer.org/download/${COMPOSER_V}/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		composer-${COMPOSER_V}{composer}.phar:0
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_SUFX=	.tar.gz
 
 NO_BUILD=	Yes
@@ -29,9 +35,13 @@ MODULES=	lang/php
 RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-mcrypt \
 		lang/php/${MODPHP_VERSION},-pspell
 
+post-extract:
+	cp ${FULLDISTDIR}/composer-${COMPOSER_V}.phar ${WRKSRC}/composer.phar
+
 do-configure:
 	perl -pi -e '$$. == 1 && s,^#!.*env.*php.*,#!${MODPHP_BIN},;' \
 	    -e 'close ARGV if eof;' ${WRKSRC}/bin/*
+	${SUBST_CMD} ${WRKSRC}/bin/update.sh
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
@@ -45,5 +55,6 @@ do-install:
 	chgrp -R wheel ${INSTDIR}/bin; \
 	chmod -R o-rwx ${INSTDIR}/bin; \
 	find ${INSTDIR} \( -name \*.orig -or -name \*.src \) -exec rm -f {} +
+	chmod 700 ${INSTDIR}/composer.phar
 
 .include <bsd.port.mk>
