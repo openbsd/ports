@@ -1,0 +1,24 @@
+$OpenBSD: patch-libs_gst_base_gstbasesrc_c,v 1.1 2014/04/20 10:41:00 ajacoutot Exp $
+
+From 63c17280408410d799e1c2f2ed49c5ab04cc80ae Mon Sep 17 00:00:00 2001
+From: Sebastian Dr\xc3\xb6ge <sebastian@centricular.com>
+Date: Sun, 20 Apr 2014 09:59:02 +0000
+Subject: basesrc: Make sure to always hold the LIVE_LOCK when going to the flushing label
+
+--- libs/gst/base/gstbasesrc.c.orig	Sat Nov  9 10:29:16 2013
++++ libs/gst/base/gstbasesrc.c	Sun Apr 20 12:35:12 2014
+@@ -2628,10 +2628,12 @@ gst_base_src_loop (GstPad * pad)
+   if (gst_pad_check_reconfigure (pad)) {
+     if (!gst_base_src_negotiate (src)) {
+       gst_pad_mark_reconfigure (pad);
+-      if (GST_PAD_IS_FLUSHING (pad))
++      if (GST_PAD_IS_FLUSHING (pad)) {
++        GST_LIVE_LOCK (src);
+         goto flushing;
+-      else
++      } else {
+         goto negotiate_failed;
++      }
+     }
+   }
+ 
