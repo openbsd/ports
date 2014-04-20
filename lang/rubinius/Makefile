@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2014/01/07 22:45:05 jeremy Exp $
+# $OpenBSD: Makefile,v 1.29 2014/04/20 20:00:35 jeremy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,6 +13,7 @@ COMMENT =	Ruby virtual machine and core library
 V=		2.2.3
 EXTRACT_SUFX=	.tar.bz2
 DISTNAME =	rubinius-${V}
+REVISION =	0
 
 MASTER_SITES =	http://releases.rubini.us/
 
@@ -56,7 +57,23 @@ SUBST_VARS=	RBX_ARCH
 # Otherwise
 LLVM_OPTION =	--disable-llvm
 
+OPENSSL_GEM_FILE = vendor/cache/rubysl-openssl-2.0.5.gem
+
 do-configure:
+	# Patch openssl library
+	cd ${WRKSRC} && tar xf ${OPENSSL_GEM_FILE} && \
+		mkdir data && \
+		cd data && \
+		tar ztf ../data.tar.gz > file_list && \
+		tar zxf ../data.tar.gz && \
+		rm -f ../data.tar.gz && \
+		patch --posix ext/rubysl/openssl/ossl_rand.c \
+			${PATCHDIR}/openssl_rand.diff && \
+		tar zcf ../data.tar.gz -I file_list  && \
+		cd .. && \
+		rm -f ${OPENSSL_GEM_FILE} && \
+		tar cf ${OPENSSL_GEM_FILE} metadata.gz data.tar.gz && \
+		rm -rf data metadata.gz data.tar.gz checksums.yaml.gz
 	mkdir -p ${GEM_HOME}
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} bundle20 install \
 		--local --path ${GEM_HOME}
