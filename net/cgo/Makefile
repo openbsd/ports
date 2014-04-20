@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2013/10/06 14:29:22 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2014/04/20 04:23:46 bcallah Exp $
 
 COMMENT =	simple terminal based gopher client
-DISTNAME =	cgo-20131006
+DISTNAME =	cgo-20140220
 CATEGORIES =	net
 
 HOMEPAGE =	https://github.com/kieselsteini/cgo/
