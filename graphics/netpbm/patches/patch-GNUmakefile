@@ -1,7 +1,7 @@
-$OpenBSD: patch-GNUmakefile,v 1.5 2010/07/02 02:54:59 naddy Exp $
---- GNUmakefile.orig	Wed Jun 30 02:04:26 2010
-+++ GNUmakefile	Wed Jun 30 02:04:50 2010
-@@ -361,7 +361,7 @@ install-dev: install.hdr install.staticlib install.lib
+$OpenBSD: patch-GNUmakefile,v 1.6 2014/04/20 16:55:07 naddy Exp $
+--- GNUmakefile.orig	Sat Mar 29 22:42:44 2014
++++ GNUmakefile	Sun Apr 20 18:49:00 2014
+@@ -363,7 +363,7 @@ install-dev: install.hdr install.staticlib install.lib
  install.hdr: $(PKGDIR)/include
  	$(MAKE) -C lib -f $(SRCDIR)/lib/Makefile \
  	    SRCDIR=$(SRCDIR) BUILDDIR=$(BUILDDIR) install.hdr
