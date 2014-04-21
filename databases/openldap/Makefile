@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.132 2014/03/24 12:53:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.133 2014/04/21 12:41:49 sthen Exp $
 
 COMMENT-main =		open-source LDAP software (client)
 COMMENT-server =	open-source LDAP software (server)
 
 DISTNAME =		openldap-2.4.39
-REVISION-main =		0
-REVISION-server =	0
+REVISION =		1
 PKGNAME-main =		${DISTNAME:S/-/-client-/}
 PKGNAME-server =	${DISTNAME:S/-/-server-/}
 
@@ -27,8 +26,7 @@ HOMEPAGE =	http://www.openldap.org/
 # OpenLDAP Public License
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += asn1 c com_err crypto gssapi heimbase
-WANTLIB += krb5 roken ssl wind
+WANTLIB += c crypto ssl
 
 MASTER_SITES =	http://mirror.switch.ch/ftp/mirror/OpenLDAP/openldap-release/ \
 		http://gd.tuwien.ac.at/infosys/network/OpenLDAP/openldap-release/ \
