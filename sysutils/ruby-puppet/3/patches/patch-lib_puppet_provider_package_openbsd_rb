@@ -1,10 +1,10 @@
-$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.12 2014/04/21 18:17:00 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.13 2014/04/21 19:12:13 jasper Exp $
 
 (#23078) Implement feature :upgradeable for OpenBSD package provider.
 https://github.com/puppetlabs/puppet/pull/2558
 
 --- lib/puppet/provider/package/openbsd.rb.orig	Wed Apr 16 01:06:55 2014
-+++ lib/puppet/provider/package/openbsd.rb	Mon Apr 21 19:20:48 2014
++++ lib/puppet/provider/package/openbsd.rb	Mon Apr 21 21:10:58 2014
 @@ -4,7 +4,9 @@ require 'puppet/provider/package'
  Puppet::Type.type(:package).provide :openbsd, :parent => Puppet::Provider::Package do
    desc "OpenBSD's form of `pkg_add` support."
@@ -24,7 +24,7 @@ https://github.com/puppetlabs/puppet/pull/2558
  
    def self.instances
      packages = []
-@@ -54,6 +57,55 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -54,6 +57,53 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
      [command(:pkginfo), "-a"]
    end
  
@@ -45,14 +45,12 @@ https://github.com/puppetlabs/puppet/pull/2558
 +
 +    output = Puppet::Util.withenv(e_vars) {pkginfo "-Q", query}
 +
-+    # Remove all fuzzy matches first.
-+    output = output.split.select! {|p| p =~ /^#{resource[:name]}-(\d[^-]*)[-]?(\w*)/ }.join
-+
 +    if output.nil? or output.size == 0
 +      debug "Failed to query for #{resource[:name]}"
 +      return properties[:ensure]
 +    else
-+      output.chomp!
++      # Remove all fuzzy matches first.
++      output = output.split.select! {|p| p =~ /^#{resource[:name]}-(\d[^-]*)[-]?(\w*)/ }.join
 +      debug "pkg_info -Q for #{resource[:name]}: #{output}"
 +    end
 +
@@ -80,7 +78,7 @@ https://github.com/puppetlabs/puppet/pull/2558
    def parse_pkgconf
      unless @resource[:source]
        if Puppet::FileSystem.exist?("/etc/pkg.conf")
-@@ -80,14 +132,25 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -80,14 +130,25 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
      end
    end
  
@@ -108,7 +106,7 @@ https://github.com/puppetlabs/puppet/pull/2558
      else
        e_vars = {}
        full_name = @resource[:source]
-@@ -96,13 +159,17 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+@@ -96,13 +157,17 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
      cmd << install_options
      cmd << full_name
  
