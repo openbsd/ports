@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2014/03/12 07:14:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2014/04/21 22:33:58 ajacoutot Exp $
 
 COMMENT=	graphics viewer for KVM guest displays
 
 DISTNAME=	virt-viewer-0.6.0
-REVISION=	0
+REVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -18,18 +18,18 @@ MASTER_SITES=	http://virt-manager.org/download/sources/virt-viewer/
 USE_GMAKE=	Yes
 
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender asn1 atk-1.0 atk-bridge-2.0
-WANTLIB += atspi avahi-client avahi-common c cairo cairo-gobject
-WANTLIB += com_err crypto curl dbus-1 expat ffi fontconfig freetype
-WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gmp gnutls gobject-2.0 gpg-error graphite2 gssapi gstapp-0.10
-WANTLIB += gstaudio-0.10 gstbase-0.10 gstinterfaces-0.10 gstpbutils-0.10
-WANTLIB += gstreamer-0.10 gthread-2.0 gtk-3 gtk-vnc-2.0 gvnc-1.0
-WANTLIB += harfbuzz heimbase hogweed idn jpeg krb5 m nettle opus
-WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs roken sasl2 spice-client-glib-2.0
-WANTLIB += spice-client-gtk-3.0 spice-controller ssh2 ssl tasn1
-WANTLIB += util virt wind xcb xcb-render xcb-shm xml2 z
+WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
+WANTLIB += avahi-client avahi-common c cairo cairo-gobject crypto
+WANTLIB += curl dbus-1 expat ffi fontconfig freetype gcrypt gdk-3
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls
+WANTLIB += gobject-2.0 gpg-error graphite2 gstapp-0.10 gstaudio-0.10
+WANTLIB += gstbase-0.10 gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10
+WANTLIB += gthread-2.0 gtk-3 gtk-vnc-2.0 gvnc-1.0 harfbuzz hogweed
+WANTLIB += idn jpeg m nettle opus p11-kit pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += sasl2 spice-client-glib-2.0 spice-client-gtk-3.0 spice-controller
+WANTLIB += ssh2 ssl tasn1 util virt xcb xcb-render xcb-shm xml2
+WANTLIB += z
 
 LIB_DEPENDS=	sysutils/libvirt \
 		x11/gtk-vnc \
