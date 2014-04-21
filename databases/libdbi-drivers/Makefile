@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/06/12 20:36:33 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2014/04/21 23:30:36 sthen Exp $
 
 V =			0.8.3-1
 COMMENT-main =		mysql driver for libdbi
@@ -10,7 +10,7 @@ DISTNAME =		libdbi-drivers-$V
 PKGNAME-main =		libdbi-drivers-mysql-${V:S/-/./}
 REVISION-main =		3
 PKGNAME-pgsql =		libdbi-drivers-pgsql-${V:S/-/./}
-REVISION-pgsql =	2
+REVISION-pgsql =	3
 PKGNAME-sqlite =	libdbi-drivers-sqlite-${V:S/-/./}
 REVISION-sqlite =	0
 PKGNAME-sqlite3 =	libdbi-drivers-sqlite3-${V:S/-/./}
@@ -51,7 +51,7 @@ LIB_DEPENDS-main =	databases/mysql \
 			databases/libdbi
 RUN_DEPENDS-main =
 
-WANTLIB-pgsql =		m pq dbi com_err crypto ssl
+WANTLIB-pgsql =		m pq dbi crypto ssl
 LIB_DEPENDS-pgsql =	databases/postgresql \
 			databases/libdbi
 RUN_DEPENDS-pgsql =
