@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.6 2013/10/17 09:08:05 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.7 2014/04/21 12:26:19 ajacoutot Exp $
 --- configure.orig	Thu Aug 15 06:36:22 2013
 +++ configure	Thu Oct 17 10:48:41 2013
 @@ -12891,6 +12891,7 @@ $as_echo "$LIBICONV" >&6; }
@@ -17,14 +17,3 @@ $OpenBSD: patch-configure,v 1.6 2013/10/17 09:08:05 ajacoutot Exp $
  
  
      if test -n "$INTL_MACOSX_LIBS"; then
-@@ -16998,8 +17000,8 @@ if test "$ac_res" != no; then :
-   test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
- 
-             LIBS="$LIBS -lkrb5"
--      ac_fn_c_check_header_mongrel "$LINENO" "gssapi/gssapi_generic.h" "ac_cv_header_gssapi_gssapi_generic_h" "$ac_includes_default"
--if test "x$ac_cv_header_gssapi_gssapi_generic_h" = xyes; then :
-+      ac_fn_c_check_header_mongrel "$LINENO" "gssapi.h" "ac_cv_header_gssapi_h" "$ac_includes_default"
-+if test "x$ac_cv_header_gssapi_h" = xyes; then :
- 
- else
- 

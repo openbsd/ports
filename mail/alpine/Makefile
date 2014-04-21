@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2014/01/19 09:40:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2014/04/21 12:26:19 ajacoutot Exp $
 
 COMMENT-main=		UW e-mail client
 COMMENT-c-client=	UW c-client mail access routines
@@ -25,7 +25,9 @@ PKGNAME-mailutil=	mailutil-uw-${V}
 PKGNAME-pico=		pico-${PICO_V}
 PKGNAME-pilot=		pilot-${PILOT_V}
 
-REVISION-imap=		0
+REVISION-main=		0
+REVISION-mailutil=	0
+REVISION-imap=		1
 REVISION-pilot=		11
 
 EPOCH-c-client=		0
@@ -48,13 +50,12 @@ MASTER_SITES=		http://patches.freeiz.com/alpine/release/src/ \
 
 MULTI_PACKAGES=		-main -c-client -imap -mailutil -pico -pilot
 
-WANTLIB += asn1 c crypto gssapi krb5 ncurses ssl
-WANTLIB += com_err heimbase roken wind
+WANTLIB += c ncurses
 
-WANTLIB-main=		${WANTLIB} com_err crypto pthread ssl
+WANTLIB-main=		${WANTLIB} pthread
 WANTLIB-c-client=	# empty
-WANTLIB-imap=		${WANTLIB} com_err crypto ssl
-WANTLIB-mailutil=	${WANTLIB} com_err crypto ssl
+WANTLIB-imap=		${WANTLIB}
+WANTLIB-mailutil=	${WANTLIB}
 WANTLIB-pico=		${WANTLIB} pthread
 WANTLIB-pilot=		${WANTLIB} pthread
 
@@ -71,14 +72,11 @@ SHLIB=			libc-client.so.${LIBc-client_VERSION}
 MAKE_FLAGS=		EXTRACFLAGS="${CFLAGS}" \
 			SHLIB="${SHLIB}" \
 			SHLIBNAME=${SHLIB} \
-			CC="${CC}" \
-			EXTRAAUTHENTICATORS="gss" \
-			GSSCFLAGS="-DHEIMDAL"
+			CC="${CC}"
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include $$(krb5-config --cflags)" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
-			LIBS="$$(krb5-config gssapi --libs)" \
 			ac_cv_search_regcomp=-lc
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--with-system-pinerc=${SYSCONFDIR}/pine.conf \
