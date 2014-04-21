@@ -1,10 +1,12 @@
-$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.13 2014/04/21 19:12:13 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.14 2014/04/21 22:39:26 jasper Exp $
 
 (#23078) Implement feature :upgradeable for OpenBSD package provider.
 https://github.com/puppetlabs/puppet/pull/2558
 
+#uninstall: unbreak when multiple uninstall_options are passed.
+
 --- lib/puppet/provider/package/openbsd.rb.orig	Wed Apr 16 01:06:55 2014
-+++ lib/puppet/provider/package/openbsd.rb	Mon Apr 21 21:10:58 2014
++++ lib/puppet/provider/package/openbsd.rb	Tue Apr 22 00:36:32 2014
 @@ -4,7 +4,9 @@ require 'puppet/provider/package'
  Puppet::Type.type(:package).provide :openbsd, :parent => Puppet::Provider::Package do
    desc "OpenBSD's form of `pkg_add` support."
@@ -126,3 +128,12 @@ https://github.com/puppetlabs/puppet/pull/2558
        master_version = 0
        version = -1
  
+@@ -166,7 +231,7 @@ Puppet::Type.type(:package).provide :openbsd, :parent 
+   end
+ 
+   def uninstall
+-    pkgdelete uninstall_options.flatten.compact.join(' '), @resource[:name]
++    pkgdelete uninstall_options.flatten.compact, @resource[:name]
+   end
+ 
+   def purge
