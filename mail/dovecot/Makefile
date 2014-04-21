@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.219 2014/03/16 09:42:12 brad Exp $
+# $OpenBSD: Makefile,v 1.220 2014/04/21 16:39:24 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,7 +20,7 @@ PKGNAME-postgresql= dovecot-postgresql-${V_DOVECOT}
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}releases/${V_MAJOR}/
 
-REVISION-server= 0
+REVISION= 1
 
 SHARED_LIBS=	dovecot-compression 0.0 \
 		dovecot-lda	2.0 \
@@ -36,12 +36,10 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # LGPLv2.1 and MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB-server=	asn1 bz2 c com_err crypto gssapi heimbase krb5 lzma roken \
-		sqlite3 ssl wind z ${MODLIBICONV_WANTLIB}
-WANTLIB-ldap=	asn1 com_err crypto gssapi heimbase krb5 lber-2.4 ldap-2.4 \
-		roken sasl2 ssl wind
+WANTLIB-server=	bz2 c crypto lzma sqlite3 ssl z ${MODLIBICONV_WANTLIB}
+WANTLIB-ldap=	crypto lber-2.4 ldap-2.4 sasl2 ssl
 WANTLIB-mysql=	crypto m lib/mysql/mysqlclient>=10 ssl z
-WANTLIB-postgresql= asn1 com_err crypto heimbase krb5 pq>=4 roken ssl wind
+WANTLIB-postgresql= crypto pq>=4 ssl
 
 MODULES=	converters/libiconv
 LIB_DEPENDS+=	archivers/bzip2 \
@@ -59,6 +57,7 @@ CONFIGURE_ARGS=	--with-gssapi \
 		--with-sql=plugin \
 		--with-sqlite \
 		--with-statedir=/var/dovecot \
+		--without-gssapi \
 		--without-pam \
 		--without-shadow \
 		--without-stemmer \
