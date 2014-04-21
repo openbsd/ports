@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.141 2013/10/31 21:12:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.142 2014/04/21 13:18:31 ajacoutot Exp $
 
 COMMENT=	mail retrieval utility for POP2, POP3, KPOP, IMAP and more
 
 DISTNAME=	fetchmail-6.3.24
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=fetchmail/}
-REVISION=	3
+REVISION=	4
 
 HOMEPAGE=	http://www.fetchmail.info/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += asn1 c com_err crypto heimbase krb5 roken
-WANTLIB += ssl wind
+WANTLIB += c crypto ssl
 
 MODULES=		devel/gettext \
 			lang/python
@@ -23,12 +22,10 @@ SUBST_VARS+=		MODPY_LIBDIR
 BUILD_DEPENDS=		devel/bison
 
 SEPARATE_BUILD=		Yes
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.68
+CONFIGURE_STYLE=	gnu
 CFLAGS=			-I${LOCALBASE}/include
 CONFIGURE_ENV=		PYTHON=: YACC="bison -y"
 CONFIGURE_ARGS=		--with-ssl \
-			--with-kerberos5 \
 			--enable-NTLM
 
 USE_GROFF=		Yes# uses www.tmac for .URL tags
