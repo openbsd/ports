@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.163 2014/04/07 13:46:06 robert Exp $
+# $OpenBSD: Makefile,v 1.164 2014/04/21 18:43:10 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -6,6 +6,9 @@ COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
 PKGNAME=	zarafa-${V}
 PKGNAME-main=	zarafa-${V}
 PKGNAME-web=	zarafa-webaccess-${V}
+
+REVISION-main=	0
+REVISION-web=	0
 
 CATEGORIES=	mail www productivity
 
@@ -47,10 +50,9 @@ WANTLIB += m pthread stdc++ z vmime execinfo icudata icui18n icuuc
 WANTLIB += boost_filesystem-mt boost_system-mt uuid
 
 WANTLIB-main += ${WANTLIB} ${MODPY_WANTLIB}
-WANTLIB-main += asn1 c com_err crypto gssapi ical icalss krb5 lber-2.4
-WANTLIB-main += mysqlclient ncursesw sasl2 ssl util xml2 kyotocabinet
-WANTLIB-main += heimbase ldap_r-2.4 roken wind
-WANTLIB-main += clucene-core clucene-shared
+WANTLIB-main += c crypto ical icalss lber-2.4
+WANTLIB-main += mysqlclient ncurses sasl2 ssl util xml2 kyotocabinet
+WANTLIB-main += ldap_r-2.4 clucene-core clucene-shared
 
 RUN_DEPENDS-main=${MODGETTEXT_RUN_DEPENDS} \
 		${MODPY_RUN_DEPENDS} \
@@ -70,7 +72,7 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 
 WANTLIB-web += ${WANTLIB}
 WANTLIB-web += common_util freebusy ical icalmapi icalss inetmapi mapi
-WANTLIB-web += common_mapi
+WANTLIB-web += common_mapi xml2
 
 LIB_DEPENDS-web= ${BASE_PKGPATH}>=${V}
 RUN_DEPENDS-web= ${MODPHP_RUN_DEPENDS} \
