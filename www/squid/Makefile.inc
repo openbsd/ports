@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile.inc,v 1.4 2014/04/21 20:29:50 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2014/04/21 23:37:55 sthen Exp $
 
-MULTI_PACKAGES=	-main -ntlm
+MULTI_PACKAGES=	-main
+# -ntlm may come back with samba 4
 
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
-COMMENT-ntlm=	NTLM authentication/ACL support for Squid
+#COMMENT-ntlm=	NTLM authentication/ACL support for Squid
 
 DISTNAME?=	squid-$V
 EXTRACT_SUFX?=	.tar.xz
 PKGNAME-main=	squid-$V
 PKGNAME-ldap=	squid-ldap-$V
-PKGNAME-ntlm=	squid-ntlm-$V
+#PKGNAME-ntlm=	squid-ntlm-$V
 CATEGORIES=	www
 
 # bzr repository at https://code.launchpad.net/squid
@@ -105,8 +106,8 @@ LIB_DEPENDS-ldap += ${LIB_DEPENDS} databases/openldap
 WANTLIB-ldap +=	${WANTLIB} crypto lber-2.4 ldap-2.4 sasl2 ssl
 .endif
 
-RUN_DEPENDS-ntlm= net/samba,ads ${BASE_PKGPATH}
-WANTLIB-ntlm +=	${WANTLIB}
+#RUN_DEPENDS-ntlm= net/samba,ads ${BASE_PKGPATH}
+#WANTLIB-ntlm +=	${WANTLIB}
 
 post-patch:
 	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} LOCALBASE=${LOCALBASE} ./bootstrap.sh

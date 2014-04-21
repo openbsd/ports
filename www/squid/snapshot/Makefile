@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2014/04/21 20:29:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2014/04/21 23:37:55 sthen Exp $
 
 D=		20140413-r13351
 V=		3.5pre${D:C/-.*//}
@@ -14,10 +14,10 @@ CONFIGURE_ARGS=	--disable-strict-error-checking \
 		--enable-ssl-crtd
 
 WANTLIB-main += nettle
-WANTLIB-ntlm += nettle
+#WANTLIB-ntlm += nettle
 WANTLIB-ldap += nettle
 LIB_DEPENDS-main += security/libnettle
-LIB_DEPENDS-ntlm += security/libnettle
+#LIB_DEPENDS-ntlm += security/libnettle
 LIB_DEPENDS-ldap += security/libnettle
 
 .include <bsd.port.mk>
