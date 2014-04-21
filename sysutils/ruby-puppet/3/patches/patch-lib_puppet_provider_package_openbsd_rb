@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.11 2014/04/21 17:23:19 jasper Exp $
+$OpenBSD: patch-lib_puppet_provider_package_openbsd_rb,v 1.12 2014/04/21 18:17:00 jasper Exp $
 
 (#23078) Implement feature :upgradeable for OpenBSD package provider.
-https://github.com/puppetlabs/puppet/pull/2033
+https://github.com/puppetlabs/puppet/pull/2558
 
 --- lib/puppet/provider/package/openbsd.rb.orig	Wed Apr 16 01:06:55 2014
 +++ lib/puppet/provider/package/openbsd.rb	Mon Apr 21 19:20:48 2014
