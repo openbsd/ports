@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/01/09 23:06:24 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/04/21 15:21:22 ajacoutot Exp $
 @conflict jday-*
 @bin bin/ad
 @bin bin/adv1tov2
@@ -75,7 +75,6 @@ lib/netatalk/uams/uams_dhx.so
 lib/netatalk/uams/uams_dhx2.so
 lib/netatalk/uams/uams_dhx2_passwd.so
 lib/netatalk/uams/uams_dhx_passwd.so
-lib/netatalk/uams/uams_gss.so
 lib/netatalk/uams/uams_guest.so
 lib/netatalk/uams/uams_passwd.so
 lib/netatalk/uams/uams_randnum.so
