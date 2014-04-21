@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.221 2014/04/21 22:19:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.222 2014/04/21 22:32:59 brad Exp $
 
 SHARED_ONLY=	Yes
 
@@ -56,7 +56,6 @@ CONFIGURE_ARGS=	--with-rundir=/var/dovecot \
 		--with-sql=plugin \
 		--with-sqlite \
 		--with-statedir=/var/dovecot \
-		--without-gssapi \
 		--without-pam \
 		--without-shadow \
 		--without-stemmer \
