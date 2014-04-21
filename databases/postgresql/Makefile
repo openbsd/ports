@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.184 2014/03/28 11:50:51 pea Exp $
+# $OpenBSD: Makefile,v 1.185 2014/04/21 13:13:29 ajacoutot Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -17,6 +17,7 @@ PKGNAME-docs=	postgresql-docs-${VERSION}
 PKGNAME-contrib=postgresql-contrib-${VERSION}
 PKGNAME-plpython=postgresql-plpython-${VERSION}
 
+REVISION=		0
 
 CATEGORIES=	databases
 SHARED_LIBS=	ecpg		7.5 \
@@ -31,8 +32,7 @@ MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		c com_err crypto m readline ssl termcap z asn1 \
-			heimbase krb5 roken wind
+WANTLIB += c crypto m readline ssl termcap z
 
 MASTER_SITES=	http://ftp.postgresql.org/pub/source/v${VERSION}/ \
 	http://ftp5.es.postgresql.org/mirror/postgresql/source/v${VERSION}/ \
@@ -61,8 +61,8 @@ MODPY_RUNDEP=	No
 
 #INCLUDES=	${LOCALBASE}/include /usr/include/kerberosV
 CONFIGURE_ENV=	ac_cv_path_PYTHON=${MODPY_BIN} \
-		CPPFLAGS="-I${LOCALBASE}/include $$(krb5-config --cflags)" \
-		LDFLAGS="-L${LOCALBASE}/lib $$(krb5-config --libs)"
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS=	--disable-rpath --with-openssl=/usr \
 		--with-perl \
@@ -78,7 +78,6 @@ CONFIGURE_ARGS=	--disable-rpath --with-openssl=/usr \
 		--with-openssl \
 		--with-ossp-uuid \
 		--with-libxml \
-		--with-krb5 \
 		--disable-thread-safety
 
 # There is no spinlock support for hppa yet. Until we have access to
@@ -109,8 +108,8 @@ LIB_DEPENDS-contrib= databases/postgresql=${VERSION} \
 WANTLIB-contrib=	${WANTLIB-main} pq>=4 ossp-uuid
 
 LIB_DEPENDS-plpython=	${MODPY_LIB_DEPENDS}
-WANTLIB-plpython =	c m pthread util com_err crypto asn1 \
-			heimbase krb5 roken wind ${MODPY_WANTLIB}
+WANTLIB-plpython =	c m pthread util \
+			${MODPY_WANTLIB}
 RUN_DEPENDS-plpython=	databases/postgresql,-server=${VERSION}
 
 WANTLIB-docs=

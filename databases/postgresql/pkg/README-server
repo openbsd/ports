@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.15 2013/11/01 21:07:59 sthen Exp $
+$OpenBSD: README-server,v 1.16 2014/04/21 13:13:29 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -103,19 +103,6 @@ Rebuild the login.conf.db file if necessary:
 For more than about 250 connections, these numbers should be
 increased. Please report any changes and experiences to the package
 maintainers so that we can update this file for future versions.
-
-Kerberos authentication
-=======================
-By default the postgresql server requires it's own krb5.keytab file.  It
-should be readable only by the _postgresql user.  The default location of
-the file is '/etc/postgresql/krb5.keytab' but is tunable by setting the
-krb_server_keyfile line in postgresql.conf.
-
-To generate the keytab:
-
-	# mkdir /etc/postgresql
-	# ktutil -k /etc/postgresql/krb5.keytab get postgres/server.domain
-	# chown _postgresql:_postgresql /etc/postgresql/krb5.keytab
 
 Upgrade Howto (for a major upgrade)
 ===================================
