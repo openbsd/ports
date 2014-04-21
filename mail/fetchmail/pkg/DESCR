@@ -8,6 +8,6 @@ normal mail user agents such as elm(1) or Mail(1).
 fetchmail supports standard all mail-retrieval protocols in use on the
 Internet: POP2, POP3 (including POP3 with RFC1938 one-time passwords),
 RPOP, APOP, KPOP, Compuserve's POP3 with RPA, Microsoft's NTLM, Demon
-Internet's SDPS, all flavors of IMAP (including IMAP4rev1 with RFC1731
-Kerberos v4 or GSSAPI authentication or CRAM-MD5 authentication), and
-ESMTP ETRN.  Fetchmail also supports end-to-end encryption with OpenSSL.
+Internet's SDPS, all flavors of IMAP (including IMAP4rev1 with CRAM-MD5
+authentication), and ESMTP ETRN.  Fetchmail also supports end-to-end
+encryption with OpenSSL.
