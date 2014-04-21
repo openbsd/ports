@@ -1,65 +1,65 @@
-$OpenBSD: patch-plugin_icedteanp_IcedTeaPluginRequestProcessor_cc,v 1.1 2012/03/29 12:28:27 kurt Exp $
---- plugin/icedteanp/IcedTeaPluginRequestProcessor.cc.orig	Wed Mar 28 15:02:26 2012
-+++ plugin/icedteanp/IcedTeaPluginRequestProcessor.cc	Wed Mar 28 15:24:27 2012
-@@ -50,6 +50,7 @@ exception statement from your version. */
- // Initialize static members used by the queue processing framework
- pthread_mutex_t message_queue_mutex = PTHREAD_MUTEX_INITIALIZER;
- pthread_mutex_t syn_write_mutex = PTHREAD_MUTEX_INITIALIZER;
-+pthread_cond_t cond_message_available = PTHREAD_COND_INITIALIZER;
- std::vector< std::vector<std::string*>* >* message_queue = new std::vector< std::vector<std::string*>* >();
+$OpenBSD: patch-plugin_icedteanp_IcedTeaPluginRequestProcessor_cc,v 1.2 2014/04/21 20:46:57 kurt Exp $
+--- plugin/icedteanp/IcedTeaPluginRequestProcessor.cc.orig	Mon Sep 16 03:45:49 2013
++++ plugin/icedteanp/IcedTeaPluginRequestProcessor.cc	Mon Apr 21 09:12:28 2014
+@@ -47,11 +47,6 @@ exception statement from your version. */
+  * information, script execution and variable get/set
+  */
  
+-// Initialize static members used by the queue processing framework
+-pthread_mutex_t message_queue_mutex = PTHREAD_MUTEX_INITIALIZER;
+-pthread_mutex_t syn_write_mutex = PTHREAD_MUTEX_INITIALIZER;
+-std::vector< std::vector<std::string*>* >* message_queue = new std::vector< std::vector<std::string*>* >();
+-
  /**
-@@ -64,10 +65,16 @@ PluginRequestProcessor::PluginRequestProcessor()
+  * PluginRequestProcessor constructor.
+  *
+@@ -60,14 +55,13 @@ std::vector< std::vector<std::string*>* >* message_que
+ 
+ PluginRequestProcessor::PluginRequestProcessor()
+ {
+-    this->pendingRequests = new std::map<pthread_t, uintmax_t>();
++    this->message_queue = new std::vector< std::vector<std::string*>* >();
  
      internal_req_ref_counter = 0;
  
-+#if 0
-+// These global mutexes and condition variables are staticly initialized.
-+// If more then one instance of this class is created, the second one will
-+// reinit the global variables that the first is using. There is no need
-+// to reinit them as they were initialized with the static initializer.
-     pthread_mutex_init(&message_queue_mutex, NULL);
-     pthread_mutex_init(&syn_write_mutex, NULL);
- 
-     pthread_cond_init(&cond_message_available, NULL);
-+#endif 
+-    pthread_mutex_init(&message_queue_mutex, NULL);
+-    pthread_mutex_init(&syn_write_mutex, NULL);
+-
+-    pthread_cond_init(&cond_message_available, NULL);
++    pthread_mutex_init(&this->message_queue_mutex, NULL);
++    pthread_mutex_init(&this->syn_write_mutex, NULL);
++    pthread_cond_init(&this->cond_message_available, NULL);
  }
  
  /**
-@@ -83,10 +90,15 @@ PluginRequestProcessor::~PluginRequestProcessor()
-     if (pendingRequests)
-         delete pendingRequests;
+@@ -80,12 +74,11 @@ PluginRequestProcessor::~PluginRequestProcessor()
+ {
+     PLUGIN_DEBUG("PluginRequestProcessor::~PluginRequestProcessor\n");
  
-+#if 0
-+// If more then one instance of this class is created, the second one will
-+// destroy the global variables that the first instance is using. There is
-+// no need to destroy the global mutexes. They can be safely reused.
+-    if (pendingRequests)
+-        delete pendingRequests;
++    if (message_queue)
++        delete message_queue;
+ 
      pthread_mutex_destroy(&message_queue_mutex);
      pthread_mutex_destroy(&syn_write_mutex);
- 
+-
      pthread_cond_destroy(&cond_message_available);
-+#endif
  }
  
- /**
-@@ -142,11 +154,14 @@ PluginRequestProcessor::newMessageOnBus(const char* me
+@@ -142,10 +135,9 @@ PluginRequestProcessor::newMessageOnBus(const char* me
              // Update queue synchronously
              pthread_mutex_lock(&message_queue_mutex);
              message_queue->push_back(message_parts);
--            pthread_mutex_unlock(&message_queue_mutex);
--
-             // Broadcast that a message is now available
-+            // NOTE: to avoid lost wakeups pthread_cond_broadcast and
-+            // pthread_cond_signal must be called while holding
-+            // the associated mutex locked
-             pthread_cond_broadcast(&cond_message_available);
-+            pthread_mutex_unlock(&message_queue_mutex);
++            pthread_cond_signal(&cond_message_available);
+             pthread_mutex_unlock(&message_queue_mutex);
  
-+
+-            // Broadcast that a message is now available
+-            pthread_cond_broadcast(&cond_message_available);
+ 
              return true;
          }
- 
-@@ -635,9 +650,6 @@ PluginRequestProcessor::loadURL(std::vector<std::strin
+@@ -635,12 +627,15 @@ PluginRequestProcessor::loadURL(std::vector<std::strin
  static void
  queue_cleanup(void* data)
  {
@@ -69,13 +69,23 @@ $OpenBSD: patch-plugin_icedteanp_IcedTeaPluginRequestProcessor_cc,v 1.1 2012/03/
      PLUGIN_DEBUG("Queue processing stopped.\n");
  }
  
-@@ -648,14 +660,11 @@ queue_processor(void* data)
++static void
++queue_wait_cleanup(void* data)
++{
++    pthread_mutex_unlock((pthread_mutex_t*) data);
++}
++
+ void*
+ queue_processor(void* data)
+ {
+@@ -648,23 +643,20 @@ queue_processor(void* data)
      PluginRequestProcessor* processor = (PluginRequestProcessor*) data;
      std::vector<std::string*>* message_parts = NULL;
      std::string command;
 -    pthread_mutex_t wait_mutex = PTHREAD_MUTEX_INITIALIZER;
  
-     PLUGIN_DEBUG("Queue processor initialized. Queue = %p\n", message_queue);
+-    PLUGIN_DEBUG("Queue processor initialized. Queue = %p\n", message_queue);
++    PLUGIN_DEBUG("Queue processor initialized. Queue = %p\n", processor->message_queue);
  
 -    pthread_mutex_init(&wait_mutex, NULL);
 +    pthread_cleanup_push(queue_cleanup, NULL);
@@ -84,20 +94,88 @@ $OpenBSD: patch-plugin_icedteanp_IcedTeaPluginRequestProcessor_cc,v 1.1 2012/03/
 -
      while (true)
      {
-         pthread_mutex_lock(&message_queue_mutex);
-@@ -723,9 +732,12 @@ queue_processor(void* data)
+-        pthread_mutex_lock(&message_queue_mutex);
+-        if (message_queue->size() > 0)
++        pthread_mutex_lock(&processor->message_queue_mutex);
++        if (processor->message_queue->size() > 0)
+         {
+-            message_parts = message_queue->front();
+-            message_queue->erase(message_queue->begin());
++            message_parts = processor->message_queue->front();
++            processor->message_queue->erase(processor->message_queue->begin());
+         }
+-        pthread_mutex_unlock(&message_queue_mutex);
++        pthread_mutex_unlock(&processor->message_queue_mutex);
+ 
+         if (message_parts)
+         {
+@@ -679,39 +671,39 @@ queue_processor(void* data)
+             } else if (command == "SetMember")
+             {
+             	// write methods are synchronized
+-            	pthread_mutex_lock(&syn_write_mutex);
++            	pthread_mutex_lock(&processor->syn_write_mutex);
+                 processor->setMember(message_parts);
+-                pthread_mutex_unlock(&syn_write_mutex);
++                pthread_mutex_unlock(&processor->syn_write_mutex);
+             } else if (command == "Call")
+             {
+                 // write methods are synchronized
+-                pthread_mutex_lock(&syn_write_mutex);
++                pthread_mutex_lock(&processor->syn_write_mutex);
+                 processor->call(message_parts);
+-                pthread_mutex_unlock(&syn_write_mutex);
++                pthread_mutex_unlock(&processor->syn_write_mutex);
+             } else if (command == "Eval")
+             {
+                 // write methods are synchronized
+-                pthread_mutex_lock(&syn_write_mutex);
++                pthread_mutex_lock(&processor->syn_write_mutex);
+                 processor->eval(message_parts);
+-                pthread_mutex_unlock(&syn_write_mutex);
++                pthread_mutex_unlock(&processor->syn_write_mutex);
+             } else if (command == "GetSlot")
+             {
+                 // write methods are synchronized
+-                pthread_mutex_lock(&syn_write_mutex);
++                pthread_mutex_lock(&processor->syn_write_mutex);
+                 processor->sendMember(message_parts);
+-                pthread_mutex_unlock(&syn_write_mutex);
++                pthread_mutex_unlock(&processor->syn_write_mutex);
+             } else if (command == "SetSlot")
+             {
+                 // write methods are synchronized
+-                pthread_mutex_lock(&syn_write_mutex);
++                pthread_mutex_lock(&processor->syn_write_mutex);
+                 processor->setMember(message_parts);
+-                pthread_mutex_unlock(&syn_write_mutex);
++                pthread_mutex_unlock(&processor->syn_write_mutex);
+             } else if (command == "LoadURL") // For instance X url <url> <target>
+             {
+                 // write methods are synchronized
+-                pthread_mutex_lock(&syn_write_mutex);
++                pthread_mutex_lock(&processor->syn_write_mutex);
+                 processor->loadURL(message_parts);
+-                pthread_mutex_unlock(&syn_write_mutex);
++                pthread_mutex_unlock(&processor->syn_write_mutex);
+             } else
+             {
+                 // Nothing matched
+@@ -723,9 +715,14 @@ queue_processor(void* data)
  
          } else
          {
 -	    pthread_mutex_lock(&wait_mutex);
 -	    pthread_cond_wait(&cond_message_available, &wait_mutex);
 -	    pthread_mutex_unlock(&wait_mutex);
-+	    pthread_mutex_lock(&message_queue_mutex);
-+            if (message_queue->size() == 0)
++	    pthread_mutex_lock(&processor->message_queue_mutex);
++            if (processor->message_queue->size() == 0)
 +            {
-+	        pthread_cond_wait(&cond_message_available, &message_queue_mutex);
++	        pthread_cleanup_push(queue_wait_cleanup, &processor->message_queue_mutex);
++	        pthread_cond_wait(&processor->cond_message_available, &processor->message_queue_mutex);
++	        pthread_cleanup_pop(0);
 +            }
-+	    pthread_mutex_unlock(&message_queue_mutex);
++	    pthread_mutex_unlock(&processor->message_queue_mutex);
          }
  
          message_parts = NULL;

@@ -1,0 +1,48 @@
+$OpenBSD: patch-plugin_icedteanp_IcedTeaPluginRequestProcessor_h,v 1.1 2014/04/21 20:46:57 kurt Exp $
+--- plugin/icedteanp/IcedTeaPluginRequestProcessor.h.orig	Mon Apr 21 09:08:24 2014
++++ plugin/icedteanp/IcedTeaPluginRequestProcessor.h	Mon Apr 21 09:08:31 2014
+@@ -69,15 +69,6 @@ void _loadURL(void* data);
+ 
+ void* queue_processor(void* data);
+ 
+-/* Mutex to ensure that the request queue is accessed synchronously */
+-extern pthread_mutex_t message_queue_mutex;
+-
+-/* Mutex to ensure synchronized writes */
+-extern pthread_mutex_t syn_write_mutex;
+-
+-/* Queue for holding messages that get processed in a separate thread */
+-extern std::vector< std::vector<std::string*>* >* message_queue;
+-
+ /**
+  * Processes requests made TO the plugin (by java or anyone else)
+  */
+@@ -85,9 +76,6 @@ class PluginRequestProcessor : public BusSubscriber
+ {
+     private:
+ 
+-    	/* Requests that are still pending */
+-    	std::map<pthread_t, uintmax_t>* pendingRequests;
+-
+     	/* Dispatch request processing to a new thread for asynch. processing */
+     	void dispatch(void* func_ptr (void*), std::vector<std::string>* message, std::string* src);
+ 
+@@ -124,6 +112,18 @@ class PluginRequestProcessor : public BusSubscriber
+ 
+         /* Loads a URL into the specified target */
+         void loadURL(std::vector<std::string*>* message_parts);
++
++        /* Mutex to ensure that the request queue is accessed synchronously */
++        pthread_mutex_t message_queue_mutex;
++
++        /* Condition on which the queue processor waits */
++        pthread_cond_t cond_message_available;
++
++        /* Queue for holding messages that get processed in a separate thread */
++        std::vector< std::vector<std::string*>* >* message_queue;
++
++        /* Mutex to ensure synchronized writes */
++        pthread_mutex_t syn_write_mutex;
+ };
+ 
+ #endif // __ICEDTEAPLUGINREQUESTPROCESSOR_H__
