@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2013/03/11 11:41:28 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2014/04/21 19:17:50 jca Exp $
 
 COMMENT=	Python interface to the OpenSSL library
 
 MODPY_EGG_VERSION=	0.13
+REVISION=	0
 DISTNAME=	pyOpenSSL-${MODPY_EGG_VERSION}
 PKGNAME=	py-openssl-${MODPY_EGG_VERSION}
 CATEGORIES=	security devel
@@ -33,7 +34,7 @@ post-install:
 TESTDIR=${WRKSRC}/regress
 
 do-test:
-	mkdir ${TESTDIR}
+	mkdir -p ${TESTDIR}
 	cd ${TESTDIR} && ${MODPY_BIN} ${WRKSRC}/OpenSSL/test/test_crypto.py
 	cd ${TESTDIR} && ${MODPY_BIN} ${WRKSRC}/OpenSSL/test/test_rand.py
 	cd ${TESTDIR} && ${MODPY_BIN} ${WRKSRC}/OpenSSL/test/test_ssl.py

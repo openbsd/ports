@@ -1,0 +1,34 @@
+$OpenBSD: patch-OpenSSL_test_test_rand_py,v 1.1 2014/04/21 19:17:50 jca Exp $
+--- OpenSSL/test/test_rand.py.orig	Mon Apr 21 20:27:18 2014
++++ OpenSSL/test/test_rand.py	Mon Apr 21 20:27:28 2014
+@@ -95,30 +95,6 @@ class RandTests(TestCase):
+         self.assertTrue(rand.status() in (1, 2))
+ 
+ 
+-    def test_egd_wrong_args(self):
+-        """
+-        L{OpenSSL.rand.egd} raises L{TypeError} when called with the wrong
+-        number of arguments or with arguments not of type C{str} and C{int}.
+-        """
+-        self.assertRaises(TypeError, rand.egd)
+-        self.assertRaises(TypeError, rand.egd, None)
+-        self.assertRaises(TypeError, rand.egd, "foo", None)
+-        self.assertRaises(TypeError, rand.egd, None, 3)
+-        self.assertRaises(TypeError, rand.egd, "foo", 3, None)
+-
+-
+-    def test_egd_missing(self):
+-        """
+-        L{OpenSSL.rand.egd} returns C{0} or C{-1} if the EGD socket passed
+-        to it does not exist.
+-        """
+-        result = rand.egd(self.mktemp())
+-        expected = (-1, 0)
+-        self.assertTrue(
+-            result in expected,
+-            "%r not in %r" % (result, expected))
+-
+-
+     def test_cleanup_wrong_args(self):
+         """
+         L{OpenSSL.rand.cleanup} raises L{TypeError} when called with any
