@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.172 2014/04/13 15:48:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.173 2014/04/21 13:33:51 ajacoutot Exp $
 
 # XXX add libphonenumber support when a cpp release is out
 
@@ -8,6 +8,7 @@ COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		3.12.1
+REVISION=		0
 
 CATEGORIES=		databases productivity
 
@@ -26,19 +27,18 @@ MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender asn1 atk-1.0 atk-bridge-2.0
-WANTLIB += atspi c cairo cairo-gobject com_err crypto curl db
-WANTLIB += dbus-1 expat ffi fontconfig freetype gck-1 gcr-base-3
-WANTLIB += gcrypt gdata gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 goa-1.0 gobject-2.0 gpg-error graphite2
-WANTLIB += gssapi gthread-2.0 gtk-3 gweather-3 harfbuzz heimbase
-WANTLIB += ical icalss icalvcal idn krb5 lber-2.4 ldap-2.4 m nspr4
-WANTLIB += nss3 nssutil3 oauth p11-kit pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread pthread-stubs
-WANTLIB += roken sasl2 secret-1 smime3 softokn3 soup-2.4 sqlite3
-WANTLIB += ssl ssl3 wind xcb xcb-render xcb-shm xml2 z
-WANTLIB += Xau Xdmcp gcr-3 icudata icui18n icuuc stdc++
+WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
+WANTLIB += atspi c cairo cairo-gobject crypto curl db dbus-1 expat
+WANTLIB += ffi fontconfig freetype gck-1 gcr-3 gcr-base-3 gcrypt
+WANTLIB += gdata gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += goa-1.0 gobject-2.0 gpg-error graphite2 gthread-2.0
+WANTLIB += gtk-3 gweather-3 harfbuzz ical icalss icalvcal icudata
+WANTLIB += icui18n icuuc idn lber-2.4 ldap-2.4 m nspr4 nss3 nssutil3
+WANTLIB += oauth p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
+WANTLIB += sasl2 secret-1 smime3 softokn3 soup-2.4 sqlite3 ssl
+WANTLIB += ssl3 stdc++ xcb xcb-render xcb-shm xml2 z
 
 MODULES=		devel/gettext \
 			devel/dconf \
@@ -59,14 +59,11 @@ LIB_DEPENDS= 		databases/db/v4 \
 MODPY_RUNDEP=		No
 MODGNOME_TOOLS += gobject-introspection vala
 
-MODGNOME_CPPFLAGS=	$$(krb5-config --cflags)
-
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ENV=		DB_CFLAGS="-I${LOCALBASE}/include/db4" \
 			DB_LIBS="-ldb" \
 			ac_cv_path_DB_LOAD=${LOCALBASE}/bin/db4_load
-CONFIGURE_ARGS=		--with-krb5 \
-			--with-openldap=${LOCALBASE}
+CONFIGURE_ARGS=		--with-openldap=${LOCALBASE}
 
 # needs signond, libsignon-glib -- Ubuntu/Meego
 CONFIGURE_ARGS +=	--disable-uoa
