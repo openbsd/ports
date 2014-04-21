@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2013/08/10 21:55:49 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2014/04/21 15:37:01 ajacoutot Exp $
 
 COMMENT =	HA and replication cluster management for PostgreSQL
 
 DISTNAME =	repmgr-1.2.0
 CATEGORIES =	databases
 HOMEPAGE =	http://www.repmgr.org/
+REVISION=	0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
@@ -18,8 +19,8 @@ BUILD_DEPENDS =	databases/postgresql,-server
 LIB_DEPENDS =	databases/postgresql
 RUN_DEPENDS =	net/rsync
 NO_TEST =	Yes
-WANTLIB +=	c com_err crypto m pq readline ssl termcap xml2 z
-WANTLIB +=	asn1 heimbase krb5 roken wind
+
+WANTLIB += c crypto m pq readline ssl termcap xml2 z
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/repmgr
