@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2013/12/12 14:53:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2014/04/21 20:49:30 ajacoutot Exp $
 
 COMMENT=		high quality print drivers for foomatic and CUPS
 
 V=			5.2.9
 DISTNAME=		gutenprint-${V}
-
-REVISION=		4
+REVISION=		5
 
 MAJOR_V=		${V:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=		MAJOR_V
@@ -23,9 +22,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += asn1 c crypto cups cupsimage gssapi ijs krb5 m ncurses
-WANTLIB += pthread readline ssl z avahi-client avahi-common dbus-1
-WANTLIB += com_err heimbase roken wind
+WANTLIB += avahi-client avahi-common c crypto cups cupsimage dbus-1
+WANTLIB += ijs m ncurses pthread readline ssl z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=gimp-print/}
 
