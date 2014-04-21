@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.48 2013/09/18 06:30:23 landry Exp $
+# $OpenBSD: Makefile,v 1.49 2014/04/21 18:40:13 sthen Exp $
 
-COMMENT-main=	anti-spam filter
-COMMENT-pgsql=	PostgreSQL driver for dspam
-COMMENT-mysql=	MySQL driver for dspam
+COMMENT-main =	anti-spam filter
+COMMENT-pgsql =	PostgreSQL driver for dspam
+COMMENT-mysql =	MySQL driver for dspam
 
-VERSION=	3.10.2
-DISTNAME=	dspam-3.10.2
+VERSION =	3.10.2
+DISTNAME =	dspam-3.10.2
+REVISION =	1
 PKGNAME-main =	${PKGNAME}
 .for p in pgsql mysql
 PKGNAME-$p =	dspam-$p-${VERSION}
@@ -13,32 +14,30 @@ PKGNAME-$p =	dspam-$p-${VERSION}
 FULLPKGNAME-$p = dspam-$p-${VERSION}
 FULLPKGPATH-$p = ${PKGPATH},-$p
 .endfor
-REVISION-mysql =	0
-REVISION-pgsql =	0
 
-SHARED_LIBS=	dspam	9.0
-CATEGORIES=	mail
+SHARED_LIBS =	dspam	9.0
+CATEGORIES =	mail
 SHARED_ONLY =	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dspam/}
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=dspam/}
 
-HOMEPAGE=	http://dspam.nuclearelephant.com/
+HOMEPAGE =	http://dspam.nuclearelephant.com/
 
-MAINTAINER=     Todd T. Fries <todd@OpenBSD.org>
+MAINTAINER =	Todd T. Fries <todd@OpenBSD.org>
 
 # AGPLv3/BSD/GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 
 MULTI_PACKAGES = -main -mysql -pgsql
-WANTLIB = m pthread
+WANTLIB = crypto m pthread
 WANTLIB-main += ${WANTLIB} c sqlite3
 
-USE_LIBTOOL=		Yes
+USE_LIBTOOL =		Yes
 LIBTOOL_FLAGS =	--tag=disable-static
 USE_GROFF =		Yes
-CONFIGURE_STYLE=	gnu
-SEPARATE_BUILD=		Yes
-CONFIGURE_ARGS+=	--with-dspam-home=/var/dspam \
+CONFIGURE_STYLE =	gnu
+SEPARATE_BUILD =		Yes
+CONFIGURE_ARGS +=	--with-dspam-home=/var/dspam \
 			--with-dspam-home-owner=_dspam \
 			--with-dspam-home-group=_dspam \
 			--with-dspam-home-mode=0755 \
@@ -55,48 +54,47 @@ CONFIGURE_ARGS+=	--with-dspam-home=/var/dspam \
 			--enable-daemon \
 			--enable-long-usernames
 
-EXAMPLESDIR=	${PREFIX}/share/examples/dspam
+EXAMPLESDIR =	${PREFIX}/share/examples/dspam
 
-FLAVORS=	clamav ldap domainscale largescale
+FLAVORS =	clamav ldap domainscale largescale
 FLAVOR?=
 
 . if ${FLAVOR:Mlargescale} && ${FLAVOR:Mdomainscale}
-ERRORS+= "Fatal: choose either domainscale or largescale, not both"
+ERRORS += "Fatal: choose either domainscale or largescale, not both"
 . endif
 
-LIB_DEPENDS-mysql=	${PKGNAME-main}:mail/dspam,-main \
+LIB_DEPENDS-mysql=	${LIB_DEPENDS} ${PKGNAME-main}:mail/dspam,-main \
 			databases/mysql
-WANTLIB-mysql=		${WANTLIB} dspam z ssl crypto lib/mysql/mysqlclient
+WANTLIB-mysql=		${WANTLIB} dspam z ssl lib/mysql/mysqlclient
 
-LIB_DEPENDS-pgsql=	${PKGNAME-main}:mail/dspam,-main \
+LIB_DEPENDS-pgsql=	${LIB_DEPENDS} ${PKGNAME-main}:mail/dspam,-main \
 			databases/postgresql
-WANTLIB-pgsql=		${WANTLIB} c com_err crypto dspam pq ssl
+WANTLIB-pgsql=		${WANTLIB} c dspam pq ssl
 
 .if ${FLAVOR:Mclamav}
-CONFIGURE_ARGS+=	--enable-clamav
-LIB_DEPENDS-main+=		security/clamav
-WANTLIB-main +=		clamav>=1
+CONFIGURE_ARGS +=	--enable-clamav
+LIB_DEPENDS-main+=	security/clamav
+WANTLIB-main+=		clamav>=1
 .endif
 
 .if ${FLAVOR:Mldap}
-CONFIGURE_ARGS+=	--enable-ldap
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ARGS +=	--enable-external-lookup
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-LIB_DEPENDS-main+=		databases/openldap
-WANTLIB-main+=		crypto ssl sasl2 asn1 com_err gssapi krb5 \
-			ldap-2.4 lber-2.4 heimbase roken wind
+LIB_DEPENDS +=		databases/openldap
+WANTLIB +=		ssl sasl2 ldap-2.4 lber-2.4
 .endif
 
 .if ${FLAVOR:Mdomainscale}
-CONFIGURE_ARGS+=	--enable-domain-scale
+CONFIGURE_ARGS +=	--enable-domain-scale
 .else
-CONFIGURE_ARGS+=	--disable-domain-scale
+CONFIGURE_ARGS +=	--disable-domain-scale
 .endif
 
 .if ${FLAVOR:Mlargescale}
-CONFIGURE_ARGS+=	--enable-large-scale
+CONFIGURE_ARGS +=	--enable-large-scale
 .else
-CONFIGURE_ARGS+=	--disable-large-scale
+CONFIGURE_ARGS +=	--disable-large-scale
 .endif
 
 post-install:
