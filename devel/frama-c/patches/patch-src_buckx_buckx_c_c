@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_buckx_buckx_c_c,v 1.1.1.1 2014/04/21 16:02:26 jca Exp $
+--- src/buckx/buckx_c.c.orig	Fri Apr 18 10:56:21 2014
++++ src/buckx/buckx_c.c	Fri Apr 18 10:57:30 2014
+@@ -153,8 +153,8 @@ value single_precision_of_string(value str)
+ value terminate_process(value v) 
+ {
+   long pid = Long_val(v);
+-#if _POSIX_C_SOURCE >= 1 || _XOPEN_SOURCE || _POSIX_SOURCE || __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__ 
+-  kill(pid,9);
++#if 1 || _POSIX_C_SOURCE >= 1 || _XOPEN_SOURCE || _POSIX_SOURCE || __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__ 
++  kill(pid,15);
+ #else
+  #ifdef _WIN32
+   TerminateProcess((HANDLE)pid,9);
