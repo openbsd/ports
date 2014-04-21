@@ -1,0 +1,22 @@
+$OpenBSD: patch-shell_Makefile_in,v 1.1 2014/04/21 15:07:52 ajacoutot Exp $
+
+XXX disable user-accounts panel (requires kerberos)
+
+--- shell/Makefile.in.orig	Mon Apr 21 16:39:52 2014
++++ shell/Makefile.in	Mon Apr 21 16:40:06 2014
+@@ -141,7 +141,6 @@ gnome_control_center_DEPENDENCIES = libshell.la $(am__
+ 	$(top_builddir)/panels/sharing/libsharing.la \
+ 	$(top_builddir)/panels/sound/libsound.la \
+ 	$(top_builddir)/panels/universal-access/libuniversal-access.la \
+-	$(top_builddir)/panels/user-accounts/libuser-accounts.la \
+ 	$(am__append_1) $(am__append_2) $(am__append_3) \
+ 	$(am__append_4)
+ gnome_control_center_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+@@ -536,7 +535,6 @@ gnome_control_center_LDADD = libshell.la $(SHELL_LIBS)
+ 	$(top_builddir)/panels/sharing/libsharing.la \
+ 	$(top_builddir)/panels/sound/libsound.la \
+ 	$(top_builddir)/panels/universal-access/libuniversal-access.la \
+-	$(top_builddir)/panels/user-accounts/libuser-accounts.la \
+ 	$(am__append_1) $(am__append_2) $(am__append_3) \
+ 	$(am__append_4)
+ AM_CPPFLAGS = -DGNOMELOCALEDIR="\"$(datadir)/locale\""

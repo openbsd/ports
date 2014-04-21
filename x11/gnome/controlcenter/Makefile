@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.132 2014/04/16 14:33:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.133 2014/04/21 15:07:52 ajacoutot Exp $
 
-# XXX remove pre-configure when updating to 3.12.0
+# XXX remove hostnames-test.txt hack in pre-configure when updating to 3.12.0
 # https://git.gnome.org/browse/gnome-control-center/commit/?id=4736b03ed9e2ae9214117454f70811dbacd78739
 
 # XXX change proxy settings without network-manager?
@@ -11,6 +11,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.12.1
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -19,24 +20,24 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += EGL FLAC GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor
 WANTLIB += Xdamage Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xtst
-WANTLIB += accountsservice asn1 atk-1.0 atk-bridge-2.0 atspi avahi-common
+WANTLIB += accountsservice atk-1.0 atk-bridge-2.0 atspi avahi-common
 WANTLIB += c cairo cairo-gobject canberra canberra-gtk3 colord
-WANTLIB += colord-gtk colordprivate com_err crack crypto cups
-WANTLIB += dbus-1 dbus-glib-1 enchant execinfo expat ffi fontconfig
-WANTLIB += freetype gcrypt gdbm gdk-3 gdk_pixbuf-2.0 geoclue gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gnome-desktop-3 gnome-menu-3 goa-1.0
-WANTLIB += goa-backend-1.0 gobject-2.0 gpg-error graphite2 gstapp-1.0
+WANTLIB += colord-gtk colordprivate cups dbus-1 dbus-glib-1 enchant
+WANTLIB += execinfo expat ffi fontconfig freetype gcrypt gdbm
+WANTLIB += gdk-3 gdk_pixbuf-2.0 geoclue gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gnome-desktop-3 gnome-menu-3 goa-1.0 goa-backend-1.0
+WANTLIB += gobject-2.0 gpg-error graphite2 grilo-0.2 gstapp-1.0
 WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
-WANTLIB += gtop-2.0 harfbuzz harfbuzz-icu heimbase ibus-1.0 icudata
-WANTLIB += icui18n icuuc javascriptcoregtk-3.0 jpeg json-c json-glib-1.0
-WANTLIB += krb5 kvm lcms2 ltdl m ogg orc-0.4 pango-1.0 pangocairo-1.0
+WANTLIB += gtop-2.0 harfbuzz harfbuzz-icu ibus-1.0 icudata icui18n
+WANTLIB += icuuc javascriptcoregtk-3.0 jpeg json-c json-glib-1.0
+WANTLIB += kvm lcms2 ltdl m ogg orc-0.4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png polkit-gobject-1 pthread
-WANTLIB += pthread-stubs pulse pulse-mainloop-glib pwquality rest-0.7
-WANTLIB += roken secret-1 smbclient sndfile soup-2.4 soup-gnome-2.4
-WANTLIB += sqlite3 stdc++ telepathy-glib upower-glib vorbis vorbisenc
-WANTLIB += vorbisfile webkitgtk-3.0 webp wind xcb xcb-render xcb-shm
-WANTLIB += xml2 xslt z grilo-0.2
+WANTLIB += pthread-stubs pulse pulse-mainloop-glib rest-0.7 secret-1
+WANTLIB += smbclient sndfile soup-2.4 soup-gnome-2.4 sqlite3 stdc++
+WANTLIB += telepathy-glib upower-glib vorbis vorbisenc vorbisfile
+WANTLIB += webkitgtk-3.0 webp xcb xcb-render xcb-shm xml2 xslt
+WANTLIB += z
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -47,7 +48,6 @@ LIB_DEPENDS=		audio/pulseaudio \
 			graphics/colord-gtk \
 			net/samba \
 			print/cups,-libs \
-			security/libpwquality \
 			sysutils/accountsservice \
 			sysutils/upower \
 			x11/gnome/desktop \
@@ -92,6 +92,9 @@ MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gnome-control-center
 
 pre-configure:
+# disable user account panel (requires kerberos)
+# patch-panels_Makefile_in, patch-shell_Makefile_in, patch-shell_cc-panel-loader_c
+	ln -sf /usr/bin/true ${WRKDIR}/bin/krb5-config
 	echo >${WRKSRC}/shell/hostnames-test.txt
 
 .include <bsd.port.mk>

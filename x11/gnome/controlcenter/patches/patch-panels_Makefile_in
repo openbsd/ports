@@ -1,0 +1,15 @@
+$OpenBSD: patch-panels_Makefile_in,v 1.8 2014/04/21 15:07:52 ajacoutot Exp $
+
+XXX disable user-accounts panel (requires kerberos)
+
+--- panels/Makefile.in.orig	Mon Apr 21 16:33:09 2014
++++ panels/Makefile.in	Mon Apr 21 16:33:24 2014
+@@ -410,7 +410,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ SUBDIRS = common background power color display mouse notifications \
+ 	online-accounts region info sound keyboard universal-access \
+-	user-accounts datetime search privacy sharing $(am__append_1) \
++	datetime search privacy sharing $(am__append_1) \
+ 	$(am__append_2) $(am__append_3) $(am__append_4)
+ all: all-recursive
+ 

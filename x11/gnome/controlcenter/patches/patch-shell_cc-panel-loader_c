@@ -1,0 +1,22 @@
+$OpenBSD: patch-shell_cc-panel-loader_c,v 1.4 2014/04/21 15:07:52 ajacoutot Exp $
+
+XXX disable user-accounts panel (requires kerberos)
+
+--- shell/cc-panel-loader.c.orig	Mon Apr 21 16:45:33 2014
++++ shell/cc-panel-loader.c	Mon Apr 21 16:45:51 2014
+@@ -54,7 +54,6 @@ extern GType cc_search_panel_get_type (void);
+ extern GType cc_sharing_panel_get_type (void);
+ extern GType cc_sound_panel_get_type (void);
+ extern GType cc_ua_panel_get_type (void);
+-extern GType cc_user_panel_get_type (void);
+ #ifdef BUILD_WACOM
+ extern GType cc_wacom_panel_get_type (void);
+ #endif /* BUILD_WACOM */
+@@ -98,7 +97,6 @@ static struct {
+   PANEL_TYPE("sharing",          cc_sharing_panel_get_type      ),
+   PANEL_TYPE("sound",            cc_sound_panel_get_type        ),
+   PANEL_TYPE("universal-access", cc_ua_panel_get_type           ),
+-  PANEL_TYPE("user-accounts",    cc_user_panel_get_type         ),
+ #ifdef BUILD_WACOM
+   PANEL_TYPE("wacom",            cc_wacom_panel_get_type        ),
+ #endif
