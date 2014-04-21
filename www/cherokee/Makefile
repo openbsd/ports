@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2013/08/12 04:11:21 robert Exp $
+# $OpenBSD: Makefile,v 1.48 2014/04/21 13:03:40 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,7 +20,7 @@ PKGNAME-streaming = cherokee-streaming-${VERSION}
 
 REVISION-main =		3
 REVISION-geoip =	2
-REVISION-ldap =		4
+REVISION-ldap =		5
 REVISION-mysql =	4
 REVISION-streaming =	3
 
@@ -61,8 +61,7 @@ WANTLIB-geoip =		crypto GeoIP>=6
 RUN_DEPENDS-geoip =	${BASE_PKGPATH}
 
 LIB_DEPENDS-ldap =	databases/openldap
-WANTLIB-ldap =		asn1 com_err crypto gssapi krb5 lber-2.4 ldap-2.4 sasl2 ssl \
-			heimbase roken wind
+WANTLIB-ldap =		crypto lber-2.4 ldap-2.4 sasl2 ssl
 RUN_DEPENDS-ldap =	${BASE_PKGPATH}
 
 LIB_DEPENDS-mysql =	databases/mysql
