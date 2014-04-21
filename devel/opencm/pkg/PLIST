@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.9 2007/07/14 22:17:22 kili Exp $
-bin/cm
+@comment $OpenBSD: PLIST,v 1.10 2014/04/21 22:22:51 ajacoutot Exp $
+@bin bin/cm
 @info info/opencm.info
 share/opencm/
 share/opencm/help/
