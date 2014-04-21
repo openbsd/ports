@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2014/04/19 10:26:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2014/04/21 22:12:07 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,6 @@ COMMENT-server=		network backup solution (server)
 COMMENT-bat=		network backup solution (gui-client)
 
 V=			7.0.2
-REVISION-server=	0
 DISTNAME=		bacula-$V
 FULLPKGNAME-main=	bacula-client-$V
 FULLPKGPATH-main=	${PKGPATH},-main
@@ -15,6 +14,8 @@ PKGNAME-server=		bacula-server-$V
 FULLPKGNAME-bat=	bacula-bat-$V
 FULLPKGPATH-bat=	${PKGPATH},-bat
 CATEGORIES=		sysutils
+
+REVISION-server=	1
 
 SHARED_LIBS +=  bac                  5.0
 SHARED_LIBS +=  baccfg               5.0
@@ -113,7 +114,7 @@ CONFIGURE_ARGS+=	--with-dir-user=_bacula \
 			--with-sd-group=_bacula
 
 .  if ${FLAVOR:Mpgsql}
-WANTLIB-server += pq>=2 asn1 com_err heimbase krb5 roken wind
+WANTLIB-server += pq>=2
 CONFIGURE_ARGS+=	--with-postgresql
 LIB_DEPENDS-server+=	databases/postgresql
 BACKEND +=		postgresql
