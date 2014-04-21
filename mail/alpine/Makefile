@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2014/04/21 12:26:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2014/04/21 13:46:53 sthen Exp $
 
 COMMENT-main=		UW e-mail client
 COMMENT-c-client=	UW c-client mail access routines
@@ -29,6 +29,7 @@ REVISION-main=		0
 REVISION-mailutil=	0
 REVISION-imap=		1
 REVISION-pilot=		11
+REVISION-c-client=	0
 
 EPOCH-c-client=		0
 EPOCH-imap=		0
