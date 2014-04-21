@@ -1,4 +1,4 @@
-$OpenBSD: patch-aclocal_m4,v 1.8 2013/06/17 19:30:33 ajacoutot Exp $
+$OpenBSD: patch-aclocal_m4,v 1.9 2014/04/21 14:37:03 ajacoutot Exp $
 --- aclocal.m4.orig.port	Wed Jun  5 16:29:58 2013
 +++ aclocal.m4	Sat Jun 15 15:28:25 2013
 @@ -194,7 +194,7 @@ dnl the path is interpreted relative to the top build-
@@ -41,15 +41,6 @@ $OpenBSD: patch-aclocal_m4,v 1.8 2013/06/17 19:30:33 ajacoutot Exp $
    dnl Some systems require that we link $2 to $1 when building
  ])
  
-@@ -2248,7 +2235,7 @@ AC_DEFUN([PHP_SETUP_KERBEROS],[
- 
-   dnl First try to find krb5-config
-   if test -z "$KRB5_CONFIG"; then
--    AC_PATH_PROG(KRB5_CONFIG, krb5-config, no, [$PATH:/usr/kerberos/bin:/usr/local/bin])
-+    AC_PATH_PROG(KRB5_CONFIG, krb5-config, no, [$PATH:/usr/bin:/usr/local/bin])
-   fi
- 
-   dnl If krb5-config is found try using it
 @@ -2331,7 +2318,7 @@ AC_DEFUN([PHP_SETUP_OPENSSL],[
        AC_MSG_ERROR([OpenSSL version 0.9.6 or greater required.])
      fi
