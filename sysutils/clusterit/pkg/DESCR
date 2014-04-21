@@ -2,7 +2,7 @@ Clusterit is a collection of clustering tools loosely based on IBM's
 PSSP clustering tools. Unlike PSSP or GLUnix, Clusterit allows fast
 parallel execution of remote commands as it is written in
 architecture-independent C. Administrators can choose from a variety
-of authentication methods, including SSH and Kerberos.
+of authentication methods, including SSH.
 
 With Clusterit, administrators can run parallelized and load
 balanced software builds (using jsd/jsh) or manage a heterogeneous
