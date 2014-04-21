@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2014/04/21 13:07:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2014/04/21 13:09:47 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 SHARED_LIBS +=  freeradius-radius    4.1      # .0.0
@@ -15,7 +15,7 @@ DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
 
 PKGNAME-main=	freeradius-$V
-REVISION-main=	4
+REVISION-main=	5
 PKGNAME-iodbc=	freeradius-iodbc-$V
 REVISION-iodbc=	4
 PKGNAME-mysql=	freeradius-mysql-$V

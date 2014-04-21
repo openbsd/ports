@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.22 2014/04/21 13:07:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.23 2014/04/21 13:09:47 ajacoutot Exp $
 @conflict radiusd-cistron-*
 @conflict radiusd-lucent-*
 @pkgpath net/freeradius
@@ -368,8 +368,7 @@ share/examples/freeradius/modules/inner-eap
 @sample ${SYSCONFDIR}/raddb/modules/inner-eap
 share/examples/freeradius/modules/ippool
 @sample ${SYSCONFDIR}/raddb/modules/ippool
-share/examples/freeradius/modules/krb5
-@sample ${SYSCONFDIR}/raddb/modules/krb5
+@comment share/examples/freeradius/modules/krb5
 share/examples/freeradius/modules/linelog
 @sample ${SYSCONFDIR}/raddb/modules/linelog
 share/examples/freeradius/modules/logintime
