@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.71 2014/02/08 14:58:21 espie Exp $
+# $OpenBSD: Makefile,v 1.72 2014/04/21 22:34:32 sthen Exp $
 
-COMMENT-main = 		K Desktop Environment, developer extensions
-COMMENT-svn = 		K Desktop Environment, svn extensions
+COMMENT-main =		K Desktop Environment, developer extensions
+COMMENT-svn =		K Desktop Environment, svn extensions
 CATEGORIES =		x11 x11/kde devel
 VERSION =		3.5.10
+REVISION =		20
 DISTNAME =		kdesdk-${VERSION}
 
 PKGNAME-main =		${DISTNAME}
 PKGSPEC-main =		kdesdk->=3,<4
-REVISION-main =		19
 PKGNAME-svn =		kdesvn-${VERSION}
-REVISION-svn =		19
 
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	cvsservice           1.0      # .0.1
@@ -33,35 +32,34 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			x11/kde/pim3
 
 RUN_DEPENDS-svn =	x11/gtk+2,-guic
-LIB_DEPENDS-svn = 	${LIB_DEPENDS} \
+LIB_DEPENDS-svn =	${LIB_DEPENDS} \
 			devel/subversion
 
 SEPARATE_BUILD =	flavored
 
-WANTLIB =  c m png pthread pthread-stubs stdc++ util z
-WANTLIB += ICE SM X11 Xext Xrender xcb
+WANTLIB =
 WANTLIB += ${KDE}/DCOP ${KDE}/kdecore>=6 ${KDE}/kdefx ${KDE}/kdesu
 WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kwalletclient
-WANTLIB += art_lgpl_2 fam idn
+WANTLIB += ICE SM X11 Xext Xfixes Xrender Xt
+WANTLIB += art_lgpl_2 c expat fam fontconfig freetype
+WANTLIB += idn m png pthread pthread-stubs
+WANTLIB += stdc++ util xcb z
 
-WANTLIB-main =  ${WANTLIB}
-WANTLIB-main += GL GLU Xcursor Xdamage Xfixes Xft Xi Xinerama Xmu Xrandr Xt
-WANTLIB-main += Xxf86vm drm expat fontconfig freetype
+WANTLIB-main = ${WANTLIB}
 WANTLIB-main += ${KDE}/kabc ${KDE}/kdeprint ${KDE}/khtml ${KDE}/kjs
 WANTLIB-main += ${KDE}/kparts ${KDE}/kresources ${KDE}/kspell
 WANTLIB-main += ${KDE}/ktexteditor ${KDE}/ktnef ${KDE}/ktnef
 WANTLIB-main += ${KDE}/kunittest ${KDE}/kutils lcms ${KDE}/kcal
 WANTLIB-main += ${KDE}/kmime ${KDE}/vcard
-WANTLIB-main += jpeg mng pcre pcreposix qui-mt xml2 xslt
+WANTLIB-main += GL GLU X11-xcb Xau Xcursor Xdamage Xdmcp Xft Xi
+WANTLIB-main += Xinerama Xmu Xrandr Xxf86vm drm glapi jpeg mng pcre
+WANTLIB-main += pcreposix qui-mt xcb-dri2 xcb-glx xml2 xslt
 
-WANTLIB-svn =  ${WANTLIB}
-WANTLIB-svn += crypto expat sqlite3 
-WANTLIB-svn += asn1 com_err heimbase roken wind gssapi krb5
-WANTLIB-svn += Xfixes Xt fontconfig freetype
-WANTLIB-svn += apr-1 aprutil-1 db magic sasl2 serf-1
-WANTLIB-svn += svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 svn_fs_base-1
-WANTLIB-svn += svn_fs_fs-1 svn_fs_util-1 svn_ra-1 svn_ra_local-1
-WANTLIB-svn += svn_ra_serf-1 svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1
+WANTLIB-svn = ${WANTLIB}
+WANTLIB-svn += apr-1 aprutil-1 db magic sasl2 serf-1 sqlite3 svn_client-1
+WANTLIB-svn += svn_delta-1 svn_diff-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1
+WANTLIB-svn += svn_fs_util-1 svn_ra-1 svn_ra_local-1 svn_ra_serf-1
+WANTLIB-svn += svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1
 
 post-patch:
 	find "${WRKSRC}"/scripts -type f | while read F; do \
