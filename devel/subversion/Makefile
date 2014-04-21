@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2014/04/21 13:45:09 stsp Exp $
+# $OpenBSD: Makefile,v 1.133 2014/04/21 15:47:03 ajacoutot Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -20,6 +20,10 @@ FULLPKGNAME-ap2=	ap2-subversion-${VERSION}
 FULLPKGPATH-ap2=	devel/subversion,-ap2
 FULLPKGNAME-gnome-keyring= gnome-keyring-subversion-${VERSION}
 FULLPKGPATH-gnome-keyring= devel/subversion,-gnome-keyring
+
+REVISION-main=		0
+REVISION-python=	0
+REVISION-ruby=		0
 
 SO_VERSION=	1.4
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
@@ -69,8 +73,8 @@ LIB_DEPENDS-main = ${LIB_DEPENDS} \
 		security/cyrus-sasl2 \
 		devel/libmagic
 
-WANTLIB-main=	${WANTLIB} apr-1 aprutil-1 asn1 c com_err crypto db gssapi \
-		heimbase krb5 roken sasl2>=2 serf-1>=1.0 ssl sqlite3 wind
+WANTLIB-main=	${WANTLIB} apr-1 aprutil-1 db sasl2>=2 serf-1>=1.0 ssl sqlite3 \
+		c crypto
 RUN_DEPENDS-main= ${MODGETTEXT_RUN_DEPENDS}
 
 TOOLS_HOOK_SCRIPTS=	commit-access-control.cfg.example \
@@ -102,9 +106,9 @@ LIB_DEPENDS-perl=	${MODGETTEXT_LIB_DEPENDS} ${MAINSPEC}
 WANTLIB-perl +=	${_lib}>=${SO_VERSION}
 .endfor
 
-WANTLIB-python=		${WANTLIB} apr-1 aprutil-1 asn1 com_err crypto \
-			heimbase gssapi db krb5 m roken sasl2 serf-1>=1.0 \
-			sqlite3 util wind ${MODPY_WANTLIB}
+WANTLIB-python=		${WANTLIB} apr-1 aprutil-1 \
+			db m sasl2 serf-1>=1.0 \
+			sqlite3 util ${MODPY_WANTLIB}
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
 LIB_DEPENDS-python=	${MODPY_LIB_DEPENDS} ${MODGETTEXT_LIB_DEPENDS} \
 			${MAINSPEC}
@@ -113,9 +117,9 @@ WANTLIB-python +=	${_lib}>=${SO_VERSION}
 .endfor
 
 MODRUBY_REV=		1.8
-WANTLIB-ruby=		${WANTLIB} apr-1 aprutil-1 asn1 com_err crypto gssapi \
-			heimbase db krb5 m roken sasl2 serf-1>=1.0 sqlite3 \
-			wind ${MODRUBY_WANTLIB}
+WANTLIB-ruby=		${WANTLIB} apr-1 aprutil-1 \
+			db m sasl2 serf-1>=1.0 sqlite3 \
+			${MODRUBY_WANTLIB}
 RUN_DEPENDS-ruby=	${MODRUBY_RUN_DEPENDS}
 LIB_DEPENDS-ruby=	${MODRUBY_LIB_DEPENDS} \
 			${MODGETTEXT_LIB_DEPENDS} ${MAINSPEC}
