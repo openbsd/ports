@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.190 2014/04/12 17:09:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.191 2014/04/21 11:54:13 ajacoutot Exp $
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-guic=		gtk+ icon theme caching utility
@@ -9,7 +9,7 @@ GNOME_PROJECT=		gtk+
 PKGNAME-main=		gtk+2-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
 
-REVISION-main=		0
+REVISION-main=		1
 REVISION-guic=		1
 
 CATEGORIES=		x11 devel
@@ -54,14 +54,13 @@ LIB_DEPENDS-main= 	${LIB_DEPENDS} \
 # (+see gtkrc in post-install)
 RUN_DEPENDS-main +=	x11/gnome/icon-theme-symbolic #pulls in gnome-icon-theme+librsvg
 
-WANTLIB-main += ${WANTLIB} c pthread glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB-main += gio-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0 atk-1.0
-WANTLIB-main += X11 Xcomposite Xcursor Xdamage Xext Xfixes graphite2
-WANTLIB-main += Xi Xinerama Xrandr Xrender cairo expat dbus-1
-WANTLIB-main += fontconfig freetype pixman-1 pthread-stubs xcb
-WANTLIB-main += xcb-render xcb-shm asn1 crypto cups gssapi krb5 ssl
-WANTLIB-main += harfbuzz avahi-client avahi-common gthread-2.0
-WANTLIB-main += com_err heimbase roken wind
+WANTLIB-main += ${WANTLIB}
+WANTLIB-main += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB-main += Xrandr Xrender atk-1.0 avahi-client avahi-common c
+WANTLIB-main += cairo crypto cups dbus-1 expat fontconfig freetype
+WANTLIB-main += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB-main += gthread-2.0 harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB-main += pixman-1 pthread pthread-stubs ssl xcb xcb-render xcb-shm
 
 WANTLIB-guic += ${WANTLIB}
 WANTLIB-guic += c gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 pthread
