@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.18 2013/10/30 15:06:47 ajacoutot Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.19 2014/04/21 12:12:05 ajacoutot Exp $
 lib/sasl2/
 lib/sasl2/libanonymous.la
 lib/sasl2/libanonymous.so
@@ -6,10 +6,6 @@ lib/sasl2/libcrammd5.la
 lib/sasl2/libcrammd5.so
 lib/sasl2/libdigestmd5.la
 lib/sasl2/libdigestmd5.so
-lib/sasl2/libgs2.la
-lib/sasl2/libgs2.so
-lib/sasl2/libgssapiv2.la
-lib/sasl2/libgssapiv2.so
 lib/sasl2/liblogin.la
 lib/sasl2/liblogin.so
 lib/sasl2/libntlm.la
