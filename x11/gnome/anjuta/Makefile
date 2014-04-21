@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2014/04/02 15:37:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.115 2014/04/21 16:08:36 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		3.12.0
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -18,24 +18,23 @@ HOMEPAGE=		http://www.anjuta.org/
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += EGL GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xt apr-1 aprutil-1 asn1
-WANTLIB += atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
-WANTLIB += com_err crypto db dbus-1 dbus-glib-1 devhelp-3 enchant
-WANTLIB += expat ffi fontconfig freetype gcrypt gda-5.0 gdk-3
-WANTLIB += gdk_pixbuf-2.0 gdl-3 geoclue gio-2.0 gladeui-2 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 gssapi
-WANTLIB += gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
-WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
-WANTLIB += gtksourceview-3.0 harfbuzz harfbuzz-icu heimbase icudata
-WANTLIB += icui18n icuuc javascriptcoregtk-3.0 jpeg krb5 m magic
-WANTLIB += ncurses serf-1 pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs roken
-WANTLIB += sasl2 secret-1 soup-2.4 sqlite3 ssl stdc++ svn_client-1
+WANTLIB += Xi Xinerama Xrandr Xrender Xt apr-1 aprutil-1 atk-1.0
+WANTLIB += atk-bridge-2.0 atspi c cairo cairo-gobject crypto db
+WANTLIB += dbus-1 dbus-glib-1 devhelp-3 enchant expat ffi fontconfig
+WANTLIB += freetype gcrypt gda-5.0 gdk-3 gdk_pixbuf-2.0 gdl-3
+WANTLIB += geoclue gio-2.0 gladeui-2 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gpg-error graphite2 gstapp-1.0 gstaudio-1.0 gstbase-1.0
+WANTLIB += gstfft-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
+WANTLIB += gstvideo-1.0 gthread-2.0 gtk-3 gtksourceview-3.0 harfbuzz
+WANTLIB += harfbuzz-icu icudata icui18n icuuc javascriptcoregtk-3.0
+WANTLIB += jpeg m magic ncurses orc-0.4 pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += sasl2 secret-1 serf-1 soup-2.4 sqlite3 ssl stdc++ svn_client-1
 WANTLIB += svn_delta-1 svn_diff-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1
 WANTLIB += svn_fs_util-1 svn_ra-1 svn_ra_local-1 svn_ra_serf-1
 WANTLIB += svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1 util vala-0.24
-WANTLIB += vte2_90 webkit2gtk-3.0 webp wind xcb xcb-render xcb-shm
-WANTLIB += xml2 xslt z orc-0.4
+WANTLIB += vte2_90 webkit2gtk-3.0 webp xcb xcb-render xcb-shm
+WANTLIB += xml2 xslt z
 WANTLIB += ${MODPY_WANTLIB}
 
 MODULES=		devel/dconf \
@@ -52,9 +51,9 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			devel/glade \
 			devel/subversion \
 			devel/vte3 \
-			lang/vala>=0.22.0 \
+			lang/vala \
 			textproc/icu4c \
-			x11/gnome/devhelp>=3.10.0 \
+			x11/gnome/devhelp \
 			x11/gnome/gdl \
 			x11/gtksourceview3 \
 			x11/gnome/libgda
