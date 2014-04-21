@@ -1,4 +1,0 @@
-The Authen::Krb5::Simple module provides a means to authenticate a
-user/password using Kerberos 5.  Simply use this module and call its
-authenticate function with a username (or user@KRB_REALM) and a
-password.

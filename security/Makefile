@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.337 2014/04/18 11:37:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.338 2014/04/21 11:47:08 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -133,7 +133,6 @@
      SUBDIR += p0f
      SUBDIR += p11-kit
      SUBDIR += p5-Authen-Htpasswd
-     SUBDIR += p5-Authen-Krb5-Simple
      SUBDIR += p5-Authen-NTLM
      SUBDIR += p5-Authen-Radius
      SUBDIR += p5-Authen-SASL
@@ -228,7 +227,6 @@
      SUBDIR += py-openssl
      SUBDIR += py-paramiko
      SUBDIR += py-pefile
-     SUBDIR += py-pykpass
      SUBDIR += py-sslwrapper
      SUBDIR += qca
      SUBDIR += qca2

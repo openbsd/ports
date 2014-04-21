@@ -1,3 +1,0 @@
-This is the Apache Kerberos authentication module. It
-allows any Apache web-server to become a Kerberos client
-for authentication requests.

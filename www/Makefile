@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.659 2014/03/29 16:43:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.660 2014/04/21 11:47:08 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -112,7 +112,6 @@
      SUBDIR += mimetex
      SUBDIR += minitube
      SUBDIR += mod_auth_bsd
-     SUBDIR += mod_auth_kerb
      SUBDIR += mod_auth_ldap
      SUBDIR += mod_auth_mysql
      SUBDIR += mod_auth_pgsql

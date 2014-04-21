@@ -1,8 +1,0 @@
-To finish the install of mod_auth_kerb, you need
-to enable the module using the following command
-
-  ${PREFIX}/sbin/${MODAPACHE_ENABLE}
-
-If you already have Apache running on your machine,
-you should not use "apachectl restart" - instead,
-you should fully stop and then restart the server.

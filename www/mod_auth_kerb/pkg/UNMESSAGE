@@ -1,8 +1,0 @@
-To completely deinstall the mod_auth_kerb package you
-need to perform these steps as root:
-
-       edit /var/www/conf/httpd.conf
-       remove the line LoadModule auth_kerb_module
-
-Do not do this if you plan on re-installing the
-mod_auth_kerb package at some future time.
