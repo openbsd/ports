@@ -1,6 +1,18 @@
-$OpenBSD: patch-machine_m_openbsd_c,v 1.4 2014/04/20 19:40:55 okan Exp $
---- machine/m_openbsd.c.orig	Fri Apr 18 18:20:57 2014
-+++ machine/m_openbsd.c	Fri Apr 18 18:21:14 2014
+$OpenBSD: patch-machine_m_openbsd_c,v 1.5 2014/04/21 15:21:01 okan Exp $
+--- machine/m_openbsd.c.orig	Mon Jun 10 23:03:04 2013
++++ machine/m_openbsd.c	Sun Apr 20 15:48:09 2014
+@@ -221,9 +221,9 @@ void
+ get_system_info(struct system_info *si)
+ {
+ 	static int sysload_mib[] = {CTL_VM, VM_LOADAVG};
+-	static int vmtotal_mib[] = {CTL_VM, VM_METER};
++	static int uvmexp_mib[] = {CTL_VM, VM_UVMEXP};
+ 	struct loadavg sysload;
+-	struct vmtotal vmtotal;
++	struct uvmexp uvmexp;
+ 	double *infoloadp;
+ 	size_t size;
+ 	int i;
 @@ -236,7 +236,7 @@ get_system_info(struct system_info *si)
  	 * that there's nothing worth getting from the process table unless there
  	 * is more than 1 process.
@@ -18,3 +30,27 @@ $OpenBSD: patch-machine_m_openbsd_c,v 1.4 2014/04/20 19:40:55 okan Exp $
  
  	size = sizeof(sysload);
  	if (sysctl(sysload_mib, 2, &sysload, &size, NULL, 0) < 0)
+@@ -277,17 +278,17 @@ get_system_info(struct system_info *si)
+ 
+ 
+ 	/* get total -- systemwide main memory usage structure */
+-	size = sizeof(vmtotal);
+-	if (sysctl(vmtotal_mib, 2, &vmtotal, &size, NULL, 0) < 0) {
++	size = sizeof(uvmexp);
++	if (sysctl(uvmexp_mib, 2, &uvmexp, &size, NULL, 0) < 0) {
+ 		warn("sysctl failed");
+-		bzero(&vmtotal, sizeof(vmtotal));
++		bzero(&uvmexp, sizeof(uvmexp));
+ 	}
+ 	/* convert memory stats to Kbytes */
+ 	memory_stats[0] = -1;
+-	memory_stats[1] = pagetok(vmtotal.t_arm);
+-	memory_stats[2] = pagetok(vmtotal.t_rm);
++	memory_stats[1] = pagetok(uvmexp.active);
++	memory_stats[2] = pagetok(uvmexp.npages - uvmexp.free);
+ 	memory_stats[3] = -1;
+-	memory_stats[4] = pagetok(vmtotal.t_free);
++	memory_stats[4] = pagetok(uvmexp.free);
+ 	memory_stats[5] = -1;
+ 
+ 	if (!swapmode(&memory_stats[6], &memory_stats[7])) {
