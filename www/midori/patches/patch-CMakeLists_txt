@@ -1,13 +1,17 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2013/11/21 16:10:46 landry Exp $
-Ensure Xrender is found.
---- CMakeLists.txt.orig	Wed Nov 20 02:26:52 2013
-+++ CMakeLists.txt	Thu Nov 21 15:23:12 2013
-@@ -77,7 +77,7 @@ if (X11)
-     find_library (XSS Xss /usr/lib/X11R6/lib)
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2014/04/21 19:31:57 landry Exp $
+also find -lfreetype2 during linking
+--- CMakeLists.txt.orig	Thu Apr  3 23:23:17 2014
++++ CMakeLists.txt	Mon Apr 21 19:30:18 2014
+@@ -74,10 +74,10 @@ find_library (X11 X11)
+ if (X11)
+     # Pass /usr/X11R6/include for OpenBSD
+     find_file (SCRNSAVER X11/extensions/scrnsaver.h /usr/X11R6/include)
+-    find_library (XSS Xss /usr/lib/X11R6/lib)
++    find_library (XSS Xss /usr/X11R6/lib)
      if (SCRNSAVER AND XSS)
          add_definitions("-DHAVE_X11_EXTENSIONS_SCRNSAVER_H")
--        set(OPTS_LIBRARIES "${OPTS_LIBRARIES};${XSS}")
-+        set(OPTS_LIBRARIES "${OPTS_LIBRARIES};${XSS};-L${X11BASE}/lib")
+-        set(OPTS_LIBRARIES "${OPTS_LIBRARIES};${XSS};${X11}")
++        set(OPTS_LIBRARIES "${OPTS_LIBRARIES};${XSS};${X11};-L${X11BASE}/lib")
      endif ()
  endif ()
  

@@ -1,0 +1,7 @@
+@comment $OpenBSD: PFRAG.no-gtk3,v 1.1 2014/04/21 19:31:57 landry Exp $
+lib/midori/libaddons.so
+lib/midori/libcookie-permissions.so
+lib/midori/libexternal-download-manager.so
+lib/midori/libformhistory.so
+lib/midori/libnojs.so
+lib/midori/libnsplugin-manager.so

@@ -1,24 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.34 2014/03/25 09:40:32 landry Exp $
+@comment $OpenBSD: PLIST,v 1.35 2014/04/21 19:31:57 landry Exp $
 @bin bin/midori
 @lib lib/libmidori-core.so.${LIBmidori-core_VERSION}
 lib/midori/
 lib/midori/libadblock.so
-lib/midori/libaddons.so
 lib/midori/libapps.so
 lib/midori/libcolorful-tabs.so
 lib/midori/libcookie-manager.so
-lib/midori/libcookie-permissions.so
 lib/midori/libcopy-tabs.so
 lib/midori/libdelayed-load.so
 lib/midori/libdevpet.so
-lib/midori/libexternal-download-manager.so
+lib/midori/libdomain-keys.so
 lib/midori/libfeed-panel.so
 lib/midori/libflummi.so
-lib/midori/libformhistory.so
 lib/midori/libhistory-list.so
 lib/midori/libmouse-gestures.so
-lib/midori/libnojs.so
-lib/midori/libnsplugin-manager.so
+lib/midori/libnotes.so
+lib/midori/libopen-with.so
 lib/midori/libshortcuts.so
 lib/midori/libstatus-clock.so
 lib/midori/libstatusbar-features.so
@@ -59,12 +56,16 @@ share/icons/hicolor/22x22/status/internet-news-reader.png
 share/icons/hicolor/scalable/apps/midori.svg
 share/icons/hicolor/scalable/categories/extension.svg
 share/icons/hicolor/scalable/status/internet-news-reader.svg
+share/locale/am/LC_MESSAGES/midori.mo
 share/locale/ar/LC_MESSAGES/midori.mo
 share/locale/ast/LC_MESSAGES/midori.mo
 share/locale/be/LC_MESSAGES/midori.mo
 share/locale/bg/LC_MESSAGES/midori.mo
 share/locale/bs/LC_MESSAGES/midori.mo
 share/locale/ca/LC_MESSAGES/midori.mo
+share/locale/ckb/
+share/locale/ckb/LC_MESSAGES/
+share/locale/ckb/LC_MESSAGES/midori.mo
 share/locale/cs/LC_MESSAGES/midori.mo
 share/locale/cy/LC_MESSAGES/midori.mo
 share/locale/da/LC_MESSAGES/midori.mo
@@ -90,6 +91,7 @@ share/locale/id/LC_MESSAGES/midori.mo
 share/locale/it/LC_MESSAGES/midori.mo
 share/locale/ja/LC_MESSAGES/midori.mo
 share/locale/kk/LC_MESSAGES/midori.mo
+share/locale/km/LC_MESSAGES/midori.mo
 share/locale/ko/LC_MESSAGES/midori.mo
 share/locale/ky/LC_MESSAGES/midori.mo
 share/locale/lt/LC_MESSAGES/midori.mo
@@ -108,6 +110,7 @@ share/locale/ro/LC_MESSAGES/midori.mo
 share/locale/ru/LC_MESSAGES/midori.mo
 share/locale/sk/LC_MESSAGES/midori.mo
 share/locale/sl/LC_MESSAGES/midori.mo
+share/locale/sq/LC_MESSAGES/midori.mo
 share/locale/sr/LC_MESSAGES/midori.mo
 share/locale/sr@latin/LC_MESSAGES/midori.mo
 share/locale/sv/LC_MESSAGES/midori.mo
@@ -121,6 +124,12 @@ share/locale/zh_TW/LC_MESSAGES/midori.mo
 share/midori/
 share/midori/res/
 share/midori/res/about.css
+share/midori/res/adblock/
+share/midori/res/adblock.list
+share/midori/res/adblock/blocked.png
+share/midori/res/adblock/disabled.png
+share/midori/res/adblock/element_hider.js
+share/midori/res/adblock/enabled.png
 share/midori/res/autosuggestcontrol.css
 share/midori/res/autosuggestcontrol.js
 share/midori/res/bookmarks/
@@ -141,6 +150,8 @@ share/midori/res/nojs/
 share/midori/res/nojs/nojs-statusicon-allowed.png
 share/midori/res/nojs/nojs-statusicon-denied.png
 share/midori/res/nojs/nojs-statusicon-mixed.png
+share/midori/res/notes/
+share/midori/res/notes/Create.sql
 share/midori/res/speeddial-head.html
 share/midori/res/tabby/
 share/midori/res/tabby/Create.sql
