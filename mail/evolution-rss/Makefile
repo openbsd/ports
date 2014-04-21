@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2014/04/03 12:37:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2014/04/21 14:52:08 ajacoutot Exp $
 
 EVO_VERSION=		3.12
 SUBST_VARS +=		EVO_VERSION
@@ -9,7 +9,7 @@ COMMENT=		RSS reader plugin for evolution
 
 GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.3.94
-REVISION=		4
+REVISION=		5
 
 MASTER_SITES0=		https://distfiles.bsdfrog.org/evolution-rss/
 PATCH_DIST_STRIP=	-p1
@@ -34,23 +34,23 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += EGL GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xt asn1 atk-1.0 atk-bridge-2.0
-WANTLIB += atspi c cairo cairo-gobject camel-1.2 com_err crypto
-WANTLIB += db dbus-1 dbus-glib-1 ebackend-1.2 ebook-1.2 ebook-contacts-1.2
-WANTLIB += ecal-1.2 edata-book-1.2 edataserver-1.2 enchant expat
-WANTLIB += ffi fontconfig freetype gailutil-3 gck-1 gcr-3 gcr-base-3
-WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 geoclue gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gnome-desktop-3 gobject-2.0 gpg-error graphite2
-WANTLIB += gssapi gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0
-WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
-WANTLIB += gthread-2.0 gtk-3 gtkhtml-4.0 gtkhtml-editor-4.0 gtkspell3-3
-WANTLIB += harfbuzz harfbuzz-icu heimbase ical icalss icalvcal
-WANTLIB += icudata icui18n icuuc javascriptcoregtk-3.0 jpeg krb5
-WANTLIB += m nspr4 nss3 nssutil3 orc-0.4 p11-kit pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread pthread-stubs
-WANTLIB += roken secret-1 smime3 softokn3 soup-2.4 soup-gnome-2.4
-WANTLIB += sqlite3 ssl3 stdc++ webkitgtk-3.0 webp wind xcb xcb-render
-WANTLIB += xcb-shm xml2 xslt z
+WANTLIB += Xi Xinerama Xrandr Xrender Xt atk-1.0 atk-bridge-2.0
+WANTLIB += atspi c cairo cairo-gobject camel-1.2 db dbus-1 dbus-glib-1
+WANTLIB += ebackend-1.2 ebook-1.2 ebook-contacts-1.2 ecal-1.2
+WANTLIB += edata-book-1.2 edataserver-1.2 enchant expat ffi fontconfig
+WANTLIB += freetype gailutil-3 gck-1 gcr-3 gcr-base-3 gcrypt gdk-3
+WANTLIB += gdk_pixbuf-2.0 geoclue gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gnome-desktop-3 gobject-2.0 gpg-error graphite2 gstapp-1.0
+WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
+WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gthread-2.0 gtk-3
+WANTLIB += gtkhtml-4.0 gtkhtml-editor-4.0 gtkspell3-3 harfbuzz
+WANTLIB += harfbuzz-icu ical icalss icalvcal icudata icui18n icuuc
+WANTLIB += javascriptcoregtk-3.0 jpeg m nspr4 nss3 nssutil3 orc-0.4
+WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs secret-1
+WANTLIB += smime3 softokn3 soup-2.4 soup-gnome-2.4 sqlite3 ssl3
+WANTLIB += stdc++ webkitgtk-3.0 webp xcb xcb-render xcb-shm xml2
+WANTLIB += xslt z
 
 #MASTER_SITES=		http://gnome.eu.org/
 MASTER_SITES=		http://pkgs.fedoraproject.org/repo/pkgs/evolution-rss/evolution-rss-${GNOME_VERSION}${EXTRACT_SUFX}/77f38f8c98f64f181f74443f331c7336/
