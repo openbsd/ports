@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2014/04/18 09:18:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.104 2014/04/21 11:56:25 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -14,6 +14,7 @@ PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 PKGNAME-cloudprint=	gtk+3-cloudprint-${GNOME_VERSION}
 
 REVISION-main=		0
+REVISION-cups=		0
 
 CATEGORIES=		x11 devel
 
@@ -66,9 +67,7 @@ LIB_DEPENDS-cups=	${LIB_DEPENDS} \
 			${BASE_PKGPATH},-main=${GNOME_VERSION}
 
 WANTLIB-cups += ${WANTLIB}
-WANTLIB-cups += asn1 crypto cups gdk-3 gssapi gtk-3 krb5 ssl
-WANTLIB-cups += avahi-client avahi-common
-WANTLIB-cups += com_err heimbase roken wind
+WANTLIB-cups += avahi-client avahi-common crypto cups gdk-3 gtk-3 ssl
 
 RUN_DEPENDS-cloudprint=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-cloudprint=	${LIB_DEPENDS} \
