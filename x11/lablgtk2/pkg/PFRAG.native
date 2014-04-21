@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.native,v 1.6 2012/10/09 09:22:24 dcoppa Exp $
+@comment $OpenBSD: PFRAG.native,v 1.7 2014/04/21 21:45:35 jca Exp $
 %%dynlink%%
 lib/ocaml/lablgtk2/gAction.cmx
 lib/ocaml/lablgtk2/gAssistant.cmx
@@ -32,6 +32,8 @@ lib/ocaml/lablgtk2/gdkKeysyms.cmx
 lib/ocaml/lablgtk2/gdkPixbuf.cmx
 lib/ocaml/lablgtk2/glade.cmx
 lib/ocaml/lablgtk2/glib.cmx
+lib/ocaml/lablgtk2/gnoCanvas.cmx
+lib/ocaml/lablgtk2/gnomeCanvas.cmx
 lib/ocaml/lablgtk2/gobject.cmx
 lib/ocaml/lablgtk2/gpointer.cmx
 lib/ocaml/lablgtk2/gtk.cmx
@@ -79,6 +81,8 @@ lib/ocaml/lablgtk2/gtkWindow.cmx
 lib/ocaml/lablgtk2/gutf8.cmx
 lib/ocaml/lablgtk2/lablglade.a
 lib/ocaml/lablgtk2/lablglade.cmxa
+lib/ocaml/lablgtk2/lablgnomecanvas.a
+lib/ocaml/lablgtk2/lablgnomecanvas.cmxa
 lib/ocaml/lablgtk2/lablgtk.a
 lib/ocaml/lablgtk2/lablgtk.cmxa
 lib/ocaml/lablgtk2/lablgtksourceview2.a
