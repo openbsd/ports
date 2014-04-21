@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_procmime_c,v 1.9 2013/09/25 08:03:16 landry Exp $
+$OpenBSD: patch-src_procmime_c,v 1.10 2014/04/21 17:40:19 sthen Exp $
 http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2640
 http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2641
 http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2642
 http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2743
---- src/procmime.c.orig	Wed May  8 04:46:17 2013
-+++ src/procmime.c	Sun Sep 22 23:00:18 2013
+--- src/procmime.c.orig	Sat Dec 14 10:15:01 2013
++++ src/procmime.c	Mon Apr 21 18:40:02 2014
 @@ -616,10 +616,22 @@ gboolean procmime_encode_content(MimeInfo *mimeinfo, E
  			g_free(tmp_file);
  		}
@@ -75,7 +75,7 @@ http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2743
  		}
  	}
  
-@@ -1183,7 +1220,7 @@ GList *procmime_get_mime_type_list(void)
+@@ -1182,7 +1219,7 @@ GList *procmime_get_mime_type_list(void)
  #endif
  	{
  		fp_is_glob_file = FALSE;
@@ -84,7 +84,7 @@ http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2743
  			if ((fp = procmime_fopen(SYSCONFDIR "/mime.types", "rb")) 
  				== NULL) {
  				FILE_OP_ERROR(SYSCONFDIR "/mime.types", 
-@@ -1263,11 +1300,12 @@ EncodingType procmime_get_encoding_for_text_file(const
+@@ -1262,11 +1299,12 @@ EncodingType procmime_get_encoding_for_text_file(const
  {
  	FILE *fp;
  	guchar buf[BUFFSIZE];
@@ -98,7 +98,7 @@ http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2743
  
  	if ((fp = procmime_fopen(file, "rb")) == NULL) {
  		FILE_OP_ERROR(file, "fopen");
-@@ -1279,11 +1317,27 @@ EncodingType procmime_get_encoding_for_text_file(const
+@@ -1278,11 +1316,27 @@ EncodingType procmime_get_encoding_for_text_file(const
  		gint i;
  
  		for (p = buf, i = 0; i < len; ++p, ++i) {
@@ -131,7 +131,7 @@ http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2743
  			}
  		}
  		total_len += len;
-@@ -1297,15 +1351,20 @@ EncodingType procmime_get_encoding_for_text_file(const
+@@ -1296,15 +1350,20 @@ EncodingType procmime_get_encoding_for_text_file(const
  		octet_percentage = 0.0;
  
  	debug_print("procmime_get_encoding_for_text_file(): "

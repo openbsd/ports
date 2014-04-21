@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.8 2013/09/25 08:03:14 landry Exp $
---- configure.ac.orig	Sat Jun  8 15:58:17 2013
-+++ configure.ac	Tue Sep 24 00:40:33 2013
+$OpenBSD: patch-configure_ac,v 1.9 2014/04/21 17:40:19 sthen Exp $
+--- configure.ac.orig	Sat Dec 14 10:14:50 2013
++++ configure.ac	Mon Apr 21 18:40:04 2014
 @@ -152,7 +152,7 @@ AM_CONDITIONAL(CYGWIN, test x"$env_cygwin" = x"yes")
  
  if test "$GCC" = "yes"
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_ac,v 1.8 2013/09/25 08:03:14 landry Exp $
  	#CFLAGS="-g -Wall -Wno-unused-function"
  fi
  
-@@ -776,6 +776,7 @@ if test x"$enable_new_addrbook" = xno; then
+@@ -737,6 +737,7 @@ if test x"$enable_new_addrbook" = xno; then
  		AC_CHECK_LIB(resolv, res_query, LDAP_LIBS="$LDAP_LIBS -lresolv")
  		AC_CHECK_LIB(socket, bind, LDAP_LIBS="$LDAP_LIBS -lsocket")
  		AC_CHECK_LIB(nsl, gethostbyaddr, LDAP_LIBS="$LDAP_LIBS -lnsl")
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure_ac,v 1.8 2013/09/25 08:03:14 landry Exp $
  		AC_CHECK_LIB(lber, ber_get_tag, LDAP_LIBS="$LDAP_LIBS -llber",,
  				 $LDAP_LIBS)
  
-@@ -848,7 +849,7 @@ if test x"$enable_new_addrbook" = xno; then
+@@ -809,7 +810,7 @@ if test x"$enable_new_addrbook" = xno; then
  					   AC_DEFINE(USE_JPILOT, 1, Define if you want JPilot support in addressbook.) ])
  		fi
  
