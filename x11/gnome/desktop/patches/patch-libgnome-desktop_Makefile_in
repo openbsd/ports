@@ -1,8 +1,11 @@
-$OpenBSD: patch-libgnome-desktop_Makefile_in,v 1.14 2014/04/18 22:42:16 ajacoutot Exp $
+$OpenBSD: patch-libgnome-desktop_Makefile_in,v 1.15 2014/04/21 17:02:42 ajacoutot Exp $
 
 XXX fix+push upstream
 
-https://bugzilla.gnome.org/show_bug.cgi?id=728529
+From e6ba67b4de48db96a006829e9d326b06c9d4ba9f Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Sat, 19 Apr 2014 00:38:02 +0200
+Subject: build: unbreak on OpenBSD
 
 --- libgnome-desktop/Makefile.in.orig	Mon Mar 24 15:31:08 2014
 +++ libgnome-desktop/Makefile.in	Thu Mar 27 09:55:40 2014
