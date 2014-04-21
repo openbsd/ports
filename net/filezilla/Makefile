@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2014/03/14 23:52:25 giovanni Exp $
+# $OpenBSD: Makefile,v 1.35 2014/04/21 22:26:21 ajacoutot Exp $
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 
@@ -6,6 +6,7 @@ V=		3.7.4.1
 PKGNAME=	filezilla-$V
 DISTNAME=	FileZilla_$V_src
 EXTRACT_SUFX=	.tar.bz2
+REVISION=	0
 
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
