@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.220 2014/04/21 16:39:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.221 2014/04/21 22:19:25 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -52,8 +52,7 @@ LIB_DEPENDS-postgresql= databases/postgresql
 RUN_DEPENDS-postgresql= ${BASE_PKGPATH}=${V_DOVECOT}
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--with-gssapi \
-		--with-rundir=/var/dovecot \
+CONFIGURE_ARGS=	--with-rundir=/var/dovecot \
 		--with-sql=plugin \
 		--with-sqlite \
 		--with-statedir=/var/dovecot \
