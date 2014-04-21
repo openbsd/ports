@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.187 2014/04/21 13:32:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.188 2014/04/21 22:15:09 ajacoutot Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -59,7 +59,6 @@ CONFIGURE_STYLE=gnu
 MODULES=	lang/python
 MODPY_RUNDEP=	No
 
-#INCLUDES=	${LOCALBASE}/include /usr/include/kerberosV
 CONFIGURE_ENV=	ac_cv_path_PYTHON=${MODPY_BIN} \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
