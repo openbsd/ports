@@ -1,6 +1,6 @@
-$OpenBSD: patch-drivers_usbhid-ups_c,v 1.6 2014/01/07 21:55:54 sthen Exp $
---- drivers/usbhid-ups.c.orig	Fri Jul 26 20:41:10 2013
-+++ drivers/usbhid-ups.c	Thu Nov 21 22:08:48 2013
+$OpenBSD: patch-drivers_usbhid-ups_c,v 1.7 2014/04/21 11:41:11 sthen Exp $
+--- drivers/usbhid-ups.c.orig	Thu Feb 27 21:17:32 2014
++++ drivers/usbhid-ups.c	Mon Apr 21 11:51:56 2014
 @@ -941,7 +941,7 @@ void upsdrv_initups(void)
  	   regular expression (USB) or device_path (SHUT) */
  	ret = comm_driver->open(&udev, &curDevice, subdriver_matcher, &callback);
@@ -10,13 +10,3 @@ $OpenBSD: patch-drivers_usbhid-ups_c,v 1.6 2014/01/07 21:55:54 sthen Exp $
  
  	hd = &curDevice;
  
-@@ -1269,7 +1269,9 @@ static bool_t hid_ups_walk(walkmode_t mode)
- 
- 		case -ETIMEDOUT:	/* Connection timed out */
- 		case -EOVERFLOW:	/* Value too large for defined data type */
-+#ifdef EPROTO
- 		case -EPROTO:		/* Protocol error */
-+#endif
- 		case -EPIPE:		/* Broken pipe */
- 		default:
- 			/* Don't know what happened, try again later... */

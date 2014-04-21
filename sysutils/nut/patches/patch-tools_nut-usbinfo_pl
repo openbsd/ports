@@ -1,10 +1,10 @@
-$OpenBSD: patch-tools_nut-usbinfo_pl,v 1.2 2012/06/08 21:07:02 sthen Exp $
+$OpenBSD: patch-tools_nut-usbinfo_pl,v 1.3 2014/04/21 11:41:11 sthen Exp $
 
 skip backup copy of patched files
 
---- tools/nut-usbinfo.pl.orig	Mon May 14 13:15:38 2012
-+++ tools/nut-usbinfo.pl	Fri Jun  8 10:56:20 2012
-@@ -216,7 +216,7 @@ sub gen_usb_files
+--- tools/nut-usbinfo.pl.orig	Thu Feb 27 21:17:32 2014
++++ tools/nut-usbinfo.pl	Mon Apr 21 11:51:56 2014
+@@ -209,7 +209,7 @@ sub gen_usb_files
  sub find_usbdevs
  {
  	# maybe there's an option to turn off all .* files, but anyway this is stupid

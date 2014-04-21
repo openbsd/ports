@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.20 2014/03/29 15:39:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.21 2014/04/21 11:41:11 sthen Exp $
 @conflict nut-<2.6.2p0
 @conflict nut-scanner-*
 @conflict upsd-*
@@ -40,6 +40,7 @@
 @bin bin/mge-utalk
 @bin bin/microdowell
 @bin bin/nut-scanner
+@bin bin/nutdrv_atcl_usb
 @bin bin/nutdrv_qx
 @bin bin/oldmge-shut
 @bin bin/oneac
@@ -59,7 +60,6 @@
 @bin bin/upsc
 @bin bin/upscmd
 @bin bin/upscode2
-@bin bin/upsdrvctl
 @bin bin/upslog
 @bin bin/upsrw
 bin/upssched-cmd
@@ -119,6 +119,7 @@ lib/libupsclient.la
 @man man/man8/microdowell.8
 @man man/man8/nut-recorder.8
 @man man/man8/nut-scanner.8
+@man man/man8/nutdrv_atcl_usb.8
 @man man/man8/nutdrv_qx.8
 @man man/man8/nutupsdrv.8
 @man man/man8/oneac.8
@@ -149,6 +150,7 @@ lib/libupsclient.la
 @man man/man8/usbhid-ups.8
 @man man/man8/victronups.8
 @bin sbin/upsd
+@bin sbin/upsdrvctl
 @bin sbin/upsmon
 @bin sbin/upssched
 share/doc/nut/
@@ -157,6 +159,7 @@ share/doc/nut/COPYING
 share/doc/nut/ChangeLog
 share/doc/nut/FAQ.html
 share/doc/nut/INSTALL
+share/doc/nut/INSTALL.nut
 share/doc/nut/LICENSE-GPL2
 share/doc/nut/LICENSE-GPL3
 share/doc/nut/MAINTAINERS

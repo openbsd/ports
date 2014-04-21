@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.78 2014/04/21 11:27:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.79 2014/04/21 11:41:11 sthen Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
 COMMENT-snmp=		driver for monitoring UPS via SNMP
 COMMENT-xml=		driver for monitoring UPS via XML/HTTP
 
-DISTNAME=		nut-2.7.1
-REVISION-main=		1
-REVISION-xml=		0
+DISTNAME=		nut-2.7.2
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-cgi=		${DISTNAME:S/-/-cgi-/}
 PKGNAME-snmp=		${DISTNAME:S/-/-snmp-/}
 PKGNAME-xml=		${DISTNAME:S/-/-xml-/}
 
-SHARED_LIBS +=	upsclient            2.0      # .3.1
+SHARED_LIBS +=	upsclient            3.0      # .4.0
 SHARED_LIBS +=	nutclient            0.0      # .0.0
 SHARED_LIBS +=	nutscan              1.0      # .1.0
 
@@ -55,6 +53,7 @@ CONFIGURE_STYLE=	gnu
 SYSCONFDIR=		${BASESYSCONFDIR}/nut
 LDFLAGS+=		-L${LOCALBASE}/lib -pthread
 CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/ups \
+			--htmldir=${PREFIX}/share/doc/nut \
 			--with-doc=html-single \
 			--with-hal-libs="" \
 			--with-ssl \
