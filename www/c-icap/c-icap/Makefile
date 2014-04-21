@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2014/03/12 11:26:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2014/04/21 12:57:31 sthen Exp $
 
 MULTI_PACKAGES=	-main -db -ldap
 COMMENT-main=	ICAP server for use with web proxies
@@ -6,6 +6,7 @@ COMMENT-db=	Berkeley DB module for c-icap
 COMMENT-ldap=	LDAP module for c-icap
 
 V=		0.3.3
+REVISION=	0
 DISTNAME=	c_icap-$V
 PKGNAME-main=	c-icap-$V
 PKGNAME-db=	c-icap-db-$V
@@ -13,7 +14,7 @@ PKGNAME-ldap=	c-icap-ldap-$V
 
 SHARED_LIBS +=	icapapi                   1.0 # 3.1
 
-WANTLIB += c pthread z
+WANTLIB += bz2 pthread z
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/db4 -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
@@ -28,14 +29,14 @@ FAKE_FLAGS=	CONFIGDIR=${PREFIX}/share/examples/c-icap
 RUN_DEPENDS$i = ${BASE_PKGPATH}
 .endfor
 
-LIB_DEPENDS-db=	databases/db/v4
-WANTLIB-db=	${WANTLIB} db icapapi
+WANTLIB-main=	${WANTLIB} c
+LIB_DEPENDS-main= archivers/bzip2
 
-LIB_DEPENDS-ldap= databases/openldap \
-		${BASE_PKGPATH}
-WANTLIB-ldap=	asn1 com_err crypto gssapi icapapi krb5 ssl
-WANTLIB-ldap+=	lber-2.4 ldap-2.4 pthread sasl2 z
-WANTLIB-ldap+=	heimbase roken wind
+LIB_DEPENDS-db=	databases/db/v4 ${BASE_PKGPATH}
+WANTLIB-db=	${WANTLIB} c db icapapi
+
+LIB_DEPENDS-ldap= databases/openldap ${BASE_PKGPATH}
+WANTLIB-ldap=	${WANTLIB} crypto icapapi lber-2.4 ldap-2.4 sasl2 ssl
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/c-icap/
