@@ -1,15 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.5 2014/04/09 06:16:05 robert Exp $
+$OpenBSD: patch-configure_ac,v 1.6 2014/04/21 20:43:48 ajacoutot Exp $
 --- configure.ac.orig.port	Wed Feb  5 16:04:15 2014
 +++ configure.ac	Tue Apr  8 02:33:09 2014
-@@ -7852,7 +7852,7 @@ if test "x$enable_postgresql_sdbc" != "xno"; then
-             if test "$with_gssapi" != "no"; then
-               WITH_GSSAPI=YES
-               save_LIBS=$LIBS
--              AC_SEARCH_LIBS(gss_init_sec_context, [gssapi_krb5 gss 'gssapi -lkrb5 -lcrypto'], [],
-+              AC_SEARCH_LIBS(gss_init_sec_context, [gssapi_krb5 gss "`krb5-config --libs gssapi | sed 's,^-L/usr/lib -lgssapi,gssapi,'`"], [],
-                     [AC_MSG_ERROR([could not find function 'gss_init_sec_context' required for GSSAPI])])
-               GSSAPI_LIBS=$LIBS
-               LIBS=$save_LIBS
 @@ -8436,11 +8436,7 @@ AC_MSG_CHECKING([whether to enable HarfBuzz support])
  if test "$_os" != "WINNT" -a "$_os" != "Darwin"; then
      AC_MSG_RESULT([yes])
