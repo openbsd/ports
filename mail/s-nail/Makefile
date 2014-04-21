@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/11/08 01:31:34 william Exp $
+# $OpenBSD: Makefile,v 1.9 2014/04/21 14:00:22 ajacoutot Exp $
 
 COMMENT=		enhanced, MIME capable Berkeley Mail
 
@@ -6,12 +6,12 @@ DISTNAME=		s-nail-14.4.5
 DISTFILES=		${DISTNAME:S/./_/g}.tar.gz
 CATEGORIES=		mail
 HOMEPAGE=		http://sdaoden.users.sourceforge.net/code.html#s-nail
+REVISION=		0
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += asn1 c com_err crypto gssapi heimbase
-WANTLIB += idn krb5 roken ssl wind
+WANTLIB += c crypto idn ssl
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=s-nail/}
 MAINTAINER=		William Yodlowsky <william@openbsd.org>
@@ -24,8 +24,7 @@ MAKE_FLAGS=		CFLAGS="${CFLAGS}" \
 			LDFLAGS="${LDFLAGS}" \
 			LD_LIBRARY_PATH=${LOCALBASE}/lib \
 			SYSCONFDIR="${SYSCONFDIR}" \
-			WANT_EDITLINE=1 \
-			WANT_GSSAPI=1
+			WANT_EDITLINE=1
 
 LIB_DEPENDS=		devel/libidn
 
