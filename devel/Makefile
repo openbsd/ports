@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1216 2014/04/17 23:35:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.1217 2014/04/21 16:04:26 jca Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -109,6 +109,7 @@
      SUBDIR += fossil
      SUBDIR += fossil,static
      SUBDIR += fox
+     SUBDIR += frama-c
      SUBDIR += fribidi
      SUBDIR += gconf-editor
      SUBDIR += gconf2
