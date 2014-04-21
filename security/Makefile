@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.338 2014/04/21 11:47:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.339 2014/04/21 12:27:56 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -179,7 +179,6 @@
      SUBDIR += p5-Digest-SHA1
      SUBDIR += p5-Digest-Skein
      SUBDIR += p5-GPG
-     SUBDIR += p5-GSSAPI
      SUBDIR += p5-GnuPG
      SUBDIR += p5-GnuPG-Interface
      SUBDIR += p5-IO-Socket-SSL
