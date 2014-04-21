@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2013/12/25 15:47:30 zhuk Exp $
+# $OpenBSD: Makefile,v 1.141 2014/04/21 19:21:54 sthen Exp $
 
 BROKEN-alpha =		.got subsegment exceeds 64K
 BROKEN-mips64 =		.got subsegment exceeds 64K
@@ -12,7 +12,7 @@ PKGNAME-main =		${DISTNAME}
 PKGSPEC-main =		kdelibs->=3,<4
 PKGNAME-langlist =	kde3-langlist-${VERSION}
 PKG_ARCH-langlist =	*
-REVISION-main =		32
+REVISION-main =		33
 
 MODKDE_VERSION =	3.5.8
 
@@ -56,18 +56,18 @@ SHARED_LIBS +=	kmediaplayer         1.0      # .0.0
 SHARED_LIBS +=	kimproxy             1.0      # .0.0
 SHARED_LIBS +=	katepartinterfaces   1.0      # .0.0
 
-WANTLIB-main =  asn1 crypto gssapi util jpeg krb5 m FLAC X11
-WANTLIB-main += ICE Xrender c SM pthread stdc++ Xext z png
-WANTLIB-main += Xau Xdmcp pthread-stubs xcb art_lgpl_2 idn
-WANTLIB-main += fam>=1
-WANTLIB-main +=	GL Half Iex IlmImf>=4 IlmThread Imath Xcursor Xdamage Xfixes
-WANTLIB-main +=	Xft Xi Xinerama Xmu Xrandr Xt Xxf86vm artsflow>=1
-WANTLIB-main +=	artsflow_idl aspell audiofile avahi-client avahi-common bz2
-WANTLIB-main +=	dbus-1 dns_sd drm expat fontconfig freetype glib-2.0
-WANTLIB-main +=	gmodule-2.0 gthread-2.0 jasper kmedia2_idl lcms mad mcop mng
-WANTLIB-main +=	ogg pcre pcreposix qtmcop sndio soundserver_idl tiff>=35
-WANTLIB-main +=	vorbis vorbisenc vorbisfile xml2 xslt>=1.10
-WANTLIB-main += com_err heimbase roken wind
+WANTLIB-main += ${MODGETTEXT_WANTLIB}
+WANTLIB-main += FLAC GL Half ICE Iex IlmImf IlmThread Imath SM X11
+WANTLIB-main += X11-xcb Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi
+WANTLIB-main += Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 artsflow
+WANTLIB-main += artsflow_idl asn1 aspell audiofile avahi-client avahi-common
+WANTLIB-main += bz2 c com_err crypto dbus-1 dns_sd drm expat fam fontconfig
+WANTLIB-main += freetype glapi glib-2.0 gmodule-2.0 gssapi gthread-2.0
+WANTLIB-main += heimbase idn jasper jpeg kmedia2_idl krb5 lcms m mad
+WANTLIB-main += mcop mng ogg pcre pcreposix png pthread pthread-stubs
+WANTLIB-main += qt-mt qtmcop roken sndio soundserver_idl stdc++ tiff
+WANTLIB-main += util vorbis vorbisenc vorbisfile wind xcb xcb-dri2
+WANTLIB-main += xcb-glx xml2 xslt z
 WANTLIB-langlist =
 
 MULTI_PACKAGES =	-main -langlist
