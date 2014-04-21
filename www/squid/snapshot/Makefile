@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2014/04/13 21:41:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2014/04/21 20:29:50 sthen Exp $
 
 D=		20140413-r13351
 V=		3.5pre${D:C/-.*//}
 DISTNAME=	squid-3.HEAD-$D
+REVISION=	0
 EXTRACT_SUFX=	.tar.bz2
 
 EXTERNAL_ACL=	LDAP_group SQL_session file_userip time_quota session \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2014/04/08 12:22:48 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2014/04/21 20:29:50 sthen Exp $
 @newgroup _squid:515
 @newuser _squid:515:_squid:daemon:Squid Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${LOCALSTATEDIR}/cache/*
@@ -24,8 +24,6 @@ libexec/squid/ext_sql_session_acl
 libexec/squid/helper-mux.pl
 libexec/squid/log_db_daemon
 @bin libexec/squid/log_file_daemon
-@bin libexec/squid/negotiate_kerberos_auth
-@bin libexec/squid/negotiate_kerberos_auth_test
 @bin libexec/squid/negotiate_wrapper_auth
 @bin libexec/squid/ssl_crtd
 libexec/squid/storeid_file_rewrite
@@ -43,7 +41,6 @@ libexec/squid/url_fake_rewrite.sh
 @man man/man8/ext_time_quota_acl.8
 @man man/man8/ext_unix_group_acl.8
 @man man/man8/log_db_daemon.8
-@man man/man8/negotiate_kerberos_auth.8
 @man man/man8/squid.8
 @man man/man8/storeid_file_rewrite.8
 @bin sbin/squid
