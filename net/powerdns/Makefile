@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2013/11/10 12:38:34 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2014/04/21 14:11:30 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -17,10 +17,7 @@ PKGNAME-ldap=		powerdns-ldap-${V}
 CATEGORIES=		net
 HOMEPAGE=		http://www.powerdns.com/
 
-REVISION-main=		2
-REVISION-mysql=		3
-REVISION-pgsql=		1
-REVISION-ldap=		1
+REVISION=		4
 
 MULTI_PACKAGES=		-main -mysql -pgsql -ldap
 
@@ -64,8 +61,7 @@ CONFIGURE_ARGS+=	--without-pgsql
 .endif
 LIB_DEPENDS-pgsql=	databases/postgresql,-main
 RUN_DEPENDS-pgsql=	${FULLPKGNAME-main}:net/powerdns
-WANTLIB-pgsql=		com_err crypto pq>=2 ssl asn1 heimbase krb5 \
-			roken wind ${WANTLIB}
+WANTLIB-pgsql=		crypto pq>=2 ssl ${WANTLIB}
 
 
 # LDAP
@@ -79,8 +75,7 @@ CONFIGURE_ARGS+=	--without-ldap
 
 LIB_DEPENDS-ldap=	databases/openldap
 RUN_DEPENDS-ldap=	${FULLPKGNAME-main}:net/powerdns
-WANTLIB-ldap+=		asn1 com_err crypto gssapi krb5 lber-2.4 ldap_r-2.4 \
-			heimbase roken wind sasl2 ssl ${WANTLIB}
+WANTLIB-ldap+=		${WANTLIB} crypto lber-2.4 ldap_r-2.4 sasl2 ssl
 
 
 BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS}
