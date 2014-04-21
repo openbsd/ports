@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2014/04/12 17:06:02 stsp Exp $
+# $OpenBSD: Makefile,v 1.45 2014/04/21 16:01:00 sthen Exp $
 
 COMMENT=	companion library to APR
 
 V=		1.5.3
+REVISION=	0
 DISTNAME=	apr-util-$V
 SHARED_LIBS +=	aprutil-1          5.0     # .5.3
 
@@ -45,8 +46,7 @@ CONFIGURE_ARGS+=	--with-ldap-include=${LOCALBASE}/include \
 			--with-ldap-lib=${LOCALBASE}/lib \
 			--with-ldap
 LIB_DEPENDS+=		databases/openldap
-WANTLIB+=		asn1 com_err crypto gssapi krb5 sasl2 ssl lber-2.4 ldap-2.4
-WANTLIB+=		heimbase roken wind
+WANTLIB+=		crypto sasl2 ssl lber-2.4 ldap-2.4
 .else
 CONFIGURE_ARGS+=	--with-ldap=no
 .endif
