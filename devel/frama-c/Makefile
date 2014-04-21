@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/04/21 16:02:25 jca Exp $
+# $OpenBSD: Makefile,v 1.2 2014/04/21 22:15:33 jca Exp $
 
 COMMENT =		an extensible platform for analysis of C software
 
@@ -24,6 +24,7 @@ TEST_TARGET =		oracles tests
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	MAKE=${MAKE_PROGRAM} \
-			--docdir=${PREFIX}/share/doc/frama-c/
+			--docdir=${PREFIX}/share/doc/frama-c/ \
+			--disable-gui
 
 .include <bsd.port.mk>
