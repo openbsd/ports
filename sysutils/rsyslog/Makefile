@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2013/06/12 20:36:34 brad Exp $
+# $OpenBSD: Makefile,v 1.19 2014/04/21 23:29:03 sthen Exp $
 
 BROKEN-hppa =		lack of atomic ops
 BROKEN-mips64 =		lack of atomic ops
@@ -20,7 +20,7 @@ CATEGORIES =		sysutils
 
 REVISION-main =		5
 REVISION-mysql =	4
-REVISION-pgsql =	2
+REVISION-pgsql =	3
 
 HOMEPAGE =		http://www.rsyslog.com/
 
@@ -32,7 +32,7 @@ MODULES =		devel/gettext
 WANTLIB-main +=		c gmp hogweed nettle gnutls pthread p11-kit
 WANTLIB-main +=		relp tasn1 z ${MODGETTEXT_WANTLIB}
 WANTLIB-mysql +=	crypto m mysqlclient ssl z
-WANTLIB-pgsql +=	crypto com_err pq ssl
+WANTLIB-pgsql +=	crypto pq ssl
 
 LIB_DEPENDS-main =	security/gnutls \
 			sysutils/librelp
