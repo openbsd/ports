@@ -17,7 +17,6 @@ Other features include:
   * supports tape changers via a generic interface.  Easily
     customizable to any type of tape carousel, robot, or stacker that
     can be controlled via the UNIX command line.
-  * supports Kerberos 4 security, including encrypted dumps.
   * supports GPG encrypted archives.
   * for a restore, tells you what tapes you need, and finds the proper
     backup image on the tape for you.

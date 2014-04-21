@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2014/01/25 11:09:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2014/04/21 22:25:41 ajacoutot Exp $
 
 BROKEN-alpha=	internal compiler error: in extract_insn, at recog.c:2077
 
@@ -19,7 +19,7 @@ DISTNAME=	amanda-${DISTVERSION}
 PKGNAME-main=	amanda-${PKGVERSION}
 PKGNAME-client=	amanda-client-${PKGVERSION}
 PKGNAME-doc=	amanda-doc-${PKGVERSION}
-REVISION-main=	4
+REVISION-main=	5
 REVISION-client=3
 
 CATEGORIES=	misc
