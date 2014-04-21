@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2013/12/06 13:31:50 stsp Exp $
+# $OpenBSD: Makefile,v 1.4 2014/04/21 19:10:27 stsp Exp $
 
 SHARED_ONLY =		Yes
 COMMENT =		secure decentralised communication platform
-V = 			0.5.5b
-DISTNAME =		retroshare_0.5.5-0.6864_src
+V = 			0.5.5c
+DISTNAME =		retroshare_0.5.5-0.7068
 PKGNAME =		retroshare-${V}
 CATEGORIES =		net security
 HOMEPAGE =		http://retroshare.sourceforge.net
@@ -30,7 +30,7 @@ LIB_DEPENDS =		audio/speex \
 			textproc/libxslt \
 			x11/gnome/libgnome-keyring
 NO_TEST =		Yes
-WRKDIST =		${WRKDIR}/retroshare-${V:S/b$//}
+WRKDIST =		${WRKDIR}/retroshare-${V:S/c$//}
 WRKSRC =		${WRKDIST}/src
 
 post-patch:
