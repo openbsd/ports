@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.24 2013/03/29 18:13:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.25 2014/04/21 22:24:17 sthen Exp $
 @conflict samba-docs-<3.6.0
 @pkgpath ${BASE_PKGPATH}
-@pkgpath ${BASE_PKGPATH},cups
-@pkgpath ${BASE_PKGPATH},cups,ads
-@pkgpath ${BASE_PKGPATH},cups,ldap
+@pkgpath ${BASE_PKGPATH},ads,-main
+@pkgpath ${BASE_PKGPATH},cups[,ads][,ldap]
 @bin bin/eventlogadm
 bin/findsmb
 bin/mksmbpasswd

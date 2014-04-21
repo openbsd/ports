@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.191 2014/04/10 00:50:58 brad Exp $
+# $OpenBSD: Makefile,v 1.192 2014/04/21 22:24:17 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ DISTNAME=		samba-3.6.15
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 FULLPKGPATH-docs=	net/samba,-docs
-REVISION-main=		5
+REVISION-main=		6
 
 SHARED_LIBS=		smbclient	3.0 \
 			smbsharemodes	1.0 \
@@ -54,11 +54,11 @@ SUBST_VARS=		CONFDIR
 
 USE_GMAKE=		Yes
 USE_GROFF=		Yes
-#SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
 AUTOCONF_VERSION=	2.69
 
 CONFIGURE_ARGS=		--disable-fam \
+			--without-ads \
 			--without-pam \
 			--libdir="${PREFIX}/lib/samba" \
 			--sbindir="${PREFIX}/libexec" \
@@ -85,36 +85,16 @@ CONFIGURE_ARGS=		--disable-fam \
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-FLAVORS=		ldap ads
+FLAVORS=		ldap
 FLAVOR?=
 
 MULTI_PACKAGES=		-main -docs
 
-.if ${FLAVOR:Mldap} && ${FLAVOR:Mads}
-ERRORS+= "Fatal: ldap and ads flavors conflict"
-.endif
-
-.if ${FLAVOR:Mldap} || ${FLAVOR:Mads}
+.if ${FLAVOR:Mldap}
 LIB_DEPENDS+=	databases/openldap
 WANTLIB +=	ldap lber
 .else
 CONFIGURE_ARGS+=	--without-ldap
-.endif
-
-.if ${FLAVOR:Mads}
-CONFIGURE_ARGS+=	--with-krb5="${WRKDIR}/usr"
-
-# Merged build cruft needs loads of work. Disable until ready.
-#SEPERATE_BUILD=	simple
-#CONFIGURE_ARGS+=	--enable-merged-build
-#MODULES+=		lang/python
-#MODPY_RUNDEP=		No
-LIB_DEPENDS += 		sysutils/e2fsprogs
-
-WANTLIB += asn1 crypto gssapi heimbase krb5 roken
-WANTLIB += wind com_err uuid
-.else
-CONFIGURE_ARGS+=	--without-ads
 .endif
 
 PKG_ARCH-docs=		*

@@ -11,7 +11,6 @@ machine as a server for Windows clients.
 Available flavors:
 
 ldap	Enable LDAP support
-ads	Enable Active Directory support
 
 Available subpackage:
 
