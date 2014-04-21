@@ -1,0 +1,61 @@
+$OpenBSD: patch-src_core_range_map_h,v 1.1 2014/04/21 21:46:23 tobiasu Exp $
+
+Template parsing rules changed with gcc 4.7,
+be explicit about the methods called.
+
+--- src/core/range_map.h.orig	Mon Apr 21 22:11:22 2014
++++ src/core/range_map.h	Mon Apr 21 22:23:42 2014
+@@ -102,16 +102,16 @@ class RangeMap : private std::map<Key, std::pair<Key, 
+ template<typename Key, typename T, typename C, typename A>
+ inline typename RangeMap<Key,T,C,A>::iterator
+ RangeMap<Key,T,C,A>::crop_overlap(const Key& _begin, const Key& _end) {
+-  typename RangeMap::iterator itr = upper_bound(_begin);
++  typename RangeMap::iterator itr = this->upper_bound(_begin);
+ 
+   while (itr != end() && key_comp()(itr->second.first, _end)) {
+     // There's a subrange before the new begin: need new entry (new range end means new key).
+     if (key_comp()(itr->second.first, _begin))
+-      insert(itr, typename RangeMap::value_type(_begin, itr->second));
++      this->insert(itr, typename RangeMap::value_type(_begin, itr->second));
+ 
+     // Old end is within our range: erase entry.
+     if (!key_comp()(_end, itr->first)) {
+-      erase(itr++);
++      this->erase(itr++);
+ 
+     // Otherwise simply set the new begin of the old range.
+     } else {
+@@ -137,7 +137,7 @@ RangeMap<Key,T,C,A>::set_merge(Key _begin, const Key& 
+     typename RangeMap::iterator prev = itr;
+     if (!key_comp()((--prev)->first, _begin) && prev->second.second == value) {
+       _begin = prev->second.first;
+-      erase(prev);
++      this->erase(prev);
+     }
+   }
+ 
+@@ -148,7 +148,7 @@ RangeMap<Key,T,C,A>::set_merge(Key _begin, const Key& 
+   }
+ 
+   // Otherwise, this range isn't mergeable, make new entry.
+-  return insert(itr, typename RangeMap::value_type(_end, typename RangeMap::mapped_type(_begin, value)));
++  return this->insert(itr, typename RangeMap::value_type(_end, typename RangeMap::mapped_type(_begin, value)));
+ }
+ 
+ template<typename Key, typename T, typename C, typename A>
+@@ -157,13 +157,13 @@ RangeMap<Key,T,C,A>::set_range(const Key& _begin, cons
+   if (!key_comp()(_begin, _end))
+     return end();
+ 
+-  return insert(crop_overlap(_begin, _end), typename RangeMap::value_type(_end, typename RangeMap::mapped_type(_begin, value)));
++  return this->insert(crop_overlap(_begin, _end), typename RangeMap::value_type(_end, typename RangeMap::mapped_type(_begin, value)));
+ }
+ 
+ template<typename Key, typename T, typename C, typename A>
+ inline typename RangeMap<Key,T,C,A>::const_iterator
+ RangeMap<Key,T,C,A>::find(const Key& key) const {
+-  typename RangeMap::const_iterator itr = upper_bound(key);
++  typename RangeMap::const_iterator itr = this->upper_bound(key);
+ 
+   if (itr != end() && key_comp()(key, itr->second.first))
+     itr = end();
