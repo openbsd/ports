@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.53 2014/04/21 14:19:52 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.54 2014/04/21 15:35:34 sthen Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -311,8 +311,7 @@ PHPXS_SUBST+= -e 's,${i},${${i}},'
 
 MODULES=		converters/libiconv devel/gettext
 
-WANTLIB-main+=		c crypto ssl z pthread gssapi xml2>=8 \
-			m ${MODGETTEXT_WANTLIB}
+WANTLIB-main+=		c crypto m pthread ssl xml2>=8 z ${MODGETTEXT_WANTLIB}
 # php 5.4/5.5 : WANTLIB-main += stdc++
 WANTLIB-fastcgi=	${WANTLIB-main}
 LIB_DEPENDS-main=	textproc/libxml
