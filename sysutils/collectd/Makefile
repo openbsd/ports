@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2014/01/24 20:40:17 landry Exp $
+# $OpenBSD: Makefile,v 1.22 2014/04/21 13:33:08 ajacoutot Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -17,7 +17,7 @@ CATEGORIES =		sysutils
 
 REVISION-main=		4
 REVISION-mysql =	3
-REVISION-pgsql =	2
+REVISION-pgsql =	3
 REVISION-rrdtool =	2
 REVISION-snmp =		1
 
@@ -38,8 +38,7 @@ WANTLIB-mysql =		crypto m ssl z mysqlclient pthread
 LIB_DEPENDS-mysql =	databases/mysql
 RUN_DEPENDS-mysql =	collectd-$V:${BASE_PKGPATH},-main
 
-WANTLIB-pgsql =		asn1 com_err crypto heimbase krb5 pq pthread \
-			roken ssl wind
+WANTLIB-pgsql =		pq pthread crypto ssl
 LIB_DEPENDS-pgsql =	databases/postgresql
 RUN_DEPENDS-pgsql =	collectd-$V:${BASE_PKGPATH},-main
 
