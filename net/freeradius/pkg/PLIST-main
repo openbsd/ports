@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.21 2012/09/16 12:44:02 pea Exp $
+@comment $OpenBSD: PLIST-main,v 1.22 2014/04/21 13:07:08 ajacoutot Exp $
 @conflict radiusd-cistron-*
 @conflict radiusd-lucent-*
 @pkgpath net/freeradius
@@ -81,7 +81,6 @@ lib/freeradius/rlm_expr.so
 lib/freeradius/rlm_fastusers.so
 lib/freeradius/rlm_files.so
 lib/freeradius/rlm_ippool.so
-lib/freeradius/rlm_krb5.so
 lib/freeradius/rlm_linelog.so
 lib/freeradius/rlm_logintime.so
 lib/freeradius/rlm_mschap.so

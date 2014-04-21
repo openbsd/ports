@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2014/04/13 20:16:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2014/04/21 13:07:08 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 SHARED_LIBS +=  freeradius-radius    4.1      # .0.0
@@ -15,7 +15,7 @@ DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
 
 PKGNAME-main=	freeradius-$V
-REVISION-main=	3
+REVISION-main=	4
 PKGNAME-iodbc=	freeradius-iodbc-$V
 REVISION-iodbc=	4
 PKGNAME-mysql=	freeradius-mysql-$V
@@ -23,7 +23,7 @@ REVISION-mysql=	4
 PKGNAME-pgsql=	freeradius-pgsql-$V
 REVISION-pgsql=	2
 PKGNAME-ldap=	freeradius-ldap-$V
-REVISION-ldap=	2
+REVISION-ldap=	3
 
 CATEGORIES=	net security
 
@@ -54,7 +54,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--without-rlm_sql_oracle \
 		--without-rlm_sql_db2 \
 		--without-rlm_sql_unixodbc \
-		--enable-heimdal-krb5 \
 		--disable-ltdl-install \
 		--with-system-libltdl
 
@@ -65,7 +64,7 @@ TEST_IS_INTERACTIVE=Yes # doesn't exit properly
 MULTI_PACKAGES=	-main -ldap -mysql -pgsql -iodbc
 SUBST_VARS+=	V
 
-CFLAGS=		-I${LOCALBASE}/include $$(krb5-config --cflags)
+CFLAGS=		-I${LOCALBASE}/include
 
 USE_GMAKE=	Yes
 # undefined reference to `lt__PROGRAM__LTX_preloaded_symbols'
@@ -75,7 +74,7 @@ BUILD_DEPENDS=		net/net-snmp
 
 LIB_DEPENDS-main =	databases/gdbm \
 			devel/libtool,-ltdl
-WANTLIB-main=		${WANTLIB} c com_err krb5 pcap pthread readline \
+WANTLIB-main=		${WANTLIB} c pcap pthread readline \
 			termcap gdbm>=3 ltdl>=4 crypto ssl
 
 PSEUDO_FLAVORS=	no_ldap no_mysql no_pgsql no_iodbc
@@ -100,9 +99,8 @@ CONFIGURE_ARGS+=	--without-rlm_ldap
 
 LIB_DEPENDS-ldap=	databases/openldap \
 			${BASE_PKGPATH}
-WANTLIB-ldap=		crypto ssl sasl2 asn1 com_err gssapi krb5 \
-			lber>=8 ldap_r>=8 freeradius-radius>=1 pthread \
-			heimbase roken wind
+WANTLIB-ldap=		crypto ssl sasl2 \
+			lber>=8 ldap_r>=8 freeradius-radius>=1 pthread
 RUN_DEPENDS-ldap=	#empty
 
 .if !${BUILD_PACKAGES:M-mysql}
