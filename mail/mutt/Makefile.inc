@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.44 2013/06/20 08:26:13 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.45 2014/04/21 18:57:49 sthen Exp $
 
 CATEGORIES=	mail
 
@@ -21,8 +21,7 @@ MODULES=	devel/gettext
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB+=	c crypto gssapi krb5 ssl asn1 com_err heimbase
-WANTLIB+=	roken wind
+WANTLIB+=	c crypto ssl
 
 FLAVORS+=	slang mixmaster compressed
 FLAVOR?=
@@ -37,7 +36,6 @@ CONFIGURE_ARGS+=--enable-external_dotlock \
 		--mandir=${PREFIX}/man \
 		--sysconfdir=${CONFDIR} \
 		--with-docdir="${PREFIX}/share/doc/mutt" \
-		--with-gss \
 		--with-ssl
 FAKE_FLAGS=	sysconfdir="${PREFIX}/share/examples/mutt"
 PATCH_DIST_STRIP= -p1
