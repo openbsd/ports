@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2014/04/12 19:52:19 zhuk Exp $
+# $OpenBSD: Makefile,v 1.45 2014/04/21 16:19:05 sthen Exp $
 
 COMMENT-main=	monitoring plugins (for Nagios, Icinga, etc)
 COMMENT-dbi=	dbi monitoring plugin
@@ -11,8 +11,7 @@ COMMENT-samba=	samba monitoring plugin
 COMMENT-snmp=	monitoring plugins using snmp
 
 V=		1.5
-REVISION=	2
-REVISION-main=	3
+REVISION=	4
 # name currently mid-transition from nagios-plugins
 #DISTNAME=	monitoring-plugins-$V
 DISTNAME=	nagios-plugins-$V
@@ -44,7 +43,6 @@ FAKE_FLAGS=	setuid_root_mode=0555
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
-CONFIGURE_ENV=	CPPFLAGS="$$(krb5-config --cflags)"
 CONFIGURE_ARGS+= --libexecdir=${PREFIX}/libexec/nagios \
 		--with-cgiurl=/cgi-bin/nagios \
 		--with-openssl=/usr \
@@ -102,8 +100,7 @@ CONFIGURE_ARGS += --without-pgsql
 CONFIGURE_ARGS += --with-pgsql=${LOCALBASE}
 .endif
 LIB_DEPENDS-pgsql = ${LIB_DEPENDS} databases/postgresql
-WANTLIB-pgsql += ${WANTLIB} com_err crypto pq ssl
-WANTLIB-pgsql += asn1 krb5 heimbase roken wind
+WANTLIB-pgsql += ${WANTLIB} crypto pq ssl
 
 # DBI
 .if !${BUILD_PACKAGES:M-dbi}
@@ -114,7 +111,6 @@ WANTLIB-dbi = ${WANTLIB} dbi m
 
 # LDAP
 LIB_DEPENDS-ldap = ${LIB_DEPENDS} databases/openldap
-WANTLIB-ldap += ${WANTLIB} asn1 com_err crypto gssapi krb5
-WANTLIB-ldap += lber-2.4 ldap-2.4 sasl2 ssl heimbase roken wind
+WANTLIB-ldap += ${WANTLIB} crypto lber-2.4 ldap-2.4 sasl2 ssl
 
 .include <bsd.port.mk>
