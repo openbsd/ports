@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2013/07/17 07:25:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2014/04/21 22:47:55 ajacoutot Exp $
 
 BROKEN-macppc =	make: don't know how to make all
 
@@ -52,9 +52,6 @@ CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 
 # Requires threaded or "multiplicity" Perl
 CONFIGURE_ARGS +=	--disable-perl
-
-# Requires MIT Kerberos
-CONFIGURE_ARGS +=	--disable-krb
 
 TEST_IS_INTERACTIVE =	Yes
 
