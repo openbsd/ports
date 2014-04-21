@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.52 2014/03/27 14:04:34 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.53 2014/04/21 14:19:52 sthen Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -171,10 +171,9 @@ WANTLIB-intl=		icudata icui18n icuio icuuc m pthread
 MULTI_PACKAGES+=	-imap
 COMMENT-imap=		imap, pop3 and nntp extensions for php5
 CONFIGURE_ARGS+=	--with-imap=shared,${LOCALBASE} \
-			--with-imap-ssl --with-kerberos
+			--with-imap-ssl
 LIB_DEPENDS-imap=	mail/alpine,-c-client
-WANTLIB-imap=		pthread crypto gssapi krb5 ssl c-client>=5 \
-			asn1 com_err heimbase roken wind
+WANTLIB-imap=		pthread crypto ssl c-client>=5
 
 # ldap
 MULTI_PACKAGES+=	-ldap
@@ -312,9 +311,8 @@ PHPXS_SUBST+= -e 's,${i},${${i}},'
 
 MODULES=		converters/libiconv devel/gettext
 
-WANTLIB-main+=		c crypto ssl z pthread gssapi krb5 xml2>=8 \
-			m asn1 com_err heimbase roken \
-			wind ${MODGETTEXT_WANTLIB}
+WANTLIB-main+=		c crypto ssl z pthread gssapi xml2>=8 \
+			m ${MODGETTEXT_WANTLIB}
 # php 5.4/5.5 : WANTLIB-main += stdc++
 WANTLIB-fastcgi=	${WANTLIB-main}
 LIB_DEPENDS-main=	textproc/libxml

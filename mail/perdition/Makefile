@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2013/11/15 10:10:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2014/04/21 14:18:14 sthen Exp $
 
 COMMENT-main=	fully featured POP3 and IMAP4 proxy server
 COMMENT-ldap=	LDAP backend for perdition mail proxy
@@ -6,9 +6,7 @@ COMMENT-mysql=  MySQL backend for perdition mail proxy
 COMMENT-pgsql=	PostgreSQL backend for perdition mail proxy
 
 DISTVER=	1.19-rc5
-REVISION=	4
-REVISION-main=	5
-REVISION-mysql=	5
+REVISION=	6
 DISTNAME=	perdition-${DISTVER}
 PKGNAME-main=	perdition-${DISTVER:S/-//}
 PKGNAME-ldap=	perdition-ldap-${DISTVER:S/-//}
@@ -61,22 +59,20 @@ MULTI_PACKAGES=		-main -mysql -pgsql -ldap
 
 .include <bsd.port.arch.mk>
 
-WANTLIB-main=		${MODGETTEXT_WANTLIB} \
-			c crypto ssl util lib/db4/db>=4 vanessa_adt>=1.0 \
-			vanessa_logger>=1.0 vanessa_socket>=1.0 popt idn
-LIB_DEPENDS-main=	databases/db/v4 \
+cWANTLIB=		lib/db4/db>=4 vanessa_logger>=1.0 vanessa_socket>=1.0 \
+			vanessa_adt>=1.0
+LIB_DEPENDS+=		databases/db/v4 \
 			vanessa_adt->=0.0.9:devel/vanessa/adt \
 			vanessa_logger->=0.0.10:devel/vanessa/logger \
-			vanessa_socket->=0.0.12:devel/vanessa/socket \
-			devel/popt \
-			devel/libidn
+			vanessa_socket->=0.0.12:devel/vanessa/socket
 
-LIB_DEPENDS-ldap=	security/cyrus-sasl2 \
-			openldap-client->=2,<3:databases/openldap \
-			vanessa_logger->=0.0.10:devel/vanessa/logger
-WANTLIB-ldap=		asn1 com_err crypto gssapi krb5 ssl util sasl2 \
-			heimbase lber-2.4 ldap-2.4 \
-			wind roken vanessa_logger
+WANTLIB-main=		${MODGETTEXT_WANTLIB} ${cWANTLIB} \
+			c crypto ssl util popt idn
+LIB_DEPENDS-main=	${LIB_DEPENDS} devel/popt devel/libidn
+
+LIB_DEPENDS-ldap=	${LIB_DEPENDS} security/cyrus-sasl2 \
+			openldap-client->=2,<3:databases/openldap
+WANTLIB-ldap=		crypto lber-2.4 ldap-2.4 sasl2 ssl util ${cWANTLIB}
 
 .if !${BUILD_PACKAGES:M-ldap}
 CONFIGURE_ARGS+=	--disable-ldap
@@ -86,11 +82,8 @@ CONFIGURE_ARGS+=	--with-ldap-libraries=${LOCALBASE}/lib \
 			--disable-ldap-doc
 .endif
 
-LIB_DEPENDS-mysql=	databases/mysql \
-			devel/vanessa/adt \
-			devel/vanessa/logger
-WANTLIB-mysql=		crypto ssl util m z lib/mysql/mysqlclient>=10 \
-			vanessa_adt>=1.0 vanessa_logger>=1.0
+LIB_DEPENDS-mysql=	${LIB_DEPENDS} databases/mysql
+WANTLIB-mysql=		crypto ssl util m z lib/mysql/mysqlclient>=10 ${cWANTLIB}
 
 .if !${BUILD_PACKAGES:M-mysql}
 CONFIGURE_ARGS+=	--disable-mysql
@@ -99,12 +92,8 @@ CONFIGURE_ARGS+=	--with-mysql-libraries=${LOCALBASE}/lib/mysql \
 			--with-mysql-includes=${LOCALBASE}/include/mysql
 .endif
 
-LIB_DEPENDS-pgsql=	databases/postgresql \
-			devel/vanessa/adt \
-			devel/vanessa/logger
-WANTLIB-pgsql=		crypto ssl util pq>=2 vanessa_adt>=1.0 \
-			vanessa_logger>=1.0 asn1 com_err heimbase \
-			krb5 roken wind
+LIB_DEPENDS-pgsql=	${LIB_DEPENDS} databases/postgresql
+WANTLIB-pgsql=		crypto pq ssl util ${cWANTLIB}
 
 .if !${BUILD_PACKAGES:M-pgsql}
 CONFIGURE_ARGS+=	--disable-pg
