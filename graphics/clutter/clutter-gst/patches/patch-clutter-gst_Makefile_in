@@ -1,0 +1,18 @@
+$OpenBSD: patch-clutter-gst_Makefile_in,v 1.1 2014/04/22 10:27:51 ajacoutot Exp $
+
+From a4b6dd885961948f5e4bd98e9c0f86de851f95da Mon Sep 17 00:00:00 2001
+From: Lionel Landwerlin <llandwerlin@gmail.com>
+Date: Tue, 22 Apr 2014 11:17:15 +0100
+Subject: clutter-gst: do not hardcore libtool path
+
+--- clutter-gst/Makefile.in.orig	Tue Apr 22 12:24:08 2014
++++ clutter-gst/Makefile.in	Tue Apr 22 12:24:34 2014
+@@ -1257,7 +1257,7 @@ $(marshal_c): $(marshal_h)
+ @HAVE_INTROSPECTION_TRUE@		--include=GstAudio-1.0 \
+ @HAVE_INTROSPECTION_TRUE@		--add-init-section="clutter_gst_init(0,NULL);" \
+ @HAVE_INTROSPECTION_TRUE@		--library=libclutter-gst-@CLUTTER_GST_API_VERSION@.la \
+-@HAVE_INTROSPECTION_TRUE@		--libtool="$(top_builddir)/libtool" \
++@HAVE_INTROSPECTION_TRUE@		--libtool="${LIBTOOL}" \
+ @HAVE_INTROSPECTION_TRUE@		--output $@ \
+ @HAVE_INTROSPECTION_TRUE@		--pkg gobject-2.0 \
+ @HAVE_INTROSPECTION_TRUE@		--pkg clutter-1.0 \
