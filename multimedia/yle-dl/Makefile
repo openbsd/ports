@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/11 11:35:45 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2014/04/22 08:54:57 jca Exp $
 
 V =			1.4.6
+REVISION =		0
 COMMENT =		download videos from YLE Areena
 DISTNAME =		rtmpdump-yle-$V
 PKGNAME =		yle-dl-$V
@@ -13,7 +14,7 @@ MAINTAINER =		Antti Harri <iku@openbsd.fi>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c crypto json ssl z
+WANTLIB += c crypto json-c ssl z
 
 MASTER_SITES =		${HOMEPAGE}
 
@@ -27,8 +28,8 @@ MAKE_ENV =		XCFLAGS="${CFLAGS}" XLDFLAGS="${LDFLAGS}"
 USE_GMAKE =		Yes
 NO_TEST =		Yes
 
-CFLAGS +=		`pkg-config --cflags json` -I${PREFIX}/include
-LDFLAGS +=		`pkg-config --libs json` -liconv
+CFLAGS +=		`pkg-config --cflags json-c` -I${PREFIX}/include
+LDFLAGS +=		`pkg-config --libs json-c` -liconv
 
 do-build:
 	cd ${WRKSRC} && env -i ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \

@@ -1,0 +1,12 @@
+$OpenBSD: patch-librtmp_Makefile,v 1.1 2014/04/22 08:54:57 jca Exp $
+--- librtmp/Makefile.orig	Mon Apr 21 18:28:22 2014
++++ librtmp/Makefile	Mon Apr 21 18:28:39 2014
+@@ -64,7 +64,7 @@ INSTALL_IMPLIB=$(INSTALL_IMPLIB_$(SYS))
+ 
+ STATIC_JSON=
+ JSON_DEF=$(if $(STATIC_JSON),-I$(STATIC_JSON),-I/usr/include/json)
+-LIB_JSON=$(if $(STATIC_JSON),,-ljson)
++LIB_JSON=$(if $(STATIC_JSON),,-ljson-c)
+ REQ_JSON=json
+ 
+ SHARED=
