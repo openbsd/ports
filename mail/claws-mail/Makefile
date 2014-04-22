@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2014/04/21 17:59:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.72 2014/04/22 19:26:45 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -56,7 +56,7 @@ WANTLIB += xcb-shm z
 WANTLIB-main =  ${WANTLIB}
 WANTLIB-main += ICE SM X11-xcb assuan c dbus-1 dbus-glib-1 enchant
 WANTLIB-main += gmp gnutls gpg-error gpgme hogweed nettle p11-kit perl
-WANTLIB-main += startup-notification-1 stdc++ tasn1 util xcb-aux xml2
+WANTLIB-main += startup-notification-1 stdc++ tasn1 util xcb-util xml2
 WANTLIB-main += canberra canberra-gtk notify ltdl ogg vorbis vorbisfile
 
 WANTLIB-gdata = ${WANTLIB}
