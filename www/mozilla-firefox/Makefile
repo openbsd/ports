@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.248 2014/03/24 21:11:37 landry Exp $
+# $OpenBSD: Makefile,v 1.249 2014/04/22 08:43:28 ajacoutot Exp $
 
 COMMENT =	Mozilla web browser
 
@@ -9,6 +9,7 @@ MOZILLA_VERSION =	28.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
+REVISION =		0
 
 #MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/
 SO_VERSION =	46.0
