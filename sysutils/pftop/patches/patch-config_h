@@ -1,7 +1,8 @@
-$OpenBSD: patch-config_h,v 1.5 2009/11/30 09:56:39 sthen Exp $
---- config.h.orig	Wed Nov  7 06:34:18 2007
-+++ config.h	Sun Nov 29 22:27:09 2009
-@@ -74,11 +74,24 @@
+$OpenBSD: patch-config_h,v 1.6 2014/04/22 10:56:01 jca Exp $
+XXX remove HAVE_ALTQ hack after bump to 5.6-current
+--- config.h.orig	Wed Nov  7 07:34:18 2007
++++ config.h	Tue Apr 22 05:05:05 2014
+@@ -74,11 +74,28 @@
  #define HAVE_PFSYNC_STATE
  #endif
  
@@ -13,6 +14,10 @@ $OpenBSD: patch-config_h,v 1.5 2009/11/30 09:56:39 sthen Exp $
 +/* #if OS_LEVEL > 46 */
 +#undef HAVE_RULE_NATPASS
 +/* #endif */
++
++#if OS_LEVEL > 55 || 1
++#undef HAVE_ALTQ
++#endif
 +
  #ifdef HAVE_PFSYNC_STATE
  typedef struct pfsync_state pf_state_t;

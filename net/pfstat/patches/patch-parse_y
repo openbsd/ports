@@ -1,6 +1,6 @@
-$OpenBSD: patch-parse_y,v 1.1 2013/03/11 19:50:04 sthen Exp $
---- parse.y.orig	Sun Feb 24 22:12:50 2013
-+++ parse.y	Sun Feb 24 22:13:05 2013
+$OpenBSD: patch-parse_y,v 1.2 2014/04/22 10:56:37 jca Exp $
+--- parse.y.orig	Thu Jan 11 17:01:58 2007
++++ parse.y	Tue Apr 22 12:13:49 2014
 @@ -133,7 +133,7 @@ coldef		: GLOBAL STRING STRING
  			    "short", "normalize", "memory", "bad-timestamp",
  			    "congestion", "ip-option", "proto-cksum",
@@ -10,3 +10,12 @@ $OpenBSD: patch-parse_y,v 1.1 2013/03/11 19:50:04 sthen Exp $
  			int i;
  
  			$$.type = 0;
+@@ -181,6 +181,8 @@ coldef		: GLOBAL STRING STRING
+ 		/*      NAME   pass/drop packet/bytes */
+ 		| QUEUE STRING STRING STRING
+ 		{
++			yyerror("ALTQ-style queues not supported anymore");
++			YYERROR;
+ 			$$.type = 2;
+ 			$$.arg = strdup($2);
+ 			if (!strcmp($3, "other"))
