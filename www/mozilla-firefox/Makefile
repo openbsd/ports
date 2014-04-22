@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.249 2014/04/22 08:43:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.250 2014/04/22 11:38:33 landry Exp $
 
 COMMENT =	Mozilla web browser
 
@@ -33,6 +33,11 @@ MODGCC4_ARCHS =		powerpc sparc64 alpha i386
 MODGCC4_LANGS =		c c++
 MODCLANG_ARCHS =	amd64
 MODCLANG_LANGS =	c c++
+
+# fix for 982693, apply only on clang archs
+.if ${MACHINE_ARCH:Mamd64}
+MAKE_ENV += VPXHACK="-fno-integrated-as"
+.endif
 
 # Regression tests are too hard to adapt to run here
 NO_TEST =	Yes

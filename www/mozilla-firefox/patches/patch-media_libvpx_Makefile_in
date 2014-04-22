@@ -1,4 +1,4 @@
-$OpenBSD: patch-media_libvpx_Makefile_in,v 1.1 2014/04/20 16:18:55 landry Exp $
+$OpenBSD: patch-media_libvpx_Makefile_in,v 1.2 2014/04/22 11:38:33 landry Exp $
 
 https://bugzilla.mozilla.org/show_bug.cgi?id=982693
 
@@ -9,7 +9,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=982693
  vp8_asm_enc_offsets.s: $(srcdir)/vp8/encoder/vp8_asm_enc_offsets.c
  	$(REPORT_BUILD)
 -	$(CC) -S $(COMPILE_CFLAGS) $(TARGET_LOCAL_INCLUDES) $(_VPATH_SRCS)
-+	$(CC) -S $(COMPILE_CFLAGS) $(TARGET_LOCAL_INCLUDES) $(_VPATH_SRCS) -fno-integrated-as
++	$(CC) -S $(COMPILE_CFLAGS) $(TARGET_LOCAL_INCLUDES) $(_VPATH_SRCS) $(VPXHACK)
  
  vp8_asm_enc_offsets.asm: vp8_asm_enc_offsets.s
  	grep $(OFFSET_PATTERN) $< | sed -e 's/[$$\#]//g' \

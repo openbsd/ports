@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.153 2014/03/24 21:34:21 landry Exp $
+# $OpenBSD: Makefile,v 1.154 2014/04/22 11:38:33 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -36,6 +36,11 @@ MODGCC4_ARCHS =		powerpc sparc64 alpha i386
 MODGCC4_LANGS =		c c++
 MODCLANG_ARCHS =	amd64
 MODCLANG_LANGS =	c c++
+
+# fix for 982693, apply only on clang archs
+.if ${MACHINE_ARCH:Mamd64}
+MAKE_ENV += VPXHACK="-fno-integrated-as"
+.endif
 
 NO_TEST=	Yes
 
