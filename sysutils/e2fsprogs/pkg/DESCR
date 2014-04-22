@@ -3,4 +3,4 @@ Set of utilities and library to manipulate ext2 filesystems.
 * mkfs for ext2/ext3                                                    
 * tune2fs                                                               
 * dumpe2fs                                                              
-* libe2fs-uuid (renamed from libuuid to avoid conflicts)
+* libuuid

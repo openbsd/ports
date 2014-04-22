@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_et_Makefile_in,v 1.6 2014/04/22 10:21:13 ajacoutot Exp $
+--- lib/et/Makefile.in.orig	Tue Apr 22 10:36:27 2014
++++ lib/et/Makefile.in	Tue Apr 22 10:36:58 2014
+@@ -25,8 +25,8 @@ SHARE_FILES= et_c.awk et_h.awk
+ LIBRARY= libcom_err
+ LIBDIR= et
+ 
+-ELF_VERSION = 2.1
+-ELF_SO_VERSION = 2
++ELF_VERSION = $(LIBcom_err_VERSION)
++ELF_SO_VERSION = $(LIBcom_err_VERSION)
+ ELF_IMAGE = libcom_err
+ ELF_MYDIR = et
+ ELF_INSTALL_DIR = $(root_libdir)

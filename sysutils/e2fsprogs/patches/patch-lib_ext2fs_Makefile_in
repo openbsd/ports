@@ -1,10 +1,7 @@
-$OpenBSD: patch-lib_ext2fs_Makefile_in,v 1.4 2013/06/21 22:35:51 sthen Exp $
-
-Statically link libcom_err to avoid conflict with kerberosV.
-
---- lib/ext2fs/Makefile.in.orig	Tue Jan 22 03:33:35 2013
-+++ lib/ext2fs/Makefile.in	Wed Jun 19 14:50:57 2013
-@@ -177,12 +177,12 @@ HFILES_IN=  ext2_err.h ext2_types.h
+$OpenBSD: patch-lib_ext2fs_Makefile_in,v 1.5 2014/04/22 10:21:13 ajacoutot Exp $
+--- lib/ext2fs/Makefile.in.orig	Tue Jan 22 04:33:35 2013
++++ lib/ext2fs/Makefile.in	Tue Apr 22 10:29:47 2014
+@@ -177,8 +177,8 @@ HFILES_IN=  ext2_err.h ext2_types.h
  LIBRARY= libext2fs
  LIBDIR= ext2fs
  
@@ -15,8 +12,3 @@ Statically link libcom_err to avoid conflict with kerberosV.
  ELF_IMAGE = libext2fs
  ELF_MYDIR = ext2fs
  ELF_INSTALL_DIR = $(root_libdir)
--ELF_OTHER_LIBS = -lcom_err
-+ELF_OTHER_LIBS = ../../libcom_err.a
- 
- BSDLIB_VERSION = 2.1
- BSDLIB_IMAGE = libext2fs
