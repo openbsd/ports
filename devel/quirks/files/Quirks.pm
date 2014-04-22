@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.154 2014/04/21 12:28:40 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.155 2014/04/22 10:03:26 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -413,6 +413,7 @@ my $obsolete_reason = {
 	'py-pykpass' => 2,
 	'mod_auth_kerb' => 2,
 	'p5-GSSAPI' => 2,
+	'opal' => 0,
 };
 
 # ->is_base_system($handle, $state):
