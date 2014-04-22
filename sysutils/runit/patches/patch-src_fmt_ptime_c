@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_fmt_ptime_c,v 1.1 2014/04/22 09:50:06 jca Exp $
+--- src/fmt_ptime.c.orig	Tue Nov 21 16:14:12 2006
++++ src/fmt_ptime.c	Tue Apr 22 01:27:37 2014
+@@ -4,7 +4,7 @@
+ 
+ unsigned int fmt_ptime2(char *s, struct taia *ta, char sep) {
+   struct tm *t;
+-  unsigned long u;
++  time_t u;
+ 
+   if (ta->sec.x < 4611686018427387914ULL) return(0); /* impossible? */
+   u =ta->sec.x -4611686018427387914ULL;
