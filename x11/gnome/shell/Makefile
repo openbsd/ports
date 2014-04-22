@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2014/04/21 15:28:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.89 2014/04/22 21:23:52 naddy Exp $
 
 COMMENT=		next generation GNOME shell
 
@@ -26,7 +26,7 @@ WANTLIB += png polkit-agent-1 polkit-gobject-1 pthread pthread-stubs
 WANTLIB += pulse pulse-mainloop-glib readline secret-1 smime3
 WANTLIB += sndfile softokn3 soup-2.4 sqlite3 ssl3 startup-notification-1
 WANTLIB += stdc++ telepathy-glib upower-glib vorbis vorbisenc
-WANTLIB += vorbisfile xcb xcb-aux xcb-render xcb-shm xml2 z
+WANTLIB += vorbisfile xcb xcb-util xcb-render xcb-shm xml2 z
 
 MODULES=		devel/dconf \
 			devel/gettext \

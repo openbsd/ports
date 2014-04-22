@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2014/04/21 12:43:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2014/04/22 21:23:52 naddy Exp $
 
 COMMENT=	Xfce4 printing helper
 
@@ -34,7 +34,7 @@ WANTLIB += expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += ssl startup-notification-1 xcb xcb-aux xcb-render xcb-shm
+WANTLIB += ssl startup-notification-1 xcb xcb-util xcb-render xcb-shm
 WANTLIB += xfce4util xfcegui4 xfconf-0 z
 
 .include <bsd.port.mk>
