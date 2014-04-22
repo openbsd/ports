@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2013/03/21 08:45:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2014/04/22 10:48:21 jca Exp $
 
 SHARED_ONLY=		Yes
 
 CATEGORIES=		devel
-COMMENT=		high perfomance Cloud Storage client library
+COMMENT=		high performance Cloud Storage client library
 
 VERSION=		1.1
-REVISION=		0
+REVISION=		1
 DISTNAME=		droplet-${VERSION}
 HOMEPAGE=		https://github.com/scality/Droplet
 
@@ -17,7 +17,7 @@ MAINTAINER=		Rafael Sadowski <rafael@sizeofvoid.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=		crypto json m pthread ssl xml2 z
+WANTLIB=		crypto json-c m pthread ssl xml2 z
 
 MASTER_SITES=		http://www.sizeofvoid.org/pub/OpenBSD/distfiles/
 
@@ -25,7 +25,6 @@ WRKDIST=		${WRKDIR}/scality-Droplet-e6692cc
 MODULES=		converters/libiconv
 BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/json-c \
 			devel/libtool
 # XXX Depends on libtool macros
 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-libdroplet_include_dropletp_h,v 1.1 2014/04/22 10:48:21 jca Exp $
+--- libdroplet/include/dropletp.h.orig	Mon Apr 21 18:19:56 2014
++++ libdroplet/include/dropletp.h	Mon Apr 21 18:20:05 2014
+@@ -58,7 +58,7 @@
+ #include <openssl/rand.h>
+ #include <libxml/parser.h>
+ #include <libxml/tree.h>
+-#include <json/json.h>
++#include <json-c/json.h>
+ #include <sys/types.h>
+ #include <pwd.h>
+ #include <fcntl.h>

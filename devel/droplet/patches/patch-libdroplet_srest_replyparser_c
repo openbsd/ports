@@ -1,0 +1,12 @@
+$OpenBSD: patch-libdroplet_srest_replyparser_c,v 1.1 2014/04/22 10:48:21 jca Exp $
+--- libdroplet/srest/replyparser.c.orig	Mon Apr 21 18:20:17 2014
++++ libdroplet/srest/replyparser.c	Mon Apr 21 18:20:22 2014
+@@ -32,7 +32,7 @@
+  * https://github.com/scality/Droplet
+  */
+ #include "dropletp.h"
+-#include <json/json.h>
++#include <json-c/json.h>
+ 
+ //#define DPRINTF(fmt,...) fprintf(stderr, fmt, ##__VA_ARGS__)
+ #define DPRINTF(fmt,...)
