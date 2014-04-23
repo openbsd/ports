@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.67 2014/03/24 21:03:39 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.68 2014/04/23 05:44:06 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	amd64 arm i386 powerpc sparc64
@@ -78,7 +78,6 @@ USE_GMAKE ?=	Yes
 
 # no --with-system-jpeg starting with fx 18, requires libjpeg-turbo because of bug 791305
 # no --with-system-cairo, too much gfx problems because of version mismatch
-# gecko doesnt link anymore with krb5 since 22 (bug 648730)
 # no --with-system-ffi, needs 3.0.10 when not using gcc
 # no --with-system-png, apng support not bundled in
 
