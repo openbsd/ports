@@ -1,7 +1,10 @@
-$OpenBSD: patch-src_openbsd_up-backend_c,v 1.15 2014/04/20 18:20:43 jasper Exp $
+$OpenBSD: patch-src_openbsd_up-backend_c,v 1.16 2014/04/23 09:55:18 jasper Exp $
 
-Retrieve lid status for OpenBSD.
-https://bugs.freedesktop.org/show_bug.cgi?id=77692
+From 4bed9c99c1d459f0d1bc760716573e2a2af5e0e1 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Sun, 20 Apr 2014 18:15:36 +0000
+Subject: Update lid status when updating ac status.
+         https://bugs.freedesktop.org/show_bug.cgi?id=77692
 
 --- src/openbsd/up-backend.c.orig	Tue Oct 29 11:37:08 2013
 +++ src/openbsd/up-backend.c	Sun Apr 20 18:54:05 2014
