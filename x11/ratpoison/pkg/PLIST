@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2013/04/07 20:09:23 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.10 2014/04/23 00:40:59 jca Exp $
 @bin bin/ratpoison
 bin/rpws
 @info info/ratpoison.info
@@ -9,11 +9,14 @@ share/doc/ratpoison/COPYING
 share/doc/ratpoison/ChangeLog
 share/doc/ratpoison/NEWS
 share/doc/ratpoison/README
+share/emacs/
+share/emacs/site-lisp/
+share/emacs/site-lisp/ratpoison.el
 share/ratpoison/
 share/ratpoison/allwindows.sh
 share/ratpoison/clickframe.pl
 share/ratpoison/genrpbindings
-share/ratpoison/ratpoison.el
+share/ratpoison/ratdate.sh
 share/ratpoison/rpshowall.sh
 share/ratpoison/rpws
 share/ratpoison/sloppy.c
