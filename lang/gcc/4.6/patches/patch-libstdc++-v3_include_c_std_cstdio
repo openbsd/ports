@@ -1,0 +1,12 @@
+$OpenBSD: patch-libstdc++-v3_include_c_std_cstdio,v 1.1 2014/04/23 11:34:49 pascal Exp $
+--- libstdc++-v3/include/c_std/cstdio.orig	Fri Mar 28 18:04:26 2014
++++ libstdc++-v3/include/c_std/cstdio	Fri Mar 28 18:16:54 2014
+@@ -45,6 +45,8 @@
+ #include <bits/c++config.h>
+ #include <stdio.h>
+ 
++extern "C" char* gets (char* __s) __attribute__((deprecated));
++
+ // Get rid of those macros defined in <stdio.h> in lieu of real functions.
+ #undef clearerr
+ #undef fclose

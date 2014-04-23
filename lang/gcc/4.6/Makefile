@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2014/03/10 21:33:17 espie Exp $
+# $OpenBSD: Makefile,v 1.73 2014/04/23 11:34:49 pascal Exp $
 
 #ONLY_FOR_ARCHS = alpha amd64 hppa i386 powerpc sparc64
 # ignore arches that have a valid 4.8 port
@@ -27,7 +27,7 @@ PKGNAME-go =	gccgo-${FULL_PKGVERSION}
 PKGSPEC-main = gcc->=4.6,<4.7
 
 REVISION-main =	7
-REVISION-c++ =	4
+REVISION-c++ =	5
 #REVISION-estdc =
 REVISION-f95 =	4
 REVISION-java =	4
