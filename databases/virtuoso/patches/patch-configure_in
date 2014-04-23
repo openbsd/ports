@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2013/04/22 17:32:31 zhuk Exp $
+$OpenBSD: patch-configure_in,v 1.2 2014/04/23 05:23:24 ajacoutot Exp $
 Add OpenBSD default configuration profile.
 Force using of GNU flex.
 Help to find Kerberos and libwbxml.
@@ -12,8 +12,8 @@ Help to find Kerberos and libwbxml.
 +	virtuoso_layout=OpenBSD
 +	if test "x$prefix" = "xNONE"
 +	then
-+		prefix=/usr/local
-+		localstatedir=/var
++		prefix=${PREFIX}
++		localstatedir=${LOCALSTATEDIR}
 +	fi
 +	vaddir=$datadir/virtuoso/vad
 +	docdir=$datadir/doc/virtuoso

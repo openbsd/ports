@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2014/04/21 22:47:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2014/04/23 05:23:24 ajacoutot Exp $
 
 BROKEN-macppc =	make: don't know how to make all
 
 COMMENT =	object-relational SQL database
 DISTNAME =	virtuoso-opensource-6.1.6
-REVISION =	1
+REVISION =	2
 PKGNAME =	${DISTNAME:C/-opensource//}
 
 CATEGORIES =	databases
@@ -54,6 +54,9 @@ CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 CONFIGURE_ARGS +=	--disable-perl
 
 TEST_IS_INTERACTIVE =	Yes
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/configure.in
 
 post-install:
 	rm -R ${PREFIX}/share/virtuoso
