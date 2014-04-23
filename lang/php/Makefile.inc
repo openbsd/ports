@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.54 2014/04/21 15:35:34 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.55 2014/04/23 08:39:58 edd Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -74,6 +74,11 @@ CONFIGURE_ARGS+=	--enable-shared \
 			--enable-sqlite-utf8 \
 			--with-sqlite3 \
 			--program-suffix=-${PV}
+
+# readline is broken in PHP-5.3
+.if ${PV} != 5.3
+CONFIGURE_ARGS +=	--with-readline
+.endif
 
 .if ${FLAVOR:Map2}
 CONFIGURE_ARGS+=	--with-apxs2=${LOCALBASE}/sbin/apxs2
