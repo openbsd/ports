@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2009/09/06 18:40:57 jolan Exp $
---- Makefile.orig	Wed Jul 29 12:54:54 2009
-+++ Makefile	Sun Sep  6 12:06:00 2009
+$OpenBSD: patch-Makefile,v 1.2 2014/04/23 17:59:01 jca Exp $
+--- Makefile.orig	Thu Feb 27 20:03:28 2014
++++ Makefile	Thu Feb 27 20:03:41 2014
 @@ -1,12 +1,12 @@
  
  include config.unix

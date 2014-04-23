@@ -1,14 +1,7 @@
-$OpenBSD: patch-certs_Makefile,v 1.2 2012/10/08 09:11:35 jasper Exp $
-
-- use '.crt' as the certificate extension
-- set correct Make program for this GNU Makefile
-- make sure the permissions are restricted for the .key files
-
---- certs/Makefile.orig	Sun Jun 12 23:21:39 2011
-+++ certs/Makefile	Fri Oct  5 17:08:16 2012
-@@ -1,14 +1,14 @@
--.DEFAULT: localhost.cert
-+.DEFAULT: localhost.crt
+$OpenBSD: patch-certs_Makefile,v 1.3 2014/04/23 17:59:01 jca Exp $
+--- certs/Makefile.orig	Thu Feb 27 20:04:09 2014
++++ certs/Makefile	Thu Feb 27 20:05:11 2014
+@@ -2,13 +2,13 @@
  keysize=2048
  
  # How to:
@@ -20,23 +13,9 @@ $OpenBSD: patch-certs_Makefile,v 1.2 2012/10/08 09:11:35 jasper Exp $
 +# Then `${MAKE_PROGRAM} yourhost.key` to create your private key, you can
  # include keysize=number to change the size of the key.
 -# Then you can either `make yourhost.csr` to generate a certificate
--# signing request that you can submit to a CA, or `make yourhost.cert`
+-# signing request that you can submit to a CA, or `make yourhost.crt`
 +# Then you can either `${MAKE_PROGRAM} yourhost.csr` to generate a certificate
 +# signing request that you can submit to a CA, or `${MAKE_PROGRAM} yourhost.crt`
  # to generate a self signed certificate.
  
  .PRECIOUS: %.cnf %.key
-@@ -18,7 +18,7 @@ keysize=2048
- 	openssl req -new -key $(lastword $^) -out $@ -utf8 -config $(firstword $^)
- 
- # Self signed
--%.cert: %.cnf %.key
-+%.crt: %.cnf %.key
- 	openssl req -new -x509 -nodes -key $(lastword $^) -days 365 \
- 		-sha1 -out $@ -utf8 -config $(firstword $^)
- 
-@@ -28,3 +28,4 @@ keysize=2048
- %.key:
- 	openssl genrsa $(keysize) > $@
- 	@chmod 400 $@
-+	@chown _prosody $@

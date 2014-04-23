@@ -1,6 +1,6 @@
-$OpenBSD: patch-prosody_cfg_lua_dist,v 1.4 2012/10/05 14:38:09 jasper Exp $
---- prosody.cfg.lua.dist.orig	Sun Jun 12 23:21:40 2011
-+++ prosody.cfg.lua.dist	Fri Oct  5 16:17:16 2012
+$OpenBSD: patch-prosody_cfg_lua_dist,v 1.5 2014/04/23 17:59:01 jca Exp $
+--- prosody.cfg.lua.dist.orig	Thu Feb 27 20:05:53 2014
++++ prosody.cfg.lua.dist	Thu Feb 27 20:06:51 2014
 @@ -22,6 +22,14 @@
  -- Example: admins = { "user1@example.com", "user2@example.net" }
  admins = { }
@@ -16,25 +16,7 @@ $OpenBSD: patch-prosody_cfg_lua_dist,v 1.4 2012/10/05 14:38:09 jasper Exp $
  -- Enable use of libevent for better performance under high load
  -- For more information see: http://prosody.im/doc/libevent
  --use_libevent = true;
-@@ -59,7 +67,7 @@ modules_enabled = {
- 		--"admin_telnet"; -- Opens telnet console interface on localhost port 5582
- 
- 	-- Other specific functionality
--		--"posix"; -- POSIX functionality, sends server to background, enables syslog, etc.
-+		"posix"; -- POSIX functionality, sends server to background, enables syslog, etc.
- 		--"bosh"; -- Enable BOSH clients, aka "Jabber over HTTP"
- 		--"httpserver"; -- Serve static files from a directory over HTTP
- 		--"groups"; -- Shared roster support
-@@ -87,7 +95,7 @@ allow_registration = false;
- -- to use SSL/TLS, you may comment or remove this
- ssl = {
- 	key = "certs/localhost.key";
--	certificate = "certs/localhost.cert";
-+	certificate = "certs/localhost.crt";
- }
- 
- -- Only allow encrypted streams? Encryption is already used when
-@@ -123,8 +131,8 @@ authentication = "internal_plain"
+@@ -139,8 +147,8 @@ authentication = "internal_plain"
  -- Logging configuration
  -- For advanced logging see http://prosody.im/doc/logging
  log = {

@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.27 2013/03/11 11:35:55 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2014/04/23 17:59:01 jca Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	communications server for Jabber/XMPP written in Lua
-DISTNAME=	prosody-0.8.2
+DISTNAME=	prosody-0.9.4
 CATEGORIES=	net
 MASTER_SITES=	http://prosody.im/downloads/source/
-REVISION=	9
 
 HOMEPAGE=	http://prosody.im/
 
-MAINTAINER=	Wiktor Izdebski <vicviq@gmail.com>
+MAINTAINER=	Henrik Friedrichsen <henrik@diff.cc>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
@@ -52,5 +51,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README \
 		${PREFIX}/share/doc/prosody
 	touch ${PREFIX}/share/examples/prosody/prosody.log
+	rm -f ${PREFIX}/share/examples/prosody/certs/Makefile.*
 
 .include <bsd.port.mk>
