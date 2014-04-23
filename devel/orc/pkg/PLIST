@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2013/10/05 19:54:47 brad Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/04/23 19:35:26 brad Exp $
 @bin bin/orc-bugreport
 @bin bin/orcc
 include/orc-0.4/
@@ -61,6 +61,7 @@ share/gtk-doc/html/orc/ch05.html
 share/gtk-doc/html/orc/home.png
 share/gtk-doc/html/orc/index.html
 share/gtk-doc/html/orc/index.sgml
+share/gtk-doc/html/orc/left-insensitive.png
 share/gtk-doc/html/orc/left.png
 share/gtk-doc/html/orc/orc-ARM.html
 share/gtk-doc/html/orc/orc-MMX.html
@@ -83,6 +84,8 @@ share/gtk-doc/html/orc/orc-runninging.html
 share/gtk-doc/html/orc/orc-tutorial.html
 share/gtk-doc/html/orc/orc-x86.html
 share/gtk-doc/html/orc/orc.devhelp2
+share/gtk-doc/html/orc/right-insensitive.png
 share/gtk-doc/html/orc/right.png
 share/gtk-doc/html/orc/style.css
+share/gtk-doc/html/orc/up-insensitive.png
 share/gtk-doc/html/orc/up.png
