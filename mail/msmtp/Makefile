@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2013/04/23 14:32:26 gsoares Exp $
+# $OpenBSD: Makefile,v 1.38 2014/04/23 09:10:51 edd Exp $
 
 COMMENT =		SMTP plugin for MUAs
 
-DISTNAME =		msmtp-1.4.31
+DISTNAME =		msmtp-1.4.32
 CATEGORIES =		mail
 
 HOMEPAGE =		http://msmtp.sourceforge.net/
-
-MAINTAINER =		Gleydson Soares <gsoares@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =		Yes
