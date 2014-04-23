@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2014/04/21 14:34:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2014/04/23 10:41:26 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	quick previewer for Nautilus
 
 GNOME_PROJECT=	sushi
-GNOME_VERSION=	3.10.0
-REVISION=	5
+GNOME_VERSION=	3.12.0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
