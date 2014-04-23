@@ -1,0 +1,73 @@
+$OpenBSD: patch-configure,v 1.19 2014/04/23 09:25:36 ajacoutot Exp $
+
+XXX disable user-accounts panel (requires kerberos)
+
+--- configure.orig	Wed Apr 23 11:16:50 2014
++++ configure	Wed Apr 23 11:17:35 2014
+@@ -16568,13 +16568,11 @@ if test -n "$USER_ACCOUNTS_PANEL_CFLAGS"; then
+                   polkit-gobject-1 >= \$POLKIT_REQUIRED_VERSION
+                   gnome-desktop-3.0
+                   gdk-pixbuf-2.0 >= \$GDKPIXBUF_REQUIRED_VERSION
+-                  pwquality >= \$PWQUALITY_REQUIRED_VERSION
+                   accountsservice >= \$ACCOUNTSSERVICE_REQUIRED_VERSION\""; } >&5
+   ($PKG_CONFIG --exists --print-errors "$COMMON_MODULES
+                   polkit-gobject-1 >= $POLKIT_REQUIRED_VERSION
+                   gnome-desktop-3.0
+                   gdk-pixbuf-2.0 >= $GDKPIXBUF_REQUIRED_VERSION
+-                  pwquality >= $PWQUALITY_REQUIRED_VERSION
+                   accountsservice >= $ACCOUNTSSERVICE_REQUIRED_VERSION") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+@@ -16583,7 +16581,6 @@ if test -n "$USER_ACCOUNTS_PANEL_CFLAGS"; then
+                   polkit-gobject-1 >= $POLKIT_REQUIRED_VERSION
+                   gnome-desktop-3.0
+                   gdk-pixbuf-2.0 >= $GDKPIXBUF_REQUIRED_VERSION
+-                  pwquality >= $PWQUALITY_REQUIRED_VERSION
+                   accountsservice >= $ACCOUNTSSERVICE_REQUIRED_VERSION" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+@@ -16600,13 +16597,11 @@ if test -n "$USER_ACCOUNTS_PANEL_LIBS"; then
+                   polkit-gobject-1 >= \$POLKIT_REQUIRED_VERSION
+                   gnome-desktop-3.0
+                   gdk-pixbuf-2.0 >= \$GDKPIXBUF_REQUIRED_VERSION
+-                  pwquality >= \$PWQUALITY_REQUIRED_VERSION
+                   accountsservice >= \$ACCOUNTSSERVICE_REQUIRED_VERSION\""; } >&5
+   ($PKG_CONFIG --exists --print-errors "$COMMON_MODULES
+                   polkit-gobject-1 >= $POLKIT_REQUIRED_VERSION
+                   gnome-desktop-3.0
+                   gdk-pixbuf-2.0 >= $GDKPIXBUF_REQUIRED_VERSION
+-                  pwquality >= $PWQUALITY_REQUIRED_VERSION
+                   accountsservice >= $ACCOUNTSSERVICE_REQUIRED_VERSION") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+@@ -16615,7 +16610,6 @@ if test -n "$USER_ACCOUNTS_PANEL_LIBS"; then
+                   polkit-gobject-1 >= $POLKIT_REQUIRED_VERSION
+                   gnome-desktop-3.0
+                   gdk-pixbuf-2.0 >= $GDKPIXBUF_REQUIRED_VERSION
+-                  pwquality >= $PWQUALITY_REQUIRED_VERSION
+                   accountsservice >= $ACCOUNTSSERVICE_REQUIRED_VERSION" 2>/dev/null`
+ 		      test "x$?" != "x0" && pkg_failed=yes
+ else
+@@ -16641,14 +16635,12 @@ fi
+                   polkit-gobject-1 >= $POLKIT_REQUIRED_VERSION
+                   gnome-desktop-3.0
+                   gdk-pixbuf-2.0 >= $GDKPIXBUF_REQUIRED_VERSION
+-                  pwquality >= $PWQUALITY_REQUIRED_VERSION
+                   accountsservice >= $ACCOUNTSSERVICE_REQUIRED_VERSION" 2>&1`
+         else
+ 	        USER_ACCOUNTS_PANEL_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "$COMMON_MODULES
+                   polkit-gobject-1 >= $POLKIT_REQUIRED_VERSION
+                   gnome-desktop-3.0
+                   gdk-pixbuf-2.0 >= $GDKPIXBUF_REQUIRED_VERSION
+-                  pwquality >= $PWQUALITY_REQUIRED_VERSION
+                   accountsservice >= $ACCOUNTSSERVICE_REQUIRED_VERSION" 2>&1`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+@@ -16658,7 +16650,6 @@ fi
+                   polkit-gobject-1 >= $POLKIT_REQUIRED_VERSION
+                   gnome-desktop-3.0
+                   gdk-pixbuf-2.0 >= $GDKPIXBUF_REQUIRED_VERSION
+-                  pwquality >= $PWQUALITY_REQUIRED_VERSION
+                   accountsservice >= $ACCOUNTSSERVICE_REQUIRED_VERSION) were not met:
+ 
+ $USER_ACCOUNTS_PANEL_PKG_ERRORS
