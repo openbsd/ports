@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2014/04/21 16:02:26 jca Exp $
+@comment $OpenBSD: PFRAG.native,v 1.2 2014/04/23 14:12:28 jca Exp $
 %%dynlink%%
 @bin bin/ptests.opt
 lib/frama-c/Constant_Propagation.cmx
@@ -47,6 +47,8 @@ lib/frama-c/allocates.cmx
 lib/frama-c/allocates.o
 lib/frama-c/alpha.cmx
 lib/frama-c/alpha.o
+lib/frama-c/analyses_manager.cmx
+lib/frama-c/analyses_manager.o
 lib/frama-c/annotations.cmx
 lib/frama-c/annotations.o
 lib/frama-c/ast.cmx
@@ -65,6 +67,8 @@ lib/frama-c/bit_utils.cmx
 lib/frama-c/bit_utils.o
 lib/frama-c/bitvector.cmx
 lib/frama-c/bitvector.o
+lib/frama-c/book_manager.cmx
+lib/frama-c/book_manager.o
 lib/frama-c/boot.cmx
 lib/frama-c/boot.o
 lib/frama-c/buckx.cmx
@@ -131,10 +135,14 @@ lib/frama-c/db.cmx
 lib/frama-c/db.o
 lib/frama-c/deadcodeelim.cmx
 lib/frama-c/deadcodeelim.o
+lib/frama-c/debug_manager.cmx
+lib/frama-c/debug_manager.o
 lib/frama-c/descr.cmx
 lib/frama-c/descr.o
 lib/frama-c/description.cmx
 lib/frama-c/description.o
+lib/frama-c/design.cmx
+lib/frama-c/design.o
 lib/frama-c/dominators.cmx
 lib/frama-c/dominators.o
 lib/frama-c/dynamic.cmx
@@ -153,8 +161,12 @@ lib/frama-c/extlib.cmx
 lib/frama-c/extlib.o
 lib/frama-c/file.cmx
 lib/frama-c/file.o
+lib/frama-c/file_manager.cmx
+lib/frama-c/file_manager.o
 lib/frama-c/filepath.cmx
 lib/frama-c/filepath.o
+lib/frama-c/filetree.cmx
+lib/frama-c/filetree.o
 lib/frama-c/filter.cmx
 lib/frama-c/filter.o
 lib/frama-c/floating_point.cmx
@@ -167,6 +179,16 @@ lib/frama-c/globals.cmx
 lib/frama-c/globals.o
 lib/frama-c/graph.cmx
 lib/frama-c/graph.o
+lib/frama-c/gtk_form.cmx
+lib/frama-c/gtk_form.o
+lib/frama-c/gtk_helper.cmx
+lib/frama-c/gtk_helper.o
+lib/frama-c/gui_parameters.cmx
+lib/frama-c/gui_parameters.o
+lib/frama-c/help_manager.cmx
+lib/frama-c/help_manager.o
+lib/frama-c/history.cmx
+lib/frama-c/history.o
 lib/frama-c/hook.cmx
 lib/frama-c/hook.o
 lib/frama-c/hptmap.cmx
@@ -197,6 +219,8 @@ lib/frama-c/kernel_function.cmx
 lib/frama-c/kernel_function.o
 lib/frama-c/lattice_Interval_Set.cmx
 lib/frama-c/lattice_Interval_Set.o
+lib/frama-c/launcher.cmx
+lib/frama-c/launcher.o
 lib/frama-c/lexerhack.cmx
 lib/frama-c/lexerhack.o
 lib/frama-c/liveness.cmx
@@ -241,6 +265,8 @@ lib/frama-c/machdep_x86_64.cmx
 lib/frama-c/machdep_x86_64.o
 lib/frama-c/map_Lattice.cmx
 lib/frama-c/map_Lattice.o
+lib/frama-c/menu_manager.cmx
+lib/frama-c/menu_manager.o
 lib/frama-c/mergecil.cmx
 lib/frama-c/mergecil.o
 lib/frama-c/messages.cmx
@@ -275,8 +301,16 @@ lib/frama-c/plugins/Obfuscator.cmi
 lib/frama-c/plugins/Obfuscator.cmo
 lib/frama-c/plugins/Report.cmi
 lib/frama-c/plugins/Report.cmo
+lib/frama-c/plugins/Security_slicing.cmi
+lib/frama-c/plugins/Security_slicing.cmo
 lib/frama-c/plugins/Wp.cma
 lib/frama-c/plugins/Wp.cmi
+lib/frama-c/plugins/gui/Security_slicing.cmi
+lib/frama-c/plugins/gui/Security_slicing.cmo
+lib/frama-c/plugins/gui/Wp.cma
+lib/frama-c/plugins/gui/Wp.cmi
+lib/frama-c/pretty_source.cmx
+lib/frama-c/pretty_source.o
 lib/frama-c/pretty_utils.cmx
 lib/frama-c/pretty_utils.o
 lib/frama-c/printer.cmx
@@ -285,10 +319,14 @@ lib/frama-c/printer_builder.cmx
 lib/frama-c/printer_builder.o
 lib/frama-c/project.cmx
 lib/frama-c/project.o
+lib/frama-c/project_manager.cmx
+lib/frama-c/project_manager.o
 lib/frama-c/project_skeleton.cmx
 lib/frama-c/project_skeleton.o
 lib/frama-c/property.cmx
 lib/frama-c/property.o
+lib/frama-c/property_navigator.cmx
+lib/frama-c/property_navigator.o
 lib/frama-c/property_status.cmx
 lib/frama-c/property_status.o
 lib/frama-c/ptests_config.cmx
@@ -309,6 +347,10 @@ lib/frama-c/slicingInternals.cmx
 lib/frama-c/slicingInternals.o
 lib/frama-c/slicingTypes.cmx
 lib/frama-c/slicingTypes.o
+lib/frama-c/source_manager.cmx
+lib/frama-c/source_manager.o
+lib/frama-c/source_viewer.cmx
+lib/frama-c/source_viewer.o
 lib/frama-c/special_hooks.cmx
 lib/frama-c/special_hooks.o
 lib/frama-c/state.cmx
@@ -331,6 +373,8 @@ lib/frama-c/sysutil.cmx
 lib/frama-c/sysutil.o
 lib/frama-c/task.cmx
 lib/frama-c/task.o
+lib/frama-c/toolbox.cmx
+lib/frama-c/toolbox.o
 lib/frama-c/tr_offset.cmx
 lib/frama-c/tr_offset.o
 lib/frama-c/trace.cmx
@@ -361,5 +405,7 @@ lib/frama-c/vector.cmx
 lib/frama-c/vector.o
 lib/frama-c/visitor.cmx
 lib/frama-c/visitor.o
+lib/frama-c/warning_manager.cmx
+lib/frama-c/warning_manager.o
 lib/frama-c/widen_type.cmx
 lib/frama-c/widen_type.o

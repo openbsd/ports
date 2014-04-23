@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2014/04/21 22:15:33 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2014/04/23 14:12:28 jca Exp $
 
 COMMENT =		an extensible platform for analysis of C software
 
 DISTNAME =		frama-c-Neon-20140301
 PKGNAME =		frama-c-1.10
+REVISION =		0
 CATEGORIES =		devel
 HOMEPAGE =		http://www.frama-c.com/
 
@@ -16,15 +17,14 @@ WANTLIB += c curses m pthread
 
 MODULES =		lang/ocaml
 
-# to build the GUI, x11/lablgtk2 would need to be built with
-# libgnomecanvas support
+BUILD_DEPENDS =		x11/lablgtk2>=2.18.0p2
+RUN_DEPENDS =		x11/lablgtk2>=2.18.0p2
 
 USE_GMAKE =		Yes
 TEST_TARGET =		oracles tests
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	MAKE=${MAKE_PROGRAM} \
-			--docdir=${PREFIX}/share/doc/frama-c/ \
-			--disable-gui
+			--docdir=${PREFIX}/share/doc/frama-c/
 
 .include <bsd.port.mk>

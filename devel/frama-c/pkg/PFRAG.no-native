@@ -1,7 +1,8 @@
-@comment $OpenBSD: PFRAG.no-native,v 1.1.1.1 2014/04/21 16:02:26 jca Exp $
+@comment $OpenBSD: PFRAG.no-native,v 1.2 2014/04/23 14:12:28 jca Exp $
 bin/ptests.byte
 lib/frama-c/Aorai.cmo
 lib/frama-c/Obfuscator.cmo
 lib/frama-c/Report.cmo
+lib/frama-c/Security_slicing.cmo
 lib/frama-c/Wp.cma
 lib/frama-c/ptests_config.cmo

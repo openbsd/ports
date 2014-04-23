@@ -1,5 +1,8 @@
-@comment $OpenBSD: PFRAG.dynlink-native,v 1.1.1.1 2014/04/21 16:02:26 jca Exp $
+@comment $OpenBSD: PFRAG.dynlink-native,v 1.2 2014/04/23 14:12:28 jca Exp $
 @bin lib/frama-c/plugins/Aorai.cmxs
 @bin lib/frama-c/plugins/Obfuscator.cmxs
 @bin lib/frama-c/plugins/Report.cmxs
+@bin lib/frama-c/plugins/Security_slicing.cmxs
 @bin lib/frama-c/plugins/Wp.cmxs
+@bin lib/frama-c/plugins/gui/Security_slicing.cmxs
+@bin lib/frama-c/plugins/gui/Wp.cmxs

@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/04/21 16:02:26 jca Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/04/23 14:12:28 jca Exp $
 %%native%%
 !%%native%%
 @bin bin/frama-c
+@bin bin/frama-c-gui
+@bin bin/frama-c-gui.byte
 @bin bin/frama-c.byte
 lib/frama-c/
 lib/frama-c/Constant_Propagation.cmo
@@ -34,6 +36,8 @@ lib/frama-c/allocates.cmi
 lib/frama-c/allocates.cmo
 lib/frama-c/alpha.cmi
 lib/frama-c/alpha.cmo
+lib/frama-c/analyses_manager.cmi
+lib/frama-c/analyses_manager.cmo
 lib/frama-c/annotations.cmi
 lib/frama-c/annotations.cmo
 lib/frama-c/ast.cmi
@@ -52,6 +56,8 @@ lib/frama-c/bit_utils.cmi
 lib/frama-c/bit_utils.cmo
 lib/frama-c/bitvector.cmi
 lib/frama-c/bitvector.cmo
+lib/frama-c/book_manager.cmi
+lib/frama-c/book_manager.cmo
 lib/frama-c/boot.cmi
 lib/frama-c/boot.cmo
 lib/frama-c/buckx.cmi
@@ -120,10 +126,15 @@ lib/frama-c/db.cmi
 lib/frama-c/db.cmo
 lib/frama-c/deadcodeelim.cmi
 lib/frama-c/deadcodeelim.cmo
+lib/frama-c/debug_manager.cmi
+lib/frama-c/debug_manager.cmo
 lib/frama-c/descr.cmi
 lib/frama-c/descr.cmo
 lib/frama-c/description.cmi
 lib/frama-c/description.cmo
+lib/frama-c/design.cmi
+lib/frama-c/design.cmo
+lib/frama-c/dgraph.cmi
 lib/frama-c/dominators.cmi
 lib/frama-c/dominators.cmo
 lib/frama-c/dynamic.cmi
@@ -142,8 +153,12 @@ lib/frama-c/extlib.cmi
 lib/frama-c/extlib.cmo
 lib/frama-c/file.cmi
 lib/frama-c/file.cmo
+lib/frama-c/file_manager.cmi
+lib/frama-c/file_manager.cmo
 lib/frama-c/filepath.cmi
 lib/frama-c/filepath.cmo
+lib/frama-c/filetree.cmi
+lib/frama-c/filetree.cmo
 lib/frama-c/filter.cmi
 lib/frama-c/filter.cmo
 lib/frama-c/floating_point.cmi
@@ -156,6 +171,17 @@ lib/frama-c/globals.cmi
 lib/frama-c/globals.cmo
 lib/frama-c/graph.cmi
 lib/frama-c/graph.cmo
+lib/frama-c/gtk_form.cmi
+lib/frama-c/gtk_form.cmo
+lib/frama-c/gtk_helper.cmi
+lib/frama-c/gtk_helper.cmo
+lib/frama-c/gui_init.cmi
+lib/frama-c/gui_parameters.cmi
+lib/frama-c/gui_parameters.cmo
+lib/frama-c/help_manager.cmi
+lib/frama-c/help_manager.cmo
+lib/frama-c/history.cmi
+lib/frama-c/history.cmo
 lib/frama-c/hook.cmi
 lib/frama-c/hook.cmo
 lib/frama-c/hptmap.cmi
@@ -187,6 +213,8 @@ lib/frama-c/kernel_function.cmo
 lib/frama-c/lattice_Interval_Set.cmi
 lib/frama-c/lattice_Interval_Set.cmo
 lib/frama-c/lattice_type.cmi
+lib/frama-c/launcher.cmi
+lib/frama-c/launcher.cmo
 lib/frama-c/lexerhack.cmi
 lib/frama-c/lexerhack.cmo
 lib/frama-c/liveness.cmi
@@ -233,6 +261,8 @@ lib/frama-c/machdep_x86_64.cmi
 lib/frama-c/machdep_x86_64.cmo
 lib/frama-c/map_Lattice.cmi
 lib/frama-c/map_Lattice.cmo
+lib/frama-c/menu_manager.cmi
+lib/frama-c/menu_manager.cmo
 lib/frama-c/mergecil.cmi
 lib/frama-c/mergecil.cmo
 lib/frama-c/messages.cmi
@@ -266,6 +296,8 @@ lib/frama-c/plugin.cmi
 lib/frama-c/plugin.cmo
 lib/frama-c/plugins/
 lib/frama-c/plugins/gui/
+lib/frama-c/pretty_source.cmi
+lib/frama-c/pretty_source.cmo
 lib/frama-c/pretty_utils.cmi
 lib/frama-c/pretty_utils.cmo
 lib/frama-c/printer.cmi
@@ -275,10 +307,14 @@ lib/frama-c/printer_builder.cmi
 lib/frama-c/printer_builder.cmo
 lib/frama-c/project.cmi
 lib/frama-c/project.cmo
+lib/frama-c/project_manager.cmi
+lib/frama-c/project_manager.cmo
 lib/frama-c/project_skeleton.cmi
 lib/frama-c/project_skeleton.cmo
 lib/frama-c/property.cmi
 lib/frama-c/property.cmo
+lib/frama-c/property_navigator.cmi
+lib/frama-c/property_navigator.cmo
 lib/frama-c/property_status.cmi
 lib/frama-c/property_status.cmo
 lib/frama-c/ptests_config.cmi
@@ -298,6 +334,10 @@ lib/frama-c/slicingInternals.cmi
 lib/frama-c/slicingInternals.cmo
 lib/frama-c/slicingTypes.cmi
 lib/frama-c/slicingTypes.cmo
+lib/frama-c/source_manager.cmi
+lib/frama-c/source_manager.cmo
+lib/frama-c/source_viewer.cmi
+lib/frama-c/source_viewer.cmo
 lib/frama-c/special_hooks.cmi
 lib/frama-c/special_hooks.cmo
 lib/frama-c/state.cmi
@@ -320,6 +360,8 @@ lib/frama-c/sysutil.cmi
 lib/frama-c/sysutil.cmo
 lib/frama-c/task.cmi
 lib/frama-c/task.cmo
+lib/frama-c/toolbox.cmi
+lib/frama-c/toolbox.cmo
 lib/frama-c/tr_offset.cmi
 lib/frama-c/tr_offset.cmo
 lib/frama-c/trace.cmi
@@ -350,6 +392,8 @@ lib/frama-c/vector.cmi
 lib/frama-c/vector.cmo
 lib/frama-c/visitor.cmi
 lib/frama-c/visitor.cmo
+lib/frama-c/warning_manager.cmi
+lib/frama-c/warning_manager.cmo
 lib/frama-c/widen_type.cmi
 lib/frama-c/widen_type.cmo
 @man man/man1/frama-c-gui.1
