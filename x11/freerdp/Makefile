@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2013/12/02 16:25:08 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2014/04/23 22:10:50 brad Exp $
 
 SHARED_ONLY =		Yes
 
 V =			1.0.2
 COMMENT =		open source client for Windows Terminal Server
 DISTNAME =		freerdp-$V
+REVISION =		0
 DISTFILES =		${DISTNAME}{$V}.tar.gz
 WRKDIST =		${WRKDIR}/FreeRDP-$V
 CATEGORIES =		x11 net
