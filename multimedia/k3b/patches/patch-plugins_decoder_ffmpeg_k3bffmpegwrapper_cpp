@@ -1,9 +1,9 @@
-$OpenBSD: patch-plugins_decoder_ffmpeg_k3bffmpegwrapper_cpp,v 1.4 2013/01/19 09:51:30 brad Exp $
+$OpenBSD: patch-plugins_decoder_ffmpeg_k3bffmpegwrapper_cpp,v 1.5 2014/04/23 20:14:40 brad Exp $
 
 Update for newer FFmpeg API.
 
 --- plugins/decoder/ffmpeg/k3bffmpegwrapper.cpp.orig	Fri Nov  2 05:55:03 2007
-+++ plugins/decoder/ffmpeg/k3bffmpegwrapper.cpp	Fri Jan 18 17:15:18 2013
++++ plugins/decoder/ffmpeg/k3bffmpegwrapper.cpp	Wed Apr 23 16:07:07 2014
 @@ -18,8 +18,8 @@
  #include "k3bffmpegwrapper.h"
  
@@ -15,28 +15,28 @@ Update for newer FFmpeg API.
  }
  
  #include <string.h>
-@@ -43,8 +43,9 @@ class K3bFFMpegFile::Private (public)
+@@ -31,6 +31,11 @@ extern "C" {
+ #define FFMPEG_BUILD_PRE_4629
+ #endif
  
++#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(52, 64, 0)
++#define AVMEDIA_TYPE_AUDIO CODEC_TYPE_AUDIO
++#define AVMEDIA_TYPE_VIDEO CODEC_TYPE_VIDEO
++#define AVMEDIA_TYPE_SUBTITLE CODEC_TYPE_SUBTITLE
++#endif
+ 
+ K3bFFMpegWrapper* K3bFFMpegWrapper::s_instance = 0;
+ 
+@@ -44,7 +49,7 @@ class K3bFFMpegFile::Private (public)
    K3b::Msf length;
  
--  // for decoding
+   // for decoding
 -  char outputBuffer[AVCODEC_MAX_AUDIO_FRAME_SIZE];
-+  // for decoding. ffmpeg requires 16-byte alignment.
-+  char outputBuffer[AVCODEC_MAX_AUDIO_FRAME_SIZE + 15];
-+  char* alignedOutputBuffer;
++  char outputBuffer[192000];
    char* outputBufferPos;
    int outputBufferSize;
    AVPacket packet;
-@@ -59,6 +60,8 @@ K3bFFMpegFile::K3bFFMpegFile( const QString& filename 
-   d = new Private;
-   d->formatContext = 0;
-   d->codec = 0;
-+  int offset = 0x10 - (reinterpret_cast<intptr_t>(&d->outputBuffer) & 0xf);
-+  d->alignedOutputBuffer = &d->outputBuffer[offset];
- }
- 
- 
-@@ -74,14 +77,22 @@ bool K3bFFMpegFile::open()
+@@ -74,14 +79,22 @@ bool K3bFFMpegFile::open()
    close();
  
    // open the file
@@ -59,23 +59,18 @@ Update for newer FFmpeg API.
  
    // we only handle files containing one audio stream
    if( d->formatContext->nb_streams != 1 ) {
-@@ -95,7 +106,14 @@ bool K3bFFMpegFile::open()
+@@ -95,7 +108,9 @@ bool K3bFFMpegFile::open()
  #else
    AVCodecContext* codecContext =  d->formatContext->streams[0]->codec;
  #endif
 -  if( codecContext->codec_type != CODEC_TYPE_AUDIO ) {
 +
-+  if( codecContext->codec_type != 
-+#if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(52, 64, 0)
-+        AVMEDIA_TYPE_AUDIO)
-+#else
-+        CODEC_TYPE_AUDIO)
-+#endif
++  if( codecContext->codec_type != AVMEDIA_TYPE_AUDIO)
 +  {
      kdDebug() << "(K3bFFMpegFile) not a simple audio stream: " << m_filename << endl;
      return false;
    }
-@@ -109,7 +127,13 @@ bool K3bFFMpegFile::open()
+@@ -109,7 +124,13 @@ bool K3bFFMpegFile::open()
  
    // open the codec on our context
    kdDebug() << "(K3bFFMpegFile) found codec for " << m_filename << endl;
@@ -90,7 +85,7 @@ Update for newer FFmpeg API.
      kdDebug() << "(K3bFFMpegDecoderFactory) could not open codec." << endl;
      return false;
    }
-@@ -123,7 +147,11 @@ bool K3bFFMpegFile::open()
+@@ -123,7 +144,11 @@ bool K3bFFMpegFile::open()
    }
  
    // dump some debugging info
@@ -102,7 +97,7 @@ Update for newer FFmpeg API.
  
    return true;
  }
-@@ -145,7 +173,11 @@ void K3bFFMpegFile::close()
+@@ -145,7 +170,11 @@ void K3bFFMpegFile::close()
    }
  
    if( d->formatContext ) {
@@ -114,7 +109,7 @@ Update for newer FFmpeg API.
      d->formatContext = 0;
    }
  }
-@@ -194,7 +226,11 @@ QString K3bFFMpegFile::typeComment() const
+@@ -194,7 +223,11 @@ QString K3bFFMpegFile::typeComment() const
      return i18n("Windows Media v1");
    case CODEC_ID_WMAV2:
      return i18n("Windows Media v2");
@@ -126,7 +121,7 @@ Update for newer FFmpeg API.
      return i18n("MPEG 1 Layer III");
    case CODEC_ID_AAC:
      return i18n("Advanced Audio Coding (AAC)");
-@@ -207,30 +243,39 @@ QString K3bFFMpegFile::typeComment() const
+@@ -207,30 +240,39 @@ QString K3bFFMpegFile::typeComment() const
  QString K3bFFMpegFile::title() const
  {
    // FIXME: is this UTF8 or something??
@@ -175,13 +170,9 @@ Update for newer FFmpeg API.
  }
  
  
-@@ -285,15 +330,32 @@ int K3bFFMpegFile::fillOutputBuffer()
-       return 0;
-     }
+@@ -287,13 +329,29 @@ int K3bFFMpegFile::fillOutputBuffer()
  
--    d->outputBufferPos = d->outputBuffer;
-+    d->outputBufferPos = d->alignedOutputBuffer;
-+    d->outputBufferSize = AVCODEC_MAX_AUDIO_FRAME_SIZE;
+     d->outputBufferPos = d->outputBuffer;
  
 +#if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(52, 64, 0)
 +    AVPacket avp;
