@@ -1,4 +1,4 @@
-$OpenBSD: patch-HDBC-postgresql_cabal,v 1.1 2013/01/03 13:46:29 dcoppa Exp $
+$OpenBSD: patch-HDBC-postgresql_cabal,v 1.2 2014/04/24 14:55:50 jasper Exp $
 
 Unbreak when used within GHCi
 
@@ -9,7 +9,7 @@ Unbreak when used within GHCi
    if impl(ghc >= 6.9)
      Build-Depends: base >= 4
 -  Extra-Libraries: pq
-+  Extra-Libraries: pq crypto ssl com_err
++  Extra-Libraries: pq crypto ssl
    C-Sources: hdbc-postgresql-helper.c
    Include-Dirs: .
    GHC-Options: -O2 -Wall
@@ -18,7 +18,7 @@ Unbreak when used within GHCi
     C-Sources: hdbc-postgresql-helper.c
     include-dirs: .
 -   Extra-Libraries: pq
-+   Extra-Libraries: pq crypto ssl com_err
++   Extra-Libraries: pq crypto ssl
     Hs-Source-Dirs: ., testsrc
     GHC-Options: -O2
     Extensions: ExistentialQuantification,
