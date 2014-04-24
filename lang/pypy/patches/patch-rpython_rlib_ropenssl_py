@@ -1,0 +1,11 @@
+$OpenBSD: patch-rpython_rlib_ropenssl_py,v 1.1 2014/04/24 21:44:07 sthen Exp $
+--- rpython/rlib/ropenssl.py.orig	Thu Apr 24 16:23:04 2014
++++ rpython/rlib/ropenssl.py	Thu Apr 24 16:23:10 2014
+@@ -187,7 +187,6 @@ ssl_external('CRYPTO_set_id_callback',
+ if HAVE_OPENSSL_RAND:
+     ssl_external('RAND_add', [rffi.CCHARP, rffi.INT, rffi.DOUBLE], lltype.Void)
+     ssl_external('RAND_status', [], rffi.INT)
+-    ssl_external('RAND_egd', [rffi.CCHARP], rffi.INT)
+ ssl_external('SSL_CTX_new', [SSL_METHOD], SSL_CTX)
+ ssl_external('SSL_get_SSL_CTX', [SSL], SSL_CTX)
+ ssl_external('TLSv1_method', [], SSL_METHOD)

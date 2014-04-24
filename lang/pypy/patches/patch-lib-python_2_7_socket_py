@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib-python_2_7_socket_py,v 1.1 2014/04/24 21:44:07 sthen Exp $
+--- lib-python/2.7/socket.py.orig	Thu Apr 24 16:23:04 2014
++++ lib-python/2.7/socket.py	Thu Apr 24 16:23:36 2014
+@@ -65,7 +65,6 @@ else:
+     from _ssl import SSLError as sslerror
+     from _ssl import \
+          RAND_add, \
+-         RAND_egd, \
+          RAND_status, \
+          SSL_ERROR_ZERO_RETURN, \
+          SSL_ERROR_WANT_READ, \

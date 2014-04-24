@@ -1,0 +1,22 @@
+$OpenBSD: patch-pypy_module__ssl_interp_ssl_py,v 1.1 2014/04/24 21:44:07 sthen Exp $
+--- pypy/module/_ssl/interp_ssl.py.orig	Thu Apr 24 16:21:39 2014
++++ pypy/module/_ssl/interp_ssl.py	Thu Apr 24 16:25:47 2014
+@@ -108,16 +108,8 @@ if HAVE_OPENSSL_RAND:
+         of bytes read.  Raises socket.sslerror if connection to EGD fails or
+         if it does provide enough data to seed PRNG."""
+ 
+-        socket_path = rffi.str2charp(path)
+-        try:
+-            bytes = libssl_RAND_egd(socket_path)
+-        finally:
+-            rffi.free_charp(socket_path)
+-        if bytes == -1:
+-            msg = "EGD connection failed or EGD did not return"
+-            msg += " enough data to seed the PRNG"
+-            raise ssl_error(space, msg)
+-        return space.wrap(bytes)
++        msg = "EGD disabled"
++        raise ssl_error(space, msg)
+ 
+ 
+ class SSLObject(W_Root):
