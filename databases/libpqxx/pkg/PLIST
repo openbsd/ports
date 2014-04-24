@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/10/02 13:26:31 alek Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2014/04/24 10:18:51 ajacoutot Exp $
 bin/pqxx-config
 include/pqxx/
 include/pqxx/all.h
@@ -70,5 +69,6 @@ include/pqxx/util.h
 include/pqxx/util.hxx
 lib/libpqxx.a
 lib/libpqxx.la
+@lib lib/libpqxx.so.${LIBpqxx_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/libpqxx.pc

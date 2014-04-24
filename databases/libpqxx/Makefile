@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2013/03/21 08:45:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2014/04/24 10:18:51 ajacoutot Exp $
 
 COMMENT=	C++ client API for PostgreSQL
 
 DISTNAME=	libpqxx-2.5.3
-REVISION=	3
+REVISION=	4
 CATEGORIES=	databases
 SHARED_LIBS +=	pqxx                 1.0      # .0.0
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://pqxx.org/development/libpqxx/
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += pq>=4 com_err crypto m ssl stdc++
+WANTLIB += crypto m pq ssl stdc++
 
 MASTER_SITES=	http://pqxx.org/download/software/libpqxx/ \
 		ftp://pqxx.org/software/libpqxx/

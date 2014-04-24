@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2005/12/26 21:32:01 sturm Exp $
-@lib lib/libpqxx.so.${LIBpqxx_VERSION}
