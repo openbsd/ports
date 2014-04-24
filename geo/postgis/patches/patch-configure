@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2014/04/24 16:21:27 landry Exp $
+--- configure.orig	Thu Apr 24 18:03:19 2014
++++ configure	Thu Apr 24 18:04:04 2014
+@@ -18376,7 +18376,7 @@ fi
+ 
+ CPPFLAGS_SAVE="$CPPFLAGS"
+ CPPFLAGS="$JSON_CPPFLAGS"
+-ac_fn_c_check_header_mongrel "$LINENO" "json/json.h" "ac_cv_header_json_json_h" "$ac_includes_default"
++ac_fn_c_check_header_mongrel "$LINENO" "json-c/json.h" "ac_cv_header_json_json_h" "$ac_includes_default"
+ if test "x$ac_cv_header_json_json_h" = x""yes; then :
+   HAVE_JSON=yes
+ fi
