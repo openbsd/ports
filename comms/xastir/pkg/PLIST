@@ -1,8 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/01/29 15:22:31 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/04/24 18:52:58 schwarze Exp $
 @bin bin/callpass
 @bin bin/testdbfawk
 @bin bin/xastir
 @bin bin/xastir_udp_client
+@man man/man1/callpass.1
+@man man/man1/testdbfawk.1
+@man man/man1/xastir.1
+@man man/man1/xastir_udp_client.1
 share/doc/xastir/
 share/doc/xastir/AUTHORS
 share/doc/xastir/COPYING
@@ -20,12 +24,6 @@ share/doc/xastir/README.MAPS
 share/doc/xastir/README.OSM_maps
 share/doc/xastir/README.win32
 share/doc/xastir/UPGRADE
-share/man/
-share/man/man1/
-@man share/man/man1/callpass.1
-@man share/man/man1/testdbfawk.1
-@man share/man/man1/xastir.1
-@man share/man/man1/xastir_udp_client.1
 share/xastir/
 share/xastir/Counties/
 share/xastir/Counties/placeholder

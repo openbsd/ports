@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2014/04/24 18:52:58 schwarze Exp $
+--- Makefile.in.orig	Thu Apr 24 19:16:05 2014
++++ Makefile.in	Thu Apr 24 19:22:01 2014
+@@ -250,7 +250,7 @@ libexecdir = @libexecdir@
+ localedir = @localedir@
+ localstatedir = @localstatedir@
+ lpr = @lpr@
+-mandir = ${prefix}/share/man
++mandir = ${prefix}/man
+ mkdir_p = @mkdir_p@
+ mv = @mv@
+ oldincludedir = @oldincludedir@
