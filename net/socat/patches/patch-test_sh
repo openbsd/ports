@@ -1,0 +1,13 @@
+$OpenBSD: patch-test_sh,v 1.1 2014/04/24 15:17:08 sthen Exp $
+--- test.sh.orig	Sun Mar  9 14:51:39 2014
++++ test.sh	Sat Apr 19 16:01:35 2014
+@@ -523,9 +523,6 @@ filloptionvalues() {
+     *,dh,*) OPTS=$(echo "$OPTS" |sed "s/,dh,/,dh=/tmp/hugo,/g");;
+     esac
+     case "$OPTS" in
+-    *,egd,*) OPTS=$(echo "$OPTS" |sed "s/,egd,/,egd=/tmp/hugo,/g");;
+-    esac
+-    case "$OPTS" in
+     *,compress,*) OPTS=$(echo "$OPTS" |sed "s/,compress,/,compress=none,/g");;
+     esac
+     # PROXY

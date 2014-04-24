@@ -1,0 +1,19 @@
+$OpenBSD: patch-sslcls_h,v 1.1 2014/04/24 15:17:08 sthen Exp $
+--- sslcls.h.orig	Sun Jun 23 07:16:48 2013
++++ sslcls.h	Sat Apr 19 15:41:54 2014
+@@ -41,7 +41,6 @@ X509 *sycSSL_get_peer_certificate(SSL *ssl);
+ int sycSSL_shutdown(SSL *ssl);
+ void sycSSL_CTX_free(SSL_CTX *ctx);
+ void sycSSL_free(SSL *ssl);
+-int sycRAND_egd(const char *path);
+ 
+ DH *sycPEM_read_bio_DHparams(BIO *bp, DH **x, pem_password_cb *cb, void *u);
+ 
+@@ -92,7 +91,6 @@ const char *sycSSL_COMP_get_name(const COMP_METHOD *co
+ #define sycSSL_shutdown(s) SSL_shutdown(s)
+ #define sycSSL_CTX_free(c) SSL_CTX_free(c)
+ #define sycSSL_free(s) SSL_free(s)
+-#define sycRAND_egd(p) RAND_egd(p)
+ 
+ #define sycPEM_read_bio_DHparams(b,x,p,u) PEM_read_bio_DHparams(b,x,p,u)
+ 

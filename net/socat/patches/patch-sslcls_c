@@ -1,0 +1,18 @@
+$OpenBSD: patch-sslcls_c,v 1.1 2014/04/24 15:17:08 sthen Exp $
+--- sslcls.c.orig	Sat Feb  8 19:23:33 2014
++++ sslcls.c	Sat Apr 19 15:41:07 2014
+@@ -275,14 +275,6 @@ void sycSSL_free(SSL *ssl) {
+    return;
+ }
+ 
+-int sycRAND_egd(const char *path) {
+-   int result;
+-   Debug1("RAND_egd(\"%s\")", path);
+-   result = RAND_egd(path);
+-   Debug1("RAND_egd() -> %d", result);
+-   return result;
+-}
+-
+ DH *sycPEM_read_bio_DHparams(BIO *bp, DH **x, pem_password_cb *cb, void *u) {
+    DH *result;
+    Debug4("PEM_read_bio_DHparams(%p, %p, %p, %p)",

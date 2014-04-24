@@ -1,7 +1,32 @@
-$OpenBSD: patch-doc_socat_1,v 1.5 2014/03/24 17:14:46 nigel Exp $
+$OpenBSD: patch-doc_socat_1,v 1.6 2014/04/24 15:17:08 sthen Exp $
 --- doc/socat.1.orig	Sun Mar  9 20:23:08 2014
-+++ doc/socat.1	Mon Mar 24 15:24:21 2014
-@@ -3492,11 +3492,11 @@ error\&. 
++++ doc/socat.1	Sat Apr 19 17:49:36 2014
+@@ -2884,10 +2884,6 @@ in this file\&.
+ Specifies the directory with the trusted (root) certificates\&. The directory
+ must contain certificates in PEM format and their hashes (see OpenSSL
+ documentation) 
+-.IP "\fB\f(CWegd=<filename>\fP\fP"
+-On some systems, openssl requires an explicit source of random data\&. Specify
+-the socket name where an entropy gathering daemon like egd provides random
+-data, e\&.g\&. /dev/egd\-pool\&.
+ .IP "\fB\f(CWpseudo\fP\fP"
+ On systems where openssl cannot find an entropy source and where no entropy
+ gathering daemon can be utilized, this option activates a mechanism for
+@@ -3365,11 +3361,11 @@ connection, invokes a shell\&. This shell has its stdi
+ connected to the TCP socket (nofork)\&.  The shell starts filan and lets it print the socket addresses to
+ stderr (your terminal window)\&.
+ .IP 
+-.IP "\fB\f(CWecho \-e \(dq\&\e0\e14\e0\e0\ec\(dq\& |socat \-u \- file:/usr/bin/squid\&.exe,seek=0x00074420\fP\fP"
++.IP "\fB\f(CWecho \-e \(dq\&\e0\e14\e0\e0\ec\(dq\& |socat \-u \- file:${LOCALBASE}/bin/squid\&.exe,seek=0x00074420\fP\fP"
+ 
+ .IP 
+ functions as primitive binary editor: it writes the 4 bytes 000 014 000 000 to
+-the executable /usr/bin/squid at offset 0x00074420 (this is a real world patch
++the executable ${LOCALBASE}/bin/squid at offset 0x00074420 (this is a real world patch
+ to make the squid executable from Cygwin run under Windows, actual per May 2004)\&.
+ .IP 
+ .IP "\fB\f(CWsocat \- tcp:www\&.blackhat\&.org:31337,readbytes=1000\fP\fP"
+@@ -3492,11 +3488,11 @@ error\&. 
  .SH "FILES"
  
  .PP 
