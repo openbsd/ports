@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2014/04/21 15:07:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2014/04/24 13:19:39 ajacoutot Exp $
 @conflict control-center-1*
 @conflict control-center2-*
 @conflict gnome-media-<2.91.2p3
@@ -26,6 +26,7 @@ share/applications/gnome-search-panel.desktop
 share/applications/gnome-sharing-panel.desktop
 share/applications/gnome-sound-panel.desktop
 share/applications/gnome-universal-access-panel.desktop
+share/applications/gnome-user-accounts-panel.desktop
 share/bash-completion/completions/gnome-control-center
 share/dbus-1/services/org.gnome.ControlCenter.SearchProvider.service
 share/dbus-1/services/org.gnome.ControlCenter.service
@@ -235,8 +236,6 @@ share/locale/ko/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ku/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/ku/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ky/LC_MESSAGES/gnome-control-center-2.0.mo
-share/locale/lo/
-share/locale/lo/LC_MESSAGES/
 share/locale/lo/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/lt/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/lt/LC_MESSAGES/gnome-control-center-2.0.mo
@@ -319,9 +318,36 @@ share/locale/zh_HK/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/zu/LC_MESSAGES/gnome-control-center-2.0.mo
+share/pixmaps/
+share/pixmaps/faces/
+share/pixmaps/faces/astronaut.jpg
+share/pixmaps/faces/baseball.png
+share/pixmaps/faces/butterfly.png
+share/pixmaps/faces/cat-eye.jpg
+share/pixmaps/faces/chess.jpg
+share/pixmaps/faces/coffee.jpg
+share/pixmaps/faces/dice.jpg
+share/pixmaps/faces/energy-arc.jpg
+share/pixmaps/faces/fish.jpg
+share/pixmaps/faces/flake.jpg
+share/pixmaps/faces/flower.jpg
+share/pixmaps/faces/grapes.jpg
+share/pixmaps/faces/guitar.jpg
+share/pixmaps/faces/launch.jpg
+share/pixmaps/faces/leaf.jpg
+share/pixmaps/faces/lightning.jpg
+share/pixmaps/faces/penguin.jpg
+share/pixmaps/faces/puppy.jpg
+share/pixmaps/faces/sky.jpg
+share/pixmaps/faces/soccerball.png
+share/pixmaps/faces/sunflower.jpg
+share/pixmaps/faces/sunset.jpg
+share/pixmaps/faces/tennis-ball.png
+share/pixmaps/faces/yellow-rose.jpg
 share/pkgconfig/gnome-keybindings.pc
 share/polkit-1/actions/org.gnome.controlcenter.datetime.policy
 share/polkit-1/actions/org.gnome.controlcenter.remote-login-helper.policy
+share/polkit-1/actions/org.gnome.controlcenter.user-accounts.policy
 share/polkit-1/rules.d/gnome-control-center.rules
 share/sounds/gnome/
 share/sounds/gnome/default/

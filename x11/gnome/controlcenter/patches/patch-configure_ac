@@ -1,0 +1,88 @@
+$OpenBSD: patch-configure_ac,v 1.5 2014/04/24 13:19:39 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=728879
+
+--- configure.ac.orig	Wed Apr 16 14:41:24 2014
++++ configure.ac	Thu Apr 24 13:23:07 2014
+@@ -268,7 +268,7 @@ fi
+ 
+ AM_CONDITIONAL(BUILD_PRINTERS, [test x"$enable_cups" = x"yes"])
+ 
+-# Optional dependency for the user accounts panel
++# Optional dependencies for the user accounts panel
+ AC_ARG_WITH([cheese],
+             AS_HELP_STRING([--with-cheese], [enable cheese webcam support]),,
+             with_cheese=auto)
+@@ -286,6 +286,36 @@ else
+ fi
+ AM_CONDITIONAL(BUILD_CHEESE, test x${have_cheese} = xyes)
+ 
++AC_ARG_WITH([kerberos],
++            AS_HELP_STRING([--with-kerberos], [enable kerberos support @<:@default=yes@:>@]),,
++            with_kerberos=yes)
++
++if test x"$with_kerberos" != x"no" ; then
++    AC_PATH_PROG(KRB5_CONFIG, krb5-config, no)
++    if test "$KRB5_CONFIG" = "no"; then
++      AC_MSG_ERROR([krb5-config executable not found in your path - should be installed with the kerberos libraries
++                  or use --without-kerberos])
++    fi
++
++    AC_MSG_CHECKING(for krb5 libraries and flags)
++    KRB5_CFLAGS="`$KRB5_CONFIG --cflags`"
++    KRB5_LIBS="`$KRB5_CONFIG --libs`"
++    AC_MSG_RESULT($KRB5_CFLAGS $KRB5_LIBS)
++
++    AC_SUBST(KRB5_CFLAGS)
++    AC_SUBST(KRB5_LIBS)
++
++    USER_ACCOUNTS_PANEL_CFLAGS="$USER_ACCOUNTS_PANEL_CFLAGS $KRB5_CFLAGS"
++    USER_ACCOUNTS_PANEL_LIBS="$USER_ACCOUNTS_PANEL_LIBS $KRB5_LIBS"
++else
++   have_kerberos=no
++fi
++AM_CONDITIONAL(BUILD_KERBEROS, test x${have_kerberos} = xyes)
++if test x${have_kerberos} = xyes; then
++  AC_DEFINE(HAVE_KERBEROS, 1, [Define to 1 if kerberos support is available])
++fi
++
++
+ # wacom is disabled for s390/s390x and non Linux platforms (needs udev)
+ case $host_os in
+   linux*)
+@@ -309,23 +339,6 @@ case $host_os in
+ esac
+ AM_CONDITIONAL(BUILD_WACOM, [test x${have_wacom} = xyes])
+ 
+-# Kerberos kerberos support
+-AC_PATH_PROG(KRB5_CONFIG, krb5-config, no)
+-if test "$KRB5_CONFIG" = "no"; then
+-  AC_MSG_ERROR([krb5-config executable not found in your path - should be installed with the kerberos libraries])
+-fi
+-
+-AC_MSG_CHECKING(for krb5 libraries and flags)
+-KRB5_CFLAGS="`$KRB5_CONFIG --cflags`"
+-KRB5_LIBS="`$KRB5_CONFIG --libs`"
+-AC_MSG_RESULT($KRB5_CFLAGS $KRB5_LIBS)
+-
+-AC_SUBST(KRB5_CFLAGS)
+-AC_SUBST(KRB5_LIBS)
+-
+-USER_ACCOUNTS_PANEL_CFLAGS="$USER_ACCOUNTS_PANEL_CFLAGS $KRB5_CFLAGS"
+-USER_ACCOUNTS_PANEL_LIBS="$USER_ACCOUNTS_PANEL_LIBS $KRB5_LIBS"
+-
+ dnl =======================================
+ dnl Panels
+ dnl =======================================
+@@ -547,6 +560,11 @@ if test "x$have_cheese" = "xyes"; then
+ 	AC_MSG_NOTICE([** Cheese (Users panel webcam support)])
+ else
+ 	AC_MSG_NOTICE([   Users panel webcam support disabled])
++fi
++if test "x$have_kerberos" = "xyes"; then
++        AC_MSG_NOTICE([** Kerberos (Users panel realm support)])
++else
++        AC_MSG_NOTICE([   Users panel realm support disabled])
+ fi
+ if test "x$have_wacom" = "xyes"; then
+ 	AC_MSG_NOTICE([** wacom (Wacom tablet panel)])

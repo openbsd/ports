@@ -1,0 +1,93 @@
+$OpenBSD: patch-panels_user-accounts_um-account-dialog_c,v 1.1 2014/04/24 13:19:39 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=728879
+
+--- panels/user-accounts/um-account-dialog.c.orig	Mon Apr 14 11:23:25 2014
++++ panels/user-accounts/um-account-dialog.c	Thu Apr 24 14:41:33 2014
+@@ -612,6 +612,7 @@ local_prepare (UmAccountDialog *self)
+         gtk_combo_box_set_active (GTK_COMBO_BOX (self->local_account_type), 0);
+ }
+ 
++#ifdef HAVE_KERBEROS
+ static gboolean
+ enterprise_validate (UmAccountDialog *self)
+ {
+@@ -1350,6 +1351,7 @@ enterprise_prepare (UmAccountDialog *self)
+         gtk_entry_set_text (GTK_ENTRY (self->enterprise_login), "");
+         gtk_entry_set_text (GTK_ENTRY (self->enterprise_password), "");
+ }
++#endif /* HAVE_KERBEROS */
+ 
+ static void
+ dialog_validate (UmAccountDialog *self)
+@@ -1360,9 +1362,11 @@ dialog_validate (UmAccountDialog *self)
+         case UM_LOCAL:
+                 valid = local_validate (self);
+                 break;
++#ifdef HAVE_KERBEROS
+         case UM_ENTERPRISE:
+                 valid = enterprise_validate (self);
+                 break;
++#endif
+         default:
+                 valid = FALSE;
+                 break;
+@@ -1476,8 +1480,10 @@ um_account_dialog_init (UmAccountDialog *self)
+         self->container_widget = widget;
+ 
+         local_init (self, builder);
++#ifdef HAVE_KERBEROS
+         enterprise_init (self, builder);
+         join_init (self, builder);
++#endif
+         mode_init (self, builder);
+ 
+         g_object_unref (builder);
+@@ -1525,9 +1531,11 @@ um_account_dialog_response (GtkDialog *dialog,
+                 case UM_LOCAL:
+                         local_create_user (self);
+                         break;
++#ifdef HAVE_KERBEROS
+                 case UM_ENTERPRISE:
+                         enterprise_add_user (self);
+                         break;
++#endif
+                 default:
+                         g_assert_not_reached ();
+                 }
+@@ -1548,6 +1556,7 @@ um_account_dialog_dispose (GObject *obj)
+         if (self->cancellable)
+                 g_cancellable_cancel (self->cancellable);
+ 
++#ifdef HAVE_KERBEROS
+         if (self->realmd_watch)
+                 g_bus_unwatch_name (self->realmd_watch);
+         self->realmd_watch = 0;
+@@ -1559,6 +1568,7 @@ um_account_dialog_dispose (GObject *obj)
+                 g_object_unref (self->realm_manager);
+                 self->realm_manager = NULL;
+         }
++#endif
+ 
+         if (self->local_password_timeout_id != 0) {
+                 g_source_remove (self->local_password_timeout_id);
+@@ -1593,7 +1603,9 @@ um_account_dialog_finalize (GObject *obj)
+         if (self->cancellable)
+                 g_object_unref (self->cancellable);
+         g_clear_object (&self->permission);
++#ifdef HAVE_KERBEROS
+         g_object_unref (self->enterprise_realms);
++#endif
+ 
+         G_OBJECT_CLASS (um_account_dialog_parent_class)->finalize (obj);
+ }
+@@ -1639,7 +1651,9 @@ um_account_dialog_show (UmAccountDialog     *self,
+         self->permission = permission ? g_object_ref (permission) : NULL;
+ 
+         local_prepare (self);
++#ifdef HAVE_KERBEROS
+         enterprise_prepare (self);
++#endif
+         mode_change (self, UM_LOCAL);
+         dialog_validate (self);
+ 
