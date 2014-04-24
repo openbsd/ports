@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/12/04 10:26:15 msf Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/04/24 11:15:30 sthen Exp $
 bin/inline2test
-${P5SITE}/Test/
 ${P5SITE}/Test/Inline/
 ${P5SITE}/Test/Inline.pm
 ${P5SITE}/Test/Inline/Content/
