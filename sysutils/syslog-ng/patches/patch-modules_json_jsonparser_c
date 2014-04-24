@@ -1,0 +1,15 @@
+$OpenBSD: patch-modules_json_jsonparser_c,v 1.1 2014/04/24 15:58:54 sthen Exp $
+
+old api was deprecated in json-c 0.12
+
+--- modules/json/jsonparser.c.orig	Thu Apr 24 16:47:42 2014
++++ modules/json/jsonparser.c	Thu Apr 24 16:55:21 2014
+@@ -185,7 +185,7 @@ log_json_parser_process (LogParser *s, LogMessage **pm
+   if (tok->err != json_tokener_success)
+     {
+       msg_error ("Unparsable JSON stream encountered",
+-                 evt_tag_str ("error", json_tokener_errors[tok->err]), NULL);
++                 evt_tag_str ("error", json_tokener_error_desc(tok->err)), NULL);
+       json_tokener_free (tok);
+       return FALSE;
+     }
