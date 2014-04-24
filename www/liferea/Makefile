@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.67 2014/04/10 14:44:03 bcallah Exp $
+# $OpenBSD: Makefile,v 1.68 2014/04/24 15:54:01 bcallah Exp $
 
 SHARED_ONLY=		Yes
 
-V=			1.10.8
+V=			1.10.9
 COMMENT=		simple GTK desktop news aggregator
 DISTNAME=		liferea-${V}
 CATEGORIES=		www x11
