@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/06/27 10:57:54 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/04/24 11:25:04 sthen Exp $
+bin/latex-encode
 ${P5SITE}/LaTeX/
 ${P5SITE}/LaTeX/Encode/
 ${P5SITE}/LaTeX/Encode.pm
 ${P5SITE}/LaTeX/Encode/EncodingTable.pm
+@man man/man1/latex-encode.1
 @man man/man3p/LaTeX::Encode.3p
+@man man/man3p/LaTeX::Encode::EncodingTable.3p

@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2013/03/11 11:42:43 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2014/04/24 11:25:04 sthen Exp $
 
-COMMENT=		encode characters for LaTeX formatting
+COMMENT=	encode characters for LaTeX formatting
 
-DISTNAME=		LaTeX-Encode-0.03
-CATEGORIES=		textproc
+DISTNAME=	LaTeX-Encode-0.08
+CATEGORIES=	textproc
 
-MODULES=		cpan
+MODULES=	cpan
+
+RUN_DEPENDS=	devel/p5-Readonly
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
