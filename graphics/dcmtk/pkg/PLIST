@@ -1,50 +1,50 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/04/10 10:09:56 djm Exp $
-bin/dcm2pnm
-bin/dcm2xml
-bin/dcmcjpeg
-bin/dcmconv
-bin/dcmcrle
-bin/dcmdjpeg
-bin/dcmdrle
-bin/dcmdspfn
-bin/dcmdump
-bin/dcmftest
-bin/dcmgpdir
-bin/dcmj2pnm
-bin/dcmmkcrv
-bin/dcmmkdir
-bin/dcmmklut
-bin/dcmodify
-bin/dcmp2pgm
-bin/dcmprscp
-bin/dcmprscu
-bin/dcmpschk
-bin/dcmpsmk
-bin/dcmpsprt
-bin/dcmpsrcv
-bin/dcmpssnd
-bin/dcmqridx
-bin/dcmqrscp
-bin/dcmqrti
-bin/dcmquant
-bin/dcmscale
-bin/dcmsign
-bin/dcod2lum
-bin/dconvlum
-bin/dsr2html
-bin/dsr2xml
-bin/dsrdump
-bin/dump2dcm
-bin/echoscu
-bin/findscu
-bin/movescu
-bin/pdf2dcm
-bin/storescp
-bin/storescu
-bin/termscu
-bin/wlmscpfs
-bin/xml2dcm
-bin/xml2dsr
+@comment $OpenBSD: PLIST,v 1.2 2014/04/24 20:33:43 jca Exp $
+@bin bin/dcm2pnm
+@bin bin/dcm2xml
+@bin bin/dcmcjpeg
+@bin bin/dcmconv
+@bin bin/dcmcrle
+@bin bin/dcmdjpeg
+@bin bin/dcmdrle
+@bin bin/dcmdspfn
+@bin bin/dcmdump
+@bin bin/dcmftest
+@bin bin/dcmgpdir
+@bin bin/dcmj2pnm
+@bin bin/dcmmkcrv
+@bin bin/dcmmkdir
+@bin bin/dcmmklut
+@bin bin/dcmodify
+@bin bin/dcmp2pgm
+@bin bin/dcmprscp
+@bin bin/dcmprscu
+@bin bin/dcmpschk
+@bin bin/dcmpsmk
+@bin bin/dcmpsprt
+@bin bin/dcmpsrcv
+@bin bin/dcmpssnd
+@bin bin/dcmqridx
+@bin bin/dcmqrscp
+@bin bin/dcmqrti
+@bin bin/dcmquant
+@bin bin/dcmscale
+@bin bin/dcmsign
+@bin bin/dcod2lum
+@bin bin/dconvlum
+@bin bin/dsr2html
+@bin bin/dsr2xml
+@bin bin/dsrdump
+@bin bin/dump2dcm
+@bin bin/echoscu
+@bin bin/findscu
+@bin bin/movescu
+@bin bin/pdf2dcm
+@bin bin/storescp
+@bin bin/storescu
+@bin bin/termscu
+@bin bin/wlmscpfs
+@bin bin/xml2dcm
+@bin bin/xml2dsr
 lib/dcm2xml.dtd
 @man man/man1/dcm2pnm.1
 @man man/man1/dcm2xml.1

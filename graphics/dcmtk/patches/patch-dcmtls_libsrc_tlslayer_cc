@@ -1,7 +1,9 @@
-$OpenBSD: patch-dcmtls_libsrc_tlslayer_cc,v 1.1 2010/10/07 04:19:47 benoit Exp $
---- dcmtls/libsrc/tlslayer.cc.orig	Wed Oct  6 22:10:42 2010
-+++ dcmtls/libsrc/tlslayer.cc	Wed Oct  6 22:10:53 2010
-@@ -188,7 +188,7 @@
+$OpenBSD: patch-dcmtls_libsrc_tlslayer_cc,v 1.2 2014/04/24 20:33:43 jca Exp $
+- picky g++ is picky
+- we don't have RAND_egd anymore
+--- dcmtls/libsrc/tlslayer.cc.orig	Thu Dec  8 16:48:28 2005
++++ dcmtls/libsrc/tlslayer.cc	Mon Apr 21 19:55:40 2014
+@@ -188,7 +188,7 @@ DcmTLSTransportLayer::DcmTLSTransportLayer(int network
     SSLeay_add_all_algorithms();
     seedPRNG(randFile);
  
@@ -10,3 +12,12 @@ $OpenBSD: patch-dcmtls_libsrc_tlslayer_cc,v 1.1 2010/10/07 04:19:47 benoit Exp $
     switch (networkRole)
     {
       case DICOM_APPLICATION_ACCEPTOR: 
+@@ -375,7 +375,7 @@ void DcmTLSTransportLayer::seedPRNG(const char *randFi
+ #endif
+   if (randFile)
+   {
+-    if (RAND_egd(randFile) <= 0)
++    if (1)
+     {
+       RAND_load_file(randFile ,-1);
+     }
