@@ -1,6 +1,13 @@
-Soup is a SOAP (Simple Object Access Protocol) implementation in C.
+libsoup is an HTTP client/server library for GNOME. It uses GObjects and
+the glib main loop, to integrate well with GNOME applications, and also
+has a synchronous API, for use in threaded applications.
 
-It provides an queued asynchronous callback-based mechanism for sending
-and servicing SOAP requests, and a WSDL (Web Service Definition
-Language) to C compiler which generates client stubs and server
-skeletons for easily calling and implementing SOAP methods.
+Features include:
+
+    Both asynchronous (GMainLoop and callback-based) and synchronous APIs
+    Automatically caches connections
+    SSL Support using GnuTLS
+    Proxy support, including authentication and SSL tunneling
+    Client support for Digest, NTLM, and Basic authentication
+    Server support for Digest and Basic authentication
+    Client and server support for XML-RPC
