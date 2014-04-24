@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2014/04/21 16:17:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2014/04/24 21:37:47 sthen Exp $
 
 BROKEN-hppa =	-Werror + sip-csta.c:707: warning: cast increases required alignment of target type
 
@@ -6,8 +6,7 @@ SHARED_ONLY =		Yes
 
 COMMENT =		SIPE plugin for Pidgin
 
-DISTNAME =		pidgin-sipe-1.18.0
-REVISION =		0
+DISTNAME =		pidgin-sipe-1.18.1
 
 CATEGORIES =		net
 
