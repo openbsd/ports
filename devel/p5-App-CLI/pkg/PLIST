@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/11/24 15:52:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/04/24 11:07:13 sthen Exp $
 ${P5SITE}/App/
 ${P5SITE}/App/CLI/
 ${P5SITE}/App/CLI.pm
 ${P5SITE}/App/CLI/Command/
 ${P5SITE}/App/CLI/Command.pm
 ${P5SITE}/App/CLI/Command/Help.pm
+${P5SITE}/App/CLI/Helper.pm
 @man man/man3p/App::CLI.3p
 @man man/man3p/App::CLI::Command.3p
 @man man/man3p/App::CLI::Command::Help.3p
+@man man/man3p/App::CLI::Helper.3p
