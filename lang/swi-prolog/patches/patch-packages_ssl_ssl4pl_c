@@ -1,0 +1,39 @@
+$OpenBSD: patch-packages_ssl_ssl4pl_c,v 1.3 2014/04/24 21:52:20 edd Exp $
+
+Fallout from OpenSSL rampage.
+
+--- packages/ssl/ssl4pl.c.orig	Tue Jan 21 14:47:42 2014
++++ packages/ssl/ssl4pl.c	Thu Apr 24 11:16:54 2014
+@@ -67,7 +67,9 @@ static functor_t FUNCTOR_equals2;
+ static functor_t FUNCTOR_crl1;
+ static functor_t FUNCTOR_revocations1;
+ static functor_t FUNCTOR_revoked2;
++#ifndef __OpenBSD__
+ static functor_t FUNCTOR_session_key1;
++#endif
+ static functor_t FUNCTOR_master_key1;
+ static functor_t FUNCTOR_session_id1;
+ static functor_t FUNCTOR_client_random1;
+@@ -1529,10 +1531,12 @@ pl_ssl_session(term_t stream_t, term_t session_t)
+ 
+   if ( !PL_unify_list_ex(list_t, node_t, list_t) )
+     return FALSE;
++#ifndef __OpenBSD__
+   if ( !PL_unify_term(node_t,
+ 		      PL_FUNCTOR, FUNCTOR_session_key1,
+ 		        PL_NCHARS, session->key_arg_length, session->key_arg))
+     return FALSE;
++#endif
+ 
+   if ( !PL_unify_list_ex(list_t, node_t, list_t))
+     return FALSE;
+@@ -1614,7 +1618,9 @@ install_ssl4pl()
+   FUNCTOR_crl1            = PL_new_functor(PL_new_atom("crl"), 1);
+   FUNCTOR_revoked2        = PL_new_functor(PL_new_atom("revoked"), 2);
+   FUNCTOR_revocations1    = PL_new_functor(PL_new_atom("revocations"), 1);
++#ifndef __OpenBSD__
+   FUNCTOR_session_key1    = PL_new_functor(PL_new_atom("session_key"), 1);
++#endif
+   FUNCTOR_master_key1     = PL_new_functor(PL_new_atom("master_key"), 1);
+   FUNCTOR_session_id1     = PL_new_functor(PL_new_atom("session_id"), 1);
+   FUNCTOR_client_random1  = PL_new_functor(PL_new_atom("client_random"), 1);
