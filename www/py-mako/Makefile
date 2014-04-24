@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2013/09/05 08:37:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2014/04/24 17:41:54 jasper Exp $
 
 COMMENT =	super-fast templating language
 
-MODPY_EGG_VERSION = 0.9.0
+MODPY_EGG_VERSION = 0.9.1
 DISTNAME =	Mako-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
 
@@ -13,7 +13,7 @@ HOMEPAGE =	http://www.makotemplates.org/
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	${HOMEPAGE}/downloads/
+MASTER_SITES =	${MASTER_SITE_PYPI:=M/Mako/}
 
 MODULES =	lang/python
 
