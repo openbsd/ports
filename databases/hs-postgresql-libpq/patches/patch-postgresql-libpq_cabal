@@ -1,0 +1,12 @@
+$OpenBSD: patch-postgresql-libpq_cabal,v 1.4 2014/04/24 16:20:34 dcoppa Exp $
+--- postgresql-libpq.cabal.orig	Wed Apr 23 21:40:16 2014
++++ postgresql-libpq.cabal	Wed Apr 23 21:40:53 2014
+@@ -30,7 +30,7 @@ Library
+   GHC-Options:       -Wall
+   Extra-Libraries: pq
+   if os(openbsd)
+-    Extra-Libraries:  crypto ssl com_err asn1 krb5 wind roken heimbase
++    Extra-Libraries:  crypto ssl
+ 
+   -- Other-modules:
+   Build-tools:       hsc2hs
