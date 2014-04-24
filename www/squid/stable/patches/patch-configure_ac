@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.3 2014/04/08 12:22:48 sthen Exp $
---- configure.ac.orig	Sun Mar  9 09:42:04 2014
-+++ configure.ac	Sun Mar 16 13:07:07 2014
-@@ -3051,6 +3051,14 @@ if test "x$squid_host_os" = "xmingw" ; then
+$OpenBSD: patch-configure_ac,v 1.4 2014/04/24 14:26:21 sthen Exp $
+--- configure.ac.orig	Wed Apr 23 15:03:44 2014
++++ configure.ac	Thu Apr 24 14:30:34 2014
+@@ -3060,6 +3060,14 @@ if test "x$squid_host_os" = "xmingw" ; then
    ac_cv_func_statfs='yes'
  fi
  
@@ -16,7 +16,7 @@ $OpenBSD: patch-configure_ac,v 1.3 2014/04/08 12:22:48 sthen Exp $
  dnl Check for library functions
  AC_CHECK_FUNCS(\
  	backtrace_symbols_fd \
-@@ -3203,6 +3211,9 @@ AC_CHECK_TYPE(struct cmsghdr,AC_DEFINE(HAVE_CMSGHDR,1,
+@@ -3211,6 +3219,9 @@ AC_CHECK_TYPE(struct cmsghdr,AC_DEFINE(HAVE_CMSGHDR,1,
  ])
  
  AC_CHECK_TYPE(struct iovec,AC_DEFINE(HAVE_IOVEC,1,[The system provides struct iovec]),,[

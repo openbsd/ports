@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2014/04/21 23:37:55 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2014/04/24 14:26:21 sthen Exp $
 
 MULTI_PACKAGES=	-main
 # -ntlm may come back with samba 4
@@ -24,13 +24,14 @@ HOMEPAGE=	http://www.squid-cache.org/
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c m pthread stdc++
+WANTLIB += c m nettle pthread stdc++
 
 WANTLIB-main +=	${WANTLIB} crypto db execinfo ssl
 
 LIB_DEPENDS-main += ${LIB_DEPENDS} \
 		databases/db/v4 \
-		devel/libexecinfo
+		devel/libexecinfo \
+		security/libnettle
 
 SYSCONFDIR=	${BASESYSCONFDIR}/squid
 LOCALSTATEDIR=	${BASELOCALSTATEDIR}/squid
@@ -107,10 +108,14 @@ WANTLIB-ldap +=	${WANTLIB} crypto lber-2.4 ldap-2.4 sasl2 ssl
 .endif
 
 #RUN_DEPENDS-ntlm= net/samba,ads ${BASE_PKGPATH}
+#LIB_DEPENDS-ntlm += security/libnettle
 #WANTLIB-ntlm +=	${WANTLIB}
 
 post-patch:
-	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} LOCALBASE=${LOCALBASE} ./bootstrap.sh
+	cd ${WRKSRC}; \
+	    AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+	    LOCALBASE=${LOCALBASE} ./bootstrap.sh
 
 pre-build:
 	@cd ${WRKSRC}; \
