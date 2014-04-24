@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2014/03/23 21:10:57 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/04/24 19:13:28 schwarze Exp $
 @bin bin/uchardet
 include/uchardet/
 include/uchardet/uchardet.h
@@ -6,6 +6,4 @@ lib/libuchardet.a
 @lib lib/libuchardet.so.${LIBuchardet_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/uchardet.pc
-share/man/
-share/man/man1/
-@man share/man/man1/uchardet.1
+@man man/man1/uchardet.1

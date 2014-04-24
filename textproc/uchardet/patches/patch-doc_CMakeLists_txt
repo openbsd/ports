@@ -1,0 +1,10 @@
+$OpenBSD: patch-doc_CMakeLists_txt,v 1.1 2014/04/24 19:13:28 schwarze Exp $
+--- doc/CMakeLists.txt.orig	Wed Jul 13 14:16:23 2011
++++ doc/CMakeLists.txt	Thu Apr 24 20:39:14 2014
+@@ -2,5 +2,5 @@ install(
+ 	FILES
+ 		uchardet.1
+ 	DESTINATION
+-		${DIR_SHARE}/man/man1
++		${DIR_PREFIX}/man/man1
+ )
