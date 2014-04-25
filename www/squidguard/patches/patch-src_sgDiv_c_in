@@ -1,11 +1,16 @@
-$OpenBSD: patch-src_sgDiv_c_in,v 1.1 2010/02/09 13:44:28 sthen Exp $
+$OpenBSD: patch-src_sgDiv_c_in,v 1.2 2014/04/25 16:35:42 sthen Exp $
+
+First hunk:
 
 squidGuard 1.4 patch 20091019; when constructing a redirect URL which
 includes the requested URL, truncate it to make sure it's smaller than
 squid's MAX_URL.
 
+Second hunk: fix broken use of the old squid-2.5 helper protocol, see
+http://bugs.squid-cache.org/show_bug.cgi?id=3978#c3
+
 --- src/sgDiv.c.in.orig	Mon Jul 14 17:02:43 2008
-+++ src/sgDiv.c.in	Wed Feb  3 12:26:15 2010
++++ src/sgDiv.c.in	Fri Apr 25 17:25:31 2014
 @@ -745,7 +745,7 @@ char *sgParseRedirect(redirect, req, acl, aclpass)
        p++;
        break;
@@ -15,3 +20,12 @@ squid's MAX_URL.
        p++;
        break;
      default:
+@@ -782,7 +782,7 @@ void sgEmergency ()
+   }
+   sgLogError("Going into emergency mode");
+   while(fgets(buf, MAX_BUF, stdin) != NULL){
+-    puts("");
++    puts("ERR");
+     fflush(stdout);
+   }
+   sgLogError("ending emergency mode, stdin empty");
