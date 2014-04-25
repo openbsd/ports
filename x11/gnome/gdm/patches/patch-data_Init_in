@@ -1,7 +1,7 @@
-$OpenBSD: patch-data_Init_in,v 1.5 2014/04/07 16:05:52 ajacoutot Exp $
---- data/Init.in.orig	Thu Dec 26 16:07:13 2013
-+++ data/Init.in	Thu Dec 26 16:09:40 2013
-@@ -86,4 +86,9 @@ if [ "x$SETXKBMAP" != "x" ] ; then
+$OpenBSD: patch-data_Init_in,v 1.6 2014/04/25 14:37:19 ajacoutot Exp $
+--- data/Init.in.orig	Fri Feb  7 16:02:08 2014
++++ data/Init.in	Fri Apr 25 16:34:01 2014
+@@ -86,4 +86,11 @@ if [ "x$SETXKBMAP" != "x" ] ; then
    fi
  fi
  
@@ -9,5 +9,7 @@ $OpenBSD: patch-data_Init_in,v 1.5 2014/04/07 16:05:52 ajacoutot Exp $
 +if [ -c /dev/drm0 ]; then
 +    /sbin/chown _gdm /dev/drm0
 +fi
++# XXX OpenBSD needs an implementation of XDG_RUNTIME_DIR
++rm -rf /var/db/gdm/.cache/gnome-shell/runtime-state-*
 +
  exit 0

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: gdm.rc,v 1.29 2014/04/14 07:54:51 ajacoutot Exp $
+# $OpenBSD: gdm.rc,v 1.30 2014/04/25 14:37:19 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/gdm"
 
@@ -8,6 +8,11 @@ daemon="${TRUEPREFIX}/sbin/gdm"
 
 rc_bg=YES
 rc_reload=NO
+
+rc_pre() {
+	# XXX OpenBSD needs an implementation of XDG_RUNTIME_DIR
+	rm -rf /var/db/gdm/.cache/gnome-shell/runtime-state-*
+}
 
 # on boot: wait for ttys to be initialized
 if [ -n "${INRC}" ]; then
@@ -35,6 +40,8 @@ rc_post() {
 	if [ -c /dev/drm0 ]; then
 		chown root /dev/drm0
 	fi
+	# XXX OpenBSD needs an implementation of XDG_RUNTIME_DIR
+	rm -rf /var/db/gdm/.cache/gnome-shell/runtime-state-*
 }
 
 rc_cmd $1
