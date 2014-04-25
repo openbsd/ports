@@ -1,0 +1,10 @@
+$OpenBSD: README,v 1.1.1.1 2014/04/25 21:32:08 benoit Exp $
+
++-----------------------------------------------------------------------
+| Using ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+To enjoy browsing www.libressl.org you can use the provided fontconfig
+file.
+
+# ln -s /usr/local/share/comic-neue/30-comic-sans-aliases.conf /etc/fonts/conf.d/
