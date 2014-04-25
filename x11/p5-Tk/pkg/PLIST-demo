@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-demo,v 1.8 2010/08/19 21:54:42 sthen Exp $
+@comment $OpenBSD: PLIST-demo,v 1.9 2014/04/25 09:44:54 sthen Exp $
 bin/widget
 ${P5ARCH}/Tk/WidgetDemo.pod
 ${P5ARCH}/Tk/demos/
@@ -111,3 +111,5 @@ ${P5ARCH}/Tk/demos/widtrib/plop.pl
 @man man/man1/widget.1
 @man man/man3p/Tk::Widget.3p
 @man man/man3p/Tk::WidgetDemo.3p
+@man man/man3p/Tk::demos::widget_lib::slide.3p
+@man man/man3p/Tk::demos::widget_lib::trace2.3p

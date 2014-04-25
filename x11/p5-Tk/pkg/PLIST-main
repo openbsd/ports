@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2010/09/02 11:53:32 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2014/04/25 09:44:54 sthen Exp $
 @pkgpath x11/p5-Tk
 bin/gedi
 bin/ptked
@@ -32,10 +32,11 @@ ${P5ARCH}/Tk/Clipboard.pm
 ${P5ARCH}/Tk/Clipboard.pod
 ${P5ARCH}/Tk/CmdLine.pm
 ${P5ARCH}/Tk/CmdLine.pod
+${P5ARCH}/Tk/ColorDialog.pm
 ${P5ARCH}/Tk/ColorEdit.xpm
 ${P5ARCH}/Tk/ColorEditor.pm
 ${P5ARCH}/Tk/ColorEditor.pod
-${P5ARCH}/Tk/Common.pod
+${P5ARCH}/Tk/ColorSelect.pm
 ${P5ARCH}/Tk/Compound.pm
 ${P5ARCH}/Tk/Compound.pod
 ${P5ARCH}/Tk/Config.pm
@@ -55,9 +56,11 @@ ${P5ARCH}/Tk/Dirlist.pm
 ${P5ARCH}/Tk/DragDrop/
 ${P5ARCH}/Tk/DragDrop.pm
 ${P5ARCH}/Tk/DragDrop/Common.pm
+${P5ARCH}/Tk/DragDrop/Common.pod
 ${P5ARCH}/Tk/DragDrop/LocalDrop.pm
 ${P5ARCH}/Tk/DragDrop/Rect.pm
 ${P5ARCH}/Tk/DragDrop/SunConst.pm
+${P5ARCH}/Tk/DragDrop/SunConst.pod
 ${P5ARCH}/Tk/DragDrop/SunDrop.pm
 ${P5ARCH}/Tk/DragDrop/SunSite.pm
 ${P5ARCH}/Tk/DragDrop/XDNDDrop.pm
@@ -160,7 +163,6 @@ ${P5ARCH}/Tk/Spinbox.pod
 ${P5ARCH}/Tk/Stats.pm
 ${P5ARCH}/Tk/Submethods.pm
 ${P5ARCH}/Tk/Submethods.pod
-${P5ARCH}/Tk/SunConst.pod
 ${P5ARCH}/Tk/TList.pm
 ${P5ARCH}/Tk/TList.pod
 ${P5ARCH}/Tk/Table.pm
@@ -604,7 +606,6 @@ ${P5ARCH}/auto/Tk/updateWidgets.al
 @man man/man3p/Tk::Clipboard.3p
 @man man/man3p/Tk::CmdLine.3p
 @man man/man3p/Tk::ColorEditor.3p
-@man man/man3p/Tk::Common.3p
 @man man/man3p/Tk::Compound.3p
 @man man/man3p/Tk::ConfigSpecs.3p
 @man man/man3p/Tk::DItem.3p
@@ -612,6 +613,8 @@ ${P5ARCH}/auto/Tk/updateWidgets.al
 @man man/man3p/Tk::Dialog.3p
 @man man/man3p/Tk::DialogBox.3p
 @man man/man3p/Tk::DirTree.3p
+@man man/man3p/Tk::DragDrop::Common.3p
+@man man/man3p/Tk::DragDrop::SunConst.3p
 @man man/man3p/Tk::DropSite.3p
 @man man/man3p/Tk::Entry.3p
 @man man/man3p/Tk::Error.3p
@@ -655,7 +658,6 @@ ${P5ARCH}/auto/Tk/updateWidgets.al
 @man man/man3p/Tk::Scrolled.3p
 @man man/man3p/Tk::Spinbox.3p
 @man man/man3p/Tk::Submethods.3p
-@man man/man3p/Tk::SunConst.3p
 @man man/man3p/Tk::TList.3p
 @man man/man3p/Tk::Table.3p
 @man man/man3p/Tk::Tcl-perl.3p
