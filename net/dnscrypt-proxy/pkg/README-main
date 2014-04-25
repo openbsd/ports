@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.1 2013/10/23 12:42:20 sthen Exp $
+$OpenBSD: README-main,v 1.2 2014/04/25 17:11:26 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -16,4 +16,9 @@ it is as a forwarder for a DNS cache like Unbound.
 Both can safely run on the same host.
 
 A list of non-OpenDNS resolvers providing DNSCrypt service is available
-at http://dnscrypt.org/.
+at ${TRUEPREFIX}/share/dnscrypt-proxy/dnscrypt-resolvers.csv, and can be
+selected by using an rc.conf.local(5) line like the following:
+
+dnscrypt_proxy_flags="-R dnscrypt.eu-nl"
+
+Also see http://dnscrypt.org/.

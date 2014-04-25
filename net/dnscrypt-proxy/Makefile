@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2013/12/05 10:45:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2014/04/25 17:11:26 sthen Exp $
 
 COMMENT-main=		secure communications between a DNS client and resolver
 COMMENT-plugins=	example plugins for dnscrypt-proxy
 
-V=			1.3.3
-REVISION=		0
+V=			1.4.0
 
 DISTNAME=		dnscrypt-proxy-${V}
 CATEGORIES=		net
@@ -35,9 +34,7 @@ LIB_DEPENDS-main=	${commonLIB_DEPENDS} \
 			devel/libtool,-ltdl
 LIB_DEPENDS-plugins=	${commonLIB_DEPENDS} \
 			net/ldns/libldns
-BUILD_DEPENDS=		devel/libtool \
-			${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
+#BUILD_DEPENDS=		devel/libtool
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		CPPFLAGS=-I${LOCALBASE}/include \
@@ -49,20 +46,12 @@ CONFIGURE_ARGS+=	--enable-plugins \
 # Don't force PIE, it's broken on at least arm. OpenBSD enables it
 # by default on arch where it works anyway.
 
-# libevent test hangs. (note that currently tests also need USE_GMAKE=yes).
-NO_TEST=		Yes
+# for tests
+USE_GMAKE=		yes
 
 DOCS=			README-PLUGINS.markdown \
 			README.markdown \
 			TECHNOTES
-
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.14
-
-post-patch:
-	cd ${WRKSRC}/src/libevent-modified; \
-	    AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} sh ./autogen.sh
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dnscrypt-proxy
