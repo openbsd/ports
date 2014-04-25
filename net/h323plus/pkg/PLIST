@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/01/16 14:36:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/04/25 11:17:59 ajacoutot Exp $
 @conflict openh323-*
 @pkgpath net/openh323
 include/openh323/
@@ -7,13 +7,19 @@ include/openh323/codec/
 include/openh323/codec/opalplugin.h
 include/openh323/codecs.h
 include/openh323/dynacodec.h
+include/openh323/g711.h
 include/openh323/gccpdu.h
 include/openh323/gkclient.h
 include/openh323/gkserver.h
 include/openh323/gnugknat.h
 include/openh323/guid.h
-include/openh323/h224.h
-include/openh323/h224handler.h
+include/openh323/h224/
+include/openh323/h224/h224.h
+include/openh323/h224/h224handler.h
+include/openh323/h224/h281.h
+include/openh323/h224/h281handler.h
+include/openh323/h224/h284.h
+include/openh323/h224/t140.h
 include/openh323/h225.h
 include/openh323/h225ras.h
 include/openh323/h230/
@@ -26,13 +32,12 @@ include/openh323/h235/h2356.h
 include/openh323/h235/h235caps.h
 include/openh323/h235/h235chan.h
 include/openh323/h235/h235crypto.h
+include/openh323/h235/h235support.h
 include/openh323/h235auth.h
 include/openh323/h235plugin.h
 include/openh323/h235pluginmgr.h
 include/openh323/h245.h
 include/openh323/h248.h
-include/openh323/h281.h
-include/openh323/h281handler.h
 include/openh323/h323.h
 include/openh323/h323annexg.h
 include/openh323/h323caps.h
@@ -75,6 +80,7 @@ include/openh323/h460/h46018_h225.h
 include/openh323/h460/h46019.h
 include/openh323/h460/h46024b.h
 include/openh323/h460/h46026.h
+include/openh323/h460/h46026mgr.h
 include/openh323/h460/h4604.h
 include/openh323/h460/h4609.h
 include/openh323/h460/h460_oid3.h
@@ -82,11 +88,15 @@ include/openh323/h460/h460_oid6.h
 include/openh323/h460/h460_oid9.h
 include/openh323/h460/h460_std17.h
 include/openh323/h460/h460_std18.h
+include/openh323/h460/h460_std22.h
 include/openh323/h460/h460_std23.h
+include/openh323/h460/h460_std26.h
 include/openh323/h460/h460_std9.h
 include/openh323/h460/h460p.h
 include/openh323/h460/h460pres.h
 include/openh323/h460/h460tm.h
+include/openh323/h460/h4610.h
+include/openh323/h460/h461_base.h
 include/openh323/h460/upnpcp.h
 include/openh323/h501.h
 include/openh323/h501pdu.h

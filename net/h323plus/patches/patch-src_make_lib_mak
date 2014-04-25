@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_make_lib_mak,v 1.1 2014/04/25 11:17:59 ajacoutot Exp $
+
+Make sure LIB_SONAME is versioned (.so.X.Y versus .so).
+(LIBNAME_PAT = LIB_SONAME)
+
+soname usage is discouraged on OpenBSD.
+
+--- src/make/lib.mak.orig	Thu Dec  5 10:27:57 2013
++++ src/make/lib.mak	Fri Apr 25 11:30:28 2014
+@@ -42,6 +42,10 @@ else
+   endif
+ endif
+ 
++ifeq ($(OSTYPE),OpenBSD)
++  LIBNAME_PAT = $(LIB_FILENAME).${LIBh323_VERSION}
++endif
++
+ LIB_SONAME	= $(LIBNAME_PAT)
+ 
+ ifneq ($(P_SHAREDLIB),1)
+@@ -93,7 +97,7 @@ ifeq ($(P_SHAREDLIB),1)
+   # directly and passing it the equivalent arguments...jpd@louisiana.edu
+   ifeq ($(OSTYPE),solaris)
+      LDSOOPTS = -Bdynamic -G -h $(LIB_SONAME)
+-  else
++  else ifneq ($(OSTYPE),OpenBSD)
+     ifeq ($(OSTYPE),mingw)
+       LDSOOPTS += -Wl,--kill-at
+     else

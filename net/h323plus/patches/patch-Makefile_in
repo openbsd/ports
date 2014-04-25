@@ -1,7 +1,10 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2013/03/02 14:06:24 ajacoutot Exp $
---- Makefile.in.orig	Sat Sep 10 06:31:33 2011
-+++ Makefile.in	Sun Feb 24 10:01:38 2013
-@@ -86,23 +86,7 @@ docs: 
+$OpenBSD: patch-Makefile_in,v 1.6 2014/04/25 11:17:59 ajacoutot Exp $
+
+We only use versioned libraries (.so.X.Y versus .so).
+
+--- Makefile.in.orig	Thu Dec 12 17:16:27 2013
++++ Makefile.in	Sun Apr 20 10:41:12 2014
+@@ -99,23 +99,7 @@ docs: 
  install:
  	mkdir -p $(DESTDIR)$(LIBDIR)
  	rm -f $(DESTDIR)$(LIBDIR)/libh323_*_r.so*

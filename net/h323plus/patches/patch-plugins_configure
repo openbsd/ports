@@ -1,0 +1,21 @@
+$OpenBSD: patch-plugins_configure,v 1.6 2014/04/25 11:17:59 ajacoutot Exp $
+
+soname usage is discouraged on OpenBSD.
+
+--- plugins/configure.orig	Fri Apr 25 09:51:53 2014
++++ plugins/configure	Fri Apr 25 09:52:01 2014
+@@ -6529,8 +6529,13 @@ _ACEOF
+         ;;
+ 
+         *)
++          case $host_os in
++            openbsd*)
++                      LDSO='-shared';;
++            *)
++                      LDSO='-shared -Wl,-soname,$(SONAME)';;
++          esac
+           STDCCFLAGS="$STDCCFLAGS -fPIC"
+-          LDSO='-shared -Wl,-soname,$(SONAME)'
+           PLUGINEXT=so
+ 
+ 
