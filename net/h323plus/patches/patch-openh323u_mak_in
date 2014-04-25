@@ -1,0 +1,18 @@
+$OpenBSD: patch-openh323u_mak_in,v 1.5 2014/04/25 14:13:40 ajacoutot Exp $
+
+Do not append the platform_type and suffix to the library name.
+
+--- openh323u.mak.in.orig	Thu Dec 12 23:52:13 2013
++++ openh323u.mak.in	Fri Apr 25 11:09:22 2014
+@@ -132,7 +132,11 @@ OH323_SUFFIX = $(OBJ_SUFFIX)
+ endif # OH323_SUFFIX
+ endif # HAS_PTLIB_LIB_MAK
+ 
++ifneq ($(OSTYPE),OpenBSD)
+ OH323_BASE  = h323_$(PLATFORM_TYPE)_$(OH323_SUFFIX)$(LIB_TYPE)
++else
++OH323_BASE  = h323
++endif
+ OH323_FILE  = lib$(OH323_BASE).$(LIB_SUFFIX)
+ 
+ LDFLAGS	    += -L$(OH323_LIBDIR)
