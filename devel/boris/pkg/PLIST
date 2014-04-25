@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/04/25 15:47:52 edd Exp $
+bin/boris
+lib/boris/
+lib/boris/Boris/
+lib/boris/Boris/Boris.php
+lib/boris/Boris/CLIOptionsHandler.php
+lib/boris/Boris/ColoredInspector.php
+lib/boris/Boris/Config.php
+lib/boris/Boris/DumpInspector.php
+lib/boris/Boris/EvalWorker.php
+lib/boris/Boris/ExportInspector.php
+lib/boris/Boris/Inspector.php
+lib/boris/Boris/ReadlineClient.php
+lib/boris/Boris/ShallowParser.php
+lib/boris/autoload.php
+share/doc/boris/
+share/doc/boris/LICENSE
+share/doc/boris/README.md

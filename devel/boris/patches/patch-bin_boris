@@ -1,0 +1,15 @@
+$OpenBSD: patch-bin_boris,v 1.1.1.1 2014/04/25 15:47:52 edd Exp $
+--- bin/boris.orig	Fri Jan 17 12:21:18 2014
++++ bin/boris	Fri Apr 25 13:45:22 2014
+@@ -1,9 +1,9 @@
+-#!/usr/bin/env php
++#!${MODPHP_BIN}
+ <?php
+ 
+ /* vim: set shiftwidth=2 expandtab softtabstop=2: */
+ 
+-require_once __DIR__.'/../lib/autoload.php';
++require_once '${TRUEPREFIX}/lib/boris/autoload.php';
+ 
+ $boris  = new \Boris\Boris();
+ 
