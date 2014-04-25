@@ -1,23 +1,43 @@
-$OpenBSD: patch-gtk_gtkmountoperation-x11_c,v 1.1 2013/01/05 18:13:56 ajacoutot Exp $
+$OpenBSD: patch-gtk_gtkmountoperation-x11_c,v 1.2 2014/04/25 15:11:55 ajacoutot Exp $
 
 From ad9da2727d3e3243fd052c9feb0c55645e87d384 Mon Sep 17 00:00:00 2001
 From: Jonathan Matthew <jmatthew@openbsd.org>
-Date: Fri, 08 Jul 2011 00:24:32 +0000
+Date: Fri, 8 Jul 2011 10:24:32 +1000
 Subject: GMountOperation::show-processes support for OpenBSD using kvm(3)
 
---- gtk/gtkmountoperation-x11.c.orig	Tue Nov  8 18:31:30 2011
-+++ gtk/gtkmountoperation-x11.c	Sat Jan  5 19:08:34 2013
-@@ -43,8 +43,8 @@
+From 3d165c1a902fc0a5f32898e406a79e53ed4bcc97 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Tue, 20 Sep 2011 11:57:49 +0200
+Subject: gtkmountoperation-x11: unbreak compilation on OpenBSD.
+
+From d987a01d80126ee351727d1603a599c4edb66eca Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Sat, 15 Oct 2011 11:27:47 +0200
+Subject: GMountOperation on OpenBSD: remove the need for kvm(3)
+
+From 974212ec825d8d50bdea8ab955b6f19b8ed1672f Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Mon, 9 Jul 2012 18:20:34 +0200
+Subject: OpenBSD: use G_N_ELEMENTS instead of nitems
+
+From 8935d2f123878c31af69b6c6034069ad540b13c7 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Fri, 25 Apr 2014 14:37:59 +0200
+Subject: openbsd: properly set len for gtkmountoperation-x11
+
+--- gtk/gtkmountoperation-x11.c.orig	Wed Apr 16 16:16:11 2014
++++ gtk/gtkmountoperation-x11.c	Wed Apr 16 16:17:59 2014
+@@ -43,9 +43,6 @@
  #include <errno.h>
  
  #if defined(__OpenBSD__)
-+#include <stdlib.h>
- #include <sys/param.h>
+-#include <sys/param.h>
 -#include <kvm.h>
- #include <fcntl.h>
+-#include <fcntl.h>
  #include <sys/sysctl.h>
  #endif
-@@ -724,6 +724,96 @@ pid_get_command_line (GPid pid)
+ 
+@@ -724,6 +721,100 @@ pid_get_command_line (GPid pid)
  }
  
  /* ---------------------------------------------------------------------------------------------------- */
@@ -36,11 +56,11 @@ Subject: GMountOperation::show-processes support for OpenBSD using kvm(3)
 +  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, pid,
 +                sizeof(struct kinfo_proc), 0 };
 +
-+  if (sysctl(mib, G_N_ELEMENTS (mib), NULL, &len, NULL, 0) == -1)
++  if (sysctl (mib, G_N_ELEMENTS (mib), NULL, &len, NULL, 0) == -1)
 +      return (-1);
 +  mib[5] = (len / sizeof(struct kinfo_proc));
 +
-+  if (sysctl(mib, G_N_ELEMENTS (mib), &kp, &len, NULL, 0) < 0)
++  if (sysctl (mib, G_N_ELEMENTS (mib), &kp, &len, NULL, 0) < 0)
 +      return -1;
 +
 +  ppid = kp.p_ppid;
@@ -51,21 +71,23 @@ Subject: GMountOperation::show-processes support for OpenBSD using kvm(3)
 +static gchar *
 +pid_get_env (GPid pid, const gchar *key)
 +{
-+  size_t len = PATH_MAX;
-+  char **strs = NULL;
-+  char *ret;
++  size_t len;
++  char **strs;
++  char *ret = NULL;
 +  char *end;
 +  int key_len;
 +  int i;
 +
 +  int mib[] = { CTL_KERN, KERN_PROC_ARGS, pid, KERN_PROC_ENV };
 +
-+  strs = (char **)realloc(strs, len);
++  if (sysctl (mib, G_N_ELEMENTS (mib), NULL, &len, NULL, 0) == -1)
++    return ret;
++
++  strs = g_malloc0 (len);
 +
 +  key_len = strlen (key);
 +
-+  ret = NULL;
-+  if (sysctl(mib, G_N_ELEMENTS (mib), strs, &len, NULL, 0) != -1)
++  if (sysctl (mib, G_N_ELEMENTS (mib), strs, &len, NULL, 0) != -1)
 +    {
 +      for (i = 0; strs[i] != NULL; i++)
 +	{
@@ -88,18 +110,20 @@ Subject: GMountOperation::show-processes support for OpenBSD using kvm(3)
 +static gchar *
 +pid_get_command_line (GPid pid)
 +{
-+  size_t len = PATH_MAX;
-+  char **strs = NULL;
-+  char *ret = NULL;
-+  char *end;
++  size_t len;
++  char **strs;
++  char *ret, *end;
 +
 +  int mib[] = { CTL_KERN, KERN_PROC_ARGS, pid, KERN_PROC_ARGV };
 +
-+  strs = (char **)realloc(strs, len);
++  if (sysctl (mib, G_N_ELEMENTS (mib), NULL, &len, NULL, 0) == -1)
++    return NULL;
 +
-+  if (sysctl(mib, G_N_ELEMENTS (mib), strs, &len, NULL, 0) == -1) {
++  strs = g_malloc0 (len);
++
++  if (sysctl (mib, G_N_ELEMENTS (mib), strs, &len, NULL, 0) == -1) {
 +    g_free (strs);
-+    return ret;
++    return NULL;
 +  }
 +
 +  ret = g_strjoinv (" ", strs);
