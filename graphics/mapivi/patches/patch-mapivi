@@ -1,6 +1,6 @@
-$OpenBSD: patch-mapivi,v 1.6 2012/07/11 08:59:57 giovanni Exp $
---- mapivi.orig	Thu Feb 21 21:53:44 2008
-+++ mapivi	Wed Jul 11 10:47:36 2012
+$OpenBSD: patch-mapivi,v 1.7 2014/04/25 09:47:50 sthen Exp $
+--- mapivi.orig	Thu Feb 21 20:53:44 2008
++++ mapivi	Sun Jul 14 12:07:09 2013
 @@ -148,12 +148,12 @@ if (($EvilOS) and (defined $ENV{APPDATA}) and ($maprog
  # for windows we use this path
  $maprogsdir     = $ENV{APPDATA}."/maprogs" if defined $ENV{APPDATA};
@@ -97,6 +97,20 @@ $OpenBSD: patch-mapivi,v 1.6 2012/07/11 08:59:57 giovanni Exp $
  $mapiviiconfile    = "$configdir/MapiviIcon32.gif" if $EvilOS;
  #my $mapiviicon = $top->Photo(-file => $mapiviiconfile) if (-f $mapiviiconfile);
  $top->idletasks if $EvilOS; # this line is crucial (at least on windows)
+@@ -10153,11 +10147,11 @@ sub decorationDialog {
+   my $pf = $pfa->Frame(-bd => $config{Borderwidth}, -relief => 'groove')->pack(-side => "left");
+   my $pfn = $pf->Frame()->pack();
+   my $pfs = $pf->Frame()->pack();
+-  foreach my $gravity qw(NorthWest North NorthEast) {
++  foreach my $gravity (qw(NorthWest North NorthEast)) {
+ 	my $but = $pfn->Radiobutton(-text => "", -variable => \$config{CopyPosition}, -value => $gravity)->pack(-side => 'left');
+ 	$balloon->attach($but, -msg => "Align the copyright text or logo in $gravity position");
+   }
+-  foreach my $gravity qw(SouthWest South SouthEast) {
++  foreach my $gravity (qw(SouthWest South SouthEast)) {
+ 	my $but = $pfs->Radiobutton(-text => "", -variable => \$config{CopyPosition}, -value => $gravity)->pack(-side => 'left');
+ 	$balloon->attach($but, -msg => "Align the copyright text or logo in $gravity position");
+   }
 @@ -13567,8 +13561,6 @@ sub createMenubar {
  						}
  						slideshow();
@@ -124,6 +138,28 @@ $OpenBSD: patch-mapivi,v 1.6 2012/07/11 08:59:57 giovanni Exp $
  	my $image = $parentWidget->Photo(-file => $pic) if -f $pic;
  
  	if ($image) {
+@@ -20002,7 +19994,7 @@ sub plusMinusEntry {
+ ##############################################################
+ sub normalizeCoords {
+   my $canvas = shift;
+-  foreach my $coord qw(m_x1 m_x2 m_y1 m_y2) {
++  foreach my $coord (qw(m_x1 m_x2 m_y1 m_y2)) {
+ 	# assign it to the step width
+ 	$canvas->{$coord} = sprintf "%.0f", ($canvas->{$coord}/$canvas->{m_step});
+ 	$canvas->{$coord} *= $canvas->{m_step};
+@@ -20011,10 +20003,10 @@ sub normalizeCoords {
+   }
+ 
+   # check upper bound
+-  foreach my $coord qw(m_x1 m_x2) {
++  foreach my $coord (qw(m_x1 m_x2)) {
+ 	$canvas->{$coord} = $canvas->{m_wo} if ($canvas->{$coord} > $canvas->{m_wo});
+   }
+-  foreach my $coord qw(m_y1 m_y2) {
++  foreach my $coord (qw(m_y1 m_y2)) {
+ 	$canvas->{$coord} = $canvas->{m_ho} if ($canvas->{$coord} > $canvas->{m_ho});
+   }
+ }
 @@ -25675,7 +25667,7 @@ sub GIMPedit {
  	return if (!checkExternProgs("GIMPedit", "gimp-win-remote"));
    }
