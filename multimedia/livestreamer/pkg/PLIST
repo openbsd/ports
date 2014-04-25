@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/03/09 20:38:00 bcallah Exp $
+@comment $OpenBSD: PLIST,v 1.7 2014/04/25 15:13:31 bcallah Exp $
 bin/livestreamer
 lib/python${MODPY_VERSION}/site-packages/livestreamer/
 lib/python${MODPY_VERSION}/site-packages/livestreamer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -58,6 +58,8 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer/plugin/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugin/api/
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugin/api/__init__.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugin/api/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugin/api/http_session.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugin/api/http_session.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugin/plugin.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugin/plugin.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/
@@ -69,12 +71,20 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/alieztv.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/alieztv.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/azubutv.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/azubutv.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/bambuser.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/bambuser.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/beattv.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/beattv.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/cast3d.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/cast3d.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/chaturbate.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/chaturbate.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/common_swf.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/common_swf.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/crunchyroll.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/crunchyroll.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/cybergame.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/cybergame.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/dailymotion.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/dailymotion.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/dmcloud.py
@@ -115,8 +125,10 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/oldlivestream.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/oldlivestream.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/ongamenet.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/ongamenet.pyc
-lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/owncast.py
-lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/owncast.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/picarto.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/picarto.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/speedrunslive.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/speedrunslive.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/stream.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/stream.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/streamingvideoprovider.py
@@ -133,8 +145,6 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/weeb.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/weeb.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/youtube.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/youtube.pyc
-lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/yycast.py
-lib/python${MODPY_VERSION}/site-packages/livestreamer/plugins/yycast.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/session.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/session.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/
@@ -156,6 +166,8 @@ lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/playlist.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/playlist.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/rtmpdump.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/rtmpdump.pyc
+lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/segmented.py
+lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/segmented.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/stream.py
 lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/stream.pyc
 lib/python${MODPY_VERSION}/site-packages/livestreamer/stream/streamprocess.py
