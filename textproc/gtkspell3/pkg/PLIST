@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/04/20 10:02:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/04/25 10:14:59 ajacoutot Exp $
 include/gtkspell-3.0/
 include/gtkspell-3.0/gtkspell/
 include/gtkspell-3.0/gtkspell/gtkspell.h
@@ -42,6 +42,7 @@ share/locale/ak/LC_MESSAGES/
 share/locale/ak/LC_MESSAGES/gtkspell3.mo
 share/locale/ast/LC_MESSAGES/gtkspell3.mo
 share/locale/be/LC_MESSAGES/gtkspell3.mo
+share/locale/ca/LC_MESSAGES/gtkspell3.mo
 share/locale/cs/LC_MESSAGES/gtkspell3.mo
 share/locale/da/LC_MESSAGES/gtkspell3.mo
 share/locale/de/LC_MESSAGES/gtkspell3.mo
