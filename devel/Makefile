@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1217 2014/04/21 16:04:26 jca Exp $
+# $OpenBSD: Makefile,v 1.1218 2014/04/25 16:06:05 edd Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -32,6 +32,7 @@
      SUBDIR += blame
      SUBDIR += boehm-gc
      SUBDIR += boost
+     SUBDIR += boris
      SUBDIR += bouml
      SUBDIR += bpython
      SUBDIR += bullet
