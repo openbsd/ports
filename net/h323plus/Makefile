@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2014/04/25 11:17:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2014/04/25 14:13:02 ajacoutot Exp $
 
 # XXX drop at next release
 CONFIGURE_ARGS += --enable-h235
@@ -33,6 +33,10 @@ LIB_DEPENDS=	devel/ptlib
 ALL_TARGET=	default #${WRKSRC}/Makefile 
 USE_GMAKE=	Yes
 NO_TEST=	Yes
+
+MODGNU_CONFIG_GUESS_DIRS= \
+		${WRKSRC} \
+		${WRKSRC}/plugins
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	PTLIBDIR=${LOCALBASE}/share/ptlib
