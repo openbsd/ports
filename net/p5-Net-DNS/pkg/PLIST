@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.20 2012/12/18 16:25:25 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.21 2014/04/25 08:55:13 bluhm Exp $
+${P5ARCH}/
 ${P5ARCH}/Net/
 ${P5ARCH}/Net/DNS/
 ${P5ARCH}/Net/DNS.pm
@@ -17,11 +18,15 @@ ${P5ARCH}/Net/DNS/RR/A.pm
 ${P5ARCH}/Net/DNS/RR/AAAA.pm
 ${P5ARCH}/Net/DNS/RR/AFSDB.pm
 ${P5ARCH}/Net/DNS/RR/APL.pm
+${P5ARCH}/Net/DNS/RR/CAA.pm
 ${P5ARCH}/Net/DNS/RR/CERT.pm
 ${P5ARCH}/Net/DNS/RR/CNAME.pm
 ${P5ARCH}/Net/DNS/RR/DHCID.pm
 ${P5ARCH}/Net/DNS/RR/DNAME.pm
 ${P5ARCH}/Net/DNS/RR/EID.pm
+${P5ARCH}/Net/DNS/RR/EUI48.pm
+${P5ARCH}/Net/DNS/RR/EUI64.pm
+${P5ARCH}/Net/DNS/RR/GPOS.pm
 ${P5ARCH}/Net/DNS/RR/HINFO.pm
 ${P5ARCH}/Net/DNS/RR/HIP.pm
 ${P5ARCH}/Net/DNS/RR/IPSECKEY.pm
@@ -67,6 +72,7 @@ ${P5ARCH}/Net/DNS/Resolver/os2.pm
 ${P5ARCH}/Net/DNS/Text.pm
 ${P5ARCH}/Net/DNS/Update.pm
 ${P5ARCH}/Net/DNS/ZoneFile.pm
+${P5ARCH}/auto/
 ${P5ARCH}/auto/Net/
 ${P5ARCH}/auto/Net/DNS/
 ${P5ARCH}/auto/Net/DNS/DNS.bs
@@ -86,11 +92,15 @@ ${P5ARCH}/auto/Net/DNS/DNS.so
 @man man/man3p/Net::DNS::RR::AAAA.3p
 @man man/man3p/Net::DNS::RR::AFSDB.3p
 @man man/man3p/Net::DNS::RR::APL.3p
+@man man/man3p/Net::DNS::RR::CAA.3p
 @man man/man3p/Net::DNS::RR::CERT.3p
 @man man/man3p/Net::DNS::RR::CNAME.3p
 @man man/man3p/Net::DNS::RR::DHCID.3p
 @man man/man3p/Net::DNS::RR::DNAME.3p
 @man man/man3p/Net::DNS::RR::EID.3p
+@man man/man3p/Net::DNS::RR::EUI48.3p
+@man man/man3p/Net::DNS::RR::EUI64.3p
+@man man/man3p/Net::DNS::RR::GPOS.3p
 @man man/man3p/Net::DNS::RR::HINFO.3p
 @man man/man3p/Net::DNS::RR::HIP.3p
 @man man/man3p/Net::DNS::RR::IPSECKEY.3p
