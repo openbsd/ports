@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2014/04/24 13:19:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.135 2014/04/25 09:58:30 ajacoutot Exp $
 
 # XXX remove hostnames-test.txt hack in pre-configure when updating to 3.12.0
 # https://git.gnome.org/browse/gnome-control-center/commit/?id=4736b03ed9e2ae9214117454f70811dbacd78739
@@ -100,7 +100,9 @@ CONFIGURE_ARGS=		--without-kerberos
 # patches/patch-panels_user-accounts_um-account-dialog_c
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.14
-BUILD_DEPENDS +=	devel/libtool \
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool \
 			x11/gnome/common
 pre-configure:
 	cd ${WRKSRC} && \
