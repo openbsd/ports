@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_task-manager-bsd_c,v 1.3 2014/01/09 21:09:16 landry Exp $
---- src/task-manager-bsd.c.orig	Thu Jan  9 22:05:05 2014
-+++ src/task-manager-bsd.c	Thu Jan  9 22:05:37 2014
+$OpenBSD: patch-src_task-manager-bsd_c,v 1.4 2014/04/25 09:38:45 mpi Exp $
+
+Prefer the UVM way to the vmmeter one to get memory stats.
+
+--- src/task-manager-bsd.c.orig	Wed Jan  8 19:42:02 2014
++++ src/task-manager-bsd.c	Thu Apr 10 14:25:30 2014
 @@ -25,6 +25,7 @@
  #include <sys/param.h>
  #include <sys/sched.h>
@@ -9,3 +12,38 @@ $OpenBSD: patch-src_task-manager-bsd_c,v 1.3 2014/01/09 21:09:16 landry Exp $
  /* for swapctl() */
  #include <sys/swap.h>
  /* for strlcpy() */
+@@ -213,11 +214,26 @@ gboolean get_cpu_usage (gushort *cpu_count, gfloat *cp
+ 
+ gboolean get_memory_usage (guint64 *memory_total, guint64 *memory_free, guint64 *memory_cache, guint64 *memory_buffers, guint64 *swap_total, guint64 *swap_free)
+ {
++#ifdef __OpenBSD__
++	int mib[] = {CTL_VM, VM_UVMEXP};
++	struct uvmexp  uvmexp;
++#else
+ 	int mib[] = {CTL_VM, VM_METER};
+ 	struct vmtotal vmtotal;
++#endif
+ 	struct swapent *swdev;
+ 	int nswap, i;
+ 	size_t size;
++#ifdef __OpenBSD__
++	size = sizeof(uvmexp);
++	if (sysctl(mib, 2, &uvmexp, &size, NULL, 0) < 0)
++		errx(1,"failed to get vm.uvmexp");
++	/* cheat : rm = tot used, add free to get total */
++	*memory_total = pagetok(uvmexp.npages);
++	*memory_free = pagetok(uvmexp.free);
++	*memory_cache = 0;
++	*memory_buffers = pagetok(uvmexp.npages - uvmexp.free -uvmexp.active);
++#else
+ 	size = sizeof(vmtotal);
+ 	if (sysctl(mib, 2, &vmtotal, &size, NULL, 0) < 0)
+ 		errx(1,"failed to get vm.meter");
+@@ -226,6 +242,7 @@ gboolean get_memory_usage (guint64 *memory_total, guin
+ 	*memory_free = pagetok(vmtotal.t_free);
+ 	*memory_cache = 0;
+ 	*memory_buffers = pagetok(vmtotal.t_rm - vmtotal.t_arm);
++#endif
+ 
+ 	/* get swap stats */
+ 	if ((nswap = swapctl(SWAP_NSWAP, 0, 0)) == 0)
