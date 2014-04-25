@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1263 2014/04/18 21:14:20 kili Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1264 2014/04/25 15:13:51 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -166,7 +166,7 @@ PACKAGE_REPOSITORY ?= ${PORTSDIR}/packages
 PORTS_BUILD_XENOCARA_TOO ?= No
 
 .if ${PORTS_BUILD_XENOCARA_TOO:L} == "no"
-.  if !exists(${X11BASE}/man/mandoc.db)
+.  if !exists(${X11BASE}/include/X11/X.h)
 ERRORS += "Fatal: building ports requires correctly installed X11"
 .  endif
 .endif
