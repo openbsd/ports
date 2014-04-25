@@ -1,22 +1,16 @@
-$OpenBSD: patch-util_cache-utils_c,v 1.1 2013/03/20 00:46:01 brad Exp $
---- util/cache-utils.c.orig	Sat Feb  2 07:47:18 2013
-+++ util/cache-utils.c	Sat Feb  2 07:49:46 2013
-@@ -55,9 +55,16 @@ static void ppc_init_cacheline_sizes(void)
-         qemu_cache_conf.icache_bsize = cacheline;
-     }
+$OpenBSD: patch-util_cache-utils_c,v 1.2 2014/04/25 20:59:43 brad Exp $
+--- util/cache-utils.c.orig	Thu Mar 13 23:10:11 2014
++++ util/cache-utils.c	Sun Mar 16 09:06:40 2014
+@@ -81,6 +81,12 @@ void qemu_cache_utils_init(void)
+     qemu_cache_conf.dcache_bsize = cacheline;
+     qemu_cache_conf.icache_bsize = cacheline;
  }
--#endif
- 
--#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
 +#elif defined(__OpenBSD__)
-+
-+static void ppc_init_cacheline_sizes(void)
++void qemu_cache_utils_init(void)
 +{
 +    qemu_cache_conf.dcache_bsize = 32;
 +    qemu_cache_conf.icache_bsize = 32;
 +}
-+
-+#elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
- #include <errno.h>
- #include <stdio.h>
- #include <stdlib.h>
+ #endif
+ 
+ #endif /* _ARCH_PPC */

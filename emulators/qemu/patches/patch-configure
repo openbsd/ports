@@ -1,20 +1,7 @@
-$OpenBSD: patch-configure,v 1.40 2014/03/26 14:14:47 brad Exp $
---- configure.orig	Tue Mar 25 10:01:10 2014
-+++ configure	Tue Mar 25 17:44:02 2014
-@@ -1290,9 +1290,9 @@ for flag in $gcc_flags; do
-     fi
- done
- 
--if compile_prog "-Werror -fstack-protector-all" "" ; then
--    QEMU_CFLAGS="$QEMU_CFLAGS -fstack-protector-all"
--    LIBTOOLFLAGS="$LIBTOOLFLAGS -Wc,-fstack-protector-all"
-+if compile_prog "-Werror -fstack-protector-strong" "" ; then
-+    QEMU_CFLAGS="$QEMU_CFLAGS -fstack-protector-strong"
-+    LIBTOOLFLAGS="$LIBTOOLFLAGS -Wc,-fstack-protector-strong"
- fi
- 
- # Workaround for http://gcc.gnu.org/PR55489.  Happens with -fPIE/-fPIC and
-@@ -3554,8 +3554,6 @@ fi
+$OpenBSD: patch-configure,v 1.41 2014/04/25 20:59:43 brad Exp $
+--- configure.orig	Mon Apr 14 19:31:26 2014
++++ configure	Mon Apr 14 20:47:16 2014
+@@ -3910,8 +3910,6 @@ fi
  if test "$gcov" = "yes" ; then
    CFLAGS="-fprofile-arcs -ftest-coverage -g $CFLAGS"
    LDFLAGS="-fprofile-arcs -ftest-coverage $LDFLAGS"
@@ -22,4 +9,4 @@ $OpenBSD: patch-configure,v 1.40 2014/03/26 14:14:47 brad Exp $
 -  CFLAGS="-O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 $CFLAGS"
  fi
  
- 
+ ##########################################

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2013/11/29 21:21:38 brad Exp $
+@comment $OpenBSD: PLIST,v 1.29 2014/04/25 20:59:43 brad Exp $
 @conflict kqemu-*
 @conflict qemu-*
 @pkgpath emulators/kqemu
@@ -8,6 +8,7 @@
 @bin bin/qemu-img
 @bin bin/qemu-io
 @bin bin/qemu-nbd
+@bin bin/qemu-system-aarch64
 @bin bin/qemu-system-alpha
 @bin bin/qemu-system-arm
 @bin bin/qemu-system-cris
@@ -64,9 +65,11 @@ share/locale/hu/LC_MESSAGES/qemu.mo
 share/locale/it/LC_MESSAGES/qemu.mo
 share/locale/tr/LC_MESSAGES/qemu.mo
 share/qemu/
+share/qemu/QEMU,cgthree.bin
 share/qemu/QEMU,tcx.bin
 share/qemu/acpi-dsdt.aml
 share/qemu/bamboo.dtb
+share/qemu/bios-256k.bin
 share/qemu/bios.bin
 share/qemu/efi-e1000.rom
 share/qemu/efi-eepro100.rom
