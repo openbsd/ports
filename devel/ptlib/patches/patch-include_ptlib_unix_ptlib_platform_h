@@ -1,0 +1,16 @@
+$OpenBSD: patch-include_ptlib_unix_ptlib_platform_h,v 1.1 2014/04/25 11:17:27 ajacoutot Exp $
+
+include/ptlib/unix/ptlib/platform.h:601: error: 'intptr_t' does not name a type
+include/ptlib/unix/ptlib/platform.h:602: error: 'uintptr_t' does not name a type
+include/ptlib/thread.h:344: error: 'INT' has not been declared
+
+--- include/ptlib/unix/ptlib/platform.h.orig	Sat Apr 19 20:18:19 2014
++++ include/ptlib/unix/ptlib/platform.h	Sat Apr 19 20:18:57 2014
+@@ -119,6 +119,7 @@ typedef int socklen_t;
+ 
+ #include <paths.h>
+ #include <dlfcn.h>
++#include <stdint.h>
+ #include <termios.h>
+ #include <sys/fcntl.h>
+ #include <sys/filio.h>

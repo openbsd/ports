@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_ptlib_unix_osutil_cxx,v 1.1 2013/12/06 08:03:57 ajacoutot Exp $
+$OpenBSD: patch-src_ptlib_unix_osutil_cxx,v 1.2 2014/04/25 11:17:27 ajacoutot Exp $
 
 Remove prehistorical header which is not even used.
 

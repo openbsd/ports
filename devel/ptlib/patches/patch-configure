@@ -1,0 +1,98 @@
+$OpenBSD: patch-configure,v 1.1 2014/04/25 11:17:26 ajacoutot Exp $
+
+Cannot use autoconf: http://sourceforge.net/p/opalvoip/feature-requests/18/
+
+--- configure.orig	Mon Feb 17 03:14:21 2014
++++ configure	Sat Apr 19 20:07:46 2014
+@@ -640,6 +640,7 @@ HAS_V4L
+ HAS_AUDIOSHM
+ HAS_SUNAUDIO
+ HAS_PULSE
++HAS_SNDIO
+ HAS_OSS
+ HAS_ESD
+ HAS_ALSA
+@@ -904,6 +905,7 @@ with_plugin_installdir
+ enable_alsa
+ enable_esd
+ enable_oss
++enable_sndio
+ enable_pulse
+ enable_sunaudio
+ enable_shmaudio
+@@ -1617,6 +1619,7 @@ Optional Features:
+   --disable-alsa          disable ALSA audio support
+   --disable-esd           disable ESD audio support
+   --disable-oss           disable OSS audio support
++  --disable-sndio         disable SNDIO audio support
+   --disable-pulse         disable Pulse audio support
+   --disable-sunaudio      disable Sun audio support
+   --disable-shmaudio      disable shm audio support
+@@ -5225,7 +5228,8 @@ case "$target_os" in
+ 
+    OpenBSD )
+       OS_TAG="P_OPENBSD"
+-      ENDLDLIBS="-lossaudio"
++      ENDLDLIBS=""
++      LDSOFLAGS="-shared"
+       need_pragma=yes
+    ;;
+ 
+@@ -8079,6 +8083,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
+ $as_echo_n "checking if <sasl/sasl.h> works... " >&6; }
+             cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
++ #include <stdlib.h> /* size_t */
+  #include <sasl/sasl.h>
+ int
+ main ()
+@@ -12185,7 +12190,7 @@ $as_echo "no" >&6; }
+               { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ $as_echo "yes" >&6; }
+               case "$target_os" in
+-                freebsd*|openbsd*|netbsd*|darwin*|beos*)
++                FreeBSD*|OpenBSD*|NetBSD*|Darwin*|beos*)
+                   { $as_echo "$as_me:${as_lineno-$LINENO}: checking for dlopen in -lc" >&5
+ $as_echo_n "checking for dlopen in -lc... " >&6; }
+ if ${ac_cv_lib_c_dlopen+:} false; then :
+@@ -12479,6 +12484,32 @@ fi
+       fi
+ 
+ 
++      # Check whether --enable-sndio was given.
++if test "${enable_sndio+set}" = set; then :
++  enableval=$enable_sndio;
++else
++  enable_sndio=no
++fi
++
++      PTLIB_SNDIO=no
++      if test "x${enable_sndio}" = "xno" ; then
++        { $as_echo "$as_me:${as_lineno-$LINENO}: SNDIO audio disabled by user" >&5
++$as_echo "$as_me: SNDIO audio disabled by user" >&6;}
++      else
++        ac_fn_c_check_header_mongrel "$LINENO" "sndio.h" "ac_cv_header_sndio_h" "$ac_includes_default"
++if test "x$ac_cv_header_sndio_h" = xyes; then :
++
++	     HAS_SNDIO=1
++
++	     PTLIB_SNDIO=yes
++
++
++fi
++
++
++      fi
++
++
+       # Check whether --enable-pulse was given.
+ if test "${enable_pulse+set}" = set; then :
+   enableval=$enable_pulse;
+@@ -14345,6 +14376,7 @@ echo "                            Audio :  ${PTLIB_AUD
+ echo "                             ALSA :  ${PTLIB_ALSA}"
+ echo "                              ESD :  ${PTLIB_ESD}"
+ echo "                              OSS :  ${PTLIB_OSS}"
++echo "                            SNDIO :  ${PTLIB_SNDIO}"
+ echo "                            Pulse :  ${PTLIB_PULSE}"
+ echo "                              Sun :  ${PTLIB_SUNAUDIO}"
+ echo "                              shm :  ${PTLIB_AUDIOSHM}"

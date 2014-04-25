@@ -1,8 +1,12 @@
-$OpenBSD: patch-make_unix_mak,v 1.4 2012/08/25 13:15:24 ajacoutot Exp $
---- make/unix.mak.orig	Thu Aug 23 04:12:44 2012
-+++ make/unix.mak	Fri Aug 24 07:59:24 2012
-@@ -235,11 +235,19 @@ ifeq ($(MACHTYPE),x86)
- #STDCCFLAGS	+= -m486
+$OpenBSD: patch-make_unix_mak,v 1.5 2014/04/25 11:17:27 ajacoutot Exp $
+
+Make sure _SONAME is versioned (.so.X.Y versus .so).
+(overriding PTLIB_FILE will drop the _s.a static lib but we don't use it)
+
+--- make/unix.mak.orig	Mon Feb 17 03:14:37 2014
++++ make/unix.mak	Mon Apr 21 21:49:55 2014
+@@ -192,11 +192,18 @@ ifeq ($(target_cpu),x86)
+ #PTLIB_CFLAGS	+= -m486
  endif
  
 -LDLIBS		+= -lossaudio
@@ -11,25 +15,26 @@ $OpenBSD: patch-make_unix_mak,v 1.4 2012/08/25 13:15:24 ajacoutot Exp $
 +endif
  
 +ifeq ($(MACHTYPE),sparc64)
-+STDCCFLAGS	+= -DP_64BIT
++STDCCFLAGS     += -DP_64BIT
 +endif
 +
  P_USE_RANLIB		:= 1
- #STDCCFLAGS      += -DP_USE_PRAGMA		# migrated to configure
-+STDCCFLAGS      += -fPIC -DPIC
+ #PTLIB_CFLAGS      += -DP_USE_PRAGMA		# migrated to configure
  
-+SYSLIBDIR	:= $(shell $(PTLIBDIR)/make/ptlib-config --libdir)
++STDCCFLAGS	+= -fPIC -DPIC
  
  endif # OpenBSD
  
-@@ -693,7 +701,9 @@ ifneq ($(OSTYPE),Darwin)
-       STDCCFLAGS	+= -xO3
-     endif
-   else
--    STDCCFLAGS	+= -Os 
-+    ifneq ($(OSTYPE),OpenBSD)
-+      STDCCFLAGS	+= -Os
-+    endif
-   endif
- else
-   STDCCFLAGS	+= -O2
+@@ -571,6 +578,12 @@ else
+   PTLIB_DEBUG_SONAME = $(subst .$(LIB_SUFFIX),.$(MAJOR_VERSION).$(MINOR_VERSION)$(BUILD_TYPE)$(BUILD_NUMBER).$(LIB_SUFFIX),$(PTLIB_DEBUG_FILE))
+ endif
+ 
++ifeq ($(target_os),OpenBSD)
++  PTLIB_FILE = lib$(PTLIB_BASE)$(LIB_TYPE).$(LIB_SUFFIX).${LIBpt_VERSION}
++  PTLIB_DEBUG_FILE= lib$(PTLIB_BASE)_d$(LIB_TYPE).$(LIB_SUFFIX).${LIBpt_VERSION}
++  PTLIB_SONAME = $(PTLIB_FILE)
++  PTLIB_DEBUG_SONAME = $(PTLIB_DEBUG_FILE)
++endif
+ 
+ ###############################################################################
+ #

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/10/02 10:45:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/04/25 11:17:27 ajacoutot Exp $
 @conflict pwlib-*
 @pkgpath devel/pwlib
 @pkgpath devel/pwlib,ldap
@@ -7,7 +7,6 @@
 @pkgpath devel/pwlib,sasl
 @pkgpath devel/pwlib,sasl,sdl
 @pkgpath devel/pwlib,sdl
-bin/ptlib-config
 include/ptbuildopts.h
 include/ptclib/
 include/ptclib/asnber.h
@@ -28,6 +27,7 @@ include/ptclib/httpsvc.h
 include/ptclib/inetmail.h
 include/ptclib/inetprot.h
 include/ptclib/ipacl.h
+include/ptclib/jscript.h
 include/ptclib/lua.h
 include/ptclib/memfile.h
 include/ptclib/mime.h
@@ -46,6 +46,7 @@ include/ptclib/psoap.h
 include/ptclib/psockbun.h
 include/ptclib/pssl.h
 include/ptclib/pstun.h
+include/ptclib/pstunsrvr.h
 include/ptclib/ptts.h
 include/ptclib/pvfiledev.h
 include/ptclib/pvidfile.h
@@ -57,12 +58,16 @@ include/ptclib/pxmlrpcs.h
 include/ptclib/qchannel.h
 include/ptclib/random.h
 include/ptclib/rfc1155.h
+include/ptclib/script.h
 include/ptclib/shttpsvc.h
 include/ptclib/snmp.h
 include/ptclib/socks.h
+include/ptclib/spooldir.h
+include/ptclib/ssdp.h
 include/ptclib/telnet.h
 include/ptclib/threadpool.h
 include/ptclib/url.h
+include/ptclib/vartype.h
 include/ptclib/vcard.h
 include/ptclib/vsdl.h
 include/ptclib/vxml.h
@@ -72,9 +77,9 @@ include/ptclib/xmpp_muc.h
 include/ptclib/xmpp_roster.h
 include/ptlib/
 include/ptlib.h
-include/ptlib/MacMainIf.h
 include/ptlib/args.h
 include/ptlib/array.h
+include/ptlib/bitwise_enum.h
 include/ptlib/channel.h
 include/ptlib/conchan.h
 include/ptlib/config.h
@@ -108,7 +113,6 @@ include/ptlib/psharedptr.h
 include/ptlib/pstring.h
 include/ptlib/psync.h
 include/ptlib/ptime.h
-include/ptlib/qos.h
 include/ptlib/remconn.h
 include/ptlib/safecoll.h
 include/ptlib/semaphor.h
@@ -135,7 +139,6 @@ include/ptlib/unix/ptlib/bevideo.h
 include/ptlib/unix/ptlib/channel.h
 include/ptlib/unix/ptlib/conchan.h
 include/ptlib/unix/ptlib/config.h
-include/ptlib/unix/ptlib/contain.h
 include/ptlib/unix/ptlib/critsec.h
 include/ptlib/unix/ptlib/dynalink.h
 include/ptlib/unix/ptlib/ethsock.h
@@ -149,7 +152,7 @@ include/ptlib/unix/ptlib/mail.h
 include/ptlib/unix/ptlib/mutex.h
 include/ptlib/unix/ptlib/pdirect.h
 include/ptlib/unix/ptlib/pipechan.h
-include/ptlib/unix/ptlib/pmachdep.h
+include/ptlib/unix/ptlib/platform.h
 include/ptlib/unix/ptlib/pprocess.h
 include/ptlib/unix/ptlib/ptime.h
 include/ptlib/unix/ptlib/ptlib.inl
@@ -176,7 +179,6 @@ include/ptlib/videoio.h
 include/ptlib/videoio1394dc.h
 include/ptlib/wxstring.h
 @lib lib/libpt.so.${LIBpt_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/ptlib.pc
 lib/ptlib-${V}/
 lib/ptlib-${V}/devices/
@@ -184,14 +186,12 @@ lib/ptlib-${V}/devices/sound/
 lib/ptlib-${V}/devices/sound/sndio_pwplugin.so
 lib/ptlib-${V}/devices/videoinput/
 lib/ptlib-${V}/devices/videoinput/bsdvideo_pwplugin.so
-lib/ptlib-${V}/devices/videoinput/v4l2_pwplugin.so
 share/ptlib/
 share/ptlib/make/
 share/ptlib/make/common.mak
-share/ptlib/make/lib.mak
 share/ptlib/make/plugins.mak
 share/ptlib/make/ptbuildopts.mak
-share/ptlib/make/ptlib-config
 share/ptlib/make/ptlib.mak
+share/ptlib/make/toplevel.mak
 share/ptlib/make/unix.mak
 share/ptlib/version.h
