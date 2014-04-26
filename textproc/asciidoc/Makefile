@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2014/03/09 19:48:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2014/04/26 12:48:16 benoit Exp $
 
 COMMENT=	text document format for writing documents and man pages
 
-DISTNAME=	asciidoc-8.6.8
+DISTNAME =	asciidoc-8.6.9
 CATEGORIES=	textproc
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -35,12 +35,10 @@ post-configure:
 
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_SITEPKG}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/asciidoc/vim/{syntax,ftdetect}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/asciidoc/vim/syntax
 	${INSTALL_DATA} ${WRKSRC}/asciidocapi.py \
 		${WRKINST}${MODPY_SITEPKG}/asciidocapi.py
 	${INSTALL_DATA} ${WRKSRC}/vim/syntax/asciidoc.vim \
 		${PREFIX}/share/examples/asciidoc/vim/syntax/
-	${INSTALL_DATA} ${WRKSRC}/vim/ftdetect/asciidoc_filetype.vim \
-		${PREFIX}/share/examples/asciidoc/vim/ftdetect/
 
 .include <bsd.port.mk>

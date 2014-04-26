@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/03/02 14:08:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/04/26 12:48:16 benoit Exp $
 bin/a2x
 bin/a2x.py
 bin/asciidoc
@@ -141,6 +141,7 @@ share/examples/asciidoc/javascripts/slidy.js
 @sample ${SYSCONFDIR}/asciidoc/javascripts/slidy.js
 share/examples/asciidoc/javascripts/toc.js
 @sample ${SYSCONFDIR}/asciidoc/javascripts/toc.js
+share/examples/asciidoc/lang-cs.conf
 share/examples/asciidoc/lang-de.conf
 @sample ${SYSCONFDIR}/asciidoc/lang-de.conf
 share/examples/asciidoc/lang-el.conf
@@ -159,6 +160,7 @@ share/examples/asciidoc/lang-nl.conf
 @sample ${SYSCONFDIR}/asciidoc/lang-nl.conf
 share/examples/asciidoc/lang-pt-BR.conf
 @sample ${SYSCONFDIR}/asciidoc/lang-pt-BR.conf
+share/examples/asciidoc/lang-ro.conf
 share/examples/asciidoc/lang-ru.conf
 @sample ${SYSCONFDIR}/asciidoc/lang-ru.conf
 share/examples/asciidoc/lang-uk.conf
@@ -194,12 +196,8 @@ share/examples/asciidoc/themes/volnitsky/
 share/examples/asciidoc/themes/volnitsky/volnitsky.css
 @sample ${SYSCONFDIR}/asciidoc/themes/volnitsky/volnitsky.css
 share/examples/asciidoc/vim/
-share/examples/asciidoc/vim/ftdetect/
-share/examples/asciidoc/vim/ftdetect/asciidoc_filetype.vim
 share/examples/asciidoc/vim/syntax/
 share/examples/asciidoc/vim/syntax/asciidoc.vim
-share/examples/asciidoc/wordpress.conf
-@sample ${SYSCONFDIR}/asciidoc/wordpress.conf
 share/examples/asciidoc/xhtml11-quirks.conf
 @sample ${SYSCONFDIR}/asciidoc/xhtml11-quirks.conf
 share/examples/asciidoc/xhtml11.conf
