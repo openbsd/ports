@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/04/25 15:47:52 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2014/04/26 14:36:53 jasper Exp $
 
-COMMENT =		read–eval–print loop for PHP
+COMMENT =		read-eval-print loop for PHP
 
 V =			1.0.8
 DISTNAME =		boris-$V
+REVISION =		0
 DISTFILES =		${DISTNAME}{v$V}${EXTRACT_SUFX}
 WRKDIST =		${WRKDIR}/boris-$V
 
