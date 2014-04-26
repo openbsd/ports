@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2014/04/01 18:06:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2014/04/26 05:42:59 ajacoutot Exp $
 
 COMMENT=	GObject wrapper around exiv2
 
-GNOME_VERSION=	0.10.0
+GNOME_VERSION=	0.10.1
 GNOME_PROJECT=	gexiv2
 PKGNAME=	lib${DISTNAME}
 
@@ -19,7 +19,7 @@ WANTLIB += stdc++ z
 MODULES=	devel/gettext \
 		x11/gnome
 
-MODGNOME_TOOLS +=	gobject-introspection
+MODGNOME_TOOLS=	gobject-introspection
 
 LIB_DEPENDS=	graphics/exiv2 \
 		devel/glib2
