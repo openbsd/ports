@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2014/04/06 17:01:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.80 2014/04/26 20:57:58 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ COMMENT-ruby=	ruby interface to librrd
 
 MODPY_EGG_VERSION= 0.2.2
 VERSION=	1.4.8
-REVISION-main=	3
+REVISION-main=	4
 REVISION-ruby=	3
 REVISION-python=0
 REVISION-update=0

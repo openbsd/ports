@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# $OpenBSD: rrdcached.rc,v 1.1 2013/11/05 17:49:01 sthen Exp $
+# $OpenBSD: rrdcached.rc,v 1.2 2014/04/26 20:57:59 sthen Exp $
 
 daemon="${TRUEPREFIX}/bin/rrdcached"
-daemon_flags="-b /var/db/rrd -l unix:/var/run/rrd/rrdcached.sock -j /var/db/rrd/journal -p /var/run/rrd/rrdcached.pid"
+daemon_flags="-b /var/db/rrd -m 770 -l unix:/var/run/rrd/rrdcached.sock -j /var/db/rrd/journal -p /var/run/rrd/rrdcached.pid"
 daemon_user="_rrdcached"
 
 . /etc/rc.d/rc.subr
