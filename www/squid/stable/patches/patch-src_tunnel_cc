@@ -1,31 +1,23 @@
-$OpenBSD: patch-src_tunnel_cc,v 1.1 2014/04/26 10:34:04 sthen Exp $
+$OpenBSD: patch-src_tunnel_cc,v 1.2 2014/04/26 12:06:52 sthen Exp $
 
-Partial revert of http://bazaar.launchpad.net/~squid/squid/trunk/revision/13372
-See http://bugs.squid-cache.org/show_bug.cgi?id=4051
+revno: 13129
+revision-id: squid3@treenet.co.nz-20140426105822-6kjdcqrkb1bnrg2c
+parent: squid3@treenet.co.nz-20140423140134-nvzt0an4wrlxnbc7
+fixes bug(s): http://bugs.squid-cache.org/show_bug.cgi?id=4051
+committer: Amos Jeffries <squid3@treenet.co.nz>
+branch nick: 3.4
+timestamp: Sat 2014-04-26 03:58:22 -0700
+message:
+  Bug 4051: fix inverted test on CONNECT payload existence
 
 --- src/tunnel.cc.orig	Wed Apr 23 15:02:16 2014
-+++ src/tunnel.cc	Sat Apr 26 11:32:08 2014
-@@ -100,7 +100,6 @@ class TunnelStateData (public)
++++ src/tunnel.cc	Sat Apr 26 13:03:20 2014
+@@ -688,7 +688,7 @@ tunnelStartShoveling(TunnelStateData *tunnelState)
+         }
  
-     bool noConnections() const;
-     char *url;
--    CbcPointer<ClientHttpRequest> http;
-     HttpRequest::Pointer request;
-     AccessLogEntryPointer al;
-     Comm::ConnectionList serverDestinations;
-@@ -227,7 +226,6 @@ tunnelClientClosed(const CommCloseCbParams &params)
+         // Bug 3371: shovel any payload already pushed into ConnStateData by the client request
+-        if (tunnelState->http.valid() && tunnelState->http->getConn() && !tunnelState->http->getConn()->in.notYetUsed) {
++        if (tunnelState->http.valid() && tunnelState->http->getConn() && tunnelState->http->getConn()->in.notYetUsed) {
+             struct ConnStateData::In *in = &tunnelState->http->getConn()->in;
+             debugs(26, DBG_DATA, "Tunnel client PUSH Payload: \n" << Raw("", in->buf, in->notYetUsed) << "\n----------");
  
- TunnelStateData::TunnelStateData() :
-         url(NULL),
--        http(),
-         request(NULL),
-         status_ptr(NULL),
-         connectRespBuf(NULL),
-@@ -910,7 +908,6 @@ tunnelStart(ClientHttpRequest * http, int64_t * size_p
-     tunnelState->server.size_ptr = size_ptr;
-     tunnelState->status_ptr = status_ptr;
-     tunnelState->client.conn = http->getConn()->clientConnection;
--    tunnelState->http = http;
-     tunnelState->al = al;
- 
-     comm_add_close_handler(tunnelState->client.conn->fd,
