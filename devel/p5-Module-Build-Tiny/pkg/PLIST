@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/04/26 22:13:12 afresh1 Exp $
+${P5SITE}/Module/
+${P5SITE}/Module/Build/
+${P5SITE}/Module/Build/Tiny.pm
+@man man/man3p/Module::Build::Tiny.3p
