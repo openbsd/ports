@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_tunnel_cc,v 1.1 2014/04/26 10:34:04 sthen Exp $
+
+Partial revert of http://bazaar.launchpad.net/~squid/squid/trunk/revision/13372
+See http://bugs.squid-cache.org/show_bug.cgi?id=4051
+
+--- src/tunnel.cc.orig	Wed Apr 23 15:02:16 2014
++++ src/tunnel.cc	Sat Apr 26 11:32:08 2014
+@@ -100,7 +100,6 @@ class TunnelStateData (public)
+ 
+     bool noConnections() const;
+     char *url;
+-    CbcPointer<ClientHttpRequest> http;
+     HttpRequest::Pointer request;
+     AccessLogEntryPointer al;
+     Comm::ConnectionList serverDestinations;
+@@ -227,7 +226,6 @@ tunnelClientClosed(const CommCloseCbParams &params)
+ 
+ TunnelStateData::TunnelStateData() :
+         url(NULL),
+-        http(),
+         request(NULL),
+         status_ptr(NULL),
+         connectRespBuf(NULL),
+@@ -910,7 +908,6 @@ tunnelStart(ClientHttpRequest * http, int64_t * size_p
+     tunnelState->server.size_ptr = size_ptr;
+     tunnelState->status_ptr = status_ptr;
+     tunnelState->client.conn = http->getConn()->clientConnection;
+-    tunnelState->http = http;
+     tunnelState->al = al;
+ 
+     comm_add_close_handler(tunnelState->client.conn->fd,

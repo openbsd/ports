@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_client_side_cc,v 1.1 2014/04/26 10:34:04 sthen Exp $
+
+Partial revert of http://bazaar.launchpad.net/~squid/squid/trunk/revision/13372
+See http://bugs.squid-cache.org/show_bug.cgi?id=4051
+
+--- src/client_side.cc.orig	Sat Apr 26 11:03:41 2014
++++ src/client_side.cc	Sat Apr 26 11:15:08 2014
+@@ -2864,10 +2864,6 @@ clientProcessRequest(ConnStateData *conn, HttpParser *
+     if (http->request->method == Http::METHOD_CONNECT) {
+         context->mayUseConnection(true);
+         conn->flags.readMore = false;
+-
+-        // consume header early so that tunnel gets just the body
+-        connNoteUseOfBuffer(conn, http->req_sz);
+-        notedUseOfBuffer = true;
+     }
+ 
+ #if USE_SSL
