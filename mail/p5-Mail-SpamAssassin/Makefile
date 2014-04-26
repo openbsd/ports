@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2014/04/25 09:20:27 bluhm Exp $
+# $OpenBSD: Makefile,v 1.86 2014/04/26 21:10:39 bluhm Exp $
 
 COMMENT=		mailfilter to identify and mark spam
 
@@ -42,6 +42,7 @@ RUN_DEPENDS=		${COMMON_DEPENDS} \
 			www/p5-libwww
 # SpamAssassin can use curl instead of LWP (lighter dep chain), but it needs
 # a separate HTTP::Date, our LWP pre-dates this being split off.
+TEST_DEPENDS=		${RUN_DEPENDS}
 
 MAKE_ENV+=		CC="${CC}"
 
