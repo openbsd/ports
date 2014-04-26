@@ -1,0 +1,119 @@
+@comment $OpenBSD: PLIST,v 1.8 2014/04/26 22:11:43 afresh1 Exp $
+bin/prove
+${P5SITE}/App/
+${P5SITE}/App/Prove/
+${P5SITE}/App/Prove.pm
+${P5SITE}/App/Prove/State/
+${P5SITE}/App/Prove/State.pm
+${P5SITE}/App/Prove/State/Result/
+${P5SITE}/App/Prove/State/Result.pm
+${P5SITE}/App/Prove/State/Result/Test.pm
+${P5SITE}/TAP/
+${P5SITE}/TAP/Base.pm
+${P5SITE}/TAP/Formatter/
+${P5SITE}/TAP/Formatter/Base.pm
+${P5SITE}/TAP/Formatter/Color.pm
+${P5SITE}/TAP/Formatter/Console/
+${P5SITE}/TAP/Formatter/Console.pm
+${P5SITE}/TAP/Formatter/Console/ParallelSession.pm
+${P5SITE}/TAP/Formatter/Console/Session.pm
+${P5SITE}/TAP/Formatter/File/
+${P5SITE}/TAP/Formatter/File.pm
+${P5SITE}/TAP/Formatter/File/Session.pm
+${P5SITE}/TAP/Formatter/Session.pm
+${P5SITE}/TAP/Harness/
+${P5SITE}/TAP/Harness.pm
+${P5SITE}/TAP/Harness/Beyond.pod
+${P5SITE}/TAP/Harness/Env.pm
+${P5SITE}/TAP/Object.pm
+${P5SITE}/TAP/Parser/
+${P5SITE}/TAP/Parser.pm
+${P5SITE}/TAP/Parser/Aggregator.pm
+${P5SITE}/TAP/Parser/Grammar.pm
+${P5SITE}/TAP/Parser/Iterator/
+${P5SITE}/TAP/Parser/Iterator.pm
+${P5SITE}/TAP/Parser/Iterator/Array.pm
+${P5SITE}/TAP/Parser/Iterator/Process.pm
+${P5SITE}/TAP/Parser/Iterator/Stream.pm
+${P5SITE}/TAP/Parser/IteratorFactory.pm
+${P5SITE}/TAP/Parser/Multiplexer.pm
+${P5SITE}/TAP/Parser/Result/
+${P5SITE}/TAP/Parser/Result.pm
+${P5SITE}/TAP/Parser/Result/Bailout.pm
+${P5SITE}/TAP/Parser/Result/Comment.pm
+${P5SITE}/TAP/Parser/Result/Plan.pm
+${P5SITE}/TAP/Parser/Result/Pragma.pm
+${P5SITE}/TAP/Parser/Result/Test.pm
+${P5SITE}/TAP/Parser/Result/Unknown.pm
+${P5SITE}/TAP/Parser/Result/Version.pm
+${P5SITE}/TAP/Parser/Result/YAML.pm
+${P5SITE}/TAP/Parser/ResultFactory.pm
+${P5SITE}/TAP/Parser/Scheduler/
+${P5SITE}/TAP/Parser/Scheduler.pm
+${P5SITE}/TAP/Parser/Scheduler/Job.pm
+${P5SITE}/TAP/Parser/Scheduler/Spinner.pm
+${P5SITE}/TAP/Parser/Source.pm
+${P5SITE}/TAP/Parser/SourceHandler/
+${P5SITE}/TAP/Parser/SourceHandler.pm
+${P5SITE}/TAP/Parser/SourceHandler/Executable.pm
+${P5SITE}/TAP/Parser/SourceHandler/File.pm
+${P5SITE}/TAP/Parser/SourceHandler/Handle.pm
+${P5SITE}/TAP/Parser/SourceHandler/Perl.pm
+${P5SITE}/TAP/Parser/SourceHandler/RawTAP.pm
+${P5SITE}/TAP/Parser/YAMLish/
+${P5SITE}/TAP/Parser/YAMLish/Reader.pm
+${P5SITE}/TAP/Parser/YAMLish/Writer.pm
+${P5SITE}/Test/
+${P5SITE}/Test/HACKING.pod
+${P5SITE}/Test/Harness.pm
+@man man/man1/prove.1
+@man man/man3p/App::Prove.3p
+@man man/man3p/App::Prove::State.3p
+@man man/man3p/App::Prove::State::Result.3p
+@man man/man3p/App::Prove::State::Result::Test.3p
+@man man/man3p/TAP::Base.3p
+@man man/man3p/TAP::Formatter::Base.3p
+@man man/man3p/TAP::Formatter::Color.3p
+@man man/man3p/TAP::Formatter::Console.3p
+@man man/man3p/TAP::Formatter::Console::ParallelSession.3p
+@man man/man3p/TAP::Formatter::Console::Session.3p
+@man man/man3p/TAP::Formatter::File.3p
+@man man/man3p/TAP::Formatter::File::Session.3p
+@man man/man3p/TAP::Formatter::Session.3p
+@man man/man3p/TAP::Harness.3p
+@man man/man3p/TAP::Harness::Beyond.3p
+@man man/man3p/TAP::Harness::Env.3p
+@man man/man3p/TAP::Object.3p
+@man man/man3p/TAP::Parser.3p
+@man man/man3p/TAP::Parser::Aggregator.3p
+@man man/man3p/TAP::Parser::Grammar.3p
+@man man/man3p/TAP::Parser::Iterator.3p
+@man man/man3p/TAP::Parser::Iterator::Array.3p
+@man man/man3p/TAP::Parser::Iterator::Process.3p
+@man man/man3p/TAP::Parser::Iterator::Stream.3p
+@man man/man3p/TAP::Parser::IteratorFactory.3p
+@man man/man3p/TAP::Parser::Multiplexer.3p
+@man man/man3p/TAP::Parser::Result.3p
+@man man/man3p/TAP::Parser::Result::Bailout.3p
+@man man/man3p/TAP::Parser::Result::Comment.3p
+@man man/man3p/TAP::Parser::Result::Plan.3p
+@man man/man3p/TAP::Parser::Result::Pragma.3p
+@man man/man3p/TAP::Parser::Result::Test.3p
+@man man/man3p/TAP::Parser::Result::Unknown.3p
+@man man/man3p/TAP::Parser::Result::Version.3p
+@man man/man3p/TAP::Parser::Result::YAML.3p
+@man man/man3p/TAP::Parser::ResultFactory.3p
+@man man/man3p/TAP::Parser::Scheduler.3p
+@man man/man3p/TAP::Parser::Scheduler::Job.3p
+@man man/man3p/TAP::Parser::Scheduler::Spinner.3p
+@man man/man3p/TAP::Parser::Source.3p
+@man man/man3p/TAP::Parser::SourceHandler.3p
+@man man/man3p/TAP::Parser::SourceHandler::Executable.3p
+@man man/man3p/TAP::Parser::SourceHandler::File.3p
+@man man/man3p/TAP::Parser::SourceHandler::Handle.3p
+@man man/man3p/TAP::Parser::SourceHandler::Perl.3p
+@man man/man3p/TAP::Parser::SourceHandler::RawTAP.3p
+@man man/man3p/TAP::Parser::YAMLish::Reader.3p
+@man man/man3p/TAP::Parser::YAMLish::Writer.3p
+@man man/man3p/Test::HACKING.3p
+@man man/man3p/Test::Harness.3p
