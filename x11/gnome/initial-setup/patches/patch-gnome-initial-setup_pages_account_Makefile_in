@@ -1,10 +1,29 @@
-$OpenBSD: patch-gnome-initial-setup_pages_account_Makefile_in,v 1.2 2014/03/27 19:41:05 ajacoutot Exp $
+$OpenBSD: patch-gnome-initial-setup_pages_account_Makefile_in,v 1.3 2014/04/26 17:08:12 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=728879
+(upstream will _not_ accept --disable-kerberos patches)
 
 XXX push upstream: on OpenBSD, crypt() is part of libc, create a proper configure check
 
 --- gnome-initial-setup/pages/account/Makefile.in.orig	Tue Mar 25 05:28:41 2014
-+++ gnome-initial-setup/pages/account/Makefile.in	Thu Mar 27 20:20:44 2014
-@@ -356,7 +356,7 @@ libgisaccount_la_SOURCES = \
++++ gnome-initial-setup/pages/account/Makefile.in	Sat Apr 26 18:27:28 2014
+@@ -102,8 +102,6 @@ am_libgisaccount_la_OBJECTS = $(am__objects_1) \
+ 	libgisaccount_la-gis-account-page.lo \
+ 	libgisaccount_la-gis-account-pages.lo \
+ 	libgisaccount_la-gis-account-page-local.lo \
+-	libgisaccount_la-gis-account-page-enterprise.lo \
+-	libgisaccount_la-um-realm-manager.lo \
+ 	libgisaccount_la-um-utils.lo \
+ 	libgisaccount_la-um-photo-dialog.lo $(am__objects_2)
+ libgisaccount_la_OBJECTS = $(am_libgisaccount_la_OBJECTS)
+@@ -349,14 +347,12 @@ libgisaccount_la_SOURCES = \
+ 	gis-account-page.c gis-account-page.h				\
+ 	gis-account-pages.c gis-account-pages.h				\
+ 	gis-account-page-local.c gis-account-page-local.h		\
+-	gis-account-page-enterprise.c gis-account-page-enterprise.h	\
+-	um-realm-manager.c um-realm-manager.h				\
+ 	um-utils.c um-utils.h						\
+ 	um-photo-dialog.c um-photo-dialog.h				\
  	$(NULL)
  
  libgisaccount_la_CFLAGS = $(INITIAL_SETUP_CFLAGS) -I "$(srcdir)/../.."
@@ -13,3 +32,17 @@ XXX push upstream: on OpenBSD, crypt() is part of libc, create a proper configur
  libgisaccount_la_LDFLAGS = -export_dynamic -avoid-version -module -no-undefined
  EXTRA_DIST = \
  	org.freedesktop.realmd.xml	\
+@@ -420,13 +416,11 @@ distclean-compile:
+ 	-rm -f *.tab.c
+ 
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgisaccount_la-account-resources.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgisaccount_la-gis-account-page-enterprise.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgisaccount_la-gis-account-page-local.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgisaccount_la-gis-account-page.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgisaccount_la-gis-account-pages.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgisaccount_la-um-photo-dialog.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgisaccount_la-um-realm-generated.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgisaccount_la-um-realm-manager.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgisaccount_la-um-utils.Plo@am__quote@
+ 
+ .c.o:
