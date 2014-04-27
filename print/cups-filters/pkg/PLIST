@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2014/03/25 15:24:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2014/04/27 17:07:24 ajacoutot Exp $
 @conflict cups-<1.6.0
 @conflict ghostscript-<9.06p3
 @conflict foomatic-filters-*
@@ -94,7 +94,7 @@ share/doc/cups-filters/README
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/cups-filters/
 share/examples/cups-filters/99pdftoopvp.conf
-@sample ${SYSCONFDIR}/fonts/conf.d/99-pdftoopvp.conf
+@sample /etc/fonts/conf.d/99-pdftoopvp.conf
 share/examples/cups-filters/cups/
 @mode 0644
 share/examples/cups-filters/cups/cups-browsed.conf

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2013/08/23 08:27:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2014/04/27 17:07:24 ajacoutot Exp $
 @pkgpath x11/cantarell-fonts
 lib/X11/fonts/
 @fontdir lib/X11/fonts/cantarell/
@@ -6,4 +6,4 @@ lib/X11/fonts/cantarell/Cantarell-Bold.otf
 lib/X11/fonts/cantarell/Cantarell-Regular.otf
 share/examples/cantarell-fonts/
 share/examples/cantarell-fonts/31-cantarell.conf
-@sample ${SYSCONFDIR}/fonts/conf.d/31-cantarell.conf
+@sample /etc/fonts/conf.d/31-cantarell.conf
