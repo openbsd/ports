@@ -1,17 +1,19 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/22 17:10:44 benoit Exp $
+# $OpenBSD: Makefile,v 1.13 2014/04/27 01:20:04 afresh1 Exp $
 
-COMMENT= 	Perl extension to test methods for warnings
+COMMENT =	Perl extension to test methods for warnings
 
-MODULES=	cpan
-DISTNAME =	Test-Warn-0.24
-CATEGORIES=	devel
+DISTNAME =	Test-Warn-0.30
+CATEGORIES =	devel
 
-# Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
 
-RUN_DEPENDS=	devel/p5-Sub-Uplevel>=0.12 \
-		devel/p5-Tree-DAG_Node>=1.02
+# perl_5
+PERMIT_PACKAGE_CDROM =	Yes
+
+MODULES =	cpan
 
 MAKE_ENV+=	TEST_POD=Yes
+
+RUN_DEPENDS =	devel/p5-Sub-Uplevel
 
 .include <bsd.port.mk>
