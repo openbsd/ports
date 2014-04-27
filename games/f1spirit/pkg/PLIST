@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/12/22 16:28:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/04/27 09:18:01 landry Exp $
 bin/f1spirit
 share/applications/f1spirit.desktop
 share/f1spirit/
@@ -10,7 +10,6 @@ share/f1spirit/demos/demo4.rpl
 share/f1spirit/demos/demo5.rpl
 share/f1spirit/demos/demo6.rpl
 @bin share/f1spirit/f1spirit
-share/f1spirit/f1spirit2.cfg
 share/f1spirit/graphics/
 share/f1spirit/graphics/brake-1.png
 share/f1spirit/graphics/brake-2.png

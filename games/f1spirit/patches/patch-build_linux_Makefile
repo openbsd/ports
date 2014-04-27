@@ -1,6 +1,6 @@
-$OpenBSD: patch-build_linux_Makefile,v 1.1.1.1 2009/03/19 18:30:30 landry Exp $
---- build/linux/Makefile.orig	Sun Aug 24 16:41:24 2008
-+++ build/linux/Makefile	Sat Mar  7 12:48:50 2009
+$OpenBSD: patch-build_linux_Makefile,v 1.2 2014/04/27 09:18:01 landry Exp $
+--- build/linux/Makefile.orig	Fri Feb  6 11:12:51 2009
++++ build/linux/Makefile	Sun Apr 27 11:05:01 2014
 @@ -1,11 +1,11 @@
  EXE = f1spirit
  SRC = sources
@@ -23,19 +23,19 @@ $OpenBSD: patch-build_linux_Makefile,v 1.1.1.1 2009/03/19 18:30:30 landry Exp $
 -CC = gcc
 +CC ?= gcc
  #CFLAGS = -g3 -O3 -Wall `sdl-config --cflags` `curl-config --cflags` -I/usr/X11R6/include
--CFLAGS = -g3 -O3 `sdl-config --cflags` `curl-config --cflags` -I/usr/X11R6/include
+-CFLAGS = -g3 -O3 -Wno-write-strings `sdl-config --cflags` `curl-config --cflags` -I/usr/X11R6/include
 -LDFLAGS = `sdl-config --libs` `curl-config --libs` -L/usr/X11R6/lib/ -lSDL_image -lSDL_mixer -lSDL_net -lGL -lGLU
-+CFLAGS += -g -O2 `sdl-config --cflags` `curl-config --cflags` -I/usr/X11R6/include
++CFLAGS += -g3 -O3 -Wno-write-strings `sdl-config --cflags` `curl-config --cflags` -I/usr/X11R6/include
 +LDFLAGS += `sdl-config --libs` `curl-config --libs` -L/usr/X11R6/lib/ -lSDL_image -lSDL_mixer -lSDL_net -lGL -lGLU
  RM = rm -f
  CP = cp -r
  MD = mkdir -p
-@@ -70,7 +70,7 @@ install: all
- 	@$(CP) "$(EXE)" $(DATA) "$(BINDIR)"
+@@ -71,7 +71,7 @@ install: all
  	@$(ECHO) " o Creating startup script $(STARTUP)"
  	@$(MD) "$(GAMEDIR)"
--	@$(ECHO) "cd \"$(BINDIR)\"; ./$(EXE); cd -" >"$(STARTUP)"
-+	@$(ECHO) "cd \"${TRUEPREFIX}/share/${EXE}\"; ./$(EXE); cd -" >"$(STARTUP)"
+ 	@$(ECHO) "#!/bin/sh" >"$(STARTUP)"
+-	@$(ECHO) "cd \"/usr/share/games/f1spirit/\"; ./$(EXE); cd -" >>"$(STARTUP)"
++	@$(ECHO) "cd \"${TRUEPREFIX}/share/f1spirit/\"; ./$(EXE); cd -" >>"$(STARTUP)"
+ #	@$(ECHO) "cd \"$(BINDIR)\"; ./$(EXE); cd -" >>"$(STARTUP)"
  	@$(CHMOD) 755 "$(STARTUP)"
  	@$(ECHO) " o Creating application menu entry"
- 	@$(MD) "$(ICNDIR)"

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 11:07:38 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2014/04/27 09:18:01 landry Exp $
 
 COMMENT=	remake of Konami's F1-Spirit
 
-DISTNAME=	f1spirit.src_0.rc9-1412
+DISTNAME=	f1spirit.src_0.rc9-1615
 PKGNAME=	${DISTNAME:S/.src_0.rc9-/-0./}
 REVISION =	0
-WRKDIST=	${WRKDIR}/f1spirit-0.rc9
+WRKDIST=	${WRKDIR}/${DISTNAME:S/.src_0.rc9-/-0.rc9./}
 
 EXTRACT_SUFX=	.tgz
 CATEGORIES=	games
@@ -26,6 +26,6 @@ LIB_DEPENDS=	devel/sdl-image \
 		net/curl \
 		devel/libidn
 WANTLIB=	GL GLU SDL c m crypto pthread ssl z SDL_image SDL_net \
-		SDL_mixer curl idn
+		SDL_mixer curl idn stdc++
 
 .include <bsd.port.mk>
