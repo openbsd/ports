@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.72 2014/04/19 17:20:37 zhuk Exp $
+# $OpenBSD: portcheck,v 1.73 2014/04/27 17:57:14 zhuk Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -511,10 +511,13 @@ check_port_dir() {
 	local dist_subdir distfiles flavor flavors master_sites
 	local multi_packages pkgpath_this pseudo_flavor pseudo_flavors
 	local shared_libs subst_cmd
+	local perm_pkg_cdrom perm_pkg_ftp perm_dist_ftp
 	local show_items="DIST_SUBDIR DISTFILES FLAVOR FLAVORS FULLPKGNAME"
 	local show_items="$show_items MASTER_SITES MULTI_PACKAGES PKGPATH"
 	local show_items="$show_items PSEUDO_FLAVOR PSEUDO_FLAVORS"
 	local show_items="$show_items SHARED_LIBS SUBST_CMD"
+	local show_items="$show_items PERMIT_PACKAGE_CDROM PERMIT_PACKAGE_FTP"
+	local show_items="$show_items PERMIT_DISTFILES_FTP"
 	local read_ok=false
 
 	local read_failed=false
@@ -531,6 +534,9 @@ check_port_dir() {
 	read -pr pseudo_flavors &&
 	read -pr shared_libs &&
 	read -pr subst_cmd &&
+	read -pr perm_pkg_cdrom &&
+	read -pr perm_pkg_ftp &&
+	read -pr perm_dist_ftp &&
 	read_ok=true
 	if $read_ok; then
 		exec 3<&p
@@ -559,6 +565,8 @@ check_port_dir() {
 
 	check_distfiles "$dir" "$dist_subdir" $distfiles
 	check_master_sites "$dir" $master_sites
+	check_permit_dist "$dir" "$perm_pkg_cdrom" "$perm_pkg_ftp" \
+	    "$perm_dist_ftp"
 	$pkg_exists && check_pkg_dir "$dir"/pkg "$subst_cmd"
 	$existing_port || check_shlibs_versions "$dir" $shared_libs
 
@@ -653,7 +661,7 @@ sub_checks() {
 	local dir=$1; shift
 	local subpkg=$1; shift
 	local fullpkgname=$1; shift
-	local flavor pkg_arch
+	local flavor
 	for flavor in "$@"; do
 		# avoid extra noise
 		[[ ${flavor#no_} != ${flavor} &&
@@ -665,16 +673,28 @@ sub_checks() {
 			portref=$(portref "$dir" "$subpkg" "$flavor" "$*")
 			export SUBPACKAGE="$subpkg" FLAVOR="$flavor"
 
-			make "${make_args[@]}" show="MODULES PKG_ARCH$subpkg WANTLIB$subpkg" | {
-				local modules wantlib
+			local wantlib_var=WANTLIB${subpkg%-}
+			local vars="MODULES PKG_ARCH$subpkg $wantlib_var"
+			vars="$vars PERMIT_PACKAGE_CDROM${subpkg%-}"
+			vars="$vars PERMIT_PACKAGE_FTP${subpkg%-}"
+			make "${make_args[@]}" show="$vars" | {
+				local modules pkg_arch wantlib
+				local perm_pkg_cdrom perm_pkg_ftp
 				read -r modules
 				read -r pkg_arch
 				read -r wantlib
+				read -r perm_pkg_cdrom
+				read -r perm_pkg_ftp
 				if [[ $pkg_arch = "*" && -n $wantlib ]]; then
-					err "${portref}non-empty WANTLIB$subpkg for" \
+					err "${portref}non-empty $wantlib_var for" \
 					    "arch-independent package"
 				fi
-				check_wantlib "$portref" "$modules" $wantlib
+				check_wantlib "$portref" "$modules" $wantlib ||
+				    error=true
+				check_permit_subpkg "$portref" "$subpkg" \
+				    "$perm_pkg_cdrom" "$perm_pkg_ftp" ||
+				    error=true
+				! $error
 			} || error=true
 
 			if $plist_checks; then
@@ -1139,6 +1159,65 @@ check_wantlib() {
 }
 
 # Checks made:
+#   * No extra PERMIT_DISTFILES_FTP variables in Makefile.
+#   * PERMIT_DISTFILES_FTP should not contain just "No" but a reason.
+#
+# Runs in the port directory.
+# XXX does not handle Makefile.inc and other .include cases correctly.
+check_permit_dist() {
+	$debugging && echo "CALLED: check_permit_dist($*)" >&2
+
+	local portref=$(portref $1); shift
+	local perm_pkg_cdrom=$(echo "$1" | tr '[:upper:]' '[:lower:]')
+	local perm_pkg_ftp=$(echo "$2" | tr '[:upper:]' '[:lower:]')
+	local perm_dist_ftp=$(echo "$3" | tr '[:upper:]' '[:lower:]')
+
+	if [[ ($perm_pkg_cdrom == yes || $perm_pkg_ftp == yes) && \
+	    $perm_dist_ftp == yes ]]; then
+		egrep -q "^ *PERMIT_DISTFILES_FTP[[:space:]]*=" Makefile &&
+			err "${portref}extra PERMIT_DISTFILES_FTP line(-s)"
+	fi
+
+	if [[ $perm_dist_ftp == no ]]; then
+		err "${portref}PERMIT_DISTFILES_FTP should be either" \
+		    "\"Yes\" or a reason for being non-redistributable"
+	fi
+
+	true
+}
+
+# Checks made:
+#   * No extra PERMIT_PACKAGE_FTP variables in Makefile.
+#   * PERMIT_PACKAGE_* should not contain just "No" but a reason.
+#
+# Runs in the port directory.
+# XXX does not handle Makefile.inc and other .include cases correctly.
+check_permit_subpkg() {
+	$debugging && echo "CALLED: check_permit_subpkg($*)" >&2
+
+	local portref=$1; shift
+	local subpkg=${1%-}; shift
+	local perm_pkg_cdrom=$(echo "$1" | tr '[:upper:]' '[:lower:]')
+	local perm_pkg_ftp=$(echo "$2" | tr '[:upper:]' '[:lower:]')
+
+	if [[ $perm_pkg_cdrom == yes && $perm_pkg_ftp == yes ]]; then
+		egrep -q "^ *PERMIT_PACKAGE_FTP${subpkg}[[:space:]]*=" Makefile &&
+			err "${portref}extra PERMIT_PACKAGE_FTP lines"
+	fi
+
+	if [[ $perm_pkg_cdrom == no ]]; then
+		err "${portref} PERMIT_PACKAGE_CDROM should be either" \
+		    "\"Yes\" or a reason for being non-redistributable"
+	fi
+	if [[ $perm_pkg_ftp == no ]]; then
+		err "${portref} PERMIT_PACKAGE_FTP should be either" \
+		    "\"Yes\" or a reason for being non-redistributable"
+	fi
+
+	true
+}
+
+# Checks made:
 #   * Directory is not empty
 #   * No '*.core' files present
 check_files_dir() {
@@ -1377,7 +1456,8 @@ check_subst_vars() {
 #   * Contains OpenBSD RCS tag at the top line.
 #   * No REVISION marks present in given file (unless in update mode).
 #   * Each REVISION mark presents only once.
-#   * BUILD_DEPENDS and MODULES are not defined in VAR-subpkg manner.
+#   * BUILD_DEPENDS, MODULES and PERMIT_DISTFILES_FTP are not defined in
+#     VAR-subpkg manner.
 #   * No trailing whitespace.
 #   * SHARED_LIBS are not defined inside ".if" statements.
 #   * Variables are not assigned via "=" twice outside of .if statemets.
@@ -1418,7 +1498,7 @@ check_makefile() {
 			fi
 			revs[${#revs[@]}]=${t[0]}
 			;;
-		*(" ")@(BUILD_DEPENDS|MODULES)-*)
+		*(" ")@(BUILD_DEPENDS|MODULES|PERMIT_DISTFILES_FTP)-*)
 			err "${l%%-*} is not a subpackageble variable, see $F:$lnum"
 			;;
 		*(" ").*(" "|"$tab")if*)
