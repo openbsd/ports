@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2014/04/27 16:39:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2014/04/27 16:43:32 sthen Exp $
 
 COMMENT-main=		UW e-mail client
 COMMENT-c-client=	UW c-client mail access routines
@@ -80,7 +80,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_search_regcomp=-lc \
-			ac_cv_search_SSL_library_init="-lcrypto -lssl"
+			ac_cv_search_SSL_library_init="`pkg-config --libs openssl`"
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--with-system-pinerc=${SYSCONFDIR}/pine.conf \
 			--with-system-fixed-pinerc=${SYSCONFDIR}/pine.conf.fixed \
