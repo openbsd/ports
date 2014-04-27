@@ -1,9 +1,8 @@
-# $OpenBSD: openbsd-hints,v 1.4 2011/12/12 11:53:07 schwarze Exp $
+# $OpenBSD: openbsd-hints,v 1.5 2014/04/27 09:09:42 schwarze Exp $
 orgname="/etc/organization"
 d_nntp='define'
 d_local='undef'
 d_portable='define'
-_nroff='/usr/bin/mandoc'
 phost='.'
 # get ready to use ispell, don't depend on it being installed
 ispell_prg='ispell'
