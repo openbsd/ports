@@ -1,16 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.10 2013/06/09 02:09:31 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/04/27 20:01:03 bluhm Exp $
 ${P5SITE}/IO/
 ${P5SITE}/IO/Socket/
 ${P5SITE}/IO/Socket/SSL/
 ${P5SITE}/IO/Socket/SSL.pm
 ${P5SITE}/IO/Socket/SSL/Intercept.pm
+${P5SITE}/IO/Socket/SSL/PublicSuffix.pm
 ${P5SITE}/IO/Socket/SSL/Utils.pm
 @man man/man3p/IO::Socket::SSL.3p
 @man man/man3p/IO::Socket::SSL::Intercept.3p
+@man man/man3p/IO::Socket::SSL::PublicSuffix.3p
 @man man/man3p/IO::Socket::SSL::Utils.3p
 share/examples/p5-IO-Socket-SSL/
 share/examples/p5-IO-Socket-SSL/async_https_server.pl
 share/examples/p5-IO-Socket-SSL/lwp-with-verifycn.pl
+share/examples/p5-IO-Socket-SSL/simulate_proxy.pl
 share/examples/p5-IO-Socket-SSL/ssl_client.pl
 share/examples/p5-IO-Socket-SSL/ssl_mitm.pl
 share/examples/p5-IO-Socket-SSL/ssl_server.pl
