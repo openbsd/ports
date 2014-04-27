@@ -1,9 +1,12 @@
 calibre is a free and open source e-book library management application
 developed by users of e-books for users of e-books. It has a cornucopia
 of features divided into the following main categories:
- * Library Management
+
+ * Library management
  * E-book conversion
  * Syncing to e-book reader devices
- * Downloading news from the web and converting it into e-book form
+   (note, no direct USB/MTP access in the OpenBSD package)
+ * Downloading news from websites/RSS feeds and converting into e-book form
  * Comprehensive e-book viewer
  * Content server for online access to your book collection
+ * E-book editor and review tool for the major e-book formats

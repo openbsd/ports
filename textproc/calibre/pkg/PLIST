@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2014/04/07 00:21:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.14 2014/04/27 21:10:17 sthen Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -940,6 +940,8 @@ lib/calibre/calibre/ebooks/oeb/polish/pretty.py
 lib/calibre/calibre/ebooks/oeb/polish/pretty.pyc
 lib/calibre/calibre/ebooks/oeb/polish/replace.py
 lib/calibre/calibre/ebooks/oeb/polish/replace.pyc
+lib/calibre/calibre/ebooks/oeb/polish/spell.py
+lib/calibre/calibre/ebooks/oeb/polish/spell.pyc
 lib/calibre/calibre/ebooks/oeb/polish/split.py
 lib/calibre/calibre/ebooks/oeb/polish/split.pyc
 lib/calibre/calibre/ebooks/oeb/polish/stats.py
@@ -1423,8 +1425,6 @@ lib/calibre/calibre/gui2/convert/debug.py
 lib/calibre/calibre/gui2/convert/debug.pyc
 lib/calibre/calibre/gui2/convert/debug_ui.py
 lib/calibre/calibre/gui2/convert/debug_ui.pyc
-lib/calibre/calibre/gui2/convert/djvu_input_ui.py
-lib/calibre/calibre/gui2/convert/djvu_input_ui.pyc
 lib/calibre/calibre/gui2/convert/docx_input.py
 lib/calibre/calibre/gui2/convert/docx_input.pyc
 lib/calibre/calibre/gui2/convert/docx_input_ui.py
@@ -1643,6 +1643,8 @@ lib/calibre/calibre/gui2/dialogs/metadata_bulk.py
 lib/calibre/calibre/gui2/dialogs/metadata_bulk.pyc
 lib/calibre/calibre/gui2/dialogs/metadata_bulk_ui.py
 lib/calibre/calibre/gui2/dialogs/metadata_bulk_ui.pyc
+lib/calibre/calibre/gui2/dialogs/opml.py
+lib/calibre/calibre/gui2/dialogs/opml.pyc
 lib/calibre/calibre/gui2/dialogs/password.py
 lib/calibre/calibre/gui2/dialogs/password.pyc
 lib/calibre/calibre/gui2/dialogs/password_ui.py
@@ -2156,6 +2158,8 @@ lib/calibre/calibre/gui2/tweak_book/save.py
 lib/calibre/calibre/gui2/tweak_book/save.pyc
 lib/calibre/calibre/gui2/tweak_book/search.py
 lib/calibre/calibre/gui2/tweak_book/search.pyc
+lib/calibre/calibre/gui2/tweak_book/spell.py
+lib/calibre/calibre/gui2/tweak_book/spell.pyc
 lib/calibre/calibre/gui2/tweak_book/templates.py
 lib/calibre/calibre/gui2/tweak_book/templates.pyc
 lib/calibre/calibre/gui2/tweak_book/toc.py
@@ -2338,6 +2342,15 @@ lib/calibre/calibre/ptempfile.py
 lib/calibre/calibre/ptempfile.pyc
 lib/calibre/calibre/rpdb.py
 lib/calibre/calibre/rpdb.pyc
+lib/calibre/calibre/spell/
+lib/calibre/calibre/spell/__init__.py
+lib/calibre/calibre/spell/__init__.pyc
+lib/calibre/calibre/spell/break_iterator.py
+lib/calibre/calibre/spell/break_iterator.pyc
+lib/calibre/calibre/spell/dictionary.py
+lib/calibre/calibre/spell/dictionary.pyc
+lib/calibre/calibre/spell/import_from.py
+lib/calibre/calibre/spell/import_from.pyc
 lib/calibre/calibre/startup.py
 lib/calibre/calibre/startup.pyc
 lib/calibre/calibre/test_build.py
@@ -2953,6 +2966,19 @@ share/calibre/content_server/star-off.png
 share/calibre/content_server/star-on.png
 share/calibre/default_tweaks.py
 share/calibre/default_tweaks.pyc
+share/calibre/dictionaries/
+share/calibre/dictionaries/en-GB/
+share/calibre/dictionaries/en-GB/en-GB.aff
+share/calibre/dictionaries/en-GB/en-GB.dic
+share/calibre/dictionaries/en-GB/locales
+share/calibre/dictionaries/en-US/
+share/calibre/dictionaries/en-US/en-US.aff
+share/calibre/dictionaries/en-US/en-US.dic
+share/calibre/dictionaries/en-US/locales
+share/calibre/dictionaries/es-ES/
+share/calibre/dictionaries/es-ES/es-ES.aff
+share/calibre/dictionaries/es-ES/es-ES.dic
+share/calibre/dictionaries/es-ES/locales
 share/calibre/ebook-convert-complete.pickle
 share/calibre/fonts/
 share/calibre/fonts/calibreSymbols.otf
@@ -3098,6 +3124,7 @@ share/calibre/images/mimetypes/lrf.png
 share/calibre/images/mimetypes/lrx.png
 share/calibre/images/mimetypes/mobi.png
 share/calibre/images/mimetypes/odt.png
+share/calibre/images/mimetypes/opml.png
 share/calibre/images/mimetypes/pdf.png
 share/calibre/images/mimetypes/png.png
 share/calibre/images/mimetypes/rar.png
@@ -3157,6 +3184,7 @@ share/calibre/images/search_copy_saved.png
 share/calibre/images/search_delete_saved.png
 share/calibre/images/series.png
 share/calibre/images/smarten-punctuation.png
+share/calibre/images/spell-check.png
 share/calibre/images/store.png
 share/calibre/images/subset-fonts.png
 share/calibre/images/swap.png
@@ -3750,8 +3778,6 @@ share/calibre/recipes/ekathemerini.recipe
 share/calibre/recipes/ekologia_pl.png
 share/calibre/recipes/ekologia_pl.recipe
 share/calibre/recipes/ekot.recipe
-share/calibre/recipes/eksiazki.png
-share/calibre/recipes/eksiazki.recipe
 share/calibre/recipes/ekundelek_pl.png
 share/calibre/recipes/ekundelek_pl.recipe
 share/calibre/recipes/el_colombiano.recipe
@@ -4022,6 +4048,7 @@ share/calibre/recipes/gosc_niedzielny.png
 share/calibre/recipes/gosc_niedzielny.recipe
 share/calibre/recipes/gram_pl.png
 share/calibre/recipes/gram_pl.recipe
+share/calibre/recipes/grandes_corresponsales_es.recipe
 share/calibre/recipes/granma.png
 share/calibre/recipes/granma.recipe
 share/calibre/recipes/grantland.recipe
@@ -4087,6 +4114,8 @@ share/calibre/recipes/historia_pl.png
 share/calibre/recipes/historia_pl.recipe
 share/calibre/recipes/historiaro.png
 share/calibre/recipes/historiaro.recipe
+share/calibre/recipes/historias_del_mundo_es.recipe
+share/calibre/recipes/histories_del_mon_ca.recipe
 share/calibre/recipes/history_today.recipe
 share/calibre/recipes/hitro.png
 share/calibre/recipes/hitro.recipe
@@ -4342,6 +4371,7 @@ share/calibre/recipes/latimes.recipe
 share/calibre/recipes/latribuna.png
 share/calibre/recipes/latribuna.recipe
 share/calibre/recipes/lavanguardia.recipe
+share/calibre/recipes/lavanguardia_corresponsales_es.recipe
 share/calibre/recipes/lavenir_be.recipe
 share/calibre/recipes/le_gorafi.recipe
 share/calibre/recipes/le_journal.recipe
@@ -4724,8 +4754,6 @@ share/calibre/recipes/origo_hu.recipe
 share/calibre/recipes/orlando_sentinel.recipe
 share/calibre/recipes/orsai.png
 share/calibre/recipes/orsai.recipe
-share/calibre/recipes/osnews_pl.png
-share/calibre/recipes/osnews_pl.recipe
 share/calibre/recipes/osw.png
 share/calibre/recipes/osw.recipe
 share/calibre/recipes/osworld_pl.png
@@ -4771,6 +4799,7 @@ share/calibre/recipes/people_daily.recipe
 share/calibre/recipes/people_us_mashup.recipe
 share/calibre/recipes/perfil.png
 share/calibre/recipes/perfil.recipe
+share/calibre/recipes/periodismo_humano_es.recipe
 share/calibre/recipes/pescanik.png
 share/calibre/recipes/pescanik.recipe
 share/calibre/recipes/peterschiff.recipe
