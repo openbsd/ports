@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2014/04/23 11:34:49 pascal Exp $
+# $OpenBSD: Makefile,v 1.74 2014/04/27 21:50:55 tobiasu Exp $
 
 #ONLY_FOR_ARCHS = alpha amd64 hppa i386 powerpc sparc64
 # ignore arches that have a valid 4.8 port
@@ -15,6 +15,8 @@ ADASTRAP_LIBC-amd64 = 73.0
 ADASTRAP-amd64 = adastrap-amd64-$V-4.tar.xz
 ADASTRAP_LIBC-sparc64 = 73.0
 ADASTRAP-sparc64 = adastrap-sparc64-$V-4.tar.xz
+ADASTRAP_LIBC-hppa = 74.1
+ADASTRAP-hppa = adastrap-hppa-$V-4.tar.xz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}
 PKGNAME-c++ =   g++-${FULL_PKGVERSION}
@@ -49,7 +51,7 @@ SHARED_LIBS =	estdc++		14.0 \
 PSEUDO_FLAVORS = no_c++ no_f95 no_objc no_java no_ada no_go full
 FLAVOR ?= 
 
-ONLY_FOR_ARCHS-ada = i386 amd64 sparc64
+ONLY_FOR_ARCHS-ada = i386 amd64 sparc64 hppa
 ONLY_FOR_ARCHS-java = amd64 i386 sparc64
 NOT_FOR_ARCHS-go = alpha hppa mips64el
 
@@ -67,7 +69,7 @@ DISTFILES =	${DISTNAME}.tar.bz2
 # there's no ecj-4.6.jar
 ECJ =		ecj-4.5.jar
 SUPDISTFILES =	${ADASTRAP-i386}:0 ${ADASTRAP-amd64}:0 ${ADASTRAP-sparc64}:0 \
-		${ECJ}:1
+		${ADASTRAP-hppa}:0 ${ECJ}:1
 EXTRACT_ONLY =	${DISTNAME}.tar.bz2
 
 

@@ -1,0 +1,16 @@
+$OpenBSD: patch-gcc_ada_gcc-interface_Make-lang_in,v 1.1 2014/04/27 21:50:55 tobiasu Exp $
+
+xgnatugn is a host tool, build it like the other host tools. GNATMAKE points
+to the cross gnatmake.
+
+--- gcc/ada/gcc-interface/Make-lang.in.orig	Sun Apr 27 04:55:00 2014
++++ gcc/ada/gcc-interface/Make-lang.in	Sun Apr 27 04:55:23 2014
+@@ -564,7 +564,7 @@ ada.tags: force
+ ada/doctools/xgnatugn$(build_exeext): ada/xgnatugn.adb
+ 	-$(MKDIR) ada/doctools
+ 	$(CP) $^ ada/doctools
+-	cd ada/doctools && $(GNATMAKE) -q xgnatugn
++	cd ada/doctools && gnatmake xgnatugn
+ 
+ # Note that doc/gnat_ugn.texi and doc/projects.texi do not depend on
+ # xgnatugn being built so we can distribute a pregenerated doc/gnat_ugn.info
