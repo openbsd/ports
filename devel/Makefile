@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1219 2014/04/26 22:17:34 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.1220 2014/04/27 16:17:14 edd Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1137,6 +1137,7 @@
      SUBDIR += py-async
      SUBDIR += py-babel
      SUBDIR += py-babel,python3
+     SUBDIR += py-backports-ssl-match-hostname
      SUBDIR += py-blinker
      SUBDIR += py-buildbot
      SUBDIR += py-buildslave
