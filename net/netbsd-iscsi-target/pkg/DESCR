@@ -3,7 +3,7 @@ storage.  It can be thought of as similar to NFS, except that an NFS
 server exports files; the iSCSI target exports blocks to the iSCSI
 initiators, which are the clients.
 
-To set up the target, you need to edit the /etc/iscsi/targets file.
+To set up the target, you need to edit the ${SYSCONFDIR}/iscsi/targets file.
 It has a certain layout, to provide a means of (a) mirroring and (b)
 combining multiple areas to present one large contiguous area of
 storage.  This can be multiply-layered.
