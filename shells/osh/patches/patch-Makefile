@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2012/06/26 22:02:32 pascal Exp $
---- Makefile.orig	Tue Jun  5 01:53:10 2012
-+++ Makefile	Fri Jun 15 20:37:23 2012
+$OpenBSD: patch-Makefile,v 1.2 2014/04/27 06:35:08 benoit Exp $
+--- Makefile.orig	Thu Apr 10 06:48:06 2014
++++ Makefile	Sat Apr 26 22:29:28 2014
 @@ -15,12 +15,12 @@ PREFIX?=	/usr/local
  BINDIR?=	$(PREFIX)/bin
  DOCDIR?=	$(PREFIX)/share/doc/$(OSH_VERSION)
@@ -26,7 +26,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2012/06/26 22:02:32 pascal Exp $
  #LDFLAGS+=	-static
  
  #
-@@ -179,24 +179,24 @@ install-sh6all: sh6all install-sh6 install-utils
+@@ -181,24 +181,24 @@ install-sh6all: sh6all install-sh6 install-utils
  install-utils: install-ubin install-uman
  
  install-osh: $(OSH) $(OSHMAN) install-dest
@@ -63,7 +63,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2012/06/26 22:02:32 pascal Exp $
  
  install-dest:
  	test -d $(DESTBINDIR) || { umask 0022 && mkdir -p $(DESTBINDIR) ; }
-@@ -204,11 +204,11 @@ install-dest:
+@@ -206,11 +206,11 @@ install-dest:
  
  install-doc:
  	test -d $(DESTDOCDIR) || { umask 0022 && mkdir -p $(DESTDOCDIR) ; }

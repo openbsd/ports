@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2014/03/09 19:47:41 pascal Exp $
+# $OpenBSD: Makefile,v 1.4 2014/04/27 06:35:08 benoit Exp $
 
 COMMENT =		Sixth Edition UNIX Shell
 
-DISTNAME =		osh-20131109
+DISTNAME =		osh-20140410
 
 CATEGORIES =		shells
 
