@@ -1,15 +1,16 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2014/04/25 11:17:59 ajacoutot Exp $
+$OpenBSD: patch-Makefile_in,v 1.7 2014/04/27 09:46:26 ajacoutot Exp $
 
 We only use versioned libraries (.so.X.Y versus .so).
 
 --- Makefile.in.orig	Thu Dec 12 17:16:27 2013
-+++ Makefile.in	Sun Apr 20 10:41:12 2014
-@@ -99,23 +99,7 @@ docs: 
++++ Makefile.in	Sun Apr 27 11:21:31 2014
+@@ -99,22 +99,9 @@ docs: 
  install:
  	mkdir -p $(DESTDIR)$(LIBDIR)
  	rm -f $(DESTDIR)$(LIBDIR)/libh323_*_r.so*
 -	$(INSTALL) -m 444 lib/$(OH323_FILE).@MAJOR_VERSION@.@MINOR_VERSION@.@BUILD_NUMBER@ $(DESTDIR)$(LIBDIR)
--	(cd $(DESTDIR)$(LIBDIR) ; \
++	$(INSTALL) -m 444 lib/$(OH323_FILE).${LIBh323_VERSION} $(DESTDIR)$(LIBDIR)
+ 	(cd $(DESTDIR)$(LIBDIR) ; \
 -		rm -f  $(OH323_FILE).@MAJOR_VERSION@.@MINOR_VERSION@ ; \
 -		ln -sf $(OH323_FILE).@MAJOR_VERSION@.@MINOR_VERSION@.@BUILD_NUMBER@ $(OH323_FILE).@MAJOR_VERSION@.@MINOR_VERSION@ \
 -	)
@@ -24,8 +25,7 @@ We only use versioned libraries (.so.X.Y versus .so).
 -	(cd $(DESTDIR)$(LIBDIR); \
 -		rm -f  libopenh323.$(SHAREDLIBEXT) ; \
 -		ln -sf $(OH323_FILE) libopenh323.$(SHAREDLIBEXT) \
--	)
-+	$(INSTALL) -m 444 lib/$(OH323_FILE).${LIBh323_VERSION} $(DESTDIR)$(LIBDIR)
++		ln -sf $(OH323_FILE).${LIBh323_VERSION} $(OH323_FILE) \
+ 	)
  	( for dir in $(DESTDIR)$(LIBDIR) \
  		     $(DESTDIR)$(PREFIX)/include/openh323 \
- 		     $(DESTDIR)$(PREFIX)/include/openh323/codec \

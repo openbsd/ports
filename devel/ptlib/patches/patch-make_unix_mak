@@ -1,7 +1,6 @@
-$OpenBSD: patch-make_unix_mak,v 1.5 2014/04/25 11:17:27 ajacoutot Exp $
+$OpenBSD: patch-make_unix_mak,v 1.6 2014/04/27 09:45:05 ajacoutot Exp $
 
 Make sure _SONAME is versioned (.so.X.Y versus .so).
-(overriding PTLIB_FILE will drop the _s.a static lib but we don't use it)
 
 --- make/unix.mak.orig	Mon Feb 17 03:14:37 2014
 +++ make/unix.mak	Mon Apr 21 21:49:55 2014
@@ -30,10 +29,10 @@ Make sure _SONAME is versioned (.so.X.Y versus .so).
  endif
  
 +ifeq ($(target_os),OpenBSD)
-+  PTLIB_FILE = lib$(PTLIB_BASE)$(LIB_TYPE).$(LIB_SUFFIX).${LIBpt_VERSION}
-+  PTLIB_DEBUG_FILE= lib$(PTLIB_BASE)_d$(LIB_TYPE).$(LIB_SUFFIX).${LIBpt_VERSION}
-+  PTLIB_SONAME = $(PTLIB_FILE)
-+  PTLIB_DEBUG_SONAME = $(PTLIB_DEBUG_FILE)
++  PTLIB_FILE = lib$(PTLIB_BASE)$(LIB_TYPE).$(LIB_SUFFIX)
++  PTLIB_DEBUG_FILE= lib$(PTLIB_BASE)_d$(LIB_TYPE).$(LIB_SUFFIX)
++  PTLIB_SONAME = $(PTLIB_FILE).${LIBpt_VERSION}
++  PTLIB_DEBUG_SONAME = $(PTLIB_DEBUG_FILE).${LIBpt_VERSION}
 +endif
  
  ###############################################################################

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2014/04/25 14:13:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2014/04/27 09:46:26 ajacoutot Exp $
 
 # XXX drop at next release
 CONFIGURE_ARGS += --enable-h235
@@ -11,6 +11,7 @@ V=		1_26_0
 DISTNAME=	h323plus-v${V}
 PKGNAME=	h323plus-${V:S/_/./g}
 WRKDIST=	${WRKDIR}/h323plus
+REVISION=	0
 
 CATEGORIES=	net devel
 

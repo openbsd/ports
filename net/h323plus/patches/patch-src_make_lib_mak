@@ -1,7 +1,6 @@
-$OpenBSD: patch-src_make_lib_mak,v 1.1 2014/04/25 11:17:59 ajacoutot Exp $
+$OpenBSD: patch-src_make_lib_mak,v 1.2 2014/04/27 09:46:26 ajacoutot Exp $
 
 Make sure LIB_SONAME is versioned (.so.X.Y versus .so).
-(LIBNAME_PAT = LIB_SONAME)
 
 soname usage is discouraged on OpenBSD.
 

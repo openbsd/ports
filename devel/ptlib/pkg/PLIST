@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2014/04/25 11:17:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2014/04/27 09:45:05 ajacoutot Exp $
 @conflict pwlib-*
 @pkgpath devel/pwlib
 @pkgpath devel/pwlib,ldap
@@ -178,7 +178,9 @@ include/ptlib/video.h
 include/ptlib/videoio.h
 include/ptlib/videoio1394dc.h
 include/ptlib/wxstring.h
+lib/libpt.so
 @lib lib/libpt.so.${LIBpt_VERSION}
+lib/libpt_s.a
 lib/pkgconfig/ptlib.pc
 lib/ptlib-${V}/
 lib/ptlib-${V}/devices/
