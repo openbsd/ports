@@ -1,0 +1,18 @@
+$OpenBSD: patch-Source_Files_FFmpeg_SDL_ffmpeg_c,v 1.1 2014/04/27 07:07:28 brad Exp $
+
+Deal with newer FFmpeg API.
+
+--- Source_Files/FFmpeg/SDL_ffmpeg.c.orig	Tue Apr 22 17:30:07 2014
++++ Source_Files/FFmpeg/SDL_ffmpeg.c	Tue Apr 22 17:32:03 2014
+@@ -57,6 +57,11 @@ extern "C"
+ #endif
+ #endif
+ 
++/* set magic number for 1 second of 48khz 32bit audio */
++#ifndef AVCODEC_MAX_AUDIO_FRAME_SIZE
++#define AVCODEC_MAX_AUDIO_FRAME_SIZE 192000
++#endif
++
+ #ifdef __cplusplus
+ extern "C"
+ {
