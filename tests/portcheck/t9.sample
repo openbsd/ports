@@ -1,0 +1,6 @@
+  PERMIT_DISTFILES_FTP is not a subpackageble variable, see Makefile:17
+extra PERMIT_DISTFILES_FTP line(-s)
+in -bar:  PERMIT_PACKAGE_FTP should be either "Yes" or a reason for being non-redistributable
+in -buz:  PERMIT_PACKAGE_FTP should be either "Yes" or a reason for being non-redistributable
+in -foo: extra PERMIT_PACKAGE_FTP lines
+in -main:  PERMIT_PACKAGE_FTP should be either "Yes" or a reason for being non-redistributable
