@@ -1,11 +1,11 @@
-$OpenBSD: patch-setup_py,v 1.2 2013/09/20 11:24:32 edd Exp $
---- setup.py.orig	Fri Sep  6 14:33:23 2013
-+++ setup.py	Wed Sep 18 16:15:16 2013
-@@ -115,7 +115,7 @@ setup_params = dict(
+$OpenBSD: patch-setup_py,v 1.3 2014/04/27 17:04:23 rpointel Exp $
+--- setup.py.orig	Tue Apr  8 01:07:02 2014
++++ setup.py	Sun Apr 13 09:30:55 2014
+@@ -129,7 +129,7 @@ setup_params = dict(
  
      py_modules = ['pkg_resources', 'easy_install'],
  
--    zip_safe = (sys.version>="2.5"),   # <2.5 needs unzipped for -m to work
+-    zip_safe = True,
 +    zip_safe = False,
  
      cmdclass = {'test': test},
