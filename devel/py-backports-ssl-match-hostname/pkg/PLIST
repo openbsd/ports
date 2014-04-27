@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/04/27 16:11:24 edd Exp $
+lib/python${MODPY_VERSION}/site-packages/backports/
+lib/python${MODPY_VERSION}/site-packages/backports.ssl_match_hostname-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/backports.ssl_match_hostname-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/backports.ssl_match_hostname-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/backports.ssl_match_hostname-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/backports.ssl_match_hostname-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/backports/__init__.py
+lib/python${MODPY_VERSION}/site-packages/backports/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/backports/ssl_match_hostname/
+lib/python${MODPY_VERSION}/site-packages/backports/ssl_match_hostname/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/backports/ssl_match_hostname/README.txt
+lib/python${MODPY_VERSION}/site-packages/backports/ssl_match_hostname/__init__.py
+lib/python${MODPY_VERSION}/site-packages/backports/ssl_match_hostname/__init__.pyc

@@ -1,0 +1,13 @@
+The Secure Sockets layer is only actually secure if you check the
+hostname in the certificate returned by the server to which you are
+connecting, and verify that it matches to hostname that you are trying
+to reach.
+
+But the matching logic, defined in RFC2818, can be a bit tricky to
+implement on your own. So the ssl package in the Standard Library of
+Python 3.2 and greater now includes a match_hostname() function for
+performing this check instead of requiring every application to
+implement the check separately.
+
+This backport brings match_hostname() to users of earlier versions of
+Python.
