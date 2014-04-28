@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2013/03/14 11:16:02 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.8 2014/04/28 12:43:10 bcallah Exp $
 
 COMMENT = 	C++ library of cryptographic algorithms
 CATEGORIES = 	devel security
@@ -22,7 +22,8 @@ WANTLIB +=	m pthread stdc++
 SHARED_LIBS = 	cryptopp	1.0
 
 USE_GMAKE = 	Yes
-MAKE_FLAGS +=	CXXFLAGS="${CXXFLAGS} -Wno-deprecated \
+MAKE_FLAGS +=	CXX="${CXX}" \
+		CXXFLAGS="${CXXFLAGS} -Wno-deprecated \
 			-Wno-sign-compare \
 			-Wno-unknown-pragmas \
 			-Wno-unused \
