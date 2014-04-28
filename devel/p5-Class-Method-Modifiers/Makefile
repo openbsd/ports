@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2014/04/05 09:10:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2014/04/28 14:18:24 afresh1 Exp $
 
 COMMENT =	provides Moose-like method modifiers
 
 MODULES =	cpan
 DISTNAME =	Class-Method-Modifiers-2.10
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
@@ -12,13 +12,7 @@ MAINTAINER =    Sergey Bronnikov <estetus@gmail.com>
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
 
-TEST_DEPENDS =	devel/p5-ExtUtils-BuildRC \
-		devel/p5-ExtUtils-Config \
-		devel/p5-ExtUtils-InstallPaths \
-		devel/p5-File-Find-Rule \
-		devel/p5-File-Slurp \
-		devel/p5-Test-Fatal \
-		devel/p5-Try-Tiny \
-		converters/p5-JSON
+TEST_DEPENDS =	devel/p5-Test-Fatal \
+		devel/p5-Moose
 
 .include <bsd.port.mk>
