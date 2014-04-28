@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.408 2014/04/17 17:06:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.409 2014/04/28 20:11:27 edd Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -307,6 +307,7 @@
      SUBDIR += py-jaxml
      SUBDIR += py-lxml
      SUBDIR += py-nltk
+     SUBDIR += py-numpydoc
      SUBDIR += py-pdf
      SUBDIR += py-polib
      SUBDIR += py-prettytable
