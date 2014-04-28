@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/04/28 20:05:30 edd Exp $
+lib/python${MODPY_VERSION}/site-packages/numpydoc/
+lib/python${MODPY_VERSION}/site-packages/numpydoc-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/numpydoc/__init__.py
+lib/python${MODPY_VERSION}/site-packages/numpydoc/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/numpydoc/comment_eater.py
+lib/python${MODPY_VERSION}/site-packages/numpydoc/comment_eater.pyc
+lib/python${MODPY_VERSION}/site-packages/numpydoc/compiler_unparse.py
+lib/python${MODPY_VERSION}/site-packages/numpydoc/compiler_unparse.pyc
+lib/python${MODPY_VERSION}/site-packages/numpydoc/docscrape.py
+lib/python${MODPY_VERSION}/site-packages/numpydoc/docscrape.pyc
+lib/python${MODPY_VERSION}/site-packages/numpydoc/docscrape_sphinx.py
+lib/python${MODPY_VERSION}/site-packages/numpydoc/docscrape_sphinx.pyc
+lib/python${MODPY_VERSION}/site-packages/numpydoc/numpydoc.py
+lib/python${MODPY_VERSION}/site-packages/numpydoc/numpydoc.pyc
+lib/python${MODPY_VERSION}/site-packages/numpydoc/phantom_import.py
+lib/python${MODPY_VERSION}/site-packages/numpydoc/phantom_import.pyc
+lib/python${MODPY_VERSION}/site-packages/numpydoc/plot_directive.py
+lib/python${MODPY_VERSION}/site-packages/numpydoc/plot_directive.pyc
+lib/python${MODPY_VERSION}/site-packages/numpydoc/traitsdoc.py
+lib/python${MODPY_VERSION}/site-packages/numpydoc/traitsdoc.pyc
