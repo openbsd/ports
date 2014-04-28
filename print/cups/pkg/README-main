@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.9 2013/12/12 15:22:17 ajacoutot Exp $
+$OpenBSD: README-main,v 1.10 2014/04/28 13:37:32 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -7,7 +7,7 @@ $OpenBSD: README-main,v 1.9 2013/12/12 15:22:17 ajacoutot Exp $
 Adding and/or configuring CUPS printers can be done with lpadmin(8), but
 for a quick and easy (graphical) setup, after starting the CUPS daemon,
 point your browser to:
-    http://localhost:631
+    https://localhost:631
 
 Alternatively, adding and/or configuring CUPS printers can be done with
 lpadmin(8) (the foomatic tools may be needed as well, to create the

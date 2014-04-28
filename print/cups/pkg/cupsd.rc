@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: cupsd.rc,v 1.17 2014/03/09 21:46:34 ajacoutot Exp $
+# $OpenBSD: cupsd.rc,v 1.18 2014/04/28 13:37:32 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/cupsd"
 
@@ -16,7 +16,7 @@ _lpfiles="/usr/bin/lpq /usr/bin/lpr /usr/bin/lprm /usr/sbin/lpc \
 rc_pre() {
 	# rcexec is needed if openfiles limits are bumped and cupsd(8)
 	# runs in debug mode to prevent MaxClients warnings in logs
-	${rcexec} ${daemon} -t || return 1
+	${rcexec} "${daemon} ${daemon_flags} -t" || return 1
 	[ -e /dev/lpt0 ] && chown _cups /dev/lp[a,t][0-2]
 	# XXX cups-driverd(8) can crash when foomatic DB sources are added/removed
 	rm -f /var/cache/cups/*
