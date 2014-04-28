@@ -1,0 +1,9 @@
+$OpenBSD: patch-runtests_sh,v 1.1 2014/04/28 20:52:13 edd Exp $
+--- runtests.sh.orig	Sun Apr 27 15:31:04 2014
++++ runtests.sh	Sun Apr 27 15:31:21 2014
+@@ -15,4 +15,4 @@ cd $(dirname $0)
+ # while "python file.py" uses the directory containing "file.py" (which is
+ # not what you want if file.py appears within a package you want to import
+ # from)
+-python -m tornado.test.runtests "$@"
++${MODPY_BIN} -m tornado.test.runtests "$@"
