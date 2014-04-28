@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.8 2013/08/15 18:40:20 kili Exp $
---- configure.ac.orig	Mon Jul 29 19:10:39 2013
-+++ configure.ac	Sat Aug  3 22:05:07 2013
-@@ -569,6 +569,24 @@ AC_SUBST(POPPLER_GLIB_DISABLE_SINGLE_INCLUDES)
+$OpenBSD: patch-configure_ac,v 1.9 2014/04/28 16:48:27 kili Exp $
+--- configure.ac.orig	Fri Apr 25 00:40:07 2014
++++ configure.ac	Sun Apr 27 12:07:50 2014
+@@ -554,6 +554,24 @@ AC_SUBST(POPPLER_GLIB_DISABLE_SINGLE_INCLUDES)
  
  GTK_DOC_CHECK([1.14],[--flavour no-tmpl])
  
@@ -26,7 +26,7 @@ $OpenBSD: patch-configure_ac,v 1.8 2013/08/15 18:40:20 kili Exp $
  dnl 
  dnl Try Qt4
  dnl
-@@ -601,7 +619,7 @@ AC_SUBST(POPPLER_QT4_LIBS)
+@@ -586,7 +604,7 @@ AC_SUBST(POPPLER_QT4_LIBS)
  AC_SUBST(POPPLER_QT4_TEST_LIBS)
  
  if test x$enable_poppler_qt4 = xyes; then
@@ -35,7 +35,7 @@ $OpenBSD: patch-configure_ac,v 1.8 2013/08/15 18:40:20 kili Exp $
    AC_MSG_CHECKING([for Qt4 moc])
    mocversion=`$MOCQT4 -v 2>&1`
    mocversiongrep=`echo $mocversion | grep "Qt 4"`
-@@ -856,6 +874,9 @@ glib/reference/Makefile
+@@ -841,6 +859,9 @@ glib/reference/Makefile
  glib/reference/version.xml
  glib/demo/Makefile
  test/Makefile
@@ -45,7 +45,7 @@ $OpenBSD: patch-configure_ac,v 1.8 2013/08/15 18:40:20 kili Exp $
  qt4/Makefile
  qt4/src/Makefile
  qt4/tests/Makefile
-@@ -888,6 +909,7 @@ echo "Building poppler with support for:"
+@@ -873,6 +894,7 @@ echo "Building poppler with support for:"
  echo "  font configuration: $with_font_configuration"
  echo "  splash output:      $enable_splash_output"
  echo "  cairo output:       $use_cairo"
