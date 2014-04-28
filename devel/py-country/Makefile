@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2014/01/30 08:01:48 benoit Exp $
+# $OpenBSD: Makefile,v 1.7 2014/04/28 14:34:27 benoit Exp $
 
 COMMENT =		country, language, currency and scripts definitions
 
-MODPY_EGG_VERSION =	1.3
+MODPY_EGG_VERSION =	1.5
 DISTNAME =		pycountry-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 
@@ -14,8 +14,6 @@ HOMEPAGE =		http://pypi.python.org/pypi/pycountry
 PERMIT_PACKAGE_CDROM =		Yes
 
 MASTER_SITES=		${MASTER_SITE_PYPI:=p/pycountry/}
-
-EXTRACT_SUFX =		.zip
 
 MODULES =		lang/python
 
