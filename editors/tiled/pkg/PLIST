@@ -1,18 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/07/08 22:10:57 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/04/28 09:48:54 bentley Exp $
 %%SHARED%%
+@bin bin/automappingconverter
 @bin bin/tiled
 @bin bin/tmxrasterizer
 @bin bin/tmxviewer
 @lib lib/libtiled.so.${LIBtiled_VERSION}
 lib/tiled/
 lib/tiled/plugins/
+@man man/man1/automappingconverter.1
 @man man/man1/tiled.1
 @man man/man1/tmxrasterizer.1
 @man man/man1/tmxviewer.1
 share/applications/tiled.desktop
+share/icons/hicolor/16x16/apps/tiled.png
+share/icons/hicolor/32x32/apps/tiled.png
+share/icons/hicolor/scalable/apps/tiled.svg
 share/tiled/
-share/tiled/images/
-share/tiled/images/tiled-icon-32.png
 share/tiled/translations/
 share/tiled/translations/tiled_cs.qm
 share/tiled/translations/tiled_de.qm
@@ -30,3 +33,5 @@ share/tiled/translations/tiled_ru.qm
 share/tiled/translations/tiled_zh.qm
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

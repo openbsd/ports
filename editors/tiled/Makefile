@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2013/07/19 03:31:14 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2014/04/28 09:48:54 bentley Exp $
 
 COMMENT =		tile map editor
 
-V =			0.9.0
+V =			0.9.1
 DISTNAME =		tiled-qt-${V}
 PKGNAME =		tiled-${V}
 
@@ -20,7 +20,8 @@ WANTLIB += c fontconfig freetype m pthread stdc++ z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tiled/}
 
-RUN_DEPENDS =		devel/desktop-file-utils
+RUN_DEPENDS =		devel/desktop-file-utils \
+			x11/gtk+2,-guic
 MODULES =		x11/qt4
 
 MAKE_FLAGS =		CC="${CC}" \
@@ -35,9 +36,8 @@ do-configure:
 		qmake4 -makefile tiled.pro -config release
 
 do-test:
-	cd ${WRKSRC}/tests && \
-		./staggeredrenderer/staggeredrenderer && \
-		./mapreader/mapreader
+	cd ${WRKSRC}/tests/staggeredrenderer && ./staggeredrenderer && \
+	cd ${WRKSRC}/tests/mapreader && ./mapreader
 
 # XXX qmake picks up Cocoa/Cocoa.h even though it's apparently unused
 DPB_PROPERTIES =	nojunk
