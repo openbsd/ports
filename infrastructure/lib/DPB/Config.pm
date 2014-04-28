@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.28 2014/03/17 10:48:40 espie Exp $
+# $OpenBSD: Config.pm,v 1.29 2014/04/28 12:51:41 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -126,6 +126,7 @@ sub parse_command_line
 
 	# keep cmdline subst values
 	my %cmdline = %{$state->{subst}};
+
 	$class->parse_config_files($state);
 	# ... as those must override the config files contents
 	while (my ($k, $v) = each %cmdline) {
@@ -188,16 +189,6 @@ sub parse_command_line
 	if ($state->opt('f')) {
 		$state->{want_fetchinfo} = 1;
 	}
-	if (!$state->{subst}->empty('HISTORY_ONLY')) {
-		$state->{want_fetchinfo} = 1;
-		$state->{opt}{f} = 0;
-		$state->{opt}{j} = 1;
-		$state->{opt}{e} = 1;
-		$state->{all} = 1;
-		$state->{scan_only} = 1;
-		# XXX not really random, but no need to use dependencies
-		$state->{random} = 1;
-	}
 
 	# redo this in case config files changed it
 	$state->{logdir} = $state->expand_path($state->{logdir});
@@ -242,6 +233,16 @@ sub command_line_overrides
 		if (defined $state->{$k}) {
 			$override_prop->{$k} = $state->{$k};
 		}
+	}
+	if (!$state->{subst}->empty('HISTORY_ONLY')) {
+		$state->{want_fetchinfo} = 1;
+		$state->{opt}{f} = 0;
+		$state->{opt}{j} = 1;
+		$state->{opt}{e} = 1;
+		$state->{all} = 1;
+		$state->{scan_only} = 1;
+		# XXX not really random, but no need to use dependencies
+		$state->{random} = 1;
 	}
 	if ($state->opt('j')) {
 		$override_prop->{jobs} = $state->opt('j');
