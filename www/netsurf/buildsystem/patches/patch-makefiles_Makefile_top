@@ -1,6 +1,6 @@
-$OpenBSD: patch-makefiles_Makefile_top,v 1.1.1.1 2013/05/03 07:29:04 bentley Exp $
---- makefiles/Makefile.top.orig	Fri Apr 19 07:27:32 2013
-+++ makefiles/Makefile.top	Tue Apr 23 16:57:19 2013
+$OpenBSD: patch-makefiles_Makefile_top,v 1.2 2014/04/28 09:02:15 bentley Exp $
+--- makefiles/Makefile.top.orig	Sat Apr 26 21:37:19 2014
++++ makefiles/Makefile.top	Sat Apr 26 21:38:30 2014
 @@ -186,8 +186,8 @@ endif
  ifeq ($(findstring lib,$(COMPONENT_TYPE)),lib)
    ifeq ($(findstring lib-shared,$(COMPONENT_TYPE)),lib-shared)
@@ -33,10 +33,10 @@ $OpenBSD: patch-makefiles_Makefile_top,v 1.1.1.1 2013/05/03 07:29:04 bentley Exp
  	$(Q)$(SED) \
 -		-e 's#PREFIX#$(PREFIX)#' \
 +		-e 's#PREFIX#$(TRUEPREFIX)#' \
+ 		-e 's#LIBDIR#$(LIBDIR)#' \
  		-e 's#MAJOR#$(major-version)#' \
  		-e 's#MINOR#$(minor-version)#' \
- 		-e 's#PATCH#$(patch-version)#' \
-@@ -301,8 +293,6 @@ endef
+@@ -302,8 +294,6 @@ endef
  # TODO: Is this scheme portable?
  define install_shared_lib
    $(INSTALL) $(INSTALLFLAGS) -m 755 $1 $2/$(notdir $1)

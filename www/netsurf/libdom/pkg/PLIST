@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/05/03 07:30:10 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/04/28 09:02:15 bentley Exp $
 include/dom/
 include/dom/bindings/
 include/dom/bindings/hubbub/
@@ -51,6 +51,7 @@ include/dom/html/html_document.h
 include/dom/html/html_element.h
 include/dom/html/html_form_element.h
 include/dom/html/html_head_element.h
+include/dom/html/html_hr_element.h
 include/dom/html/html_html_element.h
 include/dom/html/html_input_element.h
 include/dom/html/html_link_element.h
