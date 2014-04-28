@@ -1,22 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/20 18:05:52 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/04/28 19:53:16 benoit Exp $
 ${P5SITE}/Git/
 ${P5SITE}/Git/Repository/
 ${P5SITE}/Git/Repository.pm
 ${P5SITE}/Git/Repository/Command.pm
-${P5SITE}/Git/Repository/Log/
-${P5SITE}/Git/Repository/Log.pm
-${P5SITE}/Git/Repository/Log/Iterator.pm
-${P5SITE}/Git/Repository/Plugin/
 ${P5SITE}/Git/Repository/Plugin.pm
-${P5SITE}/Git/Repository/Plugin/Log.pm
 ${P5SITE}/Git/Repository/Tutorial.pod
 ${P5SITE}/Test/
 ${P5SITE}/Test/Git.pm
 @man man/man3p/Git::Repository.3p
 @man man/man3p/Git::Repository::Command.3p
-@man man/man3p/Git::Repository::Log.3p
-@man man/man3p/Git::Repository::Log::Iterator.3p
 @man man/man3p/Git::Repository::Plugin.3p
-@man man/man3p/Git::Repository::Plugin::Log.3p
 @man man/man3p/Git::Repository::Tutorial.3p
 @man man/man3p/Test::Git.3p
