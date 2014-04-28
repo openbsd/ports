@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2014/04/06 12:09:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2014/04/28 14:45:13 ajacoutot Exp $
 
 COMMENT =		event logging framework
 
@@ -36,7 +36,6 @@ MODULES =		devel/gettext \
 
 MODGNOME_TOOLS +=	gobject-introspection vala
 
-# https://bugs.freedesktop.org/show_bug.cgi?id=73837
 MODPY_ADJ_FILES =	data/ontology2code
 
 BUILD_DEPENDS =		textproc/py-rdflib \
