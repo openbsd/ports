@@ -1,0 +1,12 @@
+$OpenBSD: patch-include_vlc_aout_h,v 1.1 2014/04/28 17:35:35 brad Exp $
+--- include/vlc_aout.h.orig	Thu Apr 24 22:04:59 2014
++++ include/vlc_aout.h	Thu Apr 24 22:08:24 2014
+@@ -212,6 +212,8 @@ static const uint32_t pi_vlc_chan_order_wg4[] =
+  */
+ VLC_API int aout_CheckChannelReorder( const uint32_t *pi_chan_order_in, const uint32_t *pi_chan_order_out, uint32_t i_channel_mask, int i_channels, int *pi_chan_table );
+ VLC_API void aout_ChannelReorder( uint8_t *, int, int, const int *, int );
++VLC_API void aout_Interleave(void *dst, const void *src, unsigned samples,
++                             unsigned channels, vlc_fourcc_t fourcc);
+ 
+ /**
+  * This fonction will compute the extraction parameter into pi_selection to go

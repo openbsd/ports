@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_libvlccore_sym,v 1.1 2014/04/28 17:35:35 brad Exp $
+--- src/libvlccore.sym.orig	Thu Apr 24 22:09:00 2014
++++ src/libvlccore.sym	Thu Apr 24 22:09:51 2014
+@@ -12,6 +12,7 @@ aout_ChannelReorder
+ aout_ChannelsRestart
+ aout_CheckChannelExtraction
+ aout_CheckChannelReorder
++aout_Interleave
+ aout_EnableFilter
+ aout_filter_RequestVout
+ aout_FormatPrepare

@@ -1,0 +1,46 @@
+$OpenBSD: patch-src_audio_output_common_c,v 1.1 2014/04/28 17:35:35 brad Exp $
+--- src/audio_output/common.c.orig	Thu Apr 24 22:10:46 2014
++++ src/audio_output/common.c	Thu Apr 24 22:11:25 2014
+@@ -650,6 +650,42 @@ void aout_ChannelReorder( uint8_t *p_buf, int i_buffer
+     }
+ }
+ 
++/**
++ * Interleaves audio samples within a block of samples.
++ * \param dst destination buffer for interleaved samples
++ * \param src source buffer with consecutive planes of samples
++ * \param samples number of samples (per channel/per plane)
++ * \param chans channels/planes count
++ * \param fourcc sample format (must be a linear sample format)
++ * \note The samples must be naturally aligned in memory.
++ * \warning Destination and source buffers MUST NOT overlap.
++ */
++void aout_Interleave( void *restrict dst, const void *restrict src,
++                      unsigned samples, unsigned chans, vlc_fourcc_t fourcc )
++{
++#define INTERLEAVE_TYPE(type) \
++do { \
++    type *d = dst; \
++    const type *s = src; \
++    for( size_t i = 0; i < chans; i++ ) { \
++        for( size_t j = 0, k = 0; j < samples; j++, k += chans ) \
++            d[k] = *(s++); \
++        d++; \
++    } \
++} while(0)
++
++    switch( fourcc )
++    {
++        case VLC_CODEC_U8:   INTERLEAVE_TYPE(uint8_t);  break;
++        case VLC_CODEC_S16N: INTERLEAVE_TYPE(uint16_t); break;
++        case VLC_CODEC_FL32: INTERLEAVE_TYPE(float);    break;
++        case VLC_CODEC_S32N: INTERLEAVE_TYPE(int32_t);  break;
++        case VLC_CODEC_FL64: INTERLEAVE_TYPE(double);   break;
++        default:             assert(0);
++    }
++#undef INTERLEAVE_TYPE
++}
++
+ /*****************************************************************************
+  * aout_ChannelExtract:
+  *****************************************************************************/

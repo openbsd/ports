@@ -1,7 +1,19 @@
-$OpenBSD: patch-modules_codec_avcodec_avcodec_h,v 1.3 2014/04/12 20:41:26 brad Exp $
---- modules/codec/avcodec/avcodec.h.orig	Thu Apr 10 01:56:19 2014
-+++ modules/codec/avcodec/avcodec.h	Thu Apr 10 20:42:34 2014
-@@ -38,6 +38,8 @@ int GetVlcFourcc( int i_ffmpeg_codec, int *pi_cat,
+$OpenBSD: patch-modules_codec_avcodec_avcodec_h,v 1.4 2014/04/28 17:35:35 brad Exp $
+--- modules/codec/avcodec/avcodec.h.orig	Fri Feb 21 10:27:16 2014
++++ modules/codec/avcodec/avcodec.h	Thu Apr 24 21:19:42 2014
+@@ -25,11 +25,6 @@
+ # include "config.h"
+ #endif
+ 
+-#ifndef HAVE_AVUTIL_PLANAR
+-# define av_sample_fmt_is_planar(x) (0)
+-#endif
+-
+-
+ #include "chroma.h"
+ /* VLC <-> avcodec tables */
+ int GetFfmpegCodec( vlc_fourcc_t i_fourcc, int *pi_cat,
+@@ -38,6 +33,8 @@ int GetVlcFourcc( int i_ffmpeg_codec, int *pi_cat,
                    vlc_fourcc_t *pi_fourcc, const char **ppsz_name );
  vlc_fourcc_t GetVlcAudioFormat( int i_sample_fmt );
  
@@ -10,7 +22,15 @@ $OpenBSD: patch-modules_codec_avcodec_avcodec_h,v 1.3 2014/04/12 20:41:26 brad E
  picture_t * DecodeVideo    ( decoder_t *, block_t ** );
  aout_buffer_t * DecodeAudio( decoder_t *, block_t ** );
  subpicture_t *DecodeSubtitle( decoder_t *p_dec, block_t ** );
-@@ -397,3 +399,5 @@ int ffmpeg_OpenCodec( decoder_t *p_dec );
+@@ -64,7 +61,6 @@ void EndVideoDec( decoder_t *p_dec );
+ /* Audio Decoder */
+ int InitAudioDec( decoder_t *p_dec, AVCodecContext *p_context,
+                   AVCodec *p_codec, int i_codec_id, const char *psz_namecodec );
+-void EndAudioDec( decoder_t *p_dec );
+ 
+ /* Subtitle Decoder */
+ int InitSubtitleDec( decoder_t *p_dec, AVCodecContext *p_context,
+@@ -397,3 +393,5 @@ int ffmpeg_OpenCodec( decoder_t *p_dec );
  #ifndef AV_PKT_FLAG_KEY
  #   define AV_PKT_FLAG_KEY         PKT_FLAG_KEY
  #endif
