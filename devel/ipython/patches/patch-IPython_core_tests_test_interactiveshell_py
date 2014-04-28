@@ -1,12 +1,12 @@
-$OpenBSD: patch-IPython_core_tests_test_interactiveshell_py,v 1.1 2013/11/04 11:31:12 edd Exp $
---- IPython/core/tests/test_interactiveshell.py.orig	Sun Nov  3 15:43:31 2013
-+++ IPython/core/tests/test_interactiveshell.py	Sun Nov  3 15:43:44 2013
-@@ -431,7 +431,7 @@ class TestSystemRaw(unittest.TestCase):
+$OpenBSD: patch-IPython_core_tests_test_interactiveshell_py,v 1.2 2014/04/28 21:19:41 edd Exp $
+--- IPython/core/tests/test_interactiveshell.py.orig	Mon Apr 28 22:01:28 2014
++++ IPython/core/tests/test_interactiveshell.py	Mon Apr 28 22:01:48 2014
+@@ -465,7 +465,7 @@ class TestSystemRaw(unittest.TestCase, ExitCodeChecks)
      def test_1(self):
          """Test system_raw with non-ascii cmd
          """
--        cmd = ur'''python -c "'åäö'"   '''
-+        cmd = ur'''${MODPY_BIN} -c "'åäö'"   '''
+-        cmd = u'''python -c "'åäö'"   '''
++        cmd = u'''${MODPY_BIN} -c "'åäö'"   '''
          ip.system_raw(cmd)
-     
-     def test_exit_code(self):
+ 
+ # TODO: Exit codes are currently ignored on Windows.

@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.25 2014/03/17 23:15:01 edd Exp $
+# $OpenBSD: Makefile,v 1.26 2014/04/28 21:19:41 edd Exp $
 
 COMMENT=		enhanced interactive Python shell
 
-MODPY_EGG_VERSION =	1.2.1
+MODPY_EGG_VERSION =	2.0.0
 DISTNAME=		ipython-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
 
 HOMEPAGE=		http://ipython.org/
 
-MAINTAINER=		Will Maier <wcmaier@openbsd.org>
+MAINTAINER=		Edd Barrett <edd@openbsd.org>
 
 MODULES=		lang/python
 
@@ -20,7 +20,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			net/py-zmq \
 			graphics/py-matplotlib>=1.2.0 \
 			textproc/py-pygments \
-			www/py-tornado \
+			www/py-tornado>=3.2 \
 			www/py-jinja2
 # Oddly enough, Ipython installs the test suite, so we can run it right out
 # of ${LOCALBASE}. Note that if you have pdb++ installed, tests will fail.
@@ -29,7 +29,8 @@ TEST_DEPENDS =		${FULLPKGNAME}:devel/ipython \
 BUILD_DEPENDS =		textproc/py-sphinx \
 			graphics/py-matplotlib>=1.2.0 \
 			net/py-zmq \
-			math/graphviz
+			math/graphviz \
+			textproc/py-numpydoc
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -43,6 +44,7 @@ pre-patch:
 MAKE_ENV +=	PYTHONPATH=${WRKSRC}
 post-build:
 	cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
+	${SUBST_CMD} ${WRKBUILD}/IPython/core/tests/test_interactiveshell.py
 
 # Despite the fact that setupbase.py defines paths for examples to
 # be installed into, we still have to do it manually for some reason.
@@ -60,23 +62,20 @@ EXAMPLES_DIR =	${PREFIX}/share/examples/ipython-examples/
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLES_DIR}
 	${INSTALL_DATA_DIR} ${APPS_DIR}
+	${INSTALL_DATA_DIR} ${DOCS_DIR}
 
 	cp -r ${WRKSRC}/examples/* ${EXAMPLES_DIR}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLES_DIR}/*
-	${INSTALL_DATA} ${WRKSRC}/docs/emacs/ipython.el ${EXAMPLES_DIR}
-	mv ${EXAMPLES_DIR}/core/*.desktop ${APPS_DIR}
+	mv ${EXAMPLES_DIR}/IPython\ Kernel/*.desktop ${APPS_DIR}
 
 	cp -r ${WRKSRC}/docs/build/html ${DOCS_DIR}/html
 	chown -R ${SHAREOWN}:${SHAREGRP} ${DOCS_DIR}
-
-	# empty dir i dont want in the PLIST
-	rmdir ${DOCS_DIR}/extensions
 
 pre-build:
 	${SUBST_CMD} ${WRKBUILD}/IPython/core/tests/test_interactiveshell.py
 
 do-test:
-	PYTHONIOENCODING='utf-8' ${LOCALBASE}/bin/iptest -vvs
+	PYTHONIOENCODING='utf-8' ${LOCALBASE}/bin/iptest
 
 # A couple of test failures, reported, but upstream think these are bugs
 # in the test harness. They refuse to fix since the 1.x branch is about to

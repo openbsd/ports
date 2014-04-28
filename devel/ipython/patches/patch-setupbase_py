@@ -1,22 +1,15 @@
-$OpenBSD: patch-setupbase_py,v 1.4 2013/11/04 11:31:12 edd Exp $
+$OpenBSD: patch-setupbase_py,v 1.5 2014/04/28 21:19:41 edd Exp $
 
---- setupbase.py.orig	Fri Aug  9 02:02:40 2013
-+++ setupbase.py	Wed Sep  4 22:05:57 2013
-@@ -208,7 +208,7 @@ def find_data_files():
+Put man pages where they belong.
+
+--- setupbase.py.orig	Sun Apr 27 16:47:44 2014
++++ setupbase.py	Sun Apr 27 16:48:09 2014
+@@ -272,7 +272,7 @@ def find_data_files():
+     Just man pages at this point.
      """
  
-     docdirbase  = pjoin('share', 'doc', 'ipython')
 -    manpagebase = pjoin('share', 'man', 'man1')
 +    manpagebase = pjoin('man', 'man1')
  
      # Simple file lists can be made by hand
      manpages = [f for f in glob(pjoin('docs','man','*.1.gz')) if isfile(f)]
-@@ -222,7 +222,7 @@ def find_data_files():
-     example_files = make_dir_struct(
-         'data',
-         pjoin('docs','examples'),
--        pjoin(docdirbase,'examples')
-+        pjoin('share','examples', 'ipython-examples')
-     )
-     manual_files = make_dir_struct(
-         'data',
