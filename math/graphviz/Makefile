@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.56 2014/03/17 23:21:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2014/04/28 22:03:11 sthen Exp $
 
 COMMENT-main=	graph drawing software
 
 DISTNAME=	graphviz-2.36.0
-REVISION=	0
+REVISION=	1
 PKGNAME-main=	${DISTNAME}
 CATEGORIES=	math devel graphics
 
