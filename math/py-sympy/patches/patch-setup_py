@@ -1,15 +1,15 @@
-$OpenBSD: patch-setup_py,v 1.2 2013/03/06 14:46:35 benoit Exp $
+$OpenBSD: patch-setup_py,v 1.3 2014/04/28 14:56:10 benoit Exp $
 
 Manual path
 
---- setup.py.origy	Wed Oct 17 04:30:33 2012
-+++ setup.py	Wed Mar  6 13:32:13 2013
-@@ -277,7 +277,7 @@ setup(
-       scripts = ['bin/isympy'],
-       ext_modules = [],
-       package_data = { 'sympy.utilities.mathml' : ['data/*.xsl'] },
--      data_files = [('share/man/man1', ['doc/man/isympy.1'])],
-+      data_files = [('man/man1', ['doc/man/isympy.1'])],
-       cmdclass    = {'test': test_sympy,
-                      'bench': run_benchmarks,
-                      'clean': clean,
+--- setup.py.orig	Mon Apr 28 14:14:33 2014
++++ setup.py	Mon Apr 28 14:14:57 2014
+@@ -303,7 +303,7 @@
+     "scripts": ['bin/isympy'],
+     "ext_modules": [],
+     "package_data": { 'sympy.utilities.mathml': ['data/*.xsl'] },
+-    "data_files": [('share/man/man1', ['doc/man/isympy.1'])],
++    "data_files": [('man/man1', ['doc/man/isympy.1'])],
+     "cmdclass": cmdclass,
+     "classifiers": classifiers,
+ }
