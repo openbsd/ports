@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/10/28 07:29:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/04/29 08:05:33 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_supply/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_supply/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_supply/__init__.pyc
@@ -6,6 +6,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_supply/locale/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_supply/locale/ca_ES.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_supply/locale/de_DE.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_supply/locale/es_AR.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_supply/locale/es_CO.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_supply/locale/es_ES.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_supply/locale/fr_FR.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_supply/locale/sl_SI.po

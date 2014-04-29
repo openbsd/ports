@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/04/13 08:11:14 ajacoutot Exp $
-
-MODPY_EGG_VERSION=	3.0.2
-REVISION=		#empty
+# $OpenBSD: Makefile,v 1.4 2014/04/29 08:05:31 ajacoutot Exp $
 
 TRYTOND_MODULE =	account_dunning_letter
 

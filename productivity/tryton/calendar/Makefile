@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2014/02/01 09:10:54 ajacoutot Exp $
-
-MODPY_EGG_VERSION=	3.0.2
-REVISION=		#empty
+# $OpenBSD: Makefile,v 1.12 2014/04/29 08:05:32 ajacoutot Exp $
 
 TRYTOND_MODULE =	calendar
 
