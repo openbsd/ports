@@ -1,0 +1,33 @@
+$OpenBSD: patch-event_c,v 1.7 2014/04/29 11:36:22 dcoppa Exp $
+
+commit 4073f8d88653032854136529da70e38daf6882be
+Author: Uli Schlachter <psychon@znc.in>
+Date:   Mon Apr 21 10:41:07 2014 +0200
+
+Call AllowEvents after grabbed events on a drawin
+
+When we get an event due to a previous GrabButtons call, we have
+to continue normal event processing again, because the server froze
+the input device for us. Without this, everything appears to freeze.
+
+Signed-off-by: Uli Schlachter <psychon@znc.in>
+
+--- event.c.orig	Fri Apr 11 11:07:10 2014
++++ event.c	Tue Apr 29 13:30:39 2014
+@@ -196,6 +196,16 @@ event_handle_button(xcb_button_press_event_t *ev)
+         lua_pop(globalconf.L, 1);
+         /* check if any button object matches */
+         event_button_callback(ev, &drawin->buttons, -1, 1, NULL);
++        /* Either we are receiving this due to ButtonPress/Release on the root
++         * window or because we grabbed the button on the window. In the later
++         * case we have to call AllowEvents.
++         * Use AsyncPointer instead of ReplayPointer so that the event is
++         * "eaten" instead of being handled again on the root window.
++         */
++        if(ev->child == XCB_NONE)
++            xcb_allow_events(globalconf.connection,
++                             XCB_ALLOW_ASYNC_POINTER,
++                             XCB_CURRENT_TIME);
+     }
+     else if((c = client_getbyframewin(ev->event)))
+     {
