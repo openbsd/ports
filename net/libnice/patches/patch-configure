@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1 2014/03/09 22:21:23 ajacoutot Exp $
---- configure.orig	Fri Mar  7 10:59:38 2014
-+++ configure	Fri Mar  7 11:00:00 2014
-@@ -14057,7 +14057,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
+$OpenBSD: patch-configure,v 1.2 2014/04/29 13:10:26 ajacoutot Exp $
+--- configure.orig	Tue Apr 29 03:10:57 2014
++++ configure	Tue Apr 29 14:57:51 2014
+@@ -14076,7 +14076,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
    CFLAGS="$save_CFLAGS"
  
    if test "X$flag_ok" = Xyes ; then

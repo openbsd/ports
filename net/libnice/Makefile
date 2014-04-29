@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.26 2014/04/01 14:52:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2014/04/29 13:10:26 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	GLib ICE implementation
 
-DISTNAME =	libnice-0.1.5
-REVISION =	1
-SHARED_LIBS +=  nice                 2.2      # 13.0
+DISTNAME =	libnice-0.1.6
+
+SHARED_LIBS +=  nice                 2.2      # 14.0
 
 CATEGORIES =	net
 
