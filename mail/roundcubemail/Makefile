@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.77 2014/04/20 19:59:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.78 2014/04/29 08:53:27 sthen Exp $
 
 COMMENT=	imap4 webmail client
 
 COMPOSER_V=	1.0.0-alpha8
 DISTNAME=	roundcubemail-1.0.0
+REVISION=	0
 CATEGORIES=	mail www
 HOMEPAGE=	http://www.roundcube.net/
 
@@ -40,7 +41,7 @@ post-extract:
 
 do-configure:
 	perl -pi -e '$$. == 1 && s,^#!.*env.*php.*,#!${MODPHP_BIN},;' \
-	    -e 'close ARGV if eof;' ${WRKSRC}/bin/*
+	    -e 'close ARGV if eof;' ${WRKSRC}/bin/* ${WRKSRC}/composer.phar
 	${SUBST_CMD} ${WRKSRC}/bin/update.sh
 
 do-install:
@@ -55,6 +56,7 @@ do-install:
 	chgrp -R wheel ${INSTDIR}/bin; \
 	chmod -R o-rwx ${INSTDIR}/bin; \
 	find ${INSTDIR} \( -name \*.orig -or -name \*.src \) -exec rm -f {} +
+	find ${INSTDIR} \( -name \*.png -or -name \*.js -or -name \*.css \) -exec chmod -x {} +
 	chmod 700 ${INSTDIR}/composer.phar
 
 .include <bsd.port.mk>
