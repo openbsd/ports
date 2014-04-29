@@ -1,18 +1,16 @@
-$OpenBSD: patch-cmake_modules_FindXscreensaver_cmake,v 1.4 2013/04/24 19:32:57 zhuk Exp $
---- cmake/modules/FindXscreensaver.cmake.orig	Mon Aug 13 01:07:33 2012
-+++ cmake/modules/FindXscreensaver.cmake	Mon Aug 13 01:15:05 2012
-@@ -5,6 +5,10 @@
+$OpenBSD: patch-cmake_modules_FindXscreensaver_cmake,v 1.5 2014/04/29 08:57:44 zhuk Exp $
+--- cmake/modules/FindXscreensaver.cmake.orig	Thu Jan  2 23:44:58 2014
++++ cmake/modules/FindXscreensaver.cmake	Fri Feb 28 22:04:53 2014
+@@ -5,6 +5,8 @@
  # Redistribution and use is allowed according to the terms of the BSD license.
  # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
  
-+if (NOT XSCREENSAVER_CHECK_ITEM)
-+  set(XSCREENSAVER_CHECK_ITEM xdeco)
-+endif(NOT XSCREENSAVER_CHECK_ITEM)
++set(XSCREENSAVER_CHECK_ITEM xdeco CACHE STRING "screen saver to check existence of")
 +
  if (NOT XSCREENSAVER_FOUND)
    set(xscreensaver_alldirs)
    set(xscreensaver_checkdirs ${KDE4_INCLUDE_DIR}
-@@ -25,10 +29,10 @@ bin/xscreensaver-hacks hacks)
+@@ -25,10 +27,10 @@ bin/xscreensaver-hacks hacks)
          set(xscreensaver_alldirs ${xscreensaver_alldirs} ${xscreensaver_path}/${suffix})
       endforeach(xscreensaver_path ${xscreensaver_checkdirs} )
    endforeach(suffix lib${LIB_SUFFIX}/xscreensaver lib/xscreensaver lib64/xscreensaver libexec/xscreensaver bin/xscreensaver-hacks hacks)
@@ -25,7 +23,7 @@ $OpenBSD: patch-cmake_modules_FindXscreensaver_cmake,v 1.4 2013/04/24 19:32:57 z
      ${KDE4_INCLUDE_DIR}
      /usr/
      /usr/local/
-@@ -38,6 +42,7 @@ bin/xscreensaver-hacks hacks)
+@@ -38,6 +40,7 @@ bin/xscreensaver-hacks hacks)
      /opt/kde3/
      /usr/kde/
      /usr/share/xscreensaver/
@@ -33,7 +31,7 @@ $OpenBSD: patch-cmake_modules_FindXscreensaver_cmake,v 1.4 2013/04/24 19:32:57 z
      /usr/local/kde/
      /usr/local/xscreensaver/
      /usr/openwin/lib/xscreensaver/
-@@ -45,15 +50,15 @@ bin/xscreensaver-hacks hacks)
+@@ -45,15 +48,15 @@ bin/xscreensaver-hacks hacks)
    )
    #MESSAGE(STATUS "XSCREENSAVER_CONFIG_DIR :<${XSCREENSAVER_CONFIG_DIR}>")
  
