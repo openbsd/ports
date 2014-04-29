@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2013/11/20 20:57:29 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2014/04/29 21:30:57 landry Exp $
 bin/${MOZILLA_PROJECT}-esr
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/application.ini
@@ -15,6 +15,9 @@ lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/chrome/icons/default/default48
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/components/
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/components/components.manifest
 @lib lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/components/libbrowsercomps.so.${LIBbrowsercomps_VERSION}
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/defaults/
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/defaults/preferences/
+lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/defaults/preferences/all-openbsd.js
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/extensions/
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/
 lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/icon.png

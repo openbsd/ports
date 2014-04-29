@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2014/03/24 21:14:52 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2014/04/29 21:30:57 landry Exp $
 
 COMMENT =	Firefox web browser, Extended Support Release
 
-MOZILLA_VERSION =	24.4.0esr
+MOZILLA_VERSION =	24.5.0esr
 MOZILLA_BRANCH =	esr24
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
@@ -61,6 +61,10 @@ RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-ffmpeg
 MOZILLA_AUTOCONF_DIRS +=	js/src
 
 post-install:
+	# install prefs
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/defaults/preferences
+	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/all-openbsd.js \
+		${PREFIX}/lib/${MOZILLA_PROJECT}-esr-${MOZILLA_VER}/browser/defaults/preferences/all-openbsd.js
 	# install desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
 	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/${MOZILLA_PROJECT}.desktop \
