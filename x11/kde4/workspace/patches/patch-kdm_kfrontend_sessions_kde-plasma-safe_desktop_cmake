@@ -1,7 +1,7 @@
-$OpenBSD: patch-kdm_kfrontend_sessions_kde-plasma-safe_desktop_cmake,v 1.1 2014/01/28 14:49:26 zhuk Exp $
+$OpenBSD: patch-kdm_kfrontend_sessions_kde-plasma-safe_desktop_cmake,v 1.2 2014/04/29 08:42:57 zhuk Exp $
 Deconfict with kdebase-3.x.
---- kdm/kfrontend/sessions/kde-plasma-safe.desktop.cmake.orig	Mon Jan 27 21:16:37 2014
-+++ kdm/kfrontend/sessions/kde-plasma-safe.desktop.cmake	Mon Jan 27 21:16:53 2014
+--- kdm/kfrontend/sessions/kde-plasma-safe.desktop.cmake.orig	Mon Apr 28 08:38:04 2014
++++ kdm/kfrontend/sessions/kde-plasma-safe.desktop.cmake	Mon Apr 28 23:24:20 2014
 @@ -1,8 +1,8 @@
  [Desktop Entry]
  Encoding=UTF-8
@@ -10,6 +10,6 @@ Deconfict with kdebase-3.x.
 -TryExec=${BIN_INSTALL_DIR}/startkde
 +Exec=${BIN_INSTALL_DIR}/startkde4 --failsafe
 +TryExec=${BIN_INSTALL_DIR}/startkde4
+ DesktopNames=KDE
  Name=KDE Plasma Workspace (failsafe session)
  Name[ar]=مساحة عمل بلازما كدي (الجلسة الآمنة)
- Name[bn]=কে.ডি.ই. প্লাসমা ওয়ার্কস্পেস (failsafe session)

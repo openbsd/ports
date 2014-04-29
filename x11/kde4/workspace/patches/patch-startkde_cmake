@@ -1,12 +1,12 @@
-$OpenBSD: patch-startkde_cmake,v 1.4 2014/02/08 18:15:20 zhuk Exp $
+$OpenBSD: patch-startkde_cmake,v 1.5 2014/04/29 08:42:57 zhuk Exp $
 1. Fix lnusertemp locate and make startkde work even without X started.
 2. Deconflict kde-runtime with kdebase-3.x.
 3. Don't lie about actual temporary directories used (see lnusertemp
    patch in kdelibs).
---- startkde.cmake.orig	Thu Jan  2 23:27:52 2014
-+++ startkde.cmake	Mon Feb  3 23:09:09 2014
+--- startkde.cmake.orig	Mon Apr 28 08:38:04 2014
++++ startkde.cmake	Mon Apr 28 23:22:20 2014
 @@ -3,6 +3,11 @@
- #  DEFAULT KDE STARTUP SCRIPT ( @KDE_VERSION_STRING@ )
+ #  DEFAULT KDE STARTUP SCRIPT ( @KDE4WORKSPACE_VERSION@ )
  #
  
 +case X"$DISPLAY" in
@@ -40,7 +40,7 @@ $OpenBSD: patch-startkde_cmake,v 1.4 2014/02/08 18:15:20 zhuk Exp $
  # Note: temporary locations can be overriden through the KDETMP and KDEVARTMP
  # environment variables
  for resource in tmp cache socket; do
-@@ -353,11 +358,11 @@ if test $? -eq 255; then
+@@ -358,11 +363,11 @@ if test $? -eq 255; then
    xmessage -geometry 500x100 "Could not start ksmserver. Check your installation."
  fi
  
