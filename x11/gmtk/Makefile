@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2014/02/07 10:25:52 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.25 2014/04/29 13:38:48 dcoppa Exp $
 
 COMMENT =	gnome-mplayer toolkit
-DISTNAME =	gmtk-1.0.9b
-REVISION =	0
+DISTNAME =	gmtk-1.0.9
+EPOCH =		0
 
 SHARED_LIBS =	gmlib	2.0 \
 		gmtk	2.0
@@ -16,7 +16,7 @@ MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	https://gmtk.googlecode.com/files/
+MASTER_SITES =	https://gmtk.googlecode.com/svn/packages/
 
 MODULES =	devel/gettext \
 		textproc/intltool

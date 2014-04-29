@@ -1,0 +1,19 @@
+$OpenBSD: patch-configure_in,v 1.1 2014/04/29 13:39:54 dcoppa Exp $
+
+unbreak
+
+--- configure.in.orig	Tue Apr 29 15:15:39 2014
++++ configure.in	Tue Apr 29 15:15:59 2014
+@@ -53,12 +53,6 @@ PKG_CHECK_MODULES(GECKO, [libxul >= 25],[GECKO_CFLAGS=
+ fi
+ 
+ if test "$GECKO_CFLAGS" = ""; then
+-PKG_CHECK_MODULES(GECKO, [libxul >= 2.23],[GECKO_CFLAGS="$GECKO_CFLAGS -DMOZ_NO_MOZALLOC -std=c++11"
+-        AC_MSG_NOTICE([Using libxul >= 2.23 ]) 
+-    ],[AC_MSG_NOTICE([libxul >= 2.23 not found, trying another])])
+-fi
+-
+-if test "$GECKO_CFLAGS" = ""; then
+ PKG_CHECK_MODULES(GECKO, [libxul >= 2],[GECKO_CFLAGS="$GECKO_CFLAGS -DMOZ_NO_MOZALLOC"
+         AC_MSG_NOTICE([Using libxul >= 2.0 ]) 
+     ],[AC_MSG_NOTICE([libxul >= 2 not found, trying another])])

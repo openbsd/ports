@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.40 2014/01/13 11:36:29 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.41 2014/04/29 13:39:54 dcoppa Exp $
 
 COMMENT =		gnome-mplayer browser media plugin
-V =			1.0.9alpha
-DISTNAME =		gecko-mediaplayer-1.0.9a
-PKGNAME =		gecko-mediaplayer-${V}
-REVISION =		1
+V =			1.0.9
+DISTNAME =		gecko-mediaplayer-${V}
+EPOCH =			0
 CATEGORIES =		www
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
 HOMEPAGE =		http://kdekorte.googlepages.com/gecko-mediaplayer/
 
-MASTER_SITES =		https://gecko-mediaplayer.googlecode.com/files/
+MASTER_SITES =		https://gecko-mediaplayer.googlecode.com/svn/packages/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -31,7 +30,8 @@ RUN_DEPENDS =		x11/gnome-mplayer>=${V}
 USE_GMAKE =		Yes
 SHARED_ONLY =		Yes
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoconf
+AUTOCONF_VERSION =	2.69
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include \
 			-I${LOCALBASE}/include/nspr \
 			-I${X11BASE}/include" \
