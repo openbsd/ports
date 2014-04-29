@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.7 2013/10/28 07:27:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2014/04/29 08:05:05 ajacoutot Exp $
 bin/tryton
 lib/python${MODPY_VERSION}/site-packages/tryton/
 lib/python${MODPY_VERSION}/site-packages/tryton-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/tryton-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/tryton-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/tryton-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/tryton-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/tryton-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/tryton-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/tryton/__init__.py
@@ -51,6 +52,8 @@ lib/python${MODPY_VERSION}/site-packages/tryton/common/domain_inversion.py
 lib/python${MODPY_VERSION}/site-packages/tryton/common/domain_inversion.pyc
 lib/python${MODPY_VERSION}/site-packages/tryton/common/domain_parser.py
 lib/python${MODPY_VERSION}/site-packages/tryton/common/domain_parser.pyc
+lib/python${MODPY_VERSION}/site-packages/tryton/common/entry_position.py
+lib/python${MODPY_VERSION}/site-packages/tryton/common/entry_position.pyc
 lib/python${MODPY_VERSION}/site-packages/tryton/common/environment.py
 lib/python${MODPY_VERSION}/site-packages/tryton/common/environment.pyc
 lib/python${MODPY_VERSION}/site-packages/tryton/common/focus.py
@@ -99,6 +102,8 @@ lib/python${MODPY_VERSION}/site-packages/tryton/gui/window/nomodal.py
 lib/python${MODPY_VERSION}/site-packages/tryton/gui/window/nomodal.pyc
 lib/python${MODPY_VERSION}/site-packages/tryton/gui/window/preference.py
 lib/python${MODPY_VERSION}/site-packages/tryton/gui/window/preference.pyc
+lib/python${MODPY_VERSION}/site-packages/tryton/gui/window/revision.py
+lib/python${MODPY_VERSION}/site-packages/tryton/gui/window/revision.pyc
 lib/python${MODPY_VERSION}/site-packages/tryton/gui/window/shortcuts.py
 lib/python${MODPY_VERSION}/site-packages/tryton/gui/window/shortcuts.pyc
 lib/python${MODPY_VERSION}/site-packages/tryton/gui/window/tabcontent.py
@@ -176,6 +181,8 @@ lib/python${MODPY_VERSION}/site-packages/tryton/gui/window/view_form/view/form_g
 lib/python${MODPY_VERSION}/site-packages/tryton/gui/window/view_form/view/form_gtk/many2many.pyc
 lib/python${MODPY_VERSION}/site-packages/tryton/gui/window/view_form/view/form_gtk/many2one.py
 lib/python${MODPY_VERSION}/site-packages/tryton/gui/window/view_form/view/form_gtk/many2one.pyc
+lib/python${MODPY_VERSION}/site-packages/tryton/gui/window/view_form/view/form_gtk/multiselection.py
+lib/python${MODPY_VERSION}/site-packages/tryton/gui/window/view_form/view/form_gtk/multiselection.pyc
 lib/python${MODPY_VERSION}/site-packages/tryton/gui/window/view_form/view/form_gtk/one2many.py
 lib/python${MODPY_VERSION}/site-packages/tryton/gui/window/view_form/view/form_gtk/one2many.pyc
 lib/python${MODPY_VERSION}/site-packages/tryton/gui/window/view_form/view/form_gtk/one2one.py
