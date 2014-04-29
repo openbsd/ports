@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2014/01/25 13:18:04 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2014/04/29 07:32:20 ajacoutot Exp $
 
 COMMENT-main=		Samhain Intrusion Detection System - documentation
 COMMENT-client=		Samhain Intrusion Detection System - client
@@ -13,8 +13,8 @@ FULLPKGPATH-client=	security/samhain,-client
 PKGNAME-server=		samhain-server-${VERSION}
 
 REVISION-main=		3
-REVISION-client=	8
-REVISION-server=	10
+REVISION-client=	9
+REVISION-server=	11
 
 CATEGORIES=		security
 
@@ -27,7 +27,6 @@ MAINTAINER=		Robert Nagy <robert@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CPPFLAGS="-DAI_ADDRCONFIG=0"
 CONFIGURE_ARGS=		--enable-login-watch \
 			--with-state-dir=/var/samhain \
 			--enable-suidcheck \
