@@ -1,8 +1,8 @@
-$OpenBSD: patch-cmake_modules_FindTaglib_cmake,v 1.1 2014/02/08 16:54:25 zhuk Exp $
+$OpenBSD: patch-cmake_modules_FindTaglib_cmake,v 1.2 2014/04/29 09:39:32 zhuk Exp $
 Fix Taglib detection, avoiding putting -L/usr/local/lib everywhere.
 --- cmake/modules/FindTaglib.cmake.orig	Wed Jan 29 13:36:39 2014
-+++ cmake/modules/FindTaglib.cmake	Wed Jan 29 13:36:48 2014
-@@ -10,76 +10,31 @@
++++ cmake/modules/FindTaglib.cmake	Thu Mar 13 20:28:07 2014
+@@ -10,76 +10,30 @@
  # Redistribution and use is allowed according to the terms of the BSD license.
  # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
  
@@ -55,12 +55,13 @@ Fix Taglib detection, avoiding putting -L/usr/local/lib everywhere.
 -  find_path(TAGLIB_INCLUDES
 +find_path(TAGLIB_INCLUDES
      NAMES
-     tag.h
-     PATH_SUFFIXES taglib
+-    tag.h
+-    PATH_SUFFIXES taglib
 -    PATHS
 -    ${KDE4_INCLUDE_DIR}
 -    ${INCLUDE_INSTALL_DIR}
 -  )
++    taglib/tag.h
 +    HINTS ${PC_TAGLIB_INCLUDE_DIRS}
 +    )
  
