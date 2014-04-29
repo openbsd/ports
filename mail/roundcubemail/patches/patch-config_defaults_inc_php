@@ -1,6 +1,15 @@
-$OpenBSD: patch-config_defaults_inc_php,v 1.1 2014/04/20 19:59:54 sthen Exp $
+$OpenBSD: patch-config_defaults_inc_php,v 1.2 2014/04/29 19:38:40 sthen Exp $
 --- config/defaults.inc.php.orig	Sun Apr  6 15:13:09 2014
-+++ config/defaults.inc.php	Sun Apr 20 20:51:11 2014
++++ config/defaults.inc.php	Tue Apr 29 20:35:53 2014
+@@ -24,7 +24,7 @@ $config = array();
+ // Currently supported db_providers: mysql, pgsql, sqlite, mssql or sqlsrv
+ // For examples see http://pear.php.net/manual/en/package.database.mdb2.intro-dsn.php
+ // NOTE: for SQLite use absolute path: 'sqlite:////full/path/to/sqlite.db?mode=0646'
+-$config['db_dsnw'] = 'mysql://roundcube:@localhost/roundcubemail';
++$config['db_dsnw'] = 'sqlite:///roundcubemail/db/sqlite.db?mode=0660';
+ 
+ // Database DSN for read-only operations (if empty write database will be used)
+ // useful for database replication
 @@ -594,7 +594,7 @@ $config['spellcheck_dictionary'] = false;
  // - 'atd'     - install your own After the Deadline server or check with the people at http://www.afterthedeadline.com before using their API
  // Since Google shut down their public spell checking service, you need to 
