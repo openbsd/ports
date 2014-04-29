@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2013/04/24 08:53:37 zhuk Exp $
+@comment $OpenBSD: PLIST,v 1.3 2014/04/29 08:40:02 zhuk Exp $
 include/kde4/
 include/kde4/KDE/
 include/kde4/KDE/Phonon/
@@ -175,7 +175,7 @@ ${KDE4LIB}/
 @lib lib/libphonon_s.so.${LIBphonon_s_VERSION}
 @lib lib/libphononexperimental.so.${LIBphononexperimental_VERSION}
 lib/pkgconfig/phonon.pc
-lib/qt4/mkspecs/modules/qt_phonon.pri
+@comment lib/qt4/mkspecs/modules/qt_phonon.pri
 share/dbus-1/interfaces/org.kde.Phonon.AudioOutput.xml
 share/phonon/
 share/phonon/buildsystem/
