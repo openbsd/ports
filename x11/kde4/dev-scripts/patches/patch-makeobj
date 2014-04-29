@@ -1,9 +1,9 @@
-$OpenBSD: patch-makeobj,v 1.1.1.1 2013/12/08 18:01:35 zhuk Exp $
+$OpenBSD: patch-makeobj,v 1.2 2014/04/29 08:54:55 zhuk Exp $
 --- makeobj.orig	Sun Nov 10 14:17:04 2013
 +++ makeobj	Sun Nov 10 14:17:11 2013
 @@ -1,4 +1,4 @@
 -#! /usr/bin/env bash
-+# /bin/sh
++#! /bin/sh
  
  # this is a script around make which basicly checks
  # if it's in srcdir or in builddir and changes to 
