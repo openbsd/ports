@@ -1,9 +1,0 @@
-$OpenBSD: patch-build_make_configure_sh,v 1.6 2012/08/27 20:42:25 jasper Exp $
---- build/make/configure.sh.orig	Tue May  8 19:14:00 2012
-+++ build/make/configure.sh	Wed May 16 17:07:35 2012
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!${BASH}
- ##
- ##  configure.sh
- ##

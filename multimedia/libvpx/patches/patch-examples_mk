@@ -1,12 +1,12 @@
-$OpenBSD: patch-examples_mk,v 1.2 2012/05/22 18:22:50 ajacoutot Exp $
---- examples.mk.orig	Tue May  8 19:14:00 2012
-+++ examples.mk	Wed May 16 17:07:35 2012
-@@ -179,7 +179,7 @@ BINS-$(NOT_MSVS)           += $(addprefix $(BUILD_PFX)
- 
+$OpenBSD: patch-examples_mk,v 1.3 2014/04/29 23:58:06 brad Exp $
+--- examples.mk.orig	Fri Jan 10 15:12:42 2014
++++ examples.mk	Mon Feb 17 14:41:02 2014
+@@ -192,7 +192,7 @@ BINS-$(NOT_MSVS)           += $(addprefix $(BUILD_PFX)
  # Instantiate linker template for all examples.
  CODEC_LIB=$(if $(CONFIG_DEBUG_LIBS),vpx_g,vpx)
--CODEC_LIB_SUF=$(if $(CONFIG_SHARED),.so,.a)
-+CODEC_LIB_SUF=$(if $(CONFIG_SHARED),.so.$(LIBVPX_VERSION),.a)
+ SHARED_LIB_SUF=$(if $(filter darwin%,$(TGT_OS)),.dylib,.so)
+-CODEC_LIB_SUF=$(if $(CONFIG_SHARED),$(SHARED_LIB_SUF),.a)
++CODEC_LIB_SUF=$(if $(CONFIG_SHARED),$(SHARED_LIB_SUF).$(LIBVPX_VERSION),.a)
  $(foreach bin,$(BINS-yes),\
      $(if $(BUILD_OBJS),$(eval $(bin):\
          $(LIB_PATH)/lib$(CODEC_LIB)$(CODEC_LIB_SUF)))\

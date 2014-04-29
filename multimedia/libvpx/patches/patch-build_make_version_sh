@@ -1,9 +1,0 @@
-$OpenBSD: patch-build_make_version_sh,v 1.2 2010/10/31 21:05:38 ckuethe Exp $
---- build/make/version.sh.orig	Thu Oct 28 09:14:14 2010
-+++ build/make/version.sh	Thu Oct 28 21:59:18 2010
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!${BASH}
- ##
- ##  Copyright (c) 2010 The WebM project authors. All Rights Reserved.
- ##

@@ -1,27 +1,30 @@
-$OpenBSD: patch-libs_mk,v 1.7 2014/03/17 14:01:09 brad Exp $
---- libs.mk.orig	Mon Oct 14 14:16:36 2013
-+++ libs.mk	Thu Dec  5 21:38:34 2013
-@@ -181,16 +181,11 @@ LIBS-$(if $(BUILD_LIBVPX),$(CONFIG_STATIC)) += $(BUILD
- $(BUILD_PFX)libvpx_g.a: $(LIBVPX_OBJS)
- 
- BUILD_LIBVPX_SO         := $(if $(BUILD_LIBVPX),$(CONFIG_SHARED))
+$OpenBSD: patch-libs_mk,v 1.8 2014/04/29 23:58:06 brad Exp $
+--- libs.mk.orig	Fri Jan 10 15:12:42 2014
++++ libs.mk	Mon Feb 17 15:19:19 2014
+@@ -271,19 +271,14 @@ EXPORT_FILE             := libvpx.syms
+ LIBVPX_SO_SYMLINKS      := $(addprefix $(LIBSUBDIR)/, \
+                              libvpx.dylib  )
+ else
 -LIBVPX_SO               := libvpx.so.$(VERSION_MAJOR).$(VERSION_MINOR).$(VERSION_PATCH)
--LIBS-$(BUILD_LIBVPX_SO) += $(BUILD_PFX)$(LIBVPX_SO)\
--                           $(notdir $(LIBVPX_SO_SYMLINKS))
 +LIBVPX_SO               := libvpx.so.$(LIBVPX_VERSION)
-+LIBS-$(BUILD_LIBVPX_SO) += $(BUILD_PFX)$(LIBVPX_SO)
- $(BUILD_PFX)$(LIBVPX_SO): $(LIBVPX_OBJS) libvpx.ver
- $(BUILD_PFX)$(LIBVPX_SO): extralibs += -lm
--$(BUILD_PFX)$(LIBVPX_SO): SONAME = libvpx.so.$(VERSION_MAJOR)
- $(BUILD_PFX)$(LIBVPX_SO): SO_VERSION_SCRIPT = libvpx.ver
+ EXPORT_FILE             := libvpx.ver
+ SYM_LINK                := libvpx.so
 -LIBVPX_SO_SYMLINKS      := $(addprefix $(LIBSUBDIR)/, \
 -                             libvpx.so libvpx.so.$(VERSION_MAJOR) \
 -                             libvpx.so.$(VERSION_MAJOR).$(VERSION_MINOR))
+ endif
+ 
+-LIBS-$(BUILD_LIBVPX_SO) += $(BUILD_PFX)$(LIBVPX_SO)\
+-                           $(notdir $(LIBVPX_SO_SYMLINKS))
++LIBS-$(BUILD_LIBVPX_SO) += $(BUILD_PFX)$(LIBVPX_SO)
+ $(BUILD_PFX)$(LIBVPX_SO): $(LIBVPX_OBJS) $(EXPORT_FILE)
+ $(BUILD_PFX)$(LIBVPX_SO): extralibs += -lm
+-$(BUILD_PFX)$(LIBVPX_SO): SONAME = libvpx.so.$(VERSION_MAJOR)
+ $(BUILD_PFX)$(LIBVPX_SO): EXPORTS_FILE = $(EXPORT_FILE)
  
  libvpx.ver: $(call enabled,CODEC_EXPORTS)
- 	@echo "    [CREATE] $@"
-@@ -205,14 +200,6 @@ $(1): $(2)
- 	$(qexec)ln -sf $(LIBVPX_SO) $$@
+@@ -305,15 +300,7 @@ $(1): $(2)
+ 	$(qexec)ln -sf $(2) $$@
  endef
  
 -$(eval $(call libvpx_symlink_template,\
@@ -29,9 +32,10 @@ $OpenBSD: patch-libs_mk,v 1.7 2014/03/17 14:01:09 brad Exp $
 -    $(BUILD_PFX)$(LIBVPX_SO)))
 -$(eval $(call libvpx_symlink_template,\
 -    $(addprefix $(DIST_DIR)/,$(LIBVPX_SO_SYMLINKS)),\
--    $(DIST_DIR)/$(LIBSUBDIR)/$(LIBVPX_SO)))
--
--INSTALL-LIBS-$(CONFIG_SHARED) += $(LIBVPX_SO_SYMLINKS)
- INSTALL-LIBS-$(CONFIG_SHARED) += $(LIBSUBDIR)/$(LIBVPX_SO)
+-    $(LIBVPX_SO)))
  
- LIBS-$(BUILD_LIBVPX) += vpx.pc
+-
+-INSTALL-LIBS-$(BUILD_LIBVPX_SO) += $(LIBVPX_SO_SYMLINKS)
+ INSTALL-LIBS-$(BUILD_LIBVPX_SO) += $(LIBSUBDIR)/$(LIBVPX_SO)
+ 
+ 

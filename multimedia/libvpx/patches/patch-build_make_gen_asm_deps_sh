@@ -1,9 +1,0 @@
-$OpenBSD: patch-build_make_gen_asm_deps_sh,v 1.4 2014/03/17 14:01:09 brad Exp $
---- build/make/gen_asm_deps.sh.orig	Tue May  8 19:14:00 2012
-+++ build/make/gen_asm_deps.sh	Wed May 16 17:10:06 2012
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!${BASH}
- ##
- ##  Copyright (c) 2010 The WebM project authors. All Rights Reserved.
- ##

@@ -1,13 +1,13 @@
-$OpenBSD: patch-vp8_common_reconinter_c,v 1.1 2012/05/22 18:22:50 ajacoutot Exp $
---- vp8/common/reconinter.c.orig	Sun May 20 05:08:58 2012
-+++ vp8/common/reconinter.c	Sun May 20 05:17:36 2012
+$OpenBSD: patch-vp8_common_reconinter_c,v 1.2 2014/04/29 23:58:06 brad Exp $
+--- vp8/common/reconinter.c.orig	Fri Jan 10 15:12:40 2014
++++ vp8/common/reconinter.c	Mon Feb 17 14:37:59 2014
 @@ -10,6 +10,7 @@
  
  
  #include <limits.h>
 +#include <sys/types.h>
  #include "vpx_config.h"
- #include "vpx_rtcd.h"
+ #include "vp8_rtcd.h"
  #include "vpx/vpx_integer.h"
 @@ -17,6 +18,10 @@
  #include "reconinter.h"

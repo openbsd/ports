@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.5 2014/03/17 14:01:09 brad Exp $
+@comment $OpenBSD: PLIST,v 1.6 2014/04/29 23:58:06 brad Exp $
 @bin bin/vp8_scalable_patterns
+@bin bin/vp9_spatial_scalable_encoder
 @bin bin/vpxdec
 @bin bin/vpxenc
 include/vpx/
+include/vpx/svc_context.h
 include/vpx/vp8.h
 include/vpx/vp8cx.h
 include/vpx/vp8dx.h
 include/vpx/vpx_codec.h
-include/vpx/vpx_codec_impl_bottom.h
-include/vpx/vpx_codec_impl_top.h
 include/vpx/vpx_decoder.h
 include/vpx/vpx_encoder.h
 include/vpx/vpx_image.h

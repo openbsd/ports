@@ -1,22 +1,16 @@
-$OpenBSD: patch-configure,v 1.8 2014/03/17 14:01:09 brad Exp $
---- configure.orig	Mon Oct 14 14:16:36 2013
-+++ configure	Thu Dec  5 21:42:57 2013
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!${BASH}
- ##
- ##  configure
- ##
-@@ -104,6 +104,7 @@ all_platforms="${all_platforms} ppc32-linux-gcc"
+$OpenBSD: patch-configure,v 1.9 2014/04/29 23:58:06 brad Exp $
+--- configure.orig	Fri Jan 10 15:12:42 2014
++++ configure	Mon Feb 17 14:39:50 2014
+@@ -108,6 +108,7 @@ all_platforms="${all_platforms} ppc32-linux-gcc"
  all_platforms="${all_platforms} ppc64-darwin8-gcc"
  all_platforms="${all_platforms} ppc64-darwin9-gcc"
  all_platforms="${all_platforms} ppc64-linux-gcc"
 +all_platforms="${all_platforms} sparc-linux-gcc"
  all_platforms="${all_platforms} sparc-solaris-gcc"
+ all_platforms="${all_platforms} x86-android-gcc"
  all_platforms="${all_platforms} x86-darwin8-gcc"
- all_platforms="${all_platforms} x86-darwin8-icc"
-@@ -146,19 +147,6 @@ for t in ${all_targets}; do
-     [ -f ${source_path}/${t}.mk ] && enable ${t}
+@@ -160,19 +161,6 @@ for t in ${all_targets}; do
+     [ -f ${source_path}/${t}.mk ] && enable_feature ${t}
  done
  
 -# check installed doxygen version
@@ -27,15 +21,15 @@ $OpenBSD: patch-configure,v 1.8 2014/03/17 14:01:09 brad Exp $
 -    doxy_minor=${doxy_version%%.*}
 -    doxy_patch=${doxy_version##*.}
 -
--    [ $doxy_major -gt 1 ] && enable doxygen
--    [ $doxy_minor -gt 5 ] && enable doxygen
--    [ $doxy_minor -eq 5 ] && [ $doxy_patch -ge 3 ] && enable doxygen
+-    [ $doxy_major -gt 1 ] && enable_feature doxygen
+-    [ $doxy_minor -gt 5 ] && enable_feature doxygen
+-    [ $doxy_minor -eq 5 ] && [ $doxy_patch -ge 3 ] && enable_feature doxygen
 -fi
 -
  # install everything except the sources, by default. sources will have
  # to be enabled when doing dist builds, since that's no longer a common
  # case.
-@@ -452,18 +440,6 @@ EOF
+@@ -501,18 +489,6 @@ EOF
  }
  
  process_detect() {
@@ -51,6 +45,6 @@ $OpenBSD: patch-configure,v 1.8 2014/03/17 14:01:09 brad Exp $
 -            fi
 -        fi
 -    fi
-     if [ -z "$CC" ]; then
+     if [ -z "$CC" ] || enabled external_build; then
          echo "Bypassing toolchain for environment detection."
-         enable external_build
+         enable_feature external_build
