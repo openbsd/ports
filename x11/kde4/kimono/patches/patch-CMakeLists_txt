@@ -1,4 +1,5 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2013/04/24 12:06:18 zhuk Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2014/04/29 08:56:17 zhuk Exp $
+Fix detection of Akonadi.
 --- CMakeLists.txt.orig	Thu Jan 24 01:49:25 2013
 +++ CMakeLists.txt	Wed Feb 13 18:51:34 2013
 @@ -1,5 +1,7 @@
