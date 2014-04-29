@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.154 2014/04/22 11:38:33 landry Exp $
+# $OpenBSD: Makefile,v 1.155 2014/04/29 21:47:00 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 
-MOZILLA_VERSION =	2.25
+MOZILLA_VERSION =	2.26
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-3.0beta1
+PKGNAME-lightning =	lightning-seamonkey-3.1
 EPOCH-lightning =	0
 
 HOMEPAGE =	http://www.seamonkey-project.org/
-#MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/
+MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/
 
-SO_VERSION =	36.0
+SO_VERSION =	37.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
@@ -81,8 +81,8 @@ post-install:
 	${UNZIP} -oq ${WRKBUILD}/mozilla/dist/xpi-stage/${xpi}*.xpi -d ${EXTDIR}/${guid}
 .endfor
 	# install prefs
-	${INSTALL_DATA} ${FILESDIR}/all-openbsd.js \
-		${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/pref/
+	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/all-openbsd.js \
+		${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/pref/all-openbsd.js
 	# install desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/ ; \
 	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/${MOZILLA_PROJECT}.desktop \

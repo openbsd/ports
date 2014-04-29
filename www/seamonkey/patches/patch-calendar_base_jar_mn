@@ -1,0 +1,16 @@
+$OpenBSD: patch-calendar_base_jar_mn,v 1.1 2014/04/29 21:47:00 landry Exp $
+
+https://hg.mozilla.org/comm-central/rev/f5b5722c7fe1
+remove in 2.28
+
+--- calendar/base/jar.mn.orig	Sat Apr 26 12:05:52 2014
++++ calendar/base/jar.mn	Sat Apr 26 12:06:24 2014
+@@ -106,7 +106,7 @@ calendar.jar:
+     content/calendar/calFilter.js                          (src/calFilter.js)
+     content/calendar/Windows98ToZoneInfoTZId.properties    (src/Windows98ToZoneInfoTZId.properties)
+     content/calendar/WindowsNTToZoneInfoTZId.properties    (src/WindowsNTToZoneInfoTZId.properties)
+-% skin calendar classic/1.0 chrome/skin/linux/calendar/ os=Linux
++% skin calendar classic/1.0 chrome/skin/linux/calendar/
+ % skin calendar classic/1.0 chrome/skin/osx/calendar/ os=Darwin
+ % skin calendar classic/1.0 chrome/skin/windows/calendar/ os=WINNT
+ % skin calendar-common classic/1.0 chrome/skin/common/

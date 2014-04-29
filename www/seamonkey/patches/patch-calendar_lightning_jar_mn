@@ -1,0 +1,16 @@
+$OpenBSD: patch-calendar_lightning_jar_mn,v 1.1 2014/04/29 21:47:00 landry Exp $
+
+https://hg.mozilla.org/comm-central/rev/f5b5722c7fe1
+remove in 2.28
+
+--- calendar/lightning/jar.mn.orig	Sat Apr 26 19:11:53 2014
++++ calendar/lightning/jar.mn	Sat Apr 26 19:12:06 2014
+@@ -55,7 +55,7 @@ lightning.jar:
+     content/lightning/suite-overlay-preferences.xul        (content/suite-overlay-preferences.xul)
+     content/lightning/suite-overlay-sidebar.js             (content/suite-overlay-sidebar.js)
+     content/lightning/suite-overlay-sidebar.xul            (content/suite-overlay-sidebar.xul)
+-% skin lightning classic/1.0 chrome/skin/linux/lightning/ os=Linux
++% skin lightning classic/1.0 chrome/skin/linux/lightning/
+ % skin lightning classic/1.0 chrome/skin/osx/lightning/ os=Darwin
+ % skin lightning classic/1.0 chrome/skin/windows/lightning/ os=WINNT
+ % skin lightning-common classic/1.0 chrome/skin/lightning-common/

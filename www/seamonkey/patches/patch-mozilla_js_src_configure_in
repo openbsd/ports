@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_js_src_configure_in,v 1.23 2014/03/24 21:34:21 landry Exp $
---- mozilla/js/src/configure.in.orig	Wed Mar  5 00:34:18 2014
-+++ mozilla/js/src/configure.in	Sat Mar  8 23:59:03 2014
-@@ -1789,7 +1789,12 @@ ia64*-hpux*)
+$OpenBSD: patch-mozilla_js_src_configure_in,v 1.24 2014/04/29 21:47:00 landry Exp $
+--- mozilla/js/src/configure.in.orig	Wed Apr  9 04:26:56 2014
++++ mozilla/js/src/configure.in	Tue Apr 15 06:27:50 2014
+@@ -1806,7 +1806,12 @@ ia64*-hpux*)
      ;;
  
  *-openbsd*)
@@ -15,7 +15,7 @@ $OpenBSD: patch-mozilla_js_src_configure_in,v 1.23 2014/03/24 21:34:21 landry Ex
      DSO_CFLAGS=''
      DSO_PIC_CFLAGS='-fPIC'
      DSO_LDOPTS='-shared -fPIC'
-@@ -2061,6 +2066,10 @@ dnl ENABLE_ION=0
+@@ -2078,6 +2083,10 @@ dnl ENABLE_ION=0
  mips*-*)
      AC_DEFINE(JS_CPU_MIPS)
      AC_DEFINE(JS_NUNBOX32)
