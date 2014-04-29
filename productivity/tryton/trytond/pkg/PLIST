@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2013/10/28 07:27:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2014/04/29 08:04:41 ajacoutot Exp $
 @newgroup _tryton:675
 @newuser _tryton:675:_tryton:daemon:Tryton Daemon:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/db/trytond/*
@@ -197,6 +197,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/ir/view/model_field_list.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/view/model_form.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/view/model_list.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/view/model_print_model_graph_start_form.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/ir/view/module_config_wizard_done_form.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/view/module_config_wizard_first_form.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/view/module_config_wizard_item_list.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/view/module_config_wizard_other_form.xml
@@ -380,6 +381,8 @@ lib/python${MODPY_VERSION}/site-packages/trytond/tests/copy_.py
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/copy_.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/export_data.py
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/export_data.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/tests/history.py
+lib/python${MODPY_VERSION}/site-packages/trytond/tests/history.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/import_data.py
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/import_data.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/import_data.xml
@@ -387,6 +390,8 @@ lib/python${MODPY_VERSION}/site-packages/trytond/tests/model.py
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/model.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/mptt.py
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/mptt.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/tests/run-tests.py
+lib/python${MODPY_VERSION}/site-packages/trytond/tests/run-tests.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/sequence.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/test.py
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/test.pyc
@@ -400,6 +405,8 @@ lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_exportdata.py
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_exportdata.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_fields.py
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_fields.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_history.py
+lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_history.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_importdata.py
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_importdata.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_mixins.py
@@ -422,6 +429,8 @@ lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_trigger.py
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_trigger.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_tryton.py
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_tryton.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_user.py
+lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_user.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_wizard.py
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_wizard.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_workflow.py
@@ -444,8 +453,6 @@ lib/python${MODPY_VERSION}/site-packages/trytond/tools/datetime_strftime.py
 lib/python${MODPY_VERSION}/site-packages/trytond/tools/datetime_strftime.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/tools/misc.py
 lib/python${MODPY_VERSION}/site-packages/trytond/tools/misc.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/tools/ordereddict.py
-lib/python${MODPY_VERSION}/site-packages/trytond/tools/ordereddict.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/tools/singleton.py
 lib/python${MODPY_VERSION}/site-packages/trytond/tools/singleton.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/transaction.py
