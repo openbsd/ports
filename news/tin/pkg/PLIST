@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2011/10/07 14:12:55 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.11 2014/04/29 16:41:36 giovanni Exp $
 @pkgpath news/tin,nntp_only
 bin/rtin
 @bin bin/tin
@@ -19,6 +19,7 @@ share/locale/fr/LC_MESSAGES/tin.mo
 share/locale/ru/LC_MESSAGES/tin.mo
 share/locale/sv/LC_MESSAGES/tin.mo
 share/locale/tr/LC_MESSAGES/tin.mo
+share/locale/zh_TW/LC_MESSAGES/tin.mo
 share/tin/
 share/tin/metamutt
 share/tin/mime.types

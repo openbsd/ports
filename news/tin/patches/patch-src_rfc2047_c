@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_rfc2047_c,v 1.1 2014/04/29 16:41:36 giovanni Exp $
+--- src/rfc2047.c.orig	Fri Apr 18 12:52:50 2014
++++ src/rfc2047.c	Fri Apr 18 12:53:26 2014
+@@ -1031,9 +1031,8 @@ generate_random_mime_boundary(
+ {
+ 	size_t i;
+ 
+-	srand((unsigned int) time(NULL));
+ 	for (i = 0; i < len - 1; i++)
+-		boundary[i] = base64_alphabet[rand() % sizeof(base64_alphabet)];
++		boundary[i] = base64_alphabet[arc4random_uniform(sizeof(base64_alphabet))];
+ 	boundary[len - 1] = '\0';
+ }
+ 

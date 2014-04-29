@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_misc_c,v 1.1 2014/04/29 16:41:36 giovanni Exp $
+--- src/misc.c.orig	Fri Apr 18 12:42:33 2014
++++ src/misc.c	Fri Apr 18 12:45:22 2014
+@@ -2142,8 +2142,6 @@ random_organization(
+ 	if (*in_org != '/')	/* M_UNIXism?! */
+ 		return in_org;
+ 
+-	srand((unsigned int) time(NULL));
+-
+ 	if ((orgfp = fopen(in_org, "r")) == NULL)
+ 		return selorg;
+ 
+@@ -2157,7 +2155,7 @@ random_organization(
+ 	}
+ 
+ 	rewind(orgfp);
+-	sol = rand() % nool + 1;
++	sol = arc4random_uniform(nool) + 1;
+ 	nool = 0;
+ 	while ((nool != sol) && (fgets(selorg, (int) sizeof(selorg), orgfp)))
+ 		nool++;

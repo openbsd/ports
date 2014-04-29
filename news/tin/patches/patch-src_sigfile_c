@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_sigfile_c,v 1.1 2014/04/29 16:41:36 giovanni Exp $
+--- src/sigfile.c.orig	Fri Apr 18 12:55:26 2014
++++ src/sigfile.c	Fri Apr 18 12:58:04 2014
+@@ -162,8 +162,6 @@ static FILE *
+ open_random_sig(
+ 	char *sigdir)
+ {
+-	srand((unsigned int) time(NULL));
+-
+ 	if (chdir(sigdir) == 0)  {
+ 		if (thrashdir(sigdir) || !*sigfile) {
+ #ifdef DEBUG
+@@ -236,7 +234,7 @@ thrashdir(
+ 			return 1;
+ 		}
+ #endif /* HAVE_REWINDDIR */
+-		pick = rand() % numentries + 1;
++		pick = arc4random_uniform(numentries) + 1;
+ 		while (--pick >= 0) {
+ 			if ((dp = readdir(dirp)) == NULL)
+ 				break;

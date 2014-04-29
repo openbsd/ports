@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2013/04/19 21:32:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2014/04/29 16:41:36 giovanni Exp $
 
 COMMENT=	threaded NNTP- and spool-based UseNet newsreader
 
 DISTNAME=	tin-${MAJORVERSION}.${PATCHLEVEL}
-MAJORVERSION=	2.0
-PATCHLEVEL=	1
-REVISION=	1
+MAJORVERSION=	2.2
+PATCHLEVEL=	0
 CATEGORIES=	news
 
 MASTER_SITES=	http://ftp.funet.fi/pub/unix/news/tin-unoff/ \
@@ -15,7 +14,7 @@ MASTER_SITES=	http://ftp.funet.fi/pub/unix/news/tin-unoff/ \
 
 HOMEPAGE=	http://www.tin.org/
 
-MAINTAINER=	Joachim Schipper <joachim@joachimschipper.nl>
+MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 MODULES=	devel/gettext
 
@@ -25,12 +24,11 @@ MODULES=	devel/gettext
 PERMIT_PACKAGE_CDROM=	no fee
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=		c>=58.2 icuuc idn ncurses pcre pthread
+WANTLIB=		c>=58.2 icuuc ncurses pcre pthread
 
 CONFIGURE_STYLE=	autoconf no-autoheader
 AUTOCONF_VERSION=	2.13
-# XXX Re-review --disable-gsasl on update, it may become useful in the future.
-#
+
 # --with-x does not affect the build, but let's be safe.
 CONFIGURE_ARGS+=	--with-ispell=${LOCALBASE}/bin/ispell \
 			--without-metamail \
@@ -52,7 +50,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 LIB_DEPENDS+=	devel/pcre \
-		devel/libidn \
 		textproc/icu4c
 
 ALL_TARGET=	build
