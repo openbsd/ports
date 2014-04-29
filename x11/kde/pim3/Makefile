@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.85 2014/04/20 12:55:39 espie Exp $
+# $OpenBSD: Makefile,v 1.86 2014/04/29 22:06:50 zhuk Exp $
 
 COMMENT = 		KDE personal information applications
 CATEGORIES =		x11 x11/kde productivity
 VERSION =		3.5.10
 DISTNAME =		kdepim-${VERSION}
 PKGSPEC =		kdepim->=3,<4
-REVISION =		18
+REVISION =		19
 
 MODKDE_VERSION =	3.5.8
 
@@ -62,17 +62,22 @@ SHARED_LIBS +=	kontact              2.0      # .1.0
 
 MODULES =	x11/kde devel/gettext
 
-WANTLIB += DCOP GL GLU ICE SM X11 Xcursor Xdamage Xext Xfixes
-WANTLIB += Xft Xi Xinerama Xmu Xpm Xrandr Xrender Xss Xt Xxf86vm
-WANTLIB += art_lgpl_2 artsflow artsflow_idl artskde assuan audiofile
-WANTLIB += c drm expat fontconfig freetype glib-2.0 gmodule-2.0
-WANTLIB += gnokii gpg-error gpgme gthread-2.0 ical idn jpeg kabc
-WANTLIB += kabc_file kdecore kdefakes kdefx kdeprint kdesu kdeui
-WANTLIB += khtml kimproxy kio kjs kmedia2_idl knewstuff kparts
-WANTLIB += kresources kspell kutils kwalletclient lcms m mad
-WANTLIB += mcop mng ogg pcre pcreposix pisock png pthread qtmcop
-WANTLIB += qui sasl2 sndio soundserver_idl stdc++ usb usb-1.0
-WANTLIB += util vcard vorbis vorbisenc vorbisfile xcb z
+WANTLIB =  c crypto expat m pthread pthread-stubs sndio stdc++ util z
+WANTLIB += GL GLU ICE SM X11 X11-xcb Xau Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xft Xi Xinerama Xmu Xpm Xrandr Xrender Xss Xt Xxf86vm drm
+WANTLIB += fontconfig freetype glapi xcb xcb-dri2 xcb-glx
+WANTLIB += ${KDE}/DCOP ${KDE}/artsflow ${KDE}/artsflow_idl
+WANTLIB += ${KDE}/artskde ${KDE}/kabc ${KDE}/kabc_file ${KDE}/kdecore
+WANTLIB += ${KDE}/kdefakes ${KDE}/kdefx ${KDE}/kdeprint ${KDE}/kdesu
+WANTLIB += ${KDE}/kdeui ${KDE}/khtml ${KDE}/kimproxy ${KDE}/kio
+WANTLIB += ${KDE}/kjs ${KDE}/kmedia2_idl ${KDE}/knewstuff
+WANTLIB += ${KDE}/kparts ${KDE}/kresources ${KDE}/kspell ${KDE}/kutils
+WANTLIB += ${KDE}/kwalletclient ${KDE}/mcop ${KDE}/qtmcop
+WANTLIB += ${KDE}/soundserver_idl ${KDE}/vcard
+WANTLIB += FLAC art_lgpl_2 assuan audiofile fam glib-2.0 gmodule-2.0 gnokii
+WANTLIB += gpg-error gpgme gthread-2.0 ical idn jpeg lcms mad mng ogg
+WANTLIB += pcre pcreposix pisock png qui sasl2 usb usb-1.0 vorbis
+WANTLIB += vorbisenc vorbisfile
 
 LIB_DEPENDS =	x11/kde/libs3 \
 		security/gpgme>=0.4.5 \
@@ -83,9 +88,6 @@ LIB_DEPENDS =	x11/kde/libs3 \
 RUN_DEPENDS =	x11/kde/base3 \
 		devel/desktop-file-utils \
 		x11/gtk+2,-guic
-
-CONFIGURE_ENV += CPPFLAGS="-pthread" \
-		LDFLAGS="-pthread"
 
 # make sure we do not grab boost on the way
 CONFIGURE_ENV += ac_cv_header_boost_format_hpp=no
