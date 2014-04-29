@@ -1,4 +1,5 @@
-$OpenBSD: patch-tools_nepomukshow_CMakeLists_txt,v 1.1 2013/12/08 19:13:33 zhuk Exp $
+$OpenBSD: patch-tools_nepomukshow_CMakeLists_txt,v 1.2 2014/04/29 08:58:30 zhuk Exp $
+Fix linking.
 --- tools/nepomukshow/CMakeLists.txt.orig	Tue Nov  5 18:50:49 2013
 +++ tools/nepomukshow/CMakeLists.txt	Tue Nov  5 18:51:04 2013
 @@ -17,9 +17,9 @@ set( SRCS
