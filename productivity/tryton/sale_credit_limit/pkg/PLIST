@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2014/04/29 11:09:14 ajacoutot Exp $
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_credit_limit/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_credit_limit/__init__.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_credit_limit/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_credit_limit/party.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_credit_limit/party.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_credit_limit/sale.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_credit_limit/sale.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_credit_limit/tests/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_credit_limit/tests/__init__.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_credit_limit/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_credit_limit/tests/test_sale_credit_limit.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_credit_limit/tests/test_sale_credit_limit.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_credit_limit/tryton.cfg
+lib/python${MODPY_VERSION}/site-packages/trytond_sale_credit_limit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/trytond_sale_credit_limit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/trytond_sale_credit_limit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_sale_credit_limit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_sale_credit_limit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_sale_credit_limit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/trytond_sale_credit_limit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_sale_credit_limit-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
