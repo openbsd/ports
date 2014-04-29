@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure,v 1.22 2014/04/29 06:27:57 jasper Exp $
+--- configure.orig	Mon Apr 28 23:55:19 2014
++++ configure	Mon Apr 28 23:56:30 2014
+@@ -17809,8 +17809,8 @@ else
+ /* end confdefs.h.  */
+ 
+ #include <sys/types.h>
++#include <sys/param.h>
+ #include <sys/mount.h>
+-#include <sys/fs_types.h>
+ int
+ main ()
+ {

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2014/03/31 09:34:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2014/04/29 06:27:57 jasper Exp $
 @bin bin/libgtop_daemon2
 @mode 2555
 @group kmem
@@ -75,6 +75,9 @@ share/gtk-doc/html/libgtop/libgtop-GlibTop.html
 share/gtk-doc/html/libgtop/libgtop-Net-List.html
 share/gtk-doc/html/libgtop/libgtop-Net-Load.html
 share/gtk-doc/html/libgtop/libgtop-PPP.html
+share/gtk-doc/html/libgtop/libgtop-Process-Arguments.html
+share/gtk-doc/html/libgtop/libgtop-Process-List.html
+share/gtk-doc/html/libgtop/libgtop-Process-Time.html
 share/gtk-doc/html/libgtop/libgtop-Shared-Memory-Limits.html
 share/gtk-doc/html/libgtop/libgtop-Uptime.html
 share/gtk-doc/html/libgtop/libgtop-cpu.html
@@ -86,16 +89,13 @@ share/gtk-doc/html/libgtop/libgtop-mountlist.html
 share/gtk-doc/html/libgtop/libgtop-msg-limits.html
 share/gtk-doc/html/libgtop/libgtop-open.html
 share/gtk-doc/html/libgtop/libgtop-parameter.html
-share/gtk-doc/html/libgtop/libgtop-procargs.html
 share/gtk-doc/html/libgtop/libgtop-prockernel.html
-share/gtk-doc/html/libgtop/libgtop-proclist.html
 share/gtk-doc/html/libgtop/libgtop-procmap.html
 share/gtk-doc/html/libgtop/libgtop-procmem.html
 share/gtk-doc/html/libgtop/libgtop-procopenfiles.html
 share/gtk-doc/html/libgtop/libgtop-procsegment.html
 share/gtk-doc/html/libgtop/libgtop-procsignal.html
 share/gtk-doc/html/libgtop/libgtop-procstate.html
-share/gtk-doc/html/libgtop/libgtop-proctime.html
 share/gtk-doc/html/libgtop/libgtop-procuid.html
 share/gtk-doc/html/libgtop/libgtop-sem-limits.html
 share/gtk-doc/html/libgtop/libgtop-signal.html
