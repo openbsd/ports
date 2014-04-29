@@ -1,30 +1,30 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2013/10/19 16:37:19 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2014/04/29 21:37:20 landry Exp $
 @option no-default-conflict
 @conflict xulrunner->=24.0,<31.0
 bin/${MOZILLA_PROJECT}
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/LICENSE
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/README.${MOZILLA_PROJECT}
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome.manifest
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/default16.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/default32.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/default48.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/components.manifest
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/libmozgnome.so.${LIBmozgnome_VERSION}
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/dependentlibs.list
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/dictionaries/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/dictionaries/en-US.aff
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/dictionaries/en-US.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/js-gdb.py
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libmozalloc.so.${LIBmozalloc_VERSION}
-@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libxul.so.${LIBxul_VERSION}
-@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/mozilla-xremote-client
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/omni.ja
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/platform.ini
-@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/plugin-container
-@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/${MOZILLA_PROJECT}
-@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/${MOZILLA_PROJECT}-stub
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/LICENSE
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/README.${MOZILLA_PROJECT}
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome.manifest
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/default16.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/default32.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/chrome/icons/default/default48.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/components/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/components/components.manifest
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/components/libmozgnome.so.${LIBmozgnome_VERSION}
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dependentlibs.list
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dictionaries/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dictionaries/en-US.aff
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/dictionaries/en-US.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/js-gdb.py
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libmozalloc.so.${LIBmozalloc_VERSION}
+@lib lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/libxul.so.${LIBxul_VERSION}
+@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/mozilla-xremote-client
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/omni.ja
+lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/platform.ini
+@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/plugin-container
+@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/${MOZILLA_PROJECT}
+@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/${MOZILLA_PROJECT}-stub

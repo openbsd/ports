@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.26 2013/10/19 16:26:55 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.27 2014/04/29 21:37:20 landry Exp $
 
 COMMENT-main =		standalone XUL/XPCOM runtime environment
 COMMENT-devel =		devel files for Gecko
-PKGNAME =		xulrunner-${MOZILLA_VERSION}
-PKGNAME-main =		xulrunner-${MOZILLA_VERSION}
-PKGNAME-devel =		xulrunner-devel-${MOZILLA_VERSION}
+PKGNAME =		xulrunner-${MOZILLA_VERSION:S/esr//}
+PKGNAME-main =		xulrunner-${MOZILLA_VERSION:S/esr//}
+PKGNAME-devel =		xulrunner-devel-${MOZILLA_VERSION:S/esr//}
 
 MOZILLA_CODENAME =	xulrunner
 CATEGORIES +=		devel
