@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.18 2013/10/28 08:58:02 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.19 2014/04/29 08:04:18 ajacoutot Exp $
 
-REVISION ?=		0
-
-MODPY_EGG_VERSION ?=	3.0.0
+MODPY_EGG_VERSION ?=	3.2.0
 
 PKG_ARCH=		*
 
