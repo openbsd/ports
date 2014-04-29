@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.142 2014/04/21 23:15:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.143 2014/04/29 22:02:18 zhuk Exp $
 
 BROKEN-alpha =		.got subsegment exceeds 64K
 BROKEN-mips64 =		.got subsegment exceeds 64K
@@ -94,6 +94,8 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			textproc/aspell/core \
 			textproc/libxslt>=1.0.10 \
 			x11/kde/arts3
+
+TEST_IS_INTERACTIVE =	X11
 
 SEPARATE_BUILD =	flavored
 

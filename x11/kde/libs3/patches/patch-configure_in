@@ -1,7 +1,19 @@
-$OpenBSD: patch-configure_in,v 1.31 2008/03/25 11:45:08 espie Exp $
---- configure.in.orig	Wed Feb 13 16:26:31 2008
-+++ configure.in	Thu Feb 14 21:09:53 2008
-@@ -1145,7 +1145,7 @@ if test "$ac_use_cups" = "yes"; then
+$OpenBSD: patch-configure_in,v 1.32 2014/04/29 22:02:18 zhuk Exp $
+--- configure.in.orig	Wed Aug 20 20:05:03 2008
++++ configure.in	Sat Jan 11 16:30:01 2014
+@@ -502,7 +502,10 @@ fi
+ AC_DEFINE_UNQUOTED(DCOP_PATH, ["${dcop_prefix}/bin"], [Define where your dcop binary is])
+ AM_CONFIG_HEADER([dcop/dcop-path.h])
+ 
+-AC_PATH_PROGS(MD5SUM, [md5sum gmd5sum], [md5sum])
++AC_PATH_PROGS(MD5SUM, [md5 md5sum gmd5sum], [md5sum])
++if test "${MD5SUM}" = "md5"; then
++     MD5SUM="${MD5SUM} -r"
++fi
+ dnl =======================================================
+ dnl FILE: ./dnssd/configure.in.in
+ dnl =======================================================
+@@ -1145,7 +1148,7 @@ if test "$ac_use_cups" = "yes"; then
    else
      AC_MSG_RESULT(cups-config not found, using default libraries: $kde_cups_libs. You should consider upgrading CUPS)
    fi
@@ -10,7 +22,7 @@ $OpenBSD: patch-configure_in,v 1.31 2008/03/25 11:45:08 espie Exp $
    if test "$ac_cups_libs" = "0"; then
      AC_MSG_WARN(CUPS library not found. CUPS support disabled)
      ac_use_cups="no"
-@@ -2011,7 +2011,7 @@ dnl ==================================================
+@@ -2011,7 +2014,7 @@ dnl ==================================================
         AC_LANG_SAVE
         AC_LANG_C
         dnl Check for aspell library
