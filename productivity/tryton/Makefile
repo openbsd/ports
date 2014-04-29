@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2013/10/28 08:57:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2014/04/29 11:10:06 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += account
      SUBDIR += account_asset
      SUBDIR += account_be
+     SUBDIR += account_credit_limit
      SUBDIR += account_de_skr03
      SUBDIR += account_dunning
      SUBDIR += account_dunning_letter
@@ -11,6 +12,9 @@
      SUBDIR += account_invoice
      SUBDIR += account_invoice_history
      SUBDIR += account_invoice_line_standalone
+     SUBDIR += account_invoice_stock
+     SUBDIR += account_payment
+     SUBDIR += account_payment_sepa
      SUBDIR += account_product
      SUBDIR += account_statement
      SUBDIR += account_stock_anglo_saxon
@@ -36,6 +40,7 @@
      SUBDIR += ldap_authentication
      SUBDIR += ldap_connection
      SUBDIR += party
+     SUBDIR += party_relationship
      SUBDIR += party_siret
      SUBDIR += party_vcarddav
      SUBDIR += product
@@ -54,10 +59,12 @@
      SUBDIR += purchase_invoice_line_standalone
      SUBDIR += purchase_shipment_cost
      SUBDIR += sale
+     SUBDIR += sale_credit_limit
      SUBDIR += sale_invoice_grouping
      SUBDIR += sale_opportunity
      SUBDIR += sale_price_list
      SUBDIR += sale_shipment_cost
+     SUBDIR += sale_shipment_grouping
      SUBDIR += sale_supply
      SUBDIR += sale_supply_drop_shipment
      SUBDIR += stock
@@ -65,6 +72,7 @@
      SUBDIR += stock_inventory_location
      SUBDIR += stock_location_sequence
      SUBDIR += stock_lot
+     SUBDIR += stock_package
      SUBDIR += stock_product_location
      SUBDIR += stock_split
      SUBDIR += stock_supply
